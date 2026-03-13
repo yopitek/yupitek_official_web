@@ -1,6 +1,6 @@
 ---
 title: "Equipos de Red Inalámbrica Empresarial Ubiquiti UniFi"
-description: "Yopitek distribuye equipos Ubiquiti UniFi Wi-Fi 7: serie U7 Pro, Cloud Gateway, Wave mmWave y más — el ecosistema UniFi completo."
+description: "Yupitek distribuye equipos Ubiquiti UniFi Wi-Fi 7: serie U7 Pro, Cloud Gateway, Wave mmWave y más — el ecosistema UniFi completo."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

@@ -1,13 +1,13 @@
 ---
 title: "Catálogo de Productos"
-description: "Marcas distribuidas por Yopitek: ALFA Network, HAK5, Flipper Zero, Ubiquiti, Tarjetas Gráficas, SDRLAB y ACR. Consultoría especializada en adquisición de equipos IT."
+description: "Marcas distribuidas por Yupitek: ALFA Network, HAK5, Flipper Zero, Ubiquiti, Tarjetas Gráficas, SDRLAB y ACR. Consultoría especializada en adquisición de equipos IT."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 ---
 
-Yopitek distribuye múltiples marcas internacionales de renombre, especializadas en redes inalámbricas, investigación de seguridad, Wi-Fi empresarial, tarjetas gráficas y SDR de radio frecuencia.
+Yupitek distribuye múltiples marcas internacionales de renombre, especializadas en redes inalámbricas, investigación de seguridad, Wi-Fi empresarial, tarjetas gráficas y SDR de radio frecuencia.
 
 {{< card-group >}}
   {{< card title="ALFA Network" href="/es/products/alfa/" >}}

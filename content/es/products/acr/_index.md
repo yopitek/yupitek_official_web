@@ -1,6 +1,6 @@
 ---
 title: "Lectores NFC ACS ACR"
-description: "Yopitek distribuye lectores NFC/tarjeta inteligente ACS ACR: ACR122U, ACR1252U, ACR1552U — para control de acceso, firma electrónica y verificación de identidad."
+description: "Yupitek distribuye lectores NFC/tarjeta inteligente ACS ACR: ACR122U, ACR1252U, ACR1552U — para control de acceso, firma electrónica y verificación de identidad."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

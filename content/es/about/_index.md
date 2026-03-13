@@ -1,6 +1,6 @@
 ---
-title: "Quiénes Somos | Yopitek Ltd"
-description: "Conozca Yopitek Ltd, empresa tecnológica especializada en planificación, diseño e integración de sistemas de proyección, con sede en Taipéi, Taiwán."
+title: "Quiénes Somos | Yupitek Ltd"
+description: "Conozca Yupitek Ltd, empresa tecnológica especializada en planificación, diseño e integración de sistemas de proyección, con sede en Taipéi, Taiwán."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showBreadcrumbs: true
 
 ## Quiénes Somos
 
-Yopitek Ltd (榆閤科技有限公司) es una empresa tecnológica especializada en la planificación, diseño e integración de sistemas de proyección, con sede en Taipéi, Taiwán. Combinamos tecnología avanzada de proyección con visión creativa para ofrecer experiencias visuales inmersivas a entidades gubernamentales, museos, empresas y eventos culturales.
+Yupitek Ltd (榆閤科技有限公司) es una empresa tecnológica especializada en la planificación, diseño e integración de sistemas de proyección, con sede en Taipéi, Taiwán. Combinamos tecnología avanzada de proyección con visión creativa para ofrecer experiencias visuales inmersivas a entidades gubernamentales, museos, empresas y eventos culturales.
 
 ---
 

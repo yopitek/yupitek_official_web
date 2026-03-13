@@ -39,5 +39,5 @@ O UniFi U7 Pro é o ponto de acesso Wi-Fi 7 (IEEE 802.11be) flagship da Ubiquiti
 ---
 
 {{< alert >}}
-Precisa de um orçamento ou assistência para planejamento de rede UniFi? [Entre em Contato](/pt/contact/)
+Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
 {{< /alert >}}

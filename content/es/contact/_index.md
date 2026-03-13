@@ -1,6 +1,6 @@
 ---
-title: "Contacto | Yopitek Ltd"
-description: "Póngase en contacto con el equipo de Yopitek Ltd. Respondemos en 1-2 días hábiles. Precios de productos, soluciones de proyección, consultoría técnica y servicios de mantenimiento."
+title: "Contacto | Yupitek Ltd"
+description: "Póngase en contacto con el equipo de Yupitek Ltd. Respondemos en 1-2 días hábiles. Precios de productos, soluciones de proyección, consultoría técnica y servicios de mantenimiento."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showBreadcrumbs: true
 
 ## Contáctenos
 
-Bienvenido a Yopitek Ltd (榆閤科技有限公司). Nuestro equipo responde habitualmente en **1-2 días hábiles**.
+Bienvenido a Yupitek Ltd (榆閤科技有限公司). Nuestro equipo responde habitualmente en **1-2 días hábiles**.
 
 ---
 
@@ -36,4 +36,4 @@ Estamos disponibles para responder sus consultas sobre los siguientes temas:
 
 ## Nota sobre Visitas
 
-> **Aviso importante:** Yopitek no cuenta con una tienda física abierta al público. Si desea reunirse con nosotros en persona, le pedimos contactarnos previamente por teléfono o correo electrónico para coordinar una cita.
+> **Aviso importante:** Yupitek no cuenta con una tienda física abierta al público. Si desea reunirse con nosotros en persona, le pedimos contactarnos previamente por teléfono o correo electrónico para coordinar una cita.

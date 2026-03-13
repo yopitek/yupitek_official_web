@@ -28,5 +28,5 @@ O UniFi U7 Pro XG baseia-se nas especificações do U7 Pro e atualiza a interfac
 ---
 
 {{< alert >}}
-Precisa de um orçamento? [Entre em Contato](/pt/contact/)
+Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
 {{< /alert >}}

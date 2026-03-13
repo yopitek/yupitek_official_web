@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero — Dispositivo Multi-Protocolo de Investigación Inalámbrica"
-description: "Yopitek distribuye Flipper Zero con soporte para Sub-GHz, NFC, RFID, infrarrojo, Bluetooth. Ideal para educación en seguridad e investigación legal."
+description: "Yupitek distribuye Flipper Zero con soporte para Sub-GHz, NFC, RFID, infrarrojo, Bluetooth. Ideal para educación en seguridad e investigación legal."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

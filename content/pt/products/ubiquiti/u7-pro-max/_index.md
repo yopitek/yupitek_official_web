@@ -28,5 +28,5 @@ O UniFi U7 Pro Max é a versão avançada de alta potência do U7 Pro, projetada
 ---
 
 {{< alert >}}
-Precisa de um orçamento? [Entre em Contato](/pt/contact/)
+Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
 {{< /alert >}}

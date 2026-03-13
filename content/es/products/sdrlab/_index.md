@@ -1,6 +1,6 @@
 ---
 title: "Módulos SDR SDRLAB de Radio Definida por Software"
-description: "Yopitek distribuye módulos SDR SDRLAB y placas de expansión para Flipper Zero — para investigación de comunicaciones inalámbricas y análisis de señales RF."
+description: "Yupitek distribuye módulos SDR SDRLAB y placas de expansión para Flipper Zero — para investigación de comunicaciones inalámbricas y análisis de señales RF."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

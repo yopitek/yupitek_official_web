@@ -1,6 +1,6 @@
 ---
 title: "Soporte Técnico y Descarga de Controladores"
-description: "Centro de descarga de controladores y firmware oficiales de las marcas Yopitek. ALFA Network, HAK5, Flipper Zero y Ubiquiti — enlaces de descarga oficiales."
+description: "Centro de descarga de controladores y firmware oficiales de las marcas Yupitek. ALFA Network, HAK5, Flipper Zero y Ubiquiti — enlaces de descarga oficiales."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

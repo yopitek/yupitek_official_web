@@ -28,5 +28,5 @@ O UniFi U7 Pro XGS é o modelo da série U7 com interface de uplink de fibra óp
 ---
 
 {{< alert >}}
-Precisa de um orçamento? [Entre em Contato](/pt/contact/)
+Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
 {{< /alert >}}

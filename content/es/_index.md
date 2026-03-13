@@ -1,15 +1,15 @@
 ---
-title: "Yopitek Ltd | 榆閤科技有限公司"
-description: "Yopitek Ltd es una empresa tecnológica con sede en Taiwán, especializada en distribución de tecnología y en la planificación, diseño e integración de sistemas de proyección."
+title: "Yupitek Ltd | 榆閤科技有限公司"
+description: "Yupitek Ltd es una empresa tecnológica con sede en Taiwán, especializada en distribución de tecnología y en la planificación, diseño e integración de sistemas de proyección."
 date: 2026-03-12
 draft: false
 showHero: true
 heroStyle: "basic"
 ---
 
-## Yopitek Ltd (榆閤科技有限公司)
+## Yupitek Ltd (榆閤科技有限公司)
 
-Yopitek Ltd es una empresa tecnológica con sede en Taipéi, Taiwán. Operamos a través de dos divisiones principales: **IT_Distribution** (Distribución TI) e **IT_Application** (Aplicaciones TI).
+Yupitek Ltd es una empresa tecnológica con sede en Taipéi, Taiwán. Operamos a través de dos divisiones principales: **IT_Distribution** (Distribución TI) e **IT_Application** (Aplicaciones TI).
 
 ---
 

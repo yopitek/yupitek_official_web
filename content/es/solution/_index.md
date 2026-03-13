@@ -1,6 +1,6 @@
 ---
 title: "Soluciones de Proyección Inalámbrica y Experiencias Inmersivas"
-description: "Yopitek se especializa en planificación, diseño e integración de sistemas de proyección. Servimos a organismos gubernamentales, museos, instituciones educativas y marcas corporativas para crear espacios visuales impactantes."
+description: "Yupitek se especializa en planificación, diseño e integración de sistemas de proyección. Servimos a organismos gubernamentales, museos, instituciones educativas y marcas corporativas para crear espacios visuales impactantes."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

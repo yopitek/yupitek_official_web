@@ -1,6 +1,6 @@
 ---
 title: "Herramientas de Investigación de Seguridad HAK5"
-description: "Yopitek distribuye herramientas HAK5: WiFi Pineapple, Bash Bunny, USB Rubber Ducky, Shark Jack, O.MG Cable — la marca preferida para pentesting autorizado."
+description: "Yupitek distribuye herramientas HAK5: WiFi Pineapple, Bash Bunny, USB Rubber Ducky, Shark Jack, O.MG Cable — la marca preferida para pentesting autorizado."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

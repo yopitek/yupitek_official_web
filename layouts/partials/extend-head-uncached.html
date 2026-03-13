@@ -1,0 +1,34 @@
+{{/* hreflang alternate links for multilingual SEO */}}
+{{ if .IsTranslated }}
+  {{ range .Translations }}
+    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+  {{ end }}
+  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+  <link rel="alternate" hreflang="x-default" href="{{ .Site.Home.Permalink }}">
+{{ end }}
+
+{{/* Organization schema — injected on homepage only */}}
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "榆閤科技有限公司",
+  "alternateName": "Yopitek Ltd",
+  "url": "https://yupitek.com",
+  "logo": "https://yupitek.com/images/brand/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "sales@yupitek.com",
+    "availableLanguage": ["zh-TW","zh-CN","en","ja","ar","es","pt","ru"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Taipei",
+    "addressCountry": "TW"
+  },
+  "sameAs": []
+}
+</script>
+{{ end }}

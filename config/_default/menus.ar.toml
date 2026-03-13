@@ -1,0 +1,62 @@
+[[main]]
+  name       = "الحلول"
+  pageRef    = "/solution"
+  weight     = 10
+
+[[main]]
+  name       = "المنتجات"
+  weight     = 20
+  [main.params]
+    icon     = "tag"
+
+  [[main]]
+    name     = "ALFA Network"
+    pageRef  = "/products/alfa"
+    parent   = "المنتجات"
+    weight   = 21
+
+  [[main]]
+    name     = "Flipper Zero"
+    pageRef  = "/products/flipperzero"
+    parent   = "المنتجات"
+    weight   = 22
+
+  [[main]]
+    name     = "بطاقات الرسومات"
+    pageRef  = "/products/graphiccard"
+    parent   = "المنتجات"
+    weight   = 23
+
+  [[main]]
+    name     = "HAK5"
+    pageRef  = "/products/hak5"
+    parent   = "المنتجات"
+    weight   = 24
+
+  [[main]]
+    name     = "SDRLAB"
+    pageRef  = "/products/sdrlab"
+    parent   = "المنتجات"
+    weight   = 25
+
+  [[main]]
+    name     = "Ubiquiti"
+    pageRef  = "/products/ubiquiti"
+    parent   = "المنتجات"
+    weight   = 26
+
+  [[main]]
+    name     = "ACR"
+    pageRef  = "/products/acr"
+    parent   = "المنتجات"
+    weight   = 27
+
+[[main]]
+  name       = "الدعم التقني"
+  pageRef    = "/support"
+  weight     = 30
+
+[[main]]
+  name       = "اتصل بنا"
+  pageRef    = "/contact"
+  weight     = 40

@@ -1,0 +1,17 @@
+baseURL = "https://yupitek.com/"
+title = "Yopitek Ltd | 榆閤科技有限公司"
+defaultContentLanguage = "zh-tw"
+defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+enableEmoji = true
+hasCJKLanguage = true
+theme = "blowfish"
+
+[outputs]
+  home    = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[taxonomies]
+  brand    = "brands"
+  category = "categories"
+  tag      = "tags"

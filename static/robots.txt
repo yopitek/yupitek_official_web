@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Block form confirmation pages from indexing
+Disallow: /zh-tw/contact/confirm/
+Disallow: /zh-cn/contact/confirm/
+Disallow: /en/contact/confirm/
+Disallow: /ja/contact/confirm/
+Disallow: /ar/contact/confirm/
+Disallow: /es/contact/confirm/
+Disallow: /pt/contact/confirm/
+Disallow: /ru/contact/confirm/
+
+Sitemap: https://yupitek.com/sitemap.xml
+Sitemap: https://yupitek.com/zh-tw/sitemap.xml
+Sitemap: https://yupitek.com/zh-cn/sitemap.xml
+Sitemap: https://yupitek.com/en/sitemap.xml
+Sitemap: https://yupitek.com/ja/sitemap.xml
+Sitemap: https://yupitek.com/ar/sitemap.xml
+Sitemap: https://yupitek.com/es/sitemap.xml
+Sitemap: https://yupitek.com/pt/sitemap.xml
+Sitemap: https://yupitek.com/ru/sitemap.xml

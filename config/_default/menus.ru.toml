@@ -1,0 +1,62 @@
+[[main]]
+  name       = "Решения"
+  pageRef    = "/solution"
+  weight     = 10
+
+[[main]]
+  name       = "Продукты"
+  weight     = 20
+  [main.params]
+    icon     = "tag"
+
+  [[main]]
+    name     = "ALFA Network"
+    pageRef  = "/products/alfa"
+    parent   = "Продукты"
+    weight   = 21
+
+  [[main]]
+    name     = "Flipper Zero"
+    pageRef  = "/products/flipperzero"
+    parent   = "Продукты"
+    weight   = 22
+
+  [[main]]
+    name     = "Видеокарты"
+    pageRef  = "/products/graphiccard"
+    parent   = "Продукты"
+    weight   = 23
+
+  [[main]]
+    name     = "HAK5"
+    pageRef  = "/products/hak5"
+    parent   = "Продукты"
+    weight   = 24
+
+  [[main]]
+    name     = "SDRLAB"
+    pageRef  = "/products/sdrlab"
+    parent   = "Продукты"
+    weight   = 25
+
+  [[main]]
+    name     = "Ubiquiti"
+    pageRef  = "/products/ubiquiti"
+    parent   = "Продукты"
+    weight   = 26
+
+  [[main]]
+    name     = "ACR"
+    pageRef  = "/products/acr"
+    parent   = "Продукты"
+    weight   = 27
+
+[[main]]
+  name       = "Поддержка"
+  pageRef    = "/support"
+  weight     = 30
+
+[[main]]
+  name       = "Контакты"
+  pageRef    = "/contact"
+  weight     = 40

@@ -1,0 +1,6 @@
+footer.copyright: "© {{ .Year }} Yopitek Ltd · All Rights Reserved · Taipei, Taiwan"
+product.inquiry_button: "見積もり依頼"
+product.download_driver: "ドライバーダウンロード"
+product.view_spec: "仕様を確認"
+product.legal_notice: "本製品は合法的に承認された用途のみに使用してください"
+solution.contact_us: "お問い合わせ"

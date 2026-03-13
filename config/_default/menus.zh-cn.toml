@@ -1,0 +1,62 @@
+[[main]]
+  name       = "解决方案"
+  pageRef    = "/solution"
+  weight     = 10
+
+[[main]]
+  name       = "产品"
+  weight     = 20
+  [main.params]
+    icon     = "tag"
+
+  [[main]]
+    name     = "ALFA Network"
+    pageRef  = "/products/alfa"
+    parent   = "产品"
+    weight   = 21
+
+  [[main]]
+    name     = "Flipper Zero"
+    pageRef  = "/products/flipperzero"
+    parent   = "产品"
+    weight   = 22
+
+  [[main]]
+    name     = "显卡"
+    pageRef  = "/products/graphiccard"
+    parent   = "产品"
+    weight   = 23
+
+  [[main]]
+    name     = "HAK5"
+    pageRef  = "/products/hak5"
+    parent   = "产品"
+    weight   = 24
+
+  [[main]]
+    name     = "SDRLAB"
+    pageRef  = "/products/sdrlab"
+    parent   = "产品"
+    weight   = 25
+
+  [[main]]
+    name     = "Ubiquiti"
+    pageRef  = "/products/ubiquiti"
+    parent   = "产品"
+    weight   = 26
+
+  [[main]]
+    name     = "ACR"
+    pageRef  = "/products/acr"
+    parent   = "产品"
+    weight   = 27
+
+[[main]]
+  name       = "技术支持"
+  pageRef    = "/support"
+  weight     = 30
+
+[[main]]
+  name       = "联系我们"
+  pageRef    = "/contact"
+  weight     = 40

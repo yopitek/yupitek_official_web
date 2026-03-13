@@ -1,0 +1,13 @@
+name = "yupitek-contact-form"
+main = "contact-form.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://yupitek.com"
+
+# Set TURNSTILE_SECRET_KEY as a secret:
+# wrangler secret put TURNSTILE_SECRET_KEY
+
+[[routes]]
+pattern = "contact.yupitek.com/*"
+zone_name = "yupitek.com"

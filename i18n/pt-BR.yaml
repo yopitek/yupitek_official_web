@@ -1,0 +1,104 @@
+global:
+  language: "PT-BR"
+
+article:
+  anchor_label: "Âncora"
+  date: "{{ .Date }}"
+  date_updated: "Atualizado em: {{ .Date }}"
+  draft: "Rascunho"
+  edit_title: "Editar Conteúdo"
+  reading_time:
+    one: "{{ .Count }} minuto"
+    other: "{{ .Count }} minutos"
+  reading_time_title: "Tempo de leitura"
+  table_of_contents: "Tabela de conteúdos"
+  word_count:
+    one: "{{ .Count }} palavra"
+    other: "{{ .Count }} palavras"
+  views:
+    one: "{{ .Count }} visualização"
+    other: "{{ .Count }} visualizações"
+  part_of_series: "Este artigo faz parte de uma série de artigos."
+  part: "Parte"
+  this_article: "Esse Artigo"
+  related_articles: "Relacionados"
+  reply_by_email: "Responder por email"
+
+a11y:
+  title: "Configurações de acessibilidade"
+  disable_blur: "Desativar desfoque"
+  disable_images: "Desativar imagens"
+  show_link_underline: "Mostrar sublinhado de links"
+  font_size: "Tamanho da fonte"
+
+author:
+  byline_title: "Autor"
+
+code:
+  copy: "Copiar"
+  copied: "Copiado"
+
+error:
+  404_title: "Página não encontrada"
+  404_error: "Erro 404"
+  404_description: "Aparentemente a página requisitada não existe."
+
+footer:
+  dark_appearance: "Mudar para modo escuro"
+  light_appearance: "Mudar para modo claro"
+  powered_by: "Movido por {{ .Hugo }} &amp; {{ .Theme }}"
+  copyright: "© {{ .Year }} Yopitek Ltd · Todos os Direitos Reservados · Taipei, Taiwan"
+
+list:
+  externalurl_title: "Link para site externo"
+  no_articles: "Não tem artigos para listar aqui ainda."
+
+nav:
+  scroll_to_top_title: "Ir para o topo"
+  skip_to_main: "Ir para o conteúdo principal"
+
+search:
+  open_button_title: "Pesquisar (/)"
+  close_button_title: "Fechar (Esc)"
+  input_placeholder: "Pesquisar"
+
+sharing:
+  email: "Enviar por email"
+  facebook: "Compartilhar pelo Facebook"
+  line: "Compartilhar pelo LINE"
+  linkedin: "Compartilhar pelo LinkedIn"
+  pinterest: "Pin no Pinterest"
+  reddit: "Postar no Reddit"
+  twitter: "Tweet no Twitter"
+
+shortcode:
+  recent_articles: "Recente"
+
+recent:
+  show_more: "Mostrar Mais"
+
+admonition:
+  abstract: "Resumo"
+  bug: "Bug"
+  caution: "Atenção"
+  danger: "Perigo"
+  example: "Exemplo"
+  failure: "Falha"
+  important: "Importante"
+  info: "Informação"
+  note: "Nota"
+  question: "Pergunta"
+  quote: "Citação"
+  success: "Sucesso"
+  tip: "Dica"
+  todo: "Pendente"
+  warning: "Aviso"
+
+product:
+  inquiry_button: "Solicitar Cotação"
+  download_driver: "Baixar Driver"
+  view_spec: "Ver Especificações"
+  legal_notice: "Este produto é apenas para uso legalmente autorizado"
+
+solution:
+  contact_us: "Fale Conosco"

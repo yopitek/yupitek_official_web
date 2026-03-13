@@ -1,0 +1,45 @@
+colorScheme     = "ocean"
+defaultAppearance = "dark"
+autoSwitchAppearance = true
+
+[header]
+  layout = "basic"
+
+[footer]
+  showCopyright = true
+  showThemeAttribution = false
+  showScrollToTop = true
+
+[homepage]
+  layout   = "hero"
+  homepageImage = "/images/brand/hero-bg.webp"
+  showRecent = false
+
+[article]
+  showDate         = false
+  showReadingTime  = false
+  showTableOfContents = true
+  showBreadcrumbs  = true
+  showRelatedContent = false
+
+[list]
+  groupByYear = false
+  cardView    = true
+  cardViewScreenWidth = false
+
+[search]
+  provider = "fuse"
+  fuse.isCaseSensitive    = false
+  fuse.shouldSort         = true
+  fuse.includeScore       = false
+  fuse.minMatchCharLength = 2
+
+[smartTOC]
+  enable = true
+
+enableStructuredBreadcrumbs = true
+enableCodeCopy = true
+
+[sitemap]
+  changefreq = "weekly"
+  priority   = 0.5

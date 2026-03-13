@@ -1,0 +1,36 @@
+---
+title: "Инструменты для исследований безопасности HAK5"
+description: "Yopitek поставляет инструменты HAK5: WiFi Pineapple, Bash Bunny, USB Rubber Ducky, Shark Jack, O.MG Cable — предпочтительный бренд для авторизованного пентестинга."
+date: 2026-03-12
+draft: false
+showBreadcrumbs: true
+showTableOfContents: false
+---
+
+{{< alert "warning" >}}
+**Уведомление о законном использовании**: Продукты HAK5 — профессиональные инструменты для исследований безопасности и авторизованного пентестинга. Несанкционированное тестирование систем третьих лиц является незаконным.
+{{< /alert >}}
+
+## Линейка продуктов
+
+{{< card-group >}}
+  {{< card title="WiFi Pineapple Mark VII" href="/ru/products/hak5/wifi-pineapple-mark7/" >}}
+    Профессиональная платформа аудита беспроводных сетей, 802.11 a/b/g/n/ac.
+  {{< /card >}}
+  {{< card title="USB Rubber Ducky" href="/ru/products/hak5/usb-rubber-ducky/" >}}
+    Отраслевой стандарт для HID-инъекций — выглядит как обычный USB-флеш-накопитель.
+  {{< /card >}}
+  {{< card title="Bash Bunny Mark II" href="/ru/products/hak5/bash-bunny/" >}}
+    Многофункциональная USB-платформа атаки с поддержкой HID-инъекций и эмуляции устройств.
+  {{< /card >}}
+  {{< card title="O.MG Cable" href="/ru/products/hak5/omg-cable/" >}}
+    Маскируется под обычный зарядный кабель — поддерживает удалённую HID-инъекцию и кейлоггинг.
+  {{< /card >}}
+  {{< card title="Shark Jack" href="/ru/products/hak5/shark-jack/" >}}
+    Портативный инструмент аудита проводных сетей для быстрого развёртывания.
+  {{< /card >}}
+{{< /card-group >}}
+
+---
+
+Нужна консультация? [Свяжитесь с нами](/ru/contact/)

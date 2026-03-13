@@ -1,0 +1,62 @@
+[[main]]
+  name       = "Soluções"
+  pageRef    = "/solution"
+  weight     = 10
+
+[[main]]
+  name       = "Produtos"
+  weight     = 20
+  [main.params]
+    icon     = "tag"
+
+  [[main]]
+    name     = "ALFA Network"
+    pageRef  = "/products/alfa"
+    parent   = "Produtos"
+    weight   = 21
+
+  [[main]]
+    name     = "Flipper Zero"
+    pageRef  = "/products/flipperzero"
+    parent   = "Produtos"
+    weight   = 22
+
+  [[main]]
+    name     = "Placas de Vídeo"
+    pageRef  = "/products/graphiccard"
+    parent   = "Produtos"
+    weight   = 23
+
+  [[main]]
+    name     = "HAK5"
+    pageRef  = "/products/hak5"
+    parent   = "Produtos"
+    weight   = 24
+
+  [[main]]
+    name     = "SDRLAB"
+    pageRef  = "/products/sdrlab"
+    parent   = "Produtos"
+    weight   = 25
+
+  [[main]]
+    name     = "Ubiquiti"
+    pageRef  = "/products/ubiquiti"
+    parent   = "Produtos"
+    weight   = 26
+
+  [[main]]
+    name     = "ACR"
+    pageRef  = "/products/acr"
+    parent   = "Produtos"
+    weight   = 27
+
+[[main]]
+  name       = "Suporte"
+  pageRef    = "/support"
+  weight     = 30
+
+[[main]]
+  name       = "Contato"
+  pageRef    = "/contact"
+  weight     = 40

@@ -1,0 +1,84 @@
+/* ── Yopitek Brand Colors ── */
+:root {
+  --brand-cyan:       #29ABE2;
+  --brand-navy:       #0A1628;
+  --brand-navy-mid:   #0F2240;
+  --brand-navy-light: #1A3A5C;
+  --brand-cyan-dim:   rgba(41, 171, 226, 0.15);
+}
+
+/* Override Blowfish ocean scheme with brand colors */
+.dark {
+  --color-primary-500: 41 171 226;   /* #29ABE2 */
+  --color-neutral-900: 10 22 40;     /* #0A1628 */
+}
+
+/* Product card hover effect */
+.product-card:hover {
+  border-color: var(--brand-cyan);
+  box-shadow: 0 8px 32px rgba(41, 171, 226, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Inquiry button */
+.btn-inquiry {
+  background: var(--brand-cyan);
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.btn-inquiry:hover { opacity: 0.85; }
+
+/* RTL support for Arabic */
+[lang="ar"],
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Noto Sans Arabic', 'Segoe UI', sans-serif;
+}
+
+[dir="rtl"] .prose {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .prose ol,
+[dir="rtl"] .prose ul {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+[dir="rtl"] nav {
+  direction: rtl;
+}
+
+[dir="rtl"] nav .menu {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] table {
+  direction: rtl;
+}
+
+/* Spec numbers and values stay LTR even in RTL pages */
+[dir="rtl"] td:last-child,
+[dir="rtl"] .spec-value,
+[lang="ar"] .spec-table td:last-child,
+[lang="ar"] .product-spec {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Security tools legal notice */
+.legal-notice {
+  border-left: 3px solid var(--brand-cyan);
+  background: rgba(41, 171, 226, 0.06);
+  padding: 0.75rem 1rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.875rem;
+  color: var(--color-neutral-500);
+  margin: 1.5rem 0;
+}

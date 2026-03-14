@@ -22,7 +22,7 @@ A MSI RTX5080 16G VENTUS 3X OC WHITE é a versão branca da VENTUS 3X OC, oferec
 | Interface | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.webp" alt="MSI RTX5080 16G VENTUS 3X OC WHITE" />
+  <img src="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.png" alt="MSI RTX5080 16G VENTUS 3X OC WHITE" />
 {{< /gallery >}}
 
 ---

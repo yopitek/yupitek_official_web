@@ -12,7 +12,7 @@ tags: ["Expansión Flipper Zero", "Ethernet", "Prueba de Red"]
 El módulo de prueba Ethernet de SDRLab Flipper Zero agrega capacidad de conexión Ethernet cableada al dispositivo a través de la interfaz GPIO de Flipper Zero, adecuado para escenarios de prueba que requieren conexión de red cableada, ampliando las capacidades de investigación de red cableada de Flipper Zero.
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.webp" alt="SDRLab Flipper Zero Módulo de Prueba Ethernet" />
+  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero Módulo de Prueba Ethernet" />
 {{< /gallery >}}
 
 ---

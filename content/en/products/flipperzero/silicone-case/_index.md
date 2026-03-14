@@ -20,7 +20,7 @@ The official Flipper Zero silicone protective case provides full-body coverage t
 - Cutouts for GPIO and USB-C access
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/silicone-case.webp" alt="Silicone Case for Flipper Zero" />
+  <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}
 
 ---

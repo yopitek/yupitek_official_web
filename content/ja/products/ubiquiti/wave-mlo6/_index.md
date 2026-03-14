@@ -22,7 +22,7 @@ Wave MLO6 は Wave MLO5 の6GHz帯バージョンです。6GHz帯の低干渉特
 | 用途 | ポイントツーポイントブリッジ |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/wave-mlo6.webp" alt="Ubiquiti Wave MLO6" />
+  <img src="/images/products/ubiquiti/wave-mlo6.png" alt="Ubiquiti Wave MLO6" />
 {{< /gallery >}}
 
 ---

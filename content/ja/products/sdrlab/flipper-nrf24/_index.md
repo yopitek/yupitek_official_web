@@ -17,7 +17,7 @@ tags: ["Flipper Zero 拡張", "NRF24", "2.4GHz", "MouseJack"]
 SDRLab Flipper Zero NRF24 モジュールは、Nordic NRF24L01+ 2.4GHz 無線トランシーバーチップを統合しています。Flipper Zero の GPIO インターフェースを通じて接続し、ワイヤレスマウスやキーボードなど 2.4GHz 非 Bluetooth 無線デバイスの通信プロトコル探索（MouseJack 研究など）をサポートします。IoT 無線セキュリティ研究に最適です。
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-nrf24.webp" alt="SDRLab Flipper Zero NRF24 モジュール" />
+  <img src="/images/products/sdrlab/flipper-nrf24.png" alt="SDRLab Flipper Zero NRF24 モジュール" />
 {{< /gallery >}}
 
 ---

@@ -22,7 +22,7 @@ Packet Squirrel Mark II es un dispositivo transparente de prueba man-in-the-midd
 - **Red Man-in-the-Middle**: Modo proxy transparente
 
 {{< gallery >}}
-  <img src="/images/products/hak5/packet-squirrel.webp" alt="HAK5 Packet Squirrel Mark II" />
+  <img src="/images/products/hak5/packet-squirrel.png" alt="HAK5 Packet Squirrel Mark II" />
 {{< /gallery >}}
 
 ---

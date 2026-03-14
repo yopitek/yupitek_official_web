@@ -17,7 +17,7 @@ tags: ["O.MG", "固件烧录", "USB"]
 O.MG Programmer 是 O.MG Cable、O.MG Plug 等系列产品的专用固件烧录工具，用于更新 O.MG 装置固件及 payload 配置，支持 USB-A 及 USB-C 版本的 O.MG 产品。
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-programmer.webp" alt="HAK5 O.MG Programmer" />
+  <img src="/images/products/hak5/omg-programmer.png" alt="HAK5 O.MG Programmer" />
 {{< /gallery >}}
 
 ---

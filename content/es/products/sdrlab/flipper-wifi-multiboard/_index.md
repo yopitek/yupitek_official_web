@@ -12,7 +12,7 @@ tags: ["Expansión Flipper Zero", "ESP8266", "Wi-Fi", "Placa Multifuncional"]
 La placa de expansión multifuncional SDRLab Flipper Zero WiFi integra el módulo Wi-Fi ESP8266, proporcionando capacidad de conexión Wi-Fi a través de la interfaz GPIO de Flipper Zero, permitiendo que Flipper Zero ejecute funciones que requieren conexión de red, como control remoto, carga de datos e investigación relacionada con Wi-Fi.
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-wifi-multiboard.webp" alt="SDRLab Flipper Zero WiFi Placa Multifuncional" />
+  <img src="/images/products/sdrlab/flipper-wifi-multiboard.png" alt="SDRLab Flipper Zero WiFi Placa Multifuncional" />
 {{< /gallery >}}
 
 ---

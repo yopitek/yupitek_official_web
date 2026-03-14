@@ -17,7 +17,7 @@ tags: ["O.MG", "HID 注入", "Wi-Fi", "USB 插座"]
 O.MG Plug 是 O.MG 系列的插座型產品，整合於 USB 充電頭或轉接插座外觀中，具備無線 HID 注入能力。可透過 Wi-Fi 遠端觸發 payload，適合評估目標環境對 USB 充電設備的安全意識。
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-plug.webp" alt="HAK5 O.MG Plug" />
+  <img src="/images/products/hak5/omg-plug.png" alt="HAK5 O.MG Plug" />
 {{< /gallery >}}
 
 ---

@@ -15,7 +15,7 @@ tags: ["SDR", "H4M", "無線研究"]
 SDRLAB H4M は SDRLAB シリーズの高性能 SDR モジュールです。高度な RF 信号の受信・分析能力を提供し、プロフェッショナルなワイヤレス通信研究・エンジニアリングテスト・高度なアマチュア無線アプリケーションに適しています。
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/h4m.webp" alt="SDRLAB H4M" />
+  <img src="/images/products/sdrlab/h4m.png" alt="SDRLAB H4M" />
 {{< /gallery >}}
 
 ---

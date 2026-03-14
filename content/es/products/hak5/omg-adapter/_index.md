@@ -17,7 +17,7 @@ tags: ["O.MG", "Inyección HID", "Adaptador USB"]
 El O.MG Adapter tiene la apariencia de un adaptador USB ordinario que puede encadenarse a cables USB existentes mientras integra la capacidad de inyección HID inalámbrica via Wi-Fi. Está diseñado para evaluar la conciencia de seguridad de los usuarios respecto a los adaptadores USB de apariencia normal.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-adapter.webp" alt="HAK5 O.MG Adapter" />
+  <img src="/images/products/hak5/omg-adapter.png" alt="HAK5 O.MG Adapter" />
 {{< /gallery >}}
 
 ---

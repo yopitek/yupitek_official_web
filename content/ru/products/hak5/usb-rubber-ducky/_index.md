@@ -34,7 +34,7 @@ USB Rubber Ducky — самый известный инструмент HID-ин
 - Обширная библиотека скриптов сообщества
 
 {{< gallery >}}
-  <img src="/images/products/hak5/usb-rubber-ducky.webp" alt="HAK5 USB Rubber Ducky" />
+  <img src="/images/products/hak5/usb-rubber-ducky.png" alt="HAK5 USB Rubber Ducky" />
 {{< /gallery >}}
 
 ---

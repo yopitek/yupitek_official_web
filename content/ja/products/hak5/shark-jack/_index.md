@@ -26,7 +26,7 @@ Shark Jack は、ポータブルな有線ネットワーク監査ツールです
 - BashBunny スクリプト形式に対応
 
 {{< gallery >}}
-  <img src="/images/products/hak5/shark-jack.webp" alt="HAK5 Shark Jack" />
+  <img src="/images/products/hak5/shark-jack.png" alt="HAK5 Shark Jack" />
 {{< /gallery >}}
 
 ---

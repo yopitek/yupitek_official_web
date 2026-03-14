@@ -17,7 +17,7 @@ tags: ["O.MG", "HID 注入", "USB 转接头"]
 O.MG Adapter 外观为一般 USB 转接头，可串接于现有 USB 线材中，整合 Wi-Fi 无线 HID 注入能力。适合评估用户对外观正常的 USB 转接器的安全警觉性。
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-adapter.webp" alt="HAK5 O.MG Adapter" />
+  <img src="/images/products/hak5/omg-adapter.png" alt="HAK5 O.MG Adapter" />
 {{< /gallery >}}
 
 ---

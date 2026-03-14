@@ -22,7 +22,7 @@ The GIGABYTE RTX5080 GAMING OC 16G features GIGABYTE's WINDFORCE triple-fan cool
 | Interface | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/gigabyte-rtx5080-gaming-oc.webp" alt="GIGABYTE RTX5080 GAMING OC 16G" />
+  <img src="/images/products/graphiccard/gigabyte-rtx5080-gaming-oc.png" alt="GIGABYTE RTX5080 GAMING OC 16G" />
 {{< /gallery >}}
 
 ---

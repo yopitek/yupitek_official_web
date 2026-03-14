@@ -23,7 +23,7 @@ A GIGABYTE RTX5080 MASTER ICE 16G é a versão branca (ICE) da RTX5080 MASTER, o
 | Interface | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/gigabyte-rtx5080-master-ice.webp" alt="GIGABYTE RTX5080 MASTER ICE 16G" />
+  <img src="/images/products/graphiccard/gigabyte-rtx5080-master-ice.png" alt="GIGABYTE RTX5080 MASTER ICE 16G" />
 {{< /gallery >}}
 
 ---

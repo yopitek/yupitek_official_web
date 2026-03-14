@@ -16,7 +16,7 @@ tags: ["O.MG", "Inyección HID", "Wi-Fi", "Adaptador USB"]
 O.MG Plug es el producto tipo adaptador de la serie O.MG, integrado en la apariencia de un cargador USB o adaptador de enchufe, con capacidad de inyección HID inalámbrico. Permite activar remotamente el payload vía Wi-Fi, ideal para evaluar la conciencia de seguridad del entorno objetivo respecto a dispositivos de carga USB.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-plug.webp" alt="HAK5 O.MG Plug" />
+  <img src="/images/products/hak5/omg-plug.png" alt="HAK5 O.MG Plug" />
 {{< /gallery >}}
 
 ---

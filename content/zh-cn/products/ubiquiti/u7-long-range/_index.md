@@ -22,7 +22,7 @@ UniFi U7 Long Range 采用高增益定向天线设计，相较标准 AP 具备�
 | 供电方式 | PoE+ (802.3at) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-long-range.webp" alt="Ubiquiti UniFi U7 Long Range" />
+  <img src="/images/products/ubiquiti/u7-long-range.png" alt="Ubiquiti UniFi U7 Long Range" />
 {{< /gallery >}}
 
 ---

@@ -29,7 +29,7 @@ MSI RTX5080 16G SUPRIM LIQUID SOC 是 MSI 的一体式水冷（AIO）旗舰显�
 - 节省机箱内部风道空间
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.webp" alt="MSI RTX5080 16G SUPRIM LIQUID SOC" />
+  <img src="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.png" alt="MSI RTX5080 16G SUPRIM LIQUID SOC" />
 {{< /gallery >}}
 
 ---

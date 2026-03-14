@@ -20,7 +20,7 @@ A capa de silicone protetora oficial do Flipper Zero fornece cobertura total par
 - Recortes para acesso ao GPIO e USB-C
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/silicone-case.webp" alt="Silicone Case for Flipper Zero" />
+  <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}
 
 ---

@@ -17,7 +17,7 @@ tags: ["O.MG", "韌體燒錄", "USB"]
 O.MG Programmer 是 O.MG Cable、O.MG Plug 等系列產品的專用韌體燒錄工具，用於更新 O.MG 裝置韌體及 payload 配置，支援 USB-A 及 USB-C 版本的 O.MG 產品。
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-programmer.webp" alt="HAK5 O.MG Programmer" />
+  <img src="/images/products/hak5/omg-programmer.png" alt="HAK5 O.MG Programmer" />
 {{< /gallery >}}
 
 ---

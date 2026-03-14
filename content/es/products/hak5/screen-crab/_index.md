@@ -22,7 +22,7 @@ Screen Crab es una herramienta de investigación de captura de pantalla conectad
 - Transparente para ambos extremos HDMI, sin afectar la visualización
 
 {{< gallery >}}
-  <img src="/images/products/hak5/screen-crab.webp" alt="HAK5 Screen Crab" />
+  <img src="/images/products/hak5/screen-crab.png" alt="HAK5 Screen Crab" />
 {{< /gallery >}}
 
 ---

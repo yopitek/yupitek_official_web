@@ -24,7 +24,7 @@ MSI RTX5080 16G GAMING TRIO OC هي البطاقة الرائدة من MSI، ت�
 | واجهة الاتصال | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-gaming-trio-oc.webp" alt="MSI RTX5080 16G GAMING TRIO OC" />
+  <img src="/images/products/graphiccard/msi-rtx5080-gaming-trio-oc.png" alt="MSI RTX5080 16G GAMING TRIO OC" />
 {{< /gallery >}}
 
 ---

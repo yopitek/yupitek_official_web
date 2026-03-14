@@ -13,7 +13,7 @@ tags: ["Flipper Zero Expansion", "Ethernet", "Network Testing"]
 The SDRLab Flipper Zero Ethernet Test Module adds wired Ethernet connectivity to Flipper Zero via the GPIO interface. It is suitable for testing scenarios requiring wired network access, extending Flipper Zero's wired network research capabilities.
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.webp" alt="SDRLab Flipper Zero Ethernet Test Module" />
+  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero Ethernet Test Module" />
 {{< /gallery >}}
 
 ---

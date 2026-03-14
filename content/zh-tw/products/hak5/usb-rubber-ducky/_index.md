@@ -34,7 +34,7 @@ USB Rubber Ducky 是全球資安社群最廣為人知的 HID 注入研究工具�
 - 豐富的社群腳本庫
 
 {{< gallery >}}
-  <img src="/images/products/hak5/usb-rubber-ducky.webp" alt="HAK5 USB Rubber Ducky" />
+  <img src="/images/products/hak5/usb-rubber-ducky.png" alt="HAK5 USB Rubber Ducky" />
 {{< /gallery >}}
 
 ---

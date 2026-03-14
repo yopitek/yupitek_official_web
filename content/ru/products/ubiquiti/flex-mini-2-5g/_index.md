@@ -22,7 +22,7 @@ UniFi Flex Mini 2.5G — 5-портовый настольный PoE комму�
 | Управление | UniFi Network App |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/flex-mini-2-5g.webp" alt="Ubiquiti UniFi Flex Mini 2.5G" />
+  <img src="/images/products/ubiquiti/flex-mini-2-5g.png" alt="Ubiquiti UniFi Flex Mini 2.5G" />
 {{< /gallery >}}
 
 ---

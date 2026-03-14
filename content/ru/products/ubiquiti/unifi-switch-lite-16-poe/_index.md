@@ -23,7 +23,7 @@ UniFi Switch Lite 16 PoE — 16-портовый управляемый комм
 | Монтаж | Настольный / в стойку |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/unifi-switch-lite-16-poe.webp" alt="Ubiquiti UniFi Switch Lite 16 PoE" />
+  <img src="/images/products/ubiquiti/unifi-switch-lite-16-poe.png" alt="Ubiquiti UniFi Switch Lite 16 PoE" />
 {{< /gallery >}}
 
 ---

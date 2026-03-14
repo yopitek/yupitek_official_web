@@ -21,7 +21,7 @@ The Video Game Module is the official gaming expansion module for Flipper Zero, 
 | Connection | Flipper Zero GPIO |
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/video-game-module.webp" alt="Video Game Module for Flipper Zero" />
+  <img src="/images/products/flipperzero/video-game-module.png" alt="Video Game Module for Flipper Zero" />
 {{< /gallery >}}
 
 ---

@@ -20,7 +20,7 @@ Flipper Zero 官方硅胶保护壳，为主机提供完整的防护覆盖，防�
 - 预留 GPIO 与 USB-C 开口
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/silicone-case.webp" alt="Silicone Case for Flipper Zero" />
+  <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}
 
 ---

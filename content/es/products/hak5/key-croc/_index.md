@@ -25,7 +25,7 @@ Key Croc es una herramienta de investigación en seguridad que se instala en lí
 - Soporte de acceso remoto SSH
 
 {{< gallery >}}
-  <img src="/images/products/hak5/key-croc.webp" alt="HAK5 Key Croc" />
+  <img src="/images/products/hak5/key-croc.png" alt="HAK5 Key Croc" />
 {{< /gallery >}}
 
 ---

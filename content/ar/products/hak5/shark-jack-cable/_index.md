@@ -18,7 +18,7 @@ languageDirection: rtl
 Shark Jack Cable نسخة كابل من Shark Jack، تدمج وظائف التدقيق الشبكي في هيكل كابل USB-C، ويمكن توصيله مباشرة بمنفذ USB-C في الحاسوب المحمول، مما يجعله أسهل حملاً وأكثر إخفاءً من الإصدار الأصلي. يشارك نفس الوظائف مع Shark Jack ويدعم سكريبتات BashBunny.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/shark-jack-cable.webp" alt="HAK5 Shark Jack Cable" />
+  <img src="/images/products/hak5/shark-jack-cable.png" alt="HAK5 Shark Jack Cable" />
 {{< /gallery >}}
 
 ---

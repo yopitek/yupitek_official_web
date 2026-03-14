@@ -22,7 +22,7 @@ MSI RTX5080 16G INSPIRE 3X OC 是 MSI INSPIRE 系列的 RTX 5080 顯示卡，採
 | 介面 | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-inspire-3x-oc.webp" alt="MSI RTX5080 16G INSPIRE 3X OC" />
+  <img src="/images/products/graphiccard/msi-rtx5080-inspire-3x-oc.png" alt="MSI RTX5080 16G INSPIRE 3X OC" />
 {{< /gallery >}}
 
 ---

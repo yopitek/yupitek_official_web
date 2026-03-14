@@ -15,7 +15,7 @@ tags: ["Flipper Zero 拡張", "ESP8266", "Wi-Fi", "多機能ボード"]
 SDRLAB Flipper Zero WiFi 多機能拡張ボードは ESP8266 Wi-Fi モジュールを統合し、Flipper Zero の GPIO インターフェース経由で Wi-Fi 接続能力を提供します。これにより Flipper Zero はリモートコントロール・データアップロード・Wi-Fi 関連研究など、ネットワーク接続を必要とする機能を実行できるようになります。
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-wifi-multiboard.webp" alt="SDRLAB Flipper Zero WiFi 多機能ボード" />
+  <img src="/images/products/sdrlab/flipper-wifi-multiboard.png" alt="SDRLAB Flipper Zero WiFi 多機能ボード" />
 {{< /gallery >}}
 
 ---

@@ -23,7 +23,7 @@ GIGABYTE RTX5080 MASTER ICE 16G は RTX5080 MASTER のホワイト（ICE）バ�
 | インターフェース | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/gigabyte-rtx5080-master-ice.webp" alt="GIGABYTE RTX5080 MASTER ICE 16G" />
+  <img src="/images/products/graphiccard/gigabyte-rtx5080-master-ice.png" alt="GIGABYTE RTX5080 MASTER ICE 16G" />
 {{< /gallery >}}
 
 ---

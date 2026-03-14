@@ -33,7 +33,7 @@ UniFi U7 Pro 是 Ubiquiti 的 Wi-Fi 7（IEEE 802.11be）旗艦接入點，支援
 - **BeamForming**：定向波束成形，提升遠端訊號強度
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro.webp" alt="Ubiquiti UniFi U7 Pro" />
+  <img src="/images/products/ubiquiti/u7-pro.png" alt="Ubiquiti UniFi U7 Pro" />
 {{< /gallery >}}
 
 ---

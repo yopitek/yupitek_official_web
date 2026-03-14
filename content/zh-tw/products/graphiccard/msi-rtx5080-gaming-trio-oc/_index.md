@@ -22,7 +22,7 @@ MSI RTX5080 16G GAMING TRIO OC 是 MSI 的 RTX 5080 旗艦機型，採用 GAMING
 | 介面 | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-gaming-trio-oc.webp" alt="MSI RTX5080 16G GAMING TRIO OC" />
+  <img src="/images/products/graphiccard/msi-rtx5080-gaming-trio-oc.png" alt="MSI RTX5080 16G GAMING TRIO OC" />
 {{< /gallery >}}
 
 ---

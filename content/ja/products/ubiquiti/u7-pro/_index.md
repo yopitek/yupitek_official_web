@@ -33,7 +33,7 @@ UniFi U7 Pro は Ubiquiti の Wi-Fi 7（IEEE 802.11be）フラッグシップ �
 - **ビームフォーミング**：指向性ビーム成形により、遠距離での信号強度を向上
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro.webp" alt="Ubiquiti UniFi U7 Pro" />
+  <img src="/images/products/ubiquiti/u7-pro.png" alt="Ubiquiti UniFi U7 Pro" />
 {{< /gallery >}}
 
 ---

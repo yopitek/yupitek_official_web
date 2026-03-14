@@ -22,7 +22,7 @@ UniFi Flex Mini 2.5G 是一款 5 端口 2.5G 桌面型 PoE 交换机，为 Wi-Fi
 | 管理 | UniFi Network App |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/flex-mini-2-5g.webp" alt="Ubiquiti UniFi Flex Mini 2.5G" />
+  <img src="/images/products/ubiquiti/flex-mini-2-5g.png" alt="Ubiquiti UniFi Flex Mini 2.5G" />
 {{< /gallery >}}
 
 ---

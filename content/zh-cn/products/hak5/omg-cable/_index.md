@@ -31,7 +31,7 @@ O.MG Cable 外观与市面上一般 USB 线完全相同，内部整合微控制�
 - 自毁功能（Exfiltration）
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-cable.webp" alt="HAK5 O.MG Cable" />
+  <img src="/images/products/hak5/omg-cable.png" alt="HAK5 O.MG Cable" />
 {{< /gallery >}}
 
 ---

@@ -26,7 +26,7 @@ Screen Crab は、HDMI 信号ラインにトランスペアレントにインラ
 - HDMI 両端に対してトランスペアレント、表示に影響なし
 
 {{< gallery >}}
-  <img src="/images/products/hak5/screen-crab.webp" alt="HAK5 Screen Crab" />
+  <img src="/images/products/hak5/screen-crab.png" alt="HAK5 Screen Crab" />
 {{< /gallery >}}
 
 ---

@@ -36,7 +36,7 @@ USB Rubber Ducky は、世界のセキュリティコミュニティで最も広
 - 豊富なコミュニティスクリプトライブラリ
 
 {{< gallery >}}
-  <img src="/images/products/hak5/usb-rubber-ducky.webp" alt="HAK5 USB Rubber Ducky" />
+  <img src="/images/products/hak5/usb-rubber-ducky.png" alt="HAK5 USB Rubber Ducky" />
 {{< /gallery >}}
 
 ---

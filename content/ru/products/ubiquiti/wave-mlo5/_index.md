@@ -22,7 +22,7 @@ Wave MLO5 — беспроводное мостовое устройство Ubi
 | Применение | Мост точка-точка |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/wave-mlo5.webp" alt="Ubiquiti Wave MLO5" />
+  <img src="/images/products/ubiquiti/wave-mlo5.png" alt="Ubiquiti Wave MLO5" />
 {{< /gallery >}}
 
 ---

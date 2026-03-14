@@ -20,7 +20,7 @@ El Wave MLO5 es el dispositivo de puente inalámbrico punto a punto de onda mili
 | Uso | Enlace Punto a Punto |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/wave-mlo5.webp" alt="Ubiquiti Wave MLO5" />
+  <img src="/images/products/ubiquiti/wave-mlo5.png" alt="Ubiquiti Wave MLO5" />
 {{< /gallery >}}
 
 ---

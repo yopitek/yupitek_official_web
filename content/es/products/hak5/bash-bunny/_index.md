@@ -35,7 +35,7 @@ Bash Bunny Mark II es la plataforma de investigación de ataques USB con más fu
 | Sistema Operativo | Debian Linux |
 
 {{< gallery >}}
-  <img src="/images/products/hak5/bash-bunny.webp" alt="HAK5 Bash Bunny Mark II" />
+  <img src="/images/products/hak5/bash-bunny.png" alt="HAK5 Bash Bunny Mark II" />
 {{< /gallery >}}
 
 ---

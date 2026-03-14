@@ -30,7 +30,7 @@ languageDirection: rtl
 - وظيفة المسح الذاتي (Exfiltration)
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-cable.webp" alt="HAK5 O.MG Cable" />
+  <img src="/images/products/hak5/omg-cable.png" alt="HAK5 O.MG Cable" />
 {{< /gallery >}}
 
 ---

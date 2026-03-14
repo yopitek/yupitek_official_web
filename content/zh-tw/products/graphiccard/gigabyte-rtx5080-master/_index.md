@@ -22,7 +22,7 @@ GIGABYTE RTX5080 MASTER 16G 是 GIGABYTE 的 RTX 5080 旗艦機型，MASTER 系�
 | 介面 | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/gigabyte-rtx5080-master.webp" alt="GIGABYTE RTX5080 MASTER 16G" />
+  <img src="/images/products/graphiccard/gigabyte-rtx5080-master.png" alt="GIGABYTE RTX5080 MASTER 16G" />
 {{< /gallery >}}
 
 ---

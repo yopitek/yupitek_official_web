@@ -16,7 +16,7 @@ tags: ["O.MG", "Programación de Firmware", "USB"]
 O.MG Programmer es la herramienta dedicada para programar el firmware de productos de la serie O.MG, como O.MG Cable y O.MG Plug. Se utiliza para actualizar el firmware y la configuración de payloads de dispositivos O.MG, compatible con productos O.MG en versión USB-A y USB-C.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-programmer.webp" alt="HAK5 O.MG Programmer" />
+  <img src="/images/products/hak5/omg-programmer.png" alt="HAK5 O.MG Programmer" />
 {{< /gallery >}}
 
 ---

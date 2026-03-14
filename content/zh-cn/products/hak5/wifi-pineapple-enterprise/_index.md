@@ -24,7 +24,7 @@ WiFi Pineapple Enterprise 是针对企业环境设计的无线安全评估平台
 - 支持 802.11 a/b/g/n/ac 双频
 
 {{< gallery >}}
-  <img src="/images/products/hak5/wifi-pineapple-enterprise.webp" alt="HAK5 WiFi Pineapple Enterprise" />
+  <img src="/images/products/hak5/wifi-pineapple-enterprise.png" alt="HAK5 WiFi Pineapple Enterprise" />
 {{< /gallery >}}
 
 ---

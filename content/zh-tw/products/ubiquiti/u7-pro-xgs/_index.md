@@ -22,7 +22,7 @@ UniFi U7 Pro XGS 是 U7 系列中具備 10G SFP+ 光纖上行介面的機型，�
 | 供電方式 | PoE++ (802.3bt) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro-xgs.webp" alt="Ubiquiti UniFi U7 Pro XGS" />
+  <img src="/images/products/ubiquiti/u7-pro-xgs.png" alt="Ubiquiti UniFi U7 Pro XGS" />
 {{< /gallery >}}
 
 ---

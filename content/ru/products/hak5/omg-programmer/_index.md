@@ -17,7 +17,7 @@ tags: ["O.MG", "прошивка", "USB"]
 O.MG Programmer — специализированный инструмент прошивки для устройств серии O.MG Cable, O.MG Plug и других. Используется для обновления прошивки устройств O.MG и настройки конфигурации payload. Поддерживает устройства O.MG с разъёмами USB-A и USB-C.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-programmer.webp" alt="HAK5 O.MG Programmer" />
+  <img src="/images/products/hak5/omg-programmer.png" alt="HAK5 O.MG Programmer" />
 {{< /gallery >}}
 
 ---

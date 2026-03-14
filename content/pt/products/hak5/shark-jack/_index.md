@@ -24,7 +24,7 @@ O Shark Jack é uma ferramenta portátil de auditoria de rede cabeada que, ao se
 - Suporte ao formato de scripts BashBunny
 
 {{< gallery >}}
-  <img src="/images/products/hak5/shark-jack.webp" alt="HAK5 Shark Jack" />
+  <img src="/images/products/hak5/shark-jack.png" alt="HAK5 Shark Jack" />
 {{< /gallery >}}
 
 ---

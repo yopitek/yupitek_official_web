@@ -19,7 +19,7 @@ tags: ["ネットワーク監査", "イーサネット", "USB-C", "ペネトレ�
 Shark Jack Cable は Shark Jack のケーブル統合バージョンで、ネットワーク監査機能を USB-C ケーブルの形状に統合しています。ノートパソコンの USB-C ポートに直接挿入して使用でき、オリジナルの Shark Jack よりも携帯・隠蔽が容易です。機能は Shark Jack と同等で、BashBunny スクリプトにも対応しています。
 
 {{< gallery >}}
-  <img src="/images/products/hak5/shark-jack-cable.webp" alt="HAK5 Shark Jack Cable" />
+  <img src="/images/products/hak5/shark-jack-cable.png" alt="HAK5 Shark Jack Cable" />
 {{< /gallery >}}
 
 ---

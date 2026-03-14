@@ -22,7 +22,7 @@ GIGABYTE RTX5080 GAMING OC 16G 采用 GIGABYTE 三风扇 WINDFORCE 散热系统�
 | 接口 | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/gigabyte-rtx5080-gaming-oc.webp" alt="GIGABYTE RTX5080 GAMING OC 16G" />
+  <img src="/images/products/graphiccard/gigabyte-rtx5080-gaming-oc.png" alt="GIGABYTE RTX5080 GAMING OC 16G" />
 {{< /gallery >}}
 
 ---

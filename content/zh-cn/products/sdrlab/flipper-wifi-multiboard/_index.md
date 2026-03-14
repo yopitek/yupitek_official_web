@@ -13,7 +13,7 @@ tags: ["Flipper Zero 扩充", "ESP8266", "Wi-Fi", "多功能板"]
 SDRLab Flipper Zero WiFi 多功能扩充板整合 ESP8266 Wi-Fi 模块，通过 Flipper Zero GPIO 接口提供 Wi-Fi 连线能力，让 Flipper Zero 可执行需要网络连线的功能，如远程控制、数据上传及 Wi-Fi 相关研究。
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-wifi-multiboard.webp" alt="SDRLab Flipper Zero WiFi 多功能板" />
+  <img src="/images/products/sdrlab/flipper-wifi-multiboard.png" alt="SDRLab Flipper Zero WiFi 多功能板" />
 {{< /gallery >}}
 
 ---

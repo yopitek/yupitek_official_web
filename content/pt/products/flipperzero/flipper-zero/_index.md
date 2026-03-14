@@ -47,7 +47,7 @@ O Flipper Zero é uma ferramenta de pesquisa de segurança sem fio multifunciona
 - Cabo USB-C × 1
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/flipper-zero.webp" alt="Flipper Zero" />
+  <img src="/images/products/flipperzero/flipper-zero.png" alt="Flipper Zero" />
 {{< /gallery >}}
 
 ---

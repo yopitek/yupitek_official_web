@@ -22,7 +22,7 @@ O UniFi U7 Pro XG baseia-se nas especificações do U7 Pro e atualiza a interfac
 | Alimentação | PoE++ (802.3bt) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro-xg.webp" alt="Ubiquiti UniFi U7 Pro XG" />
+  <img src="/images/products/ubiquiti/u7-pro-xg.png" alt="Ubiquiti UniFi U7 Pro XG" />
 {{< /gallery >}}
 
 ---

@@ -24,7 +24,7 @@ Screen Crab أداة بحث تُوصَّل بشفافية في خط إشارة H
 - شفافية تامة لطرفَي HDMI دون التأثير على العرض
 
 {{< gallery >}}
-  <img src="/images/products/hak5/screen-crab.webp" alt="HAK5 Screen Crab" />
+  <img src="/images/products/hak5/screen-crab.png" alt="HAK5 Screen Crab" />
 {{< /gallery >}}
 
 ---

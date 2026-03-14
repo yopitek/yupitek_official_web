@@ -24,7 +24,7 @@ Packet Squirrel Mark II — прозрачное сетевое MITM устро�
 - **Сетевой MITM**: прозрачный режим прокси
 
 {{< gallery >}}
-  <img src="/images/products/hak5/packet-squirrel.webp" alt="HAK5 Packet Squirrel Mark II" />
+  <img src="/images/products/hak5/packet-squirrel.png" alt="HAK5 Packet Squirrel Mark II" />
 {{< /gallery >}}
 
 ---

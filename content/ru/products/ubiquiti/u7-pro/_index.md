@@ -31,7 +31,7 @@ UniFi U7 Pro — флагманская трёхдиапазонная точк�
 - **MU-MIMO** — одновременное обслуживание нескольких пользователей
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro.webp" alt="Ubiquiti UniFi U7 Pro" />
+  <img src="/images/products/ubiquiti/u7-pro.png" alt="Ubiquiti UniFi U7 Pro" />
 {{< /gallery >}}
 
 ---

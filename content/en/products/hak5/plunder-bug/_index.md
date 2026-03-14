@@ -26,7 +26,7 @@ Plunder Bug LAN Tap is a passive Ethernet tap that sits inline on an Ethernet co
 | Compatible Software | Wireshark, tcpdump, etc. |
 
 {{< gallery >}}
-  <img src="/images/products/hak5/plunder-bug.webp" alt="HAK5 Plunder Bug LAN Tap" />
+  <img src="/images/products/hak5/plunder-bug.png" alt="HAK5 Plunder Bug LAN Tap" />
 {{< /gallery >}}
 
 ---

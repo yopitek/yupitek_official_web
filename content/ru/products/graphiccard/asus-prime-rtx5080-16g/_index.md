@@ -23,7 +23,7 @@ ASUS PRIME RTX5080-16G оснащена GPU NVIDIA GeForce RTX 5080 с 16GB ви
 | Разъём питания | 16-pin (PCIe 5.0) |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/asus-prime-rtx5080-16g.webp" alt="ASUS PRIME RTX5080-16G" />
+  <img src="/images/products/graphiccard/asus-prime-rtx5080-16g.png" alt="ASUS PRIME RTX5080-16G" />
 {{< /gallery >}}
 
 ---

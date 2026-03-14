@@ -19,7 +19,7 @@ tags: ["Flipper Zero 拡張", "5GHz", "RF モジュール"]
 SDRLAB Flipper Zero 5G 拡張ボードは、Flipper Zero の GPIO インターフェースに接続し、高周波帯の RF 機能を拡張します。研究者が 5GHz 帯のワイヤレス通信プロトコルを探索できるようになります。
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-5g.webp" alt="SDRLAB Flipper Zero 5G 拡張ボード" />
+  <img src="/images/products/sdrlab/flipper-5g.png" alt="SDRLAB Flipper Zero 5G 拡張ボード" />
 {{< /gallery >}}
 
 ---

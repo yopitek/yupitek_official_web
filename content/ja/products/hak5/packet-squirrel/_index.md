@@ -26,7 +26,7 @@ Packet Squirrel Mark II は、イーサネット回線にインライン接続�
 - **ネットワーク中間者**：トランスペアレントプロキシモード
 
 {{< gallery >}}
-  <img src="/images/products/hak5/packet-squirrel.webp" alt="HAK5 Packet Squirrel Mark II" />
+  <img src="/images/products/hak5/packet-squirrel.png" alt="HAK5 Packet Squirrel Mark II" />
 {{< /gallery >}}
 
 ---

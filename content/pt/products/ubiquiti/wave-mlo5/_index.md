@@ -22,7 +22,7 @@ O Wave MLO5 é um dispositivo de bridge sem fio ponto a ponto em ondas milimétr
 | Uso | Bridge Ponto a Ponto |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/wave-mlo5.webp" alt="Ubiquiti Wave MLO5" />
+  <img src="/images/products/ubiquiti/wave-mlo5.png" alt="Ubiquiti Wave MLO5" />
 {{< /gallery >}}
 
 ---

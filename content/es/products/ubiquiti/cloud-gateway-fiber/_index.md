@@ -18,7 +18,7 @@ El UniFi Cloud Gateway Fiber integra interfaz WAN de fibra óptica (SFP+), contr
 - Compatible con la gestión de cientos de APs UniFi
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/cloud-gateway-fiber.webp" alt="Ubiquiti UniFi Cloud Gateway Fiber" />
+  <img src="/images/products/ubiquiti/cloud-gateway-fiber.png" alt="Ubiquiti UniFi Cloud Gateway Fiber" />
 {{< /gallery >}}
 
 ---

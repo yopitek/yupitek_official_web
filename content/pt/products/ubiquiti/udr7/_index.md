@@ -22,7 +22,7 @@ O UniFi Dream Router 7 (UDR7) é a versão atualizada para Wi-Fi 7 do Dream Rout
 | Controlador Integrado | UniFi Network Controller |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/udr7.webp" alt="Ubiquiti UniFi Dream Router 7" />
+  <img src="/images/products/ubiquiti/udr7.png" alt="Ubiquiti UniFi Dream Router 7" />
 {{< /gallery >}}
 
 ---

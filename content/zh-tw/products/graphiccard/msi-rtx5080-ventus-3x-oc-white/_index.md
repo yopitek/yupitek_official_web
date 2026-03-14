@@ -22,7 +22,7 @@ MSI RTX5080 16G VENTUS 3X OC WHITE 是 VENTUS 3X OC 的白色版本，提供與�
 | 介面 | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.webp" alt="MSI RTX5080 16G VENTUS 3X OC WHITE" />
+  <img src="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.png" alt="MSI RTX5080 16G VENTUS 3X OC WHITE" />
 {{< /gallery >}}
 
 ---

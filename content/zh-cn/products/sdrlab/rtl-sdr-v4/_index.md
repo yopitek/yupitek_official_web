@@ -33,7 +33,7 @@ RTL-SDR Blog RTL SDR V4 是市场上最受欢迎的入门级软件定义无线�
 - RF 信号分析
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/rtl-sdr-v4.webp" alt="OpenSourceSDRLab RTL-SDR V4" />
+  <img src="/images/products/sdrlab/rtl-sdr-v4.png" alt="OpenSourceSDRLab RTL-SDR V4" />
 {{< /gallery >}}
 
 ---

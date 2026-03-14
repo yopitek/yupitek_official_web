@@ -35,7 +35,7 @@ El ACR122U es el lector NFC USB más conocido de ACS. Utiliza tecnología de con
 - FeliCa 212 / 424 kbps
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U Lector NFC USB" />
+  <img src="/images/products/acr/acr122u.png" alt="ACS ACR122U Lector NFC USB" />
 {{< /gallery >}}
 
 ---

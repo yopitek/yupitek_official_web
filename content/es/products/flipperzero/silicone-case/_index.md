@@ -20,7 +20,7 @@ La funda de silicona protectora oficial de Flipper Zero proporciona cobertura to
 - Recortes para acceso a GPIO y USB-C
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/silicone-case.webp" alt="Silicone Case for Flipper Zero" />
+  <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}
 
 ---

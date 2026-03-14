@@ -23,7 +23,7 @@ UniFi Cloud Gateway Ultra — компактное устройство всё-�
 | Управление | Приложение UniFi Network |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/cloud-gateway-ultra.webp" alt="Ubiquiti UniFi Cloud Gateway Ultra" />
+  <img src="/images/products/ubiquiti/cloud-gateway-ultra.png" alt="Ubiquiti UniFi Cloud Gateway Ultra" />
 {{< /gallery >}}
 
 ---

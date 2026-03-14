@@ -23,7 +23,7 @@ The ASUS RTX5080 O16G NOCTUA is a collaboration product between ASUS and Austria
 | Interface | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/asus-rtx5080-o16g-noctua.webp" alt="ASUS RTX5080 O16G NOCTUA" />
+  <img src="/images/products/graphiccard/asus-rtx5080-o16g-noctua.png" alt="ASUS RTX5080 O16G NOCTUA" />
 {{< /gallery >}}
 
 ---

@@ -22,7 +22,7 @@ UniFi Dream Router 7 (UDR7) 是 Wi-Fi 7 升级版的 Dream Router，将路由器
 | 内置控制器 | UniFi Network Controller |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/udr7.webp" alt="Ubiquiti UniFi Dream Router 7" />
+  <img src="/images/products/ubiquiti/udr7.png" alt="Ubiquiti UniFi Dream Router 7" />
 {{< /gallery >}}
 
 ---

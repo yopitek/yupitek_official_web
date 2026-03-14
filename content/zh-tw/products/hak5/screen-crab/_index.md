@@ -24,7 +24,7 @@ Screen Crab 是一款透明串聯於 HDMI 訊號線路中的螢幕截取研究�
 - 對 HDMI 兩端透明，不影響顯示
 
 {{< gallery >}}
-  <img src="/images/products/hak5/screen-crab.webp" alt="HAK5 Screen Crab" />
+  <img src="/images/products/hak5/screen-crab.png" alt="HAK5 Screen Crab" />
 {{< /gallery >}}
 
 ---

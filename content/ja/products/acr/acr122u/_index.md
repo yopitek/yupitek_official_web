@@ -35,7 +35,7 @@ ACR122U は ACS の代表的な USB NFC カードリーダーです。13.56 MHz 
 - FeliCa 212 / 424 kbps
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC カードリーダー" />
+  <img src="/images/products/acr/acr122u.png" alt="ACS ACR122U NFC カードリーダー" />
 {{< /gallery >}}
 
 ---

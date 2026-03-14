@@ -20,7 +20,7 @@ UniFi Cloud Gateway Fiber 整合光纤 WAN 接口（SFP+）、UniFi 网络控制
 - 支持管理数百台 UniFi AP
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/cloud-gateway-fiber.webp" alt="Ubiquiti UniFi Cloud Gateway Fiber" />
+  <img src="/images/products/ubiquiti/cloud-gateway-fiber.png" alt="Ubiquiti UniFi Cloud Gateway Fiber" />
 {{< /gallery >}}
 
 ---

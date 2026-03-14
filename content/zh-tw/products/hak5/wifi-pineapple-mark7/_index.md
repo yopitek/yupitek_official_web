@@ -35,7 +35,7 @@ WiFi Pineapple Mark VII 是 HAK5 的旗艦無線網路稽核平台，採用 Open
 - **模組系統**：社群豐富的功能擴充模組
 
 {{< gallery >}}
-  <img src="/images/products/hak5/wifi-pineapple.webp" alt="HAK5 WiFi Pineapple Mark VII" />
+  <img src="/images/products/hak5/wifi-pineapple.png" alt="HAK5 WiFi Pineapple Mark VII" />
 {{< /gallery >}}
 
 ---

@@ -24,7 +24,7 @@ ACR1552U — четвёртое поколение USB NFC считывател�
 | Стандарт | совместим с PC/SC |
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr1552u.webp" alt="ACS ACR1552U NFC считыватель" />
+  <img src="/images/products/acr/acr1552u.png" alt="ACS ACR1552U NFC считыватель" />
 {{< /gallery >}}
 
 ---

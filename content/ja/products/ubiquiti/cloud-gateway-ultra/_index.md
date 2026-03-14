@@ -32,7 +32,7 @@ UniFi Cloud Gateway Ultra は Ubiquiti のコンパクトなデスクトップ�
 | 管理 | UniFi Network App / Cloud Console |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/cloud-gateway-ultra.webp" alt="Ubiquiti UniFi Cloud Gateway Ultra" />
+  <img src="/images/products/ubiquiti/cloud-gateway-ultra.png" alt="Ubiquiti UniFi Cloud Gateway Ultra" />
 {{< /gallery >}}
 
 ---

@@ -22,7 +22,7 @@ El UniFi U7 Pro Max es la versión avanzada de alta potencia del U7 Pro, diseña
 | Alimentación | PoE++ (802.3bt) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro-max.webp" alt="Ubiquiti UniFi U7 Pro Max" />
+  <img src="/images/products/ubiquiti/u7-pro-max.png" alt="Ubiquiti UniFi U7 Pro Max" />
 {{< /gallery >}}
 
 ---

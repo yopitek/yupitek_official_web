@@ -23,7 +23,7 @@ GIGABYTE RTX5080 MASTER ICE 16G 是 RTX5080 MASTER 的白色（ICE）版本，�
 | 介面 | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/gigabyte-rtx5080-master-ice.webp" alt="GIGABYTE RTX5080 MASTER ICE 16G" />
+  <img src="/images/products/graphiccard/gigabyte-rtx5080-master-ice.png" alt="GIGABYTE RTX5080 MASTER ICE 16G" />
 {{< /gallery >}}
 
 ---

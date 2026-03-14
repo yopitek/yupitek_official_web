@@ -31,7 +31,7 @@ O O.MG Cable tem aparência idêntica a um cabo USB comum disponível no mercado
 - Função de autodestruição (Exfiltration)
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-cable.webp" alt="HAK5 O.MG Cable" />
+  <img src="/images/products/hak5/omg-cable.png" alt="HAK5 O.MG Cable" />
 {{< /gallery >}}
 
 ---

@@ -19,7 +19,7 @@ tags: ["إضافة Flipper Zero", "NRF24", "2.4GHz", "MouseJack"]
 تدمج وحدة SDRLab Flipper Zero NRF24 شريحة Nordic NRF24L01+ اللاسلكية بتردد 2.4GHz، وتتصل عبر واجهة GPIO لجهاز Flipper Zero. تدعم استكشاف بروتوكولات الاتصال للفأرات اللاسلكية ولوحات المفاتيح وأجهزة 2.4GHz غير البلوتوث الأخرى (مثل أبحاث MouseJack)، وهي مناسبة لأبحاث أمن الأجهزة الذكية (IoT).
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-nrf24.webp" alt="SDRLab وحدة Flipper Zero NRF24" />
+  <img src="/images/products/sdrlab/flipper-nrf24.png" alt="SDRLab وحدة Flipper Zero NRF24" />
 {{< /gallery >}}
 
 ---

@@ -22,7 +22,7 @@ ASUS ProArt RTX5080 O16G はクリエイター専用に設計された RTX 5080 
 | インターフェース | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/asus-proart-rtx5080-o16g.webp" alt="ASUS ProArt RTX5080 O16G" />
+  <img src="/images/products/graphiccard/asus-proart-rtx5080-o16g.png" alt="ASUS ProArt RTX5080 O16G" />
 {{< /gallery >}}
 
 ---

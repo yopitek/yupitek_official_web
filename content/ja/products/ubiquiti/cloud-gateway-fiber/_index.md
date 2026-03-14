@@ -20,7 +20,7 @@ UniFi Cloud Gateway Fiber は、光ファイバーWANインターフェース（
 - 数百台のUniFi APを一元管理可能
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/cloud-gateway-fiber.webp" alt="Ubiquiti UniFi Cloud Gateway Fiber" />
+  <img src="/images/products/ubiquiti/cloud-gateway-fiber.png" alt="Ubiquiti UniFi Cloud Gateway Fiber" />
 {{< /gallery >}}
 
 ---

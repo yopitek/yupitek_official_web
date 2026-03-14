@@ -22,7 +22,7 @@ El SDRLab TRX-duo es una plataforma SDR de doble canal y alto rendimiento basada
 | Compatibilidad | Ecosistema Red Pitaya |
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/trx-duo.webp" alt="SDRLab TRX-duo" />
+  <img src="/images/products/sdrlab/trx-duo.png" alt="SDRLab TRX-duo" />
 {{< /gallery >}}
 
 ---

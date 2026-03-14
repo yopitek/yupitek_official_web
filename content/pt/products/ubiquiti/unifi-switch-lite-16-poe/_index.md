@@ -44,7 +44,7 @@ Gerenciado pelo aplicativo UniFi Network, o USW-Lite-16-PoE integra-se perfeitam
 - Expansão de instalações UniFi existentes com necessidade de portas PoE adicionais
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/unifi-switch-lite-16-poe.webp" alt="Ubiquiti UniFi Switch Lite 16 PoE" />
+  <img src="/images/products/ubiquiti/unifi-switch-lite-16-poe.png" alt="Ubiquiti UniFi Switch Lite 16 PoE" />
 {{< /gallery >}}
 
 ---

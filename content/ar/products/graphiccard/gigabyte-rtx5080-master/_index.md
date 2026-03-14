@@ -24,7 +24,7 @@ GIGABYTE RTX5080 MASTER 16G هي بطاقة الرسوميات الرائدة ا
 | واجهة الاتصال | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/gigabyte-rtx5080-master.webp" alt="GIGABYTE RTX5080 MASTER 16G" />
+  <img src="/images/products/graphiccard/gigabyte-rtx5080-master.png" alt="GIGABYTE RTX5080 MASTER 16G" />
 {{< /gallery >}}
 
 ---

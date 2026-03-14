@@ -22,7 +22,7 @@ O UniFi U7 Pro XGS é o modelo da série U7 com interface de uplink de fibra óp
 | Alimentação | PoE++ (802.3bt) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro-xgs.webp" alt="Ubiquiti UniFi U7 Pro XGS" />
+  <img src="/images/products/ubiquiti/u7-pro-xgs.png" alt="Ubiquiti UniFi U7 Pro XGS" />
 {{< /gallery >}}
 
 ---

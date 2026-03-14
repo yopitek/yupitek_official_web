@@ -25,7 +25,7 @@ ACR1252U — USB NFC считыватель компании ACS, сертифи
 | Стандарт | совместим с PC/SC |
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr1252u.webp" alt="ACS ACR1252U NFC считыватель" />
+  <img src="/images/products/acr/acr1252u.png" alt="ACS ACR1252U NFC считыватель" />
 {{< /gallery >}}
 
 ---

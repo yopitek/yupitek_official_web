@@ -20,7 +20,7 @@ Flipper Zero 公式シリコン保護ケースは、本体を完全に覆い、�
 - GPIO と USB-C アクセス用の開口部あり
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/silicone-case.webp" alt="Silicone Case for Flipper Zero" />
+  <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}
 
 ---

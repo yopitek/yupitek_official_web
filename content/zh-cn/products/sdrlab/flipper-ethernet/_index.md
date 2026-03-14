@@ -13,7 +13,7 @@ tags: ["Flipper Zero 扩充", "以太网络", "网络测试"]
 SDRLab Flipper Zero 以太网络测试模块通过 Flipper Zero GPIO 接口，为主机加入有线以太网络连线能力，适合需要有线网络连接的测试场景，扩展 Flipper Zero 的有线网络研究功能。
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.webp" alt="SDRLab Flipper Zero 以太网络测试模块" />
+  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero 以太网络测试模块" />
 {{< /gallery >}}
 
 ---

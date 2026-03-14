@@ -26,7 +26,7 @@ Key Croc هي أداة بحث أمني تُوضع بشكل مضمَّن بين �
 - دعم الوصول عن بُعد عبر SSH
 
 {{< gallery >}}
-  <img src="/images/products/hak5/key-croc.webp" alt="HAK5 Key Croc" />
+  <img src="/images/products/hak5/key-croc.png" alt="HAK5 Key Croc" />
 {{< /gallery >}}
 
 ---

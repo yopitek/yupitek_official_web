@@ -17,7 +17,7 @@ tags: ["O.MG", "HID インジェクション", "USB アダプター"]
 O.MG Adapter は通常の USB アダプターとして見え、既存の USB ケーブルに接続しながら Wi-Fi 経由のワイヤレス HID インジェクション機能を統合します。通常に見える USB アダプターに対するユーザーのセキュリティ意識を評価するのに適しています。
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-adapter.webp" alt="HAK5 O.MG Adapter" />
+  <img src="/images/products/hak5/omg-adapter.png" alt="HAK5 O.MG Adapter" />
 {{< /gallery >}}
 
 ---

@@ -34,7 +34,7 @@ O USB Rubber Ducky é a ferramenta de pesquisa de injeção HID mais conhecida n
 - Rica biblioteca de scripts da comunidade
 
 {{< gallery >}}
-  <img src="/images/products/hak5/usb-rubber-ducky.webp" alt="HAK5 USB Rubber Ducky" />
+  <img src="/images/products/hak5/usb-rubber-ducky.png" alt="HAK5 USB Rubber Ducky" />
 {{< /gallery >}}
 
 ---

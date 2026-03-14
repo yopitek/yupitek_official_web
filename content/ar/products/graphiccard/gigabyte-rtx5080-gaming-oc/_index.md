@@ -24,7 +24,7 @@ GIGABYTE RTX5080 GAMING OC 16G تجمع بين أداء NVIDIA GeForce RTX 5080 
 | واجهة الاتصال | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/gigabyte-rtx5080-gaming-oc.webp" alt="GIGABYTE RTX5080 GAMING OC 16G" />
+  <img src="/images/products/graphiccard/gigabyte-rtx5080-gaming-oc.png" alt="GIGABYTE RTX5080 GAMING OC 16G" />
 {{< /gallery >}}
 
 ---

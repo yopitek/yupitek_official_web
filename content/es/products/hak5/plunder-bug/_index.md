@@ -24,7 +24,7 @@ Plunder Bug LAN Tap es un escucha pasivo de red Ethernet, conectado en línea en
 | Software compatible | Wireshark, tcpdump, etc. |
 
 {{< gallery >}}
-  <img src="/images/products/hak5/plunder-bug.webp" alt="HAK5 Plunder Bug LAN Tap" />
+  <img src="/images/products/hak5/plunder-bug.png" alt="HAK5 Plunder Bug LAN Tap" />
 {{< /gallery >}}
 
 ---

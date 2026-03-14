@@ -24,7 +24,7 @@ WiFi Pineapple Enterprise is a wireless security assessment platform designed fo
 - Dual-band 802.11 a/b/g/n/ac support
 
 {{< gallery >}}
-  <img src="/images/products/hak5/wifi-pineapple-enterprise.webp" alt="HAK5 WiFi Pineapple Enterprise" />
+  <img src="/images/products/hak5/wifi-pineapple-enterprise.png" alt="HAK5 WiFi Pineapple Enterprise" />
 {{< /gallery >}}
 
 ---

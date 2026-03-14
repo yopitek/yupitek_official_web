@@ -33,7 +33,7 @@ The RTL-SDR Blog RTL SDR V4 is one of the most popular entry-level Software Defi
 - RF signal analysis
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/rtl-sdr-v4.webp" alt="OpenSourceSDRLab RTL-SDR V4" />
+  <img src="/images/products/sdrlab/rtl-sdr-v4.png" alt="OpenSourceSDRLab RTL-SDR V4" />
 {{< /gallery >}}
 
 ---

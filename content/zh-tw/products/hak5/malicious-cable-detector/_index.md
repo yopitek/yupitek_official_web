@@ -20,7 +20,7 @@ Malicious Cable Detector 是一款**防護用途**的 USB 線材檢測工具，�
 - 適合企業資安稽核使用
 
 {{< gallery >}}
-  <img src="/images/products/hak5/malicious-cable-detector.webp" alt="HAK5 Malicious Cable Detector" />
+  <img src="/images/products/hak5/malicious-cable-detector.png" alt="HAK5 Malicious Cable Detector" />
 {{< /gallery >}}
 
 ---

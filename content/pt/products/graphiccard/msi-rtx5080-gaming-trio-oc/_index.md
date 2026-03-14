@@ -22,7 +22,7 @@ A MSI RTX5080 16G GAMING TRIO OC é o modelo topo de linha da MSI para RTX 5080,
 | Interface | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-gaming-trio-oc.webp" alt="MSI RTX5080 16G GAMING TRIO OC" />
+  <img src="/images/products/graphiccard/msi-rtx5080-gaming-trio-oc.png" alt="MSI RTX5080 16G GAMING TRIO OC" />
 {{< /gallery >}}
 
 ---

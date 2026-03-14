@@ -26,7 +26,7 @@ ACR1552U هو قارئ USB NFC من الجيل الرابع من ACS، يتمي�
 | المعيار | متوافق مع PC/SC |
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr1552u.webp" alt="ACS ACR1552U قارئ بطاقات NFC" />
+  <img src="/images/products/acr/acr1552u.png" alt="ACS ACR1552U قارئ بطاقات NFC" />
 {{< /gallery >}}
 
 ---

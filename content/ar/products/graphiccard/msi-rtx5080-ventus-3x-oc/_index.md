@@ -25,7 +25,7 @@ MSI RTX5080 16G VENTUS 3X OC هي بطاقة RTX 5080 الرئيسية في تش
 | واجهة الاتصال | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc.webp" alt="MSI RTX5080 16G VENTUS 3X OC" />
+  <img src="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc.png" alt="MSI RTX5080 16G VENTUS 3X OC" />
 {{< /gallery >}}
 
 ---

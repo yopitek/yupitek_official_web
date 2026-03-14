@@ -22,7 +22,7 @@ SDRLab TRX-duo 是基於 Xilinx ZYNQ7010 的高性能雙通道 SDR 平台，提�
 | 相容性 | Red Pitaya 生態系 |
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/trx-duo.webp" alt="SDRLab TRX-duo" />
+  <img src="/images/products/sdrlab/trx-duo.png" alt="SDRLab TRX-duo" />
 {{< /gallery >}}
 
 ---

@@ -22,7 +22,7 @@ Wave MLO5 是 Ubiquiti 的 5GHz 毫米波点对点无线桥接装置，采用 Mu
 | 用途 | 点对点桥接 |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/wave-mlo5.webp" alt="Ubiquiti Wave MLO5" />
+  <img src="/images/products/ubiquiti/wave-mlo5.png" alt="Ubiquiti Wave MLO5" />
 {{< /gallery >}}
 
 ---

@@ -15,7 +15,7 @@ tags: ["Flipper Zero 拡張", "イーサネット", "ネットワークテスト
 SDRLAB Flipper Zero イーサネットテストモジュールは、Flipper Zero の GPIO インターフェース経由でホスト本体に有線イーサネット接続能力を追加します。有線ネットワーク接続が必要なテストシナリオに適しており、Flipper Zero の有線ネットワーク研究機能を拡張します。
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.webp" alt="SDRLAB Flipper Zero イーサネットテストモジュール" />
+  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLAB Flipper Zero イーサネットテストモジュール" />
 {{< /gallery >}}
 
 ---

@@ -22,7 +22,7 @@ El UniFi U7 Pro XGS es el modelo de la serie U7 con interfaz de enlace ascendent
 | Alimentación | PoE++ (802.3bt) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro-xgs.webp" alt="Ubiquiti UniFi U7 Pro XGS" />
+  <img src="/images/products/ubiquiti/u7-pro-xgs.png" alt="Ubiquiti UniFi U7 Pro XGS" />
 {{< /gallery >}}
 
 ---

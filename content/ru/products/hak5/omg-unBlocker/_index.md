@@ -17,7 +17,7 @@ tags: ["USB безопасность", "блокировщик данных", "�
 O.MG UnBlocker используется для тестирования эффективности USB блокировщиков данных (USB Condom / USB Data Blocker), помогает исследователям безопасности оценить, способны ли существующие USB меры безопасности эффективно предотвращать передачу данных и HID-инъекционные атаки.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-unBlocker.webp" alt="HAK5 O.MG UnBlocker" />
+  <img src="/images/products/hak5/omg-unBlocker.png" alt="HAK5 O.MG UnBlocker" />
 {{< /gallery >}}
 
 ---

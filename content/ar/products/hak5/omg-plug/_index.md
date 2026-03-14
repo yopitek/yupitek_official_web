@@ -18,7 +18,7 @@ languageDirection: rtl
 O.MG Plug هو منتج القابس من سلسلة O.MG، مُدمج في هيكل يشبه رأس شاحن USB أو محول قابس، ويمتلك إمكانية حقن HID لاسلكي. يمكن تشغيل الـ payload عن بُعد عبر Wi-Fi، وهو مناسب لتقييم مستوى الوعي الأمني في البيئة المستهدفة تجاه أجهزة شحن USB.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-plug.webp" alt="HAK5 O.MG Plug" />
+  <img src="/images/products/hak5/omg-plug.png" alt="HAK5 O.MG Plug" />
 {{< /gallery >}}
 
 ---

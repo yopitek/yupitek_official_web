@@ -22,7 +22,7 @@ The UniFi U7 Pro XG builds on the U7 Pro specifications by upgrading to a 10G RJ
 | Power Input | PoE++ (802.3bt) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro-xg.webp" alt="Ubiquiti UniFi U7 Pro XG" />
+  <img src="/images/products/ubiquiti/u7-pro-xg.png" alt="Ubiquiti UniFi U7 Pro XG" />
 {{< /gallery >}}
 
 ---

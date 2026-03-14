@@ -23,7 +23,7 @@ UniFi U7 Pro XGS — версия U7 Pro с оптическим восходя�
 | Питание | PoE++ |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro-xgs.webp" alt="Ubiquiti UniFi U7 Pro XGS" />
+  <img src="/images/products/ubiquiti/u7-pro-xgs.png" alt="Ubiquiti UniFi U7 Pro XGS" />
 {{< /gallery >}}
 
 ---

@@ -25,7 +25,7 @@ GIGABYTE RTX5080 MASTER ICE 16G هي الإصدار الأبيض الكامل م
 | واجهة الاتصال | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/gigabyte-rtx5080-master-ice.webp" alt="GIGABYTE RTX5080 MASTER ICE 16G" />
+  <img src="/images/products/graphiccard/gigabyte-rtx5080-master-ice.png" alt="GIGABYTE RTX5080 MASTER ICE 16G" />
 {{< /gallery >}}
 
 ---

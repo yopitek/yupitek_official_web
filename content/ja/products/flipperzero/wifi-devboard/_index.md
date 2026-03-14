@@ -26,7 +26,7 @@ WiFi Devboard は Flipper Zero の公式 Wi-Fi 拡張モジュールです。ESP
 | ファームウェア | Marauder 等のサードパーティ製ファームウェアに対応 |
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/wifi-devboard.webp" alt="WiFi Devboard for Flipper Zero" />
+  <img src="/images/products/flipperzero/wifi-devboard.png" alt="WiFi Devboard for Flipper Zero" />
 {{< /gallery >}}
 
 ---

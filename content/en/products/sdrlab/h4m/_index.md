@@ -13,7 +13,7 @@ tags: ["SDR", "H4M", "Radio Research"]
 The SDRLab H4M is a high-performance SDR module in the SDRLAB lineup, providing advanced RF signal reception and analysis capabilities. Suitable for professional wireless communications research, engineering testing, and advanced amateur radio applications.
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/h4m.webp" alt="SDRLab H4M" />
+  <img src="/images/products/sdrlab/h4m.png" alt="SDRLab H4M" />
 {{< /gallery >}}
 
 ---

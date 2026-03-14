@@ -21,7 +21,7 @@ tags: ["إكسسوارات Flipper Zero", "غطاء حماية"]
 - فتحات للوصول إلى GPIO وUSB-C
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/silicone-case.webp" alt="Silicone Case for Flipper Zero" />
+  <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}
 
 ---

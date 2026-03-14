@@ -16,7 +16,7 @@ tags: ["Expansión Flipper Zero", "5GHz", "Módulo RF"]
 La placa de expansión SDRLab Flipper Zero 5G se conecta a través de la interfaz GPIO de Flipper Zero, ampliando las capacidades RF de alta banda para Flipper Zero, permitiendo a los investigadores explorar protocolos de comunicación inalámbrica en la banda de 5GHz.
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-5g.webp" alt="SDRLab Flipper Zero 5G Módulo de Expansión" />
+  <img src="/images/products/sdrlab/flipper-5g.png" alt="SDRLab Flipper Zero 5G Módulo de Expansión" />
 {{< /gallery >}}
 
 ---

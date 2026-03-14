@@ -33,7 +33,7 @@ RTL-SDR Blog RTL SDR V4 は市場で最も人気のあるエントリーレベ�
 - RF 信号分析
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/rtl-sdr-v4.webp" alt="OpenSourceSDRLab RTL-SDR V4" />
+  <img src="/images/products/sdrlab/rtl-sdr-v4.png" alt="OpenSourceSDRLab RTL-SDR V4" />
 {{< /gallery >}}
 
 ---

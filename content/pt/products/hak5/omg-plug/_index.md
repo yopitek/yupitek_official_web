@@ -17,7 +17,7 @@ tags: ["O.MG", "Injeção HID", "Wi-Fi", "Tomada USB"]
 O O.MG Plug é o produto em formato de tomada da linha O.MG, integrado em um adaptador de carregamento USB ou tomada conversora, com capacidade de injeção HID sem fio. Permite acionar payloads remotamente via Wi-Fi, adequado para avaliar a conscientização de segurança do ambiente alvo em relação a dispositivos USB de carregamento.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-plug.webp" alt="HAK5 O.MG Plug" />
+  <img src="/images/products/hak5/omg-plug.png" alt="HAK5 O.MG Plug" />
 {{< /gallery >}}
 
 ---

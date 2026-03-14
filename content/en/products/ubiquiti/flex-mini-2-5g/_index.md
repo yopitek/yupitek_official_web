@@ -22,7 +22,7 @@ The UniFi Flex Mini 2.5G is a 5-port 2.5G desktop PoE switch that provides power
 | Management | UniFi Network App |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/flex-mini-2-5g.webp" alt="Ubiquiti UniFi Flex Mini 2.5G" />
+  <img src="/images/products/ubiquiti/flex-mini-2-5g.png" alt="Ubiquiti UniFi Flex Mini 2.5G" />
 {{< /gallery >}}
 
 ---

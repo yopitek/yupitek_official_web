@@ -13,7 +13,7 @@ tags: ["расширение Flipper Zero", "Ethernet", "тестировани�
 Модуль тестирования Ethernet SDRLab для Flipper Zero подключается через GPIO-интерфейс и добавляет возможность проводного Ethernet-соединения. Подходит для сценариев тестирования, требующих проводного сетевого подключения, и расширяет возможности исследования проводных сетей с Flipper Zero.
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.webp" alt="SDRLab Flipper Zero модуль тестирования Ethernet" />
+  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero модуль тестирования Ethernet" />
 {{< /gallery >}}
 
 ---

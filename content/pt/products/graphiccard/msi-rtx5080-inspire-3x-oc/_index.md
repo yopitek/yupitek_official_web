@@ -22,7 +22,7 @@ A MSI RTX5080 16G INSPIRE 3X OC é a placa de vídeo RTX 5080 da linha MSI INSPI
 | Interface | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-inspire-3x-oc.webp" alt="MSI RTX5080 16G INSPIRE 3X OC" />
+  <img src="/images/products/graphiccard/msi-rtx5080-inspire-3x-oc.png" alt="MSI RTX5080 16G INSPIRE 3X OC" />
 {{< /gallery >}}
 
 ---

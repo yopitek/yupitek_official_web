@@ -22,7 +22,7 @@ MSI RTX5080 16G VENTUS 3X OC в лаконичном стиле VENTUS с тро
 | Интерфейс | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc.webp" alt="MSI RTX5080 16G VENTUS 3X OC" />
+  <img src="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc.png" alt="MSI RTX5080 16G VENTUS 3X OC" />
 {{< /gallery >}}
 
 ---

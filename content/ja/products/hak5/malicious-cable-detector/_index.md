@@ -20,7 +20,7 @@ Malicious Cable Detector は**防御目的**の USB ケーブル検査ツール�
 - 企業のセキュリティ監査に最適
 
 {{< gallery >}}
-  <img src="/images/products/hak5/malicious-cable-detector.webp" alt="HAK5 Malicious Cable Detector" />
+  <img src="/images/products/hak5/malicious-cable-detector.png" alt="HAK5 Malicious Cable Detector" />
 {{< /gallery >}}
 
 ---

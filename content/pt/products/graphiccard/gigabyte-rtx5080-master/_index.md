@@ -22,7 +22,7 @@ A GIGABYTE RTX5080 MASTER 16G é o modelo topo de linha da GIGABYTE para RTX 508
 | Interface | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/gigabyte-rtx5080-master.webp" alt="GIGABYTE RTX5080 MASTER 16G" />
+  <img src="/images/products/graphiccard/gigabyte-rtx5080-master.png" alt="GIGABYTE RTX5080 MASTER 16G" />
 {{< /gallery >}}
 
 ---

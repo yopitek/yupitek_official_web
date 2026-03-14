@@ -22,7 +22,7 @@ Wave MLO6 是 Wave MLO5 的 6GHz 频段版本，利用 6GHz 频段更低干扰�
 | 用途 | 点对点桥接 |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/wave-mlo6.webp" alt="Ubiquiti Wave MLO6" />
+  <img src="/images/products/ubiquiti/wave-mlo6.png" alt="Ubiquiti Wave MLO6" />
 {{< /gallery >}}
 
 ---

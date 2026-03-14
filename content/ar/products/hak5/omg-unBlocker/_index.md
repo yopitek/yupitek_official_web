@@ -18,7 +18,7 @@ languageDirection: rtl
 يُستخدم O.MG UnBlocker لاختبار فعالية أجهزة حظر بيانات USB (المعروفة بـ USB Condom / USB Data Blocker)، ويساعد الباحثين الأمنيين في تقييم ما إذا كانت إجراءات أمان USB المتوفرة حالياً في السوق قادرة فعلاً على منع نقل البيانات وهجمات حقن HID.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-unBlocker.webp" alt="HAK5 O.MG UnBlocker" />
+  <img src="/images/products/hak5/omg-unBlocker.png" alt="HAK5 O.MG UnBlocker" />
 {{< /gallery >}}
 
 ---

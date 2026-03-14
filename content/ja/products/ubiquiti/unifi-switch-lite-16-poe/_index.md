@@ -32,7 +32,7 @@ UniFi Switch Lite 16 PoE は16ポートのギガビットPoEマネージドス�
 - ファンレス静音設計
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/unifi-switch-lite-16-poe.webp" alt="Ubiquiti UniFi Switch Lite 16 PoE" />
+  <img src="/images/products/ubiquiti/unifi-switch-lite-16-poe.png" alt="Ubiquiti UniFi Switch Lite 16 PoE" />
 {{< /gallery >}}
 
 ---

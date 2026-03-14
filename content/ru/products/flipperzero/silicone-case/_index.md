@@ -20,7 +20,7 @@ tags: ["Аксессуары Flipper Zero", "Защитный чехол"]
 - Вырезы для доступа к GPIO и USB-C
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/silicone-case.webp" alt="Silicone Case for Flipper Zero" />
+  <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}
 
 ---

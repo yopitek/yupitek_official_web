@@ -18,7 +18,7 @@ languageDirection: rtl
 O.MG Programmer هي أداة برمجة البرنامج الثابت (Firmware) المتخصصة لمنتجات سلسلة O.MG مثل O.MG Cable وO.MG Plug، وتُستخدم لتحديث البرنامج الثابت للأجهزة وضبط إعدادات الـ payload، وتدعم منتجات O.MG بإصداري USB-A وUSB-C.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-programmer.webp" alt="HAK5 O.MG Programmer" />
+  <img src="/images/products/hak5/omg-programmer.png" alt="HAK5 O.MG Programmer" />
 {{< /gallery >}}
 
 ---

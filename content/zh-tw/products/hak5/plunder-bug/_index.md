@@ -26,7 +26,7 @@ Plunder Bug LAN Tap 是一款被動式乙太網路竊聽器，串聯於乙太網
 | 相容軟體 | Wireshark、tcpdump 等 |
 
 {{< gallery >}}
-  <img src="/images/products/hak5/plunder-bug.webp" alt="HAK5 Plunder Bug LAN Tap" />
+  <img src="/images/products/hak5/plunder-bug.png" alt="HAK5 Plunder Bug LAN Tap" />
 {{< /gallery >}}
 
 ---

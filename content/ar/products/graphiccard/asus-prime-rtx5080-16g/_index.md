@@ -24,7 +24,7 @@ tags: ["RTX 5080", "ASUS PRIME", "16GB GDDR7", "PCIe 5.0"]
 | موصل الطاقة | 16-pin (PCIe 5.0) |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/asus-prime-rtx5080-16g.webp" alt="ASUS PRIME RTX5080-16G" />
+  <img src="/images/products/graphiccard/asus-prime-rtx5080-16g.png" alt="ASUS PRIME RTX5080-16G" />
 {{< /gallery >}}
 
 ---

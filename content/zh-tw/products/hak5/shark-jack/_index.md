@@ -24,7 +24,7 @@ Shark Jack 是一款攜帶式有線網路稽核工具，插入乙太網路埠後
 - 支援 BashBunny 腳本格式
 
 {{< gallery >}}
-  <img src="/images/products/hak5/shark-jack.webp" alt="HAK5 Shark Jack" />
+  <img src="/images/products/hak5/shark-jack.png" alt="HAK5 Shark Jack" />
 {{< /gallery >}}
 
 ---

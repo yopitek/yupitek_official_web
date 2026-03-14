@@ -22,7 +22,7 @@ UniFi U7 Pro XG 在 U7 Pro 规格基础上，升级为 10G RJ45 有线上行接�
 | 供电方式 | PoE++ (802.3bt) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro-xg.webp" alt="Ubiquiti UniFi U7 Pro XG" />
+  <img src="/images/products/ubiquiti/u7-pro-xg.png" alt="Ubiquiti UniFi U7 Pro XG" />
 {{< /gallery >}}
 
 ---

@@ -16,7 +16,7 @@ tags: ["Auditoría de Red", "Red Ethernet", "USB-C", "Prueba de Penetración"]
 Shark Jack Cable es la versión integrada en cable del Shark Jack, con las funciones de auditoría de red integradas en formato de cable USB-C. Se puede usar directamente en el puerto USB-C de una laptop, siendo más fácil de transportar y ocultar que el Shark Jack original. Las funciones son las mismas que el Shark Jack, compatible con scripts BashBunny.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/shark-jack-cable.webp" alt="HAK5 Shark Jack Cable" />
+  <img src="/images/products/hak5/shark-jack-cable.png" alt="HAK5 Shark Jack Cable" />
 {{< /gallery >}}
 
 ---

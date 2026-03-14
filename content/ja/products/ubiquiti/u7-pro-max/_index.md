@@ -22,7 +22,7 @@ UniFi U7 Pro Max は U7 Pro の高出力上位モデルです。より高い出�
 | 給電方式 | PoE++ (802.3bt) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro-max.webp" alt="Ubiquiti UniFi U7 Pro Max" />
+  <img src="/images/products/ubiquiti/u7-pro-max.png" alt="Ubiquiti UniFi U7 Pro Max" />
 {{< /gallery >}}
 
 ---

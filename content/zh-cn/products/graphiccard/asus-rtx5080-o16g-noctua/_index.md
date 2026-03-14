@@ -23,7 +23,7 @@ ASUS RTX5080 O16G NOCTUA 是 ASUS 与奥地利顶级静音散热品牌 Noctua �
 | 接口 | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/asus-rtx5080-o16g-noctua.webp" alt="ASUS RTX5080 O16G NOCTUA" />
+  <img src="/images/products/graphiccard/asus-rtx5080-o16g-noctua.png" alt="ASUS RTX5080 O16G NOCTUA" />
 {{< /gallery >}}
 
 ---

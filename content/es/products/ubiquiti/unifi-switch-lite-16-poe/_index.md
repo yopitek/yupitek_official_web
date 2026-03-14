@@ -41,7 +41,7 @@ Su diseño compacto y silencioso (sin ventiladores activos) lo hace adecuado par
 - Compatible con la función UniFi Network Protect para cámaras PoE
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/unifi-switch-lite-16-poe.webp" alt="Ubiquiti UniFi Switch Lite 16 PoE" />
+  <img src="/images/products/ubiquiti/unifi-switch-lite-16-poe.png" alt="Ubiquiti UniFi Switch Lite 16 PoE" />
 {{< /gallery >}}
 
 ---

@@ -45,7 +45,7 @@ O UCG-Ultra é a escolha certa quando você quer:
 - Configuração simplificada com todo o ecossistema UniFi gerenciado a partir de um único ponto
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/cloud-gateway-ultra.webp" alt="Ubiquiti UniFi Cloud Gateway Ultra" />
+  <img src="/images/products/ubiquiti/cloud-gateway-ultra.png" alt="Ubiquiti UniFi Cloud Gateway Ultra" />
 {{< /gallery >}}
 
 ---

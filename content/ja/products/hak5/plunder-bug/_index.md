@@ -28,7 +28,7 @@ Plunder Bug LAN Tap は、イーサネット回線にインライン接続する
 | 対応ソフトウェア | Wireshark、tcpdump など |
 
 {{< gallery >}}
-  <img src="/images/products/hak5/plunder-bug.webp" alt="HAK5 Plunder Bug LAN Tap" />
+  <img src="/images/products/hak5/plunder-bug.png" alt="HAK5 Plunder Bug LAN Tap" />
 {{< /gallery >}}
 
 ---

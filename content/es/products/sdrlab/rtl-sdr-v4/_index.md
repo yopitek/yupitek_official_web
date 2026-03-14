@@ -33,7 +33,7 @@ El RTL-SDR Blog RTL SDR V4 es uno de los receptores de Radio Definida por Softwa
 - Análisis de señales RF
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/rtl-sdr-v4.webp" alt="OpenSourceSDRLab RTL-SDR V4" />
+  <img src="/images/products/sdrlab/rtl-sdr-v4.png" alt="OpenSourceSDRLab RTL-SDR V4" />
 {{< /gallery >}}
 
 ---

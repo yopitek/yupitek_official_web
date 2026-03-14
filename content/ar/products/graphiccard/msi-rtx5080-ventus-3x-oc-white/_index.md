@@ -25,7 +25,7 @@ MSI RTX5080 16G VENTUS 3X OC WHITE هي الإصدار الأبيض الكامل
 | واجهة الاتصال | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.webp" alt="MSI RTX5080 16G VENTUS 3X OC WHITE" />
+  <img src="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.png" alt="MSI RTX5080 16G VENTUS 3X OC WHITE" />
 {{< /gallery >}}
 
 ---

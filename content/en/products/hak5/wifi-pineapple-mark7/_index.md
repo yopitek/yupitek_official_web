@@ -35,7 +35,7 @@ WiFi Pineapple Mark VII is HAK5's flagship wireless network audit platform, buil
 - **Module System**: Extensive community-developed feature expansion modules
 
 {{< gallery >}}
-  <img src="/images/products/hak5/wifi-pineapple.webp" alt="HAK5 WiFi Pineapple Mark VII" />
+  <img src="/images/products/hak5/wifi-pineapple.png" alt="HAK5 WiFi Pineapple Mark VII" />
 {{< /gallery >}}
 
 ---

@@ -26,7 +26,7 @@ Plunder Bug LAN Tap — пассивное Ethernet прослушивающее
 | Совместимое ПО | Wireshark, tcpdump и др. |
 
 {{< gallery >}}
-  <img src="/images/products/hak5/plunder-bug.webp" alt="HAK5 Plunder Bug LAN Tap" />
+  <img src="/images/products/hak5/plunder-bug.png" alt="HAK5 Plunder Bug LAN Tap" />
 {{< /gallery >}}
 
 ---

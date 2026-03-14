@@ -34,7 +34,7 @@ WiFi Pineapple Mark VII منصة تدقيق الشبكات اللاسلكية ا
 - **نظام الوحدات**: وحدات توسعة وظيفية غنية من المجتمع
 
 {{< gallery >}}
-  <img src="/images/products/hak5/wifi-pineapple.webp" alt="HAK5 WiFi Pineapple Mark VII" />
+  <img src="/images/products/hak5/wifi-pineapple.png" alt="HAK5 WiFi Pineapple Mark VII" />
 {{< /gallery >}}
 
 ---

@@ -21,7 +21,7 @@ Malicious Cable Detector هو أداة فحص كابلات USB ذات **أغرا
 - مناسب لعمليات التدقيق الأمني للمؤسسات
 
 {{< gallery >}}
-  <img src="/images/products/hak5/malicious-cable-detector.webp" alt="HAK5 Malicious Cable Detector" />
+  <img src="/images/products/hak5/malicious-cable-detector.png" alt="HAK5 Malicious Cable Detector" />
 {{< /gallery >}}
 
 ---

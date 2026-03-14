@@ -22,7 +22,7 @@ The Wave MLO5 is Ubiquiti's 5 GHz millimeter wave point-to-point wireless bridge
 | Application | Point-to-point bridge |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/wave-mlo5.webp" alt="Ubiquiti Wave MLO5" />
+  <img src="/images/products/ubiquiti/wave-mlo5.png" alt="Ubiquiti Wave MLO5" />
 {{< /gallery >}}
 
 ---

@@ -31,7 +31,7 @@ MSI RTX5080 16G SUPRIM LIQUID SOC هي بطاقة الرسوميات الرائ�
 | واجهة الاتصال | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.webp" alt="MSI RTX5080 16G SUPRIM LIQUID SOC" />
+  <img src="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.png" alt="MSI RTX5080 16G SUPRIM LIQUID SOC" />
 {{< /gallery >}}
 
 ---

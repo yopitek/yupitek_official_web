@@ -17,7 +17,7 @@ tags: ["Flipper Zero 擴充", "NRF24", "2.4GHz", "MouseJack"]
 SDRLab Flipper Zero NRF24 模組整合 Nordic NRF24L01+ 2.4GHz 無線收發晶片，透過 Flipper Zero GPIO 介面連接，支援探索無線滑鼠、鍵盤等 2.4GHz 非藍牙無線設備的通訊協議（如 MouseJack 研究），適合 IoT 無線安全研究。
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-nrf24.webp" alt="SDRLab Flipper Zero NRF24 模組" />
+  <img src="/images/products/sdrlab/flipper-nrf24.png" alt="SDRLab Flipper Zero NRF24 模組" />
 {{< /gallery >}}
 
 ---

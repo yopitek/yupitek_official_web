@@ -52,6 +52,12 @@
     weight   = 27
 
 [[main]]
+[[main]]
+  name       = "博客"
+  pageRef    = "/blog"
+  weight     = 28
+
+[[main]]
   name       = "技术支持"
   pageRef    = "/support"
   weight     = 30

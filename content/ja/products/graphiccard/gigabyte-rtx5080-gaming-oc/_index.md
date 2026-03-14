@@ -22,7 +22,7 @@ GIGABYTE RTX5080 GAMING OC 16G は GIGABYTE の 3ファン WINDFORCE 冷却シ�
 | インターフェース | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/gigabyte-rtx5080-gaming-oc.webp" alt="GIGABYTE RTX5080 GAMING OC 16G" />
+  <img src="/images/products/graphiccard/gigabyte-rtx5080-gaming-oc.png" alt="GIGABYTE RTX5080 GAMING OC 16G" />
 {{< /gallery >}}
 
 ---

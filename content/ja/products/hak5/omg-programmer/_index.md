@@ -19,7 +19,7 @@ tags: ["O.MG", "ファームウェア書き込み", "USB"]
 O.MG Programmer は、O.MG Cable・O.MG Plug などの O.MG シリーズ製品専用のファームウェア書き込みツールです。O.MG デバイスのファームウェア更新および payload 設定に使用し、USB-A および USB-C バージョンの O.MG 製品に対応しています。
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-programmer.webp" alt="HAK5 O.MG Programmer" />
+  <img src="/images/products/hak5/omg-programmer.png" alt="HAK5 O.MG Programmer" />
 {{< /gallery >}}
 
 ---

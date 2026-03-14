@@ -22,7 +22,7 @@ UniFi U7 Pro XG は U7 Pro の仕様をベースに、有線アップリンク�
 | 給電方式 | PoE++ (802.3bt) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro-xg.webp" alt="Ubiquiti UniFi U7 Pro XG" />
+  <img src="/images/products/ubiquiti/u7-pro-xg.png" alt="Ubiquiti UniFi U7 Pro XG" />
 {{< /gallery >}}
 
 ---

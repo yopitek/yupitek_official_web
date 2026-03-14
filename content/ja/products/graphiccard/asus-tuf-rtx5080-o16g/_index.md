@@ -23,7 +23,7 @@ ASUS TUF Gaming RTX5080-O16G-GAMING は MIL-STD-810H 軍用規格認定の耐久
 | インターフェース | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/asus-tuf-rtx5080-o16g.webp" alt="ASUS TUF RTX5080-O16G-GAMING" />
+  <img src="/images/products/graphiccard/asus-tuf-rtx5080-o16g.png" alt="ASUS TUF RTX5080-O16G-GAMING" />
 {{< /gallery >}}
 
 ---

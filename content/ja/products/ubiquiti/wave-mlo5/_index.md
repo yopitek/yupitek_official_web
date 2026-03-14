@@ -22,7 +22,7 @@ Wave MLO5 は Ubiquiti の5GHz ミリ波ポイントツーポイント無線ブ�
 | 用途 | ポイントツーポイントブリッジ |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/wave-mlo5.webp" alt="Ubiquiti Wave MLO5" />
+  <img src="/images/products/ubiquiti/wave-mlo5.png" alt="Ubiquiti Wave MLO5" />
 {{< /gallery >}}
 
 ---

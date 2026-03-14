@@ -26,7 +26,7 @@ Plunder Bug LAN Tap أداة تنصت سلبية على شبكة الإيثرن�
 | البرامج المتوافقة | Wireshark وtcpdump وغيرها |
 
 {{< gallery >}}
-  <img src="/images/products/hak5/plunder-bug.webp" alt="HAK5 Plunder Bug LAN Tap" />
+  <img src="/images/products/hak5/plunder-bug.png" alt="HAK5 Plunder Bug LAN Tap" />
 {{< /gallery >}}
 
 ---

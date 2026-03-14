@@ -13,7 +13,7 @@ tags: ["SDR", "H4M", "无线电研究"]
 SDRLab H4M 是 SDRLAB 系列的高性能 SDR 模块，提供进阶的 RF 信号接收与分析能力，适合专业无线通信研究、工程测试及进阶业余无线电应用。
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/h4m.webp" alt="SDRLab H4M" />
+  <img src="/images/products/sdrlab/h4m.png" alt="SDRLab H4M" />
 {{< /gallery >}}
 
 ---

@@ -20,7 +20,7 @@ Malicious Cable Detector — это инструмент проверки USB-к
 - Подходит для корпоративных аудитов безопасности
 
 {{< gallery >}}
-  <img src="/images/products/hak5/malicious-cable-detector.webp" alt="HAK5 Malicious Cable Detector" />
+  <img src="/images/products/hak5/malicious-cable-detector.png" alt="HAK5 Malicious Cable Detector" />
 {{< /gallery >}}
 
 ---

@@ -22,7 +22,7 @@ UniFi U7 Pro Max 是 U7 Pro 的高功率进阶版，采用更大功率输出设�
 | 供电方式 | PoE++ (802.3bt) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro-max.webp" alt="Ubiquiti UniFi U7 Pro Max" />
+  <img src="/images/products/ubiquiti/u7-pro-max.png" alt="Ubiquiti UniFi U7 Pro Max" />
 {{< /gallery >}}
 
 ---

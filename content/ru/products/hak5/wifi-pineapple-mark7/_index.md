@@ -35,7 +35,7 @@ WiFi Pineapple Mark VII — флагманская платформа HAK5 дл�
 - **Система модулей**: богатая экосистема расширений от сообщества
 
 {{< gallery >}}
-  <img src="/images/products/hak5/wifi-pineapple.webp" alt="HAK5 WiFi Pineapple Mark VII" />
+  <img src="/images/products/hak5/wifi-pineapple.png" alt="HAK5 WiFi Pineapple Mark VII" />
 {{< /gallery >}}
 
 ---

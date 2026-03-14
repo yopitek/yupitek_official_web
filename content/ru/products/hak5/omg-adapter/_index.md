@@ -17,7 +17,7 @@ tags: ["O.MG", "HID-инъекция", "USB-адаптер"]
 O.MG Adapter выглядит как обычный USB-адаптер, который можно подключить к существующим USB-кабелям, при этом интегрируя возможность беспроводной HID-инъекции через Wi-Fi. Предназначен для оценки осведомлённости пользователей о безопасности в отношении USB-адаптеров с нормальным внешним видом.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-adapter.webp" alt="HAK5 O.MG Adapter" />
+  <img src="/images/products/hak5/omg-adapter.png" alt="HAK5 O.MG Adapter" />
 {{< /gallery >}}
 
 ---

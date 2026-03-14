@@ -24,7 +24,7 @@ Packet Squirrel Mark II 是一款透明式網路中間人測試裝置，串聯�
 - **網路中間人**：透明代理模式
 
 {{< gallery >}}
-  <img src="/images/products/hak5/packet-squirrel.webp" alt="HAK5 Packet Squirrel Mark II" />
+  <img src="/images/products/hak5/packet-squirrel.png" alt="HAK5 Packet Squirrel Mark II" />
 {{< /gallery >}}
 
 ---

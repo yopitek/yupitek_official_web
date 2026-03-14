@@ -33,7 +33,7 @@ USB Rubber Ducky أشهر أداة بحث حقن HID في مجتمع الأمن 
 - مكتبة سكريبتات مجتمعية ثرية
 
 {{< gallery >}}
-  <img src="/images/products/hak5/usb-rubber-ducky.webp" alt="HAK5 USB Rubber Ducky" />
+  <img src="/images/products/hak5/usb-rubber-ducky.png" alt="HAK5 USB Rubber Ducky" />
 {{< /gallery >}}
 
 ---

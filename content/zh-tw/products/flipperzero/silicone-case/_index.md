@@ -20,7 +20,7 @@ Flipper Zero 官方矽膠保護殼，為主機提供完整的防護覆蓋，防�
 - 預留 GPIO 與 USB-C 開口
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/silicone-case.webp" alt="Silicone Case for Flipper Zero" />
+  <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}
 
 ---

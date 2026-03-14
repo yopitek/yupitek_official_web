@@ -22,7 +22,7 @@ UniFi U7 Long Range は高ゲイン指向性アンテナを採用し、標準AP�
 | 給電方式 | PoE+ (802.3at) |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-long-range.webp" alt="Ubiquiti UniFi U7 Long Range" />
+  <img src="/images/products/ubiquiti/u7-long-range.png" alt="Ubiquiti UniFi U7 Long Range" />
 {{< /gallery >}}
 
 ---

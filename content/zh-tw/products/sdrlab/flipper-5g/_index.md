@@ -17,7 +17,7 @@ tags: ["Flipper Zero 擴充", "5GHz", "RF 模組"]
 SDRLab Flipper Zero 5G 擴充板透過 Flipper Zero 的 GPIO 介面連接，為 Flipper Zero 擴充高頻段 RF 功能，讓研究人員能探索 5GHz 頻段的無線通訊協議。
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-5g.webp" alt="SDRLab Flipper Zero 5G 擴充板" />
+  <img src="/images/products/sdrlab/flipper-5g.png" alt="SDRLab Flipper Zero 5G 擴充板" />
 {{< /gallery >}}
 
 ---

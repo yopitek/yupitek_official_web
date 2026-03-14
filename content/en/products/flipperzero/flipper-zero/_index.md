@@ -47,7 +47,7 @@ Flipper Zero is a versatile, pocket-sized wireless security research tool that i
 - USB-C cable × 1
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/flipper-zero.webp" alt="Flipper Zero" />
+  <img src="/images/products/flipperzero/flipper-zero.png" alt="Flipper Zero" />
 {{< /gallery >}}
 
 ---

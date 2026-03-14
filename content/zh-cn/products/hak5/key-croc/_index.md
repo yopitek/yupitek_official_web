@@ -25,7 +25,7 @@ Key Croc 是一款串联于键盘与计算机之间的安全研究工具，具�
 - 支持 SSH 远程访问
 
 {{< gallery >}}
-  <img src="/images/products/hak5/key-croc.webp" alt="HAK5 Key Croc" />
+  <img src="/images/products/hak5/key-croc.png" alt="HAK5 Key Croc" />
 {{< /gallery >}}
 
 ---

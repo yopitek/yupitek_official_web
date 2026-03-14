@@ -17,7 +17,7 @@ tags: ["网络稽核", "以太网络", "USB-C", "渗透测试"]
 Shark Jack Cable 是 Shark Jack 的线材整合版本，将网络稽核功能整合于 USB-C 线材形式中，可直接插入笔电 USB-C 端口使用，比原版 Shark Jack 更便于携带隐藏。功能与 Shark Jack 相同，支持 BashBunny 脚本。
 
 {{< gallery >}}
-  <img src="/images/products/hak5/shark-jack-cable.webp" alt="HAK5 Shark Jack Cable" />
+  <img src="/images/products/hak5/shark-jack-cable.png" alt="HAK5 Shark Jack Cable" />
 {{< /gallery >}}
 
 ---

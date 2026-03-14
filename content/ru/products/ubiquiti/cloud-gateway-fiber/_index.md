@@ -20,7 +20,7 @@ UniFi Cloud Gateway Fiber объединяет оптический WAN-инте
 - Поддержка управления сотнями точек доступа UniFi
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/cloud-gateway-fiber.webp" alt="Ubiquiti UniFi Cloud Gateway Fiber" />
+  <img src="/images/products/ubiquiti/cloud-gateway-fiber.png" alt="Ubiquiti UniFi Cloud Gateway Fiber" />
 {{< /gallery >}}
 
 ---

@@ -26,7 +26,7 @@ The WiFi Devboard is the official Wi-Fi expansion module for Flipper Zero, built
 | Firmware | Supports Marauder and other third-party firmware |
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/wifi-devboard.webp" alt="WiFi Devboard for Flipper Zero" />
+  <img src="/images/products/flipperzero/wifi-devboard.png" alt="WiFi Devboard for Flipper Zero" />
 {{< /gallery >}}
 
 ---

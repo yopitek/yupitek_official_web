@@ -47,7 +47,7 @@ Flipper Zero es una herramienta de investigación de seguridad inalámbrica mult
 - Cable USB-C × 1
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/flipper-zero.webp" alt="Flipper Zero" />
+  <img src="/images/products/flipperzero/flipper-zero.png" alt="Flipper Zero" />
 {{< /gallery >}}
 
 ---

@@ -25,7 +25,7 @@ Key Croc is a security research tool that sits inline between a keyboard and a c
 - SSH remote access support
 
 {{< gallery >}}
-  <img src="/images/products/hak5/key-croc.webp" alt="HAK5 Key Croc" />
+  <img src="/images/products/hak5/key-croc.png" alt="HAK5 Key Croc" />
 {{< /gallery >}}
 
 ---

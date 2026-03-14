@@ -26,7 +26,7 @@ WiFi Devboard 是 Flipper Zero 的官方 Wi-Fi 擴充模組，基於 ESP32-S2 �
 | 韌體 | 可刷 Marauder 等第三方韌體 |
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/wifi-devboard.webp" alt="WiFi Devboard for Flipper Zero" />
+  <img src="/images/products/flipperzero/wifi-devboard.png" alt="WiFi Devboard for Flipper Zero" />
 {{< /gallery >}}
 
 ---

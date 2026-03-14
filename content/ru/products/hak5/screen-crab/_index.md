@@ -24,7 +24,7 @@ Screen Crab — инструмент для захвата экрана, про�
 - Прозрачная работа для обеих сторон HDMI — не влияет на отображение
 
 {{< gallery >}}
-  <img src="/images/products/hak5/screen-crab.webp" alt="HAK5 Screen Crab" />
+  <img src="/images/products/hak5/screen-crab.png" alt="HAK5 Screen Crab" />
 {{< /gallery >}}
 
 ---

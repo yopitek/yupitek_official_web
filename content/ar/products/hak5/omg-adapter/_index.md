@@ -18,7 +18,7 @@ tags: ["O.MG", "حقن HID", "محول USB"]
 يبدو O.MG Adapter كمحول USB عادي يمكن ربطه بكابلات USB الموجودة مع دمج قدرة حقن HID اللاسلكي عبر Wi-Fi. مصمم لتقييم وعي المستخدمين الأمني تجاه محولات USB ذات المظهر الطبيعي.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-adapter.webp" alt="HAK5 O.MG Adapter" />
+  <img src="/images/products/hak5/omg-adapter.png" alt="HAK5 O.MG Adapter" />
 {{< /gallery >}}
 
 ---

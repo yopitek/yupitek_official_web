@@ -24,7 +24,7 @@ Shark Jack is a compact portable wired network audit tool that automatically exe
 - BashBunny script format compatible
 
 {{< gallery >}}
-  <img src="/images/products/hak5/shark-jack.webp" alt="HAK5 Shark Jack" />
+  <img src="/images/products/hak5/shark-jack.png" alt="HAK5 Shark Jack" />
 {{< /gallery >}}
 
 ---

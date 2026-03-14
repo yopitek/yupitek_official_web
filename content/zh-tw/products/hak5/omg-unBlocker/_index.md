@@ -17,7 +17,7 @@ tags: ["USB 安全", "資料封鎖", "資安研究"]
 O.MG UnBlocker 用於測試 USB 資料封鎖裝置（USB Condom / USB Data Blocker）的有效性，協助資安研究人員評估目前市面上 USB 安全措施是否能有效防止資料傳輸及 HID 注入攻擊。
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-unBlocker.webp" alt="HAK5 O.MG UnBlocker" />
+  <img src="/images/products/hak5/omg-unBlocker.png" alt="HAK5 O.MG UnBlocker" />
 {{< /gallery >}}
 
 ---

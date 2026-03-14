@@ -22,7 +22,7 @@ The ASUS PRIME RTX5080-O16G is the overclocked (OC) version of the PRIME RTX5080
 | Outputs | 3× DisplayPort 2.1 + 1× HDMI 2.1 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/asus-prime-rtx5080-o16g.webp" alt="ASUS PRIME RTX5080-O16G" />
+  <img src="/images/products/graphiccard/asus-prime-rtx5080-o16g.png" alt="ASUS PRIME RTX5080-O16G" />
 {{< /gallery >}}
 
 ---

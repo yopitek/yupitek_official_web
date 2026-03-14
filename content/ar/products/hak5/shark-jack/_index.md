@@ -24,7 +24,7 @@ Shark Jack أداة تدقيق شبكي سلكي محمولة، تُنفِّذ �
 - دعم تنسيق سكريبتات BashBunny
 
 {{< gallery >}}
-  <img src="/images/products/hak5/shark-jack.webp" alt="HAK5 Shark Jack" />
+  <img src="/images/products/hak5/shark-jack.png" alt="HAK5 Shark Jack" />
 {{< /gallery >}}
 
 ---

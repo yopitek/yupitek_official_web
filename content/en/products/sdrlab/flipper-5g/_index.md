@@ -17,7 +17,7 @@ tags: ["Flipper Zero Expansion", "5GHz", "RF Module"]
 The SDRLab Flipper Zero 5G expansion board connects via Flipper Zero's GPIO interface to extend RF capabilities into higher frequency bands, enabling researchers to explore 5 GHz wireless communication protocols.
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-5g.webp" alt="SDRLab Flipper Zero 5G Expansion Board" />
+  <img src="/images/products/sdrlab/flipper-5g.png" alt="SDRLab Flipper Zero 5G Expansion Board" />
 {{< /gallery >}}
 
 ---

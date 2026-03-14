@@ -17,7 +17,7 @@ tags: ["сетевой аудит", "Ethernet", "USB-C", "тестировани
 Shark Jack Cable — это версия Shark Jack в форм-факторе кабеля. Функции сетевого аудита интегрированы в USB-C кабель, который можно напрямую подключить к USB-C порту ноутбука. Данная версия удобнее в переноске и скрытом использовании по сравнению с оригинальным Shark Jack. Функциональность идентична и поддерживает скрипты BashBunny.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/shark-jack-cable.webp" alt="HAK5 Shark Jack Cable" />
+  <img src="/images/products/hak5/shark-jack-cable.png" alt="HAK5 Shark Jack Cable" />
 {{< /gallery >}}
 
 ---

@@ -33,7 +33,7 @@ The UniFi U7 Pro is Ubiquiti's flagship Wi-Fi 7 (IEEE 802.11be) Access Point, su
 - **BeamForming**: Directional beam steering to enhance signal strength at range
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/u7-pro.webp" alt="Ubiquiti UniFi U7 Pro" />
+  <img src="/images/products/ubiquiti/u7-pro.png" alt="Ubiquiti UniFi U7 Pro" />
 {{< /gallery >}}
 
 ---

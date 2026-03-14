@@ -22,7 +22,7 @@ Wave MLO6 — версия Wave MLO5 в диапазоне 6GHz. Преимущ�
 | Применение | Мост точка-точка |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/wave-mlo6.webp" alt="Ubiquiti Wave MLO6" />
+  <img src="/images/products/ubiquiti/wave-mlo6.png" alt="Ubiquiti Wave MLO6" />
 {{< /gallery >}}
 
 ---

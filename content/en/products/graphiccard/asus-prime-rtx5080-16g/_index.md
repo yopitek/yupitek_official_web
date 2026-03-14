@@ -23,7 +23,7 @@ The ASUS PRIME RTX5080-16G features the NVIDIA GeForce RTX 5080 GPU with 16GB GD
 | Power Connector | 16-pin (PCIe 5.0) |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/asus-prime-rtx5080-16g.webp" alt="ASUS PRIME RTX5080-16G" />
+  <img src="/images/products/graphiccard/asus-prime-rtx5080-16g.png" alt="ASUS PRIME RTX5080-16G" />
 {{< /gallery >}}
 
 ---

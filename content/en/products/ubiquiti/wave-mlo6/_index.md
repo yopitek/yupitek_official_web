@@ -22,7 +22,7 @@ The Wave MLO6 is the 6 GHz band variant of the Wave MLO5. By leveraging the lowe
 | Application | Point-to-point bridge |
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/wave-mlo6.webp" alt="Ubiquiti Wave MLO6" />
+  <img src="/images/products/ubiquiti/wave-mlo6.png" alt="Ubiquiti Wave MLO6" />
 {{< /gallery >}}
 
 ---

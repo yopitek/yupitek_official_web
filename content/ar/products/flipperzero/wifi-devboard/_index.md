@@ -28,7 +28,7 @@ WiFi Devboard هو وحدة توسعة Wi-Fi الرسمية لـ Flipper Zero، 
 | البرنامج الثابت | قابل لتحميل Marauder وبرامج ثابتة أخرى من طرف ثالث |
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/wifi-devboard.webp" alt="WiFi Devboard for Flipper Zero" />
+  <img src="/images/products/flipperzero/wifi-devboard.png" alt="WiFi Devboard for Flipper Zero" />
 {{< /gallery >}}
 
 ---

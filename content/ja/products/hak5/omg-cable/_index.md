@@ -33,7 +33,7 @@ O.MG Cable は、市販の一般的な USB ケーブルと外観が全く同じ�
 - 自動消去（Exfiltration）機能
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-cable.webp" alt="HAK5 O.MG Cable" />
+  <img src="/images/products/hak5/omg-cable.png" alt="HAK5 O.MG Cable" />
 {{< /gallery >}}
 
 ---

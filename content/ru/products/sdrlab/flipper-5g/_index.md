@@ -17,7 +17,7 @@ tags: ["расширение Flipper Zero", "5GHz", "RF модуль"]
 Плата расширения SDRLab Flipper Zero 5G подключается через GPIO-интерфейс Flipper Zero и расширяет его функциональность для работы с RF в высокочастотном диапазоне, позволяя исследователям изучать беспроводные протоколы в диапазоне 5GHz.
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-5g.webp" alt="SDRLab Flipper Zero 5G плата расширения" />
+  <img src="/images/products/sdrlab/flipper-5g.png" alt="SDRLab Flipper Zero 5G плата расширения" />
 {{< /gallery >}}
 
 ---

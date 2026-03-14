@@ -17,7 +17,7 @@ tags: ["O.MG", "Firmware", "USB"]
 The O.MG Programmer is the dedicated Firmware flashing tool for O.MG Cable, O.MG Plug, and other O.MG series products. It is used to update device Firmware and configure payload settings, supporting both USB-A and USB-C variants of O.MG products.
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-programmer.webp" alt="HAK5 O.MG Programmer" />
+  <img src="/images/products/hak5/omg-programmer.png" alt="HAK5 O.MG Programmer" />
 {{< /gallery >}}
 
 ---

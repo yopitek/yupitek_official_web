@@ -13,7 +13,7 @@ tags: ["Flipper Zero 擴充", "乙太網路", "網路測試"]
 SDRLab Flipper Zero 以太網路測試模組透過 Flipper Zero GPIO 介面，為主機加入有線乙太網路連線能力，適合需要有線網路連接的測試場景，擴展 Flipper Zero 的有線網路研究功能。
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.webp" alt="SDRLab Flipper Zero 以太網路測試模組" />
+  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero 以太網路測試模組" />
 {{< /gallery >}}
 
 ---

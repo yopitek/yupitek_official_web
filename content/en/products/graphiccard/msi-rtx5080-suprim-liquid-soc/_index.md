@@ -29,7 +29,7 @@ The MSI RTX5080 16G SUPRIM LIQUID SOC is MSI's all-in-one (AIO) liquid-cooled fl
 - Reduces airflow demand inside the chassis
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.webp" alt="MSI RTX5080 16G SUPRIM LIQUID SOC" />
+  <img src="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.png" alt="MSI RTX5080 16G SUPRIM LIQUID SOC" />
 {{< /gallery >}}
 
 ---

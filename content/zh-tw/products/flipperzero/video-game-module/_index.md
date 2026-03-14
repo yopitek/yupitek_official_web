@@ -21,7 +21,7 @@ Video Game Module 是 Flipper Zero 的官方遊戲擴充模組，基於 Raspberr
 | 連接方式 | Flipper Zero GPIO |
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/video-game-module.webp" alt="Video Game Module for Flipper Zero" />
+  <img src="/images/products/flipperzero/video-game-module.png" alt="Video Game Module for Flipper Zero" />
 {{< /gallery >}}
 
 ---

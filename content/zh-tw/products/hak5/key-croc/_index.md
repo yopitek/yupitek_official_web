@@ -25,7 +25,7 @@ Key Croc 是一款串聯於鍵盤與電腦之間的資安研究工具，具備�
 - 支援 SSH 遠端存取
 
 {{< gallery >}}
-  <img src="/images/products/hak5/key-croc.webp" alt="HAK5 Key Croc" />
+  <img src="/images/products/hak5/key-croc.png" alt="HAK5 Key Croc" />
 {{< /gallery >}}
 
 ---

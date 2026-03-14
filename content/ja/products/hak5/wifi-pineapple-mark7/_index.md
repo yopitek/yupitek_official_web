@@ -37,7 +37,7 @@ WiFi Pineapple Mark VII は HAK5 のフラグシップワイヤレスネット�
 - **モジュールシステム**：コミュニティによる豊富な機能拡張モジュール
 
 {{< gallery >}}
-  <img src="/images/products/hak5/wifi-pineapple.webp" alt="HAK5 WiFi Pineapple Mark VII" />
+  <img src="/images/products/hak5/wifi-pineapple.png" alt="HAK5 WiFi Pineapple Mark VII" />
 {{< /gallery >}}
 
 ---

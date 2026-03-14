@@ -31,7 +31,7 @@ The O.MG Cable is physically indistinguishable from a standard USB cable, yet in
 - Exfiltration (self-destruct) function
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-cable.webp" alt="HAK5 O.MG Cable" />
+  <img src="/images/products/hak5/omg-cable.png" alt="HAK5 O.MG Cable" />
 {{< /gallery >}}
 
 ---

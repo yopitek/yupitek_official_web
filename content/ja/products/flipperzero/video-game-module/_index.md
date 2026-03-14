@@ -21,7 +21,7 @@ Video Game Module は Flipper Zero の公式ゲーム拡張モジュールです
 | 接続方式 | Flipper Zero GPIO |
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/video-game-module.webp" alt="Video Game Module for Flipper Zero" />
+  <img src="/images/products/flipperzero/video-game-module.png" alt="Video Game Module for Flipper Zero" />
 {{< /gallery >}}
 
 ---

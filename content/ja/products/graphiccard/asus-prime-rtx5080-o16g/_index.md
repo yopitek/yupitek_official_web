@@ -22,7 +22,7 @@ ASUS PRIME RTX5080-O16G は PRIME RTX5080-16G のオーバークロック（OC�
 | 出力 | 3× DisplayPort 2.1 + 1× HDMI 2.1 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/asus-prime-rtx5080-o16g.webp" alt="ASUS PRIME RTX5080-O16G" />
+  <img src="/images/products/graphiccard/asus-prime-rtx5080-o16g.png" alt="ASUS PRIME RTX5080-O16G" />
 {{< /gallery >}}
 
 ---

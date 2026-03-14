@@ -29,7 +29,7 @@ MSI RTX5080 16G SUPRIM LIQUID SOC は MSI の一体型水冷（AIO）フラッ�
 - ケース内部のエアフロースペースを節約できます
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.webp" alt="MSI RTX5080 16G SUPRIM LIQUID SOC" />
+  <img src="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.png" alt="MSI RTX5080 16G SUPRIM LIQUID SOC" />
 {{< /gallery >}}
 
 ---

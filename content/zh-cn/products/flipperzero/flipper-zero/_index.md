@@ -47,7 +47,7 @@ Flipper Zero 是一款多功能、口袋型无线安全研究工具，集成多�
 - USB-C 数据线 × 1
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/flipper-zero.webp" alt="Flipper Zero" />
+  <img src="/images/products/flipperzero/flipper-zero.png" alt="Flipper Zero" />
 {{< /gallery >}}
 
 ---

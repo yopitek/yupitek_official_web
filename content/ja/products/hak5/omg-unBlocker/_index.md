@@ -19,7 +19,7 @@ tags: ["USB セキュリティ", "データブロッカー", "セキュリティ
 O.MG UnBlocker は、USB データブロッカーデバイス（USB Condom / USB Data Blocker）の有効性を検証するためのツールです。セキュリティ研究者が市販の USB セキュリティ対策製品がデータ転送や HID インジェクション攻撃を実際に防げるかどうかを評価するのに役立ちます。
 
 {{< gallery >}}
-  <img src="/images/products/hak5/omg-unBlocker.webp" alt="HAK5 O.MG UnBlocker" />
+  <img src="/images/products/hak5/omg-unBlocker.png" alt="HAK5 O.MG UnBlocker" />
 {{< /gallery >}}
 
 ---

@@ -24,7 +24,7 @@ Packet Squirrel Mark II is a transparent inline network man-in-the-middle testin
 - **Network Man-in-the-Middle**: Transparent proxy mode
 
 {{< gallery >}}
-  <img src="/images/products/hak5/packet-squirrel.webp" alt="HAK5 Packet Squirrel Mark II" />
+  <img src="/images/products/hak5/packet-squirrel.png" alt="HAK5 Packet Squirrel Mark II" />
 {{< /gallery >}}
 
 ---

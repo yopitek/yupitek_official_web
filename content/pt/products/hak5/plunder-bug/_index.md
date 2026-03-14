@@ -26,7 +26,7 @@ O Plunder Bug LAN Tap é um interceptador passivo de rede Ethernet, conectado em
 | Software Compatível | Wireshark, tcpdump e outros |
 
 {{< gallery >}}
-  <img src="/images/products/hak5/plunder-bug.webp" alt="HAK5 Plunder Bug LAN Tap" />
+  <img src="/images/products/hak5/plunder-bug.png" alt="HAK5 Plunder Bug LAN Tap" />
 {{< /gallery >}}
 
 ---

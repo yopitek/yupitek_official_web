@@ -47,7 +47,7 @@ Flipper Zero は、複数のワイヤレス通信プロトコルを1台に統合
 - USB-C ケーブル × 1
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/flipper-zero.webp" alt="Flipper Zero" />
+  <img src="/images/products/flipperzero/flipper-zero.png" alt="Flipper Zero" />
 {{< /gallery >}}
 
 ---

@@ -26,7 +26,7 @@ WiFi Pineapple Enterprise は、エンタープライズ環境向けに設計さ
 - 802.11 a/b/g/n/ac デュアルバンド対応
 
 {{< gallery >}}
-  <img src="/images/products/hak5/wifi-pineapple-enterprise.webp" alt="HAK5 WiFi Pineapple Enterprise" />
+  <img src="/images/products/hak5/wifi-pineapple-enterprise.png" alt="HAK5 WiFi Pineapple Enterprise" />
 {{< /gallery >}}
 
 ---

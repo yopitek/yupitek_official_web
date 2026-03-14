@@ -26,7 +26,7 @@ WiFi Devboard — официальный Wi-Fi модуль расширения
 | Прошивка | поддержка сторонних прошивок Marauder и др. |
 
 {{< gallery >}}
-  <img src="/images/products/flipperzero/wifi-devboard.webp" alt="WiFi Devboard для Flipper Zero" />
+  <img src="/images/products/flipperzero/wifi-devboard.png" alt="WiFi Devboard для Flipper Zero" />
 {{< /gallery >}}
 
 ---

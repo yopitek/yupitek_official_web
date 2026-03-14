@@ -42,7 +42,7 @@ Con el controlador UniFi Network integrado, el Cloud Gateway Ultra elimina la ne
 - Compatible con UniFi Protect para gestión de cámaras de seguridad con almacenamiento en HDD externo USB
 
 {{< gallery >}}
-  <img src="/images/products/ubiquiti/cloud-gateway-ultra.webp" alt="Ubiquiti UniFi Cloud Gateway Ultra" />
+  <img src="/images/products/ubiquiti/cloud-gateway-ultra.png" alt="Ubiquiti UniFi Cloud Gateway Ultra" />
 {{< /gallery >}}
 
 ---

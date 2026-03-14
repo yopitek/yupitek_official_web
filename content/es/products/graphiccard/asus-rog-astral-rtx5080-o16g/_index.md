@@ -20,7 +20,7 @@ ASUS ROG ASTRAL RTX5080 O16G es la tarjeta gráfica insignia de la serie ROG, qu
 | Interfaz | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/asus-rog-astral-rtx5080-o16g.webp" alt="ASUS ROG ASTRAL RTX5080 O16G" />
+  <img src="/images/products/graphiccard/asus-rog-astral-rtx5080-o16g.png" alt="ASUS ROG ASTRAL RTX5080 O16G" />
 {{< /gallery >}}
 
 ---

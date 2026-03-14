@@ -17,7 +17,7 @@ tags: ["Expansão Flipper Zero", "NRF24", "2.4GHz", "MouseJack"]
 O módulo SDRLab Flipper Zero NRF24 integra o transceptor sem fio Nordic NRF24L01+ de 2.4GHz, conectado via interface GPIO do Flipper Zero. Permite explorar protocolos de comunicação de dispositivos sem fio 2.4GHz não-Bluetooth, como mouses e teclados (ex.: pesquisa MouseJack), sendo adequado para pesquisa de segurança sem fio IoT.
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-nrf24.webp" alt="SDRLab Flipper Zero Módulo NRF24" />
+  <img src="/images/products/sdrlab/flipper-nrf24.png" alt="SDRLab Flipper Zero Módulo NRF24" />
 {{< /gallery >}}
 
 ---

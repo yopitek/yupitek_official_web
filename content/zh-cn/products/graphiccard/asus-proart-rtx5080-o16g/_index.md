@@ -22,7 +22,7 @@ ASUS ProArt RTX5080 O16G 是专为创作者设计的 RTX 5080 显卡，在标准
 | 接口 | PCIe 5.0 x16 |
 
 {{< gallery >}}
-  <img src="/images/products/graphiccard/asus-proart-rtx5080-o16g.webp" alt="ASUS ProArt RTX5080 O16G" />
+  <img src="/images/products/graphiccard/asus-proart-rtx5080-o16g.png" alt="ASUS ProArt RTX5080 O16G" />
 {{< /gallery >}}
 
 ---

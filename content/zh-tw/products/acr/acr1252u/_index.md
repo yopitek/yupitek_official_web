@@ -25,7 +25,7 @@ ACR1252U 是 ACS 取得 NFC Forum 認證的 USB NFC 讀卡機，支援四種 NFC
 | 標準 | PC/SC 相容 |
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr1252u.webp" alt="ACS ACR1252U NFC 讀卡機" />
+  <img src="/images/products/acr/acr1252u.png" alt="ACS ACR1252U NFC 讀卡機" />
 {{< /gallery >}}
 
 ---

@@ -36,13 +36,17 @@ dir: rtl
 | AWUS036EACS | RTL8811CU | — | — |
 | AWUS036ACHM | MT7610U | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
-## تحديثات البرنامج الثابت HAK5
+## موارد HAK5
 
-تفضل بزيارة [الموقع الرسمي لـ HAK5](https://hak5.org) للحصول على أحدث البرامج الثابتة.
+| المورد | الرابط |
+|------|------|
+| وثائق HAK5 عبر الإنترنت | [docs.hak5.org](https://docs.hak5.org/hak5-docs/) |
+| تنزيلات برامج HAK5 | [downloads.hak5.org](https://downloads.hak5.org/) |
+| منتدى مجتمع HAK5 | [hak5.org/community](https://hak5.org/pages/community) |
 
-## البرنامج الثابت Flipper Zero
+## برنامج Flipper Zero
 
-تفضل بزيارة [صفحة التحديث الرسمية لـ Flipper Zero](https://flipperzero.one) للحصول على أحدث البرامج الثابتة.
+تفضل بزيارة [صفحة التنزيل الرسمية لـ Flipper Zero](https://flipper.net/pages/downloads) للحصول على أحدث البرامج.
 
 ## Ubiquiti UniFi
 

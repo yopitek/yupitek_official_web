@@ -35,13 +35,17 @@ showTableOfContents: true
 | AWUS036EACS | RTL8811CU | — | — |
 | AWUS036ACHM | MT7610U | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
-## HAK5 ファームウェアアップデート
+## HAK5 技術リソース
 
-[HAK5公式サイト](https://hak5.org)から各デバイスの最新ファームウェアを取得してください。
+| リソース | リンク |
+|------|------|
+| HAK5 オンラインドキュメント | [docs.hak5.org](https://docs.hak5.org/hak5-docs/) |
+| HAK5 ソフトウェアダウンロード | [downloads.hak5.org](https://downloads.hak5.org/) |
+| HAK5 コミュニティフォーラム | [hak5.org/community](https://hak5.org/pages/community) |
 
-## Flipper Zero ファームウェア
+## Flipper Zero ソフトウェア
 
-[Flipper Zero公式アップデートページ](https://flipperzero.one)から最新ファームウェアを取得してください。
+最新ソフトウェアは[Flipper Zero 公式ダウンロードページ](https://flipper.net/pages/downloads)からダウンロードしてください。
 
 ## Ubiquiti UniFi
 

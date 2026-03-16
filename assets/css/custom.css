@@ -1,3 +1,11 @@
+/* ── Google Fonts: Huninn for Traditional & Simplified Chinese ── */
+@import url('https://fonts.googleapis.com/css2?family=Huninn&display=swap');
+
+html[lang="zh-TW"] body,
+html[lang="zh-CN"] body {
+  font-family: 'Huninn', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+}
+
 /* ── Yopitek Brand Colors ── */
 :root {
   --brand-cyan:       #29ABE2;

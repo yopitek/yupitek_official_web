@@ -35,13 +35,17 @@ Always download drivers from official brand websites to ensure security and comp
 | AWUS036EACS | RTL8811CU | — | — |
 | AWUS036ACHM | MT7610U | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
-## HAK5 Firmware Updates
+## HAK5 Resources
 
-Visit the [HAK5 official website](https://hak5.org) for the latest firmware for each device.
+| Resource | Link |
+|------|------|
+| HAK5 Online Documentation | [docs.hak5.org](https://docs.hak5.org/hak5-docs/) |
+| HAK5 Software Downloads | [downloads.hak5.org](https://downloads.hak5.org/) |
+| HAK5 Community Forum | [hak5.org/community](https://hak5.org/pages/community) |
 
-## Flipper Zero Firmware
+## Flipper Zero Software
 
-Visit the [Flipper Zero official update page](https://flipperzero.one) for the latest firmware.
+Visit the [Flipper Zero official download page](https://flipper.net/pages/downloads) for the latest software.
 
 ## Ubiquiti UniFi
 

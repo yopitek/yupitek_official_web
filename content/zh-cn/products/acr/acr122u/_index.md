@@ -35,7 +35,7 @@ ACR122U 是 ACS 最广为人知的 USB NFC 读卡机，采用 13.56 MHz 非接�
 - FeliCa 212 / 424 kbps
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr122u.png" alt="ACS ACR122U NFC 读卡机" />
+  <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC 读卡机" />
 {{< /gallery >}}
 
 ---

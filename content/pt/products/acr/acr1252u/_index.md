@@ -25,8 +25,21 @@ ACR1252U é o Leitor NFC USB da ACS certificado pelo NFC Forum, com suporte a qu
 | Padrão | Compatível com PC/SC |
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr1252u.png" alt="ACS ACR1252U Leitor NFC" />
+  <img src="/images/products/acr/acr1252u.webp" alt="ACS ACR1252U Leitor NFC" />
 {{< /gallery >}}
+
+## Recursos Oficiais
+
+| Recurso | Link |
+|---------|------|
+| Página oficial ACS ACR1252U | [acs.com.hk](https://www.acs.com.hk/en/products/342/acr1252u-usb-nfc-reader-iii-nfc-forum-certified-reader/) |
+
+## Suporte a Software de Terceiros
+
+| Software | Descrição | Link |
+|----------|-----------|------|
+| GoToTags | Ferramenta de gerenciamento de etiquetas NFC | [gototags.com](https://gototags.com) |
+| wakdev NFC Tools Desktop | Ferramenta NFC para PC/Mac | [wakdev.com](https://www.wakdev.com/fr/apps/nfc-tools-pc-mac.html) |
 
 ---
 

@@ -4,8 +4,12 @@
   {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
 
   {{/* Hero — per-page featureimage support for list pages */}}
+  {{/* Direct <img> render bypasses resources.Get, which only works for assets/ not static/ */}}
   {{ if .Params.featureimage }}
-    {{ partial "hero/basic.html" . }}
+    <div class="overflow-hidden rounded-xl mb-6" style="max-height: 280px;">
+      <img src="{{ .Params.featureimage }}" alt="{{ .Title }}" loading="eager" decoding="async"
+           style="width: 100%; height: 280px; object-fit: cover; display: block;">
+    </div>
   {{ else if site.Params.list.showHero | default false }}
     {{ $heroStyle := print "hero/" site.Params.list.heroStyle ".html" }}
     {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}

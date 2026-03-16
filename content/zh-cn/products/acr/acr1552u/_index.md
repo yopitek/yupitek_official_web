@@ -24,8 +24,20 @@ ACR1552U 是 ACS 第四代 USB NFC 读卡机，在前代基础上增强了多协
 | 标准 | PC/SC 兼容 |
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr1552u.png" alt="ACS ACR1552U NFC 读卡机" />
+  <img src="/images/products/acr/acr1552u.webp" alt="ACS ACR1552U NFC 读卡机" />
 {{< /gallery >}}
+
+## 官方资源
+
+| 资源 | 链接 |
+|------|------|
+| ACS ACR1552U 官方产品页面 | [acs.com.hk](https://www.acs.com.hk/en/products/575/acr1552u-usb-nfc-reader-iv/) |
+
+## 第三方软件支持
+
+| 软件 | 说明 | 链接 |
+|------|------|------|
+| wakdev NFC Tools Desktop | PC/Mac NFC 管理工具 | [wakdev.com](https://www.wakdev.com/fr/apps/nfc-tools-pc-mac.html) |
 
 ---
 

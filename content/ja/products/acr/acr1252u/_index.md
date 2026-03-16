@@ -25,8 +25,21 @@ ACR1252U は ACS が NFC Forum 認定を取得した USB NFC カードリーダ�
 | 規格 | PC/SC 互換 |
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr1252u.png" alt="ACS ACR1252U NFC カードリーダー" />
+  <img src="/images/products/acr/acr1252u.webp" alt="ACS ACR1252U NFC カードリーダー" />
 {{< /gallery >}}
+
+## 公式リソース
+
+| リソース | リンク |
+|----------|--------|
+| ACS ACR1252U 製品ページ | [acs.com.hk](https://www.acs.com.hk/en/products/342/acr1252u-usb-nfc-reader-iii-nfc-forum-certified-reader/) |
+
+## サードパーティソフトウェアサポート
+
+| ソフトウェア | 説明 | リンク |
+|--------------|------|--------|
+| GoToTags | NFC タグ管理ツール | [gototags.com](https://gototags.com) |
+| wakdev NFC Tools Desktop | PC/Mac 向け NFC 管理ツール | [wakdev.com](https://www.wakdev.com/fr/apps/nfc-tools-pc-mac.html) |
 
 ---
 

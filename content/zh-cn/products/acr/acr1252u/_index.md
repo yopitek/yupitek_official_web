@@ -25,8 +25,21 @@ ACR1252U 是 ACS 取得 NFC Forum 认证的 USB NFC 读卡机，支持四种 NFC
 | 标准 | PC/SC 兼容 |
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr1252u.png" alt="ACS ACR1252U NFC 读卡机" />
+  <img src="/images/products/acr/acr1252u.webp" alt="ACS ACR1252U NFC 读卡机" />
 {{< /gallery >}}
+
+## 官方资源
+
+| 资源 | 链接 |
+|------|------|
+| ACS ACR1252U 官方产品页面 | [acs.com.hk](https://www.acs.com.hk/en/products/342/acr1252u-usb-nfc-reader-iii-nfc-forum-certified-reader/) |
+
+## 第三方软件支持
+
+| 软件 | 说明 | 链接 |
+|------|------|------|
+| GoToTags | NFC 标签管理工具 | [gototags.com](https://gototags.com) |
+| wakdev NFC Tools Desktop | PC/Mac NFC 管理工具 | [wakdev.com](https://www.wakdev.com/fr/apps/nfc-tools-pc-mac.html) |
 
 ---
 

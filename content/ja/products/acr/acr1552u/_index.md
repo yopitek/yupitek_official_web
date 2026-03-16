@@ -24,8 +24,20 @@ ACR1552U は ACS の第 4 世代 USB NFC カードリーダーです。前世代
 | 規格 | PC/SC 互換 |
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr1552u.png" alt="ACS ACR1552U NFC カードリーダー" />
+  <img src="/images/products/acr/acr1552u.webp" alt="ACS ACR1552U NFC カードリーダー" />
 {{< /gallery >}}
+
+## 公式リソース
+
+| リソース | リンク |
+|----------|--------|
+| ACS ACR1552U 製品ページ | [acs.com.hk](https://www.acs.com.hk/en/products/575/acr1552u-usb-nfc-reader-iv/) |
+
+## サードパーティソフトウェアサポート
+
+| ソフトウェア | 説明 | リンク |
+|--------------|------|--------|
+| wakdev NFC Tools Desktop | PC/Mac 向け NFC 管理ツール | [wakdev.com](https://www.wakdev.com/fr/apps/nfc-tools-pc-mac.html) |
 
 ---
 

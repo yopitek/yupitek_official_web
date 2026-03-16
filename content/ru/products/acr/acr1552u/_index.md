@@ -24,8 +24,20 @@ ACR1552U — четвёртое поколение USB NFC считывател�
 | Стандарт | совместим с PC/SC |
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr1552u.png" alt="ACS ACR1552U NFC считыватель" />
+  <img src="/images/products/acr/acr1552u.webp" alt="ACS ACR1552U NFC считыватель" />
 {{< /gallery >}}
+
+## Официальные ресурсы
+
+| Ресурс | Ссылка |
+|--------|--------|
+| Официальная страница ACS ACR1552U | [acs.com.hk](https://www.acs.com.hk/en/products/575/acr1552u-usb-nfc-reader-iv/) |
+
+## Поддержка стороннего программного обеспечения
+
+| Программа | Описание | Ссылка |
+|-----------|----------|--------|
+| wakdev NFC Tools Desktop | Инструмент NFC для ПК/Mac | [wakdev.com](https://www.wakdev.com/fr/apps/nfc-tools-pc-mac.html) |
 
 ---
 

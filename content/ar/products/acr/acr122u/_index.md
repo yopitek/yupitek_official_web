@@ -37,7 +37,7 @@ ACR122U هو قارئ بطاقات NFC عبر USB الأكثر شهرةً من A
 - FeliCa 212 / 424 kbps
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr122u.png" alt="ACS ACR122U قارئ بطاقات NFC" />
+  <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U قارئ بطاقات NFC" />
 {{< /gallery >}}
 
 ---

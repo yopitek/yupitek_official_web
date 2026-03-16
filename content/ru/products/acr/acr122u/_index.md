@@ -35,7 +35,7 @@ ACR122U — один из наиболее известных USB NFC считы
 - FeliCa 212 / 424 кбит/с
 
 {{< gallery >}}
-  <img src="/images/products/acr/acr122u.png" alt="ACS ACR122U NFC считыватель" />
+  <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC считыватель" />
 {{< /gallery >}}
 
 ---

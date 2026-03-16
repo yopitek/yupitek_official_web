@@ -19,7 +19,7 @@ heroStyle: "basic"
 - **Ubiquiti UniFi** — 企业级无线网络系统
 - **NVIDIA GeForce RTX 5080** — 高性能显卡
 - **SDRLAB** — 软件定义无线电设备
-- **ACR** — 智能卡读卡机
+- **ACS** — 智能卡读卡机
 
 ### IT_Application 解决方案
 
@@ -33,11 +33,3 @@ heroStyle: "basic"
 **服务客群**：台北市政府、国防单位、博物馆、大学、企业品牌
 
 ---
-
-## 联系我们
-
-**Email**: eason@yupitek.com
-**电话**: 886-2-87325338 / 0926-881156
-**地址**: No.34, Lane 72, Fuyang St., Taipei, Taiwan
-
-立即[联系我们](/zh-cn/contact/)，打造您的专属视觉体验空间。

@@ -25,7 +25,7 @@ Distribuimos marcas tecnológicas de clase mundial a empresas, instituciones aca
 - **Ubiquiti UniFi** — Sistemas Wi-Fi empresariales
 - **NVIDIA GeForce RTX 5080** — Tarjetas gráficas de alto rendimiento
 - **SDRLAB** — Equipos de Radio Definida por Software (SDR)
-- **ACR** — Lectores de tarjetas inteligentes
+- **ACS** — Lectores de tarjetas inteligentes
 
 ---
 
@@ -45,11 +45,3 @@ Ofrecemos servicios profesionales integrales en planificación, diseño e integr
 Gobierno de la Ciudad de Taipéi, organizaciones de defensa, museos, universidades y marcas corporativas
 
 ---
-
-## Contacto
-
-Estamos a su disposición para cualquier consulta. Visite nuestra [página de contacto](/es/contact/).
-
-- **Correo electrónico:** [eason@yupitek.com](mailto:eason@yupitek.com)
-- **Teléfono:** +886-2-87325338
-- **Dirección:** No.34, Lane 72, Fuyang St., Taipéi, Taiwán

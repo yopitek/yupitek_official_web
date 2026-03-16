@@ -6,7 +6,7 @@ error.404.description: "К сожалению, эта страница не су
 footer.copyright: "© {{ .Year }} Yopitek Ltd · Все права защищены · Тайбэй, Тайвань"
 header.open_menu: "Открыть меню"
 header.close_menu: "Закрыть меню"
-list.no_articles: "Статей пока нет"
+list.no_articles: ""
 pagination.next: "Следующая"
 pagination.prev: "Предыдущая"
 search.open_button_title: "Поиск"

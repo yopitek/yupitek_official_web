@@ -51,7 +51,7 @@ footer:
 
 list:
   externalurl_title: "Link para site externo"
-  no_articles: "Não tem artigos para listar aqui ainda."
+list.no_articles: ""
 
 nav:
   scroll_to_top_title: "Ir para o topo"

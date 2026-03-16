@@ -19,7 +19,7 @@ Authorized distributor for globally recognized brands, supplying enterprises, ac
 - **Ubiquiti UniFi** — Enterprise-grade wireless networking systems
 - **NVIDIA GeForce RTX 5080** — High-performance graphics cards
 - **SDRLAB** — Software-Defined Radio (SDR) equipment
-- **ACR** — Smart card readers
+- **ACS** — Smart card readers
 
 ### IT_Application — Projection Integration Solutions
 
@@ -33,11 +33,3 @@ End-to-end planning, design, and integration of professional projection systems:
 **Clients served**: Taipei City Government, Ministry of National Defense units, museums, universities, and corporate brands
 
 ---
-
-## Contact Us
-
-**Email**: eason@yupitek.com
-**Tel**: 886-2-87325338 / 0926-881156
-**Address**: No.34, Lane 72, Fuyang St., Taipei, Taiwan
-
-[Contact us](/en/contact/) today to design your custom immersive visual experience.

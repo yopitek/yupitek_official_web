@@ -25,7 +25,7 @@ Yopitek Ltdは、台湾を拠点とするテクノロジー企業です。**IT�
 - **Ubiquiti UniFi** — エンタープライズ向けWi-Fiシステム
 - **NVIDIA GeForce RTX 5080** — 高性能グラフィックスカード
 - **SDRLAB** — ソフトウェア無線（SDR）機器
-- **ACR** — スマートカードリーダー
+- **ACS** — スマートカードリーダー
 
 ---
 
@@ -45,11 +45,3 @@ Yopitek Ltdは、台湾を拠点とするテクノロジー企業です。**IT�
 台北市政府、国防関連機関、博物館・美術館、大学・研究機関、法人ブランド
 
 ---
-
-## お問い合わせ
-
-[お問い合わせページ](/ja/contact/)からお気軽にご連絡ください。
-
-- **メール:** [eason@yupitek.com](mailto:eason@yupitek.com)
-- **電話:** +886-2-87325338
-- **住所:** No.34, Lane 72, Fuyang St., Taipei, Taiwan

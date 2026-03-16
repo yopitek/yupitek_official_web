@@ -46,7 +46,7 @@
     weight   = 26
 
   [[main]]
-    name     = "ACR"
+    name     = "ACS"
     pageRef  = "/products/acr"
     parent   = "產品"
     weight   = 27

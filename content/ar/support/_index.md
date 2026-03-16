@@ -1,46 +1,53 @@
 ---
-title: "الدعم الفني وتنزيل برامج التشغيل"
-description: "مركز تنزيل برامج التشغيل والبرامج الثابتة الرسمية لعلامات Yopitek التجارية. روابط تنزيل ALFA Network وHAK5 وFlipper Zero وUbiquiti."
+title: "الدعم التقني وتنزيل برامج التشغيل"
+description: "مركز تنزيل برامج التشغيل الرسمي لمنتجات ALFA Network وHAK5 وFlipper Zero وUbiquiti."
 date: 2026-03-12
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
+dir: rtl
 ---
 
-## مركز تنزيل برامج التشغيل
-
-فيما يلي روابط تنزيل برامج التشغيل والبرامج الثابتة الرسمية لكل علامة تجارية. يرجى زيارة الموقع الرسمي لكل علامة للحصول على أحدث إصدار.
+فيما يلي روابط تنزيل برامج التشغيل والبرامج الثابتة الرسمية. يرجى زيارة الموقع الرسمي لكل علامة تجارية للحصول على أحدث الإصدارات.
 
 {{< alert "circle-info" >}}
-تأكد دائمًا من تنزيل برامج التشغيل من المواقع الرسمية للعلامات التجارية لضمان الأمان والتوافق.
+تنزيل برامج التشغيل دائماً من المواقع الرسمية للعلامات التجارية لضمان الأمان والتوافق.
 {{< /alert >}}
 
 ## برامج تشغيل ALFA Network
 
-| الطراز | الشريحة | التنزيل الرسمي |
-|--------|---------|----------------|
-| AWUS036ACM | MT7612U | [صفحة التنزيل alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036ACHM | MT7610U | [صفحة التنزيل alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036ACS | RTL8811AU | [صفحة التنزيل alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036AX | RTL8832BU | [صفحة التنزيل alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036AXER | RTL8832BU | [صفحة التنزيل alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036AXM | MT7921AUN | [صفحة التنزيل alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036AXML | MT7921AUN | [صفحة التنزيل alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036NHV | — | [صفحة التنزيل alfa.com.tw](https://www.alfa.com.tw) |
+### سلسلة Wi-Fi 6E
 
-## تحديثات البرامج الثابتة HAK5
+| Model | Chipset | تنزيل برنامج التشغيل | الوثائق الرسمية |
+|-------|---------|------|------|
+| AWUS036AXML | MT7921AUN | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXML) | — |
+| AWUS036AXM | MT7921AUN | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXM) | — |
+| AWUS036AX | RTL8832BU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AX) | — |
+| AWUS036AXER | RTL8832BU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXER) | — |
 
-تفضل بزيارة [الموقع الرسمي لـ HAK5](https://hak5.org) للحصول على أحدث البرامج الثابتة لكل جهاز.
+### سلسلة Wi-Fi 5
 
-## البرامج الثابتة لـ Flipper Zero
+| Model | Chipset | تنزيل برنامج التشغيل | الوثائق الرسمية |
+|-------|---------|------|------|
+| AWUS1900 | RTL8814AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS1900) | [Docs](https://docs.alfa.com.tw/Product/AWUS1900/) |
+| AWUS036ACH | RTL8812AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACH) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACH/) |
+| AWUS036ACM | MT7612U | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
+| AWUS036ACS | RTL8811AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
+| AWUS036EACS | RTL8811CU | — | — |
+| AWUS036ACHM | MT7610U | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
-تفضل بزيارة [صفحة تحديث Flipper Zero الرسمية](https://flipperzero.one) للحصول على أحدث البرامج الثابتة.
+## تحديثات البرنامج الثابت HAK5
+
+تفضل بزيارة [الموقع الرسمي لـ HAK5](https://hak5.org) للحصول على أحدث البرامج الثابتة.
+
+## البرنامج الثابت Flipper Zero
+
+تفضل بزيارة [صفحة التحديث الرسمية لـ Flipper Zero](https://flipperzero.one) للحصول على أحدث البرامج الثابتة.
 
 ## Ubiquiti UniFi
 
-تفضل بزيارة [مركز تنزيل Ubiquiti الرسمي](https://www.ui.com/download/) للحصول على أحدث البرامج الثابتة وواجهات الإدارة.
+تفضل بزيارة [مركز التنزيل الرسمي لـ Ubiquiti](https://www.ui.com/download/) للحصول على أحدث البرامج الثابتة.
 
-## الاستفسار التقني
+## استفسارات الدعم التقني
 
-إذا كنت بحاجة إلى مساعدة في تثبيت برامج التشغيل أو لديك استفسار تقني، يرجى [التواصل معنا](/ar/contact/).
+للحصول على مساعدة في تثبيت برامج التشغيل أو الاستفسارات التقنية، يرجى [التواصل معنا](/ar/contact/).

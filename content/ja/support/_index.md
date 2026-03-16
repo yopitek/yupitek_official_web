@@ -1,45 +1,52 @@
 ---
 title: "テクニカルサポート・ドライバーダウンロード"
-description: "Yopitek取扱ブランドの公式ドライバー・ファームウェアダウンロードセンター。ALFA Network、HAK5、Flipper Zero、Ubiquiti の最新ドライバーダウンロードリンク。"
+description: "Yupitek取扱ブランドの公式ドライバーダウンロードセンター。ALFA Network、HAK5、Flipper Zero、Ubiquitiの公式ドライバー・ファームウェアリンク。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 ---
 
-## ドライバーダウンロードセンター
-
-各ブランドの公式ドライバー・ファームウェアダウンロードリンクをご案内します。最新バージョンは各ブランド公式サイトよりダウンロードしてください。
+以下は各ブランドの公式ドライバー・ファームウェアダウンロードリンクです。最新バージョンは各ブランドの公式サイトをご確認ください。
 
 {{< alert "circle-info" >}}
-セキュリティと互換性を確保するため、必ず各ブランドの公式サイトからドライバーをダウンロードしてください。
+セキュリティと互換性を確保するため、必ず公式ブランドサイトからドライバーをダウンロードしてください。
 {{< /alert >}}
 
 ## ALFA Network ドライバー
 
-| モデル | チップセット | 公式ダウンロード |
-|--------|-------------|----------------|
-| AWUS036ACM | MT7612U | [alfa.com.tw ドライバーページ](https://www.alfa.com.tw) |
-| AWUS036ACHM | MT7610U | [alfa.com.tw ドライバーページ](https://www.alfa.com.tw) |
-| AWUS036ACS | RTL8811AU | [alfa.com.tw ドライバーページ](https://www.alfa.com.tw) |
-| AWUS036AX | RTL8832BU | [alfa.com.tw ドライバーページ](https://www.alfa.com.tw) |
-| AWUS036AXER | RTL8832BU | [alfa.com.tw ドライバーページ](https://www.alfa.com.tw) |
-| AWUS036AXM | MT7921AUN | [alfa.com.tw ドライバーページ](https://www.alfa.com.tw) |
-| AWUS036AXML | MT7921AUN | [alfa.com.tw ドライバーページ](https://www.alfa.com.tw) |
-| AWUS036NHV | — | [alfa.com.tw ドライバーページ](https://www.alfa.com.tw) |
+### Wi-Fi 6E シリーズ
+
+| Model | Chipset | ドライバーダウンロード | 公式ドキュメント |
+|-------|---------|------|------|
+| AWUS036AXML | MT7921AUN | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXML) | — |
+| AWUS036AXM | MT7921AUN | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXM) | — |
+| AWUS036AX | RTL8832BU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AX) | — |
+| AWUS036AXER | RTL8832BU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXER) | — |
+
+### Wi-Fi 5 シリーズ
+
+| Model | Chipset | ドライバーダウンロード | 公式ドキュメント |
+|-------|---------|------|------|
+| AWUS1900 | RTL8814AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS1900) | [Docs](https://docs.alfa.com.tw/Product/AWUS1900/) |
+| AWUS036ACH | RTL8812AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACH) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACH/) |
+| AWUS036ACM | MT7612U | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
+| AWUS036ACS | RTL8811AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
+| AWUS036EACS | RTL8811CU | — | — |
+| AWUS036ACHM | MT7610U | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
 ## HAK5 ファームウェアアップデート
 
-[HAK5 公式サイト](https://hak5.org) から各デバイスの最新ファームウェアを入手してください。
+[HAK5公式サイト](https://hak5.org)から各デバイスの最新ファームウェアを取得してください。
 
 ## Flipper Zero ファームウェア
 
-[Flipper Zero 公式アップデートページ](https://flipperzero.one) から最新ファームウェアを入手してください。
+[Flipper Zero公式アップデートページ](https://flipperzero.one)から最新ファームウェアを取得してください。
 
 ## Ubiquiti UniFi
 
-[Ubiquiti 公式ダウンロードセンター](https://www.ui.com/download/) から最新ファームウェアと管理インターフェースを入手してください。
+[Ubiquiti公式ダウンロードセンター](https://www.ui.com/download/)から最新ファームウェアと管理ソフトを取得してください。
 
-## テクニカルサポート
+## 技術サポートのお問い合わせ
 
-ドライバーのインストールや技術的なご質問は[お問い合わせ](/ja/contact/)ください。
+ドライバーインストールのサポートや技術的なご質問は、[お問い合わせ](/ja/contact/)ください。

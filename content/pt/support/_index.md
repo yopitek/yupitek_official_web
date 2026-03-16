@@ -1,45 +1,52 @@
 ---
 title: "Suporte Técnico e Download de Drivers"
-description: "Central de download de drivers e firmware oficiais das marcas Yopitek. ALFA Network, HAK5, Flipper Zero e Ubiquiti — links de download oficiais."
+description: "Centro oficial de download de drivers da Yupitek para ALFA Network, HAK5, Flipper Zero e Ubiquiti."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 ---
 
-## Central de Download de Drivers
-
-Abaixo estão os links de download de drivers e firmware oficiais de cada marca. Acesse o site oficial de cada marca para obter a versão mais recente.
+A seguir estão os links de download de drivers e firmware oficiais. Visite o site oficial de cada marca para obter as versões mais recentes.
 
 {{< alert "circle-info" >}}
-Sempre baixe os drivers dos sites oficiais de cada marca para garantir segurança e compatibilidade.
+Sempre baixe drivers dos sites oficiais das marcas para garantir segurança e compatibilidade.
 {{< /alert >}}
 
 ## Drivers ALFA Network
 
-| Modelo | Chipset | Download Oficial |
-|--------|---------|----------------|
-| AWUS036ACM | MT7612U | [Página de drivers alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036ACHM | MT7610U | [Página de drivers alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036ACS | RTL8811AU | [Página de drivers alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036AX | RTL8832BU | [Página de drivers alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036AXER | RTL8832BU | [Página de drivers alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036AXM | MT7921AUN | [Página de drivers alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036AXML | MT7921AUN | [Página de drivers alfa.com.tw](https://www.alfa.com.tw) |
-| AWUS036NHV | — | [Página de drivers alfa.com.tw](https://www.alfa.com.tw) |
+### Série Wi-Fi 6E
+
+| Model | Chipset | Download de Drivers | Documentação Oficial |
+|-------|---------|------|------|
+| AWUS036AXML | MT7921AUN | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXML) | — |
+| AWUS036AXM | MT7921AUN | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXM) | — |
+| AWUS036AX | RTL8832BU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AX) | — |
+| AWUS036AXER | RTL8832BU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXER) | — |
+
+### Série Wi-Fi 5
+
+| Model | Chipset | Download de Drivers | Documentação Oficial |
+|-------|---------|------|------|
+| AWUS1900 | RTL8814AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS1900) | [Docs](https://docs.alfa.com.tw/Product/AWUS1900/) |
+| AWUS036ACH | RTL8812AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACH) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACH/) |
+| AWUS036ACM | MT7612U | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
+| AWUS036ACS | RTL8811AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
+| AWUS036EACS | RTL8811CU | — | — |
+| AWUS036ACHM | MT7610U | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
 ## Atualizações de Firmware HAK5
 
-Acesse o [site oficial do HAK5](https://hak5.org) para obter o firmware mais recente de cada dispositivo.
+Visite o [site oficial do HAK5](https://hak5.org) para obter o firmware mais recente de cada dispositivo.
 
-## Firmware do Flipper Zero
+## Firmware Flipper Zero
 
-Acesse a [página oficial de atualização do Flipper Zero](https://flipperzero.one) para obter o firmware mais recente.
+Visite a [página oficial de atualização do Flipper Zero](https://flipperzero.one) para obter o firmware mais recente.
 
 ## Ubiquiti UniFi
 
-Acesse o [centro de downloads oficial da Ubiquiti](https://www.ui.com/download/) para obter o firmware mais recente e as interfaces de gerenciamento.
+Visite o [centro de download oficial da Ubiquiti](https://www.ui.com/download/) para o firmware e software de gerenciamento mais recentes.
 
-## Consultas Técnicas
+## Consultas de Suporte Técnico
 
-Se precisar de ajuda com a instalação de drivers ou tiver dúvidas técnicas, [entre em contato conosco](/pt/contact/).
+Para assistência na instalação de drivers ou consultas técnicas, [fale conosco](/pt/contact/).

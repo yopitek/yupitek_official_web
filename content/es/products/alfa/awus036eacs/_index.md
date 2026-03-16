@@ -1,32 +1,48 @@
 ---
-title: "ALFA AWUS036EACS"
-description: "Adaptador inalámbrico ALFA AWUS036EACS AC600 dual-band, Realtek RTL8811CU, diseño compacto ultradelgado."
+title: "ALFA AWUS036EACS — Adaptador USB AC600 Mini Doble Banda"
+description: "ALFA AWUS036EACS, Realtek RTL8811CU, AC600 doble banda, USB 2.0, diseño ultracompacto con antena integrada."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
+brands: ["alfa"]
+tags: ["Wi-Fi 5", "AC600", "USB 2.0", "Mini", "Monitor Mode"]
 ---
 
-## Descripción General
+{{< alert "warning" >}}
+**Aviso de Uso Legal**: La función Monitor Mode es solo para pruebas de seguridad autorizadas, investigación educativa y pruebas de penetración legales.
+{{< /alert >}}
 
-El AWUS036EACS es un adaptador USB inalámbrico AC600 de doble banda de ALFA Network con chipset Realtek RTL8811CU en un formato ultra compacto y delgado.
+## Descripción del Producto
 
----
+El AWUS036EACS es el adaptador USB AC600 de doble banda de ALFA Network con chipset Realtek RTL8811CU. Su diseño ultracompacto con antena integrada lo hace ideal para uso portátil.
 
 ## Especificaciones
 
-| Especificación | Detalle |
-|----------------|---------|
+| Item | Spec |
+|------|------|
 | Modelo | AWUS036EACS |
 | Chipset | Realtek RTL8811CU |
-| Estándar Wi-Fi | 802.11 a/b/g/n/ac (Wi-Fi 5) |
-| Banda | Doble banda 2.4GHz + 5GHz |
-| Velocidad máx. | AC600 |
-| Interfaz USB | USB 2.0 |
-| SO compatible | Windows 10/11, Linux |
+| Estándar Wi-Fi | IEEE 802.11 a/b/g/n/ac (Wi-Fi 5) |
+| Frecuencia | Doble banda 2.4GHz / 5GHz |
+| Velocidad Máxima | 802.11n: 150 Mbps / 802.11ac: 433 Mbps |
+| Antena | Antena integrada |
+| Interfaz | USB 2.0 |
+| Seguridad | WEP 64/128-bit, WPA, WPA2, WPA Mixed |
+
+## Compatibilidad de SO
+
+| OS | Status |
+|------|---------|
+| Windows | ✅ Requiere instalación de controladores |
+| Linux | ✅ Compatible |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036eacs_image_1.png" alt="ALFA AWUS036EACS" />
+{{< /gallery >}}
 
 ---
 
 {{< alert >}}
-¿Necesitas cotización? [Contáctanos](/es/contact/)
+¿Necesita una cotización? [Contáctenos](/es/contact/)
 {{< /alert >}}

@@ -17,16 +17,25 @@ showTableOfContents: true
 
 ## ALFA Network 驅動程式
 
-| 型號 | 晶片組 | 官方下載 |
-|------|--------|---------|
-| AWUS036ACM | MT7612U | [alfa.com.tw 驅動頁面](https://www.alfa.com.tw) |
-| AWUS036ACHM | MT7610U | [alfa.com.tw 驅動頁面](https://www.alfa.com.tw) |
-| AWUS036ACS | RTL8811AU | [alfa.com.tw 驅動頁面](https://www.alfa.com.tw) |
-| AWUS036AX | RTL8832BU | [alfa.com.tw 驅動頁面](https://www.alfa.com.tw) |
-| AWUS036AXER | RTL8832BU | [alfa.com.tw 驅動頁面](https://www.alfa.com.tw) |
-| AWUS036AXM | MT7921AUN | [alfa.com.tw 驅動頁面](https://www.alfa.com.tw) |
-| AWUS036AXML | MT7921AUN | [alfa.com.tw 驅動頁面](https://www.alfa.com.tw) |
-| AWUS036NHV | — | [alfa.com.tw 驅動頁面](https://www.alfa.com.tw) |
+### Wi-Fi 6E 系列
+
+| 型號 | 晶片組 | 驅動程式下載 | 官方文件 |
+|------|--------|-------------|---------|
+| AWUS036AXML | MT7921AUN | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXML) | — |
+| AWUS036AXM | MT7921AUN | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXM) | — |
+| AWUS036AX | RTL8832BU | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AX) | — |
+| AWUS036AXER | RTL8832BU | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXER) | — |
+
+### Wi-Fi 5 系列
+
+| 型號 | 晶片組 | 驅動程式下載 | 官方文件 |
+|------|--------|-------------|---------|
+| AWUS1900 | RTL8814AU | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS1900) | [文件](https://docs.alfa.com.tw/Product/AWUS1900/) |
+| AWUS036ACH | RTL8812AU | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACH) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACH/) |
+| AWUS036ACM | MT7612U | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
+| AWUS036ACS | RTL8811AU | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
+| AWUS036EACS | RTL8811CU | — | — |
+| AWUS036ACHM | MT7610U | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
 ## HAK5 韌體更新
 

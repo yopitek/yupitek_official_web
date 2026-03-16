@@ -5,7 +5,6 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-featureimage: "images/solution/banner-solution-main.webp"
 ---
 
 ## 关于榆阖科技 IT Application 部门

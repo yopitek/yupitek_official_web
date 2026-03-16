@@ -54,6 +54,10 @@ AWUS036AX هو أول محول لاسلكي Wi-Fi 6 (IEEE 802.11ax) من ALFA Ne
 |--------|--------|
 | تنزيل برنامج التشغيل | [مستودع ALFA الرسمي](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AX) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036ax_image_1.png" alt="ALFA AWUS036AX" />
+{{< /gallery >}}
+
 ---
 
 هل أنت مهتم؟ [تواصل معنا](/ar/contact/)

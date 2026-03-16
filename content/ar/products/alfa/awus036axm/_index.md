@@ -56,6 +56,10 @@ AWUS036AXM هو المحول اللاسلكي الرائد Wi-Fi 6E من ALFA Ne
 |--------|--------|
 | تنزيل برنامج التشغيل | [مستودع ALFA الرسمي](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXM) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axm_image_1.png" alt="ALFA AWUS036AXM" />
+{{< /gallery >}}
+
 ---
 
 هل أنت مهتم؟ [تواصل معنا](/ar/contact/)

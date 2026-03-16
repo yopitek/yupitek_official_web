@@ -57,6 +57,10 @@ AWUS036AXML هو الإصدار USB-C من AWUS036AXM، يعتمد على نفس
 |--------|--------|
 | تنزيل برنامج التشغيل | [مستودع ALFA الرسمي](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXML) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axml_image_1.png" alt="ALFA AWUS036AXML" />
+{{< /gallery >}}
+
 ---
 
 هل أنت مهتم؟ [تواصل معنا](/ar/contact/)

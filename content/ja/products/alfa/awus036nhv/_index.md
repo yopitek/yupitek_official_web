@@ -53,6 +53,10 @@ AWUS036NHV は ALFA の高出力 2.4GHz シングルバンド ワイヤレスア
 | ドライバーダウンロード | [ALFA 公式ドライバーライブラリ](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036NHV) |
 | 公式ドキュメント | [ALFA 製品ドキュメント](https://docs.alfa.com.tw/Product/AWUS036NHV/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036nhv_image_1.png" alt="ALFA AWUS036NHV" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

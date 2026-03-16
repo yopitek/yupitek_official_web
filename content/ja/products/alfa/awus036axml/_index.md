@@ -55,6 +55,10 @@ AWUS036AXML は AWUS036AXM の USB-C バージョンです。同じ MediaTek MT7
 |------|------|
 | ドライバーダウンロード | [ALFA 公式ドライバーライブラリ](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXML) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axml_image_1.png" alt="ALFA AWUS036AXML" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

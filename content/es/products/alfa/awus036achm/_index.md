@@ -56,6 +56,10 @@ El AWUS036ACHM utiliza el chipset MediaTek MT7610U y soporta el estándar IEEE 8
 | Descarga de controladores | [Repositorio oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) |
 | Documentación oficial | [Documentación ALFA](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036achm_image_1.png" alt="ALFA AWUS036ACHM" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

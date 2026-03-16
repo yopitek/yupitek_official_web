@@ -74,6 +74,10 @@ O AWUS036ACM é o modelo principal clássico da ALFA Network, equipado com o chi
 | Download de Drivers | [Repositório Oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) |
 | Documentação Oficial | [Documentação do Produto ALFA](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acm_image_1.png" alt="ALFA AWUS036ACM" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

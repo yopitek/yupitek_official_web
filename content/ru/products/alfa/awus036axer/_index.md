@@ -51,6 +51,10 @@ AWUS036AXER — самый лёгкий Wi-Fi 6 адаптер ALFA, на чип
 |------|------|
 | Загрузка драйвера | [Официальный репозиторий ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXER) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axer_image_1.png" alt="ALFA AWUS036AXER" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

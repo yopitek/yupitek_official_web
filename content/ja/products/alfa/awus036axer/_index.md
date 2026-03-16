@@ -51,6 +51,10 @@ AWUS036AXER は ALFA シリーズで最も軽量な Wi-Fi 6 ワイヤレスア�
 |------|------|
 | ドライバーダウンロード | [ALFA 公式ドライバーライブラリ](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXER) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axer_image_1.png" alt="ALFA AWUS036AXER" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

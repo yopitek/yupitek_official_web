@@ -57,6 +57,10 @@ AWUS036ACM هو الطراز الكلاسيكي الرئيسي من ALFA Network
 | تنزيل برنامج التشغيل (Driver) | [مستودع ALFA الرسمي](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) |
 | الوثائق الرسمية | [وثائق منتجات ALFA](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acm_image_1.png" alt="ALFA AWUS036ACM" />
+{{< /gallery >}}
+
 ---
 {{< alert >}}
 هل أنت مهتم؟ [تواصل معنا](/ar/contact/)

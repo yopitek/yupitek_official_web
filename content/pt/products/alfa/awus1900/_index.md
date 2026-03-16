@@ -43,6 +43,10 @@ O AWUS1900 é o adaptador sem fio dual-band AC1900 topo de linha da ALFA Network
 | Download de Driver | [Repositório Oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS1900) |
 | Documentação Oficial | [Documentação ALFA](https://docs.alfa.com.tw/Product/AWUS1900/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus1900_image_1.png" alt="ALFA AWUS1900" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

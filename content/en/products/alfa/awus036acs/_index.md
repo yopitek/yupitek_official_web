@@ -56,6 +56,10 @@ The AWUS036ACS is one of the most compact dual-band wireless adapters in the ALF
 | Driver Download | [ALFA Official Driver Repository](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) |
 | Official Documentation | [ALFA Product Documentation](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acs_image_1.png" alt="ALFA AWUS036ACS" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

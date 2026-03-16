@@ -56,6 +56,10 @@ AWUS036ACS — один из самых компактных двухдиапа�
 | Загрузка драйвера | [Официальный репозиторий ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) |
 | Официальная документация | [Документация ALFA](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acs_image_1.png" alt="ALFA AWUS036ACS" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

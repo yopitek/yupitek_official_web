@@ -55,6 +55,10 @@ AWUS036NHV هو محول لاسلكي أحادي النطاق 2.4GHz عالي ا
 | تنزيل برنامج التشغيل | [مستودع ALFA الرسمي](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036NHV) |
 | الوثائق الرسمية | [وثائق منتجات ALFA](https://docs.alfa.com.tw/Product/AWUS036NHV/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036nhv_image_1.png" alt="ALFA AWUS036NHV" />
+{{< /gallery >}}
+
 ---
 
 هل أنت مهتم؟ [تواصل معنا](/ar/contact/)

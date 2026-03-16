@@ -54,6 +54,10 @@ AWUS036AXM 是 ALFA Network 的 Wi-Fi 6E 旗舰无线网卡，采用 MediaTek MT
 |------|------|
 | 驱动程序下载 | [ALFA 官方驱动库](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXM) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axm_image_1.png" alt="ALFA AWUS036AXM" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

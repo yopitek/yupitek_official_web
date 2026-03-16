@@ -53,6 +53,10 @@ AWUS036NHV 是 ALFA 高功率 2.4GHz 单频无线网卡，支持 IEEE 802.11 b/g
 | 驱动程序下载 | [ALFA 官方驱动库](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036NHV) |
 | 官方文档 | [ALFA 产品文档](https://docs.alfa.com.tw/Product/AWUS036NHV/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036nhv_image_1.png" alt="ALFA AWUS036NHV" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

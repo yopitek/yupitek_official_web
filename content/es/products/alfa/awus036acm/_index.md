@@ -74,6 +74,10 @@ El AWUS036ACM es el modelo estrella de ALFA Network. Usa el chipset MediaTek MT7
 | Descarga de controladores | [Repositorio oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) |
 | Documentación oficial | [Documentación ALFA](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acm_image_1.png" alt="ALFA AWUS036ACM" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

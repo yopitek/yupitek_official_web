@@ -56,6 +56,10 @@ O AWUS036ACS é um dos adaptadores sem fio dual band mais compactos da linha ALF
 | Download de Drivers | [Repositório Oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) |
 | Documentação Oficial | [Documentação do Produto ALFA](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acs_image_1.png" alt="ALFA AWUS036ACS" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

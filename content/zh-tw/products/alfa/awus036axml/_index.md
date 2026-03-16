@@ -55,6 +55,10 @@ AWUS036AXML 是 AWUS036AXM 的 USB-C 版本，採用相同的 MediaTek MT7921AUN
 |------|------|
 | 驅動程式下載 | [ALFA 官方驅動庫](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXML) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axml_image_1.png" alt="ALFA AWUS036AXML" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

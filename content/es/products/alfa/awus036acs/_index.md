@@ -56,6 +56,10 @@ El AWUS036ACS es uno de los adaptadores inalámbricos de doble banda más delgad
 | Descarga de controladores | [Repositorio oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) |
 | Documentación oficial | [Documentación ALFA](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acs_image_1.png" alt="ALFA AWUS036ACS" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

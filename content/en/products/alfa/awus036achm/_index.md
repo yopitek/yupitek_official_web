@@ -56,6 +56,10 @@ The AWUS036ACHM is powered by the MediaTek MT7610U chipset and supports IEEE 802
 | Driver Download | [ALFA Official Driver Repository](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) |
 | Official Documentation | [ALFA Product Documentation](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036achm_image_1.png" alt="ALFA AWUS036ACHM" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

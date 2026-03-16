@@ -54,6 +54,10 @@ El AWUS036AXM es el adaptador inalámbrico Wi-Fi 6E insignia de ALFA Network. Ut
 |------------|--------|
 | Descarga de controladores | [Repositorio oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXM) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axm_image_1.png" alt="ALFA AWUS036AXM" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

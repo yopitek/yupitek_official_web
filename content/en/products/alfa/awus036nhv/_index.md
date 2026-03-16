@@ -53,6 +53,10 @@ The AWUS036NHV is ALFA's high-power single-band 2.4GHz wireless adapter, support
 | Driver Download | [ALFA Official Driver Repository](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036NHV) |
 | Official Documentation | [ALFA Product Documentation](https://docs.alfa.com.tw/Product/AWUS036NHV/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036nhv_image_1.png" alt="ALFA AWUS036NHV" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

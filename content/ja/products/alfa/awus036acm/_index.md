@@ -76,6 +76,10 @@ AWUS036ACM は ALFA Network の定番モデルです。MediaTek MT7610U チッ�
 | ドライバーダウンロード | [ALFA 公式ドライバーライブラリ](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) |
 | 公式ドキュメント | [ALFA 製品ドキュメント](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acm_image_1.png" alt="ALFA AWUS036ACM" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

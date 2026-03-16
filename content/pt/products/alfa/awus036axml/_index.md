@@ -55,6 +55,10 @@ O AWUS036AXML é a versão USB-C do AWUS036AXM, utilizando o mesmo chipset Media
 |------------|------|
 | Download de Driver | [Repositório Oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXML) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axml_image_1.png" alt="ALFA AWUS036AXML" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

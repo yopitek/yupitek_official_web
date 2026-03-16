@@ -53,6 +53,10 @@ El AWUS036NHV es un adaptador inalámbrico de banda única 2.4GHz de alta potenc
 | Descarga de controladores | [Repositorio oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036NHV) |
 | Documentación oficial | [Documentación ALFA](https://docs.alfa.com.tw/Product/AWUS036NHV/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036nhv_image_1.png" alt="ALFA AWUS036NHV" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

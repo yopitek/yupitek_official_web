@@ -56,6 +56,10 @@ AWUS036ACS は ALFA シリーズの中でも最も薄型・軽量なデュアル
 | ドライバーダウンロード | [ALFA 公式ドライバーライブラリ](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) |
 | 公式ドキュメント | [ALFA 製品ドキュメント](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acs_image_1.png" alt="ALFA AWUS036ACS" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

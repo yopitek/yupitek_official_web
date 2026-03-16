@@ -43,6 +43,10 @@ The AWUS1900 is ALFA Network's AC1900 dual-band flagship wireless adapter. It su
 | Driver Download | [ALFA Official Driver Repository](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS1900) |
 | Official Documentation | [ALFA Product Documentation](https://docs.alfa.com.tw/Product/AWUS1900/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus1900_image_1.png" alt="ALFA AWUS1900" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

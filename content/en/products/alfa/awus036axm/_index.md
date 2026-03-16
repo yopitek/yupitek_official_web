@@ -54,6 +54,10 @@ The AWUS036AXM is ALFA Network's Wi-Fi 6E flagship wireless adapter, powered by 
 |----------|------|
 | Driver Download | [ALFA Official Driver Repository](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXM) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axm_image_1.png" alt="ALFA AWUS036AXM" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

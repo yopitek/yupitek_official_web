@@ -53,6 +53,10 @@ O AWUS036NHV é um adaptador sem fio 2.4GHz single-band de alta potência da ALF
 | Download de Driver | [Repositório Oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036NHV) |
 | Documentação Oficial | [Documentação ALFA](https://docs.alfa.com.tw/Product/AWUS036NHV/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036nhv_image_1.png" alt="ALFA AWUS036NHV" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

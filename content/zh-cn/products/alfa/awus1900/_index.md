@@ -43,6 +43,10 @@ AWUS1900 是 ALFA Network 的 AC1900 双频旗舰无线网卡，支持 IEEE 802.
 | 驱动程序下载 | [ALFA 官方驱动库](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS1900) |
 | 官方文档 | [ALFA 产品文档](https://docs.alfa.com.tw/Product/AWUS1900/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus1900_image_1.png" alt="ALFA AWUS1900" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

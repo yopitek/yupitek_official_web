@@ -56,6 +56,10 @@ AWUS036ACS 是 ALFA 系列中最輕薄的雙頻無線網卡之一，採用 Realt
 | 驅動程式下載 | [ALFA 官方驅動庫](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) |
 | 官方文件 | [ALFA 產品文件](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acs_image_1.png" alt="ALFA AWUS036ACS" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

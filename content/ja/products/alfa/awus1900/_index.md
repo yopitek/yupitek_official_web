@@ -43,6 +43,10 @@ AWUS1900 は ALFA Network の AC1900 デュアルバンドフラッグシップ 
 | ドライバーダウンロード | [ALFA 公式ドライバーライブラリ](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS1900) |
 | 公式ドキュメント | [ALFA 製品ドキュメント](https://docs.alfa.com.tw/Product/AWUS1900/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus1900_image_1.png" alt="ALFA AWUS1900" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

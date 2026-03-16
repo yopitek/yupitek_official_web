@@ -51,6 +51,10 @@ El AWUS036AXER es el adaptador Wi-Fi 6 más ligero de la serie ALFA. Usa el chip
 |------------|--------|
 | Descarga de controladores | [Repositorio oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXER) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axer_image_1.png" alt="ALFA AWUS036AXER" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

@@ -74,6 +74,10 @@ AWUS036ACM — флагманский адаптер ALFA Network на чипе 
 | Загрузка драйвера | [Официальный репозиторий ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) |
 | Официальная документация | [Документация ALFA](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acm_image_1.png" alt="ALFA AWUS036ACM" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

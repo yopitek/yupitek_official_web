@@ -56,6 +56,10 @@ AWUS036ACHM 采用 MediaTek MT7610U 芯片，支持 IEEE 802.11ac 双频，最�
 | 驱动程序下载 | [ALFA 官方驱动库](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) |
 | 官方文档 | [ALFA 产品文档](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036achm_image_1.png" alt="ALFA AWUS036ACHM" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

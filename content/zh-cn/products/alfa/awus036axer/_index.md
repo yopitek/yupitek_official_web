@@ -51,6 +51,10 @@ AWUS036AXER 是 ALFA 系列最轻量的 Wi-Fi 6 无线网卡，采用 Realtek RT
 |------|------|
 | 驱动程序下载 | [ALFA 官方驱动库](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXER) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036axer_image_1.png" alt="ALFA AWUS036AXER" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

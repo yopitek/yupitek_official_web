@@ -52,6 +52,10 @@ O AWUS036AX é o primeiro adaptador sem fio Wi-Fi 6 (IEEE 802.11ax) da ALFA Netw
 |------------|------|
 | Download de Driver | [Repositório Oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AX) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036ax_image_1.png" alt="ALFA AWUS036AX" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

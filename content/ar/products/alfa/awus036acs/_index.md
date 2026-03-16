@@ -58,6 +58,10 @@ AWUS036ACS هو أحد أنحف المحولات اللاسلكية ثنائية
 | تنزيل برنامج التشغيل | [مستودع ALFA الرسمي](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) |
 | الوثائق الرسمية | [وثائق منتجات ALFA](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036acs_image_1.png" alt="ALFA AWUS036ACS" />
+{{< /gallery >}}
+
 ---
 
 هل أنت مهتم؟ [تواصل معنا](/ar/contact/)

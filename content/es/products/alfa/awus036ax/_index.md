@@ -52,6 +52,10 @@ El AWUS036AX es el primer adaptador inalámbrico Wi-Fi 6 (IEEE 802.11ax) de ALFA
 |------------|--------|
 | Descarga de controladores | [Repositorio oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AX) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus036ax_image_1.png" alt="ALFA AWUS036AX" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

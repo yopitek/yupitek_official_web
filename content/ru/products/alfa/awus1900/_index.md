@@ -43,6 +43,10 @@ AWUS1900 — флагманский двухдиапазонный AC1900 ада
 | Загрузка драйвера | [Официальный репозиторий ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS1900) |
 | Официальная документация | [Документация ALFA](https://docs.alfa.com.tw/Product/AWUS1900/) |
 
+{{< gallery >}}
+  <img src="/images/products/alfa/awus1900_image_1.png" alt="ALFA AWUS1900" />
+{{< /gallery >}}
+
 ---
 
 {{< alert >}}

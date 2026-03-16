@@ -1,47 +1,45 @@
 ---
-title: "Yopitek Ltd | 榆閤科技有限公司"
-description: "A Yopitek Ltd é uma empresa de tecnologia sediada em Taiwan, especializada em distribuição de tecnologia e em planejamento, design e integração de sistemas de projeção."
+title: "Yopitek Ltd"
+description: "Distribuição tecnológica profissional e integração de projeção imersiva. Distribuidor autorizado em Taiwan de ALFA Network, HAK5 e Flipper Zero. Serviços de integração de sistemas de projeção e edge blending."
 date: 2026-03-12
 draft: false
 showHero: true
 heroStyle: "basic"
 ---
 
-## Yopitek Ltd (榆閤科技有限公司)
+## Yupitek Ltd
 
-A Yopitek Ltd é uma empresa de tecnologia sediada em Taipé, Taiwan. Atuamos por meio de duas divisões principais: **IT_Distribution** (Distribuição de TI) e **IT_Application** (Aplicações de TI).
-
----
-
-## Divisão IT_Distribution — Distribuição de TI
-
-Distribuímos marcas de tecnologia de classe mundial para empresas, instituições acadêmicas e pesquisadores de segurança em Taiwan.
-
-### Marcas que distribuímos
-
-- **ALFA Network** — Adaptadores Wi-Fi USB de alta potência com suporte a Modo Monitor e Injeção de Pacotes
-- **HAK5** — Ferramentas profissionais para testes de invasão (pentesting)
-- **Flipper Zero** — Dispositivo de pesquisa de segurança sem fio multiprotocolo
-- **Ubiquiti UniFi** — Sistemas Wi-Fi corporativos
-- **NVIDIA GeForce RTX 5080** — Placas de vídeo de alto desempenho
-- **SDRLAB** — Equipamentos de Rádio Definido por Software (SDR)
-- **ACS** — Leitores de cartão inteligente
+A Yopitek é uma empresa profissional com profunda presença no mercado tecnológico de Taiwan, com duas divisões de negócios: uma focada na distribuição de produtos tecnológicos de ponta e outra no planejamento e integração de soluções visuais de alto nível.
 
 ---
 
-## Divisão IT_Application — Aplicações de TI
+## IT Distribution｜Distribuição e Representação de Produtos Tecnológicos
 
-Oferecemos serviços profissionais completos em planejamento, design e integração de sistemas de projeção.
+A Yopitek é distribuidora autorizada de várias marcas reconhecidas mundialmente, fornecendo a empresas, instituições acadêmicas e pesquisadores de segurança cibernética equipamentos e soluções tecnológicas avançadas.
 
-### Principais serviços
+**Marcas que distribuímos:**
 
-- **Mapeamento de Projeção Arquitetônica** — Projeção de imagens e conteúdo sobre fachadas de edifícios e estruturas
-- **Espaços de Projeção Imersiva 360°** — Criação de ambientes visuais que envolvem completamente o espectador
-- **Sistemas Multiprojetor com Mistura de Bordas (Edge Blending)** — Exibição de imagens contínuas em múltiplos projetores
-- **Plataformas de Projeção Tátil Interativa** — Ambientes de projeção que respondem à interação do usuário
-
-### Nossos clientes
-
-Prefeitura de Taipé, organizações de defesa, museus, universidades e marcas corporativas
+| Marca | Especialidade |
+|-------|--------------|
+| ALFA Network | Adaptadores Wi-Fi profissionais com suporte a Monitor Mode e injeção de pacotes |
+| Hak5 | Kit de ferramentas para testes de penetração em cibersegurança |
+| Flipper Zero | Dispositivo multiprotocolo de pesquisa em segurança sem fio |
+| Ubiquiti UniFi | Infraestrutura de rede sem fio de nível empresarial |
+| NVIDIA GeForce RTX | Plataforma de gráficos profissionais de alto desempenho |
+| SDRLAB | Equipamentos de pesquisa em Rádio Definido por Software (SDR) |
+| ACS | Leitoras de cartão inteligente e soluções de verificação de identidade |
 
 ---
+
+## IT Application｜Soluções Visuais Profissionais
+
+A Yopitek oferece serviços completos de soluções de projeção — desde avaliação de necessidades, planejamento do sistema e design técnico até integração no local — criando experiências visuais impactantes em todos os tipos de espaços.
+
+**Serviços:**
+
+- Design e execução de Projection Mapping arquitetônico
+- Construção de espaços de projeção circular 360° totalmente imersivos
+- Integração de sistemas Edge Blending multiprojector
+- Desenvolvimento e instalação de plataformas de projeção touch interativa
+
+**Clientes atendidos:** Governo da Cidade de Taipé, agências de defesa nacional, museus, universidades e faculdades, eventos de marcas corporativas

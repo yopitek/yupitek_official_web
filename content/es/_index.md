@@ -1,47 +1,45 @@
 ---
-title: "Yupitek Ltd | 榆閤科技有限公司"
-description: "Yupitek Ltd es una empresa tecnológica con sede en Taiwán, especializada en distribución de tecnología y en la planificación, diseño e integración de sistemas de proyección."
+title: "Yopitek Ltd"
+description: "Distribución tecnológica profesional e integración de proyección inmersiva. Distribuidor autorizado en Taiwán de ALFA Network, HAK5 y Flipper Zero. Servicios de integración de sistemas de proyección y edge blending."
 date: 2026-03-12
 draft: false
 showHero: true
 heroStyle: "basic"
 ---
 
-## Yupitek Ltd (榆閤科技有限公司)
+## Yupitek Ltd
 
-Yupitek Ltd es una empresa tecnológica con sede en Taipéi, Taiwán. Operamos a través de dos divisiones principales: **IT_Distribution** (Distribución TI) e **IT_Application** (Aplicaciones TI).
-
----
-
-## División IT_Distribution — Distribución TI
-
-Distribuimos marcas tecnológicas de clase mundial a empresas, instituciones académicas e investigadores de seguridad en Taiwán.
-
-### Marcas que distribuimos
-
-- **ALFA Network** — Adaptadores Wi-Fi USB de alta potencia con soporte para Modo Monitor e Inyección de Paquetes
-- **HAK5** — Herramientas profesionales para pruebas de penetración (pentesting)
-- **Flipper Zero** — Dispositivo de investigación de seguridad inalámbrica multiprotocolo
-- **Ubiquiti UniFi** — Sistemas Wi-Fi empresariales
-- **NVIDIA GeForce RTX 5080** — Tarjetas gráficas de alto rendimiento
-- **SDRLAB** — Equipos de Radio Definida por Software (SDR)
-- **ACS** — Lectores de tarjetas inteligentes
+Yopitek es una empresa profesional con profunda presencia en el mercado tecnológico de Taiwán, con dos divisiones de negocio: una enfocada en la distribución de productos tecnológicos de vanguardia, y otra en la planificación e integración de soluciones visuales de alto nivel.
 
 ---
 
-## División IT_Application — Aplicaciones TI
+## IT Distribution｜Distribución y Representación de Productos Tecnológicos
 
-Ofrecemos servicios profesionales integrales en planificación, diseño e integración de sistemas de proyección.
+Yopitek es distribuidor autorizado de múltiples marcas reconocidas mundialmente, suministrando a empresas, instituciones académicas e investigadores de ciberseguridad equipos y soluciones tecnológicas avanzadas.
 
-### Servicios principales
+**Marcas que distribuimos:**
 
-- **Mapping de Proyección Arquitectónica** — Proyección de imágenes y contenido sobre fachadas de edificios y estructuras
-- **Espacios de Proyección Inmersiva 360°** — Creación de entornos visuales que rodean completamente al espectador
-- **Sistemas Multiprojector con Mezcla de Bordes (Edge Blending)** — Visualización de imágenes continuas a través de múltiples proyectores
-- **Plataformas de Proyección Táctil Interactiva** — Entornos de proyección que responden a la interacción del usuario
-
-### Nuestros clientes
-
-Gobierno de la Ciudad de Taipéi, organizaciones de defensa, museos, universidades y marcas corporativas
+| Marca | Especialidad |
+|-------|-------------|
+| ALFA Network | Adaptadores Wi-Fi profesionales con soporte para Monitor Mode e inyección de paquetes |
+| Hak5 | Kit de herramientas para pruebas de penetración en ciberseguridad |
+| Flipper Zero | Dispositivo multiprotocolo de investigación de seguridad inalámbrica |
+| Ubiquiti UniFi | Infraestructura de red inalámbrica de nivel empresarial |
+| NVIDIA GeForce RTX | Plataforma de gráficos profesionales de alto rendimiento |
+| SDRLAB | Equipos de investigación de Radio Definida por Software (SDR) |
+| ACS | Lectores de tarjetas inteligentes y soluciones de verificación de identidad |
 
 ---
+
+## IT Application｜Soluciones Visuales Profesionales
+
+Yopitek ofrece servicios integrales de soluciones de proyección — desde la evaluación de necesidades, planificación del sistema y diseño técnico hasta la integración en sitio — creando experiencias visuales impactantes en todo tipo de espacios.
+
+**Servicios:**
+
+- Diseño y ejecución de Projection Mapping arquitectónico
+- Construcción de espacios de proyección circular 360° totalmente inmersivos
+- Integración de sistemas Edge Blending multiproyector
+- Desarrollo e instalación de plataformas de proyección táctil interactiva
+
+**Clientes:** Gobierno de la Ciudad de Taipéi, organismos de defensa nacional, museos, universidades e instituciones de educación superior, eventos de marcas corporativas

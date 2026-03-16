@@ -7,29 +7,39 @@ showHero: true
 heroStyle: "basic"
 ---
 
-## Yopitek Ltd — Two Business Divisions
+## Yopitek Ltd
 
-### IT_Distribution — Technology Distribution
-
-Authorized distributor for globally recognized brands, supplying enterprises, academic institutions, and security researchers in Taiwan with cutting-edge technology equipment:
-
-- **ALFA Network** — Professional USB Wi-Fi adapters supporting Monitor Mode and Packet Injection
-- **HAK5** — Penetration testing and security research toolkits
-- **Flipper Zero** — Multi-protocol wireless security research device
-- **Ubiquiti UniFi** — Enterprise-grade wireless networking systems
-- **NVIDIA GeForce RTX 5080** — High-performance graphics cards
-- **SDRLAB** — Software-Defined Radio (SDR) equipment
-- **ACS** — Smart card readers
-
-### IT_Application — Projection Integration Solutions
-
-End-to-end planning, design, and integration of professional projection systems:
-
-- Architectural projection mapping
-- Full-immersive 360° projection environments
-- Multi-projector edge-blending systems
-- Interactive touch projection platforms
-
-**Clients served**: Taipei City Government, Ministry of National Defense units, museums, universities, and corporate brands
+Yopitek is a professional company deeply rooted in the Taiwan technology market, operating two business divisions — one focused on the distribution of cutting-edge technology products, and the other on planning and integrating high-end visual solutions.
 
 ---
+
+## IT Distribution
+
+Yopitek is an authorized distributor for multiple globally recognized brands, supplying enterprises, academic institutions, and cybersecurity researchers with forward-looking professional technology equipment and solutions.
+
+**Brands we carry:**
+
+| Brand | Product Focus |
+|-------|--------------|
+| ALFA Network | Professional Wi-Fi adapters supporting Monitor Mode and Packet Injection |
+| Hak5 | Cybersecurity penetration testing toolkit |
+| Flipper Zero | Multi-protocol wireless security research device |
+| Ubiquiti UniFi | Enterprise-grade wireless networking infrastructure |
+| NVIDIA GeForce RTX | High-performance professional graphics computing platform |
+| SDRLAB | Software-Defined Radio (SDR) research equipment |
+| ACS | Smart card readers and identity verification solutions |
+
+---
+
+## IT Application｜Professional Visual Solutions
+
+Yopitek provides end-to-end projection solution services — from needs assessment and system planning to technical design and on-site integration — delivering breathtaking visual experiences across all venue types.
+
+**Services:**
+
+- Architectural Projection Mapping design and execution
+- Full-immersive 360° circular projection environment setup
+- Multi-projector Edge Blending system integration
+- Interactive touch projection platform development and installation
+
+**Clients served:** Taipei City Government, national defense agencies, museums, universities and colleges, corporate brand events

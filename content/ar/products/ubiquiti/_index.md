@@ -6,6 +6,8 @@ draft: false
 dir: rtl
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
 ---
 
 Ubiquiti UniFi هو المعيار الصناعي للشبكات اللاسلكية المؤسسية، مشهور بالأداء العالي والإدارة المركزية والقيمة الممتازة.

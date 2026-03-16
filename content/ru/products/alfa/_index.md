@@ -5,6 +5,8 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/alfa/banner-alfa.webp"
 ---
 
 ALFA Network — известный тайваньский производитель оборудования для беспроводных сетей и USB Wi-Fi адаптеров, специализирующийся на высокомощных устройствах и высоко ценимый в мировом сообществе исследователей безопасности. Yopitek является авторизованным дистрибьютором ALFA Network в Тайване.

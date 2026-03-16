@@ -5,6 +5,8 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/graphiccard/banner-graphiccard.webp"
 ---
 
 榆閤科技提供 NVIDIA RTX 5080 系列顯示卡採購服務，支援 AI 影像生成、3D 渲染、投影工作站及專業視覺化應用。

@@ -5,6 +5,8 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/alfa/banner-alfa.webp"
 ---
 
 ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiアダプターメーカーで、高出力設計に特化し、世界のセキュリティリサーチコミュニティで高く評価されています。Yopitekは台湾のALFA Network正規代理店です。

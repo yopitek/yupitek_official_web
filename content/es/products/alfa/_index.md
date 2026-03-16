@@ -5,6 +5,8 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/alfa/banner-alfa.webp"
 ---
 
 ALFA Network es un reconocido fabricante taiwanés de equipos de red inalámbrica y adaptadores USB Wi-Fi, especializado en diseños de alta potencia y altamente valorado en la comunidad mundial de investigación de seguridad. Yupitek es distribuidor oficial de ALFA Network en Taiwán.

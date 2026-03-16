@@ -6,6 +6,8 @@ draft: false
 dir: rtl
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/acr/banner-acr.webp"
 ---
 
 Advanced Card Systems (ACS) هو مصنع عالمي رائد لقارئات البطاقات الذكية. تُستخدم سلسلة ACR على نطاق واسع في التحكم في الوصول والتوقيع الإلكتروني ومدفوعات NFC المحمولة والتحقق من الهوية.

@@ -5,6 +5,8 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
 ---
 
 Ubiquiti UniFi is the industry benchmark for enterprise-grade wireless networking — renowned for high performance, centralized management, and excellent value. Yopitek provides UniFi equipment procurement consulting, planning, and installation services.

@@ -5,6 +5,8 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/acr/banner-acr.webp"
 ---
 
 Advanced Card Systems (ACS) 是全球知名的智慧卡讀卡機製造商，ACR 系列廣泛應用於門禁管理、電子簽章、NFC 行動支付及身份驗證系統。榆閤科技提供 ACR 系列採購諮詢服務。

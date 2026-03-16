@@ -5,6 +5,8 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/sdrlab/banner-sdrlab.webp"
 ---
 
 SDRLABはソフトウェア定義無線（SDR）モジュールとFlipper Zero拡張アクセサリーを提供し、無線通信研究、アマチュア無線愛好家、RF信号分析アプリケーションに対応しています。

@@ -5,6 +5,8 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
 ---
 
 Ubiquiti UniFi 是企業級無線網路的業界標竿品牌，以高效能、集中管理及高 CP 值著稱。榆閤科技提供 UniFi 設備採購諮詢、規劃及安裝服務。

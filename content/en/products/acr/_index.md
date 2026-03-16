@@ -5,6 +5,8 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/acr/banner-acr.webp"
 ---
 
 Advanced Card Systems (ACS) is a globally recognized manufacturer of smart card readers. The ACR series is widely deployed in access control, digital signatures, NFC mobile payments, and identity verification systems. Yopitek provides ACR series procurement consulting.

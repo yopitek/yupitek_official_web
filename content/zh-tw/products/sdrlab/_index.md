@@ -5,6 +5,8 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/sdrlab/banner-sdrlab.webp"
 ---
 
 SDRLAB 提供軟體定義無線電（SDR）模組及 Flipper Zero 擴充配件，適合無線通訊研究、業餘無線電愛好者及 RF 信號分析應用。

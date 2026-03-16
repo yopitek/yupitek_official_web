@@ -6,6 +6,8 @@ draft: false
 dir: rtl
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
+featureimage: "/images/products/alfa/banner-alfa.webp"
 ---
 
 ALFA Network هي شركة تايوانية رائدة في تصنيع معدات الشبكات اللاسلكية ومحولات USB Wi-Fi، متخصصة في التصميمات عالية الطاقة وتحظى بتقدير واسع في مجتمع أبحاث الأمن العالمي. Yopitek موزع معتمد لـ ALFA Network في تايوان.

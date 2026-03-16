@@ -23,9 +23,6 @@ The ACR1552U is ACS's 4th-generation USB NFC reader, offering enhanced multi-pro
 | Applications | Access Control, Digital Signature, Identity Verification |
 | Standard | PC/SC compliant |
 
-{{< gallery >}}
-  <img src="/images/products/acr/acr1552u.webp" alt="ACS ACR1552U NFC Reader" />
-{{< /gallery >}}
 
 ## Official Resources
 

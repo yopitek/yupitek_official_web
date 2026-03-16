@@ -23,9 +23,6 @@ El ACR1552U es el lector NFC USB de cuarta generación de ACS. Amplía el soport
 | Aplicaciones | Control de acceso, firma electrónica, verificación de identidad |
 | Estándar | Compatible con PC/SC |
 
-{{< gallery >}}
-  <img src="/images/products/acr/acr1552u.webp" alt="ACS ACR1552U Lector NFC USB" />
-{{< /gallery >}}
 
 ## Recursos Oficiales
 
@@ -39,6 +36,9 @@ El ACR1552U es el lector NFC USB de cuarta generación de ACS. Amplía el soport
 |----------|-------------|--------|
 | wakdev NFC Tools Desktop | Herramienta NFC para PC/Mac | [wakdev.com](https://www.wakdev.com/fr/apps/nfc-tools-pc-mac.html) |
 
+{{< gallery >}}
+  <img src="/images/products/acr/acr1552u.webp" alt="ACS ACR1552U Lector NFC USB" />
+{{< /gallery >}}
 ---
 
 {{< alert >}}

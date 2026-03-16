@@ -26,9 +26,6 @@ ACR1252U هو قارئ USB NFC من ACS الحاصل على اعتماد NFC For
 | الاعتماد | معتمد من NFC Forum |
 | المعيار | متوافق مع PC/SC |
 
-{{< gallery >}}
-  <img src="/images/products/acr/acr1252u.webp" alt="ACS ACR1252U قارئ بطاقات NFC" />
-{{< /gallery >}}
 
 ## الموارد الرسمية
 

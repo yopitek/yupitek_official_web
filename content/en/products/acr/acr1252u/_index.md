@@ -24,9 +24,6 @@ The ACR1252U is ACS's NFC Forum-certified USB NFC reader, supporting all four NF
 | Certification | NFC Forum Certified |
 | Standard | PC/SC compliant |
 
-{{< gallery >}}
-  <img src="/images/products/acr/acr1252u.webp" alt="ACS ACR1252U NFC Reader" />
-{{< /gallery >}}
 
 ## Official Resources
 

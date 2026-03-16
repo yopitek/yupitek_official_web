@@ -24,9 +24,6 @@ ACR1252U — USB NFC считыватель компании ACS, сертифи
 | Сертификация | NFC Forum |
 | Стандарт | совместим с PC/SC |
 
-{{< gallery >}}
-  <img src="/images/products/acr/acr1252u.webp" alt="ACS ACR1252U NFC считыватель" />
-{{< /gallery >}}
 
 ## Официальные ресурсы
 
@@ -41,6 +38,9 @@ ACR1252U — USB NFC считыватель компании ACS, сертифи
 | GoToTags | Инструмент управления NFC-метками | [gototags.com](https://gototags.com) |
 | wakdev NFC Tools Desktop | Инструмент NFC для ПК/Mac | [wakdev.com](https://www.wakdev.com/fr/apps/nfc-tools-pc-mac.html) |
 
+{{< gallery >}}
+  <img src="/images/products/acr/acr1252u.webp" alt="ACS ACR1252U NFC считыватель" />
+{{< /gallery >}}
 ---
 
 {{< alert >}}

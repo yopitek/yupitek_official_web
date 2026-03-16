@@ -23,9 +23,6 @@ ACR1552U 是 ACS 第四代 USB NFC 讀卡機，在前代基礎上增強了多協
 | 應用 | 門禁、電子簽章、身份驗證 |
 | 標準 | PC/SC 相容 |
 
-{{< gallery >}}
-  <img src="/images/products/acr/acr1552u.webp" alt="ACS ACR1552U NFC 讀卡機" />
-{{< /gallery >}}
 
 ## 官方資源
 
@@ -39,6 +36,9 @@ ACR1552U 是 ACS 第四代 USB NFC 讀卡機，在前代基礎上增強了多協
 |------|------|------|
 | wakdev NFC Tools Desktop | PC/Mac NFC 多功能工具 | [wakdev.com](https://www.wakdev.com/fr/apps/nfc-tools-pc-mac.html) |
 
+{{< gallery >}}
+  <img src="/images/products/acr/acr1552u.webp" alt="ACS ACR1552U NFC 讀卡機" />
+{{< /gallery >}}
 ---
 
 {{< alert >}}

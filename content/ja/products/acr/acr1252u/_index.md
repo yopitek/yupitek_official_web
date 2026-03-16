@@ -24,9 +24,6 @@ ACR1252U は ACS が NFC Forum 認定を取得した USB NFC カードリーダ�
 | 認定 | NFC Forum 認定 |
 | 規格 | PC/SC 互換 |
 
-{{< gallery >}}
-  <img src="/images/products/acr/acr1252u.webp" alt="ACS ACR1252U NFC カードリーダー" />
-{{< /gallery >}}
 
 ## 公式リソース
 

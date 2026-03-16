@@ -7,7 +7,6 @@ showHero: true
 heroStyle: "basic"
 ---
 
-## Yupitek Ltd
 
 A Yopitek é uma empresa profissional com profunda presença no mercado tecnológico de Taiwan, com duas divisões de negócios: uma focada na distribuição de produtos tecnológicos de ponta e outra no planejamento e integração de soluções visuais de alto nível.
 

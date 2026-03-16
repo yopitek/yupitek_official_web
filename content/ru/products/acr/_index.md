@@ -10,13 +10,13 @@ featureimage: "/images/products/acr/banner-acr.webp"
 ---
 
 {{< card-group >}}
-  {{< card title="ACR122U NFC Reader" href="/ru/products/acr/acr122u/" image="/images/products/acr/acr122u.webp" >}}
+  {{< card title="ACR122U NFC Reader" href="/ru/products/acr/acr122u/" >}}
     USB NFC считыватель с поддержкой ISO 14443 A/B и MIFARE.
   {{< /card >}}
-  {{< card title="ACR1252U NFC Forum Reader" href="/ru/products/acr/acr1252u/" image="/images/products/acr/acr1252u.webp" >}}
+  {{< card title="ACR1252U NFC Forum Reader" href="/ru/products/acr/acr1252u/" >}}
     Сертифицированный NFC Forum считыватель с поддержкой NFC-A/B/F/V.
   {{< /card >}}
-  {{< card title="ACR1552U USB NFC IV Reader" href="/ru/products/acr/acr1552u/" image="/images/products/acr/acr1552u.webp" >}}
+  {{< card title="ACR1552U USB NFC IV Reader" href="/ru/products/acr/acr1552u/" >}}
     Четвёртое поколение USB NFC считывателя с расширенной мультипротокольной поддержкой.
   {{< /card >}}
 {{< /card-group >}}

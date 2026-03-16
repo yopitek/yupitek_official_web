@@ -5,6 +5,7 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
 ---
 
 A Yopitek distribui múltiplas marcas internacionais renomadas, especializadas em redes sem fio, pesquisa de segurança, Wi-Fi corporativo, placas de vídeo e SDR de radiofrequência.
@@ -32,7 +33,3 @@ A Yopitek distribui múltiplas marcas internacionais renomadas, especializadas e
     Leitoras de cartão NFC/inteligente da série ACS ACR para controle de acesso, assinatura eletrônica e verificação de identidade.
   {{< /card >}}
 {{< /card-group >}}
-
----
-
-Precisa de cotação ou consultoria de compra? [Entre em contato conosco](/pt/contact/).

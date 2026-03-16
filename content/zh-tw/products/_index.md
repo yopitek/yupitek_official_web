@@ -5,6 +5,7 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
 ---
 
 榆閤科技代理多個國際知名品牌，專注於無線網路、資安研究、企業 Wi-Fi、顯示卡及 SDR 射頻等領域。
@@ -32,7 +33,3 @@ showTableOfContents: false
     ACS ACR 系列 NFC/智慧卡讀卡機，適用門禁、電子簽章及身份驗證應用。
   {{< /card >}}
 {{< /card-group >}}
-
----
-
-需要詢問報價或採購諮詢？[聯絡我們](/zh-tw/contact/)

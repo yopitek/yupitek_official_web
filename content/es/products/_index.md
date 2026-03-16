@@ -5,6 +5,7 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
 ---
 
 Yupitek distribuye múltiples marcas internacionales de renombre, especializadas en redes inalámbricas, investigación de seguridad, Wi-Fi empresarial, tarjetas gráficas y SDR de radio frecuencia.
@@ -32,7 +33,3 @@ Yupitek distribuye múltiples marcas internacionales de renombre, especializadas
     Lectores de tarjetas NFC/inteligentes de la serie ACS ACR, para control de acceso, firma electrónica y verificación de identidad.
   {{< /card >}}
 {{< /card-group >}}
-
----
-
-¿Necesitas cotización o asesoría de compra? [Contáctanos](/es/contact/).

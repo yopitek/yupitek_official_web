@@ -5,6 +5,7 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
 ---
 
 Yopitek is the authorized Taiwan distributor for multiple internationally recognized brands, covering wireless networking, security research, enterprise Wi-Fi, graphics cards, and SDR/RF equipment.
@@ -32,7 +33,3 @@ Yopitek is the authorized Taiwan distributor for multiple internationally recogn
     ACS ACR-series NFC and smart card readers for access control, electronic signatures, and identity verification applications.
   {{< /card >}}
 {{< /card-group >}}
-
----
-
-Need a quote or purchasing consultation? [Contact us](/en/contact/)

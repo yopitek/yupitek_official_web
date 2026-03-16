@@ -5,6 +5,7 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
 ---
 
 榆阖科技代理多个国际知名品牌，专注于无线网络、信息安全研究、企业 Wi-Fi、显卡及 SDR 射频等领域。
@@ -32,7 +33,3 @@ showTableOfContents: false
     ACS ACR 系列 NFC/智能卡读卡机，适用门禁、电子签章及身份验证应用。
   {{< /card >}}
 {{< /card-group >}}
-
----
-
-需要询问报价或采购咨询？[联系我们](/zh-cn/contact/)

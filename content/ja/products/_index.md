@@ -5,6 +5,7 @@ date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
+showChildPages: false
 ---
 
 Yopitekは複数の国際的に著名なブランドを取り扱い、無線ネットワーク、セキュリティリサーチ、エンタープライズWi-Fi、グラフィックカード、SDR無線などの分野に特化しています。
@@ -32,7 +33,3 @@ Yopitekは複数の国際的に著名なブランドを取り扱い、無線ネ�
     ACS ACRシリーズNFC/スマートカードリーダー。アクセスコントロール、電子署名、身元確認に最適。
   {{< /card >}}
 {{< /card-group >}}
-
----
-
-見積もりや購買相談は[お問い合わせ](/ja/contact/)ください。

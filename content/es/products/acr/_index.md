@@ -10,13 +10,13 @@ featureimage: "/images/products/acr/banner-acr.webp"
 ---
 
 {{< card-group >}}
-  {{< card title="ACR122U NFC Reader" href="/es/products/acr/acr122u/" >}}
+  {{< card title="ACR122U NFC Reader" href="/es/products/acr/acr122u/" image="/images/products/acr/acr122u.webp" >}}
     Lector NFC USB con soporte ISO 14443 A/B y MIFARE.
   {{< /card >}}
-  {{< card title="ACR1252U NFC Forum Reader" href="/es/products/acr/acr1252u/" >}}
+  {{< card title="ACR1252U NFC Forum Reader" href="/es/products/acr/acr1252u/" image="/images/products/acr/acr1252u.webp" >}}
     Lector certificado NFC Forum con soporte NFC-A/B/F/V.
   {{< /card >}}
-  {{< card title="ACR1552U USB NFC IV Reader" href="/es/products/acr/acr1552u/" >}}
+  {{< card title="ACR1552U USB NFC IV Reader" href="/es/products/acr/acr1552u/" image="/images/products/acr/acr1552u.webp" >}}
     Lector NFC USB de cuarta generación con soporte multi-protocolo mejorado.
   {{< /card >}}
 {{< /card-group >}}

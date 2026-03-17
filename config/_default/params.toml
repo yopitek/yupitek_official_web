@@ -2,8 +2,6 @@ colorScheme     = "ocean"
 defaultAppearance = "dark"
 autoSwitchAppearance = true
 
-logo     = "images/brand/logo.png"
-logoDark = "images/brand/logo-dark.png"
 
 [header]
   layout = "fixed"

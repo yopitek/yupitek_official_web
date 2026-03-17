@@ -6,7 +6,6 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/graphiccard/banner-graphiccard.webp"
 ---
 
 YopitekはNVIDIA RTX 5080シリーズグラフィックカードの調達サービスを提供しています。AI画像生成、3Dレンダリング、プロジェクションワークステーション、プロフェッショナルビジュアライゼーションアプリケーションに対応します。

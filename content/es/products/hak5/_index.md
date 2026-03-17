@@ -6,7 +6,6 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/hak5/banner-hak5.webp"
 ---
 
 {{< alert "warning" >}}

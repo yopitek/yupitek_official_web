@@ -7,7 +7,6 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/graphiccard/banner-graphiccard.webp"
 ---
 
 توفر Yopitek خدمات شراء بطاقات رسومات NVIDIA RTX 5080 لتوليد صور الذكاء الاصطناعي والتصيير ثلاثي الأبعاد ومحطات عمل الإسقاط.

@@ -13,29 +13,6 @@ showTableOfContents: true
 请务必从各品牌官方网站下载驱动程序，以确保安全性与兼容性。
 {{< /alert >}}
 
-<div class="my-6">
-  <input
-    type="text"
-    id="driver-search"
-    placeholder="搜索型号，例如：AWUS036ACH"
-    oninput="filterDriverTable(this.value)"
-    class="w-full px-4 py-3 rounded-lg border border-neutral-600 bg-neutral-800 text-neutral-200 placeholder-neutral-500 focus:outline-none focus:border-primary-400 text-sm"
-    style="max-width:480px"
-  />
-</div>
-
-<script>
-function filterDriverTable(query) {
-  var q = query.toLowerCase();
-  var rows = document.querySelectorAll('table tbody tr');
-  rows.forEach(function(row) {
-    var cell = row.querySelector('td');
-    if (!cell) return;
-    row.style.display = cell.textContent.toLowerCase().indexOf(q) !== -1 ? '' : 'none';
-  });
-}
-</script>
-
 ## ALFA Network 驱动程序
 
 ### Wi-Fi 6E 系列

@@ -6,7 +6,6 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
 ---
 
 Ubiquiti UniFi es el referente de la industria en redes inalámbricas empresariales — reconocido por alto rendimiento, gestión centralizada y excelente relación calidad-precio.

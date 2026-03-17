@@ -7,7 +7,6 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/sdrlab/banner-sdrlab.webp"
 ---
 
 {{< card-group >}}

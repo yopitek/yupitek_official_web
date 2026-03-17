@@ -6,7 +6,6 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/graphiccard/banner-graphiccard.webp"
 ---
 
 Yopitek offers NVIDIA RTX 5080 series graphics card procurement services for AI image generation, 3D rendering, projection workstations, and professional visualization applications.

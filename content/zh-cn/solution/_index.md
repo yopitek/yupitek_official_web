@@ -13,6 +13,25 @@ showTableOfContents: true
 
 ## 服务项目
 
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">50+</div>
+    <div class="text-sm text-neutral-300">完成案例</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">30+</div>
+    <div class="text-sm text-neutral-300">服务机构</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">200+</div>
+    <div class="text-sm text-neutral-300">投影设备</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">10+</div>
+    <div class="text-sm text-neutral-300">年经验</div>
+  </div>
+</div>
+
 {{< card-group cols=2 >}}
 
 {{< card title="🏛 建筑光雕投影" >}}
@@ -46,3 +65,7 @@ showTableOfContents: true
 全台服务：**台北・桃园・台南・宜兰・屏东**
 
 需要定制化投影解决方案？[联系我们](/zh-cn/contact/)讨论您的需求。
+
+<div class="mt-8 text-center">
+  <a href="/zh-cn/contact/" class="btn-inquiry">预约免费咨询 →</a>
+</div>

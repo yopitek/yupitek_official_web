@@ -14,19 +14,19 @@ Ubiquiti UniFi 是企業級無線網路的業界標竿品牌，以高效能、�
 ## 無線接入點（AP）
 
 {{< card-group >}}
-  {{< card title="UniFi U7 Pro" href="/zh-tw/products/ubiquiti/u7-pro/" >}}
+  {{< card title="UniFi U7 Pro" href="/zh-tw/products/ubiquiti/u7-pro/" image="/images/products/ubiquiti/u7-pro.webp" >}}
     Wi-Fi 7 三頻旗艦 AP，支援 6GHz 頻段，適合高密度辦公環境。
   {{< /card >}}
-  {{< card title="UniFi U7 Pro Max" href="/zh-tw/products/ubiquiti/u7-pro-max/" >}}
+  {{< card title="UniFi U7 Pro Max" href="/zh-tw/products/ubiquiti/u7-pro-max/" image="/images/products/ubiquiti/u7-pro-max.webp" >}}
     Wi-Fi 7 旗艦高功率版，更強訊號覆蓋，適合大型空間。
   {{< /card >}}
-  {{< card title="UniFi U7 Pro XG" href="/zh-tw/products/ubiquiti/u7-pro-xg/" >}}
+  {{< card title="UniFi U7 Pro XG" href="/zh-tw/products/ubiquiti/u7-pro-xg/" image="/images/products/ubiquiti/u7-pro-xg.webp" >}}
     Wi-Fi 7 + 10G 有線上行，適合骨幹高速網路架構。
   {{< /card >}}
-  {{< card title="UniFi U7 Pro XGS" href="/zh-tw/products/ubiquiti/u7-pro-xgs/" >}}
+  {{< card title="UniFi U7 Pro XGS" href="/zh-tw/products/ubiquiti/u7-pro-xgs/" image="/images/products/ubiquiti/u7-pro-xgs.webp" >}}
     Wi-Fi 7 + 10G SFP+ 光纖上行，企業骨幹光纖網路。
   {{< /card >}}
-  {{< card title="UniFi U7 Long Range" href="/zh-tw/products/ubiquiti/u7-long-range/" >}}
+  {{< card title="UniFi U7 Long Range" href="/zh-tw/products/ubiquiti/u7-long-range/" image="/images/products/ubiquiti/u7-long-range.webp" >}}
     Wi-Fi 7 長距離版本，高增益天線設計，適合開放空間大範圍覆蓋。
   {{< /card >}}
 {{< /card-group >}}
@@ -34,13 +34,13 @@ Ubiquiti UniFi 是企業級無線網路的業界標竿品牌，以高效能、�
 ## 網路閘道與交換器
 
 {{< card-group >}}
-  {{< card title="UniFi Cloud Gateway Fiber" href="/zh-tw/products/ubiquiti/cloud-gateway-fiber/" >}}
+  {{< card title="UniFi Cloud Gateway Fiber" href="/zh-tw/products/ubiquiti/cloud-gateway-fiber/" image="/images/products/ubiquiti/cloud-gateway-fiber.webp" >}}
     UniFi 網路閘道，整合光纖 WAN、UniFi 管理控制器，適合中小企業核心網路。
   {{< /card >}}
-  {{< card title="UniFi Flex Mini 2.5G" href="/zh-tw/products/ubiquiti/flex-mini-2-5g/" >}}
+  {{< card title="UniFi Flex Mini 2.5G" href="/zh-tw/products/ubiquiti/flex-mini-2-5g/" image="/images/products/ubiquiti/flex-mini-2-5g.webp" >}}
     5 埠 2.5G 桌上型 PoE 交換器，適合 Wi-Fi 7 AP 供電與資料傳輸。
   {{< /card >}}
-  {{< card title="UniFi Dream Router 7" href="/zh-tw/products/ubiquiti/udr7/" >}}
+  {{< card title="UniFi Dream Router 7" href="/zh-tw/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.webp" >}}
     Wi-Fi 7 一體化路由器，內建 UniFi 控制器，適合家庭或小型辦公室。
   {{< /card >}}
 {{< /card-group >}}
@@ -48,14 +48,16 @@ Ubiquiti UniFi 是企業級無線網路的業界標竿品牌，以高效能、�
 ## 毫米波（mmWave）點對點
 
 {{< card-group >}}
-  {{< card title="Wave MLO5" href="/zh-tw/products/ubiquiti/wave-mlo5/" >}}
+  {{< card title="Wave MLO5" href="/zh-tw/products/ubiquiti/wave-mlo5/" image="/images/products/ubiquiti/wave-mlo5.webp" >}}
     5GHz 毫米波點對點橋接，高頻寬低延遲，適合建築間無線骨幹連接。
   {{< /card >}}
-  {{< card title="Wave MLO6" href="/zh-tw/products/ubiquiti/wave-mlo6/" >}}
+  {{< card title="Wave MLO6" href="/zh-tw/products/ubiquiti/wave-mlo6/" image="/images/products/ubiquiti/wave-mlo6.webp" >}}
     6GHz 毫米波點對點橋接，6GHz 頻段更低干擾，適合短距高速傳輸。
   {{< /card >}}
 {{< /card-group >}}
 
 ---
 
-需要 UniFi 網路規劃諮詢？[聯絡我們](/zh-tw/contact/)，我們提供場地勘查與設備選型建議。
+<div class="mt-6 text-center">
+  <a href="/zh-tw/contact/" class="btn-inquiry">UniFi 網路規劃諮詢 →</a>
+</div>

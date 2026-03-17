@@ -52,11 +52,6 @@
     weight   = 27
 
 [[main]]
-  name       = "Blog"
-  pageRef    = "/blog"
-  weight     = 28
-
-[[main]]
   name       = "Support"
   pageRef    = "/support"
   weight     = 30

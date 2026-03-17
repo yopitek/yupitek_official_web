@@ -22,7 +22,7 @@
     weight   = 22
 
   [[main]]
-    name     = "GraphicCard"
+    name     = "顯示卡"
     pageRef  = "/products/graphiccard"
     parent   = "產品"
     weight   = 23
@@ -50,11 +50,6 @@
     pageRef  = "/products/acr"
     parent   = "產品"
     weight   = 27
-
-[[main]]
-  name       = "部落格"
-  pageRef    = "/blog"
-  weight     = 28
 
 [[main]]
   name       = "技術支援"

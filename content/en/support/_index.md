@@ -13,6 +13,29 @@ The following are official driver and firmware download links. Please visit each
 Always download drivers from official brand websites to ensure security and compatibility.
 {{< /alert >}}
 
+<div class="my-6">
+  <input
+    type="text"
+    id="driver-search"
+    placeholder="Search model, e.g.: AWUS036ACH"
+    oninput="filterDriverTable(this.value)"
+    class="w-full px-4 py-3 rounded-lg border border-neutral-600 bg-neutral-800 text-neutral-200 placeholder-neutral-500 focus:outline-none focus:border-primary-400 text-sm"
+    style="max-width:480px"
+  />
+</div>
+
+<script>
+function filterDriverTable(query) {
+  var q = query.toLowerCase();
+  var rows = document.querySelectorAll('table tbody tr');
+  rows.forEach(function(row) {
+    var cell = row.querySelector('td');
+    if (!cell) return;
+    row.style.display = cell.textContent.toLowerCase().indexOf(q) !== -1 ? '' : 'none';
+  });
+}
+</script>
+
 ## ALFA Network Drivers
 
 ### Wi-Fi 6E Series

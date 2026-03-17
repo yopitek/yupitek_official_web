@@ -47,6 +47,25 @@ showTableOfContents: true
 
 ## 我們的優勢
 
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6 text-center">
+  <div class="p-4 rounded-lg border border-neutral-700">
+    <div class="text-3xl font-bold text-primary-400 mb-1">50+</div>
+    <div class="text-xs text-neutral-400">完成案例</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700">
+    <div class="text-3xl font-bold text-primary-400 mb-1">30+</div>
+    <div class="text-xs text-neutral-400">服務機構</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700">
+    <div class="text-3xl font-bold text-primary-400 mb-1">200+</div>
+    <div class="text-xs text-neutral-400">投影機安裝台數</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700">
+    <div class="text-3xl font-bold text-primary-400 mb-1">10+</div>
+    <div class="text-xs text-neutral-400">年整合經驗</div>
+  </div>
+</div>
+
 {{< card-group cols=2 >}}
 
 {{< card title="🎯 全尺度投影能力" >}}
@@ -82,7 +101,11 @@ showTableOfContents: true
 
 {{< badge >}}建築光雕投影{{< /badge >}} {{< badge >}}客戶：台北市政府{{< /badge >}}
 
+<details><summary>查看案例詳情</summary>
+
 本案以台北市政府整棟建築立面作為投影畫布，配合 2021 年「Color Taipei」彩虹節慶活動，呈現融合台灣多元文化與彩虹驕傲意象的大型動態藝術投影。榆閤科技克服大型建築物複雜立面結構的幾何校正挑戰，精準對位每一塊建築表面，包含柱廊、門廊與多層窗框凹凸結構，搭配多台高亮度工程投影機的同步訊號控制系統，成功於夜間演出中呈現鮮豔色彩飽滿、細節精準的動態視覺效果。整場演出歷時數夜，每場均穩定無誤，現場吸引數萬台北市民駐足觀賞，成為當年度城市地標級公共藝術計畫，各大媒體廣泛報導。
+
+</details>
 
 ---
 
@@ -209,3 +232,7 @@ Tech World 生命館案例是榆閤科技跨場域整合能力的完整展現，
 {{< alert "circle-info" >}}
 需要客製化投影解決方案？[**聯絡我們**](/zh-tw/contact/)討論您的需求，我們提供免費現場勘查與方案規劃。
 {{< /alert >}}
+
+<div class="mt-8 text-center">
+  <a href="/zh-tw/contact/" class="btn-inquiry">預約免費諮詢 →</a>
+</div>

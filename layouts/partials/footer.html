@@ -1,0 +1,165 @@
+<footer id="site-footer" class="py-10 print:hidden">
+
+  {{/* Rich footer — company info, nav, social */}}
+  <div class="border-t border-neutral-700 dark:border-neutral-700 pt-10 pb-8 mb-6">
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      {{/* Column 1 — Company info */}}
+      <div>
+        <p class="text-base font-semibold text-neutral-200 dark:text-neutral-200 mb-2">
+          榆閤科技有限公司
+        </p>
+        <p class="text-sm text-neutral-400 dark:text-neutral-400 mb-4 leading-relaxed">
+          Yopitek Ltd — 台灣授權代理 × 頂尖科技產品 × 專業視覺整合
+        </p>
+        <ul class="space-y-1 text-sm text-neutral-400 dark:text-neutral-400">
+          <li>
+            <a href="mailto:sales@yupitek.com"
+               class="hover:text-primary-400 transition-colors duration-150">
+              ✉ sales@yupitek.com
+            </a>
+          </li>
+          <li>
+            <a href="tel:+886287325338"
+               class="hover:text-primary-400 transition-colors duration-150">
+              ☎ +886-2-87325338
+            </a>
+          </li>
+          <li>📍 台北市富陽街72巷34號</li>
+          <li>🕐 週一至週五 09:00–18:00 (GMT+8)</li>
+        </ul>
+      </div>
+
+      {{/* Column 2 — Quick navigation */}}
+      <div>
+        <p class="text-base font-semibold text-neutral-200 dark:text-neutral-200 mb-4">
+          快速導覽
+        </p>
+        <ul class="space-y-2 text-sm text-neutral-400 dark:text-neutral-400">
+          <li>
+            <a href="/zh-tw/solution/"
+               class="hover:text-primary-400 transition-colors duration-150">
+              解決方案
+            </a>
+          </li>
+          <li>
+            <a href="/zh-tw/products/alfa/"
+               class="hover:text-primary-400 transition-colors duration-150">
+              產品總覽
+            </a>
+          </li>
+          <li>
+            <a href="/zh-tw/support/"
+               class="hover:text-primary-400 transition-colors duration-150">
+              技術支援
+            </a>
+          </li>
+          <li>
+            <a href="/zh-tw/contact/"
+               class="hover:text-primary-400 transition-colors duration-150">
+              聯絡我們
+            </a>
+          </li>
+          <li>
+            <a href="/zh-tw/about/"
+               class="hover:text-primary-400 transition-colors duration-150">
+              關於我們
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {{/* Column 3 — Social + contact prompt */}}
+      <div>
+        <p class="text-base font-semibold text-neutral-200 dark:text-neutral-200 mb-4">
+          關注我們
+        </p>
+        <div class="flex gap-4 mb-6">
+          <a href="https://www.linkedin.com/company/yopitek"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="LinkedIn"
+             class="text-neutral-400 hover:text-primary-400 transition-colors duration-150 text-2xl">
+            {{ partial "icon.html" "linkedin" }}
+          </a>
+          <a href="https://www.facebook.com/yopitek"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Facebook"
+             class="text-neutral-400 hover:text-primary-400 transition-colors duration-150 text-2xl">
+            {{ partial "icon.html" "facebook" }}
+          </a>
+        </div>
+        <a href="/zh-tw/contact/"
+           class="inline-block text-sm px-4 py-2 rounded border border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white transition-all duration-150">
+          立即詢價 →
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  {{/* Footer menu (Blowfish standard) */}}
+  {{ if .Site.Params.footer.showMenu | default true }}
+    {{ if .Site.Menus.footer }}
+      {{ $onlyIcon := true }}
+      {{ range .Site.Menus.footer }}
+        {{ if .Name }}
+          {{ $onlyIcon = false }}
+          {{ break }}
+        {{ end }}
+      {{ end }}
+      {{ $navClass := printf "flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 %s" (cond $onlyIcon "overflow-x-auto py-2" "") }}
+      {{ $ulClass := printf "flex list-none %s" (cond $onlyIcon "flex-row" "flex-col sm:flex-row") }}
+      {{ $liClass := printf "flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 %s" (cond $onlyIcon "me-4" "") }}
+      <nav class="{{ $navClass }}">
+        <ul class="{{ $ulClass }}">
+          {{ range .Site.Menus.footer }}
+            <li class=" {{ $liClass }}">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="{{ .URL }}"
+                title="{{ .Title }}">
+                {{ if .Pre }}
+                  <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
+                    {{ partial "icon.html" .Pre }}
+                  </span>
+                {{ end }}
+                {{ .Name | markdownify }}
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </nav>
+    {{ end }}
+  {{ end }}
+
+  {{/* Bottom row — copyright, legal links */}}
+  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+    {{ if .Site.Params.footer.showCopyright | default true }}
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+        {{- with replace .Site.Params.copyright "{ year }" now.Year }}
+          {{ . | markdownify }}
+        {{- else }}
+          &copy; {{ now.Format "2006" }} 榆閤科技有限公司 (Yopitek Ltd). All rights reserved.
+        {{- end }}
+      </p>
+    {{ end }}
+    <div class="flex gap-4 text-xs text-neutral-500 dark:text-neutral-500">
+      <a href="/zh-tw/privacy/" class="hover:text-neutral-300 transition-colors duration-150">隱私政策</a>
+      <a href="/zh-tw/terms/" class="hover:text-neutral-300 transition-colors duration-150">服務條款</a>
+    </div>
+  </div>
+
+  {{ if not .Site.Params.disableImageZoom | default true }}
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  {{ end }}
+
+  {{ if templates.Exists "partials/extend-footer.html" }}
+    {{ partialCached "extend-footer.html" . }}
+  {{ end }}
+</footer>

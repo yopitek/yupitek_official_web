@@ -80,6 +80,12 @@ html[lang="zh-CN"] body {
   text-align: left;
 }
 
+/* Fixed nav offset — prevents content hiding under sticky header */
+body > div > main,
+body > main {
+  scroll-padding-top: 4rem;
+}
+
 /* Security tools legal notice */
 .legal-notice {
   border-left: 3px solid var(--brand-cyan);

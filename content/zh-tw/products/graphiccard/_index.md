@@ -14,22 +14,22 @@ featureimage: "/images/products/graphiccard/banner-graphiccard.webp"
 ## ASUS RTX 5080 系列
 
 {{< card-group >}}
-  {{< card title="ASUS PRIME RTX5080-16G" href="/zh-tw/products/graphiccard/asus-prime-rtx5080-16g/" >}}
+  {{< card title="ASUS PRIME RTX5080-16G" href="/zh-tw/products/graphiccard/asus-prime-rtx5080-16g/" image="/images/products/graphiccard/asus-prime-rtx5080-16g.webp" >}}
     ASUS PRIME 系列，簡潔設計，基本散熱方案，適合一般專業用途。
   {{< /card >}}
-  {{< card title="ASUS PRIME RTX5080-O16G" href="/zh-tw/products/graphiccard/asus-prime-rtx5080-o16g/" >}}
+  {{< card title="ASUS PRIME RTX5080-O16G" href="/zh-tw/products/graphiccard/asus-prime-rtx5080-o16g/" image="/images/products/graphiccard/asus-prime-rtx5080-o16g.webp" >}}
     ASUS PRIME 超頻版，提升核心與記憶體時脈，強化效能輸出。
   {{< /card >}}
-  {{< card title="ASUS TUF RTX5080-O16G-GAMING" href="/zh-tw/products/graphiccard/asus-tuf-rtx5080-o16g/" >}}
+  {{< card title="ASUS TUF RTX5080-O16G-GAMING" href="/zh-tw/products/graphiccard/asus-tuf-rtx5080-o16g/" image="/images/products/graphiccard/asus-tuf-rtx5080-o16g.webp" >}}
     ASUS TUF Gaming，軍規認證耐用性，三風扇強效散熱。
   {{< /card >}}
-  {{< card title="ASUS ProArt RTX5080 O16G" href="/zh-tw/products/graphiccard/asus-proart-rtx5080-o16g/" >}}
+  {{< card title="ASUS ProArt RTX5080 O16G" href="/zh-tw/products/graphiccard/asus-proart-rtx5080-o16g/" image="/images/products/graphiccard/asus-proart-rtx5080-o16g.webp" >}}
     ASUS ProArt，專為創作者設計，優化色彩精準度，適合影像後製。
   {{< /card >}}
-  {{< card title="ASUS RTX5080 O16G NOCTUA" href="/zh-tw/products/graphiccard/asus-rtx5080-o16g-noctua/" >}}
+  {{< card title="ASUS RTX5080 O16G NOCTUA" href="/zh-tw/products/graphiccard/asus-rtx5080-o16g-noctua/" image="/images/products/graphiccard/asus-rtx5080-o16g-noctua.webp" >}}
     ASUS × Noctua 聯名靜音版，Noctua 工業級風扇，極致靜音效能。
   {{< /card >}}
-  {{< card title="ASUS ROG ASTRAL RTX5080 O16G" href="/zh-tw/products/graphiccard/asus-rog-astral-rtx5080-o16g/" >}}
+  {{< card title="ASUS ROG ASTRAL RTX5080 O16G" href="/zh-tw/products/graphiccard/asus-rog-astral-rtx5080-o16g/" image="/images/products/graphiccard/asus-rog-astral-rtx5080-o16g.webp" >}}
     ASUS ROG ASTRAL 旗艦款，頂級散熱設計，超強超頻潛力。
   {{< /card >}}
 {{< /card-group >}}
@@ -37,13 +37,13 @@ featureimage: "/images/products/graphiccard/banner-graphiccard.webp"
 ## GIGABYTE RTX 5080 系列
 
 {{< card-group >}}
-  {{< card title="GIGABYTE RTX5080 GAMING OC 16G" href="/zh-tw/products/graphiccard/gigabyte-rtx5080-gaming-oc/" >}}
+  {{< card title="GIGABYTE RTX5080 GAMING OC 16G" href="/zh-tw/products/graphiccard/gigabyte-rtx5080-gaming-oc/" image="/images/products/graphiccard/gigabyte-rtx5080-gaming-oc.webp" >}}
     GIGABYTE GAMING OC，三風扇設計，超頻版本，高性價比選擇。
   {{< /card >}}
-  {{< card title="GIGABYTE RTX5080 MASTER 16G" href="/zh-tw/products/graphiccard/gigabyte-rtx5080-master/" >}}
+  {{< card title="GIGABYTE RTX5080 MASTER 16G" href="/zh-tw/products/graphiccard/gigabyte-rtx5080-master/" image="/images/products/graphiccard/gigabyte-rtx5080-master.webp" >}}
     GIGABYTE MASTER，頂級散熱設計，適合長時間高負載運算。
   {{< /card >}}
-  {{< card title="GIGABYTE RTX5080 MASTER ICE 16G" href="/zh-tw/products/graphiccard/gigabyte-rtx5080-master-ice/" >}}
+  {{< card title="GIGABYTE RTX5080 MASTER ICE 16G" href="/zh-tw/products/graphiccard/gigabyte-rtx5080-master-ice/" image="/images/products/graphiccard/gigabyte-rtx5080-master-ice.webp" >}}
     GIGABYTE MASTER ICE 白色版，白色機箱首選，相同旗艦規格。
   {{< /card >}}
 {{< /card-group >}}
@@ -51,14 +51,16 @@ featureimage: "/images/products/graphiccard/banner-graphiccard.webp"
 ## MSI RTX 5080 系列
 
 {{< card-group >}}
-  {{< card title="MSI RTX5080 16G GAMING TRIO OC" href="/zh-tw/products/graphiccard/msi-rtx5080-gaming-trio-oc/" >}}
+  {{< card title="MSI RTX5080 16G GAMING TRIO OC" href="/zh-tw/products/graphiccard/msi-rtx5080-gaming-trio-oc/" image="/images/products/graphiccard/msi-rtx5080-gaming-trio-oc.webp" >}}
     MSI GAMING TRIO OC，三風扇旗艦散熱，均衡效能與散熱表現。
   {{< /card >}}
-  {{< card title="MSI RTX5080 16G VENTUS 3X OC" href="/zh-tw/products/graphiccard/msi-rtx5080-ventus-3x-oc/" >}}
+  {{< card title="MSI RTX5080 16G VENTUS 3X OC" href="/zh-tw/products/graphiccard/msi-rtx5080-ventus-3x-oc/" image="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc.webp" >}}
     MSI VENTUS 3X OC，簡潔設計，適合主流機箱安裝，高 CP 值。
   {{< /card >}}
 {{< /card-group >}}
 
 ---
 
-需要詢問 RTX 5080 報價或應用諮詢？[聯絡我們](/zh-tw/contact/)
+<div class="mt-6 text-center">
+  <a href="/zh-tw/contact/" class="btn-inquiry">詢問繪圖卡報價 →</a>
+</div>

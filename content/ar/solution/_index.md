@@ -14,6 +14,25 @@ showTableOfContents: true
 
 ## الخدمات
 
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">50+</div>
+    <div class="text-sm text-neutral-300">مشروع مكتمل</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">30+</div>
+    <div class="text-sm text-neutral-300">مؤسسة شريكة</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">200+</div>
+    <div class="text-sm text-neutral-300">جهاز عرض</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">10+</div>
+    <div class="text-sm text-neutral-300">سنوات خبرة</div>
+  </div>
+</div>
+
 {{< card-group >}}
 
 {{< card title="الإسقاط المعماري" >}}
@@ -45,3 +64,7 @@ showTableOfContents: true
 ---
 
 للاستفسار عن الحلول، [تواصل معنا](/ar/contact/).
+
+<div class="mt-8 text-center">
+  <a href="/ar/contact/" class="btn-inquiry">احجز استشارة مجانية →</a>
+</div>

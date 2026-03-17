@@ -13,6 +13,25 @@ showTableOfContents: true
 
 ## Услуги
 
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">50+</div>
+    <div class="text-sm text-neutral-300">Реализованных проектов</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">30+</div>
+    <div class="text-sm text-neutral-300">Партнёрских организаций</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">200+</div>
+    <div class="text-sm text-neutral-300">Проекторов</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">10+</div>
+    <div class="text-sm text-neutral-300">Лет опыта</div>
+  </div>
+</div>
+
 {{< card-group >}}
 
 {{< card title="Архитектурное проецирование" >}}
@@ -44,3 +63,7 @@ showTableOfContents: true
 ---
 
 По вопросам решений [свяжитесь с нами](/ru/contact/).
+
+<div class="mt-8 text-center">
+  <a href="/ru/contact/" class="btn-inquiry">Записаться на консультацию →</a>
+</div>

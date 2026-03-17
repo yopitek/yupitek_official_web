@@ -10,6 +10,34 @@ heroStyle: "basic"
 
 Yopitek es una empresa profesional con profunda presencia en el mercado tecnológico de Taiwán, con dos divisiones de negocio: una enfocada en la distribución de productos tecnológicos de vanguardia, y otra en la planificación e integración de soluciones visuales de alto nivel.
 
+**Distribuidor Autorizado en Taiwán × Productos Tech Premium × Integración Visual Profesional**
+
+<div class="flex flex-wrap gap-4 my-6">
+  <a href="/es/solution/" class="btn-inquiry">Conocer Nuestras Soluciones</a>
+  <a href="/es/contact/" style="display:inline-block;padding:0.75rem 2rem;border-radius:6px;border:1px solid #29ABE2;color:#29ABE2;font-weight:600;transition:all 0.2s;">Contáctenos</a>
+</div>
+
+## ¿Por Qué Elegir Yopitek?
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-6">
+  <div class="p-4 rounded-lg border border-neutral-700">
+    <div class="text-3xl font-bold text-primary-400 mb-1">50+</div>
+    <div class="text-sm text-neutral-300">Proyectos Visuales Completados</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700">
+    <div class="text-3xl font-bold text-primary-400 mb-1">30+</div>
+    <div class="text-sm text-neutral-300">Organizaciones Asociadas</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700">
+    <div class="text-3xl font-bold text-primary-400 mb-1">7</div>
+    <div class="text-sm text-neutral-300">Marcas Autorizadas</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700">
+    <div class="text-3xl font-bold text-primary-400 mb-1">8</div>
+    <div class="text-sm text-neutral-300">Idiomas de Soporte</div>
+  </div>
+</div>
+
 ---
 
 ## IT Distribution｜Distribución y Representación de Productos Tecnológicos
@@ -20,13 +48,13 @@ Yopitek es distribuidor autorizado de múltiples marcas reconocidas mundialmente
 
 | Marca | Especialidad |
 |-------|-------------|
-| ALFA Network | Adaptadores Wi-Fi profesionales con soporte para Monitor Mode e inyección de paquetes |
-| Hak5 | Kit de herramientas para pruebas de penetración en ciberseguridad |
-| Flipper Zero | Dispositivo multiprotocolo de investigación de seguridad inalámbrica |
-| Ubiquiti UniFi | Infraestructura de red inalámbrica de nivel empresarial |
-| NVIDIA GeForce RTX | Plataforma de gráficos profesionales de alto rendimiento |
-| SDRLAB | Equipos de investigación de Radio Definida por Software (SDR) |
-| ACS | Lectores de tarjetas inteligentes y soluciones de verificación de identidad |
+| [ALFA Network](/es/products/alfa/) | Adaptadores Wi-Fi profesionales con soporte para Monitor Mode e inyección de paquetes |
+| [Hak5](/es/products/hak5/) | Kit de herramientas para pruebas de penetración en ciberseguridad |
+| [Flipper Zero](/es/products/flipperzero/) | Dispositivo multiprotocolo de investigación de seguridad inalámbrica |
+| [Ubiquiti UniFi](/es/products/ubiquiti/) | Infraestructura de red inalámbrica de nivel empresarial |
+| [NVIDIA GeForce RTX](/es/products/graphiccard/) | Plataforma de gráficos profesionales de alto rendimiento |
+| [SDRLAB](/es/products/sdrlab/) | Equipos de investigación de Radio Definida por Software (SDR) |
+| [ACS](/es/products/acr/) | Lectores de tarjetas inteligentes y soluciones de verificación de identidad |
 
 ---
 
@@ -42,3 +70,7 @@ Yopitek ofrece servicios integrales de soluciones de proyección — desde la ev
 - Desarrollo e instalación de plataformas de proyección táctil interactiva
 
 **Clientes:** Gobierno de la Ciudad de Taipéi, organismos de defensa nacional, museos, universidades e instituciones de educación superior, eventos de marcas corporativas
+
+<div class="mt-8">
+  <a href="/es/solution/" class="btn-inquiry">Ver Casos de Soluciones →</a>
+</div>

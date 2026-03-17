@@ -13,6 +13,25 @@ showTableOfContents: true
 
 ## サービス内容
 
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">50+</div>
+    <div class="text-sm text-neutral-300">完了案件</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">30+</div>
+    <div class="text-sm text-neutral-300">連携機関</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">200+</div>
+    <div class="text-sm text-neutral-300">プロジェクター</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">10+</div>
+    <div class="text-sm text-neutral-300">年の経験</div>
+  </div>
+</div>
+
 {{< card-group >}}
 
 {{< card title="建築プロジェクションマッピング" >}}
@@ -44,3 +63,7 @@ showTableOfContents: true
 ---
 
 ソリューションのご相談は[お問い合わせ](/ja/contact/)ください。
+
+<div class="mt-8 text-center">
+  <a href="/ja/contact/" class="btn-inquiry">無料相談を予約する →</a>
+</div>

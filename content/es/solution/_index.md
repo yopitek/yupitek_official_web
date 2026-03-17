@@ -13,6 +13,25 @@ showTableOfContents: true
 
 ## Servicios
 
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">50+</div>
+    <div class="text-sm text-neutral-300">Proyectos completados</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">30+</div>
+    <div class="text-sm text-neutral-300">Organizaciones socias</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">200+</div>
+    <div class="text-sm text-neutral-300">Proyectores instalados</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">10+</div>
+    <div class="text-sm text-neutral-300">Años de experiencia</div>
+  </div>
+</div>
+
 {{< card-group >}}
 
 {{< card title="Proyección Arquitectónica" >}}
@@ -44,3 +63,7 @@ Servicios de proyección para conciertos, lanzamientos y ferias. Dirección téc
 ---
 
 Para consultas sobre soluciones, [contáctanos](/es/contact/).
+
+<div class="mt-8 text-center">
+  <a href="/es/contact/" class="btn-inquiry">Agendar consulta gratuita →</a>
+</div>

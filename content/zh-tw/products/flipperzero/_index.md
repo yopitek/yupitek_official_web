@@ -18,20 +18,22 @@ Flipper Zero 是一款開源多功能無線安全研究工具，支援多種無�
 ## 產品系列
 
 {{< card-group >}}
-  {{< card title="Flipper Zero" href="/zh-tw/products/flipperzero/flipper-zero/" >}}
+  {{< card title="Flipper Zero" href="/zh-tw/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.webp" >}}
     核心主機，支援 Sub-GHz、NFC、RFID 125kHz、紅外線、iButton、GPIO、藍牙 5.0，內建 USB-C。
   {{< /card >}}
-  {{< card title="WiFi Devboard for Flipper Zero" href="/zh-tw/products/flipperzero/wifi-devboard/" >}}
+  {{< card title="WiFi Devboard for Flipper Zero" href="/zh-tw/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.webp" >}}
     Flipper Zero 官方 Wi-Fi 擴充板，基於 ESP32-S2，支援 Wi-Fi 安全測試功能擴充。
   {{< /card >}}
-  {{< card title="Video Game Module for Flipper Zero" href="/zh-tw/products/flipperzero/video-game-module/" >}}
+  {{< card title="Video Game Module for Flipper Zero" href="/zh-tw/products/flipperzero/video-game-module/" image="/images/products/flipperzero/video-game-module.webp" >}}
     Flipper Zero 視訊遊戲模組，基於 RP2040，支援視訊輸出，擴展遊戲與顯示功能。
   {{< /card >}}
-  {{< card title="Silicone Case for Flipper Zero" href="/zh-tw/products/flipperzero/silicone-case/" >}}
+  {{< card title="Silicone Case for Flipper Zero" href="/zh-tw/products/flipperzero/silicone-case/" image="/images/products/flipperzero/silicone-case.webp" >}}
     Flipper Zero 官方矽膠保護殼，完整保護主機，按鍵手感良好。
   {{< /card >}}
 {{< /card-group >}}
 
 ---
 
-需要詢問報價？[聯絡我們](/zh-tw/contact/)
+<div class="mt-6 text-center">
+  <a href="/zh-tw/contact/" class="btn-inquiry">詢問 Flipper Zero 報價 →</a>
+</div>

@@ -13,6 +13,25 @@ Yopitek Ltd (榆閤科技有限公司) is a Taipei, Taiwan-based technology comp
 
 ## Services
 
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">50+</div>
+    <div class="text-sm text-neutral-300">Completed Cases</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">30+</div>
+    <div class="text-sm text-neutral-300">Partner Orgs</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">200+</div>
+    <div class="text-sm text-neutral-300">Projectors Deployed</div>
+  </div>
+  <div class="p-4 rounded-lg border border-neutral-700 text-center">
+    <div class="text-3xl font-bold text-primary-400 mb-1">10+</div>
+    <div class="text-sm text-neutral-300">Years Experience</div>
+  </div>
+</div>
+
 {{< card-group cols=2 >}}
 
 {{< card title="🏛 Architectural Projection Mapping" >}}
@@ -46,3 +65,7 @@ Rapid-deployment projection solutions for temporary exhibitions and large-scale 
 Nationwide service across Taiwan: **Taipei · Taoyuan · Tainan · Yilan · Pingtung**
 
 Need a custom projection solution? [Contact us](/en/contact/) to discuss your requirements.
+
+<div class="mt-8 text-center">
+  <a href="/en/contact/" class="btn-inquiry">Schedule a Free Consultation →</a>
+</div>

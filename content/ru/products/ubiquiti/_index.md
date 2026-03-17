@@ -6,19 +6,20 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
 ---
 
 {{< card-group >}}
-  {{< card title="UniFi U7 Pro" href="/ru/products/ubiquiti/u7-pro/" >}}
+  {{< card title="UniFi U7 Pro" href="/ru/products/ubiquiti/u7-pro/" image="/images/products/ubiquiti/u7-pro.png" >}}
     Флагманская трёхдиапазонная точка доступа Wi-Fi 7 с поддержкой 6GHz.
   {{< /card >}}
-  {{< card title="UniFi U7 Pro Max" href="/ru/products/ubiquiti/u7-pro-max/" >}}
+  {{< card title="UniFi U7 Pro Max" href="/ru/products/ubiquiti/u7-pro-max/" image="/images/products/ubiquiti/u7-pro-max.png" >}}
     Мощная версия Wi-Fi 7 с расширенным покрытием для больших пространств.
   {{< /card >}}
-  {{< card title="UniFi Cloud Gateway Fiber" href="/ru/products/ubiquiti/cloud-gateway-fiber/" >}}
+  {{< card title="UniFi Cloud Gateway Fiber" href="/ru/products/ubiquiti/cloud-gateway-fiber/" image="/images/products/ubiquiti/cloud-gateway-fiber.png" >}}
     Сетевой шлюз UniFi с оптическим WAN и встроенным контроллером UniFi.
   {{< /card >}}
-  {{< card title="UniFi Dream Router 7" href="/ru/products/ubiquiti/udr7/" >}}
+  {{< card title="UniFi Dream Router 7" href="/ru/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.webp" >}}
     Комплексный роутер Wi-Fi 7 со встроенным контроллером UniFi.
   {{< /card >}}
 {{< /card-group >}}

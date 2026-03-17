@@ -6,19 +6,20 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
 ---
 
 {{< card-group >}}
-  {{< card title="UniFi U7 Pro" href="/pt/products/ubiquiti/u7-pro/" >}}
+  {{< card title="UniFi U7 Pro" href="/pt/products/ubiquiti/u7-pro/" image="/images/products/ubiquiti/u7-pro.png" >}}
     AP tri-banda Wi-Fi 7 com suporte 6GHz — para ambientes de escritório de alta densidade.
   {{< /card >}}
-  {{< card title="UniFi U7 Pro Max" href="/pt/products/ubiquiti/u7-pro-max/" >}}
+  {{< card title="UniFi U7 Pro Max" href="/pt/products/ubiquiti/u7-pro-max/" image="/images/products/ubiquiti/u7-pro-max.png" >}}
     Versão de alta potência Wi-Fi 7 com cobertura estendida para grandes espaços.
   {{< /card >}}
-  {{< card title="UniFi Cloud Gateway Fiber" href="/pt/products/ubiquiti/cloud-gateway-fiber/" >}}
+  {{< card title="UniFi Cloud Gateway Fiber" href="/pt/products/ubiquiti/cloud-gateway-fiber/" image="/images/products/ubiquiti/cloud-gateway-fiber.png" >}}
     Gateway de rede UniFi com WAN de fibra óptica e controlador UniFi integrado.
   {{< /card >}}
-  {{< card title="UniFi Dream Router 7" href="/pt/products/ubiquiti/udr7/" >}}
+  {{< card title="UniFi Dream Router 7" href="/pt/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.webp" >}}
     Roteador Wi-Fi 7 all-in-one com controlador UniFi integrado.
   {{< /card >}}
 {{< /card-group >}}

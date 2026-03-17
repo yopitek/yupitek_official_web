@@ -6,16 +6,17 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
+featureimage: "/images/products/sdrlab/banner-sdrlab.webp"
 ---
 
 {{< card-group >}}
-  {{< card title="RTL-SDR Blog RTL SDR V4" href="/es/products/sdrlab/rtl-sdr-v4/" >}}
+  {{< card title="RTL-SDR Blog RTL SDR V4" href="/es/products/sdrlab/rtl-sdr-v4/" image="/images/products/sdrlab/rtl-sdr-v4.png" >}}
     Receptor SDR de nivel inicial que cubre 500 kHz–1766 MHz vía USB.
   {{< /card >}}
-  {{< card title="SDRLab TRX-duo" href="/es/products/sdrlab/trx-duo/" >}}
+  {{< card title="SDRLab TRX-duo" href="/es/products/sdrlab/trx-duo/" image="/images/products/sdrlab/trx-duo.png" >}}
     Plataforma SDR de doble canal 16-bit ADC, compatible con Red Pitaya.
   {{< /card >}}
-  {{< card title="Flipper Zero NRF24 Module" href="/es/products/sdrlab/flipper-nrf24/" >}}
+  {{< card title="Flipper Zero NRF24 Module" href="/es/products/sdrlab/flipper-nrf24/" image="/images/products/sdrlab/flipper-nrf24.png" >}}
     Módulo NRF24L01+ para investigación inalámbrica en 2.4 GHz.
   {{< /card >}}
 {{< /card-group >}}

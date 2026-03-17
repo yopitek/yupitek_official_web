@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
+featureimage: "/images/products/hak5/banner-hak5.webp"
 ---
 
 {{< alert "warning" >}}
@@ -15,19 +16,19 @@ showChildPages: false
 ## Línea de Productos
 
 {{< card-group >}}
-  {{< card title="WiFi Pineapple Mark VII" href="/es/products/hak5/wifi-pineapple-mark7/" >}}
+  {{< card title="WiFi Pineapple Mark VII" href="/es/products/hak5/wifi-pineapple-mark7/" image="/images/products/hak5/wifi-pineapple.png" >}}
     Plataforma profesional de auditoría de redes inalámbricas, 802.11 a/b/g/n/ac dual-band.
   {{< /card >}}
-  {{< card title="USB Rubber Ducky" href="/es/products/hak5/usb-rubber-ducky/" >}}
+  {{< card title="USB Rubber Ducky" href="/es/products/hak5/usb-rubber-ducky/" image="/images/products/hak5/usb-rubber-ducky.png" >}}
     Herramienta estándar de inyección HID — similar a una memoria USB convencional.
   {{< /card >}}
-  {{< card title="Bash Bunny Mark II" href="/es/products/hak5/bash-bunny/" >}}
+  {{< card title="Bash Bunny Mark II" href="/es/products/hak5/bash-bunny/" image="/images/products/hak5/bash-bunny.png" >}}
     Plataforma de ataque USB multifuncional con inyección HID y emulación de dispositivos.
   {{< /card >}}
-  {{< card title="O.MG Cable" href="/es/products/hak5/omg-cable/" >}}
+  {{< card title="O.MG Cable" href="/es/products/hak5/omg-cable/" image="/images/products/hak5/omg-cable.png" >}}
     Disfrazado como cable de carga estándar — soporta inyección HID remota y registro de teclas.
   {{< /card >}}
-  {{< card title="Shark Jack" href="/es/products/hak5/shark-jack/" >}}
+  {{< card title="Shark Jack" href="/es/products/hak5/shark-jack/" image="/images/products/hak5/shark-jack.png" >}}
     Herramienta portátil de auditoría de redes cableadas para despliegue rápido.
   {{< /card >}}
 {{< /card-group >}}

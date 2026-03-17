@@ -6,19 +6,20 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
+featureimage: "/images/products/graphiccard/banner-graphiccard.webp"
 ---
 
 {{< card-group >}}
-  {{< card title="ASUS TUF RTX5080-O16G-GAMING" href="/pt/products/graphiccard/asus-tuf-rtx5080-o16g/" >}}
+  {{< card title="ASUS TUF RTX5080-O16G-GAMING" href="/pt/products/graphiccard/asus-tuf-rtx5080-o16g/" image="/images/products/graphiccard/asus-tuf-rtx5080-o16g.png" >}}
     ASUS TUF Gaming — durabilidade de grau militar com triplo ventilador.
   {{< /card >}}
-  {{< card title="ASUS ROG ASTRAL RTX5080 O16G" href="/pt/products/graphiccard/asus-rog-astral-rtx5080-o16g/" >}}
+  {{< card title="ASUS ROG ASTRAL RTX5080 O16G" href="/pt/products/graphiccard/asus-rog-astral-rtx5080-o16g/" image="/images/products/graphiccard/asus-rog-astral-rtx5080-o16g.png" >}}
     ASUS ROG ASTRAL flagship — sistema de resfriamento de alto nível.
   {{< /card >}}
-  {{< card title="GIGABYTE RTX5080 GAMING OC 16G" href="/pt/products/graphiccard/gigabyte-rtx5080-gaming-oc/" >}}
+  {{< card title="GIGABYTE RTX5080 GAMING OC 16G" href="/pt/products/graphiccard/gigabyte-rtx5080-gaming-oc/" image="/images/products/graphiccard/gigabyte-rtx5080-gaming-oc.png" >}}
     GIGABYTE GAMING OC — triplo ventilador, versão overclock, excelente custo-benefício.
   {{< /card >}}
-  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/pt/products/graphiccard/msi-rtx5080-suprim-liquid/" >}}
+  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/pt/products/graphiccard/msi-rtx5080-suprim-liquid/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid.png" >}}
     MSI SUPRIM LIQUID — resfriamento líquido all-in-one para máximo desempenho.
   {{< /card >}}
 {{< /card-group >}}

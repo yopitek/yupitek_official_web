@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
+featureimage: "/images/products/flipperzero/banner-flipperzero.webp"
 ---
 
 {{< alert "warning" >}}
@@ -15,16 +16,16 @@ showChildPages: false
 ## Línea de Productos
 
 {{< card-group >}}
-  {{< card title="Flipper Zero" href="/es/products/flipperzero/flipper-zero/" >}}
+  {{< card title="Flipper Zero" href="/es/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.png" >}}
     Dispositivo principal — Sub-GHz, NFC, RFID 125kHz, infrarrojos, iButton, GPIO, Bluetooth 5.0, USB-C.
   {{< /card >}}
-  {{< card title="WiFi Devboard for Flipper Zero" href="/es/products/flipperzero/wifi-devboard/" >}}
+  {{< card title="WiFi Devboard for Flipper Zero" href="/es/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.png" >}}
     Placa de expansión Wi-Fi oficial (ESP32-S2) — añade capacidades de prueba Wi-Fi.
   {{< /card >}}
-  {{< card title="Video Game Module for Flipper Zero" href="/es/products/flipperzero/video-game-module/" >}}
+  {{< card title="Video Game Module for Flipper Zero" href="/es/products/flipperzero/video-game-module/" image="/images/products/flipperzero/video-game-module.png" >}}
     Módulo de videojuegos (RP2040) — soporte de salida de video.
   {{< /card >}}
-  {{< card title="Silicone Case for Flipper Zero" href="/es/products/flipperzero/silicone-case/" >}}
+  {{< card title="Silicone Case for Flipper Zero" href="/es/products/flipperzero/silicone-case/" image="/images/products/flipperzero/silicone-case.png" >}}
     Funda de silicona oficial — protección completa del dispositivo.
   {{< /card >}}
 {{< /card-group >}}

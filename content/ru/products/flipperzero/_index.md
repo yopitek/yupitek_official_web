@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
+featureimage: "/images/products/flipperzero/banner-flipperzero.webp"
 ---
 
 {{< alert "warning" >}}
@@ -15,16 +16,16 @@ showChildPages: false
 ## Линейка продуктов
 
 {{< card-group >}}
-  {{< card title="Flipper Zero" href="/ru/products/flipperzero/flipper-zero/" >}}
+  {{< card title="Flipper Zero" href="/ru/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.png" >}}
     Основное устройство — Sub-GHz, NFC, RFID 125kHz, ИК, iButton, GPIO, Bluetooth 5.0, USB-C.
   {{< /card >}}
-  {{< card title="WiFi Devboard for Flipper Zero" href="/ru/products/flipperzero/wifi-devboard/" >}}
+  {{< card title="WiFi Devboard for Flipper Zero" href="/ru/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.png" >}}
     Официальная плата расширения Wi-Fi (ESP32-S2) — добавляет возможности тестирования Wi-Fi.
   {{< /card >}}
-  {{< card title="Video Game Module for Flipper Zero" href="/ru/products/flipperzero/video-game-module/" >}}
+  {{< card title="Video Game Module for Flipper Zero" href="/ru/products/flipperzero/video-game-module/" image="/images/products/flipperzero/video-game-module.png" >}}
     Игровой модуль (RP2040) — поддерживает видеовывод.
   {{< /card >}}
-  {{< card title="Silicone Case for Flipper Zero" href="/ru/products/flipperzero/silicone-case/" >}}
+  {{< card title="Silicone Case for Flipper Zero" href="/ru/products/flipperzero/silicone-case/" image="/images/products/flipperzero/silicone-case.png" >}}
     Официальный силиконовый защитный чехол — полная защита устройства.
   {{< /card >}}
 {{< /card-group >}}

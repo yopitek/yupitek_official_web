@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
 ---
 
 Ubiquiti UniFi es el referente de la industria en redes inalámbricas empresariales — reconocido por alto rendimiento, gestión centralizada y excelente relación calidad-precio.
@@ -13,13 +14,13 @@ Ubiquiti UniFi es el referente de la industria en redes inalámbricas empresaria
 ## Puntos de Acceso Inalámbrico (AP)
 
 {{< card-group >}}
-  {{< card title="UniFi U7 Pro" href="/es/products/ubiquiti/u7-pro/" >}}
+  {{< card title="UniFi U7 Pro" href="/es/products/ubiquiti/u7-pro/" image="/images/products/ubiquiti/u7-pro.png" >}}
     AP insignia tri-banda Wi-Fi 7 con soporte 6GHz — optimizado para entornos de oficina de alta densidad.
   {{< /card >}}
-  {{< card title="UniFi U7 Pro Max" href="/es/products/ubiquiti/u7-pro-max/" >}}
+  {{< card title="UniFi U7 Pro Max" href="/es/products/ubiquiti/u7-pro-max/" image="/images/products/ubiquiti/u7-pro-max.png" >}}
     Versión de alta potencia Wi-Fi 7 con cobertura extendida para grandes espacios.
   {{< /card >}}
-  {{< card title="UniFi U7 Long Range" href="/es/products/ubiquiti/u7-long-range/" >}}
+  {{< card title="UniFi U7 Long Range" href="/es/products/ubiquiti/u7-long-range/" image="/images/products/ubiquiti/u7-long-range.png" >}}
     Versión de largo alcance Wi-Fi 7 con diseño de antena de alta ganancia.
   {{< /card >}}
 {{< /card-group >}}
@@ -27,10 +28,10 @@ Ubiquiti UniFi es el referente de la industria en redes inalámbricas empresaria
 ## Gateways y Switches
 
 {{< card-group >}}
-  {{< card title="UniFi Cloud Gateway Fiber" href="/es/products/ubiquiti/cloud-gateway-fiber/" >}}
+  {{< card title="UniFi Cloud Gateway Fiber" href="/es/products/ubiquiti/cloud-gateway-fiber/" image="/images/products/ubiquiti/cloud-gateway-fiber.png" >}}
     Gateway de red UniFi con WAN de fibra óptica y controlador UniFi integrado.
   {{< /card >}}
-  {{< card title="UniFi Dream Router 7" href="/es/products/ubiquiti/udr7/" >}}
+  {{< card title="UniFi Dream Router 7" href="/es/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.webp" >}}
     Router todo-en-uno Wi-Fi 7 con controlador UniFi integrado.
   {{< /card >}}
 {{< /card-group >}}

@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
+featureimage: "/images/products/flipperzero/banner-flipperzero.webp"
 ---
 
 {{< alert "warning" >}}
@@ -17,16 +18,16 @@ Flipper Zeroはオープンソースのマルチプロトコル無線セキュ�
 ## 製品ラインナップ
 
 {{< card-group >}}
-  {{< card title="Flipper Zero" href="/ja/products/flipperzero/flipper-zero/" >}}
+  {{< card title="Flipper Zero" href="/ja/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.png" >}}
     コアデバイス — Sub-GHz、NFC、RFID 125kHz、赤外線、iButton、GPIO、Bluetooth 5.0、USB-C内蔵。
   {{< /card >}}
-  {{< card title="WiFi Devboard for Flipper Zero" href="/ja/products/flipperzero/wifi-devboard/" >}}
+  {{< card title="WiFi Devboard for Flipper Zero" href="/ja/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.png" >}}
     公式Wi-Fi拡張ボード（ESP32-S2ベース）— Wi-Fiセキュリティテスト機能を追加。
   {{< /card >}}
-  {{< card title="Video Game Module for Flipper Zero" href="/ja/products/flipperzero/video-game-module/" >}}
+  {{< card title="Video Game Module for Flipper Zero" href="/ja/products/flipperzero/video-game-module/" image="/images/products/flipperzero/video-game-module.png" >}}
     RP2040ベースのビデオゲームモジュール — ビデオ出力とゲーム機能を拡張。
   {{< /card >}}
-  {{< card title="Silicone Case for Flipper Zero" href="/ja/products/flipperzero/silicone-case/" >}}
+  {{< card title="Silicone Case for Flipper Zero" href="/ja/products/flipperzero/silicone-case/" image="/images/products/flipperzero/silicone-case.png" >}}
     公式シリコン保護ケース — デバイスを完全に保護し、ボタンの操作感も良好。
   {{< /card >}}
 {{< /card-group >}}

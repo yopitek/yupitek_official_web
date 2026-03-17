@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
+featureimage: "/images/products/flipperzero/banner-flipperzero.webp"
 ---
 
 {{< alert "warning" >}}
@@ -17,16 +18,16 @@ Flipper Zero is an open-source multi-protocol wireless security research tool su
 ## Product Line
 
 {{< card-group >}}
-  {{< card title="Flipper Zero" href="/en/products/flipperzero/flipper-zero/" >}}
+  {{< card title="Flipper Zero" href="/en/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.png" >}}
     Core device supporting Sub-GHz, NFC, RFID 125kHz, infrared, iButton, GPIO, Bluetooth 5.0, built-in USB-C.
   {{< /card >}}
-  {{< card title="WiFi Devboard for Flipper Zero" href="/en/products/flipperzero/wifi-devboard/" >}}
+  {{< card title="WiFi Devboard for Flipper Zero" href="/en/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.png" >}}
     Official Flipper Zero Wi-Fi expansion board based on ESP32-S2 — enables Wi-Fi security testing capabilities.
   {{< /card >}}
-  {{< card title="Video Game Module for Flipper Zero" href="/en/products/flipperzero/video-game-module/" >}}
+  {{< card title="Video Game Module for Flipper Zero" href="/en/products/flipperzero/video-game-module/" image="/images/products/flipperzero/video-game-module.png" >}}
     Flipper Zero video game module based on RP2040 — supports video output and expanded gaming/display features.
   {{< /card >}}
-  {{< card title="Silicone Case for Flipper Zero" href="/en/products/flipperzero/silicone-case/" >}}
+  {{< card title="Silicone Case for Flipper Zero" href="/en/products/flipperzero/silicone-case/" image="/images/products/flipperzero/silicone-case.png" >}}
     Official Flipper Zero silicone protective case — full device protection with tactile button feel.
   {{< /card >}}
 {{< /card-group >}}

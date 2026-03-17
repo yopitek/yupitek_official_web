@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
+featureimage: "/images/products/alfa/banner-alfa.webp"
 ---
 
 ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiアダプターメーカーで、高出力設計に特化し、世界のセキュリティリサーチコミュニティで高く評価されています。Yopitekは台湾のALFA Network正規代理店です。
@@ -15,16 +16,16 @@ ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiア�
 ### Wi-Fi 6E
 
 {{< card-group >}}
-  {{< card title="AWUS036AXML" href="/ja/products/alfa/awus036axml/" >}}
+  {{< card title="AWUS036AXML" href="/ja/products/alfa/awus036axml/" image="/images/products/alfa/awus036axml_image_1.png" >}}
     Wi-Fi 6E (6GHz) USB-C、MediaTek MT7921AUNチップ、5 dBiデュアルアンテナ。
   {{< /card >}}
-  {{< card title="AWUS036AXM" href="/ja/products/alfa/awus036axm/" >}}
+  {{< card title="AWUS036AXM" href="/ja/products/alfa/awus036axm/" image="/images/products/alfa/awus036axm_image_1.png" >}}
     Wi-Fi 6E (6GHz) USB 3.2、MediaTek MT7921AUNチップ、Bluetooth 5.2、2×2 MIMO。
   {{< /card >}}
-  {{< card title="AWUS036AX" href="/ja/products/alfa/awus036ax/" >}}
+  {{< card title="AWUS036AX" href="/ja/products/alfa/awus036ax/" image="/images/products/alfa/awus036ax_image_1.png" >}}
     Wi-Fi 6 デュアルバンド、Realtek RTL8832BU、USB 3.2、WPA3対応、2×2 MIMO外部アンテナ。
   {{< /card >}}
-  {{< card title="AWUS036AXER" href="/ja/products/alfa/awus036axer/" >}}
+  {{< card title="AWUS036AXER" href="/ja/products/alfa/awus036axer/" image="/images/products/alfa/awus036axer_image_1.png" >}}
     Wi-Fi 6 デュアルバンド、Realtek RTL8832BU、USB 3.2、内蔵アンテナ超薄型設計、10.5g。
   {{< /card >}}
 {{< /card-group >}}
@@ -32,22 +33,22 @@ ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiア�
 ### Wi-Fi 5
 
 {{< card-group >}}
-  {{< card title="AWUS1900" href="/ja/products/alfa/awus1900/" >}}
+  {{< card title="AWUS1900" href="/ja/products/alfa/awus1900/" image="/images/products/alfa/awus1900_image_1.png" >}}
     AC1900 フラッグシップ、Realtek RTL8814AU、4本外部アンテナ、USB 3.0、高出力設計。
   {{< /card >}}
-  {{< card title="AWUS036ACH" href="/ja/products/alfa/awus036ach/" >}}
+  {{< card title="AWUS036ACH" href="/ja/products/alfa/awus036ach/" image="/images/products/alfa/awus036ach_image_1.png" >}}
     AC1200 デュアルバンド、Realtek RTL8812AU、USB 3.0、デュアル5 dBi外部アンテナ、高出力。
   {{< /card >}}
-  {{< card title="AWUS036ACM" href="/ja/products/alfa/awus036acm/" >}}
+  {{< card title="AWUS036ACM" href="/ja/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm_image_1.png" >}}
     AC1200 デュアルバンド、MediaTek MT7612U、USB 3.0、300+867 Mbps、5 dBiデュアルアンテナ。
   {{< /card >}}
-  {{< card title="AWUS036ACS" href="/ja/products/alfa/awus036acs/" >}}
+  {{< card title="AWUS036ACS" href="/ja/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs_image_1.png" >}}
     AC433 デュアルバンド、Realtek RTL8811AU、USB 2.0、超薄型55mmミニボディ。
   {{< /card >}}
-  {{< card title="AWUS036EACS" href="/ja/products/alfa/awus036eacs/" >}}
+  {{< card title="AWUS036EACS" href="/ja/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs_image_1.png" >}}
     AC600 デュアルバンド、Realtek RTL8811CU、USB 2.0、超コンパクトスリムデザイン。
   {{< /card >}}
-  {{< card title="AWUS036ACHM" href="/ja/products/alfa/awus036achm/" >}}
+  {{< card title="AWUS036ACHM" href="/ja/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm_image_1.png" >}}
     AC433 デュアルバンド、MediaTek MT7610U、USB 2.0、コンパクト単一アンテナ設計。
   {{< /card >}}
 {{< /card-group >}}

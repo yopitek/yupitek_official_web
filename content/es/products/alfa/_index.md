@@ -45,7 +45,7 @@ ALFA Network es un reconocido fabricante taiwanés de equipos de red inalámbric
   {{< card title="AWUS036ACS" href="/es/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
     AC433 banda dual, Realtek RTL8811AU, USB 2.0, diseño ultradelgado mini 55mm.
   {{< /card >}}
-  {{< card title="AWUS036EACS" href="/es/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs_image_1.png" >}}
+  {{< card title="AWUS036EACS" href="/es/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
     AC600 banda dual, Realtek RTL8811CU, USB 2.0, diseño compacto ultradelgado.
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/es/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}

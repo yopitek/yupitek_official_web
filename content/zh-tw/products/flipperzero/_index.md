@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/flipperzero/banner-flipperzero.webp"
+featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 ---
 
 {{< alert "warning" >}}

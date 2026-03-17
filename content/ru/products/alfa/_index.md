@@ -45,7 +45,7 @@ ALFA Network — известный тайваньский производит�
   {{< card title="AWUS036ACS" href="/ru/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
     AC433 двухдиапазонный, Realtek RTL8811AU, USB 2.0, ультратонкий мини-корпус 55мм.
   {{< /card >}}
-  {{< card title="AWUS036EACS" href="/ru/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs_image_1.png" >}}
+  {{< card title="AWUS036EACS" href="/ru/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
     AC600 двухдиапазонный, Realtek RTL8811CU, USB 2.0, компактный ультратонкий дизайн.
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/ru/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}

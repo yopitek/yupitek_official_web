@@ -45,7 +45,7 @@ ALFA Network 是台灣知名無線網路設備、無線網路卡製造商，專�
   {{< card title="AWUS036ACS" href="/zh-tw/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
     AC433 雙頻，Realtek RTL8811AU，USB 2.0，超輕薄設計，55mm 迷你機身。
   {{< /card >}}
-  {{< card title="AWUS036EACS" href="/zh-tw/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs_image_1.png" >}}
+  {{< card title="AWUS036EACS" href="/zh-tw/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
     AC600 雙頻，Realtek RTL8811CU，USB 2.0，超輕薄小巧機身設計。
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/zh-tw/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}

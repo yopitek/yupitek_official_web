@@ -46,7 +46,7 @@ ALFA Network هي شركة تايوانية رائدة في تصنيع معدا�
   {{< card title="AWUS036ACS" href="/ar/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
     AC433 ثنائي النطاق، Realtek RTL8811AU، USB 2.0، تصميم نحيف للغاية، 55mm.
   {{< /card >}}
-  {{< card title="AWUS036EACS" href="/ar/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs_image_1.png" >}}
+  {{< card title="AWUS036EACS" href="/ar/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
     AC600 ثنائي النطاق، Realtek RTL8811CU، USB 2.0، تصميم مدمج خفيف الوزن.
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/ar/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}

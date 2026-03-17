@@ -45,7 +45,7 @@ ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiア�
   {{< card title="AWUS036ACS" href="/ja/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
     AC433 デュアルバンド、Realtek RTL8811AU、USB 2.0、超薄型55mmミニボディ。
   {{< /card >}}
-  {{< card title="AWUS036EACS" href="/ja/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs_image_1.png" >}}
+  {{< card title="AWUS036EACS" href="/ja/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
     AC600 デュアルバンド、Realtek RTL8811CU、USB 2.0、超コンパクトスリムデザイン。
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/ja/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}

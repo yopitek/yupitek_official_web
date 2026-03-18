@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/hak5/banner-hak5.png"
 ---
 
-HAK5 是全球知名的安全研究工具制造商，产品广泛应用于授权渗透测试、安全红队演练、安全教育培训及 CTF 竞赛。榆阖科技为 HAK5 台湾授权代理商。
+HAK5 是全球知名的安全研究工具制造商，产品广泛应用于授权渗透测试、安全红队演练、安全教育培训及 CTF 竞赛。
 
 ## 产品系列
 

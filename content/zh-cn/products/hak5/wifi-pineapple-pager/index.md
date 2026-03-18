@@ -3,6 +3,7 @@ title: "HAK5 WiFi Pineapple Pager — 口袋型三频 Wi-Fi 渗透测试设备"
 description: "HAK5 WiFi Pineapple Pager，三频 802.11ax，DuckyScript Payload，2.4 英寸彩色屏幕，2000 mAh 电池，完全独立运作的口袋型 Wi-Fi 渗透测试工具。"
 date: 2026-03-18
 draft: false
+featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["hak5"]
@@ -43,6 +44,10 @@ WiFi Pineapple Pager 是 HAK5 第八代 PineAP 引擎的旗舰口袋型设备，
 - **可编程 RGB 按键**：四向方向键搭载可自定义 RGB 灯效
 - **可更换电池**：用户可自行更换电池，并通过 USB 外设进行硬件扩展
 - **虚拟 Pager Web 界面**：浏览器远程控制、Shell 访问与文件管理
+
+{{< gallery >}}
+  <img src="/images/products/hak5/wifi-pineapple-pager.png" alt="WiFi Pineapple Pager" />
+{{< /gallery >}}
 
 ---
 

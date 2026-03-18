@@ -3,7 +3,8 @@ title: "WiFi Pineapple Pager"
 date: 2025-01-01
 draft: false
 description: "Herramienta de pruebas de penetración Wi-Fi tribanda de bolsillo con soporte para DuckyScript Payloads, pantalla a color de 2.4 pulgadas y vibración de alerta."
-featureimage: "wifi-pineapple-pager.png"
+featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
+
 ---
 
 ## Descripción General del Producto
@@ -37,3 +38,7 @@ El WiFi Pineapple Pager es una herramienta de pruebas de penetración Wi-Fi trib
 - **Batería reemplazable**: LiPo de 2000 mAh reemplazable en campo
 - **Linux root**: Acceso completo al sistema operativo para personalización avanzada y desarrollo de herramientas propias
 - **Bluetooth dual**: BT 5.2 y BT 4.2 LE para una amplia compatibilidad de conectividad
+
+{{< gallery >}}
+  <img src="/images/products/hak5/wifi-pineapple-pager.png" alt="WiFi Pineapple Pager" />
+{{< /gallery >}}

@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/hak5/banner-hak5.png"
 ---
 
-HAK5 是全球知名的資安研究工具製造商，產品廣泛應用於授權滲透測試、資安紅隊演練、資安教育訓練及 CTF 競賽。榆閤科技為 HAK5 台灣授權代理商。
+HAK5 是全球知名的資安研究工具製造商，產品廣泛應用於授權滲透測試、資安紅隊演練、資安教育訓練及 CTF 競賽。
 
 ## 產品系列
 

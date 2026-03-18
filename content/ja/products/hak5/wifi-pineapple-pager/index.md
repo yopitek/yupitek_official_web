@@ -3,6 +3,7 @@ title: "HAK5 WiFi Pineapple Pager — ポケットサイズ トライバンド W
 description: "HAK5 WiFi Pineapple Pager：トライバンド 802.11ax、DuckyScript ペイロード、2.4インチカラーディスプレイ、2000 mAh バッテリー内蔵のスタンドアロン型 Wi-Fi ペネトレーションテストツール。"
 date: 2026-03-18
 draft: false
+featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["hak5"]
@@ -43,6 +44,10 @@ WiFi Pineapple Pager は HAK5 の第 8 世代 PineAP エンジンを搭載した
 - **プログラマブル RGB ボタン**：カスタマイズ可能な RGB LED 付き 4 方向 D-pad
 - **交換可能バッテリー**：ユーザーが自分でバッテリーを交換可能、USB 周辺機器でハードウェア拡張対応
 - **Virtual Pager ウェブ UI**：ブラウザ経由のリモートコントロール、シェルアクセス、ファイル管理
+
+{{< gallery >}}
+  <img src="/images/products/hak5/wifi-pineapple-pager.png" alt="WiFi Pineapple Pager" />
+{{< /gallery >}}
 
 ---
 

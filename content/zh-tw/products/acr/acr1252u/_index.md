@@ -9,21 +9,75 @@ brands: ["acr"]
 tags: ["NFC", "NFC Forum", "ISO 14443", "ISO 15693", "USB", "讀卡機"]
 ---
 
+ACR1252U
+
 ## 產品概述
 
-ACR1252U 是 ACS 取得 NFC Forum 認證的 USB NFC 讀卡機，支援四種 NFC 類型（NFC-A、NFC-B、NFC-F、NFC-V），相較 ACR122U 增加了 ISO 15693 標籤支援，適合需要廣泛 NFC 協議支援的企業應用開發。
+ACR1252U 是 ACS 取得 NFC Forum 認證的 PC 連接式讀卡機，採用 13.56 MHz 非接觸式技術，配備 SAM 插槽以支援金鑰分散化及相互認證。支援三種 NFC 模式（讀寫器、卡片模擬、點對點）、ISO 14443 Type A/B、MIFARE®、FeliCa、ISO 18092 標籤及 FIDO 認證（PocketKey、YubiKey）。提供 USB Type-A（ACR1252U-M1）及 USB Type-C（ACR1252U-MF）兩種版本，並支援部署後 USB 韌體升級。
 
 ## 主要規格
 
-| 項目 | 規格 |
-|------|------|
-| 頻率 | 13.56 MHz |
-| 支援協議 | ISO 14443 A/B、ISO 15693、ISO 18092 |
-| NFC 類型 | NFC-A、NFC-B、NFC-F、NFC-V |
-| 連接介面 | USB 2.0 |
-| 認證 | NFC Forum 認證 |
-| 標準 | PC/SC 相容 |
+| 規格項目 | 內容 |
+|----------|------|
+| 工作頻率 | 13.56 MHz |
+| 操作距離 | 最遠 50 mm（依標籤類型而異） |
+| 讀寫速度 | 106 Kbps / 212 Kbps / 424 Kbps |
+| USB 介面 | USB 全速（12 Mbps） |
+| 供電電壓 | 5V |
+| 供電電流 | 最大 200 mA |
+| 天線尺寸 | 50 mm × 40 mm |
+| 外觀尺寸 | 98.0 × 65.0 × 12.8 mm |
+| 重量 | 81 g |
+| 顏色 | 霧面黑 |
+| 線長 | 1 m（固定） |
+| 接頭類型 | USB Type-A（ACR1252U-M1）/ USB Type-C（ACR1252U-MF） |
+| SAM 插槽 | 1 × ISO 7816 Class A（5V），標準 SIM 尺寸，T=0 / T=1 |
+| SAM 讀寫速度 | 9.6 Kbps – 215 Kbps |
+| LED | 1 個雙色 紅/綠（使用者可控） |
+| 蜂鳴器 | 單音調（使用者可控） |
+| 合規認證 | EN/IEC 60950、ISO 18092、ISO 14443、ISO 7816、PC/SC、CCID、NFC Forum、FeliCa Performance、CE、FCC、RoHS 2、REACH |
+| 附加認證 | J-LIS、VCCI、MIC（日本）、KC（韓國）、Microsoft WHQL |
 
+## 主要功能
+
+- NFC Forum 認證——與所有 NFC 裝置互通
+- 三種 NFC 模式：卡片讀寫器、卡片模擬、點對點
+- 內建天線，讀取距離最遠達 50 mm
+- 支援 MIFARE® 7-byte UID、MIFARE® Plus、MIFARE® DESFire
+- 內建防衝突機制（每次一張標籤）
+- 符合 ISO 7816 的 SAM 插槽，支援金鑰分散化及相互認證
+- 支援部署後 USB 韌體升級
+- 支援 FIDO 認證（PocketKey、YubiKey）——無密碼 / 雙因素登入
+- 符合 CCID 及 PC/SC 規範，即插即用
+- 使用者可控雙色 LED 及蜂鳴器
+- 選配支架配件
+- 完整 SDK 含符合 PC/SC 的範例程式碼
+- 適用於電子政務、銀行、電子醫療、網路安全、智慧海報
+
+## 支援標籤型號
+
+| 標籤 / 卡片類型 | 標準依據 |
+|-----------------|----------|
+| NFC Tag Type 1 | ISO 14443 Type A |
+| NFC Tag Type 2 | ISO 14443 Type A |
+| NFC Tag Type 3 | FeliCa / ISO 18092 |
+| NFC Tag Type 4 | ISO 14443 Type A and B |
+| ISO 14443 Type A 卡片 | ISO 14443 |
+| ISO 14443 Type B 卡片 | ISO 14443 |
+| MIFARE Classic | ISO 14443 Type A |
+| MIFARE Ultralight | ISO 14443 Type A |
+| MIFARE 7-byte UID | ISO 14443 Type A |
+| MIFARE Plus | ISO 14443 Type A |
+| MIFARE DESFire | ISO 14443 Type A |
+| FeliCa | ISO 18092 |
+
+## 支援作業系統
+
+- Windows®（多個版本，包含 Windows 10 及 Server 版本）
+- Linux®
+- macOS®
+- Solaris
+- Android™ 3.1 及以上版本
 
 ## 官方資源
 
@@ -41,6 +95,7 @@ ACR1252U 是 ACS 取得 NFC Forum 認證的 USB NFC 讀卡機，支援四種 NFC
 {{< gallery >}}
   <img src="/images/products/acr/acr1252u.webp" alt="ACS ACR1252U NFC 讀卡機" />
 {{< /gallery >}}
+
 ---
 
 {{< alert >}}

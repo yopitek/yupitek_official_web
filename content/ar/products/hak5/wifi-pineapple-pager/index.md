@@ -3,7 +3,8 @@ title: "WiFi Pineapple Pager"
 date: 2025-01-01
 draft: false
 description: "أداة اختبار اختراق Wi-Fi ثلاثية النطاق بحجم الجيب، تدعم DuckyScript Payloads، مع شاشة ملونة 2.4 بوصة واهتزاز تنبيه."
-featureimage: "wifi-pineapple-pager.png"
+featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
+
 ---
 
 ## نظرة عامة على المنتج
@@ -37,3 +38,7 @@ WiFi Pineapple Pager هو أداة اختبار اختراق Wi-Fi ثلاثية 
 - **بطارية قابلة الاستبدال**: بطارية LiPo 2000 mAh يمكن استبدالها في الميدان
 - **Linux root**: وصول كامل إلى نظام التشغيل لتخصيص متقدم وتطوير أدوات مخصصة
 - **بلوتوث مزدوج**: BT 5.2 وBT 4.2 LE لدعم مجموعة واسعة من أنماط الاتصال
+
+{{< gallery >}}
+  <img src="/images/products/hak5/wifi-pineapple-pager.png" alt="WiFi Pineapple Pager" />
+{{< /gallery >}}

@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/hak5/banner-hak5.png"
 ---
 
-HAK5 is a globally recognized manufacturer of security research tools, widely used in authorized penetration testing, red team operations, security training, and CTF competitions. Yopitek is an authorized HAK5 distributor in Taiwan.
+HAK5 is a globally recognized manufacturer of security research tools, widely used in authorized penetration testing, red team operations, security training, and CTF competitions.
 
 ## Product Line
 

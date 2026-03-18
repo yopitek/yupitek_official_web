@@ -3,6 +3,7 @@ title: "HAK5 WiFi Pineapple Pager — Pocket-Sized Tri-Band Wi-Fi Pentesting Dev
 description: "HAK5 WiFi Pineapple Pager: tri-band 802.11ax, DuckyScript payloads, 2.4-inch color display, 2000 mAh battery. The first fully standalone, payload-powered WiFi Pineapple."
 date: 2026-03-18
 draft: false
+featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["hak5"]
@@ -43,6 +44,10 @@ The WiFi Pineapple Pager is HAK5's 8th-generation PineAP flagship in a pocket-si
 - **Programmable RGB Buttons**: 4-way D-pad with customizable RGB LED lighting
 - **Serviceable Battery**: User-replaceable LiPo battery with USB hardware expansion support
 - **Virtual Pager Web Interface**: Browser-based remote control, shell access, and file management
+
+{{< gallery >}}
+  <img src="/images/products/hak5/wifi-pineapple-pager.png" alt="WiFi Pineapple Pager" />
+{{< /gallery >}}
 
 ---
 

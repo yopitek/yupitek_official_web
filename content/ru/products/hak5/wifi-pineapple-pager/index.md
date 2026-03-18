@@ -3,7 +3,8 @@ title: "WiFi Pineapple Pager"
 date: 2025-01-01
 draft: false
 description: "Компактный трёхдиапазонный инструмент для тестирования на проникновение Wi-Fi с поддержкой DuckyScript Payloads, цветным дисплеем 2,4 дюйма и виброоповещением."
-featureimage: "wifi-pineapple-pager.png"
+featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
+
 ---
 
 ## Обзор продукта
@@ -37,3 +38,7 @@ WiFi Pineapple Pager — компактный карманный инструм�
 - **Сменный аккумулятор**: LiPo 2000 мАч можно заменить в полевых условиях
 - **Доступ root в Linux**: Полный доступ к операционной системе для гибкой настройки и разработки собственных инструментов
 - **Двойной Bluetooth**: BT 5.2 и BT 4.2 LE для широкой совместимости подключений
+
+{{< gallery >}}
+  <img src="/images/products/hak5/wifi-pineapple-pager.png" alt="WiFi Pineapple Pager" />
+{{< /gallery >}}

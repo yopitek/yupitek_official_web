@@ -6,7 +6,7 @@
   <a href="{{ $href }}" class="block">
     {{ if $image }}
     <div style="height: 160px; overflow: hidden;">
-      <img src="{{ $image }}" alt="{{ $title }}" loading="lazy" decoding="async"
+      <img src="{{ $image }}" alt="{{ $title }}" loading="lazy" decoding="async" class="nozoom"
            style="width: 100%; height: 160px; object-fit: cover; display: block;">
     </div>
     {{ end }}
@@ -18,7 +18,7 @@
   {{ else }}
   {{ if $image }}
   <div style="height: 160px; overflow: hidden;">
-    <img src="{{ $image }}" alt="{{ $title }}" loading="lazy" decoding="async"
+    <img src="{{ $image }}" alt="{{ $title }}" loading="lazy" decoding="async" class="nozoom"
          style="width: 100%; height: 160px; object-fit: cover; display: block;">
   </div>
   {{ end }}

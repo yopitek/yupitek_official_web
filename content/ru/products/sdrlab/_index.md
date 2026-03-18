@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/sdrlab/banner-sdrlab.webp"
+featureimage: "/images/products/sdrlab/banner-sdrlab.png"
 ---
 
 {{< card-group >}}

@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/graphiccard/banner-graphiccard.webp"
+featureimage: "/images/products/graphiccard/banner-graphiccard.png"
 ---
 
 榆阖科技提供 NVIDIA RTX 5080 系列显卡采购服务，支持 AI 图像生成、3D 渲染、投影工作站及专业可视化应用。

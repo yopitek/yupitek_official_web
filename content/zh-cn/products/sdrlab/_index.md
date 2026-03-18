@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/sdrlab/banner-sdrlab.webp"
+featureimage: "/images/products/sdrlab/banner-sdrlab.png"
 ---
 
 SDRLAB 提供软件定义无线电（SDR）模块及 Flipper Zero 扩展配件，适合无线通信研究、业余无线电爱好者及 RF 信号分析应用。

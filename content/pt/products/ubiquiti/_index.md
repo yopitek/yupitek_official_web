@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.png"
 ---
 
 {{< card-group >}}
@@ -19,7 +19,7 @@ featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
   {{< card title="UniFi Cloud Gateway Fiber" href="/pt/products/ubiquiti/cloud-gateway-fiber/" image="/images/products/ubiquiti/cloud-gateway-fiber.png" >}}
     Gateway de rede UniFi com WAN de fibra óptica e controlador UniFi integrado.
   {{< /card >}}
-  {{< card title="UniFi Dream Router 7" href="/pt/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.webp" >}}
+  {{< card title="UniFi Dream Router 7" href="/pt/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.png" >}}
     Roteador Wi-Fi 7 all-in-one com controlador UniFi integrado.
   {{< /card >}}
 {{< /card-group >}}

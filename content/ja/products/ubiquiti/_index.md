@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.png"
 ---
 
 Ubiquiti UniFiはエンタープライズ無線ネットワークの業界標準ブランドで、高性能、集中管理、優れたコストパフォーマンスで知られています。YopitekはUniFi機器の調達コンサルティング、設計、導入サービスを提供しています。
@@ -34,7 +34,7 @@ Ubiquiti UniFiはエンタープライズ無線ネットワークの業界標準
   {{< card title="UniFi Cloud Gateway Fiber" href="/ja/products/ubiquiti/cloud-gateway-fiber/" image="/images/products/ubiquiti/cloud-gateway-fiber.png" >}}
     ファイバーWANとUniFi管理コントローラーを統合 — SMBのコアネットワークに最適。
   {{< /card >}}
-  {{< card title="UniFi Dream Router 7" href="/ja/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.webp" >}}
+  {{< card title="UniFi Dream Router 7" href="/ja/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.png" >}}
     Wi-Fi 7オールインワンルーター、内蔵UniFiコントローラー — ホームや小規模オフィスに最適。
   {{< /card >}}
 {{< /card-group >}}

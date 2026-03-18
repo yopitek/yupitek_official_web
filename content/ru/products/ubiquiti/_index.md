@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.png"
 ---
 
 {{< card-group >}}
@@ -19,7 +19,7 @@ featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
   {{< card title="UniFi Cloud Gateway Fiber" href="/ru/products/ubiquiti/cloud-gateway-fiber/" image="/images/products/ubiquiti/cloud-gateway-fiber.png" >}}
     Сетевой шлюз UniFi с оптическим WAN и встроенным контроллером UniFi.
   {{< /card >}}
-  {{< card title="UniFi Dream Router 7" href="/ru/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.webp" >}}
+  {{< card title="UniFi Dream Router 7" href="/ru/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.png" >}}
     Комплексный роутер Wi-Fi 7 со встроенным контроллером UniFi.
   {{< /card >}}
 {{< /card-group >}}

@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.png"
 ---
 
 Ubiquiti UniFi is the industry benchmark for enterprise-grade wireless networking — renowned for high performance, centralized management, and excellent value. Yopitek provides UniFi equipment procurement consulting, planning, and installation services.
@@ -40,7 +40,7 @@ Ubiquiti UniFi is the industry benchmark for enterprise-grade wireless networkin
   {{< card title="UniFi Flex Mini 2.5G" href="/en/products/ubiquiti/flex-mini-2-5g/" image="/images/products/ubiquiti/flex-mini-2-5g.png" >}}
     5-port 2.5G desktop PoE switch for Wi-Fi 7 AP power and data transmission.
   {{< /card >}}
-  {{< card title="UniFi Dream Router 7" href="/en/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.webp" >}}
+  {{< card title="UniFi Dream Router 7" href="/en/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.png" >}}
     Wi-Fi 7 all-in-one router with built-in UniFi controller — ideal for home or small office deployments.
   {{< /card >}}
 {{< /card-group >}}

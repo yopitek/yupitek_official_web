@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.png"
 ---
 
 Ubiquiti UniFi es el referente de la industria en redes inalámbricas empresariales — reconocido por alto rendimiento, gestión centralizada y excelente relación calidad-precio.
@@ -31,7 +31,7 @@ Ubiquiti UniFi es el referente de la industria en redes inalámbricas empresaria
   {{< card title="UniFi Cloud Gateway Fiber" href="/es/products/ubiquiti/cloud-gateway-fiber/" image="/images/products/ubiquiti/cloud-gateway-fiber.png" >}}
     Gateway de red UniFi con WAN de fibra óptica y controlador UniFi integrado.
   {{< /card >}}
-  {{< card title="UniFi Dream Router 7" href="/es/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.webp" >}}
+  {{< card title="UniFi Dream Router 7" href="/es/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.png" >}}
     Router todo-en-uno Wi-Fi 7 con controlador UniFi integrado.
   {{< /card >}}
 {{< /card-group >}}

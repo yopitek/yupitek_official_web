@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/graphiccard/banner-graphiccard.webp"
+featureimage: "/images/products/graphiccard/banner-graphiccard.png"
 ---
 
 {{< card-group >}}

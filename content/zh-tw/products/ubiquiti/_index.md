@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.png"
 ---
 
 Ubiquiti UniFi 是企業級無線網路的業界標竿品牌，以高效能、集中管理及高 CP 值著稱。榆閤科技提供 UniFi 設備採購諮詢、規劃及安裝服務。
@@ -40,7 +40,7 @@ Ubiquiti UniFi 是企業級無線網路的業界標竿品牌，以高效能、�
   {{< card title="UniFi Flex Mini 2.5G" href="/zh-tw/products/ubiquiti/flex-mini-2-5g/" image="/images/products/ubiquiti/flex-mini-2-5g.png" >}}
     5 埠 2.5G 桌上型 PoE 交換器，適合 Wi-Fi 7 AP 供電與資料傳輸。
   {{< /card >}}
-  {{< card title="UniFi Dream Router 7" href="/zh-tw/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.webp" >}}
+  {{< card title="UniFi Dream Router 7" href="/zh-tw/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.png" >}}
     Wi-Fi 7 一體化路由器，內建 UniFi 控制器，適合家庭或小型辦公室。
   {{< /card >}}
 {{< /card-group >}}

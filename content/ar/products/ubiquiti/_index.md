@@ -7,7 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: false
-featureimage: "/images/products/ubiquiti/banner-ubiquiti.webp"
+featureimage: "/images/products/ubiquiti/banner-ubiquiti.png"
 ---
 
 Ubiquiti UniFi هو المعيار الصناعي للشبكات اللاسلكية المؤسسية، مشهور بالأداء العالي والإدارة المركزية والقيمة الممتازة.
@@ -32,7 +32,7 @@ Ubiquiti UniFi هو المعيار الصناعي للشبكات اللاسلك�
   {{< card title="UniFi Cloud Gateway Fiber" href="/ar/products/ubiquiti/cloud-gateway-fiber/" image="/images/products/ubiquiti/cloud-gateway-fiber.png" >}}
     بوابة شبكة UniFi تدمج WAN الألياف الضوئية ووحدة تحكم UniFi.
   {{< /card >}}
-  {{< card title="UniFi Dream Router 7" href="/ar/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.webp" >}}
+  {{< card title="UniFi Dream Router 7" href="/ar/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.png" >}}
     راوتر Wi-Fi 7 متكامل مع وحدة تحكم UniFi مدمجة.
   {{< /card >}}
 {{< /card-group >}}

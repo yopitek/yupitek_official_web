@@ -9,10 +9,6 @@ showChildPages: false
 featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 ---
 
-{{< alert "warning" >}}
-**Legal Use Notice**: Flipper Zero is a multi-protocol wireless security research device for authorized security research, education, and lawful testing only. Unauthorized cloning of access cards, remote control signals, or access to third-party systems is illegal. Users must understand and comply with applicable local laws.
-{{< /alert >}}
-
 Flipper Zero is an open-source multi-protocol wireless security research tool supporting a wide range of wireless communication protocols. It is widely used by the global security research community for protocol research, security education, and lawful testing.
 
 ## Product Line

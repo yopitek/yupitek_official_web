@@ -9,10 +9,6 @@ showChildPages: false
 featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 ---
 
-{{< alert "warning" >}}
-**合法使用聲明**：Flipper Zero 為多功能無線安全研究裝置，僅供授權的資安研究、教育及合法測試使用。未經授權複製門禁卡、遙控訊號或存取他人系統屬違法行為。使用者須自行了解並遵守當地相關法規。
-{{< /alert >}}
-
 Flipper Zero 是一款開源多功能無線安全研究工具，支援多種無線通訊協議，被全球資安研究社群廣泛用於協議研究、資安教育及合法測試。
 
 ## 產品系列

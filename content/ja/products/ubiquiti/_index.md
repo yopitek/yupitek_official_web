@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/ubiquiti/banner-ubiquiti.png"
 ---
 
-Ubiquiti UniFiはエンタープライズ無線ネットワークの業界標準ブランドで、高性能、集中管理、優れたコストパフォーマンスで知られています。YopitekはUniFi機器の調達コンサルティング、設計、導入サービスを提供しています。
+Ubiquiti UniFiはエンタープライズ無線ネットワークの業界標準ブランドで、高性能、集中管理、優れたコストパフォーマンスで知られています。
 
 ## 無線アクセスポイント（AP）
 

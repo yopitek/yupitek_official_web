@@ -9,10 +9,6 @@ showChildPages: false
 featureimage: "/images/products/hak5/banner-hak5.png"
 ---
 
-{{< alert "warning" >}}
-**Legal Use Notice**: HAK5 products are professional security research and authorized penetration testing tools. They are intended solely for use by licensed security professionals, educational institutions, and research organizations. Unauthorized testing or access to third-party systems is illegal. Users assume full legal responsibility.
-{{< /alert >}}
-
 HAK5 is a globally recognized manufacturer of security research tools, widely used in authorized penetration testing, red team operations, security training, and CTF competitions. Yopitek is an authorized HAK5 distributor in Taiwan.
 
 ## Product Line

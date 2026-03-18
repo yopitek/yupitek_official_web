@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/alfa/banner-alfa.png"
 ---
 
-ALFA Network is a well-known Taiwanese manufacturer of wireless networking equipment and USB Wi-Fi adapters, specializing in high-power designs and highly regarded in the global security research community. Yopitek is an authorized ALFA Network distributor in Taiwan.
+ALFA Network is a well-known Taiwanese manufacturer of wireless networking equipment and USB Wi-Fi adapters, specializing in high-power designs and highly regarded in the global security research community.
 
 ## Product Line
 

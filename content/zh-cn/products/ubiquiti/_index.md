@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/ubiquiti/banner-ubiquiti.png"
 ---
 
-Ubiquiti UniFi 是企业级无线网络的行业标杆品牌，以高性能、集中管理及高性价比著称。榆阖科技提供 UniFi 设备采购咨询、规划及安装服务。
+Ubiquiti UniFi 是企业级无线网络的行业标杆品牌，以高性能、集中管理及高性价比著称。
 
 ## 无线接入点（AP）
 

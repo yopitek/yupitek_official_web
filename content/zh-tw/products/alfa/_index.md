@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/alfa/banner-alfa.png"
 ---
 
-ALFA Network 是台灣知名無線網路設備、無線網路卡製造商，專精高功率 USB Wi-Fi 無線網卡，在全球資安研究社群中享有高度評價。榆閤科技為 ALFA Network 台灣授權代理商。
+ALFA Network 是台灣知名無線網路設備、無線網路卡製造商，專精高功率 USB Wi-Fi 無線網卡，在全球資安研究社群中享有高度評價。
 
 ## 產品系列
 

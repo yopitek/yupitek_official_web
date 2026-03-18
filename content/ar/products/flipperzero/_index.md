@@ -10,10 +10,6 @@ showChildPages: false
 featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 ---
 
-{{< alert "warning" >}}
-**ملاحظة الاستخدام القانوني**: Flipper Zero مخصص للبحث الأمني المعتمد والتعليم والاختبار المشروع فقط. استنساخ بطاقات الوصول أو الوصول غير المصرح به للأنظمة غير قانوني.
-{{< /alert >}}
-
 ## خط المنتجات
 
 {{< card-group >}}

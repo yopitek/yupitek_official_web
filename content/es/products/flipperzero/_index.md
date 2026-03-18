@@ -9,10 +9,6 @@ showChildPages: false
 featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 ---
 
-{{< alert "warning" >}}
-**Aviso de uso legal**: Flipper Zero es exclusivamente para investigación de seguridad autorizada, educación y pruebas legales. La clonación no autorizada de tarjetas de acceso o el acceso a sistemas de terceros es ilegal.
-{{< /alert >}}
-
 ## Línea de Productos
 
 {{< card-group >}}

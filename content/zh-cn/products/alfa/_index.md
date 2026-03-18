@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/alfa/banner-alfa.png"
 ---
 
-ALFA Network 是台湾知名无线网络设备、无线网卡制造商，专精高功率 USB Wi-Fi 无线网卡，在全球安全研究社区中享有高度评价。榆阖科技为 ALFA Network 台湾授权代理商。
+ALFA Network 是台湾知名无线网络设备、无线网卡制造商，专精高功率 USB Wi-Fi 无线网卡，在全球安全研究社区中享有高度评价。
 
 ## 产品系列
 

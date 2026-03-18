@@ -9,10 +9,6 @@ showChildPages: false
 featureimage: "/images/products/hak5/banner-hak5.png"
 ---
 
-{{< alert "warning" >}}
-**Aviso de uso legal**: Los productos HAK5 son herramientas profesionales de investigación de seguridad y pentesting autorizado. Las pruebas o el acceso no autorizado a sistemas de terceros es ilegal.
-{{< /alert >}}
-
 ## Línea de Productos
 
 {{< card-group >}}

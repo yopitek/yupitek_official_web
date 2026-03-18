@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/ubiquiti/banner-ubiquiti.png"
 ---
 
-Ubiquiti UniFi 是企業級無線網路的業界標竿品牌，以高效能、集中管理及高 CP 值著稱。榆閤科技提供 UniFi 設備採購諮詢、規劃及安裝服務。
+Ubiquiti UniFi 是企業級無線網路的業界標竿品牌，以高效能、集中管理及高 CP 值著稱。
 
 ## 無線接入點（AP）
 

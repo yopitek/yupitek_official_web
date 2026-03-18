@@ -9,10 +9,6 @@ showChildPages: false
 featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 ---
 
-{{< alert "warning" >}}
-**合法使用に関する注意**: Flipper Zeroは認可されたセキュリティリサーチ、教育、合法的なテストのみに使用できます。無断でのアクセスカードの複製やシステムへのアクセスは違法です。
-{{< /alert >}}
-
 Flipper Zeroはオープンソースのマルチプロトコル無線セキュリティリサーチツールで、世界のセキュリティリサーチコミュニティで広く使用されています。
 
 ## 製品ラインナップ

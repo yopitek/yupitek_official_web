@@ -9,10 +9,6 @@ showChildPages: false
 featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 ---
 
-{{< alert "warning" >}}
-**合法使用声明**：Flipper Zero 为多功能无线安全研究设备，仅供授权的安全研究、教育及合法测试使用。未经授权复制门禁卡、遥控信号或访问他人系统属违法行为。使用者须自行了解并遵守当地相关法规。
-{{< /alert >}}
-
 Flipper Zero 是一款开源多功能无线安全研究工具，支持多种无线通信协议，被全球安全研究社区广泛用于协议研究、安全教育及合法测试。
 
 ## 产品系列

@@ -59,6 +59,9 @@ HAK5 是全球知名的安全研究工具制造商，产品广泛应用于授权
   {{< card title="Plunder Bug LAN Tap" href="/zh-cn/products/hak5/plunder-bug/" image="/images/products/hak5/plunder-bug.png" >}}
     便携式网络监听设备，通过 USB-C 实时镜像有线网络流量。
   {{< /card >}}
+  {{< card title="WiFi Pineapple Pager" href="/zh-cn/products/hak5/wifi-pineapple-pager/" image="/images/products/hak5/wifi-pineapple-pager.png" >}}
+    口袋型三频 Wi-Fi 渗透测试工具，支持 DuckyScript Payload，具备 2.4 英寸彩色屏幕与震动提醒，可完全独立运作。
+  {{< /card >}}
   {{< card title="Shark Jack Cable" href="/zh-cn/products/hak5/shark-jack-cable/" image="/images/products/hak5/shark-jack-cable.png" >}}
     Shark Jack 的线缆版本，方便直接连接至网络端口。
   {{< /card >}}

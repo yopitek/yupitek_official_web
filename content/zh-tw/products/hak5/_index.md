@@ -59,6 +59,9 @@ HAK5 是全球知名的資安研究工具製造商，產品廣泛應用於授權
   {{< card title="Malicious Cable Detector" href="/zh-tw/products/hak5/malicious-cable-detector/" image="/images/products/hak5/malicious-cable-detector.png" >}}
     惡意 USB 線偵測器，可識別外觀正常但內含微控制器的惡意線材。
   {{< /card >}}
+  {{< card title="WiFi Pineapple Pager" href="/zh-tw/products/hak5/wifi-pineapple-pager/" image="/images/products/hak5/wifi-pineapple-pager.png" >}}
+    口袋型三頻 Wi-Fi 滲透測試工具，支援 DuckyScript Payload，具備 2.4 吋彩色螢幕與震動警示，可完全獨立運作。
+  {{< /card >}}
   {{< card title="Shark Jack Cable" href="/zh-tw/products/hak5/shark-jack-cable/" image="/images/products/hak5/shark-jack-cable.png" >}}
     Cable 版 Shark Jack，集成於 USB-C 線材中，攜帶更方便。
   {{< /card >}}

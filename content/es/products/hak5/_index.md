@@ -27,6 +27,9 @@ featureimage: "/images/products/hak5/banner-hak5.png"
   {{< card title="Shark Jack" href="/es/products/hak5/shark-jack/" image="/images/products/hak5/shark-jack.png" >}}
     Herramienta portátil de auditoría de redes cableadas para despliegue rápido.
   {{< /card >}}
+  {{< card title="WiFi Pineapple Pager" href="/es/products/hak5/wifi-pineapple-pager/" image="/images/products/hak5/wifi-pineapple-pager.png" >}}
+    Herramienta portátil de pentesting Wi-Fi tribanda con payloads DuckyScript, pantalla a color de 2.4" y alertas por vibración — totalmente autónoma.
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

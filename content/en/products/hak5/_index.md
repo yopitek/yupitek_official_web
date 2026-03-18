@@ -59,6 +59,9 @@ HAK5 is a globally recognized manufacturer of security research tools, widely us
   {{< card title="Plunder Bug LAN Tap" href="/en/products/hak5/plunder-bug/" image="/images/products/hak5/plunder-bug.png" >}}
     Portable network monitoring device — mirrors wired network traffic via USB-C in real time.
   {{< /card >}}
+  {{< card title="WiFi Pineapple Pager" href="/en/products/hak5/wifi-pineapple-pager/" image="/images/products/hak5/wifi-pineapple-pager.png" >}}
+    Pocket-sized tri-band Wi-Fi pentesting tool with DuckyScript payloads, 2.4" color display, and vibration alerts — fully standalone.
+  {{< /card >}}
   {{< card title="Shark Jack Cable" href="/en/products/hak5/shark-jack-cable/" image="/images/products/hak5/shark-jack-cable.png" >}}
     Cable version of the Shark Jack for direct connection to network ports.
   {{< /card >}}

@@ -30,6 +30,9 @@ HAK5 هو مصنع أدوات بحث أمني معروف عالميًا، تُس
   {{< card title="Shark Jack" href="/ar/products/hak5/shark-jack/" image="/images/products/hak5/shark-jack.png" >}}
     أداة مراجعة شبكات سلكية محمولة للنشر السريع في البيئات المادية.
   {{< /card >}}
+  {{< card title="WiFi Pineapple Pager" href="/ar/products/hak5/wifi-pineapple-pager/" image="/images/products/hak5/wifi-pineapple-pager.png" >}}
+    أداة اختبار اختراق Wi-Fi ثلاثية النطاق بحجم الجيب، تدعم DuckyScript وشاشة ملونة 2.4" وتنبيهات بالاهتزاز، تعمل باستقلالية تامة.
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

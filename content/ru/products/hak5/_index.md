@@ -27,6 +27,9 @@ featureimage: "/images/products/hak5/banner-hak5.png"
   {{< card title="Shark Jack" href="/ru/products/hak5/shark-jack/" image="/images/products/hak5/shark-jack.png" >}}
     Портативный инструмент аудита проводных сетей для быстрого развёртывания.
   {{< /card >}}
+  {{< card title="WiFi Pineapple Pager" href="/ru/products/hak5/wifi-pineapple-pager/" image="/images/products/hak5/wifi-pineapple-pager.png" >}}
+    Карманный трёхдиапазонный инструмент Wi-Fi пентестинга с DuckyScript-пейлоудами, цветным дисплеем 2.4" и виброоповещениями — полностью автономный.
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

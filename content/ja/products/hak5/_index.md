@@ -38,6 +38,9 @@ HAK5は世界的に著名なセキュリティリサーチツールメーカー�
   {{< card title="Plunder Bug LAN Tap" href="/ja/products/hak5/plunder-bug/" image="/images/products/hak5/plunder-bug.png" >}}
     ポータブルネットワーク監視デバイス — USB-C経由でリアルタイムに有線ネットワークトラフィックをミラーリング。
   {{< /card >}}
+  {{< card title="WiFi Pineapple Pager" href="/ja/products/hak5/wifi-pineapple-pager/" image="/images/products/hak5/wifi-pineapple-pager.png" >}}
+    ポケットサイズのトライバンド Wi-Fi ペネトレーションテストツール。DuckyScript ペイロード、2.4" カラーディスプレイ、バイブレーション通知搭載で完全スタンドアロン動作。
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

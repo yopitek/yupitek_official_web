@@ -19,6 +19,8 @@ Seja bem-vindo à Yopitek Ltd (榆閤科技有限公司). Nossa equipe geralment
 | Telefone do escritório | +886-2-87325338 |
 | Endereço | No.34, Lane 72, Fuyang St., Taipé, Taiwan |
 | Horário de atendimento | Segunda – Sexta, 09:00 – 18:00 (GMT+8) |
+| WhatsApp | +886.988.087.740 |
+| WeChat | goolai |
 
 ## Assuntos para Consulta
 

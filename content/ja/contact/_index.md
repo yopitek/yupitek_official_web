@@ -19,6 +19,8 @@ Yopitek Ltd（榆閤科技有限公司）へのお問い合わせを歓迎いた
 | 電話 | +886-2-87325338 |
 | 住所 | No.34, Lane 72, Fuyang St., Taipei, Taiwan |
 | 営業時間 | 月曜日〜金曜日 09:00〜18:00（GMT+8） |
+| WhatsApp | +886.988.087.740 |
+| WeChat | goolai |
 
 ## お問い合わせ内容
 

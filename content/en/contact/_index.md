@@ -19,6 +19,8 @@ Please reach out by email or phone. Our team will respond to your inquiry within
 | Office Tel | +886-2-87325338 |
 | Address | No.34, Lane 72, Fuyang St., Taipei, Taiwan |
 | Business Hours | Monday–Friday, 09:00–18:00 (GMT+8) |
+| WhatsApp | +886.988.087.740 |
+| WeChat | goolai |
 
 ## Inquiry Topics
 

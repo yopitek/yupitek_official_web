@@ -19,6 +19,8 @@ Bienvenido a Yupitek Ltd (榆閤科技有限公司). Nuestro equipo responde hab
 | Teléfono de oficina | +886-2-87325338 |
 | Dirección | No.34, Lane 72, Fuyang St., Taipéi, Taiwán |
 | Horario de atención | Lunes – Viernes, 09:00 – 18:00 (GMT+8) |
+| WhatsApp | +886.988.087.740 |
+| WeChat | goolai |
 
 ## Temas de Consulta
 

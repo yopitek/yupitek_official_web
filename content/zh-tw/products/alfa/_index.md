@@ -33,9 +33,6 @@ ALFA Network 是台灣知名無線網路設備、無線網路卡製造商，專�
 ### Wi-Fi 5
 
 {{< card-group >}}
-  {{< card title="AWUS1900" href="/zh-tw/products/alfa/awus1900/" image="/images/products/alfa/awus1900.png" >}}
-    AC1900 雙頻旗艦款，Realtek RTL8814AU，四根外接天線，USB 3.0，高功率設計。
-  {{< /card >}}
   {{< card title="AWUS036ACH" href="/zh-tw/products/alfa/awus036ach/" image="/images/products/alfa/awus036ach.png" >}}
     AC1200 雙頻，Realtek RTL8812AU，USB 3.0，雙 5 dBi 外接天線，高功率穩定輸出。
   {{< /card >}}
@@ -47,9 +44,6 @@ ALFA Network 是台灣知名無線網路設備、無線網路卡製造商，專�
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/zh-tw/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
     AC600 雙頻，Realtek RTL8811CU，USB 2.0，超輕薄小巧機身設計。
-  {{< /card >}}
-  {{< card title="AWUS036ACHM" href="/zh-tw/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 雙頻，MediaTek MT7610U，USB 2.0，輕巧單天線設計，適合攜帶使用。
   {{< /card >}}
 {{< /card-group >}}
 

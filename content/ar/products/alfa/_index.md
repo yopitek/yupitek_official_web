@@ -34,9 +34,6 @@ ALFA Network هي شركة تايوانية رائدة في تصنيع معدا�
 ### Wi-Fi 5
 
 {{< card-group >}}
-  {{< card title="AWUS1900" href="/ar/products/alfa/awus1900/" image="/images/products/alfa/awus1900.png" >}}
-    AC1900 الفئة الرائدة، Realtek RTL8814AU، أربعة هوائيات خارجية، USB 3.0.
-  {{< /card >}}
   {{< card title="AWUS036ACH" href="/ar/products/alfa/awus036ach/" image="/images/products/alfa/awus036ach.png" >}}
     AC1200 ثنائي النطاق، Realtek RTL8812AU، USB 3.0، هوائيان خارجيان 5 dBi، طاقة عالية.
   {{< /card >}}
@@ -48,9 +45,6 @@ ALFA Network هي شركة تايوانية رائدة في تصنيع معدا�
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/ar/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
     AC600 ثنائي النطاق، Realtek RTL8811CU، USB 2.0، تصميم مدمج خفيف الوزن.
-  {{< /card >}}
-  {{< card title="AWUS036ACHM" href="/ar/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 ثنائي النطاق، MediaTek MT7610U، USB 2.0، تصميم مدمج بهوائي واحد.
   {{< /card >}}
 {{< /card-group >}}
 

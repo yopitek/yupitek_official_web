@@ -33,9 +33,6 @@ ALFA Network — известный тайваньский производит�
 ### Wi-Fi 5
 
 {{< card-group >}}
-  {{< card title="AWUS1900" href="/ru/products/alfa/awus1900/" image="/images/products/alfa/awus1900.png" >}}
-    AC1900 флагманская модель, Realtek RTL8814AU, четыре внешние антенны, USB 3.0, высокая мощность.
-  {{< /card >}}
   {{< card title="AWUS036ACH" href="/ru/products/alfa/awus036ach/" image="/images/products/alfa/awus036ach.png" >}}
     AC1200 двухдиапазонный, Realtek RTL8812AU, USB 3.0, две внешние антенны 5 dBi, высокая мощность.
   {{< /card >}}
@@ -47,9 +44,6 @@ ALFA Network — известный тайваньский производит�
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/ru/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
     AC600 двухдиапазонный, Realtek RTL8811CU, USB 2.0, компактный ультратонкий дизайн.
-  {{< /card >}}
-  {{< card title="AWUS036ACHM" href="/ru/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 двухдиапазонный, MediaTek MT7610U, USB 2.0, компактный дизайн с одной антенной.
   {{< /card >}}
 {{< /card-group >}}
 

@@ -33,9 +33,6 @@ ALFA Network é um renomado fabricante taiwanês de equipamentos de rede sem fio
 ### Wi-Fi 5
 
 {{< card-group >}}
-  {{< card title="AWUS1900" href="/pt/products/alfa/awus1900/" image="/images/products/alfa/awus1900.png" >}}
-    AC1900 top de linha, Realtek RTL8814AU, quatro antenas externas, USB 3.0, alta potência.
-  {{< /card >}}
   {{< card title="AWUS036ACH" href="/pt/products/alfa/awus036ach/" image="/images/products/alfa/awus036ach.png" >}}
     AC1200 dual-band, Realtek RTL8812AU, USB 3.0, dual antena externa 5 dBi, alta potência.
   {{< /card >}}
@@ -47,9 +44,6 @@ ALFA Network é um renomado fabricante taiwanês de equipamentos de rede sem fio
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/pt/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
     AC600 dual-band, Realtek RTL8811CU, USB 2.0, design compacto ultrafino.
-  {{< /card >}}
-  {{< card title="AWUS036ACHM" href="/pt/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 dual-band, MediaTek MT7610U, USB 2.0, design compacto com antena única.
   {{< /card >}}
 {{< /card-group >}}
 

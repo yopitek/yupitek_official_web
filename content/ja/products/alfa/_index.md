@@ -33,9 +33,6 @@ ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiア�
 ### Wi-Fi 5
 
 {{< card-group >}}
-  {{< card title="AWUS1900" href="/ja/products/alfa/awus1900/" image="/images/products/alfa/awus1900.png" >}}
-    AC1900 フラッグシップ、Realtek RTL8814AU、4本外部アンテナ、USB 3.0、高出力設計。
-  {{< /card >}}
   {{< card title="AWUS036ACH" href="/ja/products/alfa/awus036ach/" image="/images/products/alfa/awus036ach.png" >}}
     AC1200 デュアルバンド、Realtek RTL8812AU、USB 3.0、デュアル5 dBi外部アンテナ、高出力。
   {{< /card >}}
@@ -47,9 +44,6 @@ ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiア�
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/ja/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
     AC600 デュアルバンド、Realtek RTL8811CU、USB 2.0、超コンパクトスリムデザイン。
-  {{< /card >}}
-  {{< card title="AWUS036ACHM" href="/ja/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 デュアルバンド、MediaTek MT7610U、USB 2.0、コンパクト単一アンテナ設計。
   {{< /card >}}
 {{< /card-group >}}
 

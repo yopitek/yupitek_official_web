@@ -34,7 +34,7 @@ showTableOfContents: true
 | AWUS036ACH | RTL8812AU | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACH) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACH/) |
 | AWUS036ACM | MT7612U | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
 | AWUS036ACS | RTL8811AU | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
-| AWUS036EACS | RTL8811CU | — | — |
+| AWUS036EACS | RTL8811CU | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter%2FAWUS036ACS) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
 | AWUS036ACHM | MT7610U | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
 ## HAK5 技術資源

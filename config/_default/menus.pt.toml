@@ -10,44 +10,44 @@
     icon     = "tag"
 
   [[main]]
+    name     = "ACS"
+    pageRef  = "/products/acr"
+    parent   = "Produtos"
+    weight   = 21
+
+  [[main]]
     name     = "ALFA Network"
     pageRef  = "/products/alfa"
     parent   = "Produtos"
-    weight   = 21
+    weight   = 22
 
   [[main]]
     name     = "Flipper Zero"
     pageRef  = "/products/flipperzero"
     parent   = "Produtos"
-    weight   = 22
+    weight   = 23
 
   [[main]]
     name     = "Placas de Vídeo"
     pageRef  = "/products/graphiccard"
     parent   = "Produtos"
-    weight   = 23
+    weight   = 24
 
   [[main]]
     name     = "HAK5"
     pageRef  = "/products/hak5"
     parent   = "Produtos"
-    weight   = 24
+    weight   = 25
 
   [[main]]
     name     = "SDRLAB"
     pageRef  = "/products/sdrlab"
     parent   = "Produtos"
-    weight   = 25
+    weight   = 26
 
   [[main]]
     name     = "Ubiquiti"
     pageRef  = "/products/ubiquiti"
-    parent   = "Produtos"
-    weight   = 26
-
-  [[main]]
-    name     = "ACS"
-    pageRef  = "/products/acr"
     parent   = "Produtos"
     weight   = 27
 

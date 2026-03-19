@@ -2,25 +2,33 @@
 title: "O.MG Plug"
 date: 2025-01-01
 draft: false
-description: "Adapter-form covert pentest implant that mimics a small USB peripheral while delivering wireless payload injection."
+description: "A keychain-sized USB plug-form O.MG device supporting WiFi control, DuckyScript injection, Self-Destruct, and Geo-Fencing."
 featureimage: "/images/products/hak5/omg-plug.png"
 ---
 
-## Product Overview
+## Product Features
 
-The O.MG Plug is an adapter-form covert pentest implant that stealths a port by mimicking a small USB peripheral while delivering wireless payload injection. Its compact design blends naturally into USB ports as an ordinary peripheral. The Elite (Gen 3) tier adds hardware keylogging, HIDX StealthLink, and encrypted remote C2.
+- **Plug-Form O.MG Device**: Keychain-sized, USB plug form factor
+- **Full O.MG Feature Set**: WiFi control, DuckyScript injection, Self-Destruct, Geo-Fencing
+- **Cable-Free Operation**: No cable required — plugs directly into a USB port
+- **Everyday Carry Design**: Ideal for everyday carry (EDC), always ready for deployment
+- **Elite Advanced Features**: HIDX StealthLink, encrypted network C2, Port Stealthing
+- **Requires Activation**: Disabled by default — requires O.MG Programmer for activation
 
 ## Key Specifications
 
 | Specification | Details |
-|---------------|---------|
-| Basic Scripting | DuckyScript 2; 8 payload slots; 4,000 keystrokes; 120 keys/sec |
-| Elite Scripting | DuckyScript 3; 50–300 payload slots; 1,500,000 keystrokes; 890 keys/sec |
+|--------------|---------|
+| Form Factor | USB-A plug (keychain form); USB-C version also available |
+| Implant Chip | O.MG custom WiFi + HID microcontroller |
+| WiFi | Built-in (control interface) |
+| Injection Speed (Basic) | 120 keys/sec |
+| Injection Speed (Elite) | 890 keys/sec |
+| Payload Slots | Basic: 8, Elite: up to 300 |
+| Global Keyboard Layouts | 192 |
 
-## Key Features
+## Application Scenarios
 
-- **Port Stealthing**: Blends into USB ports as a small peripheral
-- **USB Spoofing**: VID/PID spoofing to evade host detection
-- **Geo-fencing**: Self-destruct mechanism to protect operational security
-- **OTG Delivery**: Mobile payload delivery via OTG connections
-- **Elite Capabilities**: Hardware keylogger, HIDX StealthLink, encrypted C2 (Elite only)
+- Rapid HID attack deployment (no cable required)
+- Everyday carry tool for social engineering scenarios
+- Red team simulations of brief physical access scenarios

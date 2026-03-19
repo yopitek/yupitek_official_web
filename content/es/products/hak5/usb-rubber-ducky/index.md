@@ -2,28 +2,35 @@
 title: "USB Rubber Ducky"
 date: 2025-01-01
 draft: false
-description: "Herramienta sofisticada de inyección de pulsaciones de teclas disfrazada de unidad USB estándar para ejecutar ataques cibernéticos dinámicos de alta velocidad."
+description: "Herramienta de inyección de teclado idéntica en apariencia a una unidad USB común, equipada con DuckyScript™ 3.0 que soporta lógica condicional y detección de SO."
 featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El USB Rubber Ducky (Mark II) es una sofisticada herramienta de inyección de pulsaciones de teclas disfrazada de unidad flash USB estándar, que ejecuta ataques cibernéticos dinámicos de alta velocidad contra equipos anfitriones. Funciona con DuckyScript™ 3.0 con lógica condicional y bucles para payloads inteligentes y adaptativos. El botón físico y el LED RGB proporcionan control intuitivo del payload y retroalimentación de estado.
+- **Pionera en Keystroke Injection**: Inventó la inyección de teclado en 2010; actualización completa en 2022
+- **Camuflaje perfecto**: Idéntica en apariencia a una unidad USB común; reconocida automáticamente como HID confiable
+- **DuckyScript™ 3.0**: Soporta variables, control de flujo, lógica condicional, detección de SO y funciones
+- **Fingerprinting pasivo de SO**: Distingue entre escritorio y dispositivos móviles en menos de 1 segundo
+- **Keystroke Reflection**: Lectura del estado de la máquina objetivo
+- **Modo de ataque dinámico**: Cambio dinámico entre modos HID + Storage (ATTACKMODE)
+- **Suplantación de dispositivo**: Suplanta VID / PID, fabricante y número de serie de cualquier dispositivo USB
+- **Payload comunitario**: Compatible con cientos de Payload prediseñados en PayloadHub
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| Conectores | USB-A y USB-C |
-| Modos | HID, Almacenamiento, o HID/Almacenamiento combinado |
-| Entrada/Salida | Botón físico, LED RGB |
-| Temperatura de operación | 35 °C a 45 °C |
-| Lenguaje de scripting | DuckyScript™ 3.0 |
+| Microcontrolador | AT32UC3B1256, 60 MHz, RISC de 32 bits |
+| Flash | 256KB Flash integrado |
+| USB | USB 2.0 de alta velocidad |
+| Interfaz | USB-A + USB-C dual (versión Mark II) |
+| Almacenamiento | Flash integrado (sin necesidad de MicroSD) |
+| Lenguaje de script | DuckyScript™ 3.0 |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Velocidad sobrehumana**: Velocidades de escritura que superan la observación humana
-- **Ejecución dinámica**: Condicionales If/Then/Else y bucles While para payloads adaptativos
-- **Reflejo de pulsaciones**: Exfiltración de datos por canal lateral mediante señales de teclas de bloqueo
-- **Evasión de comportamiento**: Jitter de ejecución y retrasos aleatorios para evadir heurísticas
-- **Scripting modular**: Soporte para variables, constantes, funciones y extensiones de payload
+- Ataques de acceso físico: robo de credenciales, implante de backdoor, envenenamiento DNS
+- Simulación automatizada de ingeniería social del Red Team
+- Automatización de tareas de TI complejas (uso legítimo)
+- Formación en ciberseguridad y cursos de pruebas de penetración

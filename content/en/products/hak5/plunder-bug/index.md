@@ -2,27 +2,31 @@
 title: "Plunder Bug LAN Tap"
 date: 2025-01-01
 draft: false
-description: "Pocket-sized smart network sniffer and LAN tap for passive traffic recording or active scanning via USB-C."
+description: "A pocket-sized Ethernet tap with USB-C interface for analysis devices, supporting both active and passive traffic capture modes."
 featureimage: "/images/products/hak5/plunder-bug.png"
 ---
 
-## Product Overview
+## Product Features
 
-The Plunder Bug LAN Tap is a pocket-sized smart network sniffer and LAN tap for passive traffic recording or active scanning via USB-C. Using the ASIX AX88772C chipset, it silently mirrors Ethernet traffic to a Wireshark analyzer with no configuration required. Cross-platform connection scripts support Windows, Mac, and Linux out of the box.
+- **Dual-Mode LAN Tap**: Active mode: inject analysis device into network; Passive mode: silently mirror traffic
+- **USB-C Connection**: USB-C interface connects to the analysis device
+- **Wireshark Compatible**: Supports Wireshark and other open-source packet analysis tools
+- **Cross-Platform Support**: Connection scripts for Windows / Mac / Linux
+- **Mobile Support**: Supports Android Root App for mobile packet capture (pcap format)
 
 ## Key Specifications
 
 | Specification | Details |
-|---------------|---------|
-| Network | Auto-negotiating 10/100 Base-T Fast Ethernet |
-| Chipset | ASIX AX88772C USB Ethernet |
-| Power | USB-C 5 V, 20–300 mA draw |
-| Operating Temp | 35 °C to 45 °C |
-| Compliance | Meets EMC Directives |
+|--------------|---------|
+| Network Interface | 2 × 10/100BASE-T Fast Ethernet (auto-negotiation) |
+| USB Interface | USB-C (Tap / Power, 5V, 20–300 mA) |
+| USB Ethernet Chip | ASIX AX88772C |
+| Max Network Speed | 100 Mbps |
 
-## Key Features
+## Application Scenarios
 
-- **Passive Sniffing**: Silently mirrors Ethernet traffic to a Wireshark analyzer
-- **Active Node**: Functions as an outbound active network node with included scripts
-- **Cross-Platform**: Connection scripts for Windows, Mac, and Linux
-- **Switch Mode**: Can act as a simple switch providing power to connected devices
+- Passive traffic monitoring and packet analysis on corporate internal networks
+- Traffic sniffing during penetration tests (Passive Sniffing)
+- Active network scanning by injecting analysis device (Active Mode)
+- Protocol reverse engineering with Wireshark
+- Mobile (Android) on-site packet capture

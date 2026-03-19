@@ -2,25 +2,32 @@
 title: "O.MG Adapter"
 date: 2025-01-01
 draft: false
-description: "含隱藏無線植入物的公對母 USB 轉接頭，可串聯於現有線材進行永久隱密部署。"
+description: "轉接器形態的 O.MG 植入裝置，可與現有 USB 線材結合使用，支援 OTG 模式連接行動裝置。"
 featureimage: "/images/products/hak5/omg-adapter.png"
 ---
 
-## 產品概述
+## 產品特色
 
-O.MG Adapter 是一款含隱藏無線植入物的公對母 USB 轉接頭，透過串聯於現有線材進行永久隱密操作部署。其外觀與標準 USB 轉接頭完全相同，非常適合長期持續存取。Elite（Gen 3）版本解鎖硬體鍵盤記錄、HIDX StealthLink 與加密遠端 C2 功能。
+- **轉接器形態植入**：可接合現有 USB 線材使用
+- **多方向轉接**：支援 USB-C → USB-A、USB-C → USB-C 等多種轉接方向
+- **完美隱藏**：靜止時作為正常 USB 2.0 資料直通轉接器，植入晶片完全隱形
+- **OTG 支援**：可連接行動裝置
+- **完整 O.MG 功能**：與 O.MG Cable 功能完全相同（需 O.MG Programmer 啟動）
+- **Elite 功能**：鍵盤側錄、HIDX StealthLink、加密 C2
 
 ## 主要規格
 
 | 規格項目 | 內容 |
 |---------|------|
-| 基本版腳本 | DuckyScript 2；8 個 Payload 插槽；4,000 鍵；120 鍵/秒 |
-| Elite 版腳本 | DuckyScript 3；50–300 個 Payload 插槽；1,500,000 鍵；890 鍵/秒 |
+| 形態 | USB 轉接頭（小型實體） |
+| 主動端 | USB-C |
+| USB 介面 | USB 2.0 資料直通 |
+| 注入速度（Basic） | 120 keys/sec |
+| 注入速度（Elite） | 890 keys/sec |
+| Payload 槽 | Basic 8 個，Elite 最多 300 個 |
 
-## 主要功能
+## 應用環境
 
-- **串聯部署**：插入任何現有線材與目標連接埠之間
-- **USB 欺騙**：VID/PID 與 MAC 位址欺騙
-- **地理圍欄**：離開授權範圍時自動銷毀
-- **硬體鍵盤記錄**：最多 650,000 鍵盤記錄（僅限 Elite）
-- **Elite 功能**：HIDX StealthLink、加密 C2（僅限 Elite）
+- 偽裝成普通 USB 轉接頭的植入攻擊
+- 與現有 USB 線材結合使用
+- 行動裝置（OTG）滲透測試

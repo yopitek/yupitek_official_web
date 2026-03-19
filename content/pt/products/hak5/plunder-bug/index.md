@@ -2,27 +2,31 @@
 title: "Plunder Bug LAN Tap"
 date: 2025-01-01
 draft: false
-description: "Sniffer de rede inteligente de bolso e LAN tap para gravação passiva de tráfego ou varredura ativa via USB-C."
+description: "Interceptador de rede LAN de tamanho bolso com interface USB-C para dispositivos de análise, compatível com modos de captura de tráfego ativo e passivo."
 featureimage: "/images/products/hak5/plunder-bug.png"
 ---
 
-## Visão Geral do Produto
+## Características do Produto
 
-O Plunder Bug LAN Tap é um sniffer de rede inteligente de bolso e LAN tap para gravação passiva de tráfego ou varredura ativa via USB-C. Usando o chipset ASIX AX88772C, espelha silenciosamente o tráfego Ethernet para um analisador Wireshark sem configuração necessária. Scripts de conexão multiplataforma suportam Windows, Mac e Linux nativamente.
+- **LAN Tap de modo duplo**: Modo ativo: injeta o dispositivo de análise na rede; Modo passivo: copia o tráfego silenciosamente
+- **Conexão USB-C**: Interface USB-C para conectar o dispositivo de análise
+- **Compatível com Wireshark**: Suporta Wireshark e outras ferramentas de análise de pacotes de código aberto
+- **Suporte multiplataforma**: Scripts de conexão para Windows / Mac / Linux
+- **Suporte móvel**: Suporta Android Root App para captura de pacotes móvel (formato pcap)
 
 ## Especificações Principais
 
 | Especificação | Detalhes |
 |---------------|----------|
-| Rede | Fast Ethernet 10/100 Base-T com auto-negociação |
-| Chipset | ASIX AX88772C USB Ethernet |
-| Alimentação | USB-C 5 V, consumo 20–300 mA |
-| Temperatura de operação | 35 °C a 45 °C |
-| Conformidade | Atende Diretivas EMC |
+| Interface de rede | 2 × 10/100BASE-T Fast Ethernet (autonegociação) |
+| Interface USB | USB-C (Tap / energia, 5V, 20–300 mA) |
+| Chip USB Ethernet | ASIX AX88772C |
+| Velocidade máxima de rede | 100 Mbps |
 
-## Recursos Principais
+## Ambientes de Aplicação
 
-- **Sniffing passivo**: Espelhamento silencioso do tráfego Ethernet para um analisador Wireshark
-- **Nó ativo**: Funciona como nó de rede de saída ativo com scripts incluídos
-- **Multiplataforma**: Scripts de conexão para Windows, Mac e Linux
-- **Modo switch**: Pode atuar como switch simples fornecendo energia aos dispositivos conectados
+- Monitoramento passivo de tráfego e análise de pacotes em redes internas
+- Sniffing passivo (Passive Sniffing) em testes de penetração
+- Injeção de dispositivo de análise para varredura ativa de rede (Modo ativo)
+- Análise de protocolos em engenharia reversa com Wireshark
+- Captura de pacotes em campo em dispositivos Android

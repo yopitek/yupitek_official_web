@@ -2,28 +2,33 @@
 title: "Key Croc"
 date: 2025-01-01
 draft: false
-description: "終極鍵盤記錄器滲透測試植入物，配備主動滲透測試工具、遠端存取功能與模式觸發多向量攻擊 Payload。"
+description: "偽裝成鍵盤直通轉接器的硬體鍵盤側錄器與 HID 注入平台，支援關鍵字觸發 Payload 與 Cloud C² 遠端管理。"
 featureimage: "/images/products/hak5/key-croc.png"
 ---
 
-## 產品概述
+## 產品特色
 
-Key Croc 是終極鍵盤記錄器滲透測試植入物，配備主動滲透測試工具、遠端存取功能與模式觸發多向量攻擊 Payload。它以 Debian 為基礎的 Linux 系統運行，具備 Root Shell 存取權限，並以鍵盤直通方式無縫嵌入目標系統。Cloud C² 整合支援即時鍵盤記錄串流與遠端終端機存取。
+- **硬體鍵盤側錄器**：偽裝成鍵盤直通轉接器，同時具備 HID 注入能力
+- **完整 Linux 電腦**：可同時模擬 HID / Ethernet / 序列 / 儲存四種 USB 設備
+- **關鍵字觸發 Payload**：側錄關鍵字觸發 Payload（Keyword Triggered Payloads）
+- **強大硬體**：四核 1.2 GHz ARM CPU，桌機級 SSD，工具豐富
+- **Cloud C² 整合**：即時查看鍵盤輸入、遠端注入鍵盤 / 管理 Payload / root shell
+- **自動錄製**：自動錄製插入後的所有鍵盤輸入，無需設定
+- **雙 Payload 語言**：支援 DuckyScript™ + Bash Payload
 
 ## 主要規格
 
 | 規格項目 | 內容 |
 |---------|------|
-| CPU | 四核 ARM7，1.2 GHz |
-| 儲存空間 | 8 GB 桌上型 SSD |
-| 無線連接 | 內建 2.4 GHz WiFi 天線 |
-| 作業系統 | Debian 為基礎的 Linux，具備 Root Shell 存取 |
-| 控制 | 隱藏式設定按鈕、RGB LED |
+| CPU | 四核 ARM Cortex A7，1.2 GHz |
+| 儲存 | 8 GB 桌機級 SSD |
+| 介面 | USB-A（連接主機端）、USB-A（連接鍵盤端）、序列 Console |
+| 作業系統 | Linux |
+| Cloud C² | 支援 |
 
-## 主要功能
+## 應用環境
 
-- **模式比對**：透過擷取鍵盤記錄的正規表達式觸發 Payload
-- **裝置仿冒**：硬體 VID/PID 複製以規避端點偵測系統
-- **防火牆繞過**：模擬 USB 乙太網路以繞過周邊防火牆與 IDS
-- **鍵盤緩衝**：擷取任何比對觸發器之前的輸入資料
-- **Cloud C²**：即時鍵盤記錄串流與遠端終端機存取
+- 企業入侵：植入於鍵盤與電腦之間進行長期側錄
+- 紅隊演練中的憑證竊取
+- 即時鍵盤監控與遠端 Payload 注入
+- 實體存取後的後門持久化

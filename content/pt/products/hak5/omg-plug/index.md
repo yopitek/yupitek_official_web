@@ -2,25 +2,33 @@
 title: "O.MG Plug"
 date: 2025-01-01
 draft: false
-description: "Implante encoberto de testes de penetração em forma de adaptador que imita um pequeno periférico USB enquanto entrega injeção de payload sem fio."
+description: "Dispositivo O.MG do tamanho de um chaveiro em formato de plugue USB, com suporte a controle WiFi, injeção DuckyScript, Self-Destruct e Geo-Fencing."
 featureimage: "/images/products/hak5/omg-plug.png"
 ---
 
-## Visão Geral do Produto
+## Características do Produto
 
-O O.MG Plug é um implante encoberto de testes de penetração em forma de adaptador que oculta uma porta imitando um pequeno periférico USB enquanto entrega injeção de payload sem fio. Seu design compacto se integra naturalmente em portas USB como um periférico comum. O nível Elite (Gen 3) adiciona keylogging hardware, HIDX StealthLink e C2 remoto criptografado.
+- **Dispositivo O.MG em formato de plugue**: Tamanho chaveiro, em formato de plugue USB
+- **Funções O.MG completas**: Controle WiFi, injeção DuckyScript, Self-Destruct, Geo-Fencing
+- **Sem cabo**: Funciona sem necessidade de cabo; inserido diretamente na porta USB
+- **Design para transporte diário**: Ideal para levar sempre como ferramenta de reserva (EDC)
+- **Funções Elite avançadas**: HIDX StealthLink, rede C2 criptografada, Port Stealthing
+- **Requer ativação**: Desativado de fábrica; requer O.MG Programmer para ativar
 
 ## Especificações Principais
 
 | Especificação | Detalhes |
 |---------------|----------|
-| Scripting básico | DuckyScript 2; 8 slots payload; 4,000 teclas; 120 teclas/seg |
-| Scripting Elite | DuckyScript 3; 50–300 slots payload; 1,500,000 teclas; 890 teclas/seg |
+| Formato | Plugue USB-A (formato chaveiro); disponível também em USB-C |
+| Chip de implante | Microcontrolador WiFi + HID personalizado O.MG |
+| WiFi | Integrado (interface de controle) |
+| Velocidade de injeção (Basic) | 120 teclas/seg |
+| Velocidade de injeção (Elite) | 890 teclas/seg |
+| Slots Payload | 8 no Basic, até 300 no Elite |
+| Layouts de teclado | 192 layouts |
 
-## Recursos Principais
+## Ambientes de Aplicação
 
-- **Furtividade de porta**: Integra-se em portas USB como um pequeno periférico
-- **Falsificação USB**: Falsificação de VID/PID para evadir detecção do host
-- **Geofencing**: Mecanismo de autodestruição para proteger a segurança operacional
-- **Entrega OTG**: Entrega de payload móvel via conexões OTG
-- **Capacidades Elite**: Keylogger hardware, HIDX StealthLink, C2 criptografado (apenas Elite)
+- Deploy rápido de ataques HID (sem cabo)
+- Ferramenta EDC em engenharia social
+- Simulação de cenário de acesso físico breve do Red Team

@@ -2,29 +2,33 @@
 title: "Shark Jack Cable"
 date: 2025-01-01
 draft: false
-description: "線材外型的 Shark Jack，透過 USB-C 持續供電，適用於無限時長的長期無頭網路部署。"
+description: "融入 Ethernet 線材外型的 Shark Jack，新增 USB UART 序列介面，更易隱蔽植入。"
 featureimage: "/images/products/hak5/shark-jack-cable.png"
 ---
 
-## 產品概述
+## 產品特色
 
-Shark Jack Cable 是 Shark Jack 的線材外型變體，透過 USB-C 持續供電，無電池限制，適用於長期無頭網路部署。USB UART（CP2102）序列主控台可透過 Serial USB Terminal 等智慧型手機應用程式存取 Shell。完整保留 Shark Jack 所有功能，包括 Cloud C² 同步與 DuckyScript Payload 支援。
+- **線材形態**：所有 Shark Jack 功能，融入 Ethernet 線材外型，更易隱蔽
+- **USB UART 序列介面**：新增 CP2102 序列介面，可直連 root shell
+- **長期植入優化**：適合長期植入或需要串列除錯的場景
+- **Android 支援**：支援 Android 序列設定（Android Serial Setup）
+- **完全相容**：Payload 開發與 Shark Jack 完全相容
 
 ## 主要規格
 
 | 規格項目 | 內容 |
 |---------|------|
-| SoC | MediaTek MT7628DAN，580 MHz MIPS |
-| RAM | 64 MB DDR2 |
-| 儲存空間 | 64 MB SPI Flash |
-| 網路 | 802.3 快速乙太網路（RJ45） |
-| 電源 | USB-C 5 V，0.5 A（2.5 W）持續供電 |
-| 額外功能 | USB UART（CP2102）序列主控台 |
+| SoC | MediaTek MT7628DAN |
+| 介面 | Ethernet（802.3）、USB UART（CP2102） |
+| 尺寸 | 62 × 21 × 12 mm |
+| 電源 | 2.5W（USB 5V 0.5A） |
+| 作業溫度 | 35°C ~ 45°C |
+| 儲存溫度 | -20°C ~ 50°C |
+| 相對濕度 | 0% ~ 90%（不凝露） |
 
-## 主要功能
+## 應用環境
 
-- **無限續航**：USB-C 持續供電，無電池限制
-- **模式切換**：撥動開關切換備用模式與攻擊模式
-- **序列主控台**：透過智慧型手機應用程式存取 Shell（Serial USB Terminal）
-- **腳本支援**：支援 Bash 與 DuckyScript 網路探測 Payload
-- **雲端同步**：透過 Cloud C² 整合自動同步戰利品
+- 偽裝成普通 Ethernet 連接線的長期網路植入
+- 需要序列 console 存取的進階 Payload 開發
+- 紅隊現場部署，難以被目視識別
+- Android 設備配合使用的行動滲透測試

@@ -2,25 +2,32 @@
 title: "O.MG UnBlocker"
 date: 2025-01-01
 draft: false
-description: "Implante encubierto disfrazado de bloqueador de datos USB que explota la confianza del usuario en hardware defensivo para entregar payloads DuckyScript 3 de alta velocidad."
+description: "Dispositivo O.MG Elite disfrazado perfectamente como un USB Data Blocker legítimo, capaz de eludir la vigilancia de usuarios con conciencia de seguridad."
 featureimage: "/images/products/hak5/omg-unBlocker.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El O.MG UnBlocker es un implante encubierto disfrazado de bloqueador de datos USB estándar, que explota la confianza del usuario en hardware defensivo para entregar payloads DuckyScript 3 de alta velocidad. El conector macho activo entrega payloads al host mientras el puerto posterior transmite 5 V de energía. Disponible en Ember-Red, Charcoal-Black y Ash-White para integrarse en cualquier entorno.
+- **Camuflaje perfecto como Data Blocker**: Apariencia y funcionalidad idénticas a un USB Data Blocker legítimo
+- **Implante Elite**: Contiene chip O.MG inalámbrico Elite; en modo de espera total hasta la activación del Payload
+- **Paso de alimentación**: El extremo hembra pasa 5V a los dispositivos downstream; comportamiento idéntico a un Data Blocker real
+- **Apariencia personalizable**: Disponible en 3 colores; se pueden añadir etiquetas/logotipos personalizados
+- **Funciones de seguridad avanzadas**: Soporta Self-Destruct / Geo-Fencing / WiFi Trigger
+- **Requiere activación**: Requiere O.MG Programmer para activar
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| Nivel | Elite (Gen 3) exclusivamente |
-| Colores | Ember-Red, Charcoal-Black, Ash-White |
-| Diseño | Conector macho activo entrega payloads; puerto posterior transmite 5 V |
+| Forma | Forma de USB Data Blocker |
+| Implante | Chip HID inalámbrico O.MG Elite |
+| Puertos | USB-A macho (extremo de ataque activo) + USB-A hembra (extremo de paso de alimentación) |
+| Paso | Solo 5V de alimentación (sin líneas de datos) |
+| Control | WiFi WebUI |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Explotación de confianza**: Explota la confianza del usuario en hardware de carga segura/bloqueo de datos
-- **Inyección de alta velocidad**: Payloads DuckyScript 3 a 890 teclas/seg directamente al host
-- **Activación remota**: Disparadores de baliza WiFi de largo alcance para activación remota
-- **Geofencing**: Autodestrucción mantiene el implante dentro del alcance operacional autorizado
+- Simulación de ataque contra objetivos que usan Data Blocker para autoprotección
+- Prueba de la efectividad de las políticas de seguridad USB corporativas
+- Escenarios de acceso físico altamente encubiertos del Red Team
+- Entrenamiento del Blue Team para identificar Data Blockers falsos

@@ -2,27 +2,31 @@
 title: "Plunder Bug LAN Tap"
 date: 2025-01-01
 draft: false
-description: "Sniffer de red inteligente de bolsillo y LAN tap para registro pasivo de tráfico o escaneo activo mediante USB-C."
+description: "Interceptor de red LAN de tamaño bolsillo con interfaz USB-C para dispositivos de análisis, compatible con modos de captura de tráfico activo y pasivo."
 featureimage: "/images/products/hak5/plunder-bug.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El Plunder Bug LAN Tap es un sniffer de red inteligente de bolsillo y LAN tap para registro pasivo de tráfico o escaneo activo mediante USB-C. Usando el chipset ASIX AX88772C, refleja silenciosamente el tráfico Ethernet hacia un analizador Wireshark sin configuración requerida. Los scripts de conexión multiplataforma soportan Windows, Mac y Linux de forma nativa.
+- **LAN Tap de doble modo**: Modo activo: inyecta el dispositivo de análisis en la red; Modo pasivo: copia el tráfico en silencio
+- **Conexión USB-C**: Interfaz USB-C para conectar el dispositivo de análisis
+- **Compatible con Wireshark**: Soporta Wireshark y otras herramientas de análisis de paquetes de código abierto
+- **Soporte multiplataforma**: Scripts de conexión para Windows / Mac / Linux
+- **Soporte móvil**: Soporta Android Root App para captura de paquetes móvil (formato pcap)
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| Red | Fast Ethernet 10/100 Base-T con auto-negociación |
-| Chipset | ASIX AX88772C USB Ethernet |
-| Alimentación | USB-C 5 V, consumo 20–300 mA |
-| Temperatura de operación | 35 °C a 45 °C |
-| Cumplimiento | Cumple Directivas EMC |
+| Interfaz de red | 2 × 10/100BASE-T Fast Ethernet (autonegociación) |
+| Interfaz USB | USB-C (Tap / alimentación, 5V, 20–300 mA) |
+| Chip USB Ethernet | ASIX AX88772C |
+| Velocidad máxima de red | 100 Mbps |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Sniffing pasivo**: Reflejo silencioso del tráfico Ethernet hacia un analizador Wireshark
-- **Nodo activo**: Funciona como nodo de red activo saliente con scripts incluidos
-- **Multiplataforma**: Scripts de conexión para Windows, Mac y Linux
-- **Modo switch**: Puede actuar como switch simple proporcionando energía a los dispositivos conectados
+- Monitoreo pasivo de tráfico y análisis de paquetes en redes internas
+- Sniffing pasivo (Passive Sniffing) en pruebas de penetración
+- Inyección de dispositivo de análisis para escaneo activo de red (Modo activo)
+- Análisis de protocolos en ingeniería inversa con Wireshark
+- Captura de paquetes en campo desde dispositivos Android

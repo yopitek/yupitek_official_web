@@ -2,30 +2,40 @@
 title: "WiFi Pineapple Mark VII"
 date: 2025-01-01
 draft: false
-description: "Portable, tactical WiFi penetration testing companion for rogue access point operations and airspace reconnaissance."
+description: "The industry-standard WiFi penetration testing platform powered by the PineAP Suite, with three dedicated radios and automated Campaign intelligence collection."
 featureimage: "/images/products/hak5/wifi-pineapple.png"
 ---
 
-## Product Overview
+## Product Features
 
-The WiFi Pineapple Mark VII is a portable, tactical WiFi penetration testing companion designed for close-access rogue access point operations and airspace reconnaissance. It features three dedicated role-based radios with high-gain antennas and a cross-platform web interface. The MK7AC module adds optional dual-band 5 GHz capability for extended engagement scenarios.
+- **Industry-Standard WiFi Penetration Testing Platform**: Powered by Hak5's proprietary PineAP Suite
+- **Three Dedicated Role-Based Radios**: Management / Attack / Monitor, three high-gain antennas
+- **Intuitive Web UI**: Supports automated Campaigns and generates actionable intelligence reports
+- **Interactive Recon Dashboard**: Real-time visibility into the wireless environment
+- **Cloud C² Support**: Remote command and control
+- **Rogue AP Simulation**: Simulates open, WPA-PSK, and Enterprise rogue APs
+- **WPA-Enterprise Attacks**: Supports automated handshake capture
+- **Module Ecosystem**: Extensible module ecosystem, compatible with MK7AC 802.11ac 5 GHz external module
 
 ## Key Specifications
 
 | Specification | Details |
-|---------------|---------|
-| CPU | Single Core MIPS Network SoC |
-| RAM | 256 MB |
-| Storage | 2 GB EMMC |
-| Wi-Fi | 802.11 b/g/n (2.4 GHz); 5 GHz/ac via MK7AC module |
-| Radios | 3 dedicated role-based radios with high-gain RP-SMA antennas |
-| Ports | USB-C (Power/Ethernet), USB 2.0 Host |
+|--------------|---------|
+| CPU | Single-core MIPS network SoC |
+| Wireless | 2.4 GHz 802.11 b/g/n; 5 GHz 802.11ac via MK7AC module |
+| Wireless Chipset | MediaTek MT7601U + MT7610U |
+| Memory | 256 MB RAM |
+| Storage | 2 GB eMMC |
+| Ports | USB-C (power / Ethernet), USB 2.0 Host |
 | Indicator | Single RGB LED |
+| Power | USB-C (5V) |
+| Operating Temperature | 35°C ~ 45°C |
 
-## Key Features
+## Application Scenarios
 
-- **PineAP Suite**: Patented suite for mimicking preferred networks and luring clients
-- **Credential Harvesting**: WPA / WPA Enterprise handshake capture and credential harvesting
-- **Precision Targeting**: MAC and SSID filters to limit collateral damage
-- **Web Interface**: Cross-platform web interface — no local software required
-- **Dual-Band Support**: MK7AC adapter compatibility for dual-band 5 GHz operation
+- Enterprise wireless network security auditing and vulnerability assessment
+- Red team fieldwork penetration testing
+- Wireless man-in-the-middle (MitM) attack simulation
+- Rogue AP / Karma attack research
+- Intelligence gathering and device identification (OSINT)
+- Security training and educational demonstrations

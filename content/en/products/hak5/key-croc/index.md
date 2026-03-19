@@ -2,28 +2,33 @@
 title: "Key Croc"
 date: 2025-01-01
 draft: false
-description: "Ultimate keylogging pentest implant with active penetration testing tools, remote access, and pattern-triggered attack payloads."
+description: "A hardware keylogger and HID injection platform disguised as a keyboard pass-through adapter, with keyword-triggered payloads and Cloud C² remote management."
 featureimage: "/images/products/hak5/key-croc.png"
 ---
 
-## Product Overview
+## Product Features
 
-The Key Croc is the ultimate keylogging pentest implant armed with active penetration testing tools, remote access capabilities, and pattern-triggered multi-vector attack payloads. Running Debian-based Linux with root shell access, it integrates seamlessly as a keyboard pass-through while capturing and analyzing every keystroke. Cloud C² integration enables live keystroke streaming and remote terminal access from anywhere.
+- **Hardware Keylogger**: Disguised as a keyboard pass-through adapter with full HID injection capability
+- **Full Linux Computer**: Simultaneously emulates HID / Ethernet / Serial / Storage as four USB device types
+- **Keyword Triggered Payloads**: Keylogged keywords automatically trigger Payloads
+- **Powerful Hardware**: Quad-core 1.2 GHz ARM CPU, desktop-class SSD, rich toolset
+- **Cloud C² Integration**: Real-time keystroke viewing, remote keyboard injection / Payload management / root shell
+- **Auto-Recording**: Automatically records all keystrokes after insertion — zero configuration required
+- **Dual Payload Languages**: Supports DuckyScript™ + Bash Payloads
 
 ## Key Specifications
 
 | Specification | Details |
-|---------------|---------|
-| CPU | Quad-core ARM7, 1.2 GHz |
+|--------------|---------|
+| CPU | Quad-core ARM Cortex A7, 1.2 GHz |
 | Storage | 8 GB desktop-class SSD |
-| Wireless | Integrated 2.4 GHz WiFi antenna |
-| OS | Debian-based Linux with root shell access |
-| Controls | Hidden configuration button, RGB LED |
+| Interface | USB-A (host-side), USB-A (keyboard-side), Serial Console |
+| OS | Linux |
+| Cloud C² | Supported |
 
-## Key Features
+## Application Scenarios
 
-- **Pattern Matching**: Regex-triggered payloads activated by captured keystroke patterns
-- **Device Cloning**: Hardware VID/PID cloning to evade endpoint detection systems
-- **Firewall Bypass**: Emulates USB Ethernet to bypass perimeter firewalls and IDS
-- **Keystroke Buffering**: Captures data preceding any matched trigger
-- **Cloud C²**: Live keystroke streaming and remote terminal access
+- Corporate intrusion: implanted between keyboard and computer for long-term keylogging
+- Credential harvesting during red team engagements
+- Real-time keystroke monitoring and remote Payload injection
+- Backdoor persistence after physical access

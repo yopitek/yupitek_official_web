@@ -2,25 +2,32 @@
 title: "O.MG Adapter"
 date: 2025-01-01
 draft: false
-description: "Adaptador USB macho-hembra con implante inalámbrico oculto para despliegue en línea permanente y sigiloso con cables existentes."
+description: "Dispositivo O.MG en forma de adaptador que puede usarse con cables USB existentes, con soporte para modo OTG para conectarse a dispositivos móviles."
 featureimage: "/images/products/hak5/omg-adapter.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El O.MG Adapter es un adaptador USB macho-hembra con implante inalámbrico oculto, desplegado en línea con cables existentes para operación sigilosa permanente. Es visualmente indistinguible de un adaptador USB estándar, haciéndolo ideal para acceso persistente a largo plazo. El nivel Elite (Gen 3) desbloquea keylogging hardware, HIDX StealthLink y C2 remoto cifrado.
+- **Implante en forma de adaptador**: Puede combinarse con cables USB existentes para uso inmediato
+- **Conversión multidireccional**: Soporta USB-C → USB-A, USB-C → USB-C y más
+- **Camuflaje perfecto**: En reposo actúa como adaptador de datos USB 2.0 normal; chip implantado completamente invisible
+- **Soporte OTG**: Se puede conectar a dispositivos móviles
+- **Funciones O.MG completas**: Idéntico a O.MG Cable en funcionalidad (requiere O.MG Programmer para activación)
+- **Funciones Elite**: Keylogging, HIDX StealthLink, C2 cifrado
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| Scripting básico | DuckyScript 2; 8 ranuras payload; 4,000 teclas; 120 teclas/seg |
-| Scripting Elite | DuckyScript 3; 50–300 ranuras payload; 1,500,000 teclas; 890 teclas/seg |
+| Forma | Adaptador USB (cuerpo compacto) |
+| Extremo activo | USB-C |
+| Interfaz USB | Paso de datos USB 2.0 |
+| Velocidad de inyección (Basic) | 120 teclas/seg |
+| Velocidad de inyección (Elite) | 890 teclas/seg |
+| Ranuras Payload | 8 en Basic, hasta 300 en Elite |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Despliegue en línea**: Insertado entre cualquier cable existente y el puerto objetivo
-- **Suplantación USB**: Suplantación de VID/PID y dirección MAC
-- **Geofencing**: Autodestrucción si se retira del alcance operacional autorizado
-- **Keylogger hardware**: Hasta 650,000 pulsaciones (solo Elite)
-- **Capacidades Elite**: HIDX StealthLink, C2 cifrado (solo Elite)
+- Ataque camuflado como adaptador USB normal
+- Uso en combinación con cables USB existentes
+- Pruebas de penetración en dispositivos móviles (OTG)

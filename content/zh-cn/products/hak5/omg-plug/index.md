@@ -2,25 +2,33 @@
 title: "O.MG Plug"
 date: 2025-01-01
 draft: false
-description: "适配器外形的隐密渗透测试植入物，伪装成小型 USB 外设，同时传送无线 Payload 注入。"
+description: "钥匙扣大小的 USB 插头形态 O.MG 装置，支持 WiFi 控制、DuckyScript 注入、Self-Destruct 与地理围栏。"
 featureimage: "/images/products/hak5/omg-plug.png"
 ---
 
-## 产品概述
+## 产品特色
 
-O.MG Plug 是一款适配器外形的隐密渗透测试植入物，通过伪装成小型 USB 外设来隐藏端口，同时传送无线 Payload 注入。其紧凑的设计可自然融入 USB 端口，外观如同普通外设。Elite（Gen 3）版本新增硬件键盘记录、HIDX StealthLink 与加密远程 C2 功能。
+- **插头形态 O.MG 装置**：钥匙扣大小，USB 插头形态
+- **完整 O.MG 功能**：WiFi 控制、DuckyScript 注入、Self-Destruct、Geo-Fencing
+- **无线材操作**：不需要线材即可操作，直接插入 USB 口
+- **日常携带设计**：适合随身携带，随时备用（EDC 日常携带）
+- **Elite 进阶功能**：HIDX StealthLink、加密网络 C2、端口隐身（Port Stealthing）
+- **需启动**：出厂默认停用，需 O.MG Programmer 启动
 
 ## 主要规格
 
 | 规格项目 | 内容 |
 |---------|------|
-| 基本版脚本 | DuckyScript 2；8 个 Payload 插槽；4,000 键；120 键/秒 |
-| Elite 版脚本 | DuckyScript 3；50–300 个 Payload 插槽；1,500,000 键；890 键/秒 |
+| 形态 | USB-A 插头（Keychain 形态）；另有 USB-C 版本 |
+| 植入芯片 | O.MG 定制 WiFi + HID 微控制器 |
+| WiFi | 内置（控制接口） |
+| 注入速度（Basic） | 120 keys/sec |
+| 注入速度（Elite） | 890 keys/sec |
+| Payload 槽 | Basic 8 个，Elite 最多 300 个 |
+| 全球键盘布局 | 192 种 |
 
-## 主要功能
+## 应用环境
 
-- **端口隐藏**：融入 USB 端口，外观如同小型外设
-- **USB 欺骗**：VID/PID 欺骗以规避主机检测
-- **地理围栏**：自毁机制以保护操作安全
-- **OTG 传送**：通过 OTG 连接进行移动设备 Payload 传送
-- **Elite 功能**：硬件键盘记录、HIDX StealthLink、加密 C2（仅限 Elite）
+- 快速 HID 攻击部署（无需线材）
+- 社交工程中的日常携带工具
+- 红队模拟短暂物理访问场景

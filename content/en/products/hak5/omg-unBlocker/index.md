@@ -2,25 +2,32 @@
 title: "O.MG UnBlocker"
 date: 2025-01-01
 draft: false
-description: "Covert implant disguised as a USB data blocker that delivers high-speed DuckyScript 3 payloads via user trust exploitation."
+description: "An Elite-grade O.MG implant device that perfectly mimics a legitimate USB Data Blocker, designed to evade security-conscious users."
 featureimage: "/images/products/hak5/omg-unBlocker.png"
 ---
 
-## Product Overview
+## Product Features
 
-The O.MG UnBlocker is a covert implant disguised as a standard USB data blocker, exploiting user trust in defensive hardware to deliver high-speed DuckyScript 3 payloads. The active male connector delivers payloads to the host while the downstream port passes 5 V power. Available in Ember-Red, Charcoal-Black, and Ash-White to blend into any environment.
+- **Perfect Data Blocker Disguise**: Appearance and function fully mimic a legitimate USB Data Blocker (USB condom)
+- **Elite-Grade Implant**: Contains an Elite-grade O.MG wireless implant chip inside, fully dormant until Payload is triggered
+- **Power Pass-Through**: Female port passes 5V power to downstream devices — behavior identical to a real Data Blocker
+- **Customizable Appearance**: Available in 3 colors, with support for custom label / logo stickers
+- **Advanced Security Features**: Supports Self-Destruct / Geo-Fencing / WiFi Trigger
+- **Requires Activation**: Requires O.MG Programmer for activation
 
 ## Key Specifications
 
 | Specification | Details |
-|---------------|---------|
-| Tier | Elite (Gen 3) exclusively |
-| Colors | Ember-Red, Charcoal-Black, Ash-White |
-| Design | Active male connector delivers payloads; downstream port passes 5 V power |
+|--------------|---------|
+| Form Factor | USB Data Blocker appearance |
+| Implant | Elite-grade O.MG wireless HID implant chip |
+| Ports | USB-A male (active attack side) + USB-A female (power pass-through side) |
+| Pass-Through | 5V power only (no data lines) |
+| Control | WiFi WebUI |
 
-## Key Features
+## Application Scenarios
 
-- **Trust Exploitation**: Exploits user trust in safe-charging / data-blocking hardware
-- **High-Speed Injection**: 890 keys/sec DuckyScript 3 payloads to the host
-- **Remote Activation**: Long-range WiFi beacon triggers for remote payload delivery
-- **Geo-fencing**: Self-destruct keeps implant from falling out of operational scope
+- Attack simulation targeting users who protect themselves with Data Blockers
+- Testing the effectiveness of enterprise USB security policies
+- Red team high-concealment physical access scenarios
+- Blue Team training to identify disguised Data Blockers

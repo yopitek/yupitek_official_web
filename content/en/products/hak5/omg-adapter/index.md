@@ -2,25 +2,32 @@
 title: "O.MG Adapter"
 date: 2025-01-01
 draft: false
-description: "Male-to-female USB adapter containing a hidden wireless implant for inline stealthy deployment with existing cables."
+description: "An O.MG implant in adapter form factor that works with existing USB cables and supports OTG mode for mobile device connections."
 featureimage: "/images/products/hak5/omg-adapter.png"
 ---
 
-## Product Overview
+## Product Features
 
-The O.MG Adapter is a male-to-female USB adapter containing a hidden wireless implant, deployed inline with existing cables for permanent stealthy operation. It is visually indistinguishable from a standard USB adapter, making it ideal for long-term persistent access. The Elite (Gen 3) tier unlocks hardware keylogging, HIDX StealthLink, and encrypted remote C2 capabilities.
+- **Adapter-Form Implant**: Compatible with existing USB cables
+- **Multi-Direction Conversion**: Supports USB-C → USB-A, USB-C → USB-C, and other adapter directions
+- **Perfect Concealment**: When idle, functions as a normal USB 2.0 data pass-through adapter — implant chip is completely invisible
+- **OTG Support**: Compatible with mobile devices
+- **Full O.MG Feature Set**: Identical functionality to O.MG Cable (requires O.MG Programmer for activation)
+- **Elite Features**: Keystroke logging, HIDX StealthLink, encrypted C2
 
 ## Key Specifications
 
 | Specification | Details |
-|---------------|---------|
-| Basic Scripting | DuckyScript 2; 8 payload slots; 4,000 keystrokes; 120 keys/sec |
-| Elite Scripting | DuckyScript 3; 50–300 payload slots; 1,500,000 keystrokes; 890 keys/sec |
+|--------------|---------|
+| Form Factor | USB adapter (compact physical form) |
+| Active Side | USB-C |
+| USB Interface | USB 2.0 data pass-through |
+| Injection Speed (Basic) | 120 keys/sec |
+| Injection Speed (Elite) | 890 keys/sec |
+| Payload Slots | Basic: 8, Elite: up to 300 |
 
-## Key Features
+## Application Scenarios
 
-- **Inline Deployment**: Inserted between any existing cable and target port
-- **USB Spoofing**: VID/PID and MAC address spoofing
-- **Geo-fencing**: Self-destruct if removed from authorized operational scope
-- **Hardware Keylogger**: Up to 650,000 keystrokes (Elite only)
-- **Elite Capabilities**: HIDX StealthLink, encrypted C2 (Elite only)
+- Implant attacks disguised as ordinary USB adapters
+- Use in combination with existing USB cables
+- Mobile device (OTG) penetration testing

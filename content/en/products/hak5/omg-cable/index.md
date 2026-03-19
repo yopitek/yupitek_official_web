@@ -2,27 +2,38 @@
 title: "O.MG Cable"
 date: 2025-01-01
 draft: false
-description: "Advanced covert pentest cable with a hidden wireless implant, visually indistinguishable from a standard charging cable."
+description: "A handcrafted USB cable with a full WiFi + HID injection implant chip concealed inside, visually and tactilely indistinguishable from a normal USB cable."
 featureimage: "/images/products/hak5/omg-cable.png"
 ---
 
-## Product Overview
+## Product Features
 
-The O.MG Cable is an advanced covert pentest cable with a hidden wireless implant that is visually and electrically indistinguishable from a standard charging cable. The Elite (Gen 3) variant supports DuckyScript 3 with up to 300 payload slots and 890 keys/sec injection speed. Extended WiFi range and encrypted Cloud C2 enable remote global control without physical access to the target.
+- **Covert USB Attack Cable**: Handcrafted with a full WiFi + HID injection implant chip hidden inside
+- **Perfect Disguise**: Identical appearance and feel to a normal USB cable, available in various colors, materials, and connector combinations
+- **Wireless Control**: No computer connection required — operate via WiFi using any browser
+- **Ultra-High Injection Speed**: DuckyScript 1-click deployment, up to 890 keys/sec (Elite)
+- **Keystroke Logging**: Elite version captures up to 650,000 keystrokes
+- **Massive Payload Slots**: Supports up to 300 Payload slots (Elite version)
+- **Global Keyboard Support**: 192 keyboard layouts
+- **Advanced Security Features**: Self-Destruct / Geo-Fencing / WiFi Trigger / HIDX StealthLink
 
 ## Key Specifications
 
 | Specification | Details |
-|---------------|---------|
-| Basic Scripting | DuckyScript 2; 8 payload slots; 4,000 keystrokes; 120 keys/sec |
-| Elite Scripting | DuckyScript 3; 50–300 payload slots; 1,500,000 keystrokes; 890 keys/sec |
-| Elite Range | Extended WiFi range, stealth-optimized power draw |
+|--------------|---------|
+| Implant Chip | Custom WiFi + HID microcontroller (O.MG proprietary) |
+| USB Interface | USB 2.0 (480 Mbps), 5V max charging |
+| WiFi | Built-in 802.11 b/g/n (control interface) |
+| Injection Speed (Basic) | Up to 120 keys/sec |
+| Injection Speed (Elite) | Up to 890 keys/sec |
+| Payload Slots | Basic: 8, Elite: up to 300 |
+| Keystroke Log (Elite) | Up to 650,000 keystrokes |
+| Cable Length | 1 meter (standard) |
 
-## Key Features
+## Application Scenarios
 
-- **Spoofing**: USB VID/PID and MAC address spoofing to evade detection
-- **Hardware Keylogger**: Stores up to 650,000 keystrokes (Elite only)
-- **HIDX StealthLink**: Bidirectional USB tunnel bypassing network firewalls (Elite only)
-- **Encrypted C2**: Remote global control via encrypted network (Elite only)
-- **Geo-fencing**: Self-destruct if device leaves authorized scope
-- **OTG Delivery**: Mobile payload delivery via OTG on Type-C ends
+- Simulating NSA-grade USB cable implants (similar to COTTONMOUTH-I)
+- Red team leave-behind attacks
+- Hardware keylogging + remote control combined attacks
+- Blue Team defense training and testing
+- Security education demonstrations

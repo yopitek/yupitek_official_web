@@ -2,28 +2,37 @@
 title: "Packet Squirrel Mark II"
 date: 2025-01-01
 draft: false
-description: "隐密的口袋大小网络中间人多功能工具，用于透明流量拦截、操控与安全远程枢纽转接。"
+description: "口袋大小的以太网中间人多功能工具，支持 WireGuard / OpenVPN VPN 与五种网络模式。"
 featureimage: "/images/products/hak5/packet-squirrel.png"
 ---
 
-## 产品概述
+## 产品特色
 
-Packet Squirrel Mark II 是一款隐密的口袋大小网络中间人多功能工具，专用于透明流量拦截、操控与安全远程枢纽转接。仅重 24 g，尺寸 50 × 40 × 15 mm，可无声地内嵌于网络设备之间。原生支持 OpenVPN 与 WireGuard，可从受攻陷的网络区段建立加密远程通道。
+- **多功能 Ethernet MitM 工具**：口袋大小，支持五种网络模式：NAT、BRIDGE、TRANSPARENT、JAIL、ISOLATE
+- **双 VPN 支持**：同时支持 WireGuard 与 OpenVPN VPN 连接
+- **Web UI + SSH 访问**：默认管理 IP：172.16.32.1:1471
+- **4 段模式切换**：单颗按钮可重新启动 / 恢复出厂
+- **USB 储存扩展**：支持 USB-A 2.0，可选 LUKS 全磁盘加密
+- **多语言 Payload**：以 Bash / Python 编写，支持 DuckyScript
+- **Cloud C² 支持**：远程管理
+- **安全自毁**：支持 SELFDESTRUCT payload 命令
 
 ## 主要规格
 
 | 规格项目 | 内容 |
 |---------|------|
-| 尺寸 | 50 × 40 × 15 mm |
-| 重量 | 24 g |
-| 接口 | 2 × 以太网（串联）、1 × USB 2.0 Host |
-| 电源 | USB-C，0.2 A 耗电 |
-| 操作系统 | Linux，具备可脚本化按钮与 RGB LED |
+| 接口 | Dual Ethernet（Target 及 Network 口）、USB-C（电源）、USB-A 2.0（储存） |
+| 网络标准 | 802.3 |
+| 电源 | USB-C（5V） |
+| 默认管理 IP | 172.16.32.1 |
+| 操作系统 | Linux-based |
+| LED | 多色状态 LED |
 
-## 主要功能
+## 应用环境
 
-- **数据包嗅探**：以 PCAP 格式透明捕获流量至 USB 存储设备
-- **多 Payload 切换**：即时切换不同攻击配置文件
-- **VPN 隧道**：原生 OpenVPN 与 WireGuard 支持安全远程枢纽
-- **DNS 劫持**：将 DNS 请求重定向至攻击者控制的服务器
-- **硬件守门员**：可通过脚本物理切断网络访问
+- 企业网络中间人（MitM）数据包捕获与分析
+- 隐蔽 VPN 通道建立（WireGuard / OpenVPN）
+- 红队网络植入与远程持久访问
+- 流量操控、DNS 欺骗（SPOOFDNS）、数据包注入
+- 蓝队演练：隔离可疑设备（JAIL / ISOLATE 模式）
+- 企业网络漏洞评估自动化

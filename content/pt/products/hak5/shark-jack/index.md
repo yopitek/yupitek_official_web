@@ -2,29 +2,35 @@
 title: "Shark Jack"
 date: 2025-01-01
 draft: false
-description: "Ferramenta portátil de ataque e automação de rede para auditorias rápidas de redes cabeadas com aproximadamente 15 minutos de bateria."
+description: "Ferramenta de ataque a rede cabeada do tamanho de um chaveiro com bateria interna, executa Payload de forma autônoma ao conectar ao Ethernet."
 featureimage: "/images/products/hak5/shark-jack.png"
 ---
 
-## Visão Geral do Produto
+## Características do Produto
 
-O Shark Jack é uma ferramenta portátil de ataque e automação de rede projetada para engajamentos rápidos de engenharia social e auditorias oportunistas de redes cabeadas. Seu fator de forma compacto e a bateria LiPo integrada fornecem aproximadamente 15 minutos de tempo de funcionamento autônomo. Um interruptor de alavanca muda instantaneamente entre os modos Armação e Ataque para implantações rápidas em campo.
+- **Ferramenta de implante de rede cabeada ultra miniatura**: Tamanho chaveiro, deploy rápido
+- **Execução autônoma**: Bateria interna; executa Payload ao conectar ao Ethernet
+- **DuckyScript Payload**: Suporta comandos NETMODE / LED / SWITCH / BATTERY e mais
+- **Ferramentas de pentesting integradas**: nmap, curl, metasploit-framework e mais
+- **Suporte Cloud C²**: Gerenciamento remoto
+- **Interruptor de 3 posições**: Modo de ataque / Modo Arming / Desligamento
 
 ## Especificações Principais
 
 | Especificação | Detalhes |
 |---------------|----------|
-| SoC | MediaTek MT7628DAN, 580 MHz MIPS |
-| RAM | 64 MB DDR2 |
-| Armazenamento | 64 MB SPI Flash |
-| Rede | 802.3 Fast Ethernet (RJ45) |
-| Alimentação | 1S 401020 3.7 V 50 mAh LiPo (~15 min) |
+| SoC | MediaTek MT7628DAN |
+| Interface | Ethernet (802.3) |
 | Dimensões | 62 × 21 × 12 mm |
+| Energia | 2.5W (USB 5V 0.5A) |
+| Bateria | 1S 401020 3.7V 50mAh 0.2Wh LiPo |
+| Temperatura de operação | 35°C ~ 45°C |
+| Temperatura de armazenamento | -20°C ~ 50°C |
+| Umidade relativa | 0% ~ 90% (sem condensação) |
 
-## Recursos Principais
+## Ambientes de Aplicação
 
-- **Troca de modo**: Interruptor de alavanca para alternar instantaneamente entre modos Armação e Ataque
-- **Suporte a scripts**: Payloads de perfilamento de rede com Bash e DuckyScript
-- **Sincronização na nuvem**: Sincronização automática de dados obtidos via integração Cloud C²
-- **LED de status**: LED RGB para visualização em tempo real do estado de execução
-- **Acesso SSH**: Interface SSH no modo Armação para configuração rápida de payloads
+- Reconhecimento rápido de rede cabeada (varredura Nmap, coleta de info LLDP/CDP)
+- Cenários de contato físico breve do Red Team em campo
+- Implante em rede interna e estabelecimento de backdoor
+- Avaliação automatizada de vulnerabilidades em rede cabeada

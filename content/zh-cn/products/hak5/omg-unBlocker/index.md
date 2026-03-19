@@ -2,25 +2,32 @@
 title: "O.MG UnBlocker"
 date: 2025-01-01
 draft: false
-description: "伪装成 USB 数据阻断器的隐密植入物，利用用户对防御硬件的信任传送高速 DuckyScript 3 Payload。"
+description: "外观完全模拟合法 USB Data Blocker 的 Elite 等级 O.MG 植入装置，可规避安全意识用户的警觉。"
 featureimage: "/images/products/hak5/omg-unBlocker.png"
 ---
 
-## 产品概述
+## 产品特色
 
-O.MG UnBlocker 是一款伪装成标准 USB 数据阻断器的隐密植入物，利用用户对防御硬件的信任传送高速 DuckyScript 3 Payload。主动公头接口向主机传送 Payload，下游端口则传递 5 V 电源。提供 Ember-Red、Charcoal-Black 与 Ash-White 三种颜色，可融入任何环境。
+- **完美伪装 Data Blocker**：外观与功能完全模拟合法的「USB Data Blocker（USB 保险套）」
+- **Elite 等级植入**：内部藏有 Elite 等级 O.MG 无线植入芯片，完全休眠至 Payload 触发
+- **电源直通**：母头端通过 5V 电源至下游设备，外观行为与真 Data Blocker 相同
+- **可自定义外观**：可选 3 种颜色，并可加贴自定义标签 / LOGO
+- **进阶安全功能**：支持 Self-Destruct / Geo-Fencing / WiFi Trigger
+- **需启动**：需 O.MG Programmer 启动
 
 ## 主要规格
 
 | 规格项目 | 内容 |
 |---------|------|
-| 等级 | 仅限 Elite（Gen 3） |
-| 颜色 | Ember-Red、Charcoal-Black、Ash-White |
-| 设计 | 主动公头传送 Payload；下游端口传递 5 V 电源 |
+| 形态 | USB Data Blocker 外型 |
+| 植入 | Elite 等级 O.MG 无线 HID 植入芯片 |
+| 连接口 | USB-A 公头（主动攻击端）+ USB-A 母头（电源直通端） |
+| 通过 | 5V 电源直通（无数据线路） |
+| 控制 | WiFi WebUI |
 
-## 主要功能
+## 应用环境
 
-- **信任利用**：利用用户对安全充电/数据阻断硬件的信任
-- **高速注入**：以 890 键/秒向主机传送 DuckyScript 3 Payload
-- **远程触发**：长距离 WiFi 信标触发以远程激活 Payload
-- **地理围栏**：自毁机制确保植入物不离开授权操作范围
+- 针对使用 Data Blocker 自保的目标进行攻击模拟
+- 测试企业 USB 安全政策的有效性
+- 红队高度隐蔽的物理访问场景
+- 供 Blue Team 学习识别伪装 Data Blocker 的技能

@@ -2,27 +2,38 @@
 title: "O.MG Cable"
 date: 2025-01-01
 draft: false
-description: "Cable de pruebas de penetración encubierto avanzado con implante inalámbrico oculto, visualmente indistinguible de un cable de carga estándar."
+description: "Cable USB fabricado a mano con un chip de implante WiFi + HID completo en su interior, con apariencia y tacto idénticos a un cable USB normal."
 featureimage: "/images/products/hak5/omg-cable.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El O.MG Cable es un cable de pruebas de penetración encubierto avanzado con un implante inalámbrico oculto, visualmente y eléctricamente indistinguible de un cable de carga estándar. La variante Elite (Gen 3) soporta DuckyScript 3 con hasta 300 ranuras de payload y velocidad de inyección de 890 teclas/seg. El rango WiFi extendido y el Cloud C2 cifrado permiten control global remoto sin acceso físico al objetivo.
+- **Cable USB de ataque encubierto**: Fabricado a mano con chip de implante WiFi + HID completo en su interior
+- **Camuflaje perfecto**: Apariencia y tacto idénticos a un cable USB normal, en varios colores, materiales y conectores
+- **Control inalámbrico**: No requiere conexión al PC; se opera vía WiFi desde cualquier navegador
+- **Velocidad de inyección ultra alta**: Despliegue con un clic mediante DuckyScript, hasta 890 teclas/seg (Elite)
+- **Keylogging**: Hasta 650,000 pulsaciones en versión Elite
+- **Múltiples ranuras de Payload**: Hasta 300 ranuras de Payload (versión Elite)
+- **Soporte de teclados global**: 192 distribuciones de teclado
+- **Funciones de seguridad avanzadas**: Self-Destruct / Geo-Fencing / WiFi Trigger / HIDX StealthLink
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| Scripting básico | DuckyScript 2; 8 ranuras payload; 4,000 teclas; 120 teclas/seg |
-| Scripting Elite | DuckyScript 3; 50–300 ranuras payload; 1,500,000 teclas; 890 teclas/seg |
-| Alcance Elite | Rango WiFi extendido, consumo de energía optimizado para sigilo |
+| Chip implante | Microcontrolador WiFi + HID personalizado (propietario O.MG) |
+| Interfaz USB | USB 2.0 (480 Mbps), carga 5V máx |
+| WiFi | 802.11 b/g/n integrado (interfaz de control) |
+| Velocidad de inyección (Basic) | Hasta 120 teclas/seg |
+| Velocidad de inyección (Elite) | Hasta 890 teclas/seg |
+| Ranuras Payload | 8 en Basic, hasta 300 en Elite |
+| Keylogging (Elite) | Hasta 650,000 pulsaciones |
+| Longitud del cable | 1 metro (estándar) |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Suplantación**: USB VID/PID y suplantación de dirección MAC para evadir detección
-- **Keylogger hardware**: Almacena hasta 650,000 pulsaciones (solo Elite)
-- **HIDX StealthLink**: Túnel USB bidireccional que evade firewalls de red (solo Elite)
-- **C2 cifrado**: Control global remoto mediante red cifrada (solo Elite)
-- **Geofencing**: Autodestrucción si el dispositivo sale del alcance autorizado
-- **Entrega OTG**: Entrega de payload móvil mediante OTG en extremos Type-C
+- Simulación de implante de cable USB a nivel NSA (similar a COTTONMOUTH-I)
+- Ataques de abandono en sitio (Leave-behind attacks) del Red Team
+- Ataque combinado: registro de hardware + control remoto
+- Entrenamiento y pruebas para Blue Team
+- Demostraciones de concienciación en ciberseguridad

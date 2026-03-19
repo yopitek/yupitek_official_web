@@ -2,29 +2,38 @@
 title: "Screen Crab"
 date: 2025-01-01
 draft: false
-description: "Stealthy HDMI video man-in-the-middle implant that silently captures screenshots and streams between a computer and monitor."
+description: "The world's first HDMI man-in-the-middle video capture device for penetration testing, featuring zero-latency transparent installation and MPEG-4 video recording."
 featureimage: "/images/products/hak5/screen-crab.png"
 ---
 
-## Product Overview
+## Product Features
 
-The Screen Crab is a stealthy HDMI video man-in-the-middle implant that quietly captures screenshots and video streams between a computer and its monitor. It requires no software on the target machine and stores captures to MicroSD or streams them off-site via WiFi. On-board deduplication intelligently suppresses saving of static, unchanged frames to conserve storage.
+- **World's First HDMI MitM Device**: HDMI man-in-the-middle video capture tool designed for penetration testing
+- **Zero-Latency Transparent Installation**: Installed inline in the HDMI signal path — zero latency, zero disruption
+- **Multiple Recording Modes**: Scheduled screenshots or full motion video recording (MPEG-4, 2 / 4 / 16 Mbps)
+- **Out-of-the-Box Ready**: Screenshots auto-saved to MicroSD, no configuration needed; edit config.txt to control features
+- **WiFi Remote Management**: Built-in WiFi for screenshot streaming and Cloud C²
+- **Adjustable Stealth**: RGB LED status indicator, with the option to disable LED for enhanced concealment
+- **Loop Recording**: Newest files overwrite oldest; supports MicroSD SDXC high-capacity cards
 
 ## Key Specifications
 
 | Specification | Details |
-|---------------|---------|
-| Video Interface | HDMI 1.4 / DVI 1.0 (inline) |
-| Wireless | 802.11 b/g/n (2.412–2.4835 GHz) |
-| Storage | MicroSD (FAT32 or ExFAT) |
-| Power | 5 W via USB-C (5 V, 1 A) |
+|--------------|---------|
+| Interface | HDMI (IN / OUT), USB (power), MicroSD |
+| Standards | HDMI 1.4 / DVI 1.0; 802.11 b/g/n |
+| WiFi Band | 2.4 GHz (2.412 ~ 2.4835 GHz) |
+| Supported Resolution | Most 16:9 formats up to 1920×1080 |
 | Dimensions | 105 × 51 × 21 mm |
-| Resolution | Up to 1920 × 1080 (16:9) |
+| Power | 5W (USB 5V 1A) |
+| Operating Temperature | 35°C ~ 45°C |
+| Storage Temperature | -20°C ~ 50°C |
+| Relative Humidity | 0% ~ 90% (non-condensing) |
 
-## Key Features
+## Application Scenarios
 
-- **Silent Capture**: Screen capture with no software required on target machine
-- **Flexible Recording**: Configurable interval image captures or continuous video
-- **Cloud Streaming**: Streams intercepted data via Hak5 Cloud C² over WiFi
-- **Deduplication**: Suppresses saving of static, unchanged frames
-- **Compression Control**: Configurable bitrates — Low 2 Mbps / Med 4 Mbps / High 16 Mbps
+- Covert monitoring of target machine screen output (no software installation required)
+- Red team implants: long-term recording of sensitive information (passwords, documents, meetings)
+- Corporate security audits: verifying whether screen content is being illegally captured
+- Security research: HDMI signal security testing
+- On-site forensics: recording operator screen activity

@@ -2,25 +2,30 @@
 title: "O.MG Programmer"
 date: 2025-01-01
 draft: false
-description: "Interfaz de programación universal necesaria para activar, gestionar, actualizar firmware y recuperar todos los dispositivos O.MG."
+description: "Herramienta universal de activación, actualización de firmware y rescate para todos los dispositivos O.MG, operada en 3 pasos mediante WebSerial API en el navegador."
 featureimage: "/images/products/hak5/omg-programmer.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El O.MG Programmer es la interfaz de programación universal necesaria para activar, gestionar, actualizar firmware y recuperar todos los dispositivos O.MG incluyendo Cable, Plug, Adapter y UnBlocker. Utiliza una utilidad basada en WebSerial en el navegador — no requiere instalación de drivers ni software. Es esencial para despliegues de red team que requieren instalación de firmware en lote en múltiples implantes.
+- **Herramienta O.MG universal**: Compatible con todos los productos O.MG: Cable, Plug, Adapter, UnBlocker
+- **Interfaz de operación sencilla**: 3 pasos mediante WebSerial API en navegador de escritorio (Chrome / Edge)
+- **Método Python alternativo**: Soporta Python como método alternativo de programación
+- **Multifunción**: Activación inicial, actualizaciones de firmware gratuitas, rescate tras Self-Destruct, respaldo forense, programación por lotes
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| Compatibilidad | Todos los dispositivos de la línea de productos O.MG |
-| Conectores | USB-A y USB-C |
-| Interfaz | Utilidad basada en WebSerial en el navegador |
+| Interfaz de conexión | USB-A + USB-C (versión de cabeza doble) |
+| Dispositivos compatibles | Todos los dispositivos de la serie O.MG |
+| Método de operación | WebSerial (navegador Chrome / Edge) o Python |
+| Universalidad | 1 Programmer para todos los dispositivos O.MG |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Activación inicial**: Activa el firmware desactivado de fábrica al recibir el dispositivo
-- **Volcado forense**: Volcado forense y respaldo seguro de implantes O.MG desplegados
-- **Despliegue en lote**: Instalación de firmware en lote para operaciones de red team a gran escala
-- **Recuperación de dispositivos**: Recupera dispositivos que han activado su secuencia de autodestrucción
+- Configuración inicial de dispositivos O.MG
+- Actualizaciones periódicas de firmware para nuevas funciones
+- Rescate de dispositivo y recuperación de firmware tras Self-Destruct
+- Despliegue por lotes de múltiples dispositivos O.MG en empresas
+- Respaldo forense del firmware de dispositivos O.MG

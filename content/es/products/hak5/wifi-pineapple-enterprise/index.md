@@ -2,31 +2,43 @@
 title: "WiFi Pineapple Enterprise"
 date: 2025-01-01
 draft: false
-description: "Dispositivo de pruebas de penetración WiFi en formato rack para equipos empresariales con alto ancho de banda y monitoreo persistente del espacio aéreo inalámbrico."
+description: "Plataforma de auditoría WiFi insignia diseñada para despliegues corporativos a largo plazo, equipada con CPU ARM de cuatro núcleos y cinco radios MIMO de doble banda."
 featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El WiFi Pineapple Enterprise es un robusto dispositivo de pruebas de penetración WiFi en formato rack, diseñado para equipos empresariales que requieren alto ancho de banda y monitoreo persistente a largo plazo del espacio aéreo inalámbrico. Cuenta con cuatro radios MIMO 2×2 dedicados y ocho antenas de doble banda para cobertura inalámbrica integral. El enlace ascendente por Ethernet Gigabit dual garantiza la confiabilidad en despliegues a largo plazo.
+- **Plataforma de auditoría WiFi empresarial insignia**: Diseñada para grandes empresas, instituciones de seguridad y despliegues a largo plazo
+- **Hardware potente**: CPU ARM de cuatro núcleos, cinco radios MIMO de doble banda, cobertura 2.4 GHz / 5 GHz
+- **Soporte de alta densidad de clientes**: Hasta 100 clientes DHCP (vs 5~10 del Mark VII)
+- **Doble interfaz GigE**: Dos interfaces Gigabit Ethernet físicas para alto rendimiento
+- **Carcasa industrial**: Carcasa metálica, montable en rack 1U, funciona con corriente 100–240V (50/60 Hz)
+- **Tecnología inalámbrica avanzada**: Soporta MU-MIMO, TxBF, Qualcomm Wi-Fi SON
+- **PineAP Suite**: Soporta Campaigns automatizadas y Cloud C²
+- **Servicio PtaaS**: Ofrece opción de servicio conjunto Cobalt PtaaS
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| CPU | Qualcomm ARM Cortex A7 cuatro núcleos, 717 MHz |
-| RAM | 1 GB DDR3L |
-| Almacenamiento | 4 GB EMMC |
-| Wi-Fi | 802.11 a/b/g/n/ac (Wave 2), MU-MIMO y TxBF |
-| Radios | 4 radios MIMO 2×2 (Qualcomm IPQ4019 + MediaTek MT7612U) |
-| Antenas | 8 × RP-SMA 5 dBi doble banda |
-| Puertos | Ethernet Gigabit dual (RJ45), USB-C 3.0, USB 3.0 Host |
-| Factor de forma | Rack 1U, 160 × 244 × 41 mm, alimentación AC (100–240 V) |
+| CPU | Qualcomm IPQ4019, 4 núcleos ARM Cortex A7, 717 MHz |
+| Radio 0/1 | Qualcomm IPQ4019 (2.4 GHz / 5 GHz), pico 1.733 Gbps |
+| Radio 2/3/4 | MediaTek MT7612U (2.4 y 5 GHz), pico 866 Mbps |
+| Estándar inalámbrico | 802.11ac Wave 2 / a / b / g / n / ac / p, 802.3ab |
+| MIMO | 2×2 (2 flujos) |
+| Ancho de banda del canal | 20 / 40 / 80 MHz, 5 / 10 / 20 / 40 MHz |
+| RJ45 Ethernet | 2 × 1000BASE-T (GigE) |
+| Memoria | 1 GB DDR3L RAM |
+| Almacenamiento | 4 GB eMMC |
+| Indicadores | 4 × RGB LED |
+| Alimentación | AC 100V–240V, 50/60 Hz |
+| Dimensiones | 160 × 244 × 41 mm (1U) |
+| Temperatura de operación | -25°C ~ +50°C |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Gran escala**: Gestiona miles de estaciones inalámbricas en espacios de alto tráfico
-- **Capacidad DHCP**: Soporta hasta 100 clientes DHCP simultáneos
-- **Plug-and-Provision**: Unidad USB para conectividad instantánea con Cloud C²
-- **Ataques avanzados**: Vigilancia pasiva y ataques activos de inyección de frames
-- **Backhaul cableado**: WAN Gigabit para despliegue confiable a largo plazo
+- Auditoría de seguridad de red inalámbrica para grandes empresas o gobiernos
+- Despliegue a largo plazo en campo (montaje en rack en sala de servidores u oficina)
+- Prueba de entornos inalámbricos de alta densidad (miles de estaciones y APs)
+- Ejercicios de simulación corporativa del Red Team
+- Prestación de servicio Pentest as a Service (PtaaS)

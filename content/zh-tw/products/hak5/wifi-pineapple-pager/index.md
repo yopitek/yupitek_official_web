@@ -1,56 +1,44 @@
 ---
-title: "HAK5 WiFi Pineapple Pager — 口袋型三頻 Wi-Fi 滲透測試裝置"
-description: "HAK5 WiFi Pineapple Pager，三頻 802.11ax，DuckyScript Payload，2.4 吋彩色螢幕，2000 mAh 電池，完全獨立運作的口袋型 Wi-Fi 滲透測試工具。"
-date: 2026-03-18
+title: "WiFi Pineapple Pager"
+date: 2025-01-01
 draft: false
+description: "Hak5 20 週年旗艦獨立手持裝置，搭載第 8 代 PineAP 引擎，支援三頻 WiFi 與藍牙，無需外接電腦。"
 featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
-showBreadcrumbs: true
-showTableOfContents: true
-brands: ["hak5"]
-tags: ["Wi-Fi 滲透測試", "DuckyScript", "三頻", "獨立運作"]
 ---
 
-## 產品概述
+## 產品特色
 
-WiFi Pineapple Pager 是 HAK5 第八代 PineAP 引擎的旗艦口袋型裝置，集二十年 Wi-Fi 漏洞研究精華於一身。與傳統需連接電腦的工具不同，Pager 完全獨立運作，內建 2000 mAh 電池、2.4 吋彩色螢幕，並透過震動、鈴聲與螢幕通知即時回報無線環境動態。搭載 DuckyScript 與 Bash 腳本支援，是首款可執行 Payload 的 WiFi Pineapple，支援完整三頻 2.4 / 5 / 6 GHz 覆蓋。
+- **Hak5 20 週年旗艦產品**：第 8 代 PineAP 引擎，較前代快 100 倍以上
+- **完全獨立操作**：無需外接電腦，獨立手持式 Linux 無線審計裝置
+- **三頻 WiFi + 藍牙**：支援 2.4 GHz / 5 GHz / 6 GHz（802.11ax）及 Bluetooth 5.2 / BLE 4.2
+- **Payload 系統**：以 DuckyScript™ + Bash + Python 驅動
+- **彩色 Retina 顯示螢幕**：室內外皆清晰可視
+- **多感知通知**：內建揚聲器（可程式化鈴聲）與震動馬達（靜默通知）
+- **可程式化按鈕**：4 顆 RGB 按鈕（DPAD + A/B 控制）
+- **即時 Alert Payload**：依偵測到的 WiFi 活動自動觸發
+- **模組化擴充**：全根權限 Linux，支援 GPS、額外無線電等硬體模組
 
 ## 主要規格
 
-| 項目 | 規格 |
-|------|------|
-| Wi-Fi 標準 | IEEE 802.11 a/b/g/n/ac/ax（Wi-Fi 6E） |
-| Wi-Fi 頻段 | 三頻：2.4 GHz / 5 GHz / 6 GHz |
-| 藍牙 | Bluetooth 5.2 + 4.2 LE |
-| 處理器 | 580 MHz MIPS 24K |
-| 記憶體 | 256 MB DDR2 RAM |
-| 儲存空間 | 4 GB EMMC + 128 MB SPI |
-| 螢幕 | 2.4" TFT 彩色，480 × 222，16-bit 色深 |
-| 電池 | 2000 mAh LiPo，USB-C 5V/2A 充電，可更換 |
-| 尺寸 | 87 × 62 × 24 mm |
-| 重量 | 131 g |
-| 作業系統 | Linux（具 Root 存取權限） |
-| 腳本支援 | DuckyScript、Bash、Python |
-| 介面 | USB-C（充電 + 乙太網路）、USB 2.0 Host |
+| 規格項目 | 內容 |
+|---------|------|
+| CPU | 580 MHz MIPS 24K 路由器晶片 |
+| 無線 | 三頻 802.11 a/b/g/n/ac/ax（2.4 / 5 / 6 GHz），雙無線電陣列 |
+| 藍牙 | Bluetooth 5.2 + BLE 4.2 |
+| 記憶體 | 256 MB DDR2 RAM + 128 MB SPI Flash |
+| 儲存 | 4 GB eMMC |
+| 電池 | 2000 mAh LiPo（含 BMS 及 LED 充電指示） |
+| 充電 / 資料 | USB-C（整合 Ethernet 介面） |
+| 擴充 | USB 2.0（用於硬體模組 Mod） |
+| 指示燈 | 4 × RGB LED |
+| 其他 | PWM Buzzer、震動馬達、RTC（實時時鐘） |
+| 作業系統 | OpenWrt-based Linux |
 
-## 主要功能
+## 應用環境
 
-- **第 8 代 PineAP 引擎**：效能較前代提升 100 倍，針對高密度無線環境最佳化
-- **DuckyScript Payload 支援**：首款支援 DuckyScript 與 Bash 腳本的 WiFi Pineapple，可依無線事件自動觸發
-- **三頻 Wi-Fi 覆蓋**：完整支援 2.4 GHz / 5 GHz / 6 GHz，為 HAK5 首款 Wi-Fi 6E 裝置
-- **即時警示系統**：可自訂 Payload 觸發震動馬達、PWM 蜂鳴器鈴聲與螢幕通知
-- **完全獨立運作**：無需連接電腦，內建電池可直接現場部署
-- **完整 Linux 環境**：具備 Root 存取權限，支援自訂主題、SSH 終端機及 Web 介面遠端控制
-- **多種攻擊模式**：Rogue AP（開放 / WPA-PSK / WPA Enterprise）、MITM、Deauth、WPA 握手封包擷取、OSINT 被動偵察
-- **可程式化 RGB 按鍵**：四向方向鍵搭載可自訂 RGB 燈效
-- **可更換電池**：用戶可自行更換電池，並透過 USB 外設進行硬體擴充
-- **虛擬 Pager Web 介面**：瀏覽器遠端控制、Shell 存取與檔案管理
-
-{{< gallery >}}
-  <img src="/images/products/hak5/wifi-pineapple-pager.png" alt="WiFi Pineapple Pager" />
-{{< /gallery >}}
-
----
-
-<div class="mt-6 text-center">
-  <a href="/zh-tw/contact/" class="btn-inquiry">詢問報價 / 採購諮詢 →</a>
-</div>
+- 外勤無附電腦的獨立無線滲透測試
+- 紅隊行動（可夾於腰帶，全程無線操作）
+- 三頻 WiFi 與藍牙並行稽核
+- WPA3 Enterprise 攻擊測試
+- 以 DuckyScript 驅動的自動化 Payload 任務
+- 現場 OSINT、握手擷取、Deauth 攻擊

@@ -2,25 +2,30 @@
 title: "O.MG Programmer"
 date: 2025-01-01
 draft: false
-description: "用於啟用、管理、韌體更新與復原所有 O.MG 裝置的通用程式設計介面。"
+description: "所有 O.MG 裝置的通用啟動、韌體更新與救援工具，支援瀏覽器 WebSerial API 三步驟操作。"
 featureimage: "/images/products/hak5/omg-programmer.png"
 ---
 
-## 產品概述
+## 產品特色
 
-O.MG Programmer 是啟用、管理、韌體更新與復原所有 O.MG 裝置（包括 Cable、Plug、Adapter 與 UnBlocker）所必需的通用程式設計介面。採用 WebSerial 瀏覽器工具，無需安裝驅動程式或軟體。對於需要跨多個植入物進行批量韌體安裝的紅隊部署而言，此工具不可或缺。
+- **通用 O.MG 工具**：支援所有 O.MG 產品：Cable、Plug、Adapter、UnBlocker
+- **簡易操作介面**：3 步驟桌機瀏覽器（Chrome / Edge）WebSerial API 操作
+- **Python 替代方式**：支援 Python 替代燒錄方式
+- **多功能**：初始啟動、免費韌體更新、Self-Destruct 後救援、鑑識備份、批次燒錄
 
 ## 主要規格
 
 | 規格項目 | 內容 |
 |---------|------|
-| 相容性 | 全系列 O.MG 產品裝置 |
-| 連接器 | USB-A 與 USB-C |
-| 介面 | WebSerial 瀏覽器工具 |
+| 連接介面 | USB-A + USB-C（雙頭版本） |
+| 相容設備 | 所有 O.MG 系列裝置 |
+| 操作方式 | WebSerial（Chrome / Edge 瀏覽器）或 Python |
+| 通用性 | 1 個 Programmer 可用於所有 O.MG 裝置 |
 
-## 主要功能
+## 應用環境
 
-- **初始啟用**：啟用出廠停用的韌體
-- **鑑識備份**：對已部署的 O.MG 植入物進行鑑識轉存與安全備份
-- **批量部署**：大規模紅隊操作的批量韌體安裝
-- **裝置復原**：復原已觸發自毀程序的裝置
+- O.MG 裝置初始化設定
+- 定期韌體更新以取得新功能
+- Self-Destruct 後的裝置救援與韌體恢復
+- 企業批次部署多台 O.MG 裝置
+- 鑑識備份 O.MG 裝置韌體

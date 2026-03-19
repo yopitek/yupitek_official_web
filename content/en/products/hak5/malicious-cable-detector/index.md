@@ -1,26 +1,33 @@
 ---
-title: "Malicious Cable Detector by O.MG"
+title: "Malicious Cable Detector"
 date: 2025-01-01
 draft: false
-description: "Defensive diagnostic tool that detects covert USB cable implants through electrical behavior analysis at 200,000 samples/second."
+description: "The world's only dedicated tool capable of detecting all known malicious USB cables, using side-channel power analysis at 200,000 samples per second."
 featureimage: "/images/products/hak5/malicious-cable-detector.png"
 ---
 
-## Product Overview
+## Product Features
 
-The Malicious Cable Detector by O.MG is a defensive diagnostic tool that detects covert USB cable implants by analyzing electrical behavior — not digital signatures — at 200,000 samples/second. It plugs inline between a suspicious cable and the computer, requiring no software installation. When not actively testing, it functions as a safe-charging data blocker.
+- **World's Only Detection Tool**: Detects all known malicious USB cables, including the O.MG Cable
+- **Side-Channel Power Analysis**: Analyzes 200,000 times per second — detects implanted chips even when fully dormant
+- **USB Data Blocker Functionality**: Simultaneously provides safe charging while blocking data transmission
+- **Simple to Use**: Insert the cable into the detector, plug into a computer USB port, LED indicates result
+- **Comprehensive Coverage**: Covers all known malicious USB cable types currently on the market
 
 ## Key Specifications
 
 | Specification | Details |
-|---------------|---------|
-| Interface | Inline — plugs between suspicious cable and computer |
-| Analysis Rate | 200,000 electrical samples per second |
-| Indicators | Visual LED activity |
+|--------------|---------|
+| Detection Method | Side Channel Power Analysis |
+| Detection Rate | 200,000 samples/sec |
+| Interface | USB-A (to computer) + USB-A (cable under test) |
+| Additional Feature | USB Data Blocker (safe charging, data blocked) |
+| Indicator | LED activity light |
 
-## Key Features
+## Application Scenarios
 
-- **Side-Channel Analysis**: Detects micro-controller presence via power analysis in any cable
-- **Dormant Implant Detection**: Identifies implants invisible on USB data lines
-- **Safe Charging**: Functions as a data blocker when passing power
-- **Stealth Defeat**: Defeats the stealth mechanisms of high-density hardware implants
+- Corporate security teams: intrusion detection and USB policy enforcement
+- Personal protection: verify charging cable safety before travel
+- Blue Team defense against O.MG Cable and other covert cable attacks
+- Security awareness training: demonstrate detectability of physical attacks
+- USB cable auditing in high-security environments (government agencies, financial institutions)

@@ -2,27 +2,38 @@
 title: "O.MG Cable"
 date: 2025-01-01
 draft: false
-description: "先進的隱密滲透測試線材，內含隱藏無線植入物，外觀與電氣特性與標準充電線完全相同。"
+description: "手工製造的 USB 傳輸線，內藏完整 WiFi + HID 注入植入晶片，外觀觸感與正常 USB 線完全相同。"
 featureimage: "/images/products/hak5/omg-cable.png"
 ---
 
-## 產品概述
+## 產品特色
 
-O.MG Cable 是一款先進的隱密滲透測試線材，內含隱藏無線植入物，外觀與電氣特性與標準充電線完全相同。Elite（Gen 3）版本支援 DuckyScript 3，提供最多 300 個 Payload 插槽與 890 鍵/秒的注入速度。延伸 WiFi 範圍與加密 Cloud C2 支援遠端全球控制，無需實體接觸目標設備。
+- **隱蔽 USB 攻擊線**：手工製造，內部藏有完整 WiFi + HID 注入植入晶片
+- **完美偽裝**：外觀、觸感與正常 USB 線完全相同，含各種線材顏色 / 材質 / 接頭組合
+- **無線控制**：無需連接電腦；透過 WiFi 使用任意瀏覽器操作
+- **超高注入速度**：DuckyScript 1-click 一鍵部署，最高 890 keys/sec（Elite）
+- **鍵盤側錄**：Elite 版最多 650,000 keystroke 側錄
+- **大量 Payload 槽**：支援最多 300 個 Payload 槽位（Elite 版）
+- **全球鍵盤支援**：192 種鍵盤布局
+- **進階安全功能**：Self-Destruct / Geo-Fencing / WiFi 觸發 / HIDX StealthLink
 
 ## 主要規格
 
 | 規格項目 | 內容 |
 |---------|------|
-| 基本版腳本 | DuckyScript 2；8 個 Payload 插槽；4,000 鍵；120 鍵/秒 |
-| Elite 版腳本 | DuckyScript 3；50–300 個 Payload 插槽；1,500,000 鍵；890 鍵/秒 |
-| Elite 版範圍 | 延伸 WiFi 範圍，隱密優化耗電設計 |
+| 植入晶片 | 客製化 WiFi + HID 微控制器（O.MG 專有） |
+| USB 介面 | USB 2.0（480 Mbps），5V max 充電 |
+| WiFi | 內建 802.11 b/g/n（控制介面） |
+| 注入速度（Basic） | 最高 120 keys/sec |
+| 注入速度（Elite） | 最高 890 keys/sec |
+| Payload 槽 | Basic 8 個，Elite 最多 300 個 |
+| 鍵盤側錄（Elite） | 最多 650,000 筆按鍵 |
+| 線長 | 1 米（標準） |
 
-## 主要功能
+## 應用環境
 
-- **裝置偽裝**：USB VID/PID 與 MAC 位址欺騙以規避偵測
-- **硬體鍵盤記錄**：最多儲存 650,000 鍵盤記錄（僅限 Elite）
-- **HIDX StealthLink**：雙向 USB 通道繞過網路防火牆（僅限 Elite）
-- **加密 C2**：透過加密網路進行遠端全球控制（僅限 Elite）
-- **地理圍欄**：裝置離開授權範圍時自動銷毀
-- **OTG 傳送**：透過 Type-C 端的 OTG 進行行動裝置 Payload 傳送
+- 模擬 NSA 等級的 USB 線材植入（類 COTTONMOUTH-I）
+- 紅隊現場留置攻擊（Leave-behind attacks）
+- 硬體側錄 + 遠端控制複合攻擊
+- 偵測防禦團隊（Blue Team）訓練與測試
+- 資安教育展示

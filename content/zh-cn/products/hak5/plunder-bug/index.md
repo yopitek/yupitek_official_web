@@ -2,27 +2,31 @@
 title: "Plunder Bug LAN Tap"
 date: 2025-01-01
 draft: false
-description: "口袋大小的智能网络嗅探器与 LAN 窃听器，通过 USB-C 进行被动流量记录或主动网络扫描。"
+description: "口袋大小的以太网窃听器，USB-C 接口连接分析设备，支持主动与被动两种流量捕获模式。"
 featureimage: "/images/products/hak5/plunder-bug.png"
 ---
 
-## 产品概述
+## 产品特色
 
-Plunder Bug LAN Tap 是一款口袋大小的智能网络嗅探器与 LAN 窃听器，可通过 USB-C 进行被动流量记录或主动网络扫描。采用 ASIX AX88772C 芯片组，无需任何配置即可静默地将以太网流量镜像至 Wireshark 分析器。跨平台连接脚本支持 Windows、Mac 与 Linux 系统。
+- **双模式 LAN Tap**：主动模式：注入分析设备进入网络；被动模式：静默镜像流量
+- **USB-C 连接**：USB-C 接口连接分析设备
+- **Wireshark 兼容**：支持 Wireshark 等开源数据包分析工具
+- **跨平台支持**：Windows / Mac / Linux 连接脚本
+- **移动端支持**：支持 Android Root App 进行移动端数据包捕获（pcap 格式）
 
 ## 主要规格
 
 | 规格项目 | 内容 |
 |---------|------|
-| 网络 | 自动协商 10/100 Base-T 快速以太网 |
-| 芯片组 | ASIX AX88772C USB 以太网 |
-| 电源 | USB-C 5 V，20–300 mA 耗电 |
-| 工作温度 | 35 °C 至 45 °C |
-| 合规性 | 符合 EMC 指令 |
+| 网络接口 | 2 × 10/100BASE-T Fast Ethernet（自动协商） |
+| USB 接口 | USB-C（Tap / 电源，5V，20–300 mA） |
+| USB Ethernet 芯片 | ASIX AX88772C |
+| 网络最高速率 | 100 Mbps |
 
-## 主要功能
+## 应用环境
 
-- **被动监听**：静默镜像以太网流量至 Wireshark 分析器
-- **主动节点**：通过内含脚本作为出站主动网络节点
-- **跨平台支持**：提供 Windows、Mac 与 Linux 连接脚本
-- **交换机模式**：可作为简单交换机，为连接设备提供电源
+- 企业内网被动流量监控与数据包分析
+- 渗透测试中的流量窃听（Passive Sniffing）
+- 注入分析设备进行主动网络扫描（Active Mode）
+- 结合 Wireshark 进行协议逆向分析
+- 移动端（Android）现场数据包捕获

@@ -2,31 +2,43 @@
 title: "WiFi Pineapple Enterprise"
 date: 2025-01-01
 draft: false
-description: "為企業團隊打造的機架式高頻寬 WiFi 滲透測試裝置，適用於長期持續的無線空間監控任務。"
+description: "專為企業級長期部署設計的旗艦 WiFi 審計平台，搭載四核 ARM CPU 與五組雙頻 MIMO 無線電。"
 featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 ---
 
-## 產品概述
+## 產品特色
 
-WiFi Pineapple Enterprise 是一款堅固的機架式 WiFi 滲透測試裝置，專為需要高頻寬、長期持續無線空間監控的企業團隊所設計。它配備四個專屬 2×2 MIMO 無線電模組與八支雙頻天線，提供全面的無線覆蓋。雙 Gigabit 乙太網路上行鏈路確保長期部署的穩定性。
+- **旗艦企業 WiFi 審計平台**：專為企業級、資安機構、長期部署設計
+- **強大硬體**：四核 ARM CPU，五組雙頻 MIMO 無線電，覆蓋 2.4 GHz / 5 GHz
+- **高密度客戶端支援**：最多 100 個 DHCP 客戶端（vs Mark VII 的 5~10 個）
+- **雙 GigE 介面**：雙組 Gigabit Ethernet 實體網路介面，高吞吐量回傳
+- **工業級機箱**：金屬機箱，1U 機架可安裝，支援 AC 100–240V 供電（50/60 Hz）
+- **進階無線技術**：支援 MU-MIMO、TxBF、Qualcomm Wi-Fi SON
+- **PineAP Suite**：支援自動化 Campaigns 與 Cloud C²
+- **PtaaS 服務**：提供 Cobalt PtaaS（Pentest as a Service）聯合服務選項
 
 ## 主要規格
 
 | 規格項目 | 內容 |
 |---------|------|
-| CPU | 四核 Qualcomm ARM Cortex A7，717 MHz |
-| RAM | 1 GB DDR3L |
-| 儲存空間 | 4 GB EMMC |
-| Wi-Fi | 802.11 a/b/g/n/ac（Wave 2），支援 MU-MIMO 與 TxBF |
-| 無線電 | 4 個專屬 2×2 MIMO 無線電（Qualcomm IPQ4019 + MediaTek MT7612U） |
-| 天線 | 8 × RP-SMA 5 dBi 雙頻天線 |
-| 連接埠 | 雙 Gigabit 乙太網路（RJ45）、USB-C 3.0、USB 3.0 Host |
-| 外觀尺寸 | 1U 機架式，160 × 244 × 41 mm，AC 電源（100–240 V） |
+| CPU | Qualcomm IPQ4019，4 核 ARM Cortex A7，主頻 717 MHz |
+| 無線 Radio 0/1 | Qualcomm IPQ4019（2.4 GHz / 5 GHz），峰值 1.733 Gbps |
+| 無線 Radio 2/3/4 | MediaTek MT7612U（2.4 & 5 GHz），峰值 866 Mbps |
+| 無線規格 | 802.11ac Wave 2 / a / b / g / n / ac / p，802.3ab |
+| MIMO 配置 | 2×2（2-stream） |
+| 頻道頻寬 | 20 / 40 / 80 MHz，5 / 10 / 20 / 40 MHz |
+| RJ45 Ethernet | 2 × 1000BASE-T（GigE） |
+| 記憶體 | 1 GB DDR3L RAM |
+| 儲存 | 4 GB eMMC |
+| 指示燈 | 4 × RGB LED |
+| 電源 | AC 100V–240V，50/60 Hz |
+| 尺寸 | 160 × 244 × 41 mm（1U） |
+| 作業溫度 | -25°C ~ +50°C |
 
-## 主要功能
+## 應用環境
 
-- **大規模管理**：可管理高流量空間中的數千個無線站台
-- **DHCP 容量**：支援最多 100 個同時連線的 DHCP 客戶端
-- **隨插即用**：USB 隨身碟即時連接 Cloud C²
-- **進階攻擊**：被動監聽與主動封包注入攻擊能力
-- **有線上行鏈路**：Gigabit WAN 確保長期部署的可靠性
+- 大型企業或政府機構無線安全審計
+- 長期現場部署（機房或辦公室機架安裝）
+- 高密度無線環境測試（數千個 station 及 AP）
+- 紅隊企業模擬演練
+- Pentest as a Service（PtaaS）交付服務

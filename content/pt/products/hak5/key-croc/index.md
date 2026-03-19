@@ -2,28 +2,33 @@
 title: "Key Croc"
 date: 2025-01-01
 draft: false
-description: "Implante definitivo de teste de penetração para keylogging com ferramentas ativas de pentest, acesso remoto e payloads de ataque multivetor ativados por padrão."
+description: "Keylogger de hardware disfarçado de adaptador passthrough de teclado, com capacidade de injeção HID e suporte Cloud C² para gerenciamento remoto."
 featureimage: "/images/products/hak5/key-croc.png"
 ---
 
-## Visão Geral do Produto
+## Características do Produto
 
-O Key Croc é o implante definitivo de teste de penetração para keylogging, equipado com ferramentas ativas de pentest, capacidades de acesso remoto e payloads de ataque multivetor ativados por padrão. Roda Linux baseado em Debian com acesso Root Shell, integrando-se como pass-through de teclado no sistema-alvo. A integração com Cloud C² permite transmissão ao vivo de teclas e acesso ao terminal remoto.
+- **Keylogger de hardware**: Disfarçado de adaptador passthrough de teclado com capacidade de injeção HID
+- **Computador Linux completo**: Emula simultaneamente HID / Ethernet / serial / armazenamento USB
+- **Payload ativado por palavras-chave**: Executa Payload ao detectar palavras-chave específicas (Keyword Triggered Payloads)
+- **Hardware potente**: CPU ARM quad-core 1.2 GHz, SSD nível desktop, ferramentas abundantes
+- **Integração Cloud C²**: Visualizar pressionamentos em tempo real, injeção remota, gerenciamento de Payload, root shell
+- **Gravação automática**: Registra automaticamente todas as teclas pressionadas após inserção, sem configuração
+- **Dual linguagem de Payload**: Suporta DuckyScript™ + Bash Payload
 
 ## Especificações Principais
 
 | Especificação | Detalhes |
 |---------------|----------|
-| CPU | ARM7 quad-core, 1.2 GHz |
-| Armazenamento | 8 GB SSD classe desktop |
-| Sem fio | Antena WiFi 2.4 GHz integrada |
-| SO | Linux baseado em Debian com acesso Root Shell |
-| Controles | Botão de configuração oculto, LED RGB |
+| CPU | ARM Cortex A7 quad-core, 1.2 GHz |
+| Armazenamento | SSD nível desktop 8 GB |
+| Interface | USB-A (lado do host), USB-A (lado do teclado), Console serial |
+| Sistema operacional | Linux |
+| Cloud C² | Suportado |
 
-## Recursos Principais
+## Ambientes de Aplicação
 
-- **Correspondência de padrões**: Payloads ativados por expressões regulares em teclas capturadas
-- **Clonagem de dispositivo**: Clonagem de hardware VID/PID para evadir sistemas de detecção de endpoint
-- **Bypass de firewall**: Emula Ethernet USB para contornar firewalls perimetrais e IDS
-- **Buffer de teclas**: Captura dados anteriores a qualquer gatilho correspondente
-- **Cloud C²**: Transmissão ao vivo de teclas e acesso ao terminal remoto
+- Intrusão corporativa: instalado entre teclado e PC para registro de longa duração
+- Roubo de credenciais em exercícios de Red Team
+- Monitoramento de teclado em tempo real e injeção remota de Payload
+- Persistência de backdoor após acesso físico

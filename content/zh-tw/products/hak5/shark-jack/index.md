@@ -2,29 +2,35 @@
 title: "Shark Jack"
 date: 2025-01-01
 draft: false
-description: "便攜式網路攻擊與自動化工具，具備約 15 分鐘電池續航，適用於快速有線網路稽核任務。"
+description: "鑰匙圈大小的有線網路攻擊工具，內建電池，插入 Ethernet 即可獨立執行 Payload。"
 featureimage: "/images/products/hak5/shark-jack.png"
 ---
 
-## 產品概述
+## 產品特色
 
-Shark Jack 是一款便攜式網路攻擊與自動化工具，專為快速社交工程攻擊與機會性有線網路稽核所設計。緊湊的外觀與內建 LiPo 電池提供約 15 分鐘的獨立運行時間。撥動開關可即時在備用模式與攻擊模式之間切換，適合現場快速部署。
+- **超小型有線網路植入工具**：鑰匙圈大小，快速部署
+- **獨立執行**：內建電池，插入 Ethernet 即可執行 Payload
+- **DuckyScript Payload**：支援 NETMODE / LED / SWITCH / BATTERY 等命令
+- **內建滲透測試工具**：nmap、curl、metasploit-framework 等
+- **Cloud C² 支援**：遠端管理
+- **3 段開關**：攻擊模式 / Arming 模式 / 關機
 
 ## 主要規格
 
 | 規格項目 | 內容 |
 |---------|------|
-| SoC | MediaTek MT7628DAN，580 MHz MIPS |
-| RAM | 64 MB DDR2 |
-| 儲存空間 | 64 MB SPI Flash |
-| 網路 | 802.3 快速乙太網路（RJ45） |
-| 電源 | 1S 401020 3.7 V 50 mAh LiPo（約 15 分鐘） |
+| SoC | MediaTek MT7628DAN |
+| 介面 | Ethernet（802.3） |
 | 尺寸 | 62 × 21 × 12 mm |
+| 電源 | 2.5W（USB 5V 0.5A） |
+| 電池 | 1S 401020 3.7V 50mAh 0.2Wh LiPo |
+| 作業溫度 | 35°C ~ 45°C |
+| 儲存溫度 | -20°C ~ 50°C |
+| 相對濕度 | 0% ~ 90%（不凝露） |
 
-## 主要功能
+## 應用環境
 
-- **模式切換**：撥動開關即時切換備用模式與攻擊模式
-- **腳本支援**：支援 Bash 與 DuckyScript 網路探測 Payload
-- **雲端同步**：透過 Cloud C² 整合自動同步戰利品
-- **狀態指示**：RGB LED 提供執行狀態的即時視覺回饋
-- **SSH 存取**：備用模式下的 SSH 介面，可快速設定 Payload
+- 機會性有線網路快速偵察（Nmap 掃描、LLDP/CDP 資訊蒐集）
+- 紅隊外勤短暫物理接觸場景
+- 企業內網植入與後門建立
+- 自動化有線網路弱點評估

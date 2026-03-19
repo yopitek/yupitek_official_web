@@ -2,29 +2,33 @@
 title: "Shark Jack Cable"
 date: 2025-01-01
 draft: false
-description: "Variante en forma de cable del Shark Jack con alimentación continua vía USB-C para despliegues de red headless a largo plazo sin restricciones de batería."
+description: "Shark Jack en formato de cable Ethernet con interfaz serial USB UART añadida, más fácil de ocultar e implantar."
 featureimage: "/images/products/hak5/shark-jack-cable.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El Shark Jack Cable es la variante en forma de cable del Shark Jack, alimentado continuamente vía USB-C para despliegues de red headless a largo plazo indefinido sin restricciones de batería. Un UART USB (CP2102) para consola serial permite acceso Shell mediante aplicaciones de smartphone como Serial USB Terminal. Conserva el conjunto completo de funciones del Shark Jack incluyendo sincronización con Cloud C² y soporte de payloads DuckyScript.
+- **Formato de cable**: Todas las funciones de Shark Jack en formato de cable Ethernet; más fácil de ocultar
+- **Interfaz serial USB UART**: CP2102 añadido para acceso directo a root shell
+- **Optimizado para implante a largo plazo**: Ideal para implantes prolongados o escenarios que requieren depuración serial
+- **Soporte Android**: Compatible con Android Serial Setup
+- **Totalmente compatible**: Compatible con el desarrollo de Payload de Shark Jack
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| SoC | MediaTek MT7628DAN, 580 MHz MIPS |
-| RAM | 64 MB DDR2 |
-| Almacenamiento | 64 MB SPI Flash |
-| Red | 802.3 Fast Ethernet (RJ45) |
-| Alimentación | USB-C 5 V, 0.5 A (2.5 W) continuo |
-| Adicional | USB UART (CP2102) para consola serial |
+| SoC | MediaTek MT7628DAN |
+| Interfaces | Ethernet (802.3), USB UART (CP2102) |
+| Dimensiones | 62 × 21 × 12 mm |
+| Alimentación | 2.5W (USB 5V 0.5A) |
+| Temperatura de operación | 35°C ~ 45°C |
+| Temperatura de almacenamiento | -20°C ~ 50°C |
+| Humedad relativa | 0% ~ 90% (sin condensación) |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Tiempo de ejecución ilimitado**: Alimentación continua USB-C elimina restricciones de batería
-- **Cambio de modo**: Interruptor basculante para cambiar entre modos Armado y Ataque
-- **Consola serial**: Acceso Shell mediante aplicaciones de smartphone (Serial USB Terminal)
-- **Soporte de scripts**: Payloads de perfilado de red con Bash y DuckyScript
-- **Sincronización en la nube**: Sincronización automática de botín mediante integración con Cloud C²
+- Implante de red a largo plazo disfrazado de cable Ethernet común
+- Desarrollo de Payload avanzado que requiere acceso serial a Console
+- Despliegue en campo del Red Team difícil de detectar visualmente
+- Pruebas de penetración móviles en colaboración con dispositivos Android

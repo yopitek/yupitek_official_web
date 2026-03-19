@@ -2,30 +2,40 @@
 title: "WiFi Pineapple Mark VII"
 date: 2025-01-01
 draft: false
-description: "Herramienta táctica portátil de pruebas de penetración WiFi diseñada para operaciones de punto de acceso fraudulento y reconocimiento del espacio aéreo inalámbrico."
+description: "Plataforma estándar de la industria para pruebas de penetración WiFi equipada con PineAP Suite, compatible con tres radios inalámbricos y recopilación de inteligencia mediante campañas automatizadas."
 featureimage: "/images/products/hak5/wifi-pineapple.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El WiFi Pineapple Mark VII es una herramienta táctica portátil de pruebas de penetración WiFi diseñada para operaciones de punto de acceso fraudulento de corto alcance y reconocimiento del espacio aéreo inalámbrico. Cuenta con tres radios dedicados con roles específicos y antenas de alta ganancia, más una interfaz web multiplataforma que no requiere software local. El módulo MK7AC añade soporte opcional de doble banda a 5 GHz.
+- **Plataforma estándar de la industria para pruebas de penetración WiFi**: Equipada con PineAP Suite patentado de Hak5
+- **Tres radios inalámbricos con roles especializados**: Gestión / Ataque / Monitoreo, con tres antenas de alta ganancia
+- **Web UI intuitiva**: Soporta Campaigns automatizadas y genera informes de inteligencia accionables
+- **Panel de Recon interactivo**: Monitoreo en tiempo real del entorno inalámbrico
+- **Soporte Cloud C²**: Comando y control remoto
+- **Simulación de AP fraudulento**: Puede simular APs abiertos, WPA-PSK y Enterprise (Rogue AP)
+- **Ataques WPA-Enterprise**: Soporta captura automática de Handshake
+- **Ecosistema de módulos**: Sistema de módulos compatible con módulo externo MK7AC 802.11ac 5GHz
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| CPU | SoC de red MIPS de núcleo único |
-| RAM | 256 MB |
-| Almacenamiento | 2 GB EMMC |
-| Wi-Fi | 802.11 b/g/n (2.4 GHz); 5 GHz/ac mediante módulo MK7AC |
-| Radios | 3 radios dedicados con antenas RP-SMA de alta ganancia |
-| Puertos | USB-C (alimentación/Ethernet), USB 2.0 Host |
-| Indicador | LED RGB único |
+| CPU | SoC MIPS de red de núcleo único |
+| Inalámbrico | 2.4 GHz 802.11 b/g/n; 5 GHz 802.11ac vía módulo MK7AC |
+| Chipset de radio | MediaTek MT7601U + MT7610U |
+| Memoria | 256 MB RAM |
+| Almacenamiento | 2 GB eMMC |
+| Puertos | USB-C (alimentación / Ethernet), USB 2.0 Host |
+| Indicador | 1 RGB LED |
+| Alimentación | USB-C (5V) |
+| Temperatura de operación | 35°C ~ 45°C |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **PineAP Suite**: Suite patentada para imitar redes preferidas y atraer clientes
-- **Captura de credenciales**: Captura de handshakes WPA / WPA Enterprise y recolección de credenciales
-- **Targeting preciso**: Filtros MAC y SSID para minimizar el daño colateral
-- **Interfaz web**: Interfaz web multiplataforma sin software local requerido
-- **Soporte doble banda**: Compatibilidad con adaptador MK7AC para operación dual banda 5 GHz
+- Auditoría y evaluación de vulnerabilidades de seguridad inalámbrica corporativa
+- Pruebas de penetración en campo del Red Team
+- Simulación de ataque WiFi MitM (Man-in-the-Middle)
+- Investigación de ataques Rogue AP / Karma
+- Recopilación de inteligencia e identificación de dispositivos (OSINT)
+- Formación en ciberseguridad y demostraciones educativas

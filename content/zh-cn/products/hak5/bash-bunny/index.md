@@ -2,28 +2,38 @@
 title: "Bash Bunny Mark II"
 date: 2025-01-01
 draft: false
-description: "全球最先进的 USB 攻击平台——完整 Linux 电脑，可同时模拟多个受信任设备执行多向量攻击。"
+description: "世界首款多向量 USB 攻击平台，可同时模拟 HID、网络、储存等设备，搭载完整 Debian Linux 环境。"
 featureimage: "/images/products/hak5/bash-bunny.png"
 ---
 
-## 产品概述
+## 产品特色
 
-Bash Bunny Mark II 是全球最先进的 USB 攻击平台——一台完整的 Linux 电脑，能同时模拟多个受信任设备以执行多向量攻击。仅需 7 秒启动时间与三段式硬件开关，即可在现场快速可靠地执行 Payload。BLE 地理围栏与 MicroSD 扩展功能，使其成为兼具操作安全的数据外泄理想工具。
+- **多向量 USB 攻击平台**：世界首款，从插入到完成渗透仅需 7 秒
+- **多设备模拟**：同时模拟 HID 键盘 + USB Ethernet + 串行设备 + USB 储存
+- **完整 Linux 环境**：内置 nmap / responder / impacket / metasploit
+- **Bluetooth LE**：支持远程触发（Remote Triggers）与地理围栏（Geofencing）
+- **超大容量扩展**：MicroSD XC 支持（最高 2TB），大量数据外泄
+- **强大硬件**：四核 ARM CPU，8 GB 桌机级 SSD，RAM 较前代翻倍
+- **快速切换**：3 段开关 + RGB LED，快速切换 Payload
+- **Cloud C² 支持**：远程管理，专用串行 Console 访问 root shell
 
 ## 主要规格
 
 | 规格项目 | 内容 |
 |---------|------|
-| CPU | 四核 ARM A7，最高 1.3 GHz |
-| 存储空间 | 8 GB NAND SSD + MicroSD XC（最高 2 TB） |
-| 无线连接 | 低功耗蓝牙（BLE） |
-| 开关 | 三段式模式选择器 |
-| 指示灯 | RGB LED Payload 状态灯 |
+| CPU | 四核 ARM Cortex A7，最高 1.3 GHz |
+| 储存 | 8 GB NAND SSD |
+| 扩展 | MicroSD XC（最高 2 TB） |
+| 无线 | Bluetooth LE（远程触发 / 地理围栏） |
+| 接口 | USB-A（植入端）、串行 Console |
+| 指示灯 | 1 × RGB LED |
+| 开关 | 3 段模式切换开关 |
+| 操作系统 | Debian Linux |
 
-## 主要功能
+## 应用环境
 
-- **多设备模拟**：同时模拟键盘（HID）、串口、存储设备与以太网
-- **快速启动**：7 秒"插入即攻击"启动时间
-- **大规模外泄**：超高容量 MicroSD 支持大批量数据提取
-- **BLE 地理围栏**：若设备离开授权范围则自动销毁战利品
-- **原生 Linux 工具**：Nmap、Metasploit、Impacket 可直接在设备上运行
+- 多向量 USB 联合攻击（HID + 网络 + 储存）
+- 大规模数据外泄（MicroSD 高容量）
+- 地理围栏控制的受限 Payload 执行
+- 企业红队物理访问自动化演练
+- 后渗透工具执行（Metasploit / Responder）

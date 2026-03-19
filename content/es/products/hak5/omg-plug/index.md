@@ -2,25 +2,33 @@
 title: "O.MG Plug"
 date: 2025-01-01
 draft: false
-description: "Implante encubierto de pruebas de penetración en forma de adaptador que imita un periférico USB pequeño mientras entrega inyección inalámbrica de payloads."
+description: "Dispositivo O.MG del tamaño de un llavero en forma de enchufe USB, compatible con control WiFi, inyección DuckyScript, Self-Destruct y Geo-Fencing."
 featureimage: "/images/products/hak5/omg-plug.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El O.MG Plug es un implante encubierto de pruebas de penetración en forma de adaptador que oculta un puerto imitando un pequeño periférico USB mientras entrega inyección inalámbrica de payloads. Su diseño compacto se integra naturalmente en puertos USB como un periférico ordinario. El nivel Elite (Gen 3) añade keylogging hardware, HIDX StealthLink y C2 remoto cifrado.
+- **Dispositivo O.MG en forma de enchufe**: Tamaño llavero, en forma de enchufe USB
+- **Funciones O.MG completas**: Control WiFi, inyección DuckyScript, Self-Destruct, Geo-Fencing
+- **Sin cable**: Funciona sin necesidad de cable; se inserta directamente en el puerto USB
+- **Diseño para transporte diario**: Ideal para llevar siempre como herramienta de reserva (EDC)
+- **Funciones Elite avanzadas**: HIDX StealthLink, red C2 cifrada, Port Stealthing
+- **Requiere activación**: Desactivado de fábrica; requiere O.MG Programmer para activar
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| Scripting básico | DuckyScript 2; 8 ranuras payload; 4,000 teclas; 120 teclas/seg |
-| Scripting Elite | DuckyScript 3; 50–300 ranuras payload; 1,500,000 teclas; 890 teclas/seg |
+| Forma | Enchufe USB-A (formato llavero); también disponible en USB-C |
+| Chip implante | Microcontrolador WiFi + HID personalizado O.MG |
+| WiFi | Integrado (interfaz de control) |
+| Velocidad de inyección (Basic) | 120 teclas/seg |
+| Velocidad de inyección (Elite) | 890 teclas/seg |
+| Ranuras Payload | 8 en Basic, hasta 300 en Elite |
+| Distribuciones de teclado | 192 distribuciones |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Sigilo de puerto**: Se integra en puertos USB como un pequeño periférico
-- **Suplantación USB**: Suplantación de VID/PID para evadir detección del host
-- **Geofencing**: Mecanismo de autodestrucción para proteger la seguridad operacional
-- **Entrega OTG**: Entrega de payload móvil mediante conexiones OTG
-- **Capacidades Elite**: Keylogger hardware, HIDX StealthLink, C2 cifrado (solo Elite)
+- Despliegue rápido de ataques HID (sin cable)
+- Herramienta EDC en ingeniería social
+- Simulación de escenario de acceso físico breve del Red Team

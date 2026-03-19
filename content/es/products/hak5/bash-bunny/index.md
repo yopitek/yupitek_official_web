@@ -2,28 +2,38 @@
 title: "Bash Bunny Mark II"
 date: 2025-01-01
 draft: false
-description: "La plataforma de ataque USB más avanzada del mundo — una computadora Linux completa que emula múltiples dispositivos de confianza simultáneamente."
+description: "Primera plataforma USB de ataque multivector del mundo, capaz de emular simultáneamente HID, red y almacenamiento, con entorno Debian Linux completo."
 featureimage: "/images/products/hak5/bash-bunny.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El Bash Bunny Mark II es la plataforma de ataque USB más avanzada del mundo — una computadora Linux con todas las funciones que emula simultáneamente múltiples dispositivos de confianza para ataques de múltiples vectores. Con un tiempo de arranque de 7 segundos y un interruptor hardware de 3 posiciones, ejecuta payloads de forma rápida y confiable en el campo. El geofencing BLE y la expansión MicroSD lo convierten en la herramienta ideal para operaciones de exfiltración con seguridad operacional.
+- **Plataforma de ataque USB multivector**: Primera en el mundo, de inserción a intrusión completa en solo 7 segundos
+- **Emulación múltiple de dispositivos**: Emula simultáneamente HID + USB Ethernet + dispositivo serial + almacenamiento USB
+- **Entorno Linux completo**: nmap / responder / impacket / metasploit preinstalados
+- **Bluetooth LE**: Soporta Remote Triggers y Geofencing
+- **Gran capacidad de expansión**: MicroSD XC (hasta 2 TB) para exfiltración masiva de datos
+- **Hardware potente**: CPU ARM de cuatro núcleos, SSD de nivel escritorio 8 GB, doble RAM que la generación anterior
+- **Cambio rápido**: Interruptor de 3 posiciones + RGB LED para cambio veloz de Payloads
+- **Soporte Cloud C²**: Gestión remota con acceso dedicado a root shell vía Console serial
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| CPU | ARM A7 cuatro núcleos, hasta 1.3 GHz |
-| Almacenamiento | 8 GB NAND SSD + MicroSD XC (hasta 2 TB) |
-| Inalámbrico | Bluetooth Low Energy (BLE) |
-| Interruptor | Selector de modo de 3 posiciones |
-| Indicador | Estado del payload con LED RGB |
+| CPU | ARM Cortex A7 de cuatro núcleos, hasta 1.3 GHz |
+| Almacenamiento | 8 GB NAND SSD |
+| Expansión | MicroSD XC (hasta 2 TB) |
+| Inalámbrico | Bluetooth LE (Remote Triggers / Geofencing) |
+| Interfaz | USB-A (extremo de implante), Console serial |
+| Indicador | 1 × RGB LED |
+| Interruptor | Selector de 3 modos |
+| Sistema operativo | Debian Linux |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Emulación múltiple**: Emula simultáneamente Teclado (HID), Serial, Almacenamiento y Ethernet
-- **Arranque rápido**: Tiempo de arranque de 7 segundos "conectar para atacar"
-- **Exfiltración masiva**: MicroSD de ultra alta capacidad para extracción de datos en masa
-- **Geofencing BLE**: Destruye el botín si se retira del alcance operacional autorizado
-- **Herramientas Linux nativas**: Nmap, Metasploit, Impacket se ejecutan nativamente en el dispositivo
+- Ataque USB multivector (HID + red + almacenamiento)
+- Exfiltración masiva de datos (MicroSD de alta capacidad)
+- Ejecución de Payload controlado por Geofencing
+- Ejercicios de Red Team para acceso físico automatizado en empresas
+- Ejecución de herramientas post-intrusión (Metasploit / Responder)

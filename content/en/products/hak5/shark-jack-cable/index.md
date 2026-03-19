@@ -2,29 +2,33 @@
 title: "Shark Jack Cable"
 date: 2025-01-01
 draft: false
-description: "Cable form-factor Shark Jack powered via USB-C for unlimited runtime in long-term headless network deployments."
+description: "A Shark Jack integrated into an Ethernet cable form factor, adding a USB UART serial interface for easier covert implantation."
 featureimage: "/images/products/hak5/shark-jack-cable.png"
 ---
 
-## Product Overview
+## Product Features
 
-The Shark Jack Cable is the cable form-factor variant of the Shark Jack, powered continuously via USB-C for indefinite long-term headless network deployments without battery constraints. A USB UART (CP2102) serial console enables shell access via smartphone apps like Serial USB Terminal. It retains the full Shark Jack feature set including Cloud C² sync and DuckyScript payload support.
+- **Cable Form Factor**: All Shark Jack functionality integrated into an Ethernet cable form factor for easier concealment
+- **USB UART Serial Interface**: Added CP2102 serial interface for direct root shell access
+- **Optimized for Long-Term Implants**: Ideal for long-term deployments or scenarios requiring serial debugging
+- **Android Support**: Supports Android Serial Setup
+- **Fully Compatible**: Payload development fully compatible with Shark Jack
 
 ## Key Specifications
 
 | Specification | Details |
-|---------------|---------|
-| SoC | MediaTek MT7628DAN, 580 MHz MIPS |
-| RAM | 64 MB DDR2 |
-| Storage | 64 MB SPI Flash |
-| Network | 802.3 Fast Ethernet (RJ45) |
-| Power | USB-C 5 V, 0.5 A (2.5 W) continuous |
-| Extra | USB UART (CP2102) for serial console |
+|--------------|---------|
+| SoC | MediaTek MT7628DAN |
+| Interface | Ethernet (802.3), USB UART (CP2102) |
+| Dimensions | 62 × 21 × 12 mm |
+| Power | 2.5W (USB 5V 0.5A) |
+| Operating Temperature | 35°C ~ 45°C |
+| Storage Temperature | -20°C ~ 50°C |
+| Relative Humidity | 0% ~ 90% (non-condensing) |
 
-## Key Features
+## Application Scenarios
 
-- **Unlimited Runtime**: USB-C continuous power eliminates battery constraints
-- **Mode Switch**: Flip-switch transitions between Arming and Attack modes
-- **Serial Console**: Shell access via smartphone apps (Serial USB Terminal)
-- **Script Support**: Bash and DuckyScript network-profiling payloads
-- **Cloud Sync**: Automatic loot synchronization via Cloud C² integration
+- Long-term network implant disguised as an ordinary Ethernet patch cable
+- Advanced Payload development requiring serial console access
+- Red team field deployments that are difficult to visually identify
+- Mobile penetration testing using Android devices

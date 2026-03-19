@@ -2,28 +2,33 @@
 title: "Key Croc"
 date: 2025-01-01
 draft: false
-description: "Implante de pruebas de penetración de keylogging con herramientas activas, acceso remoto y payloads de ataque de múltiples vectores activados por patrones."
+description: "Keylogger de hardware disfrazado de adaptador de paso de teclado, con capacidad de inyección HID y soporte Cloud C² para gestión remota."
 featureimage: "/images/products/hak5/key-croc.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El Key Croc es el implante de pruebas de penetración de keylogging definitivo, equipado con herramientas activas de pentest, capacidades de acceso remoto y payloads de ataque de múltiples vectores activados por patrones. Funciona con Linux basado en Debian con acceso Root Shell, integrándose como pass-through de teclado en el sistema objetivo. La integración con Cloud C² permite la transmisión en vivo de pulsaciones y el acceso a la terminal remota.
+- **Keylogger de hardware**: Disfrazado de adaptador de paso de teclado con capacidad de inyección HID
+- **Computadora Linux completa**: Emula simultáneamente HID / Ethernet / serial / almacenamiento USB
+- **Payload activado por palabras clave**: Ejecuta Payload al detectar palabras clave específicas (Keyword Triggered Payloads)
+- **Hardware potente**: CPU ARM de cuatro núcleos a 1.2 GHz, SSD de nivel escritorio, herramientas abundantes
+- **Integración Cloud C²**: Ver pulsaciones en tiempo real, inyección remota, gestión de Payload, root shell
+- **Grabación automática**: Registra automáticamente todas las pulsaciones tras la inserción, sin configuración
+- **Doble lenguaje de Payload**: Soporta DuckyScript™ + Bash Payload
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| CPU | ARM7 cuatro núcleos, 1.2 GHz |
-| Almacenamiento | 8 GB SSD de clase escritorio |
-| Inalámbrico | Antena WiFi 2.4 GHz integrada |
-| SO | Linux basado en Debian con acceso Root Shell |
-| Controles | Botón de configuración oculto, LED RGB |
+| CPU | ARM Cortex A7 de cuatro núcleos, 1.2 GHz |
+| Almacenamiento | SSD de nivel escritorio 8 GB |
+| Interfaz | USB-A (lado del host), USB-A (lado del teclado), Console serial |
+| Sistema operativo | Linux |
+| Cloud C² | Soportado |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Coincidencia de patrones**: Payloads activados por expresiones regulares en pulsaciones capturadas
-- **Clonación de dispositivo**: Clonación de hardware VID/PID para evadir sistemas de detección endpoint
-- **Bypass de firewall**: Emula Ethernet USB para evadir firewalls perimetrales e IDS
-- **Búfer de pulsaciones**: Captura datos previos a cualquier disparador coincidente
-- **Cloud C²**: Transmisión en vivo de pulsaciones y acceso a terminal remota
+- Intrusión corporativa: instalado entre teclado y PC para registro a largo plazo
+- Robo de credenciales en ejercicios de Red Team
+- Monitoreo de teclado en tiempo real e inyección remota de Payload
+- Persistencia de puerta trasera tras acceso físico

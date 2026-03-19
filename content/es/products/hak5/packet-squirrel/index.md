@@ -2,28 +2,37 @@
 title: "Packet Squirrel Mark II"
 date: 2025-01-01
 draft: false
-description: "Herramienta multifunción de ataque man-in-the-middle de red, sigilosa y de bolsillo, para interceptación de tráfico y pivoteo remoto seguro."
+description: "Herramienta Ethernet multifunción de tamaño bolsillo para ataques man-in-the-middle, compatible con WireGuard / OpenVPN y cinco modos de red."
 featureimage: "/images/products/hak5/packet-squirrel.png"
 ---
 
-## Descripción General
+## Características del Producto
 
-El Packet Squirrel Mark II es una herramienta multifunción sigilosa del tamaño de un bolsillo para ataques man-in-the-middle de red, intercepción transparente de tráfico, manipulación y pivoteo remoto seguro. Con solo 24 g y 50 × 40 × 15 mm, se instala de forma invisible entre equipos de red. El soporte nativo de OpenVPN y WireGuard permite túneles remotos cifrados desde segmentos de red comprometidos.
+- **Herramienta Ethernet MitM multifunción**: De tamaño bolsillo, soporta cinco modos de red: NAT, BRIDGE, TRANSPARENT, JAIL, ISOLATE
+- **Doble soporte VPN**: Compatible con WireGuard y OpenVPN simultáneamente
+- **Web UI + SSH**: IP de administración predeterminada: 172.16.32.1:1471
+- **4 modos de cambio**: Un solo botón para reiniciar / restaurar valores de fábrica
+- **Expansión de almacenamiento USB**: Soporta USB-A 2.0 con cifrado de disco completo LUKS opcional
+- **Payload multilenguaje**: Escrito en Bash / Python, soporta DuckyScript
+- **Soporte Cloud C²**: Gestión remota
+- **Autodestrucción segura**: Soporta comando SELFDESTRUCT payload
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
-| Dimensiones | 50 × 40 × 15 mm |
-| Peso | 24 g |
-| Puertos | 2 × Ethernet (en línea), 1 × USB 2.0 Host |
-| Alimentación | USB-C, consumo 0.2 A |
-| SO | Linux con botón scriptable y LED RGB |
+| Interfaces | Ethernet dual (puerto Target y puerto Network), USB-C (alimentación), USB-A 2.0 (almacenamiento) |
+| Estándar de red | 802.3 |
+| Alimentación | USB-C (5V) |
+| IP de administración predeterminada | 172.16.32.1 |
+| Sistema operativo | Linux |
+| Indicador | LED de estado multicolor |
 
-## Características Principales
+## Entornos de Aplicación
 
-- **Captura de paquetes**: Captura transparente de tráfico a almacenamiento USB en formato PCAP
-- **Interruptor multi-payload**: Cambio instantáneo entre perfiles de ataque
-- **Túnel VPN**: OpenVPN y WireGuard nativos para pivoteo remoto seguro
-- **Sinkholing DNS**: Redirección de solicitudes DNS a servidores controlados por el atacante
-- **Guardián hardware**: Script para cortar físicamente el acceso a la red bajo demanda
+- Captura y análisis de paquetes MitM en redes corporativas
+- Establecimiento de túnel VPN encubierto (WireGuard / OpenVPN)
+- Implante de red y acceso remoto persistente del Red Team
+- Manipulación de tráfico, spoofing DNS (SPOOFDNS), inyección de paquetes
+- Entrenamiento Blue Team: aislar dispositivos sospechosos (JAIL / ISOLATE)
+- Automatización de evaluación de vulnerabilidades en redes corporativas

@@ -1,26 +1,33 @@
 ---
-title: "Malicious Cable Detector by O.MG"
+title: "Malicious Cable Detector"
 date: 2025-01-01
 draft: false
-description: "Ferramenta de diagnóstico defensiva que detecta implantes USB encobertos analisando o comportamento elétrico a 200.000 amostras/segundo."
+description: "A única ferramenta do mundo capaz de detectar todos os cabos USB maliciosos conhecidos, usando análise de potência de canal lateral a 200.000 análises por segundo."
 featureimage: "/images/products/hak5/malicious-cable-detector.png"
 ---
 
-## Visão Geral do Produto
+## Características do Produto
 
-O Malicious Cable Detector by O.MG é uma ferramenta de diagnóstico defensiva que detecta implantes encobertos em cabos USB analisando o comportamento elétrico — não assinaturas digitais — a 200.000 amostras/segundo. Conecta-se em linha entre o cabo suspeito e o computador sem instalação de software. Quando não está em teste ativo, funciona como bloqueador de dados para carregamento seguro.
+- **Única ferramenta de detecção no mundo**: Capaz de detectar todos os cabos USB maliciosos conhecidos (incluindo O.MG Cable)
+- **Análise de potência de canal lateral**: 200.000 análises por segundo; detecta o chip implantado mesmo em modo sleep completo
+- **Função USB Data Blocker**: Fornece carregamento seguro bloqueando transferência de dados simultaneamente
+- **Fácil de usar**: Insira o cabo no detector e depois na porta USB; o LED mostra o resultado imediatamente
+- **Cobertura abrangente**: Cobre todos os tipos de cabos USB maliciosos conhecidos no mercado
 
 ## Especificações Principais
 
 | Especificação | Detalhes |
 |---------------|----------|
-| Interface | Em linha — conecta-se entre o cabo suspeito e o computador |
-| Taxa de análise | 200.000 amostras elétricas por segundo |
-| Indicadores | Atividade visual de LED |
+| Método de detecção | Análise de potência de canal lateral (Side Channel Power Analysis) |
+| Taxa de detecção | 200.000 vezes / segundo |
+| Interface | USB-A (conexão ao PC) + USB-A (inserção do cabo a examinar) |
+| Função adicional | USB Data Blocker (carregamento seguro, bloqueio de transferência de dados) |
+| Indicador | LED de atividade |
 
-## Recursos Principais
+## Ambientes de Aplicação
 
-- **Análise de energia lateral**: Detecta presença de microcontrolador em qualquer cabo via análise de energia
-- **Detecção de implantes dormentes**: Identifica implantes invisíveis nas linhas de dados USB
-- **Carregamento seguro**: Funciona como bloqueador de dados ao transmitir energia
-- **Derrota do sigilo**: Neutraliza os mecanismos de furtividade de implantes hardware de alta densidade
+- Departamentos de segurança corporativa: detecção de intrusões e reforço de políticas USB
+- Proteção pessoal: verificar a segurança do cabo de carregamento antes de viajar
+- Blue Team contra ataques de cabos ocultos como O.MG Cable
+- Conscientização em cibersegurança: demonstrar a possibilidade de detectar ataques físicos
+- Auditoria de cabos USB em instalações de alta segurança (governo, instituições financeiras)

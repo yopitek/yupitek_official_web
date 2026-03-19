@@ -2,28 +2,38 @@
 title: "Bash Bunny Mark II"
 date: 2025-01-01
 draft: false
-description: "The world's most advanced USB attack platform — a full Linux computer emulating multiple trusted devices simultaneously."
+description: "The world's first multi-vector USB attack platform that simultaneously emulates HID, network, and storage devices, running a full Debian Linux environment."
 featureimage: "/images/products/hak5/bash-bunny.png"
 ---
 
-## Product Overview
+## Product Features
 
-The Bash Bunny Mark II is the world's most advanced USB attack platform — a full-featured Linux computer that simultaneously emulates multiple trusted devices for multi-vector attacks. With a 7-second boot time and a 3-position hardware switch, it delivers rapid, reliable payload execution out of the box. BLE geofencing and MicroSD expansion make it ideal for data exfiltration operations with built-in operational security.
+- **Multi-Vector USB Attack Platform**: The world's first — from plug-in to completed penetration in just 7 seconds
+- **Multi-Device Emulation**: Simultaneously emulates HID keyboard + USB Ethernet + Serial device + USB storage
+- **Full Linux Environment**: Built-in nmap / responder / impacket / metasploit
+- **Bluetooth LE**: Supports Remote Triggers and Geofencing
+- **Massive Storage Expansion**: MicroSD XC support (up to 2TB) for large-scale data exfiltration
+- **Powerful Hardware**: Quad-core ARM CPU, 8 GB desktop-class SSD, doubled RAM over previous generation
+- **Quick Switching**: 3-position switch + RGB LED for rapid Payload switching
+- **Cloud C² Support**: Remote management with dedicated serial Console for root shell access
 
 ## Key Specifications
 
 | Specification | Details |
-|---------------|---------|
-| CPU | Quad-Core ARM A7, up to 1.3 GHz |
-| Storage | 8 GB NAND SSD + MicroSD XC (up to 2 TB) |
-| Wireless | Bluetooth Low Energy (BLE) |
+|--------------|---------|
+| CPU | Quad-core ARM Cortex A7, up to 1.3 GHz |
+| Storage | 8 GB NAND SSD |
+| Expansion | MicroSD XC (up to 2 TB) |
+| Wireless | Bluetooth LE (Remote Triggers / Geofencing) |
+| Interface | USB-A (implant side), Serial Console |
+| Indicator | 1 × RGB LED |
 | Switch | 3-position mode selector |
-| Indicator | RGB LED payload status |
+| OS | Debian Linux |
 
-## Key Features
+## Application Scenarios
 
-- **Multi-Device Emulation**: Concurrently emulates Keyboard (HID), Serial, Storage, and Ethernet
-- **Fast Boot**: 7-second "plug to pwn" boot time
-- **Mass Exfiltration**: Ultra-high-capacity MicroSD for bulk data extraction
-- **BLE Geofencing**: Destroys loot if removed from authorized operational scope
-- **Native Linux Tools**: Nmap, Metasploit, Impacket run natively on-device
+- Multi-vector USB combined attacks (HID + Network + Storage)
+- Large-scale data exfiltration via high-capacity MicroSD
+- Geofence-controlled restricted Payload execution
+- Enterprise red team physical access automation exercises
+- Post-exploitation tool execution (Metasploit / Responder)

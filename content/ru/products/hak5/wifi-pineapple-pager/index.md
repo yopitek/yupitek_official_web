@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 
 ## Особенности продукта
 
+![WiFi Pineapple Pager](/images/products/hak5/card/wifi-pineapple-pager.png)
+
 - **Флагманский продукт к 20-летию Hak5**: Движок PineAP 8-го поколения, более чем в 100 раз быстрее предыдущего поколения
 - **Полностью автономная работа**: Без внешнего компьютера; независимое портативное устройство аудита Linux для беспроводных сетей
 - **Трёхдиапазонный WiFi + Bluetooth**: Поддерживает 2.4 ГГц / 5 ГГц / 6 ГГц (802.11ax) и Bluetooth 5.2 / BLE 4.2

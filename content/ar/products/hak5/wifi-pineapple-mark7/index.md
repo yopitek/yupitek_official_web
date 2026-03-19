@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 
 ## ميزات المنتج
 
+![WiFi Pineapple Mark VII](/images/products/hak5/card/wifi-pineapple-mark7.png)
+
 - **المنصة القياسية في الصناعة لاختبار اختراق WiFi**: مزودة بـ PineAP Suite الحاصل على براءة اختراع من Hak5
 - **ثلاثة راديوات لاسلكية بأدوار متخصصة**: إدارة / هجوم / مراقبة، مع ثلاثة هوائيات عالية الكسب
 - **واجهة Web UI بديهية**: تدعم Campaigns آلية وتولّد تقارير استخباراتية قابلة للتنفيذ

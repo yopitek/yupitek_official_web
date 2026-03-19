@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 
 ## Características del Producto
 
+![Shark Jack Cable](/images/products/hak5/card/shark-jack-cable.png)
+
 - **Formato de cable**: Todas las funciones de Shark Jack en formato de cable Ethernet; más fácil de ocultar
 - **Interfaz serial USB UART**: CP2102 añadido para acceso directo a root shell
 - **Optimizado para implante a largo plazo**: Ideal para implantes prolongados o escenarios que requieren depuración serial

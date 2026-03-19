@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 ## 產品特色
 
+![USB Rubber Ducky](/images/products/hak5/card/usb-rubber-ducky.png)
+
 - **Keystroke Injection 始祖**：2010 年發明鍵盤注入攻擊，2022 年全面更新
 - **完美偽裝**：外觀與普通 USB 隨身碟完全相同，電腦自動識別為受信任 HID 鍵盤
 - **DuckyScript™ 3.0**：支援變數、流程控制、邏輯判斷、OS 偵測、函數

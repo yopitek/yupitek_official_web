@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 
 ## Características do Produto
 
+![WiFi Pineapple Pager](/images/products/hak5/card/wifi-pineapple-pager.png)
+
 - **Produto flagship do 20.º aniversário da Hak5**: Motor PineAP de 8.ª geração, mais de 100 vezes mais rápido que a geração anterior
 - **Operação completamente autônoma**: Sem necessidade de computador externo; dispositivo portátil independente de auditoria Linux sem fio
 - **WiFi de banda tripla + Bluetooth**: Suporta 2.4 GHz / 5 GHz / 6 GHz (802.11ax) e Bluetooth 5.2 / BLE 4.2

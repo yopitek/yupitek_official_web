@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 
 ## ميزات المنتج
 
+![Plunder Bug LAN Tap](/images/products/hak5/card/plunder-bug.png)
+
 - **LAN Tap ثنائي الوضع**: الوضع النشط: حقن جهاز التحليل في الشبكة؛ الوضع السلبي: نسخ حركة المرور بصمت
 - **اتصال USB-C**: واجهة USB-C لتوصيل جهاز التحليل
 - **توافق مع Wireshark**: يدعم Wireshark وأدوات تحليل الحزم مفتوحة المصدر الأخرى

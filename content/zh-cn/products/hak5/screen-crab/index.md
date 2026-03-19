@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/screen-crab.png"
 
 ## 产品特色
 
+![Screen Crab](/images/products/hak5/card/screen-crab.png)
+
 - **世界首款 HDMI MitM 装置**：专为渗透测试设计的 HDMI 中间人影像捕获工具
 - **零延迟透明安装**：Inline 安装于 HDMI 信号路径，零延迟、零中断
 - **多种录制模式**：定时截图或全动态视频录制（MPEG-4，2 / 4 / 16 Mbps）

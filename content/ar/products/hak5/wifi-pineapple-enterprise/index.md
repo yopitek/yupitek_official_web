@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 
 ## ميزات المنتج
 
+![WiFi Pineapple Enterprise](/images/products/hak5/card/wifi-pineapple-enterprise.png)
+
 - **منصة تدقيق WiFi المؤسسية الرائدة**: مصممة للمؤسسات الكبيرة ومؤسسات الأمن والنشر طويل الأمد
 - **أجهزة قوية**: معالج ARM رباعي النواة، خمسة راديوات MIMO ثنائية النطاق، تغطية 2.4 GHz / 5 GHz
 - **دعم عملاء كثيفين**: حتى 100 عميل DHCP (مقارنةً بـ 5~10 في Mark VII)

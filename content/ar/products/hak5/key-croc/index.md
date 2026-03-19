@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 ## ميزات المنتج
 
+![Key Croc](/images/products/hak5/card/key-croc.png)
+
 - **مسجّل لوحة مفاتيح برمجي**: مُتنكّر في هيئة محوّل تمرير، مع قدرة حقن HID
 - **حاسوب Linux كامل**: يحاكي HID / Ethernet / تسلسلي / تخزين من USB في آنٍ واحد
 - **Payload مُشغَّل بكلمات مفتاحية**: يُشغّل Payload عند رصد كلمات مفتاحية محددة

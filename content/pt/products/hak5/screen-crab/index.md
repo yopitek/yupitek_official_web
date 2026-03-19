@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/screen-crab.png"
 
 ## Características do Produto
 
+![Screen Crab](/images/products/hak5/card/screen-crab.png)
+
 - **Primeiro dispositivo HDMI MitM do mundo**: Ferramenta de captura de imagem HDMI man-in-the-middle projetada para testes de penetração
 - **Instalação transparente sem latência**: Instalado em linha no caminho de sinal HDMI sem latência ou interrupções
 - **Múltiplos modos de gravação**: Capturas de tela agendadas ou gravação de vídeo completa (MPEG-4 a 2 / 4 / 16 Mbps)

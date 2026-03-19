@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/shark-jack.png"
 
 ## ميزات المنتج
 
+![Shark Jack](/images/products/hak5/card/shark-jack.png)
+
 - **أداة زرع شبكي سلكي فائقة الصغر**: بحجم حلقة المفاتيح، نشر سريع
 - **تشغيل مستقل**: بطارية داخلية، تنفّذ Payload فور الاتصال بـ Ethernet
 - **DuckyScript Payload**: يدعم أوامر NETMODE / LED / SWITCH / BATTERY وغيرها

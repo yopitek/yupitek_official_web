@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/screen-crab.png"
 
 ## Product Features
 
+![Screen Crab](/images/products/hak5/card/screen-crab.png)
+
 - **World's First HDMI MitM Device**: HDMI man-in-the-middle video capture tool designed for penetration testing
 - **Zero-Latency Transparent Installation**: Installed inline in the HDMI signal path — zero latency, zero disruption
 - **Multiple Recording Modes**: Scheduled screenshots or full motion video recording (MPEG-4, 2 / 4 / 16 Mbps)

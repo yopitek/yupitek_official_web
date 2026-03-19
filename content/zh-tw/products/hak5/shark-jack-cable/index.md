@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 
 ## 產品特色
 
+![Shark Jack Cable](/images/products/hak5/card/shark-jack-cable.png)
+
 - **線材形態**：所有 Shark Jack 功能，融入 Ethernet 線材外型，更易隱蔽
 - **USB UART 序列介面**：新增 CP2102 序列介面，可直連 root shell
 - **長期植入優化**：適合長期植入或需要串列除錯的場景

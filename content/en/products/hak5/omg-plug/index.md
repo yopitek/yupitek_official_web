@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-plug.png"
 
 ## Product Features
 
+![O.MG Plug](/images/products/hak5/card/omg-plug.png)
+
 - **Plug-Form O.MG Device**: Keychain-sized, USB plug form factor
 - **Full O.MG Feature Set**: WiFi control, DuckyScript injection, Self-Destruct, Geo-Fencing
 - **Cable-Free Operation**: No cable required — plugs directly into a USB port

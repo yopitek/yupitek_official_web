@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-plug.png"
 
 ## Características do Produto
 
+![O.MG Plug](/images/products/hak5/card/omg-plug.png)
+
 - **Dispositivo O.MG em formato de plugue**: Tamanho chaveiro, em formato de plugue USB
 - **Funções O.MG completas**: Controle WiFi, injeção DuckyScript, Self-Destruct, Geo-Fencing
 - **Sem cabo**: Funciona sem necessidade de cabo; inserido diretamente na porta USB

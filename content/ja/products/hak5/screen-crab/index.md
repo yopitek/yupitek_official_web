@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/screen-crab.png"
 
 ## 製品特長
 
+![Screen Crab](/images/products/hak5/card/screen-crab.png)
+
 - **世界初のHDMI MitMデバイス**：ペネトレーションテスト専用に設計されたHDMI中間者映像キャプチャツール
 - **ゼロレイテンシー透過インストール**：HDMIシグナルパスにインライン設置。ゼロレイテンシー、ゼロ中断
 - **複数の録画モード**：定期スクリーンショットまたは全動態動画録画（MPEG-4、2 / 4 / 16 Mbps）

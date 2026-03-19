@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 
 ## 製品特長
 
+![Shark Jack Cable](/images/products/hak5/card/shark-jack-cable.png)
+
 - **ケーブルフォームファクター**：すべてのShark Jack機能をEthernetケーブル外観に統合。より隠蔽しやすい設計
 - **USB UARTシリアルインターフェース**：CP2102シリアルインターフェースを追加し、rootシェルに直接アクセス可能
 - **長期植込みに最適化**：長期デプロイやシリアルデバッグが必要なシナリオに最適

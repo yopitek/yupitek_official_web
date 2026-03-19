@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 ## 製品特長
 
+![Packet Squirrel Mark II](/images/products/hak5/card/packet-squirrel.png)
+
 - **多機能Ethernet MitMツール**：ポケットサイズ。5つのネットワークモードをサポート：NAT、BRIDGE、TRANSPARENT、JAIL、ISOLATE
 - **デュアルVPN対応**：WireGuardとOpenVPN接続を同時サポート
 - **Web UI + SSHアクセス**：デフォルト管理IP：172.16.32.1:1471

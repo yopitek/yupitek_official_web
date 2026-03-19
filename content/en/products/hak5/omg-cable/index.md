@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-cable.png"
 
 ## Product Features
 
+![O.MG Cable](/images/products/hak5/card/omg-cable.png)
+
 - **Covert USB Attack Cable**: Handcrafted with a full WiFi + HID injection implant chip hidden inside
 - **Perfect Disguise**: Identical appearance and feel to a normal USB cable, available in various colors, materials, and connector combinations
 - **Wireless Control**: No computer connection required — operate via WiFi using any browser

@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 
 ## 製品特長
 
+![O.MG Malicious Cable Detector](/images/products/hak5/card/malicious-cable-detector.png)
+
 - **世界唯一の検出ツール**：O.MG Cableを含むすべての既知の悪意あるUSBケーブルを検出
 - **サイドチャネル電力解析**：毎秒200,000回の分析。植込みチップが完全スリープ状態でも検出可能
 - **USB Data Blocker機能**：安全な充電を提供しながら、データ転送をブロック

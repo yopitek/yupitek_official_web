@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 
 ## 產品特色
 
+![O.MG Malicious Cable Detector](/images/products/hak5/card/malicious-cable-detector.png)
+
 - **全球唯一偵測工具**：能偵測所有已知惡意 USB 線材（含 O.MG Cable）
 - **側通道電源分析**：每秒分析 200,000 次，即使植入晶片完全休眠仍可偵測
 - **USB Data Blocker 功能**：同時具備安全充電功能，阻隔資料傳輸

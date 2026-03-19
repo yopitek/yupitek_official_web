@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 
 ## ميزات المنتج
 
+![O.MG Malicious Cable Detector](/images/products/hak5/card/malicious-cable-detector.png)
+
 - **الأداة الوحيدة للكشف عالمياً**: قادرة على اكتشاف جميع كابلات USB الضارة المعروفة (بما فيها O.MG Cable)
 - **تحليل طاقة القناة الجانبية**: 200,000 تحليل في الثانية، يكتشف الشريحة المزروعة حتى في وضع السكون الكامل
 - **وظيفة USB Data Blocker**: يوفر شحناً آمناً مع حجب نقل البيانات في آنٍ واحد

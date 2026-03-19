@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 
 ## Características del Producto
 
+![O.MG Programmer USB A+C](/images/products/hak5/card/omg-programmer.png)
+
 - **Herramienta O.MG universal**: Compatible con todos los productos O.MG: Cable, Plug, Adapter, UnBlocker
 - **Interfaz de operación sencilla**: 3 pasos mediante WebSerial API en navegador de escritorio (Chrome / Edge)
 - **Método Python alternativo**: Soporta Python como método alternativo de programación

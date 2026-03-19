@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 ## 製品特長
 
+![USB Rubber Ducky](/images/products/hak5/card/usb-rubber-ducky.png)
+
 - **キーストロークインジェクションの始祖**：2010年にキーストロークインジェクション攻撃を発明。2022年に全面刷新
 - **完璧な偽装**：普通のUSBフラッシュドライブと外観が完全に同一。PCが自動的に信頼済みHIDキーボードとして認識
 - **DuckyScript™ 3.0**：変数、フロー制御、ロジック判断、OS検出、関数をサポート

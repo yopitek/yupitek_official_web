@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 ## ميزات المنتج
 
+![USB Rubber Ducky](/images/products/hak5/card/usb-rubber-ducky.png)
+
 - **رائدة Keystroke Injection**: اخترعت حقن لوحة المفاتيح عام 2010، تحديث شامل عام 2022
 - **تمويه مثالي**: مظهر مطابق تماماً لمحرك USB عادي، يُعرَّف تلقائياً بوصفه HID موثوقاً
 - **DuckyScript™ 3.0**: يدعم المتغيرات والتحكم في التدفق والمنطق الشرطي واكتشاف نظام التشغيل والوظائف

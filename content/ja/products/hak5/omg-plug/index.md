@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-plug.png"
 
 ## 製品特長
 
+![O.MG Plug](/images/products/hak5/card/omg-plug.png)
+
 - **プラグ形態O.MGデバイス**：キーチェーンサイズ、USBプラグフォームファクター
 - **O.MG完全機能**：WiFiコントロール、DuckyScriptインジェクション、Self-Destruct、ジオフェンシング
 - **ケーブル不要**：ケーブルなしで直接USBポートに挿入して動作

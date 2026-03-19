@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 
 ## ميزات المنتج
 
+![Shark Jack Cable](/images/products/hak5/card/shark-jack-cable.png)
+
 - **هيئة الكابل**: جميع وظائف Shark Jack في هيئة كابل Ethernet، أسهل إخفاءً
 - **واجهة USB UART التسلسلية**: أضيف CP2102 للاتصال المباشر بـ root shell
 - **محسَّن للزرع طويل الأمد**: مثالي للزرع المطوّل أو السيناريوهات التي تتطلب تصحيح أخطاء تسلسلي

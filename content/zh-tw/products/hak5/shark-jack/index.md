@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/shark-jack.png"
 
 ## 產品特色
 
+![Shark Jack](/images/products/hak5/card/shark-jack.png)
+
 - **超小型有線網路植入工具**：鑰匙圈大小，快速部署
 - **獨立執行**：內建電池，插入 Ethernet 即可執行 Payload
 - **DuckyScript Payload**：支援 NETMODE / LED / SWITCH / BATTERY 等命令

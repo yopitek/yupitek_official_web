@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 
 ## 產品特色
 
+![Plunder Bug LAN Tap](/images/products/hak5/card/plunder-bug.png)
+
 - **雙模式 LAN Tap**：主動模式：注入分析設備進入網路；被動模式：靜默鏡像流量
 - **USB-C 連接**：USB-C 介面連接分析設備
 - **Wireshark 相容**：支援 Wireshark 等開源封包分析工具

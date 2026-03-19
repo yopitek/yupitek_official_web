@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 
 ## Características del Producto
 
+![O.MG Adapter](/images/products/hak5/card/omg-adapter.png)
+
 - **Implante en forma de adaptador**: Puede combinarse con cables USB existentes para uso inmediato
 - **Conversión multidireccional**: Soporta USB-C → USB-A, USB-C → USB-C y más
 - **Camuflaje perfecto**: En reposo actúa como adaptador de datos USB 2.0 normal; chip implantado completamente invisible

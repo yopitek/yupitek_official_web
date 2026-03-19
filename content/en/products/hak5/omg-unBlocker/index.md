@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 ## Product Features
 
+![O.MG UnBlocker](/images/products/hak5/card/omg-unBlocker.png)
+
 - **Perfect Data Blocker Disguise**: Appearance and function fully mimic a legitimate USB Data Blocker (USB condom)
 - **Elite-Grade Implant**: Contains an Elite-grade O.MG wireless implant chip inside, fully dormant until Payload is triggered
 - **Power Pass-Through**: Female port passes 5V power to downstream devices — behavior identical to a real Data Blocker

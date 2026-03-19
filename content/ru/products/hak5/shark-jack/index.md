@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/shark-jack.png"
 
 ## Особенности продукта
 
+![Shark Jack](/images/products/hak5/card/shark-jack.png)
+
 - **Ультраминиатюрный инструмент для внедрения в проводную сеть**: Размером с брелок, быстрое развёртывание
 - **Автономная работа**: Встроенный аккумулятор; выполняет Payload при подключении к Ethernet
 - **DuckyScript Payload**: Поддерживает команды NETMODE / LED / SWITCH / BATTERY и другие

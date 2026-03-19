@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/shark-jack.png"
 
 ## Características del Producto
 
+![Shark Jack](/images/products/hak5/card/shark-jack.png)
+
 - **Herramienta de implante de red cableada ultraminiatura**: Tamaño llavero, despliegue rápido
 - **Ejecución autónoma**: Batería interna; ejecuta Payload al conectar a Ethernet
 - **DuckyScript Payload**: Soporta comandos NETMODE / LED / SWITCH / BATTERY y más

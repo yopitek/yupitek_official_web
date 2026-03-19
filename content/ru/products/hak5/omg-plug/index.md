@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-plug.png"
 
 ## Особенности продукта
 
+![O.MG Plug](/images/products/hak5/card/omg-plug.png)
+
 - **Устройство O.MG в форме USB-штекера**: Размером с брелок
 - **Полные функции O.MG**: Управление по WiFi, инъекции DuckyScript, Self-Destruct, Geo-Fencing
 - **Без кабеля**: Работает без кабеля; вставляется напрямую в порт USB

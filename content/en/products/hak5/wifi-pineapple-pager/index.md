@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 
 ## Product Features
 
+![WiFi Pineapple Pager](/images/products/hak5/card/wifi-pineapple-pager.png)
+
 - **Hak5 20th Anniversary Flagship**: 8th-generation PineAP engine — over 100× faster than previous generation
 - **Fully Standalone Operation**: No external computer required — independent handheld Linux wireless audit device
 - **Tri-Band WiFi + Bluetooth**: Supports 2.4 GHz / 5 GHz / 6 GHz (802.11ax) and Bluetooth 5.2 / BLE 4.2

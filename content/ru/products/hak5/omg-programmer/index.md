@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 
 ## Особенности продукта
 
+![O.MG Programmer USB A+C](/images/products/hak5/card/omg-programmer.png)
+
 - **Универсальный инструмент O.MG**: Поддерживает все продукты O.MG: Cable, Plug, Adapter, UnBlocker
 - **Простой интерфейс**: 3 шага через WebSerial API в настольном браузере (Chrome / Edge)
 - **Альтернативный метод Python**: Поддерживает Python как альтернативный способ прошивки

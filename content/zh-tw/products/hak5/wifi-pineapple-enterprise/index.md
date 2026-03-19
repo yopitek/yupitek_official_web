@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 
 ## 產品特色
 
+![WiFi Pineapple Enterprise](/images/products/hak5/card/wifi-pineapple-enterprise.png)
+
 - **旗艦企業 WiFi 審計平台**：專為企業級、資安機構、長期部署設計
 - **強大硬體**：四核 ARM CPU，五組雙頻 MIMO 無線電，覆蓋 2.4 GHz / 5 GHz
 - **高密度客戶端支援**：最多 100 個 DHCP 客戶端（vs Mark VII 的 5~10 個）

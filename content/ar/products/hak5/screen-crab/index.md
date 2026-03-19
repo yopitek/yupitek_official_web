@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/screen-crab.png"
 
 ## ميزات المنتج
 
+![Screen Crab](/images/products/hak5/card/screen-crab.png)
+
 - **أول جهاز HDMI MitM عالمياً**: أداة التقاط صور HDMI في المنتصف مصممة لاختبار الاختراق
 - **تركيب شفاف بلا تأخير**: يُركَّب في مسار إشارة HDMI بدون تأخير أو انقطاع
 - **أوضاع تسجيل متعددة**: لقطات شاشة بجدول زمني أو تسجيل فيديو كامل (MPEG-4 بمعدل 2 / 4 / 16 Mbps)

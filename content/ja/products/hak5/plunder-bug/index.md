@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 
 ## 製品特長
 
+![Plunder Bug LAN Tap](/images/products/hak5/card/plunder-bug.png)
+
 - **デュアルモードLAN Tap**：アクティブモード：分析デバイスをネットワークに注入。パッシブモード：トラフィックをサイレントミラーリング
 - **USB-C接続**：USB-Cインターフェースで分析デバイスに接続
 - **Wireshark対応**：Wiresharkなどのオープンソースパケット分析ツールをサポート

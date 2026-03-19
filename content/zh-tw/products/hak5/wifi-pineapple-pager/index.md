@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 
 ## 產品特色
 
+![WiFi Pineapple Pager](/images/products/hak5/card/wifi-pineapple-pager.png)
+
 - **Hak5 20 週年旗艦產品**：第 8 代 PineAP 引擎，較前代快 100 倍以上
 - **完全獨立操作**：無需外接電腦，獨立手持式 Linux 無線審計裝置
 - **三頻 WiFi + 藍牙**：支援 2.4 GHz / 5 GHz / 6 GHz（802.11ax）及 Bluetooth 5.2 / BLE 4.2

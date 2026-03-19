@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/omg-plug.png"
 
 ## ميزات المنتج
 
+![O.MG Plug](/images/products/hak5/card/omg-plug.png)
+
 - **جهاز O.MG بهيئة قابس**: بحجم حلقة المفاتيح، في هيئة قابس USB
 - **وظائف O.MG كاملة**: تحكم WiFi، حقن DuckyScript، Self-Destruct، Geo-Fencing
 - **بلا كابل**: يعمل دون الحاجة إلى كابل، يُدخَل مباشرة في منفذ USB

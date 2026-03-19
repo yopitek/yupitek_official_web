@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 ## Características do Produto
 
+![O.MG UnBlocker](/images/products/hak5/card/omg-unBlocker.png)
+
 - **Camuflagem perfeita como Data Blocker**: Aparência e funcionalidade idênticas a um USB Data Blocker legítimo
 - **Implante Elite**: Contém chip O.MG sem fio Elite; em modo de espera total até a ativação do Payload
 - **Passagem de energia**: O terminal fêmea passa 5V para dispositivos downstream; comportamento idêntico a um Data Blocker real

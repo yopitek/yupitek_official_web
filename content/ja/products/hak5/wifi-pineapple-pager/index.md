@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 
 ## 製品特長
 
+![WiFi Pineapple Pager](/images/products/hak5/card/wifi-pineapple-pager.png)
+
 - **Hak5 20周年フラッグシップ製品**：第8世代PineAPエンジン。前世代比100倍以上の高速化
 - **完全独立動作**：外付けPCは不要。独立型ハンドヘルドLinux無線監査デバイス
 - **トライバンドWiFi + Bluetooth**：2.4 GHz / 5 GHz / 6 GHz（802.11ax）およびBluetooth 5.2 / BLE 4.2をサポート

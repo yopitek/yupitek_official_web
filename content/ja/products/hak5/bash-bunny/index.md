@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 
 ## 製品特長
 
+![Bash Bunny](/images/products/hak5/card/bash-bunny.png)
+
 - **マルチベクターUSB攻撃プラットフォーム**：世界初。挿入から侵入完了まで最短7秒
 - **マルチデバイスエミュレーション**：HIDキーボード + USB Ethernet + シリアルデバイス + USBストレージを同時エミュレート
 - **完全なLinux環境**：nmap / responder / impacket / metasploitを内蔵

@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 
 ## ميزات المنتج
 
+![O.MG Adapter](/images/products/hak5/card/omg-adapter.png)
+
 - **زرع بهيئة محوّل**: يمكن ربطه بكابلات USB الموجودة للاستخدام الفوري
 - **تحويل متعدد الاتجاهات**: يدعم USB-C → USB-A وUSB-C → USB-C وغيرها
 - **إخفاء مثالي**: يعمل في وضع السكون كمحوّل USB 2.0 عادي، والشريحة المزروعة غير مرئية تماماً

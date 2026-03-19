@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 
 ## 製品特長
 
+![WiFi Pineapple Mark VII](/images/products/hak5/card/wifi-pineapple-mark7.png)
+
 - **業界標準WiFiペネトレーションテストプラットフォーム**：Hak5独自のPineAP Suiteを搭載
 - **3つの専用役割無線**：管理 / 攻撃 / モニタリング用の3本の高利得アンテナ
 - **直感的なWeb UI**：自動化キャンペーンをサポートし、実用的なインテリジェンスレポートを生成

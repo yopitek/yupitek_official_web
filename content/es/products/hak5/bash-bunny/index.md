@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 
 ## Características del Producto
 
+![Bash Bunny](/images/products/hak5/card/bash-bunny.png)
+
 - **Plataforma de ataque USB multivector**: Primera en el mundo, de inserción a intrusión completa en solo 7 segundos
 - **Emulación múltiple de dispositivos**: Emula simultáneamente HID + USB Ethernet + dispositivo serial + almacenamiento USB
 - **Entorno Linux completo**: nmap / responder / impacket / metasploit preinstalados

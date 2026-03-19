@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 ## 產品特色
 
+![Key Croc](/images/products/hak5/card/key-croc.png)
+
 - **硬體鍵盤側錄器**：偽裝成鍵盤直通轉接器，同時具備 HID 注入能力
 - **完整 Linux 電腦**：可同時模擬 HID / Ethernet / 序列 / 儲存四種 USB 設備
 - **關鍵字觸發 Payload**：側錄關鍵字觸發 Payload（Keyword Triggered Payloads）

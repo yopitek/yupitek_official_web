@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 ## Características do Produto
 
+![USB Rubber Ducky](/images/products/hak5/card/usb-rubber-ducky.png)
+
 - **Pioneira em Keystroke Injection**: Inventou a injeção de teclado em 2010; atualização completa em 2022
 - **Camuflagem perfeita**: Idêntica em aparência a um pen drive comum; reconhecida automaticamente como HID confiável
 - **DuckyScript™ 3.0**: Suporta variáveis, controle de fluxo, lógica condicional, detecção de SO e funções

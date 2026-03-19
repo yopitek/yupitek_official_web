@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 
 ## 产品特色
 
+![Shark Jack Cable](/images/products/hak5/card/shark-jack-cable.png)
+
 - **线材形态**：所有 Shark Jack 功能，融入以太网线材外型，更易隐蔽
 - **USB UART 串行接口**：新增 CP2102 串行接口，可直连 root shell
 - **长期植入优化**：适合长期植入或需要串行调试的场景

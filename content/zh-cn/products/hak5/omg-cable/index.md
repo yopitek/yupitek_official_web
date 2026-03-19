@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-cable.png"
 
 ## 产品特色
 
+![O.MG Cable](/images/products/hak5/card/omg-cable.png)
+
 - **隐蔽 USB 攻击线**：手工制造，内部藏有完整 WiFi + HID 注入植入芯片
 - **完美伪装**：外观、触感与正常 USB 线完全相同，含各种线材颜色 / 材质 / 接头组合
 - **无线控制**：无需连接电脑；通过 WiFi 使用任意浏览器操作

@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 
 ## ميزات المنتج
 
+![O.MG Programmer USB A+C](/images/products/hak5/card/omg-programmer.png)
+
 - **أداة O.MG الشاملة**: تدعم جميع منتجات O.MG: Cable وPlug وAdapter وUnBlocker
 - **واجهة تشغيل سهلة**: 3 خطوات عبر WebSerial API في متصفح سطح المكتب (Chrome / Edge)
 - **طريقة Python بديلة**: تدعم Python كطريقة بديلة للبرمجة

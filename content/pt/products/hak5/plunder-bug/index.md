@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 
 ## Características do Produto
 
+![Plunder Bug LAN Tap](/images/products/hak5/card/plunder-bug.png)
+
 - **LAN Tap de modo duplo**: Modo ativo: injeta o dispositivo de análise na rede; Modo passivo: copia o tráfego silenciosamente
 - **Conexão USB-C**: Interface USB-C para conectar o dispositivo de análise
 - **Compatível com Wireshark**: Suporta Wireshark e outras ferramentas de análise de pacotes de código aberto

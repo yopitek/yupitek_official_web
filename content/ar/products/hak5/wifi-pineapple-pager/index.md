@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 
 ## ميزات المنتج
 
+![WiFi Pineapple Pager](/images/products/hak5/card/wifi-pineapple-pager.png)
+
 - **المنتج الرائد في الذكرى العشرين لـ Hak5**: محرك PineAP الجيل الثامن، أسرع بأكثر من 100 مرة من الجيل السابق
 - **تشغيل مستقل كلياً**: لا يحتاج حاسوباً خارجياً، جهاز محمول مستقل لتدقيق Linux اللاسلكي
 - **WiFi ثلاثي النطاق + بلوتوث**: يدعم 2.4 GHz / 5 GHz / 6 GHz (802.11ax) و Bluetooth 5.2 / BLE 4.2

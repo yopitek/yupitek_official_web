@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 
 ## Особенности продукта
 
+![Bash Bunny](/images/products/hak5/card/bash-bunny.png)
+
 - **Многовекторная USB-платформа для атак**: Первая в мире — от подключения до полного проникновения всего за 7 секунд
 - **Одновременная эмуляция нескольких устройств**: HID-клавиатура + USB Ethernet + последовательное устройство + USB-хранилище
 - **Полноценная среда Linux**: Предустановлены nmap / responder / impacket / metasploit

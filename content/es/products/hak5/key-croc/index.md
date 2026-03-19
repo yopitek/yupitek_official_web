@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 ## Características del Producto
 
+![Key Croc](/images/products/hak5/card/key-croc.png)
+
 - **Keylogger de hardware**: Disfrazado de adaptador de paso de teclado con capacidad de inyección HID
 - **Computadora Linux completa**: Emula simultáneamente HID / Ethernet / serial / almacenamiento USB
 - **Payload activado por palabras clave**: Ejecuta Payload al detectar palabras clave específicas (Keyword Triggered Payloads)

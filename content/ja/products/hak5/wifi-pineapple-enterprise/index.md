@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 
 ## 製品特長
 
+![WiFi Pineapple Enterprise](/images/products/hak5/card/wifi-pineapple-enterprise.png)
+
 - **フラッグシップ企業向けWiFi監査プラットフォーム**：企業・セキュリティ機関・長期デプロイ向けに設計
 - **高性能ハードウェア**：クアッドコアARM CPU、2.4 GHz / 5 GHzをカバーする5基のデュアルバンドMIMO無線
 - **高密度クライアント対応**：最大100のDHCPクライアントをサポート（Mark VIIの5〜10台と比較）

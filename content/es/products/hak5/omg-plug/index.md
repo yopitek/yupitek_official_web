@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-plug.png"
 
 ## Características del Producto
 
+![O.MG Plug](/images/products/hak5/card/omg-plug.png)
+
 - **Dispositivo O.MG en forma de enchufe**: Tamaño llavero, en forma de enchufe USB
 - **Funciones O.MG completas**: Control WiFi, inyección DuckyScript, Self-Destruct, Geo-Fencing
 - **Sin cable**: Funciona sin necesidad de cable; se inserta directamente en el puerto USB

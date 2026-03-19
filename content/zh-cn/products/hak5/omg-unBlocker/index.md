@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 ## 产品特色
 
+![O.MG UnBlocker](/images/products/hak5/card/omg-unBlocker.png)
+
 - **完美伪装 Data Blocker**：外观与功能完全模拟合法的「USB Data Blocker（USB 保险套）」
 - **Elite 等级植入**：内部藏有 Elite 等级 O.MG 无线植入芯片，完全休眠至 Payload 触发
 - **电源直通**：母头端通过 5V 电源至下游设备，外观行为与真 Data Blocker 相同

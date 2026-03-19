@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/shark-jack.png"
 
 ## 製品特長
 
+![Shark Jack](/images/products/hak5/card/shark-jack.png)
+
 - **超小型有線ネットワーク植込みツール**：キーチェーンサイズ、迅速なデプロイが可能
 - **自律実行**：内蔵バッテリー搭載。Ethernetに挿入するだけでPayloadが実行
 - **DuckyScript Payload**：NETMODE / LED / SWITCH / BATTERYコマンドをサポート

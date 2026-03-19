@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 ## 产品特色
 
+![Key Croc](/images/products/hak5/card/key-croc.png)
+
 - **硬件键盘侧录器**：伪装成键盘直通转接器，同时具备 HID 注入能力
 - **完整 Linux 电脑**：可同时模拟 HID / Ethernet / 串行 / 储存四种 USB 设备
 - **关键字触发 Payload**：侧录关键字触发 Payload（Keyword Triggered Payloads）

@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 ## Características del Producto
 
+![Packet Squirrel Mark II](/images/products/hak5/card/packet-squirrel.png)
+
 - **Herramienta Ethernet MitM multifunción**: De tamaño bolsillo, soporta cinco modos de red: NAT, BRIDGE, TRANSPARENT, JAIL, ISOLATE
 - **Doble soporte VPN**: Compatible con WireGuard y OpenVPN simultáneamente
 - **Web UI + SSH**: IP de administración predeterminada: 172.16.32.1:1471

@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 
 ## Product Features
 
+![O.MG Adapter](/images/products/hak5/card/omg-adapter.png)
+
 - **Adapter-Form Implant**: Compatible with existing USB cables
 - **Multi-Direction Conversion**: Supports USB-C → USB-A, USB-C → USB-C, and other adapter directions
 - **Perfect Concealment**: When idle, functions as a normal USB 2.0 data pass-through adapter — implant chip is completely invisible

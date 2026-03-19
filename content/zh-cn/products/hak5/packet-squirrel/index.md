@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 ## 产品特色
 
+![Packet Squirrel Mark II](/images/products/hak5/card/packet-squirrel.png)
+
 - **多功能 Ethernet MitM 工具**：口袋大小，支持五种网络模式：NAT、BRIDGE、TRANSPARENT、JAIL、ISOLATE
 - **双 VPN 支持**：同时支持 WireGuard 与 OpenVPN VPN 连接
 - **Web UI + SSH 访问**：默认管理 IP：172.16.32.1:1471

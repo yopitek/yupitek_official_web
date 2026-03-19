@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-cable.png"
 
 ## 製品特長
 
+![O.MG Cable](/images/products/hak5/card/omg-cable.png)
+
 - **隠蔽型USB攻撃ケーブル**：WiFi + HIDインジェクション植込みチップを内蔵した手作り製品
 - **完璧な偽装**：外観・触感ともに通常のUSBケーブルと完全に同一。各種カラー / 素材 / コネクター構成に対応
 - **ワイヤレスコントロール**：PCへの接続不要。WiFi経由で任意のブラウザから操作可能

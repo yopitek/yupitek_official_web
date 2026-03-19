@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-plug.png"
 
 ## 产品特色
 
+![O.MG Plug](/images/products/hak5/card/omg-plug.png)
+
 - **插头形态 O.MG 装置**：钥匙扣大小，USB 插头形态
 - **完整 O.MG 功能**：WiFi 控制、DuckyScript 注入、Self-Destruct、Geo-Fencing
 - **无线材操作**：不需要线材即可操作，直接插入 USB 口

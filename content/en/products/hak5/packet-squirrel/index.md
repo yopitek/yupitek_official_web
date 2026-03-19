@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 ## Product Features
 
+![Packet Squirrel Mark II](/images/products/hak5/card/packet-squirrel.png)
+
 - **Multi-Function Ethernet MitM Tool**: Pocket-sized with five network modes: NAT, BRIDGE, TRANSPARENT, JAIL, ISOLATE
 - **Dual VPN Support**: Simultaneously supports WireGuard and OpenVPN connections
 - **Web UI + SSH Access**: Default management IP: 172.16.32.1:1471

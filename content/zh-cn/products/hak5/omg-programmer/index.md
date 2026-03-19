@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 
 ## 产品特色
 
+![O.MG Programmer USB A+C](/images/products/hak5/card/omg-programmer.png)
+
 - **通用 O.MG 工具**：支持所有 O.MG 产品：Cable、Plug、Adapter、UnBlocker
 - **简易操作接口**：3 步骤桌面浏览器（Chrome / Edge）WebSerial API 操作
 - **Python 替代方式**：支持 Python 替代烧录方式

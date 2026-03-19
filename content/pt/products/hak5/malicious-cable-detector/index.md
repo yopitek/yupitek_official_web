@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 
 ## Características do Produto
 
+![O.MG Malicious Cable Detector](/images/products/hak5/card/malicious-cable-detector.png)
+
 - **Única ferramenta de detecção no mundo**: Capaz de detectar todos os cabos USB maliciosos conhecidos (incluindo O.MG Cable)
 - **Análise de potência de canal lateral**: 200.000 análises por segundo; detecta o chip implantado mesmo em modo sleep completo
 - **Função USB Data Blocker**: Fornece carregamento seguro bloqueando transferência de dados simultaneamente

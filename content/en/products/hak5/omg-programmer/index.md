@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 
 ## Product Features
 
+![O.MG Programmer USB A+C](/images/products/hak5/card/omg-programmer.png)
+
 - **Universal O.MG Tool**: Supports all O.MG products: Cable, Plug, Adapter, UnBlocker
 - **Simple Interface**: 3-step desktop browser (Chrome / Edge) WebSerial API workflow
 - **Python Alternative**: Supports Python as an alternative flashing method

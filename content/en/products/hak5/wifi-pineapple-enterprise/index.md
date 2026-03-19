@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 
 ## Product Features
 
+![WiFi Pineapple Enterprise](/images/products/hak5/card/wifi-pineapple-enterprise.png)
+
 - **Flagship Enterprise WiFi Audit Platform**: Designed for enterprises, security institutions, and long-term deployments
 - **Powerful Hardware**: Quad-core ARM CPU, five dual-band MIMO radios covering 2.4 GHz / 5 GHz
 - **High-Density Client Support**: Up to 100 DHCP clients (vs. 5–10 for the Mark VII)

@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 ## 製品特長
 
+![Key Croc](/images/products/hak5/card/key-croc.png)
+
 - **ハードウェアキーロガー**：キーボードパススルーアダプターに偽装し、HIDインジェクション機能も備えています
 - **完全なLinuxコンピューター**：HID / Ethernet / シリアル / ストレージの4種USBデバイスを同時エミュレート
 - **キーワードトリガーPayload**：側録したキーワードが自動でPayloadをトリガー

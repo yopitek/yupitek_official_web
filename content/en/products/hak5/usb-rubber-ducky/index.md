@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 ## Product Features
 
+![USB Rubber Ducky](/images/products/hak5/card/usb-rubber-ducky.png)
+
 - **Pioneer of Keystroke Injection**: Invented keystroke injection attacks in 2010, fully updated in 2022
 - **Perfect Disguise**: Identical appearance to an ordinary USB flash drive — computer automatically recognizes it as a trusted HID keyboard
 - **DuckyScript™ 3.0**: Supports variables, flow control, logic, OS detection, and functions

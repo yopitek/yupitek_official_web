@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 ## Особенности продукта
 
+![Packet Squirrel Mark II](/images/products/hak5/card/packet-squirrel.png)
+
 - **Многофункциональный инструмент Ethernet MitM**: Карманного размера, поддерживает пять сетевых режимов: NAT, BRIDGE, TRANSPARENT, JAIL, ISOLATE
 - **Двойная поддержка VPN**: Одновременно поддерживает WireGuard и OpenVPN
 - **Web UI + SSH**: Стандартный IP управления: 172.16.32.1:1471

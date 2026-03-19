@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 
 ## 产品特色
 
+![WiFi Pineapple Mark VII](/images/products/hak5/card/wifi-pineapple-mark7.png)
+
 - **业界标准 WiFi 渗透测试平台**：搭载 Hak5 专利 PineAP Suite
 - **三组专用角色无线电**：管理 / 攻击 / 监控，三根高增益天线
 - **直觉式 Web UI**：支持自动化 Campaigns，生成可操作情报报告

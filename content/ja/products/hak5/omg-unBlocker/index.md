@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 ## 製品特長
 
+![O.MG UnBlocker](/images/products/hak5/card/omg-unBlocker.png)
+
 - **完璧なData Blocker偽装**：正規の「USB Data Blocker（USBコンドーム）」の外観と機能を完全模倣
 - **Eliteグレード植込み**：内部にEliteグレードのO.MGワイヤレス植込みチップを搭載。Payloadトリガーまで完全スリープ
 - **電源パススルー**：メス側ポートが5V電源を下流デバイスに通過。本物のData Blockerと同一の動作

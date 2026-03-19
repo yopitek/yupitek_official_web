@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/shark-jack.png"
 
 ## Product Features
 
+![Shark Jack](/images/products/hak5/card/shark-jack.png)
+
 - **Ultra-Compact Wired Network Implant**: Keychain-sized, rapid deployment
 - **Autonomous Execution**: Built-in battery — plug into Ethernet and Payload runs immediately
 - **DuckyScript Payloads**: Supports NETMODE / LED / SWITCH / BATTERY commands

@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 ## Особенности продукта
 
+![Key Croc](/images/products/hak5/card/key-croc.png)
+
 - **Аппаратный кейлоггер**: Замаскирован под переходник для клавиатуры с возможностью HID-инъекций
 - **Полноценный компьютер Linux**: Одновременно эмулирует HID / Ethernet / последовательное устройство / хранилище USB
 - **Payload по ключевым словам**: Запускает Payload при обнаружении заданных ключевых слов (Keyword Triggered Payloads)

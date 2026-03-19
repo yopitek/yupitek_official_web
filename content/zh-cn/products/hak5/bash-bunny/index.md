@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 
 ## 产品特色
 
+![Bash Bunny](/images/products/hak5/card/bash-bunny.png)
+
 - **多向量 USB 攻击平台**：世界首款，从插入到完成渗透仅需 7 秒
 - **多设备模拟**：同时模拟 HID 键盘 + USB Ethernet + 串行设备 + USB 储存
 - **完整 Linux 环境**：内置 nmap / responder / impacket / metasploit

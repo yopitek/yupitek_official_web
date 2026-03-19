@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-cable.png"
 
 ## Características del Producto
 
+![O.MG Cable](/images/products/hak5/card/omg-cable.png)
+
 - **Cable USB de ataque encubierto**: Fabricado a mano con chip de implante WiFi + HID completo en su interior
 - **Camuflaje perfecto**: Apariencia y tacto idénticos a un cable USB normal, en varios colores, materiales y conectores
 - **Control inalámbrico**: No requiere conexión al PC; se opera vía WiFi desde cualquier navegador

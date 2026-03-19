@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 ## ميزات المنتج
 
+![O.MG UnBlocker](/images/products/hak5/card/omg-unBlocker.png)
+
 - **تمويه مثالي كـ Data Blocker**: مظهر ووظيفة مطابقان تماماً لـ USB Data Blocker الشرعي
 - **زرع Elite**: بداخله شريحة O.MG لاسلكية Elite، في سكون تام حتى تشغيل Payload
 - **تمرير الطاقة**: الطرف الأنثوي يمرر 5V إلى الأجهزة المتصلة، سلوك مطابق لـ Data Blocker الحقيقي

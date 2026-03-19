@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 ## Product Features
 
+![Key Croc](/images/products/hak5/card/key-croc.png)
+
 - **Hardware Keylogger**: Disguised as a keyboard pass-through adapter with full HID injection capability
 - **Full Linux Computer**: Simultaneously emulates HID / Ethernet / Serial / Storage as four USB device types
 - **Keyword Triggered Payloads**: Keylogged keywords automatically trigger Payloads

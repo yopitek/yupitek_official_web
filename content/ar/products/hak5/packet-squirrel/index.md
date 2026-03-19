@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 ## ميزات المنتج
 
+![Packet Squirrel Mark II](/images/products/hak5/card/packet-squirrel.png)
+
 - **أداة Ethernet MitM متعددة الوظائف**: بحجم الجيب، تدعم خمسة أوضاع شبكة: NAT، BRIDGE، TRANSPARENT، JAIL، ISOLATE
 - **دعم VPN مزدوج**: يدعم WireGuard وOpenVPN معاً
 - **Web UI + SSH**: عنوان IP الافتراضي للإدارة: 172.16.32.1:1471

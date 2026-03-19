@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 
 ## 产品特色
 
+![O.MG Adapter](/images/products/hak5/card/omg-adapter.png)
+
 - **转接头形态植入**：可接合现有 USB 线材使用
 - **多方向转接**：支持 USB-C → USB-A、USB-C → USB-C 等多种转接方向
 - **完美隐藏**：静止时作为正常 USB 2.0 数据直通转接头，植入芯片完全隐形

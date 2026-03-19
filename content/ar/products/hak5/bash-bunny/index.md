@@ -9,6 +9,8 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 
 ## ميزات المنتج
 
+![Bash Bunny](/images/products/hak5/card/bash-bunny.png)
+
 - **منصة هجوم USB متعددة المتجهات**: الأولى عالمياً، من الإدخال إلى اختراق كامل في 7 ثوانٍ فقط
 - **محاكاة أجهزة متعددة**: تحاكي HID + USB Ethernet + منفذ تسلسلي + تخزين USB في آنٍ واحد
 - **بيئة Linux كاملة**: تأتي مُثبَّتاً عليها nmap / responder / impacket / metasploit

@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 ## Особенности продукта
 
+![O.MG UnBlocker](/images/products/hak5/card/omg-unBlocker.png)
+
 - **Идеальная маскировка под Data Blocker**: Внешне и функционально неотличим от легального USB Data Blocker
 - **Имплант Elite**: Содержит беспроводной чип O.MG Elite; в режиме полного сна до срабатывания Payload
 - **Сквозная передача питания**: Разъём-мама передаёт 5В на подключённые устройства; поведение идентично настоящему Data Blocker

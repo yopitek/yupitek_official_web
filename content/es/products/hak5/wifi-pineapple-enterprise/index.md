@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 
 ## Características del Producto
 
+![WiFi Pineapple Enterprise](/images/products/hak5/card/wifi-pineapple-enterprise.png)
+
 - **Plataforma de auditoría WiFi empresarial insignia**: Diseñada para grandes empresas, instituciones de seguridad y despliegues a largo plazo
 - **Hardware potente**: CPU ARM de cuatro núcleos, cinco radios MIMO de doble banda, cobertura 2.4 GHz / 5 GHz
 - **Soporte de alta densidad de clientes**: Hasta 100 clientes DHCP (vs 5~10 del Mark VII)

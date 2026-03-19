@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 
 ## 製品特長
 
+![O.MG Adapter](/images/products/hak5/card/omg-adapter.png)
+
 - **アダプター形態の植込み装置**：既存のUSBケーブルと組み合わせて使用可能
 - **多方向変換対応**：USB-C → USB-A、USB-C → USB-Cなど多様な変換方向をサポート
 - **完璧な隠蔽**：待機時は通常のUSB 2.0データパススルーアダプターとして機能。植込みチップは完全に不可視

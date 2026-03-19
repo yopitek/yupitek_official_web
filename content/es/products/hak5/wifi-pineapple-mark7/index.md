@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 
 ## Características del Producto
 
+![WiFi Pineapple Mark VII](/images/products/hak5/card/wifi-pineapple-mark7.png)
+
 - **Plataforma estándar de la industria para pruebas de penetración WiFi**: Equipada con PineAP Suite patentado de Hak5
 - **Tres radios inalámbricos con roles especializados**: Gestión / Ataque / Monitoreo, con tres antenas de alta ganancia
 - **Web UI intuitiva**: Soporta Campaigns automatizadas y genera informes de inteligencia accionables

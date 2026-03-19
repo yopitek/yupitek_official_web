@@ -8,6 +8,8 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 
 ## Product Features
 
+![Shark Jack Cable](/images/products/hak5/card/shark-jack-cable.png)
+
 - **Cable Form Factor**: All Shark Jack functionality integrated into an Ethernet cable form factor for easier concealment
 - **USB UART Serial Interface**: Added CP2102 serial interface for direct root shell access
 - **Optimized for Long-Term Implants**: Ideal for long-term deployments or scenarios requiring serial debugging

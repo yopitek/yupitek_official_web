@@ -1,16 +1,42 @@
 ---
 title: "SDRLab Flipper Zero Módulo de Teste Ethernet"
-description: "Módulo de expansão para testes Ethernet com fio da SDRLab para o Flipper Zero, adicionando funcionalidade de rede com fio via GPIO."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
-tags: ["Expansão Flipper Zero", "Ethernet", "Teste de Rede"]
+tags: ["Expansão Flipper Zero", "Ethernet", "Teste de Rede", "Rede Cabeada"]
 ---
+## Características
 
-## Visão Geral do Produto
+![SDRLab Flipper Zero Módulo de Teste Ethernet](/images/products/sdrlab/flipper-ethernet.png)
 
-O SDRLab Flipper Zero Módulo de Teste Ethernet conecta-se via interface GPIO do Flipper Zero, adicionando capacidade de conexão Ethernet com fio ao dispositivo. Ideal para cenários de teste que requerem conexão de rede com fio, expandindo as capacidades de pesquisa em redes com fio do Flipper Zero.
+- Placa de expansão Ethernet cabeada projetada especificamente para o Flipper Zero
+- Permite testar a conectividade de redes cabeadas e verificar a distribuição correta de DHCP
+- Resistente a temperaturas de até 105°C, adequado para condições ambientais diversas
+- Design em placa perfurada (perforated board) com suporte a expansões DIY personalizadas
+- Compacto e portátil para diagnósticos imediatos em campo
+
+## Especificações
+
+| Item | Valor / Descrição |
+|------|-------------------|
+| Tipo de Conexão | Ethernet cabeada |
+| Temperatura Máxima de Operação | 105°C |
+| Design do PCB | Placa perfurada com suporte a expansão DIY |
+| Materiais | Componentes eletrônicos de alta qualidade |
+| Interface de Conexão | Porta dedicada do Flipper Zero |
+| Formato | Design modular compacto |
+| Conteúdo da Embalagem | 1× Módulo de teste Ethernet |
+
+## Casos de Uso
+
+- Diagnóstico de conectividade de rede cabeada por engenheiros de campo
+- Verificação de distribuição do servidor DHCP
+- Testes de infraestrutura de redes cabeadas
+- Ferramenta auxiliar para testes de penetração em redes
+- Experimentos educacionais com protocolos de rede
+
+---
 
 {{< gallery >}}
   <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero Módulo de Teste Ethernet" />

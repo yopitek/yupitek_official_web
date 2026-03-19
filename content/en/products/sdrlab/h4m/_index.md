@@ -1,16 +1,62 @@
 ---
-title: "SDRLab H4M — High-Performance SDR Module"
-description: "SDRLab H4M, a high-performance software-defined radio module for advanced wireless communications research and RF signal analysis."
+title: "SDRLab H4M — Portable HackRF + PortaPack Bundle"
+description: "SDRLab H4M, HackRF One + PortaPack H4M portable SDR bundle, 1MHz–6GHz, 20MHz bandwidth, Mayhem firmware, USB-C fast charging, built-in speaker and microphone."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
-tags: ["SDR", "H4M", "Radio Research"]
+tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Portable SDR"]
 ---
 
-## Product Overview
+## Features
 
-The SDRLab H4M is a high-performance SDR module in the SDRLAB lineup, providing advanced RF signal reception and analysis capabilities. Suitable for professional wireless communications research, engineering testing, and advanced amateur radio applications.
+![SDRLab H4M](/images/products/sdrlab/h4m.png)
+
+- Comprehensive redesign addressing shortcomings of previous PortaPack generations, plus a new GPIO expansion port
+- Single power switch for a complete hard shutoff — no more phantom battery drain
+- Advanced battery management IC with real-time display of battery percentage, voltage, and current
+- Matte screen dramatically improves readability in bright outdoor environments
+- 360° flat rotary knob (inspired by the iPod click wheel) — portable-friendly and resistant to accidental input
+- USB-C connector for fast charging and broad compatibility
+- Built-in speaker and microphone; audio source switches automatically when headphones are plugged in
+- GPIO expansion port supports DIY accessories (e.g., Flipper Zero add-ons)
+- Bundle includes an HackRF R10c clone with Mayhem firmware support
+
+## Specifications
+
+| Specification | Value / Description |
+|---------------|---------------------|
+| Bundled Hardware | HackRF One (R10c clone) + PortaPack H4M PCB |
+| Frequency Range | 1 MHz – 6 GHz (per HackRF One specs) |
+| Maximum Bandwidth | 20 MHz |
+| ADC Resolution | 8-bit |
+| RF Connector | SMA Female |
+| Main RF Chip | MAX2837 (HackRF RF frontend) |
+| Display | 3.2" TFT matte screen |
+| Power Port | USB-C (fast charging) |
+| Battery Capacity | 2500 mAh lithium battery (varies by bundle) |
+| Power Management | Advanced battery management IC (%, voltage, current readout) |
+| Audio | Built-in speaker + microphone, automatic headphone switching |
+| Expansion Interface | I2C-compatible GPIO port |
+| Enclosure | Clear acrylic or ABS injection-molded shell (varies by bundle) |
+| Firmware | Mayhem Firmware (pre-flashed or user-installable) |
+| OS Support | Windows, macOS, Linux, Android (via USB host computer) |
+| Software Compatibility | GNU Radio, SDR#, GQRX, and more (USB-connected mode) |
+
+## Use Cases
+
+- Portable RF security audits and penetration testing
+- Wireless spectrum scanning and analysis
+- Signal capture, replay, and recording
+- GPS simulation
+- ADS-B aviation surveillance
+- AIS maritime tracking
+- WiFi / GSM / ISM band analysis
+- Digital signal demodulation and modulation
+- Wireless protocol reverse engineering
+- Field portable SDR operations
+
+---
 
 {{< gallery >}}
   <img src="/images/products/sdrlab/h4m.png" alt="SDRLab H4M" />
@@ -18,4 +64,6 @@ The SDRLab H4M is a high-performance SDR module in the SDRLAB lineup, providing 
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a quote? [Contact us](/en/contact/)
+{{< /alert >}}

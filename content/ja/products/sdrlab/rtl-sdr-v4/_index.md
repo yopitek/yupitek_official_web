@@ -1,6 +1,6 @@
 ---
-title: "OpenSourceSDRLab RTL-SDR Blog V4 — エントリーレベル SDR レシーバー"
-description: "RTL-SDR Blog RTL SDR V4、500kHz–1766MHz 広帯域 SDR レシーバー、USB インターフェース、SDR# / GQRX / GNU Radio 対応、RF 研究入門に最適。"
+title: "OpenSourceSDRLab RTL-SDR Blog V4 — 入門SDRレシーバー"
+description: "RTL-SDR Blog RTL SDR V4、500kHz〜1.7GHz広帯域SDRレシーバー、1PPM TCXO、内蔵HFアップコンバーター、USB 2.0、RF研究入門に最適。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -8,36 +8,56 @@ brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "無線受信", "USB", "GNU Radio"]
 ---
 
-## 製品概要
+## 製品特長
 
-RTL-SDR Blog RTL SDR V4 は市場で最も人気のあるエントリーレベルのソフトウェア定義無線（SDR）レシーバーです。第四世代のアップグレード版として、V3 と比較して低周波受信性能とイメージ抑制が改善されています。500kHz から 1766MHz の広帯域受信に対応しており、SDR#、GQRX、GNU Radio などの無料ソフトウェアと組み合わせることで、FM 放送、ADS-B 航空信号、AIS 船舶信号、気象衛星画像など、さまざまな RF 信号を受信できます。
+![RTL-SDR Blog RTL SDR V4](/images/products/sdrlab/rtl-sdr-v4.png)
 
-## 主な仕様
+- アップグレード版 R828D チューナーを採用し、従来の R820T/R860 と比較して低ノイズ・高感度を実現
+- 内蔵アップコンバーターにより、500 kHz までの HF 受信に対応（標準 RTL-SDR の最低周波数は 24 MHz）
+- 1 PPM 温度補償水晶発振器（TCXO）により、周波数安定性を大幅に向上
+- ソフトウェア制御バイアスティー（Bias-Tee）搭載、外付け LNA またはアクティブアンテナへの給電が可能
+- 3 系統のダイプレクサーフロントエンドフィルター設計により、FM/AM/DAB ブロードキャスト干渉を効果的に抑制
+- 再設計された低ノイズ PCB、強化 ESD 保護とパッシブ冷却アルミニウム合金ケース採用
+- 多機能ダイポールアンテナキット付属、開封後すぐに使用可能
 
-| 項目 | 仕様 |
-|------|------|
-| 周波数範囲 | 500kHz – 1766MHz |
-| ADC 分解能 | 8-bit |
-| サンプルレート | 最大 3.2 MSPS |
-| インターフェース | USB 2.0 |
-| アンテナコネクター | SMA female |
-| ドライバー | librtlsdr / rtl-sdr |
+## 仕様
+
+| 仕様項目 | 値／説明 |
+|---------|---------|
+| チューナーチップ | Rafael Micro R828D |
+| ADC チップ | RTL2832U |
+| 周波数範囲 | 500 kHz – 1.7 GHz（HF モード含む） |
+| 最大帯域幅 | 3.2 MHz（安定動作 2.4 MHz） |
+| ADC 解像度 | 8-bit |
+| 周波数精度 | 1 PPM TCXO |
+| RF コネクタ | SMA メス（F） |
+| バイアス電源 | ソフトウェア有効化、最大 4.5 V |
+| HF 受信 | 内蔵アップコンバーター、28.8 MHz ローパスフィルター付き |
+| ケース | アルミニウム合金、パッシブ冷却 |
+| インターフェース | USB 2.0（RTL-SDR Blog 専用ドライバーのインストールが必要） |
+| 対応 OS | Windows、Linux、macOS、Android |
+| 付属品 | ダイポールアンテナキット（伸縮アンテナ × 2、3 m 延長ケーブル、三脚、吸盤スタンド） |
 
 ## 用途
 
-- FM 放送受信
-- ADS-B 航空機追跡
-- AIS 船舶追跡
-- 気象衛星画像受信（NOAA、Meteor-M）
-- アマチュア無線モニタリング
-- RF 信号分析
+- ADS-B 航空機トラッキング
+- 海事 AIS 船舶モニタリング
+- NOAA/Meteor M2 気象衛星画像受信
+- アマチュア無線（HF/VHF/UHF 受信）
+- 電波天文学（水素線観測）
+- P25、MotoTRBO デジタル音声デコード
+- APRS、ACARS パケットトラッキング
+- DAB デジタル放送受信
+- RF スペクトラムモニタリングとセキュリティ研究
+
+---
 
 {{< gallery >}}
-  <img src="/images/products/sdrlab/rtl-sdr-v4.png" alt="OpenSourceSDRLab RTL-SDR V4" />
+  <img src="/images/products/sdrlab/rtl-sdr-v4.png" alt="RTL-SDR Blog RTL SDR V4" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
-お見積もりについては、[お問い合わせ](/ja/contact/)ください。
+お見積もりのお問い合わせは[こちら](/ja/contact/)
 {{< /alert >}}

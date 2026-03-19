@@ -1,20 +1,49 @@
 ---
-title: "SDRLab Flipper Zero NRF24 Module — 2.4GHz Wireless Research Module"
-description: "SDRLab Flipper Zero NRF24L01+ wireless module, supports 2.4GHz MouseJack and other wireless protocol research, GPIO connection."
+title: "SDRLab Flipper Zero NRF24 Module — 2.4GHz Wireless HID Research Module"
+description: "Flipper Zero NRF24 module, nRF24L01 chip, supports MouseJacker wireless HID injection and NRF Sniffer, 2.4GHz, GPIO connection, antenna included."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
-tags: ["Flipper Zero Add-on", "NRF24", "2.4GHz", "MouseJack"]
+tags: ["Flipper Zero Add-On", "NRF24", "2.4GHz", "MouseJacker", "Security Research"]
 ---
 
 {{< alert "warning" >}}
-**Legal Use Statement**: This module is intended solely for authorized security research and lawful research purposes.
+**Legal Use Notice**: This module is intended solely for authorized security research and lawful testing.
 {{< /alert >}}
 
-## Product Overview
+## Features
 
-The SDRLab Flipper Zero NRF24 module integrates the Nordic NRF24L01+ 2.4GHz wireless transceiver chip. It connects via the Flipper Zero GPIO interface and supports exploration of the communication protocols used by wireless mice, keyboards, and other 2.4GHz non-Bluetooth wireless devices (such as MouseJack research). It is well-suited for IoT wireless security research.
+![SDRLab Flipper Zero NRF24 Module](/images/products/sdrlab/flipper-nrf24.png)
+
+- Optimized for sniffing 2.4 GHz wireless mouse and keyboard signals
+- NRF Sniffer support for passive monitoring of wireless HID device communications
+- MouseJacker attack simulation to demonstrate wireless HID injection vulnerabilities
+- Compact and lightweight — kit includes antenna, ready to deploy out of the box
+- Uses the Flipper Zero standard GPIO header for broad compatibility
+- Approachable for beginners and advanced users alike
+
+## Specifications
+
+| Specification | Value / Description |
+|---------------|---------------------|
+| Main Chip | Nordic Semiconductor nRF24L01 series |
+| Operating Frequency | 2.4 GHz |
+| Connection Interface | Flipper Zero GPIO header |
+| Enclosure Material | Plastic + PC |
+| Dimensions | Approx. 68 × 28 × 10 mm |
+| Accessories | Antenna × 1 |
+| Country of Origin | China |
+
+## Use Cases
+
+- Wireless keyboard/mouse (HID) device security research
+- MouseJacker wireless HID injection vulnerability demonstration
+- NRF Sniffer passive wireless protocol monitoring
+- 2.4 GHz wireless signal analysis education
+- Red team wireless attack simulation
+
+---
 
 {{< gallery >}}
   <img src="/images/products/sdrlab/flipper-nrf24.png" alt="SDRLab Flipper Zero NRF24 Module" />
@@ -23,5 +52,5 @@ The SDRLab Flipper Zero NRF24 module integrates the Nordic NRF24L01+ 2.4GHz wire
 ---
 
 {{< alert >}}
-Need a quote? [Contact Us](/en/contact/)
+Need a quote? [Contact us](/en/contact/)
 {{< /alert >}}

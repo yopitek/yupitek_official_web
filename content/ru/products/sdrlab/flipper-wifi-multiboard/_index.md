@@ -1,21 +1,47 @@
 ---
-title: "SDRLab Flipper Zero WiFi Multiboard — Расширение Wi-Fi на ESP8266"
-description: "Многофункциональная плата расширения Wi-Fi от SDRLab для Flipper Zero. Интегрирует модуль ESP8266 Wi-Fi и добавляет возможность Wi-Fi подключения через GPIO."
+title: "SDRLab Flipper Zero WiFi Мультиплата — Трёхпротокольная плата расширения для беспроводных исследований"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
-tags: ["расширение Flipper Zero", "ESP8266", "Wi-Fi", "многофункциональная плата"]
+tags: ["Расширение Flipper Zero", "ESP32", "CC1101", "NRF24", "Wi-Fi Marauder", "Исследование безопасности"]
 ---
+## Характеристики
+![SDRLab Flipper Zero WiFi Мультиплата](/images/products/sdrlab/flipper-wifi-multiboard.png)
+- Интегрированная конструкция «три в одном»: NRF24 + CC1101 + ESP32 — несколько беспроводных протоколов на одной плате
+- Модуль NRF24 поддерживает сниффинг клавиатур/мышей в диапазоне 2,4 ГГц и MouseJacker
+- Модуль CC1101 расширяет покрытие Sub-GHz (300–928 МГц) с поддержкой модуляции ASK/OOK/FSK
+- Модуль ESP32 с прошивкой Wi-Fi Marauder для исследования безопасности Wi-Fi 2,4 ГГц
+- Все функции беспроводных исследований на одной плате расширения — меньше переключений между аксессуарами
+- Питается непосредственно от GPIO Flipper Zero
 
-## Обзор продукта
+## Технические характеристики
+| Параметр | Значение / Описание |
+|---------|-----------|
+| Тип продукта | 3-in-1 плата расширения GPIO Flipper Zero |
+| Модуль NRF24 | Nordic nRF24L01, 2,4 ГГц, сниффинг клав./мышей + MouseJacker |
+| Модуль CC1101 | Texas Instruments CC1101, 300–928 МГц Sub-GHz |
+| Форматы модуляции CC1101 | ASK, OOK, FSK |
+| Модуль ESP32 | ESP32 (прошивка Marauder), исследование безопасности Wi-Fi 2,4 ГГц |
+| Интерфейс подключения | Стандартные GPIO-контакты Flipper Zero |
+| Питание | От GPIO Flipper Zero |
+| Прошивка | Wi-Fi Marauder (ESP32), NRF24 Sniffer |
+| Содержимое упаковки | Плата расширения 3-in-1 × 1 |
 
-Многофункциональная плата расширения Wi-Fi SDRLab для Flipper Zero интегрирует модуль ESP8266 Wi-Fi и обеспечивает возможность Wi-Fi подключения через GPIO-интерфейс Flipper Zero. Это позволяет Flipper Zero выполнять функции, требующие сетевого подключения: удалённое управление, выгрузку данных и Wi-Fi-ориентированные исследования.
+## Области применения
+- Исследование безопасности Wi-Fi 2,4 ГГц (инструмент Marauder)
+- Взаимодействие и исследование устройств Sub-GHz (300–928 МГц)
+- Тестирование беспроводных протоколов IoT-устройств (диапазон Sub-GHz)
+- Сниффинг беспроводных HID-устройств и демонстрация MouseJacker
+- Расширение использования Flipper Zero в диапазоне Sub-GHz
+- Многопротокольное беспроводное тестирование в упражнениях Red Team
 
+---
 {{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-wifi-multiboard.png" alt="SDRLab Flipper Zero WiFi Multiboard" />
+  <img src="/images/products/sdrlab/flipper-wifi-multiboard.png" alt="SDRLab Flipper Zero WiFi Мультиплата" />
 {{< /gallery >}}
 
 ---
-
-Заинтересованы? [Свяжитесь с нами](/ru/contact/)
+{{< alert >}}
+Хотите запросить коммерческое предложение? [Свяжитесь с нами](/ru/contact/)
+{{< /alert >}}

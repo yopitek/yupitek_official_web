@@ -52,12 +52,6 @@ tags: ["SDR", "RTL-SDR", "無線電接收", "USB", "GNU Radio"]
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/rtl-sdr-v4.png" alt="RTL-SDR Blog RTL SDR V4" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 需要詢問報價？[聯絡我們](/zh-tw/contact/)
 {{< /alert >}}

@@ -58,12 +58,6 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "攜帶型 SDR"]
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/h4m.png" alt="SDRLab H4M" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 需要詢問報價？[聯絡我們](/zh-tw/contact/)
 {{< /alert >}}

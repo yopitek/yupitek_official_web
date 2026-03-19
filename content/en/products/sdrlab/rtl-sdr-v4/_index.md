@@ -52,12 +52,6 @@ tags: ["SDR", "RTL-SDR", "Radio Reception", "USB", "GNU Radio"]
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/rtl-sdr-v4.png" alt="RTL-SDR Blog RTL SDR V4" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 Need a quote? [Contact us](/en/contact/)
 {{< /alert >}}

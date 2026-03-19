@@ -57,12 +57,6 @@ tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "ADC 16-bit"]
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/trx-duo.png" alt="SDRLab TRX-duo" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 ¿Necesitas cotización? [Contáctanos](/es/contact/)
 {{< /alert >}}

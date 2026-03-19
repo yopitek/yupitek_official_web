@@ -53,11 +53,6 @@ dir: rtl
 - عمليات SDR المحمولة في الهواء الطلق
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/h4m.png" alt="SDRLab H4M" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 هل تريد الاستفسار عن الأسعار؟ [اتصل بنا](/ar/contact/)
 {{< /alert >}}

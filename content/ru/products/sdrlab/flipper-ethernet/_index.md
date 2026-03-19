@@ -33,11 +33,6 @@ tags: ["Расширение Flipper Zero", "Ethernet", "Тестировани�
 - Образовательные эксперименты с сетевыми протоколами
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero Модуль тестирования Ethernet" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 Хотите запросить коммерческое предложение? [Свяжитесь с нами](/ru/contact/)
 {{< /alert >}}

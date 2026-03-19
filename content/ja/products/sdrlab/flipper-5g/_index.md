@@ -54,12 +54,6 @@ tags: ["Flipper Zero 拡張", "5GHz", "Wi-Fi", "Deauth", "セキュリティ研�
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-5g.png" alt="SDRLab Flipper Zero 5G 拡張ボード" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 お見積もりのお問い合わせは[こちら](/ja/contact/)
 {{< /alert >}}

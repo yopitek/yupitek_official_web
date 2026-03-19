@@ -49,12 +49,6 @@ tags: ["Expansión Flipper Zero", "5GHz", "Wi-Fi", "Deauth", "Investigación de 
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-5g.png" alt="SDRLab Flipper Zero Tarjeta de Expansión 5G" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 ¿Necesitas cotización? [Contáctanos](/es/contact/)
 {{< /alert >}}

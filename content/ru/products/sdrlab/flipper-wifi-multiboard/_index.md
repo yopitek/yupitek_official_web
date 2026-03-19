@@ -37,11 +37,6 @@ tags: ["Расширение Flipper Zero", "ESP32", "CC1101", "NRF24", "Wi-Fi M
 - Многопротокольное беспроводное тестирование в упражнениях Red Team
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-wifi-multiboard.png" alt="SDRLab Flipper Zero WiFi Мультиплата" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 Хотите запросить коммерческое предложение? [Свяжитесь с нами](/ru/contact/)
 {{< /alert >}}

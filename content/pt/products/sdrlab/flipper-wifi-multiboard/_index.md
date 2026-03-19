@@ -42,12 +42,6 @@ tags: ["Expansão Flipper Zero", "ESP32", "CC1101", "NRF24", "Wi-Fi Marauder", "
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-wifi-multiboard.png" alt="SDRLab Flipper Zero WiFi Multi-Board" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
 {{< /alert >}}

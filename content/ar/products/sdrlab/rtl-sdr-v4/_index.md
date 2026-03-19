@@ -47,11 +47,6 @@ dir: rtl
 - مراقبة طيف RF وأبحاث الأمن
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/rtl-sdr-v4.png" alt="RTL-SDR Blog RTL SDR V4" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 هل تريد الاستفسار عن الأسعار؟ [اتصل بنا](/ar/contact/)
 {{< /alert >}}

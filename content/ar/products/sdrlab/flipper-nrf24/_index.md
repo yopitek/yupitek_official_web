@@ -40,11 +40,6 @@ dir: rtl
 - محاكاة هجمات لاسلكية في تمارين الفريق الأحمر (Red Team)
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-nrf24.png" alt="SDRLab Flipper Zero NRF24 وحدة" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 هل تريد الاستفسار عن الأسعار؟ [اتصل بنا](/ar/contact/)
 {{< /alert >}}

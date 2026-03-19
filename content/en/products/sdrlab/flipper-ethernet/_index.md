@@ -40,12 +40,6 @@ tags: ["Flipper Zero Add-On", "Ethernet", "Network Testing", "Wired Network"]
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero Ethernet Testing Module" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 Need a quote? [Contact us](/en/contact/)
 {{< /alert >}}

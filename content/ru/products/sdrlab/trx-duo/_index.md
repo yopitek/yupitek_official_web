@@ -56,11 +56,6 @@ tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]
 - Эксперименты в любительской радиосвязи (соревнования, астрономические наблюдения)
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/trx-duo.png" alt="SDRLab TRX-duo" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 Хотите запросить коммерческое предложение? [Свяжитесь с нами](/ru/contact/)
 {{< /alert >}}

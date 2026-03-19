@@ -40,12 +40,6 @@ tags: ["Expansión Flipper Zero", "NRF24", "2.4GHz", "MouseJacker", "Investigaci
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-nrf24.png" alt="SDRLab Módulo NRF24 para Flipper Zero" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 ¿Necesitas cotización? [Contáctanos](/es/contact/)
 {{< /alert >}}

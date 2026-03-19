@@ -44,12 +44,6 @@ tags: ["Flipper Zero 拡張", "ESP32", "CC1101", "NRF24", "Wi-Fi Marauder", "セ
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-wifi-multiboard.png" alt="SDRLab Flipper Zero WiFi マルチボード" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 お見積もりのお問い合わせは[こちら](/ja/contact/)
 {{< /alert >}}

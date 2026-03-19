@@ -51,11 +51,6 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Портативный SD
 - Портативные полевые SDR-операции
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/h4m.png" alt="SDRLab H4M" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 Хотите запросить коммерческое предложение? [Свяжитесь с нами](/ru/contact/)
 {{< /alert >}}

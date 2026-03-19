@@ -39,11 +39,6 @@ dir: rtl
 - اختبار لاسلكي متعدد البروتوكولات في تمارين الفريق الأحمر
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-wifi-multiboard.png" alt="SDRLab Flipper Zero WiFi متعددة اللوحات" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 هل تريد الاستفسار عن الأسعار؟ [اتصل بنا](/ar/contact/)
 {{< /alert >}}

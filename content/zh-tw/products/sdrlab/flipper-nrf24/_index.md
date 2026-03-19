@@ -45,12 +45,6 @@ tags: ["Flipper Zero 擴充", "NRF24", "2.4GHz", "MouseJacker", "資安研究"]
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-nrf24.png" alt="SDRLab Flipper Zero NRF24 模組" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 需要詢問報價？[聯絡我們](/zh-tw/contact/)
 {{< /alert >}}

@@ -40,12 +40,6 @@ tags: ["Flipper Zero 擴充", "乙太網路", "網路測試", "有線網路"]
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero 以太網路測試模組" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 需要詢問報價？[聯絡我們](/zh-tw/contact/)
 {{< /alert >}}

@@ -38,12 +38,6 @@ tags: ["Expansão Flipper Zero", "Ethernet", "Teste de Rede", "Rede Cabeada"]
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero Módulo de Teste Ethernet" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
 {{< /alert >}}

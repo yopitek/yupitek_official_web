@@ -49,11 +49,6 @@ dir: rtl
 - تعليم اختبار اختراق Wi-Fi في البيئات المرخصة
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-5g.png" alt="SDRLab Flipper Zero 5G لوحة التوسعة" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 هل تريد الاستفسار عن الأسعار؟ [اتصل بنا](/ar/contact/)
 {{< /alert >}}

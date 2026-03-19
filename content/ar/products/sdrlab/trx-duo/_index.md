@@ -57,11 +57,6 @@ dir: rtl
 - تجارب اتصالات الراديو الهواة (مسابقات الراديو، الرصد الفلكي)
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/trx-duo.png" alt="SDRLab TRX-duo" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 هل تريد الاستفسار عن الأسعار؟ [اتصل بنا](/ar/contact/)
 {{< /alert >}}

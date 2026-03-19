@@ -35,11 +35,6 @@ dir: rtl
 - تجارب بروتوكولات الشبكات التعليمية
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero وحدة اختبار الإيثرنت" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 هل تريد الاستفسار عن الأسعار؟ [اتصل بنا](/ar/contact/)
 {{< /alert >}}

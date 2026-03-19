@@ -38,11 +38,6 @@ tags: ["Расширение Flipper Zero", "NRF24", "2.4GHz", "MouseJacker", "�
 - Симуляция беспроводных атак в упражнениях Red Team
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-nrf24.png" alt="SDRLab Flipper Zero Модуль NRF24" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 Хотите запросить коммерческое предложение? [Свяжитесь с нами](/ru/contact/)
 {{< /alert >}}

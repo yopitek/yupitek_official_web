@@ -40,12 +40,6 @@ tags: ["Flipper Zero 拡張", "イーサネット", "ネットワークテスト
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-ethernet.png" alt="SDRLab Flipper Zero イーサネットテストモジュール" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 お見積もりのお問い合わせは[こちら](/ja/contact/)
 {{< /alert >}}

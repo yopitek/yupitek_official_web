@@ -58,12 +58,6 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "ポータブル SDR"]
 
 ---
 
-{{< gallery >}}
-  <img src="/images/products/sdrlab/h4m.png" alt="SDRLab H4M" />
-{{< /gallery >}}
-
----
-
 {{< alert >}}
 お見積もりのお問い合わせは[こちら](/ja/contact/)
 {{< /alert >}}

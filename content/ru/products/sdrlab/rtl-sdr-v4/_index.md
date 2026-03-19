@@ -46,11 +46,6 @@ tags: ["SDR", "RTL-SDR", "Приём радиосигналов", "USB", "GNU Ra
 - Мониторинг RF-спектра и исследование безопасности
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/rtl-sdr-v4.png" alt="RTL-SDR Blog RTL SDR V4" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 Хотите запросить коммерческое предложение? [Свяжитесь с нами](/ru/contact/)
 {{< /alert >}}

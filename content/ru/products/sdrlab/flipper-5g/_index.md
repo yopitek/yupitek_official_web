@@ -47,11 +47,6 @@ tags: ["Расширение Flipper Zero", "5GHz", "Wi-Fi", "Deauth", "Иссл
 - Образование в области Wi-Fi тестирования на проникновение в авторизованных средах
 
 ---
-{{< gallery >}}
-  <img src="/images/products/sdrlab/flipper-5g.png" alt="SDRLab Flipper Zero Плата расширения 5G" />
-{{< /gallery >}}
-
----
 {{< alert >}}
 Хотите запросить коммерческое предложение? [Свяжитесь с нами](/ru/contact/)
 {{< /alert >}}

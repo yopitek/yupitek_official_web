@@ -28,7 +28,7 @@
     weight   = 23
 
   [[main]]
-    name     = "GraphicCard"
+    name     = "顯示卡"
     pageRef  = "/products/graphiccard"
     parent   = "產品"
     weight   = 24

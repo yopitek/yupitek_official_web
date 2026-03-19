@@ -1,10 +1,16 @@
 {{/* hreflang alternate links for multilingual SEO */}}
+{{/* Uses .Language.LanguageCode for proper BCP 47 tags (e.g. zh-TW, zh-CN) */}}
+{{/* x-default points to English — the neutral fallback for unmatched locales */}}
 {{ if .IsTranslated }}
   {{ range .Translations }}
-    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+    <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}">
   {{ end }}
-  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
-  <link rel="alternate" hreflang="x-default" href="{{ .Site.Home.Permalink }}">
+  <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}">
+  {{ range site.Sites }}
+    {{ if eq .Language.Lang "en" }}
+      <link rel="alternate" hreflang="x-default" href="{{ .Home.Permalink }}">
+    {{ end }}
+  {{ end }}
 {{ end }}
 
 {{/* Homepage hero content: left-align body text inside the centered hero card */}}

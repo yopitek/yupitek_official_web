@@ -86,6 +86,11 @@ body > main {
   scroll-padding-top: 4rem;
 }
 
+/* Mobile menu: lock background scroll when overlay is open */
+body:has(#mobile-menu-toggle:checked) {
+  overflow: hidden;
+}
+
 /* Security tools legal notice */
 .legal-notice {
   border-left: 3px solid var(--brand-cyan);

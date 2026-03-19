@@ -8,25 +8,83 @@ brands: ["ubiquiti"]
 tags: ["毫米波", "點對點", "無線橋接", "5GHz", "高速骨幹"]
 ---
 
-## 產品概述
+## 產品特色
 
-Wave MLO5 是 Ubiquiti 的 5GHz 毫米波點對點無線橋接裝置，採用 Multi-Link Operation 技術，在短距離（通常 200m 以內）提供超高頻寬、低延遲的無線骨幹連接，適合建築間或同一建築不同樓層間的無線骨幹部署。
+![Ubiquiti Wave MLO5](/images/products/ubiquiti/wave-mlo5.png)
 
-## 主要規格
+- WiFi 7 雙 5 GHz 無線回傳（Multi-Link Operation），全球 5 GHz 頻段適用
+- 總吞吐量達 5+ Gbps，最遠傳輸距離 100 km
+- 內建 GPS 天線，支援精確對準與定時
+- IPX6 防水防塵，適合全天候戶外部署
+- 搭載 (1) 10 GbE RJ45 + (1) 10G SFP+ 雙上行埠
+- WPA3-PSK (AES) 加密，NDAA 合規
+- CE 認證，適用全球市場
+
+## 產品規格
+
+### Mechanical
 
 | 項目 | 規格 |
 |------|------|
-| 頻段 | 5GHz 毫米波 |
-| 技術 | Multi-Link Operation (MLO) |
-| 有線介面 | 10G SFP+ |
-| 用途 | 點對點橋接 |
+| 尺寸 Dimensions | 249.3 × 82 × 47.6 mm (9.8 × 3.2 × 1.9") |
+| 重量 Weight | 575 g (1.3 lb) |
+| 外殼材質 Enclosure Material | Aluminum alloy, UV-resistant polycarbonate |
+| 掛架材質 Mount Material | Strap: stainless steel; Universal bracket: UV-resistant polycarbonate |
+| 安裝方式 Mounting | Pole Mount (1–2" / 25.4–50.8 mm) |
+| 防水等級 Weatherproofing | IPX6 |
 
-{{< gallery >}}
-  <img src="/images/products/ubiquiti/wave-mlo5.png" alt="Ubiquiti Wave MLO5" />
-{{< /gallery >}}
+### Hardware
+
+| 項目 | 規格 |
+|------|------|
+| 處理器 Processor | Quad-core IPQ5322 @ 1.5 GHz |
+| 記憶體 Memory | DDR4 1 GB |
+| 網路介面 Networking Interface | (1) 10 GbE RJ45 + (1) 10G SFP+ |
+| 最大功耗 Max. Power Consumption | 20W |
+| 供電方式 Power Method | Passive PoE 4-pairs / 2-pairs |
+| 電壓範圍 Supported Voltage Range | 44–54V DC / 22–27V DC |
+| 電源供應器 Power Supply | 54V DC, 0.56A, 10 GbE PoE adapter（隨附） |
+| MIMO (5 GHz) | (2) 2 × 2（雙射頻） |
+| 最大發射功率 Max. TX Power (5 GHz) | 24 dBm |
+| GPS | ✓ |
+| 射頻連接器 RF Connections | (2) RP-SMA 防水 + (1) GPS 防水 |
+| 環境操作溫度 Ambient Operating Temperature | -40 to 60°C (-40 to 140°F) |
+| 操作濕度 Ambient Operating Humidity | 5 to 95% noncondensing |
+| NDAA 合規 | ✓ |
+| 認證 Certifications | FCC, IC, CE |
+
+### System
+
+| 項目 | 規格 |
+|------|------|
+| 總吞吐量 Total Throughput | 5+ Gbps |
+| 最大距離 Max. Range | 100 km (62.1 mi) |
+| 運作模式 Operating Mode | PtP（點對點） |
+| 加密 Encryption | WPA3-PSK (AES) |
+
+### Radio Frequency
+
+| 項目 | 規格 |
+|------|------|
+| 操作頻率 Operating Frequency (Worldwide) | 5180–5320 MHz / 5500–5700 MHz / 5745–5825 MHz |
+| 頻道頻寬 Channel Bandwidth | Radio 1: 20/40/80/160 MHz; Radio 2: 20/40/80/160/240 MHz |
+
+### Software
+
+| 項目 | 規格 |
+|------|------|
+| 管理平台 Management Platform | UISP |
+| Ping Watchdog | ✓ |
+| NTP Client | ✓ |
+| 天線對準 Antenna Alignment | ✓ |
+| 網路模式 Network Mode | Bridge Mode |
+
+## 應用環境
+
+適用於 ISP 與企業在無 6 GHz 頻譜授權地區的點對點無線回傳。工作於 5 GHz 雙射頻，提供 5+ Gbps 吞吐量，距離最遠 100 km。適合戶外桿掛安裝，CE 認證確保歐洲及全球市場合規。由 UISP 平台統一管理。
 
 ---
 
 {{< alert >}}
-需要詢問報價？[聯絡我們](/zh-tw/contact/)
+需要詢問報價或 UniFi 網路規劃？[聯絡我們](/zh-tw/contact/)
 {{< /alert >}}

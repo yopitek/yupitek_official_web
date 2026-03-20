@@ -33,3 +33,10 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 - Ataque camuflado como adaptador USB normal
 - Uso en combinación con cables USB existentes
 - Pruebas de penetración en dispositivos móviles (OTG)
+
+## Documentación oficial y descargas
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Documentación oficial | [Ver en línea](https://o.mg.lol/setup/OMGCable/) |
+| ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/omg) |

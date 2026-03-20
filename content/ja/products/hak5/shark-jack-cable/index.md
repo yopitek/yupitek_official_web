@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 - シリアルコンソールアクセスが必要な高度なPayload開発
 - 目視で識別が困難なレッドチームフィールドデプロイ
 - Androidデバイスを使用したモバイルペネトレーションテスト
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/shark/cable) |

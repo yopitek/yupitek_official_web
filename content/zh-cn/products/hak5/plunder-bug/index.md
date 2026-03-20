@@ -32,3 +32,10 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 - 注入分析设备进行主动网络扫描（Active Mode）
 - 结合 Wireshark 进行协议逆向分析
 - 移动端（Android）现场数据包捕获
+
+## 官方文件与固件下载
+
+| 资源 | 链接 |
+|------|------|
+| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/plunder-bug/plunder-bug/) |
+| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/bug) |

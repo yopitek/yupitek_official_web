@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 - التحكم في حركة المرور، انتحال DNS (SPOOFDNS)، حقن الحزم
 - تدريب Blue Team: عزل الأجهزة المشبوهة (JAIL / ISOLATE)
 - أتمتة تقييم ثغرات شبكة المؤسسة
+
+## الوثائق الرسمية والتنزيلات
+
+| المورد | الرابط |
+|--------|--------|
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
+| ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/squirrel/mk2) |

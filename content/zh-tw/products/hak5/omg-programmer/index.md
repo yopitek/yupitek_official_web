@@ -31,3 +31,10 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 - Self-Destruct 後的裝置救援與韌體恢復
 - 企業批次部署多台 O.MG 裝置
 - 鑑識備份 O.MG 裝置韌體
+
+## 官方文件與韌體下載
+
+| 資源 | 連結 |
+|------|------|
+| 📖 官方使用文件 | [線上查看](https://o-mg.github.io/WebFlasher/) |
+| ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/omg) |

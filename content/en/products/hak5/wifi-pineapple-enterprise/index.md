@@ -44,3 +44,10 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 - High-density wireless environment testing (thousands of stations and APs)
 - Red team enterprise simulation exercises
 - Pentest as a Service (PtaaS) delivery engagements
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://docs.hak5.org/wifi-pineapple-enterprise/wifi-pineapple-enterprise/) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/pineapple/enterprise) |

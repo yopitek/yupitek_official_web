@@ -41,3 +41,10 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 - 不正AP / Karma攻撃の研究
 - インテリジェンス収集とデバイス識別（OSINT）
 - セキュリティトレーニングと教育デモンストレーション
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/wifi-pineapple/wifi-pineapple-mk7-by-hak5/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/pineapple/mk7) |

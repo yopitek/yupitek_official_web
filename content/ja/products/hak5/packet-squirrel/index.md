@@ -38,3 +38,10 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 - トラフィック操作、DNSスプーフィング（SPOOFDNS）、パケットインジェクション
 - Blue Team演習：疑わしいデバイスの隔離（JAIL / ISOLATEモード）
 - 企業ネットワーク脆弱性評価の自動化
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/squirrel/mk2) |

@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 - Geofence-controlled restricted Payload execution
 - Enterprise red team physical access automation exercises
 - Post-exploitation tool execution (Metasploit / Responder)
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://docs.hak5.org/bash-bunny/bash-bunny-by-hak5/) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/bunny) |

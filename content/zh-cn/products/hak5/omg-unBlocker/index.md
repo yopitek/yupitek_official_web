@@ -33,3 +33,10 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 - 测试企业 USB 安全政策的有效性
 - 红队高度隐蔽的物理访问场景
 - 供 Blue Team 学习识别伪装 Data Blocker 的技能
+
+## 官方文件与固件下载
+
+| 资源 | 链接 |
+|------|------|
+| 📖 官方使用文件 | [在线查看](https://o.mg.lol/setup/OMGCable/) |
+| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/omg) |

@@ -36,3 +36,10 @@ featureimage: "/images/products/hak5/shark-jack.png"
 - Red team fieldwork in brief physical contact scenarios
 - Corporate internal network implant and backdoor establishment
 - Automated wired network vulnerability assessment
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/shark) |

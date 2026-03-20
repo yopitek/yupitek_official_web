@@ -36,3 +36,10 @@ featureimage: "/images/products/hak5/shark-jack.png"
 - 短時間物理接触シナリオでのレッドチームフィールドワーク
 - 企業内ネットワーク植込みとバックドア構築
 - 有線ネットワーク脆弱性評価の自動化
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/shark) |

@@ -36,3 +36,10 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 - Simulação automatizada de engenharia social do Red Team
 - Automação de tarefas de TI complexas (uso legítimo)
 - Treinamento em cibersegurança e cursos de testes de penetração
+
+## Documentação oficial e downloads
+
+| Recurso | Link |
+|---------|------|
+| 📖 Documentação oficial | [Ver online](https://docs.hak5.org/hak5-usb-rubber-ducky/usb-rubber-ducky-by-hak5/) |
+| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/ducky) |

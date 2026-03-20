@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 - ジオフェンスによるPayload実行制限
 - 企業レッドチームによる物理アクセス自動化演習
 - ポスト侵害ツールの実行（Metasploit / Responder）
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/bash-bunny/bash-bunny-by-hak5/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/bunny) |

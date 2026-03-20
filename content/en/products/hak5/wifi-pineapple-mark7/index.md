@@ -41,3 +41,10 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 - Rogue AP / Karma attack research
 - Intelligence gathering and device identification (OSINT)
 - Security training and educational demonstrations
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://docs.hak5.org/wifi-pineapple/wifi-pineapple-mk7-by-hak5/) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/pineapple/mk7) |

@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 - 地理圍欄控制的受限 Payload 執行
 - 企業紅隊物理存取自動化演練
 - 後滲透工具執行（Metasploit / Responder）
+
+## 官方文件與韌體下載
+
+| 資源 | 連結 |
+|------|------|
+| 📖 官方使用文件 | [線上查看](https://docs.hak5.org/bash-bunny/bash-bunny-by-hak5/) |
+| ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/bunny) |

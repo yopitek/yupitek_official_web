@@ -33,3 +33,10 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 - Teste da eficácia das políticas de segurança USB corporativas
 - Cenários de acesso físico altamente encobertos do Red Team
 - Treinamento do Blue Team para identificar Data Blockers falsos
+
+## Documentação oficial e downloads
+
+| Recurso | Link |
+|---------|------|
+| 📖 Documentação oficial | [Ver online](https://o.mg.lol/setup/OMGCable/) |
+| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/omg) |

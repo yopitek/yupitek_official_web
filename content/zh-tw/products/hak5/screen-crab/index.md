@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/screen-crab.png"
 - 企業安全稽核：確認螢幕資訊是否被非法擷取
 - 資安研究：HDMI 訊號安全性測試
 - 現場取證：記錄操作人員螢幕活動
+
+## 官方文件與韌體下載
+
+| 資源 | 連結 |
+|------|------|
+| 📖 官方使用文件 | [線上查看](https://docs.hak5.org/screen-crab/screen-crab-by-hak5/) |
+| ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/crab) |

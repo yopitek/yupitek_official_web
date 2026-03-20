@@ -44,3 +44,10 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 - 高密度无线环境测试（数千个 station 及 AP）
 - 红队企业模拟演练
 - Pentest as a Service（PtaaS）交付服务
+
+## 官方文件与固件下载
+
+| 资源 | 链接 |
+|------|------|
+| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/wifi-pineapple-enterprise/wifi-pineapple-enterprise/) |
+| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/pineapple/enterprise) |

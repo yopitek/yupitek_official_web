@@ -38,3 +38,10 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 - Traffic manipulation, DNS spoofing (SPOOFDNS), packet injection
 - Blue team exercises: isolating suspicious devices (JAIL / ISOLATE mode)
 - Automated enterprise network vulnerability assessment
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/squirrel/mk2) |

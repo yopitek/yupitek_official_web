@@ -38,3 +38,10 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 - 流量操控、DNS 欺騙（SPOOFDNS）、封包注入
 - 藍隊演練：隔離可疑設備（JAIL / ISOLATE 模式）
 - 企業網路弱點評估自動化
+
+## 官方文件與韌體下載
+
+| 資源 | 連結 |
+|------|------|
+| 📖 官方使用文件 | [線上查看](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
+| ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/squirrel/mk2) |

@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 - Advanced Payload development requiring serial console access
 - Red team field deployments that are difficult to visually identify
 - Mobile penetration testing using Android devices
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/shark/cable) |

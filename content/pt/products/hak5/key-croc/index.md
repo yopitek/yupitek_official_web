@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/key-croc.png"
 - Roubo de credenciais em exercícios de Red Team
 - Monitoramento de teclado em tempo real e injeção remota de Payload
 - Persistência de backdoor após acesso físico
+
+## Documentação oficial e downloads
+
+| Recurso | Link |
+|---------|------|
+| 📖 Documentação oficial | [Ver online](https://docs.hak5.org/key-croc/keycroc-by-hak5/) |
+| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/croc) |

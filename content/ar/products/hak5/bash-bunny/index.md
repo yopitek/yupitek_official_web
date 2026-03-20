@@ -40,3 +40,10 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 - تنفيذ Payload محدود بالسياج الجغرافي
 - تدريبات الفريق الأحمر (Red Team) للوصول الفيزيائي المؤتمت للمؤسسات
 - تشغيل أدوات ما بعد الاختراق (Metasploit / Responder)
+
+## الوثائق الرسمية والتنزيلات
+
+| المورد | الرابط |
+|--------|--------|
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/bash-bunny/bash-bunny-by-hak5/) |
+| ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/bunny) |

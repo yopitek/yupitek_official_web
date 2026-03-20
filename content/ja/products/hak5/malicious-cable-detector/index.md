@@ -33,3 +33,10 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 - Blue TeamによるO.MG Cable等の隠蔽ケーブル攻撃への対策
 - セキュリティ意識向上教育：物理攻撃の検出可能性を実演
 - 政府機関・金融機関など高セキュリティ要件の場所におけるUSBケーブル監査
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://github.com/O-MG/MaliciousCableDetector/wiki) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/malicious-cable-detector) |

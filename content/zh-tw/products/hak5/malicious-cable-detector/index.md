@@ -33,3 +33,10 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 - 藍隊（Blue Team）對抗 O.MG Cable 等隱蔽線材攻擊
 - 資安意識教育：展示實體攻擊的偵測可能性
 - 高安全需求場所（政府機構、金融機構）的 USB 線材稽核
+
+## 官方文件與韌體下載
+
+| 資源 | 連結 |
+|------|------|
+| 📖 官方使用文件 | [線上查看](https://github.com/O-MG/MaliciousCableDetector/wiki) |
+| ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/malicious-cable-detector) |

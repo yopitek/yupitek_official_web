@@ -35,3 +35,10 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 - تطوير Payload متقدم يتطلب وصولاً تسلسلياً عبر Console
 - نشر ميداني للفريق الأحمر يصعب اكتشافه بصرياً
 - اختبار الاختراق المحمول بالتعاون مع أجهزة Android
+
+## الوثائق الرسمية والتنزيلات
+
+| المورد | الرابط |
+|--------|--------|
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/shark/cable) |

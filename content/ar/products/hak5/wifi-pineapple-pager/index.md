@@ -45,3 +45,10 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 - اختبار هجمات WPA3 Enterprise
 - مهام Payload آلية مدفوعة بـ DuckyScript
 - OSINT ميداني، التقاط المصافحة، هجمات Deauth
+
+## الوثائق الرسمية والتنزيلات
+
+| المورد | الرابط |
+|--------|--------|
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/wifi-pineapple-pager/wifi-pineapple-pager-by-hak5/) |
+| ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/pineapple/pager) |

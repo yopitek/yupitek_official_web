@@ -36,3 +36,10 @@ featureimage: "/images/products/hak5/shark-jack.png"
 - 红队外勤短暂物理接触场景
 - 企业内网植入与后门建立
 - 自动化有线网络漏洞评估
+
+## 官方文件与固件下载
+
+| 资源 | 链接 |
+|------|------|
+| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/shark) |

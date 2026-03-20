@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/omg-plug.png"
 - Rapid HID attack deployment (no cable required)
 - Everyday carry tool for social engineering scenarios
 - Red team simulations of brief physical access scenarios
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://o.mg.lol/setup/OMGPlug/) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/omg) |

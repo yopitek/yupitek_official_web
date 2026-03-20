@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/key-croc.png"
 - レッドチーム演習での認証情報の窃取
 - リアルタイムキーストローク監視とリモートPayloadインジェクション
 - 物理アクセス後のバックドア持続化
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/key-croc/keycroc-by-hak5/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/croc) |

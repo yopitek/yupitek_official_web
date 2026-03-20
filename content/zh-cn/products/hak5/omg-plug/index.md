@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/omg-plug.png"
 - 快速 HID 攻击部署（无需线材）
 - 社交工程中的日常携带工具
 - 红队模拟短暂物理访问场景
+
+## 官方文件与固件下载
+
+| 资源 | 链接 |
+|------|------|
+| 📖 官方使用文件 | [在线查看](https://o.mg.lol/setup/OMGPlug/) |
+| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/omg) |

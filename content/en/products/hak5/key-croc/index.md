@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/key-croc.png"
 - Credential harvesting during red team engagements
 - Real-time keystroke monitoring and remote Payload injection
 - Backdoor persistence after physical access
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://docs.hak5.org/key-croc/keycroc-by-hak5/) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/croc) |

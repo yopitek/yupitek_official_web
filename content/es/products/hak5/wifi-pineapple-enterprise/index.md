@@ -44,3 +44,10 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 - Prueba de entornos inalámbricos de alta densidad (miles de estaciones y APs)
 - Ejercicios de simulación corporativa del Red Team
 - Prestación de servicio Pentest as a Service (PtaaS)
+
+## Documentación oficial y descargas
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Documentación oficial | [Ver en línea](https://docs.hak5.org/wifi-pineapple-enterprise/wifi-pineapple-enterprise/) |
+| ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/pineapple/enterprise) |

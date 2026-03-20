@@ -32,3 +32,10 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 - 分析デバイスを注入したアクティブネットワークスキャン（アクティブモード）
 - Wiresharkを使ったプロトコルリバースエンジニアリング
 - モバイル（Android）現場でのパケットキャプチャ
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/plunder-bug/plunder-bug/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/bug) |

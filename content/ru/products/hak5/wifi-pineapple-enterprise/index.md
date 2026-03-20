@@ -44,3 +44,10 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 - Тестирование высокоплотных беспроводных сред (тысячи станций и точек доступа)
 - Корпоративные учения по моделированию атак Red Team
 - Оказание услуги Pentest as a Service (PtaaS)
+
+## Официальная документация и загрузки
+
+| Ресурс | Ссылка |
+|--------|--------|
+| 📖 Официальная документация | [Просмотреть онлайн](https://docs.hak5.org/wifi-pineapple-enterprise/wifi-pineapple-enterprise/) |
+| ⬇️ Прошивка и инструменты | [Портал загрузок Hak5](https://downloads.hak5.org/pineapple/enterprise) |

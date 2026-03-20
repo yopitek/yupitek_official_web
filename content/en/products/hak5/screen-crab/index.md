@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/screen-crab.png"
 - Corporate security audits: verifying whether screen content is being illegally captured
 - Security research: HDMI signal security testing
 - On-site forensics: recording operator screen activity
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://docs.hak5.org/screen-crab/screen-crab-by-hak5/) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/crab) |

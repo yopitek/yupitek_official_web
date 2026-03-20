@@ -41,3 +41,10 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 - 偽 AP / Karma 攻擊研究
 - 情資收集與設備識別（OSINT）
 - 資安培訓與教學展示
+
+## 官方文件與韌體下載
+
+| 資源 | 連結 |
+|------|------|
+| 📖 官方使用文件 | [線上查看](https://docs.hak5.org/wifi-pineapple/wifi-pineapple-mk7-by-hak5/) |
+| ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/pineapple/mk7) |

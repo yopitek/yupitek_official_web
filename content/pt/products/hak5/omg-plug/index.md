@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/omg-plug.png"
 - Deploy rápido de ataques HID (sem cabo)
 - Ferramenta EDC em engenharia social
 - Simulação de cenário de acesso físico breve do Red Team
+
+## Documentação oficial e downloads
+
+| Recurso | Link |
+|---------|------|
+| 📖 Documentação oficial | [Ver online](https://o.mg.lol/setup/OMGPlug/) |
+| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/omg) |

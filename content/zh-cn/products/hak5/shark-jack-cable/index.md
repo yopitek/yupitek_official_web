@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 - 需要串行 console 访问的进阶 Payload 开发
 - 红队现场部署，难以被目视识别
 - Android 设备配合使用的移动渗透测试
+
+## 官方文件与固件下载
+
+| 资源 | 链接 |
+|------|------|
+| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/shark/cable) |

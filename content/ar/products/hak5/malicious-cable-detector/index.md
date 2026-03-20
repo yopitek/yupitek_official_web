@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 - الفريق الأزرق (Blue Team) لمواجهة هجمات الكابلات المخفية مثل O.MG Cable
 - توعية الأمن السيبراني: إظهار إمكانية اكتشاف الهجمات الفيزيائية
 - فحص كابلات USB في المواقع عالية الأمان (الجهات الحكومية والمالية)
+
+## الوثائق الرسمية والتنزيلات
+
+| المورد | الرابط |
+|--------|--------|
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://github.com/O-MG/MaliciousCableDetector/wiki) |
+| ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/malicious-cable-detector) |

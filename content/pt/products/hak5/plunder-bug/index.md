@@ -32,3 +32,10 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 - Injeção de dispositivo de análise para varredura ativa de rede (Modo ativo)
 - Análise de protocolos em engenharia reversa com Wireshark
 - Captura de pacotes em campo em dispositivos Android
+
+## Documentação oficial e downloads
+
+| Recurso | Link |
+|---------|------|
+| 📖 Documentação oficial | [Ver online](https://docs.hak5.org/plunder-bug/plunder-bug/) |
+| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/bug) |

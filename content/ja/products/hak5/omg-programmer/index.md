@@ -31,3 +31,10 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 - Self-Destruct後のデバイス復旧とファームウェア復元
 - 企業での複数O.MGデバイスの一括デプロイ
 - O.MGデバイスファームウェアのフォレンジックバックアップ
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://o-mg.github.io/WebFlasher/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/omg) |

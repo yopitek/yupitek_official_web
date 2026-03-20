@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/screen-crab.png"
 - 企業セキュリティ監査：画面情報が不正にキャプチャされていないかの確認
 - セキュリティ研究：HDMIシグナルセキュリティテスト
 - 現場フォレンジック：オペレーターの画面操作の記録
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/screen-crab/screen-crab-by-hak5/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/crab) |

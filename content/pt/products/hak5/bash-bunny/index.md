@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 - Execução de Payload controlada por Geofencing
 - Exercícios de Red Team para acesso físico automatizado em empresas
 - Execução de ferramentas pós-intrusão (Metasploit / Responder)
+
+## Documentação oficial e downloads
+
+| Recurso | Link |
+|---------|------|
+| 📖 Documentação oficial | [Ver online](https://docs.hak5.org/bash-bunny/bash-bunny-by-hak5/) |
+| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/bunny) |

@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/key-croc.png"
 - 紅隊演練中的憑證竊取
 - 即時鍵盤監控與遠端 Payload 注入
 - 實體存取後的後門持久化
+
+## 官方文件與韌體下載
+
+| 資源 | 連結 |
+|------|------|
+| 📖 官方使用文件 | [線上查看](https://docs.hak5.org/key-croc/keycroc-by-hak5/) |
+| ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/croc) |

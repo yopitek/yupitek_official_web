@@ -33,3 +33,10 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 - Blue Team defense against O.MG Cable and other covert cable attacks
 - Security awareness training: demonstrate detectability of physical attacks
 - USB cable auditing in high-security environments (government agencies, financial institutions)
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://github.com/O-MG/MaliciousCableDetector/wiki) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/malicious-cable-detector) |

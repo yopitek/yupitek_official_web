@@ -31,3 +31,10 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 - Rescate de dispositivo y recuperación de firmware tras Self-Destruct
 - Despliegue por lotes de múltiples dispositivos O.MG en empresas
 - Respaldo forense del firmware de dispositivos O.MG
+
+## Documentación oficial y descargas
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Documentación oficial | [Ver en línea](https://o-mg.github.io/WebFlasher/) |
+| ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/omg) |

@@ -36,3 +36,10 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 - レッドチームによる自動化ソーシャルエンジニアリングシミュレーション
 - 複雑なITタスクの自動化（正当な用途）
 - セキュリティトレーニングとペネトレーションテストコース
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/hak5-usb-rubber-ducky/usb-rubber-ducky-by-hak5/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/ducky) |

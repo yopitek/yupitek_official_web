@@ -33,3 +33,10 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 - Implant attacks disguised as ordinary USB adapters
 - Use in combination with existing USB cables
 - Mobile device (OTG) penetration testing
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://o.mg.lol/setup/OMGCable/) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/omg) |

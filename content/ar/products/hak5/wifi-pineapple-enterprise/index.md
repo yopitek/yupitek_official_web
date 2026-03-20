@@ -45,3 +45,10 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 - اختبار البيئات اللاسلكية كثيفة الكثافة (آلاف المحطات ونقاط الوصول)
 - تدريبات محاكاة مؤسسية للفريق الأحمر
 - تقديم خدمة Pentest as a Service (PtaaS)
+
+## الوثائق الرسمية والتنزيلات
+
+| المورد | الرابط |
+|--------|--------|
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/wifi-pineapple-enterprise/wifi-pineapple-enterprise/) |
+| ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/pineapple/enterprise) |

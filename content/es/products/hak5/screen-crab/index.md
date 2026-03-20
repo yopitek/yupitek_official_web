@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/screen-crab.png"
 - Auditoría de seguridad corporativa: verificar que la información de pantalla no sea capturada ilegalmente
 - Investigación en ciberseguridad: pruebas de seguridad de señal HDMI
 - Análisis forense en campo: registro de la actividad de pantalla del operador
+
+## Documentación oficial y descargas
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Documentación oficial | [Ver en línea](https://docs.hak5.org/screen-crab/screen-crab-by-hak5/) |
+| ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/crab) |

@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/omg-cable.png"
 - ハードウェアキーロギング + リモートコントロールの複合攻撃
 - Blue Team防御訓練およびテスト
 - セキュリティ教育デモンストレーション
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://o.mg.lol/setup/OMGCable/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/omg) |

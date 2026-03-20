@@ -36,3 +36,10 @@ featureimage: "/images/products/hak5/shark-jack.png"
 - Cenários de contato físico breve do Red Team em campo
 - Implante em rede interna e estabelecimento de backdoor
 - Avaliação automatizada de vulnerabilidades em rede cabeada
+
+## Documentação oficial e downloads
+
+| Recurso | Link |
+|---------|------|
+| 📖 Documentação oficial | [Ver online](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/shark) |

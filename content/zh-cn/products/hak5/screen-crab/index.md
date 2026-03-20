@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/screen-crab.png"
 - 企业安全审计：确认屏幕信息是否被非法捕获
 - 信息安全研究：HDMI 信号安全性测试
 - 现场取证：记录操作人员屏幕活动
+
+## 官方文件与固件下载
+
+| 资源 | 链接 |
+|------|------|
+| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/screen-crab/screen-crab-by-hak5/) |
+| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/crab) |

@@ -33,3 +33,10 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 - 伪装成普通 USB 转接头的植入攻击
 - 与现有 USB 线材结合使用
 - 移动设备（OTG）渗透测试
+
+## 官方文件与固件下载
+
+| 资源 | 链接 |
+|------|------|
+| 📖 官方使用文件 | [在线查看](https://o.mg.lol/setup/OMGCable/) |
+| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/omg) |

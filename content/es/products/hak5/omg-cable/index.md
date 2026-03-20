@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/omg-cable.png"
 - Ataque combinado: registro de hardware + control remoto
 - Entrenamiento y pruebas para Blue Team
 - Demostraciones de concienciación en ciberseguridad
+
+## Documentación oficial y descargas
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Documentación oficial | [Ver en línea](https://o.mg.lol/setup/OMGCable/) |
+| ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/omg) |

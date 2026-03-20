@@ -36,3 +36,10 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 - 红队自动化社交工程模拟
 - 繁复 IT 任务自动化（合法用途）
 - 信息安全培训教学与渗透测试课程
+
+## 官方文件与固件下载
+
+| 资源 | 链接 |
+|------|------|
+| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/hak5-usb-rubber-ducky/usb-rubber-ducky-by-hak5/) |
+| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/ducky) |

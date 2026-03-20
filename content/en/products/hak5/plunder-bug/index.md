@@ -32,3 +32,10 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 - Active network scanning by injecting analysis device (Active Mode)
 - Protocol reverse engineering with Wireshark
 - Mobile (Android) on-site packet capture
+
+## Official Documentation & Downloads
+
+| Resource | Link |
+|----------|------|
+| 📖 Official Documentation | [View Online](https://docs.hak5.org/plunder-bug/plunder-bug/) |
+| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/bug) |

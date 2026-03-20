@@ -38,3 +38,10 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 - Манипуляция трафиком, спуфинг DNS (SPOOFDNS), инъекция пакетов
 - Обучение Blue Team: изоляция подозрительных устройств (JAIL / ISOLATE)
 - Автоматизированная оценка уязвимостей корпоративной сети
+
+## Официальная документация и загрузки
+
+| Ресурс | Ссылка |
+|--------|--------|
+| 📖 Официальная документация | [Просмотреть онлайн](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
+| ⬇️ Прошивка и инструменты | [Портал загрузок Hak5](https://downloads.hak5.org/squirrel/mk2) |

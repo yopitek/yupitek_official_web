@@ -39,3 +39,10 @@ featureimage: "/images/products/hak5/omg-cable.png"
 - 硬件侧录 + 远程控制复合攻击
 - 检测防御团队（Blue Team）训练与测试
 - 信息安全教育展示
+
+## 官方文件与固件下载
+
+| 资源 | 链接 |
+|------|------|
+| 📖 官方使用文件 | [在线查看](https://o.mg.lol/setup/OMGCable/) |
+| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/omg) |

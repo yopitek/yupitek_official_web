@@ -44,3 +44,10 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 - WPA3 Enterpriseアタックテスト
 - DuckyScript駆動の自動化Payloadタスク
 - 現場OSINT、ハンドシェイクキャプチャ、デオーセンティケーション攻撃
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/wifi-pineapple-pager/wifi-pineapple-pager-by-hak5/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/pineapple/pager) |

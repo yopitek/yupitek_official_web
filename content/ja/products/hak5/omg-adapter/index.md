@@ -33,3 +33,10 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 - 普通のUSBアダプターに偽装した植込み攻撃
 - 既存のUSBケーブルとの組み合わせ利用
 - モバイルデバイス（OTG）へのペネトレーションテスト
+
+## 公式ドキュメント & ダウンロード
+
+| リソース | リンク |
+|----------|--------|
+| �� 公式ドキュメント | [オンラインで見る](https://o.mg.lol/setup/OMGCable/) |
+| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/omg) |

@@ -34,3 +34,10 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 - Desarrollo de Payload avanzado que requiere acceso serial a Console
 - Despliegue en campo del Red Team difícil de detectar visualmente
 - Pruebas de penetración móviles en colaboración con dispositivos Android
+
+## Documentación oficial y descargas
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Documentación oficial | [Ver en línea](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/shark/cable) |

@@ -1,55 +1,87 @@
 ---
-title: "ALFA AWUS036AXER — Wi-Fi 6 超薄型内蔵アンテナ USB ワイヤレスアダプター"
-description: "ALFA AWUS036AXER、Realtek RTL8832BU、Wi-Fi 6 デュアルバンド、USB 3.2、65mm 超薄型ボディ、内蔵アンテナ、わずか 10.5g、携帯性に優れた設計。"
+title: "ALFA AWUS036AXER — Wi-Fi 6 超薄型ナノ USB アダプター"
+description: "ALFA AWUS036AXER、Realtek RTL8832BUチップ、Wi-Fi 6デュアルバンド、ナノフォームファクタ（~65×24×10mm）。日常接続向け — Kali Linux・セキュリティ研究には非推奨。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 6", "802.11ax", "USB 3.2", "超薄型", "内蔵アンテナ"]
+tags: ["Wi-Fi 6", "802.11ax", "超薄型", "USB 3.2", "ポータブル", "ナノ"]
 ---
-
-{{< alert "warning" >}}
-**合法使用に関する注意**：本製品の機能は、認可されたセキュリティテスト、教育・研究、および合法的なペネトレーションテストのみに使用してください。対象ネットワークの明確な許可を取得していることをご確認ください。
-{{< /alert >}}
 
 ## 製品概要
 
-AWUS036AXER は ALFA シリーズで最も軽量な Wi-Fi 6 ワイヤレスアダプターです。Realtek RTL8832BU チップセットを採用し、本体サイズはわずか 65 × 24 × 10 mm、重量 10.5 g で、2×2 統合型デュアルバンドアンテナ設計（外付けアンテナなし）を採用しています。日常の携帯や外付けアンテナを必要としないシーンに最適です。
+AWUS036AXER は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）デュアルバンド（2.4 GHz + 5 GHz）対応、最大 1800 Mbps（2.4 GHz: 573 Mbps + 5 GHz: 1200 Mbps）。超薄型ナノデザイン（約 65 × 24 × 10 mm、約 10g）で携帯性に優れています。
 
-## 仕様
+> ⚠️ **注意：** ナノフォームファクタ — **RP-SMA コネクタなし**、アンテナのアップグレード不可。**Kali Linux またはセキュリティ研究には推奨しません**。
+
+> **macOSについて：** すべての ALFA アダプターは macOS サポートが限定的です。macOS 11 Big Sur 以降および Apple Silicon（M1/M2/M3）は**非対応**です。Intel Mac での最大サポートは macOS 10.15 Catalina です。
+
+## 主な特長
+
+- Wi-Fi 6（802.11ax）デュアルバンド：2.4 GHz + 5 GHz
+- Realtek RTL8832BU チップ
+- 最大 1800 Mbps
+- 超薄型ナノデザイン（~65×24×10mm、~10g）
+- USB 3.2 Gen 1 Type-A
+- WPA3/WPA2/WPA/WEP
+- ⚠️ RP-SMA コネクタなし、アンテナ一体型
+
+## 技術仕様
 
 | 項目 | 仕様 |
 |------|------|
-| 型番 | AWUS036AXER |
 | チップセット | Realtek RTL8832BU |
-| Wi-Fi 規格 | IEEE 802.11 a/b/g/n/ac/ax（Wi-Fi 6） |
-| 周波数帯 | デュアルバンド 2.4GHz / 5GHz |
-| 最大転送速度 | 802.11n: 300 Mbps / 802.11ac: 867 Mbps / 802.11ax 2.4G: 573.5 Mbps / 802.11ax 5G: 1201 Mbps |
-| アンテナ | 統合型 2×2 デュアルバンドアンテナ |
-| アンテナコネクタ | なし（統合型設計） |
-| インターフェース | USB 3.2 Gen 1 (Type-A) |
-| セキュリティ | WEP 64/128-bit、WPA / WPA2 / WPA3 |
-| サイズ | 65 × 24 × 10 mm |
-| 重量 | 10.5 g |
-| 動作温度 | 0°C ~ 40°C |
-| 電源入力 | DC 5V / 800mA |
+| Wi-Fi 規格 | IEEE 802.11 a/b/g/n/ac/ax（Wi-Fi 6）|
+| 周波数帯 | 2.4 GHz + 5 GHz（6 GHz なし）|
+| 最大データレート | 1800 Mbps（2.4G: 573 Mbps + 5G: 1200 Mbps）|
+| アンテナ | 内蔵ナノ（RP-SMA なし）|
+| USB インターフェース | USB 3.2 Gen 1 Type-A |
+| サイズ | ~65 × 24 × 10 mm、~10g |
+| 無線セキュリティ | WPA3 / WPA2 / WPA / WEP |
 
-## 対応 OS
+## 対応OS
 
-| OS | 対応状況 |
-|------|---------|
-| Windows | ✅ ドライバーのインストールが必要 |
+| OS | 状態 | 備考 |
+|----|------|------|
+| Windows 10/11 | ✅ 対応 | Alfa ウェブサイトからドライバをダウンロード |
+| macOS | ❌ 非対応 | macOS 11+ および Apple Silicon 非対応 |
+| Ubuntu | ⚠️ ドライバ必要 | カーネル ≥ 6.14（Ubuntu 24.10+）で内蔵；旧バージョンは手動 DKMS |
+| Kali Linux | ⚠️ 限定 | カーネル < 6.12 では Monitor mode 制限；ペンテストには非推奨 |
+| NetHunter | ⚠️ 限定 | カーネル依存 |
 
-## パッケージ内容
+## 対応ハードウェア
 
-- AWUS036AXER USB ワイヤレスアダプター × 1
+| ハードウェア | 状態 | 備考 |
+|-------------|------|------|
+| Raspberry Pi 4/5 | ⚠️ ドライバ必要 | カーネル < 6.14 の Pi OS では手動インストール |
+| デスクトップ/ノートPC | ✅ 対応 | 標準 USB-A |
 
-## ドライバーダウンロード
+## 高度な機能
 
-| プラットフォーム | リンク |
+| 機能 | 状態 |
 |------|------|
-| ドライバーダウンロード | [ALFA 公式ドライバーライブラリ](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXER) |
+| Monitor Mode | ⚠️ 限定 |
+| Packet Injection | ⚠️ 限定 |
+| Soft AP モード | ✅ あり |
+| Bluetooth | ❌ なし |
+
+## 同梱物
+
+- 1× AWUS036AXER ナノアダプター
+
+## リソースとリンク
+
+| リソース | リンク |
+|----------|--------|
+| 公式ドキュメント | https://docs.alfa.com.tw/ |
+| Linux ドライバ（RTL8832BU）| https://github.com/morrownr/rtl8852bu-20240418 |
+
+## 製品仕様書ダウンロード
+
+| ドキュメント | ダウンロード |
+|------|------|
+| 公式仕様書（PDF） | [📄 AWUS036AXER 仕様書をダウンロード](/docs/alfa/AWUS036AXER_spec.pdf) |
 
 {{< gallery >}}
   <img src="/images/products/alfa/awus036axer_image_1.png" alt="ALFA AWUS036AXER" />
@@ -58,5 +90,5 @@ AWUS036AXER は ALFA シリーズで最も軽量な Wi-Fi 6 ワイヤレスア�
 ---
 
 {{< alert >}}
-この製品にご興味をお持ちでしたら、[お問い合わせ](/ja/contact/)ください。
+お見積もりやご相談は[こちら](/ja/contact/)からお気軽にどうぞ。
 {{< /alert >}}

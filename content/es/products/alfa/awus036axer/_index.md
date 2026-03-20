@@ -1,55 +1,87 @@
 ---
-title: "ALFA AWUS036AXER — Adaptador Inalámbrico USB Wi-Fi 6 Ultrafino con Antena Integrada"
-description: "ALFA AWUS036AXER, Realtek RTL8832BU, Wi-Fi 6 doble banda, USB 3.2, cuerpo ultrafino de 65mm, antena integrada, solo 10.5g, ideal para uso portátil."
+title: "ALFA AWUS036AXER — Adaptador USB Wi-Fi 6 Nano Ultradelgado"
+description: "ALFA AWUS036AXER con chipset Realtek RTL8832BU. Wi-Fi 6 de banda dual, factor de forma nano (~65×24×10mm). Para conectividad diaria — no recomendado para Kali Linux o investigación de seguridad."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 6", "802.11ax", "USB 3.2", "Compacto", "Antena Integrada"]
+tags: ["Wi-Fi 6", "802.11ax", "Ultradelgado", "USB 3.2", "Portátil", "Nano"]
 ---
-
-{{< alert "warning" >}}
-**Aviso de Uso Legal**: Las funciones de este producto son exclusivamente para pruebas de seguridad autorizadas, investigación educativa y pruebas de penetración legítimas. Asegúrese de contar con la autorización explícita de la red objetivo.
-{{< /alert >}}
 
 ## Descripción del Producto
 
-El AWUS036AXER es el adaptador Wi-Fi 6 más ligero de la serie ALFA. Usa el chipset Realtek RTL8832BU con dimensiones de apenas 65 × 24 × 10 mm y un peso de 10.5 g. Adopta un diseño de antena integrada de doble banda 2×2 (sin antena externa), siendo extremadamente portátil y adecuado para el uso diario o escenarios donde no se requieren antenas externas.
+El AWUS036AXER incorpora el chipset Realtek RTL8832BU con Wi-Fi 6 (802.11ax) de banda dual (2.4 GHz + 5 GHz), hasta 1800 Mbps (2.4 GHz: 573 Mbps + 5 GHz: 1200 Mbps). Diseño nano ultradelgado (~65 × 24 × 10 mm, ~10g) para uso cotidiano portátil.
 
-## Tabla de Especificaciones
+> ⚠️ **Nota:** Factor de forma nano — **sin conector RP-SMA**, la antena no se puede actualizar. **NO recomendado para Kali Linux o investigación de seguridad**.
 
-| Ítem | Especificación |
-|------|----------------|
-| Modelo | AWUS036AXER |
+> **Nota macOS:** Todos los adaptadores ALFA tienen soporte limitado o nulo para macOS. macOS 11 Big Sur y versiones posteriores, y Apple Silicon (M1/M2/M3) **NO** son compatibles. El soporte máximo es macOS 10.15 Catalina en Mac Intel.
+
+## Características Principales
+
+- Wi-Fi 6 (802.11ax) Banda Dual: 2.4 GHz + 5 GHz
+- Chipset Realtek RTL8832BU
+- Hasta 1800 Mbps
+- Diseño nano ultradelgado (~65×24×10mm, ~10g)
+- USB 3.2 Gen 1 Type-A
+- WPA3/WPA2/WPA/WEP
+- ⚠️ Sin conector RP-SMA, antena integrada
+
+## Especificaciones Técnicas
+
+| Elemento | Especificación |
+|----------|----------------|
 | Chipset | Realtek RTL8832BU |
-| Estándar Wi-Fi | IEEE 802.11 a/b/g/n/ac/ax (Wi-Fi 6) |
-| Banda | Doble banda 2.4GHz / 5GHz |
-| Velocidad máxima | 802.11n: 300 Mbps / 802.11ac: 867 Mbps / 802.11ax 2.4G: 573.5 Mbps / 802.11ax 5G: 1201 Mbps |
-| Antena | Antena integrada de doble banda 2×2 |
-| Conector de antena | N/A (diseño integrado) |
-| Interfaz | USB 3.2 Gen 1 (Type-A) |
-| Seguridad | WEP 64/128-bit, WPA / WPA2 / WPA3 |
-| Dimensiones | 65 × 24 × 10 mm |
-| Peso | 10.5 g |
-| Temperatura de operación | 0°C ~ 40°C |
-| Alimentación | DC 5V / 800mA |
+| Estándares WiFi | IEEE 802.11 a/b/g/n/ac/ax (WiFi 6) |
+| Bandas de frecuencia | 2.4 GHz + 5 GHz (sin 6 GHz) |
+| Velocidad máxima | 1800 Mbps (2.4G: 573 Mbps + 5G: 1200 Mbps) |
+| Antena | Nano integrada (sin RP-SMA) |
+| Interfaz USB | USB 3.2 Gen 1 Type-A |
+| Dimensiones | ~65 × 24 × 10 mm, ~10g |
+| Seguridad inalámbrica | WPA3 / WPA2 / WPA / WEP |
 
-## Compatibilidad con Sistemas Operativos
+## Compatibilidad con SO
 
-| Sistema | Estado |
+| SO | Estado | Notas |
+|----|--------|-------|
+| Windows 10/11 | ✅ Compatible | Driver del sitio web de Alfa |
+| macOS | ❌ No compatible | Sin soporte para macOS 11+ ni Apple Silicon |
+| Ubuntu | ⚠️ Requiere driver | Integrado en kernel ≥ 6.14 (Ubuntu 24.10+); versiones anteriores necesitan DKMS manual |
+| Kali Linux | ⚠️ Limitado | Monitor mode limitado en kernels < 6.12; no recomendado para pen testing |
+| NetHunter | ⚠️ Limitado | Depende del kernel |
+
+## Hardware Compatible
+
+| Hardware | Estado | Notas |
+|----------|--------|-------|
+| Raspberry Pi 4/5 | ⚠️ Requiere driver | Instalación manual en Pi OS con kernel < 6.14 |
+| PC de escritorio/portátil | ✅ Compatible | USB-A estándar |
+
+## Capacidades Avanzadas
+
+| Función | Estado |
 |---------|--------|
-| Windows | ✅ Requiere controlador |
+| Monitor Mode | ⚠️ Limitado |
+| Packet Injection | ⚠️ Limitado |
+| Soft AP Mode | ✅ Sí |
+| Bluetooth | ❌ No |
 
-## Contenido del Paquete
+## Contenido de la Caja
 
-- Adaptador USB AWUS036AXER × 1
+- 1× Adaptador nano AWUS036AXER
 
-## Descarga de Controladores
+## Recursos y Enlaces
 
-| Plataforma | Enlace |
-|------------|--------|
-| Descarga de controladores | [Repositorio oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXER) |
+| Recurso | Enlace |
+|---------|--------|
+| Documentación oficial | https://docs.alfa.com.tw/ |
+| Driver Linux (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20240418 |
+
+## Descarga de Ficha Técnica
+
+| Documento | Descarga |
+|------|------|
+| Ficha técnica oficial (PDF) | [📄 Descargar ficha técnica de AWUS036AXER](/docs/alfa/AWUS036AXER_spec.pdf) |
 
 {{< gallery >}}
   <img src="/images/products/alfa/awus036axer_image_1.png" alt="ALFA AWUS036AXER" />
@@ -58,5 +90,5 @@ El AWUS036AXER es el adaptador Wi-Fi 6 más ligero de la serie ALFA. Usa el chip
 ---
 
 {{< alert >}}
-¿Interesado? [Contáctenos](/es/contact/)
+¿Necesita una cotización? [Contáctenos](/es/contact/)
 {{< /alert >}}

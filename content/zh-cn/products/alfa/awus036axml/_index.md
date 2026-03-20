@@ -1,59 +1,101 @@
 ---
 title: "ALFA AWUS036AXML — Wi-Fi 6E USB-C 三频无线网卡"
-description: "ALFA AWUS036AXML，MediaTek MT7921AUN，Wi-Fi 6E USB-C 接口，5 dBi 双天线，Bluetooth 5.2，适合现代笔记本电脑使用环境。"
+description: "ALFA AWUS036AXML，MediaTek MT7921AUN 芯片，Wi-Fi 6E 三频（2.4/5/6 GHz），USB-C 接口，Bluetooth 5.2，支持 Kali Linux Monitor Mode。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "蓝牙 5.2", "6GHz"]
+tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "三频", "蓝牙 5.2", "6GHz", "Kali Linux"]
 ---
 
 {{< alert "warning" >}}
-**合法使用声明**：Monitor Mode 与 Packet Injection 功能仅供授权的网络安全测试、教育研究及合法渗透测试使用。请确认已获得目标网络的明确授权。
+**合法使用声明**：Monitor Mode 与 Packet Injection 功能仅供授权的安全测试、教育研究及合法渗透测试使用。请确认已获得目标网络的明确授权。
 {{< /alert >}}
 
 ## 产品概述
 
-AWUS036AXML 是 AWUS036AXM 的 USB-C 版本，采用相同的 MediaTek MT7921AUN 芯片，提供 Wi-Fi 6E 三频（6GHz 依地区法规）及 Bluetooth 5.2 功能。最大特色是采用 USB-C 接口搭配 2-in-1 USB-C/USB-A 传输线，完美适配现代笔记本电脑；两根 5 dBi RP-SMA 外接天线提供更佳无线增益。
+AWUS036AXML 搭载 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz / 5 GHz / 6 GHz），最高传输速率达 3000 Mbps，内置 Bluetooth 5.2。采用 USB-C 接口，附赠 2-in-1 USB-C/USB-A 传输线，完美适配现代笔记本与台式机。
 
-## 规格表
+> **注意：** 所有 ALFA 无线网卡对 macOS 支持有限。macOS 11 Big Sur 及以上版本和 Apple Silicon（M1/M2/M3）均**不支持**。最高支持 Intel Mac 上的 macOS 10.15 Catalina。
+
+## 产品特色
+
+- Wi-Fi 6E 三频：2.4 / 5 / 6 GHz
+- MediaTek MT7921AUN 芯片
+- 最高 3000 Mbps 传输速率
+- Bluetooth 5.2（复合芯片）
+- USB-C 接口（USB 3.2 Gen 1，5 Gbps）
+- 附赠 2-in-1 USB-C/USB-A 传输线
+- 1× RP-SMA 可拆卸天线
+- 附赠屏幕夹架
+- WPA3/WPA2/WPA/WEP/WPS
+- Kali Linux Monitor Mode（内核 ≥ 5.18）
+
+## 技术规格
 
 | 项目 | 规格 |
 |------|------|
-| 型号 | AWUS036AXML |
 | 芯片组 | MediaTek MT7921AUN |
-| Wi-Fi 标准 | IEEE 802.11 a/b/g/n/ac/ax（Wi-Fi 6E） |
-| 频段 | 2.4GHz（20/40 MHz）/ 5GHz（20/40/80 MHz）/ 6GHz（依地区） |
-| 蓝牙 | Bluetooth 5.2 |
-| 最大传输速率 | 802.11ax 2.4G: 600 Mbps / 5G: 1200 Mbps / 6G: 1200 Mbps |
-| 天线 | 2 × 外接可拆卸双频天线，5 dBi |
-| 天线接头 | RP-SMA female × 2 |
-| 接口 | USB Type-C |
-| 尺寸 | 85 × 63 × 20 mm |
-| 工作温度 | -25°C ~ 75°C |
-| 功耗 | 最高 2.7 W |
-| 工作电压 | 5 V |
+| Wi-Fi 标准 | IEEE 802.11 a/b/g/n/ac/ax（Wi-Fi 6E）|
+| 频段 | 2.4 GHz (20/40 MHz) · 5 GHz (20/40/80 MHz) · 6 GHz (20/40/80 MHz) |
+| 最高传输速率 | 2.4GHz: 600 Mbps · 5GHz: 1200 Mbps · 6GHz: 1200 Mbps · 合计: 3000 Mbps |
+| 蓝牙 | BT 5.2（复合芯片）|
+| 天线接头 | 1× RP-SMA female（可拆卸）|
+| USB 接口 | USB 3.2 Gen 1 Type-C（5 Gbps）|
+| 传输线 | 2-in-1 USB-C/USB-A |
+| 无线安全 | WPA3 / WPA2 / WPA / WEP / WPS |
+| 产地 | 台湾 |
 
 ## 操作系统支持
 
-| 系统 | 支持状态 |
-|------|---------|
-| Windows | ✅ 需安装驱动程序 |
-| Linux | ✅ 支持 |
+| 操作系统 | 状态 | 备注 |
+|---------|------|------|
+| Windows 10 | ✅ 支持 | 仅 2.4 GHz 与 5 GHz；Windows 10 不支持 6 GHz |
+| Windows 11 | ✅ 支持 | 完整三频，含 6 GHz |
+| macOS | ❌ 不支持 | 不支持 macOS 11+ 及 Apple Silicon |
+| Ubuntu | ✅ 支持 | 内核内置 mt7921u，内核 ≥ 5.18（Ubuntu 22.10+）|
+| Kali Linux | ✅ 支持 | Monitor mode ≥ 内核 5.18；主动 monitor mode ≥ 6.12；支持 packet injection |
+| NetHunter（Android）| ⚠️ 部分支持 | OTG；依内核版本 |
+
+## 硬件支持
+
+| 硬件 | 状态 | 备注 |
+|------|------|------|
+| Raspberry Pi 3B+/4/5 | ✅ 支持 | 更新 Pi OS（内核 ≥ 5.18）；可能需复制固件文件 |
+| 台式机/笔记本 | ✅ 支持 | USB-C 或附赠 2-in-1 传输线 |
+| Mac（Intel）| ⚠️ 有限支持 | 最高 macOS 10.15 Catalina |
+
+## 高级功能
+
+| 功能 | 状态 |
+|------|------|
+| Monitor Mode | ✅ 支持（内核 ≥ 5.18；主动模式 ≥ 6.12）|
+| Packet Injection | ✅ 支持 |
+| Soft AP 模式 | ✅ 支持 |
+| 蓝牙 | ✅ BT 5.2 |
+| VIF | ✅ 支持 |
 
 ## 包装内容
 
-- AWUS036AXML USB 无线网卡 × 1
-- 双频天线 × 2
-- 2-in-1 USB-C/USB-A 传输线 × 1
-- 屏幕夹具 × 1
+- 1× AWUS036AXML 无线网卡
+- 1× 可拆卸双频天线
+- 1× 2-in-1 USB-C/USB-A 传输线
+- 1× 屏幕夹架
 
-## 驱动程序下载
+## 资源与链接
 
-| 平台 | 链接 |
+| 资源 | 链接 |
 |------|------|
-| 驱动程序下载 | [ALFA 官方驱动库](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXML) |
+| 官方产品页面 | https://www.alfa.com.tw/products/awus036axml |
+| 官方文档 | https://docs.alfa.com.tw/ |
+| Linux 驱动（内核内置）| mt7921u — Linux 内核 ≥ 5.18 已内置 |
+
+## 产品规格书下载
+
+| 文件 | 下载 |
+|------|------|
+| 官方规格书（PDF） | [📄 下载 AWUS036AXML 规格书](/docs/alfa/AWUS036AXML_spec.pdf) |
 
 {{< gallery >}}
   <img src="/images/products/alfa/awus036axml_image_1.png" alt="ALFA AWUS036AXML" />
@@ -62,5 +104,5 @@ AWUS036AXML 是 AWUS036AXM 的 USB-C 版本，采用相同的 MediaTek MT7921AUN
 ---
 
 {{< alert >}}
-需要询价？[联系我们](/zh-cn/contact/)
+需要询价？[联系我们](/zh-cn/contact/)，我们提供详细采购建议。
 {{< /alert >}}

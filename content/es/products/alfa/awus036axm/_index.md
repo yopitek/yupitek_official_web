@@ -1,58 +1,96 @@
 ---
-title: "ALFA AWUS036AXM — Adaptador Inalámbrico USB 3.2 Wi-Fi 6E Triple Banda con Bluetooth 5.2"
-description: "ALFA AWUS036AXM, MediaTek MT7921AUN, Wi-Fi 6E (2.4/5/6GHz) + Bluetooth 5.2, USB 3.2, 2×2 MIMO, hasta 1200 Mbps."
+title: "ALFA AWUS036AXM — Adaptador USB Wi-Fi 6E Tribanda Doble Antena"
+description: "ALFA AWUS036AXM con chipset MediaTek MT7921AUN. Wi-Fi 6E tribanda, conector USB-A en L, 2× antenas 5 dBi, Bluetooth 5.2, Monitor Mode en Kali Linux."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 6E", "802.11ax", "USB 3.2", "Bluetooth 5.2", "6GHz"]
+tags: ["Wi-Fi 6E", "USB-A", "802.11ax", "Tribanda", "Bluetooth 5.2", "Doble Antena", "Kali Linux"]
 ---
 
 {{< alert "warning" >}}
-**Aviso de Uso Legal**: Las funciones de Modo Monitor e Inyección de Paquetes son exclusivamente para pruebas de seguridad autorizadas, investigación educativa y pruebas de penetración legítimas. Asegúrese de contar con la autorización explícita de la red objetivo.
+**Aviso Legal**: Las funciones de Monitor Mode y Packet Injection son exclusivamente para pruebas de seguridad autorizadas, investigación educativa y pruebas de penetración legales. Asegúrese de contar con autorización explícita de la red objetivo.
 {{< /alert >}}
 
 ## Descripción del Producto
 
-El AWUS036AXM es el adaptador inalámbrico Wi-Fi 6E insignia de ALFA Network. Utiliza el chipset MediaTek MT7921AUN y soporta triple banda: 2.4GHz, 5GHz y 6GHz (la banda de 6GHz depende de las regulaciones locales), con Bluetooth 5.2 integrado. Incluye 2 antenas externas RP-SMA e interfaz USB 3.2 Gen 1.
+El AWUS036AXM incorpora el chipset MediaTek MT7921AUN con soporte Wi-Fi 6E tribanda (2.4 GHz / 5 GHz / 6 GHz), hasta 3000 Mbps combinados más Bluetooth 5.2 con antena BT integrada. El conector USB-A en L evita bloquear puertos adyacentes. Incluye 2× antenas 5 dBi RP-SMA.
 
-## Tabla de Especificaciones
+> **Nota macOS:** Todos los adaptadores ALFA tienen soporte limitado o nulo para macOS. macOS 11 Big Sur y versiones posteriores, y Apple Silicon (M1/M2/M3) **NO** son compatibles. El soporte máximo es macOS 10.15 Catalina en Mac Intel.
 
-| Ítem | Especificación |
-|------|----------------|
-| Modelo | AWUS036AXM |
+## Características Principales
+
+- Wi-Fi 6E Tribanda: 2.4 / 5 / 6 GHz
+- Chipset MediaTek MT7921AUN
+- Hasta 3000 Mbps de rendimiento combinado
+- Bluetooth 5.2 (antena BT integrada + indicador LED)
+- Conector USB-A en L (USB 3.2 Gen 1, 5 Gbps)
+- 2× antenas RP-SMA female desmontables (5 dBi)
+- WPA3/WPA2/WPA/WEP/WPS
+- Kali Linux Monitor Mode + Packet Injection
+
+## Especificaciones Técnicas
+
+| Elemento | Especificación |
+|----------|----------------|
 | Chipset | MediaTek MT7921AUN |
-| Estándar Wi-Fi | IEEE 802.11 a/b/g/n/ac/ax (Wi-Fi 6E) |
-| Banda | 2.4GHz / 5GHz / 6GHz (según regulación local) |
-| Bluetooth | Bluetooth 5.2 (antena integrada) |
-| Velocidad máxima | 802.11ax 2.4G: 600 Mbps / 5G: 1200 Mbps / 6G: 1200 Mbps |
-| Antena | 2 × antenas de doble banda desmontables (Wi-Fi, 2×2 MIMO) |
-| Conector de antena | RP-SMA hembra × 2 |
-| Interfaz | USB 3.2 Gen 1 (Type-A) |
-| Dimensiones | 87.4 × 28.5 × 12 mm |
-| Temperatura de operación | -20°C ~ 70°C |
-| Consumo de energía | Máx. 2.7 W |
-| Voltaje de operación | 5 V |
+| Estándares WiFi | IEEE 802.11 a/b/g/n/ac/ax (WiFi 6E) |
+| Bandas de frecuencia | 2.4 GHz · 5 GHz · 6 GHz |
+| Velocidad máxima | 3000 Mbps |
+| Bluetooth | BT 5.2 (antena integrada) |
+| Antena | 2× RP-SMA female, 2× 5 dBi de banda dual (desmontable) |
+| Interfaz USB | USB 3.2 Gen 1 Type-A en L (5 Gbps) |
+| Seguridad inalámbrica | WPA3 / WPA2 / WPA / WEP / WPS |
 
-## Compatibilidad con Sistemas Operativos
+## Compatibilidad con SO
 
-| Sistema | Estado |
+| SO | Estado | Notas |
+|----|--------|-------|
+| Windows 10 | ✅ Compatible | 2.4+5 GHz solo; 6 GHz requiere Windows 11 |
+| Windows 11 | ✅ Compatible | Tribanda completa incluyendo 6 GHz |
+| macOS | ❌ No compatible | Sin soporte para macOS 11+ ni Apple Silicon |
+| Ubuntu | ✅ Compatible | mt7921u integrado en kernel ≥ 5.18 |
+| Kali Linux | ✅ Compatible | Monitor mode + inyección de paquetes; pueden necesitarse archivos de firmware |
+| NetHunter | ⚠️ Parcial | OTG; depende del kernel |
+
+## Hardware Compatible
+
+| Hardware | Estado | Notas |
+|----------|--------|-------|
+| Raspberry Pi 3B+/4/5 | ✅ Compatible | Pi OS actualizado (kernel ≥ 5.18) |
+| PC de escritorio/portátil | ✅ Compatible | Conector USB-A en L no bloquea puertos adyacentes |
+| Mac Intel | ⚠️ Limitado | Máximo macOS 10.15 Catalina |
+
+## Capacidades Avanzadas
+
+| Función | Estado |
 |---------|--------|
-| Windows | ✅ Requiere controlador |
-| Linux | ✅ Compatible |
+| Monitor Mode | ✅ Sí |
+| Packet Injection | ✅ Sí |
+| Soft AP Mode | ✅ Sí |
+| Bluetooth | ✅ BT 5.2 (antena BT integrada) |
+| VIF | ✅ Sí |
 
-## Contenido del Paquete
+## Contenido de la Caja
 
-- Adaptador USB AWUS036AXM × 1
-- Antenas de doble banda × 2
-- Adaptador USB 3.2 de 90° × 1
+- 1× Adaptador AWUS036AXM
+- 2× Antenas 5 dBi
+- Guía de configuración rápida
 
-## Descarga de Controladores
+## Recursos y Enlaces
 
-| Plataforma | Enlace |
-|------------|--------|
-| Descarga de controladores | [Repositorio oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXM) |
+| Recurso | Enlace |
+|---------|--------|
+| Página oficial del producto | https://www.alfa.com.tw/products/awus036axm |
+| Documentación oficial | https://docs.alfa.com.tw/ |
+| Driver Linux | mt7921u — integrado en Linux kernel ≥ 5.18 |
+
+## Descarga de Ficha Técnica
+
+| Documento | Descarga |
+|------|------|
+| Ficha técnica oficial (PDF) | [📄 Descargar ficha técnica de AWUS036AXM](/docs/alfa/AWUS036AXM_spec.pdf) |
 
 {{< gallery >}}
   <img src="/images/products/alfa/awus036axm_image_1.png" alt="ALFA AWUS036AXM" />
@@ -61,5 +99,5 @@ El AWUS036AXM es el adaptador inalámbrico Wi-Fi 6E insignia de ALFA Network. Ut
 ---
 
 {{< alert >}}
-¿Interesado? [Contáctenos](/es/contact/)
+¿Necesita una cotización? [Contáctenos](/es/contact/)
 {{< /alert >}}

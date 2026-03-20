@@ -1,12 +1,12 @@
 ---
-title: "ALFA AWUS036AXM — Wi-Fi 6E 三頻藍牙 5.2 USB 3.2 無線網卡"
-description: "ALFA AWUS036AXM，MediaTek MT7921AUN，Wi-Fi 6E（2.4/5/6GHz）+ 藍牙 5.2，USB 3.2，2×2 MIMO，最高 1200 Mbps。"
+title: "ALFA AWUS036AXM — Wi-Fi 6E 三頻雙天線無線網卡"
+description: "ALFA AWUS036AXM，MediaTek MT7921AUN 晶片，Wi-Fi 6E 三頻，USB-A L 型接頭，2× 5 dBi 天線，Bluetooth 5.2，適合 Kali Linux 滲透測試。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 6E", "802.11ax", "USB 3.2", "藍牙 5.2", "6GHz"]
+tags: ["Wi-Fi 6E", "USB-A", "802.11ax", "三頻", "藍牙 5.2", "雙天線", "Kali Linux"]
 ---
 
 {{< alert "warning" >}}
@@ -15,44 +15,82 @@ tags: ["Wi-Fi 6E", "802.11ax", "USB 3.2", "藍牙 5.2", "6GHz"]
 
 ## 產品概述
 
-AWUS036AXM 是 ALFA Network 的 Wi-Fi 6E 旗艦無線網卡，採用 MediaTek MT7921AUN 晶片，支援 2.4GHz、5GHz 及 6GHz 三頻（6GHz 頻段依各地區法規開放），並整合 Bluetooth 5.2 功能。配備 2 根 RP-SMA 外接天線，USB 3.2 Gen 1 介面。
+AWUS036AXM 採用 MediaTek MT7921AUN 晶片，支援 Wi-Fi 6E 三頻（2.4 GHz / 5 GHz / 6 GHz），最高傳輸速率達 3000 Mbps，並內建 Bluetooth 5.2（含獨立 BT 天線）。L 型 USB-A 接頭可避免擋住相鄰 USB 埠。附贈 2 根 5 dBi RP-SMA 可拆卸天線。
 
-## 規格表
+> **注意：** 所有 ALFA 無線網卡對 macOS 支援有限。macOS 11 Big Sur 以上及 Apple Silicon（M1/M2/M3）均**不支援**。最高支援版本為 Intel Mac 上的 macOS 10.15 Catalina。
+
+## 產品特色
+
+- Wi-Fi 6E 三頻：2.4 / 5 / 6 GHz
+- MediaTek MT7921AUN 晶片
+- 最高 3000 Mbps 傳輸速率
+- Bluetooth 5.2（含獨立 BT 天線及 LED 指示燈）
+- USB-A L 型接頭（USB 3.2 Gen 1，5 Gbps）
+- 2× RP-SMA female 可拆卸天線（5 dBi）
+- WPA3/WPA2/WPA/WEP/WPS
+- 支援 Kali Linux Monitor Mode + Packet Injection
+
+## 技術規格
 
 | 項目 | 規格 |
 |------|------|
-| 型號 | AWUS036AXM |
 | 晶片組 | MediaTek MT7921AUN |
-| Wi-Fi 標準 | IEEE 802.11 a/b/g/n/ac/ax（Wi-Fi 6E） |
-| 頻段 | 2.4GHz / 5GHz / 6GHz（依地區法規） |
-| 藍牙 | Bluetooth 5.2（整合式天線） |
-| 最大傳輸速率 | 802.11ax 2.4G: 600 Mbps / 5G: 1200 Mbps / 6G: 1200 Mbps |
-| 天線 | 2 × 外接可拆卸雙頻天線（Wi-Fi，2×2 MIMO） |
-| 天線接頭 | RP-SMA female × 2 |
-| 介面 | USB 3.2 Gen 1 (Type-A) |
-| 尺寸 | 87.4 × 28.5 × 12 mm |
-| 工作溫度 | -20°C ~ 70°C |
-| 功耗 | 最高 2.7 W |
-| 工作電壓 | 5 V |
+| Wi-Fi 標準 | IEEE 802.11 a/b/g/n/ac/ax（Wi-Fi 6E）|
+| 頻段 | 2.4 GHz · 5 GHz · 6 GHz |
+| 最高傳輸速率 | 3000 Mbps |
+| 藍牙 | BT 5.2（含獨立天線）|
+| 天線 | 2× RP-SMA female，2× 5 dBi 雙頻天線（可拆卸）|
+| USB 介面 | USB 3.2 Gen 1 Type-A L 型（5 Gbps）|
+| 無線安全 | WPA3 / WPA2 / WPA / WEP / WPS |
 
 ## 作業系統支援
 
-| 系統 | 支援狀態 |
-|------|---------|
-| Windows | ✅ 需安裝驅動程式 |
-| Linux | ✅ 支援 |
+| 作業系統 | 狀態 | 備註 |
+|---------|------|------|
+| Windows 10 | ✅ 支援 | 2.4+5 GHz；6 GHz 需 Windows 11 |
+| Windows 11 | ✅ 支援 | 完整三頻含 6 GHz |
+| macOS | ❌ 不支援 | 不支援 macOS 11+ 及 Apple Silicon |
+| Ubuntu | ✅ 支援 | 核心內建 mt7921u，核心 ≥ 5.18 |
+| Kali Linux | ✅ 支援 | Monitor mode + packet injection；可能需韌體檔 |
+| NetHunter | ⚠️ 部分支援 | OTG；依核心版本 |
+
+## 硬體支援
+
+| 硬體 | 狀態 | 備註 |
+|------|------|------|
+| Raspberry Pi 3B+/4/5 | ✅ 支援 | 更新 Pi OS（核心 ≥ 5.18）|
+| 桌機/筆電 | ✅ 支援 | L 型 USB-A 接頭不擋鄰埠 |
+| Mac（Intel）| ⚠️ 有限支援 | 最高 macOS 10.15 Catalina |
+
+## 進階功能
+
+| 功能 | 狀態 |
+|------|------|
+| Monitor Mode | ✅ 支援 |
+| Packet Injection | ✅ 支援 |
+| Soft AP 模式 | ✅ 支援 |
+| 藍牙 | ✅ BT 5.2（含獨立 BT 天線）|
+| VIF | ✅ 支援 |
 
 ## 包裝內容
 
-- AWUS036AXM USB 無線網卡 × 1
-- 雙頻天線 × 2
-- USB 3.2 90度轉接頭 × 1
+- 1× AWUS036AXM 無線網卡
+- 2× 5 dBi 天線
+- 快速設定指南
 
-## 驅動程式下載
+## 資源與連結
 
-| 平台 | 連結 |
+| 資源 | 連結 |
 |------|------|
-| 驅動程式下載 | [ALFA 官方驅動庫](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXM) |
+| 官方產品頁面 | https://www.alfa.com.tw/products/awus036axm |
+| 官方文件 | https://docs.alfa.com.tw/ |
+| Linux 驅動 | mt7921u — Linux 核心 ≥ 5.18 已內建 |
+
+## 產品規格書下載
+
+| 文件 | 下載 |
+|------|------|
+| 官方規格書（PDF） | [📄 下載 AWUS036AXM 規格書](/docs/alfa/AWUS036AXM_spec.pdf) |
 
 {{< gallery >}}
   <img src="/images/products/alfa/awus036axm_image_1.png" alt="ALFA AWUS036AXM" />
@@ -61,5 +99,5 @@ AWUS036AXM 是 ALFA Network 的 Wi-Fi 6E 旗艦無線網卡，採用 MediaTek MT
 ---
 
 {{< alert >}}
-需要詢問報價？[聯絡我們](/zh-tw/contact/)
+需要詢問報價？[聯絡我們](/zh-tw/contact/)，我們提供詳細採購建議。
 {{< /alert >}}

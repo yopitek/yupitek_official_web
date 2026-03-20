@@ -1,12 +1,12 @@
 ---
-title: "ALFA AWUS036ACS — AC433 迷你雙頻 USB 無線網卡"
-description: "ALFA AWUS036ACS，Realtek RTL8811AU，AC433 雙頻，USB 2.0，55mm 超輕薄機身，支援 Monitor Mode 與 Packet Injection。"
+title: "ALFA AWUS036ACS — AC600 雙頻 USB 無線網卡（入門資安研究）"
+description: "ALFA AWUS036ACS，Realtek RTL8811AU，AC600 雙頻 USB 2.0，1× 2 dBi RP-SMA 可拆卸天線，支援 Monitor Mode 與 Packet Injection，入門級資安研究首選。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 5", "AC433", "USB 2.0", "迷你", "Monitor Mode"]
+tags: ["Wi-Fi 5", "AC600", "USB 2.0", "RP-SMA", "Monitor Mode", "Kali Linux", "入門"]
 ---
 
 {{< alert "warning" >}}
@@ -15,53 +15,90 @@ tags: ["Wi-Fi 5", "AC433", "USB 2.0", "迷你", "Monitor Mode"]
 
 ## 產品概述
 
-AWUS036ACS 是 ALFA 系列中最輕薄的雙頻無線網卡之一，採用 Realtek RTL8811AU 晶片，機身尺寸僅 55 × 25 × 10 mm，重量 80 g（含包裝）。儘管體積小巧，仍支援 Monitor Mode 與 Packet Injection，適合輕量化的資安研究環境。
+AWUS036ACS 是 Alfa 雙頻 802.11ac 產品線中最經濟實惠的入門款，搭載 Realtek RTL8811AU 晶片，支援 Monitor Mode 與 Packet Injection。機身輕巧小型，配備 1 支可拆卸 RP-SMA 天線，可依需求升級為高增益或方向性天線。雖然效能不及 ACH 或 ACM，但對於初學者或需要預算友好型 5 GHz 外接天線網卡的使用者而言，是十分實用的選擇。
 
-## 規格表
+> **macOS 注意事項：** 所有 ALFA 網卡對 macOS 支援有限。macOS 10.15 Catalina 以上及 Apple Silicon（M1/M2/M3）均**不支援**。AWUS036ACS 最高支援 macOS 10.14 Mojave（Intel Mac）。
 
-| 項目 | 規格 |
-|------|------|
-| 型號 | AWUS036ACS |
+## 產品特色
+
+- Realtek RTL8811AU 晶片 — 支援 Monitor Mode 與 Packet Injection
+- WiFi 5（802.11ac）雙頻 — 2.4 GHz（150 Mbps）+ 5 GHz（433 Mbps）= AC600
+- 1× RP-SMA 母頭連接器，附 1× 2 dBi 迷你可拆卸天線 — 可升級為面板天線或高增益天線
+- 輕巧小型機身 — 方便攜帶
+- USB 2.0（USB-A）介面 — 相容所有 USB 連接埠
+- 相容 Alfa APA-M25 雙頻面板天線，可實現方向性接收
+- 支援 Kali Linux on Raspberry Pi（KaliPi）— 透過 DKMS 安裝驅動程式
+
+## 技術規格
+
+| 參數 | 規格 |
+|---|---|
 | 晶片組 | Realtek RTL8811AU |
-| Wi-Fi 標準 | IEEE 802.11 a/b/g/n/ac |
-| 頻段 | 雙頻 2.4GHz / 5GHz |
-| 最大傳輸速率 | 802.11b: 11 Mbps / 802.11g: 54 Mbps / 802.11n: 150 Mbps / 802.11ac: 433 Mbps |
-| 頻率範圍 | 2.412–2.472 GHz / 5.15–5.825 GHz |
-| 天線 | 1 × 外接可拆卸雙頻天線，2 dBi |
-| 天線接頭 | RP-SMA female |
-| 介面 | USB 2.0 |
-| 安全性 | WEP 64/128-bit、WPA、WPA2、WPA Mixed |
-| 尺寸 | 55 × 25 × 10 mm |
-| 工作溫度 | -10°C ~ 60°C |
+| 無線標準 | IEEE 802.11 a/b/g/n/ac（WiFi 5） |
+| 頻段 | 2.4 GHz（150 Mbps）· 5 GHz（433 Mbps） |
+| 最大合計速率 | AC600（150 + 433 Mbps） |
+| 天線連接器 | 1× RP-SMA 母頭 |
+| 隨附天線 | 1× 雙頻全向迷你偶極天線，2 dBi |
+| USB 介面 | USB 2.0 Type-A |
+| 接收靈敏度 | 802.11b：−85 dBm · 802.11g：−69 dBm · 802.11n：−68 dBm · 802.11ac：−59 dBm |
+| 無線安全 | WPA2 / WPA / WEP / 802.1X |
+| 原產地 | 台灣 |
+
+> ⚠️ **注意：** 僅支援 USB 2.0，最高匯流排速度 480 Mbps，傳輸速率上限為 433 Mbps。如需更高速度，請選擇搭載 USB 3.0 的 AWUS036ACM 或 AWUS036ACH。
 
 ## 作業系統支援
 
-| 系統 | 支援狀態 |
-|------|---------|
-| Windows | ✅ 需安裝驅動程式 |
-| macOS | ✅ 舊版支援 |
-| Linux | ✅ 支援 |
-| Kali Linux | ✅ 完整支援 |
-| Raspberry Pi OS | ✅ 支援 |
+| 作業系統 | 狀態 | 備註 |
+|---|---|---|
+| Windows XP–11 | ✅ 支援 | 驅動程式請至 Alfa 官網下載 |
+| macOS 10.5–10.14 | ⚠️ 有限支援 | macOS 10.15+ 及 Apple Silicon 不支援 |
+| Ubuntu | ✅ 支援 | 需手動安裝 DKMS 驅動（morrownr/8821au），無核心內建支援 |
+| Kali Linux | ✅ 支援 | 支援 Monitor Mode + Packet Injection，使用 morrownr GitHub 社群驅動 |
+| NetHunter（Android） | ✅ 支援 | OTG USB 連接；RTL8811AU 已確認相容 NetHunter |
+
+## 硬體支援
+
+| 硬體 | 狀態 | 備註 |
+|---|---|---|
+| Raspberry Pi 3B+/4/5 | ✅ 支援 | 可透過 morrownr DKMS 安裝 KaliPi 專用驅動 |
+| 桌機／筆電 | ✅ 支援 | 標準 USB-A 連接 |
+| Mac（Intel） | ⚠️ 有限支援 | 僅支援 macOS 10.5–10.14 |
+
+## 進階功能
+
+| 功能 | 狀態 |
+|---|---|
+| Monitor Mode（監聽模式） | ✅ 支援 |
+| Packet Injection（封包注入） | ✅ 支援 |
+| Soft AP 模式 | ✅ 支援 |
+| 藍牙 | ❌ 不支援 |
+| VIF（虛擬介面） | ⚠️ 有限支援 |
 
 ## 包裝內容
 
-- AWUS036ACS USB 無線網卡 × 1
-- USB 底座 × 1
+- 1× AWUS036ACS 無線網卡
+- 1× 可拆卸 2 dBi 雙頻迷你偶極天線
 
-## 驅動程式下載
+## 資源與連結
 
-| 平台 | 連結 |
-|------|------|
-| 驅動程式下載 | [ALFA 官方驅動庫](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) |
-| 官方文件 | [ALFA 產品文件](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
+| 資源 | 連結 |
+|---|---|
+| 官方產品頁面 | https://www.alfa.com.tw/products/awus036acs_1 |
+| 官方技術文件 | https://docs.alfa.com.tw/Product/AWUS036ACS/ |
+| Linux 驅動（RTL8811AU） | https://github.com/morrownr/8821au-20210708 |
 
-{{< gallery >}}
-  <img src="/images/products/alfa/awus036acs_image_1.png" alt="ALFA AWUS036ACS" />
-{{< /gallery >}}
+## 產品規格書下載
+
+| 文件 | 連結 |
+|---|---|
+| 官方規格書（PDF） | [📄 下載 AWUS036ACS 規格書](/docs/alfa/AWUS036ACS_spec.pdf) |
+
+## 產品圖片
+
+{{< gallery >}}<img src="/images/products/alfa/awus036acs_image_1.png" alt="ALFA AWUS036ACS" />{{< /gallery >}}
 
 ---
 
-{{< alert >}}
-需要詢問報價？[聯絡我們](/zh-tw/contact/)
+{{< alert "info" >}}
+需要詢問報價？[聯絡我們](/zh-tw/contact/)，我們提供詳細採購建議。
 {{< /alert >}}

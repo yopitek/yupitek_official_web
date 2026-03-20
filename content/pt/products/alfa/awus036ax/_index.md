@@ -1,56 +1,88 @@
 ---
-title: "ALFA AWUS036AX — Adaptador Sem Fio USB 3.2 Dual-Band Wi-Fi 6"
-description: "ALFA AWUS036AX, Realtek RTL8832BU, Wi-Fi 6 (802.11ax) dual-band, USB 3.2, até 1201 Mbps, suporte a WPA3, antenas externas 2×2 MIMO."
+title: "ALFA AWUS036AX — Adaptador USB Wi-Fi 6 Banda Dupla"
+description: "ALFA AWUS036AX com chipset Realtek RTL8832BU. Wi-Fi 6 de banda dupla 2.4+5 GHz, até 1200 Mbps, USB 3.0. Nota: Wi-Fi 6 apenas — sem banda de 6 GHz."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 6", "802.11ax", "USB 3.2", "Dual-Band", "WPA3"]
+tags: ["Wi-Fi 6", "USB 3.0", "802.11ax", "Banda Dupla", "OFDMA", "MU-MIMO"]
 ---
-
-{{< alert "warning" >}}
-**Declaração de uso legal**: Os recursos de Modo Monitor e Injeção de Pacotes destinam-se exclusivamente a testes de segurança autorizados, pesquisa educacional e Teste de Penetração legítimo. Certifique-se de que possui autorização explícita da rede-alvo.
-{{< /alert >}}
 
 ## Visão Geral do Produto
 
-O AWUS036AX é o primeiro adaptador sem fio Wi-Fi 6 (IEEE 802.11ax) da ALFA Network, equipado com o chipset Realtek RTL8832BU. Suporta dual-band 2.4GHz + 5GHz com taxa de transferência máxima de 1201 Mbps (5GHz). Conta com duas antenas externas RP-SMA, interface USB 3.2 Gen 1 de alta velocidade e suporte ao protocolo de segurança WPA3.
+O AWUS036AX apresenta o chipset Realtek RTL8832BU com suporte Wi-Fi 6 (802.11ax) de banda dupla (2.4 GHz + 5 GHz), até 1200 Mbps combinados, com tecnologia MU-MIMO 2×2 e OFDMA. A antena é integrada (não removível).
+
+> ⚠️ **Importante:** Este modelo é **Wi-Fi 6**, NÃO Wi-Fi 6E — **sem banda de 6 GHz**. Para suporte de 6 GHz, veja AWUS036AXML ou AWUS036AXM. Monitor mode limitado em kernels < 6.12; **não recomendado para pesquisa de segurança em Linux**.
+
+> **Aviso macOS:** Todos os adaptadores ALFA têm suporte limitado ou nenhum para macOS. macOS 11 Big Sur e posteriores, e Apple Silicon (M1/M2/M3) **NÃO** são suportados. O suporte máximo é macOS 10.15 Catalina em Macs Intel.
+
+## Características Principais
+
+- Wi-Fi 6 (802.11ax) Banda Dupla: 2.4 GHz + 5 GHz
+- Chipset Realtek RTL8832BU
+- Até 1200 Mbps combinados
+- MU-MIMO 2×2
+- Tecnologia OFDMA
+- USB 3.0 Type-A
+- WPA3/WPA2/WPA/WEP
+- ⚠️ Sem banda de 6 GHz
 
 ## Especificações Técnicas
 
 | Item | Especificação |
 |------|---------------|
-| Modelo | AWUS036AX |
 | Chipset | Realtek RTL8832BU |
-| Padrão Wi-Fi | IEEE 802.11 a/b/g/n/ac/ax (Wi-Fi 6) |
-| Banda | Dual-Band 2.4GHz / 5GHz |
-| Taxa Máxima | 802.11n: 300 Mbps / 802.11ac: 867 Mbps / 802.11ax 2.4G: 573,5 Mbps / 802.11ax 5G: 1201 Mbps |
-| Antenas | 2 × antenas dual-band externas removíveis |
-| Conector de Antena | RP-SMA fêmea × 2 |
-| Interface | USB 3.2 Gen 1 (Type-A) |
-| Segurança | WEP 64/128-bit, WPA / WPA2 / WPA3 |
-| Dimensões | 87,4 × 28,5 × 12 mm |
-| Temperatura de Operação | -20°C ~ 70°C |
-| Consumo de Energia | Máx. 3,6 W |
+| Padrões WiFi | IEEE 802.11 a/b/g/n/ac/ax (WiFi 6) |
+| Bandas de frequência | 2.4 GHz + 5 GHz (sem 6 GHz) |
+| Velocidade máxima | 1200 Mbps |
+| MIMO | MU-MIMO 2×2 |
+| Antena | Integrada (não removível) |
+| Interface USB | USB 3.0 Type-A |
+| Segurança sem fio | WPA3 / WPA2 / WPA / WEP |
 
-## Compatibilidade com Sistemas Operacionais
+## Suporte de SO
 
-| Sistema | Status |
-|---------|--------|
-| Windows | ✅ Requer instalação de driver |
-| Linux | ✅ Suportado |
+| SO | Status | Notas |
+|----|--------|-------|
+| Windows 10/11 | ✅ Suportado | Driver do site da Alfa |
+| macOS | ❌ Não suportado | Sem suporte para macOS 11+ ou Apple Silicon |
+| Ubuntu | ⚠️ Requer driver | Integrado no kernel ≥ 6.14 (Ubuntu 24.10+); versões anteriores precisam de DKMS manual |
+| Kali Linux | ⚠️ Limitado | Monitor mode limitado em kernels < 6.12; não recomendado para pen testing |
+| NetHunter | ⚠️ Limitado | Dependente do kernel |
 
-## Conteúdo da Embalagem
+## Hardware Compatível
 
-- AWUS036AX Adaptador Sem Fio USB × 1
-- Antena dual-band × 2
+| Hardware | Status | Notas |
+|----------|--------|-------|
+| Raspberry Pi 4/5 | ⚠️ Requer driver | Instalação manual no Pi OS com kernel < 6.14 |
+| PC Desktop/Laptop | ✅ Suportado | USB-A padrão |
 
-## Download de Driver
+## Capacidades Avançadas
 
-| Plataforma | Link |
-|------------|------|
-| Download de Driver | [Repositório Oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AX) |
+| Função | Status |
+|--------|--------|
+| Monitor Mode | ⚠️ Limitado (kernel ≥ 6.12 recomendado) |
+| Packet Injection | ⚠️ Limitado |
+| Soft AP Mode | ✅ Sim |
+| Bluetooth | ❌ Não |
+
+## Conteúdo da Caixa
+
+- 1× Adaptador AWUS036AX
+
+## Recursos e Links
+
+| Recurso | Link |
+|---------|------|
+| Documentação oficial | https://docs.alfa.com.tw/ |
+| Driver Linux (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20240418 |
+
+## Download da Ficha Técnica
+
+| Documento | Download |
+|------|------|
+| Ficha técnica oficial (PDF) | [📄 Baixar ficha técnica do AWUS036AX](/docs/alfa/AWUS036AX_spec.pdf) |
 
 {{< gallery >}}
   <img src="/images/products/alfa/awus036ax_image_1.png" alt="ALFA AWUS036AX" />
@@ -59,5 +91,5 @@ O AWUS036AX é o primeiro adaptador sem fio Wi-Fi 6 (IEEE 802.11ax) da ALFA Netw
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de um orçamento? [Fale conosco](/pt/contact/)
 {{< /alert >}}

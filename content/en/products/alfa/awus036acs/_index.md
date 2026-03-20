@@ -1,67 +1,102 @@
 ---
-title: "ALFA AWUS036ACS — AC433 Mini Dual-Band USB Wireless Adapter"
-description: "ALFA AWUS036ACS, Realtek RTL8811AU, AC433 dual-band, USB 2.0, 55mm ultra-compact form factor, supports Monitor Mode and Packet Injection."
+title: "ALFA AWUS036ACS — AC600 Dual-Band USB Adapter (Budget Security Research)"
+description: "ALFA AWUS036ACS, Realtek RTL8811AU, AC600 dual-band USB 2.0, 1× 2 dBi RP-SMA detachable antenna, supports Monitor Mode and Packet Injection — ideal entry-level security research adapter."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 5", "AC433", "USB 2.0", "Mini", "Monitor Mode"]
+tags: ["Wi-Fi 5", "AC600", "USB 2.0", "RP-SMA", "Monitor Mode", "Kali Linux", "Budget"]
 ---
 
 {{< alert "warning" >}}
-**Legal Use Notice**: Monitor Mode and Packet Injection features are intended solely for authorized security testing, educational research, and lawful penetration testing. Ensure you have explicit authorization from the target network owner before use.
+**Legal Disclaimer**: Monitor Mode and Packet Injection features are intended solely for authorized security testing, educational research, and lawful penetration testing. Always ensure you have explicit permission from the target network owner before use.
 {{< /alert >}}
 
 ## Product Overview
 
-The AWUS036ACS is one of the most compact dual-band wireless adapters in the ALFA lineup, powered by the Realtek RTL8811AU chipset. Its body measures just 55 × 25 × 10 mm and weighs 80 g (including packaging). Despite its small size, it fully supports Monitor Mode and Packet Injection, making it well-suited for lightweight security research setups.
+The AWUS036ACS is Alfa's most affordable entry point into the dual-band 802.11ac lineup with monitor mode and packet injection support. Powered by the Realtek RTL8811AU chipset, it is compact and lightweight with a single detachable RP-SMA antenna that can be upgraded for better range. While not as powerful as the ACH or ACM, it is a practical choice for beginners in wireless security research or users who need a budget-friendly 5 GHz adapter with external antenna capability.
 
-## Specifications
+> **macOS Notice:** All ALFA adapters have limited macOS support. macOS 10.15 Catalina and later, and all Apple Silicon (M1/M2/M3) Macs, are **not supported**. The AWUS036ACS supports up to macOS 10.14 Mojave (Intel Mac only).
 
-| Item | Specification |
-|------|--------------|
-| Model | AWUS036ACS |
+## Key Features
+
+- Realtek RTL8811AU chipset — monitor mode and packet injection supported
+- WiFi 5 (802.11ac) dual-band — 2.4 GHz (150 Mbps) + 5 GHz (433 Mbps) = AC600
+- 1× RP-SMA female connector with 1× 2 dBi mini detachable antenna — upgradeable to panel or high-gain antennas
+- Compact form factor — small profile for easy portability
+- USB 2.0 (USB-A) interface — compatible with any USB port
+- Compatible with Alfa APA-M25 dual-band panel antenna for directional reception
+- Supports Kali Linux on Raspberry Pi (KaliPi) — driver installation via DKMS
+
+## Technical Specifications
+
+| Parameter | Value |
+|---|---|
 | Chipset | Realtek RTL8811AU |
-| Wi-Fi Standard | IEEE 802.11 a/b/g/n/ac |
-| Frequency Band | Dual-band 2.4GHz / 5GHz |
-| Max Data Rate | 802.11b: 11 Mbps / 802.11g: 54 Mbps / 802.11n: 150 Mbps / 802.11ac: 433 Mbps |
-| Frequency Range | 2.412–2.472 GHz / 5.15–5.825 GHz |
-| Antenna | 1 × Detachable dual-band antenna, 2 dBi |
-| Antenna Connector | RP-SMA female |
-| Interface | USB 2.0 |
-| Security | WEP 64/128-bit, WPA, WPA2, WPA Mixed |
-| Dimensions | 55 × 25 × 10 mm |
-| Operating Temperature | -10°C ~ 60°C |
+| WiFi Standards | IEEE 802.11 a/b/g/n/ac (WiFi 5) |
+| Frequency Bands | 2.4 GHz (150 Mbps) · 5 GHz (433 Mbps) |
+| Combined Max Speed | AC600 (150 + 433 Mbps) |
+| Antenna Connector | 1× RP-SMA female |
+| Included Antenna | 1× dual-band dipole mini, 2 dBi gain |
+| USB Interface | USB 2.0 Type-A |
+| Receive Sensitivity | 802.11b: −85 dBm · 802.11g: −69 dBm · 802.11n: −68 dBm · 802.11ac: −59 dBm |
+| Wireless Security | WPA2 / WPA / WEP / 802.1X |
+| Country of Origin | Taiwan |
 
-## OS Compatibility
+> ⚠️ **NOTE:** USB 2.0 only — maximum 480 Mbps data bus speed. Throughput capped at 433 Mbps. For maximum speed, use AWUS036ACM or AWUS036ACH with USB 3.0.
 
-| OS | Support Status |
-|----|---------------|
-| Windows | ✅ Driver required |
-| macOS | ✅ Legacy support |
-| Linux | ✅ Supported |
-| Kali Linux | ✅ Full support |
-| Raspberry Pi OS | ✅ Supported |
+## OS Support
 
-## Package Contents
+| OS | Status | Notes |
+|---|---|---|
+| Windows XP–11 | ✅ Supported | Driver available from Alfa website |
+| macOS 10.5–10.14 | ⚠️ Limited | macOS 10.15+ and Apple Silicon NOT supported |
+| Ubuntu | ✅ Supported | Manual DKMS driver install required (morrownr/8821au). No in-kernel support. |
+| Kali Linux | ✅ Supported | Monitor mode + packet injection supported. Community driver from morrownr GitHub. |
+| NetHunter (Android) | ✅ Supported | OTG USB connection; RTL8811AU has confirmed NetHunter compatibility |
 
-- AWUS036ACS USB wireless adapter × 1
-- USB base cradle × 1
+## Hardware Support
 
-## Driver Downloads
+| Hardware | Status | Notes |
+|---|---|---|
+| Raspberry Pi 3B+/4/5 | ✅ Supported | KaliPi-specific install available via morrownr DKMS. |
+| Desktop/Laptop PC | ✅ Supported | Standard USB-A |
+| Mac (Intel) | ⚠️ Limited | macOS 10.5–10.14 only |
 
-| Platform | Link |
-|----------|------|
-| Driver Download | [ALFA Official Driver Repository](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) |
-| Official Documentation | [ALFA Product Documentation](https://docs.alfa.com.tw/Product/AWUS036ACS/) |
+## Advanced Capabilities
 
-{{< gallery >}}
-  <img src="/images/products/alfa/awus036acs_image_1.png" alt="ALFA AWUS036ACS" />
-{{< /gallery >}}
+| Feature | Status |
+|---|---|
+| Monitor Mode | ✅ Yes |
+| Packet Injection | ✅ Yes |
+| Soft AP Mode | ✅ Yes |
+| Bluetooth | ❌ No |
+| VIF | ⚠️ Limited |
+
+## What's in the Box
+
+- 1× AWUS036ACS adapter
+- 1× Detachable 2 dBi dual-band mini dipole antenna
+
+## Resources & Links
+
+| Resource | Link |
+|---|---|
+| Official Product Page | https://www.alfa.com.tw/products/awus036acs_1 |
+| Official Documentation | https://docs.alfa.com.tw/Product/AWUS036ACS/ |
+| Linux Driver (RTL8811AU) | https://github.com/morrownr/8821au-20210708 |
+
+## Datasheet Download
+
+[📄 Download AWUS036ACS Datasheet](/docs/alfa/AWUS036ACS_spec.pdf)
+
+## Gallery
+
+{{< gallery >}}<img src="/images/products/alfa/awus036acs_image_1.png" alt="ALFA AWUS036ACS" />{{< /gallery >}}
 
 ---
 
-{{< alert >}}
-Looking for a quote? [Contact Us](/en/contact/)
+{{< alert "info" >}}
+Need a quote or purchasing advice? [Contact us](/en/contact/).
 {{< /alert >}}

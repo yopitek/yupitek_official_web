@@ -1,12 +1,12 @@
 ---
-title: "ALFA AWUS036ACM — AC1200 雙頻 USB 3.0 無線網卡"
-description: "ALFA AWUS036ACM，MediaTek MT7612U，AC1200 雙頻 USB 3.0，300+867 Mbps，支援 Monitor Mode 與 Packet Injection，Kali Linux 相容。"
+title: "ALFA AWUS036ACM — AC1200 雙頻 USB 3.0 無線網卡（Linux 免驅首選）"
+description: "ALFA AWUS036ACM，MediaTek MT7612U，AC1200 雙頻 USB 3.0，內建 Linux 核心驅動（Kernel 4.19+），無需手動安裝，支援 Monitor Mode、Packet Injection 與 VIF，Raspberry Pi 首選。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 5", "AC1200", "USB 3.0", "雙頻", "Monitor Mode"]
+tags: ["Wi-Fi 5", "AC1200", "USB 3.0", "雙頻", "Monitor Mode", "Kali Linux", "Raspberry Pi"]
 ---
 
 {{< alert "warning" >}}
@@ -15,64 +15,90 @@ tags: ["Wi-Fi 5", "AC1200", "USB 3.0", "雙頻", "Monitor Mode"]
 
 ## 產品概述
 
-AWUS036ACM 是 ALFA Network 的經典主力機款，採用 MediaTek MT7612U 晶片，支援 IEEE 802.11ac 雙頻，提供 2.4GHz 300 Mbps + 5GHz 867 Mbps 的無線傳輸速率。配備兩根 5 dBi RP-SMA 外接天線，USB 3.0 高速介面，是資安研究人員的首選之一。
+AWUS036ACM 是 Linux 使用者免設定上手的首選網卡。其 MediaTek MT7612U 晶片組自 Linux 核心 4.19 版本起已內建於核心中，意味著在 Ubuntu、Kali Linux、Raspberry Pi OS、Arch Linux 及幾乎所有現代發行版上，無需編譯任何程式碼即可即插即用。外觀尺寸與天線配置與 AWUS036ACH 完全相同，但採用 MediaTek 更穩定的核心內建驅動。Monitor Mode、Packet Injection 與 VIF（虛擬介面）均完整支援。
 
-## 規格表
+> **macOS 注意事項：** 所有 ALFA 網卡對 macOS 支援有限。macOS 11+ 及 Apple Silicon（M1/M2/M3）均**不支援**。AWUS036ACM 最高支援 macOS 10.12 Sierra（比其他型號更嚴格）。
+
+## 產品特色
+
+- MediaTek MT7612U 晶片組 — 自 Linux 核心 4.19 起內建（免驅、無需編譯）
+- WiFi 5（802.11ac）雙頻 AC1200 — 5 GHz 最高 867 Mbps，2.4 GHz 最高 300 Mbps
+- 2× RP-SMA female 接頭搭配 2× 5 dBi 可拆卸雙頻天線 — 與 AWUS036ACH 完全相同的外觀格式
+- USB 3.0（USB-A）介面
+- 完整支援 Monitor Mode、Packet Injection 與 AP 模式
+- 支援 Kali Linux VIF（虛擬介面）
+- 附贈 USB 3.0 延長線
+- TAA 認證 — 適用於美國政府採購（GSA 相容）
+- Raspberry Pi OS 即插即用 — 無需安裝驅動程式
+
+## 技術規格
 
 | 項目 | 規格 |
 |------|------|
-| 型號 | AWUS036ACM |
 | 晶片組 | MediaTek MT7612U |
-| Wi-Fi 標準 | IEEE 802.11 a/b/g/n/ac |
-| 頻段 | 雙頻 2.4GHz / 5GHz |
-| 最大傳輸速率 | 2.4GHz: 300 Mbps / 5GHz: 867 Mbps |
-| 頻率範圍 | 2.412–2.472 GHz / 5.15–5.825 GHz |
-| 天線 | 2 × 外接可拆卸雙頻天線，5 dBi |
-| 天線接頭 | RP-SMA female |
-| 介面 | USB 3.0（相容 USB 2.0） |
-| 安全性 | WEP 64/128-bit、WPA、WPA2、WPA Mixed |
-| 尺寸 | 62 × 85.3 × 24 mm |
-| 重量 | 60 g |
-| 工作溫度 | -10°C ~ 60°C |
+| Wi-Fi 標準 | IEEE 802.11 a/b/g/n/ac（WiFi 5）|
+| 頻率範圍 | 2.4 GHz（2.412–2.472 GHz）· 5 GHz（5.15–5.825 GHz）|
+| 頻道寬度 | 20 / 40 / 80 MHz |
+| 最高傳輸速率 | 5 GHz：最高 867 Mbps · 2.4 GHz：最高 300 Mbps |
+| 合計最高速率 | AC1200（867 + 300 Mbps）|
+| 天線接頭 | 2× RP-SMA female |
+| 附贈天線 | 2× 雙頻偶極天線，5 dBi |
+| USB 介面 | USB 3.0 Type-A（向下相容 USB 2.0）|
+| 輸出功率 | 802.11a：20 dBm · 802.11b：23 dBm · 802.11g：23 dBm · 802.11n：21 dBm · 802.11ac：20 dBm |
+| 接收靈敏度 | 802.11a：−92 dBm · 802.11b：−97 dBm · 802.11g：−90 dBm · 802.11n：−90 dBm |
+| 無線安全 | WPA2 / WPA / WEP / WPA-PSK / 802.1X |
+| 指示燈 | 有（電源 + 無線活動）|
+| 附件 | USB 3.0 延長線 |
+| 原產地 | 台灣 |
 
 ## 作業系統支援
 
-| 系統 | 支援狀態 |
-|------|---------|
-| Windows | ✅ 需安裝驅動程式 |
-| macOS | ✅ 需安裝驅動程式 |
-| Linux | ✅ 原生支援 |
-| Kali Linux | ✅ 完整支援 |
-| Raspberry Pi OS | ✅ 支援 |
-| Android (Kali NetHunter) | ✅ OTG 支援 |
+| 作業系統 | 狀態 | 備註 |
+|---------|------|------|
+| Windows XP–11 | ✅ 支援 | 驅動程式請至 Alfa 官網下載，建議使用 Windows 10/11 |
+| macOS 10.7–10.12 | ⚠️ 有限支援 | 官方支援至 macOS 10.12 Sierra，macOS 11+ 及 Apple Silicon 不支援 |
+| Ubuntu 19.04+ | ✅ 即插即用 | 核心內建 mt76 驅動（核心 ≥ 4.19），Ubuntu 20.04 LTS 以上零設定安裝 |
+| Kali Linux 2019.3+ | ✅ 即插即用 | 核心內建驅動，已確認 Monitor Mode，支援 VIF，5 GHz AP 模式可能需 `disable_usb_sg` 模組參數 |
+| NetHunter（Android）| ✅ 支援 | OTG USB；核心內建驅動使其相容性優於 RTL 系列 |
 
-## 無線功率輸出
+## 硬體支援
 
-| 標準 | 輸出功率 |
-|------|---------|
-| 802.11a | 20 dBm |
-| 802.11b | 23 dBm |
-| 802.11g | 23 dBm |
-| 802.11n | 21 dBm |
-| 802.11an | 19 dBm |
-| 802.11ac | 20 dBm |
+| 硬體 | 狀態 | 備註 |
+|------|------|------|
+| Raspberry Pi 3B+/4/5 | ✅ 極佳 | Raspberry Pi OS 即插即用，無需安裝驅動，ALFA 網卡中 Pi 首選 |
+| 桌機/筆電 | ✅ 支援 | 標準 USB-A，附贈延長線 |
+| Mac（Intel）| ⚠️ 有限支援 | 僅限 macOS 10.7–10.12 |
+
+## 進階功能
+
+| 功能 | 狀態 |
+|------|------|
+| Monitor Mode | ✅ 支援（核心內建，現代發行版無需額外步驟）|
+| Packet Injection | ✅ 支援 |
+| Soft AP 模式 | ✅ 支援（5 GHz AP：加入 `disable_usb_sg` 模組參數以獲最佳效能）|
+| 藍牙 | ❌ 不支援 |
+| VIF（虛擬介面）| ✅ 支援（Kali 完整 VIF 支援）|
 
 ## 包裝內容
 
-- AWUS036ACM USB 無線網卡 × 1
-- 雙頻天線 × 2
-- USB 3.0 座充底座（1.5 m）× 1
-- 驅動程式光碟 × 1
-- 快速安裝指南 × 1
-- ALFA 貼紙 × 1
-- 警告卡 × 1
+- 1× AWUS036ACM 無線網卡
+- 2× 可拆卸 5 dBi 雙頻偶極天線
+- 1× USB 3.0 延長線
+- 1× 驅動程式光碟（Windows）
 
-## 驅動程式下載
+## 資源與連結
 
-| 平台 | 連結 |
+| 資源 | 連結 |
 |------|------|
-| 驅動程式下載 | [ALFA 官方驅動庫](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) |
-| 官方文件 | [ALFA 產品文件](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
+| 官方產品頁面 | https://www.alfa.com.tw/products/awus036acm_1 |
+| 官方文件 | https://docs.alfa.com.tw/Product/AWUS036ACM/ |
+| Linux 驅動（核心內建）| mt76 驅動 — Linux 核心 ≥ 4.19 已內建，無需安裝 |
+
+## 產品規格書下載
+
+| 文件 | 下載 |
+|------|------|
+| 官方規格書（PDF） | [📄 下載 AWUS036ACM 規格書](/docs/alfa/AWUS036ACM_spec.pdf) |
 
 {{< gallery >}}
   <img src="/images/products/alfa/awus036acm_image_1.png" alt="ALFA AWUS036ACM" />

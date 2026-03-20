@@ -1,41 +1,92 @@
 ---
-title: "ALFA AWUS036EACS — Adaptador USB AC600 Mini Doble Banda"
-description: "ALFA AWUS036EACS, Realtek RTL8811CU, AC600 doble banda, USB 2.0, diseño ultracompacto con antena integrada."
+title: "ALFA AWUS036EACS — Adaptador USB Nano AC600 + Bluetooth 4.2"
+description: "ALFA AWUS036EACS, chipset Realtek RTL8821CU, AC600 doble banda, USB 2.0 Nano, Bluetooth 4.2, diseñado para usuarios domésticos de Windows. No recomendado para Linux ni investigación de seguridad."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 5", "AC600", "USB 2.0", "Mini", "Monitor Mode"]
+tags: ["Wi-Fi 5", "AC600", "USB 2.0", "Nano", "Bluetooth 4.2", "Windows", "Hogar"]
 ---
-
-{{< alert "warning" >}}
-**Aviso de Uso Legal**: La función Monitor Mode es solo para pruebas de seguridad autorizadas, investigación educativa y pruebas de penetración legales.
-{{< /alert >}}
 
 ## Descripción del Producto
 
-El AWUS036EACS es el adaptador USB AC600 de doble banda de ALFA Network con chipset Realtek RTL8811CU. Su diseño ultracompacto con antena integrada lo hace ideal para uso portátil.
+El AWUS036EACS es el adaptador combinado de WiFi + Bluetooth ultracompacto de Alfa, diseñado para usuarios domésticos y de oficina que desean ambas conectividades en un único dongle USB discreto. Construido alrededor del chipset Realtek RTL8821CU, integra WiFi de doble banda AC600 y Bluetooth 4.2 en un factor de forma nano con soporte de controladores integrado en Windows. Su modo Soft AP le permite compartir la conexión a internet. Este adaptador prioriza la simplicidad y la compacidad — NO está recomendado para usuarios avanzados de Linux, Kali Linux ni investigación de seguridad.
 
-## Especificaciones
+> ⚠️ **Nota:** AWUS036EACS está diseñado para uso doméstico en Windows. RTL8821CU tiene soporte limitado en la comunidad Linux. NO recomendado para Linux, Kali Linux o Raspberry Pi. Sin puerto RP-SMA — antena no actualizable.
 
-| Item | Spec |
-|------|------|
-| Modelo | AWUS036EACS |
-| Chipset | Realtek RTL8811CU |
-| Estándar Wi-Fi | IEEE 802.11 a/b/g/n/ac (Wi-Fi 5) |
-| Frecuencia | Doble banda 2.4GHz / 5GHz |
-| Velocidad Máxima | 802.11n: 150 Mbps / 802.11ac: 433 Mbps |
-| Antena | Antena integrada |
-| Interfaz | USB 2.0 |
-| Seguridad | WEP 64/128-bit, WPA, WPA2, WPA Mixed |
+## Características Principales
 
-## Compatibilidad de SO
+- WiFi doble banda AC600 802.11ac + Bluetooth 4.2 en un único adaptador USB nano
+- Plug-and-play en Windows — el controlador integrado se instala automáticamente
+- Modo Soft AP — crea un punto de acceso WiFi directamente desde el adaptador
+- Ultracompacto y portátil — desaparece en cualquier puerto USB
+- Doble banda: 2.4 GHz (150 Mbps) + 5 GHz (433 Mbps)
+- Antena integrada de 2 dBi — sin conector RP-SMA externo
+- Ideal para PCs de escritorio, sistemas embebidos o PCs domésticos que necesitan WiFi + BT en el mínimo espacio
+- Bluetooth 4.2 soporta transmisión de audio, teclados, ratones y otros periféricos
 
-| OS | Status |
-|------|---------|
-| Windows | ✅ Requiere instalación de controladores |
-| Linux | ✅ Compatible |
+## Especificaciones Técnicas
+
+| Parámetro | Valor |
+|-----------|-------|
+| Chipset | Realtek RTL8821CU |
+| Estándares WiFi | IEEE 802.11 a/b/g/n/ac (WiFi 5) |
+| Bluetooth | BT 4.2 (2.4 GHz) |
+| Bandas de Frecuencia | WiFi: 2.4 GHz · 5 GHz · BT: 2.4 GHz |
+| Velocidad Máxima | 802.11b: 11 Mbps · 802.11g: 54 Mbps · 802.11n: 150 Mbps · 802.11ac: 433 Mbps |
+| Velocidad Combinada Máxima | AC600 (150 + 433 Mbps) |
+| Antena | Integrada, 2 dBi (no desmontable, sin RP-SMA) |
+| Interfaz USB | USB 2.0 |
+| Potencia de Salida | 17 dBm típico |
+| Sensibilidad de Recepción | 802.11b: −85 dBm · 802.11g: −69 dBm · 802.11n: −68 dBm · 802.11ac: −59 dBm |
+| Seguridad Inalámbrica | WEP / WPA-PSK / WPA2-PSK / 802.1X |
+| Temperatura de Operación | −10°C a 60°C |
+| Factor de Forma | Nano / perfil bajo |
+| País de Origen | Taiwán |
+
+## Compatibilidad con SO
+
+| Sistema Operativo | Estado | Notas |
+|------------------|--------|-------|
+| Windows XP–10 | ✅ Compatible | Controlador integrado; plug and play. Consulte la página de controladores de Alfa para Windows 11. |
+| macOS | ⚠️ Limitado | Rango de versiones exacto por confirmar. Sin soporte para Apple Silicon. |
+| Ubuntu / Linux | ⚠️ Deficiente | RTL8821CU tiene escaso soporte de controladores en la comunidad. No recomendado. |
+| Kali Linux | ❌ No recomendado | El modo monitor y la inyección de paquetes no están garantizados. |
+| NetHunter (Android) | ❌ No recomendado | RTL8821CU no confirmado compatible con NetHunter. |
+
+## Hardware Compatible
+
+| Hardware | Estado | Notas |
+|----------|--------|-------|
+| Raspberry Pi | ❌ No recomendado | Problemas con el controlador RTL8821CU en Pi OS. |
+| PC de escritorio / Portátil | ✅ Compatible | Solo se recomienda Windows. |
+| Embebido / IoT (Windows) | ⚠️ Solo Windows | El diseño compacto se adapta a sistemas Windows embebidos. |
+
+## Capacidades Avanzadas
+
+| Función | Estado |
+|---------|--------|
+| Modo Monitor | ❌ No compatible de forma fiable |
+| Inyección de Paquetes | ❌ No compatible de forma fiable |
+| Modo Soft AP | ✅ Sí |
+| Bluetooth | ✅ BT 4.2 |
+| VIF | ❌ No |
+
+## Contenido del Paquete
+
+- 1× Adaptador nano AWUS036EACS
+
+## Recursos y Enlaces
+
+| Recurso | Enlace |
+|---------|--------|
+| Página Oficial del Producto | https://www.alfa.com.tw/products/awus036eacs_1 |
+| Documentación Oficial | https://docs.alfa.com.tw/Product/AWUS036EACS/ |
+
+## Descarga de Ficha Técnica
+
+Ficha técnica próximamente disponible.
 
 {{< gallery >}}
   <img src="/images/products/alfa/awus036eacs_image_1.png" alt="ALFA AWUS036EACS" />
@@ -44,5 +95,5 @@ El AWUS036EACS es el adaptador USB AC600 de doble banda de ALFA Network con chip
 ---
 
 {{< alert >}}
-¿Necesita una cotización? [Contáctenos](/es/contact/)
+¿Necesita una cotización? [Contáctenos](/es/contact/), ofrecemos asesoría de compra detallada.
 {{< /alert >}}

@@ -1,59 +1,101 @@
 ---
-title: "ALFA AWUS036AXML — Adaptador Sem Fio USB-C Wi-Fi 6E Tri-Band"
-description: "ALFA AWUS036AXML, MediaTek MT7921AUN, Wi-Fi 6E com interface USB-C, antenas duplas 5 dBi, Bluetooth 5.2, ideal para notebooks modernos."
+title: "ALFA AWUS036AXML — Adaptador USB Wi-Fi 6E Tribanda USB-C"
+description: "ALFA AWUS036AXML com chipset MediaTek MT7921AUN. Wi-Fi 6E tribanda (2.4/5/6 GHz), interface USB-C, Bluetooth 5.2, Monitor Mode no Kali Linux."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "Bluetooth 5.2", "6GHz"]
+tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "Tribanda", "Bluetooth 5.2", "6GHz", "Kali Linux"]
 ---
 
 {{< alert "warning" >}}
-**Declaração de uso legal**: Os recursos de Modo Monitor e Injeção de Pacotes destinam-se exclusivamente a testes de segurança autorizados, pesquisa educacional e Teste de Penetração legítimo. Certifique-se de que possui autorização explícita da rede-alvo.
+**Aviso Legal**: Os recursos Monitor Mode e Packet Injection são exclusivos para testes de segurança autorizados, pesquisa educacional e testes de penetração legais. Certifique-se de ter autorização explícita da rede alvo.
 {{< /alert >}}
 
 ## Visão Geral do Produto
 
-O AWUS036AXML é a versão USB-C do AWUS036AXM, utilizando o mesmo chipset MediaTek MT7921AUN. Oferece Wi-Fi 6E tri-band (6GHz conforme regulamentação local) e Bluetooth 5.2. Seu principal diferencial é a interface USB-C com cabo 2-in-1 USB-C/USB-A, perfeitamente compatível com notebooks modernos. As duas antenas externas RP-SMA de 5 dBi proporcionam maior ganho de sinal sem fio.
+O AWUS036AXML apresenta o chipset MediaTek MT7921AUN com suporte Wi-Fi 6E tribanda (2.4 GHz / 5 GHz / 6 GHz), atingindo até 3000 Mbps de throughput combinado, mais Bluetooth 5.2 integrado. A interface USB-C vem com um cabo 2-in-1 USB-C/USB-A e suporte de clipe de tela.
+
+> **Aviso macOS:** Todos os adaptadores ALFA têm suporte limitado ou nenhum para macOS. macOS 11 Big Sur e posteriores, e Apple Silicon (M1/M2/M3) **NÃO** são suportados. O suporte máximo é macOS 10.15 Catalina em Macs Intel.
+
+## Características Principais
+
+- Wi-Fi 6E Tribanda: 2.4 / 5 / 6 GHz
+- Chipset MediaTek MT7921AUN
+- Até 3000 Mbps de throughput combinado
+- Bluetooth 5.2 (chip combinado)
+- Interface USB-C (USB 3.2 Gen 1, 5 Gbps)
+- Cabo 2-in-1 USB-C/USB-A incluído
+- 1× antena RP-SMA removível
+- Suporte de clipe de tela incluído
+- WPA3/WPA2/WPA/WEP/WPS
+- Monitor Mode no Kali Linux (kernel ≥ 5.18)
 
 ## Especificações Técnicas
 
 | Item | Especificação |
 |------|---------------|
-| Modelo | AWUS036AXML |
 | Chipset | MediaTek MT7921AUN |
-| Padrão Wi-Fi | IEEE 802.11 a/b/g/n/ac/ax (Wi-Fi 6E) |
-| Banda | 2.4GHz (20/40 MHz) / 5GHz (20/40/80 MHz) / 6GHz (conforme regulamentação local) |
-| Bluetooth | Bluetooth 5.2 |
-| Taxa Máxima | 802.11ax 2.4G: 600 Mbps / 5G: 1200 Mbps / 6G: 1200 Mbps |
-| Antenas | 2 × antenas dual-band externas removíveis, 5 dBi |
-| Conector de Antena | RP-SMA fêmea × 2 |
-| Interface | USB Type-C |
-| Dimensões | 85 × 63 × 20 mm |
-| Temperatura de Operação | -25°C ~ 75°C |
-| Consumo de Energia | Máx. 2,7 W |
-| Tensão de Operação | 5 V |
+| Padrões WiFi | IEEE 802.11 a/b/g/n/ac/ax (WiFi 6E) |
+| Bandas de frequência | 2.4 GHz (20/40 MHz) · 5 GHz (20/40/80 MHz) · 6 GHz (20/40/80 MHz) |
+| Velocidade máxima | 2.4GHz: 600 Mbps · 5GHz: 1200 Mbps · 6GHz: 1200 Mbps · Combinado: 3000 Mbps |
+| Bluetooth | BT 5.2 (chip combinado) |
+| Conector de antena | 1× RP-SMA female (removível) |
+| Interface USB | USB 3.2 Gen 1 Type-C (5 Gbps) |
+| Cabo | 2-in-1 USB-C/USB-A |
+| Segurança sem fio | WPA3 / WPA2 / WPA / WEP / WPS |
+| País de origem | Taiwan |
 
-## Compatibilidade com Sistemas Operacionais
+## Suporte de SO
 
-| Sistema | Status |
-|---------|--------|
-| Windows | ✅ Requer instalação de driver |
-| Linux | ✅ Suportado |
+| SO | Status | Notas |
+|----|--------|-------|
+| Windows 10 | ✅ Suportado | Apenas 2.4 GHz e 5 GHz; 6 GHz não disponível no Win10 |
+| Windows 11 | ✅ Suportado | Tribanda completo incluindo 6 GHz |
+| macOS | ❌ Não suportado | Sem suporte para macOS 11+ ou Apple Silicon |
+| Ubuntu | ✅ Suportado | Driver mt7921u integrado no kernel ≥ 5.18 (Ubuntu 22.10+) |
+| Kali Linux | ✅ Suportado | Monitor mode ≥ kernel 5.18; monitor mode ativo ≥ 6.12; injeção de pacotes suportada |
+| NetHunter (Android) | ⚠️ Parcial | OTG; dependente do kernel |
 
-## Conteúdo da Embalagem
+## Hardware Compatível
 
-- AWUS036AXML Adaptador Sem Fio USB × 1
-- Antena dual-band × 2
-- Cabo 2-in-1 USB-C/USB-A × 1
-- Suporte para monitor × 1
+| Hardware | Status | Notas |
+|----------|--------|-------|
+| Raspberry Pi 3B+/4/5 | ✅ Suportado | Pi OS atualizado (kernel ≥ 5.18); pode precisar copiar firmware |
+| PC Desktop/Laptop | ✅ Suportado | USB-C ou USB-A via cabo 2-in-1 incluído |
+| Mac Intel | ⚠️ Limitado | Máximo macOS 10.15 Catalina |
 
-## Download de Driver
+## Capacidades Avançadas
 
-| Plataforma | Link |
-|------------|------|
-| Download de Driver | [Repositório Oficial ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXML) |
+| Função | Status |
+|--------|--------|
+| Monitor Mode | ✅ Sim (kernel ≥ 5.18; modo ativo ≥ 6.12) |
+| Packet Injection | ✅ Sim |
+| Soft AP Mode | ✅ Sim |
+| Bluetooth | ✅ BT 5.2 |
+| VIF | ✅ Sim |
+
+## Conteúdo da Caixa
+
+- 1× Adaptador AWUS036AXML
+- 1× Antena dipolo removível
+- 1× Cabo 2-in-1 USB-C/USB-A
+- 1× Suporte de clipe de tela
+
+## Recursos e Links
+
+| Recurso | Link |
+|---------|------|
+| Página oficial do produto | https://www.alfa.com.tw/products/awus036axml |
+| Documentação oficial | https://docs.alfa.com.tw/ |
+| Driver Linux (integrado no kernel) | mt7921u — integrado no kernel Linux ≥ 5.18 |
+
+## Download da Ficha Técnica
+
+| Documento | Download |
+|------|------|
+| Ficha técnica oficial (PDF) | [📄 Baixar ficha técnica do AWUS036AXML](/docs/alfa/AWUS036AXML_spec.pdf) |
 
 {{< gallery >}}
   <img src="/images/products/alfa/awus036axml_image_1.png" alt="ALFA AWUS036AXML" />
@@ -62,5 +104,5 @@ O AWUS036AXML é a versão USB-C do AWUS036AXM, utilizando o mesmo chipset Media
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de um orçamento? [Fale conosco](/pt/contact/)
 {{< /alert >}}

@@ -1,60 +1,97 @@
 ---
-title: "ALFA AWUS036AXM — محول USB 3.2 لاسلكي Wi-Fi 6E ثلاثي النطاق مع بلوتوث 5.2"
-description: "ALFA AWUS036AXM، MediaTek MT7921AUN، Wi-Fi 6E (2.4/5/6GHz) + بلوتوث 5.2، USB 3.2، 2×2 MIMO، أقصى سرعة 1200 Mbps."
+title: "ALFA AWUS036AXM — محول USB Wi-Fi 6E ثلاثي النطاق بهوائيين"
+description: "ALFA AWUS036AXM مع شريحة MediaTek MT7921AUN، Wi-Fi 6E ثلاثي النطاق، موصل USB-A على شكل L، هوائيان 5 dBi، Bluetooth 5.2."
 date: 2026-03-12
 draft: false
-dir: rtl
-languageDirection: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 6E", "802.11ax", "USB 3.2", "بلوتوث 5.2", "6GHz"]
+tags: ["Wi-Fi 6E", "USB-A", "802.11ax", "ثلاثي النطاق", "Bluetooth 5.2", "هوائيان", "Kali Linux"]
+dir: rtl
 ---
 
 {{< alert "warning" >}}
-**إشعار الاستخدام القانوني**: وضع المراقبة (Monitor Mode) وحقن الحزم (Packet Injection) مخصصان فقط لاختبار أمن المعلومات المرخّص، والأبحاث التعليمية، واختبار الاختراق (Penetration Testing) القانوني. تأكد من الحصول على إذن صريح من مالك الشبكة المستهدفة.
+**إخلاء المسؤولية القانونية**: تُستخدم ميزتا Monitor Mode وPacket Injection فقط للاختبارات الأمنية المُرخَّصة والبحث العلمي والاختبارات القانونية. تأكد من الحصول على إذن صريح من الشبكة المستهدفة.
 {{< /alert >}}
 
 ## نظرة عامة على المنتج
 
-AWUS036AXM هو المحول اللاسلكي الرائد Wi-Fi 6E من ALFA Network، يعتمد على شريحة MediaTek MT7921AUN ويدعم الترددات الثلاثة 2.4GHz و5GHz و6GHz (قد يخضع توفر 6GHz لأنظمة كل منطقة)، مع دمج وظيفة Bluetooth 5.2. يأتي مع هوائيين خارجيين بموصل RP-SMA وواجهة USB 3.2 Gen 1.
+يتميز AWUS036AXM بشريحة MediaTek MT7921AUN مع دعم Wi-Fi 6E ثلاثي النطاق (2.4 GHz / 5 GHz / 6 GHz)، وسرعة تصل إلى 3000 Mbps وBluetooth 5.2 المدمج. يمنع موصل USB-A على شكل L حجب المنافذ المجاورة. يأتي مع هوائيين 5 dBi RP-SMA قابلين للفصل.
 
-## جدول المواصفات
+> **ملاحظة macOS:** جميع محولات ALFA لها دعم محدود أو معدوم لـ macOS. macOS 11 Big Sur وما بعده وApple Silicon (M1/M2/M3) **غير مدعومة**. الحد الأقصى للدعم هو macOS 10.15 Catalina على Mac بمعالج Intel.
 
-| البند | المواصفة |
-|-------|----------|
-| الطراز | AWUS036AXM |
-| مجموعة الشرائح (Chipset) | MediaTek MT7921AUN |
-| معيار Wi-Fi | IEEE 802.11 a/b/g/n/ac/ax (Wi-Fi 6E) |
-| النطاق الترددي | 2.4GHz / 5GHz / 6GHz (حسب أنظمة المنطقة) |
-| بلوتوث | Bluetooth 5.2 (هوائي مدمج) |
-| أقصى سرعة نقل | 802.11ax 2.4G: 600 Mbps / 5G: 1200 Mbps / 6G: 1200 Mbps |
-| الهوائي | 2 × هوائي ثنائي النطاق قابل للفصل (Wi-Fi، 2×2 MIMO) |
-| موصل الهوائي | RP-SMA female × 2 |
-| الواجهة | USB 3.2 Gen 1 (Type-A) |
-| الأبعاد | 87.4 × 28.5 × 12 mm |
-| درجة حرارة التشغيل | -20°C ~ 70°C |
-| استهلاك الطاقة | أقصاه 2.7 W |
-| جهد التشغيل | 5 V |
+## الميزات الرئيسية
 
-## دعم أنظمة التشغيل
+- Wi-Fi 6E ثلاثي النطاق: 2.4 / 5 / 6 GHz
+- شريحة MediaTek MT7921AUN
+- سرعة مشتركة تصل إلى 3000 Mbps
+- Bluetooth 5.2 (هوائي BT مدمج + مؤشر LED)
+- موصل USB-A على شكل L (USB 3.2 Gen 1، 5 Gbps)
+- هوائيان 2× RP-SMA female قابلان للفصل (5 dBi)
+- WPA3/WPA2/WPA/WEP/WPS
+- دعم Kali Linux Monitor Mode + Packet Injection
 
-| النظام | حالة الدعم |
-|--------|-----------|
-| Windows | ✅ يتطلب تثبيت برنامج التشغيل (Driver) |
-| Linux | ✅ مدعوم |
+## المواصفات التقنية
+
+| العنصر | المواصفة |
+|--------|----------|
+| الشريحة | MediaTek MT7921AUN |
+| معايير Wi-Fi | IEEE 802.11 a/b/g/n/ac/ax (Wi-Fi 6E) |
+| نطاقات التردد | 2.4 GHz · 5 GHz · 6 GHz |
+| أقصى معدل بيانات | 3000 Mbps |
+| Bluetooth | BT 5.2 (هوائي مدمج) |
+| الهوائي | 2× RP-SMA female، 2× 5 dBi ثنائي النطاق (قابل للفصل) |
+| واجهة USB | USB 3.2 Gen 1 Type-A على شكل L (5 Gbps) |
+| الأمان اللاسلكي | WPA3 / WPA2 / WPA / WEP / WPS |
+
+## دعم نظام التشغيل
+
+| نظام التشغيل | الحالة | ملاحظات |
+|-------------|--------|----------|
+| Windows 10 | ✅ مدعوم | 2.4+5 GHz فقط؛ 6 GHz يتطلب Windows 11 |
+| Windows 11 | ✅ مدعوم | ثلاثي النطاق الكامل بما في ذلك 6 GHz |
+| macOS | ❌ غير مدعوم | لا دعم لـ macOS 11+ أو Apple Silicon |
+| Ubuntu | ✅ مدعوم | mt7921u مدمج في النواة ≥ 5.18 |
+| Kali Linux | ✅ مدعوم | Monitor mode + packet injection؛ قد تحتاج ملفات فيرموير |
+| NetHunter | ⚠️ جزئي | OTG؛ يعتمد على النواة |
+
+## الأجهزة المدعومة
+
+| الجهاز | الحالة | ملاحظات |
+|--------|--------|----------|
+| Raspberry Pi 3B+/4/5 | ✅ مدعوم | تحديث Pi OS (نواة ≥ 5.18) |
+| PC سطح المكتب/محمول | ✅ مدعوم | موصل USB-A على شكل L لا يحجب المنافذ المجاورة |
+| Mac Intel | ⚠️ محدود | الحد الأقصى macOS 10.15 Catalina |
+
+## الإمكانات المتقدمة
+
+| الميزة | الحالة |
+|--------|--------|
+| Monitor Mode | ✅ نعم |
+| Packet Injection | ✅ نعم |
+| Soft AP Mode | ✅ نعم |
+| Bluetooth | ✅ BT 5.2 (هوائي BT مدمج) |
+| VIF | ✅ نعم |
 
 ## محتويات العبوة
 
-- AWUS036AXM محول USB لاسلكي × 1
-- هوائي ثنائي النطاق × 2
-- محول USB 3.2 بزاوية 90 درجة × 1
+- 1× محول AWUS036AXM
+- 2× هوائيان 5 dBi
+- دليل الإعداد السريع
 
-## تنزيل برنامج التشغيل
+## الموارد والروابط
 
-| المنصة | الرابط |
+| المورد | الرابط |
 |--------|--------|
-| تنزيل برنامج التشغيل | [مستودع ALFA الرسمي](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036AXM) |
+| صفحة المنتج الرسمية | https://www.alfa.com.tw/products/awus036axm |
+| التوثيق الرسمي | https://docs.alfa.com.tw/ |
+| درايفر Linux | mt7921u — مدمج في نواة Linux ≥ 5.18 |
+
+## تنزيل كتيب المواصفات
+
+| المستند | التنزيل |
+|------|------|
+| كتيب المواصفات الرسمي (PDF) | [📄 تنزيل كتيب مواصفات AWUS036AXM](/docs/alfa/AWUS036AXM_spec.pdf) |
 
 {{< gallery >}}
   <img src="/images/products/alfa/awus036axm_image_1.png" alt="ALFA AWUS036AXM" />
@@ -62,4 +99,6 @@ AWUS036AXM هو المحول اللاسلكي الرائد Wi-Fi 6E من ALFA Ne
 
 ---
 
-هل أنت مهتم؟ [تواصل معنا](/ar/contact/)
+{{< alert >}}
+للاستفسار أو طلب عرض أسعار، [تواصل معنا](/ar/contact/).
+{{< /alert >}}

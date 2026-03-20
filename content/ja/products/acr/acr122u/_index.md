@@ -77,6 +77,13 @@ ACR122U は、13.56 MHz RFID 技術を採用した PC 接続型非接触スマ�
 - Solaris
 - Android™ 3.1 以降
 
+
+## 📄 製品仕様書
+
+| リソース | リンク |
+|----------|------|
+| 📄 ACR122U 仕様書 (PDF) | [PDFをダウンロード](/docs/acr/ACR122U_spec.pdf) |
+
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC カードリーダー" />
 {{< /gallery >}}

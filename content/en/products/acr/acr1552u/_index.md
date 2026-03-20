@@ -79,6 +79,13 @@ The ACR1552U is a CCID & PC/SC compliant USB NFC Reader IV based on 13.56 MHz co
 - macOS
 - Android™
 
+
+## 📄 Product Datasheet
+
+| Resource | Link |
+|----------|------|
+| 📄 ACR1552U Datasheet (PDF) | [Download PDF](/docs/acr/ACR1552u_spec.pdf) |
+
 ## Official Resources
 
 | Resource | Link |

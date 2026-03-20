@@ -79,6 +79,13 @@ O ACR1552U é um Leitor NFC USB IV compatível com CCID e PC/SC, baseado em tecn
 - macOS
 - Android™
 
+
+## 📄 Ficha Técnica
+
+| Recurso | Link |
+|----------|------|
+| 📄 ACR1552U Especificação (PDF) | [Baixar PDF](/docs/acr/ACR1552u_spec.pdf) |
+
 ## Recursos Oficiais
 
 | Recurso | Link |

@@ -77,6 +77,13 @@ ACR122U — это подключаемый к ПК бесконтактный �
 - Solaris
 - Android™ 3.1 и более поздние версии
 
+
+## 📄 Техническая спецификация
+
+| Ресурс | Ссылка |
+|----------|------|
+| 📄 ACR122U Спецификация (PDF) | [Скачать PDF](/docs/acr/ACR122U_spec.pdf) |
+
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC считыватель" />
 {{< /gallery >}}

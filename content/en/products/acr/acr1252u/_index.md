@@ -79,6 +79,13 @@ The ACR1252U is an NFC Forum-certified PC-linked reader based on 13.56 MHz conta
 - Solaris
 - Android™ 3.1 and later
 
+
+## 📄 Product Datasheet
+
+| Resource | Link |
+|----------|------|
+| 📄 ACR1252U Datasheet (PDF) | [Download PDF](/docs/acr/ACR1252u_spec.pdf) |
+
 ## Official Resources
 
 | Resource | Link |

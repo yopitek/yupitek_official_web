@@ -79,6 +79,13 @@ ACR1252U 是 ACS 取得 NFC Forum 認證的 PC 連接式讀卡機，採用 13.56
 - Solaris
 - Android™ 3.1 及以上版本
 
+
+## 📄 產品規格書
+
+| 資源 | 連結 |
+|----------|------|
+| 📄 ACR1252U 規格書 (PDF) | [下載 PDF](/docs/acr/ACR1252u_spec.pdf) |
+
 ## 官方資源
 
 | 資源 | 連結 |

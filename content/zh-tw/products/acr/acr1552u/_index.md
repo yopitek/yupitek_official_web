@@ -79,6 +79,13 @@ ACR1552U 是 ACS 符合 CCID 及 PC/SC 規範的 USB NFC IV 讀卡機，採用 1
 - macOS
 - Android™
 
+
+## 📄 產品規格書
+
+| 資源 | 連結 |
+|----------|------|
+| 📄 ACR1552U 規格書 (PDF) | [下載 PDF](/docs/acr/ACR1552u_spec.pdf) |
+
 ## 官方資源
 
 | 資源 | 連結 |

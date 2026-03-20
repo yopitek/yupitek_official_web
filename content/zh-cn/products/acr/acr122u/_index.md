@@ -77,6 +77,13 @@ ACR122U 是 ACS 基于 13.56 MHz RFID 技术的 PC 连接式非接触智能卡�
 - Solaris
 - Android™ 3.1 及以上版本
 
+
+## 📄 产品规格书
+
+| 资源 | 链接 |
+|----------|------|
+| 📄 ACR122U 规格书 (PDF) | [下载 PDF](/docs/acr/ACR122U_spec.pdf) |
+
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC 读卡机" />
 {{< /gallery >}}

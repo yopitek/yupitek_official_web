@@ -79,6 +79,13 @@ El ACR1252U es un lector conectado a PC certificado por NFC Forum, basado en tec
 - Solaris
 - Android™ 3.1 y versiones posteriores
 
+
+## 📄 Hoja de Datos
+
+| Recurso | Enlace |
+|----------|------|
+| 📄 ACR1252U Especificación (PDF) | [Descargar PDF](/docs/acr/ACR1252u_spec.pdf) |
+
 ## Recursos Oficiales
 
 | Recurso | Enlace |

@@ -77,6 +77,13 @@ The ACR122U is a PC-linked contactless smart card reader/writer based on 13.56 M
 - Solaris
 - Android™ 3.1 and later
 
+
+## 📄 Product Datasheet
+
+| Resource | Link |
+|----------|------|
+| 📄 ACR122U Datasheet (PDF) | [Download PDF](/docs/acr/ACR122U_spec.pdf) |
+
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC Reader" />
 {{< /gallery >}}

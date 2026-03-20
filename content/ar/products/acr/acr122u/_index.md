@@ -79,6 +79,13 @@ ACR122U هو قارئ/كاتب بطاقات ذكية لاتلامسية متصل
 - Solaris
 - Android™ 3.1 وما بعده
 
+
+## 📄 ورقة البيانات
+
+| المورد | الرابط |
+|----------|------|
+| 📄 ACR122U مواصفات (PDF) | [تنزيل PDF](/docs/acr/ACR122U_spec.pdf) |
+
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U قارئ بطاقات NFC" />
 {{< /gallery >}}

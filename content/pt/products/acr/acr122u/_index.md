@@ -77,6 +77,13 @@ O ACR122U é um leitor/gravador de cartões inteligentes sem contato conectado a
 - Solaris
 - Android™ 3.1 e versões posteriores
 
+
+## 📄 Ficha Técnica
+
+| Recurso | Link |
+|----------|------|
+| 📄 ACR122U Especificação (PDF) | [Baixar PDF](/docs/acr/ACR122U_spec.pdf) |
+
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U Leitor NFC" />
 {{< /gallery >}}

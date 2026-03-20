@@ -16,9 +16,10 @@ html[lang="zh-CN"] body {
 }
 
 /* Override Blowfish ocean scheme with brand colors */
+/* NOTE: values must be comma-separated to match rgba(var(...), alpha) pattern in compiled CSS */
 .dark {
-  --color-primary-500: 41 171 226;   /* #29ABE2 */
-  --color-neutral-900: 10 22 40;     /* #0A1628 */
+  --color-primary-500: 41, 171, 226;   /* #29ABE2 */
+  --color-neutral-900: 10, 22, 40;     /* #0A1628 — fixes transparent mobile menu in dark mode */
 }
 
 /* Product card hover effect */

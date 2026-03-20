@@ -47,6 +47,14 @@ ALFA Network é um renomado fabricante taiwanês de equipamentos de rede sem fio
   {{< /card >}}
 {{< /card-group >}}
 
+<div style="margin: 1.75rem 0; padding: 1rem 1.25rem; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+  <div>
+    <span style="font-size: 1rem; font-weight: 600;">📊 Tabela de Comparação de Especificações</span><br/>
+    <span style="font-size: 0.85rem; color: var(--text-muted);">Compare os 8 modelos de adaptadores USB WiFi ALFA — specs, modo monitor, suporte Linux.</span>
+  </div>
+  <a href="/alfa_compare.html" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.5rem 1.1rem; background: #0ea5e9; color: #fff; border-radius: 6px; font-weight: 600; font-size: 0.88rem; white-space: nowrap; text-decoration: none;">🔍 Ver Comparação Completa →</a>
+</div>
+
 ## Download de Drivers
 
 Para baixar os drivers oficiais da ALFA Network, acesse a [página de suporte técnico](/pt/support/).

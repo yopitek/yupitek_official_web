@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALFA USB WiFi Adapter — Full Spec Comparison | Yupitek</title>
+  <meta name="description" content="Complete specification comparison table for all 8 ALFA Network USB WiFi adapters: AXML, AXM, AX, AXER, ACH, ACM, ACS, EACS." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface2: #263347;
+      --border: #334155;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-dark: #0284c7;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --green-bg: rgba(34,197,94,0.12);
+      --amber-bg: rgba(245,158,11,0.12);
+      --red-bg: rgba(239,68,68,0.12);
+      --row-alt: rgba(255,255,255,0.03);
+      --tag-6e: #7c3aed;
+      --tag-6: #1d4ed8;
+      --tag-5: #0e7490;
+    }
+
+    html { font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; color: #7dd3fc; }
+
+    /* ── Header ── */
+    .page-header {
+      background: linear-gradient(135deg, #0c1a2e 0%, #1a3354 50%, #0f2440 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+    .page-header .brand {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .page-header h1 {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .page-header h1 span { color: var(--accent); }
+    .page-header .subtitle {
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.3rem 0.75rem;
+      transition: border-color .2s, color .2s;
+    }
+    .back-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    /* ── Content wrapper ── */
+    .content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    /* ── Section heading ── */
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #fff;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Table wrapper (scrollable) ── */
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      -webkit-overflow-scrolling: touch;
+    }
+    .table-wrap::-webkit-scrollbar { height: 6px; }
+    .table-wrap::-webkit-scrollbar-track { background: var(--surface); }
+    .table-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.88rem;
+      min-width: 900px;
+    }
+
+    thead th {
+      background: var(--surface2);
+      color: var(--accent);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.7rem 0.85rem;
+      white-space: nowrap;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      border-bottom: 2px solid var(--border);
+    }
+    thead th:first-child { position: sticky; left: 0; z-index: 2; background: var(--surface2); }
+
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:nth-child(even) { background: var(--row-alt); }
+    tbody tr:hover { background: rgba(56,189,248,0.07); }
+
+    tbody td {
+      padding: 0.65rem 0.85rem;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    tbody td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: var(--surface);
+      font-weight: 600;
+    }
+    tbody tr:nth-child(even) td:first-child { background: #1f2f44; }
+    tbody tr:hover td:first-child { background: #1e3554; }
+
+    /* ── Model link ── */
+    .model-link {
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+    .model-link:hover { color: var(--accent); text-decoration: none; }
+
+    /* ── WiFi gen badge ── */
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .badge-6e { background: rgba(124,58,237,0.25); color: #c4b5fd; border: 1px solid #7c3aed; }
+    .badge-6  { background: rgba(29,78,216,0.25);  color: #93c5fd; border: 1px solid #1d4ed8; }
+    .badge-5  { background: rgba(14,116,144,0.25); color: #67e8f9; border: 1px solid #0e7490; }
+
+    /* ── Status cells ── */
+    .ok    { background: var(--green-bg); color: var(--green);  text-align: center; border-radius: 4px; padding: 0.15rem 0.4rem; display: inline-block; }
+    .warn  { background: var(--amber-bg); color: var(--amber);  text-align: center; border-radius: 4px; padding: 0.15rem 0.4rem; display: inline-block; }
+    .none  { background: var(--red-bg);   color: #f87171;       text-align: center; border-radius: 4px; padding: 0.15rem 0.4rem; display: inline-block; }
+
+    /* ── Buyer Guide cards ── */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+    .guide-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      transition: border-color .2s;
+    }
+    .guide-card:hover { border-color: var(--accent); }
+    .guide-card h3 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .guide-card .rec {
+      font-size: 0.82rem;
+      color: #fff;
+      font-weight: 600;
+    }
+    .guide-card .why {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+    .page-footer a { color: var(--text-muted); }
+    .page-footer a:hover { color: var(--accent); }
+
+    /* ── Mobile helpers ── */
+    @media (max-width: 640px) {
+      .page-header { padding: 1.75rem 1rem 1.5rem; }
+      .content { padding: 1.25rem 0.75rem 2.5rem; }
+      .guide-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─────────────────────── HEADER ─────────────────────── -->
+<header class="page-header">
+  <div class="brand">ALFA Network × Yupitek</div>
+  <h1>USB WiFi Adapter <span>Comparison</span></h1>
+  <p class="subtitle">完整規格比較表 — All 8 Models at a Glance</p>
+  <a class="back-link" href="/zh-tw/products/alfa/" >
+    ← 返回 ALFA 產品頁
+  </a>
+</header>
+
+<!-- ─────────────────────── MAIN CONTENT ─────────────────────── -->
+<main class="content">
+
+  <!-- ── Section 1: Full Comparison Table ── -->
+  <div class="section-title">Full Specification Comparison</div>
+  <p class="section-subtitle">Scroll right on mobile • Click model name to view full product page</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>WiFi Gen</th>
+          <th>Chipset</th>
+          <th>Bands</th>
+          <th>Max Speed</th>
+          <th>USB</th>
+          <th>Antennas</th>
+          <th>Monitor Mode</th>
+          <th>Packet Inject</th>
+          <th>Linux Driver</th>
+          <th>Bluetooth</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036axml/" target="_blank">AWUS036AXML</a></td>
+          <td><span class="badge badge-6e">WiFi 6E</span></td>
+          <td>MT7921AUN</td>
+          <td>2.4 + 5 + 6 GHz</td>
+          <td>3000 Mbps</td>
+          <td>USB-C 3.2</td>
+          <td>1× RP-SMA 5dBi</td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td>In-kernel ≥5.18</td>
+          <td>BT 5.2</td>
+          <td>WiFi 6E + Linux + USB-C</td>
+        </tr>
+        <tr>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036axm/" target="_blank">AWUS036AXM</a></td>
+          <td><span class="badge badge-6e">WiFi 6E</span></td>
+          <td>MT7921AUN</td>
+          <td>2.4 + 5 + 6 GHz</td>
+          <td>3000 Mbps</td>
+          <td>USB-A 3.2 L</td>
+          <td>2× RP-SMA 5dBi</td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td>In-kernel ≥5.18</td>
+          <td>BT 5.2</td>
+          <td>WiFi 6E + dual antenna</td>
+        </tr>
+        <tr>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036ax/" target="_blank">AWUS036AX</a></td>
+          <td><span class="badge badge-6">WiFi 6</span></td>
+          <td>RTL8832BU</td>
+          <td>2.4 + 5 GHz</td>
+          <td>1200 Mbps</td>
+          <td>USB-A 3.0</td>
+          <td>Integrated</td>
+          <td><span class="warn">⚠️ Limited</span></td>
+          <td><span class="warn">⚠️ Limited</span></td>
+          <td>OOK (&lt;6.14)</td>
+          <td>—</td>
+          <td>Windows WiFi 6</td>
+        </tr>
+        <tr>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036axer/" target="_blank">AWUS036AXER</a></td>
+          <td><span class="badge badge-6">WiFi 6</span></td>
+          <td>RTL8832BU</td>
+          <td>2.4 + 5 GHz</td>
+          <td>1800 Mbps</td>
+          <td>USB-A 3.2</td>
+          <td>Integrated nano</td>
+          <td><span class="warn">⚠️ Limited</span></td>
+          <td><span class="warn">⚠️ Limited</span></td>
+          <td>OOK (&lt;6.14)</td>
+          <td>—</td>
+          <td>Compact travel adapter</td>
+        </tr>
+        <tr>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036ach/" target="_blank">AWUS036ACH</a></td>
+          <td><span class="badge badge-5">WiFi 5</span></td>
+          <td>RTL8812AU</td>
+          <td>2.4 + 5 GHz</td>
+          <td>867 Mbps</td>
+          <td>USB-C 3.0</td>
+          <td>2× RP-SMA 5dBi</td>
+          <td><span class="ok">✅✅ Best</span></td>
+          <td><span class="ok">✅✅ Best</span></td>
+          <td>OOK (IK ≥6.14)</td>
+          <td>—</td>
+          <td>Kali Linux gold standard</td>
+        </tr>
+        <tr>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036acm/" target="_blank">AWUS036ACM</a></td>
+          <td><span class="badge badge-5">WiFi 5</span></td>
+          <td>MT7612U</td>
+          <td>2.4 + 5 GHz</td>
+          <td>867 Mbps</td>
+          <td>USB-A 3.0</td>
+          <td>2× RP-SMA 5dBi</td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td>In-kernel ≥4.19</td>
+          <td>—</td>
+          <td>Linux plug &amp; play</td>
+        </tr>
+        <tr>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036acs/" target="_blank">AWUS036ACS</a></td>
+          <td><span class="badge badge-5">WiFi 5</span></td>
+          <td>RTL8811AU</td>
+          <td>2.4 + 5 GHz</td>
+          <td>433 Mbps</td>
+          <td>USB-A 2.0</td>
+          <td>1× RP-SMA 2dBi</td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td>Out-of-kernel</td>
+          <td>—</td>
+          <td>Budget security testing</td>
+        </tr>
+        <tr>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036eacs/" target="_blank">AWUS036EACS</a></td>
+          <td><span class="badge badge-5">WiFi 5</span></td>
+          <td>RTL8821CU</td>
+          <td>2.4 + 5 GHz</td>
+          <td>433 Mbps</td>
+          <td>USB 2.0 nano</td>
+          <td>Integrated 2dBi</td>
+          <td><span class="none">❌ No</span></td>
+          <td><span class="none">❌ No</span></td>
+          <td>⚠️ Poor support</td>
+          <td>BT 4.2</td>
+          <td>Windows home WiFi + BT</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Section 2: Buyer Guide by Use Case ── -->
+  <div class="section-title">Quick Buyer Guide — By Use Case</div>
+
+  <div class="guide-grid">
+    <div class="guide-card">
+      <h3>🔴 Kali Linux / Pentesting</h3>
+      <div class="rec">Best: AWUS036ACH</div>
+      <div class="why">RTL8812AU — most mature, rock-solid monitor mode &amp; packet injection on Kali. The community gold standard since 2015.</div>
+    </div>
+    <div class="guide-card">
+      <h3>🔵 WiFi 6E (Tri-Band) Power User</h3>
+      <div class="rec">Best: AWUS036AXML or AWUS036AXM</div>
+      <div class="why">MT7921AUN — in-kernel Linux driver since 5.18, full 6 GHz band, Bluetooth 5.2. AXML has USB-C; AXM has dual antenna.</div>
+    </div>
+    <div class="guide-card">
+      <h3>🟢 Linux Daily Driver (Plug &amp; Play)</h3>
+      <div class="rec">Best: AWUS036ACM</div>
+      <div class="why">MT7612U — in-kernel since kernel 4.19, zero driver setup on Ubuntu / Debian / Fedora. Most hassle-free Linux experience.</div>
+    </div>
+    <div class="guide-card">
+      <h3>🟣 Raspberry Pi / Embedded</h3>
+      <div class="rec">Best: AWUS036ACM</div>
+      <div class="why">Low power consumption + in-kernel driver makes it ideal for Raspberry Pi headless setups without manual driver compilation.</div>
+    </div>
+    <div class="guide-card">
+      <h3>🟡 Budget / Beginner Security</h3>
+      <div class="rec">Best: AWUS036ACS</div>
+      <div class="why">RTL8811AU — affordable entry point with monitor mode and packet injection support. Single antenna, compact design.</div>
+    </div>
+    <div class="guide-card">
+      <h3>⚡ Compact Travel Adapter</h3>
+      <div class="rec">Best: AWUS036AXER</div>
+      <div class="why">Ultra-thin nano body at only 10.5g. WiFi 6 (1800 Mbps), USB-A. Great for business travel, Windows-focused.</div>
+    </div>
+    <div class="guide-card">
+      <h3>🏠 Windows Home User + Bluetooth</h3>
+      <div class="rec">Best: AWUS036EACS</div>
+      <div class="why">RTL8821CU — dual-mode WiFi 5 + Bluetooth 4.2 combo. Nano form factor. Best for desktops needing quick wireless + BT without PCIe slot.</div>
+    </div>
+    <div class="guide-card">
+      <h3>🍎 macOS Compatibility</h3>
+      <div class="rec">Best: AWUS036ACH or AWUS036AXML</div>
+      <div class="why">ACH has good macOS support via third-party driver. AXML's MT7921AUN has community macOS support. Always verify macOS version compatibility.</div>
+    </div>
+  </div>
+
+  <!-- ── Section 3: Buyer Guide by Platform ── -->
+  <div class="section-title">Quick Buyer Guide — By Platform / OS</div>
+
+  <div class="table-wrap" style="margin-top: 0.75rem;">
+    <table>
+      <thead>
+        <tr>
+          <th>Platform / OS</th>
+          <th>Top Pick</th>
+          <th>Runner-Up</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🐧 Kali Linux</td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036ach/" target="_blank">AWUS036ACH</a></td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036acm/" target="_blank">AWUS036ACM</a></td>
+          <td>ACH = best monitor mode; ACM = easiest kernel support</td>
+        </tr>
+        <tr>
+          <td>🐧 Ubuntu / Debian</td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036acm/" target="_blank">AWUS036ACM</a></td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036axml/" target="_blank">AWUS036AXML</a></td>
+          <td>MT7612U in-kernel since 4.19; MT7921AUN since 5.18</td>
+        </tr>
+        <tr>
+          <td>🐧 Raspberry Pi OS</td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036acm/" target="_blank">AWUS036ACM</a></td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036ach/" target="_blank">AWUS036ACH</a></td>
+          <td>Low power + in-kernel driver; no manual compile needed</td>
+        </tr>
+        <tr>
+          <td>🪟 Windows 10 / 11</td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036ax/" target="_blank">AWUS036AX</a></td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036eacs/" target="_blank">AWUS036EACS</a></td>
+          <td>WiFi 6 performance; EACS adds Bluetooth combo</td>
+        </tr>
+        <tr>
+          <td>🍎 macOS</td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036ach/" target="_blank">AWUS036ACH</a></td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036axml/" target="_blank">AWUS036AXML</a></td>
+          <td>Third-party drivers available; verify macOS version</td>
+        </tr>
+        <tr>
+          <td>📱 Android / NetHunter</td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036ach/" target="_blank">AWUS036ACH</a></td>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036acs/" target="_blank">AWUS036ACS</a></td>
+          <td>RTL8812AU &amp; RTL8811AU have NetHunter support; OTG needed</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Note ── -->
+  <p style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-muted); line-height: 1.7;">
+    <strong style="color: var(--text);">Note:</strong> Spec data sourced from ALFA Network official datasheets and community testing.
+    "OOK" = Out-of-Kernel driver (requires manual install). "IK" = In-Kernel (built into Linux kernel).
+    Monitor mode / packet injection capability depends on driver version and Linux kernel version.
+    Always verify compatibility with your specific OS version before purchase.
+  </p>
+
+</main>
+
+<!-- ─────────────────────── FOOTER ─────────────────────── -->
+<footer class="page-footer">
+  <p>
+    &copy; <span id="yr"></span> <a href="https://yupitek.com/" target="_blank" rel="noopener">Yupitek Technology Co., Ltd.</a>
+    &nbsp;|&nbsp;
+    ALFA Network authorized distributor in Taiwan
+    &nbsp;|&nbsp;
+    <a href="/zh-tw/products/alfa/">返回 ALFA 產品頁</a>
+  </p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

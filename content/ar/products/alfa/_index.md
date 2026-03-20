@@ -48,6 +48,14 @@ ALFA Network هي شركة تايوانية رائدة في تصنيع معدا�
   {{< /card >}}
 {{< /card-group >}}
 
+<div style="margin: 1.75rem 0; padding: 1rem 1.25rem; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+  <div>
+    <span style="font-size: 1rem; font-weight: 600;">📊 جدول مقارنة المواصفات</span><br/>
+    <span style="font-size: 0.85rem; color: var(--text-muted);">قارن جميع طرازات محولات ALFA USB الثمانية — المواصفات، وضع المراقبة، ودعم Linux.</span>
+  </div>
+  <a href="/alfa_compare.html" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.5rem 1.1rem; background: #0ea5e9; color: #fff; border-radius: 6px; font-weight: 600; font-size: 0.88rem; white-space: nowrap; text-decoration: none;">🔍 عرض جدول المقارنة →</a>
+</div>
+
 ## تحميل التعريفات
 
 لتحميل التعريفات الرسمية لمحولات ALFA، يرجى زيارة [صفحة الدعم التقني](/ar/support/).

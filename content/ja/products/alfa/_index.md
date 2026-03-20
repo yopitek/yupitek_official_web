@@ -47,6 +47,14 @@ ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiア�
   {{< /card >}}
 {{< /card-group >}}
 
+<div style="margin: 1.75rem 0; padding: 1rem 1.25rem; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+  <div>
+    <span style="font-size: 1rem; font-weight: 600;">📊 モデル仕様比較表</span><br/>
+    <span style="font-size: 0.85rem; color: var(--text-muted);">全 8 機種の ALFA USB Wi-Fi アダプター仕様、モニターモード、Linux ドライバーを一覧比較。</span>
+  </div>
+  <a href="/alfa_compare.html" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.5rem 1.1rem; background: #0ea5e9; color: #fff; border-radius: 6px; font-weight: 600; font-size: 0.88rem; white-space: nowrap; text-decoration: none;">🔍 比較表を見る →</a>
+</div>
+
 ## ドライバーダウンロード
 
 ALFA 無線LANアダプターの公式ドライバーは[テクニカルサポートページ](/ja/support/)よりご確認ください。

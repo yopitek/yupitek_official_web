@@ -8,7 +8,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 7", "WiFi 6E", "6 GHz", "Tri Band", "Dipole Antenna", "Omni", "Industrial Grade", "RP-SMA", "7 dBi"]
-featureimage: "/images/products/alfa/ars-nt5b7.jpg"
+featureimage: "/images/products/alfa/ars-nt5b7.png"
 ---
 
 ## نظرة عامة على المنتج
@@ -65,6 +65,10 @@ ARS-NT5B7 هو هوائي ثنائي القطب ثلاثي النطاق صُمِ
 | الملف | تنزيل |
 |------|------|
 | ورقة البيانات الرسمية (PDF) | [📄 تنزيل ورقة بيانات ARS-NT5B7](/docs/alfa/ARS-NT5B7_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/ars-nt5b7.png" alt="هوائي ALFA ARS-NT5B7 ثلاثي النطاق WiFi 7" />
+{{< /gallery >}}
 
 ---
 

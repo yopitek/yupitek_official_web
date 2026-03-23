@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 6E", "6 GHz", "Tri-Band", "Panel Antenna", "10 dBi", "Indoor Antenna", "RP-SMA", "Directional"]
-featureimage: "/images/products/alfa/apa-m25-6e.jpg"
+featureimage: "/images/products/alfa/apa-m25-6e.png"
 ---
 
 ## Product Overview
@@ -62,6 +62,10 @@ When paired with AWUS036AXM / AWUS036AXML, the 6 GHz band can reach up to 1200 M
 | Document | Download |
 |----------|----------|
 | Official Datasheet (PDF) | [📄 Download APA-M25-6E Datasheet](/docs/alfa/APA-M25-6E_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/apa-m25-6e.png" alt="ALFA APA-M25-6E WiFi 6E Tri-Band Indoor Directional Antenna" />
+{{< /gallery >}}
 
 ---
 

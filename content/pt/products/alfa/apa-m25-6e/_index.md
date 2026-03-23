@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 6E", "6 GHz", "三頻", "面板天線", "10 dBi", "室內天線", "RP-SMA", "指向性"]
-featureimage: "/images/products/alfa/apa-m25-6e.jpg"
+featureimage: "/images/products/alfa/apa-m25-6e.png"
 ---
 
 ## Visão Geral do Produto
@@ -62,6 +62,10 @@ Ao usar com AWUS036AXM / AWUS036AXML, a banda de 6 GHz pode atingir até 1200 Mb
 | Documento | Download |
 |-----------|----------|
 | Ficha técnica oficial (PDF) | [📄 Baixar ficha técnica APA-M25-6E](/docs/alfa/APA-M25-6E_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/apa-m25-6e.png" alt="Antena WiFi 6E Tri Band ALFA APA-M25-6E" />
+{{< /gallery >}}
 
 ---
 

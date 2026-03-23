@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "雙頻", "面板天線", "10 dBi", "室內天線", "RP-SMA"]
-featureimage: "/images/products/alfa/apa-m25.jpg"
+featureimage: "/images/products/alfa/apa-m25.png"
 ---
 
 ## Descripción del Producto
@@ -61,6 +61,10 @@ APA-M25 es la antena de panel interior doble banda de alta ganancia de ALFA Netw
 | Documento | Descarga |
 |-----------|----------|
 | Hoja de datos oficial (PDF) | [📄 Descargar hoja de datos APA-M25](/docs/alfa/APA-M25_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/apa-m25.png" alt="Antena Panel Doble Banda ALFA APA-M25" />
+{{< /gallery >}}
 
 ---
 

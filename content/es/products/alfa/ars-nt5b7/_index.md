@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 7", "WiFi 6E", "6 GHz", "三頻", "偶極天線", "全向", "工業級", "RP-SMA", "7 dBi"]
-featureimage: "/images/products/alfa/ars-nt5b7.jpg"
+featureimage: "/images/products/alfa/ars-nt5b7.png"
 ---
 
 ## Descripción del Producto
@@ -64,6 +64,10 @@ Las especificaciones de temperatura grado industrial de ARS-NT5B7 (-40°C ~ +85�
 | Documento | Descarga |
 |-----------|----------|
 | Hoja de datos oficial (PDF) | [📄 Descargar hoja de datos ARS-NT5B7](/docs/alfa/ARS-NT5B7_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/ars-nt5b7.png" alt="Antena Dipolo WiFi 7 ALFA ARS-NT5B7" />
+{{< /gallery >}}
 
 ---
 

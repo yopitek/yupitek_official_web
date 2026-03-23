@@ -8,7 +8,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "Panel Antenna", "7 dBi", "Indoor Antenna", "RP-SMA", "Directional"]
-featureimage: "/images/products/alfa/apa-m04.jpg"
+featureimage: "/images/products/alfa/apa-m04.png"
 ---
 
 ## نظرة عامة على المنتج
@@ -67,6 +67,10 @@ APA-M04 هوائي أحادي النطاق 2.4 GHz؛ عند استخدامه م�
 | الملف | تنزيل |
 |------|------|
 | ورقة البيانات الرسمية (PDF) | [📄 تنزيل ورقة بيانات APA-M04](/docs/alfa/APA-M04_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/apa-m04.png" alt="هوائي لوحي داخلي ALFA APA-M04" />
+{{< /gallery >}}
 
 ---
 

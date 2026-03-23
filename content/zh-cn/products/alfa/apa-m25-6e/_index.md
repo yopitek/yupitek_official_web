@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 6E", "6 GHz", "三频", "面板天线", "10 dBi", "室内天线", "RP-SMA", "指向性"]
-featureimage: "/images/products/alfa/apa-m25-6e.jpg"
+featureimage: "/images/products/alfa/apa-m25-6e.png"
 ---
 
 ## 产品概述
@@ -62,6 +62,10 @@ APA-M25-6E 是 ALFA Network 针对 WiFi 6E 设计的三频室内指向天线，�
 | 文件 | 下载 |
 |------|------|
 | 官方规格书（PDF）| [📄 下载 APA-M25-6E 规格书](/docs/alfa/APA-M25-6E_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/apa-m25-6e.png" alt="ALFA APA-M25-6E WiFi 6E 三频室内指向天线" />
+{{< /gallery >}}
 
 ---
 

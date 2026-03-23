@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "Panel Antenna", "7 dBi", "Indoor Antenna", "RP-SMA", "Directional"]
-featureimage: "/images/products/alfa/apa-m04.jpg"
+featureimage: "/images/products/alfa/apa-m04.png"
 ---
 
 ## 製品概要
@@ -66,6 +66,10 @@ APA-M04 はシングルバンド 2.4 GHz アンテナです。デュアルバン
 | ドキュメント | ダウンロード |
 |------|------|
 | 公式データシート（PDF）| [📄 APA-M04 データシートをダウンロード](/docs/alfa/APA-M04_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/apa-m04.png" alt="ALFA APA-M04 2.4GHz 室内パネルアンテナ" />
+{{< /gallery >}}
 
 ---
 

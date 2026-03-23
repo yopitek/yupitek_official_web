@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "面板天線", "7 dBi", "室內天線", "RP-SMA", "指向性"]
-featureimage: "/images/products/alfa/apa-m04.jpg"
+featureimage: "/images/products/alfa/apa-m04.png"
 ---
 
 ## 產品概述
@@ -66,6 +66,10 @@ APA-M04 為單頻 2.4 GHz 天線，搭配雙頻 / 三頻網卡時，僅增強 2.
 | 文件 | 下載 |
 |------|------|
 | 官方規格書（PDF）| [📄 下載 APA-M04 規格書](/docs/alfa/APA-M04_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/apa-m04.png" alt="ALFA APA-M04 2.4GHz 室內面板天線" />
+{{< /gallery >}}
 
 ---
 

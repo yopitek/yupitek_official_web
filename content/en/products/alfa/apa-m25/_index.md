@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "Dual-Band", "Panel Antenna", "10 dBi", "Indoor Antenna", "RP-SMA"]
-featureimage: "/images/products/alfa/apa-m25.jpg"
+featureimage: "/images/products/alfa/apa-m25.png"
 ---
 
 ## Product Overview
@@ -61,6 +61,10 @@ The APA-M25 is a dual-band high-gain indoor panel antenna from ALFA Network, sup
 | Document | Download |
 |----------|----------|
 | Official Datasheet (PDF) | [📄 Download APA-M25 Datasheet](/docs/alfa/APA-M25_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/apa-m25.png" alt="ALFA APA-M25 Dual-Band Indoor Panel Antenna" />
+{{< /gallery >}}
 
 ---
 

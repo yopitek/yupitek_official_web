@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "雙頻", "面板天線", "10 dBi", "室內天線", "RP-SMA"]
-featureimage: "/images/products/alfa/apa-m25.jpg"
+featureimage: "/images/products/alfa/apa-m25.png"
 ---
 
 ## Обзор продукта
@@ -61,6 +61,10 @@ APA-M25 — двухдиапазонная высокоусилительная 
 | Документ | Скачать |
 |------|------|
 | Официальное техническое описание (PDF) | [📄 Скачать APA-M25 Datasheet](/docs/alfa/APA-M25_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/apa-m25.png" alt="Двухдиапазонная панельная антенна ALFA APA-M25" />
+{{< /gallery >}}
 
 ---
 

@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "雙頻", "槳型天線", "全向", "7 dBi", "RP-SMA"]
-featureimage: "/images/products/alfa/ars-25-57a.jpg"
+featureimage: "/images/products/alfa/ars-25-57a.png"
 ---
 
 ## Обзор продукта
@@ -61,6 +61,10 @@ ARS-25-57A — двухдиапазонная всенаправленная а�
 | Документ | Скачать |
 |------|------|
 | Официальное техническое описание (PDF) | [📄 Скачать ARS-25-57A Datasheet](/docs/alfa/ARS-25-57A_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/ars-25-57a.png" alt="Антенна-лопатка ALFA ARS-25-57A" />
+{{< /gallery >}}
 
 ---
 

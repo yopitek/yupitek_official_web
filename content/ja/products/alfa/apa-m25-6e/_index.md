@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 6E", "6 GHz", "Tri-Band", "Panel Antenna", "10 dBi", "Indoor Antenna", "RP-SMA", "Directional"]
-featureimage: "/images/products/alfa/apa-m25-6e.jpg"
+featureimage: "/images/products/alfa/apa-m25-6e.png"
 ---
 
 ## 製品概要
@@ -62,6 +62,10 @@ AWUS036AXM / AWUS036AXML と組み合わせることで、6 GHz 帯は最大 120
 | ドキュメント | ダウンロード |
 |------|------|
 | 公式データシート（PDF）| [📄 APA-M25-6E データシートをダウンロード](/docs/alfa/APA-M25-6E_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/apa-m25-6e.png" alt="ALFA APA-M25-6E WiFi 6E トライバンド指向性アンテナ" />
+{{< /gallery >}}
 
 ---
 

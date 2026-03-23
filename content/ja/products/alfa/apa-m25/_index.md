@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "Dual Band", "Panel Antenna", "10 dBi", "Indoor Antenna", "RP-SMA"]
-featureimage: "/images/products/alfa/apa-m25.jpg"
+featureimage: "/images/products/alfa/apa-m25.png"
 ---
 
 ## 製品概要
@@ -61,6 +61,10 @@ APA-M25 は ALFA Network のデュアルバンド高ゲイン室内パネルア�
 | ドキュメント | ダウンロード |
 |------|------|
 | 公式データシート（PDF）| [📄 APA-M25 データシートをダウンロード](/docs/alfa/APA-M25_spec.pdf) |
+
+{{< gallery >}}
+  <img src="/images/products/alfa/apa-m25.png" alt="ALFA APA-M25 デュアルバンド室内パネルアンテナ" />
+{{< /gallery >}}
 
 ---
 

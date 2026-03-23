@@ -45,3 +45,9 @@ enableCodeCopy = true
 [sitemap]
   changefreq = "weekly"
   priority   = 0.5
+
+[verification]
+  google  = "ue_Uw1HEfewYXZ_okRAkOYuGaEozoEhNZjdv40pwzWY"
+  bing    = ""
+  yandex  = ""
+  baidu   = ""

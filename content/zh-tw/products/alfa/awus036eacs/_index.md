@@ -94,6 +94,18 @@ AWUS036EACS 是 Alfa Network 專為家用與辦公室設計的超小型 WiFi + B
 
 ---
 
+## 可搭配的天線配件
+
+所有 ALFA USB 無線網卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
+
+| 天線型號 | 頻段 | 增益 | 類型 |
+|---------|------|------|------|
+| [ALFA APA-M04](/zh-tw/products/alfa/apa-m04/) | 2.4 GHz | 7 dBi | 室內面板指向 |
+| [ALFA APA-M25](/zh-tw/products/alfa/apa-m25/) | 2.4 / 5 GHz | 7 dBi | 雙頻室內面板 |
+| [ALFA APA-M25-6E](/zh-tw/products/alfa/apa-m25-6e/) | 2.4 / 5 / 6 GHz | 7 dBi | 三頻室內面板 |
+| [ARS 25-57A](/zh-tw/products/alfa/ars-25-57a/) | 2.4 / 5 GHz | 2.5 / 7 dBi | 戶外全向 |
+| [ARS NT5B7](/zh-tw/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | 全向 |
+
 {{< alert >}}
 需要詢問報價？[聯絡我們](/zh-tw/contact/)，我們提供詳細採購建議。
 {{< /alert >}}

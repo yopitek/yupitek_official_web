@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "雙頻", "槳型天線", "全向", "7 dBi", "RP-SMA"]
-featureimage: "/images/products/alfa/ars-25-57a.png"
+featureimage: "/images/products/alfa/ars-25-57a.webp"
 ---
 
 ## Visão Geral do Produto
@@ -63,7 +63,7 @@ ARS-25-57A é a antena paddle (de palheta) omnidirecional dual band da ALFA Netw
 | Ficha técnica oficial (PDF) | [📄 Baixar ficha técnica ARS-25-57A](/docs/alfa/ARS-25-57A_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/ars-25-57a.png" alt="Antena Paddle Omnidirecional ALFA ARS-25-57A" />
+  <img src="/images/products/alfa/ars-25-57a.webp" alt="Antena Paddle Omnidirecional ALFA ARS-25-57A" />
 {{< /gallery >}}
 
 ---

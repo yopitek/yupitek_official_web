@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 7", "WiFi 6E", "6 GHz", "Tri-Band", "Dipole Antenna", "Omni", "Industrial Grade", "RP-SMA", "7 dBi"]
-featureimage: "/images/products/alfa/ars-nt5b7.png"
+featureimage: "/images/products/alfa/ars-nt5b7.webp"
 ---
 
 ## 製品概要
@@ -66,7 +66,7 @@ ARS-NT5B7 の産業グレード温度仕様（-40°C〜+85°C）は、USB アダ
 | 公式データシート（PDF）| [📄 ARS-NT5B7 データシートをダウンロード](/docs/alfa/ARS-NT5B7_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/ars-nt5b7.png" alt="ALFA ARS-NT5B7 WiFi 7 トライバンドダイポールアンテナ" />
+  <img src="/images/products/alfa/ars-nt5b7.webp" alt="ALFA ARS-NT5B7 WiFi 7 トライバンドダイポールアンテナ" />
 {{< /gallery >}}
 
 ---

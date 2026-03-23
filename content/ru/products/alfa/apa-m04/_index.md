@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "面板天線", "7 dBi", "室內天線", "RP-SMA", "指向性"]
-featureimage: "/images/products/alfa/apa-m04.png"
+featureimage: "/images/products/alfa/apa-m04.webp"
 ---
 
 ## Обзор продукта
@@ -68,7 +68,7 @@ APA-M04 — однодиапазонная антенна 2.4 GHz. При исп
 | Официальное техническое описание (PDF) | [📄 Скачать APA-M04 Datasheet](/docs/alfa/APA-M04_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/apa-m04.png" alt="Внутренняя панельная антенна ALFA APA-M04" />
+  <img src="/images/products/alfa/apa-m04.webp" alt="Внутренняя панельная антенна ALFA APA-M04" />
 {{< /gallery >}}
 
 ---

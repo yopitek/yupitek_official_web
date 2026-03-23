@@ -1,9 +1,10 @@
 ---
 title: "ブログ"
-description: "Yupitekの最新ニュース、製品情報、技術インサイト。"
-date: 2026-01-01
+description: "ALFA Network WiFiアダプターチュートリアル、Kali Linuxセットアップガイド、モニターモード・パケットインジェクション、ドライバーインストール、ペネトレーションテストガイド。"
+date: 2026-03-23
 draft: false
 showBreadcrumbs: true
+showTableOfContents: false
 ---
 
-Yupitekチームの最新記事、製品ニュース、技術情報をお楽しみに。
+ALFA Network 無線アダプターの技術チュートリアル、Kali Linuxセットアップガイド、ネットワークセキュリティツールの使い方。

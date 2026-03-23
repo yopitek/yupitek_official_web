@@ -1,9 +1,11 @@
 ---
 title: "المدونة"
-description: "آخر الأخبار وتحديثات المنتجات والرؤى التقنية من Yupitek."
-date: 2026-01-01
+description: "دروس وأدلة لمحولات ALFA Network اللاسلكية — إعداد Kali Linux، وضع المراقبة، حقن الحزم، تثبيت التعريفات وأدلة اختبار الاختراق."
+date: 2026-03-23
 draft: false
 showBreadcrumbs: true
+showTableOfContents: false
+dir: rtl
 ---
 
-ترقبوا أحدث المقالات وأخبار المنتجات والرؤى التقنية من فريق Yupitek.
+دروس تقنية وأدلة إعداد محولات ALFA Network اللاسلكية وأدوات أمن الشبكات.

@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "Dual-Band", "Paddle Antenna", "Omni-directional", "7 dBi", "RP-SMA"]
-featureimage: "/images/products/alfa/ars-25-57a.png"
+featureimage: "/images/products/alfa/ars-25-57a.webp"
 ---
 
 ## Product Overview
@@ -63,7 +63,7 @@ The ARS-25-57A is a dual-band paddle (paddle-style) omni-directional antenna fro
 | Official Datasheet (PDF) | [📄 Download ARS-25-57A Datasheet](/docs/alfa/ARS-25-57A_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/ars-25-57a.png" alt="ALFA ARS-25-57A Dual-Band Paddle Antenna" />
+  <img src="/images/products/alfa/ars-25-57a.webp" alt="ALFA ARS-25-57A Dual-Band Paddle Antenna" />
 {{< /gallery >}}
 
 ---

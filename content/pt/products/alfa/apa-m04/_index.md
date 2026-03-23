@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "面板天線", "7 dBi", "室內天線", "RP-SMA", "指向性"]
-featureimage: "/images/products/alfa/apa-m04.png"
+featureimage: "/images/products/alfa/apa-m04.webp"
 ---
 
 ## Visão Geral do Produto
@@ -68,7 +68,7 @@ APA-M04 é uma antena de banda única 2.4 GHz; ao usá-la com adaptadores de ban
 | Ficha técnica oficial (PDF) | [📄 Baixar ficha técnica APA-M04](/docs/alfa/APA-M04_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/apa-m04.png" alt="Antena Painel Interior ALFA APA-M04 2.4GHz" />
+  <img src="/images/products/alfa/apa-m04.webp" alt="Antena Painel Interior ALFA APA-M04 2.4GHz" />
 {{< /gallery >}}
 
 ---

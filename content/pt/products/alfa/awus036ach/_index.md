@@ -103,6 +103,18 @@ O AWUS036ACH é o adaptador mais icônico da ALFA Network — o padrão ouro par
 
 ---
 
+## Acessórios de Antena Compatíveis
+
+Todos os adaptadores USB ALFA utilizam um conector RP-SMA padrão. Faça upgrade com uma antena externa opcional para maior alcance e ganho:
+
+| Antena | Frequência | Ganho | Tipo |
+|--------|-----------|-------|------|
+| [ALFA APA-M04](/pt/products/alfa/apa-m04/) | 2.4 GHz | 7 dBi | Painel interno direcional |
+| [ALFA APA-M25](/pt/products/alfa/apa-m25/) | 2.4 / 5 GHz | 7 dBi | Painel interno dual band |
+| [ALFA APA-M25-6E](/pt/products/alfa/apa-m25-6e/) | 2.4 / 5 / 6 GHz | 7 dBi | Painel interno tri band |
+| [ARS 25-57A](/pt/products/alfa/ars-25-57a/) | 2.4 / 5 GHz | 2.5 / 7 dBi | Omnidirecional exterior |
+| [ARS NT5B7](/pt/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | Omnidirecional |
+
 {{< alert >}}
 Precisa de uma cotação? [Entre em contato](/pt/contact/), oferecemos consultoria de compra detalhada.
 {{< /alert >}}

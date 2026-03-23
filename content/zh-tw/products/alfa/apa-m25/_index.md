@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "雙頻", "面板天線", "10 dBi", "室內天線", "RP-SMA"]
-featureimage: "/images/products/alfa/apa-m25.png"
+featureimage: "/images/products/alfa/apa-m25.webp"
 ---
 
 ## 產品概述
@@ -63,7 +63,7 @@ APA-M25 是 ALFA Network 的雙頻高增益室內面板天線，同時支援 2.4
 | 官方規格書（PDF）| [📄 下載 APA-M25 規格書](/docs/alfa/APA-M25_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/apa-m25.png" alt="ALFA APA-M25 雙頻室內面板天線" />
+  <img src="/images/products/alfa/apa-m25.webp" alt="ALFA APA-M25 雙頻室內面板天線" />
 {{< /gallery >}}
 
 ---

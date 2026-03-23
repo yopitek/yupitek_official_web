@@ -52,6 +52,11 @@
     weight   = 27
 
 [[main]]
+  name   = "Блог"
+  pageRef = "/blog"
+  weight  = 35
+
+[[main]]
   name       = "Поддержка"
   pageRef    = "/support"
   weight     = 30

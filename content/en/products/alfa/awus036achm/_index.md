@@ -62,6 +62,18 @@ The AWUS036ACHM is powered by the MediaTek MT7610U chipset and supports IEEE 802
 
 ---
 
+## Compatible Antenna Upgrades
+
+All ALFA adapters feature a standard RP-SMA connector. Upgrade with an optional external antenna for greater range and gain:
+
+| Antenna | Frequency | Gain | Type |
+|---------|-----------|------|------|
+| [ALFA APA-M04](/en/products/alfa/apa-m04/) | 2.4 GHz | 7 dBi | Indoor Panel |
+| [ALFA APA-M25](/en/products/alfa/apa-m25/) | 2.4 / 5 GHz | 7 dBi | Dual-Band Indoor Panel |
+| [ALFA APA-M25-6E](/en/products/alfa/apa-m25-6e/) | 2.4 / 5 / 6 GHz | 7 dBi | Tri-Band Indoor Panel |
+| [ARS 25-57A](/en/products/alfa/ars-25-57a/) | 2.4 / 5 GHz | 2.5 / 7 dBi | Outdoor Omni |
+| [ARS NT5B7](/en/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | Omni |
+
 {{< alert >}}
 Looking for a quote? [Contact Us](/en/contact/)
 {{< /alert >}}

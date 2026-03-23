@@ -102,6 +102,19 @@ AWUS036ACH は ALFA Network の最も象徴的なセキュリティ研究用ア�
 
 ---
 
+## 対応アンテナアクセサリ
+
+すべての ALFA USB アダプターは標準 RP-SMA コネクタを採用。以下の外部アンテナで信号範囲とゲインを向上できます：
+
+| アンテナ | 周波数 | ゲイン | タイプ |
+|---------|--------|--------|--------|
+| [ALFA APA-M04](/ja/products/alfa/apa-m04/) | 2.4 GHz | 7 dBi | 室内パネル指向性 |
+| [ALFA APA-M25](/ja/products/alfa/apa-m25/) | 2.4 / 5 GHz | 7 dBi | デュアルバンド室内パネル |
+| [ALFA APA-M25-6E](/ja/products/alfa/apa-m25-6e/) | 2.4 / 5 / 6 GHz | 7 dBi | トライバンド室内パネル |
+| [ARS 25-57A](/ja/products/alfa/ars-25-57a/) | 2.4 / 5 GHz | 2.5 / 7 dBi | 屋外無指向性 |
+| [ARS NT5B7](/ja/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | 無指向性 |
+
+
 {{< alert >}}
 見積もりや購入に関するご相談は[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}

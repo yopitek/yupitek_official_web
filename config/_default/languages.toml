@@ -1,4 +1,5 @@
 [zh-tw]
+  title                = "ALFA Network 無線網卡台灣代理 | 榆閤科技 Yopitek"
   languageName         = "繁體中文"
   languageCode         = "zh-TW"
   weight               = 1
@@ -8,6 +9,7 @@
     displayName        = "🇹🇼 繁體中文"
 
 [zh-cn]
+  title                = "ALFA Network 无线网卡台湾代理 | 榆阖科技 Yopitek"
   languageName         = "简体中文"
   languageCode         = "zh-CN"
   weight               = 2
@@ -16,6 +18,7 @@
     displayName        = "🇨🇳 简体中文"
 
 [en]
+  title                = "ALFA Network Authorized Distributor Taiwan | Yopitek Ltd"
   languageName         = "English"
   languageCode         = "en"
   weight               = 3
@@ -24,6 +27,7 @@
     displayName        = "🇬🇧 English"
 
 [ja]
+  title                = "ALFA Network 無線LAN正規販売代理店 台湾 | Yopitek"
   languageName         = "日本語"
   languageCode         = "ja"
   weight               = 4
@@ -32,6 +36,7 @@
     displayName        = "🇯🇵 日本語"
 
 [ar]
+  title                = "موزع ALFA Network المعتمد في تايوان | Yopitek"
   languageName         = "العربية"
   languageCode         = "ar"
   weight               = 5
@@ -42,6 +47,7 @@
     displayName        = "🇸🇦 العربية"
 
 [es]
+  title                = "Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd"
   languageName         = "Español"
   languageCode         = "es"
   weight               = 6
@@ -50,6 +56,7 @@
     displayName        = "🇪🇸 Español"
 
 [pt]
+  title                = "Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd"
   languageName         = "Português"
   languageCode         = "pt"
   weight               = 7
@@ -58,6 +65,7 @@
     displayName        = "🇧🇷 Português"
 
 [ru]
+  title                = "Авторизованный дистрибьютор ALFA Network Тайвань | Yopitek"
   languageName         = "Русский"
   languageCode         = "ru"
   weight               = 8

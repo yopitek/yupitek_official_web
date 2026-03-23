@@ -1,9 +1,10 @@
 ---
 title: "Blog"
-description: "Latest news, product updates, and tech insights from Yupitek."
-date: 2026-01-01
+description: "Tutorials and guides for ALFA Network USB WiFi adapters — Kali Linux setup, monitor mode, packet injection, driver installation, and penetration testing guides."
+date: 2026-03-23
 draft: false
 showBreadcrumbs: true
+showTableOfContents: false
 ---
 
-Stay tuned for the latest articles, product news, and technology insights from the Yupitek team.
+Technical tutorials, setup guides, and product insights for ALFA Network wireless adapters and cybersecurity tools.

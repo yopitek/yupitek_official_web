@@ -60,3 +60,8 @@
   name       = "联系我们"
   pageRef    = "/contact"
   weight     = 40
+
+[[main]]
+  name   = "博客"
+  pageRef = "/blog"
+  weight  = 35

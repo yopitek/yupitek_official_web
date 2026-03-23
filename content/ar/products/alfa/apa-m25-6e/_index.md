@@ -8,7 +8,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 6E", "6 GHz", "Tri Band", "Panel Antenna", "10 dBi", "Indoor Antenna", "RP-SMA", "Directional"]
-featureimage: "/images/products/alfa/apa-m25-6e.png"
+featureimage: "/images/products/alfa/apa-m25-6e.webp"
 ---
 
 ## نظرة عامة على المنتج
@@ -65,7 +65,7 @@ APA-M25-6E هو هوائي داخلي اتجاهي ثلاثي النطاق صُ�
 | ورقة البيانات الرسمية (PDF) | [📄 تنزيل ورقة بيانات APA-M25-6E](/docs/alfa/APA-M25-6E_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/apa-m25-6e.png" alt="هوائي ALFA APA-M25-6E ثلاثي النطاق WiFi 6E" />
+  <img src="/images/products/alfa/apa-m25-6e.webp" alt="هوائي ALFA APA-M25-6E ثلاثي النطاق WiFi 6E" />
 {{< /gallery >}}
 
 ---

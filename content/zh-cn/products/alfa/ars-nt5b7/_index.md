@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 7", "WiFi 6E", "6 GHz", "三频", "偶极天线", "全向", "工业级", "RP-SMA", "7 dBi"]
-featureimage: "/images/products/alfa/ars-nt5b7.png"
+featureimage: "/images/products/alfa/ars-nt5b7.webp"
 ---
 
 ## 产品概述
@@ -66,7 +66,7 @@ ARS-NT5B7 的工业级温度规格（-40°C ~ +85°C）也适合路由器、AP �
 | 官方规格书（PDF）| [📄 下载 ARS-NT5B7 规格书](/docs/alfa/ARS-NT5B7_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/ars-nt5b7.png" alt="ALFA ARS-NT5B7 WiFi 7 三频偶极天线" />
+  <img src="/images/products/alfa/ars-nt5b7.webp" alt="ALFA ARS-NT5B7 WiFi 7 三频偶极天线" />
 {{< /gallery >}}
 
 ---

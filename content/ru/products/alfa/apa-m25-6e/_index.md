@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 6E", "6 GHz", "三頻", "面板天線", "10 dBi", "室內天線", "RP-SMA", "指向性"]
-featureimage: "/images/products/alfa/apa-m25-6e.png"
+featureimage: "/images/products/alfa/apa-m25-6e.webp"
 ---
 
 ## Обзор продукта
@@ -64,7 +64,7 @@ APA-M25-6E — трёхдиапазонная внутренняя направ�
 | Официальное техническое описание (PDF) | [📄 Скачать APA-M25-6E Datasheet](/docs/alfa/APA-M25-6E_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/apa-m25-6e.png" alt="Трёхдиапазонная антенна ALFA APA-M25-6E WiFi 6E" />
+  <img src="/images/products/alfa/apa-m25-6e.webp" alt="Трёхдиапазонная антенна ALFA APA-M25-6E WiFi 6E" />
 {{< /gallery >}}
 
 ---

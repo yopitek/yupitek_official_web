@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 7", "WiFi 6E", "6 GHz", "三頻", "偶極天線", "全向", "工業級", "RP-SMA", "7 dBi"]
-featureimage: "/images/products/alfa/ars-nt5b7.png"
+featureimage: "/images/products/alfa/ars-nt5b7.webp"
 ---
 
 ## Обзор продукта
@@ -66,7 +66,7 @@ ARS-NT5B7 — трёхдиапазонная дипольная антенна A
 | Официальное техническое описание (PDF) | [📄 Скачать ARS-NT5B7 Datasheet](/docs/alfa/ARS-NT5B7_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/ars-nt5b7.png" alt="Дипольная антенна WiFi 7 ALFA ARS-NT5B7" />
+  <img src="/images/products/alfa/ars-nt5b7.webp" alt="Дипольная антенна WiFi 7 ALFA ARS-NT5B7" />
 {{< /gallery >}}
 
 ---

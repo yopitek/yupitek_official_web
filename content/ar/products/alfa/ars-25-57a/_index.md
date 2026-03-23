@@ -8,7 +8,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "Dual Band", "Paddle Antenna", "Omni", "7 dBi", "RP-SMA"]
-featureimage: "/images/products/alfa/ars-25-57a.png"
+featureimage: "/images/products/alfa/ars-25-57a.webp"
 ---
 
 ## نظرة عامة على المنتج
@@ -64,7 +64,7 @@ ARS-25-57A هو هوائي مجداف (Paddle) ثنائي النطاق شامل 
 | ورقة البيانات الرسمية (PDF) | [📄 تنزيل ورقة بيانات ARS-25-57A](/docs/alfa/ARS-25-57A_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/ars-25-57a.png" alt="هوائي مجداف ALFA ARS-25-57A" />
+  <img src="/images/products/alfa/ars-25-57a.webp" alt="هوائي مجداف ALFA ARS-25-57A" />
 {{< /gallery >}}
 
 ---

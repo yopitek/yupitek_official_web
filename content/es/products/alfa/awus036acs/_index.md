@@ -97,6 +97,18 @@ El AWUS036ACS es el punto de entrada más asequible de Alfa en la gama de doble 
 
 ---
 
+## Accesorios de Antena Compatibles
+
+Todos los adaptadores USB ALFA utilizan un conector RP-SMA estándar. Mejora con una antena externa opcional para mayor alcance y ganancia:
+
+| Antena | Frecuencia | Ganancia | Tipo |
+|--------|-----------|----------|------|
+| [ALFA APA-M04](/es/products/alfa/apa-m04/) | 2.4 GHz | 7 dBi | Panel interior direccional |
+| [ALFA APA-M25](/es/products/alfa/apa-m25/) | 2.4 / 5 GHz | 7 dBi | Panel interior dual banda |
+| [ALFA APA-M25-6E](/es/products/alfa/apa-m25-6e/) | 2.4 / 5 / 6 GHz | 7 dBi | Panel interior tri banda |
+| [ARS 25-57A](/es/products/alfa/ars-25-57a/) | 2.4 / 5 GHz | 2.5 / 7 dBi | Omnidireccional exterior |
+| [ARS NT5B7](/es/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | Omnidireccional |
+
 {{< alert "info" >}}
 ¿Necesita una cotización? [Contáctenos](/es/contact/), ofrecemos asesoría de compra detallada.
 {{< /alert >}}

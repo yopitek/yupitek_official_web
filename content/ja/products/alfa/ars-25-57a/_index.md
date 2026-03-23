@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "Dual Band", "Paddle Antenna", "Omni", "7 dBi", "RP-SMA"]
-featureimage: "/images/products/alfa/ars-25-57a.png"
+featureimage: "/images/products/alfa/ars-25-57a.webp"
 ---
 
 ## 製品概要
@@ -63,7 +63,7 @@ ARS-25-57A は ALFA Network のデュアルバンドパドル（Paddle）型全�
 | 公式データシート（PDF）| [📄 ARS-25-57A データシートをダウンロード](/docs/alfa/ARS-25-57A_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/ars-25-57a.png" alt="ALFA ARS-25-57A デュアルバンドパドルアンテナ" />
+  <img src="/images/products/alfa/ars-25-57a.webp" alt="ALFA ARS-25-57A デュアルバンドパドルアンテナ" />
 {{< /gallery >}}
 
 ---

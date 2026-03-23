@@ -60,3 +60,8 @@
   name       = "اتصل بنا"
   pageRef    = "/contact"
   weight     = 40
+
+[[main]]
+  name   = "المدونة"
+  pageRef = "/blog"
+  weight  = 35

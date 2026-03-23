@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "Panel Antenna", "7 dBi", "Indoor Antenna", "RP-SMA", "Directional"]
-featureimage: "/images/products/alfa/apa-m04.png"
+featureimage: "/images/products/alfa/apa-m04.webp"
 ---
 
 ## Product Overview
@@ -68,7 +68,7 @@ The APA-M04 is a single-band 2.4 GHz antenna. When used with dual-band or tri-ba
 | Official Datasheet (PDF) | [📄 Download APA-M04 Datasheet](/docs/alfa/APA-M04_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/apa-m04.png" alt="ALFA APA-M04 2.4GHz Indoor Panel Antenna" />
+  <img src="/images/products/alfa/apa-m04.webp" alt="ALFA APA-M04 2.4GHz Indoor Panel Antenna" />
 {{< /gallery >}}
 
 ---

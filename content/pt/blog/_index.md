@@ -1,9 +1,10 @@
 ---
 title: "Blog"
-description: "Últimas novidades, atualizações de produtos e insights tecnológicos da Yupitek."
-date: 2026-01-01
+description: "Tutoriais e guias para adaptadores WiFi USB ALFA Network — configuração do Kali Linux, modo monitor, injeção de pacotes, instalação de drivers e guias de testes de penetração."
+date: 2026-03-23
 draft: false
 showBreadcrumbs: true
+showTableOfContents: false
 ---
 
-Fique atento aos últimos artigos, notícias de produtos e insights tecnológicos da equipe Yupitek.
+Tutoriais técnicos e guias de configuração para adaptadores ALFA Network e ferramentas de cibersegurança.

@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "雙頻", "槳型天線", "全向", "7 dBi", "RP-SMA"]
-featureimage: "/images/products/alfa/ars-25-57a.png"
+featureimage: "/images/products/alfa/ars-25-57a.webp"
 ---
 
 ## 產品概述
@@ -63,7 +63,7 @@ ARS-25-57A 是 ALFA Network 的雙頻槳型（Paddle）全向天線，同時支�
 | 官方規格書（PDF）| [📄 下載 ARS-25-57A 規格書](/docs/alfa/ARS-25-57A_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/ars-25-57a.png" alt="ALFA ARS-25-57A 雙頻槳型天線" />
+  <img src="/images/products/alfa/ars-25-57a.webp" alt="ALFA ARS-25-57A 雙頻槳型天線" />
 {{< /gallery >}}
 
 ---

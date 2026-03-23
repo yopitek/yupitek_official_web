@@ -8,7 +8,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["2.4 GHz", "5 GHz", "Dual Band", "Panel Antenna", "10 dBi", "Indoor Antenna", "RP-SMA"]
-featureimage: "/images/products/alfa/apa-m25.png"
+featureimage: "/images/products/alfa/apa-m25.webp"
 ---
 
 ## نظرة عامة على المنتج
@@ -64,7 +64,7 @@ APA-M25 هو هوائي لوحي داخلي ثنائي النطاق عالي ا�
 | ورقة البيانات الرسمية (PDF) | [📄 تنزيل ورقة بيانات APA-M25](/docs/alfa/APA-M25_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/apa-m25.png" alt="هوائي لوحي ثنائي النطاق ALFA APA-M25" />
+  <img src="/images/products/alfa/apa-m25.webp" alt="هوائي لوحي ثنائي النطاق ALFA APA-M25" />
 {{< /gallery >}}
 
 ---

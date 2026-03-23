@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["WiFi 7", "WiFi 6E", "6 GHz", "Tri-Band", "Dipole Antenna", "Omni-directional", "Industrial Grade", "RP-SMA", "7 dBi"]
-featureimage: "/images/products/alfa/ars-nt5b7.png"
+featureimage: "/images/products/alfa/ars-nt5b7.webp"
 ---
 
 ## Product Overview
@@ -66,7 +66,7 @@ The ARS-NT5B7's industrial-grade temperature rating (-40°C ~ +85°C) also makes
 | Official Datasheet (PDF) | [📄 Download ARS-NT5B7 Datasheet](/docs/alfa/ARS-NT5B7_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/ars-nt5b7.png" alt="ALFA ARS-NT5B7 WiFi 7 Tri-Band Dipole Antenna" />
+  <img src="/images/products/alfa/ars-nt5b7.webp" alt="ALFA ARS-NT5B7 WiFi 7 Tri-Band Dipole Antenna" />
 {{< /gallery >}}
 
 ---

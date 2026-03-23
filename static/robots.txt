@@ -1,6 +1,15 @@
 User-agent: *
 Allow: /
 
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
 # Block form confirmation pages from indexing
 Disallow: /zh-tw/contact/confirm/
 Disallow: /zh-cn/contact/confirm/

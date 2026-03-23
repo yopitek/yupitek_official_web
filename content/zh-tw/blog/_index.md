@@ -1,9 +1,10 @@
 ---
 title: "部落格"
-description: "榆閤科技最新消息、產品資訊與技術洞察。"
-date: 2026-01-01
+description: "ALFA Network 無線網卡教學文章、Kali Linux 監聽模式設定、封包注入教學、驅動程式安裝指南及滲透測試技術分享。"
+date: 2026-03-23
 draft: false
 showBreadcrumbs: true
+showTableOfContents: false
 ---
 
-敬請期待榆閤科技團隊的最新文章、產品新聞與技術分享。
+ALFA Network 無線網卡技術教學、Kali Linux 設定指南與資安工具使用教學。

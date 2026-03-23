@@ -47,6 +47,26 @@ ALFA Network 是台湾知名无线网络设备、无线网卡制造商，专精�
   {{< /card >}}
 {{< /card-group >}}
 
+### 天线配件
+
+{{< card-group >}}
+  {{< card title="APA-M04" href="/zh-cn/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
+    2.4 GHz 室内面板指向天线，7 dBi 高增益，PR-SMA 接头，适合强化特定方向 2.4 GHz 信号。
+  {{< /card >}}
+  {{< card title="APA-M25" href="/zh-cn/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
+    双频 2.4/5 GHz 室内面板天线，5 GHz 达 10 dBi，RP-SMA 接头，指向性高增益。
+  {{< /card >}}
+  {{< card title="APA-M25-6E" href="/zh-cn/products/alfa/apa-m25-6e/" image="/images/products/alfa/apa-m25-6e.png" >}}
+    WiFi 6E 三频室内指向天线，支持 2.4/5/6 GHz，最高 10 dBi，RP-SMA 接头。
+  {{< /card >}}
+  {{< card title="ARS-25-57A" href="/zh-cn/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png" >}}
+    双频 2.4/5 GHz 桨型全向天线，5/7 dBi，RP-SMA 直接替换升级。
+  {{< /card >}}
+  {{< card title="ARS-NT5B7" href="/zh-cn/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png" >}}
+    WiFi 7 三频偶极天线，2.4/5/6 GHz，工业级 -40°C~+85°C，6 GHz 达 7 dBi。
+  {{< /card >}}
+{{< /card-group >}}
+
 <div style="margin: 1.75rem 0; padding: 1rem 1.25rem; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
   <div>
     <span style="font-size: 1rem; font-weight: 600;">📊 型号规格对比表</span><br/>

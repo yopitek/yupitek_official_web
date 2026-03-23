@@ -47,6 +47,26 @@ ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiア�
   {{< /card >}}
 {{< /card-group >}}
 
+### アンテナアクセサリ
+
+{{< card-group >}}
+  {{< card title="APA-M04" href="/ja/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
+    2.4 GHz 室内パネル指向性アンテナ、7 dBi 高ゲイン、PR-SMA コネクタ。
+  {{< /card >}}
+  {{< card title="APA-M25" href="/ja/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
+    デュアルバンド 2.4/5 GHz 室内パネルアンテナ、5 GHz 10 dBi、RP-SMA 指向性高ゲイン。
+  {{< /card >}}
+  {{< card title="APA-M25-6E" href="/ja/products/alfa/apa-m25-6e/" image="/images/products/alfa/apa-m25-6e.png" >}}
+    WiFi 6E トライバンド室内指向性アンテナ、2.4/5/6 GHz、最大 10 dBi、RP-SMA。
+  {{< /card >}}
+  {{< card title="ARS-25-57A" href="/ja/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png" >}}
+    デュアルバンド 2.4/5 GHz パドル全方向アンテナ、5/7 dBi、RP-SMA 直接交換。
+  {{< /card >}}
+  {{< card title="ARS-NT5B7" href="/ja/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png" >}}
+    WiFi 7 トライバンドダイポールアンテナ、産業グレード -40°C~+85°C、6 GHz 7 dBi。
+  {{< /card >}}
+{{< /card-group >}}
+
 <div style="margin: 1.75rem 0; padding: 1rem 1.25rem; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
   <div>
     <span style="font-size: 1rem; font-weight: 600;">📊 モデル仕様比較表</span><br/>

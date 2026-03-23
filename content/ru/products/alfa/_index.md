@@ -47,6 +47,26 @@ ALFA Network — известный тайваньский производит�
   {{< /card >}}
 {{< /card-group >}}
 
+### Антенные Аксессуары
+
+{{< card-group >}}
+  {{< card title="APA-M04" href="/ru/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
+    Внутренняя направленная панельная антенна 2.4 ГГц, усиление 7 дБи, разъём PR-SMA.
+  {{< /card >}}
+  {{< card title="APA-M25" href="/ru/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
+    Двухдиапазонная панельная антенна 2.4/5 ГГц, 10 дБи на 5 ГГц, разъём RP-SMA.
+  {{< /card >}}
+  {{< card title="APA-M25-6E" href="/ru/products/alfa/apa-m25-6e/" image="/images/products/alfa/apa-m25-6e.png" >}}
+    Трёхдиапазонная направленная антенна WiFi 6E 2.4/5/6 ГГц, до 10 дБи, RP-SMA.
+  {{< /card >}}
+  {{< card title="ARS-25-57A" href="/ru/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png" >}}
+    Двухдиапазонная антенна-лопатка 2.4/5 ГГц, 5/7 дБи, RP-SMA прямая замена.
+  {{< /card >}}
+  {{< card title="ARS-NT5B7" href="/ru/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png" >}}
+    Трёхдиапазонная дипольная антенна WiFi 7, промышленный класс -40°C~+85°C, 7 дБи на 6 ГГц.
+  {{< /card >}}
+{{< /card-group >}}
+
 <div style="margin: 1.75rem 0; padding: 1rem 1.25rem; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
   <div>
     <span style="font-size: 1rem; font-weight: 600;">📊 Таблица сравнения характеристик</span><br/>

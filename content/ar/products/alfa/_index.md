@@ -48,6 +48,26 @@ ALFA Network هي شركة تايوانية رائدة في تصنيع معدا�
   {{< /card >}}
 {{< /card-group >}}
 
+### ملحقات الهوائي
+
+{{< card-group >}}
+  {{< card title="APA-M04" href="/ar/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
+    هوائي لوحي داخلي 2.4 GHz، كسب 7 dBi، موصل PR-SMA، مثالي لتعزيز إشارة اتجاهية.
+  {{< /card >}}
+  {{< card title="APA-M25" href="/ar/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
+    هوائي لوحي ثنائي النطاق 2.4/5 GHz، 10 dBi عند 5 GHz، موصل RP-SMA.
+  {{< /card >}}
+  {{< card title="APA-M25-6E" href="/ar/products/alfa/apa-m25-6e/" image="/images/products/alfa/apa-m25-6e.png" >}}
+    هوائي WiFi 6E ثلاثي النطاق 2.4/5/6 GHz، حتى 10 dBi، موصل RP-SMA.
+  {{< /card >}}
+  {{< card title="ARS-25-57A" href="/ar/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png" >}}
+    هوائي مجداف ثنائي النطاق 2.4/5 GHz، 5/7 dBi، موصل RP-SMA للاستبدال المباشر.
+  {{< /card >}}
+  {{< card title="ARS-NT5B7" href="/ar/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png" >}}
+    هوائي WiFi 7 ثلاثي النطاق، درجة صناعية -40°C~+85°C، 7 dBi عند 6 GHz.
+  {{< /card >}}
+{{< /card-group >}}
+
 <div style="margin: 1.75rem 0; padding: 1rem 1.25rem; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
   <div>
     <span style="font-size: 1rem; font-weight: 600;">📊 جدول مقارنة المواصفات</span><br/>

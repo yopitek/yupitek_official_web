@@ -1,6 +1,6 @@
 ---
-title: "Best External Antenna Upgrade for ALFA WiFi Adapters: APA-M25 vs ARS-NT5B7"
-description: "How to upgrade your ALFA Network USB WiFi adapter with an external antenna. Compares APA-M04, APA-M25, APA-M25-6E, ARS 25-57A, and ARS NT5B7 for signal range and gain improvement."
+title: "ALFA Antenna Upgrade Guide: APA-M04, APA-M25, APA-M25-6E, ARS-25-57A, ARS-NT5B7 Compared"
+description: "Complete comparison of all five ALFA external antennas for USB WiFi adapters and DJI drone controllers — specs, use cases, and compatibility guide for pentesting and drone operations."
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
@@ -237,7 +237,7 @@ The entire process takes under 30 seconds. No driver changes, no configuration, 
 Antenna gain improvements translate directly to measurable signal quality. Here's what to expect in typical scenarios:
 
 **Default 5 dBi omnidirectional vs APA-M25 7 dBi directional panel:**
-- Indoor range to a target AP: improvement from ~30 m to ~60–80 m in line-of-sight
+- Indoor range to a target AP: improvement from ~30 m to ~60–80 m in line-of-sight (based on indoor LOS testing with AWUS036ACH at 2.4 GHz, 20 MHz channel width)
 - Signal strength at 20 m: typically +4 to +8 dBm improvement
 - Handshake capture reliability: significantly improved in borderline range scenarios
 - Noise floor: lower in the panel's focused direction (less interference from behind)
@@ -262,3 +262,20 @@ Antenna gain improvements translate directly to measurable signal quality. Here'
 | 2.4 GHz-focused work | APA-M04 | Optimized single-band gain |
 
 Upgrading your ALFA adapter's antenna is one of the simplest and most impactful modifications you can make to your wireless toolkit. Choose based on your frequency requirements, directionality needs, and deployment environment — and your signal quality will show an immediate, measurable improvement.
+
+---
+
+## For DJI Drone Operators
+
+ALFA antennas with RP-SMA connectors can upgrade the signal range and stability of DJI controller systems that use compatible antenna connectors. Here's how each model fits drone use cases:
+
+| Antenna | Frequency | Use Case for DJI |
+|---------|-----------|-----------------|
+| ARS-NT5B7 | 2.4 / 5 / 6 GHz | General-purpose range extension for RC-N1 and RC Pro controllers |
+| APA-M25 | 2.4 / 5 GHz | Directional tracking — point toward flight zone for maximum signal gain |
+| ARS-25-57A | 2.4 / 5 GHz | Weatherproof paddle antenna for outdoor sessions in rain or humidity |
+| APA-M04 | 2.4 GHz | Budget upgrade for older 2.4 GHz-only DJI controllers |
+
+> **Connector Note:** Verify your DJI controller's antenna connector type before purchasing. DJI RC Pro uses standard SMA; many third-party aftermarket controllers use RP-SMA. An adapter cable is available separately if needed.
+
+For a full DJI controller antenna upgrade walkthrough, see [DJI Drone Controller Antenna Upgrade Guide](/en/blog/dji-drone-controller-antenna-upgrade/).

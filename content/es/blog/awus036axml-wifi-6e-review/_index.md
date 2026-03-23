@@ -158,6 +158,11 @@ Si ves fallos de carga de firmware, descarga manualmente el firmware desde el re
 
 ## Modo Monitor e Inyección de Paquetes
 
+{{< alert "triangle-exclamation" >}}
+**Limitación conocida del controlador:** El controlador mt7921u utilizado por el AWUS036AXML tiene un problema confirmado con el **modo monitor activo**. El controlador puede fallar o resetear la interfaz cuando herramientas como `airodump-ng` envían sondas activas. Usa solo el **modo monitor pasivo**. Este es un problema del controlador del kernel, no un defecto de hardware.
+{{< /alert >}}
+
+
 ### Activar el Modo Monitor
 
 ```bash
@@ -188,6 +193,11 @@ En las pruebas, el AWUS036AXML logra tasas consistentes de éxito de inyección 
 ---
 
 ## Escaneo de la Banda de 6 GHz
+
+{{< alert "circle-info" >}}
+**Nota regulatoria:** La banda de 6 GHz (Wi-Fi 6E) está sujeta a restricciones regulatorias en muchos países, incluido Taiwan. Todas las operaciones descritas en esta sección están destinadas para su uso **solo en entornos de prueba autorizados**.
+{{< /alert >}}
+
 
 La banda de 6 GHz es donde operan exclusivamente las redes Wi-Fi 6E. Escanear esta banda requiere un adaptador y un controlador que ambos la soporten.
 

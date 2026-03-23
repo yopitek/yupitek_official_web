@@ -8,6 +8,33 @@ showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "penetration-testing", "kali-linux"]
 ---
 
+Here's the real question: for your specific testing environment in 2026, does adding 6 GHz capability justify the extra complexity? This article gives you a decision framework, not a spec sheet.
+
+---
+
+## 60-Second Decision Guide
+
+Answer these questions in order to find your answer immediately:
+
+**Q1: Are you testing networks in buildings with WiFi 6E APs deployed (6 GHz enabled)?**
+- No → A WiFi 5 adapter is sufficient. The AWUS036ACH covers everything you need.
+- Yes → Continue to Q2.
+
+**Q2: Is your Kali kernel 5.18 or newer?**
+
+```bash
+uname -r   # Must be 5.18+ for mt7921u firmware support
+```
+
+- No → `sudo apt update && sudo apt full-upgrade` first, then reboot.
+- Yes → Continue to Q3.
+
+**Q3: Is your testing environment virtual (VirtualBox or VMware)?**
+- Yes → AWUS036AXML has limited VM passthrough support. Consider bare-metal Kali, or use AWUS036ACH in VM.
+- No (bare metal Kali) → AWUS036AXML is the right choice.
+
+---
+
 ## What Is Wi-Fi 6E? The New 6 GHz Band Explained
 
 Wi-Fi 6E is an extension of the Wi-Fi 6 (IEEE 802.11ax) standard that adds access to the **6 GHz frequency band** — a massive slice of previously untapped spectrum. While Wi-Fi 5 (802.11ac) operates only on 2.4 GHz and 5 GHz, and standard Wi-Fi 6 does the same, Wi-Fi 6E opens up an additional **1.2 GHz of spectrum** ranging from 5.925 GHz to 7.125 GHz.
@@ -156,3 +183,15 @@ sudo airmon-ng start wlan0
 - You are comfortable testing monitor mode/injection before client engagements
 
 **Bottom line:** For most professional penetration testers in 2026, the AWUS036ACH remains the gold standard for reliability. The AWUS036AXML is the smart choice for teams targeting cutting-edge enterprise infrastructure or building out future-proof toolkits. Ideally, carry both.
+
+---
+
+## For Enterprise IT and Windows Environments
+
+WiFi 6E is increasingly common in enterprise deployments, especially in buildings constructed or renovated post-2022. If your organization is assessing a modern wireless infrastructure:
+
+**On Windows (Acrylic WiFi, NetSpot):** Both tools now support 6 GHz channel scanning with compatible hardware. The AWUS036AXML works on Windows with manufacturer drivers.
+
+**On Linux (Kismet, airodump-ng, hcxdumptool):** Full 6 GHz scanning and passive capture require the AWUS036AXML running on kernel 5.18+.
+
+**Recommended enterprise kit:** One AWUS036ACH (stable, proven, works in VMs) + one AWUS036AXML (6 GHz coverage on bare-metal Kali) per assessment kit. This gives you full spectrum coverage from 2.4 GHz through 6 GHz without compromising on tool compatibility.

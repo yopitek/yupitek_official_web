@@ -158,6 +158,11 @@ Se você ver falhas de carregamento de firmware, baixe manualmente o firmware do
 
 ## Modo Monitor e Injeção de Pacotes
 
+{{< alert "triangle-exclamation" >}}
+**Limitação conhecida do driver:** O driver mt7921u usado pelo AWUS036AXML tem um problema confirmado com o **modo monitor ativo**. O driver pode travar ou redefinir a interface quando ferramentas como `airodump-ng` enviam sondas ativas. Use apenas o **modo monitor passivo**. Este é um problema do driver do kernel, não um defeito de hardware.
+{{< /alert >}}
+
+
 ### Ativando o Modo Monitor
 
 ```bash
@@ -188,6 +193,11 @@ Nos testes, o AWUS036AXML alcança taxas consistentes de sucesso de injeção ac
 ---
 
 ## Varredura da Banda de 6 GHz
+
+{{< alert "circle-info" >}}
+**Nota regulatória:** A banda de 6 GHz (Wi-Fi 6E) está sujeita a restrições regulatórias em muitos países, incluindo Taiwan. Todas as operações descritas nesta seção destinam-se a uso **apenas em ambientes de teste autorizados**.
+{{< /alert >}}
+
 
 A banda de 6 GHz é onde as redes Wi-Fi 6E operam exclusivamente. Varrer essa banda requer um adaptador e driver que ambos a suportem.
 

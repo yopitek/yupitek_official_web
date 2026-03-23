@@ -278,6 +278,17 @@ lsmod | grep mt7921u
 
 ### Ubuntu 22.04: Kernel Upgrade Path
 
+First, verify your currently running kernel version (important on HWE systems where the running kernel may differ from what you expect):
+
+```bash
+# Check running kernel
+uname -r
+
+# Verify matching headers are installed
+dpkg -l | grep "linux-headers-$(uname -r)"
+# If no output: sudo apt install linux-headers-$(uname -r)
+```
+
 If you're on Ubuntu 22.04 with kernel 5.15, you have two options:
 
 **Option A: HWE Kernel** (recommended)
@@ -419,13 +430,13 @@ dkms status
 
 ## Quick Reference: Which Driver for Which Adapter
 
-| You have | Chipset | Kali Linux | Ubuntu 24.04 |
+| You have | Chipset | Kali/Ubuntu x86 | Raspberry Pi ARM |
 |---|---|---|---|
-| [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
-| [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | Built-in (`mt76x2u`) | Built-in (`mt76x2u`) |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | MT7921AU | Built-in (`mt7921u`, kernel 5.18+) | Built-in (`mt7921u`, kernel 6.8) |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AU | Built-in (`mt7921u`, kernel 5.18+) | Built-in (`mt7921u`, kernel 6.8) |
-| [AWUS1900](/en/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
+| [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` (DKMS) | Manual DKMS + ARM headers |
+| [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | Built-in (`mt76x2u`) ✅ | Built-in — plug-and-play ✅ |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | MT7921AU | Built-in (`mt7921u`, kernel 5.18+) | `linux-firmware` pkg |
+| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AU | Built-in (`mt7921u`, kernel 5.18+) | `linux-firmware` pkg |
+| [AWUS1900](/en/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | Manual DKMS |
 
 ---
 

@@ -158,6 +158,10 @@ If you see firmware load failures, manually download the firmware from the Linux
 
 ## Monitor Mode and Packet Injection
 
+{{< alert "triangle-exclamation" >}}
+**Known Driver Limitation:** The mt7921u driver used by the AWUS036AXML has a confirmed issue with **active monitor mode**. The driver may crash or reset the interface when tools like `airodump-ng` send active probe requests. Use **passive monitor mode** only — avoid active injection while in monitor mode on this adapter. This is a kernel driver issue, not a hardware defect.
+{{< /alert >}}
+
 ### Enabling Monitor Mode
 
 ```bash
@@ -188,6 +192,10 @@ In testing, the AWUS036AXML achieves consistent injection success rates above 90
 ---
 
 ## 6 GHz Band Scanning
+
+{{< alert "circle-info" >}}
+**Regulatory Note:** The 6 GHz band (Wi-Fi 6E) is subject to regulatory restrictions in many countries including Taiwan. All operations described in this section are intended for use in **authorized testing environments only**.
+{{< /alert >}}
 
 The 6 GHz band is where Wi-Fi 6E networks operate exclusively. Scanning this band requires an adapter and driver that both support it.
 

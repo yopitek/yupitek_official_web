@@ -271,7 +271,7 @@ sudo aireplay-ng --test wlan0mon
 
 ALFA Network 产品仿冒现象严重。假冒网卡使用劣质芯片组，发射功率更低，往往根本不支持监听模式——这完全违背了购买的初衷。
 
-请务必从 ALFA Network 授权经销商处购买。Yopitek 是 ALFA Network 官方授权经销商，服务于欧洲和中东地区。浏览完整的 [ALFA Network 产品目录](/zh-cn/products/alfa/)，确保购买到正品且享有完整保修服务。
+请务必从 ALFA Network 授权经销商处购买。Yopitek 是 ALFA Network 官方授权经销商，总部位于台湾，服务亚太地区客户。浏览完整的 [ALFA Network 产品目录](/zh-cn/products/alfa/)，确保购买到正品且享有完整保修服务。
 
 ---
 

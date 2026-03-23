@@ -8,7 +8,13 @@ showTableOfContents: true
 tags: ["AWUS036ACH", "kali-linux", "monitor-mode", "packet-injection", "RTL8812AU", "airmon-ng"]
 ---
 
-The ALFA AWUS036ACH has earned its place as the most recommended USB WiFi adapter in the Kali Linux community — and for good reason. Powered by the Realtek RTL8812AU chipset, it delivers reliable monitor mode and packet injection support that security professionals have depended on since 2017. This guide walks you through every step from unboxing to a verified working packet injection setup on Kali Linux 2024 and 2025.
+Most people hit three walls when setting up the AWUS036ACH on Kali: the driver won't compile, the VM won't pass through the USB device, or monitor mode silently fails. This guide covers all three, plus the full working setup from scratch.
+
+---
+
+{{< alert "circle-info" >}}
+Running Kali in **VirtualBox or VMware**? Jump to the [USB Passthrough](#usb-passthrough-in-virtualbox-and-vmware) section first — it's the most common setup failure. Using **macOS** or **Windows** as your host OS? See the [ALFA on macOS](/en/blog/alfa-adapter-macos-vm-setup/) or [ALFA on Windows](/en/blog/alfa-adapter-windows-10-11-setup/) guides.
+{{< /alert >}}
 
 ---
 
@@ -47,6 +53,45 @@ Before starting, confirm the following:
 - **Build tools installed** — covered in Step 2
 
 If you're running Kali in a virtual machine (VMware, VirtualBox, UTM), you must pass the USB device through to the VM. In VMware: VM → Removable Devices → connect your adapter. In VirtualBox: Settings → USB → add a USB filter for the Realtek device.
+
+---
+
+## USB Passthrough in VirtualBox and VMware
+
+### VirtualBox
+
+VirtualBox requires the **Extension Pack** for USB 3.0 support. Without it, you can only pass through USB 2.0, which causes silent failures or reduced throughput with the AWUS036ACH.
+
+1. Download the Extension Pack from [virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads) — it must match your VirtualBox version exactly
+2. Install: **File → Tools → Extension Pack Manager → Install**
+3. In your Kali VM settings: **USB → Enable USB Controller → USB 3.0 (xHCI)**
+4. Add a USB Device Filter with the adapter connected: **Settings → USB → click the "+" icon**
+
+```bash
+# Verify the adapter is visible inside the VM
+lsusb | grep -E "0bda|Realtek"
+# Expected: Bus 002 Device 003: ID 0bda:8812 Realtek Semiconductor Corp.
+```
+
+### VMware Workstation / Player
+
+VMware handles USB passthrough better than VirtualBox by default, but the **VMware USB Arbitrator** service must be running on the host:
+
+```bash
+# Windows host — verify the service is running
+sc query VMwareUSBArbitrator
+
+# If stopped:
+sc start VMwareUSBArbitrator
+```
+
+In the VM: **VM menu → Removable Devices → ALFA AWUS036ACH → Connect**
+
+```bash
+# Confirm success inside Kali
+lsusb | grep -E "0bda|Realtek"
+dmesg | tail -10
+```
 
 ---
 
@@ -483,5 +528,6 @@ sudo systemctl start NetworkManager
 | Enable monitor mode | `sudo airmon-ng start wlan0` |
 | Verify monitor mode | `iwconfig wlan0mon` |
 | Test injection | `sudo aireplay-ng --test wlan0mon` |
+| Estimated time | ~15 minutes (clean system) |
 
 The [ALFA AWUS036ACH](/en/products/alfa/awus036ach/) paired with Kali Linux 2024+ and the aircrack-ng RTL8812AU driver remains the most reliable, best-documented WiFi adapter setup in the penetration testing community. Once you've verified injection is working, you're ready to use the full Aircrack-ng suite, Wireshark, Kismet, Bettercap, and any other tool that requires monitor mode or packet injection.

@@ -53,6 +53,8 @@ NetworkManager, wpa_supplicant, and dhclient all compete with monitor mode. Kill
 sudo airmon-ng check kill
 ```
 
+> **Why this step?** NetworkManager and wpa_supplicant hold an exclusive lock on WiFi interfaces. Without terminating them first, the mode switch appears to succeed but silently fails — your interface stays in managed mode. Always kill these processes before switching modes.
+
 Expected output:
 
 ```
@@ -219,13 +221,20 @@ On some systems, the new interface may be named `wlan0mon`, `mon0`, or something
 
 ### "Fixed channel wlan0mon: -1" error in airodump-ng
 
-This means airodump-ng cannot change channels. Try:
+This means airodump-ng cannot change channels. The most common cause is a regulatory domain restriction. Fix:
+
+```bash
+# Set a permissive regulatory domain (for authorized testing environments only)
+sudo iw reg set BO
+sudo airmon-ng stop wlan0mon
+sudo airmon-ng start wlan0
+```
+
+If that fails, kill any remaining wpa_supplicant processes and retry.
 
 ```bash
 sudo iwconfig wlan0mon channel 1
 ```
-
-If that fails, kill any remaining wpa_supplicant processes and retry.
 
 ### RTL8812AU driver issues on newer kernels
 

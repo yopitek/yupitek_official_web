@@ -172,6 +172,8 @@ sudo aireplay-ng -0 3 -a [BSSID] wlan0mon
 
 ## Driver Installation Complexity
 
+This table should be the first thing you check — it determines how much setup friction you'll face on day one and every kernel update after that.
+
 | Task | AWUS036ACH | AWUS036ACM |
 |---|---|---|
 | Fresh Kali install, plug in adapter | Not recognized — driver install needed | Recognized immediately |
@@ -179,6 +181,7 @@ sudo aireplay-ng -0 3 -a [BSSID] wlan0mon
 | Air-gapped machine | Requires offline package prep | Works natively |
 | Kali Live USB | Must install driver in-session | Works out of the box |
 | VirtualBox/VMware passthrough | Works after driver install in guest | Works immediately in guest |
+| Raspberry Pi / ARM | DKMS + ARM headers required | Plug-and-play on Pi 4/5 |
 
 The ACM's zero-install experience is a genuine advantage in scenarios like live boot environments, client-provided machines, or CTF competition setups where time and simplicity are paramount.
 
@@ -206,18 +209,24 @@ The **AWUS036ACM** at ~$30–40 offers excellent value for the following persona
 
 ## Verdict
 
-**Choose the [AWUS036ACH](/en/products/alfa/awus036ach/) for:**
-- Serious, professional penetration testing engagements
-- Maximum monitor mode and packet injection reliability
-- Long-range assessments with external antenna support (dual RP-SMA)
-- Environments where signal strength matters (parking lot audits, directional targeting)
-- Maximum compatibility with existing guides, courses, and documentation
+**Red teamers and professional pentesters → AWUS036ACH.** The RTL8812AU driver ecosystem is better supported in offensive tooling, and dual-antenna injection is measurably more reliable in real-world assessments. If injection success rates matter on a paid engagement, ACH wins.
 
-**Choose the [AWUS036ACM](/en/products/alfa/awus036acm/) for:**
-- Plug-and-play simplicity with zero driver compilation
-- Portable, low-profile engagements
-- Budget-conscious setups or secondary adapters
-- Kali Live USB workflows
-- Situations where kernel-native stability is preferred over community drivers
+**CTF students and first-time Kali users → AWUS036ACM.** Zero compilation on Kali 2023.3+. If you've never compiled a kernel module before, start here — there's nothing to break.
 
-If you can only own one adapter, the **AWUS036ACH** is the stronger choice for pentesting. If you want a reliable travel companion with zero setup friction, the **AWUS036ACM** earns its place in the toolkit.
+**Raspberry Pi and ARM platform users → AWUS036ACM.** MT7612U has been in the Linux kernel tree since kernel 4.x. Plug-and-play on Pi 4/5, Odroid, and Orange Pi. The ACH works too, but requires compiling the out-of-tree RTL8812AU driver with ARM-specific headers.
+
+---
+
+## Raspberry Pi and ARM Compatibility
+
+If you're running Kali on a Raspberry Pi 4, Pi 5, or any ARM single-board computer, the MT7612U chipset in the AWUS036ACM is the clear choice. It has been in the Linux kernel tree since kernel 4.x — plug-and-play on Raspberry Pi OS, Kali ARM, and Ubuntu Server ARM.
+
+The RTL8812AU (AWUS036ACH) requires out-of-tree drivers on ARM. The compilation process is the same as on x86, but you must install the correct headers for your ARM kernel:
+
+```bash
+sudo apt install linux-headers-$(uname -r) bc
+git clone https://github.com/aircrack-ng/rtl8812au.git
+cd rtl8812au && make && sudo make install
+```
+
+For a complete setup guide, see [ALFA USB WiFi on Raspberry Pi 4 & Pi 5](/en/blog/alfa-adapter-raspberry-pi-kali/).

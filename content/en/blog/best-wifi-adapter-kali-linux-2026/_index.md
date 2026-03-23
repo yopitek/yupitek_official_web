@@ -8,7 +8,11 @@ showTableOfContents: true
 tags: ["kali-linux", "wifi-adapter", "monitor-mode", "packet-injection", "ALFA-Network"]
 ---
 
-If you're serious about wireless security testing, penetration testing, or just learning ethical hacking with Kali Linux, one of the first things you'll discover is that your laptop's built-in WiFi card almost certainly won't do the job. This guide walks you through everything you need to know about choosing the best USB WiFi adapter for Kali Linux in 2026, with hands-on recommendations from the ALFA Network lineup.
+If you're serious about wireless security testing, penetration testing, or just learning ethical hacking with Kali Linux, one of the first things you'll discover is that your laptop's built-in WiFi card almost certainly won't do the job. Here's what you need to know about choosing the right USB WiFi adapter in 2026 — and how to get it working on your specific platform.
+
+{{< alert "circle-info" >}}
+**Jump to your platform:** [Kali Linux native setup](#install-and-configure-your-alfa-adapter) · [Virtual Machine (VirtualBox/VMware)](/en/blog/alfa-adapter-virtualbox-vmware-usb/) · [macOS host](/en/blog/alfa-adapter-macos-vm-setup/) · [Windows 10/11](/en/blog/alfa-adapter-windows-10-11-setup/) · [Raspberry Pi](/en/blog/alfa-adapter-raspberry-pi-kali/)
+{{< /alert >}}
 
 ---
 
@@ -271,7 +275,7 @@ sudo aireplay-ng --test wlan0mon
 
 ALFA Network products are frequently counterfeited. Fake adapters use inferior chipsets, lower transmit power, and often don't support monitor mode at all — defeating the entire purpose.
 
-Always purchase from an authorized ALFA Network dealer. Yopitek is an official ALFA Network distributor serving Europe and the Middle East. Browse the full [ALFA Network product catalog](/en/products/alfa/) for guaranteed-genuine adapters with proper warranty coverage.
+Always purchase from an authorized ALFA Network dealer. Yopitek is an official ALFA Network distributor based in Taiwan, serving customers across the Asia-Pacific region. Browse the full [ALFA Network product catalog](/en/products/alfa/) for guaranteed-genuine adapters with proper warranty coverage.
 
 ---
 

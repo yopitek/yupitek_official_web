@@ -271,7 +271,7 @@ sudo aireplay-ng --test wlan0mon
 
 Los productos ALFA Network son frecuentemente falsificados. Los adaptadores falsos usan chipsets inferiores, menor potencia de transmisión, y a menudo no soportan el modo monitor en absoluto — anulando completamente el propósito.
 
-Siempre compra con un distribuidor autorizado de ALFA Network. Yopitek es un distribuidor oficial de ALFA Network que sirve a Europa y Medio Oriente. Explora el catálogo completo de [productos ALFA Network](/es/products/alfa/) para adaptadores con garantía de autenticidad y cobertura de garantía adecuada.
+Siempre compra con un distribuidor autorizado de ALFA Network. Yopitek es un distribuidor oficial de ALFA Network con sede en Taiwán, atendiendo clientes en toda la región Asia-Pacífico. Explora el catálogo completo de [productos ALFA Network](/es/products/alfa/) para adaptadores con garantía de autenticidad y cobertura de garantía adecuada.
 
 ---
 

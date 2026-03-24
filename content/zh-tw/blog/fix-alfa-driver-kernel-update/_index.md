@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 ---
 
-你執行了 `sudo apt upgrade`，重新開機後 ALFA 網路卡消失了——沒有介面、沒有燈號、什麼都沒有。這是 Linux 使用者詢問 ALFA Network USB WiFi 網路卡時最常見的問題，而核心更新幾乎是所有問題的根源。本指南將帶你系統性地診斷並修復兩種最常受影響的晶片組：**RTL8812AU**（AWUS036ACH、ACM、ACS）與 **MT7921AUN**（AWUS036AXM、AXML）。按照各節步驟操作，你的網路卡應在 15 分鐘內恢復正常。
+你執行了 `sudo apt upgrade`，重新開機後 ALFA 網路卡消失了——沒有介面、沒有燈號、什麼都沒有。這是 Linux 使用者詢問 ALFA Network USB WiFi 網路卡時最常見的問題，而核心更新幾乎是所有問題的根源。本指南將帶你系統性地診斷並修復兩種最常受影響的晶片組：**RTL8812AU**（AWUS036ACH、AWUS036ACS）與 **MT7921AUN**（AWUS036AXM、AXML）。按照各節步驟操作，你的網路卡應在 15 分鐘內恢復正常。
 
 ---
 
@@ -84,7 +84,7 @@ sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 
 ---
 
-## 修復：RTL8812AU 驅動程式（AWUS036ACH、ACM、ACS、EACS）
+## 修復：RTL8812AU 驅動程式（AWUS036ACH、ACS、EACS）
 
 RTL8812AU 是 ALFA 晶片組中用於滲透測試最廣泛的型號，原因在於其雙頻支援與可靠的監聽模式。它需要核心外驅動，因此也是最常被核心更新破壞的晶片組。
 

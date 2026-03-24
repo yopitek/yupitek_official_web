@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 ---
 
-Ejecutas `sudo apt upgrade`, reinicias y tu adaptador ALFA ha desaparecido. Sin interfaz, sin luces, nada. Esta es la pregunta de soporte más frecuente en torno a los adaptadores ALFA Network USB WiFi en Linux, y las actualizaciones del kernel son casi siempre el culpable. Esta guía te lleva a través de un proceso sistemático de diagnóstico y reparación para las dos familias de chipsets más afectadas: **RTL8812AU** (presente en el AWUS036ACH, ACM y ACS) y **MT7921AUN** (presente en el AWUS036AXM y AXML). Sigue cada sección en orden y tu adaptador estará de vuelta en línea en menos de 15 minutos.
+Ejecutas `sudo apt upgrade`, reinicias y tu adaptador ALFA ha desaparecido. Sin interfaz, sin luces, nada. Esta es la pregunta de soporte más frecuente en torno a los adaptadores ALFA Network USB WiFi en Linux, y las actualizaciones del kernel son casi siempre el culpable. Esta guía te lleva a través de un proceso sistemático de diagnóstico y reparación para las dos familias de chipsets más afectadas: **RTL8812AU** (presente en el AWUS036ACH y AWUS036ACS) y **MT7921AUN** (presente en el AWUS036AXM y AXML). Sigue cada sección en orden y tu adaptador estará de vuelta en línea en menos de 15 minutos.
 
 ---
 
@@ -84,7 +84,7 @@ Si `ip link` muestra la interfaz pero desaparece cuando intentas usarla, salta d
 
 ---
 
-## Corrección: Controlador RTL8812AU (AWUS036ACH, ACM, ACS, EACS)
+## Corrección: Controlador RTL8812AU (AWUS036ACH, ACS, EACS)
 
 El RTL8812AU es el chipset ALFA más ampliamente usado para pruebas de penetración por su soporte de doble banda y modo monitor confiable. Requiere un controlador fuera del árbol y por tanto es el chipset más frecuentemente roto por las actualizaciones del kernel.
 

@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 ---
 
-`sudo apt upgrade` を実行して再起動したら、ALFAアダプターが消えてしまいました——インターフェースなし、ランプなし、何もなし。これはLinuxでALFA Network USB WiFiアダプターを使うユーザーから最もよく寄せられるサポートの質問であり、カーネルの更新がほぼ常に原因です。このガイドでは、最も影響を受ける2つのチップセットファミリーの体系的な診断と修復手順を説明します：**RTL8812AU**（AWUS036ACH、ACM、ACS搭載）と **MT7921AUN**（AWUS036AXM、AXML搭載）。各セクションの手順に従えば、15分以内にアダプターが復旧します。
+`sudo apt upgrade` を実行して再起動したら、ALFAアダプターが消えてしまいました——インターフェースなし、ランプなし、何もなし。これはLinuxでALFA Network USB WiFiアダプターを使うユーザーから最もよく寄せられるサポートの質問であり、カーネルの更新がほぼ常に原因です。このガイドでは、最も影響を受ける2つのチップセットファミリーの体系的な診断と修復手順を説明します：**RTL8812AU**（AWUS036ACH、AWUS036ACS搭載）と **MT7921AUN**（AWUS036AXM、AXML搭載）。各セクションの手順に従えば、15分以内にアダプターが復旧します。
 
 ---
 
@@ -84,7 +84,7 @@ sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 
 ---
 
-## 修復：RTL8812AUドライバー（AWUS036ACH、ACM、ACS、EACS）
+## 修復：RTL8812AUドライバー（AWUS036ACH、ACS、EACS）
 
 RTL8812AUは、デュアルバンドサポートと信頼性の高いモニターモードにより、ペネトレーションテストで最も広く使われているALFAチップセットです。ツリー外ドライバーが必要なため、カーネルの更新で最も頻繁に壊れるチップセットでもあります。
 

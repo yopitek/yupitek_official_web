@@ -64,13 +64,13 @@ O AWUS036ACH foi comprovado em milhares de pentests reais. É o **adaptador de r
 
 ---
 
-## ALFA AWUS036AXML — AX1800 Wi-Fi 6E, MT7921AU
+## ALFA AWUS036AXML — AX1800 Wi-Fi 6E, MT7921AUN
 
 O [AWUS036AXML](/pt/products/alfa/awus036axml/) representa a próxima geração de adaptadores de pentest da ALFA. É o primeiro adaptador USB amplamente disponível a suportar a **banda de 6 GHz**, tornando-o capaz de interagir com access points Wi-Fi 6E.
 
 **Especificações principais:**
 - **Padrão:** IEEE 802.11a/b/g/n/ac/ax (Wi-Fi 6E)
-- **Chipset:** MediaTek MT7921AU
+- **Chipset:** MediaTek MT7921AUN
 - **Bandas de frequência:** 2,4 GHz + 5 GHz + **6 GHz**
 - **Throughput máximo:** AX1800 (até 1800 Mbps combinado)
 - **Antenas:** 1× RP-SMA removível
@@ -78,7 +78,7 @@ O [AWUS036AXML](/pt/products/alfa/awus036axml/) representa a próxima geração 
 
 **Status do driver no Kali Linux:**
 
-O driver MT7921AU (`mt7921u`) foi **incorporado ao kernel Linux mainline a partir da versão 5.18**. No Kali 2022.2 e posterior (que vem com kernel 5.18+), nenhuma compilação de driver é necessária. Basta conectar o adaptador e ele é reconhecido.
+O driver MT7921AUN (`mt7921u`) foi **incorporado ao kernel Linux mainline a partir da versão 5.18**. No Kali 2022.2 e posterior (que vem com kernel 5.18+), nenhuma compilação de driver é necessária. Basta conectar o adaptador e ele é reconhecido.
 
 ```bash
 # Verificar se o módulo do kernel está carregado
@@ -88,7 +88,7 @@ lsmod | grep mt7921u
 sudo modprobe mt7921u
 ```
 
-No entanto, o **suporte a modo monitor** para MT7921AU é mais recente e depende da versão do kernel e do firmware. No início de 2026, o modo monitor funciona no kernel 6.1+ com o pacote `linux-firmware` mais recente instalado. O suporte à injeção de pacotes é funcional, mas apresentou inconsistências ocasionais em certas combinações de kernel/firmware — sempre teste antes de um engajamento real.
+No entanto, o **suporte a modo monitor** para MT7921AUN é mais recente e depende da versão do kernel e do firmware. No início de 2026, o modo monitor funciona no kernel 6.1+ com o pacote `linux-firmware` mais recente instalado. O suporte à injeção de pacotes é funcional, mas apresentou inconsistências ocasionais em certas combinações de kernel/firmware — sempre teste antes de um engajamento real.
 
 ```bash
 sudo apt update && sudo apt install linux-firmware
@@ -102,7 +102,7 @@ sudo airmon-ng start wlan0
 | Recurso | AWUS036ACH | AWUS036AXML |
 |---|---|---|
 | **Padrão Wi-Fi** | 802.11ac (Wi-Fi 5) | 802.11ax (Wi-Fi 6E) |
-| **Chipset** | RTL8812AU | MT7921AU |
+| **Chipset** | RTL8812AU | MT7921AUN |
 | **Bandas de Frequência** | 2,4 GHz + 5 GHz | 2,4 GHz + 5 GHz + 6 GHz |
 | **Throughput Máximo** | AC1200 | AX1800 |
 | **Estabilidade do Modo Monitor** | ★★★★★ (sólido como pedra) | ★★★★☆ (requer kernel 6.1+) |

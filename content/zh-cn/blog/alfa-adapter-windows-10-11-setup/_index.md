@@ -25,10 +25,10 @@ ALFA Network USB WiFi 无线网卡在安全研究和网络工程领域广为人�
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | RTL8812AU | ✅ 完整支持 | ✅ 完整支持 | ⚠️ 仅被动扫描（Acrylic WiFi Pro） |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | MT7612U | ✅ 完整支持 | ✅ 完整支持 | ⚠️ 仅被动扫描 |
 | [AWUS036ACS](/zh-cn/products/alfa/awus036acs/) | RTL8811AU | ✅ 完整支持 | ✅ 完整支持 | ⚠️ 仅被动扫描 |
-| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | MT7921AU | ⚠️ 需手动下载驱动 | ✅ 系统内置驱动 | ⚠️ 有限支持 |
-| [AWUS036AXER](/zh-cn/products/alfa/awus036axer/) | MT7921AU | ⚠️ 需手动下载驱动 | ✅ 系统内置驱动 | ⚠️ 有限支持 |
-| [AWUS036AXM](/zh-cn/products/alfa/awus036axm/) | MT7921AU | ⚠️ 需手动下载驱动 | ✅ 系统内置驱动 | ❌ 不支持 |
-| [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | MT7902 | ⚠️ 需手动下载驱动 | ✅ 系统内置驱动 | ❌ 不支持 |
+| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | RTL8832BU | ⚠️ 需手动下载驱动 | ✅ 系统内置驱动 | ⚠️ 有限支持 |
+| [AWUS036AXER](/zh-cn/products/alfa/awus036axer/) | RTL8832BU | ⚠️ 需手动下载驱动 | ✅ 系统内置驱动 | ⚠️ 有限支持 |
+| [AWUS036AXM](/zh-cn/products/alfa/awus036axm/) | MT7921AUN | ⚠️ 需手动下载驱动 | ✅ 系统内置驱动 | ❌ 不支持 |
+| [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | MT7921AUN | ⚠️ 需手动下载驱动 | ✅ 系统内置驱动 | ❌ 不支持 |
 
 {{< alert "circle-info" >}}
 日常 Windows 使用的首选是 AWUS036ACH（RTL8812AU）和 AWUS036ACM（MT7612U）。两款网卡均配备经 WHQL 认证签名的 Realtek/MediaTek 驱动，Windows 兼容性记录最为完善。
@@ -67,16 +67,16 @@ Windows Update 需要有效的互联网连接才能下载驱动。如果您正�
 2. 点击**驱动程序**标签页。
 3. 记录**驱动程序版本**和**驱动程序日期**，以备日后参考。
 
-### 方法 B：手动安装驱动 — MT7921AU（AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML）
+### 方法 B：手动安装驱动 — MT7921AUN（AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML）
 
-MediaTek MT7921AU 驱动已内置于 Windows 11 驱动存储库（build 22000+）。对于 Windows 10：
+MediaTek MT7921AUN 驱动已内置于 Windows 11 驱动存储库（build 22000+）。对于 Windows 10：
 
 1. 从 [MediaTek 官方网站](https://www.mediatek.com/products/home-networking/wi-fi-6-6e) 或 ALFA Network 支持页面下载 MediaTek MT7921 驱动包。
 2. 解压后以管理员身份运行 `Setup.exe`。
 3. 安装后重启系统。
 
 {{< alert "circle-info" >}}
-使用 MT7921AU/MT7902 网卡的 Windows 11 用户，通常在插入网卡后数分钟内即可获得可用驱动，全新安装系统亦无需手动下载。
+使用 MT7921AUN/MT7921AUN 网卡的 Windows 11 用户，通常在插入网卡后数分钟内即可获得可用驱动，全新安装系统亦无需手动下载。
 {{< /alert >}}
 
 ### 常见设备管理器错误代码

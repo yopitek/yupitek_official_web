@@ -1,14 +1,14 @@
 ---
 title: "Solución de Firmware AWUS036AXML en Modo Monitor: Resolver Crashes en Modo Activo"
-description: "Cómo solucionar los crashes de firmware del AWUS036AXML en modo monitor en Kali Linux. Cubre la actualización de firmware MT7921AU, requisitos de versión del kernel, alternativas de modo activo vs pasivo, y hcxdumptool."
+description: "Cómo solucionar los crashes de firmware del AWUS036AXML en modo monitor en Kali Linux. Cubre la actualización de firmware MT7921AUN, requisitos de versión del kernel, alternativas de modo activo vs pasivo, y hcxdumptool."
 date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-tags: ["AWUS036AXML", "MT7921AU", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
+tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 ---
 
-El **ALFA AWUS036AXML** es el adaptador WiFi 6E insignia de ALFA Network, construido sobre el chipset MediaTek MT7921AU con soporte tribanda (2.4 / 5 / 6 GHz). Es uno de los pocos adaptadores USB capaces de monitoreo pasivo en la banda de 6 GHz en 2026 y rinde de forma excepcional en casos de uso como reconocimiento de sitios, captura de paquetes y recolección de PMKID.
+El **ALFA AWUS036AXML** es el adaptador WiFi 6E insignia de ALFA Network, construido sobre el chipset MediaTek MT7921AUN con soporte tribanda (2.4 / 5 / 6 GHz). Es uno de los pocos adaptadores USB capaces de monitoreo pasivo en la banda de 6 GHz en 2026 y rinde de forma excepcional en casos de uso como reconocimiento de sitios, captura de paquetes y recolección de PMKID.
 
 Sin embargo, hay un problema conocido que sorprende a los usuarios: **los comandos de modo monitor activo provocan un crash del firmware**. Ejecutar herramientas como `aireplay-ng` o `mdk4` hace que la interfaz `wlan0mon` desaparezca por completo, obligándote a desconectar y volver a conectar el adaptador para recuperarlo. No es un defecto de hardware — es una limitación del driver `mt7921u` de Linux y su firmware actual.
 
@@ -26,12 +26,12 @@ Las operaciones pasivas (escaneo con `airodump-ng`, captura de frames en bruto) 
 
 ### Causa Raíz
 
-El **chipset MT7921AU** utiliza una arquitectura MAC basada en firmware. El driver `mt7921u` del kernel de Linux depende del firmware embebido del chipset para manejar ciertas operaciones de nivel inferior, incluyendo la inyección de frames en modo monitor. La combinación actual de firmware y driver no implementa completamente la ruta de comandos necesaria para la inyección activa en modo monitor en Linux.
+El **chipset MT7921AUN** utiliza una arquitectura MAC basada en firmware. El driver `mt7921u` del kernel de Linux depende del firmware embebido del chipset para manejar ciertas operaciones de nivel inferior, incluyendo la inyección de frames en modo monitor. La combinación actual de firmware y driver no implementa completamente la ruta de comandos necesaria para la inyección activa en modo monitor en Linux.
 
 En contraste, el **monitoreo pasivo** (capturar frames que ya están en el aire) no requiere que el firmware transmita nada y funciona sin provocar el crash. El problema está limitado a operaciones de la ruta de transmisión: frames de deautenticación, solicitudes de sondeo, floods de asociación y operaciones activas similares.
 
 {{< alert "triangle-exclamation" >}}
-**Bug de crash de firmware conocido.** Este es un problema confirmado en el driver `mt7921u` de Linux a principios de 2026. Afecta al AWUS036AXML y otros adaptadores USB basados en MT7921AU. Podría resolverse en futuras actualizaciones del kernel o firmware — consulta la [guía de instalación del driver](/es/blog/install-alfa-driver-kali-ubuntu/) para conocer el estado más reciente.
+**Bug de crash de firmware conocido.** Este es un problema confirmado en el driver `mt7921u` de Linux a principios de 2026. Afecta al AWUS036AXML y otros adaptadores USB basados en MT7921AUN. Podría resolverse en futuras actualizaciones del kernel o firmware — consulta la [guía de instalación del driver](/es/blog/install-alfa-driver-kali-ubuntu/) para conocer el estado más reciente.
 {{< /alert >}}
 
 ---
@@ -69,7 +69,7 @@ sudo dmesg | grep -E "mt7921|firmware|reset" | tail -20
 Busca mensajes como `mt7921u: firmware crash`, `mt7921u: chip reset` o `usb disconnect` apareciendo inmediatamente después de la llamada a aireplay-ng.
 
 {{< alert "circle-info" >}}
-**La captura pasiva no está afectada.** Si `airodump-ng` funciona pero `aireplay-ng` causa crash, esto es exactamente el bug conocido de MT7921AU. Procede con las soluciones siguientes.
+**La captura pasiva no está afectada.** Si `airodump-ng` funciona pero `aireplay-ng` causa crash, esto es exactamente el bug conocido de MT7921AUN. Procede con las soluciones siguientes.
 {{< /alert >}}
 
 ---
@@ -120,7 +120,7 @@ sudo reboot
 Objetivo: **kernel 6.1 LTS o más nuevo** para los parches más completos del driver `mt7921u`. El kernel 6.6 y posteriores incluyen mejoras adicionales al stack del driver USB de MediaTek con resultados positivos reportados por la comunidad.
 
 {{< alert "circle-info" >}}
-**Mejora en kernel 6.6+.** Varios informes de la comunidad indican que el kernel 6.6 con firmware actualizado reduce (pero no siempre elimina) los crashes en modo activo en MT7921AU. Después de actualizar, vuelve a ejecutar la secuencia de diagnóstico para evaluar tu combinación específica.
+**Mejora en kernel 6.6+.** Varios informes de la comunidad indican que el kernel 6.6 con firmware actualizado reduce (pero no siempre elimina) los crashes en modo activo en MT7921AUN. Después de actualizar, vuelve a ejecutar la secuencia de diagnóstico para evaluar tu combinación específica.
 {{< /alert >}}
 
 ---
@@ -169,7 +169,7 @@ Consulta la [reseña del AWUS036AXML](/es/blog/awus036axml-wifi-6e-review/) y la
 
 ## Cuándo Funciona el Modo Activo
 
-Vale la pena señalar que el modo activo no siempre falla. Varias condiciones reportadas por miembros de la comunidad producen comportamiento estable o casi estable en MT7921AU:
+Vale la pena señalar que el modo activo no siempre falla. Varias condiciones reportadas por miembros de la comunidad producen comportamiento estable o casi estable en MT7921AUN:
 
 - **Kernel 6.6 o más nuevo** con firmware-misc-nonfree 20240610 o más nuevo
 - Evitar `aireplay-ng --deauth` en modo ráfaga (los floods de deauth con alta tasa de paquetes son más propensos a provocar crashes que las operaciones de un solo frame)
@@ -178,7 +178,7 @@ Vale la pena señalar que el modo activo no siempre falla. Varias condiciones re
 - Operar en 2.4 GHz en lugar de 5 GHz para inyección (la banda de menor frecuencia parece más estable en algunas versiones del driver)
 
 {{< alert "triangle-exclamation" >}}
-**Prueba antes de compromisos de producción.** Incluso cuando el modo activo parece funcionar, el firmware del MT7921AU puede crashear a mitad de operación bajo carga. Siempre ten un plan de recuperación (adaptador de respaldo o flujo de trabajo solo-pasivo) cuando uses el AWUS036AXML para operaciones activas.
+**Prueba antes de compromisos de producción.** Incluso cuando el modo activo parece funcionar, el firmware del MT7921AUN puede crashear a mitad de operación bajo carga. Siempre ten un plan de recuperación (adaptador de respaldo o flujo de trabajo solo-pasivo) cuando uses el AWUS036AXML para operaciones activas.
 {{< /alert >}}
 
 ---
@@ -212,7 +212,7 @@ mt7921u 1-2.3:1.0: HW/SW Version: ...
 - ✅ **Descubrimiento de redes en 6 GHz** — escaneo pasivo con airodump-ng en la banda de 6 GHz
 - ✅ **Levantamiento de sitio WiFi 6E y análisis de interferencias** — monitoreo pasivo tribanda
 - ✅ **Captura básica de handshake WPA2** — captura pasiva del tráfico existente
-- ⚠️ **Inyección activa de frames** — usa AWUS036ACH hasta que el firmware de MT7921AU madure
+- ⚠️ **Inyección activa de frames** — usa AWUS036ACH hasta que el firmware de MT7921AUN madure
 - ⚠️ **Floods de deautenticación** — riesgo de crash; prueba cuidadosamente en kernel 6.6+
 - ⭐ **Mejor flujo de trabajo: llevar tanto AWUS036AXML + AWUS036ACH** para cobertura completa de todas las bandas y operaciones
 

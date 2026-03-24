@@ -1,14 +1,14 @@
 ---
 title: "AWUS036AXML 监控模式固件修复：解决主动模式崩溃问题"
-description: "如何修复 AWUS036AXML 在 Kali Linux 上的监控模式固件崩溃问题。涵盖 MT7921AU 固件更新、内核版本要求、主动与被动模式的解决方案，以及 hcxdumptool 替代方案。"
+description: "如何修复 AWUS036AXML 在 Kali Linux 上的监控模式固件崩溃问题。涵盖 MT7921AUN 固件更新、内核版本要求、主动与被动模式的解决方案，以及 hcxdumptool 替代方案。"
 date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-tags: ["AWUS036AXML", "MT7921AU", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
+tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 ---
 
-**ALFA AWUS036AXML** 是 ALFA Network 的旗舰 WiFi 6E 网卡，搭载 MediaTek MT7921AU 芯片组，支持三频（2.4 / 5 / 6 GHz），是 2026 年少数能在 6 GHz 频段进行被动监听的 USB 网卡之一。在站点勘测、数据包捕获、PMKID 收集等使用场景下，它的表现相当出色。
+**ALFA AWUS036AXML** 是 ALFA Network 的旗舰 WiFi 6E 网卡，搭载 MediaTek MT7921AUN 芯片组，支持三频（2.4 / 5 / 6 GHz），是 2026 年少数能在 6 GHz 频段进行被动监听的 USB 网卡之一。在站点勘测、数据包捕获、PMKID 收集等使用场景下，它的表现相当出色。
 
 但有一个已知问题会让用户措手不及：**主动监控模式指令会导致固件崩溃**。运行 `aireplay-ng` 或 `mdk4` 等工具后，`wlan0mon` 接口会完全消失，必须重新插拔网卡才能恢复。这不是硬件缺陷，而是目前 Linux `mt7921u` 驱动程序与固件的限制。
 
@@ -26,19 +26,19 @@ tags: ["AWUS036AXML", "MT7921AU", "monitor-mode", "firmware", "kali-linux", "tro
 
 ### 根本原因
 
-**MT7921AU 芯片组**采用固件式 MAC 架构。Linux 内核的 `mt7921u` 驱动程序依赖芯片组内嵌固件来处理某些底层操作，包括监控模式下的数据包注入。目前的固件与驱动程序组合未完整实现 Linux 主动注入监控模式所需的指令路径。
+**MT7921AUN 芯片组**采用固件式 MAC 架构。Linux 内核的 `mt7921u` 驱动程序依赖芯片组内嵌固件来处理某些底层操作，包括监控模式下的数据包注入。目前的固件与驱动程序组合未完整实现 Linux 主动注入监控模式所需的指令路径。
 
 相比之下，**被动监听**（嗅探空中已有的数据包）不需要固件传送任何内容，不会触发崩溃。问题仅限于发送路径操作：取消认证帧、探测请求、关联洪水等主动操作。
 
 {{< alert "triangle-exclamation" >}}
-**已知固件崩溃漏洞。** 这是 2026 年初 Linux `mt7921u` 驱动程序中已确认的问题，影响 AWUS036AXML 及其他 MT7921AU 的 USB 网卡。未来的内核或固件更新可能会修复此问题——请查阅[驱动程序安装指南](/zh-cn/blog/install-alfa-driver-kali-ubuntu/)以获取最新状态。
+**已知固件崩溃漏洞。** 这是 2026 年初 Linux `mt7921u` 驱动程序中已确认的问题，影响 AWUS036AXML 及其他 MT7921AUN 的 USB 网卡。未来的内核或固件更新可能会修复此问题——请查阅[驱动程序安装指南](/zh-cn/blog/install-alfa-driver-kali-ubuntu/)以获取最新状态。
 {{< /alert >}}
 
 ---
 
 ## 诊断：确认是否为此问题
 
-按以下步骤确认您遇到的是 MT7921AU 主动模式崩溃，而非其他问题：
+按以下步骤确认您遇到的是 MT7921AUN 主动模式崩溃，而非其他问题：
 
 ```bash
 # 确认网卡已识别
@@ -71,7 +71,7 @@ sudo dmesg | grep -E "mt7921|firmware|reset" | tail -20
 注意是否有 `mt7921u: firmware crash`、`mt7921u: chip reset` 或 `usb disconnect` 等消息紧接在 aireplay-ng 指令后出现，这些均确认是固件层面的失败。
 
 {{< alert "circle-info" >}}
-**被动捕获不受影响。** 若 `airodump-ng` 正常但 `aireplay-ng` 导致崩溃，这正是已知的 MT7921AU 漏洞。请继续查看以下修复方案。
+**被动捕获不受影响。** 若 `airodump-ng` 正常但 `aireplay-ng` 导致崩溃，这正是已知的 MT7921AUN 漏洞。请继续查看以下修复方案。
 {{< /alert >}}
 
 ---
@@ -122,7 +122,7 @@ sudo reboot
 目标：**内核 6.1 LTS 或更新版本**，以获得最完整的 `mt7921u` 驱动程序补丁。内核 6.6 及更新版本包含 MediaTek USB 驱动程序堆栈的额外改善，用户反馈有正面效果。
 
 {{< alert "circle-info" >}}
-**内核 6.6+ 改善。** 多份社区反馈指出，使用内核 6.6 搭配更新固件可减少（但不一定完全消除）MT7921AU 的主动模式崩溃。升级后请重新执行诊断步骤，评估您的特定组合。
+**内核 6.6+ 改善。** 多份社区反馈指出，使用内核 6.6 搭配更新固件可减少（但不一定完全消除）MT7921AUN 的主动模式崩溃。升级后请重新执行诊断步骤，评估您的特定组合。
 {{< /alert >}}
 
 ---
@@ -171,7 +171,7 @@ hashcat -m 22000 hash.hc22000 /usr/share/wordlists/rockyou.txt
 
 ## 主动模式可正常运行的情境
 
-在某些条件下，MT7921AU 的主动模式已有稳定或接近稳定的用户反馈：
+在某些条件下，MT7921AUN 的主动模式已有稳定或接近稳定的用户反馈：
 
 - **内核 6.6 或更新版本**搭配 firmware-misc-nonfree 20240610 或更新版本
 - 避免以突发模式使用 `aireplay-ng --deauth`（高数据包率取消认证洪水比单数据包操作更容易触发崩溃）
@@ -180,7 +180,7 @@ hashcat -m 22000 hash.hc22000 /usr/share/wordlists/rockyou.txt
 - 在 2.4 GHz 而非 5 GHz 进行注入操作（部分驱动程序版本中低频段似乎更稳定）
 
 {{< alert "triangle-exclamation" >}}
-**在实际评估前请先测试。** 即使主动模式看似正常，MT7921AU 固件仍可能在高负载下于操作途中崩溃。使用 AWUS036AXML 进行主动操作时，请务必备有恢复计划（备用网卡或纯被动工作流程）。
+**在实际评估前请先测试。** 即使主动模式看似正常，MT7921AUN 固件仍可能在高负载下于操作途中崩溃。使用 AWUS036AXML 进行主动操作时，请务必备有恢复计划（备用网卡或纯被动工作流程）。
 {{< /alert >}}
 
 ---

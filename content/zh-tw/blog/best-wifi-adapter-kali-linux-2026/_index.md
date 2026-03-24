@@ -36,7 +36,7 @@ tags: ["Kali-Linux", "無線網卡", "Monitor-Mode", "ALFA-Network", "滲透測�
 
 - **RTL8812AU**：Realtek 出品，Wi-Fi 5 雙頻，Kali Linux 社群支援最成熟，aircrack-ng 官方倉庫有專屬驅動。
 - **MT7612U**：MediaTek 出品，Linux 主線核心已內建驅動（`mt76` 模組），免額外安裝，穩定性高。
-- **MT7921AU**：MediaTek 新世代，支援 Wi-Fi 6E（6 GHz 頻段），Linux 6.x 核心逐步完善支援，代表未來趨勢。
+- **MT7921AUN**：MediaTek 新世代，支援 Wi-Fi 6E（6 GHz 頻段），Linux 6.x 核心逐步完善支援，代表未來趨勢。
 
 ---
 
@@ -47,7 +47,7 @@ ALFA Network 是無線網卡領域最受資安社群信賴的品牌，以下是 
 | 型號 | Wi-Fi 標準 | 晶片組 | 監聽模式 | 封包注入 | 天線 | 最高速率 | 適合場景 |
 |------|-----------|--------|----------|----------|------|----------|----------|
 | AWUS036ACH | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | ✅ | 2× RP-SMA | 1200 Mbps | 最佳全能款 |
-| AWUS036AXML | Wi-Fi 6E AX1800 | MT7921AU | ✅ | ✅ | 1× RP-SMA | 1800 Mbps | 前瞻性選擇 |
+| AWUS036AXML | Wi-Fi 6E AX1800 | MT7921AUN | ✅ | ✅ | 1× RP-SMA | 1800 Mbps | 前瞻性選擇 |
 | AWUS036ACM | Wi-Fi 5 AC600 | MT7612U | ✅ | ✅ | 1× RP-SMA | 600 Mbps | 輕巧平價 |
 | AWUS1900 | Wi-Fi 5 AC1900 | RTL8814AU | ✅ | ✅ | 4× RP-SMA | 1900 Mbps | 最大覆蓋範圍 |
 
@@ -68,15 +68,15 @@ AWUS036ACH 搭載 **Realtek RTL8812AU** 晶片組，是目前 Kali Linux 社群�
 
 ---
 
-### 🔭 前瞻性選擇：ALFA AWUS036AXML（MT7921AU，Wi-Fi 6E）
+### 🔭 前瞻性選擇：ALFA AWUS036AXML（MT7921AUN，Wi-Fi 6E）
 
 隨著 Wi-Fi 6E 路由器逐漸普及，AWUS036AXML 代表了下一個世代的滲透測試工具。核心優勢在於：
 
 - **6 GHz 頻段支援**：Wi-Fi 6E 獨有的 6 GHz 頻段提供更大頻寬與更少干擾，是未來企業與家用網路的主流。
-- **MT7921AU 晶片**：MediaTek 新一代晶片，Linux 核心 5.18 以上版本逐步完善支援。
+- **MT7921AUN 晶片**：MediaTek 新一代晶片，Linux 核心 5.18 以上版本逐步完善支援。
 - **AX1800 規格**：理論最高 1800 Mbps，應付未來高速 Wi-Fi 環境綽綽有餘。
 
-**注意**：由於 MT7921AU 驅動在 Linux 上仍屬相對新的整合，部分功能（如特定頻段的封包注入）可能需要額外調整。建議有一定 Linux 基礎的使用者選購。
+**注意**：由於 MT7921AUN 驅動在 Linux 上仍屬相對新的整合，部分功能（如特定頻段的封包注入）可能需要額外調整。建議有一定 Linux 基礎的使用者選購。
 
 **適合對象**：希望搶先部署 Wi-Fi 6E 測試能力的進階用戶，或已購入 Wi-Fi 6E 路由器的企業資安團隊。
 

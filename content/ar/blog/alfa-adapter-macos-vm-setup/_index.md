@@ -3,9 +3,9 @@ title: "استخدام محولات ALFA للواي فاي على macOS: تمر�
 description: "كيفية استخدام محولات ALFA USB للواي فاي على macOS. يتناول الدعم الأصلي لنظام macOS وتمرير USB عبر VMware Fusion وParallels Desktop لتشغيل وضع المراقبة وحقن الحزم في Kali Linux."
 date: 2026-03-24
 draft: false
+dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
-dir: rtl
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 ---
 
@@ -21,7 +21,7 @@ tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "
 
 قبل الانتقال مباشرةً إلى إعداد الجهاز الافتراضي، من المفيد فهم ما يمكن لنظام macOS وما لا يمكنه فعله مع محول ALFA بمفرده.
 
-**AWUS036AXML (مجموعة شرائح MT7921AU):** يتعرَّف macOS على هذا المحول كجهاز شبكة USB عام. يلتقط برنامج تشغيل **MT7921AU** المُشحَن مع macOS 13 Ventura وما بعده المحولَ تلقائيًا. يظهر في **System Preferences → Network** (أو **System Settings → Network** على Ventura+) كواجهة جديدة، ويمكنه الاتصال بشبكات الواي فاي كأي محول آخر. على إصدارات macOS الأقدم، قد لا يُتعرَّف عليه إطلاقًا.
+**AWUS036AXML (مجموعة شرائح MT7921AUN):** يتعرَّف macOS على هذا المحول كجهاز شبكة USB عام. يلتقط برنامج تشغيل **MT7921AUN** المُشحَن مع macOS 13 Ventura وما بعده المحولَ تلقائيًا. يظهر في **System Preferences → Network** (أو **System Settings → Network** على Ventura+) كواجهة جديدة، ويمكنه الاتصال بشبكات الواي فاي كأي محول آخر. على إصدارات macOS الأقدم، قد لا يُتعرَّف عليه إطلاقًا.
 
 **المحولات المستندة إلى RTL8812AU (AWUS036ACH، AWUS036ACM):** تتطلب برنامج تشغيل (Driver) من طرف ثالث لنظام macOS. توجد عدة حزم برامج تشغيل مجتمعية وتجارية، غير أن التوافق هش. إعادة بناء برامج التشغيل بعد تحديثات macOS الثانوية أمر شائع، واشتدَّت متطلبات توقيع امتدادات النواة (Kernel Extensions) منذ macOS 11، وعلى Apple Silicon يكون الوضع أكثر هشاشةً بسبب قيود Rosetta على امتدادات النواة. التثبيت الوظيفي ممكن لكنه ثقيل الصيانة.
 
@@ -94,7 +94,7 @@ tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "
 
 ```bash
 lsusb | grep -i mediatek
-# AWUS036AXML / MT7921AU: Bus 001 Device 002: ID 0e8d:7961 MediaTek Inc. ...
+# AWUS036AXML / MT7921AUN: Bus 001 Device 002: ID 0e8d:7961 MediaTek Inc. ...
 
 lsusb | grep -i realtek
 # AWUS036ACH / RTL8812AU: Bus 001 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. ...
@@ -104,7 +104,7 @@ lsusb | grep -i realtek
 
 ### الخطوة الخامسة — تحميل برنامج التشغيل والتحقق من وضع المراقبة
 
-بالنسبة لـMT7921AU (AWUS036AXML)، فإن برنامج التشغيل (Driver) مدمج في نواة Kali. بالنسبة لمحولات RTL8812AU، يلزم تثبيت برنامج التشغيل — راجع [دليل تثبيت برنامج التشغيل](/en/blog/install-alfa-driver-kali-ubuntu/). بمجرد تفعيل برنامج التشغيل:
+بالنسبة لـMT7921AUN (AWUS036AXML)، فإن برنامج التشغيل (Driver) مدمج في نواة Kali. بالنسبة لمحولات RTL8812AU، يلزم تثبيت برنامج التشغيل — راجع [دليل تثبيت برنامج التشغيل](/en/blog/install-alfa-driver-kali-ubuntu/). بمجرد تفعيل برنامج التشغيل:
 
 ```bash
 sudo airmon-ng check kill
@@ -185,7 +185,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**التوصية لأجهزة Mac ذات شريحة M:** إذا كنت تشتري محول ALFA خصيصًا للاستخدام على Apple Silicon Mac مع Kali في جهاز افتراضي، فإن **AWUS036AXML (MT7921AU)** هو الخيار الأفضل. برنامج التشغيل (Driver) المدمج في النواة يُلغي خطوة تجميع DKMS كليًا ويعمل بموثوقية على إصدارات Kali ARM64. يعمل AWUS036ACH وظيفيًا لكنه يتطلب برنامج التشغيل RTL8812AU خارج الشجرة، مما يضيف اعتمادية صيانة على توفر رؤوس النواة.
+**التوصية لأجهزة Mac ذات شريحة M:** إذا كنت تشتري محول ALFA خصيصًا للاستخدام على Apple Silicon Mac مع Kali في جهاز افتراضي، فإن **AWUS036AXML (MT7921AUN)** هو الخيار الأفضل. برنامج التشغيل (Driver) المدمج في النواة يُلغي خطوة تجميع DKMS كليًا ويعمل بموثوقية على إصدارات Kali ARM64. يعمل AWUS036ACH وظيفيًا لكنه يتطلب برنامج التشغيل RTL8812AU خارج الشجرة، مما يضيف اعتمادية صيانة على توفر رؤوس النواة.
 
 ---
 

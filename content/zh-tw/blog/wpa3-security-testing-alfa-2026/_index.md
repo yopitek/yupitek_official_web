@@ -46,7 +46,7 @@ WPA3-Enterprise 強制要求使用 GCMP-256 與 HMAC-SHA-384 的 192 位元安�
 
 WPA3 測試需要具備可靠監聽模式、封包注入支援，以及——針對 6 GHz WPA3 網路——三頻段能力的網卡：
 
-- **AWUS036AXML** — Wi-Fi 6E (6 GHz) WPA3 網路的必要選擇。採用 Mediatek MT7921AU 晶片組。在 Kali Linux 搭配 kernel 5.18+ 環境下，完整支援監聽模式與封包注入。這是唯一涵蓋 6 GHz 頻道的 ALFA 網卡，而純 WPA3 部署在該頻段日益普遍。
+- **AWUS036AXML** — Wi-Fi 6E (6 GHz) WPA3 網路的必要選擇。採用 Mediatek MT7921AUN 晶片組。在 Kali Linux 搭配 kernel 5.18+ 環境下，完整支援監聽模式與封包注入。這是唯一涵蓋 6 GHz 頻道的 ALFA 網卡，而純 WPA3 部署在該頻段日益普遍。
 - **AWUS036ACH** — 適用於 2.4/5 GHz WPA3 測試。採用 RTL8812AU 晶片組。與 aircrack-ng 工具鏈相容性最佳，跨 Kali Linux 版本的驅動程式支援最廣泛。
 
 ### 啟用監聽模式

@@ -1,6 +1,6 @@
 ---
 title: "Как установить драйвер ALFA USB WiFi на Kali Linux и Ubuntu 24.04 (2026)"
-description: "Полное руководство по установке драйверов ALFA Network на Kali Linux 2024 и Ubuntu 24.04 для чипсетов RTL8812AU, MT7612U и MT7921AU."
+description: "Полное руководство по установке драйверов ALFA Network на Kali Linux 2024 и Ubuntu 24.04 для чипсетов RTL8812AU, MT7612U и MT7921AUN."
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
@@ -53,8 +53,8 @@ tags: ["установка-драйвера", "Kali-Linux", "Ubuntu", "RTL8812AU
 | [AWUS036ACHM](/ru/products/alfa/awus036achm/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/ru/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (встроен в ядро) |
 | [AWUS036ACX](/ru/products/alfa/awus036acx/) | MT7612U | 0e8d:7612 | mt76x2u (встроен в ядро) |
-| [AWUS036AX](/ru/products/alfa/awus036ax/) | MT7921AU | 0e8d:7961 | mt7921u (ядро 5.18+) |
-| [AWUS036AXML](/ru/products/alfa/awus036axml/) | MT7921AU | 0e8d:7961 | mt7921u (ядро 5.18+) |
+| [AWUS036AX](/ru/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AXML](/ru/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (ядро 5.18+) |
 | [AWUS1900](/ru/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### Определение адаптера через lsusb
@@ -248,9 +248,9 @@ echo "mt76x2u" | sudo tee -a /etc/modules
 
 ---
 
-## Драйвер MT7921AU (AWUS036AX, AWUS036AXML — Wi-Fi 6E)
+## Драйвер MT7921AUN (AWUS036AX, AWUS036AXML — Wi-Fi 6E)
 
-MT7921AU — это чипсет Wi-Fi 6E от MediaTek. Его Linux-драйвер `mt7921u` был включён в основное ядро начиная с **версии 5.18**.
+MT7921AUN — это чипсет Wi-Fi 6E от MediaTek. Его Linux-драйвер `mt7921u` был включён в основное ядро начиная с **версии 5.18**.
 
 ### Проверка версии ядра
 
@@ -423,8 +423,8 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/ru/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/ru/products/alfa/awus036acm/) | MT7612U | Встроен (`mt76x2u`) | Встроен (`mt76x2u`) |
-| [AWUS036AX](/ru/products/alfa/awus036ax/) | MT7921AU | Встроен (`mt7921u`, ядро 5.18+) | Встроен (`mt7921u`, ядро 6.8) |
-| [AWUS036AXML](/ru/products/alfa/awus036axml/) | MT7921AU | Встроен (`mt7921u`, ядро 5.18+) | Встроен (`mt7921u`, ядро 6.8) |
+| [AWUS036AX](/ru/products/alfa/awus036ax/) | RTL8832BU | Встроен (`mt7921u`, ядро 5.18+) | Встроен (`mt7921u`, ядро 6.8) |
+| [AWUS036AXML](/ru/products/alfa/awus036axml/) | MT7921AUN | Встроен (`mt7921u`, ядро 5.18+) | Встроен (`mt7921u`, ядро 6.8) |
 | [AWUS1900](/ru/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 
 ---
@@ -442,7 +442,7 @@ Yopitek — авторизованный дистрибьютор ALFA Network. 
 Установка WiFi-драйвера в Linux следует простому алгоритму:
 
 1. **Определите чипсет** с помощью `lsusb` и таблицы соответствия выше
-2. **MT7612U или MT7921AU (на ядре 5.18+)?** → Просто выполните `modprobe` — готово
+2. **MT7612U или MT7921AUN (на ядре 5.18+)?** → Просто выполните `modprobe` — готово
 3. **RTL8812AU или RTL8814AU?** → Клонируйте нужный репозиторий, выполните `make && sudo make install`, включите DKMS для сохранения
 4. **Что-то не работает?** → Смотрите таблицу устранения неполадок, проверьте совпадение заголовочных файлов с ядром, изучите `dmesg`
 

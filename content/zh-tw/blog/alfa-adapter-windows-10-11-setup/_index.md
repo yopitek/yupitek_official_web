@@ -25,10 +25,10 @@ ALFA Network USB WiFi 網路卡在資安研究與網路工程領域廣為人知�
 | [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) | RTL8812AU | ✅ 完整支援 | ✅ 完整支援 | ⚠️ 僅被動掃描（Acrylic WiFi Pro）|
 | [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | MT7612U | ✅ 完整支援 | ✅ 完整支援 | ⚠️ 僅被動掃描 |
 | [AWUS036ACS](/zh-tw/products/alfa/awus036acs/) | RTL8811AU | ✅ 完整支援 | ✅ 完整支援 | ⚠️ 僅被動掃描 |
-| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | MT7921AU | ⚠️ 需手動下載驅動程式 | ✅ 內建驅動程式 | ⚠️ 功能受限 |
-| [AWUS036AXER](/zh-tw/products/alfa/awus036axer/) | MT7921AU | ⚠️ 需手動下載驅動程式 | ✅ 內建驅動程式 | ⚠️ 功能受限 |
-| [AWUS036AXM](/zh-tw/products/alfa/awus036axm/) | MT7921AU | ⚠️ 需手動下載驅動程式 | ✅ 內建驅動程式 | ❌ 不支援 |
-| [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7902 | ⚠️ 需手動下載驅動程式 | ✅ 內建驅動程式 | ❌ 不支援 |
+| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | RTL8832BU | ⚠️ 需手動下載驅動程式 | ✅ 內建驅動程式 | ⚠️ 功能受限 |
+| [AWUS036AXER](/zh-tw/products/alfa/awus036axer/) | RTL8832BU | ⚠️ 需手動下載驅動程式 | ✅ 內建驅動程式 | ⚠️ 功能受限 |
+| [AWUS036AXM](/zh-tw/products/alfa/awus036axm/) | MT7921AUN | ⚠️ 需手動下載驅動程式 | ✅ 內建驅動程式 | ❌ 不支援 |
+| [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7921AUN | ⚠️ 需手動下載驅動程式 | ✅ 內建驅動程式 | ❌ 不支援 |
 
 {{< alert "circle-info" >}}
 若以 Windows 日常使用為主要需求，AWUS036ACH（RTL8812AU）與 AWUS036ACM（MT7612U）是最經過實戰驗證的選擇。兩款均有 Realtek／MediaTek WHQL 簽署驅動程式，Windows 相容性紀錄最為完整。
@@ -67,16 +67,16 @@ Windows Update 需要有效的網路連線才能下載驅動程式。若您正�
 2. 點選**驅動程式**索引標籤。
 3. 記下**驅動程式版本**與**驅動程式日期**以備日後參考。
 
-### 方法 B：手動安裝驅動程式 — MT7921AU（AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML）
+### 方法 B：手動安裝驅動程式 — MT7921AUN（AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML）
 
-MediaTek MT7921AU 驅動程式已內建於 Windows 11 驅動程式存放區（組建 22000 以上）。Windows 10 請依下列步驟操作：
+MediaTek MT7921AUN 驅動程式已內建於 Windows 11 驅動程式存放區（組建 22000 以上）。Windows 10 請依下列步驟操作：
 
 1. 從 [MediaTek 官方網站](https://www.mediatek.com/products/home-networking/wi-fi-6-6e) 或 ALFA Network 支援頁面下載 MediaTek MT7921 驅動程式套件。
 2. 解壓縮套件後，以系統管理員身分執行 `Setup.exe`。
 3. 安裝完成後重新開機。
 
 {{< alert "circle-info" >}}
-使用 MT7921AU／MT7902 網路卡的 Windows 11 使用者，即使是全新安裝，通常在插入網路卡數分鐘內便可取得可用的驅動程式，無需手動下載。
+使用 MT7921AUN／MT7921AUN 網路卡的 Windows 11 使用者，即使是全新安裝，通常在插入網路卡數分鐘內便可取得可用的驅動程式，無需手動下載。
 {{< /alert >}}
 
 ### 常見裝置管理員錯誤代碼

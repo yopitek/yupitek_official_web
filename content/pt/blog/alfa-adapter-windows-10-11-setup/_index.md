@@ -25,10 +25,10 @@ Todos os adaptadores abaixo têm suporte oficial no Windows 10 e Windows 11. A d
 | [AWUS036ACH](/pt/products/alfa/awus036ach/) | RTL8812AU | ✅ Suporte completo | ✅ Suporte completo | ⚠️ Apenas varredura passiva (Acrylic WiFi Pro) |
 | [AWUS036ACM](/pt/products/alfa/awus036acm/) | MT7612U | ✅ Suporte completo | ✅ Suporte completo | ⚠️ Apenas varredura passiva |
 | [AWUS036ACS](/pt/products/alfa/awus036acs/) | RTL8811AU | ✅ Suporte completo | ✅ Suporte completo | ⚠️ Apenas varredura passiva |
-| [AWUS036AX](/pt/products/alfa/awus036ax/) | MT7921AU | ⚠️ Download manual do driver | ✅ Driver incluído | ⚠️ Limitado |
-| [AWUS036AXER](/pt/products/alfa/awus036axer/) | MT7921AU | ⚠️ Download manual do driver | ✅ Driver incluído | ⚠️ Limitado |
-| [AWUS036AXM](/pt/products/alfa/awus036axm/) | MT7921AU | ⚠️ Download manual do driver | ✅ Driver incluído | ❌ Não suportado |
-| [AWUS036AXML](/pt/products/alfa/awus036axml/) | MT7902 | ⚠️ Download manual do driver | ✅ Driver incluído | ❌ Não suportado |
+| [AWUS036AX](/pt/products/alfa/awus036ax/) | RTL8832BU | ⚠️ Download manual do driver | ✅ Driver incluído | ⚠️ Limitado |
+| [AWUS036AXER](/pt/products/alfa/awus036axer/) | RTL8832BU | ⚠️ Download manual do driver | ✅ Driver incluído | ⚠️ Limitado |
+| [AWUS036AXM](/pt/products/alfa/awus036axm/) | MT7921AUN | ⚠️ Download manual do driver | ✅ Driver incluído | ❌ Não suportado |
+| [AWUS036AXML](/pt/products/alfa/awus036axml/) | MT7921AUN | ⚠️ Download manual do driver | ✅ Driver incluído | ❌ Não suportado |
 
 {{< alert "circle-info" >}}
 Para uso diário no Windows, o AWUS036ACH (RTL8812AU) e o AWUS036ACM (MT7612U) são as escolhas mais testadas e comprovadas. Ambos recebem drivers WHQL assinados pela Realtek/MediaTek e têm o histórico mais amplo de compatibilidade com Windows.
@@ -67,16 +67,16 @@ Para verificar a versão do driver:
 2. Clique na aba **Driver**.
 3. Anote a **Versão do Driver** e a **Data do Driver** para referência futura.
 
-### Método B: Instalação Manual do Driver — MT7921AU (AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML)
+### Método B: Instalação Manual do Driver — MT7921AUN (AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML)
 
-O driver do MT7921AU da MediaTek está incluído no repositório de drivers do Windows 11 (build 22000+). Para o Windows 10:
+O driver do MT7921AUN da MediaTek está incluído no repositório de drivers do Windows 11 (build 22000+). Para o Windows 10:
 
 1. Baixe o pacote de driver MediaTek MT7921 no [site oficial da MediaTek](https://www.mediatek.com/products/home-networking/wi-fi-6-6e) ou na página de suporte da ALFA Network.
 2. Extraia o pacote e execute `Setup.exe` como Administrador.
 3. Reinicie após a instalação.
 
 {{< alert "circle-info" >}}
-Usuários do Windows 11 com adaptadores MT7921AU/MT7902 geralmente obtêm um driver funcional em poucos minutos após conectar o adaptador, mesmo em uma instalação nova — sem necessidade de download manual.
+Usuários do Windows 11 com adaptadores MT7921AUN/MT7921AUN geralmente obtêm um driver funcional em poucos minutos após conectar o adaptador, mesmo em uma instalação nova — sem necessidade de download manual.
 {{< /alert >}}
 
 ### Códigos de Erro Comuns no Gerenciador de Dispositivos

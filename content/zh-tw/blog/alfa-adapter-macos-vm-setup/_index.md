@@ -20,7 +20,7 @@ ALFA Network 網路卡在 Linux 上改變了這個局面，驅動程式支援深
 
 在直接進入 VM 設定前，了解 macOS 搭配 ALFA 網路卡能做什麼、不能做什麼是有價值的。
 
-**AWUS036AXML（MT7921AU 晶片）：** macOS 會將此網路卡識別為通用 USB 網路裝置。macOS 13 Ventura 及更新版本內建的 **MT7921AU** 驅動程式會自動識別此網路卡。它會出現在**系統偏好設定 → 網路**（Ventura 以上為**系統設定 → 網路**）中，可像一般網路卡一樣連線 Wi-Fi。在較舊的 macOS 版本上可能完全無法識別。
+**AWUS036AXML（MT7921AUN 晶片）：** macOS 會將此網路卡識別為通用 USB 網路裝置。macOS 13 Ventura 及更新版本內建的 **MT7921AUN** 驅動程式會自動識別此網路卡。它會出現在**系統偏好設定 → 網路**（Ventura 以上為**系統設定 → 網路**）中，可像一般網路卡一樣連線 Wi-Fi。在較舊的 macOS 版本上可能完全無法識別。
 
 **RTL8812AU 系列網路卡（AWUS036ACH、AWUS036ACM）：** 這些網路卡在 macOS 上需要第三方驅動程式。社群和商業驅動套件都有，但相容性不穩定。macOS 小版本更新後常需重新安裝驅動程式，macOS 11 起核心延伸簽章要求更加嚴格，而在 Apple Silicon 上由於 Rosetta 對核心延伸的限制，情況更加脆弱。
 
@@ -89,7 +89,7 @@ VMware Fusion 自 Fusion 13 起個人使用免費，是 macOS 使用者尋求零
 
 ```bash
 lsusb | grep -i mediatek
-# AWUS036AXML / MT7921AU: Bus 001 Device 002: ID 0e8d:7961 MediaTek Inc. ...
+# AWUS036AXML / MT7921AUN: Bus 001 Device 002: ID 0e8d:7961 MediaTek Inc. ...
 
 lsusb | grep -i realtek
 # AWUS036ACH / RTL8812AU: Bus 001 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. ...
@@ -99,7 +99,7 @@ lsusb | grep -i realtek
 
 ### 步驟 5 — 載入驅動程式並驗證監聽模式
 
-MT7921AU（AWUS036AXML）的驅動程式已內建於 Kali 核心。RTL8812AU 網路卡需要安裝驅動程式——請參閱[驅動程式安裝指南](/zh-tw/blog/install-alfa-driver-kali-ubuntu/)。驅動程式啟用後：
+MT7921AUN（AWUS036AXML）的驅動程式已內建於 Kali 核心。RTL8812AU 網路卡需要安裝驅動程式——請參閱[驅動程式安裝指南](/zh-tw/blog/install-alfa-driver-kali-ubuntu/)。驅動程式啟用後：
 
 ```bash
 sudo airmon-ng check kill
@@ -176,7 +176,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**M 晶片 Mac 推薦：** 如果你是專門為在 Apple Silicon Mac 上的 VM 中使用而購買 ALFA 網路卡，**AWUS036AXML（MT7921AU）** 是更好的選擇。其內建核心驅動程式完全省去 DKMS 編譯步驟，並在 ARM64 Kali 上可靠運作。
+**M 晶片 Mac 推薦：** 如果你是專門為在 Apple Silicon Mac 上的 VM 中使用而購買 ALFA 網路卡，**AWUS036AXML（MT7921AUN）** 是更好的選擇。其內建核心驅動程式完全省去 DKMS 編譯步驟，並在 ARM64 Kali 上可靠運作。
 
 ---
 

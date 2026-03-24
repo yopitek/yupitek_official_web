@@ -1,11 +1,11 @@
 ---
 title: "如何在 Kali Linux 與 Ubuntu 24.04 安裝 ALFA USB WiFi 驅動程式（2026 完整教學）"
-description: "完整說明如何在 Kali Linux 2024 和 Ubuntu 24.04 安裝 ALFA Network USB WiFi 網路卡驅動程式，涵蓋 RTL8812AU、MT7612U 及 MT7921AU 晶片組，附除錯技巧。"
+description: "完整說明如何在 Kali Linux 2024 和 Ubuntu 24.04 安裝 ALFA Network USB WiFi 網路卡驅動程式，涵蓋 RTL8812AU、MT7612U 及 MT7921AUN 晶片組，附除錯技巧。"
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-tags: ["驅動程式安裝", "Kali-Linux", "Ubuntu", "RTL8812AU", "MT7612U", "MT7921AU", "ALFA-Network"]
+tags: ["驅動程式安裝", "Kali-Linux", "Ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
 ---
 
 要讓 USB WiFi 網路卡在 Linux 上正常運作，關鍵幾乎都在驅動程式。Windows 有廠商提供的安裝程式，Linux 則不同——系統使用核心模組（kernel module）來與硬體溝通，也就是由作業系統在開機時或需要時載入的編譯程式碼。理解這個機制，除錯就會變得清晰，驅動程式安裝也更有規律可循。
@@ -53,8 +53,8 @@ Linux WiFi 驅動程式是一個**核心模組**——副檔名為 `.ko` 的檔�
 | [AWUS036ACHM](/zh-tw/products/alfa/awus036achm/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u（內建核心）|
 | [AWUS036ACX](/zh-tw/products/alfa/awus036acx/) | MT7612U | 0e8d:7612 | mt76x2u（內建核心）|
-| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | MT7921AU | 0e8d:7961 | mt7921u（核心 5.18+）|
-| [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7921AU | 0e8d:7961 | mt7921u（核心 5.18+）|
+| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14)|
+| [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u（核心 5.18+）|
 | [AWUS1900](/zh-tw/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### 用 lsusb 確認網路卡型號
@@ -246,9 +246,9 @@ echo "mt76x2u" | sudo tee -a /etc/modules
 
 ---
 
-## MT7921AU 驅動程式（AWUS036AX、AWUS036AXML — Wi-Fi 6E）
+## MT7921AUN 驅動程式（AWUS036AX、AWUS036AXML — Wi-Fi 6E）
 
-MT7921AU 是 MediaTek 的 Wi-Fi 6E 晶片組。其 Linux 驅動程式 `mt7921u` 已在核心 **5.18 版**被合併進主線。
+MT7921AUN 是 MediaTek 的 Wi-Fi 6E 晶片組。其 Linux 驅動程式 `mt7921u` 已在核心 **5.18 版**被合併進主線。
 
 ### 確認核心版本
 
@@ -421,8 +421,8 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | MT7612U | 內建（`mt76x2u`）| 內建（`mt76x2u`）|
-| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | MT7921AU | 內建（`mt7921u`，核心 5.18+）| 內建（`mt7921u`，核心 6.8）|
-| [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7921AU | 內建（`mt7921u`，核心 5.18+）| 內建（`mt7921u`，核心 6.8）|
+| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | RTL8832BU | 內建（`mt7921u`，核心 5.18+）| 內建（`mt7921u`，核心 6.8）|
+| [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7921AUN | 內建（`mt7921u`，核心 5.18+）| 內建（`mt7921u`，核心 6.8）|
 | [AWUS1900](/zh-tw/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 
 ---
@@ -440,7 +440,7 @@ Yopitek 是 ALFA Network 的授權經銷商。歡迎瀏覽完整的 [ALFA Networ
 Linux WiFi 驅動程式安裝有一套簡單的決策流程：
 
 1. **用 `lsusb` 搭配上方對照表確認晶片組**
-2. **MT7612U 或 MT7921AU（核心 5.18+）？** → 執行 `modprobe`，完成
+2. **MT7612U 或 MT7921AUN（核心 5.18+）？** → 執行 `modprobe`，完成
 3. **RTL8812AU 或 RTL8814AU？** → Clone 對應儲存庫，執行 `make && sudo make install`，啟用 DKMS 確保持久運作
 4. **有問題？** → 查看除錯表、確認標頭檔與核心版本一致、檢查 `dmesg`
 

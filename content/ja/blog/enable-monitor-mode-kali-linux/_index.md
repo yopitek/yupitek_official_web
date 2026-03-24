@@ -182,7 +182,7 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan0mon
 | モデル | チップセット | バンド | モニターモード | インジェクション | 備考 |
 |---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ | ✅ | ペネトレーションテストで最も人気 |
-| AWUS036AXML | MT7921AU | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E、カーネル 5.18+ が必要 |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E、カーネル 5.18+ が必要 |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ | ✅ | 優れた Linux ドライバーサポート |
 | AWUS036NHA | AR9271 | 2.4 GHz | ✅ | ✅ | クラシックな 2.4 GHz の定番 |
 | AWUS036NH | RTL8187 | 2.4 GHz | ✅ | ✅ | 高ゲインアンテナで長距離対応 |
@@ -268,6 +268,6 @@ sudo systemctl start NetworkManager
 
 ## まとめ
 
-Kali Linux でモニターモードを有効化するのは 2 ステップです：干渉するサービスを停止し、`airmon-ng` または `iw` のどちらかを使ってインターフェースモードを切り替える。成功の鍵は対応チップセットを持つアダプターを使うことです。RTL8812AU、MT7921AU、MT7612U、AR9271、RTL8814AU のチップセットを持つ ALFA Network アダプターは、Kali Linux で最も信頼できるすぐに使える体験を提供します。
+Kali Linux でモニターモードを有効化するのは 2 ステップです：干渉するサービスを停止し、`airmon-ng` または `iw` のどちらかを使ってインターフェースモードを切り替える。成功の鍵は対応チップセットを持つアダプターを使うことです。RTL8812AU、MT7921AUN、MT7612U、AR9271、RTL8814AU のチップセットを持つ ALFA Network アダプターは、Kali Linux で最も信頼できるすぐに使える体験を提供します。
 
 Yopitek（台湾の ALFA Network 正規代理店）の [ALFA Network 無線アダプター製品ラインナップ](/ja/products/alfa/)で、ワイヤレスセキュリティ調査に最適なアダプターをお探しください。

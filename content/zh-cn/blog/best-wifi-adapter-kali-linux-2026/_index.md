@@ -55,7 +55,7 @@ tags: ["Kali-Linux", "WiFi网卡", "监听模式", "数据包注入", "ALFA-Netw
 
 **RTL8814AU** — Realtek 的 AC1900 3×3 MIMO 芯片组。发射功率高、配备四根天线，覆盖范围最大。驱动程序由 `morrownr/8814au` 提供，AWUS1900 采用此芯片。
 
-**MT7921AU** — MediaTek 的 AX1800 Wi-Fi 6E 芯片组。四款中最新的一款，内核 5.18 起提供支持，AWUS036AXML 采用此芯片。随着 6 GHz 网络逐渐普及，该芯片组具备良好的前瞻性。
+**MT7921AUN** — MediaTek 的 AX1800 Wi-Fi 6E 芯片组。四款中最新的一款，内核 5.18 起提供支持，AWUS036AXML 采用此芯片。随着 6 GHz 网络逐渐普及，该芯片组具备良好的前瞻性。
 
 ### 双频 vs 三频
 
@@ -72,7 +72,7 @@ tags: ["Kali-Linux", "WiFi网卡", "监听模式", "数据包注入", "ALFA-Netw
 | 网卡 | 标准 | 芯片组 | 监听模式 | 天线 | 最适合场景 |
 |---|---|---|---|---|---|
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | 2× RP-SMA | 全能首选 |
-| [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | Wi-Fi 6E AX1800 | MT7921AU | ✅ | 1× RP-SMA | 前瞻之选 |
+| [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | Wi-Fi 6E AX1800 | MT7921AUN | ✅ | 1× RP-SMA | 前瞻之选 |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | Wi-Fi 5 AC600 | MT7612U | ✅ | 1× RP-SMA | 经济便携 |
 | [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 AX1800 | MT7612U 变体 | ✅ | 2× RP-SMA | Wi-Fi 6 场景 |
 | [AWUS1900](/zh-cn/products/alfa/awus1900/) | Wi-Fi 5 AC1900 | RTL8814AU | ✅ | 4× RP-SMA | 最大覆盖范围 |
@@ -160,9 +160,9 @@ AC600 规格意味着最高吞吐量不及 ACH。在高密度环境或需要同�
 
 [ALFA AWUS036AXML](/zh-cn/products/alfa/awus036axml/) 是 ALFA 针对 6 GHz 频段崛起趋势给出的答案。随着企业网络和现代家用路由器越来越多地部署 Wi-Fi 6E，能够在 6 GHz 频段工作的网卡对于全面评估而言已不可或缺。
 
-**芯片组：MediaTek MT7921AU**
+**芯片组：MediaTek MT7921AUN**
 
-MT7921AU 支持 Wi-Fi 6E（802.11ax），覆盖 2.4 GHz、5 GHz 和 6 GHz 三个频段。Linux 内核支持从 5.18 版本起通过 `mt7921u` 模块引入。Kali Linux 2022.x 及以后版本内核均已足够新，可直接支持。
+MT7921AUN 支持 Wi-Fi 6E（802.11ax），覆盖 2.4 GHz、5 GHz 和 6 GHz 三个频段。Linux 内核支持从 5.18 版本起通过 `mt7921u` 模块引入。Kali Linux 2022.x 及以后版本内核均已足够新，可直接支持。
 
 ```bash
 # 确认驱动已加载
@@ -178,7 +178,7 @@ Wi-Fi 6E 网络工作在新开放的 6 GHz 频谱，干扰更少、吞吐量更�
 
 **当前局限性**
 
-MT7921AU 驱动的 6 GHz 监听模式仍在完善中。对于 2.4/5 GHz 上的常规 WPA2 测试，驱动运行稳定。若需要针对 6 GHz 进行深入测试，建议在实际作业前先检查 `mt76` 驱动仓库中的最新状态。
+MT7921AUN 驱动的 6 GHz 监听模式仍在完善中。对于 2.4/5 GHz 上的常规 WPA2 测试，驱动运行稳定。若需要针对 6 GHz 进行深入测试，建议在实际作业前先检查 `mt76` 驱动仓库中的最新状态。
 
 **谁应该选择 AWUS036AXML？**
 

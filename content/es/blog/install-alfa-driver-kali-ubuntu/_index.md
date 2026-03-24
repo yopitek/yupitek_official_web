@@ -1,6 +1,6 @@
 ---
 title: "Cómo Instalar el Controlador ALFA USB WiFi en Kali Linux y Ubuntu 24.04 (2026)"
-description: "Guía completa para instalar controladores de adaptadores ALFA Network en Kali Linux 2024 y Ubuntu 24.04 para chipsets RTL8812AU, MT7612U y MT7921AU."
+description: "Guía completa para instalar controladores de adaptadores ALFA Network en Kali Linux 2024 y Ubuntu 24.04 para chipsets RTL8812AU, MT7612U y MT7921AUN."
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
@@ -53,8 +53,8 @@ El controlador que necesitas depende completamente de tu chipset, no del nombre 
 | [AWUS036ACHM](/es/products/alfa/awus036achm/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/es/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (en el kernel) |
 | [AWUS036ACX](/es/products/alfa/awus036acx/) | MT7612U | 0e8d:7612 | mt76x2u (en el kernel) |
-| [AWUS036AX](/es/products/alfa/awus036ax/) | MT7921AU | 0e8d:7961 | mt7921u (kernel 5.18+) |
-| [AWUS036AXML](/es/products/alfa/awus036axml/) | MT7921AU | 0e8d:7961 | mt7921u (kernel 5.18+) |
+| [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AXML](/es/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (kernel 5.18+) |
 | [AWUS1900](/es/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### Identifica Tu Adaptador con lsusb
@@ -248,9 +248,9 @@ Esta es la gran ventaja del chipset MT7612U: cero compilación, sin código fuen
 
 ---
 
-## Controlador MT7921AU (AWUS036AX, AWUS036AXML — Wi-Fi 6E)
+## Controlador MT7921AUN (AWUS036AX, AWUS036AXML — Wi-Fi 6E)
 
-El MT7921AU es el chipset Wi-Fi 6E de MediaTek. Su controlador Linux, `mt7921u`, se integró al kernel principal en la **versión 5.18**.
+El MT7921AUN es el chipset Wi-Fi 6E de MediaTek. Su controlador Linux, `mt7921u`, se integró al kernel principal en la **versión 5.18**.
 
 ### Verificar Versión del Kernel
 
@@ -423,8 +423,8 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/es/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/es/products/alfa/awus036acm/) | MT7612U | Integrado (`mt76x2u`) | Integrado (`mt76x2u`) |
-| [AWUS036AX](/es/products/alfa/awus036ax/) | MT7921AU | Integrado (`mt7921u`, kernel 5.18+) | Integrado (`mt7921u`, kernel 6.8) |
-| [AWUS036AXML](/es/products/alfa/awus036axml/) | MT7921AU | Integrado (`mt7921u`, kernel 5.18+) | Integrado (`mt7921u`, kernel 6.8) |
+| [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | Integrado (`mt7921u`, kernel 5.18+) | Integrado (`mt7921u`, kernel 6.8) |
+| [AWUS036AXML](/es/products/alfa/awus036axml/) | MT7921AUN | Integrado (`mt7921u`, kernel 5.18+) | Integrado (`mt7921u`, kernel 6.8) |
 | [AWUS1900](/es/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 
 ---
@@ -442,7 +442,7 @@ Yopitek es un distribuidor autorizado de ALFA Network. Explora la [gama completa
 La instalación de controladores WiFi en Linux sigue un árbol de decisión simple:
 
 1. **Identifica tu chipset** con `lsusb` y la tabla de mapeo de arriba
-2. **¿MT7612U o MT7921AU (en kernel 5.18+)?** → Solo ejecuta `modprobe`, listo
+2. **¿MT7612U o MT7921AUN (en kernel 5.18+)?** → Solo ejecuta `modprobe`, listo
 3. **¿RTL8812AU o RTL8814AU?** → Clona el repositorio apropiado, ejecuta `make && sudo make install`, activa DKMS para persistencia
 4. **¿Algo no funciona?** → Revisa la tabla de solución de problemas, verifica que las cabeceras coincidan con el kernel, revisa `dmesg`
 

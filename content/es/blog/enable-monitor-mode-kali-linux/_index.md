@@ -182,7 +182,7 @@ Los adaptadores [ALFA Network](/es/products/alfa/) son el estándar de la indust
 | Modelo | Chipset | Banda | Modo Monitor | Inyección | Notas |
 |---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ | ✅ | El más popular para pentesting |
-| AWUS036AXML | MT7921AU | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E, requiere kernel 5.18+ |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E, requiere kernel 5.18+ |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ | ✅ | Excelente soporte de controlador Linux |
 | AWUS036NHA | AR9271 | 2.4 GHz | ✅ | ✅ | Clásico de 2.4 GHz probado |
 | AWUS036NH | RTL8187 | 2.4 GHz | ✅ | ✅ | Largo alcance con antena de alta ganancia |
@@ -268,6 +268,6 @@ Verifica que la interfaz volvió al modo administrado con `iwconfig` y reconéct
 
 ## Resumen
 
-Activar el modo monitor en Kali Linux es un proceso de dos pasos: detener los servicios que interfieren y luego cambiar el modo de la interfaz usando `airmon-ng` o `iw`. La clave del éxito es usar un adaptador con un chipset compatible. Los adaptadores ALFA Network con chipsets RTL8812AU, MT7921AU, MT7612U, AR9271 y RTL8814AU proporcionan la experiencia más confiable desde el primer momento en Kali Linux.
+Activar el modo monitor en Kali Linux es un proceso de dos pasos: detener los servicios que interfieren y luego cambiar el modo de la interfaz usando `airmon-ng` o `iw`. La clave del éxito es usar un adaptador con un chipset compatible. Los adaptadores ALFA Network con chipsets RTL8812AU, MT7921AUN, MT7612U, AR9271 y RTL8814AU proporcionan la experiencia más confiable desde el primer momento en Kali Linux.
 
 Explora la gama completa de [adaptadores inalámbricos ALFA Network disponibles en Yopitek](/es/products/alfa/) — distribuidor autorizado ALFA Network — para encontrar el adaptador adecuado para tu investigación de seguridad inalámbrica.

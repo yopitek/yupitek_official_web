@@ -1,6 +1,6 @@
 ---
 title: "تعطّل برنامج تشغيل ALFA بعد تحديث النواة؟ دليل الإصلاح الشامل"
-description: "محول ALFA USB WiFi لا يعمل بعد تحديث نواة Linux؟ دليل إصلاح كامل لبرامج تشغيل RTL8812AU وRTL8811AU وMT7921AU على Kali Linux وUbuntu بعد ترقيات النواة."
+description: "محول ALFA USB WiFi لا يعمل بعد تحديث نواة Linux؟ دليل إصلاح كامل لبرامج تشغيل RTL8812AU وRTL8811AU وMT7921AUN على Kali Linux وUbuntu بعد ترقيات النواة."
 date: 2026-03-24
 draft: false
 dir: rtl
@@ -9,7 +9,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 ---
 
-قمت بتشغيل `sudo apt upgrade`، وبعد إعادة التشغيل اختفى محول ALFA تمامًا — لا واجهة، لا أضواء، لا شيء. هذا هو السؤال الأكثر شيوعًا في دعم محولات ALFA Network USB WiFi على Linux، والتحديثات الخاصة بالنواة هي السبب في جميع الحالات تقريبًا. يرشدك هذا الدليل خلال عملية تشخيص وإصلاح منهجية لعائلتَي شريحتين الأكثر تضررًا: **RTL8812AU** (الموجودة في AWUS036ACH وACM وACS) و**MT7921AU** (الموجودة في AWUS036AXM وAXML وAX). اتبع خطوات كل قسم وسيعود محولك إلى العمل في أقل من 15 دقيقة.
+قمت بتشغيل `sudo apt upgrade`، وبعد إعادة التشغيل اختفى محول ALFA تمامًا — لا واجهة، لا أضواء، لا شيء. هذا هو السؤال الأكثر شيوعًا في دعم محولات ALFA Network USB WiFi على Linux، والتحديثات الخاصة بالنواة هي السبب في جميع الحالات تقريبًا. يرشدك هذا الدليل خلال عملية تشخيص وإصلاح منهجية لعائلتَي شريحتين الأكثر تضررًا: **RTL8812AU** (الموجودة في AWUS036ACH وACM وACS) و**MT7921AUN** (الموجودة في AWUS036AXM وAXML وAX). اتبع خطوات كل قسم وسيعود محولك إلى العمل في أقل من 15 دقيقة.
 
 ---
 
@@ -272,11 +272,11 @@ cat /etc/dkms/framework.conf | grep autoinstall
 | الأعراض | الشريحة المحتملة | السبب الجذري | الإصلاح السريع |
 |---|---|---|---|
 | اختفاء الواجهة بعد إعادة التشغيل | RTL8812AU | فشل بناء DKMS | `sudo dkms autoinstall` |
-| اختفاء الواجهة، يُظهر `dmesg` خطأ في البرامج الثابتة | MT7921AU | حزمة البرامج الثابتة مفقودة | `sudo apt install firmware-misc-nonfree` |
+| اختفاء الواجهة، يُظهر `dmesg` خطأ في البرامج الثابتة | MT7921AUN | حزمة البرامج الثابتة مفقودة | `sudo apt install firmware-misc-nonfree` |
 | تظهر الواجهة لكن تختفي بعد 30 ثانية | RTL8812AU | عدم تطابق إصدار الوحدة | `sudo dkms remove --all && sudo make dkms_install` |
 | فشل وضع المراقبة مع `SIOCSIFFLAGS` | RTL8812AU | فرع برنامج التشغيل خاطئ | استنساخ `aircrack-ng/rtl8812au` وإعادة التثبيت |
 | `iwconfig` يُظهر لا امتدادات لاسلكية | أي | الوحدة غير محمّلة | `sudo modprobe 88XXau` أو `sudo modprobe mt7921u` |
-| الواجهة موجودة لكن لا توجد شبكات | MT7921AU | النواة < 5.18 | `sudo apt full-upgrade && sudo reboot` |
+| الواجهة موجودة لكن لا توجد شبكات | MT7921AUN | النواة < 5.18 | `sudo apt full-upgrade && sudo reboot` |
 | `dkms status` يُظهر `broken` | RTL8812AU | عدم تطابق المصدر/الترويسات | `sudo apt install linux-headers-$(uname -r)` ثم إعادة البناء |
 | قدرة TX محدودة بـ 20 dBm | RTL8812AU | قفل النطاق التنظيمي | `sudo iw reg set US` (عدّل لمنطقتك) |
 

@@ -1,6 +1,6 @@
 ---
 title: "كيفية تثبيت برنامج تشغيل ALFA USB WiFi على Kali Linux وUbuntu 24.04 (2026)"
-description: "دليل شامل لتثبيت برامج تشغيل محولات ALFA Network على Kali Linux 2024 وUbuntu 24.04 للشرائح RTL8812AU وMT7612U وMT7921AU."
+description: "دليل شامل لتثبيت برامج تشغيل محولات ALFA Network على Kali Linux 2024 وUbuntu 24.04 للشرائح RTL8812AU وMT7612U وMT7921AUN."
 date: 2026-03-23
 draft: false
 dir: rtl
@@ -54,8 +54,8 @@ tags: ["تثبيت-برنامج-تشغيل", "Kali-Linux", "Ubuntu", "RTL8812AU"
 | [AWUS036ACHM](/ar/products/alfa/awus036achm/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/ar/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (في النواة) |
 | [AWUS036ACX](/ar/products/alfa/awus036acx/) | MT7612U | 0e8d:7612 | mt76x2u (في النواة) |
-| [AWUS036AX](/ar/products/alfa/awus036ax/) | MT7921AU | 0e8d:7961 | mt7921u (نواة 5.18+) |
-| [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AU | 0e8d:7961 | mt7921u (نواة 5.18+) |
+| [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (نواة 5.18+) |
 | [AWUS1900](/ar/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### التعرف على محولك بـ lsusb
@@ -247,9 +247,9 @@ echo "mt76x2u" | sudo tee -a /etc/modules
 
 ---
 
-## برنامج تشغيل MT7921AU (AWUS036AX، AWUS036AXML — Wi-Fi 6E)
+## برنامج تشغيل MT7921AUN (AWUS036AX، AWUS036AXML — Wi-Fi 6E)
 
-MT7921AU هي شريحة Wi-Fi 6E من MediaTek. اندمج برنامج تشغيلها على Linux، `mt7921u`، في النواة الرئيسية منذ **الإصدار 5.18**.
+MT7921AUN هي شريحة Wi-Fi 6E من MediaTek. اندمج برنامج تشغيلها على Linux، `mt7921u`، في النواة الرئيسية منذ **الإصدار 5.18**.
 
 ### تحقق من إصدار النواة
 
@@ -422,8 +422,8 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/ar/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/ar/products/alfa/awus036acm/) | MT7612U | مدمج (`mt76x2u`) | مدمج (`mt76x2u`) |
-| [AWUS036AX](/ar/products/alfa/awus036ax/) | MT7921AU | مدمج (`mt7921u`، نواة 5.18+) | مدمج (`mt7921u`، نواة 6.8) |
-| [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AU | مدمج (`mt7921u`، نواة 5.18+) | مدمج (`mt7921u`، نواة 6.8) |
+| [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | مدمج (`mt7921u`، نواة 5.18+) | مدمج (`mt7921u`، نواة 6.8) |
+| [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AUN | مدمج (`mt7921u`، نواة 5.18+) | مدمج (`mt7921u`، نواة 6.8) |
 | [AWUS1900](/ar/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 
 ---
@@ -441,7 +441,7 @@ Yopitek موزع معتمد لـ ALFA Network. تصفح [مجموعة منتجا
 تثبيت برامج تشغيل WiFi على Linux يسير وفق شجرة قرار بسيطة:
 
 1. **حدد شريحتك المعالجة** بـ `lsusb` وجدول المطابقة أعلاه
-2. **MT7612U أو MT7921AU (على نواة 5.18+)؟** ← شغّل فقط `modprobe`، انتهيت
+2. **MT7612U أو MT7921AUN (على نواة 5.18+)؟** ← شغّل فقط `modprobe`، انتهيت
 3. **RTL8812AU أو RTL8814AU؟** ← استنسخ المستودع المناسب، شغّل `make && sudo make install`، فعّل DKMS للاستمرارية
 4. **شيء لا يعمل؟** ← راجع جدول استكشاف الأخطاء، تحقق من تطابق الترويسات مع النواة، راجع `dmesg`
 

@@ -11,7 +11,7 @@ tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", 
 
 تشغيل محول ALFA WiFi داخل جهاز افتراضي ليس بالأمر البسيط الذي يكفي فيه توصيل المحول وانتظار أن يتعرف عليه نظام التشغيل الضيف تلقائياً. على عكس المجلدات المشتركة والشبكات المجسّرة، يتطلب وضع المراقبة (monitor mode) وحقن الحزم الخام (packet injection) **تحكماً كاملاً في USB** — أي يجب أن تمتلك الآلة الافتراضية الجهاز حصرياً بدلاً من مشاركته عبر مكدّس شبكة المضيف. يُسمّى هذا بـ USB Passthrough، وإعداده بشكل صحيح هو السبب الأكثر شيوعاً لفشل الإعداد لدى مختبري الاختراق ولاعبي CTF العاملين في البيئات الافتراضية.
 
-يغطي هذا الدليل الإعداد الكامل لـ **VirtualBox 7.x** و**VMware Workstation 17+ / VMware Fusion 13+**، مستهدفاً Kali Linux كنظام تشغيل ضيف. يتناول الدليل كلاً من AWUS036ACH (شريحة RTL8812AU) والأحدث AWUS036AXML (شريحة MT7921AU)، مع ملاحظات خاصة بكل محول عند اختلاف السلوك.
+يغطي هذا الدليل الإعداد الكامل لـ **VirtualBox 7.x** و**VMware Workstation 17+ / VMware Fusion 13+**، مستهدفاً Kali Linux كنظام تشغيل ضيف. يتناول الدليل كلاً من AWUS036ACH (شريحة RTL8812AU) والأحدث AWUS036AXML (شريحة MT7921AUN)، مع ملاحظات خاصة بكل محول عند اختلاف السلوك.
 
 بعد الانتهاء، سيظهر محول ALFA الخاص بك داخل Kali عبر `lsusb`، وسيتم تحميل برنامج التشغيل الصحيح، وسيؤكد `airmon-ng` عمل وضع المراقبة.
 
@@ -25,7 +25,7 @@ tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", 
 |---|---|
 | **برنامج المحاكاة الافتراضية** | VirtualBox 7.x + Extension Pack **أو** VMware Workstation 17+ / Fusion 13+ |
 | **نظام التشغيل الضيف** | Kali Linux 2024.x أو أحدث (تم الاختبار على 2024.1 حتى 2025.1) |
-| **محول ALFA** | AWUS036ACH أو AWUS036AXML أو AWUS036ACM أو أي جهاز RTL8812AU / MT7921AU |
+| **محول ALFA** | AWUS036ACH أو AWUS036AXML أو AWUS036ACM أو أي جهاز RTL8812AU / MT7921AUN |
 | **منفذ USB بالمضيف** | يُوصى بـ USB 3.0 (خاصة لـ AWUS036AXML) |
 | **نظام تشغيل المضيف** | Windows 10/11 أو Linux أو macOS (Fusion) |
 | **صلاحيات Sudo** | مطلوبة داخل VM الخاص بـ Kali |
@@ -138,7 +138,7 @@ sudo apt update && sudo apt install -y realtek-rtl88xxau-dkms
 sudo modprobe 88XXau
 ```
 
-**AWUS036AXML (MT7921AU):**
+**AWUS036AXML (MT7921AUN):**
 
 ```bash
 sudo modprobe mt7921u
@@ -238,7 +238,7 @@ usb_xhci.present = "TRUE"
 
 AWUS036ACH جهاز **USB 2.0** وهو من أكثر المحولات المختبرة في بيئات VM. كلٌّ من VirtualBox وVMware يتعامل معه بشكل موثوق. حزمة برنامج التشغيل: `realtek-rtl88xxau-dkms`. اسم الوحدة: `88XXau`.
 
-### AWUS036AXML (MT7921AU)
+### AWUS036AXML (MT7921AUN)
 
 AWUS036AXML جهاز **USB 3.0** يدعم WiFi 6E وله بعض الحالات الخاصة في بيئات VM. **يجب** استخدام وحدة تحكم USB 3.0 (xHCI). حزمة البرنامج الثابت: `firmware-misc-nonfree`. قد تعاني بعض الوحدات المبكرة من تجمّد دوري تحت VMware/VirtualBox USB 3.0 arbitration. يتعامل VMware Workstation مع AWUS036AXML بشكل أكثر استقراراً من VirtualBox في passthrough USB 3.0.
 

@@ -10,7 +10,7 @@ tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", 
 
 Запустить адаптер ALFA WiFi внутри виртуальной машины не так просто, как подключить его и ждать, пока гостевая ОС обнаружит устройство. В отличие от общих папок или сетевого моста, режим мониторинга и инъекция пакетов требуют **полного управления USB** — ВМ должна эксклюзивно владеть USB-устройством, а не совместно использовать его через сетевой стек хоста. Это называется USB passthrough, и правильная настройка — самая распространённая причина сбоев для пентестеров и игроков CTF, работающих в ВМ.
 
-Это руководство охватывает полную настройку passthrough для **VirtualBox 7.x** и **VMware Workstation 17+ / VMware Fusion 13+** с Kali Linux в качестве гостевой ОС. Рассматриваются как AWUS036ACH (чипсет RTL8812AU), так и более новый AWUS036AXML (чипсет MT7921AU), с заметками для каждого адаптера там, где поведение различается.
+Это руководство охватывает полную настройку passthrough для **VirtualBox 7.x** и **VMware Workstation 17+ / VMware Fusion 13+** с Kali Linux в качестве гостевой ОС. Рассматриваются как AWUS036ACH (чипсет RTL8812AU), так и более новый AWUS036AXML (чипсет MT7921AUN), с заметками для каждого адаптера там, где поведение различается.
 
 По завершении ваш адаптер ALFA будет отображаться внутри Kali через `lsusb`, правильный драйвер будет загружен, и `airmon-ng` подтвердит работу режима мониторинга.
 
@@ -24,7 +24,7 @@ tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", 
 |---|---|
 | **Гипервизор** | VirtualBox 7.x + Extension Pack **или** VMware Workstation 17+ / Fusion 13+ |
 | **Гостевая ОС** | Kali Linux 2024.x или новее (протестировано на 2024.1–2025.1) |
-| **Адаптер ALFA** | AWUS036ACH, AWUS036AXML, AWUS036ACM или любое устройство RTL8812AU / MT7921AU |
+| **Адаптер ALFA** | AWUS036ACH, AWUS036AXML, AWUS036ACM или любое устройство RTL8812AU / MT7921AUN |
 | **USB-порт хоста** | Рекомендуется USB 3.0 (особенно для AWUS036AXML) |
 | **ОС хоста** | Windows 10/11, Linux или macOS (Fusion) |
 | **Доступ Sudo** | Требуется внутри ВМ Kali |
@@ -135,7 +135,7 @@ sudo apt update && sudo apt install -y realtek-rtl88xxau-dkms
 sudo modprobe 88XXau
 ```
 
-**AWUS036AXML (MT7921AU):**
+**AWUS036AXML (MT7921AUN):**
 
 ```bash
 sudo modprobe mt7921u
@@ -235,7 +235,7 @@ usb_xhci.present = "TRUE"
 
 AWUS036ACH — устройство **USB 2.0**, одно из наиболее протестированных в среде ВМ. Оба гипервизора — VirtualBox и VMware — надёжно работают с ним. Пакет драйвера: `realtek-rtl88xxau-dkms`. Имя модуля: `88XXau`.
 
-### AWUS036AXML (MT7921AU)
+### AWUS036AXML (MT7921AUN)
 
 AWUS036AXML — устройство **USB 3.0** с поддержкой WiFi 6E, имеющее некоторые особенности в среде ВМ. **Необходимо** использовать USB 3.0 (xHCI) контроллер. Пакет прошивки: `firmware-misc-nonfree`. Ранние модели могут периодически зависать при арбитраже USB 3.0 в VirtualBox. VMware Workstation, как правило, надёжнее работает с AWUS036AXML для USB 3.0 passthrough.
 

@@ -20,15 +20,15 @@ Antes de abrir cualquier página de producto, responde estas cuatro preguntas. T
 
 El soporte de controladores lo es todo. Los usuarios de Kali Linux y Ubuntu en kernels recientes tienen la mayor variedad de opciones. El soporte para macOS es escaso en todos los modelos. Windows 10/11 generalmente tiene buen soporte. Si usas Raspberry Pi o una plataforma basada en ARM, la selección del chipset es fundamental.
 
-- **Kali Linux / Debian:** RTL8812AU (`dkms-rtl8812au`) y MT7921AU (kernel nativo ≥ 5.18) son las dos familias de chipsets principales.
-- **Ubuntu 22.04 / 24.04:** El mismo panorama de controladores, aunque es posible que necesites instalar kernels HWE o `firmware-misc-nonfree` para MT7921AU.
+- **Kali Linux / Debian:** RTL8812AU (`dkms-rtl8812au`) y MT7921AUN (kernel nativo ≥ 5.18) son las dos familias de chipsets principales.
+- **Ubuntu 22.04 / 24.04:** El mismo panorama de controladores, aunque es posible que necesites instalar kernels HWE o `firmware-misc-nonfree` para MT7921AUN.
 - **Windows 10/11:** ALFA proporciona controladores firmados para todos los modelos actuales. La instalación es sencilla.
 - **macOS Sonoma:** Solo un puñado de adaptadores cuenta con soporte de kext mantenido por la comunidad. Prepárate para complicaciones; planifica un flujo de trabajo con máquina virtual.
-- **Raspberry Pi (Kali NetHunter, ARM):** Los modelos con RTL8812AU son la opción segura. MT7921AU puede funcionar, pero requiere el paquete `firmware-misc-nonfree` y un kernel lo suficientemente reciente.
+- **Raspberry Pi (Kali NetHunter, ARM):** Los modelos con RTL8812AU son la opción segura. MT7921AUN puede funcionar, pero requiere el paquete `firmware-misc-nonfree` y un kernel lo suficientemente reciente.
 
 ### (b) ¿Necesitas monitor mode e inyección de paquetes?
 
-Si tu respuesta es sí — y para cualquier prueba de penetración o auditoría inalámbrica debería serlo — elimina el [AWUS036EACS](/en/products/alfa/awus036eacs/) de tu lista de inmediato. Su chipset QCA9377 no admite monitor mode ni inyección de manera confiable en Linux. Todos los demás modelos de esta guía sí lo hacen.
+Si tu respuesta es sí — y para cualquier prueba de penetración o auditoría inalámbrica debería serlo — elimina el [AWUS036EACS](/en/products/alfa/awus036eacs/) de tu lista de inmediato. Su chipset RTL8821CU no admite monitor mode ni inyección de manera confiable en Linux. Todos los demás modelos de esta guía sí lo hacen.
 
 ### (c) ¿Máquina virtual o hardware nativo?
 
@@ -50,12 +50,12 @@ La generación Wi-Fi 5 (ACH, ACM, ACS) es más económica, tiene controladores m
 |---|---|---|---|---|---|---|---|---|---|
 | [AWUS036ACS](/en/products/alfa/awus036acs/) | Wi-Fi 5 | RTL8811AU | AC600 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | Kit de viaje liviano |
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | Operaciones de red team |
-| [AWUS036ACM](/en/products/alfa/awus036acm/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | Doble banda económico |
-| [AWUS036EACS](/en/products/alfa/awus036eacs/) | Wi-Fi 5 | QCA9377 | AC1200 | ⚠️ | ath10k | ✅ | ✅ | 1× RP-SMA | Uso general (sin inyección) |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 | MT7921AU | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Auditoría Wi-Fi 6 |
-| [AWUS036AXER](/en/products/alfa/awus036axer/) | Wi-Fi 6 | MT7921AU | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6 de largo alcance |
-| [AWUS036AXM](/en/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AU | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | Entrada Wi-Fi 6E |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E | MT7902 | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Flagship 6E |
+| [AWUS036ACM](/en/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | Doble banda económico |
+| [AWUS036EACS](/en/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | Uso general (sin inyección) |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated | Auditoría Wi-Fi 6 |
+| [AWUS036AXER](/en/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | Wi-Fi 6 de largo alcance |
+| [AWUS036AXM](/en/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Entrada Wi-Fi 6E |
+| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | Flagship 6E |
 
 </div>
 
@@ -110,13 +110,13 @@ El controlador RTL8811AU comparte el mismo paquete `rtl8812au-dkms` en Kali, por
 
 ### AWUS036EACS — Uso General, No para Pentesting
 
-El [AWUS036EACS](/en/products/alfa/awus036eacs/) está impulsado por un chipset Qualcomm QCA9377 y usa el controlador de kernel `ath10k`. Este chipset fue diseñado para conectividad de cliente, no para manipulación de paquetes. El soporte de monitor mode bajo `ath10k` no es confiable, y la inyección de paquetes no está disponible en la configuración estándar del controlador.
+El [AWUS036EACS](/en/products/alfa/awus036eacs/) está impulsado por un chipset Qualcomm RTL8821CU y usa el controlador de kernel `rtl88xxcu`. Este chipset fue diseñado para conectividad de cliente, no para manipulación de paquetes. El soporte de monitor mode bajo `rtl88xxcu` no es confiable, y la inyección de paquetes no está disponible en la configuración estándar del controlador.
 
 {{< alert "triangle-exclamation" >}}
 **No uses AWUS036EACS para pruebas de penetración, operaciones de red team ni ninguna tarea que requiera monitor mode o inyección de paquetes.** Es adecuado para conectividad inalámbrica general, extensión del rango del controlador de drones DJI (donde se usa frecuentemente), y despliegues con prioridad en Windows donde el comportamiento estándar de adaptador cliente es aceptable.
 {{< /alert >}}
 
-Merece su lugar en esta lista por su compatibilidad con macOS — la situación del controlador QCA9377 en macOS es mejor que la de los chipsets Realtek o MediaTek — y para despliegues de conectividad empresarial o para consumidores donde el adaptador se usa puramente como cliente.
+Merece su lugar en esta lista por su compatibilidad con macOS — la situación del controlador RTL8821CU en macOS es mejor que la de los chipsets Realtek o MediaTek — y para despliegues de conectividad empresarial o para consumidores donde el adaptador se usa puramente como cliente.
 
 ---
 
@@ -124,7 +124,7 @@ Merece su lugar en esta lista por su compatibilidad con macOS — la situación 
 
 Wi-Fi 6 (802.11ax) trajo mejoras significativas en el rendimiento en entornos densos, escenarios MU-MIMO con muchos objetivos y BSS Coloring para la identificación de redes. Para los auditores inalámbricos, los adaptadores Wi-Fi 6 son cada vez más relevantes a medida que los despliegues empresariales han migrado agresivamente a infraestructura 802.11ax.
 
-Ambos adaptadores ALFA Wi-Fi 6 usan el chipset MediaTek MT7921AU, que fue integrado al kernel principal de Linux en la versión 5.18 como controlador `mt7921u`.
+Ambos adaptadores ALFA Wi-Fi 6 usan el chipset MediaTek MT7921AUN, que fue integrado al kernel principal de Linux en la versión 5.18 como controlador `mt7921u`.
 
 ### AWUS036AX — La Opción Limpia de Wi-Fi 6
 
@@ -136,15 +136,15 @@ El [AWUS036AX](/en/products/alfa/awus036ax/) es el sucesor directo Wi-Fi 6 de la
 - Monitor mode: compatible
 - Inyección de paquetes: compatible
 
-**Nota práctica sobre monitor mode:** La implementación de monitor mode del MT7921AU ha mostrado bloqueos de firmware ocasionales en combinaciones específicas de kernel/firmware al realizar salto de canales agresivo. Esto afecta a toda la familia MT7921AU. Fija tu kernel si la estabilidad es crítica y realiza pruebas antes de un compromiso real.
+**Nota práctica sobre monitor mode:** La implementación de monitor mode del MT7921AUN ha mostrado bloqueos de firmware ocasionales en combinaciones específicas de kernel/firmware al realizar salto de canales agresivo. Esto afecta a toda la familia MT7921AUN. Fija tu kernel si la estabilidad es crítica y realiza pruebas antes de un compromiso real.
 
 {{< alert "circle-info" >}}
-**Verificación del kernel:** Ejecuta `uname -r` para confirmar tu versión de kernel antes de comprar. En Kali 2024.x, el kernel predeterminado es ≥ 6.x, por lo que MT7921AU funcionará sin configuración adicional. En Ubuntu 22.04 LTS con la pila HWE, deberías estar en 6.5+.
+**Verificación del kernel:** Ejecuta `uname -r` para confirmar tu versión de kernel antes de comprar. En Kali 2024.x, el kernel predeterminado es ≥ 6.x, por lo que MT7921AUN funcionará sin configuración adicional. En Ubuntu 22.04 LTS con la pila HWE, deberías estar en 6.5+.
 {{< /alert >}}
 
 ### AWUS036AXER — Variante de Alcance Extendido
 
-El [AWUS036AXER](/en/products/alfa/awus036axer/) es idéntico en hardware al AWUS036AX en chipset y configuración de antenas, pero añade amplificación de RF mejorada para un mayor alcance operativo. La situación del controlador es idéntica — mismo MT7921AU, misma ruta de soporte del kernel, mismo comportamiento de monitor mode e inyección.
+El [AWUS036AXER](/en/products/alfa/awus036axer/) es idéntico en hardware al AWUS036AX en chipset y configuración de antenas, pero añade amplificación de RF mejorada para un mayor alcance operativo. La situación del controlador es idéntica — mismo MT7921AUN, misma ruta de soporte del kernel, mismo comportamiento de monitor mode e inyección.
 
 Elige AXER sobre AX cuando el alcance sea el factor decisivo: relevamientos de sitio en campus grandes, evaluaciones en exteriores o escenarios donde el punto de acceso está a distancia. El sobrecosto es moderado y justificado si el alcance importa para tu despliegue.
 
@@ -158,7 +158,7 @@ Ambos adaptadores ALFA Wi-Fi 6E requieren kernel ≥ 5.18 para soporte de la ban
 
 ### AWUS036AXM — Punto de Entrada a Wi-Fi 6E
 
-El [AWUS036AXM](/en/products/alfa/awus036axm/) usa el chipset MT7921AU con soporte para la banda de 6 GHz habilitado. Viene con un solo conector RP-SMA, lo que lo hace más compacto que el AXML.
+El [AWUS036AXM](/en/products/alfa/awus036axm/) usa el chipset MT7921AUN con soporte para la banda de 6 GHz habilitado. Viene con un solo conector RP-SMA, lo que lo hace más compacto que el AXML.
 
 Para operadores que principalmente trabajan en entornos de 2.4 y 5 GHz pero quieren capacidad 6 GHz para evaluaciones de redes emergentes sin pagar precios flagship, el AXM es el punto de entrada lógico.
 
@@ -167,17 +167,17 @@ Para operadores que principalmente trabajan en entornos de 2.4 y 5 GHz pero quie
 
 ### AWUS036AXML — El Adaptador Flagship 6E
 
-El [AWUS036AXML](/en/products/alfa/awus036axml/) es el adaptador de gama más alta de ALFA en la actualidad. Cuenta con el chipset MT7902 (una mejora sobre el MT7921AU), conectores RP-SMA duales para operación 2T2R y la mayor potencia de transmisión en la línea 6E.
+El [AWUS036AXML](/en/products/alfa/awus036axml/) es el adaptador de gama más alta de ALFA en la actualidad. Cuenta con el chipset MT7921AUN (una mejora sobre el MT7921AUN), conectores RP-SMA duales para operación 2T2R y la mayor potencia de transmisión en la línea 6E.
 
 **Especificaciones clave:**
-- Chipset: MT7902 (MediaTek)
+- Chipset: MT7921AUN (MediaTek)
 - 2× conectores RP-SMA — configuración 2T2R completa
 - Tri-banda: 2.4 GHz + 5 GHz + 6 GHz
 - Clase AX3000 (hasta 3000 Mbps teóricos entre bandas)
 - Mayor potencia de salida en la línea ALFA 6E
 
 **Notas del controlador para AXML:**
-- MT7902 es compatible bajo la misma familia de controladores `mt7921u` en kernel ≥ 5.18
+- MT7921AUN es compatible bajo la misma familia de controladores `mt7921u` en kernel ≥ 5.18
 - Monitor mode es compatible; el monitor activo con firmware ha mostrado problemas de reinicio de firmware en algunos kernels — consulta la [reseña detallada del AWUS036AXML](/en/blog/awus036axml-wifi-6e-review/) para datos completos de pruebas
 - La banda de 6 GHz en monitor mode requiere que tu dominio regulatorio permita el escaneo pasivo en canales de 6 GHz
 
@@ -195,20 +195,20 @@ El [AWUS036AXML](/en/products/alfa/awus036axml/) es el adaptador de gama más al
 |---|---|---|---|---|---|
 | [AWUS036ACS](/en/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | Compilación manual | ✅ rtl8812au-dkms | ✅ Controlador ALFA |
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | Compilación manual | ✅ rtl8812au-dkms | ✅ Controlador ALFA |
-| [AWUS036ACM](/en/products/alfa/awus036acm/) | RTL8812AU | `dkms-rtl8812au` | Compilación manual | ✅ rtl8812au-dkms | ✅ Controlador ALFA |
-| [AWUS036EACS](/en/products/alfa/awus036eacs/) | QCA9377 | `ath10k-firmware` | Integrado en kernel | ⚠️ Limitado | ✅ Integrado |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | MT7921AU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
-| [AWUS036AXER](/en/products/alfa/awus036axer/) | MT7921AU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
-| [AWUS036AXM](/en/products/alfa/awus036axm/) | MT7921AU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7902 | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
+| [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | `dkms-rtl8812au` | Compilación manual | ✅ mt76x2u (≥4.19) | ✅ Controlador ALFA |
+| [AWUS036EACS](/en/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` | Integrado en kernel | ⚠️ Limitado | ✅ Integrado |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
+| [AWUS036AXER](/en/products/alfa/awus036axer/) | RTL8832BU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
+| [AWUS036AXM](/en/products/alfa/awus036axm/) | MT7921AUN | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
+| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
 
 </div>
 
 **Historial del kernel RTL8812AU:** El controlador RTL8812AU fue parcialmente integrado al kernel principal en Linux 5.2, pero con limitaciones importantes — sin monitor mode, sin inyección. La capacidad completa para pruebas de penetración requiere el controlador `rtl8812au` fuera del árbol principal, empaquetado como `dkms-rtl8812au` en Kali. El paquete DKMS se reconstruye automáticamente cuando se actualiza el kernel, lo que lo hace prácticamente libre de mantenimiento en sistemas Kali Linux.
 
-**Historial del kernel MT7921AU:** La integración nativa llegó en Linux 5.18 mediante el controlador USB `mt7921u`. El archivo de firmware `WIFI_MT7961_patch_mcu_1_2_hdr.bin` (y blobs de firmware relacionados) deben estar presentes en `/lib/firmware/mediatek/`. En Kali, son instalados por `firmware-misc-nonfree`. En Ubuntu 22.04 LTS con el kernel predeterminado, es posible que necesites instalar la pila HWE (`linux-generic-hwe-22.04`) para alcanzar ≥ 5.18.
+**Historial del kernel MT7921AUN:** La integración nativa llegó en Linux 5.18 mediante el controlador USB `mt7921u`. El archivo de firmware `WIFI_MT7961_patch_mcu_1_2_hdr.bin` (y blobs de firmware relacionados) deben estar presentes en `/lib/firmware/mediatek/`. En Kali, son instalados por `firmware-misc-nonfree`. En Ubuntu 22.04 LTS con el kernel predeterminado, es posible que necesites instalar la pila HWE (`linux-generic-hwe-22.04`) para alcanzar ≥ 5.18.
 
-**Especificaciones para Raspberry Pi:** El controlador RTL8812AU compila limpiamente en Raspberry Pi OS (32 bits y 64 bits) usando `dkms-rtl8812au`. Es la opción más segura para despliegues de NetHunter. Los adaptadores MT7921AU pueden funcionar en Pi 4/5 pero requieren `firmware-misc-nonfree` y un kernel de Raspberry Pi OS lo suficientemente reciente (las imágenes de 2023 en adelante deberían funcionar bien).
+**Especificaciones para Raspberry Pi:** El controlador RTL8812AU compila limpiamente en Raspberry Pi OS (32 bits y 64 bits) usando `dkms-rtl8812au`. Es la opción más segura para despliegues de NetHunter. Los adaptadores MT7921AUN pueden funcionar en Pi 4/5 pero requieren `firmware-misc-nonfree` y un kernel de Raspberry Pi OS lo suficientemente reciente (las imágenes de 2023 en adelante deberían funcionar bien).
 
 ---
 
@@ -230,7 +230,7 @@ Los desafíos inalámbricos en CTF suelen involucrar entornos controlados donde 
 
 **Recomendado: [AWUS036ACH](/en/products/alfa/awus036ach/) o [AWUS036ACM](/en/products/alfa/awus036acm/)**
 
-Ambos adaptadores RTL8812AU tienen un historial comprobado en hardware Raspberry Pi. Evita los modelos MT7921AU para despliegues en Pi a menos que hayas confirmado la compatibilidad del kernel y firmware en tu imagen específica. El ACH es la opción más segura si estás construyendo un Pi NetHunter dedicado que necesita ser confiable en campo.
+Ambos adaptadores RTL8812AU tienen un historial comprobado en hardware Raspberry Pi. Evita los modelos MT7921AUN para despliegues en Pi a menos que hayas confirmado la compatibilidad del kernel y firmware en tu imagen específica. El ACH es la opción más segura si estás construyendo un Pi NetHunter dedicado que necesita ser confiable en campo.
 
 ### Auditoría Inalámbrica Empresarial
 
@@ -242,7 +242,7 @@ Una auditoría inalámbrica empresarial moderna debe cubrir las bandas de 2.4, 5
 
 **Recomendado: [AWUS036EACS](/en/products/alfa/awus036eacs/)**
 
-La extensión de alcance de DJI mediante Litchi o DJI GO es un caso de uso legítimo común. El EACS con QCA9377 se recomienda específicamente aquí porque funciona de forma nativa en Windows (donde corre el software de DJI) sin controladores adicionales, y su perfil de conectividad de propósito general es ideal para este caso de uso. No se requiere monitor mode; la conectividad en modo cliente y la potencia de transmisión son lo que importa. Combínalo con una antena panel [APA-M25](/en/products/alfa/apa-m25/) para maximizar el alcance efectivo.
+La extensión de alcance de DJI mediante Litchi o DJI GO es un caso de uso legítimo común. El EACS con RTL8821CU se recomienda específicamente aquí porque funciona de forma nativa en Windows (donde corre el software de DJI) sin controladores adicionales, y su perfil de conectividad de propósito general es ideal para este caso de uso. No se requiere monitor mode; la conectividad en modo cliente y la potencia de transmisión son lo que importa. Combínalo con una antena panel [APA-M25](/en/products/alfa/apa-m25/) para maximizar el alcance efectivo.
 
 ---
 
@@ -250,7 +250,7 @@ La extensión de alcance de DJI mediante Litchi o DJI GO es un caso de uso legí
 
 ### Kali Linux
 
-Kali Linux es la plataforma de soporte principal para todos los adaptadores ALFA usados en trabajos de seguridad. El repositorio de Kali incluye `dkms-rtl8812au` para adaptadores RTL8812AU/RTL8811AU y `firmware-misc-nonfree` para adaptadores MT7921AU/MT7902. Mantén tu instalación de Kali actualizada — el paquete DKMS rastrea los cambios del kernel automáticamente.
+Kali Linux es la plataforma de soporte principal para todos los adaptadores ALFA usados en trabajos de seguridad. El repositorio de Kali incluye `dkms-rtl8812au` para adaptadores RTL8812AU/RTL8811AU y `firmware-misc-nonfree` para adaptadores MT7921AUN/MT7921AUN. Mantén tu instalación de Kali actualizada — el paquete DKMS rastrea los cambios del kernel automáticamente.
 
 **Configuración rápida (familia RTL8812AU):**
 ```bash
@@ -258,7 +258,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 sudo modprobe 88XXau
 ```
 
-**Configuración rápida (familia MT7921AU):**
+**Configuración rápida (familia MT7921AUN):**
 ```bash
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 # Reinicia o recarga el módulo:
@@ -274,7 +274,7 @@ sudo ip link set wlan1 up
 
 ### Ubuntu 24.04 LTS
 
-Ubuntu 24.04 viene con el kernel 6.8. Los adaptadores MT7921AU funcionarán de inmediato una vez que se instale `firmware-misc-nonfree`:
+Ubuntu 24.04 viene con el kernel 6.8. Los adaptadores MT7921AUN funcionarán de inmediato una vez que se instale `firmware-misc-nonfree`:
 ```bash
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
@@ -288,7 +288,7 @@ cd rtl8812au && sudo make dkms_install
 
 ### Windows 11
 
-Todos los adaptadores ALFA vienen con controladores compatibles con Windows 10/11. Descarga el paquete de controladores desde el sitio web de ALFA Network o instala vía Windows Update para MT7921AU (Microsoft proporciona un controlador de bandeja firmado con WHQL). Los adaptadores RTL8812AU requieren el paquete de controladores Realtek suministrado por ALFA; los controladores de Windows Update para RTL8812AU están disponibles de manera inconsistente.
+Todos los adaptadores ALFA vienen con controladores compatibles con Windows 10/11. Descarga el paquete de controladores desde el sitio web de ALFA Network o instala vía Windows Update para MT7921AUN (Microsoft proporciona un controlador de bandeja firmado con WHQL). Los adaptadores RTL8812AU requieren el paquete de controladores Realtek suministrado por ALFA; los controladores de Windows Update para RTL8812AU están disponibles de manera inconsistente.
 
 Para su uso con herramientas como Acrylic Wi-Fi, inSSIDer o la versión Windows de Wireshark, los controladores ALFA proporcionan un envoltorio funcional de monitor mode en Windows mediante NDIS monitor mode — aunque esto es considerablemente menos capaz que el monitor mode de Linux para trabajos de inyección activa.
 
@@ -296,7 +296,7 @@ Para su uso con herramientas como Acrylic Wi-Fi, inSSIDer o la versión Windows 
 
 No existe ningún adaptador ALFA con soporte oficial para macOS Sonoma en 2026. Existen proyectos kext de la comunidad para RTL8812AU, pero no están firmados y requieren deshabilitar System Integrity Protection (SIP). La recomendación práctica es ejecutar Kali Linux en una VM (Parallels, VMware Fusion o UTM) con passthrough de USB al adaptador ALFA.
 
-El AWUS036EACS con QCA9377 tiene el soporte de macOS más funcional a través del kext nativo de Qualcomm/Atheros, pero solo para conectividad estándar de cliente — no para monitor mode.
+El AWUS036EACS con RTL8821CU tiene el soporte de macOS más funcional a través del kext nativo de Qualcomm/Atheros, pero solo para conectividad estándar de cliente — no para monitor mode.
 
 ### Raspberry Pi / Kali NetHunter
 
@@ -306,12 +306,12 @@ En Raspberry Pi 4 y Pi 5 ejecutando Kali NetHunter:
 # Para adaptadores RTL8812AU:
 sudo apt update && sudo apt install -y dkms-rtl8812au
 
-# Para adaptadores MT7921AU (se recomienda Pi 5 con kernel reciente):
+# Para adaptadores MT7921AUN (se recomienda Pi 5 con kernel reciente):
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 
 {{< alert "circle-info" >}}
-Si estás construyendo una caja de despliegue NetHunter dedicada, usa el [AWUS036ACH](/en/products/alfa/awus036ach/) o el [AWUS036ACM](/en/products/alfa/awus036acm/). Su controlador RTL8812AU compila de forma confiable en ARM y no tiene dependencia de archivos de firmware. Los modelos MT7921AU son funcionales en Pi, pero agregan una dependencia en archivos de firmware que puede causar problemas en despliegues sin conexión a internet.
+Si estás construyendo una caja de despliegue NetHunter dedicada, usa el [AWUS036ACH](/en/products/alfa/awus036ach/) o el [AWUS036ACM](/en/products/alfa/awus036acm/). Su controlador RTL8812AU compila de forma confiable en ARM y no tiene dependencia de archivos de firmware. Los modelos MT7921AUN son funcionales en Pi, pero agregan una dependencia en archivos de firmware que puede causar problemas en despliegues sin conexión a internet.
 {{< /alert >}}
 
 ---

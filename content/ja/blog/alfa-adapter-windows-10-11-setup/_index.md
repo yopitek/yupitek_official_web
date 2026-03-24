@@ -25,10 +25,10 @@ Linux との最大の違いはモニターモードにあります。Linux で�
 | [AWUS036ACH](/ja/products/alfa/awus036ach/) | RTL8812AU | ✅ 完全対応 | ✅ 完全対応 | ⚠️ パッシブスキャンのみ（Acrylic WiFi Pro） |
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | MT7612U | ✅ 完全対応 | ✅ 完全対応 | ⚠️ パッシブスキャンのみ |
 | [AWUS036ACS](/ja/products/alfa/awus036acs/) | RTL8811AU | ✅ 完全対応 | ✅ 完全対応 | ⚠️ パッシブスキャンのみ |
-| [AWUS036AX](/ja/products/alfa/awus036ax/) | MT7921AU | ⚠️ 手動ドライバーダウンロード必要 | ✅ 同梱ドライバー | ⚠️ 制限あり |
-| [AWUS036AXER](/ja/products/alfa/awus036axer/) | MT7921AU | ⚠️ 手動ドライバーダウンロード必要 | ✅ 同梱ドライバー | ⚠️ 制限あり |
-| [AWUS036AXM](/ja/products/alfa/awus036axm/) | MT7921AU | ⚠️ 手動ドライバーダウンロード必要 | ✅ 同梱ドライバー | ❌ 非対応 |
-| [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7902 | ⚠️ 手動ドライバーダウンロード必要 | ✅ 同梱ドライバー | ❌ 非対応 |
+| [AWUS036AX](/ja/products/alfa/awus036ax/) | RTL8832BU | ⚠️ 手動ドライバーダウンロード必要 | ✅ 同梱ドライバー | ⚠️ 制限あり |
+| [AWUS036AXER](/ja/products/alfa/awus036axer/) | RTL8832BU | ⚠️ 手動ドライバーダウンロード必要 | ✅ 同梱ドライバー | ⚠️ 制限あり |
+| [AWUS036AXM](/ja/products/alfa/awus036axm/) | MT7921AUN | ⚠️ 手動ドライバーダウンロード必要 | ✅ 同梱ドライバー | ❌ 非対応 |
+| [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AUN | ⚠️ 手動ドライバーダウンロード必要 | ✅ 同梱ドライバー | ❌ 非対応 |
 
 {{< alert "circle-info" >}}
 純粋な Windows 環境での日常利用には、AWUS036ACH（RTL8812AU）と AWUS036ACM（MT7612U）が最も実績のある選択肢です。どちらも Realtek/MediaTek の WHQL 署名付きドライバーを受け取り、Windows との互換性記録が最も豊富です。
@@ -67,16 +67,16 @@ Windows Update でドライバーをダウンロードするにはインター�
 2. **ドライバー** タブをクリックします。
 3. **ドライバーのバージョン** と **ドライバーの日付** をメモしておきます。
 
-### 方法 B：手動ドライバーインストール — MT7921AU（AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML）
+### 方法 B：手動ドライバーインストール — MT7921AUN（AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML）
 
-MediaTek の MT7921AU ドライバーは、Windows 11 のドライバーストア（ビルド 22000 以降）に含まれています。Windows 10 の場合：
+MediaTek の MT7921AUN ドライバーは、Windows 11 のドライバーストア（ビルド 22000 以降）に含まれています。Windows 10 の場合：
 
 1. [MediaTek 公式サイト](https://www.mediatek.com/products/home-networking/wi-fi-6-6e) または ALFA Network のサポートページから MediaTek MT7921 ドライバーパッケージをダウンロードします。
 2. パッケージを解凍し、`Setup.exe` を管理者として実行します。
 3. インストール後に再起動します。
 
 {{< alert "circle-info" >}}
-MT7921AU/MT7902 アダプターをお使いの Windows 11 ユーザーは、クリーンインストール直後でも、アダプターを接続してから数分以内に動作するドライバーが自動的に適用されます。手動ダウンロードは不要です。
+MT7921AUN/MT7921AUN アダプターをお使いの Windows 11 ユーザーは、クリーンインストール直後でも、アダプターを接続してから数分以内に動作するドライバーが自動的に適用されます。手動ダウンロードは不要です。
 {{< /alert >}}
 
 ### デバイスマネージャーの一般的なエラーコード

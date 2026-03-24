@@ -46,7 +46,7 @@ WPA3-Enterprise 要求采用 192 位安全模式，使用 GCMP-256 和 HMAC-SHA-
 
 WPA3 测试需要一块具备可靠监控模式、注入支持的网卡，针对 6 GHz WPA3 网络还需三频能力：
 
-- **AWUS036AXML** — Wi-Fi 6E（6 GHz）WPA3 网络的必备之选。搭载 Mediatek MT7921AU 芯片组。在 Kali Linux（内核 5.18+）上完整支持监控模式和注入。该 ALFA 网卡是唯一覆盖 6 GHz 频段的型号，而该频段上的纯 WPA3 部署日益普遍。
+- **AWUS036AXML** — Wi-Fi 6E（6 GHz）WPA3 网络的必备之选。搭载 Mediatek MT7921AUN 芯片组。在 Kali Linux（内核 5.18+）上完整支持监控模式和注入。该 ALFA 网卡是唯一覆盖 6 GHz 频段的型号，而该频段上的纯 WPA3 部署日益普遍。
 - **AWUS036ACH** — 适用于 2.4/5 GHz WPA3 测试。RTL8812AU 芯片组。与 aircrack-ng 工具链兼容性最佳，在各 Kali Linux 版本中驱动支持最广泛。
 
 ### 启用监控模式

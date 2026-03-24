@@ -20,15 +20,15 @@ tags: ["alfa-network", "wifi-adapter", "buyer-guide", "kali-linux", "penetration
 
 驅動支援是一切的基礎。使用近期核心版本的 Kali Linux 與 Ubuntu 使用者擁有最廣泛的選擇。macOS 對所有機型的支援都相當有限。Windows 10/11 普遍支援良好。若你使用的是 Raspberry Pi 或 ARM 平台，晶片組的選擇至關重要。
 
-- **Kali Linux / Debian：** RTL8812AU（`dkms-rtl8812au`）與 MT7921AU（核心原生支援 ≥ 5.18）是兩大主要晶片家族。
-- **Ubuntu 22.04 / 24.04：** 驅動環境相同，但你可能需要安裝 HWE 核心或 `firmware-misc-nonfree` 以支援 MT7921AU。
+- **Kali Linux / Debian：** RTL8812AU（`dkms-rtl8812au`）與 MT7921AUN（核心原生支援 ≥ 5.18）是兩大主要晶片家族。
+- **Ubuntu 22.04 / 24.04：** 驅動環境相同，但你可能需要安裝 HWE 核心或 `firmware-misc-nonfree` 以支援 MT7921AUN。
 - **Windows 10/11：** ALFA 提供所有現行機型的已簽署驅動，安裝流程簡單。
 - **macOS Sonoma：** 僅有少數機型擁有社群維護的 kext 支援，預期會遇到阻力；請規劃使用 VM 工作流程。
-- **Raspberry Pi（Kali NetHunter、ARM）：** RTL8812AU 機型是最安全的選擇。MT7921AU 可以運作，但需要 `firmware-misc-nonfree` 套件與足夠新的核心。
+- **Raspberry Pi（Kali NetHunter、ARM）：** RTL8812AU 機型是最安全的選擇。MT7921AUN 可以運作，但需要 `firmware-misc-nonfree` 套件與足夠新的核心。
 
 ### (b) 你需要監聽模式與封包注入嗎？
 
-若答案為是——任何滲透測試或無線審計工作都應如此——請立即將 [AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) 從你的清單中劃掉。其 QCA9377 晶片在 Linux 下不可靠地支援監聽模式或注入功能。本指南中的其他所有機型均支援。
+若答案為是——任何滲透測試或無線審計工作都應如此——請立即將 [AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) 從你的清單中劃掉。其 RTL8821CU 晶片在 Linux 下不可靠地支援監聽模式或注入功能。本指南中的其他所有機型均支援。
 
 ### (c) 虛擬機還是裸機？
 
@@ -50,12 +50,12 @@ Wi-Fi 5 世代（ACH、ACM、ACS）價格較低、驅動更穩定，若預算有
 |---|---|---|---|---|---|---|---|---|---|
 | [AWUS036ACS](/zh-tw/products/alfa/awus036acs/) | Wi-Fi 5 | RTL8811AU | AC600 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | 輕量旅行裝備 |
 | [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | 紅隊作戰 |
-| [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | 平價雙頻 |
-| [AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) | Wi-Fi 5 | QCA9377 | AC1200 | ⚠️ | ath10k | ✅ | ✅ | 1× RP-SMA | 一般使用（不支援注入）|
-| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | Wi-Fi 6 | MT7921AU | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6 審計 |
-| [AWUS036AXER](/zh-tw/products/alfa/awus036axer/) | Wi-Fi 6 | MT7921AU | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | 延伸範圍 Wi-Fi 6 |
-| [AWUS036AXM](/zh-tw/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AU | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | Wi-Fi 6E 入門 |
-| [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | Wi-Fi 6E | MT7902 | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | 旗艦 6E |
+| [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | 平價雙頻 |
+| [AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | 一般使用（不支援注入）|
+| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated | Wi-Fi 6 審計 |
+| [AWUS036AXER](/zh-tw/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | 延伸範圍 Wi-Fi 6 |
+| [AWUS036AXM](/zh-tw/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6E 入門 |
+| [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | 旗艦 6E |
 
 </div>
 
@@ -110,7 +110,7 @@ RTL8811AU 驅動在 Kali 上使用相同的 `rtl8812au-dkms` 套件，安裝流�
 
 ### AWUS036EACS — 一般使用，不適用於滲透測試
 
-[AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) 採用 Qualcomm QCA9377 晶片組，使用 `ath10k` 核心驅動。此晶片組專為用戶端連線設計，並非封包操控。`ath10k` 下的監聽模式支援不可靠，標準驅動設定不支援封包注入。
+[AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) 採用 Qualcomm RTL8821CU 晶片組，使用 `rtl88xxcu` 核心驅動。此晶片組專為用戶端連線設計，並非封包操控。`rtl88xxcu` 下的監聽模式支援不可靠，標準驅動設定不支援封包注入。
 
 {{< alert "triangle-exclamation" >}}
 **請勿將 AWUS036EACS 用於滲透測試、紅隊作戰或任何需要監聽模式或封包注入的任務。** 它適合一般無線連線、DJI 無人機控制器距離延伸（常見配對用途），以及標準用戶端網路卡行為可接受的 Windows 優先部署環境。
@@ -122,7 +122,7 @@ RTL8811AU 驅動在 Kali 上使用相同的 `rtl8812au-dkms` 套件，安裝流�
 
 Wi-Fi 6（802.11ax）在密集環境效能、目標豐富的 MU-MIMO 情境與用於網路識別的 BSS 著色方面帶來了顯著改進。隨著企業網路積極轉向 802.11ax 基礎架構，Wi-Fi 6 網路卡對無線審計人員越來越重要。
 
-兩款 Wi-Fi 6 ALFA 網路卡均使用 MediaTek MT7921AU 晶片組，該晶片組在 Linux 5.18 版本中以 `mt7921u` 驅動整合至主線核心。
+兩款 Wi-Fi 6 ALFA 網路卡均使用 MediaTek MT7921AUN 晶片組，該晶片組在 Linux 5.18 版本中以 `mt7921u` 驅動整合至主線核心。
 
 ### AWUS036AX — 純粹的 Wi-Fi 6 選擇
 
@@ -135,12 +135,12 @@ Wi-Fi 6（802.11ax）在密集環境效能、目標豐富的 MU-MIMO 情境與�
 - 封包注入：支援
 
 {{< alert "circle-info" >}}
-**核心版本確認：** 購買前執行 `uname -r` 確認核心版本。Kali 2024.x 預設核心 ≥ 6.x，MT7921AU 可直接使用。Ubuntu 22.04 LTS 搭配 HWE 堆疊應在 6.5+ 版本。
+**核心版本確認：** 購買前執行 `uname -r` 確認核心版本。Kali 2024.x 預設核心 ≥ 6.x，MT7921AUN 可直接使用。Ubuntu 22.04 LTS 搭配 HWE 堆疊應在 6.5+ 版本。
 {{< /alert >}}
 
 ### AWUS036AXER — 延伸範圍變體
 
-[AWUS036AXER](/zh-tw/products/alfa/awus036axer/) 在晶片組與天線設定上與 AWUS036AX 完全相同，但增加了增強型 RF 放大電路以延伸操作範圍。驅動情況完全相同——同樣的 MT7921AU、同樣的核心支援路徑、同樣的監聽模式與注入行為。
+[AWUS036AXER](/zh-tw/products/alfa/awus036axer/) 在晶片組與天線設定上與 AWUS036AX 完全相同，但增加了增強型 RF 放大電路以延伸操作範圍。驅動情況完全相同——同樣的 MT7921AUN、同樣的核心支援路徑、同樣的監聽模式與注入行為。
 
 當操作範圍是決定性因素時，請選擇 AXER：大型校園實地勘查、戶外評估，或 AP 在遠距離的情境。若範圍對你的部署很重要，價格溢價適中且合理。
 
@@ -154,7 +154,7 @@ Wi-Fi 6E 將 802.11ax 擴展至 6 GHz 頻段，提供對新 5.925–7.125 GHz �
 
 ### AWUS036AXM — Wi-Fi 6E 入門款
 
-[AWUS036AXM](/zh-tw/products/alfa/awus036axm/) 使用啟用 6 GHz 頻段支援的 MT7921AU 晶片組，配備單一 RP-SMA 接頭，比 AXML 更為緊湊。
+[AWUS036AXM](/zh-tw/products/alfa/awus036axm/) 使用啟用 6 GHz 頻段支援的 MT7921AUN 晶片組，配備單一 RP-SMA 接頭，比 AXML 更為緊湊。
 
 對於主要在 2.4 和 5 GHz 環境工作，但希望在不支付旗艦價格的情況下具備 6 GHz 能力以應對新興網路評估的操作人員，AXM 是合乎邏輯的入門點。
 
@@ -163,10 +163,10 @@ Wi-Fi 6E 將 802.11ax 擴展至 6 GHz 頻段，提供對新 5.925–7.125 GHz �
 
 ### AWUS036AXML — 旗艦 6E 網路卡
 
-[AWUS036AXML](/zh-tw/products/alfa/awus036axml/) 是 ALFA 目前的頂級網路卡。採用 MT7902 晶片組（優於 MT7921AU）、雙 RP-SMA 接頭實現 2T2R 運作，以及 6E 產品線中最高的發射功率額定值。
+[AWUS036AXML](/zh-tw/products/alfa/awus036axml/) 是 ALFA 目前的頂級網路卡。採用 MT7921AUN 晶片組（優於 MT7921AUN）、雙 RP-SMA 接頭實現 2T2R 運作，以及 6E 產品線中最高的發射功率額定值。
 
 **關鍵規格：**
-- 晶片組：MT7902（MediaTek）
+- 晶片組：MT7921AUN（MediaTek）
 - 2× RP-SMA 接頭——完整 2T2R 設定
 - 三頻：2.4 GHz + 5 GHz + 6 GHz
 - AX3000 等級（跨頻段理論最高 3000 Mbps）
@@ -186,20 +186,20 @@ Wi-Fi 6E 將 802.11ax 擴展至 6 GHz 頻段，提供對新 5.925–7.125 GHz �
 |---|---|---|---|---|---|
 | [AWUS036ACS](/zh-tw/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | 手動編譯 | ✅ rtl8812au-dkms | ✅ ALFA 驅動 |
 | [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | 手動編譯 | ✅ rtl8812au-dkms | ✅ ALFA 驅動 |
-| [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | RTL8812AU | `dkms-rtl8812au` | 手動編譯 | ✅ rtl8812au-dkms | ✅ ALFA 驅動 |
-| [AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) | QCA9377 | `ath10k-firmware` | 核心內建 | ⚠️ 有限 | ✅ 內建 |
-| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | MT7921AU | `firmware-misc-nonfree` | 核心 ≥ 5.18 | ⚠️ 需要韌體 | ✅ ALFA 驅動 |
-| [AWUS036AXER](/zh-tw/products/alfa/awus036axer/) | MT7921AU | `firmware-misc-nonfree` | 核心 ≥ 5.18 | ⚠️ 需要韌體 | ✅ ALFA 驅動 |
-| [AWUS036AXM](/zh-tw/products/alfa/awus036axm/) | MT7921AU | `firmware-misc-nonfree` | 核心 ≥ 5.18 | ⚠️ 需要韌體 | ✅ ALFA 驅動 |
-| [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7902 | `firmware-misc-nonfree` | 核心 ≥ 5.18 | ⚠️ 需要韌體 | ✅ ALFA 驅動 |
+| [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | MT7612U | `dkms-rtl8812au` | 手動編譯 | ✅ mt76x2u (≥4.19) | ✅ ALFA 驅動 |
+| [AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` | 核心內建 | ⚠️ 有限 | ✅ 內建 |
+| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | RTL8832BU | `firmware-misc-nonfree` | 核心 ≥ 5.18 | ⚠️ 需要韌體 | ✅ ALFA 驅動 |
+| [AWUS036AXER](/zh-tw/products/alfa/awus036axer/) | RTL8832BU | `firmware-misc-nonfree` | 核心 ≥ 5.18 | ⚠️ 需要韌體 | ✅ ALFA 驅動 |
+| [AWUS036AXM](/zh-tw/products/alfa/awus036axm/) | MT7921AUN | `firmware-misc-nonfree` | 核心 ≥ 5.18 | ⚠️ 需要韌體 | ✅ ALFA 驅動 |
+| [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7921AUN | `firmware-misc-nonfree` | 核心 ≥ 5.18 | ⚠️ 需要韌體 | ✅ ALFA 驅動 |
 
 </div>
 
 **RTL8812AU 核心歷史：** RTL8812AU 驅動在 Linux 5.2 中部分整合至主線核心，但有顯著限制——無監聽模式、無注入。完整的滲透測試能力需要樹外 `rtl8812au` 驅動，在 Kali 上封裝為 `dkms-rtl8812au`。DKMS 套件在核心更新時自動重建，在 Kali Linux 系統上幾乎免維護。
 
-**MT7921AU 核心歷史：** 原生整合於 Linux 5.18，透過 `mt7921u` USB 驅動實現。韌體檔案 `WIFI_MT7961_patch_mcu_1_2_hdr.bin`（及相關韌體）必須存在於 `/lib/firmware/mediatek/`。在 Kali 上由 `firmware-misc-nonfree` 提供。在 Ubuntu 22.04 LTS 預設核心上，可能需要安裝 HWE 堆疊（`linux-generic-hwe-22.04`）才能達到 ≥ 5.18。
+**MT7921AUN 核心歷史：** 原生整合於 Linux 5.18，透過 `mt7921u` USB 驅動實現。韌體檔案 `WIFI_MT7961_patch_mcu_1_2_hdr.bin`（及相關韌體）必須存在於 `/lib/firmware/mediatek/`。在 Kali 上由 `firmware-misc-nonfree` 提供。在 Ubuntu 22.04 LTS 預設核心上，可能需要安裝 HWE 堆疊（`linux-generic-hwe-22.04`）才能達到 ≥ 5.18。
 
-**Raspberry Pi 特別說明：** RTL8812AU 驅動在 Raspberry Pi OS（32 位元與 64 位元）上使用 `dkms-rtl8812au` 可以順利編譯，是 NetHunter 部署的最安全選擇。MT7921AU 網路卡在 Pi 4/5 上可以運作，但需要 `firmware-misc-nonfree` 與足夠新的 Raspberry Pi OS 核心（2023 年以後的映像應可正常使用）。
+**Raspberry Pi 特別說明：** RTL8812AU 驅動在 Raspberry Pi OS（32 位元與 64 位元）上使用 `dkms-rtl8812au` 可以順利編譯，是 NetHunter 部署的最安全選擇。MT7921AUN 網路卡在 Pi 4/5 上可以運作，但需要 `firmware-misc-nonfree` 與足夠新的 Raspberry Pi OS 核心（2023 年以後的映像應可正常使用）。
 
 ---
 
@@ -221,7 +221,7 @@ CTF 無線挑戰通常在受控環境中進行，發射功率並非關鍵變數�
 
 **推薦：[AWUS036ACH](/zh-tw/products/alfa/awus036ach/) 或 [AWUS036ACM](/zh-tw/products/alfa/awus036acm/)**
 
-兩款 RTL8812AU 網路卡在 Raspberry Pi 硬體上都有久經驗證的紀錄。除非你已確認在特定映像上的核心與韌體相容性，否則請避免在 Pi 部署中使用 MT7921AU 機型。若你正在構建需要在外勤中可靠運作的專用 NetHunter Pi，ACH 是更安全的選擇。
+兩款 RTL8812AU 網路卡在 Raspberry Pi 硬體上都有久經驗證的紀錄。除非你已確認在特定映像上的核心與韌體相容性，否則請避免在 Pi 部署中使用 MT7921AUN 機型。若你正在構建需要在外勤中可靠運作的專用 NetHunter Pi，ACH 是更安全的選擇。
 
 ### 企業無線審計
 
@@ -233,7 +233,7 @@ CTF 無線挑戰通常在受控環境中進行，發射功率並非關鍵變數�
 
 **推薦：[AWUS036EACS](/zh-tw/products/alfa/awus036eacs/)**
 
-透過 Litchi 或 DJI GO 進行 DJI 距離延伸是常見的合法使用情境。此處特別推薦 EACS 搭配 QCA9377，因為它在 Windows（DJI 軟體運行平台）上無需額外驅動即可原生運作，且其一般用途連線特性適合此使用情境。無需監聽模式；用戶端連線能力與發射功率才是重點。搭配 [APA-M25](/zh-tw/products/alfa/apa-m25/) 板狀天線以獲得最大有效範圍。
+透過 Litchi 或 DJI GO 進行 DJI 距離延伸是常見的合法使用情境。此處特別推薦 EACS 搭配 RTL8821CU，因為它在 Windows（DJI 軟體運行平台）上無需額外驅動即可原生運作，且其一般用途連線特性適合此使用情境。無需監聽模式；用戶端連線能力與發射功率才是重點。搭配 [APA-M25](/zh-tw/products/alfa/apa-m25/) 板狀天線以獲得最大有效範圍。
 
 ---
 
@@ -241,7 +241,7 @@ CTF 無線挑戰通常在受控環境中進行，發射功率並非關鍵變數�
 
 ### Kali Linux
 
-Kali Linux 是所有用於安全工作的 ALFA 網路卡的主要支援平台。Kali 儲存庫包含 RTL8812AU/RTL8811AU 網路卡的 `dkms-rtl8812au`，以及 MT7921AU/MT7902 網路卡的 `firmware-misc-nonfree`。保持 Kali 安裝更新——DKMS 套件會自動追蹤核心變更。
+Kali Linux 是所有用於安全工作的 ALFA 網路卡的主要支援平台。Kali 儲存庫包含 RTL8812AU/RTL8811AU 網路卡的 `dkms-rtl8812au`，以及 MT7921AUN/MT7921AUN 網路卡的 `firmware-misc-nonfree`。保持 Kali 安裝更新——DKMS 套件會自動追蹤核心變更。
 
 **快速設定（RTL8812AU 家族）：**
 ```bash
@@ -249,7 +249,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 sudo modprobe 88XXau
 ```
 
-**快速設定（MT7921AU 家族）：**
+**快速設定（MT7921AUN 家族）：**
 ```bash
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 # 重新開機或重新載入模組：
@@ -265,7 +265,7 @@ sudo ip link set wlan1 up
 
 ### Ubuntu 24.04 LTS
 
-Ubuntu 24.04 搭載核心 6.8。安裝 `firmware-misc-nonfree` 後，MT7921AU 網路卡可直接使用：
+Ubuntu 24.04 搭載核心 6.8。安裝 `firmware-misc-nonfree` 後，MT7921AUN 網路卡可直接使用：
 ```bash
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
@@ -279,7 +279,7 @@ cd rtl8812au && sudo make dkms_install
 
 ### Windows 11
 
-所有 ALFA 網路卡均附帶 Windows 10/11 相容驅動。可從 ALFA Network 官網下載驅動套件，或透過 Windows Update 安裝 MT7921AU（Microsoft 提供 WHQL 簽署的收件匣驅動）。RTL8812AU 網路卡需要 ALFA 提供的 Realtek 驅動套件；Windows Update 對 RTL8812AU 的驅動支援不一致。
+所有 ALFA 網路卡均附帶 Windows 10/11 相容驅動。可從 ALFA Network 官網下載驅動套件，或透過 Windows Update 安裝 MT7921AUN（Microsoft 提供 WHQL 簽署的收件匣驅動）。RTL8812AU 網路卡需要 ALFA 提供的 Realtek 驅動套件；Windows Update 對 RTL8812AU 的驅動支援不一致。
 
 ### macOS Sonoma
 
@@ -293,12 +293,12 @@ cd rtl8812au && sudo make dkms_install
 # 用於 RTL8812AU 網路卡：
 sudo apt update && sudo apt install -y dkms-rtl8812au
 
-# 用於 MT7921AU 網路卡（建議使用配備近期核心的 Pi 5）：
+# 用於 MT7921AUN 網路卡（建議使用配備近期核心的 Pi 5）：
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 
 {{< alert "circle-info" >}}
-若你正在構建專用的 NetHunter 投放盒，請使用 [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) 或 [AWUS036ACM](/zh-tw/products/alfa/awus036acm/)。其 RTL8812AU 驅動在 ARM 上可靠編譯，且沒有韌體檔案依賴性。MT7921AU 機型在 Pi 上可以運作，但在離線部署中增加了韌體依賴的麻煩。
+若你正在構建專用的 NetHunter 投放盒，請使用 [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) 或 [AWUS036ACM](/zh-tw/products/alfa/awus036acm/)。其 RTL8812AU 驅動在 ARM 上可靠編譯，且沒有韌體檔案依賴性。MT7921AUN 機型在 Pi 上可以運作，但在離線部署中增加了韌體依賴的麻煩。
 {{< /alert >}}
 
 ---

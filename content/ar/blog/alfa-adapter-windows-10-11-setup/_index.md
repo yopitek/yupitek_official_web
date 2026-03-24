@@ -27,10 +27,10 @@ tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "تثبيت-�
 | [AWUS036ACH](/ar/products/alfa/awus036ach/) | RTL8812AU | ✅ دعم كامل | ✅ دعم كامل | ⚠️ مسح سلبي فقط (Acrylic WiFi Pro) |
 | [AWUS036ACM](/ar/products/alfa/awus036acm/) | MT7612U | ✅ دعم كامل | ✅ دعم كامل | ⚠️ مسح سلبي فقط |
 | [AWUS036ACS](/ar/products/alfa/awus036acs/) | RTL8811AU | ✅ دعم كامل | ✅ دعم كامل | ⚠️ مسح سلبي فقط |
-| [AWUS036AX](/ar/products/alfa/awus036ax/) | MT7921AU | ⚠️ تنزيل برنامج التشغيل يدوياً | ✅ برنامج تشغيل مدمج | ⚠️ محدود |
-| [AWUS036AXER](/ar/products/alfa/awus036axer/) | MT7921AU | ⚠️ تنزيل برنامج التشغيل يدوياً | ✅ برنامج تشغيل مدمج | ⚠️ محدود |
-| [AWUS036AXM](/ar/products/alfa/awus036axm/) | MT7921AU | ⚠️ تنزيل برنامج التشغيل يدوياً | ✅ برنامج تشغيل مدمج | ❌ غير مدعوم |
-| [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7902 | ⚠️ تنزيل برنامج التشغيل يدوياً | ✅ برنامج تشغيل مدمج | ❌ غير مدعوم |
+| [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | ⚠️ تنزيل برنامج التشغيل يدوياً | ✅ برنامج تشغيل مدمج | ⚠️ محدود |
+| [AWUS036AXER](/ar/products/alfa/awus036axer/) | RTL8832BU | ⚠️ تنزيل برنامج التشغيل يدوياً | ✅ برنامج تشغيل مدمج | ⚠️ محدود |
+| [AWUS036AXM](/ar/products/alfa/awus036axm/) | MT7921AUN | ⚠️ تنزيل برنامج التشغيل يدوياً | ✅ برنامج تشغيل مدمج | ❌ غير مدعوم |
+| [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AUN | ⚠️ تنزيل برنامج التشغيل يدوياً | ✅ برنامج تشغيل مدمج | ❌ غير مدعوم |
 
 {{< alert "circle-info" >}}
 للاستخدام اليومي على Windows، يُعدّ AWUS036ACH (RTL8812AU) وAWUS036ACM (MT7612U) الخياران الأكثر اختباراً وموثوقية. كلاهما يحصل على برامج تشغيل WHQL موقَّعة من Realtek/MediaTek، ولديهما أوسع سجل توافق مع Windows.
@@ -69,16 +69,16 @@ tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "تثبيت-�
 2. انقر على تبويب **برنامج التشغيل**.
 3. دوّن **إصدار برنامج التشغيل** و**تاريخ برنامج التشغيل** للرجوع إليهما لاحقاً.
 
-### الطريقة ب: تثبيت برنامج التشغيل يدوياً — MT7921AU (AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML)
+### الطريقة ب: تثبيت برنامج التشغيل يدوياً — MT7921AUN (AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML)
 
-برنامج تشغيل MT7921AU من MediaTek مُدرَج في مستودع برامج تشغيل Windows 11 (الإصدار 22000 وما فوق). أما لمستخدمي Windows 10:
+برنامج تشغيل MT7921AUN من MediaTek مُدرَج في مستودع برامج تشغيل Windows 11 (الإصدار 22000 وما فوق). أما لمستخدمي Windows 10:
 
 1. نزّل حزمة برنامج تشغيل MediaTek MT7921 من [الموقع الرسمي لـ MediaTek](https://www.mediatek.com/products/home-networking/wi-fi-6-6e) أو صفحة دعم ALFA Network.
 2. استخرج الحزمة وشغّل `Setup.exe` بصلاحيات المسؤول (Administrator).
 3. أعد تشغيل الجهاز بعد التثبيت.
 
 {{< alert "circle-info" >}}
-يحصل مستخدمو Windows 11 الذين يمتلكون محولات MT7921AU/MT7902 عادةً على برنامج تشغيل فعّال في غضون دقائق من توصيل المحول، حتى على نظام حديث الإعداد — دون الحاجة إلى أي تنزيل يدوي.
+يحصل مستخدمو Windows 11 الذين يمتلكون محولات MT7921AUN/MT7921AUN عادةً على برنامج تشغيل فعّال في غضون دقائق من توصيل المحول، حتى على نظام حديث الإعداد — دون الحاجة إلى أي تنزيل يدوي.
 {{< /alert >}}
 
 ### رموز خطأ إدارة الأجهزة الشائعة

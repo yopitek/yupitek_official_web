@@ -1,6 +1,6 @@
 ---
 title: "Driver ALFA quebrou após atualização do kernel? Guia completo de correção"
-description: "Adaptador ALFA USB WiFi não funciona após atualização do kernel Linux? Guia completo de correção para drivers RTL8812AU, RTL8811AU e MT7921AU no Kali Linux e Ubuntu após atualizações do kernel."
+description: "Adaptador ALFA USB WiFi não funciona após atualização do kernel Linux? Guia completo de correção para drivers RTL8812AU, RTL8811AU e MT7921AUN no Kali Linux e Ubuntu após atualizações do kernel."
 date: 2026-03-24
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 ---
 
-Você executa `sudo apt upgrade`, reinicia e seu adaptador ALFA sumiu — sem interface, sem luzes, nada. Essa é a pergunta de suporte mais comum em torno dos adaptadores ALFA Network USB WiFi no Linux, e as atualizações do kernel são quase sempre o culpado. Este guia conduz você por um processo sistemático de diagnóstico e reparo para as duas famílias de chipsets mais afetadas: **RTL8812AU** (encontrado no AWUS036ACH, ACM e ACS) e **MT7921AU** (encontrado no AWUS036AXM, AXML e AX). Siga cada seção em ordem e seu adaptador estará de volta em menos de 15 minutos.
+Você executa `sudo apt upgrade`, reinicia e seu adaptador ALFA sumiu — sem interface, sem luzes, nada. Essa é a pergunta de suporte mais comum em torno dos adaptadores ALFA Network USB WiFi no Linux, e as atualizações do kernel são quase sempre o culpado. Este guia conduz você por um processo sistemático de diagnóstico e reparo para as duas famílias de chipsets mais afetadas: **RTL8812AU** (encontrado no AWUS036ACH, ACM e ACS) e **MT7921AUN** (encontrado no AWUS036AXM, AXML e AX). Siga cada seção em ordem e seu adaptador estará de volta em menos de 15 minutos.
 
 ---
 
@@ -271,11 +271,11 @@ Se esta linha estiver comentada ou definida como `no`, o DKMS não recompilará 
 | Sintoma | Chipset provável | Causa raiz | Correção rápida |
 |---|---|---|---|
 | Interface desaparece após reinicialização | RTL8812AU | Build do DKMS falhou | `sudo dkms autoinstall` |
-| Interface desaparece, `dmesg` mostra erro de firmware | MT7921AU | Pacote de firmware ausente | `sudo apt install firmware-misc-nonfree` |
+| Interface desaparece, `dmesg` mostra erro de firmware | MT7921AUN | Pacote de firmware ausente | `sudo apt install firmware-misc-nonfree` |
 | Interface aparece mas desaparece após 30s | RTL8812AU | Incompatibilidade de versão do módulo | `sudo dkms remove --all && sudo make dkms_install` |
 | Modo monitor falha com `SIOCSIFFLAGS` | RTL8812AU | Branch do driver incorreto | Clonar `aircrack-ng/rtl8812au` e reinstalar |
 | `iwconfig` mostra sem extensões sem fio | Qualquer | Módulo não carregado | `sudo modprobe 88XXau` ou `sudo modprobe mt7921u` |
-| Interface presente mas sem redes encontradas | MT7921AU | Kernel < 5.18 | `sudo apt full-upgrade && sudo reboot` |
+| Interface presente mas sem redes encontradas | MT7921AUN | Kernel < 5.18 | `sudo apt full-upgrade && sudo reboot` |
 | `dkms status` mostra `broken` | RTL8812AU | Incompatibilidade fonte/headers | `sudo apt install linux-headers-$(uname -r)` depois recompilar |
 | Potência TX limitada a 20 dBm | RTL8812AU | Bloqueio de domínio regulatório | `sudo iw reg set US` (ajuste para sua região) |
 

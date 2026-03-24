@@ -20,7 +20,7 @@ Esta guía explica cómo hacerlo correctamente en los dos principales hipervisor
 
 Antes de pasar directamente a la configuración de una VM, vale la pena entender qué puede y qué no puede hacer macOS con un adaptador ALFA por sí solo.
 
-**AWUS036AXML (chipset MT7921AU):** Este adaptador es reconocido por macOS como un dispositivo de red USB genérico. El controlador **MT7921AU** incluido desde macOS 13 Ventura en adelante detecta el adaptador automáticamente. Aparece en **Preferencias del Sistema → Red** (o **Configuración del Sistema → Red** en Ventura+) como una nueva interfaz, y puede conectarse a redes Wi-Fi como cualquier otro adaptador. En versiones anteriores de macOS, puede que no sea reconocido en absoluto.
+**AWUS036AXML (chipset MT7921AUN):** Este adaptador es reconocido por macOS como un dispositivo de red USB genérico. El controlador **MT7921AUN** incluido desde macOS 13 Ventura en adelante detecta el adaptador automáticamente. Aparece en **Preferencias del Sistema → Red** (o **Configuración del Sistema → Red** en Ventura+) como una nueva interfaz, y puede conectarse a redes Wi-Fi como cualquier otro adaptador. En versiones anteriores de macOS, puede que no sea reconocido en absoluto.
 
 **Adaptadores basados en RTL8812AU (AWUS036ACH, AWUS036ACM):** Estos requieren un controlador de terceros para macOS. Existen varios paquetes de controladores de la comunidad y comerciales, pero la compatibilidad es frágil. Las recompilaciones del controlador tras actualizaciones de punto de macOS son comunes, los requisitos de firma de extensiones del kernel se han endurecido desde macOS 11, y en Apple Silicon la situación es aún más precaria debido a las limitaciones de Rosetta con extensiones del kernel. La instalación funcional es posible pero requiere mucho mantenimiento.
 
@@ -93,7 +93,7 @@ Abre una terminal en la VM de Kali y confirma que el adaptador es visible:
 
 ```bash
 lsusb | grep -i mediatek
-# AWUS036AXML / MT7921AU: Bus 001 Device 002: ID 0e8d:7961 MediaTek Inc. ...
+# AWUS036AXML / MT7921AUN: Bus 001 Device 002: ID 0e8d:7961 MediaTek Inc. ...
 
 lsusb | grep -i realtek
 # AWUS036ACH / RTL8812AU: Bus 001 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. ...
@@ -103,7 +103,7 @@ Si ninguno de los comandos devuelve resultados, el passthrough no se ha completa
 
 ### Paso 5 — Cargar el Controlador y Verificar el Modo Monitor
 
-Para MT7921AU (AWUS036AXML), el controlador está integrado en el kernel de Kali. Para adaptadores RTL8812AU, se requiere la instalación del controlador — consulta la [Guía de Instalación del Controlador](/en/blog/install-alfa-driver-kali-ubuntu/). Una vez que el controlador esté activo:
+Para MT7921AUN (AWUS036AXML), el controlador está integrado en el kernel de Kali. Para adaptadores RTL8812AU, se requiere la instalación del controlador — consulta la [Guía de Instalación del Controlador](/en/blog/install-alfa-driver-kali-ubuntu/). Una vez que el controlador esté activo:
 
 ```bash
 sudo airmon-ng check kill
@@ -184,7 +184,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**Recomendación para Macs con chip M:** Si estás adquiriendo un adaptador ALFA específicamente para usar en un Mac Apple Silicon con Kali en una VM, el **AWUS036AXML (MT7921AU)** es la mejor opción. Su controlador integrado en el kernel elimina por completo el paso de compilación con DKMS y funciona de manera confiable en compilaciones de Kali ARM64. El AWUS036ACH es funcional pero requiere el controlador RTL8812AU fuera del árbol del kernel, añadiendo una dependencia de mantenimiento en la disponibilidad de encabezados del kernel.
+**Recomendación para Macs con chip M:** Si estás adquiriendo un adaptador ALFA específicamente para usar en un Mac Apple Silicon con Kali en una VM, el **AWUS036AXML (MT7921AUN)** es la mejor opción. Su controlador integrado en el kernel elimina por completo el paso de compilación con DKMS y funciona de manera confiable en compilaciones de Kali ARM64. El AWUS036ACH es funcional pero requiere el controlador RTL8812AU fuera del árbol del kernel, añadiendo una dependencia de mantenimiento en la disponibilidad de encabezados del kernel.
 
 ---
 

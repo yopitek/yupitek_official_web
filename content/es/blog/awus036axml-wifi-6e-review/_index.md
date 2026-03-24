@@ -5,12 +5,12 @@ date: 2026-03-23
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-tags: ["AWUS036AXML", "wifi-6e", "reseña", "Kali-Linux", "MT7921AU", "6GHz"]
+tags: ["AWUS036AXML", "wifi-6e", "reseña", "Kali-Linux", "MT7921AUN", "6GHz"]
 ---
 
 ## Descripción General del Producto
 
-El **ALFA AWUS036AXML** es la entrada de ALFA Network en la era Wi-Fi 6E de la investigación de seguridad inalámbrica. Está construido alrededor del chipset **Mediatek MT7921AU** y es, a partir de 2026, uno de los muy pocos adaptadores inalámbricos USB que permite a los investigadores de seguridad operar en la **banda de 6 GHz** — la asignación de espectro no licenciado más reciente que utilizan las redes Wi-Fi 6E.
+El **ALFA AWUS036AXML** es la entrada de ALFA Network en la era Wi-Fi 6E de la investigación de seguridad inalámbrica. Está construido alrededor del chipset **Mediatek MT7921AUN** y es, a partir de 2026, uno de los muy pocos adaptadores inalámbricos USB que permite a los investigadores de seguridad operar en la **banda de 6 GHz** — la asignación de espectro no licenciado más reciente que utilizan las redes Wi-Fi 6E.
 
 Esto importa porque los despliegues empresariales y de consumo de Wi-Fi 6E son ahora generalizados. Un pentester equipado únicamente con adaptadores de doble banda (2.4/5 GHz) es efectivamente ciego a toda una clase de infraestructura de red moderna. El AWUS036AXML llena ese vacío.
 
@@ -22,7 +22,7 @@ El adaptador se conecta vía USB-A y se alimenta completamente desde el bus USB 
 
 | Parámetro | Valor |
 |---|---|
-| Chipset | Mediatek MT7921AU |
+| Chipset | Mediatek MT7921AUN |
 | Estándar | IEEE 802.11ax (Wi-Fi 6E) |
 | Bandas de Frecuencia | 2.4 GHz / 5 GHz / 6 GHz |
 | Velocidad Máxima de Datos | AX1800 (574 Mbps @ 2.4 GHz, 1201 Mbps @ 5/6 GHz) |
@@ -50,7 +50,7 @@ La antena de doble banda incluida es funcional pero limitada a 2 dBi. Para opera
 
 ## Configuración del Controlador en Kali Linux
 
-Esta es la sección más crítica para los investigadores de seguridad. La situación del controlador MT7921AU ha mejorado significativamente desde que se lanzó el chipset, pero todavía requiere atención.
+Esta es la sección más crítica para los investigadores de seguridad. La situación del controlador MT7921AUN ha mejorado significativamente desde que se lanzó el chipset, pero todavía requiere atención.
 
 ### Requisito de Versión del Kernel
 
@@ -127,7 +127,7 @@ Busca entradas en el rango de 6000–7125 MHz — estas confirman que el soporte
 
 ### Firmware
 
-El MT7921AU requiere archivos de firmware binarios. En Kali Linux, estos generalmente se instalan vía el paquete `firmware-misc-nonfree`:
+El MT7921AUN requiere archivos de firmware binarios. En Kali Linux, estos generalmente se instalan vía el paquete `firmware-misc-nonfree`:
 
 ```bash
 sudo apt install firmware-misc-nonfree
@@ -248,7 +248,7 @@ A 15 metros a través de dos paredes de oficina estándar, las potencias de señ
 
 ### Alcance en 2.4 y 5 GHz
 
-El rendimiento en las bandas heredadas iguala o supera ligeramente al AWUS036ACM (MT7612U). Las capacidades AX del MT7921AU no proporcionan ventajas directas de pentesting sobre los adaptadores de generación AC, pero la implementación más limpia del controlador en kernels recientes significa menos capturas perdidas durante sesiones largas de airodump-ng.
+El rendimiento en las bandas heredadas iguala o supera ligeramente al AWUS036ACM (MT7612U). Las capacidades AX del MT7921AUN no proporcionan ventajas directas de pentesting sobre los adaptadores de generación AC, pero la implementación más limpia del controlador en kernels recientes significa menos capturas perdidas durante sesiones largas de airodump-ng.
 
 ### Velocidad de Salto de Canal
 
@@ -273,7 +273,7 @@ Durante el reconocimiento de área amplia con salto de canal de airodump-ng habi
 
 | Característica | AWUS036AXML | AWUS036ACH |
 |---|---|---|
-| Chipset | MT7921AU | RTL8812AU |
+| Chipset | MT7921AUN | RTL8812AU |
 | Estándar Wi-Fi | 802.11ax (Wi-Fi 6E) | 802.11ac (Wi-Fi 5) |
 | Bandas | 2.4 / 5 / 6 GHz | 2.4 / 5 GHz |
 | Modo Monitor | ✅ | ✅ |

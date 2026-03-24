@@ -54,7 +54,7 @@ Chipset 802.11ac de doble banda con un controlador bien mantenido integrado en e
 
 Un chipset clásico de una sola banda (2.4 GHz) con una larga historia en herramientas de seguridad inalámbrica. El controlador `ath9k_htc` está integrado en el kernel y ha sido probado en batalla. El soporte de inyección es sólido y consistente entre versiones del kernel. Si bien solo cubre 2.4 GHz, sigue siendo una elección confiable para pruebas de redes heredadas.
 
-### Mediatek MT7921AU (Wi-Fi 6E)
+### Mediatek MT7921AUN (Wi-Fi 6E)
 
 El chipset más nuevo de esta lista, usado en el AWUS036AXML. Soporta tribanda 2.4/5/6 GHz con 802.11ax. El controlador `mt7921u` requiere kernel 5.18 o posterior. El soporte de modo monitor e inyección está confirmado, pero el controlador es más nuevo y puede tener problemas de casos extremos en distribuciones más antiguas.
 
@@ -135,7 +135,7 @@ Todos los modelos principales de adaptadores [ALFA Network](/es/products/alfa/) 
 | Modelo | Chipset | Banda | Soporte de Inyección |
 |---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ Completo |
-| AWUS036AXML | MT7921AU | 2.4 / 5 / 6 GHz | ✅ Completo (kernel 5.18+) |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ Completo (kernel 5.18+) |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ Completo |
 | AWUS036NHA | AR9271 | 2.4 GHz | ✅ Completo |
 | AWUS036NH | RTL8187 | 2.4 GHz | ✅ Completo |

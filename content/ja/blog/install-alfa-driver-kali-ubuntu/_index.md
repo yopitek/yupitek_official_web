@@ -1,11 +1,11 @@
 ---
 title: "Kali Linux・Ubuntu 24.04 への ALFA USB WiFi ドライバーインストール完全ガイド（2026）"
-description: "Kali Linux 2024 と Ubuntu 24.04 に ALFA Network USB WiFi アダプターのドライバーをインストールする完全解説。RTL8812AU・MT7612U・MT7921AU 対応、トラブルシューティング付き。"
+description: "Kali Linux 2024 と Ubuntu 24.04 に ALFA Network USB WiFi アダプターのドライバーをインストールする完全解説。RTL8812AU・MT7612U・MT7921AUN 対応、トラブルシューティング付き。"
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-tags: ["ドライバーインストール", "Kali-Linux", "Ubuntu", "RTL8812AU", "MT7612U", "MT7921AU", "ALFA-Network"]
+tags: ["ドライバーインストール", "Kali-Linux", "Ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
 ---
 
 Linux で USB WiFiアダプターを動かすには、まずドライバーが鍵になります。Windows では製造元がインストーラーを提供してくれますが、Linux ではカーネルモジュール——OSがハードウェアと通信するためにロードするコンパイル済みコード——を使います。この仕組みを理解しておくと、トラブルシューティングが格段に楽になり、ドライバーのインストール作業も迷わず進められます。
@@ -53,8 +53,8 @@ MediaTek MT7612U のような一般的なチップセットなら、この処理
 | [AWUS036ACHM](/ja/products/alfa/awus036achm/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u（カーネル内蔵） |
 | [AWUS036ACX](/ja/products/alfa/awus036acx/) | MT7612U | 0e8d:7612 | mt76x2u（カーネル内蔵） |
-| [AWUS036AX](/ja/products/alfa/awus036ax/) | MT7921AU | 0e8d:7961 | mt7921u（カーネル 5.18+） |
-| [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AU | 0e8d:7961 | mt7921u（カーネル 5.18+） |
+| [AWUS036AX](/ja/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u（カーネル 5.18+） |
 | [AWUS1900](/ja/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### lsusb でアダプターを確認する
@@ -246,9 +246,9 @@ echo "mt76x2u" | sudo tee -a /etc/modules
 
 ---
 
-## MT7921AU ドライバー（AWUS036AX・AWUS036AXML — Wi-Fi 6E）
+## MT7921AUN ドライバー（AWUS036AX・AWUS036AXML — Wi-Fi 6E）
 
-MT7921AU は MediaTek の Wi-Fi 6E チップセットです。Linux ドライバー `mt7921u` はカーネル **バージョン 5.18** からメインラインにマージされています。
+MT7921AUN は MediaTek の Wi-Fi 6E チップセットです。Linux ドライバー `mt7921u` はカーネル **バージョン 5.18** からメインラインにマージされています。
 
 ### カーネルバージョンの確認
 
@@ -421,8 +421,8 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/ja/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | MT7612U | 内蔵（`mt76x2u`） | 内蔵（`mt76x2u`） |
-| [AWUS036AX](/ja/products/alfa/awus036ax/) | MT7921AU | 内蔵（`mt7921u`、カーネル 5.18+） | 内蔵（`mt7921u`、カーネル 6.8） |
-| [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AU | 内蔵（`mt7921u`、カーネル 5.18+） | 内蔵（`mt7921u`、カーネル 6.8） |
+| [AWUS036AX](/ja/products/alfa/awus036ax/) | MT7921AUN | 内蔵（`mt7921u`、カーネル 5.18+） | 内蔵（`mt7921u`、カーネル 6.8） |
+| [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AUN | 内蔵（`mt7921u`、カーネル 5.18+） | 内蔵（`mt7921u`、カーネル 6.8） |
 | [AWUS1900](/ja/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 
 ---
@@ -440,7 +440,7 @@ Yopitek は ALFA Network の正規代理店です。正規品の保証と予測�
 Linux の WiFiドライバーインストールは、シンプルな判断フローで進められます：
 
 1. `lsusb` と上の対応表で**チップセットを確認する**
-2. **MT7612U または MT7921AU（カーネル 5.18+）?** → `modprobe` を実行するだけで完了
+2. **MT7612U または MT7921AUN（カーネル 5.18+）?** → `modprobe` を実行するだけで完了
 3. **RTL8812AU または RTL8814AU?** → 対応リポジトリをクローンし、`make && sudo make install` を実行。DKMS で永続化
 4. **うまくいかない場合?** → トラブルシューティング表を確認し、ヘッダーとカーネルが一致しているか確認し、`dmesg` をチェック
 

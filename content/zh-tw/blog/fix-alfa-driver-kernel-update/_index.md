@@ -1,6 +1,6 @@
 ---
 title: "ALFA 驅動程式在核心更新後失效？完整修復指南"
-description: "Linux 核心更新後 ALFA USB WiFi 網路卡無法使用？完整修復指南：涵蓋 Kali Linux 與 Ubuntu 上的 RTL8812AU、RTL8811AU 及 MT7921AU 驅動程式修復方式。"
+description: "Linux 核心更新後 ALFA USB WiFi 網路卡無法使用？完整修復指南：涵蓋 Kali Linux 與 Ubuntu 上的 RTL8812AU、RTL8811AU 及 MT7921AUN 驅動程式修復方式。"
 date: 2026-03-24
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 ---
 
-你執行了 `sudo apt upgrade`，重新開機後 ALFA 網路卡消失了——沒有介面、沒有燈號、什麼都沒有。這是 Linux 使用者詢問 ALFA Network USB WiFi 網路卡時最常見的問題，而核心更新幾乎是所有問題的根源。本指南將帶你系統性地診斷並修復兩種最常受影響的晶片組：**RTL8812AU**（AWUS036ACH、ACM、ACS）與 **MT7921AU**（AWUS036AXM、AXML、AX）。按照各節步驟操作，你的網路卡應在 15 分鐘內恢復正常。
+你執行了 `sudo apt upgrade`，重新開機後 ALFA 網路卡消失了——沒有介面、沒有燈號、什麼都沒有。這是 Linux 使用者詢問 ALFA Network USB WiFi 網路卡時最常見的問題，而核心更新幾乎是所有問題的根源。本指南將帶你系統性地診斷並修復兩種最常受影響的晶片組：**RTL8812AU**（AWUS036ACH、ACM、ACS）與 **MT7921AUN**（AWUS036AXM、AXML、AX）。按照各節步驟操作，你的網路卡應在 15 分鐘內恢復正常。
 
 ---
 
@@ -271,11 +271,11 @@ cat /etc/dkms/framework.conf | grep autoinstall
 | 症狀 | 可能晶片組 | 根本原因 | 快速修復 |
 |---|---|---|---|
 | 重新開機後介面消失 | RTL8812AU | DKMS 建置失敗 | `sudo dkms autoinstall` |
-| 介面消失，`dmesg` 顯示韌體錯誤 | MT7921AU | 缺少韌體套件 | `sudo apt install firmware-misc-nonfree` |
+| 介面消失，`dmesg` 顯示韌體錯誤 | MT7921AUN | 缺少韌體套件 | `sudo apt install firmware-misc-nonfree` |
 | 介面出現但 30 秒後消失 | RTL8812AU | 模組版本不符 | `sudo dkms remove --all && sudo make dkms_install` |
 | 監聽模式失敗，顯示 `SIOCSIFFLAGS` | RTL8812AU | 驅動程式分支錯誤 | 複製 `aircrack-ng/rtl8812au` 並重新安裝 |
 | `iwconfig` 顯示無無線擴充功能 | 任何 | 模組未載入 | `sudo modprobe 88XXau` 或 `sudo modprobe mt7921u` |
-| 介面存在但找不到任何網路 | MT7921AU | 核心 < 5.18 | `sudo apt full-upgrade && sudo reboot` |
+| 介面存在但找不到任何網路 | MT7921AUN | 核心 < 5.18 | `sudo apt full-upgrade && sudo reboot` |
 | `dkms status` 顯示 `broken` | RTL8812AU | 原始碼/標頭不符 | `sudo apt install linux-headers-$(uname -r)` 後重建 |
 | 發射功率限制在 20 dBm | RTL8812AU | 法規網域鎖定 | `sudo iw reg set US`（依你的地區調整） |
 

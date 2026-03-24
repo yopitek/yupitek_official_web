@@ -46,7 +46,7 @@ O WPA3-Enterprise exige um modo de segurança de 192 bits usando GCMP-256 e HMAC
 
 Os testes WPA3 exigem um adaptador com modo monitor confiável, suporte a injeção e — para redes WPA3 em 6 GHz — capacidade tribanda:
 
-- **AWUS036AXML** — Necessário para redes WPA3 Wi-Fi 6E (6 GHz). Chipset Mediatek MT7921AU. Suporte completo a modo monitor e injeção no Kali Linux com kernel 5.18+.
+- **AWUS036AXML** — Necessário para redes WPA3 Wi-Fi 6E (6 GHz). Chipset Mediatek MT7921AUN. Suporte completo a modo monitor e injeção no Kali Linux com kernel 5.18+.
 - **AWUS036ACH** — Adequado para testes WPA3 em 2,4/5 GHz. Chipset RTL8812AU. Máxima compatibilidade com o conjunto de ferramentas aircrack-ng e maior suporte a drivers nas versões do Kali Linux.
 
 ### Ativar o Modo Monitor

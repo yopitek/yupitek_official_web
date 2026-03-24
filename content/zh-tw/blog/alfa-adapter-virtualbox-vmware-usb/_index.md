@@ -10,7 +10,7 @@ tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", 
 
 在虛擬機器內執行 ALFA WiFi 介面卡並不像插上後等待客端作業系統自動偵測那麼簡單。與共用資料夾或橋接網路不同，監聽模式（monitor mode）和原始封包注入（packet injection）需要**完整的 USB 控制權**——虛擬機器必須獨佔 USB 裝置，而不是透過主機的網路堆疊共用。這稱為 USB 直通（USB passthrough），正確設定是在 VM 環境中工作的滲透測試人員和 CTF 玩家最常遇到的設定失敗原因。
 
-本指南涵蓋 **VirtualBox 7.x** 和 **VMware Workstation 17+ / VMware Fusion 13+** 的完整直通設定，以 Kali Linux 作為客端作業系統。文中針對 AWUS036ACH（RTL8812AU 晶片組）和較新的 AWUS036AXML（MT7921AU 晶片組）分別說明行為差異。
+本指南涵蓋 **VirtualBox 7.x** 和 **VMware Workstation 17+ / VMware Fusion 13+** 的完整直通設定，以 Kali Linux 作為客端作業系統。文中針對 AWUS036ACH（RTL8812AU 晶片組）和較新的 AWUS036AXML（MT7921AUN 晶片組）分別說明行為差異。
 
 完成後，您的 ALFA 介面卡將在 Kali 中透過 `lsusb` 顯示，正確驅動程式已載入，且 `airmon-ng` 確認監聽模式正常運作。
 
@@ -24,7 +24,7 @@ tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", 
 |---|---|
 | **Hypervisor** | VirtualBox 7.x + Extension Pack **或** VMware Workstation 17+ / Fusion 13+ |
 | **客端作業系統** | Kali Linux 2024.x 或更新版本（已在 2024.1–2025.1 測試） |
-| **ALFA 介面卡** | AWUS036ACH、AWUS036AXML、AWUS036ACM，或任何 RTL8812AU / MT7921AU 裝置 |
+| **ALFA 介面卡** | AWUS036ACH、AWUS036AXML、AWUS036ACM，或任何 RTL8812AU / MT7921AUN 裝置 |
 | **主機 USB 埠** | 建議使用 USB 3.0（尤其是 AWUS036AXML） |
 | **主機作業系統** | Windows 10/11、Linux 或 macOS（Fusion） |
 | **Sudo 權限** | Kali VM 內部需要 |
@@ -137,7 +137,7 @@ sudo apt update && sudo apt install -y realtek-rtl88xxau-dkms
 sudo modprobe 88XXau
 ```
 
-**AWUS036AXML（MT7921AU）：**
+**AWUS036AXML（MT7921AUN）：**
 
 ```bash
 sudo modprobe mt7921u
@@ -240,7 +240,7 @@ usb_xhci.present = "TRUE"
 
 AWUS036ACH 是 **USB 2.0** 裝置，在 VM 環境中是測試最充分的介面卡之一。VirtualBox 和 VMware 都能可靠地處理它。驅動程式套件：`realtek-rtl88xxau-dkms`。模組名稱：`88XXau`。
 
-### AWUS036AXML（MT7921AU）
+### AWUS036AXML（MT7921AUN）
 
 AWUS036AXML 是支援 WiFi 6E 的 **USB 3.0** 裝置，在 VM 環境中有一些特殊情況。**必須**使用 USB 3.0（xHCI）USB 控制器。固件套件：`firmware-misc-nonfree`。某些早期型號在 VirtualBox USB 3.0 仲裁下可能發生週期性凍結問題。VMware Workstation 對 AWUS036AXML 的 USB 3.0 直通通常比 VirtualBox 更穩定。
 

@@ -55,7 +55,7 @@ El chipset inalámbrico — no la marca o el número de modelo del adaptador —
 
 **RTL8814AU** — El chipset AC1900 3×3 MIMO de Realtek. Alta potencia de transmisión y cuatro antenas para máximo alcance. Controlador disponible vía `morrownr/8814au`. Impulsa el AWUS1900.
 
-**MT7921AU** — El chipset AX1800 Wi-Fi 6E de MediaTek. El más nuevo de los cuatro, con soporte del kernel integrado en la versión 5.18. Impulsa el AWUS036AXML. Importante para futuras necesidades a medida que las redes de 6 GHz se vuelven más prevalentes.
+**MT7921AUN** — El chipset AX1800 Wi-Fi 6E de MediaTek. El más nuevo de los cuatro, con soporte del kernel integrado en la versión 5.18. Impulsa el AWUS036AXML. Importante para futuras necesidades a medida que las redes de 6 GHz se vuelven más prevalentes.
 
 ### Doble Banda vs. Triple Banda
 
@@ -72,7 +72,7 @@ Las antenas externas desmontables (conectores RP-SMA) te dan flexibilidad. Puede
 | Adaptador | Estándar | Chipset | Modo Monitor | Antenas | Mejor Para |
 |---|---|---|---|---|---|
 | [AWUS036ACH](/es/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | 2× RP-SMA | El mejor en general |
-| [AWUS036AXML](/es/products/alfa/awus036axml/) | Wi-Fi 6E AX1800 | MT7921AU | ✅ | 1× RP-SMA | A prueba de futuro |
+| [AWUS036AXML](/es/products/alfa/awus036axml/) | Wi-Fi 6E AX1800 | MT7921AUN | ✅ | 1× RP-SMA | A prueba de futuro |
 | [AWUS036ACM](/es/products/alfa/awus036acm/) | Wi-Fi 5 AC600 | MT7612U | ✅ | 1× RP-SMA | Compacto y económico |
 | [AWUS036AX](/es/products/alfa/awus036ax/) | Wi-Fi 6 AX1800 | MT7612U variant | ✅ | 2× RP-SMA | Wi-Fi 6 |
 | [AWUS1900](/es/products/alfa/awus1900/) | Wi-Fi 5 AC1900 | RTL8814AU | ✅ | 4× RP-SMA | Máximo alcance |
@@ -160,9 +160,9 @@ Estudiantes, investigadores aficionados y pentesters con presupuesto ajustado. T
 
 El [ALFA AWUS036AXML](/es/products/alfa/awus036axml/) es la respuesta de ALFA a la creciente banda de 6 GHz. A medida que las redes empresariales y los routers domésticos modernos despliegan cada vez más Wi-Fi 6E, tener un adaptador que pueda operar en la banda de 6 GHz se vuelve esencial para evaluaciones completas.
 
-**Chipset: MediaTek MT7921AU**
+**Chipset: MediaTek MT7921AUN**
 
-El MT7921AU soporta Wi-Fi 6E (802.11ax) en las bandas de 2.4 GHz, 5 GHz y 6 GHz. El soporte del kernel de Linux se introdujo en la versión 5.18 a través del módulo `mt7921u`. Kali Linux 2022.x y versiones posteriores incluyen un kernel lo suficientemente nuevo para soportarlo.
+El MT7921AUN soporta Wi-Fi 6E (802.11ax) en las bandas de 2.4 GHz, 5 GHz y 6 GHz. El soporte del kernel de Linux se introdujo en la versión 5.18 a través del módulo `mt7921u`. Kali Linux 2022.x y versiones posteriores incluyen un kernel lo suficientemente nuevo para soportarlo.
 
 ```bash
 # Verificar que el controlador está cargado
@@ -178,7 +178,7 @@ Las redes Wi-Fi 6E operan en el espectro de 6 GHz recién habilitado, ofreciendo
 
 **Limitaciones Actuales**
 
-El modo monitor en la banda de 6 GHz a través del controlador MT7921AU todavía está madurando. Para pruebas de redes WPA2 estándar en 2.4/5 GHz, el controlador funciona bien. Para trabajo de vanguardia en 6 GHz, verifica el estado actual del controlador en el repositorio `mt76` antes de tu compromiso de auditoría.
+El modo monitor en la banda de 6 GHz a través del controlador MT7921AUN todavía está madurando. Para pruebas de redes WPA2 estándar en 2.4/5 GHz, el controlador funciona bien. Para trabajo de vanguardia en 6 GHz, verifica el estado actual del controlador en el repositorio `mt76` antes de tu compromiso de auditoría.
 
 **¿Quién Debería Elegir el AWUS036AXML?**
 

@@ -20,7 +20,7 @@ ALFAアダプターはLinuxではドライバーサポートが充実してい�
 
 VM設定に入る前に、macOSがALFAアダプターで何ができて何ができないかを理解しておくことが重要です。
 
-**AWUS036AXML（MT7921AUチップセット）：** macOSはこのアダプターを汎用USBネットワークデバイスとして認識します。macOS 13 Ventura以降に搭載された**MT7921AU**ドライバーが自動的にアダプターを検出します。**システム環境設定 → ネットワーク**（Ventura以降は**システム設定 → ネットワーク**）に新しいインターフェースとして表示され、通常のアダプターと同様にWi-Fiに接続できます。
+**AWUS036AXML（MT7921AUNチップセット）：** macOSはこのアダプターを汎用USBネットワークデバイスとして認識します。macOS 13 Ventura以降に搭載された**MT7921AUN**ドライバーが自動的にアダプターを検出します。**システム環境設定 → ネットワーク**（Ventura以降は**システム設定 → ネットワーク**）に新しいインターフェースとして表示され、通常のアダプターと同様にWi-Fiに接続できます。
 
 **RTL8812AUベースのアダプター（AWUS036ACH、AWUS036ACM）：** macOSではサードパーティドライバーが必要です。コミュニティや商用のドライバーパッケージはありますが、互換性は不安定です。macOSのマイナーアップデート後にドライバーの再インストールが必要になることが多く、macOS 11以降はカーネル拡張の署名要件が厳しくなっています。
 
@@ -89,7 +89,7 @@ Kali VMのターミナルでアダプターが見えることを確認します�
 
 ```bash
 lsusb | grep -i mediatek
-# AWUS036AXML / MT7921AU: Bus 001 Device 002: ID 0e8d:7961 MediaTek Inc. ...
+# AWUS036AXML / MT7921AUN: Bus 001 Device 002: ID 0e8d:7961 MediaTek Inc. ...
 
 lsusb | grep -i realtek
 # AWUS036ACH / RTL8812AU: Bus 001 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. ...
@@ -97,7 +97,7 @@ lsusb | grep -i realtek
 
 ### ステップ5 — ドライバーのロードとモニターモードの確認
 
-MT7921AU（AWUS036AXML）のドライバーはKaliカーネルに組み込まれています。RTL8812AUアダプターはドライバーのインストールが必要です——[ドライバーインストールガイド](/ja/blog/install-alfa-driver-kali-ubuntu/)を参照してください。ドライバーが有効になったら：
+MT7921AUN（AWUS036AXML）のドライバーはKaliカーネルに組み込まれています。RTL8812AUアダプターはドライバーのインストールが必要です——[ドライバーインストールガイド](/ja/blog/install-alfa-driver-kali-ubuntu/)を参照してください。ドライバーが有効になったら：
 
 ```bash
 sudo airmon-ng check kill
@@ -166,7 +166,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**Mチップ Mac向け推奨：** Apple Silicon Mac上のVMで使用するためにALFAアダプターを購入するなら、**AWUS036AXML（MT7921AU）** がより良い選択です。カーネル内蔵ドライバーによりDKMSコンパイル手順が不要で、ARM64 Kaliで確実に動作します。
+**Mチップ Mac向け推奨：** Apple Silicon Mac上のVMで使用するためにALFAアダプターを購入するなら、**AWUS036AXML（MT7921AUN）** がより良い選択です。カーネル内蔵ドライバーによりDKMSコンパイル手順が不要で、ARM64 Kaliで確実に動作します。
 
 ---
 

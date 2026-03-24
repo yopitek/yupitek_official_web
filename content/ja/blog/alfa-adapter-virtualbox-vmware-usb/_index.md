@@ -10,7 +10,7 @@ tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", 
 
 仮想マシン内で ALFA WiFi アダプターを使用するのは、接続するだけでゲスト OS が自動認識するほど単純ではありません。共有フォルダーやブリッジネットワークとは異なり、モニターモードと生パケットインジェクションには**完全な USB 制御**が必要です。つまり、VM がホストのネットワークスタック経由ではなく USB デバイスを排他的に所有する必要があります。これを USB パススルーと呼び、正しく設定することが VM 環境で作業するペネトレーションテスターや CTF プレイヤーにとって最も一般的なセットアップ失敗の原因です。
 
-本ガイドでは、ゲスト OS として Kali Linux を対象に **VirtualBox 7.x** と **VMware Workstation 17+ / VMware Fusion 13+** の完全なパススルー設定を解説します。AWUS036ACH（RTL8812AU チップセット）と新しい AWUS036AXML（MT7921AU チップセット）の両方を対象に、動作が異なる箇所はアダプター固有のメモとして記載しています。
+本ガイドでは、ゲスト OS として Kali Linux を対象に **VirtualBox 7.x** と **VMware Workstation 17+ / VMware Fusion 13+** の完全なパススルー設定を解説します。AWUS036ACH（RTL8812AU チップセット）と新しい AWUS036AXML（MT7921AUN チップセット）の両方を対象に、動作が異なる箇所はアダプター固有のメモとして記載しています。
 
 設定完了後、Kali 内で `lsusb` に ALFA アダプターが表示され、適切なドライバーが読み込まれ、`airmon-ng` でモニターモードの動作が確認できます。
 
@@ -24,7 +24,7 @@ tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", 
 |---|---|
 | **ハイパーバイザー** | VirtualBox 7.x + Extension Pack **または** VMware Workstation 17+ / Fusion 13+ |
 | **ゲスト OS** | Kali Linux 2024.x 以降（2024.1〜2025.1 でテスト済み） |
-| **ALFA アダプター** | AWUS036ACH、AWUS036AXML、AWUS036ACM、または RTL8812AU / MT7921AU デバイス |
+| **ALFA アダプター** | AWUS036ACH、AWUS036AXML、AWUS036ACM、または RTL8812AU / MT7921AUN デバイス |
 | **ホスト USB ポート** | USB 3.0 推奨（特に AWUS036AXML） |
 | **ホスト OS** | Windows 10/11、Linux、または macOS（Fusion） |
 | **Sudo アクセス** | Kali VM 内で必要 |
@@ -135,7 +135,7 @@ sudo apt update && sudo apt install -y realtek-rtl88xxau-dkms
 sudo modprobe 88XXau
 ```
 
-**AWUS036AXML（MT7921AU）：**
+**AWUS036AXML（MT7921AUN）：**
 
 ```bash
 sudo modprobe mt7921u
@@ -235,7 +235,7 @@ USB 3.0（xHCI）サポートには VMware ハードウェアバージョン 14 
 
 AWUS036ACH は **USB 2.0** デバイスで、VM 環境で最も十分にテストされているアダプターの一つです。VirtualBox と VMware の両方で安定して動作します。ドライバーパッケージ：`realtek-rtl88xxau-dkms`。モジュール名：`88XXau`。
 
-### AWUS036AXML（MT7921AU）
+### AWUS036AXML（MT7921AUN）
 
 AWUS036AXML は WiFi 6E をサポートする **USB 3.0** デバイスで、VM 環境でいくつかの特有の問題があります。USB 3.0（xHCI）コントローラーを**必ず**使用してください。ファームウェアパッケージ：`firmware-misc-nonfree`。初期ロットの一部では VirtualBox USB 3.0 アービトレーションで定期的なフリーズが発生することがあります。VMware Workstation は VirtualBox よりも AWUS036AXML の USB 3.0 パススルーを安定して処理する傾向があります。
 

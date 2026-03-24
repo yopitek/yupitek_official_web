@@ -5,12 +5,12 @@ date: 2026-03-23
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-tags: ["AWUS036AXML", "wifi-6e", "評測", "Kali-Linux", "MT7921AU", "6GHz"]
+tags: ["AWUS036AXML", "wifi-6e", "評測", "Kali-Linux", "MT7921AUN", "6GHz"]
 ---
 
 ## 產品概述
 
-**ALFA AWUS036AXML** 是 ALFA Network 正式跨入 Wi-Fi 6E 時代的無線安全研究利器，核心採用 **MediaTek MT7921AU** 晶片組。截至 2026 年，它仍是市面上極少數能讓資安研究人員在 **6 GHz 頻段**進行操作的 USB 無線網路卡——而這個頻段，正是 Wi-Fi 6E 網路所獨佔的最新免授權頻譜。
+**ALFA AWUS036AXML** 是 ALFA Network 正式跨入 Wi-Fi 6E 時代的無線安全研究利器，核心採用 **MediaTek MT7921AUN** 晶片組。截至 2026 年，它仍是市面上極少數能讓資安研究人員在 **6 GHz 頻段**進行操作的 USB 無線網路卡——而這個頻段，正是 Wi-Fi 6E 網路所獨佔的最新免授權頻譜。
 
 這件事至關重要。企業與家用 Wi-Fi 6E 的部署如今已相當普及。一位滲透測試人員若手邊只有雙頻（2.4/5 GHz）網路卡，等同於對整個世代的現代網路基礎架構視而不見。AWUS036AXML 正是為填補這個缺口而生。
 
@@ -22,7 +22,7 @@ tags: ["AWUS036AXML", "wifi-6e", "評測", "Kali-Linux", "MT7921AU", "6GHz"]
 
 | 參數 | 數值 |
 |---|---|
-| 晶片組 | MediaTek MT7921AU |
+| 晶片組 | MediaTek MT7921AUN |
 | 無線標準 | IEEE 802.11ax（Wi-Fi 6E） |
 | 頻段 | 2.4 GHz / 5 GHz / 6 GHz |
 | 最高傳輸速率 | AX1800（2.4 GHz：574 Mbps；5/6 GHz：1201 Mbps） |
@@ -50,7 +50,7 @@ AWUS036AXML 採用消光黑塑料外殼，握感紮實卻不笨重。USB-A 接�
 
 ## Kali Linux 驅動程式安裝
 
-這一節是資安研究人員最需要掌握的核心內容。MT7921AU 驅動程式的支援狀況自晶片發布以來已有大幅改善，但仍需留意幾個關鍵細節。
+這一節是資安研究人員最需要掌握的核心內容。MT7921AUN 驅動程式的支援狀況自晶片發布以來已有大幅改善，但仍需留意幾個關鍵細節。
 
 ### 核心版本需求
 
@@ -127,7 +127,7 @@ iw phy phy0 info | grep -A5 "Frequencies"
 
 ### 韌體
 
-MT7921AU 需要二進位韌體檔案。在 Kali Linux 上，通常透過 `firmware-misc-nonfree` 套件安裝：
+MT7921AUN 需要二進位韌體檔案。在 Kali Linux 上，通常透過 `firmware-misc-nonfree` 套件安裝：
 
 ```bash
 sudo apt install firmware-misc-nonfree
@@ -248,7 +248,7 @@ sudo iw dev wlan0mon scan | grep -E "BSS|SSID|freq|signal"
 
 ### 2.4 GHz 與 5 GHz 表現
 
-在傳統頻段上，效能與 AWUS036ACM（MT7612U）相當，甚至略勝一籌。MT7921AU 的 AX 能力在滲透測試上並不比 AC 世代網路卡有直接優勢，但近期核心版本上更乾淨的驅動程式實作，讓長時間執行 airodump-ng 時的封包遺漏情況明顯減少。
+在傳統頻段上，效能與 AWUS036ACM（MT7612U）相當，甚至略勝一籌。MT7921AUN 的 AX 能力在滲透測試上並不比 AC 世代網路卡有直接優勢，但近期核心版本上更乾淨的驅動程式實作，讓長時間執行 airodump-ng 時的封包遺漏情況明顯減少。
 
 ### 頻道跳躍速度
 
@@ -273,7 +273,7 @@ sudo iw dev wlan0mon scan | grep -E "BSS|SSID|freq|signal"
 
 | 功能 | AWUS036AXML | AWUS036ACH |
 |---|---|---|
-| 晶片組 | MT7921AU | RTL8812AU |
+| 晶片組 | MT7921AUN | RTL8812AU |
 | Wi-Fi 標準 | 802.11ax（Wi-Fi 6E） | 802.11ac（Wi-Fi 5） |
 | 頻段 | 2.4 / 5 / 6 GHz | 2.4 / 5 GHz |
 | 監聽模式 | ✅ | ✅ |

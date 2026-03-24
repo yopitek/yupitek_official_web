@@ -54,7 +54,7 @@ RTL8812AU 的升級版：4×4 MIMO、802.11ac、雙頻。由 `rtl8814au` 驅動�
 
 具有悠久無線安全工具使用歷史的經典單頻（2.4 GHz）晶片組。`ath9k_htc` 驅動程式內建於核心，經過長期實戰驗證，封包注入支援穩定，在各核心版本間表現一致。雖僅支援 2.4 GHz，對於舊式網路的測試需求仍是可靠的選擇。
 
-### Mediatek MT7921AU（Wi-Fi 6E）
+### Mediatek MT7921AUN（Wi-Fi 6E）
 
 本清單中最新的晶片組，搭載於 AWUS036AXML。支援 2.4/5/6 GHz 三頻及 802.11ax。`mt7921u` 驅動程式需要 kernel 5.18 或更新版本。監聽模式與封包注入支援均已獲確認，但由於驅動程式較新，在舊版發行版上可能存在邊緣案例問題。
 
@@ -135,7 +135,7 @@ sudo aireplay-ng --test wlan0mon
 | 型號 | 晶片組 | 頻段 | 封包注入支援 |
 |---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ 完整支援 |
-| AWUS036AXML | MT7921AU | 2.4 / 5 / 6 GHz | ✅ 完整支援（需 kernel 5.18+） |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ 完整支援（需 kernel 5.18+） |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ 完整支援 |
 | AWUS036NHA | AR9271 | 2.4 GHz | ✅ 完整支援 |
 | AWUS036NH | RTL8187 | 2.4 GHz | ✅ 完整支援 |

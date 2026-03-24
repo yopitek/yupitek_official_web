@@ -1,6 +1,6 @@
 ---
 title: "カーネル更新後にALFAドライバーが壊れた？完全修復ガイド"
-description: "Linuxカーネル更新後にALFA USB WiFiアダプターが動作しなくなった？Kali LinuxとUbuntuでのRTL8812AU、RTL8811AU、MT7921AUドライバーの完全修復ガイド。"
+description: "Linuxカーネル更新後にALFA USB WiFiアダプターが動作しなくなった？Kali LinuxとUbuntuでのRTL8812AU、RTL8811AU、MT7921AUNドライバーの完全修復ガイド。"
 date: 2026-03-24
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 ---
 
-`sudo apt upgrade` を実行して再起動したら、ALFAアダプターが消えてしまいました——インターフェースなし、ランプなし、何もなし。これはLinuxでALFA Network USB WiFiアダプターを使うユーザーから最もよく寄せられるサポートの質問であり、カーネルの更新がほぼ常に原因です。このガイドでは、最も影響を受ける2つのチップセットファミリーの体系的な診断と修復手順を説明します：**RTL8812AU**（AWUS036ACH、ACM、ACS搭載）と **MT7921AU**（AWUS036AXM、AXML、AX搭載）。各セクションの手順に従えば、15分以内にアダプターが復旧します。
+`sudo apt upgrade` を実行して再起動したら、ALFAアダプターが消えてしまいました——インターフェースなし、ランプなし、何もなし。これはLinuxでALFA Network USB WiFiアダプターを使うユーザーから最もよく寄せられるサポートの質問であり、カーネルの更新がほぼ常に原因です。このガイドでは、最も影響を受ける2つのチップセットファミリーの体系的な診断と修復手順を説明します：**RTL8812AU**（AWUS036ACH、ACM、ACS搭載）と **MT7921AUN**（AWUS036AXM、AXML、AX搭載）。各セクションの手順に従えば、15分以内にアダプターが復旧します。
 
 ---
 
@@ -271,11 +271,11 @@ cat /etc/dkms/framework.conf | grep autoinstall
 | 症状 | 可能性のあるチップセット | 根本原因 | クイックフィックス |
 |---|---|---|---|
 | 再起動後にインターフェースが消える | RTL8812AU | DKMSビルドが失敗 | `sudo dkms autoinstall` |
-| インターフェースが消え、`dmesg` がファームウェアエラーを表示 | MT7921AU | ファームウェアパッケージが欠落 | `sudo apt install firmware-misc-nonfree` |
+| インターフェースが消え、`dmesg` がファームウェアエラーを表示 | MT7921AUN | ファームウェアパッケージが欠落 | `sudo apt install firmware-misc-nonfree` |
 | インターフェースが表示されるが30秒後に消える | RTL8812AU | モジュールのバージョン不一致 | `sudo dkms remove --all && sudo make dkms_install` |
 | `SIOCSIFFLAGS` でモニターモードが失敗 | RTL8812AU | ドライバーブランチが間違っている | `aircrack-ng/rtl8812au` をクローンして再インストール |
 | `iwconfig` がワイヤレス拡張なしを表示 | どれでも | モジュールがロードされていない | `sudo modprobe 88XXau` または `sudo modprobe mt7921u` |
-| インターフェースはあるがネットワークが見つからない | MT7921AU | カーネル < 5.18 | `sudo apt full-upgrade && sudo reboot` |
+| インターフェースはあるがネットワークが見つからない | MT7921AUN | カーネル < 5.18 | `sudo apt full-upgrade && sudo reboot` |
 | `dkms status` が `broken` を表示 | RTL8812AU | ソース/ヘッダーの不一致 | `sudo apt install linux-headers-$(uname -r)` 後に再ビルド |
 | TX出力が20 dBmに制限 | RTL8812AU | 規制ドメインロック | `sudo iw reg set US`（地域に合わせて調整） |
 

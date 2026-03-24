@@ -1,6 +1,6 @@
 ---
 title: "ALFA Driver Broke After Kernel Update? Here's How to Fix It"
-description: "ALFA USB WiFi adapter not working after Linux kernel update? Complete fix guide for RTL8812AU, RTL8811AU, and MT7921AU drivers on Kali Linux and Ubuntu after kernel upgrades."
+description: "ALFA USB WiFi adapter not working after Linux kernel update? Complete fix guide for RTL8812AU, RTL8811AU, and MT7921AUN drivers on Kali Linux and Ubuntu after kernel upgrades."
 date: 2026-03-24
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 ---
 
-You run `sudo apt upgrade`, reboot, and your ALFA adapter has vanished. No interface, no lights, nothing. This is the single most common support question surrounding ALFA Network USB WiFi adapters on Linux — and kernel updates are almost always the culprit. This guide walks you through a systematic diagnosis and repair process for the two most affected chipset families: **RTL8812AU** (found in the AWUS036ACH, ACM, and ACS) and **MT7921AU** (found in the AWUS036AXM, AXML, and AX). Follow each section in order and your adapter will be back online in under 15 minutes.
+You run `sudo apt upgrade`, reboot, and your ALFA adapter has vanished. No interface, no lights, nothing. This is the single most common support question surrounding ALFA Network USB WiFi adapters on Linux — and kernel updates are almost always the culprit. This guide walks you through a systematic diagnosis and repair process for the two most affected chipset families: **RTL8812AU** (found in the AWUS036ACH, ACM, and ACS) and **MT7921AUN** (found in the AWUS036AXM and AXML). Follow each section in order and your adapter will be back online in under 15 minutes.
 
 ---
 
@@ -165,7 +165,7 @@ This single command installs the driver source, registers it with DKMS, and buil
 
 ---
 
-## Fix: MT7921U Driver (AWUS036AX, AXM, AXML, AXER)
+## Fix: MT7921U Driver (AWUS036AXM, AXML)
 
 The MT7921U (Wi-Fi 6E) chipset takes a completely different path. Because it is an **in-kernel driver** since Linux 5.18, there is no DKMS, no compilation, and no GitHub clone involved. Kernel updates should not break it — but firmware packaging issues sometimes do.
 
@@ -271,11 +271,11 @@ If this line is commented out or set to `no`, DKMS will not rebuild modules auto
 | Symptom | Likely Chipset | Root Cause | Quick Fix |
 |---|---|---|---|
 | Interface missing after reboot | RTL8812AU | DKMS build failed | `sudo dkms autoinstall` |
-| Interface missing, `dmesg` shows firmware error | MT7921AU | Missing firmware package | `sudo apt install firmware-misc-nonfree` |
+| Interface missing, `dmesg` shows firmware error | MT7921AUN | Missing firmware package | `sudo apt install firmware-misc-nonfree` |
 | Interface appears but disappears after 30s | RTL8812AU | Module version mismatch | `sudo dkms remove --all && sudo make dkms_install` |
 | Monitor mode fails with `SIOCSIFFLAGS` | RTL8812AU | Wrong driver branch | Clone `aircrack-ng/rtl8812au` and reinstall |
 | `iwconfig` shows no wireless extensions | Any | Module not loaded | `sudo modprobe 88XXau` or `sudo modprobe mt7921u` |
-| Interface present but no networks found | MT7921AU | Kernel < 5.18 | `sudo apt full-upgrade && sudo reboot` |
+| Interface present but no networks found | MT7921AUN | Kernel < 5.18 | `sudo apt full-upgrade && sudo reboot` |
 | `dkms status` shows `broken` | RTL8812AU | Source/header mismatch | `sudo apt install linux-headers-$(uname -r)` then rebuild |
 | TX power capped at 20 dBm | RTL8812AU | Regulatory domain lock | `sudo iw reg set US` (adjust for your region) |
 

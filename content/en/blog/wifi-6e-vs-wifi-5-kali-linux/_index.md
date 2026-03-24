@@ -91,13 +91,13 @@ The AWUS036ACH has been proven in thousands of real pentests. It is the **refere
 
 ---
 
-## ALFA AWUS036AXML — AX1800 Wi-Fi 6E, MT7921AU
+## ALFA AWUS036AXML — AX1800 Wi-Fi 6E, MT7921AUN
 
 The [AWUS036AXML](/en/products/alfa/awus036axml/) represents the next generation of ALFA pentesting adapters. It is the first widely available USB adapter to support the **6 GHz band**, making it capable of interacting with Wi-Fi 6E access points.
 
 **Key specifications:**
 - **Standard:** IEEE 802.11a/b/g/n/ac/ax (Wi-Fi 6E)
-- **Chipset:** MediaTek MT7921AU
+- **Chipset:** MediaTek MT7921AUN
 - **Frequency bands:** 2.4 GHz + 5 GHz + **6 GHz**
 - **Max throughput:** AX1800 (up to 1800 Mbps combined)
 - **Antennas:** 1× detachable RP-SMA
@@ -105,7 +105,7 @@ The [AWUS036AXML](/en/products/alfa/awus036axml/) represents the next generation
 
 **Driver status on Kali Linux:**
 
-The MT7921AU driver (`mt7921u`) was **merged into the mainline Linux kernel starting with version 5.18**. On Kali 2022.2 and later (which ship kernel 5.18+), no driver compilation is required. Simply plug in the adapter and it is recognized.
+The MT7921AUN driver (`mt7921u`) was **merged into the mainline Linux kernel starting with version 5.18**. On Kali 2022.2 and later (which ship kernel 5.18+), no driver compilation is required. Simply plug in the adapter and it is recognized.
 
 ```bash
 # Verify kernel module is loaded
@@ -115,7 +115,7 @@ lsmod | grep mt7921u
 sudo modprobe mt7921u
 ```
 
-However, **monitor mode support** for MT7921AU is more recent and depends on kernel version and firmware. As of early 2026, monitor mode works on kernel 6.1+ with the latest `linux-firmware` package installed. Packet injection support is functional but has seen occasional inconsistencies on certain kernel/firmware combinations — always test before a live engagement.
+However, **monitor mode support** for MT7921AUN is more recent and depends on kernel version and firmware. As of early 2026, monitor mode works on kernel 6.1+ with the latest `linux-firmware` package installed. Packet injection support is functional but has seen occasional inconsistencies on certain kernel/firmware combinations — always test before a live engagement.
 
 ```bash
 sudo apt update && sudo apt install linux-firmware
@@ -129,7 +129,7 @@ sudo airmon-ng start wlan0
 | Feature | AWUS036ACH | AWUS036AXML |
 |---|---|---|
 | **Wi-Fi Standard** | 802.11ac (Wi-Fi 5) | 802.11ax (Wi-Fi 6E) |
-| **Chipset** | RTL8812AU | MT7921AU |
+| **Chipset** | RTL8812AU | MT7921AUN |
 | **Frequency Bands** | 2.4 GHz + 5 GHz | 2.4 GHz + 5 GHz + 6 GHz |
 | **Max Throughput** | AC1200 | AX1800 |
 | **Monitor Mode Stability** | ★★★★★ (rock-solid) | ★★★★☆ (kernel 6.1+ required) |

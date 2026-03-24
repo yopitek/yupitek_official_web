@@ -10,7 +10,7 @@ tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", 
 
 Running an ALFA WiFi adapter inside a virtual machine is not as simple as plugging it in and hoping the guest OS picks it up. Unlike shared folders or bridged networking, monitor mode and raw packet injection require **full USB control** — the VM must exclusively own the USB device, not share it through the host's network stack. This is called USB passthrough, and getting it right is the single most common setup failure for pentesters and CTF players working in VMs.
 
-This guide covers the complete passthrough setup for **VirtualBox 7.x** and **VMware Workstation 17+ / VMware Fusion 13+**, targeting Kali Linux as the guest OS. It addresses both the AWUS036ACH (RTL8812AU chipset) and the newer AWUS036AXML (MT7921AU chipset), with adapter-specific notes where behaviour differs.
+This guide covers the complete passthrough setup for **VirtualBox 7.x** and **VMware Workstation 17+ / VMware Fusion 13+**, targeting Kali Linux as the guest OS. It addresses both the AWUS036ACH (RTL8812AU chipset) and the newer AWUS036AXML (MT7921AUN chipset), with adapter-specific notes where behaviour differs.
 
 By the end, your ALFA adapter will appear inside Kali via `lsusb`, the correct driver will be loaded, and `airmon-ng` will confirm monitor mode is working.
 
@@ -24,7 +24,7 @@ Before starting, confirm your environment matches the requirements below. Missin
 |---|---|
 | **Hypervisor** | VirtualBox 7.x + Extension Pack **or** VMware Workstation 17+ / Fusion 13+ |
 | **Guest OS** | Kali Linux 2024.x or later (tested on 2024.1–2025.1) |
-| **ALFA Adapter** | AWUS036ACH, AWUS036AXML, AWUS036ACM, or any RTL8812AU / MT7921AU device |
+| **ALFA Adapter** | AWUS036ACH, AWUS036AXML, AWUS036ACM, or any RTL8812AU / MT7921AUN device |
 | **Host USB port** | USB 3.0 recommended (especially for AWUS036AXML) |
 | **Host OS** | Windows 10/11, Linux, or macOS (Fusion) |
 | **Sudo access** | Required inside the Kali VM |
@@ -141,7 +141,7 @@ sudo apt update && sudo apt install -y realtek-rtl88xxau-dkms
 sudo modprobe 88XXau
 ```
 
-**AWUS036AXML (MT7921AU):**
+**AWUS036AXML (MT7921AUN):**
 
 ```bash
 sudo modprobe mt7921u
@@ -277,7 +277,7 @@ The AWUS036ACH is a **USB 2.0** device and is one of the most well-tested adapte
 
 You can find the adapter in our store: [ALFA AWUS036ACH](/en/products/alfa/awus036ach/).
 
-### AWUS036AXML (MT7921AU)
+### AWUS036AXML (MT7921AUN)
 
 The AWUS036AXML is a **USB 3.0** device supporting WiFi 6E. It is newer and has some edge cases in VM environments.
 

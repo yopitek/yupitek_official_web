@@ -20,19 +20,19 @@ Before you open a product page, answer these four questions. Your answers will e
 
 Driver support is everything. Kali Linux and Ubuntu users on recent kernels have the widest selection. macOS support is thin across all models. Windows 10/11 is generally well-supported. If you are on Raspberry Pi or an ARM-based platform, chipset selection matters enormously.
 
-- **Kali Linux / Debian:** RTL8812AU (`dkms-rtl8812au`) and MT7921AU (kernel native ≥ 5.18) are your two primary chipset families.
-- **Ubuntu 22.04 / 24.04:** Same driver landscape, but you may need to install HWE kernels or `firmware-misc-nonfree` for MT7921AU.
+- **Kali Linux / Debian:** RTL8812AU (`dkms-rtl8812au`) and MT7921AUN (kernel native ≥ 5.18) are your two primary chipset families for penetration testing.
+- **Ubuntu 22.04 / 24.04:** Same driver landscape, but you may need to install HWE kernels or `firmware-misc-nonfree` for MT7921AUN.
 - **Windows 10/11:** ALFA supplies signed drivers for all current models. Installation is straightforward.
 - **macOS Sonoma:** Only a handful of adapters have community-maintained kext support. Expect friction; plan for a VM workflow.
-- **Raspberry Pi (Kali NetHunter, ARM):** RTL8812AU models are the safe choice. MT7921AU can work but requires the `firmware-misc-nonfree` package and a recent enough kernel.
+- **Raspberry Pi (Kali NetHunter, ARM):** RTL8812AU models (ACH) and MT7612U models (ACM) are the safe choice. MT7921AUN can work but requires the `firmware-misc-nonfree` package and a recent enough kernel.
 
 ### (b) Do you need monitor mode and packet injection?
 
-If your answer is yes — and for any penetration testing or wireless audit work it should be — cross the [AWUS036EACS](/en/products/alfa/awus036eacs/) off your shortlist immediately. Its QCA9377 chipset does not reliably support monitor mode or injection under Linux. Every other model in this guide does.
+If your answer is yes — and for any penetration testing or wireless audit work it should be — cross the [AWUS036EACS](/en/products/alfa/awus036eacs/) off your shortlist immediately. Its RTL8821CU chipset does not support monitor mode or packet injection under Linux. Every other model in this guide does.
 
 ### (c) VM or bare metal?
 
-USB passthrough in VirtualBox and VMware adds a layer of complexity. Any adapter on this list will work with proper passthrough configured, but RTL8812AU adapters (ACH, ACM) have the longest track record in VM environments. If you are passing through to a VM exclusively, avoid adapters that rely on firmware files loaded at runtime — lost USB connections mean lost firmware.
+USB passthrough in VirtualBox and VMware adds a layer of complexity. Any adapter on this list will work with proper passthrough configured, but RTL8812AU adapters (ACH) and MT7612U adapters (ACM) have the longest track record in VM environments. If you are passing through to a VM exclusively, avoid adapters that rely on firmware files loaded at runtime — lost USB connections mean lost firmware.
 
 See [ALFA adapter setup in VirtualBox and VMware](/en/blog/alfa-adapter-virtualbox-vmware-usb/) for full setup instructions.
 
@@ -49,20 +49,20 @@ The Wi-Fi 5 generation (ACH, ACM, ACS) is cheaper, has more stable drivers, and 
 | Model | Wi-Fi Gen | Chip | Max Speed | Monitor Mode | Kali Driver | Windows | macOS | Antennas | Best For |
 |---|---|---|---|---|---|---|---|---|---|
 | [AWUS036ACS](/en/products/alfa/awus036acs/) | Wi-Fi 5 | RTL8811AU | AC600 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | Lightweight travel kit |
-| [AWUS036ACH](/en/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | Red team ops |
-| [AWUS036ACM](/en/products/alfa/awus036acm/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | Budget dual-band |
-| [AWUS036EACS](/en/products/alfa/awus036eacs/) | Wi-Fi 5 | QCA9377 | AC1200 | ⚠️ | ath10k | ✅ | ✅ | 1× RP-SMA | General use (no injection) |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 | MT7921AU | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6 audit |
-| [AWUS036AXER](/en/products/alfa/awus036axer/) | Wi-Fi 6 | MT7921AU | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Extended range Wi-Fi 6 |
-| [AWUS036AXM](/en/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AU | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | Wi-Fi 6E entry |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E | MT7902 | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Flagship 6E |
+| [AWUS036ACH](/en/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅✅ Best | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | Red team ops |
+| [AWUS036ACM](/en/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | Linux plug & play |
+| [AWUS036EACS](/en/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ❌ | rtl88xxcu (OOK) | ✅ | ⚠️ | Integrated 2dBi | Windows home WiFi + BT |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1200 | ⚠️ Limited | OOK (<6.14) | ✅ | ❌ | Integrated | Windows WiFi 6 |
+| [AWUS036AXER](/en/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ⚠️ Limited | OOK (<6.14) | ✅ | ❌ | Integrated nano | Compact travel adapter |
+| [AWUS036AXM](/en/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6E + dual antenna |
+| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | WiFi 6E + Linux + USB-C |
 
 </div>
 
 **Legend:** ✅ Supported · ⚠️ Limited/partial · ❌ Not supported
 
 {{< alert "circle-info" >}}
-**macOS note:** All ALFA adapters face driver challenges on macOS Ventura and Sonoma. The most common community-maintained option is running Kali Linux in a VM with USB passthrough. AWUS036EACS is the exception — it may work via the native macOS Qualcomm driver but without monitor mode.
+**macOS note:** All ALFA adapters face driver challenges on macOS Ventura and Sonoma. The most common community-maintained option is running Kali Linux in a VM with USB passthrough. AWUS036EACS (RTL8821CU) may work on macOS via third-party drivers for standard client connectivity, but monitor mode is not supported.
 {{< /alert >}}
 
 ---
@@ -92,13 +92,15 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 On kernels ≥ 6.2, the stock `rtl8812au` module included in older Kali images may fail to load. Always install `dkms-rtl8812au` from the Kali repository — it tracks kernel changes and rebuilds automatically on kernel updates via DKMS.
 {{< /alert >}}
 
-### AWUS036ACM — The Budget Dual-Band Pick
+### AWUS036ACM — The Linux Plug-and-Play Pick
 
-The [AWUS036ACM](/en/products/alfa/awus036acm/) shares the RTL8812AU chipset with the ACH but ships with a single RP-SMA connector and a lower price point. Functionally, monitor mode and injection support are identical.
+The [AWUS036ACM](/en/products/alfa/awus036acm/) uses the MediaTek MT7612U chipset — a different family from the ACH's RTL8812AU. Its biggest advantage is mainline Linux kernel support since kernel 4.19 as the `mt76x2u` driver, meaning zero driver compilation on any modern Kali Linux or Ubuntu system. It ships with two RP-SMA connectors for dual-antenna operation.
+
+Functionally, monitor mode and injection support are fully capable for security work.
 
 If you only need one antenna port and do not require the extended transmit power of the ACH, the ACM covers the same use cases for less money. It is a common choice for kit deployments where you are buying adapters in quantity for an audit team.
 
-**When to choose ACM over ACH:** Budget constraints, single-operator use, situations where antenna diversity is not a priority.
+**When to choose ACM over ACH:** Zero-hassle Linux driver setup, plug-and-play on Ubuntu/Kali without compiling, dual-antenna coverage at a lower price point than the ACH.
 
 ### AWUS036ACS — Lightweight and Portable
 
@@ -110,43 +112,42 @@ The RTL8811AU driver shares the same `rtl8812au-dkms` package on Kali, so the in
 
 ### AWUS036EACS — General Use, Not for Pentesting
 
-The [AWUS036EACS](/en/products/alfa/awus036eacs/) is powered by a Qualcomm QCA9377 chipset and uses the `ath10k` kernel driver. This chipset was designed for client connectivity, not packet manipulation. Monitor mode support under `ath10k` is unreliable, and packet injection is not supported in the standard driver configuration.
+The [AWUS036EACS](/en/products/alfa/awus036eacs/) is powered by a Realtek RTL8821CU chipset. Linux driver support for RTL8821CU is limited — monitor mode and packet injection are not supported. This adapter is designed for Windows client connectivity and includes Bluetooth 4.2, not for security testing tasks.
 
 {{< alert "triangle-exclamation" >}}
 **Do not use AWUS036EACS for penetration testing, red team operations, or any task requiring monitor mode or packet injection.** It is suitable for general wireless connectivity, DJI drone controller range extension (where it is commonly paired), and Windows-first deployments where standard client adapter behavior is acceptable.
 {{< /alert >}}
 
-It earns its place on this list for macOS compatibility — the QCA9377 driver situation on macOS is better than for Realtek or MediaTek chipsets — and for consumer/enterprise connectivity deployments where the adapter is used purely as a client.
+It earns its place on this list for its Bluetooth 4.2 combo capability and Windows out-of-box support. On macOS, community RTL8821CU driver support is limited and monitor mode is not available.
 
 ---
 
-## Wi-Fi 6 Adapters (Current Sweet Spot)
+## Wi-Fi 6 Adapters (Windows-Focused)
 
-Wi-Fi 6 (802.11ax) brought meaningful improvements in dense-environment performance, target-rich MU-MIMO scenarios, and BSS Coloring for network identification. For wireless auditors, Wi-Fi 6 adapters are increasingly relevant as enterprise deployments have shifted aggressively to 802.11ax infrastructure.
+Wi-Fi 6 (802.11ax) brought meaningful improvements in dense-environment performance, target-rich MU-MIMO scenarios, and BSS Coloring for network identification. The AWUS036AX and AWUS036AXER are ALFA's Wi-Fi 6 adapters, designed primarily for Windows connectivity.
 
-Both Wi-Fi 6 ALFA adapters use the MediaTek MT7921AU chipset, which was integrated into the mainline Linux kernel in version 5.18 as the `mt7921u` driver.
+Both Wi-Fi 6 ALFA adapters use the Realtek RTL8832BU chipset. On Linux, the RTL8832BU driver is out-of-kernel (OOK) on kernels below 6.14, which means **limited monitor mode and packet injection support**. If your primary use case is penetration testing on Linux, choose the AWUS036ACH or AWUS036AXML instead.
 
-### AWUS036AX — The Clean Wi-Fi 6 Choice
+### AWUS036AX — Wi-Fi 6 Windows Adapter
 
-The [AWUS036AX](/en/products/alfa/awus036ax/) is the direct Wi-Fi 6 successor to the ACH configuration: dual external RP-SMA antennas, 2T2R operation, and AX1800 (up to 1800 Mbps theoretical) on 2.4 and 5 GHz bands.
+The [AWUS036AX](/en/products/alfa/awus036ax/) is ALFA's Wi-Fi 6 adapter with an integrated antenna (no external RP-SMA connector). It delivers AX1200 speeds on 2.4 and 5 GHz bands and is well-suited for Windows 10/11 connectivity.
 
 **Driver status:**
-- Kernel ≥ 5.18: driver loads automatically, no additional packages needed on updated Kali/Ubuntu systems
-- Older kernels: `firmware-misc-nonfree` required; consider upgrading kernel first
-- Monitor mode: supported
-- Packet injection: supported
+- Windows: Full support via ALFA-supplied driver
+- Linux kernel ≥ 6.14: In-kernel RTL8832BU driver
+- Linux kernel < 6.14: Out-of-kernel driver required
+- Monitor mode: ⚠️ Limited
+- Packet injection: ⚠️ Limited
 
-**Practical note on monitor mode:** The MT7921AU's monitor mode implementation has shown occasional firmware crashes on specific kernel/firmware combinations when performing aggressive channel hopping. This affects the entire MT7921AU family. Pin your kernel if stability is critical, and test before a live engagement.
-
-{{< alert "circle-info" >}}
-**Kernel check:** Run `uname -r` to confirm your kernel version before purchasing. On Kali 2024.x, the default kernel is ≥ 6.x, so MT7921AU will work out of the box. On Ubuntu 22.04 LTS with HWE stack, you should be on 6.5+.
+{{< alert "triangle-exclamation" >}}
+**Linux penetration testing note:** The AWUS036AX uses the RTL8832BU chipset, which has limited monitor mode and packet injection support on Linux kernels below 6.14. For Kali Linux security work, use the [AWUS036ACH](/en/products/alfa/awus036ach/) (RTL8812AU) or [AWUS036AXML](/en/products/alfa/awus036axml/) (MT7921AUN) instead.
 {{< /alert >}}
 
-### AWUS036AXER — Extended Range Variant
+### AWUS036AXER — Compact Travel Wi-Fi 6 Adapter
 
-The [AWUS036AXER](/en/products/alfa/awus036axer/) is hardware-identical to the AWUS036AX in chipset and antenna configuration but adds enhanced RF amplification for extended operating range. The driver situation is identical — same MT7921AU, same kernel support path, same monitor mode and injection behavior.
+The [AWUS036AXER](/en/products/alfa/awus036axer/) uses the same RTL8832BU chipset as the AWUS036AX but in an ultra-compact nano form factor (10.5g). The driver situation is identical — same RTL8832BU, same Linux limitations, same Windows compatibility.
 
-Choose AXER over AX when operating range is the deciding factor: site surveys of large campuses, outdoor assessments, or scenarios where the AP is at distance. The price premium is moderate and justifiable if range matters to your deployment.
+Choose AXER over AX when portability is the deciding factor: business travel, minimal-footprint setups, or situations where a compact dongle is preferred over a full-size adapter.
 
 ---
 
@@ -158,26 +159,26 @@ Both Wi-Fi 6E ALFA adapters require kernel ≥ 5.18 for 6 GHz support. The 6 GHz
 
 ### AWUS036AXM — Wi-Fi 6E Entry Point
 
-The [AWUS036AXM](/en/products/alfa/awus036axm/) uses the MT7921AU chipset with 6 GHz band support enabled. It ships with a single RP-SMA connector, making it more compact than the AXML.
+The [AWUS036AXM](/en/products/alfa/awus036axm/) uses the MT7921AUN chipset with full tri-band support including 6 GHz. It ships with two RP-SMA connectors for 2T2R dual-antenna operation.
 
 For operators who primarily work 2.4 and 5 GHz environments but want 6 GHz capability for emerging network assessments without paying flagship prices, the AXM is the logical entry point.
 
 **Band coverage:** 2.4 GHz, 5 GHz, 6 GHz (tri-band)
-**Antenna:** 1× RP-SMA — swappable for any compatible ALFA antenna
+**Antennas:** 2× RP-SMA — swappable for any compatible ALFA antenna
 
 ### AWUS036AXML — The Flagship 6E Adapter
 
-The [AWUS036AXML](/en/products/alfa/awus036axml/) is ALFA's current top-of-line adapter. It features the MT7902 chipset (an upgrade over MT7921AU), dual RP-SMA connectors for 2T2R operation, and the highest transmit power rating in the 6E lineup.
+The [AWUS036AXML](/en/products/alfa/awus036axml/) is ALFA's current flagship adapter. It features the MT7921AUN chipset, USB-C 3.2 connectivity, Bluetooth 5.2, and a single high-gain RP-SMA connector.
 
 **Key specs:**
-- Chipset: MT7902 (MediaTek)
-- 2× RP-SMA connectors — full 2T2R configuration
+- Chipset: MT7921AUN (MediaTek)
+- 1× RP-SMA connector — compatible with the full ALFA antenna lineup
 - Tri-band: 2.4 GHz + 5 GHz + 6 GHz
 - AX3000 class (up to 3000 Mbps theoretical across bands)
-- Highest power output in the ALFA 6E lineup
+- USB-C 3.2 — faster host bus bandwidth vs. USB-A
 
 **Driver notes for AXML:**
-- MT7902 is supported under the same `mt7921u` driver family on kernel ≥ 5.18
+- MT7921AUN is supported under the `mt7921u` driver family on kernel ≥ 5.18
 - Monitor mode is supported; active monitor with firmware has shown firmware restart issues on some kernels — see the [AWUS036AXML detailed review](/en/blog/awus036axml-wifi-6e-review/) for full testing data
 - The 6 GHz band in monitor mode requires your regulatory domain to permit passive scanning on 6 GHz channels
 
@@ -195,20 +196,20 @@ The [AWUS036AXML](/en/products/alfa/awus036axml/) is ALFA's current top-of-line 
 |---|---|---|---|---|---|
 | [AWUS036ACS](/en/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | Manual build | ✅ rtl8812au-dkms | ✅ ALFA driver |
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | Manual build | ✅ rtl8812au-dkms | ✅ ALFA driver |
-| [AWUS036ACM](/en/products/alfa/awus036acm/) | RTL8812AU | `dkms-rtl8812au` | Manual build | ✅ rtl8812au-dkms | ✅ ALFA driver |
-| [AWUS036EACS](/en/products/alfa/awus036eacs/) | QCA9377 | `ath10k-firmware` | Kernel built-in | ⚠️ Limited | ✅ Built-in |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | MT7921AU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ firmware req. | ✅ ALFA driver |
-| [AWUS036AXER](/en/products/alfa/awus036axer/) | MT7921AU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ firmware req. | ✅ ALFA driver |
-| [AWUS036AXM](/en/products/alfa/awus036axm/) | MT7921AU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ firmware req. | ✅ ALFA driver |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7902 | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ firmware req. | ✅ ALFA driver |
+| [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | `mt76x2u` (in-kernel) | In-kernel ≥4.19 | ✅ native | ✅ ALFA driver |
+| [AWUS036EACS](/en/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` (OOK) | OOK | ❌ Not supported | ✅ ALFA driver |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) | ⚠️ Limited | ✅ ALFA driver |
+| [AWUS036AXER](/en/products/alfa/awus036axer/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) | ⚠️ Limited | ✅ ALFA driver |
+| [AWUS036AXM](/en/products/alfa/awus036axm/) | MT7921AUN | `firmware-misc-nonfree` | In-kernel ≥5.18 | ✅ firmware req. | ✅ ALFA driver |
+| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | `firmware-misc-nonfree` | In-kernel ≥5.18 | ✅ firmware req. | ✅ ALFA driver |
 
 </div>
 
 **RTL8812AU kernel history:** The RTL8812AU driver was partially integrated into the mainline kernel in Linux 5.2, but with significant limitations — no monitor mode, no injection. Full penetration testing capability requires the out-of-tree `rtl8812au` driver, packaged as `dkms-rtl8812au` on Kali. The DKMS package rebuilds automatically when the kernel is updated, making it essentially maintenance-free on Kali Linux systems.
 
-**MT7921AU kernel history:** Native integration arrived in Linux 5.18 via the `mt7921u` USB driver. The firmware file `WIFI_MT7961_patch_mcu_1_2_hdr.bin` (and related firmware blobs) must be present in `/lib/firmware/mediatek/`. On Kali these are pulled in by `firmware-misc-nonfree`. On Ubuntu 22.04 LTS with the default kernel, you may need to install the HWE stack (`linux-generic-hwe-22.04`) to reach ≥ 5.18.
+**MT7921AUN kernel history:** Native integration arrived in Linux 5.18 via the `mt7921u` USB driver. The firmware file `WIFI_MT7961_patch_mcu_1_2_hdr.bin` (and related firmware blobs) must be present in `/lib/firmware/mediatek/`. On Kali these are pulled in by `firmware-misc-nonfree`. On Ubuntu 22.04 LTS with the default kernel, you may need to install the HWE stack (`linux-generic-hwe-22.04`) to reach ≥ 5.18.
 
-**Raspberry Pi specifics:** The RTL8812AU driver compiles cleanly on Raspberry Pi OS (32-bit and 64-bit) using `dkms-rtl8812au`. It is the safest choice for NetHunter deployments. MT7921AU adapters can work on Pi 4/5 but require `firmware-misc-nonfree` and a recent enough Raspberry Pi OS kernel (2023+ images should be fine).
+**Raspberry Pi specifics:** The RTL8812AU driver compiles cleanly on Raspberry Pi OS (32-bit and 64-bit) using `dkms-rtl8812au`. It is the safest choice for NetHunter deployments. MT7921AUN adapters (AXM, AXML) can work on Pi 4/5 but require `firmware-misc-nonfree` and a recent enough Raspberry Pi OS kernel (2023+ images should be fine).
 
 ---
 
@@ -224,13 +225,13 @@ The ACH's 500 mW transmit power, dual antennas, and battle-tested RTL8812AU driv
 
 **Recommended: [AWUS036ACM](/en/products/alfa/awus036acm/)**
 
-CTF wireless challenges typically involve controlled environments where transmit power is not the critical variable. The ACM provides full monitor mode and injection capability at a lower price point. Its compact single-antenna form factor is easy to pack and deploy. If the CTF involves Wi-Fi 6 challenges (still rare but growing), reach for the [AWUS036AX](/en/products/alfa/awus036ax/) instead.
+CTF wireless challenges typically involve controlled environments where transmit power is not the critical variable. The ACM provides full monitor mode and injection capability with zero-hassle Linux driver setup (MT7612U in-kernel since 4.19). Its compact dual-antenna form factor is easy to pack and deploy. If the CTF involves Wi-Fi 6 challenges (still rare but growing), reach for the [AWUS036AXML](/en/products/alfa/awus036axml/) instead.
 
 ### Raspberry Pi / Kali NetHunter
 
 **Recommended: [AWUS036ACH](/en/products/alfa/awus036ach/) or [AWUS036ACM](/en/products/alfa/awus036acm/)**
 
-Both RTL8812AU adapters have a proven track record on Raspberry Pi hardware. Avoid MT7921AU models for Pi deployments unless you have confirmed kernel and firmware compatibility on your specific image. The ACH is the safer choice if you are building a dedicated NetHunter Pi that needs to be reliable in the field.
+The RTL8812AU (ACH) and MT7612U (ACM) adapters have a proven track record on Raspberry Pi hardware. Avoid MT7921AUN models (AXM, AXML) for Pi deployments unless you have confirmed kernel and firmware compatibility on your specific image. The ACH is the safer choice if you are building a dedicated NetHunter Pi that needs to be reliable in the field.
 
 ### Enterprise Wireless Audit
 
@@ -242,7 +243,7 @@ A modern enterprise wireless audit should cover 2.4, 5, and 6 GHz bands. The AXM
 
 **Recommended: [AWUS036EACS](/en/products/alfa/awus036eacs/)**
 
-DJI range extension via Litchi or DJI GO is a common legitimate use case. The EACS with QCA9377 is specifically recommended here because it works natively on Windows (where DJI software runs) without additional drivers, and its general-purpose connectivity profile suits this use case. No monitor mode required; client-mode connectivity and transmit power are what matter. Pair with an [APA-M25](/en/products/alfa/apa-m25/) panel antenna for maximum effective range.
+DJI range extension via Litchi or DJI GO is a common legitimate use case. The EACS with RTL8821CU is recommended here because it works natively on Windows (where DJI software runs) without additional drivers, and its general-purpose connectivity profile suits this use case. No monitor mode required; client-mode connectivity and transmit power are what matter. Pair with an [APA-M25](/en/products/alfa/apa-m25/) panel antenna for maximum effective range.
 
 ---
 
@@ -250,7 +251,7 @@ DJI range extension via Litchi or DJI GO is a common legitimate use case. The EA
 
 ### Kali Linux
 
-Kali Linux is the primary supported platform for all ALFA adapters used in security work. The Kali repository includes `dkms-rtl8812au` for RTL8812AU/RTL8811AU adapters and `firmware-misc-nonfree` for MT7921AU/MT7902 adapters. Keep your Kali install updated — the DKMS package tracks kernel changes automatically.
+Kali Linux is the primary supported platform for all ALFA adapters used in security work. The Kali repository includes `dkms-rtl8812au` for RTL8812AU/RTL8811AU adapters and `firmware-misc-nonfree` for MT7921AUN adapters. Keep your Kali install updated — the DKMS package tracks kernel changes automatically.
 
 **Quick setup (RTL8812AU family):**
 ```bash
@@ -258,7 +259,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 sudo modprobe 88XXau
 ```
 
-**Quick setup (MT7921AU family):**
+**Quick setup (MT7921AUN family — AXM, AXML):**
 ```bash
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 # Reboot or reload the module:
@@ -274,7 +275,7 @@ sudo ip link set wlan1 up
 
 ### Ubuntu 24.04 LTS
 
-Ubuntu 24.04 ships with kernel 6.8. MT7921AU adapters will work out of the box once `firmware-misc-nonfree` is installed:
+Ubuntu 24.04 ships with kernel 6.8. MT7921AUN adapters (AXM, AXML) will work out of the box once `firmware-misc-nonfree` is installed:
 ```bash
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
@@ -288,7 +289,7 @@ cd rtl8812au && sudo make dkms_install
 
 ### Windows 11
 
-All ALFA adapters ship with Windows 10/11 compatible drivers. Download the driver package from the ALFA Network website or install via Windows Update for MT7921AU (Microsoft provides a WHQL-signed inbox driver). RTL8812AU adapters require the ALFA-supplied Realtek driver package; Windows Update drivers for RTL8812AU are inconsistently available.
+All ALFA adapters ship with Windows 10/11 compatible drivers. Download the driver package from the ALFA Network website or install via Windows Update for MT7921AUN (Microsoft provides a WHQL-signed inbox driver). RTL8812AU adapters require the ALFA-supplied Realtek driver package; Windows Update drivers for RTL8812AU are inconsistently available.
 
 For use with tools like Acrylic Wi-Fi, inSSIDer, or the Windows version of Wireshark, the ALFA drivers provide a functional monitor mode wrapper on Windows via NDIS monitor mode — though this is substantially less capable than Linux monitor mode for active injection work.
 
@@ -296,22 +297,22 @@ For use with tools like Acrylic Wi-Fi, inSSIDer, or the Windows version of Wires
 
 There is no officially supported ALFA adapter for macOS Sonoma in 2026. Community kext projects exist for RTL8812AU but are unsigned and require disabling System Integrity Protection (SIP). The practical recommendation is to run Kali Linux in a VM (Parallels, VMware Fusion, or UTM) with USB passthrough to the ALFA adapter.
 
-The AWUS036EACS with QCA9377 has the most functional macOS support through the native Qualcomm/Atheros kext, but only for standard client connectivity — not monitor mode.
+The AWUS036EACS with RTL8821CU may have limited macOS driver support via community projects, but monitor mode is not available on any platform.
 
 ### Raspberry Pi / Kali NetHunter
 
 On Raspberry Pi 4 and Pi 5 running Kali NetHunter:
 
 ```bash
-# For RTL8812AU adapters:
+# For RTL8812AU adapters (ACH, ACS):
 sudo apt update && sudo apt install -y dkms-rtl8812au
 
-# For MT7921AU adapters (Pi 5 with recent kernel recommended):
+# For MT7921AUN adapters (AXM, AXML — Pi 5 with recent kernel recommended):
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 
 {{< alert "circle-info" >}}
-If you are building a dedicated NetHunter dropbox, use the [AWUS036ACH](/en/products/alfa/awus036ach/) or [AWUS036ACM](/en/products/alfa/awus036acm/). Their RTL8812AU driver compiles reliably on ARM and has no firmware file dependency. MT7921AU models are functional on Pi but add a dependency on firmware files that can cause headaches in offline deployments.
+If you are building a dedicated NetHunter dropbox, use the [AWUS036ACH](/en/products/alfa/awus036ach/) or [AWUS036ACM](/en/products/alfa/awus036acm/). The RTL8812AU (ACH) and MT7612U (ACM) drivers compile reliably on ARM and have no firmware file dependency. MT7921AUN models (AXM, AXML) are functional on Pi but add a dependency on firmware files that can cause headaches in offline deployments.
 {{< /alert >}}
 
 ---
@@ -321,13 +322,13 @@ If you are building a dedicated NetHunter dropbox, use the [AWUS036ACH](/en/prod
 After evaluating all eight adapters across driver maturity, hardware capability, and real-world use cases, these are the three choices that cover most professionals:
 
 **Budget Pick: [AWUS036ACM](/en/products/alfa/awus036acm/)**
-The single-antenna RTL8812AU adapter delivers full monitor mode and packet injection support at the lowest price in the dual-band lineup. Ideal for consultants who want a reliable tool without overspending, or teams buying adapters in quantity.
+The MT7612U adapter with dual RP-SMA connectors delivers full monitor mode and packet injection support with zero-configuration Linux driver setup (in-kernel since 4.19). Ideal for consultants who want a reliable, hassle-free tool, or teams buying adapters in quantity.
 
 **Versatile Pick: [AWUS036ACH](/en/products/alfa/awus036ach/)**
 The dual-antenna, 500 mW RTL8812AU adapter is the most widely recommended single adapter for security professionals. Covers 2.4 and 5 GHz, accepts external antennas, has the most mature driver stack of any adapter on this list, and costs only modestly more than the ACM. If you are buying one adapter and you are not yet sure what you need, buy this one.
 
 **Enterprise / Future-Proof Pick: [AWUS036AXML](/en/products/alfa/awus036axml/)**
-If your audit scope includes Wi-Fi 6E infrastructure — which it should for any engagement starting in 2026 — the AXML is the only adapter that gives you dual-antenna 6 GHz capability. Pair it with an ACH for a two-adapter kit that covers every band from 2.4 GHz to 6 GHz with no compromises.
+If your audit scope includes Wi-Fi 6E infrastructure — which it should for any engagement starting in 2026 — the AXML is the only adapter that gives you USB-C 3.2, 6 GHz capability, and Bluetooth 5.2 in one package. Pair it with an ACH for a two-adapter kit that covers every band from 2.4 GHz to 6 GHz with no compromises. For dual-antenna 6E coverage, consider the AWUS036AXM instead.
 
 For detailed setup and configuration instructions, see:
 - [Install ALFA driver on Kali Linux and Ubuntu](/en/blog/install-alfa-driver-kali-ubuntu/)

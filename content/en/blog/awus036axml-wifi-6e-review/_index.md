@@ -5,12 +5,12 @@ date: 2026-03-23
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-tags: ["AWUS036AXML", "wifi-6e", "review", "kali-linux", "MT7921AU", "6GHz"]
+tags: ["AWUS036AXML", "wifi-6e", "review", "kali-linux", "MT7921AUN", "6GHz"]
 ---
 
 ## Product Overview
 
-The **ALFA AWUS036AXML** is ALFA Network's entry into the Wi-Fi 6E era of wireless security research. It is built around the **Mediatek MT7921AU** chipset and is, as of 2026, one of the very few USB wireless adapters that allows security researchers to operate in the **6 GHz band** — the newest unlicensed spectrum allocation that Wi-Fi 6E networks use.
+The **ALFA AWUS036AXML** is ALFA Network's entry into the Wi-Fi 6E era of wireless security research. It is built around the **Mediatek MT7921AUN** chipset and is, as of 2026, one of the very few USB wireless adapters that allows security researchers to operate in the **6 GHz band** — the newest unlicensed spectrum allocation that Wi-Fi 6E networks use.
 
 This matters because enterprise and consumer Wi-Fi 6E deployments are now widespread. A pentester equipped only with dual-band (2.4/5 GHz) adapters is effectively blind to an entire class of modern network infrastructure. The AWUS036AXML fills that gap.
 
@@ -22,7 +22,7 @@ The adapter connects via USB-A and is powered entirely from the USB bus — no e
 
 | Parameter | Value |
 |---|---|
-| Chipset | Mediatek MT7921AU |
+| Chipset | Mediatek MT7921AUN |
 | Standard | IEEE 802.11ax (Wi-Fi 6E) |
 | Frequency Bands | 2.4 GHz / 5 GHz / 6 GHz |
 | Maximum Data Rate | AX1800 (574 Mbps @ 2.4 GHz, 1201 Mbps @ 5/6 GHz) |
@@ -50,7 +50,7 @@ The included dual-band antenna is functional but limited to 2 dBi. For 6 GHz ope
 
 ## Kali Linux Driver Setup
 
-This is the most critical section for security researchers. The MT7921AU driver situation has improved significantly since the chipset launched, but it still requires attention.
+This is the most critical section for security researchers. The MT7921AUN driver situation has improved significantly since the chipset launched, but it still requires attention.
 
 ### Kernel Version Requirement
 
@@ -127,7 +127,7 @@ Look for entries in the 6000–7125 MHz range — these confirm 6 GHz support is
 
 ### Firmware
 
-The MT7921AU requires binary firmware files. On Kali Linux, these are typically installed via the `firmware-misc-nonfree` package:
+The MT7921AUN requires binary firmware files. On Kali Linux, these are typically installed via the `firmware-misc-nonfree` package:
 
 ```bash
 sudo apt install firmware-misc-nonfree
@@ -246,7 +246,7 @@ At 15 meters through two standard office walls, 6 GHz signal strengths ranged fr
 
 ### Range on 2.4 and 5 GHz
 
-Performance on the legacy bands matches or slightly exceeds the AWUS036ACM (MT7612U). The MT7921AU's AX capabilities do not provide direct pentesting advantages over AC-generation adapters, but the cleaner driver implementation on recent kernels means fewer dropped captures during long-running airodump-ng sessions.
+Performance on the legacy bands matches or slightly exceeds the AWUS036ACM (MT7612U). The MT7921AUN's AX capabilities do not provide direct pentesting advantages over AC-generation adapters, but the cleaner driver implementation on recent kernels means fewer dropped captures during long-running airodump-ng sessions.
 
 ### Channel Hopping Speed
 
@@ -271,7 +271,7 @@ During broad-area reconnaissance with airodump-ng channel hopping enabled, the A
 
 | Feature | AWUS036AXML | AWUS036ACH |
 |---|---|---|
-| Chipset | MT7921AU | RTL8812AU |
+| Chipset | MT7921AUN | RTL8812AU |
 | Wi-Fi Standard | 802.11ax (Wi-Fi 6E) | 802.11ac (Wi-Fi 5) |
 | Bands | 2.4 / 5 / 6 GHz | 2.4 / 5 GHz |
 | Monitor Mode | ✅ | ✅ |

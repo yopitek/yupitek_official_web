@@ -55,11 +55,13 @@ The wireless chipset — not the adapter brand or model number — determines Li
 
 **RTL8812AU** — Realtek's AC1200 dual-band chipset. Battle-tested since 2015, with a well-maintained community driver (`aircrack-ng/rtl8812au`). Powers the AWUS036ACH. Widely regarded as the gold standard for pentesting.
 
-**MT7612U** — MediaTek's AC600/AC1200 chipset. Impressive feature: it has been mainlined into the Linux kernel since version 4.19 as `mt76x2u`, meaning zero driver installation is often needed. Powers the AWUS036ACM and AWUS036ACX.
+**MT7612U** — MediaTek's AC1200 chipset. Impressive feature: it has been mainlined into the Linux kernel since version 4.19 as `mt76x2u`, meaning zero driver installation is often needed. Powers the AWUS036ACM.
 
 **RTL8814AU** — Realtek's AC1900 3×3 MIMO chipset. High power output and four antennas for maximum range. Driver available via `morrownr/8814au`. Powers the AWUS1900.
 
-**MT7921AU** — MediaTek's AX1800 Wi-Fi 6E chipset. The newest of the four, with kernel support arriving in 5.18. Powers the AWUS036AXML. Important for future-proofing as 6 GHz networks become more prevalent.
+**MT7921AUN** — MediaTek's AX3000 Wi-Fi 6E chipset (USB variant). In-kernel support since 5.18 via `mt7921u`. Powers the AWUS036AXML and AWUS036AXM. Important for future-proofing as 6 GHz networks become more prevalent.
+
+> **Note on AWUS036AX / AWUS036AXER:** These Wi-Fi 6 adapters use the Realtek RTL8832BU chipset, which has limited monitor mode support on Linux kernels below 6.14. They are not recommended for penetration testing — use the AWUS036ACH or AWUS036AXML instead.
 
 ### Dual-Band vs. Tri-Band
 
@@ -75,10 +77,10 @@ External, detachable antennas (RP-SMA connectors) give you flexibility. You can 
 
 | Adapter | Standard | Chipset | Monitor Mode | Antennas | Best For |
 |---|---|---|---|---|---|
-| [AWUS036ACH](/en/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | 2× RP-SMA | Best all-around |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E AX1800 | MT7921AU | ✅ | 1× RP-SMA | Future-proof |
-| [AWUS036ACM](/en/products/alfa/awus036acm/) | Wi-Fi 5 AC600 | MT7612U | ✅ | 1× RP-SMA | Budget compact |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 AX1800 | MT7612U variant | ✅ | 2× RP-SMA | Wi-Fi 6 |
+| [AWUS036ACH](/en/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅✅ Best | 2× RP-SMA | Best all-around |
+| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 1× RP-SMA | Future-proof 6E |
+| [AWUS036ACM](/en/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | Linux plug & play |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limited | Integrated | Windows WiFi 6 |
 | [AWUS1900](/en/products/alfa/awus1900/) | Wi-Fi 5 AC1900 | RTL8814AU | ✅ | 4× RP-SMA | Max range |
 
 ---
@@ -146,9 +148,9 @@ sudo modprobe mt76x2u
 
 The AWUS036ACM delivers up to 200 Mbps on 2.4 GHz and 433 Mbps on 5 GHz. For capture-focused work (handshake grabbing, PMKID attacks, passive monitoring), this is more than sufficient.
 
-**Compact Form Factor**
+**Compact Dual-Band with In-Kernel Driver**
 
-With a single RP-SMA antenna and a more compact body, the AWUS036ACM is easier to carry in a bag or conceal during physical assessments. It's a popular choice for red team operators who need to keep a low profile.
+With two RP-SMA antennas and a compact body, the AWUS036ACM supports dual-antenna operation. The MT7612U driver loads automatically on any modern Linux kernel — no compilation needed.
 
 **Limitations**
 
@@ -164,9 +166,9 @@ Students, hobbyist researchers, and pentesters on a budget. Also an excellent se
 
 The [ALFA AWUS036AXML](/en/products/alfa/awus036axml/) is ALFA's answer to the growing 6 GHz band. As enterprise networks and modern home routers increasingly deploy Wi-Fi 6E, having an adapter that can operate in the 6 GHz band becomes essential for comprehensive assessments.
 
-**Chipset: MediaTek MT7921AU**
+**Chipset: MediaTek MT7921AUN**
 
-The MT7921AU supports Wi-Fi 6E (802.11ax) across 2.4 GHz, 5 GHz, and 6 GHz bands. Linux kernel support was introduced in kernel 5.18 via the `mt7921u` module. Kali Linux 2022.x and later ship with a kernel new enough to support it.
+The MT7921AUN supports Wi-Fi 6E (802.11ax) across 2.4 GHz, 5 GHz, and 6 GHz bands. Linux kernel support was introduced in kernel 5.18 via the `mt7921u` module. Kali Linux 2022.x and later ship with a kernel new enough to support it.
 
 ```bash
 # Verify driver loaded
@@ -182,7 +184,7 @@ Wi-Fi 6E networks operate in the newly opened 6 GHz spectrum, offering significa
 
 **Current Limitations**
 
-Monitor mode on the 6 GHz band via the MT7921AU driver is still maturing. For bread-and-butter WPA2 network testing on 2.4/5 GHz, the driver works well. For cutting-edge 6 GHz work, check current driver status in the `mt76` driver repository before your engagement.
+Monitor mode on the 6 GHz band via the MT7921AUN driver is still maturing. For bread-and-butter WPA2 network testing on 2.4/5 GHz, the driver works well. For cutting-edge 6 GHz work, check current driver status in the `mt76` driver repository before your engagement.
 
 **Who Should Choose the AWUS036AXML?**
 

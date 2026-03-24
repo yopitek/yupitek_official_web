@@ -1,11 +1,11 @@
 ---
 title: "How to Install ALFA USB WiFi Driver on Kali Linux & Ubuntu 24.04 (2026)"
-description: "Complete guide to installing ALFA Network USB WiFi adapter drivers on Kali Linux 2024 and Ubuntu 24.04 for RTL8812AU, MT7612U, and MT7921AU chipsets, with troubleshooting tips."
+description: "Complete guide to installing ALFA Network USB WiFi adapter drivers on Kali Linux 2024 and Ubuntu 24.04 for RTL8812AU, MT7612U, and MT7921AUN chipsets, with troubleshooting tips."
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-tags: ["driver-install", "kali-linux", "ubuntu", "RTL8812AU", "MT7612U", "MT7921AU", "ALFA-Network"]
+tags: ["driver-install", "kali-linux", "ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
 ---
 
 Getting a USB WiFi adapter working on Linux often comes down to one thing: the driver. Unlike Windows, where manufacturers bundle drivers into executable installers, Linux uses kernel modules — compiled code that the operating system loads to communicate with hardware. Understanding this model makes troubleshooting straightforward and driver installation predictable.
@@ -53,8 +53,8 @@ The driver you need depends entirely on your chipset, not the adapter's marketin
 | [AWUS036ACHM](/en/products/alfa/awus036achm/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (in-kernel) |
 | [AWUS036ACX](/en/products/alfa/awus036acx/) | MT7612U | 0e8d:7612 | mt76x2u (in-kernel) |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | MT7921AU | 0e8d:7961 | mt7921u (kernel 5.18+) |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AU | 0e8d:7961 | mt7921u (kernel 5.18+) |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (kernel 5.18+) |
 | [AWUS1900](/en/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### Identify Your Adapter with lsusb
@@ -248,9 +248,9 @@ This is the major advantage of the MT7612U chipset: zero compilation, no driver 
 
 ---
 
-## MT7921AU Driver (AWUS036AX, AWUS036AXML — Wi-Fi 6E)
+## MT7921AUN Driver (AWUS036AXM, AWUS036AXML — Wi-Fi 6E)
 
-The MT7921AU is MediaTek's Wi-Fi 6E chipset. Its Linux driver, `mt7921u`, was merged into the mainline kernel in **version 5.18**.
+The MT7921AUN is MediaTek's Wi-Fi 6E chipset. Its Linux driver, `mt7921u`, was merged into the mainline kernel in **version 5.18**.
 
 ### Check Kernel Version
 
@@ -434,8 +434,8 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` (DKMS) | Manual DKMS + ARM headers |
 | [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | Built-in (`mt76x2u`) ✅ | Built-in — plug-and-play ✅ |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | MT7921AU | Built-in (`mt7921u`, kernel 5.18+) | `linux-firmware` pkg |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AU | Built-in (`mt7921u`, kernel 5.18+) | `linux-firmware` pkg |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | N/A |
+| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | Built-in (`mt7921u`, kernel 5.18+) | `linux-firmware` pkg |
 | [AWUS1900](/en/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | Manual DKMS |
 
 ---
@@ -453,7 +453,7 @@ Yopitek is an authorized ALFA Network distributor. Browse the full [ALFA Network
 Linux WiFi driver installation follows a simple decision tree:
 
 1. **Identify your chipset** with `lsusb` and the mapping table above
-2. **MT7612U or MT7921AU (on kernel 5.18+)?** → Just run `modprobe`, you're done
+2. **MT7612U or MT7921AUN (on kernel 5.18+)?** → Just run `modprobe`, you're done
 3. **RTL8812AU or RTL8814AU?** → Clone the appropriate repo, run `make && sudo make install`, enable DKMS for persistence
 4. **Something not working?** → Check the troubleshooting table, verify headers match kernel, check `dmesg`
 

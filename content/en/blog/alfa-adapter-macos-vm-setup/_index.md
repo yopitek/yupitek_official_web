@@ -20,7 +20,7 @@ This guide covers how to do that correctly across both major macOS hypervisors �
 
 Before going straight to a VM setup, it is worth understanding what macOS can and cannot do with an ALFA adapter on its own.
 
-**AWUS036AXML (MT7921AU chipset):** This adapter is recognised by macOS as a generic USB networking device. The **MT7921AU** driver shipped with macOS 13 Ventura and later picks up the adapter automatically. It appears in **System Preferences → Network** (or **System Settings → Network** on Ventura+) as a new interface, and it can connect to Wi-Fi networks like any other adapter. On older macOS versions, it may not be recognised at all.
+**AWUS036AXML (MT7921AUN chipset):** This adapter is recognised by macOS as a generic USB networking device. The **MT7921AUN** driver shipped with macOS 13 Ventura and later picks up the adapter automatically. It appears in **System Preferences → Network** (or **System Settings → Network** on Ventura+) as a new interface, and it can connect to Wi-Fi networks like any other adapter. On older macOS versions, it may not be recognised at all.
 
 **RTL8812AU-based adapters (AWUS036ACH, AWUS036ACM):** These require a third-party driver for macOS. Several community and commercial driver packages exist, but compatibility is brittle. Driver rebuilds after macOS point updates are common, kernel extension signing requirements have tightened since macOS 11, and on Apple Silicon the situation is even more fragile due to Rosetta limitations with kernel extensions. Functional installation is possible but maintenance-heavy.
 
@@ -93,7 +93,7 @@ Open a terminal in the Kali VM and confirm the adapter is visible:
 
 ```bash
 lsusb | grep -i mediatek
-# AWUS036AXML / MT7921AU: Bus 001 Device 002: ID 0e8d:7961 MediaTek Inc. ...
+# AWUS036AXML / MT7921AUN: Bus 001 Device 002: ID 0e8d:7961 MediaTek Inc. ...
 
 lsusb | grep -i realtek
 # AWUS036ACH / RTL8812AU: Bus 001 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. ...
@@ -103,7 +103,7 @@ If neither command returns output, the passthrough has not completed — re-chec
 
 ### Step 5 — Load Driver and Verify Monitor Mode
 
-For MT7921AU (AWUS036AXML), the driver is built into the Kali kernel. For RTL8812AU adapters, driver installation is required — see the [Driver Install Guide](/en/blog/install-alfa-driver-kali-ubuntu/). Once the driver is active:
+For MT7921AUN (AWUS036AXML), the driver is built into the Kali kernel. For RTL8812AU adapters, driver installation is required — see the [Driver Install Guide](/en/blog/install-alfa-driver-kali-ubuntu/). Once the driver is active:
 
 ```bash
 sudo airmon-ng check kill
@@ -184,7 +184,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**Recommendation for M-chip Macs:** If you are purchasing an ALFA adapter specifically for use on an Apple Silicon Mac with Kali in a VM, the **AWUS036AXML (MT7921AU)** is the better choice. Its in-kernel driver eliminates the DKMS compilation step entirely and works reliably on ARM64 Kali builds. The AWUS036ACH is functional but requires the RTL8812AU out-of-tree driver, adding a maintenance dependency on kernel header availability.
+**Recommendation for M-chip Macs:** If you are purchasing an ALFA adapter specifically for use on an Apple Silicon Mac with Kali in a VM, the **AWUS036AXML (MT7921AUN)** is the better choice. Its in-kernel driver eliminates the DKMS compilation step entirely and works reliably on ARM64 Kali builds. The AWUS036ACH is functional but requires the RTL8812AU out-of-tree driver, adding a maintenance dependency on kernel header availability.
 
 ---
 

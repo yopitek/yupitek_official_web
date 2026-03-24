@@ -58,7 +58,7 @@ Dual-band 802.11ac chipset with a well-maintained in-kernel driver (`mt76`). Mon
 
 A classic single-band (2.4 GHz) chipset with a long history in wireless security tools. The `ath9k_htc` driver is in-kernel and battle-tested. Injection support is solid and consistent across kernel versions. While it only covers 2.4 GHz, it remains a reliable choice for legacy network testing.
 
-### Mediatek MT7921AU (Wi-Fi 6E)
+### Mediatek MT7921AUN (Wi-Fi 6E)
 
 The newest chipset on this list, used in the AWUS036AXML. Supports 2.4/5/6 GHz tri-band with 802.11ax. The `mt7921u` driver requires kernel 5.18 or later. Monitor mode and injection support are confirmed but the driver is newer and may have edge-case issues on older distributions.
 
@@ -139,7 +139,7 @@ All major [ALFA Network](/en/products/alfa/) adapter models support packet injec
 | Model | Chipset | Band | Injection Support |
 |---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ Full |
-| AWUS036AXML | MT7921AU | 2.4 / 5 / 6 GHz | ✅ Full (kernel 5.18+) |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ Full (kernel 5.18+) |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ Full |
 | AWUS036NHA | AR9271 | 2.4 GHz | ✅ Full |
 | AWUS036NH | RTL8187 | 2.4 GHz | ✅ Full |

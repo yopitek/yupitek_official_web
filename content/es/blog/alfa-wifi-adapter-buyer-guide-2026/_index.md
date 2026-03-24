@@ -32,7 +32,7 @@ Si tu respuesta es sí — y para cualquier prueba de penetración o auditoría 
 
 ### (c) ¿Máquina virtual o hardware nativo?
 
-El passthrough de USB en VirtualBox y VMware agrega una capa de complejidad. Cualquier adaptador de esta lista funcionará con el passthrough correctamente configurado, pero los adaptadores RTL8812AU (ACH, ACM) tienen el historial más sólido en entornos de máquina virtual. Si solo vas a usar passthrough hacia una VM, evita adaptadores que dependan de archivos de firmware cargados en tiempo de ejecución — las desconexiones de USB implican perder el firmware.
+El passthrough de USB en VirtualBox y VMware agrega una capa de complejidad. Cualquier adaptador de esta lista funcionará con el passthrough correctamente configurado, pero los adaptadores RTL8812AU (ACH) y MT7612U (ACM) tienen el historial más sólido en entornos de máquina virtual. Si solo vas a usar passthrough hacia una VM, evita adaptadores que dependan de archivos de firmware cargados en tiempo de ejecución — las desconexiones de USB implican perder el firmware.
 
 Consulta [Configuración de adaptador ALFA en VirtualBox y VMware](/en/blog/alfa-adapter-virtualbox-vmware-usb/) para instrucciones completas.
 
@@ -312,7 +312,7 @@ sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 
 {{< alert "circle-info" >}}
-Si estás construyendo una caja de despliegue NetHunter dedicada, usa el [AWUS036ACH](/en/products/alfa/awus036ach/) o el [AWUS036ACM](/en/products/alfa/awus036acm/). Su controlador RTL8812AU compila de forma confiable en ARM y no tiene dependencia de archivos de firmware. Los modelos MT7921AUN son funcionales en Pi, pero agregan una dependencia en archivos de firmware que puede causar problemas en despliegues sin conexión a internet.
+Si estás construyendo una caja de despliegue NetHunter dedicada, usa el [AWUS036ACH](/en/products/alfa/awus036ach/) o el [AWUS036ACM](/en/products/alfa/awus036acm/). El controlador RTL8812AU del ACH y el mt76x2u del ACM compilan de forma confiable en ARM sin dependencia de archivos de firmware. Los modelos MT7921AUN son funcionales en Pi, pero agregan una dependencia en archivos de firmware que puede causar problemas en despliegues sin conexión a internet.
 {{< /alert >}}
 
 ---

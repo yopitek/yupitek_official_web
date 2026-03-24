@@ -32,7 +32,7 @@ tags: ["alfa-network", "wifi-adapter", "buyer-guide", "kali-linux", "penetration
 
 ### (c) 虛擬機還是裸機？
 
-VirtualBox 與 VMware 的 USB 直通會增加一層複雜性。此清單上的任何機型在正確設定直通後均可運作，但 RTL8812AU 網路卡（ACH、ACM）在 VM 環境中擁有最長的驗證紀錄。如果你只使用直通至 VM，應避免使用依賴執行時期載入韌體的網路卡——USB 連線中斷意味著韌體遺失。
+VirtualBox 與 VMware 的 USB 直通會增加一層複雜性。此清單上的任何機型在正確設定直通後均可運作，但 RTL8812AU 網路卡（ACH）與 MT7612U 網路卡（ACM）在 VM 環境中擁有最長的驗證紀錄。如果你只使用直通至 VM，應避免使用依賴執行時期載入韌體的網路卡——USB 連線中斷意味著韌體遺失。
 
 詳細設定說明請參閱 [ALFA 網路卡在 VirtualBox 與 VMware 中的設定](/zh-tw/blog/alfa-adapter-virtualbox-vmware-usb/)。
 
@@ -301,7 +301,7 @@ sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 
 {{< alert "circle-info" >}}
-若你正在構建專用的 NetHunter 投放盒，請使用 [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) 或 [AWUS036ACM](/zh-tw/products/alfa/awus036acm/)。其 RTL8812AU 驅動在 ARM 上可靠編譯，且沒有韌體檔案依賴性。MT7921AUN 機型在 Pi 上可以運作，但在離線部署中增加了韌體依賴的麻煩。
+若你正在構建專用的 NetHunter 投放盒，請使用 [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) 或 [AWUS036ACM](/zh-tw/products/alfa/awus036acm/)。ACH 的 RTL8812AU 驅動與 ACM 的 MT7612U（mt76x2u）驅動在 ARM 上均可靠編譯，且無韌體檔案依賴。MT7921AUN 機型在 Pi 上可以運作，但在離線部署中增加了韌體依賴的麻煩。
 {{< /alert >}}
 
 ---

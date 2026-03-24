@@ -32,7 +32,7 @@ tags: ["alfa-network", "wifi-adapter", "buyer-guide", "kali-linux", "penetration
 
 ### (c) 虚拟机还是裸机？
 
-VirtualBox与VMware的USB直通会增加一层复杂性。此清单上的任何型号在正确配置直通后均可运行，但RTL8812AU网卡（ACH、ACM）在VM环境中拥有最长的验证记录。如果你只使用直通至VM，应避免使用依赖运行时加载固件的网卡——USB连接中断意味着固件丢失。
+VirtualBox与VMware的USB直通会增加一层复杂性。此清单上的任何型号在正确配置直通后均可运行，但RTL8812AU网卡（ACH）与MT7612U网卡（ACM）在VM环境中拥有最长的验证记录。如果你只使用直通至VM，应避免使用依赖运行时加载固件的网卡——USB连接中断意味着固件丢失。
 
 详细配置说明请参阅[ALFA网卡在VirtualBox与VMware中的配置](/zh-cn/blog/alfa-adapter-virtualbox-vmware-usb/)。
 
@@ -301,7 +301,7 @@ sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 
 {{< alert "circle-info" >}}
-如果你正在构建专用的NetHunter投放盒，请使用[AWUS036ACH](/zh-cn/products/alfa/awus036ach/)或[AWUS036ACM](/zh-cn/products/alfa/awus036acm/)。其RTL8812AU驱动在ARM上可靠编译，且没有固件文件依赖。MT7921AUN型号在Pi上可以运行，但在离线部署中增加了固件依赖的麻烦。
+如果你正在构建专用的NetHunter投放盒，请使用[AWUS036ACH](/zh-cn/products/alfa/awus036ach/)或[AWUS036ACM](/zh-cn/products/alfa/awus036acm/)。ACH 的 RTL8812AU 驱动与 ACM 的 MT7612U（mt76x2u）驱动在 ARM 上均可靠编译，且无固件依赖。MT7921AUN型号在Pi上可以运行，但在离线部署中增加了固件依赖的麻烦。
 {{< /alert >}}
 
 ---

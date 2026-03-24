@@ -32,7 +32,7 @@ Se a resposta for sim — e para qualquer trabalho de teste de penetração ou a
 
 ### (c) VM ou bare metal?
 
-O passthrough de USB no VirtualBox e no VMware adiciona uma camada de complexidade. Qualquer adaptador desta lista funcionará com o passthrough configurado corretamente, mas os adaptadores com RTL8812AU (ACH, ACM) têm o histórico mais consolidado em ambientes de VM. Se você vai usar o adaptador exclusivamente em uma VM via passthrough, evite adaptadores que dependem de arquivos de firmware carregados em tempo de execução — conexões USB interrompidas significam firmware perdido.
+O passthrough de USB no VirtualBox e no VMware adiciona uma camada de complexidade. Qualquer adaptador desta lista funcionará com o passthrough configurado corretamente, mas os adaptadores RTL8812AU (ACH) e MT7612U (ACM) têm o histórico mais consolidado em ambientes de VM. Se você vai usar o adaptador exclusivamente em uma VM via passthrough, evite adaptadores que dependem de arquivos de firmware carregados em tempo de execução — conexões USB interrompidas significam firmware perdido.
 
 Consulte o artigo [Configuração do adaptador ALFA no VirtualBox e VMware](/en/blog/alfa-adapter-virtualbox-vmware-usb/) para instruções completas.
 
@@ -312,7 +312,7 @@ sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 
 {{< alert "circle-info" >}}
-Se você está construindo um dropbox NetHunter dedicado, use o [AWUS036ACH](/en/products/alfa/awus036ach/) ou o [AWUS036ACM](/en/products/alfa/awus036acm/). O driver RTL8812AU compila de forma confiável em ARM e não tem dependência de arquivos de firmware. Os modelos MT7921AUN são funcionais no Pi, mas adicionam uma dependência em arquivos de firmware que pode causar problemas em implantações offline.
+Se você está construindo um dropbox NetHunter dedicado, use o [AWUS036ACH](/en/products/alfa/awus036ach/) ou o [AWUS036ACM](/en/products/alfa/awus036acm/). O driver RTL8812AU do ACH e o mt76x2u do ACM compilam de forma confiável em ARM, sem dependência de arquivos de firmware. Os modelos MT7921AUN são funcionais no Pi, mas adicionam uma dependência em arquivos de firmware que pode causar problemas em implantações offline.
 {{< /alert >}}
 
 ---

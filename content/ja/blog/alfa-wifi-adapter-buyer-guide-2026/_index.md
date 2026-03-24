@@ -32,7 +32,7 @@ tags: ["alfa-network", "wifi-adapter", "buyer-guide", "kali-linux", "penetration
 
 ### (c) VM それともベアメタルですか？
 
-VirtualBox および VMware での USB パススルーは複雑さのレイヤーを追加します。このリストのアダプターは、適切なパススルー設定があれば動作しますが、RTL8812AU アダプター（ACH、ACM）は VM 環境で最も長い実績があります。VM 専用でパススルーを行う場合は、実行時にファームウェアファイルを読み込むアダプターを避けてください — USB 接続が失われるとファームウェアも失われます。
+VirtualBox および VMware での USB パススルーは複雑さのレイヤーを追加します。このリストのアダプターは、適切なパススルー設定があれば動作しますが、RTL8812AU アダプター（ACH）と MT7612U アダプター（ACM）は VM 環境で最も長い実績があります。VM 専用でパススルーを行う場合は、実行時にファームウェアファイルを読み込むアダプターを避けてください — USB 接続が失われるとファームウェアも失われます。
 
 完全なセットアップ手順については、[VirtualBox および VMware での ALFA アダプターセットアップ](/en/blog/alfa-adapter-virtualbox-vmware-usb/)をご覧ください。
 
@@ -311,7 +311,7 @@ sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 
 {{< alert "circle-info" >}}
-専用の NetHunter ドロップボックスを構築する場合は、[AWUS036ACH](/en/products/alfa/awus036ach/) または [AWUS036ACM](/en/products/alfa/awus036acm/) を使用してください。これらの RTL8812AU ドライバーは ARM 上で確実にコンパイルされ、ファームウェアファイルへの依存がありません。MT7921AUN モデルは Pi でも機能しますが、オフライン展開で問題を引き起こす可能性のあるファームウェアファイルへの依存関係が追加されます。
+専用の NetHunter ドロップボックスを構築する場合は、[AWUS036ACH](/en/products/alfa/awus036ach/) または [AWUS036ACM](/en/products/alfa/awus036acm/) を使用してください。ACH の RTL8812AU ドライバーと ACM の MT7612U（mt76x2u）ドライバーはいずれも ARM 上で確実にコンパイルされ、ファームウェアファイルへの依存がありません。MT7921AUN モデルは Pi でも機能しますが、オフライン展開で問題を引き起こす可能性のあるファームウェアファイルへの依存関係が追加されます。
 {{< /alert >}}
 
 ---

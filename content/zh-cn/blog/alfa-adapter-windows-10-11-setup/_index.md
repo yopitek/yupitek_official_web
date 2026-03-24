@@ -20,6 +20,8 @@ ALFA Network USB WiFi 无线网卡在安全研究和网络工程领域广为人�
 
 以下所有网卡均已在 Windows 10 和 Windows 11 上获得官方支持。驱动可用性和监听模式支持情况因芯片组而异。
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | 型号 | 芯片组 | Windows 10 | Windows 11 | 监听模式支持 |
 |---|---|---|---|---|
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | RTL8812AU | ✅ 完整支持 | ✅ 完整支持 | ⚠️ 仅被动扫描（Acrylic WiFi Pro） |
@@ -29,6 +31,8 @@ ALFA Network USB WiFi 无线网卡在安全研究和网络工程领域广为人�
 | [AWUS036AXER](/zh-cn/products/alfa/awus036axer/) | RTL8832BU | ⚠️ 需手动下载驱动 | ✅ 系统内置驱动 | ⚠️ 有限支持 |
 | [AWUS036AXM](/zh-cn/products/alfa/awus036axm/) | MT7921AUN | ⚠️ 需手动下载驱动 | ✅ 系统内置驱动 | ❌ 不支持 |
 | [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | MT7921AUN | ⚠️ 需手动下载驱动 | ✅ 系统内置驱动 | ❌ 不支持 |
+
+</div>
 
 {{< alert "circle-info" >}}
 日常 Windows 使用的首选是 AWUS036ACH（RTL8812AU）和 AWUS036ACM（MT7612U）。两款网卡均配备经 WHQL 认证签名的 Realtek/MediaTek 驱动，Windows 兼容性记录最为完善。

@@ -20,6 +20,8 @@ Linux との最大の違いはモニターモードにあります。Linux で�
 
 以下のすべてのアダプターは Windows 10 および Windows 11 で公式サポートされています。ドライバーの提供状況とモニターモードの対応はチップセットによって異なります。
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | モデル | チップセット | Windows 10 | Windows 11 | モニターモード対応 |
 |---|---|---|---|---|
 | [AWUS036ACH](/ja/products/alfa/awus036ach/) | RTL8812AU | ✅ 完全対応 | ✅ 完全対応 | ⚠️ パッシブスキャンのみ（Acrylic WiFi Pro） |
@@ -29,6 +31,8 @@ Linux との最大の違いはモニターモードにあります。Linux で�
 | [AWUS036AXER](/ja/products/alfa/awus036axer/) | RTL8832BU | ⚠️ 手動ドライバーダウンロード必要 | ✅ 同梱ドライバー | ⚠️ 制限あり |
 | [AWUS036AXM](/ja/products/alfa/awus036axm/) | MT7921AUN | ⚠️ 手動ドライバーダウンロード必要 | ✅ 同梱ドライバー | ❌ 非対応 |
 | [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AUN | ⚠️ 手動ドライバーダウンロード必要 | ✅ 同梱ドライバー | ❌ 非対応 |
+
+</div>
 
 {{< alert "circle-info" >}}
 純粋な Windows 環境での日常利用には、AWUS036ACH（RTL8812AU）と AWUS036ACM（MT7612U）が最も実績のある選択肢です。どちらも Realtek/MediaTek の WHQL 署名付きドライバーを受け取り、Windows との互換性記録が最も豊富です。

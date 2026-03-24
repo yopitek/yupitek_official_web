@@ -50,9 +50,8 @@ El controlador que necesitas depende completamente de tu chipset, no del nombre 
 | Modelo ALFA | Chipset | USB IDs | Controlador |
 |---|---|---|---|
 | [AWUS036ACH](/es/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
-| [AWUS036ACHM](/es/products/alfa/awus036achm/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
+| [AWUS036ACHM](/es/products/alfa/awus036achm/) | MT7610U | 0e8d:7610 | mt76x0u (in-kernel, EOL) |
 | [AWUS036ACM](/es/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (en el kernel) |
-| [AWUS036ACX](/es/products/alfa/awus036acx/) | MT7612U | 0e8d:7612 | mt76x2u (en el kernel) |
 | [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
 | [AWUS036AXML](/es/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (kernel 5.18+) |
 | [AWUS1900](/es/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
@@ -118,7 +117,7 @@ ls /lib/modules/$(uname -r)/build
 
 ---
 
-## Controlador RTL8812AU (AWUS036ACH, AWUS036ACHM)
+## Controlador RTL8812AU (AWUS036ACH)
 
 El RTL8812AU requiere un controlador fuera del árbol principal. Existen dos forks mantenidos por la comunidad; elige según tu sistema operativo.
 

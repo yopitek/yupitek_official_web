@@ -50,9 +50,8 @@ Linux WiFi 驱动是一个**内核模块**——一个在启动时或按需加�
 | ALFA 型号 | 芯片组 | USB ID | 驱动程序 |
 |---|---|---|---|
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
-| [AWUS036ACHM](/zh-cn/products/alfa/awus036achm/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
+| [AWUS036ACHM](/zh-cn/products/alfa/awus036achm/) | MT7610U | 0e8d:7610 | mt76x0u (in-kernel, EOL) |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u（内核内置） |
-| [AWUS036ACX](/zh-cn/products/alfa/awus036acx/) | MT7612U | 0e8d:7612 | mt76x2u（内核内置） |
 | [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
 | [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u（内核 5.18+） |
 | [AWUS1900](/zh-cn/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
@@ -118,7 +117,7 @@ ls /lib/modules/$(uname -r)/build
 
 ---
 
-## RTL8812AU 驱动（AWUS036ACH、AWUS036ACHM）
+## RTL8812AU 驱动（AWUS036ACH）
 
 RTL8812AU 需要树外驱动程序。社区维护了两个分支，根据操作系统选择合适的版本。
 

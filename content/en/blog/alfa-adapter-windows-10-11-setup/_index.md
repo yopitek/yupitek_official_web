@@ -20,6 +20,8 @@ This guide walks through driver installation, WiFi scanning, and an honest asses
 
 All adapters below are officially supported on Windows 10 and Windows 11. Driver availability and monitor mode capability differ by chipset.
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | Model | Chipset | Windows 10 | Windows 11 | Monitor Mode Support |
 |---|---|---|---|---|
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | ✅ Full support | ✅ Full support | ⚠️ Passive scan only (Acrylic WiFi Pro) |
@@ -29,6 +31,8 @@ All adapters below are officially supported on Windows 10 and Windows 11. Driver
 | [AWUS036AXER](/en/products/alfa/awus036axer/) | RTL8832BU | ⚠️ Manual driver download | ✅ In-box driver | ⚠️ Limited |
 | [AWUS036AXM](/en/products/alfa/awus036axm/) | MT7921AUN | ⚠️ Manual driver download | ✅ In-box driver | ❌ Not supported |
 | [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | ⚠️ Manual driver download | ✅ In-box driver | ❌ Not supported |
+
+</div>
 
 {{< alert "circle-info" >}}
 For pure Windows day-to-day use, the AWUS036ACH (RTL8812AU) and AWUS036ACM (MT7612U) are the most battle-tested choices. Both receive Realtek/MediaTek WHQL-signed drivers and have the broadest Windows compatibility record.

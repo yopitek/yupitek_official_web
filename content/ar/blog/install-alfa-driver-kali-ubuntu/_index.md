@@ -51,9 +51,8 @@ tags: ["تثبيت-برنامج-تشغيل", "Kali-Linux", "Ubuntu", "RTL8812AU"
 | موديل ALFA | الشريحة المعالجة | معرفات USB | برنامج التشغيل |
 |---|---|---|---|
 | [AWUS036ACH](/ar/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
-| [AWUS036ACHM](/ar/products/alfa/awus036achm/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
+| [AWUS036ACHM](/ar/products/alfa/awus036achm/) | MT7610U | 0e8d:7610 | mt76x0u (in-kernel, EOL) |
 | [AWUS036ACM](/ar/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (في النواة) |
-| [AWUS036ACX](/ar/products/alfa/awus036acx/) | MT7612U | 0e8d:7612 | mt76x2u (في النواة) |
 | [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
 | [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (نواة 5.18+) |
 | [AWUS1900](/ar/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
@@ -119,7 +118,7 @@ ls /lib/modules/$(uname -r)/build
 
 ---
 
-## برنامج تشغيل RTL8812AU (AWUS036ACH، AWUS036ACHM)
+## برنامج تشغيل RTL8812AU (AWUS036ACH)
 
 تتطلب RTL8812AU برنامج تشغيل خارج الشجرة. يوجد فرعان يصونهما المجتمع؛ اختر بناءً على نظامك.
 

@@ -22,6 +22,8 @@ tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "تثبيت-�
 
 جميع المحولات أدناه مدعومة رسمياً على Windows 10 وWindows 11. يختلف توافر برامج التشغيل ودعم وضع المراقبة بحسب مجموعة الشرائح (Chipset).
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | الطراز | مجموعة الشرائح | Windows 10 | Windows 11 | دعم وضع المراقبة |
 |---|---|---|---|---|
 | [AWUS036ACH](/ar/products/alfa/awus036ach/) | RTL8812AU | ✅ دعم كامل | ✅ دعم كامل | ⚠️ مسح سلبي فقط (Acrylic WiFi Pro) |
@@ -31,6 +33,8 @@ tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "تثبيت-�
 | [AWUS036AXER](/ar/products/alfa/awus036axer/) | RTL8832BU | ⚠️ تنزيل برنامج التشغيل يدوياً | ✅ برنامج تشغيل مدمج | ⚠️ محدود |
 | [AWUS036AXM](/ar/products/alfa/awus036axm/) | MT7921AUN | ⚠️ تنزيل برنامج التشغيل يدوياً | ✅ برنامج تشغيل مدمج | ❌ غير مدعوم |
 | [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AUN | ⚠️ تنزيل برنامج التشغيل يدوياً | ✅ برنامج تشغيل مدمج | ❌ غير مدعوم |
+
+</div>
 
 {{< alert "circle-info" >}}
 للاستخدام اليومي على Windows، يُعدّ AWUS036ACH (RTL8812AU) وAWUS036ACM (MT7612U) الخياران الأكثر اختباراً وموثوقية. كلاهما يحصل على برامج تشغيل WHQL موقَّعة من Realtek/MediaTek، ولديهما أوسع سجل توافق مع Windows.

@@ -20,6 +20,8 @@ Este guia aborda a instalação de drivers, a varredura de redes WiFi e uma aval
 
 Todos os adaptadores abaixo têm suporte oficial no Windows 10 e Windows 11. A disponibilidade de drivers e o suporte a modo monitor variam conforme o chipset.
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | Modelo | Chipset | Windows 10 | Windows 11 | Suporte a Modo Monitor |
 |---|---|---|---|---|
 | [AWUS036ACH](/pt/products/alfa/awus036ach/) | RTL8812AU | ✅ Suporte completo | ✅ Suporte completo | ⚠️ Apenas varredura passiva (Acrylic WiFi Pro) |
@@ -29,6 +31,8 @@ Todos os adaptadores abaixo têm suporte oficial no Windows 10 e Windows 11. A d
 | [AWUS036AXER](/pt/products/alfa/awus036axer/) | RTL8832BU | ⚠️ Download manual do driver | ✅ Driver incluído | ⚠️ Limitado |
 | [AWUS036AXM](/pt/products/alfa/awus036axm/) | MT7921AUN | ⚠️ Download manual do driver | ✅ Driver incluído | ❌ Não suportado |
 | [AWUS036AXML](/pt/products/alfa/awus036axml/) | MT7921AUN | ⚠️ Download manual do driver | ✅ Driver incluído | ❌ Não suportado |
+
+</div>
 
 {{< alert "circle-info" >}}
 Para uso diário no Windows, o AWUS036ACH (RTL8812AU) e o AWUS036ACM (MT7612U) são as escolhas mais testadas e comprovadas. Ambos recebem drivers WHQL assinados pela Realtek/MediaTek e têm o histórico mais amplo de compatibilidade com Windows.

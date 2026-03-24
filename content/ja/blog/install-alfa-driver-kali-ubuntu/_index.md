@@ -50,9 +50,8 @@ MediaTek MT7612U のような一般的なチップセットなら、この処理
 | ALFA モデル | チップセット | USB ID | ドライバー |
 |---|---|---|---|
 | [AWUS036ACH](/ja/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
-| [AWUS036ACHM](/ja/products/alfa/awus036achm/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
+| [AWUS036ACHM](/ja/products/alfa/awus036achm/) | MT7610U | 0e8d:7610 | mt76x0u (in-kernel, EOL) |
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u（カーネル内蔵） |
-| [AWUS036ACX](/ja/products/alfa/awus036acx/) | MT7612U | 0e8d:7612 | mt76x2u（カーネル内蔵） |
 | [AWUS036AX](/ja/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
 | [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u（カーネル 5.18+） |
 | [AWUS1900](/ja/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
@@ -118,7 +117,7 @@ ls /lib/modules/$(uname -r)/build
 
 ---
 
-## RTL8812AU ドライバー（AWUS036ACH・AWUS036ACHM）
+## RTL8812AU ドライバー（AWUS036ACH）
 
 RTL8812AU はアウトオブツリードライバーが必要です。コミュニティが管理する 2 つのフォークがあり、OS によって使い分けます。
 

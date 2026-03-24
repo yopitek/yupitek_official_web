@@ -67,7 +67,7 @@ Para verificar la versión del driver:
 2. Haz clic en la pestaña **Controlador**.
 3. Anota la **Versión del controlador** y la **Fecha del controlador** para futuras referencias.
 
-### Método B: Instalación Manual del Driver — MT7921AUN (AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML)
+### Método B: Instalación Manual del Driver — MT7921AUN (AWUS036AXM / AWUS036AXML)
 
 El driver MT7921AUN de MediaTek está incluido en el almacén de drivers de Windows 11 (build 22000+). Para Windows 10:
 
@@ -76,7 +76,7 @@ El driver MT7921AUN de MediaTek está incluido en el almacén de drivers de Wind
 3. Reinicia el equipo después de la instalación.
 
 {{< alert "circle-info" >}}
-Los usuarios de Windows 11 con adaptadores MT7921AUN/MT7921AUN generalmente obtienen un driver funcional pocos minutos después de conectar el adaptador, incluso en una instalación nueva — no se requiere descarga manual.
+Los usuarios de Windows 11 con adaptadores MT7921AUN (AWUS036AXM, AWUS036AXML) generalmente obtienen un driver funcional pocos minutos después de conectar el adaptador, incluso en una instalación nueva — no se requiere descarga manual.
 {{< /alert >}}
 
 ### Códigos de Error Comunes en el Administrador de Dispositivos

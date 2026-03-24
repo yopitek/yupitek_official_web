@@ -72,9 +72,9 @@ Las antenas externas desmontables (conectores RP-SMA) te dan flexibilidad. Puede
 | Adaptador | Estándar | Chipset | Modo Monitor | Antenas | Mejor Para |
 |---|---|---|---|---|---|
 | [AWUS036ACH](/es/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | 2× RP-SMA | El mejor en general |
-| [AWUS036AXML](/es/products/alfa/awus036axml/) | Wi-Fi 6E AX1800 | MT7921AUN | ✅ | 1× RP-SMA | A prueba de futuro |
-| [AWUS036ACM](/es/products/alfa/awus036acm/) | Wi-Fi 5 AC600 | MT7612U | ✅ | 1× RP-SMA | Compacto y económico |
-| [AWUS036AX](/es/products/alfa/awus036ax/) | Wi-Fi 6 AX1800 | MT7612U variant | ✅ | 2× RP-SMA | Wi-Fi 6 |
+| [AWUS036AXML](/es/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 1× RP-SMA | A prueba de futuro |
+| [AWUS036ACM](/es/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | Compacto y económico |
+| [AWUS036AX](/es/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limitado | Integrada | Wi-Fi 6 Windows |
 | [AWUS1900](/es/products/alfa/awus1900/) | Wi-Fi 5 AC1900 | RTL8814AU | ✅ | 4× RP-SMA | Máximo alcance |
 
 ---

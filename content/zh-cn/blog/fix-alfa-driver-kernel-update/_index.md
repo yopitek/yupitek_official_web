@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 ---
 
-你执行了 `sudo apt upgrade`，重新启动后 ALFA 网卡消失了——没有接口、没有指示灯、什么都没有。这是 Linux 用户询问 ALFA Network USB WiFi 网卡时最常见的问题，而内核更新几乎是所有问题的根源。本指南将带你系统性地诊断并修复两种最常受影响的芯片组：**RTL8812AU**（AWUS036ACH、ACM、ACS）与 **MT7921AUN**（AWUS036AXM、AXML、AX）。按照各节步骤操作，你的网卡应在 15 分钟内恢复正常。
+你执行了 `sudo apt upgrade`，重新启动后 ALFA 网卡消失了——没有接口、没有指示灯、什么都没有。这是 Linux 用户询问 ALFA Network USB WiFi 网卡时最常见的问题，而内核更新几乎是所有问题的根源。本指南将带你系统性地诊断并修复两种最常受影响的芯片组：**RTL8812AU**（AWUS036ACH、ACM、ACS）与 **MT7921AUN**（AWUS036AXM、AXML）。按照各节步骤操作，你的网卡应在 15 分钟内恢复正常。
 
 ---
 
@@ -165,7 +165,7 @@ sudo apt update && sudo apt install realtek-rtl88xxau-dkms
 
 ---
 
-## 修复：MT7921U 驱动程序（AWUS036AX、AXM、AXML、AXER）
+## 修复：MT7921U 驱动程序（AWUS036AXM、AXML）
 
 MT7921U（Wi-Fi 6E）芯片组采用完全不同的路径。由于自 Linux 5.18 起即为**内核内置驱动程序**，无需 DKMS、无需编译、也无需从 GitHub 克隆。内核更新本不应破坏它——但固件打包问题有时会造成影响。
 

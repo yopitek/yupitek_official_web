@@ -246,7 +246,7 @@ echo "mt76x2u" | sudo tee -a /etc/modules
 
 ---
 
-## MT7921AUN 驅動程式（AWUS036AX、AWUS036AXML — Wi-Fi 6E）
+## MT7921AUN 驅動程式（AWUS036AXM、AWUS036AXML — Wi-Fi 6E）
 
 MT7921AUN 是 MediaTek 的 Wi-Fi 6E 晶片組。其 Linux 驅動程式 `mt7921u` 已在核心 **5.18 版**被合併進主線。
 
@@ -421,7 +421,7 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | MT7612U | 內建（`mt76x2u`）| 內建（`mt76x2u`）|
-| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | RTL8832BU | 內建（`mt7921u`，核心 5.18+）| 內建（`mt7921u`，核心 6.8）|
+| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | N/A |
 | [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7921AUN | 內建（`mt7921u`，核心 5.18+）| 內建（`mt7921u`，核心 6.8）|
 | [AWUS1900](/zh-tw/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 

@@ -62,7 +62,7 @@ Wi-Fi 5 世代（ACH、ACM、ACS）は安価で、より安定したドライバ
 **凡例：** ✅ サポート済み · ⚠️ 限定的／部分的 · ❌ 非サポート
 
 {{< alert "circle-info" >}}
-**macOS に関する注記：** 全 ALFA アダプターは macOS Ventura および Sonoma でドライバーの問題に直面します。最も一般的なコミュニティの解決策は、Kali Linux を VM で動作させ USB パススルーを使用することです。AWUS036EACS は例外で、macOS ネイティブの Qualcomm ドライバーを介して動作する可能性がありますが、monitor mode は利用できません。
+**macOS に関する注記：** 全 ALFA アダプターは macOS Ventura および Sonoma でドライバーの問題に直面します。最も一般的なコミュニティの解決策は、Kali Linux を VM で動作させ USB パススルーを使用することです。AWUS036EACS は例外で、macOS ネイティブの Realtek ドライバーを介して動作する可能性がありますが、monitor mode は利用できません。
 {{< /alert >}}
 
 ---
@@ -94,11 +94,11 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 ### AWUS036ACM — 低価格デュアルバンドの選択肢
 
-[AWUS036ACM](/en/products/alfa/awus036acm/) は ACH と同じ RTL8812AU チップセットを搭載していますが、RP-SMA コネクターが1つで、より低価格で提供されています。機能的に、monitor mode と injection サポートは同一です。
+[AWUS036ACM](/en/products/alfa/awus036acm/) は ACH の RTL8812AU とは異なるファミリーの MediaTek MT7612U チップセットを搭載しています。2本の RP-SMA コネクターを備えたデュアルアンテナ構成で、カーネル 4.19 以降のメインライン `mt76x2u` ドライバーによりドライバーのコンパイルが不要です。monitor mode と packet injection をサポートしています。
 
-アンテナポートが1つで済み、ACH の拡張送信電力が不要であれば、ACM はより少ない費用で同じユースケースをカバーします。監査チームで複数のアダプターをまとめて購入するキット展開では一般的な選択肢です。
+MT7612U のメインラインドライバーサポートにより、ACM はカーネル更新後も `dkms-rtl8812au` のリビルドなしに動作し続けます。監査チームで複数のアダプターをまとめて購入するキット展開では一般的な選択肢です。
 
-**ACH より ACM を選ぶ場面：** 予算の制約、単一オペレーターでの使用、アンテナダイバーシティが優先事項でない状況。
+**ACH より ACM を選ぶ場面：** 予算の制約、カーネル更新後のドライバーメンテナンスを最小化したい場合、またはメインラインカーネルドライバーを優先する環境。
 
 ### AWUS036ACS — 軽量でポータブル
 
@@ -110,7 +110,7 @@ RTL8811AU ドライバーは Kali 上で同じ `rtl8812au-dkms` パッケージ�
 
 ### AWUS036EACS — 一般用途向け、ペンテストには不向き
 
-[AWUS036EACS](/en/products/alfa/awus036eacs/) は Qualcomm RTL8821CU チップセットを搭載し、`rtl88xxcu` カーネルドライバーを使用します。このチップセットはクライアント接続向けに設計されており、パケット操作向けではありません。`rtl88xxcu` での monitor mode サポートは不安定であり、標準ドライバー設定では packet injection はサポートされていません。
+[AWUS036EACS](/en/products/alfa/awus036eacs/) は Realtek RTL8821CU チップセットを搭載し、`rtl88xxcu` カーネルドライバーを使用します。このチップセットはクライアント接続向けに設計されており、パケット操作向けではありません。`rtl88xxcu` での monitor mode サポートは不安定であり、標準ドライバー設定では packet injection はサポートされていません。
 
 {{< alert "triangle-exclamation" >}}
 **AWUS036EACS をペネトレーションテスト、レッドチーム運用、または monitor mode や packet injection を必要とするタスクに使用しないでください。** 一般的な無線接続、DJI ドローンコントローラーの距離延長（一般的に組み合わせられる用途）、標準クライアントアダプターの動作が許容される Windows 優先の展開に適しています。
@@ -124,27 +124,27 @@ macOS 互換性においてリスト入りの理由があります — Realtek �
 
 Wi-Fi 6（802.11ax）は、高密度環境でのパフォーマンス、ターゲットリッチな MU-MIMO シナリオ、ネットワーク識別のための BSS Coloring に意義ある改善をもたらしました。エンタープライズ展開が 802.11ax インフラへ積極的にシフトするにつれ、Wi-Fi 6 アダプターは無線監査担当者にとってますます重要になっています。
 
-両方の Wi-Fi 6 ALFA アダプターは MediaTek MT7921AUN チップセットを使用しており、これは Linux カーネル 5.18 で `mt7921u` ドライバーとしてメインラインに統合されました。
+両方の Wi-Fi 6 ALFA アダプター（AX、AXER）は Realtek RTL8832BU チップセットを使用しています。Linux では、カーネル 6.14 未満で RTL8832BU ドライバーはアウトオブカーネル（OOK）となり、monitor mode と packet injection は限定的なサポートとなります。主に Windows クライアント接続向けに設計されています。
 
 ### AWUS036AX — クリーンな Wi-Fi 6 の選択肢
 
-[AWUS036AX](/en/products/alfa/awus036ax/) は ACH 構成の Wi-Fi 6 直接後継モデルです：デュアル外部 RP-SMA アンテナ、2T2R 動作、2.4 GHz および 5 GHz バンドで AX1800（理論上最大 1800 Mbps）。
+[AWUS036AX](/en/products/alfa/awus036ax/) は RTL8832BU チップセットを搭載した Wi-Fi 6 アダプターです：統合アンテナ（外部 RP-SMA コネクターなし）、2.4 GHz および 5 GHz バンドで AX1800（理論上最大 1800 Mbps）。
 
 **ドライバーの状態：**
-- カーネル ≥ 5.18：アップデート済みの Kali/Ubuntu システムでドライバーが自動的に読み込まれ、追加パッケージは不要
-- 古いカーネル：`firmware-misc-nonfree` が必要；まずカーネルのアップグレードを検討
-- Monitor mode：サポート済み
-- Packet injection：サポート済み
+- Windows：完全サポート（ALFA 提供ドライバー）
+- カーネル ≥ 6.14：インカーネルドライバーサポート
+- カーネル < 6.14：アウトオブカーネル（OOK）ドライバーが必要
+- Monitor mode：⚠️ 限定的
 
-**monitor mode に関する実用的な注記：** MT7921AUN の monitor mode 実装は、アグレッシブなチャネルホッピングを実行した際に特定のカーネル／ファームウェアの組み合わせで時折ファームウェアクラッシュを示しました。これは MT7921AUN ファミリー全体に影響します。安定性が重要な場合はカーネルを固定し、ライブエンゲージメント前にテストしてください。
+**monitor mode に関する実用的な注記：** RTL8832BU の monitor mode サポートはカーネル 6.14 未満では限定的です。ペネトレーションテストや packet injection が主な用途であれば、RTL8812AU ベースのアダプター（ACH、ACM）または MT7921AUN ベースの AXM/AXML を検討してください。
 
 {{< alert "circle-info" >}}
-**カーネルの確認：** 購入前に `uname -r` を実行してカーネルバージョンを確認してください。Kali 2024.x では、デフォルトカーネルが ≥ 6.x のため、MT7921AUN はそのまま動作します。HWE スタックを使用した Ubuntu 22.04 LTS では 6.5+ になっているはずです。
+**カーネルの確認：** 購入前に `uname -r` を実行してカーネルバージョンを確認してください。カーネル ≥ 6.14 では RTL8832BU のインカーネルドライバーが利用可能です。
 {{< /alert >}}
 
 ### AWUS036AXER — 長距離バリアント
 
-[AWUS036AXER](/en/products/alfa/awus036axer/) はチップセットとアンテナ構成において AWUS036AX とハードウェア的に同一ですが、動作距離を延ばすための強化された RF アンプを追加しています。ドライバーの状況は同一です — 同じ MT7921AUN、同じカーネルサポートパス、同じ monitor mode と injection の動作。
+[AWUS036AXER](/en/products/alfa/awus036axer/) は AWUS036AX と同じ RTL8832BU チップセットを搭載した超コンパクトなナノフォームファクターのアダプターです。ドライバーの状況は同一です — 同じ RTL8832BU、同じ Linux の制限（カーネル < 6.14 では OOK）、同じ Windows 互換性。
 
 動作距離が決定要因である場合に AX より AXER を選択してください：大規模キャンパスのサイトサーベイ、屋外評価、または AP が遠距離にあるシナリオ。価格プレミアムは控えめで、距離が展開に重要であれば正当化できます。
 
@@ -158,20 +158,20 @@ Wi-Fi 6E は 802.11ax を 6 GHz バンドに拡張し、新しい 5.925–7.125 
 
 ### AWUS036AXM — Wi-Fi 6E エントリーポイント
 
-[AWUS036AXM](/en/products/alfa/awus036axm/) は 6 GHz バンドサポートが有効になった MT7921AUN チップセットを使用しています。AXML より小型の単一 RP-SMA コネクターが付属しています。
+[AWUS036AXM](/en/products/alfa/awus036axm/) は 6 GHz バンドサポートが有効になった MT7921AUN チップセットを使用しています。2本の RP-SMA コネクターが付属し、2T2R デュアルアンテナ動作に対応しています。
 
 主に 2.4 GHz および 5 GHz 環境で作業しながら、フラッグシップ価格を払わずに新興ネットワーク評価のための 6 GHz 対応を必要とするオペレーターにとって、AXM は論理的なエントリーポイントです。
 
 **バンドカバレッジ：** 2.4 GHz、5 GHz、6 GHz（トライバンド）
-**アンテナ：** 1× RP-SMA — 対応する ALFA アンテナと交換可能
+**アンテナ：** 2× RP-SMA — 対応する ALFA アンテナと交換可能
 
 ### AWUS036AXML — フラッグシップ 6E アダプター
 
-[AWUS036AXML](/en/products/alfa/awus036axml/) は ALFA の現在の最上位アダプターです。MT7921AUN チップセット（MT7921AUN からのアップグレード）、2T2R 動作のためのデュアル RP-SMA コネクター、6E ラインナップ中最高の送信電力定格を備えています。
+[AWUS036AXML](/en/products/alfa/awus036axml/) は ALFA の現在の最上位アダプターです。MT7921AUN チップセット、シングル高ゲイン RP-SMA コネクター、USB-C 3.2 接続、Bluetooth 5.2 を備えています。
 
 **主要仕様：**
 - チップセット：MT7921AUN（MediaTek）
-- RP-SMA コネクター × 2 — 完全な 2T2R 構成
+- RP-SMA コネクター × 1（シングル高ゲイン）
 - トライバンド：2.4 GHz + 5 GHz + 6 GHz
 - AX3000 クラス（バンド全体で理論上最大 3000 Mbps）
 - ALFA 6E ラインナップ中最高の電力出力
@@ -195,7 +195,7 @@ Wi-Fi 6E は 802.11ax を 6 GHz バンドに拡張し、新しい 5.925–7.125 
 |---|---|---|---|---|---|
 | [AWUS036ACS](/en/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | 手動ビルド | ✅ rtl8812au-dkms | ✅ ALFA ドライバー |
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | 手動ビルド | ✅ rtl8812au-dkms | ✅ ALFA ドライバー |
-| [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | `dkms-rtl8812au` | 手動ビルド | ✅ mt76x2u (≥4.19) | ✅ ALFA ドライバー |
+| [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | `mt76x2u (in-kernel)` | カーネル ≥ 4.19 | ✅ mt76x2u (≥4.19) | ✅ ALFA ドライバー |
 | [AWUS036EACS](/en/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` | カーネル内蔵 | ⚠️ 限定的 | ✅ 内蔵 |
 | [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | `firmware-misc-nonfree` | カーネル ≥ 5.18 | ⚠️ ファームウェア要 | ✅ ALFA ドライバー |
 | [AWUS036AXER](/en/products/alfa/awus036axer/) | RTL8832BU | `firmware-misc-nonfree` | カーネル ≥ 5.18 | ⚠️ ファームウェア要 | ✅ ALFA ドライバー |
@@ -296,7 +296,7 @@ Acrylic Wi-Fi、inSSIDer、または Windows 版の Wireshark などのツール
 
 2026年において、macOS Sonoma に対して公式サポートされている ALFA アダプターはありません。RTL8812AU 向けのコミュニティ kext プロジェクトは存在しますが、署名されておらず System Integrity Protection（SIP）を無効にする必要があります。現実的な推奨事項は、ALFA アダプターへの USB パススルーで Kali Linux を VM（Parallels、VMware Fusion、または UTM）で実行することです。
 
-RTL8821CU を搭載した AWUS036EACS は、ネイティブの Qualcomm/Atheros kext を通じて最も機能的な macOS サポートを持っていますが、標準クライアント接続のみで monitor mode は対応していません。
+RTL8821CU を搭載した AWUS036EACS は、ネイティブの Realtek kext を通じて最も機能的な macOS サポートを持っていますが、標準クライアント接続のみで monitor mode は対応していません。
 
 ### Raspberry Pi / Kali NetHunter
 
@@ -321,7 +321,7 @@ sudo apt update && sudo apt install -y firmware-misc-nonfree
 ドライバーの成熟度、ハードウェア機能、実際のユースケース全体にわたって全8モデルを評価した結果、ほとんどのプロフェッショナルをカバーする3つの選択肢は以下の通りです：
 
 **コスパ重視：[AWUS036ACM](/en/products/alfa/awus036acm/)**
-単一アンテナの RTL8812AU アダプターは、デュアルバンドラインナップ中最低価格で完全な monitor mode と packet injection サポートを提供します。信頼性の高いツールを過剰な投資なしに求めるコンサルタント、または量でアダプターを購入するチームに最適です。
+MT7612U チップセットのデュアルアンテナアダプターは、デュアルバンドラインナップ中最低価格で完全な monitor mode と packet injection サポートを提供します。信頼性の高いツールを過剰な投資なしに求めるコンサルタント、または量でアダプターを購入するチームに最適です。
 
 **万能：[AWUS036ACH](/en/products/alfa/awus036ach/)**
 デュアルアンテナ、500 mW の RTL8812AU アダプターは、セキュリティ専門家に最も広く推奨される単一アダプターです。2.4 GHz および 5 GHz をカバーし、外部アンテナを受け入れ、このリストのどのアダプターよりも成熟したドライバースタックを持ち、ACM よりも若干高いだけです。1つのアダプターを購入する場合で、まだ必要なものが明確でなければ、これを買ってください。

@@ -248,7 +248,7 @@ Esta es la gran ventaja del chipset MT7612U: cero compilación, sin código fuen
 
 ---
 
-## Controlador MT7921AUN (AWUS036AX, AWUS036AXML — Wi-Fi 6E)
+## Controlador MT7921AUN (AWUS036AXM, AWUS036AXML — Wi-Fi 6E)
 
 El MT7921AUN es el chipset Wi-Fi 6E de MediaTek. Su controlador Linux, `mt7921u`, se integró al kernel principal en la **versión 5.18**.
 
@@ -423,7 +423,7 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/es/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/es/products/alfa/awus036acm/) | MT7612U | Integrado (`mt76x2u`) | Integrado (`mt76x2u`) |
-| [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | Integrado (`mt7921u`, kernel 5.18+) | Integrado (`mt7921u`, kernel 6.8) |
+| [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
 | [AWUS036AXML](/es/products/alfa/awus036axml/) | MT7921AUN | Integrado (`mt7921u`, kernel 5.18+) | Integrado (`mt7921u`, kernel 6.8) |
 | [AWUS1900](/es/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 

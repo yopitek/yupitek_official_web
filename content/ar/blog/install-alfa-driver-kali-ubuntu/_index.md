@@ -247,7 +247,7 @@ echo "mt76x2u" | sudo tee -a /etc/modules
 
 ---
 
-## برنامج تشغيل MT7921AUN (AWUS036AX، AWUS036AXML — Wi-Fi 6E)
+## برنامج تشغيل MT7921AUN (AWUS036AXM، AWUS036AXML — Wi-Fi 6E)
 
 MT7921AUN هي شريحة Wi-Fi 6E من MediaTek. اندمج برنامج تشغيلها على Linux، `mt7921u`، في النواة الرئيسية منذ **الإصدار 5.18**.
 
@@ -422,7 +422,7 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/ar/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/ar/products/alfa/awus036acm/) | MT7612U | مدمج (`mt76x2u`) | مدمج (`mt76x2u`) |
-| [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | مدمج (`mt7921u`، نواة 5.18+) | مدمج (`mt7921u`، نواة 6.8) |
+| [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
 | [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AUN | مدمج (`mt7921u`، نواة 5.18+) | مدمج (`mt7921u`، نواة 6.8) |
 | [AWUS1900](/ar/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 

@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 ---
 
-Ejecutas `sudo apt upgrade`, reinicias y tu adaptador ALFA ha desaparecido. Sin interfaz, sin luces, nada. Esta es la pregunta de soporte más frecuente en torno a los adaptadores ALFA Network USB WiFi en Linux, y las actualizaciones del kernel son casi siempre el culpable. Esta guía te lleva a través de un proceso sistemático de diagnóstico y reparación para las dos familias de chipsets más afectadas: **RTL8812AU** (presente en el AWUS036ACH, ACM y ACS) y **MT7921AUN** (presente en el AWUS036AXM, AXML y AX). Sigue cada sección en orden y tu adaptador estará de vuelta en línea en menos de 15 minutos.
+Ejecutas `sudo apt upgrade`, reinicias y tu adaptador ALFA ha desaparecido. Sin interfaz, sin luces, nada. Esta es la pregunta de soporte más frecuente en torno a los adaptadores ALFA Network USB WiFi en Linux, y las actualizaciones del kernel son casi siempre el culpable. Esta guía te lleva a través de un proceso sistemático de diagnóstico y reparación para las dos familias de chipsets más afectadas: **RTL8812AU** (presente en el AWUS036ACH, ACM y ACS) y **MT7921AUN** (presente en el AWUS036AXM y AXML). Sigue cada sección en orden y tu adaptador estará de vuelta en línea en menos de 15 minutos.
 
 ---
 
@@ -165,7 +165,7 @@ Este único comando instala el código fuente del controlador, lo registra con D
 
 ---
 
-## Corrección: Controlador MT7921U (AWUS036AX, AXM, AXML, AXER)
+## Corrección: Controlador MT7921U (AWUS036AXM, AXML)
 
 El chipset MT7921U (Wi-Fi 6E) toma un camino completamente diferente. Como es un **controlador dentro del kernel** desde Linux 5.18, no hay DKMS, no hay compilación y no hay clonación de GitHub. Las actualizaciones del kernel no deberían romperlo — pero los problemas de empaquetado de firmware a veces sí lo hacen.
 

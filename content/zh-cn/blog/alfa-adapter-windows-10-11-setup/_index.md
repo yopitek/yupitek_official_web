@@ -67,7 +67,7 @@ Windows Update 需要有效的互联网连接才能下载驱动。如果您正�
 2. 点击**驱动程序**标签页。
 3. 记录**驱动程序版本**和**驱动程序日期**，以备日后参考。
 
-### 方法 B：手动安装驱动 — MT7921AUN（AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML）
+### 方法 B：手动安装驱动 — MT7921AUN（AWUS036AXM / AWUS036AXML）
 
 MediaTek MT7921AUN 驱动已内置于 Windows 11 驱动存储库（build 22000+）。对于 Windows 10：
 
@@ -76,7 +76,7 @@ MediaTek MT7921AUN 驱动已内置于 Windows 11 驱动存储库（build 22000+�
 3. 安装后重启系统。
 
 {{< alert "circle-info" >}}
-使用 MT7921AUN/MT7921AUN 网卡的 Windows 11 用户，通常在插入网卡后数分钟内即可获得可用驱动，全新安装系统亦无需手动下载。
+使用 MT7921AUN（AWUS036AXM、AWUS036AXML）网卡的 Windows 11 用户，通常在插入网卡后数分钟内即可获得可用驱动，全新安装系统亦无需手动下载。
 {{< /alert >}}
 
 ### 常见设备管理器错误代码

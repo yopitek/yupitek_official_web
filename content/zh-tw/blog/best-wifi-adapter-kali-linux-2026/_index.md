@@ -47,8 +47,8 @@ ALFA Network 是無線網卡領域最受資安社群信賴的品牌，以下是 
 | 型號 | Wi-Fi 標準 | 晶片組 | 監聽模式 | 封包注入 | 天線 | 最高速率 | 適合場景 |
 |------|-----------|--------|----------|----------|------|----------|----------|
 | AWUS036ACH | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | ✅ | 2× RP-SMA | 1200 Mbps | 最佳全能款 |
-| AWUS036AXML | Wi-Fi 6E AX1800 | MT7921AUN | ✅ | ✅ | 1× RP-SMA | 1800 Mbps | 前瞻性選擇 |
-| AWUS036ACM | Wi-Fi 5 AC600 | MT7612U | ✅ | ✅ | 1× RP-SMA | 600 Mbps | 輕巧平價 |
+| AWUS036AXML | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | ✅ | 1× RP-SMA | 3000 Mbps | 前瞻性選擇 |
+| AWUS036ACM | Wi-Fi 5 AC1200 | MT7612U | ✅ | ✅ | 2× RP-SMA | 1200 Mbps | 輕巧平價 |
 | AWUS1900 | Wi-Fi 5 AC1900 | RTL8814AU | ✅ | ✅ | 4× RP-SMA | 1900 Mbps | 最大覆蓋範圍 |
 
 ---

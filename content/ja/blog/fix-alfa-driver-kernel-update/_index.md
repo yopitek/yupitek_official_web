@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 ---
 
-`sudo apt upgrade` を実行して再起動したら、ALFAアダプターが消えてしまいました——インターフェースなし、ランプなし、何もなし。これはLinuxでALFA Network USB WiFiアダプターを使うユーザーから最もよく寄せられるサポートの質問であり、カーネルの更新がほぼ常に原因です。このガイドでは、最も影響を受ける2つのチップセットファミリーの体系的な診断と修復手順を説明します：**RTL8812AU**（AWUS036ACH、ACM、ACS搭載）と **MT7921AUN**（AWUS036AXM、AXML、AX搭載）。各セクションの手順に従えば、15分以内にアダプターが復旧します。
+`sudo apt upgrade` を実行して再起動したら、ALFAアダプターが消えてしまいました——インターフェースなし、ランプなし、何もなし。これはLinuxでALFA Network USB WiFiアダプターを使うユーザーから最もよく寄せられるサポートの質問であり、カーネルの更新がほぼ常に原因です。このガイドでは、最も影響を受ける2つのチップセットファミリーの体系的な診断と修復手順を説明します：**RTL8812AU**（AWUS036ACH、ACM、ACS搭載）と **MT7921AUN**（AWUS036AXM、AXML搭載）。各セクションの手順に従えば、15分以内にアダプターが復旧します。
 
 ---
 
@@ -165,7 +165,7 @@ sudo apt update && sudo apt install realtek-rtl88xxau-dkms
 
 ---
 
-## 修復：MT7921Uドライバー（AWUS036AX、AXM、AXML、AXER）
+## 修復：MT7921Uドライバー（AWUS036AXM、AXML）
 
 MT7921U（Wi-Fi 6E）チップセットはまったく異なるアプローチを取ります。Linux 5.18以降は**カーネル内ドライバー**なので、DKMS不要、コンパイル不要、GitHubクローン不要です。カーネルの更新で壊れることはないはずですが、ファームウェアのパッケージ問題が影響することがあります。
 

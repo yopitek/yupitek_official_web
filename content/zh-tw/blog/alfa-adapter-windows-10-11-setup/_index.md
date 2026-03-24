@@ -67,7 +67,7 @@ Windows Update 需要有效的網路連線才能下載驅動程式。若您正�
 2. 點選**驅動程式**索引標籤。
 3. 記下**驅動程式版本**與**驅動程式日期**以備日後參考。
 
-### 方法 B：手動安裝驅動程式 — MT7921AUN（AWUS036AX / AWUS036AXER / AWUS036AXM / AWUS036AXML）
+### 方法 B：手動安裝驅動程式 — MT7921AUN（AWUS036AXM / AWUS036AXML）
 
 MediaTek MT7921AUN 驅動程式已內建於 Windows 11 驅動程式存放區（組建 22000 以上）。Windows 10 請依下列步驟操作：
 
@@ -76,7 +76,7 @@ MediaTek MT7921AUN 驅動程式已內建於 Windows 11 驅動程式存放區（�
 3. 安裝完成後重新開機。
 
 {{< alert "circle-info" >}}
-使用 MT7921AUN／MT7921AUN 網路卡的 Windows 11 使用者，即使是全新安裝，通常在插入網路卡數分鐘內便可取得可用的驅動程式，無需手動下載。
+使用 MT7921AUN（AWUS036AXM、AWUS036AXML）網路卡的 Windows 11 使用者，即使是全新安裝，通常在插入網路卡數分鐘內便可取得可用的驅動程式，無需手動下載。
 {{< /alert >}}
 
 ### 常見裝置管理員錯誤代碼

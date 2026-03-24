@@ -246,7 +246,7 @@ echo "mt76x2u" | sudo tee -a /etc/modules
 
 ---
 
-## MT7921AUN ドライバー（AWUS036AX・AWUS036AXML — Wi-Fi 6E）
+## MT7921AUN ドライバー（AWUS036AXM・AWUS036AXML — Wi-Fi 6E）
 
 MT7921AUN は MediaTek の Wi-Fi 6E チップセットです。Linux ドライバー `mt7921u` はカーネル **バージョン 5.18** からメインラインにマージされています。
 
@@ -421,7 +421,7 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/ja/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | MT7612U | 内蔵（`mt76x2u`） | 内蔵（`mt76x2u`） |
-| [AWUS036AX](/ja/products/alfa/awus036ax/) | MT7921AUN | 内蔵（`mt7921u`、カーネル 5.18+） | 内蔵（`mt7921u`、カーネル 6.8） |
+| [AWUS036AX](/ja/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
 | [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AUN | 内蔵（`mt7921u`、カーネル 5.18+） | 内蔵（`mt7921u`、カーネル 6.8） |
 | [AWUS1900](/ja/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 

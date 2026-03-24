@@ -72,9 +72,9 @@ tags: ["Kali-Linux", "WiFi网卡", "监听模式", "数据包注入", "ALFA-Netw
 | 网卡 | 标准 | 芯片组 | 监听模式 | 天线 | 最适合场景 |
 |---|---|---|---|---|---|
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | 2× RP-SMA | 全能首选 |
-| [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | Wi-Fi 6E AX1800 | MT7921AUN | ✅ | 1× RP-SMA | 前瞻之选 |
-| [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | Wi-Fi 5 AC600 | MT7612U | ✅ | 1× RP-SMA | 经济便携 |
-| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 AX1800 | MT7612U 变体 | ✅ | 2× RP-SMA | Wi-Fi 6 场景 |
+| [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 1× RP-SMA | 前瞻之选 |
+| [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | 经济便携 |
+| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limited | Integrated | Windows Wi-Fi 6 |
 | [AWUS1900](/zh-cn/products/alfa/awus1900/) | Wi-Fi 5 AC1900 | RTL8814AU | ✅ | 4× RP-SMA | 最大覆盖范围 |
 
 ---

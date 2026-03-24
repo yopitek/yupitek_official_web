@@ -54,7 +54,6 @@ Linux WiFi 驅動程式是一個**核心模組**——副檔名為 `.ko` 的檔�
 | [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u（內建核心）|
 | [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14)|
 | [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u（核心 5.18+）|
-| [AWUS1900](/zh-tw/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### 用 lsusb 確認網路卡型號
 
@@ -69,7 +68,6 @@ lsusb
 ```
 Bus 003 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac
 Bus 003 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/bgn/ac
-Bus 003 Device 004: ID 0bda:8813 Realtek Semiconductor Corp. RTL8814AU 802.11a/b/g/n/ac
 ```
 
 將 `ID xx:xx` 的值對照上方表格，確認你的晶片組。
@@ -296,49 +294,11 @@ Ubuntu 24.04 LTS 預裝核心 6.8，完整支援 mt7921u。這是最乾淨的長
 
 ---
 
-## RTL8814AU 驅動程式（AWUS1900）
-
-RTL8814AU 搭載於 [AWUS1900](/zh-tw/products/alfa/awus1900/)——ALFA 功率最強的網路卡，配備四根天線並支援 AC1900 規格。它需要來自 `morrownr/8814au` 儲存庫的非主線驅動程式。
-
-### 安裝方式
-
-```bash
-git clone https://github.com/morrownr/8814au
-cd 8814au
-sudo ./install-driver.sh
-```
-
-安裝腳本已整合 DKMS。安裝完成後重新開機：
-
-```bash
-sudo reboot
-```
-
-重開機後確認：
-
-```bash
-lsmod | grep 8814au
-# 8814au    3825664  0
-
-ip link show | grep wlan
-# wlan0: ...
-```
-
-### 手動編譯（不使用 install-driver.sh）
-
-```bash
-make
-sudo make install
-sudo modprobe 88XXau_btcoex
-```
-
-注意：RTL8814AU 的模組名稱為 `88XXau_btcoex`（或依 fork 版本為 `8814au`）。安裝後使用 `lsmod | grep 88` 確認正確名稱。
-
 ---
 
 ## DKMS：核心更新後保持驅動程式正常運作
 
-Kali Linux 和 Ubuntu 都會定期更新核心。若未使用 DKMS，每次核心更新後非主線驅動程式（RTL8812AU、RTL8814AU）就會失效，直到你手動重新編譯為止。
+Kali Linux 和 Ubuntu 都會定期更新核心。若未使用 DKMS，每次核心更新後非主線驅動程式（RTL8812AU）就會失效，直到你手動重新編譯為止。
 
 正確設定 DKMS 後，執行 `apt upgrade` 時重新編譯會自動完成。
 
@@ -422,7 +382,6 @@ dkms status
 | [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | MT7612U | 內建（`mt76x2u`）| 內建（`mt76x2u`）|
 | [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | N/A |
 | [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7921AUN | 內建（`mt7921u`，核心 5.18+）| 內建（`mt7921u`，核心 6.8）|
-| [AWUS1900](/zh-tw/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 
 ---
 
@@ -440,7 +399,7 @@ Linux WiFi 驅動程式安裝有一套簡單的決策流程：
 
 1. **用 `lsusb` 搭配上方對照表確認晶片組**
 2. **MT7612U 或 MT7921AUN（核心 5.18+）？** → 執行 `modprobe`，完成
-3. **RTL8812AU 或 RTL8814AU？** → Clone 對應儲存庫，執行 `make && sudo make install`，啟用 DKMS 確保持久運作
+3. **RTL8812AU?？** → Clone 對應儲存庫，執行 `make && sudo make install`，啟用 DKMS 確保持久運作
 4. **有問題？** → 查看除錯表、確認標頭檔與核心版本一致、檢查 `dmesg`
 
 ALFA Network 網路卡的優勢在於：四款主要晶片組都有文件完整、積極維護的驅動程式解決方案，不會讓你陷入無支援的困境。

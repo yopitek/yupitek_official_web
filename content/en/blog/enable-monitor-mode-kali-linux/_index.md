@@ -186,11 +186,8 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan0mon
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ | ✅ | Most popular for pentesting |
 | AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E, kernel 5.18+ required |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ | ✅ | Excellent Linux driver support |
-| AWUS036NHA | AR9271 | 2.4 GHz | ✅ | ✅ | Classic 2.4 GHz workhorse |
-| AWUS036NH | RTL8187 | 2.4 GHz | ✅ | ✅ | Long-range with high-gain antenna |
-| AWUS1900 | RTL8814AU | 2.4 / 5 GHz | ✅ | ✅ | 4×4 MIMO, maximum signal capture |
 
-All models listed above have verified driver support in Kali Linux 2024.x and 2025.x. For chipsets like RTL8812AU and RTL8814AU, you may need to install the driver from the Aircrack-ng GitHub repository if your kernel version is very recent.
+All models listed above have verified driver support in Kali Linux 2024.x and 2025.x. For chipsets like RTL8812AU, you may need to install the driver from the Aircrack-ng GitHub repository if your kernel version is very recent.
 
 ---
 
@@ -277,6 +274,6 @@ Verify the interface is back in managed mode with `iwconfig` and reconnect to yo
 
 ## Summary
 
-Enabling monitor mode on Kali Linux is a two-step process: stop interfering services, then switch the interface mode using either `airmon-ng` or `iw`. The key to success is using an adapter with a supported chipset. ALFA Network adapters with RTL8812AU, MT7921AUN, MT7612U, AR9271, and RTL8814AU chipsets provide the most reliable out-of-the-box experience on Kali Linux.
+Enabling monitor mode on Kali Linux is a two-step process: stop interfering services, then switch the interface mode using either `airmon-ng` or `iw`. The key to success is using an adapter with a supported chipset. ALFA Network adapters with RTL8812AU, MT7921AUN, MT7612U chipsets provide the most reliable out-of-the-box experience on Kali Linux.
 
 Browse the full range of [ALFA Network wireless adapters available from Yopitek](/en/products/alfa/) — Taiwan's authorized ALFA Network distributor — to find the right adapter for your wireless security research.

@@ -54,7 +54,6 @@ El controlador que necesitas depende completamente de tu chipset, no del nombre 
 | [AWUS036ACM](/es/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (en el kernel) |
 | [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
 | [AWUS036AXML](/es/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (kernel 5.18+) |
-| [AWUS1900](/es/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### Identifica Tu Adaptador con lsusb
 
@@ -69,7 +68,6 @@ Ejemplo de salida:
 ```
 Bus 003 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac
 Bus 003 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/bgn/ac
-Bus 003 Device 004: ID 0bda:8813 Realtek Semiconductor Corp. RTL8814AU 802.11a/b/g/n/ac
 ```
 
 Cruza el valor `ID xx:xx` con la tabla anterior para confirmar tu chipset.
@@ -298,49 +296,11 @@ A partir de 2026, el controlador mt7921u proporciona soporte estable para modo a
 
 ---
 
-## Controlador RTL8814AU (AWUS1900)
-
-El RTL8814AU impulsa el [AWUS1900](/es/products/alfa/awus1900/), el adaptador de mayor potencia de ALFA con cuatro antenas y rendimiento AC1900. Requiere un controlador fuera del árbol principal del repositorio `morrownr/8814au`.
-
-### Instalación
-
-```bash
-git clone https://github.com/morrownr/8814au
-cd 8814au
-sudo ./install-driver.sh
-```
-
-El script de instalación incluye integración DKMS. Después de la instalación, reinicia:
-
-```bash
-sudo reboot
-```
-
-Verificación post-reinicio:
-
-```bash
-lsmod | grep 8814au
-# 8814au    3825664  0
-
-ip link show | grep wlan
-# wlan0: ...
-```
-
-### Compilación Manual (Sin install-driver.sh)
-
-```bash
-make
-sudo make install
-sudo modprobe 88XXau_btcoex
-```
-
-Nota: el nombre del módulo para RTL8814AU es `88XXau_btcoex` (o simplemente `8814au` dependiendo de la versión del fork). Usa `lsmod | grep 88` para encontrar el nombre correcto después de la instalación.
-
 ---
 
 ## DKMS: Mantener los Controladores Funcionando Tras Actualizaciones del Kernel
 
-Tanto Kali Linux como Ubuntu actualizan el kernel regularmente. Sin DKMS, tus controladores fuera del árbol principal (RTL8812AU, RTL8814AU) dejan de funcionar después de una actualización del kernel hasta que recompiles manualmente.
+Tanto Kali Linux como Ubuntu actualizan el kernel regularmente. Sin DKMS, tus controladores fuera del árbol principal (RTL8812AU) dejan de funcionar después de una actualización del kernel hasta que recompiles manualmente.
 
 Con DKMS correctamente configurado, la recompilación ocurre automáticamente durante `apt upgrade`.
 
@@ -424,7 +384,6 @@ dkms status
 | [AWUS036ACM](/es/products/alfa/awus036acm/) | MT7612U | Integrado (`mt76x2u`) | Integrado (`mt76x2u`) |
 | [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
 | [AWUS036AXML](/es/products/alfa/awus036axml/) | MT7921AUN | Integrado (`mt7921u`, kernel 5.18+) | Integrado (`mt7921u`, kernel 6.8) |
-| [AWUS1900](/es/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 
 ---
 
@@ -442,7 +401,7 @@ La instalación de controladores WiFi en Linux sigue un árbol de decisión simp
 
 1. **Identifica tu chipset** con `lsusb` y la tabla de mapeo de arriba
 2. **¿MT7612U o MT7921AUN (en kernel 5.18+)?** → Solo ejecuta `modprobe`, listo
-3. **¿RTL8812AU o RTL8814AU?** → Clona el repositorio apropiado, ejecuta `make && sudo make install`, activa DKMS para persistencia
+3. **¿RTL8812AU?** → Clona el repositorio apropiado, ejecuta `make && sudo make install`, activa DKMS para persistencia
 4. **¿Algo no funciona?** → Revisa la tabla de solución de problemas, verifica que las cabeceras coincidan con el kernel, revisa `dmesg`
 
 La belleza de los adaptadores ALFA Network es que los cuatro chipsets principales tienen soluciones de controladores bien documentadas y activamente mantenidas. Nunca te quedas en territorio sin soporte.

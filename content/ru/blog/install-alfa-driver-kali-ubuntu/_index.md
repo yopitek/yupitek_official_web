@@ -54,7 +54,6 @@ tags: ["установка-драйвера", "Kali-Linux", "Ubuntu", "RTL8812AU
 | [AWUS036ACM](/ru/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (встроен в ядро) |
 | [AWUS036AX](/ru/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
 | [AWUS036AXML](/ru/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (ядро 5.18+) |
-| [AWUS1900](/ru/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### Определение адаптера через lsusb
 
@@ -69,7 +68,6 @@ lsusb
 ```
 Bus 003 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac
 Bus 003 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/bgn/ac
-Bus 003 Device 004: ID 0bda:8813 Realtek Semiconductor Corp. RTL8814AU 802.11a/b/g/n/ac
 ```
 
 Сравните значение `ID xx:xx` с таблицей выше, чтобы подтвердить чипсет.
@@ -298,49 +296,11 @@ Ubuntu 24.04 LTS поставляется с ядром 6.8 и полной по
 
 ---
 
-## Драйвер RTL8814AU (AWUS1900)
-
-RTL8814AU используется в [AWUS1900](/ru/products/alfa/awus1900/) — самом мощном адаптере ALFA с четырьмя антеннами и производительностью AC1900. Для него требуется сторонний драйвер из репозитория `morrownr/8814au`.
-
-### Установка
-
-```bash
-git clone https://github.com/morrownr/8814au
-cd 8814au
-sudo ./install-driver.sh
-```
-
-Скрипт включает интеграцию с DKMS. После установки перезагрузитесь:
-
-```bash
-sudo reboot
-```
-
-Проверка после перезагрузки:
-
-```bash
-lsmod | grep 8814au
-# 8814au    3825664  0
-
-ip link show | grep wlan
-# wlan0: ...
-```
-
-### Ручная сборка (без install-driver.sh)
-
-```bash
-make
-sudo make install
-sudo modprobe 88XXau_btcoex
-```
-
-Обратите внимание: имя модуля для RTL8814AU — `88XXau_btcoex` (или просто `8814au` в зависимости от версии ветки). После установки выполните `lsmod | grep 88`, чтобы найти точное имя.
-
 ---
 
 ## DKMS: как сохранить драйверы после обновлений ядра
 
-И Kali Linux, и Ubuntu регулярно обновляют ядро. Без DKMS ваши сторонние драйверы (RTL8812AU, RTL8814AU) перестанут работать после обновления ядра, пока вы не перекомпилируете их вручную.
+И Kali Linux, и Ubuntu регулярно обновляют ядро. Без DKMS ваши сторонние драйверы (RTL8812AU) перестанут работать после обновления ядра, пока вы не перекомпилируете их вручную.
 
 При правильной настройке DKMS перекомпиляция происходит автоматически во время `apt upgrade`.
 
@@ -424,7 +384,6 @@ dkms status
 | [AWUS036ACM](/ru/products/alfa/awus036acm/) | MT7612U | Встроен (`mt76x2u`) | Встроен (`mt76x2u`) |
 | [AWUS036AX](/ru/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
 | [AWUS036AXML](/ru/products/alfa/awus036axml/) | MT7921AUN | Встроен (`mt7921u`, ядро 5.18+) | Встроен (`mt7921u`, ядро 6.8) |
-| [AWUS1900](/ru/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 
 ---
 
@@ -442,7 +401,7 @@ Yopitek — авторизованный дистрибьютор ALFA Network. 
 
 1. **Определите чипсет** с помощью `lsusb` и таблицы соответствия выше
 2. **MT7612U или MT7921AUN (на ядре 5.18+)?** → Просто выполните `modprobe` — готово
-3. **RTL8812AU или RTL8814AU?** → Клонируйте нужный репозиторий, выполните `make && sudo make install`, включите DKMS для сохранения
+3. **RTL8812AU ил?** → Клонируйте нужный репозиторий, выполните `make && sudo make install`, включите DKMS для сохранения
 4. **Что-то не работает?** → Смотрите таблицу устранения неполадок, проверьте совпадение заголовочных файлов с ядром, изучите `dmesg`
 
 Преимущество адаптеров ALFA Network в том, что для всех четырёх основных чипсетов существуют хорошо задокументированные, активно поддерживаемые решения. Вы никогда не окажетесь в ситуации отсутствия поддержки.

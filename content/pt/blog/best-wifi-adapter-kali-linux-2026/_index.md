@@ -53,7 +53,6 @@ O chipset wireless — não a marca ou o modelo do adaptador — determina a com
 
 **MT7612U** — O chipset AC600/AC1200 da MediaTek. Um diferencial importante: ele foi incorporado ao kernel Linux desde a versão 4.19 como `mt76x2u`, o que significa que muitas vezes não é necessária nenhuma instalação de driver. Alimenta o AWUS036ACM e o AWUS036ACX.
 
-**RTL8814AU** — O chipset AC1900 3×3 MIMO da Realtek. Alta potência de saída e quatro antenas para máximo alcance. Driver disponível via `morrownr/8814au`. Alimenta o AWUS1900.
 
 **MT7921AUN** — O chipset AX1800 Wi-Fi 6E da MediaTek. O mais novo dos quatro, com suporte no kernel a partir da versão 5.18. Alimenta o AWUS036AXML. Importante para preparar seu kit para o futuro à medida que as redes 6 GHz se tornam mais prevalentes.
 
@@ -75,7 +74,6 @@ Antenas externas e removíveis (conectores RP-SMA) oferecem flexibilidade. Você
 | [AWUS036AXML](/pt/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 1× RP-SMA | À prova do futuro |
 | [AWUS036ACM](/pt/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | Compacto e acessível |
 | [AWUS036AX](/pt/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limitado | Integrada | Wi-Fi 6 Windows |
-| [AWUS1900](/pt/products/alfa/awus1900/) | Wi-Fi 5 AC1900 | RTL8814AU | ✅ | 4× RP-SMA | Alcance máximo |
 
 ---
 
@@ -186,37 +184,6 @@ Profissionais de segurança que querem estar à frente da curva, qualquer pessoa
 
 ---
 
-## Alcance Máximo: AWUS1900
-
-Quando a distância é importante, nada na linha ALFA supera o [AWUS1900](/pt/products/alfa/awus1900/).
-
-**Chipset: Realtek RTL8814AU**
-
-O RTL8814AU é um chipset AC1900 3×3 MIMO com potência de transmissão significativamente maior do que adaptadores dual-band. As quatro antenas RP-SMA entregam alcance excepcional — ideal para wardriving, avaliações de longa distância, ou situações onde você precisa alcançar access points que outros adaptadores não conseguem.
-
-**Instalação do Driver**
-
-```bash
-# Usar o fork morrownr para RTL8814AU
-git clone https://github.com/morrownr/8814au
-cd 8814au
-sudo ./install-driver.sh
-```
-
-**Potência AC1900**
-
-O AWUS1900 entrega até 600 Mbps em 2,4 GHz e 1300 Mbps em 5 GHz. Combinado com suas quatro antenas e maior potência de TX, ele supera todos os outros adaptadores desta lista em alcance de sinal bruto.
-
-**Caso de Uso Prático**
-
-Wardriving e avaliações em estacionamentos: o AWUS1900 montado num veículo com antenas direcionais pode enumerar redes WiFi a centenas de metros de distância. Para avaliações internas em prédios grandes, reduz as zonas cegas.
-
-**Para Quem o AWUS1900 é Ideal?**
-
-Pentesters experientes que realizam avaliações de longa distância, entusiastas de wardriving e qualquer pessoa que frequentemente trabalha nos limites do alcance WiFi.
-
----
-
 ## Visão Geral Rápida de Configuração no Kali Linux
 
 Independentemente do adaptador escolhido, o fluxo de trabalho básico é o mesmo:
@@ -282,7 +249,6 @@ Sempre compre de um revendedor autorizado ALFA Network. A Yopitek é um distribu
 | Melhor geral para Kali Linux | [AWUS036ACH](/pt/products/alfa/awus036ach/) |
 | Opção econômica | [AWUS036ACM](/pt/products/alfa/awus036acm/) |
 | Wi-Fi 6E / À prova do futuro | [AWUS036AXML](/pt/products/alfa/awus036axml/) |
-| Alcance máximo | [AWUS1900](/pt/products/alfa/awus1900/) |
-| Wi-Fi 6 com antena dupla | [AWUS036AX](/pt/products/alfa/awus036ax/) |
+| Alcance máximo | Wi-Fi 6 com antena dupla | [AWUS036AX](/pt/products/alfa/awus036ax/) |
 
 Para iniciantes, comece com o AWUS036ACH. O suporte maduro ao driver, a extensa documentação da comunidade e a capacidade dual-band AC1200 fazem dele o caminho mais tranquilo do unboxing ao modo monitor. A partir daí, o restante do kit de ferramentas WiFi do Kali Linux — Aircrack-ng, Wireshark, Kismet, Bettercap — simplesmente funciona.

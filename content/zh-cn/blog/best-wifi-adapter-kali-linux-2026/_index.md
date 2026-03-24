@@ -53,7 +53,6 @@ tags: ["Kali-Linux", "WiFi网卡", "监听模式", "数据包注入", "ALFA-Netw
 
 **MT7612U** — MediaTek 的 AC600/AC1200 芯片组。最大亮点在于自 Linux 内核 4.19 版本起已进入主线（`mt76x2u`），通常无需安装驱动程序。AWUS036ACM 和 AWUS036ACX 均采用此芯片。
 
-**RTL8814AU** — Realtek 的 AC1900 3×3 MIMO 芯片组。发射功率高、配备四根天线，覆盖范围最大。驱动程序由 `morrownr/8814au` 提供，AWUS1900 采用此芯片。
 
 **MT7921AUN** — MediaTek 的 AX1800 Wi-Fi 6E 芯片组。四款中最新的一款，内核 5.18 起提供支持，AWUS036AXML 采用此芯片。随着 6 GHz 网络逐渐普及，该芯片组具备良好的前瞻性。
 
@@ -75,7 +74,6 @@ tags: ["Kali-Linux", "WiFi网卡", "监听模式", "数据包注入", "ALFA-Netw
 | [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 1× RP-SMA | 前瞻之选 |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | 经济便携 |
 | [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limited | Integrated | Windows Wi-Fi 6 |
-| [AWUS1900](/zh-cn/products/alfa/awus1900/) | Wi-Fi 5 AC1900 | RTL8814AU | ✅ | 4× RP-SMA | 最大覆盖范围 |
 
 ---
 
@@ -186,37 +184,6 @@ MT7921AUN 驱动的 6 GHz 监听模式仍在完善中。对于 2.4/5 GHz 上的�
 
 ---
 
-## 极致覆盖：AWUS1900
-
-当距离成为关键因素时，ALFA 产品线中没有任何一款能与 [AWUS1900](/zh-cn/products/alfa/awus1900/) 媲美。
-
-**芯片组：Realtek RTL8814AU**
-
-RTL8814AU 是一款 3×3 MIMO AC1900 芯片组，发射功率远高于普通双频网卡。四根 RP-SMA 天线提供出色的覆盖范围，非常适合 wardriving、远距离评估，或其他网卡都够不到接入点的场景。
-
-**驱动安装**
-
-```bash
-# 使用 morrownr 维护的 RTL8814AU 驱动
-git clone https://github.com/morrownr/8814au
-cd 8814au
-sudo ./install-driver.sh
-```
-
-**AC1900 功率**
-
-AWUS1900 在 2.4 GHz 提供最高 600 Mbps，5 GHz 提供最高 1300 Mbps。结合四根天线和更高的发射功率，在原始信号覆盖范围上远超本列表中的其他所有网卡。
-
-**典型使用场景**
-
-Wardriving 与停车场评估：将 AWUS1900 安装在车辆中并配合定向天线，可以在数百米外枚举 WiFi 网络。在大型建筑室内评估时，它能有效减少信号盲区。
-
-**谁应该选择 AWUS1900？**
-
-从事远距离评估的资深渗透测试工程师、wardriving 爱好者，以及经常需要在 WiFi 信号边缘工作的人员。
-
----
-
 ## Kali Linux 快速配置概览
 
 无论选择哪款网卡，基本操作流程都是一样的：
@@ -282,7 +249,6 @@ ALFA Network 产品仿冒现象严重。假冒网卡使用劣质芯片组，发�
 | Kali Linux 综合首选 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) |
 | 经济实惠之选 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) |
 | Wi-Fi 6E / 前瞻之选 | [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) |
-| 最大覆盖范围 | [AWUS1900](/zh-cn/products/alfa/awus1900/) |
-| Wi-Fi 6 双天线 | [AWUS036AX](/zh-cn/products/alfa/awus036ax/) |
+| 最大覆盖范围 | Wi-Fi 6 双天线 | [AWUS036AX](/zh-cn/products/alfa/awus036ax/) |
 
 对于初学者，建议从 AWUS036ACH 入手。成熟的驱动支持、丰富的社区文档，加上双频 AC1200 的性能，让它成为从开箱到进入监听模式最顺畅的路径。打好这个基础后，Aircrack-ng、Wireshark、Kismet、Bettercap——整套 Kali Linux 无线工具集都能直接上手使用。

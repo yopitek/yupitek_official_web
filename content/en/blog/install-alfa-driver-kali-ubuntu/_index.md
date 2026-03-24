@@ -54,7 +54,6 @@ The driver you need depends entirely on your chipset, not the adapter's marketin
 | [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (in-kernel) |
 | [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
 | [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (kernel 5.18+) |
-| [AWUS1900](/en/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### Identify Your Adapter with lsusb
 
@@ -69,7 +68,6 @@ Sample output:
 ```
 Bus 003 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac
 Bus 003 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/bgn/ac
-Bus 003 Device 004: ID 0bda:8813 Realtek Semiconductor Corp. RTL8814AU 802.11a/b/g/n/ac
 ```
 
 Cross-reference the `ID xx:xx` value against the table above to confirm your chipset.
@@ -309,49 +307,11 @@ As of 2026, the mt7921u driver provides stable support for managed mode (connect
 
 ---
 
-## RTL8814AU Driver (AWUS1900)
-
-The RTL8814AU powers the [AWUS1900](/en/products/alfa/awus1900/), ALFA's highest-powered adapter with four antennas and AC1900 performance. It requires an out-of-tree driver from the `morrownr/8814au` repository.
-
-### Installation
-
-```bash
-git clone https://github.com/morrownr/8814au
-cd 8814au
-sudo ./install-driver.sh
-```
-
-The install script includes DKMS integration. After installation, reboot:
-
-```bash
-sudo reboot
-```
-
-Post-reboot verification:
-
-```bash
-lsmod | grep 8814au
-# 8814au    3825664  0
-
-ip link show | grep wlan
-# wlan0: ...
-```
-
-### Manual Build (Without install-driver.sh)
-
-```bash
-make
-sudo make install
-sudo modprobe 88XXau_btcoex
-```
-
-Note: the module name for RTL8814AU is `88XXau_btcoex` (or just `8814au` depending on the fork version). Use `lsmod | grep 88` to find the correct name after installation.
-
 ---
 
 ## DKMS: Keeping Drivers Working After Kernel Updates
 
-Both Kali Linux and Ubuntu update the kernel regularly. Without DKMS, your out-of-tree drivers (RTL8812AU, RTL8814AU) stop working after a kernel update until you manually recompile.
+Both Kali Linux and Ubuntu update the kernel regularly. Without DKMS, your out-of-tree drivers (RTL8812AU) stop working after a kernel update until you manually recompile.
 
 With DKMS properly configured, the recompilation happens automatically during `apt upgrade`.
 
@@ -435,7 +395,6 @@ dkms status
 | [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | Built-in (`mt76x2u`) ✅ | Built-in — plug-and-play ✅ |
 | [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | N/A |
 | [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | Built-in (`mt7921u`, kernel 5.18+) | `linux-firmware` pkg |
-| [AWUS1900](/en/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | Manual DKMS |
 
 ---
 
@@ -453,7 +412,7 @@ Linux WiFi driver installation follows a simple decision tree:
 
 1. **Identify your chipset** with `lsusb` and the mapping table above
 2. **MT7612U or MT7921AUN (on kernel 5.18+)?** → Just run `modprobe`, you're done
-3. **RTL8812AU or RTL8814AU?** → Clone the appropriate repo, run `make && sudo make install`, enable DKMS for persistence
+3. **RTL8812AU?** → Clone `aircrack-ng/rtl8812au`, run `make && sudo make install`, enable DKMS for persistence
 4. **Something not working?** → Check the troubleshooting table, verify headers match kernel, check `dmesg`
 
 The beauty of ALFA Network adapters is that all four major chipsets have well-documented, actively maintained driver solutions. You're never stuck in unsupported territory.

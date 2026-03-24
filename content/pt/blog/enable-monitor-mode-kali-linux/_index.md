@@ -184,11 +184,8 @@ Adaptadores [ALFA Network](/pt/products/alfa/) são o padrão da indústria para
 | AWUS036ACH | RTL8812AU | 2,4 / 5 GHz | ✅ | ✅ | Mais popular para pentest |
 | AWUS036AXML | MT7921AUN | 2,4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E, requer kernel 5.18+ |
 | AWUS036ACM | MT7612U | 2,4 / 5 GHz | ✅ | ✅ | Excelente suporte a driver Linux |
-| AWUS036NHA | AR9271 | 2,4 GHz | ✅ | ✅ | Clássico workhorse de 2,4 GHz |
-| AWUS036NH | RTL8187 | 2,4 GHz | ✅ | ✅ | Longa distância com antena de alto ganho |
-| AWUS1900 | RTL8814AU | 2,4 / 5 GHz | ✅ | ✅ | MIMO 4×4, captura de sinal máxima |
 
-Todos os modelos listados acima têm suporte de driver verificado no Kali Linux 2024.x e 2025.x. Para chipsets como RTL8812AU e RTL8814AU, pode ser necessário instalar o driver do repositório GitHub do Aircrack-ng se a versão do seu kernel for muito recente.
+Todos os modelos listados acima têm suporte de driver verificado no Kali Linux 2024.x e 2025.x. Para chipsets como RTL8812AU, pode ser necessário instalar o driver do repositório GitHub do Aircrack-ng se a versão do seu kernel for muito recente.
 
 ---
 
@@ -268,6 +265,6 @@ Verifique que a interface está de volta no modo gerenciado com `iwconfig` e rec
 
 ## Resumo
 
-Ativar o modo monitor no Kali Linux é um processo de dois passos: parar os serviços conflitantes e depois mudar o modo da interface usando `airmon-ng` ou `iw`. A chave para o sucesso é usar um adaptador com chipset suportado. Adaptadores ALFA Network com chipsets RTL8812AU, MT7921AUN, MT7612U, AR9271 e RTL8814AU oferecem a experiência mais confiável e pronta para uso no Kali Linux.
+Ativar o modo monitor no Kali Linux é um processo de dois passos: parar os serviços conflitantes e depois mudar o modo da interface usando `airmon-ng` ou `iw`. A chave para o sucesso é usar um adaptador com chipset suportado. Adaptadores ALFA Network com chipsets RTL8812AU, MT7921AUN, MT7612U oferecem a experiência mais confiável e pronta para uso no Kali Linux.
 
 Confira a linha completa de [adaptadores wireless ALFA Network disponíveis na Yopitek](/pt/products/alfa/) — distribuidora autorizada da ALFA Network — para encontrar o adaptador certo para sua pesquisa de segurança wireless.

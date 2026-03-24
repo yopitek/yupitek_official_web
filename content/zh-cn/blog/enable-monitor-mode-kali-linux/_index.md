@@ -184,11 +184,8 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan0mon
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ | ✅ | 渗透测试最热门型号 |
 | AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E，需要内核 5.18+ |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ | ✅ | Linux 驱动程序支持极佳 |
-| AWUS036NHA | AR9271 | 2.4 GHz | ✅ | ✅ | 经典 2.4 GHz 主力机型 |
-| AWUS036NH | RTL8187 | 2.4 GHz | ✅ | ✅ | 配备高增益天线，覆盖范围广 |
-| AWUS1900 | RTL8814AU | 2.4 / 5 GHz | ✅ | ✅ | 4×4 MIMO，信号捕获能力最强 |
 
-上表所有型号均已在 Kali Linux 2024.x 和 2025.x 上验证驱动程序兼容性。对于 RTL8812AU 和 RTL8814AU 等芯片组，若你的内核版本较新，可能需要从 Aircrack-ng GitHub 仓库手动安装驱动程序。
+上表所有型号均已在 Kali Linux 2024.x 和 2025.x 上验证驱动程序兼容性。对于 RTL8812AU 等芯片组，若你的内核版本较新，可能需要从 Aircrack-ng GitHub 仓库手动安装驱动程序。
 
 ---
 
@@ -268,6 +265,6 @@ sudo systemctl start NetworkManager
 
 ## 总结
 
-在 Kali Linux 上启用监听模式分两步走：先停止干扰服务，再使用 `airmon-ng` 或 `iw` 切换网络接口模式。成功的关键在于使用具备受支持芯片组的无线网卡。搭载 RTL8812AU、MT7921AUN、MT7612U、AR9271 和 RTL8814AU 芯片组的 ALFA Network 无线网卡，在 Kali Linux 上的开箱即用体验最为可靠。
+在 Kali Linux 上启用监听模式分两步走：先停止干扰服务，再使用 `airmon-ng` 或 `iw` 切换网络接口模式。成功的关键在于使用具备受支持芯片组的无线网卡。搭载 RTL8812AU、MT7921AUN、MT7612U 芯片组的 ALFA Network 无线网卡，在 Kali Linux 上的开箱即用体验最为可靠。
 
 浏览 [Yopitek 提供的完整 ALFA Network 无线网卡产品线](/zh-cn/products/alfa/)——台湾 ALFA Network 授权经销商——找到最适合你无线安全研究的网卡。

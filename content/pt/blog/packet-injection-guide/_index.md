@@ -42,17 +42,11 @@ Os seguintes chipsets têm suporte bem estabelecido a injeção de pacotes no Ka
 
 O chipset mais popular para pentest em 2024–2026. Dual-band (2,4/5 GHz), 802.11ac, e suportado pelo driver comunitário `rtl8812au` mantido no repositório GitHub do aircrack-ng. Tanto o modo monitor quanto a injeção funcionam de forma confiável.
 
-### Realtek RTL8814AU
-
-O irmão mais poderoso do RTL8812AU: MIMO 4×4, 802.11ac, dual-band. Suportado pelo driver `rtl8814au`. Excelente para ambientes com alta densidade de APs onde um sinal mais forte melhora a qualidade da captura. Suporte completo a injeção.
 
 ### MediaTek MT7612U
 
 Chipset 802.11ac dual-band com um driver bem mantido no kernel (`mt76`). O modo monitor e a injeção são suportados no kernel upstream, o que significa que nenhuma instalação de driver out-of-tree é necessária na maioria das versões atuais do Kali Linux.
 
-### Atheros AR9271
-
-Um chipset clássico de banda única (2,4 GHz) com longo histórico em ferramentas de segurança wireless. O driver `ath9k_htc` está no kernel e é amplamente testado. O suporte a injeção é sólido e consistente entre versões do kernel. Embora cubra apenas 2,4 GHz, continua sendo uma escolha confiável para testes de redes legadas.
 
 ### MediaTek MT7921AUN (Wi-Fi 6E)
 
@@ -137,9 +131,6 @@ Todos os principais modelos de adaptadores [ALFA Network](/pt/products/alfa/) su
 | AWUS036ACH | RTL8812AU | 2,4 / 5 GHz | ✅ Completo |
 | AWUS036AXML | MT7921AUN | 2,4 / 5 / 6 GHz | ✅ Completo (kernel 5.18+) |
 | AWUS036ACM | MT7612U | 2,4 / 5 GHz | ✅ Completo |
-| AWUS036NHA | AR9271 | 2,4 GHz | ✅ Completo |
-| AWUS036NH | RTL8187 | 2,4 GHz | ✅ Completo |
-| AWUS1900 | RTL8814AU | 2,4 / 5 GHz | ✅ Completo |
 
 ---
 

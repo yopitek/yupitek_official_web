@@ -42,17 +42,11 @@ tags: ["封包注入", "aireplay-ng", "Kali-Linux", "WiFi網路卡", "RTL8812AU"
 
 截至 2024–2026 年，滲透測試領域最受歡迎的晶片組。支援雙頻（2.4/5 GHz）、802.11ac，並由 aircrack-ng GitHub 儲存庫維護的社群版 `rtl8812au` 驅動程式提供支援。監聽模式與封包注入均可穩定運作。
 
-### Realtek RTL8814AU
-
-RTL8812AU 的升級版：4×4 MIMO、802.11ac、雙頻。由 `rtl8814au` 驅動程式支援。在基地台密度高的環境中，更強的訊號有助於提升擷取品質，因此表現尤為出色。完整支援封包注入。
 
 ### Mediatek MT7612U
 
 雙頻 802.11ac 晶片組，搭載維護完善的核心內建驅動程式（`mt76`）。監聽模式與封包注入均已納入上游核心支援，在大多數當前版本的 Kali Linux 上無需額外安裝外部驅動程式。
 
-### Atheros AR9271
-
-具有悠久無線安全工具使用歷史的經典單頻（2.4 GHz）晶片組。`ath9k_htc` 驅動程式內建於核心，經過長期實戰驗證，封包注入支援穩定，在各核心版本間表現一致。雖僅支援 2.4 GHz，對於舊式網路的測試需求仍是可靠的選擇。
 
 ### Mediatek MT7921AUN（Wi-Fi 6E）
 
@@ -137,9 +131,6 @@ sudo aireplay-ng --test wlan0mon
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ 完整支援 |
 | AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ 完整支援（需 kernel 5.18+） |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ 完整支援 |
-| AWUS036NHA | AR9271 | 2.4 GHz | ✅ 完整支援 |
-| AWUS036NH | RTL8187 | 2.4 GHz | ✅ 完整支援 |
-| AWUS1900 | RTL8814AU | 2.4 / 5 GHz | ✅ 完整支援 |
 
 ---
 

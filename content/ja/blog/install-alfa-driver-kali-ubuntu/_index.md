@@ -54,7 +54,6 @@ MediaTek MT7612U のような一般的なチップセットなら、この処理
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u（カーネル内蔵） |
 | [AWUS036AX](/ja/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
 | [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u（カーネル 5.18+） |
-| [AWUS1900](/ja/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### lsusb でアダプターを確認する
 
@@ -69,7 +68,6 @@ lsusb
 ```
 Bus 003 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac
 Bus 003 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/bgn/ac
-Bus 003 Device 004: ID 0bda:8813 Realtek Semiconductor Corp. RTL8814AU 802.11a/b/g/n/ac
 ```
 
 `ID xx:xx` の値を上の対応表と照合して、チップセットを確定させてください。
@@ -296,49 +294,11 @@ Ubuntu 24.04 LTS はカーネル 6.8 と mt7921u の完全サポートを提供�
 
 ---
 
-## RTL8814AU ドライバー（AWUS1900）
-
-RTL8814AU は [AWUS1900](/ja/products/alfa/awus1900/) に搭載されており、4 本のアンテナと AC1900 の性能を誇る ALFA の最高出力アダプターです。`morrownr/8814au` リポジトリのアウトオブツリードライバーが必要です。
-
-### インストール
-
-```bash
-git clone https://github.com/morrownr/8814au
-cd 8814au
-sudo ./install-driver.sh
-```
-
-インストールスクリプトは DKMS 統合を含みます。インストール後、再起動します：
-
-```bash
-sudo reboot
-```
-
-再起動後の確認：
-
-```bash
-lsmod | grep 8814au
-# 8814au    3825664  0
-
-ip link show | grep wlan
-# wlan0: ...
-```
-
-### 手動ビルド（install-driver.sh を使わない場合）
-
-```bash
-make
-sudo make install
-sudo modprobe 88XXau_btcoex
-```
-
-注意：RTL8814AU のモジュール名は `88XXau_btcoex`（またはフォークのバージョンによっては `8814au`）です。インストール後に `lsmod | grep 88` で正しい名前を確認してください。
-
 ---
 
 ## DKMS：カーネル更新後もドライバーを維持する
 
-Kali Linux と Ubuntu はどちらも定期的にカーネルを更新します。DKMS なしでは、カーネル更新のたびにアウトオブツリードライバー（RTL8812AU・RTL8814AU）が動かなくなり、手動での再コンパイルが必要になります。
+Kali Linux と Ubuntu はどちらも定期的にカーネルを更新します。DKMS なしでは、カーネル更新のたびにアウトオブツリードライバー（RTL8812AU）が動かなくなり、手動での再コンパイルが必要になります。
 
 DKMS を正しく設定しておけば、`apt upgrade` の際に再コンパイルが自動的に行われます。
 
@@ -422,7 +382,6 @@ dkms status
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | MT7612U | 内蔵（`mt76x2u`） | 内蔵（`mt76x2u`） |
 | [AWUS036AX](/ja/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
 | [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AUN | 内蔵（`mt7921u`、カーネル 5.18+） | 内蔵（`mt7921u`、カーネル 6.8） |
-| [AWUS1900](/ja/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 
 ---
 
@@ -440,7 +399,7 @@ Linux の WiFiドライバーインストールは、シンプルな判断フロ
 
 1. `lsusb` と上の対応表で**チップセットを確認する**
 2. **MT7612U または MT7921AUN（カーネル 5.18+）?** → `modprobe` を実行するだけで完了
-3. **RTL8812AU または RTL8814AU?** → 対応リポジトリをクローンし、`make && sudo make install` を実行。DKMS で永続化
+3. **RTL8812AU?** → 対応リポジトリをクローンし、`make && sudo make install` を実行。DKMS で永続化
 4. **うまくいかない場合?** → トラブルシューティング表を確認し、ヘッダーとカーネルが一致しているか確認し、`dmesg` をチェック
 
 ALFA Network アダプターの魅力は、4 つの主要チップセットすべてについて、よくドキュメント化されアクティブにメンテナンスされたドライバーソリューションが存在する点です。サポートされない状況に陥ることはありません。

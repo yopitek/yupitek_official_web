@@ -55,7 +55,6 @@ tags: ["تثبيت-برنامج-تشغيل", "Kali-Linux", "Ubuntu", "RTL8812AU"
 | [AWUS036ACM](/ar/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (في النواة) |
 | [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
 | [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (نواة 5.18+) |
-| [AWUS1900](/ar/products/alfa/awus1900/) | RTL8814AU | 0bda:8813 | morrownr/8814au |
 
 ### التعرف على محولك بـ lsusb
 
@@ -70,7 +69,6 @@ lsusb
 ```
 Bus 003 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac
 Bus 003 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/bgn/ac
-Bus 003 Device 004: ID 0bda:8813 Realtek Semiconductor Corp. RTL8814AU 802.11a/b/g/n/ac
 ```
 
 قارن قيمة `ID xx:xx` بالجدول أعلاه لتأكيد شريحتك المعالجة.
@@ -297,49 +295,11 @@ sudo reboot
 
 ---
 
-## برنامج تشغيل RTL8814AU (AWUS1900)
-
-RTL8814AU يُشغّل [AWUS1900](/ar/products/alfa/awus1900/)، أعلى محول ALFA قدرةً مع أربعة هوائيات وأداء AC1900. يتطلب برنامج تشغيل خارج الشجرة من مستودع `morrownr/8814au`.
-
-### التثبيت
-
-```bash
-git clone https://github.com/morrownr/8814au
-cd 8814au
-sudo ./install-driver.sh
-```
-
-يتضمن سكريبت التثبيت تكامل DKMS. بعد التثبيت، أعد التشغيل:
-
-```bash
-sudo reboot
-```
-
-التحقق بعد إعادة التشغيل:
-
-```bash
-lsmod | grep 8814au
-# 8814au    3825664  0
-
-ip link show | grep wlan
-# wlan0: ...
-```
-
-### البناء اليدوي (بدون install-driver.sh)
-
-```bash
-make
-sudo make install
-sudo modprobe 88XXau_btcoex
-```
-
-ملاحظة: اسم الوحدة للـ RTL8814AU هو `88XXau_btcoex` (أو `8814au` حسب إصدار الفرع). استخدم `lsmod | grep 88` للعثور على الاسم الصحيح بعد التثبيت.
-
 ---
 
 ## DKMS: الحفاظ على عمل برامج التشغيل بعد تحديثات النواة
 
-يُحدّث كلٌّ من Kali Linux وUbuntu النواة بانتظام. بدون DKMS، تتوقف برامج التشغيل الخارجية (RTL8812AU وRTL8814AU) عن العمل بعد تحديث النواة حتى تُعيد التصريف يدوياً.
+يُحدّث كلٌّ من Kali Linux وUbuntu النواة بانتظام. بدون DKMS، تتوقف برامج التشغيل الخارجية (RTL8812AU) عن العمل بعد تحديث النواة حتى تُعيد التصريف يدوياً.
 
 مع DKMS المُهيَّأ بشكل صحيح، يحدث إعادة التصريف تلقائياً أثناء `apt upgrade`.
 
@@ -423,7 +383,6 @@ dkms status
 | [AWUS036ACM](/ar/products/alfa/awus036acm/) | MT7612U | مدمج (`mt76x2u`) | مدمج (`mt76x2u`) |
 | [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
 | [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AUN | مدمج (`mt7921u`، نواة 5.18+) | مدمج (`mt7921u`، نواة 6.8) |
-| [AWUS1900](/ar/products/alfa/awus1900/) | RTL8814AU | `morrownr/8814au` | `morrownr/8814au` |
 
 ---
 
@@ -441,7 +400,7 @@ Yopitek موزع معتمد لـ ALFA Network. تصفح [مجموعة منتجا
 
 1. **حدد شريحتك المعالجة** بـ `lsusb` وجدول المطابقة أعلاه
 2. **MT7612U أو MT7921AUN (على نواة 5.18+)؟** ← شغّل فقط `modprobe`، انتهيت
-3. **RTL8812AU أو RTL8814AU؟** ← استنسخ المستودع المناسب، شغّل `make && sudo make install`، فعّل DKMS للاستمرارية
+3. **RTL8812AU أ؟** ← استنسخ المستودع المناسب، شغّل `make && sudo make install`، فعّل DKMS للاستمرارية
 4. **شيء لا يعمل؟** ← راجع جدول استكشاف الأخطاء، تحقق من تطابق الترويسات مع النواة، راجع `dmesg`
 
 جمال محولات ALFA Network أن الشرائح الرئيسية الأربع جميعها لها حلول برامج تشغيل موثقة جيداً ومُصانة بفعالية. لن تجد نفسك أبداً في منطقة غير مدعومة.

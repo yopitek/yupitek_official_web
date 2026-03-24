@@ -46,17 +46,11 @@ The following chipsets have well-established packet injection support on Kali Li
 
 The most popular chipset for penetration testing as of 2024–2026. Dual-band (2.4/5 GHz), 802.11ac, and supported by the community `rtl8812au` driver maintained in the aircrack-ng GitHub repository. Both monitor mode and injection work reliably.
 
-### Realtek RTL8814AU
-
-The RTL8812AU's bigger sibling: 4×4 MIMO, 802.11ac, dual-band. Supported by the `rtl8814au` driver. Excellent for environments with high AP density where a stronger signal improves capture quality. Full injection support.
 
 ### Mediatek MT7612U
 
 Dual-band 802.11ac chipset with a well-maintained in-kernel driver (`mt76`). Monitor mode and injection are supported in the upstream kernel, meaning no out-of-tree driver installation is needed on most current Kali Linux versions.
 
-### Atheros AR9271
-
-A classic single-band (2.4 GHz) chipset with a long history in wireless security tools. The `ath9k_htc` driver is in-kernel and battle-tested. Injection support is solid and consistent across kernel versions. While it only covers 2.4 GHz, it remains a reliable choice for legacy network testing.
 
 ### Mediatek MT7921AUN (Wi-Fi 6E)
 
@@ -141,9 +135,6 @@ All major [ALFA Network](/en/products/alfa/) adapter models support packet injec
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ Full |
 | AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ Full (kernel 5.18+) |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ Full |
-| AWUS036NHA | AR9271 | 2.4 GHz | ✅ Full |
-| AWUS036NH | RTL8187 | 2.4 GHz | ✅ Full |
-| AWUS1900 | RTL8814AU | 2.4 / 5 GHz | ✅ Full |
 
 ---
 

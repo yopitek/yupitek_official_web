@@ -50,7 +50,6 @@ The driver you need depends entirely on your chipset, not the adapter's marketin
 | ALFA Model | Chipset | USB IDs | Driver |
 |---|---|---|---|
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
-| [AWUS036ACHM](/en/products/alfa/awus036achm/) | MT7610U | 0e8d:7610 | mt76x0u (in-kernel, EOL) |
 | [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (in-kernel) |
 | [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
 | [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (kernel 5.18+) |

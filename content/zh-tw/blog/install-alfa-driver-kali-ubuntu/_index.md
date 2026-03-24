@@ -50,7 +50,6 @@ Linux WiFi 驅動程式是一個**核心模組**——副檔名為 `.ko` 的檔�
 | ALFA 型號 | 晶片組 | USB ID | 驅動程式 |
 |---|---|---|---|
 | [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
-| [AWUS036ACHM](/zh-tw/products/alfa/awus036achm/) | MT7610U | 0e8d:7610 | mt76x0u (in-kernel, EOL) |
 | [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u（內建核心）|
 | [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14)|
 | [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u（核心 5.18+）|

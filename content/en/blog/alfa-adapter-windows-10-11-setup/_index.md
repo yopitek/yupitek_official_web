@@ -49,7 +49,7 @@ Windows Update is the easiest path for most adapters. When you plug in a support
 1. Plug the ALFA adapter into a USB 3.0 port.
 2. Wait 30–60 seconds. Windows will show a notification: *"Device driver software installed successfully"* (Windows 10) or silently complete in Windows 11.
 3. Open **Device Manager** (`Win + X` → Device Manager).
-4. Expand **Network Adapters**. You should see the adapter listed (e.g., *"Realtek 8812AU Wireless LAN 802.11ac USB NIC"* or *"MediaTek Wi-Fi 6 MT7921U Wireless LAN Card"*).
+4. Expand **Network Adapters**. You should see the adapter listed (e.g., *"Realtek 8812AU Wireless LAN 802.11ac USB NIC"* or *"MediaTek Wi-Fi 6 MT7921AUN Wireless LAN Card"*).
 5. If the adapter appears with a yellow warning icon, proceed to Method B.
 
 {{< alert "circle-info" >}}

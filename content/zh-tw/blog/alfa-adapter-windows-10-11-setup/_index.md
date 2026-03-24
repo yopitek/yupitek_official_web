@@ -49,7 +49,7 @@ ALFA Network USB WiFi 網路卡在資安研究與網路工程領域廣為人知�
 1. 將 ALFA 網路卡插入 USB 3.0 連接埠。
 2. 等待 30–60 秒。Windows 10 會顯示通知：*「裝置驅動程式軟體已成功安裝」*；Windows 11 則會靜默完成安裝。
 3. 開啟**裝置管理員**（`Win + X` → 裝置管理員）。
-4. 展開**網路介面卡**。應可看到網路卡列表（例如 *「Realtek 8812AU Wireless LAN 802.11ac USB NIC」* 或 *「MediaTek Wi-Fi 6 MT7921U Wireless LAN Card」*）。
+4. 展開**網路介面卡**。應可看到網路卡列表（例如 *「Realtek 8812AU Wireless LAN 802.11ac USB NIC」* 或 *「MediaTek Wi-Fi 6 MT7921AUN Wireless LAN Card」*）。
 5. 若網路卡旁出現黃色警告圖示，請繼續使用方法 B。
 
 {{< alert "circle-info" >}}

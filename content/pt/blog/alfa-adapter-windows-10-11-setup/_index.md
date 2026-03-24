@@ -49,7 +49,7 @@ O Windows Update é o caminho mais fácil para a maioria dos adaptadores. Ao con
 1. Conecte o adaptador ALFA a uma porta USB 3.0.
 2. Aguarde 30 a 60 segundos. O Windows exibirá uma notificação: *"Software do driver de dispositivo instalado com êxito"* (Windows 10) ou concluirá silenciosamente no Windows 11.
 3. Abra o **Gerenciador de Dispositivos** (`Win + X` → Gerenciador de Dispositivos).
-4. Expanda **Adaptadores de Rede**. O adaptador deve aparecer na lista (ex.: *"Realtek 8812AU Wireless LAN 802.11ac USB NIC"* ou *"MediaTek Wi-Fi 6 MT7921U Wireless LAN Card"*).
+4. Expanda **Adaptadores de Rede**. O adaptador deve aparecer na lista (ex.: *"Realtek 8812AU Wireless LAN 802.11ac USB NIC"* ou *"MediaTek Wi-Fi 6 MT7921AUN Wireless LAN Card"*).
 5. Se o adaptador aparecer com um ícone de aviso amarelo, prossiga para o Método B.
 
 {{< alert "circle-info" >}}

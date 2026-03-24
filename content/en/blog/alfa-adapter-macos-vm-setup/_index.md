@@ -176,7 +176,7 @@ sudo make dkms_install
 
 Allow several minutes for compilation. The resulting module will be architecture-specific to your ARM64 kernel.
 
-**MT7921U on ARM64:**
+**MT7921AUN on ARM64:**
 The `mt7921u` driver is **in-kernel since Linux 5.18** and is included in Kali ARM64 2024.x and later. No manual compilation is needed for the AWUS036AXML on Kali ARM64. The adapter is recognised automatically after USB passthrough.
 
 ```bash

@@ -51,7 +51,7 @@ tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "تثبيت-�
 1. وصّل محول ALFA بمنفذ USB 3.0.
 2. انتظر 30–60 ثانية. سيُظهر Windows إشعاراً: *"تم تثبيت برنامج تشغيل الجهاز بنجاح"* (Windows 10)، أو يُكمل العملية بصمت في Windows 11.
 3. افتح **إدارة الأجهزة** (`Win + X` ← إدارة الأجهزة).
-4. وسّع **محولات الشبكة**. يجب أن يظهر المحول (مثل: *"Realtek 8812AU Wireless LAN 802.11ac USB NIC"* أو *"MediaTek Wi-Fi 6 MT7921U Wireless LAN Card"*).
+4. وسّع **محولات الشبكة**. يجب أن يظهر المحول (مثل: *"Realtek 8812AU Wireless LAN 802.11ac USB NIC"* أو *"MediaTek Wi-Fi 6 MT7921AUN Wireless LAN Card"*).
 5. إذا ظهر المحول بأيقونة تحذير صفراء، انتقل إلى الطريقة ب.
 
 {{< alert "circle-info" >}}

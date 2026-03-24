@@ -187,7 +187,7 @@ wlan0mon  IEEE 802.11  Mode:Monitor  Frequency:2.457 GHz  Tx-Power=20 dBm
 sudo aireplay-ng --test wlan0mon
 ```
 
-In testing, the AWUS036AXML achieves consistent injection success rates above 90% when positioned within reasonable range of target access points. The MT7921U driver's injection implementation is solid on kernel 6.x — noticeably more stable than the early 5.18/5.19 releases where occasional frame drops were observed during sustained injection.
+In testing, the AWUS036AXML achieves consistent injection success rates above 90% when positioned within reasonable range of target access points. The MT7921AUN driver's injection implementation is solid on kernel 6.x — noticeably more stable than the early 5.18/5.19 releases where occasional frame drops were observed during sustained injection.
 
 ---
 
@@ -259,7 +259,7 @@ During broad-area reconnaissance with airodump-ng channel hopping enabled, the A
 | Pros | Cons |
 |---|---|
 | Only USB adapter with reliable 6 GHz support for Kali Linux | Requires kernel 5.18+ (older Kali installs need update) |
-| Full monitor mode and packet injection support | MT7921U driver is newer; edge cases may exist |
+| Full monitor mode and packet injection support | MT7921AUN driver is newer; edge cases may exist |
 | MT76 driver is upstream in Linux kernel | Included antenna limited to 2 dBi |
 | Stable on current Kali 2024.x / 2025.x kernels | 6 GHz range limited compared to 5 GHz without higher-gain antenna |
 | USB-A 3.0 — broadly compatible with test laptops | Single antenna, no MIMO for capture diversity |

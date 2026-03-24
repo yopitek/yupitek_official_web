@@ -49,7 +49,7 @@ Windows Update 是大多数网卡最便捷的驱动安装途径。将受支持�
 1. 将 ALFA 网卡插入 USB 3.0 接口。
 2. 等待 30–60 秒。Windows 10 会显示通知：*"设备驱动程序软件已成功安装"*；Windows 11 则会静默完成安装。
 3. 打开**设备管理器**（`Win + X` → 设备管理器）。
-4. 展开**网络适配器**。您应能看到该网卡（例如 *"Realtek 8812AU Wireless LAN 802.11ac USB NIC"* 或 *"MediaTek Wi-Fi 6 MT7921U Wireless LAN Card"*）。
+4. 展开**网络适配器**。您应能看到该网卡（例如 *"Realtek 8812AU Wireless LAN 802.11ac USB NIC"* 或 *"MediaTek Wi-Fi 6 MT7921AUN Wireless LAN Card"*）。
 5. 若网卡显示黄色警告图标，请继续使用方法 B。
 
 {{< alert "circle-info" >}}

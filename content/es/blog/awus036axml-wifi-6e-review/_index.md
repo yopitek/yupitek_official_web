@@ -188,7 +188,7 @@ wlan0mon  IEEE 802.11  Mode:Monitor  Frequency:2.457 GHz  Tx-Power=20 dBm
 sudo aireplay-ng --test wlan0mon
 ```
 
-En las pruebas, el AWUS036AXML logra tasas consistentes de éxito de inyección superiores al 90% cuando se posiciona dentro de un alcance razonable de los puntos de acceso objetivo. La implementación de inyección del controlador MT7921U es sólida en kernel 6.x — notablemente más estable que las versiones tempranas 5.18/5.19 donde se observaron caídas ocasionales de tramas durante inyección sostenida.
+En las pruebas, el AWUS036AXML logra tasas consistentes de éxito de inyección superiores al 90% cuando se posiciona dentro de un alcance razonable de los puntos de acceso objetivo. La implementación de inyección del controlador MT7921AUN es sólida en kernel 6.x — notablemente más estable que las versiones tempranas 5.18/5.19 donde se observaron caídas ocasionales de tramas durante inyección sostenida.
 
 ---
 
@@ -261,7 +261,7 @@ Durante el reconocimiento de área amplia con salto de canal de airodump-ng habi
 | Pros | Contras |
 |---|---|
 | Único adaptador USB con soporte confiable de 6 GHz para Kali Linux | Requiere kernel 5.18+ (instalaciones antiguas de Kali necesitan actualización) |
-| Soporte completo de modo monitor e inyección de paquetes | El controlador MT7921U es más nuevo; pueden existir casos extremos |
+| Soporte completo de modo monitor e inyección de paquetes | El controlador MT7921AUN es más nuevo; pueden existir casos extremos |
 | El controlador MT76 está integrado en el kernel de Linux | Antena incluida limitada a 2 dBi |
 | Estable en kernels actuales de Kali 2024.x / 2025.x | Alcance de 6 GHz limitado comparado con 5 GHz sin antena de mayor ganancia |
 | USB-A 3.0 — ampliamente compatible con laptops de prueba | Antena única, sin MIMO para diversidad de captura |

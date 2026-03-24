@@ -49,7 +49,7 @@ Linux との最大の違いはモニターモードにあります。Linux で�
 1. ALFA アダプターを USB 3.0 ポートに接続します。
 2. 30〜60 秒待ちます。Windows 10 では *「デバイス ドライバー ソフトウェアが正常にインストールされました」* という通知が表示されます（Windows 11 では通知なしで完了します）。
 3. **デバイスマネージャー**を開きます（`Win + X` → デバイスマネージャー）。
-4. **ネットワーク アダプター** を展開します。アダプターが一覧に表示されるはずです（例：*「Realtek 8812AU Wireless LAN 802.11ac USB NIC」* または *「MediaTek Wi-Fi 6 MT7921U Wireless LAN Card」*）。
+4. **ネットワーク アダプター** を展開します。アダプターが一覧に表示されるはずです（例：*「Realtek 8812AU Wireless LAN 802.11ac USB NIC」* または *「MediaTek Wi-Fi 6 MT7921AUN Wireless LAN Card」*）。
 5. アダプターに黄色の警告アイコンが表示されている場合は、方法 B に進んでください。
 
 {{< alert "circle-info" >}}

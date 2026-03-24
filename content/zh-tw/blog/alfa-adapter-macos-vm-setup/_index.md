@@ -168,7 +168,7 @@ cd rtl8812au
 sudo make dkms_install
 ```
 
-**MT7921U on ARM64：**
+**MT7921AUN on ARM64：**
 `mt7921u` 驅動程式自 **Linux 5.18 起已內建於核心**，包含在 Kali ARM64 2024.x 及更新版本中。AWUS036AXML 在 Kali ARM64 上不需要手動編譯。USB 直通後網路卡會自動識別。
 
 ```bash

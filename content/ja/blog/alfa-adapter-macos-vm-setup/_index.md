@@ -158,7 +158,7 @@ cd rtl8812au
 sudo make dkms_install
 ```
 
-**MT7921U（ARM64）：**
+**MT7921AUN（ARM64）：**
 `mt7921u`ドライバーは**Linux 5.18からカーネルに内蔵**されており、Kali ARM64 2024.x以降に含まれています。AWUS036AXMLはKali ARM64で手動コンパイル不要で、USBパススルー後に自動的に認識されます。
 
 ```bash

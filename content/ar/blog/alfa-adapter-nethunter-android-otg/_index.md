@@ -1,7 +1,7 @@
 ---
 title: "استخدام محولات ALFA WiFi مع Kali NetHunter عبر USB OTG على Android"
 description: "كيفية استخدام محولات ALFA USB WiFi مع Kali NetHunter على Android عبر USB OTG. يشمل تعريف AWUS036ACH، أوامر وضع المراقبة، متطلبات كابل OTG، والأجهزة المدعومة."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 dir: rtl
 showBreadcrumbs: true

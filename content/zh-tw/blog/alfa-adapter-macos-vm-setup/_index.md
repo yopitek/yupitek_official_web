@@ -1,7 +1,7 @@
 ---
 title: "在 macOS 使用 ALFA WiFi 網路卡：VMware Fusion 與 Parallels USB 直通完整指南"
 description: "如何在 macOS 使用 ALFA USB WiFi 網路卡。涵蓋 macOS 原生支援、VMware Fusion USB 直通、Parallels Desktop，以及在 Kali Linux 啟用監聽模式與封包注入。"
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

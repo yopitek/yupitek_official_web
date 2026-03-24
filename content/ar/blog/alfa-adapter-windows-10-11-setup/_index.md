@@ -1,7 +1,7 @@
 ---
 title: "دليل إعداد محول ALFA على Windows 10 وWindows 11"
 description: "كيفية تثبيت وضبط محولات ALFA USB WiFi على Windows 10/11. تنزيل برامج التشغيل، وضع المراقبة مع Acrylic WiFi، استكشاف الأخطاء، ومقارنة المحولات لمستخدمي Windows."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 dir: rtl
 languageDirection: rtl

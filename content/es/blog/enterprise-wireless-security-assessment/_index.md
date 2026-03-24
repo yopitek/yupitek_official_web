@@ -1,7 +1,7 @@
 ---
 title: "Evaluación de Seguridad Inalámbrica Empresarial: Un Framework Completo"
 description: "Framework completo de evaluación de seguridad inalámbrica empresarial con adaptadores ALFA. Cubre alcance, detección de puntos de acceso no autorizados, auditoría WPA2/WPA3, pruebas PMF e informes para equipos de seguridad TI."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

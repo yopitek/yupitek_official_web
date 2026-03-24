@@ -1,7 +1,7 @@
 ---
 title: "使用 ALFA 無線網卡進行 WPA3 安全測試 (2026)"
 description: "使用 ALFA Network 無線網卡進行 WPA3 安全測試的完整指南。涵蓋 SAE 握手分析、Dragonblood 漏洞、轉換模式降級攻擊、PMF 強制執行，以及 WPA3-Enterprise EAP 測試。"
-date: 2026-04-20
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

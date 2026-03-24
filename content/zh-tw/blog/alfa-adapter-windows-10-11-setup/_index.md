@@ -1,7 +1,7 @@
 ---
 title: "ALFA 無線網路卡 Windows 10/11 安裝設定完整指南"
 description: "如何在 Windows 10/11 安裝與設定 ALFA USB WiFi 網路卡。驅動程式下載、使用 Acrylic WiFi 的監聽模式、疑難排解，以及 Windows 使用者的網路卡比較。"
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

@@ -1,7 +1,7 @@
 ---
 title: "محول ALFA WiFi على Raspberry Pi مع Kali Linux: دليل الإعداد الكامل"
 description: "تثبيت محولات ALFA USB WiFi على Raspberry Pi بنظام Kali Linux ARM64. يشمل تجميع درايفر RTL8812AU للـ AWUS036ACH، وضع المراقبة، وإعداد منصة اختبار الاختراق المحمولة."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 dir: rtl
 showBreadcrumbs: true

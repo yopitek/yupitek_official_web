@@ -1,7 +1,7 @@
 ---
 title: "Correção de Firmware do AWUS036AXML no Modo Monitor: Resolver Crashes no Modo Ativo"
 description: "Como corrigir crashes de firmware do AWUS036AXML no modo monitor no Kali Linux. Abrange atualização de firmware MT7921AU, requisitos de versão do kernel, soluções alternativas para modo ativo vs passivo e alternativa com hcxdumptool."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

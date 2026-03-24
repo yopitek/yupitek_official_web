@@ -1,7 +1,7 @@
 ---
 title: "Driver ALFA quebrou após atualização do kernel? Guia completo de correção"
 description: "Adaptador ALFA USB WiFi não funciona após atualização do kernel Linux? Guia completo de correção para drivers RTL8812AU, RTL8811AU e MT7921AU no Kali Linux e Ubuntu após atualizações do kernel."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

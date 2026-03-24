@@ -1,7 +1,7 @@
 ---
 title: "Using ALFA WiFi Adapters with Kali NetHunter via USB OTG"
 description: "How to use ALFA USB WiFi adapters with Kali NetHunter on Android via USB OTG. Covers AWUS036ACH driver, monitor mode commands, OTG cable requirements, and supported devices."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

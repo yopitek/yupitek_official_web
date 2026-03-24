@@ -1,7 +1,7 @@
 ---
 title: "¿El controlador ALFA se rompió tras una actualización del kernel? Guía completa de reparación"
 description: "¿El adaptador ALFA USB WiFi no funciona tras una actualización del kernel de Linux? Guía completa de reparación para los controladores RTL8812AU, RTL8811AU y MT7921AU en Kali Linux y Ubuntu después de actualizaciones del kernel."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

@@ -1,7 +1,7 @@
 ---
 title: "Enterprise Wireless Security Assessment: A Complete Framework"
 description: "Complete enterprise wireless security assessment framework using ALFA adapters. Covers scoping, rogue AP detection, WPA2/WPA3 audit, PMF testing, and reporting for IT security teams."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

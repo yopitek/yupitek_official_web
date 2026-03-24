@@ -1,7 +1,7 @@
 ---
 title: "DJI Drone Controller Antenna Upgrade: Extend Range with ALFA Antennas"
 description: "How to upgrade DJI drone controller antennas for extended range. Compatible ALFA antenna models, RP-SMA connector guide, range test results, and legal considerations."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

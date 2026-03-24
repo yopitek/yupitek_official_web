@@ -1,7 +1,7 @@
 ---
 title: "ALFA 驅動程式在核心更新後失效？完整修復指南"
 description: "Linux 核心更新後 ALFA USB WiFi 網路卡無法使用？完整修復指南：涵蓋 Kali Linux 與 Ubuntu 上的 RTL8812AU、RTL8811AU 及 MT7921AU 驅動程式修復方式。"
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

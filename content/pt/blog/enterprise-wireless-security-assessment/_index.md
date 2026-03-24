@@ -1,7 +1,7 @@
 ---
 title: "Avaliação de Segurança Wireless Corporativa: Um Framework Completo"
 description: "Framework completo de avaliação de segurança wireless corporativa usando adaptadores ALFA. Abrange escopo, detecção de AP não autorizado, auditoria WPA2/WPA3, teste de PMF e relatórios para equipes de segurança de TI."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

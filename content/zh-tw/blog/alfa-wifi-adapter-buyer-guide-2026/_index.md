@@ -1,7 +1,7 @@
 ---
 title: "ALFA WiFi 網路卡購買指南 2026：哪款機型最適合你？"
 description: "2026 年完整 ALFA Network USB WiFi 網路卡購買指南。比較 AWUS036ACH、ACM、ACS、AX、AXER、AXM、AXML、EACS 的驅動支援、監聽模式、作業系統相容性與價格。"
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

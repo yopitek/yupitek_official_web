@@ -1,7 +1,7 @@
 ---
 title: "ALFA アダプター USB パススルー：VirtualBox と VMware セットアップガイド"
 description: "Kali Linux 向けの VirtualBox および VMware Workstation における ALFA USB WiFi アダプターの USB パススルー設定を解説。AWUS036ACH、AWUS036AXML、USB 3.0 フィルター、Extension Pack、トラブルシューティングまで網羅。"
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

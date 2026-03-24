@@ -1,7 +1,7 @@
 ---
 title: "إصلاح ثابتة وضع المراقبة لـ AWUS036AXML: حل مشكلة انهيار الوضع النشط"
 description: "كيفية إصلاح انهيار ثابتة وضع المراقبة في AWUS036AXML على Kali Linux. يشمل تحديث ثابتة MT7921AU، متطلبات إصدار النواة، حل وضع الالتقاط السلبي مقابل النشط، وبديل hcxdumptool."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 dir: rtl
 showBreadcrumbs: true

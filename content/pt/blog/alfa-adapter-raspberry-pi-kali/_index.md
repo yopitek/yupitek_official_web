@@ -1,7 +1,7 @@
 ---
 title: "Adaptador ALFA WiFi no Raspberry Pi com Kali Linux: Guia de Configuração"
 description: "Instale adaptadores ALFA USB WiFi no Raspberry Pi com Kali Linux ARM64. Abrange compilação do driver RTL8812AU do AWUS036ACH, modo monitor e configuração de pentesting portátil."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

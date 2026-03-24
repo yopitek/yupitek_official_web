@@ -1,7 +1,7 @@
 ---
 title: "AWUS036AXML Monitor Mode Firmware Fix: Resolve Active Mode Crashes"
 description: "How to fix AWUS036AXML monitor mode firmware crashes on Kali Linux. Covers MT7921AU firmware update, kernel version requirements, active vs passive mode workaround, and hcxdumptool alternative."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

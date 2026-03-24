@@ -1,7 +1,7 @@
 ---
 title: "DJI 無人機遙控器天線升級指南：使用 ALFA 天線延伸控制距離"
 description: "如何升級 DJI 無人機遙控器天線以延伸控制距離。相容 ALFA 天線型號、RP-SMA 接頭說明、距離測試結果與法規注意事項。"
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

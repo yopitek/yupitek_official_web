@@ -1,7 +1,7 @@
 ---
 title: "AWUS036AXML 監控模式韌體修復：解決主動模式當機問題"
 description: "如何修復 AWUS036AXML 在 Kali Linux 上的監控模式韌體當機問題。涵蓋 MT7921AU 韌體更新、核心版本需求、主動與被動模式的解決方案，以及 hcxdumptool 替代方案。"
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

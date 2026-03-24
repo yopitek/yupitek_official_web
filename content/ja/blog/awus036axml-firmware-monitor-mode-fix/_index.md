@@ -1,7 +1,7 @@
 ---
 title: "AWUS036AXML モニターモード ファームウェア修正：アクティブモードのクラッシュを解決する"
 description: "Kali Linux で AWUS036AXML のモニターモード ファームウェアクラッシュを修正する方法。MT7921AU ファームウェア更新、カーネルバージョン要件、アクティブ/パッシブモードの回避策、hcxdumptool の代替手段を解説。"
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

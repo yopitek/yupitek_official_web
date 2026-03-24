@@ -1,7 +1,7 @@
 ---
 title: "Using ALFA WiFi Adapters on macOS: USB Passthrough with VMware Fusion & Parallels"
 description: "How to use ALFA USB WiFi adapters on macOS. Covers native macOS support, VMware Fusion USB passthrough, and Parallels Desktop for Kali Linux monitor mode and packet injection."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

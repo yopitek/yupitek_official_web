@@ -1,7 +1,7 @@
 ---
 title: "Guia de Configuração do Adaptador ALFA para Windows 10 e Windows 11"
 description: "Como instalar e configurar adaptadores ALFA USB WiFi no Windows 10/11. Download de drivers, modo monitor com Acrylic WiFi, solução de problemas e comparação de adaptadores para usuários Windows."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

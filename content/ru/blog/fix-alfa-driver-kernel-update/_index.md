@@ -1,7 +1,7 @@
 ---
 title: "Драйвер ALFA перестал работать после обновления ядра? Полное руководство по исправлению"
 description: "ALFA USB WiFi адаптер не работает после обновления ядра Linux? Полное руководство по исправлению драйверов RTL8812AU, RTL8811AU и MT7921AU на Kali Linux и Ubuntu после обновлений ядра."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

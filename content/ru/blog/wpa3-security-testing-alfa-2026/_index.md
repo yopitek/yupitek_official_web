@@ -1,7 +1,7 @@
 ---
 title: "Тестирование безопасности WPA3 с адаптерами ALFA (2026)"
 description: "Исчерпывающее руководство по тестированию безопасности WPA3 с использованием адаптеров ALFA Network. Охватывает анализ рукопожатий SAE, уязвимости Dragonblood, атаки понижения версии в режиме перехода, применение PMF и тестирование EAP в WPA3-Enterprise."
-date: 2026-04-20
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

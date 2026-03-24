@@ -1,7 +1,7 @@
 ---
 title: "Pruebas de Seguridad WPA3 con Adaptadores ALFA (2026)"
 description: "Guía completa para pruebas de seguridad WPA3 usando adaptadores ALFA Network. Cubre análisis del handshake SAE, vulnerabilidades Dragonblood, ataques de degradación en modo de transición, cumplimiento de PMF y pruebas EAP de WPA3-Enterprise."
-date: 2026-04-20
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

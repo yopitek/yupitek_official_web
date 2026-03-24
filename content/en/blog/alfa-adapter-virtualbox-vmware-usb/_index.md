@@ -1,7 +1,7 @@
 ---
 title: "ALFA Adapter USB Passthrough: VirtualBox & VMware Setup Guide"
 description: "Step-by-step guide to ALFA USB WiFi adapter USB passthrough in VirtualBox and VMware Workstation for Kali Linux. Covers AWUS036ACH, AWUS036AXML, USB 3.0 filter, Extension Pack, and troubleshooting."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

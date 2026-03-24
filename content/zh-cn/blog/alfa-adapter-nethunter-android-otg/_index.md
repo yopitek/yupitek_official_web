@@ -1,7 +1,7 @@
 ---
 title: "在 Android 上通过 USB OTG 搭配 Kali NetHunter 使用 ALFA WiFi 网卡"
 description: "如何通过 USB OTG 在 Android 的 Kali NetHunter 上使用 ALFA USB WiFi 网卡。涵盖 AWUS036ACH 驱动程序、监听模式命令、OTG 数据线需求及支持设备。"
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

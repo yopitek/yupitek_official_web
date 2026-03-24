@@ -1,7 +1,7 @@
 ---
 title: "تعطّل برنامج تشغيل ALFA بعد تحديث النواة؟ دليل الإصلاح الشامل"
 description: "محول ALFA USB WiFi لا يعمل بعد تحديث نواة Linux؟ دليل إصلاح كامل لبرامج تشغيل RTL8812AU وRTL8811AU وMT7921AU على Kali Linux وUbuntu بعد ترقيات النواة."
-date: 2026-04-15
+date: 2026-03-24
 draft: false
 dir: rtl
 showBreadcrumbs: true

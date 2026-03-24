@@ -92,6 +92,23 @@ body:has(#mobile-menu-toggle:checked) {
   overflow: hidden;
 }
 
+/* ── Wide comparison tables — prevent column squeeze ── */
+/*
+ * When a markdown table is wrapped in <div style="overflow-x: auto;">,
+ * the browser compresses all columns to fit the container width.
+ * Setting width: max-content forces the table to its natural width,
+ * triggering horizontal scroll rather than squeezing columns.
+ */
+.prose [style*="overflow-x"] table {
+  width: max-content;
+  min-width: 100%;
+}
+
+.prose [style*="overflow-x"] table th,
+.prose [style*="overflow-x"] table td {
+  white-space: nowrap;
+}
+
 /* Security tools legal notice */
 .legal-notice {
   border-left: 3px solid var(--brand-cyan);

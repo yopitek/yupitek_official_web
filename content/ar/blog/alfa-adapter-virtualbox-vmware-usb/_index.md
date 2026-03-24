@@ -244,9 +244,9 @@ AWUS036AXML جهاز **USB 3.0** يدعم WiFi 6E وله بعض الحالات �
 
 المراجعة الكاملة: [مراجعة AWUS036AXML WiFi 6E](/ar/blog/awus036axml-wifi-6e-review/).
 
-### AWUS036ACM (RTL8812AU، هوائي واحد)
+### AWUS036ACM (MT7612U، هوائيان)
 
-يتصرف بشكل مطابق لـ AWUS036ACH من منظور برامج التشغيل والـ passthrough. استخدم نفس وحدة `88XXau` ونفس إعدادات VirtualBox/VMware.
+يستخدم AWUS036ACM شريحة MediaTek MT7612U مع برنامج تشغيل مدمج في نواة Linux (`mt76x2u`، مُدرج في mainline منذ النواة 4.19). لا حاجة لتثبيت برنامج تشغيل — بعد إعداد الـ passthrough، يعمل المحول بشكل plug-and-play داخل VM. إذا لم يُحمَّل تلقائياً، شغّل `sudo modprobe mt76x2u`. يتوفر في AWUS036ACM منفذا هوائي RP-SMA.
 
 ---
 

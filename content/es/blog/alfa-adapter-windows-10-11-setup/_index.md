@@ -56,7 +56,7 @@ Windows Update es la ruta más sencilla para la mayoría de los adaptadores. Al 
 Windows Update requiere una conexión a internet activa para descargar los drivers. Si estás configurando una máquina de laboratorio aislada, descarga el paquete de drivers en otro equipo y transfiérelo manualmente antes de usar el Método B.
 {{< /alert >}}
 
-### Método B: Instalación Manual del Driver — RTL8812AU (AWUS036ACH / AWUS036ACM / AWUS036ACS)
+### Método B: Instalación Manual del Driver — RTL8812AU (AWUS036ACH / AWUS036ACS)
 
 1. Visita la [página de descargas de ALFA Network](https://www.alfa.com.tw/service_1.html) o el archivo de drivers de Realtek y descarga el último driver WHQL de Windows para RTL8812AU.
 2. Extrae el archivo `.zip` en una carpeta local (p. ej., `C:\Drivers\RTL8812AU`).

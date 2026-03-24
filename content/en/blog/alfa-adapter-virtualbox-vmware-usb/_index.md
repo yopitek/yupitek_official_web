@@ -147,7 +147,7 @@ sudo modprobe 88XXau
 sudo modprobe mt7921u
 ```
 
-The MT7921U driver is included in the mainline kernel since 5.18. Kali 2024.x ships with a kernel new enough to include it, but you may also need firmware:
+The MT7921AUN driver is included in the mainline kernel since 5.18. Kali 2024.x ships with a kernel new enough to include it, but you may also need firmware:
 
 ```bash
 sudo apt install -y firmware-misc-nonfree
@@ -288,9 +288,9 @@ The AWUS036AXML is a **USB 3.0** device supporting WiFi 6E. It is newer and has 
 
 Full review: [AWUS036AXML WiFi 6E Review](/en/blog/awus036axml-wifi-6e-review/).
 
-### AWUS036ACM (RTL8812AU, Single Antenna)
+### AWUS036ACM (MT7612U, Dual Antenna)
 
-Behaves identically to the AWUS036ACH from a driver and passthrough perspective. Use the same `88XXau` module and the same VirtualBox/VMware settings. The only practical difference is the single antenna, which reduces MIMO capability but does not affect monitor mode or injection.
+The AWUS036ACM uses the MediaTek MT7612U chipset with an in-kernel driver (`mt76x2u`, mainlined since kernel 4.19). No driver installation is needed — once passthrough is configured, the adapter is plug-and-play inside the VM. If the module does not load automatically, run `sudo modprobe mt76x2u`. The AWUS036ACM has two RP-SMA antenna ports.
 
 ---
 

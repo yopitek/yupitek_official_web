@@ -56,7 +56,7 @@ Windows Update 是大多数网卡最便捷的驱动安装途径。将受支持�
 Windows Update 需要有效的互联网连接才能下载驱动。如果您正在配置隔离的实验环境，请在另一台计算机上下载驱动包，手动传输后再使用方法 B 安装。
 {{< /alert >}}
 
-### 方法 B：手动安装驱动 — RTL8812AU（AWUS036ACH / AWUS036ACM / AWUS036ACS）
+### 方法 B：手动安装驱动 — RTL8812AU（AWUS036ACH / AWUS036ACS）
 
 1. 前往 [ALFA Network 下载页面](https://www.alfa.com.tw/service_1.html) 或 Realtek 驱动归档站点，下载最新 RTL8812AU 的 Windows WHQL 驱动。
 2. 将 `.zip` 压缩包解压至本地文件夹（例如 `C:\Drivers\RTL8812AU`）。

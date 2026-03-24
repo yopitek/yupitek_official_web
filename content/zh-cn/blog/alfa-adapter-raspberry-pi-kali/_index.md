@@ -10,7 +10,7 @@ tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", 
 
 运行 Kali Linux 的笔记本电脑是标准的渗透测试工作站——但绝非唯一选择。Raspberry Pi 4 或 Pi 5 搭配 ALFA USB WiFi 网卡，能打造出一个体积小巧、无风扇、被动散热的平台：可以放进夹克口袋、靠 USB-C 移动电源供电，并在目标环境中无人看守运行数小时。Kali Linux ARM64 镜像由 Offensive Security 官方提供，无需模拟即可在 Pi 4 和 Pi 5 上原生运行，完整提供 Aircrack-ng、Kismet、Wireshark、Bettercap 等 Kali 标准工具包。
 
-最大的障碍是驱动程序。AWUS036ACH 和 AWUS036ACM 内置的 RTL8812AU 芯片不在主线内核中，这意味着你不能插上网卡就期望它直接工作。你必须针对运行中的 ARM64 内核编译驱动程序——而编译参数与 x86-64 不同。本教程带你完成每一个步骤。
+最大的障碍是驱动程序。AWUS036ACH 内置的 RTL8812AU 芯片不在主线内核中，这意味着你不能插上网卡就期望它直接工作。你必须针对运行中的 ARM64 内核编译驱动程序——而编译参数与 x86-64 不同。本教程带你完成每一个步骤。
 
 ---
 
@@ -22,8 +22,8 @@ tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", 
 |---|---|---|
 | 单板计算机 | Raspberry Pi 5（4 GB 或 8 GB） | Pi 4（4 GB+）也能正常运行；Pi 3B+ 速度不足以应付实时封包捕获 |
 | 主要网卡 | ALFA AWUS036ACH | RTL8812AU 芯片；ARM 驱动支持最佳；双频 AC1200 |
-| 备选网卡 | ALFA AWUS036ACM | RTL8812AU 变体；驱动支持相近；耗电略低 |
-| WiFi 6 网卡 | ALFA AWUS036AXM 或 AXML | MT7921U 芯片；内核 5.18 起内置；需安装 firmware-misc-nonfree |
+| 备选网卡 | ALFA AWUS036ACM | MT7612U 芯片；内核内置驱动 (mt76x2u)；Kali ARM64 免驱即插即用 |
+| WiFi 6 网卡 | ALFA AWUS036AXM 或 AXML | MT7921AUN 芯片；内核 5.18 起内置；需安装 firmware-misc-nonfree |
 | USB 集线器 | 有源 USB 3.0 集线器 | AWUS036ACH 耗电约 500 mW；不加集线器可能导致 Pi USB 电压不足 |
 | 存储 | MicroSD 32 GB+（Class 10 / A2） | A2 规格内存卡启动及 apt 操作明显更快 |
 | 电源供应器 | 官方 Pi USB-C 电源供应器（≥ 3 A） | 第三方充电器是稳定性问题的常见来源 |
@@ -128,11 +128,11 @@ ip link show
 
 ---
 
-## Raspberry Pi 上的 MT7921U（AWUS036AXM / AXML）
+## Raspberry Pi 上的 MT7921AUN（AWUS036AXM / AXML）
 
-AWUS036AXM 和 AXML 使用的 MediaTek MT7921U 芯片自内核 5.18 起已内置于主线内核。Kali Linux ARM64 镜像使用的内核版本远高于此门槛，这意味着插上网卡驱动程序就会自动加载——无需编译。
+AWUS036AXM 和 AXML 使用的 MediaTek MT7921AUN 芯片自内核 5.18 起已内置于主线内核。Kali Linux ARM64 镜像使用的内核版本远高于此门槛，这意味着插上网卡驱动程序就会自动加载——无需编译。
 
-唯一需要的额外步骤是安装 MT7921U 所需的闭源固件：
+唯一需要的额外步骤是安装 MT7921AUN 所需的闭源固件：
 
 ```bash
 sudo apt install firmware-misc-nonfree
@@ -147,7 +147,7 @@ sudo modprobe mt7921u
 ip link show
 ```
 
-若 `lsusb` 显示 MediaTek 设备，且 `ip link show` 列出新的无线接口，网卡即已就绪。MT7921U 的监听模式支持自内核 5.18 起已大幅改善，但在某些封包注入测试中可能不如 RTL8812AU 稳定。若需最大程度兼容旧有渗透测试工作流程，AWUS036ACH 仍是更稳健的选择。
+若 `lsusb` 显示 MediaTek 设备，且 `ip link show` 列出新的无线接口，网卡即已就绪。MT7921AUN 的监听模式支持自内核 5.18 起已大幅改善，但在某些封包注入测试中可能不如 RTL8812AU 稳定。若需最大程度兼容旧有渗透测试工作流程，AWUS036ACH 仍是更稳健的选择。
 
 ---
 
@@ -235,7 +235,7 @@ Kismet 默认将所有数据记录至 `~/.kismet/` 中的 `.kismet` 数据库文
 
 **所需组件：**
 - Raspberry Pi 4 或 Pi 5
-- ALFA AWUS036ACH（或 AWUS036ACM）
+- ALFA AWUS036ACH
 - USB GPS 设备（u-blox 芯片与 Kismet 兼容性良好）
 - 有源 USB 集线器
 - USB-C 移动电源（65 W+，支持直通充电）

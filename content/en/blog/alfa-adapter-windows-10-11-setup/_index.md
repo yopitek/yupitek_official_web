@@ -56,7 +56,7 @@ Windows Update is the easiest path for most adapters. When you plug in a support
 Windows Update requires an active internet connection to download drivers. If you're setting up an isolated lab machine, download the driver package on another computer and transfer it manually before using Method B.
 {{< /alert >}}
 
-### Method B: Manual Driver Install — RTL8812AU (AWUS036ACH / AWUS036ACM / AWUS036ACS)
+### Method B: Manual Driver Install — RTL8812AU (AWUS036ACH / AWUS036ACS)
 
 1. Visit the [ALFA Network download page](https://www.alfa.com.tw/service_1.html) or the Realtek driver archive and download the latest Windows WHQL driver for RTL8812AU.
 2. Extract the `.zip` archive to a local folder (e.g., `C:\Drivers\RTL8812AU`).

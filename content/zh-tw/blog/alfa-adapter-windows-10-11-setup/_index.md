@@ -56,7 +56,7 @@ ALFA Network USB WiFi 網路卡在資安研究與網路工程領域廣為人知�
 Windows Update 需要有效的網路連線才能下載驅動程式。若您正在設定隔離的實驗室機器，請先在另一台電腦上下載驅動程式套件，再以手動方式傳輸後使用方法 B 安裝。
 {{< /alert >}}
 
-### 方法 B：手動安裝驅動程式 — RTL8812AU（AWUS036ACH / AWUS036ACM / AWUS036ACS）
+### 方法 B：手動安裝驅動程式 — RTL8812AU（AWUS036ACH / AWUS036ACS）
 
 1. 前往 [ALFA Network 下載頁面](https://www.alfa.com.tw/service_1.html) 或 Realtek 驅動程式封存庫，下載 RTL8812AU 最新的 Windows WHQL 驅動程式。
 2. 將 `.zip` 壓縮檔解壓縮至本機資料夾（例如 `C:\Drivers\RTL8812AU`）。

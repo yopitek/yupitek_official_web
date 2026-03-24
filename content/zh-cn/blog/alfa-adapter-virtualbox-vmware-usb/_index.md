@@ -241,9 +241,9 @@ AWUS036AXML 是支持 WiFi 6E 的 **USB 3.0** 设备，在 VM 环境中有一些
 
 完整评测：[AWUS036AXML WiFi 6E 评测](/zh-cn/blog/awus036axml-wifi-6e-review/)。
 
-### AWUS036ACM（RTL8812AU，单天线）
+### AWUS036ACM（MT7612U，双天线）
 
-从驱动程序和直通角度来看，与 AWUS036ACH 行为完全相同。使用相同的 `88XXau` 模块和相同的 VirtualBox/VMware 设置。
+AWUS036ACM 使用 MediaTek MT7612U 芯片，驱动程序已内置于 Linux 内核（`mt76x2u`，自内核 4.19 起纳入主线）。无需额外安装驱动程序——完成直通配置后，网卡即可在虚拟机内即插即用。若未自动加载，请运行 `sudo modprobe mt76x2u`。AWUS036ACM 配备两个 RP-SMA 天线接口。
 
 ---
 

@@ -10,7 +10,7 @@ tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", 
 
 A laptop running Kali Linux is the standard pentesting workstation — but it is far from the only option. A Raspberry Pi 4 or Pi 5 paired with an ALFA USB WiFi adapter gives you a compact, fanless, passively-cooled platform that fits in a jacket pocket, runs on a USB-C power bank, and can be left unattended in a target environment for hours. Kali Linux ARM64 images ship directly from Offensive Security and run natively on the Pi 4 and Pi 5 without emulation, giving you the full toolset: Aircrack-ng, Kismet, Wireshark, Bettercap, and the rest of the standard Kali metapackages.
 
-The number-one stumbling block is the driver. The RTL8812AU chipset inside the AWUS036ACH and AWUS036ACM is not in the mainline kernel, which means you cannot plug the adapter in and expect it to work. You must compile the driver against your running ARM64 kernel — and the compilation flags differ from x86-64. This guide walks you through every step.
+The number-one stumbling block is the driver. The RTL8812AU chipset inside the AWUS036ACH is not in the mainline kernel, which means you cannot plug the adapter in and expect it to work. You must compile the driver against your running ARM64 kernel — and the compilation flags differ from x86-64. This guide walks you through every step.
 
 ---
 
@@ -22,8 +22,8 @@ Not every combination of Pi model, adapter, and power supply works reliably. The
 |---|---|---|
 | Single-board computer | Raspberry Pi 5 (4 GB or 8 GB) | Pi 4 (4 GB+) works well; Pi 3B+ is too slow for real-time captures |
 | Primary adapter | ALFA AWUS036ACH | RTL8812AU chipset; best ARM driver support; dual-band AC1200 |
-| Alternative adapter | ALFA AWUS036ACM | RTL8812AU variant; similar driver support; slightly lower power draw |
-| WiFi 6 adapter | ALFA AWUS036AXM or AXML | MT7921U chipset; kernel-native since 5.18; needs firmware-misc-nonfree |
+| Alternative adapter | ALFA AWUS036ACM | MT7612U chipset; in-kernel driver (mt76x2u); plug-and-play on Kali ARM64 |
+| WiFi 6 adapter | ALFA AWUS036AXM or AXML | MT7921AUN chipset; kernel-native since 5.18; needs firmware-misc-nonfree |
 | USB hub | Powered USB 3.0 hub | AWUS036ACH draws ~500 mW; can brown out Pi USB ports without hub |
 | Storage | MicroSD 32 GB+ (Class 10 / A2) | A2-rated cards give noticeably faster boot and apt operations |
 | Power supply | Official Pi USB-C PSU (≥ 3 A) | Third-party adapters are a common source of stability problems |
@@ -72,7 +72,7 @@ If you plan to access the Pi over SSH rather than with a keyboard and monitor, e
 
 ---
 
-## Installing RTL8812AU Driver on Kali ARM64 (AWUS036ACH / ACM)
+## Installing RTL8812AU Driver on Kali ARM64 (AWUS036ACH)
 
 The RTL8812AU driver is not included in the mainline Linux kernel. On ARM64 you must either compile from source or install the Kali-packaged DKMS version. Both paths are covered below — start with the package approach and only fall back to the manual build if you encounter kernel version mismatches.
 
@@ -128,11 +128,11 @@ You should see a new interface — typically `wlan1` — listed. If `ip link sho
 
 ---
 
-## MT7921U on Raspberry Pi (AWUS036AXM / AXML)
+## MT7921AUN on Raspberry Pi (AWUS036AXM / AXML)
 
-The MediaTek MT7921U chipset used in the AWUS036AXM and AXML adapters has been in the mainline kernel since version 5.18. Kali Linux ARM64 images ship with a kernel well above that threshold, which means the driver loads automatically when you plug the adapter in — no compilation needed.
+The MediaTek MT7921AUN chipset used in the AWUS036AXM and AXML adapters has been in the mainline kernel since version 5.18. Kali Linux ARM64 images ship with a kernel well above that threshold, which means the driver loads automatically when you plug the adapter in — no compilation needed.
 
-The only additional step is installing the closed-source firmware blob that the MT7921U requires:
+The only additional step is installing the closed-source firmware blob that the MT7921AUN requires:
 
 ```bash
 sudo apt install firmware-misc-nonfree
@@ -147,7 +147,7 @@ sudo modprobe mt7921u
 ip link show
 ```
 
-If `lsusb` shows a MediaTek device and `ip link show` lists a new wireless interface, the adapter is ready. Monitor mode support on the MT7921U has improved significantly since kernel 5.18 but may be less reliable than RTL8812AU-based adapters for certain packet injection tests. For maximum compatibility with older pentesting workflows, the AWUS036ACH remains the stronger choice.
+If `lsusb` shows a MediaTek device and `ip link show` lists a new wireless interface, the adapter is ready. Monitor mode support on the MT7921AUN has improved significantly since kernel 5.18 but may be less reliable than RTL8812AU-based adapters for certain packet injection tests. For maximum compatibility with older pentesting workflows, the AWUS036ACH remains the stronger choice.
 
 ---
 
@@ -235,7 +235,7 @@ A Raspberry Pi running Kismet with an ALFA adapter and a GPS dongle is a complet
 
 **Required components:**
 - Raspberry Pi 4 or Pi 5
-- ALFA AWUS036ACH (or AWUS036ACM)
+- ALFA AWUS036ACH
 - USB GPS dongle (u-blox chipsets work well with Kismet)
 - Powered USB hub
 - USB-C power bank (65 W+, with pass-through charging)

@@ -243,9 +243,9 @@ El AWUS036AXML es un dispositivo **USB 3.0** que soporta WiFi 6E y tiene algunos
 
 Revisión completa: [Revisión AWUS036AXML WiFi 6E](/es/blog/awus036axml-wifi-6e-review/).
 
-### AWUS036ACM (RTL8812AU, Antena Única)
+### AWUS036ACM (MT7612U, Doble Antena)
 
-Se comporta de forma idéntica al AWUS036ACH desde la perspectiva del controlador y el passthrough. Usa el mismo módulo `88XXau` y la misma configuración de VirtualBox/VMware.
+El AWUS036ACM usa el chipset MediaTek MT7612U con un driver integrado en el kernel (`mt76x2u`, incorporado desde el kernel 4.19). No requiere instalación de driver — una vez configurado el passthrough, el adaptador funciona plug-and-play en la VM. Si no se carga automáticamente, ejecuta `sudo modprobe mt76x2u`. El AWUS036ACM tiene dos puertos de antena RP-SMA.
 
 ---
 

@@ -56,7 +56,7 @@ Linux との最大の違いはモニターモードにあります。Linux で�
 Windows Update でドライバーをダウンロードするにはインターネット接続が必要です。隔離されたラボ用マシンをセットアップする場合は、別のコンピューターでドライバーパッケージをダウンロードして手動で転送してから、方法 B をご利用ください。
 {{< /alert >}}
 
-### 方法 B：手動ドライバーインストール — RTL8812AU（AWUS036ACH / AWUS036ACM / AWUS036ACS）
+### 方法 B：手動ドライバーインストール — RTL8812AU（AWUS036ACH / AWUS036ACS）
 
 1. [ALFA Network ダウンロードページ](https://www.alfa.com.tw/service_1.html) または Realtek ドライバーアーカイブにアクセスし、RTL8812AU 用の最新 Windows WHQL ドライバーをダウンロードします。
 2. `.zip` アーカイブをローカルフォルダに解凍します（例：`C:\Drivers\RTL8812AU`）。

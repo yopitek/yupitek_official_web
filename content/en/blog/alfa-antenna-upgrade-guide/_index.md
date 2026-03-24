@@ -43,7 +43,6 @@ Before selecting an antenna, you need to confirm connector compatibility. ALFA N
 - AWUS036ACH (2× RP-SMA)
 - AWUS036ACM (1× RP-SMA)
 - AWUS036AXML (1× RP-SMA)
-- AWUS036NH (1× RP-SMA)
 - And other ALFA models with external antenna ports
 
 All five antenna accessories covered in this guide use **RP-SMA connectors** and are directly compatible with these adapters. Installation requires no tools — simply unscrew the existing antenna and screw on the new one hand-tight.

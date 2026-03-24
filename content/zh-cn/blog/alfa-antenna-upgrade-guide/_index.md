@@ -43,7 +43,6 @@ tags: ["天线", "APA-M25", "ARS-NT5B7", "RP-SMA", "WiFi网卡", "ALFA-Network",
 - AWUS036ACH（2× RP-SMA）
 - AWUS036ACM（1× RP-SMA）
 - AWUS036AXML（1× RP-SMA）
-- AWUS036NH（1× RP-SMA）
 - 以及其他带外置天线接口的 ALFA 型号
 
 本文介绍的五款天线配件均采用 **RP-SMA 接口**，与上述网卡直接兼容。安装过程完全免工具——拧下原装天线，旋上新天线即可，手拧至适度紧固为止。

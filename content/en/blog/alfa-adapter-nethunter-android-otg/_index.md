@@ -71,8 +71,8 @@ NetHunter's custom kernel includes pre-compiled kernel modules for a specific se
 | AWUS036ACH | RTL8812AU | ✅ Best support | NetHunter kernel includes `88XXau` module; monitor mode and packet injection fully supported |
 | AWUS036ACM | MT7612U | ✅ Good support | Alternative chipset; generally works; verify against your specific device kernel |
 | AWUS036ACS | RTL8811AU | ✅ Works | Same driver family as RTL8812AU; lower power draw (~300mW); single-band 2.4/5 GHz |
-| AWUS036AXM | MT7921U | ⚠️ Limited | WiFi 6E adapter; kernel module availability depends on device and kernel version |
-| AWUS036AXML | MT7921U | ⚠️ Limited | Same chipset as AXM; not universally supported in NetHunter kernels |
+| AWUS036AXM | MT7921AUN | ⚠️ Limited | WiFi 6E adapter; kernel module availability depends on device and kernel version |
+| AWUS036AXML | MT7921AUN | ⚠️ Limited | Same chipset as AXM; not universally supported in NetHunter kernels |
 
 **Recommendation:** For reliable NetHunter operation, stick with RTL8812AU-based adapters. The `88XXau` driver is specifically included in most NetHunter custom kernels, you'll find extensive community documentation for it, and the troubleshooting path is well-understood. The WiFi 6E adapters are technically impressive but not worth the compatibility risk for a mobile pentest setup where reliability matters more than raw throughput.
 

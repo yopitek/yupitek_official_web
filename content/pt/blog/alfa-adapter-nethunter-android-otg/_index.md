@@ -71,8 +71,8 @@ O kernel personalizado do NetHunter inclui módulos de kernel pré-compilados pa
 | AWUS036ACH | RTL8812AU | ✅ Melhor suporte | Kernel NetHunter inclui módulo `88XXau`; modo monitor e injeção de pacotes totalmente suportados |
 | AWUS036ACM | MT7612U | ✅ Bom suporte | Chipset alternativo; geralmente funciona; verificar com o kernel do dispositivo específico |
 | AWUS036ACS | RTL8811AU | ✅ Funciona | Mesma família de driver que RTL8812AU; menor consumo de energia (~300mW) |
-| AWUS036AXM | MT7921U | ⚠️ Limitado | Adaptador WiFi 6E; disponibilidade do módulo de kernel depende do dispositivo e versão do kernel |
-| AWUS036AXML | MT7921U | ⚠️ Limitado | Mesmo chipset que AXM; não universalmente suportado em kernels NetHunter |
+| AWUS036AXM | MT7921AUN | ⚠️ Limitado | Adaptador WiFi 6E; disponibilidade do módulo de kernel depende do dispositivo e versão do kernel |
+| AWUS036AXML | MT7921AUN | ⚠️ Limitado | Mesmo chipset que AXM; não universalmente suportado em kernels NetHunter |
 
 **Recomendação:** Para operação confiável com NetHunter, use adaptadores baseados em RTL8812AU. Se precisar de capacidade dual-band AC1200 com ampla compatibilidade NetHunter, o **AWUS036ACH** é a escolha certa.
 

@@ -71,8 +71,8 @@ NetHunter 的自定义内核包含针对特定芯片组预编译的内核模块�
 | AWUS036ACH | RTL8812AU | ✅ 最佳支持 | NetHunter 内核包含 `88XXau` 模块；监听模式和数据包注入完全支持 |
 | AWUS036ACM | MT7612U | ✅ 良好支持 | 替代芯片组；通常可用；请根据您的特定设备内核进行确认 |
 | AWUS036ACS | RTL8811AU | ✅ 可用 | 与 RTL8812AU 同一驱动程序系列；功耗较低（约 300mW） |
-| AWUS036AXM | MT7921U | ⚠️ 有限 | WiFi 6E 网卡；内核模块可用性取决于设备和内核版本 |
-| AWUS036AXML | MT7921U | ⚠️ 有限 | 与 AXM 相同芯片组；NetHunter 内核中未普遍支持 |
+| AWUS036AXM | MT7921AUN | ⚠️ 有限 | WiFi 6E 网卡；内核模块可用性取决于设备和内核版本 |
+| AWUS036AXML | MT7921AUN | ⚠️ 有限 | 与 AXM 相同芯片组；NetHunter 内核中未普遍支持 |
 
 **建议：** 为了可靠的 NetHunter 操作，请坚持使用基于 RTL8812AU 的网卡。若您需要具备广泛 NetHunter 兼容性的双频 AC1200 功能，**AWUS036ACH** 是正确的选择。
 

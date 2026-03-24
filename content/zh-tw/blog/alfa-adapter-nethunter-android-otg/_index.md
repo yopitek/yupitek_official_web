@@ -71,8 +71,8 @@ NetHunter 的自定義核心包含針對特定晶片組預先編譯的核心模�
 | AWUS036ACH | RTL8812AU | ✅ 最佳支援 | NetHunter 核心包含 `88XXau` 模組；監聽模式和封包注入完全支援 |
 | AWUS036ACM | MT7612U | ✅ 良好支援 | 替代晶片組；通常可用；請根據您的特定裝置核心進行確認 |
 | AWUS036ACS | RTL8811AU | ✅ 可用 | 與 RTL8812AU 同一驅動程式系列；功耗較低（約 300mW） |
-| AWUS036AXM | MT7921U | ⚠️ 有限 | WiFi 6E 網卡；核心模組可用性取決於裝置和核心版本 |
-| AWUS036AXML | MT7921U | ⚠️ 有限 | 與 AXM 相同晶片組；NetHunter 核心中未普遍支援 |
+| AWUS036AXM | MT7921AUN | ⚠️ 有限 | WiFi 6E 網卡；核心模組可用性取決於裝置和核心版本 |
+| AWUS036AXML | MT7921AUN | ⚠️ 有限 | 與 AXM 相同晶片組；NetHunter 核心中未普遍支援 |
 
 **建議：** 為了可靠的 NetHunter 操作，請堅持使用基於 RTL8812AU 的網卡。`88XXau` 驅動程式已特別包含在大多數 NetHunter 自定義核心中，您可以找到大量社群文件，故障排除路徑也已完整記錄。若您需要具備廣泛 NetHunter 相容性的雙頻 AC1200 功能，**AWUS036ACH** 是正確的選擇。
 

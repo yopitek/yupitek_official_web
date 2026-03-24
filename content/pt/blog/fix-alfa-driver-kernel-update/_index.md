@@ -27,9 +27,9 @@ O DKMS pode falhar silenciosamente por dois motivos:
 1. **Headers do kernel ausentes** — o compilador precisa que `linux-headers-$(uname -r)` esteja instalado no momento em que o novo kernel chega. Se os headers chegarem após o kernel, o DKMS perde sua janela de build.
 2. **`dkms.conf` desatualizado** — se o arquivo de configuração da versão do driver instalado não corresponde mais à árvore de código-fonte, o build falha com erros crípticos.
 
-### Drivers dentro do kernel (MT7921U)
+### Drivers dentro do kernel (MT7921AUN)
 
-O chipset MT7921U está no kernel principal desde a versão **5.18**. Isso significa que nenhum passo de compilação é necessário — o kernel já sabe como se comunicar com o hardware. No entanto, o driver ainda depende de um **blob de firmware** (`mt7921u.bin`) fornecido por um pacote separado. Se esse pacote estiver faltando ou se uma atualização do kernel mudar a API de firmware esperada, o adaptador pode parecer que carrega mas falha ao se associar com qualquer rede.
+O chipset MT7921AUN está no kernel principal desde a versão **5.18**. Isso significa que nenhum passo de compilação é necessário — o kernel já sabe como se comunicar com o hardware. No entanto, o driver ainda depende de um **blob de firmware** (`mt7921u.bin`) fornecido por um pacote separado. Se esse pacote estiver faltando ou se uma atualização do kernel mudar a API de firmware esperada, o adaptador pode parecer que carrega mas falha ao se associar com qualquer rede.
 
 ### Comandos de diagnóstico rápido
 
@@ -75,7 +75,7 @@ sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 | `ip link` não retorna nada sem fio | Módulo do kernel não carregado ou hardware não enumerado |
 | `lsmod` não mostra módulo correspondente | O módulo falhou ao carregar — verifique `dmesg` para erros |
 | `dkms status` mostra `broken` ou ausente para o kernel atual | O build do DKMS falhou — siga a correção RTL8812AU |
-| `dmesg` mostra `firmware: failed to load mt7921u` | Pacote de firmware ausente — siga a correção MT7921U |
+| `dmesg` mostra `firmware: failed to load mt7921u` | Pacote de firmware ausente — siga a correção MT7921AUN |
 | `dmesg` mostra `disagrees about version of symbol` | Módulo compilado contra headers do kernel incorretos |
 
 {{< alert "triangle-exclamation" >}}
@@ -165,9 +165,9 @@ Este único comando instala o código-fonte do driver, registra-o com o DKMS e c
 
 ---
 
-## Correção: Driver MT7921U (AWUS036AXM, AXML)
+## Correção: Driver MT7921AUN (AWUS036AXM, AXML)
 
-O chipset MT7921U (Wi-Fi 6E) toma um caminho completamente diferente. Como é um **driver dentro do kernel** desde o Linux 5.18, não há DKMS, não há compilação e não há clonagem do GitHub. Atualizações do kernel não deveriam quebrá-lo — mas problemas de empacotamento de firmware às vezes o fazem.
+O chipset MT7921AUN (Wi-Fi 6E) toma um caminho completamente diferente. Como é um **driver dentro do kernel** desde o Linux 5.18, não há DKMS, não há compilação e não há clonagem do GitHub. Atualizações do kernel não deveriam quebrá-lo — mas problemas de empacotamento de firmware às vezes o fazem.
 
 ### 5.1 — Instalar o pacote de firmware
 
@@ -195,7 +195,7 @@ ip link show | grep -E "wlan|wlp"
 
 ### 5.3 — Verificar sua versão do kernel
 
-O driver MT7921U requer kernel **5.18 ou mais recente**. Se você instalou uma imagem mínima do Kali ou Ubuntu que foi lançada antes desta versão do kernel, o módulo simplesmente não existe:
+O driver MT7921AUN requer kernel **5.18 ou mais recente**. Se você instalou uma imagem mínima do Kali ou Ubuntu que foi lançada antes desta versão do kernel, o módulo simplesmente não existe:
 
 ```bash
 uname -r
@@ -357,7 +357,7 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ## Resumo
 
-Falhas de driver ALFA após atualizações do kernel seguem um padrão previsível e têm soluções previsíveis. Adaptadores RTL8812AU precisam de `dkms autoinstall` (ou um clone limpo de `aircrack-ng/rtl8812au`) mais headers do kernel correspondentes. Adaptadores MT7921U precisam de `firmware-misc-nonfree` e um kernel 5.18 ou mais recente. A correção de longo prazo em ambos os casos é garantir que `apt full-upgrade` — não `apt upgrade` — seja seu comando de atualização padrão, mantendo headers e kernels sincronizados.
+Falhas de driver ALFA após atualizações do kernel seguem um padrão previsível e têm soluções previsíveis. Adaptadores RTL8812AU precisam de `dkms autoinstall` (ou um clone limpo de `aircrack-ng/rtl8812au`) mais headers do kernel correspondentes. Adaptadores MT7921AUN precisam de `firmware-misc-nonfree` e um kernel 5.18 ou mais recente. A correção de longo prazo em ambos os casos é garantir que `apt full-upgrade` — não `apt upgrade` — seja seu comando de atualização padrão, mantendo headers e kernels sincronizados.
 
 ---
 

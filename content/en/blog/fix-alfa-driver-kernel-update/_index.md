@@ -27,9 +27,9 @@ DKMS can silently fail for two reasons:
 1. **Missing kernel headers** — the compiler needs `linux-headers-$(uname -r)` installed at the time the new kernel lands. If headers arrive after the kernel, DKMS misses its build window.
 2. **Stale `dkms.conf`** — if the installed driver version has an outdated configuration file that no longer matches the source tree, the build fails with cryptic errors.
 
-### In-Kernel Drivers (MT7921U)
+### In-Kernel Drivers (MT7921AUN)
 
-The MT7921U chipset has been in the mainline kernel since version **5.18**. That means no compilation step is needed — the kernel already knows how to talk to the hardware. However, the driver still depends on a **firmware blob** (`mt7921u.bin`) supplied by a separate package. If that package is missing or if the kernel update changes the expected firmware API, the adapter can appear to load but fail to associate with any network.
+The MT7921AUN chipset has been in the mainline kernel since version **5.18**. That means no compilation step is needed — the kernel already knows how to talk to the hardware. However, the driver still depends on a **firmware blob** (`mt7921u.bin`) supplied by a separate package. If that package is missing or if the kernel update changes the expected firmware API, the adapter can appear to load but fail to associate with any network.
 
 ### Quick Diagnostic Commands
 
@@ -75,7 +75,7 @@ sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 | `ip link` returns nothing wireless | Kernel module not loaded or hardware not enumerated |
 | `lsmod` shows no matching module | Module failed to load — check `dmesg` for errors |
 | `dkms status` shows `broken` or missing for current kernel | DKMS build failed — follow RTL8812AU fix below |
-| `dmesg` shows `firmware: failed to load mt7921u` | Firmware package missing — follow MT7921U fix below |
+| `dmesg` shows `firmware: failed to load mt7921u` | Firmware package missing — follow MT7921AUN fix below |
 | `dmesg` shows `disagrees about version of symbol` | Module was built against wrong kernel headers |
 
 {{< alert "triangle-exclamation" >}}
@@ -165,9 +165,9 @@ This single command installs the driver source, registers it with DKMS, and buil
 
 ---
 
-## Fix: MT7921U Driver (AWUS036AXM, AXML)
+## Fix: MT7921AUN Driver (AWUS036AXM, AXML)
 
-The MT7921U (Wi-Fi 6E) chipset takes a completely different path. Because it is an **in-kernel driver** since Linux 5.18, there is no DKMS, no compilation, and no GitHub clone involved. Kernel updates should not break it — but firmware packaging issues sometimes do.
+The MT7921AUN (Wi-Fi 6E) chipset takes a completely different path. Because it is an **in-kernel driver** since Linux 5.18, there is no DKMS, no compilation, and no GitHub clone involved. Kernel updates should not break it — but firmware packaging issues sometimes do.
 
 ### 5.1 — Install the Firmware Package
 
@@ -195,7 +195,7 @@ ip link show | grep -E "wlan|wlp"
 
 ### 5.3 — Verify Your Kernel Version
 
-The MT7921U driver requires kernel **5.18 or newer**. If you installed a minimal Kali or Ubuntu image that shipped before this kernel version, the module simply does not exist:
+The MT7921AUN driver requires kernel **5.18 or newer**. If you installed a minimal Kali or Ubuntu image that shipped before this kernel version, the module simply does not exist:
 
 ```bash
 uname -r
@@ -357,7 +357,7 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ## Summary
 
-ALFA driver failures after kernel updates follow a predictable pattern and have predictable solutions. RTL8812AU adapters need `dkms autoinstall` (or a fresh clone from `aircrack-ng/rtl8812au`) plus matching kernel headers. MT7921U adapters need `firmware-misc-nonfree` and a kernel of 5.18 or newer. The long-term fix in both cases is ensuring `apt full-upgrade` — not `apt upgrade` — is your standard update command, which keeps headers and kernels in lockstep.
+ALFA driver failures after kernel updates follow a predictable pattern and have predictable solutions. RTL8812AU adapters need `dkms autoinstall` (or a fresh clone from `aircrack-ng/rtl8812au`) plus matching kernel headers. MT7921AUN adapters need `firmware-misc-nonfree` and a kernel of 5.18 or newer. The long-term fix in both cases is ensuring `apt full-upgrade` — not `apt upgrade` — is your standard update command, which keeps headers and kernels in lockstep.
 
 ---
 

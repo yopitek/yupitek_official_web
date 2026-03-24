@@ -27,9 +27,9 @@ DKMS 可能在以下两种情况下静默失败：
 1. **缺少内核头文件** — 编译器需要在新内核安装时同步安装 `linux-headers-$(uname -r)`。若头文件在内核之后才到，DKMS 就错过了构建时机。
 2. **过时的 `dkms.conf`** — 若已安装驱动程序版本的配置文件已不符合源代码树的结构，构建将以不明确的错误信息失败。
 
-### 内核内置驱动程序（MT7921U）
+### 内核内置驱动程序（MT7921AUN）
 
-MT7921U 芯片组自内核 **5.18** 版本起已纳入主线内核。这意味着不需要编译步骤——内核已内置与硬件通信的能力。然而，驱动程序仍依赖一个由独立软件包提供的**固件二进制文件**（`mt7921u.bin`）。若该软件包缺失，或内核更新改变了预期的固件 API，网卡可能看似已加载但无法连接。
+MT7921AUN 芯片组自内核 **5.18** 版本起已纳入主线内核。这意味着不需要编译步骤——内核已内置与硬件通信的能力。然而，驱动程序仍依赖一个由独立软件包提供的**固件二进制文件**（`mt7921u.bin`）。若该软件包缺失，或内核更新改变了预期的固件 API，网卡可能看似已加载但无法连接。
 
 ### 快速诊断命令
 
@@ -75,7 +75,7 @@ sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 | `ip link` 未显示无线接口 | 内核模块未加载或硬件未被枚举 |
 | `lsmod` 未显示对应模块 | 模块加载失败——检查 `dmesg` 的错误信息 |
 | `dkms status` 显示当前内核为 `broken` 或缺失 | DKMS 构建失败——请按 RTL8812AU 修复步骤操作 |
-| `dmesg` 显示 `firmware: failed to load mt7921u` | 固件软件包缺失——请按 MT7921U 修复步骤操作 |
+| `dmesg` 显示 `firmware: failed to load mt7921u` | 固件软件包缺失——请按 MT7921AUN 修复步骤操作 |
 | `dmesg` 显示 `disagrees about version of symbol` | 模块针对错误的内核头文件构建 |
 
 {{< alert "triangle-exclamation" >}}
@@ -165,9 +165,9 @@ sudo apt update && sudo apt install realtek-rtl88xxau-dkms
 
 ---
 
-## 修复：MT7921U 驱动程序（AWUS036AXM、AXML）
+## 修复：MT7921AUN 驱动程序（AWUS036AXM、AXML）
 
-MT7921U（Wi-Fi 6E）芯片组采用完全不同的路径。由于自 Linux 5.18 起即为**内核内置驱动程序**，无需 DKMS、无需编译、也无需从 GitHub 克隆。内核更新本不应破坏它——但固件打包问题有时会造成影响。
+MT7921AUN（Wi-Fi 6E）芯片组采用完全不同的路径。由于自 Linux 5.18 起即为**内核内置驱动程序**，无需 DKMS、无需编译、也无需从 GitHub 克隆。内核更新本不应破坏它——但固件打包问题有时会造成影响。
 
 ### 5.1 — 安装固件软件包
 
@@ -195,7 +195,7 @@ ip link show | grep -E "wlan|wlp"
 
 ### 5.3 — 确认内核版本
 
-MT7921U 驱动程序需要内核 **5.18 或更新版本**。若你安装的是早于此内核版本的 Kali 或 Ubuntu 最小镜像，模块根本不存在：
+MT7921AUN 驱动程序需要内核 **5.18 或更新版本**。若你安装的是早于此内核版本的 Kali 或 Ubuntu 最小镜像，模块根本不存在：
 
 ```bash
 uname -r
@@ -357,7 +357,7 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ## 总结
 
-ALFA 驱动程序在内核更新后的失效问题遵循可预测的模式，也有可预测的解决方案。RTL8812AU 网卡需要 `dkms autoinstall`（或从 `aircrack-ng/rtl8812au` 全新克隆）加上匹配的内核头文件。MT7921U 网卡需要 `firmware-misc-nonfree` 以及 5.18 或更新的内核。两种情况的长期修复方案，都是确保以 `apt full-upgrade` 而非 `apt upgrade` 作为标准更新命令，让头文件与内核保持同步。
+ALFA 驱动程序在内核更新后的失效问题遵循可预测的模式，也有可预测的解决方案。RTL8812AU 网卡需要 `dkms autoinstall`（或从 `aircrack-ng/rtl8812au` 全新克隆）加上匹配的内核头文件。MT7921AUN 网卡需要 `firmware-misc-nonfree` 以及 5.18 或更新的内核。两种情况的长期修复方案，都是确保以 `apt full-upgrade` 而非 `apt upgrade` 作为标准更新命令，让头文件与内核保持同步。
 
 ---
 

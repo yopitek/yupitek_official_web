@@ -27,9 +27,9 @@ DKMS 可能在以下兩種情況下靜默失敗：
 1. **缺少核心標頭** — 編譯器需要在新核心安裝時同步安裝 `linux-headers-$(uname -r)`。若標頭在核心之後才到，DKMS 就錯過了建置時機。
 2. **過時的 `dkms.conf`** — 若已安裝驅動程式版本的設定檔已不符合原始碼樹的結構，建置將以不明確的錯誤訊息失敗。
 
-### 核心內建驅動程式（MT7921U）
+### 核心內建驅動程式（MT7921AUN）
 
-MT7921U 晶片組自核心 **5.18** 版本起已納入主線核心。這意味著不需要編譯步驟——核心已內建與硬體溝通的能力。然而，驅動程式仍依賴一個由獨立套件提供的**韌體二進位檔**（`mt7921u.bin`）。若該套件缺失，或核心更新改變了預期的韌體 API，網路卡可能看似已載入但無法連線。
+MT7921AUN 晶片組自核心 **5.18** 版本起已納入主線核心。這意味著不需要編譯步驟——核心已內建與硬體溝通的能力。然而，驅動程式仍依賴一個由獨立套件提供的**韌體二進位檔**（`mt7921u.bin`）。若該套件缺失，或核心更新改變了預期的韌體 API，網路卡可能看似已載入但無法連線。
 
 ### 快速診斷指令
 
@@ -75,7 +75,7 @@ sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 | `ip link` 未顯示無線介面 | 核心模組未載入或硬體未被列舉 |
 | `lsmod` 未顯示對應模組 | 模組載入失敗——檢查 `dmesg` 的錯誤訊息 |
 | `dkms status` 顯示當前核心為 `broken` 或缺失 | DKMS 建置失敗——請按 RTL8812AU 修復步驟操作 |
-| `dmesg` 顯示 `firmware: failed to load mt7921u` | 韌體套件缺失——請按 MT7921U 修復步驟操作 |
+| `dmesg` 顯示 `firmware: failed to load mt7921u` | 韌體套件缺失——請按 MT7921AUN 修復步驟操作 |
 | `dmesg` 顯示 `disagrees about version of symbol` | 模組針對錯誤的核心標頭建置 |
 
 {{< alert "triangle-exclamation" >}}
@@ -165,9 +165,9 @@ sudo apt update && sudo apt install realtek-rtl88xxau-dkms
 
 ---
 
-## 修復：MT7921U 驅動程式（AWUS036AXM、AXML）
+## 修復：MT7921AUN 驅動程式（AWUS036AXM、AXML）
 
-MT7921U（Wi-Fi 6E）晶片組採用完全不同的路徑。由於自 Linux 5.18 起即為**核心內建驅動程式**，無需 DKMS、無需編譯、也無需從 GitHub 複製。核心更新本不應破壞它——但韌體封裝問題有時會造成影響。
+MT7921AUN（Wi-Fi 6E）晶片組採用完全不同的路徑。由於自 Linux 5.18 起即為**核心內建驅動程式**，無需 DKMS、無需編譯、也無需從 GitHub 複製。核心更新本不應破壞它——但韌體封裝問題有時會造成影響。
 
 ### 5.1 — 安裝韌體套件
 
@@ -195,7 +195,7 @@ ip link show | grep -E "wlan|wlp"
 
 ### 5.3 — 確認核心版本
 
-MT7921U 驅動程式需要核心 **5.18 或更新版本**。若你安裝的是早於此核心版本的 Kali 或 Ubuntu 最小映像，模組根本不存在：
+MT7921AUN 驅動程式需要核心 **5.18 或更新版本**。若你安裝的是早於此核心版本的 Kali 或 Ubuntu 最小映像，模組根本不存在：
 
 ```bash
 uname -r
@@ -357,7 +357,7 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ## 總結
 
-ALFA 驅動程式在核心更新後的失效問題遵循可預測的模式，也有可預測的解決方案。RTL8812AU 網路卡需要 `dkms autoinstall`（或從 `aircrack-ng/rtl8812au` 全新複製）加上匹配的核心標頭。MT7921U 網路卡需要 `firmware-misc-nonfree` 以及 5.18 或更新的核心。兩種情況的長期修復方案，都是確保以 `apt full-upgrade` 而非 `apt upgrade` 作為標準更新指令，讓標頭與核心保持同步。
+ALFA 驅動程式在核心更新後的失效問題遵循可預測的模式，也有可預測的解決方案。RTL8812AU 網路卡需要 `dkms autoinstall`（或從 `aircrack-ng/rtl8812au` 全新複製）加上匹配的核心標頭。MT7921AUN 網路卡需要 `firmware-misc-nonfree` 以及 5.18 或更新的核心。兩種情況的長期修復方案，都是確保以 `apt full-upgrade` 而非 `apt upgrade` 作為標準更新指令，讓標頭與核心保持同步。
 
 ---
 

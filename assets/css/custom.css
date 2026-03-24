@@ -154,3 +154,9 @@ body:has(#mobile-menu-toggle:checked) {
   vertical-align: top;
   padding: 0.5rem 0.875rem;
 }
+
+/* Toolkit / reference tables: all cells stay on one line, table scrolls */
+.prose .table-nowrap td,
+.prose .table-nowrap th {
+  white-space: nowrap;
+}

@@ -315,6 +315,8 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ## WPA3 測試工具參考
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | 工具 | 用途 | 網卡 | 關鍵指令 |
 |---|---|---|---|
 | airodump-ng | WPA3 網路探索、SAE 幀擷取 | AWUS036AXML / AWUS036ACH | `sudo airodump-ng wlan0mon --band abg` |
@@ -324,6 +326,8 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 | aireplay-ng | PMF 強制執行測試（去認證） | AWUS036ACH | `sudo aireplay-ng --deauth 10 -a BSSID wlan0mon` |
 | hostapd | 用於降級測試的純 WPA2 流氓 AP | AWUS036ACH | `sudo hostapd /tmp/rogue_wpa2.conf` |
 | hostapd-wpe | 用於 WPA3-Enterprise EAP 測試的流氓 RADIUS | AWUS036ACH | `sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf` |
+
+</div>
 
 ---
 

@@ -315,6 +315,8 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ## Справочник инструментов для тестирования WPA3
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | Инструмент | Назначение | Адаптер | Ключевая команда |
 |---|---|---|---|
 | airodump-ng | Обнаружение сетей WPA3, захват фреймов SAE | AWUS036AXML / AWUS036ACH | `sudo airodump-ng wlan0mon --band abg` |
@@ -324,6 +326,8 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 | aireplay-ng | Тестирование применения PMF (деаутентификация) | AWUS036ACH | `sudo aireplay-ng --deauth 10 -a BSSID wlan0mon` |
 | hostapd | Мошенническая точка доступа только с WPA2 для тестирования понижения версии | AWUS036ACH | `sudo hostapd /tmp/rogue_wpa2.conf` |
 | hostapd-wpe | Мошеннический RADIUS для тестирования EAP в WPA3-Enterprise | AWUS036ACH | `sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf` |
+
+</div>
 
 ---
 

@@ -258,6 +258,8 @@ Para el procedimiento completo de pruebas EAP/RADIUS, consulta el [framework de 
 
 ## Referencia de Herramientas para Pruebas WPA3
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | Herramienta | Propósito | Adaptador | Comando Clave |
 |---|---|---|---|
 | airodump-ng | Descubrimiento de redes WPA3, captura de marcos SAE | AWUS036AXML / AWUS036ACH | `sudo airodump-ng wlan0mon --band abg` |
@@ -267,6 +269,8 @@ Para el procedimiento completo de pruebas EAP/RADIUS, consulta el [framework de 
 | aireplay-ng | Prueba de cumplimiento PMF (deauth) | AWUS036ACH | `sudo aireplay-ng --deauth 10 -a BSSID wlan0mon` |
 | hostapd | AP fraudulento solo WPA2 para pruebas de degradación | AWUS036ACH | `sudo hostapd /tmp/rogue_wpa2.conf` |
 | hostapd-wpe | RADIUS fraudulento para pruebas EAP de WPA3-Enterprise | AWUS036ACH | `sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf` |
+
+</div>
 
 ---
 

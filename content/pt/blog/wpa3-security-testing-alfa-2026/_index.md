@@ -230,6 +230,8 @@ Para o procedimento completo, consulte o [framework de avaliação de segurança
 
 ## Referência do Kit de Ferramentas para Testes WPA3
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | Ferramenta | Finalidade | Adaptador | Comando Principal |
 |---|---|---|---|
 | airodump-ng | Descoberta de redes WPA3, captura de quadros SAE | AWUS036AXML / AWUS036ACH | `sudo airodump-ng wlan0mon --band abg` |
@@ -239,6 +241,8 @@ Para o procedimento completo, consulte o [framework de avaliação de segurança
 | aireplay-ng | Teste de imposição de PMF (deauth) | AWUS036ACH | `sudo aireplay-ng --deauth 10 -a BSSID wlan0mon` |
 | hostapd | AP falso somente WPA2 para teste de downgrade | AWUS036ACH | `sudo hostapd /tmp/rogue_wpa2.conf` |
 | hostapd-wpe | RADIUS falso para teste EAP com WPA3-Enterprise | AWUS036ACH | `sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf` |
+
+</div>
 
 ---
 

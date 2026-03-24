@@ -315,6 +315,8 @@ For the complete EAP/RADIUS testing procedure, see the [enterprise wireless secu
 
 ## Toolkit Reference for WPA3 Testing
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | Tool | Purpose | Adapter | Key Command |
 |---|---|---|---|
 | airodump-ng | WPA3 network discovery, SAE frame capture | AWUS036AXML / AWUS036ACH | `sudo airodump-ng wlan0mon --band abg` |
@@ -324,6 +326,8 @@ For the complete EAP/RADIUS testing procedure, see the [enterprise wireless secu
 | aireplay-ng | PMF enforcement testing (deauth) | AWUS036ACH | `sudo aireplay-ng --deauth 10 -a BSSID wlan0mon` |
 | hostapd | WPA2-only rogue AP for downgrade testing | AWUS036ACH | `sudo hostapd /tmp/rogue_wpa2.conf` |
 | hostapd-wpe | Rogue RADIUS for WPA3-Enterprise EAP testing | AWUS036ACH | `sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf` |
+
+</div>
 
 ---
 

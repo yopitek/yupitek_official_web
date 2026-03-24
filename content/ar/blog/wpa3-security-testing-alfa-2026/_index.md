@@ -316,6 +316,8 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ## مرجع مجموعة الأدوات لاختبار WPA3
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | الأداة | الغرض | المحول | الأمر الرئيسي |
 |---|---|---|---|
 | airodump-ng | اكتشاف شبكات WPA3، التقاط إطارات SAE | AWUS036AXML / AWUS036ACH | `sudo airodump-ng wlan0mon --band abg` |
@@ -325,6 +327,8 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 | aireplay-ng | اختبار تطبيق PMF (deauth) | AWUS036ACH | `sudo aireplay-ng --deauth 10 -a BSSID wlan0mon` |
 | hostapd | نقطة وصول مارقة بـ WPA2-only لاختبار التخفيض | AWUS036ACH | `sudo hostapd /tmp/rogue_wpa2.conf` |
 | hostapd-wpe | RADIUS مارق لاختبار EAP في WPA3-Enterprise | AWUS036ACH | `sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf` |
+
+</div>
 
 ---
 

@@ -315,6 +315,8 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ## WPA3テストのツールキットリファレンス
 
+<div class="table-nowrap" style="overflow-x: auto;">
+
 | ツール | 用途 | アダプター | 主なコマンド |
 |---|---|---|---|
 | airodump-ng | WPA3ネットワーク探索、SAEフレームキャプチャ | AWUS036AXML / AWUS036ACH | `sudo airodump-ng wlan0mon --band abg` |
@@ -324,6 +326,8 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 | aireplay-ng | PMF適用テスト（デオーセンティケーション） | AWUS036ACH | `sudo aireplay-ng --deauth 10 -a BSSID wlan0mon` |
 | hostapd | ダウングレードテスト用WPA2のみの不正AP | AWUS036ACH | `sudo hostapd /tmp/rogue_wpa2.conf` |
 | hostapd-wpe | WPA3-Enterprise EAPテスト用不正RADIUS | AWUS036ACH | `sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf` |
+
+</div>
 
 ---
 

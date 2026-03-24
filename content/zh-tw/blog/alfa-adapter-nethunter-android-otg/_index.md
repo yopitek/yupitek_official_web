@@ -49,7 +49,7 @@ Kali NetHunter 是 Kali Linux 官方的行動裝置滲透測試平台。NetHunte
 |---|---|---|
 | Android 裝置 | 已 Root、支援 NetHunter、支援 USB OTG | 購買前確認 OTG 支援；需要搭載自定義核心的完整 NetHunter |
 | USB OTG 傳輸線 / 轉接頭 | 根據裝置連接埠選擇 USB-C OTG 或 Micro-USB OTG | 品質很重要——劣質傳輸線會導致間歇性斷線 |
-| ALFA WiFi 網卡 | 推薦 AWUS036ACH 或 AWUS036ACM | RTL8812AU 晶片組在 NetHunter 中擁有最佳核心模組支援 |
+| ALFA WiFi 網卡 | 推薦 AWUS036ACH 或 AWUS036ACM | AWUS036ACH（RTL8812AU）在 NetHunter 中擁有最佳核心模組支援；AWUS036ACM（MT7612U）亦相容 |
 | 帶電源的 USB OTG 集線器 | 強烈推薦 | 防止網卡引起的電池耗盡和 USB 不穩定 |
 
 {{< alert "triangle-exclamation" >}}

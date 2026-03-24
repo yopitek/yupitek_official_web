@@ -50,7 +50,7 @@ Kali NetHunter هو منصة اختبار الاختراق الرسمية لنظ
 |---|---|---|
 | جهاز Android | مُمكَّن Root، مدعوم من NetHunter، يدعم USB OTG | تحقق من دعم OTG قبل الشراء؛ يلزم NetHunter كامل مع نواة مخصصة |
 | كابل / محول USB OTG | USB-C OTG أو Micro-USB OTG حسب منفذ الجهاز | الجودة مهمة — الكابلات الرخيصة تسبب انقطاعات متكررة |
-| محول ALFA WiFi | يُنصح بـ AWUS036ACH أو AWUS036ACM | شريحة RTL8812AU لها أفضل دعم لوحدة النواة في NetHunter |
+| محول ALFA WiFi | يُنصح بـ AWUS036ACH أو AWUS036ACM | AWUS036ACH (RTL8812AU) يتمتع بأفضل دعم لوحدة النواة في NetHunter؛ AWUS036ACM (MT7612U) متوافق أيضًا |
 | موزع USB OTG بمصدر طاقة | موصى به بشدة | يمنع استنزاف بطارية الهاتف وعدم استقرار USB بسبب المحول |
 
 {{< alert "triangle-exclamation" >}}

@@ -49,7 +49,7 @@ USB OTGアダプターでのモニターモードサポートには、RTL8812AU�
 |---|---|---|
 | Androidデバイス | ルート化済み、NetHunter対応、USB OTG対応 | 購入前にOTGサポートを確認；カスタムカーネル搭載のフルNetHunterが必要 |
 | USB OTGケーブル / アダプター | デバイスのポートに応じてUSB-C OTGまたはMicro-USB OTG | 品質が重要 — 安価なケーブルは断続的な切断を引き起こす |
-| ALFAアダプター | AWUS036ACHまたはAWUS036ACMを推奨 | RTL8812AUチップセットはNetHunterで最高のカーネルモジュールサポートを持つ |
+| ALFAアダプター | AWUS036ACHまたはAWUS036ACMを推奨 | AWUS036ACH（RTL8812AU）はNetHunterで最高のカーネルモジュールサポートを持つ；AWUS036ACM（MT7612U）も対応 |
 | 電源付きUSB OTGハブ | 強く推奨 | アダプターによるバッテリー消耗とUSBの不安定さを防ぐ |
 
 {{< alert "triangle-exclamation" >}}

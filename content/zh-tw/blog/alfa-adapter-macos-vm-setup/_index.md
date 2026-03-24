@@ -22,7 +22,7 @@ ALFA Network 網路卡在 Linux 上改變了這個局面，驅動程式支援深
 
 **AWUS036AXML（MT7921AUN 晶片）：** macOS 會將此網路卡識別為通用 USB 網路裝置。macOS 13 Ventura 及更新版本內建的 **MT7921AUN** 驅動程式會自動識別此網路卡。它會出現在**系統偏好設定 → 網路**（Ventura 以上為**系統設定 → 網路**）中，可像一般網路卡一樣連線 Wi-Fi。在較舊的 macOS 版本上可能完全無法識別。
 
-**RTL8812AU 系列網路卡（AWUS036ACH、AWUS036ACM）：** 這些網路卡在 macOS 上需要第三方驅動程式。社群和商業驅動套件都有，但相容性不穩定。macOS 小版本更新後常需重新安裝驅動程式，macOS 11 起核心延伸簽章要求更加嚴格，而在 Apple Silicon 上由於 Rosetta 對核心延伸的限制，情況更加脆弱。
+**AWUS036ACH（RTL8812AU）與 AWUS036ACM（MT7612U）— 需要第三方 macOS 驅動程式的網路卡：** 這些網路卡在 macOS 上需要第三方驅動程式。社群和商業驅動套件都有，但相容性不穩定。macOS 小版本更新後常需重新安裝驅動程式，macOS 11 起核心延伸簽章要求更加嚴格，而在 Apple Silicon 上由於 Rosetta 對核心延伸的限制，情況更加脆弱。
 
 **硬性限制——沒有監聽模式：** 無論使用哪款網路卡或安裝何種驅動程式，macOS 不提供原始監聽模式介面。CoreWLAN 框架與底層 `IO80211Family.kext` 架構不支援第三方網路卡的監聽模式。對於資安測試，必須使用搭載 USB 直通的 Kali Linux VM。
 

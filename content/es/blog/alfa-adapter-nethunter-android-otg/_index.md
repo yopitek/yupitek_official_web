@@ -49,7 +49,7 @@ Configurar correctamente este setup significa elegir hardware compatible en cada
 |---|---|---|
 | Dispositivo Android | Con root, compatible con NetHunter, con soporte USB OTG | Verificar soporte OTG antes de comprar; se requiere NetHunter completo con kernel personalizado |
 | Cable / adaptador USB OTG | USB-C OTG o Micro-USB OTG según el puerto del dispositivo | La calidad importa — los cables baratos causan desconexiones intermitentes |
-| Adaptador ALFA WiFi | Se recomienda AWUS036ACH o AWUS036ACM | El chipset RTL8812AU tiene mejor soporte de módulo de kernel en NetHunter |
+| Adaptador ALFA WiFi | Se recomienda AWUS036ACH o AWUS036ACM | AWUS036ACH (RTL8812AU) tiene mejor soporte de módulo de kernel en NetHunter; AWUS036ACM (MT7612U) también compatible |
 | Hub USB OTG con alimentación | Muy recomendado | Previene el agotamiento de la batería del teléfono e inestabilidad USB |
 
 {{< alert "triangle-exclamation" >}}

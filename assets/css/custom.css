@@ -119,3 +119,38 @@ body:has(#mobile-menu-toggle:checked) {
   color: var(--color-neutral-500);
   margin: 1.5rem 0;
 }
+
+/* ── Professional table layout for all article tables ── */
+/*
+ * These rules make ALL .prose tables:
+ * 1. Horizontally scrollable when content exceeds container width
+ * 2. Headers never wrap (cleaner visual)
+ * 3. First column never wraps (model names, IDs stay on one line)
+ * 4. Code inside cells never wraps (long commands stay readable)
+ * 5. Minimum cell width prevents squished columns
+ */
+.prose table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  min-width: 100%;
+}
+
+.prose table th {
+  white-space: nowrap;
+}
+
+.prose table td:first-child {
+  white-space: nowrap;
+}
+
+.prose table td code {
+  white-space: nowrap;
+}
+
+.prose table td,
+.prose table th {
+  min-width: 80px;
+  vertical-align: top;
+  padding: 0.5rem 0.875rem;
+}

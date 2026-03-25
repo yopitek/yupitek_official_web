@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDRLab Flipper Zero 5G Add-On — Online User Manual</title>
+  <meta name="description" content="Beginner's online user manual for the SDRLab Flipper Zero 5G Add-On Board. Step-by-step guide covering setup, Wi-Fi scanning, deauth research, and firmware." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Nunito:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════════════════════════════
+       DESIGN TOKENS — Field Operations Guide
+       Forest / Tactical Dark aesthetic
+    ═══════════════════════════════════════ */
+    :root {
+      --bg:          #0a0f06;
+      --bg-card:     #111c0a;
+      --bg-card2:    #162110;
+      --bg-sidebar:  #0d1509;
+      --border:      #1e3311;
+      --border-mid:  #2a4a1a;
+      --lime:        #a8e63d;
+      --lime-dim:    #6da821;
+      --lime-glow:   rgba(168,230,61,0.12);
+      --amber:       #ffa826;
+      --amber-dim:   rgba(255,168,38,0.15);
+      --red:         #ff4757;
+      --red-dim:     rgba(255,71,87,0.12);
+      --blue:        #54a0ff;
+      --blue-dim:    rgba(84,160,255,0.12);
+      --text:        #d4e8c6;
+      --text-bright: #f0f8e8;
+      --text-dim:    #6b8a5a;
+      --text-code:   #a8e63d;
+      --font:        'Nunito', sans-serif;
+      --font-display:'Russo One', sans-serif;
+      --font-mono:   'Fira Code', 'Courier New', monospace;
+      --sidebar-w:   270px;
+      --header-h:    60px;
+      --radius:      8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* Subtle dot grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(rgba(168,230,61,0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── TOP HEADER ── */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--header-h);
+      background: linear-gradient(135deg, #0d1a08 0%, #162110 100%);
+      border-bottom: 1px solid var(--border-mid);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 16px;
+      z-index: 300;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+
+    .topbar-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .topbar-icon {
+      width: 34px; height: 34px;
+      background: var(--lime);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .topbar-icon svg { width: 18px; height: 18px; }
+
+    .topbar-title {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--text-bright);
+      letter-spacing: 0.08em;
+      line-height: 1.2;
+    }
+
+    .topbar-sub {
+      font-family: var(--font);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+    }
+
+    .topbar-version {
+      margin-left: auto;
+      background: var(--lime-glow);
+      border: 1px solid var(--lime-dim);
+      color: var(--lime);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.06em;
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-mid);
+      color: var(--text);
+      width: 36px; height: 36px;
+      border-radius: 6px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: flex;
+      margin-top: var(--header-h);
+      min-height: calc(100vh - var(--header-h));
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w);
+      flex-shrink: 0;
+      position: sticky;
+      top: var(--header-h);
+      height: calc(100vh - var(--header-h));
+      overflow-y: auto;
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border);
+      padding: 28px 0 40px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-mid) transparent;
+    }
+
+    .sidebar-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0 20px 10px;
+    }
+
+    .sidebar-nav { list-style: none; }
+
+    .sidebar-nav li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 20px;
+      text-decoration: none;
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      font-weight: 500;
+      border-left: 3px solid transparent;
+      transition: all 0.2s;
+      line-height: 1.4;
+    }
+
+    .sidebar-nav li a:hover {
+      color: var(--text-bright);
+      background: var(--lime-glow);
+      border-left-color: var(--lime-dim);
+    }
+
+    .sidebar-nav li a.active {
+      color: var(--lime);
+      background: var(--lime-glow);
+      border-left-color: var(--lime);
+    }
+
+    .sidebar-nav li a.done {
+      color: var(--lime-dim);
+    }
+
+    .sidebar-nav li a.done::after {
+      content: '✓';
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--lime-dim);
+    }
+
+    .ch-num {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      width: 22px; height: 22px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sidebar-nav li a.active .ch-num {
+      background: var(--lime);
+      color: var(--bg);
+      border-color: var(--lime);
+    }
+
+    /* ── MAIN CONTENT ── */
+    .main {
+      flex: 1;
+      max-width: 820px;
+      padding: 48px 40px 80px;
+      min-width: 0;
+    }
+
+    /* ── CHAPTER SECTIONS ── */
+    .chapter {
+      margin-bottom: 80px;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter-num-badge {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--lime);
+      line-height: 1;
+      flex-shrink: 0;
+      opacity: 0.8;
+    }
+
+    .chapter-title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      color: var(--text-bright);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .chapter-desc {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--lime);
+      letter-spacing: 0.06em;
+      margin: 32px 0 14px;
+    }
+
+    h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin: 20px 0 10px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      font-size: 0.93rem;
+    }
+
+    ul, ol {
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+
+    ul li, ol li {
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+      padding-left: 24px;
+      position: relative;
+      list-style: none;
+    }
+
+    ul li::before {
+      content: '›';
+      position: absolute;
+      left: 6px;
+      color: var(--lime);
+      font-weight: 700;
+    }
+
+    ol { counter-reset: list-counter; }
+    ol li { counter-increment: list-counter; }
+    ol li::before {
+      content: counter(list-counter);
+      position: absolute;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      background: var(--lime);
+      color: var(--bg);
+      font-size: 0.7rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 3px;
+    }
+
+    strong { color: var(--text-bright); font-weight: 700; }
+    a { color: var(--lime); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: var(--amber); }
+
+    /* ── CALLOUT BOXES ── */
+    .callout {
+      display: flex;
+      gap: 14px;
+      padding: 16px 20px;
+      border-radius: var(--radius);
+      margin: 20px 0;
+      font-size: 0.88rem;
+      border: 1px solid;
+    }
+
+    .callout-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+
+    .callout-body > *:last-child { margin-bottom: 0; }
+
+    .callout-title {
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .callout.warning {
+      background: var(--amber-dim);
+      border-color: var(--amber);
+    }
+    .callout.warning .callout-title { color: var(--amber); }
+
+    .callout.danger {
+      background: var(--red-dim);
+      border-color: var(--red);
+    }
+    .callout.danger .callout-title { color: var(--red); }
+
+    .callout.tip {
+      background: var(--lime-glow);
+      border-color: var(--lime-dim);
+    }
+    .callout.tip .callout-title { color: var(--lime); }
+
+    .callout.info {
+      background: var(--blue-dim);
+      border-color: var(--blue);
+    }
+    .callout.info .callout-title { color: var(--blue); }
+
+    /* ── STEP CARDS ── */
+    .steps { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      border-left: 3px solid var(--lime);
+      transition: border-color 0.2s;
+    }
+
+    .step:hover { border-left-color: var(--amber); }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--lime);
+      flex-shrink: 0;
+      line-height: 1;
+      width: 28px;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .step-body h4 { margin: 0 0 6px; font-size: 0.9rem; }
+    .step-body p { margin: 0; font-size: 0.87rem; color: var(--text); }
+
+    /* ── TERMINAL BLOCKS ── */
+    .terminal {
+      background: #050904;
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 16px 0;
+      font-family: var(--font-mono);
+    }
+
+    .terminal-bar {
+      background: var(--bg-card2);
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .terminal-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .t-red   { background: #ff5f57; }
+    .t-yellow{ background: #febc2e; }
+    .t-green { background: #28c840; }
+
+    .terminal-title {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      margin-left: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    .terminal-body {
+      padding: 16px 20px;
+      font-size: 0.8rem;
+      line-height: 1.8;
+      color: #7ac050;
+      overflow-x: auto;
+    }
+
+    .terminal-body .prompt { color: var(--lime); }
+    .terminal-body .cmd    { color: var(--text-bright); }
+    .terminal-body .out    { color: #7ac050; }
+    .terminal-body .comment{ color: var(--text-dim); }
+    .terminal-body .hi     { color: var(--amber); }
+
+    /* ── SPEC CARD ── */
+    .spec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .spec-card-header {
+      background: linear-gradient(90deg, var(--lime) 0%, #6da821 100%);
+      padding: 10px 20px;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--bg);
+      letter-spacing: 0.08em;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .spec-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .spec-table tr:last-child { border-bottom: none; }
+
+    .spec-table tr:nth-child(even) { background: var(--bg-card2); }
+
+    .spec-table td {
+      padding: 10px 20px;
+      font-size: 0.85rem;
+    }
+
+    .spec-table td:first-child {
+      color: var(--text-dim);
+      font-weight: 600;
+      width: 45%;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    .spec-table td:last-child { color: var(--text-bright); }
+
+    /* ── TROUBLESHOOT TABLE ── */
+    .trouble-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.85rem;
+    }
+
+    .trouble-table th {
+      background: var(--bg-card2);
+      padding: 10px 16px;
+      text-align: left;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--lime);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--lime-dim);
+    }
+
+    .trouble-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .trouble-table td:first-child { color: var(--red); font-weight: 600; }
+    .trouble-table td:nth-child(2) { color: var(--amber); }
+    .trouble-table td:last-child { color: var(--text); }
+
+    .trouble-table tr:last-child td { border-bottom: none; }
+
+    /* ── GLOSSARY ── */
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .gloss-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+
+    .gloss-term {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--lime);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .gloss-def {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    /* ── PREREQ CHECKLIST ── */
+    .checklist { list-style: none; margin: 16px 0; }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 8px;
+    }
+
+    .checklist li::before { display: none; }
+
+    .check-icon {
+      width: 24px; height: 24px;
+      background: var(--lime-glow);
+      border: 1px solid var(--lime-dim);
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      margin-top: 1px;
+    }
+
+    .check-label { font-weight: 600; color: var(--text-bright); font-size: 0.9rem; }
+    .check-note  { font-size: 0.8rem; color: var(--text-dim); }
+
+    /* ── SECTION DIVIDER ── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 40px 0 28px;
+    }
+
+    .section-divider span {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      color: var(--lime-dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .section-divider::before, .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── BACK TO TOP ── */
+    #back-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 42px; height: 42px;
+      background: var(--lime);
+      color: var(--bg);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(168,230,61,0.3);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 200;
+    }
+    #back-top.visible { opacity: 1; transform: translateY(0); }
+    #back-top:hover   { background: var(--amber); }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 60px;
+      padding: 32px 40px;
+      background: var(--bg-sidebar);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--lime);
+    }
+
+    .footer a { color: var(--text-dim); }
+    .footer a:hover { color: var(--lime); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .main { padding: 32px 24px 60px; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --sidebar-w: 260px; }
+
+      .hamburger { display: flex; }
+      .topbar-version { display: none; }
+
+      .sidebar {
+        position: fixed;
+        top: var(--header-h);
+        left: 0;
+        bottom: 0;
+        z-index: 250;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        height: calc(100vh - var(--header-h));
+      }
+
+      .sidebar.open { transform: translateX(0); }
+
+      .layout { display: block; }
+      .main { padding: 28px 18px 60px; max-width: 100%; }
+
+      .chapter-title { font-size: 1.25rem; }
+      .glossary-grid { grid-template-columns: 1fr; }
+
+      .trouble-table { font-size: 0.78rem; }
+      .trouble-table th, .trouble-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="topbar">
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect y="3" width="18" height="2" rx="1" fill="currentColor"/><rect y="8" width="18" height="2" rx="1" fill="currentColor"/><rect y="13" width="18" height="2" rx="1" fill="currentColor"/></svg>
+  </button>
+  <a href="/en/products/sdrlab/flipper-5g/" class="topbar-badge" title="Back to product page">
+    <div class="topbar-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0a0f06" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+    </div>
+    <div>
+      <div class="topbar-title">SDRLAB FLIPPER ZERO 5G</div>
+      <div class="topbar-sub">Yupitek Ltd — Online User Manual</div>
+    </div>
+  </a>
+  <span class="topbar-version">v1.0</span>
+</header>
+
+<!-- ── LAYOUT ── -->
+<div class="layout">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar" id="sidebar" aria-label="Manual navigation">
+    <div class="sidebar-label">Manual Contents</div>
+    <nav>
+      <ul class="sidebar-nav" id="nav-list">
+        <li><a href="#ch1" data-ch="1"><span class="ch-num">1</span> Introduction</a></li>
+        <li><a href="#ch2" data-ch="2"><span class="ch-num">2</span> Before You Begin</a></li>
+        <li><a href="#ch3" data-ch="3"><span class="ch-num">3</span> Hardware Overview</a></li>
+        <li><a href="#ch4" data-ch="4"><span class="ch-num">4</span> Physical Connection</a></li>
+        <li><a href="#ch5" data-ch="5"><span class="ch-num">5</span> Your First 5G Scan</a></li>
+        <li><a href="#ch6" data-ch="6"><span class="ch-num">6</span> Core Features</a></li>
+        <li><a href="#ch7" data-ch="7"><span class="ch-num">7</span> Firmware Guide</a></li>
+        <li><a href="#ch8" data-ch="8"><span class="ch-num">8</span> Custom Development</a></li>
+        <li><a href="#ch9" data-ch="9"><span class="ch-num">9</span> Troubleshooting</a></li>
+        <li><a href="#ch10" data-ch="10"><span class="ch-num">10</span> Safety &amp; Legal</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main" id="main-content">
+
+    <!-- ════════════════════ CH 1 ════════════════════ -->
+    <section class="chapter" id="ch1">
+      <div class="chapter-header">
+        <div class="chapter-num-badge">01</div>
+        <div>
+          <h1 class="chapter-title">Introduction &amp; Overview</h1>
+          <p class="chapter-desc">What this board does and what you'll be able to accomplish</p>
+        </div>
+      </div>
+
+      <p>Welcome to the <strong>SDRLab Flipper Zero 5G Add-On Board</strong> user manual. This guide is written for beginners — you don't need a deep technical background to follow along. By the end, you'll be able to set up the board, scan Wi-Fi networks on both 2.4 GHz and 5 GHz, and understand the key security research tools it provides.</p>
+
+      <h3>What Is This Board?</h3>
+      <p>The Flipper Zero 5G Add-On Board is a hardware expansion module that plugs directly onto your <strong>Flipper Zero</strong> device via its GPIO pins. It adds a dedicated <strong>dual-band Wi-Fi chip</strong> (Realtek RTL8720DN) with BLE 5.0 — turning your Flipper Zero into a powerful wireless security research platform.</p>
+
+      <div class="callout info">
+        <div class="callout-icon">ℹ️</div>
+        <div class="callout-body">
+          <div class="callout-title">What is Flipper Zero?</div>
+          <p>Flipper Zero is a portable multi-tool for security researchers and hobbyists. It supports RFID, NFC, Sub-GHz radio, Infrared, and GPIO expansion — all in a dolphin-shaped device. Learn more at <a href="https://flipper.net" target="_blank" rel="noopener">flipper.net</a></p>
+        </div>
+      </div>
+
+      <h3>What You'll Be Able to Do</h3>
+      <ul>
+        <li><strong>Scan 5 GHz Wi-Fi networks</strong> — previously inaccessible with older Flipper add-ons</li>
+        <li><strong>Run Wi-Fi deauthentication tests</strong> on your own authorized networks</li>
+        <li><strong>Map nearby wireless environments</strong> across both 2.4 GHz and 5 GHz bands</li>
+        <li><strong>Prototype Evil Portal</strong> captive portal scenarios for phishing-awareness testing</li>
+        <li><strong>Perform beacon flood tests</strong> to study RF congestion</li>
+        <li><strong>Scan Bluetooth Low Energy (BLE 5.0)</strong> devices alongside Wi-Fi</li>
+        <li><strong>Develop custom firmware</strong> using PlatformIO (advanced)</li>
+      </ul>
+
+      <div class="callout danger">
+        <div class="callout-icon">🔴</div>
+        <div class="callout-body">
+          <div class="callout-title">Legal Notice — Read First</div>
+          <p>All features of this board must only be used on <strong>networks you own or have explicit written permission to test</strong>. Using Wi-Fi deauthentication, Evil Portal, or beacon flood on unauthorized networks is illegal in most countries. See Chapter 10 for full legal guidance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════ CH 2 ════════════════════ -->
+    <section class="chapter" id="ch2">
+      <div class="chapter-header">
+        <div class="chapter-num-badge">02</div>
+        <div>
+          <h2 class="chapter-title">Before You Begin</h2>
+          <p class="chapter-desc">Prerequisites, firmware requirements, and what you need</p>
+        </div>
+      </div>
+
+      <h3>What You Need</h3>
+      <ul class="checklist">
+        <li>
+          <div class="check-icon">🐬</div>
+          <div>
+            <div class="check-label">Flipper Zero Device</div>
+            <div class="check-note">Original Flipper Zero (any color). The board connects via the standard GPIO header on the top of your Flipper Zero.</div>
+          </div>
+        </li>
+        <li>
+          <div class="check-icon">📡</div>
+          <div>
+            <div class="check-label">This SDRLab 5G Add-On Board</div>
+            <div class="check-note">The RTL8720DN/BW16-based expansion board. Check which antenna variant you have: PCB trace (built-in) or U.FL connector (for external antenna).</div>
+          </div>
+        </li>
+        <li>
+          <div class="check-icon">⚡</div>
+          <div>
+            <div class="check-label">Momentum OR Unleashed Custom Firmware</div>
+            <div class="check-note"><strong>Critical:</strong> Stock Flipper Zero firmware does NOT support this board. You must flash Momentum or Unleashed firmware first.</div>
+          </div>
+        </li>
+        <li>
+          <div class="check-icon">🔌</div>
+          <div>
+            <div class="check-label">USB-C Cable (optional)</div>
+            <div class="check-note">Required only for firmware updates or if you plan to develop custom firmware with PlatformIO.</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="callout warning">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <div class="callout-title">Stock Firmware Won't Work</div>
+          <p>If your Flipper Zero is running the official firmware from flipper.net, this board will not function. You need to install <strong>Momentum</strong> or <strong>Unleashed</strong> firmware before proceeding. The WiFi Marauder app is only available in these community frameworks.</p>
+        </div>
+      </div>
+
+      <h3>How to Check Your Current Firmware</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Open Settings</h4>
+            <p>From the Flipper Zero main menu, navigate to <strong>Settings</strong> using the directional pad.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Go to About</h4>
+            <p>Navigate to <strong>About</strong> → the firmware version is displayed. Look for "Momentum" or "Unleashed" in the version string.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Check the Result</h4>
+            <p>If you see "Official" or only a version number like "0.xx.x" — you are on stock firmware. If you see "Momentum vX.X" or "Unleashed vXX" — you're ready.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Installing Momentum Firmware (If Needed)</h3>
+      <p>Momentum is the recommended firmware for this board. Follow these steps:</p>
+      <ol>
+        <li>Visit <a href="https://github.com/Next-Flip/Momentum-Firmware" target="_blank" rel="noopener">github.com/Next-Flip/Momentum-Firmware</a></li>
+        <li>Download the latest release <code>.tgz</code> file</li>
+        <li>Open the <strong>Flipper Mobile App</strong> on your phone → Connect your Flipper Zero via Bluetooth</li>
+        <li>Go to <strong>Device → Firmware Update</strong> → select the downloaded file</li>
+        <li>Wait for the update to complete and your Flipper to reboot</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <div class="callout-title">Tip: Keep a Backup</div>
+          <p>Before changing firmware, back up your Flipper Zero's SD card data using qFlipper (the desktop app). Your RFID, NFC, and Sub-GHz saves are stored on the SD card and will survive a firmware change, but a backup is always a good habit.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════ CH 3 ════════════════════ -->
+    <section class="chapter" id="ch3">
+      <div class="chapter-header">
+        <div class="chapter-num-badge">03</div>
+        <div>
+          <h2 class="chapter-title">Hardware Overview</h2>
+          <p class="chapter-desc">Board layout, components, and quick-reference specifications</p>
+        </div>
+      </div>
+
+      <h3>Key Components on the Board</h3>
+      <ul>
+        <li><strong>Realtek RTL8720DN (AI Thinker BW16 module)</strong> — the main wireless chip. The small silver rectangular module on the board's surface is the BW16.</li>
+        <li><strong>GPIO Header (2×8 pins)</strong> — the row of pins along one edge that connects to your Flipper Zero. The spacing matches Flipper's standard header exactly.</li>
+        <li><strong>LED Indicator</strong> — a small LED near the chip. Lights up briefly on power-on; may blink during active scanning depending on firmware.</li>
+        <li><strong>Antenna Connector (U.FL/IPEX)</strong> — a tiny coaxial connector for attaching an external antenna. Only present on U.FL revision boards. If your board has a trace antenna instead, no connector is visible.</li>
+        <li><strong>PCB Trace Antenna</strong> — a zigzag copper pattern etched into the board (present on PCB-antenna revision). No external connector needed.</li>
+      </ul>
+
+      <h3>Board Revisions</h3>
+      <p>Two hardware revisions exist. Check your board to identify which you have:</p>
+      <ul>
+        <li><strong>U.FL Revision</strong> — has a small IPEX/U.FL coaxial connector. You can attach an external antenna for extended range. Look for a tiny gold connector near the edge of the BW16 module.</li>
+        <li><strong>PCB Antenna Revision</strong> — no connector visible. Uses an etched copper trace on the PCB as the antenna. More compact but range is limited to ~10–30m line-of-sight.</li>
+      </ul>
+
+      <h3>Quick-Reference Specifications</h3>
+      <div class="spec-card">
+        <div class="spec-card-header">SDRLab Flipper Zero 5G — Spec Sheet</div>
+        <table class="spec-table">
+          <tr><td>Main Chip</td><td>Realtek RTL8720DN (AI Thinker BW16)</td></tr>
+          <tr><td>CPU Cores</td><td>ARM Cortex-M4 @ 200 MHz + Cortex-M0 @ 20 MHz</td></tr>
+          <tr><td>Wi-Fi Standard</td><td>IEEE 802.11 a/b/g/n — 2.4 GHz &amp; 5 GHz</td></tr>
+          <tr><td>Wi-Fi TX Power</td><td>~17 dBm (regulatory limited)</td></tr>
+          <tr><td>Bluetooth</td><td>BLE 5.0</td></tr>
+          <tr><td>Flash Storage</td><td>4 MB</td></tr>
+          <tr><td>Power Source</td><td>5 V from Flipper Zero GPIO pin</td></tr>
+          <tr><td>Typical Current</td><td>150–250 mA (active scanning)</td></tr>
+          <tr><td>GPIO Interface</td><td>Flipper Zero standard 2×8 pin header</td></tr>
+          <tr><td>Pre-loaded Firmware</td><td>Marauder 5G (scan, deauth, beacon, sniff, portal)</td></tr>
+          <tr><td>Operating Temperature</td><td>−40°C to +85°C</td></tr>
+          <tr><td>Antenna</td><td>IPEX U.FL or on-board PCB (varies by revision)</td></tr>
+        </table>
+      </div>
+
+      <div class="callout info">
+        <div class="callout-icon">ℹ️</div>
+        <div class="callout-body">
+          <div class="callout-title">Why Two CPU Cores?</div>
+          <p>The Cortex-M4 at 200 MHz handles active work: processing Wi-Fi frames, running firmware logic, and communicating with Flipper Zero. The Cortex-M0 at 20 MHz handles background tasks efficiently — this is what allows the board to do passive monitoring without heavily draining your Flipper Zero's battery.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════ CH 4 ════════════════════ -->
+    <section class="chapter" id="ch4">
+      <div class="chapter-header">
+        <div class="chapter-num-badge">04</div>
+        <div>
+          <h2 class="chapter-title">Physical Connection</h2>
+          <p class="chapter-desc">How to correctly attach the board to your Flipper Zero</p>
+        </div>
+      </div>
+
+      <div class="callout danger">
+        <div class="callout-icon">🔴</div>
+        <div class="callout-body">
+          <div class="callout-title">Power Off Before Connecting</div>
+          <p>Always power off your Flipper Zero before attaching or detaching this add-on board. Hot-plugging can damage the GPIO pins on both devices.</p>
+        </div>
+      </div>
+
+      <h3>Step-by-Step Connection Guide</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Power Off Your Flipper Zero</h4>
+            <p>Hold the back button for 3 seconds → select <strong>Power Off</strong>. Wait until the screen goes fully dark.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Identify the GPIO Header</h4>
+            <p>The GPIO header is the row of metal pins on the <strong>top edge</strong> of your Flipper Zero (the end away from the USB-C port). It has 2 rows of 8 pins each (16 pins total).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Orient the Board Correctly</h4>
+            <p>The add-on board extends <strong>upward and outward</strong> from the Flipper's top edge. The antenna side of the board (or the BW16 module) should face <strong>away from</strong> the Flipper Zero screen. There is only one physically correct orientation — the pin header alignment prevents reverse insertion.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Press Firmly Onto the Header</h4>
+            <p>Align the female socket on the add-on board with the Flipper Zero's GPIO pins. Press down <strong>evenly and firmly</strong> until the board is fully seated. You should feel a slight resistance, then a firm stop. Do not force it.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h4>Power On and Verify</h4>
+            <p>Press the power button on Flipper Zero to turn it on. The add-on board's LED may briefly blink during boot. The Flipper Zero screen should show the normal boot animation — if it freezes or shows an error, power off and re-seat the board.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Anti-Static Precautions</h3>
+      <ul>
+        <li>Avoid handling the board by its components — hold it by the PCB edges</li>
+        <li>Ground yourself before handling (touch a metal surface or wear an anti-static wrist strap)</li>
+        <li>Store the board in its anti-static bag when not in use</li>
+        <li>Keep away from static-prone surfaces (carpet, plastic bags)</li>
+      </ul>
+
+      <div class="callout warning">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <div class="callout-title">External Antenna (U.FL Revision Only)</div>
+          <p>If your board has a U.FL connector and you want to attach an external antenna: insert the U.FL connector with a <strong>straight downward press</strong> — do not angle it. Angled insertion can break the tiny connector. To remove, use a non-conductive pry tool (plastic spudger).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════ CH 5 ════════════════════ -->
+    <section class="chapter" id="ch5">
+      <div class="chapter-header">
+        <div class="chapter-num-badge">05</div>
+        <div>
+          <h2 class="chapter-title">Your First 5G Scan</h2>
+          <p class="chapter-desc">Finding and launching the Wi-Fi Marauder app for the first time</p>
+        </div>
+      </div>
+
+      <h3>Step 1 — Configure GPIO Pin Settings</h3>
+      <p>Before the board can communicate with Flipper Zero, you need to set the correct GPIO pin assignments in your firmware settings. This is a one-time setup:</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Open Momentum Settings (Momentum firmware)</h4>
+            <p>Main Menu → <strong>Momentum</strong> → <strong>Protocol Settings</strong> → <strong>GPIO Pin Settings</strong> → <strong>ESP32 Pin Change</strong></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Set Pins to 15 and 16</h4>
+            <p>Set <strong>TX Pin = 15</strong> and <strong>RX Pin = 16</strong>. These are the UART communication pins used by this board. Press OK to confirm each setting.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Return to Main Menu</h4>
+            <p>Press the back button to return to the main menu. The settings are saved automatically.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout info">
+        <div class="callout-icon">ℹ️</div>
+        <div class="callout-body">
+          <div class="callout-title">For Unleashed Firmware Users</div>
+          <p>The menu path may vary slightly by version, but the GPIO pin setting (TX=15, RX=16) applies the same way. Look for <strong>Settings → Protocols → GPIO / ESP32</strong> or similar.</p>
+        </div>
+      </div>
+
+      <h3>Step 2 — Launch WiFi Marauder</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Navigate to GPIO Apps</h4>
+            <p>Main Menu → <strong>Apps</strong> → <strong>GPIO</strong></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Select WiFi Marauder</h4>
+            <p>Find and select <strong>[ESP32] WiFi Marauder</strong>. If you don't see it, you need to install it via the Momentum app catalog (see note below).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>App Initializes</h4>
+            <p>The app will show a startup screen. If the board is correctly connected and pin settings are right, you'll see the Marauder main menu within 2–3 seconds. If it shows "Board not detected" — revisit Chapter 4 and the pin settings.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Step 3 — Run Your First Scan</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Select "Scan APs"</h4>
+            <p>In the Marauder menu, navigate to <strong>Scan</strong> → <strong>Scan APs</strong> (Access Points). This starts a passive scan on both 2.4 GHz and 5 GHz bands.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Watch Networks Populate</h4>
+            <p>Networks will start appearing as the board sweeps through channels. Each entry shows the <strong>SSID</strong> (name), <strong>channel</strong>, <strong>RSSI</strong> (signal strength), and <strong>encryption type</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Stop and Review</h4>
+            <p>Press the OK button or back to stop the scan. You can now browse the list of discovered networks.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Reading Scan Results — Beginner's Guide</h3>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="terminal-dot t-red"></div>
+          <div class="terminal-dot t-yellow"></div>
+          <div class="terminal-dot t-green"></div>
+          <span class="terminal-title">WiFi Marauder — AP Scan Output</span>
+        </div>
+        <div class="terminal-body">
+<span class="comment"># Format: ID | SSID | BSSID | CH | RSSI | Encryption</span>
+<span class="out"> 0 | <span class="hi">MyHomeNetwork</span>    | AA:BB:CC:DD:EE:FF | <span class="hi">6</span>  | -42 | WPA2</span>
+<span class="out"> 1 | <span class="hi">OfficeWifi_5G</span>    | 11:22:33:44:55:66 | <span class="hi">36</span> | -61 | WPA3</span>
+<span class="out"> 2 | <span class="hi">CafeGuest</span>        | AA:11:BB:22:CC:33 | <span class="hi">11</span> | -78 | WPA2</span>
+<span class="out"> 3 | <span class="hi">Hidden Network</span>   | 77:88:99:AA:BB:CC | <span class="hi">149</span>| -55 | WPA2</span>
+<span class="comment"># CH 1-14 = 2.4 GHz | CH 36-165 = 5 GHz (this board's advantage!)</span>
+<span class="comment"># RSSI: -30 excellent | -60 good | -80 weak | -90 very weak</span>
+        </div>
+      </div>
+
+      <ul>
+        <li><strong>SSID</strong> — the human-readable network name (e.g. "MyHomeNetwork"). A blank or "&lt;hidden&gt;" entry means the network is broadcasting a hidden SSID.</li>
+        <li><strong>BSSID</strong> — the MAC address of the access point (router/AP hardware address)</li>
+        <li><strong>CH</strong> — the Wi-Fi channel. Channels 1–14 are 2.4 GHz; channels 36, 40, 44… 149, 153, 157, 161, 165 are 5 GHz.</li>
+        <li><strong>RSSI</strong> — Received Signal Strength Indicator in dBm. Closer to 0 = stronger. −42 is excellent; −78 is acceptable; −90 is very weak.</li>
+        <li><strong>Encryption</strong> — security protocol: WPA3 (best), WPA2 (common), WPA (old), WEP (legacy/insecure), OPEN (no password)</li>
+      </ul>
+    </section>
+
+    <!-- ════════════════════ CH 6 ════════════════════ -->
+    <section class="chapter" id="ch6">
+      <div class="chapter-header">
+        <div class="chapter-num-badge">06</div>
+        <div>
+          <h2 class="chapter-title">Core Features Deep Dive</h2>
+          <p class="chapter-desc">How each major capability works and when to use it</p>
+        </div>
+      </div>
+
+      <div class="section-divider"><span>6.1 — Wi-Fi Deauthentication</span></div>
+
+      <div class="callout danger">
+        <div class="callout-icon">🔴</div>
+        <div class="callout-body">
+          <div class="callout-title">Authorized Networks Only</div>
+          <p>Deauthentication attacks sent on networks you do not own are <strong>illegal</strong> under computer fraud laws in most countries. Only perform this on your own home router or in explicitly authorized test environments. Violations carry serious criminal penalties. See Chapter 10.</p>
+        </div>
+      </div>
+
+      <h4>What is Deauthentication?</h4>
+      <p>In older Wi-Fi standards (pre-WPA3), there is a management frame called a <strong>deauthentication frame</strong>. This frame tells a connected device "you are no longer authenticated to this network — disconnect immediately." The problem: these frames are <em>unauthenticated</em> — any device can send them while pretending to be the router.</p>
+      <p>A deauth attack floods a target device with these frames, causing it to disconnect from the network repeatedly. In security research, this is used to test whether a network's monitoring systems (IDS/IPS) detect and alert on such attacks.</p>
+
+      <h4>How to Run a Deauth (on Your Own Network)</h4>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Scan for APs First</h4>
+            <p>Run "Scan APs" to populate the AP list with your own router. Note its number in the list.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Select Deauth Target</h4>
+            <p>In Marauder menu → <strong>Deauth</strong> → <strong>Select AP</strong> → choose your target AP from the scan list.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Start Attack</h4>
+            <p>Select <strong>Deauth All Clients</strong> or a specific client. The attack runs continuously until you stop it.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Stop and Analyze</h4>
+            <p>Press back or OK to stop. Observe how long devices took to disconnect and whether they reconnected automatically.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <div class="callout-title">PMF / WPA3 Networks Are Protected</div>
+          <p>If the target AP uses <strong>WPA3</strong> or <strong>WPA2 with PMF (Protected Management Frames / 802.11w)</strong>, deauth attacks will not work. This is the expected and correct behavior — PMF was specifically designed to defend against these attacks. A "failed" deauth on a PMF network actually confirms the network is properly secured.</p>
+        </div>
+      </div>
+
+      <div class="section-divider"><span>6.2 — Evil Portal</span></div>
+      <p>Evil Portal creates a <strong>rogue Wi-Fi access point</strong> that presents a fake login/captive portal page when users connect. In authorized security testing, this is used to simulate phishing attacks and test whether employees can identify fake login pages.</p>
+      <ul>
+        <li>In Marauder: <strong>Evil Portal</strong> → select a portal template or create custom HTML</li>
+        <li>The board broadcasts a new SSID — any device that connects is shown the portal page</li>
+        <li>Credentials or form entries can be captured and logged</li>
+      </ul>
+
+      <div class="callout danger">
+        <div class="callout-icon">🔴</div>
+        <div class="callout-body">
+          <div class="callout-title">Extremely High Legal Risk</div>
+          <p>Evil Portal is one of the most legally sensitive tools on this board. Running it in public spaces or on networks without authorization is a serious crime in virtually every jurisdiction. Only use in controlled, authorized environments with explicit written consent from all parties involved.</p>
+        </div>
+      </div>
+
+      <div class="section-divider"><span>6.3 — Beacon Flood</span></div>
+      <p>Beacon flood broadcasts dozens of fake SSID names into the surrounding wireless environment. Real networks disappear among the flood of phantom networks. Used in security research to:</p>
+      <ul>
+        <li>Test Wi-Fi scanner resilience and IDS detection thresholds</li>
+        <li>Study how client devices behave when exposed to massive SSID lists</li>
+        <li>Assess RF environment impact on network operations</li>
+      </ul>
+      <p>In Marauder: <strong>Beacon</strong> → <strong>Rickroll</strong> (built-in fun SSID list) or <strong>Custom</strong> (define your own SSIDs) → <strong>Start</strong>.</p>
+
+      <div class="section-divider"><span>6.4 — WPA Handshake Capture (Sniff)</span></div>
+      <p>The board can passively sniff the network for <strong>EAPOL packets</strong> — these are the handshake messages exchanged when a device connects to a WPA2 network. Capturing an EAPOL/PMKID handshake is the first step in offline WPA2 password auditing.</p>
+      <p>In Marauder: <strong>Sniff</strong> → <strong>EAPOL</strong> → the board logs any WPA handshakes it captures to the Flipper Zero display/log.</p>
+      <p>This is useful for authorized network security auditing — verifying whether a WPA2 password meets complexity requirements.</p>
+    </section>
+
+    <!-- ════════════════════ CH 7 ════════════════════ -->
+    <section class="chapter" id="ch7">
+      <div class="chapter-header">
+        <div class="chapter-num-badge">07</div>
+        <div>
+          <h2 class="chapter-title">Firmware Guide</h2>
+          <p class="chapter-desc">Understanding the pre-loaded firmware and compatible frameworks</p>
+        </div>
+      </div>
+
+      <h3>What's Pre-Loaded: Marauder 5G</h3>
+      <p>The board ships with <strong>Marauder 5G firmware</strong> pre-flashed onto the RTL8720DN chip. This is a port of the popular Wi-Fi Marauder project adapted for the RTL8720DN's dual-band 5 GHz capability. You don't need to flash anything to the board to get started.</p>
+
+      <p>Marauder 5G features included out of the box:</p>
+      <ul>
+        <li><strong>scanap</strong> — scan for access points on both bands</li>
+        <li><strong>scansta</strong> — scan for connected stations/clients</li>
+        <li><strong>deauth</strong> — deauthentication attack</li>
+        <li><strong>beacon</strong> — beacon flood with custom or preset SSIDs</li>
+        <li><strong>sniff</strong> — passive packet sniffing (EAPOL, probe, PMKID)</li>
+        <li><strong>evilportal</strong> — rogue AP with captive portal</li>
+      </ul>
+
+      <h3>Momentum Firmware (Recommended)</h3>
+      <ul>
+        <li><strong>What it is:</strong> Community-maintained Flipper Zero firmware with extensive feature set</li>
+        <li><strong>Key benefit:</strong> Full WiFi Marauder integration, active development, large community</li>
+        <li><strong>Get it at:</strong> <a href="https://github.com/Next-Flip/Momentum-Firmware" target="_blank" rel="noopener">github.com/Next-Flip/Momentum-Firmware</a></li>
+        <li><strong>App path for this board:</strong> Apps → GPIO → [ESP32] WiFi Marauder</li>
+        <li><strong>GPIO pin setting required:</strong> TX=15, RX=16 (see Chapter 5)</li>
+      </ul>
+
+      <h3>Unleashed Firmware</h3>
+      <ul>
+        <li><strong>What it is:</strong> Flipper Zero firmware fork focused on removing regional frequency restrictions</li>
+        <li><strong>Key benefit:</strong> Allows Sub-GHz transmission on all frequencies (use responsibly and per local law)</li>
+        <li><strong>Also supports:</strong> WiFi Marauder integration for this board</li>
+        <li><strong>Get it at:</strong> <a href="https://github.com/DarkFlippers/unleashed-firmware" target="_blank" rel="noopener">github.com/DarkFlippers/unleashed-firmware</a></li>
+      </ul>
+
+      <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <div class="callout-title">Which Should I Choose?</div>
+          <p>For most beginners focused on Wi-Fi research with this board, <strong>Momentum</strong> is recommended — it has better documentation, more frequent updates, and a more active community. Choose Unleashed if you also need Sub-GHz frequency flexibility for other projects.</p>
+        </div>
+      </div>
+
+      <h3>Should You Update the Board's Firmware?</h3>
+      <p>The Marauder 5G firmware on the board itself (not Flipper firmware — the firmware on the RTL8720DN chip) <strong>generally does not need to be updated</strong> for everyday use. The pre-loaded version works reliably with both Momentum and Unleashed.</p>
+      <p>Only update the board firmware if:</p>
+      <ul>
+        <li>A new Marauder 5G release fixes a specific bug you are encountering</li>
+        <li>You want to access a new feature added in a later release</li>
+        <li>Instructed to update by official SDRLab support</li>
+      </ul>
+    </section>
+
+    <!-- ════════════════════ CH 8 ════════════════════ -->
+    <section class="chapter" id="ch8">
+      <div class="chapter-header">
+        <div class="chapter-num-badge">08</div>
+        <div>
+          <h2 class="chapter-title">Custom Development</h2>
+          <p class="chapter-desc">Building and flashing custom firmware with PlatformIO</p>
+        </div>
+      </div>
+
+      <div class="callout warning">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <div class="callout-title">Advanced Users Only</div>
+          <p>This chapter is for users with programming experience. If you're a beginner, the pre-loaded Marauder 5G firmware is all you need. You can safely skip this chapter and return when ready.</p>
+        </div>
+      </div>
+
+      <h3>What is PlatformIO?</h3>
+      <p>PlatformIO is a cross-platform development environment (IDE extension for VSCode) that supports hundreds of microcontroller boards. The RTL8720DN/BW16 is supported via the <strong>Ameba D Arduino framework</strong>, which means you can write Arduino-style C++ code for this board.</p>
+
+      <h3>Setup</h3>
+      <ol>
+        <li>Install <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a></li>
+        <li>Install the <strong>PlatformIO IDE</strong> extension from the VSCode marketplace</li>
+        <li>Create a new project: Platform = <strong>Realtek RTL8720DN (BW16)</strong>, Framework = <strong>Arduino</strong></li>
+        <li>PlatformIO will download the Ameba D board package automatically</li>
+      </ol>
+
+      <h3>Flashing Custom Firmware</h3>
+      <p>The RTL8720DN is flashed via UART (serial), not USB directly. You need a <strong>USB-to-serial adapter</strong> (CP2102 or CH340 recommended).</p>
+
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="terminal-dot t-red"></div>
+          <div class="terminal-dot t-yellow"></div>
+          <div class="terminal-dot t-green"></div>
+          <span class="terminal-title">platformio.ini — BW16 Configuration</span>
+        </div>
+        <div class="terminal-body">
+<span class="comment">[env:bw16]</span>
+<span class="prompt">platform</span>  <span class="cmd">= realtek-ambz2</span>
+<span class="prompt">board</span>     <span class="cmd">= bw16</span>
+<span class="prompt">framework</span> <span class="cmd">= arduino</span>
+<span class="prompt">upload_port</span><span class="cmd"> = /dev/ttyUSB0</span>  <span class="comment">; Windows: COM3 or similar</span>
+<span class="prompt">upload_speed</span><span class="cmd"> = 1500000</span>
+        </div>
+      </div>
+
+      <h3>Entering Bootloader Mode for Flashing</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Disconnect from Flipper Zero</h4>
+            <p>Remove the board from Flipper Zero. You'll be powering it via the serial adapter.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Connect UART Adapter</h4>
+            <p>Wire: TX (adapter) → RX (board) | RX (adapter) → TX (board) | GND → GND | 3.3V → 3.3V</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Enter Bootloader</h4>
+            <p>Hold the BOOT button on the board, then plug in USB to the serial adapter, then release the button.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Upload from PlatformIO</h4>
+            <p>In VSCode, click the <strong>Upload</strong> arrow in the PlatformIO toolbar. The flash process takes 30–60 seconds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════ CH 9 ════════════════════ -->
+    <section class="chapter" id="ch9">
+      <div class="chapter-header">
+        <div class="chapter-num-badge">09</div>
+        <div>
+          <h2 class="chapter-title">Troubleshooting</h2>
+          <p class="chapter-desc">Common problems, their causes, and how to fix them</p>
+        </div>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table class="trouble-table">
+          <thead>
+            <tr>
+              <th>Problem</th>
+              <th>Likely Cause</th>
+              <th>Solution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Board not detected / "Board not found" in app</td>
+              <td>Wrong GPIO pin settings OR stock firmware</td>
+              <td>Verify firmware is Momentum/Unleashed. Set ESP32 pin = 15, 16 in GPIO Pin Settings. Re-seat the board.</td>
+            </tr>
+            <tr>
+              <td>No 5 GHz networks appear in scan</td>
+              <td>Antenna not attached (U.FL revision), or local 5 GHz band is DFS-restricted</td>
+              <td>Attach antenna if U.FL board. Note: DFS channels (52–144) require radar detection — the board may skip these by default. Try scanning in a location with 5 GHz APs.</td>
+            </tr>
+            <tr>
+              <td>Flipper Zero battery drains significantly faster</td>
+              <td>Normal — the board draws 150–250 mA from GPIO during active use</td>
+              <td>This is expected behavior. Keep sessions shorter if battery is a concern. The board does not have its own battery.</td>
+            </tr>
+            <tr>
+              <td>Deauth attack has no effect</td>
+              <td>Target AP uses 802.11w/PMF (Protected Management Frames) or WPA3</td>
+              <td>Expected behavior — PMF protects against deauth. The network is properly secured. Try on an older WPA2-only network for testing.</td>
+            </tr>
+            <tr>
+              <td>Board gets warm during use</td>
+              <td>Normal operating temperature for RTL8720DN under Wi-Fi load</td>
+              <td>Normal. The chip is rated −40°C to 85°C. Warmth during active scanning is expected. If the board becomes uncomfortably hot to touch, stop use and check for short circuits.</td>
+            </tr>
+            <tr>
+              <td>WiFi Marauder app not found in menu</td>
+              <td>App not installed in your firmware build</td>
+              <td>In Momentum: go to Apps → Firmware Apps catalog → install WiFi Marauder. In Unleashed: install via the Flipper App Store method for that firmware.</td>
+            </tr>
+            <tr>
+              <td>Flipper Zero freezes on boot after attaching board</td>
+              <td>Board not fully seated, wrong orientation, or damaged pin</td>
+              <td>Power off completely. Remove board. Inspect GPIO pins for bends. Re-seat carefully, ensuring full alignment before pressing down.</td>
+            </tr>
+            <tr>
+              <td>Scan shows very few networks</td>
+              <td>PCB antenna version — limited range, or environment has few APs</td>
+              <td>Move to a location with known Wi-Fi activity. If U.FL version, check antenna is fully connected. Try both 2.4GHz and 5GHz scans separately.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Beginner Glossary</h3>
+      <div class="glossary-grid">
+        <div class="gloss-item">
+          <div class="gloss-term">SSID</div>
+          <div class="gloss-def">Service Set Identifier — the human-readable name of a Wi-Fi network (e.g. "HomeWifi"). What you see when browsing for networks.</div>
+        </div>
+        <div class="gloss-item">
+          <div class="gloss-term">BSSID</div>
+          <div class="gloss-def">Basic Service Set Identifier — the MAC (hardware) address of a Wi-Fi access point. Unique to each router/AP hardware.</div>
+        </div>
+        <div class="gloss-item">
+          <div class="gloss-term">RSSI</div>
+          <div class="gloss-def">Received Signal Strength Indicator — signal power in dBm. More negative = weaker. −30 excellent, −70 usable, −90 very weak.</div>
+        </div>
+        <div class="gloss-item">
+          <div class="gloss-term">Deauth</div>
+          <div class="gloss-def">Deauthentication — a Wi-Fi management frame that forces a client to disconnect from an access point. Used in security research to test resilience.</div>
+        </div>
+        <div class="gloss-item">
+          <div class="gloss-term">PMF / 802.11w</div>
+          <div class="gloss-def">Protected Management Frames — Wi-Fi security feature that encrypts and authenticates management frames, preventing deauth attacks.</div>
+        </div>
+        <div class="gloss-item">
+          <div class="gloss-term">EAPOL</div>
+          <div class="gloss-def">Extensible Authentication Protocol over LAN — the "handshake" frames exchanged when a device connects to a WPA2 network. Used in security auditing.</div>
+        </div>
+        <div class="gloss-item">
+          <div class="gloss-term">GPIO</div>
+          <div class="gloss-def">General Purpose Input/Output — the programmable pins on Flipper Zero's header used to connect expansion boards like this one.</div>
+        </div>
+        <div class="gloss-item">
+          <div class="gloss-term">BLE</div>
+          <div class="gloss-def">Bluetooth Low Energy — a power-efficient Bluetooth standard used by IoT devices, wearables, and peripherals. BLE 5.0 has ~4× the range of BLE 4.x.</div>
+        </div>
+        <div class="gloss-item">
+          <div class="gloss-term">U.FL / IPEX</div>
+          <div class="gloss-def">A tiny coaxial antenna connector used on small PCBs. Allows attaching an external antenna for extended Wi-Fi range.</div>
+        </div>
+        <div class="gloss-item">
+          <div class="gloss-term">DFS Channel</div>
+          <div class="gloss-def">Dynamic Frequency Selection — 5 GHz channels (52–144) that require radar detection to avoid interference with aviation/weather radar. Some may be restricted by regulation.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════ CH 10 ════════════════════ -->
+    <section class="chapter" id="ch10">
+      <div class="chapter-header">
+        <div class="chapter-num-badge">10</div>
+        <div>
+          <h2 class="chapter-title">Safety, Legal &amp; Responsible Use</h2>
+          <p class="chapter-desc">Understanding the legal boundaries of Wi-Fi security research</p>
+        </div>
+      </div>
+
+      <div class="callout danger">
+        <div class="callout-icon">🔴</div>
+        <div class="callout-body">
+          <div class="callout-title">Read This Before Using Any Active Feature</div>
+          <p>This board is a <strong>security research tool</strong>, not a consumer product. Every active feature (deauth, beacon flood, evil portal, sniffing) has significant legal implications. Misuse is a criminal offense in most countries, not merely a civil matter.</p>
+        </div>
+      </div>
+
+      <h3>What IS Allowed</h3>
+      <ul>
+        <li><strong>Your own home network</strong> — any testing on a network you own and control</li>
+        <li><strong>Authorized penetration tests</strong> — with explicit written authorization from the network owner</li>
+        <li><strong>Educational lab environments</strong> — dedicated isolated test networks (e.g. a travel router purchased specifically for testing)</li>
+        <li><strong>Your own devices</strong> — testing against hardware you own in an isolated environment</li>
+        <li><strong>Passive scanning</strong> — in most jurisdictions, passively receiving/analyzing publicly broadcast beacon frames is generally permitted, but verify local laws</li>
+      </ul>
+
+      <h3>What Is NOT Allowed</h3>
+      <ul>
+        <li><strong>Deauthenticating networks you don't own</strong> — this is a denial-of-service attack and is illegal</li>
+        <li><strong>Evil Portal on public Wi-Fi</strong> — this is a criminal phishing/fraud act</li>
+        <li><strong>Testing neighbor's networks</strong> — even if you can reach their signal</li>
+        <li><strong>Corporate networks without written authorization</strong> — even for "educational purposes"</li>
+        <li><strong>Transmitting on restricted 5 GHz DFS channels</strong> without proper authorization</li>
+        <li><strong>Any use intended to intercept, modify, or disrupt communications</strong> you are not authorized to access</li>
+      </ul>
+
+      <h3>Applicable Laws (Summary)</h3>
+      <ul>
+        <li><strong>Taiwan (Republic of China)</strong> — Communications Protection Act (通訊保障及監察法), Criminal Code §315-1 (violation of privacy)</li>
+        <li><strong>United States</strong> — Computer Fraud and Abuse Act (CFAA), Electronic Communications Privacy Act (ECPA)</li>
+        <li><strong>European Union</strong> — Directive 2013/40/EU on attacks against information systems; national implementations</li>
+        <li><strong>Japan</strong> — Unauthorized Computer Access Law (不正アクセス行為の禁止等に関する法律)</li>
+        <li><strong>Most jurisdictions</strong> — unauthorized network interference can be prosecuted under computer crime, wiretapping, or electronic fraud laws</li>
+      </ul>
+
+      <div class="callout warning">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <div class="callout-title">Yupitek Ltd Disclaimer</div>
+          <p>Yupitek Ltd distributes this product for authorized security research, education, and professional use only. Yupitek Ltd is not responsible for any misuse of this product. By purchasing and using this board, you agree to comply with all applicable local, national, and international laws governing wireless communications and computer security.</p>
+        </div>
+      </div>
+
+      <h3>Getting Started Responsibly</h3>
+      <p>The safest way to learn with this board:</p>
+      <ol>
+        <li><strong>Buy a cheap travel router</strong> (TP-Link TL-WR802N, ~$20) — use it as your dedicated test AP. You own it completely.</li>
+        <li><strong>Create isolated test clients</strong> — connect an old phone or laptop to the test router. Now you have a fully controlled environment.</li>
+        <li><strong>Practice all features on this isolated setup</strong> — no legal risk, full learning.</li>
+        <li><strong>Enroll in a certified ethical hacking course</strong> if you want to advance to professional network security work.</li>
+      </ol>
+
+      <p style="margin-top:40px; padding-top:24px; border-top:1px solid var(--border); font-size:0.82rem; color:var(--text-dim); font-style:italic;">
+        This manual covers the SDRLab Flipper Zero 5G Add-On Board (RTL8720DN / BW16 module). Manual version 1.0, prepared March 2026. For the latest product information, visit <a href="https://yupitek.com/en/products/sdrlab/flipper-5g/">yupitek.com</a>.
+      </p>
+    </section>
+
+  </main><!-- /.main -->
+</div><!-- /.layout -->
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div>
+    <div class="footer-brand">YUPITEK LTD</div>
+    <div>Online User Manual v1.0 — SDRLab Flipper Zero 5G Add-On Board</div>
+    <div style="margin-top:6px;">© 2026 Yupitek Ltd. All rights reserved.</div>
+  </div>
+  <div style="text-align:right;">
+    <a href="/en/products/sdrlab/flipper-5g/">← Back to Product Page</a><br/>
+    <a href="/en/contact/" style="margin-top:6px; display:inline-block;">Contact Yupitek</a>
+  </div>
+</footer>
+
+<!-- ── BACK TO TOP ── -->
+<button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
+
+<script>
+  // ── SIDEBAR TOGGLE (MOBILE) ──
+  const hamburger = document.getElementById('hamburger');
+  const sidebar   = document.getElementById('sidebar');
+
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+  });
+
+  // Close sidebar on nav click (mobile)
+  document.querySelectorAll('.sidebar-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) sidebar.classList.remove('open');
+    });
+  });
+
+  // ── ACTIVE NAV + CHAPTER PROGRESS ──
+  const chapters = document.querySelectorAll('.chapter');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const header   = document.querySelector('.topbar');
+
+  function updateActiveNav() {
+    let currentId = '';
+    const scrollY = window.scrollY + header.offsetHeight + 40;
+
+    chapters.forEach(ch => {
+      if (ch.offsetTop <= scrollY) currentId = ch.id;
+    });
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href').replace('#', '');
+      link.classList.remove('active');
+      if (href === currentId) link.classList.add('active');
+      // Mark as done if we've scrolled past this chapter
+      const chEl = document.getElementById(href);
+      if (chEl && chEl.offsetTop + chEl.offsetHeight < scrollY) {
+        link.classList.add('done');
+      } else {
+        link.classList.remove('done');
+      }
+    });
+  }
+
+  // ── BACK TO TOP ──
+  const backTop = document.getElementById('back-top');
+
+  function handleScroll() {
+    updateActiveNav();
+    if (window.scrollY > 400) backTop.classList.add('visible');
+    else backTop.classList.remove('visible');
+  }
+
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // Initial call
+  handleScroll();
+</script>
+
+</body>
+</html>

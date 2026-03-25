@@ -1,9 +1,33 @@
-/* ── Google Fonts: Huninn for Traditional & Simplified Chinese ── */
-@import url('https://fonts.googleapis.com/css2?family=Huninn&display=swap');
+/* ── Google Fonts: Huninn (headings) + Noto Sans TC + Inter (body reading) ── */
+@import url('https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
 
+/* Headings keep Huninn for brand character */
+html[lang="zh-TW"] h1, html[lang="zh-TW"] h2, html[lang="zh-TW"] h3,
+html[lang="zh-TW"] h4, html[lang="zh-TW"] h5, html[lang="zh-TW"] h6,
+html[lang="zh-CN"] h1, html[lang="zh-CN"] h2, html[lang="zh-CN"] h3,
+html[lang="zh-CN"] h4, html[lang="zh-CN"] h5, html[lang="zh-CN"] h6 {
+  font-family: 'Huninn', 'Noto Sans TC', sans-serif;
+}
+
+/* Body text switches to Noto Sans TC — optimized for screen reading */
 html[lang="zh-TW"] body,
 html[lang="zh-CN"] body {
-  font-family: 'Huninn', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  font-family: 'Noto Sans TC', 'Microsoft JhengHei UI', sans-serif;
+  font-size: 17px;
+}
+
+/* Prose reading area: Inter for Latin, Noto Sans TC for CJK fallback */
+.prose {
+  font-family: 'Inter', 'Noto Sans TC', 'Microsoft JhengHei UI', sans-serif;
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.8;
+}
+
+/* Chinese paragraphs: generous line height + subtle letter spacing */
+html[lang="zh-TW"] .prose p,
+html[lang="zh-CN"] .prose p {
+  line-height: 1.9;
+  letter-spacing: 0.01em;
 }
 
 /* ── Yopitek Brand Colors ── */

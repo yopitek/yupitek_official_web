@@ -49,7 +49,27 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Портативный SD
 - Демодуляция и модуляция цифровых сигналов
 - Обратная инженерия беспроводных протоколов
 - Портативные полевые SDR-операции
+---
 
+## 📖 Руководство пользователя
+
+The complete beginner guide for getting started with your SDRLab H4M — from unboxing to advanced signal operations.
+
+<div class="h4m-manual-wrapper" style="margin: 1.5rem 0 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 32px rgba(0,0,0,0.18); border: 1px solid rgba(124,58,237,0.2);">
+  <iframe
+    src="/manual/h4m/"
+    title="SDRLab H4M User Manual"
+    loading="lazy"
+    style="width: 100%; height: 85vh; min-height: 640px; border: none; display: block;"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<p style="text-align:center;font-size:0.875rem;color:#6b7280;margin-top:0.5rem;">
+  <a href="/manual/h4m/" target="_blank" rel="noopener" style="color:#7c3aed;">
+    Open manual in full screen ↗
+  </a>
+</p>
 ---
 {{< alert >}}
 Хотите запросить коммерческое предложение? [Свяжитесь с нами](/ru/contact/)

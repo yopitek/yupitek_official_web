@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>H4M Beginner User Manual — SDRLab by OpenSourceSDRLab</title>
+  <meta name="description" content="Step-by-step illustrated user manual for the SDRLab H4M portable SDR device. Covers unboxing, hardware, Mayhem firmware, FM radio, ADS-B, spectrum analyzer, PC-connected SDR mode, firmware updates, and troubleshooting.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+(function applySavedTheme() {
+  try {
+    if (localStorage.getItem('h4m-theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  } catch (_) {}
+})();
+  </script>
+  <style>
+    /* ── Design Tokens ─────────────────────────────────────────── */
+    :root {
+      --purple-dark:   #4c1d95;
+      --purple-main:   #7c3aed;
+      --purple-mid:    #a855f7;
+      --purple-light:  #ede9fe;
+      --purple-bg:     #f5f3ff;
+      --purple-border: #ddd6fe;
+      --white:         #ffffff;
+      --text-main:     #111827;
+      --text-muted:    #4b5563;
+    }
+
+    /* ── Dark Mode Overrides ───────────────────────────────── */
+    [data-theme="dark"] {
+      --purple-dark:   #c4b5fd;
+      --purple-main:   #a78bfa;
+      --purple-mid:    #7c3aed;
+      --purple-light:  #1e1b4b;
+      --purple-bg:     #0f0d23;
+      --purple-border: #3730a3;
+      --white:         #1a1730;
+      --text-main:     #f1f5f9;
+      --text-muted:    #94a3b8;
+    }
+    [data-theme="dark"] body  { background: #0a0a1a; }
+    [data-theme="dark"] #main { background: #111827; }
+    [data-theme="dark"] #sidebar { background: #111827; }
+    [data-theme="dark"] .code-terminal { background: #0a0a1a; }
+    [data-theme="dark"] .warning { background: #2d1a0e; }
+
+    /* ── Reset ─────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-main);
+      background: var(--white);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ── Scroll Progress Bar ───────────────────────────────────── */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--purple-main);
+      z-index: 999;
+      transition: width 0.1s linear;
+    }
+
+    /* ── Sidebar ───────────────────────────────────────────────── */
+    #sidebar {
+      width: 240px;
+      min-width: 240px;
+      background: var(--purple-bg);
+      border-right: 1px solid var(--purple-border);
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+    }
+
+    .sidebar-brand {
+      padding: 24px 20px 16px;
+      border-bottom: 1px solid var(--purple-border);
+    }
+    .sidebar-brand .product-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--purple-dark);
+      letter-spacing: -0.3px;
+    }
+    .sidebar-brand .product-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .sidebar-nav {
+      padding: 16px 12px 8px;
+      flex: 1;
+    }
+
+    .nav-group-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding: 14px 8px 6px;
+    }
+    .nav-group-label:first-child {
+      padding-top: 4px;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 7px 12px;
+      border-radius: 6px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: background 0.15s, color 0.15s;
+      cursor: pointer;
+    }
+    .nav-link:hover {
+      background: var(--purple-light);
+    }
+    .nav-link:focus {
+      outline: 3px solid var(--purple-main);
+      outline-offset: 2px;
+    }
+    .nav-link.active {
+      background: var(--purple-main);
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .sidebar-footer {
+      padding: 14px 20px 18px;
+      border-top: 1px solid var(--purple-border);
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+    .sidebar-footer-item {
+      margin-bottom: 2px;
+    }
+    .sidebar-footer-link {
+      color: var(--purple-main);
+      text-decoration: none;
+      font-size: 11.5px;
+    }
+    .sidebar-footer-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Main Content ──────────────────────────────────────────── */
+    #main {
+      margin-left: 240px;
+      flex: 1;
+      background: var(--white);
+      padding: 48px 40px 80px;
+    }
+
+    .main-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Page header */
+    .page-header {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 2px solid var(--purple-light);
+    }
+    .page-header .brand-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--purple-main);
+      background: var(--purple-light);
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--purple-dark);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .page-header .page-desc {
+      margin-top: 10px;
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 560px;
+    }
+
+    /* ── Inline Table of Contents ──────────────────────────────── */
+    .toc-block {
+      background: var(--purple-bg);
+      border: 1px solid var(--purple-border);
+      border-radius: 10px;
+      margin-bottom: 56px;
+      overflow: hidden;
+    }
+    .toc-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--purple-dark);
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid var(--purple-border);
+    }
+    .toc-title::-webkit-details-marker { display: none; }
+    .toc-toggle-hint {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      padding: 16px 20px;
+    }
+    .toc-group {
+      padding: 8px 12px;
+    }
+    .toc-group-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .toc-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 13.5px;
+      transition: color 0.15s;
+    }
+    .toc-link:hover { color: var(--purple-main); }
+    .toc-num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--purple-mid);
+      min-width: 22px;
+    }
+
+    /* ── Chapter Sections ──────────────────────────────────────── */
+    .chapter {
+      margin-bottom: 72px;
+      scroll-margin-top: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .chapter {
+        scroll-margin-top: 64px;
+      }
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #f3e8ff;
+    }
+    .chapter-number {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: var(--purple-main);
+      color: var(--white);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      font-family: "IBM Plex Mono", monospace;
+      letter-spacing: -1px;
+    }
+    .chapter-number-alt {
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+    .chapter-group {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--purple-mid);
+      margin-bottom: 3px;
+    }
+    .chapter-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    /* ── Steps ─────────────────────────────────────────────────── */
+    .step {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    .step-badge {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--purple-light);
+      color: var(--purple-main);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: "IBM Plex Mono", monospace;
+      margin-top: 2px;
+    }
+    .step-content {
+      flex: 1;
+    }
+    .step-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+    .step-content p {
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    /* ── Figure & Images ───────────────────────────────────────── */
+    .step-visual {
+      background: var(--purple-bg);
+      min-height: 160px;
+      border-radius: 8px;
+      border: 2px dashed #c4b5fd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--purple-mid);
+      font-size: 13px;
+      margin: 16px 0 4px;
+    }
+    .step-visual:empty::after {
+      content: "[ Visual: " attr(data-type) " — Chapter " attr(data-chapter) " Step " attr(data-step) " ]";
+    }
+    .step-visual img {
+      border-radius: 8px;
+      width: 100%;
+      display: block;
+    }
+    .img-fallback {
+      background: var(--purple-bg);
+      border: 2px dashed #c4b5fd;
+      border-radius: 8px;
+      min-height: 140px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      padding: 16px;
+      text-align: center;
+    }
+    figcaption {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 5px 8px 0;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    /* ── Tip & Warning ─────────────────────────────────────────── */
+    .tip {
+      background: #faf5ff;
+      border-left: 3px solid var(--purple-mid);
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+    .warning {
+      background: #fff3e0;
+      border: 1.5px solid #f97316;
+      border-left: 5px solid #dc2626;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    /* ── Chapter Summary ───────────────────────────────────────── */
+    .chapter-summary {
+      background: var(--purple-bg);
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 32px;
+      border: 1px solid var(--purple-border);
+      font-size: 14px;
+    }
+
+    /* ── Code & Monospace ──────────────────────────────────────── */
+    code {
+      font-family: "IBM Plex Mono", "Cascadia Code", "Fira Code", "Consolas", monospace;
+      background: var(--purple-bg);
+      color: var(--purple-dark);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.88em;
+    }
+    .code-terminal {
+      background: #1e1b4b;
+      color: #a3e635;
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: "IBM Plex Mono", "Cascadia Code", "Fira Code", monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+    .code-terminal code {
+      background: none;
+      color: inherit;
+      padding: 0;
+      font-size: inherit;
+    }
+
+    /* ── Data Table ────────────────────────────────────────────── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 12px 0;
+    }
+    .data-table thead tr {
+      background: var(--purple-bg);
+    }
+    .data-table th {
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--purple-border);
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .data-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #f3e8ff;
+    }
+
+    /* ── Mobile ────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
+
+      #sidebar {
+        width: 100%;
+        min-width: unset;
+        height: auto;
+        position: sticky;
+        top: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-right: none;
+        border-bottom: 1px solid var(--purple-border);
+        flex-direction: row;
+        align-items: stretch;
+        padding: 0;
+        z-index: 200;
+      }
+      .sidebar-brand {
+        white-space: nowrap;
+        border-bottom: none;
+        border-right: 1px solid var(--purple-border);
+        padding: 12px 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .sidebar-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 8px 12px;
+        gap: 4px;
+        white-space: nowrap;
+        overflow-x: auto;
+      }
+      .sidebar-footer { display: none; }
+      .nav-group-label { display: none; }
+      .nav-link { padding: 6px 10px; font-size: 12.5px; white-space: nowrap; }
+
+      #main { margin-left: 0; padding: 24px 16px 60px; }
+
+      .toc-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── Print ─────────────────────────────────────────────────── */
+    @media print {
+      #sidebar,
+      #scroll-progress,
+      .toc-block { display: none !important; }
+
+      body { display: block; }
+      #main {
+        margin-left: 0 !important;
+        padding: 20px 32px !important;
+      }
+      .main-inner { max-width: 100% !important; }
+
+      .chapter { break-inside: avoid; page-break-inside: avoid; }
+      .step { break-inside: avoid; page-break-inside: avoid; }
+      .chapter-header { break-after: avoid; }
+
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 11px;
+        color: #666;
+      }
+
+      .warning {
+        border: 2px solid #f97316 !important;
+        background: #fff3e0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    /* ── App Catalog ───────────────────────────────────────── */
+    .app-catalog {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .app-category {
+      background: var(--purple-bg);
+      border: 1px solid var(--purple-border);
+      border-radius: 8px;
+      padding: 16px 20px;
+    }
+    .app-category h3 {
+      font-size: 0.875rem; font-weight: 700; color: var(--purple-dark);
+      margin: 0 0 12px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--purple-border);
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .app-category ul { list-style: none; padding: 0; margin: 0; }
+    .app-category li {
+      padding: 4px 0; font-size: 0.85rem;
+      border-bottom: 1px solid rgba(0,0,0,0.04); line-height: 1.5;
+    }
+    .app-category li:last-child { border-bottom: none; }
+
+    /* ── Search Overlay ────────────────────────────────────── */
+    #search-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      display: flex; align-items: flex-start;
+      justify-content: center; padding-top: 10vh;
+    }
+    #search-overlay[hidden] { display: none; }
+    .search-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+    .search-box {
+      position: relative; z-index: 1; width: min(560px, 90vw);
+      background: var(--white); border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden;
+    }
+    #search-input {
+      width: 100%; padding: 16px 20px; font-size: 1rem;
+      font-family: inherit; border: none;
+      border-bottom: 1px solid var(--purple-border);
+      background: transparent; color: var(--text-main);
+      outline: none; box-sizing: border-box;
+    }
+    #search-results {
+      list-style: none; margin: 0; padding: 8px 0;
+      max-height: 320px; overflow-y: auto;
+    }
+    .search-result-link {
+      display: block; padding: 10px 20px; color: var(--text-main);
+      text-decoration: none; border-left: 3px solid transparent;
+    }
+    .search-result-link:hover, .search-result-link:focus {
+      background: var(--purple-bg); border-left-color: var(--purple-main);
+    }
+    .result-chapter-label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 2px; }
+    .result-step-title { font-weight: 600; font-size: 0.9rem; }
+
+    /* ── Completion Banner ─────────────────────────────────── */
+    .completion-banner {
+      margin: 48px 0; padding: 48px 40px;
+      background: linear-gradient(135deg, var(--purple-bg) 0%, var(--purple-light) 100%);
+      border: 2px solid var(--purple-border); border-radius: 16px; text-align: center;
+    }
+    .completion-icon { font-size: 3rem; margin-bottom: 16px; }
+    .completion-banner h2 { font-size: 1.75rem; color: var(--purple-dark); margin-bottom: 12px; }
+    .completion-banner p { color: var(--text-muted); max-width: 480px; margin: 0 auto 24px; line-height: 1.7; }
+    .completion-banner h3 {
+      font-size: 0.9rem; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 16px;
+    }
+    .completion-links { list-style: none; padding: 0; margin: 0 auto 32px; max-width: 400px; text-align: left; }
+    .completion-links li { padding: 8px 0; border-bottom: 1px solid var(--purple-border); }
+    .completion-links li:last-child { border-bottom: none; }
+    .completion-links a { color: var(--purple-main); text-decoration: none; font-weight: 500; }
+    .completion-links a:hover { text-decoration: underline; }
+    .btn-restart {
+      padding: 12px 24px; background: var(--purple-main);
+      color: #fff; border: none; border-radius: 8px;
+      font-size: 0.9rem; font-family: inherit; cursor: pointer;
+    }
+    .btn-restart:hover { background: var(--purple-dark); }
+  </style>
+</head>
+<body>
+
+<div id="scroll-progress"
+     role="progressbar"
+     aria-label="Reading progress"
+     aria-valuemin="0"
+     aria-valuemax="100"
+     aria-valuenow="0"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SIDEBAR
+══════════════════════════════════════════════════════════════════ -->
+<nav id="sidebar" aria-label="Manual navigation">
+  <div class="sidebar-brand">
+    <div class="product-name">SDRLab H4M</div>
+    <div class="product-subtitle">User Manual</div>
+    <button class="search-trigger"
+            onclick="openSearch()"
+            aria-label="Search manual (Ctrl+K)"
+            style="margin-top:10px;width:100%;padding:6px 10px;
+                   background:var(--purple-light);border:1px solid var(--purple-border);
+                   border-radius:6px;color:var(--text-muted);font-size:12px;
+                   cursor:pointer;font-family:inherit;text-align:left;">
+      🔍 Search... <kbd style="float:right;opacity:0.6;font-size:10px;">Ctrl+K</kbd>
+    </button>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="nav-group-label">Before You Begin</div>
+    <a class="nav-link" href="#ch0">⚖️ Legal &amp; Safety</a>
+
+    <div class="nav-group-label">Getting Started</div>
+    <a class="nav-link" href="#ch1">Ch.1 — What's in the Box</a>
+    <a class="nav-link" href="#ch2">Ch.2 — Hardware Overview</a>
+    <a class="nav-link" href="#ch2b">Ch.2b — SD Card Setup</a>
+    <a class="nav-link" href="#ch3">Ch.3 — First Boot &amp; Navigation</a>
+    <a class="nav-link" href="#ch4">Ch.4 — Connecting Antennas</a>
+
+    <div class="nav-group-label">Basic Use Cases</div>
+    <a class="nav-link" href="#ch5">Ch.5 — FM Radio Receiver</a>
+    <a class="nav-link" href="#ch6">Ch.6 — ADS-B Flight Tracker</a>
+    <a class="nav-link" href="#ch7">Ch.7 — Spectrum Analyzer</a>
+
+    <div class="nav-group-label">Advanced Modes</div>
+    <a class="nav-link" href="#ch8">Ch.8 — Transmit &amp; Signal Generator</a>
+    <a class="nav-link" href="#ch9">Ch.9 — POCSAG &amp; Pager Decode</a>
+    <a class="nav-link" href="#ch9b">Ch.9b — Capture &amp; Replay</a>
+    <a class="nav-link" href="#ch9c">Ch.9c — PC-Connected SDR Mode</a>
+
+    <div class="nav-group-label">Maintenance</div>
+    <a class="nav-link" href="#ch10">Ch.10 — Firmware Update</a>
+    <a class="nav-link" href="#ch11">Ch.11 — Troubleshooting</a>
+
+    <div class="nav-group-label">Reference</div>
+    <a class="nav-link" href="#appendix-apps">Appendix — App Catalog</a>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-item">Mayhem Firmware</div>
+    <div class="sidebar-footer-item">v2.x — Updated March 2026</div>
+    <a href="https://github.com/portapack-mayhem/mayhem-firmware/wiki"
+       class="sidebar-footer-link"
+       target="_blank" rel="noopener">
+      Official Wiki ↗
+    </a>
+    <button id="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle dark/light mode"
+            style="margin-top:10px;padding:5px 10px;background:var(--purple-light);
+                   border:1px solid var(--purple-border);border-radius:6px;
+                   color:var(--text-main);font-size:11.5px;cursor:pointer;
+                   font-family:inherit;width:100%;">
+      🌙 Dark Mode
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MAIN CONTENT
+══════════════════════════════════════════════════════════════════ -->
+<main id="main">
+  <div class="main-inner">
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <span class="brand-tag">SDRLab H4M</span>
+      <h1>User Manual</h1>
+      <p class="page-desc">Complete guide to your H4M software-defined radio device running Mayhem firmware — from unboxing to advanced signal operations.</p>
+    </header>
+
+    <!-- Table of Contents -->
+    <details class="toc-block" open>
+      <summary class="toc-title" aria-expanded="true">
+        <span>📋 Table of Contents</span>
+        <span class="toc-toggle-hint">click to collapse</span>
+      </summary>
+      <div class="toc-grid">
+        <div class="toc-group">
+          <div class="toc-group-label">Before You Begin</div>
+          <a href="#ch0" class="toc-link"><span class="toc-num">⚖️</span> Legal &amp; Safety</a>
+        </div>
+        <div class="toc-group">
+          <div class="toc-group-label">Getting Started</div>
+          <a href="#ch1" class="toc-link"><span class="toc-num">01</span> What's in the Box</a>
+          <a href="#ch2" class="toc-link"><span class="toc-num">02</span> Hardware Overview</a>
+          <a href="#ch2b" class="toc-link"><span class="toc-num">2b</span> SD Card Setup</a>
+          <a href="#ch3" class="toc-link"><span class="toc-num">03</span> First Boot &amp; Navigation</a>
+          <a href="#ch4" class="toc-link"><span class="toc-num">04</span> Connecting Antennas</a>
+        </div>
+        <div class="toc-group">
+          <div class="toc-group-label">Basic Use Cases</div>
+          <a href="#ch5" class="toc-link"><span class="toc-num">05</span> FM Radio Receiver</a>
+          <a href="#ch6" class="toc-link"><span class="toc-num">06</span> ADS-B Flight Tracker</a>
+          <a href="#ch7" class="toc-link"><span class="toc-num">07</span> Spectrum Analyzer</a>
+        </div>
+        <div class="toc-group">
+          <div class="toc-group-label">Advanced Modes</div>
+          <a href="#ch8" class="toc-link"><span class="toc-num">08</span> Transmit &amp; Signal Generator</a>
+          <a href="#ch9" class="toc-link"><span class="toc-num">09</span> POCSAG &amp; Pager Decode</a>
+          <a href="#ch9b" class="toc-link"><span class="toc-num">9b</span> Capture &amp; Replay</a>
+          <a href="#ch9c" class="toc-link"><span class="toc-num">9c</span> PC-Connected SDR Mode</a>
+        </div>
+        <div class="toc-group">
+          <div class="toc-group-label">Maintenance</div>
+          <a href="#ch10" class="toc-link"><span class="toc-num">10</span> Firmware Update</a>
+          <a href="#ch11" class="toc-link"><span class="toc-num">11</span> Troubleshooting</a>
+        </div>
+        <div class="toc-group">
+          <div class="toc-group-label">Reference</div>
+          <a href="#appendix-apps" class="toc-link"><span class="toc-num">A</span> App Catalog</a>
+        </div>
+      </div>
+    </details>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.0 — Legal Notice & Responsible Use
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch0" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number chapter-number-alt" style="background:#dc2626;">⚖️</span>
+        <div>
+          <span class="chapter-group">Before You Begin</span>
+          <h2 class="chapter-title">Legal Notice &amp; Responsible Use</h2>
+        </div>
+      </div>
+
+      <div class="warning" role="note">
+        ⚠️ <strong>Important:</strong> Read this chapter before using any Transmitter or Signal Generator feature. Unlicensed transmission can cause interference with aviation, emergency services, and cellular networks — and carries serious legal penalties in most countries.
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Receiving vs. Transmitting</h3>
+          <p><strong>Receiving</strong> radio signals (passive listening) is legal in almost all countries. The H4M functions as a passive receiver in most apps — FM Radio, ADS-B, Spectrum Analyzer, POCSAG. No licence is required for receive-only operation.</p>
+          <p><strong>Transmitting</strong> radio signals requires either a valid <strong>amateur radio licence</strong> (ham licence) or use within a designated licence-exempt ISM frequency band at permitted power levels. Without a licence, you may only transmit within the ISM bands listed below.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Licence-Exempt ISM Bands</h3>
+          <p>These frequency ranges are generally available for low-power transmission without a licence. Verify your local regulations before transmitting.</p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Frequency</th>
+                <th>Region</th>
+                <th>Common Uses</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>433.92 MHz</td><td>Europe / Asia</td><td>IoT sensors, remote controls</td></tr>
+              <tr><td>868 MHz</td><td>Europe</td><td>LoRa, smart meters</td></tr>
+              <tr><td>902–928 MHz</td><td>North America</td><td>LoRa, 915 MHz IoT devices</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Features That Are Illegal to Use Against Others</h3>
+          <p>Several Mayhem firmware apps are included for research and lab testing only. Using them against others or in public is <strong>illegal in most countries</strong>:</p>
+          <ul style="padding-left:20px;margin:10px 0;line-height:2.2;">
+            <li><strong>GPS Simulator</strong> — Spoofing GPS signals interferes with navigation systems. Illegal in almost all jurisdictions.</li>
+            <li><strong>BLESpam</strong> — Flooding Bluetooth LE advertisement packets disrupts nearby devices. Illegal under radio interference laws.</li>
+            <li><strong>Jamming apps</strong> — Any deliberate signal jamming is illegal worldwide without specific government authorisation.</li>
+            <li><strong>Replaying security codes</strong> — Replaying garage door or key fob signals to gain unauthorised access is illegal.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <h3 class="step-title">Hardware Safety — Never Transmit Without an Antenna</h3>
+          <div class="warning" role="note">⚠️ <strong>Warning:</strong> Always connect a proper antenna before using any Transmitter app or Signal Generator. Operating the HackRF RF front-end without an antenna load can cause <strong>permanent hardware damage</strong> and will void your warranty.</div>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> Receive-only use is universally legal. Transmission requires a licence or use of ISM bands. GPS spoofing, jamming, and BLESpam are illegal to use against others. Always connect an antenna before transmitting.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.1 — What's in the Box
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch1" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">01</span>
+        <div>
+          <span class="chapter-group">Getting Started</span>
+          <h2 class="chapter-title">What's in the Box</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Open the Package</h3>
+          <figure class="step-visual" data-chapter="1" data-step="1" data-type="diagram">
+            <img src="./pic/ch1_s1_box_contents.png" alt="H4M box contents: unit, telescopic antenna, USB-C cable, and quick-start card" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>H4M package contents laid out on a flat surface.</figcaption>
+          </figure>
+          <p>Carefully open the retail box and lay the contents on a flat surface. You should find: the <strong>H4M unit</strong>, one <strong>telescopic SMA antenna</strong>, one <strong>USB-C cable</strong>, and a <strong>quick-start card</strong>.</p>
+          <div class="tip">💡 <strong>Tip:</strong> Keep the original packaging — it provides excellent protection for transport and storage.</div>
+          <div class="tip">
+            💡 <strong>Battery Information:</strong>
+            <ul style="margin: 8px 0 0; padding-left: 20px; line-height: 1.8;">
+              <li><strong>Charging:</strong> Via USB-C at up to 1A. Full charge from empty takes approximately 2–3 hours.</li>
+              <li><strong>Runtime:</strong> Approximately 4–8 hours depending on TX/RX usage and screen brightness.</li>
+              <li><strong>Status display:</strong> Battery percentage, voltage (V), and current draw (mA) are shown in the top-right of the Mayhem home screen.</li>
+              <li><strong>Safe to use while charging:</strong> The device can operate on USB power. Charging current reduces automatically when full.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Inspect the H4M Unit</h3>
+          <figure class="step-visual" data-chapter="1" data-step="2" data-type="diagram">
+            <img src="./pic/ch1_s2_h4m_unit.png" alt="H4M unit front showing LCD screen, navigation buttons, and rotary encoder" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>H4M unit inspected for screen and button integrity.</figcaption>
+          </figure>
+          <p>Examine the H4M closely. Confirm the <strong>2.8" LCD screen</strong> is intact with no cracks, all <strong>navigation buttons</strong> are present and click cleanly, and the <strong>rotary encoder</strong> (the knob on the front) turns and clicks smoothly.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Check Accessories &amp; SMA Connector Type</h3>
+          <figure class="step-visual" data-chapter="1" data-step="3" data-type="diagram">
+            <img src="./pic/ch1_s3_sma_connector.png" alt="Telescopic SMA antenna with male connector for the H4M SMA female port" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Telescopic SMA antenna (male connector) for H4M port.</figcaption>
+          </figure>
+          <p>Inspect the telescopic antenna — it should thread onto an <strong>SMA male</strong> connector. The H4M unit has an <strong>SMA female</strong> port. Verify the USB-C cable fits both ends. If any item is missing or damaged, contact the seller before use.</p>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> You've confirmed all package contents are present and undamaged. Your H4M is ready for hardware inspection.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.2 — Hardware Overview
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch2" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">02</span>
+        <div>
+          <span class="chapter-group">Getting Started</span>
+          <h2 class="chapter-title">Hardware Overview</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Front Face — Screen &amp; Controls</h3>
+          <figure class="step-visual" data-chapter="2" data-step="1" data-type="diagram">
+            <img src="./pic/ch2_s1_front_labeled.png" alt="H4M front panel labeled: LCD screen, directional buttons, rotary encoder, and Back button" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>H4M front panel: LCD screen, directional buttons, rotary encoder, and Back button.</figcaption>
+          </figure>
+          <p>The front panel features a <strong>2.8" colour LCD screen</strong>, four <strong>directional buttons</strong> (up, down, left, right), a <strong>rotary encoder</strong> (push to confirm, rotate to scroll), and a dedicated <strong>Back button</strong> to return to the previous screen.</p>
+          <div class="tip">💡 <strong>Tip:</strong> The rotary encoder is your primary navigation tool — rotate to move the cursor, push firmly to select the highlighted item.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Top Edge — RF Port &amp; microSD Slot</h3>
+          <figure class="step-visual" data-chapter="2" data-step="2" data-type="diagram">
+            <img src="./pic/ch2_s2_top_edge.png" alt="H4M top edge showing SMA female antenna port and microSD card slot" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>H4M top edge: SMA female antenna port and push-push microSD slot.</figcaption>
+          </figure>
+          <p>On the top edge you'll find the <strong>SMA female antenna port</strong> — always connect an antenna before any RF operation. Beside it is the <strong>microSD card slot</strong> (push to insert, push again to eject). A microSD card is required for map tiles, file capture, and replay functions.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Bottom Edge — USB-C Port &amp; Headphone Jack</h3>
+          <figure class="step-visual" data-chapter="2" data-step="3" data-type="diagram">
+            <img src="./pic/ch2_s3_bottom_edge.png" alt="H4M bottom edge showing USB-C port and 3.5mm headphone jack" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>H4M bottom edge: USB-C port and 3.5mm headphone jack.</figcaption>
+          </figure>
+          <p>The bottom edge has the <strong>USB-C port</strong> used for charging and for connecting to a PC (firmware flashing, file transfer). Many H4M variants also include a <strong>3.5mm headphone jack</strong> for private audio monitoring when using audio receiver apps.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <h3 class="step-title">Side — Power Button</h3>
+          <figure class="step-visual" data-chapter="2" data-step="4" data-type="diagram">
+            <img src="./pic/ch2_s4_power_slider.png" alt="H4M side power button — hold 2 seconds to power on or off" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>H4M side power button — hold 2 seconds to power on or off.</figcaption>
+          </figure>
+          <p>The <strong>power button</strong> is on the side of the unit. Hold it for approximately <strong>2 seconds</strong> to power on, and hold again for 2 seconds to initiate a clean power-off from any screen.</p>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> You now know every port, button, and control surface on the H4M — SMA port, microSD slot, USB-C, headphone jack, navigation buttons, encoder, and power button.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.2b — SD Card Setup
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch2b" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number chapter-number-alt">💾</span>
+        <div>
+          <span class="chapter-group">Getting Started</span>
+          <h2 class="chapter-title">SD Card Setup</h2>
+        </div>
+      </div>
+
+      <p style="margin-bottom:24px;color:var(--text-muted);">A microSD card is optional for basic use but required for maps, IQ file capture, replay, and over-the-air firmware updates. Set it up before first boot.</p>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Choose &amp; Format Your microSD Card</h3>
+          <p>Use a microSD card of at least <strong>8 GB</strong> (32 GB or larger recommended for captures). The card <strong>must be formatted as FAT32</strong> — exFAT and NTFS are not supported by Mayhem firmware.</p>
+          <ul style="padding-left:20px;margin:10px 0;line-height:2.2;">
+            <li><strong>Windows:</strong> Right-click the card in File Explorer → Format → FAT32</li>
+            <li><strong>macOS:</strong> Disk Utility → Erase → MS-DOS (FAT) format</li>
+            <li><strong>Linux:</strong> <code>sudo mkfs.fat -F 32 /dev/sdX1</code></li>
+          </ul>
+          <div class="tip">💡 <strong>Tip:</strong> Cards over 32 GB default to exFAT on Windows. Use <strong>SD Card Formatter</strong> (sdcard.org) to force FAT32 on larger cards.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Create the Required Folder Structure</h3>
+          <p>Create these folders in the root of the formatted card. Folder names are case-sensitive:</p>
+          <pre class="code-terminal"><code>FIRMWARE/       ← .bin files for SD-based firmware update
+CAPTURES/       ← IQ recording files saved by the Capture app
+MAPS/           ← Map tile files for ADS-B and GPS map view
+SETTINGS/       ← App configuration and frequency manager files
+REPLAY/         ← .C16 / .C8 files for the Replay app
+SAMPLES/        ← Signal sample files</code></pre>
+          <p>Mayhem firmware creates missing folders automatically on first boot, but creating them manually ensures correct card recognition.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Insert the Card</h3>
+          <p>Locate the <strong>push-push microSD slot</strong> on the top edge of the H4M (beside the SMA antenna port). Orient the card with the contacts facing down and the notched corner aligned with the slot. <strong>Push firmly</strong> until you feel a click — the card is now locked. To eject, push again until a second click and the card springs out.</p>
+          <div class="warning" role="note">⚠️ <strong>Warning:</strong> Never insert or remove the microSD card while the device is powered on. Always power off completely before changing cards to avoid file system corruption.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <h3 class="step-title">Download Map Tiles (Optional)</h3>
+          <p>For the ADS-B map view and GPS-based apps, download map tile files and copy them into the <code>MAPS/</code> folder. See the Mayhem wiki for the tile download tool and step-by-step instructions: <code>github.com/portapack-mayhem/mayhem-firmware/wiki/Map</code></p>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> Your microSD card is formatted FAT32 with the correct folder structure and seated in the H4M. You're now ready for first boot, IQ capture, and map view.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.3 — First Boot & Navigation
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch3" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">03</span>
+        <div>
+          <span class="chapter-group">Getting Started</span>
+          <h2 class="chapter-title">First Boot &amp; Navigation</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Power On &amp; Boot Sequence</h3>
+          <figure class="step-visual" data-chapter="3" data-step="1" data-type="uimock">
+            <img src="./pic/ch3_s1_boot_screen.png" alt="Mayhem firmware boot logo and version number displayed on the H4M LCD" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Mayhem firmware boot logo and version number on LCD.</figcaption>
+          </figure>
+          <p>Hold the power button for <strong>2 seconds</strong>. The Mayhem firmware boot logo appears on the LCD, followed by a brief splash screen showing the <strong>firmware version number</strong> (e.g., v2.x.x). Boot takes 3–5 seconds.</p>
+          <div class="tip">💡 <strong>Tip:</strong> If the screen stays dark after pressing the power button, try holding it for a full 3 seconds. If the battery is drained, charge via USB-C for at least 15 minutes before attempting boot.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Main Menu Overview</h3>
+          <figure class="step-visual" data-chapter="3" data-step="2" data-type="uimock">
+            <img src="./pic/ch3_s2_main_menu.png" alt="Mayhem main menu grid showing Receiver, Transmitter, Capture, Replay, Tools, and Setup icons" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Mayhem main menu grid showing app categories.</figcaption>
+          </figure>
+          <p>After boot, the <strong>Main Menu</strong> loads. You'll see a grid of app icons covering the main categories: <strong>Receiver</strong>, <strong>Transmitter</strong>, <strong>Capture</strong>, <strong>Replay</strong>, <strong>Tools</strong>, and <strong>Setup</strong>. A status bar at the top displays battery level, time, and signal information.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Navigating Apps</h3>
+          <figure class="step-visual" data-chapter="3" data-step="3" data-type="uimock">
+            <img src="./pic/ch3_s3_navigating.png" alt="Rotary encoder selection highlight moving through the main menu app grid" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Rotary encoder navigating highlighted app icon in main menu.</figcaption>
+          </figure>
+          <p>Use the <strong>rotary encoder</strong> to highlight an app icon (the selection highlight moves as you rotate). <strong>Push the encoder</strong> to open the highlighted app. Inside any app, press the <strong>Back button</strong> to return to the previous screen or the main menu.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <h3 class="step-title">Adjusting Display &amp; Clock</h3>
+          <figure class="step-visual" data-chapter="3" data-step="4" data-type="uimock">
+            <img src="./pic/ch3_s4_settings.png" alt="Setup menu showing Display brightness and Date/Time configuration screens" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Setup menu: Display brightness and Date/Time configuration screens.</figcaption>
+          </figure>
+          <p>Navigate to <strong>Setup &gt; Display</strong> to adjust screen brightness (rotate encoder to change value, push to confirm). Go to <strong>Setup &gt; Date/Time</strong> to set the current date and time — this ensures accurate timestamps on captured files.</p>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> Your H4M is running Mayhem firmware and you can confidently navigate the main menu, open apps, and adjust display settings.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.4 — Connecting Antennas
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch4" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">04</span>
+        <div>
+          <span class="chapter-group">Getting Started</span>
+          <h2 class="chapter-title">Connecting Antennas</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Attach the Included Telescopic Antenna</h3>
+          <figure class="step-visual" data-chapter="4" data-step="1" data-type="diagram">
+            <img src="./pic/ch4_s1_attach_antenna.png" alt="Telescopic antenna being threaded clockwise onto the H4M SMA female port" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Telescopic antenna being threaded clockwise onto SMA female port.</figcaption>
+          </figure>
+          <p>Thread the included telescopic antenna onto the <strong>SMA female port</strong> on the top of the H4M. Rotate <strong>clockwise</strong> until it is snug — finger-tight is sufficient, do not over-tighten as this can damage the SMA threads.</p>
+          <div class="warning" role="note">⚠️ <strong>Warning:</strong> Never transmit (use Transmitter apps or Signal Generator) without an antenna connected. Operating without an antenna load can damage the H4M's RF front end and may void warranty.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Extend to Optimal Length</h3>
+          <figure class="step-visual" data-chapter="4" data-step="2" data-type="diagram">
+            <img src="./pic/ch4_s2_antenna_length.png" alt="Telescopic antenna extended to optimal quarter-wavelength for a target frequency" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Telescopic antenna extended to optimal length for target frequency.</figcaption>
+          </figure>
+          <p>Extend the telescopic antenna to its <strong>full length</strong> for broadband reception. For best performance at a specific frequency, use the quarter-wavelength formula: <em>length (cm) = 7500 ÷ frequency (MHz)</em>. For example, extend to approximately <strong>17 cm</strong> for 433 MHz ISM signals.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Swap Antennas for Different Frequency Bands</h3>
+          <figure class="step-visual" data-chapter="4" data-step="3" data-type="diagram">
+            <img src="./pic/ch4_s3_frequency_bands.png" alt="Antenna type guide showing short whip, mag-mount vertical, and ground plane antenna options" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Antenna type guide: short whip, mag-mount, and ground plane options.</figcaption>
+          </figure>
+          <p>For best results in different bands, use purpose-built antennas: a <strong>short whip</strong> for 900 MHz (LoRa, GSM), a <strong>mag-mount vertical</strong> for VHF/UHF (137–500 MHz), or a <strong>ground plane antenna</strong> for ADS-B at 1090 MHz. All antennas must have an <strong>SMA male</strong> connector to fit the H4M port.</p>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> Your H4M has a correctly fitted antenna and you understand how to optimise antenna length and selection for different frequency bands.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.5 — FM Radio Receiver
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch5" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">05</span>
+        <div>
+          <span class="chapter-group">Basic Use Cases</span>
+          <h2 class="chapter-title">FM Radio Receiver</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Open the FM Broadcast App</h3>
+          <figure class="step-visual" data-chapter="5" data-step="1" data-type="uimock">
+            <img src="./pic/ch5_s1_fm_open.png" alt="FM Broadcast app open on the H4M screen showing frequency display and signal meter" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>FM Broadcast app open on H4M screen.</figcaption>
+          </figure>
+          <p>From the main menu, navigate to <strong>Receiver</strong> and then select <strong>FM Broadcast</strong>. The FM receiver app opens, showing a frequency display and signal strength meter.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Tune Your Frequency</h3>
+          <figure class="step-visual" data-chapter="5" data-step="2" data-type="uimock">
+            <img src="./pic/ch5_s2_tune_frequency.png" alt="FM app frequency display showing 100.0 MHz with signal strength bar filling on a strong station" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>FM app frequency display at 100.0 MHz with signal strength meter.</figcaption>
+          </figure>
+          <p>The frequency defaults to <strong>100.0 MHz</strong>. Rotate the encoder to change frequency in <strong>0.1 MHz steps</strong>. FM broadcast stations operate between <strong>87.5 and 108.0 MHz</strong>. The signal strength bar fills when you land on a strong station — look for a sharp increase as you tune past a carrier.</p>
+          <div class="tip">💡 <strong>Tip:</strong> In urban areas there are often many stations; rotate the encoder quickly to scan through the band and stop when you hear clear audio.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Adjust Audio Output</h3>
+          <figure class="step-visual" data-chapter="5" data-step="3" data-type="uimock">
+            <img src="./pic/ch5_s3_audio_output.png" alt="Headphones plugged into the H4M 3.5mm jack while FM app plays audio" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Headphones plugged into 3.5mm jack — speaker mutes automatically.</figcaption>
+          </figure>
+          <p>Audio plays through the <strong>built-in speaker</strong> by default. Plug headphones into the <strong>3.5mm jack</strong> on the bottom edge for private listening — the speaker is muted automatically when headphones are connected. Adjust volume using the encoder while in the FM app.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <h3 class="step-title">Exit &amp; Return</h3>
+          <figure class="step-visual" data-chapter="5" data-step="4" data-type="uimock">
+            <img src="./pic/ch5_s4_exit.png" alt="Back button being pressed to return to the main menu from the FM Broadcast app" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Back button returning to main menu from FM app.</figcaption>
+          </figure>
+          <p>Press the <strong>Back button</strong> to return to the main menu. The last tuned frequency is <strong>remembered</strong> and will be restored the next time you open FM Broadcast.</p>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> You've successfully received your first FM broadcast signal. Your H4M is confirmed working as an SDR receiver.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.6 — ADS-B Flight Tracker
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch6" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">06</span>
+        <div>
+          <span class="chapter-group">Basic Use Cases</span>
+          <h2 class="chapter-title">ADS-B Flight Tracker</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Open the ADS-B App</h3>
+          <figure class="step-visual" data-chapter="6" data-step="1" data-type="uimock">
+            <img src="./pic/ch6_s1_adsb_open.png" alt="ADS-B app open on H4M and listening on 1090 MHz" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>ADS-B app open, listening on 1090 MHz.</figcaption>
+          </figure>
+          <p>From the main menu, navigate to <strong>Receiver &gt; ADS-B</strong>. The app loads immediately and begins listening on <strong>1090 MHz</strong>, the universal ADS-B transponder frequency used by commercial and private aircraft worldwide.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Antenna Recommendation for 1090 MHz</h3>
+          <figure class="step-visual" data-chapter="6" data-step="2" data-type="diagram">
+            <img src="./pic/ch6_s2_1090_antenna.png" alt="Short stub antenna approximately 6.5 cm long for optimal 1090 MHz ADS-B reception" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Short stub antenna (≈6.5 cm) for optimal 1090 MHz ADS-B reception.</figcaption>
+          </figure>
+          <p>For best ADS-B reception, use a <strong>short stub antenna</strong> (≈6.5 cm) or a dedicated <strong>1090 MHz patch antenna</strong>. The included telescopic antenna extended to about 6–7 cm also works. The built-in LNA in the H4M boosts sensitivity at this frequency.</p>
+          <div class="tip">💡 <strong>Tip:</strong> Position the H4M near a window or outdoors for dramatically better results — 1090 MHz is a line-of-sight frequency and walls attenuate it significantly.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Reading the Aircraft List</h3>
+          <figure class="step-visual" data-chapter="6" data-step="3" data-type="uimock">
+            <img src="./pic/ch6_s3_aircraft_list.png" alt="Live ADS-B aircraft list showing ICAO address, callsign, altitude, and ground speed columns" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Live ADS-B aircraft list showing ICAO, callsign, altitude, and speed.</figcaption>
+          </figure>
+          <p>Aircraft within approximately <strong>150 km line-of-sight</strong> appear in a scrollable list. Each entry shows the <strong>ICAO 24-bit hex address</strong> (unique aircraft identifier), <strong>callsign</strong>, <strong>altitude</strong> (in feet), and <strong>ground speed</strong> (knots). Entries refresh in real time as new ADS-B frames are received.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <h3 class="step-title">Aircraft Detail &amp; Map View</h3>
+          <figure class="step-visual" data-chapter="6" data-step="4" data-type="uimock">
+            <img src="./pic/ch6_s4_aircraft_detail.png" alt="Individual aircraft detail view showing GPS coordinates, heading, squawk code, and map position" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Individual aircraft detail view with GPS coordinates and map position.</figcaption>
+          </figure>
+          <p>Highlight an aircraft and push the encoder to view full details including <strong>GPS coordinates</strong>, heading, squawk code, and message count. If you have a <strong>microSD card with map tiles</strong> installed (see Ch.2b), a live map view shows aircraft positions plotted geographically.</p>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> You can now track real aircraft flying overhead in real time using the H4M's ADS-B receiver — no internet connection required.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.7 — Spectrum Analyzer
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch7" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">07</span>
+        <div>
+          <span class="chapter-group">Basic Use Cases</span>
+          <h2 class="chapter-title">Spectrum Analyzer</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Open the Spectrum App</h3>
+          <figure class="step-visual" data-chapter="7" data-step="1" data-type="uimock">
+            <img src="./pic/ch7_s1_spectrum_open.png" alt="Spectrum analyzer waterfall display open showing live RF energy scrolling downward" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Spectrum analyzer waterfall display showing live RF energy.</figcaption>
+          </figure>
+          <p>From the main menu, navigate to <strong>Tools &gt; Spectrum</strong>. The spectrum analyzer opens and immediately begins displaying live RF energy as a scrolling <strong>waterfall display</strong>. The X-axis represents frequency, the Y-axis is time (newest at top), and colour represents signal power.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Set Centre Frequency &amp; Span</h3>
+          <figure class="step-visual" data-chapter="7" data-step="2" data-type="uimock">
+            <img src="./pic/ch7_s2_set_frequency.png" alt="Spectrum app centre frequency and span fields being adjusted with the rotary encoder" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Spectrum app centre frequency and span adjustment via encoder.</figcaption>
+          </figure>
+          <p>Use the encoder to adjust the <strong>centre frequency</strong> — the display re-centres as you rotate. Press the directional buttons to switch focus between frequency and span/gain fields. Reducing the span gives you a narrower, more detailed view; increasing it lets you survey a wider band at once.</p>
+          <div class="tip">💡 <strong>Tip:</strong> The <strong>433 MHz ISM band</strong> is almost always busy with IoT sensors, garage door remotes, and weather stations — it's an excellent starting point to confirm the spectrum analyzer is working.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Interpreting the Waterfall</h3>
+          <figure class="step-visual" data-chapter="7" data-step="3" data-type="uimock">
+            <img src="./pic/ch7_s3_waterfall.png" alt="Waterfall display showing bright warm colours for strong signals and dark cool colours for no signal" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Waterfall display: bright (strong signal) vs dark (no signal) areas.</figcaption>
+          </figure>
+          <p><strong>Bright or warm colours</strong> (yellow, orange, red) indicate strong RF energy; <strong>dark or cool colours</strong> (dark blue, black) indicate no or weak signal. A narrow bright stripe is a CW carrier or narrowband transmission. A wide bright block suggests a wideband signal like FM or Wi-Fi. Use this tool to identify active frequencies before tuning a receiver app to them.</p>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> You can now visualise RF energy across any frequency range — an essential first step before using any receiver or transmitter application.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.8 — Transmit & Signal Generator
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch8" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">08</span>
+        <div>
+          <span class="chapter-group">Advanced Modes</span>
+          <h2 class="chapter-title">Transmit &amp; Signal Generator</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Open Signal Generator</h3>
+          <figure class="step-visual" data-chapter="8" data-step="1" data-type="diagram">
+            <img src="./pic/ch8_s1_signal_waveform.png" alt="Signal Generator app showing waveform type selector and frequency field" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Signal Generator app with waveform type selector.</figcaption>
+          </figure>
+          <p>From the main menu, navigate to <strong>Transmitter &gt; Signal Generator</strong>. This app lets the H4M transmit a continuous or modulated test tone, useful for antenna testing, RF path verification, and lab bench work.</p>
+          <div class="warning" role="note">⚠️ <strong>Warning:</strong> Transmitting on frequencies you are not licensed for is <strong>illegal</strong> in most countries. Only use on ISM bands (433.92 MHz, 868 MHz, 915 MHz) or frequencies covered by a valid amateur radio licence. Unauthorised transmission can interfere with aviation, emergency services, and cellular networks.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Set Frequency &amp; Waveform</h3>
+          <figure class="step-visual" data-chapter="8" data-step="2" data-type="diagram">
+            <img src="./pic/ch8_s2_set_frequency.png" alt="Signal Generator with frequency field and waveform options: sine, square, triangle, and sawtooth" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Signal Generator frequency field and waveform options (sine, square, triangle).</figcaption>
+          </figure>
+          <p>Use the encoder to set the desired <strong>centre frequency</strong>. Press the directional buttons to move between fields, then rotate the encoder to select the <strong>waveform type</strong>: <em>Sine</em> (pure carrier), <em>Square</em>, <em>Triangle</em>, or <em>Sawtooth</em>. Each waveform has different harmonic content — sine is cleanest for antenna testing.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Set Output Power &amp; Start Transmitting</h3>
+          <figure class="step-visual" data-chapter="8" data-step="3" data-type="diagram">
+            <img src="./pic/ch8_s3_tx_active.png" alt="Signal Generator active status indicator confirming the RF stage is transmitting" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Signal Generator transmitting — status indicator shows TX active.</figcaption>
+          </figure>
+          <p>Adjust the <strong>TX gain / output power</strong> setting (0 = minimum, maximum varies by firmware build). Start at the lowest power level needed for your test. Push the encoder to <strong>begin transmitting</strong> — the status indicator changes to confirm the RF stage is active.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <h3 class="step-title">Stop Transmission</h3>
+          <figure class="step-visual" data-chapter="8" data-step="4" data-type="diagram">
+            <img src="./pic/ch8_s4_stop_tx.png" alt="Back button pressed to stop transmission — status indicator returns to idle receive state" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Stopping transmission by pressing Back — status returns to idle.</figcaption>
+          </figure>
+          <p>Push the encoder again or press the <strong>Back button</strong> to stop transmission immediately. Always stop transmission when done — leaving the transmitter running drains the battery and may cause interference. Verify the status indicator has returned to receive/idle state.</p>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> You can generate calibrated RF test signals for antenna testing and receiver verification — responsibly and within the bounds of your local radio regulations.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.9 — POCSAG & Pager Decode
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch9" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">09</span>
+        <div>
+          <span class="chapter-group">Advanced Modes</span>
+          <h2 class="chapter-title">POCSAG &amp; Pager Decode</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Open the POCSAG App</h3>
+          <figure class="step-visual" data-chapter="9" data-step="1" data-type="uimock">
+            <img src="./pic/ch9_s1_pocsag_open.png" alt="POCSAG decoder app open on H4M and waiting for pager signal transmissions" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>POCSAG decoder app open and waiting for pager signals.</figcaption>
+          </figure>
+          <p>From the main menu, navigate to <strong>Receiver &gt; POCSAG</strong>. POCSAG (Post Office Code Standardisation Advisory Group) is a widely-used one-way paging protocol still active in hospitals, emergency services, and industrial facilities in many countries.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Set the Correct Pager Frequency</h3>
+          <figure class="step-visual" data-chapter="9" data-step="2" data-type="uimock">
+            <img src="./pic/ch9_s2_pager_frequency.png" alt="POCSAG app frequency field set to a local pager frequency in the VHF or UHF band" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>POCSAG app frequency field set to local pager frequency.</figcaption>
+          </figure>
+          <p>POCSAG transmissions are most commonly found between <strong>152–174 MHz</strong> (VHF) and <strong>460–470 MHz</strong> (UHF), though exact frequencies vary by country and operator. Use the encoder to enter the local pager frequency. If unknown, first use the <strong>Spectrum Analyzer</strong> (Tools &gt; Spectrum) to locate active narrowband carriers in those bands.</p>
+          <div class="tip">💡 <strong>Tip:</strong> Check SDR enthusiast forums (e.g., RTL-SDR.com forums, radioreference.com) for a database of known pager frequencies in your country.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Decode Live Pager Messages</h3>
+          <figure class="step-visual" data-chapter="9" data-step="3" data-type="uimock">
+            <img src="./pic/ch9_s3_decode_messages.png" alt="Live decoded POCSAG messages showing timestamp, RIC address, function code, and message text" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Live decoded POCSAG messages with timestamp, RIC address, and text.</figcaption>
+          </figure>
+          <p>Once tuned to an active frequency, decoded POCSAG messages appear in real time. Each entry shows a <strong>timestamp</strong>, the <strong>RIC address</strong> (pager device ID), the <strong>function code</strong>, and the <strong>message text</strong> (numeric or alphanumeric, depending on transmission type). Messages scroll upward as new ones arrive.</p>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> You can now receive and decode POCSAG pager transmissions in your area — a useful tool for radio monitoring and protocol analysis.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.9b — Capture & Replay
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch9b" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number chapter-number-alt">⏺</span>
+        <div>
+          <span class="chapter-group">Advanced Modes</span>
+          <h2 class="chapter-title">Capture &amp; Replay</h2>
+        </div>
+      </div>
+
+      <p style="margin-bottom:24px;color:var(--text-muted);">Capture records raw IQ (In-phase/Quadrature) samples directly to your SD card. Replay transmits them back through the RF output — effectively reproducing any signal you've recorded. A formatted microSD card (Ch.2b) is required for both.</p>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Record a Signal with Capture</h3>
+          <p>From the main menu, navigate to <strong>Capture</strong>. Set the <strong>centre frequency</strong> to the signal you want to record (e.g., 433.92 MHz for ISM sensors). Set the <strong>sample rate</strong> — higher rates capture wider bandwidth but create larger files. Press the encoder to <strong>start recording</strong>; press again to stop. The file is saved to <code>CAPTURES/</code> on the SD card as a <code>.C16</code> file.</p>
+          <div class="tip">💡 <strong>Tip:</strong> A 1-minute capture at 8 Msps generates approximately 1 GB of data. For short signals (remote controls, key fobs), capture for just 5–10 seconds.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Play Back with Replay</h3>
+          <p>Navigate to <strong>Replay</strong> from the main menu. Browse the file list on the SD card and select your <code>.C16</code> capture file. Set the same <strong>frequency</strong> used during capture. Press the encoder to transmit — the H4M re-broadcasts the recorded IQ samples through the RF output at the original frequency and bandwidth.</p>
+          <div class="warning" role="note">⚠️ <strong>Warning:</strong> Replaying signals such as door openers, key fobs, or sensor data to gain unauthorised access to property or systems is illegal. Replay is intended for lab testing and signal research only. Always ensure you have permission before replaying any captured signal.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Flipper Zero Compatibility (.sub Files)</h3>
+          <p>The <strong>Flipper TX</strong> app in Mayhem can replay <code>.sub</code> signal files from the Flipper Zero ecosystem. Copy <code>.sub</code> files to your SD card and open them via Replay. This allows sharing signal libraries between devices in your RF lab setup.</p>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> You can now record raw IQ signal captures to SD card and replay them for testing and analysis. Use responsibly and only on signals you are authorised to transmit.
+      </div>
+    </section>
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.9c — PC-Connected SDR Mode
+    ──────────────────────────────────────────────── -->
+    <section id="ch9c" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number chapter-number-alt">🖥</span>
+        <div>
+          <span class="chapter-group">Advanced Modes</span>
+          <h2 class="chapter-title">PC-Connected SDR Mode</h2>
+        </div>
+      </div>
+      <p style="margin-bottom:24px;color:var(--text-muted);">The H4M also works as a USB-connected SDR for your computer, letting you use software like <strong>SDR#</strong>, <strong>GQRX</strong>, or <strong>GNU Radio</strong> — unlocking full waterfall displays, demodulation plugins, and larger-screen operation. A USB-C data cable is required.</p>
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Connect via USB-C and Install Drivers</h3>
+          <figure class="step-visual" data-chapter="9c" data-step="1" data-type="diagram">
+            <img src="./pic/ch9c_s1_usb_connection.png"
+                 alt="H4M connected to laptop via USB-C cable — PC-connected SDR mode diagram"
+                 loading="lazy"
+                 onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>USB-C data connection from H4M to host PC.</figcaption>
+          </figure>
+          <p><strong>Power off the H4M first.</strong> Connect a USB-C data cable between the H4M and your computer. In PC mode the device draws power from USB — no battery is consumed.</p>
+          <ul style="padding-left:20px;margin:10px 0;line-height:2.2;">
+            <li><strong>Windows:</strong> Install the WinUSB driver using <strong>Zadig</strong> (zadig.akeo.ie) — select "HackRF One", then click "Install WinUSB".</li>
+            <li><strong>macOS:</strong> No drivers needed — HackRF is natively supported via libusb.</li>
+            <li><strong>Linux:</strong> No drivers needed. Add udev rules if device not accessible without root: <code>sudo cp 53-hackrf.rules /etc/udev/rules.d/</code></li>
+          </ul>
+          <div class="tip" role="note">💡 <strong>Tip:</strong> Use a USB-C cable that supports data transfer, not a charge-only cable. If the device is not detected, try a different cable first.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Open SDR# (Windows) or GQRX (Linux / macOS)</h3>
+          <figure class="step-visual" data-chapter="9c" data-step="2" data-type="uimock">
+            <img src="./pic/ch9c_s2_sdrsharp_waterfall.png"
+                 alt="SDR# waterfall display showing FM broadcast spectrum with HackRF One selected as source"
+                 loading="lazy"
+                 onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>SDR# waterfall — FM broadcast band visible as dense vertical peaks.</figcaption>
+          </figure>
+          <p>Launch <strong>SDR#</strong>. In the <strong>Source</strong> dropdown, select <em>HackRF One</em>. Set sample rate to <strong>8 Msps</strong> as a starting point. Click <strong>Start</strong> (►) to stream live RF spectrum. For GQRX on Linux/macOS: launch GQRX, select <em>HackRF One</em> in device configuration, set sample rate to 8M.</p>
+          <div class="tip" role="note">💡 <strong>Tip:</strong> The FM broadcast band (87.5–108 MHz) makes an excellent first test — you'll see a waterfall full of strong vertical peaks, confirming the device is receiving.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Open IQ Captures from SD Card in PC Software</h3>
+          <figure class="step-visual" data-chapter="9c" data-step="3" data-type="diagram">
+            <img src="./pic/ch9c_s3_sd_transfer.png"
+                 alt="SD card CAPTURES folder with .C16 IQ files being opened in SDR# on a PC"
+                 loading="lazy"
+                 onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>CAPTURES/ folder contains .C16 IQ files ready for PC analysis.</figcaption>
+          </figure>
+          <p>Capture files recorded on the H4M are stored in the <code>CAPTURES/</code> SD folder as <code>.C16</code> raw IQ files. Open them on your PC:</p>
+          <ul style="padding-left:20px;margin:10px 0;line-height:2.2;">
+            <li><strong>SDR#:</strong> File → IQ file source → select .C16 file</li>
+            <li><strong>GQRX:</strong> File → Open I/Q File → select .C16 file</li>
+            <li><strong>GNU Radio:</strong> Use a <em>File Source</em> block with <em>Complex Int 16</em> type</li>
+          </ul>
+          <div class="tip" role="note">💡 <strong>Tip:</strong> The sample rate is embedded in the filename by Mayhem — e.g., <code>capture_433mhz_8000kHz.C16</code> = 8 MHz sample rate.</div>
+        </div>
+      </div>
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> The H4M functions as a full HackRF One USB SDR for SDR#, GQRX, and GNU Radio. Windows requires the Zadig WinUSB driver. IQ captures from <code>CAPTURES/</code> open directly in PC software as <code>.C16</code> files.
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.10 — Firmware Update
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch10" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">10</span>
+        <div>
+          <span class="chapter-group">Maintenance</span>
+          <h2 class="chapter-title">Firmware Update</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Check Your Current Firmware Version</h3>
+          <figure class="step-visual" data-chapter="10" data-step="0" data-type="uimock">
+            <img src="./pic/ch10_s0_version_check.png"
+                 alt="Mayhem Settings screen showing firmware version string and build date"
+                 loading="lazy"
+                 onerror="this.replaceWith(Object.assign(document.createElement('div'),
+                   {className:'img-fallback', textContent:this.alt}))">
+            <figcaption>Settings screen shows firmware version string and build date.</figcaption>
+          </figure>
+          <p>From the Mayhem home screen, navigate to <strong>Settings</strong>. The firmware version string and build date are shown at the top of the screen. The build date format is <code>YYYYMMDD</code> — for example, <code>n_240829</code> means August 29, 2024.</p>
+          <p>Compare your version with the latest release at <a href="https://github.com/portapack-mayhem/mayhem-firmware/releases" target="_blank" rel="noopener">github.com/portapack-mayhem/mayhem-firmware/releases</a>. If you are already on the latest version, you can skip the remaining steps.</p>
+        </div>
+      </div>
+
+            <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Download the Latest Mayhem Firmware</h3>
+          <figure class="step-visual" data-chapter="10" data-step="2" data-type="diagram">
+            <img src="./pic/ch10_s1_download.png" alt="Mayhem firmware releases page on GitHub showing the latest .tar.gz release archive" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Mayhem firmware releases page on GitHub showing latest .tar.gz download.</figcaption>
+          </figure>
+          <p>On your PC, navigate to the official Mayhem firmware releases page: <code>github.com/portapack-mayhem/mayhem-firmware/releases</code>. Download the latest <strong>.tar.gz</strong> release archive. Always use official releases — never flash firmware from unofficial sources.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">Extract the Firmware Files</h3>
+          <figure class="step-visual" data-chapter="10" data-step="3" data-type="diagram">
+            <img src="./pic/ch10_s2_extract.png" alt="Extracted firmware archive showing hackrf_one_usb.bin and portapack binary files" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Extracted firmware archive showing hackrf_one_usb.bin and portapack binary.</figcaption>
+          </figure>
+          <p>Extract the archive. Inside, you'll find two critical files: <code>hackrf_one_usb.bin</code> (the HackRF USB firmware) and <code>portapack-h1_h2-mayhem.bin</code> (the PortaPack application firmware). Both files must be flashed in sequence.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <h3 class="step-title">Power Off the H4M</h3>
+          <figure class="step-visual" data-chapter="10" data-step="4" data-type="diagram">
+            <img src="./pic/ch10_s3_power_off.png" alt="H4M powered off cleanly with screen completely dark before entering DFU mode" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>H4M powered off cleanly before entering DFU mode.</figcaption>
+          </figure>
+          <p>Hold the power button for 2 seconds to perform a clean shutdown. Wait until the screen goes completely dark before proceeding. Do <strong>not</strong> attempt to enter DFU mode while the device is still running.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">5</div>
+        <div class="step-content">
+          <h3 class="step-title">Enter DFU Mode</h3>
+          <figure class="step-visual" data-chapter="10" data-step="5" data-type="diagram">
+            <img src="./pic/ch10_s4_dfu_mode.png" alt="DFU button location on the H4M and the USB-C connection sequence for entering DFU mode" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>DFU button location and USB-C connection sequence for firmware flashing.</figcaption>
+          </figure>
+          <p>Locate the <strong>DFU button</strong> — a small recessed button near the USB-C port. <strong>Hold the DFU button</strong>, then connect the USB-C cable to your PC, then <strong>release the DFU button</strong>. The device will enumerate as a DFU device. No screen output is shown in DFU mode — this is normal.</p>
+          <div class="tip">💡 <strong>Tip:</strong> On Linux/macOS, run <code>hackrf_info</code> after connecting — it should report a device in DFU mode if done correctly.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">6</div>
+        <div class="step-content">
+          <h3 class="step-title">Flash the Firmware</h3>
+          <figure class="step-visual" data-chapter="10" data-step="6" data-type="diagram">
+            <img src="./pic/ch10_s5_flash.png" alt="Terminal showing hackrf_update commands completing successfully with Update complete message" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Terminal output of hackrf_update commands completing successfully.</figcaption>
+          </figure>
+          <p>With the HackRF tools installed on your PC, run the following commands in order:</p>
+          <pre class="code-terminal"><code>hackrf_update -f hackrf_one_usb.bin
+hackrf_update -f portapack-h1_h2-mayhem.bin</code></pre>
+          <p>Each command takes 30–90 seconds. Wait for <em>"Update complete"</em> before disconnecting.</p>
+          <div class="warning" role="note">⚠️ <strong>Warning:</strong> Do <strong>not</strong> disconnect the USB cable during firmware flashing. Interrupting the process can brick the device and require JTAG recovery.</div>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> Your H4M is now running the latest Mayhem firmware with all new features, bug fixes, and protocol updates.
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         Ch.11 — Troubleshooting
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch11" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">11</span>
+        <div>
+          <span class="chapter-group">Maintenance</span>
+          <h2 class="chapter-title">Troubleshooting</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3 class="step-title">Device Won't Power On</h3>
+          <figure class="step-visual" data-chapter="11" data-step="1" data-type="diagram">
+            <img src="./pic/ch11_s1_decision_tree.png" alt="Troubleshooting decision tree starting from device won't power on leading to charge for 1 hour" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Troubleshooting decision tree: device won't power on → charge for 1 hour.</figcaption>
+          </figure>
+          <p>Connect the H4M via USB-C and charge for at least <strong>1 hour</strong> using a known-good charger (5V/1A or greater). Then try holding the power button for a full 3 seconds. If the device still doesn't respond, try a <strong>different USB-C cable</strong> — many cables are charge-only with no data lines, but this can also affect charging behaviour on some units.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3 class="step-title">Screen On but Device Unresponsive</h3>
+          <figure class="step-visual" data-chapter="11" data-step="2" data-type="diagram">
+            <img src="./pic/ch11_s2_unresponsive.png" alt="H4M LCD screen on but buttons producing no response — hold encoder 3 seconds for soft reset" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>H4M LCD on but unresponsive — hold encoder 3 seconds for soft reset.</figcaption>
+          </figure>
+          <p>If the LCD is lit but buttons and encoder produce no response, try a <strong>soft reset</strong>: hold the rotary encoder button down for 3 seconds. If that fails, perform a <strong>hard reset</strong>: hold the power button for 10 full seconds until the device powers off, then power on normally.</p>
+          <div class="tip">💡 <strong>Tip:</strong> A corrupt microSD card can sometimes cause the firmware to hang at startup. Try removing the microSD card and booting without it.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3 class="step-title">No Audio Output</h3>
+          <figure class="step-visual" data-chapter="11" data-step="3" data-type="diagram">
+            <img src="./pic/ch11_s3_no_audio.png" alt="Audio troubleshooting showing headphone jack check, volume setting, and FM volume control via encoder" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>Audio troubleshooting: headphone jack, volume setting, and FM volume control.</figcaption>
+          </figure>
+          <p>First, check that headphones are fully seated if using the 3.5mm jack. Navigate to <strong>Setup &gt; Audio</strong> and verify the volume is not set to zero or muted. In the FM Broadcast app, volume is also controlled by the encoder while the frequency display is active — try rotating the encoder after confirming you're tuned to a station.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <h3 class="step-title">No Signals Detected</h3>
+          <figure class="step-visual" data-chapter="11" data-step="4" data-type="diagram">
+            <img src="./pic/ch11_s4_no_signals.png" alt="No signals detected checklist: verify antenna is connected, check frequency, open Spectrum to confirm RF activity" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',textContent:this.alt}))">
+            <figcaption>No signals detected: check antenna connection, use Spectrum to verify RF activity.</figcaption>
+          </figure>
+          <p>Verify the antenna is <strong>firmly screwed on</strong> (a loose antenna is the most common cause of poor reception). Confirm you're tuned to the correct frequency band for the signal type. Open <strong>Tools &gt; Spectrum</strong> to visually confirm RF activity in your area — if the waterfall is completely flat, check the antenna connection or try a different location.</p>
+          <div class="tip">💡 <strong>Tip:</strong> The Mayhem GitHub wiki has detailed solutions for most known issues: <code>github.com/portapack-mayhem/mayhem-firmware/wiki</code></div>
+        </div>
+      </div>
+
+      <div class="chapter-summary">
+        <strong>✅ Chapter Summary:</strong> Most H4M issues are resolved by checking power/charging, performing a reset, verifying antenna connection, or consulting the Mayhem wiki.
+      </div>
+    </section>
+    <!-- ─────────────────────────────────────────────────────────
+         Appendix A — Mayhem App Catalog
+    ──────────────────────────────────────────────── -->
+    <section id="appendix-apps" class="chapter">
+      <div class="chapter-header">
+        <span class="chapter-number">A</span>
+        <div>
+          <span class="chapter-group">Reference</span>
+          <h2 class="chapter-title">Mayhem App Catalog</h2>
+        </div>
+      </div>
+      <p style="margin-bottom:20px;">Mayhem firmware includes 60+ built-in applications. Below is a full category map to help you explore the rest.</p>
+      <div class="app-catalog">
+        <div class="app-category">
+          <h3>Receivers</h3>
+          <ul>
+            <li><strong>Broadcast FM</strong> — FM radio 87.5–108 MHz</li>
+            <li><strong>ADS-B</strong> — Aircraft transponders, 1090 MHz</li>
+            <li><strong>AIS</strong> — Marine vessel tracking, 161/162 MHz</li>
+            <li><strong>ACARS</strong> — Aircraft data link, 129/136 MHz</li>
+            <li><strong>POCSAG / Flex</strong> — Pager messages, 152–470 MHz</li>
+            <li><strong>NOAA APT</strong> — Weather satellite images, 137 MHz</li>
+            <li><strong>APRS</strong> — Amateur packet, 144.39 MHz (NA) / 144.80 MHz (EU)</li>
+            <li><strong>TPMS</strong> — Tyre pressure sensors, 433/315 MHz</li>
+            <li><strong>BLE</strong> — Bluetooth Low Energy scanner</li>
+            <li><strong>ERT / AMR</strong> — Utility meter reader</li>
+            <li><strong>SSTV</strong> — Slow-scan television image decoder</li>
+          </ul>
+        </div>
+        <div class="app-category">
+          <h3>Transmitters</h3>
+          <ul>
+            <li><strong>FM TX</strong> — FM broadcast transmitter</li>
+            <li><strong>AM TX</strong> — AM transmitter</li>
+            <li><strong>SSB TX</strong> — Single sideband voice</li>
+            <li><strong>APRS TX</strong> — Packet radio beacon</li>
+            <li><strong>BLE TX</strong> — Bluetooth Low Energy beacons</li>
+            <li><strong>GPS Simulator</strong> — GPS signal simulation (⚠️ licensed use only)</li>
+            <li><strong>OOK TX</strong> — Generic on-off keying transmitter</li>
+          </ul>
+        </div>
+        <div class="app-category">
+          <h3>Signal Tools</h3>
+          <ul>
+            <li><strong>Spectrum Analyzer</strong> — Wideband RF spectrum view</li>
+            <li><strong>Capture</strong> — Raw IQ recording to SD card (.C16)</li>
+            <li><strong>Replay</strong> — Play back captured IQ from SD card</li>
+            <li><strong>Frequency Scanner</strong> — Auto-scan for active signals</li>
+            <li><strong>Looking Glass</strong> — Panoramic spectrum, up to 2 GHz wide</li>
+            <li><strong>Signal Generator</strong> — CW / tone / noise source</li>
+          </ul>
+        </div>
+        <div class="app-category">
+          <h3>Utilities</h3>
+          <ul>
+            <li><strong>File Manager</strong> — Browse / rename / delete SD files</li>
+            <li><strong>Frequency Manager</strong> — Custom frequency bookmarks</li>
+            <li><strong>Map Viewer</strong> — OSM offline map tiles from SD card</li>
+            <li><strong>Antenna Length</strong> — Quarter / half-wave calculator</li>
+            <li><strong>Clock</strong> — Real-time clock display</li>
+            <li><strong>Calculator</strong> — RF engineering calculator</li>
+          </ul>
+        </div>
+        <div class="app-category">
+          <h3>Games</h3>
+          <ul>
+            <li><strong>Doom</strong></li>
+            <li><strong>Tetris</strong></li>
+            <li><strong>Breakout</strong></li>
+            <li><strong>Pong</strong></li>
+          </ul>
+        </div>
+      </div>
+      <h3 style="margin: 32px 0 16px; font-size: 1rem; font-weight: 700;">Quick-Start: Three Popular Apps</h3>
+      <div class="tip" role="note">
+        💡 <strong>AIS — Marine Vessel Tracking (161.975 / 162.025 MHz):</strong>
+        Navigate to Receiver &gt; AIS. Set centre frequency to 162 MHz. With an outdoor antenna or near a harbour, vessel position reports appear within seconds.
+      </div>
+      <div class="tip" role="note">
+        💡 <strong>NOAA APT — Weather Satellite Images (137.1 / 137.5 / 137.9125 MHz):</strong>
+        Navigate to Receiver &gt; NOAA APT. Record a full pass (~12 minutes) with Capture, then decode the .C16 file on PC with WXtoImg or atpdec.
+      </div>
+      <div class="tip" role="note">
+        💡 <strong>APRS — Amateur Radio Packet (144.39 MHz NA / 144.80 MHz EU):</strong>
+        Navigate to Receiver &gt; APRS. No licence required to receive. Transmitting requires an amateur radio licence.
+      </div>
+      <div class="chapter-summary">
+        <strong>✅ Appendix A:</strong> Mayhem includes receivers for aircraft, marine, pager, weather satellite, and Bluetooth, plus transmitters for FM/AM/SSB/APRS. Verify local regulations before transmitting.
+      </div>
+    </section>
+    <div class="completion-banner" id="completion">
+      <div class="completion-icon" aria-hidden="true">🎉</div>
+      <h2>You're all set!</h2>
+      <p>You've completed the H4M guide. Your device is configured, your antenna is connected, and you've explored all the core Mayhem apps.</p>
+      <h3>What's next?</h3>
+      <ul class="completion-links">
+        <li><a href="https://github.com/portapack-mayhem/mayhem-firmware/wiki" target="_blank" rel="noopener">Explore all 60+ Mayhem apps on the official wiki ↗</a></li>
+        <li><a href="https://www.sigidwiki.com/wiki/Signal_Identification_Guide" target="_blank" rel="noopener">Signal Identification Guide — identify what you're receiving ↗</a></li>
+        <li><a href="https://yupitek.com/en/products/sdrlab/h4m/" target="_blank" rel="noopener">SDRLab H4M product page — accessories and support ↗</a></li>
+      </ul>
+      <button class="btn-restart" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        ↑ Back to top
+      </button>
+    </div>
+
+
+
+  </div>
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SCROLL-SPY + PROGRESS BAR
+══════════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+  const chapters = Array.from(document.querySelectorAll('.chapter'));
+
+  if (navLinks.length) {
+    navLinks[0].classList.add('active');
+    navLinks[0].setAttribute('aria-current', 'page');
+  }
+
+  const setActive = (id) => {
+    navLinks.forEach(link => {
+      const isActive = link.getAttribute('href') === '#' + id;
+      link.classList.toggle('active', isActive);
+      if (isActive) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+    try {
+      localStorage.setItem('h4m-last-chapter', id);
+    } catch (_) {}
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible.length > 0) setActive(visible[0].target.id);
+    },
+    { rootMargin: '-80px 0px -40% 0px', threshold: 0 }
+  );
+
+  chapters.forEach(ch => observer.observe(ch));
+  window.addEventListener('beforeunload', () => observer.disconnect());
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        setActive(target.id);
+      }
+    });
+  });
+
+  const progressBar = document.getElementById('scroll-progress');
+  if (progressBar) {
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      const rounded = Math.round(pct);
+      progressBar.style.width = rounded + '%';
+      progressBar.setAttribute('aria-valuenow', rounded);
+    }, { passive: true });
+  }
+})();
+// TOC toggle hint text
+const tocDetails = document.querySelector('.toc-block');
+if (tocDetails) {
+  tocDetails.addEventListener('toggle', function () {
+    const hint = this.querySelector('.toc-toggle-hint');
+    if (hint) hint.textContent = this.open ? 'click to collapse' : 'click to expand';
+  });
+}
+
+// Initialize active link from URL hash or saved chapter
+(function initFromHash() {
+  const hash = window.location.hash.replace('#', '');
+  if (hash && document.getElementById(hash)) { setActive(hash); return; }
+  try {
+    const last = localStorage.getItem('h4m-last-chapter');
+    if (last && document.getElementById(last)) { setActive(last); return; }
+  } catch (_) {}
+  setActive('ch0');
+})();
+
+// Dark mode toggle
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  const btn = document.getElementById('theme-toggle');
+  if (btn) btn.textContent = isDark ? '🌙 Dark Mode' : '☀️ Light Mode';
+  try { localStorage.setItem('h4m-theme', next); } catch (_) {}
+}
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark'
+      ? '☀️ Light Mode' : '🌙 Dark Mode';
+  }
+});
+
+// ── Search ─────────────────────────────────────────────
+const searchIndex = [];
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.chapter').forEach(section => {
+    const chapterTitle = section.querySelector('.chapter-title')?.textContent.trim() ?? '';
+    const chapterId = section.id;
+    const chapterGroup = section.querySelector('.chapter-group')?.textContent.trim() ?? '';
+    section.querySelectorAll('.step').forEach(step => {
+      const stepTitle = step.querySelector('.step-title')?.textContent.trim() ?? '';
+      const stepPara = step.querySelector('.step-content p')?.textContent.trim() ?? '';
+      searchIndex.push({ id: chapterId, group: chapterGroup, chapter: chapterTitle,
+        title: stepTitle, searchable: (chapterTitle + ' ' + stepTitle + ' ' + stepPara).toLowerCase() });
+    });
+    searchIndex.push({ id: chapterId, group: chapterGroup, chapter: chapterTitle,
+      title: chapterTitle, searchable: (chapterTitle + ' ' + chapterGroup).toLowerCase() });
+  });
+  const backdrop = document.querySelector('.search-backdrop');
+  if (backdrop) backdrop.addEventListener('click', closeSearch);
+  const input = document.getElementById('search-input');
+  if (input) {
+    input.addEventListener('input', function () {
+      const query = this.value.trim().toLowerCase();
+      const resultsList = document.getElementById('search-results');
+      resultsList.replaceChildren();
+      if (query.length < 2) return;
+      const matches = searchIndex.filter(i => i.searchable.includes(query)).slice(0, 8);
+      if (!matches.length) {
+        const li = document.createElement('li');
+        li.style.cssText = 'padding:10px 20px;color:var(--text-muted)';
+        li.textContent = 'No results found';
+        resultsList.appendChild(li);
+        return;
+      }
+      matches.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + item.id;
+        a.className = 'search-result-link';
+        a.addEventListener('click', closeSearch);
+        const label = document.createElement('div');
+        label.className = 'result-chapter-label';
+        label.textContent = item.group + ' › ' + item.chapter;
+        const title = document.createElement('div');
+        title.className = 'result-step-title';
+        title.textContent = item.title;
+        a.appendChild(label);
+        a.appendChild(title);
+        li.appendChild(a);
+        resultsList.appendChild(li);
+      });
+    });
+  }
+});
+function openSearch() {
+  const overlay = document.getElementById('search-overlay');
+  overlay.removeAttribute('hidden');
+  document.getElementById('search-input').value = '';
+  document.getElementById('search-results').replaceChildren();
+  document.getElementById('search-input').focus();
+}
+function closeSearch() {
+  document.getElementById('search-overlay').setAttribute('hidden', '');
+}
+document.addEventListener('keydown', function (e) {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+  if (e.key === 'Escape') closeSearch();
+});
+
+</script>
+
+<div id="search-overlay" hidden aria-modal="true" role="dialog" aria-label="Search manual">
+  <div class="search-box">
+    <input id="search-input" type="search" placeholder="Search chapters and steps… (Esc to close)" autocomplete="off" spellcheck="false">
+    <ul id="search-results" role="listbox" aria-label="Search results"></ul>
+  </div>
+  <div class="search-backdrop"></div>
+</div>
+
+</body>
+</html>

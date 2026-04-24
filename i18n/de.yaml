@@ -1,0 +1,7 @@
+footer.copyright: "© {{ .Year }} Yopitek Ltd · Alle Rechte Vorbehalten · Taipei, Taiwan"
+product.inquiry_button: "Angebot Anfordern"
+product.download_driver: "Treiber Herunterladen"
+product.view_spec: "Spezifikationen Anzeigen"
+product.legal_notice: "Dieses Produkt ist nur für legal autorisierte Verwendung"
+solution.contact_us: "Kontaktieren Sie uns"
+list.no_articles: ""

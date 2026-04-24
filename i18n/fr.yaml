@@ -1,0 +1,7 @@
+footer.copyright: "© {{ .Year }} Yopitek Ltd · Tous Droits Réservés · Taipei, Taiwan"
+product.inquiry_button: "Demander un Devis"
+product.download_driver: "Télécharger le Pilote"
+product.view_spec: "Voir les Spécifications"
+product.legal_notice: "Ce produit est uniquement destiné à une utilisation légalement autorisée"
+solution.contact_us: "Contactez-nous"
+list.no_articles: ""

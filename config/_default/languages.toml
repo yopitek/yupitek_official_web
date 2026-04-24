@@ -72,3 +72,21 @@
   contentDir           = "content/ru"
   [ru.params]
     displayName        = "🇷🇺 Русский"
+
+[de]
+  title                = "ALFA Network Autorisierter Distributor Taiwan | Yopitek Ltd"
+  languageName         = "Deutsch"
+  languageCode         = "de"
+  weight               = 9
+  contentDir           = "content/de"
+  [de.params]
+    displayName        = "🇩🇪 Deutsch"
+
+[fr]
+  title                = "Distributeur Agréé ALFA Network Taiwan | Yopitek Ltd"
+  languageName         = "Français"
+  languageCode         = "fr"
+  weight               = 10
+  contentDir           = "content/fr"
+  [fr.params]
+    displayName        = "🇫🇷 Français"

@@ -583,4 +583,4 @@ sudo ip link set mon0 up
 - [AWUS036AXML China Install Guide](/ru/blog/awus036axml-china-install-guide/)
 - [AWUS036EAC China Install Guide](/ru/blog/awus036eacs-china-install-guide/)
 
-Есть вопросы? Оставьте комментарий ниже или свяжитесь с нами на [yupitek.com](https://yupitek.com/en/contact/).
+Есть вопросы? Оставьте комментарий ниже или свяжитесь с нами на [yupitek.com](https://yupitek.com/ru/contact/).

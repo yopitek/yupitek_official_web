@@ -8,8 +8,9 @@ showTableOfContents: true
 slug: "awus036axer-china-install-guide"
 tags: ["alfa", "awus036axer", "kali-linux", "ubuntu", "驱动", "中国", "wifi6", "rtl8832bu"]
 categories: ["驱动安装指南"]
-series: ["Alfa 中国安装全攻略"]
+series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036axer/"
+series_order: 5
 ---
 
 刚收到这款小巧玲珑的 AWUS036AXER，插上去发现 Linux 没反应？别担心，这很正常。这块网卡用的是 RTL8832BU 芯片，在内核版本 6.14 以下驱动不是开箱即用的。好在如果你用的是 Ubuntu 24.04，系统已经内置好了，插上就能飞。

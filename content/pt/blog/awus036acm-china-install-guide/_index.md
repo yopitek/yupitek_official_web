@@ -7,7 +7,8 @@ showTableOfContents: true
 slug: "awus036acm-china-install-guide"
 tags: ["alfa", "awus036acm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "vif"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 2
 description: "Guia passo a passo para instalar o driver ALFA AWUS036ACM na China usando espelhos domésticos. Driver MT7612U nativo do kernel, suporte VIF completo. Kali Linux, Ubuntu 22/24, Debian e Raspberry Pi. Sem GitHub."
 related_product: "/pt/products/alfa/awus036acm/"
 ---

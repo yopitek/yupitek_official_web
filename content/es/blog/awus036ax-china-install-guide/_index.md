@@ -8,8 +8,9 @@ showTableOfContents: true
 slug: "awus036ax-china-install-guide"
 tags: ["alfa", "awus036ax", "kali-linux", "ubuntu", "driver", "china", "wifi6", "rtl8832bu"]
 categories: ["Guías de controladores"]
-series: ["Guía de instalación de Alfa en China"]
+series: ["alfa-china-install-guide"]
 related_product: "/es/products/alfa/awus036ax/"
+series_order: 4
 ---
 
 El AWUS036AX es el adaptador de doble banda WiFi 6 AX1800 de ALFA. Su chip RTL8832BU está fuera del kernel en versiones de Linux inferiores a 6.14, pero Ubuntu 24.04 (kernel 6.8) lo incluye de forma nativa. Esta guía utiliza espejos de Gitee para kernels más antiguos y el controlador integrado para Ubuntu 24.04. No se requiere GitHub.

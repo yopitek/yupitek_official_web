@@ -7,7 +7,8 @@ showTableOfContents: true
 slug: "awus036ach-china-install-guide"
 tags: ["alfa", "awus036ach", "kali-linux", "ubuntu", "driver", "china", "monitor-mode"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 1
 description: "Guide étape par étape pour installer le pilote ALFA AWUS036ACH en Chine en utilisant des miroirs domestiques. Compatible Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi. Aucun accès à GitHub requis."
 related_product: "/fr/products/alfa/awus036ach/"
 ---

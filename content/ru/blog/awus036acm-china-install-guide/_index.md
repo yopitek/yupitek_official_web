@@ -8,7 +8,8 @@ showTableOfContents: true
 slug: "awus036acm-china-install-guide"
 tags: ["alfa", "awus036acm", "kali-linux", "ubuntu", "драйвер", "китай", "режим-монитора", "vif"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 2
 related_product: "/ru/products/alfa/awus036acm/"
 ---
 

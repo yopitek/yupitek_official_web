@@ -7,7 +7,8 @@ showTableOfContents: true
 slug: "awus036acm-china-install-guide"
 tags: ["alfa", "awus036acm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "vif"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 2
 description: "中国国内ミラーを使ってALFA AWUS036ACMドライバーをインストールするステップバイステップガイド。MT7612Uカーネル内蔵ドライバー、完全VIFサポート。Kali Linux、Ubuntu 22/24、Debian、ラズベリーパイ対応。GitHubは不要です。"
 related_product: "/ja/products/alfa/awus036acm/"
 ---

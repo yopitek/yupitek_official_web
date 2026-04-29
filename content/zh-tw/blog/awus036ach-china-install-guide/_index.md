@@ -7,9 +7,10 @@ showTableOfContents: true
 slug: "awus036ach-china-install-guide"
 tags: ["alfa", "awus036ach", "kali-linux", "ubuntu", "驅動", "中國", "監聽模式"]
 categories: ["驅動指南"]
-series: ["Alfa 中國安裝指南"]
+series: ["alfa-china-install-guide"]
 description: "手把手教你在中國境內使用國內鏡像源安裝 ALFA AWUS036ACH 驅動。涵蓋 Kali Linux, Ubuntu 22/24, Debian 和 樹莓派。無需訪問 GitHub。"
 related_product: "/zh-tw/products/alfa/awus036ach/"
+series_order: 1
 ---
 
 你剛拿到 ALFA AWUS036ACH，結果 Linux 系統沒反應？別擔心，這很正常。這款網卡用的晶片需要 RTL8812AU 驅動，而且它不是插上就能用的。本指南會帶你花大約 30 分鐘完成安裝，全程只用國內鏡像源，完全不需要翻牆去 GitHub。

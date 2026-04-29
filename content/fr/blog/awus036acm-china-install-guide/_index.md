@@ -7,7 +7,8 @@ showTableOfContents: true
 slug: "awus036acm-china-install-guide"
 tags: ["alfa", "awus036acm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "vif"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 2
 description: "Guide pas à pas pour installer les pilotes ALFA AWUS036ACM en Chine en utilisant des miroirs nationaux. Pilote MT7612U intégré au noyau, prise en charge complète du VIF. Couvre Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi. GitHub non requis."
 related_product: "/fr/products/alfa/awus036acm/"
 ---

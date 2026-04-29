@@ -8,7 +8,8 @@ showTableOfContents: true
 slug: "awus036eacs-china-install-guide"
 tags: ["alfa", "awus036eacs", "windows", "driver", "china", "bluetooth", "rtl8821cu"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 8
 related_product: "/ar/products/alfa/awus036eacs/"
 ---
 

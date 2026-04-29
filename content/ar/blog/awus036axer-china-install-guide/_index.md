@@ -8,7 +8,8 @@ showTableOfContents: true
 slug: "awus036axer-china-install-guide"
 tags: ["alfa", "awus036axer", "kali-linux", "ubuntu", "driver", "china", "wifi6", "rtl8832bu", "nano"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 5
 related_product: "/ar/products/alfa/awus036axer/"
 ---
 

@@ -8,8 +8,9 @@ showTableOfContents: true
 slug: "awus036ax-china-install-guide"
 tags: ["alfa", "awus036ax", "kali-linux", "ubuntu", "驅動", "中國", "wifi6", "rtl8832bu"]
 categories: ["驅動安裝指南"]
-series: ["Alfa 中國安裝全攻略"]
+series: ["alfa-china-install-guide"]
 related_product: "/zh-tw/products/alfa/awus036ax/"
+series_order: 4
 ---
 
 想在 Linux 上體驗 WiFi 6 的飆速快感？剛拿到這台 AWUS036AX，插上去發現沒反應？別擔心，這很正常。因為它採用的 RTL8832BU 晶片在較舊的核心版本上需要手動安裝驅動。不過有個好消息：如果你是用 Ubuntu 24.04，驅動已經內建好了，插上就能直接起飛。

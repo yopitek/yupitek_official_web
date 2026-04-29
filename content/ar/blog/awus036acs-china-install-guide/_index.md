@@ -8,7 +8,8 @@ showTableOfContents: true
 slug: "awus036acs-china-install-guide"
 tags: ["alfa", "awus036acs", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "rtl8811au"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 3
 related_product: "/ar/products/alfa/awus036acs/"
 ---
 

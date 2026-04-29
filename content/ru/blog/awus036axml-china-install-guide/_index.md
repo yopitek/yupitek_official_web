@@ -8,8 +8,9 @@ showTableOfContents: true
 slug: "awus036axml-china-install-guide"
 tags: ["alfa", "awus036axml", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6e", "vif"]
 categories: ["Руководства по драйверам"]
-series: ["Руководство по установке Alfa в Китае"]
+series: ["alfa-china-install-guide"]
 related_product: "/ru/products/alfa/awus036axml/"
+series_order: 7
 ---
 
 AWUS036AXML — это флагманская модель WiFi 6E от ALFA, трехдиапазонный USB-C адаптер, поддерживающий 2,4 ГГц, 5 ГГц и свободный от помех диапазон 6 ГГц. Его чип MT7921AUN использует драйвер `mt7921u`, встроенный в ядро Linux начиная с версии 5.18. В Ubuntu 24.04 и Kali 2025 он работает по принципу plug-and-play сразу после установки пакета прошивки с локального зеркала. Это руководство охватывает полную настройку — прошивку, проверку драйвера, режим мониторинга, инъекцию пакетов и VIF — без использования GitHub.

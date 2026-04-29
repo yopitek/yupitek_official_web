@@ -8,8 +8,9 @@ showTableOfContents: true
 slug: "awus036axm-china-install-guide"
 tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6e", "vif"]
 categories: ["Treiber-Anleitungen"]
-series: ["Alfa China Installationsanleitung"]
+series: ["alfa-china-install-guide"]
 related_product: "/de/products/alfa/awus036axm/"
+series_order: 6
 ---
 
 Der AWUS036AXM ist der WiFi 6E Triband-Adapter von ALFA mit einem platzsparenden L-förmigen USB-A-Anschluss. Sein MT7921AUN-Chip verwendet den `mt7921u`-Treiber, der seit Version 5.18 in den Linux-Kernel integriert ist. Der L-förmige Stecker hält benachbarte USB-Anschlüsse an Laptops frei. Diese Anleitung deckt die vollständige Einrichtung ab — Firmware, Treiber-Verifizierung, Monitor-Modus, Paket-Injektion und VIF — ohne GitHub zu berühren.

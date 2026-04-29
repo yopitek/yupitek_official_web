@@ -8,7 +8,8 @@ showTableOfContents: true
 slug: "awus036ach-china-install-guide"
 tags: ["alfa", "awus036ach", "kali-linux", "ubuntu", "драйвер", "китай", "режим-монитора"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 1
 related_product: "/ru/products/alfa/awus036ach/"
 ---
 

@@ -8,8 +8,9 @@ showTableOfContents: true
 slug: "awus036acs-china-install-guide"
 tags: ["alfa", "awus036acs", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "rtl8811au"]
 categories: ["Guias de Drivers"]
-series: ["Guia de Instalação Alfa China"]
+series: ["alfa-china-install-guide"]
 related_product: "/pt/products/alfa/awus036acs/"
+series_order: 3
 ---
 
 O AWUS036ACS é o adaptador compacto de banda dupla da ALFA para pesquisa de segurança. Seu chip RTL8811AU suporta modo monitor completo e injeção de pacotes no Kali Linux — mas como o driver está fora do kernel, você precisa compilá-lo a partir do código-fonte. Na China, o GitHub está bloqueado, então este guia usa exclusivamente mirrors do Gitee. Não é necessário GitHub.

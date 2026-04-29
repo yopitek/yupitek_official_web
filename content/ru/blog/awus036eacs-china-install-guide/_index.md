@@ -8,8 +8,9 @@ showTableOfContents: true
 slug: "awus036eacs-china-install-guide"
 tags: ["alfa", "awus036eacs", "windows", "driver", "china", "bluetooth", "rtl8821cu"]
 categories: ["Руководства по драйверам"]
-series: ["Руководство по установке Alfa в Китае"]
+series: ["alfa-china-install-guide"]
 related_product: "/ru/products/alfa/awus036eacs/"
+series_order: 8
 ---
 
 AWUS036EACS — это комбинированный нано-адаптер WiFi 5 + Bluetooth 4.2 от ALFA. Он предназначен для пользователей Windows, которым требуется компактное беспроводное обновление. Его чипсет RTL8821CU не имеет надежного драйвера Linux с открытым исходным кодом — режим мониторинга и инъекция пакетов не поддерживаются. Это руководство охватывает установку в Windows из китайских источников и четко объясняет ограничения Linux.

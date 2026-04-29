@@ -8,7 +8,8 @@ showTableOfContents: true
 slug: "awus036axml-china-install-guide"
 tags: ["alfa", "awus036axml", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6e", "vif"]
 categories: ["Guides de Pilotes"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 7
 related_product: "/fr/products/alfa/awus036axml/"
 ---
 

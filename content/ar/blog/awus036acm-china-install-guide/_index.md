@@ -9,7 +9,8 @@ dir: rtl
 slug: "awus036acm-china-install-guide"
 tags: ["alfa", "awus036acm", "kali-linux", "ubuntu", "تعريف", "الصين", "وضع-المراقبة", "vif"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 2
 related_product: "/ar/products/alfa/awus036acm/"
 ---
 

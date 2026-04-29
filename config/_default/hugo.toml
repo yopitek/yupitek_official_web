@@ -15,6 +15,7 @@ theme = "blowfish"
   brand    = "brands"
   category = "categories"
   tag      = "tags"
+  series   = "series"
 
 [markup]
   [markup.goldmark]

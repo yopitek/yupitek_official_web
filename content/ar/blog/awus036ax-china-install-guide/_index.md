@@ -8,7 +8,8 @@ showTableOfContents: true
 slug: "awus036ax-china-install-guide"
 tags: ["alfa", "awus036ax", "kali-linux", "ubuntu", "driver", "china", "wifi6", "rtl8832bu"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 4
 related_product: "/ar/products/alfa/awus036ax/"
 ---
 

@@ -7,7 +7,8 @@ showTableOfContents: true
 slug: "awus036ach-china-install-guide"
 tags: ["alfa", "awus036ach", "kali-linux", "ubuntu", "driver", "china", "monitor-mode"]
 categories: ["Driver Guides"]
-series: ["Alfa China Install Guide"]
+series: ["alfa-china-install-guide"]
+series_order: 1
 description: "国内ミラーを使ってALFA AWUS036ACHドライバーを中国でインストールするステップバイステップガイド。Kali Linux、Ubuntu 22/24、Debian、ラズベリーパイ対応。GitHubなし。"
 related_product: "/ja/products/alfa/awus036ach/"
 ---

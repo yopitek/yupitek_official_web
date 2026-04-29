@@ -7,9 +7,10 @@ showTableOfContents: true
 slug: "awus036acm-china-install-guide"
 tags: ["alfa", "awus036acm", "kali-linux", "ubuntu", "驱动", "中国", "vif", "免驱"]
 categories: ["驱动指南"]
-series: ["Alfa 中国安装指南"]
+series: ["alfa-china-install-guide"]
 description: "手把手教你在中国境内安装 ALFA AWUS036ACM。这是 Linux 系统下最省心的网卡，内置 MT7612U 驱动，完美支持监听模式和虚拟接口（VIF）。"
 related_product: "/zh-cn/products/alfa/awus036acm/"
+series_order: 2
 ---
 
 如果你正在寻找一款在 Linux 下真正“免驱”且强大的网卡，ALFA AWUS036ACM 就是你的终极选择。它采用的 MediaTek MT7612U 芯片驱动已经内置在 Linux 内核里了。这意味着你不需要去 GitHub 下载乱七八糟的补丁，插上就能用。本指南将带你确认驱动状态，并开启它的高级功能。

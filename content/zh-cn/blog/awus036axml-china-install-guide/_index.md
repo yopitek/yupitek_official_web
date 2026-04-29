@@ -7,9 +7,10 @@ showTableOfContents: true
 slug: "awus036axml-china-install-guide"
 tags: ["alfa", "awus036axml", "kali-linux", "ubuntu", "驱动", "中国", "wifi6e", "vif"]
 categories: ["驱动指南"]
-series: ["Alfa 中国安装指南"]
+series: ["alfa-china-install-guide"]
 description: "手把手教你在中国境内安装 ALFA WiFi 6E 旗舰网卡 AWUS036AXML。涵盖内置驱动确认、固件安装以及监听模式开启，全程使用国内镜像源。"
 related_product: "/zh-cn/products/alfa/awus036axml/"
+series_order: 7
 ---
 
 AWUS036AXML 是 ALFA 的 WiFi 6E 旗舰型号。它最厉害的地方在于支持 6GHz 频段，而且采用了 MediaTek MT7921AUN 芯片，驱动已经内置在 Linux 内核（5.18+）里了。这意味着在现代系统中，你基本不需要手动编译驱动，只需要装好固件包就行。本指南会带你快速搞定这一切。

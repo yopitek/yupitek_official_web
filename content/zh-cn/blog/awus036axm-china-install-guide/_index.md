@@ -8,8 +8,9 @@ showTableOfContents: true
 slug: "awus036axm-china-install-guide"
 tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "驱动", "中国", "监听模式", "wifi6e", "vif"]
 categories: ["驱动指南"]
-series: ["Alfa 中国安装指南"]
+series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036axm/"
+series_order: 6
 ---
 
 想要体验 WiFi 6E 的极速？AWUS036AXM 是个非常硬核的选择，而且它那个节省空间的 L 型接口设计真的很贴心，不会挡住笔记本相邻的 USB 口。

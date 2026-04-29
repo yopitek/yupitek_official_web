@@ -12,73 +12,77 @@ series: ["Alfa 中国安装指南"]
 related_product: "/zh-cn/products/alfa/awus036acs/"
 ---
 
-AWUS036ACS 是 ALFA 推出的一款紧凑型双频安全研究网卡。它采用的 RTL8811AU 芯片在 Kali Linux 上完美支持监听模式（monitor mode）和数据包注入（packet injection）。不过，由于其驱动程序不在 Linux 内核中，你需要手动编译安装。考虑到国内访问 GitHub 比较困难，本指南将全程使用 Gitee 镜像名。无需 GitHub，让我们开始吧！
+刚收到这款精巧的 AWUS036ACS，迫不及待插上电脑却发现 Linux 没反应？别急，这很正常。虽然它内置的 RTL8811AU 芯片是安全研究的神器，完美支持监听模式和数据包注入，但驱动并不在系统内核里，得咱们亲自动手装一下。
 
-## 在你开始之前
+国内的小伙伴访问 GitHub 可能不太顺畅，所以我特意帮大家找好了 Gitee 镜像。不用翻墙，咱们现在就开始一步步把它“驯服”。
 
-请确保你已准备好以下物品：
+## 动手前的准备
 
-1. **ALFA AWUS036ACS** 网卡
-2. USB 数据线（USB-A 2.0，包装盒里的那根就可以）
-3. 稳定的网络连接（用于访问国内镜像源）
+在开始折腾之前，请确保你手边有这些东西：
 
-插上网卡，首先确认你的系统是否识别到了它：
+1. **ALFA AWUS036ACS** 网卡本人
+2. 包装盒里那根 USB 2.0 数据线
+3. 畅通的网络（用来下载国内镜像源的包）
+
+插上网卡，咱们先看看系统认出它没。打开终端输入：
 
 ```bash
 lsusb
 ```
 
-在输出结果中寻找这一行：
+如果你在输出里扫到了这一行：
 
 ```
 Bus 001 Device 003: ID 0bda:0811 Realtek Semiconductor Corp.
 ```
 
-如果你看到了 `0bda:0811`，说明网卡已识别。请根据你的操作系统查看下方的相应章节。
+看到 `0bda:0811` 就稳了。接下来，根据你的系统选对应的教程就行。
 
-## 选择你的操作系统
+## 你的系统是哪一个？
 
 - [Kali Linux](#kali-linux)
 - [Ubuntu 22.04 / 24.04](#ubuntu-2204--2404)
 - [Debian](#debian)
 - [树莓派 4B / 5](#raspberry-pi-4b--5)
 
-已经安装好了？直接跳转到：
+如果是老手已经装好了驱动，可以直接跳到：
 
-- [启用监听模式](#enable-monitor-mode)
+- [开启监听模式](#enable-monitor-mode)
 - [测试数据包注入](#test-packet-injection)
-- [虚拟机 USB 透传](#virtual-machine-usb-passthrough)
+- [虚拟机 USB 透传避坑指南](#virtual-machine-usb-passthrough)
 
 ---
 
 ## Kali Linux
 
-### 第一步：切换到国内镜像源
+### 1. 先换个“快车道”（切换国内镜像）
 
-为了下载速度更快，我们先切换到国内的镜像源。
+为了下载不卡顿，咱们先给系统换上国内的镜像源。
 
 ```bash
 sudo nano /etc/apt/sources.list
 ```
 
-删除文件中原有的内容，粘贴以下内容：
+把里面的内容全删了，换成这个中科大的：
 
 ```
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-按 **Ctrl+O** 保存，回车确认，然后按 **Ctrl+X** 退出。刷新软件包列表：
+按 **Ctrl+O** 保存，**Enter** 确认，再按 **Ctrl+X** 退出。然后让系统刷新一下：
 
 ```bash
 sudo apt update
 ```
 
-> **备用镜像：** 如果中科大（USTC）速度不理想，可以尝试清华源：
+> **小贴士：** 万一中科大源偶尔闹脾气，可以用清华源备用：
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
 
-### 第二步：安装编译所需的依赖
+### 2. 把编译工具装齐
+
+这一步是给驱动搭建“手术台”。
 
 ```bash
 sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
@@ -86,78 +90,83 @@ sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 
 ---
 
-### 第三步：从 Gitee 克隆驱动程序
+### 3. 从 Gitee 把驱动“搬”过来
+
+GitHub 连不上？没关系，咱们用国内的 Gitee 镜像。
 
 ```bash
 git clone https://gitee.com/mirrors/8821au.git
 cd 8821au
 ```
 
-> **注意：** 如果上面的 Gitee 链接无法访问，请在 Gitee 上搜索 `8821au` 并选择一个最近更新的分支。你也可以从 [files.alfa.com.tw](https://files.alfa.com.tw) 下载驱动压缩包。
+> **注意：** 如果这个链接失效了，直接在 Gitee 搜 `8821au`，找个最新的就行。
 
 ---
 
-### 第四步：编译并安装
+### 4. 正式安装并重启
 
 ```bash
 sudo ./install-driver.sh
 sudo reboot
 ```
 
-重启后，确认驱动程序是否已加载。
+重启回来，咱们检查下驱动有没有乖乖工作：
 
 ```bash
 lsmod | grep 88XXau
 ```
 
-你应该能看到 `88XXau` 模块。接着确认无线接口是否出现。
+看到 `88XXau` 就算成功了一大半。接着确认下网卡接口：
 
 ```bash
 iwconfig
 ```
 
-寻找 `wlan0` 或 `wlan1`。
+去找 `wlan0` 或 `wlan1`。
 
 ---
 
-### 第五步：启用监听模式 {#enable-monitor-mode}
+### 5. 开启监听模式 {#enable-monitor-mode}
+
+这是最关键的一步，把网卡切换到“监听”状态。
 
 ```bash
 sudo airmon-ng check kill
 sudo airmon-ng start wlan1
 ```
 
-使用 `iwconfig` 确认——寻找带有 `Mode:Monitor` 的 `wlan1mon` 接口。
+再用 `iwconfig` 瞧瞧，看到 `Mode:Monitor` 的 `wlan1mon` 接口了吗？那就是它！
 
 ---
 
-### 第六步：测试数据包注入 {#test-packet-injection}
+### 6. 测试数据包注入 {#test-packet-injection}
+
+光能听还不行，还得能发包。
 
 ```bash
 sudo aireplay-ng --test wlan1mon
 ```
 
-如果成功，你会看到：
+如果看到下面这两行，恭喜你，你的 ACS 已经完全起飞了：
 
 ```
 Trying broadcast probe requests...
 Injection is working!
-Found 1 AP
 ```
 
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### 第一步：切换到国内镜像源
+### 1. 切换阿里云镜像
 
-#### Ubuntu 24.04 (Noble)
+#### 如果是 Ubuntu 24.04 (Noble)
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
 ```
 
-删除原有内容，粘贴：
+内容换成阿里云的：
 
 ```
 Types: deb
@@ -167,13 +176,13 @@ Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 ```
 
-#### Ubuntu 22.04 (Jammy)
+#### 如果是 Ubuntu 22.04 (Jammy)
 
 ```bash
 sudo nano /etc/apt/sources.list
 ```
 
-替换为：
+换成这个：
 
 ```
 deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
@@ -181,23 +190,18 @@ deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe mul
 deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
 ```
 
+别忘了跑一下：
+
 ```bash
 sudo apt update
 ```
 
 ---
 
-### 第二步：安装编译依赖
+### 2. 安装依赖并部署驱动
 
 ```bash
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-```
-
----
-
-### 第三步：从 Gitee 克隆并安装驱动
-
-```bash
 git clone https://gitee.com/mirrors/8821au.git
 cd 8821au
 sudo ./install-driver.sh
@@ -206,18 +210,11 @@ sudo reboot
 
 ---
 
-### 第四步：启用监听模式
+### 3. 验证功能
 
 ```bash
 sudo airmon-ng check kill
 sudo airmon-ng start wlan1
-```
-
----
-
-### 第五步：测试数据包注入
-
-```bash
 sudo aireplay-ng --test wlan1mon
 ```
 
@@ -225,13 +222,13 @@ sudo aireplay-ng --test wlan1mon
 
 ## Debian
 
-### 第一步：切换到国内镜像源
+### 1. 换成清华镜像
 
 ```bash
 sudo nano /etc/apt/sources.list
 ```
 
-粘贴以下内容（适用于 Debian 12 Bookworm）：
+粘贴这个（适用于 Debian 12）：
 
 ```
 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
@@ -239,144 +236,84 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib n
 deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
 ```
 
-```bash
-sudo apt update
-```
+跑一下更新：`sudo apt update`。
 
-### 第二步：安装编译依赖
+### 2. 编译与安装
 
 ```bash
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
-```
-
-### 第三步：克隆并安装
-
-```bash
 git clone https://gitee.com/mirrors/8821au.git
 cd 8821au
 sudo ./install-driver.sh
 sudo reboot
 ```
 
-### 第四步：启用监听模式
-
-```bash
-sudo airmon-ng check kill
-sudo airmon-ng start wlan1
-```
-
-使用 `iwconfig` 确认是否出现了 `Mode:Monitor` 的 `wlan1mon`。
-
-### 第五步：测试数据包注入
-
-```bash
-sudo aireplay-ng --test wlan1mon
-```
+之后的操作和 Kali 是一样一样的。
 
 ---
 
-## 树莓派 4B / 5
+## 树莓派 (Raspberry Pi) 4B / 5
 
-### 第一步：下载并烧录 Kali ARM64
+### 1. 镜像选择
 
-官方地址：https://www.kali.org/get-kali/#kali-arm —— 选择树莓派 4/5 64-bit 版本。
+建议直接用 Kali ARM64。
+国内镜像下载：[华为云 Kali 镜像](https://repo.huaweicloud.com/kali-images/)。
 
-国内镜像：https://repo.huaweicloud.com/kali-images/
-
-```bash
-lsblk
-sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=progress conv=fsync
-sync
-```
-
-默认账号密码：**kali / kali**。
-
-### 第二步：切换到国内镜像源
+### 2. 系统升级与驱动安装
 
 ```bash
+# 换源
 sudo nano /etc/apt/sources.list
-```
+# 换成中科大：deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 
-```
-deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
-```
-
-```bash
 sudo apt update && sudo apt full-upgrade -y
 sudo reboot
-```
 
-### 第三步：安装编译依赖
-
-```bash
+# 装依赖和驱动
 sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
-```
-
-### 第四步：克隆并安装驱动
-
-```bash
 git clone https://gitee.com/mirrors/8821au.git
 cd 8821au
 sudo ./install-driver.sh
 sudo reboot
 ```
 
-### 第五步：启用监听模式
-
-在带有内置 Wi-Fi 的树莓派上，AWUS036ACS 通常显示为 `wlan1`。
-
-```bash
-sudo airmon-ng check kill
-sudo airmon-ng start wlan1
-```
-
-### 第六步：测试数据包注入
-
-```bash
-sudo aireplay-ng --test wlan1mon
-```
-
 ---
 
-## 虚拟机 USB 透传 {#virtual-machine-usb-passthrough}
+## 虚拟机 USB 透传避坑指南 {#virtual-machine-usb-passthrough}
+
+很多小伙伴卡在虚拟机里找不到网卡，其实就差这么几步：
 
 ### VirtualBox
+1. 关掉虚拟机。
+2. **设置 -> USB** -> 勾选 **USB 2.0 控制器**。
+3. 点那个带 **+** 的小图标，选 **Realtek (ID: 0bda:0811)**。
+4. 开机，进系统 `lsusb` 检查。
 
-1. 关闭虚拟机 → **设置 → USB** → 启用 **USB 2.0 控制器**。
-2. 点击 **+** 图标 → 选择：**Realtek** (ID: 0bda:0811)。
-3. 启动虚拟机。在虚拟机内运行 `lsusb` 确认看到 `0bda:0811`，然后按照上文的 Kali 步骤操作。
-
-### VMware Fusion / Workstation
-
-1. **虚拟机 → USB 与蓝牙** → 找到 **Realtek 8811AU** → 点击 **连接**。
-2. 运行 `lsusb` 确认，然后按照上文的 Kali 步骤操作。
+### VMware
+1. 在顶部菜单选 **虚拟机 -> USB 与蓝牙**。
+2. 找到 **Realtek 8811AU**，点 **连接**。
 
 ---
 
-## 常见问题排除
+## 常见问题“救火”站
 
-| 问题 | 可能原因 | 解决方法 |
+| 遇到的麻烦 | 可能的原因 | 怎么解决 |
 |---------|-------------|-----|
-| `lsusb` 看不到 0bda:0811 | 网卡未供电或线材问题 | 尝试更换 USB 接口 |
-| `install-driver.sh` 运行失败 | 缺少内核头文件 | 运行 `sudo apt install linux-headers-$(uname -r)` |
-| Gitee 克隆失败 | 网络不稳定 | 在 gitee.com 搜索 `8821au` 换一个仓库试试 |
-| `airmon-ng start` 失败 | NetworkManager 干扰 | 先运行 `sudo airmon-ng check kill` |
-| 监听模式下看不到流量 | 信道设置错误 | 设置信道：`iwconfig wlan1mon channel 6` |
-| 注入测试显示 "No Answer" | 距离 AP 太远 | 靠近一点。确保使用的是 `wlan1mon` 而不是 `wlan1`。 |
+| `lsusb` 刷不出 0bda:0811 | 没插紧或 USB 口供电不足 | 换个口，或者直接插主板背后的口 |
+| `install-driver.sh` 报错 | 没装内核头文件 | 跑一下 `sudo apt install linux-headers-$(uname -r)` |
+| `airmon-ng` 开启失败 | 被系统自带网络管理干扰了 | 必须先跑 `sudo airmon-ng check kill` |
+| 注入测试是 "No Answer" | 离路由器太远了 | 凑近点试试。记得是用 `wlan1mon` 这个名字 |
 
-> **关于 VIF 的说明：** RTL8811AU 驱动不支持虚拟接口（VIF）。这意味着这款网卡无法同时开启监听模式和正常上网模式。
+> **特别提醒：** RTL8811AU 不支持 VIF。也就是说，它不能一边开着监听模式一边连 Wi-Fi 上网，它得专心干一件事。
 
-## 国内资源参考
+## 国内常用资源汇总
 
-| 资源类型 | 地址 | 说明 |
+| 资源名称 | 地址 | 用途 |
 |----------|-----|---------|
-| Alfa 官方下载 | [files.alfa.com.tw](https://files.alfa.com.tw) | 驱动包下载 |
-| Alfa 官方文档 | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 产品手册 |
-| 8821au 驱动 (Gitee) | [gitee.com/mirrors/8821au](https://gitee.com/mirrors/8821au) | RTL8811AU 国内镜像驱动 |
-| 清华大学镜像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推荐 |
-| 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 推荐 |
-| 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 镜像 |
+| Alfa 官方下载 | [files.alfa.com.tw](https://files.alfa.com.tw) | 官方驱动包 |
+| 8821au 驱动镜像 | [Gitee 镜像](https://gitee.com/mirrors/8821au) | 国内免翻墙克隆 |
+| 中科大镜像站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 首选 |
+| 阿里云镜像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推荐 |
 
 ## 更多 Alfa 网卡中国安装指南
 
@@ -389,4 +326,4 @@ sudo aireplay-ng --test wlan1mon
 - [AWUS036AXML 中国安装指南](/zh-cn/blog/awus036axml-china-install-guide/) — MT7921AUN, WiFi 6E
 - [AWUS036EACS 中国安装指南](/zh-cn/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
-有问题？欢迎在下方留言，或通过 [yupitek.com](https://yupitek.com/zh-cn/contact/) 联系我们。
+折腾过程中遇到搞不定的，欢迎在下面评论区留言，或者去 [yupitek.com](https://yupitek.com/zh-cn/contact/) 找我们。

@@ -12,89 +12,108 @@ series: ["Alfa 中国安装全攻略"]
 related_product: "/zh-cn/products/alfa/awus036axer/"
 ---
 
-刚拿到 AWUS036AXER，插上去 Linux 没反应？正常。这块网卡用的是 RTL8832BU 芯片，在内核版本 6.14 以下驱动不是开箱即用的。好在 Ubuntu 24.04（内核 6.8）已经原生集成了，其他系统我们用 Gitee 镜像也能 10 分钟搞定。
+刚收到这款小巧玲珑的 AWUS036AXER，插上去发现 Linux 没反应？别担心，这很正常。这块网卡用的是 RTL8832BU 芯片，在内核版本 6.14 以下驱动不是开箱即用的。好在如果你用的是 Ubuntu 24.04，系统已经内置好了，插上就能飞。
 
-> **安全研究注意：** RTL8832BU 的监听模式支持比较有限。如果你追求极致的数据包注入稳定性，建议选择 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/) 或 [AWUS036ACH](/zh-cn/blog/awus036ach-china-install-guide/)。
+对于其他系统的用户，我也帮大家找好了国内的 Gitee 镜像。不用翻墙，咱们花个 10 分钟就能把它“调教”好。
 
-> **信号注意：** AXER 是迷你型网卡，天线是内置的。虽然方便携带，但如果你需要远距离抓包，带外置大天线的型号会更猛。
+> **安全研究避坑指南：** AXER 虽然支持 WiFi 6，但它的 RTL8832BU 芯片在监听模式上的表现比较一般。如果你是为了深度渗透和数据包注入而来的，我更建议你选择 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/) 或 [AWUS036ACH](/zh-cn/blog/awus036ach-china-install-guide/)。
 
-## 开始之前
+> **信号小贴士：** AXER 是迷你型网卡，天线是内置的，主打的是便携。如果你需要远距离抓包或信号覆盖，带外置大天线的型号会更适合你。
 
-1. **ALFA AWUS036AXER** 网卡
-2. USB 数据线
-3. 能访问国内镜像的网络
+## 动手前的准备
 
-插好网卡，确认系统认到了：
+1. **ALFA AWUS036AXER** 网卡本人
+2. 畅通的网络（用来下载镜像源）
+
+插好网卡，咱们先看看系统有没有认出它。打开终端输入：
 
 ```bash
 lsusb
 ```
 
-找这一行：
+扫一眼输出，寻找这一行：
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
 ```
 
-## 选择你的系统
+看到 `0bda:885a` 就稳了。接着根据你的系统选教程。
+
+## 你的系统是哪一个？
 
 - [Kali Linux](#kali-linux)
 - [Ubuntu 22.04 / 24.04](#ubuntu-2204--2404)
 - [Debian](#debian)
-- [Raspberry Pi 4B / 5](#raspberry-pi-4b--5)
+- [树莓派 4B / 5](#raspberry-pi-4b--5)
+
+如果是老手，可以直接跳转到：
+- [开启监听模式（测试版）](#enable-monitor-mode)
+- [虚拟机 USB 透传避坑指南](#virtual-machine-usb-passthrough)
 
 ---
 
 ## Kali Linux
 
-### 第一步：切换国内镜像源
+### 1. 先换个“快车道”（切换国内镜像）
+
+为了下载不卡顿，咱们先给系统换上中科大的镜像源。
 
 ```bash
 sudo nano /etc/apt/sources.list
 ```
 
-粘贴这一行：
+把里面的内容全删了，换成这个：
 
 ```
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
+按 **Ctrl+O** 保存，**Enter** 确认，再按 **Ctrl+X** 退出。然后跑一下更新：
+
 ```bash
 sudo apt update
 ```
 
-### 第二步：安装编译依赖
+---
+
+### 2. 把编译工具装齐
 
 ```bash
 sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 ```
 
-### 第三步：从 Gitee 下载驱动
+---
+
+### 3. 从 Gitee 把驱动“搬”过来
+
+不用翻墙，咱们直接用国内的 Gitee 镜像。
 
 ```bash
 git clone https://gitee.com/mirrors/rtl8852bu.git
 cd rtl8852bu
 ```
 
-> **提示：** 如果 Gitee 这个地址打不开，搜 `rtl8852bu` 找个最近有更新的就行。
+---
 
-### 第四步：编译并安装
+### 4. 正式安装并重启
 
 ```bash
 sudo ./install-driver.sh
 sudo reboot
 ```
 
-验证驱动：
+重启回来，检查下驱动有没有乖乖工作：
 
 ```bash
 lsmod | grep 88x2bu
 iwconfig
 ```
 
-### 第五步：开启监听模式 {#enable-monitor-mode}
+---
 
-> **注意：** 这块网卡的监听模式比较挑系统，不一定百分百成功。
+### 5. 开启监听模式 {#enable-monitor-mode}
+
+> **注意：** 这一步仅供测试，因为该网卡的监听模式支持并不完美。
 
 ```bash
 sudo airmon-ng check kill
@@ -104,57 +123,34 @@ sudo ip link set wlan1 up
 iwconfig
 ```
 
-### 第六步：测试数据包注入 {#test-packet-injection}
-
-```bash
-sudo aireplay-ng --test wlan1
-```
-
-如果注入不稳定，还是那句话：换 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)。
-
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — 内核自带，直接用
+### 如果你是 Ubuntu 24.04 (Noble) — 躺赢模式
 
-24.04 的内核比较新，通常插上就能用。先换个阿里云镜像：
+Ubuntu 24.04 内核已经原生支持，插上就能用。建议换个阿里云源让更新更快：
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
-```
+# 将 URIs 换成阿里云的：http://mirrors.aliyun.com/ubuntu/
 
-```
-Types: deb
-URIs: http://mirrors.aliyun.com/ubuntu/
-Suites: noble noble-updates noble-security
-Components: main restricted universe multiverse
-Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
-```
-
-```bash
 sudo apt update
 sudo modprobe 88x2bu
 iwconfig
 ```
 
-看到接口就搞定了！
+看到接口出现就大功告成了！
 
 ---
 
-### Ubuntu 22.04 (Jammy) — 需要手动装
+### 如果你是 Ubuntu 22.04 (Jammy) — 需要手动装一下
 
 ```bash
+# 换成阿里云
 sudo nano /etc/apt/sources.list
-```
+# deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
 
-```
-deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
-```
-
-```bash
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
 git clone https://gitee.com/mirrors/rtl8852bu.git
@@ -167,17 +163,12 @@ sudo reboot
 
 ## Debian
 
+### 1. 换成清华镜像
+
 ```bash
 sudo nano /etc/apt/sources.list
-```
+# deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
 
-```
-deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
-deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
-deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
-```
-
-```bash
 sudo apt update
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
 git clone https://gitee.com/mirrors/rtl8852bu.git
@@ -188,15 +179,9 @@ sudo reboot
 
 ---
 
-## Raspberry Pi 4B / 5
+## 树莓派 (Raspberry Pi) 4B / 5
 
-```bash
-sudo nano /etc/apt/sources.list
-```
-
-```
-deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
-```
+直接用 Kali ARM64 镜像最省事：
 
 ```bash
 sudo apt update && sudo apt full-upgrade -y
@@ -209,39 +194,34 @@ sudo reboot
 
 ---
 
-## 虚拟机 USB 直通 {#virtual-machine-usb-passthrough}
+## 虚拟机 USB 透传避坑指南 {#virtual-machine-usb-passthrough}
 
 ### VirtualBox
-
-1. **设置 → USB** → 启用 **USB 3.0 (xHCI)**。
-2. 添加过滤器：**Realtek** (ID: 0bda:885a)。
-3. 启动虚拟机，按 Kali 步骤操作。
+1. 关掉虚拟机。
+2. **设置 -> USB** -> 勾选 **USB 3.0 (xHCI) 控制器**。
+3. 点那个 **+** 图标，选 **Realtek (ID: 0bda:885a)**。
 
 ### VMware
-
-1. **虚拟机 → USB 与蓝牙** → 找到 **Realtek RTL8832BU** → **连接**。
-2. 确认 `lsusb` 能看到后，按 Kali 步骤操作。
+1. 在顶部菜单选 **虚拟机 -> USB 与蓝牙**。
+2. 找到 **Realtek RTL8832BU**，点 **连接**。
 
 ---
 
-## 故障排查
+## 常见问题“救火”站
 
-| 问题 | 可能原因 | 解决方法 |
+| 遇到的麻烦 | 可能的原因 | 怎么解决 |
 |------|----------|----------|
-| `lsusb` 没反应 | 没插好或供电不足 | 换个口试试 |
-| `install-driver.sh` 报错 | 缺少头文件 | `sudo apt install linux-headers-$(uname -r)` |
-| Gitee 下载太慢 | 网络波动 | 换个镜像仓库试试 |
-| 监听模式不行 | 硬件限制 | 正常，这块网卡主打的是 WiFi 6 高速上网 |
+| `lsusb` 刷不出 0bda:885a | 没插紧或 USB 供电不足 | 换个口试试，直接插主板背后的口 |
+| `install-driver.sh` 报错 | 缺少内核头文件 | 跑 `sudo apt install linux-headers-$(uname -r)` |
+| 监听模式不稳定 | 芯片本身限制 | 正常，这块网卡主打的是 WiFi 6 便携上网 |
 
-## 国内镜像速查
+## 国内常用资源汇总
 
-| 资源 | 地址 | 用途 |
+| 资源名称 | 地址 | 说明 |
 |------|------|------|
-| Alfa 官方驱动 | [files.alfa.com.tw](https://files.alfa.com.tw) | 原始包 |
-| rtl8852bu (Gitee) | [gitee.com/mirrors/rtl8852bu](https://gitee.com/mirrors/rtl8852bu) | 驱动源码 |
-| 清华大学镜像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian |
-| 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
-| 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
+| Alfa 官方下载 | [files.alfa.com.tw](https://files.alfa.com.tw) | 官方驱动包 |
+| rtl8852bu 驱动镜像 | [Gitee 镜像](https://gitee.com/mirrors/rtl8852bu) | 国内克隆专用 |
+| 清华大学镜像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Debian/Ubuntu 推荐 |
 
 ## 更多 Alfa 网卡中国安装指南
 
@@ -254,4 +234,4 @@ sudo reboot
 - [AWUS036AXML 安装指南](/zh-cn/blog/awus036axml-china-install-guide/)
 - [AWUS036EACS 安装指南](/zh-cn/blog/awus036eacs-china-install-guide/)
 
-有问题？在下面留言，或者来 [yupitek.com](https://yupitek.com/zh-cn/contact/) 联系我们。
+折腾过程中遇到搞不定的，欢迎在下面留言，或者去 [yupitek.com](https://yupitek.com/zh-cn/contact/) 找我们。

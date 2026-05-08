@@ -22,7 +22,8 @@ autoSwitchAppearance = true
   showWordCount    = false
   showTableOfContents = true
   showBreadcrumbs  = true
-  showRelatedContent = false
+  showRelatedContent = true
+  relatedContentLimit = 3
 
 [list]
   groupByYear = false

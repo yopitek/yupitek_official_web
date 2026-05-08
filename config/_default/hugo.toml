@@ -21,3 +21,7 @@ theme = "blowfish"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[related]
+  includeNewer = true
+  threshold = 50

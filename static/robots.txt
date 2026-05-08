@@ -10,6 +10,11 @@ Allow: /
 User-agent: Sogou
 Allow: /
 
+# AI Crawlers - allow ClaudeBot for AI-powered search integration
+User-agent: ClaudeBot
+Content-Signal: search=yes,ai-train=no
+Allow: /
+
 # Block form confirmation pages from indexing
 Disallow: /zh-tw/contact/confirm/
 Disallow: /zh-cn/contact/confirm/

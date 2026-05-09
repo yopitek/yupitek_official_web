@@ -1,3 +1,3 @@
 baseURL = 'https://yupitek.com/'
-languageCode = 'zh-tw'
+locale = 'zh-tw'
 title = 'Yupitek'

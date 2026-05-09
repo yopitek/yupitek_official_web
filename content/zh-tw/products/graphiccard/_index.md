@@ -57,6 +57,9 @@ featureimage: "/images/products/graphiccard/banner-graphiccard.png"
   {{< card title="MSI RTX5080 16G VENTUS 3X OC" href="/zh-tw/products/graphiccard/msi-rtx5080-ventus-3x-oc/" image="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc.png" >}}
     MSI VENTUS 3X OC，簡潔設計，適合主流機箱安裝，高 CP 值。
   {{< /card >}}
+  {{< card title="MSI RTX5080 16G VENTUS 3X OC WHITE" href="/zh-tw/products/graphiccard/msi-rtx5080-ventus-3x-oc-white/" image="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.png" >}}
+    MSI VENTUS 3X OC 白色版，白色機箱首選，相同高 CP 值。
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

@@ -19,7 +19,7 @@ featureimage: "/images/products/graphiccard/banner-graphiccard.png"
   {{< card title="GIGABYTE RTX5080 GAMING OC 16G" href="/es/products/graphiccard/gigabyte-rtx5080-gaming-oc/" image="/images/products/graphiccard/gigabyte-rtx5080-gaming-oc.png" >}}
     GIGABYTE GAMING OC — triple ventilador, versión overclock, excelente precio/rendimiento.
   {{< /card >}}
-  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/es/products/graphiccard/msi-rtx5080-suprim-liquid/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid.png" >}}
+  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/es/products/graphiccard/msi-rtx5080-suprim-liquid-soc/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid.png" >}}
     MSI SUPRIM LIQUID — enfriamiento líquido todo-en-uno para máximo rendimiento.
   {{< /card >}}
 {{< /card-group >}}

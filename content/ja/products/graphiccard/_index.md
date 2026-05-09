@@ -37,7 +37,7 @@ YopitekはNVIDIA RTX 5080シリーズグラフィックカードの調達サー�
   {{< card title="MSI RTX5080 16G GAMING TRIO OC" href="/ja/products/graphiccard/msi-rtx5080-gaming-trio-oc/" image="/images/products/graphiccard/msi-rtx5080-gaming-trio-oc.png" >}}
     MSI GAMING TRIO OC — トリプルファンフラッグシップ冷却。
   {{< /card >}}
-  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/ja/products/graphiccard/msi-rtx5080-suprim-liquid/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid.png" >}}
+  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/ja/products/graphiccard/msi-rtx5080-suprim-liquid-soc/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid.png" >}}
     MSI SUPRIM LIQUID — 一体型水冷フラッグシップ、極限オーバークロック対応。
   {{< /card >}}
 {{< /card-group >}}

@@ -60,10 +60,10 @@ featureimage: "/images/products/graphiccard/banner-graphiccard.png"
   {{< card title="MSI RTX5080 16G VENTUS 3X OC WHITE" href="/zh-cn/products/graphiccard/msi-rtx5080-ventus-white/" image="/images/products/graphiccard/msi-rtx5080-ventus-white.png" >}}
     MSI VENTUS 3X OC 白色版，白色机箱首选，简洁高性价比。
   {{< /card >}}
-  {{< card title="MSI RTX5080 16G INSPIRE 3X OC" href="/zh-cn/products/graphiccard/msi-rtx5080-inspire/" image="/images/products/graphiccard/msi-rtx5080-inspire.png" >}}
+  {{< card title="MSI RTX5080 16G INSPIRE 3X OC" href="/zh-cn/products/graphiccard/msi-rtx5080-inspire-3x-oc/" image="/images/products/graphiccard/msi-rtx5080-inspire.png" >}}
     MSI INSPIRE，创意设计外观，性能与美观兼备。
   {{< /card >}}
-  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/zh-cn/products/graphiccard/msi-rtx5080-suprim-liquid/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid.png" >}}
+  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/zh-cn/products/graphiccard/msi-rtx5080-suprim-liquid-soc/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid.png" >}}
     MSI SUPRIM LIQUID，一体式水冷旗舰款，极致超频散热方案。
   {{< /card >}}
 {{< /card-group >}}

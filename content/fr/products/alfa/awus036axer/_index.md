@@ -1,55 +1,106 @@
 ---
-title: "ALFA AWUS036AXER — Adaptateur USB Wi-Fi 6 Ultra-plat"
-description: "Adaptateur Wi-Fi USB ALFA AWUS036AXER — distribue par Yopitek."
+title: "ALFA AWUS036AXER — Adaptateur USB Nano Ultra-Slim Wi-Fi 6"
+description: "ALFA AWUS036AXER avec chipset Realtek RTL8832BU. Wi-Fi 6 double bande format nano (~65×24×10mm). Pour une connectivité quotidienne — non recommandé pour Kali Linux ou la recherche en sécurité."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-featureimage: "/images/products/alfa/awus036axer.png"
+tags: ["Wi-Fi 6", "802.11ax", "Ultra-Slim", "USB 3.2", "Portable", "Nano"]
 ---
 
-## Apercu du produit
+## Présentation du Produit
 
-L'adaptateur ALFA AWUS036AXER est un adaptateur Wi-Fi USB haute puissance, idealement congu pour la recherche en securite et les reseaux.
+L'AWUS036AXER est équipé du chipset Realtek RTL8832BU avec Wi-Fi 6 (802.11ax) double bande (2,4 GHz + 5 GHz), jusqu'à 1800 Mbps (2,4 GHz : 573 Mbps + 5 GHz : 1200 Mbps). Design nano ultra-slim (~65 × 24 × 10 mm, ~10g) pour une utilisation quotidienne portable.
 
-{{< alert "circle-info" >}}
-**Remarque macOS:** Tous les adaptateurs ALFA ont un support limite/pas de support macOS. macOS 11 Big Sur et plus tard, et Apple Silicon (M1/M2/M3) ne sont **PAS** supports. Le support macOS maximal est 10.15 Catalina sur les Mac Intel.
-{{< /alert >}}
+> ⚠️ **Remarque :** Format nano — **pas de connecteur RP-SMA**, l'antenne ne peut pas être améliorée. **NON recommandé pour Kali Linux ou la recherche en sécurité**.
 
-## Caracteristiques principales
+> **Avis macOS :** Tous les adaptateurs ALFA ont un support macOS limité ou inexistant. macOS 11 Big Sur et versions ultérieures, ainsi qu'Apple Silicon (M1/M2/M3), ne sont **PAS** pris en charge. Le support macOS maximum est 10.15 Catalina sur Mac Intel.
 
-- Haute puissance et longue portee
-- Support du mode monitor et packet injection
-- Compatible Linux, Kali Linux, Windows
-- Antenne detachable RP-SMA
+## Caractéristiques Principales
 
-## Specifications techniques
+- Wi-Fi 6 (802.11ax) Double Bande : 2,4 GHz + 5 GHz
+- Chipset Realtek RTL8832BU
+- Jusqu'à 1800 Mbps
+- Design nano ultra-slim (~65×24×10mm, ~10g)
+- USB 3.2 Gen 1 Type-A
+- WPA3/WPA2/WPA/WEP
+- ⚠️ Pas de connecteur RP-SMA, antenne intégrée
 
-| Parametre | Specification |
-|-------|-------|-------|
-| Marque | ALFA Network |
-| Type | Adaptateur USB Wi-Fi |
-| Connecteur | RP-SMA |
-| Pays d'origine | TaIwan |
+## Spécifications Techniques
 
-## Modes de fonctionnement
+| Élément | Spécification |
+|------|---------------|
+| Chipset | Realtek RTL8832BU |
+| Standards WiFi | IEEE 802.11 a/b/g/n/ac/ax (WiFi 6) |
+| Bandes de Fréquence | 2,4 GHz + 5 GHz (pas de 6 GHz) |
+| Débit Maximum | 1800 Mbps (2,4G : 573 Mbps + 5G : 1200 Mbps) |
+| Antenne | Nano intégrée (pas de RP-SMA) |
+| Interface USB | USB 3.2 Gen 1 Type-A |
+| Dimensions | ~65 × 24 × 10 mm, ~10g |
+| Sécurité Sans Fil | WPA3 / WPA2 / WPA / WEP |
 
-- **Station Mode:** Connexion reseau classique
-- **Monitor Mode:** Capture de paquets sans fil
-- **Master Mode:** Point d'acces
-- **Repeater Mode:** Extension de portee
+## Compatibilité Système d'Exploitation
 
-## Telechargements
+| Système d'Exploitation | Statut | Notes |
+|----|--------|-------|
+| Windows 10/11 | ✅ Pris en charge | Pilote disponible sur le site Alfa |
+| macOS | ❌ Non pris en charge | Aucun support macOS 11+ ou Apple Silicon |
+| Ubuntu | ⚠️ Pilote requis | Intégré au noyau ≥ 6.14 (Ubuntu 24.10+) ; les versions antérieures nécessitent un DKMS manuel |
+| Kali Linux | ⚠️ Limité | Mode moniteur limité sur les noyaux < 6.12 ; non recommandé pour les tests d'intrusion |
+| NetHunter | ⚠️ Limité | Dépendant du noyau |
 
-Consultez la Consultez la pour les pilotes officiels ALFA Network. [page d'Assistance Technique](/fr/support/).
+## Compatibilité Matérielle
 
----
+| Matériel | Statut | Notes |
+|----------|--------|-------|
+| Raspberry Pi 4/5 | ⚠️ Pilote requis | Installation manuelle nécessaire sur Pi OS avec noyau < 6.14 |
+| PC Bureau/Laptop | ✅ Pris en charge | USB-A standard |
 
-Besoin d'un devis ou d'un prix en gros? [Contactez-nous](/fr/contact/)
+## Fonctionnalités Avancées
 
----
+| Fonctionnalité | Statut |
+|---------|--------|
+| Mode Moniteur | ⚠️ Limité |
+| Injection de Paquets | ⚠️ Limité |
+| Mode AP Logiciel | ✅ Oui |
+| Bluetooth | ❌ Non |
+
+## Contenu de la Boîte
+
+- 1× Adaptateur nano AWUS036AXER
+
+## Ressources & Liens
+
+| Ressource | Lien |
+|----------|------|
+| Documentation Officielle | https://docs.alfa.com.tw/ |
+| Pilote Linux (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20240418 |
+
+## Fiche Technique du Produit
+
+| Document | Téléchargement |
+|------|------|
+| Fiche Technique Officielle (PDF) | [📄 Télécharger la Fiche AWUS036AXER](/docs/alfa/AWUS036AXER_spec.pdf) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/awus036axer.png" alt="ALFA AWUS036AXER — Adaptateur USB Wi-Fi 6 Ultra-plat" />
+  <img src="/images/products/alfa/awus036axer_image_1.png" alt="ALFA AWUS036AXER" />
 {{< /gallery >}}
+
+---
+
+## Améliorations d'Antennes Compatibles
+
+Tous les adaptateurs ALFA disposent d'un connecteur RP-SMA standard. Améliorez les performances avec une antenne externe optionnelle pour une portée et un gain accrus :
+
+| Antenne | Fréquence | Gain | Type |
+|---------|-----------|------|------|
+| [ALFA APA-M04](/fr/products/alfa/apa-m04/) | 2,4 GHz | 7 dBi | Panneau Intérieur |
+| [ALFA APA-M25](/fr/products/alfa/apa-m25/) | 2,4 / 5 GHz | 7 dBi | Panneau Intérieur Double Bande |
+| [ALFA APA-M25-6E](/fr/products/alfa/apa-m25-6e/) | 2,4 / 5 / 6 GHz | 7 dBi | Panneau Intérieur Tri-Bande |
+| [ARS 25-57A](/fr/products/alfa/ars-25-57a/) | 2,4 / 5 GHz | 2,5 / 7 dBi | Omni Extérieur |
+| [ARS NT5B7](/fr/products/alfa/ars-nt5b7/) | 2,4 / 5 GHz | 5 / 7 dBi | Omni |
+
+{{< alert >}}
+Besoin d'un devis ou de plus d'informations ? [Contactez-nous](/fr/contact/)
+{{< /alert >}}

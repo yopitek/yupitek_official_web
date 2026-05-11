@@ -1,5 +1,5 @@
 ---
-title: "HAK5 Security Research Tools"
+title: "HAK5 — Sicherheitsforschungstools"
 description: "Yopitek vertreibt HAK5 Sicherheitsforschungstools: WiFi Pineapple, Bash Bunny, USB Rubber Ducky, Shark Jack, O.MG Cable und mehr — die Markenwahl für autorisierte Penetrationstests."
 date: 2026-03-12
 draft: false

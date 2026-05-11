@@ -1,5 +1,5 @@
 ---
-title: "Ubiquiti UniFi Enterprise Wireless Network Equipment"
+title: "Ubiquiti UniFi — Enterprise-Drahtlosnetzwerk-Ausrüstung"
 description: "Yopitek vertreibt Ubiquiti UniFi Wi-Fi 7 Enterprise-Wireless-Ausrüstung: U7 Pro Serie, Cloud Gateway, Wave mmWave, Switches — das komplette UniFi-Ökosystem."
 date: 2026-03-12
 draft: false

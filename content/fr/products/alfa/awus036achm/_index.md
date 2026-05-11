@@ -1,55 +1,79 @@
 ---
-title: "ALFA AWUS036ACHM — Adaptateur USB Wi-Fi 5 AC1200"
-description: "Adaptateur Wi-Fi USB ALFA AWUS036ACHM — distribue par Yopitek."
+title: "ALFA AWUS036ACHM — Adaptateur USB Sans Fil AC433 Double Bande Compact"
+description: "ALFA AWUS036ACHM, MediaTek MT7610U, AC433 double bande, USB 2.0, conception compacte à antenne unique, supporte le Mode Moniteur, idéal pour une utilisation portable."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-featureimage: "/images/products/alfa/awus036achm.png"
+tags: ["Wi-Fi 5", "AC433", "USB 2.0", "Dual-Band", "Compact"]
 ---
 
-## Apercu du produit
-
-L'adaptateur ALFA AWUS036ACHM est un adaptateur Wi-Fi USB haute puissance, idealement congu pour la recherche en securite et les reseaux.
-
-{{< alert "circle-info" >}}
-**Remarque macOS:** Tous les adaptateurs ALFA ont un support limite/pas de support macOS. macOS 11 Big Sur et plus tard, et Apple Silicon (M1/M2/M3) ne sont **PAS** supports. Le support macOS maximal est 10.15 Catalina sur les Mac Intel.
+{{< alert "warning" >}}
+**Avis d'utilisation légale** : Les fonctionnalités de Mode Moniteur sont destinées exclusivement aux tests de sécurité autorisés, à la recherche éducative et aux tests de pénétration légaux. Assurez-vous d'avoir une autorisation explicite du propriétaire du réseau cible avant utilisation.
 {{< /alert >}}
 
-## Caracteristiques principales
+## Présentation du Produit
 
-- Haute puissance et longue portee
-- Support du mode monitor et packet injection
-- Compatible Linux, Kali Linux, Windows
-- Antenne detachable RP-SMA
+L'AWUS036ACHM est alimenté par le chipset MediaTek MT7610U et prend en charge le double bande IEEE 802.11ac avec un débit maximal de 433 Mbps sur 5 GHz. Sa conception compacte à antenne unique avec un câble d'extension USB de 1 m le rend idéal pour les cas d'utilisation portables ou à faible consommation d'énergie.
 
-## Specifications techniques
+## Spécifications Techniques
 
-| Parametre | Specification |
-|-------|-------|-------|
-| Marque | ALFA Network |
-| Type | Adaptateur USB Wi-Fi |
-| Connecteur | RP-SMA |
-| Pays d'origine | TaIwan |
+| Élément | Spécification |
+|---------|--------------|
+| Modèle | AWUS036ACHM |
+| Chipset | MediaTek MT7610U |
+| Norme Wi-Fi | IEEE 802.11 a/b/g/n/ac |
+| Bande de Fréquence | Double Bande 2,4 GHz / 5 GHz |
+| Débit Maximal | 802.11n : 150 Mbps / 802.11ac : 433 Mbps |
+| Antenne | 1 × Antenne double bande amovible, 5 dBi |
+| Connecteur d'Antenne | RP-SMA femelle |
+| Interface | USB 2.0 |
+| Sécurité | WEP, WPA, WPA2, WPA Mixed, WPS |
+| Indicateur LED | Alimentation / WLAN |
 
-## Modes de fonctionnement
+## Compatibilité Système d'Exploitation
 
-- **Station Mode:** Connexion reseau classique
-- **Monitor Mode:** Capture de paquets sans fil
-- **Master Mode:** Point d'acces
-- **Repeater Mode:** Extension de portee
+| Système d'Exploitation | Statut |
+|------------------------|--------|
+| Windows | ✅ Pilote requis |
+| Linux | ✅ Pris en charge |
+| Kali Linux | ✅ Support complet |
+| Raspberry Pi OS | ✅ Pris en charge |
 
-## Telechargements
+## Contenu de la Boîte
 
-Consultez la Consultez la pour les pilotes officiels ALFA Network. [page d'Assistance Technique](/fr/support/).
+- Adaptateur USB sans fil AWUS036ACHM × 1
+- Antenne double bande × 1
+- Câble USB (1 m) × 1
+- Guide d'installation rapide × 1
+- Kit de clip moniteur × 1
 
----
+## Téléchargements des Pilotes
 
-Besoin d'un devis ou d'un prix en gros? [Contactez-nous](/fr/contact/)
-
----
+| Plateforme | Lien |
+|------------|------|
+| Téléchargement du Pilote | [Dépôt Officiel ALFA](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACHM) |
+| Documentation Officielle | [Documentation Produit ALFA](https://docs.alfa.com.tw/Product/AWUS036ACHM/) |
 
 {{< gallery >}}
-  <img src="/images/products/alfa/awus036achm.png" alt="ALFA AWUS036ACHM — Adaptateur USB Wi-Fi 5 AC1200" />
+  <img src="/images/products/alfa/awus036achm_image_1.png" alt="ALFA AWUS036ACHM" />
 {{< /gallery >}}
+
+---
+
+## Améliorations d'Antennes Compatibles
+
+Tous les adaptateurs ALFA disposent d'un connecteur RP-SMA standard. Améliorez avec une antenne externe optionnelle pour une plus grande portée et un gain supérieur :
+
+| Antenne | Fréquence | Gain | Type |
+|---------|-----------|------|------|
+| [ALFA APA-M04](/fr/products/alfa/apa-m04/) | 2,4 GHz | 7 dBi | Antenne Panneau Intérieure |
+| [ALFA APA-M25](/fr/products/alfa/apa-m25/) | 2,4 / 5 GHz | 7 dBi | Antenne Panneau Intérieure Double Bande |
+| [ALFA APA-M25-6E](/fr/products/alfa/apa-m25-6e/) | 2,4 / 5 / 6 GHz | 7 dBi | Antenne Panneau Intérieure Tri-Bande |
+| [ARS 25-57A](/fr/products/alfa/ars-25-57a/) | 2,4 / 5 GHz | 2,5 / 7 dBi | Omnidirectionnelle Extérieure |
+| [ARS NT5B7](/fr/products/alfa/ars-nt5b7/) | 2,4 / 5 GHz | 5 / 7 dBi | Omnidirectionnelle |
+
+{{< alert >}}
+Besoin d'un devis ou de plus d'informations ? [Contactez-nous](/fr/contact/)
+{{< /alert >}}

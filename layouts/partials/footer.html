@@ -7,10 +7,10 @@
       {{/* Column 1 — Company info */}}
       <div>
         <p class="text-base font-semibold text-neutral-200 dark:text-neutral-200 mb-2">
-          榆閤科技有限公司
+          {{ i18n "footer.company_name" | default "Yopitek Ltd" }}
         </p>
         <p class="text-sm text-neutral-400 dark:text-neutral-400 mb-4 leading-relaxed">
-          Yopitek Ltd — 台灣授權代理 × 頂尖科技產品 × 專業視覺整合
+          {{ i18n "footer.company_tagline" | default "Taiwan Authorized Distributor · Premium Tech Products · Professional Visual Integration" }}
         </p>
         <ul class="space-y-1 text-sm text-neutral-400 dark:text-neutral-400">
           <li>
@@ -25,8 +25,8 @@
               ☎ +886-2-87325338
             </a>
           </li>
-          <li>📍 台北市富陽街72巷34號</li>
-          <li>🕐 週一至週五 09:00–18:00 (GMT+8)</li>
+          <li>{{ i18n "footer.address" | default "📍 72 Lane 34 Fuyang St, Taipei" }}</li>
+          <li>{{ i18n "footer.hours" | default "🕐 Mon–Fri 09:00–18:00 (GMT+8)" }}</li>
         </ul>
       </div>
 
@@ -72,7 +72,7 @@
       {{/* Column 3 — Social + contact prompt */}}
       <div>
         <p class="text-base font-semibold text-neutral-200 dark:text-neutral-200 mb-4">
-          關注我們
+          {{ i18n "footer.followus" | default "Follow Us" }}
         </p>
         <div class="flex gap-4 mb-6">
           <a href="https://www.linkedin.com/company/yopitek"
@@ -139,7 +139,7 @@
         {{- with replace .Site.Params.copyright "{ year }" now.Year }}
           {{ . | markdownify }}
         {{- else }}
-          &copy; {{ now.Format "2006" }} 榆閤科技有限公司 (Yopitek Ltd). All rights reserved.
+          &copy; {{ now.Format "2006" }} Yopitek Ltd. All rights reserved.
         {{- end }}
       </p>
     {{ end }}

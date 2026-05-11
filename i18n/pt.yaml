@@ -102,3 +102,18 @@ product:
 
 solution:
   contact_us: "Fale Conosco"
+footer.copyright: "© {{ .Year }} Yopitek Ltd · Todos os Direitos Reservados · Taipei, Taiwan"
+footer.company_name: "Yopitek Ltd"
+footer.company_tagline: "Distribuidor autorizado em Taiwan × Produtos tech premium × Integração visual profissional"
+footer.address: "📍 72 Lane 34 Fuyang St, Taipei"
+footer.hours: "🕐 Seg–Sex 09:00–18:00 (GMT+8)"
+footer.quicknav: "Links rápidos"
+footer.solution: "Soluções"
+footer.products: "Produtos"
+footer.support: "Suporte"
+footer.contact: "Contato"
+footer.about: "Sobre nós"
+footer.followus: "Siga-nos"
+footer.inquiry: "Solicitar orçamento"
+footer.privacy: "Política de privacidade"
+footer.terms: "Termos de serviço"

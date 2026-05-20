@@ -318,6 +318,6 @@ AWUS036ACH（RTL8812AU）和 AWUS036AX（RTL8812BU）并非不能使用，只是
 
 > **标签**：#JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yupitek
 >
-> **作者**：榆合科技 (Yupitek Ltd) — ALFA Network 台湾授权代理商
+> **作者**：榆閤科技 (Yupitek Ltd) — ALFA Network 台湾授权代理商
 >
 > **免责声明**：本文研究资料截至 2026 年 5 月。Jetson 平台与 Linux Kernel 持续更新，建议部署前确认最新的 JetPack 版本与内核内置驱动支持状况。

@@ -215,19 +215,20 @@ See your SSID in the list — done. From plugging in the USB to stable Wi-Fi, **
 With the AWUS036ACM, your DGX Spark network setup graduates to a professional **dual-network architecture**:
 
 ```mermaid
+%%{init:{"theme":"dark","themeVariables":{"primaryColor":"#2d1f4e","primaryTextColor":"#e2d9f3","primaryBorderColor":"#7c3aed","lineColor":"#9d6dff","secondaryColor":"#1a1030","tertiaryColor":"#0e0818","background":"#0e0818","mainBkg":"#1e1040","nodeBorder":"#7c3aed","clusterBkg":"#150d2a","titleColor":"#c4b5fd","edgeLabelBackground":"#1a1030","attributeBackgroundColorEven":"#1e1040","attributeBackgroundColorOdd":"#150d2a"}}}%%
 flowchart TD
-    subgraph Network[" "]
+    subgraph sub1["🌐 Network Layer"]
         direction LR
-        A["10GbE / ConnectX-7<br/>Model Training · Large Data Transfer"]
-        B["ALFA AWUS036ACM<br/>SSH Management · Jupyter · System Updates"]
+        A["⚡ 10GbE / ConnectX-7<br/>Model Training · Large Data Transfer"]
+        B["📡 ALFA AWUS036ACM<br/>SSH Management · Jupyter · System Updates"]
     end
 
-    C["DGX Spark / GB10<br/>ARM64 | 128GB | 20-Core CPU"]
+    C["🖥️ DGX Spark / GB10<br/>ARM64 | 128GB | 20-Core CPU"]
 
-    subgraph UseCases[" "]
-        D["AI Developer<br/>Inference + SSH in Parallel"]
-        E["Security Lab<br/>LLM Training + Penetration Testing"]
-        F["Edge Deployment<br/>Production Network + Isolated Management"]
+    subgraph sub2["🎯 Use Cases"]
+        D["🤖 AI Developer<br/>Inference + SSH in Parallel"]
+        E["🔐 Security Lab<br/>LLM Training + Penetration Testing"]
+        F["🚀 Edge Deployment<br/>Production Network + Isolated Management"]
     end
 
     A -->|High-Speed Data| C

@@ -215,19 +215,20 @@ SSIDがリストに表示されれば——完了。USBを挿してから安定�
 AWUS036ACMを導入すれば、DGX Sparkのネットワーク設定はプロ仕様の**デュアルネットワークアーキテクチャ**に格上げされる：
 
 ```mermaid
+%%{init:{"theme":"dark","themeVariables":{"primaryColor":"#2d1f4e","primaryTextColor":"#e2d9f3","primaryBorderColor":"#7c3aed","lineColor":"#9d6dff","secondaryColor":"#1a1030","tertiaryColor":"#0e0818","background":"#0e0818","mainBkg":"#1e1040","nodeBorder":"#7c3aed","clusterBkg":"#150d2a","titleColor":"#c4b5fd","edgeLabelBackground":"#1a1030","attributeBackgroundColorEven":"#1e1040","attributeBackgroundColorOdd":"#150d2a"}}}%%
 flowchart TD
-    subgraph ネットワーク[" "]
+    subgraph sub1["🌐 ネットワーク層"]
         direction LR
-        A["10GbE / ConnectX-7<br/>モデルトレーニング・大規模データ転送"]
-        B["ALFA AWUS036ACM<br/>SSH管理・Jupyter・システム更新"]
+        A["⚡ 10GbE / ConnectX-7<br/>モデルトレーニング · 大規模データ転送"]
+        B["📡 ALFA AWUS036ACM<br/>SSH管理 · Jupyter · システム更新"]
     end
 
-    C["DGX Spark / GB10<br/>ARM64 | 128GB | 20コアCPU"]
+    C["🖥️ DGX Spark / GB10<br/>ARM64 | 128GB | 20コアCPU"]
 
-    subgraph ユースケース[" "]
-        D["AI開発者<br/>推論 + SSH 並行実行"]
-        E["セキュリティラボ<br/>LLMトレーニング + 侵入テスト"]
-        F["エッジ展開<br/>本番ネットワーク + 管理分離"]
+    subgraph sub2["🎯 ユースケース"]
+        D["🤖 AI開発者<br/>推論 + SSH 並行実行"]
+        E["🔐 セキュリティラボ<br/>LLMトレーニング + 侵入テスト"]
+        F["🚀 エッジ展開<br/>本番ネットワーク + 管理分離"]
     end
 
     A -->|高速データ| C

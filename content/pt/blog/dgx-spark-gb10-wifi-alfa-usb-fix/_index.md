@@ -215,19 +215,20 @@ Veja seu SSID na lista — pronto. Desde conectar o USB até uma conexão Wi-Fi 
 Com o AWUS036ACM, a configuração de rede do seu DGX Spark se torna uma **arquitetura de rede dupla** profissional:
 
 ```mermaid
+%%{init:{"theme":"dark","themeVariables":{"primaryColor":"#2d1f4e","primaryTextColor":"#e2d9f3","primaryBorderColor":"#7c3aed","lineColor":"#9d6dff","secondaryColor":"#1a1030","tertiaryColor":"#0e0818","background":"#0e0818","mainBkg":"#1e1040","nodeBorder":"#7c3aed","clusterBkg":"#150d2a","titleColor":"#c4b5fd","edgeLabelBackground":"#1a1030","attributeBackgroundColorEven":"#1e1040","attributeBackgroundColorOdd":"#150d2a"}}}%%
 flowchart TD
-    subgraph Rede[" "]
+    subgraph sub1["🌐 Camada de Rede"]
         direction LR
-        A["10GbE / ConnectX-7<br/>Treinamento de modelos · Transferência de dados"]
-        B["ALFA AWUS036ACM<br/>Gerenciamento SSH · Jupyter · Atualizações"]
+        A["⚡ 10GbE / ConnectX-7<br/>Treinamento de modelos · Transferência de dados"]
+        B["📡 ALFA AWUS036ACM<br/>Gerenciamento SSH · Jupyter · Atualizações"]
     end
 
-    C["DGX Spark / GB10<br/>ARM64 | 128 GB | CPU 20 núcleos"]
+    C["🖥️ DGX Spark / GB10<br/>ARM64 | 128 GB | CPU 20 núcleos"]
 
-    subgraph CasosDeUso[" "]
-        D["Desenvolvedor IA<br/>Inferência + SSH em paralelo"]
-        E["Laboratório de segurança<br/>Treinamento LLM + Testes de penetração"]
-        F["Implantação na borda<br/>Rede de produção + Gerenciamento isolado"]
+    subgraph sub2["🎯 Casos de Uso"]
+        D["🤖 Desenvolvedor IA<br/>Inferência + SSH em paralelo"]
+        E["🔐 Laboratório de segurança<br/>Treinamento LLM + Testes de penetração"]
+        F["🚀 Implantação na borda<br/>Rede de produção + Gerenciamento isolado"]
     end
 
     A -->|Dados de alta velocidade| C

@@ -215,19 +215,20 @@ nmcli connection show
 مع AWUS036ACM، يتحول إعداد شبكة DGX Spark إلى **بنية شبكة مزدوجة** احترافية:
 
 ```mermaid
+%%{init:{"theme":"dark","themeVariables":{"primaryColor":"#2d1f4e","primaryTextColor":"#e2d9f3","primaryBorderColor":"#7c3aed","lineColor":"#9d6dff","secondaryColor":"#1a1030","tertiaryColor":"#0e0818","background":"#0e0818","mainBkg":"#1e1040","nodeBorder":"#7c3aed","clusterBkg":"#150d2a","titleColor":"#c4b5fd","edgeLabelBackground":"#1a1030","attributeBackgroundColorEven":"#1e1040","attributeBackgroundColorOdd":"#150d2a"}}}%%
 flowchart TD
-    subgraph الشبكة[" "]
+    subgraph sub1["🌐 طبقة الشبكة"]
         direction LR
-        A["10GbE / ConnectX-7<br/>تدريب النماذج · نقل البيانات"]
-        B["ALFA AWUS036ACM<br/>إدارة SSH · Jupyter · تحديثات النظام"]
+        A["⚡ 10GbE / ConnectX-7<br/>تدريب النماذج · نقل البيانات"]
+        B["📡 ALFA AWUS036ACM<br/>إدارة SSH · Jupyter · تحديثات النظام"]
     end
 
-    C["DGX Spark / GB10<br/>ARM64 | 128GB | CPU 20 نواة"]
+    C["🖥️ DGX Spark / GB10<br/>ARM64 | 128GB | CPU 20 نواة"]
 
-    subgraph حالات_الاستخدام[" "]
-        D["مطور AI<br/>الاستدلال + SSH بالتوازي"]
-        E["مختبر الأمان<br/>تدريب LLM + اختبار الاختراق"]
-        F["النشر الطرفي<br/>شبكة الإنتاج + إدارة معزولة"]
+    subgraph sub2["🎯 حالات الاستخدام"]
+        D["🤖 مطور AI<br/>الاستدلال + SSH بالتوازي"]
+        E["🔐 مختبر الأمان<br/>تدريب LLM + اختبار الاختراق"]
+        F["🚀 النشر الطرفي<br/>شبكة الإنتاج + إدارة معزولة"]
     end
 
     A -->|بيانات عالية السرعة| C

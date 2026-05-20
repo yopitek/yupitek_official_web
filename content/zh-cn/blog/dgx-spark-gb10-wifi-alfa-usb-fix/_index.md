@@ -215,19 +215,20 @@ nmcli connection show
 有了 AWUS036ACM 之后，你的 DGX Spark 网络配置可以升级为专业的**双网络架构**：
 
 ```mermaid
+%%{init:{"theme":"dark","themeVariables":{"primaryColor":"#2d1f4e","primaryTextColor":"#e2d9f3","primaryBorderColor":"#7c3aed","lineColor":"#9d6dff","secondaryColor":"#1a1030","tertiaryColor":"#0e0818","background":"#0e0818","mainBkg":"#1e1040","nodeBorder":"#7c3aed","clusterBkg":"#150d2a","titleColor":"#c4b5fd","edgeLabelBackground":"#1a1030","attributeBackgroundColorEven":"#1e1040","attributeBackgroundColorOdd":"#150d2a"}}}%%
 flowchart TD
-    subgraph 网络[" "]
+    subgraph sub1["🌐 网络层"]
         direction LR
-        A["10GbE / ConnectX-7<br/>模型训练・大量数据传输"]
-        B["ALFA AWUS036ACM<br/>SSH 管理・Jupyter・系统更新"]
+        A["⚡ 10GbE / ConnectX-7<br/>模型训练 · 大量数据传输"]
+        B["📡 ALFA AWUS036ACM<br/>SSH 管理 · Jupyter · 系统更新"]
     end
 
-    C["DGX Spark / GB10<br/>ARM64 ｜ 128GB ｜ 20 核 CPU"]
+    C["🖥️ DGX Spark / GB10<br/>ARM64 ｜ 128GB ｜ 20 核 CPU"]
 
-    subgraph 场景[" "]
-        D["AI 开发者<br/>推理 + SSH 双线并行"]
-        E["安全实验室<br/>LLM 训练 + 渗透测试"]
-        F["边缘部署<br/>生产网络 + 管理隔离"]
+    subgraph sub2["🎯 应用场景"]
+        D["🤖 AI 开发者<br/>推理 + SSH 双线并行"]
+        E["🔐 安全实验室<br/>LLM 训练 + 渗透测试"]
+        F["🚀 边缘部署<br/>生产网络 + 管理隔离"]
     end
 
     A -->|高速数据| C

@@ -215,19 +215,20 @@ nmcli connection show
 С AWUS036ACM сетевая конфигурация DGX Spark превращается в профессиональную **двухсетевую архитектуру**:
 
 ```mermaid
+%%{init:{"theme":"dark","themeVariables":{"primaryColor":"#2d1f4e","primaryTextColor":"#e2d9f3","primaryBorderColor":"#7c3aed","lineColor":"#9d6dff","secondaryColor":"#1a1030","tertiaryColor":"#0e0818","background":"#0e0818","mainBkg":"#1e1040","nodeBorder":"#7c3aed","clusterBkg":"#150d2a","titleColor":"#c4b5fd","edgeLabelBackground":"#1a1030","attributeBackgroundColorEven":"#1e1040","attributeBackgroundColorOdd":"#150d2a"}}}%%
 flowchart TD
-    subgraph Сеть[" "]
+    subgraph sub1["🌐 Сетевой уровень"]
         direction LR
-        A["10GbE / ConnectX-7<br/>Обучение моделей · Передача данных"]
-        B["ALFA AWUS036ACM<br/>SSH управление · Jupyter · Обновления"]
+        A["⚡ 10GbE / ConnectX-7<br/>Обучение моделей · Передача данных"]
+        B["📡 ALFA AWUS036ACM<br/>SSH управление · Jupyter · Обновления"]
     end
 
-    C["DGX Spark / GB10<br/>ARM64 | 128 ГБ | 20-ядерный CPU"]
+    C["🖥️ DGX Spark / GB10<br/>ARM64 | 128 ГБ | 20-ядерный CPU"]
 
-    subgraph Сценарии[" "]
-        D["ИИ-разработчик<br/>Инференс + SSH параллельно"]
-        E["Лаборатория безопасности<br/>Обучение LLM + Тесты на проникновение"]
-        F["Граничное развёртывание<br/>Производственная сеть + Изолированное управление"]
+    subgraph sub2["🎯 Сценарии"]
+        D["🤖 ИИ-разработчик<br/>Инференс + SSH параллельно"]
+        E["🔐 Лаборатория безопасности<br/>Обучение LLM + Тесты на проникновение"]
+        F["🚀 Граничное развёртывание<br/>Производственная сеть + Изолированное управление"]
     end
 
     A -->|Высокоскоростные данные| C

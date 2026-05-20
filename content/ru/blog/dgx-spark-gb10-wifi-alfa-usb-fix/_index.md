@@ -214,7 +214,7 @@ nmcli connection show
 
 С AWUS036ACM сетевая конфигурация DGX Spark превращается в профессиональную **двухсетевую архитектуру**:
 
-```mermaid
+{{< mermaid >}}
 %%{init:{"theme":"dark","themeVariables":{"primaryColor":"#2d1f4e","primaryTextColor":"#e2d9f3","primaryBorderColor":"#7c3aed","lineColor":"#9d6dff","secondaryColor":"#1a1030","tertiaryColor":"#0e0818","background":"#0e0818","mainBkg":"#1e1040","nodeBorder":"#7c3aed","clusterBkg":"#150d2a","titleColor":"#c4b5fd","edgeLabelBackground":"#1a1030","attributeBackgroundColorEven":"#1e1040","attributeBackgroundColorOdd":"#150d2a"}}}%%
 flowchart TD
     subgraph sub1["🌐 Сетевой уровень"]
@@ -236,7 +236,7 @@ flowchart TD
     C --> D
     C --> E
     C --> F
-```
+{{< /mermaid >}}
 
 **Зачем разделять трафик?**
 

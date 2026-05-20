@@ -214,7 +214,7 @@ See your SSID in the list — done. From plugging in the USB to stable Wi-Fi, **
 
 With the AWUS036ACM, your DGX Spark network setup graduates to a professional **dual-network architecture**:
 
-```mermaid
+{{< mermaid >}}
 %%{init:{"theme":"dark","themeVariables":{"primaryColor":"#2d1f4e","primaryTextColor":"#e2d9f3","primaryBorderColor":"#7c3aed","lineColor":"#9d6dff","secondaryColor":"#1a1030","tertiaryColor":"#0e0818","background":"#0e0818","mainBkg":"#1e1040","nodeBorder":"#7c3aed","clusterBkg":"#150d2a","titleColor":"#c4b5fd","edgeLabelBackground":"#1a1030","attributeBackgroundColorEven":"#1e1040","attributeBackgroundColorOdd":"#150d2a"}}}%%
 flowchart TD
     subgraph sub1["🌐 Network Layer"]
@@ -236,7 +236,7 @@ flowchart TD
     C --> D
     C --> E
     C --> F
-```
+{{< /mermaid >}}
 
 **Why split the traffic?**
 

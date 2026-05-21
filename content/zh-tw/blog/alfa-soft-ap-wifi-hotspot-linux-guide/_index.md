@@ -1,7 +1,7 @@
 ---
 title: "ALFA 網路卡 Soft AP 完整指南 2026：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5 建立 WiFi 熱點"
 description: "深度調查 ALFA Network USB 無線網卡在 Kali Linux、Ubuntu、Debian、Raspberry Pi 4 與 Pi 5 上使用 Soft AP（WiFi Hotspot / hostapd）的完整相容性。涵蓋 AWUS036ACM、AWUS036ACH、AWUS036AXML 詳細設定、社群反饋、常見疑難排解與產品選購建議。"
-date: 2026-05-22
+date: 2026-05-21
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

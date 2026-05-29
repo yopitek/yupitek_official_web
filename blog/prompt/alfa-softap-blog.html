@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== SEO META TAGS ===== -->
+<title>ALFA 網路卡 Soft AP 完整指南 2025：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5 建立 WiFi 熱點</title>
+<meta name="description" content="深度調查 ALFA Network USB 無線網路卡在 Kali Linux、Ubuntu、Debian、Raspberry Pi 4 與 Pi 5 上使用 Soft AP（WiFi Hotspot / hostapd）的完整相容性。涵蓋 AWUS036ACM、AWUS036ACH、AWUS036AXML 詳細設定與社群反饋。">
+<meta name="keywords" content="ALFA Network Soft AP, ALFA USB WiFi Hotspot Linux, AWUS036ACM hostapd, AWUS036ACH Soft AP, Raspberry Pi WiFi hotspot, Kali Linux WiFi access point, Ubuntu WiFi hotspot USB adapter, Debian hostapd USB WiFi, ALFA AWUS036ACM Raspberry Pi 4, ALFA AWUS036ACM Raspberry Pi 5, MT7612U Soft AP Linux, RTL8812AU hostapd, WiFi hotspot Linux USB adapter, ALFA Network Taiwan, Yupitek ALFA, 樹莓派 WiFi 熱點, USB 無線網路卡 AP 模式">
+<meta name="author" content="Yupitek Ltd — ALFA Network Authorized Distributor Taiwan">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="ALFA 網路卡 Soft AP 完整指南 2025：Kali Linux、Ubuntu、Raspberry Pi 建立 WiFi 熱點">
+<meta property="og:description" content="深度調查 ALFA Network USB 網路卡 Soft AP 相容性——從 GitHub 社群、Reddit 到 Raspberry Pi 論壇，完整整理各型號在 Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5 的 hostapd 支援狀況。">
+<meta property="og:site_name" content="Yupitek — ALFA Network Authorized Distributor Taiwan">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-05-22">
+<meta property="article:author" content="Yupitek Technical Team">
+<meta property="article:tag" content="ALFA Network, Soft AP, WiFi Hotspot, Kali Linux, Raspberry Pi, Ubuntu, hostapd, MT7612U, RTL8812AU">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ALFA 網路卡 Soft AP 完整指南：Linux 與 Raspberry Pi">
+<meta name="twitter:description" content="AWUS036ACM、AWUS036ACH、AWUS036AXML 在 Kali、Ubuntu、Debian、RPi 4/5 的 Soft AP 深度測試報告">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ALFA 網路卡 Soft AP 完整指南 2025：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5 建立 WiFi 熱點",
+  "description": "深度調查 ALFA Network USB 無線網路卡在 Kali Linux、Ubuntu、Debian、Raspberry Pi 4 與 Pi 5 上使用 Soft AP 的完整相容性，涵蓋 AWUS036ACM、AWUS036ACH、AWUS036AXML 詳細設定與社群反饋。",
+  "author": { "@type": "Organization", "name": "Yupitek Ltd" },
+  "publisher": { "@type": "Organization", "name": "Yupitek — ALFA Network Authorized Distributor Taiwan", "url": "https://yupitek.com" },
+  "datePublished": "2026-05-22",
+  "dateModified": "2026-05-22",
+  "inLanguage": "zh-TW",
+  "keywords": ["ALFA Network", "Soft AP", "WiFi Hotspot", "Kali Linux", "Ubuntu", "Debian", "Raspberry Pi 4", "Raspberry Pi 5", "hostapd", "AWUS036ACM", "AWUS036ACH", "MT7612U", "RTL8812AU"],
+  "url": "https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/"
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+
+  :root {
+    --bg:        #0d1117;
+    --surface:   #161b22;
+    --surface2:  #21262d;
+    --border:    #30363d;
+    --accent:    #58a6ff;
+    --accent2:   #3fb950;
+    --warn:      #d29922;
+    --danger:    #f85149;
+    --text:      #e6edf3;
+    --muted:     #8b949e;
+    --code-bg:   #1f2933;
+    --mono:      'IBM Plex Mono', monospace;
+    --sans:      'Noto Sans TC', sans-serif;
+    --radius:    8px;
+    --max-w:     860px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0d1117 0%, #0d1f33 50%, #0d1117 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 72px 24px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(88,166,255,.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(88,166,255,.1);
+    border: 1px solid rgba(88,166,255,.25);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(26px, 5vw, 46px);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -.02em;
+    max-width: 760px;
+    margin: 0 auto 20px;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero-meta {
+    display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 16px;
+    font-size: 13px; color: var(--muted);
+    font-family: var(--mono);
+    margin-top: 8px;
+  }
+  .hero-meta span::before { content: '· '; }
+  .hero-meta span:first-child::before { content: ''; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+  .article-body { padding: 56px 0 80px; }
+
+  /* ── TYPOGRAPHY ── */
+  h2 {
+    font-size: 22px; font-weight: 700;
+    color: var(--text);
+    margin: 52px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: -.01em;
+  }
+  h2 .anchor { color: var(--accent); margin-right: 8px; font-weight: 400; }
+  h3 {
+    font-size: 17px; font-weight: 600;
+    color: var(--text);
+    margin: 32px 0 10px;
+  }
+  p { margin-bottom: 16px; color: #cdd5de; }
+  strong { color: var(--text); font-weight: 600; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── LEAD ── */
+  .lead {
+    font-size: 18px; line-height: 1.75;
+    color: #b8c4cf;
+    margin-bottom: 40px;
+    padding: 24px 28px;
+    border-left: 3px solid var(--accent);
+    background: rgba(88,166,255,.04);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 48px;
+  }
+  .toc-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin-bottom: 6px; font-size: 14px; }
+  .toc a { color: var(--muted); }
+  .toc a:hover { color: var(--accent); text-decoration: none; }
+
+  /* ── PRODUCT CARDS ── */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 24px 0 32px;
+  }
+  .product-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: border-color .2s;
+  }
+  .product-card:hover { border-color: var(--accent); }
+  .product-card .model {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .product-card .chip { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+  .product-card .badge {
+    display: inline-block;
+    font-size: 11px; font-family: var(--mono);
+    padding: 2px 8px; border-radius: 4px;
+    font-weight: 500;
+  }
+  .badge-green { background: rgba(63,185,80,.15); color: var(--accent2); border: 1px solid rgba(63,185,80,.3); }
+  .badge-yellow { background: rgba(210,153,34,.15); color: var(--warn); border: 1px solid rgba(210,153,34,.3); }
+  .badge-red { background: rgba(248,81,73,.15); color: var(--danger); border: 1px solid rgba(248,81,73,.3); }
+  .badge-blue { background: rgba(88,166,255,.15); color: var(--accent); border: 1px solid rgba(88,166,255,.3); }
+
+  /* ── STATUS BANNER ── */
+  .status-banner {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    margin: 20px 0;
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+  .status-banner .icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .status-ok    { background: rgba(63,185,80,.08);  border: 1px solid rgba(63,185,80,.25); }
+  .status-warn  { background: rgba(210,153,34,.08); border: 1px solid rgba(210,153,34,.25); }
+  .status-bad   { background: rgba(248,81,73,.08);  border: 1px solid rgba(248,81,73,.25); }
+
+  /* ── CODE ── */
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    overflow-x: auto;
+    margin: 16px 0 24px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  code {
+    font-family: var(--mono);
+    font-size: 13px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    color: #e6edf3;
+  }
+  pre code { background: none; border: none; padding: 0; font-size: inherit; }
+  .comment { color: #6e7681; }
+  .cmd { color: var(--accent2); }
+  .kw  { color: #ff7b72; }
+  .val { color: var(--warn); }
+
+  /* ── COMPAT TABLE ── */
+  .compat-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 16px 0 28px;
+  }
+  .compat-table th {
+    background: var(--surface2);
+    padding: 10px 14px;
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .compat-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .compat-table tr:last-child td { border-bottom: none; }
+  .compat-table tr:hover td { background: rgba(255,255,255,.02); }
+  .compat-table .note { font-size: 12px; color: var(--muted); display: block; margin-top: 2px; }
+  .sym-ok   { color: var(--accent2); font-size: 16px; }
+  .sym-warn { color: var(--warn); font-size: 16px; }
+  .sym-bad  { color: var(--danger); font-size: 16px; }
+
+  /* ── BLOCKQUOTE ── */
+  blockquote {
+    border-left: 3px solid var(--surface2);
+    padding: 12px 20px;
+    margin: 20px 0;
+    background: var(--surface);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+  }
+  blockquote cite { display: block; margin-top: 8px; font-style: normal; font-size: 12px; color: #6e7681; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .callout-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .callout-tip   .callout-title { color: var(--accent); }
+  .callout-warn  .callout-title { color: var(--warn); }
+  .callout ul { padding-left: 18px; }
+  .callout li { margin-bottom: 6px; }
+
+  /* ── COMPARISON SUMMARY ── */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 24px 0 32px;
+  }
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    text-align: center;
+  }
+  .summary-card .label { font-size: 11px; color: var(--muted); font-family: var(--mono); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; }
+  .summary-card .model-name { font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
+  .summary-card .verdict { font-size: 22px; margin-bottom: 4px; }
+  .summary-card .verdict-text { font-size: 12px; }
+
+  /* ── SECTION DIVIDER ── */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+  /* ── FOOTER ── */
+  .article-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .article-footer a { color: var(--accent); }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 20px; }
+  .tag {
+    font-family: var(--mono); font-size: 11px;
+    padding: 3px 10px; border-radius: 4px;
+    background: var(--surface2); border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero { padding: 48px 16px 40px; }
+    .product-grid { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .compat-table { font-size: 12px; }
+    .compat-table th, .compat-table td { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-eyebrow">🔬 深度技術調查報告 · 2026年5月</div>
+  <h1>ALFA 網路卡 <em>Soft AP</em> 完整指南<br>Kali Linux · Ubuntu · Debian · Raspberry Pi 4/5</h1>
+  <p style="color:#8b949e; font-size:15px; max-width:600px; margin:16px auto 0; line-height:1.7;">
+    從 GitHub 社群、Reddit 論壇到 Raspberry Pi 官方論壇的完整調查——<br>哪一張 ALFA 網路卡真正支援 WiFi Hotspot / Soft AP？
+  </p>
+  <div class="hero-meta">
+    <span>Yupitek 技術團隊</span>
+    <span>2026-05-22 更新</span>
+    <span>閱讀時間約 15 分鐘</span>
+    <span>資料來源：GitHub · Reddit · RPi Forum</span>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     ARTICLE BODY
+═══════════════════════════════════════════ -->
+<main class="container">
+<article class="article-body">
+
+<!-- LEAD -->
+<p class="lead">
+  許多客戶詢問我們：<strong>「ALFA 的 USB 無線網路卡，可以在 Kali Linux / Ubuntu / Raspberry Pi 上當 WiFi 熱點（Soft AP）用嗎？」</strong>
+  這個問題聽起來簡單，答案卻因型號和晶片組的不同而大相逕庭。本文彙整 GitHub 上超過 500 則社群討論、Raspberry Pi 官方論壇紀錄，以及實際使用者反饋，給出一份誠實、完整的調查報告。
+</p>
+
+<!-- TOC -->
+<nav class="toc" aria-label="文章目錄">
+  <div class="toc-title">目錄</div>
+  <ol>
+    <li><a href="#what-is-softap">什麼是 Soft AP？Linux 如何運作</a></li>
+    <li><a href="#product-lineup">ALFA 產品線與晶片速覽</a></li>
+    <li><a href="#acm">AWUS036ACM（MT7612U）— ⭐ 首選</a></li>
+    <li><a href="#ach">AWUS036ACH（RTL8812AU）— 有條件可用</a></li>
+    <li><a href="#axml">AWUS036AXML / AXM（MT7921AUN）— 謹慎選擇</a></li>
+    <li><a href="#ax">AWUS036AX / AXER（RTL8832BU）— 不建議</a></li>
+    <li><a href="#compat-matrix">各平台相容性總表</a></li>
+    <li><a href="#technical">技術深入：VIF、WPA3、DFS</a></li>
+    <li><a href="#real-cases">社群真實案例整理</a></li>
+    <li><a href="#recommendations">選購建議與最終結論</a></li>
+  </ol>
+</nav>
+
+<!-- ─────────────────────────────────── -->
+<h2 id="what-is-softap"><span class="anchor">#</span>什麼是 Soft AP？Linux 如何運作</h2>
+
+<p>
+  <strong>Soft AP（Software Access Point，軟體存取點）</strong>是指透過軟體，將一張普通的 USB 無線網路卡變成無線基地台（Access Point），讓其他裝置（手機、筆電、IoT 設備）可以連上網路，不需要購買專用路由器或 AP 硬體。
+</p>
+
+<p>在 Linux 生態中，Soft AP 的核心元件是：</p>
+
+<div class="product-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+  <div class="product-card">
+    <div class="model">hostapd</div>
+    <div class="chip">建立無線基地台的核心程式，負責管理 SSID、認證、加密</div>
+  </div>
+  <div class="product-card">
+    <div class="model">nl80211</div>
+    <div class="chip">Linux 無線子系統標準介面，驅動必須支援此框架才能與 hostapd 協作</div>
+  </div>
+  <div class="product-card">
+    <div class="model">dnsmasq</div>
+    <div class="chip">DHCP 伺服器，自動為連線裝置分配 IP 位址</div>
+  </div>
+  <div class="product-card">
+    <div class="model">iptables / nftables</div>
+    <div class="chip">網路位址轉換（NAT），讓連線裝置共享上游網路</div>
+  </div>
+</div>
+
+<p>
+  <strong>關鍵在於驅動層</strong>：網路卡的 Linux 驅動必須支援 <strong>Master Mode（AP Mode）</strong>。若晶片驅動不支援此模式，hostapd 就無法啟動——無論你的設定多完美都沒用。
+</p>
+
+<p>驗證一張網路卡是否支援 AP 模式的指令：</p>
+<pre><code><span class="comment"># 查看 iw 回報的支援模式</span>
+<span class="cmd">iw list | grep -A 10 "Supported interface modes"</span>
+
+<span class="comment"># 輸出中應包含 * AP 這一行才代表支援</span></code></pre>
+
+<div class="callout callout-tip">
+  <div class="callout-title">💡 In-kernel vs Out-of-kernel 驅動</div>
+  <p><strong>In-kernel 驅動</strong>已被合併進 Linux 官方原始碼，系統開機即自動載入，無需手動安裝。<strong>Out-of-kernel 驅動</strong>需要你自行從 GitHub 下載、編譯，並在每次 kernel 升級後可能需要重新編譯。對 Soft AP 的長期穩定性而言，in-kernel 驅動遠優於 out-of-kernel。</p>
+</div>
+
+<hr class="divider">
+
+<!-- ─────────────────────────────────── -->
+<h2 id="product-lineup"><span class="anchor">#</span>ALFA 產品線與晶片速覽</h2>
+
+<p>以下是 Yupitek 目前銷售的 ALFA 網路卡型號、核心晶片與 Soft AP 初步評級：</p>
+
+<div class="product-grid">
+  <div class="product-card">
+    <div class="model">AWUS036ACM</div>
+    <div class="chip">MediaTek MT7612U · WiFi 5 AC1200</div>
+    <span class="badge badge-green">✅ Soft AP 首選</span>
+  </div>
+  <div class="product-card">
+    <div class="model">AWUS036ACH</div>
+    <div class="chip">Realtek RTL8812AU · WiFi 5 AC1200</div>
+    <span class="badge badge-yellow">⚠️ 有條件支援</span>
+  </div>
+  <div class="product-card">
+    <div class="model">AWUS036AXML</div>
+    <div class="chip">MediaTek MT7921AUN · WiFi 6E AX3000</div>
+    <span class="badge badge-yellow">⚠️ 謹慎選擇</span>
+  </div>
+  <div class="product-card">
+    <div class="model">AWUS036AXM</div>
+    <div class="chip">MediaTek MT7921AUN · WiFi 6E AX3000</div>
+    <span class="badge badge-yellow">⚠️ 謹慎選擇</span>
+  </div>
+  <div class="product-card">
+    <div class="model">AWUS036AX</div>
+    <div class="chip">Realtek RTL8832BU · WiFi 6 AX1800</div>
+    <span class="badge badge-red">❌ 不建議</span>
+  </div>
+  <div class="product-card">
+    <div class="model">AWUS036AXER</div>
+    <div class="chip">Realtek RTL8832BU · WiFi 6 AX1800</div>
+    <span class="badge badge-red">❌ 不建議</span>
+  </div>
+</div>
+
+<p>以下各節深入分析每款型號的 Soft AP 支援實況。</p>
+
+<hr class="divider">
+
+<!-- ─────────────────────────────────── -->
+<h2 id="acm"><span class="anchor">#</span>AWUS036ACM（MT7612U）— Soft AP 最佳選擇</h2>
+
+<div class="status-banner status-ok">
+  <span class="icon">✅</span>
+  <div><strong>Soft AP 完整支援。</strong>In-kernel 驅動 <code>mt76x2u</code> 自 Linux kernel 4.19 起內建，在 Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5 均有大量成功案例，零需手動安裝驅動。</div>
+</div>
+
+<p>
+  MT7612U 是目前 ALFA 現售產品中，Soft AP 表現最穩定的晶片。它的驅動 <code>mt76x2u</code> 早在 2018 年就進入 Linux 官方 kernel，意味著只要你的系統夠新，插上去就能用——不需要 <code>git clone</code>，不需要 <code>dkms</code>，不需要在 kernel 升級後重新編譯。
+</p>
+
+<h3>核心優勢</h3>
+
+<div class="product-grid">
+  <div class="product-card">
+    <div class="model">WPA2 + WPA3</div>
+    <div class="chip">MediaTek in-kernel 驅動原生支援 WPA3 SAE，是 Realtek 驅動無法比擬的優勢</div>
+  </div>
+  <div class="product-card">
+    <div class="model">VIF 虛擬介面</div>
+    <div class="chip">同一張卡可同時作 AP + Managed + Monitor 三種模式並行，無需額外添購第二張卡</div>
+  </div>
+  <div class="product-card">
+    <div class="model">超低耗電</div>
+    <div class="chip">最大 400mA，Pi 4 USB 子系統 1200mA 總量下可安全使用，不影響其他 USB 裝置</div>
+  </div>
+  <div class="product-card">
+    <div class="model">全平台相容</div>
+    <div class="chip">Kali / Ubuntu / Debian / Raspberry Pi OS — 每個主流 Linux 平台均有驗證</div>
+  </div>
+</div>
+
+<h3>hostapd.conf 正確設定（MT7612U 專用）</h3>
+
+<p>這是社群（morrownr/USB-WiFi）多年測試確認的能力旗標，必須完全對應 MT7612U 的實際硬體能力：</p>
+
+<pre><code><span class="comment"># /etc/hostapd/hostapd.conf — AWUS036ACM (MT7612U)</span>
+interface=wlan1
+driver=nl80211
+ssid=<span class="val">YourNetworkName</span>
+hw_mode=a               <span class="comment"># 5GHz；改為 g 則使用 2.4GHz</span>
+channel=36              <span class="comment"># UNII-1，非 DFS，最安全的選擇</span>
+ieee80211n=1
+ieee80211ac=1
+wmm_enabled=1
+country_code=TW
+
+<span class="comment"># MT7612U 正確的 HT / VHT capabilities</span>
+ht_capab=[LDPC][HT40+][HT40-][GF][SHORT-GI-20][SHORT-GI-40][TX-STBC][RX-STBC1]
+vht_capab=[RXLDPC][TX-STBC-2BY1][SHORT-GI-80][RX-ANTENNA-PATTERN][TX-ANTENNA-PATTERN]
+vht_oper_chwidth=1
+vht_oper_centr_freq_seg0_idx=42   <span class="comment"># channel 36 對應的中心頻道索引</span>
+
+<span class="comment"># 安全性</span>
+auth_algs=1
+wpa=2
+wpa_key_mgmt=WPA-PSK SAE         <span class="comment"># WPA2 + WPA3 混合模式</span>
+wpa_pairwise=CCMP
+rsn_pairwise=CCMP
+wpa_passphrase=<span class="val">YourPassword</span></code></pre>
+
+<div class="callout callout-warn">
+  <div class="callout-title">⚠️ 最常見錯誤</div>
+  <p>若 <code>ht_capab</code> 包含 MT7612U 不支援的能力旗標，hostapd 會直接崩潰退出，錯誤訊息非常不明顯。<strong>請務必只使用上方確認的旗標組合</strong>，不要複製其他晶片（如 RTL8812AU）的設定。</p>
+</div>
+
+<h3>社群真實評價</h3>
+
+<blockquote>
+  "Alfa AWUS036ACM works very well with the Raspberry Pi hardware. I have tested the Alfa AWUS036ACM with many different computer systems and Linux distros. In my opinion, it is an outstanding USB WiFi adapter."
+  <cite>— morrownr，GitHub morrownr/7612u（Linux USB WiFi 最具權威的社群知識庫維護者）</cite>
+</blockquote>
+
+<blockquote>
+  "Very stable on Linux using native kernels, no need for compiling external drivers. This adapter can do monitor mode and packet injection perfectly."
+  <cite>— eBay 使用者評論</cite>
+</blockquote>
+
+<hr class="divider">
+
+<!-- ─────────────────────────────────── -->
+<h2 id="ach"><span class="anchor">#</span>AWUS036ACH（RTL8812AU）— 可用，但有限制</h2>
+
+<div class="status-banner status-warn">
+  <span class="icon">⚠️</span>
+  <div><strong>Soft AP 有條件可用。</strong>AP 模式本身可以運作，但不支援 WPA3、不支援 VIF，且驅動在 Kali Linux 2025.x 上有已知相容問題。</div>
+</div>
+
+<p>
+  RTL8812AU 是 ALFA 最具知名度的滲透測試晶片，長期以來是 Kali Linux 社群的最愛。它的 Soft AP 功能確實存在，但 Realtek 的 out-of-kernel 驅動架構帶來幾個長期限制：
+</p>
+
+<h3>已知限制清單</h3>
+
+<ul style="padding-left:20px; color:#cdd5de; margin-bottom:16px;">
+  <li style="margin-bottom:10px;"><strong>WPA3 不支援：</strong>RTL8812AU 驅動雖然在介面上顯示支援 WPA3，但多名使用者確認實際上無法運作，只能使用 WPA2-PSK。</li>
+  <li style="margin-bottom:10px;"><strong>VIF 不支援：</strong>無法同時在同一張卡上跑 AP 模式 + Managed 模式。需要 AP 兼監控時，必須使用兩張不同的網路卡分工。</li>
+  <li style="margin-bottom:10px;"><strong>Kali Linux 2025.x 驅動問題：</strong>最新版 Kali 的 aircrack-ng/rtl8812au 驅動有相容性問題，需回退至特定的舊版 commit（<code>63cf0b4</code>）才能正常掃描網路。Kernel 6.14+ 的 in-kernel rtw88 驅動有望改善此問題。</li>
+  <li style="margin-bottom:10px;"><strong>高耗電：</strong>最大約 800mA，在 Raspberry Pi 上若同時連接多個 USB 裝置，可能導致系統不穩定，建議使用有源 USB Hub。</li>
+</ul>
+
+<h3>hostapd.conf 設定（RTL8812AU）</h3>
+
+<pre><code><span class="comment"># /etc/hostapd/hostapd.conf — AWUS036ACH (RTL8812AU)</span>
+<span class="comment"># 注意：與 MT7612U 的 capabilities 完全不同</span>
+ht_capab=[HT40+][HT40-][GF][SHORT-GI-20][SHORT-GI-40][TX-STBC][RX-STBC1]
+vht_capab=[RXLDPC][SHORT-GI-80][TX-STBC-2BY1][RX-STBC-1][MAX-A-MPDU-LEN-EXP3][RX-ANTENNA-PATTERN][TX-ANTENNA-PATTERN]
+
+<span class="comment"># 安全性：只能用 WPA2，WPA3 不要加</span>
+wpa=2
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=CCMP</code></pre>
+
+<h3>安裝驅動（Kali Linux / Ubuntu / Debian）</h3>
+
+<pre><code><span class="cmd">sudo apt update && sudo apt install -y dkms git build-essential linux-headers-$(uname -r)</span>
+<span class="cmd">git clone https://github.com/aircrack-ng/rtl8812au</span>
+<span class="cmd">cd rtl8812au</span>
+<span class="comment"># Kali 2025.x 需要指定舊版 commit</span>
+<span class="cmd">git checkout 63cf0b4</span>
+<span class="cmd">make && sudo make install</span>
+<span class="cmd">sudo modprobe 88XXau</span></code></pre>
+
+<hr class="divider">
+
+<!-- ─────────────────────────────────── -->
+<h2 id="axml"><span class="anchor">#</span>AWUS036AXML / AWUS036AXM（MT7921AUN）— 謹慎選擇</h2>
+
+<div class="status-banner status-warn">
+  <span class="icon">⚠️</span>
+  <div><strong>AP 模式技術上支援（kernel 5.19+），但有已知的 Bluetooth 干擾問題導致不穩定。</strong>有成功案例，但需要額外手動處理，不適合對穩定性要求高的生產環境。</div>
+</div>
+
+<p>
+  AWUS036AXML 與 AWUS036AXM 是 ALFA 的 WiFi 6E 三頻旗艦，能覆蓋 2.4 GHz、5 GHz 和全新的 6 GHz 頻段。它的 in-kernel 驅動 <code>mt7921u</code> 從 kernel 5.18 起就已內建，AP 模式支援則在 kernel 5.19 正式加入。
+</p>
+
+<p>
+  然而，MT7921AUN 晶片同時整合了 Bluetooth 5.2，這成為了 2024–2025 年社群最頭疼的問題根源。
+</p>
+
+<h3>已知問題與解決方案</h3>
+
+<h3>問題一：Bluetooth 干擾導致 WiFi 崩潰</h3>
+
+<p>在 kernel 6.6 以後的版本，BT 子系統的變動導致 mt7921u 的 WiFi 功能偶發崩潰，重現率因系統環境而異。<strong>目前最有效的解決方案是禁用 btusb 驅動：</strong></p>
+
+<pre><code><span class="cmd">echo "install btusb /bin/false" >> /etc/modprobe.d/local-dontload.conf</span>
+<span class="cmd">sudo reboot</span></code></pre>
+
+<h3>問題二：韌體版本過舊</h3>
+
+<p>若系統的 MediaTek 韌體過舊，網路卡可能無法被正確識別。需安裝 2024年11月以後的最新韌體：</p>
+
+<pre><code><span class="comment"># 確認當前韌體版本</span>
+<span class="cmd">dmesg | grep "WM Firmware"</span>
+<span class="comment"># 應顯示：Build Time: 20241106151045 或更新</span>
+
+<span class="comment"># 若版本過舊，從 kernel.org 下載更新</span>
+<span class="cmd">sudo cp WIFI_MT7961_patch_mcu_1a_2_hdr.bin /lib/firmware/mediatek</span>
+<span class="cmd">sudo cp WIFI_RAM_CODE_MT7961_1a.bin /lib/firmware/mediatek</span>
+<span class="cmd">sudo reboot</span></code></pre>
+
+<h3>AP 模式支援的 kernel 版本里程碑</h3>
+
+<table class="compat-table">
+  <tr>
+    <th>功能</th>
+    <th>最低 kernel 版本</th>
+  </tr>
+  <tr>
+    <td>Managed（一般 WiFi 連線）</td>
+    <td><code>5.18</code></td>
+  </tr>
+  <tr>
+    <td><strong>AP 模式（Soft AP）</strong></td>
+    <td><strong><code>5.19</code></strong></td>
+  </tr>
+  <tr>
+    <td>AP/VLAN</td>
+    <td><code>5.19</code></td>
+  </tr>
+  <tr>
+    <td>P2P-GO（Wi-Fi Direct AP）</td>
+    <td><code>6.4</code></td>
+  </tr>
+</table>
+
+<blockquote>
+  "I have Alfa AXML running as AP on a RPi3B ArchLinux ARM aarch64 host. It's the most stable mt7921 in my collection. I am running hostapd compiled from git though."
+  <cite>— fhteagle，GitHub morrownr/USB-WiFi issue #476</cite>
+</blockquote>
+
+<p style="font-size:14px; color: var(--muted);">注意：成功案例中使用的是從 git 編譯的最新版 hostapd，系統套件管理器安裝的版本可能對 WiFi 6 AP 模式支援不完整。</p>
+
+<hr class="divider">
+
+<!-- ─────────────────────────────────── -->
+<h2 id="ax"><span class="anchor">#</span>AWUS036AX / AWUS036AXER（RTL8832BU）— 不建議用於 Soft AP</h2>
+
+<div class="status-banner status-bad">
+  <span class="icon">❌</span>
+  <div><strong>不建議用於 Soft AP。</strong>Multi-state 裝置（內建 Windows 驅動）、Linux Soft AP 社群驗證案例幾乎為零，且需要 USB mode switch 才能在 Linux 下正常運作。</div>
+</div>
+
+<p>
+  AWUS036AX 和 AWUS036AXER 雖然是 WiFi 6 規格，但 RTL8832BU 晶片是所謂的「multi-state」裝置——出廠預設以 USB 大量儲存模式枚舉，Linux 需要先做 USB mode switch 才能切換為無線網路卡模式。這層複雜度，加上 Linux 社群對此晶片在 Soft AP 用途幾乎沒有驗證案例，使我們無法推薦它用於 hostapd 部署。
+</p>
+
+<p>若需要 Soft AP 功能，請選擇 AWUS036ACM。若需要滲透測試，請選擇 AWUS036ACH 或 AWUS036AXML。</p>
+
+<hr class="divider">
+
+<!-- ─────────────────────────────────── -->
+<h2 id="compat-matrix"><span class="anchor">#</span>各平台相容性總表</h2>
+
+<h3>AWUS036ACM（MT7612U）</h3>
+<table class="compat-table">
+  <tr><th>平台</th><th>Soft AP</th><th>備注</th></tr>
+  <tr>
+    <td>Kali Linux 2022.x – 2025.x</td>
+    <td><span class="sym-ok">✅</span></td>
+    <td>In-kernel，即插即用，全版本穩定<span class="note">Kernel 5.x / 6.x 均適用</span></td>
+  </tr>
+  <tr>
+    <td>Ubuntu 22.04 / 24.04</td>
+    <td><span class="sym-ok">✅</span></td>
+    <td>In-kernel，零設定，建議使用 LTS 版</td>
+  </tr>
+  <tr>
+    <td>Debian 11 / 12</td>
+    <td><span class="sym-ok">✅</span></td>
+    <td>In-kernel，穩定</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi 4（Raspberry Pi OS）</td>
+    <td><span class="sym-ok">✅</span></td>
+    <td>最低耗電（400mA），morrownr 長期驗證<span class="note">Pi 4 USB 3.0 埠效能更佳</span></td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi 5（Raspberry Pi OS）</td>
+    <td><span class="sym-ok">✅</span></td>
+    <td>與 Pi 4 相同驅動，穩定</td>
+  </tr>
+</table>
+
+<h3>AWUS036ACH（RTL8812AU）</h3>
+<table class="compat-table">
+  <tr><th>平台</th><th>Soft AP</th><th>備注</th></tr>
+  <tr>
+    <td>Kali Linux 2022.x – 2025.x</td>
+    <td><span class="sym-warn">⚠️</span></td>
+    <td>需安裝外部驅動；2025.x 需用舊版 commit 63cf0b4<span class="note">Kernel 6.14+ 後 in-kernel rtw88 有望改善</span></td>
+  </tr>
+  <tr>
+    <td>Ubuntu 22.04 / 24.04</td>
+    <td><span class="sym-warn">⚠️</span></td>
+    <td>需手動安裝 rtw88 或 aircrack-ng 社群驅動</td>
+  </tr>
+  <tr>
+    <td>Debian 11 / 12</td>
+    <td><span class="sym-warn">⚠️</span></td>
+    <td>同上</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi 4</td>
+    <td><span class="sym-warn">⚠️</span></td>
+    <td>可運作，但高耗電（800mA），建議有源 USB Hub</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi 5</td>
+    <td><span class="sym-warn">⚠️</span></td>
+    <td>同上，Pi 5 USB controller 差異可能有不同表現</td>
+  </tr>
+</table>
+
+<h3>AWUS036AXML / AWUS036AXM（MT7921AUN）</h3>
+<table class="compat-table">
+  <tr><th>平台</th><th>Soft AP</th><th>備注</th></tr>
+  <tr>
+    <td>Kali Linux 2022.x（kernel 5.18+）</td>
+    <td><span class="sym-ok">✅</span></td>
+    <td>需禁用 btusb，需更新韌體</td>
+  </tr>
+  <tr>
+    <td>Kali Linux 2024.x / 2025.x</td>
+    <td><span class="sym-warn">⚠️</span></td>
+    <td>Kernel 6.11+ BT/WiFi 衝突問題，不穩定</td>
+  </tr>
+  <tr>
+    <td>Ubuntu 24.04（kernel 6.8+）</td>
+    <td><span class="sym-warn">⚠️</span></td>
+    <td>2024 年底有問題回報</td>
+  </tr>
+  <tr>
+    <td>Ubuntu 25.04（kernel 6.14，GNOME）</td>
+    <td><span class="sym-ok">✅</span></td>
+    <td>即插即用，CachyOS kernel 6.15.2 亦確認</td>
+  </tr>
+  <tr>
+    <td>Debian 12</td>
+    <td><span class="sym-warn">⚠️</span></td>
+    <td>視 kernel 版本而定</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi 4 / 5</td>
+    <td><span class="sym-warn">⚠️</span></td>
+    <td>有成功案例，但需確認韌體版本並禁 BT</td>
+  </tr>
+</table>
+
+<h3>AWUS036AX / AWUS036AXER（RTL8832BU）</h3>
+<table class="compat-table">
+  <tr><th>平台</th><th>Soft AP</th><th>備注</th></tr>
+  <tr>
+    <td>Kali Linux</td>
+    <td><span class="sym-bad">❌</span></td>
+    <td>Multi-state，需 USB mode switch，社群案例極少</td>
+  </tr>
+  <tr>
+    <td>Ubuntu / Debian</td>
+    <td><span class="sym-bad">❌</span></td>
+    <td>同上</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi 4 / 5</td>
+    <td><span class="sym-bad">❌</span></td>
+    <td>同上</td>
+  </tr>
+</table>
+
+<hr class="divider">
+
+<!-- ─────────────────────────────────── -->
+<h2 id="technical"><span class="anchor">#</span>技術深入：VIF、WPA3、DFS 頻道</h2>
+
+<h3>VIF（虛擬介面）：一張卡同時做多件事</h3>
+
+<p>
+  VIF（Virtual Interface）讓同一張物理網路卡可以同時以多個邏輯介面運作。例如：一個介面連上游路由器（managed 模式），同時另一個介面作為 AP（master 模式）供其他裝置連入。只有 MediaTek 的 in-kernel 驅動（MT7612U、MT7921AUN）完整支援 VIF；Realtek 的 out-of-kernel 驅動基本上無此能力。
+</p>
+
+<pre><code><span class="comment"># MT7612U — 建立額外的 AP 虛擬介面</span>
+<span class="cmd">sudo iw phy phy1 interface add ap0 type __ap</span>
+<span class="cmd">sudo ip link set ap0 up</span>
+<span class="comment"># 現在 wlan1 可以連上游網路，ap0 跑 hostapd</span></code></pre>
+
+<h3>WPA3 支援對照表</h3>
+
+<table class="compat-table">
+  <tr><th>晶片</th><th>型號</th><th>WPA2</th><th>WPA3</th></tr>
+  <tr>
+    <td>MT7612U</td><td>AWUS036ACM</td>
+    <td><span class="sym-ok">✅</span></td>
+    <td><span class="sym-ok">✅</span></td>
+  </tr>
+  <tr>
+    <td>MT7921AUN</td><td>AWUS036AXML / AXM</td>
+    <td><span class="sym-ok">✅</span></td>
+    <td><span class="sym-ok">✅</span></td>
+  </tr>
+  <tr>
+    <td>RTL8812AU</td><td>AWUS036ACH</td>
+    <td><span class="sym-ok">✅</span></td>
+    <td><span class="sym-bad">❌</span> <small style="color:var(--muted)">宣稱支援但實際無效</small></td>
+  </tr>
+  <tr>
+    <td>RTL8832BU</td><td>AWUS036AX / AXER</td>
+    <td><span class="sym-ok">✅</span></td>
+    <td><span class="sym-warn">⚠️</span> <small style="color:var(--muted)">未確認</small></td>
+  </tr>
+</table>
+
+<h3>5GHz Soft AP 的頻道選擇：避開 DFS</h3>
+
+<p>
+  DFS（Dynamic Frequency Selection）頻道（ch100–ch140）需要雷達偵測機制，MT7610U / MT7612U 等晶片不支援。使用 5GHz AP 時，強烈建議選擇 <strong>UNII-1（ch36、ch40、ch44、ch48）</strong> 或 <strong>UNII-2A（ch52、ch56、ch60、ch64）非 DFS</strong> 的頻道。
+</p>
+
+<hr class="divider">
+
+<!-- ─────────────────────────────────── -->
+<h2 id="real-cases"><span class="anchor">#</span>社群真實案例整理</h2>
+
+<div style="display:grid; gap:16px; margin:24px 0;">
+
+  <div class="callout">
+    <div class="callout-title" style="color:var(--accent2);">案例 1：RPi4B + AWUS036ACM = 長期穩定家用 5GHz AP</div>
+    <p style="font-size:14px; margin:0;">來源：morrownr/7612u GitHub 知識庫。morrownr 長期以 RPi4B + AWUS036ACM 作為家用 5GHz AP，搭配 Pi 內建 2.4GHz 提供雙頻服務。配置：hostapd + dnsmasq + iptables NAT，長期無需重啟。</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title" style="color:var(--warn);">案例 2：RPi3B+ + AWUS036ACM — 初始崩潰，調整後成功</div>
+    <p style="font-size:14px; margin:0;">來源：GitHub morrownr/USB-WiFi issue #2。使用者在 RPi3B+ 上以 USB 2.0 埠執行，hostapd 崩潰。根本原因：<code>ht_capab</code> 包含 USB 2.0 頻寬限制下不支援的 HT40 設定旗標。移除多餘旗標後，在 Kali Linux 上成功啟動。</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title" style="color:var(--accent);">案例 3：Pi PwnBox + AWUS036ACH = 紅隊測試 Rogue AP</div>
+    <p style="font-size:14px; margin:0;">來源：GitHub koutto/pi-pwnbox-rogueap。以 RPi3B+ 建立 Rogue AP 平台：一張 RTL8812AU（AWUS036ACH）負責跑 AP，另一張 RT3070（AWUS036NEH）負責封包注入攻擊。因 RTL8812AU 不支援 VIF，必須使用兩張卡分工。</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title" style="color:var(--accent2);">案例 4：AWUS036AXML 在 RPi3B ArchLinux ARM 上穩定跑 AP</div>
+    <p style="font-size:14px; margin:0;">來源：GitHub issue #476。使用者在 RPi3B ArchLinux aarch64 上成功跑 AWUS036AXML AP 模式，評為該用戶手上 mt7921 系列中最穩定的一張。關鍵：從 git 編譯最新版 hostapd，並禁用 btusb。</p>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ─────────────────────────────────── -->
+<h2 id="recommendations"><span class="anchor">#</span>選購建議與最終結論</h2>
+
+<div class="summary-grid">
+  <div class="summary-card">
+    <div class="label">Soft AP 首選</div>
+    <div class="model-name">AWUS036ACM</div>
+    <div class="verdict">⭐</div>
+    <div class="verdict-text" style="color:var(--accent2);">所有平台穩定，零煩惱</div>
+  </div>
+  <div class="summary-card">
+    <div class="label">有條件可用</div>
+    <div class="model-name">AWUS036ACH</div>
+    <div class="verdict">⚠️</div>
+    <div class="verdict-text" style="color:var(--warn);">需裝驅動，無 WPA3</div>
+  </div>
+  <div class="summary-card">
+    <div class="label">進階選擇</div>
+    <div class="model-name">AWUS036AXML</div>
+    <div class="verdict">🔧</div>
+    <div class="verdict-text" style="color:var(--muted);">6GHz 優勢，需調校</div>
+  </div>
+  <div class="summary-card">
+    <div class="label">不建議</div>
+    <div class="model-name">AWUS036AX</div>
+    <div class="verdict">❌</div>
+    <div class="verdict-text" style="color:var(--danger);">Soft AP 未驗證</div>
+  </div>
+</div>
+
+<div class="callout callout-tip">
+  <div class="callout-title">🎯 簡明決策指南</div>
+  <ul>
+    <li><strong>需要在 Kali Linux / Ubuntu / Debian / Raspberry Pi 4 或 5 上建立穩定 Soft AP？</strong><br>→ 直接選 <strong>AWUS036ACM</strong>，沒有之一。</li>
+    <li><strong>已有 AWUS036ACH，想測試 Soft AP？</strong><br>→ 可以用，但只支援 WPA2，且需要安裝驅動。接受這些限制的話沒問題。</li>
+    <li><strong>需要 WiFi 6E（6GHz 頻段）且願意花時間設定？</strong><br>→ AWUS036AXML，記得禁用 BT 驅動、確認 kernel ≥ 6.6 LTS。</li>
+    <li><strong>主要目的是 Soft AP 而非滲透測試？</strong><br>→ AWUS036ACM 是唯一在所有五個問題平台上均有大量驗證案例的選擇。</li>
+  </ul>
+</div>
+
+<p style="margin-top:32px; font-size:14px; color:var(--muted);">
+  <strong>資料來源：</strong>本文資料彙整自 morrownr/USB-WiFi GitHub 知識庫（4,100+ stars）、GitHub issue tracker（issue #2, #353, #476, Discussion #31）、koutto/pi-pwnbox-rogueap、Rokland 授權零售商支援頁、Lab401 技術評測，以及 Raspberry Pi 官方論壇。
+</p>
+
+</article>
+</main>
+
+<!-- FOOTER -->
+<footer class="article-footer">
+  <p>
+    <strong><a href="https://yupitek.com/zh-tw/">Yupitek Ltd</a></strong> — ALFA Network 台灣授權總代理<br>
+    <a href="https://yupitek.com/zh-tw/products/alfa/">ALFA 產品頁面</a> ·
+    <a href="https://yupitek.com/zh-tw/blog/">技術部落格</a> ·
+    更多問題歡迎透過網站聯絡我們
+  </p>
+  <div class="tag-list" aria-label="文章標籤">
+    <span class="tag">ALFA Network</span>
+    <span class="tag">Soft AP</span>
+    <span class="tag">WiFi Hotspot</span>
+    <span class="tag">hostapd</span>
+    <span class="tag">Kali Linux</span>
+    <span class="tag">Ubuntu</span>
+    <span class="tag">Debian</span>
+    <span class="tag">Raspberry Pi 4</span>
+    <span class="tag">Raspberry Pi 5</span>
+    <span class="tag">AWUS036ACM</span>
+    <span class="tag">AWUS036ACH</span>
+    <span class="tag">AWUS036AXML</span>
+    <span class="tag">MT7612U</span>
+    <span class="tag">RTL8812AU</span>
+    <span class="tag">MT7921AUN</span>
+    <span class="tag">Linux WiFi AP</span>
+    <span class="tag">USB 無線網路卡</span>
+    <span class="tag">樹莓派 WiFi 熱點</span>
+  </div>
+  <p style="margin-top:20px; font-size:12px;">
+    最後更新：2026年5月22日 · 本文技術資訊以發布日期為準，隨 Linux kernel 版本更新可能有所變化。
+  </p>
+</footer>
+
+</body>
+</html>

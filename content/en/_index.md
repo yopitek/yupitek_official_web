@@ -30,7 +30,7 @@ Yopitek is a professional company deeply rooted in the Taiwan technology market,
     <div class="text-sm text-neutral-300">Partner Organizations</div>
   </div>
   <div class="p-4 rounded-lg border border-neutral-700">
-    <div class="text-3xl font-bold text-primary-400 mb-1">7</div>
+    <div class="text-3xl font-bold text-primary-400 mb-1">8</div>
     <div class="text-sm text-neutral-300">Authorized Brands</div>
   </div>
   <div class="p-4 rounded-lg border border-neutral-700">
@@ -53,6 +53,7 @@ Yopitek is an authorized distributor for multiple globally recognized brands, su
 | [Hak5](/en/products/hak5/) | Cybersecurity penetration testing toolkit |
 | [Flipper Zero](/en/products/flipperzero/) | Multi-protocol wireless security research device |
 | [Ubiquiti UniFi](/en/products/ubiquiti/) | Enterprise-grade wireless networking infrastructure |
+| [NVIDIA Mellanox](/en/products/mellanox/) | High-speed NICs, InfiniBand switches, DPUs, and LinkX cabling |
 | [NVIDIA GeForce RTX](/en/products/graphiccard/) | High-performance professional graphics computing platform |
 | [SDRLAB](/en/products/sdrlab/) | Software-Defined Radio (SDR) research equipment |
 | [ACS](/en/products/acr/) | Smart card readers and identity verification solutions |

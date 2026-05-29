@@ -1,6 +1,6 @@
 ---
 title: "Technical Support & Driver Downloads"
-description: "Yupitek official driver download center for ALFA Network, HAK5, Flipper Zero, and Ubiquiti products."
+description: "Yupitek official driver download center for ALFA Network, HAK5, Flipper Zero, Ubiquiti, and NVIDIA Mellanox products. Includes interactive NIC selector tool."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -50,6 +50,20 @@ Visit the [Flipper Zero official download page](https://flipper.net/pages/downlo
 ## Ubiquiti UniFi
 
 Visit the [Ubiquiti official download center](https://www.ui.com/download/) for the latest firmware and management software.
+
+## Mellanox / NVIDIA Networking
+
+NVIDIA provides driver packages (MLNX_OFED for Linux, WinOF-2 for Windows, and VMware native drivers) via the official portal.
+
+- **Linux / Windows / VMware Drivers**: Visit the [NVIDIA Networking Downloads Portal](https://network.nvidia.com/products/adapter-software/)
+- **Firmware Downloads**: Check [NVIDIA Firmware Support](https://network.nvidia.com/support/firmware/index/) for ConnectX firmware updates.
+
+## Mellanox NIC Selector
+
+Use our interactive wizard to determine which ConnectX network adapter best matches your server hardware and performance requirements.
+
+<div id="mellanox-selector-root"></div>
+<script src="/js/mellanox-selector.js"></script>
 
 ## Technical Support Inquiries
 

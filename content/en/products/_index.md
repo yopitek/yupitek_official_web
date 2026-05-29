@@ -23,6 +23,9 @@ Yopitek is the authorized Taiwan distributor for multiple internationally recogn
   {{< card title="Ubiquiti UniFi" href="/en/products/ubiquiti/" >}}
     Enterprise-grade Wi-Fi 7 wireless networking solutions with unified UniFi ecosystem management.
   {{< /card >}}
+  {{< card title="NVIDIA Mellanox" href="/en/products/mellanox/" >}}
+    High-performance networking solutions including ConnectX adapters, BlueField DPUs, LinkX cables, and InfiniBand/Ethernet switches for AI, HPC, and enterprise datacenters.
+  {{< /card >}}
   {{< card title="Graphics Cards — RTX 5080" href="/en/products/graphiccard/" >}}
     NVIDIA RTX 5080 series GPUs suited for AI compute workloads, rendering pipelines, and projection workstations.
   {{< /card >}}

@@ -23,6 +23,9 @@ Ubiquiti UniFiはエンタープライズ無線ネットワークの業界標準
   {{< card title="UniFi U7 Pro XG" href="/ja/products/ubiquiti/u7-pro-xg/" image="/images/products/ubiquiti/u7-pro-xg.png" >}}
     Wi-Fi 7 + 10G有線アップリンク — 高速バックボーンネットワーク構成に最適。
   {{< /card >}}
+  {{< card title="UniFi U7 Pro XGS" href="/ja/products/ubiquiti/u7-pro-xgs/" image="/images/products/ubiquiti/u7-pro-xgs.png" >}}
+    UniFi U7 Pro XGS、Wi-Fi 7トライバンド + 10G SFP+光ファイバーアップリンク、光ファイバーバックボーンの無線ネットワークに最適。
+  {{< /card >}}
   {{< card title="UniFi U7 Long Range" href="/ja/products/ubiquiti/u7-long-range/" image="/images/products/ubiquiti/u7-long-range.png" >}}
     Wi-Fi 7長距離版、高ゲインアンテナで広いオープンスペースをカバー。
   {{< /card >}}
@@ -34,8 +37,22 @@ Ubiquiti UniFiはエンタープライズ無線ネットワークの業界標準
   {{< card title="UniFi Cloud Gateway Fiber" href="/ja/products/ubiquiti/cloud-gateway-fiber/" image="/images/products/ubiquiti/cloud-gateway-fiber.png" >}}
     ファイバーWANとUniFi管理コントローラーを統合 — SMBのコアネットワークに最適。
   {{< /card >}}
+  {{< card title="UniFi Flex Mini 2.5G" href="/ja/products/ubiquiti/flex-mini-2-5g/" image="/images/products/ubiquiti/flex-mini-2-5g.png" >}}
+    UniFi Flex Mini 2.5G、5ポート2.5GデスクトップPoEスイッチ。Wi-Fi 7 APへの給電とデータ伝送に対応、USB-C給電。
+  {{< /card >}}
   {{< card title="UniFi Dream Router 7" href="/ja/products/ubiquiti/udr7/" image="/images/products/ubiquiti/udr7.png" >}}
     Wi-Fi 7オールインワンルーター、内蔵UniFiコントローラー — ホームや小規模オフィスに最適。
+  {{< /card >}}
+{{< /card-group >}}
+
+## ミリ波 ポイントツーポイント
+
+{{< card-group >}}
+  {{< card title="Wave MLO5" href="/ja/products/ubiquiti/wave-mlo5/" image="/images/products/ubiquiti/wave-mlo5.png" >}}
+    Ubiquiti Wave MLO5、5GHzミリ波ポイントツーポイント無線ブリッジ。高帯域・低遅延で建物間の短距離高速バックボーン接続に最適。
+  {{< /card >}}
+  {{< card title="Wave MLO6" href="/ja/products/ubiquiti/wave-mlo6/" image="/images/products/ubiquiti/wave-mlo6.png" >}}
+    Ubiquiti Wave MLO6、6GHzミリ波ポイントツーポイント無線ブリッジ。6GHz帯の低干渉特性を活かした短距離高速バックボーン接続に最適。
   {{< /card >}}
 {{< /card-group >}}
 

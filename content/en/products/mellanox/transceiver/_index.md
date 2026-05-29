@@ -18,16 +18,20 @@ NVIDIA LinkX® optical transceivers are designed to meet the strict requirements
 
 Below is the list of active optical transceiver models available in our inventory.
 
-:::carousel
-![25G SFP28 Transceiver](/images/products/mellanox/ai-generated/sfp28-25g-transceiver.jpg)
-*NVIDIA Mellanox 25G SFP28 SR Optical Transceiver*
-<!-- slide -->
-![100G QSFP28 Transceiver](/images/products/mellanox/ai-generated/qsfp28-100g-transceiver.jpg)
-*NVIDIA Mellanox 100G QSFP28 SR4 Optical Transceiver*
-<!-- slide -->
-![400G OSFP Transceiver](/images/products/mellanox/ai-generated/osfp-400g-transceiver.jpg)
-*NVIDIA 400G OSFP NDR Optical Transceiver*
-:::
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0;">
+  <div style="flex: 1 1 250px; max-width: 31%; text-align: center;">
+    <img src="/images/products/mellanox/ai-generated/sfp28-25g-transceiver.jpg" alt="25G SFP28 Transceiver" style="border-radius: 8px; border: 1px solid #374151; width: 100%; height: auto;">
+    <p style="font-size: 0.85rem; color: #9ca3af; margin-top: 0.5rem;">NVIDIA Mellanox 25G SFP28 SR Optical Transceiver</p>
+  </div>
+  <div style="flex: 1 1 250px; max-width: 31%; text-align: center;">
+    <img src="/images/products/mellanox/ai-generated/qsfp28-100g-transceiver.jpg" alt="100G QSFP28 Transceiver" style="border-radius: 8px; border: 1px solid #374151; width: 100%; height: auto;">
+    <p style="font-size: 0.85rem; color: #9ca3af; margin-top: 0.5rem;">NVIDIA Mellanox 100G QSFP28 SR4 Optical Transceiver</p>
+  </div>
+  <div style="flex: 1 1 250px; max-width: 31%; text-align: center;">
+    <img src="/images/products/mellanox/ai-generated/osfp-400g-transceiver.jpg" alt="400G OSFP Transceiver" style="border-radius: 8px; border: 1px solid #374151; width: 100%; height: auto;">
+    <p style="font-size: 0.85rem; color: #9ca3af; margin-top: 0.5rem;">NVIDIA 400G OSFP NDR Optical Transceiver</p>
+  </div>
+</div>
 
 | Part Number | Speed | Interface | Connector | Wavelength | Fiber Type | Max Distance | Description |
 |-------------|-------|-----------|-----------|------------|------------|--------------|-------------|

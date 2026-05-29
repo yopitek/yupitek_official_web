@@ -18,19 +18,24 @@ NVIDIA LinkX® Direct Attach Copper (DAC) cables are copper-based interconnects 
 
 Below is the list of original Mellanox DAC passive copper cables in our inventory, categorized by speed and structure.
 
-:::carousel
-![25G SFP28 DAC](/images/products/mellanox/ai-generated/dac-sfp28-25g.jpg)
-*NVIDIA Mellanox 25G SFP28 Passive DAC Cable*
-<!-- slide -->
-![100G QSFP28 DAC](/images/products/mellanox/ai-generated/dac-qsfp28-100g.jpg)
-*NVIDIA Mellanox 100G QSFP28 Passive DAC Cable*
-<!-- slide -->
-![200G QSFP56 DAC](/images/products/mellanox/ai-generated/dac-qsfp56-200g.jpg)
-*NVIDIA 200G QSFP56 Passive DAC Cable*
-<!-- slide -->
-![100G QSFP28 to 4xSFP28 Breakout](/images/products/mellanox/ai-generated/dac-qsfp28-100g-4x25g.jpg)
-*NVIDIA Mellanox 100G QSFP28 to 4x SFP28 Breakout DAC Cable*
-:::
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0;">
+  <div style="flex: 1 1 220px; max-width: 23%; text-align: center;">
+    <img src="/images/products/mellanox/ai-generated/dac-sfp28-25g.jpg" alt="25G SFP28 DAC" style="border-radius: 8px; border: 1px solid #374151; width: 100%; height: auto;">
+    <p style="font-size: 0.85rem; color: #9ca3af; margin-top: 0.5rem;">NVIDIA Mellanox 25G SFP28 Passive DAC Cable</p>
+  </div>
+  <div style="flex: 1 1 220px; max-width: 23%; text-align: center;">
+    <img src="/images/products/mellanox/ai-generated/dac-qsfp28-100g.jpg" alt="100G QSFP28 DAC" style="border-radius: 8px; border: 1px solid #374151; width: 100%; height: auto;">
+    <p style="font-size: 0.85rem; color: #9ca3af; margin-top: 0.5rem;">NVIDIA Mellanox 100G QSFP28 Passive DAC Cable</p>
+  </div>
+  <div style="flex: 1 1 220px; max-width: 23%; text-align: center;">
+    <img src="/images/products/mellanox/ai-generated/dac-qsfp56-200g.jpg" alt="200G QSFP56 DAC" style="border-radius: 8px; border: 1px solid #374151; width: 100%; height: auto;">
+    <p style="font-size: 0.85rem; color: #9ca3af; margin-top: 0.5rem;">NVIDIA 200G QSFP56 Passive DAC Cable</p>
+  </div>
+  <div style="flex: 1 1 220px; max-width: 23%; text-align: center;">
+    <img src="/images/products/mellanox/ai-generated/dac-qsfp28-100g-4x25g.jpg" alt="100G QSFP28 to 4xSFP28 Breakout" style="border-radius: 8px; border: 1px solid #374151; width: 100%; height: auto;">
+    <p style="font-size: 0.85rem; color: #9ca3af; margin-top: 0.5rem;">NVIDIA Mellanox 100G QSFP28 to 4x SFP28 Breakout DAC Cable</p>
+  </div>
+</div>
 
 ### 1. 25G, 40G & 56G DAC Cables
 

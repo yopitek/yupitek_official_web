@@ -18,13 +18,16 @@ NVIDIA LinkX® Active Optical Cables (AOC) combine transceiver components and fi
 
 Below is the list of original Mellanox active optical cables in our inventory, categorized by bandwidth tier.
 
-:::carousel
-![100G QSFP28 AOC](/images/products/mellanox/ai-generated/aoc-qsfp28-100g.jpg)
-*NVIDIA Mellanox 100G QSFP28 Active Optical Cable*
-<!-- slide -->
-![200G QSFP56 AOC](/images/products/mellanox/ai-generated/aoc-qsfp56-200g.jpg)
-*NVIDIA 200G QSFP56 Active Optical Cable*
-:::
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0;">
+  <div style="flex: 1 1 300px; max-width: 48%; text-align: center;">
+    <img src="/images/products/mellanox/ai-generated/aoc-qsfp28-100g.jpg" alt="100G QSFP28 AOC" style="border-radius: 8px; border: 1px solid #374151; width: 100%; height: auto;">
+    <p style="font-size: 0.85rem; color: #9ca3af; margin-top: 0.5rem;">NVIDIA Mellanox 100G QSFP28 Active Optical Cable</p>
+  </div>
+  <div style="flex: 1 1 300px; max-width: 48%; text-align: center;">
+    <img src="/images/products/mellanox/ai-generated/aoc-qsfp56-200g.jpg" alt="200G QSFP56 AOC" style="border-radius: 8px; border: 1px solid #374151; width: 100%; height: auto;">
+    <p style="font-size: 0.85rem; color: #9ca3af; margin-top: 0.5rem;">NVIDIA 200G QSFP56 Active Optical Cable</p>
+  </div>
+</div>
 
 ### 1. 100G Active Optical Cables (QSFP28)
 

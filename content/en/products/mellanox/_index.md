@@ -1,6 +1,6 @@
 ---
 title: "Mellanox / NVIDIA ConnectX NICs & Networking Solutions"
-description: "Taiwan distributor for NVIDIA Mellanox ConnectX network cards, BlueField DPUs, LinkX cables (DAC/AOC), and InfiniBand switches. Get enterprise quote."
+description: "Buy NVIDIA Mellanox ConnectX network cards, BlueField DPUs, LinkX cables (DAC/AOC), and InfiniBand switches. Get enterprise quote."
 date: 2026-05-27
 draft: false
 showBreadcrumbs: true
@@ -9,18 +9,9 @@ showChildPages: false
 featureimage: "/images/products/mellanox/ai-generated/hero/mellanox-hero-banner.png"
 ---
 
-# Mellanox / NVIDIA ConnectX NICs & Networking — Taiwan Authorized Reseller
+# Mellanox / NVIDIA ConnectX NICs & Networking
 
-NVIDIA Mellanox is the global benchmark for high-performance computing (HPC), AI data clusters, hyperscale cloud platforms, enterprise storage (NVMe-oF), and low-latency financial systems. As an authorized distributor, **Yupitek** delivers a complete portfolio of high-speed Mellanox network cards, intelligent DPUs, active/passive cables, and high-density switches.
-
----
-
-## Interactive Product Selector
-
-{{< alert >}}
-💡 **Unsure which network adapter fits your server?**  
-Use our interactive [Mellanox NIC Selector Tool](/en/support/#mellanox-nic-selector) to match your use case, PCIe slot, and protocol requirements in 4 quick steps.
-{{< /alert >}}
+NVIDIA Mellanox is the global benchmark for high-performance computing (HPC), AI data clusters, hyperscale cloud platforms, enterprise storage (NVMe-oF), and low-latency financial systems. Yupitek provides a complete retail catalog of high-speed Mellanox network cards, intelligent DPUs, active/passive cables, and high-density switches.
 
 ---
 

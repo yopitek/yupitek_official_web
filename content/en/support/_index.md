@@ -58,13 +58,6 @@ NVIDIA provides driver packages (MLNX_OFED for Linux, WinOF-2 for Windows, and V
 - **Linux / Windows / VMware Drivers**: Visit the [NVIDIA Networking Downloads Portal](https://network.nvidia.com/products/adapter-software/)
 - **Firmware Downloads**: Check [NVIDIA Firmware Support](https://network.nvidia.com/support/firmware/index/) for ConnectX firmware updates.
 
-## Mellanox NIC Selector
-
-Use our interactive wizard to determine which ConnectX network adapter best matches your server hardware and performance requirements.
-
-<div id="mellanox-selector-root"></div>
-<script src="/js/mellanox-selector.js"></script>
-
 ## Technical Support Inquiries
 
 For driver installation assistance or technical inquiries, please [contact us](/en/contact/).

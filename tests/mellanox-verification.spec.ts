@@ -56,7 +56,7 @@ test.describe('Mellanox Pages Quality Audit', () => {
 
   test('Verify homepage brand table links are correct', async ({ page }) => {
     await page.goto('/en/');
-    const link = await page.locator('a[href="/en/products/mellanox/"]');
+    const link = await page.locator('table a[href="/en/products/mellanox/"]');
     await expect(link).toBeVisible();
   });
 });

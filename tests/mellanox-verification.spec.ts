@@ -1,17 +1,25 @@
 import { test, expect } from '@playwright/test';
 
-const PAGES = [
-  '/en/products/mellanox/',
-  '/en/products/mellanox/nic/',
-  '/en/products/mellanox/dpu/',
-  '/en/products/mellanox/transceiver/',
-  '/en/products/mellanox/cable-dac/',
-  '/en/products/mellanox/cable-aoc/',
-  '/en/products/mellanox/cable-fiber/',
-  '/en/products/mellanox/switch/'
+const LANGUAGES = ['en', 'zh-tw', 'zh-cn', 'ja', 'fr', 'de', 'es', 'pt', 'ru', 'ar'];
+const SUB_ROUTES = [
+  'products/mellanox/',
+  'products/mellanox/nic/',
+  'products/mellanox/dpu/',
+  'products/mellanox/transceiver/',
+  'products/mellanox/cable-dac/',
+  'products/mellanox/cable-aoc/',
+  'products/mellanox/cable-fiber/',
+  'products/mellanox/switch/'
 ];
 
-test.describe('Mellanox Pages Quality Audit', () => {
+const PAGES: string[] = [];
+for (const lang of LANGUAGES) {
+  for (const route of SUB_ROUTES) {
+    PAGES.push(`/${lang}/${route}`);
+  }
+}
+
+test.describe('Mellanox Pages Multi-Language Quality Audit', () => {
   for (const route of PAGES) {
     test(`Audit ${route}`, async ({ page }) => {
       // Monitor console errors and network requests
@@ -60,3 +68,4 @@ test.describe('Mellanox Pages Quality Audit', () => {
     await expect(link).toBeVisible();
   });
 });
+

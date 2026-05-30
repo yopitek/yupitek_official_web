@@ -46,21 +46,7 @@ Below is the list of unmanaged and managed 1U rack-mount switches in our invento
 
 Building a scale-out cluster for AI training or physics simulation requires specialized topologies:
 
-```
-                  ┌─────────────────┐       ┌─────────────────┐
-  Spine Level     │ Spine Switch 1  │.......│ Spine Switch N  │
-                  └────────┬────────┘       └────────┬────────┘
-                           │                         │
-            ┌──────────────┼──────────────┐          │
-            │              │              │          │
-     ┌──────┴──────┐┌──────┴──────┐┌──────┴──────┐   │
-Leaf │Leaf Switch 1││Leaf Switch 2││Leaf Switch 3│...│
-Level└──────┬──────┘└──────┬──────┘└──────┬──────┘   │
-            │              │              │          │
-      ┌─────┴─────┐  ┌─────┴─────┐  ┌─────┴─────┐    │
-Nodes │  Node 1   │  │  Node 2   │  │  Node 3   │....│
-      └───────────┘  └───────────┘  └───────────┘
-```
+![NVIDIA Mellanox Fat-Tree InfiniBand Topology](/images/products/mellanox/ai-generated/switch_topology@2x.png)
 
 ### 1. Fat-Tree (non-blocking CLOS) Topology
 The standard architecture for InfiniBand networks. It organizes switches in hierarchical tiers (Leaf and Spine) to provide multiple parallel paths.

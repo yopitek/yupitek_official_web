@@ -51,6 +51,12 @@
     parent   = "Продукты"
     weight   = 27
 
+  [[main]]
+    name     = "Mellanox"
+    pageRef  = "/products/mellanox"
+    parent   = "Продукты"
+    weight   = 28
+
 [[main]]
   name   = "Блог"
   pageRef = "/blog"

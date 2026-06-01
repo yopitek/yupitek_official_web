@@ -51,6 +51,12 @@
     parent   = "المنتجات"
     weight   = 27
 
+  [[main]]
+    name     = "Mellanox"
+    pageRef  = "/products/mellanox"
+    parent   = "المنتجات"
+    weight   = 28
+
 [[main]]
   name       = "الدعم التقني"
   pageRef    = "/support"

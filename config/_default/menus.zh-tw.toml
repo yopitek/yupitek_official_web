@@ -51,6 +51,12 @@
     parent   = "產品"
     weight   = 27
 
+  [[main]]
+    name     = "Mellanox"
+    pageRef  = "/products/mellanox"
+    parent   = "產品"
+    weight   = 28
+
 [[main]]
   name   = "部落格"
   pageRef = "/blog"

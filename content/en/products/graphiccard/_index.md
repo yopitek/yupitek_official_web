@@ -60,10 +60,10 @@ Yopitek offers NVIDIA RTX 5080 series graphics card procurement services for AI 
   {{< card title="MSI RTX5080 16G VENTUS 3X OC WHITE" href="/en/products/graphiccard/msi-rtx5080-ventus-3x-oc-white/" image="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.png" >}}
     MSI VENTUS 3X OC White Edition — white build favorite with the same value proposition.
   {{< /card >}}
-  {{< card title="MSI RTX5080 16G INSPIRE 3X OC" href="/en/products/graphiccard/msi-rtx5080-inspire-3x-oc/" image="/images/products/graphiccard/msi-rtx5080-inspire.png" >}}
+  {{< card title="MSI RTX5080 16G INSPIRE 3X OC" href="/en/products/graphiccard/msi-rtx5080-inspire-3x-oc/" image="/images/products/graphiccard/msi-rtx5080-inspire-3x-oc.png" >}}
     MSI INSPIRE — creative aesthetics with performance and visual appeal.
   {{< /card >}}
-  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/en/products/graphiccard/msi-rtx5080-suprim-liquid-soc/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid.png" >}}
+  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/en/products/graphiccard/msi-rtx5080-suprim-liquid-soc/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.png" >}}
     MSI SUPRIM LIQUID — all-in-one liquid cooling flagship for extreme overclocking.
   {{< /card >}}
 {{< /card-group >}}

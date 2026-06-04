@@ -29,6 +29,12 @@ SDRLABはソフトウェア定義無線（SDR）モジュールとFlipper Zero�
   {{< card title="Flipper Zero WiFi Multiboard" href="/ja/products/sdrlab/flipper-wifi-multiboard/" image="/images/products/sdrlab/flipper-wifi-multiboard.png" >}}
     ESP8266統合Wi-Fi多機能拡張ボード。
   {{< /card >}}
+  {{< card title="SDRLab H4M" href="/ja/products/sdrlab/h4m/" image="/images/products/sdrlab/h4m.png" >}}
+    SDRLab H4M — 高性能SDRモジュール、高度な無線通信研究向け。
+  {{< /card >}}
+  {{< card title="Flipper Zero Ethernet Test Module" href="/ja/products/sdrlab/flipper-ethernet/" image="/images/products/sdrlab/flipper-ethernet.png" >}}
+    Flipper Zero用有線ネットワークテスト拡張モジュール。
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

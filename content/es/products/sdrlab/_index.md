@@ -19,6 +19,18 @@ featureimage: "/images/products/sdrlab/banner-sdrlab.png"
   {{< card title="Flipper Zero NRF24 Module" href="/es/products/sdrlab/flipper-nrf24/" image="/images/products/sdrlab/flipper-nrf24.png" >}}
     Módulo NRF24L01+ para investigación inalámbrica en 2.4 GHz.
   {{< /card >}}
+  {{< card title="SDRLab H4M" href="/es/products/sdrlab/h4m/" image="/images/products/sdrlab/h4m.png" >}}
+    Módulo SDR de alto rendimiento de SDRLab para investigación avanzada en comunicaciones inalámbricas.
+  {{< /card >}}
+  {{< card title="Flipper Zero 5G Expansion Board" href="/es/products/sdrlab/flipper-5g/" image="/images/products/sdrlab/flipper-5g.png" >}}
+    Placa de expansión RF de banda 5G diseñada para Flipper Zero.
+  {{< /card >}}
+  {{< card title="Flipper Zero WiFi Multiboard" href="/es/products/sdrlab/flipper-wifi-multiboard/" image="/images/products/sdrlab/flipper-wifi-multiboard.png" >}}
+    Placa de expansión Wi-Fi multifunción para Flipper Zero con módulo ESP8266 integrado.
+  {{< /card >}}
+  {{< card title="Flipper Zero Ethernet Test Module" href="/es/products/sdrlab/flipper-ethernet/" image="/images/products/sdrlab/flipper-ethernet.png" >}}
+    Módulo de expansión de prueba de red cableada para Flipper Zero.
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

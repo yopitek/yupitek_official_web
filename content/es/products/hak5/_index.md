@@ -30,6 +30,39 @@ featureimage: "/images/products/hak5/banner-hak5.png"
   {{< card title="WiFi Pineapple Pager" href="/es/products/hak5/wifi-pineapple-pager/" image="/images/products/hak5/wifi-pineapple-pager.png" >}}
     Herramienta portátil de pentesting Wi-Fi tribanda con payloads DuckyScript, pantalla a color de 2.4" y alertas por vibración — totalmente autónoma.
   {{< /card >}}
+  {{< card title="WiFi Pineapple Enterprise" href="/es/products/hak5/wifi-pineapple-enterprise/" image="/images/products/hak5/wifi-pineapple-enterprise.png" >}}
+    Plataforma de auditoría inalámbrica de grado empresarial con diseño de antena mejorado para evaluaciones de seguridad a gran escala.
+  {{< /card >}}
+  {{< card title="Key Croc" href="/es/products/hak5/key-croc/" image="/images/products/hak5/key-croc.png" >}}
+    Registrador de teclas y herramienta de inyección HID con Wi-Fi integrado para acceso remoto.
+  {{< /card >}}
+  {{< card title="Packet Squirrel Mark II" href="/es/products/hak5/packet-squirrel/" image="/images/products/hak5/packet-squirrel.png" >}}
+    Dispositivo de pruebas de intermediario de red con soporte para túnel VPN, captura de paquetes y manipulación DNS.
+  {{< /card >}}
+  {{< card title="O.MG Plug" href="/es/products/hak5/omg-plug/" image="/images/products/hak5/omg-plug.png" >}}
+    Dispositivo O.MG en factor de forma de cargador, oculto en una cabeza de carga con capacidad de control remoto.
+  {{< /card >}}
+  {{< card title="O.MG Adapter" href="/es/products/hak5/omg-adapter/" image="/images/products/hak5/omg-adapter.png" >}}
+    Dispositivo O.MG como adaptador USB, fácilmente adjuntable a dispositivos objetivo.
+  {{< /card >}}
+  {{< card title="O.MG Programmer" href="/es/products/hak5/omg-programmer/" image="/images/products/hak5/omg-programmer.png" >}}
+    Programador dedicado para O.MG Cable — usado para flashear firmware DuckyScript.
+  {{< /card >}}
+  {{< card title="O.MG UnBlocker" href="/es/products/hak5/omg-unBlocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
+    Evita dispositivos de bloqueo de datos USB — para pruebas legítimas de soluciones de solo carga.
+  {{< /card >}}
+  {{< card title="Malicious Cable Detector" href="/es/products/hak5/malicious-cable-detector/" image="/images/products/hak5/malicious-cable-detector.png" >}}
+    Escáner para detectar cables maliciosos disfrazados, ayuda a identificar dispositivos tipo O.MG.
+  {{< /card >}}
+  {{< card title="Screen Crab" href="/es/products/hak5/screen-crab/" image="/images/products/hak5/screen-crab.png" >}}
+    Dispositivo de captura HDMI intermediario — captura silenciosamente el contenido de pantalla con transmisión remota Wi-Fi.
+  {{< /card >}}
+  {{< card title="Plunder Bug LAN Tap" href="/es/products/hak5/plunder-bug/" image="/images/products/hak5/plunder-bug.png" >}}
+    Dispositivo de monitoreo de red portátil — duplica el tráfico de red cableado a través de USB-C en tiempo real.
+  {{< /card >}}
+  {{< card title="Shark Jack Cable" href="/es/products/hak5/shark-jack-cable/" image="/images/products/hak5/shark-jack-cable.png" >}}
+    Versión cable del Shark Jack para conexión directa a puertos de red.
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

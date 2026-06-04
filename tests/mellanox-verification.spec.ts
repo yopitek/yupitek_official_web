@@ -47,6 +47,10 @@ test.describe('Mellanox Pages Multi-Language Quality Audit', () => {
       const selectorElement = await page.$('#mellanox-selector-root');
       expect(selectorElement).toBeNull();
 
+      // Scroll to bottom to trigger lazy-loaded images
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+      await page.waitForTimeout(1000);
+
       // Check all image loads on this page
       const brokenImages = await page.evaluate(() => {
         return Array.from(document.querySelectorAll('img'))

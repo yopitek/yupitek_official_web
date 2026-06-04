@@ -268,9 +268,13 @@
           <th>Max Speed</th>
           <th>USB</th>
           <th>Antennas</th>
+          <th>MIMO</th>
           <th>Monitor Mode</th>
           <th>Packet Inject</th>
           <th>Linux Driver</th>
+          <th>Driver Type</th>
+          <th>AP Mode</th>
+          <th>Max Power</th>
           <th>Bluetooth</th>
           <th>Best For</th>
         </tr>
@@ -283,10 +287,14 @@
           <td>2.4 + 5 + 6 GHz</td>
           <td>3000 Mbps</td>
           <td>USB-C 3.2</td>
-          <td>1× RP-SMA 5dBi</td>
+          <td>2× RP-SMA 5dBi</td>
+          <td>2×2 MIMO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="ok">✅ Yes</span></td>
           <td>In-kernel ≥5.18</td>
+          <td>In-Kernel (Plug & Play)</td>
+          <td><span class="ok">✅ Native</span></td>
+          <td>3.6W</td>
           <td>BT 5.2</td>
           <td>WiFi 6E + Linux + USB-C</td>
         </tr>
@@ -298,9 +306,13 @@
           <td>3000 Mbps</td>
           <td>USB-A 3.2 L</td>
           <td>2× RP-SMA 5dBi</td>
+          <td>2×2 MIMO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="ok">✅ Yes</span></td>
           <td>In-kernel ≥5.18</td>
+          <td>In-Kernel (Plug & Play)</td>
+          <td><span class="ok">✅ Native</span></td>
+          <td>3.6W</td>
           <td>BT 5.2</td>
           <td>WiFi 6E + dual antenna</td>
         </tr>
@@ -312,9 +324,13 @@
           <td>1200 Mbps</td>
           <td>USB-A 3.0</td>
           <td>Integrated</td>
+          <td>2×2 MIMO</td>
           <td><span class="warn">⚠️ Limited</span></td>
           <td><span class="warn">⚠️ Limited</span></td>
           <td>OOK (&lt;6.14)</td>
+          <td>Out-of-Kernel</td>
+          <td><span class="warn">⚠️ Limited</span></td>
+          <td>3.6W</td>
           <td>—</td>
           <td>Windows WiFi 6</td>
         </tr>
@@ -326,9 +342,13 @@
           <td>1800 Mbps</td>
           <td>USB-A 3.2</td>
           <td>Integrated nano</td>
+          <td>2×2 MIMO</td>
           <td><span class="warn">⚠️ Limited</span></td>
           <td><span class="warn">⚠️ Limited</span></td>
           <td>OOK (&lt;6.14)</td>
+          <td>Out-of-Kernel</td>
+          <td><span class="warn">⚠️ Limited</span></td>
+          <td>3.0W</td>
           <td>—</td>
           <td>Compact travel adapter</td>
         </tr>
@@ -340,9 +360,13 @@
           <td>867 Mbps</td>
           <td>USB-C 3.0</td>
           <td>2× RP-SMA 5dBi</td>
+          <td>2×2 MIMO</td>
           <td><span class="ok">✅✅ Best</span></td>
           <td><span class="ok">✅✅ Best</span></td>
           <td>OOK (IK ≥6.14)</td>
+          <td>Out-of-Kernel</td>
+          <td><span class="none">❌ Problematic</span></td>
+          <td>3.6W</td>
           <td>—</td>
           <td>Kali Linux gold standard</td>
         </tr>
@@ -354,9 +378,13 @@
           <td>867 Mbps</td>
           <td>USB-A 3.0</td>
           <td>2× RP-SMA 5dBi</td>
+          <td>2×2 MIMO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="ok">✅ Yes</span></td>
           <td>In-kernel ≥4.19</td>
+          <td>In-Kernel (Plug & Play)</td>
+          <td><span class="ok">✅ Native</span></td>
+          <td>3.0W</td>
           <td>—</td>
           <td>Linux plug &amp; play</td>
         </tr>
@@ -368,9 +396,13 @@
           <td>433 Mbps</td>
           <td>USB-A 2.0</td>
           <td>1× RP-SMA 2dBi</td>
+          <td>1×1 SISO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="ok">✅ Yes</span></td>
           <td>Out-of-kernel</td>
+          <td>Out-of-Kernel</td>
+          <td><span class="none">❌ Limited</span></td>
+          <td>2.5W</td>
           <td>—</td>
           <td>Budget security testing</td>
         </tr>
@@ -382,9 +414,13 @@
           <td>433 Mbps</td>
           <td>USB 2.0 nano</td>
           <td>Integrated 2dBi</td>
+          <td>1×1 SISO</td>
           <td><span class="none">❌ No</span></td>
           <td><span class="none">❌ No</span></td>
           <td>⚠️ Poor support</td>
+          <td>Out-of-Kernel</td>
+          <td><span class="none">❌ Limited</span></td>
+          <td>2.5W</td>
           <td>BT 4.2</td>
           <td>Windows home WiFi + BT</td>
         </tr>
@@ -399,12 +435,17 @@
     <div class="guide-card">
       <h3>🔴 Kali Linux / Pentesting</h3>
       <div class="rec">Best: AWUS036ACH</div>
-      <div class="why">RTL8812AU — most mature, rock-solid monitor mode &amp; packet injection on Kali. The community gold standard since 2015.</div>
+      <div class="why">RTL8812AU — most mature monitor mode &amp; packet injection on Kali. Requires manual driver compile (community gold standard). <strong>Tip:</strong> Pin to stable commit <code>63cf0b4</code> on aircrack-ng repo for maximum injection stability.</div>
     </div>
     <div class="guide-card">
       <h3>🔵 WiFi 6E (Tri-Band) Power User</h3>
       <div class="rec">Best: AWUS036AXML or AWUS036AXM</div>
-      <div class="why">MT7921AUN — in-kernel Linux driver since 5.18, full 6 GHz band, Bluetooth 5.2. AXML has USB-C; AXM has dual antenna.</div>
+      <div class="why">MT7921AUN — in-kernel Linux driver since 5.18, full 6 GHz band, Bluetooth 5.2. <strong>Form factors:</strong> AXML has a detachable USB-C connector and a single-antenna body with dual outputs; AXM has a built-in L-shaped USB-A format.</div>
+    </div>
+    <div class="guide-card">
+      <h3>🌐 Soft-AP / Hotspot Emulation</h3>
+      <div class="rec">Best: AWUS036ACM</div>
+      <div class="why">MT7612U — plug-and-play AP mode support via native <code>hostapd</code> in Linux kernel. Unlike Realtek adapters which require problematic custom hostapd builds, MediaTek is seamless and stable for Rogue AP / Evil Twin simulation.</div>
     </div>
     <div class="guide-card">
       <h3>🟢 Linux Daily Driver (Plug &amp; Play)</h3>
@@ -414,7 +455,7 @@
     <div class="guide-card">
       <h3>🟣 Raspberry Pi / Embedded</h3>
       <div class="rec">Best: AWUS036ACM</div>
-      <div class="why">Low power consumption + in-kernel driver makes it ideal for Raspberry Pi headless setups without manual driver compilation.</div>
+      <div class="why">Low power consumption + in-kernel driver makes it ideal for Raspberry Pi. <strong>Note:</strong> High-power models (ACH, AXML) will draw up to 3.6W and require a powered USB hub to prevent voltage drops and connection resets on Pi.</div>
     </div>
     <div class="guide-card">
       <h3>🟡 Budget / Beginner Security</h3>
@@ -434,7 +475,7 @@
     <div class="guide-card">
       <h3>🍎 macOS Compatibility</h3>
       <div class="rec">Best: AWUS036ACH or AWUS036AXML</div>
-      <div class="why">ACH has good macOS support via third-party driver. AXML's MT7921AUN has community macOS support. Always verify macOS version compatibility.</div>
+      <div class="why">ACH has good macOS support via third-party driver. AXML's MT7921AUN has community macOS support. Always verify macOS version compatibility. Intel Macs have better driver legacy support than M-series.</div>
     </div>
   </div>
 
@@ -456,7 +497,7 @@
           <td>🐧 Kali Linux</td>
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036ach/" target="_blank">AWUS036ACH</a></td>
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036acm/" target="_blank">AWUS036ACM</a></td>
-          <td>ACH = best monitor mode; ACM = easiest kernel support</td>
+          <td>ACH = best monitor mode; ACM = easiest kernel support. <strong>For VMs:</strong> Configure VM to use USB 3.0 (xHCI) controller to prevent drops.</td>
         </tr>
         <tr>
           <td>🐧 Ubuntu / Debian</td>
@@ -468,7 +509,7 @@
           <td>🐧 Raspberry Pi OS</td>
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036acm/" target="_blank">AWUS036ACM</a></td>
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036ach/" target="_blank">AWUS036ACH</a></td>
-          <td>Low power + in-kernel driver; no manual compile needed</td>
+          <td>Low power + in-kernel driver; no manual compile needed. Recommends powered USB hub for high-power cards to avoid resets.</td>
         </tr>
         <tr>
           <td>🪟 Windows 10 / 11</td>
@@ -480,13 +521,13 @@
           <td>🍎 macOS</td>
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036ach/" target="_blank">AWUS036ACH</a></td>
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036axml/" target="_blank">AWUS036AXML</a></td>
-          <td>Third-party drivers available; verify macOS version</td>
+          <td>Third-party drivers available; verify macOS version. Intel Macs have legacy drivers; Apple Silicon (M1/M2/M3) has restricted experimental support.</td>
         </tr>
         <tr>
           <td>📱 Android / NetHunter</td>
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036ach/" target="_blank">AWUS036ACH</a></td>
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036acs/" target="_blank">AWUS036ACS</a></td>
-          <td>RTL8812AU &amp; RTL8811AU have NetHunter support; OTG needed</td>
+          <td>RTL8812AU &amp; RTL8811AU have NetHunter support; OTG adapter &amp; custom kernel compilation required.</td>
         </tr>
       </tbody>
     </table>

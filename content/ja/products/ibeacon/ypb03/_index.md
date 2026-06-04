@@ -1,80 +1,123 @@
 ---
 title: "YPB03 長寿命 Max Beacon ビーコン"
-description: "YPB03 長寿命 Max Beacon ビーコン。低消費電力 Bluetooth BLE 5.0 (低功耗藍牙) 技術、勤怠管理、位置測位、資産追跡に最適、設定可能。"
+description: "YPB03 長寿命 Max Beacon ビーコン。低消費電力 Bluetooth BLE 5.0 技術、勤怠管理、位置測位、資産追跡に最適、設定可能。"
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0 (低功耗藍牙)", "Bluetooth", "Yupitek", "AA Battery", "Long Range", "Waterproof"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range", "Waterproof", "LINE Beacon", "LINE Simple Beacon"]
 ---
 
 ## 製品概要
 
-The **YPB03** is an industrial-grade, long-range Bluetooth® Low Energy (BLE 5.0 (低功耗藍牙)) beacon engineered for long-term deployments in large public spaces. Powered by **4 × AA (三號) 乾電池** providing a massive 5800mAh capacity, it boasts an incredible battery lifetime of **up to 10 years** under default configurations.
+**YPB03** は、**LINE Beacon** プロトコル用に最適化され、標準的な **LINE Simple Beacon** パケットの配信に対応した、産業用超長寿命型 Bluetooth® Low Energy (BLE 5.0) ビーコンです。**単3乾電池×4本**（計 5800mAh）で駆動し、デフォルトの設定で **最大10年間** という圧倒的なバッテリー寿命を実現しています。
 
-With a powerful transmission range of up to **240 meters**, the YPB03 is widely deployed for indoor positioning, navigation, and commercial information pushing in airports, train stations, shopping malls, and hospitals. It comes in a rugged IP65 (防塵防潑水) waterproof ABS casing and includes a screw-mount bracket for stable installation.
-
----
-
-## 技術仕様
-
-| パラメータ | 技術仕様 | 備考 |
-| :--- | :--- | :--- |
-| **晶片型號** | nRF52 系列 | Low latency and high efficiency |
-| **藍牙版本** | BLE 5.0 (低功耗藍牙) | High range and throughput |
-| **防水等級** | IP65 (防塵防潑水) | Dustproof and water-jet resistant |
-| **傳輸距離** | 最遠 240 公尺 (開闊空間) | Maximum in open areas |
-| **電源規格** | 4 × AA (三號) 乾電池 | 5800mAh capacity total (Included) |
-| **電池壽命** | 最長可達 10 年 (預設參數下) | Based on default broadcasting parameters |
-| **外殼材質** | ABS 塑膠 + 矽膠 | Rugged industrial casing |
-| **外觀尺寸** | 72 × 72 × 23 mm | Wall-mountable square |
-| **淨重** | 145 g | Including batteries |
-| **預設參數** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | Configurable via App |
+高利得アンテナの採用により、最大 **240メートル** の超広範囲通信に対応。大規模な商業店舗でのプロモーション、スマート小売店のナビゲーション、広大な屋内施設の案内などに最適です。ユーザーは専用アプリを別途インストールする必要がなく、使い慣れた **LINE** アプリを通じて直接位置連動型の通知やメッセージを受け取ることができます。
 
 ---
 
 ## 主な特徴
 
-* **10-Year Battery Service:** Massive 5800mAh capacity using four standard replaceable AA batteries eliminates frequent maintenance.
-* **Extended Broadcast Range:** Signal coverage extends up to 240 meters (787 feet) for superior penetration in open halls.
-* **Double Installation System:** Supports double-sided industrial adhesive tape or secure screw-bracket wall installation.
-* **Robust Enclosure:** IP65 (防塵防潑水)-rated ABS casing withstands challenging environment humidity, dust, and temperatures (-30°C to 60°C).
+* **公式 LINE Beacon 完全互換:** オープンな LINE Simple Beacon プロトコルを配信し、物理的な位置情報と LINE ボット (Messaging API) を簡単に統合します。
+* **10年間のメンテナンスフリー:** 入手性の高い単3乾電池4本で駆動。5800mAh の大容量により、頻繁な電池交換コストを削減します。
+* **240m の広域カバー:** 強力な BLE 5.0 信号で、空港、イベント会場、ショッピングモールなどの大規模施設をカバーします。
+* **手軽なエンゲージメント:** ユーザーは Bluetooth をオンにし、公式アカウントを友だち追加するだけで受信可能。アプリダウンロードの障壁がありません。
+* **タフな産業用設計:** IP65 等級の防水防塵 ABS 筐体を採用し、工場や倉庫、湿気の多い屋内環境でも安定して動作します。
+
+---
+
+## LINE Beacon 開発者向け統合ガイド
+
+### 近接トリガーの仕組み
+Bluetooth と LINE Beacon 設定を有効にしているユーザーが YPB03 の電波圏内に入ると：
+1. LINE アプリが **Service UUID `0xFE6F`** を検知し、電波に含まれるハードウェア ID (HWID) を読み取ります。
+2. LINE プラットフォームがこの情報を仲介し、該当する LINE ボットの Webhook サーバーへ `beacon` イベントを POST 送信します。
+3. ボットサーバーがこのイベントを受け取り、クーポン、ウェルカムメッセージ、あるいは屋内ナビなどのアクションをリアルタイムに返信します。
+
+```mermaid
+sequenceDiagram
+    participant User as ユーザー (LINE App)
+    participant Beacon as YPB03 (0xFE6F + HWID)
+    participant LINE as LINE プラットフォーム
+    participant Bot as Webhook サーバー (Bot)
+
+    Beacon->>User: BLE配信 (UUID: FE6F + HWID)
+    User->>LINE: HWID と ユーザーID を送信
+    LINE->>Bot: Webhook POST (beacon イベント: enter/stay/banner)
+    Bot->>User: 返信/プッシュ (例: クーポン送付)
+```
+
+### ステップ 1：ハードウェア ID (HWID) の登録
+1. **LINE Developers Console** または **LINE 公式アカウント管理画面** にログインします。
+2. **Beacon** 連携メニューから新規デバイスを登録し、固有の **5バイト (16進数10文字) のハードウェア ID (HWID)** を発行・取得します。
+
+### ステップ 2：BeaconSET+ を使用した YPB03 の設定
+YPB03 の設定はワイヤレスで変更可能です：
+1. スマートフォンで **BeaconSET+** アプリを開きます。
+2. 該当する YPB03 の MAC アドレスを選択して接続します（管理パスワードが必要）。
+3. 使用するスロットの設定を **Service Data** に変更し、以下を設定します：
+   - **Service UUID:** `FE6F`
+   - **Data Value:** `FE6F` + `[取得した 5バイトの HWID]` + `7F00` (例: HWID が `0123456789` の場合、`FE6F01234567897F00` と入力します)。
+4. 保存して接続を切断すると、デバイスは LINE Beacon パケットの配信を開始します。
+
+### ステップ 3：Webhook での Beacon イベント処理
+ユーザーの検知時にサーバーが受け取る JSON オブジェクトには、以下のような `beacon` 情報が含まれます：
+* **`hwid`**: 登録されたビーコンのハードウェアID。
+* **`type`**: 検知タイプ：
+  - `enter`: ユーザーがビーコンの電波圏内に入ったとき。
+  - `stay`: ユーザーが電波圏内に滞在し続けているとき（10秒ごとに送信）。
+  - `banner`: ユーザーが LINE のトーク画面上部に表示されたビーコン通知をタップしたとき。
 
 ---
 
 ## 設置方法
 
 ### 方法 A：両面テープによる貼り付け
-* **Best Surface:** Smooth surfaces like glass, acrylic, clean aluminum, or polished tile.
-* **Process:** Clean the surface. Apply the double-sided tape, apply pressure for 2 seconds, and let it rest for 30 minutes before mounting the beacon.
+* **適した場所:** ガラス、アクリル、清潔なアルミ板、磨かれたタイルなどの滑らかな表面。
+* **手順:** 設置場所を綺麗に拭きます。付属の強力両面テープを貼り付け、2秒間押し当てた後、30分間置いてからビーコン本体を固定します。
 
 ### 方法 B：ネジ式ブラケットによる壁掛け（推奨）
-* **Best Surface:** Concrete, drywall, wood, or brick.
-* **Process:**
-  1. Secure the bracket onto the wall using the expansion plugs and screws.
-  2. Slide the YPB03 into the bracket slots until it locks.
+* **適した場所:** コンクリート、石膏ボード、木材、レンガ壁など。
+* **手順:**
+  1. 壁面にプラグとネジを用いて取付用ブラケットを固定します。
+  2. YPB03 をブラケットの溝に沿ってスライドさせ、カチッと音がするまで差し込みます。
 
 ---
 
 ## 設定ガイド
 
-The parameters of YPB03 (including Tx Power, Broadcast Interval, UUID, Major, and Minor) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
-2. Ensure your phone's Bluetooth and Location services are enabled.
-3. Open the app, scan for the beacon's MAC address, and click to connect.
-4. Input the secure default configuration password to unlock and edit parameters.
+YPB03 のパラメータ（UUID、Major、Minor、送信出力、およびアドバタイジング間隔）は、**BeaconSET+** アプリを使用してワイヤレスで設定します：
+1. Google Play または Apple App Store から **BeaconSET+** をダウンロードします。
+2. スマートフォンの Bluetooth と位置情報を有効にします。
+3. アプリから接続し、デフォルトのパスワードを入力してパラメータを編集します。
+
+## 技術仕様
+
+| :--- | :--- | :--- |
+| **Chip Model** | nRF52 series | Low latency and high efficiency |
+| **Bluetooth Version** | BLE 5.0 | High range and throughput |
+| **Waterproof Level** | IP65 | Dustproof and water-jet resistant |
+| **Transmission Range** | Up to 240 meters | Maximum in open areas |
+| **Protocol Support** | LINE Simple Beacon / iBeacon | Multi-slot broadcasting |
+| **Service UUID** | 0xFE6F | Dedicated LINE Beacon UUID |
+| **Service Data Format** | 0xFE6F + 5-Byte HWID + 0x7F00 | LINE Simple Beacon packet format |
+| **Power Source** | 4 × AA batteries | 5800mAh capacity total (Included) |
+| **Battery Lifetime** | Up to 10 years | Based on default broadcasting parameters |
+| **Material** | ABS + Silicone | Rugged industrial casing |
+| **Dimensions** | 72 × 72 × 23 mm | Wall-mountable square |
+| **Net Weight** | 145 g | Including batteries |
 
 ---
 
 ## 製品ギャラリー
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb03.png" alt="Yupitek YPB03 Long Range E2 Max Beacon" />
+  <img src="/images/products/ibeacon/ypb03.png" alt="Yupitek YPB03" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
 お見積もりやカスタム統合ソリューションが必要ですか？弊社営業チームまで直接メールでお問い合わせください：**sales@yupitek.com**
-{{</alert >}}
+{{< /alert >}}

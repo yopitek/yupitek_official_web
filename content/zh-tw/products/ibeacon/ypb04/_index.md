@@ -1,81 +1,88 @@
 ---
 title: "YPB04 充電式多功能智慧工卡/胸卡信標"
-description: "YPB04 充電式多功能智慧工卡/胸卡信標。藍牙低功耗 BLE 5.0 (低功耗藍牙) 技術，專為考勤打卡、定位與資產追蹤設計，可配置參數。"
+description: "YPB04 充電式多功能智慧工卡/胸卡信標。藍牙低功耗 BLE 5.0 技術，專為考勤打卡、定位與資產追蹤設計，可配置參數。"
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0 (低功耗藍牙)", "Bluetooth", "Yupitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
 ---
 
 ## 產品概述
 
-The **YPB04** is a wearable card-shaped Bluetooth® Low Energy (BLE 5.0 (低功耗藍牙)) beacon designed for smart office check-in, personnel flow monitoring, and geofencing. Its slim badge form factor (86 × 55 × 6 mm, weighing only 19g) is easily worn on lanyards or attached to uniforms.
+**YPB04** 是一款卡片型低功耗藍牙 (BLE 5.0) 智慧工卡信標，適用於智慧辦公室考勤、人員區域定位與地理圍欄。其極薄的外觀尺寸 (86 × 55 × 6 mm，重量僅 19 克) 可以輕鬆掛在掛繩上或配戴於制服上。
 
-Equipped with an **external push button**, a **vibration motor**, and an **RGB LED**, the YPB04 offers visual and physical feedback. It features a magnetic charging port, an integrated 3-axis accelerometer sensor, and optional support for dual-frequency **RFID (LF/HF/UHF)**, allowing it to combine BLE tracking with traditional physical gate card access.
+YPB04 配備了 **實體按鈕**、**震動馬達** 與 **RGB 指示燈**，可提供視覺與觸覺的反饋。本產品支援磁吸充電與內建三軸加速度感測器，並可選配支援雙頻 **RFID (LF/HF/UHF)**，能完美將藍牙定位技術與傳統實體門禁刷卡系統整合。
 
 ---
 
-## 技術規格
+## 主要特點
 
-| 參數項目 | 技術規格 | 備註說明 |
-| :--- | :--- | :--- |
-| **晶片型號** | nRF52 系列 | Low latency and high efficiency |
-| **藍牙版本** | BLE 5.0 (低功耗藍牙) | Secure connection and long range |
-| **防水等級** | IP67 (防塵防水) | Splash and dust resistant (1m immersion) |
-| **感測器** | 3-axis accelerometer | Displacement and movement detection |
-| **反饋機制** | 1 × 震動馬達，1 × RGB LED 指示燈 | Tactile and visual cues |
-| **控制按鈕** | 1 × 外部實體按鈕 | Activates triggers and alarms |
-| **RFID 相容性** | 低頻(LF) / 高頻(HF) / 超高頻(UHF) (選配) | Optional build integrations |
-| **傳輸距離** | 最遠 150 公尺 (492 英尺，開闊空間) | Maximum in open areas |
-| **電源規格** | 磁吸充電式鋰聚合物電池 (270mAh) | 270mAh capacity (Rechargeable) |
-| **電池壽命** | 最長可達 3 個月 (一般按壓頻率) | Depending on click frequency |
-| **充電時間** | 約 2 小時 (室溫，5V/1A 電源供應器) | 5V / 1A power adapter |
-| **外觀尺寸與重量** | 86 × 55 × 6 mm \| 19 g | Slim card format |
+* **三軸加速度感測器：** 內建感測器以檢測位移、運動與靜止狀態。
+* **雙重反饋機制：** 配備 1 個震動馬達與 1 個 RGB 指示燈，提供即時的狀態警示與警報反饋。
+* **實體控制按鍵：** 外部實體按鈕可設定觸發特定廣播或一鍵報警 (SOS)。
+* **選配 RFID 整合：** 可整合低頻、高頻或超高频 RFID 晶片，支援傳統感應門禁。
+* **磁吸式充電：** 內建 270mAh 鋰聚合物電池，隨附磁吸充電線，一般使用下續航可達 3 個月。
 
 ---
 
 ## 操作說明
 
-### Turning the Badge ON
-* Press and hold the physical button for **3 seconds**.
-* The blue LED will turn on for 3 seconds and the device will vibrate once to confirm activation.
+### 如何開啟工卡電源
+* 按住實體按鍵 **3 秒**。
+* 藍色 LED 指示燈會亮起 3 秒，且工卡會震動一次，表示啟動成功。
 
-### Turning the Badge OFF
-* For security, the device can only be turned off wirelessly via the **BeaconSET+ App** after entering the configuration password.
-* When successfully shut down, the blue LED will flash 5 times.
+### 如何關閉工卡電源
+* 為確保人員安全與管理合規，工卡無法手動關閉。必須透過 **BeaconSET+ App** 連線並輸入管理密碼，以無線方式將其關閉。
+* 成功關閉時，藍色 LED 會閃爍 5 次。
 
 ### 電量狀態與充電指示
-* **Low Battery Alert:** When battery falls below 20%, the red LED will flash once every 3 seconds.
-* **Charging Indicator:** The red LED remains on while charging.
-* **Fully Charged:** The green LED remains on once charging is complete.
+* **低電量警示：** 當電量低於 20% 時，紅色 LED 會每 3 秒職閃爍一次。
+* **充電中：** 充電時紅色 LED 會恆亮。
+* **充電完成：** 充滿電後綠色 LED 會恆亮。
 
 ### 按鈕點擊觸發廣播
-You can configure the badge button to trigger specific broadcasts (e.g. double-click or triple-click to send emergency signals or check-in telemetry):
-* **Double-click:** Blue LED flashes twice and the motor vibrates once.
-* **Triple-click:** Blue LED flashes 3 times and the motor vibrates twice.
+您可以設定實體按鈕的點擊次數來觸發特定警報或數據發射：
+* **雙擊：** 藍色 LED 閃爍 2 次，馬達震動一次。
+* **三擊：** 藍色 LED 閃爍 3 次，馬達震動兩次。
 
 ---
 
 ## 配置指南
 
-The parameters of YPB04 (including trigger behaviors, UUID, Major, and Minor) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
-2. Ensure your phone's Bluetooth and Location services are enabled.
-3. Open the app, scan for the badge's MAC address, and click to connect.
-4. Input the secure default configuration password to unlock and edit parameters.
+YPB04 的各項參數（包括按鈕觸發定義、UUID、Major、Minor、廣播功率）可透過 **BeaconSET+** 應用程式進行設定：
+1. 下載並安裝 **BeaconSET+**。
+2. 開啟藍牙與定位服務，掃描並連接工卡的 MAC 位址。
+3. 輸入管理密碼以進行參數修改。
+
+## 技術規格
+
+| 參數項目 | 技術規格 | 備註說明 |
+| :--- | :--- | :--- |
+| **晶片型號** | nRF52 系列 | 低延遲與高效率 |
+| **藍牙版本** | BLE 5.0 (低功耗藍牙) | 安全連線與長距離 |
+| **防水等級** | IP67 (防塵防水) | 防塵防水 (支援短時間浸入 1 公尺水中) |
+| **感測器** | 3-axis accelerometer | 位移與運動檢測 |
+| **反饋機制** | 1 × 震動馬達，1 × RGB LED 指示燈 | 觸覺與視覺提示 |
+| **控制按鈕** | 1 × 外部實體按鈕 | 啟用觸發器與警報 |
+| **RFID 相容性** | 低頻(LF) / 高頻(HF) / 超高頻(UHF) (選配) | 選配整合 |
+| **傳輸距離** | 最遠 150 公尺 (492 英尺，開闊空間) | 開闊空間最大距離 |
+| **電源規格** | 磁吸充電式鋰聚合物電池 (270mAh) | 270mAh capacity (Rechargeable) |
+| **電池壽命** | 最長可達 3 個月 (一般按壓頻率) | Depending on click frequency |
+| **充電時間** | 約 2 小時 (室溫，5V/1A 電源供應器) | 5V / 1A power adapter |
+| **外觀尺寸與重量** | 86 × 55 × 6 mm \ | 19 g | Slim card format |
 
 ---
 
 ## 產品圖片
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb04.png" alt="Yupitek YPB04 Rechargeable Smart Card Badge Beacon" />
+  <img src="/images/products/ibeacon/ypb04.png" alt="Yupitek YPB04" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
 需要專屬報價或客製化解決方案？請直接來信聯絡我們的銷售團隊：**sales@yupitek.com**
-{{</alert >}}
+{{< /alert >}}

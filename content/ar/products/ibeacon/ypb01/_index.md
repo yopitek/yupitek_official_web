@@ -1,79 +1,77 @@
 ---
-title: "منارة YPB01 BLE 5.0 (低功耗藍牙)"
-description: "منارة YPB01 BLE 5.0 (低功耗藍牙). تقنية البلوتوث منخفض الطاقة BLE 5.0 (低功耗藍牙)، لتحديد المواقع وحضور الموظفين وتتبع الأصول."
+title: "منارة YPB01 BLE 5.0"
+description: "منارة YPB01 BLE 5.0. تقنية البلوتوث منخفض الطاقة BLE 5.0، لتحديد المواقع وحضور الموظفين وتتبع الأصول."
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0 (低功耗藍牙)", "Bluetooth", "Yupitek", "CR2477", "Waterproof"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof"]
 ---
 
 ## نظرة عامة على المنتج
 
-The **YPB01** is a compact, robust Bluetooth® Low Energy (BLE 5.0 (低功耗藍牙)) beacon designed for indoor location systems, activity monitoring, and asset tracking. Based on the ultra-low power nRF52 系列 chipset, it broadcasts standard iBeacon and Eddystone (UID, URL, TLM) frames simultaneously.
+إنّ **YPB01** هو منارة بلوتوث منخفض الطاقة (BLE 5.0) صغيرة وقوية، مصممة لأنظمة تحديد المواقع الداخلية ومراقبة النشاط وتتبع الأصول. تعتمد على رقاقة nRF52 ذات الاستهلاك المنخفض للغاية، وتبث إطارات iBeacon و Eddystone (UID, URL, TLM) في وقت واحد.
 
-Its smart, rotatable mechanical housing allows for easy coin-cell battery replacement while achieving an IP67 (防塵防水) waterproof rating, making it ideal for deployments in humid or demanding environments.
-
----
-
-## المواصفات الفنية
-
-| المعيار | المواصفات | ملاحظات |
-| :--- | :--- | :--- |
-| **晶片型號** | nRF52 系列 | Ultra-low power consumption |
-| **藍牙版本** | BLE 5.0 (低功耗藍牙) | High efficiency and speed |
-| **防水等級** | IP67 (防塵防水) | Splash and dust resistant (1m immersion) |
-| **傳輸距離** | 最遠 100 公尺 (開闊空間) | Open space |
-| **天線阻抗** | 50 歐姆 | On-board / PCB Antenna |
-| **電源規格** | 1 × CR2477 鈕扣電池 | Replaceable (3.0V, 1000mAh) |
-| **工作電壓** | 1.8V - 3.9V | DC |
-| **峰值電流** | 5.3 mA | Tested at 0dBm transmission power |
-| **外觀尺寸** | Φ39 × 15.5 mm | Compact circular shape |
-| **預設參數** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | Configurable via App |
+يسمح هيكلها الدوار الميكانيكي الذكي باستبدال بطارية العملة المعدنية بسهولة مع تحقيق تصنيف مقاومة الماء والغبار IP67، مما يجعلها مثالية للبيئات الرطبة أو الصعبة.
 
 ---
 
 ## الميزات الرئيسية
 
-* **High Protection Enclosure:** Rated IP67 (防塵防水) waterproof and dustproof, allowing indoor and light outdoor installation.
-* **Replaceable Battery:** Long-lasting CR2477 battery (1000mAh) is easily replaced using the rotatable housing mechanism.
-* **Simultaneous Broadcasts:** Supports broadcasting up to 6 distinct advertising slots simultaneously, covering iBeacon and Eddystone protocols.
-* **Physical Power Control:** Equipped with an internal push button to turn the beacon ON or OFF to save battery during transit/storage.
+* **هيكل حماية عالٍ:** تصنيف IP67 مقاوم للماء والغبار، مما يسمح بالتركيب الداخلي والخارجي الخفيف.
+* **بطارية قابلة للاستبدال:** بطارية CR2477 طويلة الأمد (1000 مللي أمبير) سهلة الاستبدال عبر الهيكل الدوار.
+* **بث متزامن:** يدعم البث في ما يصل إلى 6 فتحات إعلانية مختلفة في وقت واحد لبروتوكولات iBeacon و Eddystone.
+* **زر طاقة مادي:** زر ضغط داخلي لتشغيل أو إيقاف المنارة لحفظ البطارية أثناء النقل والتخزين.
 
 ---
 
 ## دليل التشغيل
 
-### How to Turn the Beacon ON
-1. Open the rotatable housing clockwisely.
-2. Locate the internal "push button" and hold it down for **3 seconds**.
-3. The blue LED indicator will turn on for **5 seconds** and then turn off. The YPB01 is now activated and broadcasting.
+### كيفية تشغيل المنارة
+1. افتح الهيكل الدوار باتجاه عقارب الساعة.
+2. اضغط مع الاستمرار على "الزر الداخلي" لمدة **3 ثوانٍ**.
+3. سيضيء مؤشر LED الأزرق لمدة **5 ثوانٍ** ثم ينطفئ. منارة YPB01 نشطة الآن وتبث.
 
-### How to Turn the Beacon OFF
-1. Press and hold the internal push button for **3 seconds**.
-2. The blue LED will blink for **5 seconds** and then turn off. The beacon is now powered down.
+### كيفية إيقاف تشغيل المنارة
+1. اضغط مع الاستمرار على الزر الداخلي لمدة **3 ثوانٍ**.
+2. سيومض مؤشر LED الأزرق لمدة **5 ثوانٍ** ثم ينطفئ. المنارة مغلقة الآن.
 
 ---
 
 ## إرشادات التهيئة
 
-The parameters of YPB01 (including UUID, Major, Minor, Tx Power, and Broadcast Interval) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
-2. Ensure your phone's Bluetooth and Location services are enabled.
-3. Open the app, scan for the beacon's MAC address, and click to connect.
-4. Input the secure default configuration password to unlock and edit parameters.
+يتم تهيئة معلمات YPB01 (بما في ذلك UUID و Major و Minor وقوة الإرسال وفاصل البث) لاسلكياً عبر تطبيق **BeaconSET**:
+1. قم بتنزيل **BeaconSET** من Google Play أو Apple App Store.
+2. تأكد من تمكين خدمات البلوتوث والموقع على هاتفك.
+3. افتح التطبيق، وامسح ضوئياً بحثاً عن عنوان MAC للمنارة، وانقر للاتصال.
+4. أدخل كلمة مرور التهيئة الافتراضية الآمنة لفتح وتعديل المعلمات.
+
+## Technical Specifications
+
+| المعيار | المواصفات | ملاحظات |
+| :--- | :--- | :--- |
+| **Chip Model** | nRF52 series | Ultra-low power consumption |
+| **Bluetooth Version** | BLE 5.0 | High efficiency and speed |
+| **Waterproof Level** | IP67 | Splash and dust resistant (1m immersion) |
+| **Transmission Range** | Up to 100 meters | Open space |
+| **Antenna Impedance** | 50 ohm | On-board / PCB Antenna |
+| **Power Source** | 1 × CR2477 coin battery | Replaceable (3.0V, 1000mAh) |
+| **Operating Voltage** | 1.8V - 3.9V | DC |
+| **Peak Current** | 5.3 mA | Tested at 0dBm transmission power |
+| **Dimensions** | Φ39 × 15.5 mm | Compact circular shape |
+| **Default Settings** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | Configurable via App |
 
 ---
 
 ## معرض صور المنتج
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb01.png" alt="Yupitek YPB01 BLE 5.0 (低功耗藍牙) Coin Beacon" />
+  <img src="/images/products/ibeacon/ypb01.png" alt="Yupitek YPB01" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
 هل تحتاج إلى عرض أسعار مخصص أو حل تكامل؟ يرجى الاتصال بفريق المبيعات لدينا مباشرة على: **sales@yupitek.com**
-{{</alert >}}
+{{< /alert >}}

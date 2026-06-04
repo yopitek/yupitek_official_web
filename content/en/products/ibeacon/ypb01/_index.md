@@ -58,8 +58,8 @@ Its smart, rotatable mechanical housing allows for easy coin-cell battery replac
 
 ## Configuration Guidance
 
-The parameters of YPB01 (including UUID, Major, Minor, Tx Power, and Broadcast Interval) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
+The parameters of YPB01 (including UUID, Major, Minor, Tx Power, and Broadcast Interval) are configured wirelessly via the **BeaconSET** application:
+1. Download **BeaconSET** from Google Play or the Apple App Store.
 2. Ensure your phone's Bluetooth and Location services are enabled.
 3. Open the app, scan for the beacon's MAC address, and click to connect.
 4. Input the secure default configuration password to unlock and edit parameters.

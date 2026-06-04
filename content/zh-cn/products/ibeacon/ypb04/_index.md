@@ -1,81 +1,88 @@
 ---
 title: "YPB04 充电式多功能智能工卡/胸卡信标"
-description: "YPB04 充电式多功能智能工卡/胸卡信标。蓝牙低功耗 BLE 5.0 (低功耗蓝牙) 技术，专为考勤打卡、定位与资产追踪设计，可配置参数。"
+description: "YPB04 充电式多功能智能工卡/胸卡信标。蓝牙低功耗 BLE 5.0 技术，专为考勤打卡、定位与资产追踪设计，可配置参数。"
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0 (低功耗蓝牙)", "Bluetooth", "Yupitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
 ---
 
 ## 产品概述
 
-The **YPB04** is a wearable card-shaped Bluetooth® Low Energy (BLE 5.0 (低功耗蓝牙)) beacon designed for smart office check-in, personnel flow monitoring, and geofencing. Its slim badge form factor (86 × 55 × 6 mm, weighing only 19g) is easily worn on lanyards or attached to uniforms.
+**YPB04** 是一款卡片型低功耗蓝牙 (BLE 5.0) 智能工卡信标，适用于智能办公室考勤、人员区域定位与地理围栏。其极薄的外观尺寸 (86 × 55 × 6 mm，重量仅 19 克) 可以轻松挂在挂绳上或配戴于制服上。
 
-Equipped with an **external push button**, a **vibration motor**, and an **RGB LED**, the YPB04 offers visual and physical feedback. It features a magnetic charging port, an integrated 3-axis accelerometer sensor, and optional support for dual-frequency **RFID (LF/HF/UHF)**, allowing it to combine BLE tracking with traditional physical gate card access.
+YPB04 配备了 **实体按钮**、**震动马达** 与 **RGB 指示灯**，可提供视觉与触觉的反馈。本产品支持磁吸充电与内置三轴加速度传感器，并可选配支持双频 **RFID (LF/HF/UHF)**，能完美将蓝牙定位技术与传统实体门禁刷卡系统整合。
 
 ---
 
-## 技术规格
+## 主要特点
 
-| 参数项目 | 技术规格 | 备注说明 |
-| :--- | :--- | :--- |
-| **芯片型号** | nRF52 系列 | Low latency and high efficiency |
-| **蓝牙版本** | BLE 5.0 (低功耗蓝牙) | Secure connection and long range |
-| **防水等级** | IP67 (防尘防水) | Splash and dust resistant (1m immersion) |
-| **传感器** | 3-axis accelerometer | Displacement and movement detection |
-| **反馈机制** | 1 × 震动马达，1 × RGB LED 指示灯 | Tactile and visual cues |
-| **控制按钮** | 1 × 外部实体按钮 | Activates triggers and alarms |
-| **RFID 兼容性** | 低频(LF) / 高频(HF) / 超高频(UHF) (选配) | Optional build integrations |
-| **传输距离** | 最远 150 米 (492 英尺，开阔空间) | Maximum in open areas |
-| **电源规格** | 磁吸充电式锂聚合物电池 (270mAh) | 270mAh capacity (Rechargeable) |
-| **电池寿命** | 最长可达 3 个月 (一般按压频率) | Depending on click frequency |
-| **充电时间** | 约 2 小时 (室温，5V/1A 电源适配器) | 5V / 1A power adapter |
-| **外观尺寸与重量** | 86 × 55 × 6 mm \| 19 g | Slim card format |
+* **三轴加速度传感器：** 内置传感器以检测位移、运动与静止状态。
+* **双重反馈机制：** 配备 1 个震动马达与 1 个 RGB 指示灯，提供即时的状态警示与警报反馈。
+* **实体控制按键：** 外部实体按钮可设定触发特定广播或一键报警 (SOS)。
+* **选配 RFID 整合：** 可整合低频、高频或超高频 RFID 芯片，支持传统感应门禁。
+* **磁吸式充电：** 内置 270mAh 锂聚合物电池，随附磁吸充电线，一般使用下续航可达 3 个月。
 
 ---
 
 ## 操作说明
 
-### Turning the Badge ON
-* Press and hold the physical button for **3 seconds**.
-* The blue LED will turn on for 3 seconds and the device will vibrate once to confirm activation.
+### 如何开启工卡电源
+* 按住实体按键 **3 秒**。
+* 蓝色 LED 指示灯会亮起 3 秒，且工卡会震动一次，表示启动成功。
 
-### Turning the Badge OFF
-* For security, the device can only be turned off wirelessly via the **BeaconSET+ App** after entering the configuration password.
-* When successfully shut down, the blue LED will flash 5 times.
+### 如何关闭工卡电源
+* 为确保人员安全与管理合规，工卡无法手动关闭。必须透过 **BeaconSET+ App** 连接并输入管理密码，以无线方式将其关闭。
+* 成功关闭时，蓝色 LED 会闪烁 5 次。
 
 ### 电量状态与充电指示
-* **Low Battery Alert:** When battery falls below 20%, the red LED will flash once every 3 seconds.
-* **Charging Indicator:** The red LED remains on while charging.
-* **Fully Charged:** The green LED remains on once charging is complete.
+* **低电量警示：** 当电量低于 20% 时，红色 LED 会每 3 秒闪烁一次。
+* **充电中：** 充电时红色 LED 会恒亮。
+* **充电完成：** 充满电后绿色 LED 会恒亮。
 
 ### 按钮点击触发广播
-You can configure the badge button to trigger specific broadcasts (e.g. double-click or triple-click to send emergency signals or check-in telemetry):
-* **Double-click:** Blue LED flashes twice and the motor vibrates once.
-* **Triple-click:** Blue LED flashes 3 times and the motor vibrates twice.
+您可以设定实体按钮的点击次数来触发特定警报或数据发射：
+* **双击：** 蓝色 LED 闪烁 2 次，马达震动一次。
+* **三击：** 蓝色 LED 闪烁 3 次，马达震动两次。
 
 ---
 
 ## 配置指南
 
-The parameters of YPB04 (including trigger behaviors, UUID, Major, and Minor) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
-2. Ensure your phone's Bluetooth and Location services are enabled.
-3. Open the app, scan for the badge's MAC address, and click to connect.
-4. Input the secure default configuration password to unlock and edit parameters.
+YPB04 的各项参数（包括按键触发定义、UUID、Major、Minor、广播功率）可透过 **BeaconSET+** 应用程序进行设定：
+1. 下载并安装 **BeaconSET+**。
+2. 开启蓝牙与定位服务，扫描并连接工卡的 MAC 地址。
+3. 输入管理密码以进行参数修改。
+
+## 技术规格
+
+| 参数项目 | 技术规格 | 备注说明 |
+| :--- | :--- | :--- |
+| **芯片型号** | nRF52 系列 | 低延迟与高效率 |
+| **蓝牙版本** | BLE 5.0 (低功耗蓝牙) | 安全连线与长距离 |
+| **防水等级** | IP67 (防尘防水) | 防尘防水 (支持短时间浸入 1 米水中) |
+| **传感器** | 3-axis accelerometer | 位移与运动检测 |
+| **反馈机制** | 1 × 震动马达，1 × RGB LED 指示灯 | 触觉与视觉提示 |
+| **控制按钮** | 1 × 外部实体按钮 | 启用触发器与警报 |
+| **RFID 兼容性** | 低频(LF) / 高频(HF) / 超高频(UHF) (选配) | 选配整合 |
+| **传输距离** | 最远 150 米 (492 英尺，开阔空间) | 开阔空间最大距离 |
+| **电源规格** | 磁吸充电式锂聚合物电池 (270mAh) | 270mAh capacity (Rechargeable) |
+| **电池寿命** | 最长可达 3 个月 (一般按压频率) | Depending on click frequency |
+| **充电时间** | 约 2 小时 (室温，5V/1A 电源适配器) | 5V / 1A power adapter |
+| **外观尺寸与重量** | 86 × 55 × 6 mm \ | 19 g | Slim card format |
 
 ---
 
 ## 产品图片
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb04.png" alt="Yupitek YPB04 Rechargeable Smart Card Badge Beacon" />
+  <img src="/images/products/ibeacon/ypb04.png" alt="Yupitek YPB04" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
 需要专属报价或定制化解决方案？请直接来信联系我们的销售团队：**sales@yupitek.com**
-{{</alert >}}
+{{< /alert >}}

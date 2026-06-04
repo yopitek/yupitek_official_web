@@ -1,81 +1,87 @@
 ---
 title: "YPB04 Wiederaufladbarer Badge Beacon"
-description: "YPB04 Wiederaufladbarer Badge Beacon. Bluetooth Low Energy BLE 5.0 (低功耗藍牙), für Lokalisierung, Zeiterfassung und Asset-Tracking."
+description: "YPB04 Wiederaufladbarer Badge Beacon. Bluetooth Low Energy BLE 5.0, für Lokalisierung, Zeiterfassung und Asset-Tracking."
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0 (低功耗藍牙)", "Bluetooth", "Yupitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
 ---
 
 ## Produktübersicht
 
-The **YPB04** is a wearable card-shaped Bluetooth® Low Energy (BLE 5.0 (低功耗藍牙)) beacon designed for smart office check-in, personnel flow monitoring, and geofencing. Its slim badge form factor (86 × 55 × 6 mm, weighing only 19g) is easily worn on lanyards or attached to uniforms.
+Der **YPB04** ist ein wiederaufladbarer, flacher Card-Badge Bluetooth® Low Energy (BLE 5.0) Beacon für Anwesenheitskontrolle, Personenlokalisierung und Geofencing. Mit seinen Maßen von 86 × 55 × 6 mm und einem Gewicht von 19g lässt er sich leicht an einem Lanyard tragen.
 
-Equipped with an **external push button**, a **vibration motor**, and an **RGB LED**, the YPB04 offers visual and physical feedback. It features a magnetic charging port, an integrated 3-axis accelerometer sensor, and optional support for dual-frequency **RFID (LF/HF/UHF)**, allowing it to combine BLE tracking with traditional physical gate card access.
+Ausgestattet mit **physischem Knopf**, **Vibrationsmotor** und **RGB-LED** bietet er physisches und visuelles Feedback. Er verfügt über einen Magnetladeanschluss, einen 3-Achsen-Beschleunigungssensor und optionalen **RFID (LF/HF/UHF)** Support.
 
 ---
 
-## Technische Spezifikationen
+## Hauptmerkmale
 
-| Parameter | Spezifikationen | Anmerkungen |
-| :--- | :--- | :--- |
-| **晶片型號** | nRF52 系列 | Low latency and high efficiency |
-| **藍牙版本** | BLE 5.0 (低功耗藍牙) | Secure connection and long range |
-| **防水等級** | IP67 (防塵防水) | Splash and dust resistant (1m immersion) |
-| **感測器** | 3-axis accelerometer | Displacement and movement detection |
-| **反饋機制** | 1 × 震動馬達，1 × RGB LED 指示燈 | Tactile and visual cues |
-| **控制按鈕** | 1 × 外部實體按鈕 | Activates triggers and alarms |
-| **RFID 相容性** | 低頻(LF) / 高頻(HF) / 超高頻(UHF) (選配) | Optional build integrations |
-| **傳輸距離** | 最遠 150 公尺 (492 英尺，開闊空間) | Maximum in open areas |
-| **電源規格** | 磁吸充電式鋰聚合物電池 (270mAh) | 270mAh capacity (Rechargeable) |
-| **電池壽命** | 最長可達 3 個月 (一般按壓頻率) | Depending on click frequency |
-| **充電時間** | 約 2 小時 (室溫，5V/1A 電源供應器) | 5V / 1A power adapter |
-| **外觀尺寸與重量** | 86 × 55 × 6 mm \| 19 g | Slim card format |
+* **3-Achsen-Sensor:** Bewegungserkennung zur intelligenten Intervallsteuerung.
+* **Feedback:** Vibrationsmotor und RGB-LED für Alarmmeldungen und Quittungen.
+* **Taster:** Physischer Knopf für SOS-Alarme oder Funktionsaufrufe.
+* **RFID Integration:** Optionaler Chip für klassische Zeiterfassungssysteme.
+* **Magnetladen:** Integrierter 270mAh Li-Po Akku hält bis zu 3 Monate.
 
 ---
 
 ## Bedienungsanleitung
 
-### Turning the Badge ON
-* Press and hold the physical button for **3 seconds**.
-* The blue LED will turn on for 3 seconds and the device will vibrate once to confirm activation.
+### Einschalten
+* Taster **3 Sekunden** gedrückt halten.
+* Blaue LED leuchtet für 3 Sekunden und der Badge vibriert einmal zur Bestätigung.
 
-### Turning the Badge OFF
-* For security, the device can only be turned off wirelessly via the **BeaconSET+ App** after entering the configuration password.
-* When successfully shut down, the blue LED will flash 5 times.
+### Ausschalten
+* Aus Sicherheitsgründen nur drahtlos über die **BeaconSET+ App** möglich (Passwort erforderlich).
+* Bei erfolgreichem Ausschalten blinkt die blaue LED 5 Mal.
 
-### Battery Status & Charging
-* **Low Battery Alert:** When battery falls below 20%, the red LED will flash once every 3 seconds.
-* **Charging Indicator:** The red LED remains on while charging.
-* **Fully Charged:** The green LED remains on once charging is complete.
+### Batteriestatus & Laden
+* **Niedriger Akku:** Unter 20% blinkt die rote LED alle 3 Sekunden.
+* **Ladevorgang:** Rote LED leuchtet dauerhaft.
+* **Vollständig geladen:** Grüne LED leuchtet dauerhaft.
 
-### Button Click Triggers
-You can configure the badge button to trigger specific broadcasts (e.g. double-click or triple-click to send emergency signals or check-in telemetry):
-* **Double-click:** Blue LED flashes twice and the motor vibrates once.
-* **Triple-click:** Blue LED flashes 3 times and the motor vibrates twice.
+### Knopfdruck-Triggern
+* **Doppelklick:** Blaue LED blinkt 2 Mal, Motor vibriert 1 Mal.
+* **Dreifachklick:** Blaue LED blinkt 3 Mal, Motor vibriert 2 Mal.
 
 ---
 
 ## Konfigurationsanleitung
 
-The parameters of YPB04 (including trigger behaviors, UUID, Major, and Minor) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
-2. Ensure your phone's Bluetooth and Location services are enabled.
-3. Open the app, scan for the badge's MAC address, and click to connect.
-4. Input the secure default configuration password to unlock and edit parameters.
+Verwenden Sie die **BeaconSET+** App zur Konfiguration:
+1. App installieren und Bluetooth aktivieren.
+2. MAC-Adresse des Badges suchen und verbinden.
+3. Passwort eingeben, um Parameter und Knopftrigger anzupassen.
+
+## Technical Specifications
+
+| Parameter | Spezifikationen | Anmerkungen |
+| :--- | :--- | :--- |
+| **Chip Model** | nRF52 series | Low latency and high efficiency |
+| **Bluetooth Version** | BLE 5.0 | Secure connection and long range |
+| **Waterproof Level** | IP67 | Splash and dust resistant (1m immersion) |
+| **Sensors** | 3-axis accelerometer | Displacement and movement detection |
+| **Feedback Elements** | 1 × Vibration Motor, 1 × RGB LED | Tactile and visual cues |
+| **Control Button** | 1 × External physical button | Activates triggers and alarms |
+| **RFID Compatibility** | LF / HF / UHF | Optional build integrations |
+| **Transmission Range** | Up to 150 meters (492 ft) | Maximum in open areas |
+| **Power Source** | Magnetic charging Li-po battery | 270mAh capacity (Rechargeable) |
+| **Battery Lifetime** | Up to 3 months | Depending on click frequency |
+| **Charging Time** | Approximately 2 hours | 5V / 1A power adapter |
+| **Dimensions & Weight** | 86 × 55 × 6 mm \ | 19 g | Slim card format |
 
 ---
 
 ## Produktgalerie
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb04.png" alt="Yupitek YPB04 Rechargeable Smart Card Badge Beacon" />
+  <img src="/images/products/ibeacon/ypb04.png" alt="Yupitek YPB04" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
 Benötigen Sie ein individuelles Angebot oder eine Integrationslösung? Bitte kontaktieren Sie unser Vertriebsteam direkt unter: **sales@yupitek.com**
-{{</alert >}}
+{{< /alert >}}

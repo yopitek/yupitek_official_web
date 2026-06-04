@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-Os beacons iBeacon da Yupitek representam uma nova geração de dispositivos Bluetooth® Low Energy (BLE 5.0) projetados para localização de alta performance, rastreamento de pessoal e marketing de proximidade. Com suporte simultâneo aos protocolos Apple iBeacon™ e Google Eddystone™ (UID, URL, TLM), nossos beacons suportam transmissões em até 6 canais configurados via aplicativo BeaconSET+.
+Os beacons iBeacon da Yupitek representam uma nova geração de dispositivos Bluetooth® Low Energy (BLE 5.0) projetados para localização de alta performance, rastreamento de pessoal e marketing de proximidade. Com suporte simultâneo aos produtos Apple iBeacon™ e Google Eddystone™ (UID, URL, TLM), nossos beacons suportam transmissões em até 6 canais configurados via aplicativo BeaconSET+.
 
 ---
 

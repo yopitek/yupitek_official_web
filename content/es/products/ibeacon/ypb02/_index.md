@@ -1,76 +1,73 @@
 ---
 title: "Baliza Sensora YPB02 BLE con Acelerómetro"
-description: "Baliza Sensora YPB02 BLE con Acelerómetro. Bluetooth Low Energy BLE 5.0 (低功耗藍牙), para localización, control de asistencia y seguimiento."
+description: "Baliza Sensora YPB02 BLE con Acelerómetro. Bluetooth Low Energy BLE 5.0, para localización, control de asistencia y seguimiento."
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0 (低功耗藍牙)", "Bluetooth", "Yupitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
 ---
 
 ## Descripción del producto
 
-The **YPB02** is a motion-sensing Bluetooth® Low Energy (BLE 5.0 (低功耗藍牙)) beacon equipped with an integrated **LIS3DH 三軸加速度感測器 sensor**. While sharing the compact form factor, replaceable 1000mAh CR2477 coin-cell battery, and IP67 (防塵防水) waterproof casing of the YPB01, the YPB02 adds intelligent motion detection and telemetry.
+El **YPB02** es una baliza Bluetooth® (BLE 5.0) con un **acelerómetro LIS3DH de 3 ejes** integrado. Comparte la misma batería CR2477 y carcasa IP67 del YPB01, pero añade capacidades de telemetría y detección de movimiento.
 
-The beacon supports trigger-based advertising, allowing it to broadcast real-time acceleration data or modify its transmission interval only when moving, vibrating, or in the event of a fall. This minimizes battery drain and enables advanced asset activity monitoring.
-
----
-
-## Especificaciones técnicas
-
-| Parámetro | Especificaciones | Observaciones |
-| :--- | :--- | :--- |
-| **晶片型號** | nRF52 系列 | Ultra-low power consumption |
-| **藍牙版本** | BLE 5.0 (低功耗藍牙) | High efficiency and speed |
-| **防水等級** | IP67 (防塵防水) | Splash and dust resistant (1m immersion) |
-| **感測器** | LIS3DH 三軸加速度感測器 | X, Y, Z axes telemetry |
-| **傳輸距離** | 最遠 100 公尺 (開闊空間) | Open space |
-| **天線阻抗** | 50 歐姆 | On-board / PCB Antenna |
-| **電源規格** | 1 × CR2477 鈕扣電池 | Replaceable (3.0V, 1000mAh) |
-| **工作電壓** | 1.8V - 3.9V | DC |
-| **峰值電流** | 5.3 mA | Tested at 0dBm transmission power |
-| **外觀尺寸** | Φ39 × 15.5 mm | Compact circular shape |
-| **預設參數** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | Configurable via App |
+La baliza puede configurarse para transmitir datos de aceleración en tiempo real o acelerar el intervalo de transmisión solo cuando se mueve o vibra.
 
 ---
 
 ## Características clave
 
-* **3-Axis Acceleration Sensor:** Features the LIS3DH sensor mapping displacement, tilt, and motion telemetry along X, Y, and Z axes.
-* **Trigger-Based Broadcasting:** Supports configuring specific trigger conditions (e.g., motion-only broadcasting, falling alerts, or changing the interval to 100ms when moved to trace asset displacement).
-* **High Protection Enclosure:** Rated IP67 (防塵防水) waterproof and dustproof, allowing indoor and light outdoor installation.
-* **Replaceable Battery:** Long-lasting CR2477 battery (1000mAh) is easily replaced using the rotatable housing mechanism.
+* **Sensor de aceleración de 3 ejes:** Sensor LIS3DH que mapea movimiento y orientación en ejes X, Y, Z.
+* **Transmisión basada en activadores:** Permite transmitir solo en movimiento, enviar alertas de caída o bajar el intervalo a 100 ms al moverse.
+* **Protección IP67:** Resistente al polvo y la inmersión en agua.
+* **Batería CR2477 reemplazable:** Larga vida útil con reemplazo rápido de pila.
 
 ---
 
 ## Activación por movimiento y telemetría
 
-Using the LIS3DH sensor, YPB02 supports:
-1. **Activity-Based Advertising:** Broadcasts standard iBeacon/Eddystone frames continuously, but triggers sensor data frames (HT/ACC) only when the beacon is shifted or moving.
-2. **Coexistence Mode:** Supports static vs. motion parameters. For example, the beacon can stay silent (sleep mode) when stationary, and broadcast at 100ms interval when moved to track real-time position.
-3. **Threshold Calibration:** Acceleration thresholds and trigger duration can be customized inside the app.
+Mediante el sensor LIS3DH, el YPB02 soporta:
+1. **Publicidad basada en actividad:** Transmite tramas estándar y activa tramas de sensores solo con movimiento.
+2. **Modo dual:** Se mantiene en modo de suspensión al estar quieto y transmite a 100 ms cuando se mueve.
+3. **Calibración:** Los umbrales de aceleración se configuran desde la app.
 
 ---
 
 ## Guía de configuración
 
-The parameters of YPB02 (including accelerometer thresholds, triggers, UUID, Major, and Minor) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
-2. Ensure your phone's Bluetooth and Location services are enabled.
-3. Open the app, scan for the beacon's MAC address, and click to connect.
-4. Input the secure default configuration password to unlock and edit parameters.
+La configuración se realiza de forma inalámbrica vía **BeaconSET+**:
+1. Descargue e instale **BeaconSET+**.
+2. Active Bluetooth y localización.
+3. Escanee y conéctese al dispositivo.
+4. Ingrese la contraseña predeterminada para guardar los parámetros.
+
+## Technical Specifications
+
+| :--- | :--- | :--- |
+| **Chip Model** | nRF52 series | Ultra-low power consumption |
+| **Bluetooth Version** | BLE 5.0 | High efficiency and speed |
+| **Waterproof Level** | IP67 | Splash and dust resistant (1m immersion) |
+| **Sensor** | LIS3DH 3-axis accelerometer | X, Y, Z axes telemetry |
+| **Transmission Range** | Up to 100 meters | Open space |
+| **Antenna Impedance** | 50 ohm | On-board / PCB Antenna |
+| **Power Source** | 1 × CR2477 coin battery | Replaceable (3.0V, 1000mAh) |
+| **Operating Voltage** | 1.8V - 3.9V | DC |
+| **Peak Current** | 5.3 mA | Tested at 0dBm transmission power |
+| **Dimensions** | Φ39 × 15.5 mm | Compact circular shape |
+| **Default Settings** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | Configurable via App |
 
 ---
 
 ## Galería del producto
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb02.png" alt="Yupitek YPB02 Sensor BLE 5.0 (低功耗藍牙) Coin Beacon" />
+  <img src="/images/products/ibeacon/ypb02.png" alt="Yupitek YPB02" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
 ¿Necesita un presupuesto personalizado o una solución de integración? Póngase en contacto con nuestro equipo de ventas directamente en: **sales@yupitek.com**
-{{</alert >}}
+{{< /alert >}}

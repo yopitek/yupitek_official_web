@@ -1,79 +1,77 @@
 ---
-title: "YPB01 BLE 5.0 (低功耗藍牙) 藍牙信標"
-description: "YPB01 BLE 5.0 (低功耗藍牙) 藍牙信標。藍牙低功耗 BLE 5.0 (低功耗藍牙) 技術，專為考勤打卡、定位與資產追蹤設計，可配置參數。"
+title: "YPB01 BLE 5.0 藍牙信標"
+description: "YPB01 BLE 5.0 藍牙信標。藍牙低功耗 BLE 5.0 技術，專為考勤打卡、定位與資產追蹤設計，可配置參數。"
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0 (低功耗藍牙)", "Bluetooth", "Yupitek", "CR2477", "Waterproof"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof"]
 ---
 
 ## 產品概述
 
-The **YPB01** is a compact, robust Bluetooth® Low Energy (BLE 5.0 (低功耗藍牙)) beacon designed for indoor location systems, activity monitoring, and asset tracking. Based on the ultra-low power nRF52 系列 chipset, it broadcasts standard iBeacon and Eddystone (UID, URL, TLM) frames simultaneously.
+**YPB01** 是一款體積精巧、堅固耐用的低功耗藍牙 (BLE 5.0) 信標，適用於室內定位、活動監測與資產追蹤。本產品採用超低功耗 nRF52 系列晶片，能同時廣播標準 iBeacon 與 Eddystone (UID, URL, TLM) 訊號。
 
-Its smart, rotatable mechanical housing allows for easy coin-cell battery replacement while achieving an IP67 (防塵防水) waterproof rating, making it ideal for deployments in humid or demanding environments.
-
----
-
-## 技術規格
-
-| 參數項目 | 技術規格 | 備註說明 |
-| :--- | :--- | :--- |
-| **晶片型號** | nRF52 系列 | Ultra-low power consumption |
-| **藍牙版本** | BLE 5.0 (低功耗藍牙) | High efficiency and speed |
-| **防水等級** | IP67 (防塵防水) | Splash and dust resistant (1m immersion) |
-| **傳輸距離** | 最遠 100 公尺 (開闊空間) | Open space |
-| **天線阻抗** | 50 歐姆 | On-board / PCB Antenna |
-| **電源規格** | 1 × CR2477 鈕扣電池 | Replaceable (3.0V, 1000mAh) |
-| **工作電壓** | 1.8V - 3.9V | DC |
-| **峰值電流** | 5.3 mA | Tested at 0dBm transmission power |
-| **外觀尺寸** | Φ39 × 15.5 mm | Compact circular shape |
-| **預設參數** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | Configurable via App |
+其旋轉開閉式外殼設計方便更換鈕扣電池，並具備 IP67 防塵防水等級，適合部署在潮濕或環境惡劣的場所。
 
 ---
 
 ## 主要特點
 
-* **High Protection Enclosure:** Rated IP67 (防塵防水) waterproof and dustproof, allowing indoor and light outdoor installation.
-* **Replaceable Battery:** Long-lasting CR2477 battery (1000mAh) is easily replaced using the rotatable housing mechanism.
-* **Simultaneous Broadcasts:** Supports broadcasting up to 6 distinct advertising slots simultaneously, covering iBeacon and Eddystone protocols.
-* **Physical Power Control:** Equipped with an internal push button to turn the beacon ON or OFF to save battery during transit/storage.
+* **高防護外殼：** 具備 IP67 防塵防水能力，支援室內與輕度室外安裝。
+* **可更換電池：** 使用長效 CR2477 電池 (1000mAh)，轉開外殼即可快速更換。
+* **多訊號同時廣播：** 支援同時設定最多 6 個獨立廣播通道，相容 iBeacon 和 Eddystone 協定。
+* **實體電源開關：** 內建實體按鍵，可手動開啟或關閉信標，避免運輸或儲存時浪費電量。
 
 ---
 
 ## 操作說明
 
-### 如何開啟信標電源
-1. Open the rotatable housing clockwisely.
-2. Locate the internal "push button" and hold it down for **3 seconds**.
-3. The blue LED indicator will turn on for **5 seconds** and then turn off. The YPB01 is now activated and broadcasting.
+### 如何開啟信標
+1. 順時針轉開外殼。
+2. 按住內部的「實體按鍵」約 **3 秒**。
+3. 藍色 LED 指示燈會亮起 **5 秒** 後熄滅，表示 YPB01 已啟動並開始發射訊號。
 
-### 如何關閉信標電源
-1. Press and hold the internal push button for **3 seconds**.
-2. The blue LED will blink for **5 seconds** and then turn off. The beacon is now powered down.
+### 如何關閉信標
+1. 按住內部的實體按鍵約 **3 秒**。
+2. 藍色 LED 指示燈會閃爍 **5 秒** 後熄滅，表示信標已關閉電源。
 
 ---
 
 ## 配置指南
 
-The parameters of YPB01 (including UUID, Major, Minor, Tx Power, and Broadcast Interval) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
-2. Ensure your phone's Bluetooth and Location services are enabled.
-3. Open the app, scan for the beacon's MAC address, and click to connect.
-4. Input the secure default configuration password to unlock and edit parameters.
+YPB01 的各項參數（如 UUID、Major、Minor、廣播功率和廣播間隔時間）可透過 **BeaconSET** 行動應用程式進行無線設定：
+1. 從 Google Play 或 Apple App Store 下載 **BeaconSET**。
+2. 開啟手機的藍牙與定位服務。
+3. 執行 App，掃描並尋找信標的 MAC 位址，點擊進行連線。
+4. 輸入預設管理密碼，解鎖後即可編輯參數。
+
+## 技術規格
+
+| 參數項目 | 技術規格 | 備註說明 |
+| :--- | :--- | :--- |
+| **晶片型號** | nRF52 系列 | 超低功耗晶片 |
+| **藍牙版本** | BLE 5.0 (低功耗藍牙) | 高傳輸效率與速率 |
+| **防水等級** | IP67 (防塵防水) | 防塵防水 (支援短時間浸入 1 公尺水中) |
+| **傳輸距離** | 最遠 100 公尺 (開闊空間) | 開闊空間 |
+| **天線阻抗** | 50 歐姆 | 板載 PCB 天線 |
+| **電源規格** | 1 × CR2477 鈕扣電池 | 可更換 (3.0V, 1000mAh) |
+| **工作電壓** | 1.8V - 3.9V | 直流電 |
+| **峰值電流** | 5.3 mA | 於 0dBm 廣播功率測試 |
+| **外觀尺寸** | Φ39 × 15.5 mm | 緊湊圓形 |
+| **預設參數** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | 可透過 App 自訂修改 |
 
 ---
 
 ## 產品圖片
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb01.png" alt="Yupitek YPB01 BLE 5.0 (低功耗藍牙) Coin Beacon" />
+  <img src="/images/products/ibeacon/ypb01.png" alt="Yupitek YPB01" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
 需要專屬報價或客製化解決方案？請直接來信聯絡我們的銷售團隊：**sales@yupitek.com**
-{{</alert >}}
+{{< /alert >}}

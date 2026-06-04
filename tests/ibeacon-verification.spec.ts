@@ -43,6 +43,38 @@ test.describe('iBeacon Pages Multi-Language Quality Audit', () => {
       // Verify the simplified sales email CTA is present
       expect(pageText).toContain('sales@yupitek.com');
 
+      // Model-specific software & protocol checks
+      if (route.includes('/ypb01/')) {
+        // YPB01 should use BeaconSET
+        expect(pageText).toContain('BeaconSET');
+        // YPB01 should NOT use BeaconSET+ in its operational/config guidance text
+        // (We check the config guidance section specifically)
+        const configText = await page.locator('body').innerText();
+        // Ensure no BeaconSET+ in configuration section
+        const configIndex = configText.indexOf('BeaconSET');
+        if (configIndex !== -1) {
+          const sectionText = configText.slice(configIndex, configIndex + 500);
+          expect(sectionText).not.toContain('BeaconSET+');
+        }
+      } else if (route.includes('/ypb02/') || route.includes('/ypb04/') || route.includes('/ypb05/')) {
+        // YPB02, YPB04, YPB05 should use BeaconSET+
+        expect(pageText).toContain('BeaconSET+');
+      } else if (route.includes('/ypb03/')) {
+        // YPB03 should be a LINE Beacon and mention FE6F
+        expect(pageText).toContain('LINE Beacon');
+        expect(pageText).toContain('0xFE6F');
+      }
+
+      // Check localization: non-English pages should have translated content and not fall back to English body paragraphs
+      if (!route.startsWith('/en/')) {
+        // Check that common English body text strings do not leak
+        expect(pageText).not.toContain('Simultaneous Broadcasts');
+        expect(pageText).not.toContain('How to Turn the Beacon ON');
+        expect(pageText).not.toContain('Key Features');
+        expect(pageText).not.toContain('Operational Guide');
+        expect(pageText).not.toContain('Configuration Guidance');
+      }
+
       // Scroll to bottom to trigger lazy-loaded images
       await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
       await page.waitForTimeout(1000);
@@ -64,7 +96,8 @@ test.describe('iBeacon Pages Multi-Language Quality Audit', () => {
 
   test('Verify dropdown menu item for iBeacon exists on English homepage', async ({ page }) => {
     await page.goto('/en/');
+    // Wait for the link to be attached in the document using robust assertion
     const link = page.locator('a[href="/en/products/ibeacon/"]').first();
-    expect(await link.count()).toBeGreaterThan(0);
+    await expect(link).toBeAttached();
   });
 });

@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-Yupitek iBeacon 產品代表了新一代藍牙低功耗 (BLE 5.0) 信標裝置，專為高性能定位、人員追蹤和商業廣告推播而設計。支援 Apple iBeacon™ 和 Google Eddystone™ (UID, URL, TLM) 協定，我們的信標支援多協定同時廣播（最多 6 個通道），並可透過 BeaconSET+ 行動 App 進行配置。
+Yupitek iBeacon 產品是新一代藍牙低功耗 (BLE 5.0) 信標裝置，適用於高性能定位、人員追蹤與商業廣告推播。支援 Apple iBeacon™ 和 Google Eddystone™ (UID, URL, TLM) 協定，可同時廣播最多 6 個通道的多協定訊號，並能透過 BeaconSET+ 行動 App 進行配置。
 
 ---
 

@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-Yupitek iBeacon 产品代表了新一代蓝牙低功耗 (BLE 5.0) 信标设备，专为高性能定位、人员追踪和商业广告推送而设计。支持 Apple iBeacon™ 和 Google Eddystone™ (UID, URL, TLM) 协议，我们的信标支持多协议同时广播（最多 6 个通道），并可轻松通过 BeaconSET+ 移动 App 进行配置。
+Yupitek iBeacon 产品是新一代蓝牙低功耗 (BLE 5.0) 信标设备，适用于高性能定位、人员追踪与商业广告推送。支持 Apple iBeacon™ 和 Google Eddystone™ (UID, URL, TLM) 协议，可同时广播最多 6 个通道的多协议信号，并能通过 BeaconSET+ 移动 App 进行配置。
 
 ---
 
@@ -16,7 +16,7 @@ Yupitek iBeacon 产品代表了新一代蓝牙低功耗 (BLE 5.0) 信标设备�
 
 ![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png)
 
-我们的 iBeacon 生态系统将物理位置与企业云网络连接起来。信标以定期时间间隔发射 BLE 无线信号，这些信号由移动设备（运行企业 App）和 BLE 网关扫描，并将安全日志转发到中央考勤和资产追踪系统。
+我们的 iBeacon 生态系统将物理位置与企业云网络连接起来。信标以定期时间间隔发射 BLE 信号，这些信号由移动设备（运行企业 App） and BLE 网关扫描，并将安全日志转发到中央考勤和资产追踪系统。
 
 ---
 

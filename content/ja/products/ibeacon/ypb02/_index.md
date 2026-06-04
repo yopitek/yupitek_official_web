@@ -1,76 +1,73 @@
 ---
 title: "YPB02 加速度センサー内蔵 BLE ビーコン"
-description: "YPB02 加速度センサー内蔵 BLE ビーコン。低消費電力 Bluetooth BLE 5.0 (低功耗藍牙) 技術、勤怠管理、位置測位、資産追跡に最適、設定可能。"
+description: "YPB02 加速度センサー内蔵 BLE ビーコン。低消費電力 Bluetooth BLE 5.0 技術、勤怠管理、位置測位、資産追跡に最適、設定可能。"
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0 (低功耗藍牙)", "Bluetooth", "Yupitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
 ---
 
 ## 製品概要
 
-The **YPB02** is a motion-sensing Bluetooth® Low Energy (BLE 5.0 (低功耗藍牙)) beacon equipped with an integrated **LIS3DH 三軸加速度感測器 sensor**. While sharing the compact form factor, replaceable 1000mAh CR2477 coin-cell battery, and IP67 (防塵防水) waterproof casing of the YPB01, the YPB02 adds intelligent motion detection and telemetry.
+**YPB02** は、高性能な **LIS3DH 3軸加速度センサー** を内蔵したモーション検知型の Bluetooth® Low Energy (BLE 5.0) ビーコンです。YPB01 と同様のコンパクトなコイン型デザイン、交換可能な 1000mAh CR2477 コイン電池、および IP67 防水・防塵筐体を採用しつつ、さらにスマートなモーション検知とセンサー情報の送信に対応しています。
 
-The beacon supports trigger-based advertising, allowing it to broadcast real-time acceleration data or modify its transmission interval only when moving, vibrating, or in the event of a fall. This minimizes battery drain and enables advanced asset activity monitoring.
-
----
-
-## 技術仕様
-
-| パラメータ | 技術仕様 | 備考 |
-| :--- | :--- | :--- |
-| **晶片型號** | nRF52 系列 | Ultra-low power consumption |
-| **藍牙版本** | BLE 5.0 (低功耗藍牙) | High efficiency and speed |
-| **防水等級** | IP67 (防塵防水) | Splash and dust resistant (1m immersion) |
-| **感測器** | LIS3DH 三軸加速度感測器 | X, Y, Z axes telemetry |
-| **傳輸距離** | 最遠 100 公尺 (開闊空間) | Open space |
-| **天線阻抗** | 50 歐姆 | On-board / PCB Antenna |
-| **電源規格** | 1 × CR2477 鈕扣電池 | Replaceable (3.0V, 1000mAh) |
-| **工作電壓** | 1.8V - 3.9V | DC |
-| **峰值電流** | 5.3 mA | Tested at 0dBm transmission power |
-| **外觀尺寸** | Φ39 × 15.5 mm | Compact circular shape |
-| **預設參數** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | Configurable via App |
+このビーコンはトリガーベースの配信をサポートしており、移動、振動、あるいは落下検知などのイベント発生時のみ、リアルタイムの加速度データ送信や配信間隔の切り替えを行います。これによりバッテリー消費を最小限に抑えつつ、高度な資産活動監視を実現します。
 
 ---
 
 ## 主な特徴
 
-* **3-Axis Acceleration Sensor:** Features the LIS3DH sensor mapping displacement, tilt, and motion telemetry along X, Y, and Z axes.
-* **Trigger-Based Broadcasting:** Supports configuring specific trigger conditions (e.g., motion-only broadcasting, falling alerts, or changing the interval to 100ms when moved to trace asset displacement).
-* **High Protection Enclosure:** Rated IP67 (防塵防水) waterproof and dustproof, allowing indoor and light outdoor installation.
-* **Replaceable Battery:** Long-lasting CR2477 battery (1000mAh) is easily replaced using the rotatable housing mechanism.
+* **3軸加速度センサー搭載:** LIS3DH センサーを搭載し、X・Y・Z 軸の変位、傾き、動きのデータを測定・送信します。
+* **トリガーベース配信:** 特定のトリガー条件（例：移動時のみの配信、落下アラート、移動検知時に配信間隔を 100ms に短縮してリアルタイム追跡など）を設定可能です。
+* **高保護筐体:** IP67 防水防塵設計で、屋内や軽度の屋外環境に設置可能です。
+* **交換式電池:** 回転式ハウジング設計により、コイン電池 (CR2477, 1000mAh) を簡単に交換できます。
 
 ---
 
 ## モーション検知とテレメトリ
 
-Using the LIS3DH sensor, YPB02 supports:
-1. **Activity-Based Advertising:** Broadcasts standard iBeacon/Eddystone frames continuously, but triggers sensor data frames (HT/ACC) only when the beacon is shifted or moving.
-2. **Coexistence Mode:** Supports static vs. motion parameters. For example, the beacon can stay silent (sleep mode) when stationary, and broadcast at 100ms interval when moved to track real-time position.
-3. **Threshold Calibration:** Acceleration thresholds and trigger duration can be customized inside the app.
+LIS3DH センサーにより、YPB02 は以下をサポートします：
+1. **アクティビティトリガー配信:** 通常時は標準的な iBeacon/Eddystone フレームを送信し、動きを検出したときのみセンサーデータフレーム (HT/ACC) を送信します。
+2. **静止・移動モードの併用:** 静止時は休止（スリープ）状態を維持し、動きを検知すると 100ms 間隔でリアルタイム位置情報を送信させることができます。
+3. **しきい値調整:** アプリを通じて、加速度のしきい値や検知時間をカスタマイズできます。
 
 ---
 
 ## 設定ガイド
 
-The parameters of YPB02 (including accelerometer thresholds, triggers, UUID, Major, and Minor) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
-2. Ensure your phone's Bluetooth and Location services are enabled.
-3. Open the app, scan for the beacon's MAC address, and click to connect.
-4. Input the secure default configuration password to unlock and edit parameters.
+YPB02 のパラメータ（加速度しきい値、トリガー、UUID、Major、Minor など）は、**BeaconSET+** アプリを使用してワイヤレスで設定します：
+1. Google Play または Apple App Store から **BeaconSET+** をダウンロードします。
+2. スマートフォンの Bluetooth および位置情報サービスを有効にします。
+3. アプリを開き、該当するビーコンの MAC アドレスを選択して接続します。
+4. パスワードを入力して、しきい値や配信パラメータを変更します。
+
+## 技術仕様
+
+| :--- | :--- | :--- |
+| **Chip Model** | nRF52 series | Ultra-low power consumption |
+| **Bluetooth Version** | BLE 5.0 | High efficiency and speed |
+| **Waterproof Level** | IP67 | Splash and dust resistant (1m immersion) |
+| **Sensor** | LIS3DH 3-axis accelerometer | X, Y, Z axes telemetry |
+| **Transmission Range** | Up to 100 meters | Open space |
+| **Antenna Impedance** | 50 ohm | On-board / PCB Antenna |
+| **Power Source** | 1 × CR2477 coin battery | Replaceable (3.0V, 1000mAh) |
+| **Operating Voltage** | 1.8V - 3.9V | DC |
+| **Peak Current** | 5.3 mA | Tested at 0dBm transmission power |
+| **Dimensions** | Φ39 × 15.5 mm | Compact circular shape |
+| **Default Settings** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | Configurable via App |
 
 ---
 
 ## 製品ギャラリー
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb02.png" alt="Yupitek YPB02 Sensor BLE 5.0 (低功耗藍牙) Coin Beacon" />
+  <img src="/images/products/ibeacon/ypb02.png" alt="Yupitek YPB02" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
 お見積もりやカスタム統合ソリューションが必要ですか？弊社営業チームまで直接メールでお問い合わせください：**sales@yupitek.com**
-{{</alert >}}
+{{< /alert >}}

@@ -1,81 +1,83 @@
 ---
 title: "YPB04 充電式スマートカードバッジ型ビーコン"
-description: "YPB04 充電式スマートカードバッジ型ビーコン。低消費電力 Bluetooth BLE 5.0 (低功耗藍牙) 技術、勤怠管理、位置測位、資産追跡に最適、設定可能。"
+description: "YPB04 充電式スマートカードバッジ型ビーコン。低消費電力 Bluetooth BLE 5.0 技術、勤怠管理、位置測位、資産追跡に最適、設定可能。"
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0 (低功耗藍牙)", "Bluetooth", "Yupitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
 ---
 
 ## 製品概要
 
-The **YPB04** is a wearable card-shaped Bluetooth® Low Energy (BLE 5.0 (低功耗藍牙)) beacon designed for smart office check-in, personnel flow monitoring, and geofencing. Its slim badge form factor (86 × 55 × 6 mm, weighing only 19g) is easily worn on lanyards or attached to uniforms.
+**YPB04** は、スマートオフィスの勤怠管理、人員の位置追跡、およびジオフェンス向けに設計された、極薄カード（バッジ）型の Bluetooth® Low Energy (BLE 5.0) ビーコンです。クレジットカードサイズ (86 × 55 × 6 mm、わずか 19g) で、ストラップに取り付けたり、制服のポケットに入れて簡単に携帯できます。
 
-Equipped with an **external push button**, a **vibration motor**, and an **RGB LED**, the YPB04 offers visual and physical feedback. It features a magnetic charging port, an integrated 3-axis accelerometer sensor, and optional support for dual-frequency **RFID (LF/HF/UHF)**, allowing it to combine BLE tracking with traditional physical gate card access.
+YPB04 は、**物理プッシュボタン**、**バイブレーションモーター**、**RGB LED インジケーター** を搭載し、視覚と触覚のフィードバックを提供します。さらに磁吸式の充電ポート、3軸加速度センサーを備え、オプションで **双周波 RFID (LF/HF/UHF)** の追加にも対応。BLE 測位と従来の物理ゲート式の社員証を統合可能です。
 
 ---
 
-## 技術仕様
+## 主な特徴
 
-| パラメータ | 技術仕様 | 備考 |
-| :--- | :--- | :--- |
-| **晶片型號** | nRF52 系列 | Low latency and high efficiency |
-| **藍牙版本** | BLE 5.0 (低功耗藍牙) | Secure connection and long range |
-| **防水等級** | IP67 (防塵防水) | Splash and dust resistant (1m immersion) |
-| **感測器** | 3-axis accelerometer | Displacement and movement detection |
-| **反饋機制** | 1 × 震動馬達，1 × RGB LED 指示燈 | Tactile and visual cues |
-| **控制按鈕** | 1 × 外部實體按鈕 | Activates triggers and alarms |
-| **RFID 相容性** | 低頻(LF) / 高頻(HF) / 超高頻(UHF) (選配) | Optional build integrations |
-| **傳輸距離** | 最遠 150 公尺 (492 英尺，開闊空間) | Maximum in open areas |
-| **電源規格** | 磁吸充電式鋰聚合物電池 (270mAh) | 270mAh capacity (Rechargeable) |
-| **電池壽命** | 最長可達 3 個月 (一般按壓頻率) | Depending on click frequency |
-| **充電時間** | 約 2 小時 (室溫，5V/1A 電源供應器) | 5V / 1A power adapter |
-| **外觀尺寸與重量** | 86 × 55 × 6 mm \| 19 g | Slim card format |
+* **3軸加速度センサー内蔵:** 静止・移動・落下状態を自動的に検出して通知します。
+* **デュアルフィードバック:** 1×バイブレーションモーターと 1×RGB LED を搭載し、触覚と視覚で警告や通知を行います。
+* **外部操作ボタン:** 物理ボタンを押すことで、あらかじめ設定した特定の配信パターン（SOS 警告など）を起動できます。
+* **RFID 統合可能:** 必要に応じて LF/HF/UHF IC チップを内蔵し、従来のタッチ式入館ゲートにも対応させることができます。
+* **充電式バッテリー:** 270mAh 内部リチウム電池を搭載。便利な磁吸式充電に対応し、一般的な使用環境で約3ヶ月間駆動します。
 
 ---
 
 ## 操作ガイド
 
-### Turning the Badge ON
-* Press and hold the physical button for **3 seconds**.
-* The blue LED will turn on for 3 seconds and the device will vibrate once to confirm activation.
+### ビーコンの電源を入れる方法
+* 物理ボタンを **3秒間** 長押しします。
+* 青色の LED が3秒間点灯し、本体が1回バイブレーションして、電源がオンになったことを通知します。
 
-### Turning the Badge OFF
-* For security, the device can only be turned off wirelessly via the **BeaconSET+ App** after entering the configuration password.
-* When successfully shut down, the blue LED will flash 5 times.
+### ビーコンの電源を切る方法
+* セキュリティ上、本デバイスは物理ボタンでの電源オフには対応していません。**BeaconSET+ アプリ** から接続し、パスワードを入力した上でワイヤレスでシャットダウンを実行する必要があります。
+* 正常にシャットダウンが実行されると、青色 LED が5回点滅します。
 
 ### 電池ステータスと充電について
-* **Low Battery Alert:** When battery falls below 20%, the red LED will flash once every 3 seconds.
-* **Charging Indicator:** The red LED remains on while charging.
-* **Fully Charged:** The green LED remains on once charging is complete.
-
-### ボタンクリック時の動作設定
-You can configure the badge button to trigger specific broadcasts (e.g. double-click or triple-click to send emergency signals or check-in telemetry):
-* **Double-click:** Blue LED flashes twice and the motor vibrates once.
-* **Triple-click:** Blue LED flashes 3 times and the motor vibrates twice.
+* **低電力アラート:** 残量が20%を下回ると、赤色 LED が3秒に1回点滅します。
+* **充電中:** 充電中は赤色 LED が常時点灯します。
+* **充電完了:** 充電が完了すると緑色 LED が常時点灯します。
+* **ボタンクリックトリガー:** ダブルクリックまたはトリプルクリックで、それぞれ事前に設定した緊急信号 (SOS) やパケット送信が行えます。
 
 ---
 
 ## 設定ガイド
 
-The parameters of YPB04 (including trigger behaviors, UUID, Major, and Minor) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
-2. Ensure your phone's Bluetooth and Location services are enabled.
-3. Open the app, scan for the badge's MAC address, and click to connect.
-4. Input the secure default configuration password to unlock and edit parameters.
+YPB04 のパラメータ（ボタン動作設定、UUID、Major、Minor など）は、**BeaconSET+** アプリを使用してワイヤレスで設定します：
+1. Google Play または Apple App Store から **BeaconSET+** をダウンロードします。
+2. Bluetooth と位置情報を有効にし、アプリから該当カードの MAC アドレスを選択します。
+3. パスワードを入力して設定を変更・保存します。
+
+## 技術仕様
+
+| :--- | :--- | :--- |
+| **Chip Model** | nRF52 series | Low latency and high efficiency |
+| **Bluetooth Version** | BLE 5.0 | Secure connection and long range |
+| **Waterproof Level** | IP67 | Splash and dust resistant (1m immersion) |
+| **Sensors** | 3-axis accelerometer | Displacement and movement detection |
+| **Feedback Elements** | 1 × Vibration Motor, 1 × RGB LED | Tactile and visual cues |
+| **Control Button** | 1 × External physical button | Activates triggers and alarms |
+| **RFID Compatibility** | LF / HF / UHF | Optional build integrations |
+| **Transmission Range** | Up to 150 meters (492 ft) | Maximum in open areas |
+| **Power Source** | Magnetic charging Li-po battery | 270mAh capacity (Rechargeable) |
+| **Battery Lifetime** | Up to 3 months | Depending on click frequency |
+| **Charging Time** | Approximately 2 hours | 5V / 1A power adapter |
+| **Dimensions & Weight** | 86 × 55 × 6 mm \ | 19 g | Slim card format |
 
 ---
 
 ## 製品ギャラリー
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb04.png" alt="Yupitek YPB04 Rechargeable Smart Card Badge Beacon" />
+  <img src="/images/products/ibeacon/ypb04.png" alt="Yupitek YPB04" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
 お見積もりやカスタム統合ソリューションが必要ですか？弊社営業チームまで直接メールでお問い合わせください：**sales@yupitek.com**
-{{</alert >}}
+{{< /alert >}}

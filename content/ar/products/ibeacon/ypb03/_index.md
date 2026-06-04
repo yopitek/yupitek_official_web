@@ -1,80 +1,117 @@
 ---
 title: "منارة YPB03 Max طويلة المدى"
-description: "منارة YPB03 Max طويلة المدى. تقنية البلوتوث منخفض الطاقة BLE 5.0 (低功耗藍牙)، لتحديد المواقع وحضور الموظفين وتتبع الأصول."
+description: "منارة YPB03 Max طويلة المدى. تقنية البلوتوث منخفض الطاقة BLE 5.0، لتحديد المواقع وحضور الموظفين وتتبع الأصول."
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0 (低功耗藍牙)", "Bluetooth", "Yupitek", "AA Battery", "Long Range", "Waterproof"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range", "Waterproof", "LINE Beacon", "LINE Simple Beacon"]
 ---
 
 ## نظرة عامة على المنتج
 
-The **YPB03** is an industrial-grade, long-range Bluetooth® Low Energy (BLE 5.0 (低功耗藍牙)) beacon engineered for long-term deployments in large public spaces. Powered by **4 × AA (三號) 乾電池** providing a massive 5800mAh capacity, it boasts an incredible battery lifetime of **up to 10 years** under default configurations.
+إنّ **YPB03** هو منارة صناعية طويلة المدى للبلتوث منخفض الطاقة (BLE 5.0) ومحسنة خصيصاً لتعمل كـ **LINE Beacon** تبث حزم **LINE Simple Beacon** القياسية. تعمل بـ **4 بطاريات AA** بسعة 5800 مللي أمبير، وتتميز بعمر بطارية يصل إلى **10 سنوات**.
 
-With a powerful transmission range of up to **240 meters**, the YPB03 is widely deployed for indoor positioning, navigation, and commercial information pushing in airports, train stations, shopping malls, and hospitals. It comes in a rugged IP65 (防塵防潑水) waterproof ABS casing and includes a screw-mount bracket for stable installation.
-
----
-
-## المواصفات الفنية
-
-| المعيار | المواصفات | ملاحظات |
-| :--- | :--- | :--- |
-| **晶片型號** | nRF52 系列 | Low latency and high efficiency |
-| **藍牙版本** | BLE 5.0 (低功耗藍牙) | High range and throughput |
-| **防水等級** | IP65 (防塵防潑水) | Dustproof and water-jet resistant |
-| **傳輸距離** | 最遠 240 公尺 (開闊空間) | Maximum in open areas |
-| **電源規格** | 4 × AA (三號) 乾電池 | 5800mAh capacity total (Included) |
-| **電池壽命** | 最長可達 10 年 (預設參數下) | Based on default broadcasting parameters |
-| **外殼材質** | ABS 塑膠 + 矽膠 | Rugged industrial casing |
-| **外觀尺寸** | 72 × 72 × 23 mm | Wall-mountable square |
-| **淨重** | 145 g | Including batteries |
-| **預設參數** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | Configurable via App |
+بفضل هوائي الكسب العالي، يصل مدى البث إلى **240 متراً**، وهو الخيار الأمثل للمساحات التجارية الكبيرة. لا يحتاج المستخدمون إلى تثبيت تطبيقات إضافية، بل يتلقون الإشعارات مباشرة في تطبيق **LINE**.
 
 ---
 
 ## الميزات الرئيسية
 
-* **10-Year Battery Service:** Massive 5800mAh capacity using four standard replaceable AA batteries eliminates frequent maintenance.
-* **Extended Broadcast Range:** Signal coverage extends up to 240 meters (787 feet) for superior penetration in open halls.
-* **Double Installation System:** Supports double-sided industrial adhesive tape or secure screw-bracket wall installation.
-* **Robust Enclosure:** IP65 (防塵防潑水)-rated ABS casing withstands challenging environment humidity, dust, and temperatures (-30°C to 60°C).
+* **توافق رسمي مع LINE Beacon:** يبث بروتوكول LINE Simple Beacon المفتوح للربط مع API لـ LINE Bot.
+* **عمر بطارية 10 سنوات:** سعة 5800 مللي أمبير باستخدام 4 بطاريات AA شائعة يقلل الصيانة.
+* **مدى 240 متراً:** إشارة BLE 5.0 قوية تغطي الصالات الكبيرة والمطارات.
+* **تفاعل سلس:** يحتاج المستخدم فقط لتفعيل البلوتوث ومتابعة حسابك الرسمي.
+* **هيكل IP65:** هيكل ABS متين ومقاوم للغبار ورذاذ الماء للاستخدام الصناعي.
+
+---
+
+## دليل تكامل LINE Beacon للمطورين
+
+### كيف تعمل disparadores التقارب
+عندما يدخل مستخدم لديه بلوتوث و LINE Beacon نطاق الإشارة:
+1. يكتشف تطبيق LINE **UUID الخدمة `0xFE6F`** ويقرأ معرف الأجهزة (HWID).
+2. ترسل منصة LINE حدث `beacon` إلى خادم Webhook الخاص بالبوت.
+3. يستجيب البوت في الوقت الفعلي بكوبونات أو معلومات ملاحة.
+
+```mermaid
+sequenceDiagram
+    participant User as المستخدم (تطبيق LINE)
+    participant Beacon as YPB03 (0xFE6F + HWID)
+    participant LINE as منصة LINE
+    participant Bot as خادم Webhook (البوت)
+
+    Beacon->>User: بث BLE (UUID: FE6F + HWID)
+    User->>LINE: توجيه HWID + User ID
+    LINE->>Bot: Webhook POST (حدث beacon: enter/stay/banner)
+    Bot->>User: استجابة API (مثل كوبون)
+```
+
+### الخطوة 1: تسجيل معرف الأجهزة (HWID)
+1. قم بتسجيل الدخول إلى **LINE Developers Console** أو **LINE Official Account Manager**.
+2. انتقل إلى قسم Beacon وسجل الجهاز للحصول على **HWID المكون من 5 بايت (10 رموز ست عشرية)**.
+
+### الخطوة 2: تهيئة YPB03 عبر BeaconSET+
+1. قم بتنزيل **BeaconSET+** واتصل بالمنارة (يتطلب كلمة مرور).
+2. اضبط إحدى قنوات البث كـ **Service Data** مع:
+   - **Service UUID:** `FE6F`
+   - **Data Value:** `FE6F` + `[HWID الخاص بك]` + `7F00` (مثال: `FE6F01234567897F00`).
+3. احفظ واقطع الاتصال. ستبدأ المنارة ببث إشارة LINE Beacon.
+
+### الخطوة 3: معالجة حدث الويب هوك
+سيتلقى خادمك كائن JSON يحتوي تفاصيل `beacon`:
+* **`hwid`**: معرف الأجهزة للمنارة.
+* **`type`**: نوع الإجراء (`enter` عند الدخول، `stay` يرسل كل 10 ثوانٍ عند البقاء، `banner` عند النقر على الإعلان).
 
 ---
 
 ## طرق التثبيت
 
-### Method A: Industrial Adhesive Tape
-* **Best Surface:** Smooth surfaces like glass, acrylic, clean aluminum, or polished tile.
-* **Process:** Clean the surface. Apply the double-sided tape, apply pressure for 2 seconds, and let it rest for 30 minutes before mounting the beacon.
+### الطريقة أ: شريط لاصق صناعي
+* **الأسطح:** الزجاج، الأكريليك، الألومنيوم النظيف.
+* **العملية:** نظف السطح. اضغط على الشريط (ثانيتين)، انتظر 30 دقيقة وثبت المنارة.
 
-### Method B: Screw Bracket Mount (Recommended)
-* **Best Surface:** Concrete, drywall, wood, or brick.
-* **Process:**
-  1. Secure the bracket onto the wall using the expansion plugs and screws.
-  2. Slide the YPB03 into the bracket slots until it locks.
+### الطريقة ب: التثبيت ببراغي ودعامة (موصى به)
+* **الأسطح:** الخرسانة، الخشب، الطوب.
+* **العملية:** ثبت الدعامة على الجدار باستخدام البراغي. أدخل YPB03 حتى يستقر في مكانه.
 
 ---
 
 ## إرشادات التهيئة
 
-The parameters of YPB03 (including Tx Power, Broadcast Interval, UUID, Major, and Minor) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
-2. Ensure your phone's Bluetooth and Location services are enabled.
-3. Open the app, scan for the beacon's MAC address, and click to connect.
-4. Input the secure default configuration password to unlock and edit parameters.
+يتم تعديل المعلمات لاسلكياً عبر **BeaconSET+**:
+1. قم بتنزيل **BeaconSET+** وفعل البلوتوث.
+2. ابحث عن المنارة واتصل بكلمة المرور.
+3. قم بتهيئة UUID و Major و Minor وقوة الإرسال والفاصل.
+
+## Technical Specifications
+
+| المعيار | المواصفات | ملاحظات |
+| :--- | :--- | :--- |
+| **Chip Model** | nRF52 series | Low latency and high efficiency |
+| **Bluetooth Version** | BLE 5.0 | High range and throughput |
+| **Waterproof Level** | IP65 | Dustproof and water-jet resistant |
+| **Transmission Range** | Up to 240 meters | Maximum in open areas |
+| **Protocol Support** | LINE Simple Beacon / iBeacon | Multi-slot broadcasting |
+| **Service UUID** | 0xFE6F | Dedicated LINE Beacon UUID |
+| **Service Data Format** | 0xFE6F + 5-Byte HWID + 0x7F00 | LINE Simple Beacon packet format |
+| **Power Source** | 4 × AA batteries | 5800mAh capacity total (Included) |
+| **Battery Lifetime** | Up to 10 years | Based on default broadcasting parameters |
+| **Material** | ABS + Silicone | Rugged industrial casing |
+| **Dimensions** | 72 × 72 × 23 mm | Wall-mountable square |
+| **Net Weight** | 145 g | Including batteries |
 
 ---
 
 ## معرض صور المنتج
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb03.png" alt="Yupitek YPB03 Long Range E2 Max Beacon" />
+  <img src="/images/products/ibeacon/ypb03.png" alt="Yupitek YPB03" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
 هل تحتاج إلى عرض أسعار مخصص أو حل تكامل؟ يرجى الاتصال بفريق المبيعات لدينا مباشرة على: **sales@yupitek.com**
-{{</alert >}}
+{{< /alert >}}

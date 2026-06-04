@@ -1,79 +1,76 @@
 ---
-title: "YPB01 BLE 5.0 (低功耗藍牙) ビーコン"
-description: "YPB01 BLE 5.0 (低功耗藍牙) ビーコン。低消費電力 Bluetooth BLE 5.0 (低功耗藍牙) 技術、勤怠管理、位置測位、資産追跡に最適、設定可能。"
+title: "YPB01 BLE 5.0 ビーコン"
+description: "YPB01 BLE 5.0 ビーコン。低消費電力 Bluetooth BLE 5.0 技術、勤怠管理、位置測位、資産追跡に最適、設定可能。"
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0 (低功耗藍牙)", "Bluetooth", "Yupitek", "CR2477", "Waterproof"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof"]
 ---
 
 ## 製品概要
 
-The **YPB01** is a compact, robust Bluetooth® Low Energy (BLE 5.0 (低功耗藍牙)) beacon designed for indoor location systems, activity monitoring, and asset tracking. Based on the ultra-low power nRF52 系列 chipset, it broadcasts standard iBeacon and Eddystone (UID, URL, TLM) frames simultaneously.
+**YPB01** は、屋内位置測位、活動監視、および資産追跡用に設計された、コンパクトで頑丈な Bluetooth® Low Energy (BLE 5.0) コイン型ビーコンです。超低消費電力の nRF52 シリーズ チップセットをベースに、iBeacon および Eddystone (UID、URL、TLM) フレームを同時にブロードキャストします。
 
-Its smart, rotatable mechanical housing allows for easy coin-cell battery replacement while achieving an IP67 (防塵防水) waterproof rating, making it ideal for deployments in humid or demanding environments.
-
----
-
-## 技術仕様
-
-| パラメータ | 技術仕様 | 備考 |
-| :--- | :--- | :--- |
-| **晶片型號** | nRF52 系列 | Ultra-low power consumption |
-| **藍牙版本** | BLE 5.0 (低功耗藍牙) | High efficiency and speed |
-| **防水等級** | IP67 (防塵防水) | Splash and dust resistant (1m immersion) |
-| **傳輸距離** | 最遠 100 公尺 (開闊空間) | Open space |
-| **天線阻抗** | 50 歐姆 | On-board / PCB Antenna |
-| **電源規格** | 1 × CR2477 鈕扣電池 | Replaceable (3.0V, 1000mAh) |
-| **工作電壓** | 1.8V - 3.9V | DC |
-| **峰值電流** | 5.3 mA | Tested at 0dBm transmission power |
-| **外觀尺寸** | Φ39 × 15.5 mm | Compact circular shape |
-| **預設參數** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | Configurable via App |
+回転開閉式の筐体構造により、コイン型電池の交換が容易でありながら、IP67 の防水・防塵性能を達成。湿気の多い環境や過酷な環境への設置に最適です。
 
 ---
 
 ## 主な特徴
 
-* **High Protection Enclosure:** Rated IP67 (防塵防水) waterproof and dustproof, allowing indoor and light outdoor installation.
-* **Replaceable Battery:** Long-lasting CR2477 battery (1000mAh) is easily replaced using the rotatable housing mechanism.
-* **Simultaneous Broadcasts:** Supports broadcasting up to 6 distinct advertising slots simultaneously, covering iBeacon and Eddystone protocols.
-* **Physical Power Control:** Equipped with an internal push button to turn the beacon ON or OFF to save battery during transit/storage.
+* **高保護筐体:** IP67 防水防塵仕様で、屋内および一時的な屋外設置に対応。
+* **交換式電池:** 回転式開閉機構により、長寿命の CR2477 電池 (1000mAh) を簡単に交換可能。
+* **同時配信:** iBeacon と Eddystone 双方のプロトコルをカバーする、最大 6 個の独立した広告スロットの同時配信に対応。
+* **電源ボタン:** 輸送や保管時のバッテリー消耗を防ぐため、内部に電源オン/オフ用の物理ボタンを搭載。
 
 ---
 
 ## 操作ガイド
 
 ### ビーコンの電源を入れる方法
-1. Open the rotatable housing clockwisely.
-2. Locate the internal "push button" and hold it down for **3 seconds**.
-3. The blue LED indicator will turn on for **5 seconds** and then turn off. The YPB01 is now activated and broadcasting.
+1. 回転式の筐体を時計回りに回して開きます。
+2. 内部の「プッシュボタン」を **3秒間** 長押しします。
+3. 青色の LED インジケーターが **5秒間** 点灯した後に消灯します。これで YPB01 が起動し、配信が開始されます。
 
 ### ビーコンの電源を切る方法
-1. Press and hold the internal push button for **3 seconds**.
-2. The blue LED will blink for **5 seconds** and then turn off. The beacon is now powered down.
+1. 内部のプッシュボタンを **3秒間** 長押しします。
+2. 青色の LED インジケーターが **5秒間** 点滅した後に消灯します。これでビーコンの電源が切れます。
 
 ---
 
 ## 設定ガイド
 
-The parameters of YPB01 (including UUID, Major, Minor, Tx Power, and Broadcast Interval) are configured wirelessly via the **BeaconSET+** application:
-1. Download **BeaconSET+** from Google Play or the Apple App Store.
-2. Ensure your phone's Bluetooth and Location services are enabled.
-3. Open the app, scan for the beacon's MAC address, and click to connect.
-4. Input the secure default configuration password to unlock and edit parameters.
+YPB01 のパラメータ（UUID、Major、Minor、送信出力、およびアドバタイジング間隔）は、**BeaconSET** アプリケーションを使用してワイヤレスで設定します：
+1. Google Play または Apple App Store から **BeaconSET** をダウンロードします。
+2. スマートフォンの Bluetooth および位置情報サービスが有効になっていることを確認します。
+3. アプリを開き、ビーコンの MAC アドレスをスキャンして接続します。
+4. デフォルトのセキュリティパスワードを入力してロックを解除し、パラメータを編集します。
+
+## 技術仕様
+
+| :--- | :--- | :--- |
+| **Chip Model** | nRF52 series | Ultra-low power consumption |
+| **Bluetooth Version** | BLE 5.0 | High efficiency and speed |
+| **Waterproof Level** | IP67 | Splash and dust resistant (1m immersion) |
+| **Transmission Range** | Up to 100 meters | Open space |
+| **Antenna Impedance** | 50 ohm | On-board / PCB Antenna |
+| **Power Source** | 1 × CR2477 coin battery | Replaceable (3.0V, 1000mAh) |
+| **Operating Voltage** | 1.8V - 3.9V | DC |
+| **Peak Current** | 5.3 mA | Tested at 0dBm transmission power |
+| **Dimensions** | Φ39 × 15.5 mm | Compact circular shape |
+| **Default Settings** | UUID: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0<br>Radio Tx Power: 0 dBm (Level 6)<br>Adv. Interval: 900 ms | Configurable via App |
 
 ---
 
 ## 製品ギャラリー
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb01.png" alt="Yupitek YPB01 BLE 5.0 (低功耗藍牙) Coin Beacon" />
+  <img src="/images/products/ibeacon/ypb01.png" alt="Yupitek YPB01" />
 {{< /gallery >}}
 
 ---
 
 {{< alert >}}
 お見積もりやカスタム統合ソリューションが必要ですか？弊社営業チームまで直接メールでお問い合わせください：**sales@yupitek.com**
-{{</alert >}}
+{{< /alert >}}

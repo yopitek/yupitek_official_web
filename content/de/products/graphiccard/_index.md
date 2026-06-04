@@ -60,6 +60,12 @@ Yopitek bietet NVIDIA RTX 5080 Series Grafikkarten für KI-Bildgenerierung, 3D-R
   {{< card title="MSI RTX5080 16G VENTUS 3X OC WHITE" href="/de/products/graphiccard/msi-rtx5080-ventus-3x-oc-white/" image="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.png" >}}
     MSI VENTUS 3X OC White Edition — beliebte weiße Bauweise mit gleichem Wertangebot.
   {{< /card >}}
+  {{< card title="MSI RTX5080 16G INSPIRE 3X OC" href="/de/products/graphiccard/msi-rtx5080-inspire-3x-oc/" image="/images/products/graphiccard/msi-rtx5080-inspire-3x-oc.png" >}}
+    MSI INSPIRE — kreative Ästhetik vereint mit Leistung und visuellem Design.
+  {{< /card >}}
+  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/de/products/graphiccard/msi-rtx5080-suprim-liquid-soc/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.png" >}}
+    MSI SUPRIM LIQUID — All-in-One-Wasserkühlungs-Flaggschiff für extremes Übertakten.
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

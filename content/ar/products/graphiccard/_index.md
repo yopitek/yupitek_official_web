@@ -60,6 +60,12 @@ featureimage: "/images/products/graphiccard/banner-graphiccard.png"
   {{< card title="MSI RTX5080 16G VENTUS 3X OC WHITE" href="/ar/products/graphiccard/msi-rtx5080-ventus-3x-oc-white/" image="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.png" >}}
     MSI VENTUS 3X OC الإصدار الأبيض — تكوين أبيض شائع بنفس قيمة السعر.
   {{< /card >}}
+  {{< card title="MSI RTX5080 16G INSPIRE 3X OC" href="/ar/products/graphiccard/msi-rtx5080-inspire-3x-oc/" image="/images/products/graphiccard/msi-rtx5080-inspire-3x-oc.png" >}}
+    MSI INSPIRE — جماليات إبداعية مع الأداء والجاذبية البصرية.
+  {{< /card >}}
+  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/ar/products/graphiccard/msi-rtx5080-suprim-liquid-soc/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.png" >}}
+    MSI SUPRIM LIQUID — نظام تبريد مائي متكامل ومغلق لكسر سرعة المعالج القصوى.
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

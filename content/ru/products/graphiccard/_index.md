@@ -59,6 +59,12 @@ Yopitek предлагает услуги по поставке видеокар
   {{< card title="MSI RTX5080 16G VENTUS 3X OC WHITE" href="/ru/products/graphiccard/msi-rtx5080-ventus-3x-oc-white/" image="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.png" >}}
     MSI VENTUS 3X OC белая версия — популярная белая сборка с тем же ценностным предложением.
   {{< /card >}}
+  {{< card title="MSI RTX5080 16G INSPIRE 3X OC" href="/ru/products/graphiccard/msi-rtx5080-inspire-3x-oc/" image="/images/products/graphiccard/msi-rtx5080-inspire-3x-oc.png" >}}
+    MSI INSPIRE — креативная эстетика в сочетании с высокой производительностью.
+  {{< /card >}}
+  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/ru/products/graphiccard/msi-rtx5080-suprim-liquid-soc/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.png" >}}
+    MSI SUPRIM LIQUID — флагманская система жидкостного охлаждения "все в одном" для экстремального разгона.
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

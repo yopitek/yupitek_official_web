@@ -60,6 +60,12 @@ Yopitek propose des cartes graphiques NVIDIA RTX 5080 pour la génération d'ima
   {{< card title="MSI RTX5080 16G VENTUS 3X OC WHITE" href="/fr/products/graphiccard/msi-rtx5080-ventus-3x-oc-white/" image="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.png" >}}
     MSI VENTUS 3X OC édition blanche — configuration blanche populaire avec le même rapport qualité-prix.
   {{< /card >}}
+  {{< card title="MSI RTX5080 16G INSPIRE 3X OC" href="/fr/products/graphiccard/msi-rtx5080-inspire-3x-oc/" image="/images/products/graphiccard/msi-rtx5080-inspire-3x-oc.png" >}}
+    MSI INSPIRE — une esthétique créative alliant performance et design visuel.
+  {{< /card >}}
+  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/fr/products/graphiccard/msi-rtx5080-suprim-liquid-soc/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.png" >}}
+    MSI SUPRIM LIQUID — le fleuron du refroidissement liquide tout-en-un pour l'overclocking extrême.
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

@@ -60,6 +60,12 @@ YopitekはNVIDIA RTX 5080シリーズグラフィックカードの調達サー�
   {{< card title="MSI RTX5080 16G VENTUS 3X OC WHITE" href="/ja/products/graphiccard/msi-rtx5080-ventus-3x-oc-white/" image="/images/products/graphiccard/msi-rtx5080-ventus-3x-oc-white.png" >}}
     MSI VENTUS 3X OC ホワイトエディション — ホワイトビルドに最適。
   {{< /card >}}
+  {{< card title="MSI RTX5080 16G INSPIRE 3X OC" href="/ja/products/graphiccard/msi-rtx5080-inspire-3x-oc/" image="/images/products/graphiccard/msi-rtx5080-inspire-3x-oc.png" >}}
+    MSI INSPIRE — クリエイティブな美学とパフォーマンス、そして視覚的魅力の両立。
+  {{< /card >}}
+  {{< card title="MSI RTX5080 16G SUPRIM LIQUID SOC" href="/ja/products/graphiccard/msi-rtx5080-suprim-liquid-soc/" image="/images/products/graphiccard/msi-rtx5080-suprim-liquid-soc.png" >}}
+    MSI SUPRIM LIQUID — 一体型水冷フラッグシップモデル、極限のオーバークロック向け。
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

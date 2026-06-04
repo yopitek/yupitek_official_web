@@ -214,7 +214,7 @@ For security testing labs deploying Black Duck FuzzBox systems, we recommend the
 
 ### 8.2 Inquiries and Ordering
 Yupitek is an authorized distributor of ALFA Network products, providing local support and bulk supply. To request product quotes, place bulk orders, or consult with our technical support team:
-*   Visit the [Yupitek Contact Us Page](https://www.yupitek.com)
+*   Visit the [Yupitek Contact Us Page](/en/contact/)
 *   Or email us directly at **sales@yupitek.com**
 
 Our engineering team will assist you in acquiring the exact wireless hardware configurations needed to support your Black Duck FuzzBox protocol fuzzing workflows.

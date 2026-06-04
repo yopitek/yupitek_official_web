@@ -213,8 +213,8 @@ lrwxrwxrwx 1 root root 23 Jun 04 13:30 phy0 -> /sys/class/net/wlan0
 *   **訊號最佳化 (強烈推薦)：** 搭配使用 **ALFA APA-M25** 或 **APA-M25-6E** 雙頻定向面板天線。將原廠全向天線替換為這些高增益定向天線面板，可將無線電訊號直接聚焦在受測系統 (SUT) 上，減少環境雜訊干擾並提高注入成功率。
 
 ### 8.2 諮詢與訂購
-Yupitek（優必客）是 ALFA Network 產品的授權代理商，提供在地支援與批量供應。如需索取產品報價、進行大宗訂購或諮詢我們的技術支援團隊：
-*   請造訪 [Yupitek 聯絡我們頁面](https://www.yupitek.com)
+Yupitek 是 ALFA Network 產品的授權代理商，提供在地支援與批量供應。如需索取產品報價、進行大宗訂購或諮詢我們的技術支援團隊：
+*   請造訪 [Yupitek 聯絡我們頁面](/zh-tw/contact/)
 *   或直接寄信至 **sales@yupitek.com**
 
 我們的工程團隊將協助您取得支援 Black Duck FuzzBox 協定模糊測試工作流程所需的精確無線硬體配置。

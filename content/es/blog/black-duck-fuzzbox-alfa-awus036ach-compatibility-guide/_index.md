@@ -214,7 +214,7 @@ Para los laboratorios de pruebas de seguridad que implementan sistemas Black Duc
 
 ### 8.2 Consultas y pedidos
 Yupitek es distribuidor autorizado de los productos de ALFA Network, ofreciendo soporte local y suministro al por mayor. Para solicitar cotizaciones de productos, realizar pedidos al por mayor o consultar con nuestro equipo de soporte técnico:
-*   Visite la [Página de contacto de Yupitek](https://www.yupitek.com)
+*   Visite la [Página de contacto de Yupitek](/es/contact/)
 *   O envíenos un correo electrónico directamente a **sales@yupitek.com**
 
 Nuestro equipo de ingeniería le ayudará a adquirir las configuraciones exactas de hardware inalámbrico necesarias para respaldar sus flujos de trabajo de fuzzing de protocolos con Black Duck FuzzBox.

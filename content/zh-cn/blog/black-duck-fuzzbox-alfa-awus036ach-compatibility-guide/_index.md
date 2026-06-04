@@ -214,7 +214,7 @@ lrwxrwxrwx 1 root root 23 Jun 04 13:30 phy0 -> /sys/class/net/wlan0
 
 ### 8.2 业务咨询与订购
 Yupitek 是 ALFA Network 产品的授权经销商，提供本地支持和批量供应。如需索取产品报价、进行批量订购或咨询我们的技术支持团队：
-*   请访问 [Yupitek 联系我们页面](https://www.yupitek.com)
+*   请访问 [Yupitek 联系我们页面](/zh-cn/contact/)
 *   或者直接发送电子邮件至 **sales@yupitek.com**
 
 我们的工程团队将协助您获取支持 Black Duck FuzzBox 协议模糊测试工作流所需的精确无线硬件配置。

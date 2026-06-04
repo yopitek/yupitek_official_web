@@ -41,6 +41,30 @@ HAK5は世界的に著名なセキュリティリサーチツールメーカー�
   {{< card title="WiFi Pineapple Pager" href="/ja/products/hak5/wifi-pineapple-pager/" image="/images/products/hak5/wifi-pineapple-pager.png" >}}
     ポケットサイズのトライバンド Wi-Fi ペネトレーションテストツール。DuckyScript ペイロード、2.4" カラーディスプレイ、バイブレーション通知搭載で完全スタンドアロン動作。
   {{< /card >}}
+  {{< card title="WiFi Pineapple Enterprise" href="/ja/products/hak5/wifi-pineapple-enterprise/" image="/images/products/hak5/wifi-pineapple-enterprise.png" >}}
+    エンタープライズ向け無線ネットワーク監査プラットフォーム、強化アンテナ設計で大規模セキュリティ評価に対応。
+  {{< /card >}}
+  {{< card title="Key Croc" href="/ja/products/hak5/key-croc/" image="/images/products/hak5/key-croc.png" >}}
+    キーロガー兼HIDインジェクションツール、Wi-Fi内蔵でリモートアクセス可能。
+  {{< /card >}}
+  {{< card title="O.MG Plug" href="/ja/products/hak5/omg-plug/" image="/images/products/hak5/omg-plug.png" >}}
+    充電ヘッドに偽装したO.MGデバイス、リモート制御機能付き。
+  {{< /card >}}
+  {{< card title="O.MG Adapter" href="/ja/products/hak5/omg-adapter/" image="/images/products/hak5/omg-adapter.png" >}}
+    USBアダプター形状のO.MGデバイス、ターゲット機器へ容易に接続可能。
+  {{< /card >}}
+  {{< card title="O.MG Programmer" href="/ja/products/hak5/omg-programmer/" image="/images/products/hak5/omg-programmer.png" >}}
+    O.MG Cable専用プログラマー — DuckyScriptファームウェアのフラッシュに使用。
+  {{< /card >}}
+  {{< card title="O.MG UnBlocker" href="/ja/products/hak5/omg-unBlocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
+    USB データブロッカーを回避 — 充電専用ケーブルソリューションの正当なテストに使用。
+  {{< /card >}}
+  {{< card title="Malicious Cable Detector" href="/ja/products/hak5/malicious-cable-detector/" image="/images/products/hak5/malicious-cable-detector.png" >}}
+    偽装悪意あるケーブル検出スキャナー、O.MGタイプのデバイス識別を支援。
+  {{< /card >}}
+  {{< card title="Shark Jack Cable" href="/ja/products/hak5/shark-jack-cable/" image="/images/products/hak5/shark-jack-cable.png" >}}
+    ネットワークポートへの直接接続用Shark Jackのケーブル版。
+  {{< /card >}}
 {{< /card-group >}}
 
 ---

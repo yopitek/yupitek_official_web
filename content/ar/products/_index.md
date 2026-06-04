@@ -27,6 +27,9 @@ showChildPages: false
   {{< card title="بطاقات الرسومات RTX 5080" href="/ar/products/graphiccard/" >}}
     بطاقات رسومات NVIDIA RTX 5080 المناسبة لحوسبة الذكاء الاصطناعي ومعالجة الصور ومحطات الإسقاط.
   {{< /card >}}
+  {{< card title="منارات iBeacon" href="/ar/products/ibeacon/" >}}
+    منارات BLE 5.0 احترافية لتحديد المواقع الداخلي، وتسجيل الحضور، وإدارة الأفراد، وتتبع الأصول.
+  {{</card >}}
   {{< card title="SDRLAB" href="/ar/products/sdrlab/" >}}
     وحدات راديو مُعرَّف بالبرمجيات (SDR) وألواح توسعة Flipper Zero لأبحاث الاتصالات اللاسلكية.
   {{< /card >}}

@@ -26,6 +26,9 @@ Yopitek est le distributeur autorisé à Taïwan pour plusieurs marques mondiale
   {{< card title="Cartes graphiques — RTX 5080" href="/fr/products/graphiccard/" >}}
     GPU NVIDIA RTX 5080 pour le calcul IA, les pipelines de rendu et les stations de projection.
   {{< /card >}}
+  {{< card title="Balises iBeacon BLE" href="/fr/products/ibeacon/" >}}
+    Balises professionnelles BLE 5.0 pour la localisation en intérieur, la gestion intelligente des présences et le suivi d'actifs.
+  {{</card >}}
   {{< card title="SDRLAB" href="/fr/products/sdrlab/" >}}
     Modules radio définis par logiciel et cartes d'extension Flipper Zero.
   {{< /card >}}

@@ -26,6 +26,9 @@ A Yopitek distribui múltiplas marcas internacionais renomadas, especializadas e
   {{< card title="Placas de Vídeo RTX 5080" href="/pt/products/graphiccard/" >}}
     Placas de vídeo NVIDIA RTX 5080 para computação em IA, renderização de imagens e estações de trabalho de projeção.
   {{< /card >}}
+  {{< card title="Beacons iBeacon BLE" href="/pt/products/ibeacon/" >}}
+    Beacons profissionais BLE 5.0 para localização interna, controle de ponto, gestão de pessoal e rastreamento de ativos.
+  {{</card >}}
   {{< card title="SDRLAB" href="/pt/products/sdrlab/" >}}
     Módulos SDR de rádio definido por software e placas de expansão para Flipper Zero. Ideais para pesquisa de comunicações sem fio.
   {{< /card >}}

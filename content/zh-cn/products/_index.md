@@ -26,6 +26,9 @@ showChildPages: false
   {{< card title="显卡 RTX 5080" href="/zh-cn/products/graphiccard/" >}}
     NVIDIA RTX 5080 系列显卡，适用 AI 运算、影像渲染及投影工作站。
   {{< /card >}}
+  {{< card title="iBeacon 蓝牙信标" href="/zh-cn/products/ibeacon/" >}}
+    专业 BLE 5.0 信标，支持室内定位、考勤打卡、智能人员管理与资产追踪。
+  {{</card >}}
   {{< card title="SDRLAB" href="/zh-cn/products/sdrlab/" >}}
     SDR 软件定义无线电模块与 Flipper Zero 扩展板，适用无线通信研究。
   {{< /card >}}

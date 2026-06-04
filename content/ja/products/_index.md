@@ -26,6 +26,9 @@ Yopitekは複数の国際的に著名なブランドを取り扱い、無線ネ�
   {{< card title="グラフィックカード RTX 5080" href="/ja/products/graphiccard/" >}}
     NVIDIA RTX 5080シリーズグラフィックカード。AI演算、映像レンダリング、プロジェクションワークステーションに最適。
   {{< /card >}}
+  {{< card title="iBeacon ビーコン" href="/ja/products/ibeacon/" >}}
+    屋内位置測位、勤怠管理、人員管理、および資産追跡用のプロフェッショナル BLE 5.0 ビーコン。
+  {{</card >}}
   {{< card title="SDRLAB" href="/ja/products/sdrlab/" >}}
     SDRソフトウェア定義無線モジュールとFlipper Zero拡張ボード。無線通信リサーチに最適。
   {{< /card >}}

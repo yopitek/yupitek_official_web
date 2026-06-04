@@ -26,6 +26,9 @@ Yupitek distribuye múltiples marcas internacionales de renombre, especializadas
   {{< card title="Tarjetas Gráficas RTX 5080" href="/es/products/graphiccard/" >}}
     Tarjetas gráficas NVIDIA RTX 5080 para cómputo IA, renderizado de imágenes y estaciones de trabajo de proyección.
   {{< /card >}}
+  {{< card title="Balizas iBeacon BLE" href="/es/products/ibeacon/" >}}
+    Balizas profesionales BLE 5.0 para localización en interiores, control de asistencia, gestión de personal y seguimiento de activos.
+  {{</card >}}
   {{< card title="SDRLAB" href="/es/products/sdrlab/" >}}
     Módulos SDR de radio definida por software y placas de expansión para Flipper Zero. Ideales para investigación de comunicaciones inalámbricas.
   {{< /card >}}

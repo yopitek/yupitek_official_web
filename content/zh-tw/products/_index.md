@@ -26,6 +26,9 @@ showChildPages: false
   {{< card title="繪圖卡 RTX 5080" href="/zh-tw/products/graphiccard/" >}}
     NVIDIA RTX 5080 系列顯示卡，適用 AI 運算、影像渲染及投影工作站。
   {{< /card >}}
+  {{< card title="iBeacon 藍牙信標" href="/zh-tw/products/ibeacon/" >}}
+    專業 BLE 5.0 信標，支援室內定位、考勤打卡、智慧人員管理與資產追蹤。
+  {{</card >}}
   {{< card title="SDRLAB" href="/zh-tw/products/sdrlab/" >}}
     SDR 軟體定義無線電模組與 Flipper Zero 擴充板，適用無線通訊研究。
   {{< /card >}}

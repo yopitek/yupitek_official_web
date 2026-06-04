@@ -40,22 +40,28 @@
     weight   = 25
 
   [[main]]
-    name     = "SDRLAB"
-    pageRef  = "/products/sdrlab"
+    name     = "iBeacon"
+    pageRef  = "/products/ibeacon"
     parent   = "Продукты"
     weight   = 26
-
-  [[main]]
-    name     = "Ubiquiti"
-    pageRef  = "/products/ubiquiti"
-    parent   = "Продукты"
-    weight   = 27
 
   [[main]]
     name     = "Mellanox"
     pageRef  = "/products/mellanox"
     parent   = "Продукты"
+    weight   = 27
+
+  [[main]]
+    name     = "SDRLAB"
+    pageRef  = "/products/sdrlab"
+    parent   = "Продукты"
     weight   = 28
+
+  [[main]]
+    name     = "Ubiquiti"
+    pageRef  = "/products/ubiquiti"
+    parent   = "Продукты"
+    weight   = 29
 
 [[main]]
   name   = "Блог"

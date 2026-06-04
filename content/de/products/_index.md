@@ -26,6 +26,9 @@ Yopitek ist der autorisierte Taiwan-Distributor für mehrere weltweit anerkannte
   {{< card title="Grafikkarten — RTX 5080" href="/de/products/graphiccard/" >}}
     NVIDIA RTX 5080 Serie GPUs für AI-Compute-Aufgaben, Rendering-Pipelines und Projektions-Arbeitsstationen.
   {{< /card >}}
+  {{< card title="iBeacon BLE Beacons" href="/de/products/ibeacon/" >}}
+    Professionelle BLE 5.0 Beacons für Indoor-Lokalisierung, Anwesenheitskontrolle, Personenmanagement und Asset-Tracking.
+  {{</card >}}
   {{< card title="SDRLAB" href="/de/products/sdrlab/" >}}
     Software-Defined Radio Module und Flipper Zero Erweiterungsboards für drahtlose Kommunikationsforschung.
   {{< /card >}}

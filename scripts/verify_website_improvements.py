@@ -77,6 +77,7 @@ def main():
     success_count = 0
     failure_count = 0
     failures = []
+    verified_links = set()
     
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -125,8 +126,17 @@ def main():
                         print(f"FAIL: {route} -> Missing ibeacon_topology.png")
                         continue
                     
-                    # Verify it loaded successfully
-                    loaded_topo = page.evaluate("img => img.complete && img.naturalWidth > 0", topo_img.element_handle())
+                    # Verify it loaded successfully (wait up to 5s)
+                    try:
+                        page.wait_for_function(
+                            "img => img.complete && img.naturalWidth > 0",
+                            arg=topo_img.element_handle(),
+                            timeout=5000
+                        )
+                        loaded_topo = True
+                    except Exception:
+                        loaded_topo = False
+                        
                     if not loaded_topo:
                         failures.append((route, "Broken ibeacon_topology.png"))
                         failure_count += 1
@@ -140,8 +150,17 @@ def main():
                         failure_count += 1
                         print(f"FAIL: {route} -> Missing ibeacon_comparison.png")
                         continue
+                    
+                    try:
+                        page.wait_for_function(
+                            "img => img.complete && img.naturalWidth > 0",
+                            arg=comp_img.element_handle(),
+                            timeout=5000
+                        )
+                        loaded_comp = True
+                    except Exception:
+                        loaded_comp = False
                         
-                    loaded_comp = page.evaluate("img => img.complete && img.naturalWidth > 0", comp_img.element_handle())
                     if not loaded_comp:
                         failures.append((route, "Broken ibeacon_comparison.png"))
                         failure_count += 1
@@ -184,14 +203,26 @@ def main():
                     print(f"FAIL: {route} -> Link mismatch: {parsed_href}")
                     continue
                     
-                # Test target contact link resolves to 200
+                # Test target contact link resolves to 200 (only if not already verified for this locale)
                 contact_url = base_url + parsed_href
-                contact_res = context.new_page().goto(contact_url)
-                if contact_res.status != 200:
-                    failures.append((route, f"Contact link returns {contact_res.status}"))
-                    failure_count += 1
-                    print(f"FAIL: {route} -> Contact link {contact_url} returned {contact_res.status}")
-                    continue
+                if contact_url not in verified_links:
+                    chk_page = context.new_page()
+                    try:
+                        contact_res = chk_page.goto(contact_url, wait_until="load", timeout=10000)
+                        if not contact_res or contact_res.status != 200:
+                            status_code = contact_res.status if contact_res else 0
+                            failures.append((route, f"Contact link returns {status_code}"))
+                            failure_count += 1
+                            print(f"FAIL: {route} -> Contact link {contact_url} returned {status_code}")
+                            continue
+                        verified_links.add(contact_url)
+                    except Exception as le:
+                        failures.append((route, f"Contact link navigation failed: {le}"))
+                        failure_count += 1
+                        print(f"FAIL: {route} -> Contact link {contact_url} failed: {le}")
+                        continue
+                    finally:
+                        chk_page.close()
                 
                 # Check for zero console errors during this visit
                 success_count += 1

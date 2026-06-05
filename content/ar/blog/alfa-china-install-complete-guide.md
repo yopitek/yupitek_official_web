@@ -8,6 +8,7 @@ categories: ["أدلة التعريفات"]
 series: ["alfa-china-install-guide"]
 series_order: 9
 description: "الدليل الشامل لتثبيت جميع محوّلات Alfa USB WiFi على Linux في الصين. يغطي Kali Linux وUbuntu 22/24 وDebian وRaspberry Pi. لا حاجة إلى GitHub - استخدم المرايا المحلية فقط."
+featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 ---
 
 ## مرحباً بك في الدليل الشامل لتثبيت Alfa على Linux

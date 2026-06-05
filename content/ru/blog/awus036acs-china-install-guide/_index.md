@@ -11,6 +11,7 @@ categories: ["Руководства по драйверам"]
 series: ["alfa-china-install-guide"]
 related_product: "/ru/products/alfa/awus036acs/"
 series_order: 3
+featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 ---
 
 AWUS036ACS — это компактный двухдиапазонный адаптер ALFA для исследований в области безопасности. Его чип RTL8811AU поддерживает полноценный режим монитора и инъекцию пакетов в Kali Linux, но так как драйвер не входит в состав ядра, его необходимо скомпилировать из исходного кода. В Китае доступ к GitHub заблокирован, поэтому данное руководство использует исключительно зеркала Gitee. GitHub не требуется.

@@ -11,6 +11,7 @@ series: ["alfa-china-install-guide"]
 series_order: 2
 description: "Schritt-für-Schritt-Anleitung zur Installation von ALFA AWUS036ACM-Treibern in China mit inländischen Spiegeln. MT7612U In-Kernel-Treiber, vollständige VIF-Unterstützung. Für Kali Linux, Ubuntu 22/24, Debian und Raspberry Pi. GitHub nicht erforderlich."
 related_product: "/de/products/alfa/awus036acm/"
+featureimage: "/images/blog/awus036acm-china-install-guide.webp"
 ---
 
 Der AWUS036ACM ist einer der einfachsten Alfa-Adapter für die Einrichtung unter Linux. Sein MT7612U-Chip verwendet den `mt76x2u`-Treiber, der seit Kernel-Version 4.19 im Linux-Kernel integriert ist. Auf den meisten modernen Systemen funktioniert der Adapter mit zwei oder drei Befehlen. Diese Anleitung behandelt die vollständige Einrichtung — Treiberprüfung, Monitor-Modus, Paketeinspeisung und VIF — ausschließlich mit inländischen Spiegeln. GitHub ist nicht erforderlich.

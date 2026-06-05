@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
+featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
 ---
 
 هاتفك الأندرويد هو بالفعل حاسوب قوي في جيبك. مع تثبيت Kali NetHunter على جهاز مُمكَّن صلاحيات Root وتوصيل محول ALFA WiFi عبر USB OTG، يتحول إلى منصة اختبار اختراق حقيقية بحجم الجيب. لا حاجة لحاسوب محمول، ولا لأجهزة ضخمة. مجرد هاتفك وكابل OTG قصير ومحول يدعم وضع المراقبة وحقن الحزم.

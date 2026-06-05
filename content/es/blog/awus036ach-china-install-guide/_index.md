@@ -11,6 +11,7 @@ series: ["alfa-china-install-guide"]
 series_order: 1
 description: "Guía paso a paso para instalar el controlador ALFA AWUS036ACH en China usando espejos domésticos. Compatible con Kali Linux, Ubuntu 22/24, Debian y Raspberry Pi. No se requiere GitHub."
 related_product: "/es/products/alfa/awus036ach/"
+featureimage: "/images/blog/awus036ach-china-install-guide.webp"
 ---
 
 Acabas de recibir el AWUS036ACH y tu sistema Linux no lo reconoce. Es completamente normal — este chip necesita el controlador RTL8812AU, que no funciona de forma automática. Esta guía te lleva a través de toda la instalación en aproximadamente 30 minutos, usando únicamente espejos domésticos. No se necesita acceso a GitHub.

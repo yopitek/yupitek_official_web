@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 3
 related_product: "/en/products/alfa/awus036acs/"
+featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 ---
 
 The AWUS036ACS is ALFA's compact dual-band security research adapter. Its RTL8811AU chip supports full monitor mode and packet injection on Kali Linux — but because the driver is out-of-kernel, you need to compile it from source. In China, GitHub is blocked, so this guide uses Gitee mirrors exclusively. No GitHub required.

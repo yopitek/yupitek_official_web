@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 ---
 
 macOS is a polished, production-grade operating system. It is not, however, a platform designed for wireless security research. The two features that define every serious pentester's toolkit — **monitor mode** and **packet injection** — are absent from the macOS Wi-Fi stack entirely. Apple's Wi-Fi drivers expose a clean, functional networking interface, and nothing more.

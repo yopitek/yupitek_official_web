@@ -7,6 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "Ad Hoc", "802.11s", "شبكة شبكية", "Linux", "لاسلكي"]
 dir: rtl
+featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
 ---
 
 # ALFA AWUS036ACM: تفعيل شبكات IBSS Ad Hoc و 802.11s Mesh على Raspberry Pi مع MT7612U

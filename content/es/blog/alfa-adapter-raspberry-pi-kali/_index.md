@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
+featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
 ---
 
 Un portátil con Kali Linux es la estación de trabajo estándar para pentesting — pero está lejos de ser la única opción. Una Raspberry Pi 4 o Pi 5 combinada con un adaptador ALFA USB WiFi te proporciona una plataforma compacta, sin ventilador y con refrigeración pasiva que cabe en el bolsillo de una chaqueta, funciona con una batería portátil USB-C y puede dejarse desatendida en un entorno objetivo durante horas. Las imágenes de Kali Linux ARM64 se distribuyen directamente desde Offensive Security y se ejecutan de forma nativa en la Pi 4 y Pi 5 sin emulación, dándote el conjunto completo de herramientas: Aircrack-ng, Kismet, Wireshark, Bettercap y el resto de los metapaquetes estándar de Kali.

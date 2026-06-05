@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 4
 related_product: "/ar/products/alfa/awus036ax/"
+featureimage: "/images/blog/awus036ax-china-install-guide.webp"
 ---
 
 يعتبر AWUS036AX محول WiFi 6 AX1800 ثنائي النطاق من ALFA. شريحة RTL8832BU الخاصة به خارج النواة في إصدارات Linux الأقل من 6.14 — ولكن Ubuntu 24.04 (نواة 6.8) يتضمنها بشكل أصلي. يستخدم هذا الدليل مرايا Gitee للنواة القديمة وبرنامج التشغيل المدمج لـ Ubuntu 24.04. لا داعي للقلق، GitHub ليس مطلوبًا.

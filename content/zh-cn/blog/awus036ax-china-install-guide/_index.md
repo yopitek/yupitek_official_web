@@ -11,6 +11,7 @@ categories: ["驱动指南"]
 series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036ax/"
 series_order: 4
+featureimage: "/images/blog/awus036ax-china-install-guide.webp"
 ---
 
 想要在 Linux 上体验 WiFi 6 的极速？AWUS036AX 是个不错的选择。它采用的 RTL8832BU 芯片在旧内核系统上可能需要咱们手动“调教”一下驱动。不过有个好消息：如果你用的是 Ubuntu 24.04，驱动已经内置好了，插上就能飞。

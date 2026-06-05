@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
 ---
 
 在虛擬機器內執行 ALFA WiFi 介面卡並不像插上後等待客端作業系統自動偵測那麼簡單。與共用資料夾或橋接網路不同，監聽模式（monitor mode）和原始封包注入（packet injection）需要**完整的 USB 控制權**——虛擬機器必須獨佔 USB 裝置，而不是透過主機的網路堆疊共用。這稱為 USB 直通（USB passthrough），正確設定是在 VM 環境中工作的滲透測試人員和 CTF 玩家最常遇到的設定失敗原因。

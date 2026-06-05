@@ -11,6 +11,7 @@ categories: ["Руководства по драйверам"]
 series: ["alfa-china-install-guide"]
 related_product: "/ru/products/alfa/awus036ax/"
 series_order: 4
+featureimage: "/images/blog/awus036ax-china-install-guide.webp"
 ---
 
 AWUS036AX — это двухдиапазонный адаптер ALFA WiFi 6 AX1800. Его чип RTL8832BU не поддерживается ядром в версиях Linux ниже 6.14, но в Ubuntu 24.04 (ядро 6.8) он уже встроен. В этом руководстве используются зеркала Gitee для более старых ядер и встроенный драйвер для Ubuntu 24.04. GitHub не требуется.

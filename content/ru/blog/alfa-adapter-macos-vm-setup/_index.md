@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 ---
 
 macOS — это отточенная, профессиональная операционная система. Однако она не предназначена для исследований в области беспроводной безопасности. Две возможности, определяющие инструментарий любого серьёзного пентестера — **режим монитора** и **инъекция пакетов** — полностью отсутствуют в стеке Wi-Fi macOS. Драйверы Wi-Fi от Apple предоставляют чистый, функциональный сетевой интерфейс — и ничего более.

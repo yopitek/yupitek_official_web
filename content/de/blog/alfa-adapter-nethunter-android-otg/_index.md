@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
+featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
 ---
 
 Dein Android-Handy ist bereits ein leistungsstarker Computer in deiner Tasche. Mit installiertem Kali NetHunter auf einem gerooteten Gerät und einem ALFA WLAN-Adapter, der über USB OTG angeschlossen ist, wird es zu einer wirklich fähigen Pentesting-Plattform im Taschenformat. Kein Laptop erforderlich. Keine sperrige Hardware. Nur dein Handy, ein kurzes OTG-Kabel und ein Adapter, der Monitor Mode und Packet Injection unterstützt.

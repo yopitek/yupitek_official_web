@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
+featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
 ---
 
 حاسوب محمول يعمل بنظام Kali Linux هو محطة العمل القياسية لاختبار الاختراق — لكنه ليس الخيار الوحيد بالتأكيد. Raspberry Pi 4 أو Pi 5 مقترناً بمحول ALFA USB WiFi يمنحك منصةً مدمجة خاليةً من المروحة ذات تبريد سلبي، تتسع في جيب المعطف، وتعمل ببطارية USB-C المحمولة، ويمكن تركها دون رقابة في بيئة الهدف لساعات طويلة. تصدر صور Kali Linux ARM64 مباشرةً من Offensive Security وتعمل أصلاً على Pi 4 وPi 5 دون محاكاة، مما يمنحك الأدوات الكاملة: Aircrack-ng وKismet وWireshark وBettercap وسائر حزم Kali القياسية.

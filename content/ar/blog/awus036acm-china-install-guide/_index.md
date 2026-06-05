@@ -12,6 +12,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 2
 related_product: "/ar/products/alfa/awus036acm/"
+featureimage: "/images/blog/awus036acm-china-install-guide.webp"
 ---
 
 يُعدّ AWUS036ACM من أيسر محوّلات Alfa إعدادًا على Linux. تستخدم شريحته MT7612U تعريف `mt76x2u`، المدمج في نواة Linux منذ الإصدار 4.19. على معظم الأنظمة الحديثة، يعمل المحوّل بأمرين أو ثلاثة فحسب. يتناول هذا الدليل الإعداد الكامل — التحقق من التعريف، وتفعيل وضع المراقبة، وحقن الحزم، والواجهة الافتراضية (VIF) — باستخدام المرايا المحلية حصرًا. لا حاجة لـ GitHub.

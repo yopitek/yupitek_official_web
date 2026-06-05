@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
 ---
 
 仮想マシン内で ALFA WiFi アダプターを使用するのは、接続するだけでゲスト OS が自動認識するほど単純ではありません。共有フォルダーやブリッジネットワークとは異なり、モニターモードと生パケットインジェクションには**完全な USB 制御**が必要です。つまり、VM がホストのネットワークスタック経由ではなく USB デバイスを排他的に所有する必要があります。これを USB パススルーと呼び、正しく設定することが VM 環境で作業するペネトレーションテスターや CTF プレイヤーにとって最も一般的なセットアップ失敗の原因です。

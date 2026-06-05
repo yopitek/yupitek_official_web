@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
+featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
 ---
 
 Tu teléfono Android ya es una computadora potente que cabe en tu bolsillo. Con Kali NetHunter instalado en un dispositivo con root y un adaptador ALFA WiFi conectado mediante USB OTG, se convierte en una plataforma de pruebas de penetración de bolsillo genuinamente capaz. Sin laptop, sin hardware voluminoso. Solo tu teléfono, un cable OTG corto y un adaptador que soporte modo monitor e inyección de paquetes.

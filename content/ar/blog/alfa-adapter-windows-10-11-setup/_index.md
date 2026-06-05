@@ -8,6 +8,7 @@ languageDirection: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "تثبيت-برنامج-التشغيل", "acrylic-wifi"]
+featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
 ---
 
 تحظى محولات ALFA Network اللاسلكية عبر USB بشهرة واسعة في أوساط أبحاث الأمن والشبكات، غير أن معظم الأدلة الإرشادية تركّز حصراً على نظام Linux. والبشرى لمستخدمي Windows: كل محول ALFA رئيسي يعمل على Windows 10 وWindows 11 ببرامج تشغيل (Driver) مُقدَّمة من الشركة المصنّعة — دون الحاجة إلى تصريف أي كود مصدري.

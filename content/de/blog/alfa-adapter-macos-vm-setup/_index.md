@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 ---
 
 macOS ist ein ausgefeiltes Betriebssystem für den professionellen Einsatz. Es ist jedoch keine Plattform, die für die drahtlose Sicherheitsforschung entwickelt wurde. Die beiden Funktionen, die das Toolkit jedes ernsthaften Pentesters definieren – **Monitor-Modus** und **Packet-Injection** – fehlen im macOS Wi-Fi-Stack vollständig. Die Wi-Fi-Treiber von Apple bieten eine saubere, funktionale Netzwerk-Schnittstelle und mehr nicht.

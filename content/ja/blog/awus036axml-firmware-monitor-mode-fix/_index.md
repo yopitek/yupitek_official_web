@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
+featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
 ---
 
 **ALFA AWUS036AXML** は ALFA Network のフラッグシップ WiFi 6E アダプターで、MediaTek MT7921AUN チップセットを搭載し、トライバンド（2.4 / 5 / 6 GHz）をサポートしています。2026 年時点で、6 GHz 帯でのパッシブモニタリングが可能な数少ない USB アダプターの一つです。サイトサーベイ、パケットキャプチャ、PMKID 収集などのユースケースでは非常に優れたパフォーマンスを発揮します。

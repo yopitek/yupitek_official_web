@@ -8,6 +8,7 @@ categories: ["驅動程式安裝教學"]
 series: ["alfa-china-install-guide"]
 series_order: 9
 description: "終極 Alfa USB WiFi 網卡 Linux 安裝指南，適用於中國大陸用戶。涵蓋 Kali Linux、Ubuntu 22/24、Debian、Raspberry Pi，全程使用境內鏡像，無需訪問 GitHub。"
+featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 ---
 
 ## 歡迎閱讀 Alfa Linux 終極安裝指南

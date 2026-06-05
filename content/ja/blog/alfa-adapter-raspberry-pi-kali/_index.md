@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
+featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
 ---
 
 Kali Linux を搭載したノートパソコンは標準的なペネトレーションテストワークステーションですが、それが唯一の選択肢ではありません。Raspberry Pi 4 または Pi 5 に ALFA USB WiFi アダプターを組み合わせることで、コンパクトでファンレス、パッシブ冷却のプラットフォームが完成します。ジャケットのポケットに収まり、USB-C モバイルバッテリーで動作し、対象環境に無人で数時間放置できます。Kali Linux ARM64 イメージは Offensive Security が公式提供しており、Pi 4 および Pi 5 でエミュレーションなしにネイティブ動作します。Aircrack-ng、Kismet、Wireshark、Bettercap など Kali の標準ツールセットが完全に使えます。

@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
+featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
 ---
 
 # AWUS036AXML Monitor-Modus Firmware-Fix: Aktive Abstürze beheben

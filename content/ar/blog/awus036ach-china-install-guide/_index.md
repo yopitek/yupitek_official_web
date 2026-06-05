@@ -12,6 +12,7 @@ series: ["alfa-china-install-guide"]
 series_order: 1
 related_product: "/ar/products/alfa/awus036ach/"
 dir: rtl
+featureimage: "/images/blog/awus036ach-china-install-guide.webp"
 ---
 
 حصلتَ للتو على AWUS036ACH ولكن Linux لا يتعرف عليه. هذا أمر طبيعي — يحتاج هذا الشريحة إلى تعريف RTL8812AU وهو ليس جاهزاً للتشغيل فوراً. سيرشدك هذا الدليل خلال التثبيت الكامل في حوالي 30 دقيقة، باستخدام المرايا المحلية فقط. لا حاجة للوصول إلى GitHub.

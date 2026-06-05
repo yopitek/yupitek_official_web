@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
 ---
 
 تشغيل محول ALFA WiFi داخل جهاز افتراضي ليس بالأمر البسيط الذي يكفي فيه توصيل المحول وانتظار أن يتعرف عليه نظام التشغيل الضيف تلقائياً. على عكس المجلدات المشتركة والشبكات المجسّرة، يتطلب وضع المراقبة (monitor mode) وحقن الحزم الخام (packet injection) **تحكماً كاملاً في USB** — أي يجب أن تمتلك الآلة الافتراضية الجهاز حصرياً بدلاً من مشاركته عبر مكدّس شبكة المضيف. يُسمّى هذا بـ USB Passthrough، وإعداده بشكل صحيح هو السبب الأكثر شيوعاً لفشل الإعداد لدى مختبري الاختراق ولاعبي CTF العاملين في البيئات الافتراضية.

@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
 ---
 
 Den Betrieb eines ALFA-WLAN-Adapters in einer virtuellen Maschine (VM) einzurichten, ist nicht so einfach wie das bloße Einstecken in der Hoffnung, dass das Gast-Betriebssystem ihn erkennt. Im Gegensatz zu freigegebenen Ordnern oder Bridge-Netzwerken erfordern der Monitor-Modus und die Paket-Injektion eine **vollständige USB-Kontrolle** — die VM muss exklusiven Zugriff auf das USB-Gerät haben und darf es nicht über den Netzwerkstack des Hosts teilen. Dies nennt man USB-Passthrough. Diesen Prozess korrekt einzurichten, ist die häufigste Hürde für Pentesters und CTF-Spieler, die in VMs arbeiten.

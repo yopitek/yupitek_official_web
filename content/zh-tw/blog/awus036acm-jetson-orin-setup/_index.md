@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
+featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
 ---
 
 ## 一封客戶來信，揭開一個關鍵問題

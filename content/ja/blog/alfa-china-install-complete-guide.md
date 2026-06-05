@@ -8,6 +8,7 @@ categories: ["ドライバーガイド"]
 series: ["alfa-china-install-guide"]
 series_order: 9
 description: "AlfaUSB Wi-FiアダプターをLinuxにインストールするための決定版ガイド。Kali Linux・Ubuntu 22/24・Debian・Raspberry Piに対応。GitHubなし — 国内ミラーのみ使用。"
+featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 ---
 
 ## Alfa Linux インストール完全ガイドへようこそ

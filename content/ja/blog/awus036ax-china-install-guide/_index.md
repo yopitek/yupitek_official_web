@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 4
 related_product: "/ja/products/alfa/awus036ax/"
+featureimage: "/images/blog/awus036ax-china-install-guide.webp"
 ---
 
 AWUS036AXは、ALFAのWiFi 6 AX1800デュアルバンド・アダプターです。搭載されているRTL8832BUチップは、カーネルバージョン6.14未満のLinuxでは標準対応していませんが、Ubuntu 24.04（カーネル6.8）ではネイティブにサポートされています。このガイドでは、古いカーネル向けにはGiteeミラーを、Ubuntu 24.04向けには標準ドライバを使用する方法を解説します。GitHubへのアクセスは不要ですので、安心してくださいね。

@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "Ad Hoc", "802.11s", "Réseau maillé", "Linux", "Sans fil"]
+featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
 ---
 
 # ALFA AWUS036ACM : Activation d'IBSS Ad Hoc et du Réseau Maillé 802.11s sur Raspberry Pi avec MT7612U

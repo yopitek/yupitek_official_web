@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "Ad Hoc", "802.11s", "Mesh-сеть", "Linux", "Беспроводная сеть"]
+featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
 ---
 
 # ALFA AWUS036ACM: Включение IBSS Ad Hoc и 802.11s Mesh-сетей на Raspberry Pi с MT7612U

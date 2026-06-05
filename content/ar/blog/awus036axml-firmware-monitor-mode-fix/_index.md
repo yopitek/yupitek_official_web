@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
+featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
 ---
 
 **ALFA AWUS036AXML** هو محول WiFi 6E الرائد من ALFA Network، مبني على شريحة MediaTek MT7921AUN ويدعم ثلاثة نطاقات (2.4 / 5 / 6 GHz). إنه أحد المحولات USB القليلة القادرة على المراقبة السلبية في نطاق 6 GHz في عام 2026. يؤدي أداءً ممتازاً في حالات الاستخدام المتعددة كمسح الموقع والتقاط الحزم وجمع PMKID.

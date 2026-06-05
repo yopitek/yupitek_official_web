@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "wifi-6e", "review", "kali-linux", "MT7921AUN", "6GHz"]
+featureimage: "/images/blog/awus036axml-wifi-6e-review.webp"
 ---
 
 # Revue ALFA AWUS036AXML WiFi 6E : Performance en conditions réelles de test de pénétration en 2026

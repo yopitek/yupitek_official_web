@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "Kali-Linux", "监听模式", "数据包注入", "RTL8812AU", "airmon-ng"]
+featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
 ---
 
 ALFA AWUS036ACH 在 Kali Linux 社区中赢得最高推荐，这并非没有原因。凭借 Realtek RTL8812AU 芯片组，它提供了自 2017 年以来安全专业人员所依赖的稳定监听模式和数据包注入能力。本指南将带你完成从开箱到在 Kali Linux 2024/2025 上验证数据包注入正常工作的每一步操作。

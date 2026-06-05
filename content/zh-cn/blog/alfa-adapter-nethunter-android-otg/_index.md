@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
+featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
 ---
 
 您的 Android 手机本身就是一台放在口袋里的强大计算机。在已 Root 的设备上安装 Kali NetHunter，并通过 USB OTG 插入 ALFA WiFi 网卡，它就成为一个真正具备实力的口袋型渗透测试平台。无需笔记本电脑，无需笨重的硬件，只需您的手机、一条短小的 OTG 数据线，以及一块支持监听模式和数据包注入的网卡。

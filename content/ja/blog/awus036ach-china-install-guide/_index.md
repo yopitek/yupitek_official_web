@@ -11,6 +11,7 @@ series: ["alfa-china-install-guide"]
 series_order: 1
 description: "国内ミラーを使ってALFA AWUS036ACHドライバーを中国でインストールするステップバイステップガイド。Kali Linux、Ubuntu 22/24、Debian、ラズベリーパイ対応。GitHubなし。"
 related_product: "/ja/products/alfa/awus036ach/"
+featureimage: "/images/blog/awus036ach-china-install-guide.webp"
 ---
 
 AWUS036ACHを入手したのに、Linuxがデバイスを認識しない。よくある話です。このチップにはRTL8812AUドライバーが必要で、最初からは動きません。このガイドでは、国内ミラーだけを使って約30分でセットアップを完了させます。GitHubへのアクセスは不要です。

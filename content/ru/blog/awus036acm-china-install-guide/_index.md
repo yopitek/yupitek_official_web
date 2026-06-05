@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 2
 related_product: "/ru/products/alfa/awus036acm/"
+featureimage: "/images/blog/awus036acm-china-install-guide.webp"
 ---
 
 AWUS036ACM — один из самых простых в настройке адаптеров ALFA на Linux. Чип MT7612U использует драйвер `mt76x2u`, встроенный в ядро Linux начиная с версии 4.19. На большинстве современных систем адаптер заработает с двух-трёх команд. Руководство охватывает полную настройку — проверку драйвера, режим монитора, инъекцию пакетов и VIF — с использованием только отечественных зеркал. GitHub не требуется.

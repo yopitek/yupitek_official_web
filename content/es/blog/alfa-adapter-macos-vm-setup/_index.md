@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 ---
 
 macOS es un sistema operativo pulido y listo para producción. Sin embargo, no es una plataforma diseñada para la investigación de seguridad inalámbrica. Las dos funciones que definen el kit de herramientas de todo pentester serio — **modo monitor** e **inyección de paquetes** — están completamente ausentes en la pila Wi-Fi de macOS. Los controladores Wi-Fi de Apple exponen una interfaz de red limpia y funcional, y nada más.

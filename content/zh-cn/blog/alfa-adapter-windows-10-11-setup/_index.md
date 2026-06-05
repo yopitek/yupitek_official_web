@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-网卡", "驱动安装", "acrylic-wifi"]
+featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
 ---
 
 ALFA Network USB WiFi 无线网卡在安全研究和网络工程领域广为人知，但大多数教程都以 Linux 为主。对于 Windows 用户来说，有个好消息：所有主流 ALFA 网卡均可在 Windows 10 和 Windows 11 上通过厂商提供的驱动正常运行——无需编译源代码。

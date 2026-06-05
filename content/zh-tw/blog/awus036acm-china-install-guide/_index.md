@@ -11,6 +11,7 @@ series: ["alfa-china-install-guide"]
 description: "手把手教你在中國網路環境下安裝 ALFA AWUS036ACM 驅動，全程使用國內鏡像，無需翻牆。MT7612U 核心原生驅動，完整 VIF 支援。涵蓋 Kali Linux、Ubuntu 22/24、Debian 和樹莓派。"
 related_product: "/zh-tw/products/alfa/awus036acm/"
 series_order: 2
+featureimage: "/images/blog/awus036acm-china-install-guide.webp"
 ---
 
 AWUS036ACM 是 Alfa 無線網卡裡最好裝的一款。它使用 MT7612U 晶片，驅動 `mt76x2u` 從 Linux 4.19 起就已經內建在核心裡了。大多數情況下，插上就能用，最多跑兩三條指令。這篇文章涵蓋完整流程：驅動驗證、監聽模式、封包注入，以及 VIF（虛擬介面）——全部使用國內鏡像，不需要訪問 GitHub。

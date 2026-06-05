@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 3
 related_product: "/ar/products/alfa/awus036acs/"
+featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 ---
 
 يعتبر AWUS036ACS محول أبحاث أمان مدمج ثنائي النطاق من ALFA. تدعم شريحة RTL8811AU الخاصة به وضع المراقبة الكامل وحقن الحزم على Kali Linux — ولكن نظرًا لأن برنامج التشغيل خارج النواة، فأنت بحاجة إلى تجميعه من المصدر. في الصين، يتم حظر GitHub، لذا يستخدم هذا الدليل مرايا Gitee حصريًا. لا داعي للقلق، GitHub ليس مطلوبًا على الإطلاق.

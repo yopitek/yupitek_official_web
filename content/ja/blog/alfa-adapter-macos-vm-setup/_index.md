@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 ---
 
 macOSは洗練された生産性重視のOSですが、無線セキュリティリサーチ向けには設計されていません。ペネトレーションテスターのツールキットを定義する2つの機能——**モニターモード**と**パケットインジェクション**——はmacOSのWi-Fiスタックには存在しません。AppleのWi-Fiドライバーは、きれいで機能的なネットワークインターフェースを提供するだけです。

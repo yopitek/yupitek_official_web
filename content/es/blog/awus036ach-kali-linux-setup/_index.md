@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "Kali-Linux", "modo-monitor", "inyección-paquetes", "RTL8812AU"]
+featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
 ---
 
 El ALFA AWUS036ACH se ha ganado su lugar como el adaptador USB WiFi más recomendado en la comunidad de Kali Linux — y con buena razón. Impulsado por el chipset Realtek RTL8812AU, ofrece soporte confiable de modo monitor e inyección de paquetes en el que los profesionales de seguridad han confiado desde 2017. Esta guía te lleva por cada paso, desde desempacarlo hasta tener una configuración verificada y funcional de inyección de paquetes en Kali Linux 2024 y 2025.

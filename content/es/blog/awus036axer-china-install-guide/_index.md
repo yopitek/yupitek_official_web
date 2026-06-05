@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 5
 related_product: "/es/products/alfa/awus036axer/"
+featureimage: "/images/blog/awus036axer-china-install-guide.webp"
 ---
 
 El AWUS036AXER es el adaptador WiFi 6 nano de ALFA: un dongle compacto diseñado para permanecer conectado permanentemente a una computadora portátil. Su chip RTL8832BU está fuera del núcleo en versiones de Linux inferiores a 6.14, pero se incluye de forma nativa en Ubuntu 24.04 (núcleo 6.8). Esta guía utiliza espejos de Gitee para núcleos más antiguos. No se requiere GitHub.

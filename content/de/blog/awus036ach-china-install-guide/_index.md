@@ -11,6 +11,7 @@ series: ["alfa-china-install-guide"]
 series_order: 1
 description: "Schritt-für-Schritt-Anleitung zur Installation des ALFA AWUS036ACH-Treibers in China mit inländischen Mirrors. Für Kali Linux, Ubuntu 22/24, Debian und Raspberry Pi. Kein GitHub erforderlich."
 related_product: "/de/products/alfa/awus036ach/"
+featureimage: "/images/blog/awus036ach-china-install-guide.webp"
 ---
 
 Du hast den AWUS036ACH bekommen und dein Linux erkennt ihn nicht. Das ist normal — dieser Chip braucht den RTL8812AU-Treiber, der nicht automatisch funktioniert. Diese Anleitung führt dich in etwa 30 Minuten durch die vollständige Installation, ausschließlich mit inländischen Mirrors. GitHub-Zugang ist nicht erforderlich.

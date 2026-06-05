@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 3
 related_product: "/ja/products/alfa/awus036acs/"
+featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 ---
 
 AWUS036ACSは、ALFAのコンパクトなデュアルバンド・セキュリティリサーチ用アダプターです。搭載されているRTL8811AUチップは、Kali Linuxでモニターモードやパケットインジェクションをフルサポートしていますが、ドライバがカーネルに含まれていないため、ソースからコンパイルする必要があります。中国ではGitHubへのアクセスが制限されていることが多いため、このガイドでは国内のGiteeミラーのみを使用します。GitHubへのアクセスは一切不要ですので、安心してくださいね。

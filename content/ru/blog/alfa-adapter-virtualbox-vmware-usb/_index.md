@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
 ---
 
 Запустить адаптер ALFA WiFi внутри виртуальной машины не так просто, как подключить его и ждать, пока гостевая ОС обнаружит устройство. В отличие от общих папок или сетевого моста, режим мониторинга и инъекция пакетов требуют **полного управления USB** — ВМ должна эксклюзивно владеть USB-устройством, а не совместно использовать его через сетевой стек хоста. Это называется USB passthrough, и правильная настройка — самая распространённая причина сбоев для пентестеров и игроков CTF, работающих в ВМ.

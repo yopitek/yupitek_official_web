@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
+featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
 ---
 
 运行 Kali Linux 的笔记本电脑是标准的渗透测试工作站——但绝非唯一选择。Raspberry Pi 4 或 Pi 5 搭配 ALFA USB WiFi 网卡，能打造出一个体积小巧、无风扇、被动散热的平台：可以放进夹克口袋、靠 USB-C 移动电源供电，并在目标环境中无人看守运行数小时。Kali Linux ARM64 镜像由 Offensive Security 官方提供，无需模拟即可在 Pi 4 和 Pi 5 上原生运行，完整提供 Aircrack-ng、Kismet、Wireshark、Bettercap 等 Kali 标准工具包。

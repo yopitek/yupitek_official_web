@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 ---
 
 نظام macOS نظام تشغيل متقن وجاهز للإنتاج. غير أنه ليس منصةً مصممةً للبحث في أمن الشبكات اللاسلكية. الميزتان اللتان تُعرِّفان كل مجموعة أدوات اختبار الاختراق الجادة — **وضع المراقبة** و**حقن الحزم** — غائبتان كليًا عن مكدس الواي فاي في macOS. تُوفِّر برامج تشغيل الواي فاي من Apple واجهةَ شبكة نظيفة وعملية، لا أكثر.

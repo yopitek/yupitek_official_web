@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "アドホック", "802.11s", "メッシュネットワーク", "Linux", "無線LAN"]
+featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
 ---
 
 # ALFA AWUS036ACM：Raspberry Pi で IBSS アドホックと 802.11s メッシュネットワークを構築する（MT7612U）

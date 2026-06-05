@@ -8,6 +8,7 @@ categories: ["Guías de drivers"]
 series: ["alfa-china-install-guide"]
 series_order: 9
 description: "La guía definitiva para instalar todos los adaptadores WiFi USB Alfa en Linux desde China. Cubre Kali Linux, Ubuntu 22/24, Debian y Raspberry Pi. Sin necesidad de GitHub - solo mirrors nacionales."
+featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 ---
 
 ## Bienvenido a la guía definitiva de instalación de Alfa en Linux

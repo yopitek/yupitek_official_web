@@ -11,6 +11,7 @@ categories: ["Guías de controladores"]
 series: ["alfa-china-install-guide"]
 related_product: "/es/products/alfa/awus036acs/"
 series_order: 3
+featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 ---
 
 El AWUS036ACS es el adaptador de investigación de seguridad de doble banda compacto de ALFA. Su chip RTL8811AU admite el modo monitor completo y la inyección de paquetes en Kali Linux, pero debido a que el controlador está fuera del kernel, debes compilarlo desde el código fuente. En China, GitHub está bloqueado, por lo que esta guía utiliza exclusivamente espejos de Gitee. No se requiere GitHub.

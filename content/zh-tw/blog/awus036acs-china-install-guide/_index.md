@@ -11,6 +11,7 @@ categories: ["驅動安裝指南"]
 series: ["alfa-china-install-guide"]
 related_product: "/zh-tw/products/alfa/awus036acs/"
 series_order: 3
+featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 ---
 
 剛拿到這台輕巧的 AWUS036ACS，興沖沖插上去結果 Linux 一點反應都沒有？別擔心，這再正常不過了。雖然它內建的 RTL8811AU 晶片是安全研究的神器，完美支援監聽模式與封包注入，但驅動程式並不在系統核心裡，得靠咱們動手裝一下。

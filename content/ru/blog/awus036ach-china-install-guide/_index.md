@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 1
 related_product: "/ru/products/alfa/awus036ach/"
+featureimage: "/images/blog/awus036ach-china-install-guide.webp"
 ---
 
 Вы только что получили AWUS036ACH, но Linux его не распознаёт. Это нормально — данный чип требует драйвер RTL8812AU, который не работает «из коробки». Это руководство проведёт вас через полную установку примерно за 30 минут, используя только отечественные зеркала. Доступ к GitHub не требуется.

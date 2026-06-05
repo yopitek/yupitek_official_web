@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 ---
 
 macOS 是一個精緻、適合生產環境的作業系統，但它並非為無線資安研究而設計。每位滲透測試人員工具箱中最核心的兩項功能——**監聽模式（Monitor Mode）** 與**封包注入（Packet Injection）**——在 macOS 的 Wi-Fi 堆疊中完全不存在。Apple 的 Wi-Fi 驅動程式提供了一個乾淨、功能完整的網路介面，僅此而已。

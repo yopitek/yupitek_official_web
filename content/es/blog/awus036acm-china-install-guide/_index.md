@@ -11,6 +11,7 @@ series: ["alfa-china-install-guide"]
 series_order: 2
 description: "Guía paso a paso para instalar los controladores ALFA AWUS036ACM en China usando espejos nacionales. Controlador MT7612U integrado en el kernel, soporte VIF completo. Cubre Kali Linux, Ubuntu 22/24, Debian y Raspberry Pi. No se requiere GitHub."
 related_product: "/es/products/alfa/awus036acm/"
+featureimage: "/images/blog/awus036acm-china-install-guide.webp"
 ---
 
 El AWUS036ACM es uno de los adaptadores Alfa más fáciles de configurar en Linux. Su chip MT7612U usa el controlador `mt76x2u`, que está integrado en el kernel de Linux desde la versión 4.19. En la mayoría de los sistemas modernos, el adaptador funciona con dos o tres comandos. Esta guía cubre la configuración completa — verificación del controlador, modo monitor, inyección de paquetes y VIF — usando únicamente espejos nacionales. No se requiere GitHub.

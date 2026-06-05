@@ -11,6 +11,7 @@ series: ["alfa-china-install-guide"]
 description: "手把手教你在中国境内使用国内镜像源安装 ALFA AWUS036ACH 驱动。涵盖 Kali Linux, Ubuntu 22/24, Debian 和 树莓派。无需访问 GitHub。"
 related_product: "/zh-cn/products/alfa/awus036ach/"
 series_order: 1
+featureimage: "/images/blog/awus036ach-china-install-guide.webp"
 ---
 
 你刚拿到 ALFA AWUS036ACH，结果 Linux 系统没反应？别担心，这很正常。这款网卡用的芯片需要 RTL8812AU 驱动，而且它不是插上就能用的。本指南会带你花大约 30 分钟完成安装，全程只用国内镜像源，完全不需要翻墙去 GitHub。

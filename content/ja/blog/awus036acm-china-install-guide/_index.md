@@ -11,6 +11,7 @@ series: ["alfa-china-install-guide"]
 series_order: 2
 description: "中国国内ミラーを使ってALFA AWUS036ACMドライバーをインストールするステップバイステップガイド。MT7612Uカーネル内蔵ドライバー、完全VIFサポート。Kali Linux、Ubuntu 22/24、Debian、ラズベリーパイ対応。GitHubは不要です。"
 related_product: "/ja/products/alfa/awus036acm/"
+featureimage: "/images/blog/awus036acm-china-install-guide.webp"
 ---
 
 AWUS036ACMは、LinuxでセットアップしやすいAlfaアダプターのひとつです。MT7612Uチップは`mt76x2u`ドライバーを使用しており、このドライバーはLinuxカーネルバージョン4.19以降に標準搭載されています。最新のシステムであれば、2〜3つのコマンドだけでアダプターが動作します。本ガイドでは、国内ミラーのみを使用して、ドライバーの確認・モニターモード・パケットインジェクション・VIFの完全なセットアップ手順を説明します。GitHubは不要です。

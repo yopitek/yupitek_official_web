@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "wifi-6e", "مراجعة", "Kali-Linux", "MT7921AUN", "6GHz"]
+featureimage: "/images/blog/awus036axml-wifi-6e-review.webp"
 ---
 
 ## نظرة عامة على المنتج

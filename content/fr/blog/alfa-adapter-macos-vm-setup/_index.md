@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
+featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 ---
 
 macOS est un système d'exploitation poli et de qualité professionnelle. Il n'est cependant pas une plateforme conçue pour la recherche en sécurité sans fil. Les deux fonctionnalités qui définissent la boîte à outils de tout pentesteur sérieux — le **mode moniteur** et l'**injection de paquets** — sont totalement absentes de la pile Wi-Fi de macOS. Les pilotes Wi-Fi d'Apple exposent une interface réseau propre et fonctionnelle, rien de plus.

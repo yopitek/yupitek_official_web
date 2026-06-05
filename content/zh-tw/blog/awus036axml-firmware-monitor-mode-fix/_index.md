@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
+featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
 ---
 
 **ALFA AWUS036AXML** 是 ALFA Network 的旗艦 WiFi 6E 網卡，搭載 MediaTek MT7921AUN 晶片組，支援三頻（2.4 / 5 / 6 GHz），是 2026 年少數能在 6 GHz 頻段進行被動監聽的 USB 網卡之一。在站點勘查、封包擷取、PMKID 收集等使用情境下，它的表現相當出色。

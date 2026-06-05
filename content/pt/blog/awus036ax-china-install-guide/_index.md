@@ -11,6 +11,7 @@ categories: ["Guias de Drivers"]
 series: ["alfa-china-install-guide"]
 related_product: "/pt/products/alfa/awus036ax/"
 series_order: 4
+featureimage: "/images/blog/awus036ax-china-install-guide.webp"
 ---
 
 O AWUS036AX é o adaptador dual-band WiFi 6 AX1800 da ALFA. Seu chip RTL8832BU está fora do kernel em versões do Linux abaixo de 6.14 — mas o Ubuntu 24.04 (kernel 6.8) o inclui nativamente. Este guia usa mirrors do Gitee para kernels mais antigos e o driver integrado para o Ubuntu 24.04. Não é necessário GitHub.

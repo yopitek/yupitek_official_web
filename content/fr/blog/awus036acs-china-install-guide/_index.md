@@ -11,6 +11,7 @@ categories: ["Guides de pilotes"]
 series: ["alfa-china-install-guide"]
 related_product: "/fr/products/alfa/awus036acs/"
 series_order: 3
+featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 ---
 
 L'AWUS036ACS est l'adaptateur bi-bande compact d'ALFA pour la recherche en sécurité. Sa puce RTL8811AU prend en charge le mode moniteur complet et l'injection de paquets sur Kali Linux — mais comme le pilote est hors-noyau (out-of-kernel), vous devez le compiler à partir du code source. En Chine, GitHub est bloqué, ce guide utilise donc exclusivement des miroirs Gitee. Pas besoin de GitHub.

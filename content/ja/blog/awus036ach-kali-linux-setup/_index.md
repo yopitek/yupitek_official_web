@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "Kali-Linux", "モニターモード", "パケットインジェクション", "RTL8812AU", "airmon-ng"]
+featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
 ---
 
 ## はじめに

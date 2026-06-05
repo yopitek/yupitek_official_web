@@ -11,6 +11,7 @@ categories: ["驅動安裝指南"]
 series: ["alfa-china-install-guide"]
 related_product: "/zh-tw/products/alfa/awus036axer/"
 series_order: 5
+featureimage: "/images/blog/awus036axer-china-install-guide.webp"
 ---
 
 剛拿到這台輕巧迷你、方便攜帶的 AWUS036AXER，插上去結果 Linux 一點反應都沒有？別擔心，這再正常不過了。這張網卡用的是 RTL8832BU 晶片，在核心版本 6.14 以下驅動不是開箱即用的。好在如果你是用 Ubuntu 24.04，核心已經內建好了，插上就能直接起飛。

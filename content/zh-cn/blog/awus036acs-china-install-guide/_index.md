@@ -11,6 +11,7 @@ categories: ["驱动指南"]
 series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036acs/"
 series_order: 3
+featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 ---
 
 刚收到这款精巧的 AWUS036ACS，迫不及待插上电脑却发现 Linux 没反应？别急，这很正常。虽然它内置的 RTL8811AU 芯片是安全研究的神器，完美支持监听模式和数据包注入，但驱动并不在系统内核里，得咱们亲自动手装一下。

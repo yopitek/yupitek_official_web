@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "driver-install", "acrylic-wifi"]
+featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
 ---
 
 Les adaptateurs WiFi USB d'ALFA Network sont bien connus dans les cercles de recherche en sécurité et de réseautage, mais la plupart des tutoriels se concentrent exclusivement sur Linux. La bonne nouvelle pour les utilisateurs de Windows : chaque adaptateur ALFA majeur fonctionne sur Windows 10 et Windows 11 avec les pilotes fournis par le fabricant — aucune compilation de source n'est requise.

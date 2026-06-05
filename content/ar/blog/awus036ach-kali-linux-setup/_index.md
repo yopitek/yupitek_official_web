@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "Kali-Linux", "وضع-المراقبة", "حقن-الحزم", "RTL8812AU"]
+featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
 ---
 
 أثبت ALFA AWUS036ACH مكانته بجدارة بوصفه محول USB WiFi الأكثر توصيةً في مجتمع Kali Linux — ولأسباب وجيهة. مدفوعاً بشريحة Realtek RTL8812AU، يوفر دعماً موثوقاً لوضع المراقبة وحقن الحزم اعتمد عليه محترفو الأمن منذ عام 2017. يأخذك هذا الدليل خطوةً بخطوة من لحظة فتح الصندوق حتى التحقق الكامل من عمل حقن الحزم على Kali Linux 2024 و2025.

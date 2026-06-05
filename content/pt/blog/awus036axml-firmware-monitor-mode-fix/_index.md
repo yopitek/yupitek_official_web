@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
+featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
 ---
 
 O **ALFA AWUS036AXML** é o adaptador WiFi 6E principal da ALFA Network, construído com o chipset MediaTek MT7921AUN e com suporte tribanda (2.4 / 5 / 6 GHz). É um dos poucos adaptadores USB capazes de monitoramento passivo na banda de 6 GHz em 2026 e apresenta desempenho excepcional em casos de uso como reconhecimento de locais, captura de pacotes e coleta de PMKID.

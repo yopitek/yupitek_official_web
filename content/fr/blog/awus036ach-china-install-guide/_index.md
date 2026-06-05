@@ -11,6 +11,7 @@ series: ["alfa-china-install-guide"]
 series_order: 1
 description: "Guide étape par étape pour installer le pilote ALFA AWUS036ACH en Chine en utilisant des miroirs domestiques. Compatible Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi. Aucun accès à GitHub requis."
 related_product: "/fr/products/alfa/awus036ach/"
+featureimage: "/images/blog/awus036ach-china-install-guide.webp"
 ---
 
 Vous venez de recevoir le AWUS036ACH et votre système Linux ne le reconnaît pas. C'est tout à fait normal — cette puce nécessite le pilote RTL8812AU, qui ne fonctionne pas en plug-and-play. Ce guide vous accompagne tout au long de l'installation en environ 30 minutes, en utilisant uniquement des miroirs domestiques. Aucun accès à GitHub n'est requis.

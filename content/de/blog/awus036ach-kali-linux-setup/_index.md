@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "kali-linux", "monitor-mode", "packet-injection", "RTL8812AU", "airmon-ng"]
+featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
 ---
 
 Die meisten Benutzer stoßen auf drei Hauptprobleme beim Einrichten des AWUS036ACH unter Kali: Der Treiber kompiliert nicht, die VM leitet das USB-Gerät nicht weiter oder der Monitor-Modus funktioniert stillschweigend nicht. Dieses Handbuch deckt alle drei ab, plus die vollständige Setup-Anleitung von Grund auf.

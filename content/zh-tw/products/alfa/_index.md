@@ -36,6 +36,9 @@ ALFA Network 是台灣知名無線網路設備、無線網路卡製造商，專�
   {{< card title="AWUS036ACH" href="/zh-tw/products/alfa/awus036ach/" image="/images/products/alfa/awus036ach.png" >}}
     AC1200 雙頻，Realtek RTL8812AU，USB 3.0，雙 5 dBi 外接天線，高功率穩定輸出。
   {{< /card >}}
+  {{< card title="AWUS036ACHM" href="/zh-tw/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
+    AC433 雙頻，MediaTek MT7610U 晶片，USB 2.0，單天線輕巧設計 — 適合隨身攜帶與滲透測試。
+  {{< /card >}}
   {{< card title="AWUS036ACM" href="/zh-tw/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 雙頻，MediaTek MT7612U，USB 3.0，300+867 Mbps，5 dBi 雙天線，經典款。
   {{< /card >}}

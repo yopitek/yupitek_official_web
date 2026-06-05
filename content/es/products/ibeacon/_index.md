@@ -46,13 +46,6 @@ Nuestro ecosistema iBeacon conecta ubicaciones físicas con redes en la nube cor
 
 ![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
 
-| Modelo | Factor de forma | Fuente de alimentación | Capacidad / Vida de batería | Alcance máx. | Sensores | Impermeable | Características especiales |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| YPB01 | Moneda / Redonda | CR2477 reemplazable | 1000 mAh (2+ años) | 100 m | Ninguno | IP67 | Carcasa giratoria, botón de encendido interno |
-| YPB02 | Moneda / Redonda | CR2477 reemplazable | 1000 mAh (2+ años) | 100 m | Acelerómetro LIS3DH de 3 ejes | IP67 | Transmisión por movimiento, alerta de caída |
-| YPB03 | Cuadrada / Soporte de pared | 4 pilas AA | 5800 mAh (Hasta 10 años) | 240 m | Ninguno | IP65 | Vida útil industrial, botón externo, soporte de tornillos |
-| YPB04 | Insignia / Tarjeta delgada | Li-po recargable | 270 mAh (3 meses) | 150 m | Acelerómetro de 3 ejes | IP67 | Motor de vibración, 1 LED RGB, botón externo, RFID opcional |
-| YPB05 | Micro USB Dongle | Ranura USB (Sin batería) | Continuo (Alimentación externa) | 50 m | Ninguno | N/A | Ultraligera (2,0g), Plug & Play, reinicio por software |
 
 ---
 

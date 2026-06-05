@@ -36,6 +36,9 @@ ALFA Network est un fabricant taiwanais bien connu d'equipements reseau sans fil
   {{< card title="AWUS036ACH" href="/fr/products/alfa/awus036ach/" image="/images/products/alfa/awus036ach.png" >}}
     AC1200 double bande, chipset Realtek RTL8812AU, USB 3.0, double antenne, haute performance.
   {{< /card >}}
+  {{< card title="AWUS036ACHM" href="/fr/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
+    AC433 double bande, chipset MediaTek MT7610U, USB 2.0, conception compacte avec antenne unique — idéal pour le pentesting portable.
+  {{< /card >}}
   {{< card title="AWUS036ACM" href="/fr/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 double bande, chipset MediaTek MT7612U, USB 3.0, 300+867 Mbps, modele classique.
   {{< /card >}}

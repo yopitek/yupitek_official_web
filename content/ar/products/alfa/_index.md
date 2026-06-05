@@ -37,6 +37,9 @@ ALFA Network هي شركة تايوانية رائدة في تصنيع معدا�
   {{< card title="AWUS036ACH" href="/ar/products/alfa/awus036ach/" image="/images/products/alfa/awus036ach.png" >}}
     AC1200 ثنائي النطاق، Realtek RTL8812AU، USB 3.0، هوائيان خارجيان 5 dBi، طاقة عالية.
   {{< /card >}}
+  {{< card title="AWUS036ACHM" href="/ar/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
+    AC433 ثنائي النطاق، شريحة MediaTek MT7610U، منفذ USB 2.0، تصميم مدمج بهوائي فردي — مثالي لاختبار الاختراق المحمول.
+  {{< /card >}}
   {{< card title="AWUS036ACM" href="/ar/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 ثنائي النطاق، MediaTek MT7612U، USB 3.0، 300+867 Mbps، هوائي مزدوج 5 dBi.
   {{< /card >}}

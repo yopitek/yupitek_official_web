@@ -46,13 +46,6 @@ Notre écosystème iBeacon connecte les espaces physiques aux réseaux cloud de 
 
 ![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
 
-| Modèle | Facteur de forme | Source d'énergie | Capacité / Durée de batterie | Portée max. | Capteurs | Étanchéité | Fonctions spéciales |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| YPB01 | Pièce / Ronde | CR2477 remplaçable | 1000 mAh (2 ans et +) | 100 m | Aucun | IP67 | Boîtier rotatif, bouton d'alimentation interne |
-| YPB02 | Pièce / Ronde | CR2477 remplaçable | 1000 mAh (2 ans et +) | 100 m | Accéléromètre LIS3DH 3 axes | IP67 | Diffusion déclenchée par mouvement, alerte chute |
-| YPB03 | Carré / Support mural | 4 piles AA | 5800 mAh (Jusqu'à 10 ans) | 240 m | Aucun | IP65 | Longévité industrielle, bouton externe, support vissable |
-| YPB04 | Badge / Carte mince | Li-po rechargeable | 270 mAh (3 mois) | 150 m | Accéléromètre 3 axes | IP67 | Vibreur, 1 LED RGB, bouton externe, RFID optionnelle |
-| YPB05 | Micro USB Dongle | Port USB (Sans batterie) | Continu (Alimentation externe) | 50 m | Aucun | N/A | Ultra-légère (2,0g), Plug & Play, redémarrage logiciel |
 
 ---
 

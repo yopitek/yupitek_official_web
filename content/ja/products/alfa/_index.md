@@ -36,6 +36,9 @@ ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiア�
   {{< card title="AWUS036ACH" href="/ja/products/alfa/awus036ach/" image="/images/products/alfa/awus036ach.png" >}}
     AC1200 デュアルバンド、Realtek RTL8812AU、USB 3.0、デュアル5 dBi外部アンテナ、高出力。
   {{< /card >}}
+  {{< card title="AWUS036ACHM" href="/ja/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
+    AC433 デュアルバンド、MediaTek MT7610U チップセット、USB 2.0、シングルアンテナのコンパクト設計 — ポータブルなペネトレーションテストに最適。
+  {{< /card >}}
   {{< card title="AWUS036ACM" href="/ja/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 デュアルバンド、MediaTek MT7612U、USB 3.0、300+867 Mbps、5 dBiデュアルアンテナ。
   {{< /card >}}

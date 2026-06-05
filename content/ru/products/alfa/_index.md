@@ -36,6 +36,9 @@ ALFA Network — известный тайваньский производит�
   {{< card title="AWUS036ACH" href="/ru/products/alfa/awus036ach/" image="/images/products/alfa/awus036ach.png" >}}
     AC1200 двухдиапазонный, Realtek RTL8812AU, USB 3.0, две внешние антенны 5 dBi, высокая мощность.
   {{< /card >}}
+  {{< card title="AWUS036ACHM" href="/ru/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
+    AC433 двухдиапазонный, чипсет MediaTek MT7610U, USB 2.0, компактный дизайн с одной антенной — идеально для портативного пентестинга.
+  {{< /card >}}
   {{< card title="AWUS036ACM" href="/ru/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 двухдиапазонный, MediaTek MT7612U, USB 3.0, 300+867 Мбит/с, двойная антенна 5 dBi.
   {{< /card >}}

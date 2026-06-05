@@ -46,13 +46,6 @@ Our iBeacon ecosystem connects physical locations with enterprise cloud networks
 
 ![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
 
-| Model | Form Factor | Power Source | Battery Capacity / Life | Max Range | Sensors | Waterproof | Special Features |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **YPB01** | Coin / Round | Replaceable CR2477 | 1000 mAh (2+ Years) | 100 m | None | IP67 | Rotatable casing, internal push button |
-| **YPB02** | Coin / Round | Replaceable CR2477 | 1000 mAh (2+ Years) | 100 m | LIS3DH 3-Axis Accelerometer | IP67 | Motion-triggered broadcasting, falling alert |
-| **YPB03** | Square / Wall mount | 4 × AA Batteries | 5800 mAh (Up to 10 Years) | 240 m | None | IP65 | Industrial lifetime, external button, screw bracket |
-| **YPB04** | Slim Badge / Card | Rechargeable Li-po | 270 mAh (3 Months) | 150 m | 3-Axis Accelerometer | IP67 | Vibration motor, 1 RGB LED, external button, optional RFID |
-| **YPB05** | Micro USB Dongle | USB Slot (No battery) | Continuous (External Power) | 50 m | None | N/A | Ultra-lightweight (2.0g), plug & play, software reboot |
 
 ---
 

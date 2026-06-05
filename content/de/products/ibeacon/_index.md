@@ -46,13 +46,6 @@ Unser iBeacon-Ökosystem verbindet physische Standorte mit Cloud-Netzwerken. Die
 
 ![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
 
-| Modell | Formfaktor | Stromquelle | Batteriekapazität / Lebensdauer | Max. Reichweite | Sensoren | Wasserdicht | Besondere Merkmale |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| YPB01 | Münze / Rund | Austauschbare CR2477 | 1000 mAh (2+ Jahre) | 100 m | Keine | IP67 | Drehbares Gehäuse, interner Einschaltknopf |
-| YPB02 | Münze / Rund | Austauschbare CR2477 | 1000 mAh (2+ Jahre) | 100 m | LIS3DH 3-Achsen-Beschleunigungssensor | IP67 | Bewegungsgesteuerter Broadcast, Sturzalarm |
-| YPB03 | Quadratisch / Wandhalterung | 4 × AA Batterien | 5800 mAh (Bis zu 10 Jahre) | 240 m | Keine | IP65 | Industrielle Lebensdauer, externer Knopf, Montagerahmen |
-| YPB04 | Flacher Badge / Karte | Wiederaufladbarer Li-po | 270 mAh (3 Monate) | 150 m | 3-Achsen-Beschleunigungssensor | IP67 | Vibrationsmotor, 1 RGB LED, externer Knopf, optional RFID |
-| YPB05 | Micro USB Dongle | USB-Anschluss (Keine Batterie) | Dauerhaft (Externe Stromversorgung) | 50 m | Keine | N/A | Ultraleicht (2,0g), Plug & Play, Software-Reboot |
 
 ---
 

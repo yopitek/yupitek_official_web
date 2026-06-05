@@ -11,7 +11,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range",
 
 ## Обзор продукта
 
-**YPB03** — это промышленный Bluetooth® Low Energy (BLE 5.0) маяк, оптимизированный под протокол **LINE Beacon** для трансляции стандартных пакетов **LINE Simple Beacon**. Работает от **4 батареек AA** (5800 мАч), обеспечивающих работу **до 10 лет**.
+**YPB03** — это промышленный Bluetooth® Low Energy (BLE 5.0) маяк, оптимизированный под протокол **LINE Beacon** для трансляции стандартных пакетов **LINE Simple Beacon**. Работает от **4 батареек AA** (5800 мАч).
 
 С дальностью действия до **240 метров**, YPB03 идеален для крупных залов и торговых центров. Клиентам не нужно ставить отдельные приложения – уведомления приходят прямо в мессенджер **LINE**.
 
@@ -20,7 +20,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range",
 ## Ключевые свойства
 
 * **Официальная совместимость с LINE Beacon:** Транслирует открытый протокол LINE Simple Beacon для связи с LINE Bot Messaging API.
-* **10 лет автономной работы:** Питание от 4 обычных пальчиковых батареек минимизирует затраты на обслуживание.
+* **Простота обслуживания:** Питание от 4 обычных пальчиковых батареек минимизирует затраты на обслуживание.
 * **Дальность 240м:** Мощный BLE 5.0 сигнал для аэропортов и выставочных комплексов.
 * **Взаимодействие без трения:** Пользователю достаточно включить Bluetooth и добавить ваш канал.
 * **Корпус IP65:** Защита от брызг воды и пыли для использования на складах.
@@ -97,7 +97,6 @@ sequenceDiagram
 | **Service UUID** | 0xFE6F | Dedicated LINE Beacon UUID |
 | **Service Data Format** | 0xFE6F + 5-Byte HWID + 0x7F00 | LINE Simple Beacon packet format |
 | **Power Source** | 4 × AA batteries | 5800mAh capacity total (Included) |
-| **Battery Lifetime** | Up to 10 years | Based on default broadcasting parameters |
 | **Material** | ABS + Silicone | Rugged industrial casing |
 | **Dimensions** | 72 × 72 × 23 mm | Wall-mountable square |
 | **Net Weight** | 145 g | Including batteries |

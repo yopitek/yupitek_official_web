@@ -11,7 +11,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range",
 
 ## Produktübersicht
 
-Der **YPB03** is ein industrieller Bluetooth® Low Energy (BLE 5.0) Beacon, der als **LINE Beacon** optimiert ist und standardisierte **LINE Simple Beacon** Pakete sendet. Betrieben mit **4 × AA-Batterien** (5800mAh), erreicht er eine Lebensdauer von **bis zu 10 Jahren**.
+Der **YPB03** is ein industrieller Bluetooth® Low Energy (BLE 5.0) Beacon, der als **LINE Beacon** optimiert ist und standardisierte **LINE Simple Beacon** Pakete sendet. Betrieben mit **4 × AA-Batterien** (5800mAh).
 
 Mit einer Sendeleistung von bis zu **240 Metern** eignet sich der YPB03 ideal für große Hallen, Museen und Einkaufszentren. Kunden benötigen keine separate App – sie empfangen Push-Benachrichtigungen direkt in ihrer **LINE** App.
 
@@ -20,7 +20,7 @@ Mit einer Sendeleistung von bis zu **240 Metern** eignet sich der YPB03 ideal f�
 ## Hauptmerkmale
 
 * **Offizielle LINE Beacon Kompatibilität:** Sendet das LINE Simple Beacon Protokoll für die direkte Verknüpfung mit der LINE Bot Messaging API.
-* **10 Jahre Batterielaufzeit:** Große 5800mAh Kapazität mit vier Standard-AA-Batterien reduziert den Wartungsaufwand.
+* **Geringer Wartungsaufwand:** Große 5800mAh Kapazität mit vier Standard-AA-Batterien reduziert den Wartungsaufwand.
 * **240m Reichweite:** Leistungsstarke BLE 5.0 Reichweite für Messehallen und Bahnhöfe.
 * **Nahtlose Interaktion:** Benutzer müssen nur Bluetooth aktivieren und Ihren Kanal hinzufügen – kein App-Download nötig.
 * **IP65-Gehäuse:** Robustes, strahlwassergeschütztes Gehäuse für den industriellen Einsatz.
@@ -98,7 +98,6 @@ Die Parameter (UUID, Major, Minor, Sendeleistung, Intervall) werden über **Beac
 | **Service UUID** | 0xFE6F | Dedicated LINE Beacon UUID |
 | **Service Data Format** | 0xFE6F + 5-Byte HWID + 0x7F00 | LINE Simple Beacon packet format |
 | **Power Source** | 4 × AA batteries | 5800mAh capacity total (Included) |
-| **Battery Lifetime** | Up to 10 years | Based on default broadcasting parameters |
 | **Material** | ABS + Silicone | Rugged industrial casing |
 | **Dimensions** | 72 × 72 × 23 mm | Wall-mountable square |
 | **Net Weight** | 145 g | Including batteries |

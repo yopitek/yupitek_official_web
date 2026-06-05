@@ -11,7 +11,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range",
 
 ## 製品概要
 
-**YPB03** は、**LINE Beacon** プロトコル用に最適化され、標準的な **LINE Simple Beacon** パケットの配信に対応した、産業用超長寿命型 Bluetooth® Low Energy (BLE 5.0) ビーコンです。**単3乾電池×4本**（計 5800mAh）で駆動し、デフォルトの設定で **最大10年間** という圧倒的なバッテリー寿命を実現しています。
+**YPB03** は、**LINE Beacon** プロトコル用に最適化され、標準的な **LINE Simple Beacon** パケットの配信に対応した、産業用超長寿命型 Bluetooth® Low Energy (BLE 5.0) ビーコンです。**単3乾電池×4本**（計 5800mAh）で駆動します。
 
 高利得アンテナの採用により、最大 **240メートル** の超広範囲通信に対応。大規模な商業店舗でのプロモーション、スマート小売店のナビゲーション、広大な屋内施設の案内などに最適です。ユーザーは専用アプリを別途インストールする必要がなく、使い慣れた **LINE** アプリを通じて直接位置連動型の通知やメッセージを受け取ることができます。
 
@@ -20,7 +20,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range",
 ## 主な特徴
 
 * **公式 LINE Beacon 完全互換:** オープンな LINE Simple Beacon プロトコルを配信し、物理的な位置情報と LINE ボット (Messaging API) を簡単に統合します。
-* **10年間のメンテナンスフリー:** 入手性の高い単3乾電池4本で駆動。5800mAh の大容量により、頻繁な電池交換コストを削減します。
+* **優れたメンテナンス性:** 入手性の高い単3乾電池4本で駆動。5800mAh の大容量により、頻繁な電池交換コストを削減します。
 * **240m の広域カバー:** 強力な BLE 5.0 信号で、空港、イベント会場、ショッピングモールなどの大規模施設をカバーします。
 * **手軽なエンゲージメント:** ユーザーは Bluetooth をオンにし、公式アカウントを友だち追加するだけで受信可能。アプリダウンロードの障壁がありません。
 * **タフな産業用設計:** IP65 等級の防水防塵 ABS 筐体を採用し、工場や倉庫、湿気の多い屋内環境でも安定して動作します。
@@ -103,7 +103,6 @@ YPB03 のパラメータ（UUID、Major、Minor、送信出力、およびアド
 | **Service UUID** | 0xFE6F | Dedicated LINE Beacon UUID |
 | **Service Data Format** | 0xFE6F + 5-Byte HWID + 0x7F00 | LINE Simple Beacon packet format |
 | **Power Source** | 4 × AA batteries | 5800mAh capacity total (Included) |
-| **Battery Lifetime** | Up to 10 years | Based on default broadcasting parameters |
 | **Material** | ABS + Silicone | Rugged industrial casing |
 | **Dimensions** | 72 × 72 × 23 mm | Wall-mountable square |
 | **Net Weight** | 145 g | Including batteries |

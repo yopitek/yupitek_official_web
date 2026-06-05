@@ -1,6 +1,6 @@
 ---
 title: "YPB03 LINE Beacon"
-description: "YPB03 Long-Range Max Beacon broadcasting LINE Simple Beacon packets. Features up to 10 years battery life, 240m range, IP65 waterproof casing, and seamless LINE Bot Messaging API integration."
+description: "YPB03 Long-Range Max Beacon broadcasting LINE Simple Beacon packets. Features 240m range, IP65 waterproof casing, and seamless LINE Bot Messaging API integration."
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range",
 
 ## Product Overview
 
-The **YPB03** is an industrial-grade, long-range Bluetooth® Low Energy (BLE 5.0) beacon specifically optimized to function as a **LINE Beacon** broadcasting standard **LINE Simple Beacon** packets. Powered by **4 × AA batteries** providing a massive 5800mAh capacity, it boasts an exceptional battery lifetime of **up to 10 years** under default broadcasting parameters.
+The **YPB03** is an industrial-grade, long-range Bluetooth® Low Energy (BLE 5.0) beacon specifically optimized to function as a **LINE Beacon** broadcasting standard **LINE Simple Beacon** packets. Powered by **4 × AA batteries** providing a massive 5800mAh capacity.
 
 With a high-gain antenna delivering a transmission range of up to **240 meters**, the YPB03 is the ideal choice for large-scale commercial proximity marketing, smart retail navigation, and indoor location services. It eliminates the need for users to install custom mobile apps—interaction is triggered directly within the ubiquitous **LINE** messaging application, offering a frictionless user experience.
 
@@ -29,7 +29,6 @@ With a high-gain antenna delivering a transmission range of up to **240 meters**
 | **Service UUID** | 0xFE6F | Dedicated LINE Beacon UUID |
 | **Service Data Format** | 0xFE6F + 5-Byte HWID + 0x7F00 | LINE Simple Beacon packet format |
 | **Power Source** | 4 × AA batteries | 5800mAh capacity total (Included) |
-| **Battery Lifetime** | Up to 10 years | Based on default broadcasting parameters |
 | **Material** | ABS + Silicone | Rugged industrial casing |
 | **Dimensions** | 72 × 72 × 23 mm | Wall-mountable square |
 | **Net Weight** | 145 g | Including batteries |
@@ -39,7 +38,7 @@ With a high-gain antenna delivering a transmission range of up to **240 meters**
 ## Key Features
 
 * **Official LINE Beacon Compatibility:** Broadcasts the open LINE Simple Beacon protocol, seamlessly linking physical locations to your LINE Bot Messaging API.
-* **10-Year Service Life:** Massive 5800mAh capacity using four standard replaceable AA batteries reduces hardware maintenance overhead to near-zero.
+* **Low Maintenance:** Massive 5800mAh capacity using four standard replaceable AA batteries reduces hardware maintenance overhead to near-zero.
 * **Extended Coverage (240m):** Strong BLE 5.0 signal penetration covers wide halls, airports, exhibition centers, and multi-story retail stores.
 * **Frictionless Engagement:** Users only need Bluetooth enabled and your LINE Official Account added; no third-party app download is required to receive notifications.
 * **Rugged Enclosure:** IP65-rated dustproof and water-jet resistant casing designed for challenging warehouse and indoor industrial environments.

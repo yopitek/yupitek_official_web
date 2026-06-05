@@ -11,7 +11,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range",
 
 ## Présentation du produit
 
-Le **YPB03** est une balise industrielle optimisée en tant que **LINE Beacon** qui diffuse des paquets standards **LINE Simple Beacon**. Elle fonctionne avec **4 piles AA** (5800mAh), lui offrant une autonomie allant **jusqu'à 10 ans**.
+Le **YPB03** est une balise industrielle optimisée en tant que **LINE Beacon** qui diffuse des paquets standards **LINE Simple Beacon**. Elle fonctionne avec **4 piles AA** (5800mAh).
 
 Avec une portée allant jusqu'à **240 mètres**, elle est idéale pour les galeries marchandes et les musées. Les utilisateurs reçoivent des notifications directement dans leur application **LINE** sans installer d'autres applications.
 
@@ -20,7 +20,7 @@ Avec une portée allant jusqu'à **240 mètres**, elle est idéale pour les gale
 ## Caractéristiques principales
 
 * **Compatibilité officielle LINE Beacon:** Diffuse le protocole ouvert LINE Simple Beacon pour s'associer avec l'API LINE Bot.
-* **10 ans d'autonomie:** Fonctionne avec 4 piles AA standards pour réduire la maintenance.
+* **Maintenance réduite:** Fonctionne avec 4 piles AA standards pour réduire la maintenance.
 * **Portée de 240m:** Signal BLE 5.0 puissant idéal pour les grands espaces.
 * **Engagement sans friction:** L'utilisateur doit simplement activer son Bluetooth et suivre votre compte.
 * **Boîtier IP65:** Conçu pour résister aux projections d'eau en milieu industriel.
@@ -97,7 +97,6 @@ Les paramètres se configurent sans fil à l'aide de **BeaconSET+**:
 | **Service UUID** | 0xFE6F | Dedicated LINE Beacon UUID |
 | **Service Data Format** | 0xFE6F + 5-Byte HWID + 0x7F00 | LINE Simple Beacon packet format |
 | **Power Source** | 4 × AA batteries | 5800mAh capacity total (Included) |
-| **Battery Lifetime** | Up to 10 years | Based on default broadcasting parameters |
 | **Material** | ABS + Silicone | Rugged industrial casing |
 | **Dimensions** | 72 × 72 × 23 mm | Wall-mountable square |
 | **Net Weight** | 145 g | Including batteries |

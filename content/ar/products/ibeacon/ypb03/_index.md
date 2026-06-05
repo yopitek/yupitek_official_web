@@ -11,7 +11,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range",
 
 ## نظرة عامة على المنتج
 
-إنّ **YPB03** هو منارة صناعية طويلة المدى للبلتوث منخفض الطاقة (BLE 5.0) ومحسنة خصيصاً لتعمل كـ **LINE Beacon** تبث حزم **LINE Simple Beacon** القياسية. تعمل بـ **4 بطاريات AA** بسعة 5800 مللي أمبير، وتتميز بعمر بطارية يصل إلى **10 سنوات**.
+إنّ **YPB03** هو منارة صناعية طويلة المدى للبلتوث منخفض الطاقة (BLE 5.0) ومحسنة خصيصاً لتعمل كـ **LINE Beacon** تبث حزم **LINE Simple Beacon** القياسية. تعمل بـ **4 بطاريات AA** بسعة 5800 مللي أمبير، 
 
 بفضل هوائي الكسب العالي، يصل مدى البث إلى **240 متراً**، وهو الخيار الأمثل للمساحات التجارية الكبيرة. لا يحتاج المستخدمون إلى تثبيت تطبيقات إضافية، بل يتلقون الإشعارات مباشرة في تطبيق **LINE**.
 
@@ -20,7 +20,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range",
 ## الميزات الرئيسية
 
 * **توافق رسمي مع LINE Beacon:** يبث بروتوكول LINE Simple Beacon المفتوح للربط مع API لـ LINE Bot.
-* **عمر بطارية 10 سنوات:** سعة 5800 مللي أمبير باستخدام 4 بطاريات AA شائعة يقلل الصيانة.
+* **صيانة منخفضة:** سعة 5800 مللي أمبير باستخدام 4 بطاريات AA شائعة يقلل الصيانة.
 * **مدى 240 متراً:** إشارة BLE 5.0 قوية تغطي الصالات الكبيرة والمطارات.
 * **تفاعل سلس:** يحتاج المستخدم فقط لتفعيل البلوتوث ومتابعة حسابك الرسمي.
 * **هيكل IP65:** هيكل ABS متين ومقاوم للغبار ورذاذ الماء للاستخدام الصناعي.
@@ -97,7 +97,6 @@ sequenceDiagram
 | **Service UUID** | 0xFE6F | Dedicated LINE Beacon UUID |
 | **Service Data Format** | 0xFE6F + 5-Byte HWID + 0x7F00 | LINE Simple Beacon packet format |
 | **Power Source** | 4 × AA batteries | 5800mAh capacity total (Included) |
-| **Battery Lifetime** | Up to 10 years | Based on default broadcasting parameters |
 | **Material** | ABS + Silicone | Rugged industrial casing |
 | **Dimensions** | 72 × 72 × 23 mm | Wall-mountable square |
 | **Net Weight** | 145 g | Including batteries |

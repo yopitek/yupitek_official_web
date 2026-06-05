@@ -11,7 +11,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range",
 
 ## Descripción del producto
 
-El **YPB03** es una baliza industrial optimizada como **LINE Beacon** que transmite paquetes estándar **LINE Simple Beacon**. Funciona con **4 pilas AA** (5800mAh), alcanzando una vida útil de **hasta 10 años**.
+El **YPB03** es una baliza industrial optimizada como **LINE Beacon** que transmite paquetes estándar **LINE Simple Beacon**. Funciona con **4 pilas AA** (5800mAh).
 
 Con un alcance de hasta **240 metros**, es ideal para áreas comerciales y museos. Los usuarios no necesitan instalar apps adicionales, reciben notificaciones directas en la app **LINE**.
 
@@ -20,7 +20,7 @@ Con un alcance de hasta **240 metros**, es ideal para áreas comerciales y museo
 ## Características clave
 
 * **Compatibilidad oficial con LINE Beacon:** Transmite el protocolo abierto LINE Simple Beacon para integrar con la API de LINE Bot.
-* **10 años de autonomía:** Utiliza 4 pilas AA comunes que minimizan el costo de mantenimiento.
+* **Bajo mantenimiento:** Utiliza 4 pilas AA comunes que minimizan el costo de mantenimiento.
 * **Alcance de 240m:** Señal potente BLE 5.0 ideal para grandes superficies.
 * **Interacción sin fricción:** El cliente solo necesita activar Bluetooth y seguir su canal.
 * **Carcasa IP65:** Resistente a salpicaduras y polvo para entornos industriales.
@@ -96,7 +96,6 @@ Los parámetros se editan vía inalámbrica con **BeaconSET+**:
 | **Service UUID** | 0xFE6F | Dedicated LINE Beacon UUID |
 | **Service Data Format** | 0xFE6F + 5-Byte HWID + 0x7F00 | LINE Simple Beacon packet format |
 | **Power Source** | 4 × AA batteries | 5800mAh capacity total (Included) |
-| **Battery Lifetime** | Up to 10 years | Based on default broadcasting parameters |
 | **Material** | ABS + Silicone | Rugged industrial casing |
 | **Dimensions** | 72 × 72 × 23 mm | Wall-mountable square |
 | **Net Weight** | 145 g | Including batteries |

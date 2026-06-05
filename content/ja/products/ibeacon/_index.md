@@ -14,7 +14,7 @@ Yupitek iBeacon 製品は、高性能な位置測位、人員追跡、商業広�
 
 ## BLE ビーコン システム構成
 
-![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png)
+![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=2)
 
 iBeacon エコシステムは、物理的な位置と企業のクラウドネットワークを接続します。ビーコンは一定の間隔で BLE 信号を発信し、スマートフォン（社内アプリ実行中）や BLE ゲートウェイによって検出され、位置や勤怠ログを中央管理システムへ安全に送信します。
 
@@ -44,7 +44,7 @@ iBeacon エコシステムは、物理的な位置と企業のクラウドネッ
 
 ## iBeacon シリーズ 仕様比較
 
-![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
+![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png?v=2)
 
 
 ---

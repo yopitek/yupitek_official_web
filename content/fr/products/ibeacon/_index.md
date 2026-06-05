@@ -14,7 +14,7 @@ Les produits iBeacon de Yupitek représentent une nouvelle génération de balis
 
 ## Topologie du Système de Balises BLE
 
-![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png)
+![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=2)
 
 Notre écosystème iBeacon connecte les espaces physiques aux réseaux cloud de l'entreprise. Les balises émettent des signaux radio BLE à intervalles réguliers, captés par les smartphones et les passerelles BLE, pour remonter des données de présence et de localisation vers un serveur central.
 
@@ -44,7 +44,7 @@ Notre écosystème iBeacon connecte les espaces physiques aux réseaux cloud de 
 
 ## Comparatif des Spécifications de la Série iBeacon
 
-![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
+![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png?v=2)
 
 
 ---

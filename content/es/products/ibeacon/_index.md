@@ -14,7 +14,7 @@ Los productos iBeacon de Yupitek representan una nueva generación de dispositiv
 
 ## Topología del Sistema de Balizas BLE
 
-![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png)
+![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=2)
 
 Nuestro ecosistema iBeacon conecta ubicaciones físicas con redes en la nube corporativas. Las balizas transmiten señales de radio BLE a intervalos regulares, que son escaneadas por dispositivos móviles y pasarelas (gateways) BLE, enviando registros seguros de asistencia y localización a un servidor central.
 
@@ -44,7 +44,7 @@ Nuestro ecosistema iBeacon conecta ubicaciones físicas con redes en la nube cor
 
 ## Comparativa de Especificaciones de la Serie iBeacon
 
-![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
+![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png?v=2)
 
 
 ---

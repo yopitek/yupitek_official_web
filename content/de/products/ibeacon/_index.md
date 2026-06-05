@@ -14,7 +14,7 @@ Yupitek iBeacon-Produkte repräsentieren eine neue Generation von Bluetooth® Lo
 
 ## BLE Beacon Systemtopologie
 
-![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png)
+![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=2)
 
 Unser iBeacon-Ökosystem verbindet physische Standorte mit Cloud-Netzwerken. Die Beacons senden in regelmäßigen Intervallen BLE-Funksignale aus, die von mobilen Geräten und BLE-Gateways erfasst werden, um gesicherte Anwesenheits- und Tracking-Daten an ein zentrales System zu übermitteln.
 
@@ -44,7 +44,7 @@ Unser iBeacon-Ökosystem verbindet physische Standorte mit Cloud-Netzwerken. Die
 
 ## Spezifikationsvergleich der iBeacon-Serie
 
-![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
+![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png?v=2)
 
 
 ---

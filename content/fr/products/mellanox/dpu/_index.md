@@ -53,4 +53,6 @@ Les DPU BlueField se programment à l'aide de l'environnement logiciel **NVIDIA 
 
 ---
 
-Pour obtenir une assistance technique lors de l'intégration ou demander un devis, [contactez l'équipe commerciale de Yupitek](/fr/contact/).
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

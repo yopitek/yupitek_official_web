@@ -129,5 +129,5 @@ tags: ["Wi-Fi 7", "Dream Router", "一体化路由器", "家用", "UniFi 控制�
 ---
 
 {{< alert >}}
-需要询问报价或 UniFi 网络规划？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

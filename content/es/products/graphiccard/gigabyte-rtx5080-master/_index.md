@@ -25,5 +25,5 @@ GIGABYTE RTX5080 MASTER 16G es el modelo insignia RTX 5080 de GIGABYTE. La serie
 
 ---
 {{< alert >}}
-¿Le interesa este producto? [Contáctenos](/es/contact/) para obtener precios.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

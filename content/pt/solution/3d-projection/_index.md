@@ -49,5 +49,5 @@ Para projetos de 3D Mapping, a Yupitek recomenda projetores laser de alta lumino
 ---
 
 {{< alert >}}
-Tem um projeto de 3D Mapping em mente? [Entre em contato](/pt/contact/) para discutir seu projeto — oferecemos consultoria técnica gratuita e indicação de equipamentos.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

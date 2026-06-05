@@ -41,5 +41,5 @@ tags: ["Flipper Zero 擴充", "乙太網路", "網路測試", "有線網路"]
 ---
 
 {{< alert >}}
-需要詢問報價？[聯絡我們](/zh-tw/contact/)
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

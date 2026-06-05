@@ -28,4 +28,6 @@ Das Militärpolizeikommando führte ein digitales Kriegsspielsimulationssystem e
 
 ---
 
-Interesse an einer ähnlichen Lösung? [Kontaktieren Sie uns](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

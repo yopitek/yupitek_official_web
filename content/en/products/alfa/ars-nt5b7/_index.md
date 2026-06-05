@@ -72,5 +72,5 @@ The ARS-NT5B7's industrial-grade temperature rating (-40°C ~ +85°C) also makes
 ---
 
 {{< alert >}}
-Need a quote or bulk purchase? [Contact Us](/en/contact/) for detailed purchasing advice.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

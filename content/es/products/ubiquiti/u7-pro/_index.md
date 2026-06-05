@@ -87,4 +87,6 @@ Ideal para empresas, instituciones educativas, sector hotelero y entornos de ofi
 
 ---
 
-¿Le interesa este producto? [Contáctenos](/es/contact/) para obtener precios y planificación de red UniFi.
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

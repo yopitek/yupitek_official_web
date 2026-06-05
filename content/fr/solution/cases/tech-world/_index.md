@@ -27,4 +27,6 @@ La Salle d'Exposition Tech World est un espace d'expérience thématique combina
 
 ---
 
-[Retour aux Études de Cas](/fr/solution/cases/) | [Renseignements sur les solutions pour salles thématiques](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

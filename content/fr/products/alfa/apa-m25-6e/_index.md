@@ -70,5 +70,5 @@ Associée à l'AWUS036AXM / AWUS036AXML, la bande 6 GHz peut atteindre jusqu'à 
 ---
 
 {{< alert >}}
-Besoin d'un devis ou de plus d'informations ? [Contactez-nous](/fr/contact/) pour des conseils d'achat détaillés.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

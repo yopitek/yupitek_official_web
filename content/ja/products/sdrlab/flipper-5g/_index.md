@@ -67,5 +67,5 @@ tags: ["Flipper Zero 拡張", "5GHz", "Wi-Fi", "Deauth", "セキュリティ研�
 {{< /alert >}}
 
 {{< alert >}}
-お見積もりのお問い合わせは[こちら](/ja/contact/)
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}

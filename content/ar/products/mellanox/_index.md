@@ -57,4 +57,6 @@ featureimage: "/images/products/mellanox/ai-generated/hero/mellanox-hero-banner.
 
 ---
 
-هل تحتاج إلى استشارة فنية أو تسعيرة مخصصة للكميات؟ [اتصل بفريق المبيعات لدينا](/ar/contact/) أو راسلنا عبر البريد الإلكتروني **sales@yupitek.com**.
+{{< alert >}}
+هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
+{{< /alert >}}

@@ -40,5 +40,5 @@ tags: ["Expansión Flipper Zero", "ESP32", "CC1101", "NRF24", "Wi-Fi Marauder", 
 ---
 
 {{< alert >}}
-¿Necesitas cotización? [Contáctanos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

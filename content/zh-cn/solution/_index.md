@@ -64,7 +64,9 @@ showTableOfContents: true
 
 全台服务：**台北・桃园・台南・宜兰・屏东**
 
-需要定制化投影解决方案？[联系我们](/zh-cn/contact/)讨论您的需求。
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}
 
 ---
 

@@ -103,5 +103,5 @@ AWUS036AX 採用 Realtek RTL8832BU 晶片，支援 Wi-Fi 6（802.11ax）雙頻�
 | [ARS NT5B7](/zh-tw/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | 全向 |
 
 {{< alert >}}
-需要詢問報價？[聯絡我們](/zh-tw/contact/)，我們提供詳細採購建議。
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

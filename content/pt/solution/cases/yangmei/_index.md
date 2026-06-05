@@ -27,4 +27,6 @@ O Salão Multifuncional da Administração do Distrito de Yangmei necessitava de
 
 ---
 
-[Voltar aos Casos de Sucesso](/pt/solution/cases/) | [Entre em contato](/pt/contact/) para discutir seu projeto.
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

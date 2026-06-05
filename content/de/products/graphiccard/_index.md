@@ -70,4 +70,6 @@ Yopitek bietet NVIDIA RTX 5080 Series Grafikkarten für KI-Bildgenerierung, 3D-R
 
 ---
 
-Brauchen Sie ein RTX 5080 Angebot? [Kontaktieren Sie uns](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

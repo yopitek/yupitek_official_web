@@ -41,3 +41,7 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 |----------|--------|
 | �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/shark/cable) |
+
+{{< alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
+{{< /alert >}}

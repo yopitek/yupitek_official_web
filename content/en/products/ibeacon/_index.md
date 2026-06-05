@@ -44,6 +44,8 @@ Our iBeacon ecosystem connects physical locations with enterprise cloud networks
 
 ## iBeacon Series Comparison
 
+![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
+
 | Model | Form Factor | Power Source | Battery Capacity / Life | Max Range | Sensors | Waterproof | Special Features |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **YPB01** | Coin / Round | Replaceable CR2477 | 1000 mAh (2+ Years) | 100 m | None | IP67 | Rotatable casing, internal push button |
@@ -55,5 +57,5 @@ Our iBeacon ecosystem connects physical locations with enterprise cloud networks
 ---
 
 {{< alert >}}
-Need a custom quotation or integration solution? Please contact our sales team directly at: **sales@yupitek.com**
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

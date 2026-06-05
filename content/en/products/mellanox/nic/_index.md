@@ -121,4 +121,6 @@ Models with suffixes like `-ADAB`, `-CDAB`, `-HEAB` use the **OCP NIC 3.0** form
 
 ---
 
-Need compatible cables? View our [DAC Cables](/en/products/mellanox/cable-dac/) and [AOC Cables](/en/products/mellanox/cable-aoc/) lists. For pricing and stock availability, [request a quote](/en/contact/).
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

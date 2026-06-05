@@ -79,4 +79,6 @@ Choosing between Direct Attach Copper (DAC) and Active Optical Cables (AOC) depe
 
 ---
 
-Need architectural design help or pricing details? [Contact our technical sales team](/en/contact/).
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

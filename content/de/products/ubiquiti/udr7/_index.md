@@ -129,5 +129,5 @@ Ideal für kleine bis mittlere Büros, Einzelhandel, Gastronomie und Heimumgebun
 ---
 
 {{< alert >}}
-Interesse an diesem Produkt? [Kontaktieren Sie uns](/de/contact/) für Preisanfragen und UniFi-Netzwerkplanung.
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

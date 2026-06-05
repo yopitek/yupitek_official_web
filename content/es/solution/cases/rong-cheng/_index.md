@@ -27,4 +27,6 @@ Rong Cheng Paper organizó una exposición corporativa con temática ambiental. 
 
 ---
 
-[Volver a Casos de Estudio](/es/solution/cases/) | ¿Interesado? [Contáctenos](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

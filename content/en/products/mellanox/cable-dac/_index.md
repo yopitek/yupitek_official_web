@@ -101,4 +101,6 @@ When looking at part numbers, you will notice wire gauges listed (e.g., 30AWG vs
 
 ---
 
-Need help planning your rack cable management? [Contact the Yupitek engineering desk](/en/contact/) for expert advice.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

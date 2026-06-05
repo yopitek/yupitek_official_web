@@ -120,5 +120,5 @@ AWUS036ACM 是 Linux 用户零配置即插即用的首选网卡。其 MediaTek M
 
 
 {{< alert >}}
-需要询价？[联系我们](/zh-cn/contact/)，我们提供详细采购建议。
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

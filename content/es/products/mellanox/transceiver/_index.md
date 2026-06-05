@@ -66,4 +66,6 @@ Al adquirir transceptores, los clientes suelen preguntar: *«¿Puedo utilizar tr
 
 ---
 
-¿Necesita latiguillos de fibra óptica compatibles? Consulte nuestro [catálogo de latiguillos de fibra óptica](/es/products/mellanox/cable-fiber/). Si necesita un diseño de red a medida, [contacte con el equipo técnico de Yupitek](/es/contact/).
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

@@ -28,4 +28,6 @@ The ASUS RTX5080 O16G NOCTUA is a collaboration product between ASUS and Austria
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

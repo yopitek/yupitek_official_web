@@ -81,5 +81,5 @@ Ideal for home offices, small offices, AV workstations, or any environment needi
 ---
 
 {{< alert >}}
-Interested in this product? [Contact us](/en/contact/) for pricing and UniFi network planning.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

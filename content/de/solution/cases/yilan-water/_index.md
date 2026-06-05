@@ -28,4 +28,6 @@ Das Yilan Wassermuseum wurde in einem umgenutzten, hundert Jahre alten Wasserwer
 
 ---
 
-[Zurück zu den Fallstudien](/de/solution/cases/) | [Anfrage zu Museumslösungen](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

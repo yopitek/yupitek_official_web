@@ -29,4 +29,6 @@ Shark Jack is a compact portable wired network audit tool that automatically exe
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

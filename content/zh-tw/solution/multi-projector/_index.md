@@ -54,5 +54,5 @@ showTableOfContents: false
 ---
 
 {{< alert >}}
-需要多機融合系統規劃？[聯絡我們](/zh-tw/contact/)，提供場地資訊即可獲得客製化方案建議。
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

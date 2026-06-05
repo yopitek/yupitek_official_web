@@ -45,5 +45,5 @@ showTableOfContents: false
 ---
 
 {{< alert >}}
-需要建筑光雕投影规划？[联系我们](/zh-cn/contact/)讨论您的活动需求，我们提供免费设备建议与报价。
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

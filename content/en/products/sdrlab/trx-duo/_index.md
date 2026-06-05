@@ -63,5 +63,5 @@ tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]
 ---
 
 {{< alert >}}
-Need a quote? [Contact us](/en/contact/)
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

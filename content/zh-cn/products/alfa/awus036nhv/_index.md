@@ -73,5 +73,5 @@ AWUS036NHV 是 ALFA 高功率 2.4GHz 单频无线网卡，支持 IEEE 802.11 b/g
 
 
 {{< alert >}}
-需要询价？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

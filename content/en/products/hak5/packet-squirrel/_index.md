@@ -29,4 +29,6 @@ Packet Squirrel Mark II is a transparent inline network man-in-the-middle testin
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

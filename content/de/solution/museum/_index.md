@@ -45,5 +45,5 @@ Museen und Kultureinrichtungen sind ein Kerndienstleistungsbereich der Yupitek I
 ---
 
 {{< alert >}}
-Planen Sie Multimedia-Systeme für ein Museum oder eine Dauerausstellung? [Kontaktieren Sie uns](/de/contact/) für Ausstellungstechnologieberatung und Geräteplanung.
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

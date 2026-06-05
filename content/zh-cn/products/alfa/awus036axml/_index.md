@@ -117,5 +117,5 @@ AWUS036AXML 搭载 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz 
 
 
 {{< alert >}}
-需要询价？[联系我们](/zh-cn/contact/)，我们提供详细采购建议。
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

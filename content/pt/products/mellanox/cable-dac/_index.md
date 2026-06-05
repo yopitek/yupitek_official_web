@@ -101,4 +101,6 @@ Nas especificações técnicas das peças, você verá indicações sobre a bito
 
 ---
 
-Precisa de auxílio no planejamento do cabeamento e organização dos seus racks? [Fale com a equipe de engenharia da Yupitek](/pt/contact/) para obter orientações especializadas.
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

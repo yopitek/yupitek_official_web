@@ -43,3 +43,7 @@ featureimage: "/images/products/hak5/shark-jack.png"
 |--------|--------|
 | 📖 Официальная документация | [Просмотреть онлайн](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
 | ⬇️ Прошивка и инструменты | [Портал загрузок Hak5](https://downloads.hak5.org/shark) |
+
+{{< alert >}}
+Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
+{{< /alert >}}

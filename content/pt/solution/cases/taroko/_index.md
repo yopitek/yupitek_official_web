@@ -28,4 +28,6 @@ A pista de patinação Taroko Roller186 incorporou tecnologia interativa ao sist
 
 ---
 
-[Voltar aos Casos](/pt/solution/cases/) | [Tem interesse? [Entre em contato](/pt/contact/)]
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

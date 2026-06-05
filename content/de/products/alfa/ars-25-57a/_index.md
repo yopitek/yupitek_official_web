@@ -69,5 +69,5 @@ Die ARS-25-57A ist eine Dual-Band-Paddle-Omnidirektionalantenne (Paddle-Stil) vo
 ---
 
 {{< alert >}}
-Benötigen Sie ein Angebot oder weitere Informationen? [Kontaktieren Sie uns](/de/contact/) für detaillierte Kaufberatung.
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

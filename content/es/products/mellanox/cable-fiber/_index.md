@@ -51,4 +51,6 @@ En las redes MPO-12, la polaridad asegura que el transmisor de un extremo se con
 
 ---
 
-¿Necesita latiguillos monomodo a medida (LC-LC o MPO-12 APC)? Por favor, [contacte con el equipo de Yupitek](/es/contact/).
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

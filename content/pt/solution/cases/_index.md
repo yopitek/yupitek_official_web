@@ -30,4 +30,6 @@ showTableOfContents: false
 
 ---
 
-Precisa de uma solução de projeção personalizada? [Entre em contato](/pt/contact/) para discutir seu projeto.
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

@@ -81,4 +81,6 @@ For official ALFA Network driver downloads, please visit the [Technical Support 
 
 ---
 
-Need a quote or bulk pricing? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

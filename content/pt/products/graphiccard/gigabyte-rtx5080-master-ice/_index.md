@@ -29,5 +29,5 @@ A GIGABYTE RTX5080 MASTER ICE 16G é a versão branca (ICE) da RTX5080 MASTER, o
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

@@ -30,5 +30,5 @@ La MSI RTX5080 GAMING TRIO OC est le triple ventilateur flagship avec des perfor
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

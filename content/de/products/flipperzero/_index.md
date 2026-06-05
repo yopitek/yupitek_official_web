@@ -30,6 +30,8 @@ Flipper Zero ist ein Open-Source-Multi-Protokoll-Funk-Sicherheitsforschungstool,
 
 ---
 
-Brauchen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}
 
 ---

@@ -25,5 +25,5 @@ GIGABYTE RTX5080 GAMING OC 16G utiliza el sistema de enfriamiento Triple Ventila
 
 ---
 {{< alert >}}
-¿Le interesa este producto? [Contáctenos](/es/contact/) para obtener precios.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

@@ -45,5 +45,5 @@ showTableOfContents: false
 ---
 
 {{< alert >}}
-想為您的空間打造沉浸式體驗？[聯絡我們](/zh-tw/contact/)，我們提供空間評估與設備規劃服務。
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

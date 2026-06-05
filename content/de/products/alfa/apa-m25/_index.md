@@ -69,5 +69,5 @@ Die APA-M25 ist eine Dual-Band-Hochgewinn-Innen-Panel-Antenne von ALFA Network, 
 ---
 
 {{< alert >}}
-Benötigen Sie ein Angebot oder weitere Informationen? [Kontaktieren Sie uns](/de/contact/) für detaillierte Kaufberatung.
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

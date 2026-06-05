@@ -31,4 +31,6 @@ La instalación proyecta contenido informativo, artístico y de bienvenida en la
 
 ---
 
-[Volver al portafolio](/es/solution/cases/) | [Consultar solución similar](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

@@ -41,3 +41,7 @@ featureimage: "/images/products/hak5/key-croc.png"
 |----------|------|
 | 📖 Official Documentation | [View Online](https://docs.hak5.org/key-croc/keycroc-by-hak5/) |
 | ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/croc) |
+
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

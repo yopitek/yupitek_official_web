@@ -31,4 +31,6 @@ La instalación combina proyección mapeada sobre superficies irregulares, audio
 
 ---
 
-[Volver al portafolio](/es/solution/cases/) | [Consultar solución similar](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

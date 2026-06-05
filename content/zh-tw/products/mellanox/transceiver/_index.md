@@ -66,4 +66,6 @@ NVIDIA LinkX® 光收發模組專為滿足高效能運算、企業級儲存與�
 
 ---
 
-需要搭配的光纖跳線？歡迎參考我們的 [光纖跳線目錄](/zh-tw/products/mellanox/cable-fiber/)。如有客製化網路規劃需求，歡迎[聯絡 Yupitek 技術工程團隊](/zh-tw/contact/)。
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

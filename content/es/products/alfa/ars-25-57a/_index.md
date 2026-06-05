@@ -69,5 +69,5 @@ ARS-25-57A es la antena paddle (de paleta) omnidireccional doble banda de ALFA N
 ---
 
 {{< alert >}}
-¿Necesita solicitar cotización o compra por volumen? [Contáctenos](/es/contact/), ofrecemos asesoramiento detallado de compra.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

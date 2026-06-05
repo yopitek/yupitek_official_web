@@ -101,4 +101,6 @@ Al revisar las referencias de los cables, observará diferentes calibres de cabl
 
 ---
 
-¿Necesita ayuda para planificar el guiado de cables en sus armarios? [Contacte con el equipo de ingeniería de Yupitek](/es/contact/) para recibir asesoramiento personalizado.
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

@@ -30,5 +30,5 @@ Die MSI RTX5080 VENTUS 3X OC bietet ein schlichtes Design für Standard-Gehäuse
 ---
 
 {{< alert >}}
-Brauchen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

@@ -39,4 +39,6 @@ SDRLAB provides software-defined radio (SDR) modules and Flipper Zero expansion 
 
 ---
 
-Need a quote? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

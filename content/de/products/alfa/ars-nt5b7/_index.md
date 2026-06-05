@@ -72,5 +72,5 @@ Die industrietaugliche Temperaturbewertung der ARS-NT5B7 (-40 °C ~ +85 °C) mac
 ---
 
 {{< alert >}}
-Benötigen Sie ein Angebot oder weitere Informationen? [Kontaktieren Sie uns](/de/contact/) für detaillierte Kaufberatung.
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

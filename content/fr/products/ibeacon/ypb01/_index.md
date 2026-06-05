@@ -73,5 +73,5 @@ Les paramètres du YPB01 (UUID, Major, Minor, puissance et intervalle) se config
 ---
 
 {{< alert >}}
-Besoin d'un devis sur mesure ou d'une solution d'intégration ? Veuillez contacter notre équipe commerciale directement à : **sales@yupitek.com**
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

@@ -72,5 +72,5 @@ Los parámetros de YPB01 (UUID, Major, Minor, potencia de transmisión e interva
 ---
 
 {{< alert >}}
-¿Necesita un presupuesto personalizado o una solución de integración? Póngase en contacto con nuestro equipo de ventas directamente en: **sales@yupitek.com**
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

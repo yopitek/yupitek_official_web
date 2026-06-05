@@ -103,5 +103,5 @@ AWUS036AXER は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）�
 
 
 {{< alert >}}
-お見積もりやご相談は[こちら](/ja/contact/)からお気軽にどうぞ。
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}

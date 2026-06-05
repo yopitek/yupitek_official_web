@@ -28,5 +28,5 @@ La ASUS PRIME RTX5080-O16G es la versión overclocked (OC) de la PRIME RTX5080-1
 ---
 
 {{< alert >}}
-¿Necesita una cotización? [Contáctenos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

@@ -27,4 +27,6 @@ Houbi é uma importante região produtora de orquídeas em Taiwan, e a exposiç�
 
 ---
 
-[Voltar aos Casos](/pt/solution/cases/) | [Tem interesse? [Entre em contato](/pt/contact/)]
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

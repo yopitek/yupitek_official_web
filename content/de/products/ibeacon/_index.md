@@ -44,6 +44,8 @@ Unser iBeacon-Ökosystem verbindet physische Standorte mit Cloud-Netzwerken. Die
 
 ## Spezifikationsvergleich der iBeacon-Serie
 
+![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
+
 | Modell | Formfaktor | Stromquelle | Batteriekapazität / Lebensdauer | Max. Reichweite | Sensoren | Wasserdicht | Besondere Merkmale |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | YPB01 | Münze / Rund | Austauschbare CR2477 | 1000 mAh (2+ Jahre) | 100 m | Keine | IP67 | Drehbares Gehäuse, interner Einschaltknopf |
@@ -55,5 +57,5 @@ Unser iBeacon-Ökosystem verbindet physische Standorte mit Cloud-Netzwerken. Die
 ---
 
 {{< alert >}}
-Benötigen Sie ein individuelles Angebot oder eine Integrationslösung? Bitte kontaktieren Sie unser Vertriebsteam direkt unter: **sales@yupitek.com**
-{{</alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

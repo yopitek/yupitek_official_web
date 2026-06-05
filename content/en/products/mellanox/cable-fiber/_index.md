@@ -51,4 +51,6 @@ For MPO-12 networks, polarity ensures that the transmitter on one end connects t
 
 ---
 
-Need custom single-mode patch cables (LC-LC or MPO-12 APC)? Please [contact Yupitek team](/en/contact/).
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

@@ -27,6 +27,8 @@ Advanced Card Systems (ACS) est un fabricant reconnu mondialement de lecteurs de
 
 ---
 
-Besoin d'un devis ou d'une solution d'intégration ? [Contactez-nous](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}
 
 ---

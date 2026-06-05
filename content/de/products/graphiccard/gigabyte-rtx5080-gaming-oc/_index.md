@@ -30,5 +30,5 @@ Die GIGABYTE RTX5080 GAMING OC ist die dreifache Lüfter, übertaktete Version d
 ---
 
 {{< alert >}}
-Brauchen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

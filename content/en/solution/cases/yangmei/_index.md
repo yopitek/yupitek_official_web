@@ -27,4 +27,6 @@ The Yangmei District Office required a projection system flexible enough to supp
 
 ---
 
-[Back to Case Studies](/en/solution/cases/) | [Inquire about multi-purpose hall solutions](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

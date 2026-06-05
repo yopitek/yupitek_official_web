@@ -27,4 +27,6 @@ O Pavilhão da Vida da Tech World é um espaço de experiência temático que in
 
 ---
 
-[Voltar aos Casos de Sucesso](/pt/solution/cases/) | [Entre em contato](/pt/contact/) para discutir seu projeto.
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

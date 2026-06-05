@@ -66,4 +66,6 @@ Ao adquirir transceptores, muitos clientes perguntam: *"Posso utilizar transcept
 
 ---
 
-Precisa de cabos de manobra ópticos compatíveis? Veja nosso [Catálogo de cabos de manobra de fibra óptica](/pt/products/mellanox/cable-fiber/). Para projetos de rede personalizados, [fale com os engenheiros da Yupitek](/pt/contact/).
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

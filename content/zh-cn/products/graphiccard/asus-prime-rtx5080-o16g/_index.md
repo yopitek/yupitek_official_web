@@ -28,5 +28,5 @@ ASUS PRIME RTX5080-O16G 是 PRIME RTX5080-16G 的超频（OC）版本，出厂�
 ---
 
 {{< alert >}}
-需要询问报价？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

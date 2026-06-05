@@ -44,5 +44,5 @@ showTableOfContents: false
 ---
 
 {{< alert >}}
-このソリューションにご興味をお持ちでしたら、[お問い合わせ](/ja/contact/)ください。
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}

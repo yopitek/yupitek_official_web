@@ -103,5 +103,5 @@ Alle ALFA-Adapter verfügen über einen Standard-RP-SMA-Anschluss. Rüsten Sie m
 | [ARS NT5B7](/de/products/alfa/ars-nt5b7/) | 2,4 / 5 GHz | 5 / 7 dBi | Omni |
 
 {{< alert >}}
-Benötigen Sie ein Angebot oder weitere Informationen? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

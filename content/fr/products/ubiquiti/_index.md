@@ -58,6 +58,8 @@ Ubiquiti UniFi est la référence de l'industrie pour le réseau sans fil de qua
 
 ---
 
-Besoin d'un devis de planification UniFi ? [Contactez-nous](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}
 
 ---

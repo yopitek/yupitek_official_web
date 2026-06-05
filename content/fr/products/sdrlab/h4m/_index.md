@@ -72,5 +72,5 @@ Le guide de démarrage complet pour votre SDRLab H4M — du déballage aux opér
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

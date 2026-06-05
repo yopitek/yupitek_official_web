@@ -27,5 +27,5 @@ Das Video Game Module ist das offizielle Spiel-Erweiterungsmodul für Flipper Ze
 ---
 
 {{< alert >}}
-Benötigen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

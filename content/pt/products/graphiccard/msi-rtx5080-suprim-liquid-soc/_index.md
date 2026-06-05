@@ -35,5 +35,5 @@ A MSI RTX5080 16G SUPRIM LIQUID SOC é a placa de vídeo topo de linha da MSI co
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

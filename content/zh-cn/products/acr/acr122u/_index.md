@@ -91,5 +91,5 @@ ACR122U 是 ACS 基于 13.56 MHz RFID 技术的 PC 连接式非接触智能卡�
 ---
 
 {{< alert >}}
-需要询问报价或整合方案？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

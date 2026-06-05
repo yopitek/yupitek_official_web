@@ -26,5 +26,5 @@ A capa de silicone protetora oficial do Flipper Zero fornece cobertura total par
 ---
 
 {{< alert >}}
-Precisa de um orçamento? [Entre em Contato](/pt/contact/)
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

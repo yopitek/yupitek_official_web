@@ -27,4 +27,6 @@ L'exposition artistique pluridisciplinaire de Jam Hsiao a fait appel à Yupitek 
 
 ---
 
-Intéressé par une solution similaire ? [Contactez-nous](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

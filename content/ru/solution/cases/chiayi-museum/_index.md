@@ -14,4 +14,6 @@ showBreadcrumbs: true
   <img src="/images/solution/cases/chiayi-museum.webp" alt="Музей Цзяї" />
 {{< /gallery >}}
 
-Заинтересованы? [Свяжитесь с нами](/ru/contact/) для получения дополнительной информации.
+{{< alert >}}
+Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
+{{< /alert >}}

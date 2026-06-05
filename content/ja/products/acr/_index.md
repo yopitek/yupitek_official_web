@@ -27,4 +27,6 @@ Advanced Card Systems (ACS) は世界的に著名なスマートカードリー�
 
 ---
 
-見積もりのお問い合わせは[こちら](/ja/contact/)。
+{{< alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
+{{< /alert >}}

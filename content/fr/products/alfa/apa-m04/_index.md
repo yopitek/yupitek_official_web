@@ -74,5 +74,5 @@ L'APA-M04 est une antenne monobande 2,4 GHz. Utilisée avec des adaptateurs doub
 ---
 
 {{< alert >}}
-Besoin d'un devis ou de plus d'informations ? [Contactez-nous](/fr/contact/) pour des conseils d'achat détaillés.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

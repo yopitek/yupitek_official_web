@@ -51,3 +51,7 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 |--------|--------|
 | 📖 Официальная документация | [Просмотреть онлайн](https://docs.hak5.org/wifi-pineapple-enterprise/wifi-pineapple-enterprise/) |
 | ⬇️ Прошивка и инструменты | [Портал загрузок Hak5](https://downloads.hak5.org/pineapple/enterprise) |
+
+{{< alert >}}
+Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
+{{< /alert >}}

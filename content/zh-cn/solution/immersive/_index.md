@@ -45,5 +45,5 @@ showTableOfContents: false
 ---
 
 {{< alert >}}
-想为您的空间打造沉浸式体验？[联系我们](/zh-cn/contact/)，我们提供空间评估与设备规划服务。
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

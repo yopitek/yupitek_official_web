@@ -45,5 +45,5 @@ Immersive space projection breaks the boundaries of traditional displays, placin
 ---
 
 {{< alert >}}
-Want to create an Immersive experience for your space? [Contact us](/en/contact/) for space assessment and equipment planning services.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

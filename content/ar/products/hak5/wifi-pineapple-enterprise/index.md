@@ -52,3 +52,7 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 |--------|--------|
 | 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/wifi-pineapple-enterprise/wifi-pineapple-enterprise/) |
 | ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/pineapple/enterprise) |
+
+{{< alert >}}
+هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
+{{< /alert >}}

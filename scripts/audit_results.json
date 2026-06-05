@@ -1,0 +1,733 @@
+{
+  "task_1_1": {
+    "acr": {
+      "url": "https://yupitek.com/en/products/acr/",
+      "title": "ACS ACR Series NFC Smart Card Readers · ALFA Network Authorized Distributor Taiwan | Yopitek Ltd",
+      "count": 25,
+      "error": null
+    },
+    "alfa": {
+      "url": "https://yupitek.com/en/products/alfa/",
+      "title": "ALFA Network Wireless Adapters · ALFA Network Authorized Distributor Taiwan | Yopitek Ltd",
+      "count": 36,
+      "error": null
+    },
+    "flipperzero": {
+      "url": "https://yupitek.com/en/products/flipperzero/",
+      "title": "Flipper Zero Multi-Protocol Wireless Security Research Device · ALFA Network Authorized Distributor Taiwan | Yopitek Ltd",
+      "count": 26,
+      "error": null
+    },
+    "graphiccard": {
+      "url": "https://yupitek.com/en/products/graphiccard/",
+      "title": "NVIDIA RTX 5080 Series Graphics Cards · ALFA Network Authorized Distributor Taiwan | Yopitek Ltd",
+      "count": 36,
+      "error": null
+    },
+    "hak5": {
+      "url": "https://yupitek.com/en/products/hak5/",
+      "title": "HAK5 Security Research Tools · ALFA Network Authorized Distributor Taiwan | Yopitek Ltd",
+      "count": 42,
+      "error": null
+    },
+    "mellanox": {
+      "url": "https://yupitek.com/en/products/mellanox/",
+      "title": "Mellanox / NVIDIA ConnectX NICs & Networking Solutions · ALFA Network Authorized Distributor Taiwan | Yopitek Ltd",
+      "count": 29,
+      "error": null
+    },
+    "sdrlab": {
+      "url": "https://yupitek.com/en/products/sdrlab/",
+      "title": "SDRLAB Software-Defined Radio Modules · ALFA Network Authorized Distributor Taiwan | Yopitek Ltd",
+      "count": 29,
+      "error": null
+    },
+    "ubiquiti": {
+      "url": "https://yupitek.com/en/products/ubiquiti/",
+      "title": "Ubiquiti UniFi Enterprise Wireless Network Equipment · ALFA Network Authorized Distributor Taiwan | Yopitek Ltd",
+      "count": 32,
+      "error": null
+    }
+  },
+  "task_1_2": {
+    "zh-tw": {
+      "acr": {
+        "url": "https://yupitek.com/zh-tw/products/acr/",
+        "title": "ACS ACR 系列 NFC 智慧卡讀卡機 · ALFA Network 無線網卡台灣代理 | 榆閤科技 Yopitek",
+        "count": 25,
+        "error": null
+      },
+      "alfa": {
+        "url": "https://yupitek.com/zh-tw/products/alfa/",
+        "title": "ALFA Network 無線網卡 · ALFA Network 無線網卡台灣代理 | 榆閤科技 Yopitek",
+        "count": 36,
+        "error": null
+      },
+      "flipperzero": {
+        "url": "https://yupitek.com/zh-tw/products/flipperzero/",
+        "title": "Flipper Zero 多功能無線安全研究裝置 · ALFA Network 無線網卡台灣代理 | 榆閤科技 Yopitek",
+        "count": 26,
+        "error": null
+      },
+      "graphiccard": {
+        "url": "https://yupitek.com/zh-tw/products/graphiccard/",
+        "title": "NVIDIA RTX 5080 系列顯示卡 · ALFA Network 無線網卡台灣代理 | 榆閤科技 Yopitek",
+        "count": 36,
+        "error": null
+      },
+      "hak5": {
+        "url": "https://yupitek.com/zh-tw/products/hak5/",
+        "title": "HAK5 資安研究工具 · ALFA Network 無線網卡台灣代理 | 榆閤科技 Yopitek",
+        "count": 42,
+        "error": null
+      },
+      "mellanox": {
+        "url": "https://yupitek.com/zh-tw/products/mellanox/",
+        "title": "Mellanox / NVIDIA ConnectX 網路卡與網路解決方案 · ALFA Network 無線網卡台灣代理 | 榆閤科技 Yopitek",
+        "count": 29,
+        "error": null
+      },
+      "sdrlab": {
+        "url": "https://yupitek.com/zh-tw/products/sdrlab/",
+        "title": "SDRLAB 軟體定義無線電模組 · ALFA Network 無線網卡台灣代理 | 榆閤科技 Yopitek",
+        "count": 29,
+        "error": null
+      },
+      "ubiquiti": {
+        "url": "https://yupitek.com/zh-tw/products/ubiquiti/",
+        "title": "Ubiquiti UniFi 企業無線網路設備 · ALFA Network 無線網卡台灣代理 | 榆閤科技 Yopitek",
+        "count": 32,
+        "error": null
+      }
+    },
+    "zh-cn": {
+      "acr": {
+        "url": "https://yupitek.com/zh-cn/products/acr/",
+        "title": "ACS ACR 系列 NFC 智能卡读卡机 · ALFA Network 无线网卡台湾代理 | 榆阖科技 Yopitek",
+        "count": 25,
+        "error": null
+      },
+      "alfa": {
+        "url": "https://yupitek.com/zh-cn/products/alfa/",
+        "title": "ALFA Network 无线网卡 · ALFA Network 无线网卡台湾代理 | 榆阖科技 Yopitek",
+        "count": 36,
+        "error": null
+      },
+      "flipperzero": {
+        "url": "https://yupitek.com/zh-cn/products/flipperzero/",
+        "title": "Flipper Zero 多功能无线安全研究设备 · ALFA Network 无线网卡台湾代理 | 榆阖科技 Yopitek",
+        "count": 26,
+        "error": null
+      },
+      "graphiccard": {
+        "url": "https://yupitek.com/zh-cn/products/graphiccard/",
+        "title": "NVIDIA RTX 5080 系列显卡 · ALFA Network 无线网卡台湾代理 | 榆阖科技 Yopitek",
+        "count": 36,
+        "error": null
+      },
+      "hak5": {
+        "url": "https://yupitek.com/zh-cn/products/hak5/",
+        "title": "HAK5 安全研究工具 · ALFA Network 无线网卡台湾代理 | 榆阖科技 Yopitek",
+        "count": 42,
+        "error": null
+      },
+      "mellanox": {
+        "url": "https://yupitek.com/zh-cn/products/mellanox/",
+        "title": "Mellanox / NVIDIA ConnectX 网卡与网络解决方案 · ALFA Network 无线网卡台湾代理 | 榆阖科技 Yopitek",
+        "count": 29,
+        "error": null
+      },
+      "sdrlab": {
+        "url": "https://yupitek.com/zh-cn/products/sdrlab/",
+        "title": "SDRLAB 软件定义无线电模块 · ALFA Network 无线网卡台湾代理 | 榆阖科技 Yopitek",
+        "count": 29,
+        "error": null
+      },
+      "ubiquiti": {
+        "url": "https://yupitek.com/zh-cn/products/ubiquiti/",
+        "title": "Ubiquiti UniFi 企业无线网络设备 · ALFA Network 无线网卡台湾代理 | 榆阖科技 Yopitek",
+        "count": 32,
+        "error": null
+      }
+    },
+    "ja": {
+      "acr": {
+        "url": "https://yupitek.com/ja/products/acr/",
+        "title": "ACS ACR シリーズ NFC スマートカードリーダー · ALFA Network 無線LAN正規販売代理店 台湾 | Yopitek",
+        "count": 25,
+        "error": null
+      },
+      "alfa": {
+        "url": "https://yupitek.com/ja/products/alfa/",
+        "title": "ALFA Network 無線LANアダプター · ALFA Network 無線LAN正規販売代理店 台湾 | Yopitek",
+        "count": 36,
+        "error": null
+      },
+      "flipperzero": {
+        "url": "https://yupitek.com/ja/products/flipperzero/",
+        "title": "Flipper Zero マルチプロトコル無線セキュリティリサーチデバイス · ALFA Network 無線LAN正規販売代理店 台湾 | Yopitek",
+        "count": 26,
+        "error": null
+      },
+      "graphiccard": {
+        "url": "https://yupitek.com/ja/products/graphiccard/",
+        "title": "NVIDIA RTX 5080 シリーズ グラフィックカード · ALFA Network 無線LAN正規販売代理店 台湾 | Yopitek",
+        "count": 34,
+        "error": null
+      },
+      "hak5": {
+        "url": "https://yupitek.com/ja/products/hak5/",
+        "title": "HAK5 セキュリティリサーチツール · ALFA Network 無線LAN正規販売代理店 台湾 | Yopitek",
+        "count": 34,
+        "error": null
+      },
+      "mellanox": {
+        "url": "https://yupitek.com/ja/products/mellanox/",
+        "title": "Mellanox / NVIDIA ConnectX ネットワークカード＆ネットワーキングソリューション · ALFA Network 無線LAN正規販売代理店 台湾 | Yopitek",
+        "count": 29,
+        "error": null
+      },
+      "sdrlab": {
+        "url": "https://yupitek.com/ja/products/sdrlab/",
+        "title": "SDRLAB ソフトウェア定義無線モジュール · ALFA Network 無線LAN正規販売代理店 台湾 | Yopitek",
+        "count": 27,
+        "error": null
+      },
+      "ubiquiti": {
+        "url": "https://yupitek.com/ja/products/ubiquiti/",
+        "title": "Ubiquiti UniFi エンタープライズ無線ネットワーク機器 · ALFA Network 無線LAN正規販売代理店 台湾 | Yopitek",
+        "count": 32,
+        "error": null
+      }
+    },
+    "ar": {
+      "acr": {
+        "url": "https://yupitek.com/ar/products/acr/",
+        "title": "قارئات بطاقات ACS ACR NFC · موزع ALFA Network المعتمد في تايوان | Yopitek",
+        "count": 25,
+        "error": null
+      },
+      "alfa": {
+        "url": "https://yupitek.com/ar/products/alfa/",
+        "title": "محولات ALFA Network اللاسلكية · موزع ALFA Network المعتمد في تايوان | Yopitek",
+        "count": 36,
+        "error": null
+      },
+      "flipperzero": {
+        "url": "https://yupitek.com/ar/products/flipperzero/",
+        "title": "Flipper Zero — جهاز بحث أمن لاسلكي متعدد البروتوكولات · موزع ALFA Network المعتمد في تايوان | Yopitek",
+        "count": 26,
+        "error": null
+      },
+      "graphiccard": {
+        "url": "https://yupitek.com/ar/products/graphiccard/",
+        "title": "بطاقات رسومات NVIDIA RTX 5080 · موزع ALFA Network المعتمد في تايوان | Yopitek",
+        "count": 34,
+        "error": null
+      },
+      "hak5": {
+        "url": "https://yupitek.com/ar/products/hak5/",
+        "title": "أدوات HAK5 للبحث الأمني · موزع ALFA Network المعتمد في تايوان | Yopitek",
+        "count": 31,
+        "error": null
+      },
+      "mellanox": {
+        "url": "https://yupitek.com/ar/products/mellanox/",
+        "title": "بطاقات شبكة Mellanox / NVIDIA ConnectX وحلول الشبكات · موزع ALFA Network المعتمد في تايوان | Yopitek",
+        "count": 29,
+        "error": null
+      },
+      "sdrlab": {
+        "url": "https://yupitek.com/ar/products/sdrlab/",
+        "title": "وحدات SDRLAB للراديو المُعرَّف بالبرمجيات · موزع ALFA Network المعتمد في تايوان | Yopitek",
+        "count": 25,
+        "error": null
+      },
+      "ubiquiti": {
+        "url": "https://yupitek.com/ar/products/ubiquiti/",
+        "title": "معدات Ubiquiti UniFi للشبكات اللاسلكية المؤسسية · موزع ALFA Network المعتمد في تايوان | Yopitek",
+        "count": 32,
+        "error": null
+      }
+    },
+    "es": {
+      "acr": {
+        "url": "https://yupitek.com/es/products/acr/",
+        "title": "Lectores NFC ACS ACR · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 25,
+        "error": null
+      },
+      "alfa": {
+        "url": "https://yupitek.com/es/products/alfa/",
+        "title": "Adaptadores Inalámbricos ALFA Network · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 36,
+        "error": null
+      },
+      "flipperzero": {
+        "url": "https://yupitek.com/es/products/flipperzero/",
+        "title": "Flipper Zero — Dispositivo Multi-Protocolo de Investigación Inalámbrica · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 26,
+        "error": null
+      },
+      "graphiccard": {
+        "url": "https://yupitek.com/es/products/graphiccard/",
+        "title": "Tarjetas Gráficas NVIDIA RTX 5080 · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 34,
+        "error": null
+      },
+      "hak5": {
+        "url": "https://yupitek.com/es/products/hak5/",
+        "title": "Herramientas de Investigación de Seguridad HAK5 · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 31,
+        "error": null
+      },
+      "mellanox": {
+        "url": "https://yupitek.com/es/products/mellanox/",
+        "title": "Soluciones de red y tarjetas de red ConnectX de Mellanox / NVIDIA · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 29,
+        "error": null
+      },
+      "sdrlab": {
+        "url": "https://yupitek.com/es/products/sdrlab/",
+        "title": "Módulos SDR SDRLAB de Radio Definida por Software · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 25,
+        "error": null
+      },
+      "ubiquiti": {
+        "url": "https://yupitek.com/es/products/ubiquiti/",
+        "title": "Equipos de Red Inalámbrica Empresarial Ubiquiti UniFi · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 32,
+        "error": null
+      }
+    },
+    "pt": {
+      "acr": {
+        "url": "https://yupitek.com/pt/products/acr/",
+        "title": "Leitoras NFC ACS ACR · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 25,
+        "error": null
+      },
+      "alfa": {
+        "url": "https://yupitek.com/pt/products/alfa/",
+        "title": "Adaptadores Sem Fio ALFA Network · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 36,
+        "error": null
+      },
+      "flipperzero": {
+        "url": "https://yupitek.com/pt/products/flipperzero/",
+        "title": "Flipper Zero — Dispositivo Multi-Protocolo de Pesquisa Sem Fio · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 26,
+        "error": null
+      },
+      "graphiccard": {
+        "url": "https://yupitek.com/pt/products/graphiccard/",
+        "title": "Placas de Vídeo NVIDIA RTX 5080 · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 34,
+        "error": null
+      },
+      "hak5": {
+        "url": "https://yupitek.com/pt/products/hak5/",
+        "title": "Ferramentas de Pesquisa em Segurança HAK5 · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 31,
+        "error": null
+      },
+      "mellanox": {
+        "url": "https://yupitek.com/pt/products/mellanox/",
+        "title": "Mellanox / NVIDIA ConnectX e Soluções de Rede · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 29,
+        "error": null
+      },
+      "sdrlab": {
+        "url": "https://yupitek.com/pt/products/sdrlab/",
+        "title": "Módulos SDR SDRLAB de Rádio Definido por Software · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 25,
+        "error": null
+      },
+      "ubiquiti": {
+        "url": "https://yupitek.com/pt/products/ubiquiti/",
+        "title": "Equipamentos de Rede Sem Fio Empresarial Ubiquiti UniFi · Distribuidor Autorizado ALFA Network Taiwan | Yopitek Ltd",
+        "count": 32,
+        "error": null
+      }
+    },
+    "ru": {
+      "acr": {
+        "url": "https://yupitek.com/ru/products/acr/",
+        "title": "Считыватели NFC ACS ACR · Авторизованный дистрибьютор ALFA Network Тайвань | Yopitek",
+        "count": 25,
+        "error": null
+      },
+      "alfa": {
+        "url": "https://yupitek.com/ru/products/alfa/",
+        "title": "Беспроводные адаптеры ALFA Network · Авторизованный дистрибьютор ALFA Network Тайвань | Yopitek",
+        "count": 36,
+        "error": null
+      },
+      "flipperzero": {
+        "url": "https://yupitek.com/ru/products/flipperzero/",
+        "title": "Flipper Zero — Многопротокольное устройство для исследования беспроводной безопасности · Авторизованный дистрибьютор ALFA Network Тайвань | Yopitek",
+        "count": 26,
+        "error": null
+      },
+      "graphiccard": {
+        "url": "https://yupitek.com/ru/products/graphiccard/",
+        "title": "Видеокарты NVIDIA RTX 5080 · Авторизованный дистрибьютор ALFA Network Тайвань | Yopitek",
+        "count": 34,
+        "error": null
+      },
+      "hak5": {
+        "url": "https://yupitek.com/ru/products/hak5/",
+        "title": "Инструменты для исследований безопасности HAK5 · Авторизованный дистрибьютор ALFA Network Тайвань | Yopitek",
+        "count": 31,
+        "error": null
+      },
+      "mellanox": {
+        "url": "https://yupitek.com/ru/products/mellanox/",
+        "title": "Mellanox / NVIDIA ConnectX: сетевые адаптеры и сетевые решения · Авторизованный дистрибьютор ALFA Network Тайвань | Yopitek",
+        "count": 29,
+        "error": null
+      },
+      "sdrlab": {
+        "url": "https://yupitek.com/ru/products/sdrlab/",
+        "title": "Модули SDR SDRLAB — Радио, определяемое программным обеспечением · Авторизованный дистрибьютор ALFA Network Тайвань | Yopitek",
+        "count": 25,
+        "error": null
+      },
+      "ubiquiti": {
+        "url": "https://yupitek.com/ru/products/ubiquiti/",
+        "title": "Корпоративное беспроводное сетевое оборудование Ubiquiti UniFi · Авторизованный дистрибьютор ALFA Network Тайвань | Yopitek",
+        "count": 32,
+        "error": null
+      }
+    },
+    "de": {
+      "acr": {
+        "url": "https://yupitek.com/de/products/acr/",
+        "title": "ACS ACR Series NFC Smart Card Readers · ALFA Network Autorisierter Distributor Taiwan | Yopitek Ltd",
+        "count": 25,
+        "error": null
+      },
+      "alfa": {
+        "url": "https://yupitek.com/de/products/alfa/",
+        "title": "ALFA Network Wireless Adapter · ALFA Network Autorisierter Distributor Taiwan | Yopitek Ltd",
+        "count": 36,
+        "error": null
+      },
+      "flipperzero": {
+        "url": "https://yupitek.com/de/products/flipperzero/",
+        "title": "Flipper Zero Multi-Protocol Wireless Security Research Device · ALFA Network Autorisierter Distributor Taiwan | Yopitek Ltd",
+        "count": 26,
+        "error": null
+      },
+      "graphiccard": {
+        "url": "https://yupitek.com/de/products/graphiccard/",
+        "title": "Grafikkarten — RTX 5080 · ALFA Network Autorisierter Distributor Taiwan | Yopitek Ltd",
+        "count": 34,
+        "error": null
+      },
+      "hak5": {
+        "url": "https://yupitek.com/de/products/hak5/",
+        "title": "HAK5 — Sicherheitsforschungstools · ALFA Network Autorisierter Distributor Taiwan | Yopitek Ltd",
+        "count": 39,
+        "error": null
+      },
+      "mellanox": {
+        "url": "https://yupitek.com/de/products/mellanox/",
+        "title": "Mellanox / NVIDIA ConnectX-Netzwerkschnittstellenkarten & Netzwerklösungen · ALFA Network Autorisierter Distributor Taiwan | Yopitek Ltd",
+        "count": 29,
+        "error": null
+      },
+      "sdrlab": {
+        "url": "https://yupitek.com/de/products/sdrlab/",
+        "title": "SDRLAB Software-Defined Radio Modules · ALFA Network Autorisierter Distributor Taiwan | Yopitek Ltd",
+        "count": 29,
+        "error": null
+      },
+      "ubiquiti": {
+        "url": "https://yupitek.com/de/products/ubiquiti/",
+        "title": "Ubiquiti UniFi — Enterprise-Drahtlosnetzwerk-Ausrüstung · ALFA Network Autorisierter Distributor Taiwan | Yopitek Ltd",
+        "count": 32,
+        "error": null
+      }
+    },
+    "fr": {
+      "acr": {
+        "url": "https://yupitek.com/fr/products/acr/",
+        "title": "Série ACS ACR — Lecteurs de Cartes NFC · Distributeur Agréé ALFA Network Taiwan | Yopitek Ltd",
+        "count": 25,
+        "error": null
+      },
+      "alfa": {
+        "url": "https://yupitek.com/fr/products/alfa/",
+        "title": "Adaptateurs Sans Fil ALFA Network · Distributeur Agréé ALFA Network Taiwan | Yopitek Ltd",
+        "count": 36,
+        "error": null
+      },
+      "flipperzero": {
+        "url": "https://yupitek.com/fr/products/flipperzero/",
+        "title": "Flipper Zero — Appareil de Recherche en Sécurité Multi-Protocole · Distributeur Agréé ALFA Network Taiwan | Yopitek Ltd",
+        "count": 26,
+        "error": null
+      },
+      "graphiccard": {
+        "url": "https://yupitek.com/fr/products/graphiccard/",
+        "title": "Cartes graphiques — RTX 5080 · Distributeur Agréé ALFA Network Taiwan | Yopitek Ltd",
+        "count": 34,
+        "error": null
+      },
+      "hak5": {
+        "url": "https://yupitek.com/fr/products/hak5/",
+        "title": "HAK5 — Outils de Recherche en Sécurité · Distributeur Agréé ALFA Network Taiwan | Yopitek Ltd",
+        "count": 39,
+        "error": null
+      },
+      "mellanox": {
+        "url": "https://yupitek.com/fr/products/mellanox/",
+        "title": "Cartes réseau et solutions de connectivité NVIDIA Mellanox ConnectX · Distributeur Agréé ALFA Network Taiwan | Yopitek Ltd",
+        "count": 29,
+        "error": null
+      },
+      "sdrlab": {
+        "url": "https://yupitek.com/fr/products/sdrlab/",
+        "title": "SDRLAB — Modules Radio Logicielle (SDR) · Distributeur Agréé ALFA Network Taiwan | Yopitek Ltd",
+        "count": 29,
+        "error": null
+      },
+      "ubiquiti": {
+        "url": "https://yupitek.com/fr/products/ubiquiti/",
+        "title": "Ubiquiti UniFi — Équipement Réseau Sans Fil Enterprise · Distributeur Agréé ALFA Network Taiwan | Yopitek Ltd",
+        "count": 32,
+        "error": null
+      }
+    }
+  },
+  "task_1_3": {
+    "acr": {
+      "url": "https://yupitek.com/en/products/acr/",
+      "total_images": 4,
+      "broken_images": [],
+      "error": null
+    },
+    "alfa": {
+      "url": "https://yupitek.com/en/products/alfa/",
+      "total_images": 14,
+      "broken_images": [],
+      "error": null
+    },
+    "flipperzero": {
+      "url": "https://yupitek.com/en/products/flipperzero/",
+      "total_images": 5,
+      "broken_images": [],
+      "error": null
+    },
+    "graphiccard": {
+      "url": "https://yupitek.com/en/products/graphiccard/",
+      "total_images": 15,
+      "broken_images": [
+        {
+          "src": "/images/products/graphiccard/msi-rtx5080-inspire.png",
+          "alt": "MSI RTX5080 16G INSPIRE 3X OC",
+          "broken": true
+        },
+        {
+          "src": "/images/products/graphiccard/msi-rtx5080-suprim-liquid.png",
+          "alt": "MSI RTX5080 16G SUPRIM LIQUID SOC",
+          "broken": true
+        }
+      ],
+      "error": null
+    },
+    "hak5": {
+      "url": "https://yupitek.com/en/products/hak5/",
+      "total_images": 18,
+      "broken_images": [],
+      "error": null
+    },
+    "mellanox": {
+      "url": "https://yupitek.com/en/products/mellanox/",
+      "total_images": 8,
+      "broken_images": [],
+      "error": null
+    },
+    "sdrlab": {
+      "url": "https://yupitek.com/en/products/sdrlab/",
+      "total_images": 8,
+      "broken_images": [],
+      "error": null
+    },
+    "ubiquiti": {
+      "url": "https://yupitek.com/en/products/ubiquiti/",
+      "total_images": 11,
+      "broken_images": [],
+      "error": null
+    }
+  },
+  "issues": [
+    {
+      "type": "count_mismatch",
+      "lang": "ja",
+      "category": "graphiccard",
+      "lang_count": 34,
+      "en_count": 36,
+      "url": "https://yupitek.com/ja/products/graphiccard/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "ja",
+      "category": "hak5",
+      "lang_count": 34,
+      "en_count": 42,
+      "url": "https://yupitek.com/ja/products/hak5/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "ja",
+      "category": "sdrlab",
+      "lang_count": 27,
+      "en_count": 29,
+      "url": "https://yupitek.com/ja/products/sdrlab/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "ar",
+      "category": "graphiccard",
+      "lang_count": 34,
+      "en_count": 36,
+      "url": "https://yupitek.com/ar/products/graphiccard/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "ar",
+      "category": "hak5",
+      "lang_count": 31,
+      "en_count": 42,
+      "url": "https://yupitek.com/ar/products/hak5/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "ar",
+      "category": "sdrlab",
+      "lang_count": 25,
+      "en_count": 29,
+      "url": "https://yupitek.com/ar/products/sdrlab/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "es",
+      "category": "graphiccard",
+      "lang_count": 34,
+      "en_count": 36,
+      "url": "https://yupitek.com/es/products/graphiccard/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "es",
+      "category": "hak5",
+      "lang_count": 31,
+      "en_count": 42,
+      "url": "https://yupitek.com/es/products/hak5/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "es",
+      "category": "sdrlab",
+      "lang_count": 25,
+      "en_count": 29,
+      "url": "https://yupitek.com/es/products/sdrlab/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "pt",
+      "category": "graphiccard",
+      "lang_count": 34,
+      "en_count": 36,
+      "url": "https://yupitek.com/pt/products/graphiccard/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "pt",
+      "category": "hak5",
+      "lang_count": 31,
+      "en_count": 42,
+      "url": "https://yupitek.com/pt/products/hak5/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "pt",
+      "category": "sdrlab",
+      "lang_count": 25,
+      "en_count": 29,
+      "url": "https://yupitek.com/pt/products/sdrlab/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "ru",
+      "category": "graphiccard",
+      "lang_count": 34,
+      "en_count": 36,
+      "url": "https://yupitek.com/ru/products/graphiccard/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "ru",
+      "category": "hak5",
+      "lang_count": 31,
+      "en_count": 42,
+      "url": "https://yupitek.com/ru/products/hak5/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "ru",
+      "category": "sdrlab",
+      "lang_count": 25,
+      "en_count": 29,
+      "url": "https://yupitek.com/ru/products/sdrlab/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "de",
+      "category": "graphiccard",
+      "lang_count": 34,
+      "en_count": 36,
+      "url": "https://yupitek.com/de/products/graphiccard/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "de",
+      "category": "hak5",
+      "lang_count": 39,
+      "en_count": 42,
+      "url": "https://yupitek.com/de/products/hak5/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "fr",
+      "category": "graphiccard",
+      "lang_count": 34,
+      "en_count": 36,
+      "url": "https://yupitek.com/fr/products/graphiccard/"
+    },
+    {
+      "type": "count_mismatch",
+      "lang": "fr",
+      "category": "hak5",
+      "lang_count": 39,
+      "en_count": 42,
+      "url": "https://yupitek.com/fr/products/hak5/"
+    },
+    {
+      "type": "broken_image",
+      "category": "graphiccard",
+      "lang": "en",
+      "src": "/images/products/graphiccard/msi-rtx5080-inspire.png",
+      "alt": "MSI RTX5080 16G INSPIRE 3X OC"
+    },
+    {
+      "type": "broken_image",
+      "category": "graphiccard",
+      "lang": "en",
+      "src": "/images/products/graphiccard/msi-rtx5080-suprim-liquid.png",
+      "alt": "MSI RTX5080 16G SUPRIM LIQUID SOC"
+    }
+  ]
+}

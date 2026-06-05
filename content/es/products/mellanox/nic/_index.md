@@ -121,4 +121,6 @@ Los modelos con sufijos como `-ADAB`, `-CDAB` o `-HEAB` utilizan el formato **OC
 
 ---
 
-¿Busca cables compatibles? Consulte nuestros catálogos de [cables DAC](/es/products/mellanox/cable-dac/) y [cables AOC](/es/products/mellanox/cable-aoc/). Para consultar precios y disponibilidad de stock, [solicite un presupuesto](/es/contact/).
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

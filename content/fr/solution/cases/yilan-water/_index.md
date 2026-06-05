@@ -28,4 +28,6 @@ Le Musée de l'Eau de Yilan a été établi dans une ancienne usine hydraulique 
 
 ---
 
-[Retour aux Études de Cas](/fr/solution/cases/) | [Renseignements sur les solutions pour musées](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

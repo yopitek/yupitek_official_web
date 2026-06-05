@@ -41,5 +41,5 @@ tags: ["Flipper Zero Add-On", "Ethernet", "Network Testing", "Wired Network"]
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

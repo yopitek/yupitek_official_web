@@ -29,5 +29,5 @@ La ASUS PRIME RTX5080-16G cuenta con la GPU NVIDIA GeForce RTX 5080 con 16GB de 
 ---
 
 {{< alert >}}
-¿Necesita una cotización? [Contáctenos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

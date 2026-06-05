@@ -29,5 +29,5 @@ ASUS TUF Gaming RTX5080-O16G-GAMING 以军规 MIL-STD-810H 认证的耐用性为
 ---
 
 {{< alert >}}
-需要询问报价？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

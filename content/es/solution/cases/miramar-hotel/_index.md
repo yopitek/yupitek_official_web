@@ -31,4 +31,6 @@ La instalación opera de forma automática cada noche, convirtiéndose en un atr
 
 ---
 
-[Volver al portafolio](/es/solution/cases/) | [Consultar solución similar](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

@@ -112,6 +112,6 @@ AWUS036ACS 是 Alfa 双频 802.11ac 产品线中最经济实惠的入门款，�
 | [ARS NT5B7](/zh-cn/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | 全向 |
 
 
-{{< alert "info" >}}
-需要询价？[联系我们](/zh-cn/contact/)，我们提供详细采购建议。
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

@@ -26,5 +26,5 @@ Die offizielle Flipper Zero Silikonschutzhülle bietet vollständige Abdeckung z
 ---
 
 {{< alert >}}
-Benötigen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

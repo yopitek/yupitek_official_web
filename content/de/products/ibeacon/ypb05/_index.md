@@ -58,5 +58,5 @@ Parameter werden drahtlos über **BeaconSET+** konfiguriert:
 ---
 
 {{< alert >}}
-Benötigen Sie ein individuelles Angebot oder eine Integrationslösung? Bitte kontaktieren Sie unser Vertriebsteam direkt unter: **sales@yupitek.com**
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

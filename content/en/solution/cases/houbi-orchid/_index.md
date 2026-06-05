@@ -27,4 +27,6 @@ Houbi is one of Taiwan's premier orchid-growing regions, and the annual Orchid E
 
 ---
 
-Interested in a similar solution? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

@@ -28,4 +28,6 @@ tags: ["教育機構", "互動投影", "觸控投影"]
 
 ---
 
-[回到案例展示](/zh-tw/solution/cases/) | [詢問教育機構方案](/zh-tw/contact/)
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

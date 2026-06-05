@@ -30,4 +30,6 @@ showTableOfContents: false
 
 ---
 
-Need a custom projection solution? [Contact us](/en/contact/) to discuss your requirements.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

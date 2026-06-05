@@ -39,4 +39,6 @@ USB Rubber Ducky is the most widely recognized HID injection research tool in th
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

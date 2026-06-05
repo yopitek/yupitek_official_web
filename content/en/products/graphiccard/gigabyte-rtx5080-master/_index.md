@@ -27,4 +27,6 @@ The GIGABYTE RTX5080 MASTER 16G is GIGABYTE's flagship RTX 5080 model. The MASTE
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

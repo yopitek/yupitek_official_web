@@ -30,5 +30,5 @@ La GIGABYTE RTX5080 MASTER est le refroidissement flagship pour les charges de t
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

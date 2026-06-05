@@ -39,3 +39,7 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 |------|------|
 | 📖 官方使用文件 | [線上查看](https://docs.hak5.org/plunder-bug/plunder-bug/) |
 | ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/bug) |
+
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

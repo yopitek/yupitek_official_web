@@ -69,5 +69,5 @@ The APA-M25 is a dual-band high-gain indoor panel antenna from ALFA Network, sup
 ---
 
 {{< alert >}}
-Need a quote or bulk purchase? [Contact Us](/en/contact/) for detailed purchasing advice.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

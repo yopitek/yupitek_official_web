@@ -70,4 +70,6 @@ featureimage: "/images/products/graphiccard/banner-graphiccard.png"
 
 ---
 
-需要询问 RTX 5080 报价或应用咨询？[联系我们](/zh-cn/contact/)
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

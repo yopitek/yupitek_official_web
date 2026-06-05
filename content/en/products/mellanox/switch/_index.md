@@ -66,4 +66,6 @@ Unlike Ethernet networks which are plug-and-play via ARP, an InfiniBand network 
 
 ---
 
-Need architecture design or configuration advice for your cluster? [Contact Yupitek engineers](/en/contact/).
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

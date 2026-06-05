@@ -66,4 +66,6 @@ Diferentemente de redes Ethernet que operam no modo plug-and-play por meio de AR
 
 ---
 
-Precisa de suporte na arquitetura ou orientação sobre configurações do seu cluster? [Fale com os engenheiros da Yupitek](/pt/contact/).
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

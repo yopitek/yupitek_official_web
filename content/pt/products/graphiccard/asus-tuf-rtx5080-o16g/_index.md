@@ -29,5 +29,5 @@ A ASUS TUF Gaming RTX5080-O16G-GAMING tem como núcleo de design a durabilidade 
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

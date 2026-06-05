@@ -28,5 +28,5 @@ GIGABYTE RTX5080 GAMING OC 16G 采用 GIGABYTE 三风扇 WINDFORCE 散热系统�
 ---
 
 {{< alert >}}
-需要询问报价？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

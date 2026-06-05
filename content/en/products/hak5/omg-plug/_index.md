@@ -22,4 +22,6 @@ The O.MG Plug is the adapter-form product in the O.MG series, housed in a USB ch
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

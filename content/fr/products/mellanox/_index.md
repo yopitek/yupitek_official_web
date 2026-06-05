@@ -57,4 +57,6 @@ Les cartes Mellanox sont certifiées pour VMware vSphere (ESXi), Red Hat Enterpr
 
 ---
 
-Besoin de conseils d'architecture ou d'un devis sur mesure ? [Contactez notre équipe commerciale](/fr/contact/) ou écrivez-nous à **sales@yupitek.com**.
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

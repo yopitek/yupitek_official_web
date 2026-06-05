@@ -58,5 +58,5 @@ YPB05 的參數（如 UUID、Major、Minor、廣播功率和間隔時間）可�
 ---
 
 {{< alert >}}
-需要專屬報價或客製化解決方案？請直接來信聯絡我們的銷售團隊：**sales@yupitek.com**
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

@@ -97,5 +97,5 @@ Cloud Gateway Ultra 是建置 UniFi 網路的理想起點，將路由器、控�
 ---
 
 {{< alert >}}
-有興趣了解此產品嗎？[聯絡我們](/zh-tw/contact/)取得報價與 UniFi 網路規劃建議。
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

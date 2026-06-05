@@ -70,3 +70,7 @@ ALFA Network ist ein bekannter taiwanesischer Hersteller von drahtloser Netzwerk
 ## Treiber-Downloads
 
 Offizielle ALFA Network Treiber-Downloads finden Sie auf der [Technische Support-Seite](/de/support/).
+
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

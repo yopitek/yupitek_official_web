@@ -64,7 +64,9 @@ Rapid-Deployment Projektionslösungen für temporäre Ausstellungen und großfl�
 
 Ganztägiger Service in ganz Taiwan: **Taipeh · Taoyuan · Tainan · Yilan · Pingtung**
 
-Brauchen Sie eine benutzerdefinierte Projektionslösung? [Kontaktieren Sie uns](/de/contact/) für Ihre Anforderungen.
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}
 
 ---
 

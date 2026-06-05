@@ -88,5 +88,5 @@ tags: ["Wi-Fi 7", "802.11be", "三频", "6GHz", "PoE+", "企业 AP"]
 ---
 
 {{< alert >}}
-需要询问报价或 UniFi 网络规划？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

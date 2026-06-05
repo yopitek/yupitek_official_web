@@ -53,5 +53,5 @@ Flipper Zero ist ein vielseitiges, taschenformatiges Wireless-Sicherheitsforschu
 ---
 
 {{< alert >}}
-Benötigen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

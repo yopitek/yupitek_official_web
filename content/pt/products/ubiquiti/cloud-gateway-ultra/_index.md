@@ -51,5 +51,5 @@ O UCG-Ultra é a escolha certa quando você quer:
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

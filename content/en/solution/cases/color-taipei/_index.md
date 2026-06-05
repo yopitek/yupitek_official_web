@@ -33,4 +33,6 @@ The Taipei City Hall facade Projection Mapping show is one of Yupitek's landmark
 
 ---
 
-Interested in a similar solution? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

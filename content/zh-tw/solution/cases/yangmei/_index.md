@@ -27,4 +27,6 @@ tags: ["政府機關", "多功能廳", "多機投影"]
 
 ---
 
-[回到案例展示](/zh-tw/solution/cases/) | [詢問多功能廳方案](/zh-tw/contact/)
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

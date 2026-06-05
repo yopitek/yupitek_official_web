@@ -53,4 +53,6 @@ As DPUs BlueField são programadas por meio do framework **NVIDIA DOCA™**, que
 
 ---
 
-Para obter suporte na integração técnica ou solicitar um orçamento, [entre em contato com a equipe comercial da Yupitek](/pt/contact/).
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

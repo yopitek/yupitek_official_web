@@ -41,3 +41,7 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 |--------|--------|
 | 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://github.com/O-MG/MaliciousCableDetector/wiki) |
 | ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/malicious-cable-detector) |
+
+{{< alert >}}
+هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
+{{< /alert >}}

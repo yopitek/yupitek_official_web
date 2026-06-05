@@ -70,5 +70,5 @@ The complete beginner guide for getting started with your SDRLab H4M — from un
 ---
 
 {{< alert >}}
-お見積もりのお問い合わせは[こちら](/ja/contact/)
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}

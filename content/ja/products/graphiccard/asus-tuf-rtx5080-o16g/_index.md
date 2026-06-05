@@ -28,4 +28,6 @@ ASUS TUF Gaming RTX5080-O16G-GAMING は MIL-STD-810H 軍用規格認定の耐久
 
 ---
 
-この製品にご興味をお持ちでしたら、[お問い合わせ](/ja/contact/)ください。
+{{< alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
+{{< /alert >}}

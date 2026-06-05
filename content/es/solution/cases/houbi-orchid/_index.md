@@ -27,4 +27,6 @@ Houbi es una importante zona productora de orquídeas en Taiwán, y la exposici�
 
 ---
 
-[Volver a Casos de Éxito](/es/solution/cases/) | [Consultar solución para exposición agrícola](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

@@ -31,4 +31,6 @@ Plunder Bug LAN Tap is a passive Ethernet tap that sits inline on an Ethernet co
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

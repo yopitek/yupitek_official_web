@@ -51,3 +51,7 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 |------|------|
 | 📖 官方使用文件 | [在线查看](https://docs.hak5.org/wifi-pineapple-pager/wifi-pineapple-pager-by-hak5/) |
 | ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/pineapple/pager) |
+
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

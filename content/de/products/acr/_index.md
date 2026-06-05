@@ -27,6 +27,8 @@ Advanced Card Systems (ACS) ist ein weltweit anerkannter Hersteller von Smart-Ca
 
 ---
 
-Brauchen Sie ein Angebot oder eine Integration? [Kontaktieren Sie uns](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}
 
 ---

@@ -45,5 +45,5 @@ Les musées et les lieux culturels constituent un domaine de service central pou
 ---
 
 {{< alert >}}
-Vous planifiez des systèmes multimédias pour un musée ou une exposition permanente ? [Contactez-nous](/fr/contact/) pour un service de conseil en technologie d'exposition et de planification des équipements.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

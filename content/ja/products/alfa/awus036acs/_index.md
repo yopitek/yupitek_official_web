@@ -111,6 +111,6 @@ AWUS036ACS は、Monitor Mode とパケットインジェクションをサポ�
 | [ARS NT5B7](/ja/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | 無指向性 |
 
 
-{{< alert "info" >}}
-見積もりや購入に関するご相談は[お問い合わせ](/ja/contact/)ください。
+{{< alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}

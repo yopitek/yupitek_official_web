@@ -31,5 +31,5 @@ Die MSI RTX5080 VENTUS 3X OC White Edition bietet die bewährte VENTUS 3X Leistu
 ---
 
 {{< alert >}}
-Brauchen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

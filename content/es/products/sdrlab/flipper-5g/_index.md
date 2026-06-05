@@ -67,5 +67,5 @@ tags: ["Expansión Flipper Zero", "5GHz", "Wi-Fi", "Deauth", "Investigación de 
 {{< /alert >}}
 
 {{< alert >}}
-¿Necesitas cotización? [Contáctanos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

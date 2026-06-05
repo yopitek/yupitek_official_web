@@ -229,8 +229,8 @@ Tech World 生命館案例是榆閤科技跨場域整合能力的完整展現，
 
 ---
 
-{{< alert "circle-info" >}}
-需要客製化投影解決方案？[**聯絡我們**](/zh-tw/contact/)討論您的需求，我們提供免費現場勘查與方案規劃。
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}
 
 <div class="mt-8 text-center">

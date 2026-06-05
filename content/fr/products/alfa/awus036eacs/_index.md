@@ -107,5 +107,5 @@ Tous les adaptateurs ALFA disposent d'un connecteur RP-SMA standard. Améliorez 
 | [ARS NT5B7](/fr/products/alfa/ars-nt5b7/) | 2,4 / 5 GHz | 5 / 7 dBi | Omni |
 
 {{< alert >}}
-Besoin d'un devis ou de conseils d'achat ? [Contactez-nous](/fr/contact/).
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

@@ -66,4 +66,6 @@ When purchasing transceivers, customers often ask: *"Can I use generic or progra
 
 ---
 
-Need compatible fiber patch cables? Check our [Fiber Patch Cables catalog](/en/products/mellanox/cable-fiber/). For custom network designs, please [contact Yupitek engineers](/en/contact/).
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

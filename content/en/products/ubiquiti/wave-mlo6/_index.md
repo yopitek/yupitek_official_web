@@ -88,5 +88,5 @@ Designed for ISP, carrier, and enterprise WAN point-to-point (PtP) wireless back
 ---
 
 {{< alert >}}
-Interested in this product? [Contact us](/en/contact/) for pricing and UniFi network planning.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

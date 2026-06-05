@@ -108,5 +108,5 @@ Ideal for medium to large offices, multi-tenant buildings, or fiber ISP access e
 ---
 
 {{< alert >}}
-Interested in this product? [Contact us](/en/contact/) for pricing and UniFi network planning.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

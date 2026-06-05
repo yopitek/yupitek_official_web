@@ -40,3 +40,7 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 |--------|--------|
 | 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/plunder-bug/plunder-bug/) |
 | ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/bug) |
+
+{{< alert >}}
+هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
+{{< /alert >}}

@@ -66,4 +66,6 @@ Lors de l'achat d'émetteurs-récepteurs, la question se pose souvent : *« Puis
 
 ---
 
-Besoin de jarretières optiques compatibles ? Consultez notre [catalogue de jarretières optiques](/fr/products/mellanox/cable-fiber/). Pour vos conceptions réseau personnalisées, [contactez nos ingénieurs](/fr/contact/).
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

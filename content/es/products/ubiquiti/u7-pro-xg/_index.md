@@ -86,4 +86,6 @@ Ideal para entornos empresariales y comerciales que ya cuentan con infraestructu
 
 ---
 
-¿Le interesa este producto? [Contáctenos](/es/contact/) para obtener precios y planificación de red UniFi.
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

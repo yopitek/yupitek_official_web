@@ -98,5 +98,5 @@ The Switch Lite 16 PoE is the right choice when you need to expand PoE device de
 ---
 
 {{< alert >}}
-Interested in this product? [Contact us](/en/contact/) for pricing and UniFi network planning.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

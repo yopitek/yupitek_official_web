@@ -28,4 +28,6 @@ The ASUS TUF Gaming RTX5080-O16G-GAMING is built around MIL-STD-810H military-gr
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

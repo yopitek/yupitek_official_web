@@ -67,5 +67,5 @@ tags: ["Flipper Zero Add-On", "5GHz", "Wi-Fi", "Deauth", "Security Research"]
 {{< /alert >}}
 
 {{< alert >}}
-Need a quote? [Contact us](/en/contact/)
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

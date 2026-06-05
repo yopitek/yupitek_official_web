@@ -121,4 +121,6 @@ Modelle mit Endungen wie `-ADAB`, `-CDAB` oder `-HEAB` nutzen den Formfaktor **O
 
 ---
 
-Suchen Sie passende Kabel? Werfen Sie einen Blick auf unsere Listen für [DAC-Kabel](/de/products/mellanox/cable-dac/) und [AOC-Kabel](/de/products/mellanox/cable-aoc/). Für Preise und Verfügbarkeiten können Sie direkt ein [Angebot anfordern](/de/contact/).
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

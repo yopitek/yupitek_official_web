@@ -31,4 +31,6 @@ El sistema proyecta animaciones de alta resolución sobre los primeros 30 pisos 
 
 ---
 
-[Volver al portafolio](/es/solution/cases/) | [Consultar solución similar](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

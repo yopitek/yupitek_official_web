@@ -81,4 +81,6 @@ Para descargar los controladores oficiales de ALFA Network, visita la [página d
 
 ---
 
-¿Necesitas cotización o precios por volumen? [Contáctanos](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

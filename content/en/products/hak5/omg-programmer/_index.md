@@ -22,4 +22,6 @@ The O.MG Programmer is the dedicated Firmware flashing tool for O.MG Cable, O.MG
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

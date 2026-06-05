@@ -69,4 +69,6 @@ Yupitek ofrece servicios de adquisición de tarjetas gráficas NVIDIA RTX 5080 p
 
 ---
 
-¿Necesitas cotización? [Contáctanos](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

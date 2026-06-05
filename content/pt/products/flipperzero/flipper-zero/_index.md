@@ -53,5 +53,5 @@ O Flipper Zero é uma ferramenta de pesquisa de segurança sem fio multifunciona
 ---
 
 {{< alert >}}
-Precisa de um orçamento? [Entre em Contato](/pt/contact/)
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

@@ -54,5 +54,5 @@ Yupitek possède une solide expérience dans l'intégration de systèmes multi-p
 ---
 
 {{< alert >}}
-Besoin d'un système de fusion multi-projecteurs ? [Contactez-nous](/fr/contact/) en nous communiquant les détails de votre site pour une proposition de solution sur mesure.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

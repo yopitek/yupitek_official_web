@@ -45,5 +45,5 @@ Yupitek possède une solide expérience dans la réalisation de spectacles de pr
 ---
 
 {{< alert >}}
-Besoin de planifier une projection architecturale ? [Contactez-nous](/fr/contact/) pour discuter de vos besoins événementiels — nous fournissons des recommandations d'équipements et des devis gratuits.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

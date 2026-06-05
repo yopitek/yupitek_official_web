@@ -45,5 +45,5 @@ Museums and cultural venues are a core service area for Yupitek's IT Application
 ---
 
 {{< alert >}}
-Planning multimedia systems for a museum or permanent exhibition? [Contact us](/en/contact/) for exhibition technology consulting and equipment planning services.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

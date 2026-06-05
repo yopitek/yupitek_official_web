@@ -27,4 +27,6 @@ The ASUS ROG ASTRAL RTX5080 O16G is the flagship graphics card in the ROG lineup
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

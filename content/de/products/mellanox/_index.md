@@ -57,4 +57,6 @@ Mellanox-Karten sind für VMware vSphere (ESXi), Red Hat Enterprise Linux (RHEL)
 
 ---
 
-Sie benötigen Unterstützung bei der Planung oder wünschen ein individuelles Angebot für größere Stückzahlen? [Kontaktieren Sie unser Vertriebsteam](/de/contact/) oder schreiben Sie uns an **sales@yupitek.com**.
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

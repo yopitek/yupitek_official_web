@@ -57,4 +57,6 @@ As placas Mellanox contam com certificação completa para VMware vSphere (ESXi)
 
 ---
 
-Precisa de suporte na arquitetura do seu projeto ou de um orçamento sob medida para grandes volumes? [Entre em contato com nossa equipe comercial](/pt/contact/) ou envie um e-mail para **sales@yupitek.com**.
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

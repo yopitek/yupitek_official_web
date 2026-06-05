@@ -72,5 +72,5 @@ As especificações de temperatura nível industrial do ARS-NT5B7 (-40°C ~ +85�
 ---
 
 {{< alert >}}
-Precisa solicitar orçamento ou compra em volume? [Entre em Contato](/pt/contact/), oferecemos orientação detalhada de compra.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

@@ -65,5 +65,5 @@ The complete beginner guide for getting started with your SDRLab H4M — from un
 ---
 
 {{< alert >}}
-¿Necesitas cotización? [Contáctanos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

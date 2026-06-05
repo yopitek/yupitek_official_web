@@ -47,3 +47,7 @@ featureimage: "/images/products/hak5/omg-cable.png"
 |--------|--------|
 | 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://o.mg.lol/setup/OMGCable/) |
 | ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/omg) |
+
+{{< alert >}}
+هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
+{{< /alert >}}

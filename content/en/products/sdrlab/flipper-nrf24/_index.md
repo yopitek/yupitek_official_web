@@ -46,5 +46,5 @@ tags: ["Flipper Zero Add-On", "NRF24", "2.4GHz", "MouseJacker", "Security Resear
 ---
 
 {{< alert >}}
-Need a quote? [Contact us](/en/contact/)
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

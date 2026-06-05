@@ -29,4 +29,6 @@ featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 
 ---
 
-للاستفسار عن الأسعار، [تواصل معنا](/ar/contact/).
+{{< alert >}}
+هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
+{{< /alert >}}

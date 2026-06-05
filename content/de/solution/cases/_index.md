@@ -30,4 +30,6 @@ showTableOfContents: false
 
 ---
 
-Benötigen Sie eine maßgeschneiderte Projektionslösung? [Kontaktieren Sie uns](/de/contact/), um Ihre Anforderungen zu besprechen.
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

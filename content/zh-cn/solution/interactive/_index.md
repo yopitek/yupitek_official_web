@@ -52,5 +52,5 @@ showTableOfContents: false
 ---
 
 {{< alert >}}
-想为您的空间加入互动体验？[联系我们](/zh-cn/contact/)，提供场地平面图即可获得互动投影规划建议。
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

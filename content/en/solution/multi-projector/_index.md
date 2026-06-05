@@ -54,5 +54,5 @@ Yupitek has extensive experience integrating multi-projector systems, with compl
 ---
 
 {{< alert >}}
-Need a multi-projector blending system? [Contact us](/en/contact/) with your venue details for a custom solution proposal.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

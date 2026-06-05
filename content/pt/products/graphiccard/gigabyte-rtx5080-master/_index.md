@@ -28,5 +28,5 @@ A GIGABYTE RTX5080 MASTER 16G é o modelo topo de linha da GIGABYTE para RTX 508
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

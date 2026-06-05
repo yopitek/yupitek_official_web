@@ -121,4 +121,6 @@ Les modèles se terminant par des suffixes comme `-ADAB`, `-CDAB` ou `-HEAB` ado
 
 ---
 
-Besoin de câbles compatibles ? Consultez nos gammes de [câbles DAC](/fr/products/mellanox/cable-dac/) et de [câbles AOC](/fr/products/mellanox/cable-aoc/). Pour connaître les tarifs et les disponibilités, [demandez un devis](/fr/contact/).
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

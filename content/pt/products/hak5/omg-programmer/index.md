@@ -38,3 +38,7 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 |---------|------|
 | 📖 Documentação oficial | [Ver online](https://o-mg.github.io/WebFlasher/) |
 | ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/omg) |
+
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

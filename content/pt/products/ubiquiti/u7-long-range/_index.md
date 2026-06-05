@@ -81,5 +81,5 @@ Indicado para armazéns, grandes lojas de varejo, ginásios, áreas externas cob
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços e planejamento de rede UniFi.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

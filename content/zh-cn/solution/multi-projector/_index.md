@@ -54,5 +54,5 @@ showTableOfContents: false
 ---
 
 {{< alert >}}
-需要多机融合系统规划？[联系我们](/zh-cn/contact/)，提供场地信息即可获得定制化方案建议。
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

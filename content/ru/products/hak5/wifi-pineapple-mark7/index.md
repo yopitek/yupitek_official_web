@@ -48,3 +48,7 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 |--------|--------|
 | 📖 Официальная документация | [Просмотреть онлайн](https://docs.hak5.org/wifi-pineapple/wifi-pineapple-mk7-by-hak5/) |
 | ⬇️ Прошивка и инструменты | [Портал загрузок Hak5](https://downloads.hak5.org/pineapple/mk7) |
+
+{{< alert >}}
+Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
+{{< /alert >}}

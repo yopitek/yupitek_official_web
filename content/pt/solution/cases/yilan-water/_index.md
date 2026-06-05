@@ -28,4 +28,6 @@ O Museu do Saneamento de Yilan foi criado a partir da transformação de uma est
 
 ---
 
-[Voltar aos Casos de Sucesso](/pt/solution/cases/) | [Entre em contato](/pt/contact/) para discutir seu projeto.
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

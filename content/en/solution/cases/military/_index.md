@@ -28,4 +28,6 @@ The Military Police Command adopted a digital war game simulation system, with Y
 
 ---
 
-Interested in a similar solution? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

@@ -27,4 +27,6 @@ Rong Cheng Paper a organisé une exposition d'entreprise centrée sur la respons
 
 ---
 
-Intéressé par une solution similaire ? [Contactez-nous](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

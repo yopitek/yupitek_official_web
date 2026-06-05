@@ -53,5 +53,5 @@ tags: ["SDR", "RTL-SDR", "Radio Reception", "USB", "GNU Radio"]
 ---
 
 {{< alert >}}
-Angebot gewünscht? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

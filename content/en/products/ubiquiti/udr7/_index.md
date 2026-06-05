@@ -129,5 +129,5 @@ Ideal for small to medium offices, retail, food service, and home environments t
 ---
 
 {{< alert >}}
-Interested in this product? [Contact us](/en/contact/) for pricing and UniFi network planning.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

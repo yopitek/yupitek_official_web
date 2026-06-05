@@ -47,5 +47,5 @@ As necessidades de projeção em eventos ao vivo são muito diferentes das expos
 ---
 
 {{< alert >}}
-Tem necessidades de projeção para eventos? [Entre em contato](/pt/contact/) para discutir seu projeto.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

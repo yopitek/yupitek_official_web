@@ -44,6 +44,8 @@ Yupitek iBeacon 产品是新一代蓝牙低功耗 (BLE 5.0) 信标设备，适�
 
 ## iBeacon 系列规格比较
 
+![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
+
 | 型号 | 外观特征 | 电源规格 | 电池容量 / 寿命 | 最大距离 | 传感器 | 防水等级 | 特殊功能 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | YPB01 | 硬币型 / 圆形 | 可更换 CR2477 | 1000 mAh (2年以上) | 100 米 | 无 | IP67 | 旋转式外壳，内部电源按钮 |
@@ -55,5 +57,5 @@ Yupitek iBeacon 产品是新一代蓝牙低功耗 (BLE 5.0) 信标设备，适�
 ---
 
 {{< alert >}}
-需要专属报价或定制化解决方案？请直接来信联系我们的销售团队：**sales@yupitek.com**
-{{</alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

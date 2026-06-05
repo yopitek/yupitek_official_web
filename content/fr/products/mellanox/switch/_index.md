@@ -66,4 +66,6 @@ Dans les nœuds serveurs multi-GPU (tels que NVIDIA HGX H100 dotés de 8 GPU), c
 
 ---
 
-Besoin d'aide pour concevoir l'architecture ou configurer votre cluster ? [Contactez les ingénieurs de Yupitek](/fr/contact/).
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

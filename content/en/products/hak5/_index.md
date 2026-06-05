@@ -69,4 +69,6 @@ HAK5 is a globally recognized manufacturer of security research tools, widely us
 
 ---
 
-Need a quote? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

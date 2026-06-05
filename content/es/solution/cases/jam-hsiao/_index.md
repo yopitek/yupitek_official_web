@@ -27,4 +27,6 @@ La exposición artística interdisciplinaria de Jam Hsiao invitó a Yupitek a cr
 
 ---
 
-[Volver a Casos de Éxito](/es/solution/cases/) | [Consultar solución para exposición de arte](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

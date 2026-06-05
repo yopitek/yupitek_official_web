@@ -46,3 +46,7 @@ featureimage: "/images/products/hak5/omg-cable.png"
 |--------|--------|
 | 📖 Официальная документация | [Просмотреть онлайн](https://o.mg.lol/setup/OMGCable/) |
 | ⬇️ Прошивка и инструменты | [Портал загрузок Hak5](https://downloads.hak5.org/omg) |
+
+{{< alert >}}
+Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
+{{< /alert >}}

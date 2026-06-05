@@ -30,5 +30,5 @@ Die ASUS ProArt RTX5080 O16G ist speziell für Content-Creator entwickelt, mit o
 ---
 
 {{< alert >}}
-Brauchen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

@@ -108,5 +108,5 @@ tags: ["Cloud Gateway", "光纖 WAN", "UniFi 控制器", "企業閘道"]
 ---
 
 {{< alert >}}
-需要詢問報價或 UniFi 網路規劃？[聯絡我們](/zh-tw/contact/)
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

@@ -39,5 +39,5 @@ tags: ["Expansão Flipper Zero", "Ethernet", "Teste de Rede", "Rede Cabeada"]
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

@@ -28,5 +28,5 @@ A MSI RTX5080 16G VENTUS 3X OC adota o estilo de design discreto MSI VENTUS, com
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

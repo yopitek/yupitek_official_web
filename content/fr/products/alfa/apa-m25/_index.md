@@ -69,5 +69,5 @@ L'APA-M25 est une antenne panneau intérieure double bande haut gain d'ALFA Netw
 ---
 
 {{< alert >}}
-Besoin d'un devis ou de plus d'informations ? [Contactez-nous](/fr/contact/) pour des conseils d'achat détaillés.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

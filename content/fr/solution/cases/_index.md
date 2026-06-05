@@ -30,4 +30,6 @@ showTableOfContents: false
 
 ---
 
-Besoin d'une solution de projection sur mesure ? [Contactez-nous](/fr/contact/) pour discuter de vos besoins.
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

@@ -45,5 +45,5 @@ Los museos y espacios culturales son el área de servicio principal del departam
 ---
 
 {{< alert >}}
-¿Tiene un proyecto de proyección? [Contáctenos](/es/contact/) para obtener una consulta.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

@@ -121,4 +121,6 @@ NVIDIA Mellanox ConnectX 網路卡為企業伺服器與 AI 運算叢集提供極
 
 ---
 
-需要搭配的線纜？歡迎參考我們的 [直連銅纜 (DAC)](/zh-tw/products/mellanox/cable-dac/) 與 [主動式光纜 (AOC)](/zh-tw/products/mellanox/cable-aoc/) 產品清單。如需詢問價格與庫存狀況，歡迎[索取報價](/zh-tw/contact/)。
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

@@ -28,5 +28,5 @@ A MSI RTX5080 16G INSPIRE 3X OC é a placa de vídeo RTX 5080 da linha MSI INSPI
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

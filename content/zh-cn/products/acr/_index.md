@@ -27,4 +27,6 @@ Advanced Card Systems (ACS) 是全球知名的智能卡读卡机制造商，ACR 
 
 ---
 
-需要询问报价或集成方案？[联系我们](/zh-cn/contact/)
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

@@ -31,5 +31,5 @@ La MSI RTX5080 VENTUS 3X OC White Edition offre la puissance éprouvée VENTUS 3
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

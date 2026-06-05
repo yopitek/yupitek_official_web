@@ -63,5 +63,5 @@ The complete beginner guide for getting started with your SDRLab H4M — from un
 </div>
 ---
 {{< alert >}}
-Хотите запросить коммерческое предложение? [Свяжитесь с нами](/ru/contact/)
+Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
 {{< /alert >}}

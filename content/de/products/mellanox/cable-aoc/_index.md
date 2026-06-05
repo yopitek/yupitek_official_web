@@ -79,4 +79,6 @@ Die Entscheidung zwischen DAC-Kupferkabeln und aktiven optischen Kabeln (AOC) h�
 
 ---
 
-Benötigen Sie Unterstützung bei der Netzwerkplanung oder Preisdetails? [Kontaktieren Sie unser Vertriebsteam](/de/contact/).
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

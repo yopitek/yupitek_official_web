@@ -88,5 +88,5 @@ Idéal pour les bureaux d'entreprise, les établissements d'enseignement, l'hôt
 ---
 
 {{< alert >}}
-Intéressé par ce produit ? [Contactez-nous](/fr/contact/) pour un devis et la planification de votre réseau UniFi.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

@@ -65,5 +65,5 @@ The complete beginner guide for getting started with your SDRLab H4M — from un
 </div>
 ---
 {{< alert >}}
-هل تريد الاستفسار عن الأسعار؟ [اتصل بنا](/ar/contact/)
+هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}

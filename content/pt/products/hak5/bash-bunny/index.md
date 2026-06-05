@@ -46,3 +46,7 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 |---------|------|
 | 📖 Documentação oficial | [Ver online](https://docs.hak5.org/bash-bunny/bash-bunny-by-hak5/) |
 | ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/bunny) |
+
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

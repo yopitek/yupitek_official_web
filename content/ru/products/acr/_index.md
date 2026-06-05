@@ -23,4 +23,6 @@ featureimage: "/images/products/acr/banner-acr.png"
 
 ---
 
-Нужна консультация? [Свяжитесь с нами](/ru/contact/)
+{{< alert >}}
+Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
+{{< /alert >}}

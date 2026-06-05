@@ -79,4 +79,6 @@ La elección entre cables de cobre de conexión directa (DAC) y cables ópticos 
 
 ---
 
-¿Necesita ayuda con el diseño de la arquitectura o detalles sobre precios? [Contacte con nuestro equipo de ventas técnicas](/es/contact/).
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

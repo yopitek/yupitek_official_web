@@ -70,5 +70,5 @@ When paired with AWUS036AXM / AWUS036AXML, the 6 GHz band can reach up to 1200 M
 ---
 
 {{< alert >}}
-Need a quote or bulk purchase? [Contact Us](/en/contact/) for detailed purchasing advice.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

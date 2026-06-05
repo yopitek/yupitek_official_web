@@ -45,5 +45,5 @@ tags: ["Flipper Zero Add-On", "ESP32", "CC1101", "NRF24", "Wi-Fi Marauder", "Sec
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

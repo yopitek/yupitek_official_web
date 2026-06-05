@@ -141,5 +141,5 @@ In your webhook server, parse the incoming JSON payload. The event object will l
 ---
 
 {{< alert >}}
-Need a custom quotation or integration solution? Please contact our sales team directly at: **sales@yupitek.com**
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

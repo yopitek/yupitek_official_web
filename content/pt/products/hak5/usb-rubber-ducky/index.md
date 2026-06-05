@@ -43,3 +43,7 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 |---------|------|
 | 📖 Documentação oficial | [Ver online](https://docs.hak5.org/hak5-usb-rubber-ducky/usb-rubber-ducky-by-hak5/) |
 | ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/ducky) |
+
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

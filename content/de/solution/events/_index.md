@@ -47,5 +47,5 @@ Projektionsanforderungen für Veranstaltungen unterscheiden sich grundlegend von
 ---
 
 {{< alert >}}
-Haben Sie eine Veranstaltungsprojektionsanforderung? [Kontaktieren Sie uns](/de/contact/) mit Datum und Veranstaltungsort – wir erstellen Ihnen umgehend ein Angebot.
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

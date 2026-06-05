@@ -30,5 +30,5 @@ L'ASUS ProArt RTX5080 O16G est spécialement conçue pour les créateurs de cont
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

@@ -27,4 +27,6 @@ Das Yangmei Bezirksamt benötigte ein Projektionssystem, das flexibel genug ist,
 
 ---
 
-[Zurück zu den Fallstudien](/de/solution/cases/) | [Anfrage zu Mehrzweckhallen-Lösungen](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

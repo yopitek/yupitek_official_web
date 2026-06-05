@@ -27,4 +27,6 @@ Die Tech World Life Hall ist ein thematischer Erlebnisraum, der Technologie und 
 
 ---
 
-[Zurück zu den Fallstudien](/de/solution/cases/) | [Anfrage zu Themenhallen-Lösungen](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

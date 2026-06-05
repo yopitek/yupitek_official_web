@@ -30,5 +30,5 @@ Die ASUS TUF RTX5080-O16G verkörpert TUF Gaming's militärische Qualitätsstand
 ---
 
 {{< alert >}}
-Brauchen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

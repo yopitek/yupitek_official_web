@@ -120,5 +120,5 @@ YPB03 的各项参数（包括 UUID、Major、Minor、广播功率和广播间�
 ---
 
 {{< alert >}}
-需要专属报价或定制化解决方案？请直接来信联系我们的销售团队：**sales@yupitek.com**
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

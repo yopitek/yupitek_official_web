@@ -27,4 +27,6 @@ La sala multifuncional de la Oficina del Distrito de Yangmei requería un sistem
 
 ---
 
-[Volver al portafolio](/es/solution/cases/) | [Consultar solución para sala multifuncional](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

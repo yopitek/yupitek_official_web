@@ -27,4 +27,6 @@ The GIGABYTE RTX5080 GAMING OC 16G features GIGABYTE's WINDFORCE triple-fan cool
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

@@ -70,5 +70,5 @@ Ao usar com AWUS036AXM / AWUS036AXML, a banda de 6 GHz pode atingir até 1200 Mb
 ---
 
 {{< alert >}}
-Precisa solicitar orçamento ou compra em volume? [Entre em Contato](/pt/contact/), oferecemos orientação detalhada de compra.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

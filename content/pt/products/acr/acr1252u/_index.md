@@ -106,5 +106,5 @@ O ACR1252U é um leitor conectado ao PC certificado pelo NFC Forum, baseado em t
 ---
 
 {{< alert >}}
-Precisa de orçamento ou suporte de integração? [Fale conosco](/pt/contact/)
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

@@ -39,3 +39,7 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 |----------|--------|
 | �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/plunder-bug/plunder-bug/) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/bug) |
+
+{{< alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
+{{< /alert >}}

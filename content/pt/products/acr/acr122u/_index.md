@@ -91,5 +91,5 @@ O ACR122U é um leitor/gravador de cartões inteligentes sem contato conectado a
 ---
 
 {{< alert >}}
-Precisa de orçamento ou suporte de integração? [Fale conosco](/pt/contact/)
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

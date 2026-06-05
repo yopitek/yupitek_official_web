@@ -27,4 +27,6 @@ Tech World Life Hall is a themed experience space combining technology and life 
 
 ---
 
-[Back to Case Studies](/en/solution/cases/) | [Inquire about theme hall solutions](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

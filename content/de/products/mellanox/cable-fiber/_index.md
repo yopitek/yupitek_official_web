@@ -51,4 +51,6 @@ Bei MPO-12-Verbindungen stellt die Polarität sicher, dass der Sender (Transmitt
 
 ---
 
-Benötigen Sie kundenspezifische Singlemode-Patchkabel (LC-LC oder MPO-12 APC)? [Kontaktieren Sie das Yupitek-Team](/de/contact/).
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

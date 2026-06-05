@@ -101,4 +101,6 @@ NVIDIA LinkX® 直連銅纜 (DAC) 採用銅導線連接，是 5 公尺內高速�
 
 ---
 
-需要規劃機櫃理線方案？歡迎[聯絡 Yupitek 技術工程團隊](/zh-tw/contact/)取得專業建議。
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

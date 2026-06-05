@@ -53,5 +53,5 @@ Flipper Zero es una herramienta de investigación de seguridad inalámbrica mult
 ---
 
 {{< alert >}}
-¿Necesita una cotización? [Contáctenos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

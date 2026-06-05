@@ -31,5 +31,5 @@ Key Croc is a security research tool that sits inline between a keyboard and a c
 ---
 
 {{< alert >}}
-Need a quote? [Contact Us](/en/contact/)
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

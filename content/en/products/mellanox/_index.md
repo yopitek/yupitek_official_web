@@ -57,4 +57,6 @@ Mellanox cards are fully certified on VMware vSphere (ESXi), Red Hat Enterprise 
 
 ---
 
-Need architectural guidance or a customized bulk quote? [Contact our sales team](/en/contact/) or email us at **sales@yupitek.com**.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

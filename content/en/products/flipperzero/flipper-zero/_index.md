@@ -53,5 +53,5 @@ Flipper Zero is a versatile, pocket-sized wireless security research tool that i
 ---
 
 {{< alert >}}
-Need a quote? [Contact Us](/en/contact/)
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

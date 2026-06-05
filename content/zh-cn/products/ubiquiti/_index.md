@@ -58,4 +58,6 @@ Ubiquiti UniFi 是企业级无线网络的行业标杆品牌，以高性能、�
 
 ---
 
-需要询问 UniFi 规划报价？[联系我们](/zh-cn/contact/)
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

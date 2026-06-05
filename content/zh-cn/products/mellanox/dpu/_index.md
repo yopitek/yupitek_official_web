@@ -53,4 +53,6 @@ BlueField DPU 的开发基于 **NVIDIA DOCA™** 软件框架。它为开发网�
 
 ---
 
-如需获取技术对接支持或产品报价，请随时[联系 Yupitek 销售团队](/zh-cn/contact/)。
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

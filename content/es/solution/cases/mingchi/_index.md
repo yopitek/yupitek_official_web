@@ -28,4 +28,6 @@ La Universidad de Tecnología Mingchi implementó un sistema de proyección tác
 
 ---
 
-[Volver a Casos de Estudio](/es/solution/cases/) | ¿Interesado? [Contáctenos](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

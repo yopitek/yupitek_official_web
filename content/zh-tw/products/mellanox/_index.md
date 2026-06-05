@@ -57,4 +57,6 @@ Mellanox 網路卡已獲得 VMware vSphere (ESXi)、Red Hat Enterprise Linux (RH
 
 ---
 
-需要網路架構規劃建議或大宗採購報價？歡迎[聯絡我們的銷售團隊](/zh-tw/contact/)或來信至 **sales@yupitek.com**。
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

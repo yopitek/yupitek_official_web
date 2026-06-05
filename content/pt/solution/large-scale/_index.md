@@ -49,5 +49,5 @@ A Yupitek possui experiência comprovada em projetos de grande escala em Taiwan,
 ---
 
 {{< alert >}}
-Planejando um evento ou instalação de grande porte? [Entre em contato](/pt/contact/) para discutir seu projeto com nossa equipe técnica.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

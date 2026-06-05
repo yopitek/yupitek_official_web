@@ -30,6 +30,8 @@ Flipper Zero est un outil de recherche en sécurité sans fil multi-protocole op
 
 ---
 
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}
 
 ---

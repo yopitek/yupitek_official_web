@@ -51,4 +51,6 @@ NVIDIA LinkX® 光纖跳線用於光收發模組之間的物理連接。採用 L
 
 ---
 
-需要客製化單模光纖跳線 (如 LC-LC 或 MPO-12 APC)？歡迎[聯絡 Yupitek 團隊](/zh-tw/contact/)。
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

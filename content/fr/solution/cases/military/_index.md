@@ -28,4 +28,6 @@ Le Commandement de la Police Militaire a adopté un système de simulation de gu
 
 ---
 
-Intéressé par une solution similaire ? [Contactez-nous](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

@@ -70,4 +70,6 @@ Yopitek offers NVIDIA RTX 5080 series graphics card procurement services for AI 
 
 ---
 
-Need an RTX 5080 quote or application consultation? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

@@ -28,4 +28,6 @@ tags: ["國防應用", "多機融合", "指揮中心"]
 
 ---
 
-[回到案例展示](/zh-tw/solution/cases/) | [詢問指揮中心方案](/zh-tw/contact/)
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

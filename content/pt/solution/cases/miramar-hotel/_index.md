@@ -37,4 +37,6 @@ O projeto exigiu equilíbrio entre impacto visual e elegância estética: os equ
 
 ---
 
-[Voltar aos Casos](/pt/solution/cases/) | [Entre em contato](/pt/contact/) para discutir seu projeto.
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

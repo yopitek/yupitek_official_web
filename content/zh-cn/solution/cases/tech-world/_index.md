@@ -27,4 +27,6 @@ Tech World 生命馆是结合科技与生命科学的主题体验馆。榆閤科
 
 ---
 
-[回到案例展示](/zh-cn/solution/cases/) | [询问主题馆方案](/zh-cn/contact/)
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

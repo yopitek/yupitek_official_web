@@ -58,6 +58,8 @@ Ubiquiti UniFi ist der Industriestandard für unternehmensklasse drahtlose Netzw
 
 ---
 
-Brauchen Sie ein UniFi-Planungsangebot? [Kontaktieren Sie uns](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}
 
 ---

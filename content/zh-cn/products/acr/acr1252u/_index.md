@@ -106,5 +106,5 @@ ACR1252U 是 ACS 取得 NFC Forum 认证的 PC 连接式读卡机，采用 13.56
 ---
 
 {{< alert >}}
-需要询问报价或整合方案？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

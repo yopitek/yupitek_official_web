@@ -52,5 +52,5 @@ Interactive Projection transforms static imagery into touchable, responsive dyna
 ---
 
 {{< alert >}}
-Want to add interactive experiences to your space? [Contact us](/en/contact/) — provide a floor plan to receive Interactive Projection planning recommendations.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

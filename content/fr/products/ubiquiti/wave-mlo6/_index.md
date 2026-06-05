@@ -88,5 +88,5 @@ Conçu pour les liaisons WAN point à point sans fil pour ISP, opérateurs et en
 ---
 
 {{< alert >}}
-Intéressé par ce produit ? [Contactez-nous](/fr/contact/) pour un devis et la planification de votre réseau UniFi.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

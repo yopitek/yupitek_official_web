@@ -51,4 +51,6 @@ Pour les réseaux MPO-12, la polarité garantit que l'émetteur d'un côté est 
 
 ---
 
-Besoin de jarretières monomodes sur mesure (LC-LC ou MPO-12 APC) ? [Contactez l'équipe de Yupitek](/fr/contact/).
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

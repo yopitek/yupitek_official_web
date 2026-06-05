@@ -57,4 +57,6 @@ VMware vSphere (ESXi)、Red Hat Enterprise Linux (RHEL)、Ubuntu、Windows Serve
 
 ---
 
-導入に向けた構成のご相談や、大口導入での御見積をご希望ですか？[弊社セールスチームにお問い合わせいただくか](/ja/contact/)、**sales@yupitek.com**までメールにてご連絡ください。
+{{< alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
+{{< /alert >}}

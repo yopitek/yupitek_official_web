@@ -57,4 +57,6 @@ featureimage: "/images/products/mellanox/ai-generated/hero/mellanox-hero-banner.
 
 ---
 
-Нужна техническая консультация или расчет стоимости оптовой партии? [Свяжитесь с нашим отделом продаж](/ru/contact/) или напишите нам по адресу **sales@yupitek.com**.
+{{< alert >}}
+Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
+{{< /alert >}}

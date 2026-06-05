@@ -37,5 +37,5 @@ languageDirection: rtl
 
 ---
 {{< alert >}}
-هل أنت مهتم؟ [تواصل معنا](/ar/contact/)
+هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}

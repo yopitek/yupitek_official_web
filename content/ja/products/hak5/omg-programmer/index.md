@@ -38,3 +38,7 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 |----------|--------|
 | �� 公式ドキュメント | [オンラインで見る](https://o-mg.github.io/WebFlasher/) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/omg) |
+
+{{< alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
+{{< /alert >}}

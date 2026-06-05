@@ -79,4 +79,6 @@ Le choix entre les câbles cuivre à attache directe (DAC) et les câbles optiqu
 
 ---
 
-Besoin d'aide pour concevoir votre architecture réseau ou connaître les prix ? [Contactez notre équipe commerciale](/fr/contact/).
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

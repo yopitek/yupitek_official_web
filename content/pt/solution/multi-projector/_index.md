@@ -54,5 +54,5 @@ A Yupitek possui ampla experiência em integração de sistemas multi-projetor c
 ---
 
 {{< alert >}}
-Precisa de planejamento de sistema multi-projetor com fusão? [Entre em contato](/pt/contact/) para discutir seu projeto.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

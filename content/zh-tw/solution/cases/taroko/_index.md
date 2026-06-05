@@ -28,4 +28,6 @@ tags: ["娛樂設施", "互動地板", "體感偵測"]
 
 ---
 
-[回到案例展示](/zh-tw/solution/cases/) | [詢問互動地板方案](/zh-tw/contact/)
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

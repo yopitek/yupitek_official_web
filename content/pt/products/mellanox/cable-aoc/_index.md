@@ -79,4 +79,6 @@ A escolha entre cabos de cobre de conexão direta (DAC) e cabos ópticos ativos 
 
 ---
 
-Precisa de suporte no projeto de arquitetura ou detalhes de preços? [Entre em contato com nossa equipe comercial](/pt/contact/).
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

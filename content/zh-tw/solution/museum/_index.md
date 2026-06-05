@@ -45,5 +45,5 @@ showTableOfContents: false
 ---
 
 {{< alert >}}
-規劃博物館或常設展多媒體系統？[聯絡我們](/zh-tw/contact/)，我們提供展覽技術諮詢與設備規劃服務。
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

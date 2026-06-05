@@ -45,5 +45,5 @@ La proyección en espacios inmersivos rompe con los esquemas tradicionales de ex
 ---
 
 {{< alert >}}
-¿Tiene un proyecto de proyección? [Contáctenos](/es/contact/) para obtener una consulta.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

@@ -72,5 +72,5 @@ Der vollständige Einsteigerleitfaden für den Einstieg in Ihr SDRLab H4M — vo
 ---
 
 {{< alert >}}
-Angebot gewünscht? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

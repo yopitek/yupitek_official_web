@@ -27,5 +27,5 @@ Video Game Module は Flipper Zero の公式ゲーム拡張モジュールです
 ---
 
 {{< alert >}}
-お見積もりのご依頼は[お問い合わせ](/ja/contact/)まで。
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}

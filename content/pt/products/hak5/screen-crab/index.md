@@ -46,3 +46,7 @@ featureimage: "/images/products/hak5/screen-crab.png"
 |---------|------|
 | 📖 Documentação oficial | [Ver online](https://docs.hak5.org/screen-crab/screen-crab-by-hak5/) |
 | ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/crab) |
+
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

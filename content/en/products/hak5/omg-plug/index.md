@@ -41,3 +41,7 @@ featureimage: "/images/products/hak5/omg-plug.png"
 |----------|------|
 | 📖 Official Documentation | [View Online](https://o.mg.lol/setup/OMGPlug/) |
 | ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/omg) |
+
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

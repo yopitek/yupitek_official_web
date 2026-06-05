@@ -117,5 +117,5 @@ AWUS036AXML は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン
 
 
 {{< alert >}}
-お見積もりやご相談は[こちら](/ja/contact/)からお気軽にどうぞ。
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}

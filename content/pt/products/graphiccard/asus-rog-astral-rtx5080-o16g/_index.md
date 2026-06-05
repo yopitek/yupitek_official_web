@@ -28,5 +28,5 @@ A ASUS ROG ASTRAL RTX5080 O16G é a placa de vídeo topo de linha da série ROG,
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

@@ -58,4 +58,6 @@ Ubiquiti UniFi is the industry benchmark for enterprise-grade wireless networkin
 
 ---
 
-Need a UniFi planning quote? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

@@ -40,3 +40,7 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 |----------|--------|
 | �� 公式ドキュメント | [オンラインで見る](https://github.com/O-MG/MaliciousCableDetector/wiki) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/malicious-cable-detector) |
+
+{{< alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
+{{< /alert >}}

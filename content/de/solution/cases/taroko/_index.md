@@ -28,4 +28,6 @@ Taroko Roller186 integrierte interaktive Technologie in sein Bodenprojektionssys
 
 ---
 
-Interesse an einer ähnlichen Lösung? [Kontaktieren Sie uns](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

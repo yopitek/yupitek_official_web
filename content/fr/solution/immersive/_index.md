@@ -45,5 +45,5 @@ La projection en espace immersif brise les limites des écrans traditionnels en 
 ---
 
 {{< alert >}}
-Vous souhaitez créer une expérience immersive dans votre espace ? [Contactez-nous](/fr/contact/) pour un service d'évaluation de l'espace et de planification des équipements.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

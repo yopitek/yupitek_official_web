@@ -82,5 +82,5 @@ Use la app **BeaconSET+** para configurar el dispositivo:
 ---
 
 {{< alert >}}
-¿Necesita un presupuesto personalizado o una solución de integración? Póngase en contacto con nuestro equipo de ventas directamente en: **sales@yupitek.com**
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

@@ -70,5 +70,5 @@ The complete beginner guide for getting started with your SDRLab H4M — from un
 ---
 
 {{< alert >}}
-需要询问报价？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

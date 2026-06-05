@@ -51,5 +51,5 @@ A Yupitek integra soluções de wireless video transmission com sistemas de edge
 ---
 
 {{< alert >}}
-Interessado em uma solução de projeção sem fio? [Entre em contato](/pt/contact/) para discutir seu projeto e receber uma recomendação técnica personalizada.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

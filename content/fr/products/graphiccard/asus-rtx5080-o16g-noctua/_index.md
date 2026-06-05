@@ -30,5 +30,5 @@ La coopération ASUS × NOCTUA RTX5080 O16G allie la puissance RTX 5080 d'ASUS a
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

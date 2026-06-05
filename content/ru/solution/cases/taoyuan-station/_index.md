@@ -14,4 +14,6 @@ showBreadcrumbs: true
   <img src="/images/solution/cases/taoyuan-station.webp" alt="Станция Таоюань" />
 {{< /gallery >}}
 
-Заинтересованы? [Свяжитесь с нами](/ru/contact/) для получения дополнительной информации.
+{{< alert >}}
+Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
+{{< /alert >}}

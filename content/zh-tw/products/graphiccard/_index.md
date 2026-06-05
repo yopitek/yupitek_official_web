@@ -73,3 +73,7 @@ featureimage: "/images/products/graphiccard/banner-graphiccard.png"
 <div class="mt-6 text-center">
   <a href="/zh-tw/contact/" class="btn-inquiry">詢問繪圖卡報價 →</a>
 </div>
+
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

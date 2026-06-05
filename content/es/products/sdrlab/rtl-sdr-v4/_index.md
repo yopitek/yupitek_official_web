@@ -48,5 +48,5 @@ tags: ["SDR", "RTL-SDR", "Recepción de radio", "USB", "GNU Radio"]
 ---
 
 {{< alert >}}
-¿Necesitas cotización? [Contáctanos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

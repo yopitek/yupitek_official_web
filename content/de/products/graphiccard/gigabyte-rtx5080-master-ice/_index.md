@@ -31,5 +31,5 @@ Die GIGABYTE RTX5080 MASTER ICE White Edition bietet das gesamte Flaggschiff-Erl
 ---
 
 {{< alert >}}
-Brauchen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

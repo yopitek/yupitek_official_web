@@ -28,4 +28,6 @@ The GIGABYTE RTX5080 MASTER ICE 16G is the white (ICE) edition of the RTX5080 MA
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

@@ -69,5 +69,5 @@ ARS-25-57A é a antena paddle (de palheta) omnidirecional dual band da ALFA Netw
 ---
 
 {{< alert >}}
-Precisa solicitar orçamento ou compra em volume? [Entre em Contato](/pt/contact/), oferecemos orientação detalhada de compra.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

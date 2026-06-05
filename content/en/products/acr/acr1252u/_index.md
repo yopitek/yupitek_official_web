@@ -106,5 +106,5 @@ The ACR1252U is an NFC Forum-certified PC-linked reader based on 13.56 MHz conta
 ---
 
 {{< alert >}}
-Need a quote or integration support? [Contact us](/en/contact/)
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

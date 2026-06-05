@@ -27,4 +27,6 @@ El Tech World Centro de Vida es un pabellón de experiencias que combina tecnolo
 
 ---
 
-[Volver al portafolio](/es/solution/cases/) | [Consultar solución para pabellón temático](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

@@ -33,4 +33,6 @@ tags: ["建筑光雕", "活动展演", "台北"]
 
 ---
 
-[返回案例展示](/zh-cn/solution/cases/) | [联系我们](/zh-cn/contact/)
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

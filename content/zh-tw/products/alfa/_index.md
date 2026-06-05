@@ -84,3 +84,7 @@ ALFA 無線網路卡官方驅動程式請至[技術支援頁面](/zh-tw/support/
 <div class="mt-6 text-center">
   <a href="/zh-tw/contact/" class="btn-inquiry">詢問報價 / 批量採購 →</a>
 </div>
+
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

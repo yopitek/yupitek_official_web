@@ -88,5 +88,5 @@ Indicado para links de backhaul sem fio ponto a ponto (PtP) em redes WAN de ISPs
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços e planejamento de rede UniFi.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

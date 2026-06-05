@@ -84,5 +84,5 @@ YPB04 的各項參數（包括按鈕觸發定義、UUID、Major、Minor、廣播
 ---
 
 {{< alert >}}
-需要專屬報價或客製化解決方案？請直接來信聯絡我們的銷售團隊：**sales@yupitek.com**
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

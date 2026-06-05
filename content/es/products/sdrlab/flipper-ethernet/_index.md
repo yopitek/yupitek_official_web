@@ -36,5 +36,5 @@ tags: ["Expansión Flipper Zero", "Ethernet", "Prueba de red", "Red cableada"]
 ---
 
 {{< alert >}}
-¿Necesitas cotización? [Contáctanos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

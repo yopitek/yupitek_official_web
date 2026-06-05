@@ -74,5 +74,5 @@ The APA-M04 is a single-band 2.4 GHz antenna. When used with dual-band or tri-ba
 ---
 
 {{< alert >}}
-Need a quote or bulk purchase? [Contact Us](/en/contact/) for detailed purchasing advice.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

@@ -35,4 +35,6 @@ featureimage: "/images/products/sdrlab/banner-sdrlab.png"
 
 ---
 
-Precisa de cotação? [Entre em contato](/pt/contact/)
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

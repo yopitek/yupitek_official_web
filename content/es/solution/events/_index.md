@@ -47,5 +47,5 @@ Las necesidades de proyección en eventos difieren completamente de las exposici
 ---
 
 {{< alert >}}
-¿Tiene un proyecto de proyección? [Contáctenos](/es/contact/) para obtener una consulta.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

@@ -53,4 +53,6 @@ BlueField-DPUs werden über das **NVIDIA DOCA™** Software-Framework programmie
 
 ---
 
-Für technische Unterstützung bei der Integration oder zur Anforderung eines Angebots [kontaktieren Sie bitte den Yupitek-Vertrieb](/de/contact/).
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

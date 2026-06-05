@@ -45,5 +45,5 @@ showTableOfContents: false
 ---
 
 {{< alert >}}
-规划博物馆或常设展多媒体系统？[联系我们](/zh-cn/contact/)，我们提供展览技术咨询与设备规划服务。
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

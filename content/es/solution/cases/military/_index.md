@@ -28,4 +28,6 @@ El Cuerpo de Policía Militar implementó un sistema digitalizado de simulación
 
 ---
 
-[Volver a Casos de Éxito](/es/solution/cases/) | [Consultar solución para centro de mando](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

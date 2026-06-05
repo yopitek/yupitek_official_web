@@ -53,5 +53,5 @@ Flipper Zero 是一款多功能、口袋型无线安全研究工具，集成多�
 ---
 
 {{< alert >}}
-需要询问报价？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

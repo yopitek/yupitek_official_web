@@ -34,4 +34,6 @@ Built during the Japanese colonial period, the Banqiao Broadcasting Station is o
 
 ---
 
-Interested in a similar solution? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

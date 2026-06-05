@@ -30,5 +30,5 @@ La GIGABYTE RTX5080 GAMING OC est la version triple ventilateur et overclockée 
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

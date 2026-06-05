@@ -66,4 +66,6 @@ Beim Kauf von Transceivern stellt sich oft die Frage: *„Kann ich auch kompatib
 
 ---
 
-Suchen Sie passende Glasfaser-Patchkabel? Besuchen Sie unseren [Katalog für Glasfaser-Patchkabel](/de/products/mellanox/cable-fiber/). Für individuelle Netzwerkkonzepte können Sie sich direkt an die [Yupitek-Ingenieure wenden](/de/contact/).
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

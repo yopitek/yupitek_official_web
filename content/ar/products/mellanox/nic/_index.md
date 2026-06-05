@@ -121,4 +121,6 @@ showChildPages: false
 
 ---
 
-هل تبحث عن كابلات متوافقة؟ تصفح قوائمنا الخاصة بـ [كابلات DAC](/ar/products/mellanox/cable-dac/) و [كابلات AOC](/ar/products/mellanox/cable-aoc/). للحصول على الأسعار وتوفر المخزون، [اطلب عرض سعر](/ar/contact/).
+{{< alert >}}
+هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
+{{< /alert >}}

@@ -29,5 +29,5 @@ GIGABYTE RTX5080 MASTER ICE 16G 是 RTX5080 MASTER 的白色（ICE）版本，�
 ---
 
 {{< alert >}}
-需要詢問報價？[聯絡我們](/zh-tw/contact/)
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

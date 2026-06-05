@@ -45,5 +45,5 @@ tags: ["Expansão Flipper Zero", "NRF24", "2.4GHz", "MouseJacker", "Pesquisa de 
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

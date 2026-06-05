@@ -45,5 +45,5 @@ Yupitek verfügt über umfangreiche Erfahrung in der Durchführung großformatig
 ---
 
 {{< alert >}}
-Benötigen Sie eine Planung für eine Building-Mapping-Projektion? [Kontaktieren Sie uns](/de/contact/), um Ihre Eventanforderungen zu besprechen – wir bieten kostenlose Geräteempfehlungen und Angebote.
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

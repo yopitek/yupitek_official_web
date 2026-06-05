@@ -37,4 +37,6 @@ Projetos de projeção no Taipei 101 exigem equipamentos de altíssima performan
 
 ---
 
-[Voltar aos Casos](/pt/solution/cases/) | [Entre em contato](/pt/contact/) para discutir seu projeto.
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

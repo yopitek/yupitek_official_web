@@ -66,4 +66,6 @@ Im Gegensatz zu Ethernet-Netzwerken, die dank ARP direkt betriebsbereit sind, ka
 
 ---
 
-Benötigen Sie Unterstützung beim Netzwerkdesign oder Konfigurationshinweise für Ihr Cluster? [Wenden Sie sich an die Yupitek-Ingenieure](/de/contact/).
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

@@ -67,4 +67,6 @@ featureimage: "/images/products/hak5/banner-hak5.png"
 
 ---
 
-Нужна консультация? [Свяжитесь с нами](/ru/contact/)
+{{< alert >}}
+Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
+{{< /alert >}}

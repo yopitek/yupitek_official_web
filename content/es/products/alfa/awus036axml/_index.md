@@ -116,5 +116,5 @@ Todos los adaptadores USB ALFA utilizan un conector RP-SMA estándar. Mejora con
 | [ARS NT5B7](/es/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | Omnidireccional |
 
 {{< alert >}}
-¿Necesita una cotización? [Contáctenos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

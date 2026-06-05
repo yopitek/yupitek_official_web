@@ -58,4 +58,6 @@ Ubiquiti UniFi é a referência da indústria em redes sem fio empresariais — 
 
 ---
 
-Precisa de cotação UniFi? [Entre em contato](/pt/contact/)
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

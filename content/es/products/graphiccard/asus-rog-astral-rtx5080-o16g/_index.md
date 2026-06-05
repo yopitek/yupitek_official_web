@@ -25,5 +25,5 @@ ASUS ROG ASTRAL RTX5080 O16G es la tarjeta gráfica insignia de la serie ROG, qu
 
 ---
 {{< alert >}}
-¿Le interesa este producto? [Contáctenos](/es/contact/) para obtener precios.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

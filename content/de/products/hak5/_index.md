@@ -69,6 +69,8 @@ HAK5 ist ein weltweit anerkannter Hersteller von Sicherheitsforschungstools, hä
 
 ---
 
-Brauchen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}
 
 ---

@@ -28,4 +28,6 @@ The Yilan Water Museum was established in a century-old waterworks facility conv
 
 ---
 
-[Back to Case Studies](/en/solution/cases/) | [Inquire about museum solutions](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

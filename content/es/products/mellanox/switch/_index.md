@@ -66,4 +66,6 @@ A diferencia de las redes Ethernet, que son de tipo plug-and-play gracias al pro
 
 ---
 
-¿Necesita asesoramiento sobre el diseño de la arquitectura o la configuración de su clúster? [Contacte con el equipo de ingeniería de Yupitek](/es/contact/).
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

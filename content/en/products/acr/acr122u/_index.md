@@ -91,5 +91,5 @@ The ACR122U is a PC-linked contactless smart card reader/writer based on 13.56 M
 ---
 
 {{< alert >}}
-Need a quote or integration support? [Contact us](/en/contact/)
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

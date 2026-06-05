@@ -109,6 +109,6 @@ Alle ALFA-Adapter verfügen über einen Standard-RP-SMA-Anschluss. Rüsten Sie m
 | [ARS 25-57A](/de/products/alfa/ars-25-57a/) | 2,4 / 5 GHz | 2,5 / 7 dBi | Outdoor-Omni |
 | [ARS NT5B7](/de/products/alfa/ars-nt5b7/) | 2,4 / 5 GHz | 5 / 7 dBi | Omni |
 
-{{< alert "info" >}}
-Benötigen Sie ein Angebot oder Kaufberatung? [Kontaktieren Sie uns](/de/contact/).
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

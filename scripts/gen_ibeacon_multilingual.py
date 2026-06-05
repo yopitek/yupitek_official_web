@@ -14,7 +14,7 @@ LANDING_INFO = {
         "prod_title": "產品線",
         "comp_title": "iBeacon 系列規格比較",
         "card_desc": "專業 BLE 5.0 信標，適用於室內定位、智慧考勤打卡、人員管理與資產追蹤。",
-        "cta": "需要專屬報價或客製化解決方案？請直接來信聯絡我們的銷售團隊：**sales@yupitek.com**",
+        "cta": "需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)",
         "headers": ["型號", "外觀特徵", "電源規格", "電池容量 / 壽命", "最大距離", "感測器", "防水等級", "特殊功能"],
         "rows": [
             ["YPB01", "硬幣型 / 圓形", "可更換 CR2477", "1000 mAh (2年以上)", "100 米", "無", "IP67", "旋轉式外殼，內部電源按鈕"],
@@ -33,7 +33,7 @@ LANDING_INFO = {
         "prod_title": "产品线",
         "comp_title": "iBeacon 系列规格比较",
         "card_desc": "专业 BLE 5.0 信标，适用于室内定位、智能考勤打卡、人员管理与资产追踪。",
-        "cta": "需要专属报价或定制化解决方案？请直接来信联系我们的销售团队：**sales@yupitek.com**",
+        "cta": "需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)",
         "headers": ["型号", "外观特征", "电源规格", "电池容量 / 寿命", "最大距离", "传感器", "防水等级", "特殊功能"],
         "rows": [
             ["YPB01", "硬币型 / 圆形", "可更换 CR2477", "1000 mAh (2年以上)", "100 米", "无", "IP67", "旋转式外壳，内部电源按钮"],
@@ -52,7 +52,7 @@ LANDING_INFO = {
         "prod_title": "製品ラインナップ",
         "comp_title": "iBeacon シリーズ 仕様比較",
         "card_desc": "屋内位置測位、スマート勤怠管理、人員管理、および資産追跡用のプロフェッショナル BLE 5.0 ビーコン。",
-        "cta": "お見積もりやカスタム統合ソリューションが必要ですか？弊社営業チームまで直接メールでお問い合わせください：**sales@yupitek.com**",
+        "cta": "製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。",
         "headers": ["型番", "形状", "電源仕様", "電池容量 / 寿命", "最大射程", "センサー", "防水等級", "特別機能"],
         "rows": [
             ["YPB01", "コイン型 / 円形", "交換式 CR2477", "1000 mAh (2年以上)", "100 m", "なし", "IP67", "回転開閉式ケース、内部ボタン"],
@@ -71,7 +71,7 @@ LANDING_INFO = {
         "prod_title": "مجموعة المنتجات",
         "comp_title": "جدول مقارنة مواصفات سلسلة iBeacon",
         "card_desc": "منارات BLE 5.0 احترافية لتحديد المواقع الداخلي، وتسجيل الحضور الذكي، وإدارة الأفراد، وتتبع الأصول.",
-        "cta": "هل تحتاج إلى عرض أسعار مخصص أو حل تكامل؟ يرجى الاتصال بفريق المبيعات لدينا مباشرة على: **sales@yupitek.com**",
+        "cta": "هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).",
         "headers": ["النموذج", "الشكل والخصائص", "مصدر الطاقة", "سعة البطارية / العمر", "أقصى مدى", "المستشعرات", "مقاومة الماء", "ميزات خاصة"],
         "rows": [
             ["YPB01", "دائري / عملة معدنية", "بطارية CR2477 قابلة للاستبدال", "1000 مللي أمبير (سنتان+)", "100 متر", "لا يوجد", "IP67", "هيكل دوار، زر تشغيل داخلي"],
@@ -90,7 +90,7 @@ LANDING_INFO = {
         "prod_title": "Produktlinie",
         "comp_title": "Spezifikationsvergleich der iBeacon-Serie",
         "card_desc": "Professionelle BLE 5.0 Beacons für Indoor-Lokalisierung, intelligente Zeiterfassung, Personenmanagement und Asset-Tracking.",
-        "cta": "Benötigen Sie ein individuelles Angebot oder eine Integrationslösung? Bitte kontaktieren Sie unser Vertriebsteam direkt unter: **sales@yupitek.com**",
+        "cta": "Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).",
         "headers": ["Modell", "Formfaktor", "Stromquelle", "Batteriekapazität / Lebensdauer", "Max. Reichweite", "Sensoren", "Wasserdicht", "Besondere Merkmale"],
         "rows": [
             ["YPB01", "Münze / Rund", "Austauschbare CR2477", "1000 mAh (2+ Jahre)", "100 m", "Keine", "IP67", "Drehbares Gehäuse, interner Einschaltknopf"],
@@ -109,7 +109,7 @@ LANDING_INFO = {
         "prod_title": "Línea de Productos",
         "comp_title": "Comparativa de Especificaciones de la Serie iBeacon",
         "card_desc": "Balizas profesionales BLE 5.0 para localización en interiores, control de asistencia inteligente, gestión de personal y seguimiento de activos.",
-        "cta": "¿Necesita un presupuesto personalizado o una solución de integración? Póngase en contacto con nuestro equipo de ventas directamente en: **sales@yupitek.com**",
+        "cta": "¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).",
         "headers": ["Modelo", "Factor de forma", "Fuente de alimentación", "Capacidad / Vida de batería", "Alcance máx.", "Sensores", "Impermeable", "Características especiales"],
         "rows": [
             ["YPB01", "Moneda / Redonda", "CR2477 reemplazable", "1000 mAh (2+ años)", "100 m", "Ninguno", "IP67", "Carcasa giratoria, botón de encendido interno"],
@@ -128,7 +128,7 @@ LANDING_INFO = {
         "prod_title": "Gamme de Produits",
         "comp_title": "Comparatif des Spécifications de la Série iBeacon",
         "card_desc": "Balises professionnelles BLE 5.0 pour la localisation en intérieur, la gestion intelligente des présences et le suivi d'actifs.",
-        "cta": "Besoin d'un devis sur mesure ou d'une solution d'intégration ? Veuillez contacter notre équipe commerciale directement à : **sales@yupitek.com**",
+        "cta": "Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).",
         "headers": ["Modèle", "Facteur de forme", "Source d'énergie", "Capacité / Durée de batterie", "Portée max.", "Capteurs", "Étanchéité", "Fonctions spéciales"],
         "rows": [
             ["YPB01", "Pièce / Ronde", "CR2477 remplaçable", "1000 mAh (2 ans et +)", "100 m", "Aucun", "IP67", "Boîtier rotatif, bouton d'alimentation interne"],
@@ -147,7 +147,7 @@ LANDING_INFO = {
         "prod_title": "Linha de Produtos",
         "comp_title": "Comparação de Especificações da Série iBeacon",
         "card_desc": "Beacons profissionais BLE 5.0 para localização em ambientes internos, controle de ponto inteligente, gestão de pessoal e rastreamento de ativos.",
-        "cta": "Precisa de um orçamento personalizado ou solução de integração? Entre em contato diretamente com nossa equipe de vendas pelo e-mail: **sales@yupitek.com**",
+        "cta": "Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).",
         "headers": ["Modelo", "Formato / Design", "Fonte de energia", "Capacidade / Vida da bateria", "Alcance máx.", "Sensores", "Impermeabilidade", "Recursos especiais"],
         "rows": [
             ["YPB01", "Moeda / Redondo", "CR2477 substituível", "1000 mAh (2+ anos)", "100 m", "Nenhum", "IP67", "Gabinete rotativo, botão de liga/desliga interno"],
@@ -166,7 +166,7 @@ LANDING_INFO = {
         "prod_title": "Линейка продукции",
         "comp_title": "Таблица сравнения спецификаций серии iBeacon",
         "card_desc": "Профессиональные маяки BLE 5.0 для позиционирования в помещениях, умного учета рабочего времени, контроля персонала и отслеживания активов.",
-        "cta": "Нужно индивидуальное предложение или интеграционное решение? Свяжитесь с нашим отделом продаж напрямую по адресу: **sales@yupitek.com**",
+        "cta": "Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).",
         "headers": ["Модель", "Форм-фактор", "Источник питания", "Емкость батареи / Ресурс", "Макс. дальность", "Датчики", "Влагозащита", "Особые свойства"],
         "rows": [
             ["YPB01", "Круглый / Монета", "Заменяемая CR2477", "1000 мАч (2+ года)", "100 м", "Нет", "IP67", "Поворотный корпус, внутренняя кнопка питания"],
@@ -419,6 +419,8 @@ showChildPages: false
 ---
 
 ## {comp_title}
+
+![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
 
 {table}
 

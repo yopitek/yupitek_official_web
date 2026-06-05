@@ -45,5 +45,5 @@ tags: ["Flipper Zero 拡張", "ESP32", "CC1101", "NRF24", "Wi-Fi Marauder", "セ
 ---
 
 {{< alert >}}
-お見積もりのお問い合わせは[こちら](/ja/contact/)
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}

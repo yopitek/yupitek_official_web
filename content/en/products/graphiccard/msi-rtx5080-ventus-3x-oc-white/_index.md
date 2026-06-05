@@ -27,4 +27,6 @@ The MSI RTX5080 16G VENTUS 3X OC WHITE is the white edition of the VENTUS 3X OC,
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

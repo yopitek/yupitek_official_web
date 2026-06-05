@@ -34,4 +34,6 @@ tags: ["沉浸式投影", "360度投影", "博物馆", "新北市"]
 
 ---
 
-[返回案例展示](/zh-cn/solution/cases/) | [联系我们](/zh-cn/contact/)
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

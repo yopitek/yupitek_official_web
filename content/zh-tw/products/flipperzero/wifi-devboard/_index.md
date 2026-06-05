@@ -32,5 +32,5 @@ WiFi Devboard 是 Flipper Zero 的官方 Wi-Fi 擴充模組，基於 ESP32-S2 �
 ---
 
 {{< alert >}}
-需要詢問報價？[聯絡我們](/zh-tw/contact/)
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

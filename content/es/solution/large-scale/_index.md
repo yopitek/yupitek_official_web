@@ -41,5 +41,5 @@ Nuestro equipo de ingenieros especializados realiza estudios técnicos de viabil
 ---
 
 {{< alert >}}
-¿Tiene un proyecto de proyección a gran escala? [Contáctenos](/es/contact/) para obtener una consulta gratuita y evaluación técnica del sitio.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

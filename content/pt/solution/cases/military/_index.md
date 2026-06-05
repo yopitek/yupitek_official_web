@@ -28,4 +28,6 @@ O Comando da Polícia Militar implementou um sistema digital de simulação de g
 
 ---
 
-[Voltar aos Casos](/pt/solution/cases/) | [Tem interesse? [Entre em contato](/pt/contact/)]
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

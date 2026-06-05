@@ -33,4 +33,6 @@ Le spectacle de projection architecturale sur la façade de la Mairie de Taipei 
 
 ---
 
-Intéressé par une solution similaire ? [Contactez-nous](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

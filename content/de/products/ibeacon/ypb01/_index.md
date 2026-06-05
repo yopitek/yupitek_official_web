@@ -73,5 +73,5 @@ Die Parameter des YPB01 (UUID, Major, Minor, Sendeleistung und Intervall) werden
 ---
 
 {{< alert >}}
-Benötigen Sie ein individuelles Angebot oder eine Integrationslösung? Bitte kontaktieren Sie unser Vertriebsteam direkt unter: **sales@yupitek.com**
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

@@ -87,4 +87,6 @@ Diseñado para enlaces de retorno inalámbrico punto a punto (PtP) en redes WAN 
 
 ---
 
-¿Le interesa este producto? [Contáctenos](/es/contact/) para obtener precios y planificación de red UniFi.
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

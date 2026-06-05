@@ -70,5 +70,5 @@ APA-M25-6E 是 ALFA Network 针对 WiFi 6E 设计的三频室内指向天线，�
 ---
 
 {{< alert >}}
-需要询价报价或批量采购？[联系我们](/zh-cn/contact/)，我们提供详细采购建议。
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

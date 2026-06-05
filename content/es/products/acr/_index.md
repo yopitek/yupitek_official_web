@@ -23,4 +23,6 @@ featureimage: "/images/products/acr/banner-acr.png"
 
 ---
 
-¿Necesitas cotización? [Contáctanos](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

@@ -111,6 +111,6 @@ AWUS036ACS 是 Alfa 雙頻 802.11ac 產品線中最經濟實惠的入門款，�
 | [ARS 25-57A](/zh-tw/products/alfa/ars-25-57a/) | 2.4 / 5 GHz | 2.5 / 7 dBi | 戶外全向 |
 | [ARS NT5B7](/zh-tw/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | 全向 |
 
-{{< alert "info" >}}
-需要詢問報價？[聯絡我們](/zh-tw/contact/)，我們提供詳細採購建議。
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

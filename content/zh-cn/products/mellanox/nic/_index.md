@@ -121,4 +121,6 @@ NVIDIA Mellanox ConnectX 网卡为企业级服务器和 AI 集群提供领先的
 
 ---
 
-需要配套的连接线缆？欢迎查看我们的[直连铜缆 (DAC)](/zh-cn/products/mellanox/cable-dac/)和[主动式光缆 (AOC)](/zh-cn/products/mellanox/cable-aoc/)目录。若要获取价格或了解库存情况，请直接[申请报价](/zh-cn/contact/)。
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

@@ -27,4 +27,6 @@ Rong Cheng Paper held a corporate exhibition centered on environmental responsib
 
 ---
 
-Interested in a similar solution? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

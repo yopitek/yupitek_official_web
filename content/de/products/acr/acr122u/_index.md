@@ -91,5 +91,5 @@ Der ACR122U ist ein PC-gebundener kontaktloser Smartcard-Leser/Schreiber basiere
 ---
 
 {{< alert >}}
-Benötigen Sie ein Angebot oder Integrationsunterstützung? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

@@ -82,5 +82,5 @@ Use o aplicativo **BeaconSET+** para configurar o crachá:
 ---
 
 {{< alert >}}
-Precisa de um orçamento personalizado ou solução de integração? Entre em contato diretamente com nossa equipe de vendas pelo e-mail: **sales@yupitek.com**
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

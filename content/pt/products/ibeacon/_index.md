@@ -44,6 +44,8 @@ Nosso ecossistema iBeacon conecta locais físicos com as redes em nuvem das empr
 
 ## Comparação de Especificações da Série iBeacon
 
+![iBeacon Series Comparison Matrix](/images/products/ibeacon/ibeacon_comparison.png)
+
 | Modelo | Formato / Design | Fonte de energia | Capacidade / Vida da bateria | Alcance máx. | Sensores | Impermeabilidade | Recursos especiais |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | YPB01 | Moeda / Redondo | CR2477 substituível | 1000 mAh (2+ anos) | 100 m | Nenhum | IP67 | Gabinete rotativo, botão de liga/desliga interno |
@@ -55,5 +57,5 @@ Nosso ecossistema iBeacon conecta locais físicos com as redes em nuvem das empr
 ---
 
 {{< alert >}}
-Precisa de um orçamento personalizado ou solução de integração? Entre em contato diretamente com nossa equipe de vendas pelo e-mail: **sales@yupitek.com**
-{{</alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

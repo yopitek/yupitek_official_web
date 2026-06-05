@@ -30,4 +30,6 @@ showTableOfContents: false
 
 ---
 
-カスタマイズされた投影ソリューションをご希望でしたら、[お問い合わせ](/ja/contact/)ください。
+{{< alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
+{{< /alert >}}

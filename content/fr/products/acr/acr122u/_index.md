@@ -91,5 +91,5 @@ L'ACR122U est un lecteur/graveur de carte à puce sans contact connecté à un P
 ---
 
 {{< alert >}}
-Besoin d'un devis ou d'une assistance à l'intégration ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

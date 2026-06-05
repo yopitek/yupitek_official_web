@@ -34,4 +34,6 @@ Construite durant la période coloniale japonaise, la Station de Radiodiffusion 
 
 ---
 
-Intéressé par une solution similaire ? [Contactez-nous](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

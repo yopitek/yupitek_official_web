@@ -61,3 +61,7 @@ Ubiquiti UniFi 是企業級無線網路的業界標竿品牌，以高效能、�
 <div class="mt-6 text-center">
   <a href="/zh-tw/contact/" class="btn-inquiry">UniFi 網路規劃諮詢 →</a>
 </div>
+
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

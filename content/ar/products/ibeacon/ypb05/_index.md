@@ -58,5 +58,5 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "USB Powered", "Plug and Pl
 ---
 
 {{< alert >}}
-هل تحتاج إلى عرض أسعار مخصص أو حل تكامل؟ يرجى الاتصال بفريق المبيعات لدينا مباشرة على: **sales@yupitek.com**
+هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}

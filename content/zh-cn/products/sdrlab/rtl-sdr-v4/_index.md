@@ -53,5 +53,5 @@ tags: ["SDR", "RTL-SDR", "无线电接收", "USB", "GNU Radio"]
 ---
 
 {{< alert >}}
-需要咨询报价？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

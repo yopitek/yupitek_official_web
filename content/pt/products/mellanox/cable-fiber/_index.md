@@ -51,4 +51,6 @@ Em redes MPO-12, a polaridade assegura que o transmissor de uma ponta se conecte
 
 ---
 
-Precisa de cabos de manobra monomodo personalizados (LC-LC ou MPO-12 APC)? [Entre em contato com a equipe da Yupitek](/pt/contact/).
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

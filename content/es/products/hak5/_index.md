@@ -67,4 +67,6 @@ featureimage: "/images/products/hak5/banner-hak5.png"
 
 ---
 
-¿Necesitas una cotización? [Contáctanos](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

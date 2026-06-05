@@ -70,4 +70,6 @@ Yopitek propose des cartes graphiques NVIDIA RTX 5080 pour la génération d'ima
 
 ---
 
-Besoin d'un devis RTX 5080 ? [Contactez-nous](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

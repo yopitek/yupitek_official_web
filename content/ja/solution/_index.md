@@ -62,7 +62,9 @@ showTableOfContents: true
 
 ---
 
-ソリューションのご相談は[お問い合わせ](/ja/contact/)ください。
+{{< alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
+{{< /alert >}}
 
 ---
 

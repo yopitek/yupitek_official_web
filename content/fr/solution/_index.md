@@ -64,7 +64,9 @@ Solutions de projection à déploiement rapide pour les expositions temporaires 
 
 Service dans tout Taïwan : **Taipeh · Taoyuan · Tainan · Yilan · Pingtung**
 
-[Bersez-nous](/fr/contact/) pour vos besoins.
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}
 
 ---
 

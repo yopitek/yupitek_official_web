@@ -27,4 +27,6 @@ La MSI RTX5080 16G INSPIRE 3X OC est une carte graphique RTX 5080 de la gamme MS
 
 ---
 
-Intéressé(e) ? [Contactez-nous](/fr/contact/) pour les tarifs et la disponibilité.
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

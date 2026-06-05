@@ -118,5 +118,5 @@ sudo ip link set wlan0 up
 
 
 {{< alert >}}
-この製品にご興味をお持ちでしたら、[お問い合わせ](/ja/contact/)ください。
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}

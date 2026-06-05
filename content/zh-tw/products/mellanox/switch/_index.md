@@ -66,4 +66,6 @@ NVIDIA Mellanox InfiniBand 交換器是現代 AI 訓練叢集與高效能運算 
 
 ---
 
-需要針對您的叢集進行架構設計或設定規劃？歡迎[聯絡 Yupitek 技術工程團隊](/zh-tw/contact/)。
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

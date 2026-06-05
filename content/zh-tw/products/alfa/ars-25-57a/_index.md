@@ -69,5 +69,5 @@ ARS-25-57A 是 ALFA Network 的雙頻槳型（Paddle）全向天線，同時支�
 ---
 
 {{< alert >}}
-需要詢問報價或批量採購？[聯絡我們](/zh-tw/contact/)，我們提供詳細採購建議。
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

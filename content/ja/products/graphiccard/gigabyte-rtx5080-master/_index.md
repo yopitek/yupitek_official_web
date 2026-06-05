@@ -27,4 +27,6 @@ GIGABYTE RTX5080 MASTER 16G は GIGABYTE の RTX 5080 フラッグシップモ�
 
 ---
 
-この製品にご興味をお持ちでしたら、[お問い合わせ](/ja/contact/)ください。
+{{< alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
+{{< /alert >}}

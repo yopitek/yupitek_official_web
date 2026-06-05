@@ -69,4 +69,6 @@ A Yopitek oferece serviços de aquisição de placas de vídeo NVIDIA RTX 5080 p
 
 ---
 
-Precisa de cotação? [Entre em contato](/pt/contact/)
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

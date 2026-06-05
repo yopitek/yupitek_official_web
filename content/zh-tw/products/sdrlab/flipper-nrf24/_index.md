@@ -46,5 +46,5 @@ tags: ["Flipper Zero 擴充", "NRF24", "2.4GHz", "MouseJacker", "資安研究"]
 ---
 
 {{< alert >}}
-需要詢問報價？[聯絡我們](/zh-tw/contact/)
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

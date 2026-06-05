@@ -107,5 +107,5 @@ AWUS036EACS 是 Alfa Network 專為家用與辦公室設計的超小型 WiFi + B
 | [ARS NT5B7](/zh-tw/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | 全向 |
 
 {{< alert >}}
-需要詢問報價？[聯絡我們](/zh-tw/contact/)，我們提供詳細採購建議。
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

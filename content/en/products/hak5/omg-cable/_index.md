@@ -36,4 +36,6 @@ The O.MG Cable is physically indistinguishable from a standard USB cable, yet in
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

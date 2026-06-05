@@ -26,5 +26,5 @@ The Malicious Cable Detector is a **defensive** USB cable inspection tool that i
 ---
 
 {{< alert >}}
-Need a quote? [Contact Us](/en/contact/)
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

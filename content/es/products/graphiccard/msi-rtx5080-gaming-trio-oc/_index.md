@@ -25,5 +25,5 @@ MSI RTX5080 16G GAMING TRIO OC es el modelo insignia RTX 5080 de MSI, que utiliz
 
 ---
 {{< alert >}}
-¿Le interesa este producto? [Contáctenos](/es/contact/) para obtener precios.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

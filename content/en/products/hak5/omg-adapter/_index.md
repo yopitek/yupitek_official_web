@@ -23,5 +23,5 @@ The O.MG Adapter appears as an ordinary USB adapter that can be chained onto exi
 ---
 
 {{< alert >}}
-Need a quote? [Contact Us](/en/contact/)
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

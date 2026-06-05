@@ -29,5 +29,5 @@ ASUS RTX5080 O16G NOCTUA 是 ASUS 与奥地利顶级静音散热品牌 Noctua �
 ---
 
 {{< alert >}}
-需要询问报价？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

@@ -33,4 +33,6 @@ Die Projection-Mapping-Show auf der Fassade des Taipei City Hall ist eines der W
 
 ---
 
-Interesse an einer ähnlichen Lösung? [Kontaktieren Sie uns](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

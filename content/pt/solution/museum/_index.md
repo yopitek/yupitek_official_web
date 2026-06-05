@@ -45,5 +45,5 @@ Museus e espaços culturais são uma das principais áreas de atuação do depar
 ---
 
 {{< alert >}}
-Planejando sistema multimídia para museu ou exposição permanente? [Entre em contato](/pt/contact/) para discutir seu projeto.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

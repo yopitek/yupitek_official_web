@@ -47,5 +47,5 @@ Event projection requirements differ fundamentally from permanent installations:
 ---
 
 {{< alert >}}
-Have an event projection requirement? [Contact us](/en/contact/) with your event date and venue details and we will provide a quote promptly.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

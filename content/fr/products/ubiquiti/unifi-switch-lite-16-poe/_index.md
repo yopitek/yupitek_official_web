@@ -98,5 +98,5 @@ Le Switch Lite 16 PoE est le bon choix pour étendre la densité des appareils P
 ---
 
 {{< alert >}}
-Intéressé par ce produit ? [Contactez-nous](/fr/contact/) pour un devis et la planification de votre réseau UniFi.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

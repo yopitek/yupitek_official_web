@@ -52,5 +52,5 @@ La projection interactive transforme les images statiques en expériences dynami
 ---
 
 {{< alert >}}
-Vous souhaitez enrichir votre espace d'expériences interactives ? [Contactez-nous](/fr/contact/) — transmettez-nous votre plan d'implantation pour recevoir des recommandations de planification de projection interactive.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

@@ -53,5 +53,5 @@ tags: ["SDR", "RTL-SDR", "無線受信", "USB", "GNU Radio"]
 ---
 
 {{< alert >}}
-お見積もりのお問い合わせは[こちら](/ja/contact/)
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}

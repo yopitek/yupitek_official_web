@@ -109,6 +109,6 @@ All ALFA adapters feature a standard RP-SMA connector. Upgrade with an optional 
 | [ARS 25-57A](/en/products/alfa/ars-25-57a/) | 2.4 / 5 GHz | 2.5 / 7 dBi | Outdoor Omni |
 | [ARS NT5B7](/en/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | Omni |
 
-{{< alert "info" >}}
-Need a quote or purchasing advice? [Contact us](/en/contact/).
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

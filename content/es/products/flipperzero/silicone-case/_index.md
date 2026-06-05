@@ -26,5 +26,5 @@ La funda de silicona protectora oficial de Flipper Zero proporciona cobertura to
 ---
 
 {{< alert >}}
-¿Necesita una cotización? [Contáctenos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

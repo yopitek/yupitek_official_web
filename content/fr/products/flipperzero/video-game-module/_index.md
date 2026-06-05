@@ -27,5 +27,5 @@ Le Video Game Module est le module d'extension de jeu officiel pour Flipper Zero
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

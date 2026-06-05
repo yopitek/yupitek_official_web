@@ -39,6 +39,8 @@ SDRLAB propose des modules radio logicielle (SDR) et des accessoires d'extension
 
 ---
 
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}
 
 ---

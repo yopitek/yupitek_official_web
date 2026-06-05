@@ -52,5 +52,5 @@ Interaktive Projektion verwandelt statische Bilder in berührbare, reaktionsfäh
 ---
 
 {{< alert >}}
-Möchten Sie interaktive Erlebnisse in Ihrem Raum schaffen? [Kontaktieren Sie uns](/de/contact/) – senden Sie uns einen Grundriss und erhalten Sie Planungsempfehlungen für interaktive Projektion.
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

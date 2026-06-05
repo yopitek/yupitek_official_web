@@ -28,4 +28,6 @@ Taroko Roller186 integrated interactive technology into its floor projection sys
 
 ---
 
-Interested in a similar solution? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

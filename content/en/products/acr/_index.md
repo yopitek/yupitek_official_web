@@ -27,4 +27,6 @@ Advanced Card Systems (ACS) is a globally recognized manufacturer of smart card 
 
 ---
 
-Need a quote or integration solution? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

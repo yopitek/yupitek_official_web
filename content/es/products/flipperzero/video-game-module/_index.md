@@ -27,5 +27,5 @@ El Video Game Module es el módulo oficial de expansión para juegos del Flipper
 ---
 
 {{< alert >}}
-¿Necesita una cotización? [Contáctenos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

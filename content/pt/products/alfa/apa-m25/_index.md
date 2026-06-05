@@ -69,5 +69,5 @@ APA-M25 é a antena painel interior dual band de alto ganho da ALFA Network, com
 ---
 
 {{< alert >}}
-Precisa solicitar orçamento ou compra em volume? [Entre em Contato](/pt/contact/), oferecemos orientação detalhada de compra.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

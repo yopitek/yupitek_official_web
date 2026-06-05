@@ -64,7 +64,9 @@ Rapid-deployment projection solutions for temporary exhibitions and large-scale 
 
 Nationwide service across Taiwan: **Taipei · Taoyuan · Tainan · Yilan · Pingtung**
 
-Need a custom projection solution? [Contact us](/en/contact/) to discuss your requirements.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}
 
 ---
 

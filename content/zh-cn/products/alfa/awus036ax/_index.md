@@ -104,5 +104,5 @@ AWUS036AX 采用 Realtek RTL8832BU 芯片，支持 Wi-Fi 6（802.11ax）双频�
 
 
 {{< alert >}}
-需要询价？[联系我们](/zh-cn/contact/)，我们提供详细采购建议。
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

@@ -30,4 +30,6 @@ showTableOfContents: false
 
 ---
 
-¿Tiene un proyecto de proyección? [Contáctenos](/es/contact/) para obtener una consulta.
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

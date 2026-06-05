@@ -105,5 +105,5 @@ Der ACR1552U ist ein CCID- und PC/SC-konformer USB NFC Reader IV auf Basis der k
 ---
 
 {{< alert >}}
-Benötigen Sie ein Angebot oder Integrationsunterstützung? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

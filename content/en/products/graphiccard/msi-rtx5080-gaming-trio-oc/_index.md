@@ -27,4 +27,6 @@ The MSI RTX5080 16G GAMING TRIO OC is MSI's flagship RTX 5080 model, featuring t
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

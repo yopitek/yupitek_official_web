@@ -27,4 +27,6 @@ Le Bureau de District de Yangmei avait besoin d'un système de projection suffis
 
 ---
 
-[Retour aux Études de Cas](/fr/solution/cases/) | [Renseignements sur les solutions pour salles polyvalentes](/fr/contact/)
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

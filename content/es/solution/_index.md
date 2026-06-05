@@ -62,7 +62,9 @@ Servicios de proyección para conciertos, lanzamientos y ferias. Dirección téc
 
 ---
 
-Para consultas sobre soluciones, [contáctanos](/es/contact/).
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}
 
 ---
 

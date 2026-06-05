@@ -28,5 +28,5 @@ MSI RTX5080 16G INSPIRE 3X OC 是 MSI INSPIRE 系列的 RTX 5080 显卡，采用
 ---
 
 {{< alert >}}
-需要询问报价？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

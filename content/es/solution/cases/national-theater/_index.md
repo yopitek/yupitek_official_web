@@ -31,4 +31,6 @@ El sistema permite proyectar sobre el ciclorama trasero, los telones laterales y
 
 ---
 
-[Volver al portafolio](/es/solution/cases/) | [Consultar solución similar](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

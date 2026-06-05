@@ -26,5 +26,5 @@ ASUS RTX5080 O16G NOCTUA es un producto de colaboración entre ASUS y la reconoc
 
 ---
 {{< alert >}}
-¿Le interesa este producto? [Contáctenos](/es/contact/) para obtener precios.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

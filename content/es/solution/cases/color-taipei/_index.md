@@ -33,4 +33,6 @@ El espectáculo de mapping en la fachada del Ayuntamiento de Taipéi es el caso 
 
 ---
 
-[Volver a Casos de Éxito](/es/solution/cases/) | [Consultar solución similar](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

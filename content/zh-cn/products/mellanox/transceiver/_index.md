@@ -66,4 +66,6 @@ NVIDIA LinkX® 光模块专为满足高性能计算、企业级存储以及超�
 
 ---
 
-需要匹配的光纤跳线？欢迎查看我们的[光纤跳线产品目录](/zh-cn/products/mellanox/cable-fiber/)。如有定制化的网络规划需求，请直接[联系 Yupitek 工程师团队](/zh-cn/contact/)。
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

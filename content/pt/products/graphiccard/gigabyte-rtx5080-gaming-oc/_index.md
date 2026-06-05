@@ -28,5 +28,5 @@ A GIGABYTE RTX5080 GAMING OC 16G utiliza o sistema de resfriamento WINDFORCE com
 ---
 
 {{< alert >}}
-Tem interesse neste produto? [Entre em contato](/pt/contact/) para obter preços.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

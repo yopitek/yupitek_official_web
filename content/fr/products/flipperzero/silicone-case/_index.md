@@ -26,5 +26,5 @@ L'étui de protection officiel en silicone pour Flipper Zero offre une couvertur
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

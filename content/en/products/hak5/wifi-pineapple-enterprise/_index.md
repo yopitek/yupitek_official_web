@@ -29,4 +29,6 @@ WiFi Pineapple Enterprise is a wireless security assessment platform designed fo
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

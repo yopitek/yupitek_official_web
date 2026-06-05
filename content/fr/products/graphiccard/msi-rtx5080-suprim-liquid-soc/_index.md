@@ -34,4 +34,6 @@ La MSI RTX5080 16G SUPRIM LIQUID SOC est la carte graphique flagship AIO (tout-e
 
 ---
 
-Intéressé(e) ? [Contactez-nous](/fr/contact/) pour les tarifs et la disponibilité.
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

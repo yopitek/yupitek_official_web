@@ -51,3 +51,7 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 |---------|------|
 | 📖 Documentação oficial | [Ver online](https://docs.hak5.org/wifi-pineapple-pager/wifi-pineapple-pager-by-hak5/) |
 | ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/pineapple/pager) |
+
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

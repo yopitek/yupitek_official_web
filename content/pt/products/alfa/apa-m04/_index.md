@@ -74,5 +74,5 @@ APA-M04 é uma antena de banda única 2.4 GHz; ao usá-la com adaptadores de ban
 ---
 
 {{< alert >}}
-Precisa solicitar orçamento ou compra em volume? [Entre em Contato](/pt/contact/), oferecemos orientação detalhada de compra.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

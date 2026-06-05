@@ -45,5 +45,5 @@ Yupitek tiene una amplia experiencia en la ejecución de shows de mapping a gran
 ---
 
 {{< alert >}}
-¿Necesita planificación de proyección mapping arquitectónico? [Contáctenos](/es/contact/) para discutir los requisitos de su evento — ofrecemos recomendaciones de equipos gratuitas y presupuestos.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

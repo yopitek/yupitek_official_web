@@ -106,5 +106,5 @@ L'ACR1252U est un lecteur PC certifié NFC Forum, basé sur la technologie sans 
 ---
 
 {{< alert >}}
-Besoin d'un devis ou d'une assistance à l'intégration ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

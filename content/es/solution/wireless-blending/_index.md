@@ -41,5 +41,5 @@ Esta solución es ideal para instalaciones temporales de alta velocidad, recinto
 ---
 
 {{< alert >}}
-¿Tiene un proyecto de proyección inalámbrica? [Contáctenos](/es/contact/) para obtener una consulta gratuita y evaluación técnica del sitio.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

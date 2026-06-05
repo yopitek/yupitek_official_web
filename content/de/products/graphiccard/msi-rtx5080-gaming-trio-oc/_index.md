@@ -30,5 +30,5 @@ Die MSI RTX5080 GAMING TRIO OC ist der dreifache Lüfter-Flaggschiff mit ausgegl
 ---
 
 {{< alert >}}
-Brauchen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

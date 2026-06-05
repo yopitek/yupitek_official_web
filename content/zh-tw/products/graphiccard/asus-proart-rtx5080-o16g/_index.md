@@ -28,5 +28,5 @@ ASUS ProArt RTX5080 O16G 是專為創作者設計的 RTX 5080 顯示卡，在標
 ---
 
 {{< alert >}}
-需要詢問報價？[聯絡我們](/zh-tw/contact/)
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

@@ -45,5 +45,5 @@ A projeção imersiva quebra os limites das exibições tradicionais, colocando 
 ---
 
 {{< alert >}}
-Quer criar uma experiência imersiva para o seu espaço? [Entre em contato](/pt/contact/) para discutir seu projeto.
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}

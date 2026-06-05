@@ -35,4 +35,6 @@ featureimage: "/images/products/sdrlab/banner-sdrlab.png"
 
 ---
 
-¿Necesitas cotización? [Contáctanos](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

@@ -28,4 +28,6 @@ featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 
 ---
 
-¿Necesitas una cotización? [Contáctanos](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

@@ -47,5 +47,5 @@ showTableOfContents: false
 ---
 
 {{< alert >}}
-有活動投影需求？[聯絡我們](/zh-tw/contact/)，提供活動日期與場地資訊，我們盡快提供報價。
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}

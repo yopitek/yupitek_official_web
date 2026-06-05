@@ -34,4 +34,6 @@ La Estación de Radio de Banqiao fue construida durante la era colonial japonesa
 
 ---
 
-[Volver a Casos de Éxito](/es/solution/cases/) | [Consultar solución de exposición permanente](/es/contact/)
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

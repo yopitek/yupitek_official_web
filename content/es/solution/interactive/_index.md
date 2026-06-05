@@ -52,5 +52,5 @@ La proyección interactiva transforma imágenes estáticas en experiencias diná
 ---
 
 {{< alert >}}
-¿Tiene un proyecto de proyección? [Contáctenos](/es/contact/) para obtener una consulta.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

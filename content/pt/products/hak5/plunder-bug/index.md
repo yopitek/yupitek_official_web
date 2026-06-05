@@ -39,3 +39,7 @@ featureimage: "/images/products/hak5/plunder-bug.png"
 |---------|------|
 | 📖 Documentação oficial | [Ver online](https://docs.hak5.org/plunder-bug/plunder-bug/) |
 | ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/bug) |
+
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

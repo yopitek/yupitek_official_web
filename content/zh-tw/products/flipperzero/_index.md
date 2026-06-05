@@ -33,3 +33,7 @@ Flipper Zero 是一款開源多功能無線安全研究工具，支援多種無�
 <div class="mt-6 text-center">
   <a href="/zh-tw/contact/" class="btn-inquiry">詢問 Flipper Zero 報價 →</a>
 </div>
+
+{{< alert >}}
+需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
+{{< /alert >}}

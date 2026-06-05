@@ -41,5 +41,5 @@ Yupitek domina esta tecnología integrando hardware de alta luminosidad con soft
 ---
 
 {{< alert >}}
-¿Tiene un proyecto de proyección 3D? [Contáctenos](/es/contact/) para obtener una consulta gratuita y evaluación técnica del sitio.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

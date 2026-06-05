@@ -66,4 +66,6 @@ NVIDIA Mellanox InfiniBand 交换机是现代 AI 训练集群和高性能计算 
 
 ---
 
-需要为您的大型集群提供网络拓扑设计或配置建议？请直接[联系 Yupitek 工程师团队](/zh-cn/contact/)。
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

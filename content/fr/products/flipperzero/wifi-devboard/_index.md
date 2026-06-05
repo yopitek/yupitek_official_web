@@ -31,4 +31,6 @@ Le WiFi Devboard est le module d'extension Wi-Fi officiel pour Flipper Zero, con
 
 ---
 
-Intéressé ? [Contactez-nous](/fr/contact/) pour les prix et la disponibilité.
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

@@ -30,5 +30,5 @@ L'ASUS ROG ASTRAL RTX5080 O16G est le fleuron de la série RTX 5080 avec un desi
 ---
 
 {{< alert >}}
-Besoin d'un devis ? [Contactez-nous](/fr/contact/)
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

@@ -28,5 +28,5 @@ La ASUS ProArt RTX5080 O16G es una tarjeta gráfica RTX 5080 diseñada específi
 ---
 
 {{< alert >}}
-¿Interesado? [Contáctenos](/es/contact/)
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

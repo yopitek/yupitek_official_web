@@ -70,3 +70,7 @@ ALFA Network est un fabricant taiwanais bien connu d'equipements reseau sans fil
 ## Telechargement des Pilotes
 
 Les telechargements officiels de pilotes ALFA Network se trouvent sur la [page Support technique](/fr/support/).
+
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

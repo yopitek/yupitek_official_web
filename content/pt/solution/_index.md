@@ -62,7 +62,9 @@ Serviços de projeção para shows, lançamentos e feiras. Direção técnica av
 
 ---
 
-Para consultas sobre soluções, [entre em contato conosco](/pt/contact/).
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}
 
 ---
 

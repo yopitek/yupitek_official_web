@@ -37,4 +37,6 @@ A proposta da Yupitek priorizou a integração discreta dos equipamentos ao desi
 
 ---
 
-[Voltar aos Casos](/pt/solution/cases/) | [Entre em contato](/pt/contact/) para discutir seu projeto.
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

@@ -45,5 +45,5 @@ Immersive Raumprojektion sprengt die Grenzen traditioneller Displays und versetz
 ---
 
 {{< alert >}}
-Möchten Sie ein immersives Erlebnis für Ihren Raum schaffen? [Kontaktieren Sie uns](/de/contact/) für Raumbeurteilung und Geräteplanung.
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

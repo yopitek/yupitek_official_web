@@ -27,4 +27,6 @@ Rong Cheng Paper veranstaltete eine Unternehmensausstellung mit dem Schwerpunkt 
 
 ---
 
-Interesse an einer ähnlichen Lösung? [Kontaktieren Sie uns](/de/contact/)
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

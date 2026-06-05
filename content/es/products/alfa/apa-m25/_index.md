@@ -69,5 +69,5 @@ APA-M25 es la antena de panel interior doble banda de alta ganancia de ALFA Netw
 ---
 
 {{< alert >}}
-¿Necesita solicitar cotización o compra por volumen? [Contáctenos](/es/contact/), ofrecemos asesoramiento detallado de compra.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

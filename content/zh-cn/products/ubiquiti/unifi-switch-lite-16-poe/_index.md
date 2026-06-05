@@ -98,5 +98,5 @@ Switch Lite 16 PoE 是在 UniFi 网络中无需机架即可扩展 PoE 设备密�
 ---
 
 {{< alert >}}
-对此产品感兴趣？[联系我们](/zh-cn/contact/)获取报价与 UniFi 网络规划建议。
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

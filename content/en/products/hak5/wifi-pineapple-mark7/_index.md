@@ -40,4 +40,6 @@ WiFi Pineapple Mark VII is HAK5's flagship wireless network audit platform, buil
 
 ---
 
-Interested? [Contact us](/en/contact/) for pricing and availability.
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

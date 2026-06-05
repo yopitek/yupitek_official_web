@@ -54,5 +54,5 @@ Yupitek verfügt über umfangreiche Erfahrung in der Integration von Mehrkanalpr
 ---
 
 {{< alert >}}
-Benötigen Sie ein Mehrkanalprojektion-System? [Kontaktieren Sie uns](/de/contact/) mit Ihren Raumangaben für ein maßgeschneidertes Lösungsangebot.
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

@@ -69,5 +69,5 @@ L'ARS-25-57A est une antenne omnidirectionnelle paddle (style palette) double ba
 ---
 
 {{< alert >}}
-Besoin d'un devis ou de plus d'informations ? [Contactez-nous](/fr/contact/) pour des conseils d'achat détaillés.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

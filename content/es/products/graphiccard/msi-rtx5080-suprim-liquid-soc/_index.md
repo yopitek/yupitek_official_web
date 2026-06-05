@@ -31,5 +31,5 @@ MSI RTX5080 16G SUPRIM LIQUID SOC es la tarjeta gráfica insignia AIO (All-in-On
 
 ---
 {{< alert >}}
-¿Le interesa este producto? [Contáctenos](/es/contact/) para obtener precios.
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}

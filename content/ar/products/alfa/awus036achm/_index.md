@@ -66,5 +66,5 @@ AWUS036ACHM يعتمد على مجموعة شرائح (Chipset) MediaTek MT7610U
 | [ARS NT5B7](/ar/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | متعدد الاتجاهات |
 
 {{< alert >}}
-هل أنت مهتم؟ [تواصل معنا](/ar/contact/)
+هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}

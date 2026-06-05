@@ -72,5 +72,5 @@ La certification de température grade industriel de l'ARS-NT5B7 (-40°C ~ +85°
 ---
 
 {{< alert >}}
-Besoin d'un devis ou de plus d'informations ? [Contactez-nous](/fr/contact/) pour des conseils d'achat détaillés.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

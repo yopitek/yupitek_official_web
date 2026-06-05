@@ -28,5 +28,5 @@ MSI RTX5080 16G GAMING TRIO OC 是 MSI 的 RTX 5080 旗舰机型，采用 GAMING
 ---
 
 {{< alert >}}
-需要询问报价？[联系我们](/zh-cn/contact/)
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}

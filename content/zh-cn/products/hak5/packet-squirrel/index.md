@@ -45,3 +45,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 |------|------|
 | 📖 官方使用文件 | [在线查看](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
 | ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/squirrel/mk2) |
+
+{{< alert >}}
+需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
+{{< /alert >}}

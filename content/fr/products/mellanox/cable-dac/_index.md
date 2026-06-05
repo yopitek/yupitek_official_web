@@ -101,4 +101,6 @@ Le diamètre de l'âme en cuivre est indiqué par l'indice AWG (jauge de fil) :
 
 ---
 
-Besoin d'aide pour planifier le câblage de vos baies ? [Contactez nos ingénieurs](/fr/contact/) pour obtenir des conseils personnalisés.
+{{< alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
+{{< /alert >}}

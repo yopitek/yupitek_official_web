@@ -101,4 +101,6 @@ In den Artikelnummern und Spezifikationen finden Sie Angaben zur Drahtstärke (z
 
 ---
 
-Benötigen Sie Unterstützung bei der Planung Ihres Kabelmanagements im Rack? Wenden Sie sich für eine fachliche Beratung an das [Yupitek-Engineering-Team](/de/contact/).
+{{< alert >}}
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
+{{< /alert >}}

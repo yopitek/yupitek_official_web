@@ -72,5 +72,5 @@ The parameters of YPB02 (including accelerometer thresholds, triggers, UUID, Maj
 ---
 
 {{< alert >}}
-Need a custom quotation or integration solution? Please contact our sales team directly at: **sales@yupitek.com**
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

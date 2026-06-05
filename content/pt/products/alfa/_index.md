@@ -81,4 +81,6 @@ Para baixar os drivers oficiais da ALFA Network, acesse a [página de suporte t�
 
 ---
 
-Precisa de cotação ou preço por volume? [Fale conosco](/pt/contact/)
+{{< alert >}}
+Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
+{{< /alert >}}

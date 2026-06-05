@@ -30,4 +30,6 @@ Flipper Zero is an open-source multi-protocol wireless security research tool su
 
 ---
 
-Need a quote? [Contact us](/en/contact/)
+{{< alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{< /alert >}}

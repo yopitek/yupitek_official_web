@@ -88,4 +88,6 @@ Diseñado para recintos empresariales de ultra-alta densidad como estadios, gran
 
 ---
 
-¿Le interesa este producto? [Contáctenos](/es/contact/) para obtener precios y planificación de red UniFi.
+{{< alert >}}
+¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
+{{< /alert >}}

@@ -77,5 +77,5 @@ The parameters of YPB04 (including trigger behaviors, UUID, Major, and Minor) ar
 ---
 
 {{< alert >}}
-Need a custom quotation or integration solution? Please contact our sales team directly at: **sales@yupitek.com**
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

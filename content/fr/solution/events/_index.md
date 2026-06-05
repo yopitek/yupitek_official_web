@@ -47,5 +47,5 @@ Les besoins en projection événementielle diffèrent fondamentalement des insta
 ---
 
 {{< alert >}}
-Vous avez un besoin de projection événementielle ? [Contactez-nous](/fr/contact/) en indiquant la date et le lieu de votre événement et nous vous fournirons un devis dans les plus brefs délais.
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}

@@ -45,5 +45,5 @@ Yupitek has extensive experience executing large-scale projection mapping shows 
 ---
 
 {{< alert >}}
-Need building mapping projection planning? [Contact Us](/en/contact/) to discuss your event requirements — we provide free equipment recommendations and quotes.
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

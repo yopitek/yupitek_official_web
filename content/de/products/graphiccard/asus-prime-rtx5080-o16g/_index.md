@@ -29,5 +29,5 @@ Die ASUS PRIME RTX5080-O16G Overclocked Edition verfügt über die NVIDIA GeForc
 ---
 
 {{< alert >}}
-Brauchen Sie ein Angebot? [Kontaktieren Sie uns](/de/contact/)
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

@@ -75,5 +75,5 @@ The parameters of YPB01 (including UUID, Major, Minor, Tx Power, and Broadcast I
 ---
 
 {{< alert >}}
-Need a custom quotation or integration solution? Please contact our sales team directly at: **sales@yupitek.com**
+Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}

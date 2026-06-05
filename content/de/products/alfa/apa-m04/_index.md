@@ -74,5 +74,5 @@ Die APA-M04 ist eine Einzelband-2,4-GHz-Antenne. Bei Verwendung mit Dual-Band- o
 ---
 
 {{< alert >}}
-Benötigen Sie ein Angebot oder weitere Informationen? [Kontaktieren Sie uns](/de/contact/) für detaillierte Kaufberatung.
+Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}

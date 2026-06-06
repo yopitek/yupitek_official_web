@@ -14,7 +14,7 @@ Yupitek iBeacon products represent a new generation of Bluetooth® Low Energy (B
 
 ## BLE Beacon System Topology
 
-![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=2)
+![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=3)
 
 Our iBeacon ecosystem connects physical locations with enterprise cloud networks. The beacons transmit BLE radio signals at regular intervals, which are scanned by mobile devices (running corporate apps) and BLE Gateways, forwarding secure logs to central attendance and asset tracking systems.
 

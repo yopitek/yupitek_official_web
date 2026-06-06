@@ -14,7 +14,7 @@ Yupitek iBeacon 產品是新一代藍牙低功耗 (BLE 5.0) 信標裝置，適�
 
 ## 藍牙信標系統架構
 
-![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=2)
+![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=3)
 
 我們的 iBeacon 生態系統將物理位置與企業雲端網路連接起來。信標以定期時間間隔發射 BLE 無線訊號，這些訊號由行動裝置（執行企業 App）和 BLE 閘道掃描，並將安全日誌轉發到中央考勤和資產追蹤系統。
 

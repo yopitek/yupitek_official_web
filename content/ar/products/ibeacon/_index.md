@@ -14,7 +14,7 @@ showChildPages: false
 
 ## مخطط بنية نظام منارات BLE
 
-![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=2)
+![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=3)
 
 يربط نظامنا البيئي لـ iBeacon المواقع المادية بالشبكات السحابية للمؤسسات. تبث المنارات إشارات راديو BLE بفواصل زمنية منتظمة، والتي يتم مسحها ضوئياً بواسطة الهواتف المحمولة (التي تشغل تطبيقات المؤسسة) وبوابات BLE، مما يعيد توجيه سجلات الحضور وتتبع الأصول الآمنة إلى خادم مركزي.
 

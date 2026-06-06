@@ -14,7 +14,7 @@ showChildPages: false
 
 ## Топология системы BLE-маяков
 
-![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=2)
+![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=3)
 
 Экосистема iBeacon связывает физические объекты с корпоративными облачными сетями. Маяки регулярно отправляют BLE-сигналы, которые сканируются смартфонами и шлюзами BLE, пересылая защищенные логи на центральный сервер учета присутствия и отслеживания активов.
 

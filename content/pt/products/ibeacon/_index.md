@@ -14,7 +14,7 @@ Os beacons iBeacon da Yupitek representam uma nova geração de dispositivos Blu
 
 ## Topologia do Sistema de Beacons BLE
 
-![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=2)
+![BLE Beacon System Topology Diagram](/images/products/ibeacon/ibeacon_topology.png?v=3)
 
 Nosso ecossistema iBeacon conecta locais físicos com as redes em nuvem das empresas. Os beacons transmitem sinais de rádio BLE em intervalos regulares, que são detectados por celulares e gateways BLE, enviando relatórios de presença e rastreamento para um servidor central.
 

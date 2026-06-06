@@ -11,6 +11,7 @@ categories: ["驅動安裝指南"]
 series: ["alfa-china-install-guide"]
 related_product: "/zh-tw/products/alfa/awus036axm/"
 series_order: 6
+featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 ---
 
 想體驗 WiFi 6E 的飆速快感？AWUS036AXM 是個非常硬核的選擇，而且它那節省空間的 L 型接口設計真的很貼心，完全不會擋到筆電相鄰的 USB 埠。

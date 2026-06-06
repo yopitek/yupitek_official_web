@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["injeção-pacotes", "aireplay-ng", "Kali-Linux", "adaptador-WiFi", "ALFA-Network"]
+featureimage: "/images/blog/packet-injection-guide.webp"
 ---
 
 ## O Que é Injeção de Pacotes?

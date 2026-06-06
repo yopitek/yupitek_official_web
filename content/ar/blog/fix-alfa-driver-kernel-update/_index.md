@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
+featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 ---
 
 قمت بتشغيل `sudo apt upgrade`، وبعد إعادة التشغيل اختفى محول ALFA تمامًا — لا واجهة، لا أضواء، لا شيء. هذا هو السؤال الأكثر شيوعًا في دعم محولات ALFA Network USB WiFi على Linux، والتحديثات الخاصة بالنواة هي السبب في جميع الحالات تقريبًا. يرشدك هذا الدليل خلال عملية تشخيص وإصلاح منهجية لعائلتَي شريحتين الأكثر تضررًا: **RTL8812AU** (الموجودة في AWUS036ACH وAWUS036ACS) و**MT7921AUN** (الموجودة في AWUS036AXM وAXML). اتبع خطوات كل قسم وسيعود محولك إلى العمل في أقل من 15 دقيقة.

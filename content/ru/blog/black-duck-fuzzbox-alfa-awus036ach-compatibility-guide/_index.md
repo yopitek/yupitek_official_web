@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
+featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
 ---
 
 Фаззинг протоколов WLAN (часто называемый негативным беспроводным тестированием) — один из наиболее важных этапов проверки безопасности и надежности встроенных беспроводных устройств, устройств умного дома и корпоративных точек доступа. Однако попытка передавать по воздуху некорректные кадры управления, контроля или данных 802.11 требует низкоуровневого контроля уровня управления доступом к среде (MAC), который стандартные операционные системы и коммерческие драйверы Wi-Fi просто не позволяют осуществлять.

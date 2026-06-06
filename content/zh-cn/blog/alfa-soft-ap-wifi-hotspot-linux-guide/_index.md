@@ -8,6 +8,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi", "USB-无线网络卡", "树莓派-WiFi-热点"]
 
+featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
 ---
 
 

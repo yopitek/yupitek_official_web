@@ -11,6 +11,7 @@ categories: ["Treiber-Anleitungen"]
 series: ["alfa-china-install-guide"]
 related_product: "/de/products/alfa/awus036eacs/"
 series_order: 8
+featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
 ---
 
 Der AWUS036EACS ist der Nano WiFi 5 + Bluetooth 4.2 Kombi-Adapter von ALFA. Er wurde für Windows-Benutzer entwickelt, die ein kompaktes drahtloses Upgrade benötigen. Sein RTL8821CU-Chipsatz verfügt über keinen zuverlässigen Open-Source-Linux-Treiber — Monitor-Modus und Paket-Injektion werden nicht unterstützt. Diese Anleitung deckt die Windows-Installation aus chinesischen Quellen ab und erläutert die Linux-Einschränkungen klar und deutlich.

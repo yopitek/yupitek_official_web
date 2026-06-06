@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["DJI", "drone", "antenna-upgrade", "RP-SMA", "range-extension", "ALFA-APA-M25", "ALFA-ARS-NT5B7"]
+featureimage: "/images/blog/dji-drone-controller-antenna-upgrade.webp"
 ---
 
 DJI 無人機遙控器比大多數飛手想像的更具升級彈性。RC-N1、RC2、RC Pro 及 Smart Controller 的外部天線接口均採用 **RP-SMA 接頭** — 與 ALFA Network 外接式 USB Wi-Fi 天線所使用的標準完全相同。這項相容性讓使用者無需任何工具，即可輕鬆完成距離升級。

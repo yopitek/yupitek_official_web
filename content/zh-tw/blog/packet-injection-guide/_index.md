@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["封包注入", "aireplay-ng", "Kali-Linux", "WiFi網路卡", "RTL8812AU", "ALFA-Network"]
+featureimage: "/images/blog/packet-injection-guide.webp"
 ---
 
 ## 什麼是封包注入？

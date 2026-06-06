@@ -11,6 +11,7 @@ categories: ["Guides de Pilotes"]
 series: ["alfa-china-install-guide"]
 series_order: 6
 related_product: "/fr/products/alfa/awus036axm/"
+featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 ---
 
 L'AWUS036AXM est l'adaptateur WiFi 6E tri-bande d'ALFA avec un connecteur USB-A en forme de L peu encombrant. Sa puce MT7921AUN utilise le pilote `mt7921u`, intégré au noyau Linux depuis la version 5.18. Le connecteur en forme de L permet de garder les ports USB adjacents libres sur les ordinateurs portables. Ce guide couvre la configuration complète — micrologiciel, vérification du pilote, mode moniteur, injection de paquets et VIF — sans toucher à GitHub.

@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 6
 related_product: "/ja/products/alfa/awus036axm/"
+featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 ---
 
 AWUS036AXMは、スペースを節約するL型USB-Aコネクタを備えた、ALFAのWiFi 6Eトライバンド・アダプターです。搭載されているMT7921AUNチップは、Linuxカーネルバージョン5.18以降で `mt7921u` ドライバが標準組み込みされています。L型のコネクタにより、ノートパソコンの隣接するUSBポートを塞ぐことなく使用できます。このガイドでは、GitHubに触れることなく、ファームウェアの設定、ドライバの確認、モニターモード、パケットインジェクション、VIFの設定までを完全にカバーします。

@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 7
 related_product: "/ar/products/alfa/awus036axml/"
+featureimage: "/images/blog/awus036axml-china-install-guide.webp"
 ---
 
 يعتبر AWUS036AXML هو الطراز الرائد من ALFA لـ WiFi 6E — وهو محول USB-C ثلاثي النطاق يغطي نطاقات 2.4 جيجاهرتز و5 جيجاهرتز ونطاق 6 جيجاهرتز غير المزدحم. تستخدم شريحة MT7921AUN الخاصة به برنامج تشغيل `mt7921u` المدمج في نواة Linux منذ الإصدار 5.18. في Ubuntu 24.04 و Kali 2025 ، يعد المحول جاهزًا للاستخدام بمجرد تثبيت حزمة البرامج الثابتة من مرآة محلية. يغطي هذا الدليل الإعداد الكامل — البرامج الثابتة، التحقق من برنامج التشغيل، وضع المراقبة، حقن الحزم، و VIF — دون لمس GitHub.

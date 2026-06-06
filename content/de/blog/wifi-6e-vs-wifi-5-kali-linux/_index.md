@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "penetration-testing", "kali-linux"]
+featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
 ---
 
 # WiFi 6E vs WiFi 5: Welchen ALFA-Adapter sollten Sie für Penetration Testing wählen?

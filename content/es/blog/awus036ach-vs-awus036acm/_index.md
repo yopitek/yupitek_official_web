@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "AWUS036ACM", "comparación", "Kali-Linux", "RTL8812AU"]
+featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
 ---
 
 ## Resumen General

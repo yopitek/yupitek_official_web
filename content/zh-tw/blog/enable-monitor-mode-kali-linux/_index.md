@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["監聽模式", "Kali-Linux", "airmon-ng", "iw", "WiFi網路卡", "ALFA-Network"]
+featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 ---
 
 ## 什麼是監聽模式？為何滲透測試非它不可

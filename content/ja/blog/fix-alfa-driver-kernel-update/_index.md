@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
+featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 ---
 
 `sudo apt upgrade` を実行して再起動したら、ALFAアダプターが消えてしまいました——インターフェースなし、ランプなし、何もなし。これはLinuxでALFA Network USB WiFiアダプターを使うユーザーから最もよく寄せられるサポートの質問であり、カーネルの更新がほぼ常に原因です。このガイドでは、最も影響を受ける2つのチップセットファミリーの体系的な診断と修復手順を説明します：**RTL8812AU**（AWUS036ACH、AWUS036ACS搭載）と **MT7921AUN**（AWUS036AXM、AXML搭載）。各セクションの手順に従えば、15分以内にアダプターが復旧します。

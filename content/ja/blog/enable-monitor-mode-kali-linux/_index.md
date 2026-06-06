@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["モニターモード", "Kali-Linux", "airmon-ng", "iw", "WiFiアダプター", "ALFA-Network"]
+featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 ---
 
 ## モニターモードとは？ペネトレーションテストにおける重要性

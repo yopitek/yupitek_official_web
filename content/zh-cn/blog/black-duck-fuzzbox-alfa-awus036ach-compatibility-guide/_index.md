@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
+featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
 ---
 
 WLAN 协议模糊测试（通常被称为无线负面测试）是验证嵌入式无线设备、智能家居家电和企业级接入点（AP）安全性和鲁棒性最关键的步骤之一。然而，尝试通过无线电波发送畸形的 802.11 管理、控制或数据帧，需要对介质访问控制（MAC）层进行底层控制，而标准的操作系统和商用 WiFi 驱动程序根本不允许这样做。

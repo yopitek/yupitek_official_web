@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["天线", "APA-M25", "ARS-NT5B7", "RP-SMA", "WiFi网卡", "ALFA-Network", "信号增强"]
+featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
 ---
 
 ## 为什么要升级天线？

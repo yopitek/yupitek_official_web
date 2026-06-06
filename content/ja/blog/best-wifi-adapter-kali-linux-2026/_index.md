@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Kali-Linux", "WiFiアダプター", "モニターモード", "ALFA-Network", "ペネトレーションテスト"]
+featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
 ---
 
 ## なぜ内蔵 WiFi ではペネトレーションテストができないか

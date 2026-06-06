@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["DJI", "drone", "antenna-upgrade", "RP-SMA", "range-extension", "ALFA-APA-M25", "ALFA-ARS-NT5B7"]
+featureimage: "/images/blog/dji-drone-controller-antenna-upgrade.webp"
 ---
 
 # Mise à niveau des antennes du contrôleur de drone DJI : Étendre la portée avec les antennes ALFA

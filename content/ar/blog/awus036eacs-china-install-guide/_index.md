@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 8
 related_product: "/ar/products/alfa/awus036eacs/"
+featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
 ---
 
 يعتبر AWUS036EACS محول نانو كومبو WiFi 5 + Bluetooth 4.2 من ALFA. تم تصميمه لمستخدمي ويندوز الذين يحتاجون إلى ترقية لاسلكية مدمجة. لا تحتوي شريحة RTL8821CU الخاصة به على برنامج تشغيل لينكس مفتوح المصدر موثوق — وضع المراقبة وحقن الحزم غير مدعومين. يغطي هذا الدليل تثبيت ويندوز من المصادر الصينية ويوضح قيود لينكس بوضوح.

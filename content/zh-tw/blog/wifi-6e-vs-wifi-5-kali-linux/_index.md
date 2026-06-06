@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "滲透測試", "Kali-Linux"]
+featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
 ---
 
 ## 什麼是 Wi-Fi 6E？認識全新 6 GHz 頻段

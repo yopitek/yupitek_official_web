@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
+featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 ---
 
 # ALFA-Treiber nach Kernel-Update defekt? So beheben Sie es

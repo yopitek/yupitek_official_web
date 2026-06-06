@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["инъекция-пакетов", "aireplay-ng", "Kali-Linux", "WiFi-адаптер", "ALFA-Network"]
+featureimage: "/images/blog/packet-injection-guide.webp"
 ---
 
 ## Что такое инъекция пакетов?

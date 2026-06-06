@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["monitor-mode", "kali-linux", "airmon-ng", "iw", "wifi-adapter", "ALFA-Network"]
+featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 ---
 
 # Monitor-Modus unter Kali Linux 2026 aktivieren: Komplettanleitung

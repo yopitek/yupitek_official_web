@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["driver-install", "kali-linux", "ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
+featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
 ---
 
 # ALFA-USB-WiFi-Treiber unter Kali Linux & Ubuntu 24.04 installieren (2026)

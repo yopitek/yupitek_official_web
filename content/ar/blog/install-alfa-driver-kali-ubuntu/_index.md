@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["تثبيت-برنامج-تشغيل", "Kali-Linux", "Ubuntu", "RTL8812AU", "ALFA-Network"]
+featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
 ---
 
 كثيراً ما يعتمد تشغيل محول USB WiFi على Linux على شيء واحد: برنامج التشغيل. على عكس Windows حيث يبث المصنّعون برامج التشغيل في مثبّتات قابلة للتنفيذ، يعتمد Linux على وحدات النواة — كود مُصرَّف تحمّله نظام التشغيل للتواصل مع الأجهزة. فهم هذا النموذج يجعل استكشاف الأخطاء واضحاً وعملية تثبيت برامج التشغيل متوقعة.

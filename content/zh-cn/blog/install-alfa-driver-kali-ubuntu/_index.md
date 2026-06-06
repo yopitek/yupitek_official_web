@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["驱动安装", "Kali-Linux", "Ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
+featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
 ---
 
 让 USB WiFi 网卡在 Linux 上正常工作，归根结底取决于一件事：驱动程序。与 Windows 上厂商提供可执行安装包的方式不同，Linux 使用内核模块——编译后由操作系统加载、用于与硬件通信的代码文件。理解这一机制，驱动排障就会变得简单明了，安装过程也将有迹可循。

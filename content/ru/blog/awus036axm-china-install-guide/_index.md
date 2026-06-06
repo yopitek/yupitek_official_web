@@ -11,6 +11,7 @@ categories: ["Руководства по драйверам"]
 series: ["alfa-china-install-guide"]
 related_product: "/ru/products/alfa/awus036axm/"
 series_order: 6
+featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 ---
 
 AWUS036AXM — это трехдиапазонный адаптер WiFi 6E от ALFA с компактным L-образным разъемом USB-A. Его чип MT7921AUN использует драйвер `mt7921u`, встроенный в ядро Linux начиная с версии 5.18. L-образный разъем позволяет оставлять соседние USB-порты свободными. Это руководство охватывает полную настройку — прошивку, проверку драйвера, режим мониторинга, инъекцию пакетов и VIF — без использования GitHub.

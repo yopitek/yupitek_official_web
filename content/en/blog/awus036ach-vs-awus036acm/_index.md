@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "AWUS036ACM", "comparison", "kali-linux", "RTL8812AU", "MT7612U"]
+featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
 ---
 
 ## Overview

@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 7
 related_product: "/zh-tw/products/alfa/awus036axml/"
+featureimage: "/images/blog/awus036axml-china-install-guide.webp"
 ---
 
 AWUS036AXML 是 ALFA 的 WiFi 6E 旗艦機種——一款三頻 USB-C 無線網路卡，涵蓋 2.4 GHz、5 GHz 及較少壅塞的 6 GHz 頻段。其 MT7921AUN 晶片使用 `mt7921u` 驅動程式，自 Linux 核心 5.18 版起已內建支援。在 Ubuntu 24.04 與 Kali 2025 上，只需從國內鏡像站安裝韌體套件即可即插即用。本指南涵蓋完整設定步驟——韌體、驅動程式驗證、監控模式、封包注入與 VIF——無需訪問 GitHub。

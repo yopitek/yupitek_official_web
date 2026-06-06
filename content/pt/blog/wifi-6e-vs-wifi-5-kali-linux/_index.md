@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "pentest", "Kali-Linux"]
+featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
 ---
 
 ## O Que é Wi-Fi 6E? A Nova Banda de 6 GHz Explicada

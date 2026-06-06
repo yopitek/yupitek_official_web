@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["antenne", "APA-M25", "ARS-NT5B7", "RP-SMA", "adaptateur-wifi", "ALFA-Network", "boost-signal"]
+featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
 ---
 
 ## Pourquoi mettre à niveau votre antenne ?

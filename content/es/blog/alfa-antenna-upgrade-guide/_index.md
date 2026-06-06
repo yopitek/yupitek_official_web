@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["antena", "APA-M25", "ARS-NT5B7", "RP-SMA", "adaptador-WiFi", "ALFA-Network"]
+featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
 ---
 
 ## ¿Por Qué Actualizar Tu Antena?

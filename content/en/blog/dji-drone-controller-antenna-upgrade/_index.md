@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["DJI", "drone", "antenna-upgrade", "RP-SMA", "range-extension", "ALFA-APA-M25", "ALFA-ARS-NT5B7"]
+featureimage: "/images/blog/dji-drone-controller-antenna-upgrade.webp"
 ---
 
 DJI drone controllers are more upgrade-friendly than most pilots realize. The external antenna ports on the RC-N1, RC2, RC Pro, and Smart Controller all use **RP-SMA connectors** — the same standard found on ALFA Network's external USB Wi-Fi adapter antennas. This single compatibility detail opens the door to a straightforward, tool-free range upgrade.

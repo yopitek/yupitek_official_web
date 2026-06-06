@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["kali-linux", "wifi-adapter", "monitor-mode", "packet-injection", "ALFA-Network"]
+featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
 ---
 
 # Komplettleitfaden: Die besten WiFi-Adapter für Kali Linux 2026

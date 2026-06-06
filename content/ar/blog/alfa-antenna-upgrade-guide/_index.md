@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["هوائي", "APA-M25", "ARS-NT5B7", "RP-SMA", "محول-WiFi", "ALFA-Network"]
+featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
 ---
 
 ## لماذا تُرقّي هوائيك؟

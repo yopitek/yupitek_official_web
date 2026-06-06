@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["driver-install", "kali-linux", "ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
+featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
 ---
 
 Getting a USB WiFi adapter working on Linux often comes down to one thing: the driver. Unlike Windows, where manufacturers bundle drivers into executable installers, Linux uses kernel modules — compiled code that the operating system loads to communicate with hardware. Understanding this model makes troubleshooting straightforward and driver installation predictable.

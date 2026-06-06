@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Kali-Linux", "無線網卡", "Monitor-Mode", "ALFA-Network", "滲透測試"]
+featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
 ---
 
 ## 前言：為什麼 Kali Linux 需要外接無線網卡？

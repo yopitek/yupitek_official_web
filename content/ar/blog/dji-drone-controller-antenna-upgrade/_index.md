@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["DJI", "drone", "antenna-upgrade", "RP-SMA", "range-extension", "ALFA-APA-M25", "ALFA-ARS-NT5B7"]
+featureimage: "/images/blog/dji-drone-controller-antenna-upgrade.webp"
 ---
 
 وحدات تحكم طائرات DJI أكثر قابليةً للترقية مما يدرك معظم الطيارين. منافذ الهوائي الخارجية في RC-N1 وRC2 وRC Pro وSmart Controller تستخدم جميعها **موصلات RP-SMA** — المعيار ذاته المستخدم في هوائيات محولات Wi-Fi الخارجية من ALFA Network. هذا التوافق الواحد يفتح الباب أمام ترقية مباشرة وبدون أدوات.

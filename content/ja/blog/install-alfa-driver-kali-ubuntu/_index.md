@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ドライバーインストール", "Kali-Linux", "Ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
+featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
 ---
 
 Linux で USB WiFiアダプターを動かすには、まずドライバーが鍵になります。Windows では製造元がインストーラーを提供してくれますが、Linux ではカーネルモジュール——OSがハードウェアと通信するためにロードするコンパイル済みコード——を使います。この仕組みを理解しておくと、トラブルシューティングが格段に楽になり、ドライバーのインストール作業も迷わず進められます。

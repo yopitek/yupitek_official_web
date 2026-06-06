@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["enterprise", "wireless-security", "penetration-testing", "rogue-AP", "WPA2", "WPA3", "PMF", "ALFA-network"]
+featureimage: "/images/blog/enterprise-wireless-security-assessment.webp"
 ---
 
 {{< alert "triangle-exclamation" >}}

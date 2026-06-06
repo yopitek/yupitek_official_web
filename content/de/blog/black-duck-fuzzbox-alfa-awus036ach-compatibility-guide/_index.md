@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
+featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
 ---
 
 WLAN-Protokoll-Fuzzing – oft auch als negatives Drahtlostesten bezeichnet – ist einer der kritischsten Schritte bei der Validierung der Sicherheit und Robustheit von eingebetteten Drahtlosgeräten, Smart-Home-Geräten und Enterprise-Access-Points. Die Übertragung fehlerhafter 802.11-Management-, Kontroll- oder Datenframes über die Luft erfordert jedoch eine Low-Level-Steuerung der Media-Access-Control-Schicht (MAC), die Standard-Betriebssysteme und kommerzielle WLAN-Treiber schlichtweg nicht zulassen.

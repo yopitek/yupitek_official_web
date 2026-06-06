@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
+featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
 ---
 
 O fuzzing de protocolo WLAN — frequentemente chamado de teste negativo sem fio — é uma das etapas mais críticas na validação da segurança e robustez de dispositivos sem fio incorporados, eletrodomésticos inteligentes e pontos de acesso empresariais. No entanto, tentar transmitir quadros de gerenciamento, controle ou dados 802.11 malformados pelo ar exige controle de baixo nível da camada de controle de acesso ao meio (MAC) que os sistemas operacionais padrão e os drivers de WiFi comerciais simplesmente não permitem.

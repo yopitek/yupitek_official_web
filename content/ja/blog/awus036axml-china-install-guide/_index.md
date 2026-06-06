@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 7
 related_product: "/ja/products/alfa/awus036axml/"
+featureimage: "/images/blog/awus036axml-china-install-guide.webp"
 ---
 
 AWUS036AXMLは、ALFAのWiFi 6Eフラッグシップモデルです。2.4 GHz、5 GHzに加えて、混雑の少ない6 GHz帯をカバーするUSB-Cアダプターです。搭載されているMT7921AUNチップは、Linuxカーネルバージョン5.18以降で `mt7921u` ドライバが標準組み込みされています。Ubuntu 24.04やKali 2025では、国内ミラーからファームウェアパッケージをインストールするだけで、プラグアンドプレイで使用可能です。このガイドでは、GitHubに触れることなく、ファームウェアの設定、ドライバの確認、モニターモード、パケットインジェクション、VIFの設定までを完全にカバーします。

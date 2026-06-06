@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["packet-injection", "aireplay-ng", "kali-linux", "wifi-adapter", "RTL8812AU", "ALFA-Network"]
+featureimage: "/images/blog/packet-injection-guide.webp"
 ---
 
 # Was ist Packet Injection? Testen Sie Ihre WiFi-Adapter-Kompatibilität mit Kali Linux

@@ -11,6 +11,7 @@ categories: ["Guias de Drivers"]
 series: ["alfa-china-install-guide"]
 related_product: "/pt/products/alfa/awus036axm/"
 series_order: 6
+featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 ---
 
 O AWUS036AXM é o adaptador WiFi 6E tri-band da ALFA com um conector USB-A em forma de L que economiza espaço. Seu chip MT7921AUN usa o driver `mt7921u`, integrado no kernel Linux desde a versão 5.18. O conector em forma de L mantém as portas USB adjacentes livres em laptops. Este guia cobre a configuração completa — firmware, verificação do driver, modo monitor, injeção de pacotes e VIF — sem tocar no GitHub.

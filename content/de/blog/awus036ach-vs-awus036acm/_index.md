@@ -9,6 +9,7 @@ tags: ["AWUS036ACH", "AWUS036ACM", "Vergleich", "kali-linux", "RTL8812AU", "MT76
 series: ["alfa-china-install-guide"]
 series_order: 10
 slug: "awus036ach-vs-awus036acm"
+featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
 ---
 
 ## Überblick

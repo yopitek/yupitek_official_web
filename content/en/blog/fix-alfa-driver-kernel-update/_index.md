@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
+featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 ---
 
 You run `sudo apt upgrade`, reboot, and your ALFA adapter has vanished. No interface, no lights, nothing. This is the single most common support question surrounding ALFA Network USB WiFi adapters on Linux — and kernel updates are almost always the culprit. This guide walks you through a systematic diagnosis and repair process for the two most affected chipset families: **RTL8812AU** (found in the AWUS036ACH and AWUS036ACS) and **MT7921AUN** (found in the AWUS036AXM and AXML). Follow each section in order and your adapter will be back online in under 15 minutes.

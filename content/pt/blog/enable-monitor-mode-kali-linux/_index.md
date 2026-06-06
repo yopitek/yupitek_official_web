@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["modo-monitor", "Kali-Linux", "airmon-ng", "iw", "adaptador-WiFi", "ALFA-Network"]
+featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 ---
 
 ## O Que é Modo Monitor e Por Que Importa para Pentest

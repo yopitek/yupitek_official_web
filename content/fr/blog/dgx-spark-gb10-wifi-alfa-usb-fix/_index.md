@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
+featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
 ---
 
 Votre **NVIDIA DGX Spark** tant attendu (nom de code Project DIGITS) est enfin arrivé.

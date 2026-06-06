@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["パケットインジェクション", "aireplay-ng", "Kali-Linux", "WiFiアダプター", "RTL8812AU", "ALFA-Network"]
+featureimage: "/images/blog/packet-injection-guide.webp"
 ---
 
 ## パケットインジェクションとは？

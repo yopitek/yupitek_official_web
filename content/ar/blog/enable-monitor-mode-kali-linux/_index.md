@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["وضع-المراقبة", "Kali-Linux", "airmon-ng", "iw", "محول-WiFi", "ALFA-Network"]
+featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 ---
 
 ## ما هو وضع المراقبة ولماذا يهم في اختبار الاختراق؟

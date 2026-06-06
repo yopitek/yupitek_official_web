@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 7
 related_product: "/en/products/alfa/awus036axml/"
+featureimage: "/images/blog/awus036axml-china-install-guide.webp"
 ---
 
 The AWUS036AXML is ALFA's WiFi 6E flagship — a tri-band USB-C adapter covering 2.4 GHz, 5 GHz, and the uncongested 6 GHz band. Its MT7921AUN chip uses the `mt7921u` driver, built into the Linux kernel since version 5.18. On Ubuntu 24.04 and Kali 2025 it is plug-and-play once the firmware package is installed from a domestic mirror. This guide covers the full setup — firmware, driver verification, monitor mode, packet injection, and VIF — without touching GitHub.

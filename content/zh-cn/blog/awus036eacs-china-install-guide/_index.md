@@ -11,6 +11,7 @@ series: ["alfa-china-install-guide"]
 description: "手把手教你在中国境内安装 ALFA AWUS036EACS。这款纳米网卡在 Windows 下表现极佳，但在 Linux 下有一定局限性，请务必阅读本指南再开始。"
 related_product: "/zh-cn/products/alfa/awus036eacs/"
 series_order: 8
+featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
 ---
 
 AWUS036EACS 是 ALFA 家族中最迷你的成员之一，它不仅有 WiFi 5，还自带了蓝牙 4.2。它非常适合那些想给老笔记本升级，但又不想要个大天线在外面晃的人。不过，买之前你要搞清楚一件事：它在 Windows 上很好用，但在 Linux（特别是 Kali）上并不推荐。

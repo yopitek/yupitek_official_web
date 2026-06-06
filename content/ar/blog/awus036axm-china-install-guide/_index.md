@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 6
 related_product: "/ar/products/alfa/awus036axm/"
+featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 ---
 
 يعتبر AWUS036AXM محول WiFi 6E ثلاثي النطاق من ALFA مع موصل USB-A موفر للمساحة على شكل حرف L. تستخدم شريحة MT7921AUN الخاصة به برنامج تشغيل `mt7921u` المدمج في نواة Linux منذ الإصدار 5.18. يحافظ الموصل على شكل حرف L على منافذ USB المجاورة خالية في أجهزة الكمبيوتر المحمولة. يغطي هذا الدليل الإعداد الكامل — البرامج الثابتة، التحقق من برنامج التشغيل، وضع المراقبة، حقن الحزم، و VIF — دون لمس GitHub.

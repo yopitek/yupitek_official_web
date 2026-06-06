@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["监听模式", "Kali-Linux", "airmon-ng", "iw", "WiFi网卡", "ALFA-Network"]
+featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 ---
 
 ## 什么是监听模式，它对渗透测试有何意义

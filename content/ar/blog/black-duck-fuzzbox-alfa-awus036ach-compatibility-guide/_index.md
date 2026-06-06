@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
+featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
 ---
 
 إن اختبار فحص ثغرات بروتوكول الشبكة اللاسلكية (WLAN protocol fuzzing) — والذي يشار إليه غالباً بالاختبار السلبي اللاسلكي (wireless negative testing) — هو أحد أهم الخطوات في التحقق من أمان ومتانة الأجهزة اللاسلكية المضمنة، والأجهزة المنزلية الذكية، ونقاط الوصول الخاصة بالمؤسسات. ومع ذلك، فإن محاولة إرسال إطارات إدارة أو تحكم أو بيانات 802.11 تالفة أو مشوهة (malformed) عبر الهواء تتطلب تحكماً منخفض المستوى في طبقة التحكم في الوصول إلى الوسائط (MAC) وهو ما لا تسمح به أنظمة التشغيل القياسية وبرامج تشغيل الواي فاي التجارية ببساطة.

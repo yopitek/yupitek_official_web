@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["驅動程式安裝", "Kali-Linux", "Ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
+featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
 ---
 
 要讓 USB WiFi 網路卡在 Linux 上正常運作，關鍵幾乎都在驅動程式。Windows 有廠商提供的安裝程式，Linux 則不同——系統使用核心模組（kernel module）來與硬體溝通，也就是由作業系統在開機時或需要時載入的編譯程式碼。理解這個機制，除錯就會變得清晰，驅動程式安裝也更有規律可循。

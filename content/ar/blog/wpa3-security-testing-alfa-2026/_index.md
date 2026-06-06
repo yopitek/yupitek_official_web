@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["WPA3", "SAE", "dragonblood", "transition-mode", "PMF", "kali-linux", "ALFA-network", "penetration-testing"]
+featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
 ---
 
 {{< alert "triangle-exclamation" >}}

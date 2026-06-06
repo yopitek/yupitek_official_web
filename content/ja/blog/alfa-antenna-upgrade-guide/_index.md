@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["アンテナ", "APA-M25", "ARS-NT5B7", "RP-SMA", "WiFiアダプター", "ALFA-Network"]
+featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
 ---
 
 ## なぜアンテナをアップグレードするのか？

@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["антенна", "APA-M25", "ARS-NT5B7", "RP-SMA", "WiFi-адаптер", "ALFA-Network"]
+featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
 ---
 
 ## Зачем менять антенну?

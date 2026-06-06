@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["режим-монитора", "Kali-Linux", "airmon-ng", "iw", "WiFi-адаптер", "ALFA-Network"]
+featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 ---
 
 ## Что такое режим монитора и зачем он нужен для пентестинга

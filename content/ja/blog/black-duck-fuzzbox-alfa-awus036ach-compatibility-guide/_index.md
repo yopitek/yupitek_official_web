@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
+featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
 ---
 
 WLANプロトコルのファジング（多くの場合、ワイヤレスネガティブテストと呼ばれます）は、組み込みワイヤレスデバイス、スマート家電、エンタープライズ向けアクセスポイントのセキュリティと堅牢性を検証するための最も重要なステップの1つです。しかし、不正な形式の802.11管理、制御、またはデータフレームを無線（Over-the-Air）で送信するには、メディアアクセス制御（MAC）レイヤーの低レベルな制御が必要であり、標準的なオペレーティングシステムや商用のWiFiドライバーではこれを許可していません。

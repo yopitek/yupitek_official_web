@@ -7,6 +7,7 @@ dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["حقن-الحزم", "aireplay-ng", "Kali-Linux", "محول-WiFi", "ALFA-Network"]
+featureimage: "/images/blog/packet-injection-guide.webp"
 ---
 
 ## ما هو حقن الحزم؟

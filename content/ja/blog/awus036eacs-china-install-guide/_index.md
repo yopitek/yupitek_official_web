@@ -11,6 +11,7 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 8
 related_product: "/ja/products/alfa/awus036eacs/"
+featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
 ---
 
 AWUS036EACSは、ALFAの超小型（Nano）WiFi 5 + Bluetooth 4.2 コンボアダプターです。主にコンパクトなワイヤレスアップグレードを必要とするWindowsユーザー向けに設計されています。搭載されているRTL8821CUチップセットには、信頼できるオープンソースのLinuxドライバが存在せず、モニターモードやパケットインジェクションもサポートされていません。このガイドでは、中国国内のソースからのWindowsへのインストール方法と、Linuxにおける制限事項について詳しく解説します。

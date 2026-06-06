@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
+featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 ---
 
 你执行了 `sudo apt upgrade`，重新启动后 ALFA 网卡消失了——没有接口、没有指示灯、什么都没有。这是 Linux 用户询问 ALFA Network USB WiFi 网卡时最常见的问题，而内核更新几乎是所有问题的根源。本指南将带你系统性地诊断并修复两种最常受影响的芯片组：**RTL8812AU**（AWUS036ACH、AWUS036ACS）与 **MT7921AUN**（AWUS036AXM、AXML）。按照各节步骤操作，你的网卡应在 15 分钟内恢复正常。

@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Kali-Linux", "WiFi-адаптер", "режим-монитора", "ALFA-Network", "пентестинг"]
+featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
 ---
 
 ## Почему встроенный WiFi не подходит для пентестинга

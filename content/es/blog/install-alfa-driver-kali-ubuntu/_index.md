@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["instalación-controlador", "Kali-Linux", "Ubuntu", "RTL8812AU", "ALFA-Network"]
+featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
 ---
 
 Lograr que un adaptador USB WiFi funcione en Linux casi siempre se reduce a una sola cosa: el controlador. A diferencia de Windows, donde los fabricantes incluyen los controladores en instaladores ejecutables, Linux usa módulos del kernel — código compilado que el sistema operativo carga para comunicarse con el hardware. Entender este modelo hace que la resolución de problemas sea directa y la instalación del controlador sea predecible.

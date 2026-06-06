@@ -104,6 +104,11 @@ def main():
                 
             try:
                 res = page.goto(url, wait_until="load")
+                if not res:
+                    failures.append((route, "Navigation failed (no response)"))
+                    failure_count += 1
+                    print(f"FAIL: {route} -> Navigation failed")
+                    continue
                 if res.status != 200:
                     failures.append((route, f"HTTP status {res.status}"))
                     failure_count += 1

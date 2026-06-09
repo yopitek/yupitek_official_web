@@ -341,48 +341,7 @@ sudo service NetworkManager restart
 
 ## 6. Application Topology
 
-{{< mermaid >}}
-graph TB
-    subgraph Android["Android Phone"]
-        APP[NetHunter App]
-        CHROOT[Kali Linux Chroot<br/>NetHunter 2024.4]
-        KERNEL[Custom NetHunter Kernel<br/>mt76x0u / mt76x2u / 88XXau modules]
-        USB_CTL[USB OTG Controller]
-    end
-
-    subgraph OTG["USB OTG Connection"]
-        HUB[Powered OTG Hub<br/>Recommended]
-        CABLE[USB OTG Cable<br/>Direct connection — limited runtime]
-    end
-
-    subgraph ALFA["ALFA WiFi Adapters"]
-        ACHM["AWUS036ACHM<br/>MT7610U · mt76x0u<br/>In-kernel · Plug-and-play"]
-        ACM["AWUS036ACM<br/>MT7612U · mt76x2u<br/>In-kernel · Dual antenna"]
-        ACH["AWUS036ACH<br/>RTL8812AU · 88XXau<br/>DKMS · Strongest signal"]
-    end
-
-    subgraph TOOLS["Kali Linux Tools"]
-        AIRODUMP[airodump-ng<br/>Passive Capture]
-        AIRMON[airmon-ng<br/>Monitor Mode]
-        KISMET[Kismet<br/>Wireless Survey]
-        MANA[MANA Toolkit<br/>Rogue AP]
-    end
-
-    APP -->|Start chroot| CHROOT
-    CHROOT -->|Call kernel modules| KERNEL
-    KERNEL -->|USB device enumeration| USB_CTL
-    USB_CTL -->|Data + power passthrough| HUB
-    USB_CTL -->|Data only| CABLE
-    HUB -->|External power + data| ACHM
-    HUB -->|External power + data| ACM
-    HUB -->|External power + data| ACH
-    CABLE -.->|Not recommended for ACH| ACHM
-
-    CHROOT -->|wlan1mon interface| AIRMON
-    AIRMON --> AIRODUMP
-    AIRMON --> KISMET
-    AIRMON --> MANA
-{{< /mermaid >}}
+![NetHunter + ALFA Adapters Application Topology: Android Phone with NetHunter App, Kali Chroot, Custom Kernel, USB OTG Controller connected via Powered OTG Hub to ALFA AWUS036ACHM, AWUS036ACM, AWUS036ACH adapters, feeding Kali Linux tools airodump-ng, airmon-ng, Kismet, MANA Toolkit](/images/blog/nethunter-topology.png)
 
 ---
 

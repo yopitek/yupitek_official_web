@@ -342,7 +342,7 @@ sudo service NetworkManager restart
 
 ## 6. Topologia da Aplicação
 
-![Diagrama de arquitetura NetHunter + ALFA](/images/blog/nethunter-topology.png)
+<img src="/images/blog/nethunter-topology.png" alt="NetHunter + ALFA Application Topology" loading="eager" style="max-width:100%;height:auto;display:block">
 
 ---
 

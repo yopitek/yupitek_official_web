@@ -5,6 +5,7 @@ date: 2026-06-09
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
+featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
 ---
 

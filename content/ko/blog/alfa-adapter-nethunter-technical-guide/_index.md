@@ -342,7 +342,7 @@ sudo service NetworkManager restart
 
 ## 6. 애플리케이션 구성도
 
-![NetHunter + ALFA 어댑터 아키텍처 다이어그램](/images/blog/nethunter-topology.png)
+{{< figure src="/images/blog/nethunter-topology.png" alt="NetHunter + ALFA Application Topology Diagram" loading="eager" class="topology-diagram" >}}
 
 ---
 

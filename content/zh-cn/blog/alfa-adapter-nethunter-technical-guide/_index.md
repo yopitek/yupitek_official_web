@@ -342,7 +342,7 @@ sudo service NetworkManager restart
 
 ## 6. 应用架构图
 
-![NetHunter + ALFA 网卡应用架构图](/images/blog/nethunter-topology.png)
+{{< figure src="/images/blog/nethunter-topology.png" alt="NetHunter + ALFA Application Topology Diagram" loading="eager" class="topology-diagram" >}}
 
 ---
 

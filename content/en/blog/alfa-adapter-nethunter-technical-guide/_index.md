@@ -342,7 +342,7 @@ sudo service NetworkManager restart
 
 ## 6. Application Topology
 
-![NetHunter + ALFA Adapters Application Topology: Android Phone with NetHunter App, Kali Chroot, Custom Kernel, USB OTG Controller connected via Powered OTG Hub to ALFA AWUS036ACHM, AWUS036ACM, AWUS036ACH adapters, feeding Kali Linux tools airodump-ng, airmon-ng, Kismet, MANA Toolkit](/images/blog/nethunter-topology.png)
+{{< figure src="/images/blog/nethunter-topology.png" alt="NetHunter + ALFA Application Topology Diagram" loading="eager" class="topology-diagram" >}}
 
 ---
 

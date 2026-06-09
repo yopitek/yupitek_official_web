@@ -184,3 +184,51 @@ body:has(#mobile-menu-toggle:checked) {
 .prose .table-nowrap th {
   white-space: nowrap;
 }
+
+/* ── Mobile: ensure tables scroll horizontally ── */
+@media (max-width: 768px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+  
+  .prose table th,
+  .prose table td {
+    min-width: 100px;
+  }
+}
+
+/* ── Code blocks: horizontal scroll on mobile ── */
+.prose pre,
+.prose code[class*="language-"],
+.highlight pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .prose pre,
+  .highlight pre,
+  .highlight-wrapper pre {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: pre;
+    word-wrap: normal;
+  }
+  
+  .prose pre code {
+    white-space: pre;
+  }
+}
+
+/* ── Mobile: section images eager-load ── */
+@media (max-width: 768px) {
+  .prose img[src*="nethunter-topology"],
+  .prose img[src*="hero"] {
+    content-visibility: visible;
+    loading: eager;
+  }
+}

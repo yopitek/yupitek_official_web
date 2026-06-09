@@ -346,7 +346,7 @@ sudo service NetworkManager restart
 
 ## 6. 應用架構圖
 
-![NetHunter + ALFA 網卡應用架構圖](/images/blog/nethunter-topology.png)
+{{< figure src="/images/blog/nethunter-topology.png" alt="NetHunter + ALFA Application Topology Diagram" loading="eager" class="topology-diagram" >}}
 
 ---
 

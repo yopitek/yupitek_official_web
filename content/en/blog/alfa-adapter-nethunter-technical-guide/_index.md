@@ -341,7 +341,7 @@ sudo service NetworkManager restart
 
 ## 6. Application Topology
 
-```mermaid
+{{< mermaid >}}
 graph TB
     subgraph Android["Android Phone"]
         APP[NetHunter App]
@@ -382,7 +382,7 @@ graph TB
     AIRMON --> AIRODUMP
     AIRMON --> KISMET
     AIRMON --> MANA
-```
+{{< /mermaid >}}
 
 ---
 

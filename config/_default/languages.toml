@@ -82,11 +82,20 @@
   [de.params]
     displayName        = "🇩🇪 Deutsch"
 
+[ko]
+  title                = "ALFA Network 대만 공식 대리점 | Yopitek Ltd"
+  locale               = "ko"
+  label               = "한국어"
+  weight               = 11
+  contentDir           = "content/ko"
+  [ko.params]
+    displayName        = "🇰🇷 한국어"
+
 [fr]
   title                = "Distributeur Agréé ALFA Network Taiwan | Yopitek Ltd"
   locale               = "fr"
   label               = "Français"
-  weight               = 10
+  weight               = 12
   contentDir           = "content/fr"
   [fr.params]
     displayName        = "🇫🇷 Français"

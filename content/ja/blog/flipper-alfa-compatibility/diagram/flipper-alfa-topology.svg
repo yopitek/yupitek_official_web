@@ -1,0 +1,271 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap');
+    text { font-family: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', monospace; }
+  </style>
+
+  <defs>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+
+    <!-- Arrow markers -->
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22d3ee"/>
+    </marker>
+    <marker id="arrow-emerald" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34d399"/>
+    </marker>
+    <marker id="arrow-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a78bfa"/>
+    </marker>
+    <marker id="arrow-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fb7185"/>
+    </marker>
+    <marker id="arrow-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#0f172a"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+
+  <!-- Title -->
+  <text x="40" y="36" fill="#e2e8f0" font-size="16" font-weight="700">Flipper One + ALFA WiFi Adapters — Pentest Architecture</text>
+  <text x="40" y="56" fill="#64748b" font-size="11" font-weight="400">Complete wireless security assessment topology</text>
+
+  <!-- ============================================================ -->
+  <!-- REGION 1: Flipper One Platform (Cyan)                        -->
+  <!-- ============================================================ -->
+  <rect x="30" y="80" width="280" height="680" rx="12" fill="none" stroke="#22d3ee" stroke-width="1" stroke-dasharray="8,4"/>
+  <text x="42" y="100" fill="#22d3ee" font-size="10" font-weight="600">Flipper One Platform</text>
+  <text x="42" y="114" fill="#64748b" font-size="8" font-weight="400">Debian 13 / Kernel 7.0 / RK3576</text>
+
+  <!-- CPU -->
+  <rect x="50" y="130" width="240" height="56" rx="6" fill="#0f172a"/>
+  <rect x="50" y="130" width="240" height="56" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="170" y="152" fill="white" font-size="11" font-weight="600" text-anchor="middle">Rockchip RK3576</text>
+  <text x="170" y="168" fill="#94a3b8" font-size="9" text-anchor="middle">4×Cortex-A72 + 4×A53, 2.2 GHz</text>
+  <text x="170" y="180" fill="#64748b" font-size="8" text-anchor="middle">8 GB LPDDR5 · Mali-G52 GPU · 6 TOPS NPU</text>
+
+  <!-- USB Host -->
+  <rect x="50" y="200" width="240" height="40" rx="6" fill="#0f172a"/>
+  <rect x="50" y="200" width="240" height="40" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="170" y="219" fill="white" font-size="10" font-weight="600" text-anchor="middle">USB 3.1 Host ×2</text>
+  <text x="170" y="233" fill="#94a3b8" font-size="8" text-anchor="middle">USB-C2 + USB-A · 5 Gbps each</text>
+
+  <!-- Built-in Wi-Fi -->
+  <rect x="50" y="255" width="240" height="56" rx="6" fill="#0f172a"/>
+  <rect x="50" y="255" width="240" height="56" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="170" y="277" fill="white" font-size="11" font-weight="600" text-anchor="middle">Built-in Wi-Fi 6E</text>
+  <text x="170" y="293" fill="#94a3b8" font-size="9" text-anchor="middle">MT7921AUN · 2.4/5/6 GHz</text>
+  <text x="170" y="305" fill="#64748b" font-size="8" text-anchor="middle">2×2 MIMO · BT 5.2 · in-kernel mt7921u</text>
+
+  <!-- Dual Ethernet -->
+  <rect x="50" y="325" width="240" height="40" rx="6" fill="#0f172a"/>
+  <rect x="50" y="325" width="240" height="40" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="170" y="344" fill="white" font-size="10" font-weight="600" text-anchor="middle">2× Gigabit Ethernet</text>
+  <text x="170" y="358" fill="#94a3b8" font-size="8" text-anchor="middle">RTL8211F-CG · MitM / Inline Sniff</text>
+
+  <!-- M.2 Slot -->
+  <rect x="50" y="380" width="240" height="40" rx="6" fill="#0f172a"/>
+  <rect x="50" y="380" width="240" height="40" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="170" y="399" fill="white" font-size="10" font-weight="600" text-anchor="middle">M.2 Key-B Expansion</text>
+  <text x="170" y="413" fill="#94a3b8" font-size="8" text-anchor="middle">PCIe 2.1 ×1 · USB 3.1 · SATA3 · SIM</text>
+
+  <!-- Flipper OS Profile -->
+  <rect x="50" y="440" width="240" height="40" rx="6" fill="#0f172a"/>
+  <rect x="50" y="440" width="240" height="40" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1"/>
+  <text x="170" y="459" fill="white" font-size="10" font-weight="600" text-anchor="middle">Flipper OS Profiles</text>
+  <text x="170" y="473" fill="#94a3b8" font-size="8" text-anchor="middle">Snapshot-based · Clone · Restore</text>
+
+  <!-- USB notes -->
+  <text x="50" y="510" fill="#64748b" font-size="8" font-weight="400">USB Host provides 5V power to external adapters</text>
+  <text x="50" y="522" fill="#64748b" font-size="8" font-weight="400">GPIO: 5V @ 2A · 3.3V @ 2A (Efuse protected)</text>
+
+  <!-- ============================================================ -->
+  <!-- CONNECTION ARROWS: Flipper One → ALFA Adapters               -->
+  <!-- ============================================================ -->
+  <path d="M 290 215 L 350 215 L 350 200 L 370 200" fill="none" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
+  <path d="M 290 215 L 350 215 L 350 310 L 370 310" fill="none" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
+  <path d="M 290 215 L 350 215 L 350 420 L 370 420" fill="none" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
+  <path d="M 290 215 L 350 215 L 350 530 L 370 530" fill="none" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
+  <text x="345" y="190" fill="#22d3ee" font-size="8" font-weight="500">USB 3.0</text>
+
+  <!-- ============================================================ -->
+  <!-- REGION 2: ALFA USB Adapters (Emerald)                        -->
+  <!-- ============================================================ -->
+  <rect x="370" y="80" width="290" height="680" rx="12" fill="none" stroke="#34d399" stroke-width="1" stroke-dasharray="8,4"/>
+  <text x="382" y="100" fill="#34d399" font-size="10" font-weight="600">ALFA USB WiFi Adapters</text>
+  <text x="382" y="114" fill="#64748b" font-size="8" font-weight="400">Monitor Mode + Packet Injection Ready</text>
+
+  <!-- AWUS036AXML (Top) -->
+  <rect x="390" y="135" width="250" height="64" rx="6" fill="#0f172a"/>
+  <rect x="390" y="135" width="250" height="64" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="405" y="153" fill="#fbbf24" font-size="8" font-weight="600">⭐ TOP PICK</text>
+  <text x="515" y="153" fill="white" font-size="11" font-weight="600" text-anchor="middle">AWUS036AXML</text>
+  <text x="515" y="169" fill="#94a3b8" font-size="9" text-anchor="middle">MT7921AUN · 2.4/5/6 GHz · Wi-Fi 6E</text>
+  <text x="515" y="183" fill="#64748b" font-size="8" text-anchor="middle">mt7921u in-kernel · AXE3000 · Dual RP-SMA</text>
+  <text x="515" y="195" fill="#34d399" font-size="8" text-anchor="middle">✅ Official Flipper One Test Model</text>
+
+  <!-- AWUS036ACM -->
+  <rect x="390" y="215" width="250" height="64" rx="6" fill="#0f172a"/>
+  <rect x="390" y="215" width="250" height="64" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="405" y="233" fill="#fbbf24" font-size="8" font-weight="600">⭐ VALUE</text>
+  <text x="515" y="233" fill="white" font-size="11" font-weight="600" text-anchor="middle">AWUS036ACM</text>
+  <text x="515" y="249" fill="#94a3b8" font-size="9" text-anchor="middle">MT7612U · 2.4/5 GHz · AC1200</text>
+  <text x="515" y="263" fill="#64748b" font-size="8" text-anchor="middle">mt76 in-kernel · Kernel 4.19+ · Dual 5dBi RP-SMA</text>
+  <text x="515" y="275" fill="#34d399" font-size="8" text-anchor="middle">✅ Zero DKMS · Most stable AC chipset</text>
+
+  <!-- AWUS036ACHM -->
+  <rect x="390" y="295" width="250" height="64" rx="6" fill="#0f172a"/>
+  <rect x="390" y="295" width="250" height="64" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="405" y="313" fill="#fbbf24" font-size="8" font-weight="600">⭐ LIGHT</text>
+  <text x="515" y="313" fill="white" font-size="11" font-weight="600" text-anchor="middle">AWUS036ACHM</text>
+  <text x="515" y="329" fill="#94a3b8" font-size="9" text-anchor="middle">MT7610U · 2.4/5 GHz · AC433</text>
+  <text x="515" y="343" fill="#64748b" font-size="8" text-anchor="middle">mt76 in-kernel · USB 2.0 · Single High-Gain</text>
+  <text x="515" y="355" fill="#fbbf24" font-size="8" text-anchor="middle">⚠️ ARM64: known interface-drop bug (morrownr #379)</text>
+
+  <!-- AWUS036ACH -->
+  <rect x="390" y="375" width="250" height="64" rx="6" fill="#0f172a"/>
+  <rect x="390" y="375" width="250" height="64" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="515" y="393" fill="white" font-size="11" font-weight="600" text-anchor="middle">AWUS036ACH</text>
+  <text x="515" y="409" fill="#94a3b8" font-size="9" text-anchor="middle">RTL8812AU · 2.4/5 GHz · AC1200</text>
+  <text x="515" y="423" fill="#64748b" font-size="8" text-anchor="middle">rtw88 in-kernel (Kernel 6.14+) · or DKMS</text>
+  <text x="515" y="435" fill="#fbbf24" font-size="8" text-anchor="middle">⚠️ ARM64: use kernel 6.14+ for stability</text>
+
+  <!-- Not Recommended -->
+  <rect x="390" y="460" width="250" height="56" rx="6" fill="#0f172a"/>
+  <rect x="390" y="460" width="250" height="56" rx="6" fill="rgba(136,19,55,0.3)" stroke="#fb7185" stroke-width="1"/>
+  <text x="515" y="478" fill="#fb7185" font-size="10" font-weight="600" text-anchor="middle">⚠️ Not Recommended for Pentest</text>
+  <text x="515" y="494" fill="#94a3b8" font-size="9" text-anchor="middle">AWUS036AX / AXER / ACS / EACS</text>
+  <text x="515" y="508" fill="#64748b" font-size="8" text-anchor="middle">RTL8832BU / RTL8811AU/CU — driver immature / unstable</text>
+
+  <!-- ============================================================ -->
+  <!-- CONNECTION ARROWS: ALFA → Pentest Tools                      -->
+  <!-- ============================================================ -->
+  <path d="M 640 160 L 690 160 L 725 160" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrow-emerald)"/>
+  <path d="M 640 240 L 690 240 L 725 240" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrow-emerald)"/>
+  <path d="M 640 320 L 690 320 L 725 320" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrow-emerald)"/>
+  <path d="M 640 400 L 690 400 L 725 400" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrow-emerald)"/>
+  <text x="685" y="130" fill="#34d399" font-size="8" font-weight="500">Driver</text>
+
+  <!-- ============================================================ -->
+  <!-- REGION 3: Pentest Toolchain (Violet)                         -->
+  <!-- ============================================================ -->
+  <rect x="730" y="80" width="270" height="390" rx="12" fill="none" stroke="#a78bfa" stroke-width="1" stroke-dasharray="8,4"/>
+  <text x="742" y="100" fill="#a78bfa" font-size="10" font-weight="600">Pentest Toolchain</text>
+  <text x="742" y="114" fill="#64748b" font-size="8" font-weight="400">Debian apt-installable · Open Source</text>
+
+  <!-- aircrack-ng -->
+  <rect x="750" y="130" width="230" height="60" rx="6" fill="#0f172a"/>
+  <rect x="750" y="130" width="230" height="60" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="865" y="150" fill="white" font-size="11" font-weight="600" text-anchor="middle">aircrack-ng Suite</text>
+  <text x="865" y="164" fill="#94a3b8" font-size="9" text-anchor="middle">airodump-ng · aireplay-ng · aircrack-ng</text>
+  <text x="865" y="178" fill="#64748b" font-size="8" text-anchor="middle">WPA2/WPA3 handshake capture · deauth · cracking</text>
+  <text x="865" y="190" fill="#22d3ee" font-size="8" text-anchor="middle">Primary tool for all adapters</text>
+
+  <!-- Kismet -->
+  <rect x="750" y="205" width="230" height="44" rx="6" fill="#0f172a"/>
+  <rect x="750" y="205" width="230" height="44" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="865" y="224" fill="white" font-size="11" font-weight="600" text-anchor="middle">Kismet</text>
+  <text x="865" y="240" fill="#94a3b8" font-size="9" text-anchor="middle">Passive wireless reconnaissance · AP/Client mapping</text>
+
+  <!-- hcxdumptool -->
+  <rect x="750" y="262" width="230" height="44" rx="6" fill="#0f172a"/>
+  <rect x="750" y="262" width="230" height="44" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="865" y="281" fill="white" font-size="11" font-weight="600" text-anchor="middle">hcxdumptool</text>
+  <text x="865" y="297" fill="#94a3b8" font-size="9" text-anchor="middle">PMKID capture · WPA3 transition mode</text>
+
+  <!-- Hashcat -->
+  <rect x="750" y="320" width="230" height="44" rx="6" fill="#0f172a"/>
+  <rect x="750" y="320" width="230" height="44" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="865" y="339" fill="white" font-size="11" font-weight="600" text-anchor="middle">Hashcat</text>
+  <text x="865" y="355" fill="#94a3b8" font-size="9" text-anchor="middle">GPU-accelerated WPA hash cracking</text>
+
+  <!-- Wireshark / tcpdump -->
+  <rect x="750" y="378" width="230" height="56" rx="6" fill="#0f172a"/>
+  <rect x="750" y="378" width="230" height="56" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="865" y="398" fill="white" font-size="11" font-weight="600" text-anchor="middle">Wireshark / tcpdump</text>
+  <text x="865" y="414" fill="#94a3b8" font-size="9" text-anchor="middle">Deep packet inspection · Protocol analysis</text>
+  <text x="865" y="428" fill="#64748b" font-size="8" text-anchor="middle">Capture filters: wlan type mgt / ctl / data</text>
+
+  <!-- ============================================================ -->
+  <!-- CONNECTION ARROWS: Tools → Capabilities                      -->
+  <!-- ============================================================ -->
+  <path d="M 865 470 L 865 500 L 865 520 L 865 555" fill="none" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arrow-violet)"/>
+  <path d="M 865 470 L 865 500 L 750 500 L 660 500 L 660 555" fill="none" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arrow-violet)"/>
+  <path d="M 865 470 L 865 500 L 1070 500 L 1070 555" fill="none" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arrow-violet)"/>
+  <text x="878" y="500" fill="#a78bfa" font-size="8" font-weight="500">Enables</text>
+
+  <!-- ============================================================ -->
+  <!-- REGION 4: Capabilities (Rose/Alert)                          -->
+  <!-- ============================================================ -->
+  <rect x="30" y="555" width="1140" height="220" rx="12" fill="none" stroke="#fb7185" stroke-width="1" stroke-dasharray="8,4"/>
+  <text x="42" y="578" fill="#fb7185" font-size="10" font-weight="600">Wireless Pentest Capabilities</text>
+  <text x="42" y="592" fill="#64748b" font-size="8" font-weight="400">All capabilities require Flipper One Debian Linux + ALFA adapter</text>
+
+  <!-- Monitor Mode -->
+  <rect x="50" y="610" width="200" height="72" rx="6" fill="#0f172a"/>
+  <rect x="50" y="610" width="200" height="72" rx="6" fill="rgba(136,19,55,0.3)" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="150" y="632" fill="white" font-size="11" font-weight="600" text-anchor="middle">📡 Monitor Mode</text>
+  <text x="150" y="648" fill="#94a3b8" font-size="9" text-anchor="middle">2.4 · 5 · 6 GHz</text>
+  <text x="150" y="662" fill="#64748b" font-size="8" text-anchor="middle">airmon-ng start wlan0</text>
+  <text x="150" y="676" fill="#22d3ee" font-size="8" text-anchor="middle">✅ All recommended models</text>
+
+  <!-- Packet Injection -->
+  <rect x="270" y="610" width="200" height="72" rx="6" fill="#0f172a"/>
+  <rect x="270" y="610" width="200" height="72" rx="6" fill="rgba(136,19,55,0.3)" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="370" y="632" fill="white" font-size="11" font-weight="600" text-anchor="middle">💉 Packet Injection</text>
+  <text x="370" y="648" fill="#94a3b8" font-size="9" text-anchor="middle">Deauth · PMKID · Replay</text>
+  <text x="370" y="662" fill="#64748b" font-size="8" text-anchor="middle">aireplay-ng --test wlan0mon</text>
+  <text x="370" y="676" fill="#22d3ee" font-size="8" text-anchor="middle">✅ MT7921AUN · MT76 chipsets</text>
+
+  <!-- Handshake Capture -->
+  <rect x="490" y="610" width="200" height="72" rx="6" fill="#0f172a"/>
+  <rect x="490" y="610" width="200" height="72" rx="6" fill="rgba(136,19,55,0.3)" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="590" y="632" fill="white" font-size="11" font-weight="600" text-anchor="middle">🤝 Handshake Capture</text>
+  <text x="590" y="648" fill="#94a3b8" font-size="9" text-anchor="middle">WPA2 4-Way · WPA3 SAE</text>
+  <text x="590" y="662" fill="#64748b" font-size="8" text-anchor="middle">airodump-ng -c 6 --bssid XX</text>
+  <text x="590" y="676" fill="#22d3ee" font-size="8" text-anchor="middle">→ Hashcat offline cracking</text>
+
+  <!-- AP Recon -->
+  <rect x="710" y="610" width="200" height="72" rx="6" fill="#0f172a"/>
+  <rect x="710" y="610" width="200" height="72" rx="6" fill="rgba(136,19,55,0.3)" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="810" y="632" fill="white" font-size="11" font-weight="600" text-anchor="middle">🔍 AP / Client Recon</text>
+  <text x="810" y="648" fill="#94a3b8" font-size="9" text-anchor="middle">Network discovery · Mapping</text>
+  <text x="810" y="662" fill="#64748b" font-size="8" text-anchor="middle">Kismet · airodump-ng band abg</text>
+  <text x="810" y="676" fill="#22d3ee" font-size="8" text-anchor="middle">✅ All models · All bands</text>
+
+  <!-- 6 GHz Wi-Fi 6E -->
+  <rect x="930" y="610" width="220" height="72" rx="6" fill="#0f172a"/>
+  <rect x="930" y="610" width="220" height="72" rx="6" fill="rgba(136,19,55,0.3)" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="1040" y="632" fill="white" font-size="11" font-weight="600" text-anchor="middle">⚡ 6 GHz Wi-Fi 6E</text>
+  <text x="1040" y="648" fill="#94a3b8" font-size="9" text-anchor="middle">Next-gen band analysis</text>
+  <text x="1040" y="662" fill="#64748b" font-size="8" text-anchor="middle">airodump-ng --band 6 wlan0mon</text>
+  <text x="1040" y="676" fill="#fbbf24" font-size="8" text-anchor="middle">⚠️ AWUS036AXML only</text>
+
+  <!-- ============================================================ -->
+  <!-- LEGEND                                                        -->
+  <!-- ============================================================ -->
+  <rect x="30" y="775" width="1140" height="0" fill="none"/>
+
+  <rect x="50" y="782" width="12" height="12" rx="2" fill="rgba(8,51,68,0.6)" stroke="#22d3ee" stroke-width="1"/>
+  <text x="67" y="793" fill="#94a3b8" font-size="9">Flipper One Platform</text>
+
+  <rect x="250" y="782" width="12" height="12" rx="2" fill="rgba(6,78,59,0.6)" stroke="#34d399" stroke-width="1"/>
+  <text x="267" y="793" fill="#94a3b8" font-size="9">ALFA Adapters</text>
+
+  <rect x="420" y="782" width="12" height="12" rx="2" fill="rgba(76,29,149,0.6)" stroke="#a78bfa" stroke-width="1"/>
+  <text x="437" y="793" fill="#94a3b8" font-size="9">Pentest Tools</text>
+
+  <rect x="580" y="782" width="12" height="12" rx="2" fill="rgba(136,19,55,0.5)" stroke="#fb7185" stroke-width="1"/>
+  <text x="597" y="793" fill="#94a3b8" font-size="9">Capabilities</text>
+
+  <rect x="730" y="782" width="12" height="12" rx="2" fill="rgba(136,19,55,0.3)" stroke="#fb7185" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="747" y="793" fill="#fb7185" font-size="9">⚠ Not Recommended</text>
+
+  <text x="1020" y="793" fill="#64748b" font-size="8" font-weight="400">yupitek.com · support@yupitek.com</text>
+</svg>

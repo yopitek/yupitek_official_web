@@ -1,1 +1,168 @@
-<svg id="mermaid-svg" width="100%" xmlns="http://www.w3.org/2000/svg" class="flowchart" style="max-width: 693.355px; background-color: rgb(10, 10, 20);" viewBox="0 0 693.35546875 572" role="graphics-document document" aria-roledescription="flowchart-v2" xmlns:xlink="http://www.w3.org/1999/xlink"><style xmlns="http://www.w3.org/1999/xhtml">@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");</style><style>#mermaid-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#ccc;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-svg .error-icon{fill:#a44141;}#mermaid-svg .error-text{fill:#ddd;stroke:#ddd;}#mermaid-svg .edge-thickness-normal{stroke-width:1px;}#mermaid-svg .edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg .edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-svg .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg .marker{fill:lightgrey;stroke:lightgrey;}#mermaid-svg .marker.cross{stroke:lightgrey;}#mermaid-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg p{margin:0;}#mermaid-svg .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#ccc;}#mermaid-svg .cluster-label text{fill:#F9FFFE;}#mermaid-svg .cluster-label span{color:#F9FFFE;}#mermaid-svg .cluster-label span p{background-color:transparent;}#mermaid-svg .label text,#mermaid-svg span{fill:#ccc;color:#ccc;}#mermaid-svg .node rect,#mermaid-svg .node circle,#mermaid-svg .node ellipse,#mermaid-svg .node polygon,#mermaid-svg .node path{fill:#1f2020;stroke:#ccc;stroke-width:1px;}#mermaid-svg .rough-node .label text,#mermaid-svg .node .label text,#mermaid-svg .image-shape .label,#mermaid-svg .icon-shape .label{text-anchor:middle;}#mermaid-svg .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-svg .rough-node .label,#mermaid-svg .node .label,#mermaid-svg .image-shape .label,#mermaid-svg .icon-shape .label{text-align:center;}#mermaid-svg .node.clickable{cursor:pointer;}#mermaid-svg .root .anchor path{fill:lightgrey!important;stroke-width:0;stroke:lightgrey;}#mermaid-svg .arrowheadPath{fill:lightgrey;}#mermaid-svg .edgePath .path{stroke:lightgrey;stroke-width:2.0px;}#mermaid-svg .flowchart-link{stroke:lightgrey;fill:none;}#mermaid-svg .edgeLabel{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}#mermaid-svg .edgeLabel p{background-color:hsl(0, 0%, 34.4117647059%);}#mermaid-svg .edgeLabel rect{opacity:0.5;background-color:hsl(0, 0%, 34.4117647059%);fill:hsl(0, 0%, 34.4117647059%);}#mermaid-svg .labelBkg{background-color:rgba(87.75, 87.75, 87.75, 0.5);}#mermaid-svg .cluster rect{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:rgba(255, 255, 255, 0.25);stroke-width:1px;}#mermaid-svg .cluster text{fill:#F9FFFE;}#mermaid-svg .cluster span{color:#F9FFFE;}#mermaid-svg div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(20, 1.5873015873%, 12.3529411765%);border:1px solid rgba(255, 255, 255, 0.25);border-radius:2px;pointer-events:none;z-index:100;}#mermaid-svg .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#ccc;}#mermaid-svg rect.text{fill:none;stroke-width:0;}#mermaid-svg .icon-shape,#mermaid-svg .image-shape{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}#mermaid-svg .icon-shape p,#mermaid-svg .image-shape p{background-color:hsl(0, 0%, 34.4117647059%);padding:2px;}#mermaid-svg .icon-shape rect,#mermaid-svg .image-shape rect{opacity:0.5;background-color:hsl(0, 0%, 34.4117647059%);fill:hsl(0, 0%, 34.4117647059%);}#mermaid-svg .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-svg .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="mermaid-svg_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-svg_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-svg_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-svg_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-svg_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-svg_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><g class="root"><g class="clusters"><g class="cluster " id="Target" data-look="classic"><rect style="fill:#0f3460 !important" x="191.30859375" y="436" width="494.046875" height="128"/><g class="cluster-label " transform="translate(383.19140625, 436)"><foreignObject width="110.28125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel " style="color:#e0e0e0 !important"><p>Target Airspace</p></span></div></foreignObject></g></g><g class="cluster " id="MK7" data-look="classic"><rect style="fill:#1a1a2e !important" x="8" y="210" width="656.4140625" height="152"/><g class="cluster-label " transform="translate(263.73046875, 210)"><foreignObject width="144.953125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel " style="color:#e0e0e0 !important"><p>WiFi Pineapple MK7</p></span></div></foreignObject></g></g><g class="cluster " id="Operator" data-look="classic"><rect style="fill:#16213e !important" x="24.8984375" y="8" width="270.53125" height="128"/><g class="cluster-label " transform="translate(128.59375, 8)"><foreignObject width="63.140625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel " style="color:#e0e0e0 !important"><p>Operator</p></span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M160.164,111L160.164,115.167C160.164,119.333,160.164,127.667,160.164,138C160.164,148.333,160.164,160.667,160.164,173C160.164,185.333,160.164,197.667,160.164,209.333C160.164,221,160.164,232,160.164,237.5L160.164,243" id="L_OL_MGT_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_OL_MGT_0" data-points="W3sieCI6MTYwLjE2NDA2MjUsInkiOjExMX0seyJ4IjoxNjAuMTY0MDYyNSwieSI6MTM2fSx7IngiOjE2MC4xNjQwNjI1LCJ5IjoxNzN9LHsieCI6MTYwLjE2NDA2MjUsInkiOjIxMH0seyJ4IjoxNjAuMTY0MDYyNSwieSI6MjQ3fV0=" marker-end="url(#mermaid-svg_flowchart-v2-pointEnd)"/><path d="M375.183,337L368.686,341.167C362.189,345.333,349.194,353.667,342.697,364C336.199,374.333,336.199,386.667,336.199,399C336.199,411.333,336.199,423.667,336.199,433.333C336.199,443,336.199,450,336.199,453.5L336.199,457" id="L_ACM_AP2_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_ACM_AP2_0" data-points="W3sieCI6Mzc1LjE4MzMzNjc1OTg2ODQ0LCJ5IjozMzd9LHsieCI6MzM2LjE5OTIxODc1LCJ5IjozNjJ9LHsieCI6MzM2LjE5OTIxODc1LCJ5IjozOTl9LHsieCI6MzM2LjE5OTIxODc1LCJ5Ijo0MzZ9LHsieCI6MzM2LjE5OTIxODc1LCJ5Ijo0NjF9XQ==" marker-end="url(#mermaid-svg_flowchart-v2-pointEnd)"/><path d="M534.239,337L540.736,341.167C547.233,345.333,560.228,353.667,566.725,364C573.223,374.333,573.223,386.667,573.223,399C573.223,411.333,573.223,423.667,573.223,435.333C573.223,447,573.223,458,573.223,463.5L573.223,469" id="L_ACM_STA_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_ACM_STA_0" data-points="W3sieCI6NTM0LjIzODUzODI0MDEzMTYsInkiOjMzN30seyJ4Ijo1NzMuMjIyNjU2MjUsInkiOjM2Mn0seyJ4Ijo1NzMuMjIyNjU2MjUsInkiOjM5OX0seyJ4Ijo1NzMuMjIyNjU2MjUsInkiOjQzNn0seyJ4Ijo1NzMuMjIyNjU2MjUsInkiOjQ3M31d" marker-end="url(#mermaid-svg_flowchart-v2-pointEnd)"/></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(160.1640625, 173)"><g class="label" data-id="L_OL_MGT_0" transform="translate(-16.453125, -12)"><foreignObject width="32.90625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>SSH</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(336.19921875, 399)"><g class="label" data-id="L_ACM_AP2_0" transform="translate(-49.3515625, -12)"><foreignObject width="98.703125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>5GHz Monitor</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(573.22265625, 399)"><g class="label" data-id="L_ACM_STA_0" transform="translate(-45.796875, -12)"><foreignObject width="91.59375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>5GHz Recon</p></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default  " id="flowchart-OL-0" transform="translate(160.1640625, 72)"><rect class="basic label-container" style="" x="-100.265625" y="-39" width="200.53125" height="78"/><g class="label" style="" transform="translate(-70.265625, -24)"><rect/><foreignObject width="140.53125" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Laptop / SSH Client<br />172.16.42.x</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-MGT-1" transform="translate(160.1640625, 286)"><rect class="basic label-container" style="" x="-117.1640625" y="-39" width="234.328125" height="78"/><g class="label" style="" transform="translate(-87.1640625, -24)"><rect/><foreignObject width="174.328125" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>wlan0 - Management AP<br />2.4GHz . 172.16.42.1</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-ACM-2" transform="translate(454.7109375, 286)"><rect class="basic label-container" style="fill:#e94560 !important;stroke:#fff !important;stroke-width:3px !important" x="-127.3828125" y="-51" width="254.765625" height="102"/><g class="label" style="color:#fff !important" transform="translate(-97.3828125, -36)"><rect/><foreignObject width="194.765625" height="72"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel "><p>wlan3 - AWUS036ACM<br />MT7612U . 5GHz 802.11ac<br />Monitor + Injection</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-AP2-3" transform="translate(336.19921875, 500)"><rect class="basic label-container" style="" x="-109.890625" y="-39" width="219.78125" height="78"/><g class="label" style="" transform="translate(-79.890625, -24)"><rect/><foreignObject width="159.78125" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Target AP<br />5GHz 802.11ac WPA2</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-STA-4" transform="translate(573.22265625, 500)"><rect class="basic label-container" style="" x="-77.1328125" y="-27" width="154.265625" height="54"/><g class="label" style="" transform="translate(-47.1328125, -12)"><rect/><foreignObject width="94.265625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Client Device</p></span></div></foreignObject></g></g></g></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap');
+    text { font-family: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', monospace; }
+  </style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22d3ee"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e94560"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-emerald" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34d399"/>
+    </marker>
+    <marker id="arrow-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="800" fill="#0f172a"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+
+  <text x="30" y="36" fill="#e2e8f0" font-size="16" font-weight="700">HAK5 WiFi Pineapple MK7 + ALFA AWUS036ACM — 5GHz Pentest Topology</text>
+  <text x="30" y="56" fill="#64748b" font-size="11">MT7612U Chipset · OpenWrt 5.4.x Kernel · Monitor Mode + Packet Injection</text>
+
+  <rect x="20" y="80" width="260" height="360" rx="12" fill="none" stroke="#60a5fa" stroke-width="1" stroke-dasharray="8,4"/>
+  <text x="32" y="100" fill="#60a5fa" font-size="10" font-weight="600">Red Team Operator</text>
+
+  <rect x="35" y="120" width="230" height="60" rx="6" fill="#0f172a"/>
+  <rect x="35" y="120" width="230" height="60" rx="6" fill="rgba(59,130,246,0.15)" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="150" y="145" fill="white" font-size="10" font-weight="600" text-anchor="middle">Laptop / SSH Client</text>
+  <text x="150" y="162" fill="#94a3b8" font-size="8" text-anchor="middle">172.16.42.x · airmon-ng · airodump-ng</text>
+  <text x="150" y="174" fill="#64748b" font-size="7" text-anchor="middle">Kali Linux / Parrot OS</text>
+
+  <rect x="35" y="200" width="230" height="50" rx="6" fill="#0f172a"/>
+  <rect x="35" y="200" width="230" height="50" rx="6" fill="rgba(59,130,246,0.08)" stroke="#3b82f6" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="150" y="223" fill="#94a3b8" font-size="9" font-weight="500" text-anchor="middle">☁ Hak5 Cloud C2</text>
+  <text x="150" y="238" fill="#64748b" font-size="7" text-anchor="middle">Remote Mgmt Tunnel</text>
+
+  <rect x="35" y="270" width="230" height="150" rx="6" fill="#0f172a"/>
+  <rect x="35" y="270" width="230" height="150" rx="6" fill="rgba(59,130,246,0.06)" stroke="#3b82f6" stroke-width="0.5"/>
+  <text x="150" y="290" fill="#60a5fa" font-size="9" font-weight="600" text-anchor="middle">Recon Toolkit</text>
+  <text x="150" y="308" fill="#94a3b8" font-size="8" text-anchor="middle">Wi-Fi Recon</text>
+  <text x="150" y="324" fill="#94a3b8" font-size="8" text-anchor="middle">Handshake Capture</text>
+  <text x="150" y="340" fill="#94a3b8" font-size="8" text-anchor="middle">SSID Pool Mgmt</text>
+  <text x="150" y="356" fill="#94a3b8" font-size="8" text-anchor="middle">Campaign Ops</text>
+  <text x="150" y="372" fill="#94a3b8" font-size="8" text-anchor="middle">Log Analysis</text>
+  <text x="150" y="388" fill="#64748b" font-size="7" text-anchor="middle">PineAP Web UI (HTTPS)</text>
+  <text x="150" y="402" fill="#64748b" font-size="7" text-anchor="middle">ssh root@172.16.42.1</text>
+
+  <rect x="310" y="80" width="550" height="700" rx="12" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="12,6"/>
+  <text x="322" y="100" fill="#94a3b8" font-size="10" font-weight="600">WiFi Pineapple Mark VII</text>
+  <text x="720" y="100" fill="#64748b" font-size="8" text-anchor="end">MT7628AN MIPS · 256MB DDR2 · USB 2.0 Host</text>
+
+  <rect x="330" y="115" width="510" height="36" rx="4" fill="#0f172a"/>
+  <rect x="330" y="115" width="510" height="36" rx="4" fill="rgba(100,116,139,0.06)" stroke="#64748b" stroke-width="0.5"/>
+  <text x="585" y="137" fill="#94a3b8" font-size="9" font-weight="500" text-anchor="middle">OpenWrt 5.4.x · kmod-mt76x2u preloaded · opkg</text>
+
+  <rect x="330" y="170" width="510" height="62" rx="6" fill="#0f172a"/>
+  <rect x="330" y="170" width="510" height="62" rx="6" fill="rgba(8,51,68,0.3)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="585" y="195" fill="#22d3ee" font-size="11" font-weight="700" text-anchor="middle">wlan0 — Management AP</text>
+  <text x="585" y="212" fill="#94a3b8" font-size="8" text-anchor="middle">2.4 GHz b/g/n · 172.16.42.1 · SSH (22) · PineAP Web UI</text>
+  <text x="585" y="225" fill="#64748b" font-size="7" text-anchor="middle">Operator access point — secure mgmt interface</text>
+
+  <rect x="330" y="252" width="510" height="62" rx="6" fill="#0f172a"/>
+  <rect x="330" y="252" width="510" height="62" rx="6" fill="rgba(120,53,15,0.2)" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="585" y="277" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">wlan1 — PineAP Engine</text>
+  <text x="585" y="294" fill="#94a3b8" font-size="8" text-anchor="middle">2.4 GHz · Beacon Flood · Deauth · Probe Response Capture</text>
+  <text x="585" y="307" fill="#64748b" font-size="7" text-anchor="middle">SSID Pool · Automated Campaigns · Handshake Harvesting</text>
+
+  <rect x="330" y="334" width="510" height="50" rx="6" fill="#0f172a"/>
+  <rect x="330" y="334" width="510" height="50" rx="6" fill="rgba(6,78,59,0.2)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="585" y="356" fill="#34d399" font-size="10" font-weight="600" text-anchor="middle">wlan2 — Client Mode</text>
+  <text x="585" y="372" fill="#94a3b8" font-size="8" text-anchor="middle">Upstream AP Connection · WAN / Internet</text>
+
+  <rect x="330" y="404" width="510" height="85" rx="6" fill="#0f172a"/>
+  <rect x="330" y="404" width="510" height="85" rx="6" fill="rgba(233,69,96,0.15)" stroke="#e94560" stroke-width="2.5"/>
+  <rect x="332" y="406" width="506" height="81" rx="5" fill="none" stroke="#e94560" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <text x="585" y="432" fill="#e94560" font-size="12" font-weight="700" text-anchor="middle">⬥ wlan3 — ALFA AWUS036ACM (External USB)</text>
+  <text x="585" y="450" fill="white" font-size="9" font-weight="600" text-anchor="middle">MT7612U · 5 GHz 802.11ac · Monitor ✅ · Injection ✅</text>
+  <text x="585" y="466" fill="#fb7185" font-size="8" text-anchor="middle">USB VID 0E8D:PID 7612 · 2× RP-SMA · 867 Mbps (USB 2.0: ~250 Mbps)</text>
+  <text x="585" y="481" fill="#64748b" font-size="7" text-anchor="middle">Plug-and-Play · Zero Compilation · LED off = driver design (not fault)</text>
+
+  <rect x="330" y="510" width="510" height="50" rx="6" fill="#0f172a"/>
+  <rect x="330" y="510" width="510" height="50" rx="6" fill="rgba(100,116,139,0.06)" stroke="#64748b" stroke-width="0.5"/>
+  <text x="585" y="532" fill="#94a3b8" font-size="9" font-weight="600" text-anchor="middle">PineAP Web UI · Dashboard · SSID Pool · Campaign Mgmt</text>
+  <text x="585" y="548" fill="#64748b" font-size="7" text-anchor="middle">Real-time Recon · Auto Campaigns · Reporting Export</text>
+
+  <rect x="330" y="580" width="510" height="40" rx="6" fill="#0f172a"/>
+  <rect x="330" y="580" width="510" height="40" rx="6" fill="rgba(233,69,96,0.05)" stroke="#fb7185" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="585" y="598" fill="#fb7185" font-size="8" font-weight="600" text-anchor="middle">USB 2.0 Host · 500mA @ 5V · AWUS036ACM peak: 380mA ✅ No external hub</text>
+  <text x="585" y="613" fill="#64748b" font-size="7" text-anchor="middle">USB 3.0 → USB 2.0 → 5 GHz throughput ~150-250 Mbps (pentest: sufficient)</text>
+
+  <rect x="890" y="80" width="290" height="700" rx="12" fill="none" stroke="#22d3ee" stroke-width="0.8" stroke-dasharray="8,8" opacity="0.6"/>
+  <text x="902" y="100" fill="#22d3ee" font-size="10" font-weight="600" opacity="0.8">Target Airspace</text>
+
+  <rect x="905" y="120" width="260" height="80" rx="6" fill="#0f172a"/>
+  <rect x="905" y="120" width="260" height="80" rx="6" fill="rgba(8,51,68,0.15)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="1035" y="148" fill="#22d3ee" font-size="10" font-weight="600" text-anchor="middle">Target AP-1</text>
+  <text x="1035" y="164" fill="#94a3b8" font-size="8" text-anchor="middle">2.4 GHz b/g/n · WPA2-PSK</text>
+  <text x="1035" y="178" fill="#64748b" font-size="7" text-anchor="middle">Ch 6 (2437 MHz) · Beacon: 100ms</text>
+  <text x="1035" y="192" fill="#64748b" font-size="7" text-anchor="middle">Deauth Target · Handshake Capture</text>
+
+  <rect x="905" y="220" width="260" height="80" rx="6" fill="#0f172a"/>
+  <rect x="905" y="220" width="260" height="80" rx="6" fill="rgba(233,69,96,0.12)" stroke="#e94560" stroke-width="1.5"/>
+  <text x="1035" y="248" fill="#e94560" font-size="10" font-weight="600" text-anchor="middle">Target AP-2</text>
+  <text x="1035" y="264" fill="#94a3b8" font-size="8" text-anchor="middle">5 GHz 802.11ac · WPA2-PSK</text>
+  <text x="1035" y="278" fill="#64748b" font-size="7" text-anchor="middle">Ch 36 (5180 MHz) · Width: 80 MHz</text>
+  <text x="1035" y="292" fill="#64748b" font-size="7" text-anchor="middle">AWUS036ACM Required for 5G</text>
+
+  <rect x="905" y="320" width="125" height="60" rx="6" fill="#0f172a"/>
+  <rect x="905" y="320" width="125" height="60" rx="6" fill="rgba(59,130,246,0.08)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="968" y="348" fill="#60a5fa" font-size="9" font-weight="600" text-anchor="middle">Station A</text>
+  <text x="968" y="364" fill="#94a3b8" font-size="7" text-anchor="middle">Smartphone</text>
+  <text x="968" y="376" fill="#64748b" font-size="7" text-anchor="middle">2.4G Client</text>
+
+  <rect x="1040" y="320" width="125" height="60" rx="6" fill="#0f172a"/>
+  <rect x="1040" y="320" width="125" height="60" rx="6" fill="rgba(233,69,96,0.08)" stroke="#e94560" stroke-width="1"/>
+  <text x="1103" y="348" fill="#e94560" font-size="9" font-weight="600" text-anchor="middle">Station B</text>
+  <text x="1103" y="364" fill="#94a3b8" font-size="7" text-anchor="middle">Laptop</text>
+  <text x="1103" y="376" fill="#64748b" font-size="7" text-anchor="middle">5G Client</text>
+
+  <!-- Connections -->
+  <path d="M 265 150 L 330 201" fill="none" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow-cyan)"/>
+  <text x="280" y="178" fill="#60a5fa" font-size="7">SSH / HTTPS</text>
+
+  <path d="M 265 225 Q 295 225 295 201 L 330 201" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow-cyan)"/>
+  <text x="278" y="218" fill="#3b82f6" font-size="6">C2 Tunnel</text>
+
+  <path d="M 585 232 L 585 151" fill="none" stroke="#64748b" stroke-width="1" marker-end="url(#arrow-slate)"/>
+
+  <path d="M 840 283 L 905 160" fill="none" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+  <text x="855" y="218" fill="#f59e0b" font-size="7" font-weight="500">Beacon Flood · Deauth</text>
+
+  <path d="M 840 283 L 905 350" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,2" marker-end="url(#arrow-amber)"/>
+  <text x="848" y="320" fill="#fbbf24" font-size="6">Probe Capture</text>
+
+  <path d="M 840 447 L 905 260" fill="none" stroke="#e94560" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="855" y="340" fill="#e94560" font-size="8" font-weight="600">5 GHz Monitor</text>
+  <text x="855" y="354" fill="#e94560" font-size="8" font-weight="600">Handshake Capture</text>
+
+  <path d="M 840 447 L 1040 350" fill="none" stroke="#e94560" stroke-width="1.5" stroke-dasharray="5,2" marker-end="url(#arrow-red)"/>
+  <text x="920" y="395" fill="#fb7185" font-size="7">5G Recon</text>
+
+  <path d="M 840 359 L 905 170" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrow-emerald)"/>
+  <text x="850" y="260" fill="#34d399" font-size="7" font-weight="500">WAN</text>
+
+  <path d="M 265 345 L 295 345 L 295 201 L 330 201" fill="none" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
+  <text x="282" y="280" fill="#60a5fa" font-size="6">Web UI · Control</text>
+
+  <!-- Legend -->
+  <rect x="20" y="750" width="1160" height="40" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="0.5"/>
+  <text x="35" y="775" fill="#94a3b8" font-size="9" font-weight="700">Legend:</text>
+  <line x1="100" y1="770" x2="130" y2="770" stroke="#60a5fa" stroke-width="2"/><text x="136" y="775" fill="#94a3b8" font-size="8">SSH/HTTPS</text>
+  <line x1="220" y1="770" x2="250" y2="770" stroke="#f59e0b" stroke-width="2"/><text x="256" y="775" fill="#94a3b8" font-size="8">PineAP 2.4G</text>
+  <line x1="350" y1="770" x2="380" y2="770" stroke="#e94560" stroke-width="2"/><text x="386" y="775" fill="#94a3b8" font-size="8">AWUS036ACM 5G</text>
+  <line x1="510" y1="770" x2="540" y2="770" stroke="#34d399" stroke-width="1.5"/><text x="546" y="775" fill="#94a3b8" font-size="8">WAN</text>
+  <rect x="650" y="762" width="20" height="16" rx="3" fill="rgba(233,69,96,0.3)" stroke="#e94560" stroke-width="1"/><text x="676" y="775" fill="#94a3b8" font-size="8">AWUS036ACM</text>
+  <rect x="810" y="762" width="20" height="16" rx="3" fill="rgba(8,51,68,0.3)" stroke="#22d3ee" stroke-width="1"/><text x="836" y="775" fill="#94a3b8" font-size="8">MK7 Radio</text>
+  <text x="1150" y="775" fill="#64748b" font-size="7" text-anchor="end">Yupitek Ltd · 2026</text>
+</svg>

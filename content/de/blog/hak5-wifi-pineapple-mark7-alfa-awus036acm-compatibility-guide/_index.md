@@ -72,17 +72,11 @@ aireplay-ng --test wlan3mon    # Schritt 6: Injection testen
 
 ---
 
-## 6. Penetrationstest-Topologie
-
-![HAK5 WiFi Pineapple MK7 + AWUS036ACM Topologie](/images/blog/hak5-pineapple-topology.svg)
+## 6. Validierungsergebnisse — alle Tests bestanden ✅
 
 ---
 
-## 7. Validierungsergebnisse — alle Tests bestanden ✅
-
----
-
-## 8. Empfehlung
+## 7. Empfehlung
 
 **Der ALFA AWUS036ACM ist der beste derzeit erhältliche Adapter zur 5 GHz-Erweiterung des WiFi Pineapple Mark VII.**
 

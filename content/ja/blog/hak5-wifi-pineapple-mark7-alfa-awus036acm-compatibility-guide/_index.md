@@ -141,26 +141,13 @@ EOF
 
 ---
 
-## 6. ペネトレーションテストトポロジー
-
-![HAK5 WiFi Pineapple MK7 + AWUS036ACM トポロジー](/images/blog/hak5-pineapple-topology.svg)
-
-| インターフェース | 役割 | 帯域 |
-|---|---|---|
-| `wlan0` | 管理 AP | 2.4 GHz |
-| `wlan1` | PineAP エンジン | 2.4 GHz |
-| `wlan2` | クライアントモード | 2.4/5 GHz |
-| `wlan3` | **AWUS036ACM** — 5 GHz 監視 | **5 GHz** |
-
----
-
-## 7. 検証結果
+## 6. 検証結果
 
 全テストが MK7 Firmware 2.1.3 + 正規 ALFA AWUS036ACM で合格。
 
 ---
 
-## 8. 推奨
+## 7. 推奨
 
 **ALFA AWUS036ACM は、WiFi Pineapple Mark VII を 5 GHz に拡張するための現在入手可能な最適なアダプターです。**
 

@@ -301,24 +301,7 @@ EOF
 
 ---
 
-## 6. 滲透測試拓撲
-
-下圖說明 AWUS036ACM 整合至 WiFi Pineapple MK7 部署後的完整拓撲。該網卡以 `wlan3` 出現，在 MK7 內建 PineAP Engine（2.4 GHz）之旁提供專屬的 5 GHz 監聽能力。
-
-![HAK5 WiFi Pineapple MK7 + AWUS036ACM 滲透測試拓撲](/images/blog/hak5-pineapple-topology.svg)
-
-| 介面 | 角色 | 頻段 |
-|---|---|---|
-| `wlan0` | Management AP — 操作員連線管理 MK7 | 2.4 GHz |
-| `wlan1` | PineAP Engine — SSID 廣播、Deauth、Probe 捕獲 | 2.4 GHz |
-| `wlan2` | Client Mode — 上游 AP 連線供網際網路 | 2.4 / 5 GHz |
-| `wlan3` | **AWUS036ACM** — 5 GHz Monitor、Injection、Handshake 捕獲 | **5 GHz** |
-
-> **注意**：Firmware 2.x 的 PineAP Web UI 主要管理內建無線電。AWUS036ACM 的 5 GHz 掃描需透過 CLI（SSH）配置，或使用步驟 7 的啟動腳本自動化。
-
----
-
-## 7. 驗證結果
+## 6. 驗證結果
 
 所有測試均在 MK7 Firmware 2.1.3 上使用正版 ALFA AWUS036ACM 執行：
 
@@ -337,7 +320,7 @@ EOF
 
 ---
 
-## 8. 建議
+## 7. 建議
 
 **ALFA AWUS036ACM 是目前能買到、最適合擴充 WiFi Pineapple Mark VII 至 5 GHz 的網卡。**
 

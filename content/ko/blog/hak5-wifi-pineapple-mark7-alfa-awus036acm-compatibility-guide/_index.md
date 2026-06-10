@@ -272,22 +272,7 @@ EOF
 
 ---
 
-## 6. 침투 테스트 토폴로지
-
-아래 다이어그램은 AWUS036ACM이 WiFi Pineapple MK7 배포에 통합되었을 때의 완전한 토폴로지를 보여줍니다. 어댑터는 `wlan3`으로 나타나며, MK7의 내장 PineAP 엔진(2.4 GHz)과 함께 전용 5 GHz 모니터링 기능을 제공합니다.
-
-![HAK5 WiFi Pineapple MK7 + AWUS036ACM 침투 테스트 토폴로지](/images/blog/hak5-pineapple-topology.svg)
-
-| 인터페이스 | 역할 | 대역 |
-|---|---|---|
-| `wlan0` | 관리 AP — 운영자가 MK7 관리 접속 | 2.4 GHz |
-| `wlan1` | PineAP 엔진 — SSID 브로드캐스트, Deauth, Probe 캡처 | 2.4 GHz |
-| `wlan2` | 클라이언트 모드 — 업스트림 AP 연결 (인터넷) | 2.4 / 5 GHz |
-| `wlan3` | **AWUS036ACM** — 5 GHz 모니터, 인젝션, 핸드셰이크 캡처 | **5 GHz** |
-
----
-
-## 7. 검증 결과
+## 6. 검증 결과
 
 모든 테스트는 MK7 펌웨어 2.1.3에서 정품 ALFA AWUS036ACM을 사용하여 수행되었습니다:
 
@@ -305,7 +290,7 @@ EOF
 
 ---
 
-## 8. 권장 사항
+## 7. 권장 사항
 
 **ALFA AWUS036ACM은 WiFi Pineapple Mark VII를 5 GHz로 확장하기 위해 현재 구매 가능한 최고의 어댑터입니다.**
 

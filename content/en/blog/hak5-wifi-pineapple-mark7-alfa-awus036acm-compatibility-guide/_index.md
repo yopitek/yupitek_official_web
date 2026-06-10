@@ -301,24 +301,7 @@ EOF
 
 ---
 
-## 6. Penetration Testing Topology
-
-The diagram below illustrates the complete topology when the AWUS036ACM is integrated into a WiFi Pineapple MK7 deployment. The adapter appears as `wlan3` and provides dedicated 5 GHz monitoring capability alongside the MK7's built-in PineAP engine on 2.4 GHz.
-
-![HAK5 WiFi Pineapple MK7 + AWUS036ACM Penetration Testing Topology](/images/blog/hak5-pineapple-topology.svg)
-
-| Interface | Role | Band |
-|---|---|---|
-| `wlan0` | Management AP — operator connects to manage MK7 | 2.4 GHz |
-| `wlan1` | PineAP Engine — SSID broadcast, deauth, probe capture | 2.4 GHz |
-| `wlan2` | Client Mode — upstream AP connection for internet | 2.4 / 5 GHz |
-| `wlan3` | **AWUS036ACM** — 5 GHz monitor, injection, handshake capture | **5 GHz** |
-
-> **Note**: The PineAP Web UI in Firmware 2.x primarily manages built-in radios. AWUS036ACM 5 GHz scanning must be configured via CLI (SSH) or automated with the startup script from Step 7.
-
----
-
-## 7. Validation Results
+## 6. Validation Results
 
 All tests performed on MK7 Firmware 2.1.3 with a genuine ALFA AWUS036ACM:
 
@@ -337,7 +320,7 @@ All tests performed on MK7 Firmware 2.1.3 with a genuine ALFA AWUS036ACM:
 
 ---
 
-## 8. Recommendation
+## 7. Recommendation
 
 **The ALFA AWUS036ACM is the best currently-available adapter for extending the WiFi Pineapple Mark VII to 5 GHz.**
 

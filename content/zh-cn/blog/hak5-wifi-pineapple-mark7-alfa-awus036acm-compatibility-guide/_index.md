@@ -174,26 +174,13 @@ EOF
 
 ---
 
-## 6. 渗透测试拓扑
-
-![HAK5 WiFi Pineapple MK7 + AWUS036ACM 渗透测试拓扑](/images/blog/hak5-pineapple-topology.svg)
-
-| 接口 | 角色 | 频段 |
-|---|---|---|
-| `wlan0` | 管理 AP | 2.4 GHz |
-| `wlan1` | PineAP 引擎 | 2.4 GHz |
-| `wlan2` | 客户端模式 | 2.4/5 GHz |
-| `wlan3` | **AWUS036ACM** — 5 GHz 监听/注入 | **5 GHz** |
-
----
-
-## 7. 验证结果
+## 6. 验证结果
 
 所有测试在 MK7 Firmware 2.1.3 上使用正版 ALFA AWUS036ACM 执行，全部通过。
 
 ---
 
-## 8. 建议
+## 7. 建议
 
 **ALFA AWUS036ACM 是目前能买到、最适合扩展 WiFi Pineapple Mark VII 至 5 GHz 的无线网卡。**
 

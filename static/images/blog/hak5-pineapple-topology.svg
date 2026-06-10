@@ -1,223 +1,94 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440">
-  <defs>
-    <!-- Grid pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1e293b" stroke-width="1"/>
-    </pattern>
-    <!-- Arrowheads -->
-    <marker id="arrow-blue" markerWidth="12.0" markerHeight="8.0" refX="11.0" refY="4.0" orient="auto">
-      <polygon points="0 0, 12 4, 0 8" fill="#60a5fa"/>
-    </marker>
-    <marker id="arrow-red" markerWidth="12.0" markerHeight="8.0" refX="11.0" refY="4.0" orient="auto">
-      <polygon points="0 0, 12 4, 0 8" fill="#e94560"/>
-    </marker>
-    <marker id="arrow-amber" markerWidth="12.0" markerHeight="8.0" refX="11.0" refY="4.0" orient="auto">
-      <polygon points="0 0, 12 4, 0 8" fill="#f59e0b"/>
-    </marker>
-    <marker id="arrow-emerald" markerWidth="12.0" markerHeight="8.0" refX="11.0" refY="4.0" orient="auto">
-      <polygon points="0 0, 12 4, 0 8" fill="#34d399"/>
-    </marker>
-    <marker id="arrow-slate" markerWidth="12.0" markerHeight="8.0" refX="11.0" refY="4.0" orient="auto">
-      <polygon points="0 0, 12 4, 0 8" fill="#94a3b8"/>
-    </marker>
-    <!-- Glow filter for AWUS036ACM -->
-    <filter id="red-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="8.0" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap');
-    text { font-family: 'JetBrains Mono', 'SF Mono', monospace; }
-  </style>
-
-  <!-- Background -->
-  <rect width="2560" height="1440" fill="#0a0a14"/>
-  <rect width="2560" height="1440" fill="url(#grid)"/>
-
-  <!-- Title -->
-  <text x="40" y="46" fill="#e2e8f0" font-size="18" font-weight="466" font-family="'JetBrains Mono', monospace">HAK5 WiFi Pineapple Mark VII + ALFA AWUS036ACM — Penetration Testing Topology</text>
-  <text x="40" y="66" fill="#64748b" font-size="10" font-weight="266">5 GHz Monitor Mode Extension via USB · MT7612U Chipset · OpenWrt 5.4.x Kernel</text>
-
-  <!-- ============================================================ -->
-  <!-- ZONE 1: OPERATOR (Blue) -->
-  <!-- ============================================================ -->
-  <rect x="26" y="93" width="386" height="1320" rx="10" fill="none" stroke="#60a5fa" stroke-width="1" stroke-dasharray="12,6"/>
-  <text x="40" y="116" fill="#60a5fa" font-size="12" font-weight="400">🔴 Operator (Red Team)</text>
-
-  <!-- Laptop -->
-  <rect x="53" y="146" width="333" height="53" rx="5" fill="#0a0a14"/>
-  <rect x="53" y="146" width="333" height="53" rx="5" fill="rgba(59,130,246,0.15)" stroke="#60a5fa" stroke-width="1"/>
-  <text x="220" y="170" fill="white" font-size="12" font-weight="400" text-anchor="middle">Laptop / SSH Client</text>
-  <text x="220" y="186" fill="#94a3b8" font-size="10" text-anchor="middle">172.16.42.x · airmon-ng · airodump-ng</text>
-
-  <!-- Cloud C2 -->
-  <rect x="53" y="226" width="333" height="46" rx="5" fill="#0a0a14"/>
-  <rect x="53" y="226" width="333" height="46" rx="5" fill="rgba(59,130,246,0.10)" stroke="#3b82f6" stroke-width="1" stroke-dasharray="6,4"/>
-  <text x="220" y="248" fill="#94a3b8" font-size="11" font-weight="333" text-anchor="middle">☁ Hak5 Cloud C2</text>
-  <text x="220" y="262" fill="#64748b" font-size="9" text-anchor="middle">Remote Management Tunnel</text>
-
-  <!-- ============================================================ -->
-  <!-- ZONE 2: WIFI PINEAPPLE MK7 (Charcoal) -->
-  <!-- ============================================================ -->
-  <rect x="453" y="93" width="986" height="1320" rx="10" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="12,6"/>
-  <text x="466" y="116" fill="#94a3b8" font-size="12" font-weight="400">🍍 WiFi Pineapple Mark VII</text>
-  <text x="966" y="116" fill="#64748b" font-size="10">SoC: MT7628AN MIPS · 256 MB DDR2 · 2 GB eMMC · USB 2.0 Host</text>
-
-  <!-- SoC Box -->
-  <rect x="466" y="140" width="960" height="36" rx="6.0" fill="#0a0a14"/>
-  <rect x="466" y="140" width="960" height="36" rx="6.0" fill="rgba(100,116,139,0.08)" stroke="#64748b" stroke-width="1"/>
-  <text x="946" y="162" fill="#94a3b8" font-size="10" font-weight="400" text-anchor="middle">OpenWrt 5.4.x Kernel · kmod-mt76x2u (preloaded) · opkg Package Manager</text>
-
-  <!-- wlan0 - Management AP -->
-  <rect x="480" y="206" width="933" height="56" rx="5" fill="#0a0a14"/>
-  <rect x="480" y="206" width="933" height="56" rx="5" fill="rgba(8,51,68,0.3)" stroke="#22d3ee" stroke-width="1"/>
-  <text x="946" y="232" fill="#22d3ee" font-size="12" font-weight="466" text-anchor="middle">wlan0 — Management AP</text>
-  <text x="946" y="250" fill="#94a3b8" font-size="10" text-anchor="middle">2.4 GHz b/g/n · 172.16.42.1 · SSH (port 22) · PineAP Web UI (HTTPS)</text>
-
-  <!-- wlan1 - PineAP -->
-  <rect x="480" y="286" width="933" height="56" rx="5" fill="#0a0a14"/>
-  <rect x="480" y="286" width="933" height="56" rx="5" fill="rgba(120,53,15,0.25)" stroke="#f59e0b" stroke-width="1"/>
-  <text x="946" y="312" fill="#f59e0b" font-size="12" font-weight="466" text-anchor="middle">wlan1 — PineAP Engine</text>
-  <text x="946" y="330" fill="#94a3b8" font-size="10" text-anchor="middle">2.4 GHz Beacon Flood · Deauth Attacks · Probe Response Capture · SSID Pool Management</text>
-
-  <!-- wlan2 - Client Mode -->
-  <rect x="480" y="366" width="933" height="56" rx="5" fill="#0a0a14"/>
-  <rect x="480" y="366" width="933" height="56" rx="5" fill="rgba(6,78,59,0.25)" stroke="#34d399" stroke-width="1"/>
-  <text x="946" y="392" fill="#34d399" font-size="12" font-weight="466" text-anchor="middle">wlan2 — Client Mode</text>
-  <text x="946" y="410" fill="#94a3b8" font-size="10" text-anchor="middle">Upstream AP Connection · WAN / Internet Access · 2.4 GHz / 5 GHz</text>
-
-  <!-- wlan3 - AWUS036ACM (HIGHLIGHTED) -->
-  <rect x="480" y="446" width="933" height="73" rx="5" fill="#0a0a14"/>
-  <rect x="480" y="446" width="933" height="73" rx="5" fill="rgba(233,69,96,0.18)" stroke="#e94560" stroke-width="2" filter="url(#red-glow)"/>
-  <rect x="480" y="446" width="933" height="73" rx="5" fill="none" stroke="#e94560" stroke-width="1" stroke-dasharray="4,4"/>
-  <text x="946" y="474" fill="#e94560" font-size="14" font-weight="466" text-anchor="middle">⬥ wlan3 — ALFA AWUS036ACM (External USB)</text>
-  <text x="946" y="492" fill="white" font-size="10" font-weight="400" text-anchor="middle">MT7612U Chipset · 5 GHz 802.11ac · Monitor Mode ✅ · Packet Injection ✅</text>
-  <text x="946" y="508" fill="#fb7185" font-size="9" text-anchor="middle">USB VID 0E8D:PID 7612 · RP-SMA Antennas · 867 Mbps (USB 2.0 limited to ~250 Mbps)</text>
-
-  <!-- PineAP Web UI -->
-  <rect x="480" y="546" width="933" height="46" rx="6.0" fill="#0a0a14"/>
-  <rect x="480" y="546" width="933" height="46" rx="6.0" fill="rgba(100,116,139,0.08)" stroke="#64748b" stroke-width="1"/>
-  <text x="946" y="568" fill="#94a3b8" font-size="10" font-weight="400" text-anchor="middle">PineAP Web UI · Log Dashboard · SSID Pool · Handshake Capture Archive</text>
-  <text x="946" y="583" fill="#64748b" font-size="9" text-anchor="middle">Real-time Recon · Automated Campaigns · Reporting</text>
-
-  <!-- ============================================================ -->
-  <!-- ZONE 3: RF ENVIRONMENT (Navy) -->
-  <!-- ============================================================ -->
-  <rect x="1480" y="93" width="1053" height="1320" rx="10" fill="none" stroke="#22d3ee" stroke-width="1" stroke-dasharray="8,8" opacity="0.6"/>
-  <text x="1493" y="116" fill="#22d3ee" font-size="12" font-weight="400" opacity="0.8">📡 RF Environment (Target Airspace)</text>
-
-  <!-- AP-1 -->
-  <rect x="1506" y="146" width="1000" height="66" rx="5" fill="#0a0a14"/>
-  <rect x="1506" y="146" width="1000" height="66" rx="5" fill="rgba(8,51,68,0.12)" stroke="#22d3ee" stroke-width="1"/>
-  <text x="2006" y="173" fill="#22d3ee" font-size="12" font-weight="400" text-anchor="middle">Target AP-1 · 2.4 GHz 802.11b/g/n · WPA2-PSK</text>
-  <text x="2006" y="190" fill="#94a3b8" font-size="10" text-anchor="middle">Beacon Interval: 100ms · Channel: 6 (2437 MHz) · SSID: [Target Network]</text>
-  <text x="2006" y="204" fill="#64748b" font-size="8" text-anchor="middle">Vulnerable to Deauth · WPA Handshake Capture Target</text>
-
-  <!-- AP-2 -->
-  <rect x="1506" y="246" width="1000" height="66" rx="5" fill="#0a0a14"/>
-  <rect x="1506" y="246" width="1000" height="66" rx="5" fill="rgba(233,69,96,0.08)" stroke="#e94560" stroke-width="1"/>
-  <text x="2006" y="273" fill="#e94560" font-size="12" font-weight="400" text-anchor="middle">Target AP-2 · 5 GHz 802.11ac · WPA2-PSK</text>
-  <text x="2006" y="290" fill="#94a3b8" font-size="10" text-anchor="middle">Channel: 36 (5180 MHz) · Width: 80 MHz · SSID: [Target 5GHz Network]</text>
-  <text x="2006" y="304" fill="#64748b" font-size="8" text-anchor="middle">5 GHz Monitor Target · AWUS036ACM Required for Capture</text>
-
-  <!-- Station A -->
-  <rect x="1506" y="346" width="493" height="46" rx="5" fill="#0a0a14"/>
-  <rect x="1506" y="346" width="493" height="46" rx="5" fill="rgba(59,130,246,0.08)" stroke="#3b82f6" stroke-width="1"/>
-  <text x="1753" y="368" fill="#60a5fa" font-size="11" font-weight="400" text-anchor="middle">Station A · Smartphone</text>
-  <text x="1753" y="383" fill="#94a3b8" font-size="9" text-anchor="middle">Wi-Fi Client · Probe Requests · 2.4 GHz</text>
-
-  <!-- Station B -->
-  <rect x="2013" y="346" width="493" height="46" rx="5" fill="#0a0a14"/>
-  <rect x="2013" y="346" width="493" height="46" rx="5" fill="rgba(233,69,96,0.08)" stroke="#e94560" stroke-width="1"/>
-  <text x="2260" y="368" fill="#e94560" font-size="11" font-weight="400" text-anchor="middle">Station B · Laptop</text>
-  <text x="2260" y="383" fill="#94a3b8" font-size="9" text-anchor="middle">Wi-Fi Client · 5 GHz · 802.11ac</text>
-
-  <!-- ============================================================ -->
-  <!-- CONNECTIONS -->
-  <!-- ============================================================ -->
-
-  <!-- Operator Laptop → MK7 Management AP (SSH/HTTPS) -->
-  <path d="M 580 260 L 720 352" fill="none" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow-blue)"/>
-  <text x="413" y="200" fill="#60a5fa" font-size="9" font-weight="333">SSH / HTTPS</text>
-
-  <!-- Cloud C2 → MK7 Management AP -->
-  <path d="M 580 375 L 700 370 L 700 352 L 720 352" fill="none" stroke="#3b82f6" stroke-width="1" stroke-dasharray="8,4" marker-end="url(#arrow-blue)"/>
-  <text x="423" y="243" fill="#3b82f6" font-size="8">Cloud Tunnel</text>
-
-  <!-- Management AP → SoC -->
-  <path d="M 1420 395 L 1420 265" fill="none" stroke="#94a3b8" stroke-width="1" marker-end="url(#arrow-slate)"/>
-
-  <!-- PineAP (wlan1) → AP-1 (Beacon Flood / Deauth 2.4G) -->
-  <path d="M 2120 472 L 2260 270" fill="none" stroke="#f59e0b" stroke-width="1" marker-end="url(#arrow-amber)"/>
-  <text x="1440" y="240" fill="#f59e0b" font-size="9" font-weight="333">Beacon Flood ·</text>
-  <text x="1440" y="253" fill="#f59e0b" font-size="9" font-weight="333">Deauth (2.4 GHz)</text>
-
-  <!-- PineAP (wlan1) → Station A (Probe Response) -->
-  <path d="M 2120 472 L 2260 555" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="6,3" marker-end="url(#arrow-amber)"/>
-  <text x="1433" y="340" fill="#fbbf24" font-size="8">Probe Response Capture</text>
-
-  <!-- AWUS036ACM (wlan3) → AP-2 (5 GHz Monitor) -->
-  <path d="M 2120 725 L 2260 420" fill="none" stroke="#e94560" stroke-width="2" marker-end="url(#arrow-red)"/>
-  <rect x="1420" y="353" width="10" height="10" rx="2.0" fill="#e94560" opacity="0.8"/>
-  <text x="1440" y="363" fill="#e94560" font-size="10" font-weight="466">5 GHz Monitor</text>
-  <text x="1440" y="378" fill="#fb7185" font-size="8">Handshake Capture</text>
-
-  <!-- AWUS036ACM (wlan3) → Station B (5 GHz Recon) -->
-  <path d="M 2120 725 L 3020 555" fill="none" stroke="#e94560" stroke-width="1" stroke-dasharray="6,3" marker-end="url(#arrow-red)"/>
-  <text x="1653" y="416" fill="#fb7185" font-size="9">5 GHz Recon Scan</text>
-
-  <!-- Client Mode (wlan2) → AP-1 (WAN/Internet) -->
-  <path d="M 2120 592 L 2260 295" fill="none" stroke="#34d399" stroke-width="1" marker-end="url(#arrow-emerald)"/>
-  <text x="1440" y="293" fill="#34d399" font-size="9" font-weight="333">WAN / Internet</text>
-
-  <!-- SoC → PineAP Web UI -->
-  <path d="M 1420 265 L 1420 820" fill="none" stroke="#64748b" stroke-width="1" marker-end="url(#arrow-slate)"/>
-
-  <!-- PineAP Web UI → Operator Laptop -->
-  <path d="M 720 855 L 580 290" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#arrow-slate)"/>
-  <text x="446" y="400" fill="#64748b" font-size="8">Web UI Access</text>
-
-  <!-- ============================================================ -->
-  <!-- LEGEND -->
-  <!-- ============================================================ -->
-  <rect x="26" y="1360" width="2506" height="66" rx="6" fill="#0a0a14" stroke="#1e293b" stroke-width="1"/>
-  <text x="53" y="1383" fill="#94a3b8" font-size="12" font-weight="466">Legend</text>
-
-  <!-- Line color legend -->
-  <line x1="53" y1="1403" x2="93" y2="1403" stroke="#60a5fa" stroke-width="2"/>
-  <text x="100" y="1407" fill="#94a3b8" font-size="10">SSH/HTTPS</text>
-
-  <line x1="200" y1="1403" x2="240" y2="1403" stroke="#f59e0b" stroke-width="1"/>
-  <text x="246" y="1407" fill="#94a3b8" font-size="10">PineAP 2.4G</text>
-
-  <line x1="360" y1="1403" x2="400" y2="1403" stroke="#e94560" stroke-width="2"/>
-  <text x="406" y="1407" fill="#94a3b8" font-size="10">AWUS036ACM 5G</text>
-
-  <line x1="560" y1="1403" x2="600" y2="1403" stroke="#34d399" stroke-width="1"/>
-  <text x="606" y="1407" fill="#94a3b8" font-size="10">WAN/Internet</text>
-
-  <line x1="720" y1="1403" x2="760" y2="1403" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,3"/>
-  <text x="766" y="1407" fill="#94a3b8" font-size="10">Internal/UI</text>
-
-  <!-- Device legend -->
-  <rect x="906" y="1394" width="26" height="14" rx="4.0" fill="rgba(233,69,96,0.3)" stroke="#e94560" stroke-width="1"/>
-  <text x="940" y="1407" fill="#94a3b8" font-size="10">AWUS036ACM (Highlighted)</text>
-
-  <rect x="1120" y="1394" width="26" height="14" rx="4.0" fill="rgba(8,51,68,0.3)" stroke="#22d3ee" stroke-width="1"/>
-  <text x="1153" y="1407" fill="#94a3b8" font-size="10">MK7 Internal Radio</text>
-
-  <rect x="1306" y="1394" width="26" height="14" rx="4.0" fill="rgba(59,130,246,0.15)" stroke="#60a5fa" stroke-width="1"/>
-  <text x="1340" y="1407" fill="#94a3b8" font-size="10">Operator</text>
-
-  <rect x="1440" y="1394" width="26" height="14" rx="4.0" fill="rgba(8,51,68,0.12)" stroke="#22d3ee" stroke-width="1"/>
-  <text x="1473" y="1407" fill="#94a3b8" font-size="10">RF Target</text>
-
-  <!-- Footer -->
-  <text x="2466" y="1407" fill="#64748b" font-size="8" text-anchor="end">Yupitek Ltd · yupitek.com · 2026</text>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 785.1894999999997 694.9000000000001" width="785.1894999999997" height="694.9000000000001" style="--bg:#FFFFFF;--fg:#27272A;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<g class="subgraph" data-id="Operator" data-label="🔴 操作端">
+  <rect x="551.1974999999999" y="40" width="173.244" height="113.80000000000001" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="551.1974999999999" y="40" width="173.244" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="563.1974999999999" y="54" font-size="18" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">🔴 操作端</text>
+</g>
+<g class="subgraph" data-id="MK7" data-label="🍍 WiFi Pineapple MK7">
+  <rect x="108.96949999999998" y="282.1" width="636.2199999999998" height="130.7" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="108.96949999999998" y="282.1" width="636.2199999999998" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="120.96949999999998" y="296.1" font-size="18" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">🍍 WiFi Pineapple MK7</text>
+</g>
+<g class="subgraph" data-id="Target" data-label="📡 目標環境">
+  <rect x="40" y="541.1" width="337.301" height="113.80000000000001" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="541.1" width="337.301" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="52" y="555.1" font-size="18" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">📡 目標環境</text>
+</g>
+<polyline class="edge" data-from="OL" data-to="MGT" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="SSH" points="637.8194999999998,137.8 637.8195,334.55" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="PINEAP" data-to="STA" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="2.4G Deauth" points="432.63699999999994,388.35 432.63699999999994,454.8 392.4914166666666,454.8 392.4914166666666,523.1 322.61766666666665,523.1 322.61766666666665,585.1000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="ACM" data-to="AP2" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="5GHz Monitor" points="189.5878333333333,405.25 189.58783333333332,454.8 148.24258333333327,454.8 148.24258333333327,523.1 136.6255,523.1 136.6255,585.1000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="ACM" data-to="STA" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="5GHz Recon" points="254.2061666666666,405.25 254.2061666666666,454.8 263.548,454.8 263.548,523.1 283.9343333333333,523.1 283.93433333333337,585.1000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="OL" data-to="MGT" data-label="SSH">
+  <rect x="617.8194999999998" y="202.8" width="39.03399999999999" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="637.3364999999999" y="217.95000000000002" text-anchor="middle" font-size="16" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">SSH</text>
+</g>
+<g class="edge-label" data-from="PINEAP" data-to="STA" data-label="2.4G Deauth">
+  <rect x="354.9914166666666" y="461.8" width="74.08000000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="392.03141666666664" y="476.95" text-anchor="middle" font-size="16" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">2.4G Deauth</text>
+</g>
+<g class="edge-label" data-from="ACM" data-to="AP2" data-label="5GHz Monitor">
+  <rect x="107.24258333333327" y="461.8" width="81.80200000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="148.14358333333328" y="476.95" text-anchor="middle" font-size="16" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">5GHz Monitor</text>
+</g>
+<g class="edge-label" data-from="ACM" data-to="STA" data-label="5GHz Recon">
+  <rect x="225.04799999999994" y="461.8" width="76.456" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="263.27599999999995" y="476.95" text-anchor="middle" font-size="16" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">5GHz Recon</text>
+</g>
+<g class="node" data-id="OL" data-label="筆電 / SSH Client
+172.16.42.x" data-shape="rectangle">
+  <rect x="567.1974999999999" y="84" width="141.244" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="637.8194999999998" y="110.9" text-anchor="middle" font-size="19" font-weight="500" fill="var(--_text)"><tspan x="637.8194999999998" dy="-3.9000000000000012">筆電 / SSH Client</tspan><tspan x="637.8194999999998" dy="16.900000000000002">172.16.42.x</tspan></text>
+</g>
+<g class="node" data-id="MGT" data-label="wlan0 — Management AP
+2.4GHz · 172.16.42.1" data-shape="rectangle">
+  <rect x="546.4495" y="334.55" width="182.73999999999995" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="637.8195" y="361.45" text-anchor="middle" font-size="19" font-weight="500" fill="var(--_text)"><tspan x="637.8195" dy="-3.9000000000000012">wlan0 — Management AP</tspan><tspan x="637.8195" dy="16.900000000000002">2.4GHz · 172.16.42.1</tspan></text>
+</g>
+<g class="node" data-id="PINEAP" data-label="wlan1 — PineAP Engine
+2.4GHz 偵測 / Deauth" data-shape="rectangle">
+  <rect x="346.82449999999994" y="334.55" width="171.62499999999997" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="432.63699999999994" y="361.45" text-anchor="middle" font-size="19" font-weight="500" fill="var(--_text)"><tspan x="432.63699999999994" dy="-3.9000000000000012">wlan1 — PineAP Engine</tspan><tspan x="432.63699999999994" dy="16.900000000000002">2.4GHz 偵測 / Deauth</tspan></text>
+</g>
+<g class="node" data-id="ACM" data-label="wlan3 — AWUS036ACM ⭐
+MT7612U · 5GHz 802.11ac
+Monitor Mode + Injection" data-shape="rectangle">
+  <rect x="124.96949999999998" y="334.55" width="193.85499999999993" height="70.7" rx="0" ry="0" fill="#e94560" stroke="#fff" stroke-width="3px" />
+  <text x="221.89699999999993" y="369.90000000000003" text-anchor="middle" font-size="19" font-weight="500" fill="#fff"><tspan x="221.89699999999993" dy="-12.350000000000001">wlan3 — AWUS036ACM ⭐</tspan><tspan x="221.89699999999993" dy="16.900000000000002">MT7612U · 5GHz 802.11ac</tspan><tspan x="221.89699999999993" dy="16.900000000000002">Monitor Mode + Injection</tspan></text>
+</g>
+<g class="node" data-id="AP2" data-label="目標 AP
+5GHz 802.11ac WPA2" data-shape="rectangle">
+  <rect x="56" y="585.1" width="161.251" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="136.6255" y="612" text-anchor="middle" font-size="19" font-weight="500" fill="var(--_text)"><tspan x="136.6255" dy="-3.9000000000000012">目標 AP</tspan><tspan x="136.6255" dy="16.900000000000002">5GHz 802.11ac WPA2</tspan></text>
+</g>
+<g class="node" data-id="STA" data-label="客戶端裝置" data-shape="rectangle">
+  <rect x="245.25099999999998" y="585.1" width="116.05" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="303.27599999999995" y="603.5500000000001" text-anchor="middle" font-size="19" font-weight="500" fill="var(--_text)" dy="4.55">客戶端裝置</text>
+</g>
 </svg>

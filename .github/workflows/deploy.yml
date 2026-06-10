@@ -30,7 +30,7 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        run: hugo --minify --gc --cleanDestinationDir
+        run: hugo --minify --gc --cleanDestinationDir --buildFuture
 
       - name: Deploy to Cloudflare Pages
         run: npx wrangler@3 pages deploy public --project-name=yupitek --branch=main --commit-dirty=true

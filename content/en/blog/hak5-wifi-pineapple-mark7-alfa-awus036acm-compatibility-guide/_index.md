@@ -1,7 +1,7 @@
 ---
 title: "HAK5 WiFi Pineapple Mark VII + ALFA AWUS036ACM: Complete 5GHz Setup Guide (2026)"
 description: "Full compatibility guide for HAK5 WiFi Pineapple MK7 with ALFA AWUS036ACM (MT7612U) — plug-and-play 5GHz monitor mode, packet injection, and PineAP extension. Step-by-step setup with verified commands. No driver compilation required."
-date: 2026-06-11
+date: 2026-06-10
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

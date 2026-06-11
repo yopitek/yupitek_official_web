@@ -62,10 +62,10 @@ ALFA Network es un reconocido fabricante taiwanés de equipos de red inalámbric
   {{< card title="APA-M25-6E" href="/es/products/alfa/apa-m25-6e/" image="/images/products/alfa/apa-m25-6e.png" >}}
     Antena direccional WiFi 6E triple banda 2.4/5/6 GHz, hasta 10 dBi, RP-SMA.
   {{< /card >}}
-  {{< card title="ARS-25-57A" href="/es/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png" >}}
+  {{< card title="ARS-25-57A" href="/es/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png?v=2" >}}
     Antena paddle omnidireccional doble banda 2.4/5 GHz, 5/7 dBi, RP-SMA.
   {{< /card >}}
-  {{< card title="ARS-NT5B7" href="/es/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png" >}}
+  {{< card title="ARS-NT5B7" href="/es/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png?v=2" >}}
     Antena dipolo WiFi 7 triple banda, grado industrial -40°C~+85°C, 7 dBi a 6 GHz.
   {{< /card >}}
 {{< /card-group >}}

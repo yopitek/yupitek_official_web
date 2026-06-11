@@ -62,10 +62,10 @@ ALFA Network is a well-known Taiwanese manufacturer of wireless networking equip
   {{< card title="APA-M25-6E" href="/en/products/alfa/apa-m25-6e/" image="/images/products/alfa/apa-m25-6e.png" >}}
     WiFi 6E tri-band indoor directional antenna, 2.4/5/6 GHz, up to 10 dBi, RP-SMA connector.
   {{< /card >}}
-  {{< card title="ARS-25-57A" href="/en/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png" >}}
+  {{< card title="ARS-25-57A" href="/en/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png?v=2" >}}
     Dual-band 2.4/5 GHz paddle omni antenna, 5/7 dBi, RP-SMA direct replacement upgrade.
   {{< /card >}}
-  {{< card title="ARS-NT5B7" href="/en/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png" >}}
+  {{< card title="ARS-NT5B7" href="/en/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png?v=2" >}}
     WiFi 7 tri-band dipole antenna, 2.4/5/6 GHz, industrial-grade -40°C~+85°C, 7 dBi at 6 GHz.
   {{< /card >}}
 {{< /card-group >}}

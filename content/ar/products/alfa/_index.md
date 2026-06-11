@@ -63,10 +63,10 @@ ALFA Network هي شركة تايوانية رائدة في تصنيع معدا�
   {{< card title="APA-M25-6E" href="/ar/products/alfa/apa-m25-6e/" image="/images/products/alfa/apa-m25-6e.png" >}}
     هوائي WiFi 6E ثلاثي النطاق 2.4/5/6 GHz، حتى 10 dBi، موصل RP-SMA.
   {{< /card >}}
-  {{< card title="ARS-25-57A" href="/ar/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png" >}}
+  {{< card title="ARS-25-57A" href="/ar/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png?v=2" >}}
     هوائي مجداف ثنائي النطاق 2.4/5 GHz، 5/7 dBi، موصل RP-SMA للاستبدال المباشر.
   {{< /card >}}
-  {{< card title="ARS-NT5B7" href="/ar/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png" >}}
+  {{< card title="ARS-NT5B7" href="/ar/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png?v=2" >}}
     هوائي WiFi 7 ثلاثي النطاق، درجة صناعية -40°C~+85°C، 7 dBi عند 6 GHz.
   {{< /card >}}
 {{< /card-group >}}

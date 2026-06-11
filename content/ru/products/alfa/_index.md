@@ -62,10 +62,10 @@ ALFA Network — известный тайваньский производит�
   {{< card title="APA-M25-6E" href="/ru/products/alfa/apa-m25-6e/" image="/images/products/alfa/apa-m25-6e.png" >}}
     Трёхдиапазонная направленная антенна WiFi 6E 2.4/5/6 ГГц, до 10 дБи, RP-SMA.
   {{< /card >}}
-  {{< card title="ARS-25-57A" href="/ru/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png" >}}
+  {{< card title="ARS-25-57A" href="/ru/products/alfa/ars-25-57a/" image="/images/products/alfa/ars-25-57a.png?v=2" >}}
     Двухдиапазонная антенна-лопатка 2.4/5 ГГц, 5/7 дБи, RP-SMA прямая замена.
   {{< /card >}}
-  {{< card title="ARS-NT5B7" href="/ru/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png" >}}
+  {{< card title="ARS-NT5B7" href="/ru/products/alfa/ars-nt5b7/" image="/images/products/alfa/ars-nt5b7.png?v=2" >}}
     Трёхдиапазонная дипольная антенна WiFi 7, промышленный класс -40°C~+85°C, 7 дБи на 6 ГГц.
   {{< /card >}}
 {{< /card-group >}}

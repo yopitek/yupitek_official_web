@@ -22,6 +22,7 @@ const BLOG_ARTICLES = [
   'packet-injection-guide',
   'wifi-6e-vs-wifi-5-kali-linux',
   'wpa3-security-testing-alfa-2026',
+  'hak5-wifi-pineapple-pager-alfa-compatibility',
 ];
 
 // ============================================================

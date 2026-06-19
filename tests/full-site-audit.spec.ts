@@ -174,6 +174,7 @@ test.describe('Blog articles', () => {
     'awus036ach-vs-awus036acm',
     'packet-injection-guide',
     'best-wifi-adapter-kali-linux-2026',
+    'hak5-wifi-pineapple-pager-alfa-compatibility',
   ];
 
   for (const lang of ['en', 'de', 'fr', 'ja']) {

@@ -42,10 +42,10 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Build website
-        run: hugo --minify --gc --cleanDestinationDir
+        run: hugo --minify --gc --cleanDestinationDir --buildFuture
 
       - name: Start Hugo server
-        run: hugo server --bind 0.0.0.0 --port 1313 --disableLiveReload --noHTTPCache &
+        run: hugo server --bind 0.0.0.0 --port 1313 --disableLiveReload --noHTTPCache --buildFuture &
 
       - name: Wait for Hugo to be ready
         run: |
@@ -86,7 +86,7 @@ jobs:
           extended: true
 
       - name: Build website
-        run: hugo --minify --gc --cleanDestinationDir
+        run: hugo --minify --gc --cleanDestinationDir --buildFuture
 
       - name: Deploy to Cloudflare Pages
         run: npx wrangler@3 pages deploy public --project-name=yupitek --branch=main --commit-dirty=true

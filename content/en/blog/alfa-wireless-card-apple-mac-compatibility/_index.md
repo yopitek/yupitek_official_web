@@ -7,9 +7,6 @@ date: "2026-06-20"
 category: "Technical Guide"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
-
-# ALFA Wireless Cards on Apple Mac (2026): The Complete Compatibility Report for M1/M2/M3/M4 & Intel
-
 If you're using an Apple Mac — whether a MacBook Pro with M3 Max, a Mac Studio with M2 Ultra, or an Intel-based Mac Mini — and you want to use an ALFA Network wireless adapter for Wi-Fi auditing, monitor mode, or packet injection, you need the definitive answer to one question: **Which ALFA card works on which Mac?**
 
 Here's the short answer:

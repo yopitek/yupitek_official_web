@@ -7,9 +7,6 @@ date: "2026-06-20"
 category: "دليل تقني"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
-
-# بطاقات ALFA اللاسلكية على Apple Mac (2026): التقرير الشامل للتوافق مع M1/M2/M3/M4 و Intel
-
 إذا كنت تستخدم Apple Mac — سواء كان MacBook Pro بمعالج M3 Max، أو Mac Studio بمعالج M2 Ultra، أو Mac Mini المبني على Intel — وتريد استخدام محول ALFA Network اللاسلكي لتدقيق Wi-Fi، أو وضع المراقبة، أو حقن الحزم، فأنت بحاجة إلى الإجابة الحاسمة على سؤال واحد: **أي بطاقة ALFA تعمل على أي Mac؟**
 
 إليك الإجابة المختصرة:

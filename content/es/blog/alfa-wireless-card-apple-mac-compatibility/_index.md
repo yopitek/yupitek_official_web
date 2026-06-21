@@ -7,9 +7,6 @@ date: "2026-06-20"
 category: "Technical Guide"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
-
-# Tarjetas Inalámbricas ALFA en Apple Mac (2026): El Informe Completo de Compatibilidad para M1/M2/M3/M4 e Intel
-
 Si utiliza un Apple Mac, ya sea un MacBook Pro con M3 Max, un Mac Studio con M2 Ultra o un Mac Mini basado en Intel, y desea emplear un adaptador de red inalámbrica ALFA Network para auditoría Wi-Fi, modo monitor o inyecciones de paquetes, necesita la respuesta definitiva a una pregunta: **cuál tarjeta ALFA funciona en cada Mac.**
 
 Esta es la respuesta breve:

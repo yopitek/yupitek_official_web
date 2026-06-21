@@ -7,9 +7,6 @@ date: "2026-06-20"
 category: "技術指南"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
-
-# ALFA 無線網卡於 Apple Mac 的完整相容性報告（2026）：M1/M2/M3/M4 與 Intel 處理器全面解析
-
 如果你正在使用 Apple Mac（無論搭載 M3 Max 的 MacBook Pro、搭載 M2 Ultra 的 Mac Studio，或是基於 Intel 的 Mac Mini），並且想要使用 ALFA Network 無線網卡進行 Wi-Fi 稽核、監控模式或封包注入，你需要一個明確的答案：**哪張 ALFA 網卡能在哪台 Mac 上運作？**
 
 以下是簡短的答案：

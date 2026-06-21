@@ -7,9 +7,6 @@ date: "2026-06-20"
 category: "Technischer Leitfaden"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
-
-# ALFA WLAN-Adapter auf Apple Mac (2026): Der vollständige Kompatibilitätsbericht für M1/M2/M3/M4 & Intel
-
 Wenn Sie einen Apple Mac verwenden — ob ein MacBook Pro mit M3 Max, ein Mac Studio mit M2 Ultra oder ein Intel-basierter Mac Mini — und einen ALFA Network WLAN-Adapter für WLAN-Auditing, Monitor-Modus oder Paketinjektion nutzen möchten, brauchen Sie die definitive Antwort auf eine Frage: **Welche ALFA-Karte funktioniert auf welchem Mac?**
 
 Hier ist die kurze Antwort:

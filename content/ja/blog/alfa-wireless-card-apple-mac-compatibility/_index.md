@@ -7,9 +7,6 @@ date: "2026-06-20"
 category: "Technical Guide"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
-
-# Apple Mac での ALFA Wireless Cards（2026年版）：M1/M2/M3/M4 & Intel 向け完全互換性レポート
-
 Apple Mac（M3 Max搭載のMacBook Pro、M2 Ultra搭載のMac Studio、IntelベースのMac Miniなど）をお使いで、Wi-Fi監査、モニターモード、パケットインジェクションのためにALFA Networkワイヤレスアダプタを使いたい場合、たどり着くべき究極の質問は一つです。**「どのALFAカードが、どのMacで動作するのか？」**
 
 短い答えはこれです：

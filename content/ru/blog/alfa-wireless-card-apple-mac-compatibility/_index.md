@@ -7,9 +7,6 @@ date: "2026-06-20"
 category: "Техническое руководство"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
-
-# Беспроводные карты ALFA на Apple Mac (2026): Полный отчёт о совместимости для M1/M2/M3/M4 и Intel
-
 Если вы используете Apple Mac — будь то MacBook Pro с M3 Max, Mac Studio с M2 Ultra или Mac Mini на базе Intel — и хотите использовать беспроводной адаптер ALFA Network для аудита Wi-Fi, режима монитора или инъекции пакетов, вам нужен однозначный ответ на один вопрос: **Какая карта ALFA работает на каком Mac?**
 
 Вот краткий ответ:

@@ -7,6 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["YPB03", "LINE Beacon", "Bluetooth", "OMO", "IoT", "Proximity Marketing"]
 featureimage: "/images/blog/ypb03-line-beacon-tutorial.jpg"
+hideFeatureImage: true
 ---
 
 ![Banner conceitual do YPB03 LINE Beacon](/images/blog/ypb03-line-beacon-tutorial.jpg)

@@ -7,9 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-network", "wifi-adapter", "buyer-guide", "kali-linux", "penetration-testing", "monitor-mode"]
 featureimage: "/images/blog/alfa-wifi-adapter-buyer-guide-2026.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Cuáles son los criterios para elegir una tarjeta ALFA?"
+    answer: "Los criterios incluyen la madurez del controlador del chipset, la compatibilidad con el sistema operativo, el soporte del modo monitor y la potencia de transmisión. RTL8812AU tiene el controlador más maduro y estable."
+  - question: "¿Qué tarjetas ALFA admiten el modo monitor?"
+    answer: "ACH, ACM, ACS, AX, AXER, AXM y AXML admiten completamente el modo monitor y la inyección de paquetes. EACS (RTL8821CU) no lo admite."
+  - question: "¿Es necesaria una tarjeta WiFi 6E/6?"
+    answer: "Si el alcance de la auditoría incluye la banda de 6 GHz, sí es necesaria. AXML admite triple banda AX3000 y requiere kernel Linux >= 5.18 y firmware-misc-nonfree."
+  - question: "¿Diferencia entre la instalación de controladores RTL8812AU y MT7612U?"
+    answer: "RTL8812AU necesita compilación e instalación DKMS; tras actualizar el kernel debe recompilarse. MT7612U está integrado en el kernel principal desde la versión 4.19, es plug-and-play sin compilar."
+  - question: "¿Qué tarjeta ALFA se recomienda más para 2026?"
+    answer: "Para equipo rojo, el AWUS036ACH (500 mW, doble antena); para economía, el AWUS036ACM; para empresa 6E, el AWUS036AXML (AX3000 triple banda)."
 ---
 
-Esta guía va directo al punto para ingenieros de seguridad de redes, profesionales de TI empresarial y red teamers que necesitan elegir el adaptador USB WiFi ALFA Network correcto en 2026. Cubrimos los ocho modelos actuales en producción — [AWUS036ACS](/en/products/alfa/awus036acs/), [AWUS036ACH](/en/products/alfa/awus036ach/), [AWUS036ACM](/en/products/alfa/awus036acm/), [AWUS036EACS](/en/products/alfa/awus036eacs/), [AWUS036AX](/en/products/alfa/awus036ax/), [AWUS036AXER](/en/products/alfa/awus036axer/), [AWUS036AXM](/en/products/alfa/awus036axm/) y [AWUS036AXML](/en/products/alfa/awus036axml/) — comparando chipsets, madurez de controladores, soporte de sistemas operativos y casos de uso reales, para que pases menos tiempo resolviendo problemas de controladores y más tiempo en el trabajo que importa.
+Esta guía va directo al punto para ingenieros de seguridad de redes, profesionales de TI empresarial y red teamers que necesitan elegir el adaptador USB WiFi ALFA Network correcto en 2026. Cubrimos los ocho modelos actuales en producción — [AWUS036ACS](/es/products/alfa/awus036acs/), [AWUS036ACH](/es/products/alfa/awus036ach/), [AWUS036ACM](/es/products/alfa/awus036acm/), [AWUS036EACS](/es/products/alfa/awus036eacs/), [AWUS036AX](/es/products/alfa/awus036ax/), [AWUS036AXER](/es/products/alfa/awus036axer/), [AWUS036AXM](/es/products/alfa/awus036axm/) y [AWUS036AXML](/es/products/alfa/awus036axml/) — comparando chipsets, madurez de controladores, soporte de sistemas operativos y casos de uso reales, para que pases menos tiempo resolviendo problemas de controladores y más tiempo en el trabajo que importa.
+
+{{< tldr >}}
+El AWUS036ACH es la elección de 2026 para equipos rojos: 500 mW, doble antena AC1200, con el controlador RTL8812AU más maduro. Para presupuesto ajustado, AWUS036ACM; para empresa 6E, AWUS036AXML (AX3000 triple banda).
+{{< /tldr >}}
 
 ---
 
@@ -29,7 +46,7 @@ El soporte de controladores lo es todo. Los usuarios de Kali Linux y Ubuntu en k
 
 ### (b) ¿Necesitas monitor mode e inyección de paquetes?
 
-Si tu respuesta es sí — y para cualquier prueba de penetración o auditoría inalámbrica debería serlo — elimina el [AWUS036EACS](/en/products/alfa/awus036eacs/) de tu lista de inmediato. Su chipset RTL8821CU no admite monitor mode ni inyección de manera confiable en Linux. Todos los demás modelos de esta guía sí lo hacen.
+Si tu respuesta es sí — y para cualquier prueba de penetración o auditoría inalámbrica debería serlo — elimina el [AWUS036EACS](/es/products/alfa/awus036eacs/) de tu lista de inmediato. Su chipset RTL8821CU no admite monitor mode ni inyección de manera confiable en Linux. Todos los demás modelos de esta guía sí lo hacen.
 
 ### (c) ¿Máquina virtual o hardware nativo?
 
@@ -49,14 +66,14 @@ La generación Wi-Fi 5 (ACH, ACM, ACS) es más económica, tiene controladores m
 
 | Modelo | Generación Wi-Fi | Chipset | Velocidad Máx. | Monitor Mode | Controlador Kali | Windows | macOS | Antenas | Ideal Para |
 |---|---|---|---|---|---|---|---|---|---|
-| [AWUS036ACS](/en/products/alfa/awus036acs/) | Wi-Fi 5 | RTL8811AU | AC600 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | Kit de viaje liviano |
-| [AWUS036ACH](/en/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | Operaciones de red team |
-| [AWUS036ACM](/en/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | Doble banda económico |
-| [AWUS036EACS](/en/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | Uso general (sin inyección) |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated | Auditoría Wi-Fi 6 |
-| [AWUS036AXER](/en/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | Wi-Fi 6 de largo alcance |
-| [AWUS036AXM](/en/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Entrada Wi-Fi 6E |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | Flagship 6E |
+| [AWUS036ACS](/es/products/alfa/awus036acs/) | Wi-Fi 5 | RTL8811AU | AC600 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | Kit de viaje liviano |
+| [AWUS036ACH](/es/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | Operaciones de red team |
+| [AWUS036ACM](/es/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | Doble banda económico |
+| [AWUS036EACS](/es/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | Uso general (sin inyección) |
+| [AWUS036AX](/es/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated | Auditoría Wi-Fi 6 |
+| [AWUS036AXER](/es/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | Wi-Fi 6 de largo alcance |
+| [AWUS036AXM](/es/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Entrada Wi-Fi 6E |
+| [AWUS036AXML](/es/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | Flagship 6E |
 
 </div>
 
@@ -74,7 +91,7 @@ La generación Wi-Fi 5 cuenta con años de desarrollo comunitario. Si tu priorid
 
 ### AWUS036ACH — El Estándar para Red Teams
 
-El [AWUS036ACH](/en/products/alfa/awus036ach/) sigue siendo el adaptador ALFA más ampliamente utilizado en la comunidad de seguridad, y con razón. Su chipset RTL8812AU es compatible con el controlador `aircrack-ng/rtl8812au`, que ha sido mantenido y probado contra cada versión mayor de Kali Linux durante años.
+El [AWUS036ACH](/es/products/alfa/awus036ach/) sigue siendo el adaptador ALFA más ampliamente utilizado en la comunidad de seguridad, y con razón. Su chipset RTL8812AU es compatible con el controlador `aircrack-ng/rtl8812au`, que ha sido mantenido y probado contra cada versión mayor de Kali Linux durante años.
 
 **Especificaciones de hardware:**
 - Chipset: RTL8812AU (Realtek)
@@ -82,7 +99,7 @@ El [AWUS036ACH](/en/products/alfa/awus036ach/) sigue siendo el adaptador ALFA m�
 - Potencia de transmisión de 500 mW — la más alta en la línea Wi-Fi 5
 - Doble banda: 2.4 GHz y 5 GHz
 
-**Por qué lidera para red teams:** 500 mW de potencia de transmisión combinados con antenas externas duales y soporte de inyección maduro significan que puedes trabajar a distancia manteniendo una entrega confiable de tramas. Reemplaza las antenas omnidireccionales estándar por un panel direccional [APA-M25](/en/products/alfa/apa-m25/) y tendrás una plataforma de largo alcance seria. El factor de forma de dos antenas también habilita un MIMO 2T2R adecuado al asociarse con redes objetivo.
+**Por qué lidera para red teams:** 500 mW de potencia de transmisión combinados con antenas externas duales y soporte de inyección maduro significan que puedes trabajar a distancia manteniendo una entrega confiable de tramas. Reemplaza las antenas omnidireccionales estándar por un panel direccional [APA-M25](/es/products/alfa/apa-m25/) y tendrás una plataforma de largo alcance seria. El factor de forma de dos antenas también habilita un MIMO 2T2R adecuado al asociarse con redes objetivo.
 
 **Instalación del controlador en Kali:**
 ```bash
@@ -95,7 +112,7 @@ En kernels ≥ 6.2, el módulo `rtl8812au` incluido en imágenes antiguas de Kal
 
 ### AWUS036ACM — La Opción Económica de Doble Banda
 
-El [AWUS036ACM](/en/products/alfa/awus036acm/) usa el chipset MT7612U (MediaTek) — una familia diferente al RTL8812AU del ACH — y viene con dos conectores RP-SMA para operación 2T2R a un precio más bajo. El controlador mt76x2u está integrado en el kernel desde la versión 4.19, sin necesidad de compilar nada. El soporte de monitor mode e inyección de paquetes es completo.
+El [AWUS036ACM](/es/products/alfa/awus036acm/) usa el chipset MT7612U (MediaTek) — una familia diferente al RTL8812AU del ACH — y viene con dos conectores RP-SMA para operación 2T2R a un precio más bajo. El controlador mt76x2u está integrado en el kernel desde la versión 4.19, sin necesidad de compilar nada. El soporte de monitor mode e inyección de paquetes es completo.
 
 Si solo necesitas un puerto de antena y no requieres la potencia de transmisión extendida del ACH, el ACM cubre los mismos casos de uso por menos dinero. Es una elección común para despliegues en kits donde se compran adaptadores en cantidad para un equipo de auditoría.
 
@@ -103,7 +120,7 @@ Si solo necesitas un puerto de antena y no requieres la potencia de transmisión
 
 ### AWUS036ACS — Liviano y Portátil
 
-El [AWUS036ACS](/en/products/alfa/awus036acs/) usa el chipset RTL8811AU — un escalón por debajo del RTL8812AU en potencia de transmisión, pero completamente capaz de monitor mode e inyección de paquetes. Su factor de forma compacto y su antena única lo convierten en la opción de viaje para consultores con mucha movilidad que no quieren lidiar con múltiples antenas RP-SMA en la seguridad del aeropuerto.
+El [AWUS036ACS](/es/products/alfa/awus036acs/) usa el chipset RTL8811AU — un escalón por debajo del RTL8812AU en potencia de transmisión, pero completamente capaz de monitor mode e inyección de paquetes. Su factor de forma compacto y su antena única lo convierten en la opción de viaje para consultores con mucha movilidad que no quieren lidiar con múltiples antenas RP-SMA en la seguridad del aeropuerto.
 
 El controlador RTL8811AU comparte el mismo paquete `rtl8812au-dkms` en Kali, por lo que el proceso de instalación es idéntico.
 
@@ -111,7 +128,7 @@ El controlador RTL8811AU comparte el mismo paquete `rtl8812au-dkms` en Kali, por
 
 ### AWUS036EACS — Uso General, No para Pentesting
 
-El [AWUS036EACS](/en/products/alfa/awus036eacs/) está impulsado por un chipset Realtek RTL8821CU y usa el controlador de kernel `rtl88xxcu`. Este chipset fue diseñado para conectividad de cliente, no para manipulación de paquetes. El soporte de monitor mode bajo `rtl88xxcu` no es confiable, y la inyección de paquetes no está disponible en la configuración estándar del controlador.
+El [AWUS036EACS](/es/products/alfa/awus036eacs/) está impulsado por un chipset Realtek RTL8821CU y usa el controlador de kernel `rtl88xxcu`. Este chipset fue diseñado para conectividad de cliente, no para manipulación de paquetes. El soporte de monitor mode bajo `rtl88xxcu` no es confiable, y la inyección de paquetes no está disponible en la configuración estándar del controlador.
 
 {{< alert "triangle-exclamation" >}}
 **No uses AWUS036EACS para pruebas de penetración, operaciones de red team ni ninguna tarea que requiera monitor mode o inyección de paquetes.** Es adecuado para conectividad inalámbrica general, extensión del rango del controlador de drones DJI (donde se usa frecuentemente), y despliegues con prioridad en Windows donde el comportamiento estándar de adaptador cliente es aceptable.
@@ -129,7 +146,7 @@ Ambos adaptadores ALFA Wi-Fi 6 (AX, AXER) usan el chipset Realtek RTL8832BU. En 
 
 ### AWUS036AX — La Opción Limpia de Wi-Fi 6
 
-El [AWUS036AX](/en/products/alfa/awus036ax/) es el adaptador Wi-Fi 6 AX1800 de ALFA: antena integrada (sin conector RP-SMA), chipset RTL8832BU y operación en bandas de 2.4 y 5 GHz. Soporte completo en Windows; en Linux el controlador es OOK en kernels < 6.14.
+El [AWUS036AX](/es/products/alfa/awus036ax/) es el adaptador Wi-Fi 6 AX1800 de ALFA: antena integrada (sin conector RP-SMA), chipset RTL8832BU y operación en bandas de 2.4 y 5 GHz. Soporte completo en Windows; en Linux el controlador es OOK en kernels < 6.14.
 
 **Estado del controlador:**
 - Kernel ≥ 6.14: controlador RTL8832BU integrado en el kernel, sin paquetes adicionales necesarios
@@ -145,7 +162,7 @@ El [AWUS036AX](/en/products/alfa/awus036ax/) es el adaptador Wi-Fi 6 AX1800 de A
 
 ### AWUS036AXER — Variante de Alcance Extendido
 
-El [AWUS036AXER](/en/products/alfa/awus036axer/) es idéntico en hardware al AWUS036AX en chipset y configuración de antenas (nano integrada), pero añade amplificación de RF mejorada para un mayor alcance operativo. La situación del controlador es idéntica — mismo RTL8832BU, misma ruta de soporte del kernel, mismo comportamiento de monitor mode e inyección limitados.
+El [AWUS036AXER](/es/products/alfa/awus036axer/) es idéntico en hardware al AWUS036AX en chipset y configuración de antenas (nano integrada), pero añade amplificación de RF mejorada para un mayor alcance operativo. La situación del controlador es idéntica — mismo RTL8832BU, misma ruta de soporte del kernel, mismo comportamiento de monitor mode e inyección limitados.
 
 Elige AXER sobre AX cuando el alcance sea el factor decisivo: relevamientos de sitio en campus grandes, evaluaciones en exteriores o escenarios donde el punto de acceso está a distancia. El sobrecosto es moderado y justificado si el alcance importa para tu despliegue.
 
@@ -159,7 +176,7 @@ Ambos adaptadores ALFA Wi-Fi 6E requieren kernel ≥ 5.18 para soporte de la ban
 
 ### AWUS036AXM — Punto de Entrada a Wi-Fi 6E
 
-El [AWUS036AXM](/en/products/alfa/awus036axm/) usa el chipset MT7921AUN con soporte para la banda de 6 GHz habilitado. Viene con dos conectores RP-SMA para operación 2T2R.
+El [AWUS036AXM](/es/products/alfa/awus036axm/) usa el chipset MT7921AUN con soporte para la banda de 6 GHz habilitado. Viene con dos conectores RP-SMA para operación 2T2R.
 
 Para operadores que principalmente trabajan en entornos de 2.4 y 5 GHz pero quieren capacidad 6 GHz para evaluaciones de redes emergentes sin pagar precios flagship, el AXM es el punto de entrada lógico.
 
@@ -168,7 +185,7 @@ Para operadores que principalmente trabajan en entornos de 2.4 y 5 GHz pero quie
 
 ### AWUS036AXML — El Adaptador Flagship 6E
 
-El [AWUS036AXML](/en/products/alfa/awus036axml/) es el adaptador de gama más alta de ALFA en la actualidad. Cuenta con el chipset MT7921AUN (MediaTek), interfaz USB-C 3.2, Bluetooth 5.2 y un conector RP-SMA de alta ganancia para la conexión de antenas externas.
+El [AWUS036AXML](/es/products/alfa/awus036axml/) es el adaptador de gama más alta de ALFA en la actualidad. Cuenta con el chipset MT7921AUN (MediaTek), interfaz USB-C 3.2, Bluetooth 5.2 y un conector RP-SMA de alta ganancia para la conexión de antenas externas.
 
 **Especificaciones clave:**
 - Chipset: MT7921AUN (MediaTek)
@@ -195,14 +212,14 @@ El [AWUS036AXML](/en/products/alfa/awus036axml/) es el adaptador de gama más al
 
 | Modelo | Chipset | Paquete Kali | Ubuntu HWE | RPi ARM | Windows 10/11 |
 |---|---|---|---|---|---|
-| [AWUS036ACS](/en/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | Compilación manual | ✅ rtl8812au-dkms | ✅ Controlador ALFA |
-| [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | Compilación manual | ✅ rtl8812au-dkms | ✅ Controlador ALFA |
-| [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | `mt76x2u (in-kernel)` | Integrado en kernel | ✅ mt76x2u (≥4.19) | ✅ Controlador ALFA |
-| [AWUS036EACS](/en/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` | Integrado en kernel | ⚠️ Limitado | ✅ Integrado |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
-| [AWUS036AXER](/en/products/alfa/awus036axer/) | RTL8832BU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
-| [AWUS036AXM](/en/products/alfa/awus036axm/) | MT7921AUN | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
+| [AWUS036ACS](/es/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | Compilación manual | ✅ rtl8812au-dkms | ✅ Controlador ALFA |
+| [AWUS036ACH](/es/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | Compilación manual | ✅ rtl8812au-dkms | ✅ Controlador ALFA |
+| [AWUS036ACM](/es/products/alfa/awus036acm/) | MT7612U | `mt76x2u (in-kernel)` | Integrado en kernel | ✅ mt76x2u (≥4.19) | ✅ Controlador ALFA |
+| [AWUS036EACS](/es/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` | Integrado en kernel | ⚠️ Limitado | ✅ Integrado |
+| [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
+| [AWUS036AXER](/es/products/alfa/awus036axer/) | RTL8832BU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
+| [AWUS036AXM](/es/products/alfa/awus036axm/) | MT7921AUN | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
+| [AWUS036AXML](/es/products/alfa/awus036axml/) | MT7921AUN | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ req. firmware | ✅ Controlador ALFA |
 
 </div>
 
@@ -218,33 +235,33 @@ El [AWUS036AXML](/en/products/alfa/awus036axml/) es el adaptador de gama más al
 
 ### Operaciones de Red Team
 
-**Recomendado: [AWUS036ACH](/en/products/alfa/awus036ach/)**
+**Recomendado: [AWUS036ACH](/es/products/alfa/awus036ach/)**
 
-La potencia de transmisión de 500 mW del ACH, sus antenas duales y el probado controlador RTL8812AU lo convierten en la opción predeterminada para compromisos de red team. Puedes confiar en que funcionará después de una actualización del kernel, que pasará por una VM de forma confiable y que aceptará cualquier antena RP-SMA que traigas. Si el presupuesto lo permite y la cobertura 6E está en el alcance, agrega un [AWUS036AXML](/en/products/alfa/awus036axml/) como adaptador secundario para el descubrimiento de redes en 6 GHz.
+La potencia de transmisión de 500 mW del ACH, sus antenas duales y el probado controlador RTL8812AU lo convierten en la opción predeterminada para compromisos de red team. Puedes confiar en que funcionará después de una actualización del kernel, que pasará por una VM de forma confiable y que aceptará cualquier antena RP-SMA que traigas. Si el presupuesto lo permite y la cobertura 6E está en el alcance, agrega un [AWUS036AXML](/es/products/alfa/awus036axml/) como adaptador secundario para el descubrimiento de redes en 6 GHz.
 
 ### Competencias CTF
 
-**Recomendado: [AWUS036ACM](/en/products/alfa/awus036acm/)**
+**Recomendado: [AWUS036ACM](/es/products/alfa/awus036acm/)**
 
-Los desafíos inalámbricos en CTF suelen involucrar entornos controlados donde la potencia de transmisión no es la variable crítica. El ACM proporciona capacidad completa de monitor mode e inyección de paquetes a un precio más bajo. Su factor de forma compacto de antena única es fácil de empacar y desplegar. Si el CTF incluye desafíos Wi-Fi 6 (aún poco comunes pero en crecimiento), usa el [AWUS036AX](/en/products/alfa/awus036ax/).
+Los desafíos inalámbricos en CTF suelen involucrar entornos controlados donde la potencia de transmisión no es la variable crítica. El ACM proporciona capacidad completa de monitor mode e inyección de paquetes a un precio más bajo. Su factor de forma compacto de antena única es fácil de empacar y desplegar. Si el CTF incluye desafíos Wi-Fi 6 (aún poco comunes pero en crecimiento), usa el [AWUS036AX](/es/products/alfa/awus036ax/).
 
 ### Raspberry Pi / Kali NetHunter
 
-**Recomendado: [AWUS036ACH](/en/products/alfa/awus036ach/) o [AWUS036ACM](/en/products/alfa/awus036acm/)**
+**Recomendado: [AWUS036ACH](/es/products/alfa/awus036ach/) o [AWUS036ACM](/es/products/alfa/awus036acm/)**
 
 Ambos adaptadores RTL8812AU tienen un historial comprobado en hardware Raspberry Pi. Evita los modelos MT7921AUN para despliegues en Pi a menos que hayas confirmado la compatibilidad del kernel y firmware en tu imagen específica. El ACH es la opción más segura si estás construyendo un Pi NetHunter dedicado que necesita ser confiable en campo.
 
 ### Auditoría Inalámbrica Empresarial
 
-**Recomendado: [AWUS036AXML](/en/products/alfa/awus036axml/) + [AWUS036ACH](/en/products/alfa/awus036ach/)**
+**Recomendado: [AWUS036AXML](/es/products/alfa/awus036axml/) + [AWUS036ACH](/es/products/alfa/awus036ach/)**
 
 Una auditoría inalámbrica empresarial moderna debe cubrir las bandas de 2.4, 5 y 6 GHz. El AXML cubre el espectro completo tri-banda incluyendo 6E, mientras que el ACH proporciona un respaldo estable y de alta potencia para el trabajo en 5 GHz. Ejecutar ambos simultáneamente con interfaces de captura separadas te da cobertura completa de bandas sin compromisos en los controladores. Usa el ACH para tareas de inyección activa y el AXML para monitoreo pasivo en 6 GHz.
 
 ### Extensión de Alcance de Drones DJI
 
-**Recomendado: [AWUS036EACS](/en/products/alfa/awus036eacs/)**
+**Recomendado: [AWUS036EACS](/es/products/alfa/awus036eacs/)**
 
-La extensión de alcance de DJI mediante Litchi o DJI GO es un caso de uso legítimo común. El EACS con RTL8821CU se recomienda específicamente aquí porque funciona de forma nativa en Windows (donde corre el software de DJI) sin controladores adicionales, y su perfil de conectividad de propósito general es ideal para este caso de uso. No se requiere monitor mode; la conectividad en modo cliente y la potencia de transmisión son lo que importa. Combínalo con una antena panel [APA-M25](/en/products/alfa/apa-m25/) para maximizar el alcance efectivo.
+La extensión de alcance de DJI mediante Litchi o DJI GO es un caso de uso legítimo común. El EACS con RTL8821CU se recomienda específicamente aquí porque funciona de forma nativa en Windows (donde corre el software de DJI) sin controladores adicionales, y su perfil de conectividad de propósito general es ideal para este caso de uso. No se requiere monitor mode; la conectividad en modo cliente y la potencia de transmisión son lo que importa. Combínalo con una antena panel [APA-M25](/es/products/alfa/apa-m25/) para maximizar el alcance efectivo.
 
 ---
 
@@ -313,22 +330,24 @@ sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 
 {{< alert "circle-info" >}}
-Si estás construyendo una caja de despliegue NetHunter dedicada, usa el [AWUS036ACH](/en/products/alfa/awus036ach/) o el [AWUS036ACM](/en/products/alfa/awus036acm/). El controlador RTL8812AU del ACH y el mt76x2u del ACM compilan de forma confiable en ARM sin dependencia de archivos de firmware. Los modelos MT7921AUN son funcionales en Pi, pero agregan una dependencia en archivos de firmware que puede causar problemas en despliegues sin conexión a internet.
+Si estás construyendo una caja de despliegue NetHunter dedicada, usa el [AWUS036ACH](/es/products/alfa/awus036ach/) o el [AWUS036ACM](/es/products/alfa/awus036acm/). El controlador RTL8812AU del ACH y el mt76x2u del ACM compilan de forma confiable en ARM sin dependencia de archivos de firmware. Los modelos MT7921AUN son funcionales en Pi, pero agregan una dependencia en archivos de firmware que puede causar problemas en despliegues sin conexión a internet.
 {{< /alert >}}
 
 ---
+
+{{< faq >}}
 
 ## Recomendación Final
 
 Tras evaluar los ocho adaptadores en madurez de controladores, capacidad de hardware y casos de uso reales, estas son las tres opciones que cubren a la mayoría de los profesionales:
 
-**Opción Económica: [AWUS036ACM](/en/products/alfa/awus036acm/)**
+**Opción Económica: [AWUS036ACM](/es/products/alfa/awus036acm/)**
 El adaptador RTL8812AU de antena única ofrece soporte completo de monitor mode e inyección de paquetes al precio más bajo en la línea de doble banda. Ideal para consultores que quieren una herramienta confiable sin gastar de más, o para equipos que compran adaptadores en cantidad.
 
-**Opción Versátil: [AWUS036ACH](/en/products/alfa/awus036ach/)**
+**Opción Versátil: [AWUS036ACH](/es/products/alfa/awus036ach/)**
 El adaptador RTL8812AU de antena dual y 500 mW es el adaptador individual más recomendado para profesionales de seguridad. Cubre 2.4 y 5 GHz, acepta antenas externas, tiene la pila de controladores más madura de cualquier adaptador en esta lista y cuesta solo un poco más que el ACM. Si vas a comprar un solo adaptador y aún no sabes exactamente qué necesitas, cómpra este.
 
-**Opción Empresarial / A Prueba de Futuro: [AWUS036AXML](/en/products/alfa/awus036axml/)**
+**Opción Empresarial / A Prueba de Futuro: [AWUS036AXML](/es/products/alfa/awus036axml/)**
 Si el alcance de tu auditoría incluye infraestructura Wi-Fi 6E — lo cual debería para cualquier compromiso que comience en 2026 — el AXML es el único adaptador que te ofrece capacidad 6 GHz de antena dual. Combínalo con un ACH para un kit de dos adaptadores que cubre todas las bandas desde 2.4 GHz hasta 6 GHz sin compromisos.
 
 Para instrucciones detalladas de configuración, consulta:
@@ -336,3 +355,10 @@ Para instrucciones detalladas de configuración, consulta:
 - [Reparar controlador ALFA después de actualización del kernel](/en/blog/fix-alfa-driver-kernel-update/)
 - [Habilitar monitor mode en Kali Linux](/en/blog/enable-monitor-mode-kali-linux/)
 - [Reseña y pruebas del controlador AWUS036AXML Wi-Fi 6E](/en/blog/awus036axml-wifi-6e-review/)
+
+## Referencias
+
+1. aircrack-ng — RTL8812AU 驅動原始碼儲存庫：[https://github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. Wi-Fi Alliance — Wi-Fi 6E 官方技術文件：[https://www.wi-fi.org/](https://www.wi-fi.org/)
+3. ALFA Network 官方網站：[https://www.alfa.com.tw](https://www.alfa.com.tw)
+4. torvalds/linux — MT7921AUN 核心驅動原始碼：[https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)

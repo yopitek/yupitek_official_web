@@ -2,12 +2,31 @@
 title: "ALFA AWUS036AXML WiFi 6E 深度評測：2026 實際滲透測試效能"
 description: "深入評測 ALFA AWUS036AXML WiFi 6E USB 網路卡：規格、Kali Linux 驅動安裝、監聽模式效能、6 GHz 頻段掃描，以及與 AWUS036ACH 的詳細比較。"
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "wifi-6e", "評測", "Kali-Linux", "MT7921AUN", "6GHz"]
 featureimage: "/images/blog/awus036axml-wifi-6e-review.webp"
+faq:
+  - question: "AWUS036AXML 支援哪些頻段？"
+    answer: "支援三頻 2.4 GHz、5 GHz 與 6 GHz，符合 IEEE 802.11ax Wi-Fi 6E 標準，是少數能讓資安研究人員在 6 GHz 頻段操作的 USB 無線網路卡。"
+  - question: "AWUS036AXML 需要哪個 Linux 核心版本？"
+    answer: "mt7921u 驅動程式從 Linux 核心 5.18 起正式納入主線，Kali Linux 2024.x / 2025.x 的 6.x 核心均可正常運作。"
+  - question: "AWUS036AXML 與 AWUS036ACH 的主要差異是什麼？"
+    answer: "AWUS036AXML 採用 MT7921AUN 支援 6 GHz 與 Wi-Fi 6E，AWUS036ACH 採用 RTL8812AU 僅支援雙頻 Wi-Fi 5，但後者驅動程式更成熟、相容性更廣。"
+  - question: "AWUS036AXML 支援封包注入嗎？"
+    answer: "支援封包注入，實測成功率穩定維持在 90% 以上，但主動監聽模式有已知驅動程式限制，建議僅使用被動監聽模式。"
+  - question: "誰適合購買 AWUS036AXML？"
+    answer: "針對已部署 Wi-Fi 6E 的企業環境進行評估的資安研究人員、資安訓練實驗室，以及從事 6 GHz 協定分析的研究人員最為適合。"
 ---
+
+ALFA AWUS036AXML 搭載 MediaTek MT7921AUN 晶片組，是少數能讓資安研究人員在 6 GHz 頻段進行操作的 USB 無線網路卡，支援監聽模式與封包注入，需 Linux 核心 5.18 以上。
+
+{{< tldr >}}
+AWUS036AXML 是 Wi-Fi 6E USB 網路卡，支援三頻 2.4/5/6 GHz、監聽模式與封包注入。本文涵蓋規格、Kali Linux 驅動安裝、6 GHz 掃描實測，以及與 AWUS036ACH 的詳細比較。
+{{< /tldr >}}
 
 ## 產品概述
 
@@ -303,4 +322,14 @@ sudo iw dev wlan0mon scan | grep -E "BSS|SSID|freq|signal"
 
 ---
 
+{{< faq >}}
+
 ALFA AWUS036AXML 現可透過 [Yopitek](/zh-tw/products/alfa/awus036axml/) 購買——台灣 ALFA Network 授權經銷商。向 Yopitek 購買，確保您取得的是原廠 NCC 認證正品，享有製造商保固及本地技術支援服務。
+
+## 參考來源
+
+1. [ALFA Network 官方網站](https://www.alfa.com.tw/)
+2. [MediaTek MT7921 晶片組資訊](https://www.mediatek.com/products/networking-and-connectivity)
+3. [Linux 核心mt76 驅動程式](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+4. [aircrack-ng 工具套件](https://www.aircrack-ng.org/)
+5. [Wi-Fi Alliance Wi-Fi 6E 認證](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)

@@ -2,20 +2,45 @@
 title: "ALFA Network Soft AP Complete Guide 2026: Building WiFi Hotspots on Kali Linux, Ubuntu, Debian & Raspberry Pi 4/5"
 description: "In-depth investigation of ALFA Network USB WiFi adapters' Soft AP (hostapd/WiFi Hotspot) support on Kali Linux, Ubuntu, Debian, and Raspberry Pi 4/5. Covers AWUS036ACM, AWUS036ACH, AWUS036AXML with complete setup guides, community feedback, and real-world troubleshooting."
 date: 2026-05-21
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Can ALFA USB adapters work as WiFi hotspots on Linux?"
+    answer: "It depends on the chipset. AWUS036ACM (MT7612U) fully supports it and is plug-and-play. AWUS036ACH (RTL8812AU) has conditional support. AWUS036AXML has partial support requiring tuning."
+  - question: "Which ALFA adapter is best for a Soft AP on Raspberry Pi?"
+    answer: "AWUS036ACM is the best choice. The in-kernel driver is plug-and-play, power draw is only 400mA (suitable for Pi), and it supports WPA3 and VIF virtual interfaces with cross-platform stability."
+  - question: "How do I check if my adapter supports AP mode?"
+    answer: "Run iw list | grep -A 10 'Supported interface modes'. If the output includes * AP, the driver supports Soft AP and hostapd will work."
+  - question: "What are the limitations of RTL8812AU Soft AP?"
+    answer: "No WPA3 support (only WPA2-PSK), no VIF virtual interfaces (needs two adapters for split duties), and power draw around 800mA requires a powered USB hub on Pi."
+  - question: "What should I do if WiFi drops when running Soft AP on AWUS036AXML?"
+    answer: "The MT7921AUN has built-in Bluetooth 5.2 that interferes with WiFi. Run echo 'install btusb /bin/false' in /etc/modprobe.d/ to permanently disable the Bluetooth driver, then reboot."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi"]
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
 ---
+> "Can I use ALFA USB WiFi adapters as a WiFi hotspot (Soft AP) on Kali Linux / Ubuntu / Raspberry Pi?"
 
 # ALFA Network Soft AP Complete Guide 2026: Building WiFi Hotspots on Kali Linux, Ubuntu, Debian & Raspberry Pi 4/5
 
 ## Introduction
 
-> "Can I use ALFA USB WiFi adapters as a WiFi hotspot (Soft AP) on Kali Linux / Ubuntu / Raspberry Pi?"
-
 This is one of the most common questions we receive at Yupitek. The question sounds simple, but the answer varies dramatically depending on the model and chipset — **not every USB WiFi adapter can run in Soft AP mode.**
+
+{{< tldr >}}
+ALFA adapter Soft AP compatibility depends on the chipset driver. AWUS036ACM is the stable cross-platform choice. AWUS036ACH works but lacks WPA3. AWUS036AXML needs Bluetooth disabled and firmware updated. RTL8832BU is not recommended.
+{{< /tldr >}}
+
+
+The ALFA AWUS036ACM (MT7612U) is the top pick for Linux Soft AP, with in-kernel plug-and-play drivers, WPA3 support, and VIF virtual interfaces. RTL8812AU works with conditions, and MT7921AUN requires manual tuning.
+
+
+
+
+
+
 
 This article aggregates over 500 community discussions from GitHub (morrownr/USB-WiFi), Reddit technical forums, Raspberry Pi official documentation, and real-world user feedback to give you an honest, comprehensive report on which ALFA adapters work, which don't, and the complete step-by-step setup process.
 
@@ -659,6 +684,8 @@ This article aggregates information from:
 
 ---
 
+{{< faq >}}
+
 > **Tags**: #ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #Yupitek
 >
 > **Author**: Yupitek Ltd — ALFA Network Authorized Distributor Taiwan
@@ -666,3 +693,11 @@ This article aggregates information from:
 > **Disclaimer**: Research data current as of May 2026. Linux kernels and distributions continue to evolve; driver support may change with new versions. Verify target platform kernel version and driver compatibility before deployment.
 >
 > **Technical Support**: For Soft AP setup issues, contact Yupitek Taiwan technical support. Product inquiries: [yupitek.com](https://yupitek.com/en/).
+
+## References
+
+1. [morrownr/USB-WiFi GitHub Knowledge Base](https://github.com/morrownr/USB-WiFi)
+2. [hostapd Official Documentation](https://w1.fi/cgit/hostap/)
+3. [Linux Wireless mt76 Driver](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)
+4. [Raspberry Pi Official Documentation](https://www.raspberrypi.com/documentation/)
+5. [Kali Linux Official Documentation](https://www.kali.org/docs/)

@@ -7,7 +7,25 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["WPA3", "SAE", "dragonblood", "transition-mode", "PMF", "kali-linux", "ALFA-network", "penetration-testing"]
 featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Qual a diferenca entre WPA3 e WPA2 em testes de segurança?"
+    answer: "O WPA3 usa handshake SAE em vez de PSK, com forward secrecy  é imune a ataques de dicionario offline. O PMF  é obrigatório, mas o modo de transição introduz superficie de ataque de downgrade."
+  - question: "O handshake SAE capturado pode ser quebrado offline?"
+    answer: "Não. Redes SAE puras não produzem hashes quebráveis. A captura de frames SAE  é usada apenas para análise em nível de protocolo, confirmando a variante correta e a negociação de PMF."
+  - question: "O que é o ataque de downgrade do modo de transição WPA3?"
+    answer: "O AP em modo de transição aceita tanto SAE quanto PSK. O atacante cria um rogue AP apenas WPA2. Se o cliente não forçar SAE, o downgrade acontece é o handshake pode ser quebrado offline."
+  - question: "Preciso de adaptador 6 GHz para testar WPA3?"
+    answer: "Apenas para testar redes WPA3 na banda de 6 GHz, exigindo o AWUS036AXML. Para testes WPA3 em 2.4/5 GHz, o AWUS036ACH  é suficiente."
+  - question: "Ainda preciso testar as vulnerabilidades Dragonblood?"
+    answer: "Firmwares modernos de AP já aplicaram patches, mas ambientes com firmware antigo ou não corrigido ainda precisam testar ataques de side-channel como CVE-2019-9494 e SAE commit flood DoS."
 ---
+{{< tldr >}}
+Testes de seguranca WPA3 cobrem analise de handshake SAE, ataque de downgrade do modo de transicao, avaliacao de vulnerabilidades Dragonblood e verificacao de PMF obrigatorio. AWUS036AXML para testes de 6 GHz, AWUS036ACH para 2.4/5 GHz.
+{{< /tldr >}}
+
 
 {{< alert "triangle-exclamation" >}}
 **Aviso Legal:** Todos os testes de segurança sem fio devem ser realizados apenas em redes e dispositivos para os quais você possui autorização explícita e por escrito. As técnicas de teste WPA3, incluindo captura de SAE, desautenticação e implantação de AP falso, estão sujeitas aos mesmos requisitos legais que qualquer outra atividade de avaliação sem fio. Somente testes autorizados.
@@ -262,8 +280,18 @@ Para o procedimento completo, consulte o [framework de avaliação de segurança
 
 ---
 
+{{< faq >}}
+
 ## Recursos Relacionados
 
 - [Avaliação de Segurança Sem Fio Empresarial: Um Framework Completo](/pt/blog/enterprise-wireless-security-assessment/)
 - [Guia de Injeção de Pacotes: Testando seu Adaptador WiFi com aireplay-ng](/pt/blog/packet-injection-guide/)
 - [Ativar o Modo Monitor no Kali Linux](/pt/blog/enable-monitor-mode-kali-linux/)
+
+## Referências
+
+1. [Artigo de pesquisa oficial Dragonblood (Vanhoef & Ronen, 2019)](https://papers.mathyvanhoef.com/dragonblood.pdf)
+2. [Certificacao WPA3 da Wi-Fi Alliance](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [Documentacao oficial do aircrack-ng](https://www.aircrack-ng.org/documentation.html)
+4. [Documentacao da ferramenta hcxdumptool](https://github.com/ZerBea/hcxdumptool)
+5. [Padrao IEEE 802.11w PMF](https://standards.ieee.org/ieee/802.11/)

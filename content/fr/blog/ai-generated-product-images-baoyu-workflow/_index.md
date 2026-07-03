@@ -7,7 +7,24 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["baoyu-skills", "génération-images-IA", "marketing", "ALFA-Network", "GitHub-Copilot"]
 featureimage: "/images/blog/baoyu-skills/cover-image-4.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Qu'est-ce que baoyu-skills ?"
+    answer: "baoyu-skills est une collection d'extensions open-source pour GitHub Copilot CLI, offrant 19 compétences couvrant la génération d'images, la sortie HTML, la traduction et la publication sociale, toutes appelables depuis le terminal."
+  - question: "Quelle compétence baoyu convient à la génération de couvertures de blog ?"
+    answer: "baoyu-cover-image est conçu pour les couvertures d'articles, avec support des ratios cinéma 2.35:1, écran large 16:9 et carré 1:1, ainsi que de multiples styles de couleur et de rendu."
+  - question: "Comment utiliser baoyu-skills dans GitHub Copilot CLI ?"
+    answer: "Après installation, tapez /baoyu-cover-image ou /baoyu-xhs-images dans le terminal. La compétence vous guidera avec des questions de clarification sur le style, la taille et le contenu avant de générer l'image."
+  - question: "Quels types de sorties d'images baoyu-skills prend-il en charge ?"
+    answer: "Le type A couvre les couvertures, infographies, bandes dessinées, diapositives, rendus de produits et cartes verticales ; le type B génère du HTML stylisé ; le type C gère la traduction et la publication sociale."
+  - question: "Comment adapter baoyu-skills à mes propres produits ?"
+    answer: "Trouvez une variante correspondant à votre identité de marque, copiez le prompt et remplacez le nom du produit et les spécifications par votre produit cible, puis exécutez la compétence dans Copilot CLI."
 ---
+
+{{< tldr >}}
+baoyu-skills offre 19 compétences couvrant les sorties images, HTML et texte. Cet article utilise l'ALFA AWUS036ACM comme exemple pour présenter les variantes de style, prompts et cas d'usage des 6 principales compétences d'image.
+{{< /tldr >}}
 
 Chez Yopitek, nous distribuons des produits matériels techniques — adaptateurs WiFi, outils de recherche en sécurité, modules SDR — et créer des visuels marketing cohérents et de haute qualité pour 8 langues a toujours été un défi. Cet article documente comment nous utilisons la collection de plugins **baoyu-skills** pour GitHub Copilot CLI afin de générer des images de produits dans différents formats et styles.
 
@@ -485,6 +502,8 @@ Utilisez cet article comme un tableau de consultation chaque fois que vous devez
 
 ---
 
+{{< faq >}}
+
 ## À propos de baoyu-skills
 
 La collection complète de plugins baoyu-skills est disponible sur GitHub :
@@ -496,3 +515,12 @@ Toutes les images de cet article ont été générées à l'aide des skills ci-d
 Vous voulez en savoir plus sur l'AWUS036ACM — le produit utilisé comme exemple tout au long de ce guide ?
 
 {{< button href="/fr/products/alfa/awus036acm/" >}}Voir la page produit AWUS036ACM{{< /button >}}
+
+---
+
+## Références
+1. [Dépôt GitHub baoyu-skills](https://github.com/JimLiu/baoyu-skills.git)
+2. [Documentation officielle GitHub Copilot CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli)
+3. [Spécifications produit ALFA Network AWUS036ACM](https://www.alfa.com.tw/)
+4. [Données chipset MediaTek MT7612U](https://www.mediatek.com/products/networking-and-connectivity)
+5. [Documentation API de génération d'images OpenAI](https://platform.openai.com/docs/guides/images)

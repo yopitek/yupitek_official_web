@@ -9,7 +9,26 @@ series: ["alfa-china-install-guide"]
 series_order: 9
 description: "الدليل الشامل لتثبيت جميع محوّلات Alfa USB WiFi على Linux في الصين. يغطي Kali Linux وUbuntu 22/24 وDebian وRaspberry Pi. لا حاجة إلى GitHub - استخدم المرايا المحلية فقط."
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "هل أحتاج إلى VPN لتثبيت محولات Alfa WiFi في الصين؟"
+    answer: "لا، يمكن إكمال كل شيء باستخدام المرايا المحلية مثل USTC و Alibaba Cloud و Tsinghua و Gitee."
+  - question: "ما أفضل محول Alfa لوضع المراقبة وحقن الحزم؟"
+    answer: "AWUS036ACM بشريحة MT7612U، تعريفه مدمج في النواة ويدعم VIF بالكامل، هو الخيار الأفضل."
+  - question: "ما محولات Alfa التي تدعم WiFi 6؟"
+    answer: "AWUS036AX و AWUS036AXER يستخدمان شريحة RTL8832BU ويدعمان WiFi 6، Ubuntu 24.04 يعمل فور التوصيل."
+  - question: "ما محولات Alfa التي تدعم WiFi 6E؟"
+    answer: "AWUS036AXM و AWUS036AXML يستخدمان شريحة MT7921AUN ويدعمان WiFi 6E ثلاثي النطاق."
+  - question: "ما الذي يجب الانتباه إليه عند استخدام محولات Alfa على Raspberry Pi؟"
+    answer: "استخدم موزع USB مزوداً بمصدر طاقة، وثبّت Kali ARM64 للحصول على أفضل دعم للتعريفات."
 ---
+{{< tldr >}}
+الدليل الشامل لتثبيت محولات Alfa WiFi على Linux في الصين، يغطي Kali و Ubuntu و Debian و Raspberry Pi، يدعم RTL8812AU و MT7612U و RTL8832BU وجميع الشرائح، بمرايا محلية فقط دون VPN.
+{{< /tldr >}}
+
+إذا كنت تقرأ هذا، فمن المرجح أنك اشتريت محوّل Alfa USB WiFi ووجدت نفسك عالقاً بسبب أحد هذه الأسباب:
+
 
 ## مرحباً بك في الدليل الشامل لتثبيت Alfa على Linux
 
@@ -670,6 +689,8 @@ sudo ip link set mon0 up
 
 ---
 
+{{< faq >}}
+
 ## أدلة ذات صلة
 
 هذا الدليل جزء من سلسلة **دليل تثبيت Alfa في الصين**:
@@ -686,3 +707,11 @@ sudo ip link set mon0 up
 ---
 
 *آخر تحديث: 24 أبريل 2026*
+
+## المراجع
+
+1. [وثائق aircrack-ng الرسمية](https://www.aircrack-ng.org/)
+2. [تعريف Linux Kernel mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+3. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+4. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
+5. [مرايا Gitee للكود المصدري للتعريفات](https://gitee.com/mirrors)

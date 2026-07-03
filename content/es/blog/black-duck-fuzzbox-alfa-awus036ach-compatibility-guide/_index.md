@@ -7,9 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
 featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Para qué sirve Black Duck FuzzBox?"
+    answer: "Black Duck FuzzBox es un entorno dedicado de fuzzing de protocolos inalámbricos que inyecta tramas 802.11 anómalas para verificar la robustez de la pila de protocolos de dispositivos inalámbricos embebidos y puntos de acceso."
+  - question: "¿Por qué las tarjetas Wi-Fi 6/6E no funcionan con FuzzBox?"
+    answer: "El motor de inyección de FuzzBox está optimizado para el controlador rtl88xxau de Realtek. Los chipsets de MediaTek y los Realtek Wi-Fi 6 más nuevos no usan esta rama y son ignorados por el daemon."
+  - question: "¿Por qué el ALFA AWUS036ACH es la tarjeta preferida de FuzzBox?"
+    answer: "El AWUS036ACH usa el chipset RTL8812AU, con un controlador de inyección optimizado por la comunidad que puede eludir la pila de red del sistema operativo para transmitir tramas sin procesar sin pérdida de paquetes."
+  - question: "¿En qué versión de Linux se basa FuzzBox OS?"
+    answer: "FuzzBox OS se basa en Debian 12 Bookworm, ejecuta el kernel LTS 6.1.x e incluye preinstalados el controlador de inyección rtl88xxau y herramientas de red como airmon-ng."
+  - question: "¿Cómo verificar que el AWUS036ACH ha cambiado al modo monitor?"
+    answer: "Ejecuta iwconfig wlan0; la salida debe mostrar Mode:Monitor y la frecuencia de operación actual, confirmando que el daemon de FuzzBox cambió el modo de interfaz correctamente."
 ---
 
 El fuzzing de protocolos WLAN (a menudo denominado pruebas negativas inalámbricas) es uno de los pasos más críticos para validar la seguridad y robustez de los dispositivos inalámbricos integrados, los electrodomésticos inteligentes y los puntos de acceso empresariales. Sin embargo, intentar transmitir tramas de datos, control o gestión 802.11 malformadas a través del aire requiere un control de bajo nivel de la capa de control de acceso al medio (MAC) que los sistemas operativos estándar y los controladores de WiFi comerciales simplemente no permiten.
+
+{{< tldr >}}
+El ALFA AWUS036ACH es la única opción preferida para el fuzzing de protocolos de Black Duck FuzzBox. El controlador RTL8812AU admite inyección de paquetes sin procesar y modo monitor. Las tarjetas Wi-Fi 6/6E no funcionan por incompatibilidad de controladores.
+{{< /tldr >}}
 
 Para solucionar esto, los equipos de seguridad utilizan **Black Duck FuzzBox** (anteriormente Synopsys Defensics FuzzBox), un entorno de ejecución de software y hardware especializado. Para realizar las pruebas, FuzzBox OS debe emparejarse con un adaptador inalámbrico USB compatible y de alto rendimiento que sea capaz de ofrecer un modo monitor estable y una inyección de paquetes sin procesar (raw) confiable. 
 
@@ -204,6 +221,8 @@ Cuando inicie la suite de pruebas WLAN de Defensics (como la suite de pruebas de
 
 ---
 
+{{< faq >}}
+
 ## 8. Recomendación
 
 ### 8.1 Matriz de recomendación de hardware
@@ -219,3 +238,11 @@ Yupitek es distribuidor autorizado de los productos de ALFA Network, ofreciendo 
 *   O envíenos un correo electrónico directamente a **sales@yupitek.com**
 
 Nuestro equipo de ingeniería le ayudará a adquirir las configuraciones exactas de hardware inalámbrico necesarias para respaldar sus flujos de trabajo de fuzzing de protocolos con Black Duck FuzzBox.
+
+## Referencias
+
+1. [Synopsys Defensics — Página oficial del producto FuzzBox](https://www.synopsys.com/software-integrity/security-testing/fuzzing/defensics.html)
+2. [morrownr/8812au-20210629 — Repositorio GitHub del controlador RTL8812AU para Linux](https://github.com/morrownr/8812au-20210629)
+3. [aircrack-ng — Sitio oficial del conjunto de herramientas de seguridad inalámbrica](https://www.aircrack-ng.org/)
+4. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)
+5. [Linux Wireless — Documentación del subsistema mac80211](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)

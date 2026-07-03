@@ -2,12 +2,31 @@
 title: "ALFA AWUS036ACM：在 Raspberry Pi 上啟用 IBSS Ad Hoc 與 802.11s Mesh 網路（MT7612U）"
 description: "ALFA AWUS036ACM（MT7612U）是目前唯一現行生產的 ALFA USB WiFi 無線網卡，可在 Raspberry Pi 上完整支援 IBSS Ad Hoc 與 802.11s Mesh 網路——即插即用，無需安裝驅動程式。本文詳解設定步驟。"
 date: 2026-03-27
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "Ad Hoc", "802.11s", "Mesh 網路", "Linux", "無線網路"]
 featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
+faq:
+  - question: "AWUS036ACM 為什麼是 ALFA 中唯一支援 IBSS/Mesh 的選擇？"
+    answer: "其 mt76x2u 驅動程式建構於 Linux mac80211 之上，完整開放 IBSS 與 Mesh Point 介面類型；其他 ALFA 型號多採核心外驅動程式，不包含這些模式。"
+  - question: "IBSS Ad Hoc 與 802.11s Mesh 有什麼差異？"
+    answer: "IBSS 是無中央 AP 的對等網路，所有節點須在直接通訊範圍內；802.11s 具備 HWMP 自動多跳路由與自癒能力，可延伸超出單跳範圍。"
+  - question: "Raspberry Pi 上使用 AWUS036ACM 需要安裝驅動嗎？"
+    answer: "不需要。mt76x2u 驅動程式自 Linux 核心 4.19 起納入主線，Raspberry Pi OS 2020 年以後版本均即插即用，無需任何安裝步驟。"
+  - question: "IBSS 模式支援 WPA2 加密嗎？"
+    answer: "Linux 核心的 IBSS 模式不支援標準 WPA2-Personal，若需安全連線可使用 WireGuard 或 OpenVPN 等應用層加密，802.11s 則支援 SAE。"
+  - question: "如何讓 Mesh 網路在重開機後持續運作？"
+    answer: "透過 iw 建立的虛擬介面不會在重開機後保留，需建立 systemd 服務（如 mesh-point.service）在開機時自動重建介面並加入 Mesh。"
 ---
+
+ALFA AWUS036ACM 搭載 MediaTek MT7612U 晶片組，是 ALFA 現行產品中唯一能在 Raspberry Pi 上完整支援 IBSS Ad Hoc 與 802.11s Mesh 網路的 USB WiFi 無線網卡，即插即用無需安裝驅動。
+
+{{< tldr >}}
+AWUS036ACM 採用 MT7612U 晶片組，其 mt76x2u 驅動程式建構於 Linux mac80211 之上，完整支援 IBSS Ad Hoc 與 802.11s Mesh Point 模式。本文詳解兩種模式的運作原理、逐步設定與實際應用場景。
+{{< /tldr >}}
 
 # ALFA AWUS036ACM：在 Raspberry Pi 上啟用 IBSS Ad Hoc 與 802.11s Mesh 網路（MT7612U）
 
@@ -838,6 +857,8 @@ ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 購買——ALFA Netwo
 
 ---
 
+{{< faq >}}
+
 ## 總結
 
 | 功能 | AWUS036ACM |
@@ -857,4 +878,10 @@ ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 購買——ALFA Netwo
 
 *文章由 Yupitek 技術團隊撰寫 · [yupitek.com](https://yupitek.com)*
 
-*參考資料：[Alfa Network 官方文件](https://docs.alfa.com.tw/Product/AWUS036ACM/) · [Linux Wireless Wiki — 介面類型](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) · [MediaTek mt76 Linux 驅動程式](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) · [morrownr USB-WiFi 核心內清單](https://github.com/morrownr/USB-WiFi)*
+## 參考來源
+
+1. [Alfa Network AWUS036ACM 官方文件](https://docs.alfa.com.tw/Product/AWUS036ACM/)
+2. [Linux Wireless Wiki — 介面類型（VIF）](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif)
+3. [MediaTek mt76 Linux 驅動程式](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+4. [IEEE 802.11s Mesh 網路標準](https://standards.ieee.org/ieee/802.11s/4469/)
+5. [morrownr USB-WiFi 核心內驅動清單](https://github.com/morrownr/USB-WiFi)

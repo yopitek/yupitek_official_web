@@ -7,15 +7,33 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi"]
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Adaptadores USB ALFA podem funcionar como hotspot WiFi no Linux?"
+    answer: "Depende do chipset. O AWUS036ACM (MT7612U) tem suporte completo e é plug-and-play. O AWUS036ACH (RTL8812AU) tem suporte condicional. O AWUS036AXML tem suporte parcial exigindo ajustes."
+  - question: "Qual adaptador ALFA é mais adequado para criar Soft AP no Raspberry Pi?"
+    answer: "O AWUS036ACM é a melhor escolha. O driver in-kernel e plug-and-play, consome apenas 400mA adequado para o Pi, suporta WPA3 e interface virtual VIF, com estabilidade em todas as plataformas."
+  - question: "Como verificar se o adaptador suporta modo AP?"
+    answer: "Execute iw list | grep -A 10 'Supported interface modes'. Se a saída incluir * AP, o driver suporta Soft AP e o hostapd funcionará corretamente."
+  - question: "Quais as limitações do Soft AP com driver RTL8812AU?"
+    answer: "Não suporta WPA3, apenas WPA2-PSK; não suporta VIF exigindo dois adaptadores para tarefas separadas; consome cerca de 800mA, exigindo hub USB com alimentação no Pi."
+  - question: "O que fazer quando o WiFi desconecta subitamente ao rodar Soft AP com AWUS036AXML?"
+    answer: "O MT7921AUN tem Bluetooth 5.2 integrado que interfere no WiFi. Execute echo 'install btusb /bin/false' em /etc/modprobe.d/ para desativar permanentemente o driver de Bluetooth e reinicie."
 ---
-
-
+> "Posso usar adaptadores USB WiFi ALFA como hotspot WiFi (Soft AP) no Kali Linux / Ubuntu / Raspberry Pi?"
 
 # Guia Completo de Soft AP ALFA Network 2026: Criando Hotspots WiFi no Kali Linux, Ubuntu, Debian e Raspberry Pi 4/5
 
-## Introdução
+{{< tldr >}}
+A compatibilidade de Soft AP dos adaptadores ALFA depende do driver do chipset. O AWUS036ACM e a escolha estavel para todas as plataformas, o AWUS036ACH funciona mas sem WPA3, o AWUS036AXML requer desativacao do Bluetooth e atualizacao de firmware, e o RTL8832BU nao e recomendado.
+{{< /tldr >}}
 
-> "Posso usar adaptadores USB WiFi ALFA como hotspot WiFi (Soft AP) no Kali Linux / Ubuntu / Raspberry Pi?"
+
+O ALFA AWUS036ACM (MT7612U) é a melhor escolha para Soft AP no Linux: driver in-kernel plug-and-play, suporte a WPA3 e interface virtual VIF. O RTL8812AU tem suporte condicional; o MT7921AUN requer ajustes manuais.
+
+## Introdução
 
 This is one of the most common questions we receive at Yupitek. The question sounds simple, but the answer varies dramatically depending on the model and chipset — **nem todo adaptador USB WiFi pode funcionar em modo Soft AP.**
 
@@ -661,6 +679,9 @@ This article aggregates information from:
 
 ---
 
+{{< faq >}}
+
+
 > **Tags**: #ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #Yupitek
 >
 > **Autor**: Yupitek Ltd — Distribuidor Autorizado ALFA Network Taiwan
@@ -668,3 +689,11 @@ This article aggregates information from:
 > **Aviso**: Dados de pesquisa atuais até maio de 2026. Linux kernels and distributions continue to evolve; driver support may change with new versions. Verify target platform kernel version and driver compatibility before deployment.
 >
 > **Technical Support**: For Soft AP setup issues, contact Yupitek Taiwan technical support. Product inquiries: [yupitek.com](https://yupitek.com/pt/).
+
+## Referências
+
+1. [Base de conhecimento morrownr/USB-WiFi no GitHub](https://github.com/morrownr/USB-WiFi)
+2. [Documentacao oficial do hostapd](https://w1.fi/cgit/hostap/)
+3. [Driver mt76 do Linux Wireless](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)
+4. [Documentacao oficial do Raspberry Pi](https://www.raspberrypi.com/documentation/)
+5. [Documentacao oficial do Kali Linux](https://www.kali.org/docs/)

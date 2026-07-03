@@ -12,9 +12,29 @@ series_order: 2
 description: "Guía paso a paso para instalar los controladores ALFA AWUS036ACM en China usando espejos nacionales. Controlador MT7612U integrado en el kernel, soporte VIF completo. Cubre Kali Linux, Ubuntu 22/24, Debian y Raspberry Pi. No se requiere GitHub."
 related_product: "/es/products/alfa/awus036acm/"
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Qué chip usa el AWUS036ACM? ¿Necesita instalar controlador?"
+    answer: "Usa el chip MediaTek MT7612U. El controlador mt76x2u está integrado en el kernel de Linux desde la versión 4.19; en la mayoría de los casos es plug-and-play."
+  - question: "¿El AWUS036ACM admite interfaces virtuales (VIF)?"
+    answer: "Sí, el MT7612U admite completamente el VIF nativo del núcleo, puede ejecutar simultáneamente una interfaz de monitor y una interfaz gestionada, sin necesidad de parches."
+  - question: "¿Hace falta VPN para instalar el AWUS036ACM en China?"
+    answer: "No, el controlador ya está integrado en el núcleo; solo necesitas instalar el paquete de firmware firmware-misc-nonfree desde un espejo nacional."
+  - question: "¿Cuánto consume el AWUS036ACM en Raspberry Pi?"
+    answer: "Consumo máximo aprox. 400 mW. Se recomienda usar un concentrador USB con alimentación independiente para evitar la limitación de velocidad de la Raspberry Pi."
+  - question: "¿Por qué en Debian el AWUS036ACM se detecta pero no funciona?"
+    answer: "Falta el paquete de firmware firmware-misc-nonfree; tras instalarlo, la tarjeta se inicializa correctamente."
 ---
 
 El AWUS036ACM es uno de los adaptadores Alfa más fáciles de configurar en Linux. Su chip MT7612U usa el controlador `mt76x2u`, que está integrado en el kernel de Linux desde la versión 4.19. En la mayoría de los sistemas modernos, el adaptador funciona con dos o tres comandos. Esta guía cubre la configuración completa — verificación del controlador, modo monitor, inyección de paquetes y VIF — usando únicamente espejos nacionales. No se requiere GitHub.
+
+{{< tldr >}}
+El AWUS036ACM con chip MT7612U tiene el controlador integrado en el núcleo sin compilar. Admite modo monitor, inyección de paquetes y VIF simultáneo. En China solo necesitas instalar el paquete de firmware.
+{{< /tldr >}}
+
+Asegúrate de tener lo siguiente listo:
+
 
 ## Antes de empezar
 
@@ -572,6 +592,8 @@ Todos los recursos usados en esta guía — no se requiere GitHub:
 | Espejo 华为云 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Imágenes Kali ARM (respaldo) |
 | Controlador MT76 (Gitee) | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | Compilación manual como respaldo |
 
+{{< faq >}}
+
 ## Más guías de adaptadores Alfa para China
 
 Esta es parte de la serie **Alfa China Install Guide**. Cada artículo cubre un modelo de adaptador:
@@ -586,3 +608,11 @@ Esta es parte de la serie **Alfa China Install Guide**. Cada artículo cubre un 
 - [Guía de instalación AWUS036EAC para China](/es/blog/awus036eacs-china-install-guide/)
 
 ¿Preguntas? Deja un comentario abajo o contáctanos en [yupitek.com/es/contact/](https://yupitek.com/es/contact/)
+
+## Referencias
+
+1. [Controlador mt76 del núcleo Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [Documentación oficial de aircrack-ng](https://www.aircrack-ng.org/)
+3. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)
+4. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)
+5. [Paquete firmware-misc-nonfree de Debian](https://packages.debian.org/bookworm/firmware-misc-nonfree)

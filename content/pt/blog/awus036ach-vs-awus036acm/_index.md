@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "AWUS036ACM", "comparação", "Kali-Linux", "RTL8812AU"]
 featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Qual a diferenca na instalação de driver entre AWUS036ACH e AWUS036ACM?"
+    answer: "O AWUS036ACH usa o chipset RTL8812AU, exigindo compilação DKMS do driver da comunidade aircrack-ng, com possivel recompilação após atualizações de kernel. O driver MT7612U do AWUS036ACM está integrado ao kernel mainline desde 4.19, sendo plug-and-play sem compilação."
+  - question: "Qual é mais adequado para Monitor Mode?"
+    answer: "O AWUS036ACH tem modo monitor mais estável, com antena dupla e alta potência de 30 dBm, resultando em menor taxa de perda de pacotes em ambientes com APs densos. O ACM também suporta monitor, mas com antena única e potência menor, adequado para captura de curta distância."
+  - question: "Qual escolher para iniciantes: ACH ou ACM?"
+    answer: "Para iniciantes, recomenda-se o AWUS036ACM. O driver nativo MT7612U é plug-and-play sem compilação. Se você precisa do sinal mais forte e mais recursos educacionais e não se importa com a compilação DKMS, escolha o AWUS036ACH."
+  - question: "Qual é recomendado para ambiente de VM?"
+    answer: "Para VMs, recomenda-se o AWUS036ACM. Após o passthrough USB, o driver nativo do kernel reconhece imediatamente, sem necessidade de instalar toolchain de compilação dentro da VM. O ACH requer instalação adicional do driver dentro da VM."
 ---
+{{< tldr >}}
+O AWUS036ACH e ideal para uso profissional, com driver RTL8812AU e antena dupla de 30 dBm para o melhor desempenho de monitor e injecao. O AWUS036ACM foca em portabilidade, com driver nativo MT7612U sem compilacao, preco aproximado de $30-40.
+{{< /tldr >}}
+
+Dois dos adaptadores USB ALFA Network mais populares para pentest no Kali Linux estão em pontos diferentes do espectro entre desempenho bruto e portabilidade. O **AWUS036ACH** é um workhorse de alta potência e antena dupla com um histórico de driver consolidado. O **AWUS036ACM** é uma alternativa compacta e nativa do kernel que troca parte da potência por simplicidade e facilidade de uso. Este guia detalha cada aspecto que importa para trabalho real de pentest.
+
+
 
 ## Visão Geral
 
@@ -205,6 +224,8 @@ O **AWUS036ACM** a ~$30–40 oferece excelente custo-benefício para os seguinte
 
 ---
 
+{{< faq >}}
+
 ## Veredicto
 
 **Escolha o [AWUS036ACH](/pt/products/alfa/awus036ach/) para:**
@@ -222,3 +243,10 @@ O **AWUS036ACM** a ~$30–40 oferece excelente custo-benefício para os seguinte
 - Situações onde a estabilidade nativa do kernel é preferível a drivers comunitários
 
 Se você só pode ter um adaptador, o **AWUS036ACH** é a escolha mais forte para pentest. Se você quer um companheiro de viagem confiável com zero fricção de configuração, o **AWUS036ACM** tem seu lugar no kit.
+
+## Referências
+
+1. Repositorio de driver RTL8812AU mantido pela comunidade aircrack-ng — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. Driver MT76 do kernel mainline (`mt76x2u`, integrado desde kernel 4.19) — [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
+3. Site oficial e especificacoes de produtos da ALFA Network — [alfa.com.tw](https://www.alfa.com.tw)
+4. Yupitek — Distribuidora autorizada da ALFA Network em Taiwan — [yupitek.com](https://www.yupitek.com)

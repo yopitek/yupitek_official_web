@@ -1,22 +1,46 @@
 ---
 
+
+
+
 title: "ALFA 网络卡 Soft AP 完整指南 2026：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5 建立 WiFi 热点"
 description: "深度调查 ALFA Network USB 无线网卡在 Kali Linux、Ubuntu、Debian、Raspberry Pi 4 与 Pi 5 上使用 Soft AP（WiFi Hotspot / hostapd）的完整兼容性。涵盖 AWUS036ACM、AWUS036ACH、AWUS036AXML 详细设置、社群反馈、常见疑难排解与产品选购建议。"
 date: 2026-05-21
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi", "USB-无线网络卡", "树莓派-WiFi-热点"]
 
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
+faq:
+  - question: "ALFA USB 网卡可以在 Linux 上当 WiFi 热点用吗？"
+    answer: "视芯片组而定。AWUS036ACM（MT7612U）完整支持且即插即用，AWUS036ACH（RTL8812AU）有条件支持，AWUS036AXML 部分支持需调校。"
+  - question: "哪款 ALFA 网卡最适合在 Raspberry Pi 上建立 Soft AP？"
+    answer: "AWUS036ACM 是最佳选择。in-kernel 驱动即插即用、耗电仅 400mA 适合 Pi 供电、支持 WPA3 与 VIF 虚拟接口，全平台稳定。"
+  - question: "如何确认网卡支持 AP 模式？"
+    answer: "执行 iw list | grep -A 10 'Supported interface modes'，若输出包含 * AP 即代表驱动支持 Soft AP，hostapd 才能正常运行。"
+  - question: "RTL8812AU 驱动的 Soft AP 有哪些限制？"
+    answer: "不支持 WPA3 仅能用 WPA2-PSK、不支持 VIF 虚拟接口需两张卡分工、耗电约 800mA 在 Pi 上需有源 USB Hub。"
+  - question: "AWUS036AXML 跑 Soft AP 时 WiFi 突然断线怎么办？"
+    answer: "MT7921AUN 内置 Bluetooth 5.2 会干扰 WiFi。执行 echo 'install btusb /bin/false' 写入 /etc/modprobe.d/ 永久禁用蓝牙驱动后重开机。"
 ---
-
+> 「ALFA 的 USB 无线网络卡，可以在 Kali Linux / Ubuntu / Raspberry Pi 上当 WiFi 热点（Soft AP）用嗎？」
 
 # ALFA 网络卡 Soft AP 完整指南 2026：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5 建立 WiFi 热点
 
 ## 前言
 
-> 「ALFA 的 USB 无线网络卡，可以在 Kali Linux / Ubuntu / Raspberry Pi 上当 WiFi 热点（Soft AP）用嗎？」
+{{< tldr >}}
+ALFA 网卡 Soft AP 兼容性取决于芯片驱动。AWUS036ACM 为全平台稳定首选，AWUS036ACH 可用但无 WPA3，AWUS036AXML 需禁用蓝牙并更新固件，RTL8832BU 不建议使用。
+{{< /tldr >}}
+
+
+ALFA AWUS036ACM（MT7612U）是 Linux Soft AP 最佳首选，in-kernel 驱动即插即用、支持 WPA3 与 VIF 虚拟接口。RTL8812AU 有条件支持，MT7921AUN 需手动调校。
+
+
+
 
 这是榆合科技最常收到的客户詢問之一。问题听起来简单，但答案因型號和芯片组的不同而大相逕庭——**不是每一张 USB 无线网卡都能跑 Soft AP。**
 
@@ -592,6 +616,9 @@ DFS（Dynamic Frequency Selection）频道（ch100–ch140）需要 kernel 层�
 
 ---
 
+
+{{< faq >}}
+
 ## 十二、选购建议与最終结论 {#recommendations}
 
 ### 快速決策指南
@@ -669,3 +696,11 @@ AWUS036ACH（RTL8812AU）可以用，但需要接受 WPA3 不支持和驱动维�
 > **免責聲明**：本文研究資料截至 2026 年 5 月。Linux Kernel 与各發行版持續更新，驱动支持狀況可能隨版本變動。部署前建议确认目標平台的 kernel 版本与驱动兼容性。
 >
 > **技术支持**：如有 Soft AP 设置问题，歡迎联系榆合科技台湾本地技术支持团队。产品购买与咨询請至 [yupitek.com](/zh-cn/)。
+
+## 参考文献
+
+1. [morrownr/USB-WiFi GitHub 知识库](https://github.com/morrownr/USB-WiFi)
+2. [hostapd 官方文档](https://w1.fi/cgit/hostap/)
+3. [Linux Wireless mt76 驱动程序](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)
+4. [Raspberry Pi 官方文档](https://www.raspberrypi.com/documentation/)
+5. [Kali Linux 官方文档](https://www.kali.org/docs/)

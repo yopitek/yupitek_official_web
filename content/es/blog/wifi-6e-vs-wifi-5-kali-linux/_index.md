@@ -7,9 +7,29 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "pruebas-penetración"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
----
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Qué diferencia hay entre Wi-Fi 6E y Wi-Fi 5 en pruebas de penetración?"
+    answer: "Wi-Fi 6E añade la banda de 6 GHz y 1.2 GHz de espectro, adecuado para auditar despliegues empresariales modernos. Wi-Fi 5 tiene controladores más maduros y mayor estabilidad en 2.4/5 GHz."
+  - question: "¿AWUS036ACH o AWUS036AXML?"
+    answer: "Para pruebas de penetración diarias, el AWUS036ACH: controlador maduro y abundantes recursos comunitarios. Para auditar entornos Wi-Fi 6E de 6 GHz, el AWUS036AXML. Si es posible, ten ambos."
+  - question: "¿Es estable el modo monitor del AWUS036AXML en Kali Linux?"
+    answer: "Requiere kernel 6.1 o superior y el paquete linux-firmware más reciente. La inyección de paquetes funciona pero se recomienda validar antes de pruebas formales; combinaciones específicas de kernel y firmware pueden ser inestables."
+  - question: "¿Se necesita una tarjeta de 6 GHz para pruebas de penetración en 2026?"
+    answer: "La mayoría de los casos de prueba siguen siendo en 2.4/5 GHz. Pero si el entorno objetivo ya tiene puntos de acceso Wi-Fi 6E, una tarjeta de 6 GHz pasa a ser necesaria estratégicamente."
+  - question: "¿Cómo se instala el controlador RTL8812AU del AWUS036ACH?"
+    answer: "Clona el repositorio rtl8812au desde el GitHub de aircrack-ng y ejecuta make dkms_install. DKMS asegura que el controlador se reconstruya automáticamente tras actualizar el kernel."
+---El AWUS036ACH tiene controladores maduros y la máxima estabilidad; es la primera opción para pruebas de penetración diarias. El AWUS036AXML admite la banda de 6 GHz y es adecuado para auditar entornos Wi-Fi 6E, aunque sus controladores siguen perfeccionándose.
+
+{{< tldr >}}
+El AWUS036ACH tiene controladores maduros y la máxima estabilidad; es la primera opción para pruebas de penetración diarias. El AWUS036AXML admite la banda de 6 GHz y es adecuado para auditar entornos Wi-Fi 6E, aunque sus controladores siguen perfeccionándose.
+{{< /tldr >}}
+
 
 ## ¿Qué es Wi-Fi 6E? Explicación de la Nueva Banda de 6 GHz
+
+Wi-Fi 6E añade la banda de 6 GHz, ideal para auditar despliegues empresariales modernos. El AWUS036ACH (Wi-Fi 5) tiene controladores maduros y estables; el AWUS036AXML (Wi-Fi 6E) soporta triple banda. Elige según las necesidades de tu entorno de pruebas.
 
 Wi-Fi 6E es una extensión del estándar Wi-Fi 6 (IEEE 802.11ax) que agrega acceso a la **banda de frecuencia de 6 GHz** — una enorme porción de espectro previamente sin aprovechar. Mientras que Wi-Fi 5 (802.11ac) opera únicamente en 2.4 GHz y 5 GHz, y el Wi-Fi 6 estándar hace lo mismo, Wi-Fi 6E abre **1.2 GHz adicionales de espectro** que van desde 5.925 GHz hasta 7.125 GHz.
 
@@ -140,6 +160,8 @@ sudo airmon-ng start wlan0
 
 ---
 
+{{< faq >}}
+
 ## Recomendación
 
 **Elige el [AWUS036ACH](/es/products/alfa/awus036ach/) si:**
@@ -157,3 +179,11 @@ sudo airmon-ng start wlan0
 - Estás dispuesto a probar modo monitor/inyección antes de los compromisos con clientes
 
 **Conclusión:** Para la mayoría de los pentesters profesionales en 2026, el AWUS036ACH sigue siendo el estándar de oro en cuanto a confiabilidad. El AWUS036AXML es la elección inteligente para equipos que apuntan a infraestructura empresarial de vanguardia o que están construyendo kits de herramientas a prueba de futuro. Lo ideal es llevar ambos.
+
+## Referencias
+
+1. [Controlador rtl8812au oficial de aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
+2. [Controlador del núcleo MediaTek MT7921](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)
+3. [Descripción de la certificación Wi-Fi 6E de Wi-Fi Alliance](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)
+4. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)
+5. [Recursos del estándar IEEE 802.11ax](https://standards.ieee.org/ieee/802.11ax/)

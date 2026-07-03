@@ -1,0 +1,20 @@
+# Yupitek — AI-Optimized Site Summary
+
+> Yupitek Ltd (榆閤科技有限公司) is a Taiwan-based B2B distributor of wireless networking, IoT, and security research equipment. We are the authorized Taiwan distributor for ALFA Network, Ubiquiti, Flipper Zero, HAK5, and other leading brands.
+
+## Primary Content (English)
+- [Blog](https://yupitek.com/en/blog/)
+- [Products](https://yupitek.com/en/products/)
+- [Contact](https://yupitek.com/en/contact/)
+
+## Localized Content
+- [繁體中文 (zh-TW)](https://yupitek.com/zh-tw/llms.txt)
+- [簡體中文 (zh-CN)](https://yupitek.com/zh-cn/llms.txt)
+- [English (en)](https://yupitek.com/en/llms.txt)
+- [日本語 (ja)](https://yupitek.com/ja/llms.txt)
+- [العربية (ar)](https://yupitek.com/ar/llms.txt)
+- [Español (es)](https://yupitek.com/es/llms.txt)
+- [Português (pt)](https://yupitek.com/pt/llms.txt)
+- [Русский (ru)](https://yupitek.com/ru/llms.txt)
+- [Deutsch (de)](https://yupitek.com/de/llms.txt)
+- [Français (fr)](https://yupitek.com/fr/llms.txt)

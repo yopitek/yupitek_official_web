@@ -2,6 +2,19 @@
 title: "Using ALFA WiFi Adapters on macOS: USB Passthrough with VMware Fusion & Parallels"
 description: "How to use ALFA USB WiFi adapters on macOS. Covers native macOS support, VMware Fusion USB passthrough, and Parallels Desktop for Kali Linux monitor mode and packet injection."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Can ALFA adapters use monitor mode natively on macOS?"
+    answer: "No. macOS CoreWLAN and IO80211Family frameworks do not support monitor mode or packet injection for third-party adapters. You must run a Kali Linux VM with USB passthrough."
+  - question: "Should I choose VMware Fusion or Parallels on Apple Silicon?"
+    answer: "Both work, but Parallels Desktop 19+ generally offers better ARM64 VM performance and more stable USB passthrough on Apple Silicon than VMware Fusion."
+  - question: "Does AWUS036AXML need driver compilation on an Apple Silicon Kali VM?"
+    answer: "No. The MT7921AUN driver has been in the mainline kernel since Linux 5.18. Kali ARM64 2024.x and later auto-detect it on plug-in."
+  - question: "Can Intel Macs use the standard Kali x86_64 ISO?"
+    answer: "Yes. Intel Macs are x86_64 architecture, so you can use the official kali.org standard Kali Linux x86_64 ISO to create the VM."
+  - question: "Is VirtualBox suitable for security testing on Apple Silicon?"
+    answer: "Not recommended. VirtualBox support for Apple Silicon is still experimental, with known USB passthrough issues. Use VMware Fusion or Parallels instead."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -10,6 +23,14 @@ featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 ---
 
 macOS is a polished, production-grade operating system. It is not, however, a platform designed for wireless security research. The two features that define every serious pentester's toolkit — **monitor mode** and **packet injection** — are absent from the macOS Wi-Fi stack entirely. Apple's Wi-Fi drivers expose a clean, functional networking interface, and nothing more.
+
+{{< tldr >}}
+macOS does not support monitor mode or packet injection for ALFA adapters. The solution is running a Kali Linux VM in VMware Fusion or Parallels with USB passthrough. Apple Silicon requires the ARM64 Kali image.
+{{< /tldr >}}
+
+
+
+
 
 ALFA Network adapters change that equation on Linux, where driver support is deep and community-tested. On macOS, the situation is different. Even if an ALFA adapter is recognised by macOS, the native network stack will not let you put it into monitor mode or inject raw frames. The only reliable path forward is to run **Kali Linux inside a virtual machine** and pass the USB adapter directly through to the guest OS, bypassing macOS entirely.
 
@@ -257,8 +278,18 @@ On Apple Silicon specifically, if the ALFA adapter is recognised but the interfa
 
 ---
 
+{{< faq >}}
+
 ## Related Guides
 
 For Windows and Linux hosts using VirtualBox or VMware Workstation, see the companion guide: [ALFA Adapter USB Passthrough: VirtualBox & VMware Setup Guide](/en/blog/alfa-adapter-virtualbox-vmware-usb/).
 
 For adapter-specific details on the AWUS036AXML recommended throughout this guide, including 6 GHz band performance benchmarks and driver version notes, see the full review: [ALFA AWUS036AXML WiFi 6E Review](/en/blog/awus036axml-wifi-6e-review/).
+
+## References
+
+1. [ALFA Network Official Website](https://www.alfa.com.tw/)
+2. [Kali Linux Official Downloads](https://www.kali.org/get-kali/)
+3. [VMware Fusion Product Page](https://www.vmware.com/products/fusion.html)
+4. [Parallels Desktop Official Website](https://www.parallels.com/)
+5. [aircrack-ng rtl8812au Driver Project](https://github.com/aircrack-ng/rtl8812au)

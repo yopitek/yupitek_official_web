@@ -9,11 +9,31 @@ slug: "flipper-alfa-compatibility"
 tags: ["flipper-zero", "flipper-one", "alfa-network", "wifi-adapter", "monitor-mode", "packet-injection", "kali-linux", "pentesting", "AWUS036AXML", "wireless-security"]
 categories: ["Técnica"]
 featureimage: "/images/blog/flipper-alfa-compatibility.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Flipper Zero puede conectar tarjetas inalámbricas USB ALFA?"
+    answer: "No. El microcontrolador STM32WB55 del Flipper Zero solo admite modo USB device; por hardware no puede actuar como USB host para controlar tarjetas de red externas."
+  - question: "¿Qué tarjetas ALFA admite Flipper One?"
+    answer: "El fundador de Flipper One probó específicamente el AWUS036AXML como primera opción y el AWUS036ACM como mejor relación calidad-precio. Ambos tienen los controladores integrados en el kernel principal de Linux."
+  - question: "¿Por qué el AWUS036AXML es la tarjeta preferida de Flipper One?"
+    answer: "El AWUS036AXML usa el chip MT7921AUN; el controlador mt7921u está integrado en el kernel desde Linux 5.18, con soporte completo de triple banda 2.4/5/6 GHz y modo monitor."
+  - question: "¿Cuándo saldrá Flipper One al mercado?"
+    answer: "Flipper One está actualmente en fase de vista previa para desarrolladores. La fecha de lanzamiento oficial y el precio se anunciarán mediante crowdfunding. Sigue flipper.net para más detalles."
+  - question: "¿La WiFi Dev Board de Flipper Zero puede sustituir a una tarjeta ALFA?"
+    answer: "No. La WiFi Dev Board solo admite funciones básicas de 2.4 GHz, sin USB host; su alcance y fiabilidad de inyección son muy inferiores a los de una tarjeta ALFA dedicada."
 ---
 
 {{< alert "triangle-exclamation" >}}
 **Aviso Legal:** El modo monitor y la inyección de paquetes solo deben realizarse en redes de su propiedad o con autorización escrita explícita para realizar pruebas. La intercepción no autorizada de comunicaciones inalámbricas es ilegal en la mayoría de jurisdicciones. Todas las técnicas descritas en esta guía están destinadas exclusivamente a **pruebas de penetración autorizadas, investigación de seguridad en equipos propios y fines educativos**.
 {{< /alert >}}
+
+{{< tldr >}}
+El STM32WB55 del Flipper Zero solo admite modo USB device y no puede controlar ninguna tarjeta ALFA. Flipper One, con su RK3576 y Debian Linux completo, admite el AWUS036AXML para monitorización e inyección en triple banda.
+{{< /tldr >}}
+
+Si posee un Flipper Zero — o está considerando comprar uno — y ha escuchado sobre los legendarios adaptadores USB WiFi de ALFA Network para pruebas de seguridad inalámbrica, probablemente se ha preguntado: **"¿Puedo conectar mi adaptador ALFA a mi Flipper Zero y comenzar a capturar handshakes WPA2?"**
+
 
 ## Introducción: La pregunta que todo especialista en pentesting se hace
 
@@ -346,6 +366,8 @@ El diagrama que aparece a continuación muestra la arquitectura completa de pent
 
 ---
 
+{{< faq >}}
+
 ## Conclusión: La Herramienta Adecuada para Cada Trabajo
 
 Si está intentando usar adaptadores WiFi ALFA para pruebas de seguridad inalámbrica, **Flipper Zero es la plataforma incorrecta** — no por culpa suya. Fue diseñado para un propósito diferente: pruebas de acceso control offline (NFC, RFID, Sub-GHz, infrarrojo). Excelle en esas tareas, pero la capacidad de host USB nunca formó parte de su diseño.
@@ -380,3 +402,11 @@ Todos los adaptadores ALFA recomendados están disponibles en Yupitek — un dis
 ---
 
 *Para preguntas previas a la compra sobre compatibilidad entre Flipper One y adaptadores ALFA, contacte al soporte de Yupitek en support@yupitek.com o llame al +886-2-87325338.*
+
+## Referencias
+
+1. [Blog oficial de Flipper One — Anuncio de producto de Pavel Zhovner](https://blog.flipper.net/flipper-one-we-need-your-help/)
+2. [Portal de desarrolladores de Flipper One — Especificaciones técnicas y documentación](https://docs.flipper.net/one)
+3. [Sitio oficial de Flipper Zero](https://flipperzero.one/)
+4. [aircrack-ng — Sitio oficial del conjunto de herramientas de seguridad inalámbrica](https://www.aircrack-ng.org/)
+5. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)

@@ -12,7 +12,24 @@ series: ["alfa-china-install-guide"]
 series_order: 5
 related_product: "/fr/products/alfa/awus036axer/"
 featureimage: "/images/blog/awus036axer-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Quel chipset utilise l'AWUS036AXER ? Est-ce le même que l'AWUS036AX ?"
+    answer: "Il utilise également le chipset Realtek RTL8832BU supportant le WiFi 6, mais dans un format plus compact et portable."
+  - question: "L'AWUS036AXER nécessite-t-il un pilote sur Ubuntu 24.04 ?"
+    answer: "Non, le noyau d'Ubuntu 24.04 supporte nativement le RTL8832BU, plug-and-play."
+  - question: "L'AWUS036AXER convient-il à la recherche en sécurité sans fil ?"
+    answer: "Peu adapté. Le support du mode moniteur du RTL8832BU est limité. Préférez l'AWUS036ACM ou l'AWUS036ACH."
+  - question: "Quel est l'USB ID de l'AWUS036AXER ?"
+    answer: "L'USB ID du Realtek RTL8832BU est 0bda:885a, vérifiable avec lsusb."
+  - question: "Faut-il un VPN pour installer l'AWUS036AXER en Chine ?"
+    answer: "Non, téléchargez le code source rtl8852bu depuis Gitee et utilisez les miroirs nationaux pour les outils de compilation."
 ---
+
+{{< tldr >}}
+L'AWUS036AXER utilise le chipset RTL8832BU, carte WiFi 6 mini portable. Plug-and-play sur Ubuntu 24.04. Sur les autres systèmes, compilez rtl8852bu depuis Gitee.
+{{< /tldr >}}
 
 L'AWUS036AXER est l'adaptateur WiFi 6 nano d'ALFA — un dongle compact conçu pour rester branché en permanence sur un ordinateur portable. Sa puce RTL8832BU est hors noyau sur les versions Linux inférieures à 6.14 mais est incluse nativement dans Ubuntu 24.04 (noyau 6.8). Ce guide utilise des miroirs Gitee pour les noyaux plus anciens. Aucun GitHub requis.
 
@@ -199,6 +216,8 @@ sudo reboot
 | rtl8852bu (Gitee) | [gitee.com/mirrors/rtl8852bu](https://gitee.com/mirrors/rtl8852bu) | Pilote RTL8832BU |
 | Miroir Tsinghua | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 
+{{< faq >}}
+
 ## Plus de guides d'installation d'adaptateurs Alfa pour la Chine
 
 - [AWUS036ACH China Install Guide](/fr/blog/awus036ach-china-install-guide/) — RTL8812AU, haute puissance
@@ -211,3 +230,11 @@ sudo reboot
 - [AWUS036EACS China Install Guide](/fr/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 Questions ? Laissez un commentaire ci-dessous ou contactez-nous sur [yupitek.com](https://yupitek.com/fr/contact/).
+
+---
+
+## Références
+1. [Site officiel Realtek](https://www.realtek.com/)
+2. [Site officiel ALFA Network](https://www.alfa.com.tw/)
+3. [Documentation officielle Kali Linux](https://www.kali.org/docs/)
+4. [Miroir Gitee rtl8852bu](https://gitee.com/mirrors/rtl8852bu)

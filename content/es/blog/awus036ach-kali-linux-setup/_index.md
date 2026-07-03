@@ -7,9 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "Kali-Linux", "modo-monitor", "inyección-paquetes", "RTL8812AU"]
 featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿El AWUS036ACH necesita controlador adicional en Kali Linux?"
+    answer: "Sí. RTL8812AU no es un controlador del kernel principal; debe instalarse desde el repositorio de GitHub de aircrack-ng. Se recomienda usar DKMS para que siga funcionando tras actualizar el kernel."
+  - question: "¿Cómo confirmar que el sistema detecta el AWUS036ACH?"
+    answer: "Ejecuta lsusb y busca el ID 0bda:8812 para confirmar que Realtek RTL8812AU fue reconocido; luego usa lsmod para verificar que el módulo del controlador se ha cargado."
+  - question: "¿Qué hacer si la interfaz desaparece tras activar el modo monitor?"
+    answer: "Normalmente NetworkManager vuelve a tomar la interfaz. Ejecuta airmon-ng check kill para detener los procesos que interfieren y vuelve a activar el modo monitor."
+  - question: "¿Qué tasa de éxito en la prueba de inyección se considera normal?"
+    answer: "Una tasa de éxito del 80% o superior indica un funcionamiento fiable. Si es inferior al 50%, verifica la posición de la antena, la alimentación USB y la instalación correcta del controlador."
+  - question: "¿Qué hacer si el controlador del AWUS036ACH falla tras actualizar el kernel?"
+    answer: "Si usaste DKMS, el controlador se reconstruirá automáticamente. Si falla, ejecuta dkms autoinstall y verifica que el paquete linux-headers coincida con la versión actual del kernel."
 ---
 
 El ALFA AWUS036ACH se ha ganado su lugar como el adaptador USB WiFi más recomendado en la comunidad de Kali Linux — y con buena razón. Impulsado por el chipset Realtek RTL8812AU, ofrece soporte confiable de modo monitor e inyección de paquetes en el que los profesionales de seguridad han confiado desde 2017. Esta guía te lleva por cada paso, desde desempacarlo hasta tener una configuración verificada y funcional de inyección de paquetes en Kali Linux 2024 y 2025.
+
+{{< tldr >}}
+El AWUS036ACH con chip RTL8812AU, usando el controlador de aircrack-ng con instalación DKMS, puede activar de forma estable el modo monitor y la inyección de paquetes. Es el equipamiento estándar de pruebas de penetración en Kali Linux.
+{{< /tldr >}}
 
 ---
 
@@ -471,6 +488,8 @@ sudo systemctl start NetworkManager
 
 ---
 
+{{< faq >}}
+
 ## Resumen
 
 | Paso | Comando |
@@ -486,3 +505,10 @@ sudo systemctl start NetworkManager
 | Probar inyección | `sudo aireplay-ng --test wlan0mon` |
 
 El [ALFA AWUS036ACH](/es/products/alfa/awus036ach/) combinado con Kali Linux 2024+ y el controlador RTL8812AU de aircrack-ng sigue siendo la configuración de adaptador WiFi más confiable y mejor documentada en la comunidad de pruebas de penetración. Una vez que hayas verificado que la inyección funciona, estás listo para usar toda la suite Aircrack-ng, Wireshark, Kismet, Bettercap y cualquier otra herramienta que requiera modo monitor o inyección de paquetes.
+
+## Referencias
+
+1. [Repositorio del controlador rtl8812au oficial de aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
+2. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)
+3. [Especificaciones de Realtek RTL8812AU](https://www.realtek.com/)
+4. [Documentación oficial de Linux Wireless](https://wireless.wiki.kernel.org/)

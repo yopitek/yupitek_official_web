@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "ALFA 网卡 USB 直通：VirtualBox 与 VMware 设置指南"
 description: "逐步教程：在 VirtualBox 和 VMware Workstation 上为 Kali Linux 配置 ALFA USB WiFi 网卡的 USB 直通。涵盖 AWUS036ACH、AWUS036AXML、USB 3.0 过滤器、Extension Pack 及故障排除。"
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
+faq:
+  - question: "VirtualBox 使用 ALFA 网卡需要安装 Extension Pack 吗？"
+    answer: "需要。VirtualBox 必须安装 Extension Pack 才能支持 USB 2.0 与 USB 3.0 直通，否则只能使用 USB 1.1，不足以驱动现代 ALFA 网卡。"
+  - question: "ALFA 网卡应该选 USB 2.0 还是 USB 3.0 控制器？"
+    answer: "AWUS036AXML 必须使用 USB 3.0（xHCI）。AWUS036ACH 本身是 USB 2.0 装置，但使用 xHCI 不会造成问题，建议统一设为 USB 3.0。"
+  - question: "VMware Workstation 需要额外安装扩充软件包吗？"
+    answer: "不需要。VMware Workstation 17+ 与 Fusion 13+ 已内置 USB 2.0/3.0 支持，只需确认 USB 仲裁器服务正在执行。"
+  - question: "为什么 lsusb 看得到网卡却没有 wlan 接口？"
+    answer: "USB 直通成功但驱动程序未加载。RTL8812AU 需执行 modprobe 88XXau 或安装 realtek-rtl88xxau-dkms，MT7921AUN 需执行 modprobe mt7921u。"
+  - question: "Linux 主机上 USB 网卡持续断线怎么办？"
+    answer: "停用 USB 自动暂停：执行 echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend，并确认用户已加入 vboxusers 群组。"
 ---
 
+
+
+
 在虚拟机内使用 ALFA WiFi 网卡并非像插入后等待客户端操作系统自动识别那么简单。与共享文件夹或桥接网络不同，监听模式和原始数据包注入需要**完整的 USB 控制权**——虚拟机必须独占 USB 设备，而不是通过主机的网络栈共享。这称为 USB 直通（USB passthrough），正确配置是在 VM 环境中工作的渗透测试人员和 CTF 玩家最常遇到的设置失败原因。
+
+{{< tldr >}}
+在 VirtualBox 或 VMware 中使用 ALFA 网卡需设定 USB 直通。VirtualBox 需安装 Extension Pack 并启用 USB 3.0 控制器；VMware 内置 USB 支持但需确认仲裁器服务运行。AWUS036ACH 用 88XXau 驱动，AWUS036AXML 用 mt7921u 驱动。
+{{< /tldr >}}
+
 
 本指南涵盖 **VirtualBox 7.x** 和 **VMware Workstation 17+ / VMware Fusion 13+** 的完整直通设置，以 Kali Linux 作为客户端操作系统。文中针对 AWUS036ACH（RTL8812AU 芯片组）和较新的 AWUS036AXML（MT7921AUN 芯片组）分别说明行为差异。
 
@@ -297,8 +321,19 @@ echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend
 
 ---
 
+
+{{< faq >}}
+
 ## 后续步骤
 
 - **安装或更新驱动程序：** [Kali 与 Ubuntu 的 ALFA 驱动程序安装指南](/zh-cn/blog/install-alfa-driver-kali-ubuntu/)
 - **完整 AWUS036ACH 设置教程：** [AWUS036ACH Kali Linux 设置指南](/zh-cn/blog/awus036ach-kali-linux-setup/)
 - **AWUS036AXML 硬件评测：** [AWUS036AXML WiFi 6E 评测](/zh-cn/blog/awus036axml-wifi-6e-review/)
+
+## 参考文献
+
+1. [VirtualBox 官方下载页面](https://www.virtualbox.org/wiki/Downloads)
+2. [VMware Workstation 产品页面](https://www.vmware.com/products/workstation-pro.html)
+3. [aircrack-ng rtl8812au 驱动专案](https://github.com/aircrack-ng/rtl8812au)
+4. [ALFA Network 官方网站](https://www.alfa.com.tw/)
+5. [Kali Linux 官方文档](https://www.kali.org/docs/)

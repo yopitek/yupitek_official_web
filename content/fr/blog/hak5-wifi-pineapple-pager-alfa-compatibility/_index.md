@@ -7,7 +7,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH", "compatibility", "wireless-security"]
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Quelle carte ALFA fonctionne avec le WiFi Pineapple Pager ?"
+    answer: "L'AWUS036ACM (MT7612U) fonctionne en plug-and-play car son pilote est intégré au noyau OpenWrt 6.6. L'AWUS036ACH (RTL8812AU) nécessite une compilation croisée et a un bug wiphy connu."
+  - question: "Pourquoi le RTL8812AU ne fonctionne-t-il pas bien sur le Pager ?"
+    answer: "Le Pager utilise une architecture MIPS qui ne supporte pas DKMS. La compilation croisée du RTL8812AU est complexe et un bug wiphy limite les fonctionnalités."
+  - question: "Le Pineapple Pager supporte-t-il le mode moniteur avec l'AWUS036ACM ?"
+    answer: "Oui. Le pilote mt76x2u intégré au noyau OpenWrt 6.6 supporte le mode moniteur, l'injection de paquets et le mode AP sur l'AWUS036ACM."
+  - question: "Quelle est la différence entre le Pineapple Mark VII et le Pager ?"
+    answer: "Le Pager est plus compact, basé sur OpenWrt 24.10 avec un noyau 6.6. Le Mark VII est plus puissant mais utilise un firmware plus ancien. Les deux supportent l'AWUS036ACM."
+  - question: "Faut-il une configuration spéciale pour l'AWUS036ACM sur le Pager ?"
+    answer: "Non. Insérez l'AWUS036ACM dans le port USB du Pager. Le pilote se charge automatiquement. Configurez l'interface via l'interface web du Pineapple."
 ---
+
+{{< tldr >}}
+Le Pager en architecture MIPS ne supporte pas DKMS. L'AWUS036ACM avec le pilote MT7612U intégré au noyau OpenWrt 6.6 est plug-and-play. L'AWUS036ACH nécessite une compilation croisée et a un bug wiphy.
+{{< /tldr >}}
+
+Avant de brancher une carte Wi-Fi USB de haute puissance sur le HAK5 Pager, tu dois comprendre deux obstacles majeurs : l'architecture du processeur et la puissance disponible sur le port USB.
+
 
 # HAK5 WiFi Pineapple Pager × ALFA Network : Guide de compatibilité des cartes Wi-Fi USB externes
 
@@ -179,11 +199,13 @@ Connecter une carte ALFA compatible à ton HAK5 Pager te permet de débloquer pl
 
 ---
 
+{{< faq >}}
+
 ## 5. Conclusion & Conseils d'achat
 
 L'association d'une carte Wi-Fi d'ALFA Network avec le HAK5 WiFi Pineapple Pager te permet de déployer une station d'audit mobile discrète et très efficace. Reste toutefois vigilant sur les détails suivants :
 
-- **Pour un déploiement rapide et stable** : Achète l'[ALFA AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm). Ses pilotes MediaTek intégrés fonctionnent parfaitement sous OpenWrt Kernel 6.6.
+- **Pour un déploiement rapide et stable** : Achète l'[ALFA AWUS036ACM](https://yupitek.com/fr/products/alfa/awus036acm). Ses pilotes MediaTek intégrés fonctionnent parfaitement sous OpenWrt Kernel 6.6.
 - **Stabilité de l'alimentation** : Utilise toujours un **Hub USB avec alimentation externe** de bonne qualité pour garantir le signal de sortie des cartes Wi-Fi de haute puissance et éviter les déconnections.
 
 Si tu as d'autres questions techniques, besoin de devis matériel ou de compilations personnalisées via le SDK OpenWrt, contacte l'**Équipe de Support Technique de Yupitek** :
@@ -192,3 +214,12 @@ Si tu as d'autres questions techniques, besoin de devis matériel ou de compilat
 - 📧 E-mail du support : [sales@yupitek.com](mailto:sales@yupitek.com)
 - 📞 Téléphone : +886-2-87325338
 - 📍 Adresse : 1F., No. 72, Ln. 34, Fuyang St., Xinyi Dist., Taipei City, Taiwan
+
+---
+
+## Références
+1. [Documentation officielle Hak5 — WiFi Pineapple](https://documentation.hak5.org/)
+2. [Site officiel OpenWrt — OpenWrt 24.10](https://openwrt.org/)
+3. [Dépôt GitHub pilote OpenWrt mt76](https://github.com/openwrt/mt76)
+4. [aircrack-ng/rtl8812au — Dépôt GitHub du pilote communautaire](https://github.com/aircrack-ng/rtl8812au)
+5. [Site officiel ALFA Network](https://www.alfa.com.tw/)

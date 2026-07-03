@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA AWUS036ACH vs AWUS036ACM：Kali Linux 向け完全比較（2026）"
 description: "ALFA AWUS036ACH と AWUS036ACM を詳細比較。チップセット・モニターモード・パケットインジェクション・ドライバーサポートから、Kali Linux に最適な選択肢を解説。"
 date: 2026-03-23
@@ -7,12 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "AWUS036ACM", "比較", "Kali-Linux", "RTL8812AU", "MT7612U"]
 featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036ACHとAWUS036ACMのドライバーインストールの違いは？"
+    answer: "AWUS036ACHはRTL8812AUチップで、DKMS経由でaircrack-ngコミュニティドライバーをコンパイルインストールする必要があり、カーネル更新後に再コンパイルが必要な場合があります。AWUS036ACMのMT7612Uドライバーはカーネル4.19以降メインラインに統合され、プラグアンドプレイでコンパイル不要です。"
+  - question: "Monitor Modeの監視にはどちらが適していますか？"
+    answer: "AWUS036ACHのモニターモードはより安定で、デュアルアンテナと30 dBmの高出力により密集AP環境でパケットロス率が低いです。ACMもモニタリングをサポートしますが、シングルアンテナで出力が低く、近距離キャプチャに適しています。"
+  - question: "初心者はACHとACMのどちらを選ぶべきですか？"
+    answer: "初心者にはAWUS036ACMを推奨します。MT7612Uカーネルネイティブドライバーでプラグアンドプレイ、コンパイル不要です。最強の信号と最も豊富なチュートリアルリソースが必要でDKMSコンパイルを厭わない場合はAWUS036ACHを選んでください。"
+  - question: "VM仮想環境にはどちらを推奨しますか？"
+    answer: "VM環境ではAWUS036ACMを推奨します。USBパススルー後カーネルネイティブドライバーが即座に認識され使用可能で、VM内にコンパイルツールチェーンをインストールする必要がありません。ACHはVM内でドライバーを追加インストールする必要があります。"
 ---
 
 ## 概要
 
 Kali Linux ペネトレーションテスト向けの ALFA Network USB アダプターの中でも特に人気の高い 2 モデルは、それぞれ性能と携帯性のバランスが異なります。**AWUS036ACH** は、実績のあるドライバーと高い出力を誇る大型のデュアルアンテナアダプターです。**AWUS036ACM** は、コンパクトでカーネルネイティブのドライバーを持つ代替品で、出力の一部を利便性と扱いやすさに換えた設計となっています。このガイドでは、実際のペネトレーションテスト業務に関わるすべての側面を詳細に比較します。
 
+
+{{< tldr >}}
+AWUS036ACHはプロ任務向け、RTL8812AUドライバーと30 dBmデュアルアンテナでモニタリングとインジェクションが最強。AWUS036ACMは携帯性重視、MT7612Uカーネルネイティブドライバーでコンパイル不要、価格は約$30〜40。
+{{< /tldr >}}
 ---
 
 ## AWUS036ACH — AC1200・RTL8812AU・高出力
@@ -205,6 +221,11 @@ ACM のゼロインストール体験は、ライブブート環境、クライ�
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 結論
 
 **[AWUS036ACH](/ja/products/alfa/awus036ach/) を選ぶべき場合：**
@@ -222,3 +243,12 @@ ACM のゼロインストール体験は、ライブブート環境、クライ�
 - コミュニティドライバーよりカーネルネイティブの安定性を好む場面
 
 1 つだけ選ぶなら、**AWUS036ACH** がペネトレーションテスト向けとして強力な選択です。セットアップの手間なく持ち歩ける信頼できるトラベルアダプターが欲しいなら、**AWUS036ACM** はツールキットに加える価値があります。
+
+---
+
+## 参考文献
+
+1. aircrack-ngコミュニティ保守RTL8812AUドライバーリポジトリ — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. LinuxカーネルメインラインMT76ドライバー（mt76x2u、カーネル4.19以降統合）— [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
+3. ALFA Network公式ウェブサイトと製品仕様 — [alfa.com.tw](https://www.alfa.com.tw)
+4. Yupitek — ALFA Network台湾認定販売代理店 — [yupitek.com](https://www.yupitek.com)

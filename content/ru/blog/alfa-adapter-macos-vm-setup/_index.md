@@ -2,14 +2,32 @@
 title: "Использование адаптеров ALFA WiFi на macOS: USB Passthrough через VMware Fusion и Parallels"
 description: "Как использовать USB WiFi адаптеры ALFA на macOS. Рассматривается нативная поддержка macOS, USB passthrough в VMware Fusion и Parallels Desktop для режима монитора и инъекции пакетов в Kali Linux."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
+
+faq:
+  - question: "Может ли адаптер ALFA работать в режиме монитора нативно в macOS?"
+    answer: "Нет, macOS не поддерживает полный режим монитора. Драйвер NDIS не предоставляет доступ к сырым 802.11-пакетам, только Acrylic WiFi Pro может выполнять пассивное сканирование. Полный режим монитора требует Kali Linux."
+  - question: "Возможна ли инъекция пакетов в Windows?"
+    answer: "Нет. Ни один драйвер Windows не поддерживает сырую 802.11-инъекцию пакетов для адаптеров ALFA, эта функция доступна только в Linux."
+  - question: "Какая модель ALFA лучше всего работает в macOS?"
+    answer: "AWUS036ACM (MT7612U) работает безупречно — Plug & Play, встроенный драйвер, поддержка 5 ГГц. AWUS036ACH (RTL8812AU) требует установки драйвера, но также совместим."
+  - question: "Какую VM выбрать для пентестинга на macOS?"
+    answer: "Оба варианта работают. VMware Fusion бесплатен для личного использования и поддерживает USB 3.0. Parallels работает быстрее на Apple Silicon, но платный. Оба поддерживают USB-паспорту."
+  - question: "Нужен ли отдельный USB-хаб с питанием?"
+    answer: "Для AWUS036ACH рекомендуется, так как он потребляет до 800 мА. AWUS036ACM потребляет всего 400 мА и обычно работает без дополнительного питания."
 ---
 
 macOS — это отточенная, профессиональная операционная система. Однако она не предназначена для исследований в области беспроводной безопасности. Две возможности, определяющие инструментарий любого серьёзного пентестера — **режим монитора** и **инъекция пакетов** — полностью отсутствуют в стеке Wi-Fi macOS. Драйверы Wi-Fi от Apple предоставляют чистый, функциональный сетевой интерфейс — и ничего более.
+
+{{< tldr >}}
+macOS не поддерживает режим монитора и инъекцию пакетов для адаптеров ALFA. Решение — запуск Kali Linux VM в VMware Fusion или Parallels с USB-паспортом адаптера. Для Apple Silicon требуется ARM64-образ Kali.
+{{< /tldr >}}
 
 Адаптеры ALFA Network меняют это положение дел в Linux, где поддержка драйверов глубокая и проверена сообществом. На macOS ситуация иная. Даже если адаптер ALFA распознаётся системой, нативный сетевой стек macOS не позволит перевести его в режим монитора или инжектировать «сырые» фреймы. Единственный надёжный путь — запустить **Kali Linux внутри виртуальной машины** и передать USB-адаптер напрямую гостевой ОС, полностью минуя macOS.
 
@@ -257,8 +275,19 @@ sudo airodump-ng wlan1mon
 
 ---
 
+{{< faq >}}
+
 ## Связанные руководства
 
 Для хостов под управлением Windows и Linux, использующих VirtualBox или VMware Workstation, см. сопутствующее руководство: [USB Passthrough адаптера ALFA: руководство по настройке VirtualBox и VMware](/en/blog/alfa-adapter-virtualbox-vmware-usb/).
 
 Для получения подробной информации об адаптере AWUS036AXML, упомянутом в этом руководстве, включая тесты производительности в диапазоне 6 ГГц и примечания к версиям драйверов, см. полный обзор: [Обзор ALFA AWUS036AXML WiFi 6E](/en/blog/awus036axml-wifi-6e-review/).
+
+
+## Источники
+
+1. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
+2. [Страница загрузки Kali Linux](https://www.kali.org/get-kali/)
+3. [Страница продукта VMware Fusion](https://www.vmware.com/products/fusion.html)
+4. [Страница продукта Parallels Desktop](https://www.parallels.com/products/desktop/)
+5. [Документация Apple Silicon](https://developer.apple.com/documentation/apple-silicon)

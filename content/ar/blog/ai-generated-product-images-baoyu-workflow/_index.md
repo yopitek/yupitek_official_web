@@ -2,15 +2,31 @@
 title: "صور المنتجات بالذكاء الاصطناعي: مرجع شامل للأنماط باستخدام baoyu-skills"
 description: "كيف نستخدم إضافة baoyu-skills لواجهة سطر أوامر GitHub Copilot لتوليد أغلفة المدونات، والرسوم البيانية، وبطاقات إنستغرام، والكوميكس، وصور المنتجات — مع محوّل ALFA AWUS036ACM كمثال تطبيقي. مرجع عملي لتوليد صور التسويق B2B."
 date: 2026-04-02
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["baoyu-skills", "توليد-الصور-بالذكاء-الاصطناعي", "تسويق", "ALFA-Network", "GitHub-Copilot"]
 featureimage: "/images/blog/baoyu-skills/cover-image-4.webp"
+faq:
+  - question: "ما هي baoyu-skills؟"
+    answer: "baoyu-skills هي مجموعة إضافات مفتوحة المصدر لواجهة سطر أوامر GitHub Copilot، توفر 19 مهارة تغطي توليد الصور، وإخراج HTML، والترجمة، والنشر الاجتماعي، جميعها قابلة للاستدعاء مباشرةً من الطرفية."
+  - question: "أي مهارة baoyu مناسبة لتوليد صورة غلاف مدوّنة؟"
+    answer: "baoyu-cover-image مصمَّمة خصيصاً لأغلفة المقالات، تدعم ثلاث نسب: سينمائي عريض 2.35:1، وشاشة عريضة 16:9، ومربع 1:1، مع مجموعة متنوعة من أنماط الألوان والتصيير."
+  - question: "كيف أستخدم baoyu-skills في GitHub Copilot CLI؟"
+    answer: "بعد تثبيت مجموعة الإضافات، اكتب أوامراً مثل /baoyu-cover-image أو /baoyu-xhs-images في الطرفية، وستوجّهك المهارة عبر أسئلة توضيحية حول النمط والأبعاد والمحتوى قبل التوليد."
+  - question: "ما أنواع مخرجات الصور التي تدعمها baoyu-skills؟"
+    answer: "تغطي مخرجات الصور من النوع A أغلفة المقالات، والرسوم البيانية، والكوميكس، والشرائح، وتصيير المنتجات، وبطاقات XHS الرأسية؛ بينما يولّد النوع B صفحات HTML منسّقة؛ ويتعامل النوع C مع الترجمة والنشر الاجتماعي."
+  - question: "كيف أطبّق baoyu-skills على منتجي الخاص؟"
+    answer: "ابحث في هذه المقالة عن المتغير الذي يتطابق مع نبرة علامتك التجارية، انسخ الموجّه، واستبدل اسم المنتج والمواصفات الرئيسية بمنتجك المستهدف، ثم نفّذ المهارة المناسبة في Copilot CLI."
 ---
 
 في يوبيتك، نوزّع منتجات الأجهزة التقنية — محوّلات WiFi، وأدوات أبحاث الأمان، ووحدات SDR — وقد كان إنشاء مرئيات تسويقية متسقة وعالية الجودة لثماني لغات تحدياً دائماً. توثّق هذه المقالة كيف نستخدم مجموعة إضافات **baoyu-skills** لواجهة سطر أوامر GitHub Copilot لتوليد صور المنتجات عبر تنسيقات وأنماط مختلفة.
+
+{{< tldr >}}
+تقدم baoyu-skills 19 مهارة تغطي مخرجات الصور وHTML والنصوص. تستخدم هذه المقالة ALFA AWUS036ACM كمثال لعرض متغيرات الأنماط والموجّهات وسيناريوهات الاستخدام لست مهارات صور رئيسية، كجدول بحث لتوليد صور التسويق.
+{{< /tldr >}}
 
 نستخدم محوّل **ALFA AWUS036ACM** USB WiFi كمنتج توضيحي في هذا الدليل. كل موجّه وصورة معروضة هنا جُوِّلت من وصف هذا المحوّل. الهدف هو مرجع عملي للأنماط: عندما تحتاج مستقبلاً إلى صورة غلاف منتج، أو بطاقة إنستغرام، أو رسم بياني تقني، يمكنك البحث عن المهارة والنمط المناسبَيْن.
 
@@ -486,6 +502,8 @@ for each component
 
 ---
 
+{{< faq >}}
+
 ## حول baoyu-skills
 
 مجموعة إضافات baoyu-skills الكاملة متاحة على GitHub:
@@ -497,3 +515,11 @@ for each component
 هل تريد معرفة المزيد عن AWUS036ACM — المنتج المستخدم كمثالنا في هذا الدليل؟
 
 {{< button href="/ar/products/alfa/awus036acm/" >}}عرض صفحة منتج AWUS036ACM{{< /button >}}
+
+## المراجع
+
+1. [مستودع baoyu-skills على GitHub](https://github.com/JimLiu/baoyu-skills.git)
+2. [وثائق GitHub Copilot CLI الرسمية](https://docs.github.com/en/copilot/github-copilot-in-the-cli)
+3. [مواصفات منتج ALFA Network AWUS036ACM](https://www.alfa.com.tw/)
+4. [بيانات شريحة MediaTek MT7612U](https://www.mediatek.com/products/networking-and-connectivity)
+5. [وثائق OpenAI لتوليد الصور API](https://platform.openai.com/docs/guides/images)

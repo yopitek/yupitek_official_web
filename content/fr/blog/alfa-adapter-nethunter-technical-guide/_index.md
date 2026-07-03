@@ -7,7 +7,20 @@ showBreadcrumbs: true
 showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Quelles sont les conditions requises pour utiliser une carte ALFA avec Kali NetHunter ?"
+    answer: "Il faut un téléphone Android supportant OTG, rooté et flashé avec le noyau Kali NetHunter. Les modèles compatibles vérifiés incluent Google Pixel et les anciens flagships OnePlus."
+  - question: "Quelle est la différence entre les pilotes MT7610U/MT7612U et RTL8812AU ?"
+    answer: "Les pilotes MT7610U/MT7612U sont dans l'arbre du noyau, plug-and-play sans compilation. Le RTL8812AU nécessite une compilation DKMS externe et peut nécessiter une recompilation après mise à jour du noyau."
+  - question: "Les cartes ALFA supportent-elles le mode moniteur sur NetHunter ?"
+    answer: "Oui, les MT7610U/MT7612U supportent le mode moniteur et l'injection de paquets. Le RTL8812AU fonctionne aussi avec noyau < 6.12, mais le mode moniteur est limité avec noyau 6.12+."
 ---
+
+{{< tldr >}}
+Les pilotes MT7610U/MT7612U intégrés au noyau sont plug-and-play, le RTL8812AU nécessite une compilation DKMS. Le téléphone NetHunter doit être rooté avec support OTG. Privilégiez la carte MT7612U pour éviter les problèmes de pilote.
+{{< /tldr >}}
 
 Si tu as déjà configuré un adaptateur ALFA avec NetHunter en suivant les instructions OTG de base et que tu cherches la version rapide, notre [guide de configuration OTG](/fr/blog/alfa-adapter-nethunter-android-otg/) couvre l'essentiel. Cet article va plus loin — c'est une référence technique complète destinée aux professionnels de la sécurité qui ont besoin d'évaluer la compatibilité téléphone/adaptateur avant d'acheter le matériel, de comprendre quelle approche de pilote survit aux mises à jour du kernel, et de consulter des résultats de tests vérifiés avant de s'engager sur une combinaison spécifique.
 
@@ -473,6 +486,8 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
+{{< faq >}}
+
 ## Guides Connexes
 
 - [Configuration OTG de base avec les adaptateurs ALFA et NetHunter](/fr/blog/alfa-adapter-nethunter-android-otg/)
@@ -484,3 +499,13 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 *Ce document a été préparé par **Yupitek Ltd** — distributeur agréé ALFA Network pour Taïwan.*  
 *Données à jour au 09/06/2026. Les versions du kernel Linux et de NetHunter sont mises à jour régulièrement ; vérifie les sources officielles pour les dernières informations de compatibilité.*
+
+---
+
+## Références
+
+1. [Documentation officielle Kali NetHunter](https://www.kali.org/docs/nethunter/) — Guide d'installation et de flash du kernel NetHunter
+2. [Code source du pilote mt76 du noyau Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) — Pilotes mainline MT7610U/MT7612U
+3. [Pilote RTL8812AU aircrack-ng](https://github.com/aircrack-ng/rtl8812au) — Dépôt DKMS externe
+4. [Site officiel ALFA Network](https://alfa.com.tw/) — Spécifications produit et téléchargements de pilotes
+5. [Documentation officielle Android USB OTG](https://developer.android.com/guide/topics/connectivity/usb) — API OTG et exigences matérielles

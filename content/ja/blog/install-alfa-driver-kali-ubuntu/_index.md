@@ -1,4 +1,5 @@
 ---
+
 title: "Kali Linux・Ubuntu 24.04 への ALFA USB WiFi ドライバーインストール完全ガイド（2026）"
 description: "Kali Linux 2024 と Ubuntu 24.04 に ALFA Network USB WiFi アダプターのドライバーをインストールする完全解説。RTL8812AU・MT7612U・MT7921AUN 対応、トラブルシューティング付き。"
 date: 2026-03-23
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ドライバーインストール", "Kali-Linux", "Ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
 featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ALFA USB WiFiアダプターはLinuxでドライバーインストールが必要ですか？"
+    answer: "チップセットによります。MT7612UとMT7921AUNはカーネルに内蔵されておりmodprobeを実行するだけです。RTL8812AUはaircrack-ng GitHubから外部ドライバーをインストールする必要があります。"
+  - question: "ALFAアダプターがどのチップセットを使用しているかどう確認しますか？"
+    answer: "アダプター挿入後lsusbを実行し、USB IDを照合して識別します。0bda:8812はRTL8812AU、0e8d:7612はMT7612U、0e8d:7961はMT7921AUNです。"
+  - question: "DKMSとは何ですか？なぜ必要ですか？"
+    answer: "DKMSは新しいカーネルインストール時にドライバーモジュールを自動的に再コンパイルします。DKMSを使用しない場合、カーネル更新のたびに外部ドライバーが無効になり手動再コンパイルが必要です。"
+  - question: "Ubuntu 22.04でMT7921AUNアダプターを使えますか？"
+    answer: "プリインストールカーネル5.15は非対応です。HWEカーネルlinux-generic-hwe-22.04をインストールして6.2以上にアップグレードするか、Ubuntu 24.04 LTSにアップグレードしてください。"
+  - question: "makeでドライバーコンパイル時にlinux/module.h not foundエラーが出たら？"
+    answer: "カーネルheadersがインストールされていません。sudo apt install linux-headers-$(uname -r)を実行して現在のカーネルバージョンと一致するheadersをインストール後、再コンパイルしてください。"
 ---
 
 Linux で USB WiFiアダプターを動かすには、まずドライバーが鍵になります。Windows では製造元がインストーラーを提供してくれますが、Linux ではカーネルモジュール——OSがハードウェアと通信するためにロードするコンパイル済みコード——を使います。この仕組みを理解しておくと、トラブルシューティングが格段に楽になり、ドライバーのインストール作業も迷わず進められます。
 
+
+{{< tldr >}}
+ALFAアダプターのドライバーインストールはチップセットに依存します。MT7612UとMT7921AUNはカーネル内蔵でプラグアンドプレイ、RTL8812AUはaircrack-ng GitHubからインストールしDKMSと組み合わせてカーネル更新後も動作を維持します。
+{{< /tldr >}}
 このガイドでは、Kali Linux 2024/2025 と Ubuntu 24.04 LTS の両方において、ALFA Network の主要な USB WiFiアダプターチップセット向けのドライバーインストール手順を網羅的に説明します。
 
 ---
@@ -393,6 +411,11 @@ Yopitek は ALFA Network の正規代理店です。正規品の保証と予測�
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## まとめ
 
 Linux の WiFiドライバーインストールは、シンプルな判断フローで進められます：
@@ -403,3 +426,13 @@ Linux の WiFiドライバーインストールは、シンプルな判断フロ
 4. **うまくいかない場合?** → トラブルシューティング表を確認し、ヘッダーとカーネルが一致しているか確認し、`dmesg` をチェック
 
 ALFA Network アダプターの魅力は、4 つの主要チップセットすべてについて、よくドキュメント化されアクティブにメンテナンスされたドライバーソリューションが存在する点です。サポートされない状況に陥ることはありません。
+
+---
+
+## 参考文献
+
+1. [aircrack-ng公式rtl8812auドライバー](https://github.com/aircrack-ng/rtl8812au)
+2. [morrownr USB-WiFiナレッジベース](https://github.com/morrownr/USB-WiFi)
+3. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
+4. [Ubuntu公式HWEカーネル説明](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
+5. [Linux Wireless mt76ドライバー](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)

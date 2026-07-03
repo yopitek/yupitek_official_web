@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "AI 生成产品图片：使用 baoyu-skills 的完整风格参考指南"
 description: "我们如何使用 GitHub Copilot CLI 的 baoyu-skills 插件，生成博客封面、信息图表、Instagram 卡片、漫画及产品渲染图——以 ALFA AWUS036ACM 为实际案例。B2B 营销图片生成的实用风格参考。"
 date: 2026-04-02
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["baoyu-skills", "AI-image-generation", "营销", "ALFA-Network", "GitHub-Copilot"]
 featureimage: "/images/blog/baoyu-skills/cover-image-4.webp"
+faq:
+  - question: "baoyu-skills 是什么？"
+    answer: "baoyu-skills 是 GitHub Copilot CLI 的开源外挂集合，提供 19 项技能涵盖图片生成、HTML 输出、翻译与社群发布，全部可从终端机直接呼叫。"
+  - question: "哪个 baoyu-skill 适合生成部落格封面图？"
+    answer: "baoyu-cover-image 专为文章封面设计，支持电影宽幅 2.35:1、宽屏幕 16:9 与正方形 1:1 三种比例，搭配多种色彩与渲染风格。"
+  - question: "如何在 GitHub Copilot CLI 中使用 baoyu-skills？"
+    answer: "安装外挂集合后，在终端机输入 /baoyu-cover-image 或 /baoyu-xhs-images 等指令，技能会引导您回答风格、尺寸与内容的澄清问题后生成图片。"
+  - question: "baoyu-skills 支持哪些图片输出类型？"
+    answer: "Type A 图片输出涵盖封面图、资讯图表、漫画、投视频、产品渲染与小红书垂直卡片；Type B 生成样式化 HTML；Type C 处理翻译与社群发布。"
+  - question: "如何将 baoyu-skills 套用于自家产品？"
+    answer: "在本文找到符合品牌调性的变体，复制提示词并将产品名称与主要规格替换为您的目标产品，再于 Copilot CLI 中执行对应技能即可。"
 ---
 
+
+
+
 在 Yopitek，我们代理技术硬件产品——WiFi 网卡、安全研究工具、SDR 模块——为 8 种语言持续产出高质量的营销视觉素材一直是一大挑战。本文记录我们如何使用 GitHub Copilot CLI 的 **baoyu-skills** 插件集合，跨不同格式与风格生成产品图片。
+
+{{< tldr >}}
+baoyu-skills 提供 19 项技能涵盖图片、HTML、文字输出。本文以 ALFA AWUS036ACM 为范例，展示 6 大图片技能的风格变体、提示词与适用情境，作为行销图片生成的查询表。
+{{< /tldr >}}
+
 
 我们在本指南中以 **ALFA AWUS036ACM** USB WiFi 网卡作为示例产品。此处展示的每个提示词与图片，均由该网卡的描述生成。目标是建立一份实用的风格参考：当您未来需要产品封面图、Instagram 卡片或技术信息图表时，可以查阅应使用哪种技能与风格。
 
@@ -485,6 +509,9 @@ for each component
 
 ---
 
+
+{{< faq >}}
+
 ## 关于 baoyu-skills
 
 完整的 baoyu-skills 插件集合可在 GitHub 上获取：
@@ -496,3 +523,11 @@ for each component
 想进一步了解本指南全程使用的示例产品 AWUS036ACM 吗？
 
 {{< button href="/zh-cn/products/alfa/awus036acm/" >}}查看 AWUS036ACM 产品页面{{< /button >}}
+
+## 参考文献
+
+1. [baoyu-skills GitHub 仓库](https://github.com/JimLiu/baoyu-skills.git)
+2. [GitHub Copilot CLI 官方文档](https://docs.github.com/en/copilot/github-copilot-in-the-cli)
+3. [ALFA Network AWUS036ACM 产品规格](https://www.alfa.com.tw/)
+4. [MediaTek MT7612U 芯片组数据](https://www.mediatek.com/products/networking-and-connectivity)
+5. [OpenAI 图片生成 API 文件](https://platform.openai.com/docs/guides/images)

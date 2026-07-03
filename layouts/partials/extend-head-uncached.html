@@ -56,13 +56,24 @@
     "addressLocality": "Taipei",
     "addressCountry": "TW"
   },
-  "sameAs": []
+  "sameAs": [
+    "https://www.linkedin.com/company/yupitek",
+    "https://www.crunchbase.com/organization/yupitek"
+  ]
 }
 </script>
 {{ end }}
 
-{{/* Product schema — injected on individual ALFA product pages (brands contains "alfa", not a section) */}}
-{{ if and (in (.Params.brands | default slice) "alfa") (not .IsSection) }}
+{{/* Product schema — injected on individual product pages (brands contains "alfa" or "ubiquiti") */}}
+{{ if or (in (.Params.brands | default slice) "alfa") (in (.Params.brands | default slice) "ubiquiti") }}
+{{- $brandName := "ALFA Network" -}}
+{{- $brandUrl := "https://www.alfa.com.tw" -}}
+{{- $manufacturerName := "ALFA Network Inc." -}}
+{{- if in (.Params.brands | default slice) "ubiquiti" -}}
+{{- $brandName = "Ubiquiti" -}}
+{{- $brandUrl = "https://www.ui.com" -}}
+{{- $manufacturerName = "Ubiquiti Inc." -}}
+{{- end -}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,13 +83,13 @@
   "image": "{{ with .Params.featureimage }}{{ . | absURL }}{{ end }}",
   "brand": {
     "@type": "Brand",
-    "name": "ALFA Network",
-    "url": "https://www.alfa.com.tw"
+    "name": "{{ $brandName }}",
+    "url": "{{ $brandUrl }}"
   },
   "manufacturer": {
     "@type": "Organization",
-    "name": "ALFA Network Inc.",
-    "url": "https://www.alfa.com.tw"
+    "name": "{{ $manufacturerName }}",
+    "url": "{{ $brandUrl }}"
   },
   "sku": "{{ .File.Dir | path.Base | upper }}",
   "offers": {

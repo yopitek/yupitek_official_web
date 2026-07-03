@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["封包注入", "aireplay-ng", "Kali-Linux", "WiFi網路卡", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "什麼是 WiFi 封包注入？"
+    answer: "封包注入是網卡將任意 802.11 訊框直接傳送至無線媒介的能力，讓 aireplay-ng 等工具能建構並發送管理訊框、控制訊框與資料訊框。"
+  - question: "為什麼大多數網卡無法注入封包？"
+    answer: "限制在於驅動程式而非硬體。消費級驅動依標準操作模型驗證輸出訊框，需驅動明確啟用 mac80211 的原始 TX 路徑才能支援注入。"
+  - question: "如何測試網卡是否支援封包注入？"
+    answer: "先啟用監聽模式，再執行 aireplay-ng --test wlan0mon。若輸出 Injection is working! 即確認支援，成功率 80% 以上為可靠。"
+  - question: "哪些 ALFA 網卡支援封包注入？"
+    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）三款均完整支援，搭配正確驅動即可在 Kali Linux 上運作。"
+  - question: "封包注入測試成功率低於 50% 該如何改善？"
+    answer: "靠近目標 AP、將監聽介面鎖定至相同頻道、確認 TX Power 設定，並檢查驅動程式是否為 aircrack-ng 版本而非發行版內建版本。"
 ---
+
+封包注入讓無線網卡傳送任意 802.11 訊框，是取消認證攻擊與握手封包擷取的核心能力。需具備支援的晶片組與驅動程式才能運作。
+
+{{< tldr >}}
+封包注入是網卡傳送任意 802.11 訊框的能力，受限於驅動程式而非硬體。RTL8812AU、MT7612U、MT7921AUN 晶片組的 ALFA 網卡搭配 aircrack-ng 驅動即可完整支援。
+{{< /tldr >}}
 
 ## 什麼是封包注入？
 
@@ -197,6 +216,8 @@ sudo aireplay-ng --deauth 5 -a AA:BB:CC:DD:EE:FF -c 11:22:33:44:55:66 wlan0mon
 
 ---
 
+{{< faq >}}
+
 ## 負責任地使用封包注入
 
 封包注入是一項功能強大的技術。其在授權滲透測試中的合法應用已有充分實績——擷取握手封包、驗證無線安全控制措施、測試用戶端行為。濫用此技術既有害且違法。
@@ -211,3 +232,11 @@ sudo aireplay-ng --deauth 5 -a AA:BB:CC:DD:EE:FF -c 11:22:33:44:55:66 wlan0mon
 ---
 
 如需選購已確認支援封包注入的無線網路卡，歡迎瀏覽 [Yopitek 的 ALFA Network 產品系列](/zh-tw/products/alfa/)——台灣授權 ALFA Network 經銷商。
+
+## 參考來源
+
+1. [aircrack-ng 官方網站與文件](https://www.aircrack-ng.org/)
+2. [aireplay-ng 使用說明](https://www.aircrack-ng.org/doku.php?id=aireplay-ng)
+3. [Kali Linux 官方文件](https://www.kali.org/docs/)
+4. [Linux mac80211 子系統文件](https://wireless.wiki.kernel.org/en/developers/Documentation/mac80211)
+5. [IEEE 802.11 標準資源](https://standards.ieee.org/ieee/802.11/)

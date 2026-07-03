@@ -2,14 +2,32 @@
 title: "ALFA-Adapter Setup-Anleitung für Windows 10 und Windows 11"
 description: "So installieren und konfigurieren Sie ALFA USB-WLAN-Adapter unter Windows 10/11. Treiber-Download, Monitor-Modus mit Acrylic WiFi, Fehlerbehebung und Adaptervergleich für Windows-Nutzer."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "driver-install", "acrylic-wifi"]
 featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
+faq:
+  - question: "Unterstützt Windows den Monitor Mode für ALFA-Netzwerkkarten?"
+    answer: "Windows unterstützt keinen vollständigen Monitor Mode nativ. Das NDIS-Treibermodell ermöglicht keine Rohdaten-Erfassung von 802.11-Paketen; lediglich Acrylic WiFi Pro kann passive Scans durchführen. Für den vollständigen Monitor Mode ist Kali Linux erforderlich."
+  - question: "Ist Packet Injection unter Windows möglich?"
+    answer: "Nein. Derzeit unterstützt kein Windows-Treiber die Packet Injection von Rohdaten-802.11-Paketen für ALFA-Netzwerkkarten. Diese Funktion ist nur unter Linux verfügbar."
+  - question: "Welche ALFA-Netzwerkkarte hat die beste Kompatibilität unter Windows?"
+    answer: "Die AWUS036ACH (RTL8812AU) und AWUS036ACM (MT7612U) verfügen über WHQL-signierte Treiber und weisen die umfassendsten Kompatibilitätsaufzeichnungen für Windows 10/11 auf, was Plug-and-Play am stabilsten macht."
+  - question: "Erfordert Windows 11 die manuelle Installation des MT7921AUN-Treibers?"
+    answer: "Nein. Der MT7921AUN-Treiber ist bereits im Windows 11-Treiberrepository (Build 22000 und höher) integriert. Nach dem Einstecken der Netzwerkkarte wird der Treiber innerhalb weniger Minuten automatisch bezogen."
+  - question: "Was tun, wenn der Geräte-Manager Code 43 anzeigt?"
+    answer: "Nach der Deinstallation des Treibers und einem Neustart stecken Sie die Netzwerkkarte erneut ein und installieren den Treiber manuell mit Methode B. Wenn weiterhin Fehlercode 43 auftritt und dies auf mehreren Geräten identisch ist, deutet dies in der Regel auf einen Hardwaredefekt hin."
+
 ---
 
 ALFA Network USB-WLAN-Adapter sind in Sicherheitsforschungs- und Netzwerkkreisen bestens bekannt, aber die meisten Anleitungen konzentrieren sich ausschließlich auf Linux. Die gute Nachricht für Windows-Nutzer: Jeder gängige ALFA-Adapter funktioniert unter Windows 10 und Windows 11 mit den vom Hersteller bereitgestellten Treibern — eine Kompilierung aus dem Quellcode ist nicht erforderlich.
+
+{{< tldr >}}
+ALFA-Netzwerkkarten können unter Windows 10/11 per Plug-and-Play mit WiFi verbunden werden, aber das NDIS-Treibermodell unterstützt keinen vollständigen Monitor Mode und keine Packet Injection. Für Sicherheitstests wechseln Sie bitte zu Kali Linux (nativ oder per USB-Passthrough in einer VM). Windows eignet sich für die tägliche Verbindung und WiFi-Kartierung.
+{{< /tldr >}}
 
 Der entscheidende Unterschied zu Linux ist der Monitor-Modus. Unter Linux nutzen Tools wie `aircrack-ng` und `airodump-ng` die rohe 802.11-Erfassung mit Paket-Injektion. Unter Windows stellt das Treibermodell (NDIS) nicht dieselben Hardware-Funktionen bereit. Vollständiger Monitor-Modus und Paket-Injektion sind **nativ unter Windows nicht verfügbar**. Was Windows jedoch sehr gut beherrscht, ist Plug-and-Play-Konnektivität und WLAN-Scanning mit ausgereiften Tools wie Acrylic WiFi Analyzer.
 
@@ -255,8 +273,18 @@ Fazit: Windows ist eine exzellente Plattform für ALFA-Adapter, wenn Ihr Ziel Ne
 
 ---
 
+{{< faq >}}
+
 ## Verwandte Anleitungen
 
 - [VirtualBox & VMware USB-Passthrough für ALFA-Adapter](/de/blog/alfa-adapter-virtualbox-vmware-usb/) — Kali Linux in einer VM mit voller ALFA-Adapter-Unterstützung betreiben
 - [Treiber-Installationsanleitung für Kali Linux & Ubuntu](/de/blog/install-alfa-driver-kali-ubuntu/) — Vollständige chipsatzspezifische Treiberinstallation
 - [ALFA WLAN-Adapter Kaufberatung 2026](/de/blog/alfa-wifi-adapter-buyer-guide-2026/) — Welcher Adapter ist der richtige für Sie?
+
+## Referenzen
+
+1. [ALFA Network Offizielle Treiber-Downloads](https://www.alfa.com.tw/service_1.html)
+2. [Microsoft NDIS Treiber-Dokumentation](https://learn.microsoft.com/windows-hardware/drivers/network/ndis-drivers)
+3. [Acrylic WiFi Analyzer Offizielle Website](https://www.acrylicwifi.com/)
+4. [Npcap Offizielle Website](https://npcap.com/)
+5. [Wireshark Offizielle Dokumentation](https://www.wireshark.org/docs/)

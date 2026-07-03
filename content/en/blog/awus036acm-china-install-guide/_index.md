@@ -1,6 +1,19 @@
 ---
 title: "ALFA AWUS036ACM Driver Install Guide for China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "What chipset does AWUS036ACM use? Does it need drivers?"
+    answer: "It uses the MediaTek MT7612U chipset. The mt76x2u driver has been built into the Linux kernel since 4.19. In most cases, it is plug-and-play."
+  - question: "Does AWUS036ACM support VIF virtual interfaces?"
+    answer: "Yes. MT7612U fully supports kernel-native VIF, allowing simultaneous monitor and managed mode interfaces without patching."
+  - question: "Do I need a VPN to install AWUS036ACM in China?"
+    answer: "No. The driver is already in the kernel. You only need to install the firmware-misc-nonfree package from domestic mirrors."
+  - question: "How much power does AWUS036ACM draw on Raspberry Pi?"
+    answer: "About 400mW at full load. A powered USB hub is recommended to prevent Pi throttling."
+  - question: "Why does Debian recognize the AWUS036ACM but it does not work?"
+    answer: "Missing the firmware-misc-nonfree package. Install it and the adapter will initialize properly."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -15,6 +28,17 @@ featureimage: "/images/blog/awus036acm-china-install-guide.webp"
 ---
 
 The AWUS036ACM is one of the easiest Alfa adapters to set up on Linux. Its MT7612U chip uses the `mt76x2u` driver, which is built into the Linux kernel since version 4.19. On most modern systems, the adapter works with two or three commands. This guide covers the full setup — driver verification, monitor mode, packet injection, and VIF — using only domestic mirrors. No GitHub required.
+
+{{< tldr >}}
+AWUS036ACM with MT7612U chipset has an in-kernel driver with no compilation needed. It supports monitor mode, packet injection, and simultaneous VIF operation. In China, only the firmware package needs installing.
+{{< /tldr >}}
+
+Make sure you have these ready:
+
+
+
+
+
 
 ## Before You Start
 
@@ -546,6 +570,8 @@ Run `iwconfig` to confirm all three interfaces (`wlan0`, `ap0`, `mon0`) are acti
 
 ---
 
+{{< faq >}}
+
 ## Troubleshooting
 
 | Problem | Likely Cause | Fix |
@@ -586,3 +612,11 @@ This is part of the **Alfa China Install Guide** series. Each article covers one
 - [AWUS036EAC China Install Guide](/en/blog/awus036eacs-china-install-guide/)
 
 Questions? Leave a comment below or contact us at [yupitek.com](https://yupitek.com/en/contact/).
+
+## References
+
+1. [Linux Kernel mt76 Driver](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [aircrack-ng Official Documentation](https://www.aircrack-ng.org/)
+3. [ALFA Network Official Website](https://www.alfa.com.tw/)
+4. [Kali Linux Official Documentation](https://www.kali.org/docs/)
+5. [Debian firmware-misc-nonfree Package](https://packages.debian.org/bookworm/firmware-misc-nonfree)

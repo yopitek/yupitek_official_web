@@ -12,7 +12,26 @@ series: ["alfa-china-install-guide"]
 series_order: 7
 related_product: "/zh-tw/products/alfa/awus036axml/"
 featureimage: "/images/blog/awus036axml-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036AXML 用什麼晶片？跟 AWUS036AXM 一樣嗎？"
+    answer: "同樣採用 MediaTek MT7921AUN 晶片，但 AWUS036AXML 是 USB-C 介面的旗艦版。"
+  - question: "AWUS036AXML 的驅動需要手動安裝嗎？"
+    answer: "不需要，mt7921u 驅動自 Linux 核心 5.18 起已內建，僅需安裝韌體套件。"
+  - question: "AWUS036AXML 支援 VIF 虛擬介面嗎？"
+    answer: "支援，MT7921AUN 完整支援核心原生 VIF，可同時執行監控介面和受管介面。"
+  - question: "Ubuntu 22.04 安裝 AWUS036AXML 為什麼驅動載入失敗？"
+    answer: "Ubuntu 22.04 預設核心 5.15 太舊，需安裝 HWE 核心升級至 5.18 以上。"
+  - question: "AWUS036AXML 的 USB ID 是多少？"
+    answer: "MediaTek MT7921AUN 的 USB ID 為 0e8d:7961，用 lsusb 可確認。"
 ---
+
+ALFA AWUS036AXML 是 WiFi 6E 三頻 USB-C 旗艦網卡，搭載 MT7921AUN 晶片，驅動自核心 5.18 內建，僅需安裝韌體套件即可使用。
+
+{{< tldr >}}
+AWUS036AXML 採用 MT7921AUN 晶片，WiFi 6E 三頻 USB-C 旗艦網卡，驅動核心內建，安裝韌體後即可使用監控模式、封包注入與 VIF。
+{{< /tldr >}}
 
 AWUS036AXML 是 ALFA 的 WiFi 6E 旗艦機種——一款三頻 USB-C 無線網路卡，涵蓋 2.4 GHz、5 GHz 及較少壅塞的 6 GHz 頻段。其 MT7921AUN 晶片使用 `mt7921u` 驅動程式，自 Linux 核心 5.18 版起已內建支援。在 Ubuntu 24.04 與 Kali 2025 上，只需從國內鏡像站安裝韌體套件即可即插即用。本指南涵蓋完整設定步驟——韌體、驅動程式驗證、監控模式、封包注入與 VIF——無需訪問 GitHub。
 
@@ -454,6 +473,8 @@ iwconfig
 | 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦） |
 | 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像檔（備用） |
 
+{{< faq >}}
+
 ## 更多中國適用的 Alfa 網路卡安裝指南
 
 本文是 **Alfa China Install Guide** 系列的一部分：
@@ -468,3 +489,10 @@ iwconfig
 - [AWUS036EACS 中國安裝指南](/zh-tw/blog/awus036eacs-china-install-guide/) — RTL8821CU，Windows
 
 有疑問？請在下方留言，或透過 [yupitek.com](https://yupitek.com/zh-tw/contact/) 聯絡我們。
+
+## 參考來源
+
+1. [Linux Kernel mt7921 驅動](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [aircrack-ng 官方文件](https://www.aircrack-ng.org/)
+3. [ALFA Network 官網](https://www.alfa.com.tw/)
+4. [Kali Linux 官方文件](https://www.kali.org/docs/)

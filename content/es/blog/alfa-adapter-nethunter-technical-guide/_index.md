@@ -7,9 +7,22 @@ showBreadcrumbs: true
 showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Qué requisitos de teléfono tiene el uso de tarjetas inalámbricas ALFA con Kali NetHunter?"
+    answer: "Necesitas un teléfono Android con soporte OTG, root y el kernel de Kali NetHunter flasheado. Los modelos verificados como compatibles incluyen la serie Google Pixel y los modelos insignia antiguos de OnePlus. La compatibilidad específica depende de la versión del kernel y la ubicación del controlador del chip de la tarjeta."
+  - question: "¿Cuál es la diferencia entre los controladores MT7610U/MT7612U y RTL8812AU?"
+    answer: "Los controladores MT7610U/MT7612U están en el árbol del núcleo, son plug-and-play sin compilar; RTL8812AU requiere compilación e instalación externa vía DKMS, y puede necesitar recompilación tras actualizar el kernel. Para uso en seguridad, los controladores del árbol del núcleo son más estables."
+  - question: "¿Las tarjetas ALFA admiten el modo monitor en NetHunter?"
+    answer: "Sí, MT7610U/MT7612U admiten el modo monitor y la inyección de paquetes. RTL8812AU también lo admite con kernel < 6.12, pero en kernel 6.12+ el modo monitor está limitado. Para investigación de seguridad se recomienda priorizar tarjetas MT7610U/MT7612U."
 ---
 
 Si ya ha configurado un adaptador ALFA con NetHunter siguiendo las instrucciones básicas de OTG y desea la versión rápida, nuestra [guía de configuración OTG](/es/blog/alfa-adapter-nethunter-android-otg/) cubre los aspectos esenciales. Este artículo profundiza más: es una referencia técnica completa dirigida a profesionales de seguridad que necesitan evaluar la compatibilidad de teléfonos y adaptadores antes de adquirir el hardware, comprender qué enfoque de controlador sigue funcionando tras las actualizaciones del kernel y ver resultados de pruebas verificados antes de comprometerse con una combinación específica.
+
+{{< tldr >}}
+Los controladores nativos MT7610U/MT7612U del núcleo son plug-and-play; RTL8812AU requiere compilación DKMS. NetHunter necesita root + soporte OTG; se recomienda priorizar tarjetas MT7612U para evitar problemas de controlador.
+{{< /tldr >}}
 
 Nos centramos en una pregunta que la mayoría de las guías de NetHunter omiten: **¿qué adaptador es realmente plug-and-play y cuál le llevará a un laberinto de compilación de controladores en el peor momento posible?** La respuesta depende del chipset, de la versión del kernel del teléfono y de si el controlador se incluye dentro del árbol del kernel o reside en un repositorio DKMS externo. Equivocarse significa que su adaptador se quedará en la mochila mientras usted mira errores de `modprobe` sobre el terreno. Acertar significa que lo conecta y empieza a escanear.
 
@@ -473,6 +486,8 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
+{{< faq >}}
+
 ## Guías Relacionadas
 
 - [Configuración básica OTG con adaptadores ALFA y NetHunter](/es/blog/alfa-adapter-nethunter-android-otg/)
@@ -484,3 +499,11 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 *Este documento ha sido elaborado por **Yupitek Ltd** — distribuidor autorizado de ALFA Network para Taiwán.*  
 *Datos actualizados a 2026-06-09. Las versiones del kernel Linux y NetHunter se actualizan periódicamente; verifique las fuentes oficiales para obtener la información de compatibilidad más reciente.*
+
+## Referencias
+
+1. [Documentación oficial de Kali NetHunter](https://www.kali.org/docs/nethunter/) — NetHunter 安裝與核心刷入指南
+2. [Linux Kernel mt76 驅動原始碼](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) — MT7610U/MT7612U 主線驅動
+3. [aircrack-ng RTL8812AU 驅動](https://github.com/aircrack-ng/rtl8812au) — DKMS 外部驅動儲存庫
+4. [Sitio oficial de ALFA Network](https://alfa.com.tw/) — 產品規格與驅動下載
+5. [Documentación oficial de Android USB OTG](https://developer.android.com/guide/topics/connectivity/usb) — OTG API 與硬體需求

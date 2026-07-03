@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "如何在 Kali Linux 与 Ubuntu 24.04 安装 ALFA USB WiFi 驱动程序（2026）"
 description: "完整教程：在 Kali Linux 2024 和 Ubuntu 24.04 安装 ALFA Network USB WiFi 网卡驱动，覆盖 RTL8812AU、MT7612U 和 MT7921AUN 芯片组，附故障排除技巧。"
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["驱动安装", "Kali-Linux", "Ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
 featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
+faq:
+  - question: "ALFA USB WiFi 网卡在 Linux 上需要安装驱动吗？"
+    answer: "视芯片组而定。MT7612U 与 MT7921AUN 已内置核心，执行 modprobe 即可。RTL8812AU 需从 aircrack-ng GitHub 安装外部驱动。"
+  - question: "如何确认我的 ALFA 网卡使用哪种芯片组？"
+    answer: "插入网卡后执行 lsusb，对照 USB ID 即可辨识。0bda:8812 为 RTL8812AU，0e8d:7612 为 MT7612U，0e8d:7961 为 MT7921AUN。"
+  - question: "DKMS 是什么？为什么需要它？"
+    answer: "DKMS 会在新核心安装时自动重新编译驱动模块。未使用 DKMS 时，每次内核更新后外部驱动都会失效，需手动重新编译。"
+  - question: "Ubuntu 22.04 能使用 MT7921AUN 网卡吗？"
+    answer: "预装核心 5.15 不支持。需安装 HWE 核心 linux-generic-hwe-22.04 升级至 6.2 以上，或升级至 Ubuntu 24.04 LTS。"
+  - question: "make 编译驱动时报错 linux/module.h not found 怎么办？"
+    answer: "内核头文件档未安装。执行 sudo apt install linux-headers-$(uname -r) 安装与当前内核版本一致的标头后重新编译。"
 ---
 
+
+
+
 让 USB WiFi 网卡在 Linux 上正常工作，归根结底取决于一件事：驱动程序。与 Windows 上厂商提供可执行安装包的方式不同，Linux 使用内核模块——编译后由操作系统加载、用于与硬件通信的代码文件。理解这一机制，驱动排障就会变得简单明了，安装过程也将有迹可循。
+
+{{< tldr >}}
+ALFA 网卡驱动安装取决于芯片组：MT7612U 与 MT7921AUN 内置核心即插即用，RTL8812AU 需从 aircrack-ng GitHub 安装并搭配 DKMS 确保内核更新后持久运行。
+{{< /tldr >}}
+
 
 本指南涵盖 Kali Linux 2024/2025 和 Ubuntu 24.04 LTS 上所有主流 ALFA Network USB WiFi 网卡芯片组的驱动安装方法。
 
@@ -393,6 +417,9 @@ Yopitek 是 ALFA Network 授权经销商。浏览完整的 [ALFA Network 产品�
 
 ---
 
+
+{{< faq >}}
+
 ## 总结
 
 Linux WiFi 驱动安装遵循简单的决策树：
@@ -403,3 +430,11 @@ Linux WiFi 驱动安装遵循简单的决策树：
 4. **出现问题？** → 查阅故障排除表，确认头文件与内核版本匹配，检查 `dmesg`
 
 ALFA Network 网卡的一大优势在于：所有四款主流芯片组都有文档完善、持续维护的驱动方案，你永远不会陷入无解的境地。
+
+## 参考文献
+
+1. [aircrack-ng 官方 rtl8812au 驱动程序](https://github.com/aircrack-ng/rtl8812au)
+2. [morrownr USB-WiFi 知识库](https://github.com/morrownr/USB-WiFi)
+3. [Kali Linux 官方文档](https://www.kali.org/docs/)
+4. [Ubuntu 官方 HWE 核心说明](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
+5. [Linux Wireless mt76 驱动程序](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)

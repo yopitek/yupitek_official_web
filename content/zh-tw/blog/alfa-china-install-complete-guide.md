@@ -9,7 +9,26 @@ series: ["alfa-china-install-guide"]
 series_order: 9
 description: "終極 Alfa USB WiFi 網卡 Linux 安裝指南，適用於中國大陸用戶。涵蓋 Kali Linux、Ubuntu 22/24、Debian、Raspberry Pi，全程使用境內鏡像，無需訪問 GitHub。"
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "在中國安裝 Alfa WiFi 網卡需要翻牆嗎？"
+    answer: "不需要，全程使用中科大、阿里雲、清華等國內鏡像及 Gitee 源碼鏡像即可完成。"
+  - question: "哪款 Alfa 網卡最適合監聽模式和封包注入？"
+    answer: "AWUS036ACM 搭載 MT7612U 晶片，驅動核心內建且完整支援 VIF，是最佳選擇。"
+  - question: "哪款 Alfa 網卡支援 WiFi 6？"
+    answer: "AWUS036AX 和 AWUS036AXER 採用 RTL8832BU 晶片支援 WiFi 6，Ubuntu 24.04 免驅即用。"
+  - question: "哪款 Alfa 網卡支援 WiFi 6E？"
+    answer: "AWUS036AXM 和 AWUS036AXML 採用 MT7921AUN 晶片支援 WiFi 6E 三頻段。"
+  - question: "樹莓派上使用 Alfa 網卡需要注意什麼？"
+    answer: "務必搭配有源 USB Hub 供電，並刷 Kali ARM64 版本以獲得最佳驅動支援。"
 ---
+
+本指南涵蓋在中國大陸所有主要 Linux 發行版上安裝每一款 Alfa USB WiFi 網卡的完整步驟，全程使用國內鏡像，無需訪問 GitHub。
+
+{{< tldr >}}
+中國大陸 Alfa WiFi 網卡 Linux 安裝終極指南，涵蓋 Kali、Ubuntu、Debian、樹莓派，支援 RTL8812AU、MT7612U、RTL8832BU 等所有晶片，全程國內鏡像免翻牆。
+{{< /tldr >}}
 
 ## 歡迎閱讀 Alfa Linux 終極安裝指南
 
@@ -656,6 +675,8 @@ sudo ip link set mon0 up
 
 ---
 
+{{< faq >}}
+
 ## 結語
 
 本指南涵蓋了在**所有主要 Linux 發行版**上安裝**所有 Alfa USB WiFi 網卡**的方法，全程使用**中國大陸可訪問的資源**。完成後您應能：
@@ -686,3 +707,11 @@ sudo ip link set mon0 up
 ---
 
 *最後更新：2026 年 4 月 24 日*
+
+## 參考來源
+
+1. [aircrack-ng 官方文件](https://www.aircrack-ng.org/)
+2. [Linux Kernel mt76 驅動](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+3. [ALFA Network 官網](https://www.alfa.com.tw/)
+4. [Kali Linux 官方文件](https://www.kali.org/docs/)
+5. [Gitee 驅動源碼鏡像](https://gitee.com/mirrors)

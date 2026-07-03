@@ -9,7 +9,27 @@ series: ["alfa-china-install-guide"]
 series_order: 9
 description: "Le guide ultime pour installer tous les adaptateurs WiFi USB Alfa sous Linux en Chine. Couvre Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi. Aucun GitHub requis - utilisez uniquement des miroirs domestiques."
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Faut-il un VPN pour installer un adaptateur WiFi Alfa en Chine ?"
+    answer: "Non, l'installation utilise uniquement des miroirs nationaux (USTC, Aliyun, Tsinghua) et Gitee pour le code source."
+  - question: "Quel adaptateur Alfa est le meilleur pour le mode moniteur et l'injection de paquets ?"
+    answer: "L'AWUS036ACM équipé de la puce MT7612U, dont le pilote est intégré au noyau et qui offre un support VIF complet, est le meilleur choix."
+  - question: "Quels adaptateurs Alfa prennent en charge le Wi-Fi 6 ?"
+    answer: "Les AWUS036AX et AWUS036AXER utilisent la puce RTL8832BU pour le Wi-Fi 6, avec un fonctionnement plug-and-play sur Ubuntu 24.04."
+  - question: "Quels adaptateurs Alfa prennent en charge le Wi-Fi 6E ?"
+    answer: "Les AWUS036AXM et AWUS036AXML utilisent la puce MT7921AUN pour le Wi-Fi 6E tri-bande."
+  - question: "Que faut-il savoir pour utiliser un adaptateur Alfa sur Raspberry Pi ?"
+    answer: "Utilisez impérativement un hub USB alimenté et installez la version Kali ARM64 pour un meilleur support des pilotes."
 ---
+
+{{< tldr >}}
+Le guide ultime d'installation des adaptateurs WiFi Alfa sous Linux en Chine continentale, couvrant Kali, Ubuntu, Debian et Raspberry Pi, avec support de toutes les puces RTL8812AU, MT7612U et RTL8832BU via des miroirs nationaux sans VPN.
+{{< /tldr >}}
+
+Si vous lisez ceci, c'est probablement parce que vous avez acheté un adaptateur WiFi USB Alfa et que vous vous retrouvez bloqué car :
+
 
 ## Bienvenue dans le guide ultime d'installation d'Alfa sous Linux
 
@@ -119,6 +139,8 @@ sudo apt update
 
 ---
 
+{{< faq >}}
+
 ## Notes Finales
 
 Ce guide couvre **tous les adaptateurs WiFi USB Alfa** sur **toutes les distributions Linux majeures**, en utilisant **uniquement des ressources accessibles en Chine**.
@@ -128,3 +150,12 @@ Ce guide couvre **tous les adaptateurs WiFi USB Alfa** sur **toutes les distribu
 ---
 
 *Dernière mise à jour : 24 avril 2026*
+
+---
+
+## Références
+1. [Documentation officielle aircrack-ng](https://www.aircrack-ng.org/)
+2. [Pilote mt76 du noyau Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+3. [Site officiel ALFA Network](https://www.alfa.com.tw/)
+4. [Documentation officielle Kali Linux](https://www.kali.org/docs/)
+5. [Miroir des pilotes sur Gitee](https://gitee.com/mirrors)

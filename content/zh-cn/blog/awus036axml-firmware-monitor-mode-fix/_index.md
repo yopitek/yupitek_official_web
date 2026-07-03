@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "AWUS036AXML 监控模式固件修复：解决主动模式崩溃问题"
 description: "如何修复 AWUS036AXML 在 Kali Linux 上的监控模式固件崩溃问题。涵盖 MT7921AUN 固件更新、内核版本要求、主动与被动模式的解决方案，以及 hcxdumptool 替代方案。"
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
+faq:
+  - question: "AWUS036AXML 为什么会在主动监控模式下当机？"
+    answer: "MT7921AUN 采用固件式 MAC 架构，当前 Linux mt7921u 驱动程序与固件组合未完整实作主动注入所需的指令路径，执行 aireplay-ng 后接口会消失。"
+  - question: "如何修复 MT7921AUN 的主动模式当机？"
+    answer: "更新 firmware-misc-nonfree 软件包至最新版本、升级至核心 6.6 以上，并避免高数据包率的取消验证洪水，可改善但未必完全消除当机问题。"
+  - question: "hcxdumptool 如何在不注入数据包下捕获 PMKID？"
+    answer: "hcxdumptool 以被动模式从访问点广播的信标与探测数据包中捕获 PMKID，完全不传送任何数据包，不会触发固件当机。"
+  - question: "AWUS036AXML 被动监听有什么限制？"
+    answer: "被动监听可正常捕获信标、握手与 PMKID，但无法执行取消验证、探测请求或关联洪水等主动操作，这些需改用 AWUS036ACH 处理。"
+  - question: "哪些内核版本能改善 MT7921AUN 稳定性？"
+    answer: "核心 6.1 LTS 或更新版本已纳入多项 mt7921u 稳定性修补，核心 6.6 及更新版本包含 MediaTek USB 驱动程序堆叠的额外改善。"
 ---
 
+
+
+
 **ALFA AWUS036AXML** 是 ALFA Network 的旗舰 WiFi 6E 网卡，搭载 MediaTek MT7921AUN 芯片组，支持三频（2.4 / 5 / 6 GHz），是 2026 年少数能在 6 GHz 频段进行被动监听的 USB 网卡之一。在站点勘测、数据包捕获、PMKID 收集等使用场景下，它的表现相当出色。
+
+{{< tldr >}}
+AWUS036AXML 的 mt7921u 驱动程序在主动数据包注入时会触发固件当机。本文说明根本原因、诊断步骤，以及更新固件、升级核心与改用 hcxdumptool 被动捕获等修复方案。
+{{< /tldr >}}
+
 
 但有一个已知问题会让用户措手不及：**主动监控模式指令会导致固件崩溃**。运行 `aireplay-ng` 或 `mdk4` 等工具后，`wlan0mon` 接口会完全消失，必须重新插拔网卡才能恢复。这不是硬件缺陷，而是目前 Linux `mt7921u` 驱动程序与固件的限制。
 
@@ -221,8 +245,19 @@ mt7921u 1-2.3:1.0: HW/SW Version: ...
 
 ---
 
+
+{{< faq >}}
+
 ## 相关指南
 
 - [AWUS036AXML 完整评测](/zh-cn/blog/awus036axml-wifi-6e-review/)
 - [数据包注入指南](/zh-cn/blog/packet-injection-guide/)
 - [驱动程序安装指南](/zh-cn/blog/install-alfa-driver-kali-ubuntu/)
+
+## 参考文献
+
+1. [Linux firmware 仓库（kernel.org）](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git)
+2. [Linux 核心 mt76 驱动程序](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+3. [aircrack-ng 工具软件包](https://www.aircrack-ng.org/)
+4. [hcxdumptool GitHub 专案](https://github.com/ZerBea/hcxdumptool)
+5. [ALFA Network 官方支持](https://www.alfa.com.tw/)

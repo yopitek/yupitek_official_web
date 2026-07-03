@@ -2,12 +2,31 @@
 title: "AWUS036AXML 監控模式韌體修復：解決主動模式當機問題"
 description: "如何修復 AWUS036AXML 在 Kali Linux 上的監控模式韌體當機問題。涵蓋 MT7921AUN 韌體更新、核心版本需求、主動與被動模式的解決方案，以及 hcxdumptool 替代方案。"
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
+faq:
+  - question: "AWUS036AXML 為什麼會在主動監控模式下當機？"
+    answer: "MT7921AUN 採用韌體式 MAC 架構，目前 Linux mt7921u 驅動程式與韌體組合未完整實作主動注入所需的指令路徑，執行 aireplay-ng 後介面會消失。"
+  - question: "如何修復 MT7921AUN 的主動模式當機？"
+    answer: "更新 firmware-misc-nonfree 套件至最新版本、升級至核心 6.6 以上，並避免高封包率的取消驗證洪水，可改善但未必完全消除當機問題。"
+  - question: "hcxdumptool 如何在不注入封包下擷取 PMKID？"
+    answer: "hcxdumptool 以被動模式從存取點廣播的信標與探測封包中擷取 PMKID，完全不傳送任何封包，不會觸發韌體當機。"
+  - question: "AWUS036AXML 被動監聽有什麼限制？"
+    answer: "被動監聽可正常擷取信標、握手與 PMKID，但無法執行取消驗證、探測請求或關聯洪水等主動操作，這些需改用 AWUS036ACH 處理。"
+  - question: "哪些核心版本能改善 MT7921AUN 穩定性？"
+    answer: "核心 6.1 LTS 或更新版本已納入多項 mt7921u 穩定性修補，核心 6.6 及更新版本包含 MediaTek USB 驅動程式堆疊的額外改善。"
 ---
+
+AWUS036AXML 在主動監控模式下會因 MT7921AUN 韌體限制導致介面當機，可透過更新韌體、升級核心至 6.6 以上，或改用 hcxdumptool 進行被動 PMKID 擷取來解決。
+
+{{< tldr >}}
+AWUS036AXML 的 mt7921u 驅動程式在主動封包注入時會觸發韌體當機。本文說明根本原因、診斷步驟，以及更新韌體、升級核心與改用 hcxdumptool 被動擷取等修復方案。
+{{< /tldr >}}
 
 **ALFA AWUS036AXML** 是 ALFA Network 的旗艦 WiFi 6E 網卡，搭載 MediaTek MT7921AUN 晶片組，支援三頻（2.4 / 5 / 6 GHz），是 2026 年少數能在 6 GHz 頻段進行被動監聽的 USB 網卡之一。在站點勘查、封包擷取、PMKID 收集等使用情境下，它的表現相當出色。
 
@@ -221,8 +240,18 @@ mt7921u 1-2.3:1.0: HW/SW Version: ...
 
 ---
 
+{{< faq >}}
+
 ## 相關指南
 
 - [AWUS036AXML 完整評測](/zh-tw/blog/awus036axml-wifi-6e-review/)
 - [封包注入指南](/zh-tw/blog/packet-injection-guide/)
 - [驅動程式安裝指南](/zh-tw/blog/install-alfa-driver-kali-ubuntu/)
+
+## 參考來源
+
+1. [Linux firmware 倉庫（kernel.org）](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git)
+2. [Linux 核心 mt76 驅動程式](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+3. [aircrack-ng 工具套件](https://www.aircrack-ng.org/)
+4. [hcxdumptool GitHub 專案](https://github.com/ZerBea/hcxdumptool)
+5. [ALFA Network 官方支援](https://www.alfa.com.tw/)

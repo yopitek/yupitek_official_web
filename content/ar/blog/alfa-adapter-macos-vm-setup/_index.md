@@ -3,11 +3,23 @@ title: "استخدام محولات ALFA للواي فاي على macOS: تمر�
 description: "كيفية استخدام محولات ALFA USB للواي فاي على macOS. يتناول الدعم الأصلي لنظام macOS وتمرير USB عبر VMware Fusion وParallels Desktop لتشغيل وضع المراقبة وحقن الحزم في Kali Linux."
 date: 2026-03-24
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "هل يمكن استخدام وضع المراقبة أصليًا على macOS مع محولات ALFA؟"
+    answer: "لا. لا تدعم معماريتا CoreWLAN وIO80211Family في macOS وضع المراقبة أو حقن الحزم لمحولات الأطراف الثالثة، ويجب تشغيل Kali Linux داخل جهاز افتراضي مع تمرير USB."
+  - question: "هل أختار VMware Fusion أم Parallels على أجهزة Apple Silicon؟"
+    answer: "كلاهما يعمل، لكن Parallels Desktop 19+ يتفوق غالبًا في أداء الأجهزة الافتراضية ARM64 واستقرار تمرير USB على Apple Silicon."
+  - question: "هل أحتاج إلى تجميع برنامج تشغيل لـAWUS036AXML على Kali VM لـApple Silicon؟"
+    answer: "لا. برنامج تشغيل MT7921AUN مدمج في النواة منذ Linux 5.18، ويُتعرَّف عليه تلقائيًا على Kali ARM64 2024.x فما فوق عند التوصيل."
+  - question: "هل يمكنني استخدام ISO القياسي Kali x86_64 على Intel Mac؟"
+    answer: "نعم. أجهزة Intel Mac بمعمارية x86_64، ويمكن استخدام ISO القياسي Kali Linux x86_64 الرسمي من kali.org لإنشاء الجهاز الافتراضي."
+  - question: "هل VirtualBox مناسب لاختبار الأمان على Apple Silicon؟"
+    answer: "غير موصى به. لا يزال دعم VirtualBox لـApple Silicon تجريبيًا، وتمرير USB يعاني من مشاكل معروفة. استخدم VMware Fusion أو Parallels بدلاً منه."
 ---
 
 نظام macOS نظام تشغيل متقن وجاهز للإنتاج. غير أنه ليس منصةً مصممةً للبحث في أمن الشبكات اللاسلكية. الميزتان اللتان تُعرِّفان كل مجموعة أدوات اختبار الاختراق الجادة — **وضع المراقبة** و**حقن الحزم** — غائبتان كليًا عن مكدس الواي فاي في macOS. تُوفِّر برامج تشغيل الواي فاي من Apple واجهةَ شبكة نظيفة وعملية، لا أكثر.
@@ -15,6 +27,10 @@ featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 تُغيِّر محولات ALFA Network هذه المعادلة على Linux، حيث يكون دعم برامج التشغيل عميقًا ومُختبَرًا من المجتمع. أما على macOS، فالوضع مختلف. حتى لو تعرَّف macOS على محول ALFA، فلن يسمح مكدس الشبكة الأصلي بتشغيل وضع المراقبة أو حقن الإطارات الخام. المسار الموثوق الوحيد هو تشغيل **Kali Linux داخل جهاز افتراضي** وتمرير محول USB مباشرةً إلى نظام التشغيل الضيف، متجاوزًا macOS كليًا.
 
 يتناول هذا الدليل كيفية تنفيذ ذلك بصورة صحيحة على كلا المحاكيَين الرئيسيَّين لنظام macOS — VMware Fusion وParallels Desktop — مع اهتمام خاص بـ**Apple Silicon (M1/M2/M3)**، الذي يُدخِل قيودَ معمارية ARM تجعل اختيار المحول وصورة ISO أمرًا غير هيِّن.
+
+{{< tldr >}}
+لا يدعم macOS وضع المراقبة وحقن الحزم لمحولات ALFA. الحل هو تشغيل Kali Linux في VMware Fusion أو Parallels مع تمرير USB للمحول. تتطلب Apple Silicon صورة Kali ARM64.
+{{< /tldr >}}
 
 ---
 
@@ -258,8 +274,18 @@ sudo airodump-ng wlan1mon
 
 ---
 
+{{< faq >}}
+
 ## أدلة ذات صلة
 
 للمضيفين العاملين بـWindows أو Linux ويستخدمون VirtualBox أو VMware Workstation، راجع الدليل المرافق: [دليل إعداد تمرير USB لمحول ALFA: VirtualBox وVMware](/en/blog/alfa-adapter-virtualbox-vmware-usb/).
 
 للاطلاع على تفاصيل محول AWUS036AXML الموصى به في هذا الدليل، بما في ذلك معايير أداء نطاق 6 غيغاهرتز وملاحظات إصدار برنامج التشغيل، راجع المراجعة الكاملة: [مراجعة ALFA AWUS036AXML WiFi 6E](/en/blog/awus036axml-wifi-6e-review/).
+
+## المراجع
+
+1. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+2. [صفحة تنزيل Kali Linux الرسمية](https://www.kali.org/get-kali/)
+3. [صفحة منتج VMware Fusion](https://www.vmware.com/products/fusion.html)
+4. [موقع Parallels Desktop الرسمي](https://www.parallels.com/)
+5. [مشروع تعريف aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)

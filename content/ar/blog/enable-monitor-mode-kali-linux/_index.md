@@ -3,12 +3,30 @@ title: "كيفية تفعيل وضع المراقبة على Kali Linux 2026: د
 description: "دليل خطوة بخطوة لتفعيل وضع المراقبة على Kali Linux 2024/2025 باستخدام airmon-ng أو أمر iw، مع محولات ALFA المتوافقة وحل المشكلات."
 date: 2026-03-23
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["وضع-المراقبة", "Kali-Linux", "airmon-ng", "iw", "محول-WiFi", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما الفرق بين وضع المراقبة والوضع المُدار؟"
+    answer: "وضع المراقبة يجعل المحول يلتقط جميع إطارات 802.11 في الهواء، متجاوزاً قيد الوضع المُدار الذي يستقبل فقط الحزم المطابقة لعنوان MAC الخاص به. هو أساس اختبار الاختراق اللاسلكي."
+  - question: "ما الفرق بين airmon-ng و iw لتفعيل وضع المراقبة؟"
+    answer: "airmon-ng يعالج تلقائياً العمليات المتداخلة وينشئ واجهة افتراضية wlan0mon؛ iw يعدّل الواجهة الحالية مباشرة دون إنشاء واجهة جديدة، مناسب عند الحاجة لتحكم أدق."
+  - question: "ماذا أفعل إذا عادت الواجهة تلقائياً للوضع المُدار بعد تفعيل المراقبة؟"
+    answer: "wpa_supplicant أو NetworkManager يعيد تشغيلها في الخلفية. نفّذ airmon-ng check kill لإنهاء هذه العمليات."
+  - question: "ما محولات ALFA التي تدعم وضع المراقبة بالكامل على Kali Linux؟"
+    answer: "AWUS036ACH (RTL8812AU) و AWUS036AXML (MT7921AUN) و AWUS036ACM (MT7612U) جميعها تدعمه بالكامل. ACM يعمل فور التوصيل."
+  - question: "كيف أحل خطأ Fixed channel wlan0mon: -1 في airodump-ng؟"
+    answer: "يعني أن airodump-ng لا يستطيع تبديل القناة. نفّذ iwconfig wlan0mon channel 1 لتحديد القناة، وأنهِ wpa_supplicant المتبقي."
 ---
+{{< tldr >}}
+وضع المراقبة يزيل قيد المحول على استقبال حزمه فقط، وهو أساس اختبار الاختراق اللاسلكي. استخدم airmon-ng أو iw مع محول ALFA لتفعيله بثبات على Kali Linux.
+{{< /tldr >}}
+
+وضع المراقبة هو وضع تشغيل خاص لبطاقات الشبكة اللاسلكية (NICs) يسمح للمحول بالتقاط **جميع** إطارات 802.11 في الهواء — لا تلك الموجهة إلى جهازك فحسب. في الوضع الاعتيادي "الإداري"، يستقبل محولك الحزم المُوجَّهة إلى عنوان MAC الخاص به ويتجاهل كل شيء آخر. يرفع وضع المراقبة هذا المرشح كلياً.
+
 
 ## ما هو وضع المراقبة ولماذا يهم في اختبار الاختراق؟
 
@@ -265,8 +283,17 @@ sudo systemctl start NetworkManager
 
 ---
 
+{{< faq >}}
+
 ## الملخص
 
 تفعيل وضع المراقبة على Kali Linux خطوتان: إيقاف الخدمات المتعارضة، ثم تبديل وضع الواجهة باستخدام `airmon-ng` أو `iw`. مفتاح النجاح هو استخدام محول بشريحة معالج مدعومة. محولات ALFA Network بشرائح RTL8812AU وMT7921AUN وMT7612U توفر أكثر تجارب plug-and-play موثوقيةً على Kali Linux.
 
 تصفح مجموعة [محولات ALFA Network اللاسلكية المتاحة من Yopitek](/ar/products/alfa/) للعثور على المحول المناسب لبحثك في أمان الشبكات اللاسلكية.
+
+## المراجع
+
+1. [وثائق aircrack-ng الرسمية](https://www.aircrack-ng.org/documentation.html)
+2. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
+3. [نظام Linux Wireless mac80211 الفرعي](https://wireless.wiki.kernel.org/en/developers/Documentation/mac80211)
+4. [دليل استخدام أمر iw](https://wireless.wiki.kernel.org/en/users/Documentation/iw)

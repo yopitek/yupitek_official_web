@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "哪一款 Raspberry Pi 最適合滲透測試？"
+    answer: "Raspberry Pi 5（4 GB 或 8 GB）是最佳選擇。Pi 4（4 GB+）也能正常運作；Pi 3B+ 速度不足以應付即時封包擷取。"
+  - question: "AWUS036ACH 在 Raspberry Pi 上需要編譯驅動嗎？"
+    answer: "需要。RTL8812AU 不在主線核心中，可先嘗試 Kali DKMS 套件 realtek-rtl88xxau-dkms，失敗則從 aircrack-ng GitHub 手動編譯並切換 ARM64 平台旗標。"
+  - question: "可以在無頭 Pi 上用 wlan0 做監聽模式嗎？"
+    answer: "不建議。wlan0 是 Pi 內建 WiFi，用於 SSH 連線。執行 airmon-ng check kill 會中斷 SSH，請改用 wlan1（ALFA 網路卡）並透過乙太網路或 tmux 維持連線。"
+  - question: "AWUS036AXM 在 Raspberry Pi 上能即插即用嗎？"
+    answer: "可以。MT7921AUN 驅動自核心 5.18 起內建，Kali ARM64 映像核心版本更高。只需安裝 firmware-misc-nonfree 韌體套件即可。"
+  - question: "如何為 Raspberry Pi 上的 AWUS036ACH 供電？"
+    answer: "AWUS036ACH 耗電約 500mW，直接插入 Pi 可能導致降頻或重啟。必須使用有源 USB 3.0 集線器，並搭配 3A 以上官方 Pi USB-C 電源供應器。"
 ---
+
+Raspberry Pi 4 或 Pi 5 搭配 ALFA WiFi 網路卡能打造攜帶式滲透測試平台，但 RTL8812AU 驅動需在 ARM64 核心上編譯，AWUS036ACM 則免驅即插即用。
+
+{{< tldr >}}
+Raspberry Pi 4/5 搭配 Kali Linux ARM64 與 ALFA 網路卡可打造口袋型滲透測試平台。AWUS036ACH 需編譯 RTL8812AU 驅動，AWUS036ACM 與 AWUS036AXM 因核心內建驅動可即插即用。需有源 USB 集線器供電。
+{{< /tldr >}}
 
 執行 Kali Linux 的筆記型電腦是標準的滲透測試工作站——但絕非唯一選擇。Raspberry Pi 4 或 Pi 5 搭配 ALFA USB WiFi 網路卡，能打造出一個體積小巧、無風扇、被動散熱的平台：可以放進夾克口袋、靠 USB-C 行動電源供電，並在目標環境中無人看守運行數小時。Kali Linux ARM64 映像由 Offensive Security 官方提供，無需模擬即可在 Pi 4 和 Pi 5 上原生執行，完整提供 Aircrack-ng、Kismet、Wireshark、Bettercap 等 Kali 標準工具包。
 
@@ -271,6 +290,16 @@ Kismet 記錄會為每個偵測到的網路儲存 GPS 座標。使用 `kismetdb_
 
 ---
 
+{{< faq >}}
+
 ## 延伸閱讀
 
 關於桌上型 Kali Linux 和 Ubuntu 上完整的 RTL8812AU 驅動程式安裝指南，請參閱[在 Kali Linux 和 Ubuntu 安裝 ALFA 驅動程式](/zh-tw/blog/install-alfa-driver-kali-ubuntu/)。若尚在考慮購買哪款網路卡，[2026 ALFA WiFi 網路卡購買指南](/zh-tw/blog/alfa-wifi-adapter-buyer-guide-2026/)涵蓋每款現行型號的晶片組詳情和使用場景建議。
+
+## 參考來源
+
+1. [Kali Linux ARM 官方下載](https://www.kali.org/get-kali/#kali-arm)
+2. [aircrack-ng rtl8812au 驅動專案](https://github.com/aircrack-ng/rtl8812au)
+3. [Raspberry Pi 官方網站](https://www.raspberrypi.com/)
+4. [Linux Kernel mt76 驅動文件](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [ALFA Network 官方網站](https://www.alfa.com.tw/)

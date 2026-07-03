@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "DGX Spark Wi-Fi 连不上？只要十分钟，这张 ALFA USB 无线网卡帮你终结噩梦"
 description: "NVIDIA DGX Spark 内置 Wi-Fi 连接问题有解！免驱动 USB 无线网卡十分钟搞定。ASUS ASCENT GX10、MSI EdgeXpert、HP ZGX Nano、ALTOS BrainSphere GB10 F1、GIGABYTE AI TOP ATOM 全适用。"
 date: 2026-05-20
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
+faq:
+  - question: "DGX Spark 的 Wi-Fi 为什么连不上？"
+    answer: "DGX Spark 内置 MediaTek MT7925 Wi-Fi 7 芯片，但 OOBE 阶段的 wpa_supplicant 过度精简，与特定品牌 AP（特别是 UniFi）不兼容，WPA2-Enterprise 几乎确定无法连接。"
+  - question: "ALFA USB 网卡解法适用所有 GB10 AI Server 吗？"
+    answer: "适用。所有搭载 NVIDIA GB10 Grace Blackwell Superchip 的 AI Edge Server（ASUS、MSI、HP、ALTOS、GIGABYTE）均使用同一颗 MT7925 Wi-Fi 芯片，ALFA AWUS036ACM 解法全部通用。"
+  - question: "AWUS036ACM 在 DGX Spark 上需要安装驱动吗？"
+    answer: "不需要。MT7612U 的 mt76 驱动自 Linux Kernel 4.19 起内置核心主线，DGX OS 的 Kernel 6.17+ 自然完整支持，插入 USB 即自动加载。"
+  - question: "ALFA USB 网卡修复 Wi-Fi 问题需要多久？"
+    answer: "十分钟以内。插入 USB 3.0 埠后系统自动加载驱动，通过 nmcli 指令扫描并连接 WiFi 即可完成，不需编译驱动或重开机。"
+  - question: "可以在 DGX Spark 上用其他 ALFA 网卡吗？"
+    answer: "AWUS036ACH（RTL8812AU）需手动编译驱动，在 GB10 的 ARM64 平台上不保证成功。AWUS036ACM 是唯一确认零编译、即插即用的方案。"
 ---
 
+
+
+
 你期待已久的 **NVIDIA DGX Spark**（代号 Project DIGITS）终于到货了。
+
+{{< tldr >}}
+NVIDIA DGX Spark 及所有 GB10 AI Server 的内置 MT7925 Wi-Fi 7 芯片存在已知连接缺陷。解法是插入 ALFA AWUS036ACM USB 网卡，mt76 驱动自 Kernel 4.19 内置核心，DGX OS Kernel 6.17+ 即插即用，十分钟完成连接。
+{{< /tldr >}}
+
 
 开箱、接上电源、屏幕显示 OOBE（首次开机引导画面）——一切都很顺利。然后你选了 Wi-Fi 网络，输入密码，画面转了三十秒……
 
@@ -285,6 +309,9 @@ A：当然。MT7612U 的驱动是 Linux Kernel 主线的一部分，Ubuntu、Deb
 
 ---
 
+
+{{< faq >}}
+
 ## 总结：不管你是哪一台 GB10，十分钟让它真正上线
 
 无论你买的是 NVIDIA DGX Spark、ASUS ASCENT GX10、MSI EdgeXpert、HP ZGX Nano、ALTOS BrainSphere GB10 F1 还是 GIGABYTE AI TOP ATOM——这些 GB10 AI Edge Server 都是性能惊人的 AI 开发设备：128GB 统一内存、20 核 ARM CPU、ConnectX-7 200GbE 网络。但所有机型都共用同一颗 MediaTek MT7925 Wi-Fi 芯片，也都有可能被同一个连接问题卡住第一步。
@@ -313,3 +340,11 @@ ALFA AWUS036ACM 的解决方案简单到近乎荒谬：**插入 USB，搞定。*
 ---
 
 *参考来源：NVIDIA DGX Spark Release Notes、NVIDIA Developer Forums、morrownr/USB-WiFi GitHub、ALFA Network Docs、Linux Kernel Wireless Documentation*
+
+## 参考文献
+
+1. [NVIDIA DGX Spark 官方文档](https://developer.nvidia.com/dgx-spark)
+2. [NVIDIA Developer Forums](https://forums.developer.nvidia.com/)
+3. [morrownr/USB-WiFi GitHub 专案](https://github.com/morrownr/USB-WiFi)
+4. [Linux Kernel Wireless Documentation](https://wireless.wiki.kernel.org/)
+5. [ALFA Network 官方网站](https://www.alfa.com.tw/)

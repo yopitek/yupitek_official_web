@@ -7,9 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Por qué la tarjeta ALFA falla tras actualizar el kernel?"
+    answer: "RTL8812AU usa un controlador fuera del núcleo; cada cambio de versión del kernel hace que el módulo compilado deje de ser compatible. DKMS puede reconstruirlo automáticamente, pero la falta de headers del kernel o configuraciones obsoletas causan fallos."
+  - question: "¿Cómo diagnosticar rápidamente la causa del fallo del controlador ALFA?"
+    answer: "Ejecuta uname -r para confirmar la versión del kernel, luego dkms status para verificar el estado de compilación del módulo, y finalmente dmesg para ver los mensajes de error de firmware o carga del módulo."
+  - question: "¿Cuál es el método más rápido para reparar el controlador RTL8812AU?"
+    answer: "Tras instalar los headers del kernel correspondientes, ejecuta dkms autoinstall. Si falla, clona aircrack-ng/rtl8812au desde cero y ejecuta make dkms_install."
+  - question: "¿Qué hacer si la tarjeta MT7921AUN no se conecta tras actualizar el kernel?"
+    answer: "MT7921AUN tiene controlador integrado en el núcleo; el problema suele estar en el firmware. Instala el paquete firmware-misc-nonfree y verifica que la versión del kernel no sea inferior a 5.18."
+  - question: "¿Cómo prevenir que las actualizaciones del kernel rompan el controlador de nuevo?"
+    answer: "Usa apt full-upgrade en lugar de apt upgrade para asegurar que los headers y el kernel se instalen sincronizadamente. Instala los metapaquetes dkms y linux-headers-generic para mantener las dependencias."
 ---
 
 Ejecutas `sudo apt upgrade`, reinicias y tu adaptador ALFA ha desaparecido. Sin interfaz, sin luces, nada. Esta es la pregunta de soporte más frecuente en torno a los adaptadores ALFA Network USB WiFi en Linux, y las actualizaciones del kernel son casi siempre el culpable. Esta guía te lleva a través de un proceso sistemático de diagnóstico y reparación para las dos familias de chipsets más afectadas: **RTL8812AU** (presente en el AWUS036ACH y AWUS036ACS) y **MT7921AUN** (presente en el AWUS036AXM y AXML). Sigue cada sección en orden y tu adaptador estará de vuelta en línea en menos de 15 minutos.
+
+{{< tldr >}}
+La causa principal de que las actualizaciones del kernel rompan los controladores ALFA es la desincronización entre headers y módulos. RTL8812AU se reconstruye con dkms autoinstall; MT7921AUN necesita instalar firmware-misc-nonfree. La reparación a largo plazo es usar apt full-upgrade.
+{{< /tldr >}}
 
 ---
 
@@ -356,6 +373,8 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ---
 
+{{< faq >}}
+
 ## Resumen
 
 Los fallos de controladores ALFA tras actualizaciones del kernel siguen un patrón predecible y tienen soluciones predecibles. Los adaptadores RTL8812AU necesitan `dkms autoinstall` (o un clon limpio de `aircrack-ng/rtl8812au`) más cabeceras del kernel coincidentes. Los adaptadores MT7921AUN necesitan `firmware-misc-nonfree` y un kernel 5.18 o posterior. La solución a largo plazo en ambos casos es asegurarse de que `apt full-upgrade` — no `apt upgrade` — sea tu comando de actualización estándar, lo que mantiene cabeceras y kernels sincronizados.
@@ -365,3 +384,11 @@ Los fallos de controladores ALFA tras actualizaciones del kernel siguen un patr�
 **Guías relacionadas:**
 - [Cómo instalar el controlador ALFA USB WiFi en Kali Linux y Ubuntu](/es/blog/install-alfa-driver-kali-ubuntu/) — empieza aquí si nunca has instalado el controlador antes
 - [Guía de configuración AWUS036ACH en Kali Linux](/es/blog/awus036ach-kali-linux-setup/) — guía completa de configuración incluyendo verificación de modo monitor e inyección de paquetes
+
+## Referencias
+
+1. [Controlador rtl8812au oficial de aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
+2. [Documentación oficial de DKMS](https://github.com/dell/dkms)
+3. [Documentación de gestión de paquetes de Kali Linux](https://www.kali.org/docs/general-use/package-management/)
+4. [Linux Kernel 官方文件](https://www.kernel.org/doc/html/latest/)
+5. [Controlador MediaTek MT7921](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)

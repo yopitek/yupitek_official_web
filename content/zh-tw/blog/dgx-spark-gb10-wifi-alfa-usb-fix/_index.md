@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "DGX Spark 的 Wi-Fi 為什麼連不上？"
+    answer: "DGX Spark 內建 MediaTek MT7925 Wi-Fi 7 晶片，但 OOBE 階段的 wpa_supplicant 過度精簡，與特定品牌 AP（特別是 UniFi）不相容，WPA2-Enterprise 幾乎確定無法連線。"
+  - question: "ALFA USB 網卡解法適用所有 GB10 AI Server 嗎？"
+    answer: "適用。所有搭載 NVIDIA GB10 Grace Blackwell Superchip 的 AI Edge Server（ASUS、MSI、HP、ALTOS、GIGABYTE）均使用同一顆 MT7925 Wi-Fi 晶片，ALFA AWUS036ACM 解法全部通用。"
+  - question: "AWUS036ACM 在 DGX Spark 上需要安裝驅動嗎？"
+    answer: "不需要。MT7612U 的 mt76 驅動自 Linux Kernel 4.19 起內建核心主線，DGX OS 的 Kernel 6.17+ 自然完整支援，插入 USB 即自動載入。"
+  - question: "ALFA USB 網卡修復 Wi-Fi 問題需要多久？"
+    answer: "十分鐘以內。插入 USB 3.0 埠後系統自動載入驅動，透過 nmcli 指令掃描並連線 WiFi 即可完成，不需編譯驅動或重開機。"
+  - question: "可以在 DGX Spark 上用其他 ALFA 網卡嗎？"
+    answer: "AWUS036ACH（RTL8812AU）需手動編譯驅動，在 GB10 的 ARM64 平台上不保證成功。AWUS036ACM 是唯一確認零編譯、即插即用的方案。"
 ---
+
+DGX Spark 內建 Wi-Fi 因 MT7925 驅動與 wpa_supplicant 限制而無法可靠連線，解法是插入 ALFA AWUS036ACM USB 網卡，Kernel 內建驅動即插即用，十分鐘搞定。
+
+{{< tldr >}}
+NVIDIA DGX Spark 及所有 GB10 AI Server 的內建 MT7925 Wi-Fi 7 晶片存在已知連線缺陷。解法是插入 ALFA AWUS036ACM USB 網卡，mt76 驅動自 Kernel 4.19 內建核心，DGX OS Kernel 6.17+ 即插即用，十分鐘完成連線。
+{{< /tldr >}}
 
 你期待已久的 **NVIDIA DGX Spark**（代號 Project DIGITS）終於到貨了。
 
@@ -285,6 +304,8 @@ A：當然。MT7612U 的驅動是 Linux Kernel 主線的一部分，Ubuntu、Deb
 
 ---
 
+{{< faq >}}
+
 ## 總結：不管你是哪一台 GB10，十分鐘讓它真正上線
 
 無論你買的是 NVIDIA DGX Spark、ASUS ASCENT GX10、MSI EdgeXpert、HP ZGX Nano、ALTOS BrainSphere GB10 F1 還是 GIGABYTE AI TOP ATOM——這些 GB10 AI Edge Server 都是效能驚人的 AI 開發設備：128GB 統一記憶體、20 核 ARM CPU、ConnectX-7 200GbE 網路。但所有機型都共用同一顆 MediaTek MT7925 Wi-Fi 晶片，也都有可能被同一個連線問題卡住第一步。
@@ -313,3 +334,11 @@ ALFA AWUS036ACM 的解決方案簡單到近乎荒謬：**插入 USB，搞定。*
 ---
 
 *參考來源：NVIDIA DGX Spark Release Notes、NVIDIA Developer Forums、morrownr/USB-WiFi GitHub、ALFA Network Docs、Linux Kernel Wireless Documentation*
+
+## 參考來源
+
+1. [NVIDIA DGX Spark 官方文件](https://developer.nvidia.com/dgx-spark)
+2. [NVIDIA Developer Forums](https://forums.developer.nvidia.com/)
+3. [morrownr/USB-WiFi GitHub 專案](https://github.com/morrownr/USB-WiFi)
+4. [Linux Kernel Wireless Documentation](https://wireless.wiki.kernel.org/)
+5. [ALFA Network 官方網站](https://www.alfa.com.tw/)

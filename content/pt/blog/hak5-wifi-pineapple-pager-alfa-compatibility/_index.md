@@ -7,7 +7,22 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH", "compatibility", "wireless-security"]
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "O HAK5 WiFi Pineapple Pager pode conectar adaptador ALFA externo?"
+    answer: "Sim, mas atente para as limitações da arquitetura MIPS e alimentação USB 2.0. O AWUS036ACM é a primeira escolha, com driver integrado ao kernel mais estável."
+  - question: "Por que o Pager precisa de hub USB com alimentação própria?"
+    answer: "O Pager só tem porta USB 2.0 com saída máxima de 500mA. Adaptadores ALFA de alta potência chegam a 720mA no pico. Conectar diretamente pode causar reinicios ou travamentos do kernel."
+  - question: "Por que o AWUS036ACM é o adaptador preferido do Pager?"
+    answer: "O driver MT7612U já está integrado ao kernel OpenWrt 6.6. No Pager, pode ser instalado diretamente via opkg, sem compilação cruzada, sendo a opção mais estável e confiável."
+  - question: "Quais as limitações da arquitetura MIPS para instalação de drivers?"
+    answer: "O Pager  é baseado no MT7628AN MIPS32, sem suporte a DKMS, sem toolchain GCC. Drivers não integrados ao kernel devem ser compilados cruzado em um host x86 externo."
+  - question: "Quais os problemas conhecidos do RTL8812AU no Pager?"
+    answer: "O RTL8812AU tem um bug de wiphy_register na plataforma MIPS, impedindo o carregamento da interface. E necessário aplicar um patch da comunidade. Recomenda-se usar o AWUS036ACM em vez disso."
 ---
+Antes de conectar qualquer adaptador USB de alta potência ao HAK5 Pager, você deve compreender duas barreiras principais: a arquitetura da CPU e os limites de alimentação da porta USB.
 
 # HAK5 WiFi Pineapple Pager × ALFA Network: Guia de compatibilidade de placas sem fio USB externas
 
@@ -19,11 +34,16 @@ A resposta curta é **sim, mas com ressalvas críticas de hardware e software**.
 
 Neste guia detalhado, analisaremos as limitações técnicas (como a arquitetura da CPU e os limites de alimentação das portas USB), avaliaremos a compatibilidade da linha atual de adaptadores da ALFA Network e forneceremos instruções passo a passo para a instalação de drivers e a resolução de problemas por meio da interface de linha de comando (CLI).
 
+{{< tldr >}}
+O Pager usa arquitetura MIPS sem suporte a DKMS. O AWUS036ACM e plug-and-play por ter driver MT7612U integrado ao kernel OpenWrt 6.6. O AWUS036ACH requer compilacao cruzada e tem bug de wiphy. A alimentacao USB 2.0 de 500mA exige hub externo.
+{{< /tldr >}}
+
+
+O HAK5 WiFi Pineapple Pager pode conectar adaptadores ALFA externos. A primeira escolha é o AWUS036ACM, cujo driver integrado ao kernel é o mais estável. Adaptadores de alta potência exigem um hub USB com alimentação externa para evitar travamentos do kernel.
+
 ---
 
 ## 1. Limitações técnicas: o que você deve saber
-
-Antes de conectar qualquer adaptador USB de alta potência ao HAK5 Pager, você deve compreender duas barreiras principais: a arquitetura da CPU e os limites de alimentação da porta USB.
 
 ### 1.1 Arquitetura da CPU: a restrição MIPS
 Diferente de um computador padrão com Kali Linux que funciona com arquitetura x86_64, ou de um Raspberry Pi baseado em ARM, o HAK5 Pager está construído sobre o chip **MediaTek MT7628AN SoC** (um núcleo **MIPS32r2, Little-Endian**, compilado sob a plataforma `mipsel_24kc` no OpenWrt).
@@ -179,11 +199,13 @@ Ao conectar um adaptador ALFA compatível ao HAK5 Pager, você desbloqueia múlt
 
 ---
 
+{{< faq >}}
+
 ## 5. Conclusão e veredito
 
 A integração de uma placa sem fio da ALFA Network com o HAK5 WiFi Pineapple Pager permite que você crie uma estação móvel de auditoria discreta e potente. No entanto, os detalhes de hardware são críticos:
 
-- **Para implantações rápidas e sem complicações**: Adquira o [ALFA AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm) pela estabilidade de seu driver MediaTek sob o OpenWrt Kernel 6.6 e sua facilidade de instalação.
+- **Para implantações rápidas e sem complicações**: Adquira o [ALFA AWUS036ACM](https://yupitek.com/pt/products/alfa/awus036acm) pela estabilidade de seu driver MediaTek sob o OpenWrt Kernel 6.6 e sua facilidade de instalação.
 - **Estabilidade de energia**: Certifique-se sempre de contar com um **Hub USB com alimentação externa** para garantir a saída de sinal ideal das placas sem fio de alta potência e evitar desconexões inesperadas.
 
 Se desejar realizar consultas técnicas adicionais, cotações de hardware ou requerer compilações personalizadas por meio do SDK do OpenWrt, não hesite em entrar em contato com a **Equipe de Suporte Técnico da Yupitek**:
@@ -192,3 +214,11 @@ Se desejar realizar consultas técnicas adicionais, cotações de hardware ou re
 - 📧 E-mail de suporte: [sales@yupitek.com](mailto:sales@yupitek.com)
 - 📞 Telefone: +886-2-87325338
 - 📍 Endereço da empresa: 1F., No. 72, Ln. 34, Fuyang St., Xinyi Dist., Taipei City, Taiwan
+
+## Referências
+
+1. [Documentacao oficial Hak5 — Documentacao de produtos WiFi Pineapple](https://documentation.hak5.org/)
+2. [Site oficial do OpenWrt — Release OpenWrt 24.10](https://openwrt.org/)
+3. [Repositorio GitHub do driver mt76 OpenWrt](https://github.com/openwrt/mt76)
+4. [aircrack-ng/rtl8812au — Repositorio GitHub de driver da comunidade](https://github.com/aircrack-ng/rtl8812au)
+5. [Site oficial da ALFA Network](https://www.alfa.com.tw/)

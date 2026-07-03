@@ -7,9 +7,29 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["inyección-paquetes", "aireplay-ng", "Kali-Linux", "adaptador-WiFi", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
----
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Qué es la inyección de paquetes WiFi?"
+    answer: "La inyección de paquetes es la capacidad de la tarjeta de transmitir tramas 802.11 arbitrarias directamente al medio inalámbrico, permitiendo que herramientas como aireplay-ng construyan y envíen tramas de gestión, control y datos."
+  - question: "¿Por qué la mayoría de las tarjetas no pueden inyectar paquetes?"
+    answer: "La limitación está en el controlador, no en el hardware. Los controladores de consumo validan las tramas salientes según un modelo de operación estándar; se necesita que el controlador habilite explícitamente la ruta TX sin procesar de mac80211."
+  - question: "¿Cómo probar si la tarjeta admite inyección de paquetes?"
+    answer: "Primero activa el modo monitor, luego ejecuta aireplay-ng --test wlan0mon. Si la salida muestra Injection is working!, está confirmado. Una tasa de éxito del 80% o superior es fiable."
+  - question: "¿Qué tarjetas ALFA admiten inyección de paquetes?"
+    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN) y AWUS036ACM (MT7612U) la admiten completamente. Con el controlador correcto funcionan en Kali Linux."
+  - question: "¿Cómo mejorar una tasa de éxito de inyección inferior al 50%?"
+    answer: "Acércate al AP objetivo, bloquea la interfaz de monitor al mismo canal, verifica la configuración de TX Power y comprueba que el controlador sea la versión de aircrack-ng y no la integrada en la distribución."
+---La inyección de paquetes es la capacidad de la tarjeta de transmitir tramas 802.11 arbitrarias, limitada por el controlador y no por el hardware. Las tarjetas ALFA con chipsets RTL8812AU, MT7612U y MT7921AUN, con el controlador de aircrack-ng, ofrecen soporte completo.
+
+{{< tldr >}}
+La inyección de paquetes es la capacidad de la tarjeta de transmitir tramas 802.11 arbitrarias, limitada por el controlador y no por el hardware. Las tarjetas ALFA con chipsets RTL8812AU, MT7612U y MT7921AUN, con el controlador de aircrack-ng, ofrecen soporte completo.
+{{< /tldr >}}
+
 
 ## ¿Qué es la Inyección de Paquetes?
+
+La inyección de paquetes permite al adaptador inalámbrico transmitir tramas 802.11 arbitrarias, y es la capacidad central para ataques de deautenticación y captura de handshakes. Requiere un chipset y un controlador compatibles para funcionar.
 
 La inyección de paquetes — formalmente conocida como **inyección de tramas 802.11** — es la capacidad de un adaptador inalámbrico para transmitir tramas 802.11 arbitrarias en un medio inalámbrico, incluyendo tramas que no se originan en la propia pila de red del adaptador. En operación normal, un controlador inalámbrico construye y transmite únicamente las tramas que el sistema operativo ha generado legítimamente: solicitudes de asociación, tramas de datos para redes conectadas, y similares. La inyección de paquetes omite estas restricciones, permitiendo que una herramienta como `aireplay-ng` construya y envíe cualquier tipo de trama — de gestión, control o datos — con contenido arbitrario, direcciones de origen y destino.
 
@@ -43,11 +63,9 @@ Los siguientes chipsets tienen soporte de inyección de paquetes bien establecid
 
 El chipset más popular para pruebas de penetración a partir de 2024–2026. Doble banda (2.4/5 GHz), 802.11ac, y respaldado por el controlador comunitario `rtl8812au` mantenido en el repositorio GitHub de aircrack-ng. Tanto el modo monitor como la inyección funcionan de manera confiable.
 
-
 ### Mediatek MT7612U
 
 Chipset 802.11ac de doble banda con un controlador bien mantenido integrado en el kernel (`mt76`). El modo monitor y la inyección están soportados en el kernel principal, lo que significa que no se necesita instalación de controlador fuera del árbol en la mayoría de las versiones actuales de Kali Linux.
-
 
 ### Mediatek MT7921AUN (Wi-Fi 6E)
 
@@ -197,6 +215,8 @@ Los evaluadores de seguridad prueban la resiliencia inalámbrica enviando inunda
 
 ---
 
+{{< faq >}}
+
 ## Uso Responsable
 
 La inyección de paquetes es una capacidad poderosa. Sus aplicaciones legítimas en pruebas de penetración autorizadas están bien establecidas — captura de handshakes, verificación de controles de seguridad inalámbrica y prueba del comportamiento del cliente. Su uso indebido es tanto dañino como ilegal.
@@ -211,3 +231,11 @@ Las herramientas descritas en este artículo (aireplay-ng, airodump-ng, aircrack
 ---
 
 Para adaptadores inalámbricos con soporte confirmado de inyección de paquetes, explora la [gama de productos ALFA Network en Yopitek](/es/products/alfa/) — distribuidor autorizado ALFA Network.
+
+## Referencias
+
+1. [Sitio y documentación oficial de aircrack-ng](https://www.aircrack-ng.org/)
+2. [Manual de uso de aireplay-ng](https://www.aircrack-ng.org/doku.php?id=aireplay-ng)
+3. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)
+4. [Documentación del subsistema mac80211 de Linux](https://wireless.wiki.kernel.org/en/developers/Documentation/mac80211)
+5. [Recursos del estándar IEEE 802.11](https://standards.ieee.org/ieee/802.11/)

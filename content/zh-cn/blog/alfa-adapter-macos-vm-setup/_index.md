@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "在 macOS 使用 ALFA WiFi 网卡：VMware Fusion 与 Parallels USB 直通完整指南"
 description: "如何在 macOS 使用 ALFA USB WiFi 网卡。涵盖 macOS 原生支持、VMware Fusion USB 直通、Parallels Desktop，以及在 Kali Linux 启用监听模式与数据包注入。"
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
+faq:
+  - question: "ALFA 网卡能在 macOS 原生使用监听模式吗？"
+    answer: "不能。macOS 的 CoreWLAN 与 IO80211Family 架构不支持第三方网卡的监听模式或数据包注入，必须通过 VM 执行 Kali Linux 并使用 USB 直通。"
+  - question: "Apple Silicon Mac 该选 VMware Fusion 还是 Parallels？"
+    answer: "两者皆可，但 Parallels Desktop 19+ 在 Apple Silicon 上的 ARM64 VM 效能与 USB 直通稳定度通常优于 VMware Fusion。"
+  - question: "AWUS036AXML 在 Apple Silicon 的 Kali VM 上需要编译驱动吗？"
+    answer: "不需要。MT7921AUN 驱动自 Linux 5.18 起内置核心，Kali ARM64 2024.x 以上版本插入即自动识别。"
+  - question: "Intel Mac 可以用标准 Kali x86_64 ISO 吗？"
+    answer: "可以。Intel Mac 为 x86_64 架构，可直接使用 kali.org 官方标准 Kali Linux x86_64 ISO 建立 VM。"
+  - question: "VirtualBox 适合在 Apple Silicon 上做安全测试吗？"
+    answer: "不建议。VirtualBox 对 Apple Silicon 的支持仍为实验性，USB 直通存在已知问题，请改用 VMware Fusion 或 Parallels。"
 ---
 
+
+
+
 macOS 是一个精致、适合生产环境的操作系统，但它并非为无线安全研究而设计。每位渗透测试人员工具箱中最核心的两项功能——**监听模式（Monitor Mode）**与**数据包注入（Packet Injection）**——在 macOS 的 Wi-Fi 协议栈中完全不存在。Apple 的 Wi-Fi 驱动程序提供了一个干净、功能完整的网络接口，仅此而已。
+
+{{< tldr >}}
+macOS 不支持 ALFA 网卡的监听模式与数据包注入。解法是在 VMware Fusion 或 Parallels 中执行 Kali Linux VM，并通过 USB 直通将网卡交给 VM。Apple Silicon 需使用 ARM64 Kali 映像。
+{{< /tldr >}}
+
 
 ALFA Network 网卡在 Linux 上改变了这一局面，驱动程序支持深入且经过社区验证。在 macOS 上情况则不同。即使 ALFA 网卡被 macOS 识别，原生网络协议栈也不允许你将其切换至监听模式或注入原始数据包。唯一可靠的解决路径是在**虚拟机中运行 Kali Linux**，并将 USB 网卡直接透传给客户端操作系统，完全绕过 macOS。
 
@@ -233,8 +257,19 @@ sudo airodump-ng wlan1mon
 
 ---
 
+
+{{< faq >}}
+
 ## 相关指南
 
 针对在 Windows 和 Linux 主机上使用 VirtualBox 或 VMware Workstation 的用户，请参阅配套指南：[ALFA 网卡 USB 直通：VirtualBox 与 VMware 配置指南](/zh-cn/blog/alfa-adapter-virtualbox-vmware-usb/)。
 
 有关本指南推荐的 AWUS036AXML 网卡详细信息，请参阅完整评测：[ALFA AWUS036AXML WiFi 6E 评测](/zh-cn/blog/awus036axml-wifi-6e-review/)。
+
+## 参考文献
+
+1. [ALFA Network 官方网站](https://www.alfa.com.tw/)
+2. [Kali Linux 官方下载页面](https://www.kali.org/get-kali/)
+3. [VMware Fusion 产品页面](https://www.vmware.com/products/fusion.html)
+4. [Parallels Desktop 官方网站](https://www.parallels.com/)
+5. [aircrack-ng rtl8812au 驱动专案](https://github.com/aircrack-ng/rtl8812au)

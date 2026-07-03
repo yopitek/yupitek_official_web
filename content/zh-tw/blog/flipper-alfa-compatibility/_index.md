@@ -9,7 +9,26 @@ slug: "flipper-alfa-compatibility"
 tags: ["flipper-zero", "flipper-one", "alfa-network", "wifi-adapter", "monitor-mode", "packet-injection", "kali-linux", "pentesting", "AWUS036AXML", "wireless-security"]
 categories: ["Technical"]
 featureimage: "/images/blog/flipper-alfa-compatibility.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Flipper Zero 可以連接 ALFA USB 無線網卡嗎？"
+    answer: "不行。Flipper Zero 的 STM32WB55 微控制器僅支援 USB device 模式，硬體上無法作為 USB host 驅動外接網卡。"
+  - question: "Flipper One 支援哪些 ALFA 網卡型號？"
+    answer: "Flipper One 創辦人特別測試 AWUS036AXML 為首選，AWUS036ACM 為最佳 CP 值，兩者驅動皆已內建於 mainline Linux 核心。"
+  - question: "為什麼 AWUS036AXML 是 Flipper One 首選網卡？"
+    answer: "AWUS036AXML 採用 MT7921AUN 晶片，mt7921u 驅動自 Linux 5.18 起內建於核心，支援完整 2.4/5/6 GHz 三頻段與監聽模式。"
+  - question: "Flipper One 何時正式上市？"
+    answer: "Flipper One 目前處於開發者預覽階段，正式上市時間與定價將透過群眾募資公布，詳情請追蹤 flipper.net。"
+  - question: "Flipper Zero 的 WiFi Dev Board 能取代 ALFA 網卡嗎？"
+    answer: "不能。WiFi Dev Board 僅支援 2.4 GHz 基本功能，無 USB host，範圍與注入可靠性遠不及專用 ALFA 網卡。"
 ---
+
+Flipper Zero 因硬體限制無法使用任何 ALFA USB 無線網卡；Flipper One 則完整支援 AWUS036AXML 等型號，可執行監聽模式與封包注入。
+
+{{< tldr >}}
+Flipper Zero 的 STM32WB55 僅支援 USB device 模式，無法驅動任何 ALFA 網卡；Flipper One 搭載 RK3576 與完整 Debian Linux，支援 AWUS036AXML 執行三頻監聽與注入。
+{{< /tldr >}}
 
 {{< alert "triangle-exclamation" >}}
 **法律聲明：** Monitor Mode 與 Packet Injection 僅限在您擁有或已取得明確書面授權的網路上進行測試。未經授權的無線通訊攔截在大多數司法管轄區屬違法行為。本指南中的所有技術僅供**授權滲透測試、自有設備安全研究及教育目的**使用。
@@ -346,6 +365,10 @@ sudo systemctl restart NetworkManager
 
 ---
 
+{{< faq >}}
+
+---
+
 ## 結語：對的工具做對的事
 
 如果你打算使用 ALFA 無線網卡進行無線安全測試，**Flipper Zero 是錯誤的平台**——這並非它的錯。它被設計用於不同的目的：離線存取控制測試（NFC、RFID、Sub-GHz、紅外線）。它在這些任務上表現出色，但 USB host 能力從未納入其設計。
@@ -366,7 +389,7 @@ sudo systemctl restart NetworkManager
 
 所有推薦的 ALFA 網卡均可從 Yupitek——ALFA Network 授權經銷商處購得。瀏覽完整型號或比較規格：
 
-- [ALFA USB 無線網卡——完整型錄](https://yupitek.com/en/products/alfa/)——所有型號含規格與定價
+- [ALFA USB 無線網卡——完整型錄](https://yupitek.com/zh-tw/products/alfa/)——所有型號含規格與定價
 - [ALFA 產品比較表](/en/alfa_compare/)——晶片組、頻段、驅動的並列比較
 
 ### 延伸閱讀
@@ -380,3 +403,13 @@ sudo systemctl restart NetworkManager
 ---
 
 *關於 Flipper One 與 ALFA 網卡相容性的售前諮詢，請聯絡 Yupitek 客服：support@yupitek.com 或致電 +886-2-87325338。*
+
+---
+
+## 參考來源
+
+1. [Flipper One 官方部落格 — Pavel Zhovner 產品公告](https://blog.flipper.net/flipper-one-we-need-your-help/)
+2. [Flipper One Developer Portal — 技術規格與文件](https://docs.flipper.net/one)
+3. [Flipper Zero 官方網站](https://flipperzero.one/)
+4. [aircrack-ng — 無線安全工具組官方網站](https://www.aircrack-ng.org/)
+5. [ALFA Network 官方網站](https://www.alfa.com.tw/)

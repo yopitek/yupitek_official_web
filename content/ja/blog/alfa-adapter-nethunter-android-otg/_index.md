@@ -1,4 +1,5 @@
 ---
+
 title: "USB OTG経由でKali NetHunterとALFA WiFiアダプターをAndroidで使う方法"
 description: "USB OTGを使用してAndroidのKali NetHunterでALFA USB WiFiアダプターを利用する方法。AWUS036ACHドライバー、モニターモードコマンド、OTGケーブル要件、対応デバイスを解説。"
 date: 2026-03-24
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
 featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Kali NetHunterでALFAアダプターを使うにはRootが必要ですか？"
+    answer: "必要です。完全版NetHunterはRoot済みのAndroidデバイスとカスタムカーネルが必要で、RTL8812AUモジュールを読み込みUSB OTGアダプターサポートを有効にします。"
+  - question: "NetHunterに最も適したALFAアダプターはどれですか？"
+    answer: "AWUS036ACH（RTL8812AU）が最適です。NetHunterカスタムカーネルに88XXauモジュールが内蔵されており、モニターモードとパケットインジェクションが完全にサポートされます。"
+  - question: "電源付きUSB OTGハブが必要なのはなぜですか？"
+    answer: "AWUS036ACHはUSBから約500mWの電力を消費し、スマートフォンのバッテリーから直接給電すると急速に消耗し、負荷時に切断する可能性があります。電源付きハブがコンセントから給電することで完全に解決します。"
+  - question: "WiFi 6Eアダプター（AWUS036AXML）はNetHunterで使えますか？"
+    answer: "サポートは限定的です。MT7921AUNチップのカーネルモジュールの利用可能性はデバイスとカーネルバージョンに依存し、NetHunterカーネルではまだ広くサポートされていないため、RTL8812AUアダプターをお勧めします。"
+  - question: "どのAndroidデバイスがNetHunterをサポートしていますか？"
+    answer: "公式サポートデバイスにはOnePlus、Google Pixel、一部のSamsung Galaxy機種が含まれます。完全なリストはNetHunter公式デバイスページで確認し、デバイスがUSB OTGをサポートしていることをご確認ください。"
 ---
 
 Androidスマートフォンはすでにポケットサイズのパワフルなコンピューターです。ルート化されたデバイスにKali NetHunterをインストールし、USB OTG経由でALFA WiFiアダプターを接続すれば、本格的なポケットサイズのペネトレーションテストプラットフォームになります。ノートパソコンも嵩張るハードウェアも不要です。スマートフォンと短いOTGケーブル、そしてモニターモードとパケットインジェクションをサポートするアダプターさえあれば十分です。
 
+
+{{< tldr >}}
+Root済みのAndroidスマートフォンにKali NetHunterをインストールし、USB OTGでALFA AWUS036ACHを挿せばポケットサイズのペネトレーションテストプラットフォームになります。完全版NetHunter、電源付きOTGハブが必要で、RTL8812AUアダプターの互換性が最も高いです。
+{{< /tldr >}}
 このガイドでは、NetHunter上でALFA AWUS036ACH（または互換アダプター）を動作させるために必要なすべてを解説します。ハードウェアの選定からドライバーの読み込み、モニターモードの有効化、そしてNetHunterアプリに組み込まれた無線ツールまでを網羅します。
 
 ---
@@ -210,7 +228,21 @@ NetHunter chroot内でrootとしてコマンドを実行していることを確
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 関連ガイド
 
 - [AWUS036ACHのKali Linux（デスクトップ/ノートPC）セットアップガイド](/ja/blog/awus036ach-kali-linux-setup/)
 - [Raspberry PiとKaliでALFAアダプターを使用する](/ja/blog/alfa-adapter-raspberry-pi-kali/)
+
+---
+
+## 参考文献
+
+1. [Kali NetHunter公式ドキュメント](https://www.kali.org/docs/nethunter/)
+2. [aircrack-ng rtl8812auドライバープロジェクト](https://github.com/aircrack-ng/rtl8812au)
+3. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
+4. [Android USB OTG開発者ドキュメント](https://developer.android.com/guide/topics/connectivity/usb)

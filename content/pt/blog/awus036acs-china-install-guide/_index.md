@@ -12,9 +12,31 @@ series: ["alfa-china-install-guide"]
 related_product: "/pt/products/alfa/awus036acs/"
 series_order: 3
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Qual chipset o AWUS036ACS usa? E o mesmo do AWUS036ACH?"
+    answer: "Usa o chipset Realtek RTL8811AU, que compartilha o mesmo pacote de driver do RTL8812AU."
+  - question: "O AWUS036ACS suporta modo monitor?"
+    answer: "Sim. O RTL8811AU suporta perfeitamente modo monitor e injeção de pacotes, sendo uma opção econômica para pesquisa de segurança."
+  - question: "Preciso de VPN para instalar o AWUS036ACS na China?"
+    answer: "Não. No Kali, instale o driver DKMS via apt. No Ubuntu/Debian, baixe o código fonte do Gitee e compile."
+  - question: "Qual é o USB ID do AWUS036ACS?"
+    answer: "O USB ID do Realtek RTL8811AU e 0bda:0811, verificável com lsusb."
+  - question: "Qual o comando para instalar o driver do AWUS036ACS no Kali Linux?"
+    answer: "No Kali, execute diretamente sudo apt install realtek-rtl88xxau-dkms para instalar o driver."
 ---
 
 O AWUS036ACS é o adaptador compacto de banda dupla da ALFA para pesquisa de segurança. Seu chip RTL8811AU suporta modo monitor completo e injeção de pacotes no Kali Linux — mas como o driver está fora do kernel, você precisa compilá-lo a partir do código-fonte. Na China, o GitHub está bloqueado, então este guia usa exclusivamente mirrors do Gitee. Não é necessário GitHub.
+
+{{< tldr >}}
+O AWUS036ACS usa o chipset RTL8811AU. No Kali, instale o driver DKMS via apt. No Ubuntu/Debian, compile a partir do Gitee. Suporta modo monitor e injecao de pacotes.
+{{< /tldr >}}
+
+Certifique-se de ter estes itens prontos:
+
+
 
 ## Antes de Começar
 
@@ -375,6 +397,8 @@ sudo aireplay-ng --test wlan1mon
 | Mirror da USTC | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recomendado) |
 | Mirror da Huawei Cloud | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Imagens Kali ARM |
 
+{{< faq >}}
+
 ## Mais Guias de Adaptadores Alfa para a China
 
 - [Guia de Instalação do AWUS036ACH para a China](/pt/blog/awus036ach-china-install-guide/) — RTL8812AU, alta potência
@@ -387,3 +411,10 @@ sudo aireplay-ng --test wlan1mon
 - [Guia de Instalação do AWUS036EACS para a China](/pt/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 Dúvidas? Deixe um comentário abaixo ou entre em contato em [yupitek.com](https://yupitek.com/pt/contact/).
+
+## Referências
+
+1. [Documentacao oficial do aircrack-ng](https://www.aircrack-ng.org/)
+2. [Site oficial da ALFA Network](https://www.alfa.com.tw/)
+3. [Documentacao oficial do Kali Linux](https://www.kali.org/docs/)
+4. [Espelho Gitee rtl8812au](https://gitee.com/mirrors/rtl8812au)

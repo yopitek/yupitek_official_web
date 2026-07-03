@@ -2,6 +2,15 @@
 title: "ALFA Wireless Adapters with Kali NetHunter: Complete Technical Guide 2026"
 description: "How to use ALFA WiFi adapters with Kali NetHunter. Taiwan phone models, in-kernel vs DKMS drivers, OTG setup guide, and verified compatibility results."
 date: 2026-06-09
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "What phone requirements are needed for ALFA adapters with Kali NetHunter?"
+    answer: "You need an OTG-capable Android phone, rooted with a Kali NetHunter kernel flashed. Verified models include Google Pixel series and older OnePlus flagships. Compatibility depends on kernel version and chipset driver support."
+  - question: "What is the difference between MT7610U/MT7612U and RTL8812AU drivers?"
+    answer: "MT7610U/MT7612U drivers are in the kernel tree, so they work on plug-in without compilation. RTL8812AU requires DKMS external driver compilation and may need rebuilding after kernel updates. In-tree drivers are more stable for field use."
+  - question: "Do ALFA adapters support Monitor Mode on NetHunter?"
+    answer: "Yes, MT7610U/MT7612U support Monitor Mode and packet injection. RTL8812AU also works on kernels below 6.12, but monitor mode is limited on 6.12+. For security research, MT7610U/MT7612U adapters are recommended."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -10,6 +19,14 @@ tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android"
 ---
 
 If you have already set up an ALFA adapter with NetHunter using basic OTG instructions and want the quick-start version, our [OTG setup guide](/en/blog/alfa-adapter-nethunter-android-otg/) covers the essentials. This article goes deeper — it is a full technical reference written for security professionals who need to evaluate phone and adapter compatibility before purchasing hardware, understand which driver approach keeps working across kernel updates, and see verified test results before committing to a specific combination.
+
+{{< tldr >}}
+MT7610U/MT7612U kernel-native drivers are plug-and-play, while RTL8812U needs DKMS compilation. NetHunter phones need root and OTG support. Choose MT7612U adapters first to avoid driver issues.
+{{< /tldr >}}
+
+
+
+
 
 We focus on a question that most NetHunter guides skip: **which adapter is genuinely plug-and-play, and which one sends you down a driver compilation rabbit hole at the worst possible moment?** The answer depends on the chipset, the phone's kernel version, and whether the driver ships inside the kernel tree or lives in an external DKMS repository. Getting this wrong means your adapter sits in your bag while you stare at `modprobe` errors in the field. Getting it right means you plug it in and start scanning.
 
@@ -482,5 +499,15 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
+{{< faq >}}
+
 *This document was prepared by **Yupitek Ltd** — ALFA Network authorized distributor for Taiwan.*  
 *Data current as of 2026-06-09. Linux kernel and NetHunter versions are updated regularly; verify against official sources for the latest compatibility information.*
+
+## References
+
+1. [Kali NetHunter Official Documentation](https://www.kali.org/docs/nethunter/)
+2. [Linux Kernel mt76 Driver Source](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76)
+3. [aircrack-ng RTL8812AU Driver](https://github.com/aircrack-ng/rtl8812au)
+4. [ALFA Network Official Website](https://alfa.com.tw/)
+5. [Android USB OTG Official Documentation](https://developer.android.com/guide/topics/connectivity/usb)

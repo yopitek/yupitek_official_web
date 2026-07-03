@@ -5,3 +5,7 @@ node_modules/
 .env
 *.env.local
 .DS_Store
+__pycache__/
+*.py.tmp
+geo_translations.json
+zhtw_geo_data.json

@@ -3,12 +3,28 @@ title: "ALFA AWUS036ACH مقابل AWUS036ACM: مقارنة كاملة لـ Kali
 description: "مقارنة تفصيلية بين ALFA AWUS036ACH وAWUS036ACM: الشرائح المعالجة ووضع المراقبة وحقن الحزم ودعم برامج التشغيل."
 date: 2026-03-23
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "AWUS036ACM", "مقارنة", "Kali-Linux", "RTL8812AU"]
 featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما الفرق بين تثبيت تعريفات AWUS036ACH و AWUS036ACM؟"
+    answer: "AWUS036ACH يستخدم RTL8812AU ويتطلب تجميع تعريف aircrack-ng عبر DKMS، وقد يحتاج إعادة بناء بعد تحديث النواة. AWUS036ACM يستخدم MT7612U المدمج في النواة منذ 4.19، يعمل فور التوصيل دون تجميع."
+  - question: "أيهما أفضل لوضع المراقبة؟"
+    answer: "AWUS036ACH أكثر استقراراً في وضع المراقبة، بهوائيين وقدرة 30 dBm عالية، ومعدل فقد حزم أقل في بيئات AP الكثيفة. ACM يدعم المراقبة أيضاً لكن بهوائي واحد وقدرة أقل، مناسب لالتقاط المسافات القريبة."
+  - question: "ماذا يجب أن يختار المبتدئ؟"
+    answer: "يُنصح المبتدئون بـ AWUS036ACM، تعريف MT7612U المدمج في النواة يعمل فور التوصيل دون تجميع. اختر AWUS036ACH إذا كنت تحتاج أقوى إشارة وأكثر الموارد التعليمية ولا تمانع تجميع DKMS."
+  - question: "أيهما يُنصح به لبيئة الأجهزة الافتراضية؟"
+    answer: "يُنصح بـ AWUS036ACM في بيئة VM، تعريف النواة الأصلي يتعرف عليه فوراً بعد تمرير USB دون الحاجة لأدوات تجميع في الجهاز الافتراضي. ACH يحتاج تثبيت تعريف إضافي داخل الجهاز الافتراضي."
 ---
+{{< tldr >}}
+AWUS036ACH للمهام الاحترافية، تعريف RTL8812AU مع 30 dBm وبهوائيين لأقوى مراقبة وحقن. AWUS036ACM للمحمولية، تعريف MT7612U المدمج في النواة دون تجميع، بسعر حوالي 30-40 دولار.
+{{< /tldr >}}
+
+يقف اثنان من أشهر محولات ALFA Network USB لاختبار الاختراق على Kali Linux في نقطتين متمايزتين على الطيف بين الأداء الخام والقابلية للحمل. **AWUS036ACH** محول قوي ثنائي الهوائيات بتاريخ حافل في مجال برامج التشغيل. **AWUS036ACM** بديل مدمج أصلي في النواة يتفادل بعض القدرة لصالح البساطة وسهولة الاستخدام. يفصّل هذا الدليل كل جانب يهم العمل الفعلي لاختبار الاختراق.
+
 
 ## نظرة عامة
 
@@ -206,6 +222,8 @@ sudo aireplay-ng -0 3 -a [BSSID] wlan0mon
 
 ---
 
+{{< faq >}}
+
 ## الحكم النهائي
 
 **اختر [AWUS036ACH](/ar/products/alfa/awus036ach/) من أجل:**
@@ -223,3 +241,11 @@ sudo aireplay-ng -0 3 -a [BSSID] wlan0mon
 - المواقف التي يُفضَّل فيها استقرار النواة الأصلية على برامج التشغيل المجتمعية
 
 إن كنت تملك محولاً واحداً فقط، فـ **AWUS036ACH** هو الخيار الأقوى لاختبار الاختراق. إن أردت رفيقاً موثوقاً في السفر بلا عناء إعداد، يستحق **AWUS036ACM** مكانه في مجموعة أدواتك.
+
+## المراجع
+
+1. مستودع تعريف RTL8812AU الذي يُصونه مجتمع aircrack-ng — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. تعريف MT76 الرئيسي في النواة (`mt76x2u`، مدمج منذ 4.19) — [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
+3. موقع ALFA Network الرسمي ومواصفات المنتجات — [alfa.com.tw](https://www.alfa.com.tw)
+4. Yupitek — الموزع المعتمد لـ ALFA Network في تايوان — [yupitek.com](https://www.yupitek.com)
+

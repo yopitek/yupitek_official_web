@@ -7,9 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "لماذا لا يتصل DGX Spark بـ WiFi؟"
+    answer: "DGX Spark مدمج به شريحة MediaTek MT7925 WiFi 7، لكن wpa_supplicant في مرحلة OOBE مُبسَّط جداً وغير متوافق مع بعض ماركات AP (خاصة UniFi)، و WPA2-Enterprise لا يتصل تقريباً."
+  - question: "هل ينطبق حل ALFA USB على جميع خوادم GB10 AI؟"
+    answer: "نعم. جميع خوادم AI Edge المزودة بـ NVIDIA GB10 Grace Blackwell Superchip (ASUS وMSI وHP وALTOS وGIGABYTE) تستخدم نفس شريحة MT7925 WiFi. حل ALFA AWUS036ACM ينطبق على الجميع."
+  - question: "هل يحتاج AWUS036ACM إلى تثبيت تعريف على DGX Spark؟"
+    answer: "لا. تعريف MT7612U يسمى mt76 وهو مدمج في النواة الرئيسية منذ 4.19. نواة DGX OS 6.17+ تدعمه بالكامل، يُحمَّل تلقائياً عند التوصيل."
+  - question: "كم يستغرق إصلاح WiFi بمحول ALFA USB؟"
+    answer: "أقل من عشر دقائق. بعد التوصيل في منفذ USB 3.0 يُحمَّل التعريف تلقائياً، ثم استخدم nmcli لمسح والاتصال بـ WiFi. لا يحتاج تجميع تعريف أو إعادة تشغيل."
+  - question: "هل يمكن استخدام محولات ALFA أخرى على DGX Spark؟"
+    answer: "AWUS036ACH (RTL8812AU) يحتاج تجميع تعريف يدوي وقد لا ينجح على ARM64 لـ GB10. AWUS036ACM هو الحل الوحيد المؤكد دون تجميع ويعمل فور التوصيل."
 ---
-
 وصل أخيراً جهاز **NVIDIA DGX Spark** (الاسم الرمزي Project DIGITS) الذي طال انتظاره.
+
+{{< tldr >}}
+NVIDIA DGX Spark وجميع خوادم GB10 AI بها عيب اتصال معروف في شريحة MT7925 WiFi 7 المدمجة. الحل هو توصيل محول ALFA AWUS036ACM USB، تعريف mt76 مدمج في النواة منذ 4.19، DGX OS Kernel 6.17+ يعمل فور التوصيل، خلال عشر دقائق.
+{{< /tldr >}}
+
 
 تقوم بفتح العلبة، وتوصيل الطاقة، وتظهر شاشة OOBE (الإعداد الأولي) — كل شيء يبدو سلساً. تختار شبكة Wi-Fi، وتدخل كلمة المرور، وتدور الشاشة لمدة ثلاثين ثانية...
 
@@ -285,6 +302,8 @@ ALFA ACM + هوائيات عالية الربح → Wi-Fi إدارة المكت�
 
 ---
 
+{{< faq >}}
+
 ## ملخص: بغض النظر عن GB10 الذي لديك، اجعله متصلاً بالإنترنت في 10 دقائق
 
 سواء اشتريت NVIDIA DGX Spark أو ASUS ASCENT GX10 أو MSI EdgeXpert أو HP ZGX Nano أو ALTOS BrainSphere GB10 F1 أو GIGABYTE AI TOP ATOM — هذه خوادم GB10 AI Edge هي آلات تطوير AI هائلة: ذاكرة موحدة 128 جيجابايت، CPU ARM بـ 20 نواة، شبكة ConnectX-7 200GbE. لكنها جميعاً تشترك في نفس شريحة Wi-Fi من MediaTek MT7925، ويمكن أن تتعثر جميعها في نفس الخطوة الأولى.
@@ -313,3 +332,11 @@ ALFA ACM + هوائيات عالية الربح → Wi-Fi إدارة المكت�
 ---
 
 *المصادر: ملاحظات إصدار NVIDIA DGX Spark، منتديات مطوري NVIDIA، morrownr/USB-WiFi GitHub، وثائق ALFA Network، وثائق Linux Kernel Wireless*
+
+## المراجع
+
+1. [وثائق NVIDIA DGX Spark الرسمية](https://developer.nvidia.com/dgx-spark)
+2. [منتدى NVIDIA للمطورين](https://forums.developer.nvidia.com/)
+3. [مشروع morrownr/USB-WiFi على GitHub](https://github.com/morrownr/USB-WiFi)
+4. [وثائق Linux Kernel Wireless](https://wireless.wiki.kernel.org/)
+5. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)

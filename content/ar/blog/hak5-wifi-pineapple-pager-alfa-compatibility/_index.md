@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH", "compatibility", "wireless-security"]
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "هل يمكن توصيل محول ALFA خارجي بـ HAK5 WiFi Pineapple Pager؟"
+    answer: "نعم، لكن انتبه لقيود معمارية MIPS و طاقة USB 2.0. AWUS036ACM هو الخيار الأول، تعريفه المدمج في النواة هو الأكثر استقراراً."
+  - question: "لماذا يحتاج Pager إلى موزع USB مزود بمصدر طاقة؟"
+    answer: "Pager مزود بمنفذ USB 2.0 فقط، أقصى إخراج 500mA. محولات ALFA عالية الطاقة تصل ذروتها إلى 720mA، التوصيل المباشر يسبب إعادة تشغيل أو انهيار النواة."
+  - question: "لماذا AWUS036ACM هو المحول الأول لـ Pager؟"
+    answer: "تعريف MT7612U مدمج في نواة OpenWrt 6.6، يُثبَّت على Pager عبر opkg مباشرة دون تجميع متقاطع، الأكثر استقراراً وموثوقية."
+  - question: "ما قيود معمارية MIPS على تثبيت التعريف؟"
+    answer: "Pager مبني على MT7628AN بمعمارية MIPS32، لا يدعم DKMS ولا يملك سلسلة أدوات GCC. التعريفات غير المدمجة يجب أن تُجمَّع متقاطعاً على مضيف x86 خارجي."
+  - question: "ما المشاكل المعروفة لـ RTL8812AU على Pager؟"
+    answer: "RTL8812AU على منصة MIPS به خطأ wiphy_register في النواة يمنع تحميل الواجهة، يتطلب رقعة مجتمعية. يُنصح باستخدام AWUS036ACM بدلاً منه."
 ---
+{{< tldr >}}
+Pager بمعمارية MIPS لا يدعم DKMS، AWUS036ACM بتعريف MT7612U المدمج في نواة OpenWrt 6.6 يعمل فور التوصيل. AWUS036ACH يحتاج تجميعاً متقاطعاً وبه خطأ wiphy. طاقة USB 2.0 فقط 500mA وتحتاج موزعاً خارجياً.
+{{< /tldr >}}
+
+قبل توصيل أي بطاقة لاسلكية USB عالية الطاقة بجهاز HAK5 Pager، يجب عليك فهم عائقين رئيسيين: معمارية المعالج وحدود طاقة منفذ USB.
+
 
 # HAK5 WiFi Pineapple Pager × ALFA Network: دليل توافق بطاقات الشبكة اللاسلكية الخارجية USB
 
@@ -179,11 +198,13 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 
 ---
 
+{{< faq >}}
+
 ## 5. الخلاصة والتوصيات
 
 إن دمج بطاقة شبكة لاسلكية من ALFA Network مع جهاز HAK5 WiFi Pineapple Pager يمنحك محطة فحص واختراق متنقلة وقوية. ومع ذلك، تظل تفاصيل تكوين العتاد حاسمة:
 
-- **لعمليات فحص سريعة وخالية من مشاكل التثبيت**: اختر بطاقة [ALFA AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm) نظراً لاستقرار تعريفات MediaTek الخاصة بها تحت نواة OpenWrt 6.6 وسهولة تثبيتها.
+- **لعمليات فحص سريعة وخالية من مشاكل التثبيت**: اختر بطاقة [ALFA AWUS036ACM](https://yupitek.com/ar/products/alfa/awus036acm) نظراً لاستقرار تعريفات MediaTek الخاصة بها تحت نواة OpenWrt 6.6 وسهولة تثبيتها.
 - **استقرار مصدر الطاقة**: تأكد دائماً من استخدام **موزع USB خارجي مزود بالطاقة** لضمان استقرار عتاد الإرسال اللاسلكي ومنع انقطاع الاتصال.
 
 للمزيد من الاستفسارات الفنية، أو طلبات الشراء، أو التجميع المخصص عبر حزم OpenWrt SDK، يرجى التواصل مع **فريق الدعم الفني في Yupitek**:
@@ -192,3 +213,11 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 - 📧 البريد الإلكتروني للدعم: [sales@yupitek.com](mailto:sales@yupitek.com)
 - 📞 رقم الهاتف: 5338-8732-2-886+
 - 📍 العنوان: الطابق الأول، رقم 72، الممر 34، شارع فويانغ، حي شينيي، مدينة تايبيه، تايوان
+
+## المراجع
+
+1. [وثائق Hak5 الرسمية — وثائق منتج WiFi Pineapple](https://documentation.hak5.org/)
+2. [موقع OpenWrt الرسمي — إصدار OpenWrt 24.10](https://openwrt.org/)
+3. [مستودع تعريف OpenWrt mt76 — GitHub](https://github.com/openwrt/mt76)
+4. [aircrack-ng/rtl8812au — مستودع GitHub لتعريف مجتمعي](https://github.com/aircrack-ng/rtl8812au)
+5. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)

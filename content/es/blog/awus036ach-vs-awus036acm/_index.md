@@ -7,9 +7,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "AWUS036ACM", "comparación", "Kali-Linux", "RTL8812AU"]
 featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
----
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Cuál es la diferencia en la instalación de controladores entre AWUS036ACH y AWUS036ACM?"
+    answer: "El AWUS036ACH usa el chip RTL8812AU y requiere compilar e instalar el controlador de la comunidad aircrack-ng vía DKMS, con posible recompilación tras actualizar el kernel. El AWUS036ACM con MT7612U tiene el controlador integrado en el kernel principal desde la versión 4.19; es plug-and-play sin compilar."
+  - question: "¿Cuál es mejor para el modo monitor?"
+    answer: "El AWUS036ACH es más estable en modo monitor: su doble antena y alta potencia de 30 dBm reducen la pérdida de paquetes en entornos con alta densidad de AP. El ACM también admite monitor pero con una sola antena y menor potencia, adecuado para captura a corta distancia."
+  - question: "¿ACH o ACM para principiantes?"
+    answer: "Se recomienda el AWUS036ACM para principiantes: el controlador nativo MT7612U del núcleo es plug-and-play sin compilar. Si necesitas la máxima potencia de señal y abundantes recursos de tutorial y no temes el proceso DKMS, elige el AWUS036ACH."
+  - question: "¿Cuál se recomienda para entornos de máquina virtual?"
+    answer: "Se recomienda el AWUS036ACM en VM: tras el tránsito USB, el controlador nativo del núcleo lo reconoce inmediatamente sin necesidad de instalar herramientas de compilación en la VM. El ACH requiere instalar el controlador dentro de la VM."
+---El AWUS036ACH es ideal para tareas profesionales: controlador RTL8812AU con doble antena de 30 dBm, el más potente en monitor e inyección. El AWUS036ACM prioriza portabilidad: controlador nativo MT7612U del núcleo sin compilar, precio aprox. $30-40.
+
+{{< tldr >}}
+El AWUS036ACH es ideal para tareas profesionales: controlador RTL8812AU con doble antena de 30 dBm, el más potente en monitor e inyección. El AWUS036ACM prioriza portabilidad: controlador nativo MT7612U del núcleo sin compilar, precio aprox. $30-40.
+{{< /tldr >}}
+
 
 ## Resumen General
+
+Ambos son adaptadores USB WiFi de ALFA Network diseñados para pruebas de penetración en Kali Linux, cada uno en un extremo distinto del espectro entre rendimiento y portabilidad. El **AWUS036ACH** es la bestia de trabajo de alta potencia y doble antena, con una historia de controladores probada en batalla. El **AWUS036ACM** es la alternativa compacta con soporte nativo del kernel que sacrifica algo de potencia a cambio de mayor simplicidad. Esta guía desglosa cada aspecto que importa para el pentesting real.
 
 Dos de los adaptadores USB de ALFA Network más populares para pruebas de penetración en Kali Linux se ubican en extremos distintos del espectro entre rendimiento bruto y portabilidad. El **AWUS036ACH** es una bestia de trabajo de alta potencia y doble antena con una historia de controladores probada en batalla. El **AWUS036ACM** es una alternativa compacta con soporte nativo del kernel que sacrifica algo de potencia a cambio de simplicidad y facilidad de uso. Esta guía desglosa cada aspecto que importa para el trabajo real de pentesting.
 
@@ -205,6 +223,8 @@ El **AWUS036ACM** a ~$30–40 ofrece excelente valor para los siguientes perfile
 
 ---
 
+{{< faq >}}
+
 ## Veredicto
 
 **Elige el [AWUS036ACH](/es/products/alfa/awus036ach/) para:**
@@ -222,3 +242,10 @@ El **AWUS036ACM** a ~$30–40 ofrece excelente valor para los siguientes perfile
 - Situaciones donde se prefiere la estabilidad nativa del kernel sobre los controladores comunitarios
 
 Si solo puedes tener un adaptador, el **AWUS036ACH** es la elección más sólida para pentesting. Si quieres un compañero de viaje confiable con cero fricción de configuración, el **AWUS036ACM** merece su lugar en el kit de herramientas.
+
+## Referencias
+
+1. aircrack-ng 社群維護 RTL8812AU 驅動程式儲存庫 — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. Linux 核心主線 MT76 驅動程式（`mt76x2u`，自核心 4.19 起整合）— [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
+3. ALFA Network 官方網站與產品規格 — [alfa.com.tw](https://www.alfa.com.tw)
+4. Yupitek — ALFA Network 台灣授權經銷商 — [yupitek.com](https://www.yupitek.com)

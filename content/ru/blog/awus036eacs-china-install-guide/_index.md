@@ -2,6 +2,8 @@
 title: "Руководство по настройке ALFA AWUS036EACS для Китая: установка в Windows и совместимость с Linux"
 description: "Руководство по настройке ALFA AWUS036EACS в Китае. Нано-адаптер RTL8821CU WiFi 5 + Bluetooth 4.2. Драйвер для Windows доступен на files.alfa.com.tw. Linux и Kali Linux не поддерживаются — см. рекомендуемые альтернативы."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +14,32 @@ series: ["alfa-china-install-guide"]
 related_product: "/ru/products/alfa/awus036eacs/"
 series_order: 8
 featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
+
+faq:
+  - question: "Какой чип используется в AWUS036EACS? Поддерживает ли Bluetooth?"
+    answer: "Чип Realtek RTL8821CU, поддерживает WiFi 5 и Bluetooth 4.2."
+  - question: "Подходит ли AWUS036EACS для Linux?"
+    answer: "Не рекомендуется, у RTL8821CU нет хорошо поддерживаемого Linux-драйвера, режим монитора очень нестабилен."
+  - question: "Как установить драйвер AWUS036EACS в Windows?"
+    answer: "Скачайте драйвер для Windows с files.alfa.com.tw, установите от имени администратора и перезагрузите."
+  - question: "Как включить Bluetooth на AWUS036EACS?"
+    answer: "После установки драйвера Bluetooth обычно включается автоматически, включите переключатель Bluetooth в настройках Windows для подключения устройств."
+  - question: "Какую модель выбрать для исследований беспроводной безопасности в Linux?"
+    answer: "Рекомендуется AWUS036ACM или AWUS036ACS, обе полностью поддерживают режим монитора в Linux."
 ---
 
 AWUS036EACS — это комбинированный нано-адаптер WiFi 5 + Bluetooth 4.2 от ALFA. Он предназначен для пользователей Windows, которым требуется компактное беспроводное обновление. Его чипсет RTL8821CU не имеет надежного драйвера Linux с открытым исходным кодом — режим мониторинга и инъекция пакетов не поддерживаются. Это руководство охватывает установку в Windows из китайских источников и четко объясняет ограничения Linux.
+
+{{< tldr >}}
+AWUS036EACS с чипом RTL8821CU, миниатюрный WiFi 5 + Bluetooth 4.2 адаптер. Простая установка в Windows, но нестабильный драйвер Linux, не рекомендуется для режима монитора.
+{{< /tldr >}}
+
+> **AWUS036EACS нестабильно работает в Kali Linux, Ubuntu, Debian и Raspberry Pi.** Для чипсета RTL8821CU нет поддерживаемого драйвера с открытым исходным кодом. Режим мониторинга, инъекция пакетов и VIF недоступны.
+>
+> Если вам нужен адаптер, совместимый с Linux, для исследований в области безопасности, используйте вместо него один из следующих:
+> - **[AWUS036ACM](/ru/blog/awus036acm-china-install-guide/)** — драйвер MT7612U в ядре, полный режим мониторинга + VIF
+> - **[AWUS036ACS](/ru/blog/awus036acs-china-install-guide/)** — RTL8811AU, бюджетный вариант с режимом мониторинга
+
 
 ## Пользователям Linux: прочтите перед началом
 
@@ -55,6 +80,8 @@ https://files.alfa.com.tw
 
 ---
 
+{{< faq >}}
+
 ## Справочник ресурсов в Китае
 
 | Ресурс | URL | Для чего использовать |
@@ -67,3 +94,10 @@ https://files.alfa.com.tw
 - AWUS036EACS ← вы здесь
 
 Есть вопросы? Оставьте комментарий ниже или свяжитесь с нами на [yupitek.com](https://yupitek.com/ru/contact/).
+
+
+## Источники
+
+1. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
+2. [Загрузка официальных драйверов ALFA](https://files.alfa.com.tw)
+3. [Официальный сайт Realtek](https://www.realtek.com/)

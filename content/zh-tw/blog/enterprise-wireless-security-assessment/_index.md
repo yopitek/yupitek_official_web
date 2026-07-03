@@ -2,12 +2,31 @@
 title: "企業無線安全評估：完整方法論框架"
 description: "使用 ALFA 無線網卡進行企業無線安全評估的完整框架。涵蓋範疇界定、惡意 AP 偵測、WPA2/WPA3 稽核、PMF 測試與報告撰寫，適用於 IT 安全團隊。"
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["enterprise", "wireless-security", "penetration-testing", "rogue-AP", "WPA2", "WPA3", "PMF", "ALFA-network"]
 featureimage: "/images/blog/enterprise-wireless-security-assessment.webp"
+faq:
+  - question: "企業無線安全評估包括哪些階段？"
+    answer: "完整評估涵蓋六個依序階段：被動偵查、惡意 AP 偵測、WPA2/WPA3 握手分析、PMF 驗證、客戶端隔離測試，以及 EAP/RADIUS 評估。"
+  - question: "進行無線安全評估前需要哪些授權？"
+    answer: "必須取得由 CISO 或資產擁有者簽署的書面授權書，明確涵蓋測試時間窗口、設備 MAC 位址與已授權的具體技術手段，口頭同意並不充分。"
+  - question: "如何偵測惡意 AP（Rogue AP）？"
+    answer: "將被動偵查所得的 BSSID 清單與授權 AP 清單比對，任何廣播企業 SSID 但不在清單中的 BSSID 均為惡意 AP 候選項目。"
+  - question: "PMF 受保護管理幀為何重要？"
+    answer: "PMF 能防止解除認證與解除關聯攻擊，避免攻擊者強制中斷客戶端連線以擷取握手或執行阻斷服務，在 WPA3 中為強制要求。"
+  - question: "WPA3 過渡模式有什麼風險？"
+    answer: "WPA3 過渡模式同時接受 SAE 與 PSK 驗證以維持相容性，攻擊者可能廣播僅支援 WPA2 的 Beacon 幀迫使客戶端降級，使前向保密失效。"
 ---
+
+企業無線安全評估涵蓋六個依序階段：被動偵查、惡意 AP 偵測、WPA2/WPA3 握手分析、PMF 驗證、客戶端隔離測試與 EAP/RADIUS 評估，必須在取得書面授權後才能執行。
+
+{{< tldr >}}
+本框架以 ALFA 無線網卡為基礎，詳述企業無線安全評估的六階段方法論，涵蓋範疇界定、惡意 AP 偵測、WPA2/WPA3 稽核、PMF 測試、客戶端隔離與 802.1X 評估，並附報告範本與嚴重程度定義。
+{{< /tldr >}}
 
 {{< alert "triangle-exclamation" >}}
 **法律聲明：** 所有無線安全評估必須僅在您已獲得明確書面授權的網路與基礎設施上執行。未經授權的無線監聽、封包注入或惡意 AP 部署在大多數司法管轄區均屬違法。本框架所描述的每個階段，皆預設已有正式執行的委託合約，並由資產擁有者簽署，涵蓋特定測試時間窗口與授權範疇。僅限授權測試。
@@ -297,8 +316,18 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ---
 
+{{< faq >}}
+
 ## 相關資源
 
 - [封包注入指南：使用 aireplay-ng 測試您的 WiFi 網卡](/zh-tw/blog/packet-injection-guide/)
 - [WPA3 安全測試（使用 ALFA 網卡，2026）](/zh-tw/blog/wpa3-security-testing-alfa-2026/)
 - [在 Kali Linux 上啟用監聽模式](/zh-tw/blog/enable-monitor-mode-kali-linux/)
+
+## 參考來源
+
+1. [aircrack-ng 官方文件](https://www.aircrack-ng.org/)
+2. [Wi-Fi Alliance WPA3 規範](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [IEEE 802.11w 受保護管理幀標準](https://standards.ieee.org/ieee/802.11w/4454/)
+4. [NIST SP 800-153 無線安全指南](https://csrc.nist.gov/publications/detail/sp/800-153/final)
+5. [Kismet 無線偵測工具](https://www.kismetwireless.net/)

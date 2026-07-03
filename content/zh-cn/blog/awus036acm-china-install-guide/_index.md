@@ -1,6 +1,11 @@
 ---
+
+
+
 title: "ALFA AWUS036ACM 中国安装指南：Kali Linux, Ubuntu, Debian 和 树莓派"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +17,33 @@ description: "手把手教你在中国境内安装 ALFA AWUS036ACM。这是 Linu
 related_product: "/zh-cn/products/alfa/awus036acm/"
 series_order: 2
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+faq:
+  - question: "AWUS036ACM 用什么芯片？需要安装驱动吗？"
+    answer: "采用 MediaTek MT7612U 芯片，驱动 mt76x2u 自 Linux 核心 4.19 起已内置，大多数情况插上即用。"
+  - question: "AWUS036ACM 支持 VIF 虚拟接口吗？"
+    answer: "支持，MT7612U 完整支持核心原生 VIF，可同时执行监听接口和管理模式，无需打补丁。"
+  - question: "在中国安装 AWUS036ACM 需要翻墙吗？"
+    answer: "不需要，驱动已内置核心，仅需从国内镜像安装固件软件包 firmware-misc-nonfree 即可。"
+  - question: "AWUS036ACM 在树莓派上耗电多少？"
+    answer: "满载约消耗 400mW，建议搭配带独立供电的 USB Hub 使用，避免树莓派限速。"
+  - question: "Debian 安装 AWUS036ACM 为什么网卡能识别但无法运行？"
+    answer: "缺少 firmware-misc-nonfree 固件软件包，安装后即可正常初始化网卡。"
 ---
 
+
+
+
 如果你正在寻找一款在 Linux 下真正“免驱”且强大的网卡，ALFA AWUS036ACM 就是你的终极选择。它采用的 MediaTek MT7612U 芯片驱动已经内置在 Linux 内核里了。这意味着你不需要去 GitHub 下载乱七八糟的补丁，插上就能用。本指南将带你确认驱动状态，并开启它的高级功能。
+
+{{< tldr >}}
+AWUS036ACM 搭载 MT7612U 芯片，驱动核心内置免编译，支持监听模式、数据包注入与 VIF 同时运行，中国境内仅需安装固件软件包。
+{{< /tldr >}}
+
+- **真正免驱**：驱动内置在内核 4.19+ 中。
+- **最佳虚拟接口支持 (VIF)**：它是极少数能同时开启“连接 WiFi”和“监听模式”的网卡。
+- **极其稳定**：不会因为内核更新而导致驱动失效。
+
+
 
 ## 为什么选 AWUS036ACM？
 
@@ -101,9 +130,20 @@ sudo ip link set mon0 up
 | 网卡灯不亮 | 供电不足 | 换到 USB 3.0 接口，或者使用带供电的 Hub |
 | 无法开启监听 | 进程冲突 | 记得先运行 `airmon-ng check kill` |
 
+
+{{< faq >}}
+
 ## 更多 Alfa 中国指南
 
 - [AWUS036ACH 中国安装指南](/zh-cn/blog/awus036ach-china-install-guide/) — 高功率战神
 - [AWUS036AXM 中国安装指南](/zh-cn/blog/awus036axm-china-install-guide/) — WiFi 6E 新旗舰
 
 有问题？欢迎在下方留言，或者在 [yupitek.com](https://yupitek.com/zh-cn/contact/) 联系我们。
+
+## 参考文献
+
+1. [Linux Kernel mt76 驱动](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [aircrack-ng 官方文档](https://www.aircrack-ng.org/)
+3. [ALFA Network 官网](https://www.alfa.com.tw/)
+4. [Kali Linux 官方文档](https://www.kali.org/docs/)
+5. [Debian firmware-misc-nonfree 软件包](https://packages.debian.org/bookworm/firmware-misc-nonfree)

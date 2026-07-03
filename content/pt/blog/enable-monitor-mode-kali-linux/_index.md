@@ -7,7 +7,28 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["modo-monitor", "Kali-Linux", "airmon-ng", "iw", "adaptador-WiFi", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Qual a diferenca entre modo monitor e modo gerenciado?"
+    answer: "O modo monitor permite ao adaptador capturar todos os frames 802.11 no ar, sem a restrição do modo gerenciado de receber apenas pacotes com MAC de destino correspondente. E a base do pentest wireless."
+  - question: "Qual a diferenca entre airmon-ng e iw para ativar modo monitor?"
+    answer: "O airmon-ng trata automaticamente processos interferentes e cria uma interface virtual wlan0mon. O iw modifica diretamente a interface existente, sem criar nova, sendo adequado quando se quer controle mais granular."
+  - question: "O que fazer quando a interface volta automaticamente para modo gerenciado após ativar o monitor?"
+    answer: "E causado pelo wpa_supplicant ou NetworkManager reiniciando em segundo plano. Execute airmon-ng check kill para encerrar esses processos e resolver o problema."
+  - question: "Quais adaptadores ALFA suportam completamente modo monitor no Kali Linux?"
+    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN) e AWUS036ACM (MT7612U) suportam completamente. O ACM é plug-and-play."
+  - question: "Como resolver o erro Fixed channel wlan0mon: -1 no airodump-ng?"
+    answer: "Indica que o airodump-ng não consegue trocar de canal. Execute iwconfig wlan0mon channel 1 para definir o canal e encerre processos wpa_supplicant residuais."
 ---
+{{< tldr >}}
+O modo monitor remove a restricao do adaptador de receber apenas seus proprios pacotes, sendo a base do pentest wireless. Use os comandos airmon-ng ou iw com adaptadores ALFA para ativar estavelmente no Kali Linux.
+{{< /tldr >}}
+
+O modo monitor é um modo de operação especial para placas de interface de rede (NICs) wireless que permite ao adaptador capturar **todos** os frames 802.11 no ar — não apenas aqueles endereçados ao seu dispositivo. No modo "gerenciado" normal, seu adaptador apenas recebe pacotes destinados ao seu endereço MAC e descarta todo o resto. O modo monitor elimina completamente esse filtro.
+
+
 
 ## O Que é Modo Monitor e Por Que Importa para Pentest
 
@@ -264,8 +285,17 @@ Verifique que a interface está de volta no modo gerenciado com `iwconfig` e rec
 
 ---
 
+{{< faq >}}
+
 ## Resumo
 
 Ativar o modo monitor no Kali Linux é um processo de dois passos: parar os serviços conflitantes e depois mudar o modo da interface usando `airmon-ng` ou `iw`. A chave para o sucesso é usar um adaptador com chipset suportado. Adaptadores ALFA Network com chipsets RTL8812AU, MT7921AUN, MT7612U oferecem a experiência mais confiável e pronta para uso no Kali Linux.
 
 Confira a linha completa de [adaptadores wireless ALFA Network disponíveis na Yopitek](/pt/products/alfa/) — distribuidora autorizada da ALFA Network — para encontrar o adaptador certo para sua pesquisa de segurança wireless.
+
+## Referências
+
+1. [Documentacao oficial do aircrack-ng](https://www.aircrack-ng.org/documentation.html)
+2. [Documentacao oficial do Kali Linux](https://www.kali.org/docs/)
+3. [Subsistema mac80211 do Linux Wireless](https://wireless.wiki.kernel.org/en/developers/Documentation/mac80211)
+4. [Guia de uso do comando iw](https://wireless.wiki.kernel.org/en/users/Documentation/iw)

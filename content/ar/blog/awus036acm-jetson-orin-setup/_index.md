@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "لماذا تفشل محولات USB WiFi غالباً على Jetson Orin؟"
+    answer: "يستخدم Jetson نواة Tegra المخصصة من NVIDIA وليست نواة Ubuntu القياسية. التعريفات الخارجية تفشل غالباً في التجميع بسبب عدم توفر ترويسات النواة أو عدم توافق ABI."
+  - question: "هل يحتاج AWUS036ACM إلى تجميع تعريف على Jetson Orin؟"
+    answer: "لا. تعريف شريحة MT7612U يسمى mt76x2u وهو مدمج في النواة الرئيسية منذ 4.19. نواة 5.10 في AIB-NW01 تتضونه، يعمل فور التوصيل."
+  - question: "هل يمكن استخدام AWUS036ACH (RTL8812AU) على Jetson Orin؟"
+    answer: "نعم لكن يتطلب تجميع التعريف يدوياً. رقع NVIDIA للنواة في JetPack قد تكسر ABI لـ cfg80211 مما يسبب فشل التجميع. يُنصح به لمن لديه خبرة في التجميع فقط."
+  - question: "هل تسبب ترقية JetPack تعطل محول USB WiFi؟"
+    answer: "ممكن. التعريفات الخارجية قد تتعطل بعد ترقية JetPack بسبب تغيرات API النواة وتحتاج إعادة تجميع. التعريفات المدمجة في النواة مثل mt76x2u لا تتأثر."
+  - question: "ما إصدار نواة Linux في AIB-NW01؟"
+    answer: "AIB-NW01 يأتي من المصنع بـ Ubuntu 20.04.6 LTS و JetPack 5.0، بنواة NVIDIA Tegra المخصصة 5.10.x-tegra، ومعمارية CPU هي ARM64."
 ---
+{{< tldr >}}
+يستخدم Jetson Orin نواة Tegra المخصصة من NVIDIA، وتفشل تعريفات WiFi الخارجية غالباً. AWUS036ACM بشريحة MT7612U تعريفه مدمج في النواة منذ 4.19 ويعمل فور التوصيل، وهو الحل الوحيد真正 دون تجميع. يدعم وضع المراقبة وحقن الحزم ووضع AP.
+{{< /tldr >}}
+
+> «لدي جهاز AVALUE AIB-NW01 (Jetson Orin NX) وأريد نشره في بيئة لا تتوفر فيها شبكة سلكية. أي بطاقة USB لاسلكية من منتجاتكم يمكنني استخدامها مباشرة؟»
+
 
 ## رسالة من عميل تفتح باب سؤال جوهري
 
@@ -148,7 +167,7 @@ featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
 | الواجهة | USB 3.0（USB-C 接頭） |
 | قوة الإرسال | 標準功率，適合 USB 埠直插 |
 
-**صفحة المنتج**: https://yupitek.com/en/products/alfa/awus036acm/
+**صفحة المنتج**: https://yupitek.com/ar/products/alfa/awus036acm/
 
 ### سبب التوصية الأول: الحل الوحيد «الخالي من التعريفات» حقًا
 
@@ -296,6 +315,8 @@ AWUS036ACH (RTL8812AU) و AWUS036AX (RTL8812BU) ليست غير قابلة لل�
 
 ---
 
+{{< faq >}}
+
 ## الخاتمة: الحل الأبسط هو الأفضل غالبًا
 
 نعود إلى سؤال العميل في البداية: أي بطاقة USB لاسلكية من ALFA هي الأنسب لجهاز AVALUE AIB-NW01؟
@@ -306,7 +327,7 @@ AWUS036ACH (RTL8812AU) و AWUS036AX (RTL8812BU) ليست غير قابلة لل�
 
 ### تحرك الآن
 
-- تصفح تفاصيل المنتج: https://yupitek.com/en/products/alfa/awus036acm/
+- تصفح تفاصيل المنتج: https://yupitek.com/ar/products/alfa/awus036acm/
 - الدعم الفني: تقدم شركة يوتيك (Yupitek Technology) دعمًا فنيًا محليًا في تايوان، يسعدنا تواصلكم معنا
 
 ### قراءات إضافية
@@ -322,3 +343,12 @@ AWUS036ACH (RTL8812AU) و AWUS036AX (RTL8812BU) ليست غير قابلة لل�
 > **الكاتب**: 榆閤科技 (Yupitek Ltd) — ALFA Network 台灣授權代理商
 >
 > **إخلاء مسؤولية**: المعلومات البحثية في هذا المقال محدّثة حتى مايو 2026. منصة Jetson ونواة Linux في تحديث مستمر، نوصي بالتحقق من أحدث إصدار JetPack وحالة دعم التعريفات المدمجة في النواة قبل النشر.
+
+## المراجع
+
+1. [صفحة منتج AVALUE Technology AIB-NW01](https://www.avalue.com.tw/)
+2. [منتدى مطوري NVIDIA Jetson الرسمي](https://forums.developer.nvidia.com/)
+3. [جدول دعم الشرائح morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi)
+4. [وثائق تعريف Linux Kernel mt76](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [جدول توافق ALFA Network مع Linux](https://docs.alfa.com.tw/Support/Compat/)
+

@@ -2,6 +2,19 @@
 title: "ALFA AWUS036EACS Setup Guide for China: Windows Installation & Linux Compatibility"
 description: "Setup guide for ALFA AWUS036EACS in China. RTL8821CU WiFi 5 + Bluetooth 4.2 nano adapter. Windows driver available at files.alfa.com.tw. Linux and Kali Linux are not supported — see recommended alternatives."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "What chipset does AWUS036EACS use? Does it support Bluetooth?"
+    answer: "It uses the Realtek RTL8821CU chipset, supporting WiFi 5 and Bluetooth 4.2."
+  - question: "Is AWUS036EACS recommended for Linux?"
+    answer: "Not recommended. RTL8821CU lacks a well-maintained Linux driver, and monitor mode is very unstable."
+  - question: "How do I install AWUS036EACS drivers on Windows?"
+    answer: "Download the Windows driver package from files.alfa.com.tw, install as administrator, and reboot."
+  - question: "How do I enable Bluetooth on AWUS036EACS?"
+    answer: "After installing the driver, Bluetooth usually activates automatically. Turn on the Bluetooth switch in Windows settings to connect devices."
+  - question: "If I need a Linux wireless security research adapter, which should I choose?"
+    answer: "Choose AWUS036ACM or AWUS036ACS instead. Both fully support monitor mode on Linux."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -15,6 +28,21 @@ featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
 ---
 
 The AWUS036EACS is ALFA's nano WiFi 5 + Bluetooth 4.2 combo adapter. It is designed for Windows users who need a compact wireless upgrade. Its RTL8821CU chipset has no reliable open-source Linux driver — monitor mode and packet injection are not supported. This guide covers Windows installation from Chinese sources and explains the Linux limitations clearly.
+
+{{< tldr >}}
+AWUS036EACS uses the RTL8821CU chipset. A WiFi 5 plus Bluetooth 4.2 mini adapter that is easy to install on Windows but has unstable Linux drivers. Not recommended for monitor mode.
+{{< /tldr >}}
+
+> **The AWUS036EACS does not work reliably on Kali Linux, Ubuntu, Debian, or Raspberry Pi.** The RTL8821CU chipset has no maintained open-source driver. Monitor mode, packet injection, and VIF are not available.
+>
+> If you need a Linux-compatible adapter for security research, use one of these instead:
+> - **[AWUS036ACM](/en/blog/awus036acm-china-install-guide/)** — MT7612U in-kernel driver, full monitor mode + VIF
+> - **[AWUS036ACS](/en/blog/awus036acs-china-install-guide/)** — RTL8811AU, budget-friendly monitor mode
+
+
+
+
+
 
 ## Linux Users: Please Read First
 
@@ -98,6 +126,8 @@ The RTL8821CU is highly discouraged on Raspberry Pi. Driver compilation consiste
 
 ---
 
+{{< faq >}}
+
 ## China Resources
 
 | Resource | URL | Use for |
@@ -118,3 +148,9 @@ The RTL8821CU is highly discouraged on Raspberry Pi. Driver compilation consiste
 - AWUS036EACS ← you are here
 
 Questions? Leave a comment below or contact us at [yupitek.com](https://yupitek.com/en/contact/).
+
+## References
+
+1. [ALFA Network Official Website](https://www.alfa.com.tw/)
+2. [ALFA Official Driver Downloads](https://files.alfa.com.tw)
+3. [Realtek Official Website](https://www.realtek.com/)

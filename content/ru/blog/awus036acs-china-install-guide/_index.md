@@ -2,6 +2,8 @@
 title: "Руководство по установке драйверов ALFA AWUS036ACS для Китая: Kali Linux, Ubuntu, Debian и Raspberry Pi"
 description: "Пошаговое руководство по установке драйверов ALFA AWUS036ACS в Китае с использованием внутренних зеркал. Драйвер RTL8811AU DKMS, полная поддержка режима монитора и инъекции пакетов. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi. GitHub не требуется."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +14,28 @@ series: ["alfa-china-install-guide"]
 related_product: "/ru/products/alfa/awus036acs/"
 series_order: 3
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
+
+faq:
+  - question: "Какой чип используется в AWUS036ACS? Такой же, как в AWUS036ACH?"
+    answer: "Чип Realtek RTL8811AU, использует тот же пакет драйверов, что и RTL8812AU."
+  - question: "Поддерживает ли AWUS036ACS режим монитора?"
+    answer: "Да, RTL8811AU полностью поддерживает режим монитора и инъекцию пакетов, экономичный выбор для исследований безопасности."
+  - question: "Нужен ли VPN для установки AWUS036ACS в Китае?"
+    answer: "Нет, в Kali используйте apt для установки DKMS-драйвера, в Ubuntu/Debian скачайте исходный код с Gitee и скомпилируйте."
+  - question: "Какой USB ID у AWUS036ACS?"
+    answer: "USB ID Realtek RTL8811AU — 0bda:0811, можно проверить через lsusb."
+  - question: "Какая команда для установки драйвера AWUS036ACS в Kali Linux?"
+    answer: "В Kali выполните sudo apt install realtek-rtl88xxau-dkms для установки драйвера."
 ---
 
 AWUS036ACS — это компактный двухдиапазонный адаптер ALFA для исследований в области безопасности. Его чип RTL8811AU поддерживает полноценный режим монитора и инъекцию пакетов в Kali Linux, но так как драйвер не входит в состав ядра, его необходимо скомпилировать из исходного кода. В Китае доступ к GitHub заблокирован, поэтому данное руководство использует исключительно зеркала Gitee. GitHub не требуется.
+
+{{< tldr >}}
+AWUS036ACS использует чип RTL8811AU. В Kali драйвер DKMS устанавливается через apt, в Ubuntu/Debian компилируется из Gitee, поддерживает режим монитора и инъекцию пакетов.
+{{< /tldr >}}
+
+Убедитесь, что у вас готовы:
+
 
 ## Перед началом работы
 
@@ -350,6 +371,8 @@ sudo aireplay-ng --test wlan1mon
 
 ---
 
+{{< faq >}}
+
 ## Устранение неполадок
 
 | Проблема | Вероятная причина | Решение |
@@ -387,3 +410,11 @@ sudo aireplay-ng --test wlan1mon
 - [Руководство по установке AWUS036EACS в Китае](/ru/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 Вопросы? Оставляйте комментарии ниже или свяжитесь с нами на [yupitek.com](https://yupitek.com/ru/contact/).
+
+
+## Источники
+
+1. [Официальная документация aircrack-ng](https://www.aircrack-ng.org/)
+2. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
+3. [Официальная документация Kali Linux](https://www.kali.org/docs/)
+4. [Зеркало Gitee rtl8812au](https://gitee.com/mirrors/rtl8812au)

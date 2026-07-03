@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA アダプター USB パススルー：VirtualBox と VMware セットアップガイド"
 description: "Kali Linux 向けの VirtualBox および VMware Workstation における ALFA USB WiFi アダプターの USB パススルー設定を解説。AWUS036ACH、AWUS036AXML、USB 3.0 フィルター、Extension Pack、トラブルシューティングまで網羅。"
 date: 2026-03-24
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "VirtualBoxでALFAアダプターを使うにはExtension Packのインストールが必要ですか？"
+    answer: "必要です。VirtualBoxはExtension PackをインストールしないとUSB 2.0およびUSB 3.0パススルーをサポートせず、USB 1.1のみとなり、近代的なALFAアダプターを駆動できません。"
+  - question: "ALFAアダプターはUSB 2.0とUSB 3.0コントローラーのどちらを選ぶべきですか？"
+    answer: "AWUS036AXMLはUSB 3.0（xHCI）を使用する必要があります。AWUS036ACH自体はUSB 2.0デバイスですが、xHCIを使用しても問題なく、統一してUSB 3.0に設定することを推奨します。"
+  - question: "VMware Workstationに追加拡張機能のインストールは必要ですか？"
+    answer: "不要です。VMware Workstation 17+とFusion 13+にはUSB 2.0/3.0サポートが内蔵されており、USBアービトレーターサービスが実行中であることだけ確認してください。"
+  - question: "lsusbでアダプターが見えるのにwlanインターフェースがないのはなぜですか？"
+    answer: "USBパススルーは成功していますがドライバーが読み込まれていません。RTL8812AUの場合はmodprobe 88XXauを実行するかrealtek-rtl88xxau-dkmsをインストールし、MT7921AUNの場合はmodprobe mt7921uを実行してください。"
+  - question: "LinuxホストでUSBアダプターが頻繁に切断する場合は？"
+    answer: "USB自動サスペンドを無効化してください。echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspendを実行し、ユーザーがvboxusersグループに追加されていることを確認してください。"
 ---
 
 仮想マシン内で ALFA WiFi アダプターを使用するのは、接続するだけでゲスト OS が自動認識するほど単純ではありません。共有フォルダーやブリッジネットワークとは異なり、モニターモードと生パケットインジェクションには**完全な USB 制御**が必要です。つまり、VM がホストのネットワークスタック経由ではなく USB デバイスを排他的に所有する必要があります。これを USB パススルーと呼び、正しく設定することが VM 環境で作業するペネトレーションテスターや CTF プレイヤーにとって最も一般的なセットアップ失敗の原因です。
 
+
+{{< tldr >}}
+VirtualBoxまたはVMwareでALFAアダプターを使うにはUSBパススルーの設定が必要です。VirtualBoxはExtension PackをインストールしUSB 3.0コントローラーを有効化、VMwareはUSBサポート内蔵ですがアービトレーターサービスの実行を確認してください。AWUS036ACHは88XXauドライバー、AWUS036AXMLはmt7921uドライバーを使用します。
+{{< /tldr >}}
 本ガイドでは、ゲスト OS として Kali Linux を対象に **VirtualBox 7.x** と **VMware Workstation 17+ / VMware Fusion 13+** の完全なパススルー設定を解説します。AWUS036ACH（RTL8812AU チップセット）と新しい AWUS036AXML（MT7921AUN チップセット）の両方を対象に、動作が異なる箇所はアダプター固有のメモとして記載しています。
 
 設定完了後、Kali 内で `lsusb` に ALFA アダプターが表示され、適切なドライバーが読み込まれ、`airmon-ng` でモニターモードの動作が確認できます。
@@ -297,8 +315,23 @@ echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 次のステップ
 
 - **ドライバーのインストールまたは更新：** [Kali と Ubuntu 向け ALFA ドライバーインストールガイド](/ja/blog/install-alfa-driver-kali-ubuntu/)
 - **AWUS036ACH の完全セットアップ：** [AWUS036ACH Kali Linux セットアップガイド](/ja/blog/awus036ach-kali-linux-setup/)
 - **AWUS036AXML のハードウェアレビュー：** [AWUS036AXML WiFi 6E レビュー](/ja/blog/awus036axml-wifi-6e-review/)
+
+---
+
+## 参考文献
+
+1. [VirtualBox公式ダウンロードページ](https://www.virtualbox.org/wiki/Downloads)
+2. [VMware Workstation製品ページ](https://www.vmware.com/products/workstation-pro.html)
+3. [aircrack-ng rtl8812auドライバープロジェクト](https://github.com/aircrack-ng/rtl8812au)
+4. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
+5. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)

@@ -1,4 +1,5 @@
 ---
+
 title: "ALFAアダプターによるWPA3セキュリティテスト（2026）"
 description: "ALFA Networkアダプターを使用したWPA3セキュリティテストの包括的なガイド。SAEハンドシェイク分析、Dragonblood脆弱性、トランジションモードダウングレード攻撃、PMF適用、WPA3-Enterprise EAPテストを網羅。"
 date: 2026-03-24
@@ -7,12 +8,29 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["WPA3", "SAE", "dragonblood", "transition-mode", "PMF", "kali-linux", "ALFA-network", "penetration-testing"]
 featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "WPA3とWPA2はセキュリティテストでどう違いますか？"
+    answer: "WPA3はSAEハンドシェイクを採用しPSKに代え、前方秘匿性を持ちオフライン辞書攻撃が不可能です。PMFが必須要件ですが、移行モードはダウングレード攻撃面を導入します。"
+  - question: "SAEハンドシェイクキャプチャ後にオフラインでクラックできますか？"
+    answer: "できません。純粋なSAEネットワークはクラック可能なハッシュ値を生成しません。SAEフレームのキャプチャはプロトコルレベル分析のみに使用し、正しいバリアントとPMFネゴシエーションを確認します。"
+  - question: "WPA3移行モードのダウングレード攻撃とは？"
+    answer: "移行モードAPはSAEとPSKを同時に受け入れます。攻撃者が純粋なWPA2のローグAPを偽造し、クライアントがSAEを強制しない場合ダウングレードが完了し、ハンドシェイクがオフラインでクラック可能になります。"
+  - question: "WPA3テストに6 GHzアダプターは必要ですか？"
+    answer: "6 GHz帯域上のWPA3ネットワークをテストする場合のみAWUS036AXMLが必要です。2.4/5 GHz上のWPA3テストにはAWUS036ACHで十分です。"
+  - question: "Dragonblood脆弱性はまだテストが必要ですか？"
+    answer: "現代のAPファームウェアの多くはパッチ済みですが、古いまたは未パッチのファームウェアを使用する環境ではCVE-2019-9494などのサイドチャネル攻撃とSAE commitフラッドDoSのテストが依然として必要です。"
 ---
 
 {{< alert "triangle-exclamation" >}}
 **法的通知：** 無線セキュリティテストは、明示的な書面による承認を得たネットワークおよびデバイスに対してのみ実施してください。SAEキャプチャ、デオーセンティケーション、不正AP展開を含むWPA3テスト技術は、その他の無線アセスメント活動と同じ法的要件の対象となります。認可されたテストのみ実施してください。
 {{< /alert >}}
 
+
+{{< tldr >}}
+WPA3セキュリティテストはSAEハンドシェイク分析、移行モードダウングレード攻撃、Dragonblood脆弱性評価、PMF強制実行をカバーします。AWUS036AXMLは6 GHzテストに、AWUS036ACHは2.4/5 GHzに適しています。
+{{< /tldr >}}
 WPA3はパーソナルおよびエンタープライズの両方の無線セキュリティにおいてWPA2から大幅に改善されています。Simultaneous Authentication of Equals（SAE）は、Pre-Shared Key（PSK）ハンドシェイクを、オフライン辞書攻撃に耐性のあるパスワード認証鍵交換に置き換えます。Protected Management Frames（PMF）は必須です。フォワードシークレシーが組み込まれています。
 
 しかし、WPA3には脆弱性がないわけではありません。Dragonblood研究（2019年）では、SAEハンドシェイク実装にサイドチャネルおよびサービス拒否の脆弱性が発見されました。トランジションモードにはダウングレード攻撃の表面があります。エンタープライズ展開はWPA2-Enterpriseと同じ802.1X証明書検証の弱点に直面します。このガイドでは、徹底的なアセスメントに必要なモニターモードの安定性とインジェクション機能を提供するALFA Networkアダプターを使用したWPA3セキュリティテストの完全な方法論をカバーします。
@@ -347,8 +365,23 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 関連リソース
 
 - [エンタープライズ無線セキュリティアセスメント：完全フレームワーク](/ja/blog/enterprise-wireless-security-assessment/)
 - [パケットインジェクションガイド：aireplay-ngを使用したWiFiアダプターのテスト](/ja/blog/packet-injection-guide/)
 - [Kali Linuxでモニターモードを有効にする](/ja/blog/enable-monitor-mode-kali-linux/)
+
+---
+
+## 参考文献
+
+1. [Dragonblood公式研究論文（Vanhoef & Ronen, 2019）](https://papers.mathyvanhoef.com/dragonblood.pdf)
+2. [Wi-Fi Alliance WPA3認証説明](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [aircrack-ng公式ドキュメント](https://www.aircrack-ng.org/documentation.html)
+4. [hcxdumptoolツールドキュメント](https://github.com/ZerBea/hcxdumptool)
+5. [IEEE 802.11w PMF標準](https://standards.ieee.org/ieee/802.11/)

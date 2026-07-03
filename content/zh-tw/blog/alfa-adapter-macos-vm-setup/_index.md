@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ALFA 網路卡能在 macOS 原生使用監聽模式嗎？"
+    answer: "不能。macOS 的 CoreWLAN 與 IO80211Family 架構不支援第三方網路卡的監聽模式或封包注入，必須透過 VM 執行 Kali Linux 並使用 USB 直通。"
+  - question: "Apple Silicon Mac 該選 VMware Fusion 還是 Parallels？"
+    answer: "兩者皆可，但 Parallels Desktop 19+ 在 Apple Silicon 上的 ARM64 VM 效能與 USB 直通穩定度通常優於 VMware Fusion。"
+  - question: "AWUS036AXML 在 Apple Silicon 的 Kali VM 上需要編譯驅動嗎？"
+    answer: "不需要。MT7921AUN 驅動自 Linux 5.18 起內建核心，Kali ARM64 2024.x 以上版本插入即自動識別。"
+  - question: "Intel Mac 可以用標準 Kali x86_64 ISO 嗎？"
+    answer: "可以。Intel Mac 為 x86_64 架構，可直接使用 kali.org 官方標準 Kali Linux x86_64 ISO 建立 VM。"
+  - question: "VirtualBox 適合在 Apple Silicon 上做資安測試嗎？"
+    answer: "不建議。VirtualBox 對 Apple Silicon 的支援仍為實驗性，USB 直通存在已知問題，請改用 VMware Fusion 或 Parallels。"
 ---
+
+macOS 無法原生支援 ALFA 網路卡的監聽模式與封包注入，唯一可靠做法是在 VM 內執行 Kali Linux 並透過 USB 直通繞過 macOS。
+
+{{< tldr >}}
+macOS 不支援 ALFA 網路卡的監聽模式與封包注入。解法是在 VMware Fusion 或 Parallels 中執行 Kali Linux VM，並透過 USB 直通將網路卡交給 VM。Apple Silicon 需使用 ARM64 Kali 映像。
+{{< /tldr >}}
 
 macOS 是一個精緻、適合生產環境的作業系統，但它並非為無線資安研究而設計。每位滲透測試人員工具箱中最核心的兩項功能——**監聽模式（Monitor Mode）** 與**封包注入（Packet Injection）**——在 macOS 的 Wi-Fi 堆疊中完全不存在。Apple 的 Wi-Fi 驅動程式提供了一個乾淨、功能完整的網路介面，僅此而已。
 
@@ -247,8 +266,21 @@ airodump-ng 顯示掃描輸出（SSID、BSSID、頻道、客戶端裝置）即�
 
 ---
 
+{{< faq >}}
+
+
+
+
 ## 相關指南
 
 針對在 Windows 和 Linux 主機上使用 VirtualBox 或 VMware Workstation 的使用者，請參閱配套指南：[ALFA 網路卡 USB 直通：VirtualBox 與 VMware 設定指南](/zh-tw/blog/alfa-adapter-virtualbox-vmware-usb/)。
 
 有關本指南推薦的 AWUS036AXML 網路卡詳細資訊，包括 6 GHz 頻段效能基準測試與驅動程式版本說明，請參閱完整評測：[ALFA AWUS036AXML WiFi 6E 評測](/zh-tw/blog/awus036axml-wifi-6e-review/)。
+
+## 參考來源
+
+1. [ALFA Network 官方網站](https://www.alfa.com.tw/)
+2. [Kali Linux 官方下載頁面](https://www.kali.org/get-kali/)
+3. [VMware Fusion 產品頁面](https://www.vmware.com/products/fusion.html)
+4. [Parallels Desktop 官方網站](https://www.parallels.com/)
+5. [aircrack-ng rtl8812au 驅動專案](https://github.com/aircrack-ng/rtl8812au)

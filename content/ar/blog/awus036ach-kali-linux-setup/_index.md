@@ -3,14 +3,30 @@ title: "دليل إعداد ALFA AWUS036ACH على Kali Linux: وضع المرا
 description: "دليل خطوة بخطوة لتثبيت ALFA AWUS036ACH على Kali Linux 2024/2025، تفعيل وضع المراقبة باستخدام airmon-ng، والتحقق من حقن الحزم."
 date: 2026-03-23
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "Kali-Linux", "وضع-المراقبة", "حقن-الحزم", "RTL8812AU"]
 featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "هل يحتاج AWUS036ACH إلى تعريف إضافي على Kali Linux؟"
+    answer: "نعم. RTL8812AU ليس تعريفاً مدمجاً في النواة الرئيسية. يلزم تثبيته من مستودع aircrack-ng على GitHub، ويُنصح باستخدام DKMS لضمان عمله بعد تحديثات النواة."
+  - question: "كيف أتأكد من تعرّف النظام على AWUS036ACH؟"
+    answer: "نفّذ lsusb وابحث عن ID 0bda:8812 لتأكيد تعرّف Realtek RTL8812AU، ثم استخدم lsmod للتأكد من تحميل وحدة التعريف."
+  - question: "ماذا أفعل إذا اختفت الواجهة بعد تفعيل وضع المراقبة؟"
+    answer: "غالباً ما يعود ذلك إلى استعادة NetworkManager للواجهة. نفّذ airmon-ng check kill لإنهاء العمليات المتداخلة، ثم أعد تفعيل وضع المراقبة."
+  - question: "ما نسبة نجاح اختبار حقن الحزم المقبولة؟"
+    answer: "نسبة نجاح 80% فأكثر تعني عملًا موثوقاً. أقل من 50% يتطلب فحص موقع الهوائي وكفاية طاقة USB وصحة تثبيت التعريف."
+  - question: "كيف أتعامل مع تعطل تعريف AWUS036ACH بعد تحديث النواة؟"
+    answer: "إذا استُخدم DKMS سيُعاد بناء التعريف تلقائياً. إذا فشل، نفّذ dkms autoinstall وتأكد من تطابق حزمة linux-headers مع إصدار النواة الحالي."
 ---
-
 أثبت ALFA AWUS036ACH مكانته بجدارة بوصفه محول USB WiFi الأكثر توصيةً في مجتمع Kali Linux — ولأسباب وجيهة. مدفوعاً بشريحة Realtek RTL8812AU، يوفر دعماً موثوقاً لوضع المراقبة وحقن الحزم اعتمد عليه محترفو الأمن منذ عام 2017. يأخذك هذا الدليل خطوةً بخطوة من لحظة فتح الصندوق حتى التحقق الكامل من عمل حقن الحزم على Kali Linux 2024 و2025.
+
+{{< tldr >}}
+يستخدم AWUS036ACH شريحة RTL8812AU، ومع تعريف aircrack-ng عبر DKMS يمكن تفعيل وضع المراقبة وحقن الحزم بثبات. إنه التجهيز القياسي لاختبار الاختراق على Kali Linux.
+{{< /tldr >}}
+
 
 ---
 
@@ -472,6 +488,8 @@ sudo systemctl start NetworkManager
 
 ---
 
+{{< faq >}}
+
 ## ملخص
 
 | الخطوة | الأمر |
@@ -487,3 +505,11 @@ sudo systemctl start NetworkManager
 | اختبار الحقن | `sudo aireplay-ng --test wlan0mon` |
 
 يظل [ALFA AWUS036ACH](/ar/products/alfa/awus036ach/) مقروناً بـ Kali Linux 2024+ وبرنامج تشغيل RTL8812AU من aircrack-ng الإعداد الأكثر موثوقية والأوفر توثيقاً في مجتمع اختبار الاختراق. بعد التحقق من عمل الحقن، ستكون جاهزاً لاستخدام مجموعة Aircrack-ng الكاملة وWireshark وKismet وBettercap وأي أداة أخرى تتطلب وضع المراقبة أو حقن الحزم.
+
+## المراجع
+
+1. [مستودع تعريف aircrack-ng الرسمي لـ rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
+3. [مواصفات Realtek RTL8812AU](https://www.realtek.com/)
+4. [وثائق Linux Wireless الرسمية](https://wireless.wiki.kernel.org/)
+

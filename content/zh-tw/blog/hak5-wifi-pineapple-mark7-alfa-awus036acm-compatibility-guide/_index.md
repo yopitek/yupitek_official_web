@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["HAK5", "WiFi-Pineapple", "AWUS036ACM", "MT7612U", "monitor-mode", "packet-injection", "PineAP", "OpenWrt", "5GHz", "滲透測試"]
 featureimage: "/images/blog/hak5-pineapple-mark7-alfa-awus036acm.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "WiFi Pineapple Mark VII 需要外接網卡嗎？"
+    answer: "需要。MK7 內建無線電僅支援 2.4 GHz，2026 年大多數網路已遷移至 5 GHz，外接 AWUS036ACM 可加入 5 GHz 監聽與注入能力。"
+  - question: "AWUS036ACM 為什麼能在 MK7 上隨插即用？"
+    answer: "MK7 Firmware 2.x 已預載 kmod-mt76x2u 驅動，MT7612U 晶片組自 Linux 4.19 起內建於核心，無需編譯或安裝。"
+  - question: "MK7 的 USB 2.0 會限制 AWUS036ACM 效能嗎？"
+    answer: "USB 2.0 將吞吐量限制在 150-250 Mbps，但滲透測試工作負載如封包捕獲與握手收集不受影響，僅高吞吐橋接受限。"
+  - question: "如何在 MK7 上啟用 Monitor Mode？"
+    answer: "透過 SSH 登入後執行 airmon-ng start wlan3 指令，介面會重新命名為 wlan3mon，再以 iwconfig 驗證模式。"
+  - question: "哪些 ALFA 網卡不相容 MK7？"
+    answer: "AWUS036AX、AWUS036AXER 使用 RTL8832BU 晶片，AWUS036EACS 使用 RTL8811CU，驅動不支援監聽模式或注入，均不相容。"
 ---
+
+ALFA AWUS036ACM 是 HAK5 WiFi Pineapple Mark VII 唯一官方確認相容的 5 GHz 網卡，搭載 MT7612U 晶片隨插即用，無需編譯驅動。
+
+{{< tldr >}}
+AWUS036ACM 採用 MT7612U 晶片組，MK7 Firmware 2.x 已預載驅動，插入後即為 wlan3 介面，支援 5 GHz 監聽模式、封包注入與 PineAP 擴充，10 分鐘內完成設定。
+{{< /tldr >}}
 
 HAK5 WiFi Pineapple Mark VII 是可攜式無線安全稽核的業界標竿。但開箱即用的它有一個重要限制：內建無線電僅支援 **2.4 GHz**。到了 2026 年，大多數企業與家用網路已遷移至 5 GHz 以獲得更好的效能與更少的干擾——這意味著一台原廠 MK7 會錯過一半的無線頻譜。
 
@@ -320,6 +339,12 @@ EOF
 
 ---
 
+---
+
+{{< faq >}}
+
+---
+
 ## 7. 建議
 
 **ALFA AWUS036ACM 是目前能買到、最適合擴充 WiFi Pineapple Mark VII 至 5 GHz 的網卡。**
@@ -345,3 +370,13 @@ EOF
 ---
 
 *需要設定協助？聯絡 Yupitek 技術支援團隊：[yupitek.com/support](/zh-tw/support/)*
+
+---
+
+## 參考來源
+
+1. [Hak5 官方文件 — 相容 802.11ac 網卡清單](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters)
+2. [OpenWrt mt76 驅動程式倉庫 — GitHub](https://github.com/openwrt/mt76)
+3. [aircrack-ng — 無線安全工具組官方網站](https://www.aircrack-ng.org/)
+4. [ALFA Network 官方網站 — AWUS036ACM 產品規格](https://www.alfa.com.tw/)
+5. [Linux Wireless — MT76x2U 驅動說明](https://wireless.wiki.kernel.org/en/users/drivers/mt76)

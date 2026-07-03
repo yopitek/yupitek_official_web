@@ -7,6 +7,20 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Por que o AWUS036AXML trava no modo monitor ativo?"
+    answer: "O MT7921AUN usa arquitetura MAC baseada em firmware. A combinação atual do driver mt7921u do Linux com o firmware não implementa completamente o caminho de comando necessário para injeção ativa. Após executar aireplay-ng, a interface desaparece."
+  - question: "Como corrigir o travamento do modo ativo do MT7921AUN?"
+    answer: "Atualize o pacote firmware-misc-nonfree para a versão mais recente, faça upgrade para kernel 6.6 ou superior, e evite altas taxas de pacotes em floods de deautenticação. Isso pode melhorar mas não elimina completamente o problema."
+  - question: "Como o hcxdumptool captura PMKID sem injetar pacotes?"
+    answer: "O hcxdumptool no modo passivo captura PMKID a partir de beacons e pacotes de probe broadcast pelo access point, sem transmitir nenhum pacote, evitando o travamento do firmware."
+  - question: "Quais as limitações do modo passivo do AWUS036AXML?"
+    answer: "O modo passivo captura beacons, handshakes e PMKID normalmente, mas não pode executar deautenticação, probe request ou floods de associação. Essas operações ativas exigem o AWUS036ACH."
+  - question: "Quais versões de kernel melhoram a estabilidade do MT7921AUN?"
+    answer: "O kernel 6.1 LTS ou superior inclui varios patches de estabilidade do mt7921u. O kernel 6.6 e versões mais recentes incluem melhorias adicionais na stack de drivers USB da MediaTek."
 ---
 
 O **ALFA AWUS036AXML** é o adaptador WiFi 6E principal da ALFA Network, construído com o chipset MediaTek MT7921AUN e com suporte tribanda (2.4 / 5 / 6 GHz). É um dos poucos adaptadores USB capazes de monitoramento passivo na banda de 6 GHz em 2026 e apresenta desempenho excepcional em casos de uso como reconhecimento de locais, captura de pacotes e coleta de PMKID.
@@ -14,6 +28,11 @@ O **ALFA AWUS036AXML** é o adaptador WiFi 6E principal da ALFA Network, constru
 No entanto, há um problema conhecido que pega usuários de surpresa: **comandos de modo monitor ativo causam crash do firmware**. Executar ferramentas como `aireplay-ng` ou `mdk4` faz a interface `wlan0mon` desaparecer completamente, forçando você a desconectar e reconectar o adaptador para recuperá-lo. Não é um defeito de hardware — é uma limitação do driver `mt7921u` do Linux e seu firmware atual.
 
 Este guia explica a causa raiz, fornece etapas de diagnóstico completas e soluções concretas e alternativas para continuar trabalhando sem interrupções.
+
+{{< tldr >}}
+O driver mt7921u do AWUS036AXML trava o firmware ao injetar pacotes ativamente. Este artigo explica a causa raiz, etapas de diagnostico e solucoes como atualizacao de firmware, upgrade de kernel e uso de captura passiva com hcxdumptool.
+{{< /tldr >}}
+
 
 ---
 
@@ -219,8 +238,18 @@ mt7921u 1-2.3:1.0: HW/SW Version: ...
 
 ---
 
+{{< faq >}}
+
 ## Guias Relacionados
 
 - [Análise Completa do AWUS036AXML](/pt/blog/awus036axml-wifi-6e-review/)
 - [Guia de Injeção de Pacotes](/pt/blog/packet-injection-guide/)
 - [Guia de Instalação de Driver](/pt/blog/install-alfa-driver-kali-ubuntu/)
+
+## Referências
+
+1. [Repositorio de firmware Linux (kernel.org)](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git)
+2. [Driver mt76 do kernel Linux](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+3. [Conjunto de ferramentas aircrack-ng](https://www.aircrack-ng.org/)
+4. [Projeto GitHub hcxdumptool](https://github.com/ZerBea/hcxdumptool)
+5. [Suporte oficial da ALFA Network](https://www.alfa.com.tw/)

@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "ALFA 无线网卡 Windows 10/11 安装配置完整指南"
 description: "如何在 Windows 10/11 上安装和配置 ALFA USB WiFi 无线网卡。驱动下载、使用 Acrylic WiFi 的监听模式、故障排查及 Windows 用户网卡对比。"
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-网卡", "驱动安装", "acrylic-wifi"]
 featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
+faq:
+  - question: "Windows 支持 ALFA 网卡的监听模式吗？"
+    answer: "Windows 原生不支持完整监听模式。NDIS 驱动模型未开放原始 802.11 数据包捕获，仅 Acrylic WiFi Pro 可做被动扫描，完整监听模式需使用 Kali Linux。"
+  - question: "可以在 Windows 上进行数据包注入吗？"
+    answer: "不能。当前没有任何 Windows 驱动程序支持 ALFA 网卡的原始 802.11 数据包注入，此功能仅在 Linux 上可用。"
+  - question: "哪一款 ALFA 网卡在 Windows 上兼容性最好？"
+    answer: "AWUS036ACH（RTL8812AU）与 AWUS036ACM（MT7612U）拥有 WHQL 签署驱动程序，Windows 10/11 兼容性纪录最完整，即插即用最稳定。"
+  - question: "Windows 11 需要手动安装 MT7921AUN 驱动程序吗？"
+    answer: "不需要。MT7921AUN 驱动程序已内置于 Windows 11 驱动程序存放区（组建 22000 以上），插入网卡后数分钟内自动取得驱动程序。"
+  - question: "装置管理员显示 Code 43 该怎么办？"
+    answer: "解除安装驱动程序并重新开机后重新插入网卡，再以方法 B 手动安装驱动程序。若持续出现 Code 43 且跨多台机器都一样，通常表示硬件故障。"
 ---
 
+
+
+
 ALFA Network USB WiFi 无线网卡在安全研究和网络工程领域广为人知，但大多数教程都以 Linux 为主。对于 Windows 用户来说，有个好消息：所有主流 ALFA 网卡均可在 Windows 10 和 Windows 11 上通过厂商提供的驱动正常运行——无需编译源代码。
+
+{{< tldr >}}
+ALFA 网卡在 Windows 10/11 上可即插即用连接 WiFi，但 NDIS 驱动模型不支持完整监听模式与数据包注入。需要安全测试时请切换至 Kali Linux（裸机或 VM USB 直通）。Windows 适合日常连接与 WiFi 勘测。
+{{< /tldr >}}
+
 
 与 Linux 的关键区别在于监听模式（Monitor Mode）。在 Linux 上，`aircrack-ng`、`airodump-ng` 等工具借助原始 802.11 捕获能力实现数据包注入。而在 Windows 上，驱动模型（NDIS，网络驱动接口规范）并未暴露相同的硬件能力。**Windows 原生不支持完整的监听模式和数据包注入。** Windows 的优势在于即插即用的网络连接，以及搭配 Acrylic WiFi Analyzer 等成熟工具的 WiFi 扫描能力。
 
@@ -239,6 +263,9 @@ wlan.fc.type_subtype == 0x0004
 
 ---
 
+
+{{< faq >}}
+
 ## 总结：ALFA 网卡在 Windows 与 Linux 上的对比
 
 | 功能 | Windows 10/11 | Kali Linux |
@@ -260,3 +287,11 @@ wlan.fc.type_subtype == 0x0004
 - [VirtualBox 和 VMware USB 直通配置 ALFA 网卡](/zh-cn/blog/alfa-adapter-virtualbox-vmware-usb/) — 在虚拟机中以完整 ALFA 网卡支持运行 Kali Linux
 - [Kali Linux 和 Ubuntu 驱动安装指南](/zh-cn/blog/install-alfa-driver-kali-ubuntu/) — 各芯片组完整驱动安装步骤
 - [ALFA WiFi 网卡选购指南 2026](/zh-cn/blog/alfa-wifi-adapter-buyer-guide-2026/) — 根据使用场景选择合适的网卡
+
+## 参考文献
+
+1. [ALFA Network 官方驱动程序下载](https://www.alfa.com.tw/service_1.html)
+2. [Microsoft NDIS 驱动程序文件](https://learn.microsoft.com/windows-hardware/drivers/network/ndis-drivers)
+3. [Acrylic WiFi Analyzer 官方网站](https://www.acrylicwifi.com/)
+4. [Npcap 官方网站](https://npcap.com/)
+5. [Wireshark 官方文档](https://www.wireshark.org/docs/)

@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA AWUS036ACH セットアップガイド：Kali Linux モニターモード・パケットインジェクション設定"
 description: "ALFA AWUS036ACH を Kali Linux 2024/2025 で使用するための完全セットアップガイド。RTL8812AU ドライバーインストール、airmon-ng によるモニターモード有効化、パケットインジェクション確認手順。"
 date: 2026-03-23
@@ -7,12 +8,28 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "Kali-Linux", "モニターモード", "パケットインジェクション", "RTL8812AU", "airmon-ng"]
 featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036ACHはKali Linuxでドライバーの追加インストールが必要ですか？"
+    answer: "必要です。RTL8812AUはメインラインカーネルドライバーではなく、aircrack-ng GitHubリポジトリからインストールする必要があります。DKMSの使用を推奨し、カーネル更新後も動作し続けます。"
+  - question: "AWUS036ACHがシステムに認識されているかどう確認しますか？"
+    answer: "lsusbコマンドを実行し、ID 0bda:8812を探してRealtek RTL8812AUが認識されていることを確認し、lsmodでドライバーモジュールが読み込まれていることを確認します。"
+  - question: "モニターモード有効化後にインターフェースが消えたらどうしますか？"
+    answer: "通常はNetworkManagerがインターフェースを再取得したことが原因です。airmon-ng check killを実行して干渉プロセスを終了し、再度モニターモードを有効化してください。"
+  - question: "パケットインジェクションテストの成功率はどのくらいなら正常ですか？"
+    answer: "成功率80%以上で信頼できる動作を示します。50%未満の場合はアンテナ位置、USB給電の充足性、ドライバーの正しいインストールを確認してください。"
+  - question: "カーネル更新後にAWUS036ACHドライバーが無効になったらどう対処しますか？"
+    answer: "DKMSでインストールしていればドライバーは自動リビルドされます。無効になった場合はdkms autoinstallを実行し、linux-headersパッケージが現在のカーネルバージョンと一致していることを確認してください。"
 ---
+ALFA AWUS036ACH は、Kali Linux を使ったワイヤレスセキュリティ診断において世界中のセキュリティ研究者・ペネトレーションテスターが愛用する USB WiFi アダプターです。RTL8812AU チップセットを搭載し、デュアルバンド（2.4 GHz / 5 GHz）に対応。aircrack-ng コミュニティが長年にわたってメンテナンスしているドライバーにより、安定したモニターモードとパケットインジェクションが実現します。
 
 ## はじめに
 
-ALFA AWUS036ACH は、Kali Linux を使ったワイヤレスセキュリティ診断において世界中のセキュリティ研究者・ペネトレーションテスターが愛用する USB WiFi アダプターです。RTL8812AU チップセットを搭載し、デュアルバンド（2.4 GHz / 5 GHz）に対応。aircrack-ng コミュニティが長年にわたってメンテナンスしているドライバーにより、安定したモニターモードとパケットインジェクションが実現します。
 
+{{< tldr >}}
+AWUS036ACHはRTL8812AUチップを搭載し、aircrack-ngドライバーとDKMSインストールの組み合わせでモニターモードとパケットインジェクションを安定して有効化でき、Kali Linuxペネトレーションテストの標準装備です。
+{{< /tldr >}}
 本ガイドでは、Kali Linux 2024.x / 2025.x 環境で AWUS036ACH を一から設定し、実際にペネトレーションテストで使える状態にするまでの全手順を解説します。
 
 ---
@@ -291,6 +308,11 @@ sudo dkms autoinstall
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## まとめ
 
 本ガイドの手順に従うことで、ALFA AWUS036ACH を Kali Linux 上でモニターモード・パケットインジェクション対応の状態で使用できるようになります。
@@ -305,3 +327,12 @@ sudo dkms autoinstall
 6. `aireplay-ng --test wlan0mon` でインジェクション動作を確認
 
 AWUS036ACH の製品詳細・仕様・購入については、[ALFA AWUS036ACH 製品ページ](/ja/products/alfa/awus036ach/) をご覧ください。
+
+---
+
+## 参考文献
+
+1. [aircrack-ng公式rtl8812auドライバーリポジトリ](https://github.com/aircrack-ng/rtl8812au)
+2. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
+3. [Realtek RTL8812AU仕様説明](https://www.realtek.com/)
+4. [Linux Wireless公式ドキュメント](https://wireless.wiki.kernel.org/)

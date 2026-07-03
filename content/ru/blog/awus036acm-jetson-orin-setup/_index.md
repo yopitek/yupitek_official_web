@@ -2,12 +2,31 @@
 title: "Без сборки драйверов! Практическое руководство по настройке ALFA AWUS036ACM на Jetson Orin без конфигурации"
 description: "Подробный анализ выбора USB-адаптера ALFA Network для AVALUE AIB-NW01 (NVIDIA Jetson Orin NX/Nano) в задачах граничного ИИ, с подтверждением подлинной готовности AWUS036ACM к работе «из коробки»."
 date: 2026-05-20
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
----
+
+faq:
+  - question: "Почему USB WiFi-адаптеры часто не работают на Jetson Orin?"
+    answer: "Jetson использует кастомное ядро NVIDIA Tegra, а не стандартное ядро Ubuntu. Сторонние драйверы часто не компилируются из-за отсутствия заголовков ядра или несовместимости ABI."
+  - question: "Нужно ли компилировать драйвер AWUS036ACM на Jetson Orin?"
+    answer: "Нет. Драйвер mt76x2u для чипа MT7612U встроен в основную ветку ядра с версии 4.19. Ядро 5.10 в AIB-NW01 уже содержит его, Plug & Play."
+  - question: "Можно ли использовать AWUS036ACH (RTL8812AU) на Jetson Orin?"
+    answer: "Можно, но нужно вручную компилировать драйвер. Патчи ядра NVIDIA JetPack могут нарушить ABI cfg80211, что приведёт к ошибке компиляции. Рекомендуется только опытным пользователям."
+  - question: "Может ли обновление JetPack сломать USB WiFi-адаптер?"
+    answer: "Да. Сторонние драйверы могут перестать работать из-за изменения API ядра после обновления JetPack и потребуют пересборки. Встроенные драйверы (например, mt76x2u) не затрагиваются."
+  - question: "Какая версия ядра Linux используется в AIB-NW01?"
+    answer: "AIB-NW01 поставляется с Ubuntu 20.04.6 LTS и JetPack 5.0, использует кастомное ядро NVIDIA Tegra 5.10.x-tegra, архитектура CPU — ARM64."
+---Jetson Orin использует кастомное ядро NVIDIA Tegra, сторонние WiFi-драйверы часто не компилируются. ALFA AWUS036ACM с чипом MT7612U имеет драйвер в ядре с версии 4.19, Plug & Play — единственное решение без компиляции. Поддерживает режим монитора, инъекцию пакетов и режим AP.
+
+{{< tldr >}}
+Jetson Orin использует кастомное ядро NVIDIA Tegra, сторонние WiFi-драйверы часто не компилируются. ALFA AWUS036ACM с чипом MT7612U имеет драйвер в ядре с версии 4.19, Plug & Play — единственное решение без компиляции. Поддерживает режим монитора, инъекцию пакетов и режим AP.
+{{< /tldr >}}
+
 
 ## Письмо клиента открывает ключевую проблему
 
@@ -148,7 +167,7 @@ Jetson работает на **кастомном ядре NVIDIA Tegra Linux**,
 | Интерфейс | USB 3.0（разъём USB-C） |
 | Мощность передачи | Стандартная, подходит для прямого подключения к порту USB |
 
-**Страница продукта**: https://yupitek.com/en/products/alfa/awus036acm/
+**Страница продукта**: https://yupitek.com/ru/products/alfa/awus036acm/
 
 ### Причина №1: единственное по-настоящему «бездрайверное» решение
 
@@ -296,6 +315,8 @@ AWUS036ACH (RTL8812AU) и AWUS036AX (RTL8812BU) не являются полно
 
 ---
 
+{{< faq >}}
+
 ## Заключение: самое простое решение часто оказывается лучшим
 
 Возвращаясь к исходному вопросу клиента: какой USB-адаптер ALFA лучше всего подходит для AVALUE AIB-NW01?
@@ -306,7 +327,7 @@ AWUS036ACH (RTL8812AU) и AWUS036AX (RTL8812BU) не являются полно
 
 ### Действуйте сейчас
 
-- Подробнее о продукте: https://yupitek.com/en/products/alfa/awus036acm/
+- Подробнее о продукте: https://yupitek.com/ru/products/alfa/awus036acm/
 - Техническая поддержка: компания Yupitek предоставляет локальную техническую поддержку в Тайване. Свяжитесь с нами.
 
 ### Дополнительные материалы
@@ -322,3 +343,9 @@ AWUS036ACH (RTL8812AU) и AWUS036AX (RTL8812BU) не являются полно
 > **Автор**: Yupitek Ltd (榆閤科技) — авторизованный дистрибьютор ALFA Network в Тайване
 >
 > **Отказ от ответственности**: данные исследования актуальны на май 2026 года. Платформа Jetson и ядро Linux постоянно обновляются; перед развёртыванием рекомендуется проверять актуальную версию JetPack и состояние поддержки встроенных драйверов.
+
+## Источники
+
+1. [AWUS036ACH vs AWUS036ACM: полное сравнение RTL8812AU и MT7612U](https://yupitek.com/en/blog/awus036ach-vs-awus036acm/)
+2. [Таблица совместимости ALFA Network с Linux](https://docs.alfa.com.tw/Support/Compat/)
+3. [Список проверенных NVIDIA WiFi-модулей (AGX Orin)](https://forums.developer.nvidia.com/t/wi-fi-6-6e-7-modules-that-have-been-validated-with-agx-orin-devkits/313431)

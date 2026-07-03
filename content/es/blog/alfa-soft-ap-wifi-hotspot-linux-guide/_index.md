@@ -7,7 +7,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi"]
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Las tarjetas USB ALFA pueden funcionar como punto de acceso WiFi en Linux?"
+    answer: "Depende del chipset. El AWUS036ACM (MT7612U) lo admite completamente y es plug-and-play; el AWUS036ACH (RTL8812AU) lo admite con condiciones; el AWUS036AXML lo admite parcialmente y requiere ajustes."
+  - question: "¿Qué tarjeta ALFA es la más adecuada para crear un Soft AP en Raspberry Pi?"
+    answer: "El AWUS036ACM es la mejor opción: controlador del núcleo plug-and-play, consumo de solo 400 mA adecuado para la alimentación de la Pi, soporte de WPA3 y VIF, y estabilidad en todas las plataformas."
+  - question: "¿Cómo verificar si la tarjeta admite el modo AP?"
+    answer: "Ejecuta iw list | grep -A 10 'Supported interface modes'. Si la salida incluye * AP, el controlador admite Soft AP y hostapd funcionará correctamente."
+  - question: "¿Qué limitaciones tiene el Soft AP con el controlador RTL8812AU?"
+    answer: "No admite WPA3 (solo WPA2-PSK), no admite VIF (necesitas dos tarjetas para separar funciones), y consume unos 800 mA, por lo que en la Pi requiere un concentrador USB con alimentación."
+  - question: "¿Qué hacer si el WiFi se desconecta al ejecutar Soft AP con AWUS036AXML?"
+    answer: "El MT7921AUN tiene Bluetooth 5.2 integrado que interfiere con el WiFi. Ejecuta echo 'install btusb /bin/false' en /etc/modprobe.d/ para desactivar permanentemente el controlador de Bluetooth y reinicia."
 ---
+
+
+{{< tldr >}}
+La compatibilidad de Soft AP de las tarjetas ALFA depende del controlador del chip. El AWUS036ACM es la opción estable para todas las plataformas; el AWUS036ACH funciona pero sin WPA3; el AWUS036AXML requiere desactivar Bluetooth y actualizar el firmware; RTL8832BU no se recomienda.
+{{< /tldr >}}
+
+> "¿Puedo usar adaptadores USB WiFi ALFA como hotspot WiFi (Soft AP) en Kali Linux / Ubuntu / Raspberry Pi?"
 
 
 
@@ -591,6 +611,8 @@ DFS (Dynamic Frequency Selection) channels (ch100–ch140) require kernel-level 
 
 ---
 
+{{< faq >}}
+
 ## 12. Recomendaciones de compra y veredicto final {#recommendations}
 
 ### Matriz de decisión rápida
@@ -668,3 +690,11 @@ This article aggregates information from:
 > **Aviso legal**: Datos de investigación actualizados a mayo de 2026. Linux kernels and distributions continue to evolve; driver support may change with new versions. Verify target platform kernel version and driver compatibility before deployment.
 >
 > **Technical Support**: For Soft AP setup issues, contact Yupitek Taiwan technical support. Product inquiries: [yupitek.com](https://yupitek.com/es/).
+
+## Referencias
+
+1. [Repositorio de conocimiento morrownr/USB-WiFi en GitHub](https://github.com/morrownr/USB-WiFi)
+2. [Documentación oficial de hostapd](https://w1.fi/cgit/hostap/)
+3. [Controlador mt76 de Linux Wireless](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)
+4. [Documentación oficial de Raspberry Pi](https://www.raspberrypi.com/documentation/)
+5. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)

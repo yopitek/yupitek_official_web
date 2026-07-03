@@ -2,20 +2,38 @@
 title: "ALFA Network Soft AP Полное Руководство 2026: Создание WiFi Хотспотов на Kali Linux, Ubuntu, Debian и Raspberry Pi 4/5"
 description: "Всестороннее исследование поддержки Soft AP (hostapd/WiFi Hotspot) USB WiFi адаптеров ALFA Network на Kali Linux, Ubuntu, Debian и Raspberry Pi 4/5. Полные руководства по настройке AWUS036ACM, AWUS036ACH и AWUS036AXML."
 date: 2026-05-21
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi"]
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
+
+faq:
+  - question: "Может ли USB-адаптер ALFA работать как WiFi-точка доступа в Linux?"
+    answer: "Зависит от чипсета. AWUS036ACM (MT7612U) полностью поддерживает и работает Plug & Play, AWUS036ACH (RTL8812AU) поддерживается условно, AWUS036AXML поддерживается частично и требует настройки."
+  - question: "Какая модель ALFA лучше всего подходит для создания Soft AP на Raspberry Pi?"
+    answer: "AWUS036ACM — лучший выбор. Встроенный драйвер работает Plug & Play, потребление всего 400 мА подходит для питания Pi, поддерживает WPA3 и VIF-виртуальные интерфейсы, стабилен на всех платформах."
+  - question: "Как проверить, поддерживает ли адаптер режим AP?"
+    answer: "Выполните iw list | grep -A 10 'Supported interface modes'. Если вывод содержит * AP, драйвер поддерживает Soft AP, и hostapd будет работать корректно."
+  - question: "Какие ограничения у Soft AP с драйвером RTL8812AU?"
+    answer: "Не поддерживает WPA3, только WPA2-PSK; не поддерживает VIF-виртуальные интерфейсы, нужны две карты; потребление около 800 мА, на Pi нужен USB-хаб с питанием."
+  - question: "Что делать, если WiFi внезапно отключается при работе Soft AP на AWUS036AXML?"
+    answer: "Встроенный Bluetooth 5.2 в MT7921AUN мешает WiFi. Выполните echo 'install btusb /bin/false' в /etc/modprobe.d/ для постоянного отключения драйвера Bluetooth, затем перезагрузите."
 ---
-
-
+> "Can I use ALFA USB WiFi adapters as a WiFi hotspot (Soft AP) on Kali Linux / Ubuntu / Raspberry Pi?"
 
 # ALFA Network Soft AP Полное Руководство 2026: Building WiFi Hotspots on Kali Linux, Ubuntu, Debian & Raspberry Pi 4/5
 
-## Введение
+{{< tldr >}}
+Совместимость Soft AP адаптеров ALFA зависит от драйвера чипсета. AWUS036ACM — стабильный выбор для всех платформ, AWUS036ACH работает, но без WPA3, AWUS036AXML требует отключения Bluetooth и обновления прошивки, RTL8832BU не рекомендуется.
+{{< /tldr >}}
 
-> "Can I use ALFA USB WiFi adapters as a WiFi hotspot (Soft AP) on Kali Linux / Ubuntu / Raspberry Pi?"
+
+Адаптер ALFA AWUS036ACM (MT7612U) — лучший выбор для Linux Soft AP: драйвер в основном ядре работает по принципу plug-and-play, поддерживаются WPA3 и виртуальные интерфейсы (VIF). RTL8812AU поддерживается с ограничениями, MT7921AUN требует ручной настройки.
+
+## Введение
 
 This is one of the most common questions we receive at Yupitek. The question sounds simple, but the answer varies dramatically depending on the model and chipset — **не каждый USB WiFi адаптер может работать в режиме Soft AP.**
 
@@ -591,6 +609,8 @@ DFS (Dynamic Frequency Selection) channels (ch100–ch140) require kernel-level 
 
 ---
 
+{{< faq >}}
+
 ## 12. Рекомендации по покупке и окончательный вердикт {#recommendations}
 
 ### Матрица быстрого решения
@@ -668,3 +688,12 @@ This article aggregates information from:
 > **Отказ от ответственности**: Данные исследования актуальны на май 2026 г. Linux kernels and distributions continue to evolve; driver support may change with new versions. Verify target platform kernel version and driver compatibility before deployment.
 >
 > **Technical Support**: For Soft AP setup issues, contact Yupitek Taiwan technical support. Product inquiries: [yupitek.com](https://yupitek.com/ru/).
+
+
+## Источники
+
+1. [AWUS036ACH vs AWUS036ACM: полное сравнение драйверов чипсетов](/zh-tw/blog/awus036ach-vs-awus036acm/)
+2. [AWUS036ACM IBSS & Mesh on Raspberry Pi](/zh-tw/blog/)
+3. [morrownr/USB-WiFi — репозиторий знаний о Linux USB WiFi](https://github.com/morrownr/USB-WiFi)
+4. [morrownr/7612u — документация по MT7612U](https://github.com/morrownr/7612u)
+5. [DeepWiki — база знаний morrownr/USB-WiFi](https://deepwiki.com/morrownr/USB-WiFi)

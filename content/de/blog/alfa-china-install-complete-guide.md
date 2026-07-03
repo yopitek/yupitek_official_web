@@ -1,6 +1,8 @@
 ---
 title: "Vollständige Anleitung: Installation aller Alfa USB-WiFi-Adapter unter Linux in China - Kali, Ubuntu, Raspberry Pi"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 slug: "alfa-china-install-complete-guide"
 tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "driver", "china", "monitor-mode", "packet-injection", "wireless"]
@@ -9,9 +11,28 @@ series: ["alfa-china-install-guide"]
 description: "Die ultimative Anleitung zur Installation aller Alfa USB-WiFi-Adapter unter Linux in China. Deckt Kali Linux, Ubuntu 22/24, Debian und Raspberry Pi ab. Kein GitHub erforderlich - nur lokale Mirrors verwenden."
 series_order: 9
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
----
+faq:
+  - question: "Muss ich ein VPN verwenden, um eine Alfa WiFi-Netzwerkkarte in China zu installieren?"
+    answer: "Nein, die Installation kann vollständig mit chinesischen Spiegelservern wie USTC, Alibaba Cloud, Tsinghua sowie Gitee-Quellcode-Spiegelservern durchgeführt werden."
+  - question: "Welche Alfa-Netzwerkkarte eignet sich am besten für den Monitor Mode und Packet Injection?"
+    answer: "Die AWUS036ACM ist mit dem MT7612U-Chipsatz ausgestattet, der im Kernel integriert ist und VIF vollständig unterstützt, was sie zur besten Wahl macht."
+  - question: "Welche Alfa-Netzwerkkarte unterstützt WiFi 6?"
+    answer: "Die AWUS036AX und AWUS036AXER verwenden den RTL8832BU-Chipsatz, der WiFi 6 unterstützt, und sind unter Ubuntu 24.04 treiberlos sofort einsatzbereit."
+  - question: "Welche Alfa-Netzwerkkarte unterstützt WiFi 6E?"
+    answer: "Die AWUS036AXM und AWUS036AXML verwenden den MT7921AUN-Chipsatz, der WiFi 6E im Tri-Band-Betrieb unterstützt."
+  - question: "Was ist bei der Verwendung von Alfa-Netzwerkkarten auf dem Raspberry Pi zu beachten?"
+    answer: "Stellen Sie sicher, dass Sie ein aktives USB-Hub zur Stromversorgung verwenden und installieren Sie die Kali ARM64-Version, um optimale Treiberunterstützung zu erhalten."
+
+---Der ultimative Leitfaden zur Installation von Alfa WiFi-Netzwerkkarten unter Linux in China, einschließlich Kali, Ubuntu, Debian, Raspberry Pi, unterstützt alle Chipsätze wie RTL8812AU, MT7612U, RTL8832BU usw. und bietet durchgängig chinesische Spiegelserver, ohne VPN.
+
+{{< tldr >}}
+Der ultimative Leitfaden zur Installation von Alfa WiFi-Netzwerkkarten unter Linux in China, einschließlich Kali, Ubuntu, Debian, Raspberry Pi, unterstützt alle Chipsätze wie RTL8812AU, MT7612U, RTL8832BU usw. und bietet durchgängig chinesische Spiegelserver, ohne VPN.
+{{< /tldr >}}
+
 
 ## Willkommen zur ultimativen Alfa Linux Installationsanleitung
+
+Dieser Leitfaden behandelt die vollständige Installation aller Alfa USB-WiFi-Adapter auf allen wichtigen Linux-Distributionen in Festlandchina, durchgehend mit chinesischen Spiegelservern, ohne GitHub-Zugriff zu benötigen.
 
 Wenn Sie dies lesen, haben Sie wahrscheinlich einen Alfa USB-WiFi-Adapter gekauft und sind steckengeblieben, weil:
 
@@ -119,6 +140,8 @@ sudo apt update
 
 ---
 
+{{< faq >}}
+
 ## Fazit
 
 Diese Anleitung deckt **alle Alfa USB-WiFi-Adapter** auf **allen wichtigen Linux-Distributionen** ab, unter Verwendung von **Ressourcen, die in China funktionieren**.
@@ -128,3 +151,11 @@ Diese Anleitung deckt **alle Alfa USB-WiFi-Adapter** auf **allen wichtigen Linux
 ---
 
 *Zuletzt aktualisiert: 24. April 2026*
+
+## Referenzen
+
+1. [aircrack-ng Offizielle Dokumentation](https://www.aircrack-ng.org/)
+2. [Linux Kernel mt76 Treiber](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+3. [ALFA Network Offizielle Website](https://www.alfa.com.tw/)
+4. [Kali Linux Offizielle Dokumentation](https://www.kali.org/docs/)
+5. [Gitee Treiber-Quellcode-Spiegel](https://gitee.com/mirrors)

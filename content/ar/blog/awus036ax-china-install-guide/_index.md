@@ -12,9 +12,26 @@ series: ["alfa-china-install-guide"]
 series_order: 4
 related_product: "/ar/products/alfa/awus036ax/"
 featureimage: "/images/blog/awus036ax-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما الشريحة التي يستخدمها AWUS036AX؟ هل يدعم WiFi 6؟"
+    answer: "يستخدم شريحة Realtek RTL8832BU ويدعم WiFi 6 (802.11ax) عالي السرعة."
+  - question: "هل يحتاج AWUS036AX إلى تثبيت تعريف على Ubuntu 24.04؟"
+    answer: "لا، نواة Ubuntu 24.04 تدعم RTL8832U أصلياً ويعمل فور التوصيل."
+  - question: "هل AWUS036AX مناسب لأبحاث الأمن اللاسلكي؟"
+    answer: "أقل ملاءمة، دعم وضع المراقبة لـ RTL8832BU محدود. يُنصح باستخدام AWUS036ACM أو AWUS036ACH بدلاً منه."
+  - question: "هل أحتاج إلى VPN لتثبيت AWUS036AX في الصين؟"
+    answer: "لا، نزّل كود rtl8852bu من Gitee واستخدم المرايا المحلية لتثبيت أدوات التجميع."
+  - question: "ما هو USB ID لـ AWUS036AX؟"
+    answer: "USB ID لـ Realtek RTL8832BU هو 0bda:8832، يمكن التأكد بـ lsusb."
 ---
-
 يعتبر AWUS036AX محول WiFi 6 AX1800 ثنائي النطاق من ALFA. شريحة RTL8832BU الخاصة به خارج النواة في إصدارات Linux الأقل من 6.14 — ولكن Ubuntu 24.04 (نواة 6.8) يتضمنها بشكل أصلي. يستخدم هذا الدليل مرايا Gitee للنواة القديمة وبرنامج التشغيل المدمج لـ Ubuntu 24.04. لا داعي للقلق، GitHub ليس مطلوبًا.
+
+{{< tldr >}}
+يستخدم AWUS036AX شريحة RTL8832BU ويدعم WiFi 6، Ubuntu 24.04 يعمل فور التوصيل، وعلى Kali/Ubuntu 22.04 نزّل rtl8852bu من Gitee وجمّعه.
+{{< /tldr >}}
+
 
 > **ملاحظة حول أبحاث الأمان:** شريحة RTL8832BU لديها دعم محدود لوضع المراقبة. تختلف النتائج حسب إصدار النواة وبرنامج التشغيل. للحصول على حقن حزم موثوق على Kali Linux، فإن [AWUS036ACM](/ar/blog/awus036acm-china-install-guide/) أو [AWUS036ACH](/ar/blog/awus036ach-china-install-guide/) هما خيارات أفضل.
 
@@ -247,6 +264,8 @@ sudo reboot
 | جامعة العلوم والتكنولوجيا في الصين | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
 | مرآة هواوي | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 
+{{< faq >}}
+
 ## المزيد من أدلة محولات Alfa للصين
 
 - [دليل تثبيت AWUS036ACH في الصين](/ar/blog/awus036ach-china-install-guide/) — RTL8812AU، طاقة عالية
@@ -259,3 +278,11 @@ sudo reboot
 - [دليل تثبيت AWUS036EACS في الصين](/ar/blog/awus036eacs-china-install-guide/) — RTL8821CU، ويندوز
 
 هل لديك أسئلة؟ اترك تعليقًا أدناه أو اتصل بنا على [yupitek.com](https://yupitek.com/ar/contact/).
+
+## المراجع
+
+1. [موقع Realtek الرسمي](https://www.realtek.com/)
+2. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+3. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
+4. [مرآة Gitee لـ rtl8852bu](https://gitee.com/mirrors/rtl8852bu)
+

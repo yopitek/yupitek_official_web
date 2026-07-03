@@ -7,11 +7,30 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["baoyu-skills", "geração-de-imagens-IA", "marketing", "ALFA-Network", "GitHub-Copilot"]
 featureimage: "/images/blog/baoyu-skills/cover-image-4.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "O que é o baoyu-skills?"
+    answer: "O baoyu-skills é uma coleção de plugins de código aberto para o GitHub Copilot CLI, oferecendo 19 habilidades que cobrem geração de imagens, saída HTML, tradução e publicação em redes sociais, tudo acessível diretamente do terminal."
+  - question: "Qual baoyu-skill  é adequado para gerar imagens de capa de blog?"
+    answer: "O baoyu-cover-image  é projetado para capas de artigos, suportando três proporções: cinema 2.35:1, widescreen 16:9 e quadrado 1:1, com múltiplos estilos de cor e renderização."
+  - question: "Como usar o baoyu-skills no GitHub Copilot CLI?"
+    answer: "Após instalar a coleção de plugins, digite comandos como /baoyu-cover-image ou /baoyu-xhs-images no terminal. A habilidade fará perguntas sobre estilo, dimensões e conteúdo antes de gerar a imagem."
+  - question: "Quais tipos de saída de imagem o baoyu-skills suporta?"
+    answer: "A saída Tipo A cobre capas, infograficos, quadrinhos, slides, renderizações de produtos e cartões verticais do Xiaohongshu; o Tipo B gera HTML estilizado; o Tipo C lida com tradução e publicação em redes sociais."
+  - question: "Como aplicar o baoyu-skills aos seus próprios produtos?"
+    answer: "Encontre a variante que corresponde ao tom da sua marca neste artigo, copie o prompt e substitua o nome do produto e especificações principais pelo seu produto alvo, depois execute a habilidade correspondente no Copilot CLI."
 ---
 
 Na Yopitek, distribuímos produtos de hardware técnico — adaptadores WiFi, ferramentas de pesquisa em segurança, módulos SDR — e criar visuais de marketing consistentes e de alta qualidade para 8 idiomas sempre foi um desafio. Este artigo documenta como usamos a coleção de plugins **baoyu-skills** para GitHub Copilot CLI para gerar imagens de produtos em diferentes formatos e estilos.
 
 Usamos o adaptador USB WiFi **ALFA AWUS036ACM** como produto de exemplo ao longo deste guia. Cada prompt e imagem exibida aqui foi gerada a partir de uma descrição deste adaptador. O objetivo é uma referência prática de estilos: quando você precisar de uma imagem de capa de produto, um card para o Instagram, ou um infográfico técnico no futuro, você pode consultar qual skill e estilo usar.
+
+{{< tldr >}}
+O baoyu-skills oferece 19 habilidades cobrindo saida de imagens, HTML e texto. Este artigo usa o ALFA AWUS036ACM como exemplo para demonstrar as variantes de estilo, prompts e casos de uso das 6 principais habilidades de imagem, servindo como tabela de referencia para geracao de imagens de marketing.
+{{< /tldr >}}
+
 
 {{< alert "circle-info" >}}
 **baoyu-skills** é uma coleção de plugins de código aberto para GitHub Copilot CLI criada por [@JimLiu](https://github.com/JimLiu/baoyu-skills.git). Adiciona 19 skills especializadas para criação de conteúdo, geração de imagens, tradução e publicação em redes sociais — todas acessíveis diretamente do seu terminal.
@@ -485,6 +504,8 @@ Use este artigo como tabela de consulta sempre que precisar gerar uma imagem de 
 
 ---
 
+{{< faq >}}
+
 ## Sobre baoyu-skills
 
 A coleção completa de plugins baoyu-skills está disponível no GitHub:
@@ -496,3 +517,11 @@ Todas as imagens neste artigo foram geradas usando as skills acima, com o ALFA A
 Quer saber mais sobre o AWUS036ACM — o produto usado como exemplo ao longo deste guia?
 
 {{< button href="/pt/products/alfa/awus036acm/" >}}Ver Página do Produto AWUS036ACM{{< /button >}}
+
+## Referências
+
+1. [Repositorio GitHub do baoyu-skills](https://github.com/JimLiu/baoyu-skills.git)
+2. [Documentacao oficial do GitHub Copilot CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli)
+3. [Especificacoes do produto ALFA Network AWUS036ACM](https://www.alfa.com.tw/)
+4. [Dados do chipset MediaTek MT7612U](https://www.mediatek.com/products/networking-and-connectivity)
+5. [Documentacao da API de geracao de imagens da OpenAI](https://platform.openai.com/docs/guides/images)

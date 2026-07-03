@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "HAK5 WiFi Pineapple Mark VII + ALFA AWUS036ACM：5GHz 完整设置指南（2026）"
 description: "HAK5 WiFi Pineapple MK7 搭配 ALFA AWUS036ACM (MT7612U) 完整兼容性指南 — 即插即用 5GHz 监听模式、数据包注入与 PineAP 扩展。逐步设置教程，附验证命令。无需编译驱动程序。"
 date: 2026-06-10
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["HAK5", "WiFi-Pineapple", "AWUS036ACM", "MT7612U", "monitor-mode", "packet-injection", "PineAP", "OpenWrt", "5GHz", "渗透测试"]
 featureimage: "/images/blog/hak5-pineapple-mark7-alfa-awus036acm.webp"
+faq:
+  - question: "WiFi Pineapple Mark VII 需要外接网卡吗？"
+    answer: "需要。MK7 内置无线电仅支持 2.4 GHz，2026 年大多数网络已迁移至 5 GHz，外接 AWUS036ACM 可加入 5 GHz 监听与注入能力。"
+  - question: "AWUS036ACM 为什么能在 MK7 上随插即用？"
+    answer: "MK7 Firmware 2.x 已预载 kmod-mt76x2u 驱动，MT7612U 芯片组自 Linux 4.19 起内置于核心，无需编译或安装。"
+  - question: "MK7 的 USB 2.0 会限制 AWUS036ACM 效能吗？"
+    answer: "USB 2.0 将吞吐量限制在 150-250 Mbps，但渗透测试工作负载如数据包捕获与握手收集不受影响，仅高吞吐桥接受限。"
+  - question: "如何在 MK7 上启用 Monitor Mode？"
+    answer: "通过 SSH 登录后执行 airmon-ng start wlan3 指令，接口会重新命名为 wlan3mon，再以 iwconfig 验证模式。"
+  - question: "哪些 ALFA 网卡不兼容 MK7？"
+    answer: "AWUS036AX、AWUS036AXER 使用 RTL8832BU 芯片，AWUS036EACS 使用 RTL8811CU，驱动不支持监听模式或注入，均不兼容。"
 ---
 
+
+
+
 HAK5 WiFi Pineapple Mark VII 是便携式无线安全审计的行业标杆。但开箱即用的它有一个重要限制：内置无线模块仅支持 **2.4 GHz**。到了 2026 年，大多数企业和家庭网络已迁移至 5 GHz 以获得更好的性能和更少的干扰——这意味着原厂 MK7 会错过一半的无线频谱。
+
+{{< tldr >}}
+AWUS036ACM 采用 MT7612U 芯片组，MK7 Firmware 2.x 已预载驱动，插入后即为 wlan3 接口，支持 5 GHz 监听模式、数据包注入与 PineAP 扩充，10 分钟内完成设定。
+{{< /tldr >}}
+
 
 这就是 **ALFA AWUS036ACM** 登场的时刻。它是少数被 Hak5 [官方确认兼容](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters) 的 802.11ac 无线网卡之一，并且因为 MK7 Firmware 2.x 已预载 `mt76x2u` 内核驱动，达到**完全无需编译驱动**的即插即用体验。
 
@@ -180,6 +204,9 @@ EOF
 
 ---
 
+
+{{< faq >}}
+
 ## 7. 建议
 
 **ALFA AWUS036ACM 是目前能买到、最适合扩展 WiFi Pineapple Mark VII 至 5 GHz 的无线网卡。**
@@ -189,3 +216,11 @@ EOF
 我们是 ALFA Network 授权经销商，为所有 ALFA × HAK5 集成场景提供完整技术支持。
 
 *需要设置协助？联系 Yupitek 技术支持团队：[yupitek.com/support](/zh-cn/support/)*
+
+## 参考文献
+
+1. [Hak5 官方文档 — 兼容 802.11ac 网卡清单](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters)
+2. [OpenWrt mt76 驱动程序仓库 — GitHub](https://github.com/openwrt/mt76)
+3. [aircrack-ng — 无线安全工具组官方网站](https://www.aircrack-ng.org/)
+4. [ALFA Network 官方网站 — AWUS036ACM 产品规格](https://www.alfa.com.tw/)
+5. [Linux Wireless — MT76x2U 驱动说明](https://wireless.wiki.kernel.org/en/users/drivers/mt76)

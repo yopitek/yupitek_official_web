@@ -7,7 +7,22 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "Ad Hoc", "802.11s", "Redes Mesh", "Linux", "Sem Fio"]
 featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Por que o AWUS036ACM é a única opção ALFA com suporte a IBSS/Mesh?"
+    answer: "Seu driver mt76x2u e construído sobre o mac80211 do Linux, expondo completamente os tipos de interface IBSS e Mesh Point. Outros modelos ALFA usam drivers fora do kernel que não incluem esses modos."
+  - question: "Qual a diferenca entre IBSS Ad Hoc e 802.11s Mesh?"
+    answer: "IBSS é uma rede par-a-par sem AP central, exigindo que todos os nós estejam dentro do alcance de comunicação direta. 802.11s possui roteamento automático multi-hop HWMP e capacidade de auto-recuperação, estendendo além do alcance de um único salto."
+  - question: "O AWUS036ACM precisa de instalação de driver no Raspberry Pi?"
+    answer: "Não. O driver mt76x2u foi integrado ao kernel Linux desde 4.19. O Raspberry Pi OS após 2020 e plug-and-play, sem qualquer etapa de instalação."
+  - question: "O modo IBSS suporta criptografia WPA2?"
+    answer: "O modo IBSS do kernel Linux não suporta WPA2-Personal padrão. Para conexão segura, use WireGuard ou OpenVPN para criptografia na camada de aplicação. O 802.11s suporta SAE."
+  - question: "Como manter a rede Mesh funcionando após reinicialização?"
+    answer: "As interfaces virtuais criadas via iw não persistem após reinicialização. Crie um serviço systemd (como mesh-point.service) para reconstruir automaticamente a interface e ingressar na Mesh na inicialização."
 ---
+1. [O que são IBSS e Mesh 802.11s — e por que são importantes?](#1-what-are-ibss-and-80211s-mesh) 2. [Especificações de Hardware do ALFA AWUS036ACM](#2-alfa-awus036acm-hardware-specifications) 3. [O Driver MT7612U no Raspberry Pi](#3-the-mt7612u-driver-on-raspberry-pi) 4. [Modo 1: Rede IBSS Ad Hoc](#4-mode-1-ibss-ad-hoc-networking) 5. [Modo 2: Rede 802.11s Mesh Point](#5-mode-2-80211s-mesh-point-networking) 6. [Casos de Uso no Mundo Real](#6-real-world-use-cases) 7. [Por que o AWUS036ACM é a Única Opção ALFA para Isso](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this) 8. [Perguntas Frequentes e Solução de Problemas](#8-faq-and-troubleshooting) 9. [Onde Comprar](#9-where-to-buy)
 
 # ALFA AWUS036ACM: Habilitando Redes IBSS Ad Hoc e 802.11s Mesh no Raspberry Pi com MT7612U
 
@@ -17,19 +32,16 @@ O **ALFA AWUS036ACM**, alimentado pelo chipset **MediaTek MT7612U**, é a exceç
 
 Este guia explica exatamente como ambos os modos funcionam, fornece instruções passo a passo para configuração e mostra quando escolher um modo em vez do outro.
 
+{{< tldr >}}
+O AWUS036ACM usa o chipset MT7612U, cujo driver mt76x2u e construido sobre o mac80211 do Linux, com suporte completo aos modos IBSS Ad Hoc e 802.11s Mesh Point. Este artigo detalha os principios de funcionamento, configuracao passo a passo e cenarios de aplicacao pratica de ambos os modos.
+{{< /tldr >}}
+
+
+O ALFA AWUS036ACM com chipset MediaTek MT7612U é o único adaptador USB WiFi da linha atual de ALFA que suporta completamente redes IBSS Ad Hoc e 802.11s Mesh no Raspberry Pi, plug-and-play sem instalação de drivers.
+
 ---
 
 ## Índice
-
-1. [O que são IBSS e Mesh 802.11s — e por que são importantes?](#1-what-are-ibss-and-80211s-mesh)
-2. [Especificações de Hardware do ALFA AWUS036ACM](#2-alfa-awus036acm-hardware-specifications)
-3. [O Driver MT7612U no Raspberry Pi](#3-the-mt7612u-driver-on-raspberry-pi)
-4. [Modo 1: Rede IBSS Ad Hoc](#4-mode-1-ibss-ad-hoc-networking)
-5. [Modo 2: Rede 802.11s Mesh Point](#5-mode-2-80211s-mesh-point-networking)
-6. [Casos de Uso no Mundo Real](#6-real-world-use-cases)
-7. [Por que o AWUS036ACM é a Única Opção ALFA para Isso](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this)
-8. [Perguntas Frequentes e Solução de Problemas](#8-faq-and-troubleshooting)
-9. [Onde Comprar](#9-where-to-buy)
 
 ---
 
@@ -855,6 +867,17 @@ Se você precisa construir uma rede sem fio entre nós Raspberry Pi — seja um 
 
 ---
 
+{{< faq >}}
+
+
 *Artigo pela Equipe Técnica da Yupitek · [yupitek.com](https://yupitek.com)*
 
 *Referências: [Documentação Oficial da Alfa Network](https://docs.alfa.com.tw/Product/AWUS036ACM/) · [Linux Wireless Wiki — Tipos de Interface](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) · [Driver Linux MediaTek mt76](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) · [Lista In-Kernel USB-WiFi do morrownr](https://github.com/morrownr/USB-WiFi)*
+
+## Referências
+
+1. [Documentacao oficial do Alfa Network AWUS036ACM](https://docs.alfa.com.tw/Product/AWUS036ACM/)
+2. [Linux Wireless Wiki — Tipos de interface (VIF)](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif)
+3. [Driver MediaTek mt76 do Linux](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+4. [Padrao IEEE 802.11s de rede Mesh](https://standards.ieee.org/ieee/802.11s/4469/)
+5. [Lista de drivers no kernel do morrownr USB-WiFi](https://github.com/morrownr/USB-WiFi)

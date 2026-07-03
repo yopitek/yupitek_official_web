@@ -1,4 +1,5 @@
 ---
+
 title: "AWUS036AXML モニターモード ファームウェア修正：アクティブモードのクラッシュを解決する"
 description: "Kali Linux で AWUS036AXML のモニターモード ファームウェアクラッシュを修正する方法。MT7921AUN ファームウェア更新、カーネルバージョン要件、アクティブ/パッシブモードの回避策、hcxdumptool の代替手段を解説。"
 date: 2026-03-24
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036AXMLがアクティブモニターモードでクラッシュするのはなぜですか？"
+    answer: "MT7921AUNはファームウェアベースMACアーキテクチャを採用し、現在のLinux mt7921uドライバーとファームウェアの組み合わせがアクティブインジェクションに必要なコマンドパスを完全に実装していないため、aireplay-ng実行後にインターフェースが消滅します。"
+  - question: "MT7921AUNのアクティブモードクラッシュをどう修復しますか？"
+    answer: "firmware-misc-nonfreeパッケージを最新版に更新、カーネル6.6以上にアップグレード、高パケットレートのdeauthフラッドを回避することで改善できますが、完全にクラッシュを排除できるとは限りません。"
+  - question: "hcxdumptoolはパケットインジェクションなしでPMKIDをどうキャプチャしますか？"
+    answer: "hcxdumptoolはパッシブモードでアクセスポイントがブロードキャストするビーコンとプローブパケットからPMKIDをキャプチャし、まったくパケットを送信しないためファームウェアクラッシュを引き起こしません。"
+  - question: "AWUS036AXMLのパッシブモニタリングにはどんな制限がありますか？"
+    answer: "パッシブモニタリングではビーコン、ハンドシェイク、PMKIDを正常にキャプチャできますが、deauth、プローブリクエスト、アソシエーションフラッドなどのアクティブ操作は実行できず、これらはAWUS036ACHで処理する必要があります。"
+  - question: "MT7921AUNの安定性を改善できるカーネルバージョンは？"
+    answer: "カーネル6.1 LTS以降に複数のmt7921u安定性パッチが含まれ、カーネル6.6以降にはMediaTek USBドライバースタックの追加改善が含まれています。"
 ---
 
 **ALFA AWUS036AXML** は ALFA Network のフラッグシップ WiFi 6E アダプターで、MediaTek MT7921AUN チップセットを搭載し、トライバンド（2.4 / 5 / 6 GHz）をサポートしています。2026 年時点で、6 GHz 帯でのパッシブモニタリングが可能な数少ない USB アダプターの一つです。サイトサーベイ、パケットキャプチャ、PMKID 収集などのユースケースでは非常に優れたパフォーマンスを発揮します。
 
+
+{{< tldr >}}
+AWUS036AXMLのmt7921uドライバーはアクティブパケットインジェクション時にファームウェアクラッシュを引き起こします。本記事では根本原因、診断手順、ファームウェア更新、カーネルアップグレード、hcxdumptoolによるパッシブキャプチャへの切り替えなどの修復方案を説明します。
+{{< /tldr >}}
 しかし、ユーザーを困惑させる既知の問題があります：**アクティブモニターモードのコマンドがファームウェアをクラッシュさせる**のです。`aireplay-ng` や `mdk4` などのツールを実行すると、`wlan0mon` インターフェースが完全に消え、アダプターを抜き差しするまで復旧できません。これはハードウェアの欠陥ではなく、現在の Linux `mt7921u` ドライバーとファームウェアの制限です。
 
 本ガイドでは根本原因を説明し、診断手順と具体的な修正・回避策を提供します。
@@ -221,8 +239,23 @@ mt7921u 1-2.3:1.0: HW/SW Version: ...
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 関連ガイド
 
 - [AWUS036AXML 完全レビュー](/ja/blog/awus036axml-wifi-6e-review/)
 - [パケットインジェクションガイド](/ja/blog/packet-injection-guide/)
 - [ドライバーインストールガイド](/ja/blog/install-alfa-driver-kali-ubuntu/)
+
+---
+
+## 参考文献
+
+1. [Linux firmwareリポジトリ（kernel.org）](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git)
+2. [Linuxカーネルmt76ドライバー](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+3. [aircrack-ngツールスイート](https://www.aircrack-ng.org/)
+4. [hcxdumptool GitHubプロジェクト](https://github.com/ZerBea/hcxdumptool)
+5. [ALFA Network公式サポート](https://www.alfa.com.tw/)

@@ -1,17 +1,44 @@
 ---
+
+
+
 title: "HAK5 WiFi Pineapple Pager × ALFA Network：外接 USB 无线网卡兼容性评估与设置指南"
 description: "这是一份深入评估 HAK5 WiFi Pineapple Pager 在 OpenWrt 环境下与 ALFA Network 外接 USB 无线网卡兼容性的技术报告与安装指南。了解 MIPS 架构交叉编译、USB 2.0 供电限制及驱动程序设置细节。"
 date: 2026-06-19
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH", "compatibility", "wireless-security"]
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
+faq:
+  - question: "HAK5 WiFi Pineapple Pager 可以外接 ALFA 网卡吗？"
+    answer: "可以，但需注意 MIPS 架构限制与 USB 2.0 供电。AWUS036ACM 为首选，核心内置驱动最稳定。"
+  - question: "为什么 Pager 需要外接供电 USB Hub？"
+    answer: "Pager 仅配 USB 2.0 接口，最大输出 500mA，高功率 ALFA 网卡峰值达 720mA，直接插入会导致重启或核心崩溃。"
+  - question: "AWUS036ACM 为什么是 Pager 首选网卡？"
+    answer: "MT7612U 驱动已整合于 OpenWrt 6.6 核心，Pager 上以 opkg 直接安装，无需交叉编译，最稳定可靠。"
+  - question: "MIPS 架构对驱动安装有什么限制？"
+    answer: "Pager 基于 MIPS32 的 MT7628AN，不支持 DKMS，无 GCC 工具链，非内置驱动必须在外部 x86 主机交叉编译。"
+  - question: "RTL8812AU 在 Pager 上有什么已知问题？"
+    answer: "RTL8812AU 在 MIPS 平台存在 wiphy_register 核心错误，导致接口无法加载，需套用社群修正 patch，建议改用 AWUS036ACM。"
 ---
+在将任何高功率 USB 无线网卡插入 HAK5 Pager 之前，您必须了解以下两大主要障碍：CPU 架构与 USB 供电限制。
 
 # HAK5 WiFi Pineapple Pager × ALFA Network：外接 USB 无线网卡兼容性评估与设置指南
 
 无线网络安全审计需要高度精准、多功能性以及合适的硬件支持。**HAK5 WiFi Pineapple Pager** 作为搭载强大 **PineAP v8** 引擎的超便携、口袋型审计工具，吸引了大量渗透测试人员的关注。
+
+{{< tldr >}}
+Pager 采 MIPS 架构不支持 DKMS，AWUS036ACM 因 MT7612U 驱动内置于 OpenWrt 6.6 核心而随插即用；AWUS036ACH 需交叉编译且有 wiphy bug，USB 2.0 供电仅 500mA 需外接 Hub。
+{{< /tldr >}}
+
+
+HAK5 WiFi Pineapple Pager 可外接 ALFA 网卡，首选 AWUS036ACM 核心内置驱动最稳定，高功率网卡需搭配外接供电 USB Hub 避免核心崩溃。
+
+
+
 
 然而，为了扩大审计范围、执行双频（2.4 GHz 与 5 GHz）同步操作，或在不干扰 Pineapple 内部无线电的情况下进行多信道被动监听，安全专家经常会问：**我可以在 HAK5 Pager 上外接 ALFA Network 无线网卡吗？**
 
@@ -22,8 +49,6 @@ featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
 ---
 
 ## 1. 关键技术限制
-
-在将任何高功率 USB 无线网卡插入 HAK5 Pager 之前，您必须了解以下两大主要障碍：CPU 架构与 USB 供电限制。
 
 ### 1.1 CPU 架构：MIPS 架构限制
 与运行在 x86_64 的标准 Kali Linux 主机或运行在 ARM 的 Raspberry Pi 不同，HAK5 Pager 搭载的是 **MediaTek MT7628AN SoC**（一个 **MIPS32r2, Little-Endian** 核心，在 OpenWrt 中编译为 `mipsel_24kc` 平台）。
@@ -179,11 +204,14 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 
 ---
 
+
+{{< faq >}}
+
 ## 5. 结论与采购建议
 
 将 ALFA Network 无线网卡整合到 HAK5 WiFi Pineapple Pager 中，可构建一个低调且性能强大的移动渗透测试基站。然而，硬件配置细节至关重要：
 
-- **快速部署、免维护首选**：请购买 [ALFA AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm)。其原生 MediaTek 驱动在 OpenWrt 6.6 内核上极为稳定且开箱即用。
+- **快速部署、免维护首选**：请购买 [ALFA AWUS036ACM](https://yupitek.com/zh-cn/products/alfa/awus036acm)。其原生 MediaTek 驱动在 OpenWrt 6.6 内核上极为稳定且开箱即用。
 - **供电保证**：务必随身携带优质的 **外置供电 USB Hub**，以确保高功率网卡的射频输出功率稳定，防止断线。
 
 如有进一步技术咨询、大宗硬件采购或定制 OpenWrt SDK 编译需求，欢迎随时联系 **Yupitek 技术支持团队**：
@@ -192,3 +220,11 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 - 📧 联系信箱：[sales@yupitek.com](mailto:sales@yupitek.com)
 - 📞 联系电话：+886-2-87325338
 - 📍 公司地址：台北市信义区富阳街34巷72號1楼
+
+## 参考文献
+
+1. [Hak5 官方文档 — WiFi Pineapple 产品文件](https://documentation.hak5.org/)
+2. [OpenWrt 官方网站 — OpenWrt 24.10 发行版](https://openwrt.org/)
+3. [OpenWrt mt76 驱动程序仓库 — GitHub](https://github.com/openwrt/mt76)
+4. [aircrack-ng/rtl8812au — 社群驱动 GitHub 仓库](https://github.com/aircrack-ng/rtl8812au)
+5. [ALFA Network 官方网站](https://www.alfa.com.tw/)

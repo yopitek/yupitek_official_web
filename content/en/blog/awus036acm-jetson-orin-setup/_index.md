@@ -2,18 +2,43 @@
 title: "Zero-Compile Setup: ALFA AWUS036ACM on Jetson Orin Edge AI Systems"
 description: "A deep dive into which ALFA Network USB WiFi adapter works best for AVALUE AIB-NW01 (NVIDIA Jetson Orin NX/Nano) edge AI deployments — with real-world proof that the AWUS036ACM delivers true plug-and-play."
 date: 2026-05-20
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Why do USB WiFi adapters often fail on Jetson Orin?"
+    answer: "Jetson uses the NVIDIA customized Tegra kernel, not a standard Ubuntu kernel. Third-party drivers often fail to compile due to unavailable kernel headers or ABI incompatibility."
+  - question: "Does AWUS036ACM need driver compilation on Jetson Orin?"
+    answer: "No. The MT7612U mt76x2u driver has been in the mainline kernel since 4.19. The AIB-NW01 Kernel 5.10 already includes it. Just plug it in."
+  - question: "Can AWUS036ACH (RTL8812AU) work on Jetson Orin?"
+    answer: "Yes, but requires manual driver compilation. JetPack NVIDIA kernel patches may break cfg80211 ABI, causing compilation failures. Recommended only for users with compilation experience."
+  - question: "Will JetPack upgrades break USB WiFi adapters?"
+    answer: "Possibly. Third-party drivers may break after JetPack upgrades due to kernel API changes, requiring recompilation. In-kernel drivers like mt76x2u are unaffected."
+  - question: "What Linux kernel version does AIB-NW01 use?"
+    answer: "AIB-NW01 ships with Ubuntu 20.04.6 LTS and JetPack 5.0, using the NVIDIA customized Tegra kernel 5.10.x-tegra. The CPU architecture is ARM64."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
 ---
+> "I have an AVALUE AIB-NW01 (Jetson Orin NX) that I need to deploy in an environment with no wired network. Which of your USB WiFi adapters works out of the box?"
 
 ## A Customer Email Raises a Critical Question
 
-> "I have an AVALUE AIB-NW01 (Jetson Orin NX) that I need to deploy in an environment with no wired network. Which of your USB WiFi adapters works out of the box?"
-
 This is a real question we received at Yupitek recently. It sounds simple enough — but if you've spent any time in the Jetson developer community, you'll know that **USB WiFi on the NVIDIA Jetson platform is far trickier than most people expect.**
+
+{{< tldr >}}
+Jetson Orin uses the NVIDIA customized Tegra kernel, where third-party WiFi drivers often fail to compile. ALFA AWUS036ACM with MT7612U has a driver in-kernel since 4.19, making it plug-and-play with zero compilation. It supports monitor mode, packet injection, and AP mode.
+{{< /tldr >}}
+
+
+The ALFA AWUS036ACM is the only truly compile-free, plug-and-play USB WiFi adapter on Jetson Orin. Its MT7612U driver has been in the mainline kernel since 4.19, completely sidestepping the driver compilation problems of Jetson's custom kernel.
+
+
+
+
+
+
 
 We dug into Jetson core architecture, real-world NVIDIA forum cases, GitHub driver-compilation failure reports, and ARM64 platform benchmarks to put together this guide.
 
@@ -296,6 +321,8 @@ The AWUS036ACH (RTL8812AU) and AWUS036AX (RTL8812BU) are not unusable — they j
 
 ---
 
+{{< faq >}}
+
 ## Conclusion: The Simplest Solution Is Often the Best
 
 To return to the original customer question: which ALFA USB WiFi adapter works best with the AVALUE AIB-NW01?
@@ -322,3 +349,11 @@ Not because it's the fastest or the cheapest — but because on a platform as pa
 > **Author**: Yupitek Ltd — ALFA Network Authorized Distributor in Taiwan
 >
 > **Disclaimer**: The research in this article is current as of May 2026. Jetson platform and Linux kernel updates are ongoing — we recommend verifying the latest JetPack version and in-kernel driver support before deployment.
+
+## References
+
+1. [AVALUE Technology AIB-NW01 Product Page](https://www.avalue.com.tw/)
+2. [NVIDIA Jetson Official Developer Forum](https://forums.developer.nvidia.com/)
+3. [morrownr/USB-WiFi Chipset Support Table](https://github.com/morrownr/USB-WiFi)
+4. [Linux Kernel mt76 Driver Documentation](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [ALFA Network Linux Compatibility List](https://docs.alfa.com.tw/Support/Compat/)

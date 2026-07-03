@@ -12,7 +12,26 @@ series: ["alfa-china-install-guide"]
 related_product: "/zh-tw/products/alfa/awus036axm/"
 series_order: 6
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036AXM 用什麼晶片？支援 WiFi 6E 嗎？"
+    answer: "採用 MediaTek MT7921AUN 晶片，支援 WiFi 6E 三頻段（2.4G/5G/6G Hz）。"
+  - question: "AWUS036AXM 的驅動需要手動安裝嗎？"
+    answer: "不需要，mt7921u 驅動自 Linux 核心 5.18 起已內建，僅需安裝韌體套件。"
+  - question: "AWUS036AXM 支援 VIF 虛擬介面嗎？"
+    answer: "支援，MT7921AUN 完整支援核心原生 VIF，可同時連網與監聽封包。"
+  - question: "Ubuntu 22.04 安裝 AWUS036AXM 為什麼驅動載入失敗？"
+    answer: "Ubuntu 22.04 預設核心 5.15 太舊，需安裝 HWE 核心升級至 5.18 以上。"
+  - question: "AWUS036AXM 的 USB ID 是多少？"
+    answer: "MediaTek MT7921AUN 的 USB ID 為 0e8d:7961，用 lsusb 可確認。"
 ---
+
+ALFA AWUS036AXM 搭載 MT7921AUN 晶片支援 WiFi 6E，驅動自核心 5.18 內建，僅需安裝韌體套件即可支援監聽模式與 VIF。
+
+{{< tldr >}}
+AWUS036AXM 採用 MT7921AUN 晶片支援 WiFi 6E，驅動核心內建，安裝韌體套件後即可使用監聽模式、封包注入與 VIF 功能。
+{{< /tldr >}}
 
 想體驗 WiFi 6E 的飆速快感？AWUS036AXM 是個非常硬核的選擇，而且它那節省空間的 L 型接口設計真的很貼心，完全不會擋到筆電相鄰的 USB 埠。
 
@@ -248,6 +267,8 @@ sudo ip link set mon0 up
 | 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推薦 |
 | 中科大鏡像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 推薦 |
 
+{{< faq >}}
+
 ## 更多 Alfa 網卡中國安裝指南
 
 - [AWUS036ACH 安裝指南](/zh-tw/blog/awus036ach-china-install-guide/)
@@ -260,3 +281,10 @@ sudo ip link set mon0 up
 - [AWUS036EACS 安裝指南](/zh-tw/blog/awus036eacs-china-install-guide/)
 
 折騰過程中遇到搞不定的？歡迎在下面留言，或者到 [yupitek.com](https://yupitek.com/zh-tw/contact/) 聯絡我們。
+
+## 參考來源
+
+1. [Linux Kernel mt7921 驅動](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [aircrack-ng 官方文件](https://www.aircrack-ng.org/)
+3. [ALFA Network 官網](https://www.alfa.com.tw/)
+4. [Kali Linux 官方文件](https://www.kali.org/docs/)

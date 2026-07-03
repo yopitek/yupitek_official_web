@@ -7,7 +7,24 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Pourquoi le WiFi du DGX Spark ne se connecte-t-il pas ?"
+    answer: "Le DGX Spark intègre le chipset MediaTek MT7925 Wi-Fi 7, mais le wpa_supplicant de la phase OOBE est trop simplifié, incompatible avec certains AP (notamment UniFi). Le WPA2-Enterprise échoue presque systématiquement."
+  - question: "La solution de la carte USB ALFA s'applique-t-elle à tous les serveurs GB10 ?"
+    answer: "Oui. Tous les AI Edge Servers équipés du NVIDIA GB10 Grace Blackwell Superchip (ASUS, MSI, HP, ALTOS, GIGABYTE) utilisent le même chipset WiFi MT7925. La solution ALFA AWUS036ACM est universelle."
+  - question: "L'AWUS036ACM nécessite-t-il un pilote sur DGX Spark ?"
+    answer: "Non. Le pilote mt76 du MT7612U est intégré au noyau depuis Linux 4.19. Le DGX OS avec noyau 6.17+ le supporte nativement, plug-and-play à l'insertion USB."
+  - question: "Combien de temps prend la réparation du WiFi avec une carte USB ALFA ?"
+    answer: "Moins de dix minutes. Insérez dans un port USB 3.0, le pilote se charge automatiquement, puis utilisez nmcli pour scanner et connecter le WiFi. Aucune compilation ni redémarrage."
+  - question: "Peut-on utiliser d'autres cartes ALFA sur le DGX Spark ?"
+    answer: "L'AWUS036ACH (RTL8812AU) nécessite une compilation manuelle du pilote, non garantie sur ARM64 GB10. L'AWUS036ACM est la seule solution confirmée sans compilation."
 ---
+
+{{< tldr >}}
+Le NVIDIA DGX Spark et tous les serveurs AI GB10 ont un défaut de connexion connu avec le chipset MT7925 Wi-Fi 7 intégré. La solution est d'insérer une carte USB ALFA AWUS036ACM, dont le pilote mt76 est intégré au noyau depuis 4.19, plug-and-play sur DGX OS Kernel 6.17+.
+{{< /tldr >}}
 
 Votre **NVIDIA DGX Spark** tant attendu (nom de code Project DIGITS) est enfin arrivé.
 
@@ -285,6 +302,8 @@ R : Absolument. Le pilote MT7612U fait partie du noyau Linux principal — Ubunt
 
 ---
 
+{{< faq >}}
+
 ## Résumé : Quel que soit votre GB10, mettez-le en ligne en 10 minutes
 
 Que vous ayez acheté un NVIDIA DGX Spark, ASUS ASCENT GX10, MSI EdgeXpert, HP ZGX Nano, ALTOS BrainSphere GB10 F1 ou GIGABYTE AI TOP ATOM — ces serveurs GB10 AI Edge sont des machines de développement IA phénoménales : 128 Go de mémoire unifiée, CPU ARM 20 cœurs, réseau ConnectX-7 200GbE. Mais ils partagent tous la même puce Wi-Fi MediaTek MT7925, et peuvent tous buter sur la même première étape.
@@ -313,3 +332,12 @@ Dix minutes, un adaptateur USB, et votre serveur IA est véritablement en ligne.
 ---
 
 *Sources : Notes de version NVIDIA DGX Spark, Forums développeurs NVIDIA, morrownr/USB-WiFi GitHub, Documentation ALFA Network, Documentation Linux Kernel Wireless*
+
+---
+
+## Références
+1. [Documentation officielle NVIDIA DGX Spark](https://developer.nvidia.com/dgx-spark)
+2. [NVIDIA Developer Forums](https://forums.developer.nvidia.com/)
+3. [Projet GitHub morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi)
+4. [Documentation Linux Kernel Wireless](https://wireless.wiki.kernel.org/)
+5. [Site officiel ALFA Network](https://www.alfa.com.tw/)

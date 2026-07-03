@@ -1,17 +1,42 @@
 ---
+
+
+
 title: "ALFA AWUS036AXML WiFi 6E 深度评测：2026 实际渗透测试性能"
 description: "深度评测 ALFA AWUS036AXML WiFi 6E USB 网卡：规格、Kali Linux 驱动安装、监听模式性能、6 GHz 频段扫描，以及与 AWUS036ACH 的详细对比。"
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "wifi-6e", "评测", "Kali-Linux", "MT7921AUN", "6GHz"]
 featureimage: "/images/blog/awus036axml-wifi-6e-review.webp"
+faq:
+  - question: "AWUS036AXML 支持哪些频段？"
+    answer: "支持三频 2.4 GHz、5 GHz 与 6 GHz，符合 IEEE 802.11ax Wi-Fi 6E 标准，是少数能让安全研究人员在 6 GHz 频段操作的 USB 无线网卡。"
+  - question: "AWUS036AXML 需要哪个 Linux 内核版本？"
+    answer: "mt7921u 驱动程序从 Linux 核心 5.18 起正式纳入主线，Kali Linux 2024.x / 2025.x 的 6.x 核心均可正常运行。"
+  - question: "AWUS036AXML 与 AWUS036ACH 的主要差异是什么？"
+    answer: "AWUS036AXML 采用 MT7921AUN 支持 6 GHz 与 Wi-Fi 6E，AWUS036ACH 采用 RTL8812AU 仅支持双频 Wi-Fi 5，但后者驱动程序更成熟、兼容性更广。"
+  - question: "AWUS036AXML 支持数据包注入吗？"
+    answer: "支持数据包注入，实测成功率稳定维持在 90% 以上，但主动监听模式有已知驱动程序限制，建议仅使用被动监听模式。"
+  - question: "谁适合购买 AWUS036AXML？"
+    answer: "针对已部署 Wi-Fi 6E 的企业环境进行评估的安全研究人员、安全训练实验室，以及从事 6 GHz 协议分析的研究人员最为适合。"
 ---
+**ALFA AWUS036AXML** 是 ALFA Network 进军 Wi-Fi 6E 时代的旗舰产品，专为无线安全研究而生。该网卡搭载 **Mediatek MT7921AUN** 芯片组，截至 2026 年，它是市面上极少数能让安全研究人员在 **6 GHz 频段**下工作的 USB 无线网卡之一——而 6 GHz 正是 Wi-Fi 6E 网络所独占的最新免许可证频谱。
 
 ## 产品概述
 
-**ALFA AWUS036AXML** 是 ALFA Network 进军 Wi-Fi 6E 时代的旗舰产品，专为无线安全研究而生。该网卡搭载 **Mediatek MT7921AUN** 芯片组，截至 2026 年，它是市面上极少数能让安全研究人员在 **6 GHz 频段**下工作的 USB 无线网卡之一——而 6 GHz 正是 Wi-Fi 6E 网络所独占的最新免许可证频谱。
+{{< tldr >}}
+AWUS036AXML 是 Wi-Fi 6E USB 网卡，支持三频 2.4/5/6 GHz、监听模式与数据包注入。本文涵盖规格、Kali Linux 驱动安装、6 GHz 扫描实测，以及与 AWUS036ACH 的详细比较。
+{{< /tldr >}}
+
+
+ALFA AWUS036AXML 搭载 MediaTek MT7921AUN 芯片组，是少数能让安全研究人员在 6 GHz 频段进行操作的 USB 无线网卡，支持监听模式与数据包注入，需 Linux 核心 5.18 以上。
+
+
+
 
 这一点至关重要。如今企业级和消费级 Wi-Fi 6E 网络已经相当普及，若渗透测试人员手中只有双频（2.4/5 GHz）网卡，实际上对整整一代现代网络基础设施视而不见。AWUS036AXML 的出现，正是为了填补这一空白。
 
@@ -291,6 +316,9 @@ sudo iw dev wlan0mon scan | grep -E "BSS|SSID|freq|signal"
 
 ---
 
+
+{{< faq >}}
+
 ## 谁适合购买 AWUS036AXML
 
 **面向企业环境的安全研究人员。** 已部署 Wi-Fi 6E 基础设施的大型企业越来越普遍。没有支持 6 GHz 的网卡，无线安全评估就是不完整的——你将错失大量客户端与接入点的活动数据。
@@ -304,3 +332,11 @@ sudo iw dev wlan0mon scan | grep -E "BSS|SSID|freq|signal"
 ---
 
 ALFA AWUS036AXML 现已通过 [Yopitek](/zh-cn/products/alfa/awus036axml/) 发售——台湾 ALFA Network 授权经销商。通过 Yopitek 购买，可确保您获得正品 NCC 认证产品，并享有原厂保修服务与本地技术支持。
+
+## 参考文献
+
+1. [ALFA Network 官方网站](https://www.alfa.com.tw/)
+2. [MediaTek MT7921 芯片组资讯](https://www.mediatek.com/products/networking-and-connectivity)
+3. [Linux 核心mt76 驱动程序](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+4. [aircrack-ng 工具软件包](https://www.aircrack-ng.org/)
+5. [Wi-Fi Alliance Wi-Fi 6E 认证](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)

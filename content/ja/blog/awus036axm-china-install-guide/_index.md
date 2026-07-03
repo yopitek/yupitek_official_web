@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA AWUS036AXM ドライバインストールガイド（中国版）：Kali Linux, Ubuntu, Debian & Raspberry Pi"
 description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXMのドライバをインストールする手順をステップバイステップで解説します。MT7921AUN WiFi 6E インカーネルドライバ、モニターモード、VIFをサポート。Kali Linux、Ubuntu 22/24、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
 date: 2026-04-24
@@ -12,9 +13,31 @@ series: ["alfa-china-install-guide"]
 series_order: 6
 related_product: "/ja/products/alfa/awus036axm/"
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036AXMはどのチップを使っていますか？WiFi 6Eをサポートしていますか？"
+    answer: "MediaTek MT7921AUNチップを採用し、WiFi 6Eトリバンド（2.4G/5G/6G Hz）をサポートしています。"
+  - question: "AWUS036AXMのドライバーは手動インストールが必要ですか？"
+    answer: "不要です。mt7921uドライバーはLinuxカーネル5.18以降に内蔵されており、ファームウェアパッケージをインストールするだけです。"
+  - question: "AWUS036AXMはVIF仮想インターフェースをサポートしていますか？"
+    answer: "サポートしています。MT7921AUNはカーネルネイティブVIFを完全サポートし、同時接続とパケット監視が可能です。"
+  - question: "Ubuntu 22.04でAWUS036AXMをインストールした際、ドライバーの読み込みに失敗するのはなぜですか？"
+    answer: "Ubuntu 22.04のデフォルトカーネル5.15が古すぎるため、HWEカーネルをインストールして5.18以上にアップグレードする必要があります。"
+  - question: "AWUS036AXMのUSB IDは何ですか？"
+    answer: "MediaTek MT7921AUNのUSB IDは0e8d:7961で、lsusbで確認できます。"
 ---
 
 AWUS036AXMは、スペースを節約するL型USB-Aコネクタを備えた、ALFAのWiFi 6Eトライバンド・アダプターです。搭載されているMT7921AUNチップは、Linuxカーネルバージョン5.18以降で `mt7921u` ドライバが標準組み込みされています。L型のコネクタにより、ノートパソコンの隣接するUSBポートを塞ぐことなく使用できます。このガイドでは、GitHubに触れることなく、ファームウェアの設定、ドライバの確認、モニターモード、パケットインジェクション、VIFの設定までを完全にカバーします。
+
+
+{{< tldr >}}
+AWUS036AXMはMT7921AUNチップを採用しWiFi 6Eをサポート、ドライバーはカーネル内蔵でファームウェアパッケージインストール後にモニターモード、パケットインジェクション、VIF機能が利用できます。
+{{< /tldr >}}
+
+1. **ALFA AWUS036AXM** アダプター本体
+2. 電源付きUSBハブ（Raspberry Piを使用する場合は必須です）
+3. 国内ミラーサイトにアクセスできるインターネット環境
 
 ## 準備するもの
 
@@ -442,6 +465,13 @@ iwconfig
 | 中国科学技術大学ミラー | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (推奨) |
 | 華為ミラー | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM イメージ (バックアップ) |
 
+
+---
+
+{{< faq >}}
+
+---
+
 ## 中国向け Alfa アダプターガイド（その他）
 
 このページは **Alfa China Install Guide** シリーズの一部です：
@@ -456,3 +486,12 @@ iwconfig
 - [AWUS036EACS 中国インストールガイド](/ja/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 ご不明な点がありますか？下のコメント欄に記入するか、[yupitek.com](https://yupitek.com/ja/contact/) までお問い合わせください。
+
+---
+
+## 参考文献
+
+1. [Linux Kernel mt7921ドライバー](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [aircrack-ng公式ドキュメント](https://www.aircrack-ng.org/)
+3. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
+4. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)

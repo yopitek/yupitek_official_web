@@ -7,9 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Pueden las tarjetas de red ALFA usar el modo monitor de forma nativa en macOS?"
+    answer: "No. La arquitectura CoreWLAN e IO80211Family de macOS no admite el modo monitor ni la inyección de paquetes para tarjetas de red de terceros. Debes ejecutar una VM de Kali Linux con tránsito USB."
+  - question: "¿Para Mac con Apple Silicon, VMware Fusion o Parallels?"
+    answer: "Ambos funcionan, pero Parallels Desktop 19+ suele tener mejor rendimiento de VM ARM64 y estabilidad de tránsito USB en Apple Silicon que VMware Fusion."
+  - question: "¿El AWUS036AXML necesita compilación de controlador en una VM de Kali con Apple Silicon?"
+    answer: "No. El controlador mt7921u está integrado en el núcleo desde Linux 5.18; Kali ARM64 2024.x y superior lo reconoce automáticamente al conectarlo."
+  - question: "¿Puedo usar la ISO estándar de Kali x86_64 en un Mac Intel?"
+    answer: "Sí. Los Mac Intel tienen arquitectura x86_64 y pueden usar directamente la ISO oficial de Kali Linux x86_64 de kali.org para crear la VM."
+  - question: "¿Es VirtualBox adecuado para pruebas de seguridad en Apple Silicon?"
+    answer: "No se recomienda. El soporte de VirtualBox para Apple Silicon sigue siendo experimental y el tránsito USB tiene problemas conocidos. Usa VMware Fusion o Parallels."
 ---
 
 macOS es un sistema operativo pulido y listo para producción. Sin embargo, no es una plataforma diseñada para la investigación de seguridad inalámbrica. Las dos funciones que definen el kit de herramientas de todo pentester serio — **modo monitor** e **inyección de paquetes** — están completamente ausentes en la pila Wi-Fi de macOS. Los controladores Wi-Fi de Apple exponen una interfaz de red limpia y funcional, y nada más.
+
+{{< tldr >}}
+macOS no admite el modo monitor ni la inyección de paquetes de las tarjetas de red ALFA. La solución es ejecutar una VM de Kali Linux en VMware Fusion o Parallels y usar el tránsito USB para pasar la tarjeta a la VM. Apple Silicon requiere una imagen ARM64 de Kali.
+{{< /tldr >}}
 
 Los adaptadores ALFA Network cambian esa ecuación en Linux, donde el soporte de controladores es profundo y probado por la comunidad. En macOS, la situación es diferente. Incluso si un adaptador ALFA es reconocido por macOS, la pila de red nativa no te permitirá ponerlo en modo monitor ni inyectar tramas sin procesar. El único camino confiable es ejecutar **Kali Linux dentro de una máquina virtual** y pasar el adaptador USB directamente al SO invitado, omitiendo macOS por completo.
 
@@ -257,8 +274,18 @@ En Apple Silicon específicamente, si el adaptador ALFA es reconocido pero la in
 
 ---
 
+{{< faq >}}
+
 ## Guías Relacionadas
 
 Para hosts con Windows y Linux usando VirtualBox o VMware Workstation, consulta la guía complementaria: [USB Passthrough de Adaptadores ALFA: Guía de Configuración con VirtualBox y VMware](/en/blog/alfa-adapter-virtualbox-vmware-usb/).
 
 Para detalles específicos del adaptador AWUS036AXML recomendado en esta guía, incluyendo benchmarks de rendimiento en la banda de 6 GHz y notas sobre versiones del controlador, consulta la reseña completa: [Reseña ALFA AWUS036AXML WiFi 6E](/en/blog/awus036axml-wifi-6e-review/).
+
+## Referencias
+
+1. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)
+2. [Página de descarga oficial de Kali Linux](https://www.kali.org/get-kali/)
+3. [Página del producto VMware Fusion](https://www.vmware.com/products/fusion.html)
+4. [Sitio oficial de Parallels Desktop](https://www.parallels.com/)
+5. [aircrack-ng rtl8812au 驅動專案](https://github.com/aircrack-ng/rtl8812au)

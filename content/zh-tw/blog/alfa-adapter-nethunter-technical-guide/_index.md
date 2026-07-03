@@ -7,11 +7,24 @@ showBreadcrumbs: true
 showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ALFA 無線網卡搭配 Kali NetHunter 需要哪些手機條件？"
+    answer: "需要支援 OTG 的 Android 手機、已 root 並刷入 Kali NetHunter 核心。已驗證相容的機型包括 Google Pixel 系列、OnePlus 較舊旗艦機型。具體相容性取決於核心版本與網卡晶片驅動位置。"
+  - question: "MT7610U/MT7612U 和 RTL8812AU 驅動有什麼差別？"
+    answer: "MT7610U/MT7612U 驅動位於核心樹內，插上即用不需編譯；RTL8812AU 需透過 DKMS 外部驅動編譯安裝，核心更新後可能需要重新編譯。對於資安現場使用，核心樹內驅動穩定性更高。"
+  - question: "ALFA 網卡在 NetHunter 上支援 Monitor Mode 嗎？"
+    answer: "是的，MT7610U/MT7612U 支援 Monitor Mode 與封包注入。RTL8812AU 在核心 < 6.12 時也支援，但核心 6.12 以上 Monitor Mode 受限。建議資安研究優先選用 MT7610U/MT7612U 網卡。"
 ---
 
 如果你已經完成基本的 OTG 設定，想看快速入門版本，我們的 [OTG 設定指南](/zh-tw/blog/alfa-adapter-nethunter-android-otg/) 涵蓋了所有基本步驟。本文是更深入的完整技術參考，為資安專業人員撰寫——在採購硬體前評估手機與網卡相容性、理解哪種驅動方式能跨核心更新持續運作、以及查看已驗證的測試結果後再決定特定組合。
 
 我們聚焦大多數 NetHunter 指南跳過的核心問題：**哪張網卡真正插上就能用，哪張會在最重要的時刻讓你陷入驅動編譯的泥沼？** 答案取決於 chipset、手機核心版本，以及驅動是位於核心樹內還是外部 DKMS 儲存庫。弄錯了，你的網卡就只能躺在包包裡，你卻在現場盯著 `modprobe` 錯誤訊息。弄對了，插上去就能開始掃描。
+
+{{< tldr >}}
+MT7610U/MT7612U 核心原生驅動即插即用，RTL8812AU 需 DKMS 編譯。NetHunter 手機需 root + OTG 支援，優先選 MT7612U 網卡避免驅動問題。
+{{< /tldr >}}
 
 > **免責聲明**：本文件僅供合法授權的資安測試與研究使用。未經授權存取網路設備屬違法行為。
 
@@ -477,6 +490,10 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
+{{< faq >}}
+
+---
+
 ## 相關指南
 
 - [ALFA 網卡搭配 NetHunter 基本 OTG 設定](/zh-tw/blog/alfa-adapter-nethunter-android-otg/)
@@ -486,5 +503,10 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
-*本文件由 **Yupitek Ltd**（台灣 ALFA Network 授權經銷商）技術支援團隊撰寫。*  
-*資料截止日期：2026-06-09。Linux 核心及 NetHunter 版本持續更新，請以官方最新文件為準。*
+## 參考來源
+
+1. [Kali NetHunter 官方文件](https://www.kali.org/docs/nethunter/) — NetHunter 安裝與核心刷入指南
+2. [Linux Kernel mt76 驅動原始碼](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) — MT7610U/MT7612U 主線驅動
+3. [aircrack-ng RTL8812AU 驅動](https://github.com/aircrack-ng/rtl8812au) — DKMS 外部驅動儲存庫
+4. [ALFA Network 官方網站](https://alfa.com.tw/) — 產品規格與驅動下載
+5. [Android USB OTG 官方文件](https://developer.android.com/guide/topics/connectivity/usb) — OTG API 與硬體需求

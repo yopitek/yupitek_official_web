@@ -2,6 +2,19 @@
 title: "AWUS036AXML Monitor Mode Firmware Fix: Resolve Active Mode Crashes"
 description: "How to fix AWUS036AXML monitor mode firmware crashes on Kali Linux. Covers MT7921AUN firmware update, kernel version requirements, active vs passive mode workaround, and hcxdumptool alternative."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Why does AWUS036AXML crash in active monitor mode?"
+    answer: "MT7921AUN uses a firmware-based MAC architecture. The current Linux mt7921u driver and firmware combination does not fully implement the command path needed for active injection. Running aireplay-ng causes the interface to disappear."
+  - question: "How do I fix the MT7921AUN active mode crash?"
+    answer: "Update the firmware-misc-nonfree package to the latest version, upgrade to kernel 6.6 or higher, and avoid high-rate deauthentication floods. This may improve but not fully eliminate the crash."
+  - question: "How does hcxdumptool capture PMKID without injecting packets?"
+    answer: "hcxdumptool operates in passive mode, extracting PMKID from beacon and probe frames broadcast by access points. It transmits no packets, so it does not trigger firmware crashes."
+  - question: "What are the limitations of passive monitoring on AWUS036AXML?"
+    answer: "Passive monitoring can capture beacons, handshakes, and PMKID, but cannot perform active operations like deauthentication, probe requests, or association floods. Use AWUS036ACH for those."
+  - question: "Which kernel versions improve MT7921AUN stability?"
+    answer: "Kernel 6.1 LTS or newer includes several mt7921u stability patches. Kernel 6.6 and later includes additional improvements to the MediaTek USB driver stack."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -10,6 +23,14 @@ featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
 ---
 
 The **ALFA AWUS036AXML** is ALFA Network's flagship WiFi 6E adapter, built on the MediaTek MT7921AUN chipset. It brings tri-band support (2.4 / 5 / 6 GHz) to security researchers and is one of the only USB adapters capable of passive monitoring on the 6 GHz band in 2026. For many use cases — site surveys, PCAP capture, PMKID collection — it performs exceptionally well.
+
+{{< tldr >}}
+The AWUS036AXML mt7921u driver triggers firmware crashes during active packet injection. This article covers root cause, diagnosis steps, and fixes including firmware updates, kernel upgrades, and switching to hcxdumptool for passive capture.
+{{< /tldr >}}
+
+
+
+
 
 But there is a known issue that catches users off guard: **active monitor mode commands crash the firmware**. Running tools like `aireplay-ng` or `mdk4` causes the `wlan0mon` interface to disappear entirely, forcing you to unplug and replug the adapter to recover. This is not a hardware defect — it is a driver and firmware limitation in the current Linux `mt7921u` stack.
 
@@ -226,6 +247,8 @@ Cross-reference firmware file dates against the `linux-firmware` repository comm
 
 ---
 
+{{< faq >}}
+
 ## Summary: AWUS036AXML Best Use Cases
 
 Understanding the MT7921AUN's current Linux limitations helps you deploy the AWUS036AXML where it genuinely excels:
@@ -248,3 +271,11 @@ The AWUS036AXML is an exceptional passive capture adapter and the right tool for
 - [AWUS036AXML Full Review](/en/blog/awus036axml-wifi-6e-review/) — complete hardware review and Kali Linux setup
 - [Packet Injection Guide](/en/blog/packet-injection-guide/) — using aireplay-ng and injection testing methodology
 - [Driver Install Guide](/en/blog/install-alfa-driver-kali-ubuntu/) — installing MT7921AUN and RTL8812AU drivers on Kali and Ubuntu
+
+## References
+
+1. [Linux Firmware Repository (kernel.org)](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git)
+2. [Linux Kernel mt76 Driver](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+3. [aircrack-ng Toolkit](https://www.aircrack-ng.org/)
+4. [hcxdumptool GitHub Project](https://github.com/ZerBea/hcxdumptool)
+5. [ALFA Network Official Support](https://www.alfa.com.tw/)

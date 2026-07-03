@@ -7,9 +7,28 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Por que o adaptador ALFA para de funcionar após atualização de kernel?"
+    answer: "O RTL8812AU usa driver fora do kernel. Após cada mudanca de versão do kernel, o modulo compilado deixa de ser compatível. O DKMS pode recompilar automaticamente, mas a falta de headers do kernel ou configurações desatualizadas causam falha."
+  - question: "Como diagnosticar rapidamente a falha do driver ALFA?"
+    answer: "Execute uname -r para confirmar a versão do kernel, depois dkms status para verificar o status de compilação do modulo, e finalmente dmesg para ver mensagens de erro de firmware ou carregamento de modulo."
+  - question: "Qual a forma mais rápida de corrigir a falha do driver RTL8812AU?"
+    answer: "Após instalar os headers do kernel correspondentes, execute dkms autoinstall. Se falhar, faça um clone novo de aircrack-ng/rtl8812au e execute make dkms_install."
+  - question: "O que fazer quando o adaptador MT7921AUN não conecta após atualização de kernel?"
+    answer: "O MT7921AUN usa driver integrado ao kernel, o problema geralmente está no firmware. Instale o pacote firmware-misc-nonfree e confirme que a versão do kernel não é inferior a 5.18."
+  - question: "Como evitar que atualizações de kernel quebrem o driver novamente?"
+    answer: "Use apt full-upgrade em vez de apt upgrade para garantir que os headers sejam instalados junto com o kernel. Instale os metapacotes dkms e linux-headers-generic para manter as dependencias."
 ---
 
 Você executa `sudo apt upgrade`, reinicia e seu adaptador ALFA sumiu — sem interface, sem luzes, nada. Essa é a pergunta de suporte mais comum em torno dos adaptadores ALFA Network USB WiFi no Linux, e as atualizações do kernel são quase sempre o culpado. Este guia conduz você por um processo sistemático de diagnóstico e reparo para as duas famílias de chipsets mais afetadas: **RTL8812AU** (encontrado no AWUS036ACH e AWUS036ACS) e **MT7921AUN** (encontrado no AWUS036AXM e AXML). Siga cada seção em ordem e seu adaptador estará de volta em menos de 15 minutos.
+
+{{< tldr >}}
+A causa principal de quebra de driver ALFA apos atualizacao de kernel e a dessincronizacao entre headers e modulo. O RTL8812AU e corrigido com dkms autoinstall, o MT7921AUN requer instalacao de firmware-misc-nonfree, e a correcao de longo prazo e usar apt full-upgrade.
+{{< /tldr >}}
+
 
 ---
 
@@ -362,6 +381,17 @@ Falhas de driver ALFA após atualizações do kernel seguem um padrão previsív
 
 ---
 
+{{< faq >}}
+
+
 **Guias relacionados:**
 - [Como instalar o driver ALFA USB WiFi no Kali Linux e Ubuntu](/pt/blog/install-alfa-driver-kali-ubuntu/) — comece aqui se você nunca instalou o driver antes
 - [Guia de configuração AWUS036ACH no Kali Linux](/pt/blog/awus036ach-kali-linux-setup/) — guia completo de configuração incluindo verificação de modo monitor e injeção de pacotes
+
+## Referências
+
+1. [Driver oficial rtl8812au do aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
+2. [Documentacao oficial do DKMS](https://github.com/dell/dkms)
+3. [Documentacao de gerenciamento de pacotes do Kali Linux](https://www.kali.org/docs/general-use/package-management/)
+4. [Documentacao oficial do kernel Linux](https://www.kernel.org/doc/html/latest/)
+5. [Driver MediaTek MT7921](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)

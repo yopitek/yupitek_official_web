@@ -7,6 +7,20 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "O VirtualBox com adaptador ALFA precisa do Extension Pack?"
+    answer: "Sim. O VirtualBox requer o Extension Pack para suportar passthrough USB 2.0 e USB 3.0. Sem ele, apenas USB 1.1 está disponível, o que é insuficiente para adaptadores ALFA modernos."
+  - question: "O adaptador ALFA deve usar controlador USB 2.0 ou 3.0?"
+    answer: "O AWUS036AXML deve usar USB 3.0 (xHCI). O AWUS036ACH é um dispositivo USB 2.0, mas usar xHCI não causa problemas. Recomenda-se configurar tudo como USB 3.0."
+  - question: "O VMware Workstation precisa de extensões adicionais?"
+    answer: "Não. O VMware Workstation 17+ e Fusion 13+ já trazem suporte integrado a USB 2.0/3.0. Basta confirmar que o serviço de arbitragem USB está em execução."
+  - question: "Por que o lsusb ve o adaptador mas não há interface wlan?"
+    answer: "O passthrough USB teve sucesso, mas o driver não foi carregado. O RTL8812AU requer modprobe 88XXau ou a instalação de realtek-rtl88xxau-dkms. O MT7921AUN requer modprobe mt7921u."
+  - question: "O que fazer quando o adaptador USB desconecta continuamente no Linux?"
+    answer: "Desative a suspensão automática do USB executando echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend, e confirme que o usuário foi adicionado ao grupo vboxusers."
 ---
 
 Executar um adaptador ALFA WiFi dentro de uma máquina virtual não é tão simples quanto conectá-lo e esperar que o sistema operacional convidado o detecte automaticamente. Diferente de pastas compartilhadas ou rede em modo bridge, o modo monitor e a injeção de pacotes brutos requerem **controle total do USB** — a VM deve possuir o dispositivo de forma exclusiva, não compartilhá-lo pela pilha de rede do host. Isso é chamado de USB passthrough, e configurá-lo corretamente é a falha de configuração mais comum para pentesters e jogadores de CTF trabalhando em VMs.
@@ -14,6 +28,11 @@ Executar um adaptador ALFA WiFi dentro de uma máquina virtual não é tão simp
 Este guia cobre a configuração completa do passthrough para **VirtualBox 7.x** e **VMware Workstation 17+ / VMware Fusion 13+**, com Kali Linux como sistema operacional convidado. Abrange tanto o AWUS036ACH (chipset RTL8812AU) quanto o mais recente AWUS036AXML (chipset MT7921AUN), com notas específicas por adaptador onde o comportamento difere.
 
 Ao finalizar, seu adaptador ALFA aparecerá dentro do Kali via `lsusb`, o driver correto estará carregado e o `airmon-ng` confirmará que o modo monitor está funcionando.
+
+{{< tldr >}}
+Para usar adaptadores ALFA no VirtualBox ou VMware, e necessario configurar o passthrough USB. O VirtualBox requer o Extension Pack com controlador USB 3.0 habilitado; o VMware tem suporte USB integrado mas requer o servico de arbitragem em execucao. O AWUS036ACH usa o driver 88XXau, o AWUS036AXML usa o mt7921u.
+{{< /tldr >}}
+
 
 ---
 
@@ -297,8 +316,18 @@ Para sessões de captura superiores a 30 minutos, considere usar um hub USB com 
 
 ---
 
+{{< faq >}}
+
 ## Próximos Passos
 
 - **Instalar ou atualizar o driver:** [Guia de Instalação do Driver ALFA para Kali e Ubuntu](/pt/blog/install-alfa-driver-kali-ubuntu/)
 - **Configuração completa do AWUS036ACH:** [Guia de Configuração AWUS036ACH Kali Linux](/pt/blog/awus036ach-kali-linux-setup/)
 - **Análise de hardware do AWUS036AXML:** [Análise AWUS036AXML WiFi 6E](/pt/blog/awus036axml-wifi-6e-review/)
+
+## Referências
+
+1. [Pagina de download oficial do VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+2. [Pagina do produto VMware Workstation](https://www.vmware.com/products/workstation-pro.html)
+3. [Projeto de driver aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+4. [Site oficial da ALFA Network](https://www.alfa.com.tw/)
+5. [Documentacao oficial do Kali Linux](https://www.kali.org/docs/)

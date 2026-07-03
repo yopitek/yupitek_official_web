@@ -12,9 +12,31 @@ series_order: 1
 description: "Guia passo a passo para instalar o driver ALFA AWUS036ACH na China usando espelhos domésticos. Compatível com Kali Linux, Ubuntu 22/24, Debian e Raspberry Pi. Sem necessidade de GitHub."
 related_product: "/pt/products/alfa/awus036ach/"
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Qual chipset o AWUS036ACH usa? Precisa instalar driver adicional?"
+    answer: "O AWUS036ACH usa o chipset Realtek RTL8812AU. O driver não está integrado ao kernel Linux e precisa ser instalado manualmente."
+  - question: "Preciso de VPN para instalar o driver do AWUS036ACH na China?"
+    answer: "Não. Todo o processo usa espelhos nacionais como USTC, Aliyun e espelho de código Gitee, sem necessidade de acesso ao GitHub."
+  - question: "O AWUS036ACH suporta modo monitor e injeção de pacotes?"
+    answer: "Sim. Após instalar o driver RTL8812AU, use airmon-ng para ativar o modo monitor e aireplay-ng para testar a injeção de pacotes."
+  - question: "O AWUS036ACH funciona no Raspberry Pi?"
+    answer: "Sim. Recomenda-se usar um hub USB com alimentação e instalar a versão Kali ARM64."
+  - question: "Qual o comando para instalar o driver do AWUS036ACH no Kali Linux?"
+    answer: "No Kali, execute diretamente sudo apt install realtek-rtl88xxau-dkms para instalar o driver pré-compilado."
 ---
 
 Você acabou de receber o AWUS036ACH e seu Linux não o reconhece. Isso é normal — este chip precisa do driver RTL8812AU, e ele não funciona automaticamente. Este guia te leva pela instalação completa em cerca de 30 minutos, usando apenas espelhos domésticos. Não é necessário acesso ao GitHub.
+
+{{< tldr >}}
+O AWUS036ACH usa o chipset RTL8812AU. No Kali, instale o driver DKMS via apt. No Ubuntu/Debian, compile a partir do Gitee. Em 30 minutos voce tera modo monitor e injecao de pacotes funcionando.
+{{< /tldr >}}
+
+Certifique-se de ter o seguinte pronto:
+
+
 
 ## Antes de Começar
 
@@ -617,6 +639,8 @@ Todos os recursos usados neste guia — sem necessidade de GitHub:
 | 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Imagens Kali ARM (backup) |
 | Driver RTL8812AU (Gitee) | [gitee.com/mirrors/rtl8812au](https://gitee.com/mirrors/rtl8812au) | Compilação manual como alternativa |
 
+{{< faq >}}
+
 ## Mais Guias de Adaptadores Alfa para a China
 
 Este é parte da série **Alfa China Install Guide**. Cada artigo cobre um modelo de adaptador:
@@ -631,3 +655,11 @@ Este é parte da série **Alfa China Install Guide**. Cada artigo cobre um model
 - [Guia de instalação AWUS036EAC para a China](/pt/blog/awus036eacs-china-install-guide/)
 
 Dúvidas? Deixe um comentário abaixo ou entre em contato em [yupitek.com](https://yupitek.com/pt/contact/).
+
+## Referências
+
+1. [Documentacao oficial do aircrack-ng](https://www.aircrack-ng.org/)
+2. [Site oficial da ALFA Network](https://www.alfa.com.tw/)
+3. [Documentacao oficial do Kali Linux](https://www.kali.org/docs/)
+4. [Espelho Gitee rtl8812au](https://gitee.com/mirrors/rtl8812au)
+5. [Driver Realtek RTL8812AU](https://www.realtek.com/)

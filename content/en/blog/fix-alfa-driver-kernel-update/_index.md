@@ -2,6 +2,19 @@
 title: "ALFA Driver Broke After Kernel Update? Here's How to Fix It"
 description: "ALFA USB WiFi adapter not working after Linux kernel update? Complete fix guide for RTL8812AU, RTL8811AU, and MT7921AUN drivers on Kali Linux and Ubuntu after kernel upgrades."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Why do ALFA adapters fail after a kernel update?"
+    answer: "RTL8812AU uses an out-of-tree driver. Compiled modules become incompatible after each kernel version change. DKMS can auto-rebuild, but missing headers or outdated settings cause failures."
+  - question: "How do I quickly diagnose ALFA driver failure?"
+    answer: "Run uname -r to confirm the kernel version, then dkms status to check module build status, and finally dmesg for firmware or module loading errors."
+  - question: "What is the fastest fix for RTL8812AU driver failure?"
+    answer: "Install matching kernel headers, then run dkms autoinstall. If that fails, fresh clone from aircrack-ng/rtl8812au and run make dkms_install."
+  - question: "What should I do if MT7921AUN fails to connect after a kernel update?"
+    answer: "MT7921AUN uses an in-kernel driver. The issue is usually firmware. Install the firmware-misc-nonfree package and confirm the kernel version is 5.18 or higher."
+  - question: "How do I prevent kernel updates from breaking drivers again?"
+    answer: "Use apt full-upgrade instead of apt upgrade to ensure headers and kernel install together. Install dkms and linux-headers-generic metapackages to maintain dependencies."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -10,6 +23,14 @@ featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 ---
 
 You run `sudo apt upgrade`, reboot, and your ALFA adapter has vanished. No interface, no lights, nothing. This is the single most common support question surrounding ALFA Network USB WiFi adapters on Linux — and kernel updates are almost always the culprit. This guide walks you through a systematic diagnosis and repair process for the two most affected chipset families: **RTL8812AU** (found in the AWUS036ACH and AWUS036ACS) and **MT7921AUN** (found in the AWUS036AXM and AXML). Follow each section in order and your adapter will be back online in under 15 minutes.
+
+{{< tldr >}}
+Kernel updates break ALFA drivers mainly because headers and modules fall out of sync. RTL8812AU is rebuilt via dkms autoinstall. MT7921AUN needs firmware-misc-nonfree. Long-term fix is using apt full-upgrade.
+{{< /tldr >}}
+
+
+
+
 
 ---
 
@@ -356,6 +377,8 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ---
 
+{{< faq >}}
+
 ## Summary
 
 ALFA driver failures after kernel updates follow a predictable pattern and have predictable solutions. RTL8812AU adapters need `dkms autoinstall` (or a fresh clone from `aircrack-ng/rtl8812au`) plus matching kernel headers. MT7921AUN adapters need `firmware-misc-nonfree` and a kernel of 5.18 or newer. The long-term fix in both cases is ensuring `apt full-upgrade` — not `apt upgrade` — is your standard update command, which keeps headers and kernels in lockstep.
@@ -365,3 +388,11 @@ ALFA driver failures after kernel updates follow a predictable pattern and have 
 **Related guides:**
 - [How to Install ALFA USB WiFi Driver on Kali Linux & Ubuntu](/en/blog/install-alfa-driver-kali-ubuntu/) — start here if you have never installed the driver before
 - [AWUS036ACH Kali Linux Setup Guide](/en/blog/awus036ach-kali-linux-setup/) — full setup walkthrough including monitor mode and packet injection verification
+
+## References
+
+1. [aircrack-ng Official rtl8812au Driver](https://github.com/aircrack-ng/rtl8812au)
+2. [DKMS Official Documentation](https://github.com/dell/dkms)
+3. [Kali Linux Package Management Documentation](https://www.kali.org/docs/general-use/package-management/)
+4. [Linux Kernel Official Documentation](https://www.kernel.org/doc/html/latest/)
+5. [MediaTek MT7921 Driver](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)

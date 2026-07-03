@@ -2,6 +2,8 @@
 title: "Руководство по установке драйвера ALFA AWUS036AXM для Китая: Kali Linux, Ubuntu, Debian и Raspberry Pi"
 description: "Пошаговое руководство по установке драйверов ALFA AWUS036AXM в Китае с использованием локальных зеркал. Драйвер MT7921AUN WiFi 6E в ядре, полная поддержка режима мониторинга и VIF. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi. GitHub не требуется."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +14,28 @@ series: ["alfa-china-install-guide"]
 related_product: "/ru/products/alfa/awus036axm/"
 series_order: 6
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
+
+faq:
+  - question: "Какой чип используется в AWUS036AXM? Поддерживает ли WiFi 6E?"
+    answer: "Чип MediaTek MT7921AUN, поддерживает трёхдиапазонный WiFi 6E (2.4G/5G/6G Гц)."
+  - question: "Нужно ли вручную устанавливать драйвер AWUS036AXM?"
+    answer: "Нет, драйвер mt7921u встроен в ядро с версии 5.18, нужно только установить пакет прошивки."
+  - question: "Поддерживает ли AWUS036AXM VIF-виртуальные интерфейсы?"
+    answer: "Да, MT7921AUN полностью поддерживает нативный VIF ядра, может одновременно подключаться к сети и перехватывать пакеты."
+  - question: "Почему драйвер не загружается в Ubuntu 22.04?"
+    answer: "Ядро 5.15 по умолчанию в Ubuntu 22.04 слишком старое, нужно установить HWE-ядро и обновиться до 5.18+."
+  - question: "Какой USB ID у AWUS036AXM?"
+    answer: "USB ID MediaTek MT7921AUN — 0e8d:7961, можно проверить через lsusb."
 ---
 
 AWUS036AXM — это трехдиапазонный адаптер WiFi 6E от ALFA с компактным L-образным разъемом USB-A. Его чип MT7921AUN использует драйвер `mt7921u`, встроенный в ядро Linux начиная с версии 5.18. L-образный разъем позволяет оставлять соседние USB-порты свободными. Это руководство охватывает полную настройку — прошивку, проверку драйвера, режим мониторинга, инъекцию пакетов и VIF — без использования GitHub.
+
+{{< tldr >}}
+AWUS036AXM с чипом MT7921AUN поддерживает WiFi 6E. Драйвер встроен в ядро, после установки пакета прошивки доступны режим монитора, инъекция пакетов и VIF.
+{{< /tldr >}}
+
+Убедитесь, что у вас есть:
+
 
 ## Перед началом работы
 
@@ -169,6 +190,8 @@ sudo reboot
 
 ---
 
+{{< faq >}}
+
 ## Поиск и устранение неисправностей
 
 | Проблема | Возможная причина | Решение |
@@ -188,3 +211,11 @@ sudo reboot
 - AWUS036AXM ← вы здесь
 
 Есть вопросы? Оставьте комментарий ниже или свяжитесь с нами на [yupitek.com](https://yupitek.com/ru/contact/).
+
+
+## Источники
+
+1. [Драйвер Linux Kernel mt7921](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [Официальная документация aircrack-ng](https://www.aircrack-ng.org/)
+3. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
+4. [Официальная документация Kali Linux](https://www.kali.org/docs/)

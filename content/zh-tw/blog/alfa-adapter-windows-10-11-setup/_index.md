@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-網路卡", "驅動程式安裝", "acrylic-wifi"]
 featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Windows 支援 ALFA 網路卡的監聽模式嗎？"
+    answer: "Windows 原生不支援完整監聽模式。NDIS 驅動模型未開放原始 802.11 封包擷取，僅 Acrylic WiFi Pro 可做被動掃描，完整監聽模式需使用 Kali Linux。"
+  - question: "可以在 Windows 上進行封包注入嗎？"
+    answer: "不能。目前沒有任何 Windows 驅動程式支援 ALFA 網路卡的原始 802.11 封包注入，此功能僅在 Linux 上可用。"
+  - question: "哪一款 ALFA 網路卡在 Windows 上相容性最好？"
+    answer: "AWUS036ACH（RTL8812AU）與 AWUS036ACM（MT7612U）擁有 WHQL 簽署驅動程式，Windows 10/11 相容性紀錄最完整，即插即用最穩定。"
+  - question: "Windows 11 需要手動安裝 MT7921AUN 驅動程式嗎？"
+    answer: "不需要。MT7921AUN 驅動程式已內建於 Windows 11 驅動程式存放區（組建 22000 以上），插入網路卡後數分鐘內自動取得驅動程式。"
+  - question: "裝置管理員顯示 Code 43 該怎麼辦？"
+    answer: "解除安裝驅動程式並重新開機後重新插入網路卡，再以方法 B 手動安裝驅動程式。若持續出現 Code 43 且跨多台機器都一樣，通常表示硬體故障。"
 ---
+
+Windows 原生不支援 ALFA 網路卡的完整監聽模式與封包注入，但所有主要型號均可即插即用連線 WiFi，並可用 Acrylic WiFi 進行被動掃描。
+
+{{< tldr >}}
+ALFA 網路卡在 Windows 10/11 上可即插即用連線 WiFi，但 NDIS 驅動模型不支援完整監聽模式與封包注入。需要資安測試時請切換至 Kali Linux（裸機或 VM USB 直通）。Windows 適合日常連線與 WiFi 勘測。
+{{< /tldr >}}
 
 ALFA Network USB WiFi 網路卡在資安研究與網路工程領域廣為人知，但大多數教學文章都以 Linux 為主。對 Windows 使用者來說，好消息是：所有主要 ALFA 網路卡均可在 Windows 10 與 Windows 11 上使用製造商提供的驅動程式正常運作，無需自行編譯原始碼。
 
@@ -255,8 +274,18 @@ wlan.fc.type_subtype == 0x0004
 
 ---
 
+{{< faq >}}
+
 ## 相關指南
 
 - [VirtualBox 與 VMware USB 直通 ALFA 網路卡](/zh-tw/blog/alfa-adapter-virtualbox-vmware-usb/) — 在虛擬機器中以完整 ALFA 網路卡支援執行 Kali Linux
 - [Kali Linux 與 Ubuntu 驅動程式安裝指南](/zh-tw/blog/install-alfa-driver-kali-ubuntu/) — 各晶片組完整驅動程式安裝說明
 - [ALFA WiFi 網路卡選購指南 2026](/zh-tw/blog/alfa-wifi-adapter-buyer-guide-2026/) — 哪款網路卡最適合您的使用需求
+
+## 參考來源
+
+1. [ALFA Network 官方驅動程式下載](https://www.alfa.com.tw/service_1.html)
+2. [Microsoft NDIS 驅動程式文件](https://learn.microsoft.com/windows-hardware/drivers/network/ndis-drivers)
+3. [Acrylic WiFi Analyzer 官方網站](https://www.acrylicwifi.com/)
+4. [Npcap 官方網站](https://npcap.com/)
+5. [Wireshark 官方文件](https://www.wireshark.org/docs/)

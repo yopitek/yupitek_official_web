@@ -2,14 +2,32 @@
 title: "Адаптер ALFA WiFi на Raspberry Pi с Kali Linux: Руководство по настройке"
 description: "Установка адаптеров ALFA USB WiFi на Raspberry Pi под управлением Kali Linux ARM64. Охватывает компиляцию драйвера RTL8812AU для AWUS036ACH, режим мониторинга и настройку портативной платформы для пентестинга."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
+
+faq:
+  - question: "Какая модель Raspberry Pi лучше всего подходит для пентестинга?"
+    answer: "Raspberry Pi 4B (4 ГБ+ ОЗУ) или Pi 5. Pi 5 предпочтительнее благодаря USB 3.0 и более мощному процессору, но Pi 4 также отлично работает с Kali ARM64."
+  - question: "Как установить драйвер AWUS036ACH на Raspberry Pi?"
+    answer: "Клонируйте репозиторий aircrack-ng/rtl8812au, установите linux-headers, выполните make dkms_install. DKMS автоматически пересоберёт драйвер при обновлении ядра."
+  - question: "Нужен ли USB-хаб с питанием для ALFA-адаптера на Raspberry Pi?"
+    answer: "Да, для AWUS036ACH обязателен (потребление 800 мА). AWUS036ACM (400 мА) может работать без хаба, но хаб рекомендуется для стабильности."
+  - question: "Какой образ Kali Linux скачать для Raspberry Pi?"
+    answer: "Kali Linux ARM64 для Raspberry Pi 4/5 с сайта kali.org/get-kali/#kali-arm. Для Pi 3 используйте ARM32-образ."
+  - question: "Можно ли использовать несколько ALFA-адаптеров одновременно?"
+    answer: "Да, при достаточном питании. Например, AWUS036ACM для сканирования 5 ГГц и AWUS036ACH для инъекции пакетов на 2.4 ГГц."
 ---
 
 Ноутбук с Kali Linux — стандартная рабочая станция для пентестинга, но далеко не единственный вариант. Raspberry Pi 4 или Pi 5 в сочетании с адаптером ALFA USB WiFi даёт компактную, бесшумную платформу с пассивным охлаждением: помещается в карман куртки, работает от USB-C повербанка и может оставаться без присмотра в целевой среде часами. Образы Kali Linux ARM64 поставляются непосредственно от Offensive Security и работают на Pi 4 и Pi 5 без эмуляции — с полным набором инструментов: Aircrack-ng, Kismet, Wireshark, Bettercap и остальными стандартными мета-пакетами Kali.
+
+{{< tldr >}}
+Raspberry Pi 4/5 с Kali Linux ARM64 и адаптером ALFA создаёт карманную платформу для пентестинга. AWUS036ACH требует компиляции драйвера RTL8812AU, AWUS036ACM и AWUS036AXM работают Plug & Play. Нужен USB-хаб с питанием.
+{{< /tldr >}}
 
 Главная проблема — драйвер. Чипсет RTL8812AU в AWUS036ACH не входит в основное ядро, поэтому нельзя просто подключить адаптер и ожидать его работы. Необходимо скомпилировать драйвер под работающее ARM64-ядро — причём флаги компиляции отличаются от x86-64. Это руководство проведёт вас через каждый шаг.
 
@@ -271,6 +289,19 @@ kismet -c wlan1 --gps=gpsd:host=localhost,port=2947
 
 ---
 
+{{< faq >}}
+
 ## Дополнительные материалы
 
 Полное руководство по установке драйвера RTL8812AU на настольные версии Kali Linux и Ubuntu см. в руководстве [Установка драйвера ALFA на Kali Linux и Ubuntu](/ru/blog/install-alfa-driver-kali-ubuntu/). Если вы ещё не определились с выбором адаптера, [Руководство покупателя ALFA WiFi 2026](/ru/blog/alfa-wifi-adapter-buyer-guide-2026/) охватывает каждую актуальную модель с подробностями о чипсете и рекомендациями по сценариям использования.
+
+
+## Источники
+
+1. [Официальная загрузка Kali Linux ARM](https://www.kali.org/get-kali/#kali-arm)
+2. [Проект драйвера aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+3. [Официальный сайт Raspberry Pi](https://www.raspberrypi.com/)
+4. [Документация USB-WiFi morrownr](https://github.com/morrownr/USB-WiFi)
+5. [Linux Wireless — mac80211 документация](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)
+6. [Документация aircrack-ng](https://www.aircrack-ng.org/)
+7. [Учебный центр Kali Linux](https://www.kali.org/training/)

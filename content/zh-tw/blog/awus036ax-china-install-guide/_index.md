@@ -12,7 +12,26 @@ series: ["alfa-china-install-guide"]
 related_product: "/zh-tw/products/alfa/awus036ax/"
 series_order: 4
 featureimage: "/images/blog/awus036ax-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036AX 用什麼晶片？支援 WiFi 6 嗎？"
+    answer: "採用 Realtek RTL8832BU 晶片，支援 WiFi 6 (802.11ax) 高速網路。"
+  - question: "AWUS036AX 在 Ubuntu 24.04 上需要安裝驅動嗎？"
+    answer: "不需要，Ubuntu 24.04 核心已原生支援 RTL8832BU，插上即用。"
+  - question: "AWUS036AX 適合做無線安全研究嗎？"
+    answer: "較不適合，RTL8832BU 的監聽模式支援有限，建議改用 AWUS036ACM 或 AWUS036ACH。"
+  - question: "在中國安裝 AWUS036AX 需要翻牆嗎？"
+    answer: "不需要，從 Gitee 下載 rtl8852bu 源碼並用國內鏡像安裝編譯工具即可。"
+  - question: "AWUS036AX 的 USB ID 是多少？"
+    answer: "Realtek RTL8832BU 的 USB ID 為 0bda:8832，用 lsusb 可確認。"
 ---
+
+ALFA AWUS036AX 搭載 RTL8832BU 晶片支援 WiFi 6，Ubuntu 24.04 核心內建驅動即插即用，其他系統從 Gitee 下載源碼編譯安裝。
+
+{{< tldr >}}
+AWUS036AX 採用 RTL8832BU 晶片支援 WiFi 6，Ubuntu 24.04 免驅即用，Kali/Ubuntu 22.04 從 Gitee 下載 rtl8852bu 編譯安裝。
+{{< /tldr >}}
 
 想在 Linux 上體驗 WiFi 6 的飆速快感？剛拿到這台 AWUS036AX，插上去發現沒反應？別擔心，這很正常。因為它採用的 RTL8832BU 晶片在較舊的核心版本上需要手動安裝驅動。不過有個好消息：如果你是用 Ubuntu 24.04，驅動已經內建好了，插上就能直接起飛。
 
@@ -192,6 +211,8 @@ sudo reboot
 | 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推薦 |
 | rtl8852bu (Gitee) | [Gitee 鏡像](https://gitee.com/mirrors/rtl8852bu) | 驅動原始碼 |
 
+{{< faq >}}
+
 ## 更多 Alfa 網卡中國安裝指南
 
 - [AWUS036ACH 安裝指南](/zh-tw/blog/awus036ach-china-install-guide/)
@@ -204,3 +225,10 @@ sudo reboot
 - [AWUS036EACS 安裝指南](/zh-tw/blog/awus036eacs-china-install-guide/)
 
 折騰過程中遇到搞不定的？歡迎在下面留言，或者到 [yupitek.com](https://yupitek.com/zh-tw/contact/) 聯絡我們。
+
+## 參考來源
+
+1. [Realtek 官方網站](https://www.realtek.com/)
+2. [ALFA Network 官網](https://www.alfa.com.tw/)
+3. [Kali Linux 官方文件](https://www.kali.org/docs/)
+4. [Gitee rtl8852bu 鏡像](https://gitee.com/mirrors/rtl8852bu)

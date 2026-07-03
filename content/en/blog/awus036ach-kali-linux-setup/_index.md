@@ -2,6 +2,19 @@
 title: "ALFA AWUS036ACH Setup Guide for Kali Linux: Monitor Mode & Packet Injection (2026)"
 description: "Step-by-step guide to install ALFA AWUS036ACH on Kali Linux 2024/2025, enable monitor mode with airmon-ng, and verify packet injection — complete with driver install commands."
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Does AWUS036ACH need extra drivers on Kali Linux?"
+    answer: "Yes. RTL8812AU is not a mainline kernel driver. Install it from the aircrack-ng GitHub repository. DKMS is recommended to survive kernel updates."
+  - question: "How do I confirm AWUS036ACH is detected by the system?"
+    answer: "Run lsusb and look for ID 0bda:8812 to confirm the Realtek RTL8812AU is recognized. Then use lsmod to verify the driver module is loaded."
+  - question: "What should I do if the interface disappears after enabling monitor mode?"
+    answer: "Usually NetworkManager retook the interface. Run airmon-ng check kill to stop interfering processes, then re-enable monitor mode."
+  - question: "What packet injection success rate is considered normal?"
+    answer: "Above 80% means reliable operation. Below 50% suggests checking antenna position, USB power, or driver installation."
+  - question: "How do I fix AWUS036ACH driver failure after a kernel update?"
+    answer: "If installed via DKMS, the driver rebuilds automatically. If it fails, run dkms autoinstall and make sure linux-headers match the current kernel version."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -10,6 +23,14 @@ featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
 ---
 
 Most people hit three walls when setting up the AWUS036ACH on Kali: the driver won't compile, the VM won't pass through the USB device, or monitor mode silently fails. This guide covers all three, plus the full working setup from scratch.
+
+{{< tldr >}}
+AWUS036ACH with RTL8812AU chipset, installed via aircrack-ng driver with DKMS, reliably enables monitor mode and packet injection. It is the standard equipment for Kali Linux penetration testing.
+{{< /tldr >}}
+
+
+
+
 
 ---
 
@@ -516,6 +537,8 @@ sudo systemctl start NetworkManager
 
 ---
 
+{{< faq >}}
+
 ## Summary
 
 | Step | Command |
@@ -532,3 +555,10 @@ sudo systemctl start NetworkManager
 | Estimated time | ~15 minutes (clean system) |
 
 The [ALFA AWUS036ACH](/en/products/alfa/awus036ach/) paired with Kali Linux 2024+ and the aircrack-ng RTL8812AU driver remains the most reliable, best-documented WiFi adapter setup in the penetration testing community. Once you've verified injection is working, you're ready to use the full Aircrack-ng suite, Wireshark, Kismet, Bettercap, and any other tool that requires monitor mode or packet injection.
+
+## References
+
+1. [aircrack-ng Official rtl8812au Driver Repository](https://github.com/aircrack-ng/rtl8812au)
+2. [Kali Linux Official Documentation](https://www.kali.org/docs/)
+3. [Realtek RTL8812AU Specifications](https://www.realtek.com/)
+4. [Linux Wireless Official Documentation](https://wireless.wiki.kernel.org/)

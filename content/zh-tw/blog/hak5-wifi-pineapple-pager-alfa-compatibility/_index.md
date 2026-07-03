@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH", "compatibility", "wireless-security"]
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "HAK5 WiFi Pineapple Pager 可以外接 ALFA 網卡嗎？"
+    answer: "可以，但需注意 MIPS 架構限制與 USB 2.0 供電。AWUS036ACM 為首選，核心內建驅動最穩定。"
+  - question: "為什麼 Pager 需要外接供電 USB Hub？"
+    answer: "Pager 僅配 USB 2.0 接口，最大輸出 500mA，高功率 ALFA 網卡峰值達 720mA，直接插入會導致重啟或核心崩潰。"
+  - question: "AWUS036ACM 為什麼是 Pager 首選網卡？"
+    answer: "MT7612U 驅動已整合於 OpenWrt 6.6 核心，Pager 上以 opkg 直接安裝，無需交叉編譯，最穩定可靠。"
+  - question: "MIPS 架構對驅動安裝有什麼限制？"
+    answer: "Pager 基於 MIPS32 的 MT7628AN，不支援 DKMS，無 GCC 工具鏈，非內建驅動必須在外部 x86 主機交叉編譯。"
+  - question: "RTL8812AU 在 Pager 上有什麼已知問題？"
+    answer: "RTL8812AU 在 MIPS 平台存在 wiphy_register 核心錯誤，導致介面無法載入，需套用社群修正 patch，建議改用 AWUS036ACM。"
 ---
+
+HAK5 WiFi Pineapple Pager 可外接 ALFA 網卡，首選 AWUS036ACM 核心內建驅動最穩定，高功率網卡需搭配外接供電 USB Hub 避免核心崩潰。
+
+{{< tldr >}}
+Pager 採 MIPS 架構不支援 DKMS，AWUS036ACM 因 MT7612U 驅動內建於 OpenWrt 6.6 核心而隨插即用；AWUS036ACH 需交叉編譯且有 wiphy bug，USB 2.0 供電僅 500mA 需外接 Hub。
+{{< /tldr >}}
 
 # HAK5 WiFi Pineapple Pager × ALFA Network：外接 USB 無線網卡相容性評估與設定指南
 
@@ -179,11 +198,17 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 
 ---
 
+---
+
+{{< faq >}}
+
+---
+
 ## 5. 結論與採購建議
 
 將 ALFA Network 無線網卡整合到 HAK5 WiFi Pineapple Pager 中，可構建一個低調且性能強大的行動滲透測試基站。然而，硬體配置細節至關重要：
 
-- **快速部署、免維護首選**：請購買 [ALFA AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm)。其原生 MediaTek 驅動在 OpenWrt 6.6 核心上極為穩定且開箱即用。
+- **快速部署、免維護首選**：請購買 [ALFA AWUS036ACM](https://yupitek.com/zh-tw/products/alfa/awus036acm)。其原生 MediaTek 驅動在 OpenWrt 6.6 核心上極為穩定且開箱即用。
 - **供電保證**：務必隨身攜帶優質的 **外置供電 USB Hub**，以確保高功率網卡的射頻輸出功率穩定，防止斷線。
 
 如有進一步技術諮詢、大宗硬體採購或客製化 OpenWrt SDK 編譯需求，歡迎隨時聯絡 **Yupitek 技術支援團隊**：
@@ -192,3 +217,13 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 - 📧 聯絡信箱：[sales@yupitek.com](mailto:sales@yupitek.com)
 - 📞 聯絡電話：+886-2-87325338
 - 📍 公司地址：台北市信義區富陽街34巷72號1樓
+
+---
+
+## 參考來源
+
+1. [Hak5 官方文件 — WiFi Pineapple 產品文件](https://documentation.hak5.org/)
+2. [OpenWrt 官方網站 — OpenWrt 24.10 發行版](https://openwrt.org/)
+3. [OpenWrt mt76 驅動程式倉庫 — GitHub](https://github.com/openwrt/mt76)
+4. [aircrack-ng/rtl8812au — 社群驅動 GitHub 倉庫](https://github.com/aircrack-ng/rtl8812au)
+5. [ALFA Network 官方網站](https://www.alfa.com.tw/)

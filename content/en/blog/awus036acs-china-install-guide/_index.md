@@ -2,6 +2,19 @@
 title: "ALFA AWUS036ACS Driver Install Guide for China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
 description: "Step-by-step guide to install ALFA AWUS036ACS drivers in China using domestic mirrors. RTL8811AU DKMS driver, full monitor mode and packet injection. Covers Kali Linux, Ubuntu 22/24, Debian, and Raspberry Pi. No GitHub required."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "What chipset does AWUS036ACS use? Is it the same as AWUS036ACH?"
+    answer: "It uses the Realtek RTL8811AU chipset, sharing the same driver package as RTL8812AU."
+  - question: "Does AWUS036ACS support monitor mode?"
+    answer: "Yes. RTL8811AU fully supports monitor mode and packet injection, making it a budget-friendly choice for security research."
+  - question: "Do I need a VPN to install AWUS036ACS in China?"
+    answer: "No. Kali installs the DKMS driver via apt. Ubuntu/Debian compiles from the Gitee source code mirror."
+  - question: "What is the USB ID of AWUS036ACS?"
+    answer: "The Realtek RTL8811AU USB ID is 0bda:0811. Confirm with lsusb."
+  - question: "What is the Kali Linux command to install AWUS036ACS drivers?"
+    answer: "Run sudo apt install realtek-rtl88xxau-dkms on Kali."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -15,6 +28,17 @@ featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 ---
 
 The AWUS036ACS is ALFA's compact dual-band security research adapter. Its RTL8811AU chip supports full monitor mode and packet injection on Kali Linux — but because the driver is out-of-kernel, you need to compile it from source. In China, GitHub is blocked, so this guide uses Gitee mirrors exclusively. No GitHub required.
+
+{{< tldr >}}
+AWUS036ACS uses the RTL8811AU chipset. Install the DKMS driver via apt on Kali, or compile from Gitee on Ubuntu/Debian. Supports monitor mode and packet injection.
+{{< /tldr >}}
+
+Make sure you have these ready:
+
+
+
+
+
 
 ## Before You Start
 
@@ -350,6 +374,8 @@ sudo aireplay-ng --test wlan1mon
 
 ---
 
+{{< faq >}}
+
 ## Troubleshooting
 
 | Problem | Likely Cause | Fix |
@@ -387,3 +413,10 @@ sudo aireplay-ng --test wlan1mon
 - [AWUS036EACS China Install Guide](/en/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 Questions? Leave a comment below or contact us at [yupitek.com](https://yupitek.com/en/contact/).
+
+## References
+
+1. [aircrack-ng Official Documentation](https://www.aircrack-ng.org/)
+2. [ALFA Network Official Website](https://www.alfa.com.tw/)
+3. [Kali Linux Official Documentation](https://www.kali.org/docs/)
+4. [Gitee rtl8812au Mirror](https://gitee.com/mirrors/rtl8812au)

@@ -2,12 +2,31 @@
 title: "AI 生成產品圖片：使用 baoyu-skills 的完整風格參考指南"
 description: "我們如何使用 GitHub Copilot CLI 的 baoyu-skills 外掛，生成部落格封面、資訊圖表、Instagram 卡片、漫畫及產品渲染圖——以 ALFA AWUS036ACM 為實際範例。B2B 行銷圖片生成的實用風格參考。"
 date: 2026-04-02
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["baoyu-skills", "AI-image-generation", "行銷", "ALFA-Network", "GitHub-Copilot"]
 featureimage: "/images/blog/baoyu-skills/cover-image-4.webp"
+faq:
+  - question: "baoyu-skills 是什麼？"
+    answer: "baoyu-skills 是 GitHub Copilot CLI 的開源外掛集合，提供 19 項技能涵蓋圖片生成、HTML 輸出、翻譯與社群發布，全部可從終端機直接呼叫。"
+  - question: "哪個 baoyu-skill 適合生成部落格封面圖？"
+    answer: "baoyu-cover-image 專為文章封面設計，支援電影寬幅 2.35:1、寬螢幕 16:9 與正方形 1:1 三種比例，搭配多種色彩與渲染風格。"
+  - question: "如何在 GitHub Copilot CLI 中使用 baoyu-skills？"
+    answer: "安裝外掛集合後，在終端機輸入 /baoyu-cover-image 或 /baoyu-xhs-images 等指令，技能會引導您回答風格、尺寸與內容的澄清問題後生成圖片。"
+  - question: "baoyu-skills 支援哪些圖片輸出類型？"
+    answer: "Type A 圖片輸出涵蓋封面圖、資訊圖表、漫畫、投影片、產品渲染與小紅書垂直卡片；Type B 生成樣式化 HTML；Type C 處理翻譯與社群發布。"
+  - question: "如何將 baoyu-skills 套用於自家產品？"
+    answer: "在本文找到符合品牌調性的變體，複製提示詞並將產品名稱與主要規格替換為您的目標產品，再於 Copilot CLI 中執行對應技能即可。"
 ---
+
+baoyu-skills 是 GitHub Copilot CLI 的 19 項開源外掛集合，讓 B2B 產品行銷人員能從終端機直接生成封面圖、資訊圖表、社群卡片與產品渲染圖，跨 8 種語言維持一致的視覺風格。
+
+{{< tldr >}}
+baoyu-skills 提供 19 項技能涵蓋圖片、HTML、文字輸出。本文以 ALFA AWUS036ACM 為範例，展示 6 大圖片技能的風格變體、提示詞與適用情境，作為行銷圖片生成的查詢表。
+{{< /tldr >}}
 
 在 Yopitek，我們代理技術硬體產品——WiFi 網路卡、安全研究工具、SDR 模組——為 8 種語言持續產出高品質的行銷視覺素材一直是一大挑戰。本文記錄我們如何使用 GitHub Copilot CLI 的 **baoyu-skills** 外掛集合，跨不同格式與風格生成產品圖片。
 
@@ -485,6 +504,8 @@ for each component
 
 ---
 
+{{< faq >}}
+
 ## 關於 baoyu-skills
 
 完整的 baoyu-skills 外掛集合可在 GitHub 上取得：
@@ -496,3 +517,11 @@ for each component
 想進一步了解本指南全程使用的範例產品 AWUS036ACM 嗎？
 
 {{< button href="/zh-tw/products/alfa/awus036acm/" >}}查看 AWUS036ACM 產品頁面{{< /button >}}
+
+## 參考來源
+
+1. [baoyu-skills GitHub 倉庫](https://github.com/JimLiu/baoyu-skills.git)
+2. [GitHub Copilot CLI 官方文件](https://docs.github.com/en/copilot/github-copilot-in-the-cli)
+3. [ALFA Network AWUS036ACM 產品規格](https://www.alfa.com.tw/)
+4. [MediaTek MT7612U 晶片組資料](https://www.mediatek.com/products/networking-and-connectivity)
+5. [OpenAI 圖片生成 API 文件](https://platform.openai.com/docs/guides/images)

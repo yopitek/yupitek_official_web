@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "在 Android 上通过 USB OTG 搭配 Kali NetHunter 使用 ALFA WiFi 网卡"
 description: "如何通过 USB OTG 在 Android 的 Kali NetHunter 上使用 ALFA USB WiFi 网卡。涵盖 AWUS036ACH 驱动程序、监听模式命令、OTG 数据线需求及支持设备。"
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
 featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
+faq:
+  - question: "Kali NetHunter 使用 ALFA 网卡需要 Root 吗？"
+    answer: "需要。完整 NetHunter 版本需已 Root 的 Android 装置与自定义核心，才能加载 RTL8812AU 模块并启用 USB OTG 网卡支持。"
+  - question: "哪一款 ALFA 网卡最适合 NetHunter？"
+    answer: "AWUS036ACH（RTL8812AU）是最佳选择。NetHunter 自定义核心已内置 88XXau 模块，监听模式与数据包注入完全支持。"
+  - question: "为什么需要带电源的 USB OTG 集线器？"
+    answer: "AWUS036ACH 从 USB 汲取约 500mW 功率，直接由手机电池供电会快速耗电并可能在负载下断线。带电源集线器从墙壁插座取电可完全解决此问题。"
+  - question: "WiFi 6E 网卡（AWUS036AXML）能在 NetHunter 上使用吗？"
+    answer: "支持有限。MT7921AUN 芯片的内核模块可用性取决于装置与内核版本，NetHunter 核心中尚未普遍支持，建议使用 RTL8812AU 网卡。"
+  - question: "哪些 Android 装置支持 NetHunter？"
+    answer: "官方支持装置包括 OnePlus、Google Pixel 及部分 Samsung Galaxy 机型。完整清单请参阅 NetHunter 官方装置页面，并确认装置支持 USB OTG。"
 ---
 
+
+
+
 您的 Android 手机本身就是一台放在口袋里的强大计算机。在已 Root 的设备上安装 Kali NetHunter，并通过 USB OTG 插入 ALFA WiFi 网卡，它就成为一个真正具备实力的口袋型渗透测试平台。无需笔记本电脑，无需笨重的硬件，只需您的手机、一条短小的 OTG 数据线，以及一块支持监听模式和数据包注入的网卡。
+
+{{< tldr >}}
+已 Root 的 Android 手机安装 Kali NetHunter 后，通过 USB OTG 插入 ALFA AWUS036ACH 即可成为口袋型渗透测试平台。需完整 NetHunter 版本、带电源 OTG 集线器，RTL8812AU 网卡兼容性最佳。
+{{< /tldr >}}
+
 
 本指南涵盖让 ALFA AWUS036ACH（或兼容网卡）在 NetHunter 下正常工作所需的一切——从硬件选择到驱动程序加载、监听模式激活，以及 NetHunter 应用程序内置的无线工具。
 
@@ -210,7 +234,17 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan1mon
 
 ---
 
+
+{{< faq >}}
+
 ## 相关指南
 
 - [AWUS036ACH 在 Kali Linux（桌面/笔记本）上的设置指南](/zh-cn/blog/awus036ach-kali-linux-setup/)
 - [在 Raspberry Pi 和 Kali 上使用 ALFA 网卡](/zh-cn/blog/alfa-adapter-raspberry-pi-kali/)
+
+## 参考文献
+
+1. [Kali NetHunter 官方文档](https://www.kali.org/docs/nethunter/)
+2. [aircrack-ng rtl8812au 驱动专案](https://github.com/aircrack-ng/rtl8812au)
+3. [ALFA Network 官方网站](https://www.alfa.com.tw/)
+4. [Android USB OTG 开发者文件](https://developer.android.com/guide/topics/connectivity/usb)

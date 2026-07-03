@@ -7,7 +7,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["antenne", "APA-M25", "ARS-NT5B7", "RP-SMA", "adaptateur-wifi", "ALFA-Network", "boost-signal"]
 featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Peut-on remplacer soi-même l'antenne d'un adaptateur ALFA ?"
+    answer: "Oui. Les adaptateurs ALFA équipés de connecteurs RP-SMA comme l'AWUS036ACH, l'AWUS036ACM et l'AWUS036AXML permettent tous le remplacement d'antenne sans outil. Dévissez dans le sens inverse des aiguilles d'une montre, puis vissez la nouvelle dans le sens des aiguilles."
+  - question: "Qu'est-ce qu'un connecteur RP-SMA ?"
+    answer: "Le RP-SMA (Reverse Polarity SMA) est un connecteur SMA à polarité inversée. Le connecteur mâle possède un trou central au lieu d'une broche, ce qui le rend physiquement incompatible avec le SMA standard malgré une apparence similaire. Toutes les antennes accessoires ALFA utilisent cette norme."
+  - question: "Comment choisir entre une antenne directionnelle et omnidirectionnelle ?"
+    answer: "L'antenne directionnelle convient aux audits en position fixe avec une cible connue, tandis que l'omnidirectionnelle est adaptée aux patrouilles mobiles ou aux scénarios où la position de la cible est inconnue. Choisissez selon votre environnement d'utilisation."
+  - question: "Quelle est la différence entre l'APA-M25 et l'ARS NT5B7 ?"
+    answer: "L'APA-M25 est une antenne panneau directionnelle 7 dBi adaptée aux tests ciblés en intérieur, tandis que l'ARS NT5B7 est une antenne omnidirectionnelle 5/7 dBi polyvalente intérieur/extérieur. La première offre une forte directionnalité, la seconde une couverture plus large."
+  - question: "Faut-il installer un pilote ou configurer quelque chose pour une mise à niveau d'antenne ?"
+    answer: "Non. La mise à niveau d'antenne est purement matérielle. Aucune mise à jour de pilote, aucune configuration ni redémarrage n'est nécessaire. L'adaptateur fonctionne immédiatement avec la nouvelle antenne après installation."
 ---
+
+{{< tldr >}}
+Les adaptateurs ALFA utilisent tous des connecteurs RP-SMA. Les cinq antennes accessoires couvrent du mono-bande au tri-bande, du directionnel à l'omnidirectionnel. L'installation sans outil prend moins de 30 secondes et améliore le signal de 4 à 8 dBm.
+{{< /tldr >}}
+
+Chaque adaptateur Wi-Fi USB d'ALFA Network doté d'une antenne détachable est livré avec une **antenne bâton omnidirectionnelle** correcte — généralement de 5 dBi. Ces antennes par défaut sont adéquates pour un usage général, mais elles laissent de côté des performances significatives dans les scénarios où la portée, la directionnalité ou la focalisation sur une fréquence spécifique comptent.
+
 
 ## Pourquoi mettre à niveau votre antenne ?
 
@@ -265,6 +285,8 @@ Mettre à niveau l'antenne de votre adaptateur ALFA est l'une des modifications 
 
 ---
 
+{{< faq >}}
+
 ## Pour les opérateurs de drones DJI
 
 Les antennes ALFA avec connecteurs RP-SMA peuvent améliorer la portée et la stabilité du signal des systèmes de contrôleurs DJI utilisant des connecteurs d'antenne compatibles. Voici comment chaque modèle s'adapte aux cas d'utilisation de drones :
@@ -279,3 +301,12 @@ Les antennes ALFA avec connecteurs RP-SMA peuvent améliorer la portée et la st
 > **Note sur le connecteur :** Vérifiez le type de connecteur d'antenne de votre contrôleur DJI avant l'achat. Le DJI RC Pro utilise du SMA standard ; de nombreux contrôleurs tiers utilisent du RP-SMA. Un câble adaptateur est disponible séparément si nécessaire.
 
 Pour un guide complet de mise à niveau de l'antenne du contrôleur DJI, consultez le [Guide de mise à niveau de l'antenne du contrôleur de drone DJI](/fr/blog/dji-drone-controller-antenna-upgrade/).
+
+---
+
+## Références
+1. [ALFA Network — Site officiel, gamme d'antennes](https://www.alfa.com.tw/)
+2. [Linux Wireless — Documentation mac80211](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)
+3. [IEEE 802.11 — Normes des réseaux locaux sans fil](https://standards.ieee.org/ieee/802.11/)
+4. [aircrack-ng — Suite d'outils de sécurité sans fil](https://www.aircrack-ng.org/)
+5. [FCC Part 15 — Réglementation des équipements radio non autorisés](https://www.fcc.gov/engineering-technology-laboratory-division/general/radio-spectrum-and-rulemaking)

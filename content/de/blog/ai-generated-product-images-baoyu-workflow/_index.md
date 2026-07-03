@@ -2,14 +2,32 @@
 title: "KI-generierte Produktbilder: Eine vollständige Stilreferenz mit baoyu-skills"
 description: "Wie wir das baoyu-skills Plugin für GitHub Copilot CLI nutzen, um Blog-Cover, Infografiken, Instagram-Karten, Comics und Produkt-Renders zu erstellen – mit dem ALFA AWUS036ACM als Praxisbeispiel. Eine praktische Stilreferenz für die B2B-Marketing-Bilderstellung."
 date: 2026-04-02
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["baoyu-skills", "KI-Bilderzeugung", "Marketing", "ALFA-Network", "GitHub-Copilot"]
 featureimage: "/images/blog/baoyu-skills/cover-image-4.webp"
+faq:
+  - question: "Was ist baoyu-skills?"
+    answer: "baoyu-skills ist eine Sammlung von Open-Source-Erweiterungen für GitHub Copilot CLI, die 19 Fähigkeiten zur Bildgenerierung, HTML-Ausgabe, Übersetzung und Veröffentlichung in sozialen Medien bietet, die alle direkt über die Kommandozeile aufgerufen werden können."
+  - question: "Welche baoyu-skill eignet sich zur Generierung von Blog-Coverbildern?"
+    answer: "baoyu-cover-image ist speziell für Artikel-Cover konzipiert und unterstützt drei Seitenverhältnisse: Cinemascope 2.35:1, Breitbild 16:9 und Quadrat 1:1, kombiniert mit verschiedenen Farb- und Render-Stilen."
+  - question: "Wie verwendet man baoyu-skills in GitHub Copilot CLI?"
+    answer: "Nach der Installation der Erweiterungssammlung geben Sie im Terminal Befehle wie /baoyu-cover-image oder /baoyu-xhs-images ein. Die Fähigkeiten führen Sie durch Klärungsfragen zu Stil, Größe und Inhalt, bevor sie das Bild generieren."
+  - question: "Welche Bildausgabetypen unterstützt baoyu-skills?"
+    answer: "Type A-Bildausgaben umfassen Coverbilder, Infografiken, Comics, Präsentationsfolien, Produkt-Renderings und vertikale Karten für Xiaohongshu; Type B generiert stilisiertes HTML; Type C verarbeitet Übersetzungen und Veröffentlichungen in sozialen Medien."
+  - question: "Wie kann man baoyu-skills auf eigene Produkte anwenden?"
+    answer: "Finden Sie im vorliegenden Artikel eine Variante, die zum Markenton passt, kopieren Sie den Prompt und ersetzen Sie den Produktnamen sowie die Hauptspecs durch Ihr Zielprodukt, und führen Sie dann die entsprechende Fähigkeit in Copilot CLI aus."
+
 ---
 
 Bei Yopitek vertreiben wir technische Hardware-Produkte – WiFi-Adapter, Sicherheitsforschungs-Tools, SDR-Module – und die Erstellung konsistenter, hochwertiger Marketing-Visuals für 8 Sprachen war schon immer eine Herausforderung. Dieser Artikel dokumentiert, wie wir die **baoyu-skills** Plugin-Sammlung für GitHub Copilot CLI nutzen, um Produktbilder in verschiedenen Formaten und Stilen zu generieren.
+
+{{< tldr >}}
+baoyu-skills bietet 19 Fähigkeiten, die Bilder, HTML und Textausgabe abdecken. Dieser Artikel verwendet das ALFA AWUS036ACM als Beispiel, um die stilistischen Varianten, Prompt-Wörter und Anwendungsszenarien der sechs Bildfähigkeiten zu demonstrieren, die als Referenztabelle für die Generierung von Marketingbildern dienen.
+{{< /tldr >}}
 
 Wir verwenden den **ALFA AWUS036ACM** USB-WiFi-Adapter als Beispielprodukt in diesem Leitfaden. Jedes hier gezeigte Prompt und Bild wurde aus einer Beschreibung dieses Adapters generiert. Ziel ist eine praktische Stilreferenz: Wenn Sie in Zukunft ein Produkt-Cover-Bild, eine Instagram-Karte oder eine technische Infografik benötigen, können Sie nachschlagen, welchen Skill und Stil Sie verwenden sollten.
 
@@ -485,6 +503,8 @@ Nutzen Sie diesen Artikel als Nachschlagetabelle, wann immer Sie ein Marketing-B
 
 ---
 
+{{< faq >}}
+
 ## Über baoyu-skills
 
 Die vollständige baoyu-skills Plugin-Sammlung ist auf GitHub verfügbar:
@@ -496,3 +516,11 @@ Alle Bilder in diesem Artikel wurden mit den oben genannten Skills generiert, wo
 Möchten Sie mehr über den AWUS036ACM erfahren – das Produkt, das in diesem Leitfaden als Beispiel verwendet wurde?
 
 {{< button href="/de/products/alfa/awus036acm/" >}}AWUS036ACM Produktseite anzeigen{{< /button >}}
+
+## Referenzen
+
+1. [baoyu-skills GitHub-Repository](https://github.com/JimLiu/baoyu-skills.git)
+2. [GitHub Copilot CLI Offizielle Dokumentation](https://docs.github.com/en/copilot/github-copilot-in-the-cli)
+3. [ALFA Network AWUS036ACM Produktspezifikationen](https://www.alfa.com.tw/)
+4. [MediaTek MT7612U Chipsatz-Informationen](https://www.mediatek.com/products/networking-and-connectivity)
+5. [OpenAI-Bildgenerierungs-API-Dokumentation](https://platform.openai.com/docs/guides/images)

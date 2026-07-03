@@ -2,6 +2,19 @@
 title: "ALFA Adapter Setup Guide for Windows 10 and Windows 11"
 description: "How to install and configure ALFA USB WiFi adapters on Windows 10/11. Driver download, monitor mode with Acrylic WiFi, troubleshooting, and adapter comparison for Windows users."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Does Windows support monitor mode for ALFA adapters?"
+    answer: "Windows does not natively support full monitor mode. The NDIS driver model does not expose raw 802.11 frame capture. Only Acrylic WiFi Pro can do passive scanning. Full monitor mode requires Kali Linux."
+  - question: "Can I do packet injection on Windows?"
+    answer: "No. No Windows driver currently supports raw 802.11 packet injection for ALFA adapters. This feature is only available on Linux."
+  - question: "Which ALFA adapter has the best Windows compatibility?"
+    answer: "AWUS036ACH (RTL8812AU) and AWUS036ACM (MT7612U) have WHQL-signed drivers with the most complete Windows 10/11 compatibility records and stable plug-and-play."
+  - question: "Does Windows 11 need manual MT7921AUN driver installation?"
+    answer: "No. The MT7921AUN driver is included in the Windows 11 driver store (build 22000+). The adapter gets its driver automatically within minutes of plug-in."
+  - question: "What should I do if Device Manager shows Code 43?"
+    answer: "Uninstall the driver, reboot, reinsert the adapter, then manually install using Method B. If Code 43 persists across multiple machines, it usually indicates a hardware fault."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -10,6 +23,14 @@ featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
 ---
 
 ALFA Network USB WiFi adapters are well known in security research and networking circles, but most tutorials focus exclusively on Linux. The good news for Windows users: every major ALFA adapter works on Windows 10 and Windows 11 with manufacturer-provided drivers — no source compilation required.
+
+{{< tldr >}}
+ALFA adapters work plug-and-play on Windows 10/11 for WiFi connectivity, but the NDIS driver model does not support full monitor mode or packet injection. For security testing, switch to Kali Linux (bare metal or VM with USB passthrough). Windows is fine for everyday connectivity and WiFi surveys.
+{{< /tldr >}}
+
+
+
+
 
 The critical difference from Linux is monitor mode. On Linux, tools like `aircrack-ng` and `airodump-ng` leverage raw 802.11 capture with packet injection. On Windows, the driver model (NDIS) does not expose the same hardware capabilities. Full monitor mode and packet injection are **not available natively on Windows**. What Windows does well — and does very well — is plug-and-play connectivity and WiFi scanning with polished tools like Acrylic WiFi Analyzer.
 
@@ -239,6 +260,8 @@ Capturing network traffic without authorization is illegal in most jurisdictions
 
 ---
 
+{{< faq >}}
+
 ## Summary: Windows vs Linux for ALFA Adapters
 
 | Feature | Windows 10/11 | Kali Linux |
@@ -260,3 +283,11 @@ The bottom line: Windows is an excellent platform for ALFA adapters when your go
 - [VirtualBox & VMware USB Passthrough for ALFA Adapters](/en/blog/alfa-adapter-virtualbox-vmware-usb/) — Run Kali Linux in a VM with full ALFA adapter support
 - [Driver Install Guide for Kali Linux & Ubuntu](/en/blog/install-alfa-driver-kali-ubuntu/) — Complete chipset-specific driver installation
 - [ALFA WiFi Adapter Buyer Guide 2026](/en/blog/alfa-wifi-adapter-buyer-guide-2026/) — Which adapter is right for your use case
+
+## References
+
+1. [ALFA Network Official Driver Downloads](https://www.alfa.com.tw/service_1.html)
+2. [Microsoft NDIS Driver Documentation](https://learn.microsoft.com/windows-hardware/drivers/network/ndis-drivers)
+3. [Acrylic WiFi Analyzer Official Website](https://www.acrylicwifi.com/)
+4. [Npcap Official Website](https://npcap.com/)
+5. [Wireshark Official Documentation](https://www.wireshark.org/docs/)

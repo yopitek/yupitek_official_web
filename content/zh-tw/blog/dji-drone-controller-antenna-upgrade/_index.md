@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["DJI", "drone", "antenna-upgrade", "RP-SMA", "range-extension", "ALFA-APA-M25", "ALFA-ARS-NT5B7"]
 featureimage: "/images/blog/dji-drone-controller-antenna-upgrade.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "DJI 遙控器可以使用 ALFA 天線嗎？"
+    answer: "可以。RC-N1、RC2、RC Pro 及 Smart Controller 採用 RP-SMA 母頭，與 ALFA 配件天線的 RP-SMA 公頭直接相容，手緊旋換即可。"
+  - question: "RP-SMA 和標準 SMA 有什麼不同？"
+    answer: "RP-SMA 公頭中央為插孔，標準 SMA 公頭中央為針腳，極性相反，外觀相似但實體不相容，強行連接會損壞接口。"
+  - question: "APA-M25 天線板能延伸多少距離？"
+    answer: "雙根 APA-M25 在空曠視距環境下典型有效距離 4-7 公里，正向訊號強度較原廠提升約 6 倍，實際結果因環境而異。"
+  - question: "更換天線會使 DJI 保固失效嗎？"
+    answer: "配備 RP-SMA 接頭的遙控器外部天線屬使用者維護零件，更換本身不影響保固，但請保留原廠天線以供送修時重新安裝。"
+  - question: "天線升級後可以合法飛更遠嗎？"
+    answer: "不行。多數國家要求維持目視視距 VLOS，天線升級的價值在於提升合法範圍內的鏈路可靠性與信號餘裕，非突破法規限制。"
 ---
+
+DJI RC-N1、RC2、RC Pro 及 Smart Controller 遙控器採用 RP-SMA 接頭，可直接相容 ALFA 天線配件，APA-M25 天線板可提升正向信號強度達 6 倍。
+
+{{< tldr >}}
+DJI 遙控器的 RP-SMA 母頭與 ALFA 天線直接相容，APA-M25 雙頻天線板提供 10 dBi 增益，正向信號提升約 6 倍，雙根更換可達 4-7 公里有效距離。
+{{< /tldr >}}
 
 DJI 無人機遙控器比大多數飛手想像的更具升級彈性。RC-N1、RC2、RC Pro 及 Smart Controller 的外部天線接口均採用 **RP-SMA 接頭** — 與 ALFA Network 外接式 USB Wi-Fi 天線所使用的標準完全相同。這項相容性讓使用者無需任何工具，即可輕鬆完成距離升級。
 
@@ -319,6 +338,12 @@ DJI 的 **OcuSync 3 (O3)** 與 **O4** 傳輸系統涵蓋兩個頻率頻段：
 
 ---
 
+---
+
+{{< faq >}}
+
+---
+
 ## 結語
 
 升級 DJI 遙控器天線是無人機操作者最易實現且最具成本效益的 RF 改進之一。RP-SMA 接頭標準使 ALFA 配件天線與 RC-N1、RC2、RC Pro 和 Smart Controller 直接相容 — 只需手緊旋換即可完成。
@@ -333,3 +358,13 @@ DJI 的 **OcuSync 3 (O3)** 與 **O4** 傳輸系統涵蓋兩個頻率頻段：
 - [ALFA 天線升級指南 — 所有型號比較](/zh-tw/blog/alfa-antenna-upgrade-guide/)
 - [ALFA APA-M25 產品頁面](/zh-tw/products/alfa/apa-m25/)
 - [ALFA ARS-NT5B7 產品頁面](/zh-tw/products/alfa/ars-nt5b7/)
+
+---
+
+## 參考來源
+
+1. [DJI 官方網站 — 遙控器產品規格](https://www.dji.com/)
+2. [FCC Part 15 — 未授權射頻設備規範](https://www.fcc.gov/engineering-technology-laboratory-division/general/radio-spectrum-and-rulemaking)
+3. [ALFA Network 官方網站 — 天線配件規格](https://www.alfa.com.tw/)
+4. [台灣國家通訊傳播委員會 NCC — 電信管理法](https://www.ncc.gov.tw/)
+5. [IEEE 802.11 標準文件 — 無線區域網路規範](https://standards.ieee.org/ieee/802.11/)

@@ -3,14 +3,30 @@ title: "محول ALFA WiFi على Raspberry Pi مع Kali Linux: دليل الإ�
 description: "تثبيت محولات ALFA USB WiFi على Raspberry Pi بنظام Kali Linux ARM64. يشمل تجميع درايفر RTL8812AU للـ AWUS036ACH، وضع المراقبة، وإعداد منصة اختبار الاختراق المحمولة."
 date: 2026-03-24
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما هو أفضل طراز Raspberry Pi لاختبار الاختراق؟"
+    answer: "Raspberry Pi 5 (4 GB أو 8 GB) هو الخيار الأفضل. Pi 4 (4 GB+) يعمل أيضاً بشكل جيد؛ Pi 3B+ ليس سريعاً بما يكفي لالتقاط الحزم في الوقت الفعلي."
+  - question: "هل يحتاج AWUS036ACH إلى تجميع برنامج تشغيل على Raspberry Pi؟"
+    answer: "نعم. RTL8812AU ليس في النواة الرئيسية. جرّب أولاً حزمة Kali DKMS realtek-rtl88xxau-dkms، وإذا فشلت فجمّع من GitHub aircrack-ng مع تبديل علم منصة ARM64."
+  - question: "هل يمكن استخدام wlan0 لوضع المراقبة على Pi بدون شاشة؟"
+    answer: "لا يُنصح بذلك. wlan0 هو WiFi المدمج في Pi ويُستخدم لاتصال SSH. تنفيذ airmon-ng check kill سيقطع SSH. استخدم wlan1 (محول ALFA) وحافظ على الاتصال عبر Ethernet أو tmux."
+  - question: "هل يعمل AWUS036AXM فور التوصيل على Raspberry Pi؟"
+    answer: "نعم. برنامج تشغيل MT7921AUN مدمج في النواة منذ 5.18، وصور Kali ARM64 تستخدم إصدار نواة أحدث. يكفي تثبيت حزمة firmware-misc-nonfree."
+  - question: "كيف أزوّد AWUS036ACH بالطاقة على Raspberry Pi؟"
+    answer: "يستهلك AWUS036ACH حوالي 500mW. توصيله مباشرة بـ Pi قد يسبب انخفاض التردد أو إعادة التشغيل. استخدم موزع USB 3.0 مزوداً بمصدر طاقة مع شاحن USB-C الرسمي لـ Pi بقوة 3A فأكثر."
 ---
 
 حاسوب محمول يعمل بنظام Kali Linux هو محطة العمل القياسية لاختبار الاختراق — لكنه ليس الخيار الوحيد بالتأكيد. Raspberry Pi 4 أو Pi 5 مقترناً بمحول ALFA USB WiFi يمنحك منصةً مدمجة خاليةً من المروحة ذات تبريد سلبي، تتسع في جيب المعطف، وتعمل ببطارية USB-C المحمولة، ويمكن تركها دون رقابة في بيئة الهدف لساعات طويلة. تصدر صور Kali Linux ARM64 مباشرةً من Offensive Security وتعمل أصلاً على Pi 4 وPi 5 دون محاكاة، مما يمنحك الأدوات الكاملة: Aircrack-ng وKismet وWireshark وBettercap وسائر حزم Kali القياسية.
+
+{{< tldr >}}
+Raspberry Pi 4/5 مع Kali Linux ARM64 ومحول ALFA يُشكّل منصة اختبار اختراق بحجم الجيب. AWUS036ACH يحتاج تجميع تعريف RTL8812AU، بينما AWUS036ACM و AWUS036AXM يعملان فور التوصيل بفضل التعريفات المدمجة في النواة. يلزم موزع USB مزود بمصدر طاقة.
+{{< /tldr >}}
 
 العقبة الأولى هي الدرايفر. شريحة RTL8812AU المدمجة في AWUS036ACH ليست ضمن النواة الرئيسية، مما يعني أنك لا تستطيع توصيل المحول وتوقع عمله فوراً. يجب تجميع الدرايفر مقابل نواة ARM64 الجارية — وإشارات التجميع تختلف عن x86-64. يأخذك هذا الدليل خلال كل خطوة.
 
@@ -272,6 +288,16 @@ kismet -c wlan1 --gps=gpsd:host=localhost,port=2947
 
 ---
 
+{{< faq >}}
+
 ## مزيد من القراءة
 
 للدليل الكامل لتثبيت درايفر RTL8812AU على Kali Linux وUbuntu للسطح المكتب، راجع دليل [تثبيت درايفر ALFA على Kali Linux وUbuntu](/ar/blog/install-alfa-driver-kali-ubuntu/). إذا كنت لا تزال تقرر أي محول تشتري، يغطي [دليل شراء محول ALFA WiFi 2026](/ar/blog/alfa-wifi-adapter-buyer-guide-2026/) كل طراز حالي مع تفاصيل الشريحة وتوصيات حالات الاستخدام.
+
+## المراجع
+
+1. [تنزيل Kali Linux ARM الرسمي](https://www.kali.org/get-kali/#kali-arm)
+2. [مشروع تعريف aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+3. [موقع Raspberry Pi الرسمي](https://www.raspberrypi.com/)
+4. [وثائق تعريف Linux Kernel mt76](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)

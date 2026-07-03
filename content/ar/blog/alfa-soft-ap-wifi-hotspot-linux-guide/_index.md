@@ -7,19 +7,36 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi"]
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "هل يمكن استخدام محول ALFA USB كنقطة اتصال WiFi على Linux؟"
+    answer: "يعتمد على مجموعة الشرائح. AWUS036ACM (MT7612U) يدعم Soft AP بالكامل ويعمل فور التوصيل، AWUS036ACH (RTL8812AU) يدعمه بشكل مشروط، و AWUS036AXML يدعمه جزئياً ويتطلب ضبطاً."
+  - question: "ما أفضل محول ALFA لإنشاء Soft AP على Raspberry Pi؟"
+    answer: "AWUS036ACM هو الخيار الأفضل. تعريفه المدمج في النواة يعمل فور التوصيل، واستهلاكه للطاقة 400mA فقط مناسب لـ Pi، ويدعم WPA3 والواجهات الافتراضية VIF، وهو مستقر عبر جميع المنصات."
+  - question: "كيف أتحقق من دعم المحول لوضع AP؟"
+    answer: "نفّذ iw list | grep -A 10 'Supported interface modes'، إذا تضمن المخرج * AP فالتعريف يدعم Soft AP وستعمل hostapd بشكل صحيح."
+  - question: "ما قيود Soft AP على تعريف RTL8812AU؟"
+    answer: "لا يدعم WPA3 ويمكن استخدام WPA2-PSK فقط، لا يدعم الواجهات الافتراضية VIF فتحتاج بطاقتين للتقسيم، ويستهلك حوالي 800mA مما يتطلب موزع USB مزوداً بمصدر طاقة على Pi."
+  - question: "ماذا أفعل إذا انقطع WiFi أثناء تشغيل AWUS036AXML كـ Soft AP؟"
+    answer: "MT7921AUN المدمج به Bluetooth 5.2 يتداخل مع WiFi. نفّذ echo 'install btusb /bin/false' في /etc/modprobe.d/ لتعطيل تعريف Bluetooth نهائياً ثم أعد التشغيل."
 ---
-
-
+> "Can I use ALFA USB WiFi adapters as a WiFi hotspot (Soft AP) on Kali Linux / Ubuntu / Raspberry Pi?"
 
 # الدليل الكامل لـ Soft AP من ALFA Network 2026: Building WiFi Hotspots on Kali Linux, Ubuntu, Debian & Raspberry Pi 4/5
 
 ## مقدمة
 
-> "Can I use ALFA USB WiFi adapters as a WiFi hotspot (Soft AP) on Kali Linux / Ubuntu / Raspberry Pi?"
-
 This is one of the most common questions we receive at Yupitek. The question sounds simple, but the answer varies dramatically depending on the model and chipset — **ليس كل محول USB WiFi يمكنه العمل في وضع Soft AP.**
 
 This article aggregates over 500 community discussions from GitHub (morrownr/USB-WiFi), Reddit technical forums, Raspberry Pi official documentation, and real-world user feedback to give you an honest, comprehensive report on which ALFA adapters work, which don't, and the complete step-by-step setup process.
+
+{{< tldr >}}
+يعتمد توافق محولات ALFA مع Soft AP على تعريف الشريحة. AWUS036ACM هو الخيار الأمثل المستقر عبر جميع المنصات، AWUS036ACH قابل للاستخدام لكن بدون WPA3، و AWUS036AXML يحتاج تعطيل Bluetooth وتحديث البرنامج الثابت. لا يُنصح باستخدام RTL8832BU.
+{{< /tldr >}}
+
+
+محوّل ALFA AWUS036ACM (MT7612U) هو الخيار الأمثل لـ Soft AP على Linux: تعريف مدمج في النواة يعمل فور التوصيل، يدعم WPA3 والواجهات الافتراضية VIF. أما RTL8812AU فدعمه مشروط، و MT7921AUN يتطلب ضبطاً يدوياً.
 
 ---
 
@@ -618,6 +635,8 @@ DFS (Dynamic Frequency Selection) channels (ch100–ch140) require kernel-level 
 
 ---
 
+{{< faq >}}
+
 ### الخلاصة
 
 The core factor in building a Soft AP isn't WiFi speed or antenna count — **إنه دعم وضع AP لبرنامج تشغيل الشريحة.**
@@ -658,6 +677,14 @@ This article aggregates information from:
 - **Lab401** technical reviews and 2025 pentesting best-pick reports
 - **Raspberry Pi Official Forum** — Pi 4/5 USB WiFi compatibility discussions
 - **Yupitek existing blog** — ACM China Install Guide, AXML WiFi 6E Review, Kali Linux 2026 best adapters
+
+## المراجع
+
+1. [مستودع GitHub لمعرفة morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi)
+2. [وثائق hostapd الرسمية](https://w1.fi/cgit/hostap/)
+3. [تعريف Linux Wireless mt76](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+4. [وثائق Raspberry Pi الرسمية](https://www.raspberrypi.com/documentation/)
+5. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
 
 ---
 

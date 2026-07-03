@@ -12,7 +12,26 @@ series: ["alfa-china-install-guide"]
 related_product: "/zh-tw/products/alfa/awus036acs/"
 series_order: 3
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036ACS 用什麼晶片？跟 AWUS036ACH 一樣嗎？"
+    answer: "採用 Realtek RTL8811AU 晶片，與 RTL8812AU 共用同一個驅動程式套件。"
+  - question: "AWUS036ACS 支援監聽模式嗎？"
+    answer: "支援，RTL8811AU 完美支援監聽模式與封包注入，是安全研究的經濟實惠選擇。"
+  - question: "在中國安裝 AWUS036ACS 需要翻牆嗎？"
+    answer: "不需要，Kali 用 apt 裝 DKMS 驅動，Ubuntu/Debian 從 Gitee 下載源碼編譯即可。"
+  - question: "AWUS036ACS 的 USB ID 是多少？"
+    answer: "Realtek RTL8811AU 的 USB ID 為 0bda:0811，用 lsusb 可確認。"
+  - question: "Kali Linux 安裝 AWUS036ACS 驅動的指令是什麼？"
+    answer: "Kali 可直接執行 sudo apt install realtek-rtl88xxau-dkms 安裝驅動。"
 ---
+
+ALFA AWUS036ACS 搭載 RTL8811AU 晶片，在中國透過國內鏡像與 Gitee 源碼安裝驅動即可支援監聽模式與封包注入，全程無需翻牆。
+
+{{< tldr >}}
+AWUS036ACS 採用 RTL8811AU 晶片，Kali 用 apt 裝 DKMS 驅動，Ubuntu/Debian 從 Gitee 編譯，支援監聽模式與封包注入。
+{{< /tldr >}}
 
 剛拿到這台輕巧的 AWUS036ACS，興沖沖插上去結果 Linux 一點反應都沒有？別擔心，這再正常不過了。雖然它內建的 RTL8811AU 晶片是安全研究的神器，完美支援監聽模式與封包注入，但驅動程式並不在系統核心裡，得靠咱們動手裝一下。
 
@@ -209,6 +228,8 @@ sudo apt install -y realtek-rtl88xxau-dkms
 | 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推薦 |
 | 中科大鏡像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 推薦 |
 
+{{< faq >}}
+
 ## 更多 Alfa 網卡中國安裝指南
 
 - [AWUS036ACH 安裝指南](/zh-tw/blog/awus036ach-china-install-guide/)
@@ -221,3 +242,10 @@ sudo apt install -y realtek-rtl88xxau-dkms
 - [AWUS036EACS 安裝指南](/zh-tw/blog/awus036eacs-china-install-guide/)
 
 折騰過程中遇到搞不定的？歡迎在下面留言，或者到 [yupitek.com](https://yupitek.com/zh-tw/contact/) 聯絡我們。
+
+## 參考來源
+
+1. [aircrack-ng 官方文件](https://www.aircrack-ng.org/)
+2. [ALFA Network 官網](https://www.alfa.com.tw/)
+3. [Kali Linux 官方文件](https://www.kali.org/docs/)
+4. [Gitee rtl8812au 鏡像](https://gitee.com/mirrors/rtl8812au)

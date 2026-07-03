@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["監聽模式", "Kali-Linux", "airmon-ng", "iw", "WiFi網路卡", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "監聽模式與受管理模式有何不同？"
+    answer: "監聽模式讓網卡擷取空中所有 802.11 訊框，不受管理模式只接收目標 MAC 符合自身封包的限制，是無線滲透測試的基礎。"
+  - question: "airmon-ng 與 iw 指令啟用監聽模式有何差異？"
+    answer: "airmon-ng 會自動處理干擾行程並建立 wlan0mon 虛擬介面；iw 則直接修改現有介面，不另建介面，適合需要精簡控制時使用。"
+  - question: "啟用監聽模式後介面自動切回受管理模式怎麼辦？"
+    answer: "wpa_supplicant 或 NetworkManager 在背景重新啟動所致。執行 airmon-ng check kill 終止這些行程即可解決。"
+  - question: "哪些 ALFA 網卡在 Kali Linux 上完整支援監聽模式？"
+    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）三款均完整支援，其中 ACM 為即插即用。"
+  - question: "airodump-ng 顯示 Fixed channel wlan0mon: -1 錯誤如何解決？"
+    answer: "表示 airodump-ng 無法切換頻道。執行 iwconfig wlan0mon channel 1 指定頻道，並終止殘留的 wpa_supplicant 程序。"
 ---
+
+監聽模式讓無線網卡擷取空中所有 802.11 訊框，是 airodump-ng、Wireshark、Kismet 等工具運作的基礎。Kali Linux 上可透過 airmon-ng 或 iw 指令啟用。
+
+{{< tldr >}}
+監聽模式解除網卡只接收自身封包的限制，是無線滲透測試的根基。使用 airmon-ng 或 iw 指令搭配 ALFA 網卡即可在 Kali Linux 上穩定啟用。
+{{< /tldr >}}
 
 ## 什麼是監聽模式？為何滲透測試非它不可
 
@@ -264,8 +283,17 @@ sudo systemctl start NetworkManager
 
 ---
 
+{{< faq >}}
+
 ## 總結
 
 在 Kali Linux 上啟用監聽模式分為兩個步驟：停止干擾服務，再以 `airmon-ng` 或 `iw` 切換介面模式。成功的關鍵在於使用具備受支援晶片組的網路卡。搭載 RTL8812AU、MT7921AUN、MT7612U 晶片組的 ALFA Network 網路卡，在 Kali Linux 上提供最可靠的開箱即用體驗。
 
 立即瀏覽 [Yopitek 提供的完整 ALFA Network 無線網路卡系列](/zh-tw/products/alfa/)——台灣 ALFA Network 授權經銷商——找到最適合您無線資安研究的網路卡。
+
+## 參考來源
+
+1. [aircrack-ng 官方文件](https://www.aircrack-ng.org/documentation.html)
+2. [Kali Linux 官方文件](https://www.kali.org/docs/)
+3. [Linux Wireless mac80211 子系統](https://wireless.wiki.kernel.org/en/developers/Documentation/mac80211)
+4. [iw 指令使用說明](https://wireless.wiki.kernel.org/en/users/Documentation/iw)

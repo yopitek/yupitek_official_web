@@ -2,6 +2,8 @@
 title: "ALFA AWUS036ACH vs. AWUS036ACM: Vollständiger Vergleich für Kali Linux (2026)"
 description: "Detaillierter Vergleich von ALFA AWUS036ACH und AWUS036ACM — Chipsätze, Monitor-Modus, Paket-Injektion, Treiber-Support und welcher besser für Kali Linux Penetrationstests geeignet ist."
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -10,9 +12,26 @@ series: ["alfa-china-install-guide"]
 series_order: 10
 slug: "awus036ach-vs-awus036acm"
 featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
----
+faq:
+  - question: "Gibt es Unterschiede bei der Treiberinstallation zwischen dem AWUS036ACH und dem AWUS036ACM?"
+    answer: "Der AWUS036ACH verwendet den RTL8812AU-Chip und erfordert die Installation des aircrack-ng-Community-Treibers über DKMS, was nach Kernel-Updates möglicherweise eine Neukompilierung erfordert; der Treiber für den MT7612U des AWUS036ACM ist seit Kernel 4.19 im Mainline integriert, sodass Plug-and-Play ohne Kompilierung möglich ist."
+  - question: "Welches Modell ist besser für die Monitor Mode-Überwachung geeignet?"
+    answer: "Der Monitor Mode des AWUS036ACH ist stabiler; die Dual-Antennen und die hohe Leistung von 30 dBm führen in Umgebungen mit vielen Access Points zu einer geringeren Paketverlustrate. Der AWUS036ACM unterstützt ebenfalls den Monitor Mode, hat jedoch eine niedrigere Leistung der Single-Antenne und eignet sich besser für die Erfassung in kurzer Entfernung."
+  - question: "Sollte ein Anfänger den AWUS036ACH oder den AWUS036ACM wählen?"
+    answer: "Anfängern wird der AWUS036ACM empfohlen, da der MT7612U-Kernel-Nativtreiber Plug-and-Play ohne Kompilierung bietet. Wählen Sie stattdessen den AWUS036ACH, wenn Sie das stärkste Signal und die meisten Anleitungen wünschen und mit dem DKMS-Kompilierungsprozess vertraut sind."
+  - question: "Welches Modell wird für eine VM-Umgebung empfohlen?"
+    answer: "Für VM-Umgebungen wird der AWUS036ACM empfohlen, da der Kernel-Nativtreiber nach der USB-Weiterleitung sofort erkannt und verwendet werden kann, ohne dass Toolchains innerhalb der virtuellen Maschine installiert oder kompiliert werden müssen. Der AWUS036ACH erfordert die zusätzliche Installation des Treibers innerhalb der VM, um verwendet zu werden."
+
+---Der AWUS036ACH eignet sich für professionelle Aufgaben, mit dem RTL8812AU-Treiber, 30 dBm Dual-Antennen und der stärksten Monitor Mode Packet Injection; der AWUS036ACM ist für Portabilität gedacht, mit dem MT7612U-Kern, nativem Treiber ohne Kompilierung und einem Preis von ca. 30–40 $.
+
+{{< tldr >}}
+Der AWUS036ACH eignet sich für professionelle Aufgaben, mit dem RTL8812AU-Treiber, 30 dBm Dual-Antennen und der stärksten Monitor Mode Packet Injection; der AWUS036ACM ist für Portabilität gedacht, mit dem MT7612U-Kern, nativem Treiber ohne Kompilierung und einem Preis von ca. 30–40 $.
+{{< /tldr >}}
+
 
 ## Überblick
+
+Für professionelle Penetrationstests wählen Sie den [AWUS036ACH](/de/products/alfa/awus036ach/): ausgereifter RTL8812AU-Treiber, 30 dBm Dual-Antenne für stärkste Überwachung und Packet Injection. Für Plug-and-Play-Mobilität den [AWUS036ACM](/de/products/alfa/awus036acm/): MT7612U nativer Kernel-Treiber, ab Kernel 4.19 sofort einsatzbereit ohne Kompilierung.
 
 Zwei der beliebtesten ALFA Network USB-Adapter für Kali Linux Penetrationstests befinden sich an unterschiedlichen Punkten des Spektrums zwischen roher Leistung und Portabilität. Der **AWUS036ACH** ist ein leistungsstarkes Arbeitstier mit zwei Antennen und einer bewährten Treiberhistorie. Der **AWUS036ACM** ist eine kompakte, Kernel-native Alternative, die etwas Leistung gegen Einfachheit und Benutzerfreundlichkeit eintauscht. Diese Anleitung schlüsselt jeden Aspekt auf, der für echte Pentesting-Arbeit wichtig ist.
 
@@ -221,6 +240,8 @@ Der **AWUS036ACM** bietet für ca. 30–40 € einen exzellenten Wert für folge
 
 ---
 
+{{< faq >}}
+
 ## Raspberry Pi und ARM-Kompatibilität
 
 Wenn Sie Kali auf einem Raspberry Pi 4, Pi 5 oder einem anderen ARM-Einplatinencomputer ausführen, ist der MT7612U-Chipsatz im AWUS036ACM die klare Wahl. Er ist seit Kernel 4.x im Linux-Kernel-Baum enthalten — Plug-and-Play unter Raspberry Pi OS, Kali ARM und Ubuntu Server ARM.
@@ -234,3 +255,10 @@ cd rtl8812au && make && sudo make install
 ```
 
 Eine vollständige Einrichtungsanleitung finden Sie unter [ALFA USB WiFi auf Raspberry Pi 4 & Pi 5](/de/blog/alfa-adapter-raspberry-pi-kali/).
+
+## Referenzen
+
+1. aircrack-ng Community-gepflegt RTL8812AU Treiber-Repository — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. Linux Kernel Mainline MT76 Treiber (`mt76x2u`, integriert ab Kernel 4.19) — [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
+3. ALFA Network Offizielle Website und Produktspezifikationen — [alfa.com.tw](https://www.alfa.com.tw)
+4. Yupitek — ALFA Network Autorisierter Haendler in Taiwan — [yupitek.com](https://www.yupitek.com)

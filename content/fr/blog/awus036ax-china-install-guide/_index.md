@@ -12,7 +12,24 @@ series: ["alfa-china-install-guide"]
 series_order: 4
 related_product: "/fr/products/alfa/awus036ax/"
 featureimage: "/images/blog/awus036ax-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Quel chipset utilise l'AWUS036AX ? Supporte-t-il le WiFi 6 ?"
+    answer: "Il utilise le chipset Realtek RTL8832BU et supporte le WiFi 6 (802.11ax) haut débit."
+  - question: "L'AWUS036AX nécessite-t-il un pilote sur Ubuntu 24.04 ?"
+    answer: "Non, le noyau d'Ubuntu 24.04 supporte nativement le RTL8832BU, plug-and-play."
+  - question: "L'AWUS036AX convient-il à la recherche en sécurité sans fil ?"
+    answer: "Peu adapté. Le support du mode moniteur du RTL8832BU est limité. Préférez l'AWUS036ACM ou l'AWUS036ACH."
+  - question: "Faut-il un VPN pour installer l'AWUS036AX en Chine ?"
+    answer: "Non, téléchargez le code source rtl8852bu depuis Gitee et utilisez les miroirs nationaux pour les outils de compilation."
+  - question: "Quel est l'USB ID de l'AWUS036AX ?"
+    answer: "L'USB ID du Realtek RTL8832BU est 0bda:8832, vérifiable avec lsusb."
 ---
+
+{{< tldr >}}
+L'AWUS036AX utilise le chipset RTL8832BU supportant le WiFi 6. Plug-and-play sur Ubuntu 24.04. Sur Kali/Ubuntu 22.04, compilez rtl8852bu depuis Gitee.
+{{< /tldr >}}
 
 L'AWUS036AX est l'adaptateur double bande WiFi 6 AX1800 d'ALFA. Sa puce RTL8832BU est hors noyau sur les versions de Linux inférieures à 6.14 — mais Ubuntu 24.04 (noyau 6.8) l'inclut nativement. Ce guide utilise des miroirs Gitee pour les noyaux plus anciens et le pilote intégré pour Ubuntu 24.04. Aucun GitHub requis.
 
@@ -247,6 +264,8 @@ sudo reboot
 | Miroir USTC | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
 | Miroir Huawei Cloud | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 
+{{< faq >}}
+
 ## Plus de guides d'adaptateurs Alfa pour la Chine
 
 - [Guide d'installation AWUS036ACH Chine](/fr/blog/awus036ach-china-install-guide/) — RTL8812AU, haute puissance
@@ -259,3 +278,11 @@ sudo reboot
 - [Guide d'installation AWUS036EACS Chine](/fr/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 Des questions ? Laissez un commentaire ci-dessous ou contactez-nous sur [yupitek.com](https://yupitek.com/fr/contact/).
+
+---
+
+## Références
+1. [Site officiel Realtek](https://www.realtek.com/)
+2. [Site officiel ALFA Network](https://www.alfa.com.tw/)
+3. [Documentation officielle Kali Linux](https://www.kali.org/docs/)
+4. [Miroir Gitee rtl8852bu](https://gitee.com/mirrors/rtl8852bu)

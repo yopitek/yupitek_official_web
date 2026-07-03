@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA無線アダプターとKali NetHunter完全技術ガイド2026"
 description: "Kali NetHunterでALFA USB WiFiアダプターを使用するための技術リファレンス。台湾市場のスマートフォン互換性、カーネル内蔵ドライバー vs DKMS分析、OTGセットアップ、検証済みテスト結果を網羅。"
 date: 2026-06-09
@@ -7,10 +8,23 @@ showBreadcrumbs: true
 showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ALFA無線アダプターをKali NetHunterで使うのに必要なスマートフォンの条件は？"
+    answer: "OTG対応のAndroidスマートフォン、Root取得済みでKali NetHunterカーネルをフラッシュ済みであること。互換性確認済み機種はGoogle Pixelシリーズ、OnePlusの旧フラッグシップ機種です。具体的な互換性はカーネルバージョンとアダプターチップドライバーの配置に依存します。"
+  - question: "MT7610U/MT7612UとRTL8812AUドライバーの違いは？"
+    answer: "MT7610U/MT7612Uドライバーはカーネルツリー内にあり、挿すだけでコンパイル不要。RTL8812AUはDKMS外部ドライバーのコンパイルインストールが必要で、カーネル更新後に再コンパイルが必要な場合があります。セキュリティ現場ではカーネルツリー内ドライバーの安定性が高いです。"
+  - question: "ALFAアダプターはNetHunterでMonitor Modeをサポートしていますか？"
+    answer: "はい、MT7610U/MT7612UはMonitor Modeとパケットインジェクションをサポートします。RTL8812AUもカーネル6.12未満でサポートしますが、6.12以降ではMonitor Modeが制限されます。セキュリティリサーチではMT7610U/MT7612Uアダプターを優先してお勧めします。"
 ---
 
 基本的なOTG手順でNetHunterとALFAアダプターをセットアップ済みの方で、クイックスタート版をお探しの場合は、[OTGセットアップガイド](/ja/blog/alfa-adapter-nethunter-android-otg/)で要点をまとめています。本記事はさらに深く掘り下げた内容です——ハードウェア購入前にスマートフォンとアダプターの互換性を評価し、カーネルアップデート後も動作し続けるドライバー方式を理解し、特定の組み合わせに確定する前に検証済みのテスト結果を確認したい、セキュリティ専門家向けの完全な技術リファレンスです。
 
+
+{{< tldr >}}
+MT7610U/MT7612Uはカーネルネイティブドライバーでプラグアンドプレイ、RTL8812AUはDKMSコンパイルが必要。NetHunterスマートフォンはRootとOTGサポートが必要で、ドライバー問題を避けるためMT7612Uアダプターを優先しましょう。
+{{< /tldr >}}
 本記事では、多くのNetHunterガイドがスキップしている問いに焦点を当てます：**どのアダプターが真のプラグアンドプレイで、どれが最悪のタイミングでドライバーコンパイルの迷宮に陥らせるのか？** その答えはチップセット、スマートフォンのカーネルバージョン、そしてドライバーがカーネルツリー内に存在するか、外部のDKMSリポジトリに依存するか、の3要素にかかっています。選択を誤ると、現場で `modprobe` エラーを眺めながらアダプターはバッグの中に眠ったままです。正しい選択をすれば、差し込んですぐスキャンを開始できます。
 
 ---
@@ -473,6 +487,11 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 関連ガイド
 
 - [ALFAアダプターとNetHunterの基本OTGセットアップ](/ja/blog/alfa-adapter-nethunter-android-otg/)
@@ -484,3 +503,13 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 *本文書は**Yupitek Ltd**（ALFA Network台湾正規代理店）が作成しました。*  
 *データは2026-06-09時点のものです。LinuxカーネルおよびNetHunterのバージョンは定期的に更新されます。最新の互換性情報については公式ソースを確認してください。*
+
+---
+
+## 参考文献
+
+1. [Kali NetHunter公式ドキュメント](https://www.kali.org/docs/nethunter/) — NetHunterインストールとカーネルフラッシュガイド
+2. [Linux Kernel mt76ドライバーソースコード](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) — MT7610U/MT7612Uメインラインドライバー
+3. [aircrack-ng RTL8812AUドライバー](https://github.com/aircrack-ng/rtl8812au) — DKMS外部ドライバーリポジトリ
+4. [ALFA Network公式ウェブサイト](https://alfa.com.tw/) — 製品仕様とドライバーダウンロード
+5. [Android USB OTG公式ドキュメント](https://developer.android.com/guide/topics/connectivity/usb) — OTG APIとハードウェア要件

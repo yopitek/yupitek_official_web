@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
 featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Black Duck FuzzBox 是什麼用途的工具？"
+    answer: "Black Duck FuzzBox 是專用的無線協定模糊測試環境，透過注入異常 802.11 訊框驗證嵌入式無線設備與基地台的協定堆疊強健性。"
+  - question: "為什麼 Wi-Fi 6/6E 網卡無法在 FuzzBox 下運作？"
+    answer: "FuzzBox 注入引擎已針對 Realtek rtl88xxau 驅動最佳化，MediaTek 與較新 Realtek Wi-Fi 6 晶片組不使用此分支，會被精靈忽略。"
+  - question: "ALFA AWUS036ACH 為什麼是 FuzzBox 首選網卡？"
+    answer: "AWUS036ACH 採用 RTL8812AU 晶片組，擁有社群優化的注入驅動，可繞過作業系統網路堆疊實現零丟包原始訊框傳輸。"
+  - question: "FuzzBox OS 基於哪個 Linux 版本？"
+    answer: "FuzzBox OS 基於 Debian 12 Bookworm，運行 LTS 核心 6.1.x，預載 rtl88xxau 注入驅動與 airmon-ng 等網路工具程式。"
+  - question: "如何驗證 AWUS036ACH 已切換至監聽模式？"
+    answer: "執行 iwconfig wlan0 指令，輸出應顯示 Mode:Monitor 並標示目前運作頻率，確認 FuzzBox 精靈成功切換介面模式。"
 ---
+
+Black Duck FuzzBox 進行無線協定模糊測試時，唯一完全相容的 ALFA 網卡是 AWUS036ACH（RTL8812AU），Wi-Fi 6/6E 晶片組因驅動不相容皆無法運作。
+
+{{< tldr >}}
+ALFA AWUS036ACH 是 Black Duck FuzzBox 協定模糊測試的唯一首選，RTL8812AU 驅動支援原始封包注入與監聽模式，Wi-Fi 6/6E 網卡因驅動不相容無法運作。
+{{< /tldr >}}
 
 WLAN 協定模糊測試（通常稱為無線負面測試，wireless negative testing）是驗證嵌入式無線設備、智慧家居家電以及企業級基地台（Access Point, AP）安全性與強健性最關鍵的步驟之一。然而，試圖透過無線傳輸異常（malformed）的 802.11 管理、控制或資料訊框，需要對媒體存取控制（MAC）層進行底層控制，而這在標準作業系統與商用 WiFi 驅動程式中通常是被禁止的。
 
@@ -204,6 +223,10 @@ lrwxrwxrwx 1 root root 23 Jun 04 13:30 phy0 -> /sys/class/net/wlan0
 
 ---
 
+{{< faq >}}
+
+---
+
 ## 8. 建議與推薦
 
 ### 8.1 硬體推薦矩陣
@@ -219,3 +242,13 @@ Yupitek 是 ALFA Network 產品的授權代理商，提供在地支援與批量�
 *   或直接寄信至 **sales@yupitek.com**
 
 我們的工程團隊將協助您取得支援 Black Duck FuzzBox 協定模糊測試工作流程所需的精確無線硬體配置。
+
+---
+
+## 參考來源
+
+1. [Synopsys Defensics — FuzzBox 官方產品頁](https://www.synopsys.com/software-integrity/security-testing/fuzzing/defensics.html)
+2. [morrownr/8812au-20210629 — RTL8812AU Linux 驅動程式 GitHub 儲存庫](https://github.com/morrownr/8812au-20210629)
+3. [aircrack-ng — 無線安全工具組官方網站](https://www.aircrack-ng.org/)
+4. [ALFA Network 官方網站](https://www.alfa.com.tw/)
+5. [Linux Wireless — mac80211 子系統文件](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)

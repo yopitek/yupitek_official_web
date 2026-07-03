@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "滲透測試", "Kali-Linux"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Wi-Fi 6E 與 Wi-Fi 5 在滲透測試上有何差異？"
+    answer: "Wi-Fi 6E 新增 6 GHz 頻段與 1.2 GHz 頻譜，適合稽核現代企業部署。Wi-Fi 5 驅動成熟，在 2.4/5 GHz 上穩定性更高。"
+  - question: "AWUS036ACH 與 AWUS036AXML 該選哪一款？"
+    answer: "日常滲透測試選 AWUS036ACH，驅動成熟且社群資源豐富。需稽核 6 GHz Wi-Fi 6E 環境則選 AWUS036AXML。條件允許建議兩款皆備。"
+  - question: "AWUS036AXML 的監聽模式在 Kali Linux 上穩定嗎？"
+    answer: "需核心 6.1 以上並安裝最新 linux-firmware 套件。封包注入可用但建議正式委外測試前先行驗證，特定核心與韌體組合可能不穩定。"
+  - question: "2026 年滲透測試需要 6 GHz 網卡嗎？"
+    answer: "大多數測試案例仍以 2.4/5 GHz 為主。但若目標環境已部署 Wi-Fi 6E 存取點，6 GHz 網卡即為策略必備。"
+  - question: "AWUS036ACH 的 RTL8812AU 驅動如何安裝？"
+    answer: "從 aircrack-ng GitHub 複製 rtl8812au 儲存庫，執行 make dkms_install 安裝。DKMS 確保核心更新後驅動自動重建。"
 ---
+
+Wi-Fi 6E 新增 6 GHz 頻段，適合稽核現代企業部署。AWUS036ACH（Wi-Fi 5）驅動成熟穩定，AWUS036AXML（Wi-Fi 6E）支援三頻，依測試環境需求選擇。
+
+{{< tldr >}}
+AWUS036ACH 驅動成熟、穩定性最高，是日常滲透測試首選。AWUS036AXML 支援 6 GHz 頻段，適合稽核 Wi-Fi 6E 環境，但驅動仍在持續完善中。
+{{< /tldr >}}
 
 ## 什麼是 Wi-Fi 6E？認識全新 6 GHz 頻段
 
@@ -140,6 +159,8 @@ sudo airmon-ng start wlan0
 
 ---
 
+{{< faq >}}
+
 ## 選購建議
 
 **選擇 [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) 的情況：**
@@ -157,3 +178,11 @@ sudo airmon-ng start wlan0
 - 能夠在正式案件執行前，自行驗證監聽模式與封包注入的可用性
 
 **總結：** 對於 2026 年大多數專業滲透測試人員而言，AWUS036ACH 依然是可靠性的黃金標準。AWUS036AXML 則是針對尖端企業基礎建設或建構前瞻工具組的團隊之最佳選擇。若條件允許，建議兩張都備著。
+
+## 參考來源
+
+1. [aircrack-ng 官方 rtl8812au 驅動程式](https://github.com/aircrack-ng/rtl8812au)
+2. [MediaTek MT7921 核心驅動程式](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)
+3. [Wi-Fi Alliance Wi-Fi 6E 認證說明](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)
+4. [Kali Linux 官方文件](https://www.kali.org/docs/)
+5. [IEEE 802.11ax 標準資源](https://standards.ieee.org/ieee/802.11ax/)

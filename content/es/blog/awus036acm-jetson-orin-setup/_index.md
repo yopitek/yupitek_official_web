@@ -7,9 +7,29 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
----
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Por qué las tarjetas WiFi USB suelen fallar en Jetson Orin?"
+    answer: "Jetson usa un kernel Tegra personalizado de NVIDIA, no un kernel Ubuntu estándar. Los controladores de terceros suelen fallar al compilar porque los headers del kernel no están disponibles o la ABI es incompatible."
+  - question: "¿El AWUS036ACM necesita compilar controlador en Jetson Orin?"
+    answer: "No. El controlador mt76x2u del chip MT7612U está integrado en el kernel principal desde Linux 4.19. El kernel 5.10 del AIB-NW01 ya lo incluye; es plug-and-play."
+  - question: "¿El AWUS036ACH (RTL8812AU) se puede usar en Jetson Orin?"
+    answer: "Sí, pero requiere compilar el controlador manualmente. Los parches del kernel de NVIDIA en JetPack pueden romper la ABI de cfg80211 y causar fallos de compilación. Se recomienda solo para usuarios con experiencia en compilación."
+  - question: "¿La actualización de JetPack puede hacer que la tarjeta WiFi USB deje de funcionar?"
+    answer: "Es posible. Los controladores de terceros pueden fallar tras actualizar JetPack debido a cambios en la API del kernel y necesitan recompilación. Los controladores integrados (como mt76x2u) no se ven afectados."
+  - question: "¿Qué versión de kernel de Linux usa el AIB-NW01?"
+    answer: "El AIB-NW01 viene de fábrica con Ubuntu 20.04.6 LTS y JetPack 5.0, usando el kernel Tegra personalizado de NVIDIA 5.10.x-tegra, con arquitectura de CPU ARM64."
+---Jetson Orin usa un kernel Tegra personalizado de NVIDIA; los controladores WiFi de terceros suelen fallar al compilar. El ALFA AWUS036ACM con chip MT7612U tiene el controlador integrado desde el kernel 4.19; es plug-and-play, la única solución verdaderamente sin compilación. Admite modo monitor, inyección de paquetes y modo AP.
+
+{{< tldr >}}
+Jetson Orin usa un kernel Tegra personalizado de NVIDIA; los controladores WiFi de terceros suelen fallar al compilar. El ALFA AWUS036ACM con chip MT7612U tiene el controlador integrado desde el kernel 4.19; es plug-and-play, la única solución verdaderamente sin compilación. Admite modo monitor, inyección de paquetes y modo AP.
+{{< /tldr >}}
+
 
 ## Un correo de un cliente revela una cuestión clave
+
+El ALFA AWUS036ACM es el único adaptador USB WiFi verdaderamente sin compilación y plug-and-play en Jetson Orin, ya que el controlador MT7612U está integrado en el kernel principal desde la versión 4.19, evitando por completo los problemas de compilación de controladores del kernel personalizado de Jetson.
 
 > «Tengo un AVALUE AIB-NW01 (Jetson Orin NX) que voy a desplegar en un entorno sin red cableada. ¿Cuál de vuestros adaptadores USB WiFi funciona directamente?»
 
@@ -148,7 +168,7 @@ Fuente de datos: [Tabla de soporte de chipsets USB WiFi de morrownr](https://git
 | Interfaz | USB 3.0 (conector USB-C) |
 | Potencia de transmisión | Potencia estándar, adecuada para conexión directa al puerto USB |
 
-**Página del producto**: https://yupitek.com/en/products/alfa/awus036acm/
+**Página del producto**: https://yupitek.com/es/products/alfa/awus036acm/
 
 ### Razón uno para recomendarlo: la única solución verdaderamente «sin drivers»
 
@@ -296,6 +316,8 @@ El AWUS036ACH (RTL8812AU) y el AWUS036AX (RTL8812BU) no es que no funcionen, sim
 
 ---
 
+{{< faq >}}
+
 ## Conclusión: la solución más sencilla suele ser la mejor
 
 Volviendo a la pregunta inicial del cliente: ¿qué adaptador USB WiFi de ALFA es el más adecuado para el AVALUE AIB-NW01?
@@ -306,7 +328,7 @@ No porque sea el más rápido o el más barato — sino porque es, en una plataf
 
 ### Actúa ahora
 
-- Consulta los detalles del producto: https://yupitek.com/en/products/alfa/awus036acm/
+- Consulta los detalles del producto: https://yupitek.com/es/products/alfa/awus036acm/
 - Soporte técnico: Yupitek ofrece soporte técnico local en Taiwán, no dudes en contactarnos
 
 ### Lecturas recomendadas
@@ -322,3 +344,11 @@ No porque sea el más rápido o el más barato — sino porque es, en una plataf
 > **Autor**: Yupitek Ltd — Distribuidor autorizado de ALFA Network en Taiwán
 >
 > **Aviso legal**: Los datos de esta investigación están actualizados a mayo de 2026. La plataforma Jetson y el kernel de Linux están en continua evolución; se recomienda verificar el soporte del driver in-kernel con la última versión de JetPack antes de realizar el despliegue.
+
+## Referencias
+
+1. [Página del producto AVALUE Technology AIB-NW01](https://www.avalue.com.tw/)
+2. [Foro oficial de desarrolladores de NVIDIA Jetson](https://forums.developer.nvidia.com/)
+3. [Tabla de compatibilidad de chips de morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi)
+4. [Documentación del controlador mt76 del núcleo Linux](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [Tabla de compatibilidad de ALFA Network con Linux](https://docs.alfa.com.tw/Support/Compat/)

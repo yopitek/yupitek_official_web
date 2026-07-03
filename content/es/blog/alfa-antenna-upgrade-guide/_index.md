@@ -7,9 +7,29 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["antena", "APA-M25", "ARS-NT5B7", "RP-SMA", "adaptador-WiFi", "ALFA-Network"]
 featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
----
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Se pueden cambiar las antenas de las tarjetas ALFA?"
+    answer: "Sí. Las tarjetas ALFA con conector RP-SMA como AWUS036ACH, AWUS036ACM y AWUS036AXML permiten cambiar la antena sin herramientas: gira en sentido antihorario para quitar y en sentido horario para instalar."
+  - question: "¿Qué es el conector RP-SMA?"
+    answer: "RP-SMA es un conector SMA de polaridad inversa: el macho tiene un orificio central en lugar de un pin, polaridad opuesta al SMA estándar pero de apariencia similar. Todas las antenas accesorias de ALFA usan esta especificación."
+  - question: "¿Antena direccional u omnidireccional?"
+    answer: "Las antenas direccionales son adecuadas para auditorías de punto fijo con dirección de objetivo conocida; las omnidireccionales para patrullas móviles o escenarios donde se desconoce la posición del objetivo. Elige según el entorno de uso."
+  - question: "¿Cuál es la diferencia entre APA-M25 y ARS NT5B7?"
+    answer: "APA-M25 es una antena panel direccional de 7 dBi, ideal para enfoque interior; ARS NT5B7 es una antena omnidireccional de 5/7 dBi, adecuada para uso general interior y exterior. La primera tiene mayor direccionalidad, la segunda mayor cobertura."
+  - question: "¿Actualizar la antena necesita instalar controladores o configuración?"
+    answer: "No. La actualización de antena es puramente un cambio de hardware; no necesita actualizar controladores, configuración ni reiniciar. La tarjeta funciona con la nueva antena inmediatamente después de la instalación."
+---Las tarjetas ALFA usan siempre conectores RP-SMA. Cinco accesorios de antena cubren de banda única a triple banda y de direccional a omnidireccional. La instalación no requiere herramientas y toma menos de 30 segundos; la intensidad de señal puede mejorar 4-8 dBm.
+
+{{< tldr >}}
+Las tarjetas ALFA usan siempre conectores RP-SMA. Cinco accesorios de antena cubren de banda única a triple banda y de direccional a omnidireccional. La instalación no requiere herramientas y toma menos de 30 segundos; la intensidad de señal puede mejorar 4-8 dBm.
+{{< /tldr >}}
+
 
 ## ¿Por Qué Actualizar Tu Antena?
+
+Las tarjetas ALFA con conectores RP-SMA permiten cambiar la antena directamente. La APA-M25, antena panel direccional, es ideal para auditorías en interiores; la ARS NT5B7, antena omnidireccional, cubre escenarios generales. No requiere herramientas ni configuración de controladores.
 
 Cada adaptador USB Wi-Fi de ALFA Network con antena desmontable incluye de fábrica una **antena de varilla omnidireccional** — típicamente de 5 dBi. Estas antenas predeterminadas son adecuadas para uso general, pero dejan un rendimiento significativo sobre la mesa en escenarios donde el alcance, la direccionalidad o el enfoque en frecuencias específicas importan.
 
@@ -251,6 +271,8 @@ Las mejoras de ganancia de la antena se traducen directamente en calidad de señ
 
 ---
 
+{{< faq >}}
+
 ## Referencia Rápida: Emparejamiento Adaptador + Antena
 
 | Adaptador | Antena Recomendada | Razón |
@@ -262,3 +284,11 @@ Las mejoras de ganancia de la antena se traducen directamente en calidad de señ
 | Trabajo enfocado en 2.4 GHz | APA-M04 | Ganancia optimizada de una sola banda |
 
 Actualizar la antena de tu adaptador ALFA es una de las modificaciones más simples e impactantes que puedes hacer a tu kit de herramientas inalámbrico. Elige según tus requisitos de frecuencia, necesidades de direccionalidad y entorno de despliegue — y la calidad de tu señal mostrará una mejora inmediata y medible.
+
+## Referencias
+
+1. [Sitio oficial de ALFA Network — Línea de accesorios de antena](https://www.alfa.com.tw/)
+2. [Linux Wireless — Documentación de la arquitectura de controladores inalámbricos mac80211](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)
+3. [Documentación del estándar IEEE 802.11 — Especificaciones de redes de área local inalámbricas](https://standards.ieee.org/ieee/802.11/)
+4. [aircrack-ng — Sitio oficial del conjunto de herramientas de seguridad inalámbrica](https://www.aircrack-ng.org/)
+5. [FCC Parte 15 — Normativa de dispositivos de radiofrecuencia sin licencia](https://www.fcc.gov/engineering-technology-laboratory-division/general/radio-spectrum-and-rulemaking)

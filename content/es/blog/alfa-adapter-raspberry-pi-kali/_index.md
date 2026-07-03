@@ -7,9 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Qué Raspberry Pi es la más adecuada para pruebas de penetración?"
+    answer: "La Raspberry Pi 5 (4 GB u 8 GB) es la mejor opción. La Pi 4 (4 GB+) también funciona; la Pi 3B+ no tiene suficiente velocidad para la captura de paquetes en tiempo real."
+  - question: "¿El AWUS036ACH necesita compilación de controlador en Raspberry Pi?"
+    answer: "Sí. RTL8812AU no está en el kernel principal. Primero prueba el paquete DKMS de Kali realtek-rtl88xxau-dkms; si falla, compila manualmente desde el GitHub de aircrack-ng cambiando las marcas de plataforma ARM64."
+  - question: "¿Puedo usar wlan0 para modo monitor en una Pi sin monitor?"
+    answer: "No se recomienda. wlan0 es el WiFi integrado de la Pi, usado para la conexión SSH. Ejecutar airmon-ng check kill cortará SSH; usa wlan1 (tarjeta ALFA) y mantén la conexión por ethernet o tmux."
+  - question: "¿El AWUS036AXM es plug-and-play en Raspberry Pi?"
+    answer: "Sí. El controlador mt7921u está integrado desde el kernel 5.18, y la imagen ARM64 de Kali tiene una versión superior. Solo necesitas instalar el paquete de firmware firmware-misc-nonfree."
+  - question: "¿Cómo alimentar el AWUS036ACH en Raspberry Pi?"
+    answer: "El AWUS036ACH consume unos 500 mW; conectarlo directamente a la Pi puede causar reducción de frecuencia o reinicios. Debes usar un concentrador USB 3.0 con alimentación, junto con la fuente de alimentación USB-C oficial de Pi de 3 A o superior."
 ---
 
 Un portátil con Kali Linux es la estación de trabajo estándar para pentesting — pero está lejos de ser la única opción. Una Raspberry Pi 4 o Pi 5 combinada con un adaptador ALFA USB WiFi te proporciona una plataforma compacta, sin ventilador y con refrigeración pasiva que cabe en el bolsillo de una chaqueta, funciona con una batería portátil USB-C y puede dejarse desatendida en un entorno objetivo durante horas. Las imágenes de Kali Linux ARM64 se distribuyen directamente desde Offensive Security y se ejecutan de forma nativa en la Pi 4 y Pi 5 sin emulación, dándote el conjunto completo de herramientas: Aircrack-ng, Kismet, Wireshark, Bettercap y el resto de los metapaquetes estándar de Kali.
+
+{{< tldr >}}
+Raspberry Pi 4/5 con Kali Linux ARM64 y tarjetas de red ALFA pueden formar una plataforma de pruebas de penetración de bolsillo. El AWUS036ACH necesita compilar el controlador RTL8812AU; el AWUS036ACM y AWUS036AXM son plug-and-play gracias a los controladores integrados en el núcleo. Se necesita un concentrador USB con alimentación.
+{{< /tldr >}}
 
 El principal obstáculo es el controlador. El chipset RTL8812AU del AWUS036ACH no está en el kernel principal, lo que significa que no puedes enchufar el adaptador y esperar que funcione. Debes compilar el controlador contra tu kernel ARM64 en ejecución — y los indicadores de compilación difieren de x86-64. Esta guía te lleva a través de cada paso.
 
@@ -271,6 +288,16 @@ Cumple siempre con las leyes locales antes de realizar cualquier actividad de es
 
 ---
 
+{{< faq >}}
+
 ## Lectura Adicional
 
 Para la guía completa de instalación del controlador RTL8812AU en Kali Linux y Ubuntu de escritorio, consulta la guía [Instalar Controlador ALFA en Kali Linux y Ubuntu](/es/blog/install-alfa-driver-kali-ubuntu/). Si aún estás decidiendo qué adaptador comprar, la [Guía de Compra de Adaptadores ALFA WiFi 2026](/es/blog/alfa-wifi-adapter-buyer-guide-2026/) cubre cada modelo actual con detalles del chipset y recomendaciones por caso de uso.
+
+## Referencias
+
+1. [Descarga oficial de Kali Linux ARM](https://www.kali.org/get-kali/#kali-arm)
+2. [aircrack-ng rtl8812au 驅動專案](https://github.com/aircrack-ng/rtl8812au)
+3. [Sitio oficial de Raspberry Pi](https://www.raspberrypi.com/)
+4. [Documentación del controlador mt76 del núcleo Linux](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)

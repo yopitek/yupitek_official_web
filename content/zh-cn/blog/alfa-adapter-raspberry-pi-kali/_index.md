@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "在 Raspberry Pi 搭配 Kali Linux 使用 ALFA WiFi 网卡：完整安装教程"
 description: "在运行 Kali Linux ARM64 的 Raspberry Pi 上安装 ALFA USB WiFi 网卡。涵盖 AWUS036ACH RTL8812AU 驱动编译、监听模式，以及便携式渗透测试平台搭建。"
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
+faq:
+  - question: "哪一款 Raspberry Pi 最适合渗透测试？"
+    answer: "Raspberry Pi 5（4 GB 或 8 GB）是最佳选择。Pi 4（4 GB+）也能正常运行；Pi 3B+ 速度不足以应付即时数据包捕获。"
+  - question: "AWUS036ACH 在 Raspberry Pi 上需要编译驱动吗？"
+    answer: "需要。RTL8812AU 不在主线核心中，可先尝试 Kali DKMS 软件包 realtek-rtl88xxau-dkms，失败则从 aircrack-ng GitHub 手动编译并切换 ARM64 平台旗标。"
+  - question: "可以在无头 Pi 上用 wlan0 做监听模式吗？"
+    answer: "不建议。wlan0 是 Pi 内置 WiFi，用于 SSH 连接。执行 airmon-ng check kill 会中断 SSH，请改用 wlan1（ALFA 网卡）并通过乙太网络或 tmux 维持连接。"
+  - question: "AWUS036AXM 在 Raspberry Pi 上能即插即用吗？"
+    answer: "可以。MT7921AUN 驱动自核心 5.18 起内置，Kali ARM64 映像内核版本更高。只需安装 firmware-misc-nonfree 固件软件包即可。"
+  - question: "如何为 Raspberry Pi 上的 AWUS036ACH 供电？"
+    answer: "AWUS036ACH 耗电约 500mW，直接插入 Pi 可能导致降频或重启。必须使用有源 USB 3.0 集线器，并搭配 3A 以上官方 Pi USB-C 电源供应器。"
 ---
 
+
+
+
 运行 Kali Linux 的笔记本电脑是标准的渗透测试工作站——但绝非唯一选择。Raspberry Pi 4 或 Pi 5 搭配 ALFA USB WiFi 网卡，能打造出一个体积小巧、无风扇、被动散热的平台：可以放进夹克口袋、靠 USB-C 移动电源供电，并在目标环境中无人看守运行数小时。Kali Linux ARM64 镜像由 Offensive Security 官方提供，无需模拟即可在 Pi 4 和 Pi 5 上原生运行，完整提供 Aircrack-ng、Kismet、Wireshark、Bettercap 等 Kali 标准工具包。
+
+{{< tldr >}}
+Raspberry Pi 4/5 搭配 Kali Linux ARM64 与 ALFA 网卡可打造口袋型渗透测试平台。AWUS036ACH 需编译 RTL8812AU 驱动，AWUS036ACM 与 AWUS036AXM 因核心内置驱动可即插即用。需有源 USB 集线器供电。
+{{< /tldr >}}
+
 
 最大的障碍是驱动程序。AWUS036ACH 内置的 RTL8812AU 芯片不在主线内核中，这意味着你不能插上网卡就期望它直接工作。你必须针对运行中的 ARM64 内核编译驱动程序——而编译参数与 x86-64 不同。本教程带你完成每一个步骤。
 
@@ -271,6 +295,17 @@ Kismet 日志会为每个检测到的网络存储 GPS 坐标。使用 `kismetdb_
 
 ---
 
+
+{{< faq >}}
+
 ## 延伸阅读
 
 关于桌面版 Kali Linux 和 Ubuntu 上完整的 RTL8812AU 驱动程序安装指南，请参阅[在 Kali Linux 和 Ubuntu 安装 ALFA 驱动程序](/zh-cn/blog/install-alfa-driver-kali-ubuntu/)。若尚在考虑购买哪款网卡，[2026 ALFA WiFi 网卡购买指南](/zh-cn/blog/alfa-wifi-adapter-buyer-guide-2026/)涵盖每款现行型号的芯片组详情和使用场景建议。
+
+## 参考文献
+
+1. [Kali Linux ARM 官方下载](https://www.kali.org/get-kali/#kali-arm)
+2. [aircrack-ng rtl8812au 驱动专案](https://github.com/aircrack-ng/rtl8812au)
+3. [Raspberry Pi 官方网站](https://www.raspberrypi.com/)
+4. [Linux Kernel mt76 驱动文件](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [ALFA Network 官方网站](https://www.alfa.com.tw/)

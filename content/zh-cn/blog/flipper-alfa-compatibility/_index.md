@@ -1,7 +1,12 @@
 ---
+
+
+
 title: "Flipper Zero 与 Flipper One 搭配 ALFA 无线网卡：完整兼容性指南"
 description: "Flipper Zero 能接 ALFA USB 无线网卡做数据包注入吗？不行——这里解释为什么。Flipper One 支持 ALFA AWUS036AXML，完整监听模式与数据包注入。包含芯片分析、驱动兼容性与设置步骤的完整指南。"
 date: 2026-06-10
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -9,11 +14,33 @@ slug: "flipper-alfa-compatibility"
 tags: ["flipper-zero", "flipper-one", "alfa-network", "wifi-adapter", "monitor-mode", "packet-injection", "kali-linux", "pentesting", "AWUS036AXML", "wireless-security"]
 categories: ["Technical"]
 featureimage: "/images/blog/flipper-alfa-compatibility.webp"
+faq:
+  - question: "Flipper Zero 可以连接 ALFA USB 无线网卡吗？"
+    answer: "不行。Flipper Zero 的 STM32WB55 微控制器仅支持 USB device 模式，硬件上无法作为 USB host 驱动外接网卡。"
+  - question: "Flipper One 支持哪些 ALFA 网卡型号？"
+    answer: "Flipper One 创办人特别测试 AWUS036AXML 为首选，AWUS036ACM 为最佳 CP 值，两者驱动皆已内置于 mainline Linux 核心。"
+  - question: "为什么 AWUS036AXML 是 Flipper One 首选网卡？"
+    answer: "AWUS036AXML 采用 MT7921AUN 芯片，mt7921u 驱动自 Linux 5.18 起内置于核心，支持完整 2.4/5/6 GHz 三频段与监听模式。"
+  - question: "Flipper One 何时正式上市？"
+    answer: "Flipper One 当前处于开发者预览阶段，正式上市时间与定价将通过群众募资公布，详情请追踪 flipper.net。"
+  - question: "Flipper Zero 的 WiFi Dev Board 能取代 ALFA 网卡吗？"
+    answer: "不能。WiFi Dev Board 仅支持 2.4 GHz 基本功能，无 USB host，范围与注入可靠性远不及专用 ALFA 网卡。"
 ---
+
+
+
 
 {{< alert "triangle-exclamation" >}}
 **法律声明：** Monitor Mode 与 Packet Injection 仅限于在您拥有或已取得明确书面授权的网络上进行测试。未经授权的无线通信拦截在大多数司法管辖区属违法行为。本指南中的所有技术仅供**授权渗透测试、自有设备安全研究及教育目的**使用。
 {{< /alert >}}
+
+{{< tldr >}}
+Flipper Zero 的 STM32WB55 仅支持 USB device 模式，无法驱动任何 ALFA 网卡；Flipper One 搭载 RK3576 与完整 Debian Linux，支持 AWUS036AXML 执行三频监听与注入。
+{{< /tldr >}}
+
+如果你拥有一台 Flipper Zero——或正在考虑购买——而且听过 ALFA Network 在无线安全测试领域大名鼎鼎的 USB 无线网卡，你可能也问过自己：**"我可以把 ALFA 网卡插到 Flipper Zero 上，开始捕获 WPA2 握手数据包吗？"**
+
+
 
 ## 前言：每个渗透测试人员都会问的问题
 
@@ -346,6 +373,9 @@ sudo systemctl restart NetworkManager
 
 ---
 
+
+{{< faq >}}
+
 ## 结语：对的工具做对的事
 
 如果你打算使用 ALFA 无线网卡进行无线安全测试，**Flipper Zero 是错误的平台**——这并非它的错。它被设计用于不同的目的：离线访问控制测试（NFC、RFID、Sub-GHz、红外线）。它在这些任务上表现出色，但 USB host 能力从未纳入其设计。
@@ -366,7 +396,7 @@ sudo systemctl restart NetworkManager
 
 所有推荐的 ALFA 网卡均可从 Yupitek——ALFA Network 授权经销商处购得。浏览完整型号或对比规格：
 
-- [ALFA USB 无线网卡——完整目录](https://yupitek.com/en/products/alfa/)——所有型号含规格与定价
+- [ALFA USB 无线网卡——完整目录](https://yupitek.com/zh-cn/products/alfa/)——所有型号含规格与定价
 - [ALFA 产品对比表](/en/alfa_compare/)——芯片组、频段、驱动的并列对比
 
 ### 延伸阅读
@@ -380,3 +410,11 @@ sudo systemctl restart NetworkManager
 ---
 
 *关于 Flipper One 与 ALFA 网卡兼容性的售前咨询，请联系 Yupitek 客服：support@yupitek.com 或致电 +886-2-87325338。*
+
+## 参考文献
+
+1. [Flipper One 官方部落格 — Pavel Zhovner 产品公告](https://blog.flipper.net/flipper-one-we-need-your-help/)
+2. [Flipper One Developer Portal — 技术规格与文件](https://docs.flipper.net/one)
+3. [Flipper Zero 官方网站](https://flipperzero.one/)
+4. [aircrack-ng — 无线安全工具组官方网站](https://www.aircrack-ng.org/)
+5. [ALFA Network 官方网站](https://www.alfa.com.tw/)

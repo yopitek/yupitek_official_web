@@ -2,6 +2,19 @@
 title: "ALFA AWUS036AXML Driver Install Guide for China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
 description: "Step-by-step guide to install ALFA AWUS036AXML drivers in China using domestic mirrors. MT7921AUN WiFi 6E in-kernel driver, full monitor mode and VIF support. Covers Kali Linux, Ubuntu 22/24, Debian, and Raspberry Pi. No GitHub required."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "What chipset does AWUS036AXML use? Is it the same as AWUS036AXM?"
+    answer: "Same MediaTek MT7921AUN chipset, but AWUS036AXML is the flagship USB-C version."
+  - question: "Does AWUS036AXML need manual driver installation?"
+    answer: "No. The mt7921u driver has been in the Linux kernel since 5.18. Only the firmware package needs installing."
+  - question: "Does AWUS036AXML support VIF virtual interfaces?"
+    answer: "Yes. MT7921AUN fully supports kernel-native VIF, allowing simultaneous monitor and managed interfaces."
+  - question: "Why does the AWUS036AXML driver fail to load on Ubuntu 22.04?"
+    answer: "Ubuntu 22.04 ships with kernel 5.15, which is too old. Install the HWE kernel to upgrade to 5.18 or higher."
+  - question: "What is the USB ID of AWUS036AXML?"
+    answer: "The MediaTek MT7921AUN USB ID is 0e8d:7961. Confirm with lsusb."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -15,6 +28,17 @@ featureimage: "/images/blog/awus036axml-china-install-guide.webp"
 ---
 
 The AWUS036AXML is ALFA's WiFi 6E flagship — a tri-band USB-C adapter covering 2.4 GHz, 5 GHz, and the uncongested 6 GHz band. Its MT7921AUN chip uses the `mt7921u` driver, built into the Linux kernel since version 5.18. On Ubuntu 24.04 and Kali 2025 it is plug-and-play once the firmware package is installed from a domestic mirror. This guide covers the full setup — firmware, driver verification, monitor mode, packet injection, and VIF — without touching GitHub.
+
+{{< tldr >}}
+AWUS036AXML uses the MT7921AUN chipset. A WiFi 6E tri-band USB-C flagship adapter with an in-kernel driver. After installing firmware, monitor mode, packet injection, and VIF are ready.
+{{< /tldr >}}
+
+Make sure you have these ready:
+
+
+
+
+
 
 ## Before You Start
 
@@ -431,6 +455,8 @@ iwconfig
 
 ---
 
+{{< faq >}}
+
 ## Troubleshooting
 
 | Problem | Likely Cause | Fix |
@@ -468,3 +494,10 @@ This is part of the **Alfa China Install Guide** series:
 - [AWUS036EACS China Install Guide](/en/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 Questions? Leave a comment below or contact us at [yupitek.com](https://yupitek.com/en/contact/).
+
+## References
+
+1. [Linux Kernel mt7921 Driver](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [aircrack-ng Official Documentation](https://www.aircrack-ng.org/)
+3. [ALFA Network Official Website](https://www.alfa.com.tw/)
+4. [Kali Linux Official Documentation](https://www.kali.org/docs/)

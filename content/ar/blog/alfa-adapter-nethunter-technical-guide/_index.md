@@ -7,11 +7,24 @@ showBreadcrumbs: true
 showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما هي متطلبات الهاتف لاستخدام محولات ALFA مع Kali NetHunter؟"
+    answer: "يلزم هاتف Android يدعم OTG، مع صلاحيات root ونواة Kali NetHunter مخصصة. الأجهزة المتوافقة الموثقة تشمل سلسلة Google Pixel وطرازات OnePlus القديمة. يعتمد التوافق المحدد على إصدار النواة وموقع برنامج تشغيل شريحة المحول."
+  - question: "ما الفرق بين برامج تشغيل MT7610U/MT7612U و RTL8812AU؟"
+    answer: "برامج تشغيل MT7610U/MT7612U مدمجة في شجرة النواة، تعمل فور التوصيل دون تجميع. أما RTL8812AU فيتطلب تجميعاً خارجياً عبر DKMS، وقد يحتاج لإعادة التجميع بعد تحديثات النواة. للاستخدام الميداني للأمن السيبراني، توفر برامج التشغيل المدمجة في النواة استقراراً أعلى."
+  - question: "هل تدعم محولات ALFA وضع المراقبة (Monitor Mode) على NetHunter؟"
+    answer: "نعم، MT7610U/MT7612U تدعم وضع المراقبة وحقن الحزم. RTL8812AU يدعمهما أيضاً على النوى أقل من 6.12، لكن وضع المراقبة محدود على النوى 6.12 فما فوق. يُنصح باختيار محولات MT7610U/MT7612U لأبحاث الأمن السيبراني."
 ---
 
 إذا كنت قد قمت بالفعل بإعداد محول ALFA مع NetHunter باستخدام تعليمات OTG الأساسية وترغب في الحصول على النسخة السريعة، فإن [دليل إعداد OTG](/ar/blog/alfa-adapter-nethunter-android-otg/) يغطي الأساسيات. يتعمق هذا المقال أكثر — إنه مرجع تقني كامل مكتوب لمحترفي الأمن السيبراني الذين يحتاجون إلى تقييم توافق الهاتف والمحول قبل شراء الأجهزة، وفهم أي نهج لبرامج التشغيل يستمر في العمل عبر تحديثات النواة، والاطلاع على نتائج اختبارات موثقة قبل الالتزام بتركيبة محددة.
 
 نركز على سؤال تتجاهله معظم أدلة NetHunter: **أي محول يعمل فعلاً بشكل فوري (plug-and-play)، وأي محول سيوقعك في متاهة تجميع برامج التشغيل في أسوأ لحظة ممكنة؟** تعتمد الإجابة على الشريحة (chipset)، وإصدار نواة الهاتف، وما إذا كان برنامج التشغيل مضمّناً في شجرة النواة أم موجوداً في مستودع DKMS خارجي. الخطأ في هذا يعني أن محولك سيبقى في حقيبتك بينما تحدق في أخطاء `modprobe` في الميدان. أما الصواب فيعني أنك توصل المحول وتبدأ المسح فوراً.
+
+{{< tldr >}}
+برامج تشغيل MT7610U/MT7612U المدمجة في النواة تعمل فور التوصيل، بينما يتطلب RTL8812AU تجميعاً عبر DKMS. تلزم هواتف NetHunter صلاحيات root ودعم OTG، ويُفضل اختيار محولات MT7612U لتجنب مشاكل برامج التشغيل.
+{{< /tldr >}}
 
 ---
 
@@ -473,12 +486,22 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
+{{< faq >}}
+
 ## أدلة ذات صلة
 
 - [إعداد OTG الأساسي مع محولات ALFA و NetHunter](/ar/blog/alfa-adapter-nethunter-android-otg/)
 - [دليل شراء محول ALFA WiFi 2026](/ar/blog/alfa-wifi-adapter-buyer-guide-2026/)
 - [تثبيت برامج تشغيل ALFA على Kali Linux و Ubuntu](/ar/blog/install-alfa-driver-kali-ubuntu/)
 - [استخدام محولات ALFA مع Raspberry Pi و Kali](/ar/blog/alfa-adapter-raspberry-pi-kali/)
+
+## المراجع
+
+1. [وثائق Kali NetHunter الرسمية](https://www.kali.org/docs/nethunter/) — دليل تثبيت NetHunter وفلش النواة
+2. [كود مصدر تعريف Linux Kernel mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) — تعريف MT7610U/MT7612U الرئيسي
+3. [تعريف aircrack-ng RTL8812AU](https://github.com/aircrack-ng/rtl8812au) — مستودع تعريف DKMS خارجي
+4. [موقع ALFA Network الرسمي](https://alfa.com.tw/) — مواصفات المنتجات وتنزيل التعريفات
+5. [وثائق Android USB OTG الرسمية](https://developer.android.com/guide/topics/connectivity/usb) — OTG API ومتطلبات الأجهزة
 
 ---
 

@@ -2,6 +2,19 @@
 title: "Black Duck FuzzBox WLAN Adapter Compatibility Guide: Finding the Right ALFA Wireless Card"
 description: "Comprehensive hardware assessment and compatibility guide for selecting the best ALFA Network USB WiFi adapter for Black Duck FuzzBox OS. Learn how to configure and deploy the ALFA AWUS036ACH (RTL8812AU) for wireless protocol fuzzing."
 date: 2026-06-04
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "What is Black Duck FuzzBox used for?"
+    answer: "Black Duck FuzzBox is a dedicated wireless protocol fuzzing environment that injects malformed 802.11 frames to test the protocol stack robustness of embedded wireless devices and access points."
+  - question: "Why do Wi-Fi 6/6E adapters not work with FuzzBox?"
+    answer: "The FuzzBox injection engine is optimized for the Realtek rtl88xxau driver. MediaTek and newer Realtek Wi-Fi 6 chipsets do not use this branch and are ignored by the daemon."
+  - question: "Why is ALFA AWUS036ACH the preferred adapter for FuzzBox?"
+    answer: "AWUS036ACH uses the RTL8812AU chipset with a community-optimized injection driver that can bypass the OS network stack for zero-loss raw frame transmission."
+  - question: "What Linux version is FuzzBox OS based on?"
+    answer: "FuzzBox OS is based on Debian 12 Bookworm, running LTS kernel 6.1.x with preloaded rtl88xxau injection driver and network tools like airmon-ng."
+  - question: "How do I verify AWUS036ACH has switched to monitor mode?"
+    answer: "Run iwconfig wlan0. The output should show Mode:Monitor with the current operating frequency, confirming the FuzzBox daemon successfully switched the interface mode."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -10,6 +23,14 @@ featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-gui
 ---
 
 WLAN protocol fuzzing—often referred to as wireless negative testing—is one of the most critical steps in validating the security and robustness of embedded wireless devices, smart home appliances, and enterprise access points. However, attempting to transmit malformed 802.11 management, control, or data frames over-the-air requires low-level control of the media access control (MAC) layer that standard operating systems and commercial WiFi drivers simply do not allow.
+
+{{< tldr >}}
+ALFA AWUS036ACH is the only preferred adapter for Black Duck FuzzBox protocol fuzzing. The RTL8812AU driver supports raw packet injection and monitor mode. Wi-Fi 6/6E adapters are incompatible due to driver differences.
+{{< /tldr >}}
+
+
+
+
 
 To solve this, security teams use **Black Duck FuzzBox** (formerly Synopsys Defensics FuzzBox), a specialized software and hardware execution environment. To conduct tests, FuzzBox OS must be paired with a compatible, high-performance USB wireless adapter capable of stable monitor mode and reliable raw packet injection. 
 
@@ -204,6 +225,8 @@ When you launch the Defensics WLAN test suite (such as the WPA3 Client or Access
 
 ---
 
+{{< faq >}}
+
 ## 8. Recommendation
 
 ### 8.1 Hardware Recommendation Matrix
@@ -219,3 +242,11 @@ Yupitek is an authorized distributor of ALFA Network products, providing local s
 *   Or email us directly at **sales@yupitek.com**
 
 Our engineering team will assist you in acquiring the exact wireless hardware configurations needed to support your Black Duck FuzzBox protocol fuzzing workflows.
+
+## References
+
+1. [Synopsys Defensics, FuzzBox Official Product Page](https://www.synopsys.com/software-integrity/security-testing/fuzzing/defensics.html)
+2. [morrownr/8812au-20210629 RTL8812AU Linux Driver](https://github.com/morrownr/8812au-20210629)
+3. [aircrack-ng, Wireless Security Toolkit Official Website](https://www.aircrack-ng.org/)
+4. [ALFA Network Official Website](https://www.alfa.com.tw/)
+5. [Linux Wireless, mac80211 Subsystem Documentation](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)

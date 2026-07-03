@@ -2,12 +2,26 @@
 title: "What is Packet Injection? Testing Your WiFi Adapter Compatibility with Kali Linux"
 description: "Understand WiFi packet injection, why it requires specific adapters, how to test your ALFA Network adapter with aireplay-ng, and which chipsets support injection on Kali Linux."
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "What is WiFi packet injection?"
+    answer: "Packet injection is the ability of an adapter to transmit arbitrary 802.11 frames directly to the wireless medium, letting tools like aireplay-ng construct and send management, control, and data frames."
+  - question: "Why can most adapters not inject packets?"
+    answer: "The limitation is in the driver, not hardware. Consumer drivers validate outgoing frames per standard operating models. The driver must explicitly enable the mac80211 raw TX path for injection support."
+  - question: "How do I test if my adapter supports packet injection?"
+    answer: "Enable monitor mode first, then run aireplay-ng --test wlan0mon. If the output says Injection is working!, injection is confirmed. Above 80% success rate is reliable."
+  - question: "Which ALFA adapters support packet injection?"
+    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN), and AWUS036ACM (MT7612U) all fully support it with the correct drivers on Kali Linux."
+  - question: "How do I improve packet injection success rate below 50%?"
+    answer: "Move closer to the target AP, lock the monitor interface to the same channel, check TX Power settings, and verify the driver is the aircrack-ng version, not the distro default."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["packet-injection", "aireplay-ng", "kali-linux", "wifi-adapter", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
 ---
+Packet injection — formally known as **802.11 frame injection** — is the ability of a wireless adapter to transmit arbitrary 802.11 frames onto a wireless medium, including frames that do not originate from the adapter's own network stack. In normal operation, a wireless driver constructs and transmits only the frames that the OS has legitimately generated: association requests, data frames for connected networks, and so on. Packet injection bypasses these restrictions, allowing a tool like `aireplay-ng` to craft and send any frame type — management, control, or data — with arbitrary content, source addresses, and destination addresses.
 
 {{< alert "triangle-exclamation" >}}
 **Legal Notice:** Packet injection and wireless monitoring must only be performed on networks you own or have explicit written authorization to test. Unauthorized interception of wireless communications is illegal in most jurisdictions. All examples in this guide are for use in **authorized penetration testing and educational lab environments only**.
@@ -15,7 +29,18 @@ featureimage: "/images/blog/packet-injection-guide.webp"
 
 ## What Is Packet Injection?
 
-Packet injection — formally known as **802.11 frame injection** — is the ability of a wireless adapter to transmit arbitrary 802.11 frames onto a wireless medium, including frames that do not originate from the adapter's own network stack. In normal operation, a wireless driver constructs and transmits only the frames that the OS has legitimately generated: association requests, data frames for connected networks, and so on. Packet injection bypasses these restrictions, allowing a tool like `aireplay-ng` to craft and send any frame type — management, control, or data — with arbitrary content, source addresses, and destination addresses.
+{{< tldr >}}
+Packet injection is the ability to transmit arbitrary 802.11 frames, limited by the driver rather than hardware. ALFA adapters with RTL8812AU, MT7612U, or MT7921AUN chipsets fully support it with aircrack-ng drivers.
+{{< /tldr >}}
+
+
+Packet injection lets a wireless adapter transmit arbitrary 802.11 frames, the core capability for deauthentication attacks and handshake capture. It requires a supported chipset and driver to function.
+
+
+
+
+
+
 
 This capability is essential for several classes of wireless security assessment:
 
@@ -245,4 +270,14 @@ The tools described in this article (aireplay-ng, airodump-ng, aircrack-ng) are 
 
 ---
 
+{{< faq >}}
+
 For wireless adapters with confirmed packet injection support, browse the [ALFA Network product range at Yopitek](/en/products/alfa/) — Taiwan's authorized ALFA Network distributor.
+
+## References
+
+1. [aircrack-ng Official Website and Documentation](https://www.aircrack-ng.org/)
+2. [aireplay-ng Usage Guide](https://www.aircrack-ng.org/doku.php?id=aireplay-ng)
+3. [Kali Linux Official Documentation](https://www.kali.org/docs/)
+4. [Linux mac80211 Subsystem Documentation](https://wireless.wiki.kernel.org/en/developers/Documentation/mac80211)
+5. [IEEE 802.11 Standards Resources](https://standards.ieee.org/ieee/802.11/)

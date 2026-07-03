@@ -12,9 +12,26 @@ series: ["alfa-china-install-guide"]
 related_product: "/es/products/alfa/awus036ax/"
 series_order: 4
 featureimage: "/images/blog/awus036ax-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Qué chip usa el AWUS036AX? ¿Admite WiFi 6?"
+    answer: "Usa el chip Realtek RTL8832BU y admite WiFi 6 (802.11ax) de alta velocidad."
+  - question: "¿El AWUS036AX necesita instalar controlador en Ubuntu 24.04?"
+    answer: "No, el kernel de Ubuntu 24.04 ya admite nativamente RTL8832BU; es plug-and-play."
+  - question: "¿El AWUS036AX es adecuado para investigación de seguridad inalámbrica?"
+    answer: "No tanto. El soporte del modo monitor de RTL8832BU es limitado; se recomienda usar AWUS036ACM o AWUS036ACH."
+  - question: "¿Hace falta VPN para instalar el AWUS036AX en China?"
+    answer: "No, descarga el código fuente rtl8852bu desde Gitee e instala las herramientas de compilación con espejos nacionales."
+  - question: "¿Cuál es el USB ID del AWUS036AX?"
+    answer: "El USB ID de Realtek RTL8832BU es 0bda:8832, puedes confirmarlo con lsusb."
 ---
 
 El AWUS036AX es el adaptador de doble banda WiFi 6 AX1800 de ALFA. Su chip RTL8832BU está fuera del kernel en versiones de Linux inferiores a 6.14, pero Ubuntu 24.04 (kernel 6.8) lo incluye de forma nativa. Esta guía utiliza espejos de Gitee para kernels más antiguos y el controlador integrado para Ubuntu 24.04. No se requiere GitHub.
+
+{{< tldr >}}
+El AWUS036AX usa el chip RTL8832BU y admite WiFi 6. En Ubuntu 24.04 funciona sin controlador; en Kali/Ubuntu 22.04 se descarga rtl8852bu desde Gitee y se compila.
+{{< /tldr >}}
 
 > **Nota de investigación de seguridad:** El RTL8832BU tiene un soporte limitado para el modo monitor. Los resultados varían según el kernel y la versión del controlador. Para una inyección de paquetes confiable en Kali Linux, el [AWUS036ACM](/es/blog/awus036acm-china-install-guide/) o el [AWUS036ACH](/es/blog/awus036ach-china-install-guide/) son mejores opciones.
 
@@ -247,6 +264,8 @@ sudo reboot
 | Espejo de la USTC | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
 | Espejo de Huawei Cloud | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 
+{{< faq >}}
+
 ## Más guías de adaptadores Alfa para China
 
 - [Guía de instalación de AWUS036ACH en China](/es/blog/awus036ach-china-install-guide/) — RTL8812AU, alta potencia
@@ -259,3 +278,10 @@ sudo reboot
 - [Guía de instalación de AWUS036EACS en China](/es/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 ¿Preguntas? Deja un comentario a continuación o contáctanos en [yupitek.com](https://yupitek.com/es/contact/).
+
+## Referencias
+
+1. [Sitio oficial de Realtek](https://www.realtek.com/)
+2. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)
+3. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)
+4. [Espejo de rtl8852bu en Gitee](https://gitee.com/mirrors/rtl8852bu)

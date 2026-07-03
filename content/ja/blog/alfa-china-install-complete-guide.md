@@ -1,4 +1,5 @@
 ---
+
 title: "完全ガイド：中国でAlfaUSB Wi-FiアダプターをLinuxにインストールする — Kali・Ubuntu・Raspberry Pi対応"
 date: 2026-04-24
 draft: false
@@ -9,12 +10,28 @@ series: ["alfa-china-install-guide"]
 series_order: 9
 description: "AlfaUSB Wi-FiアダプターをLinuxにインストールするための決定版ガイド。Kali Linux・Ubuntu 22/24・Debian・Raspberry Piに対応。GitHubなし — 国内ミラーのみ使用。"
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "中国でAlfa WiFiアダプターをインストールするのにVPNは必要ですか？"
+    answer: "不要です。USTC、Alibaba Cloud、清華などの国内ミラーとGiteeソースコードミラーを使用すれば完了までVPNは不要です。"
+  - question: "モニターモードとパケットインジェクションに最も適したAlfaアダプターは？"
+    answer: "AWUS036ACMはMT7612Uチップを搭載し、ドライバーはカーネル内蔵でVIFを完全サポートするため、最適な選択です。"
+  - question: "WiFi 6をサポートするAlfaアダプターは？"
+    answer: "AWUS036AXとAWUS036AXERはRTL8832BUチップを採用しWiFi 6をサポート、Ubuntu 24.04ではドライバー不要でプラグアンドプレイです。"
+  - question: "WiFi 6EをサポートするAlfaアダプターは？"
+    answer: "AWUS036AXMとAWUS036AXMLはMT7921AUNチップを採用し、WiFi 6Eトリバンドをサポートします。"
+  - question: "Raspberry PiでAlfaアダプターを使う際の注意点は？"
+    answer: "必ず電源付きUSB Hubで給電し、最適なドライバーサポートを得るためKali ARM64バージョンをフラッシュしてください。"
 ---
+このページをご覧になっているということは、Alfa USB Wi-Fiアダプターを購入し、以下のような壁にぶつかっているかもしれません：
 
 ## Alfa Linux インストール完全ガイドへようこそ
 
-このページをご覧になっているということは、Alfa USB Wi-Fiアダプターを購入し、以下のような壁にぶつかっているかもしれません：
 
+{{< tldr >}}
+中国本土向けAlfa WiFiアダプターLinuxインストールの究極ガイド。Kali、Ubuntu、Debian、Raspberry Piをカバーし、RTL8812AU、MT7612U、RTL8832BUなどのすべてのチップをサポート、全程国内ミラーでVPN不要です。
+{{< /tldr >}}
 - 中国にいるため GitHub にアクセスできない
 - ドライバーのインストール手順が複雑でわからない
 - 無線テスト用にモニターモードとパケットインジェクションを有効にしたい
@@ -670,6 +687,11 @@ VM 内で `lsusb` を実行して確認し、上記の Kali Linux の手順に�
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 関連ガイド
 
 この記事は **Alfa China インストールガイド**シリーズの一部です：
@@ -686,3 +708,13 @@ VM 内で `lsusb` を実行して確認し、上記の Kali Linux の手順に�
 ---
 
 *最終更新：2026年4月24日*
+
+---
+
+## 参考文献
+
+1. [aircrack-ng公式ドキュメント](https://www.aircrack-ng.org/)
+2. [Linux Kernel mt76ドライバー](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+3. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
+4. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
+5. [Giteeドライバーソースコードミラー](https://gitee.com/mirrors)

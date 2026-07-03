@@ -7,6 +7,20 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
 featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Para que serve o Black Duck FuzzBox?"
+    answer: "O Black Duck FuzzBox é um ambiente dedicado de fuzzing de protocolos wireless. Ele injeta frames 802.11 anormais para validar a robustez da stack de protocolos de dispositivos wireless embarcados e access points."
+  - question: "Por que adaptadores Wi-Fi 6/6E não funcionam com o FuzzBox?"
+    answer: "O motor de injeção do FuzzBox foi otimizado para o driver Realtek rtl88xxau. Chipsets MediaTek e Realtek mais recentes de Wi-Fi 6 não usam esse branch e são ignorados pelo daemon."
+  - question: "Por que o ALFA AWUS036ACH é o adaptador preferido do FuzzBox?"
+    answer: "O AWUS036ACH usa o chipset RTL8812AU, com driver de injeção otimizado pela comunidade, permitindo contornar a stack de rede do sistema operacional para transmissão de frames brutos com zero perda."
+  - question: "Em qual versão do Linux o FuzzBox OS  é baseado?"
+    answer: "O FuzzBox OS  é baseado no Debian 12 Bookworm, executando kernel LTS 6.1.x, com driver de injeção rtl88xxau e ferramentas de rede como airmon-ng pré-instalados."
+  - question: "Como verificar se o AWUS036AXML mudou para modo monitor?"
+    answer: "Execute iwconfig wlan0. A saída deve mostrar Mode:Monitor com a frequencia atual de operação, confirmando que o daemon do FuzzBox mudou o modo da interface com sucesso."
 ---
 
 O fuzzing de protocolo WLAN — frequentemente chamado de teste negativo sem fio — é uma das etapas mais críticas na validação da segurança e robustez de dispositivos sem fio incorporados, eletrodomésticos inteligentes e pontos de acesso empresariais. No entanto, tentar transmitir quadros de gerenciamento, controle ou dados 802.11 malformados pelo ar exige controle de baixo nível da camada de controle de acesso ao meio (MAC) que os sistemas operacionais padrão e os drivers de WiFi comerciais simplesmente não permitem.
@@ -14,6 +28,11 @@ O fuzzing de protocolo WLAN — frequentemente chamado de teste negativo sem fio
 Para resolver isso, as equipes de segurança utilizam o **Black Duck FuzzBox** (anteriormente Synopsys Defensics FuzzBox), um ambiente especializado de execução de software e hardware. Para realizar os testes, o FuzzBox OS deve ser emparelhado com um adaptador sem fio USB compatível e de alto desempenho, capaz de operar em modo monitor estável e realizar injeção confiável de pacotes brutos (raw). 
 
 Neste guia de compatibilidade, analisamos o catálogo de produtos ativo da ALFA Network na Yupitek, explicamos por que os adaptadores Wi-Fi 6/6E mais recentes falham sob o FuzzBox e fornecemos um guia de configuração passo a passo para a escolha padrão do setor: o **ALFA AWUS036ACH** (RTL8812AU).
+
+{{< tldr >}}
+O ALFA AWUS036ACH e a unica escolha para fuzzing de protocolos com o Black Duck FuzzBox. O driver RTL8812AU suporta injecao de pacotes brutos e modo monitor. Adaptadores Wi-Fi 6/6E nao funcionam devido a incompatibilidade de driver.
+{{< /tldr >}}
+
 
 ---
 
@@ -205,6 +224,8 @@ Quando você iniciar a suíte de testes de WLAN do Defensics (como a suíte de t
 
 ---
 
+{{< faq >}}
+
 ## 8. Recomendações
 
 ### 8.1 Matriz de Recomendação de Hardware
@@ -220,3 +241,11 @@ A Yupitek é uma distribuidora autorizada de produtos ALFA Network, oferecendo s
 *   Or email us directly at **sales@yupitek.com**
 
 Nossa equipe de engenharia ajudará você a adquirir as configurações exatas de hardware sem fio necessárias para dar suporte aos seus fluxos de trabalho de fuzzing de protocolo do Black Duck FuzzBox.
+
+## Referências
+
+1. [Synopsys Defensics — Pagina oficial do produto FuzzBox](https://www.synopsys.com/software-integrity/security-testing/fuzzing/defensics.html)
+2. [morrownr/8812au-20210629 — Repositorio GitHub do driver RTL8812AU para Linux](https://github.com/morrownr/8812au-20210629)
+3. [aircrack-ng — Site oficial do conjunto de ferramentas de seguranca sem fio](https://www.aircrack-ng.org/)
+4. [Site oficial da ALFA Network](https://www.alfa.com.tw/)
+5. [Linux Wireless — Documentacao do subsistema mac80211](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)

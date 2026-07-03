@@ -7,9 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["instalación-controlador", "Kali-Linux", "Ubuntu", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Las tarjetas WiFi USB ALFA necesitan instalar controlador en Linux?"
+    answer: "Depende del chipset. MT7612U y MT7921AUN están integrados en el núcleo; ejecuta modprobe. RTL8812AU requiere instalar el controlador externo desde el GitHub de aircrack-ng."
+  - question: "¿Cómo identificar qué chipset usa mi tarjeta ALFA?"
+    answer: "Tras conectar la tarjeta, ejecuta lsusb y compara el USB ID. 0bda:8812 es RTL8812AU, 0e8d:7612 es MT7612U, 0e8d:7961 es MT7921AUN."
+  - question: "¿Qué es DKMS y por qué se necesita?"
+    answer: "DKMS recompila automáticamente el módulo del controlador cuando se instala un nuevo kernel. Sin DKMS, los controladores externos fallan tras cada actualización del kernel y deben recompilarse manualmente."
+  - question: "¿Ubuntu 22.04 puede usar tarjetas MT7921AUN?"
+    answer: "El kernel 5.15 preinstalado no las admite. Necesitas instalar el kernel HWE linux-generic-hwe-22.04 para actualizar a 6.2 o superior, o actualizar a Ubuntu 24.04 LTS."
+  - question: "¿Qué hacer si make reporta el error linux/module.h not found al compilar?"
+    answer: "Los headers del kernel no están instalados. Ejecuta sudo apt install linux-headers-$(uname -r) para instalar los headers que coincidan con tu kernel actual y vuelve a compilar."
 ---
 
 Lograr que un adaptador USB WiFi funcione en Linux casi siempre se reduce a una sola cosa: el controlador. A diferencia de Windows, donde los fabricantes incluyen los controladores en instaladores ejecutables, Linux usa módulos del kernel — código compilado que el sistema operativo carga para comunicarse con el hardware. Entender este modelo hace que la resolución de problemas sea directa y la instalación del controlador sea predecible.
+
+{{< tldr >}}
+La instalación del controlador de las tarjetas ALFA depende del chipset: MT7612U y MT7921AUN están integrados en el núcleo y son plug-and-play. RTL8812AU debe instalarse desde el GitHub de aircrack-ng con DKMS para que persista tras actualizar el kernel.
+{{< /tldr >}}
 
 Esta guía cubre la instalación de controladores para todos los chipsets principales de adaptadores USB WiFi de ALFA Network tanto en Kali Linux 2024/2025 como en Ubuntu 24.04 LTS.
 
@@ -395,6 +412,8 @@ Yopitek es un distribuidor autorizado de ALFA Network. Explora la [gama completa
 
 ---
 
+{{< faq >}}
+
 ## Resumen
 
 La instalación de controladores WiFi en Linux sigue un árbol de decisión simple:
@@ -405,3 +424,11 @@ La instalación de controladores WiFi en Linux sigue un árbol de decisión simp
 4. **¿Algo no funciona?** → Revisa la tabla de solución de problemas, verifica que las cabeceras coincidan con el kernel, revisa `dmesg`
 
 La belleza de los adaptadores ALFA Network es que los cuatro chipsets principales tienen soluciones de controladores bien documentadas y activamente mantenidas. Nunca te quedas en territorio sin soporte.
+
+## Referencias
+
+1. [Controlador rtl8812au oficial de aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
+2. [morrownr USB-WiFi 知識庫](https://github.com/morrownr/USB-WiFi)
+3. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)
+4. [Documentación oficial del núcleo HWE de Ubuntu](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
+5. [Controlador mt76 de Linux Wireless](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)

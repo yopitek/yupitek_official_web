@@ -12,9 +12,29 @@ series: ["alfa-china-install-guide"]
 series_order: 3
 related_product: "/ar/products/alfa/awus036acs/"
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما الشريحة التي يستخدمها AWUS036ACS؟ هل هي نفس AWUS036ACH؟"
+    answer: "يستخدم شريحة Realtek RTL8811AU، وتشترك مع RTL8812AU في نفس حزمة التعريف."
+  - question: "هل يدعم AWUS036ACS وضع المراقبة؟"
+    answer: "نعم، RTL8811AU يدعم وضع المراقبة وحقن الحزم بالكامل، وهو خيار اقتصادي لأبحاث الأمن."
+  - question: "هل أحتاج إلى VPN لتثبيت AWUS036ACS في الصين؟"
+    answer: "لا، على Kali استخدم apt لتثبيت تعريف DKMS، وعلى Ubuntu/Debian نزّل الكود المصدري من Gitee وجمّعه."
+  - question: "ما هو USB ID لـ AWUS036ACS؟"
+    answer: "USB ID لـ Realtek RTL8811AU هو 0bda:0811، يمكن التأكد بـ lsusb."
+  - question: "ما أمر تثبيت تعريف AWUS036ACS على Kali Linux؟"
+    answer: "على Kali يمكن تنفيذ sudo apt install realtek-rtl88xxau-dkms لتثبيت التعريف."
 ---
-
 يعتبر AWUS036ACS محول أبحاث أمان مدمج ثنائي النطاق من ALFA. تدعم شريحة RTL8811AU الخاصة به وضع المراقبة الكامل وحقن الحزم على Kali Linux — ولكن نظرًا لأن برنامج التشغيل خارج النواة، فأنت بحاجة إلى تجميعه من المصدر. في الصين، يتم حظر GitHub، لذا يستخدم هذا الدليل مرايا Gitee حصريًا. لا داعي للقلق، GitHub ليس مطلوبًا على الإطلاق.
+
+{{< tldr >}}
+يستخدم AWUS036ACS شريحة RTL8811AU، على Kali ثبّت تعريف DKMS عبر apt، وعلى Ubuntu/Debian جمّع من Gitee. يدعم وضع المراقبة وحقن الحزم.
+{{< /tldr >}}
+
+تأكد من توفر المتطلبات التالية لديك:
+
+
 
 ## قبل أن تبدأ
 
@@ -375,6 +395,8 @@ sudo aireplay-ng --test wlan1mon
 | جامعة العلوم والتكنولوجيا في الصين | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (موصى به) |
 | مرآة هواوي | [repo.huaweicloud.com](https://repo.huaweicloud.com) | صور Kali ARM |
 
+{{< faq >}}
+
 ## المزيد من أدلة محولات Alfa للصين
 
 - [دليل تثبيت AWUS036ACH في الصين](/ar/blog/awus036ach-china-install-guide/) — RTL8812AU، طاقة عالية
@@ -387,3 +409,11 @@ sudo aireplay-ng --test wlan1mon
 - [دليل تثبيت AWUS036EACS في الصين](/ar/blog/awus036eacs-china-install-guide/) — RTL8821CU، ويندوز
 
 هل لديك أسئلة؟ اترك تعليقًا أدناه أو اتصل بنا على [yupitek.com](https://yupitek.com/ar/contact/).
+
+## المراجع
+
+1. [وثائق aircrack-ng الرسمية](https://www.aircrack-ng.org/)
+2. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+3. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
+4. [مرآة Gitee لـ rtl8812au](https://gitee.com/mirrors/rtl8812au)
+

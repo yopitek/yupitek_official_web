@@ -7,7 +7,28 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "wifi-6e", "review", "Kali-Linux", "MT7921AUN", "6GHz"]
 featureimage: "/images/blog/awus036axml-wifi-6e-review.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Quais bandas o AWUS036AXML suporta?"
+    answer: "Suporta tri-band 2.4 GHz, 5 GHz e 6 GHz, em conformidade com o padrão IEEE 802.11ax Wi-Fi 6E. E um dos poucos adaptadores USB wireless que permite a pesquisadores de segurança operar na banda de 6 GHz."
+  - question: "Qual versão do kernel Linux o AWUS036AXML requer?"
+    answer: "O driver mt7921u foi integrado ao kernel mainline desde o Linux 5.18. Os kernels 6.x do Kali Linux 2024.x / 2025.x funcionam normalmente."
+  - question: "Qual a principal diferenca entre AWUS036AXML e AWUS036ACH?"
+    answer: "O AWUS036AXML usa MT7921AUN com suporte a 6 GHz e Wi-Fi 6E. O AWUS036ACH usa RTL8812AU com suporte apenas dual-band Wi-Fi 5, mas o driver deste último é mais maduro e com maior compatibilidade."
+  - question: "O AWUS036AXML suporta injeção de pacotes?"
+    answer: "Suporta injeção de pacotes com taxa de sucesso estável acima de 90%. No entanto, o modo monitor ativo tem uma limitação conhecida do driver. Recomenda-se usar apenas o modo monitor passivo."
+  - question: "Quem deve comprar o AWUS036AXML?"
+    answer: "Pesquisadores de segurança que avaliam ambientes corporativos com Wi-Fi 6E implantado, laboratorios de treinamento de segurança e pesquisadores envolvidos em análise de protocolos de 6 GHz."
 ---
+{{< tldr >}}
+O AWUS036AXML e um adaptador USB Wi-Fi 6E que suporta tri-band 2.4/5/6 GHz, modo monitor e injecao de pacotes. Este artigo cobre especificacoes, instalacao de driver no Kali Linux, testes de varredura de 6 GHz e comparacao detalhada com o AWUS036ACH.
+{{< /tldr >}}
+
+O **ALFA AWUS036AXML** é a entrada da ALFA Network na era Wi-Fi 6E da pesquisa de segurança wireless. Ele é construído em torno do chipset **MediaTek MT7921AUN** e é, em 2026, um dos poucos adaptadores USB wireless que permite aos pesquisadores de segurança operar na **banda de 6 GHz** — o mais recente espectro não licenciado que as redes Wi-Fi 6E utilizam.
+
+
 
 ## Visão Geral do Produto
 
@@ -303,4 +324,15 @@ Muitos pentesters profissionais carregam ambos: o AWUS036ACH para trabalho dual-
 
 ---
 
+{{< faq >}}
+
+
 O ALFA AWUS036AXML está disponível na [Yopitek](/pt/products/alfa/awus036axml/) — distribuidora autorizada da ALFA Network. Comprar pela Yopitek garante que você recebe um produto genuíno e certificado com cobertura de garantia do fabricante e suporte técnico local.
+
+## Referências
+
+1. [Site oficial da ALFA Network](https://www.alfa.com.tw/)
+2. [Informacoes do chipset MediaTek MT7921](https://www.mediatek.com/products/networking-and-connectivity)
+3. [Driver mt76 do kernel Linux](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+4. [Conjunto de ferramentas aircrack-ng](https://www.aircrack-ng.org/)
+5. [Certificacao Wi-Fi Alliance Wi-Fi 6E](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)

@@ -3,14 +3,30 @@ title: "إصلاح ثابتة وضع المراقبة لـ AWUS036AXML: حل م�
 description: "كيفية إصلاح انهيار ثابتة وضع المراقبة في AWUS036AXML على Kali Linux. يشمل تحديث ثابتة MT7921AUN، متطلبات إصدار النواة، حل وضع الالتقاط السلبي مقابل النشط، وبديل hcxdumptool."
 date: 2026-03-24
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "لماذا يتعطل AWUS036AXML في وضع المراقبة النشط؟"
+    answer: "يستخدم MT7921AUN معمارية MAC قائمة على البرنامج الثابت، ولم ينفذ تعريف mt7921u الحالي مسارات الأوامر اللازمة للحقن النشط بالكامل. تنفيذ aireplay-ng يؤدي إلى اختفاء الواجهة."
+  - question: "كيف أصلح تعطل الوضع النشط لـ MT7921AUN؟"
+    answer: "حدّث حزمة firmware-misc-nonfree لأحدث إصدار، ورقّ إلى نواة 6.6 فأحدث، وتجنب فيضانات إلغاء المصادقة عالية معدل الحزم. قد يتحسن لكن ليس بالضرورة يحل المشكلة بالكامل."
+  - question: "كيف يلتقط hcxdumptool PMKID دون حقن الحزم؟"
+    answer: "يلتقط hcxdumptool في الوضع السلبي PMKID من إطارات المنارة والاستكشاف المُبثة من نقاط الوصول، دون إرسال أي حزمة، فلا يُسبب تعطل البرنامج الثابت."
+  - question: "ما قيود المراقبة السلبية لـ AWUS036AXML؟"
+    answer: "المراقبة السلبية تلتقط المنارات والمصافحات و PMKID بشكل طبيعي، لكن لا يمكن تنفيذ إلغاء المصادقة أو طلبات الاستكشاف أو فيضانات الارتباط. هذه تتطلب AWUS036ACH."
+  - question: "ما إصدارات النواة التي تحسن استقرار MT7921AUN؟"
+    answer: "نواة 6.1 LTS أو أحدث تتضمن عدة رقع استقرار لـ mt7921u. نواة 6.6 فأحدث تتضمن تحسينات إضافية لمكدس تعريفات USB من MediaTek."
 ---
-
 **ALFA AWUS036AXML** هو محول WiFi 6E الرائد من ALFA Network، مبني على شريحة MediaTek MT7921AUN ويدعم ثلاثة نطاقات (2.4 / 5 / 6 GHz). إنه أحد المحولات USB القليلة القادرة على المراقبة السلبية في نطاق 6 GHz في عام 2026. يؤدي أداءً ممتازاً في حالات الاستخدام المتعددة كمسح الموقع والتقاط الحزم وجمع PMKID.
+
+{{< tldr >}}
+تعريف mt7921u لـ AWUS036AXML يُسبب تعثر البرنامج الثابت عند الحقن النشط للحزم. يشرح هذا المقال السبب الجذري وخطوات التشخيص وحلول التحديث والترقية والتبديل إلى الالتقاط السلبي بـ hcxdumptool.
+{{< /tldr >}}
+
 
 لكن هناك مشكلة معروفة تفاجئ المستخدمين: **أوامر وضع المراقبة النشط تُسبب انهيار الثابتة**. تشغيل أدوات مثل `aireplay-ng` أو `mdk4` يجعل واجهة `wlan0mon` تختفي تماماً، مما يضطرك لفصل المحول وإعادة توصيله للتعافي. هذه ليست عطلاً في الجهاز، بل قيود في دليل Linux `mt7921u` والثابتة الحالية.
 
@@ -220,8 +236,18 @@ mt7921u 1-2.3:1.0: HW/SW Version: ...
 
 ---
 
+{{< faq >}}
+
 ## أدلة ذات صلة
 
 - [المراجعة الكاملة لـ AWUS036AXML](/ar/blog/awus036axml-wifi-6e-review/)
 - [دليل حقن الحزم](/ar/blog/packet-injection-guide/)
 - [دليل تثبيت الدليل](/ar/blog/install-alfa-driver-kali-ubuntu/)
+
+## المراجع
+
+1. [مستودع Linux firmware على kernel.org](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git)
+2. [تعريف Linux core mt76](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+3. [مجموعة أدوات aircrack-ng](https://www.aircrack-ng.org/)
+4. [مشروع hcxdumptool على GitHub](https://github.com/ZerBea/hcxdumptool)
+5. [دعم ALFA Network الرسمي](https://www.alfa.com.tw/)

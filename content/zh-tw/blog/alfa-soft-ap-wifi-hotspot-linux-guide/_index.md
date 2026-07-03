@@ -7,8 +7,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi", "USB-無線網路卡", "樹莓派-WiFi-熱點"]
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ALFA USB 網卡可以在 Linux 上當 WiFi 熱點用嗎？"
+    answer: "視晶片組而定。AWUS036ACM（MT7612U）完整支援且即插即用，AWUS036ACH（RTL8812AU）有條件支援，AWUS036AXML 部分支援需調校。"
+  - question: "哪款 ALFA 網卡最適合在 Raspberry Pi 上建立 Soft AP？"
+    answer: "AWUS036ACM 是最佳選擇。in-kernel 驅動即插即用、耗電僅 400mA 適合 Pi 供電、支援 WPA3 與 VIF 虛擬介面，全平台穩定。"
+  - question: "如何確認網卡支援 AP 模式？"
+    answer: "執行 iw list | grep -A 10 'Supported interface modes'，若輸出包含 * AP 即代表驅動支援 Soft AP，hostapd 才能正常運作。"
+  - question: "RTL8812AU 驅動的 Soft AP 有哪些限制？"
+    answer: "不支援 WPA3 僅能用 WPA2-PSK、不支援 VIF 虛擬介面需兩張卡分工、耗電約 800mA 在 Pi 上需有源 USB Hub。"
+  - question: "AWUS036AXML 跑 Soft AP 時 WiFi 突然斷線怎麼辦？"
+    answer: "MT7921AUN 內建 Bluetooth 5.2 會干擾 WiFi。執行 echo 'install btusb /bin/false' 寫入 /etc/modprobe.d/ 永久禁用藍牙驅動後重開機。"
 ---
 
+
+ALFA AWUS036ACM（MT7612U）是 Linux Soft AP 最佳首選，in-kernel 驅動即插即用、支援 WPA3 與 VIF 虛擬介面。RTL8812AU 有條件支援，MT7921AUN 需手動調校。
+
+{{< tldr >}}
+ALFA 網卡 Soft AP 相容性取決於晶片驅動。AWUS036ACM 為全平台穩定首選，AWUS036ACH 可用但無 WPA3，AWUS036AXML 需禁用藍牙並更新韌體，RTL8832BU 不建議使用。
+{{< /tldr >}}
 
 # ALFA 網路卡 Soft AP 完整指南 2026：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5 建立 WiFi 熱點
 
@@ -617,6 +636,8 @@ DFS（Dynamic Frequency Selection）頻道（ch100–ch140）需要 kernel 層�
 
 ---
 
+{{< faq >}}
+
 ### 結語
 
 建立 Soft AP 的核心關鍵，不在於 WiFi 速率有多快，也不在於天線有幾根——**真正的關鍵，是晶片驅動對 AP 模式的支援程度。**
@@ -667,3 +688,11 @@ AWUS036ACH（RTL8812AU）可以用，但需要接受 WPA3 不支援和驅動維�
 > **免責聲明**：本文研究資料截至 2026 年 5 月。Linux Kernel 與各發行版持續更新，驅動支援狀況可能隨版本變動。部署前建議確認目標平台的 kernel 版本與驅動相容性。
 >
 > **技術支援**：如有 Soft AP 設定問題，歡迎聯繫榆閤科技台灣本地技術支援團隊。產品購買與諮詢請至 [yupitek.com](/zh-tw/)。
+
+## 參考來源
+
+1. [morrownr/USB-WiFi GitHub 知識庫](https://github.com/morrownr/USB-WiFi)
+2. [hostapd 官方文件](https://w1.fi/cgit/hostap/)
+3. [Linux Wireless mt76 驅動程式](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)
+4. [Raspberry Pi 官方文件](https://www.raspberrypi.com/documentation/)
+5. [Kali Linux 官方文件](https://www.kali.org/docs/)

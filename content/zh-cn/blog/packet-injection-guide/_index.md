@@ -1,17 +1,42 @@
 ---
+
+
+
 title: "什么是数据包注入？测试你的 WiFi 网卡在 Kali Linux 的兼容性"
 description: "了解 WiFi 数据包注入原理、为何需要特定网卡、如何用 aireplay-ng 测试你的 ALFA Network 网卡，以及哪些芯片组支持 Kali Linux 数据包注入。"
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["数据包注入", "aireplay-ng", "Kali-Linux", "WiFi网卡", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
+faq:
+  - question: "什么是 WiFi 数据包注入？"
+    answer: "数据包注入是网卡将任意 802.11 讯框直接传送至无线媒介的能力，让 aireplay-ng 等工具能建构并发送管理讯框、控制讯框与数据讯框。"
+  - question: "为什么大多数网卡无法注入数据包？"
+    answer: "限制在于驱动程序而非硬件。消费级驱动依标准操作模型验证输出讯框，需驱动明确启用 mac80211 的原始 TX 路径才能支持注入。"
+  - question: "如何测试网卡是否支持数据包注入？"
+    answer: "先启用监听模式，再执行 aireplay-ng --test wlan0mon。若输出 Injection is working! 即确认支持，成功率 80% 以上为可靠。"
+  - question: "哪些 ALFA 网卡支持数据包注入？"
+    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）三款均完整支持，搭配正确驱动即可在 Kali Linux 上运行。"
+  - question: "数据包注入测试成功率低于 50% 该如何改善？"
+    answer: "靠近目标 AP、将监听接口锁定至相同信道、确认 TX Power 设定，并检查驱动程序是否为 aircrack-ng 版本而非发行版内置版本。"
 ---
+数据包注入——正式名称为 **802.11 帧注入**——是指无线网卡向无线介质发送任意 802.11 帧的能力，包括那些并非由网卡自身网络协议栈所生成的帧。在正常工作状态下，无线驱动程序只会构造和发送操作系统合法生成的帧，例如关联请求、已连接网络的数据帧等。数据包注入绕过了这些限制，允许 `aireplay-ng` 等工具自由构造并发送任意类型的帧——包括管理帧、控制帧或数据帧——并可自定义内容、源地址与目标地址。
 
 ## 什么是数据包注入？
 
-数据包注入——正式名称为 **802.11 帧注入**——是指无线网卡向无线介质发送任意 802.11 帧的能力，包括那些并非由网卡自身网络协议栈所生成的帧。在正常工作状态下，无线驱动程序只会构造和发送操作系统合法生成的帧，例如关联请求、已连接网络的数据帧等。数据包注入绕过了这些限制，允许 `aireplay-ng` 等工具自由构造并发送任意类型的帧——包括管理帧、控制帧或数据帧——并可自定义内容、源地址与目标地址。
+{{< tldr >}}
+数据包注入是网卡传送任意 802.11 讯框的能力，受限于驱动程序而非硬件。RTL8812AU、MT7612U、MT7921AUN 芯片组的 ALFA 网卡搭配 aircrack-ng 驱动即可完整支持。
+{{< /tldr >}}
+
+
+数据包注入让无线网卡传送任意 802.11 讯框，是解除认证攻击与握手包截取的核心能力。需具备支持的芯片组与驱动程序才能运作。
+
+
+
 
 这项能力在多种无线安全评估场景中不可或缺：
 
@@ -197,6 +222,9 @@ sudo aireplay-ng --deauth 5 -a AA:BB:CC:DD:EE:FF -c 11:22:33:44:55:66 wlan0mon
 
 ---
 
+
+{{< faq >}}
+
 ## 合规使用须知
 
 数据包注入是一项强大的能力。其在经授权渗透测试中的合法应用场景已有充分验证——包括捕获握手包、核查无线安全控制措施，以及测试客户端行为。而对这项技术的滥用，不仅会造成实质危害，更属违法行为。
@@ -212,3 +240,11 @@ sudo aireplay-ng --deauth 5 -a AA:BB:CC:DD:EE:FF -c 11:22:33:44:55:66 wlan0mon
 ---
 
 如需选购经确认支持数据包注入的无线网卡，欢迎浏览 [ALFA Network 产品系列（Yopitek 官方页面）](/zh-cn/products/alfa/)——台湾 ALFA Network 授权经销商。
+
+## 参考文献
+
+1. [aircrack-ng 官方网站与文件](https://www.aircrack-ng.org/)
+2. [aireplay-ng 使用说明](https://www.aircrack-ng.org/doku.php?id=aireplay-ng)
+3. [Kali Linux 官方文档](https://www.kali.org/docs/)
+4. [Linux mac80211 子系统文件](https://wireless.wiki.kernel.org/en/developers/Documentation/mac80211)
+5. [IEEE 802.11 标准资源](https://standards.ieee.org/ieee/802.11/)

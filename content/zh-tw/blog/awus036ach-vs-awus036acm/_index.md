@@ -7,17 +7,34 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "AWUS036ACM", "比較", "Kali-Linux", "RTL8812AU", "MT7612U"]
 featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036ACH 和 AWUS036ACM 驅動安裝有什麼差異？"
+    answer: "AWUS036ACH 採 RTL8812AU 晶片，需透過 DKMS 編譯安裝 aircrack-ng 社群驅動，核心更新後可能需重新編譯；AWUS036ACM 的 MT7612U 驅動自核心 4.19 起整合進主線，即插即用無需編譯。"
+  - question: "哪款更適合 Monitor Mode 監聽？"
+    answer: "AWUS036ACH 監聽模式更穩定，雙天線與 30 dBm 高功率在密集 AP 環境下封包遺失率更低；ACM 亦支援監聽但單天線功率較低，適合近距離擷取。"
+  - question: "新手應該選 ACH 還是 ACM？"
+    answer: "新手建議選 AWUS036ACM，MT7612U 核心原生驅動即插即用免編譯；若需最強訊號與最多教學資源且不怕 DKMS 編譯流程，再選 AWUS036ACH。"
+  - question: "VM 虛擬機環境推薦哪款？"
+    answer: "VM 環境推薦 AWUS036ACM，USB 直通後核心原生驅動立即識別可用，無需在虛擬機內安裝編譯工具鏈；ACH 需在 VM 內額外安裝驅動方能使用。"
 ---
 
-## 概覽
+## 結論先講
 
-在眾多專為 Kali Linux 滲透測試設計的 ALFA Network USB WiFi 網路卡中，有兩款最受歡迎，卻各自站在效能與便攜性光譜的不同位置。**AWUS036ACH** 是高功率、雙天線的主力機型，擁有歷經考驗的驅動程式資歷。**AWUS036ACM** 則是輕巧、核心原生的替代方案，以部分功率換取更簡便的使用體驗。本文逐一拆解所有對實戰滲透測試真正重要的面向。
+專業滲透測試選 [AWUS036ACH](/zh-tw/products/alfa/awus036ach/)：RTL8812AU 驅動成熟、30 dBm 雙天線帶來最強監聽與封包注入。求即插即用便攜選 [AWUS036ACM](/zh-tw/products/alfa/awus036acm/)：MT7612U 核心原生驅動，自核心 4.19 起即插即用零編譯。
+
+{{< tldr >}}
+AWUS036ACH 適合專業任務，RTL8812AU 驅動搭配 30 dBm 雙天線，監聽注入最強；AWUS036ACM 求便攜，MT7612U 核心原生驅動零編譯，價格約 $30–40。
+{{< /tldr >}}
+
+兩款都是 ALFA Network 專為 Kali Linux 滲透測試設計的 USB WiFi 網路卡，各自站在效能與便攜性光譜的不同位置。**AWUS036ACH** 是高功率、雙天線的主力機型，擁有歷經考驗的驅動程式資歷。**AWUS036ACM** 則是輕巧、核心原生的替代方案，以部分功率換取更簡便的使用體驗。本文逐一拆解所有對實戰滲透測試真正重要的面向。
 
 ---
 
 ## AWUS036ACH — AC1200、RTL8812AU、高功率
 
-[AWUS036ACH](/zh-tw/products/alfa/awus036ach/) 自上市以來，一直是專業與業餘 Wi-Fi 安全稽核的標配。在 2017 年至今發布的 Kali Linux 無線滲透測試教學、課程與文章中，它是被引用次數最多的無線網路卡。
+[AWUS036ACH](/zh-tw/products/alfa/awus036ach/) 自上市以來，一直是專業與業餘 Wi-Fi 安全稽核的標配。在 2017 年至今發布的 Kali Linux 無線滲透測試教學、課程與文章中，它是被引用次數最多的無線網路卡。其 TX 功率最高達 30 dBm，為 USB 網路卡中的頂尖水準（[ALFA Network 官方規格 — alfa.com.tw](https://www.alfa.com.tw)）。
 
 **完整規格：**
 - **Wi-Fi 標準：** IEEE 802.11a/b/g/n/ac（Wi-Fi 5）
@@ -77,7 +94,7 @@ featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
 
 ### RTL8812AU（AWUS036ACH）
 
-Realtek RTL8812AU 是無線安全研究領域中測試最為徹底的晶片組之一。社群維護的驅動程式托管於 [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)，自 2017 年起持續開發與修補。
+AWUS036ACH 搭載 Realtek RTL8812AU 晶片，TX 功率最高達 30 dBm，為 USB 網路卡中的頂尖水準。其社群維護驅動由 [aircrack-ng](https://github.com/aircrack-ng/rtl8812au) 社群維護，自 2017 年起持續開發與修補，是無線安全研究領域中測試最為徹底的晶片組之一（[github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)）。
 
 **在 Kali Linux 上安裝驅動程式：**
 
@@ -100,7 +117,7 @@ sudo make dkms_install
 
 ### MT7612U（AWUS036ACM）
 
-MediaTek MT7612U 驅動程式（`mt76x2u`）在 **4.19 版（2018 年 10 月）** 合併進 Linux 核心主線。這意味著在所有執行 4.19 或更新版核心的 Kali Linux 環境中——涵蓋 2018 年底以來的每一個 Kali 發行版——AWUS036ACM 都是**即插即用**。
+MediaTek MT7612U 驅動程式（`mt76x2u`）在 **4.19 版（2018 年 10 月）** 合併進 Linux 核心主線，目前由核心社群維護於 [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)。這意味著在所有執行 4.19 或更新版核心的 Kali Linux 環境中——涵蓋 2018 年底以來的每一個 Kali 發行版——AWUS036ACM 都是**即插即用**。
 
 ```bash
 # 確認模組已載入
@@ -205,6 +222,10 @@ ACM 的零安裝體驗，在 Live 開機環境、客戶提供的設備，或時�
 
 ---
 
+{{< faq >}}
+
+---
+
 ## 結論
 
 **選擇 [AWUS036ACH](/zh-tw/products/alfa/awus036ach/)，適合：**
@@ -222,3 +243,12 @@ ACM 的零安裝體驗，在 Live 開機環境、客戶提供的設備，或時�
 - 偏好核心原生穩定性而非社群驅動程式的場景
 
 如果只能選擇一款，**AWUS036ACH** 在滲透測試上是更強的選擇。若想要一款零設定摩擦的可靠隨行夥伴，**AWUS036ACM** 同樣能在工具庫中占有一席之地。
+
+---
+
+## 參考來源
+
+1. aircrack-ng 社群維護 RTL8812AU 驅動程式儲存庫 — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. Linux 核心主線 MT76 驅動程式（`mt76x2u`，自核心 4.19 起整合）— [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
+3. ALFA Network 官方網站與產品規格 — [alfa.com.tw](https://www.alfa.com.tw)
+4. Yupitek — ALFA Network 台灣授權經銷商 — [yupitek.com](https://www.yupitek.com)

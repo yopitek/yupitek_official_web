@@ -1,4 +1,5 @@
 ---
+
 title: "Kali Linux 2026 モニターモード有効化完全ガイド：WiFi アダプター設定手順"
 description: "Kali Linux 2024/2025 で airmon-ng または iw コマンドを使ってモニターモードを有効化する手順を解説。対応 ALFA アダプター一覧、トラブルシューティング、airodump-ng での確認方法付き。"
 date: 2026-03-23
@@ -7,12 +8,28 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["モニターモード", "Kali-Linux", "airmon-ng", "iw", "WiFiアダプター", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "モニターモードと管理モードの違いは？"
+    answer: "モニターモードはアダプターが空中のすべての802.11フレームをキャプチャできるようにし、管理モードのように自身のMACに合致するパケットのみを受信する制限を受けません。無線ペネトレーションテストの基礎です。"
+  - question: "airmon-ngとiwコマンドでモニターモードを有効にする違いは？"
+    answer: "airmon-ngは干渉プロセスを自動的に処理しwlan0mon仮想インターフェースを作成します。iwは既存のインターフェースを直接変更し、別のインターフェースを作成しないため、きめ細かい制御が必要な場合に適しています。"
+  - question: "モニターモード有効化後にインターフェースが自動的に管理モードに戻るのはなぜですか？"
+    answer: "wpa_supplicantまたはNetworkManagerがバックグラウンドで再起動したのが原因です。airmon-ng check killを実行してこれらのプロセスを終了すれば解決します。"
+  - question: "Kali Linuxで完全にモニターモードをサポートするALFAアダプターは？"
+    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）の3機種が完全サポートし、その中でACMはプラグアンドプレイです。"
+  - question: "airodump-ngでFixed channel wlan0mon: -1エラーが出た場合の解決方法は？"
+    answer: "airodump-ngがチャネルを切り替えられないことを示しています。iwconfig wlan0mon channel 1でチャネルを指定し、残留するwpa_supplicantプロセスを終了してください。"
 ---
+モニターモードは、無線 NIC（ネットワークインターフェースカード）の特殊な動作モードで、アダプターが電波上の**すべての** 802.11 フレームをキャプチャできるようにします——自分のデバイス宛てのものだけでなく。通常の「マネージド」モードでは、アダプターは自分の MAC アドレス宛のパケットのみ受信し、それ以外はすべて破棄します。モニターモードはそのフィルターを完全に解除します。
 
 ## モニターモードとは？ペネトレーションテストにおける重要性
 
-モニターモードは、無線 NIC（ネットワークインターフェースカード）の特殊な動作モードで、アダプターが電波上の**すべての** 802.11 フレームをキャプチャできるようにします——自分のデバイス宛てのものだけでなく。通常の「マネージド」モードでは、アダプターは自分の MAC アドレス宛のパケットのみ受信し、それ以外はすべて破棄します。モニターモードはそのフィルターを完全に解除します。
 
+{{< tldr >}}
+モニターモードはアダプターが自身のパケットのみを受信する制限を解除し、無線ペネトレーションテストの基盤です。airmon-ngまたはiwコマンドとALFAアダプターを組み合わせればKali Linuxで安定して有効化できます。
+{{< /tldr >}}
 無線ペネトレーションテスターにとって、モニターモードは基礎中の基礎です。これなしでは **airodump-ng**、**Wireshark**（無線キャプチャモード）、**Kismet** などのツールでネットワークトラフィックを受動的に傍受することができません。モニターモードが実現できること：
 
 - **パッシブ偵察**——フレームを一切送信せずに周辺のすべての AP とクライアントをスキャン。
@@ -264,8 +281,22 @@ sudo systemctl start NetworkManager
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## まとめ
 
 Kali Linux でモニターモードを有効化するのは 2 ステップです：干渉するサービスを停止し、`airmon-ng` または `iw` のどちらかを使ってインターフェースモードを切り替える。成功の鍵は対応チップセットを持つアダプターを使うことです。RTL8812AU、MT7921AUN、MT7612U のチップセットを持つ ALFA Network アダプターは、Kali Linux で最も信頼できるすぐに使える体験を提供します。
 
 Yopitek（台湾の ALFA Network 正規代理店）の [ALFA Network 無線アダプター製品ラインナップ](/ja/products/alfa/)で、ワイヤレスセキュリティ調査に最適なアダプターをお探しください。
+
+---
+
+## 参考文献
+
+1. [aircrack-ng公式ドキュメント](https://www.aircrack-ng.org/documentation.html)
+2. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
+3. [Linux Wireless mac80211サブシステム](https://wireless.wiki.kernel.org/en/developers/Documentation/mac80211)
+4. [iwコマンド使用説明](https://wireless.wiki.kernel.org/en/users/Documentation/iw)

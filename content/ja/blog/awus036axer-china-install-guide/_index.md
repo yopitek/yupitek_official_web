@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA AWUS036AXER ドライバインストールガイド（中国版）：Kali Linux, Ubuntu, Debian & Raspberry Pi"
 description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXERのドライバをインストールする手順をステップバイステップで解説します。RTL8832BUドライバ、WiFi 6 Nanoアダプター対応。Kali Linux、Ubuntu 22/24（24.04は標準対応）、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
 date: 2026-04-24
@@ -12,10 +13,27 @@ series: ["alfa-china-install-guide"]
 series_order: 5
 related_product: "/ja/products/alfa/awus036axer/"
 featureimage: "/images/blog/awus036axer-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036AXERはどのチップを使っていますか？AWUS036AXと同じですか？"
+    answer: "同じくRealtek RTL8832BUチップを採用しWiFi 6をサポートしていますが、より小型で携帯性に優れています。"
+  - question: "AWUS036AXERはUbuntu 24.04でドライバーインストールが必要ですか？"
+    answer: "不要です。Ubuntu 24.04カーネルがネイティブサポートし、挿すだけで使えます。"
+  - question: "AWUS036AXERは無線セキュリティリサーチに適していますか？"
+    answer: "あまり適していません。RTL8832BUのモニターモードサポートは限定的で、AWUS036ACMまたはAWUS036ACHを使用することを推奨します。"
+  - question: "AWUS036AXERのUSB IDは何ですか？"
+    answer: "Realtek RTL8832BUのUSB IDは0bda:885aで、lsusbで確認できます。"
+  - question: "中国でAWUS036AXERをインストールするのにVPNは必要ですか？"
+    answer: "不要です。Giteeからrtl8852buソースコードをダウンロードし、国内ミラーでコンパイルツールをインストールするだけです。"
 ---
 
 AWUS036AXERは、ALFAの超小型（Nano）WiFi 6 AX1800デュアルバンド・アダプターです。搭載されているRTL8832BUチップは、カーネルバージョン6.14未満のLinuxでは標準対応していませんが、Ubuntu 24.04（カーネル6.8）ではネイティブにサポートされています。このガイドでは、古いカーネル向けにはGiteeミラーを、Ubuntu 24.04向けには標準ドライバを使用する方法を解説します。GitHubへのアクセスは不要ですので、安心してくださいね。
 
+
+{{< tldr >}}
+AWUS036AXERはRTL8832BUチップを採用したミニポータブルWiFi 6アダプターで、Ubuntu 24.04ではドライバー不要でプラグアンドプレイ、その他のシステムではGiteeからrtl8852buをコンパイルしてインストールします。
+{{< /tldr >}}
 > **セキュリティリサーチに関する注意:** RTL8832BUはモニターモードのサポートに制限があります。結果はカーネルやドライバのバージョンによって異なります。Kali Linuxで安定したパケットインジェクションが必要な場合は、[AWUS036ACM](/ja/blog/awus036acm-china-install-guide/) または [AWUS036ACH](/ja/blog/awus036ach-china-install-guide/) をお勧めします。
 
 ## 準備するもの
@@ -246,6 +264,13 @@ sudo reboot
 | 中国科学技術大学ミラー | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
 | 華為ミラー | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 
+
+---
+
+{{< faq >}}
+
+---
+
 ## 中国向け Alfa アダプターガイド（その他）
 
 - [AWUS036ACH 中国インストールガイド](/ja/blog/awus036ach-china-install-guide/) — RTL8812AU、高出力
@@ -258,3 +283,12 @@ sudo reboot
 - [AWUS036EACS 中国インストールガイド](/ja/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 ご不明な点がありますか？下のコメント欄に記入するか、[yupitek.com](https://yupitek.com/ja/contact/) までお問い合わせください。
+
+---
+
+## 参考文献
+
+1. [Realtek公式ウェブサイト](https://www.realtek.com/)
+2. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
+3. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
+4. [Gitee rtl8852buミラー](https://gitee.com/mirrors/rtl8852bu)

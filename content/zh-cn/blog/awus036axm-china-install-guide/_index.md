@@ -1,7 +1,12 @@
 ---
+
+
+
 title: "ALFA AWUS036AXM 中国安装指南：Kali Linux, Ubuntu, Debian 和 树莓派"
 description: "专为国内用户准备的 ALFA AWUS036AXM 安装教程。使用国内镜像源，涵盖 MT7921AUN WiFi 6E 驱动配置，支持监听模式和 VIF。适用于 Kali Linux, Ubuntu, Debian 以及树莓派。无需访问 GitHub。"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +17,28 @@ series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036axm/"
 series_order: 6
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
+faq:
+  - question: "AWUS036AXM 用什么芯片？支持 WiFi 6E 吗？"
+    answer: "采用 MediaTek MT7921AUN 芯片，支持 WiFi 6E 三频段（2.4G/5G/6G Hz）。"
+  - question: "AWUS036AXM 的驱动需要手动安装吗？"
+    answer: "不需要，mt7921u 驱动自 Linux 核心 5.18 起已内置，仅需安装固件软件包。"
+  - question: "AWUS036AXM 支持 VIF 虚拟接口吗？"
+    answer: "支持，MT7921AUN 完整支持核心原生 VIF，可同时连网与监听数据包。"
+  - question: "Ubuntu 22.04 安装 AWUS036AXM 为什么驱动加载失败？"
+    answer: "Ubuntu 22.04 默认核心 5.15 太旧，需安装 HWE 核心升级至 5.18 以上。"
+  - question: "AWUS036AXM 的 USB ID 是多少？"
+    answer: "MediaTek MT7921AUN 的 USB ID 为 0e8d:7961，用 lsusb 可确认。"
 ---
 
+
+
+
 想要体验 WiFi 6E 的极速？AWUS036AXM 是个非常硬核的选择，而且它那个节省空间的 L 型接口设计真的很贴心，不会挡住笔记本相邻的 USB 口。
+
+{{< tldr >}}
+AWUS036AXM 采用 MT7921AUN 芯片支持 WiFi 6E，驱动核心内置，安装固件软件包后即可使用监听模式、数据包注入与 VIF 功能。
+{{< /tldr >}}
+
 
 它的 MT7921AUN 芯片其实已经内置在 5.18 以上版本的 Linux 内核里了，但国内的小伙伴在实际使用中往往会卡在“固件下载”这一步。本指南将带你避开所有网络坑，全程使用国内镜像源，手把手教你搞定监听模式、数据包注入和好用的 VIF 功能。
 
@@ -258,6 +282,9 @@ sudo ip link set mon0 up
 | 中科大镜像站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 推荐 |
 | 阿里云镜像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推荐 |
 
+
+{{< faq >}}
+
 ## 更多 Alfa 网卡中国安装指南
 
 - [AWUS036ACH 中国安装指南](/zh-cn/blog/awus036ach-china-install-guide/)
@@ -270,3 +297,10 @@ sudo ip link set mon0 up
 - [AWUS036EACS 中国安装指南](/zh-cn/blog/awus036eacs-china-install-guide/)
 
 折腾过程中遇到搞不定的，欢迎在下面评论区留言，或者去 [yupitek.com](https://yupitek.com/zh-cn/contact/) 找我们。
+
+## 参考文献
+
+1. [Linux Kernel mt7921 驱动](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [aircrack-ng 官方文档](https://www.aircrack-ng.org/)
+3. [ALFA Network 官网](https://www.alfa.com.tw/)
+4. [Kali Linux 官方文档](https://www.kali.org/docs/)

@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["天線", "APA-M25", "ARS-NT5B7", "RP-SMA", "WiFi網路卡", "ALFA-Network", "訊號增強"]
 featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ALFA 網卡的天線可以自行更換嗎？"
+    answer: "可以。配備 RP-SMA 接頭的 ALFA 網卡如 AWUS036ACH、AWUS036ACM、AWUS036AXML 均可更換天線，無需工具，逆時針旋下再順時針旋入即可。"
+  - question: "RP-SMA 接頭是什麼？"
+    answer: "RP-SMA 是反極性 SMA 接頭，公頭中央為插孔而非針腳，與標準 SMA 極性相反但外觀相似，ALFA 所有配件天線均採用此規格。"
+  - question: "定向天線和全向天線該怎麼選？"
+    answer: "定向天線適合已知目標方向的定點稽核，全向天線適合移動巡查或目標位置未知的場景，依使用環境選擇。"
+  - question: "APA-M25 和 ARS NT5B7 有什麼差別？"
+    answer: "APA-M25 是 7 dBi 定向板狀天線適合室內聚焦測試，ARS NT5B7 是 5/7 dBi 全向天線適合室內外通用，前者方向性強後者覆蓋廣。"
+  - question: "升級天線需要安裝驅動或設定嗎？"
+    answer: "不需要。天線升級純屬硬體更換，無需更新驅動、設定或重開機，安裝完成後網卡立即以新天線運作。"
 ---
+
+ALFA 網卡配備 RP-SMA 接頭可直接更換天線，APA-M25 定向板狀天線適合室內稽核，ARS NT5B7 全向天線適合通用場景，無需工具或驅動設定。
+
+{{< tldr >}}
+ALFA 網卡一律採用 RP-SMA 接頭，五款天線配件涵蓋單頻至三頻、定向至全向，安裝無需工具不到 30 秒，升級後訊號強度可提升 4-8 dBm。
+{{< /tldr >}}
 
 ## 為什麼要升級天線？
 
@@ -251,6 +270,12 @@ ALFA 天線升級完全不需要工具，也不需要更動任何軟體：
 
 ---
 
+---
+
+{{< faq >}}
+
+---
+
 ## 快速參考：網路卡與天線搭配建議
 
 | 網路卡 | 推薦天線 | 原因 |
@@ -262,3 +287,13 @@ ALFA 天線升級完全不需要工具，也不需要更動任何軟體：
 | 專注 2.4 GHz 作業 | APA-M04 | 單頻段增益最佳化 |
 
 升級 ALFA 網路卡的天線，是改善無線工具組中最簡單、影響最立竿見影的操作之一。根據你的頻段需求、方向性考量與部署環境做出選擇——訊號品質的改善將是即時且可量測的。
+
+---
+
+## 參考來源
+
+1. [ALFA Network 官方網站 — 天線配件產品線](https://www.alfa.com.tw/)
+2. [Linux Wireless — mac80211 無線驅動架構文件](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)
+3. [IEEE 802.11 標準文件 — 無線區域網路規範](https://standards.ieee.org/ieee/802.11/)
+4. [aircrack-ng — 無線安全工具組官方網站](https://www.aircrack-ng.org/)
+5. [FCC Part 15 — 未授權射頻設備規範](https://www.fcc.gov/engineering-technology-laboratory-division/general/radio-spectrum-and-rulemaking)

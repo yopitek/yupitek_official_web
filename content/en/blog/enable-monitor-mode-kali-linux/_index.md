@@ -2,16 +2,41 @@
 title: "How to Enable Monitor Mode on Kali Linux 2026: Complete WiFi Adapter Guide"
 description: "Step-by-step guide to enabling monitor mode on Kali Linux 2024/2025 using airmon-ng or iw command. Covers compatible ALFA adapters, troubleshooting, and verification with airodump-ng."
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "How is monitor mode different from managed mode?"
+    answer: "Monitor mode lets the adapter capture all 802.11 frames in the air, unrestricted by managed mode which only receives packets matching its own MAC. It is the foundation of wireless penetration testing."
+  - question: "What is the difference between airmon-ng and iw for enabling monitor mode?"
+    answer: "airmon-ng automatically handles interfering processes and creates a wlan0mon virtual interface. iw directly modifies the existing interface without creating a new one, suited for fine-grained control."
+  - question: "What should I do if the interface auto-switches back to managed mode?"
+    answer: "wpa_supplicant or NetworkManager restarted in the background. Run airmon-ng check kill to terminate these processes."
+  - question: "Which ALFA adapters fully support monitor mode on Kali Linux?"
+    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN), and AWUS036ACM (MT7612U) all fully support it. ACM is plug-and-play."
+  - question: "How do I fix the airodump-ng Fixed channel wlan0mon: -1 error?"
+    answer: "It means airodump-ng cannot switch channels. Run iwconfig wlan0mon channel 1 to set the channel, and kill any residual wpa_supplicant processes."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["monitor-mode", "kali-linux", "airmon-ng", "iw", "wifi-adapter", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 ---
+Monitor mode is a special operating mode for wireless network interface cards (NICs) that allows the adapter to capture **all** 802.11 frames in the air — not just those addressed to your device. In normal "managed" mode, your adapter only receives packets destined for its MAC address and discards everything else. Monitor mode lifts that filter entirely.
 
 ## What Is Monitor Mode and Why It Matters for Pentesting
 
-Monitor mode is a special operating mode for wireless network interface cards (NICs) that allows the adapter to capture **all** 802.11 frames in the air — not just those addressed to your device. In normal "managed" mode, your adapter only receives packets destined for its MAC address and discards everything else. Monitor mode lifts that filter entirely.
+{{< tldr >}}
+Monitor mode removes the restriction of only receiving packets addressed to the adapter, forming the foundation of wireless penetration testing. Use airmon-ng or iw with an ALFA adapter to reliably enable it on Kali Linux.
+{{< /tldr >}}
+
+
+Monitor mode lets a wireless adapter capture all 802.11 frames in the air, which is the foundation for tools like airodump-ng, Wireshark, and Kismet. On Kali Linux, it can be enabled with airmon-ng or iw commands.
+
+
+
+
+
+
 
 For wireless penetration testers, monitor mode is foundational. Without it, tools like **airodump-ng**, **Wireshark** (in wireless capture mode), or **Kismet** cannot passively intercept network traffic. Monitor mode enables:
 
@@ -273,8 +298,17 @@ Verify the interface is back in managed mode with `iwconfig` and reconnect to yo
 
 ---
 
+{{< faq >}}
+
 ## Summary
 
 Enabling monitor mode on Kali Linux is a two-step process: stop interfering services, then switch the interface mode using either `airmon-ng` or `iw`. The key to success is using an adapter with a supported chipset. ALFA Network adapters with RTL8812AU, MT7921AUN, MT7612U chipsets provide the most reliable out-of-the-box experience on Kali Linux.
 
 Browse the full range of [ALFA Network wireless adapters available from Yopitek](/en/products/alfa/) — Taiwan's authorized ALFA Network distributor — to find the right adapter for your wireless security research.
+
+## References
+
+1. [aircrack-ng Official Documentation](https://www.aircrack-ng.org/documentation.html)
+2. [Kali Linux Official Documentation](https://www.kali.org/docs/)
+3. [Linux Wireless mac80211 Subsystem](https://wireless.wiki.kernel.org/en/developers/Documentation/mac80211)
+4. [iw Command Documentation](https://wireless.wiki.kernel.org/en/users/Documentation/iw)

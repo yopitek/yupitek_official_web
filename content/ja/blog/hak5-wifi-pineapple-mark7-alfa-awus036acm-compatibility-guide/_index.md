@@ -1,4 +1,5 @@
 ---
+
 title: "HAK5 WiFi Pineapple Mark VII + ALFA AWUS036ACM：5GHz 完全セットアップガイド（2026）"
 description: "HAK5 WiFi Pineapple MK7 と ALFA AWUS036ACM (MT7612U) の完全互換性ガイド — プラグアンドプレイの 5GHz モニターモード、パケットインジェクション、PineAP 拡張。検証済みコマンド付きのステップバイステップ設定手順。ドライバーのコンパイル不要。"
 date: 2026-06-10
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["HAK5", "WiFi-Pineapple", "AWUS036ACM", "MT7612U", "monitor-mode", "packet-injection", "PineAP", "OpenWrt", "5GHz"]
 featureimage: "/images/blog/hak5-pineapple-mark7-alfa-awus036acm.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "WiFi Pineapple Mark VIIに外付けアダプターは必要ですか？"
+    answer: "必要です。MK7内蔵無線は2.4 GHzのみをサポートし、2026年のほとんどのネットワークは5 GHzに移行済みで、外付けAWUS036ACMで5 GHzモニタリングとインジェクション機能を追加できます。"
+  - question: "AWUS036ACMがMK7でプラグアンドプレイなのはなぜですか？"
+    answer: "MK7 Firmware 2.xにkmod-mt76x2uドライバーがプリロードされており、MT7612UチップセットはLinux 4.19以降カーネルに内蔵されているため、コンパイルやインストールが不要です。"
+  - question: "MK7のUSB 2.0はAWUS036ACMのパフォーマンスを制限しますか？"
+    answer: "USB 2.0はスループットを150〜250 Mbpsに制限しますが、パケットキャプチャやハンドシェイク収集などのペネトレーションテストワークロードには影響せず、高スループットのブリッジングのみ制限されます。"
+  - question: "MK7でMonitor Modeをどう有効にしますか？"
+    answer: "SSHでログイン後、airmon-ng start wlan3コマンドを実行するとインターフェースがwlan3monにリネームされ、iwconfigでモードを確認します。"
+  - question: "MK7と互換性のないALFAアダプターは？"
+    answer: "AWUS036AXとAWUS036AXERはRTL8832BUチップを使用し、AWUS036EACSはRTL8811CUを使用し、ドライバーがモニターモードやインジェクションをサポートしないため互換性がありません。"
 ---
 
 HAK5 WiFi Pineapple Mark VII は、ポータブルワイヤレスセキュリティ監査のゴールドスタンダードです。しかし初期状態では重大な制限があります：内蔵無線は **2.4 GHz** のみに対応しています。2026 年現在、ほとんどの企業および家庭用ネットワークは 5 GHz に移行しており、より優れたパフォーマンスと混雑の少なさを実現しています。
 
+
+{{< tldr >}}
+AWUS036ACMはMT7612Uチップセットを採用し、MK7 Firmware 2.xにドライバーがプリロード、挿入後wlan3インターフェースとして認識され、5 GHzモニターモード、パケットインジェクション、PineAP拡張をサポート、10分でセットアップ完了します。
+{{< /tldr >}}
 ここで **ALFA AWUS036ACM** の出番です。Hak5 が[公式に互換性を確認](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters)した数少ない 802.11ac アダプターの一つであり、MK7 Firmware 2.x にプリロードされた `mt76x2u` カーネルドライバーのおかげで、**ドライバーのコンパイルが一切不要**のプラグアンドプレイを実現します。
 
 本ガイドでは、ハードウェア仕様、ドライバーの互換性分析、検証済みの 7 ステップセットアップ手順、完全なペネトレーションテストトポロジーを網羅しています。
@@ -147,6 +165,11 @@ EOF
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 7. 推奨
 
 **ALFA AWUS036ACM は、WiFi Pineapple Mark VII を 5 GHz に拡張するための現在入手可能な最適なアダプターです。**
@@ -156,3 +179,13 @@ EOF
 Yupitek は ALFA Network 正規代理店です。全 ALFA × HAK5 統合シナリオに対して完全な技術サポートを提供します。
 
 *設定サポートが必要ですか？Yupitek テクニカルサポートまで：[yupitek.com/support](/ja/support/)*
+
+---
+
+## 参考文献
+
+1. [Hak5公式ドキュメント — 互換802.11acアダプターリスト](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters)
+2. [OpenWrt mt76ドライバーリポジトリ — GitHub](https://github.com/openwrt/mt76)
+3. [aircrack-ng — 無線セキュリティツールスイート公式ウェブサイト](https://www.aircrack-ng.org/)
+4. [ALFA Network公式ウェブサイト — AWUS036ACM製品仕様](https://www.alfa.com.tw/)
+5. [Linux Wireless — MT76x2Uドライバー説明](https://wireless.wiki.kernel.org/en/users/drivers/mt76)

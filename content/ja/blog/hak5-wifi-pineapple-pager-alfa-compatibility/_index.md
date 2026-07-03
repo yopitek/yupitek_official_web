@@ -1,4 +1,5 @@
 ---
+
 title: "HAK5 WiFi Pineapple Pager × ALFA Network：外付けUSBワイヤレスカードの互換性評価とセットアップガイド"
 description: "HAK5 WiFi Pineapple PagerのOpenWrt環境下におけるALFA Network外付けUSBワイヤレスカードとの互換性を深く検証した技術レポートとインストールガイドです。MIPSアーキテクチャのクロスコンパイル、USB 2.0の給電制限、ドライバーの設定について解説します。"
 date: 2026-06-19
@@ -7,10 +8,28 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH", "compatibility", "wireless-security"]
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "HAK5 WiFi Pineapple Pagerに外付けALFAアダプターを接続できますか？"
+    answer: "できますが、MIPSアーキテクチャの制限とUSB 2.0給電に注意が必要です。AWUS036ACMが首选で、カーネル内蔵ドライバーが最も安定しています。"
+  - question: "Pagerに電源付きUSB Hubが必要なのはなぜですか？"
+    answer: "PagerはUSB 2.0ポートのみで最大出力500mAですが、高出力ALFAアダプターはピーク720mAに達し、直接挿入すると再起動やカーネルクラッシュを引き起こします。"
+  - question: "AWUS036ACMがPager首选アダプターなのはなぜですか？"
+    answer: "MT7612UドライバーはOpenWrt 6.6カーネルに統合されており、Pagerでopkgから直接インストールでき、クロスコンパイル不要で最も安定しています。"
+  - question: "MIPSアーキテクチャはドライバーインストールにどんな制限がありますか？"
+    answer: "PagerはMIPS32ベースのMT7628ANでDKMSをサポートせず、GCCツールチェーンがないため、内蔵ドライバー以外は外部x86ホストでクロスコンパイルする必要があります。"
+  - question: "RTL8812AUのPagerでの既知の問題は？"
+    answer: "RTL8812AUはMIPSプラットフォームでwiphy_registerカーネルエラーが発生しインターフェースを読み込めない場合があり、コミュニティ修正パッチの適用が必要です。AWUS036ACMの使用をお勧めします。"
 ---
+高出力のUSBワイヤレスカードをHAK5 Pagerに接続する前に、以下の2つの大きなハードウェア・ソフトウェアの壁を理解しておく必要があります。
 
 # HAK5 WiFi Pineapple Pager × ALFA Network：外付けUSBワイヤレスカードの互換性評価とセットアップガイド
 
+
+{{< tldr >}}
+PagerはMIPSアーキテクチャでDKMS非対応、AWUS036ACMはMT7612UドライバーがOpenWrt 6.6カーネルに内蔵でプラグアンドプレイ。AWUS036ACHはクロスコンパイルが必要でwiphy bugあり、USB 2.0給電は500mAのため外部Hubが必要です。
+{{< /tldr >}}
 ワイヤレスネットワークのセキュリティ監査（ペネトレーションテスト）には、高度な精度、汎用性、そして適切なハードウェアが不可欠です。**HAK5 WiFi Pineapple Pager**は、強力な**PineAP v8**エンジンを搭載した超ポータブルなポケットサイズの監査ツールとして、多くのセキュリティエンジニアの注目を集めています。
 
 しかし、監査範囲の拡大、デュアルバンド（2.4 GHzおよび5 GHz）の同時運用、あるいは内蔵無線に干渉しないマルチチャネルパッシブモニタリングなどを目的として、多くの専門家から次のような質問が寄せられます。**「HAK5 Pagerに外付けのALFA Networkワイヤレスアダプターを接続することは可能でしょうか？」**
@@ -22,8 +41,6 @@ featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
 ---
 
 ## 1. 重要な技術制限
-
-高出力のUSBワイヤレスカードをHAK5 Pagerに接続する前に、以下の2つの大きなハードウェア・ソフトウェアの壁を理解しておく必要があります。
 
 ### 1.1 CPUアーキテクチャ：MIPSアーキテクチャの制約
 x86_64アーキテクチャの標準的なKali Linuxマシンや、ARMを採用するRaspberry Piとは異なり、HAK5 Pagerには**MediaTek MT7628AN SoC**（OpenWrtでは`mipsel_24kc`としてコンパイルされる**MIPS32r2, Little-Endian**コア）が搭載されています。
@@ -179,11 +196,16 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 5. まとめ・推奨構成
 
 ALFA NetworkのワイヤレスカードとHAK5 WiFi Pineapple Pagerを組み合わせることで、ステルス性と性能を両立したポータブル無線ペネトレーションテストステーションが完成します。ただし、以下のハードウェア選定は極めて重要です。
 
-- **プラグ＆プレイで即戦力**：[ALFA AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm)をお選びください。OpenWrtカーネルとの相性が抜群で、極めて安定しています。
+- **プラグ＆プレイで即戦力**：[ALFA AWUS036ACM](https://yupitek.com/ja/products/alfa/awus036acm)をお選びください。OpenWrtカーネルとの相性が抜群で、極めて安定しています。
 - **電源供給の確保**：動作の切断を防ぎ、十分な電波強度を維持するため、必ず**セルフパワー（外部給電）対応のUSBハブ**をご使用ください。
 
 技術的なご質問、ハードウェアの選定、またはカスタムOpenWrtビルドのご相談は、**Yupitekサポートチーム**までお気軽にお問い合わせください。
@@ -192,3 +214,13 @@ ALFA NetworkのワイヤレスカードとHAK5 WiFi Pineapple Pagerを組み合�
 - 📧 お問い合わせ窓口: [sales@yupitek.com](mailto:sales@yupitek.com)
 - 📞 電話番号: +886-2-87325338
 - 📍 本社所在地: 1F., No. 72, Ln. 34, Fuyang St., Xinyi Dist., Taipei City, Taiwan
+
+---
+
+## 参考文献
+
+1. [Hak5公式ドキュメント — WiFi Pineapple製品ドキュメント](https://documentation.hak5.org/)
+2. [OpenWrt公式ウェブサイト — OpenWrt 24.10リリース](https://openwrt.org/)
+3. [OpenWrt mt76ドライバーリポジトリ — GitHub](https://github.com/openwrt/mt76)
+4. [aircrack-ng/rtl8812au — コミュニティドライバーGitHubリポジトリ](https://github.com/aircrack-ng/rtl8812au)
+5. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)

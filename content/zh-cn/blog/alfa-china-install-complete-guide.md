@@ -1,6 +1,11 @@
 ---
+
+
+
 title: "完整教程：在中国大陆 Linux 系统安装所有 Alfa USB WiFi 网卡 — Kali、Ubuntu、Raspberry Pi"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 slug: "alfa-china-install-complete-guide"
 tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "驱动程序", "中国", "监控模式", "封包注入", "无线网络"]
@@ -9,11 +14,31 @@ series: ["alfa-china-install-guide"]
 series_order: 9
 description: "终极 Alfa USB WiFi 网卡 Linux 安装指南，适用于中国大陆用户。涵盖 Kali Linux、Ubuntu 22/24、Debian、Raspberry Pi，全程使用境内镜像，无需访问 GitHub。"
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
+faq:
+  - question: "在中国安装 Alfa WiFi 网卡需要翻墙吗？"
+    answer: "不需要，全程使用中科大、阿里云、清华等国内镜像及 Gitee 源码镜像即可完成。"
+  - question: "哪款 Alfa 网卡最适合监听模式和数据包注入？"
+    answer: "AWUS036ACM 搭载 MT7612U 芯片，驱动核心内置且完整支持 VIF，是最佳选择。"
+  - question: "哪款 Alfa 网卡支持 WiFi 6？"
+    answer: "AWUS036AX 和 AWUS036AXER 采用 RTL8832BU 芯片支持 WiFi 6，Ubuntu 24.04 免驱即用。"
+  - question: "哪款 Alfa 网卡支持 WiFi 6E？"
+    answer: "AWUS036AXM 和 AWUS036AXML 采用 MT7921AUN 芯片支持 WiFi 6E 三频段。"
+  - question: "树莓派上使用 Alfa 网卡需要注意什么？"
+    answer: "务必搭配有源 USB Hub 供电，并刷 Kali ARM64 版本以获得最佳驱动支持。"
 ---
+如果您正在阅读本文，您可能购买了 Alfa USB WiFi 网卡后遇到了以下问题：
 
 ## 欢迎阅读 Alfa Linux 终极安装指南
 
-如果您正在阅读本文，您可能购买了 Alfa USB WiFi 网卡后遇到了以下问题：
+{{< tldr >}}
+中国大陆 Alfa WiFi 网卡 Linux 安装终极指南，涵盖 Kali、Ubuntu、Debian、树莓派，支持 RTL8812AU、MT7612U、RTL8832BU 等所有芯片，全程国内镜像免翻墙。
+{{< /tldr >}}
+
+
+本指南涵盖在中国大陆所有主要 Linux 发行版上安装每一款 Alfa USB WiFi 网卡的完整步骤，全程使用国内镜像，无需访问 GitHub。
+
+
+
 
 - 您在中国大陆，无法访问 GitHub
 - 驱动程序安装步骤复杂难懂
@@ -656,6 +681,9 @@ sudo ip link set mon0 up
 
 ---
 
+
+{{< faq >}}
+
 ## 结语
 
 本指南涵盖了在**所有主要 Linux 发行版**上安装**所有 Alfa USB WiFi 网卡**的方法，全程使用**中国大陆可访问的资源**。完成后您应能：
@@ -686,3 +714,11 @@ sudo ip link set mon0 up
 ---
 
 *最后更新：2026 年 4 月 24 日*
+
+## 参考文献
+
+1. [aircrack-ng 官方文档](https://www.aircrack-ng.org/)
+2. [Linux Kernel mt76 驱动](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+3. [ALFA Network 官网](https://www.alfa.com.tw/)
+4. [Kali Linux 官方文档](https://www.kali.org/docs/)
+5. [Gitee 驱动源码镜像](https://gitee.com/mirrors)

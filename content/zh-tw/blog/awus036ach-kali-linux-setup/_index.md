@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "Kali-Linux", "監聽模式", "封包注入", "RTL8812AU", "airmon-ng"]
 featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036ACH 在 Kali Linux 上需要額外安裝驅動嗎？"
+    answer: "需要。RTL8812AU 並非主線核心驅動，需從 aircrack-ng GitHub 儲存庫安裝，建議使用 DKMS 確保核心更新後仍可運作。"
+  - question: "如何確認 AWUS036ACH 已被系統偵測到？"
+    answer: "執行 lsusb 指令，尋找 ID 0bda:8812 即可確認 Realtek RTL8812AU 已被識別，再以 lsmod 確認驅動模組已載入。"
+  - question: "啟用監聽模式後介面消失怎麼辦？"
+    answer: "通常是 NetworkManager 重新接管介面所致。執行 airmon-ng check kill 終止干擾行程，再重新啟用監聽模式即可。"
+  - question: "封包注入測試成功率多少才算正常？"
+    answer: "成功率 80% 以上代表運作可靠。低於 50% 則需檢查天線位置、USB 供電是否充足，或驅動程式是否正確安裝。"
+  - question: "核心更新後 AWUS036ACH 驅動失效如何處理？"
+    answer: "若使用 DKMS 安裝，驅動會自動重建。若失效，執行 dkms autoinstall 並確認 linux-headers 套件與當前核心版本一致。"
 ---
+
+ALFA AWUS036ACH 是 Kali Linux 上最廣泛使用的 USB 無線網卡，搭載 RTL8812AU 晶片，完整支援監聽模式與封包注入。安裝 aircrack-ng 驅動即可運作。
+
+{{< tldr >}}
+AWUS036ACH 搭載 RTL8812AU 晶片，透過 aircrack-ng 驅動搭配 DKMS 安裝，可穩定啟用監聽模式與封包注入，是 Kali Linux 滲透測試的標準配備。
+{{< /tldr >}}
 
 ## 前言
 
@@ -340,6 +359,8 @@ ALFA AWUS036ACH 由台灣授權代理商**榆閤科技（Yopitek）**在台灣�
 
 ---
 
+{{< faq >}}
+
 ## 小結
 
 完成本教學後，你已成功在 Kali Linux 上設定好 ALFA AWUS036ACH，具備了執行 Wi-Fi 安全測試的基礎能力：
@@ -350,3 +371,10 @@ ALFA AWUS036ACH 由台灣授權代理商**榆閤科技（Yopitek）**在台灣�
 - ✅ 常見問題排解方法
 
 有了正確運作的無線網卡，你可以進一步學習使用 `airodump-ng`、`aireplay-ng`、`aircrack-ng` 等工具，探索 Wi-Fi 安全的更多面向。記得所有測試必須在合法授權的環境中進行。
+
+## 參考來源
+
+1. [aircrack-ng 官方 rtl8812au 驅動程式儲存庫](https://github.com/aircrack-ng/rtl8812au)
+2. [Kali Linux 官方文件](https://www.kali.org/docs/)
+3. [Realtek RTL8812AU 規格說明](https://www.realtek.com/)
+4. [Linux Wireless 官方文件](https://wireless.wiki.kernel.org/)

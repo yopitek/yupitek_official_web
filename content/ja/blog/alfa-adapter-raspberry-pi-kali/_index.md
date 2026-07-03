@@ -1,4 +1,5 @@
 ---
+
 title: "Raspberry Pi と Kali Linux で ALFA WiFi アダプターを使う：セットアップガイド"
 description: "Kali Linux ARM64 を動かす Raspberry Pi に ALFA USB WiFi アダプターをインストール。AWUS036ACH RTL8812AU ドライバーのコンパイル、モニターモード、ポータブルペネトレーションテスト環境の構築を解説。"
 date: 2026-03-24
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ペネトレーションテストに最も適したRaspberry Piはどれですか？"
+    answer: "Raspberry Pi 5（4GBまたは8GB）が最適です。Pi 4（4GB以上）でも正常に動作します。Pi 3B+はリアルタイムパケットキャプチャには速度が不足しています。"
+  - question: "AWUS036ACHはRaspberry Piでドライバーをコンパイルする必要がありますか？"
+    answer: "必要です。RTL8812AUはメインラインカーネルに含まれていません。まずKali DKMSパッケージrealtek-rtl88xxau-dkmsを試し、失敗した場合はaircrack-ng GitHubから手動でコンパイルしARM64プラットフォームフラグを切り替えてください。"
+  - question: "ヘッドレスPiでwlan0をモニターモードに使えますか？"
+    answer: "推奨しません。wlan0はPi内蔵WiFiでSSH接続に使用されます。airmon-ng check killを実行するとSSHが切断されるため、wlan1（ALFAアダプター）を使用し、イーサネットまたはtmuxで接続を維持してください。"
+  - question: "AWUS036AXMはRaspberry Piでプラグアンドプレイですか？"
+    answer: "はい。MT7921AUNドライバーはカーネル5.18以降内蔵で、Kali ARM64イメージのカーネルバージョンはさらに高いです。firmware-misc-nonfreeファームウェアパッケージをインストールするだけです。"
+  - question: "Raspberry Pi上のAWUS036ACHにどう給電しますか？"
+    answer: "AWUS036ACHは約500mWを消費し、Piに直接挿すとクロックダウンや再起動を引き起こす可能性があります。電源付きUSB 3.0ハブを使用し、3A以上の公式Pi USB-C電源アダプターと組み合わせてください。"
 ---
 
 Kali Linux を搭載したノートパソコンは標準的なペネトレーションテストワークステーションですが、それが唯一の選択肢ではありません。Raspberry Pi 4 または Pi 5 に ALFA USB WiFi アダプターを組み合わせることで、コンパクトでファンレス、パッシブ冷却のプラットフォームが完成します。ジャケットのポケットに収まり、USB-C モバイルバッテリーで動作し、対象環境に無人で数時間放置できます。Kali Linux ARM64 イメージは Offensive Security が公式提供しており、Pi 4 および Pi 5 でエミュレーションなしにネイティブ動作します。Aircrack-ng、Kismet、Wireshark、Bettercap など Kali の標準ツールセットが完全に使えます。
 
+
+{{< tldr >}}
+Raspberry Pi 4/5にKali Linux ARM64とALFAアダプターを組み合わせればポケットサイズのペネトレーションテストプラットフォームを作れます。AWUS036ACHはRTL8812AUドライバーのコンパイルが必要ですが、AWUS036ACMとAWUS036AXMはカーネル内蔵ドライバーでプラグアンドプレイです。電源付きUSBハブでの給電が必要です。
+{{< /tldr >}}
 最大の障壁はドライバーです。AWUS036ACH に搭載された RTL8812AU チップセットはメインラインカーネルに含まれていないため、アダプターを差し込んですぐ動作することは期待できません。実行中の ARM64 カーネルに対してドライバーをコンパイルする必要があり、コンパイルフラグは x86-64 と異なります。本ガイドではすべての手順を順を追って説明します。
 
 ---
@@ -271,6 +289,21 @@ Kismet のログは検出されたすべてのネットワークの GPS 座標�
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 関連記事
 
 デスクトップ版 Kali Linux と Ubuntu での RTL8812AU ドライバーの完全インストールガイドは、[Kali Linux と Ubuntu への ALFA ドライバーのインストール](/ja/blog/install-alfa-driver-kali-ubuntu/)をご覧ください。どのアダプターを購入するか検討中の場合は、[ALFA WiFi アダプター購入ガイド 2026](/ja/blog/alfa-wifi-adapter-buyer-guide-2026/) でチップセットの詳細と用途別の推奨情報をすべての現行モデルについて確認できます。
+
+---
+
+## 参考文献
+
+1. [Kali Linux ARM公式ダウンロード](https://www.kali.org/get-kali/#kali-arm)
+2. [aircrack-ng rtl8812auドライバープロジェクト](https://github.com/aircrack-ng/rtl8812au)
+3. [Raspberry Pi公式ウェブサイト](https://www.raspberrypi.com/)
+4. [Linux Kernel mt76ドライバードキュメント](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)

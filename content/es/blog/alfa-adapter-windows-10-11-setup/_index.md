@@ -7,9 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "adaptador-wifi", "instalacion-driver", "acrylic-wifi"]
 featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Windows admite el modo monitor de las tarjetas de red ALFA?"
+    answer: "Windows no admite el modo monitor completo de forma nativa. El modelo de controlador NDIS no permite la captura de tramas 802.11 sin procesar; solo Acrylic WiFi Pro puede hacer escaneo pasivo. El modo monitor completo requiere Kali Linux."
+  - question: "¿Se puede hacer inyección de paquetes en Windows?"
+    answer: "No. Actualmente ningún controlador de Windows admite la inyección de tramas 802.11 sin procesar para tarjetas ALFA; esta función solo está disponible en Linux."
+  - question: "¿Qué tarjeta ALFA tiene la mejor compatibilidad con Windows?"
+    answer: "El AWUS036ACH (RTL8812AU) y el AWUS036ACM (MT7612U) tienen controladores firmados con WHQL, el historial de compatibilidad más completo con Windows 10/11 y la configuración plug-and-play más estable."
+  - question: "¿Windows 11 necesita instalación manual del controlador MT7921AUN?"
+    answer: "No. El controlador MT7921AUN ya está integrado en el almacén de controladores de Windows 11 (compilación 22000+); tras conectar la tarjeta, obtiene el controlador automáticamente en unos minutos."
+  - question: "¿Qué hacer si el Administrador de dispositivos muestra Code 43?"
+    answer: "Desinstala el controlador, reinicia, vuelve a conectar la tarjeta e instala el controlador manualmente con el método B. Si Code 43 persiste en varias máquinas, suele indicar un fallo de hardware."
 ---
 
 Los adaptadores USB WiFi de ALFA Network son ampliamente reconocidos en los círculos de investigación de seguridad y redes, pero la mayoría de los tutoriales se enfocan exclusivamente en Linux. La buena noticia para los usuarios de Windows: todos los adaptadores ALFA principales funcionan en Windows 10 y Windows 11 con drivers proporcionados por el fabricante — sin necesidad de compilar código fuente.
+
+{{< tldr >}}
+Las tarjetas de red ALFA funcionan plug-and-play en Windows 10/11 para conectarse a WiFi, pero el modelo de controlador NDIS no admite el modo monitor completo ni la inyección de paquetes. Para pruebas de seguridad cambia a Kali Linux (bare metal o VM con tránsito USB). Windows es adecuado para uso diario y estudios de WiFi.
+{{< /tldr >}}
 
 La diferencia crítica respecto a Linux es el modo monitor. En Linux, herramientas como `aircrack-ng` y `airodump-ng` aprovechan la captura raw 802.11 con inyección de paquetes. En Windows, el modelo de driver (NDIS) no expone las mismas capacidades de hardware. El modo monitor completo y la inyección de paquetes **no están disponibles de forma nativa en Windows**. Lo que Windows hace bien — y hace muy bien — es la conectividad plug-and-play y el escaneo WiFi con herramientas pulidas como Acrylic WiFi Analyzer.
 
@@ -255,8 +272,18 @@ La conclusión es clara: Windows es una excelente plataforma para adaptadores AL
 
 ---
 
+{{< faq >}}
+
 ## Guías Relacionadas
 
 - [Passthrough USB en VirtualBox y VMware para Adaptadores ALFA](/es/blog/alfa-adapter-virtualbox-vmware-usb/) — Ejecuta Kali Linux en una VM con soporte completo para adaptadores ALFA
 - [Guía de Instalación de Drivers para Kali Linux y Ubuntu](/es/blog/install-alfa-driver-kali-ubuntu/) — Instalación completa de drivers por chipset
 - [Guía de Compra de Adaptadores WiFi ALFA 2026](/es/blog/alfa-wifi-adapter-buyer-guide-2026/) — Qué adaptador es el adecuado para tu caso de uso
+
+## Referencias
+
+1. [Descarga oficial de controladores de ALFA Network](https://www.alfa.com.tw/service_1.html)
+2. [Documentación de controladores NDIS de Microsoft](https://learn.microsoft.com/windows-hardware/drivers/network/ndis-drivers)
+3. [Sitio oficial de Acrylic WiFi Analyzer](https://www.acrylicwifi.com/)
+4. [Sitio oficial de Npcap](https://npcap.com/)
+5. [Documentación oficial de Wireshark](https://www.wireshark.org/docs/)

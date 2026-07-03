@@ -12,6 +12,20 @@ series: ["alfa-china-install-guide"]
 series_order: 5
 related_product: "/pt/products/alfa/awus036axer/"
 featureimage: "/images/blog/awus036axer-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Qual chipset o AWUS036AXER usa? E o mesmo do AWUS036AX?"
+    answer: "Usa o mesmo chipset Realtek RTL8832BU, suportando WiFi 6, mas em um formato menor é mais portátil."
+  - question: "O AWUS036AXER precisa de instalação de driver no Ubuntu 24.04?"
+    answer: "Não. O kernel do Ubuntu 24.04 já suporta nativamente, sendo plug-and-play."
+  - question: "O AWUS036AXER  é adequado para pesquisa de segurança sem fio?"
+    answer: "Não muito. O suporte ao modo monitor do RTL8832BU  é limitado. Recomenda-se o AWUS036ACM ou AWUS036ACH."
+  - question: "Qual é o USB ID do AWUS036AXER?"
+    answer: "O USB ID do Realtek RTL8832BU e 0bda:885a, verificável com lsusb."
+  - question: "Preciso de VPN para instalar o AWUS036AXER na China?"
+    answer: "Não. Baixe o código fonte rtl8852bu do Gitee e instale as ferramentas de compilação usando espelhos nacionais."
 ---
 
 O AWUS036AXER é o adaptador WiFi 6 nano da ALFA — um dongle compacto projetado para ficar permanentemente conectado a um laptop. Seu chip RTL8832BU está fora do kernel em versões do Linux abaixo de 6.14, mas está incluído nativamente no Ubuntu 24.04 (kernel 6.8). Este guia usa mirrors do Gitee para kernels mais antigos. Não é necessário GitHub.
@@ -19,6 +33,16 @@ O AWUS036AXER é o adaptador WiFi 6 nano da ALFA — um dongle compacto projetad
 > **Nota de pesquisa de segurança:** O RTL8832BU tem suporte limitado ao modo monitor. Os resultados variam de acordo com a versão do kernel e do driver. Para injeção de pacotes confiável no Kali Linux, o [AWUS036ACM](/pt/blog/awus036acm-china-install-guide/) ou o [AWUS036ACH](/pt/blog/awus036ach-china-install-guide/) são melhores escolhas.
 
 > **Nota de alcance:** O AWUS036AXER possui uma antena integrada não removível. Para pesquisa de segurança, adaptadores com antenas RP-SMA externas (AWUS036ACH, AWUS036ACM) fornecem um alcance significativamente melhor.
+
+{{< tldr >}}
+O AWUS036AXER usa o chipset RTL8832BU. E um adaptador WiFi 6 mini portatil. No Ubuntu 24.04 e plug-and-play. Em outros sistemas, compile o rtl8852bu do Gitee.
+{{< /tldr >}}
+
+1. Adaptador **ALFA AWUS036AXER**
+2. Cabo USB-A
+3. Conexão de internet ativa
+
+
 
 ## Antes de Começar
 
@@ -249,6 +273,8 @@ sudo reboot
 | Mirror da USTC | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
 | Mirror da Huawei Cloud | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 
+{{< faq >}}
+
 ## Mais Guias de Adaptadores Alfa para a China
 
 - [Guia de Instalação AWUS036ACH China](/pt/blog/awus036ach-china-install-guide/) — RTL8812AU, alta potência
@@ -261,3 +287,10 @@ sudo reboot
 - [Guia de Instalação AWUS036EACS China](/pt/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 Perguntas? Deixe um comentário abaixo ou entre em contato conosco em [yupitek.com](https://yupitek.com/pt/contact/).
+
+## Referências
+
+1. [Site oficial da Realtek](https://www.realtek.com/)
+2. [Site oficial da ALFA Network](https://www.alfa.com.tw/)
+3. [Documentacao oficial do Kali Linux](https://www.kali.org/docs/)
+4. [Espelho Gitee rtl8852bu](https://gitee.com/mirrors/rtl8852bu)

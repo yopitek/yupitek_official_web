@@ -7,7 +7,24 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "passthrough-usb", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "VirtualBox nécessite-t-il l'Extension Pack pour utiliser les cartes ALFA ?"
+    answer: "Oui. VirtualBox doit avoir l'Extension Pack installé pour supporter l'USB 2.0 et 3.0 passthrough. Sans cela, seul l'USB 1.1 est disponible."
+  - question: "Faut-il choisir un contrôleur USB 2.0 ou 3.0 pour les cartes ALFA ?"
+    answer: "L'AWUS036AXML nécessite l'USB 3.0 (xHCI). L'AWUS036ACH est un périphérique USB 2.0 mais fonctionne avec xHCI. Réglez sur USB 3.0."
+  - question: "VMware Workstation nécessite-t-il des extensions supplémentaires ?"
+    answer: "Non. VMware Workstation 17+ et Fusion 13+ intègrent le support USB 2.0/3.0. Vérifiez que le service USB Arbitrator est en cours d'exécution."
+  - question: "Pourquoi lsusb voit la carte mais aucune interface wlan n'apparaît ?"
+    answer: "Le passthrough USB a réussi mais le pilote n'est pas chargé. RTL8812AU nécessite modprobe 88XXau, MT7921AUN nécessite modprobe mt7921u."
+  - question: "Que faire si la carte USB se déconnecte sans cesse sur un hôte Linux ?"
+    answer: "Désactivez l'auto-suspend USB : echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend, et vérifiez que l'utilisateur est dans le groupe vboxusers."
 ---
+
+{{< tldr >}}
+Pour utiliser une carte ALFA dans VirtualBox ou VMware, configurez l'USB passthrough. VirtualBox nécessite l'Extension Pack et le contrôleur USB 3.0. VMware intègre le support USB. L'AWUS036ACH utilise le pilote 88XXau, l'AWUS036AXML le pilote mt7921u.
+{{< /tldr >}}
 
 Faire fonctionner un adaptateur WiFi ALFA à l'intérieur d'une machine virtuelle (VM) n'est pas aussi simple que de le brancher en espérant que le système d'exploitation invité le reconnaisse. Contrairement aux dossiers partagés ou au réseau en pont (bridged), le mode moniteur et l'injection de paquets bruts nécessitent un **contrôle USB complet** — la VM doit posséder exclusivement le périphérique USB, sans le partager via la pile réseau de l'hôte. C'est ce qu'on appelle le passthrough USB, et bien le configurer est l'échec d'installation le plus courant pour les pentesters et les joueurs de CTF travaillant en VM.
 
@@ -358,6 +375,8 @@ Les machines virtuelles introduisent une couche de complexité entre votre adapt
 
 ---
 
+{{< faq >}}
+
 ## Étapes suivantes
 
 Avec le passthrough USB configuré et le mode moniteur vérifié, vous êtes prêt à continuer :
@@ -367,3 +386,12 @@ Avec le passthrough USB configuré et le mode moniteur vérifié, vous êtes pr�
 - **Test matériel de l'AWUS036AXML :** [Test de l'AWUS036AXML WiFi 6E](/fr/blog/awus036axml-wifi-6e-review/)
 
 Si vous hésitez encore sur l'adaptateur à acheter pour du pentesting basé sur VM, l'AWUS036ACH reste le choix le plus fiable en raison de son comportement mature en passthrough USB 2.0 et de son pilote éprouvé sur le terrain. L'AWUS036AXML est plus performante une fois que tout fonctionne, mais nécessite une configuration USB 3.0 plus minutieuse.
+
+---
+
+## Références
+1. [Page de téléchargement officielle VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+2. [Page produit VMware Workstation](https://www.vmware.com/products/workstation-pro.html)
+3. [Projet pilote aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+4. [Site officiel ALFA Network](https://www.alfa.com.tw/)
+5. [Documentation officielle Kali Linux](https://www.kali.org/docs/)

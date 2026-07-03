@@ -1,17 +1,41 @@
 ---
+
+
+
+
 title: "ALFA AWUS036ACH vs AWUS036ACM：Kali Linux 全面对比（2026）"
 description: "详细对比 ALFA AWUS036ACH 与 AWUS036ACM——芯片组、监听模式、数据包注入、驱动支持，以及哪款更适合 Kali Linux 渗透测试。"
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "AWUS036ACM", "对比", "Kali-Linux", "RTL8812AU", "MT7612U"]
 featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
+faq:
+  - question: "AWUS036ACH 和 AWUS036ACM 驱动安装有什么差异？"
+    answer: "AWUS036ACH 采 RTL8812AU 芯片，需通过 DKMS 编译安装 aircrack-ng 社群驱动，内核更新后可能需重新编译；AWUS036ACM 的 MT7612U 驱动自核心 4.19 起整合进主线，即插即用无需编译。"
+  - question: "哪款更适合 Monitor Mode 监听？"
+    answer: "AWUS036ACH 监听模式更稳定，双天线与 30 dBm 高功率在密集 AP 环境下数据包遗失率更低；ACM 亦支持监听但单天线功率较低，适合近距离捕获。"
+  - question: "新手应该选 ACH 还是 ACM？"
+    answer: "新手建议选 AWUS036ACM，MT7612U 核心原生驱动即插即用免编译；若需最强信号与最多教学资源且不怕 DKMS 编译流程，再选 AWUS036ACH。"
+  - question: "VM 虚拟机环境推荐哪款？"
+    answer: "VM 环境推荐 AWUS036ACM，USB 直通后核心原生驱动立即识别可用，无需在虚拟机内安装编译工具链；ACH 需在 VM 内额外安装驱动方能使用。"
 ---
+在 Kali Linux 渗透测试领域，ALFA Network 最受欢迎的两款 USB 网卡分别代表着截然不同的取舍方向。**AWUS036ACH** 是高功率、双天线的实力派，背后有久经考验的驱动历史；**AWUS036ACM** 则是紧凑型、内核原生方案，以简洁易用换取了部分性能上的让步。本文从每一个对渗透测试工程师真正重要的维度，全面剖析这两款网卡。
 
 ## 概述
 
-在 Kali Linux 渗透测试领域，ALFA Network 最受欢迎的两款 USB 网卡分别代表着截然不同的取舍方向。**AWUS036ACH** 是高功率、双天线的实力派，背后有久经考验的驱动历史；**AWUS036ACM** 则是紧凑型、内核原生方案，以简洁易用换取了部分性能上的让步。本文从每一个对渗透测试工程师真正重要的维度，全面剖析这两款网卡。
+{{< tldr >}}
+AWUS036ACH 适合专业任务，RTL8812AU 驱动搭配 30 dBm 双天线，监听注入最强；AWUS036ACM 求便携，MT7612U 核心原生驱动零编译，价格约 $30–40。
+{{< /tldr >}}
+
+
+专业渗透测试选 AWUS036ACH：RTL8812AU 驱动成熟、30 dBm 双天线带来最强监听与数据包注入。求即插即用便携选 AWUS036ACM：MT7612U 核心原生驱动，自核心 4.19 起即插即用零编译。
+
+
+
 
 ---
 
@@ -205,6 +229,9 @@ AWUS036ACM 约 $30–40，以下人群能从中获得极高性价比：
 
 ---
 
+
+{{< faq >}}
+
 ## 选购结论
 
 **选择 [AWUS036ACH](/zh-cn/products/alfa/awus036ach/)，适合：**
@@ -222,3 +249,10 @@ AWUS036ACM 约 $30–40，以下人群能从中获得极高性价比：
 - 在内核原生稳定性优先于社区驱动的情况
 
 如果只能拥有一款网卡，**AWUS036ACH** 在渗透测试方面是更强的选择。如果你需要一个零配置、随时可用的出行伴侣，**AWUS036ACM** 绝对值得在工具包中占有一席之地。
+
+## 参考文献
+
+1. aircrack-ng 社群维护 RTL8812AU 驱动程序仓库 — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. Linux 核心主线 MT76 驱动程序（`mt76x2u`，自核心 4.19 起整合）— [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
+3. ALFA Network 官方网站与产品规格 — [alfa.com.tw](https://www.alfa.com.tw)
+4. Yupitek — ALFA Network 台湾授权经销商 — [yupitek.com](https://www.yupitek.com)

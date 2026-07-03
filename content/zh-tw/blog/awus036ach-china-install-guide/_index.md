@@ -12,7 +12,26 @@ description: "手把手教你在中國境內使用國內鏡像源安裝 ALFA AWU
 related_product: "/zh-tw/products/alfa/awus036ach/"
 series_order: 1
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036ACH 用什麼晶片？需要額外安裝驅動嗎？"
+    answer: "AWUS036ACH 採用 Realtek RTL8812AU 晶片，驅動不在 Linux 核心內建，需要手動安裝。"
+  - question: "在中國安裝 AWUS036ACH 驅動需要翻牆嗎？"
+    answer: "不需要，全程使用中科大、阿里雲等國內鏡像及 Gitee 源碼鏡像即可完成安裝。"
+  - question: "AWUS036ACH 支援監聽模式和封包注入嗎？"
+    answer: "支援，安裝 RTL8812AU 驅動後用 airmon-ng 即可開啟監聽模式，aireplay-ng 可測試封包注入。"
+  - question: "AWUS036ACH 在樹莓派上能用嗎？"
+    answer: "可以，建議搭配帶供電的 USB Hub 並刷 Kali ARM64 版本使用。"
+  - question: "Kali Linux 安裝 AWUS036ACH 驅動的指令是什麼？"
+    answer: "Kali 可直接執行 sudo apt install realtek-rtl88xxau-dkms 安裝預編譯驅動。"
 ---
+
+ALFA AWUS036ACH 搭載 RTL8812AU 晶片，在中國透過國內鏡像源安裝驅動即可支援監聽模式與封包注入，全程無需翻牆。
+
+{{< tldr >}}
+AWUS036ACH 採用 RTL8812AU 晶片，Kali 用 apt 裝 DKMS 驅動，Ubuntu/Debian 從 Gitee 編譯，30 分鐘完成監聽模式與封包注入。
+{{< /tldr >}}
 
 你剛拿到 ALFA AWUS036ACH，結果 Linux 系統沒反應？別擔心，這很正常。這款網卡用的晶片需要 RTL8812AU 驅動，而且它不是插上就能用的。本指南會帶你花大約 30 分鐘完成安裝，全程只用國內鏡像源，完全不需要翻牆去 GitHub。
 
@@ -187,6 +206,8 @@ sudo reboot
 | 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 首選 |
 | Gitee | [gitee.com](https://gitee.com) | 驅動源碼 |
 
+{{< faq >}}
+
 ## 更多 Alfa 網卡中國指南
 
 - [AWUS036ACM 中國安裝指南](/zh-tw/blog/awus036acm-china-install-guide/) — MT7612U，免驅首選
@@ -194,3 +215,11 @@ sudo reboot
 - [AWUS036AXM 中國安裝指南](/zh-tw/blog/awus036axm-china-install-guide/) — WiFi 6E
 
 有問題？歡迎在下方留言，或者在 [yupitek.com](https://yupitek.com/zh-tw/contact/) 聯繫我們。
+
+## 參考來源
+
+1. [aircrack-ng 官方文件](https://www.aircrack-ng.org/)
+2. [ALFA Network 官網](https://www.alfa.com.tw/)
+3. [Kali Linux 官方文件](https://www.kali.org/docs/)
+4. [Gitee rtl8812au 鏡像](https://gitee.com/mirrors/rtl8812au)
+5. [Realtek RTL8812AU 驅動](https://www.realtek.com/)

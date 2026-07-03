@@ -7,11 +7,28 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["WPA3", "SAE", "dragonblood", "transition-mode", "PMF", "kali-linux", "ALFA-network", "penetration-testing"]
 featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿En qué se diferencian WPA3 y WPA2 en pruebas de seguridad?"
+    answer: "WPA3 usa el handshake SAE en lugar de PSK, ofrece confidencialidad hacia adelante y no es vulnerable a ataques de diccionario sin conexión. PMF es obligatorio, pero el modo de transición introduce una superficie de ataque de degradación."
+  - question: "¿Se puede descifrar sin conexión tras capturar el handshake SAE?"
+    answer: "No. Las redes SAE puras no generan hashes que se puedan descifrar. La captura de tramas SAE solo sirve para análisis a nivel de protocolo, confirmando la variante correcta y la negociación de PMF."
+  - question: "¿Qué es el ataque de degradación del modo de transición WPA3?"
+    answer: "Un AP en modo de transición acepta tanto SAE como PSK. Un atacante falsifica un AP malicioso puro WPA2; si el cliente no fuerza SAE, se completa la degradación y el handshake puede descifrarse sin conexión."
+  - question: "¿Se necesita una tarjeta de 6 GHz para probar WPA3?"
+    answer: "Solo para probar redes WPA3 en la banda de 6 GHz se necesita el AWUS036AXML. Las pruebas de WPA3 en 2.4/5 GHz pueden hacerse con el AWUS036ACH."
+  - question: "¿Aún hay que probar las vulnerabilidades Dragonblood?"
+    answer: "La mayoría de los firmwares de AP modernos ya las han parcheado, pero en entornos con firmware antiguo o sin parchear aún se deben probar ataques de canal lateral como CVE-2019-9494 e inundación SAE commit DoS."
 ---
 
 {{< alert "triangle-exclamation" >}}
 **Aviso Legal:** Todas las pruebas de seguridad inalámbrica deben realizarse únicamente en redes y dispositivos para los cuales se tenga autorización explícita y por escrito. Las técnicas de prueba WPA3, incluyendo la captura SAE, la desautenticación y el despliegue de AP fraudulentos, están sujetas a los mismos requisitos legales que cualquier otra actividad de evaluación inalámbrica. Solo pruebas autorizadas.
 {{< /alert >}}
+
+{{< tldr >}}
+Las pruebas de seguridad de WPA3 abarcan análisis de handshake SAE, ataque de degradación del modo de transición, evaluación de vulnerabilidades Dragonblood y verificación de PMF obligatorio. El AWUS036AXML se usa para pruebas de 6 GHz; el AWUS036ACH para 2.4/5 GHz.
+{{< /tldr >}}
 
 WPA3 representa una mejora significativa sobre WPA2 tanto en seguridad inalámbrica personal como empresarial. La Autenticación Simultánea de Iguales (SAE) reemplaza el handshake de Clave Pre-Compartida (PSK) con un intercambio de claves autenticado por contraseña que es resistente a ataques de diccionario fuera de línea. Los Marcos de Gestión Protegidos (PMF) son obligatorios. El secreto hacia adelante está incorporado.
 
@@ -290,8 +307,18 @@ Para el procedimiento completo de pruebas EAP/RADIUS, consulta el [framework de 
 
 ---
 
+{{< faq >}}
+
 ## Recursos Relacionados
 
 - [Evaluación de Seguridad Inalámbrica Empresarial: Un Framework Completo](/es/blog/enterprise-wireless-security-assessment/)
 - [Guía de Inyección de Paquetes: Prueba Tu Adaptador WiFi con aireplay-ng](/es/blog/packet-injection-guide/)
 - [Habilitar Modo Monitor en Kali Linux](/es/blog/enable-monitor-mode-kali-linux/)
+
+## Referencias
+
+1. [Artículo de investigación oficial de Dragonblood (Vanhoef y Ronen, 2019)](https://papers.mathyvanhoef.com/dragonblood.pdf)
+2. [Descripción de la certificación WPA3 de Wi-Fi Alliance](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [Documentación oficial de aircrack-ng](https://www.aircrack-ng.org/documentation.html)
+4. [Documentación de la herramienta hcxdumptool](https://github.com/ZerBea/hcxdumptool)
+5. [Estándar IEEE 802.11w PMF](https://standards.ieee.org/ieee/802.11/)

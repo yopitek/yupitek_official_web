@@ -2,6 +2,19 @@
 title: "ALFA AWUS036AX Driver Install Guide for China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
 description: "Step-by-step guide to install ALFA AWUS036AX drivers in China using domestic mirrors. RTL8832BU driver, WiFi 6 AX1800. Covers Kali Linux, Ubuntu 22/24 (in-kernel on 24.04), Debian, and Raspberry Pi. No GitHub required."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "What chipset does AWUS036AX use? Does it support WiFi 6?"
+    answer: "It uses the Realtek RTL8832BU chipset, supporting WiFi 6 (802.11ax) high-speed networking."
+  - question: "Does AWUS036AX need drivers on Ubuntu 24.04?"
+    answer: "No. Ubuntu 24.04 kernel natively supports RTL8832BU. Plug and play."
+  - question: "Is AWUS036AX suitable for wireless security research?"
+    answer: "Not ideal. RTL8832BU has limited monitor mode support. AWUS036ACM or AWUS036ACH are recommended instead."
+  - question: "Do I need a VPN to install AWUS036AX in China?"
+    answer: "No. Download rtl8852bu source from Gitee and install build tools from domestic mirrors."
+  - question: "What is the USB ID of AWUS036AX?"
+    answer: "The Realtek RTL8832BU USB ID is 0bda:8832. Confirm with lsusb."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -15,6 +28,14 @@ featureimage: "/images/blog/awus036ax-china-install-guide.webp"
 ---
 
 The AWUS036AX is ALFA's WiFi 6 AX1800 dual-band adapter. Its RTL8832BU chip is out-of-kernel on Linux versions below 6.14 — but Ubuntu 24.04 (kernel 6.8) includes it natively. This guide uses Gitee mirrors for older kernels and the built-in driver for Ubuntu 24.04. No GitHub required.
+
+{{< tldr >}}
+AWUS036AX uses the RTL8832BU chipset with WiFi 6 support. Ubuntu 24.04 is driver-free plug-and-play. Kali/Ubuntu 22.04 requires compiling rtl8852bu from Gitee.
+{{< /tldr >}}
+
+
+
+
 
 > **Security research note:** The RTL8832BU has limited monitor mode support. Results vary by kernel and driver version. For reliable packet injection on Kali Linux, the [AWUS036ACM](/en/blog/awus036acm-china-install-guide/) or [AWUS036ACH](/en/blog/awus036ach-china-install-guide/) are better choices.
 
@@ -224,6 +245,8 @@ sudo reboot
 
 ---
 
+{{< faq >}}
+
 ## Troubleshooting
 
 | Problem | Likely Cause | Fix |
@@ -259,3 +282,10 @@ sudo reboot
 - [AWUS036EACS China Install Guide](/en/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 Questions? Leave a comment below or contact us at [yupitek.com](https://yupitek.com/en/contact/).
+
+## References
+
+1. [Realtek Official Website](https://www.realtek.com/)
+2. [ALFA Network Official Website](https://www.alfa.com.tw/)
+3. [Kali Linux Official Documentation](https://www.kali.org/docs/)
+4. [Gitee rtl8852bu Mirror](https://gitee.com/mirrors/rtl8852bu)

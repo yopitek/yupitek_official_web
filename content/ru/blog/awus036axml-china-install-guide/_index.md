@@ -2,6 +2,8 @@
 title: "Руководство по установке драйвера ALFA AWUS036AXML для Китая: Kali Linux, Ubuntu, Debian и Raspberry Pi"
 description: "Пошаговое руководство по установке драйверов ALFA AWUS036AXML в Китае с использованием локальных зеркал. Драйвер MT7921AUN WiFi 6E в ядре, полная поддержка режима мониторинга и VIF. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi. GitHub не требуется."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +14,28 @@ series: ["alfa-china-install-guide"]
 related_product: "/ru/products/alfa/awus036axml/"
 series_order: 7
 featureimage: "/images/blog/awus036axml-china-install-guide.webp"
+
+faq:
+  - question: "Какой чип используется в AWUS036AXML? Такой же, как в AWUS036AXM?"
+    answer: "Тот же чип MediaTek MT7921AUN, но AWUS036AXML — флагманская версия с интерфейсом USB-C."
+  - question: "Нужно ли вручную устанавливать драйвер AWUS036AXML?"
+    answer: "Нет, драйвер mt7921u встроен в ядро с версии 5.18, нужно только установить пакет прошивки."
+  - question: "Поддерживает ли AWUS036AXML VIF-виртуальные интерфейсы?"
+    answer: "Да, MT7921AUN полностью поддерживает нативный VIF ядра, может одновременно работать в режиме монитора и управляемом режиме."
+  - question: "Почему драйвер не загружается в Ubuntu 22.04?"
+    answer: "Ядро 5.15 по умолчанию в Ubuntu 22.04 слишком старое, нужно установить HWE-ядро и обновиться до 5.18+."
+  - question: "Какой USB ID у AWUS036AXML?"
+    answer: "USB ID MediaTek MT7921AUN — 0e8d:7961, можно проверить через lsusb."
 ---
 
 AWUS036AXML — это флагманская модель WiFi 6E от ALFA, трехдиапазонный USB-C адаптер, поддерживающий 2,4 ГГц, 5 ГГц и свободный от помех диапазон 6 ГГц. Его чип MT7921AUN использует драйвер `mt7921u`, встроенный в ядро Linux начиная с версии 5.18. В Ubuntu 24.04 и Kali 2025 он работает по принципу plug-and-play сразу после установки пакета прошивки с локального зеркала. Это руководство охватывает полную настройку — прошивку, проверку драйвера, режим мониторинга, инъекцию пакетов и VIF — без использования GitHub.
+
+{{< tldr >}}
+AWUS036AXML с чипом MT7921AUN, WiFi 6E трёхдиапазонный USB-C флагман. Драйвер встроен в ядро, после установки прошивки доступны режим монитора, инъекция пакетов и VIF.
+{{< /tldr >}}
+
+Убедитесь, что у вас есть:
+
 
 ## Перед началом работы
 
@@ -169,6 +190,8 @@ sudo reboot
 
 ---
 
+{{< faq >}}
+
 ## Поиск и устранение неисправностей
 
 | Проблема | Возможная причина | Решение |
@@ -188,3 +211,11 @@ sudo reboot
 - AWUS036AXML ← вы здесь
 
 Есть вопросы? Оставьте комментарий ниже или свяжитесь с нами на [yupitek.com](https://yupitek.com/ru/contact/).
+
+
+## Источники
+
+1. [Драйвер Linux Kernel mt7921](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [Официальная документация aircrack-ng](https://www.aircrack-ng.org/)
+3. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
+4. [Официальная документация Kali Linux](https://www.kali.org/docs/)

@@ -2,14 +2,32 @@
 title: "Драйвер ALFA перестал работать после обновления ядра? Полное руководство по исправлению"
 description: "ALFA USB WiFi адаптер не работает после обновления ядра Linux? Полное руководство по исправлению драйверов RTL8812AU, RTL8811AU и MT7921AUN на Kali Linux и Ubuntu после обновлений ядра."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
+
+faq:
+  - question: "Почему драйвер ALFA перестаёт работать после обновления ядра?"
+    answer: "RTL8812AU использует внешний драйвер, после изменения версии ядра скомпилированный модуль становится несовместимым. DKMS может пересобрать автоматически, но отсутствие заголовков ядра или устаревшие настройки приводят к ошибке."
+  - question: "Как быстро диагностировать причину сбоя драйвера ALFA?"
+    answer: "Выполните uname -r для проверки версии ядра, dkms status для проверки состояния модуля, dmesg для просмотра ошибок загрузки прошивки или модуля."
+  - question: "Какой самый быстрый способ восстановления драйвера RTL8812AU?"
+    answer: "Установите соответствующие заголовки ядра и выполните dkms autoinstall. Если не работает, клонируйте свежую копию aircrack-ng/rtl8812au и выполните make dkms_install."
+  - question: "Что делать, если MT7921AUN не подключается после обновления ядра?"
+    answer: "MT7921AUN использует встроенный драйвер, проблема обычно в прошивке. Установите пакет firmware-misc-nonfree и убедитесь, что версия ядра не ниже 5.18."
+  - question: "Как предотвратить поломку драйвера при обновлении ядра?"
+    answer: "Используйте apt full-upgrade вместо apt upgrade, чтобы заголовки и ядро устанавливались синхронно. Установите dkms и linux-headers-generic для поддержания зависимостей."
 ---
 
 Вы запускаете `sudo apt upgrade`, перезагружаетесь — и адаптер ALFA исчез. Никакого интерфейса, никаких огней, ничего. Это самый распространённый вопрос поддержки, связанный с USB WiFi адаптерами ALFA Network в Linux, и обновления ядра почти всегда являются виновником. Это руководство проведёт вас через систематическую диагностику и устранение неисправностей для двух наиболее затронутых семейств чипсетов: **RTL8812AU** (используется в AWUS036ACH и AWUS036ACS) и **MT7921AUN** (используется в AWUS036AXM и AXML). Следуйте каждому разделу по порядку, и ваш адаптер заработает менее чем за 15 минут.
+
+{{< tldr >}}
+Главная причина поломки драйверов ALFA после обновления ядра — рассинхронизация заголовков и модулей. RTL8812AU пересобирается через dkms autoinstall, MT7921AUN требует firmware-misc-nonfree, долгосрочное решение — apt full-upgrade.
+{{< /tldr >}}
 
 ---
 
@@ -356,6 +374,8 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ---
 
+{{< faq >}}
+
 ## Заключение
 
 Сбои драйвера ALFA после обновлений ядра следуют предсказуемой схеме и имеют предсказуемые решения. Адаптерам RTL8812AU нужен `dkms autoinstall` (или свежее клонирование из `aircrack-ng/rtl8812au`) плюс соответствующие заголовочные файлы ядра. Адаптерам MT7921AUN нужны `firmware-misc-nonfree` и ядро версии 5.18 или новее. Долгосрочное решение в обоих случаях — использовать `apt full-upgrade`, а не `apt upgrade` в качестве стандартной команды обновления, что обеспечивает синхронизацию заголовков и ядра.
@@ -365,3 +385,12 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 **Связанные руководства:**
 - [Как установить драйвер ALFA USB WiFi на Kali Linux и Ubuntu](/ru/blog/install-alfa-driver-kali-ubuntu/) — начните здесь, если вы никогда не устанавливали драйвер раньше
 - [Руководство по настройке AWUS036ACH на Kali Linux](/ru/blog/awus036ach-kali-linux-setup/) — полное пошаговое руководство по настройке, включая проверку режима мониторинга и инъекции пакетов
+
+
+## Источники
+
+1. [Драйвер aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. [Официальная документация DKMS](https://github.com/dell/dkms)
+3. [Документация управления пакетами Kali Linux](https://www.kali.org/docs/general-use/package-management/)
+4. [Официальная документация Linux Kernel](https://www.kernel.org/doc/html/latest/)
+5. [Драйвер MediaTek MT7921](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)

@@ -7,6 +7,20 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "adaptador-wifi", "instalacao-driver", "acrylic-wifi"]
 featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "O Windows suporta modo monitor para adaptadores ALFA?"
+    answer: "O Windows não suporta nativamente o modo monitor completo. O modelo de driver NDIS não expõe a captura de pacotes 802.11 brutos. Apenas o Acrylic WiFi Pro pode fazer verificação passiva. O modo monitor completo requer Kali Linux."
+  - question: "E possivel realizar injeção de pacotes no Windows?"
+    answer: "Não. Atualmente nenhum driver do Windows suporta injeção de pacotes 802.11 brutos para adaptadores ALFA. Está funcionalidade só está disponível no Linux."
+  - question: "Qual adaptador ALFA tem melhor compatibilidade no Windows?"
+    answer: "O AWUS036ACH (RTL8812AU) e o AWUS036ACM (MT7612U) possuem drivers assinados WHQL, com o histórico de compatibilidade Windows 10/11 mais completo e plug-and-play mais estável."
+  - question: "O Windows 11 precisa de instalação manual do driver MT7921AUN?"
+    answer: "Não. O driver MT7921AUN já está integrado ao repositório de drivers do Windows 11 (build 22000+). O driver e obtido automaticamente minutos após conectar o adaptador."
+  - question: "O que fazer quando o Gerenciador de Dispositivos mostra Code 43?"
+    answer: "Desinstale o driver e reinicie o computador, depois reconecte o adaptador e instale o driver manualmente pelo Metodo B. Se o Code 43 persistir em varias maquinas, geralmente indica falha de hardware."
 ---
 
 Os adaptadores USB WiFi da ALFA Network são amplamente reconhecidos nos círculos de pesquisa em segurança e redes, mas a maioria dos tutoriais se concentra exclusivamente no Linux. A boa notícia para usuários Windows: todos os principais adaptadores ALFA funcionam no Windows 10 e Windows 11 com drivers fornecidos pelo fabricante — sem necessidade de compilar código-fonte.
@@ -14,6 +28,11 @@ Os adaptadores USB WiFi da ALFA Network são amplamente reconhecidos nos círcul
 A diferença crítica em relação ao Linux está no modo monitor. No Linux, ferramentas como `aircrack-ng` e `airodump-ng` utilizam captura bruta de 802.11 com injeção de pacotes. No Windows, o modelo de driver (NDIS) não expõe as mesmas capacidades de hardware. O modo monitor completo e a injeção de pacotes **não estão disponíveis nativamente no Windows**. O que o Windows faz bem — e faz muito bem — é a conectividade plug-and-play e a análise de redes WiFi com ferramentas polidas como o Acrylic WiFi Analyzer.
 
 Este guia aborda a instalação de drivers, a varredura de redes WiFi e uma avaliação honesta do que o Windows pode e não pode fazer com um adaptador ALFA.
+
+{{< tldr >}}
+Adaptadores ALFA funcionam como plug-and-play para conexao WiFi no Windows 10/11, mas o modelo de driver NDIS nao suporta modo monitor completo ou injecao de pacotes. Para testes de seguranca, alterne para o Kali Linux (bare metal ou VM com passthrough USB). O Windows e adequado para conexao diaria e site survey WiFi.
+{{< /tldr >}}
+
 
 ---
 
@@ -255,8 +274,18 @@ Conclusão: o Windows é uma excelente plataforma para adaptadores ALFA quando o
 
 ---
 
+{{< faq >}}
+
 ## Guias Relacionados
 
 - [Passthrough USB para VirtualBox e VMware com Adaptadores ALFA](/pt/blog/alfa-adapter-virtualbox-vmware-usb/) — Execute o Kali Linux em uma VM com suporte completo ao adaptador ALFA
 - [Guia de Instalação de Drivers para Kali Linux e Ubuntu](/pt/blog/install-alfa-driver-kali-ubuntu/) — Instalação completa de drivers por chipset
 - [Guia de Compra de Adaptadores WiFi ALFA 2026](/pt/blog/alfa-wifi-adapter-buyer-guide-2026/) — Qual adaptador é ideal para o seu caso de uso
+
+## Referências
+
+1. [Download de drivers oficiais da ALFA Network](https://www.alfa.com.tw/service_1.html)
+2. [Documentacao de drivers NDIS da Microsoft](https://learn.microsoft.com/windows-hardware/drivers/network/ndis-drivers)
+3. [Site oficial do Acrylic WiFi Analyzer](https://www.acrylicwifi.com/)
+4. [Site oficial do Npcap](https://npcap.com/)
+5. [Documentacao oficial do Wireshark](https://www.wireshark.org/docs/)

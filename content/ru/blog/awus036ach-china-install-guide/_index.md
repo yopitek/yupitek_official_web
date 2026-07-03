@@ -2,6 +2,8 @@
 title: "Руководство по установке драйвера ALFA AWUS036ACH для Китая: Kali Linux, Ubuntu, Debian и Raspberry Pi"
 description: "Пошаговое руководство по установке драйверов ALFA AWUS036ACH в Китае с использованием отечественных зеркал. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi. GitHub не требуется."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +14,28 @@ series: ["alfa-china-install-guide"]
 series_order: 1
 related_product: "/ru/products/alfa/awus036ach/"
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+
+faq:
+  - question: "Какой чип используется в AWUS036ACH? Нужно ли устанавливать драйвер?"
+    answer: "AWUS036ACH использует чип Realtek RTL8812AU, драйвер не встроен в ядро Linux, требует ручной установки."
+  - question: "Нужен ли VPN для установки драйвера AWUS036ACH в Китае?"
+    answer: "Нет, используются внутренние зеркала USTC, Alibaba Cloud и зеркала исходного кода Gitee для завершения установки."
+  - question: "Поддерживает ли AWUS036ACH режим монитора и инъекцию пакетов?"
+    answer: "Да, после установки драйвера RTL8812AU используйте airmon-ng для включения режима монитора, aireplay-ng для тестирования инъекции пакетов."
+  - question: "Можно ли использовать AWUS036ACH на Raspberry Pi?"
+    answer: "Да, рекомендуется использовать USB-хаб с питанием и установить Kali ARM64."
+  - question: "Какая команда для установки драйвера AWUS036ACH в Kali Linux?"
+    answer: "В Kali выполните sudo apt install realtek-rtl88xxau-dkms для установки предкомпилированного драйвера."
 ---
 
 Вы только что получили AWUS036ACH, но Linux его не распознаёт. Это нормально — данный чип требует драйвер RTL8812AU, который не работает «из коробки». Это руководство проведёт вас через полную установку примерно за 30 минут, используя только отечественные зеркала. Доступ к GitHub не требуется.
+
+{{< tldr >}}
+AWUS036ACH использует чип RTL8812AU. В Kali драйвер DKMS устанавливается через apt, в Ubuntu/Debian компилируется из Gitee. 30 минут — и режим монитора с инъекцией пакетов готовы.
+{{< /tldr >}}
+
+Убедитесь, что у вас есть:
+
 
 ## Прежде чем начать
 
@@ -589,6 +610,8 @@ sudo aireplay-ng --test wlan1mon
 
 ---
 
+{{< faq >}}
+
 ## Устранение неисправностей
 
 | Проблема | Вероятная причина | Решение |
@@ -629,3 +652,12 @@ sudo aireplay-ng --test wlan1mon
 - [Руководство AWUS036EACS для Китая](/ru/blog/awus036eacs-china-install-guide/)
 
 Есть вопросы? Оставьте комментарий ниже или свяжитесь с нами на [yupitek.com](https://yupitek.com/ru/contact/).
+
+
+## Источники
+
+1. [Официальная документация aircrack-ng](https://www.aircrack-ng.org/)
+2. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
+3. [Официальная документация Kali Linux](https://www.kali.org/docs/)
+4. [Зеркало Gitee rtl8812au](https://gitee.com/mirrors/rtl8812au)
+5. [Драйвер Realtek RTL8812AU](https://www.realtek.com/)

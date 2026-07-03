@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "VirtualBox 使用 ALFA 網卡需要安裝 Extension Pack 嗎？"
+    answer: "需要。VirtualBox 必須安裝 Extension Pack 才能支援 USB 2.0 與 USB 3.0 直通，否則只能使用 USB 1.1，不足以驅動現代 ALFA 網卡。"
+  - question: "ALFA 網卡應該選 USB 2.0 還是 USB 3.0 控制器？"
+    answer: "AWUS036AXML 必須使用 USB 3.0（xHCI）。AWUS036ACH 本身是 USB 2.0 裝置，但使用 xHCI 不會造成問題，建議統一設為 USB 3.0。"
+  - question: "VMware Workstation 需要額外安裝擴充套件嗎？"
+    answer: "不需要。VMware Workstation 17+ 與 Fusion 13+ 已內建 USB 2.0/3.0 支援，只需確認 USB 仲裁器服務正在執行。"
+  - question: "為什麼 lsusb 看得到網卡卻沒有 wlan 介面？"
+    answer: "USB 直通成功但驅動程式未載入。RTL8812AU 需執行 modprobe 88XXau 或安裝 realtek-rtl88xxau-dkms，MT7921AUN 需執行 modprobe mt7921u。"
+  - question: "Linux 主機上 USB 網卡持續斷線怎麼辦？"
+    answer: "停用 USB 自動暫停：執行 echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend，並確認使用者已加入 vboxusers 群組。"
 ---
+
+ALFA WiFi 網卡在虛擬機器中需要完整的 USB 直通才能執行監聽模式與封包注入，VirtualBox 需 Extension Pack，VMware 則需確認 USB 仲裁器服務。
+
+{{< tldr >}}
+在 VirtualBox 或 VMware 中使用 ALFA 網卡需設定 USB 直通。VirtualBox 需安裝 Extension Pack 並啟用 USB 3.0 控制器；VMware 內建 USB 支援但需確認仲裁器服務運行。AWUS036ACH 用 88XXau 驅動，AWUS036AXML 用 mt7921u 驅動。
+{{< /tldr >}}
 
 在虛擬機器內執行 ALFA WiFi 介面卡並不像插上後等待客端作業系統自動偵測那麼簡單。與共用資料夾或橋接網路不同，監聽模式（monitor mode）和原始封包注入（packet injection）需要**完整的 USB 控制權**——虛擬機器必須獨佔 USB 裝置，而不是透過主機的網路堆疊共用。這稱為 USB 直通（USB passthrough），正確設定是在 VM 環境中工作的滲透測試人員和 CTF 玩家最常遇到的設定失敗原因。
 
@@ -302,6 +321,8 @@ echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend
 
 ---
 
+{{< faq >}}
+
 ## 後續步驟
 
 設定好 USB 直通並驗證監聽模式後，您可以繼續：
@@ -309,3 +330,11 @@ echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend
 - **安裝或更新驅動程式：** [Kali 與 Ubuntu 的 ALFA 驅動程式安裝指南](/zh-tw/blog/install-alfa-driver-kali-ubuntu/)
 - **完整 AWUS036ACH 設定教學：** [AWUS036ACH Kali Linux 設定指南](/zh-tw/blog/awus036ach-kali-linux-setup/)
 - **AWUS036AXML 硬體評測：** [AWUS036AXML WiFi 6E 評測](/zh-tw/blog/awus036axml-wifi-6e-review/)
+
+## 參考來源
+
+1. [VirtualBox 官方下載頁面](https://www.virtualbox.org/wiki/Downloads)
+2. [VMware Workstation 產品頁面](https://www.vmware.com/products/workstation-pro.html)
+3. [aircrack-ng rtl8812au 驅動專案](https://github.com/aircrack-ng/rtl8812au)
+4. [ALFA Network 官方網站](https://www.alfa.com.tw/)
+5. [Kali Linux 官方文件](https://www.kali.org/docs/)

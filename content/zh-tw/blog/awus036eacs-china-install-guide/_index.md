@@ -12,7 +12,26 @@ description: "手把手教你在中國境內安裝 ALFA AWUS036EACS。這款納�
 related_product: "/zh-tw/products/alfa/awus036eacs/"
 series_order: 8
 featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036EACS 用什麼晶片？支援藍牙嗎？"
+    answer: "採用 Realtek RTL8821CU 晶片，支援 WiFi 5 與藍牙 4.2。"
+  - question: "AWUS036EACS 適合在 Linux 上使用嗎？"
+    answer: "不推薦，RTL8821CU 沒有良好維護的 Linux 驅動，監聽模式非常不穩定。"
+  - question: "AWUS036EACS 在 Windows 上怎麼安裝驅動？"
+    answer: "從 Alfa 官網 files.alfa.com.tw 下載 Windows 驅動包，以管理員身份安裝後重啟即可。"
+  - question: "AWUS036EACS 的藍牙怎麼開啟？"
+    answer: "安裝驅動後通常自動啟用，在 Windows 設定中開啟藍牙開關即可連接設備。"
+  - question: "如果需要 Linux 上的無線安全研究網卡，該選哪款？"
+    answer: "建議改用 AWUS036ACM 或 AWUS036ACS，這兩款在 Linux 上完整支援監聽模式。"
 ---
+
+ALFA AWUS036EACS 是搭載 RTL8821CU 晶片的迷你 WiFi 5 加藍牙 4.2 網卡，在 Windows 上安裝簡單，但 Linux 支援不佳不推薦用於安全研究。
+
+{{< tldr >}}
+AWUS036EACS 採用 RTL8821CU 晶片，WiFi 5 加藍牙 4.2 迷你網卡，Windows 安裝簡單，但 Linux 驅動不穩定，不建議用於監聽模式。
+{{< /tldr >}}
 
 AWUS036EACS 是 ALFA 家族中最迷你的成員之一，它不僅有 WiFi 5，還自帶了藍牙 4.2。它非常適合那些想給老筆電升級，但又不想要個大天線在外面晃的人。不過，買之前你要搞清楚一件事：它在 Windows 上很好用，但在 Linux（特別是 Kali）上並不推薦。
 
@@ -69,9 +88,17 @@ AWUS036EACS 是 ALFA 家族中最迷你的成員之一，它不僅有 WiFi 5，�
 | 網卡搜不到 5G 訊號 | 頻道不匹配 | 嘗試在網卡屬性裡把區域設為美國（US） |
 | 藍牙連不上 | 驅動衝突 | 確認禁用電腦自帶的板載藍牙 |
 
+{{< faq >}}
+
 ## 更多 Alfa 網卡指南
 
 - [AWUS036ACH 中國安裝指南](/zh-tw/blog/awus036ach-china-install-guide/) — 經典大天線
 - [AWUS036AX 中國安裝指南](/zh-tw/blog/awus036ax-china-install-guide/) — WiFi 6 新款
 
 有問題？歡迎在下方留言，或者在 [yupitek.com](https://yupitek.com/zh-tw/contact/) 聯繫我們。
+
+## 參考來源
+
+1. [ALFA Network 官網](https://www.alfa.com.tw/)
+2. [Alfa 官方驅動下載](https://files.alfa.com.tw)
+3. [Realtek 官方網站](https://www.realtek.com/)

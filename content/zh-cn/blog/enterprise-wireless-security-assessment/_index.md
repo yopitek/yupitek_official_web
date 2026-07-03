@@ -1,17 +1,41 @@
 ---
+
+
+
 title: "企业无线安全评估：完整框架"
 description: "使用 ALFA 适配器的完整企业无线安全评估框架，涵盖范围界定、流氓 AP 检测、WPA2/WPA3 审计、PMF 测试及报告编写，适用于 IT 安全团队。"
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["enterprise", "wireless-security", "penetration-testing", "rogue-AP", "WPA2", "WPA3", "PMF", "ALFA-network"]
 featureimage: "/images/blog/enterprise-wireless-security-assessment.webp"
+faq:
+  - question: "企业无线安全评估包括哪些阶段？"
+    answer: "完整评估涵盖六个依序阶段：被动侦查、恶意 AP 检测、WPA2/WPA3 握手分析、PMF 验证、客户端隔离测试，以及 EAP/RADIUS 评估。"
+  - question: "进行无线安全评估前需要哪些授权？"
+    answer: "必须取得由 CISO 或资产拥有者签署的书面授权书，明确涵盖测试时间窗口、设备 MAC 位址与已授权的具体技术手段，口头同意并不充分。"
+  - question: "如何检测恶意 AP（Rogue AP）？"
+    answer: "将被动侦查所得的 BSSID 清单与授权 AP 清单比对，任何广播企业 SSID 但不在清单中的 BSSID 均为恶意 AP 候选项目。"
+  - question: "PMF 受保护管理帧为何重要？"
+    answer: "PMF 能防止解除认证与解除关联攻击，避免攻击者强制中断客户端连接以捕获握手或执行阻断服务，在 WPA3 中为强制要求。"
+  - question: "WPA3 过渡模式有什么风险？"
+    answer: "WPA3 过渡模式同时接受 SAE 与 PSK 验证以维持兼容性，攻击者可能广播仅支持 WPA2 的 Beacon 帧迫使客户端降级，使前向保密失效。"
 ---
+
+
+
 
 {{< alert "triangle-exclamation" >}}
 **法律声明：** 所有无线安全评估必须仅在您获得明确书面授权的网络和基础设施上进行。未经授权的无线监控、注入或流氓 AP 部署在大多数司法管辖区均属违法。本框架所描述的每个阶段均假定已正式签署参与协议（由资产所有方签字），明确涵盖具体测试时间窗口和授权范围。仅限授权测试。
 {{< /alert >}}
+
+{{< tldr >}}
+本框架以 ALFA 无线网卡为基础，详述企业无线安全评估的六阶段方法论，涵盖范畴界定、恶意 AP 检测、WPA2/WPA3 稽核、PMF 测试、客户端隔离与 802.1X 评估，并附报告范本与严重程度定义。
+{{< /tldr >}}
+
 
 企业无线安全评估并非简单地询问"我们能破解密码吗"。全面的评估需要审查无线架构的每一层：认证协议的强度、管理帧保护的完整性、授权 AP 清单的准确性、访客网段上客户端隔离的健壮性，以及 802.1X 基础设施对流氓 RADIUS 攻击的抵抗力。
 
@@ -297,8 +321,19 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ---
 
+
+{{< faq >}}
+
 ## 相关资源
 
 - [数据包注入指南：使用 aireplay-ng 测试您的 WiFi 适配器](/zh-cn/blog/packet-injection-guide/)
 - [WPA3 安全测试：ALFA 适配器使用指南（2026）](/zh-cn/blog/wpa3-security-testing-alfa-2026/)
 - [在 Kali Linux 上启用监控模式](/zh-cn/blog/enable-monitor-mode-kali-linux/)
+
+## 参考文献
+
+1. [aircrack-ng 官方文档](https://www.aircrack-ng.org/)
+2. [Wi-Fi Alliance WPA3 规范](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [IEEE 802.11w 受保护管理帧标准](https://standards.ieee.org/ieee/802.11w/4454/)
+4. [NIST SP 800-153 无线安全指南](https://csrc.nist.gov/publications/detail/sp/800-153/final)
+5. [Kismet 无线检测工具](https://www.kismetwireless.net/)

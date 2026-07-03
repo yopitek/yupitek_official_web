@@ -1,6 +1,8 @@
 ---
 title: "Полное руководство: установка всех USB WiFi адаптеров Alfa на Linux в Китае — Kali, Ubuntu, Raspberry Pi"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 slug: "alfa-china-install-complete-guide"
 tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "driver", "china", "monitor-mode", "packet-injection", "wireless"]
@@ -9,7 +11,24 @@ series: ["alfa-china-install-guide"]
 series_order: 9
 description: "Исчерпывающее руководство по установке всех USB WiFi адаптеров Alfa на Linux в Китае. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi. Без GitHub — только отечественные зеркала."
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
----
+
+faq:
+  - question: "Нужен ли VPN для установки адаптеров Alfa WiFi в Китае?"
+    answer: "Нет,全程 используются внутренние зеркала USTC, Alibaba Cloud, Tsinghua и зеркала исходного кода Gitee."
+  - question: "Какой адаптер Alfa лучше всего подходит для режима монитора и инъекции пакетов?"
+    answer: "AWUS036ACM с чипом MT7612U, драйвер встроен в ядро и полностью поддерживает VIF — лучший выбор."
+  - question: "Какой адаптер Alfa поддерживает WiFi 6?"
+    answer: "AWUS036AX и AWUS036AXER с чипом RTL8832BU поддерживают WiFi 6, в Ubuntu 24.04 работают без драйвера."
+  - question: "Какой адаптер Alfa поддерживает WiFi 6E?"
+    answer: "AWUS036AXM и AWUS036AXML с чипом MT7921AUN поддерживают трёхдиапазонный WiFi 6E."
+  - question: "На что обратить внимание при использовании адаптеров Alfa на Raspberry Pi?"
+    answer: "Обязательно используйте USB-хаб с питанием и установите Kali ARM64 для лучшей поддержки драйверов."
+---Полное руководство по установке адаптеров Alfa WiFi в Linux для Китая, охватывающее Kali, Ubuntu, Debian, Raspberry Pi, поддерживает все чипсеты RTL8812AU, MT7612U, RTL8832BU, используются внутренние зеркала без VPN.
+
+{{< tldr >}}
+Полное руководство по установке адаптеров Alfa WiFi в Linux для Китая, охватывающее Kali, Ubuntu, Debian, Raspberry Pi, поддерживает все чипсеты RTL8812AU, MT7612U, RTL8832BU, используются внутренние зеркала без VPN.
+{{< /tldr >}}
+
 
 ## Добро пожаловать в полное руководство по установке Alfa на Linux
 
@@ -670,6 +689,8 @@ sudo ip link set mon0 up
 
 ---
 
+{{< faq >}}
+
 ## Связанные руководства
 
 Это часть серии **Alfa China Install Guide**:
@@ -686,3 +707,11 @@ sudo ip link set mon0 up
 ---
 
 *Последнее обновление: 24 апреля 2026 г.*
+
+## Источники
+
+1. [Официальная документация aircrack-ng](https://www.aircrack-ng.org/)
+2. [Драйвер Linux Kernel mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+3. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
+4. [Официальная документация Kali Linux](https://www.kali.org/docs/)
+5. [Зеркало исходного кода драйверов Gitee](https://gitee.com/mirrors)

@@ -7,7 +7,28 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "pentest", "Kali-Linux"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Qual a diferenca entre Wi-Fi 6E e Wi-Fi 5 em testes de penetração?"
+    answer: "Wi-Fi 6E adiciona a banda de 6 GHz com 1.2 GHz de espectro, adequado para auditorar implantações corporativas modernas. Wi-Fi 5 tem drivers mais maduros, com maior estabilidade em 2.4/5 GHz."
+  - question: "Qual escolher: AWUS036ACH ou AWUS036AXML?"
+    answer: "Para pentest diario, escolha o AWUS036ACH, com driver maduro e ricos recursos da comunidade. Para auditorar ambientes Wi-Fi 6E de 6 GHz, escolha o AWUS036AXML. Se possivel, tenha ambos."
+  - question: "O modo monitor do AWUS036AXML é estável no Kali Linux?"
+    answer: "Requer kernel 6.1 ou superior e o pacote linux-firmware mais recente. A injeção de pacotes funciona, mas recomenda-se validar antes de testes formais. Combinações especificas de kernel e firmware podem ser instáveis."
+  - question: "Preciso de adaptador 6 GHz para pentest em 2026?"
+    answer: "A maioria dos casos de teste ainda foca em 2.4/5 GHz. No entanto, se o ambiente alvo já implantou access points Wi-Fi 6E, um adaptador 6 GHz se torna estrategicamente necessário."
+  - question: "Como instalar o driver RTL8812AU do AWUS036ACH?"
+    answer: "Clone o repositório rtl8812au do GitHub do aircrack-ng e execute make dkms_install. O DKMS garante que o driver seja recompilado automaticamente após atualizações de kernel."
 ---
+{{< tldr >}}
+O AWUS036ACH tem driver maduro e maior estabilidade, sendo a primeira escolha para pentest diario. O AWUS036AXML suporta a banda de 6 GHz, adequado para auditorar ambientes Wi-Fi 6E, mas o driver ainda esta em desenvolvimento continuo.
+{{< /tldr >}}
+
+Wi-Fi 6E é uma extensão do padrão Wi-Fi 6 (IEEE 802.11ax) que adiciona acesso à **banda de frequência de 6 GHz** — uma fatia enorme de espectro anteriormente inexplorado. Enquanto o Wi-Fi 5 (802.11ac) opera apenas em 2,4 GHz e 5 GHz, e o Wi-Fi 6 padrão faz o mesmo, o Wi-Fi 6E abre **1,2 GHz adicionais de espectro** variando de 5,925 GHz a 7,125 GHz.
+
+
 
 ## O Que é Wi-Fi 6E? A Nova Banda de 6 GHz Explicada
 
@@ -140,6 +161,8 @@ sudo airmon-ng start wlan0
 
 ---
 
+{{< faq >}}
+
 ## Recomendação
 
 **Escolha o [AWUS036ACH](/pt/products/alfa/awus036ach/) se:**
@@ -157,3 +180,11 @@ sudo airmon-ng start wlan0
 - Está confortável testando modo monitor/injeção antes dos engajamentos com clientes
 
 **Resumindo:** Para a maioria dos pentesters profissionais em 2026, o AWUS036ACH continua sendo o padrão ouro em confiabilidade. O AWUS036AXML é a escolha inteligente para equipes que visam infraestrutura corporativa de ponta ou que estão construindo kits à prova do futuro. O ideal é carregar ambos.
+
+## Referências
+
+1. [Driver oficial rtl8812au do aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
+2. [Driver do kernel MediaTek MT7921](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)
+3. [Certificacao Wi-Fi Alliance Wi-Fi 6E](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)
+4. [Documentacao oficial do Kali Linux](https://www.kali.org/docs/)
+5. [Recursos do padrao IEEE 802.11ax](https://standards.ieee.org/ieee/802.11ax/)

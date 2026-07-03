@@ -9,7 +9,28 @@ series: ["alfa-china-install-guide"]
 series_order: 9
 description: "O guia definitivo para instalar todos os adaptadores USB WiFi Alfa no Linux na China. Cobre Kali Linux, Ubuntu 22/24, Debian e Raspberry Pi. Sem necessidade do GitHub — use apenas espelhos domésticos."
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Preciso de VPN para instalar adaptadores WiFi Alfa na China?"
+    answer: "Não. Todo o processo usa espelhos nacionais como USTC, Aliyun, Tsinghua e espelho de código Gitee, sem necessidade de acesso ao exterior."
+  - question: "Qual adaptador Alfa é mais adequado para modo monitor e injeção de pacotes?"
+    answer: "O AWUS036ACM com chipset MT7612U é a melhor escolha, com driver integrado ao kernel e suporte completo a VIF."
+  - question: "Qual adaptador Alfa suporta WiFi 6?"
+    answer: "AWUS036AX e AWUS036AXER usam o chip RTL8832BU com suporte a WiFi 6. No Ubuntu 24.04 são plug-and-play sem driver."
+  - question: "Qual adaptador Alfa suporta WiFi 6E?"
+    answer: "AWUS036AXM e AWUS036AXML usam o chip MT7921AUN com suporte a WiFi 6E tri-band."
+  - question: "O que observar ao usar adaptadores Alfa no Raspberry Pi?"
+    answer: "Use obrigatoriamente um hub USB com alimentação própria e instale a versão Kali ARM64 para obter o melhor suporte de driver."
 ---
+{{< tldr >}}
+Guia definitivo de instalacao Linux de adaptadores WiFi Alfa na China continental, cobrindo Kali, Ubuntu, Debian e Raspberry Pi. Suporta todos os chipsets incluindo RTL8812AU, MT7612U e RTL8832BU. Todo o processo usa espelhos nacionais sem necessidade de VPN.
+{{< /tldr >}}
+
+Se você está lendo isso, provavelmente comprou um adaptador USB WiFi Alfa e ficou travado porque:
+
+
 
 ## Bem-vindo ao Guia Definitivo de Instalação Alfa no Linux
 
@@ -685,4 +706,15 @@ Este artigo faz parte da série **Alfa China Install Guide**:
 
 ---
 
+{{< faq >}}
+
+
 *Última atualização: 24 de abril de 2026*
+
+## Referências
+
+1. [Documentacao oficial do aircrack-ng](https://www.aircrack-ng.org/)
+2. [Driver mt76 do kernel Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+3. [Site oficial da ALFA Network](https://www.alfa.com.tw/)
+4. [Documentacao oficial do Kali Linux](https://www.kali.org/docs/)
+5. [Espelho de codigo fonte de drivers Gitee](https://gitee.com/mirrors)

@@ -9,7 +9,24 @@ slug: "flipper-alfa-compatibility"
 tags: ["flipper-zero", "flipper-one", "alfa-network", "wifi-adapter", "monitor-mode", "packet-injection", "kali-linux", "pentesting", "AWUS036AXML", "wireless-security"]
 categories: ["Technical"]
 featureimage: "/images/blog/flipper-alfa-compatibility.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Le Flipper Zero peut-il utiliser des cartes ALFA ?"
+    answer: "Non. Le Flipper Zero utilise un STM32WB55 ne supportant que le mode USB device, incapable de piloter une carte ALFA. Le Flipper One avec son RK3576 et Debian Linux complet supporte les cartes ALFA."
+  - question: "Qu'est-ce que le Flipper One ?"
+    answer: "Le Flipper One est un appareil à venir équipé d'un SoC Rockchip RK3576 ARM64, 4/8 Go de RAM, exécutant Debian Linux complet. Il peut utiliser des cartes ALFA via USB pour le pentesting sans fil."
+  - question: "Quelle carte ALFA est recommandée pour le Flipper One ?"
+    answer: "L'AWUS036ACM (MT7612U) est le meilleur choix. Pilote mt76x2u intégré au noyau, plug-and-play sur Debian sans compilation. Supporte mode moniteur, injection de paquets et VIF."
+  - question: "Le Flipper Zero peut-il au moins scanner le WiFi ?"
+    answer: "Le Flipper Zero intègre un module CC1101 pour les fréquences sub-1 GHz, pas de module WiFi 2.4/5 GHz. Il ne peut pas scanner le WiFi sans matériel externe."
+  - question: "Quand le Flipper One sera-t-il disponible ?"
+    answer: "Le Flipper One a été annoncé mais sa date de sortie n'est pas confirmée. Consultez le blog officiel Flipper pour les dernières informations."
 ---
+
+{{< tldr >}}
+Le STM32WB55 du Flipper Zero ne supporte que le mode USB device et ne peut piloter aucune carte ALFA. Le Flipper One, équipé d'un RK3576 et de Debian Linux complet, supporte les cartes ALFA pour le pentesting sans fil.
+{{< /tldr >}}
 
 {{< alert "triangle-exclamation" >}}
 **Avis juridique :** Le mode monitor et l'injection de paquets doivent uniquement être effectués sur des réseaux que vous possédez ou pour lesquels vous avez une autorisation écrite explicite pour tester. L'interception non autorisée des communications sans fil est illégale dans la plupart des juridictions. Toutes les techniques décrites dans ce guide sont destinées exclusivement aux **tests de pénétration autorisés, à la recherche en sécurité sur votre propre matériel, et à des fins éducatives**.
@@ -346,6 +363,8 @@ Le diagramme ci-dessous montre l'architecture complète de pentest sans fil avec
 
 ---
 
+{{< faq >}}
+
 ## Conclusion : Le Bon Outil pour le Bon Usage
 
 Si tu cherches à utiliser des adaptateurs WiFi ALFA pour les tests de sécurité sans fil, **Flipper Zero n'est pas la bonne plateforme** — et ce n'est pas sa faute. Il a été conçu pour un autre usage : les tests de contrôle d'accès offline (NFC, RFID, Sub-GHz, infrared). Il excelle dans ces tâches, mais la capacité USB host n'a jamais fait partie de sa conception.
@@ -366,7 +385,7 @@ Pour le cas d'usage spécifique de **Monitor Mode et Packet Injection avec les a
 
 Tous les adaptateurs ALFA recommandés sont disponibles chez Yupitek, un distributeur autorisé d'ALFA Network. Parcourt la sélection complète ou compare les modèles :
 
-- [Adaptateurs WiFi USB ALFA — Catalogue Complet](https://yupitek.com/en/products/alfa/) — Tous les modèles avec specs et pricing
+- [Adaptateurs WiFi USB ALFA — Catalogue Complet](https://yupitek.com/fr/products/alfa/) — Tous les modèles avec specs et pricing
 - [Comparaison Produits ALFA](/en/alfa_compare/) — Comparaison côte à côte des chipsets, bandes et pilotes
 
 ### Pour Aller Plus Loin
@@ -380,3 +399,12 @@ Tous les adaptateurs ALFA recommandés sont disponibles chez Yupitek, un distrib
 ---
 
 *Pour les questions pré-vente concernant la compatibilité entre Flipper One et les adaptateurs ALFA, contacte le support Yupitek à support@yupitek.com ou appelle le +886-2-87325338.*
+
+---
+
+## Références
+1. [Blog officiel Flipper One — Annonce de Pavel Zhovner](https://blog.flipper.net/flipper-one-we-need-your-help/)
+2. [Portail développeur Flipper One — Spécifications et documentation](https://docs.flipper.net/one)
+3. [Site officiel Flipper Zero](https://flipperzero.one/)
+4. [aircrack-ng — Suite d'outils de sécurité sans fil](https://www.aircrack-ng.org/)
+5. [Site officiel ALFA Network](https://www.alfa.com.tw/)

@@ -2,14 +2,32 @@
 title: "Verwendung von ALFA WiFi-Adaptern auf macOS: USB-Passthrough mit VMware Fusion & Parallels"
 description: "So verwenden Sie ALFA USB-WiFi-Adapter auf macOS. Behandelt native macOS-Unterstützung, VMware Fusion USB-Passthrough und Parallels Desktop für Kali Linux Monitor-Modus und Packet-Injection."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
+faq:
+  - question: "Können ALFA-Netzwerkkarten auf macOS nativ im Monitor-Mode verwendet werden?"
+    answer: "Nein. Die CoreWLAN- und IO80211Family-Architektur von macOS unterstützt weder den Monitor-Mode noch Packet Injection für Drittanbieter-Netzwerkkarten. Es ist erforderlich, Kali Linux in einer VM auszuführen und USB-Passthrough zu nutzen."
+  - question: "Sollte man für Apple Silicon Macs VMware Fusion oder Parallels wählen?"
+    answer: "Beide sind geeignet, aber Parallels Desktop 19+ bietet auf Apple Silicon in der Regel eine bessere ARM64-VM-Leistung und eine stabilere USB-Passthrough-Funktion als VMware Fusion."
+  - question: "Muss der Treiber für die AWUS036AXML in einer Kali VM auf Apple Silicon kompiliert werden?"
+    answer: "Nein. Der MT7921AUN-Treiber ist seit Linux 5.18 im Kernel integriert. Ab Kali ARM64 Version 2024.x wird die Karte beim Einstecken automatisch erkannt."
+  - question: "Kann man auf Intel Macs das Standard-Kali x86_64 ISO verwenden?"
+    answer: "Ja. Intel Macs basieren auf der x86_64-Architektur und können direkt das offizielle Standard-Kali Linux x86_64 ISO von kali.org verwenden, um eine VM zu erstellen."
+  - question: "Ist VirtualBox für Sicherheits Tests auf Apple Silicon geeignet?"
+    answer: "Nicht empfohlen. Die Unterstützung von VirtualBox für Apple Silicon ist noch experimentell, und USB-Passthrough weist bekannte Probleme auf. Verwenden Sie stattdessen VMware Fusion oder Parallels."
+
 ---
 
 macOS ist ein ausgefeiltes Betriebssystem für den professionellen Einsatz. Es ist jedoch keine Plattform, die für die drahtlose Sicherheitsforschung entwickelt wurde. Die beiden Funktionen, die das Toolkit jedes ernsthaften Pentesters definieren – **Monitor-Modus** und **Packet-Injection** – fehlen im macOS Wi-Fi-Stack vollständig. Die Wi-Fi-Treiber von Apple bieten eine saubere, funktionale Netzwerk-Schnittstelle und mehr nicht.
+
+{{< tldr >}}
+macOS unterstützt den Monitor-Mode und Packet Injection für ALFA-Netzwerkkarten nicht. Die Lösung besteht darin, eine Kali Linux VM in VMware Fusion oder Parallels auszuführen und die Netzwerkkarte über USB-Passthrough an die VM zu übergeben. Apple Silicon erfordert ein ARM64-Kali-Image.
+{{< /tldr >}}
 
 ALFA Network Adapter ändern dieses Szenario unter Linux, wo die Treiberunterstützung umfassend und von der Community getestet ist. Auf macOS sieht die Situation anders aus. Selbst wenn ein ALFA-Adapter von macOS erkannt wird, lässt der native Netzwerk-Stack Sie nicht in den Monitor-Modus wechseln oder rohe Frames injizieren. Der einzige zuverlässige Weg nach vorne besteht darin, **Kali Linux in einer virtuellen Maschine** auszuführen und den USB-Adapter direkt an das Gast-Betriebssystem durchzureichen (Passthrough), wobei macOS vollständig umgangen wird.
 
@@ -257,8 +275,18 @@ Speziell auf Apple Silicon: Wenn der ALFA-Adapter erkannt wird, aber die Schnitt
 
 ---
 
+{{< faq >}}
+
 ## Verwandte Leitfäden
 
 Für Windows- und Linux-Hosts mit VirtualBox oder VMware Workstation siehe den Begleit-Leitfaden: [ALFA Adapter USB Passthrough: VirtualBox & VMware Setup-Leitfaden](/de/blog/alfa-adapter-virtualbox-vmware-usb/).
 
 Für adapterspezifische Details zum AWUS036AXML, der in diesem Leitfaden empfohlen wird, einschließlich Benchmarks für das 6-GHz-Band und Hinweisen zur Treiberversion, siehe den vollständigen Testbericht: [ALFA AWUS036AXML WiFi 6E Testbericht](/de/blog/awus036axml-wifi-6e-review/).
+
+## Referenzen
+
+1. [ALFA Network Offizielle Website](https://www.alfa.com.tw/)
+2. [Kali Linux Offizielle Download-Seite](https://www.kali.org/get-kali/)
+3. [VMware Fusion Produktseite](https://www.vmware.com/products/fusion.html)
+4. [Parallels Desktop Offizielle Website](https://www.parallels.com/)
+5. [aircrack-ng rtl8812au Treiber-Projekt](https://github.com/aircrack-ng/rtl8812au)

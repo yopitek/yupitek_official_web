@@ -9,7 +9,25 @@ slug: "flipper-alfa-compatibility"
 tags: ["flipper-zero", "flipper-one", "alfa-network", "wifi-adapter", "monitor-mode", "packet-injection", "kali-linux", "pentesting", "AWUS036AXML", "wireless-security"]
 categories: ["Technical"]
 featureimage: "/images/blog/flipper-alfa-compatibility.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "O Flipper Zero pode conectar adaptadores USB wireless ALFA?"
+    answer: "Não. O microcontrolador STM32WB55 do Flipper Zero suporta apenas modo USB device, não podendo atuar como USB host para驱动 adaptadores externos."
+  - question: "Quais modelos de adaptador ALFA o Flipper One suporta?"
+    answer: "O fundador do Flipper One testou especificamente o AWUS036AXML como primeira escolha é o AWUS036ACM como melhor custo-beneficio. Os drivers de ambos já estão integrados ao kernel mainline do Linux."
+  - question: "Por que o AWUS036AXML é o adaptador preferido do Flipper One?"
+    answer: "O AWUS036AXML usa o chip MT7921AUN, cujo driver mt7921u está integrado ao kernel desde o Linux 5.18, com suporte completo a tri-band 2.4/5/6 GHz e modo monitor."
+  - question: "Quando o Flipper One será lançado oficialmente?"
+    answer: "O Flipper One está atualmente em fase de preview para desenvolvedores. A data de lançamento oficial é o preço serão anunciados via crowdfunding. Acompanhe flipper.net para detalhes."
+  - question: "O WiFi Dev Board do Flipper Zero pode substituir adaptadores ALFA?"
+    answer: "Não. O WiFi Dev Board suporta apenas funcionalidades basicas de 2.4 GHz, sem USB host, com alcance e confiabilidade de injeção muito inferiores a adaptadores ALFA dedicados."
 ---
+{{< tldr >}}
+O STM32WB55 do Flipper Zero suporta apenas modo USB device, nao podendo驱动 nenhum adaptador ALFA. O Flipper One, equipado com RK3576 e Debian Linux completo, suporta o AWUS036AXML para monitor e injecao tri-band.
+{{< /tldr >}}
+
 
 {{< alert "triangle-exclamation" >}}
 **Aviso Legal:** Monitor mode e packet injection devem ser realizados apenas em redes que você possui ou possui autorização explícita por escrito para testar. A interceptação não autorizada de comunicações sem fio é ilegal na maioria das jurisdições. Todas as técnicas descritas neste guia destinam-se exclusivamente a **penetration testing autorizado, pesquisa de segurança em seus próprios equipamentos e fins educacionais**.
@@ -380,4 +398,15 @@ Todos os adaptadores ALFA recomendados estão disponíveis na Yupitek — um dis
 
 ---
 
+{{< faq >}}
+
+
 *Para perguntas sobre pré-venda relativas à compatibilidade do Flipper One com adaptadores ALFA, entre em contato com o suporte da Yupitek em support@yupitek.com ou ligue para +886-2-87325338.*
+
+## Referências
+
+1. [Blog oficial do Flipper One — Anuncio de produto por Pavel Zhovner](https://blog.flipper.net/flipper-one-we-need-your-help/)
+2. [Portal de desenvolvedores do Flipper One — Especificacoes tecnicas e documentacao](https://docs.flipper.net/one)
+3. [Site oficial do Flipper Zero](https://flipperzero.one/)
+4. [aircrack-ng — Site oficial do conjunto de ferramentas de seguranca sem fio](https://www.aircrack-ng.org/)
+5. [Site oficial da ALFA Network](https://www.alfa.com.tw/)

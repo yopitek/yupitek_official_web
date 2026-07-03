@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA AWUS036ACM：Raspberry Pi で IBSS アドホックと 802.11s メッシュネットワークを構築する（MT7612U）"
 description: "ALFA AWUS036ACM（MT7612U）は、Raspberry Pi 上で IBSS アドホックと 802.11s メッシュネットワークを完全にサポートする唯一の現行 ALFA USB WiFi アダプターです。ドライバーのインストール不要で、すぐに使えます。設定手順を詳しく解説します。"
 date: 2026-03-27
@@ -7,10 +8,28 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "アドホック", "802.11s", "メッシュネットワーク", "Linux", "無線LAN"]
 featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036ACMがALFAの中で唯一IBSS/Meshをサポートする選択肢なのはなぜですか？"
+    answer: "そのmt76x2uドライバーはLinux mac80211上に構築され、IBSSとMesh Pointインターフェースタイプを完全に開放しています。他のALFAモデルは多くがカーネル外ドライバーを使用し、これらのモードを含んでいません。"
+  - question: "IBSS Ad Hocと802.11s Meshの違いは？"
+    answer: "IBSSは中央APのないピアツゥピアネットワークで、全ノードが直接通信範囲内にある必要があります。802.11sはHWMP自動マルチホップルーティングと自己修復機能を持ち、シングルホップ範囲を超えて拡張できます。"
+  - question: "Raspberry PiでAWUS036ACMを使うのにドライバーインストールは必要ですか？"
+    answer: "不要です。mt76x2uドライバーはLinuxカーネル4.19以降メインラインに組み込まれ、Raspberry Pi OS 2020年以降のバージョンはすべてプラグアンドプレイで、インストール手順が不要です。"
+  - question: "IBSSモードはWPA2暗号化をサポートしていますか？"
+    answer: "LinuxカーネルのIBSSモードは標準WPA2-Personalをサポートしていません。セキュア接続が必要な場合はWireGuardやOpenVPNなどのアプリケーション層暗号化を使用してください。802.11sはSAEをサポートします。"
+  - question: "Meshネットワークを再起動後も維持するには？"
+    answer: "iwで作成した仮想インターフェースは再起動後に保持されないため、systemdサービス（mesh-point.serviceなど）を作成して起動時にインターフェースを自動再構築しMeshに参加させます。"
 ---
+1. [IBSS と 802.11s メッシュとは何か、そしてなぜ重要なのか？](#1-what-are-ibss-and-80211s-mesh) 2. [ALFA AWUS036ACM ハードウェア仕様](#2-alfa-awus036acm-hardware-specifications) 3. [Raspberry Pi 上の MT7612U ドライバー](#3-the-mt7612u-driver-on-raspberry-pi) 4. [モード 1：IBSS アドホックネットワーク](#4-mode-1-ibss-ad-hoc-networking) 5. [モード 2：802.11s メッシュポイントネットワーク](#5-mode-2-80211s-mesh-point-networking) 6. [実際の使用例](#6-real-world-use-cases) 7. [AWUS036ACM がこの用途で唯一の ALFA の選択肢である理由](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this) 8. [よくある質問とトラブルシューティング](#8-faq-and-troubleshooting) 9. [購入先](#9-where-to-buy)
 
 # ALFA AWUS036ACM：Raspberry Pi で IBSS アドホックと 802.11s メッシュネットワークを構築する（MT7612U）
 
+
+{{< tldr >}}
+AWUS036ACMはMT7612Uチップセットを採用し、そのmt76x2uドライバーはLinux mac80211上に構築されIBSS Ad Hocと802.11s Mesh Pointモードを完全サポートします。本記事では両モードの動作原理、ステップバイステップ設定、実際の応用シーンを詳解します。
+{{< /tldr >}}
 ルーターなしで Raspberry Pi ノード間に WiFi ネットワークを構築しようとしたことがある方、あるいは中間ホップを経由して自動的にトラフィックをルーティングする自己修復型のワイヤレスメッシュを作ろうとしたことがある方なら、ほとんどの USB WiFi アダプターではそれができないことをすぐに気づかれたはずです。カーネルドライバーが必要なモードを公開していないのです。
 
 **MediaTek MT7612U** チップセットを搭載した **ALFA AWUS036ACM** は、その例外です。インカーネルの `mt76` ドライバーは Linux mac80211 インターフェースを完全に実装しているため、Raspberry Pi 上で **IBSS（アドホック）** モードと **802.11s メッシュポイント** モードの両方をネイティブにサポートしています。ドライバーのコンパイルは不要で、すぐに使い始められます。
@@ -20,16 +39,6 @@ featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
 ---
 
 ## 目次
-
-1. [IBSS と 802.11s メッシュとは何か、そしてなぜ重要なのか？](#1-what-are-ibss-and-80211s-mesh)
-2. [ALFA AWUS036ACM ハードウェア仕様](#2-alfa-awus036acm-hardware-specifications)
-3. [Raspberry Pi 上の MT7612U ドライバー](#3-the-mt7612u-driver-on-raspberry-pi)
-4. [モード 1：IBSS アドホックネットワーク](#4-mode-1-ibss-ad-hoc-networking)
-5. [モード 2：802.11s メッシュポイントネットワーク](#5-mode-2-80211s-mesh-point-networking)
-6. [実際の使用例](#6-real-world-use-cases)
-7. [AWUS036ACM がこの用途で唯一の ALFA の選択肢である理由](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this)
-8. [よくある質問とトラブルシューティング](#8-faq-and-troubleshooting)
-9. [購入先](#9-where-to-buy)
 
 ---
 
@@ -838,6 +847,11 @@ ALFA AWUS036ACM は、ALFA Network の公式リセラーである [yupitek.com](
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## まとめ
 
 | 機能 | AWUS036ACM |
@@ -858,3 +872,13 @@ Raspberry Pi ノード間にワイヤレスネットワークを構築する必�
 *記事：Yupitek テクニカルチーム · [yupitek.com](https://yupitek.com)*
 
 *参考資料：[Alfa Network 公式ドキュメント](https://docs.alfa.com.tw/Product/AWUS036ACM/) · [Linux Wireless Wiki — インターフェース型](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) · [MediaTek mt76 Linux ドライバー](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) · [morrownr USB-WiFi インカーネル一覧](https://github.com/morrownr/USB-WiFi)*
+
+---
+
+## 参考文献
+
+1. [Alfa Network AWUS036ACM公式ドキュメント](https://docs.alfa.com.tw/Product/AWUS036ACM/)
+2. [Linux Wireless Wiki — インターフェースタイプ（VIF）](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif)
+3. [MediaTek mt76 Linuxドライバー](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+4. [IEEE 802.11s Meshネットワーク標準](https://standards.ieee.org/ieee/802.11s/4469/)
+5. [morrownr USB-WiFiカーネル内蔵ドライバーリスト](https://github.com/morrownr/USB-WiFi)

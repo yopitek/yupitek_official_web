@@ -1,4 +1,5 @@
 ---
+
 title: "Black Duck FuzzBox WLANアダプター互換性ガイド：最適なALFAワイヤレスカードの選定"
 description: "Black Duck FuzzBox OSに最適なALFA Network製USB WiFiアダプターを選定するための包括的なハードウェア評価および互換性ガイド。ワイヤレスプロトコルのファジング向けにALFA AWUS036ACH (RTL8812AU)を設定・導入する方法について解説します。"
 date: 2026-06-04
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
 featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Black Duck FuzzBoxはどのような用途のツールですか？"
+    answer: "Black Duck FuzzBoxは専用の無線プロトコルファジングテスト環境で、異常な802.11フレームを注入して組み込み無線デバイスと基地局のプロトコルスタックの堅牢性を検証します。"
+  - question: "Wi-Fi 6/6EアダプターがFuzzBoxで動作しないのはなぜですか？"
+    answer: "FuzzBoxのインジェクションエンジンはRealtek rtl88xxauドライバー向けに最適化されており、MediaTekやより新しいRealtek Wi-Fi 6チップセットはこのブランチを使用しないためウィザードに無視されます。"
+  - question: "ALFA AWUS036ACHがFuzzBox首选アダプターなのはなぜですか？"
+    answer: "AWUS036ACHはRTL8812AUチップセットを採用し、コミュニティ最適化のインジェクションドライバーを持ち、OSネットワークスタックをバイパスしてゼロロスの生フレーム送信を実現できます。"
+  - question: "FuzzBox OSはどのLinuxバージョンがベースですか？"
+    answer: "FuzzBox OSはDebian 12 Bookwormをベースとし、LTSカーネル6.1.xを実行し、rtl88xxauインジェクションドライバーとairmon-ngなどのネットワークツールをプリロードしています。"
+  - question: "AWUS036ACHがモニターモードに切り替わったかどう確認しますか？"
+    answer: "iwconfig wlan0コマンドを実行し、出力にMode:Monitorが表示され現在の動作周波数が示されていれば、FuzzBoxウィザードが正常にインターフェースモードを切り替えたことを確認できます。"
 ---
 
 WLANプロトコルのファジング（多くの場合、ワイヤレスネガティブテストと呼ばれます）は、組み込みワイヤレスデバイス、スマート家電、エンタープライズ向けアクセスポイントのセキュリティと堅牢性を検証するための最も重要なステップの1つです。しかし、不正な形式の802.11管理、制御、またはデータフレームを無線（Over-the-Air）で送信するには、メディアアクセス制御（MAC）レイヤーの低レベルな制御が必要であり、標準的なオペレーティングシステムや商用のWiFiドライバーではこれを許可していません。
 
+
+{{< tldr >}}
+ALFA AWUS036ACHはBlack Duck FuzzBoxプロトコルファジングテストの唯一首选で、RTL8812AUドライバーが生パケットインジェクションとモニターモードをサポートし、Wi-Fi 6/6Eアダプターはドライバー非互換で動作しません。
+{{< /tldr >}}
 これを解決するために、セキュリティチームは、専用のソフトウェアおよびハードウェア実行環境である**Black Duck FuzzBox**（旧Synopsys Defensics FuzzBox）を使用します。テストを実行するには、FuzzBox OSに、安定したモニターモードと信頼性の高いrawパケットインジェクション（パケット注入）が可能な、互換性のある高性能USBワイヤレスアダプターを組み合わせる必要があります。
 
 本互換性ガイドでは、Yupitekが取り扱うALFA Networkの現行製品ラインナップを分析し、新しいWi-Fi 6/6EアダプターがFuzzBoxで動作しない理由を説明するとともに、業界標準の選択肢である**ALFA AWUS036ACH** (RTL8812AU)のステップバイステップのセットアップ手順を提供します。
@@ -204,6 +222,11 @@ lrwxrwxrwx 1 root root 23 Jun 04 13:30 phy0 -> /sys/class/net/wlan0
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 8. 推奨事項 (Recommendation)
 
 ### 8.1 ハードウェア推奨マトリクス
@@ -219,3 +242,13 @@ YupitekはALFA Network製品の正規ディストリビューターであり、�
 *   または、**sales@yupitek.com** まで直接メールでお問い合わせください
 
 当社のエンジニアリングチームは、お客様のBlack Duck FuzzBoxプロトコルファジングワークフローをサポートするために必要な、正確なワイヤレスハードウェア構成の選定を支援いたします。
+
+---
+
+## 参考文献
+
+1. [Synopsys Defensics — FuzzBox公式製品ページ](https://www.synopsys.com/software-integrity/security-testing/fuzzing/defensics.html)
+2. [morrownr/8812au-20210629 — RTL8812AU LinuxドライバーGitHubリポジトリ](https://github.com/morrownr/8812au-20210629)
+3. [aircrack-ng — 無線セキュリティツールスイート公式ウェブサイト](https://www.aircrack-ng.org/)
+4. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
+5. [Linux Wireless — mac80211サブシステムドキュメント](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)

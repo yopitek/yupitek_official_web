@@ -12,7 +12,26 @@ description: "手把手教你在中國網路環境下安裝 ALFA AWUS036ACM 驅�
 related_product: "/zh-tw/products/alfa/awus036acm/"
 series_order: 2
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036ACM 用什麼晶片？需要安裝驅動嗎？"
+    answer: "採用 MediaTek MT7612U 晶片，驅動 mt76x2u 自 Linux 核心 4.19 起已內建，大多數情況插上即用。"
+  - question: "AWUS036ACM 支援 VIF 虛擬介面嗎？"
+    answer: "支援，MT7612U 完整支援核心原生 VIF，可同時執行監聽介面和管理模式，無需打補丁。"
+  - question: "在中國安裝 AWUS036ACM 需要翻牆嗎？"
+    answer: "不需要，驅動已內建核心，僅需從國內鏡像安裝韌體套件 firmware-misc-nonfree 即可。"
+  - question: "AWUS036ACM 在樹莓派上耗電多少？"
+    answer: "滿載約消耗 400mW，建議搭配帶獨立供電的 USB Hub 使用，避免樹莓派限速。"
+  - question: "Debian 安裝 AWUS036ACM 為什麼網卡能識別但無法運作？"
+    answer: "缺少 firmware-misc-nonfree 韌體套件，安裝後即可正常初始化網卡。"
 ---
+
+ALFA AWUS036ACM 採用 MT7612U 晶片，驅動自 Linux 4.19 起已內建核心，插上即用，完整支援監聽模式、封包注入與 VIF 虛擬介面。
+
+{{< tldr >}}
+AWUS036ACM 搭載 MT7612U 晶片，驅動核心內建免編譯，支援監聽模式、封包注入與 VIF 同時運作，中國境內僅需安裝韌體套件。
+{{< /tldr >}}
 
 AWUS036ACM 是 Alfa 無線網卡裡最好裝的一款。它使用 MT7612U 晶片，驅動 `mt76x2u` 從 Linux 4.19 起就已經內建在核心裡了。大多數情況下，插上就能用，最多跑兩三條指令。這篇文章涵蓋完整流程：驅動驗證、監聽模式、封包注入，以及 VIF（虛擬介面）——全部使用國內鏡像，不需要訪問 GitHub。
 
@@ -552,6 +571,8 @@ sudo ip link set mon0 up
 | 華為雲鏡像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像（備用） |
 | MT76 驅動（Gitee） | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | 手動編譯備選 |
 
+{{< faq >}}
+
 ## 系列文章
 
 本文是 **Alfa 網卡中國安裝全攻略** 系列的一部分，每篇文章對應一款型號：
@@ -566,3 +587,11 @@ sudo ip link set mon0 up
 - [AWUS036EAC 中國安裝全攻略](/zh-tw/blog/awus036eacs-china-install-guide/)
 
 有問題？在下方留言，或透過 [yupitek.com](https://yupitek.com/zh-tw/contact/) 聯絡我們。
+
+## 參考來源
+
+1. [Linux Kernel mt76 驅動](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [aircrack-ng 官方文件](https://www.aircrack-ng.org/)
+3. [ALFA Network 官網](https://www.alfa.com.tw/)
+4. [Kali Linux 官方文件](https://www.kali.org/docs/)
+5. [Debian firmware-misc-nonfree 套件](https://packages.debian.org/bookworm/firmware-misc-nonfree)

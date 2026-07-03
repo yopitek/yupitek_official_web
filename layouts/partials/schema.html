@@ -1,0 +1,112 @@
+{{ if .IsHome -}}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": {{ site.Home.Permalink | safeURL }},
+    "name": "{{ .Site.Title | safeJS }}",
+    {{ with .Site.Params.description }}"description": "{{ . | safeJS }}",{{ end }}
+    {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
+    "url": {{ site.Home.Permalink | safeURL }},
+    {{ with .Site.Params.keywords }}"keywords": {{ . }},{{ end }}
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://yupitek.com/#organization",
+      "name": "Yupitek",
+      "url": "https://yupitek.com"
+    }
+  }
+  </script>
+{{ else }}
+  {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+  <script type="application/ld+json">
+  [
+    {{- if eq .Section "blog" -}}
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "articleSection": "{{ (site.GetPage .Section).Title | safeJS }}",
+      "name": "{{ .Title | safeJS }}",
+      "headline": "{{ .Title | safeJS }}",
+      {{ with .Description }}"description": "{{ . | safeJS }}",{{ end }}
+      {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
+      "url" : {{ .Permalink }},
+      "author" : {
+        "@type": "Person",
+        "@id": "https://yupitek.com/authors/benny-lai/#person",
+        "name": "Benny Lai",
+        "email": "sales@yupitek.com",
+        "jobTitle": "Network Solutions Architect",
+        "sameAs": [
+          "https://www.linkedin.com/in/benny-lai"
+        ],
+        "knowsAbout": ["WiFi 7", "Enterprise Networking", "Ubiquiti", "ALFA Network", "Network Security"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://yupitek.com/#organization",
+        "name": "Yupitek",
+        "url": "https://yupitek.com"
+      },
+      {{ with .PublishDate }}"copyrightYear": "{{ .Format "2006" }}",{{ end }}
+      {{ with .Date }}"dateCreated": "{{ .Format $iso8601 }}",{{ end }}
+      {{ with .PublishDate }}"datePublished": "{{ .Format $iso8601 }}",{{ end }}
+      {{ with .Lastmod }}"dateModified": "{{ .Format $iso8601 }}",{{ end }}
+      {{ if .Keywords }}
+      {{ with .Keywords }}"keywords": {{ . }},{{ end }}
+      {{ else }}
+      {{ with .Params.tags }}"keywords": {{ . }},{{ end }}
+      {{ end }}
+      "mainEntityOfPage": "true",
+      "wordCount": "{{ .WordCount }}"
+    }
+    {{- end -}}
+    {{- if eq .Section "blog" -}},{{- end -}}
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {{- $position := 0 -}}
+        {{- range .Ancestors -}}
+          {{- if not .IsHome -}}
+            {{- $position = add $position 1 -}}
+            {
+              "@type": "ListItem",
+              "position": {{ $position }},
+              "name": "{{ .Title }}",
+              "item": {{ .Permalink }}
+            },
+          {{- end -}}
+        {{- end -}}
+        {{- $position = add $position 1 -}}
+        {
+          "@type": "ListItem",
+          "position": {{ $position }},
+          "name": "{{ .Title }}",
+          "item": {{ .Permalink }}
+        }
+      ]
+    }
+    {{- if and (eq .Section "blog") .Params.faq -}},{{- end -}}
+    {{- if and (eq .Section "blog") .Params.faq -}}
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {{- range $i, $item := .Params.faq -}}
+        {{- if $i }},{{- end -}}
+        {
+          "@type": "Question",
+          "name": {{ $item.question | jsonify }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ $item.answer | jsonify }}
+          }
+        }
+        {{- end -}}
+      ]
+    }
+    {{- end -}}
+  ]
+  </script>
+{{ end }}

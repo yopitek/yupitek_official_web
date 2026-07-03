@@ -7,6 +7,20 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Adaptadores ALFA podem usar modo monitor nativamente no macOS?"
+    answer: "Não. A arquitetura CoreWLAN e IO80211Family do macOS não suporta modo monitor ou injeção de pacotes para adaptadores de terceiros. E necessário executar o Kali Linux em uma VM com passthrough USB."
+  - question: "Para Mac Apple Silicon, escolher VMware Fusion ou Parallels?"
+    answer: "Ambos funcionam, mas o Parallels Desktop 19+ geralmente tem melhor desempenho de VM ARM64 e estabilidade de passthrough USB no Apple Silicon em comparação com o VMware Fusion."
+  - question: "O AWUS036AXML precisa de compilação de driver no Kali VM do Apple Silicon?"
+    answer: "Não. O driver MT7921AUN está integrado ao kernel desde o Linux 5.18. O Kali ARM64 2024.x ou superior reconhece o adaptador automaticamente ao conectar."
+  - question: "Mac Intel pode usar a ISO padrão do Kali x86_64?"
+    answer: "Sim. Macs Intel usam arquitetura x86_64 e podem usar diretamente a ISO oficial do Kali Linux x86_64 do kali.org para criar a VM."
+  - question: "O VirtualBox  é adequado para testes de segurança no Apple Silicon?"
+    answer: "Não recomendado. O suporte do VirtualBox para Apple Silicon ainda é experimental, com problemas conhecidos de passthrough USB. Use VMware Fusion ou Parallels em vez disso."
 ---
 
 macOS é um sistema operacional refinado e pronto para produção. No entanto, não é uma plataforma projetada para pesquisa de segurança sem fio. Os dois recursos que definem o kit de ferramentas de todo pentester sério — **modo monitor** e **injeção de pacotes** — estão completamente ausentes na pilha Wi-Fi do macOS. Os drivers Wi-Fi da Apple expõem uma interface de rede limpa e funcional, e nada além disso.
@@ -14,6 +28,11 @@ macOS é um sistema operacional refinado e pronto para produção. No entanto, n
 Os adaptadores ALFA Network mudam essa equação no Linux, onde o suporte a drivers é profundo e testado pela comunidade. No macOS, a situação é diferente. Mesmo que um adaptador ALFA seja reconhecido pelo macOS, a pilha de rede nativa não permitirá colocá-lo em modo monitor ou injetar frames brutos. O único caminho confiável é executar o **Kali Linux dentro de uma máquina virtual** e passar o adaptador USB diretamente para o SO convidado, contornando o macOS por completo.
 
 Este guia explica como fazer isso corretamente nos dois principais hipervisores do macOS — VMware Fusion e Parallels Desktop — com atenção especial ao **Apple Silicon (M1/M2/M3)**, que introduz restrições de arquitetura ARM que tornam a seleção do adaptador e da ISO não trivial.
+
+{{< tldr >}}
+O macOS nao suporta modo monitor ou injecao de pacotes para adaptadores ALFA. A solucao e executar uma VM do Kali Linux no VMware Fusion ou Parallels com passthrough USB do adaptador. Apple Silicon requer a imagem ARM64 do Kali.
+{{< /tldr >}}
+
 
 ---
 
@@ -257,8 +276,18 @@ No Apple Silicon especificamente, se o adaptador ALFA for reconhecido mas a inte
 
 ---
 
+{{< faq >}}
+
 ## Guias Relacionados
 
 Para hosts Windows e Linux usando VirtualBox ou VMware Workstation, consulte o guia complementar: [USB Passthrough de Adaptadores ALFA: Guia de Configuração com VirtualBox e VMware](/en/blog/alfa-adapter-virtualbox-vmware-usb/).
 
 Para detalhes específicos do adaptador AWUS036AXML recomendado ao longo deste guia, incluindo benchmarks de desempenho na banda de 6 GHz e notas sobre versões do driver, consulte a análise completa: [Análise ALFA AWUS036AXML WiFi 6E](/en/blog/awus036axml-wifi-6e-review/).
+
+## Referências
+
+1. [Site oficial da ALFA Network](https://www.alfa.com.tw/)
+2. [Pagina de download oficial do Kali Linux](https://www.kali.org/get-kali/)
+3. [Pagina do produto VMware Fusion](https://www.vmware.com/products/fusion.html)
+4. [Site oficial do Parallels Desktop](https://www.parallels.com/)
+5. [Projeto de driver aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)

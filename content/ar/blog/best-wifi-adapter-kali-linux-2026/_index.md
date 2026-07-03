@@ -3,14 +3,30 @@ title: "الدليل الشامل: أفضل محولات WiFi لنظام Kali Li
 description: "مقارنة شاملة لأفضل محولات USB WiFi لنظام Kali Linux 2026، تشمل وضع المراقبة وحقن الحزم والشرائح المعالجة وتوصياتنا من ALFA Network."
 date: 2026-03-23
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Kali-Linux", "محول-WiFi", "وضع-المراقبة", "حقن-الحزم", "ALFA-Network"]
 featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "لماذا يحتاج Kali Linux إلى محول WiFi خارجي؟"
+    answer: "محولات الكمبيوتر المحمول المدمجة لا تدعم وضع المراقبة وحقن الحزم، فلا يمكن تشغيل أدوات اختبار الاختراق مثل airodump-ng. يلزم محول USB خارجي يدعم هاتين الميزتين."
+  - question: "أي تعريف أكثر استقراراً RTL8812AU أم MT7612U؟"
+    answer: "تعريف MT7612U يسمى mt76x2u وهو مدمج في النواة الرئيسية منذ 4.19 ويعمل فور التوصيل دون تجميع. RTL8812AU يحتاج تثبيتاً عبر DKMS وقد يحتاج إعادة بناء بعد تحديث النواة."
+  - question: "هل محول WiFi 6E ضروري لـ Kali Linux؟"
+    answer: "ليس ضرورياً حالياً. تعريف MT7921AUN يُدمج تدريجياً منذ 5.18، وحقن حزم 6 GHz ليس مستقراً تماماً بعد. يُنصح به للمستخدمين المتقدمين فقط عبر AWUS036AXML."
+  - question: "كيف أفعّل وضع المراقبة على Kali Linux؟"
+    answer: "نفّذ أولاً sudo airmon-ng check kill لإنهاء العمليات المتداخلة، ثم sudo airmon-ng start wlan1 لتفعيل وضع المراقبة. أكد أن iwconfig يظهر Mode:Monitor."
+  - question: "ما محول ALFA الموصى به لمبتدئي Kali Linux؟"
+    answer: "AWUS036ACH (RTL8812AU)، الموارد التعليمية المجتمعية الأوفر، تعريف يُصونه aircrack-ng رسمياً، كل أدلة Kali تقريباً تستخدمه كمثال، الأقل مخاطبة للمبتدئين."
 ---
-
 إن كنت جاداً في اختبار أمان الشبكات اللاسلكية، أو اختبار الاختراق، أو تعلّم القرصنة الأخلاقية بنظام Kali Linux، فأول ما ستكتشفه هو أن بطاقة WiFi المدمجة في حاسوبك المحمول لن تفي بالغرض في الغالب. يرشدك هذا الدليل خطوةً بخطوة لاختيار أفضل محول USB WiFi لنظام Kali Linux في 2026، مع توصيات عملية من مجموعة منتجات ALFA Network.
+
+{{< tldr >}}
+الخيار الأول AWUS036ACH (RTL8812AU)، تعريف aircrack-ng الرسمي وأوفر موارد تعليمية؛ المستقبلي AWUS036AXML (MT7921AUN) يدعم Wi-Fi 6E؛ الاقتصادي AWUS036ACM (MT7612U) تعريف مدمج في النواة دون تجميع.
+{{< /tldr >}}
+
 
 ---
 
@@ -244,6 +260,8 @@ sudo aireplay-ng --test wlan0mon
 
 ---
 
+{{< faq >}}
+
 ## ملخص
 
 | حالة الاستخدام | المحول الموصى به |
@@ -254,3 +272,11 @@ sudo aireplay-ng --test wlan0mon
 | أقصى مدى | Wi-Fi 6 بهوائيين | [AWUS036AX](/ar/products/alfa/awus036ax/) |
 
 للمبتدئين، ابدأ بـ AWUS036ACH. دعم برامج التشغيل الناضجة والتوثيق المجتمعي الواسع وقدرة ثنائية النطاق AC1200 تجعله أسهل طريق من فتح الصندوق إلى وضع المراقبة. ومن هناك، تعمل بقية أدوات WiFi على Kali Linux — Aircrack-ng وWireshark وKismet وBettercap — بسلاسة تامة.
+
+## المراجع
+
+1. aircrack-ng — مستودع GitHub الرسمي لتعريف RTL8812AU: [https://github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. وثائق Kali Linux الرسمية: [https://www.kali.org/docs/](https://www.kali.org/docs/)
+3. موقع ALFA Network الرسمي: [https://www.alfa.com.tw](https://www.alfa.com.tw)
+4. Linux Kernel — وثائق تعريف MT76: [https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
+5. موقع Linux Kernel الرسمي: [https://www.kernel.org](https://www.kernel.org)

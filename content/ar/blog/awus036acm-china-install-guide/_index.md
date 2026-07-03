@@ -5,7 +5,6 @@ date: 2026-04-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-dir: rtl
 slug: "awus036acm-china-install-guide"
 tags: ["alfa", "awus036acm", "kali-linux", "ubuntu", "تعريف", "الصين", "وضع-المراقبة", "vif"]
 categories: ["Driver Guides"]
@@ -13,9 +12,29 @@ series: ["alfa-china-install-guide"]
 series_order: 2
 related_product: "/ar/products/alfa/awus036acm/"
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما الشريحة التي يستخدمها AWUS036ACM؟ هل يحتاج إلى تثبيت تعريف؟"
+    answer: "يستخدم شريحة MediaTek MT7612U، وتعريف mt76x2u مدمج في نواة Linux منذ 4.19. في معظم الحالات يعمل فور التوصيل."
+  - question: "هل يدعم AWUS036ACM الواجهات الافتراضية VIF؟"
+    answer: "نعم، MT7612U يدعم بالكامل VIF الأصلي في النواة، ويمكن تشغيل واجهة مراقبة وواجهة مُدارة في آن واحد دون رقع."
+  - question: "هل أحتاج إلى VPN لتثبيت AWUS036ACM في الصين؟"
+    answer: "لا، التعريف مدمج في النواة. يلزم فقط تثبيت حزمة firmware-misc-nonfree من المرايا المحلية."
+  - question: "كم يستهلك AWUS036ACM من الطاقة على Raspberry Pi؟"
+    answer: "يستهلك حوالي 400mW عند الحمل الكامل. يُنصح باستخدام موزع USB مزود بمصدر طاقة لتجنب تقييد سرعة Raspberry Pi."
+  - question: "لماذا يتعرف Debian على AWUS036ACM لكنه لا يعمل؟"
+    answer: "ينقصه حزمة firmware-misc-nonfree للبرنامج الثابت. بعد تثبيتها سيعمل المحول بشكل طبيعي."
 ---
-
 يُعدّ AWUS036ACM من أيسر محوّلات Alfa إعدادًا على Linux. تستخدم شريحته MT7612U تعريف `mt76x2u`، المدمج في نواة Linux منذ الإصدار 4.19. على معظم الأنظمة الحديثة، يعمل المحوّل بأمرين أو ثلاثة فحسب. يتناول هذا الدليل الإعداد الكامل — التحقق من التعريف، وتفعيل وضع المراقبة، وحقن الحزم، والواجهة الافتراضية (VIF) — باستخدام المرايا المحلية حصرًا. لا حاجة لـ GitHub.
+
+{{< tldr >}}
+يستخدم AWUS036ACM شريحة MT7612U بتعريف مدمج في النواة دون تجميع، يدعم وضع المراقبة وحقن الحزم و VIF المتزامن. في الصين يلزم فقط تثبيت حزمة البرنامج الثابت.
+{{< /tldr >}}
+
+تأكد من توافر ما يلي:
+
+
 
 ## قبل البدء
 
@@ -573,6 +592,8 @@ sudo ip link set mon0 up
 | 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | صور Kali ARM (احتياطي) |
 | تعريف MT76 (Gitee) | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | التصريف اليدوي الاحتياطي |
 
+{{< faq >}}
+
 ## المزيد من أدلة محوّلات Alfa للصين
 
 هذا المقال جزء من سلسلة **Alfa China Install Guide**. يتناول كل مقال طرازًا واحدًا:
@@ -587,3 +608,12 @@ sudo ip link set mon0 up
 - [دليل تثبيت AWUS036EAC للصين](/ar/blog/awus036eacs-china-install-guide/)
 
 هل لديك استفسار؟ اترك تعليقًا أدناه أو تواصل معنا عبر [yupitek.com](https://yupitek.com/ar/contact/).
+
+## المراجع
+
+1. [تعريف Linux Kernel mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [وثائق aircrack-ng الرسمية](https://www.aircrack-ng.org/)
+3. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+4. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
+5. [حزمة Debian firmware-misc-nonfree](https://packages.debian.org/bookworm/firmware-misc-nonfree)
+

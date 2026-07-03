@@ -2,6 +2,19 @@
 title: "How to Install ALFA USB WiFi Driver on Kali Linux & Ubuntu 24.04 (2026)"
 description: "Complete guide to installing ALFA Network USB WiFi adapter drivers on Kali Linux 2024 and Ubuntu 24.04 for RTL8812AU, MT7612U, and MT7921AUN chipsets, with troubleshooting tips."
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Do ALFA USB WiFi adapters need drivers on Linux?"
+    answer: "It depends on the chipset. MT7612U and MT7921AUN are in-kernel, just run modprobe. RTL8812AU needs external driver installation from the aircrack-ng GitHub."
+  - question: "How do I identify which chipset my ALFA adapter uses?"
+    answer: "Plug in the adapter and run lsusb. Match the USB ID: 0bda:8812 is RTL8812AU, 0e8d:7612 is MT7612U, 0e8d:7961 is MT7921AUN."
+  - question: "What is DKMS and why do I need it?"
+    answer: "DKMS automatically recompiles driver modules when a new kernel is installed. Without DKMS, out-of-tree drivers break after every kernel update and need manual recompilation."
+  - question: "Can Ubuntu 22.04 use MT7921AUN adapters?"
+    answer: "The default kernel 5.15 does not support it. Install the HWE kernel linux-generic-hwe-22.04 to upgrade to 6.2 or higher, or upgrade to Ubuntu 24.04 LTS."
+  - question: "What should I do if make reports linux/module.h not found?"
+    answer: "Kernel headers are not installed. Run sudo apt install linux-headers-$(uname -r) to install headers matching the current kernel, then recompile."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -10,6 +23,14 @@ featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
 ---
 
 Getting a USB WiFi adapter working on Linux often comes down to one thing: the driver. Unlike Windows, where manufacturers bundle drivers into executable installers, Linux uses kernel modules — compiled code that the operating system loads to communicate with hardware. Understanding this model makes troubleshooting straightforward and driver installation predictable.
+
+{{< tldr >}}
+ALFA adapter driver installation depends on the chipset. MT7612U and MT7921AUN are in-kernel and plug-and-play. RTL8812AU needs installation from the aircrack-ng GitHub with DKMS to survive kernel updates.
+{{< /tldr >}}
+
+
+
+
 
 This guide covers driver installation for every major ALFA Network USB WiFi adapter chipset on both Kali Linux 2024/2025 and Ubuntu 24.04 LTS.
 
@@ -406,6 +427,8 @@ Yopitek is an authorized ALFA Network distributor. Browse the full [ALFA Network
 
 ---
 
+{{< faq >}}
+
 ## Summary
 
 Linux WiFi driver installation follows a simple decision tree:
@@ -416,3 +439,11 @@ Linux WiFi driver installation follows a simple decision tree:
 4. **Something not working?** → Check the troubleshooting table, verify headers match kernel, check `dmesg`
 
 The beauty of ALFA Network adapters is that all four major chipsets have well-documented, actively maintained driver solutions. You're never stuck in unsupported territory.
+
+## References
+
+1. [aircrack-ng Official rtl8812au Driver](https://github.com/aircrack-ng/rtl8812au)
+2. [morrownr USB-WiFi Knowledge Base](https://github.com/morrownr/USB-WiFi)
+3. [Kali Linux Official Documentation](https://www.kali.org/docs/)
+4. [Ubuntu Official HWE Kernel Documentation](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
+5. [Linux Wireless mt76 Driver](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)

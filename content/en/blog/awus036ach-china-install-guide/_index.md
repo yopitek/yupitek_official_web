@@ -1,6 +1,19 @@
 ---
 title: "ALFA AWUS036ACH Driver Install Guide for China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "What chipset does AWUS036ACH use? Does it need extra drivers?"
+    answer: "AWUS036ACH uses the Realtek RTL8812AU chipset. The driver is not built into the Linux kernel and needs manual installation."
+  - question: "Do I need a VPN to install AWUS036ACH drivers in China?"
+    answer: "No. You can complete the entire process using domestic mirrors like USTC, Aliyun, and Gitee source code mirrors."
+  - question: "Does AWUS036ACH support monitor mode and packet injection?"
+    answer: "Yes. After installing the RTL8812AU driver, use airmon-ng to enable monitor mode and aireplay-ng to test packet injection."
+  - question: "Can AWUS036ACH work on a Raspberry Pi?"
+    answer: "Yes. Use a powered USB hub and flash the Kali ARM64 image for best results."
+  - question: "What is the Kali Linux command to install AWUS036ACH drivers?"
+    answer: "Run sudo apt install realtek-rtl88xxau-dkms to install the pre-compiled driver on Kali."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -15,6 +28,17 @@ featureimage: "/images/blog/awus036ach-china-install-guide.webp"
 ---
 
 You just got the AWUS036ACH and your Linux machine doesn't recognize it. That's normal — this chip needs the RTL8812AU driver, and it's not plug-and-play. This guide walks you through the full install in about 30 minutes, using only domestic mirrors. No GitHub access needed.
+
+{{< tldr >}}
+AWUS036ACH uses the RTL8812AU chipset. Install the DKMS driver via apt on Kali, or compile from Gitee on Ubuntu/Debian. Monitor mode and packet injection are ready in 30 minutes.
+{{< /tldr >}}
+
+Make sure you have these ready:
+
+
+
+
+
 
 ## Before You Start
 
@@ -591,6 +615,8 @@ If your workflow needs VIF — for example, running fake APs while monitoring si
 
 ---
 
+{{< faq >}}
+
 ## Troubleshooting
 
 | Problem | Likely Cause | Fix |
@@ -631,3 +657,11 @@ This is part of the **Alfa China Install Guide** series. Each article covers one
 - [AWUS036EAC China Install Guide](/en/blog/awus036eacs-china-install-guide/)
 
 Questions? Leave a comment below or contact us at [yupitek.com](https://yupitek.com/en/contact/).
+
+## References
+
+1. [aircrack-ng Official Documentation](https://www.aircrack-ng.org/)
+2. [ALFA Network Official Website](https://www.alfa.com.tw/)
+3. [Kali Linux Official Documentation](https://www.kali.org/docs/)
+4. [Gitee rtl8812au Mirror](https://gitee.com/mirrors/rtl8812au)
+5. [Realtek RTL8812AU Driver](https://www.realtek.com/)

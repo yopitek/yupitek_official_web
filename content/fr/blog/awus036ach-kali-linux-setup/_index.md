@@ -7,7 +7,24 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "kali-linux", "monitor-mode", "packet-injection", "RTL8812AU", "airmon-ng"]
 featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "L'AWUS036ACH nécessite-t-il un pilote supplémentaire sur Kali Linux ?"
+    answer: "Oui. Le RTL8812AU n'est pas un pilote du noyau mainline. Installez-le depuis le dépôt GitHub aircrack-ng, de préférence avec DKMS."
+  - question: "Comment vérifier que l'AWUS036ACH est détecté par le système ?"
+    answer: "Exécutez lsusb et cherchez l'ID 0bda:8812 pour confirmer la détection du Realtek RTL8812AU, puis lsmod pour vérifier le chargement du module."
+  - question: "Que faire si l'interface disparaît après activation du mode moniteur ?"
+    answer: "NetworkManager a probablement repris le contrôle de l'interface. Exécutez airmon-ng check kill pour terminer les processus interférents."
+  - question: "Quel taux de réussite d'injection de paquets est normal ?"
+    answer: "Un taux supérieur à 80% indique un fonctionnement fiable. En dessous de 50%, vérifiez la position de l'antenne, l'alimentation USB et le pilote."
+  - question: "Comment gérer la défaillance du pilote AWUS036ACH après une mise à jour du noyau ?"
+    answer: "Si installé via DKMS, le pilote se reconstruit automatiquement. En cas d'échec, exécutez dkms autoinstall et vérifiez linux-headers."
 ---
+
+{{< tldr >}}
+L'AWUS036ACH équipé du chipset RTL8812AU, via le pilote aircrack-ng avec DKMS, active stablement le mode moniteur et l'injection de paquets. C'est l'équipement standard du pentesting sur Kali Linux.
+{{< /tldr >}}
 
 La plupart des utilisateurs se heurtent à trois obstacles principaux lors de la configuration de l'AWUS036ACH sur Kali : le pilote ne se compile pas, la VM ne transmet pas l'appareil USB, ou le mode moniteur échoue silencieusement. Ce guide couvre les trois, plus la configuration complète à partir de zéro.
 
@@ -33,6 +50,8 @@ Vous pouvez le trouver dans notre boutique : [ALFA AWUS036ACH](/fr/products/alfa
 
 ---
 
+{{< faq >}}
+
 ## Résumé
 
 | Étape | Commande |
@@ -49,3 +68,11 @@ Vous pouvez le trouver dans notre boutique : [ALFA AWUS036ACH](/fr/products/alfa
 | Temps estimé | ~15 minutes (système propre) |
 
 Le [ALFA AWUS036ACH](/fr/products/alfa/awus036ach/) associé à Kali Linux 2024+ et au pilote aircrack-ng RTL8812AU reste l'appareil WiFi le plus fiable et le mieux documenté dans la communauté de test de pénétration.
+
+---
+
+## Références
+1. [Dépôt GitHub du pilote aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. [Documentation officielle Kali Linux](https://www.kali.org/docs/)
+3. [Spécifications Realtek RTL8812AU](https://www.realtek.com/)
+4. [Documentation officielle Linux Wireless](https://wireless.wiki.kernel.org/)

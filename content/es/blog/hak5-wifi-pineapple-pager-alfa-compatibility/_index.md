@@ -7,9 +7,30 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH", "compatibility", "wireless-security"]
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿HAK5 WiFi Pineapple Pager puede conectar tarjetas ALFA externas?"
+    answer: "Sí, pero ten en cuenta las limitaciones de la arquitectura MIPS y la alimentación USB 2.0. El AWUS036ACM es la primera opción: el controlador integrado en el núcleo es el más estable."
+  - question: "¿Por qué el Pager necesita un concentrador USB con alimentación?"
+    answer: "El Pager solo tiene puerto USB 2.0 con salida máxima de 500 mA. Las tarjetas ALFA de alta potencia alcanzan picos de 720 mA; conectarlas directamente puede causar reinicios o cuelgues del kernel."
+  - question: "¿Por qué el AWUS036ACM es la tarjeta preferida del Pager?"
+    answer: "El controlador de MT7612U está integrado en el kernel de OpenWrt 6.6. En el Pager se instala directamente con opkg, sin compilación cruzada; es la opción más estable y fiable."
+  - question: "¿Qué limitaciones tiene la arquitectura MIPS para la instalación de controladores?"
+    answer: "El Pager se basa en el MT7628AN MIPS32, no admite DKMS, no tiene cadena de herramientas GCC. Los controladores no integrados deben compilarse de forma cruzada en un host x86 externo."
+  - question: "¿Qué problemas conocidos tiene RTL8812AU en el Pager?"
+    answer: "RTL8812AU tiene un error de wiphy_register en plataformas MIPS que impide cargar la interfaz. Se necesita aplicar un parche de la comunidad. Se recomienda usar AWUS036ACM en su lugar."
 ---
+Antes de conectar cualquier adaptador USB de alta potencia al HAK5 Pager, usted debe comprender dos barreras principales: la arquitectura de la CPU y los límites de alimentación del puerto USB.
 
 # HAK5 WiFi Pineapple Pager × ALFA Network: Guía de compatibilidad de tarjetas inalámbricas USB externas
+
+{{< tldr >}}
+El Pager usa arquitectura MIPS y no admite DKMS. El AWUS036ACM, con el controlador MT7612U integrado en el kernel de OpenWrt 6.6, es plug-and-play. El AWUS036ACH requiere compilación cruzada y tiene un bug de wiphy. La alimentación USB 2.0 de solo 500 mA requiere un concentrador externo.
+{{< /tldr >}}
+
+
+El HAK5 WiFi Pineapple Pager puede conectar tarjetas ALFA externas. La primera opción es el AWUS036ACM, cuyo controlador integrado en el núcleo es el más estable. Las tarjetas de alta potencia requieren un concentrador USB con alimentación externa para evitar cuelgues del kernel.
 
 La auditoría de seguridad inalámbrica exige alta precisión, versatilidad y el hardware adecuado. El **HAK5 WiFi Pineapple Pager** ha captado la atención de los profesionales de la seguridad informática como una herramienta de auditoría ultraportátil y de tamaño de bolsillo, impulsada por el potente motor **PineAP v8**.
 
@@ -22,8 +43,6 @@ En esta guía detallada, analizaremos las limitaciones técnicas (como la arquit
 ---
 
 ## 1. Limitaciones técnicas: lo que usted debe saber
-
-Antes de conectar cualquier adaptador USB de alta potencia al HAK5 Pager, usted debe comprender dos barreras principales: la arquitectura de la CPU y los límites de alimentación del puerto USB.
 
 ### 1.1 Arquitectura de la CPU: la restricción MIPS
 A diferencia de una computadora estándar con Kali Linux que funciona con arquitectura x86_64, o de una Raspberry Pi basada en ARM, el HAK5 Pager está construido sobre el chip **MediaTek MT7628AN SoC** (un núcleo **MIPS32r2, Little-Endian**, compilado bajo la plataforma `mipsel_24kc` en OpenWrt).
@@ -179,11 +198,13 @@ Al conectar un adaptador ALFA compatible al HAK5 Pager, usted desbloquea múltip
 
 ---
 
+{{< faq >}}
+
 ## 5. Conclusión y veredicto
 
 La integración de una tarjeta inalámbrica de ALFA Network con el HAK5 WiFi Pineapple Pager le permite crear una estación móvil de auditoría discreta y potente. Sin embargo, los detalles de hardware son críticos:
 
-- **Para despliegues rápidos y sin complicaciones**: Adquiera el [ALFA AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm) por la estabilidad de su controlador MediaTek bajo OpenWrt Kernel 6.6 y su facilidad de instalación.
+- **Para despliegues rápidos y sin complicaciones**: Adquiera el [ALFA AWUS036ACM](https://yupitek.com/es/products/alfa/awus036acm) por la estabilidad de su controlador MediaTek bajo OpenWrt Kernel 6.6 y su facilidad de instalación.
 - **Estabilidad de energía**: Asegúrese siempre de contar con un **Hub USB con alimentación externa** para garantizar la salida de señal óptima de las tarjetas inalámbricas de alta potencia y evitar desconexiones inesperadas.
 
 Si desea realizar consultas técnicas adicionales, cotizaciones de hardware o requiere compilaciones personalizadas a través del SDK de OpenWrt, no dude en ponerse en contacto con el **Equipo de Soporte Técnico de Yupitek**:
@@ -192,3 +213,11 @@ Si desea realizar consultas técnicas adicionales, cotizaciones de hardware o re
 - 📧 Correo de soporte: [sales@yupitek.com](mailto:sales@yupitek.com)
 - 📞 Teléfono: +886-2-87325338
 - 📍 Dirección de la compañía: 1F., No. 72, Ln. 34, Fuyang St., Xinyi Dist., Taipei City, Taiwán
+
+## Referencias
+
+1. [Documentación oficial de Hak5 — Documentación del producto WiFi Pineapple](https://documentation.hak5.org/)
+2. [Sitio oficial de OpenWrt — Versión 24.10](https://openwrt.org/)
+3. [Repositorio del controlador mt76 de OpenWrt — GitHub](https://github.com/openwrt/mt76)
+4. [aircrack-ng/rtl8812au — Repositorio GitHub del controlador comunitario](https://github.com/aircrack-ng/rtl8812au)
+5. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)

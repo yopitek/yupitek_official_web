@@ -2,6 +2,8 @@
 title: "Руководство по установке драйвера ALFA AWUS036ACM для Китая: Kali Linux, Ubuntu, Debian и Raspberry Pi"
 description: "Пошаговое руководство по установке драйвера ALFA AWUS036ACM в Китае с использованием отечественных зеркал. Встроенный в ядро драйвер MT7612U, полная поддержка VIF. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi. Без GitHub."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +14,28 @@ series: ["alfa-china-install-guide"]
 series_order: 2
 related_product: "/ru/products/alfa/awus036acm/"
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+
+faq:
+  - question: "Какой чип используется в AWUS036ACM? Нужно ли устанавливать драйвер?"
+    answer: "Чип MediaTek MT7612U, драйвер mt76x2u встроен в ядро Linux с версии 4.19, в большинстве случаев Plug & Play."
+  - question: "Поддерживает ли AWUS036ACM VIF-виртуальные интерфейсы?"
+    answer: "Да, MT7612U полностью поддерживает нативный VIF ядра, может одновременно работать в режиме монитора и управляемом режиме без патчей."
+  - question: "Нужен ли VPN для установки AWUS036ACM в Китае?"
+    answer: "Нет, драйвер уже встроен в ядро, нужно только установить пакет прошивки firmware-misc-nonfree из внутреннего зеркала."
+  - question: "Сколько потребляет AWUS036ACM на Raspberry Pi?"
+    answer: "При полной нагрузке около 400 мВт, рекомендуется USB-хаб с независимым питанием для избежания ограничения тока Raspberry Pi."
+  - question: "Почему Debian распознаёт AWUS036ACM, но адаптер не работает?"
+    answer: "Отсутствует пакет прошивки firmware-misc-nonfree, после установки адаптер инициализируется нормально."
 ---
 
 AWUS036ACM — один из самых простых в настройке адаптеров ALFA на Linux. Чип MT7612U использует драйвер `mt76x2u`, встроенный в ядро Linux начиная с версии 4.19. На большинстве современных систем адаптер заработает с двух-трёх команд. Руководство охватывает полную настройку — проверку драйвера, режим монитора, инъекцию пакетов и VIF — с использованием только отечественных зеркал. GitHub не требуется.
+
+{{< tldr >}}
+AWUS036ACM с чипом MT7612U, драйвер встроен в ядро, поддерживает режим монитора, инъекцию пакетов и VIF. В Китае нужно только установить пакет прошивки.
+{{< /tldr >}}
+
+Убедитесь, что у вас есть следующее:
+
 
 ## Перед началом работы
 
@@ -546,6 +567,8 @@ sudo ip link set mon0 up
 
 ---
 
+{{< faq >}}
+
 ## Устранение неполадок
 
 | Проблема | Вероятная причина | Решение |
@@ -586,3 +609,12 @@ sudo ip link set mon0 up
 - [AWUS036EAC China Install Guide](/ru/blog/awus036eacs-china-install-guide/)
 
 Есть вопросы? Оставьте комментарий ниже или свяжитесь с нами на [yupitek.com](https://yupitek.com/ru/contact/).
+
+
+## Источники
+
+1. [Драйвер Linux Kernel mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [Официальная документация aircrack-ng](https://www.aircrack-ng.org/)
+3. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
+4. [Официальная документация Kali Linux](https://www.kali.org/docs/)
+5. [Пакет Debian firmware-misc-nonfree](https://packages.debian.org/bookworm/firmware-misc-nonfree)

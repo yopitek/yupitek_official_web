@@ -12,7 +12,24 @@ series: ["alfa-china-install-guide"]
 series_order: 8
 related_product: "/fr/products/alfa/awus036eacs/"
 featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Quel chipset utilise l'AWUS036EACS ? Supporte-t-il le Bluetooth ?"
+    answer: "Il utilise le chipset Realtek RTL8821CU, supportant le WiFi 5 et le Bluetooth 4.2."
+  - question: "L'AWUS036EACS est-il recommandé pour Linux ?"
+    answer: "Non recommandé. Le RTL8821CU n'a pas de pilote Linux bien maintenu, et le mode moniteur est très instable."
+  - question: "Comment installer le pilote AWUS036EACS sur Windows ?"
+    answer: "Téléchargez le paquet de pilotes Windows depuis files.alfa.com.tw, installez en tant qu'administrateur et redémarrez."
+  - question: "Comment activer le Bluetooth de l'AWUS036EACS ?"
+    answer: "Après installation du pilote, le Bluetooth s'active généralement automatiquement. Activez-le dans les paramètres Windows."
+  - question: "Quelle carte choisir pour la recherche en sécurité sans fil sous Linux ?"
+    answer: "Préférez l'AWUS036ACM ou l'AWUS036ACS, qui supportent pleinement le mode moniteur sous Linux."
 ---
+
+{{< tldr >}}
+L'AWUS036EACS utilise le chipset RTL8821CU, carte mini WiFi 5 avec Bluetooth 4.2. Installation simple sous Windows, mais le pilote Linux est instable et non recommandé pour le mode moniteur.
+{{< /tldr >}}
 
 L'AWUS036EACS est l'adaptateur combiné nano WiFi 5 + Bluetooth 4.2 d'ALFA. Il est conçu pour les utilisateurs Windows qui ont besoin d'une mise à niveau sans fil compacte. Son chipset RTL8821CU n'a pas de pilote Linux open-source fiable — le mode moniteur et l'injection de paquets ne sont pas supportés. Ce guide couvre l'installation sous Windows à partir de sources chinoises et explique clairement les limitations de Linux.
 
@@ -61,9 +78,18 @@ Le RTL8821CU n'a pas de pilote DKMS maintenu pour les noyaux Kali modernes. Des 
 |----------|-----|---------|
 | Pilotes officiels Alfa | [files.alfa.com.tw](https://files.alfa.com.tw) | Pilote Windows EACS |
 
+{{< faq >}}
+
 ## Plus de guides d'installation d'adaptateurs Alfa pour la Chine
 
 - [AWUS036ACH China Install Guide](/fr/blog/awus036ach-china-install-guide/) — RTL8812AU, haute puissance
 - AWUS036EACS ← vous êtes ici
 
 Des questions ? Laissez un commentaire ci-dessous ou contactez-nous sur [yupitek.com](https://yupitek.com/fr/contact/).
+
+---
+
+## Références
+1. [Site officiel ALFA Network](https://www.alfa.com.tw/)
+2. [Téléchargement de pilotes officiels ALFA](https://files.alfa.com.tw)
+3. [Site officiel Realtek](https://www.realtek.com/)

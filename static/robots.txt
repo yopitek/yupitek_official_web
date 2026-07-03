@@ -1,6 +1,34 @@
-User-agent: *
+# === AI Citation Bots (must allow — blocking = silent removal from AI answers) ===
+User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# === AI Retrieval Bots (recommended allow — builds knowledge index) ===
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# === AI Training Bots (selective block — prevents model training use) ===
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# === Search Engine Crawlers ===
 User-agent: Baiduspider
 Allow: /
 
@@ -10,12 +38,11 @@ Allow: /
 User-agent: Sogou
 Allow: /
 
-# AI Crawlers - allow ClaudeBot for AI-powered search integration
-User-agent: ClaudeBot
-Content-Signal: search=yes,ai-train=no
+# === Default ===
+User-agent: *
 Allow: /
 
-# Block form confirmation pages from indexing
+# === Block form confirmation pages from indexing ===
 Disallow: /zh-tw/contact/confirm/
 Disallow: /zh-cn/contact/confirm/
 Disallow: /en/contact/confirm/
@@ -24,6 +51,8 @@ Disallow: /ar/contact/confirm/
 Disallow: /es/contact/confirm/
 Disallow: /pt/contact/confirm/
 Disallow: /ru/contact/confirm/
+Disallow: /de/contact/confirm/
+Disallow: /fr/contact/confirm/
 
 Sitemap: https://yupitek.com/sitemap.xml
 Sitemap: https://yupitek.com/zh-tw/sitemap.xml
@@ -34,3 +63,5 @@ Sitemap: https://yupitek.com/ar/sitemap.xml
 Sitemap: https://yupitek.com/es/sitemap.xml
 Sitemap: https://yupitek.com/pt/sitemap.xml
 Sitemap: https://yupitek.com/ru/sitemap.xml
+Sitemap: https://yupitek.com/de/sitemap.xml
+Sitemap: https://yupitek.com/fr/sitemap.xml

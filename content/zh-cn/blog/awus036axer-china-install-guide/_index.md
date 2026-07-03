@@ -1,7 +1,12 @@
 ---
+
+
+
 title: "ALFA AWUS036AXER 中国安装全攻略：Kali Linux / Ubuntu / Debian / 树莓派"
 description: "手把手教你在中国网络环境下安装 ALFA AWUS036AXER 驱动，全程使用国内镜像，无需翻墙。覆盖 Kali Linux、Ubuntu 22/24、Debian 和树莓派。"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +17,28 @@ series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036axer/"
 series_order: 5
 featureimage: "/images/blog/awus036axer-china-install-guide.webp"
+faq:
+  - question: "AWUS036AXER 用什么芯片？跟 AWUS036AX 一样吗？"
+    answer: "同样采用 Realtek RTL8832BU 芯片，支持 WiFi 6，但体积更小更便携。"
+  - question: "AWUS036AXER 在 Ubuntu 24.04 上需要安装驱动吗？"
+    answer: "不需要，Ubuntu 24.04 核心已原生支持，插上即用。"
+  - question: "AWUS036AXER 适合做无线安全研究吗？"
+    answer: "较不适合，RTL8832BU 的监听模式支持有限，建议改用 AWUS036ACM 或 AWUS036ACH。"
+  - question: "AWUS036AXER 的 USB ID 是多少？"
+    answer: "Realtek RTL8832BU 的 USB ID 为 0bda:885a，用 lsusb 可确认。"
+  - question: "在中国安装 AWUS036AXER 需要翻墙吗？"
+    answer: "不需要，从 Gitee 下载 rtl8852bu 源码并用国内镜像安装编译工具即可。"
 ---
 
+
+
+
 刚收到这款小巧玲珑的 AWUS036AXER，插上去发现 Linux 没反应？别担心，这很正常。这块网卡用的是 RTL8832BU 芯片，在内核版本 6.14 以下驱动不是开箱即用的。好在如果你用的是 Ubuntu 24.04，系统已经内置好了，插上就能飞。
+
+{{< tldr >}}
+AWUS036AXER 采用 RTL8832BU 芯片，迷你便携 WiFi 6 网卡，Ubuntu 24.04 免驱即用，其他系统从 Gitee 编译 rtl8852bu 安装。
+{{< /tldr >}}
+
 
 对于其他系统的用户，我也帮大家找好了国内的 Gitee 镜像。不用翻墙，咱们花个 10 分钟就能把它“调教”好。
 
@@ -225,6 +249,9 @@ sudo reboot
 | rtl8852bu 驱动镜像 | [Gitee 镜像](https://gitee.com/mirrors/rtl8852bu) | 国内克隆专用 |
 | 清华大学镜像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Debian/Ubuntu 推荐 |
 
+
+{{< faq >}}
+
 ## 更多 Alfa 网卡中国安装指南
 
 - [AWUS036ACH 安装指南](/zh-cn/blog/awus036ach-china-install-guide/)
@@ -237,3 +264,10 @@ sudo reboot
 - [AWUS036EACS 安装指南](/zh-cn/blog/awus036eacs-china-install-guide/)
 
 折腾过程中遇到搞不定的，欢迎在下面留言，或者去 [yupitek.com](https://yupitek.com/zh-cn/contact/) 找我们。
+
+## 参考文献
+
+1. [Realtek 官方网站](https://www.realtek.com/)
+2. [ALFA Network 官网](https://www.alfa.com.tw/)
+3. [Kali Linux 官方文档](https://www.kali.org/docs/)
+4. [Gitee rtl8852bu 镜像](https://gitee.com/mirrors/rtl8852bu)

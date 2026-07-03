@@ -2,6 +2,19 @@
 title: "DGX Spark Wi-Fi Not Connecting? Fix It in 10 Minutes with This ALFA USB Adapter"
 description: "NVIDIA DGX Spark built-in Wi-Fi problems solved. Driver-free USB adapter works in 10 minutes. Also works on ASUS ASCENT GX10, MSI EdgeXpert, HP ZGX Nano, ALTOS BrainSphere GB10 F1, and GIGABYTE AI TOP ATOM."
 date: 2026-05-20
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Why does DGX Spark Wi-Fi fail to connect?"
+    answer: "DGX Spark has a built-in MediaTek MT7925 Wi-Fi 7 chip, but the OOBE-stage wpa_supplicant is too stripped down. It is incompatible with certain AP brands (especially UniFi), and WPA2-Enterprise almost certainly fails."
+  - question: "Does the ALFA USB adapter fix apply to all GB10 AI Servers?"
+    answer: "Yes. All AI Edge Servers with the NVIDIA GB10 Grace Blackwell Superchip (ASUS, MSI, HP, ALTOS, GIGABYTE) use the same MT7925 Wi-Fi chip. The ALFA AWUS036ACM fix works universally."
+  - question: "Does AWUS036ACM need driver installation on DGX Spark?"
+    answer: "No. The MT7612U mt76 driver has been in the mainline kernel since 4.19. DGX OS Kernel 6.17+ supports it natively. Plug into USB and it auto-loads."
+  - question: "How long does the ALFA USB adapter Wi-Fi fix take?"
+    answer: "Under ten minutes. Plug into a USB 3.0 port, the system auto-loads the driver, then scan and connect via nmcli. No driver compilation or reboot needed."
+  - question: "Can I use other ALFA adapters on DGX Spark?"
+    answer: "AWUS036ACH (RTL8812AU) requires manual driver compilation, which is not guaranteed on the GB10 ARM64 platform. AWUS036ACM is the only confirmed zero-compilation, plug-and-play solution."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -10,6 +23,14 @@ featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
 ---
 
 Your long-awaited **NVIDIA DGX Spark** (codenamed Project DIGITS) has finally arrived.
+
+{{< tldr >}}
+NVIDIA DGX Spark and all GB10 AI Servers have a known connectivity defect in the built-in MT7925 Wi-Fi 7 chip. The fix is plugging in an ALFA AWUS036ACM USB adapter. The mt76 driver has been in-kernel since 4.19, and DGX OS Kernel 6.17+ is plug-and-play. Connection is ready in ten minutes.
+{{< /tldr >}}
+
+
+
+
 
 You unbox it, plug in the power, and the OOBE (first-time setup) screen appears — everything looks smooth. You select your Wi-Fi network, enter the password, and the screen spins for thirty seconds...
 
@@ -285,6 +306,8 @@ A: Absolutely. The MT7612U driver is part of the mainline Linux Kernel — Ubunt
 
 ---
 
+{{< faq >}}
+
 ## Summary: No Matter Which GB10 You Have, Get It Online in 10 Minutes
 
 Whether you bought a NVIDIA DGX Spark, ASUS ASCENT GX10, MSI EdgeXpert, HP ZGX Nano, ALTOS BrainSphere GB10 F1, or GIGABYTE AI TOP ATOM — these GB10 AI Edge Servers are phenomenal AI development machines: 128GB unified memory, 20-core ARM CPU, ConnectX-7 200GbE networking. But they all share the same MediaTek MT7925 Wi-Fi chip, and they can all get stuck at the same first step.
@@ -313,3 +336,11 @@ Ten minutes, one USB adapter, and your AI Server is truly online.
 ---
 
 *Sources: NVIDIA DGX Spark Release Notes, NVIDIA Developer Forums, morrownr/USB-WiFi GitHub, ALFA Network Docs, Linux Kernel Wireless Documentation*
+
+## References
+
+1. [NVIDIA DGX Spark Official Documentation](https://developer.nvidia.com/dgx-spark)
+2. [NVIDIA Developer Forums](https://forums.developer.nvidia.com/)
+3. [morrownr/USB-WiFi GitHub Project](https://github.com/morrownr/USB-WiFi)
+4. [Linux Kernel Wireless Documentation](https://wireless.wiki.kernel.org/)
+5. [ALFA Network Official Website](https://www.alfa.com.tw/)

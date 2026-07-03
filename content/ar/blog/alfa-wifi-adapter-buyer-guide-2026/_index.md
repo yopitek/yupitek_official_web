@@ -3,14 +3,30 @@ title: "دليل شراء محولات ALFA WiFi 2026: أي طراز يناسب�
 description: "الدليل الشامل لشراء محولات USB WiFi من ALFA Network لعام 2026. مقارنة بين AWUS036ACH وACM وACS وAX وAXER وAXM وAXML وEACS من حيث دعم برامج التشغيل ووضع المراقبة وتوافق أنظمة التشغيل والسعر."
 date: 2026-03-24
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-network", "wifi-adapter", "buyer-guide", "kali-linux", "penetration-testing", "monitor-mode"]
 featureimage: "/images/blog/alfa-wifi-adapter-buyer-guide-2026.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما معايير اختيار محول ALFA؟"
+    answer: "تشمل المعايير نضج تعريف مجموعة الشرائح، توافق نظام التشغيل، دعم وضع المراقبة، وقدرة الإرسال. تعريف RTL8812AU هو الأكثر نضجاً واستقراراً."
+  - question: "ما محولات ALFA التي تدعم وضع المراقبة؟"
+    answer: "ACH و ACM و ACS و AX و AXER و AXM و AXML جميعها تدعم وضع المراقبة وحقن الحزم بالكامل. EACS (RTL8821CU) لا يدعمهما."
+  - question: "هل أحتاج محول WiFi 6E/6؟"
+    answer: "إذا شمل نطاق التدقيق تردد 6 GHz فنعم. AXML يدعم AX3000 ثلاثي النطاق، ويتطلب نواة Linux ≥ 5.18 وحزمة firmware-misc-nonfree."
+  - question: "ما الفرق بين تثبيت تعريفات RTL8812AU و MT7612U؟"
+    answer: "RTL8812AU يحتاج تجميعاً عبر DKMS وقد يحتاج إعادة بناء بعد تحديث النواة؛ MT7612U مدمج في النواة الرئيسية منذ 4.19 ويعمل فور التوصيل دون تجميع."
+  - question: "ما أفضل محول ALFA موصى به لعام 2026؟"
+    answer: "لفرق Red Team首选 AWUS036ACH (500mW بهوائيين)، الخيار الاقتصادي AWUS036ACM، وللمؤسسات 6E首选 AWUS036AXML."
 ---
 
-يقطع هذا الدليل عليك عناء البحث إن كنت مهندس أمن شبكات، أو متخصصاً في تقنية المعلومات للمؤسسات، أو عضواً في فريق Red Team، وتحتاج إلى اختيار محول USB WiFi المناسب من ALFA Network في عام 2026. نستعرض هنا الطرازات الثمانية المتاحة حالياً في الإنتاج — [AWUS036ACS](/en/products/alfa/awus036acs/)، و[AWUS036ACH](/en/products/alfa/awus036ach/)، و[AWUS036ACM](/en/products/alfa/awus036acm/)، و[AWUS036EACS](/en/products/alfa/awus036eacs/)، و[AWUS036AX](/en/products/alfa/awus036ax/)، و[AWUS036AXER](/en/products/alfa/awus036axer/)، و[AWUS036AXM](/en/products/alfa/awus036axm/)، و[AWUS036AXML](/en/products/alfa/awus036axml/) — مع مقارنة شاملة للشرائح، ومدى نضج برامج التشغيل، ودعم أنظمة التشغيل، وحالات الاستخدام الفعلية، حتى تقضي وقتاً أقل في استكشاف مشاكل برامج التشغيل وإصلاحها، ووقتاً أطول في العمل الحقيقي.
+يقطع هذا الدليل عليك عناء البحث إن كنت مهندس أمن شبكات، أو متخصصاً في تقنية المعلومات للمؤسسات، أو عضواً في فريق Red Team، وتحتاج إلى اختيار محول USB WiFi المناسب من ALFA Network في عام 2026. نستعرض هنا الطرازات الثمانية المتاحة حالياً في الإنتاج — [AWUS036ACS](/ar/products/alfa/awus036acs/)، و[AWUS036ACH](/ar/products/alfa/awus036ach/)، و[AWUS036ACM](/ar/products/alfa/awus036acm/)، و[AWUS036EACS](/ar/products/alfa/awus036eacs/)، و[AWUS036AX](/ar/products/alfa/awus036ax/)، و[AWUS036AXER](/ar/products/alfa/awus036axer/)، و[AWUS036AXM](/ar/products/alfa/awus036axm/)، و[AWUS036AXML](/ar/products/alfa/awus036axml/) — مع مقارنة شاملة للشرائح، ومدى نضج برامج التشغيل، ودعم أنظمة التشغيل، وحالات الاستخدام الفعلية، حتى تقضي وقتاً أقل في استكشاف مشاكل برامج التشغيل وإصلاحها، ووقتاً أطول في العمل الحقيقي.
+
+{{< tldr >}}
+AWUS036ACH هو الخيار الأول لفرق Red Team في 2026: 500 mW بهوائيين AC1200، وتعريف RTL8812AU هو الأكثر نضجاً. الخيار الاقتصادي AWUS036ACM، وللمؤسسات 6E اختر AWUS036AXML (AX3000 ثلاثي النطاق).
+{{< /tldr >}}
 
 ---
 
@@ -30,7 +46,7 @@ featureimage: "/images/blog/alfa-wifi-adapter-buyer-guide-2026.webp"
 
 ### (ب) هل تحتاج إلى وضع المراقبة (Monitor Mode) وحقن الحزم (Packet Injection)؟
 
-إن كانت إجابتك نعم — وينبغي أن تكون كذلك لأي عمل في اختبار الاختراق (Penetration Testing) أو تدقيق الشبكات اللاسلكية — فاشطب [AWUS036EACS](/en/products/alfa/awus036eacs/) من قائمتك المختصرة فوراً. شريحة RTL8821CU المستخدمة فيه لا تدعم وضع المراقبة أو حقن الحزم بشكل موثوق تحت Linux. أما سائر الطرازات الواردة في هذا الدليل فتدعم كليهما.
+إن كانت إجابتك نعم — وينبغي أن تكون كذلك لأي عمل في اختبار الاختراق (Penetration Testing) أو تدقيق الشبكات اللاسلكية — فاشطب [AWUS036EACS](/ar/products/alfa/awus036eacs/) من قائمتك المختصرة فوراً. شريحة RTL8821CU المستخدمة فيه لا تدعم وضع المراقبة أو حقن الحزم بشكل موثوق تحت Linux. أما سائر الطرازات الواردة في هذا الدليل فتدعم كليهما.
 
 ### (ج) جهاز افتراضي أم تثبيت مباشر (Bare Metal)؟
 
@@ -50,14 +66,14 @@ featureimage: "/images/blog/alfa-wifi-adapter-buyer-guide-2026.webp"
 
 | الطراز | جيل Wi-Fi | الشريحة | السرعة القصوى | وضع المراقبة | برنامج تشغيل Kali | Windows | macOS | الهوائيات | الأنسب لـ |
 |---|---|---|---|---|---|---|---|---|---|
-| [AWUS036ACS](/en/products/alfa/awus036acs/) | Wi-Fi 5 | RTL8811AU | AC600 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | طقم السفر الخفيف |
-| [AWUS036ACH](/en/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | عمليات Red Team |
-| [AWUS036ACM](/en/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | ثنائي النطاق بميزانية محدودة |
-| [AWUS036EACS](/en/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | الاستخدام العام (بدون حقن) |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated | تدقيق Wi-Fi 6 |
-| [AWUS036AXER](/en/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | Wi-Fi 6 بنطاق ممتد |
-| [AWUS036AXM](/en/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | مدخل Wi-Fi 6E |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | الرائد في Wi-Fi 6E |
+| [AWUS036ACS](/ar/products/alfa/awus036acs/) | Wi-Fi 5 | RTL8811AU | AC600 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | طقم السفر الخفيف |
+| [AWUS036ACH](/ar/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | عمليات Red Team |
+| [AWUS036ACM](/ar/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | ثنائي النطاق بميزانية محدودة |
+| [AWUS036EACS](/ar/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | الاستخدام العام (بدون حقن) |
+| [AWUS036AX](/ar/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated | تدقيق Wi-Fi 6 |
+| [AWUS036AXER](/ar/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | Wi-Fi 6 بنطاق ممتد |
+| [AWUS036AXM](/ar/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | مدخل Wi-Fi 6E |
+| [AWUS036AXML](/ar/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | الرائد في Wi-Fi 6E |
 
 </div>
 
@@ -75,7 +91,7 @@ featureimage: "/images/blog/alfa-wifi-adapter-buyer-guide-2026.webp"
 
 ### AWUS036ACH — المعيار الذهبي لفرق Red Team
 
-لا يزال [AWUS036ACH](/en/products/alfa/awus036ach/) المحول الأكثر انتشاراً من ALFA في مجتمع الأمن، ولأسباب وجيهة. شريحة RTL8812AU مدعومة ببرنامج تشغيل `aircrack-ng/rtl8812au` الذي خضع للصيانة والاختبار على جميع إصدارات Kali Linux الرئيسية لسنوات.
+لا يزال [AWUS036ACH](/ar/products/alfa/awus036ach/) المحول الأكثر انتشاراً من ALFA في مجتمع الأمن، ولأسباب وجيهة. شريحة RTL8812AU مدعومة ببرنامج تشغيل `aircrack-ng/rtl8812au` الذي خضع للصيانة والاختبار على جميع إصدارات Kali Linux الرئيسية لسنوات.
 
 **المواصفات التقنية:**
 - الشريحة (Chipset): RTL8812AU (Realtek)
@@ -83,7 +99,7 @@ featureimage: "/images/blog/alfa-wifi-adapter-buyer-guide-2026.webp"
 - قدرة إرسال 500 mW — الأعلى في طرازات Wi-Fi 5
 - ثنائي النطاق: 2.4 GHz و 5 GHz
 
-**لماذا يتصدر قوائم فرق Red Team:** تجمع قدرة إرسال 500 mW مع هوائيين خارجيين ودعم ناضج لحقن الحزم (Packet Injection) في منظومة واحدة تُمكّنك من العمل على مسافة بعيدة مع الحفاظ على تسليم موثوق للإطارات. استبدل الهوائي الشعاعي القياسي بلوحة اتجاهية [APA-M25](/en/products/alfa/apa-m25/) وستحصل على منصة بعيدة المدى للغاية. كما يُتيح شكل الهوائيين المزدوجين تشغيل MIMO 2T2R عند الارتباط بالشبكات المستهدفة.
+**لماذا يتصدر قوائم فرق Red Team:** تجمع قدرة إرسال 500 mW مع هوائيين خارجيين ودعم ناضج لحقن الحزم (Packet Injection) في منظومة واحدة تُمكّنك من العمل على مسافة بعيدة مع الحفاظ على تسليم موثوق للإطارات. استبدل الهوائي الشعاعي القياسي بلوحة اتجاهية [APA-M25](/ar/products/alfa/apa-m25/) وستحصل على منصة بعيدة المدى للغاية. كما يُتيح شكل الهوائيين المزدوجين تشغيل MIMO 2T2R عند الارتباط بالشبكات المستهدفة.
 
 **تثبيت برنامج التشغيل على Kali:**
 ```bash
@@ -96,7 +112,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 ### AWUS036ACM — الخيار الثنائي النطاق بالميزانية المحدودة
 
-يستخدم [AWUS036ACM](/en/products/alfa/awus036acm/) شريحة MT7612U (MediaTek) — عائلة مختلفة تماماً عن RTL8812AU في ACH — مدعومة في نواة Linux الرئيسية منذ الإصدار 4.19 عبر برنامج التشغيل `mt76x2u`. يأتي بموصلين 2× RP-SMA لتشغيل ثنائي الهوائي، ولا يستلزم أي تجميع يدوي لبرنامج التشغيل. وظيفياً، دعم وضع المراقبة (Monitor Mode) وحقن الحزم (Packet Injection) متطابق تماماً مع ACH.
+يستخدم [AWUS036ACM](/ar/products/alfa/awus036acm/) شريحة MT7612U (MediaTek) — عائلة مختلفة تماماً عن RTL8812AU في ACH — مدعومة في نواة Linux الرئيسية منذ الإصدار 4.19 عبر برنامج التشغيل `mt76x2u`. يأتي بموصلين 2× RP-SMA لتشغيل ثنائي الهوائي، ولا يستلزم أي تجميع يدوي لبرنامج التشغيل. وظيفياً، دعم وضع المراقبة (Monitor Mode) وحقن الحزم (Packet Injection) متطابق تماماً مع ACH.
 
 إن كنت لا تشترط قدرة الإرسال المرتفعة لـ ACH وتفضّل برنامج تشغيل مدمجاً في النواة بدون تجميع، يغطي ACM حالات الاستخدام ذاتها بتكلفة أقل. وهو خيار شائع في النشر الجماعي حيث تشتري محولات بالجملة لفريق تدقيق.
 
@@ -104,7 +120,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 ### AWUS036ACS — خفيف الوزن ومثالي للتنقل
 
-يستخدم [AWUS036ACS](/en/products/alfa/awus036acs/) شريحة RTL8811AU — درجة أدنى من RTL8812AU في قدرة الإرسال، لكنه لا يزال قادراً تماماً على وضع المراقبة وحقن الحزم (Packet Injection). شكله المضغوط وهوائيه الواحد يجعلانه الخيار المفضل للاستشاريين كثيري السفر الذين لا يرغبون في إدارة عدة هوائيات RP-SMA عند نقاط تفتيش المطارات.
+يستخدم [AWUS036ACS](/ar/products/alfa/awus036acs/) شريحة RTL8811AU — درجة أدنى من RTL8812AU في قدرة الإرسال، لكنه لا يزال قادراً تماماً على وضع المراقبة وحقن الحزم (Packet Injection). شكله المضغوط وهوائيه الواحد يجعلانه الخيار المفضل للاستشاريين كثيري السفر الذين لا يرغبون في إدارة عدة هوائيات RP-SMA عند نقاط تفتيش المطارات.
 
 يتشارك برنامج التشغيل RTL8811AU نفس حزمة `rtl8812au-dkms` على Kali، لذا سير التثبيت متطابق.
 
@@ -112,7 +128,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 ### AWUS036EACS — للاستخدام العام، غير مناسب لاختبار الاختراق
 
-يعمل [AWUS036EACS](/en/products/alfa/awus036eacs/) بشريحة Realtek RTL8821CU ويستخدم برنامج تشغيل النواة `rtl88xxcu`. صُمّمت هذه الشريحة للاتصال بالعملاء، لا للتلاعب بالحزم. دعم وضع المراقبة تحت `rtl88xxcu` غير موثوق، وحقن الحزم (Packet Injection) غير مدعوم في تهيئة برنامج التشغيل القياسية.
+يعمل [AWUS036EACS](/ar/products/alfa/awus036eacs/) بشريحة Realtek RTL8821CU ويستخدم برنامج تشغيل النواة `rtl88xxcu`. صُمّمت هذه الشريحة للاتصال بالعملاء، لا للتلاعب بالحزم. دعم وضع المراقبة تحت `rtl88xxcu` غير موثوق، وحقن الحزم (Packet Injection) غير مدعوم في تهيئة برنامج التشغيل القياسية.
 
 {{< alert "triangle-exclamation" >}}
 **لا تستخدم AWUS036EACS لاختبار الاختراق، أو عمليات Red Team، أو أي مهمة تتطلب وضع المراقبة أو حقن الحزم.** يصلح للاتصال اللاسلكي العام، وتوسيع نطاق وحدة تحكم طائرات DJI المسيّرة (حيث يُقترن به بشكل شائع)، وعمليات النشر التي تُعطي الأولوية لنظام Windows حيث سلوك محول العميل القياسي مقبول.
@@ -130,7 +146,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 ### AWUS036AX — الخيار النظيف لـ Wi-Fi 6
 
-[AWUS036AX](/en/products/alfa/awus036ax/) هو محول Wi-Fi 6 بشريحة RTL8832BU (Realtek): هوائي مدمج (بدون موصل RP-SMA)، وAX1800 (يصل نظرياً إلى 1800 Mbps) على نطاقي 2.4 و 5 GHz.
+[AWUS036AX](/ar/products/alfa/awus036ax/) هو محول Wi-Fi 6 بشريحة RTL8832BU (Realtek): هوائي مدمج (بدون موصل RP-SMA)، وAX1800 (يصل نظرياً إلى 1800 Mbps) على نطاقي 2.4 و 5 GHz.
 
 **حالة برنامج التشغيل:**
 - برنامج التشغيل: OOK تحت Linux دون الإصدار 6.14؛ على 6.14 وما بعده تحسّن دعم RTL8832BU
@@ -146,7 +162,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 ### AWUS036AXER — نسخة النطاق الممتد
 
-[AWUS036AXER](/en/products/alfa/awus036axer/) مطابق للـ AWUS036AX تقنياً في الشريحة وتهيئة الهوائيات، لكنه يضيف تضخيم RF معزز لنطاق تشغيل أوسع. وضع برنامج التشغيل متطابق — نفس RTL8832BU، ونفس برنامج التشغيل OOK تحت Linux دون الإصدار 6.14، ونفس القيود على وضع المراقبة وحقن الحزم.
+[AWUS036AXER](/ar/products/alfa/awus036axer/) مطابق للـ AWUS036AX تقنياً في الشريحة وتهيئة الهوائيات، لكنه يضيف تضخيم RF معزز لنطاق تشغيل أوسع. وضع برنامج التشغيل متطابق — نفس RTL8832BU، ونفس برنامج التشغيل OOK تحت Linux دون الإصدار 6.14، ونفس القيود على وضع المراقبة وحقن الحزم.
 
 اختر AXER بدلاً من AX حين يكون نطاق التشغيل هو المحدد الفاصل: مسح المواقع للحرم الجامعية الكبيرة، أو التقييمات الخارجية، أو السيناريوهات التي تبعد فيها نقطة الوصول مسافةً كبيرة. رسوم الترقية معتدلة ومبررة إن كان المدى أولويةً في نشرك.
 
@@ -160,7 +176,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 ### AWUS036AXM — نقطة الدخول إلى Wi-Fi 6E
 
-يستخدم [AWUS036AXM](/en/products/alfa/awus036axm/) شريحة MT7921AUN مع تفعيل دعم نطاق 6 GHz. يأتي بموصلين 2× RP-SMA لتشغيل 2T2R ثنائي الهوائي.
+يستخدم [AWUS036AXM](/ar/products/alfa/awus036axm/) شريحة MT7921AUN مع تفعيل دعم نطاق 6 GHz. يأتي بموصلين 2× RP-SMA لتشغيل 2T2R ثنائي الهوائي.
 
 للمشغّلين الذين يعملون أساساً في بيئات 2.4 و 5 GHz لكنهم يريدون قدرة 6 GHz لتقييمات الشبكات الناشئة دون دفع أسعار الطراز الرائد، يمثّل AXM نقطة الدخول المنطقية.
 
@@ -169,7 +185,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 ### AWUS036AXML — محول Wi-Fi 6E الرائد
 
-[AWUS036AXML](/en/products/alfa/awus036axml/) هو أعلى محولات ALFA مرتبةً حالياً. يتميز بشريحة MT7921AUN، وموصل RP-SMA واحد، ومنفذ USB-C 3.2، ودعم Bluetooth 5.2، وأعلى تقييم لقدرة الإرسال في طرازات 6E.
+[AWUS036AXML](/ar/products/alfa/awus036axml/) هو أعلى محولات ALFA مرتبةً حالياً. يتميز بشريحة MT7921AUN، وموصل RP-SMA واحد، ومنفذ USB-C 3.2، ودعم Bluetooth 5.2، وأعلى تقييم لقدرة الإرسال في طرازات 6E.
 
 **المواصفات الرئيسية:**
 - الشريحة (Chipset): MT7921AUN (MediaTek)
@@ -195,14 +211,14 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 | الطراز | الشريحة | حزمة Kali | Ubuntu HWE | RPi ARM | Windows 10/11 |
 |---|---|---|---|---|---|
-| [AWUS036ACS](/en/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | بناء يدوي | ✅ rtl8812au-dkms | ✅ برنامج تشغيل ALFA |
-| [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | بناء يدوي | ✅ rtl8812au-dkms | ✅ برنامج تشغيل ALFA |
-| [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | `mt76x2u (مدمج)` | مدمج في النواة (≥4.19) | ✅ mt76x2u (≥4.19) | ✅ برنامج تشغيل ALFA |
-| [AWUS036EACS](/en/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` | مدمج في النواة | ⚠️ محدود | ✅ مدمج |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | `firmware-misc-nonfree` | نواة ≥ 5.18 | ⚠️ يتطلب firmware | ✅ برنامج تشغيل ALFA |
-| [AWUS036AXER](/en/products/alfa/awus036axer/) | RTL8832BU | `firmware-misc-nonfree` | نواة ≥ 5.18 | ⚠️ يتطلب firmware | ✅ برنامج تشغيل ALFA |
-| [AWUS036AXM](/en/products/alfa/awus036axm/) | MT7921AUN | `firmware-misc-nonfree` | نواة ≥ 5.18 | ⚠️ يتطلب firmware | ✅ برنامج تشغيل ALFA |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | `firmware-misc-nonfree` | نواة ≥ 5.18 | ⚠️ يتطلب firmware | ✅ برنامج تشغيل ALFA |
+| [AWUS036ACS](/ar/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | بناء يدوي | ✅ rtl8812au-dkms | ✅ برنامج تشغيل ALFA |
+| [AWUS036ACH](/ar/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | بناء يدوي | ✅ rtl8812au-dkms | ✅ برنامج تشغيل ALFA |
+| [AWUS036ACM](/ar/products/alfa/awus036acm/) | MT7612U | `mt76x2u (مدمج)` | مدمج في النواة (≥4.19) | ✅ mt76x2u (≥4.19) | ✅ برنامج تشغيل ALFA |
+| [AWUS036EACS](/ar/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` | مدمج في النواة | ⚠️ محدود | ✅ مدمج |
+| [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | `firmware-misc-nonfree` | نواة ≥ 5.18 | ⚠️ يتطلب firmware | ✅ برنامج تشغيل ALFA |
+| [AWUS036AXER](/ar/products/alfa/awus036axer/) | RTL8832BU | `firmware-misc-nonfree` | نواة ≥ 5.18 | ⚠️ يتطلب firmware | ✅ برنامج تشغيل ALFA |
+| [AWUS036AXM](/ar/products/alfa/awus036axm/) | MT7921AUN | `firmware-misc-nonfree` | نواة ≥ 5.18 | ⚠️ يتطلب firmware | ✅ برنامج تشغيل ALFA |
+| [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AUN | `firmware-misc-nonfree` | نواة ≥ 5.18 | ⚠️ يتطلب firmware | ✅ برنامج تشغيل ALFA |
 
 </div>
 
@@ -218,33 +234,33 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 ### عمليات Red Team
 
-**الموصى به: [AWUS036ACH](/en/products/alfa/awus036ach/)**
+**الموصى به: [AWUS036ACH](/ar/products/alfa/awus036ach/)**
 
-تجعل قدرة إرسال ACH البالغة 500 mW، وهوائياه المزدوجان، وبرنامج تشغيل RTL8812AU المُجرَّب والمُختبَر منه الخيار الافتراضي لتعاملات Red Team. يمكنك الاعتماد عليه للعمل بعد تحديث النواة، والمرور عبر جهاز افتراضي بموثوقية، وقبول أي هوائي RP-SMA تحمله. إن سمحت الميزانية وكانت تغطية 6E ضمن نطاق العمل، أضف [AWUS036AXML](/en/products/alfa/awus036axml/) محولاً ثانوياً لاكتشاف شبكات 6 GHz.
+تجعل قدرة إرسال ACH البالغة 500 mW، وهوائياه المزدوجان، وبرنامج تشغيل RTL8812AU المُجرَّب والمُختبَر منه الخيار الافتراضي لتعاملات Red Team. يمكنك الاعتماد عليه للعمل بعد تحديث النواة، والمرور عبر جهاز افتراضي بموثوقية، وقبول أي هوائي RP-SMA تحمله. إن سمحت الميزانية وكانت تغطية 6E ضمن نطاق العمل، أضف [AWUS036AXML](/ar/products/alfa/awus036axml/) محولاً ثانوياً لاكتشاف شبكات 6 GHz.
 
 ### مسابقات CTF
 
-**الموصى به: [AWUS036ACM](/en/products/alfa/awus036acm/)**
+**الموصى به: [AWUS036ACM](/ar/products/alfa/awus036acm/)**
 
-تتضمن تحديات CTF اللاسلكية عادةً بيئات خاضعة للسيطرة حيث قدرة الإرسال ليست المتغير الحاسم. يوفر ACM قدرات وضع المراقبة وحقن الحزم الكاملة بسعر أقل. شكله المضغوط بهوائي واحد سهل الحزم والنشر. إن تضمنت مسابقة CTF تحديات Wi-Fi 6 (لا تزال نادرة لكنها في تزايد)، انتقل إلى [AWUS036AX](/en/products/alfa/awus036ax/).
+تتضمن تحديات CTF اللاسلكية عادةً بيئات خاضعة للسيطرة حيث قدرة الإرسال ليست المتغير الحاسم. يوفر ACM قدرات وضع المراقبة وحقن الحزم الكاملة بسعر أقل. شكله المضغوط بهوائي واحد سهل الحزم والنشر. إن تضمنت مسابقة CTF تحديات Wi-Fi 6 (لا تزال نادرة لكنها في تزايد)، انتقل إلى [AWUS036AX](/ar/products/alfa/awus036ax/).
 
 ### Raspberry Pi / Kali NetHunter
 
-**الموصى به: [AWUS036ACH](/en/products/alfa/awus036ach/) أو [AWUS036ACM](/en/products/alfa/awus036acm/)**
+**الموصى به: [AWUS036ACH](/ar/products/alfa/awus036ach/) أو [AWUS036ACM](/ar/products/alfa/awus036acm/)**
 
 كلا محولا RTL8812AU لهما سجل موثوق على أجهزة Raspberry Pi. تجنب طرازات MT7921AUN لعمليات نشر Pi ما لم تكن قد أكدت توافق النواة والبرنامج الثابت على صورتك المحددة. يُعدّ ACH الخيار الأأمن إن كنت تبني Pi مخصصاً لـ NetHunter يجب أن يكون موثوقاً في الميدان.
 
 ### تدقيق الشبكات اللاسلكية للمؤسسات
 
-**الموصى به: [AWUS036AXML](/en/products/alfa/awus036axml/) + [AWUS036ACH](/en/products/alfa/awus036ach/)**
+**الموصى به: [AWUS036AXML](/ar/products/alfa/awus036axml/) + [AWUS036ACH](/ar/products/alfa/awus036ach/)**
 
 ينبغي أن يشمل تدقيق الشبكات اللاسلكية للمؤسسات الحديث نطاقات 2.4 و 5 و 6 GHz. يغطي AXML الطيف الثلاثي الكامل بما فيه 6E، بينما يوفر ACH بديلاً مستقراً وعالي القدرة لعمل 5 GHz. تشغيل كليهما معاً بواجهتي التقاط منفصلتين يمنحك تغطية كاملة لجميع النطاقات دون تنازلات في برامج التشغيل. استخدم ACH لمهام الحقن النشط وAXML للمراقبة السلبية على 6 GHz.
 
 ### توسيع نطاق طائرات DJI المسيّرة
 
-**الموصى به: [AWUS036EACS](/en/products/alfa/awus036eacs/)**
+**الموصى به: [AWUS036EACS](/ar/products/alfa/awus036eacs/)**
 
-توسيع نطاق DJI عبر Litchi أو DJI GO حالة استخدام مشروعة شائعة. يُوصى تحديداً بـ EACS مع RTL8821CU هنا لأنه يعمل أصلاً على Windows (حيث تعمل برامج DJI) دون برامج تشغيل إضافية، وملفه الوظيفي للاتصال العام يناسب هذه الحالة. لا حاجة لوضع المراقبة؛ الاتصال في وضع العميل وقدرة الإرسال هما ما يهمان. اقرنه بهوائي لوحي [APA-M25](/en/products/alfa/apa-m25/) للحصول على أقصى مدى فعال.
+توسيع نطاق DJI عبر Litchi أو DJI GO حالة استخدام مشروعة شائعة. يُوصى تحديداً بـ EACS مع RTL8821CU هنا لأنه يعمل أصلاً على Windows (حيث تعمل برامج DJI) دون برامج تشغيل إضافية، وملفه الوظيفي للاتصال العام يناسب هذه الحالة. لا حاجة لوضع المراقبة؛ الاتصال في وضع العميل وقدرة الإرسال هما ما يهمان. اقرنه بهوائي لوحي [APA-M25](/ar/products/alfa/apa-m25/) للحصول على أقصى مدى فعال.
 
 ---
 
@@ -313,22 +329,24 @@ sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 
 {{< alert "circle-info" >}}
-إن كنت تبني صندوق نشر NetHunter مخصصاً، استخدم [AWUS036ACH](/en/products/alfa/awus036ach/) أو [AWUS036ACM](/en/products/alfa/awus036acm/). يُترجَم برنامج تشغيل RTL8812AU بموثوقية على ARM لـ ACH؛ أما ACM فيستخدم mt76x2u المدمج في النواة — كلاهما لا يعتمد على ملفات البرنامج الثابت (Firmware) المحملة في وقت التشغيل. طرازات MT7921AUN تعمل على Pi لكنها تضيف اعتماداً على ملفات البرنامج الثابت قد يسبب متاعب في عمليات النشر دون إنترنت.
+إن كنت تبني صندوق نشر NetHunter مخصصاً، استخدم [AWUS036ACH](/ar/products/alfa/awus036ach/) أو [AWUS036ACM](/ar/products/alfa/awus036acm/). يُترجَم برنامج تشغيل RTL8812AU بموثوقية على ARM لـ ACH؛ أما ACM فيستخدم mt76x2u المدمج في النواة — كلاهما لا يعتمد على ملفات البرنامج الثابت (Firmware) المحملة في وقت التشغيل. طرازات MT7921AUN تعمل على Pi لكنها تضيف اعتماداً على ملفات البرنامج الثابت قد يسبب متاعب في عمليات النشر دون إنترنت.
 {{< /alert >}}
 
 ---
+
+{{< faq >}}
 
 ## التوصية النهائية
 
 بعد تقييم الطرازات الثمانية جميعها من حيث نضج برامج التشغيل، والقدرات التقنية، وحالات الاستخدام الفعلية، إليك الخيارات الثلاثة التي تلبي احتياجات معظم المتخصصين:
 
-**الخيار الاقتصادي: [AWUS036ACM](/en/products/alfa/awus036acm/)**
+**الخيار الاقتصادي: [AWUS036ACM](/ar/products/alfa/awus036acm/)**
 يُقدم المحول بهوائيين 2× RP-SMA ومبني على MT7612U دعماً كاملاً لوضع المراقبة وحقن الحزم بأدنى سعر في الطرازات ثنائية النطاق، مع برنامج تشغيل مدمج في النواة بدون تجميع. مثالي للاستشاريين الراغبين في أداة موثوقة دون إنفاق زائد، أو الفرق التي تشتري المحولات بالجملة.
 
-**الخيار المتعدد الأغراض: [AWUS036ACH](/en/products/alfa/awus036ach/)**
+**الخيار المتعدد الأغراض: [AWUS036ACH](/ar/products/alfa/awus036ach/)**
 المحول بهوائيين و 500 mW على RTL8812AU هو الأكثر توصيةً للمتخصصين في الأمن كمحول واحد شامل. يغطي نطاقي 2.4 و 5 GHz، ويقبل الهوائيات الخارجية، ويمتلك أنضج مجموعة برامج تشغيل بين جميع المحولات في هذه القائمة، ولا يكلف سوى أكثر بسيطاً من ACM. إن كنت تشتري محولاً واحداً ولا تزال غير متأكد مما تحتاجه، اشترِ هذا.
 
-**خيار المؤسسات / المستقبلي: [AWUS036AXML](/en/products/alfa/awus036axml/)**
+**خيار المؤسسات / المستقبلي: [AWUS036AXML](/ar/products/alfa/awus036axml/)**
 إن كان نطاق تدقيقك يشمل بنية تحتية بـ Wi-Fi 6E — وهو ما ينبغي لأي تعامل يبدأ في 2026 — فإن AXML هو المحول الوحيد الذي يمنحك قدرة 6 GHz مع USB-C 3.2 وBluetooth 5.2. اقرنه بـ ACH للحصول على طقم محولين يغطي كل نطاق من 2.4 GHz إلى 6 GHz دون تنازلات.
 
 للاطلاع على تعليمات الإعداد والتهيئة التفصيلية، راجع:
@@ -336,3 +354,10 @@ sudo apt update && sudo apt install -y firmware-misc-nonfree
 - [إصلاح برنامج تشغيل ALFA بعد تحديث النواة](/en/blog/fix-alfa-driver-kernel-update/)
 - [تفعيل وضع المراقبة على Kali Linux](/en/blog/enable-monitor-mode-kali-linux/)
 - [مراجعة AWUS036AXML لـ Wi-Fi 6E واختبار برامج التشغيل](/en/blog/awus036axml-wifi-6e-review/)
+
+## المراجع
+
+1. aircrack-ng — مستودع كود مصدر تعريف RTL8812AU: [https://github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. Wi-Fi Alliance — الوثائق التقنية الرسمية لـ Wi-Fi 6E: [https://www.wi-fi.org/](https://www.wi-fi.org/)
+3. موقع ALFA Network الرسمي: [https://www.alfa.com.tw](https://www.alfa.com.tw)
+4. torvalds/linux — كود مصدر تعريف MT7921AUN في النواة: [https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)

@@ -7,11 +7,30 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
 featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "O Kali NetHunter com adaptador ALFA precisa de Root?"
+    answer: "Sim. A versão completa do NetHunter requer um dispositivo Android com root e um kernel personalizado para carregar o modulo RTL8812AU e habilitar o suporte a adaptador USB OTG."
+  - question: "Qual adaptador ALFA é mais adequado para o NetHunter?"
+    answer: "O AWUS036ACH (RTL8812AU) é a melhor escolha. O kernel personalizado do NetHunter já inclui o modulo 88XXau, com suporte completo a modo monitor e injeção de pacotes."
+  - question: "Por que é necessário um hub USB OTG com alimentação?"
+    answer: "O AWUS036ACH consome cerca de 500mW de potência USB. Alimenta-lo diretamente pela bateria do telefone causará drenagem rápida e possíveis desconexões sob carga. Um hub com alimentação própria resolve completamente esse problema."
+  - question: "Adaptadores WiFi 6E (AWUS036AXML) funcionam no NetHunter?"
+    answer: "Suporte limitado. A disponibilidade do modulo do kernel para o chip MT7921AUN depende do dispositivo e versão do kernel. O NetHunter ainda não suporta universalmente este chip; recomenda-se usar adaptadores RTL8812AU."
+  - question: "Quais dispositivos Android suportam o NetHunter?"
+    answer: "Dispositivos oficialmente suportados incluem OnePlus, Google Pixel e alguns modelos Samsung Galaxy. Consulte a pagina oficial de dispositivos do NetHunter para a lista completa e confirme que o dispositivo suporta USB OTG."
 ---
 
 Seu telefone Android já é um computador poderoso no seu bolso. Com o Kali NetHunter instalado em um dispositivo com root e um adaptador ALFA WiFi conectado via USB OTG, ele se torna uma plataforma de teste de penetração genuinamente capaz no tamanho de um bolso. Sem necessidade de notebook, sem hardware volumoso. Apenas seu telefone, um cabo OTG curto e um adaptador que suporte modo monitor e injeção de pacotes.
 
 Este guia cobre tudo que você precisa para que um ALFA AWUS036ACH (ou adaptador compatível) funcione com o NetHunter — desde a seleção de hardware até o carregamento do driver, ativação do modo monitor e as ferramentas sem fio integradas ao app NetHunter.
+
+{{< tldr >}}
+Com um telefone Android com root e Kali NetHunter instalado, conectar um ALFA AWUS036ACH via USB OTG transforma o dispositivo em uma plataforma de pentest de bolso. Requer a versao completa do NetHunter, um hub OTG com alimentacao, e o adaptador RTL8812AU oferece a melhor compatibilidade.
+{{< /tldr >}}
+
 
 ---
 
@@ -210,7 +229,16 @@ Certifique-se de executar comandos como root no chroot do NetHunter. Execute `su
 
 ---
 
+{{< faq >}}
+
 ## Guias relacionados
 
 - [Guia de configuração do AWUS036ACH no Kali Linux (desktop/notebook)](/pt/blog/awus036ach-kali-linux-setup/)
 - [Usando adaptadores ALFA com Raspberry Pi e Kali](/pt/blog/alfa-adapter-raspberry-pi-kali/)
+
+## Referências
+
+1. [Documentacao oficial do Kali NetHunter](https://www.kali.org/docs/nethunter/)
+2. [Projeto de driver aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+3. [Site oficial da ALFA Network](https://www.alfa.com.tw/)
+4. [Documentacao para desenvolvedores Android USB OTG](https://developer.android.com/guide/topics/connectivity/usb)

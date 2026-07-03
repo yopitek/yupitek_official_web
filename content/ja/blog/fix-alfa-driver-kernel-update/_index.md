@@ -1,4 +1,5 @@
 ---
+
 title: "カーネル更新後にALFAドライバーが壊れた？完全修復ガイド"
 description: "Linuxカーネル更新後にALFA USB WiFiアダプターが動作しなくなった？Kali LinuxとUbuntuでのRTL8812AU、RTL8811AU、MT7921AUNドライバーの完全修復ガイド。"
 date: 2026-03-24
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "カーネル更新後にALFAアダプターが使えなくなるのはなぜですか？"
+    answer: "RTL8812AUはカーネル外ドライバーを使用し、カーネルバージョン変更後にコンパイル済みモジュールが互換性を失います。DKMSが自動リビルドできますが、カーネルheadersの欠如や古い設定で失敗することがあります。"
+  - question: "ALFAドライバーの無効化原因をどう迅速に診断しますか？"
+    answer: "uname -rでカーネルバージョンを確認し、dkms statusでモジュールビルド状態をチェックし、dmesgでファームウェアやモジュール読み込みエラーメッセージを確認します。"
+  - question: "RTL8812AUドライバー無効化の最速修復方法は？"
+    answer: "一致するカーネルheadersをインストール後、dkms autoinstallを実行します。失敗した場合はaircrack-ng/rtl8812auを新しくクローンしてmake dkms_installを実行してください。"
+  - question: "MT7921AUNアダプターがカーネル更新後に接続できない場合は？"
+    answer: "MT7921AUNはカーネル内蔵ドライバーで、問題は通常ファームウェアにあります。firmware-misc-nonfreeパッケージをインストールし、カーネルバージョンが5.18以上であることを確認してください。"
+  - question: "カーネル更新で再度ドライバーが破損するのをどう防ぎますか？"
+    answer: "apt upgradeの代わりにapt full-upgradeを使用し、headersとカーネルが同時にインストールされるようにします。dkmsとlinux-headers-genericメタパッケージをインストールして依存関係を維持してください。"
 ---
 
 `sudo apt upgrade` を実行して再起動したら、ALFAアダプターが消えてしまいました——インターフェースなし、ランプなし、何もなし。これはLinuxでALFA Network USB WiFiアダプターを使うユーザーから最もよく寄せられるサポートの質問であり、カーネルの更新がほぼ常に原因です。このガイドでは、最も影響を受ける2つのチップセットファミリーの体系的な診断と修復手順を説明します：**RTL8812AU**（AWUS036ACH、AWUS036ACS搭載）と **MT7921AUN**（AWUS036AXM、AXML搭載）。各セクションの手順に従えば、15分以内にアダプターが復旧します。
 
+
+{{< tldr >}}
+カーネル更新によるALFAドライバー破損の主因はheadersとモジュールの不同期です。RTL8812AUはdkms autoinstallでリビルド、MT7921AUNはfirmware-misc-nonfreeのインストールが必要で、長期的にはapt full-upgradeの使用で予防します。
+{{< /tldr >}}
 ---
 
 ## カーネル更新がドライバーを壊す理由
@@ -356,6 +374,11 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## まとめ
 
 カーネル更新後のALFAドライバーの失敗は予測可能なパターンに従い、予測可能な解決策があります。RTL8812AUアダプターには `dkms autoinstall`（または `aircrack-ng/rtl8812au` からのフレッシュクローン）と一致するカーネルヘッダーが必要です。MT7921Uアダプターには `firmware-misc-nonfree` とカーネル5.18以降が必要です。どちらの場合も、長期的な解決策は標準的な更新コマンドとして `apt upgrade` ではなく `apt full-upgrade` を使用し、ヘッダーとカーネルを同期させることです。
@@ -365,3 +388,13 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 **関連ガイド：**
 - [Kali Linux & UbuntuでALFA USB WiFiドライバーをインストールする方法](/ja/blog/install-alfa-driver-kali-ubuntu/) — ドライバーを一度もインストールしたことがない場合はここから始めてください
 - [AWUS036ACH Kali Linuxセットアップガイド](/ja/blog/awus036ach-kali-linux-setup/) — モニターモードとパケットインジェクション確認を含む完全なセットアップウォークスルー
+
+---
+
+## 参考文献
+
+1. [aircrack-ng公式rtl8812auドライバー](https://github.com/aircrack-ng/rtl8812au)
+2. [DKMS公式説明ドキュメント](https://github.com/dell/dkms)
+3. [Kali Linuxパッケージ管理ドキュメント](https://www.kali.org/docs/general-use/package-management/)
+4. [Linux Kernel公式ドキュメント](https://www.kernel.org/doc/html/latest/)
+5. [MediaTek MT7921ドライバー](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)

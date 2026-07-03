@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
 featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Kali NetHunter 使用 ALFA 網卡需要 Root 嗎？"
+    answer: "需要。完整 NetHunter 版本需已 Root 的 Android 裝置與自定義核心，才能載入 RTL8812AU 模組並啟用 USB OTG 網卡支援。"
+  - question: "哪一款 ALFA 網卡最適合 NetHunter？"
+    answer: "AWUS036ACH（RTL8812AU）是最佳選擇。NetHunter 自定義核心已內建 88XXau 模組，監聽模式與封包注入完全支援。"
+  - question: "為什麼需要帶電源的 USB OTG 集線器？"
+    answer: "AWUS036ACH 從 USB 汲取約 500mW 功率，直接由手機電池供電會快速耗電並可能在負載下斷線。帶電源集線器從牆壁插座取電可完全解決此問題。"
+  - question: "WiFi 6E 網卡（AWUS036AXML）能在 NetHunter 上使用嗎？"
+    answer: "支援有限。MT7921AUN 晶片的核心模組可用性取決於裝置與核心版本，NetHunter 核心中尚未普遍支援，建議使用 RTL8812AU 網卡。"
+  - question: "哪些 Android 裝置支援 NetHunter？"
+    answer: "官方支援裝置包括 OnePlus、Google Pixel 及部分 Samsung Galaxy 機型。完整清單請參閱 NetHunter 官方裝置頁面，並確認裝置支援 USB OTG。"
 ---
+
+在 Android 上透過 USB OTG 搭配 Kali NetHunter 使用 ALFA WiFi 網卡，需要已 Root 的裝置、完整 NetHunter 版本（含自定義核心），以及 AWUS036ACH 等支援監聽模式的 USB 網卡。
+
+{{< tldr >}}
+已 Root 的 Android 手機安裝 Kali NetHunter 後，透過 USB OTG 插入 ALFA AWUS036ACH 即可成為口袋型滲透測試平台。需完整 NetHunter 版本、帶電源 OTG 集線器，RTL8812AU 網卡相容性最佳。
+{{< /tldr >}}
 
 您的 Android 手機本身就是一台放在口袋裡的強大電腦。在已 Root 的裝置上安裝 Kali NetHunter，並透過 USB OTG 插入 ALFA WiFi 網卡，它就成為一個真正具備實力的口袋型滲透測試平台。不需要筆記型電腦，不需要笨重的硬體，只需要您的手機、一條短小的 OTG 傳輸線，以及一支支援監聽模式和封包注入的網卡。
 
@@ -213,7 +232,16 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan1mon
 
 ---
 
+{{< faq >}}
+
 ## 相關指南
 
 - [AWUS036ACH 在 Kali Linux（桌機/筆電）上的設定指南](/zh-tw/blog/awus036ach-kali-linux-setup/)
 - [在 Raspberry Pi 和 Kali 上使用 ALFA 網卡](/zh-tw/blog/alfa-adapter-raspberry-pi-kali/)
+
+## 參考來源
+
+1. [Kali NetHunter 官方文件](https://www.kali.org/docs/nethunter/)
+2. [aircrack-ng rtl8812au 驅動專案](https://github.com/aircrack-ng/rtl8812au)
+3. [ALFA Network 官方網站](https://www.alfa.com.tw/)
+4. [Android USB OTG 開發者文件](https://developer.android.com/guide/topics/connectivity/usb)

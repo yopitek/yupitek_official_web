@@ -3,14 +3,30 @@ title: "كيفية تثبيت برنامج تشغيل ALFA USB WiFi على Kali 
 description: "دليل شامل لتثبيت برامج تشغيل محولات ALFA Network على Kali Linux 2024 وUbuntu 24.04 للشرائح RTL8812AU وMT7612U وMT7921AUN."
 date: 2026-03-23
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["تثبيت-برنامج-تشغيل", "Kali-Linux", "Ubuntu", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "هل تحتاج محولات ALFA USB WiFi إلى تثبيت تعريف على Linux؟"
+    answer: "يعتمد على مجموعة الشرائح. MT7612U و MT7921AUN مدمجان في النواة، نفّذ modprobe فحسب. RTL8812AU يحتاج تثبيت تعريف خارجي من GitHub aircrack-ng."
+  - question: "كيف أعرف أي شريحة يستخدمها محول ALFA الخاص بي؟"
+    answer: "بعد التوصيل نفّذ lsusb وقارن USB ID. 0bda:8812 هو RTL8812AU، 0e8d:7612 هو MT7612U، 0e8d:7961 هو MT7921AUN."
+  - question: "ما DKMS ولماذا أحتاجه؟"
+    answer: "DKMS يعيد تجميع وحدة التعريف تلقائياً عند تثبيت نواة جديدة. بدون DKMS يتعطل التعريف الخارجي بعد كل تحديث نواة ويحتاج إعادة تجميع يدوي."
+  - question: "هل يعمل MT7921AUN على Ubuntu 22.04؟"
+    answer: "النواة المثبتة مسبقاً 5.15 لا تدعمه. ثبّت نواة HWE linux-generic-hwe-22.04 للترقية إلى 6.2 فأحدث، أو رقّ إلى Ubuntu 24.04 LTS."
+  - question: "ماذا أفعل عند ظهور خطأ linux/module.h not found أثناء تجميع التعريف؟"
+    answer: "ترويسات النواة غير مثبتة. نفّذ sudo apt install linux-headers-$(uname -r) لتثبيت الترويسات المطابقة لإصدار النواة الحالي ثم أعد التجميع."
 ---
-
 كثيراً ما يعتمد تشغيل محول USB WiFi على Linux على شيء واحد: برنامج التشغيل. على عكس Windows حيث يبث المصنّعون برامج التشغيل في مثبّتات قابلة للتنفيذ، يعتمد Linux على وحدات النواة — كود مُصرَّف تحمّله نظام التشغيل للتواصل مع الأجهزة. فهم هذا النموذج يجعل استكشاف الأخطاء واضحاً وعملية تثبيت برامج التشغيل متوقعة.
+
+{{< tldr >}}
+يعتمد تثبيت تعريف محول ALFA على الشريحة: MT7612U و MT7921AUN مدمجان في النواة ويعملان فور التوصيل، RTL8812AU يحتاج تثبيتاً من GitHub aircrack-ng مع DKMS لضمان الاستمرارية بعد تحديثات النواة.
+{{< /tldr >}}
+
 
 يتناول هذا الدليل تثبيت برامج التشغيل لكل شريحة معالج رئيسية في محولات ALFA Network USB WiFi على كلٍّ من Kali Linux 2024/2025 وUbuntu 24.04 LTS.
 
@@ -394,6 +410,8 @@ Yopitek موزع معتمد لـ ALFA Network. تصفح [مجموعة منتجا
 
 ---
 
+{{< faq >}}
+
 ## الملخص
 
 تثبيت برامج تشغيل WiFi على Linux يسير وفق شجرة قرار بسيطة:
@@ -404,3 +422,11 @@ Yopitek موزع معتمد لـ ALFA Network. تصفح [مجموعة منتجا
 4. **شيء لا يعمل؟** ← راجع جدول استكشاف الأخطاء، تحقق من تطابق الترويسات مع النواة، راجع `dmesg`
 
 جمال محولات ALFA Network أن الشرائح الرئيسية الأربع جميعها لها حلول برامج تشغيل موثقة جيداً ومُصانة بفعالية. لن تجد نفسك أبداً في منطقة غير مدعومة.
+
+## المراجع
+
+1. [تعريف aircrack-ng الرسمي لـ rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. [قاعدة معرفة morrownr USB-WiFi](https://github.com/morrownr/USB-WiFi)
+3. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
+4. [شرح Ubuntu الرسمي لنواة HWE](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
+5. [تعريف Linux Wireless mt76](https://wireless.wiki.kernel.org/en/users/drivers/mt76)

@@ -3,12 +3,30 @@ title: "WiFi 6E مقابل WiFi 5: أي محول ALFA تختار لاختبار 
 description: "مقارنة بين ALFA AWUS036AXML (Wi-Fi 6E) وAWUS036ACH (Wi-Fi 5) لاختبار الاختراق على Kali Linux: دعم 6 GHz ونضج برنامج التشغيل ووضع المراقبة."
 date: 2026-03-23
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "اختبار-الاختراق"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما الفرق بين Wi-Fi 6E و Wi-Fi 5 في اختبار الاختراق؟"
+    answer: "يضيف Wi-Fi 6E نطاق 6 GHz وطيف 1.2 GHz، مناسب لتدقيق نشر المؤسسات الحديثة. تعريف Wi-Fi 5 أنضج وأكثر استقراراً على 2.4/5 GHz."
+  - question: "AWUS036ACH أم AWUS036AXML، أيهما أختار؟"
+    answer: "لاختبار الاختراق اليومي اختر AWUS036ACH، تعريفه أنضج وموارده المجتمعية أوفر. لتدقيق بيئات Wi-Fi 6E على 6 GHz اختر AWUS036AXML. يُفضّل امتلاك كليهما إن أمكن."
+  - question: "هل وضع مراقبة AWUS036AXML مستقر على Kali Linux؟"
+    answer: "يتطلب نواة 6.1 فأحدث وأحدث حزمة linux-firmware. حقن الحزم متاح لكن يُنصح بالتحقق قبل الاختبار الرسمي، بعض مجموعات النواة والبرنامج الثابت قد تكون غير مستقرة."
+  - question: "هل أحتاج محول 6 GHz لاختبار الاختراق في 2026؟"
+    answer: "معظم حالات الاختبار لا تزال على 2.4/5 GHz. لكن إذا كان الهدف ينشر نقاط وصول Wi-Fi 6E، فإن محول 6 GHz يصبح ضرورياً استراتيجياً."
+  - question: "كيف أثبّت تعريف RTL8812AU لـ AWUS036ACH؟"
+    answer: "انسخ مستودع rtl8812au من GitHub aircrack-ng، نفّذ make dkms_install. يضمن DKMS إعادة بناء التعريف تلقائياً بعد تحديث النواة."
 ---
+{{< tldr >}}
+AWUS036ACH تعريفه أنضج وأعلى استقراراً، الخيار الأول لاختبار الاختراق اليومي. AWUS036AXML يدعم نطاق 6 GHz مناسب لتدقيق بيئات Wi-Fi 6E، لكن تعريفه ما زال قيد التحسين المستمر.
+{{< /tldr >}}
+
+Wi-Fi 6E هو امتداد لمعيار Wi-Fi 6 (IEEE 802.11ax) يضيف الوصول إلى **نطاق تردد 6 GHz** — قطعة ضخمة من الطيف الترددي غير المستغَل سابقاً. بينما يعمل Wi-Fi 5 (802.11ac) على 2.4 GHz و5 GHz فحسب، ويفعل Wi-Fi 6 القياسي الشيء ذاته، يفتح Wi-Fi 6E **طيفاً إضافياً بعرض 1.2 GHz** يتراوح بين 5.925 GHz و7.125 GHz.
+
 
 ## ما هو Wi-Fi 6E؟ شرح نطاق 6 GHz الجديد
 
@@ -141,6 +159,8 @@ sudo airmon-ng start wlan0
 
 ---
 
+{{< faq >}}
+
 ## التوصية
 
 **اختر [AWUS036ACH](/ar/products/alfa/awus036ach/) إذا:**
@@ -158,3 +178,11 @@ sudo airmon-ng start wlan0
 - مرتاح لاختبار وضع المراقبة والحقن قبل مهام العملاء
 
 **الخلاصة:** لمعظم محترفي اختبار الاختراق في 2026، لا يزال AWUS036ACH المعيار الذهبي للموثوقية. AWUS036AXML هو الخيار الذكي للفرق التي تستهدف البنية التحتية المؤسسية المتطورة أو تبني مجموعات أدوات مستعدة للمستقبل. من الناحية المثالية، احمل الاثنين معاً.
+
+## المراجع
+
+1. [تعريف aircrack-ng الرسمي لـ rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. [تعريف MediaTek MT7921 في النواة](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)
+3. [شرح Wi-Fi Alliance لشهادة Wi-Fi 6E](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)
+4. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
+5. [موارد معيار IEEE 802.11ax](https://standards.ieee.org/ieee/802.11ax/)

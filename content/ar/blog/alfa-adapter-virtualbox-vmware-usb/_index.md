@@ -3,14 +3,30 @@ title: "ALFA USB Passthrough: دليل إعداد VirtualBox و VMware"
 description: "دليل خطوة بخطوة لإعداد USB Passthrough لمحول ALFA WiFi في VirtualBox و VMware Workstation لنظام Kali Linux. يشمل AWUS036ACH وAWUS036AXML وفلتر USB 3.0 وExtension Pack واستكشاف الأخطاء."
 date: 2026-03-24
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "هل يحتاج VirtualBook إلى Extension Pack لاستخدام محول ALFA؟"
+    answer: "نعم. يجب تثبيت Extension Pack في VirtualBox لدعم USB 2.0 و USB 3.0 passthrough، وإلا فلن يتوفر سوى USB 1.1 وهو غير كافٍ لتشغيل محولات ALFA الحديثة."
+  - question: "هل يجب اختيار USB 2.0 أم USB 3.0 لمحول ALFA؟"
+    answer: "AWUS036AXML يجب استخدام USB 3.0 (xHCI). AWUS036ACH هو جهاز USB 2.0 أصلاً، لكن استخدام xHCI لا يسبب مشاكل. يُنصح بضبط الكل على USB 3.0."
+  - question: "هل يحتاج VMware Workstation إلى إضافات إضافية؟"
+    answer: "لا. VMware Workstation 17+ و Fusion 13+ يتضمنان دعم USB 2.0/3.0 مدمجاً. يكفي التأكد من تشغيل خدمة USB Arbitrator."
+  - question: "لماذا يرى lsusb المحول لكن لا توجد واجهة wlan؟"
+    answer: "تمرير USB ناجح لكن برنامج التشغيل لم يُحمَّل. RTL8812AU يحتاج modprobe 88XXau أو تثبيت realtek-rtl88xxau-dkms، و MT7921AUN يحتاج modprobe mt7921u."
+  - question: "ماذا أفعل إذا كان محول USB ينقطع باستمرار على مضيف Linux؟"
+    answer: "عطّل الإيقاف التلقائي لـ USB: نفّذ echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend، وتأكد من إضافة المستخدم لمجموعة vboxusers."
 ---
 
 تشغيل محول ALFA WiFi داخل جهاز افتراضي ليس بالأمر البسيط الذي يكفي فيه توصيل المحول وانتظار أن يتعرف عليه نظام التشغيل الضيف تلقائياً. على عكس المجلدات المشتركة والشبكات المجسّرة، يتطلب وضع المراقبة (monitor mode) وحقن الحزم الخام (packet injection) **تحكماً كاملاً في USB** — أي يجب أن تمتلك الآلة الافتراضية الجهاز حصرياً بدلاً من مشاركته عبر مكدّس شبكة المضيف. يُسمّى هذا بـ USB Passthrough، وإعداده بشكل صحيح هو السبب الأكثر شيوعاً لفشل الإعداد لدى مختبري الاختراق ولاعبي CTF العاملين في البيئات الافتراضية.
+
+{{< tldr >}}
+لاستخدام محول ALFA في VirtualBox أو VMware يجب ضبط USB Passthrough. يحتاج VirtualBox إلى Extension Pack وتفعيل وحدة تحكم USB 3.0؛ أما VMware فمتضمن دعم USB لكن يجب التأكد من تشغيل خدمة Arbitrator. AWUS036ACH يستخدم تعريف 88XXau، و AWUS036AXML يستخدم mt7921u.
+{{< /tldr >}}
 
 يغطي هذا الدليل الإعداد الكامل لـ **VirtualBox 7.x** و**VMware Workstation 17+ / VMware Fusion 13+**، مستهدفاً Kali Linux كنظام تشغيل ضيف. يتناول الدليل كلاً من AWUS036ACH (شريحة RTL8812AU) والأحدث AWUS036AXML (شريحة MT7921AUN)، مع ملاحظات خاصة بكل محول عند اختلاف السلوك.
 
@@ -300,8 +316,18 @@ echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend
 
 ---
 
+{{< faq >}}
+
 ## الخطوات التالية
 
 - **تثبيت أو تحديث برنامج التشغيل:** [دليل تثبيت برنامج تشغيل ALFA لـ Kali وUbuntu](/ar/blog/install-alfa-driver-kali-ubuntu/)
 - **الإعداد الكامل لـ AWUS036ACH:** [دليل إعداد AWUS036ACH على Kali Linux](/ar/blog/awus036ach-kali-linux-setup/)
 - **مراجعة أجهزة AWUS036AXML:** [مراجعة AWUS036AXML WiFi 6E](/ar/blog/awus036axml-wifi-6e-review/)
+
+## المراجع
+
+1. [صفحة تنزيل VirtualBox الرسمية](https://www.virtualbox.org/wiki/Downloads)
+2. [صفحة منتج VMware Workstation](https://www.vmware.com/products/workstation-pro.html)
+3. [مشروع تعريف aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+4. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+5. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)

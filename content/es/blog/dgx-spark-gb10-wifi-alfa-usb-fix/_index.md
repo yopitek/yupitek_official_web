@@ -7,9 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Por qué el WiFi del DGX Spark no se conecta?"
+    answer: "El DGX Spark tiene el chip MediaTek MT7925 Wi-Fi 7 integrado, pero el wpa_supplicant de la fase OOBE está demasiado simplificado y es incompatible con AP de ciertas marcas (especialmente UniFi). WPA2-Enterprise casi seguro que no funciona."
+  - question: "¿La solución de tarjeta USB ALFA aplica a todos los servidores AI GB10?"
+    answer: "Sí. Todos los servidores AI Edge con el NVIDIA GB10 Grace Blackwell Superchip (ASUS, MSI, HP, ALTOS, GIGABYTE) usan el mismo chip WiFi MT7925. La solución con ALFA AWUS036ACM es universal."
+  - question: "¿El AWUS036ACM necesita instalar controlador en el DGX Spark?"
+    answer: "No. El controlador mt76 de MT7612U está integrado en el kernel principal desde Linux 4.19. El kernel 6.17+ de DGX OS lo soporta completamente; se carga automáticamente al conectar por USB."
+  - question: "¿Cuánto tiempo tarda la reparación del WiFi con la tarjeta ALFA USB?"
+    answer: "Menos de diez minutos. Tras conectarla al puerto USB 3.0, el sistema carga el controlador automáticamente; usa nmcli para escanear y conectar al WiFi. No necesita compilar controladores ni reiniciar."
+  - question: "¿Se pueden usar otras tarjetas ALFA en el DGX Spark?"
+    answer: "El AWUS036ACH (RTL8812AU) requiere compilar el controlador manualmente y no se garantiza que funcione en la plataforma ARM64 del GB10. El AWUS036ACM es la única solución confirmada sin compilación, plug-and-play."
 ---
 
 Tu esperado **NVIDIA DGX Spark** (nombre en clave Project DIGITS) por fin ha llegado.
+
+{{< tldr >}}
+El NVIDIA DGX Spark y todos los servidores AI GB10 tienen un defecto de conexión conocido en el chip WiFi MT7925 integrado. La solución es conectar una tarjeta USB ALFA AWUS036ACM; el controlador mt76 está integrado desde el kernel 4.19 y en el kernel 6.17+ de DGX OS es plug-and-play. La conexión se completa en diez minutos.
+{{< /tldr >}}
 
 Lo desembalas, conectas la alimentación y aparece la pantalla OOBE (configuración inicial) — todo parece ir bien. Seleccionas tu red Wi-Fi, introduces la contraseña y la pantalla gira durante treinta segundos...
 
@@ -285,6 +302,8 @@ R: Absolutamente. El controlador MT7612U es parte del kernel Linux principal —
 
 ---
 
+{{< faq >}}
+
 ## Resumen: No importa qué GB10 tengas, ponlo en línea en 10 minutos
 
 Ya sea que hayas comprado un NVIDIA DGX Spark, ASUS ASCENT GX10, MSI EdgeXpert, HP ZGX Nano, ALTOS BrainSphere GB10 F1 o GIGABYTE AI TOP ATOM — estos servidores GB10 AI Edge son máquinas de desarrollo de IA fenomenales: 128 GB de memoria unificada, CPU ARM de 20 núcleos, red ConnectX-7 200GbE. Pero todos comparten el mismo chip Wi-Fi MediaTek MT7925, y todos pueden tropezar en el mismo primer paso.
@@ -313,3 +332,11 @@ Diez minutos, un adaptador USB, y tu servidor IA está realmente en línea.
 ---
 
 *Fuentes: Notas de versión de NVIDIA DGX Spark, Foros de desarrolladores de NVIDIA, morrownr/USB-WiFi GitHub, Documentación de ALFA Network, Documentación de Linux Kernel Wireless*
+
+## Referencias
+
+1. [Documentación oficial de NVIDIA DGX Spark](https://developer.nvidia.com/dgx-spark)
+2. [Foros de desarrolladores de NVIDIA](https://forums.developer.nvidia.com/)
+3. [Proyecto morrownr/USB-WiFi en GitHub](https://github.com/morrownr/USB-WiFi)
+4. [Documentación inalámbrica del núcleo Linux](https://wireless.wiki.kernel.org/)
+5. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)

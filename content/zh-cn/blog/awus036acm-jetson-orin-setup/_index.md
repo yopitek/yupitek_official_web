@@ -1,17 +1,42 @@
 ---
+
+
+
 title: "不用编译驱动！ALFA AWUS036ACM 在 Jetson Orin 边缘 AI 主机上的免设置实战指南"
 description: "针对 AVALUE AIB-NW01（NVIDIA Jetson Orin NX/Nano）客户，深度分析哪款 ALFA Network USB 无线网卡最适合边缘 AI 部署，并实证说明 AWUS036ACM 如何做到真正的即插即用。"
 date: 2026-05-20
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
+faq:
+  - question: "为什么 USB WiFi 网卡在 Jetson Orin 上经常无法使用？"
+    answer: "Jetson 使用 NVIDIA 客制化 Tegra 核心，非标准 Ubuntu 核心。第三方驱动常因核心 headers 无法取得或 ABI 不兼容而编译失败。"
+  - question: "AWUS036ACM 在 Jetson Orin 上需要编译驱动吗？"
+    answer: "不需要。MT7612U 芯片的 mt76x2u 驱动自 Linux Kernel 4.19 起内置核心主线，AIB-NW01 的 Kernel 5.10 已包含，插入即用。"
+  - question: "AWUS036ACH（RTL8812AU）能在 Jetson Orin 上使用吗？"
+    answer: "可以但需手动编译驱动。JetPack 的 NVIDIA kernel patches 可能破坏 cfg80211 ABI，导致编译失败，建议有编译经验者才使用。"
+  - question: "JetPack 升级会让 USB WiFi 网卡失效吗？"
+    answer: "有可能。第三方驱动在 JetPack 升级后可能因核心 API 变更而失效，需重新编译。核心内置驱动（如 mt76x2u）则不受影响。"
+  - question: "AIB-NW01 使用什么 Linux 内核版本？"
+    answer: "AIB-NW01 出厂搭载 Ubuntu 20.04.6 LTS 与 JetPack 5.0，使用 NVIDIA 客制化 Tegra 核心 5.10.x-tegra，CPU 架构为 ARM64。"
 ---
+> 「我有一台 AVALUE AIB-NW01（Jetson Orin NX），要部署在没有有线网络的环境。你们的 USB 无线网卡哪一款可以直接用？」
 
 ## 一封客户来信，揭开一个关键问题
 
-> 「我有一台 AVALUE AIB-NW01（Jetson Orin NX），要部署在没有有线网络的环境。你们的 USB 无线网卡哪一款可以直接用？」
+{{< tldr >}}
+Jetson Orin 使用 NVIDIA 客制 Tegra 核心，第三方 WiFi 驱动常编译失败。ALFA AWUS036ACM 采用 MT7612U 芯片，驱动自 Kernel 4.19 内置核心，插入即用，是唯一真正免编译的方案。支持监听模式、数据包注入与 AP 模式。
+{{< /tldr >}}
+
+
+ALFA AWUS036ACM 是 Jetson Orin 上唯一真正免编译、即插即用的 USB WiFi 网卡，因 MT7612U 驱动自 Kernel 4.19 起内置核心主线，完全避开 Jetson 定制核心的驱动编译问题。
+
+
+
 
 这是榆合科技近期收到的客户询问。问题听起来简单，但如果你在 Jetson 开发者社区待过一阵子就会知道——**USB 无线网卡在 NVIDIA Jetson 平台上，比想象中难搞很多。**
 
@@ -148,7 +173,7 @@ NVIDIA 论坛案例（2024 年 10 月）：RTL8188EUS 在 JetPack 5.1.x 上运�
 | 接口 | USB 3.0（USB-C 接头） |
 | 发射功率 | 标准功率，适合 USB 端口直插 |
 
-**产品页面**：https://yupitek.com/en/products/alfa/awus036acm/
+**产品页面**：https://yupitek.com/zh-cn/products/alfa/awus036acm/
 
 ### 推荐原因一：唯一「真·免驱动」方案
 
@@ -296,6 +321,9 @@ AWUS036ACH（RTL8812AU）和 AWUS036AX（RTL8812BU）并非不能使用，只是
 
 ---
 
+
+{{< faq >}}
+
 ## 结语：最简单的方案往往是最好的
 
 回到最开始的客户问题：哪一款 ALFA USB 无线网卡最适合 AVALUE AIB-NW01？
@@ -306,7 +334,7 @@ AWUS036ACH（RTL8812AU）和 AWUS036AX（RTL8812BU）并非不能使用，只是
 
 ### 立即行动
 
-- 查看产品详情：https://yupitek.com/en/products/alfa/awus036acm/
+- 查看产品详情：https://yupitek.com/zh-cn/products/alfa/awus036acm/
 - 技术支持：榆合科技提供台湾本地技术支持，欢迎联系我们
 
 ### 延伸阅读
@@ -322,3 +350,11 @@ AWUS036ACH（RTL8812AU）和 AWUS036AX（RTL8812BU）并非不能使用，只是
 > **作者**：榆閤科技 (Yupitek Ltd) — ALFA Network 台湾授权代理商
 >
 > **免责声明**：本文研究资料截至 2026 年 5 月。Jetson 平台与 Linux Kernel 持续更新，建议部署前确认最新的 JetPack 版本与内核内置驱动支持状况。
+
+## 参考文献
+
+1. [AVALUE Technology AIB-NW01 产品页面](https://www.avalue.com.tw/)
+2. [NVIDIA Jetson 官方开发者论坛](https://forums.developer.nvidia.com/)
+3. [morrownr/USB-WiFi 芯片支持表](https://github.com/morrownr/USB-WiFi)
+4. [Linux Kernel mt76 驱动文件](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [ALFA Network Linux 兼容性总表](https://docs.alfa.com.tw/Support/Compat/)

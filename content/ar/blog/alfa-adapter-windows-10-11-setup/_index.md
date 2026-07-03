@@ -3,12 +3,24 @@ title: "دليل إعداد محول ALFA على Windows 10 وWindows 11"
 description: "كيفية تثبيت وضبط محولات ALFA USB WiFi على Windows 10/11. تنزيل برامج التشغيل، وضع المراقبة مع Acrylic WiFi، استكشاف الأخطاء، ومقارنة المحولات لمستخدمي Windows."
 date: 2026-03-24
 draft: false
-dir: rtl
 languageDirection: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "تثبيت-برنامج-التشغيل", "acrylic-wifi"]
 featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "هل يدعم Windows وضع المراقبة لمحولات ALFA؟"
+    answer: "لا يدعم Windows أصلاً وضع المراقبة الكامل. نموذج تعريف NDIS لا يكشف عن التقاط إطارات 802.11 الخام. فقط Acrylic WiFi Pro يمكنه المسح السلبي، ويحتاج وضع المراقبة الكامل إلى Kali Linux."
+  - question: "هل يمكن حقن الحزم على Windows؟"
+    answer: "لا. لا يوجد أي تعريف Windows يدعم حقن إطارات 802.11 الخام لمحولات ALFA. هذه الميزة متاحة فقط على Linux."
+  - question: "ما أفضل محول ALFA من حيث توافق Windows؟"
+    answer: "AWUS036ACH (RTL8812AU) و AWUS036ACM (MT7612U) يتمتعان بتعريفات موقعة WHQL، وسجل التوافق الأكمل على Windows 10/11، مع توصيل وتشغيل فوري مستقر."
+  - question: "هل يحتاج MT7921AUN إلى تثبيت يدوي على Windows 11؟"
+    answer: "لا. تعريف MT7921AUN مدمج في مستودع تعريفات Windows 11 (البناء 22000+)، ويُثبَّت تلقائياً خلال دقائق من توصيل المحول."
+  - question: "ماذا أفعل إذا أظهر إدارة الأجهزة خطأ Code 43؟"
+    answer: "أزل التعريف وأعد التشغيل ثم أعد توصيل المحول، وثبّت التعريف يدوياً بالطريقة B. إذا استمر Code 43 عبر عدة أجهزة، فهذا يشير عادةً إلى عطل في العتاد."
 ---
 
 تحظى محولات ALFA Network اللاسلكية عبر USB بشهرة واسعة في أوساط أبحاث الأمن والشبكات، غير أن معظم الأدلة الإرشادية تركّز حصراً على نظام Linux. والبشرى لمستخدمي Windows: كل محول ALFA رئيسي يعمل على Windows 10 وWindows 11 ببرامج تشغيل (Driver) مُقدَّمة من الشركة المصنّعة — دون الحاجة إلى تصريف أي كود مصدري.
@@ -16,6 +28,10 @@ featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
 الفارق الجوهري عن Linux هو وضع المراقبة (Monitor Mode). على Linux، تستغل أدوات مثل `aircrack-ng` و`airodump-ng` إمكانية الالتقاط الخام لإطارات 802.11 مع حقن الحزم (Packet Injection). أما على Windows، فنموذج برامج التشغيل (NDIS) لا يكشف عن نفس قدرات العتاد. وضع المراقبة الكامل وحقن الحزم **غير متاحَين بصورة أصلية على Windows**. ما يُتقنه Windows — ويُتقنه بامتياز — هو التوصيل والتشغيل الفوري (Plug-and-Play) ومسح شبكات WiFi عبر أدوات متطورة كـ Acrylic WiFi Analyzer.
 
 يستعرض هذا الدليل: تثبيت برامج التشغيل، مسح شبكات WiFi، وتقييماً أميناً لما يستطيع Windows تحقيقه وما يعجز عنه عند استخدام محول ALFA.
+
+{{< tldr >}}
+تعمل محولات ALFA على Windows 10/11 بتوصيل وتشغيل فوري للاتصال بـ WiFi، لكن نموذج تعريف NDIS لا يدعم وضع المراقبة الكامل أو حقن الحزم. للاختبار الأمني انتقل إلى Kali Linux (بالحديد أو عبر VM مع USB Passthrough). Windows مناسب للاستخدام اليومي ومسح WiFi.
+{{< /tldr >}}
 
 ---
 
@@ -257,11 +273,21 @@ wlan.fc.type_subtype == 0x0004
 
 ---
 
+{{< faq >}}
+
 ## أدلة ذات صلة
 
 - [تمرير USB في VirtualBox وVMware لمحولات ALFA](/ar/blog/alfa-adapter-virtualbox-vmware-usb/) — تشغيل Kali Linux في جهاز افتراضي مع دعم كامل لمحول ALFA
 - [دليل تثبيت برنامج التشغيل على Kali Linux وUbuntu](/ar/blog/install-alfa-driver-kali-ubuntu/) — تثبيت برنامج التشغيل الكامل حسب كل Chipset
 - [دليل شراء محول ALFA للـ WiFi 2026](/ar/blog/alfa-wifi-adapter-buyer-guide-2026/) — أي محول يناسب حالة استخدامك
+
+## المراجع
+
+1. [تنزيل تعريفات ALFA Network الرسمية](https://www.alfa.com.tw/service_1.html)
+2. [وثائق تعريف Microsoft NDIS](https://learn.microsoft.com/windows-hardware/drivers/network/ndis-drivers)
+3. [موقع Acrylic WiFi Analyzer الرسمي](https://www.acrylicwifi.com/)
+4. [موقع Npcap الرسمي](https://npcap.com/)
+5. [وثائق Wireshark الرسمية](https://www.wireshark.org/docs/)
 
 ---
 

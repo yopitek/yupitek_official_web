@@ -2,6 +2,19 @@
 title: "WPA3 Security Testing with ALFA Adapters (2026)"
 description: "Comprehensive guide to WPA3 security testing using ALFA Network adapters. Covers SAE handshake analysis, Dragonblood vulnerabilities, transition mode downgrade attacks, PMF enforcement, and WPA3-Enterprise EAP testing."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "How is WPA3 different from WPA2 in security testing?"
+    answer: "WPA3 uses SAE handshake instead of PSK, providing forward secrecy and resistance to offline dictionary attacks. PMF is mandatory, but transition mode introduces a downgrade attack surface."
+  - question: "Can SAE handshake captures be cracked offline?"
+    answer: "No. Pure SAE networks do not produce crackable hashes. SAE frame captures are only for protocol-level analysis, confirming correct variants and PMF negotiation."
+  - question: "What is a WPA3 transition mode downgrade attack?"
+    answer: "Transition mode APs accept both SAE and PSK. An attacker spoofs a pure WPA2 rogue AP. If the client does not enforce SAE, the downgrade succeeds and the handshake can be cracked offline."
+  - question: "Do I need a 6 GHz adapter to test WPA3?"
+    answer: "Only for testing WPA3 networks on the 6 GHz band, which requires AWUS036AXML. WPA3 testing on 2.4/5 GHz uses AWUS036ACH."
+  - question: "Do Dragonblood vulnerabilities still need testing?"
+    answer: "Modern AP firmware is mostly patched, but environments with old or unpatched firmware still need testing for CVE-2019-9494 side-channel attacks and SAE commit flood DoS."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -14,6 +27,14 @@ featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
 {{< /alert >}}
 
 WPA3 represents a significant improvement over WPA2 in both personal and enterprise wireless security. Simultaneous Authentication of Equals (SAE) replaces the Pre-Shared Key (PSK) handshake with a password-authenticated key exchange that is resistant to offline dictionary attacks. Protected Management Frames (PMF) are mandatory. Forward secrecy is built in.
+
+{{< tldr >}}
+WPA3 security testing covers SAE handshake analysis, transition mode downgrade attacks, Dragonblood vulnerability assessment, and PMF enforcement. AWUS036AXML is for 6 GHz testing. AWUS036ACH suits 2.4/5 GHz.
+{{< /tldr >}}
+
+
+
+
 
 However, WPA3 is not without vulnerabilities. The Dragonblood research (2019) uncovered side-channel and denial-of-service vulnerabilities in the SAE handshake. Transition mode introduces downgrade attack surfaces. Enterprise deployments face the same 802.1X certificate validation weaknesses as WPA2-Enterprise. This guide covers the complete WPA3 security testing methodology using ALFA Network adapters, which provide the monitor mode stability and injection capability required for thorough assessment.
 
@@ -347,8 +368,18 @@ For the complete EAP/RADIUS testing procedure, see the [enterprise wireless secu
 
 ---
 
+{{< faq >}}
+
 ## Related Resources
 
 - [Enterprise Wireless Security Assessment: A Complete Framework](/en/blog/enterprise-wireless-security-assessment/)
 - [Packet Injection Guide: Testing Your WiFi Adapter with aireplay-ng](/en/blog/packet-injection-guide/)
 - [Enable Monitor Mode on Kali Linux](/en/blog/enable-monitor-mode-kali-linux/)
+
+## References
+
+1. [Dragonblood Research Paper (Vanhoef and Ronen, 2019)](https://papers.mathyvanhoef.com/dragonblood.pdf)
+2. [Wi-Fi Alliance WPA3 Certification](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [aircrack-ng Official Documentation](https://www.aircrack-ng.org/documentation.html)
+4. [hcxdumptool Tool Documentation](https://github.com/ZerBea/hcxdumptool)
+5. [IEEE 802.11w PMF Standard](https://standards.ieee.org/ieee/802.11/)

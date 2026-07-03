@@ -11,11 +11,30 @@ categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 1
 related_product: "/ar/products/alfa/awus036ach/"
-dir: rtl
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما الشريحة التي يستخدمها AWUS036ACH؟ هل يحتاج إلى تعريف إضافي؟"
+    answer: "يستخدم AWUS036ACH شريحة Realtek RTL8812AU، والتعريف غير مدمج في نواة Linux ويحتاج إلى تثبيت يدوي."
+  - question: "هل أحتاج إلى VPN لتثبيت تعريف AWUS036ACH في الصين؟"
+    answer: "لا، يمكن إكمال التثبيت بالكامل باستخدام المرايا المحلية مثل USTC وAlibaba Cloud وGitee."
+  - question: "هل يدعم AWUS036ACH وضع المراقبة وحقن الحزم؟"
+    answer: "نعم، بعد تثبيت تعريف RTL8812AU استخدم airmon-ng لتفعيل وضع المراقبة، وaireplay-ng لاختبار حقن الحزم."
+  - question: "هل يعمل AWUS036ACH على Raspberry Pi؟"
+    answer: "نعم، يُنصح باستخدام موزع USB مزود بمصدر طاقة مع تثبيت Kali ARM64."
+  - question: "ما أمر تثبيت تعريف AWUS036ACH على Kali Linux؟"
+    answer: "على Kali يمكن تنفيذ sudo apt install realtek-rtl88xxau-dkms لتثبيت التعريف المُجمَّع مسبقاً."
 ---
-
 حصلتَ للتو على AWUS036ACH ولكن Linux لا يتعرف عليه. هذا أمر طبيعي — يحتاج هذا الشريحة إلى تعريف RTL8812AU وهو ليس جاهزاً للتشغيل فوراً. سيرشدك هذا الدليل خلال التثبيت الكامل في حوالي 30 دقيقة، باستخدام المرايا المحلية فقط. لا حاجة للوصول إلى GitHub.
+
+{{< tldr >}}
+يستخدم AWUS036ACH شريحة RTL8812AU، على Kali ثبّت تعريف DKMS عبر apt، وعلى Ubuntu/Debian جمّع من Gitee. وضع المراقبة وحقن الحزم جاهزان خلال 30 دقيقة.
+{{< /tldr >}}
+
+تأكد من توفر ما يلي:
+
+
 
 ## قبل البدء
 
@@ -616,6 +635,8 @@ sudo aireplay-ng --test wlan1mon
 | مرآة 华为云 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | صور Kali ARM (احتياطي) |
 | تعريف RTL8812AU (Gitee) | [gitee.com/mirrors/rtl8812au](https://gitee.com/mirrors/rtl8812au) | التجميع اليدوي (بديل) |
 
+{{< faq >}}
+
 ## أدلة محوّلات Alfa الأخرى للصين
 
 هذا جزء من سلسلة **Alfa China Install Guide**. كل مقالة تغطي نموذج محوّل واحداً:
@@ -630,3 +651,12 @@ sudo aireplay-ng --test wlan1mon
 - [دليل AWUS036EACS للصين](/ar/blog/awus036eacs-china-install-guide/)
 
 هل لديك أسئلة؟ اترك تعليقاً أدناه أو تواصل معنا على [yupitek.com](https://yupitek.com/ar/contact/).
+
+## المراجع
+
+1. [وثائق aircrack-ng الرسمية](https://www.aircrack-ng.org/)
+2. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+3. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
+4. [مرآة Gitee لـ rtl8812au](https://gitee.com/mirrors/rtl8812au)
+5. [موقع Realtek RTL8812AU](https://www.realtek.com/)
+

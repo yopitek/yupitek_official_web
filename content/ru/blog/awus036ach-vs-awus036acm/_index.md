@@ -2,12 +2,29 @@
 title: "ALFA AWUS036ACH vs AWUS036ACM: полное сравнение для Kali Linux (2026)"
 description: "Детальное сравнение ALFA AWUS036ACH и AWUS036ACM: чипсеты, режим монитора, инъекция пакетов, поддержка драйверов и что лучше для Kali Linux."
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "AWUS036ACM", "сравнение", "Kali-Linux", "RTL8812AU"]
 featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
----
+
+faq:
+  - question: "В чём разница установки драйверов AWUS036ACH и AWUS036ACM?"
+    answer: "AWUS036ACH (RTL8812AU) требует DKMS-компиляции драйвера aircrack-ng, после обновления ядра возможна пересборка. AWUS036ACM (MT7612U) имеет встроенный драйвер с ядра 4.19, Plug & Play без компиляции."
+  - question: "Какая модель лучше для режима монитора?"
+    answer: "AWUS036ACH стабильнее в режиме монитора, две антенны и 30 dBm обеспечивают меньшую потерю пакетов в плотной AP-среде. ACM также поддерживает мониторинг, но одна антенна и меньшая мощность."
+  - question: "Что выбрать новичку — ACH или ACM?"
+    answer: "Новичкам рекомендуется AWUS036ACM: встроенный драйвер MT7612U, Plug & Play без компиляции. Если нужен максимальный сигнал и много обучающих материалов, выбирайте AWUS036ACH."
+  - question: "Какую модель рекомендовать для VM-среды?"
+    answer: "Для VM рекомендуется AWUS036ACM: после USB-паспорта встроенный драйвер ядра сразу распознаётся, без установки инструментов компиляции в VM. ACH требует дополнительной установки драйвера в VM."
+---AWUS036ACH для профессиональных задач: драйвер RTL8812AU, 30 dBm, две антенны, лучшая инъекция и мониторинг. AWUS036ACM для портативности: MT7612U, встроенный драйвер ядра, нулевая компиляция, цена около $30-40.
+
+{{< tldr >}}
+AWUS036ACH для профессиональных задач: драйвер RTL8812AU, 30 dBm, две антенны, лучшая инъекция и мониторинг. AWUS036ACM для портативности: MT7612U, встроенный драйвер ядра, нулевая компиляция, цена около $30-40.
+{{< /tldr >}}
+
 
 ## Обзор
 
@@ -205,6 +222,8 @@ sudo aireplay-ng -0 3 -a [BSSID] wlan0mon
 
 ---
 
+{{< faq >}}
+
 ## Вердикт
 
 **Выбирайте [AWUS036ACH](/ru/products/alfa/awus036ach/) для:**
@@ -222,3 +241,10 @@ sudo aireplay-ng -0 3 -a [BSSID] wlan0mon
 - Ситуаций, где предпочтительна стабильность нативного ядра
 
 Если вы можете позволить себе только один адаптер, **AWUS036ACH** — более сильный выбор для пентестинга. Если вам нужен надёжный дорожный компаньон с нулевой настройкой, **AWUS036ACM** заслуживает своего места в арсенале.
+
+## Источники
+
+1. [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
+3. [alfa.com.tw](https://www.alfa.com.tw)
+4. [yupitek.com](https://www.yupitek.com)

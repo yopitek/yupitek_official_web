@@ -7,7 +7,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Pourquoi les cartes USB WiFi ne fonctionnent-elles souvent pas sur Jetson Orin ?"
+    answer: "Le Jetson utilise un noyau Tegra personnalisé NVIDIA, pas un noyau Ubuntu standard. Les pilotes tiers échouent souvent à la compilation car les headers du noyau sont indisponibles ou l'ABI est incompatible."
+  - question: "L'AWUS036ACM nécessite-t-il une compilation de pilote sur Jetson Orin ?"
+    answer: "Non. Le pilote mt76x2u du chipset MT7612U est intégré au noyau mainline depuis Linux 4.19. Le noyau 5.10 de l'AIB-NW01 l'inclut déjà."
+  - question: "L'AWUS036ACH (RTL8812AU) peut-il fonctionner sur Jetson Orin ?"
+    answer: "Oui mais avec compilation manuelle. Les patches NVIDIA du kernel de JetPack peuvent casser l'ABI cfg80211. Réservé aux utilisateurs expérimentés en compilation."
+  - question: "Une mise à jour JetPack peut-elle casser la carte USB WiFi ?"
+    answer: "Possiblement. Les pilotes tiers peuvent casser après une mise à jour JetPack. Les pilotes intégrés au noyau (comme mt76x2u) ne sont pas affectés."
+  - question: "Quelle version de noyau Linux utilise l'AIB-NW01 ?"
+    answer: "L'AIB-NW01 est livré avec Ubuntu 20.04.6 LTS et JetPack 5.0, utilisant le noyau Tegra personnalisé NVIDIA 5.10.x-tegra en architecture ARM64."
 ---
+
+{{< tldr >}}
+Le Jetson Orin utilise un noyau Tegra personnalisé NVIDIA, où les pilotes WiFi tiers échouent souvent. L'ALFA AWUS036ACM avec le chipset MT7612U a son pilote intégré au noyau depuis 4.19, plug-and-play, supportant mode moniteur, injection et mode AP.
+{{< /tldr >}}
+
+> « J'ai un AVALUE AIB-NW01 (Jetson Orin NX) à déployer dans un environnement sans réseau filaire. Quelle clé WiFi USB parmi les vôtres puis-je utiliser directement ? »
+
 
 ## Un e-mail client révèle une question cruciale
 
@@ -148,7 +168,7 @@ Source des données：[morrownr/USB-WiFi — Tableau de support des chipsets](ht
 | Interface | USB 3.0（connecteur USB-C） |
 | Puissance d'émission | Puissance standard, adaptée à une connexion directe sur port USB |
 
-**Page produit**：https://yupitek.com/en/products/alfa/awus036acm/
+**Page produit**：https://yupitek.com/fr/products/alfa/awus036acm/
 
 ### Raison n°1 : la seule solution véritablement sans pilote
 
@@ -296,6 +316,8 @@ L'AWUS036ACH（RTL8812AU）et l'AWUS036AX（RTL8812BU）ne sont pas inutilisable
 
 ---
 
+{{< faq >}}
+
 ## Conclusion : la solution la plus simple est souvent la meilleure
 
 Revenons à la question initiale du client : quelle clé WiFi USB ALFA convient le mieux à l'AVALUE AIB-NW01 ?
@@ -306,7 +328,7 @@ Non pas parce qu'elle est la plus rapide ou la moins chère — mais parce qu'el
 
 ### Passez à l'action
 
-- Voir les détails du produit：https://yupitek.com/en/products/alfa/awus036acm/
+- Voir les détails du produit：https://yupitek.com/fr/products/alfa/awus036acm/
 - Support technique：Yupitek fournit un support technique local à Taïwan, n'hésitez pas à nous contacter
 
 ### Pour aller plus loin
@@ -322,3 +344,12 @@ Non pas parce qu'elle est la plus rapide ou la moins chère — mais parce qu'el
 > **Auteur**：Yupitek Ltd — Distributeur agréé ALFA Network à Taïwan
 >
 > **Avertissement**：les données de recherche de cet article sont à jour jusqu'en mai 2026. La plateforme Jetson et le noyau Linux évoluent en continu, il est conseillé de vérifier les dernières versions de JetPack et la prise en charge des pilotes intégrés au noyau avant tout déploiement.
+
+---
+
+## Références
+1. [Page produit AVALUE Technology AIB-NW01](https://www.avalue.com.tw/)
+2. [Forum officiel des développeurs NVIDIA Jetson](https://forums.developer.nvidia.com/)
+3. [Table de support des chipsets morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi)
+4. [Documentation pilote mt76 du noyau Linux](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [Table de compatibilité Linux ALFA Network](https://docs.alfa.com.tw/Support/Compat/)

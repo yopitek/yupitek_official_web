@@ -1,7 +1,12 @@
 ---
+
+
+
 title: "ALFA AWUS036ACS 中国安装指南：Kali Linux, Ubuntu, Debian 和 树莓派"
 description: "手把手教你在中国境内使用国内镜像源安装 ALFA AWUS036ACS 驱动。包含 RTL8811AU DKMS 驱动安装、监听模式和数据包注入教程。支持 Kali Linux, Ubuntu 22/24, Debian 和 树莓派。无需访问 GitHub。"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +17,28 @@ series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036acs/"
 series_order: 3
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
+faq:
+  - question: "AWUS036ACS 用什么芯片？跟 AWUS036ACH 一样吗？"
+    answer: "采用 Realtek RTL8811AU 芯片，与 RTL8812AU 共用同一个驱动程序软件包。"
+  - question: "AWUS036ACS 支持监听模式吗？"
+    answer: "支持，RTL8811AU 完美支持监听模式与数据包注入，是安全研究的经济实惠选择。"
+  - question: "在中国安装 AWUS036ACS 需要翻墙吗？"
+    answer: "不需要，Kali 用 apt 装 DKMS 驱动，Ubuntu/Debian 从 Gitee 下载源码编译即可。"
+  - question: "AWUS036ACS 的 USB ID 是多少？"
+    answer: "Realtek RTL8811AU 的 USB ID 为 0bda:0811，用 lsusb 可确认。"
+  - question: "Kali Linux 安装 AWUS036ACS 驱动的指令是什么？"
+    answer: "Kali 可直接执行 sudo apt install realtek-rtl88xxau-dkms 安装驱动。"
 ---
 
+
+
+
 刚收到这款精巧的 AWUS036ACS，迫不及待插上电脑却发现 Linux 没反应？别急，这很正常。虽然它内置的 RTL8811AU 芯片是安全研究的神器，完美支持监听模式和数据包注入，但驱动并不在系统内核里，得咱们亲自动手装一下。
+
+{{< tldr >}}
+AWUS036ACS 采用 RTL8811AU 芯片，Kali 用 apt 装 DKMS 驱动，Ubuntu/Debian 从 Gitee 编译，支持监听模式与数据包注入。
+{{< /tldr >}}
+
 
 国内的小伙伴访问 GitHub 可能不太顺畅，所以我特意帮大家找好了 Gitee 镜像。不用翻墙，咱们现在就开始一步步把它“驯服”。
 
@@ -317,6 +341,9 @@ sudo reboot
 | 中科大镜像站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 首选 |
 | 阿里云镜像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推荐 |
 
+
+{{< faq >}}
+
 ## 更多 Alfa 网卡中国安装指南
 
 - [AWUS036ACH 中国安装指南](/zh-cn/blog/awus036ach-china-install-guide/) — RTL8812AU, 高功率
@@ -329,3 +356,10 @@ sudo reboot
 - [AWUS036EACS 中国安装指南](/zh-cn/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 折腾过程中遇到搞不定的，欢迎在下面评论区留言，或者去 [yupitek.com](https://yupitek.com/zh-cn/contact/) 找我们。
+
+## 参考文献
+
+1. [aircrack-ng 官方文档](https://www.aircrack-ng.org/)
+2. [ALFA Network 官网](https://www.alfa.com.tw/)
+3. [Kali Linux 官方文档](https://www.kali.org/docs/)
+4. [Gitee rtl8812au 镜像](https://gitee.com/mirrors/rtl8812au)

@@ -7,7 +7,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "penetration-testing", "kali-linux"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "L'AWUS036ACH ou l'AWUS036AXML, lequel choisir pour le pentesting quotidien ?"
+    answer: "L'AWUS036ACH pour le pentesting quotidien : pilote RTL8812AU mature, stabilité maximale. L'AWUS036AXML pour auditer les environnements Wi-Fi 6E sur 6 GHz, mais le pilote est encore en développement."
+  - question: "L'AWUS036AXML supporte-t-il l'injection de paquets ?"
+    answer: "Oui, avec un taux de réussite supérieur à 90%, mais le mode moniteur actif a des limitations connues du pilote mt7921u. Utilisez de préférence le mode moniteur passif."
+  - question: "Quelle version de noyau Linux est nécessaire pour l'AWUS036AXML ?"
+    answer: "Le pilote mt7921u est intégré depuis Linux 5.18. Pour une stabilité optimale, utilisez le noyau 6.6 ou plus récent avec firmware-misc-nonfree à jour."
+  - question: "L'AWUS036ACH supporte-t-il le 6 GHz ?"
+    answer: "Non. L'AWUS036ACH (RTL8812AU) ne supporte que le double bande 2,4/5 GHz Wi-Fi 5. Pour le 6 GHz, il faut l'AWUS036AXML (MT7921AUN) ou l'AWUS036AXER."
+  - question: "Lequel a le meilleur rapport qualité-prix ?"
+    answer: "L'AWUS036ACM (MT7612U) offre le meilleur rapport qualité-prix : pilote intégré au noyau, plug-and-play, mode moniteur et injection de paquets stables, à un prix abordable."
 ---
+
+{{< tldr >}}
+L'AWUS036ACH offre un pilote mature et la stabilité maximale pour le pentesting quotidien. L'AWUS036AXML supporte la bande 6 GHz pour l'audit des environnements Wi-Fi 6E, mais son pilote est encore en cours d'amélioration.
+{{< /tldr >}}
+
+Répondez à ces questions dans l'ordre pour trouver votre réponse immédiatement :
+
 
 # WiFi 6E vs WiFi 5 : Quel adaptateur ALFA choisir pour le test de pénétration ?
 
@@ -44,6 +64,8 @@ Le Wi-Fi 6E est une extension de la norme Wi-Fi 6 (IEEE 802.11ax) qui ajoute l'a
 
 ---
 
+{{< faq >}}
+
 ## Recommandation
 
 **Choisissez l'[AWUS036ACH](/fr/products/alfa/awus036ach/) si :**
@@ -55,3 +77,12 @@ Le Wi-Fi 6E est une extension de la norme Wi-Fi 6 (IEEE 802.11ax) qui ajoute l'a
 - Vous auditez régulièrement des déploiements Wi-Fi 6E modernes
 - Vous construisez un coffre tourné vers l'avenir pour 2026 et au-delà
 - Votre installation Kali Linux utilise le noyau 6.1 ou supérieur
+
+---
+
+## Références
+1. [Pilote officiel aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. [Pilote mt7921 du noyau Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)
+3. [Certification Wi-Fi 6E Wi-Fi Alliance](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)
+4. [Documentation officielle Kali Linux](https://www.kali.org/docs/)
+5. [Ressources norme IEEE 802.11ax](https://standards.ieee.org/ieee/802.11ax/)

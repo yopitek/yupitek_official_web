@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "ALFA 驱动程序在内核更新后失效？完整修复指南"
 description: "Linux 内核更新后 ALFA USB WiFi 网卡无法使用？完整修复指南：涵盖 Kali Linux 与 Ubuntu 上的 RTL8812AU、RTL8811AU 及 MT7921AUN 驱动程序修复方式。"
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
+faq:
+  - question: "内核更新后 ALFA 网卡为何会失效？"
+    answer: "RTL8812AU 使用核心外驱动，每次内核版本变更后已编译模块不再兼容。DKMS 可自动重建，但缺少内核头文件或过时设定会导致失败。"
+  - question: "如何快速诊断 ALFA 驱动失效原因？"
+    answer: "执行 uname -r 确认内核版本，再以 dkms status 检查模块建置状态，最后用 dmesg 查看固件或模块加载错误讯息。"
+  - question: "RTL8812AU 驱动失效最快的修复方法是什么？"
+    answer: "安装匹配的内核头文件后执行 dkms autoinstall。若失败则从 aircrack-ng/rtl8812au 全新复制并执行 make dkms_install。"
+  - question: "MT7921AUN 网卡更新核心后无法连接怎么办？"
+    answer: "MT7921AUN 为核心内置驱动，问题通常出在固件。安装 firmware-misc-nonfree 软件包并确认内核版本不低于 5.18。"
+  - question: "如何防止内核更新再次破坏驱动？"
+    answer: "使用 apt full-upgrade 取代 apt upgrade，确保标头与核心同步安装。安装 dkms 与 linux-headers-generic 元软件包维持相依性。"
 ---
 
+
+
+
 你执行了 `sudo apt upgrade`，重新启动后 ALFA 网卡消失了——没有接口、没有指示灯、什么都没有。这是 Linux 用户询问 ALFA Network USB WiFi 网卡时最常见的问题，而内核更新几乎是所有问题的根源。本指南将带你系统性地诊断并修复两种最常受影响的芯片组：**RTL8812AU**（AWUS036ACH、AWUS036ACS）与 **MT7921AUN**（AWUS036AXM、AXML）。按照各节步骤操作，你的网卡应在 15 分钟内恢复正常。
+
+{{< tldr >}}
+内核更新破坏 ALFA 驱动的主因是标头与模块不同步。RTL8812AU 通过 dkms autoinstall 重建，MT7921AUN 需安装 firmware-misc-nonfree，长期修复则改用 apt full-upgrade。
+{{< /tldr >}}
+
 
 ---
 
@@ -356,6 +380,9 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ---
 
+
+{{< faq >}}
+
 ## 总结
 
 ALFA 驱动程序在内核更新后的失效问题遵循可预测的模式，也有可预测的解决方案。RTL8812AU 网卡需要 `dkms autoinstall`（或从 `aircrack-ng/rtl8812au` 全新克隆）加上匹配的内核头文件。MT7921AUN 网卡需要 `firmware-misc-nonfree` 以及 5.18 或更新的内核。两种情况的长期修复方案，都是确保以 `apt full-upgrade` 而非 `apt upgrade` 作为标准更新命令，让头文件与内核保持同步。
@@ -365,3 +392,11 @@ ALFA 驱动程序在内核更新后的失效问题遵循可预测的模式，也
 **相关指南：**
 - [如何在 Kali Linux 与 Ubuntu 上安装 ALFA USB WiFi 驱动程序](/zh-cn/blog/install-alfa-driver-kali-ubuntu/) — 若你从未安装过驱动程序，请从这里开始
 - [AWUS036ACH Kali Linux 设置指南](/zh-cn/blog/awus036ach-kali-linux-setup/) — 完整设置说明，包含监听模式与数据包注入验证
+
+## 参考文献
+
+1. [aircrack-ng 官方 rtl8812au 驱动程序](https://github.com/aircrack-ng/rtl8812au)
+2. [DKMS 官方说明文件](https://github.com/dell/dkms)
+3. [Kali Linux 软件包管理文件](https://www.kali.org/docs/general-use/package-management/)
+4. [Linux Kernel 官方文档](https://www.kernel.org/doc/html/latest/)
+5. [MediaTek MT7921 驱动程序](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)

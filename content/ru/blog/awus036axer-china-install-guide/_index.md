@@ -2,6 +2,8 @@
 title: "Руководство по установке драйвера ALFA AWUS036AXER для Китая: Kali Linux, Ubuntu, Debian и Raspberry Pi"
 description: "Пошаговое руководство по установке драйверов ALFA AWUS036AXER в Китае с использованием внутренних зеркал. Драйвер RTL8832BU, нано-адаптер WiFi 6. Охватывает Kali Linux, Ubuntu 22/24 (в ядре на 24.04), Debian и Raspberry Pi. GitHub не требуется."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +14,25 @@ series: ["alfa-china-install-guide"]
 series_order: 5
 related_product: "/ru/products/alfa/awus036axer/"
 featureimage: "/images/blog/awus036axer-china-install-guide.webp"
+
+faq:
+  - question: "Какой чип используется в AWUS036AXER? Такой же, как в AWUS036AX?"
+    answer: "Тот же чип Realtek RTL8832BU, поддерживает WiFi 6, но корпус меньше и портативнее."
+  - question: "Нужно ли устанавливать драйвер AWUS036AXER в Ubuntu 24.04?"
+    answer: "Нет, ядро Ubuntu 24.04 нативно поддерживает его, Plug & Play."
+  - question: "Подходит ли AWUS036AXER для исследований беспроводной безопасности?"
+    answer: "Менее подходит, поддержка режима монитора у RTL8832BU ограничена, рекомендуется AWUS036ACM или AWUS036ACH."
+  - question: "Какой USB ID у AWUS036AXER?"
+    answer: "USB ID Realtek RTL8832BU — 0bda:885a, можно проверить через lsusb."
+  - question: "Нужен ли VPN для установки AWUS036AXER в Китае?"
+    answer: "Нет, скачайте исходный код rtl8852bu с Gitee и используйте внутренние зеркала для установки инструментов компиляции."
 ---
 
 AWUS036AXER — это нано-адаптер WiFi 6 от ALFA, компактный донгл, предназначенный для постоянного подключения к ноутбуку. Его чип RTL8832BU находится вне ядра в версиях Linux ниже 6.14, но включен нативно в Ubuntu 24.04 (ядро 6.8). В этом руководстве используются зеркала Gitee для старых ядер. GitHub не требуется.
+
+{{< tldr >}}
+AWUS036AXER с чипом RTL8832BU, миниатюрный WiFi 6 адаптер. В Ubuntu 24.04 работает без драйвера, в других системах компилируется из Gitee rtl8852bu.
+{{< /tldr >}}
 
 > **Примечание для исследователей безопасности:** RTL8832BU имеет ограниченную поддержку режима монитора. Результаты зависят от версии ядра и драйвера. Для надежной инъекции пакетов в Kali Linux лучше выбрать [AWUS036ACM](/ru/blog/awus036acm-china-install-guide/) или [AWUS036ACH](/ru/blog/awus036ach-china-install-guide/).
 
@@ -226,6 +244,8 @@ sudo reboot
 
 ---
 
+{{< faq >}}
+
 ## Устранение неполадок
 
 | Проблема | Возможная причина | Решение |
@@ -261,3 +281,11 @@ sudo reboot
 - [Руководство по установке AWUS036EACS в Китае](/ru/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 Вопросы? Оставьте комментарий ниже или свяжитесь с нами на [yupitek.com](https://yupitek.com/ru/contact/).
+
+
+## Источники
+
+1. [Официальный сайт Realtek](https://www.realtek.com/)
+2. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
+3. [Официальная документация Kali Linux](https://www.kali.org/docs/)
+4. [Зеркало Gitee rtl8852bu](https://gitee.com/mirrors/rtl8852bu)

@@ -7,7 +7,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi"]
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Les cartes USB ALFA peuvent-elles servir de point d'accès WiFi sous Linux ?"
+    answer: "Selon le chipset. L'AWUS036ACM (MT7612U) supporte entièrement le Soft AP en plug-and-play, l'AWUS036ACH (RTL8812AU) le supporte avec conditions, et l'AWUS036AXML nécessite des ajustements."
+  - question: "Quelle carte ALFA est la mieux adaptée pour un Soft AP sur Raspberry Pi ?"
+    answer: "L'AWUS036ACM est le meilleur choix. Pilote intégré plug-and-play, consommation de 400 mA, support WPA3 et VIF, stabilité sur toutes les plateformes."
+  - question: "Comment vérifier si la carte supporte le mode AP ?"
+    answer: "Exécutez iw list | grep -A 10 'Supported interface modes'. Si la sortie inclut * AP, le pilote supporte le Soft AP et hostapd fonctionnera."
+  - question: "Quelles sont les limitations du Soft AP avec le pilote RTL8812AU ?"
+    answer: "Pas de support WPA3 (WPA2-PSK uniquement), pas de VIF (nécessite deux cartes), consommation d'environ 800 mA nécessitant un hub USB alimenté sur Pi."
+  - question: "Que faire si le WiFi se déconnecte en mode Soft AP avec l'AWUS036AXML ?"
+    answer: "Le Bluetooth 5.2 intégré au MT7921AUN interfère avec le WiFi. Désactivez le pilote Bluetooth avec echo 'install btusb /bin/false' dans /etc/modprobe.d/ puis redémarrez."
 ---
+
+{{< tldr >}}
+La compatibilité Soft AP des cartes ALFA dépend du pilote du chipset. L'AWUS036ACM est le choix stable polyvalent, l'AWUS036ACH fonctionne sans WPA3, l'AWUS036AXML nécessite la désactivation du Bluetooth. Le RTL8832BU n'est pas recommandé.
+{{< /tldr >}}
+
+> "Puis-je utiliser les adaptateurs USB WiFi ALFA comme hotspot WiFi (Soft AP) sur Kali Linux / Ubuntu / Raspberry Pi ?"
+
 
 
 
@@ -591,6 +611,8 @@ Les canaux DFS (Dynamic Frequency Selection) (ch100–ch140) nécessitent une d�
 
 ---
 
+{{< faq >}}
+
 ## 12. Recommandations d'achat et verdict final {#recommendations}
 
 ### Matrice de décision rapide
@@ -632,10 +654,10 @@ L'AWUS036ACH (RTL8812AU) fonctionne si vous acceptez les limitations. L'AWUS036A
 
 ### Liens d'achat
 
-- [AWUS036ACM — Soft AP Top Pick](/en/products/alfa/awus036acm/)
-- [AWUS036ACH — Classic Pentesting Adapter](/en/products/alfa/awus036ach/)
-- [AWUS036AXML — WiFi 6E Tri-Band Flagship](/en/products/alfa/awus036axml/)
-- [ALFA Network Full Product Line](/en/products/alfa/)
+- [AWUS036ACM — Soft AP Top Pick](/fr/products/alfa/awus036acm/)
+- [AWUS036ACH — Classic Pentesting Adapter](/fr/products/alfa/awus036ach/)
+- [AWUS036AXML — WiFi 6E Tri-Band Flagship](/fr/products/alfa/awus036axml/)
+- [ALFA Network Full Product Line](/fr/products/alfa/)
 
 ### Lectures complémentaires
 
@@ -668,3 +690,12 @@ This article aggregates information from:
 > **Avertissement** : Données de recherche à jour en mai 2026. Linux kernels and distributions continue to evolve; driver support may change with new versions. Verify target platform kernel version and driver compatibility before deployment.
 >
 > **Support technique** : Pour les problèmes de configuration Soft AP, contactez le support technique Yupitek Taiwan. Demandes de produits : [yupitek.com](https://yupitek.com/fr/).
+
+---
+
+## Références
+1. [Base de connaissances GitHub morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi)
+2. [Documentation officielle hostapd](https://w1.fi/cgit/hostap/)
+3. [Pilote mt76 Linux Wireless](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)
+4. [Documentation officielle Raspberry Pi](https://www.raspberrypi.com/documentation/)
+5. [Documentation officielle Kali Linux](https://www.kali.org/docs/)

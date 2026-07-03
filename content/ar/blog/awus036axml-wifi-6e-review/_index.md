@@ -3,12 +3,30 @@ title: "مراجعة ALFA AWUS036AXML WiFi 6E: الأداء الفعلي في ا
 description: "مراجعة معمّقة لمحول USB WiFi 6E من ALFA AWUS036AXML: المواصفات وإعداد Kali Linux وأداء وضع المراقبة ومسح نطاق 6 GHz."
 date: 2026-03-23
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "wifi-6e", "مراجعة", "Kali-Linux", "MT7921AUN", "6GHz"]
 featureimage: "/images/blog/awus036axml-wifi-6e-review.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما النطاقات التي يدعمها AWUS036AXML؟"
+    answer: "يدعم ثلاثي النطاق 2.4 GHz و 5 GHz و 6 GHz، متوافق مع معيار IEEE 802.11ax Wi-Fi 6E. وهو من المحولات USB القليلة التي تتيح للباحثين الأمنيين العمل في نطاق 6 GHz."
+  - question: "ما إصدار نواة Linux المطلوب لـ AWUS036AXML؟"
+    answer: "تعريف mt7921u مدمج رسمياً في النواة الرئيسية منذ 5.18. نواة Kali Linux 2024.x / 2025.x بإصدار 6.x تعمل بشكل طبيعي."
+  - question: "ما الفرق الرئيسي بين AWUS036AXML و AWUS036ACH؟"
+    answer: "AWUS036AXML يستخدم MT7921AUN ويدعم 6 GHz و Wi-Fi 6E، بينما AWUS036ACH يستخدم RTL8812AU ويدعم فقط Wi-Fi 5 ثنائي النطاق، لكن تعريفه أنضج وأوسع توافقاً."
+  - question: "هل يدعم AWUS036AXML حقن الحزم؟"
+    answer: "يدعم حقن الحزم بنسبة نجاح مستقرة فوق 90%، لكن وضع المراقبة النشط له قيود معروفة في التعريف، يُنصح باستخدام الوضع السلبي فقط."
+  - question: "من المناسب له شراء AWUS036AXML؟"
+    answer: "أنسب لباحثي الأمن الذين يقيّمون بيئات Wi-Fi 6E المنشورة، ومختبرات التدريب الأمني، والباحثين في تحليل بروتوكولات 6 GHz."
 ---
+{{< tldr >}}
+AWUS036AXML محول USB Wi-Fi 6E يدعم ثلاثي النطاق 2.4/5/6 GHz ووضع المراقبة وحقن الحزم. يغطي هذا المقال المواصفات وتثبيت التعريف على Kali Linux واختبار مسح 6 GHz ومقارنة مفصلة مع AWUS036ACH.
+{{< /tldr >}}
+
+**ALFA AWUS036AXML** هو دخول ALFA Network في عصر Wi-Fi 6E للبحث الأمني اللاسلكي. مبني على شريحة **MediaTek MT7921AUN**، وهو حتى عام 2026 أحد محولات USB اللاسلكية القليلة جداً التي تتيح لباحثي الأمن العمل في **نطاق 6 GHz** — الطيف الترددي الجديد الذي تستخدمه شبكات Wi-Fi 6E.
+
 
 ## نظرة عامة على المنتج
 
@@ -292,6 +310,8 @@ sudo iw dev wlan0mon scan | grep -E "BSS|SSID|freq|signal"
 
 ---
 
+{{< faq >}}
+
 ## من يجب أن يشتري AWUS036AXML؟
 
 **باحثو الأمن الذين يستهدفون بيئات الشركات.** المنظمات الكبيرة التي نشرت بنية تحتية Wi-Fi 6E بات وجودها شائعاً. بدون محول قادر على 6 GHz، يكون تقييم الشبكة اللاسلكية منقوصاً — ستفوت جزءاً كبيراً من نشاط العملاء ونقاط الوصول.
@@ -305,3 +325,11 @@ sudo iw dev wlan0mon scan | grep -E "BSS|SSID|freq|signal"
 ---
 
 ALFA AWUS036AXML متاح من [Yopitek](/ar/products/alfa/awus036axml/) — الموزع المعتمد لـ ALFA Network في أوروبا والشرق الأوسط. الشراء عبر Yopitek يضمن حصولك على منتج أصيل معتمد مع تغطية ضمان المصنّع ودعم تقني محلي.
+
+## المراجع
+
+1. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+2. [معلومات شريحة MediaTek MT7921](https://www.mediatek.com/products/networking-and-connectivity)
+3. [تعريف Linux core mt76](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+4. [مجموعة أدوات aircrack-ng](https://www.aircrack-ng.org/)
+5. [شهادة Wi-Fi Alliance Wi-Fi 6E](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)

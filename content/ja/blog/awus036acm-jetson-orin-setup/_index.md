@@ -1,4 +1,5 @@
 ---
+
 title: "ドライバーコンパイル不要！ALFA AWUS036ACM を Jetson Orin エッジ AI ホストでプラグ＆プレイする実践ガイド"
 description: "AVALUE AIB-NW01（NVIDIA Jetson Orin NX/Nano）ユーザー向けに、エッジ AI デプロイに最適な ALFA Network USB 無線アダプターを徹底分析し、AWUS036ACM がなぜ真のプラグ＆プレイを実現できるのかを実証的に解説します。"
 date: 2026-05-20
@@ -7,12 +8,28 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "USB WiFiアダプターがJetson Orinでよく使えないのはなぜですか？"
+    answer: "JetsonはNVIDIAカスタムTegraカーネルを使用し、標準Ubuntuカーネルではありません。サードパーティドライバーはカーネルheadersが取得できないかABI非互換でコンパイルに失敗することがよくあります。"
+  - question: "AWUS036ACMはJetson Orinでドライバーをコンパイルする必要がありますか？"
+    answer: "不要です。MT7612Uチップのmt76x2uドライバーはLinux Kernel 4.19以降カーネルメインラインに内蔵され、AIB-NW01のKernel 5.10に既に含まれており、挿すだけで使えます。"
+  - question: "AWUS036ACH（RTL8812AU）はJetson Orinで使えますか？"
+    answer: "使えますがドライバーの手動コンパイルが必要です。JetPackのNVIDIA kernel patchesがcfg80211 ABIを破壊しコンパイル失敗を引き起こす可能性があるため、コンパイル経験のある方にお勧めします。"
+  - question: "JetPackアップグレードでUSB WiFiアダプターが使えなくなりますか？"
+    answer: "可能性があります。サードパーティドライバーはJetPackアップグレード後にカーネルAPI変更で無効になることがあり、再コンパイルが必要です。カーネル内蔵ドライバー（mt76x2uなど）は影響を受けません。"
+  - question: "AIB-NW01はどのLinuxカーネルバージョンを使用していますか？"
+    answer: "AIB-NW01は工場出荷時Ubuntu 20.04.6 LTSとJetPack 5.0を搭載し、NVIDIAカスタムTegraカーネル5.10.x-tegraを使用、CPUアーキテクチャはARM64です。"
 ---
+> 「AVALUE AIB-NW01（Jetson Orin NX）を有線ネットワークのない環境に設置する予定です。御社の USB 無線アダプターでそのまま使えるのはどれですか？」
 
 ## 一通の顧客からの問い合わせが、重要な課題を浮き彫りにした
 
-> 「AVALUE AIB-NW01（Jetson Orin NX）を有線ネットワークのない環境に設置する予定です。御社の USB 無線アダプターでそのまま使えるのはどれですか？」
 
+{{< tldr >}}
+Jetson OrinはNVIDIAカスタムTegraカーネルを使用し、サードパーティWiFiドライバーのコンパイルがよく失敗します。ALFA AWUS036ACMはMT7612Uチップを採用し、ドライバーはKernel 4.19以降カーネルに内蔵、挿すだけで使えて唯一の真のコンパイル不要ソリューションです。モニターモード、パケットインジェクション、APモードをサポートします。
+{{< /tldr >}}
 これは Yupitek に最近寄せられた問い合わせだ。一見シンプルな質問だが、Jetson 開発者コミュニティにしばらくいればわかることだが——**USB 無線アダプターは NVIDIA Jetson プラットフォーム上では想像以上に扱いが難しい。**
 
 Jetson のコアアーキテクチャ、NVIDIA フォーラムの実例、GitHub 上のドライバーコンパイル失敗報告、そして ARM64 プラットフォームでの実測データまでを追跡し、この選定ガイドをまとめた。
@@ -148,7 +165,7 @@ NVIDIA フォーラムの事例（2024 年 10 月）：RTL8188EUS が JetPack 5.
 | インターフェース | USB 3.0（USB-C コネクタ） |
 | 送信出力 | 標準出力、USB ポート直挿しに最適 |
 
-**製品ページ**：https://yupitek.com/en/products/alfa/awus036acm/
+**製品ページ**：https://yupitek.com/ja/products/alfa/awus036acm/
 
 ### 推奨理由 1：唯一の「真のドライバーレス」ソリューション
 
@@ -296,6 +313,11 @@ AWUS036ACH（RTL8812AU）および AWUS036AX（RTL8812BU）が使えないわけ
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 結び：最もシンプルなソリューションこそ最善であることが多い
 
 最初の顧客の質問に立ち返ろう：AVALUE AIB-NW01 に最適な ALFA USB 無線アダプターはどれか？
@@ -306,7 +328,7 @@ AWUS036ACH（RTL8812AU）および AWUS036AX（RTL8812BU）が使えないわけ
 
 ### 今すぐアクション
 
-- 製品詳細を見る：https://yupitek.com/en/products/alfa/awus036acm/
+- 製品詳細を見る：https://yupitek.com/ja/products/alfa/awus036acm/
 - 技術サポート：Yupitek は台湾国内の技術サポートを提供しています。お気軽にお問い合わせください。
 
 ### さらに読む
@@ -322,3 +344,13 @@ AWUS036ACH（RTL8812AU）および AWUS036AX（RTL8812BU）が使えないわけ
 > **著者**：Yupitek Ltd.（ユーピテック） — ALFA Network 台湾正規代理店
 >
 > **免責事項**：本記事の調査データは 2026 年 5 月時点のものです。Jetson プラットフォームと Linux Kernel は継続的に更新されるため、デプロイ前に最新の JetPack バージョンとカーネル内蔵ドライバーのサポート状況を確認することを推奨します。
+
+---
+
+## 参考文献
+
+1. [AVALUE Technology AIB-NW01製品ページ](https://www.avalue.com.tw/)
+2. [NVIDIA Jetson公式開発者フォーラム](https://forums.developer.nvidia.com/)
+3. [morrownr/USB-WiFiチップ対応表](https://github.com/morrownr/USB-WiFi)
+4. [Linux Kernel mt76ドライバードキュメント](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [ALFA Network Linux互換性一覧表](https://docs.alfa.com.tw/Support/Compat/)

@@ -2,6 +2,8 @@
 title: "ALFA AWUS036AX Treiber-Installationsanleitung für China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
 description: "Schritt-für-Schritt-Anleitung zur Installation von ALFA AWUS036AX Treibern in China unter Verwendung lokaler Mirrors. RTL8832BU-Treiber, WiFi 6 AX1800. Deckt Kali Linux, Ubuntu 22/24 (in-kernel auf 24.04), Debian und Raspberry Pi ab. Kein GitHub erforderlich."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +14,25 @@ series: ["alfa-china-install-guide"]
 series_order: 4
 related_product: "/de/products/alfa/awus036ax/"
 featureimage: "/images/blog/awus036ax-china-install-guide.webp"
+faq:
+  - question: "Welchen Chipsatz verwendet der AWUS036AX? Unterstützt er WiFi 6?"
+    answer: "Er verwendet den Realtek RTL8832BU-Chipsatz und unterstützt das Hochgeschwindigkeitsnetzwerk WiFi 6 (802.11ax)."
+  - question: "Muss der AWUS036AX unter Ubuntu 24.04 getrieben werden?"
+    answer: "Nein, der Kernel von Ubuntu 24.04 unterstützt den RTL8832BU nativ. Stecken Sie ihn einfach ein, und er funktioniert."
+  - question: "Ist der AWUS036AX für drahtlose Sicherheitsforschung geeignet?"
+    answer: "Eher nicht, da die Unterstützung für den Monitor Mode durch den RTL8832BU begrenzt ist. Wir empfehlen, stattdessen den AWUS036ACM oder AWUS036ACH zu verwenden."
+  - question: "Muss man in China für die Installation des AWUS036AX eine VPN-Verbindung herstellen?"
+    answer: "Nein, Sie können die rtl8852bu-Quellen von Gitee herunterladen und die Kompilierungswerkzeuge über ein inländisches Spiegelrepository installieren."
+  - question: "Was ist die USB-ID des AWUS036AX?"
+    answer: "Die USB-ID des Realtek RTL8832BU beträgt 0bda:8832, was mit lsusb bestätigt werden kann."
+
 ---
 
 Der AWUS036AX ist ALFAs WiFi 6 AX1800 Dual-Band Adapter. Sein RTL8832BU-Chip ist bei Linux-Versionen unter 6.14 nicht im Kernel enthalten — aber Ubuntu 24.04 (Kernel 6.8) enthält ihn nativ. Diese Anleitung verwendet Gitee-Mirrors für ältere Kernel und den integrierten Treiber für Ubuntu 24.04. Kein GitHub erforderlich.
+
+{{< tldr >}}
+Der AWUS036AX verwendet den RTL8832BU-Chipsatz und unterstützt WiFi 6. Unter Ubuntu 24.04 ist er treiberlos einsatzbereit. Für Kali/Ubuntu 22.04 laden Sie rtl8852bu von Gitee herunter, kompilieren und installieren Sie ihn.
+{{< /tldr >}}
 
 > **Sicherheitsforschung Hinweis:** Der RTL8832BU hat eine begrenzte Unterstützung für den Monitor-Modus. Die Ergebnisse variieren je nach Kernel- und Treiberversion. Für zuverlässige Paket-Injektion unter Kali Linux sind der [AWUS036ACM](/de/blog/awus036acm-china-install-guide/) oder [AWUS036ACH](/de/blog/awus036ach-china-install-guide/) die bessere Wahl.
 
@@ -247,6 +265,10 @@ sudo reboot
 | 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
 | 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 
+---
+
+{{< faq >}}
+
 ## Weitere Alfa Adapter Anleitungen für China
 
 - [AWUS036ACH China Installationsanleitung](/de/blog/awus036ach-china-install-guide/) — RTL8812AU, hohe Leistung
@@ -259,3 +281,10 @@ sudo reboot
 - [AWUS036EACS China Installationsanleitung](/de/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 Fragen? Hinterlasse unten einen Kommentar oder kontaktiere uns unter [yupitek.com](https://yupitek.com/de/contact/).
+
+## Referenzen
+
+1. [Realtek Offizielle Website](https://www.realtek.com/)
+2. [ALFA Network Offizielle Website](https://www.alfa.com.tw/)
+3. [Kali Linux Offizielle Dokumentation](https://www.kali.org/docs/)
+4. [Gitee rtl8852bu Spiegel](https://gitee.com/mirrors/rtl8852bu)

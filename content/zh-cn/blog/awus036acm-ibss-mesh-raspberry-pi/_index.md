@@ -1,17 +1,44 @@
 ---
+
+
+
 title: "ALFA AWUS036ACM：在 Raspberry Pi 上启用 IBSS Ad Hoc 与 802.11s Mesh 网络（MT7612U）"
 description: "ALFA AWUS036ACM（MT7612U）是目前唯一在售的 ALFA USB WiFi 无线网卡，可在 Raspberry Pi 上完整支持 IBSS Ad Hoc 与 802.11s Mesh 网络——即插即用，无需安装驱动程序。本文详解配置步骤。"
 date: 2026-03-27
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "Ad Hoc", "802.11s", "Mesh 网络", "Linux", "无线网络"]
 featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
+faq:
+  - question: "AWUS036ACM 为什么是 ALFA 中唯一支持 IBSS/Mesh 的选择？"
+    answer: "其 mt76x2u 驱动程序建构于 Linux mac80211 之上，完整开放 IBSS 与 Mesh Point 接口类型；其他 ALFA 型号多采核心外驱动程序，不包含这些模式。"
+  - question: "IBSS Ad Hoc 与 802.11s Mesh 有什么差异？"
+    answer: "IBSS 是无中央 AP 的对等网络，所有节点须在直接通讯范围内；802.11s 具备 HWMP 自动多跳路由与自愈能力，可延伸超出单跳范围。"
+  - question: "Raspberry Pi 上使用 AWUS036ACM 需要安装驱动吗？"
+    answer: "不需要。mt76x2u 驱动程序自 Linux 核心 4.19 起纳入主线，Raspberry Pi OS 2020 年以后版本均即插即用，无需任何安装步骤。"
+  - question: "IBSS 模式支持 WPA2 加密吗？"
+    answer: "Linux 核心的 IBSS 模式不支持标准 WPA2-Personal，若需安全连接可使用 WireGuard 或 OpenVPN 等应用层加密，802.11s 则支持 SAE。"
+  - question: "如何让 Mesh 网络在重开机后持续运行？"
+    answer: "通过 iw 建立的虚拟接口不会在重开机后保留，需建立 systemd 服务（如 mesh-point.service）在开机时自动重建接口并加入 Mesh。"
 ---
+1. [什么是 IBSS 与 802.11s Mesh，为何重要？](#1-what-are-ibss-and-80211s-mesh) 2. [ALFA AWUS036ACM 硬件规格](#2-alfa-awus036acm-hardware-specifications) 3. [MT7612U 驱动程序在 Raspberry Pi 上的表现](#3-the-mt7612u-driver-on-raspberry-pi) 4. [模式一：IBSS Ad Hoc 组网](#4-mode-1-ibss-ad-hoc-networking) 5. [模式二：802.11s Mesh Point 组网](#5-mode-2-80211s-mesh-point-networking) 6. [实际应用场景](#6-real-world-use-cases) 7. [为何 AWUS036ACM 是 ALFA 系列中的唯一选择](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this) 8. [常见问题与故障排查](#8-faq-and-troubleshooting) 9. [购买渠道](#9-where-to-buy)
 
 # ALFA AWUS036ACM：在 Raspberry Pi 上启用 IBSS Ad Hoc 与 802.11s Mesh 网络（MT7612U）
 
 如果你曾尝试在**不借助路由器**的情况下，在多台 Raspberry Pi 节点之间搭建 WiFi 网络——或者构建一个能够自动通过中间跳点转发流量、具备自愈能力的无线 Mesh——你很快就会发现：绝大多数 USB WiFi 无线网卡根本做不到。内核驱动程序压根不开放所需的工作模式。
+
+{{< tldr >}}
+AWUS036ACM 采用 MT7612U 芯片组，其 mt76x2u 驱动程序建构于 Linux mac80211 之上，完整支持 IBSS Ad Hoc 与 802.11s Mesh Point 模式。本文详解两种模式的运行原理、逐步设定与实际应用场景。
+{{< /tldr >}}
+
+
+ALFA AWUS036ACM 搭载 MediaTek MT7612U 芯片组，是 ALFA 现行产品中唯一能在 Raspberry Pi 上完整支持 IBSS Ad Hoc 与 802.11s Mesh 网络的 USB WiFi 无线网卡，即插即用无需安装驱动。
+
+
+
 
 **ALFA AWUS036ACM** 搭载 **MediaTek MT7612U** 芯片，是个例外。其内核原生 `mt76` 驱动程序完整实现了 Linux mac80211 接口，因此在 Raspberry Pi 上天然支持 **IBSS（Ad Hoc）** 模式和 **802.11s Mesh Point** 模式——开箱即用，无需编译任何驱动程序。
 
@@ -20,16 +47,6 @@ featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
 ---
 
 ## 目录
-
-1. [什么是 IBSS 与 802.11s Mesh，为何重要？](#1-what-are-ibss-and-80211s-mesh)
-2. [ALFA AWUS036ACM 硬件规格](#2-alfa-awus036acm-hardware-specifications)
-3. [MT7612U 驱动程序在 Raspberry Pi 上的表现](#3-the-mt7612u-driver-on-raspberry-pi)
-4. [模式一：IBSS Ad Hoc 组网](#4-mode-1-ibss-ad-hoc-networking)
-5. [模式二：802.11s Mesh Point 组网](#5-mode-2-80211s-mesh-point-networking)
-6. [实际应用场景](#6-real-world-use-cases)
-7. [为何 AWUS036ACM 是 ALFA 系列中的唯一选择](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this)
-8. [常见问题与故障排查](#8-faq-and-troubleshooting)
-9. [购买渠道](#9-where-to-buy)
 
 ---
 
@@ -838,6 +855,9 @@ ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 购买——ALFA Netwo
 
 ---
 
+
+{{< faq >}}
+
 ## 总结
 
 | 特性 | AWUS036ACM |
@@ -858,3 +878,11 @@ ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 购买——ALFA Netwo
 *本文由 Yupitek 技术团队撰写 · [yupitek.com](https://yupitek.com)*
 
 *参考资料：[Alfa Network 官方文档](https://docs.alfa.com.tw/Product/AWUS036ACM/) · [Linux Wireless Wiki——接口类型](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) · [MediaTek mt76 Linux 驱动程序](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) · [morrownr USB-WiFi 内核驱动列表](https://github.com/morrownr/USB-WiFi)*
+
+## 参考文献
+
+1. [Alfa Network AWUS036ACM 官方文档](https://docs.alfa.com.tw/Product/AWUS036ACM/)
+2. [Linux Wireless Wiki — 接口类型（VIF）](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif)
+3. [MediaTek mt76 Linux 驱动程序](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+4. [IEEE 802.11s Mesh 网络标准](https://standards.ieee.org/ieee/802.11s/4469/)
+5. [morrownr USB-WiFi 核心内驱动清单](https://github.com/morrownr/USB-WiFi)

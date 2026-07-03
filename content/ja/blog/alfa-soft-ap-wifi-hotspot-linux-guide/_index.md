@@ -1,4 +1,5 @@
 ---
+
 title: "ALFAネットワーク Soft AP完全ガイド2026：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5でWiFiホットスポットを構築"
 description: "ALFA Network USB無線LANアダプタのSoft AP（hostapd/WiFiホットスポット）機能をKali Linux、Ubuntu、Debian、Raspberry Pi 4/5で徹底検証。AWUS036ACM、AWUS036ACH、AWUS036AXMLの詳細設定ガイド、コミュニティの実践事例、トラブルシューティングを完全収録。"
 date: 2026-05-21
@@ -7,13 +8,33 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi"]
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ALFA USBアダプターはLinuxでWiFiホットスポットとして使えますか？"
+    answer: "チップセットによります。AWUS036ACM（MT7612U）は完全サポートでプラグアンドプレイ、AWUS036ACH（RTL8812AU）は条件付きサポート、AWUS036AXMLは部分サポートでチューニングが必要です。"
+  - question: "Raspberry PiでSoft APを構築するのに最適なALFAアダプターは？"
+    answer: "AWUS036ACMが最適です。カーネル内蔵ドライバーでプラグアンドプレイ、消費電力わずか400mAでPi給電に適し、WPA3とVIF仮想インターフェースをサポートし全プラットフォームで安定します。"
+  - question: "アダプターがAPモードをサポートしているかどう確認しますか？"
+    answer: "iw list | grep -A 10 'Supported interface modes'を実行し、出力に * AP が含まれていればドライバーがSoft APをサポートしており、hostapdが正常に動作します。"
+  - question: "RTL8812AUドライバーのSoft APにはどんな制限がありますか？"
+    answer: "WPA3をサポートせずWPA2-PSKのみ、VIF仮想インターフェース非対応で2枚のカードで役割分担が必要、消費電力約800mAでPiでは電源付きUSB Hubが必要です。"
+  - question: "AWUS036AXMLでSoft AP実行中にWiFiが突然切断したら？"
+    answer: "MT7921AUNの内蔵Bluetooth 5.2がWiFiに干渉します。echo 'install btusb /bin/false'を/etc/modprobe.d/に書き込んでBluetoothドライバーを永続的に無効化し、再起動してください。"
 ---
+> 「ALFAのUSB無線LANアダプタは、Kali Linux / Ubuntu / Raspberry PiでWiFiホットスポット（Soft AP）として使えますか？」
 
 # ALFAネットワーク Soft AP完全ガイド2026：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5でWiFiホットスポットを構築
 
-## はじめに
 
-> 「ALFAのUSB無線LANアダプタは、Kali Linux / Ubuntu / Raspberry PiでWiFiホットスポット（Soft AP）として使えますか？」
+{{< tldr >}}
+ALFAアダプターのSoft AP互換性はチップドライバーに依存します。AWUS036ACMが全プラットフォーム安定の首选、AWUS036ACHは使用可能ですがWPA3非対応、AWUS036AXMLはBluetooth無効化とファームウェア更新が必要、RTL8832BUは使用非推奨です。
+{{< /tldr >}}
+
+
+ALFA AWUS036ACM（MT7612U）は Linux Soft AP に最適な選択肢です。in-kernel ドライバによりプラグアンドプレイで動作し、WPA3 と VIF 仮想インターフェースに対応しています。RTL8812AU は条件付きサポート、MT7921AUN は手動調整が必要です。
+
+## はじめに
 
 これはYupitekが最も頻繁に受けるお問い合わせの一つです。質問はシンプルに聞こえますが、答えはモデルとチップセットによって大きく異なります——**すべてのUSB WiFiアダプタがSoft APモードで動作するわけではありません。**
 
@@ -589,6 +610,11 @@ DFS（Dynamic Frequency Selection）チャンネル（ch100–ch140）にはカ�
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 12. 購入推奨と最終判断 {#recommendations}
 
 ### クイック判断マトリックス
@@ -666,3 +692,13 @@ AWUS036ACH（RTL8812AU）は制限を受け入れれば使用可能です。AWUS
 > **免責事項**：調査データは2026年5月現在のものです。Linuxカーネルとディストリビューションは継続的に進化しており、ドライバサポートはバージョンによって変更される可能性があります。デプロイ前にターゲットプラットフォームのカーネルバージョンとドライバ互換性を確認してください。
 >
 > **テクニカルサポート**：Soft AP設定に関する問題は、Yupitek台湾テクニカルサポートまでお問い合わせください。製品に関するお問い合わせ：[yupitek.com](https://yupitek.com/ja/)。
+
+---
+
+## 参考文献
+
+1. [morrownr/USB-WiFi GitHubナレッジベース](https://github.com/morrownr/USB-WiFi)
+2. [hostapd公式ドキュメント](https://w1.fi/cgit/hostap/)
+3. [Linux Wireless mt76ドライバー](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)
+4. [Raspberry Pi公式ドキュメント](https://www.raspberrypi.com/documentation/)
+5. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)

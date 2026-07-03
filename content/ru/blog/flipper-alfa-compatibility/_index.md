@@ -2,6 +2,8 @@
 title: "Flipper Zero и Flipper One с Wi-Fi адаптерами ALFA: Полное руководство по совместимости"
 description: "Могут ли USB Wi-Fi адаптеры ALFA использоваться с Flipper Zero для инъекции пакетов? Нет — вот почему. Flipper One поддерживает ALFA AWUS036AXML с полным мониторным режимом и инъекцией. Полное руководство с анализом чипсетов, совместимостью драйверов и инструкциями по настройке."
 date: 2026-06-10
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -9,11 +11,30 @@ slug: "flipper-alfa-compatibility"
 tags: ["flipper-zero", "flipper-one", "alfa-network", "wifi-adapter", "monitor-mode", "packet-injection", "kali-linux", "pentesting", "AWUS036AXML", "wireless-security"]
 categories: ["Technical"]
 featureimage: "/images/blog/flipper-alfa-compatibility.webp"
+
+faq:
+  - question: "Может ли Flipper Zero подключать USB-адаптеры ALFA?"
+    answer: "Нет. Микроконтроллер STM32WB55 в Flipper Zero поддерживает только режим USB device, аппаратно не может работать как USB host для управления внешними адаптерами."
+  - question: "Какие модели ALFA поддерживает Flipper One?"
+    answer: "Основатель Flipper специально тестировал AWUS036AXML как首选, AWUS036ACM как лучшее соотношение цена/качество, оба драйвера уже встроены в основную ветку ядра Linux."
+  - question: "Почему AWUS036AXML —首选 для Flipper One?"
+    answer: "AWUS036AXML (MT7921AUN), драйвер mt7921u встроен в ядро с версии 5.18, поддерживает полный трёхдиапазонный 2.4/5/6 ГГц и режим монитора."
+  - question: "Когда выйдет Flipper One?"
+    answer: "Flipper One находится на стадии developer preview, дата выхода и цена будут объявлены через краудфандинг, следите за flipper.net."
+  - question: "Может ли WiFi Dev Board для Flipper Zero заменить адаптер ALFA?"
+    answer: "Нет. WiFi Dev Board поддерживает только базовые функции 2.4 ГГц, без USB host, дальность и надёжность инъекции значительно уступают специализированным адаптерам ALFA."
 ---
 
 {{< alert "triangle-exclamation" >}}
 **Правовое уведомление:** Мониторный режим и инъекция пакетов должны выполняться исключительно на сетях, которыми вы владеете, или на которых есть явное письменное разрешение на тестирование. Несанкционированное перехват беспроводной связи является незаконным в большинстве юрисдикций. Все описанные в данном руководстве методы предназначены исключительно для **авторизованного пентестирования, исследований безопасности собственного оборудования и образовательных целей**.
 {{< /alert >}}
+
+{{< tldr >}}
+STM32WB55 в Flipper Zero поддерживает только режим USB device и не может управлять адаптерами ALFA. Flipper One с RK3576 и полноценным Debian Linux поддерживает AWUS036AXML для трёхдиапазонного мониторинга и инъекции.
+{{< /tldr >}}
+
+Если у вас есть Flipper Zero или вы рассматриваете возможность его приобретения, а также вам известны легендарные USB Wi-Fi адаптеры ALFA Network для тестирования беспроводной безопасности, вы наверняка задавались вопросом: **«Могу ли я подключить адаптер ALFA к Flipper Zero и начать захватывать WPA2-рукопожатия?»**
+
 
 ## Введение: Вопрос, который задаёт каждый специалист по безопасности
 
@@ -348,6 +369,8 @@ sudo systemctl restart NetworkManager
 
 ---
 
+{{< faq >}}
+
 ## Заключение: Правильный инструмент для правильной задачи
 
 Если вы пытаетесь использовать Wi-Fi адаптеры ALFA для тестирования беспроводной безопасности, **Flipper Zero — не подходящая платформа**, и в этом нет его вины. Он был спроектирован для другой задачи: тестирования офлайн-контроля доступа (NFC, RFID, Sub-GHz, инфракрасный сигнал). Он отлично справляется с этими задачами, однако возможность USB host никогда не входила в его проектирование.
@@ -368,7 +391,7 @@ sudo systemctl restart NetworkManager
 
 Все рекомендованные адаптеры ALFA доступны в компании Yupitek — авторизованном дистрибьюторе ALFA Network. Ознакомьтесь с полным каталогом или сравните модели:
 
-- [Каталог USB Wi-Fi адаптеров ALFA — Полный список](https://yupitek.com/en/products/alfa/) — Все модели с характеристиками и ценами
+- [Каталог USB Wi-Fi адаптеров ALFA — Полный список](https://yupitek.com/ru/products/alfa/) — Все модели с характеристиками и ценами
 - [Сравнение продуктов ALFA](/ru/alfa_compare/) — Сравнение чипсетов, диапазонов и драйверов бок о бок
 
 ### Дополнительная литература
@@ -382,3 +405,12 @@ sudo systemctl restart NetworkManager
 ---
 
 *По вопросам предварительных продаж касательно совместимости Flipper One с адаптерами ALFA обратитесь в поддержку Yupitek по адресу support@yupitek.com или по телефону +886-2-87325338.*
+
+
+## Источники
+
+1. [Официальная статья блога Flipper One](https://blog.flipper.net/flipper-one-we-need-your-help/)
+2. [Flipper One Developer Portal](https://docs.flipper.net/one)
+3. [Что такое Packet Injection?](/en/blog/packet-injection-guide/)
+4. [Обзор AWUS036AXML WiFi 6E](/en/blog/awus036axml-wifi-6e-review/)
+5. [Сравнение продуктов ALFA](/en/alfa_compare/)

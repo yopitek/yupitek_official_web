@@ -12,9 +12,33 @@ series: ["alfa-china-install-guide"]
 series_order: 8
 related_product: "/ar/products/alfa/awus036eacs/"
 featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما الشريحة التي يستخدمها AWUS036EACS؟ هل يدعم Bluetooth؟"
+    answer: "يستخدم شريحة Realtek RTL8821CU ويدعم WiFi 5 و Bluetooth 4.2."
+  - question: "هل يُنصح AWUS036EACS للاستخدام على Linux؟"
+    answer: "لا يُنصح. RTL8821CU لا يملك تعريف Linux جيد الصيانة، ووضع المراقبة غير مستقر."
+  - question: "كيف أثبّت تعريف AWUS036EACS على Windows؟"
+    answer: "نزّل حزمة تعريف Windows من موقع Alfa files.alfa.com.tw، ثبّتها كمسؤول ثم أعد التشغيل."
+  - question: "كيف أفعل Bluetooth على AWUS036EACS؟"
+    answer: "بعد تثبيت التعريف يُفعّل عادةً تلقائياً، افتح مفتاح Bluetooth في إعدادات Windows للاتصال بالأجهزة."
+  - question: "إذا كنت بحاجة لمحول أبحاث أمن لاسلكي على Linux، ماذا أختار؟"
+    answer: "يُنصح بـ AWUS036ACM أو AWUS036ACS، كلاهما يدعم وضع المراقبة بالكامل على Linux."
 ---
-
 يعتبر AWUS036EACS محول نانو كومبو WiFi 5 + Bluetooth 4.2 من ALFA. تم تصميمه لمستخدمي ويندوز الذين يحتاجون إلى ترقية لاسلكية مدمجة. لا تحتوي شريحة RTL8821CU الخاصة به على برنامج تشغيل لينكس مفتوح المصدر موثوق — وضع المراقبة وحقن الحزم غير مدعومين. يغطي هذا الدليل تثبيت ويندوز من المصادر الصينية ويوضح قيود لينكس بوضوح.
+
+{{< tldr >}}
+يستخدم AWUS036EACS شريحة RTL8821CU، محول WiFi 5 مدمج بـ Bluetooth 4.2. تثبيت Windows سهل، لكن تعريف Linux غير مستقر ولا يُنصح به لوضع المراقبة.
+{{< /tldr >}}
+
+> **لا يعمل AWUS036EACS بشكل موثوق على Kali Linux أو Ubuntu أو Debian أو Raspberry Pi.** شريحة RTL8821CU ليس لها برنامج تشغيل مفتوح المصدر يتم صيانته. وضع المراقبة وحقن الحزم و VIF غير متاحة.
+>
+> إذا كنت بحاجة إلى محول متوافق مع لينكس لأبحاث الأمان، فاستخدم أحد هذه البدائل بدلاً من ذلك:
+> - **[AWUS036ACM](/ar/blog/awus036acm-china-install-guide/)** — برنامج تشغيل MT7612U مدمج في النواة، وضع مراقبة كامل + VIF
+> - **[AWUS036ACS](/ar/blog/awus036acs-china-install-guide/)** — RTL8811AU، وضع مراقبة مناسب للميزانية
+
+
 
 ## مستخدمو لينكس: يرجى القراءة أولاً
 
@@ -106,6 +130,8 @@ Realtek 8821CU Wireless LAN 802.11ac USB NIC
 | وثائق Alfa | [docs.alfa.com.tw](https://docs.alfa.com.tw) | دليل الإعداد، الأسئلة الشائعة |
 | ويكي Alfa | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | أدلة المنتجات |
 
+{{< faq >}}
+
 ## المزيد من أدلة محولات Alfa للصين
 
 - [دليل تثبيت AWUS036ACH في الصين](/ar/blog/awus036ach-china-install-guide/) — RTL8812AU، طاقة عالية
@@ -118,3 +144,9 @@ Realtek 8821CU Wireless LAN 802.11ac USB NIC
 - AWUS036EACS ← أنت هنا
 
 هل لديك أسئلة؟ اترك تعليقًا أدناه أو اتصل بنا على [yupitek.com](https://yupitek.com/ar/contact/).
+
+## المراجع
+
+1. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+2. [تنزيل تعريفات Alfa الرسمية](https://files.alfa.com.tw)
+3. [موقع Realtek الرسمي](https://www.realtek.com/)

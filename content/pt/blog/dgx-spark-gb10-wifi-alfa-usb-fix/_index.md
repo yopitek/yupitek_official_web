@@ -7,6 +7,20 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Por que o Wi-Fi do DGX Spark não conecta?"
+    answer: "O DGX Spark tem o chip Wi-Fi 7 MediaTek MT7925 integrado, mas o wpa_supplicant da fase OOBE e muito simplificado, incompatível com APs de certas marcas (especialmente UniFi). WPA2-Enterprise quase certamente não conecta."
+  - question: "A solução com adaptador USB ALFA se aplica a todos os AI Servers GB10?"
+    answer: "Sim. Todos os AI Edge Servers com NVIDIA GB10 Grace Blackwell Superchip (ASUS, MSI, HP, ALTOS, GIGABYTE) usam o mesmo chip Wi-Fi MT7925. A solução com ALFA AWUS036ACM funciona universalmente."
+  - question: "O AWUS036ACM precisa de instalação de driver no DGX Spark?"
+    answer: "Não. O driver mt76 do MT7612U está integrado ao kernel mainline desde o Linux Kernel 4.19. O Kernel 6.17+ do DGX OS suporta nativamente, carregando automaticamente ao conectar o USB."
+  - question: "Quanto tempo leva para corrigir o problema de Wi-Fi com adaptador ALFA?"
+    answer: "Menos de dez minutos. Após conectar na porta USB 3.0, o sistema carrega o driver automaticamente. Use o comando nmcli para escanear e conectar ao WiFi, sem compilação de driver ou reinicialização."
+  - question: "Posso usar outros adaptadores ALFA no DGX Spark?"
+    answer: "O AWUS036ACH (RTL8812AU) requer compilação manual do driver, sem garantia de sucesso na plataforma ARM64 do GB10. O AWUS036ACM é a única solução confirmada sem compilação, plug-and-play."
 ---
 
 Seu tão esperado **NVIDIA DGX Spark** (codinome Project DIGITS) finalmente chegou.
@@ -20,6 +34,11 @@ Tente novamente. Reinicie. Redefina. Ainda falha.
 Você não está sozinho. Nos [fóruns de desenvolvedores da NVIDIA](https://forums.developer.nvidia.com), **dezenas de tópicos** reclamam exatamente da mesma coisa: o Wi-Fi do DGX Spark está quebrado.
 
 Isso não é um erro de configuração. É uma falha de design conhecida do DGX Spark.
+
+{{< tldr >}}
+O NVIDIA DGX Spark e todos os AI Servers GB10 tem um defeito de conexao conhecido com o chip MT7925 Wi-Fi 7 integrado. A solucao e conectar um adaptador USB ALFA AWUS036ACM, cujo driver mt76 esta integrado ao kernel desde 4.19, plug-and-play com o Kernel 6.17+ do DGX OS, completando a conexao em dez minutos.
+{{< /tldr >}}
+
 
 ---
 
@@ -312,4 +331,15 @@ Dez minutos, um adaptador USB, e seu servidor IA está realmente online.
 
 ---
 
+{{< faq >}}
+
+
 *Fontes: Notas de versão do NVIDIA DGX Spark, Fóruns de desenvolvedores NVIDIA, morrownr/USB-WiFi GitHub, Documentação ALFA Network, Documentação Linux Kernel Wireless*
+
+## Referências
+
+1. [Documentacao oficial do NVIDIA DGX Spark](https://developer.nvidia.com/dgx-spark)
+2. [NVIDIA Developer Forums](https://forums.developer.nvidia.com/)
+3. [Projeto GitHub morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi)
+4. [Linux Kernel Wireless Documentation](https://wireless.wiki.kernel.org/)
+5. [Site oficial da ALFA Network](https://www.alfa.com.tw/)

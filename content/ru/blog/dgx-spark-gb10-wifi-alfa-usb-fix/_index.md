@@ -2,14 +2,32 @@
 title: "DGX Spark не подключается к Wi-Fi? Решение за 10 минут с USB-адаптером ALFA"
 description: "Проблемы со встроенным Wi-Fi NVIDIA DGX Spark решены. USB-адаптер без драйверов работает за 10 минут. Совместим с ASUS ASCENT GX10, MSI EdgeXpert, HP ZGX Nano, ALTOS BrainSphere GB10 F1 и GIGABYTE AI TOP ATOM."
 date: 2026-05-20
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
+
+faq:
+  - question: "Почему Wi-Fi на DGX Spark не подключается?"
+    answer: "Встроенный чип MediaTek MT7925 Wi-Fi 7 в DGX Spark имеет слишком минимизированный wpa_supplicant на этапе OOBE, несовместим с некоторыми AP (особенно UniFi), WPA2-Enterprise почти наверняка не подключается."
+  - question: "Подходит ли решение с ALFA USB-адаптером для всех GB10 AI Server?"
+    answer: "Да. Все AI Edge Server с NVIDIA GB10 Grace Blackwell Superchip (ASUS, MSI, HP, ALTOS, GIGABYTE) используют один и тот же чип Wi-Fi MT7925, решение ALFA AWUS036ACM универсально."
+  - question: "Нужно ли устанавливать драйвер AWUS036ACM на DGX Spark?"
+    answer: "Нет. Драйвер mt76 для MT7612U встроен в основную ветку ядра с версии 4.19, ядро 6.17+ в DGX OS полностью поддерживает его, после подключения USB драйвер загружается автоматически."
+  - question: "Сколько времени занимает решение проблемы Wi-Fi с ALFA USB-адаптером?"
+    answer: "Менее 10 минут. После подключения к порту USB 3.0 система автоматически загружает драйвер, используйте nmcli для сканирования и подключения к WiFi — без компиляции драйвера или перезагрузки."
+  - question: "Можно ли использовать другие ALFA-адаптеры на DGX Spark?"
+    answer: "AWUS036ACH (RTL8812AU) требует ручной компиляции драйвера, на ARM64-платформе GB10 не гарантируется успех. AWUS036ACM — единственное подтверждённое решение с нулевой компиляцией, Plug & Play."
 ---
 
 Ваш долгожданный **NVIDIA DGX Spark** (кодовое название Project DIGITS) наконец прибыл.
+
+{{< tldr >}}
+NVIDIA DGX Spark и все GB10 AI Server имеют известный дефект подключения встроенного чипа Wi-Fi 7 MT7925. Решение — подключить ALFA AWUS036ACM USB-адаптер, драйвер mt76 встроен в ядро с версии 4.19, DGX OS Kernel 6.17+ работает Plug & Play, подключение за 10 минут.
+{{< /tldr >}}
 
 Распаковка, подключение питания, появляется экран OOBE (первоначальная настройка) — всё идёт гладко. Вы выбираете сеть Wi-Fi, вводите пароль, экран вращается тридцать секунд...
 
@@ -285,6 +303,8 @@ ALFA ACM + антенны с высоким усилением → Офисны�
 
 ---
 
+{{< faq >}}
+
 ## Резюме: Независимо от того, какой у вас GB10, выведите его в сеть за 10 минут
 
 Купили ли вы NVIDIA DGX Spark, ASUS ASCENT GX10, MSI EdgeXpert, HP ZGX Nano, ALTOS BrainSphere GB10 F1 или GIGABYTE AI TOP ATOM — эти серверы GB10 AI Edge являются феноменальными машинами для разработки ИИ: 128 ГБ унифицированной памяти, 20-ядерный ARM CPU, сеть ConnectX-7 200GbE. Но все они используют один и тот же чип Wi-Fi MediaTek MT7925, и все могут споткнуться на одном и том же первом шаге.
@@ -313,3 +333,12 @@ ALFA ACM + антенны с высоким усилением → Офисны�
 ---
 
 *Источники: Примечания к выпуску NVIDIA DGX Spark, Форумы разработчиков NVIDIA, morrownr/USB-WiFi GitHub, Документация ALFA Network, Документация Linux Kernel Wireless*
+
+
+## Источники
+
+1. [Официальная документация NVIDIA DGX Spark](https://developer.nvidia.com/dgx-spark)
+2. [NVIDIA Developer Forums](https://forums.developer.nvidia.com/)
+3. [Проект morrownr/USB-WiFi на GitHub](https://github.com/morrownr/USB-WiFi)
+4. [Документация Linux Kernel Wireless](https://wireless.wiki.kernel.org/)
+5. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)

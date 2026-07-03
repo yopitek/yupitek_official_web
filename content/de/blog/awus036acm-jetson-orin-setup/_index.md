@@ -2,14 +2,35 @@
 title: "Keine Treiberkompilierung! Praxisleitfaden für ALFA AWUS036ACM auf Jetson Orin Edge-AI-Hosts – Plug-and-Play ohne Konfiguration"
 description: "Für Kunden des AVALUE AIB-NW01 (NVIDIA Jetson Orin NX/Nano): Eine fundierte Analyse, welcher ALFA Network USB-WLAN-Adapter sich am besten für Edge-AI-Deployments eignet, mit praktischem Nachweis, dass der AWUS036ACM echtes Plug-and-Play bietet."
 date: 2026-05-20
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
----
+faq:
+  - question: "Warum funktioniert ein USB WiFi-Netzwerkadapter auf dem Jetson Orin häufig nicht?"
+    answer: "Der Jetson verwendet einen von NVIDIA angepassten Tegra-Core, der kein Standard-Ubuntu-Kernel ist. Die Kompilierung von Drittanbieter-Treibern schlägt oft fehl, da die Kernel-Headers nicht verfügbar sind oder die ABI nicht kompatibel ist."
+  - question: "Muss der Treiber für den AWUS036ACM auf dem Jetson Orin kompiliert werden?"
+    answer: "Nein. Der Treiber mt76x2u für den MT7612U-Chip ist seit dem Linux Kernel 4.19 im Mainline-Kernel enthalten. Der Kernel 5.10 des AIB-NW01 enthält ihn bereits, sodass er sofort nach dem Einstecken funktioniert."
+  - question: "Kann der AWUS036ACH (RTL8812AU) auf dem Jetson Orin verwendet werden?"
+    answer: "Ja, aber der Treiber muss manuell kompiliert werden. Die NVIDIA-Kernel-Patches in JetPack können die cfg80211-ABI beschädigen, was zu Kompilierungsfehlern führt. Es wird empfohlen, dieses Produkt nur für Personen mit Kompilerfahrung zu verwenden."
+  - question: "Führt ein JetPack-Upgrade dazu, dass der USB WiFi-Netzwerkadapter nicht mehr funktioniert?"
+    answer: "Dies ist möglich. Drittanbieter-Treiber können nach einem JetPack-Upgrade aufgrund von Änderungen in der Kernel-API nicht mehr funktionieren und müssen neu kompiliert werden. Im Kernel integrierte Treiber (wie mt76x2u) sind davon nicht betroffen."
+  - question: "Welche Linux-Kernel-Version verwendet der AIB-NW01?"
+    answer: "AIB-NW01 wird ab Werk mit Ubuntu 20.04.6 LTS und JetPack 5.0 ausgeliefert, verwendet den NVIDIA-kundenspezifischen Tegra-Kernel 5.10.x-tegra und die CPU-Architektur ARM64."
+
+---Der Jetson Orin verwendet einen von NVIDIA angepassten Tegra-Core. Die Kompilierung von Drittanbieter-WiFi-Treibern schlägt häufig fehl. Der ALFA AWUS036ACM verwendet den MT7612U-Chip, dessen Treiber ab Kernel 4.19 im Kernel-Quellbaum enthalten ist. Er ist sofort nach dem Einstecken einsatzbereit und stellt die einzige wirklich kompilierfreie Lösung dar. Er unterstützt Monitor Mode, Packet Injection und AP Mode.
+
+{{< tldr >}}
+Der Jetson Orin verwendet einen von NVIDIA angepassten Tegra-Core. Die Kompilierung von Drittanbieter-WiFi-Treibern schlägt häufig fehl. Der ALFA AWUS036ACM verwendet den MT7612U-Chip, dessen Treiber ab Kernel 4.19 im Kernel-Quellbaum enthalten ist. Er ist sofort nach dem Einstecken einsatzbereit und stellt die einzige wirklich kompilierfreie Lösung dar. Er unterstützt Monitor Mode, Packet Injection und AP Mode.
+{{< /tldr >}}
+
 
 ## Eine Kundenanfrage bringt die entscheidende Frage ans Licht
+
+Der ALFA AWUS036ACM ist der einzige USB-WiFi-Adapter auf dem Jetson Orin, der wirklich ohne Kompilierung auskommt: Der MT7612U-Treiber ist seit Kernel 4.19 im Mainline-Kernel integriert und umgeht die Treiberkompilierungsprobleme des Jetson-Custom-Kernels komplett.
 
 > „Ich habe einen AVALUE AIB-NW01 (Jetson Orin NX) und muss ihn in einer Umgebung ohne kabelgebundenes Netzwerk einsetzen. Welcher Ihrer USB-WLAN-Adapter funktioniert direkt?“
 
@@ -148,7 +169,7 @@ Datenquelle: [morrownr/USB-WiFi Chipsatz-Unterstützungstabelle](https://github.
 | Schnittstelle | USB 3.0 (USB-C-Anschluss) |
 | Sendeleistung | Standardleistung, geeignet für direkten USB-Port-Anschluss |
 
-**Produktseite**: https://yupitek.com/en/products/alfa/awus036acm/
+**Produktseite**: https://yupitek.com/de/products/alfa/awus036acm/
 
 ### Empfehlungsgrund 1: Das einzige wirklich treiberlose Setup
 
@@ -296,6 +317,8 @@ Der AWUS036ACH (RTL8812AU) und der AWUS036AX (RTL8812BU) sind nicht grundsätzli
 
 ---
 
+{{< faq >}}
+
 ## Fazit: Die einfachste Lösung ist oft die beste
 
 Zurück zur ursprünglichen Kundenfrage: Welcher ALFA USB-WLAN-Adapter passt am besten zum AVALUE AIB-NW01?
@@ -306,7 +329,7 @@ Nicht weil er der schnellste oder günstigste ist – sondern weil er auf der ei
 
 ### Jetzt handeln
 
-- Produktdetails ansehen: https://yupitek.com/en/products/alfa/awus036acm/
+- Produktdetails ansehen: https://yupitek.com/de/products/alfa/awus036acm/
 - Technischer Support: Yupitek bietet technischen Support vor Ort in Taiwan – kontaktieren Sie uns
 
 ### Weiterführende Informationen
@@ -322,3 +345,11 @@ Nicht weil er der schnellste oder günstigste ist – sondern weil er auf der ei
 > **Autor**: Yupitek Ltd — autorisierter ALFA Network Distributor in Taiwan
 >
 > **Haftungsausschluss**: Die Recherche für diesen Artikel ist auf dem Stand von Mai 2026. Die Jetson-Plattform und der Linux-Kernel werden kontinuierlich weiterentwickelt; wir empfehlen, vor dem Deployment die aktuelle JetPack-Version und die In-Kernel-Treiberunterstützung zu prüfen.
+
+## Referenzen
+
+1. [AVALUE Technology AIB-NW01 Produktseite](https://www.avalue.com.tw/)
+2. [NVIDIA Jetson OffizielleEntwickler-Forum](https://forums.developer.nvidia.com/)
+3. [morrownr/USB-WiFi Chipsatz-Unterstuetzungstabelle](https://github.com/morrownr/USB-WiFi)
+4. [Linux Kernel mt76 TreiberDokumentation](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [ALFA Network Linux-Kompatibilitaetsliste](https://docs.alfa.com.tw/Support/Compat/)

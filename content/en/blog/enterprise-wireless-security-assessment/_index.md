@@ -2,6 +2,19 @@
 title: "Enterprise Wireless Security Assessment: A Complete Framework"
 description: "Complete enterprise wireless security assessment framework using ALFA adapters. Covers scoping, rogue AP detection, WPA2/WPA3 audit, PMF testing, and reporting for IT security teams."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "What phases does an enterprise wireless security assessment include?"
+    answer: "A full assessment covers six sequential phases: passive reconnaissance, rogue AP detection, WPA2/WPA3 handshake analysis, PMF verification, client isolation testing, and EAP/RADIUS assessment."
+  - question: "What authorizations are needed before conducting a wireless security assessment?"
+    answer: "You must obtain written authorization signed by the CISO or asset owner, clearly covering the testing time window, device MAC addresses, and authorized techniques. Verbal consent is not sufficient."
+  - question: "How do I detect a rogue AP?"
+    answer: "Compare the BSSID list from passive reconnaissance against the authorized AP list. Any BSSID broadcasting the enterprise SSID but not on the list is a rogue AP candidate."
+  - question: "Why is PMF (Protected Management Frames) important?"
+    answer: "PMF prevents deauthentication and disassociation attacks, stopping attackers from forcibly disconnecting clients to capture handshakes or cause denial of service. It is mandatory in WPA3."
+  - question: "What are the risks of WPA3 transition mode?"
+    answer: "Transition mode accepts both SAE and PSK for compatibility. Attackers may broadcast WPA2-only beacon frames to force client downgrade, defeating forward secrecy."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -14,6 +27,14 @@ featureimage: "/images/blog/enterprise-wireless-security-assessment.webp"
 {{< /alert >}}
 
 Enterprise wireless security assessment is not simply about asking "can we crack the password." A thorough assessment examines every layer of your wireless architecture: the strength of authentication protocols, the integrity of management frame protection, the accuracy of your authorized AP inventory, the robustness of client isolation on guest segments, and the resistance of your 802.1X infrastructure to rogue RADIUS attacks.
+
+{{< tldr >}}
+This framework uses ALFA wireless adapters to detail a six-phase enterprise wireless security assessment methodology, covering scoping, rogue AP detection, WPA2/WPA3 auditing, PMF testing, client isolation, and 802.1X assessment, with report templates and severity definitions.
+{{< /tldr >}}
+
+
+
+
 
 This framework covers the complete assessment lifecycle as practiced by professional penetration testing teams working in enterprise environments. It is structured as six sequential phases — scoping and pre-engagement, passive reconnaissance, rogue AP detection, WPA2/WPA3 handshake analysis, PMF verification, client isolation testing, and EAP/RADIUS assessment — followed by a reporting template and toolkit reference. Every phase is designed to be executed with ALFA Network adapters, which provide the monitor mode stability, injection capability, and multi-band coverage that enterprise-grade wireless testing demands.
 
@@ -297,8 +318,18 @@ All technical findings should be presented in a standardized table that maps eac
 
 ---
 
+{{< faq >}}
+
 ## Related Resources
 
 - [Packet Injection Guide: Testing Your WiFi Adapter with aireplay-ng](/en/blog/packet-injection-guide/)
 - [WPA3 Security Testing with ALFA Adapters (2026)](/en/blog/wpa3-security-testing-alfa-2026/)
 - [Enable Monitor Mode on Kali Linux](/en/blog/enable-monitor-mode-kali-linux/)
+
+## References
+
+1. [aircrack-ng Official Documentation](https://www.aircrack-ng.org/)
+2. [Wi-Fi Alliance WPA3 Specification](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [IEEE 802.11w Protected Management Frames Standard](https://standards.ieee.org/ieee/802.11w/4454/)
+4. [NIST SP 800-153 Wireless Security Guide](https://csrc.nist.gov/publications/detail/sp/800-153/final)
+5. [Kismet Wireless Detection Tool](https://www.kismetwireless.net/)

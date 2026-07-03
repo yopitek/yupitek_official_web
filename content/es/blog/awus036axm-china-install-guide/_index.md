@@ -12,9 +12,29 @@ series: ["alfa-china-install-guide"]
 related_product: "/es/products/alfa/awus036axm/"
 series_order: 6
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Qué chip usa el AWUS036AXM? ¿Admite WiFi 6E?"
+    answer: "Usa el chip MediaTek MT7921AUN y admite WiFi 6E en triple banda (2.4G/5G/6G Hz)."
+  - question: "¿El controlador del AWUS036AXM necesita instalación manual?"
+    answer: "No, el controlador mt7921u está integrado en el kernel desde Linux 5.18; solo necesitas instalar el paquete de firmware."
+  - question: "¿El AWUS036AXM admite interfaces virtuales (VIF)?"
+    answer: "Sí, el MT7921AUN admite completamente el VIF nativo del núcleo; puede conectarse a la red y monitorizar paquetes simultáneamente."
+  - question: "¿Por qué falla la carga del controlador del AWUS036AXM en Ubuntu 22.04?"
+    answer: "El kernel 5.15 predeterminado de Ubuntu 22.04 es demasiado antiguo; necesitas instalar el kernel HWE para actualizar a 5.18 o superior."
+  - question: "¿Cuál es el USB ID del AWUS036AXM?"
+    answer: "El USB ID del MediaTek MT7921AUN es 0e8d:7961, puedes confirmarlo con lsusb."
 ---
 
 El AWUS036AXM es el adaptador WiFi 6E tribanda de ALFA con un conector USB-A en forma de L que ahorra espacio. Su chip MT7921AUN utiliza el controlador `mt7921u`, integrado en el núcleo Linux desde la versión 5.18. El conector en forma de L mantiene libres los puertos USB adyacentes en las computadoras portátiles. Esta guía cubre la configuración completa: firmware, verificación del controlador, modo monitor, inyección de paquetes y VIF, sin tocar GitHub.
+
+{{< tldr >}}
+El AWUS036AXM usa el chip MT7921AUN y admite WiFi 6E. El controlador está integrado en el núcleo; tras instalar el paquete de firmware, puedes usar el modo monitor, la inyección de paquetes y VIF.
+{{< /tldr >}}
+
+Asegúrate de tener esto listo:
+
 
 ## Antes de comenzar
 
@@ -222,6 +242,8 @@ iwconfig
 | Espejo de Tsinghua | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | Espejo de Aliyun | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
 
+{{< faq >}}
+
 ## Más guías de adaptadores Alfa para China
 
 - [AWUS036ACH China Install Guide](/es/blog/awus036ach-china-install-guide/) — RTL8812AU, alta potencia
@@ -234,3 +256,10 @@ iwconfig
 - [AWUS036EACS China Install Guide](/es/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 ¿Preguntas? Deja un comentario abajo o contáctanos en [yupitek.com](https://yupitek.com/es/contact/).
+
+## Referencias
+
+1. [Controlador mt7921 del núcleo Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [Documentación oficial de aircrack-ng](https://www.aircrack-ng.org/)
+3. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)
+4. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)

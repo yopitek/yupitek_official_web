@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA AWUS036ACM ドライバーインストールガイド（中国向け）: Kali Linux、Ubuntu、Debian & ラズベリーパイ"
 date: 2026-04-24
 draft: false
@@ -12,9 +13,29 @@ series_order: 2
 description: "中国国内ミラーを使ってALFA AWUS036ACMドライバーをインストールするステップバイステップガイド。MT7612Uカーネル内蔵ドライバー、完全VIFサポート。Kali Linux、Ubuntu 22/24、Debian、ラズベリーパイ対応。GitHubは不要です。"
 related_product: "/ja/products/alfa/awus036acm/"
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036ACMはどのチップを使っていますか？ドライバーインストールは必要ですか？"
+    answer: "MediaTek MT7612Uチップを採用し、mt76x2uドライバーはLinuxカーネル4.19以降に内蔵されているため、ほとんどの場合挿すだけで使えます。"
+  - question: "AWUS036ACMはVIF仮想インターフェースをサポートしていますか？"
+    answer: "サポートしています。MT7612UはカーネルネイティブVIFを完全サポートし、モニタリングインターフェースと管理モードを同時実行でき、パッチ不要です。"
+  - question: "中国でAWUS036ACMをインストールするのにVPNは必要ですか？"
+    answer: "不要です。ドライバーはカーネルに内蔵されており、国内ミラーからファームウェアパッケージfirmware-misc-nonfreeをインストールするだけです。"
+  - question: "AWUS036ACMのRaspberry Piでの消費電力はどのくらいですか？"
+    answer: "最大負荷で約400mWを消費し、電源付きUSB Hubの併用を推奨し、Raspberry Piの電流制限による動作低下を防ぎます。"
+  - question: "DebianでAWUS036ACMをインストールした際、アダプターは認識されるのに動作しないのはなぜですか？"
+    answer: "firmware-misc-nonfreeファームウェアパッケージが不足しているのが原因です。インストール後、アダプターが正常に初期化されます。"
 ---
 
 AWUS036ACMは、LinuxでセットアップしやすいAlfaアダプターのひとつです。MT7612Uチップは`mt76x2u`ドライバーを使用しており、このドライバーはLinuxカーネルバージョン4.19以降に標準搭載されています。最新のシステムであれば、2〜3つのコマンドだけでアダプターが動作します。本ガイドでは、国内ミラーのみを使用して、ドライバーの確認・モニターモード・パケットインジェクション・VIFの完全なセットアップ手順を説明します。GitHubは不要です。
+
+
+{{< tldr >}}
+AWUS036ACMはMT7612Uチップを搭載し、ドライバーはカーネル内蔵でコンパイル不要。モニターモード、パケットインジェクション、VIFの同時実行をサポートし、中国国内ではファームウェアパッケージのインストールのみで済みます。
+{{< /tldr >}}
+
+以下をご用意ください：
 
 ## はじめる前に
 
@@ -572,6 +593,13 @@ sudo ip link set mon0 up
 | 华为云ミラー | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARMイメージ（バックアップ） |
 | MT76ドライバー（Gitee） | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | 手動コンパイルの代替 |
 
+
+---
+
+{{< faq >}}
+
+---
+
 ## 中国向けAlfaアダプターガイド一覧
 
 これは**Alfa China Install Guide**シリーズの一部です。各記事で1つのアダプターモデルを取り上げています：
@@ -586,3 +614,13 @@ sudo ip link set mon0 up
 - [AWUS036EAC 中国向けインストールガイド](/ja/blog/awus036eacs-china-install-guide/)
 
 ご質問はコメント欄またはこちらからどうぞ：[yupitek.com/ja/contact/](https://yupitek.com/ja/contact/)
+
+---
+
+## 参考文献
+
+1. [Linux Kernel mt76ドライバー](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [aircrack-ng公式ドキュメント](https://www.aircrack-ng.org/)
+3. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
+4. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
+5. [Debian firmware-misc-nonfreeパッケージ](https://packages.debian.org/bookworm/firmware-misc-nonfree)

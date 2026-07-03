@@ -1,15 +1,39 @@
 ---
+
+
+
 title: "ALFA AWUS036ACH Kali Linux 配置指南：监听模式与数据包注入（2026）"
 description: "手把手教你在 Kali Linux 2024/2025 安装 ALFA AWUS036ACH，启用 airmon-ng 监听模式，验证数据包注入——附完整驱动安装命令。"
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "Kali-Linux", "监听模式", "数据包注入", "RTL8812AU", "airmon-ng"]
 featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
+faq:
+  - question: "AWUS036ACH 在 Kali Linux 上需要额外安装驱动吗？"
+    answer: "需要。RTL8812AU 并非主线内核驱动，需从 aircrack-ng GitHub 仓库安装，建议使用 DKMS 确保内核更新后仍可运行。"
+  - question: "如何确认 AWUS036ACH 已被系统检测到？"
+    answer: "执行 lsusb 指令，寻找 ID 0bda:8812 即可确认 Realtek RTL8812AU 已被识别，再以 lsmod 确认驱动模块已加载。"
+  - question: "启用监听模式后接口消失怎么办？"
+    answer: "通常是 NetworkManager 重新接管接口所致。执行 airmon-ng check kill 终止干扰进程，再重新启用监听模式即可。"
+  - question: "数据包注入测试成功率多少才算正常？"
+    answer: "成功率 80% 以上代表运行可靠。低于 50% 则需检查天线位置、USB 供电是否充足，或驱动程序是否正确安装。"
+  - question: "内核更新后 AWUS036ACH 驱动失效如何处理？"
+    answer: "若使用 DKMS 安装，驱动会自动重建。若失效，执行 dkms autoinstall 并确认 linux-headers 软件包与当前内核版本一致。"
 ---
 
+
+
+
 ALFA AWUS036ACH 在 Kali Linux 社区中赢得最高推荐，这并非没有原因。凭借 Realtek RTL8812AU 芯片组，它提供了自 2017 年以来安全专业人员所依赖的稳定监听模式和数据包注入能力。本指南将带你完成从开箱到在 Kali Linux 2024/2025 上验证数据包注入正常工作的每一步操作。
+
+{{< tldr >}}
+AWUS036ACH 搭载 RTL8812AU 芯片，通过 aircrack-ng 驱动搭配 DKMS 安装，可稳定启用监听模式与数据包注入，是 Kali Linux 渗透测试的标准配置。
+{{< /tldr >}}
+
 
 ---
 
@@ -471,6 +495,9 @@ sudo systemctl start NetworkManager
 
 ---
 
+
+{{< faq >}}
+
 ## 操作步骤速查表
 
 | 步骤 | 命令 |
@@ -486,3 +513,10 @@ sudo systemctl start NetworkManager
 | 测试数据包注入 | `sudo aireplay-ng --test wlan0mon` |
 
 在 Kali Linux 2024+ 上，[ALFA AWUS036ACH](/zh-cn/products/alfa/awus036ach/) 搭配 aircrack-ng 的 RTL8812AU 驱动，仍然是渗透测试社区中最可靠、文档最完善的 WiFi 网卡配置方案。一旦验证注入功能正常，你便可以使用完整的 Aircrack-ng 套件、Wireshark、Kismet、Bettercap，以及任何需要监听模式或数据包注入的工具。
+
+## 参考文献
+
+1. [aircrack-ng 官方 rtl8812au 驱动程序仓库](https://github.com/aircrack-ng/rtl8812au)
+2. [Kali Linux 官方文档](https://www.kali.org/docs/)
+3. [Realtek RTL8812AU 规格说明](https://www.realtek.com/)
+4. [Linux Wireless 官方文档](https://wireless.wiki.kernel.org/)

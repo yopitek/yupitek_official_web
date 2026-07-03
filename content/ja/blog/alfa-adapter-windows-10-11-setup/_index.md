@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA アダプター Windows 10/11 セットアップガイド"
 description: "Windows 10/11 で ALFA USB WiFi アダプターをインストール・設定する方法。ドライバーのダウンロード、Acrylic WiFi によるモニターモード、トラブルシューティング、Windows ユーザー向けアダプター比較。"
 date: 2026-03-24
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-アダプター", "ドライバーインストール", "acrylic-wifi"]
 featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "WindowsはALFAアダプターのモニターモードをサポートしていますか？"
+    answer: "Windowsはネイティブで完全なモニターモードをサポートしていません。NDISドライバーモデルは生の802.11パケットキャプチャを開放しておらず、Acrylic WiFi Proでパッシブスキャンが可能なだけで、完全なモニターモードにはKali Linuxが必要です。"
+  - question: "Windowsでパケットインジェクションを行えますか？"
+    answer: "できません。現在WindowsドライバーでALFAアダプターの生の802.11パケットインジェクションをサポートするものはなく、この機能はLinuxでのみ利用可能です。"
+  - question: "Windowsで互換性が最も高いALFAアダプターはどれですか？"
+    answer: "AWUS036ACH（RTL8812AU）とAWUS036ACM（MT7612U）はWHQL署名ドライバーを持ち、Windows 10/11互換性の実績が最も完全で、プラグアンドプレイが最も安定しています。"
+  - question: "Windows 11でMT7921AUNドライバーを手動インストールする必要がありますか？"
+    answer: "不要です。MT7921AUNドライバーはWindows 11ドライバーストア（ビルド22000以降）に内蔵されており、アダプター挿入後数分以内に自動的にドライバーが取得されます。"
+  - question: "デバイスマネージャーでCode 43と表示されたらどうしますか？"
+    answer: "ドライバーをアンインストールして再起動後、アダプターを再挿入し、方法Bでドライバーを手動インストールしてください。Code 43が複数台のPCで継続する場合は通常ハードウェア故障です。"
 ---
 
 ALFA Network の USB WiFi アダプターは、セキュリティリサーチやネットワーキングの分野で広く知られていますが、ほとんどのチュートリアルは Linux に特化しています。Windows ユーザーにとっての朗報は、主要な ALFA アダプターはすべてメーカー提供のドライバーにより Windows 10 および Windows 11 で動作するという点です。ソースコードのコンパイルは一切不要です。
 
+
+{{< tldr >}}
+ALFAアダプターはWindows 10/11でプラグアンドプレイでWiFi接続できますが、NDISドライバーモデルは完全なモニターモードとパケットインジェクションをサポートしていません。セキュリティテストが必要な場合はKali Linux（ベアメタルまたはVM USBパススルー）に切り替えてください。Windowsは日常接続とWiFiサイトサーベイに適しています。
+{{< /tldr >}}
 Linux との最大の違いはモニターモードにあります。Linux では `aircrack-ng` や `airodump-ng` などのツールが、パケットインジェクションを含む生の 802.11 キャプチャを活用できます。一方 Windows では、ドライバーモデル（NDIS）が同等のハードウェア機能を公開していません。フルモニターモードとパケットインジェクションは **Windows ではネイティブに利用できません**。Windows が優れているのは、プラグアンドプレイ接続と、Acrylic WiFi Analyzer のような洗練されたツールを使った WiFi スキャンです。
 
 本ガイドでは、ドライバーのインストール、WiFi スキャン、そして Windows で ALFA アダプターを使って何ができて何ができないかを正直に解説します。
@@ -255,8 +273,23 @@ wlan.fc.type_subtype == 0x0004
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 関連ガイド
 
 - [VirtualBox & VMware USB パススルー（ALFA アダプター向け）](/ja/blog/alfa-adapter-virtualbox-vmware-usb/) — フル ALFA アダプターサポートで Kali Linux を VM 上で実行する方法
 - [Kali Linux & Ubuntu 向けドライバーインストールガイド](/ja/blog/install-alfa-driver-kali-ubuntu/) — チップセット別の完全なドライバーインストール手順
 - [ALFA WiFi アダプター購入ガイド 2026](/ja/blog/alfa-wifi-adapter-buyer-guide-2026/) — 用途に最適なアダプターの選び方
+
+---
+
+## 参考文献
+
+1. [ALFA Network公式ドライバーダウンロード](https://www.alfa.com.tw/service_1.html)
+2. [Microsoft NDISドライバードキュメント](https://learn.microsoft.com/windows-hardware/drivers/network/ndis-drivers)
+3. [Acrylic WiFi Analyzer公式ウェブサイト](https://www.acrylicwifi.com/)
+4. [Npcap公式ウェブサイト](https://npcap.com/)
+5. [Wireshark公式ドキュメント](https://www.wireshark.org/docs/)

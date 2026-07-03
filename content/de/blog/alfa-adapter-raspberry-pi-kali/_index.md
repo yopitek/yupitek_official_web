@@ -2,14 +2,32 @@
 title: "ALFA WLAN-Adapter am Raspberry Pi mit Kali Linux: Einrichtungsanleitung"
 description: "Installieren Sie ALFA USB WLAN-Adapter auf einem Raspberry Pi mit Kali Linux ARM64. Enthält Kompilierung des RTL8812AU-Treibers für AWUS036ACH, Monitor Mode und portable Pentesting-Setups."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
+faq:
+  - question: "Welcher Raspberry Pi eignet sich am besten für Penetrationstests?"
+    answer: "Der Raspberry Pi 5 (4 GB oder 8 GB) ist die beste Wahl. Der Pi 4 (4 GB+) funktioniert ebenfalls einwandfrei; der Pi 3B+ ist jedoch zu langsam für die Echtzeit-Paket-Erfassung."
+  - question: "Muss der Treiber für den AWUS036ACH auf dem Raspberry Pi kompiliert werden?"
+    answer: "Ja. Der RTL8812AU ist nicht im Mainline-Kernel enthalten. Versuchen Sie zunächst das Kali DKMS-Paket realtek-rtl88xxau-dkms. Falls dies fehlschlägt, kompilieren Sie manuell aus dem aircrack-ng GitHub-Repository und stellen Sie sicher, dass das ARM64-Plattform-Flag gesetzt ist."
+  - question: "Kann man auf einem Headless Pi den Monitor Mode mit wlan0 nutzen?"
+    answer: "Dies wird nicht empfohlen. wlan0 ist das eingebaute WiFi des Pi, das für SSH-Verbindungen verwendet wird. Die Ausführung von airmon-ng check kill unterbricht die SSH-Verbindung. Verwenden Sie stattdessen wlan1 (die ALFA-Netzwerkkarte) und halten Sie die Verbindung über Ethernet oder tmux aufrecht."
+  - question: "Ist der AWUS036AXM auf dem Raspberry Pi Plug-and-Play-fähig?"
+    answer: "Ja. Der Treiber für MT7921AUN ist seit Kernel 5.18 integriert, und die Kernel-Version der Kali ARM64-Images ist noch höher. Es ist lediglich erforderlich, das Firmware-Paket firmware-misc-nonfree zu installieren."
+  - question: "Wie versorgt man den AWUS036ACH auf dem Raspberry Pi mit Strom?"
+    answer: "Der Stromverbrauch des AWUS036ACH beträgt ca. 500 mW. Das direkte Anschließen an den Pi kann zu Taktratenreduzierung oder Neustarts führen. Verwenden Sie unbedingt einen aktiven USB 3.0-Hub zusammen mit einem offiziellen Pi USB-C-Netzteil mit mindestens 3 A."
+
 ---
 
 Ein Laptop mit Kali Linux ist der Standard-Arbeitsplatz für Pentesting – aber bei weitem nicht die einzige Option. Ein Raspberry Pi 4 oder Pi 5 kombiniert mit einem ALFA USB WLAN-Adapter bietet dir eine kompakte, lüfterlose und passiv gekühlte Plattform, die in eine Jackentasche passt, über eine USB-C Powerbank betrieben werden kann und stundenlang unbeaufsichtigt in einer Zielumgebung gelassen werden kann. Kali Linux ARM64-Images kommen direkt von Offensive Security und laufen nativ auf dem Pi 4 und Pi 5 ohne Emulation. Dir steht das volle Toolset zur Verfügung: Aircrack-ng, Kismet, Wireshark, Bettercap und der Rest der Standard-Kali-Metapakete.
+
+{{< tldr >}}
+Der Raspberry Pi 4/5 in Kombination mit Kali Linux ARM64 und einer ALFA-Netzwerkkarte ermöglicht die Erstellung einer tragbaren Penetrationstest-Plattform. Für den AWUS036ACH muss der RTL8812AU-Treiber kompiliert werden, während der AWUS036ACM und der AWUS036AXM dank der im Kernel integrierten Treiber Plug-and-Play-fähig sind. Eine Stromversorgung über einen aktiven USB-Hub ist erforderlich.
+{{< /tldr >}}
 
 Das größte Hindernis ist oft der Treiber. Der RTL8812AU-Chipsatz im AWUS036ACH befindet sich nicht im Mainline-Kernel. Das bedeutet, du kannst den Adapter nicht einfach einstecken und erwarten, dass er funktioniert. Du musst den Treiber für deinen laufenden ARM64-Kernel selbst kompilieren – und die Kompilierungs-Flags unterscheiden sich von denen für x86-64. Diese Anleitung führt dich durch jeden einzelnen Schritt.
 
@@ -271,6 +289,16 @@ Beachte immer die lokalen Gesetze, bevor du Netzwerk-Scanning-Aktivitäten durch
 
 ---
 
+{{< faq >}}
+
 ## Weiterführende Informationen
 
 Die vollständige Anleitung zur Installation des RTL8812AU-Treibers unter Kali Linux (Desktop) und Ubuntu findest du in unserem Guide [ALFA-Treiber unter Kali Linux & Ubuntu installieren](/de/blog/install-alfa-driver-kali-ubuntu/). Wenn du dich noch nicht für einen Adapter entschieden hast, deckt der [ALFA WLAN-Adapter Kaufratgeber 2026](/de/blog/alfa-wifi-adapter-buyer-guide-2026/) jedes aktuelle Modell mit Chipsatz-Details und Anwendungsempfehlungen ab.
+
+## Referenzen
+
+1. [Kali Linux ARM Offizieller Download](https://www.kali.org/get-kali/#kali-arm)
+2. [aircrack-ng rtl8812au Treiber-Projekt](https://github.com/aircrack-ng/rtl8812au)
+3. [Raspberry Pi Offizielle Website](https://www.raspberrypi.com/)
+4. [Linux Kernel mt76 TreiberDokumentation](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [ALFA Network Offizielle Website](https://www.alfa.com.tw/)

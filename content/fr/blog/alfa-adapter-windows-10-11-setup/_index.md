@@ -7,7 +7,24 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "driver-install", "acrylic-wifi"]
 featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Windows supporte-t-il le mode moniteur des cartes ALFA ?"
+    answer: "Windows ne supporte pas nativement le mode moniteur complet. Le modèle NDIS ne permet pas la capture de paquets 802.11 bruts. Pour le mode moniteur complet, utilisez Kali Linux."
+  - question: "Peut-on faire de l'injection de paquets sous Windows ?"
+    answer: "Non. Aucun pilote Windows ne supporte l'injection de paquets 802.11 bruts pour les cartes ALFA. Cette fonctionnalité est uniquement disponible sous Linux."
+  - question: "Quelle carte ALFA a la meilleure compatibilité Windows ?"
+    answer: "L'AWUS036ACH (RTL8812AU) et l'AWUS036ACM (MT7612U) disposent de pilotes signés WHQL, avec la meilleure compatibilité Windows 10/11 et un fonctionnement plug-and-play stable."
+  - question: "Windows 11 nécessite-t-il une installation manuelle du pilote MT7921AUN ?"
+    answer: "Non. Le pilote MT7921AUN est intégré au Windows Driver Store (build 22000+). La carte obtient automatiquement son pilote après l'insertion."
+  - question: "Que faire si le Gestionnaire de périphériques affiche Code 43 ?"
+    answer: "Désinstallez le pilote, redémarrez, réinsérez la carte, puis installez manuellement le pilote. Si le Code 43 persiste sur plusieurs machines, il s'agit probablement d'une défaillance matérielle."
 ---
+
+{{< tldr >}}
+Les cartes ALFA fonctionnent en plug-and-play pour la connexion WiFi sous Windows 10/11, mais le modèle NDIS ne supporte pas le mode moniteur complet ni l'injection de paquets. Pour les tests de sécurité, basculez vers Kali Linux.
+{{< /tldr >}}
 
 Les adaptateurs WiFi USB d'ALFA Network sont bien connus dans les cercles de recherche en sécurité et de réseautage, mais la plupart des tutoriels se concentrent exclusivement sur Linux. La bonne nouvelle pour les utilisateurs de Windows : chaque adaptateur ALFA majeur fonctionne sur Windows 10 et Windows 11 avec les pilotes fournis par le fabricant — aucune compilation de source n'est requise.
 
@@ -239,6 +256,8 @@ Capturer le trafic réseau sans autorisation est illégal dans la plupart des ju
 
 ---
 
+{{< faq >}}
+
 ## Résumé : Windows vs Linux pour les adaptateurs ALFA
 
 | Caractéristique | Windows 10/11 | Kali Linux |
@@ -260,3 +279,12 @@ En résumé : Windows est une excellente plateforme pour les adaptateurs ALFA lo
 - [Passthrough USB VirtualBox & VMware pour les adaptateurs ALFA](/fr/blog/alfa-adapter-virtualbox-vmware-usb/) — Faites fonctionner Kali Linux dans une VM avec support complet de l'adaptateur ALFA
 - [Guide d'installation du pilote pour Kali Linux & Ubuntu](/fr/blog/install-alfa-driver-kali-ubuntu/) — Installation complète du pilote spécifique au chipset
 - [Guide d'achat de l'adaptateur WiFi ALFA 2026](/fr/blog/alfa-wifi-adapter-buyer-guide-2026/) — Quel adaptateur est fait pour vous
+
+---
+
+## Références
+1. [Téléchargement de pilotes officiels ALFA Network](https://www.alfa.com.tw/service_1.html)
+2. [Documentation pilote NDIS Microsoft](https://learn.microsoft.com/windows-hardware/drivers/network/ndis-drivers)
+3. [Site officiel Acrylic WiFi Analyzer](https://www.acrylicwifi.com/)
+4. [Site officiel Npcap](https://npcap.com/)
+5. [Documentation officielle Wireshark](https://www.wireshark.org/docs/)

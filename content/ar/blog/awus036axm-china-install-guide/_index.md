@@ -12,9 +12,29 @@ series: ["alfa-china-install-guide"]
 series_order: 6
 related_product: "/ar/products/alfa/awus036axm/"
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما الشريحة التي يستخدمها AWUS036AXM؟ هل يدعم WiFi 6E؟"
+    answer: "يستخدم شريحة MediaTek MT7921AUN ويدعم WiFi 6E ثلاثي النطاق (2.4G/5G/6G Hz)."
+  - question: "هل يحتاج AWUS036AXM إلى تثبيت تعريف يدوي؟"
+    answer: "لا، تعريف mt7921u مدمج في النواة منذ 5.18، يلزم فقط تثبيت حزمة البرنامج الثابت."
+  - question: "هل يدعم AWUS036AXM الواجهات الافتراضية VIF؟"
+    answer: "نعم، MT7921AUN يدعم بالكامل VIF الأصلي في النواة، يمكن الاتصال والمراقبة في آن واحد."
+  - question: "لماذا يفشل تحميل التعريف على Ubuntu 22.04 مع AWUS036AXM؟"
+    answer: "نواة Ubuntu 22.04 الافتراضية 5.15 قديمة جداً، يلزم تثبيت نواة HWE للترقية إلى 5.18 فأحدث."
+  - question: "ما هو USB ID لـ AWUS036AXM؟"
+    answer: "USB ID لـ MediaTek MT7921AUN هو 0e8d:7961، يمكن التأكد بـ lsusb."
 ---
-
 يعتبر AWUS036AXM محول WiFi 6E ثلاثي النطاق من ALFA مع موصل USB-A موفر للمساحة على شكل حرف L. تستخدم شريحة MT7921AUN الخاصة به برنامج تشغيل `mt7921u` المدمج في نواة Linux منذ الإصدار 5.18. يحافظ الموصل على شكل حرف L على منافذ USB المجاورة خالية في أجهزة الكمبيوتر المحمولة. يغطي هذا الدليل الإعداد الكامل — البرامج الثابتة، التحقق من برنامج التشغيل، وضع المراقبة، حقن الحزم، و VIF — دون لمس GitHub.
+
+{{< tldr >}}
+يستخدم AWUS036AXM شريحة MT7921AUN ويدعم WiFi 6E، تعريفه مدمج في النواة. بعد تثبيت حزمة البرنامج الثابت يمكن استخدام وضع المراقبة وحقن الحزم و VIF.
+{{< /tldr >}}
+
+تأكد من توفر المتطلبات التالية لديك:
+
+
 
 ## قبل أن تبدأ
 
@@ -454,6 +474,8 @@ iwconfig
 | جامعة العلوم والتكنولوجيا في الصين | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (موصى به) |
 | مرآة هواوي | [repo.huaweicloud.com](https://repo.huaweicloud.com) | صور Kali ARM (احتياطي) |
 
+{{< faq >}}
+
 ## المزيد من أدلة محولات Alfa للصين
 
 هذا جزء من سلسلة **دليل تثبيت Alfa في الصين**:
@@ -468,3 +490,11 @@ iwconfig
 - [دليل تثبيت AWUS036EACS في الصين](/ar/blog/awus036eacs-china-install-guide/) — RTL8821CU، ويندوز
 
 هل لديك أسئلة؟ اترك تعليقًا أدناه أو اتصل بنا على [yupitek.com](https://yupitek.com/ar/contact/).
+
+## المراجع
+
+1. [تعريف Linux Kernel mt7921](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [وثائق aircrack-ng الرسمية](https://www.aircrack-ng.org/)
+3. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+4. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
+

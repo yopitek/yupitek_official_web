@@ -1,17 +1,42 @@
 ---
+
+
+
 title: "WiFi 6E vs WiFi 5：渗透测试该选哪款 ALFA 网卡？"
 description: "对比 ALFA AWUS036AXML（Wi-Fi 6E）与 AWUS036ACH（Wi-Fi 5）在 Kali Linux 渗透测试中的差异，涵盖 6 GHz 支持、驱动成熟度、监听模式与实际使用场景。"
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "渗透测试", "Kali-Linux"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
+faq:
+  - question: "Wi-Fi 6E 与 Wi-Fi 5 在渗透测试上有何差异？"
+    answer: "Wi-Fi 6E 新增 6 GHz 频段与 1.2 GHz 频谱，适合稽核现代企业部署。Wi-Fi 5 驱动成熟，在 2.4/5 GHz 上稳定性更高。"
+  - question: "AWUS036ACH 与 AWUS036AXML 该选哪一款？"
+    answer: "日常渗透测试选 AWUS036ACH，驱动成熟且社群资源丰富。需稽核 6 GHz Wi-Fi 6E 环境则选 AWUS036AXML。条件允许建议两款皆备。"
+  - question: "AWUS036AXML 的监听模式在 Kali Linux 上稳定吗？"
+    answer: "需核心 6.1 以上并安装最新 linux-firmware 软件包。数据包注入可用但建议正式委外测试前先行验证，特定核心与固件组合可能不稳定。"
+  - question: "2026 年渗透测试需要 6 GHz 网卡吗？"
+    answer: "大多数测试案例仍以 2.4/5 GHz 为主。但若目标环境已部署 Wi-Fi 6E 访问点，6 GHz 网卡即为策略必备。"
+  - question: "AWUS036ACH 的 RTL8812AU 驱动如何安装？"
+    answer: "从 aircrack-ng GitHub 复制 rtl8812au 仓库，执行 make dkms_install 安装。DKMS 确保内核更新后驱动自动重建。"
 ---
+Wi-Fi 6E 是 Wi-Fi 6（IEEE 802.11ax）标准的扩展版本，新增了对 **6 GHz 频段**的支持——一片此前未开发的广阔频谱。Wi-Fi 5（802.11ac）仅工作在 2.4 GHz 和 5 GHz，标准 Wi-Fi 6 同样如此，而 Wi-Fi 6E 则额外开放了 **5.925 GHz 至 7.125 GHz** 之间的 **1.2 GHz 频谱**。
 
 ## 什么是 Wi-Fi 6E？6 GHz 新频段详解
 
-Wi-Fi 6E 是 Wi-Fi 6（IEEE 802.11ax）标准的扩展版本，新增了对 **6 GHz 频段**的支持——一片此前未开发的广阔频谱。Wi-Fi 5（802.11ac）仅工作在 2.4 GHz 和 5 GHz，标准 Wi-Fi 6 同样如此，而 Wi-Fi 6E 则额外开放了 **5.925 GHz 至 7.125 GHz** 之间的 **1.2 GHz 频谱**。
+{{< tldr >}}
+AWUS036ACH 驱动成熟、稳定性最高，是日常渗透测试首选。AWUS036AXML 支持 6 GHz 频段，适合稽核 Wi-Fi 6E 环境，但驱动仍在持续完善中。
+{{< /tldr >}}
+
+
+Wi-Fi 6E 新增 6 GHz 频段，适合审计现代企业部署。AWUS036ACH（Wi-Fi 5）驱动成熟稳定，AWUS036AXML（Wi-Fi 6E）支持三频，依测试环境需求选择。
+
+
+
 
 实际意义在于：
 
@@ -140,6 +165,9 @@ sudo airmon-ng start wlan0
 
 ---
 
+
+{{< faq >}}
+
 ## 选购建议
 
 **选择 [AWUS036ACH](/zh-cn/products/alfa/awus036ach/)，如果：**
@@ -157,3 +185,11 @@ sudo airmon-ng start wlan0
 - 你习惯在正式作业前测试监听模式和注入功能
 
 **结论：** 对于 2026 年大多数专业渗透测试工程师而言，AWUS036ACH 仍是可靠性方面的黄金标准。AWUS036AXML 则是目标指向尖端企业基础设施、或需要构建前瞻性工具集的团队的明智之选。如果条件允许，两款都备着是最理想的状态。
+
+## 参考文献
+
+1. [aircrack-ng 官方 rtl8812au 驱动程序](https://github.com/aircrack-ng/rtl8812au)
+2. [MediaTek MT7921 内核驱动程序](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)
+3. [Wi-Fi Alliance Wi-Fi 6E 认证说明](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)
+4. [Kali Linux 官方文档](https://www.kali.org/docs/)
+5. [IEEE 802.11ax 标准资源](https://standards.ieee.org/ieee/802.11ax/)

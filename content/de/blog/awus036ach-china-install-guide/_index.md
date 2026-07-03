@@ -1,6 +1,8 @@
 ---
 title: "ALFA AWUS036ACH Treiber-Installationsanleitung für China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +14,28 @@ series_order: 1
 description: "Schritt-für-Schritt-Anleitung zur Installation des ALFA AWUS036ACH-Treibers in China mit inländischen Mirrors. Für Kali Linux, Ubuntu 22/24, Debian und Raspberry Pi. Kein GitHub erforderlich."
 related_product: "/de/products/alfa/awus036ach/"
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+faq:
+  - question: "Welchen Chipsatz verwendet der AWUS036ACH? Ist eine zusätzliche Treiberinstallation erforderlich?"
+    answer: "Der AWUS036ACH verwendet den Realtek RTL8812AU-Chipsatz. Der Treiber ist nicht im Linux-Kernel integriert und muss manuell installiert werden."
+  - question: "Muss man in China die Great Firewall umgehen, um den Treiber für den AWUS036ACH zu installieren?"
+    answer: "Nein, die Installation kann vollständig unter Verwendung inländischer Spiegelserver wie der USTC und Aliyun sowie des Gitee-Quellcode-Spiegels durchgeführt werden."
+  - question: "Unterstützt der AWUS036ACH den Monitor Mode und Packet Injection?"
+    answer: "Ja, nach der Installation des RTL8812AU-Treibers kann der Monitor Mode mit airmon-ng aktiviert und Packet Injection mit aireplay-ng getestet werden."
+  - question: "Ist der AWUS036ACH auf einem Raspberry Pi verwendbar?"
+    answer: "Ja, es wird empfohlen, einen USB Hub mit externer Stromversorgung zu verwenden und Kali Linux ARM64 zu installieren."
+  - question: "Welcher Befehl wird zur Installation des AWUS036ACH-Treibers unter Kali Linux verwendet?"
+    answer: "In Kali können Sie das vorkompilierte Treiberpaket mit dem Befehl sudo apt install realtek-rtl88xxau-dkms direkt installieren."
+
 ---
 
 Du hast den AWUS036ACH bekommen und dein Linux erkennt ihn nicht. Das ist normal — dieser Chip braucht den RTL8812AU-Treiber, der nicht automatisch funktioniert. Diese Anleitung führt dich in etwa 30 Minuten durch die vollständige Installation, ausschließlich mit inländischen Mirrors. GitHub-Zugang ist nicht erforderlich.
+
+{{< tldr >}}
+Der AWUS036ACH verwendet den RTL8812AU-Chipsatz. Unter Kali Linux wird der DKMS-Treiber über apt installiert, unter Ubuntu/Debian wird er aus Gitee kompiliert. Die Aktivierung des Monitor Mode und der Packet Injection ist innerhalb von 30 Minuten abgeschlossen.
+{{< /tldr >}}
+
+Stelle sicher, dass du folgendes bereit hast:
+
 
 ## Vorbereitung
 
@@ -617,6 +638,10 @@ Alle in dieser Anleitung verwendeten Ressourcen — kein GitHub erforderlich:
 | 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM-Images (Backup) |
 | RTL8812AU-Treiber (Gitee) | [gitee.com/mirrors/rtl8812au](https://gitee.com/mirrors/rtl8812au) | Manuelles Kompilieren als Fallback |
 
+---
+
+{{< faq >}}
+
 ## Weitere Alfa-Adapter-Anleitungen für China
 
 Dies ist Teil der **Alfa China Install Guide** Serie. Jeder Artikel behandelt ein Adaptermodell:
@@ -631,3 +656,11 @@ Dies ist Teil der **Alfa China Install Guide** Serie. Jeder Artikel behandelt ei
 - [AWUS036EAC China-Installationsguide](/de/blog/awus036eacs-china-install-guide/)
 
 Fragen? Hinterlasse einen Kommentar unten oder kontaktiere uns über [yupitek.com](https://yupitek.com/de/contact/).
+
+## Referenzen
+
+1. [aircrack-ng Offizielle Dokumentation](https://www.aircrack-ng.org/)
+2. [ALFA Network Offizielle Website](https://www.alfa.com.tw/)
+3. [Kali Linux Offizielle Dokumentation](https://www.kali.org/docs/)
+4. [Gitee rtl8812au Spiegel](https://gitee.com/mirrors/rtl8812au)
+5. [Realtek RTL8812AU Treiber](https://www.realtek.com/)

@@ -7,7 +7,24 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
 featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "L'utilisation d'une carte ALFA avec Kali NetHunter nécessite-t-elle le root ?"
+    answer: "Oui. La version complète NetHunter nécessite un appareil Android rooté et un noyau personnalisé pour charger le module RTL8812AU et activer le support USB OTG."
+  - question: "Quelle carte ALFA est la mieux adaptée à NetHunter ?"
+    answer: "L'AWUS036ACH (RTL8812AU) est le meilleur choix. Le noyau personnalisé NetHunter intègre le module 88XXau, avec support complet du mode moniteur et de l'injection de paquets."
+  - question: "Pourquoi un hub USB OTG alimenté est-il nécessaire ?"
+    answer: "L'AWUS036ACH consomme environ 500 mW via USB. L'alimentation directe par la batterie du téléphone provoque une décharge rapide et des déconnexions sous charge. Un hub alimenté résout ce problème."
+  - question: "Les cartes WiFi 6E (AWUS036AXML) fonctionnent-elles sur NetHunter ?"
+    answer: "Support limité. La disponibilité du module noyau MT7921AUN dépend de l'appareil et de la version du noyau. Utilisez de préférence une carte RTL8812AU."
+  - question: "Quels appareils Android supportent NetHunter ?"
+    answer: "Les appareils officiellement supportés incluent OnePlus, Google Pixel et certains Samsung Galaxy. Consultez la page officielle NetHunter pour la liste complète."
 ---
+
+{{< tldr >}}
+Un téléphone Android rooté avec Kali NetHunter et un ALFA AWUS036ACH via USB OTG devient une plateforme de pentesting de poche. Nécessite la version complète NetHunter, un hub OTG alimenté, et la carte RTL8812AU offre la meilleure compatibilité.
+{{< /tldr >}}
 
 Votre téléphone Android est déjà un ordinateur puissant dans votre poche. Avec Kali NetHunter installé sur un appareil rooté et un adaptateur WiFi ALFA branché via USB OTG, il devient une plateforme de test de pénétration de poche véritablement performante. Pas besoin d'ordinateur portable. Pas de matériel encombrant. Juste votre téléphone, un court câble OTG et un adaptateur qui prend en charge le mode moniteur et l'injection de paquets.
 
@@ -238,9 +255,19 @@ Assurez-vous d'exécuter les commandes en tant que root dans le chroot NetHunter
 
 ---
 
+{{< faq >}}
+
 ## Guides associés
 
 Pour d'autres plateformes et cas d'utilisation avec les adaptateurs ALFA :
 
 - [Guide d'installation de l'AWUS036ACH sur Kali Linux (bureau/ordinateur portable)](/fr/blog/awus036ach-kali-linux-setup/)
 - [Utiliser les adaptateurs ALFA avec Raspberry Pi et Kali](/fr/blog/alfa-adapter-raspberry-pi-kali/)
+
+---
+
+## Références
+1. [Documentation officielle Kali NetHunter](https://www.kali.org/docs/nethunter/)
+2. [Projet pilote aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+3. [Site officiel ALFA Network](https://www.alfa.com.tw/)
+4. [Documentation développeur Android USB OTG](https://developer.android.com/guide/topics/connectivity/usb)

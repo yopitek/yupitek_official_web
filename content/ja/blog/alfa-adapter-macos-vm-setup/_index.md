@@ -1,4 +1,5 @@
 ---
+
 title: "macOSでALFA WiFiアダプターを使う：VMware FusionとParallels USBパススルー完全ガイド"
 description: "macOSでALFA USB WiFiアダプターを使う方法。macOSネイティブサポート、VMware Fusion USBパススルー、Parallels Desktopを使ったKali LinuxのモニターモードとパケットインジェクションをApple Silicon対応で解説。"
 date: 2026-03-24
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ALFAアダプターはmacOSでネイティブにモニターモードを使えますか？"
+    answer: "使えません。macOSのCoreWLANとIO80211Familyアーキテクチャはサードパーティアダプターのモニターモードやパケットインジェクションをサポートしておらず、VMでKali Linuxを実行しUSBパススルーを使用する必要があります。"
+  - question: "Apple Silicon MacではVMware FusionとParallelsのどちらが良いですか？"
+    answer: "どちらでも使えますが、Parallels Desktop 19+はApple Silicon上のARM64 VMパフォーマンスとUSBパススルーの安定性で通常VMware Fusionより優れています。"
+  - question: "AWUS036AXMLはApple SiliconのKali VMでドライバーをコンパイルする必要がありますか？"
+    answer: "不要です。MT7921AUNドライバーはLinux 5.18以降カーネルに内蔵されており、Kali ARM64 2024.x以降なら挿すだけで自動認識されます。"
+  - question: "Intel Macで標準のKali x86_64 ISOを使えますか？"
+    answer: "使えます。Intel Macはx86_64アーキテクチャなので、kali.org公式の標準Kali Linux x86_64 ISOを直接使用してVMを作成できます。"
+  - question: "VirtualBoxはApple Siliconでセキュリティテストに適していますか？"
+    answer: "推奨しません。VirtualBoxのApple Siliconサポートはまだ実験段階で、USBパススルーに既知の問題があるため、VMware FusionまたはParallelsをお使いください。"
 ---
 
 macOSは洗練された生産性重視のOSですが、無線セキュリティリサーチ向けには設計されていません。ペネトレーションテスターのツールキットを定義する2つの機能——**モニターモード**と**パケットインジェクション**——はmacOSのWi-Fiスタックには存在しません。AppleのWi-Fiドライバーは、きれいで機能的なネットワークインターフェースを提供するだけです。
 
+
+{{< tldr >}}
+macOSはALFAアダプターのモニターモードとパケットインジェクションをサポートしていません。解決策はVMware FusionまたはParallelsでKali Linux VMを実行し、USBパススルーでアダプターをVMに渡すことです。Apple SiliconではARM64版Kaliイメージが必要です。
+{{< /tldr >}}
 ALFAアダプターはLinuxではドライバーサポートが充実していますが、macOSでは状況が異なります。ALFAアダプターがmacOSに認識されても、ネイティブネットワークスタックではモニターモードへの切り替えや生のパケット送信はできません。唯一の確実な解決策は、**仮想マシンでKali Linuxを実行し**、macOSを完全にバイパスしてUSBアダプターをゲストOSに直接パススルーすることです。
 
 このガイドでは、macOSの2大ハイパーバイザー——VMware FusionとParallels Desktop——での正しいセットアップ方法を解説します。特に**Apple Silicon（M1/M2/M3）**に重点を置き、ARMアーキテクチャがアダプターとISOの選択に与える影響を詳しく説明します。
@@ -231,8 +249,23 @@ Apple Siliconで、ALFAアダプターは認識されるがインターフェー
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 関連ガイド
 
 WindowsおよびLinuxホストでVirtualBoxまたはVMware Workstationを使用する場合のガイド：[ALFA アダプター USBパススルー：VirtualBoxとVMwareのセットアップガイド](/ja/blog/alfa-adapter-virtualbox-vmware-usb/)。
 
 このガイドで推奨しているAWUS036AXMLの詳細レビューは：[ALFA AWUS036AXML WiFi 6E レビュー](/ja/blog/awus036axml-wifi-6e-review/)。
+
+---
+
+## 参考文献
+
+1. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
+2. [Kali Linux公式ダウンロードページ](https://www.kali.org/get-kali/)
+3. [VMware Fusion製品ページ](https://www.vmware.com/products/fusion.html)
+4. [Parallels Desktop公式ウェブサイト](https://www.parallels.com/)
+5. [aircrack-ng rtl8812auドライバープロジェクト](https://github.com/aircrack-ng/rtl8812au)

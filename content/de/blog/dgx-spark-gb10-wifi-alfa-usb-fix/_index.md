@@ -2,14 +2,32 @@
 title: "DGX Spark WLAN-Probleme? In 10 Minuten gelöst mit dem ALFA USB-Adapter"
 description: "WLAN-Probleme beim NVIDIA DGX Spark behoben. Treiberfreier USB-Adapter funktioniert in 10 Minuten. Auch kompatibel mit ASUS ASCENT GX10, MSI EdgeXpert, HP ZGX Nano, ALTOS BrainSphere GB10 F1 und GIGABYTE AI TOP ATOM."
 date: 2026-05-20
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
+faq:
+  - question: "Warum kann sich der DGX Spark nicht mit Wi-Fi verbinden?"
+    answer: "Der DGX Spark verwendet den integrierten MediaTek MT7925 Wi-Fi 7-Chip, doch der wpa_supplicant im OOBE-Phase ist zu stark reduziert und mit bestimmten AP-Herstellern (insbesondere UniFi) inkompatibel. Eine Verbindung mit WPA2-Enterprise ist nahezu ausgeschlossen."
+  - question: "Gilt die Lösung mit der ALFA USB-Netzwerkkarte für alle GB10 AI Server?"
+    answer: "Ja. Alle AI Edge Server, die den NVIDIA GB10 Grace Blackwell Superchip verwenden (ASUS, MSI, HP, ALTOS, GIGABYTE), nutzen denselben MT7925 Wi-Fi-Chip. Die Lösung mit der ALFA AWUS036ACM ist daher für alle Modelle kompatibel."
+  - question: "Muss der Treiber für die AWUS036ACM auf dem DGX Spark installiert werden?"
+    answer: "Nein. Der mt76-Treiber für den MT7612U ist seit Linux Kernel 4.19 im Hauptzweig des Kernel-Quellbaums enthalten. Der Kernel 6.17+ von DGX OS unterstützt dies nativ vollständig, und der Treiber wird beim Einstecken in den USB-Anschluss automatisch geladen."
+  - question: "Wie lange dauert die Behebung der Wi-Fi-Probleme mit der ALFA USB-Netzwerkkarte?"
+    answer: "Weniger als zehn Minuten. Nach dem Einstecken in den USB 3.0-Port lädt das System den Treiber automatisch. Die Verbindung zum WiFi kann anschließend durch Scannen und Herstellen der Verbindung über den nmcli-Befehl abgeschlossen werden. Es ist weder das Kompilieren eines Treibers noch ein Neustart erforderlich."
+  - question: "Können Sie auf dem DGX Spark auch andere ALFA-Netzwerkkarten verwenden?"
+    answer: "Für den AWUS036ACH (RTL8812AU) muss der Treiber manuell kompiliert werden, und auf der ARM64-Plattform von GB10 ist der Erfolg nicht garantiert. Der AWUS036ACM ist die einzige Lösung, die als vollständig plug-and-play und ohne Kompilierung bestätigt wurde."
+
 ---
 
 Ihr lang erwarteter **NVIDIA DGX Spark** (Codename Project DIGITS) ist endlich angekommen.
+
+{{< tldr >}}
+Der integrierte MT7925 Wi-Fi 7-Chip der NVIDIA DGX Spark und aller GB10 AI Server weist bekannte Verbindungsdefekte auf. Die Lösung besteht darin, eine ALFA AWUS036ACM USB-Netzwerkkarte einzustecken. Der mt76-Treiber ist seit Kernel 4.19 im Kernel-Quellbaum enthalten, sodass DGX OS Kernel 6.17+ Plug-and-Play unterstützt und die Verbindung innerhalb von zehn Minuten hergestellt ist.
+{{< /tldr >}}
 
 Auspacken, Strom anschließen, der OOBE-Bildschirm (Ersteinrichtung) erscheint — alles läuft reibungslos. Sie wählen Ihr WLAN-Netzwerk, geben das Passwort ein, der Bildschirm dreht sich dreißig Sekunden lang...
 
@@ -285,6 +303,8 @@ A: Absolut. Der MT7612U-Treiber ist Teil des mainline Linux Kernels — Ubuntu, 
 
 ---
 
+{{< faq >}}
+
 ## Zusammenfassung: Egal welchen GB10 Sie haben, in 10 Minuten online
 
 Ob Sie einen NVIDIA DGX Spark, ASUS ASCENT GX10, MSI EdgeXpert, HP ZGX Nano, ALTOS BrainSphere GB10 F1 oder GIGABYTE AI TOP ATOM gekauft haben — diese GB10 AI Edge Server sind phänomenale KI-Entwicklungsmaschinen: 128 GB Unified Memory, 20-Core ARM CPU, ConnectX-7 200GbE-Netzwerk. Aber sie alle teilen denselben MediaTek MT7925 WLAN-Chip und können alle am selben ersten Schritt scheitern.
@@ -313,3 +333,11 @@ Zehn Minuten, ein USB-Adapter, und Ihr KI-Server ist wirklich online.
 ---
 
 *Quellen: NVIDIA DGX Spark Release Notes, NVIDIA Developer Foren, morrownr/USB-WiFi GitHub, ALFA Network Docs, Linux Kernel Wireless Documentation*
+
+## Referenzen
+
+1. [NVIDIA DGX Spark Offizielle Dokumentation](https://developer.nvidia.com/dgx-spark)
+2. [NVIDIA Developer Forums](https://forums.developer.nvidia.com/)
+3. [morrownr/USB-WiFi GitHub-Projekt](https://github.com/morrownr/USB-WiFi)
+4. [Linux Kernel Wireless Documentation](https://wireless.wiki.kernel.org/)
+5. [ALFA Network Offizielle Website](https://www.alfa.com.tw/)

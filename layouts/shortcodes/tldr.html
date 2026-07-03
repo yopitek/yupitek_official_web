@@ -1,0 +1,6 @@
+{{/* TL;DR shortcode: renders a visible summary block optimized for AI engine extraction */}}
+{{/* Usage: {{< tldr >}}40-60 字摘要含關鍵數據{{< /tldr >}} */}}
+{{/* AI engines (Perplexity, Google AIO) heavily favor extracting TL;DR blocks */}}
+<div class="tldr">
+  <strong>TL;DR：</strong> {{ .Inner | markdownify }}
+</div>

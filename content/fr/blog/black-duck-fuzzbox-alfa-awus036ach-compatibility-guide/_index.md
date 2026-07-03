@@ -7,7 +7,24 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
 featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "À quoi sert Black Duck FuzzBox ?"
+    answer: "Black Duck FuzzBox est un environnement dédié de fuzzing de protocoles sans fil, validant la robustesse de la pile de protocoles des équipements sans fil embarqués et des points d'accès en injectant des trames 802.11 anormales."
+  - question: "Pourquoi les cartes Wi-Fi 6/6E ne fonctionnent-elles pas avec FuzzBox ?"
+    answer: "Le moteur d'injection de FuzzBox est optimisé pour le pilote Realtek rtl88xxau. Les chipsets MediaTek et les plus récents Realtek Wi-Fi 6 n'utilisent pas cette branche et sont ignorés par le wizard."
+  - question: "Pourquoi l'ALFA AWUS036ACH est-il la carte de choix pour FuzzBox ?"
+    answer: "L'AWUS036ACH utilise le chipset RTL8812AU, doté d'un pilote d'injection optimisé par la communauté, permettant la transmission de trames brutes sans perte en contournant la pile réseau de l'OS."
+  - question: "Sur quelle distribution Linux FuzzBox OS est-il basé ?"
+    answer: "FuzzBox OS est basé sur Debian 12 Bookworm, exécutant le noyau LTS 6.1.x, avec le pilote d'injection rtl88xxau et les outils réseau comme airmon-ng préinstallés."
+  - question: "Comment vérifier que l'AWUS036ACH est passé en mode moniteur ?"
+    answer: "Exécutez iwconfig wlan0. La sortie doit afficher Mode:Monitor avec la fréquence actuelle, confirmant que le wizard FuzzBox a correctement basculé l'interface."
 ---
+
+{{< tldr >}}
+L'ALFA AWUS036ACH est le seul choix pour le fuzzing de protocoles Black Duck FuzzBox. Le pilote RTL8812AU supporte l'injection de paquets bruts et le mode moniteur. Les cartes Wi-Fi 6/6E sont incompatibles en raison de pilotes incompatibles.
+{{< /tldr >}}
 
 Le fuzzing de protocoles WLAN — souvent appelé test négatif sans fil — est l'une des étapes les plus critiques pour valider la sécurité et la robustesse des appareils sans fil embarqués, des appareils électroménagers intelligents et des points d'accès d'entreprise. Cependant, tenter de transmettre des trames de gestion, de contrôle ou de données 802.11 malformées par liaison radio nécessite un contrôle de bas niveau de la couche de contrôle d'accès au support (MAC) que les systèmes d'exploitation standard et les pilotes Wi-Fi commerciaux ne permettent tout simplement pas.
 
@@ -204,6 +221,8 @@ Lorsque vous lancez la suite de tests WLAN Defensics (telle que la suite de test
 
 ---
 
+{{< faq >}}
+
 ## 8. Recommandations
 
 ### 8.1 Matrice de recommandations matérielles
@@ -219,3 +238,12 @@ Yupitek est un distributeur agréé des produits ALFA Network, offrant un suppor
 *   Ou envoyez-nous un e-mail directement à **sales@yupitek.com**
 
 Notre équipe d'ingénieurs vous aidera à acquérir les configurations matérielles sans fil exactes nécessaires pour prendre en charge vos flux de travail de fuzzing de protocoles Black Duck FuzzBox.
+
+---
+
+## Références
+1. [Synopsys Defensics — Page produit officielle FuzzBox](https://www.synopsys.com/software-integrity/security-testing/fuzzing/defensics.html)
+2. [morrownr/8812au-20210629 — Dépôt GitHub du pilote RTL8812AU Linux](https://github.com/morrownr/8812au-20210629)
+3. [aircrack-ng — Suite d'outils de sécurité sans fil](https://www.aircrack-ng.org/)
+4. [Site officiel ALFA Network](https://www.alfa.com.tw/)
+5. [Linux Wireless — Documentation mac80211](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)

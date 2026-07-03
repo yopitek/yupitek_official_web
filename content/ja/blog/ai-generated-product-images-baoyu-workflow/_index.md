@@ -1,4 +1,5 @@
 ---
+
 title: "AI生成プロダクト画像：baoyu-skillsを使った完全スタイルリファレンス"
 description: "GitHub Copilot CLIのbaoyu-skillsプラグインを使って、ブログカバー、インフォグラフィック、Instagramカード、漫画、プロダクトレンダリングを生成する方法——ALFA AWUS036ACMを実例として使用。B2Bマーケティング画像生成のための実用的なスタイルリファレンス。"
 date: 2026-04-02
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["baoyu-skills", "AI-image-generation", "マーケティング", "ALFA-Network", "GitHub-Copilot"]
 featureimage: "/images/blog/baoyu-skills/cover-image-4.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "baoyu-skillsとは何ですか？"
+    answer: "baoyu-skillsはGitHub Copilot CLIのオープンソースプラグインコレクションで、画像生成、HTML出力、翻訳、SNS投稿をカバーする19のスキルを提供し、すべてターミナルから直接呼び出せます。"
+  - question: "ブログのカバー画像生成に適したbaoyu-skillsはどれですか？"
+    answer: "baoyu-cover-imageが記事カバー用に設計されており、シネマワイド2.35:1、ワイドスクリーン16:9、スクエア1:1の3種類の比率に対応し、多彩なカラーとレンダリングスタイルを組み合わせられます。"
+  - question: "GitHub Copilot CLIでbaoyu-skillsをどう使いますか？"
+    answer: "プラグインコレクションをインストール後、ターミナルで /baoyu-cover-image や /baoyu-xhs-images などのコマンドを入力すると、スキルがスタイル、サイズ、内容に関する確認質問を案内した上で画像を生成します。"
+  - question: "baoyu-skillsはどのような画像出力タイプに対応していますか？"
+    answer: "Type A画像出力はカバー画像、インフォグラフィック、コミック、スライド、プロダクトレンダリング、小紅書の縦型カードをカバーします。Type Bはスタイル化HTMLを生成し、Type Cは翻訳とSNS投稿を処理します。"
+  - question: "baoyu-skillsを自社製品にどう活用しますか？"
+    answer: "本記事からブランドのトーンに合うバリアントを見つけ、プロンプトをコピーして製品名と主要スペックを対象製品に置き換え、Copilot CLIで対応スキルを実行するだけです。"
 ---
 
 Yopitekでは、技術系ハードウェア製品——WiFiアダプター、セキュリティリサーチツール、SDRモジュール——を販売しており、8言語に対応した一貫性の高いマーケティングビジュアルの制作は常に課題となっていました。本記事では、GitHub Copilot CLIの **baoyu-skills** プラグインコレクションを活用して、さまざまなフォーマットとスタイルでプロダクト画像を生成する方法をご紹介します。
 
+
+{{< tldr >}}
+baoyu-skillsは画像、HTML、テキスト出力をカバーする19のスキルを提供します。本記事はALFA AWUS036ACMを例に、6つの主要画像スキルのスタイルバリアント、プロンプト、適用シーンを提示し、マーケティング画像生成のリファレンステーブルとして活用できます。
+{{< /tldr >}}
 本ガイドでは、**ALFA AWUS036ACM** USB WiFiアダプターをサンプル製品として使用します。ここに掲載されているすべてのプロンプトと画像は、このアダプターの説明から生成されたものです。目的は実用的なスタイルリファレンスの作成です。将来、プロダクトカバー画像、Instagramカード、または技術的なインフォグラフィックが必要になった際に、どのスキルとスタイルを使用すべきかをすぐに参照できます。
 
 {{< alert "circle-info" >}}
@@ -485,6 +503,11 @@ for each component
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## baoyu-skillsについて
 
 baoyu-skillsプラグインコレクションの全容はGitHubでご覧いただけます：
@@ -496,3 +519,13 @@ baoyu-skillsプラグインコレクションの全容はGitHubでご覧いた�
 本ガイド全体を通じてサンプルとして使用したAWUS036ACMについて、詳しく知りたい方はこちら：
 
 {{< button href="/ja/products/alfa/awus036acm/" >}}AWUS036ACM製品ページを見る{{< /button >}}
+
+---
+
+## 参考文献
+
+1. [baoyu-skills GitHubリポジトリ](https://github.com/JimLiu/baoyu-skills.git)
+2. [GitHub Copilot CLI公式ドキュメント](https://docs.github.com/en/copilot/github-copilot-in-the-cli)
+3. [ALFA Network AWUS036ACM製品仕様](https://www.alfa.com.tw/)
+4. [MediaTek MT7612Uチップセット情報](https://www.mediatek.com/products/networking-and-connectivity)
+5. [OpenAI画像生成APIドキュメント](https://platform.openai.com/docs/guides/images)

@@ -1,15 +1,35 @@
 ---
+
+
+
 title: "ALFA 无线网卡搭配 Kali NetHunter 完整技术指南 2026"
 description: "ALFA USB 无线网卡搭配 Kali NetHunter 移动渗透测试完整技术参考。涵盖台湾上市手机兼容性、MT7610U/MT7612U 免驱动 vs RTL8812AU DKMS 驱动分析、OTG 设置指南及实测验证结果。"
 date: 2026-06-09
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
+faq:
+  - question: "ALFA 无线网卡搭配 Kali NetHunter 需要哪些手机条件？"
+    answer: "需要支持 OTG 的 Android 手机、已 root 并刷入 Kali NetHunter 核心。已验证兼容的机型包括 Google Pixel 系列、OnePlus 较旧旗舰机型。具体兼容性取决于内核版本与网卡芯片驱动位置。"
+  - question: "MT7610U/MT7612U 和 RTL8812AU 驱动有什么差别？"
+    answer: "MT7610U/MT7612U 驱动位于核心树内，插上即用不需编译；RTL8812AU 需通过 DKMS 外部驱动编译安装，内核更新后可能需要重新编译。对于安全现场使用，核心树内驱动稳定性更高。"
+  - question: "ALFA 网卡在 NetHunter 上支持 Monitor Mode 吗？"
+    answer: "是的，MT7610U/MT7612U 支持 Monitor Mode 与数据包注入。RTL8812AU 在核心 < 6.12 时也支持，但核心 6.12 以上 Monitor Mode 受限。建议安全研究优先选用 MT7610U/MT7612U 网卡。"
 ---
 
+
+
+
 如果你已经按照基础的 OTG 说明完成了 ALFA 网卡与 NetHunter 的初始设置，想要快速入门版本，我们的 [OTG 设置指南](/zh-cn/blog/alfa-adapter-nethunter-android-otg/) 涵盖了基础知识。本文则更加深入——这是一份面向安全从业人员的完整技术参考，适合需要在采购硬件前评估手机与网卡兼容性、了解哪种驱动方式能够在内核更新后持续工作，以及在决定具体组合之前查看实测验证结果的读者。
+
+{{< tldr >}}
+MT7610U/MT7612U 核心原生驱动即插即用，RTL8812AU 需 DKMS 编译。NetHunter 手机需 root + OTG 支持，优先选 MT7612U 网卡避免驱动问题。
+{{< /tldr >}}
+
 
 我们聚焦于一个大多数 NetHunter 指南都跳过的问题：**哪款网卡是真正的即插即用，哪款会在最不合适的时刻把你拖进驱动编译的无底洞？** 答案取决于芯片组、手机的内核版本，以及驱动是内置于内核树中还是存在于外部 DKMS 仓库。如果选错了，你的网卡只能躺在包里，而你只能在现场盯着 `modprobe` 报错。选对了，插入即用，立刻开始扫描。
 
@@ -473,6 +493,9 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
+
+{{< faq >}}
+
 ## 相关指南
 
 - [ALFA 网卡与 NetHunter 基础 OTG 设置](/zh-cn/blog/alfa-adapter-nethunter-android-otg/)
@@ -484,3 +507,11 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 *本文档由 **Yupitek Ltd**（ALFA Network 台湾授权经销商）编写。*  
 *数据截止日期：2026-06-09。Linux 内核及 NetHunter 版本持续更新，请以官方最新资料为准。*
+
+## 参考文献
+
+1. [Kali NetHunter 官方文档](https://www.kali.org/docs/nethunter/)
+2. [Linux Kernel mt76 驱动原始码](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76)
+3. [aircrack-ng RTL8812AU 驱动](https://github.com/aircrack-ng/rtl8812au)
+4. [ALFA Network 官方网站](https://alfa.com.tw/)
+5. [Android USB OTG 官方文档](https://developer.android.com/guide/topics/connectivity/usb)

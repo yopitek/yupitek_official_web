@@ -2,14 +2,32 @@
 title: "ALFA Адаптер USB Passthrough: Руководство по настройке VirtualBox и VMware"
 description: "Пошаговое руководство по настройке USB passthrough адаптера ALFA WiFi в VirtualBox и VMware Workstation для Kali Linux. Охватывает AWUS036ACH, AWUS036AXML, фильтр USB 3.0, Extension Pack и устранение неполадок."
 date: 2026-03-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
+
+faq:
+  - question: "Нужен ли Extension Pack для VirtualBox при использовании ALFA-адаптера?"
+    answer: "Да, Extension Pack обязателен для поддержки USB 2.0/3.0. Без него доступен только USB 1.1, чего недостаточно для ALFA-адаптеров."
+  - question: "Как настроить USB-паспорт в VMware Workstation?"
+    answer: "В настройках VM добавьте USB-контроллер, включите USB 3.0, затем в меню VM > Removable Devices выберите ALFA-адаптер и нажмите Connect. Убедитесь, что служба vmware-usbarbitrator запущена."
+  - question: "Почему адаптер не определяется в VirtualBox даже после настройки USB?"
+    answer: "Проверьте: 1) установлен ли Extension Pack, 2) включён ли USB 3.0 контроллер, 3) не занят ли адаптер хост-системой, 4) добавлен ли USB-фильтр для устройства."
+  - question: "Нужно ли устанавливать драйвер ALFA внутри VM?"
+    answer: "Да, после USB-паспорта драйвер устанавливается внутри VM. Для AWUS036ACH — rtl8812au через DKMS, для AWUS036ACM — только firmware-misc-nonfree, драйвер уже в ядре."
+  - question: "Поддерживает ли VirtualBox ARM64 (Apple Silicon)?"
+    answer: "VirtualBox не поддерживает ARM64. На Apple Silicon используйте VMware Fusion или Parallels с ARM64-образом Kali Linux."
 ---
 
 Запустить адаптер ALFA WiFi внутри виртуальной машины не так просто, как подключить его и ждать, пока гостевая ОС обнаружит устройство. В отличие от общих папок или сетевого моста, режим мониторинга и инъекция пакетов требуют **полного управления USB** — ВМ должна эксклюзивно владеть USB-устройством, а не совместно использовать его через сетевой стек хоста. Это называется USB passthrough, и правильная настройка — самая распространённая причина сбоев для пентестеров и игроков CTF, работающих в ВМ.
+
+{{< tldr >}}
+Для использования ALFA-адаптера в VirtualBox или VMware требуется настройка USB-паспорта. VirtualBox требует Extension Pack и USB 3.0-контроллер; VMware имеет встроенную поддержку USB, но нужно убедиться, что служба арбитра запущена.
+{{< /tldr >}}
 
 Это руководство охватывает полную настройку passthrough для **VirtualBox 7.x** и **VMware Workstation 17+ / VMware Fusion 13+** с Kali Linux в качестве гостевой ОС. Рассматриваются как AWUS036ACH (чипсет RTL8812AU), так и более новый AWUS036AXML (чипсет MT7921AUN), с заметками для каждого адаптера там, где поведение различается.
 
@@ -297,8 +315,19 @@ echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend
 
 ---
 
+{{< faq >}}
+
 ## Следующие шаги
 
 - **Установить или обновить драйвер:** [Руководство по установке драйвера ALFA для Kali и Ubuntu](/ru/blog/install-alfa-driver-kali-ubuntu/)
 - **Полная настройка AWUS036ACH:** [Руководство по настройке AWUS036ACH для Kali Linux](/ru/blog/awus036ach-kali-linux-setup/)
 - **Обзор оборудования AWUS036AXML:** [Обзор AWUS036AXML WiFi 6E](/ru/blog/awus036axml-wifi-6e-review/)
+
+
+## Источники
+
+1. [Страница загрузки VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+2. [Страница продукта VMware Workstation](https://www.vmware.com/products/workstation-pro.html)
+3. [Проект драйвера aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+4. [Документация USB-WiFi morrownr](https://github.com/morrownr/USB-WiFi)
+5. [Документация Linux Wireless mt76](https://wireless.wiki.kernel.org/en/users/drivers/mt76)

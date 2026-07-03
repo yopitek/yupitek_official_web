@@ -9,11 +9,31 @@ slug: "flipper-alfa-compatibility"
 tags: ["flipper-zero", "flipper-one", "alfa-network", "wifi-adapter", "monitor-mode", "packet-injection", "kali-linux", "pentesting", "AWUS036AXML", "wireless-security"]
 categories: ["Technical"]
 featureimage: "/images/blog/flipper-alfa-compatibility.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "هل يمكن لـ Flipper Zero توصيل محول USB WiFi من ALFA؟"
+    answer: "لا. المتحكم الدقيق STM32WB55 في Flipper Zero يدعم وضع USB device فقط، وعتادياً لا يمكن أن يعمل كـ USB host لتشغيل محول خارجي."
+  - question: "ما موديلات ALFA التي يدعمها Flipper One؟"
+    answer: "اختبر المؤسس AWUS036AXML كخيار أول و AWUS036ACM كأفضل قيمة. تعريفات كليهما مدمجة في نواة Linux الرئيسية."
+  - question: "لماذا AWUS036AXML هو المحول الأول لـ Flipper One؟"
+    answer: "يستخدم AWUS036AXML شريحة MT7921AUN، تعريف mt7921u مدمج في النواة منذ 5.18، يدعم ثلاثي النطاق 2.4/5/6 GHz كاملاً ووضع المراقبة."
+  - question: "متى يصدر Flipper One رسمياً؟"
+    answer: "Flipper One في مرحلة المعاينة للمطورين حالياً. موعد الإطلاق الرسمي والأسعار سيُعلن عبر التمويل الجماعي، تابع flipper.net للتفاصيل."
+  - question: "هل يمكن لـ WiFi Dev Board في Flipper Zero أن يحل محل محول ALFA؟"
+    answer: "لا. WiFi Dev Board يدعم فقط 2.4 GHz الأساسية، بدون USB host، المدى وموثوقية الحقن أقل بكثير من محول ALFA المخصص."
 ---
-
 {{< alert "triangle-exclamation" >}}
 **تنويه قانوني:** يجب إجراء وضع المراقبة وإدخال الحزم فقط على الشبكات التي تمتلكها أو لديك إذن كتابي صريح باختبارها. يعد الاعتراض غير المصرح به للاتصالات اللاسلكية غير قانوني في معظم الدول. جميع التقنيات الموضحة في هذا الدليل مُقصدة فقط لـ **اختبار الاختراق المصرح به، وأبحاث الأمان على معداته الخاصة، والأغراض التعليمية**.
 {{< /alert >}}
+
+{{< tldr >}}
+STM32WB55 في Flipper Zero يدعم وضع USB device فقط ولا يمكنه تشغيل أي محول ALFA. Flipper One يأتي بـ RK3576 و Debian Linux كامل، يدعم AWUS036AXML لمراقبة وحقن ثلاثي النطاق.
+{{< /tldr >}}
+
+إذا كنت تمتلك جهاز Flipper Zero — أو تفكر في شراءه — ولقد سمعت عن ملحقات WiFi عبر USB الأسطورية من ALFA Network لاختبار الأمان اللاسلكي، فربما تساءلت: **"بإمكانيي توصيل ملحق ALFA بجهاز Flipper Zero والبدء التقاط مصافحة WPA2؟"**
+
+
 
 ## مقدمة: السؤال الذي يطرحه كل مختبر اختراق
 
@@ -346,6 +366,8 @@ sudo systemctl restart NetworkManager
 
 ---
 
+{{< faq >}}
+
 ## الخاتمة: الأداة الصحيحة للعمل الصحيح
 
 إذا كنت تحاول استخدام ملحقات WiFi من ALFA لأغراض اختبار الأمان اللاسلكي، فإن **Flipper Zero هو المنصة الخاطئة** — وليس بسبب قصوره. صُمم لغرض مختلف: اختبار الوصول غير المتصل (NFC و RFID و Sub-GHz والأشعة تحت الحمراء). يُجيد هذه المهام، لكن قدرة مضيف USB لم تكن جزءاً من تصميمه.
@@ -380,3 +402,11 @@ sudo systemctl restart NetworkManager
 ---
 
 *للأسئلة المتعلقة بالبيع المسبق حول توافق Flipper One وملحقات ALFA، تواصل مع دعم Yupitek على support@yupitek.com أو اتصل على +886-2-87325338.*
+
+## المراجع
+
+1. [مدونة Flipper One الرسمية — إعلان منتج Pavel Zhovner](https://blog.flipper.net/flipper-one-we-need-your-help/)
+2. [بوابة مطوري Flipper One — المواصفات الفنية والوثائق](https://docs.flipper.net/one)
+3. [موقع Flipper Zero الرسمي](https://flipperzero.one/)
+4. [aircrack-ng — موقع مجموعة أدوات الأمن اللاسلكي الرسمي](https://www.aircrack-ng.org/)
+5. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)

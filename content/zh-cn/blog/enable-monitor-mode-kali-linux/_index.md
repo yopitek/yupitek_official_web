@@ -1,17 +1,42 @@
 ---
+
+
+
 title: "Kali Linux 2026 启用监听模式完整教程：WiFi 网卡配置指南"
 description: "手把手教你在 Kali Linux 2024/2025 使用 airmon-ng 或 iw 命令启用监听模式，涵盖兼容 ALFA 网卡、故障排除，以及用 airodump-ng 验证。"
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["监听模式", "Kali-Linux", "airmon-ng", "iw", "WiFi网卡", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
+faq:
+  - question: "监听模式与受管理模式有何不同？"
+    answer: "监听模式让网卡捕获空中所有 802.11 讯框，不受管理模式只接收目标 MAC 符合自身数据包的限制，是无线渗透测试的基础。"
+  - question: "airmon-ng 与 iw 指令启用监听模式有何差异？"
+    answer: "airmon-ng 会自动处理干扰进程并建立 wlan0mon 虚拟接口；iw 则直接修改现有接口，不另建接口，适合需要精简控制时使用。"
+  - question: "启用监听模式后接口自动切回受管理模式怎么办？"
+    answer: "wpa_supplicant 或 NetworkManager 在背景重新启动所致。执行 airmon-ng check kill 终止这些进程即可解决。"
+  - question: "哪些 ALFA 网卡在 Kali Linux 上完整支持监听模式？"
+    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）三款均完整支持，其中 ACM 为即插即用。"
+  - question: "airodump-ng 显示 Fixed channel wlan0mon: -1 错误如何解决？"
+    answer: "表示 airodump-ng 无法切换信道。执行 iwconfig wlan0mon channel 1 指定信道，并终止残留的 wpa_supplicant 程序。"
 ---
+监听模式是无线网卡的一种特殊工作模式，能让网卡捕获空中传输的**所有** 802.11 帧——而不仅仅是发给本机的数据包。在通常的"管理模式"下，网卡只接收目标 MAC 地址与本机匹配的数据包，其余一律丢弃。监听模式则彻底取消了这道过滤。
 
 ## 什么是监听模式，它对渗透测试有何意义
 
-监听模式是无线网卡的一种特殊工作模式，能让网卡捕获空中传输的**所有** 802.11 帧——而不仅仅是发给本机的数据包。在通常的"管理模式"下，网卡只接收目标 MAC 地址与本机匹配的数据包，其余一律丢弃。监听模式则彻底取消了这道过滤。
+{{< tldr >}}
+监听模式解除网卡只接收自身数据包的限制，是无线渗透测试的根基。使用 airmon-ng 或 iw 指令搭配 ALFA 网卡即可在 Kali Linux 上稳定启用。
+{{< /tldr >}}
+
+
+监听模式让无线网卡截取空中所有 802.11 讯框，是 airodump-ng、Wireshark、Kismet 等工具运作的基础。Kali Linux 上可通过 airmon-ng 或 iw 指令启用。
+
+
+
 
 对无线渗透测试人员来说，监听模式是一切工作的基础。没有它，**airodump-ng**、**Wireshark**（无线抓包模式）或 **Kismet** 等工具就无法被动截获网络流量。监听模式具体支持以下场景：
 
@@ -264,8 +289,18 @@ sudo systemctl start NetworkManager
 
 ---
 
+
+{{< faq >}}
+
 ## 总结
 
 在 Kali Linux 上启用监听模式分两步走：先停止干扰服务，再使用 `airmon-ng` 或 `iw` 切换网络接口模式。成功的关键在于使用具备受支持芯片组的无线网卡。搭载 RTL8812AU、MT7921AUN、MT7612U 芯片组的 ALFA Network 无线网卡，在 Kali Linux 上的开箱即用体验最为可靠。
 
 浏览 [Yopitek 提供的完整 ALFA Network 无线网卡产品线](/zh-cn/products/alfa/)——台湾 ALFA Network 授权经销商——找到最适合你无线安全研究的网卡。
+
+## 参考文献
+
+1. [aircrack-ng 官方文档](https://www.aircrack-ng.org/documentation.html)
+2. [Kali Linux 官方文档](https://www.kali.org/docs/)
+3. [Linux Wireless mac80211 子系统](https://wireless.wiki.kernel.org/en/developers/Documentation/mac80211)
+4. [iw 指令使用说明](https://wireless.wiki.kernel.org/en/users/Documentation/iw)

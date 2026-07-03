@@ -7,7 +7,24 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Les adaptateurs ALFA peuvent-ils utiliser le mode moniteur nativement sur macOS ?"
+    answer: "Non. L'architecture CoreWLAN et IO80211Family de macOS ne prend pas en charge le mode moniteur ou l'injection de paquets pour les cartes réseau tierces. Vous devez exécuter Kali Linux dans une VM avec USB passthrough."
+  - question: "Pour un Mac Apple Silicon, faut-il choisir VMware Fusion ou Parallels ?"
+    answer: "Les deux fonctionnent, mais Parallels Desktop 19+ offre généralement de meilleures performances ARM64 VM et une stabilité USB passthrough supérieure."
+  - question: "L'AWUS036AXML nécessite-t-il une compilation de pilote sur une VM Kali Apple Silicon ?"
+    answer: "Non. Le pilote MT7921AUN est intégré au noyau depuis Linux 5.18. Kali ARM64 2024.x+ le reconnaît automatiquement à l'insertion."
+  - question: "Un Mac Intel peut-il utiliser l'ISO Kali x86_64 standard ?"
+    answer: "Oui. Les Mac Intel ont une architecture x86_64 et peuvent utiliser directement l'ISO Kali Linux x86_64 officiel."
+  - question: "VirtualBox est-il adapté aux tests de sécurité sur Apple Silicon ?"
+    answer: "Non recommandé. Le support VirtualBox pour Apple Silicon reste expérimental, avec des problèmes connus d'USB passthrough. Utilisez VMware Fusion ou Parallels."
 ---
+
+{{< tldr >}}
+macOS ne prend pas en charge le mode moniteur ni l'injection de paquets des adaptateurs ALFA. La solution est d'exécuter une VM Kali Linux dans VMware Fusion ou Parallels avec USB passthrough. Apple Silicon nécessite une image Kali ARM64.
+{{< /tldr >}}
 
 macOS est un système d'exploitation poli et de qualité professionnelle. Il n'est cependant pas une plateforme conçue pour la recherche en sécurité sans fil. Les deux fonctionnalités qui définissent la boîte à outils de tout pentesteur sérieux — le **mode moniteur** et l'**injection de paquets** — sont totalement absentes de la pile Wi-Fi de macOS. Les pilotes Wi-Fi d'Apple exposent une interface réseau propre et fonctionnelle, rien de plus.
 
@@ -257,8 +274,19 @@ Sur Apple Silicon spécifiquement, si l'adaptateur ALFA est reconnu mais que l'i
 
 ---
 
+{{< faq >}}
+
 ## Guides connexes
 
 Pour les hôtes Windows et Linux utilisant VirtualBox ou VMware Workstation, consultez le guide compagnon : [ALFA Adapter USB Passthrough: Guide de configuration VirtualBox & VMware](/fr/blog/alfa-adapter-virtualbox-vmware-usb/).
 
 Pour des détails spécifiques sur l'AWUS036AXML recommandé tout au long de ce guide, y compris les tests de performance de la bande 6 GHz et les notes sur les versions de pilotes, consultez la revue complète : [Test de l'ALFA AWUS036AXML WiFi 6E](/fr/blog/awus036axml-wifi-6e-review/).
+
+---
+
+## Références
+1. [Site officiel ALFA Network](https://www.alfa.com.tw/)
+2. [Page de téléchargement officielle Kali Linux](https://www.kali.org/get-kali/)
+3. [Page produit VMware Fusion](https://www.vmware.com/products/fusion.html)
+4. [Site officiel Parallels Desktop](https://www.parallels.com/)
+5. [Projet pilote aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)

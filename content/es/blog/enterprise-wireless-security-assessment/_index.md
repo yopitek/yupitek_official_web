@@ -7,11 +7,28 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["enterprise", "wireless-security", "penetration-testing", "rogue-AP", "WPA2", "WPA3", "PMF", "ALFA-network"]
 featureimage: "/images/blog/enterprise-wireless-security-assessment.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "¿Qué fases incluye la evaluación de seguridad inalámbrica empresarial?"
+    answer: "Una evaluación completa abarca seis fases secuenciales: reconocimiento pasivo, detección de AP malicioso, análisis de handshake WPA2/WPA3, verificación de PMF, prueba de aislamiento de cliente y evaluación de EAP/RADIUS."
+  - question: "¿Qué autorizaciones se necesitan antes de una evaluación de seguridad inalámbrica?"
+    answer: "Debes obtener una autorización por escrito firmada por el CISO o el propietario del activo, que cubra explícitamente la ventana temporal de pruebas, las direcciones MAC de los equipos y las técnicas específicas autorizadas. El consentimiento verbal no es suficiente."
+  - question: "¿Cómo detectar AP maliciosos (Rogue AP)?"
+    answer: "Compara la lista de BSSID obtenida en el reconocimiento pasivo con la lista de AP autorizados. Cualquier BSSID que difunda el SSID de la empresa pero no esté en la lista es un candidato a AP malicioso."
+  - question: "¿Por qué es importante PMF (Protected Management Frames)?"
+    answer: "PMF previene ataques de desautenticación y desasociación, evitando que los atacantes interrumpan forzadamente las conexiones de los clientes para capturar handshakes o realizar denegación de servicio. Es obligatorio en WPA3."
+  - question: "¿Qué riesgos tiene el modo de transición WPA3?"
+    answer: "El modo de transición WPA3 acepta tanto autenticación SAE como PSK para mantener compatibilidad. Un atacante puede difundir tramas Beacon que solo soporten WPA2 para forzar la degradación del cliente, invalidando la confidencialidad hacia adelante."
 ---
 
 {{< alert "triangle-exclamation" >}}
 **Aviso Legal:** Todas las evaluaciones de seguridad inalámbrica deben realizarse únicamente en redes e infraestructuras para las cuales se haya recibido autorización expresa y por escrito. El monitoreo inalámbrico no autorizado, la inyección de paquetes o el despliegue de puntos de acceso no autorizados es ilegal en la mayoría de las jurisdicciones. Cada fase descrita en este framework asume la existencia de una carta de compromiso debidamente ejecutada, firmada por el propietario del activo, que cubre la ventana de prueba específica y el alcance autorizado. Solo para pruebas autorizadas.
 {{< /alert >}}
+
+{{< tldr >}}
+Este marco basado en tarjetas inalámbricas ALFA detalla la metodología de seis fases para la evaluación de seguridad inalámbrica empresarial: definición de alcance, detección de AP malicioso, auditoría WPA2/WPA3, pruebas de PMF, aislamiento de cliente y evaluación 802.1X, con plantilla de informe y definiciones de severidad.
+{{< /tldr >}}
 
 La evaluación de seguridad inalámbrica empresarial no se trata simplemente de responder "¿podemos descifrar la contraseña?". Una evaluación exhaustiva examina cada capa de su arquitectura inalámbrica: la solidez de los protocolos de autenticación, la integridad de la protección de tramas de administración, la precisión del inventario de puntos de acceso autorizados, la robustez del aislamiento de clientes en los segmentos de red para invitados y la resistencia de la infraestructura 802.1X ante ataques de RADIUS no autorizado.
 
@@ -297,8 +314,18 @@ Todos los hallazgos técnicos deben presentarse en una tabla estandarizada que m
 
 ---
 
+{{< faq >}}
+
 ## Recursos Relacionados
 
 - [Guía de Inyección de Paquetes: Probando su Adaptador WiFi con aireplay-ng](/es/blog/packet-injection-guide/)
 - [Pruebas de Seguridad WPA3 con Adaptadores ALFA (2026)](/es/blog/wpa3-security-testing-alfa-2026/)
 - [Habilitar el Modo Monitor en Kali Linux](/es/blog/enable-monitor-mode-kali-linux/)
+
+## Referencias
+
+1. [Documentación oficial de aircrack-ng](https://www.aircrack-ng.org/)
+2. [Especificación WPA3 de Wi-Fi Alliance](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [Estándar IEEE 802.11w de tramas de gestión protegidas](https://standards.ieee.org/ieee/802.11w/4454/)
+4. [Guía de seguridad inalámbrica NIST SP 800-153](https://csrc.nist.gov/publications/detail/sp/800-153/final)
+5. [Herramienta de detección inalámbrica Kismet](https://www.kismetwireless.net/)

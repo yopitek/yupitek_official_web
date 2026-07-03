@@ -1,4 +1,5 @@
 ---
+
 title: "DGX SparkのWi-Fiが繋がらない？ALFA USB無線アダプターで10分解決"
 description: "NVIDIA DGX Sparkの内蔵Wi-Fi問題を解決。ドライバ不要のUSB無線アダプターで10分で設定完了。ASUS ASCENT GX10、MSI EdgeXpert、HP ZGX Nano、ALTOS BrainSphere GB10 F1、GIGABYTE AI TOP ATOMにも対応。"
 date: 2026-05-20
@@ -7,10 +8,27 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "DGX SparkのWi-Fiがつながらないのはなぜですか？"
+    answer: "DGX Spark内蔵のMediaTek MT7925 Wi-Fi 7チップはOOBE段階のwpa_supplicantが過度に簡素化されており、特定ブランドのAP（特にUniFi）と非互換で、WPA2-Enterpriseはほぼ確実に接続できません。"
+  - question: "ALFA USBアダプターの解決策はすべてのGB10 AI Serverに適用されますか？"
+    answer: "適用されます。NVIDIA GB10 Grace Blackwell Superchipを搭載するすべてのAI Edge Server（ASUS、MSI、HP、ALTOS、GIGABYTE）は同じMT7925 Wi-Fiチップを使用し、ALFA AWUS036ACMの解決策がすべて共通です。"
+  - question: "AWUS036ACMはDGX Sparkでドライバーインストールが必要ですか？"
+    answer: "不要です。MT7612Uのmt76ドライバーはLinux Kernel 4.19以降カーネルメインラインに内蔵され、DGX OSのKernel 6.17+が自然に完全サポートし、USB挿入で自動的に読み込まれます。"
+  - question: "ALFA USBアダプターでWi-Fi問題を修復するのにどのくらいかかりますか？"
+    answer: "10分以内です。USB 3.0ポートに挿入後システムが自動的にドライバーを読み込み、nmcliコマンドでスキャンしてWiFiに接続するだけで完了し、ドライバーコンパイルや再起動は不要です。"
+  - question: "DGX Sparkで他のALFAアダプターを使えますか？"
+    answer: "AWUS036ACH（RTL8812AU）はドライバーの手動コンパイルが必要で、GB10のARM64プラットフォームでは成功を保証できません。AWUS036ACMは唯一コンパイル不要、プラグアンドプレイが確認されたソリューションです。"
 ---
 
 待ちに待った **NVIDIA DGX Spark**（コードネーム Project DIGITS）がついに届いた。
 
+
+{{< tldr >}}
+NVIDIA DGX SparkおよびすべてのGB10 AI Serverの内蔵MT7925 Wi-Fi 7チップには既知の接続不良があります。解決策はALFA AWUS036ACM USBアダプターを挿入することで、mt76ドライバーはKernel 4.19以降カーネルに内蔵、DGX OS Kernel 6.17+でプラグアンドプレイ、10分で接続完了します。
+{{< /tldr >}}
 開梱して電源を接続し、OOBE（初回セットアップ画面）が表示される——ここまでは順調だ。Wi-Fiネットワークを選択し、パスワードを入力、画面が30秒ほど回転して…
 
 **「このネットワークに接続できません。」**
@@ -285,6 +303,11 @@ A：もちろん。MT7612UドライバはLinux Kernelメインラインの一部
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## まとめ：どのGB10でも、10分でオンラインに
 
 NVIDIA DGX Spark、ASUS ASCENT GX10、MSI EdgeXpert、HP ZGX Nano、ALTOS BrainSphere GB10 F1、GIGABYTE AI TOP ATOM——どのGB10 AI Edge Serverを購入しても、これらは驚異的なAI開発マシンだ：128GBユニファイドメモリ、20コアARM CPU、ConnectX-7 200GbEネットワーク。しかし、すべてが同じMediaTek MT7925 Wi-Fiチップを共有しており、すべてが最初のステップでつまずく可能性がある。
@@ -313,3 +336,13 @@ ALFA AWUS036ACMの解決策は、ほとんど馬鹿げているほどシンプ�
 ---
 
 *参考資料：NVIDIA DGX Spark Release Notes、NVIDIA Developer Forums、morrownr/USB-WiFi GitHub、ALFA Network Docs、Linux Kernel Wireless Documentation*
+
+---
+
+## 参考文献
+
+1. [NVIDIA DGX Spark公式ドキュメント](https://developer.nvidia.com/dgx-spark)
+2. [NVIDIA Developer Forums](https://forums.developer.nvidia.com/)
+3. [morrownr/USB-WiFi GitHubプロジェクト](https://github.com/morrownr/USB-WiFi)
+4. [Linux Kernel Wireless Documentation](https://wireless.wiki.kernel.org/)
+5. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)

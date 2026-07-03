@@ -3,16 +3,32 @@ title: "اختبار أمان WPA3 باستخدام محولات ALFA (2026)"
 description: "دليل شامل لاختبار أمان WPA3 باستخدام محولات ALFA Network. يغطي تحليل مصافحة SAE، وثغرات Dragonblood، وهجمات تخفيض وضع الانتقال، وتطبيق PMF، واختبار WPA3-Enterprise EAP."
 date: 2026-03-24
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["WPA3", "SAE", "dragonblood", "transition-mode", "PMF", "kali-linux", "ALFA-network", "penetration-testing"]
 featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما الفرق بين WPA3 و WPA2 في اختبار الأمن؟"
+    answer: "يستخدم WPA3 مصافحة SAE بدلاً من PSK، يوفر سرية أمامية ولا يمكن مهاجمته بقاموس دون اتصال. PMF إلزامي، لكن وضع التحويل يُدخل سطح هجوم تخفيض."
+  - question: "هل يمكن كسر مصافحة SAE دون اتصال بعد التقاطها؟"
+    answer: "لا. شبكة SAE النقية لا تنتج قيمة قابلة للكسر. التقاط إطارات SAE للتحليل على مستوى البروتوكول فقط، لتأكيد النوع الصحيح والتفاوض على PMF."
+  - question: "ما هجوم تخفيض وضع تحويل WPA3؟"
+    answer: "نقطة الوصول في وضع التحويل تقبل SAE و PSK معاً. يُزوّر المهاجم نقطة وصول WPA2 نقية، إذا لم يُلزم العميل SAE يكتمل التخفيض وتُكسر المصافحة دون اتصال."
+  - question: "هل أحتاج محول 6 GHz لاختبار WPA3؟"
+    answer: "فقط لاختبار شبكات WPA3 على نطاق 6 GHz يحتاج AWUS036AXML. اختبار WPA3 على 2.4/5 GHz يستخدم AWUS036ACH."
+  - question: "هل ما زالت ثغرات Dragonblood تحتاج اختباراً؟"
+    answer: "برامج ثابت AP الحديثة رقّعت معظمها، لكن البيئات ببرامج ثابتة قديمة أو غير مُرقّعة ما زالت تحتاج اختبار CVE-2019-9494 لهجمات القناة الجانبية وفيضان SAE commit DoS."
 ---
-
 {{< alert "triangle-exclamation" >}}
 **تنبيه قانوني:** يجب إجراء جميع اختبارات أمان الشبكات اللاسلكية فقط على الشبكات والأجهزة التي حصلت فيها على تفويض صريح وموثق كتابيًا. تخضع تقنيات اختبار WPA3، بما فيها التقاط SAE وإلغاء المصادقة ونشر نقاط الوصول المارقة، للمتطلبات القانونية ذاتها المنطبقة على أي نشاط تقييم لاسلكي آخر. الاختبار المصرح به فقط.
 {{< /alert >}}
+
+{{< tldr >}}
+اختبار أمن WPA3 يشمل تحليل مصافحة SAE وهجوم تخفيض وضع التحويل وتقييم ثغرات Dragonblood وإلزام PMF. AWUS036AXML لاختبار 6 GHz، و AWUS036ACH لاختبار 2.4/5 GHz.
+{{< /tldr >}}
+
 
 يُمثِّل WPA3 تحسينًا جوهريًا على WPA2 في أمان الشبكات اللاسلكية الشخصية والمؤسسية على حدٍّ سواء. فبروتوكول المصادقة المتزامنة بين الأنداد (SAE) يحلّ محل مصافحة المفتاح المشترك مسبقًا (PSK) بتبادل مفاتيح مصادقة بكلمة مرور يُقاوم هجمات القاموس خارج الإنترنت. كما أن إطارات الإدارة المحمية (PMF) إلزامية، والسرية التامة للأمام مدمجة.
 
@@ -348,8 +364,18 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ---
 
+{{< faq >}}
+
 ## موارد ذات صلة
 
 - [تقييم أمان الشبكات اللاسلكية المؤسسية: إطار عمل شامل](/ar/blog/enterprise-wireless-security-assessment/)
 - [دليل حقن الحزم: اختبار محول WiFi باستخدام aireplay-ng](/ar/blog/packet-injection-guide/)
 - [تفعيل وضع المراقبة على Kali Linux](/ar/blog/enable-monitor-mode-kali-linux/)
+
+## المراجع
+
+1. [ورقة بحث Dragonblood الرسمية (Vanhoef & Ronen, 2019)](https://papers.mathyvanhoef.com/dragonblood.pdf)
+2. [شرح Wi-Fi Alliance لشهادة WPA3](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [وثائق aircrack-ng الرسمية](https://www.aircrack-ng.org/documentation.html)
+4. [وثائق أداة hcxdumptool](https://github.com/ZerBea/hcxdumptool)
+5. [معيار IEEE 802.11w PMF](https://standards.ieee.org/ieee/802.11/)

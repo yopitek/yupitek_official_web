@@ -7,9 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
 featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ما الغرض من Black Duck FuzzBox؟"
+    answer: "FuzzBox بيئة اختبار ضبابي لبروتوكولات لاسلكية مخصصة، تحقن إطارات 802.11 غير طبيعية لاختبار متانة مكدس البروتوكولات في الأجهزة اللاسلكية المدمجة ونقاط الوصول."
+  - question: "لماذا لا تعمل محولات Wi-Fi 6/6E على FuzzBox؟"
+    answer: "محرك الحقن في FuzzBox مُحسَّن لتعريف Realtek rtl88xxau. شرائح MediaTek و Realtek Wi-Fi 6 الأحدث لا تستخدم هذا الفرع ويتم تجاهلها من قبل المعالج."
+  - question: "لماذا AWUS036ACH هو المحول الأول لـ FuzzBox؟"
+    answer: "يستخدم AWUS036ACH شريحة RTL8812U بتعريف حقن مُحسَّن مجتمعياً، يمكنه تجاوز مكدس شبكة نظام التشغيل لتحقيق نقل إطارات خام بلا فقدان."
+  - question: "ما إصدار Linux الذي يستند إليه FuzzBox OS؟"
+    answer: "يعتمد FuzzBox OS على Debian 12 Bookworm، بنواة LTS 6.1.x، ويأتي محملاً مسبقاً بتعريف rtl88xxau للحقن وأدوات شبكة مثل airmon-ng."
+  - question: "كيف أتحقق من تحول AWUS036ACH إلى وضع المراقبة؟"
+    answer: "نفّذ iwconfig wlan0، يجب أن يُظهر المخرج Mode:Monitor مع تردد التشغيل الحالي، مؤكداً نجاح المعالج في تبديل وضع الواجهة."
 ---
-
 إن اختبار فحص ثغرات بروتوكول الشبكة اللاسلكية (WLAN protocol fuzzing) — والذي يشار إليه غالباً بالاختبار السلبي اللاسلكي (wireless negative testing) — هو أحد أهم الخطوات في التحقق من أمان ومتانة الأجهزة اللاسلكية المضمنة، والأجهزة المنزلية الذكية، ونقاط الوصول الخاصة بالمؤسسات. ومع ذلك، فإن محاولة إرسال إطارات إدارة أو تحكم أو بيانات 802.11 تالفة أو مشوهة (malformed) عبر الهواء تتطلب تحكماً منخفض المستوى في طبقة التحكم في الوصول إلى الوسائط (MAC) وهو ما لا تسمح به أنظمة التشغيل القياسية وبرامج تشغيل الواي فاي التجارية ببساطة.
+
+{{< tldr >}}
+ALFA AWUS036ACH هو المحول الوحيد الأول لاختبار البروتوكولات الضبابي Black Duck FuzzBox، تعريف RTL8812AU يدعم حقن الحزم الخام ووضع المراقبة. محولات Wi-Fi 6/6E لا تعمل بسبب عدم توافق التعريف.
+{{< /tldr >}}
+
 
 لحل هذه المشكلة، تستخدم الفرق الأمنية **Black Duck FuzzBox** (المعروف سابقاً باسم Synopsys Defensics FuzzBox)، وهي بيئة تشغيل برمجية وعتادية متخصصة. لإجراء الاختبارات، يجب إقران نظام التشغيل FuzzBox OS بمحول لاسلكي USB متوافق وعالي الأداء وقادر على العمل في وضع المراقبة (Monitor Mode) المستقر وحقن الحزم الخام (raw packet injection) الموثوق. 
 
@@ -204,6 +221,8 @@ lrwxrwxrwx 1 root root 23 Jun 04 13:30 phy0 -> /sys/class/net/wlan0
 
 ---
 
+{{< faq >}}
+
 ## 8. التوصيات
 
 ### 8.1 مصفوفة التوصيات الخاصة بالعتاد
@@ -219,3 +238,11 @@ Yupitek هي موزع معتمد لمنتجات ALFA Network، وتقدم الد
 *   أو راسلنا مباشرة عبر البريد الإلكتروني على **sales@yupitek.com**
 
 سيساعدك فريقنا الهندسي في الحصول على تكوينات الأجهزة اللاسلكية الدقيقة المطلوبة لدعم سير عمل فحص بروتوكول Black Duck FuzzBox.
+
+## المراجع
+
+1. [صفحة منتج Synopsys Defensics — FuzzBox الرسمية](https://www.synopsys.com/software-integrity/security-testing/fuzzing/defensics.html)
+2. [morrownr/8812au-20210629 — مستودع GitHub لتعريف RTL8812AU على Linux](https://github.com/morrownr/8812au-20210629)
+3. [aircrack-ng — موقع مجموعة أدوات الأمن اللاسلكي الرسمي](https://www.aircrack-ng.org/)
+4. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+5. [Linux Wireless — وثائق نظام mac80211 الفرعي](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)

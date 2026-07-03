@@ -7,7 +7,25 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["enterprise", "wireless-security", "penetration-testing", "rogue-AP", "WPA2", "WPA3", "PMF", "ALFA-network"]
 featureimage: "/images/blog/enterprise-wireless-security-assessment.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "O que inclui uma avaliação de segurança wireless empresarial?"
+    answer: "Uma avaliação completa abrange seis fases sequenciais: reconhecimento passivo, detecção de APs rogue, análise de handshake WPA2/WPA3, verificação de PMF, teste de isolamento de clientes e avaliação EAP/RADIUS."
+  - question: "Quais autorizações são necessárias antes de realizar avaliação de segurança wireless?"
+    answer: "E obrigatório obter autorização por escrita assinada pelo CISO ou proprietário do ativo, especificando claramente a janela de tempo de teste, endereços MAC dos equipamentos e técnicas especificas autorizadas. Consentimento verbal não é suficiente."
+  - question: "Como detectar APs rogue?"
+    answer: "Compare a lista de BSSIDs obtida no reconhecimento passivo com a lista de APs autorizados. Qualquer BSSID que transmite o SSID da empresa mas não está na lista é um candidato a AP rogue."
+  - question: "Por que o PMF (Protected Management Frames)  é importante?"
+    answer: "O PMF previne ataques de deautenticação e desassociação, impedindo que atacantes forcem a desconexão de clientes para capturar handshakes ou executar negação de serviço. No WPA3, o PMF  é obrigatório."
+  - question: "Quais os riscos do modo de transição WPA3?"
+    answer: "O modo de transição WPA3 aceita tanto SAE quanto PSK para manter compatibilidade. Atacantes podem transmitir beacons apenas WPA2 para forçar o downgrade do cliente, invalidando a forward secrecy."
 ---
+{{< tldr >}}
+Este framework, baseado em adaptadores wireless ALFA, detalha a metodologia de seis fases para avaliacao de seguranca wireless empresarial, cobrindo definicao de escopo, deteccao de AP rogue, auditoria WPA2/WPA3, teste de PMF, isolamento de clientes e avaliacao 802.1X, com template de relatorio e definicao de severidade.
+{{< /tldr >}}
+
 
 {{< alert "triangle-exclamation" >}}
 **Aviso Legal:** Todas as avaliações de segurança wireless devem ser realizadas exclusivamente em redes e infraestruturas para as quais você recebeu autorização explícita e por escrito. O monitoramento wireless não autorizado, a injeção de pacotes ou a implantação de AP falso é ilegal na maioria das jurisdições. Cada fase descrita neste framework pressupõe um contrato de engajamento devidamente formalizado, assinado pelo proprietário dos ativos, abrangendo a janela de testes específica e o escopo de atividades autorizadas. Apenas testes autorizados.
@@ -297,8 +315,18 @@ Todos os achados técnicos devem ser apresentados em uma tabela padronizada que 
 
 ---
 
+{{< faq >}}
+
 ## Recursos Relacionados
 
 - [Guia de Injeção de Pacotes: Testando seu Adaptador WiFi com aireplay-ng](/pt/blog/packet-injection-guide/)
 - [Testes de Segurança WPA3 com Adaptadores ALFA (2026)](/pt/blog/wpa3-security-testing-alfa-2026/)
 - [Ativar Modo Monitor no Kali Linux](/pt/blog/enable-monitor-mode-kali-linux/)
+
+## Referências
+
+1. [Documentacao oficial do aircrack-ng](https://www.aircrack-ng.org/)
+2. [Especificacao WPA3 da Wi-Fi Alliance](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [Padrao IEEE 802.11w de Protected Management Frames](https://standards.ieee.org/ieee/802.11w/4454/)
+4. [NIST SP 800-153 Guia de Seguranca Wireless](https://csrc.nist.gov/publications/detail/sp/800-153/final)
+5. [Ferramenta de deteccao wireless Kismet](https://www.kismetwireless.net/)

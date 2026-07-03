@@ -6,9 +6,35 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "Ad Hoc", "802.11s", "شبكة شبكية", "Linux", "لاسلكي"]
-dir: rtl
 featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "لماذا AWUS036ACM هو الخيار الوحيد من ALFA الذي يدعم IBSS/Mesh؟"
+    answer: "تعريفه mt76x2u مبني على Linux mac80211 ويفتح بالكامل أنواع واجهات IBSS وMesh Point. محولات ALFA الأخرى تستخدم تعريفات خارج النواة لا تتضمن هذه الأوضاع."
+  - question: "ما الفرق بين IBSS Ad Hoc و 802.11s Mesh؟"
+    answer: "IBSS شبكة ند للند بدون AP مركزي، يجب أن تكون جميع العقد في نطاق اتصال مباشر. 802.11s يتمتع بتوجيه HWMP متعدد القفز والشفاء الذاتي، ويمكن تمديده أبعد من قفزة واحدة."
+  - question: "هل أحتاج إلى تثبيت تعريف لـ AWUS036ACM على Raspberry Pi؟"
+    answer: "لا. تعريف mt76x2u مدمج في النواة الرئيسية منذ 4.19. Raspberry Pi OS منذ 2020 يعمل فور التوصيل دون أي خطوات تثبيت."
+  - question: "هل يدعم وضع IBSS تشفير WPA2؟"
+    answer: "وضع IBSS في نواة Linux لا يدعم WPA2-Personal القياسي. للحصول على اتصال آمن استخدم WireGuard أو OpenVPN كتشفير طبقة تطبيق. 802.11s يدعم SAE."
+  - question: "كيف أجعل شبكة Mesh تستمر بعد إعادة التشغيل؟"
+    answer: "الواجهات الافتراضية التي ينشئها iw لا تبقى بعد إعادة التشغيل. أنشئ خدمة systemd مثل mesh-point.service تعيد بناء الواجهة والانضمام لـ Mesh عند الإقلاع."
 ---
+{{< tldr >}}
+يستخدم AWUS036ACM شريحة MT7612U، وتعريفه mt76x2u المبني على mac80211 يدعم بالكامل أوضاع IBSS Ad Hoc و 802.11s Mesh Point. يشرح هذا المقال آلية العمل والإعداد خطوة بخطوة وسيناريوهات التطبيق العملية.
+{{< /tldr >}}
+
+1. [ما هي IBSS و 802.11s Mesh ولماذا تهمّك؟](#1-what-are-ibss-and-80211s-mesh)
+2. [المواصفات التقنية لـ ALFA AWUS036ACM](#2-alfa-awus036acm-hardware-specifications)
+3. [برنامج التشغيل MT7612U على Raspberry Pi](#3-the-mt7612u-driver-on-raspberry-pi)
+4. [الوضع الأول: شبكات IBSS Ad Hoc](#4-mode-1-ibss-ad-hoc-networking)
+5. [الوضع الثاني: شبكات 802.11s Mesh Point](#5-mode-2-80211s-mesh-point-networking)
+6. [حالات استخدام من الواقع العملي](#6-real-world-use-cases)
+7. [لماذا AWUS036ACM هو الخيار الوحيد من ALFA لهذا الغرض](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this)
+8. [الأسئلة الشائعة واستكشاف الأخطاء](#8-faq-and-troubleshooting)
+9. [أين تشتري](#9-where-to-buy)
+
 
 # ALFA AWUS036ACM: تفعيل شبكات IBSS Ad Hoc و 802.11s Mesh على Raspberry Pi مع MT7612U
 
@@ -841,6 +867,8 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ---
 
+{{< faq >}}
+
 ## ملخص
 
 | الميزة | AWUS036ACM |
@@ -861,3 +889,12 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 *مقال بقلم الفريق التقني في Yupitek · [yupitek.com](https://yupitek.com)*
 
 *المراجع: [التوثيق الرسمي لـ Alfa Network](https://docs.alfa.com.tw/Product/AWUS036ACM/) · [Linux Wireless Wiki — أنواع الواجهات](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) · [برنامج تشغيل MediaTek mt76 لـ Linux](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) · [قائمة morrownr للمحوّلات المدمجة في النواة](https://github.com/morrownr/USB-WiFi)*
+
+## المراجع
+
+1. [وثائق ALFA Network AWUS036ACM الرسمية](https://docs.alfa.com.tw/Product/AWUS036ACM/)
+2. [Linux Wireless Wiki — أنواع الواجهات VIF](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif)
+3. [تعريف MediaTek mt76 لـ Linux](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
+4. [معيار شبكات IEEE 802.11s Mesh](https://standards.ieee.org/ieee/802.11s/4469/)
+5. [قائمة morrownr للتعريفات المدمجة في النواة](https://github.com/morrownr/USB-WiFi)
+

@@ -1,4 +1,5 @@
 ---
+
 title: "WiFi 6E vs WiFi 5：ペネトレーションテストに最適な ALFA アダプターの選び方"
 description: "Kali Linux ペネトレーションテスト向けに ALFA AWUS036AXML（Wi-Fi 6E）と AWUS036ACH（Wi-Fi 5）を徹底比較。6 GHz 対応、ドライバーの成熟度、モニターモードを解説。"
 date: 2026-03-23
@@ -7,12 +8,31 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "ペネトレーションテスト", "Kali-Linux"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Wi-Fi 6EとWi-Fi 5はペネトレーションテストでどう違いますか？"
+    answer: "Wi-Fi 6Eは6 GHz帯域と1.2 GHzスペクトラムを追加し、現代のエンタープライズデプロイの監査に適しています。Wi-Fi 5はドライバーが成熟し、2.4/5 GHzで安定性が高いです。"
+  - question: "AWUS036ACHとAWUS036AXMLはどちらを選ぶべきですか？"
+    answer: "日常のペネトレーションテストにはAWUS036ACHを選び、ドライバーが成熟しコミュニティリソースが豊富です。6 GHz Wi-Fi 6E環境の監査にはAWUS036AXMLを選びます。条件が許せば両方を用意することをお勧めします。"
+  - question: "AWUS036AXMLのモニターモードはKali Linuxで安定していますか？"
+    answer: "カーネル6.1以上と最新のlinux-firmwareパッケージのインストールが必要です。パケットインジェクションは使用可能ですが、正式な外部委託テスト前に事前検証をお勧めします。特定のカーネルとファームウェアの組み合わせでは不安定な場合があります。"
+  - question: "2026年のペネトレーションテストに6 GHzアダプターは必要ですか？"
+    answer: "ほとんどのテストケースはまだ2.4/5 GHzが中心です。ただし目標環境にWi-Fi 6Eアクセスポイントがデプロイされている場合、6 GHzアダプターが戦略的必須となります。"
+  - question: "AWUS036ACHのRTL8812AUドライバーはどうインストールしますか？"
+    answer: "aircrack-ng GitHubからrtl8812auリポジトリをクローンし、make dkms_installを実行してインストールします。DKMSによりカーネル更新後もドライバーが自動リビルドされます。"
 ---
+
+Wi-Fi 6E は 6 GHz 帯を追加し、現代のエンタープライズデプロイの監査に適しています。AWUS036ACH（Wi-Fi 5）はドライバーが成熟し安定、AWUS036AXML（Wi-Fi 6E）はトリバンド対応、テスト環境の要件で選択してください。
 
 ## Wi-Fi 6E とは？新しい 6 GHz 帯を解説
 
 Wi-Fi 6E は Wi-Fi 6（IEEE 802.11ax）規格を拡張し、**6 GHz 周波数帯**——これまで未使用だった広大なスペクトラム——へのアクセスを追加したものです。Wi-Fi 5（802.11ac）が 2.4 GHz と 5 GHz のみで動作するのと異なり（標準的な Wi-Fi 6 も同様）、Wi-Fi 6E は 5.925 GHz から 7.125 GHz にわたる **1.2 GHz 分の追加スペクトラム**を開放します。
 
+
+{{< tldr >}}
+AWUS036ACHはドライバーが成熟し安定性が最も高く、日常のペネトレーションテスト首选です。AWUS036AXMLは6 GHz帯域をサポートし、Wi-Fi 6E環境の監査に適していますが、ドライバーは継続的に改善中です。
+{{< /tldr >}}
 実際のメリットとしては：
 
 - **6 GHz 帯に最大 7 チャンネルの 160 MHz 幅チャンネル**が追加（5 GHz 帯では 1〜2 チャンネルのみ）
@@ -140,6 +160,11 @@ sudo airmon-ng start wlan0
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 推奨
 
 **[AWUS036ACH](/ja/products/alfa/awus036ach/) を選ぶべき場合：**
@@ -157,3 +182,13 @@ sudo airmon-ng start wlan0
 - クライアント業務前にモニターモード・インジェクションのテストを許容できる
 
 **結論：** 2026 年の多くのプロフェッショナルペネトレーションテスターにとって、AWUS036ACH は信頼性の面で依然としてゴールドスタンダードです。AWUS036AXML は最先端のエンタープライズインフラをターゲットとするチーム、または将来を見据えたツールキットを構築したい方にとってスマートな選択です。理想的には、両方を携行することをお勧めします。
+
+---
+
+## 参考文献
+
+1. [aircrack-ng公式rtl8812auドライバー](https://github.com/aircrack-ng/rtl8812au)
+2. [MediaTek MT7921カーネルドライバー](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)
+3. [Wi-Fi Alliance Wi-Fi 6E認証説明](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)
+4. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
+5. [IEEE 802.11ax標準リソース](https://standards.ieee.org/ieee/802.11ax/)

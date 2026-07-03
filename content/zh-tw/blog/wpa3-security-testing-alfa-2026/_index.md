@@ -7,11 +7,30 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["WPA3", "SAE", "dragonblood", "transition-mode", "PMF", "kali-linux", "ALFA-network", "penetration-testing"]
 featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "WPA3 與 WPA2 在安全測試上有何不同？"
+    answer: "WPA3 採用 SAE 握手取代 PSK，具備前向保密且無法離線字典攻擊。PMF 為強制要求，但轉換模式引入了降級攻擊面。"
+  - question: "SAE 握手擷取後可以離線破解嗎？"
+    answer: "不行。純 SAE 網路不產生可破解的雜湊值。擷取 SAE 幀僅用於協定層級分析，確認正確變體與 PMF 協商。"
+  - question: "什麼是 WPA3 轉換模式降級攻擊？"
+    answer: "轉換模式 AP 同時接受 SAE 與 PSK。攻擊者偽造純 WPA2 流氓 AP，若用戶端未強制 SAE 即完成降級，握手可被離線破解。"
+  - question: "測試 WPA3 需要 6 GHz 網卡嗎？"
+    answer: "僅測試 6 GHz 頻段上的 WPA3 網路時需要 AWUS036AXML。2.4/5 GHz 上的 WPA3 測試使用 AWUS036ACH 即可。"
+  - question: "Dragonblood 漏洞還需要測試嗎？"
+    answer: "現代 AP 韌體多已修補，但使用舊版或未修補韌體的環境仍需測試 CVE-2019-9494 等側通道攻擊與 SAE commit 洪泛 DoS。"
 ---
 
 {{< alert "triangle-exclamation" >}}
 **法律聲明：** 所有無線安全測試僅可在您擁有明確書面授權的網路和設備上執行。WPA3 測試技術（包括 SAE 封包擷取、去認證攻擊及流氓 AP 部署）與其他無線評估活動受相同法律規範約束。請僅於授權環境下進行測試。
 {{< /alert >}}
+
+WPA3 以 SAE 握手取代 PSK，具備前向保密與強制 PMF。主要攻擊面為轉換模式降級、Dragonblood 漏洞與企業 EAP 憑證驗證，需 ALFA 網卡進行完整評估。
+
+{{< tldr >}}
+WPA3 安全測試涵蓋 SAE 握手分析、轉換模式降級攻擊、Dragonblood 漏洞評估與 PMF 強制執行。AWUS036AXML 用於 6 GHz 測試，AWUS036ACH 適用 2.4/5 GHz。
+{{< /tldr >}}
 
 WPA3 在個人與企業無線安全性方面，相較 WPA2 有顯著的改進。Simultaneous Authentication of Equals (SAE) 取代了 Pre-Shared Key (PSK) 握手，改採對離線字典攻擊具備抵抗能力的密碼驗證金鑰交換機制。Protected Management Frames (PMF) 為強制要求。前向保密已內建於協定之中。
 
@@ -347,8 +366,18 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ---
 
+{{< faq >}}
+
 ## 相關資源
 
 - [企業無線安全評估：完整框架](/zh-tw/blog/enterprise-wireless-security-assessment/)
 - [封包注入指南：使用 aireplay-ng 測試您的 WiFi 網卡](/zh-tw/blog/packet-injection-guide/)
 - [在 Kali Linux 上啟用監聽模式](/zh-tw/blog/enable-monitor-mode-kali-linux/)
+
+## 參考來源
+
+1. [Dragonblood 官方研究論文（Vanhoef & Ronen, 2019）](https://papers.mathyvanhoef.com/dragonblood.pdf)
+2. [Wi-Fi Alliance WPA3 認證說明](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [aircrack-ng 官方文件](https://www.aircrack-ng.org/documentation.html)
+4. [hcxdumptool 工具文件](https://github.com/ZerBea/hcxdumptool)
+5. [IEEE 802.11w PMF 標準](https://standards.ieee.org/ieee/802.11/)

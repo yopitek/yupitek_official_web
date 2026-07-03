@@ -2,14 +2,35 @@
 title: "ALFA-Antennen-Upgrade-Anleitung: APA-M04, APA-M25, APA-M25-6E, ARS-25-57A, ARS-NT5B7 im Vergleich"
 description: "Vollständiger Vergleich aller fünf externen ALFA-Antennen für USB-WLAN-Adapter und DJI-Drohnen-Controller — Spezifikationen, Anwendungsfälle und Kompatibilitätsleitfaden für Pentesting und Drohnenbetrieb."
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Antenne", "APA-M25", "ARS-NT5B7", "RP-SMA", "WLAN-Adapter", "ALFA-Network", "Signal-Boost"]
 featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
----
+faq:
+  - question: "Können Sie die Antennen der ALFA-Netzwerkkarten selbst austauschen?"
+    answer: "Ja. ALFA-Netzwerkkarten mit RP-SMA-Anschluss wie AWUS036ACH, AWUS036ACM und AWUS036AXML können werkzeuglos ausgetauscht werden, indem Sie die Antenne gegen den Uhrzeigersinn abschrauben und im Uhrzeigersinn wieder einschrauben."
+  - question: "Was ist ein RP-SMA-Anschluss?"
+    answer: "RP-SMA steht für Reverse-Polarity-SMA-Anschluss. Der Stecker (male connector) hat eine Buchse in der Mitte statt eines Stifts, was der Polarität eines Standard-SMA-Anschlusses entspricht, aber optisch ähnlich aussieht. Alle Antennenzubehörteile von ALFA verwenden diesen Standard."
+  - question: "Wie wählt man zwischen einer gerichteten und einer omnidirektionalen Antenne?"
+    answer: "Eine gerichtete Antenne eignet sich für punktuelle Audits mit bekannter Zielrichtung, während eine omnidirektionale Antenne für mobile Inspektionen oder Szenarien mit unbekannter Zielposition geeignet ist. Die Wahl hängt von der Nutzungsumgebung ab."
+  - question: "Was ist der Unterschied zwischen APA-M25 und ARS NT5B7?"
+    answer: "APA-M25 ist eine 7 dBi gerichtete Panelantenne, die sich für fokussierte Tests in Innenräumen eignet. ARS NT5B7 ist eine 5/7 dBi omnidirektionale Antenne, die universell für Innen- und Außenbereiche geeignet ist. Erstere hat eine starke Richtwirkung, während letztere eine breitere Abdeckung bietet."
+  - question: "Erfordert der Austausch der Antenne die Installation von Treibern oder Einstellungen?"
+    answer: "Nicht erforderlich. Die Antennen-Upgrades sind rein hardwarebasiert und erfordern keine Aktualisierung der Treiber, Einstellungen oder Neustarts. Nach der Installation funktioniert die Netzwerkkarte sofort mit der neuen Antenne."
+
+---ALFA-Netzwerkkarten verwenden durchgehend RP-SMA-Anschlüsse. Die fünf Antennenzubehörteile decken Single-Band bis Tri-Band sowie gerichtet bis omnidirektional ab. Die Installation erfolgt werkzeuglos in weniger als 30 Sekunden, und die Signalstärke kann nach dem Upgrade um 4–8 dBm gesteigert werden.
+
+{{< tldr >}}
+ALFA-Netzwerkkarten verwenden durchgehend RP-SMA-Anschlüsse. Die fünf Antennenzubehörteile decken Single-Band bis Tri-Band sowie gerichtet bis omnidirektional ab. Die Installation erfolgt werkzeuglos in weniger als 30 Sekunden, und die Signalstärke kann nach dem Upgrade um 4–8 dBm gesteigert werden.
+{{< /tldr >}}
+
 
 ## Warum sollten Sie Ihre Antenne aufrüsten?
+
+ALFA-Adapter mit RP-SMA-Anschluss erlauben direkten Antennentausch: die APA-M25-Panelantenne für gerichtete Innenraum-Audits, die ARS NT5B7-Omnidirektionalantenne für universelle Einsatzbereiche, ganz ohne Werkzeug oder Treiberanpassung.
 
 Jeder ALFA Network USB-WLAN-Adapter, der über eine abnehmbare Antenne verfügt, wird mit einer brauchbaren **omnidirektionalen Stabantenne** geliefert — normalerweise mit 5 dBi. Diese Standardantennen sind für den allgemeinen Gebrauch ausreichend, lassen aber in Szenarien, in denen Reichweite, Richtwirkung oder ein bestimmter Frequenzfokus wichtig sind, erhebliches Potenzial liegen.
 
@@ -265,6 +286,8 @@ Das Aufrüsten der Antenne Ihres ALFA-Adapters ist eine der einfachsten und wirk
 
 ---
 
+{{< faq >}}
+
 ## Für DJI-Drohnen-Piloten
 
 ALFA-Antennen mit RP-SMA-Anschlüssen können die Signalreichweite und Stabilität von DJI-Controller-Systemen verbessern, die kompatible Antennenanschlüsse verwenden. So passen die einzelnen Modelle zu Drohnen-Anwendungsfällen:
@@ -279,3 +302,11 @@ ALFA-Antennen mit RP-SMA-Anschlüssen können die Signalreichweite und Stabilit�
 > **Anschlusshinweis:** Überprüfen Sie vor dem Kauf den Antennenanschlusstyp Ihres DJI-Controllers. Der DJI RC Pro verwendet Standard-SMA; viele Aftermarket-Controller von Drittanbietern verwenden RP-SMA. Ein passendes Adapterkabel ist separat erhältlich, falls benötigt.
 
 Eine vollständige Anleitung zum Antennen-Upgrade für DJI-Controller finden Sie in der [DJI-Drohnen-Controller-Antennen-Upgrade-Anleitung](/de/blog/dji-drone-controller-antenna-upgrade/).
+
+## Referenzen
+
+1. [ALFA Network Offizielle Website — Antennen-Zubehoerproduktlinie](https://www.alfa.com.tw/)
+2. [Linux Wireless — mac80211 Dokumentation der WLAN-Treiberarchitektur](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211)
+3. [IEEE 802.11 Standard-Dokumentation — WLAN-Standards](https://standards.ieee.org/ieee/802.11/)
+4. [aircrack-ng — WLAN-SicherheitstoolkitOffizielle Website](https://www.aircrack-ng.org/)
+5. [FCC Part 15 — Vorschriften fuer unlizenzierte Funkgeraete](https://www.fcc.gov/engineering-technology-laboratory-division/general/radio-spectrum-and-rulemaking)

@@ -1,4 +1,5 @@
 ---
+
 title: "エンタープライズ無線セキュリティアセスメント：完全フレームワーク"
 description: "ALFAアダプターを使用したエンタープライズ無線セキュリティアセスメントの完全フレームワーク。スコーピング、不正AP検出、WPA2/WPA3監査、PMFテスト、ITセキュリティチーム向けレポート作成を網羅。"
 date: 2026-03-24
@@ -7,12 +8,29 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["enterprise", "wireless-security", "penetration-testing", "rogue-AP", "WPA2", "WPA3", "PMF", "ALFA-network"]
 featureimage: "/images/blog/enterprise-wireless-security-assessment.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "エンタープライズ無線セキュリティ評価にはどの段階が含まれますか？"
+    answer: "完全な評価は6つの順序立てられた段階をカバーします：パッシブリコネッサンス、不正AP検出、WPA2/WPA3ハンドシェイク分析、PMF検証、クライアント分離テスト、EAP/RADIUS評価です。"
+  - question: "無線セキュリティ評価前にどのような認証が必要ですか？"
+    answer: "CISOまたは資産所有者が署名した書面による認証書を取得する必要があり、テスト時間枠、デバイスMACアドレス、認可された具体的な技術的手段を明確にカバーする必要があります。口頭での同意は不十分です。"
+  - question: "不正AP（Rogue AP）をどう検出しますか？"
+    answer: "パッシブリコネッサンスで得られたBSSIDリストと認可APリストを照合し、エンタープライズSSIDをブロードキャストするがリストにないBSSIDはすべて不正AP候補です。"
+  - question: "PMF（保護管理フレーム）はなぜ重要ですか？"
+    answer: "PMFはdeauthenticationとdisassociation攻撃を防ぎ、攻撃者がクライアント接続を強制切断してハンドシェイクをキャプチャしたりサービス拒否を実行したりするのを阻止します。WPA3では必須要件です。"
+  - question: "WPA3移行モードのリスクは？"
+    answer: "WPA3移行モードは互換性維持のためSAEとPSK認証を同時に受け入れます。攻撃者はWPA2のみをサポートするBeaconフレームをブロードキャストしてクライアントをダウングレードさせ、前方秘匿性を無効化する可能性があります。"
 ---
 
 {{< alert "triangle-exclamation" >}}
 **法的通知：** 無線セキュリティアセスメントは、明示的な書面による承認を得たネットワークおよびインフラストラクチャに対してのみ実施してください。無許可の無線モニタリング、インジェクション、不正APの展開は、ほとんどの法域で違法です。このフレームワークで説明するすべてのフェーズは、資産所有者が署名した適切なエンゲージメントレターが存在し、テスト期間と承認された範囲を明確にカバーしていることを前提としています。認可されたテストのみ実施してください。
 {{< /alert >}}
 
+
+{{< tldr >}}
+本フレームワークはALFA無線アダプターを基盤とし、エンタープライズ無線セキュリティ評価の6段階メソドロジーを詳述します。スコープ定義、不正AP検出、WPA2/WPA3監査、PMFテスト、クライアント分離、802.1X評価をカバーし、レポートテンプレートと重大度定義を付録として添付します。
+{{< /tldr >}}
 エンタープライズ無線セキュリティアセスメントは、単に「パスワードを解読できるか」を確認するものではありません。徹底的なアセスメントでは、無線アーキテクチャのあらゆる層を検証します。認証プロトコルの強度、管理フレーム保護の完全性、承認済みAPインベントリの正確性、ゲストセグメントにおけるクライアント分離の堅牢性、そして不正RADIUSアタックに対する802.1Xインフラの耐性などが対象となります。
 
 このフレームワークは、エンタープライズ環境で活動するプロのペネトレーションテストチームが実践する完全なアセスメントライフサイクルをカバーしています。スコーピングとプリエンゲージメント、パッシブ偵察、不正AP検出、WPA2/WPA3ハンドシェイク分析、PMF検証、クライアント分離テスト、EAP/RADIUSアセスメントという6つの連続フェーズと、レポートテンプレートおよびツールキットリファレンスで構成されています。各フェーズは、エンタープライズグレードの無線テストに必要なモニターモードの安定性、インジェクション機能、マルチバンドカバレッジを提供するALFA Networkアダプターでの実行を想定しています。
@@ -297,8 +315,23 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 関連リソース
 
 - [パケットインジェクションガイド：aireplay-ngを使用したWiFiアダプターのテスト](/ja/blog/packet-injection-guide/)
 - [ALFAアダプターによるWPA3セキュリティテスト（2026）](/ja/blog/wpa3-security-testing-alfa-2026/)
 - [Kali Linuxでモニターモードを有効にする](/ja/blog/enable-monitor-mode-kali-linux/)
+
+---
+
+## 参考文献
+
+1. [aircrack-ng公式ドキュメント](https://www.aircrack-ng.org/)
+2. [Wi-Fi Alliance WPA3仕様](https://www.wi-fi.org/discover-wi-fi/wpa3)
+3. [IEEE 802.11w保護管理フレーム標準](https://standards.ieee.org/ieee/802.11w/4454/)
+4. [NIST SP 800-153無線セキュリティガイド](https://csrc.nist.gov/publications/detail/sp/800-153/final)
+5. [Kismet無線検出ツール](https://www.kismetwireless.net/)

@@ -7,11 +7,30 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+
+faq:
+  - question: "Qual Raspberry Pi é mais adequado para testes de penetração?"
+    answer: "O Raspberry Pi 5 (4 GB ou 8 GB) é a melhor escolha. O Pi 4 (4 GB+) também funciona bem; o Pi 3B+ não tem velocidade suficiente para captura de pacotes em tempo real."
+  - question: "O AWUS036ACH precisa de compilação de driver no Raspberry Pi?"
+    answer: "Sim. O RTL8812AU não está no kernel mainline. Tente primeiro o pacote DKMS do Kali realtek-rtl88xxau-dkms; se falhar, compile manualmente do GitHub do aircrack-ng alternando os flags da plataforma ARM64."
+  - question: "Posso usar wlan0 para modo monitor em um Pi headless?"
+    answer: "Não recomendado. O wlan0 e o WiFi integrado do Pi, usado para conexão SSH. Executar airmon-ng check kill interromperá o SSH. Use wlan1 (adaptador ALFA) e mantenha a conexão via Ethernet ou tmux."
+  - question: "O AWUS036AXM é plug-and-play no Raspberry Pi?"
+    answer: "Sim. O driver MT7921AUN está integrado ao kernel desde 5.18, e a imagem Kali ARM64 tem uma versão de kernel mais recente. Basta instalar o pacote de firmware firmware-misc-nonfree."
+  - question: "Como alimentar o AWUS036ACH no Raspberry Pi?"
+    answer: "O AWUS036ACH consome cerca de 500mW. Conecta-lo diretamente ao Pi pode causar limitação de frequencia ou reinicios. Use obrigatoriamente um hub USB 3.0 com alimentação própria e a fonte de alimentação oficial Pi USB-C de 3A ou superior."
 ---
 
 Um notebook com Kali Linux é a estação de trabalho padrão para pentesting — mas está longe de ser a única opção. Um Raspberry Pi 4 ou Pi 5 combinado com um adaptador ALFA USB WiFi fornece uma plataforma compacta, sem ventilador e com resfriamento passivo que cabe no bolso de uma jaqueta, funciona com um powerbank USB-C e pode ser deixado desacompanhado em um ambiente alvo por horas. As imagens do Kali Linux ARM64 são distribuídas diretamente pela Offensive Security e executam nativamente no Pi 4 e Pi 5 sem emulação, fornecendo o conjunto completo de ferramentas: Aircrack-ng, Kismet, Wireshark, Bettercap e o restante dos metapacotes padrão do Kali.
 
 O principal obstáculo é o driver. O chipset RTL8812AU do AWUS036ACH não está no kernel principal, o que significa que você não pode conectar o adaptador e esperar que funcione. Você precisa compilar o driver contra o kernel ARM64 em execução — e os flags de compilação diferem do x86-64. Este guia leva você por cada etapa.
+
+{{< tldr >}}
+O Raspberry Pi 4/5 com Kali Linux ARM64 e adaptadores ALFA cria uma plataforma de pentest de bolso. O AWUS036ACH requer compilacao do driver RTL8812AU, enquanto AWUS036ACM e AWUS036AXM sao plug-and-play com drivers integrados ao kernel. Um hub USB com alimentacao propria e obrigatorio.
+{{< /tldr >}}
+
 
 ---
 
@@ -271,6 +290,16 @@ Sempre cumpra as leis locais antes de realizar qualquer atividade de escaneament
 
 ---
 
+{{< faq >}}
+
 ## Leitura Adicional
 
 Para o guia completo de instalação do driver RTL8812AU no Kali Linux e Ubuntu para desktop, consulte o guia [Instalar Driver ALFA no Kali Linux e Ubuntu](/pt/blog/install-alfa-driver-kali-ubuntu/). Se você ainda está decidindo qual adaptador comprar, o [Guia de Compra de Adaptadores ALFA WiFi 2026](/pt/blog/alfa-wifi-adapter-buyer-guide-2026/) cobre cada modelo atual com detalhes do chipset e recomendações por caso de uso.
+
+## Referências
+
+1. [Download oficial do Kali Linux ARM](https://www.kali.org/get-kali/#kali-arm)
+2. [Projeto de driver aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+3. [Site oficial do Raspberry Pi](https://www.raspberrypi.com/)
+4. [Documentacao do driver mt76 do kernel Linux](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
+5. [Site oficial da ALFA Network](https://www.alfa.com.tw/)

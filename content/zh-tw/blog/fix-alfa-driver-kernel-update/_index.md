@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "核心更新後 ALFA 網卡為何會失效？"
+    answer: "RTL8812AU 使用核心外驅動，每次核心版本變更後已編譯模組不再相容。DKMS 可自動重建，但缺少核心標頭或過時設定會導致失敗。"
+  - question: "如何快速診斷 ALFA 驅動失效原因？"
+    answer: "執行 uname -r 確認核心版本，再以 dkms status 檢查模組建置狀態，最後用 dmesg 查看韌體或模組載入錯誤訊息。"
+  - question: "RTL8812AU 驅動失效最快的修復方法是什麼？"
+    answer: "安裝匹配的核心標頭後執行 dkms autoinstall。若失敗則從 aircrack-ng/rtl8812au 全新複製並執行 make dkms_install。"
+  - question: "MT7921AUN 網卡更新核心後無法連線怎麼辦？"
+    answer: "MT7921AUN 為核心內建驅動，問題通常出在韌體。安裝 firmware-misc-nonfree 套件並確認核心版本不低於 5.18。"
+  - question: "如何防止核心更新再次破壞驅動？"
+    answer: "使用 apt full-upgrade 取代 apt upgrade，確保標頭與核心同步安裝。安裝 dkms 與 linux-headers-generic 元套件維持相依性。"
 ---
+
+核心更新後 ALFA 網卡失效是 Linux 使用者最常見的問題。RTL8812AU 需透過 DKMS 重建，MT7921AUN 需補韌體套件，兩者皆可透過系統化步驟在 15 分鐘內修復。
+
+{{< tldr >}}
+核心更新破壞 ALFA 驅動的主因是標頭與模組不同步。RTL8812AU 透過 dkms autoinstall 重建，MT7921AUN 需安裝 firmware-misc-nonfree，長期修復則改用 apt full-upgrade。
+{{< /tldr >}}
 
 你執行了 `sudo apt upgrade`，重新開機後 ALFA 網路卡消失了——沒有介面、沒有燈號、什麼都沒有。這是 Linux 使用者詢問 ALFA Network USB WiFi 網路卡時最常見的問題，而核心更新幾乎是所有問題的根源。本指南將帶你系統性地診斷並修復兩種最常受影響的晶片組：**RTL8812AU**（AWUS036ACH、AWUS036ACS）與 **MT7921AUN**（AWUS036AXM、AXML）。按照各節步驟操作，你的網路卡應在 15 分鐘內恢復正常。
 
@@ -356,6 +375,8 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ---
 
+{{< faq >}}
+
 ## 總結
 
 ALFA 驅動程式在核心更新後的失效問題遵循可預測的模式，也有可預測的解決方案。RTL8812AU 網路卡需要 `dkms autoinstall`（或從 `aircrack-ng/rtl8812au` 全新複製）加上匹配的核心標頭。MT7921AUN 網路卡需要 `firmware-misc-nonfree` 以及 5.18 或更新的核心。兩種情況的長期修復方案，都是確保以 `apt full-upgrade` 而非 `apt upgrade` 作為標準更新指令，讓標頭與核心保持同步。
@@ -365,3 +386,11 @@ ALFA 驅動程式在核心更新後的失效問題遵循可預測的模式，也
 **相關指南：**
 - [如何在 Kali Linux 與 Ubuntu 上安裝 ALFA USB WiFi 驅動程式](/zh-tw/blog/install-alfa-driver-kali-ubuntu/) — 若你從未安裝過驅動程式，請從這裡開始
 - [AWUS036ACH Kali Linux 設定指南](/zh-tw/blog/awus036ach-kali-linux-setup/) — 完整設定說明，包含監聽模式與封包注入驗證
+
+## 參考來源
+
+1. [aircrack-ng 官方 rtl8812au 驅動程式](https://github.com/aircrack-ng/rtl8812au)
+2. [DKMS 官方說明文件](https://github.com/dell/dkms)
+3. [Kali Linux 套件管理文件](https://www.kali.org/docs/general-use/package-management/)
+4. [Linux Kernel 官方文件](https://www.kernel.org/doc/html/latest/)
+5. [MediaTek MT7921 驅動程式](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)

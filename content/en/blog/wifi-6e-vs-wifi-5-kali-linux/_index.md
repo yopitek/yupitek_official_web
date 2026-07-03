@@ -2,6 +2,19 @@
 title: "WiFi 6E vs WiFi 5: Which ALFA Adapter Should You Choose for Penetration Testing?"
 description: "Compare ALFA AWUS036AXML (Wi-Fi 6E) vs AWUS036ACH (Wi-Fi 5) for Kali Linux penetration testing. Covers 6 GHz support, driver maturity, monitor mode, and real-world use cases."
 date: 2026-03-23
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "What is the difference between Wi-Fi 6E and Wi-Fi 5 for penetration testing?"
+    answer: "Wi-Fi 6E adds the 6 GHz band and 1.2 GHz of spectrum, suited for auditing modern enterprise deployments. Wi-Fi 5 has more mature drivers with higher stability on 2.4/5 GHz."
+  - question: "Should I choose AWUS036ACH or AWUS036AXML?"
+    answer: "For daily penetration testing, choose AWUS036ACH with mature drivers and rich community resources. For auditing 6 GHz Wi-Fi 6E environments, choose AWUS036AXML. Having both is ideal if budget allows."
+  - question: "Is AWUS036AXML monitor mode stable on Kali Linux?"
+    answer: "It needs kernel 6.1 or higher with the latest linux-firmware package. Packet injection works but should be validated before formal engagements. Specific kernel and firmware combinations may be unstable."
+  - question: "Do I need a 6 GHz adapter for penetration testing in 2026?"
+    answer: "Most testing cases still focus on 2.4/5 GHz. But if the target environment has deployed Wi-Fi 6E access points, a 6 GHz adapter becomes strategically necessary."
+  - question: "How do I install the RTL8812AU driver for AWUS036ACH?"
+    answer: "Clone the rtl8812au repository from aircrack-ng GitHub and run make dkms_install. DKMS ensures the driver auto-rebuilds after kernel updates."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -10,6 +23,14 @@ featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
 ---
 
 Here's the real question: for your specific testing environment in 2026, does adding 6 GHz capability justify the extra complexity? This article gives you a decision framework, not a spec sheet.
+
+{{< tldr >}}
+AWUS036ACH has mature drivers and the highest stability, making it the daily penetration testing first choice. AWUS036AXML supports the 6 GHz band for auditing Wi-Fi 6E environments, but its driver is still maturing.
+{{< /tldr >}}
+
+
+
+
 
 ---
 
@@ -187,6 +208,8 @@ sudo airmon-ng start wlan0
 
 ---
 
+{{< faq >}}
+
 ## For Enterprise IT and Windows Environments
 
 WiFi 6E is increasingly common in enterprise deployments, especially in buildings constructed or renovated post-2022. If your organization is assessing a modern wireless infrastructure:
@@ -196,3 +219,11 @@ WiFi 6E is increasingly common in enterprise deployments, especially in building
 **On Linux (Kismet, airodump-ng, hcxdumptool):** Full 6 GHz scanning and passive capture require the AWUS036AXML running on kernel 5.18+.
 
 **Recommended enterprise kit:** One AWUS036ACH (stable, proven, works in VMs) + one AWUS036AXML (6 GHz coverage on bare-metal Kali) per assessment kit. This gives you full spectrum coverage from 2.4 GHz through 6 GHz without compromising on tool compatibility.
+
+## References
+
+1. [aircrack-ng Official rtl8812au Driver](https://github.com/aircrack-ng/rtl8812au)
+2. [MediaTek MT7921 Kernel Driver](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)
+3. [Wi-Fi Alliance Wi-Fi 6E Certification](https://www.wi-fi.org/discover-wi-fi/wi-fi-6e)
+4. [Kali Linux Official Documentation](https://www.kali.org/docs/)
+5. [IEEE 802.11ax Standards Resources](https://standards.ieee.org/ieee/802.11ax/)

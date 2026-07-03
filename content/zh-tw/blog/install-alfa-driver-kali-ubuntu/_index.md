@@ -7,7 +7,26 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["驅動程式安裝", "Kali-Linux", "Ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
 featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "ALFA USB WiFi 網卡在 Linux 上需要安裝驅動嗎？"
+    answer: "視晶片組而定。MT7612U 與 MT7921AUN 已內建核心，執行 modprobe 即可。RTL8812AU 需從 aircrack-ng GitHub 安裝外部驅動。"
+  - question: "如何確認我的 ALFA 網卡使用哪種晶片組？"
+    answer: "插入網卡後執行 lsusb，對照 USB ID 即可辨識。0bda:8812 為 RTL8812AU，0e8d:7612 為 MT7612U，0e8d:7961 為 MT7921AUN。"
+  - question: "DKMS 是什麼？為什麼需要它？"
+    answer: "DKMS 會在新核心安裝時自動重新編譯驅動模組。未使用 DKMS 時，每次核心更新後外部驅動都會失效，需手動重新編譯。"
+  - question: "Ubuntu 22.04 能使用 MT7921AUN 網卡嗎？"
+    answer: "預裝核心 5.15 不支援。需安裝 HWE 核心 linux-generic-hwe-22.04 升級至 6.2 以上，或升級至 Ubuntu 24.04 LTS。"
+  - question: "make 編譯驅動時報錯 linux/module.h not found 怎麼辦？"
+    answer: "核心標頭檔未安裝。執行 sudo apt install linux-headers-$(uname -r) 安裝與當前核心版本一致的標頭後重新編譯。"
 ---
+
+Linux USB WiFi 驅動安裝的關鍵在於晶片組。MT7612U 與 MT7921AUN 為核心內建驅動，RTL8812AU 需從 aircrack-ng 安裝外部驅動搭配 DKMS 使用。
+
+{{< tldr >}}
+ALFA 網卡驅動安裝取決於晶片組：MT7612U 與 MT7921AUN 內建核心即插即用，RTL8812AU 需從 aircrack-ng GitHub 安裝並搭配 DKMS 確保核心更新後持久運作。
+{{< /tldr >}}
 
 要讓 USB WiFi 網路卡在 Linux 上正常運作，關鍵幾乎都在驅動程式。Windows 有廠商提供的安裝程式，Linux 則不同——系統使用核心模組（kernel module）來與硬體溝通，也就是由作業系統在開機時或需要時載入的編譯程式碼。理解這個機制，除錯就會變得清晰，驅動程式安裝也更有規律可循。
 
@@ -393,6 +412,8 @@ Yopitek 是 ALFA Network 的授權經銷商。歡迎瀏覽完整的 [ALFA Networ
 
 ---
 
+{{< faq >}}
+
 ## 總結
 
 Linux WiFi 驅動程式安裝有一套簡單的決策流程：
@@ -403,3 +424,11 @@ Linux WiFi 驅動程式安裝有一套簡單的決策流程：
 4. **有問題？** → 查看除錯表、確認標頭檔與核心版本一致、檢查 `dmesg`
 
 ALFA Network 網路卡的優勢在於：四款主要晶片組都有文件完整、積極維護的驅動程式解決方案，不會讓你陷入無支援的困境。
+
+## 參考來源
+
+1. [aircrack-ng 官方 rtl8812au 驅動程式](https://github.com/aircrack-ng/rtl8812au)
+2. [morrownr USB-WiFi 知識庫](https://github.com/morrownr/USB-WiFi)
+3. [Kali Linux 官方文件](https://www.kali.org/docs/)
+4. [Ubuntu 官方 HWE 核心說明](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
+5. [Linux Wireless mt76 驅動程式](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)

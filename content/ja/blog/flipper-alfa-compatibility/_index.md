@@ -1,15 +1,36 @@
 ---
+
 title: 'Flipper Zero × ALFA WiFi アダプター：完全互換性ガイド'
 description: 'Flipper Zero で ALFA USB WiFi アダプターのパケットインジェクションが可能か？結論から言うと、できません — その理由を解説します。Flipper One は AWUS036AXML とともにフルモニタモードとインジェクションをサポート。チップセット解析、ドライバ互換性、セットアップ手順付き完全ガイド。'
 tags: ['flipper-zero', 'flipper-one', 'alfa-network', 'wifi-adapter', 'monitor-mode', 'packet-injection', 'kali-linux', 'pentesting', 'AWUS036AXML', 'wireless-security']
 slug: 'flipper-alfa-compatibility'
 categories: ['Technical']
 featureimage: '/images/blog/flipper-alfa-compatibility.webp'
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "Flipper ZeroはALFA USB無線アダプターに接続できますか？"
+    answer: "できません。Flipper ZeroのSTM32WB55マイクロコントローラーはUSB deviceモードのみをサポートし、ハードウェア的にUSB hostとして外付けアダプターを駆動できません。"
+  - question: "Flipper OneはどのALFAアダプターモデルをサポートしていますか？"
+    answer: "Flipper One創業者はAWUS036AXMLを首选として特別にテストし、AWUS036ACMをベストコスパとしています。両者のドライバーはいずれもmainline Linuxカーネルに内蔵されています。"
+  - question: "AWUS036AXMLがFlipper One首选アダプターなのはなぜですか？"
+    answer: "AWUS036AXMLはMT7921AUNチップを採用し、mt7921uドライバーはLinux 5.18以降カーネルに内蔵され、完全な2.4/5/6 GHzトリバンドとモニターモードをサポートします。"
+  - question: "Flipper Oneはいつ正式発売されますか？"
+    answer: "Flipper Oneは現在開発者プレビュー段階で、正式発売時期と価格はクラウドファンディングで発表されます。詳細はflipper.netをフォローしてください。"
+  - question: "Flipper ZeroのWiFi Dev BoardはALFAアダプターの代わりになりますか？"
+    answer: "なりません。WiFi Dev Boardは2.4 GHzの基本機能のみをサポートし、USB hostがなく、範囲とインジェクションの信頼性は専用ALFAアダプターに遠く及びません。"
 ---
 
 {{< alert "triangle-exclamation" >}}
 **法的注意事項：** モニタモードとパケットインジェクションは、自分が所有するネットワーク、または明示的な書面による認証を受けたネットワークに対してのみ行ってください。無線通信の無許可傍受は、多くの管轄地域で違法です。本ガイドで説明するすべての技術は、**認可されたペネトレーションテスト、自己機器上でのセキュリティ研究、および教育目的** にのみ使用することを意図しています。
 {{< /alert >}}
+
+
+{{< tldr >}}
+Flipper ZeroのSTM32WB55はUSB deviceモードのみをサポートし、いかなるALFAアダプターも駆動できません。Flipper OneはRK3576と完全なDebian Linuxを搭載し、AWUS036AXMLでトリバンドモニタリングとインジェクションをサポートします。
+{{< /tldr >}}
+
+Flipper Zero を所有している、または購入を検討している方で、ALFA Network の伝説的な USB WiFi アダプターを無線セキュリティテスティングに使ったことがあるなら、こんなことを思ったことはないでしょうか。
 
 ## 導入：ペンテスターが必ず抱える疑問
 
@@ -347,6 +368,11 @@ sudo systemctl restart NetworkManager
 
 ---
 
+
+---
+
+{{< faq >}}
+
 ## 結論：正しいツールを正しい目的に
 
 ALFA WiFi アダプターを無線セキュリティテスティングに使いたいなら、**Flipper Zero は間違ったプラットフォーム**です — それは Flipper Zero のせいかではありません。Flipper Zero は異なる目的のために設計されました：オフラインのアクセスコントロールテスト（NFC、RFID、Sub-GHz、赤外線）です。それらのタスクでは非常に優秀ですが、USB ホスト機能はその設計には含まれていません。
@@ -381,3 +407,13 @@ ALFA WiFi アダプターを無線セキュリティテスティングに使い�
 ---
 
 *Flipper One と ALFA アダプターの互換性に関する販売前の質問は、Yupitek サポート support@yupitek.com または +886-2-87325338 までお問い合わせください。*
+
+---
+
+## 参考文献
+
+1. [Flipper One公式ブログ — Pavel Zhovner製品アナウンス](https://blog.flipper.net/flipper-one-we-need-your-help/)
+2. [Flipper One Developer Portal — 技術仕様とドキュメント](https://docs.flipper.net/one)
+3. [Flipper Zero公式ウェブサイト](https://flipperzero.one/)
+4. [aircrack-ng — 無線セキュリティツールスイート公式ウェブサイト](https://www.aircrack-ng.org/)
+5. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)

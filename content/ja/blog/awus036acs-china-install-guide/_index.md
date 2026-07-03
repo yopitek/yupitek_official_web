@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA AWUS036ACS ドライバインストールガイド（中国版）：Kali Linux, Ubuntu, Debian & Raspberry Pi"
 description: "中国国内のミラーサイトを利用して、ALFA AWUS036ACSのドライバをインストールする手順をステップバイステップで解説します。RTL8811AU DKMSドライバ、モニターモード、パケットインジェクションに対応。Kali Linux、Ubuntu 22/24、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
 date: 2026-04-24
@@ -12,9 +13,29 @@ series: ["alfa-china-install-guide"]
 series_order: 3
 related_product: "/ja/products/alfa/awus036acs/"
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036ACSはどのチップを使っていますか？AWUS036ACHと同じですか？"
+    answer: "Realtek RTL8811AUチップを採用し、RTL8812AUと同じドライバーパッケージを共有しています。"
+  - question: "AWUS036ACSはモニターモードをサポートしていますか？"
+    answer: "サポートしています。RTL8811AUはモニターモードとパケットインジェクションを完全にサポートし、セキュリティリサーチに経済的な選択肢です。"
+  - question: "中国でAWUS036ACSをインストールするのにVPNは必要ですか？"
+    answer: "不要です。KaliではaptでDKMSドライバーをインストールし、Ubuntu/DebianではGiteeからソースコードをダウンロードしてコンパイルするだけです。"
+  - question: "AWUS036ACSのUSB IDは何ですか？"
+    answer: "Realtek RTL8811AUのUSB IDは0bda:0811で、lsusbで確認できます。"
+  - question: "Kali LinuxでAWUS036ACSドライバーをインストールするコマンドは？"
+    answer: "Kaliではsudo apt install realtek-rtl88xxau-dkmsを直接実行してドライバーをインストールできます。"
 ---
 
 AWUS036ACSは、ALFAのコンパクトなデュアルバンド・セキュリティリサーチ用アダプターです。搭載されているRTL8811AUチップは、Kali Linuxでモニターモードやパケットインジェクションをフルサポートしていますが、ドライバがカーネルに含まれていないため、ソースからコンパイルする必要があります。中国ではGitHubへのアクセスが制限されていることが多いため、このガイドでは国内のGiteeミラーのみを使用します。GitHubへのアクセスは一切不要ですので、安心してくださいね。
+
+
+{{< tldr >}}
+AWUS036ACSはRTL8811AUチップを採用し、KaliではaptでDKMSドライバーをインストール、Ubuntu/DebianではGiteeからコンパイル、モニターモードとパケットインジェクションをサポートします。
+{{< /tldr >}}
+
+始める前に、以下のものが手元にあるか確認しましょう：
 
 ## 準備するもの
 
@@ -375,6 +396,13 @@ sudo aireplay-ng --test wlan1mon
 | 中国科学技術大学ミラー | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (推奨) |
 | 華為（ファーウェイ）ミラー | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM イメージ |
 
+
+---
+
+{{< faq >}}
+
+---
+
 ## 中国向け Alfa アダプターガイド（その他）
 
 - [AWUS036ACH 中国インストールガイド](/ja/blog/awus036ach-china-install-guide/) — RTL8812AU、高出力
@@ -387,3 +415,12 @@ sudo aireplay-ng --test wlan1mon
 - [AWUS036EACS 中国インストールガイド](/ja/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 ご不明な点がありますか？下のコメント欄に記入するか、[yupitek.com](https://yupitek.com/ja/contact/) までお問い合わせください。
+
+---
+
+## 参考文献
+
+1. [aircrack-ng公式ドキュメント](https://www.aircrack-ng.org/)
+2. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
+3. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
+4. [Gitee rtl8812auミラー](https://gitee.com/mirrors/rtl8812au)

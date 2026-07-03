@@ -1,6 +1,8 @@
 ---
 title: "ALFA AWUS036ACM Treiber-Installationsanleitung für China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +14,28 @@ series_order: 2
 description: "Schritt-für-Schritt-Anleitung zur Installation von ALFA AWUS036ACM-Treibern in China mit inländischen Spiegeln. MT7612U In-Kernel-Treiber, vollständige VIF-Unterstützung. Für Kali Linux, Ubuntu 22/24, Debian und Raspberry Pi. GitHub nicht erforderlich."
 related_product: "/de/products/alfa/awus036acm/"
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+faq:
+  - question: "Welchen Chipsatz verwendet der AWUS036ACM? Muss ein Treiber installiert werden?"
+    answer: "Er verwendet den MediaTek MT7612U-Chipsatz. Der Treiber mt76x2u ist seit Linux Kernel 4.19 im Kernel integriert, sodass er in den meisten Fällen Plug-and-Play funktioniert."
+  - question: "Unterstützt der AWUS036ACM VIF-Virtual-Interfaces?"
+    answer: "Ja, der MT7612U unterstützt das native VIF des Kernels vollständig. Es können gleichzeitig ein Monitor-Interface und ein Management-Modus ausgeführt werden, ohne dass Patches erforderlich sind."
+  - question: "Muss man in China die Great Firewall umgehen, um den AWUS036ACM zu installieren?"
+    answer: "Nein, da der Treiber bereits im Kernel integriert ist, muss lediglich das Firmware-Paket firmware-misc-nonfree von einem lokalen Spiegelserver installiert werden."
+  - question: "Wie hoch ist der Stromverbrauch des AWUS036ACM auf einem Raspberry Pi?"
+    answer: "Unter Volllast beträgt der Verbrauch etwa 400mW. Es wird empfohlen, ein USB Hub mit separater Stromversorgung zu verwenden, um eine Drosselung durch den Raspberry Pi zu vermeiden."
+  - question: "Warum wird die Netzwerkkarte des AWUS036ACM unter Debian erkannt, funktioniert aber nicht?"
+    answer: "Das Firmware-Paket firmware-misc-nonfree fehlt. Nach der Installation kann die Netzwerkkarte normal initialisiert werden."
+
 ---
 
 Der AWUS036ACM ist einer der einfachsten Alfa-Adapter für die Einrichtung unter Linux. Sein MT7612U-Chip verwendet den `mt76x2u`-Treiber, der seit Kernel-Version 4.19 im Linux-Kernel integriert ist. Auf den meisten modernen Systemen funktioniert der Adapter mit zwei oder drei Befehlen. Diese Anleitung behandelt die vollständige Einrichtung — Treiberprüfung, Monitor-Modus, Paketeinspeisung und VIF — ausschließlich mit inländischen Spiegeln. GitHub ist nicht erforderlich.
+
+{{< tldr >}}
+Der AWUS036ACM ist mit dem MT7612U-Chipsatz ausgestattet, dessen Treiber bereits im Kernel integriert ist und keine Kompilierung erfordert. Er unterstützt Monitor Mode, Packet Injection und gleichzeitige VIF-Operationen. In China muss lediglich das Firmware-Paket installiert werden.
+{{< /tldr >}}
+
+Stelle sicher, dass du Folgendes bereit hast:
+
 
 ## Vorbereitung
 
@@ -572,6 +593,10 @@ Alle in dieser Anleitung verwendeten Ressourcen — kein GitHub erforderlich:
 | 华为云 Spiegel | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM-Images (Backup) |
 | MT76-Treiber (Gitee) | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | Manuelles Kompilieren als Fallback |
 
+---
+
+{{< faq >}}
+
 ## Weitere Alfa-Adapter-Anleitungen für China
 
 Dies ist Teil der **Alfa China Install Guide**-Reihe. Jeder Artikel behandelt ein Adaptermodell:
@@ -586,3 +611,11 @@ Dies ist Teil der **Alfa China Install Guide**-Reihe. Jeder Artikel behandelt ei
 - [AWUS036EAC China-Installationsanleitung](/de/blog/awus036eacs-china-install-guide/)
 
 Fragen? Hinterlasse einen Kommentar oder kontaktiere uns unter [yupitek.com/de/contact/](https://yupitek.com/de/contact/)
+
+## Referenzen
+
+1. [Linux Kernel mt76 Treiber](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [aircrack-ng Offizielle Dokumentation](https://www.aircrack-ng.org/)
+3. [ALFA Network Offizielle Website](https://www.alfa.com.tw/)
+4. [Kali Linux Offizielle Dokumentation](https://www.kali.org/docs/)
+5. [Debian firmware-misc-nonfree Paket](https://packages.debian.org/bookworm/firmware-misc-nonfree)

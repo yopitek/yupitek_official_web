@@ -2,6 +2,8 @@
 title: "ALFA AWUS036AXM Treiber-Installationsanleitung für China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
 description: "Schritt-für-Schritt-Anleitung zur Installation von ALFA AWUS036AXM-Treibern in China unter Verwendung lokaler Mirrors. MT7921AUN WiFi 6E In-Kernel-Treiber, volle Monitor-Modus- und VIF-Unterstützung. Deckt Kali Linux, Ubuntu 22/24, Debian und Raspberry Pi ab. Kein GitHub erforderlich."
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +14,28 @@ series: ["alfa-china-install-guide"]
 related_product: "/de/products/alfa/awus036axm/"
 series_order: 6
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
+faq:
+  - question: "Welchen Chip verwendet der AWUS036AXM? Unterstützt er WiFi 6E?"
+    answer: "Er verwendet den MediaTek MT7921AUN-Chip und unterstützt WiFi 6E im Drei-Band-Betrieb (2.4G/5G/6G Hz)."
+  - question: "Muss der Treiber für den AWUS036AXM manuell installiert werden?"
+    answer: "Nein, der mt7921u-Treiber ist seit Linux Kernel 5.18 im Kernel integriert; es ist lediglich die Installation des Firmware-Pakets erforderlich."
+  - question: "Unterstützt der AWUS036AXM VIF-Virtualinterfaces?"
+    answer: "Ja, der MT7921AUN unterstützt das im Kernel integrierte VIF vollständig, sodass gleichzeitig eine Netzwerkverbindung hergestellt und im Monitor Mode Pakete abgehört werden können."
+  - question: "Warum schlägt das Laden des Treibers für den AWUS036AXM unter Ubuntu 22.04 fehl?"
+    answer: "Der Standardkernel von Ubuntu 22.04 (5.15) ist zu alt. Sie müssen den HWE-Kernel installieren, um auf Version 5.18 oder höher zu aktualisieren."
+  - question: "Was ist die USB-ID des AWUS036AXM?"
+    answer: "Die USB-ID von MediaTek MT7921AUN ist 0e8d:7961, was mit lsusb bestätigt werden kann."
+
 ---
 
 Der AWUS036AXM ist der WiFi 6E Triband-Adapter von ALFA mit einem platzsparenden L-förmigen USB-A-Anschluss. Sein MT7921AUN-Chip verwendet den `mt7921u`-Treiber, der seit Version 5.18 in den Linux-Kernel integriert ist. Der L-förmige Stecker hält benachbarte USB-Anschlüsse an Laptops frei. Diese Anleitung deckt die vollständige Einrichtung ab — Firmware, Treiber-Verifizierung, Monitor-Modus, Paket-Injektion und VIF — ohne GitHub zu berühren.
+
+{{< tldr >}}
+Der AWUS036AXM verwendet den MT7921AUN-Chip und unterstützt WiFi 6E. Der Treiber ist im Kernel integriert, und nach der Installation des Firmware-Pakets können Sie den Monitor Mode, Packet Injection und VIF-Funktionen nutzen.
+{{< /tldr >}}
+
+Stellen Sie sicher, dass Sie Folgendes bereit haben:
+
 
 ## Bevor Sie beginnen
 
@@ -182,9 +203,20 @@ sudo reboot
 | Offizielle Alfa Treiber | [files.alfa.com.tw](https://files.alfa.com.tw) | Treiberpakete |
 | Tsinghua Mirror | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 
+---
+
+{{< faq >}}
+
 ## Weitere Alfa Adapter Anleitungen für China
 
 - [AWUS036ACH China Install Guide](/de/blog/awus036ach-china-install-guide/) — RTL8812AU, High Power
 - AWUS036AXM ← Sie sind hier
 
 Fragen? Hinterlassen Sie unten einen Kommentar oder kontaktieren Sie uns auf [yupitek.com](https://yupitek.com/de/contact/).
+
+## Referenzen
+
+1. [Linux Kernel mt7921 Treiber](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
+2. [aircrack-ng Offizielle Dokumentation](https://www.aircrack-ng.org/)
+3. [ALFA Network Offizielle Website](https://www.alfa.com.tw/)
+4. [Kali Linux Offizielle Dokumentation](https://www.kali.org/docs/)

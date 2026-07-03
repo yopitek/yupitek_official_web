@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA AWUS036ACH ドライバーインストールガイド（中国向け）: Kali Linux、Ubuntu、Debian & ラズベリーパイ"
 date: 2026-04-24
 draft: false
@@ -12,9 +13,29 @@ series_order: 1
 description: "国内ミラーを使ってALFA AWUS036ACHドライバーを中国でインストールするステップバイステップガイド。Kali Linux、Ubuntu 22/24、Debian、ラズベリーパイ対応。GitHubなし。"
 related_product: "/ja/products/alfa/awus036ach/"
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036ACHはどのチップを使っていますか？ドライバーの追加インストールは必要ですか？"
+    answer: "AWUS036ACHはRealtek RTL8812AUチップを採用し、ドライバーはLinuxカーネルに内蔵されていないため手動インストールが必要です。"
+  - question: "中国でAWUS036ACHドライバーをインストールするのにVPNは必要ですか？"
+    answer: "不要です。USTC、Alibaba Cloudなどの国内ミラーとGiteeソースコードミラーを使用すればインストール完了までVPNは不要です。"
+  - question: "AWUS036ACHはモニターモードとパケットインジェクションをサポートしていますか？"
+    answer: "サポートしています。RTL8812AUドライバーインストール後、airmon-ngでモニターモードを有効化し、aireplay-ngでパケットインジェクションをテストできます。"
+  - question: "AWUS036ACHはRaspberry Piで使えますか？"
+    answer: "使えます。電源付きUSB Hubを組み合わせ、Kali ARM64バージョンをフラッシュして使用することを推奨します。"
+  - question: "Kali LinuxでAWUS036ACHドライバーをインストールするコマンドは？"
+    answer: "Kaliではsudo apt install realtek-rtl88xxau-dkmsを直接実行してプレビルドドライバーをインストールできます。"
 ---
 
 AWUS036ACHを入手したのに、Linuxがデバイスを認識しない。よくある話です。このチップにはRTL8812AUドライバーが必要で、最初からは動きません。このガイドでは、国内ミラーだけを使って約30分でセットアップを完了させます。GitHubへのアクセスは不要です。
+
+
+{{< tldr >}}
+AWUS036ACHはRTL8812AUチップを採用し、KaliではaptでDKMSドライバーをインストール、Ubuntu/DebianではGiteeからコンパイル、30分でモニターモードとパケットインジェクションを利用できます。
+{{< /tldr >}}
+
+以下を用意してください：
 
 ## 準備するもの
 
@@ -617,6 +638,13 @@ AWUS036ACHに搭載されたRTL8812AUチップは、Linux上でのVIFサポー�
 | 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARMイメージ（バックアップ） |
 | RTL8812AUドライバー（Gitee） | [gitee.com/mirrors/rtl8812au](https://gitee.com/mirrors/rtl8812au) | 手動コンパイルの代替 |
 
+
+---
+
+{{< faq >}}
+
+---
+
 ## 中国向けAlfaアダプターガイド
 
 このガイドは **Alfa中国インストールガイド** シリーズの一部です。各記事は1つのアダプターモデルをカバーしています：
@@ -631,3 +659,13 @@ AWUS036ACHに搭載されたRTL8812AUチップは、Linux上でのVIFサポー�
 - [AWUS036EAC 中国インストールガイド](/ja/blog/awus036eacs-china-install-guide/)
 
 ご質問はコメント欄か [yupitek.com](https://yupitek.com/ja/contact/) よりお気軽にどうぞ。
+
+---
+
+## 参考文献
+
+1. [aircrack-ng公式ドキュメント](https://www.aircrack-ng.org/)
+2. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
+3. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
+4. [Gitee rtl8812auミラー](https://gitee.com/mirrors/rtl8812au)
+5. [Realtek RTL8812AUドライバー](https://www.realtek.com/)

@@ -3,14 +3,30 @@ title: "استخدام محولات ALFA WiFi مع Kali NetHunter عبر USB OTG
 description: "كيفية استخدام محولات ALFA USB WiFi مع Kali NetHunter على Android عبر USB OTG. يشمل تعريف AWUS036ACH، أوامر وضع المراقبة، متطلبات كابل OTG، والأجهزة المدعومة."
 date: 2026-03-24
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
 featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "هل أحتاج صلاحيات Root لاستخدام محول ALFA مع Kali NetHunter؟"
+    answer: "نعم. إصدار NetHunter الكامل يتطلب جهاز Android مُمكَّن صلاحيات Root مع نواة مخصصة لتحميل وحدة RTL8812AU وتفعيل دعم محول USB OTG."
+  - question: "ما أفضل محول ALFA للاستخدام مع NetHunter؟"
+    answer: "AWUS036ACH (RTL8812AU) هو الخيار الأفضل. تأتي نواة NetHunter المخصصة بوحدة 88XXau مدمجة، مع دعم كامل لوضع المراقبة وحقن الحزم."
+  - question: "لماذا أحتاج إلى موزع USB OTG بمصدر طاقة؟"
+    answer: "يسحب AWUS036ACH حوالي 500mW من منفذ USB. تشغيله مباشرة من بطارية الهاتف يسرع استنزاف البطارية وقد يسبب انقطاع الاتصال تحت الحمل. الموزع بمصدر طاقة يأخذ الكهرباء من مقبس الحائط ويحل المشكلة تماماً."
+  - question: "هل يمكن استخدام محول WiFi 6E (AWUS036AXML) مع NetHunter؟"
+    answer: "الدعم محدود. توفر وحدة النواة لشريحة MT7921AUN يعتمد على الجهاز وإصدار النواة، وغير مدعوم بشكل عام في أنوية NetHunter. يُنصح باستخدام محولات RTL8812AU."
+  - question: "ما هي أجهزة Android التي تدعم NetHunter؟"
+    answer: "تشمل الأجهزة المدعومة رسمياً طرازات من OnePlus وGoogle Pixel وبعض طرازات Samsung Galaxy. للقائمة الكاملة والمحدّثة، راجع صفحة أجهزة NetHunter الرسمية، وتأكد من دعم جهازك لـ USB OTG."
 ---
 
 هاتفك الأندرويد هو بالفعل حاسوب قوي في جيبك. مع تثبيت Kali NetHunter على جهاز مُمكَّن صلاحيات Root وتوصيل محول ALFA WiFi عبر USB OTG، يتحول إلى منصة اختبار اختراق حقيقية بحجم الجيب. لا حاجة لحاسوب محمول، ولا لأجهزة ضخمة. مجرد هاتفك وكابل OTG قصير ومحول يدعم وضع المراقبة وحقن الحزم.
+
+{{< tldr >}}
+على جهاز Android مُمكَّن صلاحيات Root مع تثبيت Kali NetHunter، يكفي توصيل ALFA AWUS036ACH عبر USB OTG للحصول على منصة اختبار اختراق بحجم الجيب. يلزم إصدار NetHunter الكامل وموزع OTG بمصدر طاقة، ومحولات RTL8812AU هي الأفضل توافقاً.
+{{< /tldr >}}
 
 يغطي هذا الدليل كل ما تحتاجه لتشغيل ALFA AWUS036ACH (أو المحول المتوافق) تحت NetHunter — من اختيار الأجهزة حتى تحميل التعريف وتفعيل وضع المراقبة والأدوات اللاسلكية المدمجة في تطبيق NetHunter.
 
@@ -211,7 +227,16 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan1mon
 
 ---
 
+{{< faq >}}
+
 ## أدلة ذات صلة
 
 - [دليل إعداد AWUS036ACH على Kali Linux (سطح المكتب/الحاسوب المحمول)](/ar/blog/awus036ach-kali-linux-setup/)
 - [استخدام محولات ALFA مع Raspberry Pi وKali](/ar/blog/alfa-adapter-raspberry-pi-kali/)
+
+## المراجع
+
+1. [وثائق Kali NetHunter الرسمية](https://www.kali.org/docs/nethunter/)
+2. [مشروع تعريف aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+3. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
+4. [وثائق مطوري Android USB OTG](https://developer.android.com/guide/topics/connectivity/usb)

@@ -3,14 +3,30 @@ title: "تعطّل برنامج تشغيل ALFA بعد تحديث النواة؟
 description: "محول ALFA USB WiFi لا يعمل بعد تحديث نواة Linux؟ دليل إصلاح كامل لبرامج تشغيل RTL8812AU وRTL8811AU وMT7921AUN على Kali Linux وUbuntu بعد ترقيات النواة."
 date: 2026-03-24
 draft: false
-dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "لماذا تتعطل محولات ALFA بعد تحديث النواة؟"
+    answer: "يستخدم RTL8812AU تعريفاً خارج النواة، والوحدة المُجمَّعة سابقاً تصبح غير متوافقة مع كل تغيير في إصدار النواة. يمكن لـ DKMS إعادة البناء تلقائياً، لكن غياب ترويسات النواة أو الإعدادات القديمة يسبب الفشل."
+  - question: "كيف أشخّص سبب تعطل تعريف ALFA بسرعة؟"
+    answer: "نفّذ uname -r لتأكيد إصدار النواة، ثم dkms status لفحص حالة بناء الوحدة، وأخيراً dmesg لعرض رسائل خطأ البرنامج الثابت أو تحميل الوحدة."
+  - question: "ما أسرع طريقة لإصلاح تعطل تعريف RTL8812AU؟"
+    answer: "بعد تثبيت ترويسات النواة المطابقة نفّذ dkms autoinstall. إذا فشل، انسخ مستودع aircrack-ng/rtl8812au من جديد ونفّذ make dkms_install."
+  - question: "ماذا أفعل إذا تعذر اتصال MT7921AUN بعد تحديث النواة؟"
+    answer: "MT7921AUN تعريفه مدمج في النواة، المشكلة عادة في البرنامج الثابت. ثبّت حزمة firmware-misc-nonfree وتأكد أن إصدار النواة لا يقل عن 5.18."
+  - question: "كيف أمنع تحديثات النواة من تعطيل التعريف مجدداً؟"
+    answer: "استخدم apt full-upgrade بدلاً من apt upgrade لضمان تثبيت الترويسات والنواة معاً. ثبّت dkms و linux-headers-generic كحزمة عامة للحفاظ على التبعيات."
 ---
-
 قمت بتشغيل `sudo apt upgrade`، وبعد إعادة التشغيل اختفى محول ALFA تمامًا — لا واجهة، لا أضواء، لا شيء. هذا هو السؤال الأكثر شيوعًا في دعم محولات ALFA Network USB WiFi على Linux، والتحديثات الخاصة بالنواة هي السبب في جميع الحالات تقريبًا. يرشدك هذا الدليل خلال عملية تشخيص وإصلاح منهجية لعائلتَي شريحتين الأكثر تضررًا: **RTL8812AU** (الموجودة في AWUS036ACH وAWUS036ACS) و**MT7921AUN** (الموجودة في AWUS036AXM وAXML). اتبع خطوات كل قسم وسيعود محولك إلى العمل في أقل من 15 دقيقة.
+
+{{< tldr >}}
+سبب تعطل تعريف ALFA بعد تحديث النواة هو عدم تزامن الترويسات والوحدات. لـ RTL8812AU أعد البناء عبر dkms autoinstall، و لـ MT7921AUN ثبّت firmware-misc-nonfree، وللإصلاح طويل الأمد استخدم apt full-upgrade.
+{{< /tldr >}}
+
 
 ---
 
@@ -357,6 +373,8 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ---
 
+{{< faq >}}
+
 ## الخلاصة
 
 إخفاقات برنامج تشغيل ALFA بعد تحديثات النواة تتبع نمطًا متوقعًا ولها حلول متوقعة. محولات RTL8812AU تحتاج إلى `dkms autoinstall` (أو استنساخ جديد من `aircrack-ng/rtl8812au`) بالإضافة إلى ترويسات النواة المطابقة. محولات MT7921AUN تحتاج إلى `firmware-misc-nonfree` ونواة 5.18 أو أحدث. الإصلاح طويل الأمد في كلتا الحالتين هو التأكد من أن `apt full-upgrade` — وليس `apt upgrade` — هو أمر التحديث القياسي لديك، مما يبقي الترويسات والنواة متزامنين.
@@ -366,3 +384,11 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 **أدلة ذات صلة:**
 - [كيفية تثبيت برنامج تشغيل ALFA USB WiFi على Kali Linux وUbuntu](/ar/blog/install-alfa-driver-kali-ubuntu/) — ابدأ من هنا إذا لم تثبّت برنامج التشغيل من قبل
 - [دليل إعداد AWUS036ACH على Kali Linux](/ar/blog/awus036ach-kali-linux-setup/) — شرح كامل للإعداد بما في ذلك وضع المراقبة والتحقق من حقن الحزم
+
+## المراجع
+
+1. [تعريف aircrack-ng الرسمي لـ rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. [وثائق DKMS الرسمية](https://github.com/dell/dkms)
+3. [وثائق إدارة حزم Kali Linux](https://www.kali.org/docs/general-use/package-management/)
+4. [وثائق Linux Kernel الرسمية](https://www.kernel.org/doc/html/latest/)
+5. [تعريف MediaTek MT7921](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)

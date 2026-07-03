@@ -1,4 +1,5 @@
 ---
+
 title: "ALFA AWUS036EACS 設定ガイド（中国版）：WindowsでのインストールとLinux互換性について"
 description: "中国国内でのALFA AWUS036EACSの設定ガイド。RTL8821CU WiFi 5 + Bluetooth 4.2 Nanoアダプター。Windows用ドライバは files.alfa.com.tw から入手可能です。LinuxおよびKali Linuxはサポートされていません。推奨される代替製品についても解説します。"
 date: 2026-04-24
@@ -12,9 +13,33 @@ series: ["alfa-china-install-guide"]
 series_order: 8
 related_product: "/ja/products/alfa/awus036eacs/"
 featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
+author: "benny-lai"
+lastmod: 2026-07-02
+faq:
+  - question: "AWUS036EACSはどのチップを使っていますか？Bluetoothをサポートしていますか？"
+    answer: "Realtek RTL8821CUチップを採用し、WiFi 5とBluetooth 4.2をサポートしています。"
+  - question: "AWUS036EACSはLinuxでの使用に適していますか？"
+    answer: "推奨しません。RTL8821CUには適切に保守されたLinuxドライバーがなく、モニターモードは非常に不安定です。"
+  - question: "AWUS036EACSのWindowsドライバーはどうインストールしますか？"
+    answer: "Alfa公式サイトfiles.alfa.com.twからWindowsドライバーパッケージをダウンロードし、管理者としてインストール後に再起動するだけです。"
+  - question: "AWUS036EACSのBluetoothはどう有効にしますか？"
+    answer: "ドライバーインストール後に通常自動的に有効になり、Windowsの設定でBluetoothスイッチをオンにしてデバイスに接続できます。"
+  - question: "Linuxで無線セキュリティリサーチ用アダプターが必要な場合、どれを選ぶべきですか？"
+    answer: "AWUS036ACMまたはAWUS036ACSをお勧めします。これらはLinuxでモニターモードを完全にサポートします。"
 ---
 
 AWUS036EACSは、ALFAの超小型（Nano）WiFi 5 + Bluetooth 4.2 コンボアダプターです。主にコンパクトなワイヤレスアップグレードを必要とするWindowsユーザー向けに設計されています。搭載されているRTL8821CUチップセットには、信頼できるオープンソースのLinuxドライバが存在せず、モニターモードやパケットインジェクションもサポートされていません。このガイドでは、中国国内のソースからのWindowsへのインストール方法と、Linuxにおける制限事項について詳しく解説します。
+
+
+{{< tldr >}}
+AWUS036EACSはRTL8821CUチップを採用したWiFi 5とBluetooth 4.2搭載のミニアダプターで、Windowsインストールは簡単ですがLinuxドライバーが不安定で、モニターモードには推奨されません。
+{{< /tldr >}}
+
+> **AWUS036EACSは、Kali Linux、Ubuntu、Debian、Raspberry Piでは安定して動作しません。** RTL8821CUチップセットには、メンテナンスされているオープンソースドライバがありません。モニターモード、パケットインジェクション、VIF（仮想インターフェース）は利用できません。
+>
+> セキュリティリサーチ用にLinux互換のアダプターが必要な場合は、以下のいずれかを検討してください：
+> - **[AWUS036ACM](/ja/blog/awus036acm-china-install-guide/)** — MT7612U インカーネルドライバ、モニターモード・VIFに完全対応
+> - **[AWUS036ACS](/ja/blog/awus036acs-china-install-guide/)** — RTL8811AU、手頃な価格でモニターモードに対応
 
 ## Linuxユーザーの方へ：最初にお読みください
 
@@ -106,6 +131,13 @@ Raspberry Pi での RTL8821CU の使用は強くお勧めしません。ARM ア�
 | Alfa ドキュメント | [docs.alfa.com.tw](https://docs.alfa.com.tw) | セットアップガイド、FAQ |
 | Alfa Wiki | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 製品マニュアル |
 
+
+---
+
+{{< faq >}}
+
+---
+
 ## 中国向け Alfa アダプターガイド（その他）
 
 - [AWUS036ACH 中国インストールガイド](/ja/blog/awus036ach-china-install-guide/) — RTL8812AU、高出力
@@ -118,3 +150,11 @@ Raspberry Pi での RTL8821CU の使用は強くお勧めしません。ARM ア�
 - AWUS036EACS ← 現在のページ
 
 ご不明な点がありますか？下のコメント欄に記入するか、[yupitek.com](https://yupitek.com/ja/contact/) までお問い合わせください。
+
+---
+
+## 参考文献
+
+1. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
+2. [Alfa公式ドライバーダウンロード](https://files.alfa.com.tw)
+3. [Realtek公式ウェブサイト](https://www.realtek.com/)

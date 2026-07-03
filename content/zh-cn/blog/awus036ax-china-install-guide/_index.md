@@ -1,7 +1,12 @@
 ---
+
+
+
 title: "ALFA AWUS036AX 中国安装指南：Kali Linux, Ubuntu, Debian 和 树莓派"
 description: "手把手教你在中国境内使用国内镜像源安装 ALFA AWUS036AX 驱动。包含 RTL8832BU 驱动安装、WiFi 6 AX1800 性能说明。支持 Kali Linux, Ubuntu 22/24 (24.04 内置驱动), Debian 和 树莓派。无需访问 GitHub。"
 date: 2026-04-24
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,9 +17,28 @@ series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036ax/"
 series_order: 4
 featureimage: "/images/blog/awus036ax-china-install-guide.webp"
+faq:
+  - question: "AWUS036AX 用什么芯片？支持 WiFi 6 吗？"
+    answer: "采用 Realtek RTL8832BU 芯片，支持 WiFi 6 (802.11ax) 高速网络。"
+  - question: "AWUS036AX 在 Ubuntu 24.04 上需要安装驱动吗？"
+    answer: "不需要，Ubuntu 24.04 核心已原生支持 RTL8832BU，插上即用。"
+  - question: "AWUS036AX 适合做无线安全研究吗？"
+    answer: "较不适合，RTL8832BU 的监听模式支持有限，建议改用 AWUS036ACM 或 AWUS036ACH。"
+  - question: "在中国安装 AWUS036AX 需要翻墙吗？"
+    answer: "不需要，从 Gitee 下载 rtl8852bu 源码并用国内镜像安装编译工具即可。"
+  - question: "AWUS036AX 的 USB ID 是多少？"
+    answer: "Realtek RTL8832BU 的 USB ID 为 0bda:8832，用 lsusb 可确认。"
 ---
 
+
+
+
 想要在 Linux 上体验 WiFi 6 的极速？AWUS036AX 是个不错的选择。它采用的 RTL8832BU 芯片在旧内核系统上可能需要咱们手动“调教”一下驱动。不过有个好消息：如果你用的是 Ubuntu 24.04，驱动已经内置好了，插上就能飞。
+
+{{< tldr >}}
+AWUS036AX 采用 RTL8832BU 芯片支持 WiFi 6，Ubuntu 24.04 免驱即用，Kali/Ubuntu 22.04 从 Gitee 下载 rtl8852bu 编译安装。
+{{< /tldr >}}
+
 
 国内的小伙伴不用担心 GitHub 连不上的问题，本指南全程使用 Gitee 镜像。咱们现在就开始一步步把它跑起来！
 
@@ -220,6 +244,9 @@ sudo reboot
 | rtl8852bu 驱动镜像 | [Gitee 镜像](https://gitee.com/mirrors/rtl8852bu) | 国内克隆专用 |
 | 清华大学镜像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Debian/Ubuntu 推荐 |
 
+
+{{< faq >}}
+
 ## 更多 Alfa 网卡中国安装指南
 
 - [AWUS036ACH 中国安装指南](/zh-cn/blog/awus036ach-china-install-guide/) — RTL8812AU, 高功率
@@ -232,3 +259,10 @@ sudo reboot
 - [AWUS036EACS 中国安装指南](/zh-cn/blog/awus036eacs-china-install-guide/) — RTL8821CU, Windows
 
 折腾过程中遇到搞不定的，欢迎在下面留言，或者去 [yupitek.com](https://yupitek.com/zh-cn/contact/) 找我们。
+
+## 参考文献
+
+1. [Realtek 官方网站](https://www.realtek.com/)
+2. [ALFA Network 官网](https://www.alfa.com.tw/)
+3. [Kali Linux 官方文档](https://www.kali.org/docs/)
+4. [Gitee rtl8852bu 镜像](https://gitee.com/mirrors/rtl8852bu)

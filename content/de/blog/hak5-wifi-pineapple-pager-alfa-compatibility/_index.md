@@ -2,14 +2,35 @@
 title: "HAK5 WiFi Pineapple Pager × ALFA Network: Kompatibilitätsleitfaden für externe USB-WLAN-Adapter"
 description: "Detaillierte Kompatibilitätsanalyse und Schritt-für-Schritt-Installationsanleitung für die Verbindung externer ALFA Network USB-WLAN-Karten mit dem HAK5 WiFi Pineapple Pager unter OpenWrt. Erfahre mehr über MIPS-Cross-Compilation, USB 2.0-Stromgrenzen und Modulkonfigurationen."
 date: 2026-06-19
+author: "benny-lai"
+lastmod: 2026-07-02
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH", "compatibility", "wireless-security"]
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
+faq:
+  - question: "Kann der HAK5 WiFi Pineapple Pager eine externe ALFA-Netzwerkkarte verwenden?"
+    answer: "Ja, jedoch sind die Einschränkungen der MIPS-Architektur und die USB 2.0-Stromversorgung zu beachten. Der AWUS036ACM ist die erste Wahl, da der im Kernel integrierte Treiber am stabilsten ist."
+  - question: "Warum benötigt der Pager ein externes USB-Hub mit Stromversorgung?"
+    answer: "Der Pager verfügt nur über USB 2.0-Schnittstellen mit einer maximalen Ausgabe von 500 mA. Hochleistungs-ALFA-Netzwerkkarten erreichen Spitzenwerte von bis zu 720 mA. Ein direkter Anschluss kann zu Neustarts oder Kernel-Panics führen."
+  - question: "Warum ist der AWUS036ACM die erste Wahl für den Pager?"
+    answer: "Der MT7612U-Treiber ist im OpenWrt 6.6-Kernel integriert. Auf dem Pager kann er direkt über opkg installiert werden, ohne Cross-Kompilierung, was ihn am stabilsten und zuverlässigsten macht."
+  - question: "Welche Einschränkungen gibt es bei der Treiberinstallation auf der MIPS-Architektur?"
+    answer: "Der Pager basiert auf dem MIPS32-basierten MT7628AN, unterstützt kein DKMS und verfügt über keine GCC-Toolchain. Nicht im Kernel integrierte Treiber müssen auf einem externen x86-Host cross-kompiliert werden."
+  - question: "Welche bekannten Probleme gibt es mit dem RTL8812AU-Treiber auf dem Pager?"
+    answer: "Auf der MIPS-Plattform liegt ein Kernfehler in wiphy_register für den RTL8812AU vor, der dazu führt, dass die Schnittstelle nicht geladen werden kann. Es ist erforderlich, einen Community-Patch anzuwenden. Wir empfehlen stattdessen die Verwendung des AWUS036ACM."
+
 ---
+Bevor du eine leistungsstarke USB-WLAN-Karte an den HAK5 Pager anschließt, solltest du zwei wesentliche Hürden verstehen: die CPU-Architektur und das Strombudget des USB-Ports.
 
 # HAK5 WiFi Pineapple Pager × ALFA Network: Kompatibilitätsleitfaden für externe USB-WLAN-Adapter
+
+{{< tldr >}}
+Der Pager verwendet MIPS-Architektur und unterstützt kein DKMS. Der AWUS036ACM ist dank des im OpenWrt 6.6-Kernel integrierten MT7612U-Treibers Plug-and-Play-fähig. Für den AWUS036ACH ist eine Cross-Kompilierung erforderlich, zudem besteht ein wiphy-Bug. Die USB 2.0-Stromversorgung liefert nur 500 mA, weshalb ein externes Hub benötigt wird.
+{{< /tldr >}}
+
+Der HAK5 WiFi Pineapple Pager lässt sich mit externen ALFA-Adaptern erweitern. Erste Wahl ist der AWUS036ACM mit In-Kernel-Treiber für maximale Stabilität; leistungsstarke Adapter erfordern einen aktiv gespeisten USB-Hub, um Kernel-Abstürze zu vermeiden.
 
 Die Überprüfung der WLAN-Sicherheit (Penetration Testing) erfordert höchste Präzision, Vielseitigkeit und die passende Hardware. Der **HAK5 WiFi Pineapple Pager** hat als ultrakompaktes Handheld-Sicherheitswerkzeug mit der leistungsstarken **PineAP v8** Engine das Interesse von IT-Sicherheitsexperten geweckt.
 
@@ -22,8 +43,6 @@ In diesem umfassenden Leitfaden analysieren wir die technischen Hürden (wie die
 ---
 
 ## 1. Technische Einschränkungen: Was du wissen musst
-
-Bevor du eine leistungsstarke USB-WLAN-Karte an den HAK5 Pager anschließt, solltest du zwei wesentliche Hürden verstehen: die CPU-Architektur und das Strombudget des USB-Ports.
 
 ### 1.1 CPU-Architektur: Die MIPS-Einschränkung
 Im Gegensatz zu einem typischen Kali-Linux-PC mit x86_64-Architektur oder einem Raspberry Pi mit ARM-Prozessor basiert der HAK5 Pager auf dem **MediaTek MT7628AN SoC** (einem **MIPS32r2, Little-Endian** Core, der unter OpenWrt als `mipsel_24kc`-Plattform kompiliert wird).
@@ -179,11 +198,13 @@ Sobald du einen kompatiblen ALFA-Adapter an deinen HAK5 Pager anschließt, gewin
 
 ---
 
+{{< faq >}}
+
 ## 5. Fazit & Empfehlungen
 
 Die Kombination eines ALFA Network WLAN-Adapters mit dem HAK5 WiFi Pineapple Pager ermöglicht dir den Aufbau einer unauffälligen, extrem leistungsstarken mobilen Audit-Station. Beachte dabei die folgenden Punkte:
 
-- **Für den schnellen, unkomplizierten Einsatz**: Kaufe den [ALFA AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm). Seine MediaTek-Treiber laufen unter dem OpenWrt-Kernel 6.6 absolut stabil und er ist sofort einsatzbereit.
+- **Für den schnellen, unkomplizierten Einsatz**: Kaufe den [ALFA AWUS036ACM](https://yupitek.com/de/products/alfa/awus036acm). Seine MediaTek-Treiber laufen unter dem OpenWrt-Kernel 6.6 absolut stabil und er ist sofort einsatzbereit.
 - **Stabile Stromversorgung**: Verwende immer einen hochwertigen **aktiven USB-Hub**, um die volle Sendeleistung der Hochleistungskarten zu gewährleisten und Verbindungsabbrüche zu verhindern.
 
 Bei weiteren technischen Fragen, Hardware-Bestellungen oder Anfragen zu maßgeschneiderten OpenWrt-Kompilierungen wende dich einfach an das **Yupitek-Support-Team**:
@@ -192,3 +213,11 @@ Bei weiteren technischen Fragen, Hardware-Bestellungen oder Anfragen zu maßgesc
 - 📧 Support-E-Mail: [sales@yupitek.com](mailto:sales@yupitek.com)
 - 📞 Telefonnummer: +886-2-87325338
 - 📍 Adresse: 1F., No. 72, Ln. 34, Fuyang St., Xinyi Dist., Taipei City, Taiwan
+
+## Referenzen
+
+1. [Hak5 Offizielle Dokumentation — WiFi Pineapple Produktdokumentation](https://documentation.hak5.org/)
+2. [OpenWrt Offizielle Website — OpenWrt 24.10 Distribution](https://openwrt.org/)
+3. [OpenWrt mt76 Treiber-Repository — GitHub](https://github.com/openwrt/mt76)
+4. [aircrack-ng/rtl8812au — Community-Treiber GitHub-Repository](https://github.com/aircrack-ng/rtl8812au)
+5. [ALFA Network Offizielle Website](https://www.alfa.com.tw/)

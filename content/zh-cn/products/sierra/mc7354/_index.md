@@ -19,18 +19,18 @@ MC7354 是 Sierra Wireless 推出的 LTE-Advanced Cat 4 蜂窝模组，采用 Qu
 
 此模组采用标准 Mini PCIe Full Size 封装。MC7354 主要差异在于其支持的特定频段组合，适用于特定區域的運營商网路。支持 USB 2.0、UART 及 SPI 介面。
 
-MC7354 适用于工业自动化、交通運輸、智慧電网及基礎设施监控等需要稳定 LTE 连线的产业应用。
+MC7354 适用于工业自动化、交通運输、智慧電网及基礎设施监控等需要稳定 LTE 连接的产业应用。
 
 ## 主要特点
 
-- Qualcomm MDM9215 chipset
-- LTE-A Cat 4 with download up to 150 Mbps
-- Upload speed up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 2.0, UART, SPI interface support
-- Optimized for regional carrier band combinations
-- Integrated GPS / GLONASS GNSS
-- Wide temperature range -40°C ~ +85°C
+- 采用 Qualcomm MDM9215 芯片组
+- LTE-A Cat 4，下载高达 150 Mbps
+- 上传速度最高 50 Mbps
+- Mini PCIe Full Size 标准封装
+- 支持 USB 2.0、UART、SPI 介面
+- 特定區域運營商频段优化
+- 内建 GPS / GLONASS GNSS
+- 宽溫设计 -40°C ~ +85°C
 
 ## 技术规格
 

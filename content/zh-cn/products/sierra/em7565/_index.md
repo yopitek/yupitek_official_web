@@ -17,20 +17,20 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7565", "SDX20", "M.2"]
 
 EM7565 是 Sierra Wireless 推出的 LTE-Advanced Pro Cat 12 蜂窝模组，采用 Qualcomm SDX20 芯片组，支持 3×20 MHz 载波聚合 (3×CA)，DL 256QAM 与 UL 64QAM，下载速度最高 600 Mbps，上传最高 150 Mbps。
 
-EM7565 采用标准 M.2 3042 Key B 封装，相較 EM7511 增加了對更多载波聚合组合的支持。其 SDX20 平台提供强大的 RF 性能与极低的功耗，适合全天候運作的工业设備。
+EM7565 采用标准 M.2 3042 Key B 封装，相较 EM7511 增加了對更多载波聚合组合的支持。其 SDX20 平台提供强大的 RF 性能与极低的功耗，适合全天候運作的工业设備。
 
-支持全球主要 LTE 频段，包括 B14 FirstNet 及 B71 600 MHz 频段，适用于工业路由器、关键任务通讯与专业行动热点。
+支持全球主要 LTE 频段，包括 B14 FirstNet 及 B71 600 MHz 频段，适用于工业路由器、关键任务通讯与专业移动热点。
 
 ## 主要特点
 
-- Qualcomm SDX20 modem chipset
-- LTE-A Pro Cat 12 with 3×CA carrier aggregation
-- Download up to 600 Mbps, upload up to 150 Mbps
-- 256QAM DL / 64QAM UL / LAA support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.1, PCIe Gen3, RGMII interface support
-- FirstNet B14 and B71 band support
-- Dual-band GNSS (GPS + Galileo)
+- 采用 Qualcomm SDX20 数据机芯片
+- LTE-A Pro Cat 12，支持 3×CA
+- 下载速度高达 600 Mbps，上传 150 Mbps
+- 支持 256QAM DL / 64QAM UL / LAA
+- M.2 3042 Key B 工业级封装
+- 支持 USB 3.1、PCIe Gen3、RGMII
+- 支持 FirstNet B14 与 B71 频段
+- 双频 GNSS (GPS + Galileo)
 
 ## 技术规格
 

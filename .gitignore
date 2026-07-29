@@ -9,3 +9,4 @@ __pycache__/
 *.py.tmp
 geo_translations.json
 zhtw_geo_data.json
+__pycache__/

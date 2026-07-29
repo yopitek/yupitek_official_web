@@ -17,20 +17,20 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "MC7455", "Mini PCIe", "IoT"]
 
 MC7455 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窝模组，采用 Qualcomm MDM9230 芯片组，支持 2×20 MHz 载波聚合 (2×CA)，下载速度最高可达 300 Mbps，上传最高 50 Mbps。
 
-此模组采用标准 Mini PCIe Full Size 封装，是 MC 系列中最高階的型号。支持 USB 3.0、UART 及 SPI 介面，提供快速的資料传輸能力。
+此模组采用标准 Mini PCIe Full Size 封装，是 MC 系列中最高階的型号。支持 USB 3.0、UART 及 SPI 介面，提供快速的资料传输能力。
 
-MC7455 支持全球主要 LTE 频段与 FirstNet B14，廣泛应用于高效能工业路由器、車载通讯系统、专网基地台及企业级连网解決方案。
+MC7455 支持全球主要 LTE 频段与 FirstNet B14，广泛应用于高效能工业路由器、车载通讯系统、专网基地台及企业级连网解決方案。
 
 ## 主要特点
 
-- Qualcomm MDM9230 chipset
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 3.0, UART, SPI interface support
-- FirstNet B14 band support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
+- 采用 Qualcomm MDM9230 芯片组
+- LTE-A Cat 6，支持 2×CA 载波聚合
+- 下载速度高达 300 Mbps，上传 50 Mbps
+- Mini PCIe Full Size 标准封装
+- 支持 USB 3.0、UART、SPI 介面
+- 支持 FirstNet B14 频段
+- 内建 GPS / GLONASS / BeiDou GNSS
+- 宽溫设计 -40°C ~ +85°C
 
 ## 技术规格
 

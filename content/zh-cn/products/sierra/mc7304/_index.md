@@ -1,6 +1,6 @@
 ---
 title: "MC7304 LTE-A Cat 4 蜂窝模块"
-description: "MC7304 采用 Qualcomm MDM9215 芯片组，支持 LTE-A Cat 4 150 Mbps，Mini PCIe 封装，适用于传统工业闸道器与路由器。"
+description: "MC7304 采用 Qualcomm MDM9215 芯片组，支持 LTE-A Cat 4 150 Mbps，Mini PCIe 封装，适用于传统工业网关与路由器。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -17,20 +17,20 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7304", "Mini PCIe", "IoT"]
 
 MC7304 是 Sierra Wireless 推出的 LTE-Advanced Cat 4 蜂窝模组，采用 Qualcomm MDM9215 芯片组，支持下载速度最高 150 Mbps，上传最高 50 Mbps。
 
-此模组采用标准 Mini PCIe Full Size 封装，相容于大量現有工业主机板与嵌入式平台。支持 USB 2.0、UART 及 SPI 介面，适合预算敏感但仍需可靠 LTE 连线的应用。
+此模组采用标准 Mini PCIe Full Size 封装，相容于大量現有工业主机板与嵌入式平台。支持 USB 2.0、UART 及 SPI 介面，适合预算敏感但仍需可靠 LTE 连接的应用。
 
-MC7304 支持全球主要 LTE 频段，廣泛应用于工业闸道器、自动販賣机、数位看板与遠端监控。
+MC7304 支持全球主要 LTE 频段，广泛应用于工业网关、自动贩賣机、数位看板与远端监控。
 
 ## 主要特点
 
-- Qualcomm MDM9215 chipset
-- LTE-A Cat 4 with download up to 150 Mbps
-- Upload speed up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 2.0, UART, SPI interface support
-- Integrated GPS / GLONASS GNSS
-- Wide temperature range -40°C ~ +85°C
-- Proven reliability with broad software support
+- 采用 Qualcomm MDM9215 芯片组
+- LTE-A Cat 4，下载高达 150 Mbps
+- 上传速度最高 50 Mbps
+- Mini PCIe Full Size 标准封装
+- 支持 USB 2.0、UART、SPI 介面
+- 内建 GPS / GLONASS GNSS
+- 宽溫设计 -40°C ~ +85°C
+- 成熟稳定，广泛的软体支持
 
 ## 技术规格
 

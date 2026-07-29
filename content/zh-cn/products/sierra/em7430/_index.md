@@ -1,6 +1,6 @@
 ---
 title: "EM7430 LTE-A Cat 6 蜂窝模块"
-description: "EM7430 采用 Qualcomm MDM9230 芯片组，支持 LTE-A Cat 6 高达 300 Mbps 下载速度，M.2 封装，适用于工业路由器与闸道器。"
+description: "EM7430 采用 Qualcomm MDM9230 芯片组，支持 LTE-A Cat 6 高达 300 Mbps 下载速度，M.2 封装，适用于工业路由器与网关。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -17,20 +17,20 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7430", "IoT", "M.2"]
 
 EM7430 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窝模组，采用 Qualcomm MDM9230 芯片组，支持 2×20 MHz 载波聚合 (2×CA)，下载速度最高可达 300 Mbps，上传最高 50 Mbps。
 
-此模组采用标准 M.2 3042 Key B 封装，适用于工业路由器、物聯网闸道器、行动热点及视讯监控等应用。支持 USB 3.0 及 PCIe Gen2 介面，提供灵活的系统集成方案。
+此模组采用标准 M.2 3042 Key B 封装，适用于工业路由器、物聯网网关、移动热点及视讯监控等应用。支持 USB 3.0 及 PCIe Gen2 介面，提供灵活的系统集成方案。
 
 EM7430 支持全球主要 LTE 频段 (B1–5/7/8/12/13/20/25/26/29/30/41)，适合于世界各地部署的 IoT 设備与 M2M 终端。
 
 ## 主要特点
 
-- Qualcomm MDM9230 chipset for proven reliability
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.0 and PCIe Gen2 dual interface support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
-- FOTA firmware over-the-air update support
+- 采用 Qualcomm MDM9230 芯片组，成熟稳定
+- LTE-A Cat 6，支持 2×CA 载波聚合
+- 下载速度高达 300 Mbps，上传 50 Mbps
+- M.2 3042 Key B 工业级封装
+- 支持 USB 3.0 与 PCIe Gen2 双介面
+- 内建 GPS / GLONASS / BeiDoU GNSS
+- 宽溫设计 -40°C ~ +85°C
+- 支持 FOTA 韧体無线更新
 
 ## 技术规格
 

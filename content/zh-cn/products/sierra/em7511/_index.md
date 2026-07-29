@@ -17,20 +17,20 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7511", "SDX20", "M.2"]
 
 EM7511 是 Sierra Wireless 推出的 LTE-Advanced Pro Cat 12 蜂窝模组，采用 Qualcomm SDX20 芯片组，支持 3×20 MHz 载波聚合 (3×CA)，下载速度最高可达 600 Mbps，上传最高 150 Mbps。
 
-此模组采用标准 M.2 3042 Key B 封装，集成 USB 3.1、PCIe Gen3 及 RGMII 介面，提供更高的系统频宽。SDX20 数據机相較前代产品提供了更低的功耗与更优的 RF 性能。
+此模组采用标准 M.2 3042 Key B 封装，集成 USB 3.1、PCIe Gen3 及 RGMII 介面，提供更高的系统频宽。SDX20 数据机相较前代产品提供了更低的功耗与更优的 RF 性能。
 
-EM7511 支持全球 LTE 频段与 License-Assisted Access (LAA)，适合需要高频宽的影片监控、企业分支机构及行动热点应用。
+EM7511 支持全球 LTE 频段与 License-Assisted Access (LAA)，适合需要高频宽的影片监控、企业分支机构及移动热点应用。
 
 ## 主要特点
 
-- Qualcomm SDX20 modem chipset
-- LTE-A Pro Cat 12 with 3×CA carrier aggregation
-- Download up to 600 Mbps, upload up to 150 Mbps
-- 256QAM DL / 64QAM UL support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.1, PCIe Gen3, RGMII interface support
-- Integrated GPS / GLONASS / BeiDou / Galileo
-- Wide temperature range -40°C ~ +85°C
+- 采用 Qualcomm SDX20 数据机芯片
+- LTE-A Pro Cat 12，支持 3×CA 载波聚合
+- 下载速度高达 600 Mbps，上传 150 Mbps
+- 支持 256QAM DL / 64QAM UL
+- M.2 3042 Key B 工业级封装
+- 支持 USB 3.1、PCIe Gen3、RGMII
+- 内建 GPS / GLONASS / BeiDou / Galileo
+- 宽溫设计 -40°C ~ +85°C
 
 ## 技术规格
 

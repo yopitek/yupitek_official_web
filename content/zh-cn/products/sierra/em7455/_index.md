@@ -1,6 +1,6 @@
 ---
 title: "EM7455 LTE-A Cat 6 蜂窝模块"
-description: "EM7455 采用 Qualcomm MDM9230 芯片组，支持 LTE-A Cat 6 与 FirstNet B14 频段，M.2 封装，适用于工业路由器与闸道器。"
+description: "EM7455 采用 Qualcomm MDM9230 芯片组，支持 LTE-A Cat 6 与 FirstNet B14 频段，M.2 封装，适用于工业路由器与网关。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -17,20 +17,20 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 
 EM7455 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窝模组，采用 Qualcomm MDM9230 芯片组，支持 2×20 MHz 载波聚合 (2×CA)，下载速度最高可达 300 Mbps，上传最高 50 Mbps。
 
-此模组采用标准 M.2 3042 Key B 封装，与 EM7430 同系列但特別支持 Band 14 (FirstNet)，适合美國公共安全网路应用。支持 USB 3.0 及 PCIe Gen2 介面。
+此模组采用标准 M.2 3042 Key B 封装，与 EM7430 同系列但特别支持 Band 14 (FirstNet)，适合美國公共安全网路应用。支持 USB 3.0 及 PCIe Gen2 介面。
 
-EM7455 支持全球主要 LTE 频段 (B1–5/7/8/12/13/14/20/25/26/29/30/41)，廣泛应用于企业路由、車聯网与公共安全通讯。
+EM7455 支持全球主要 LTE 频段 (B1–5/7/8/12/13/14/20/25/26/29/30/41)，广泛应用于企业路由、车聯网与公共安全通讯。
 
 ## 主要特点
 
-- Qualcomm MDM9230 chipset
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- Band 14 FirstNet public safety band support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.0 and PCIe Gen2 dual interface support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
+- 采用 Qualcomm MDM9230 芯片组
+- LTE-A Cat 6，支持 2×CA 载波聚合
+- 下载速度高达 300 Mbps，上传 50 Mbps
+- 支持 Band 14 FirstNet 公共安全频段
+- M.2 3042 Key B 工业级封装
+- 支持 USB 3.0 与 PCIe Gen2 双介面
+- 内建 GPS / GLONASS / BeiDou GNSS
+- 宽溫设计 -40°C ~ +85°C
 
 ## 技术规格
 

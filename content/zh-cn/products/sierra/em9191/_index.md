@@ -15,22 +15,22 @@ tags: ["5G", "mmWave", "Sub-6", "Cellular", "Module", "EM9191", "SDX55", "M.2"]
 
 ## 产品概述
 
-EM9191 是 Sierra Wireless 推出的旗舰级 5G NR 蜂窝模组，采用 Qualcomm SDX55 芯片组，同時支持 Sub-6 与 mmWave (n260 39GHz / n261 28GHz)，提供最全面的 5G 覆蓋。
+EM9191 是 Sierra Wireless 推出的旗舰级 5G NR 蜂窝模组，采用 Qualcomm SDX55 芯片组，同時支持 Sub-6 与 mmWave (n260 39GHz / n261 28GHz)，提供最全面的 5G 覆盖。
 
 下载速度最高可达 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22)，上传最高 900 Mbps (5G)。支持 6 组天线介面以滿足 mmWave 波束成型需求。
 
-EM9191 支持所有 Sub-6 频段 (同 EM9190) 加上 mmWave 高频频段，搭配多频 GNSS 系统，适合需要最低延迟与最高频宽的工业 4.0、智慧醫療与邊緣運算应用。
+EM9191 支持所有 Sub-6 频段 (同 EM9190) 加上 mmWave 高频频段，搭配多频 GNSS 系统，适合需要最低延迟与最高频宽的工业 4.0、智慧医療与边緣運算应用。
 
 ## 主要特点
 
-- Qualcomm SDX55 5G modem chipset
-- 5G NR Sub-6 + mmWave (n260/n261) support
-- 5G download up to 2.5 Gbps, upload 900 Mbps
-- LTE Cat 22 download up to 2.0 Gbps
-- 8×CA and mmWave beamforming support
-- 6 antenna interfaces (including mmWave antennas)
-- M.2 3042 Key B industrial-grade form factor
-- Multi-band GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)
+- 采用 Qualcomm SDX55 5G 数据机芯片
+- 支持 5G NR Sub-6 + mmWave (n260/n261)
+- 5G 下载高达 2.5 Gbps，上传 900 Mbps
+- LTE Cat 22 下载高达 2.0 Gbps
+- 支持 8×CA 与 mmWave 波束成型
+- 6 组天线介面 (含 mmWave 天线)
+- M.2 3042 Key B 工业级封装
+- 多频 GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)
 
 ## 技术规格
 

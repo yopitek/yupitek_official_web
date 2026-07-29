@@ -17,20 +17,20 @@ tags: ["5G", "Sub-6", "Cellular", "Module", "EM9190", "SDX55", "M.2", "IoT"]
 
 EM9190 是 Sierra Wireless 推出的旗舰级 5G NR Sub-6 蜂窝模组，采用 Qualcomm SDX55 芯片组，支持 5G SA/NSA 模式，下载速度最高可达 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22)，上传最高 900 Mbps (5G)。
 
-此模组支持类別 22 LTE (8×CA) 与廣泛的 5G NR Sub-6 频段，涵蓋 n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79。采用标准 M.2 3042 Key B 封装，提供完整的 5G 连线能力。
+此模组支持类别 22 LTE (8×CA) 与广泛的 5G NR Sub-6 频段，涵盖 n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79。采用标准 M.2 3042 Key B 封装，提供完整的 5G 连接能力。
 
-EM9190 搭载先进的功率管理与散热设計，适用于高效能工业路由器、CPE、企业级闸道器与 5G 行动热点。
+EM9190 搭载先进的功率管理与散热设计，适用于高效能工业路由器、CPE、企业级网关与 5G 移动热点。
 
 ## 主要特点
 
-- Qualcomm SDX55 5G modem chipset
-- 5G NR Sub-6 SA/NSA dual mode support
-- 5G download up to 2.5 Gbps, upload 900 Mbps
-- LTE Cat 22 download up to 2.0 Gbps
-- 8×CA carrier aggregation support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.1, PCIe Gen3, RGMII support
-- Multi-band GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)
+- 采用 Qualcomm SDX55 5G 数据机芯片
+- 支持 5G NR Sub-6 SA/NSA 双模
+- 5G 下载高达 2.5 Gbps，上传 900 Mbps
+- LTE Cat 22 下载高达 2.0 Gbps
+- 支持 8×CA 载波聚合
+- M.2 3042 Key B 工业级封装
+- 支持 USB 3.1、PCIe Gen3、RGMII
+- 多频 GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)
 
 ## 技术规格
 

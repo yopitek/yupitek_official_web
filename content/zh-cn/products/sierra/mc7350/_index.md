@@ -17,20 +17,20 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7350", "Mini PCIe", "IoT"]
 
 MC7350 是 Sierra Wireless 推出的 LTE-Advanced Cat 4 蜂窝模组，采用 Qualcomm MDM9215 芯片组，支持下载速度最高 150 Mbps，上传最高 50 Mbps。
 
-此模组采用标准 Mini PCIe Full Size 封装。MC7350 与 MC7304 同系列，预设支持更廣泛的全球频段组合。支持 USB 2.0、UART 及 SPI 介面。
+此模组采用标准 Mini PCIe Full Size 封装。MC7350 与 MC7304 同系列，预设支持更广泛的全球频段组合。支持 USB 2.0、UART 及 SPI 介面。
 
-MC7350 經過全球各主要電信业者的认证，适用于工业路由器、資产追蹤、智慧電表与遠端醫療设備。
+MC7350 經過全球各主要電信业者的认证，适用于工业路由器、资产追蹤、智慧電表与远端医療设備。
 
 ## 主要特点
 
-- Qualcomm MDM9215 chipset
-- LTE-A Cat 4 with download up to 150 Mbps
-- Upload speed up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 2.0, UART, SPI interface support
-- Broad global carrier certification
-- Integrated GPS / GLONASS GNSS
-- Wide temperature range -40°C ~ +85°C
+- 采用 Qualcomm MDM9215 芯片组
+- LTE-A Cat 4，下载高达 150 Mbps
+- 上传速度最高 50 Mbps
+- Mini PCIe Full Size 标准封装
+- 支持 USB 2.0、UART、SPI 介面
+- 全球電信业者广泛认证
+- 内建 GPS / GLONASS GNSS
+- 宽溫设计 -40°C ~ +85°C
 
 ## 技术规格
 

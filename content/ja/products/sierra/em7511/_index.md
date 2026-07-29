@@ -1,6 +1,6 @@
 ---
 title: "EM7511 LTE-A Pro Cat 12 セルラーモジュール"
-description: "EM7511 LTE-A Pro Cat 12 cellular module with Qualcomm SDX20, 600 Mbps download, M.2 form factor for high-bandwidth enterprise and industrial applications."
+description: "EM7511 は Qualcomm SDX20 チップセットを採用し、LTE-A Pro Cat 12 最大 600 Mbps に対応する M.2 パッケージのセルラーモジュールで、高性能な産業用アプリケーションに最適です。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7511", "SDX20", "M.2"]
 
 ## 製品概要
 
-The EM7511 is Sierra Wireless' LTE-Advanced Pro Cat 12 cellular module, powered by the Qualcomm SDX20 chipset, supporting 3×20 MHz carrier aggregation (3×CA) with download speeds up to 600 Mbps and upload up to 150 Mbps.
+EM7511 は、Sierra Wireless が提供する LTE-Advanced Pro Cat 12 セルラーモジュールです。Qualcomm SDX20 チップセットを採用し、3×20 MHz キャリアアグリゲーション（3×CA）に対応、ダウンロード速度は最大 600 Mbps、アップロードは最大 150 Mbps です。
 
-This module uses a standard M.2 3042 Key B form factor with USB 3.1, PCIe Gen3, and RGMII interfaces, providing higher system bandwidth. The SDX20 modem delivers lower power consumption and superior RF performance compared to previous generations.
+本モジュールは標準 M.2 3042 Key B パッケージを採用し、USB 3.1、PCIe Gen3、RGMII インターフェースに対応しており、より高いシステム帯域幅を提供します。SDX20 モデムは、従来世代と比較して低消費電力と優れた RF 性能を実現しています。
 
-The EM7511 supports global LTE bands and License-Assisted Access (LAA), ideal for high-bandwidth video surveillance, enterprise branch offices, and mobile hotspot applications.
+EM7511 はグローバル LTE 周波数帯および License-Assisted Access（LAA）に対応しており、高帯域幅を必要とするビデオ監視、エンタープライズブランチオフィス、およびモバイルホットスポットアプリケーションに最適です。
 
 ## 主な特長
 
-- Qualcomm SDX20 modem chipset
-- LTE-A Pro Cat 12 with 3×CA carrier aggregation
-- Download up to 600 Mbps, upload up to 150 Mbps
-- 256QAM DL / 64QAM UL support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.1, PCIe Gen3, RGMII interface support
-- Integrated GPS / GLONASS / BeiDou / Galileo
-- Wide temperature range -40°C ~ +85°C
+- Qualcomm SDX20 モデムチップセット採用
+- LTE-A Pro Cat 12、3×CA キャリアアグリゲーション対応
+- ダウンロード最大 600 Mbps、アップロード 150 Mbps
+- 256QAM DL / 64QAM UL 対応
+- M.2 3042 Key B 産業用パッケージ
+- USB 3.1、PCIe Gen3、RGMII 対応
+- GPS / GLONASS / BeiDou / Galileo 内蔵
+- 広温度範囲 -40°C ~ +85°C
 
 ## 技術仕様
 

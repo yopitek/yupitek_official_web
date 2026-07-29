@@ -1,6 +1,6 @@
 ---
 title: "MC7350 LTE-A Cat 4 セルラーモジュール"
-description: "MC7350 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor with broad global carrier certification."
+description: "MC7350 は Qualcomm MDM9215 チップセットを採用し、LTE-A Cat 4 最大 150 Mbps に対応する Mini PCIe パッケージのセルラーモジュールで、グローバル展開の IoT アプリケーションに最適です。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7350", "Mini PCIe", "IoT"]
 
 ## 製品概要
 
-The MC7350 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+MC7350 は、Sierra Wireless が提供する LTE-Advanced Cat 4 セルラーモジュールです。Qualcomm MDM9215 チップセットを採用し、ダウンロード速度は最大 150 Mbps、アップロードは最大 50 Mbps です。
 
-This module uses a standard Mini PCIe Full Size form factor. The MC7350 is in the same family as the MC7304 but features broader global band support by default. It supports USB 2.0, UART, and SPI interfaces.
+本モジュールは標準 Mini PCIe Full Size パッケージを採用しています。MC7350 は MC7304 と同系列であり、デフォルトでより広範なグローバル周波数帯の組み合わせに対応しています。USB 2.0、UART、SPI インターフェースに対応しています。
 
-The MC7350 is certified by major global carriers, making it suitable for industrial routers, asset tracking, smart meters, and remote healthcare devices.
+MC7350 は世界各国の主要通信事業者から認証を取得しており、産業用ルーター、資産追跡、スマートメーター、遠隔医療機器に適しています。
 
 ## 主な特長
 
-- Qualcomm MDM9215 chipset
-- LTE-A Cat 4 with download up to 150 Mbps
-- Upload speed up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 2.0, UART, SPI interface support
-- Broad global carrier certification
-- Integrated GPS / GLONASS GNSS
-- Wide temperature range -40°C ~ +85°C
+- Qualcomm MDM9215 チップセット採用
+- LTE-A Cat 4、ダウンロード最大 150 Mbps
+- アップロード速度最大 50 Mbps
+- Mini PCIe Full Size 標準パッケージ
+- USB 2.0、UART、SPI インターフェース対応
+- グローバル通信事業者の幅広い認証
+- GPS / GLONASS GNSS 内蔵
+- 広温度範囲 -40°C ~ +85°C
 
 ## 技術仕様
 

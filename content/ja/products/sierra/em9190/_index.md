@@ -1,6 +1,6 @@
 ---
 title: "EM9190 5G NR Sub-6 セルラーモジュール"
-description: "EM9190 5G NR Sub-6 cellular module with Qualcomm SDX55, 2.5 Gbps download, M.2 form factor for next-generation industrial and 5G applications."
+description: "EM9190 は Qualcomm SDX55 チップセットを採用し、5G NR Sub-6 最大 2.5 Gbps と LTE Cat 22 に対応する M.2 パッケージのセルラーモジュールで、次世代産業用アプリケーションに最適です。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -16,22 +16,22 @@ featureimage: "/images/products/sierra/em9190_hero.jpg"
 
 ## 製品概要
 
-The EM9190 is Sierra Wireless' flagship 5G NR Sub-6 cellular module, powered by the Qualcomm SDX55 chipset, supporting 5G SA/NSA modes with download speeds up to 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) and upload up to 900 Mbps (5G).
+EM9190 は、Sierra Wireless が提供するフラッグシップ 5G NR Sub-6 セルラーモジュールです。Qualcomm SDX55 チップセットを採用し、5G SA/NSA モードに対応、ダウンロード速度は最大 2.5 Gbps（5G）/ 2.0 Gbps（LTE Cat 22）、アップロードは最大 900 Mbps（5G）です。
 
-This module supports Category 22 LTE (8×CA) with extensive 5G NR Sub-6 band coverage including n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79. It uses a standard M.2 3042 Key B form factor for complete 5G connectivity.
+本モジュールはカテゴリー 22 LTE（8×CA）と幅広い 5G NR Sub-6 周波数帯（n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79）に対応しています。標準 M.2 3042 Key B パッケージを採用し、完全な 5G 接続性を提供します。
 
-The EM9190 features advanced power management and thermal design, suitable for high-performance industrial routers, CPE, enterprise gateways, and 5G mobile hotspots.
+EM9190 は高度な電力管理と放熱設計を備えており、高性能産業用ルーター、CPE、エンタープライズゲートウェイ、5G モバイルホットスポットに適しています。
 
 ## 主な特長
 
-- Qualcomm SDX55 5G modem chipset
-- 5G NR Sub-6 SA/NSA dual mode support
-- 5G download up to 2.5 Gbps, upload 900 Mbps
-- LTE Cat 22 download up to 2.0 Gbps
-- 8×CA carrier aggregation support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.1, PCIe Gen3, RGMII support
-- Multi-band GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)
+- Qualcomm SDX55 5G モデムチップセット採用
+- 5G NR Sub-6 SA/NSA デュアルモード対応
+- 5G ダウンロード最大 2.5 Gbps、アップロード 900 Mbps
+- LTE Cat 22 ダウンロード最大 2.0 Gbps
+- 8×CA キャリアアグリゲーション対応
+- M.2 3042 Key B 産業用パッケージ
+- USB 3.1、PCIe Gen3、RGMII 対応
+- マルチバンド GNSS（GPS + GLONASS + BeiDou + Galileo + QZSS）
 
 ## 技術仕様
 

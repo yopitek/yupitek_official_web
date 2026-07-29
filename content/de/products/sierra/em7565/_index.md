@@ -1,6 +1,6 @@
 ---
 title: "EM7565 LTE-A Pro Cat 12 Mobilfunkmodul"
-description: "EM7565 LTE-A Pro Cat 12 cellular module with Qualcomm SDX20, 600 Mbps download, FirstNet B14 support, M.2 form factor for mission-critical communications."
+description: "Das EM7565 ist ein LTE-A Pro Cat 12 Mobilfunkmodul mit Qualcomm SDX20, 600 Mbps Downlink, FirstNet B14-Unterstützung, M.2-Bauform für missionkritische Kommunikation."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7565", "SDX20", "M.2"]
 
 ## Produktübersicht
 
-The EM7565 is Sierra Wireless' LTE-Advanced Pro Cat 12 cellular module, powered by the Qualcomm SDX20 chipset, supporting 3×20 MHz carrier aggregation (3×CA), DL 256QAM and UL 64QAM, with download speeds up to 600 Mbps and upload up to 150 Mbps.
+Das EM7565 ist ein LTE-Advanced Pro Cat 12 Mobilfunkmodul von Sierra Wireless. Es verwendet den Qualcomm SDX20 Chipsatz und unterstützt 3×20 MHz Carrier Aggregation (3×CA), DL 256QAM und UL 64QAM mit Download-Geschwindigkeiten von bis zu 600 Mbps und Upload bis zu 150 Mbps.
 
-The EM7565 uses a standard M.2 3042 Key B form factor and offers broader carrier aggregation support compared to the EM7511. Its SDX20 platform delivers excellent RF performance with extremely low power consumption, ideal for 24/7 industrial operation.
+Das EM7565 verwendet die standard M.2 3042 Key B Bauform und bietet im Vergleich zum EM7511 eine breitere Carrier-Aggregation-Unterstützung. Die SDX20-Plattform liefert hervorragende HF-Leistung bei extrem niedrigem Stromverbrauch, ideal für den 24/7-Industriebetrieb.
 
-It supports major global LTE bands including B14 FirstNet and B71 600 MHz, suitable for industrial routers, mission-critical communications, and professional mobile hotspots.
+Es unterstützt wichtige globale LTE-Bänder einschließlich B14 FirstNet und B71 600 MHz und eignet sich für industrielle Router, missionkritische Kommunikation und professionelle mobile Hotspots.
 
 ## Hauptmerkmale
 
-- Qualcomm SDX20 modem chipset
-- LTE-A Pro Cat 12 with 3×CA carrier aggregation
-- Download up to 600 Mbps, upload up to 150 Mbps
-- 256QAM DL / 64QAM UL / LAA support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.1, PCIe Gen3, RGMII interface support
-- FirstNet B14 and B71 band support
-- Dual-band GNSS (GPS + Galileo)
+- Qualcomm SDX20 Modem-Chipsatz
+- LTE-A Pro Cat 12 mit 3×CA Carrier Aggregation
+- Download bis zu 600 Mbps, Upload bis zu 150 Mbps
+- 256QAM DL / 64QAM UL / LAA Unterstützung
+- M.2 3042 Key B industrielle Bauform
+- USB 3.1-, PCIe Gen3-, RGMII-Schnittstellenunterstützung
+- FirstNet B14 und B71 Bandunterstützung
+- Dualband GNSS (GPS + Galileo)
 
 ## Technische Spezifikationen
 

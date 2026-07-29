@@ -1,6 +1,6 @@
 ---
-title: "Module cellulaire EM7455 LTE-A Cat 6"
-description: "EM7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Band 14 FirstNet support, M.2 form factor for public safety and enterprise routing."
+title: "EM7455 LTE-A Cat 6 Module cellulaire"
+description: "Le module cellulaire EM7455 LTE-A Cat 6 est équipé du chipset Qualcomm MDM9230, avec téléchargement à 300 Mbps et prise en charge de la bande 14 FirstNet, format M.2 pour la sécurité publique et le routage d'entreprise."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 
 ## Présentation du produit
 
-The EM7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+L'EM7455 est un module cellulaire LTE-Advanced Cat 6 de Sierra Wireless. Il est équipé du chipset Qualcomm MDM9230 et prend en charge l'agrégation de porteuses 2×20 MHz (2×CA) avec des vitesses de téléchargement allant jusqu'à 300 Mbps et un upload jusqu'à 50 Mbps.
 
-This module uses a standard M.2 3042 Key B form factor. It is part of the same family as the EM7430 but specifically supports Band 14 (FirstNet), making it ideal for US public safety network applications. It supports USB 3.0 and PCIe Gen2 interfaces.
+Ce module utilise un format standard M.2 3042 Key B. Il fait partie de la même famille que l'EM7430 mais prend spécifiquement en charge la bande 14 (FirstNet), ce qui le rend idéal pour les applications de réseaux de sécurité publique américains. Il prend en charge les interfaces USB 3.0 et PCIe Gen2.
 
-The EM7455 supports major global LTE bands (B1–5/7/8/12/13/14/20/25/26/29/30/41), widely used in enterprise routing, connected vehicles, and public safety communications.
+L'EM7455 prend en charge les principales bandes LTE mondiales (B1–5/7/8/12/13/14/20/25/26/29/30/41) et est largement utilisé dans le routage d'entreprise, les véhicules connectés et les communications de sécurité publique.
 
 ## Caractéristiques principales
 
-- Qualcomm MDM9230 chipset
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- Band 14 FirstNet public safety band support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.0 and PCIe Gen2 dual interface support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
+- Chipset Qualcomm MDM9230
+- LTE-A Cat 6 avec agrégation de porteuses 2×CA
+- Téléchargement jusqu'à 300 Mbps, upload jusqu'à 50 Mbps
+- Prise en charge de la bande 14 FirstNet pour la sécurité publique
+- Format industriel M.2 3042 Key B
+- Prise en charge des interfaces USB 3.0 et PCIe Gen2
+- GNSS intégré GPS / GLONASS / BeiDou
+- Large plage de température -40°C ~ +85°C
 
 ## Spécifications techniques
 

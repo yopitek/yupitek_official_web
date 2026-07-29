@@ -1,6 +1,6 @@
 ---
-title: "Module cellulaire EM9190 5G NR Sub-6"
-description: "EM9190 5G NR Sub-6 cellular module with Qualcomm SDX55, 2.5 Gbps download, M.2 form factor for next-generation industrial and 5G applications."
+title: "EM9190 5G NR Sub-6 Module cellulaire"
+description: "Le module cellulaire EM9190 5G NR Sub-6 est équipé du chipset Qualcomm SDX55, avec téléchargement à 2.5 Gbps, format M.2 pour les applications industrielles et 5G de nouvelle génération."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -16,22 +16,22 @@ featureimage: "/images/products/sierra/em9190_hero.jpg"
 
 ## Présentation du produit
 
-The EM9190 is Sierra Wireless' flagship 5G NR Sub-6 cellular module, powered by the Qualcomm SDX55 chipset, supporting 5G SA/NSA modes with download speeds up to 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) and upload up to 900 Mbps (5G).
+L'EM9190 est le module cellulaire 5G NR Sub-6 phare de Sierra Wireless. Il est équipé du chipset Qualcomm SDX55, prend en charge les modes 5G SA/NSA avec des vitesses de téléchargement allant jusqu'à 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) et un upload jusqu'à 900 Mbps (5G).
 
-This module supports Category 22 LTE (8×CA) with extensive 5G NR Sub-6 band coverage including n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79. It uses a standard M.2 3042 Key B form factor for complete 5G connectivity.
+Ce module prend en charge la catégorie 22 LTE (8×CA) avec une couverture étendue des bandes 5G NR Sub-6, y compris n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79. Il utilise un format standard M.2 3042 Key B pour une connectivité 5G complète.
 
-The EM9190 features advanced power management and thermal design, suitable for high-performance industrial routers, CPE, enterprise gateways, and 5G mobile hotspots.
+L'EM9190 dispose d'une gestion avancée de l'alimentation et d'une conception thermique optimisée, ce qui le rend adapté aux routeurs industriels haute performance, CPE, passerelles d'entreprise et points d'accès mobiles 5G.
 
 ## Caractéristiques principales
 
-- Qualcomm SDX55 5G modem chipset
-- 5G NR Sub-6 SA/NSA dual mode support
-- 5G download up to 2.5 Gbps, upload 900 Mbps
-- LTE Cat 22 download up to 2.0 Gbps
-- 8×CA carrier aggregation support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.1, PCIe Gen3, RGMII support
-- Multi-band GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)
+- Chipset modem 5G Qualcomm SDX55
+- Prise en charge du mode double 5G NR Sub-6 SA/NSA
+- Téléchargement 5G jusqu'à 2.5 Gbps, upload 900 Mbps
+- Téléchargement LTE Cat 22 jusqu'à 2.0 Gbps
+- Prise en charge de l'agrégation de porteuses 8×CA
+- Format industriel M.2 3042 Key B
+- Prise en charge USB 3.1, PCIe Gen3, RGMII
+- GNSS multibande (GPS + GLONASS + BeiDou + Galileo + QZSS)
 
 ## Spécifications techniques
 

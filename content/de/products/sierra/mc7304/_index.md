@@ -1,6 +1,6 @@
 ---
 title: "MC7304 LTE-A Cat 4 Mobilfunkmodul"
-description: "MC7304 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor for budget-sensitive industrial applications."
+description: "Das MC7304 ist ein LTE-A Cat 4 Mobilfunkmodul mit Qualcomm MDM9215 Chipsatz, 150 Mbps Downlink, Mini-PCIe-Bauform für kostensensible Industrieanwendungen."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7304", "Mini PCIe", "IoT"]
 
 ## Produktübersicht
 
-The MC7304 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+Das MC7304 ist ein LTE-Advanced Cat 4 Mobilfunkmodul von Sierra Wireless. Es verwendet den Qualcomm MDM9215 Chipsatz und unterstützt Download-Geschwindigkeiten von bis zu 150 Mbps und Upload bis zu 50 Mbps.
 
-This module uses a standard Mini PCIe Full Size form factor, compatible with a wide range of existing industrial motherboards and embedded platforms. It supports USB 2.0, UART, and SPI interfaces, ideal for budget-sensitive applications requiring reliable LTE connectivity.
+Dieses Modul verwendet die standard Mini PCIe Full Size Bauform und ist mit einer Vielzahl vorhandener Industrie-Mainboards und eingebetteter Plattformen kompatibel. Es unterstützt USB 2.0-, UART- und SPI-Schnittstellen und ist ideal für preissensible Anwendungen, die zuverlässige LTE-Konnektivität benötigen.
 
-The MC7304 supports major global LTE bands, widely deployed in industrial gateways, vending machines, digital signage, and remote monitoring applications.
+Das MC7304 unterstützt wichtige globale LTE-Bänder und wird häufig in Industrie-Gateways, Verkaufsautomaten, digitaler Beschilderung und Fernüberwachungsanwendungen eingesetzt.
 
 ## Hauptmerkmale
 
-- Qualcomm MDM9215 chipset
-- LTE-A Cat 4 with download up to 150 Mbps
-- Upload speed up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 2.0, UART, SPI interface support
-- Integrated GPS / GLONASS GNSS
-- Wide temperature range -40°C ~ +85°C
-- Proven reliability with broad software support
+- Qualcomm MDM9215 Chipsatz
+- LTE-A Cat 4 mit Download bis zu 150 Mbps
+- Upload-Geschwindigkeit bis zu 50 Mbps
+- Mini PCIe Full Size Standard-Bauform
+- USB 2.0-, UART-, SPI-Schnittstellenunterstützung
+- Integriertes GPS / GLONASS GNSS
+- Weiter Temperaturbereich -40°C ~ +85°C
+- Bewährte Zuverlässigkeit mit breiter Softwareunterstützung
 
 ## Technische Spezifikationen
 

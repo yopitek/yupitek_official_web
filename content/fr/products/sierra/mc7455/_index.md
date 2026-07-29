@@ -1,6 +1,6 @@
 ---
-title: "Module cellulaire MC7455 LTE-A Cat 6"
-description: "MC7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Mini PCIe form factor for high-performance industrial and vehicle communication systems."
+title: "MC7455 LTE-A Cat 6 Module cellulaire"
+description: "Le module cellulaire MC7455 LTE-A Cat 6 est équipé du chipset Qualcomm MDM9230, avec téléchargement à 300 Mbps, format Mini PCIe pour les systèmes de communication industriels et véhiculaires haute performance."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "MC7455", "Mini PCIe", "IoT"]
 
 ## Présentation du produit
 
-The MC7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+Le MC7455 est un module cellulaire LTE-Advanced Cat 6 de Sierra Wireless. Il est équipé du chipset Qualcomm MDM9230 et prend en charge l'agrégation de porteuses 2×20 MHz (2×CA) avec des vitesses de téléchargement allant jusqu'à 300 Mbps et un upload jusqu'à 50 Mbps.
 
-This module uses a standard Mini PCIe Full Size form factor and is the highest-performing model in the MC series. It supports USB 3.0, UART, and SPI interfaces for fast data throughput.
+Ce module utilise un format standard Mini PCIe Full Size et est le modèle le plus performant de la série MC. Il prend en charge les interfaces USB 3.0, UART et SPI pour un débit de données rapide.
 
-The MC7455 supports major global LTE bands including FirstNet B14, widely deployed in high-performance industrial routers, vehicle communication systems, private network base stations, and enterprise connectivity solutions.
+Le MC7455 prend en charge les principales bandes LTE mondiales, y compris FirstNet B14, et est largement déployé dans les routeurs industriels haute performance, les systèmes de communication véhiculaires, les stations de base de réseaux privés et les solutions de connectivité d'entreprise.
 
 ## Caractéristiques principales
 
-- Qualcomm MDM9230 chipset
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 3.0, UART, SPI interface support
-- FirstNet B14 band support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
+- Chipset Qualcomm MDM9230
+- LTE-A Cat 6 avec agrégation de porteuses 2×CA
+- Téléchargement jusqu'à 300 Mbps, upload jusqu'à 50 Mbps
+- Format standard Mini PCIe Full Size
+- Prise en charge des interfaces USB 3.0, UART, SPI
+- Prise en charge de la bande FirstNet B14
+- GNSS intégré GPS / GLONASS / BeiDou
+- Large plage de température -40°C ~ +85°C
 
 ## Spécifications techniques
 

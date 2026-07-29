@@ -1,6 +1,6 @@
 ---
 title: "EM7455 LTE-A Cat 6 セルラーモジュール"
-description: "EM7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Band 14 FirstNet support, M.2 form factor for public safety and enterprise routing."
+description: "EM7455 は Qualcomm MDM9230 チップセットを採用し、LTE-A Cat 6 最大 300 Mbps、FirstNet B14 に対応する M.2 パッケージのセルラーモジュールで、産業用ルーターやゲートウェイに最適です。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 
 ## 製品概要
 
-The EM7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+EM7455 は、Sierra Wireless が提供する LTE-Advanced Cat 6 セルラーモジュールです。Qualcomm MDM9230 チップセットを採用し、2×20 MHz キャリアアグリゲーション（2×CA）に対応、ダウンロード速度は最大 300 Mbps、アップロードは最大 50 Mbps です。
 
-This module uses a standard M.2 3042 Key B form factor. It is part of the same family as the EM7430 but specifically supports Band 14 (FirstNet), making it ideal for US public safety network applications. It supports USB 3.0 and PCIe Gen2 interfaces.
+本モジュールは標準 M.2 3042 Key B パッケージを採用しており、EM7430 と同系列ですが、特に Band 14（FirstNet）に対応している点が特徴で、米国の公共安全ネットワークアプリケーションに最適です。USB 3.0 および PCIe Gen2 インターフェースに対応しています。
 
-The EM7455 supports major global LTE bands (B1–5/7/8/12/13/14/20/25/26/29/30/41), widely used in enterprise routing, connected vehicles, and public safety communications.
+EM7455 はグローバル主要 LTE 周波数帯（B1–5/7/8/12/13/14/20/25/26/29/30/41）に対応しており、エンタープライズルーティング、コネクテッドビークル、公共安全通信に幅広く利用されています。
 
 ## 主な特長
 
-- Qualcomm MDM9230 chipset
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- Band 14 FirstNet public safety band support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.0 and PCIe Gen2 dual interface support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
+- Qualcomm MDM9230 チップセット採用
+- LTE-A Cat 6、2×CA キャリアアグリゲーション対応
+- ダウンロード最大 300 Mbps、アップロード 50 Mbps
+- Band 14 FirstNet 公共安全周波数帯対応
+- M.2 3042 Key B 産業用パッケージ
+- USB 3.0 と PCIe Gen2 デュアルインターフェース対応
+- GPS / GLONASS / BeiDou GNSS 内蔵
+- 広温度範囲 -40°C ~ +85°C
 
 ## 技術仕様
 

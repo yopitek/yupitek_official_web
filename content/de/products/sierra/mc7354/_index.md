@@ -1,6 +1,6 @@
 ---
 title: "MC7354 LTE-A Cat 4 Mobilfunkmodul"
-description: "MC7354 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor optimized for regional carrier band combinations."
+description: "Das MC7354 ist ein LTE-A Cat 4 Mobilfunkmodul mit Qualcomm MDM9215 Chipsatz, 150 Mbps Downlink, Mini-PCIe-Bauform, optimiert für regionale Carrier-Bandkombinationen."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7354", "Mini PCIe", "IoT"]
 
 ## Produktübersicht
 
-The MC7354 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+Das MC7354 ist ein LTE-Advanced Cat 4 Mobilfunkmodul von Sierra Wireless. Es verwendet den Qualcomm MDM9215 Chipsatz und unterstützt Download-Geschwindigkeiten von bis zu 150 Mbps und Upload bis zu 50 Mbps.
 
-This module uses a standard Mini PCIe Full Size form factor. The MC7354 differs from other MC series modules in its specific band combination support, optimized for particular regional carrier networks. It supports USB 2.0, UART, and SPI interfaces.
+Dieses Modul verwendet die standard Mini PCIe Full Size Bauform. Das MC7354 unterscheidet sich von anderen MC-Serie-Modulen durch seine spezifischen Bandkombinationen, die für bestimmte regionale Carrier-Netzwerke optimiert sind. Es unterstützt USB 2.0-, UART- und SPI-Schnittstellen.
 
-The MC7354 is ideal for industrial automation, transportation, smart grid, and infrastructure monitoring applications requiring reliable LTE connectivity.
+Das MC7354 ist ideal für Industrieautomation, Transportwesen, Smart Grid und Infrastrukturüberwachungsanwendungen, die zuverlässige LTE-Konnektivität erfordern.
 
 ## Hauptmerkmale
 
-- Qualcomm MDM9215 chipset
-- LTE-A Cat 4 with download up to 150 Mbps
-- Upload speed up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 2.0, UART, SPI interface support
-- Optimized for regional carrier band combinations
-- Integrated GPS / GLONASS GNSS
-- Wide temperature range -40°C ~ +85°C
+- Qualcomm MDM9215 Chipsatz
+- LTE-A Cat 4 mit Download bis zu 150 Mbps
+- Upload-Geschwindigkeit bis zu 50 Mbps
+- Mini PCIe Full Size Standard-Bauform
+- USB 2.0-, UART-, SPI-Schnittstellenunterstützung
+- Optimiert für regionale Carrier-Bandkombinationen
+- Integriertes GPS / GLONASS GNSS
+- Weiter Temperaturbereich -40°C ~ +85°C
 
 ## Technische Spezifikationen
 

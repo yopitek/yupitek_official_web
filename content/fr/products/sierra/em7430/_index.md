@@ -1,6 +1,6 @@
 ---
-title: "Module cellulaire EM7430 LTE-A Cat 6"
-description: "EM7430 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, M.2 form factor, ideal for industrial IoT and M2M applications."
+title: "EM7430 LTE-A Cat 6 Module cellulaire"
+description: "Le module cellulaire EM7430 LTE-A Cat 6 est équipé du chipset Qualcomm MDM9230, avec téléchargement à 300 Mbps, format M.2, idéal pour les routeurs industriels et les passerelles IoT."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7430", "IoT", "M.2"]
 
 ## Présentation du produit
 
-The EM7430 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+L'EM7430 est un module cellulaire LTE-Advanced Cat 6 de Sierra Wireless. Il est équipé du chipset Qualcomm MDM9230 et prend en charge l'agrégation de porteuses 2×20 MHz (2×CA) avec des vitesses de téléchargement allant jusqu'à 300 Mbps et un upload jusqu'à 50 Mbps.
 
-This module uses a standard M.2 3042 Key B form factor, ideal for industrial routers, IoT gateways, mobile hotspots, and video surveillance applications. It supports USB 3.0 and PCIe Gen2 interfaces for flexible system integration.
+Ce module utilise un format standard M.2 3042 Key B, idéal pour les routeurs industriels, les passerelles IoT, les points d'accès mobiles et les applications de vidéosurveillance. Il prend en charge les interfaces USB 3.0 et PCIe Gen2 pour une intégration système flexible.
 
-The EM7430 supports major global LTE bands (B1–5/7/8/12/13/20/25/26/29/30/41), making it suitable for IoT devices and M2M terminals deployed worldwide.
+L'EM7430 prend en charge les principales bandes LTE mondiales (B1–5/7/8/12/13/20/25/26/29/30/41), ce qui le rend adapté aux appareils IoT et aux terminaux M2M déployés dans le monde entier.
 
 ## Caractéristiques principales
 
-- Qualcomm MDM9230 chipset for proven reliability
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.0 and PCIe Gen2 dual interface support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
-- FOTA firmware over-the-air update support
+- Chipset Qualcomm MDM9230 pour une fiabilité éprouvée
+- LTE-A Cat 6 avec agrégation de porteuses 2×CA
+- Téléchargement jusqu'à 300 Mbps, upload jusqu'à 50 Mbps
+- Format industriel M.2 3042 Key B
+- Prise en charge des interfaces USB 3.0 et PCIe Gen2
+- GNSS intégré GPS / GLONASS / BeiDou
+- Large plage de température -40°C ~ +85°C
+- Mise à jour FOTA du firmware par liaison radio
 
 ## Spécifications techniques
 

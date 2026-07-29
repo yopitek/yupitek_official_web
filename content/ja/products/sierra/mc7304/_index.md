@@ -1,6 +1,6 @@
 ---
 title: "MC7304 LTE-A Cat 4 セルラーモジュール"
-description: "MC7304 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor for budget-sensitive industrial applications."
+description: "MC7304 は Qualcomm MDM9215 チップセットを採用し、LTE-A Cat 4 最大 150 Mbps に対応する Mini PCIe パッケージのセルラーモジュールで、コスト重視の産業用ゲートウェイやルーターに最適です。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7304", "Mini PCIe", "IoT"]
 
 ## 製品概要
 
-The MC7304 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+MC7304 は、Sierra Wireless が提供する LTE-Advanced Cat 4 セルラーモジュールです。Qualcomm MDM9215 チップセットを採用し、ダウンロード速度は最大 150 Mbps、アップロードは最大 50 Mbps です。
 
-This module uses a standard Mini PCIe Full Size form factor, compatible with a wide range of existing industrial motherboards and embedded platforms. It supports USB 2.0, UART, and SPI interfaces, ideal for budget-sensitive applications requiring reliable LTE connectivity.
+本モジュールは標準 Mini PCIe Full Size パッケージを採用しており、既存の産業用マザーボードや組み込みプラットフォームとの幅広い互換性を持ちます。USB 2.0、UART、SPI インターフェースに対応し、予算に制約がありつつも信頼性の高い LTE 接続が必要なアプリケーションに最適です。
 
-The MC7304 supports major global LTE bands, widely deployed in industrial gateways, vending machines, digital signage, and remote monitoring applications.
+MC7304 はグローバル主要 LTE 周波数帯に対応しており、産業用ゲートウェイ、自動販売機、デジタルサイネージ、遠隔監視アプリケーションに幅広く採用されています。
 
 ## 主な特長
 
-- Qualcomm MDM9215 chipset
-- LTE-A Cat 4 with download up to 150 Mbps
-- Upload speed up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 2.0, UART, SPI interface support
-- Integrated GPS / GLONASS GNSS
-- Wide temperature range -40°C ~ +85°C
-- Proven reliability with broad software support
+- Qualcomm MDM9215 チップセット採用
+- LTE-A Cat 4、ダウンロード最大 150 Mbps
+- アップロード速度最大 50 Mbps
+- Mini PCIe Full Size 標準パッケージ
+- USB 2.0、UART、SPI インターフェース対応
+- GPS / GLONASS GNSS 内蔵
+- 広温度範囲 -40°C ~ +85°C
+- 信頼性の高い安定動作、広範なソフトウェア対応
 
 ## 技術仕様
 

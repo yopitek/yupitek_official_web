@@ -1,6 +1,6 @@
 ---
 title: "EM9191 5G NR Sub-6 + mmWave Mobilfunkmodul"
-description: "EM9191 5G NR Sub-6 + mmWave cellular module with Qualcomm SDX55, 2.5 Gbps download, supporting n260/n261 for comprehensive 5G coverage."
+description: "Das EM9191 ist ein 5G NR Sub-6 + mmWave Mobilfunkmodul mit Qualcomm SDX55, 2.5 Gbps Downlink, n260/n261-Unterstützung für umfassende 5G-Abdeckung."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -16,22 +16,22 @@ featureimage: "/images/products/sierra/em9191_hero.jpg"
 
 ## Produktübersicht
 
-The EM9191 is Sierra Wireless' flagship 5G NR cellular module, powered by the Qualcomm SDX55 chipset, supporting both Sub-6 and mmWave (n260 39GHz / n261 28GHz) for the most comprehensive 5G coverage.
+Das EM9191 ist das Flaggschiff-5G-NR-Mobilfunkmodul von Sierra Wireless. Es verwendet den Qualcomm SDX55 Chipsatz, der sowohl Sub-6 als auch mmWave (n260 39GHz / n261 28GHz) unterstützt und damit die umfassendste 5G-Abdeckung bietet.
 
-Download speeds reach up to 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) with upload up to 900 Mbps (5G). It supports 6 antenna interfaces for mmWave beamforming requirements.
+Download-Geschwindigkeiten erreichen bis zu 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) mit Upload bis zu 900 Mbps (5G). Es unterstützt 6 Antennenschnittstellen für mmWave-Beamforming-Anforderungen.
 
-The EM9191 supports all Sub-6 bands (same as EM9190) plus mmWave high-frequency bands, paired with multi-band GNSS. Ideal for Industry 4.0, smart healthcare, and edge computing applications requiring the lowest latency and highest bandwidth.
+Das EM9191 unterstützt alle Sub-6-Bänder (wie das EM9190) plus mmWave-Hochfrequenzbänder, gepaart mit Multiband-GNSS. Ideal für Industrie 4.0, Smart Healthcare und Edge-Computing-Anwendungen mit höchsten Anforderungen an Leistung und Bandbreite.
 
 ## Hauptmerkmale
 
-- Qualcomm SDX55 5G modem chipset
-- 5G NR Sub-6 + mmWave (n260/n261) support
-- 5G download up to 2.5 Gbps, upload 900 Mbps
-- LTE Cat 22 download up to 2.0 Gbps
-- 8×CA and mmWave beamforming support
-- 6 antenna interfaces (including mmWave antennas)
-- M.2 3042 Key B industrial-grade form factor
-- Multi-band GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)
+- Qualcomm SDX55 5G Modem-Chipsatz
+- 5G NR Sub-6 + mmWave (n260/n261) Unterstützung
+- 5G Download bis zu 2.5 Gbps, Upload 900 Mbps
+- LTE Cat 22 Download bis zu 2.0 Gbps
+- 8×CA und mmWave-Beamforming-Unterstützung
+- 6 Antennenschnittstellen (inkl. mmWave-Antennen)
+- M.2 3042 Key B industrielle Bauform
+- Multiband-GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)
 
 ## Technische Spezifikationen
 

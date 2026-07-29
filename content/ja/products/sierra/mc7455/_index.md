@@ -1,6 +1,6 @@
 ---
 title: "MC7455 LTE-A Cat 6 セルラーモジュール"
-description: "MC7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Mini PCIe form factor for high-performance industrial and vehicle communication systems."
+description: "MC7455 は Qualcomm MDM9230 チップセットを採用し、LTE-A Cat 6 最大 300 Mbps に対応する Mini PCIe パッケージのセルラーモジュールで、高性能な産業用アプリケーションに最適です。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "MC7455", "Mini PCIe", "IoT"]
 
 ## 製品概要
 
-The MC7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+MC7455 は、Sierra Wireless が提供する LTE-Advanced Cat 6 セルラーモジュールです。Qualcomm MDM9230 チップセットを採用し、2×20 MHz キャリアアグリゲーション（2×CA）に対応、ダウンロード速度は最大 300 Mbps、アップロードは最大 50 Mbps です。
 
-This module uses a standard Mini PCIe Full Size form factor and is the highest-performing model in the MC series. It supports USB 3.0, UART, and SPI interfaces for fast data throughput.
+本モジュールは標準 Mini PCIe Full Size パッケージを採用しており、MC シリーズの中で最高性能のモデルです。USB 3.0、UART、SPI インターフェースに対応し、高速データ転送を実現します。
 
-The MC7455 supports major global LTE bands including FirstNet B14, widely deployed in high-performance industrial routers, vehicle communication systems, private network base stations, and enterprise connectivity solutions.
+MC7455 はグローバル主要 LTE 周波数帯と FirstNet B14 に対応しており、高性能産業用ルーター、車載通信システム、プライベートネットワーク基地局、エンタープライズ接続ソリューションに幅広く採用されています。
 
 ## 主な特長
 
-- Qualcomm MDM9230 chipset
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 3.0, UART, SPI interface support
-- FirstNet B14 band support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
+- Qualcomm MDM9230 チップセット採用
+- LTE-A Cat 6、2×CA キャリアアグリゲーション対応
+- ダウンロード最大 300 Mbps、アップロード 50 Mbps
+- Mini PCIe Full Size 標準パッケージ
+- USB 3.0、UART、SPI インターフェース対応
+- FirstNet B14 周波数帯対応
+- GPS / GLONASS / BeiDou GNSS 内蔵
+- 広温度範囲 -40°C ~ +85°C
 
 ## 技術仕様
 

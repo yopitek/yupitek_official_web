@@ -1,6 +1,6 @@
 ---
 title: "EM7430 LTE-A Cat 6 セルラーモジュール"
-description: "EM7430 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, M.2 form factor, ideal for industrial IoT and M2M applications."
+description: "EM7430 は Qualcomm MDM9230 チップセットを採用し、LTE-A Cat 6 最大 300 Mbps のダウンロード速度に対応する M.2 パッケージのセルラーモジュールで、産業用ルーターや IoT ゲートウェイに最適です。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7430", "IoT", "M.2"]
 
 ## 製品概要
 
-The EM7430 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+EM7430 は、Sierra Wireless が提供する LTE-Advanced Cat 6 セルラーモジュールです。Qualcomm MDM9230 チップセットを採用し、2×20 MHz キャリアアグリゲーション（2×CA）に対応、ダウンロード速度は最大 300 Mbps、アップロードは最大 50 Mbps です。
 
-This module uses a standard M.2 3042 Key B form factor, ideal for industrial routers, IoT gateways, mobile hotspots, and video surveillance applications. It supports USB 3.0 and PCIe Gen2 interfaces for flexible system integration.
+本モジュールは標準 M.2 3042 Key B パッケージを採用しており、産業用ルーター、IoT ゲートウェイ、モバイルホットスポット、およびビデオ監視アプリケーションに最適です。USB 3.0 および PCIe Gen2 インターフェースに対応し、柔軟なシステム統合が可能です。
 
-The EM7430 supports major global LTE bands (B1–5/7/8/12/13/20/25/26/29/30/41), making it suitable for IoT devices and M2M terminals deployed worldwide.
+EM7430 はグローバル主要 LTE 周波数帯（B1–5/7/8/12/13/20/25/26/29/30/41）に対応しており、世界中で展開される IoT デバイスおよび M2M 端末に適しています。
 
 ## 主な特長
 
-- Qualcomm MDM9230 chipset for proven reliability
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.0 and PCIe Gen2 dual interface support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
-- FOTA firmware over-the-air update support
+- Qualcomm MDM9230 チップセットを採用、安定した性能
+- LTE-A Cat 6、2×CA キャリアアグリゲーション対応
+- ダウンロード最大 300 Mbps、アップロード 50 Mbps
+- M.2 3042 Key B 産業用パッケージ
+- USB 3.0 と PCIe Gen2 デュアルインターフェース対応
+- GPS / GLONASS / BeiDou GNSS 内蔵
+- 広温度範囲 -40°C ~ +85°C
+- FOTA ファームウェア無線更新対応
 
 ## 技術仕様
 

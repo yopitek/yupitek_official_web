@@ -1,6 +1,6 @@
 ---
 title: "EM7511 LTE-A Pro Cat 12 Mobilfunkmodul"
-description: "EM7511 LTE-A Pro Cat 12 cellular module with Qualcomm SDX20, 600 Mbps download, M.2 form factor for high-bandwidth enterprise and industrial applications."
+description: "Das EM7511 ist ein LTE-A Pro Cat 12 Mobilfunkmodul mit Qualcomm SDX20 Chipsatz, 600 Mbps Downlink, M.2-Bauform für bandbreitenintensive Unternehmens- und Industrieanwendungen."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7511", "SDX20", "M.2"]
 
 ## Produktübersicht
 
-The EM7511 is Sierra Wireless' LTE-Advanced Pro Cat 12 cellular module, powered by the Qualcomm SDX20 chipset, supporting 3×20 MHz carrier aggregation (3×CA) with download speeds up to 600 Mbps and upload up to 150 Mbps.
+Das EM7511 ist ein LTE-Advanced Pro Cat 12 Mobilfunkmodul von Sierra Wireless. Es verwendet den Qualcomm SDX20 Chipsatz und unterstützt 3×20 MHz Carrier Aggregation (3×CA) mit Download-Geschwindigkeiten von bis zu 600 Mbps und Upload bis zu 150 Mbps.
 
-This module uses a standard M.2 3042 Key B form factor with USB 3.1, PCIe Gen3, and RGMII interfaces, providing higher system bandwidth. The SDX20 modem delivers lower power consumption and superior RF performance compared to previous generations.
+Dieses Modul verwendet die standard M.2 3042 Key B Bauform mit USB 3.1-, PCIe Gen3- und RGMII-Schnittstellen für höhere Systembandbreite. Das SDX20 Modem bietet im Vergleich zu Vorgängergenerationen geringeren Stromverbrauch und bessere HF-Leistung.
 
-The EM7511 supports global LTE bands and License-Assisted Access (LAA), ideal for high-bandwidth video surveillance, enterprise branch offices, and mobile hotspot applications.
+Das EM7511 unterstützt globale LTE-Bänder und License-Assisted Access (LAA) und ist ideal für bandbreitenintensive Videoüberwachung, Enterprise-Filialen und mobile Hotspot-Anwendungen.
 
 ## Hauptmerkmale
 
-- Qualcomm SDX20 modem chipset
-- LTE-A Pro Cat 12 with 3×CA carrier aggregation
-- Download up to 600 Mbps, upload up to 150 Mbps
-- 256QAM DL / 64QAM UL support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.1, PCIe Gen3, RGMII interface support
-- Integrated GPS / GLONASS / BeiDou / Galileo
-- Wide temperature range -40°C ~ +85°C
+- Qualcomm SDX20 Modem-Chipsatz
+- LTE-A Pro Cat 12 mit 3×CA Carrier Aggregation
+- Download bis zu 600 Mbps, Upload bis zu 150 Mbps
+- 256QAM DL / 64QAM UL Unterstützung
+- M.2 3042 Key B industrielle Bauform
+- USB 3.1-, PCIe Gen3-, RGMII-Schnittstellenunterstützung
+- Integriertes GPS / GLONASS / BeiDou / Galileo
+- Weiter Temperaturbereich -40°C ~ +85°C
 
 ## Technische Spezifikationen
 

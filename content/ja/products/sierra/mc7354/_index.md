@@ -1,6 +1,6 @@
 ---
 title: "MC7354 LTE-A Cat 4 セルラーモジュール"
-description: "MC7354 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor optimized for regional carrier band combinations."
+description: "MC7354 は Qualcomm MDM9215 チップセットを採用し、LTE-A Cat 4 最大 150 Mbps に対応する Mini PCIe パッケージのセルラーモジュールで、産業用 IoT および M2M 通信に最適です。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7354", "Mini PCIe", "IoT"]
 
 ## 製品概要
 
-The MC7354 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+MC7354 は、Sierra Wireless が提供する LTE-Advanced Cat 4 セルラーモジュールです。Qualcomm MDM9215 チップセットを採用し、ダウンロード速度は最大 150 Mbps、アップロードは最大 50 Mbps です。
 
-This module uses a standard Mini PCIe Full Size form factor. The MC7354 differs from other MC series modules in its specific band combination support, optimized for particular regional carrier networks. It supports USB 2.0, UART, and SPI interfaces.
+本モジュールは標準 Mini PCIe Full Size パッケージを採用しています。MC7354 の主な特徴は、特定の地域の通信事業者ネットワーク向けに最適化された周波数帯の組み合わせです。USB 2.0、UART、SPI インターフェースに対応しています。
 
-The MC7354 is ideal for industrial automation, transportation, smart grid, and infrastructure monitoring applications requiring reliable LTE connectivity.
+MC7354 は、安定した LTE 接続を必要とする産業オートメーション、交通運輸、スマートグリッド、インフラ監視などの産業用アプリケーションに最適です。
 
 ## 主な特長
 
-- Qualcomm MDM9215 chipset
-- LTE-A Cat 4 with download up to 150 Mbps
-- Upload speed up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 2.0, UART, SPI interface support
-- Optimized for regional carrier band combinations
-- Integrated GPS / GLONASS GNSS
-- Wide temperature range -40°C ~ +85°C
+- Qualcomm MDM9215 チップセット採用
+- LTE-A Cat 4、ダウンロード最大 150 Mbps
+- アップロード速度最大 50 Mbps
+- Mini PCIe Full Size 標準パッケージ
+- USB 2.0、UART、SPI インターフェース対応
+- 特定地域の通信事業者向け周波数帯最適化
+- GPS / GLONASS GNSS 内蔵
+- 広温度範囲 -40°C ~ +85°C
 
 ## 技術仕様
 

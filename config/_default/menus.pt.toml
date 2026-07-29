@@ -62,7 +62,7 @@
     name     = "Sierra Wireless"
     pageRef  = "/products/sierra"
     parent   = "Produtos"
-    weight   = 28
+    weight   = 30
 
   [[main]]
     name     = "Ubiquiti"
@@ -78,7 +78,7 @@
 [[main]]
   name       = "Suporte"
   pageRef    = "/support"
-  weight     = 30
+  weight     = 31
 
 [[main]]
   name       = "Contato"

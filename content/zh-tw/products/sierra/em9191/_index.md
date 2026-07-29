@@ -75,7 +75,8 @@ EM9191 支援所有 Sub-6 頻段 (同 EM9190) 加上 mmWave 高頻頻段，搭�
 
 | 資源 | 連結 |
 |------|------|
-| 官方產品頁面 | https://www.sierrawireless.com/products/em9191/ |
+| 官方產品頁面 | https://source.sierrawireless.com/devices/em-series/em9191/ |
+| 技術規格書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />

@@ -71,7 +71,8 @@ Das MC7304 unterstützt wichtige globale LTE-Bänder und wird häufig in Industr
 
 | Ressource | Link |
 |------|------|
-| Offizielle Produktseite | https://www.sierrawireless.com/products/mc7304/ |
+| Offizielle Produktseite | https://source.sierrawireless.com/devices/mc-series/mc7304/ |
+| Technisches Datenblatt (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7304_product_technical_specification_and_customer_design_guidelines_rev12_0.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />

@@ -1,6 +1,6 @@
 ---
-title: "Сотовый модуль MC7354 LTE-A Cat 4"
-description: "MC7354 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor optimized for regional carrier band combinations."
+title: "MC7354 Сотовый модуль LTE-A Cat 4"
+description: "MC7354 — сотовый модуль LTE-A Cat 4 на чипсете Qualcomm MDM9215, скорость загрузки до 150 Мбит/с, форм-фактор Mini PCIe, оптимизированный для региональных комбинаций диапазонов."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7354", "Mini PCIe", "IoT"]
 
 ## Обзор продукта
 
-The MC7354 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+MC7354 — это сотовый модуль LTE-Advanced Cat 4 от Sierra Wireless на чипсете Qualcomm MDM9215, поддерживающий скорость загрузки до 150 Мбит/с и выгрузки до 50 Мбит/с.
 
-This module uses a standard Mini PCIe Full Size form factor. The MC7354 differs from other MC series modules in its specific band combination support, optimized for particular regional carrier networks. It supports USB 2.0, UART, and SPI interfaces.
+Модуль выполнен в стандартном форм-факторе Mini PCIe Full Size. MC7354 отличается от других модулей серии MC специфическими комбинациями диапазонов, оптимизированными для сетей конкретных региональных операторов. Поддерживает интерфейсы USB 2.0, UART и SPI.
 
-The MC7354 is ideal for industrial automation, transportation, smart grid, and infrastructure monitoring applications requiring reliable LTE connectivity.
+MC7354 идеален для промышленной автоматизации, транспорта, интеллектуальных сетей и приложений мониторинга инфраструктуры, требующих надежного LTE-соединения.
 
 ## Ключевые особенности
 
-- Qualcomm MDM9215 chipset
-- LTE-A Cat 4 with download up to 150 Mbps
-- Upload speed up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 2.0, UART, SPI interface support
-- Optimized for regional carrier band combinations
-- Integrated GPS / GLONASS GNSS
-- Wide temperature range -40°C ~ +85°C
+- Чипсет Qualcomm MDM9215
+- LTE-A Cat 4 с загрузкой до 150 Мбит/с
+- Скорость выгрузки до 50 Мбит/с
+- Стандартный форм-фактор Mini PCIe Full Size
+- Поддержка интерфейсов USB 2.0, UART, SPI
+- Оптимизирован для региональных комбинаций диапазонов
+- Встроенная GNSS GPS / GLONASS
+- Широкий температурный диапазон -40°C ~ +85°C
 
 ## Технические характеристики
 
@@ -71,7 +71,8 @@ The MC7354 is ideal for industrial automation, transportation, smart grid, and i
 
 | Ресурс | Ссылка |
 |------|------|
-| Официальная страница продукта | https://www.sierrawireless.com/products/mc7354/ |
+| Официальная страница продукта | https://source.sierrawireless.com/devices/mc-series/mc7354/ |
+| Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/4114635_airprime-mc7354-product-technical-specification_r9.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />

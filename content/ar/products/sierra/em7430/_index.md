@@ -1,6 +1,6 @@
 ---
-title: "وحدة EM7430 LTE-A Cat 6 الخلوية"
-description: "EM7430 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, M.2 form factor, ideal for industrial IoT and M2M applications."
+title: "EM7430 وحدة خلوية LTE-A Cat 6"
+description: "EM7430 هي وحدة خلوية LTE-A Cat 6 مع مجموعة شرائح Qualcomm MDM9230، تحميل بسرعة 300 ميجابت/ثانية، بعامل شكل M.2، مثالية لأجهزة التوجيه الصناعية وبوابات إنترنت الأشياء."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7430", "IoT", "M.2"]
 
 ## نظرة عامة على المنتج
 
-The EM7430 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+EM7430 هي وحدة خلوية LTE-Advanced Cat 6 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm MDM9230 وتدعم تجميع الموجات الحاملة 2×20 ميجاهرتز (2×CA) بسرعات تحميل تصل إلى 300 ميجابت/ثانية ورفع يصل إلى 50 ميجابت/ثانية.
 
-This module uses a standard M.2 3042 Key B form factor, ideal for industrial routers, IoT gateways, mobile hotspots, and video surveillance applications. It supports USB 3.0 and PCIe Gen2 interfaces for flexible system integration.
+تستخدم هذه الوحدة عامل الشكل القياسي M.2 3042 Key B، وهي مثالية لأجهزة التوجيه الصناعية وبوابات إنترنت الأشياء ونقاط الاتصال المتنقلة وتطبيقات المراقبة بالفيديو. تدعم واجهات USB 3.0 و PCIe Gen2 لتكامل مرن مع الأنظمة.
 
-The EM7430 supports major global LTE bands (B1–5/7/8/12/13/20/25/26/29/30/41), making it suitable for IoT devices and M2M terminals deployed worldwide.
+تدعم EM7430 نطاقات LTE العالمية الرئيسية (B1–5/7/8/12/13/20/25/26/29/30/41)، مما يجعلها مناسبة لأجهزة إنترنت الأشياء ومحطات M2M المنتشرة في جميع أنحاء العالم.
 
 ## الميزات الرئيسية
 
-- Qualcomm MDM9230 chipset for proven reliability
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.0 and PCIe Gen2 dual interface support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
-- FOTA firmware over-the-air update support
+- مجموعة شرائح Qualcomm MDM9230 للموثوقية المثبتة
+- LTE-A Cat 6 مع تجميع الموجات الحاملة 2×CA
+- تحميل حتى 300 ميجابت/ثانية، رفع حتى 50 ميجابت/ثانية
+- عامل شكل صناعي M.2 3042 Key B
+- دعم واجهات مزدوجة USB 3.0 و PCIe Gen2
+- نظام GNSS مدمج GPS / GLONASS / BeiDou
+- نطاق درجة حرارة واسع -40°C ~ +85°C
+- تحديث البرامج الثابتة FOTA عبر الأثير
 
 ## المواصفات الفنية
 
@@ -71,7 +71,8 @@ The EM7430 supports major global LTE bands (B1–5/7/8/12/13/20/25/26/29/30/41),
 
 | المورد | الرابط |
 |------|------|
-| صفحة المنتج الرسمية | https://www.sierrawireless.com/products/em7430/ |
+| صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/em-series/em7430/ |
+| المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116235-airprime-em7430-product-technical-specification-r12.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em7430.png" alt="Sierra Wireless EM7430" />

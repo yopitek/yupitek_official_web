@@ -1,6 +1,6 @@
 ---
-title: "Módulo Celular EM7455 LTE-A Cat 6"
-description: "EM7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Band 14 FirstNet support, M.2 form factor for public safety and enterprise routing."
+title: "EM7455 Módulo Celular LTE-A Cat 6"
+description: "O EM7455 é um módulo celular LTE-A Cat 6 com chipset Qualcomm MDM9230, download de 300 Mbps e suporte à banda 14 FirstNet, formato M.2 para segurança pública e roteamento empresarial."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 
 ## Visão Geral do Produto
 
-The EM7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+O EM7455 é um módulo celular LTE-Advanced Cat 6 da Sierra Wireless. Utiliza o chipset Qualcomm MDM9230 e suporta agregação de portadoras 2×20 MHz (2×CA) com velocidades de download de até 300 Mbps e upload de até 50 Mbps.
 
-This module uses a standard M.2 3042 Key B form factor. It is part of the same family as the EM7430 but specifically supports Band 14 (FirstNet), making it ideal for US public safety network applications. It supports USB 3.0 and PCIe Gen2 interfaces.
+Este módulo utiliza o formato padrão M.2 3042 Key B. Pertence à mesma família do EM7430 mas suporta especificamente a banda 14 (FirstNet), tornando-o ideal para aplicações de redes de segurança pública dos EUA. Suporta interfaces USB 3.0 e PCIe Gen2.
 
-The EM7455 supports major global LTE bands (B1–5/7/8/12/13/14/20/25/26/29/30/41), widely used in enterprise routing, connected vehicles, and public safety communications.
+O EM7455 suporta as principais bandas LTE globais (B1–5/7/8/12/13/14/20/25/26/29/30/41) e é amplamente utilizado em roteamento empresarial, veículos conectados e comunicações de segurança pública.
 
 ## Principais Recursos
 
-- Qualcomm MDM9230 chipset
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- Band 14 FirstNet public safety band support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.0 and PCIe Gen2 dual interface support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
+- Chipset Qualcomm MDM9230
+- LTE-A Cat 6 com agregação de portadoras 2×CA
+- Download até 300 Mbps, upload até 50 Mbps
+- Suporte à banda 14 FirstNet para segurança pública
+- Formato industrial M.2 3042 Key B
+- Suporte a interfaces USB 3.0 e PCIe Gen2
+- GNSS integrado GPS / GLONASS / BeiDou
+- Ampla faixa de temperatura -40°C ~ +85°C
 
 ## Especificações Técnicas
 
@@ -71,7 +71,8 @@ The EM7455 supports major global LTE bands (B1–5/7/8/12/13/14/20/25/26/29/30/4
 
 | Recurso | Link |
 |------|------|
-| Página oficial do produto | https://www.sierrawireless.com/products/em7455/ |
+| Página oficial do produto | https://source.sierrawireless.com/devices/em-series/em7455/ |
+| Especificações técnicas (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116236-airprime-em7455-product-technical-specification-r15.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />

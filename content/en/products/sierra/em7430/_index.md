@@ -71,7 +71,8 @@ The EM7430 supports major global LTE bands (B1–5/7/8/12/13/20/25/26/29/30/41),
 
 | Resource | Link |
 |------|------|
-| Official Product Page | https://www.sierrawireless.com/products/em7430/ |
+| Official Product Page | https://source.sierrawireless.com/devices/em-series/em7430/ |
+| Technical Specification (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116235-airprime-em7430-product-technical-specification-r12.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em7430.png" alt="Sierra Wireless EM7430" />

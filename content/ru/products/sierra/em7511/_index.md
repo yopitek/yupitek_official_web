@@ -1,6 +1,6 @@
 ---
-title: "Сотовый модуль EM7511 LTE-A Pro Cat 12"
-description: "EM7511 LTE-A Pro Cat 12 cellular module with Qualcomm SDX20, 600 Mbps download, M.2 form factor for high-bandwidth enterprise and industrial applications."
+title: "EM7511 Сотовый модуль LTE-A Pro Cat 12"
+description: "EM7511 — сотовый модуль LTE-A Pro Cat 12 на чипсете Qualcomm SDX20, скорость загрузки до 600 Мбит/с, форм-фактор M.2 для корпоративных и промышленных приложений с высокой пропускной способностью."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7511", "SDX20", "M.2"]
 
 ## Обзор продукта
 
-The EM7511 is Sierra Wireless' LTE-Advanced Pro Cat 12 cellular module, powered by the Qualcomm SDX20 chipset, supporting 3×20 MHz carrier aggregation (3×CA) with download speeds up to 600 Mbps and upload up to 150 Mbps.
+EM7511 — это сотовый модуль LTE-Advanced Pro Cat 12 от Sierra Wireless на чипсете Qualcomm SDX20, поддерживающий агрегацию несущих 3×20 МГц (3×CA) со скоростью загрузки до 600 Мбит/с и выгрузки до 150 Мбит/с.
 
-This module uses a standard M.2 3042 Key B form factor with USB 3.1, PCIe Gen3, and RGMII interfaces, providing higher system bandwidth. The SDX20 modem delivers lower power consumption and superior RF performance compared to previous generations.
+Модуль выполнен в стандартном форм-факторе M.2 3042 Key B с интерфейсами USB 3.1, PCIe Gen3 и RGMII для более высокой пропускной способности системы. Модем SDX20 обеспечивает меньшее энергопотребление и превосходную производительность RF по сравнению с предыдущими поколениями.
 
-The EM7511 supports global LTE bands and License-Assisted Access (LAA), ideal for high-bandwidth video surveillance, enterprise branch offices, and mobile hotspot applications.
+EM7511 поддерживает глобальные диапазоны LTE и License-Assisted Access (LAA), идеально для видеонаблюдения с высокой пропускной способностью, корпоративных филиалов и мобильных точек доступа.
 
 ## Ключевые особенности
 
-- Qualcomm SDX20 modem chipset
-- LTE-A Pro Cat 12 with 3×CA carrier aggregation
-- Download up to 600 Mbps, upload up to 150 Mbps
-- 256QAM DL / 64QAM UL support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.1, PCIe Gen3, RGMII interface support
-- Integrated GPS / GLONASS / BeiDou / Galileo
-- Wide temperature range -40°C ~ +85°C
+- Чипсет модема Qualcomm SDX20
+- LTE-A Pro Cat 12 с агрегацией несущих 3×CA
+- Загрузка до 600 Мбит/с, выгрузка до 150 Мбит/с
+- Поддержка 256QAM DL / 64QAM UL
+- Промышленный форм-фактор M.2 3042 Key B
+- Поддержка интерфейсов USB 3.1, PCIe Gen3, RGMII
+- Встроенная GNSS GPS / GLONASS / BeiDou / Galileo
+- Широкий температурный диапазон -40°C ~ +85°C
 
 ## Технические характеристики
 
@@ -72,7 +72,8 @@ The EM7511 supports global LTE bands and License-Assisted Access (LAA), ideal fo
 
 | Ресурс | Ссылка |
 |------|------|
-| Официальная страница продукта | https://www.sierrawireless.com/products/em7511/ |
+| Официальная страница продукта | https://source.sierrawireless.com/devices/em-series/em7511/ |
+| Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41112028-em7511-product-technical-specification-r14.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em7511.png" alt="Sierra Wireless EM7511" />

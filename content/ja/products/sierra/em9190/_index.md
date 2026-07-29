@@ -74,7 +74,8 @@ EM9190 は高度な電力管理と放熱設計を備えており、高性能産�
 
 | リソース | リンク |
 |------|------|
-| 公式製品ページ | https://www.sierrawireless.com/products/em9190/ |
+| 公式製品ページ | https://source.sierrawireless.com/devices/em-series/em9190/ |
+| 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />

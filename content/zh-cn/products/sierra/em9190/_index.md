@@ -74,7 +74,8 @@ EM9190 搭载先进的功率管理与散热设计，适用于高效能工业路�
 
 | 资源 | 链接 |
 |------|------|
-| 官方产品页面 | https://www.sierrawireless.com/products/em9190/ |
+| 官方产品页面 | https://source.sierrawireless.com/devices/em-series/em9190/ |
+| 技术规格书 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />

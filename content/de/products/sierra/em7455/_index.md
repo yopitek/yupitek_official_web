@@ -71,7 +71,8 @@ Das EM7455 unterstützt die wichtigsten globalen LTE-Bänder (B1–5/7/8/12/13/1
 
 | Ressource | Link |
 |------|------|
-| Offizielle Produktseite | https://www.sierrawireless.com/products/em7455/ |
+| Offizielle Produktseite | https://source.sierrawireless.com/devices/em-series/em7455/ |
+| Technisches Datenblatt (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116236-airprime-em7455-product-technical-specification-r15.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />

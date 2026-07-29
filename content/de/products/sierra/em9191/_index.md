@@ -75,7 +75,8 @@ Das EM9191 unterstützt alle Sub-6-Bänder (wie das EM9190) plus mmWave-Hochfreq
 
 | Ressource | Link |
 |------|------|
-| Offizielle Produktseite | https://www.sierrawireless.com/products/em9191/ |
+| Offizielle Produktseite | https://source.sierrawireless.com/devices/em-series/em9191/ |
+| Technisches Datenblatt (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />

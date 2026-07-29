@@ -1,6 +1,6 @@
 ---
-title: "Сотовый модуль MC7455 LTE-A Cat 6"
-description: "MC7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Mini PCIe form factor for high-performance industrial and vehicle communication systems."
+title: "MC7455 Сотовый модуль LTE-A Cat 6"
+description: "MC7455 — сотовый модуль LTE-A Cat 6 на чипсете Qualcomm MDM9230, скорость загрузки до 300 Мбит/с, форм-фактор Mini PCIe для высокопроизводительных промышленных и транспортных систем связи."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "MC7455", "Mini PCIe", "IoT"]
 
 ## Обзор продукта
 
-The MC7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+MC7455 — это сотовый модуль LTE-Advanced Cat 6 от Sierra Wireless на чипсете Qualcomm MDM9230, поддерживающий агрегацию несущих 2×20 МГц (2×CA) со скоростью загрузки до 300 Мбит/с и выгрузки до 50 Мбит/с.
 
-This module uses a standard Mini PCIe Full Size form factor and is the highest-performing model in the MC series. It supports USB 3.0, UART, and SPI interfaces for fast data throughput.
+Модуль выполнен в стандартном форм-факторе Mini PCIe Full Size и является самой производительной моделью в серии MC. Поддерживает интерфейсы USB 3.0, UART и SPI для быстрой передачи данных.
 
-The MC7455 supports major global LTE bands including FirstNet B14, widely deployed in high-performance industrial routers, vehicle communication systems, private network base stations, and enterprise connectivity solutions.
+MC7455 поддерживает основные глобальные диапазоны LTE, включая FirstNet B14, и широко применяется в высокопроизводительных промышленных маршрутизаторах, системах связи транспортных средств, базовых станциях частных сетей и корпоративных решениях связи.
 
 ## Ключевые особенности
 
-- Qualcomm MDM9230 chipset
-- LTE-A Cat 6 with 2×CA carrier aggregation
-- Download up to 300 Mbps, upload up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 3.0, UART, SPI interface support
-- FirstNet B14 band support
-- Integrated GPS / GLONASS / BeiDou GNSS
-- Wide temperature range -40°C ~ +85°C
+- Чипсет Qualcomm MDM9230
+- LTE-A Cat 6 с агрегацией несущих 2×CA
+- Загрузка до 300 Мбит/с, выгрузка до 50 Мбит/с
+- Стандартный форм-фактор Mini PCIe Full Size
+- Поддержка интерфейсов USB 3.0, UART, SPI
+- Поддержка диапазона FirstNet B14
+- Встроенная GNSS GPS / GLONASS / BeiDou
+- Широкий температурный диапазон -40°C ~ +85°C
 
 ## Технические характеристики
 
@@ -71,7 +71,8 @@ The MC7455 supports major global LTE bands including FirstNet B14, widely deploy
 
 | Ресурс | Ссылка |
 |------|------|
-| Официальная страница продукта | https://www.sierrawireless.com/products/mc7455/ |
+| Официальная страница продукта | https://source.sierrawireless.com/devices/mc-series/mc7455/ |
+| Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116238-mc7455-pts-r15.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/mc7455.png" alt="Sierra Wireless MC7455" />

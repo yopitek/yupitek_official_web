@@ -1,6 +1,6 @@
 ---
-title: "Módulo Celular MC7350 LTE-A Cat 4"
-description: "MC7350 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor with broad global carrier certification."
+title: "MC7350 Módulo Celular LTE-A Cat 4"
+description: "El MC7350 es un módulo celular LTE-A Cat 4 con chipset Qualcomm MDM9215, descarga de 150 Mbps, formato Mini PCIe con amplia certificación global de operadores."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7350", "Mini PCIe", "IoT"]
 
 ## Descripción del Producto
 
-The MC7350 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+El MC7350 es un módulo celular LTE-Advanced Cat 4 de Sierra Wireless. Utiliza el chipset Qualcomm MDM9215 y soporta velocidades de descarga de hasta 150 Mbps y subida de hasta 50 Mbps.
 
-This module uses a standard Mini PCIe Full Size form factor. The MC7350 is in the same family as the MC7304 but features broader global band support by default. It supports USB 2.0, UART, and SPI interfaces.
+Este módulo utiliza el formato estándar Mini PCIe Full Size. El MC7350 pertenece a la misma familia que el MC7304 pero ofrece por defecto un soporte de bandas globales más amplio. Soporta interfaces USB 2.0, UART y SPI.
 
-The MC7350 is certified by major global carriers, making it suitable for industrial routers, asset tracking, smart meters, and remote healthcare devices.
+El MC7350 está certificado por los principales operadores globales, lo que lo hace adecuado para routers industriales, seguimiento de activos, contadores inteligentes y dispositivos de telemedicina.
 
 ## Características Principales
 
-- Qualcomm MDM9215 chipset
-- LTE-A Cat 4 with download up to 150 Mbps
-- Upload speed up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 2.0, UART, SPI interface support
-- Broad global carrier certification
-- Integrated GPS / GLONASS GNSS
-- Wide temperature range -40°C ~ +85°C
+- Chipset Qualcomm MDM9215
+- LTE-A Cat 4 con descarga hasta 150 Mbps
+- Velocidad de subida hasta 50 Mbps
+- Formato estándar Mini PCIe Full Size
+- Soporte de interfaces USB 2.0, UART, SPI
+- Amplia certificación global de operadores
+- GNSS integrado GPS / GLONASS
+- Amplio rango de temperatura -40°C ~ +85°C
 
 ## Especificaciones Técnicas
 
@@ -71,7 +71,8 @@ The MC7350 is certified by major global carriers, making it suitable for industr
 
 | Recurso | Enlace |
 |------|------|
-| Página oficial del producto | https://www.sierrawireless.com/products/mc7350/ |
+| Página oficial del producto | https://source.sierrawireless.com/devices/mc-series/mc7350/ |
+| Ficha técnica (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7350_product_technical_specification_and_customer_design_guidelines_rev4_0.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/mc7350.png" alt="Sierra Wireless MC7350" />

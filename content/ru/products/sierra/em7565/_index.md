@@ -1,6 +1,6 @@
 ---
-title: "Сотовый модуль EM7565 LTE-A Pro Cat 12"
-description: "EM7565 LTE-A Pro Cat 12 cellular module with Qualcomm SDX20, 600 Mbps download, FirstNet B14 support, M.2 form factor for mission-critical communications."
+title: "EM7565 Сотовый модуль LTE-A Pro Cat 12"
+description: "EM7565 — сотовый модуль LTE-A Pro Cat 12 на чипсете Qualcomm SDX20, скорость загрузки до 600 Мбит/с и поддержка FirstNet B14, форм-фактор M.2 для ответственных коммуникаций."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7565", "SDX20", "M.2"]
 
 ## Обзор продукта
 
-The EM7565 is Sierra Wireless' LTE-Advanced Pro Cat 12 cellular module, powered by the Qualcomm SDX20 chipset, supporting 3×20 MHz carrier aggregation (3×CA), DL 256QAM and UL 64QAM, with download speeds up to 600 Mbps and upload up to 150 Mbps.
+EM7565 — это сотовый модуль LTE-Advanced Pro Cat 12 от Sierra Wireless на чипсете Qualcomm SDX20, поддерживающий агрегацию несущих 3×20 МГц (3×CA), DL 256QAM и UL 64QAM со скоростью загрузки до 600 Мбит/с и выгрузки до 150 Мбит/с.
 
-The EM7565 uses a standard M.2 3042 Key B form factor and offers broader carrier aggregation support compared to the EM7511. Its SDX20 platform delivers excellent RF performance with extremely low power consumption, ideal for 24/7 industrial operation.
+EM7565 выполнен в стандартном форм-факторе M.2 3042 Key B и предлагает более широкую поддержку агрегации несущих по сравнению с EM7511. Платформа SDX20 обеспечивает исключительную производительность RF при чрезвычайно низком энергопотреблении, идеально для круглосуточной промышленной эксплуатации.
 
-It supports major global LTE bands including B14 FirstNet and B71 600 MHz, suitable for industrial routers, mission-critical communications, and professional mobile hotspots.
+Поддерживает основные глобальные диапазоны LTE, включая B14 FirstNet и B71 600 МГц, подходит для промышленных маршрутизаторов, ответственных коммуникаций и профессиональных мобильных точек доступа.
 
 ## Ключевые особенности
 
-- Qualcomm SDX20 modem chipset
-- LTE-A Pro Cat 12 with 3×CA carrier aggregation
-- Download up to 600 Mbps, upload up to 150 Mbps
-- 256QAM DL / 64QAM UL / LAA support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.1, PCIe Gen3, RGMII interface support
-- FirstNet B14 and B71 band support
-- Dual-band GNSS (GPS + Galileo)
+- Чипсет модема Qualcomm SDX20
+- LTE-A Pro Cat 12 с агрегацией несущих 3×CA
+- Загрузка до 600 Мбит/с, выгрузка до 150 Мбит/с
+- Поддержка 256QAM DL / 64QAM UL / LAA
+- Промышленный форм-фактор M.2 3042 Key B
+- Поддержка интерфейсов USB 3.1, PCIe Gen3, RGMII
+- Поддержка диапазонов FirstNet B14 и B71
+- Двухдиапазонная GNSS (GPS + Galileo)
 
 ## Технические характеристики
 
@@ -72,7 +72,8 @@ It supports major global LTE bands including B14 FirstNet and B71 600 MHz, suita
 
 | Ресурс | Ссылка |
 |------|------|
-| Официальная страница продукта | https://www.sierrawireless.com/products/em7565/ |
+| Официальная страница продукта | https://source.sierrawireless.com/devices/em-series/em7565/ |
+| Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41110788-em7565-product-technical-specification-r16.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em7565.png" alt="Sierra Wireless EM7565" />

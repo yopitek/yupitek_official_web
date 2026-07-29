@@ -1,6 +1,6 @@
 ---
-title: "Módulo Celular EM9190 5G NR Sub-6"
-description: "EM9190 5G NR Sub-6 cellular module with Qualcomm SDX55, 2.5 Gbps download, M.2 form factor for next-generation industrial and 5G applications."
+title: "EM9190 Módulo Celular 5G NR Sub-6"
+description: "O EM9190 é um módulo celular 5G NR Sub-6 com chipset Qualcomm SDX55, download de 2.5 Gbps, formato M.2 para aplicações industriais e 5G de próxima geração."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -16,22 +16,22 @@ featureimage: "/images/products/sierra/em9190_hero.jpg"
 
 ## Visão Geral do Produto
 
-The EM9190 is Sierra Wireless' flagship 5G NR Sub-6 cellular module, powered by the Qualcomm SDX55 chipset, supporting 5G SA/NSA modes with download speeds up to 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) and upload up to 900 Mbps (5G).
+O EM9190 é o módulo celular 5G NR Sub-6 flagship da Sierra Wireless. Utiliza o chipset Qualcomm SDX55, suporta modos 5G SA/NSA com velocidades de download de até 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) e upload de até 900 Mbps (5G).
 
-This module supports Category 22 LTE (8×CA) with extensive 5G NR Sub-6 band coverage including n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79. It uses a standard M.2 3042 Key B form factor for complete 5G connectivity.
+Este módulo suporta Categoria 22 LTE (8×CA) com ampla cobertura de bandas 5G NR Sub-6, incluindo n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79. Utiliza o formato padrão M.2 3042 Key B para conectividade 5G completa.
 
-The EM9190 features advanced power management and thermal design, suitable for high-performance industrial routers, CPE, enterprise gateways, and 5G mobile hotspots.
+O EM9190 possui gerenciamento avançado de energia e design térmico otimizado, sendo adequado para roteadores industriais de alto desempenho, CPE, gateways empresariais e hotspots móveis 5G.
 
 ## Principais Recursos
 
-- Qualcomm SDX55 5G modem chipset
-- 5G NR Sub-6 SA/NSA dual mode support
-- 5G download up to 2.5 Gbps, upload 900 Mbps
-- LTE Cat 22 download up to 2.0 Gbps
-- 8×CA carrier aggregation support
-- M.2 3042 Key B industrial-grade form factor
-- USB 3.1, PCIe Gen3, RGMII support
-- Multi-band GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)
+- Chipset de modem 5G Qualcomm SDX55
+- Suporte a modo dual 5G NR Sub-6 SA/NSA
+- Download 5G até 2.5 Gbps, upload 900 Mbps
+- Download LTE Cat 22 até 2.0 Gbps
+- Suporte a agregação de portadoras 8×CA
+- Formato industrial M.2 3042 Key B
+- Suporte USB 3.1, PCIe Gen3, RGMII
+- GNSS multibanda (GPS + GLONASS + BeiDou + Galileo + QZSS)
 
 ## Especificações Técnicas
 
@@ -74,7 +74,8 @@ The EM9190 features advanced power management and thermal design, suitable for h
 
 | Recurso | Link |
 |------|------|
-| Página oficial do produto | https://www.sierrawireless.com/products/em9190/ |
+| Página oficial do produto | https://source.sierrawireless.com/devices/em-series/em9190/ |
+| Especificações técnicas (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />

@@ -1,6 +1,6 @@
 ---
-title: "Módulo Celular MC7304 LTE-A Cat 4"
-description: "MC7304 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor for budget-sensitive industrial applications."
+title: "MC7304 Módulo Celular LTE-A Cat 4"
+description: "O MC7304 é um módulo celular LTE-A Cat 4 com chipset Qualcomm MDM9215, download de 150 Mbps, formato Mini PCIe para aplicações industriais de orçamento limitado."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,22 +15,22 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7304", "Mini PCIe", "IoT"]
 
 ## Visão Geral do Produto
 
-The MC7304 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+O MC7304 é um módulo celular LTE-Advanced Cat 4 da Sierra Wireless. Utiliza o chipset Qualcomm MDM9215 e suporta velocidades de download de até 150 Mbps e upload de até 50 Mbps.
 
-This module uses a standard Mini PCIe Full Size form factor, compatible with a wide range of existing industrial motherboards and embedded platforms. It supports USB 2.0, UART, and SPI interfaces, ideal for budget-sensitive applications requiring reliable LTE connectivity.
+Este módulo utiliza o formato padrão Mini PCIe Full Size, compatível com uma ampla gama de placas-mãe industriais e plataformas embarcadas existentes. Suporta interfaces USB 2.0, UART e SPI, ideal para aplicações com orçamento limitado que necessitam de conectividade LTE confiável.
 
-The MC7304 supports major global LTE bands, widely deployed in industrial gateways, vending machines, digital signage, and remote monitoring applications.
+O MC7304 suporta as principais bandas LTE globais e é amplamente implantado em gateways industriais, máquinas de venda automática, sinalização digital e aplicações de monitoramento remoto.
 
 ## Principais Recursos
 
-- Qualcomm MDM9215 chipset
-- LTE-A Cat 4 with download up to 150 Mbps
-- Upload speed up to 50 Mbps
-- Mini PCIe Full Size standard form factor
-- USB 2.0, UART, SPI interface support
-- Integrated GPS / GLONASS GNSS
-- Wide temperature range -40°C ~ +85°C
-- Proven reliability with broad software support
+- Chipset Qualcomm MDM9215
+- LTE-A Cat 4 com download até 150 Mbps
+- Velocidade de upload até 50 Mbps
+- Formato padrão Mini PCIe Full Size
+- Suporte a interfaces USB 2.0, UART, SPI
+- GNSS integrado GPS / GLONASS
+- Ampla faixa de temperatura -40°C ~ +85°C
+- Confiabilidade comprovada com amplo suporte de software
 
 ## Especificações Técnicas
 
@@ -71,7 +71,8 @@ The MC7304 supports major global LTE bands, widely deployed in industrial gatewa
 
 | Recurso | Link |
 |------|------|
-| Página oficial do produto | https://www.sierrawireless.com/products/mc7304/ |
+| Página oficial do produto | https://source.sierrawireless.com/devices/mc-series/mc7304/ |
+| Especificações técnicas (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7304_product_technical_specification_and_customer_design_guidelines_rev12_0.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />

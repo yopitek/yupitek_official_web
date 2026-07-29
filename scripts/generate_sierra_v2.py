@@ -654,36 +654,49 @@ PACKAGE = {
 
 # ── Resources (universal data, zh-tw base) ──────────────────────────────────
 
+# Current URLs: Sierra Wireless (Semtech) products are listed at source.sierrawireless.com
+# The old www.sierrawireless.com/products/* URLs are all 404.
+# Spec sheets are direct PDF links from Sierra's download center.
 RESOURCES = {
     "em7430": [
-        ("官方產品頁面", "https://www.sierrawireless.com/products/em7430/"),
+        ("官方產品頁面", "https://source.sierrawireless.com/devices/em-series/em7430/"),
+        ("技術規格書 (PDF)", "https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116235-airprime-em7430-product-technical-specification-r12.ashx"),
     ],
     "em7455": [
-        ("官方產品頁面", "https://www.sierrawireless.com/products/em7455/"),
+        ("官方產品頁面", "https://source.sierrawireless.com/devices/em-series/em7455/"),
+        ("技術規格書 (PDF)", "https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116236-airprime-em7455-product-technical-specification-r15.ashx"),
     ],
     "em7511": [
-        ("官方產品頁面", "https://www.sierrawireless.com/products/em7511/"),
+        ("官方產品頁面", "https://source.sierrawireless.com/devices/em-series/em7511/"),
+        ("技術規格書 (PDF)", "https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41112028-em7511-product-technical-specification-r14.ashx"),
     ],
     "em7565": [
-        ("官方產品頁面", "https://www.sierrawireless.com/products/em7565/"),
+        ("官方產品頁面", "https://source.sierrawireless.com/devices/em-series/em7565/"),
+        ("技術規格書 (PDF)", "https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41110788-em7565-product-technical-specification-r16.ashx"),
     ],
     "em9190": [
-        ("官方產品頁面", "https://www.sierrawireless.com/products/em9190/"),
+        ("官方產品頁面", "https://source.sierrawireless.com/devices/em-series/em9190/"),
+        ("技術規格書 (PDF)", "https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx"),
     ],
     "em9191": [
-        ("官方產品頁面", "https://www.sierrawireless.com/products/em9191/"),
+        ("官方產品頁面", "https://source.sierrawireless.com/devices/em-series/em9191/"),
+        ("技術規格書 (PDF)", "https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx"),
     ],
     "mc7304": [
-        ("官方產品頁面", "https://www.sierrawireless.com/products/mc7304/"),
+        ("官方產品頁面", "https://source.sierrawireless.com/devices/mc-series/mc7304/"),
+        ("技術規格書 (PDF)", "https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7304_product_technical_specification_and_customer_design_guidelines_rev12_0.ashx"),
     ],
     "mc7350": [
-        ("官方產品頁面", "https://www.sierrawireless.com/products/mc7350/"),
+        ("官方產品頁面", "https://source.sierrawireless.com/devices/mc-series/mc7350/"),
+        ("技術規格書 (PDF)", "https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7350_product_technical_specification_and_customer_design_guidelines_rev4_0.ashx"),
     ],
     "mc7354": [
-        ("官方產品頁面", "https://www.sierrawireless.com/products/mc7354/"),
+        ("官方產品頁面", "https://source.sierrawireless.com/devices/mc-series/mc7354/"),
+        ("技術規格書 (PDF)", "https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/4114635_airprime-mc7354-product-technical-specification_r9.ashx"),
     ],
     "mc7455": [
-        ("官方產品頁面", "https://www.sierrawireless.com/products/mc7455/"),
+        ("官方產品頁面", "https://source.sierrawireless.com/devices/mc-series/mc7455/"),
+        ("技術規格書 (PDF)", "https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116238-mc7455-pts-r15.ashx"),
     ],
 }
 
@@ -1840,6 +1853,939 @@ PRODUCT_FR = {
     },
 }
 
+
+# ── Spanish product content (formal, usted register) ──────────────────────
+
+PRODUCT_ES = {
+    "em7430": {
+        "title": "EM7430 Módulo Celular LTE-A Cat 6",
+        "desc": "El EM7430 es un módulo celular LTE-A Cat 6 con chipset Qualcomm MDM9230, descarga de 300 Mbps, formato M.2, ideal para routers industriales y pasarelas IoT.",
+        "overview": (
+            "El EM7430 es un módulo celular LTE-Advanced Cat 6 de Sierra Wireless. Utiliza el chipset Qualcomm MDM9230 "
+            "y soporta agregación de portadoras 2×20 MHz (2×CA) con velocidades de descarga de hasta 300 Mbps y subida de hasta 50 Mbps.\n\n"
+            "Este módulo utiliza el formato estándar M.2 3042 Key B, ideal para routers industriales, pasarelas IoT, puntos de acceso móviles "
+            "y aplicaciones de videovigilancia. Soporta interfaces USB 3.0 y PCIe Gen2 para una integración flexible del sistema.\n\n"
+            "El EM7430 soporta las principales bandas LTE globales (B1–5/7/8/12/13/20/25/26/29/30/41), "
+            "siendo adecuado para dispositivos IoT y terminales M2M desplegados en todo el mundo."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9230 para fiabilidad probada",
+            "LTE-A Cat 6 con agregación de portadoras 2×CA",
+            "Descarga hasta 300 Mbps, subida hasta 50 Mbps",
+            "Formato industrial M.2 3042 Key B",
+            "Soporte de interfaces duales USB 3.0 y PCIe Gen2",
+            "GNSS integrado GPS / GLONASS / BeiDou",
+            "Amplio rango de temperatura -40°C ~ +85°C",
+            "Actualización FOTA de firmware por vía inalámbrica",
+        ],
+    },
+    "em7455": {
+        "title": "EM7455 Módulo Celular LTE-A Cat 6",
+        "desc": "El EM7455 es un módulo celular LTE-A Cat 6 con chipset Qualcomm MDM9230, descarga de 300 Mbps y soporte de banda 14 FirstNet, formato M.2 para seguridad pública y routing empresarial.",
+        "overview": (
+            "El EM7455 es un módulo celular LTE-Advanced Cat 6 de Sierra Wireless. Utiliza el chipset Qualcomm MDM9230 "
+            "y soporta agregación de portadoras 2×20 MHz (2×CA) con velocidades de descarga de hasta 300 Mbps y subida de hasta 50 Mbps.\n\n"
+            "Este módulo utiliza el formato estándar M.2 3042 Key B. Pertenece a la misma familia que el EM7430 pero soporta específicamente "
+            "la banda 14 (FirstNet), lo que lo hace ideal para aplicaciones de redes de seguridad pública estadounidenses. Soporta interfaces USB 3.0 y PCIe Gen2.\n\n"
+            "El EM7455 soporta las principales bandas LTE globales (B1–5/7/8/12/13/14/20/25/26/29/30/41) "
+            "y se utiliza ampliamente en routing empresarial, vehículos conectados y comunicaciones de seguridad pública."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9230",
+            "LTE-A Cat 6 con agregación de portadoras 2×CA",
+            "Descarga hasta 300 Mbps, subida hasta 50 Mbps",
+            "Soporte de banda 14 FirstNet para seguridad pública",
+            "Formato industrial M.2 3042 Key B",
+            "Soporte de interfaces USB 3.0 y PCIe Gen2",
+            "GNSS integrado GPS / GLONASS / BeiDou",
+            "Amplio rango de temperatura -40°C ~ +85°C",
+        ],
+    },
+    "em7511": {
+        "title": "EM7511 Módulo Celular LTE-A Pro Cat 12",
+        "desc": "El EM7511 es un módulo celular LTE-A Pro Cat 12 con chipset Qualcomm SDX20, descarga de 600 Mbps, formato M.2 para aplicaciones empresariales e industriales de alto ancho de banda.",
+        "overview": (
+            "El EM7511 es un módulo celular LTE-Advanced Pro Cat 12 de Sierra Wireless. Utiliza el chipset Qualcomm SDX20 "
+            "y soporta agregación de portadoras 3×20 MHz (3×CA) con velocidades de descarga de hasta 600 Mbps y subida de hasta 150 Mbps.\n\n"
+            "Este módulo utiliza el formato estándar M.2 3042 Key B con interfaces USB 3.1, PCIe Gen3 y RGMII "
+            "para un mayor ancho de banda del sistema. El módem SDX20 ofrece menor consumo de energía y rendimiento RF superior en comparación con generaciones anteriores.\n\n"
+            "El EM7511 soporta bandas LTE globales y License-Assisted Access (LAA), ideal "
+            "para videovigilancia de alto ancho de banda, oficinas sucursales empresariales y aplicaciones de punto de acceso móvil."
+        ),
+        "features": [
+            "Chipset de módem Qualcomm SDX20",
+            "LTE-A Pro Cat 12 con agregación de portadoras 3×CA",
+            "Descarga hasta 600 Mbps, subida hasta 150 Mbps",
+            "Soporte 256QAM DL / 64QAM UL",
+            "Formato industrial M.2 3042 Key B",
+            "Soporte de interfaces USB 3.1, PCIe Gen3, RGMII",
+            "GNSS integrado GPS / GLONASS / BeiDou / Galileo",
+            "Amplio rango de temperatura -40°C ~ +85°C",
+        ],
+    },
+    "em7565": {
+        "title": "EM7565 Módulo Celular LTE-A Pro Cat 12",
+        "desc": "El EM7565 es un módulo celular LTE-A Pro Cat 12 con chipset Qualcomm SDX20, descarga de 600 Mbps y soporte FirstNet B14, formato M.2 para comunicaciones críticas.",
+        "overview": (
+            "El EM7565 es un módulo celular LTE-Advanced Pro Cat 12 de Sierra Wireless. Utiliza el chipset Qualcomm SDX20 "
+            "y soporta agregación de portadoras 3×20 MHz (3×CA), DL 256QAM y UL 64QAM con velocidades de descarga de hasta 600 Mbps y subida de hasta 150 Mbps.\n\n"
+            "El EM7565 utiliza el formato estándar M.2 3042 Key B y ofrece un soporte de agregación de portadoras más amplio que el EM7511. "
+            "La plataforma SDX20 proporciona un rendimiento RF excepcional con un consumo de energía extremadamente bajo, ideal para operación industrial 24/7.\n\n"
+            "Soporta las principales bandas LTE globales, incluyendo B14 FirstNet y B71 600 MHz, "
+            "siendo adecuado para routers industriales, comunicaciones críticas y puntos de acceso móviles profesionales."
+        ),
+        "features": [
+            "Chipset de módem Qualcomm SDX20",
+            "LTE-A Pro Cat 12 con agregación de portadoras 3×CA",
+            "Descarga hasta 600 Mbps, subida hasta 150 Mbps",
+            "Soporte 256QAM DL / 64QAM UL / LAA",
+            "Formato industrial M.2 3042 Key B",
+            "Soporte de interfaces USB 3.1, PCIe Gen3, RGMII",
+            "Soporte de bandas FirstNet B14 y B71",
+            "GNSS de doble banda (GPS + Galileo)",
+        ],
+    },
+    "em9190": {
+        "title": "EM9190 Módulo Celular 5G NR Sub-6",
+        "desc": "El EM9190 es un módulo celular 5G NR Sub-6 con chipset Qualcomm SDX55, descarga de 2.5 Gbps, formato M.2 para aplicaciones industriales y 5G de próxima generación.",
+        "overview": (
+            "El EM9190 es el módulo celular 5G NR Sub-6 insignia de Sierra Wireless. Utiliza el chipset Qualcomm SDX55, "
+            "soporta modos 5G SA/NSA con velocidades de descarga de hasta 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) "
+            "y subida de hasta 900 Mbps (5G).\n\n"
+            "Este módulo soporta Categoría 22 LTE (8×CA) con una amplia cobertura de bandas 5G NR Sub-6, incluyendo "
+            "n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79. "
+            "Utiliza el formato estándar M.2 3042 Key B para una conectividad 5G completa.\n\n"
+            "El EM9190 cuenta con gestión avanzada de energía y diseño térmico optimizado, "
+            "siendo adecuado para routers industriales de alto rendimiento, CPE, pasarelas empresariales y puntos de acceso móviles 5G."
+        ),
+        "features": [
+            "Chipset de módem 5G Qualcomm SDX55",
+            "Soporte de modo dual 5G NR Sub-6 SA/NSA",
+            "Descarga 5G hasta 2.5 Gbps, subida 900 Mbps",
+            "Descarga LTE Cat 22 hasta 2.0 Gbps",
+            "Soporte de agregación de portadoras 8×CA",
+            "Formato industrial M.2 3042 Key B",
+            "Soporte USB 3.1, PCIe Gen3, RGMII",
+            "GNSS multibanda (GPS + GLONASS + BeiDou + Galileo + QZSS)",
+        ],
+    },
+    "em9191": {
+        "title": "EM9191 Módulo Celular 5G NR Sub-6 + mmWave",
+        "desc": "El EM9191 es un módulo celular 5G NR Sub-6 + mmWave con chipset Qualcomm SDX55, descarga de 2.5 Gbps, soporte n260/n261 para cobertura 5G completa.",
+        "overview": (
+            "El EM9191 es el módulo celular 5G NR insignia de Sierra Wireless. Utiliza el chipset Qualcomm SDX55, "
+            "soportando tanto Sub-6 como mmWave (n260 39GHz / n261 28GHz) para la cobertura 5G más completa.\n\n"
+            "Las velocidades de descarga alcanzan hasta 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) "
+            "con subida de hasta 900 Mbps (5G). Soporta 6 interfaces de antena para los requisitos de formación de haz mmWave.\n\n"
+            "El EM9191 soporta todas las bandas Sub-6 (igual que el EM9190) más las bandas de alta frecuencia mmWave, "
+            "combinado con GNSS multibanda. Ideal para Industria 4.0, salud inteligente "
+            "y aplicaciones de edge computing que requieren la menor latencia y el mayor ancho de banda."
+        ),
+        "features": [
+            "Chipset de módem 5G Qualcomm SDX55",
+            "Soporte 5G NR Sub-6 + mmWave (n260/n261)",
+            "Descarga 5G hasta 2.5 Gbps, subida 900 Mbps",
+            "Descarga LTE Cat 22 hasta 2.0 Gbps",
+            "Soporte 8×CA y formación de haz mmWave",
+            "6 interfaces de antena (incluyendo antenas mmWave)",
+            "Formato industrial M.2 3042 Key B",
+            "GNSS multibanda (GPS + GLONASS + BeiDou + Galileo + QZSS)",
+        ],
+    },
+    "mc7304": {
+        "title": "MC7304 Módulo Celular LTE-A Cat 4",
+        "desc": "El MC7304 es un módulo celular LTE-A Cat 4 con chipset Qualcomm MDM9215, descarga de 150 Mbps, formato Mini PCIe para aplicaciones industriales de presupuesto ajustado.",
+        "overview": (
+            "El MC7304 es un módulo celular LTE-Advanced Cat 4 de Sierra Wireless. Utiliza el chipset Qualcomm MDM9215 "
+            "y soporta velocidades de descarga de hasta 150 Mbps y subida de hasta 50 Mbps.\n\n"
+            "Este módulo utiliza el formato estándar Mini PCIe Full Size, compatible con una amplia gama de "
+            "placas base industriales y plataformas embebidas existentes. Soporta interfaces USB 2.0, UART y SPI, "
+            "ideal para aplicaciones con presupuesto ajustado que requieren conectividad LTE fiable.\n\n"
+            "El MC7304 soporta las principales bandas LTE globales y se implementa ampliamente en pasarelas industriales, "
+            "máquinas expendedoras, señalización digital y aplicaciones de monitorización remota."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9215",
+            "LTE-A Cat 4 con descarga hasta 150 Mbps",
+            "Velocidad de subida hasta 50 Mbps",
+            "Formato estándar Mini PCIe Full Size",
+            "Soporte de interfaces USB 2.0, UART, SPI",
+            "GNSS integrado GPS / GLONASS",
+            "Amplio rango de temperatura -40°C ~ +85°C",
+            "Fiabilidad probada con amplio soporte de software",
+        ],
+    },
+    "mc7350": {
+        "title": "MC7350 Módulo Celular LTE-A Cat 4",
+        "desc": "El MC7350 es un módulo celular LTE-A Cat 4 con chipset Qualcomm MDM9215, descarga de 150 Mbps, formato Mini PCIe con amplia certificación global de operadores.",
+        "overview": (
+            "El MC7350 es un módulo celular LTE-Advanced Cat 4 de Sierra Wireless. Utiliza el chipset Qualcomm MDM9215 "
+            "y soporta velocidades de descarga de hasta 150 Mbps y subida de hasta 50 Mbps.\n\n"
+            "Este módulo utiliza el formato estándar Mini PCIe Full Size. El MC7350 pertenece a la misma familia que el MC7304 "
+            "pero ofrece por defecto un soporte de bandas globales más amplio. Soporta interfaces USB 2.0, UART y SPI.\n\n"
+            "El MC7350 está certificado por los principales operadores globales, lo que lo hace adecuado para routers industriales, "
+            "seguimiento de activos, contadores inteligentes y dispositivos de telemedicina."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9215",
+            "LTE-A Cat 4 con descarga hasta 150 Mbps",
+            "Velocidad de subida hasta 50 Mbps",
+            "Formato estándar Mini PCIe Full Size",
+            "Soporte de interfaces USB 2.0, UART, SPI",
+            "Amplia certificación global de operadores",
+            "GNSS integrado GPS / GLONASS",
+            "Amplio rango de temperatura -40°C ~ +85°C",
+        ],
+    },
+    "mc7354": {
+        "title": "MC7354 Módulo Celular LTE-A Cat 4",
+        "desc": "El MC7354 es un módulo celular LTE-A Cat 4 con chipset Qualcomm MDM9215, descarga de 150 Mbps, formato Mini PCIe optimizado para combinaciones de bandas regionales.",
+        "overview": (
+            "El MC7354 es un módulo celular LTE-Advanced Cat 4 de Sierra Wireless. Utiliza el chipset Qualcomm MDM9215 "
+            "y soporta velocidades de descarga de hasta 150 Mbps y subida de hasta 50 Mbps.\n\n"
+            "Este módulo utiliza el formato estándar Mini PCIe Full Size. El MC7354 se distingue de otros módulos de la serie MC "
+            "por sus combinaciones de bandas específicas, optimizadas para redes de operadores regionales particulares. "
+            "Soporta interfaces USB 2.0, UART y SPI.\n\n"
+            "El MC7354 es ideal para automatización industrial, transporte, redes inteligentes "
+            "y aplicaciones de monitorización de infraestructuras que requieren conectividad LTE fiable."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9215",
+            "LTE-A Cat 4 con descarga hasta 150 Mbps",
+            "Velocidad de subida hasta 50 Mbps",
+            "Formato estándar Mini PCIe Full Size",
+            "Soporte de interfaces USB 2.0, UART, SPI",
+            "Optimizado para combinaciones de bandas regionales",
+            "GNSS integrado GPS / GLONASS",
+            "Amplio rango de temperatura -40°C ~ +85°C",
+        ],
+    },
+    "mc7455": {
+        "title": "MC7455 Módulo Celular LTE-A Cat 6",
+        "desc": "El MC7455 es un módulo celular LTE-A Cat 6 con chipset Qualcomm MDM9230, descarga de 300 Mbps, formato Mini PCIe para sistemas de comunicación industriales y vehiculares de alto rendimiento.",
+        "overview": (
+            "El MC7455 es un módulo celular LTE-Advanced Cat 6 de Sierra Wireless. Utiliza el chipset Qualcomm MDM9230 "
+            "y soporta agregación de portadoras 2×20 MHz (2×CA) con velocidades de descarga de hasta 300 Mbps y subida de hasta 50 Mbps.\n\n"
+            "Este módulo utiliza el formato estándar Mini PCIe Full Size y es el modelo de mayor rendimiento de la serie MC. "
+            "Soporta interfaces USB 3.0, UART y SPI para un rápido rendimiento de datos.\n\n"
+            "El MC7455 soporta las principales bandas LTE globales, incluyendo FirstNet B14, "
+            "y se implementa ampliamente en routers industriales de alto rendimiento, sistemas de comunicación vehicular, "
+            "estaciones base de redes privadas y soluciones de conectividad empresarial."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9230",
+            "LTE-A Cat 6 con agregación de portadoras 2×CA",
+            "Descarga hasta 300 Mbps, subida hasta 50 Mbps",
+            "Formato estándar Mini PCIe Full Size",
+            "Soporte de interfaces USB 3.0, UART, SPI",
+            "Soporte de banda FirstNet B14",
+            "GNSS integrado GPS / GLONASS / BeiDou",
+            "Amplio rango de temperatura -40°C ~ +85°C",
+        ],
+    },
+}
+
+
+
+# ── Portuguese product content (Brazilian, formal) ─────────────────────
+
+PRODUCT_PT = {
+    "em7430": {
+        "title": "EM7430 Módulo Celular LTE-A Cat 6",
+        "desc": "O EM7430 é um módulo celular LTE-A Cat 6 com chipset Qualcomm MDM9230, download de 300 Mbps, formato M.2, ideal para roteadores industriais e gateways IoT.",
+        "overview": (
+            "O EM7430 é um módulo celular LTE-Advanced Cat 6 da Sierra Wireless. Utiliza o chipset Qualcomm MDM9230 "
+            "e suporta agregação de portadoras 2×20 MHz (2×CA) com velocidades de download de até 300 Mbps e upload de até 50 Mbps.\n\n"
+            "Este módulo utiliza o formato padrão M.2 3042 Key B, ideal para roteadores industriais, gateways IoT, hotspots móveis "
+            "e aplicações de videovigilância. Suporta interfaces USB 3.0 e PCIe Gen2 para integração flexível do sistema.\n\n"
+            "O EM7430 suporta as principais bandas LTE globais (B1–5/7/8/12/13/20/25/26/29/30/41), "
+            "sendo adequado para dispositivos IoT e terminais M2M implantados em todo o mundo."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9230 para confiabilidade comprovada",
+            "LTE-A Cat 6 com agregação de portadoras 2×CA",
+            "Download até 300 Mbps, upload até 50 Mbps",
+            "Formato industrial M.2 3042 Key B",
+            "Suporte a interfaces duais USB 3.0 e PCIe Gen2",
+            "GNSS integrado GPS / GLONASS / BeiDou",
+            "Ampla faixa de temperatura -40°C ~ +85°C",
+            "Atualização FOTA de firmware via rádio",
+        ],
+    },
+    "em7455": {
+        "title": "EM7455 Módulo Celular LTE-A Cat 6",
+        "desc": "O EM7455 é um módulo celular LTE-A Cat 6 com chipset Qualcomm MDM9230, download de 300 Mbps e suporte à banda 14 FirstNet, formato M.2 para segurança pública e roteamento empresarial.",
+        "overview": (
+            "O EM7455 é um módulo celular LTE-Advanced Cat 6 da Sierra Wireless. Utiliza o chipset Qualcomm MDM9230 "
+            "e suporta agregação de portadoras 2×20 MHz (2×CA) com velocidades de download de até 300 Mbps e upload de até 50 Mbps.\n\n"
+            "Este módulo utiliza o formato padrão M.2 3042 Key B. Pertence à mesma família do EM7430 mas suporta especificamente "
+            "a banda 14 (FirstNet), tornando-o ideal para aplicações de redes de segurança pública dos EUA. Suporta interfaces USB 3.0 e PCIe Gen2.\n\n"
+            "O EM7455 suporta as principais bandas LTE globais (B1–5/7/8/12/13/14/20/25/26/29/30/41) "
+            "e é amplamente utilizado em roteamento empresarial, veículos conectados e comunicações de segurança pública."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9230",
+            "LTE-A Cat 6 com agregação de portadoras 2×CA",
+            "Download até 300 Mbps, upload até 50 Mbps",
+            "Suporte à banda 14 FirstNet para segurança pública",
+            "Formato industrial M.2 3042 Key B",
+            "Suporte a interfaces USB 3.0 e PCIe Gen2",
+            "GNSS integrado GPS / GLONASS / BeiDou",
+            "Ampla faixa de temperatura -40°C ~ +85°C",
+        ],
+    },
+    "em7511": {
+        "title": "EM7511 Módulo Celular LTE-A Pro Cat 12",
+        "desc": "O EM7511 é um módulo celular LTE-A Pro Cat 12 com chipset Qualcomm SDX20, download de 600 Mbps, formato M.2 para aplicações empresariais e industriais de alta largura de banda.",
+        "overview": (
+            "O EM7511 é um módulo celular LTE-Advanced Pro Cat 12 da Sierra Wireless. Utiliza o chipset Qualcomm SDX20 "
+            "e suporta agregação de portadoras 3×20 MHz (3×CA) com velocidades de download de até 600 Mbps e upload de até 150 Mbps.\n\n"
+            "Este módulo utiliza o formato padrão M.2 3042 Key B com interfaces USB 3.1, PCIe Gen3 e RGMII "
+            "para maior largura de banda do sistema. O modem SDX20 oferece menor consumo de energia e desempenho RF superior em comparação com gerações anteriores.\n\n"
+            "O EM7511 suporta bandas LTE globais e License-Assisted Access (LAA), ideal "
+            "para videovigilância de alta largura de banda, filiais empresariais e aplicações de hotspot móvel."
+        ),
+        "features": [
+            "Chipset de modem Qualcomm SDX20",
+            "LTE-A Pro Cat 12 com agregação de portadoras 3×CA",
+            "Download até 600 Mbps, upload até 150 Mbps",
+            "Suporte 256QAM DL / 64QAM UL",
+            "Formato industrial M.2 3042 Key B",
+            "Suporte a interfaces USB 3.1, PCIe Gen3, RGMII",
+            "GNSS integrado GPS / GLONASS / BeiDou / Galileo",
+            "Ampla faixa de temperatura -40°C ~ +85°C",
+        ],
+    },
+    "em7565": {
+        "title": "EM7565 Módulo Celular LTE-A Pro Cat 12",
+        "desc": "O EM7565 é um módulo celular LTE-A Pro Cat 12 com chipset Qualcomm SDX20, download de 600 Mbps e suporte FirstNet B14, formato M.2 para comunicações críticas.",
+        "overview": (
+            "O EM7565 é um módulo celular LTE-Advanced Pro Cat 12 da Sierra Wireless. Utiliza o chipset Qualcomm SDX20 "
+            "e suporta agregação de portadoras 3×20 MHz (3×CA), DL 256QAM e UL 64QAM com velocidades de download de até 600 Mbps e upload de até 150 Mbps.\n\n"
+            "O EM7565 utiliza o formato padrão M.2 3042 Key B e oferece suporte de agregação de portadoras mais amplo que o EM7511. "
+            "A plataforma SDX20 proporciona excelente desempenho RF com consumo de energia extremamente baixo, ideal para operação industrial 24/7.\n\n"
+            "Suporta as principais bandas LTE globais, incluindo B14 FirstNet e B71 600 MHz, "
+            "sendo adequado para roteadores industriais, comunicações críticas e hotspots móveis profissionais."
+        ),
+        "features": [
+            "Chipset de modem Qualcomm SDX20",
+            "LTE-A Pro Cat 12 com agregação de portadoras 3×CA",
+            "Download até 600 Mbps, upload até 150 Mbps",
+            "Suporte 256QAM DL / 64QAM UL / LAA",
+            "Formato industrial M.2 3042 Key B",
+            "Suporte a interfaces USB 3.1, PCIe Gen3, RGMII",
+            "Suporte às bandas FirstNet B14 e B71",
+            "GNSS de banda dupla (GPS + Galileo)",
+        ],
+    },
+    "em9190": {
+        "title": "EM9190 Módulo Celular 5G NR Sub-6",
+        "desc": "O EM9190 é um módulo celular 5G NR Sub-6 com chipset Qualcomm SDX55, download de 2.5 Gbps, formato M.2 para aplicações industriais e 5G de próxima geração.",
+        "overview": (
+            "O EM9190 é o módulo celular 5G NR Sub-6 flagship da Sierra Wireless. Utiliza o chipset Qualcomm SDX55, "
+            "suporta modos 5G SA/NSA com velocidades de download de até 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) "
+            "e upload de até 900 Mbps (5G).\n\n"
+            "Este módulo suporta Categoria 22 LTE (8×CA) com ampla cobertura de bandas 5G NR Sub-6, incluindo "
+            "n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79. "
+            "Utiliza o formato padrão M.2 3042 Key B para conectividade 5G completa.\n\n"
+            "O EM9190 possui gerenciamento avançado de energia e design térmico otimizado, "
+            "sendo adequado para roteadores industriais de alto desempenho, CPE, gateways empresariais e hotspots móveis 5G."
+        ),
+        "features": [
+            "Chipset de modem 5G Qualcomm SDX55",
+            "Suporte a modo dual 5G NR Sub-6 SA/NSA",
+            "Download 5G até 2.5 Gbps, upload 900 Mbps",
+            "Download LTE Cat 22 até 2.0 Gbps",
+            "Suporte a agregação de portadoras 8×CA",
+            "Formato industrial M.2 3042 Key B",
+            "Suporte USB 3.1, PCIe Gen3, RGMII",
+            "GNSS multibanda (GPS + GLONASS + BeiDou + Galileo + QZSS)",
+        ],
+    },
+    "em9191": {
+        "title": "EM9191 Módulo Celular 5G NR Sub-6 + mmWave",
+        "desc": "O EM9191 é um módulo celular 5G NR Sub-6 + mmWave com chipset Qualcomm SDX55, download de 2.5 Gbps, suporte n260/n261 para cobertura 5G completa.",
+        "overview": (
+            "O EM9191 é o módulo celular 5G NR flagship da Sierra Wireless. Utiliza o chipset Qualcomm SDX55, "
+            "suportando tanto Sub-6 quanto mmWave (n260 39GHz / n261 28GHz) para a cobertura 5G mais completa.\n\n"
+            "As velocidades de download alcançam até 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) "
+            "com upload de até 900 Mbps (5G). Suporta 6 interfaces de antena para os requisitos de beamforming mmWave.\n\n"
+            "O EM9191 suporta todas as bandas Sub-6 (mesmo que o EM9190) mais as bandas de alta frequência mmWave, "
+            "combinado com GNSS multibanda. Ideal para Indústria 4.0, saúde inteligente "
+            "e aplicações de edge computing que exigem a menor latência e a maior largura de banda."
+        ),
+        "features": [
+            "Chipset de modem 5G Qualcomm SDX55",
+            "Suporte 5G NR Sub-6 + mmWave (n260/n261)",
+            "Download 5G até 2.5 Gbps, upload 900 Mbps",
+            "Download LTE Cat 22 até 2.0 Gbps",
+            "Suporte 8×CA e beamforming mmWave",
+            "6 interfaces de antena (incluindo antenas mmWave)",
+            "Formato industrial M.2 3042 Key B",
+            "GNSS multibanda (GPS + GLONASS + BeiDou + Galileo + QZSS)",
+        ],
+    },
+    "mc7304": {
+        "title": "MC7304 Módulo Celular LTE-A Cat 4",
+        "desc": "O MC7304 é um módulo celular LTE-A Cat 4 com chipset Qualcomm MDM9215, download de 150 Mbps, formato Mini PCIe para aplicações industriais de orçamento limitado.",
+        "overview": (
+            "O MC7304 é um módulo celular LTE-Advanced Cat 4 da Sierra Wireless. Utiliza o chipset Qualcomm MDM9215 "
+            "e suporta velocidades de download de até 150 Mbps e upload de até 50 Mbps.\n\n"
+            "Este módulo utiliza o formato padrão Mini PCIe Full Size, compatível com uma ampla gama de "
+            "placas-mãe industriais e plataformas embarcadas existentes. Suporta interfaces USB 2.0, UART e SPI, "
+            "ideal para aplicações com orçamento limitado que necessitam de conectividade LTE confiável.\n\n"
+            "O MC7304 suporta as principais bandas LTE globais e é amplamente implantado em gateways industriais, "
+            "máquinas de venda automática, sinalização digital e aplicações de monitoramento remoto."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9215",
+            "LTE-A Cat 4 com download até 150 Mbps",
+            "Velocidade de upload até 50 Mbps",
+            "Formato padrão Mini PCIe Full Size",
+            "Suporte a interfaces USB 2.0, UART, SPI",
+            "GNSS integrado GPS / GLONASS",
+            "Ampla faixa de temperatura -40°C ~ +85°C",
+            "Confiabilidade comprovada com amplo suporte de software",
+        ],
+    },
+    "mc7350": {
+        "title": "MC7350 Módulo Celular LTE-A Cat 4",
+        "desc": "O MC7350 é um módulo celular LTE-A Cat 4 com chipset Qualcomm MDM9215, download de 150 Mbps, formato Mini PCIe com ampla certificação global de operadores.",
+        "overview": (
+            "O MC7350 é um módulo celular LTE-Advanced Cat 4 da Sierra Wireless. Utiliza o chipset Qualcomm MDM9215 "
+            "e suporta velocidades de download de até 150 Mbps e upload de até 50 Mbps.\n\n"
+            "Este módulo utiliza o formato padrão Mini PCIe Full Size. O MC7350 pertence à mesma família do MC7304 "
+            "mas oferece por padrão um suporte de bandas globais mais amplo. Suporta interfaces USB 2.0, UART e SPI.\n\n"
+            "O MC7350 é certificado pelos principais operadores globais, sendo adequado para roteadores industriais, "
+            "rastreamento de ativos, medidores inteligentes e dispositivos de telemedicina."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9215",
+            "LTE-A Cat 4 com download até 150 Mbps",
+            "Velocidade de upload até 50 Mbps",
+            "Formato padrão Mini PCIe Full Size",
+            "Suporte a interfaces USB 2.0, UART, SPI",
+            "Ampla certificação global de operadores",
+            "GNSS integrado GPS / GLONASS",
+            "Ampla faixa de temperatura -40°C ~ +85°C",
+        ],
+    },
+    "mc7354": {
+        "title": "MC7354 Módulo Celular LTE-A Cat 4",
+        "desc": "O MC7354 é um módulo celular LTE-A Cat 4 com chipset Qualcomm MDM9215, download de 150 Mbps, formato Mini PCIe otimizado para combinações de bandas regionais.",
+        "overview": (
+            "O MC7354 é um módulo celular LTE-Advanced Cat 4 da Sierra Wireless. Utiliza o chipset Qualcomm MDM9215 "
+            "e suporta velocidades de download de até 150 Mbps e upload de até 50 Mbps.\n\n"
+            "Este módulo utiliza o formato padrão Mini PCIe Full Size. O MC7354 se distingue de outros módulos da série MC "
+            "por suas combinações de bandas específicas, otimizadas para redes de operadores regionais. "
+            "Suporta interfaces USB 2.0, UART e SPI.\n\n"
+            "O MC7354 é ideal para automação industrial, transporte, redes inteligentes "
+            "e aplicações de monitoramento de infraestrutura que exigem conectividade LTE confiável."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9215",
+            "LTE-A Cat 4 com download até 150 Mbps",
+            "Velocidade de upload até 50 Mbps",
+            "Formato padrão Mini PCIe Full Size",
+            "Suporte a interfaces USB 2.0, UART, SPI",
+            "Otimizado para combinações de bandas regionais",
+            "GNSS integrado GPS / GLONASS",
+            "Ampla faixa de temperatura -40°C ~ +85°C",
+        ],
+    },
+    "mc7455": {
+        "title": "MC7455 Módulo Celular LTE-A Cat 6",
+        "desc": "O MC7455 é um módulo celular LTE-A Cat 6 com chipset Qualcomm MDM9230, download de 300 Mbps, formato Mini PCIe para sistemas de comunicação industriais e veiculares de alto desempenho.",
+        "overview": (
+            "O MC7455 é um módulo celular LTE-Advanced Cat 6 da Sierra Wireless. Utiliza o chipset Qualcomm MDM9230 "
+            "e suporta agregação de portadoras 2×20 MHz (2×CA) com velocidades de download de até 300 Mbps e upload de até 50 Mbps.\n\n"
+            "Este módulo utiliza o formato padrão Mini PCIe Full Size e é o modelo de maior desempenho da série MC. "
+            "Suporta interfaces USB 3.0, UART e SPI para rápida transferência de dados.\n\n"
+            "O MC7455 suporta as principais bandas LTE globais, incluindo FirstNet B14, "
+            "e é amplamente implantado em roteadores industriais de alto desempenho, sistemas de comunicação veicular, "
+            "estações base de redes privadas e soluções de conectividade empresarial."
+        ),
+        "features": [
+            "Chipset Qualcomm MDM9230",
+            "LTE-A Cat 6 com agregação de portadoras 2×CA",
+            "Download até 300 Mbps, upload até 50 Mbps",
+            "Formato padrão Mini PCIe Full Size",
+            "Suporte a interfaces USB 3.0, UART, SPI",
+            "Suporte à banda FirstNet B14",
+            "GNSS integrado GPS / GLONASS / BeiDou",
+            "Ampla faixa de temperatura -40°C ~ +85°C",
+        ],
+    },
+}
+
+
+
+# ── Arabic product content (formal, professional) ────────────────────
+
+PRODUCT_AR = {
+    "em7430": {
+        "title": "EM7430 وحدة خلوية LTE-A Cat 6",
+        "desc": "EM7430 هي وحدة خلوية LTE-A Cat 6 مع مجموعة شرائح Qualcomm MDM9230، تحميل بسرعة 300 ميجابت/ثانية، بعامل شكل M.2، مثالية لأجهزة التوجيه الصناعية وبوابات إنترنت الأشياء.",
+        "overview": (
+            "EM7430 هي وحدة خلوية LTE-Advanced Cat 6 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm MDM9230 "
+            "وتدعم تجميع الموجات الحاملة 2×20 ميجاهرتز (2×CA) بسرعات تحميل تصل إلى 300 ميجابت/ثانية ورفع يصل إلى 50 ميجابت/ثانية.\n\n"
+            "تستخدم هذه الوحدة عامل الشكل القياسي M.2 3042 Key B، وهي مثالية لأجهزة التوجيه الصناعية وبوابات إنترنت الأشياء ونقاط الاتصال المتنقلة "
+            "وتطبيقات المراقبة بالفيديو. تدعم واجهات USB 3.0 و PCIe Gen2 لتكامل مرن مع الأنظمة.\n\n"
+            "تدعم EM7430 نطاقات LTE العالمية الرئيسية (B1–5/7/8/12/13/20/25/26/29/30/41)، "
+            "مما يجعلها مناسبة لأجهزة إنترنت الأشياء ومحطات M2M المنتشرة في جميع أنحاء العالم."
+        ),
+        "features": [
+            "مجموعة شرائح Qualcomm MDM9230 للموثوقية المثبتة",
+            "LTE-A Cat 6 مع تجميع الموجات الحاملة 2×CA",
+            "تحميل حتى 300 ميجابت/ثانية، رفع حتى 50 ميجابت/ثانية",
+            "عامل شكل صناعي M.2 3042 Key B",
+            "دعم واجهات مزدوجة USB 3.0 و PCIe Gen2",
+            "نظام GNSS مدمج GPS / GLONASS / BeiDou",
+            "نطاق درجة حرارة واسع -40°C ~ +85°C",
+            "تحديث البرامج الثابتة FOTA عبر الأثير",
+        ],
+    },
+    "em7455": {
+        "title": "EM7455 وحدة خلوية LTE-A Cat 6",
+        "desc": "EM7455 هي وحدة خلوية LTE-A Cat 6 مع مجموعة شرائح Qualcomm MDM9230، تحميل بسرعة 300 ميجابت/ثانية ودعم النطاق 14 FirstNet، بعامل شكل M.2 للسلامة العامة والتوجيه المؤسسي.",
+        "overview": (
+            "EM7455 هي وحدة خلوية LTE-Advanced Cat 6 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm MDM9230 "
+            "وتدعم تجميع الموجات الحاملة 2×20 ميجاهرتز (2×CA) بسرعات تحميل تصل إلى 300 ميجابت/ثانية ورفع يصل إلى 50 ميجابت/ثانية.\n\n"
+            "تستخدم هذه الوحدة عامل الشكل القياسي M.2 3042 Key B. وهي تنتمي إلى نفس عائلة EM7430 ولكنها تدعم بشكل خاص "
+            "النطاق 14 (FirstNet)، مما يجعلها مثالية لتطبيقات شبكات السلامة العامة الأمريكية. تدعم واجهات USB 3.0 و PCIe Gen2.\n\n"
+            "تدعم EM7455 نطاقات LTE العالمية الرئيسية (B1–5/7/8/12/13/14/20/25/26/29/30/41) "
+            "وتستخدم على نطاق واسع في التوجيه المؤسسي والمركبات المتصلة واتصالات السلامة العامة."
+        ),
+        "features": [
+            "مجموعة شرائح Qualcomm MDM9230",
+            "LTE-A Cat 6 مع تجميع الموجات الحاملة 2×CA",
+            "تحميل حتى 300 ميجابت/ثانية، رفع حتى 50 ميجابت/ثانية",
+            "دعم النطاق 14 FirstNet للسلامة العامة",
+            "عامل شكل صناعي M.2 3042 Key B",
+            "دعم واجهات USB 3.0 و PCIe Gen2",
+            "نظام GNSS مدمج GPS / GLONASS / BeiDou",
+            "نطاق درجة حرارة واسع -40°C ~ +85°C",
+        ],
+    },
+    "em7511": {
+        "title": "EM7511 وحدة خلوية LTE-A Pro Cat 12",
+        "desc": "EM7511 هي وحدة خلوية LTE-A Pro Cat 12 مع مجموعة شرائح Qualcomm SDX20، تحميل بسرعة 600 ميجابت/ثانية، بعامل شكل M.2 للتطبيقات الصناعية والمؤسسية عالية النطاق الترددي.",
+        "overview": (
+            "EM7511 هي وحدة خلوية LTE-Advanced Pro Cat 12 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm SDX20 "
+            "وتدعم تجميع الموجات الحاملة 3×20 ميجاهرتز (3×CA) بسرعات تحميل تصل إلى 600 ميجابت/ثانية ورفع يصل إلى 150 ميجابت/ثانية.\n\n"
+            "تستخدم هذه الوحدة عامل الشكل القياسي M.2 3042 Key B مع واجهات USB 3.1 و PCIe Gen3 و RGMII "
+            "لزيادة النطاق الترددي للنظام. يوفر مودم SDX20 استهلاك طاقة أقل وأداء RF متفوق مقارنة بالأجيال السابقة.\n\n"
+            "تدعم EM7511 نطاقات LTE العالمية و License-Assisted Access (LAA)، وهي مثالية "
+            "لمراقبة الفيديو عالية النطاق الترددي والفروع المؤسسية وتطبيقات نقاط الاتصال المتنقلة."
+        ),
+        "features": [
+            "مجموعة شرائح مودم Qualcomm SDX20",
+            "LTE-A Pro Cat 12 مع تجميع الموجات الحاملة 3×CA",
+            "تحميل حتى 600 ميجابت/ثانية، رفع حتى 150 ميجابت/ثانية",
+            "دعم 256QAM DL / 64QAM UL",
+            "عامل شكل صناعي M.2 3042 Key B",
+            "دعم واجهات USB 3.1 و PCIe Gen3 و RGMII",
+            "نظام GNSS مدمج GPS / GLONASS / BeiDou / Galileo",
+            "نطاق درجة حرارة واسع -40°C ~ +85°C",
+        ],
+    },
+    "em7565": {
+        "title": "EM7565 وحدة خلوية LTE-A Pro Cat 12",
+        "desc": "EM7565 هي وحدة خلوية LTE-A Pro Cat 12 مع مجموعة شرائح Qualcomm SDX20، تحميل بسرعة 600 ميجابت/ثانية ودعم FirstNet B14، بعامل شكل M.2 للاتصالات الحرجة.",
+        "overview": (
+            "EM7565 هي وحدة خلوية LTE-Advanced Pro Cat 12 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm SDX20 "
+            "وتدعم تجميع الموجات الحاملة 3×20 ميجاهرتز (3×CA) و DL 256QAM و UL 64QAM بسرعات تحميل تصل إلى 600 ميجابت/ثانية ورفع يصل إلى 150 ميجابت/ثانية.\n\n"
+            "تستخدم EM7565 عامل الشكل القياسي M.2 3042 Key B وتقدم دعماً أوسع لتجميع الموجات الحاملة مقارنة بـ EM7511. "
+            "توفر منصة SDX20 أداء RF استثنائياً مع استهلاك طاقة منخفض للغاية، مثالية للتشغيل الصناعي على مدار الساعة.\n\n"
+            "تدعم نطاقات LTE العالمية الرئيسية بما في ذلك B14 FirstNet و B71 600 ميجاهرتز، "
+            "وهي مناسبة لأجهزة التوجيه الصناعية والاتصالات الحرجة ونقاط الاتصال المتنقلة المهنية."
+        ),
+        "features": [
+            "مجموعة شرائح مودم Qualcomm SDX20",
+            "LTE-A Pro Cat 12 مع تجميع الموجات الحاملة 3×CA",
+            "تحميل حتى 600 ميجابت/ثانية، رفع حتى 150 ميجابت/ثانية",
+            "دعم 256QAM DL / 64QAM UL / LAA",
+            "عامل شكل صناعي M.2 3042 Key B",
+            "دعم واجهات USB 3.1 و PCIe Gen3 و RGMII",
+            "دعم نطاقات FirstNet B14 و B71",
+            "نظام GNSS مزدوج النطاق (GPS + Galileo)",
+        ],
+    },
+    "em9190": {
+        "title": "EM9190 وحدة خلوية 5G NR Sub-6",
+        "desc": "EM9190 هي وحدة خلوية 5G NR Sub-6 مع مجموعة شرائح Qualcomm SDX55، تحميل بسرعة 2.5 جيجابت/ثانية، بعامل شكل M.2 للتطبيقات الصناعية والجيل التالي من 5G.",
+        "overview": (
+            "EM9190 هي الوحدة الخلوية الرائدة 5G NR Sub-6 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm SDX55، "
+            "وتدعم أوضاع 5G SA/NSA بسرعات تحميل تصل إلى 2.5 جيجابت/ثانية (5G) / 2.0 جيجابت/ثانية (LTE Cat 22) "
+            "ورفع يصل إلى 900 ميجابت/ثانية (5G).\n\n"
+            "تدعم هذه الوحدة الفئة 22 LTE (8×CA) مع تغطية واسعة لنطاقات 5G NR Sub-6 بما في ذلك "
+            "n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79. "
+            "تستخدم عامل الشكل القياسي M.2 3042 Key B لاتصال 5G كامل.\n\n"
+            "تم تجهيز EM9190 بإدارة متقدمة للطاقة وتصميم حراري محسّن، "
+            "وهي مناسبة لأجهزة التوجيه الصناعية عالية الأداء ومعدات CPE وبوابات المؤسسات ونقاط الاتصال المتنقلة 5G."
+        ),
+        "features": [
+            "مجموعة شرائح مودم 5G Qualcomm SDX55",
+            "دعم الوضع المزدوج 5G NR Sub-6 SA/NSA",
+            "تحميل 5G حتى 2.5 جيجابت/ثانية، رفع 900 ميجابت/ثانية",
+            "تحميل LTE Cat 22 حتى 2.0 جيجابت/ثانية",
+            "دعم تجميع الموجات الحاملة 8×CA",
+            "عامل شكل صناعي M.2 3042 Key B",
+            "دعم USB 3.1 و PCIe Gen3 و RGMII",
+            "نظام GNSS متعدد النطاقات (GPS + GLONASS + BeiDou + Galileo + QZSS)",
+        ],
+    },
+    "em9191": {
+        "title": "EM9191 وحدة خلوية 5G NR Sub-6 + mmWave",
+        "desc": "EM9191 هي وحدة خلوية 5G NR Sub-6 + mmWave مع مجموعة شرائح Qualcomm SDX55، تحميل بسرعة 2.5 جيجابت/ثانية، دعم n260/n261 لتغطية 5G شاملة.",
+        "overview": (
+            "EM9191 هي الوحدة الخلوية 5G NR الرائدة من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm SDX55، "
+            "وتدعم كلاً من Sub-6 و mmWave (n260 39GHz / n261 28GHz) لأكثر تغطية 5G شمولاً.\n\n"
+            "تصل سرعات التحميل إلى 2.5 جيجابت/ثانية (5G) / 2.0 جيجابت/ثانية (LTE Cat 22) "
+            "مع رفع يصل إلى 900 ميجابت/ثانية (5G). تدعم 6 واجهات هوائي لمتطلبات تشكيل حزمة mmWave.\n\n"
+            "تدعم EM9191 جميع نطاقات Sub-6 (مثل EM9190) بالإضافة إلى نطاقات mmWave عالية التردد، "
+            "مقترنة بنظام GNSS متعدد النطاقات. مثالية للصناعة 4.0 والرعاية الصحية الذكية "
+            "وتطبيقات الحوسبة الطرفية التي تتطلب أقل زمن وصول وأعلى نطاق ترددي."
+        ),
+        "features": [
+            "مجموعة شرائح مودم 5G Qualcomm SDX55",
+            "دعم 5G NR Sub-6 + mmWave (n260/n261)",
+            "تحميل 5G حتى 2.5 جيجابت/ثانية، رفع 900 ميجابت/ثانية",
+            "تحميل LTE Cat 22 حتى 2.0 جيجابت/ثانية",
+            "دعم 8×CA وتشكيل حزمة mmWave",
+            "6 واجهات هوائي (بما في ذلك هوائيات mmWave)",
+            "عامل شكل صناعي M.2 3042 Key B",
+            "نظام GNSS متعدد النطاقات (GPS + GLONASS + BeiDou + Galileo + QZSS)",
+        ],
+    },
+    "mc7304": {
+        "title": "MC7304 وحدة خلوية LTE-A Cat 4",
+        "desc": "MC7304 هي وحدة خلوية LTE-A Cat 4 مع مجموعة شرائح Qualcomm MDM9215، تحميل بسرعة 150 ميجابت/ثانية، بعامل شكل Mini PCIe للتطبيقات الصناعية محدودة الميزانية.",
+        "overview": (
+            "MC7304 هي وحدة خلوية LTE-Advanced Cat 4 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm MDM9215 "
+            "وتدعم سرعات تحميل تصل إلى 150 ميجابت/ثانية ورفع يصل إلى 50 ميجابت/ثانية.\n\n"
+            "تستخدم هذه الوحدة عامل الشكل القياسي Mini PCIe Full Size، المتوافقة مع مجموعة واسعة من "
+            "اللوحات الأم الصناعية والمنصات المدمجة الحالية. تدعم واجهات USB 2.0 و UART و SPI، "
+            "وهي مثالية للتطبيقات محدودة الميزانية التي تتطلب اتصال LTE موثوقاً.\n\n"
+            "تدعم MC7304 نطاقات LTE العالمية الرئيسية ويتم نشرها على نطاق واسع في البوابات الصناعية "
+            "وآلات البيع واللافتات الرقمية وتطبيقات المراقبة عن بعد."
+        ),
+        "features": [
+            "مجموعة شرائح Qualcomm MDM9215",
+            "LTE-A Cat 4 مع تحميل حتى 150 ميجابت/ثانية",
+            "سرعة رفع حتى 50 ميجابت/ثانية",
+            "عامل شكل قياسي Mini PCIe Full Size",
+            "دعم واجهات USB 2.0 و UART و SPI",
+            "نظام GNSS مدمج GPS / GLONASS",
+            "نطاق درجة حرارة واسع -40°C ~ +85°C",
+            "موثوقية مثبتة مع دعم برمجي واسع",
+        ],
+    },
+    "mc7350": {
+        "title": "MC7350 وحدة خلوية LTE-A Cat 4",
+        "desc": "MC7350 هي وحدة خلوية LTE-A Cat 4 مع مجموعة شرائح Qualcomm MDM9215، تحميل بسرعة 150 ميجابت/ثانية، بعامل شكل Mini PCIe مع شهادة عالمية واسعة من المشغلين.",
+        "overview": (
+            "MC7350 هي وحدة خلوية LTE-Advanced Cat 4 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm MDM9215 "
+            "وتدعم سرعات تحميل تصل إلى 150 ميجابت/ثانية ورفع يصل إلى 50 ميجابت/ثانية.\n\n"
+            "تستخدم هذه الوحدة عامل الشكل القياسي Mini PCIe Full Size. تنتمي MC7350 إلى نفس عائلة MC7304 "
+            "ولكنها توفر دعماً أوسع للنطاقات العالمية بشكل افتراضي. تدعم واجهات USB 2.0 و UART و SPI.\n\n"
+            "حصلت MC7350 على شهادة من كبار المشغلين العالميين، مما يجعلها مناسبة لأجهزة التوجيه الصناعية "
+            "وتتبع الأصول والعدادات الذكية وأجهزة الرعاية الصحية عن بعد."
+        ),
+        "features": [
+            "مجموعة شرائح Qualcomm MDM9215",
+            "LTE-A Cat 4 مع تحميل حتى 150 ميجابت/ثانية",
+            "سرعة رفع حتى 50 ميجابت/ثانية",
+            "عامل شكل قياسي Mini PCIe Full Size",
+            "دعم واجهات USB 2.0 و UART و SPI",
+            "شهادة عالمية واسعة من المشغلين",
+            "نظام GNSS مدمج GPS / GLONASS",
+            "نطاق درجة حرارة واسع -40°C ~ +85°C",
+        ],
+    },
+    "mc7354": {
+        "title": "MC7354 وحدة خلوية LTE-A Cat 4",
+        "desc": "MC7354 هي وحدة خلوية LTE-A Cat 4 مع مجموعة شرائح Qualcomm MDM9215، تحميل بسرعة 150 ميجابت/ثانية، بعامل شكل Mini PCIe محسّن لمجموعات النطاقات الإقليمية.",
+        "overview": (
+            "MC7354 هي وحدة خلوية LTE-Advanced Cat 4 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm MDM9215 "
+            "وتدعم سرعات تحميل تصل إلى 150 ميجابت/ثانية ورفع يصل إلى 50 ميجابت/ثانية.\n\n"
+            "تستخدم هذه الوحدة عامل الشكل القياسي Mini PCIe Full Size. تتميز MC7354 عن وحدات سلسلة MC الأخرى "
+            "بمجموعات النطاقات المحددة المحسّنة لشبكات مشغلين إقليميين معينين. "
+            "تدعم واجهات USB 2.0 و UART و SPI.\n\n"
+            "MC7354 مثالية للأتمتة الصناعية والنقل والشبكات الذكية "
+            "وتطبيقات مراقبة البنية التحتية التي تتطلب اتصال LTE موثوقاً."
+        ),
+        "features": [
+            "مجموعة شرائح Qualcomm MDM9215",
+            "LTE-A Cat 4 مع تحميل حتى 150 ميجابت/ثانية",
+            "سرعة رفع حتى 50 ميجابت/ثانية",
+            "عامل شكل قياسي Mini PCIe Full Size",
+            "دعم واجهات USB 2.0 و UART و SPI",
+            "محسّن لمجموعات النطاقات الإقليمية",
+            "نظام GNSS مدمج GPS / GLONASS",
+            "نطاق درجة حرارة واسع -40°C ~ +85°C",
+        ],
+    },
+    "mc7455": {
+        "title": "MC7455 وحدة خلوية LTE-A Cat 6",
+        "desc": "MC7455 هي وحدة خلوية LTE-A Cat 6 مع مجموعة شرائح Qualcomm MDM9230، تحميل بسرعة 300 ميجابت/ثانية، بعامل شكل Mini PCIe لأنظمة الاتصالات الصناعية والمركبات عالية الأداء.",
+        "overview": (
+            "MC7455 هي وحدة خلوية LTE-Advanced Cat 6 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm MDM9230 "
+            "وتدعم تجميع الموجات الحاملة 2×20 ميجاهرتز (2×CA) بسرعات تحميل تصل إلى 300 ميجابت/ثانية ورفع يصل إلى 50 ميجابت/ثانية.\n\n"
+            "تستخدم هذه الوحدة عامل الشكل القياسي Mini PCIe Full Size وهي الطراز الأعلى أداءً في سلسلة MC. "
+            "تدعم واجهات USB 3.0 و UART و SPI لنقل البيانات بسرعة.\n\n"
+            "تدعم MC7455 نطاقات LTE العالمية الرئيسية بما في ذلك FirstNet B14، "
+            "ويتم نشرها على نطاق واسع في أجهزة التوجيه الصناعية عالية الأداء وأنظمة اتصالات المركبات "
+            "ومحطات القاعدة للشبكات الخاصة وحلول الاتصال المؤسسي."
+        ),
+        "features": [
+            "مجموعة شرائح Qualcomm MDM9230",
+            "LTE-A Cat 6 مع تجميع الموجات الحاملة 2×CA",
+            "تحميل حتى 300 ميجابت/ثانية، رفع حتى 50 ميجابت/ثانية",
+            "عامل شكل قياسي Mini PCIe Full Size",
+            "دعم واجهات USB 3.0 و UART و SPI",
+            "دعم النطاق FirstNet B14",
+            "نظام GNSS مدمج GPS / GLONASS / BeiDou",
+            "نطاق درجة حرارة واسع -40°C ~ +85°C",
+        ],
+    },
+}
+
+
+
+# ── Russian product content (formal, professional) ────────────────────
+
+PRODUCT_RU = {
+    "em7430": {
+        "title": "EM7430 Сотовый модуль LTE-A Cat 6",
+        "desc": "EM7430 — сотовый модуль LTE-A Cat 6 на чипсете Qualcomm MDM9230, скорость загрузки до 300 Мбит/с, форм-фактор M.2, идеально подходит для промышленных маршрутизаторов и шлюзов IoT.",
+        "overview": (
+            "EM7430 — это сотовый модуль LTE-Advanced Cat 6 от Sierra Wireless на чипсете Qualcomm MDM9230, "
+            "поддерживающий агрегацию несущих 2×20 МГц (2×CA) со скоростью загрузки до 300 Мбит/с и выгрузки до 50 Мбит/с.\n\n"
+            "Модуль выполнен в стандартном форм-факторе M.2 3042 Key B, что идеально для промышленных маршрутизаторов, шлюзов IoT, мобильных точек доступа "
+            "и систем видеонаблюдения. Поддерживает интерфейсы USB 3.0 и PCIe Gen2 для гибкой интеграции.\n\n"
+            "EM7430 поддерживает основные глобальные диапазоны LTE (B1–5/7/8/12/13/20/25/26/29/30/41), "
+            "что делает его пригодным для устройств IoT и терминалов M2M, развернутых по всему миру."
+        ),
+        "features": [
+            "Чипсет Qualcomm MDM9230 для проверенной надежности",
+            "LTE-A Cat 6 с агрегацией несущих 2×CA",
+            "Загрузка до 300 Мбит/с, выгрузка до 50 Мбит/с",
+            "Промышленный форм-фактор M.2 3042 Key B",
+            "Поддержка двух интерфейсов USB 3.0 и PCIe Gen2",
+            "Встроенная GNSS GPS / GLONASS / BeiDou",
+            "Широкий температурный диапазон -40°C ~ +85°C",
+            "Обновление прошивки FOTA по воздуху",
+        ],
+    },
+    "em7455": {
+        "title": "EM7455 Сотовый модуль LTE-A Cat 6",
+        "desc": "EM7455 — сотовый модуль LTE-A Cat 6 на чипсете Qualcomm MDM9230, скорость загрузки до 300 Мбит/с и поддержка диапазона 14 FirstNet, форм-фактор M.2 для общественной безопасности и корпоративной маршрутизации.",
+        "overview": (
+            "EM7455 — это сотовый модуль LTE-Advanced Cat 6 от Sierra Wireless на чипсете Qualcomm MDM9230, "
+            "поддерживающий агрегацию несущих 2×20 МГц (2×CA) со скоростью загрузки до 300 Мбит/с и выгрузки до 50 Мбит/с.\n\n"
+            "Модуль выполнен в стандартном форм-факторе M.2 3042 Key B. Он относится к тому же семейству, что и EM7430, но специально поддерживает "
+            "диапазон 14 (FirstNet), что делает его идеальным для сетей общественной безопасности США. Поддерживает интерфейсы USB 3.0 и PCIe Gen2.\n\n"
+            "EM7455 поддерживает основные глобальные диапазоны LTE (B1–5/7/8/12/13/14/20/25/26/29/30/41) "
+            "и широко используется в корпоративной маршрутизации, подключенных транспортных средствах и системах связи общественной безопасности."
+        ),
+        "features": [
+            "Чипсет Qualcomm MDM9230",
+            "LTE-A Cat 6 с агрегацией несущих 2×CA",
+            "Загрузка до 300 Мбит/с, выгрузка до 50 Мбит/с",
+            "Поддержка диапазона 14 FirstNet для общественной безопасности",
+            "Промышленный форм-фактор M.2 3042 Key B",
+            "Поддержка интерфейсов USB 3.0 и PCIe Gen2",
+            "Встроенная GNSS GPS / GLONASS / BeiDou",
+            "Широкий температурный диапазон -40°C ~ +85°C",
+        ],
+    },
+    "em7511": {
+        "title": "EM7511 Сотовый модуль LTE-A Pro Cat 12",
+        "desc": "EM7511 — сотовый модуль LTE-A Pro Cat 12 на чипсете Qualcomm SDX20, скорость загрузки до 600 Мбит/с, форм-фактор M.2 для корпоративных и промышленных приложений с высокой пропускной способностью.",
+        "overview": (
+            "EM7511 — это сотовый модуль LTE-Advanced Pro Cat 12 от Sierra Wireless на чипсете Qualcomm SDX20, "
+            "поддерживающий агрегацию несущих 3×20 МГц (3×CA) со скоростью загрузки до 600 Мбит/с и выгрузки до 150 Мбит/с.\n\n"
+            "Модуль выполнен в стандартном форм-факторе M.2 3042 Key B с интерфейсами USB 3.1, PCIe Gen3 и RGMII "
+            "для более высокой пропускной способности системы. Модем SDX20 обеспечивает меньшее энергопотребление и превосходную производительность RF по сравнению с предыдущими поколениями.\n\n"
+            "EM7511 поддерживает глобальные диапазоны LTE и License-Assisted Access (LAA), идеально "
+            "для видеонаблюдения с высокой пропускной способностью, корпоративных филиалов и мобильных точек доступа."
+        ),
+        "features": [
+            "Чипсет модема Qualcomm SDX20",
+            "LTE-A Pro Cat 12 с агрегацией несущих 3×CA",
+            "Загрузка до 600 Мбит/с, выгрузка до 150 Мбит/с",
+            "Поддержка 256QAM DL / 64QAM UL",
+            "Промышленный форм-фактор M.2 3042 Key B",
+            "Поддержка интерфейсов USB 3.1, PCIe Gen3, RGMII",
+            "Встроенная GNSS GPS / GLONASS / BeiDou / Galileo",
+            "Широкий температурный диапазон -40°C ~ +85°C",
+        ],
+    },
+    "em7565": {
+        "title": "EM7565 Сотовый модуль LTE-A Pro Cat 12",
+        "desc": "EM7565 — сотовый модуль LTE-A Pro Cat 12 на чипсете Qualcomm SDX20, скорость загрузки до 600 Мбит/с и поддержка FirstNet B14, форм-фактор M.2 для ответственных коммуникаций.",
+        "overview": (
+            "EM7565 — это сотовый модуль LTE-Advanced Pro Cat 12 от Sierra Wireless на чипсете Qualcomm SDX20, "
+            "поддерживающий агрегацию несущих 3×20 МГц (3×CA), DL 256QAM и UL 64QAM со скоростью загрузки до 600 Мбит/с и выгрузки до 150 Мбит/с.\n\n"
+            "EM7565 выполнен в стандартном форм-факторе M.2 3042 Key B и предлагает более широкую поддержку агрегации несущих по сравнению с EM7511. "
+            "Платформа SDX20 обеспечивает исключительную производительность RF при чрезвычайно низком энергопотреблении, идеально для круглосуточной промышленной эксплуатации.\n\n"
+            "Поддерживает основные глобальные диапазоны LTE, включая B14 FirstNet и B71 600 МГц, "
+            "подходит для промышленных маршрутизаторов, ответственных коммуникаций и профессиональных мобильных точек доступа."
+        ),
+        "features": [
+            "Чипсет модема Qualcomm SDX20",
+            "LTE-A Pro Cat 12 с агрегацией несущих 3×CA",
+            "Загрузка до 600 Мбит/с, выгрузка до 150 Мбит/с",
+            "Поддержка 256QAM DL / 64QAM UL / LAA",
+            "Промышленный форм-фактор M.2 3042 Key B",
+            "Поддержка интерфейсов USB 3.1, PCIe Gen3, RGMII",
+            "Поддержка диапазонов FirstNet B14 и B71",
+            "Двухдиапазонная GNSS (GPS + Galileo)",
+        ],
+    },
+    "em9190": {
+        "title": "EM9190 Сотовый модуль 5G NR Sub-6",
+        "desc": "EM9190 — флагманский сотовый модуль 5G NR Sub-6 на чипсете Qualcomm SDX55, скорость загрузки до 2.5 Гбит/с, форм-фактор M.2 для промышленных приложений и 5G следующего поколения.",
+        "overview": (
+            "EM9190 — это флагманский сотовый модуль 5G NR Sub-6 от Sierra Wireless на чипсете Qualcomm SDX55, "
+            "поддерживающий режимы 5G SA/NSA со скоростью загрузки до 2.5 Гбит/с (5G) / 2.0 Гбит/с (LTE Cat 22) "
+            "и выгрузки до 900 Мбит/с (5G).\n\n"
+            "Модуль поддерживает категорию 22 LTE (8×CA) с обширным покрытием диапазонов 5G NR Sub-6, включая "
+            "n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79. "
+            "Использует стандартный форм-фактор M.2 3042 Key B для полной connectivity 5G.\n\n"
+            "EM9190 оснащен передовым управлением питанием и оптимизированной термоконструкцией, "
+            "подходит для высокопроизводительных промышленных маршрутизаторов, CPE, корпоративных шлюзов и мобильных точек доступа 5G."
+        ),
+        "features": [
+            "Чипсет 5G модема Qualcomm SDX55",
+            "Поддержка двойного режима 5G NR Sub-6 SA/NSA",
+            "Загрузка 5G до 2.5 Гбит/с, выгрузка 900 Мбит/с",
+            "Загрузка LTE Cat 22 до 2.0 Гбит/с",
+            "Поддержка агрегации несущих 8×CA",
+            "Промышленный форм-фактор M.2 3042 Key B",
+            "Поддержка USB 3.1, PCIe Gen3, RGMII",
+            "Многодиапазонная GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)",
+        ],
+    },
+    "em9191": {
+        "title": "EM9191 Сотовый модуль 5G NR Sub-6 + mmWave",
+        "desc": "EM9191 — сотовый модуль 5G NR Sub-6 + mmWave на чипсете Qualcomm SDX55, скорость загрузки до 2.5 Гбит/с, поддержка n260/n261 для полного покрытия 5G.",
+        "overview": (
+            "EM9191 — это флагманский сотовый модуль 5G NR от Sierra Wireless на чипсете Qualcomm SDX55, "
+            "поддерживающий как Sub-6, так и mmWave (n260 39 ГГц / n261 28 ГГц) для наиболее полного покрытия 5G.\n\n"
+            "Скорости загрузки достигают 2.5 Гбит/с (5G) / 2.0 Гбит/с (LTE Cat 22) "
+            "с выгрузкой до 900 Мбит/с (5G). Поддерживает 6 антенных интерфейсов для лучеформирования mmWave.\n\n"
+            "EM9191 поддерживает все диапазоны Sub-6 (как EM9190) плюс высокочастотные диапазоны mmWave, "
+            "в сочетании с многодиапазонной GNSS. Идеален для Индустрии 4.0, умного здравоохранения "
+            "и приложений периферийных вычислений, требующих минимальной задержки и максимальной пропускной способности."
+        ),
+        "features": [
+            "Чипсет 5G модема Qualcomm SDX55",
+            "Поддержка 5G NR Sub-6 + mmWave (n260/n261)",
+            "Загрузка 5G до 2.5 Гбит/с, выгрузка 900 Мбит/с",
+            "Загрузка LTE Cat 22 до 2.0 Гбит/с",
+            "Поддержка 8×CA и лучеформирования mmWave",
+            "6 антенных интерфейсов (включая антенны mmWave)",
+            "Промышленный форм-фактор M.2 3042 Key B",
+            "Многодиапазонная GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)",
+        ],
+    },
+    "mc7304": {
+        "title": "MC7304 Сотовый модуль LTE-A Cat 4",
+        "desc": "MC7304 — сотовый модуль LTE-A Cat 4 на чипсете Qualcomm MDM9215, скорость загрузки до 150 Мбит/с, форм-фактор Mini PCIe для бюджетных промышленных приложений.",
+        "overview": (
+            "MC7304 — это сотовый модуль LTE-Advanced Cat 4 от Sierra Wireless на чипсете Qualcomm MDM9215, "
+            "поддерживающий скорость загрузки до 150 Мбит/с и выгрузки до 50 Мбит/с.\n\n"
+            "Модуль выполнен в стандартном форм-факторе Mini PCIe Full Size, совместим с широким спектром "
+            "существующих промышленных материнских плат и встраиваемых платформ. Поддерживает интерфейсы USB 2.0, UART и SPI, "
+            "идеален для бюджетных приложений, требующих надежного LTE-соединения.\n\n"
+            "MC7304 поддерживает основные глобальные диапазоны LTE и широко применяется в промышленных шлюзах, "
+            "торговых автоматах, цифровых вывесках и системах удаленного мониторинга."
+        ),
+        "features": [
+            "Чипсет Qualcomm MDM9215",
+            "LTE-A Cat 4 с загрузкой до 150 Мбит/с",
+            "Скорость выгрузки до 50 Мбит/с",
+            "Стандартный форм-фактор Mini PCIe Full Size",
+            "Поддержка интерфейсов USB 2.0, UART, SPI",
+            "Встроенная GNSS GPS / GLONASS",
+            "Широкий температурный диапазон -40°C ~ +85°C",
+            "Проверенная надежность с широкой программной поддержкой",
+        ],
+    },
+    "mc7350": {
+        "title": "MC7350 Сотовый модуль LTE-A Cat 4",
+        "desc": "MC7350 — сотовый модуль LTE-A Cat 4 на чипсете Qualcomm MDM9215, скорость загрузки до 150 Мбит/с, форм-фактор Mini PCIe с широкой глобальной сертификацией операторов.",
+        "overview": (
+            "MC7350 — это сотовый модуль LTE-Advanced Cat 4 от Sierra Wireless на чипсете Qualcomm MDM9215, "
+            "поддерживающий скорость загрузки до 150 Мбит/с и выгрузки до 50 Мбит/с.\n\n"
+            "Модуль выполнен в стандартном форм-факторе Mini PCIe Full Size. MC7350 относится к тому же семейству, что и MC7304, "
+            "но по умолчанию предлагает более широкую поддержку глобальных диапазонов. Поддерживает интерфейсы USB 2.0, UART и SPI.\n\n"
+            "MC7350 сертифицирован ведущими мировыми операторами, что делает его подходящим для промышленных маршрутизаторов, "
+            "отслеживания активов, интеллектуальных счетчиков и устройств телемедицины."
+        ),
+        "features": [
+            "Чипсет Qualcomm MDM9215",
+            "LTE-A Cat 4 с загрузкой до 150 Мбит/с",
+            "Скорость выгрузки до 50 Мбит/с",
+            "Стандартный форм-фактор Mini PCIe Full Size",
+            "Поддержка интерфейсов USB 2.0, UART, SPI",
+            "Широкая глобальная сертификация операторов",
+            "Встроенная GNSS GPS / GLONASS",
+            "Широкий температурный диапазон -40°C ~ +85°C",
+        ],
+    },
+    "mc7354": {
+        "title": "MC7354 Сотовый модуль LTE-A Cat 4",
+        "desc": "MC7354 — сотовый модуль LTE-A Cat 4 на чипсете Qualcomm MDM9215, скорость загрузки до 150 Мбит/с, форм-фактор Mini PCIe, оптимизированный для региональных комбинаций диапазонов.",
+        "overview": (
+            "MC7354 — это сотовый модуль LTE-Advanced Cat 4 от Sierra Wireless на чипсете Qualcomm MDM9215, "
+            "поддерживающий скорость загрузки до 150 Мбит/с и выгрузки до 50 Мбит/с.\n\n"
+            "Модуль выполнен в стандартном форм-факторе Mini PCIe Full Size. MC7354 отличается от других модулей серии MC "
+            "специфическими комбинациями диапазонов, оптимизированными для сетей конкретных региональных операторов. "
+            "Поддерживает интерфейсы USB 2.0, UART и SPI.\n\n"
+            "MC7354 идеален для промышленной автоматизации, транспорта, интеллектуальных сетей "
+            "и приложений мониторинга инфраструктуры, требующих надежного LTE-соединения."
+        ),
+        "features": [
+            "Чипсет Qualcomm MDM9215",
+            "LTE-A Cat 4 с загрузкой до 150 Мбит/с",
+            "Скорость выгрузки до 50 Мбит/с",
+            "Стандартный форм-фактор Mini PCIe Full Size",
+            "Поддержка интерфейсов USB 2.0, UART, SPI",
+            "Оптимизирован для региональных комбинаций диапазонов",
+            "Встроенная GNSS GPS / GLONASS",
+            "Широкий температурный диапазон -40°C ~ +85°C",
+        ],
+    },
+    "mc7455": {
+        "title": "MC7455 Сотовый модуль LTE-A Cat 6",
+        "desc": "MC7455 — сотовый модуль LTE-A Cat 6 на чипсете Qualcomm MDM9230, скорость загрузки до 300 Мбит/с, форм-фактор Mini PCIe для высокопроизводительных промышленных и транспортных систем связи.",
+        "overview": (
+            "MC7455 — это сотовый модуль LTE-Advanced Cat 6 от Sierra Wireless на чипсете Qualcomm MDM9230, "
+            "поддерживающий агрегацию несущих 2×20 МГц (2×CA) со скоростью загрузки до 300 Мбит/с и выгрузки до 50 Мбит/с.\n\n"
+            "Модуль выполнен в стандартном форм-факторе Mini PCIe Full Size и является самой производительной моделью в серии MC. "
+            "Поддерживает интерфейсы USB 3.0, UART и SPI для быстрой передачи данных.\n\n"
+            "MC7455 поддерживает основные глобальные диапазоны LTE, включая FirstNet B14, "
+            "и широко применяется в высокопроизводительных промышленных маршрутизаторах, системах связи транспортных средств, "
+            "базовых станциях частных сетей и корпоративных решениях связи."
+        ),
+        "features": [
+            "Чипсет Qualcomm MDM9230",
+            "LTE-A Cat 6 с агрегацией несущих 2×CA",
+            "Загрузка до 300 Мбит/с, выгрузка до 50 Мбит/с",
+            "Стандартный форм-фактор Mini PCIe Full Size",
+            "Поддержка интерфейсов USB 3.0, UART, SPI",
+            "Поддержка диапазона FirstNet B14",
+            "Встроенная GNSS GPS / GLONASS / BeiDou",
+            "Широкий температурный диапазон -40°C ~ +85°C",
+        ],
+    },
+}
+
+
+
 # ── Translation data: zh-tw phrase → locale string ──────────────────────────
 # Keys are the zh-tw source text; translate_text() falls back to zh-tw if missing.
 
@@ -1867,6 +2813,7 @@ TRANSLATION_DATA = {
         "1 × 文件包裝": "1 × 文件包装",
         "2 × 文件包裝": "2 × 文件包装",
         "官方產品頁面": "官方产品页面",
+        "技術規格書 (PDF)": "技术规格书 (PDF)",
         # EM series MC series titles
         "EM7430 LTE-A Cat 6 蜂窩模組": "EM7430 LTE-A Cat 6 蜂窝模块",
         "EM7455 LTE-A Cat 6 蜂窩模組": "EM7455 LTE-A Cat 6 蜂窝模块",
@@ -1906,6 +2853,7 @@ TRANSLATION_DATA = {
         "1 × 文件包裝": "1 × Documentation pack",
         "2 × 文件包裝": "2 × Documentation pack",
         "官方產品頁面": "Official Product Page",
+        "技術規格書 (PDF)": "Technical Specification (PDF)",
         # EM series MC series titles
         "EM7430 LTE-A Cat 6 蜂窩模組": "EM7430 LTE-A Cat 6 Cellular Module",
         "EM7455 LTE-A Cat 6 蜂窩模組": "EM7455 LTE-A Cat 6 Cellular Module",
@@ -1944,6 +2892,7 @@ TRANSLATION_DATA = {
         "1 × 文件包裝": "1 × ドキュメントパック",
         "2 × 文件包裝": "2 × ドキュメントパック",
         "官方產品頁面": "公式製品ページ",
+        "技術規格書 (PDF)": "技術仕様書 (PDF)",
         # Titles
         "EM7430 LTE-A Cat 6 蜂窩模組": "EM7430 LTE-A Cat 6 セルラーモジュール",
         "EM7455 LTE-A Cat 6 蜂窩模組": "EM7455 LTE-A Cat 6 セルラーモジュール",
@@ -1982,6 +2931,7 @@ TRANSLATION_DATA = {
         "1 × 文件包裝": "1 × حزمة المستندات",
         "2 × 文件包裝": "2 × حزمة المستندات",
         "官方產品頁面": "صفحة المنتج الرسمية",
+        "技術規格書 (PDF)": "المواصفات الفنية (PDF)",
         # Titles
         "EM7430 LTE-A Cat 6 蜂窩模組": "وحدة EM7430 LTE-A Cat 6 الخلوية",
         "EM7455 LTE-A Cat 6 蜂窩模組": "وحدة EM7455 LTE-A Cat 6 الخلوية",
@@ -2020,6 +2970,7 @@ TRANSLATION_DATA = {
         "1 × 文件包裝": "1 × Paquete de documentación",
         "2 × 文件包裝": "2 × Paquete de documentación",
         "官方產品頁面": "Página oficial del producto",
+        "技術規格書 (PDF)": "Ficha técnica (PDF)",
         # Titles
         "EM7430 LTE-A Cat 6 蜂窩模組": "Módulo Celular EM7430 LTE-A Cat 6",
         "EM7455 LTE-A Cat 6 蜂窩模組": "Módulo Celular EM7455 LTE-A Cat 6",
@@ -2058,6 +3009,7 @@ TRANSLATION_DATA = {
         "1 × 文件包裝": "1 × Pacote de documentação",
         "2 × 文件包裝": "2 × Pacote de documentação",
         "官方產品頁面": "Página oficial do produto",
+        "技術規格書 (PDF)": "Especificações técnicas (PDF)",
         # Titles
         "EM7430 LTE-A Cat 6 蜂窩模組": "Módulo Celular EM7430 LTE-A Cat 6",
         "EM7455 LTE-A Cat 6 蜂窩模組": "Módulo Celular EM7455 LTE-A Cat 6",
@@ -2096,6 +3048,7 @@ TRANSLATION_DATA = {
         "1 × 文件包裝": "1 × Пакет документации",
         "2 × 文件包裝": "2 × Пакет документации",
         "官方產品頁面": "Официальная страница продукта",
+        "技術規格書 (PDF)": "Технические характеристики (PDF)",
         # Titles
         "EM7430 LTE-A Cat 6 蜂窩模組": "Сотовый модуль EM7430 LTE-A Cat 6",
         "EM7455 LTE-A Cat 6 蜂窩模組": "Сотовый модуль EM7455 LTE-A Cat 6",
@@ -2134,6 +3087,7 @@ TRANSLATION_DATA = {
         "1 × 文件包裝": "1 × Dokumentationspaket",
         "2 × 文件包裝": "2 × Dokumentationspaket",
         "官方產品頁面": "Offizielle Produktseite",
+        "技術規格書 (PDF)": "Technisches Datenblatt (PDF)",
         # Titles
         "EM7430 LTE-A Cat 6 蜂窩模組": "EM7430 LTE-A Cat 6 Mobilfunkmodul",
         "EM7455 LTE-A Cat 6 蜂窩模組": "EM7455 LTE-A Cat 6 Mobilfunkmodul",
@@ -2172,6 +3126,7 @@ TRANSLATION_DATA = {
         "1 × 文件包裝": "1 × Pack de documentation",
         "2 × 文件包裝": "2 × Pack de documentation",
         "官方產品頁面": "Page officielle du produit",
+        "技術規格書 (PDF)": "Fiche technique (PDF)",
         # Titles
         "EM7430 LTE-A Cat 6 蜂窩模組": "Module cellulaire EM7430 LTE-A Cat 6",
         "EM7455 LTE-A Cat 6 蜂窩模組": "Module cellulaire EM7455 LTE-A Cat 6",
@@ -2508,6 +3463,10 @@ def generate_product_page(lang, model):
         "ja": PRODUCT_JA,
         "de": PRODUCT_DE,
         "fr": PRODUCT_FR,
+        "es": PRODUCT_ES,
+        "pt": PRODUCT_PT,
+        "ar": PRODUCT_AR,
+        "ru": PRODUCT_RU,
     }
     locale_product = locale_pages.get(lang, {}).get(model, {})
     if locale_product:

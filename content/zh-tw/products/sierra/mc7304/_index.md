@@ -71,7 +71,8 @@ MC7304 支援全球主要 LTE 頻段，廣泛應用於工業閘道器、自動�
 
 | 資源 | 連結 |
 |------|------|
-| 官方產品頁面 | https://www.sierrawireless.com/products/mc7304/ |
+| 官方產品頁面 | https://source.sierrawireless.com/devices/mc-series/mc7304/ |
+| 技術規格書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7304_product_technical_specification_and_customer_design_guidelines_rev12_0.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />

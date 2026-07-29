@@ -71,7 +71,8 @@ MC7304 支持全球主要 LTE 频段，广泛应用于工业网关、自动贩�
 
 | 资源 | 链接 |
 |------|------|
-| 官方产品页面 | https://www.sierrawireless.com/products/mc7304/ |
+| 官方产品页面 | https://source.sierrawireless.com/devices/mc-series/mc7304/ |
+| 技术规格书 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7304_product_technical_specification_and_customer_design_guidelines_rev12_0.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />

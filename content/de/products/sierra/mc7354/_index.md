@@ -71,7 +71,8 @@ Das MC7354 ist ideal für Industrieautomation, Transportwesen, Smart Grid und In
 
 | Ressource | Link |
 |------|------|
-| Offizielle Produktseite | https://www.sierrawireless.com/products/mc7354/ |
+| Offizielle Produktseite | https://source.sierrawireless.com/devices/mc-series/mc7354/ |
+| Technisches Datenblatt (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/4114635_airprime-mc7354-product-technical-specification_r9.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />

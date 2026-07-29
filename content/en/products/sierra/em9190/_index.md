@@ -74,7 +74,8 @@ The EM9190 features advanced power management and thermal design, suitable for h
 
 | Resource | Link |
 |------|------|
-| Official Product Page | https://www.sierrawireless.com/products/em9190/ |
+| Official Product Page | https://source.sierrawireless.com/devices/em-series/em9190/ |
+| Technical Specification (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />

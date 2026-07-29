@@ -1,6 +1,6 @@
 ---
-title: "وحدة EM9191 5G NR Sub-6 + mmWave الخلوية"
-description: "EM9191 5G NR Sub-6 + mmWave cellular module with Qualcomm SDX55, 2.5 Gbps download, supporting n260/n261 for comprehensive 5G coverage."
+title: "EM9191 وحدة خلوية 5G NR Sub-6 + mmWave"
+description: "EM9191 هي وحدة خلوية 5G NR Sub-6 + mmWave مع مجموعة شرائح Qualcomm SDX55، تحميل بسرعة 2.5 جيجابت/ثانية، دعم n260/n261 لتغطية 5G شاملة."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -16,22 +16,22 @@ featureimage: "/images/products/sierra/em9191_hero.jpg"
 
 ## نظرة عامة على المنتج
 
-The EM9191 is Sierra Wireless' flagship 5G NR cellular module, powered by the Qualcomm SDX55 chipset, supporting both Sub-6 and mmWave (n260 39GHz / n261 28GHz) for the most comprehensive 5G coverage.
+EM9191 هي الوحدة الخلوية 5G NR الرائدة من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm SDX55، وتدعم كلاً من Sub-6 و mmWave (n260 39GHz / n261 28GHz) لأكثر تغطية 5G شمولاً.
 
-Download speeds reach up to 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) with upload up to 900 Mbps (5G). It supports 6 antenna interfaces for mmWave beamforming requirements.
+تصل سرعات التحميل إلى 2.5 جيجابت/ثانية (5G) / 2.0 جيجابت/ثانية (LTE Cat 22) مع رفع يصل إلى 900 ميجابت/ثانية (5G). تدعم 6 واجهات هوائي لمتطلبات تشكيل حزمة mmWave.
 
-The EM9191 supports all Sub-6 bands (same as EM9190) plus mmWave high-frequency bands, paired with multi-band GNSS. Ideal for Industry 4.0, smart healthcare, and edge computing applications requiring the lowest latency and highest bandwidth.
+تدعم EM9191 جميع نطاقات Sub-6 (مثل EM9190) بالإضافة إلى نطاقات mmWave عالية التردد، مقترنة بنظام GNSS متعدد النطاقات. مثالية للصناعة 4.0 والرعاية الصحية الذكية وتطبيقات الحوسبة الطرفية التي تتطلب أقل زمن وصول وأعلى نطاق ترددي.
 
 ## الميزات الرئيسية
 
-- Qualcomm SDX55 5G modem chipset
-- 5G NR Sub-6 + mmWave (n260/n261) support
-- 5G download up to 2.5 Gbps, upload 900 Mbps
-- LTE Cat 22 download up to 2.0 Gbps
-- 8×CA and mmWave beamforming support
-- 6 antenna interfaces (including mmWave antennas)
-- M.2 3042 Key B industrial-grade form factor
-- Multi-band GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)
+- مجموعة شرائح مودم 5G Qualcomm SDX55
+- دعم 5G NR Sub-6 + mmWave (n260/n261)
+- تحميل 5G حتى 2.5 جيجابت/ثانية، رفع 900 ميجابت/ثانية
+- تحميل LTE Cat 22 حتى 2.0 جيجابت/ثانية
+- دعم 8×CA وتشكيل حزمة mmWave
+- 6 واجهات هوائي (بما في ذلك هوائيات mmWave)
+- عامل شكل صناعي M.2 3042 Key B
+- نظام GNSS متعدد النطاقات (GPS + GLONASS + BeiDou + Galileo + QZSS)
 
 ## المواصفات الفنية
 
@@ -75,7 +75,8 @@ The EM9191 supports all Sub-6 bands (same as EM9190) plus mmWave high-frequency 
 
 | المورد | الرابط |
 |------|------|
-| صفحة المنتج الرسمية | https://www.sierrawireless.com/products/em9191/ |
+| صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/em-series/em9191/ |
+| المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />

@@ -72,7 +72,8 @@ L'EM7511 prend en charge les bandes LTE mondiales et License-Assisted Access (LA
 
 | Ressource | Lien |
 |------|------|
-| Page officielle du produit | https://www.sierrawireless.com/products/em7511/ |
+| Page officielle du produit | https://source.sierrawireless.com/devices/em-series/em7511/ |
+| Fiche technique (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41112028-em7511-product-technical-specification-r14.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em7511.png" alt="Sierra Wireless EM7511" />

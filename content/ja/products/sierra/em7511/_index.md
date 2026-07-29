@@ -72,7 +72,8 @@ EM7511 はグローバル LTE 周波数帯および License-Assisted Access（LA
 
 | リソース | リンク |
 |------|------|
-| 公式製品ページ | https://www.sierrawireless.com/products/em7511/ |
+| 公式製品ページ | https://source.sierrawireless.com/devices/em-series/em7511/ |
+| 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41112028-em7511-product-technical-specification-r14.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em7511.png" alt="Sierra Wireless EM7511" />

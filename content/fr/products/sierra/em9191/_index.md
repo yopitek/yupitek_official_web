@@ -75,7 +75,8 @@ L'EM9191 prend en charge toutes les bandes Sub-6 (comme l'EM9190) plus les bande
 
 | Ressource | Lien |
 |------|------|
-| Page officielle du produit | https://www.sierrawireless.com/products/em9191/ |
+| Page officielle du produit | https://source.sierrawireless.com/devices/em-series/em9191/ |
+| Fiche technique (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
 
 {{< gallery >}}
   <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />

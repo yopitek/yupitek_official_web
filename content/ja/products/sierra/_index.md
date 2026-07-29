@@ -1,6 +1,6 @@
 ---
 title: "Sierra Wireless セルラー通信モジュール (Semtech)"
-description: "榆閤科技（Yopitek）は Sierra Wireless (現 Semtech) 産業用 5G NR / 4G LTE M.2 および Mini PCIe モジュールの正規代理店です。"
+description: "Yopitekは Sierra Wireless (現 Semtech) 産業用 5G NR / 4G LTE M.2 および Mini PCIe モジュールの正規代理店です。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true

@@ -41,11 +41,11 @@ EM7455 支援獨家的多電信業者認證韌體動態切換技術，可於 AT&
 
 ## 操作系统与驱动支持
 
-| 作業系統 | 支援狀態 | 備註 |
+| 操作系统 | 支持状态 | 备注 |
 |:---|:---|:---|
-| **Windows 10 / 11** | ✅ 支援 | 提供官方 Windows MBIM / QMI 驅動軟體包 |
-| **Linux** | ✅ 支援 | 核心內建 `qmi_wwan` / `cdc_mbim` 驅動 |
-| **Android** | ✅ 支援 | 支援 Android RIL 架構 |
+| **Windows 10 / 11** | ✅ 支持 | 提供官方 Windows MBIM / QMI 驱动与 Skylight 连线管理软件 |
+| **Linux** | ✅ 支持 | 内核内置 qmi_wwan / cdc_mbim 驱动与 ModemManager |
+| **Android** | ✅ 支持 | 提供 Android RIL 整合驱动 |
 
 {{< alert >}}
 需要 Sierra Wireless 模组项目评估、极低延迟 5G 工业网关规格咨询或批量采购报价？请来信[与我们联系](/zh-cn/contact/)

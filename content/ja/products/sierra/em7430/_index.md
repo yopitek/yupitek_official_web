@@ -45,9 +45,9 @@ EM7430 通過台灣 NCC、日本 JRF/JPA、澳洲 RCM 及各大電信業者（�
 
 | 作業系統 | 支援狀態 | 驅動程式 / 模組說明 |
 |:---|:---|:---|
-| **Windows 10 / 11** | ✅ 支援 | 提供官方 Windows MBIM / QMI 驅動與 Skylight 連線管理軟體 |
-| **Linux (Ubuntu / Debian / RHEL)** | ✅ 支援 | 內建 Linux Kernel qmi_wwan / cdc_mbim 核心驅動與 ModemManager |
-| **Android** | ✅ 支援 | 提供 Android RIL 整合驅動與範例庫 |
+| **Windows 10 / 11** | ✅ 対応 | 公式 Windows MBIM / QMI ドライバーおよび Skylight コネクションマネージャー |
+| **Linux (Ubuntu / Debian / RHEL)** | ✅ 対応 | Linux カーネル標準 qmi_wwan / cdc_mbim ドライバーおよび ModemManager |
+| **Android** | ✅ 対応 | Android RIL 統合ドライバー対応 |
 
 ## リソース・資料ダウンロード
 

@@ -1,5 +1,5 @@
 ---
-title: "Sierra Wireless Modules Cellulaires (Semtech)"
+title: "Modules Cellulaires Sierra Wireless (Semtech)"
 description: "Yopitek distribue les modules cellulaires industriels Sierra Wireless (Semtech) 5G NR et 4G LTE au format M.2 et Mini PCIe."
 date: 2026-07-29
 draft: false

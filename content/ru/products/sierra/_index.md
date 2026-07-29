@@ -1,5 +1,5 @@
 ---
-title: "Sierra Wireless Сотовые модули (Semtech)"
+title: "Сотовые модули Sierra Wireless (Semtech)"
 description: "Yopitek поставляет промышленные сотовые модули Sierra Wireless (Semtech) 5G NR и 4G LTE в форматах M.2 и Mini PCIe."
 date: 2026-07-29
 draft: false

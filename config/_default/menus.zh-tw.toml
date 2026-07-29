@@ -57,6 +57,13 @@
     parent   = "產品"
     weight   = 28
 
+
+  [[main]]
+    name     = "Sierra Wireless"
+    pageRef  = "/products/sierra"
+    parent   = "產品"
+    weight   = 28
+
   [[main]]
     name     = "Ubiquiti"
     pageRef  = "/products/ubiquiti"

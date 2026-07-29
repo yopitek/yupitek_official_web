@@ -1,6 +1,6 @@
 ---
-title: "Sierra Wireless وحدات الاتصال الخلوي (Semtech)"
-description: "تقدم Yopitek وحدات Sierra Wireless (الآن Semtech) الصناعية بدرجة 5G NR و 4G LTE بصيغة M.2 و Mini PCIe للتطبيقات الصناعية والمركبات."
+title: "وحدات Sierra Wireless الخلوية (Semtech)"
+description: "تقدم Yopitek وحدات Sierra Wireless (الآن Semtech) الصناعية بدرجة 5G NR و 4G LTE بصيغة M.2 و Mini PCIe."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true

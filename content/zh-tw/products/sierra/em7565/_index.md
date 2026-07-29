@@ -1,42 +1,85 @@
 ---
-title: "Sierra Wireless EM7565 — 4G LTE-Advanced Pro Cat 12 模組 (Global 全球版)"
-description: "Sierra Wireless AirPrime EM7565 全球版 Cat 12 模組，M.2 3042 介面，最高 600 Mbps 下載 / 150 Mbps 上傳，涵蓋 24+ 全球 LTE 頻段，支援 CBRS 與 LAA。"
+title: "EM7565 LTE-A Pro Cat 12 蜂窩模組"
+description: "EM7565 採用 Qualcomm SDX20 晶片組，支援 LTE-A Pro Cat 12 600 Mbps 與雙頻 GNSS，M.2 封裝，適用於高效能工業路由器。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE Pro", "Cat 12", "M.2 3042", "Global 全球版", "CBRS", "Qualcomm"]
+tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7565", "SDX20", "M.2"]
 ---
+
+{{< alert "warning" >}}
+**法律免責聲明**：本產品為蜂窩通訊模組，使用前請確保符合當地法規與電信監理要求。未經授權的修改或使用可能違反法律。
+{{</alert >}}
 
 ## 產品概述
 
-Sierra Wireless AirPrime® EM7565 是一款跨國通訊必備的全球版 4G LTE-Advanced Pro Cat 12 模組。單一模組即可涵蓋全球超過 24 個 LTE 頻段，最高下載速率 600 Mbps，上傳 150 Mbps。
+EM7565 是 Sierra Wireless 推出的 LTE-Advanced Pro Cat 12 蜂窩模組，採用 Qualcomm SDX20 晶片組，支援 3×20 MHz 載波聚合 (3×CA)，DL 256QAM 與 UL 64QAM，下載速度最高 600 Mbps，上傳最高 150 Mbps。
 
-EM7565 同時支援 CBRS (Band 48) 私網 LTE 與 LAA (Band 46) 授權輔助存取技術，具備全球絕大多數主流電信業者認證，是企業跨國設備部署、車隊管理與全球工業物聯網（IoT）的終極模組方案。
+EM7565 採用標準 M.2 3042 Key B 封裝，相較 EM7511 增加了對更多載波聚合組合的支援。其 SDX20 平台提供強大的 RF 性能與極低的功耗，適合全天候運作的工業設備。
 
-## 產品特色
+支援全球主要 LTE 頻段，包括 B14 FirstNet 及 B71 600 MHz 頻段，適用於工業路由器、關鍵任務通訊與專業行動熱點。
 
-- **全球單一 SKU 覆蓋**：單一模組支援全球 24+ LTE 頻段，大幅降低營運與庫存複雜度。
-- **LTE Cat 12 600 Mbps 高速**：支援 3x 載波聚合 (3CA) 與 256-QAM 高階調變。
-- **CBRS 私有網與 LAA 支援**：彈性擴展企業專網與免執照頻段頻寬。
-- **多星座全球 GNSS**：內建 GPS, GLONASS, BeiDou, Galileo 精確定位系統。
+## 主要特點
+
+- 採用 Qualcomm SDX20 數據機晶片
+- LTE-A Pro Cat 12，支援 3×CA
+- 下載速度高達 600 Mbps，上傳 150 Mbps
+- 支援 256QAM DL / 64QAM UL / LAA
+- M.2 3042 Key B 工業級封裝
+- 支援 USB 3.1、PCIe Gen3、RGMII
+- 支援 FirstNet B14 與 B71 頻段
+- 雙頻 GNSS (GPS + Galileo)
 
 ## 技術規格
 
-| 項目 | 規格細節 |
-|:---|:---|
-| **製造商** | Sierra Wireless (現隸屬 Semtech) |
-| **產品型號** | AirPrime® EM7565 |
-| **蜂窩技術** | 4G LTE-Advanced Pro Cat 12 (支援 3G 回落) |
-| **最高下載 / 上傳速率** | 600 Mbps / 150 Mbps |
-| **LTE 頻段** | B1, B2, B3, B4, B5, B7, B8, B9, B12, B13, B18, B19, B20, B26, B28, B29, B30, B32, B41-B43, B46(LAA), B48(CBRS), B66 |
-| **3G HSPA+ 頻段** | B1, B2, B4, B5, B6, B8, B9, B19 |
-| **外型尺寸** | M.2 Type 3042 (42 × 30 × 2.3 mm) |
-| **主機介面** | USB 3.0, USB 2.0 High Speed |
-| **電信認證** | AT&T, NTT Docomo, Softbank, Telstra, Verizon, Vodafone, KDDI, KT, DT 等全球電信商 |
-| **作業溫度** | -40°C ~ +85°C |
+| 項目 | 規格 |
+|------|------|
+| 晶片型號 | Qualcomm SDX20 |
+| 蜂窩標準 | LTE-Advanced Pro Cat 12 |
+| 下載速度 | 600 Mbps (LTE) |
+| 上傳速度 | 150 Mbps (LTE) |
+| 載波聚合 | 3×CA (3×20 MHz) |
+| LTE 類別 | Cat 12 |
+| 介面 | USB 3.1 / PCIe Gen3 / I2S / UART / RGMII |
+| 外型規格 | M.2 3042 Key B |
+| 尺寸 | 42 × 30 × 2.3 mm |
+| 重量 | 6.8 g |
+| 工作溫度 | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou / Galileo |
+| 地區 | 全球 (多頻段) |
+| 供電電壓 | 3.135V ~ 4.4V |
+| 天線介面 | 4 × IPEX MHF4 |
+| 韌體更新 | USB / FOTA |
+
+## 作業系統支援
+
+| OS | Status | Notes |
+|------|---------|------|
+| Windows 10/11 | ✅ | 經 Sierra Wireless 驅動程式認證 |
+| Linux (Kernel ≥ 4.8) | ✅ | 核心內建 QMI_WWAN / MBIM 驅動 |
+| Android | ✅ | 可透過 USB OTG 連接 |
+| OpenWrt | ✅ | 需安裝 kmod-usb-net-qmi-wwan |
+| Yocto / Buildroot | ✅ | 支援 SDK 整合 |
+
+## 包裝內容
+
+- 1 × EM7565 蜂窩模組
+- 1 × 文件包裝
+
+## 資源與連結
+
+| 資源 | 連結 |
+|------|------|
+| 官方產品頁面 | https://www.sierrawireless.com/products/em7565/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/em7565.png" alt="Sierra Wireless EM7565" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-需要詢問 EM7565 全球版模組採購或技術諮詢？請來信[與我們聯絡](/zh-tw/contact/)
-{{< /alert >}}
+需要詢問產品報價？請來信[與我們聯絡](/zh-tw/contact/)
+{{</alert >}}

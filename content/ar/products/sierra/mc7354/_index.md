@@ -1,42 +1,84 @@
 ---
-title: "Sierra Wireless MC7354 — 4G LTE Cat 3 多業者模組 (北美全網通 Mini PCIe)"
-description: "Sierra Wireless AirPrime MC7354，Qualcomm MDM9615 晶片，Mini PCIe 介面，Cat 3 (100 Mbps)，支援 Verizon/Sprint/AT&T，包含 LTE, EV-DO Rev A, HSPA+ 跨系統備援。"
+title: "وحدة MC7354 LTE-A Cat 4 الخلوية"
+description: "MC7354 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor optimized for regional carrier band combinations."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-dir: "rtl"
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 3", "Mini PCIe", "Qualcomm MDM9615", "CDMA/EV-DO", "北美全網通"]
+tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7354", "Mini PCIe", "IoT"]
 ---
+
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
+{{</alert >}}
 
 ## نظرة عامة على المنتج
 
-Sierra Wireless AirPrime® MC7354 是一款功能極為強大的北美全網通 4G LTE Cat 3 Mini PCIe 模組。採用 Qualcomm MDM9615 多模晶片，同時相容 LTE、CDMA/EV-DO Rev A、GSM/GPRS/EDGE 及 HSPA+ 系統。
+The MC7354 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
 
-MC7354 獲有 Verizon, Sprint, AT&T 及 Bell/Rogers 的多重運營商認證，是北美跨網域備援網關與雙 SIM/多系統備援設備的標準配備。
+This module uses a standard Mini PCIe Full Size form factor. The MC7354 differs from other MC series modules in its specific band combination support, optimized for particular regional carrier networks. It supports USB 2.0, UART, and SPI interfaces.
+
+The MC7354 is ideal for industrial automation, transportation, smart grid, and infrastructure monitoring applications requiring reliable LTE connectivity.
 
 ## الميزات الرئيسية
 
-- **北美全網通多模支援**：單一模組支援 LTE、CDMA/EV-DO 及 HSPA+ 多重協定。
-- **Qualcomm MDM9615 晶片**：多核心高效能廣域通訊處理器。
-- **高可靠備援切換**：適合無人值守工業站台與車載監控系統。
-- **高精準度 GNSS**：內建獨立 GPS / GLONASS 全球衛星定位。
+- Qualcomm MDM9215 chipset
+- LTE-A Cat 4 with download up to 150 Mbps
+- Upload speed up to 50 Mbps
+- Mini PCIe Full Size standard form factor
+- USB 2.0, UART, SPI interface support
+- Optimized for regional carrier band combinations
+- Integrated GPS / GLONASS GNSS
+- Wide temperature range -40°C ~ +85°C
 
 ## المواصفات الفنية
 
-| العنصر | تفاصيل المواصفات |
-|:---|:---|
-| **الشركة المصنعة** | Sierra Wireless (現隸屬 Semtech) |
-| **الموديل** | AirPrime® MC7354 |
-| **التقنية الخلوية** | 4G LTE Cat 3 / CDMA EV-DO / HSPA+ |
-| **الشريحة الرئيسية** | Qualcomm MDM9615 |
-| **أقصى سرعة نقل** | 100 Mbps / 50 Mbps |
-| **نطاقات LTE** | B2, B4, B5, B13, B17, B25 |
-| **CDMA / EV-DO 頻段** | BC0 (800), BC1 (1900), BC10 (800) |
-| **عامل الشكل** | Full-Size Mini PCIe (51 × 30 × 4.5 mm) |
-| **درجة حرارة التشغيل** | -40°C ~ +85°C |
+| المعيار | المواصفات |
+|------|------|
+| رقاقة | Qualcomm MDM9215 |
+| معيار الشبكة الخلوية | LTE-A Cat 4 |
+| سرعة التحميل | 150 Mbps (LTE) |
+| سرعة الرفع | 50 Mbps (LTE) |
+| تجميع الموجات | غير مدعوم |
+| فئة LTE | Cat 4 |
+| الواجهة | USB 2.0 / UART / SPI |
+| شكل المنتج | Mini PCIe Full Size |
+| الأبعاد | 51 × 30 × 4.7 mm |
+| الوزن | 8.5 g |
+| درجة حرارة التشغيل | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS |
+| المنطقة | 全球 (多頻段) |
+| جهد الإمداد | 3.135V ~ 4.4V |
+| واجهة الهوائي | 2 × IPEX MHF4 |
+| تحديث البرامج الثابتة | USB / FOTA |
+
+## دعم أنظمة التشغيل
+
+| نظام التشغيل | الحالة | ملاحظات |
+|------|---------|------|
+| Windows 10/11 | ✅ | معتمد من برامج تشغيل Sierra Wireless |
+| Linux (Kernel ≥ 3.10) | ✅ | برنامج تشغيل option مدمج في النواة |
+| Android | ✅ | متاح عبر USB OTG |
+| OpenWrt | ✅ | يتطلب تثبيت kmod-usb-serial-option |
+
+## محتويات العبوة
+
+- 1 × MC7354 蜂窩模組
+- 1 × حزمة المستندات
+
+## الموارد والروابط
+
+| المورد | الرابط |
+|------|------|
+| صفحة المنتج الرسمية | https://www.sierrawireless.com/products/mc7354/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-هل تحتاج إلى تقييم مشروع أو عرض أسعار لشراء وحدات Sierra Wireless؟ يرجى [التواصل معنا](/ar/contact/).
-{{< /alert >}}
+هل تحتاج إلى عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/)
+{{</alert >}}

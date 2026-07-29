@@ -1,41 +1,84 @@
 ---
-title: "Sierra Wireless MC7354 — 4G LTE Cat 3 多業者模組 (北美全網通 Mini PCIe)"
-description: "Sierra Wireless AirPrime MC7354，Qualcomm MDM9615 晶片，Mini PCIe 介面，Cat 3 (100 Mbps)，支援 Verizon/Sprint/AT&T，包含 LTE, EV-DO Rev A, HSPA+ 跨系統備援。"
+title: "MC7354 LTE-A Cat 4 蜂窩模組"
+description: "MC7354 採用 Qualcomm MDM9215 晶片組，支援 LTE-A Cat 4 150 Mbps，Mini PCIe 封裝，適用於工業 IoT 與 M2M 通訊。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 3", "Mini PCIe", "Qualcomm MDM9615", "CDMA/EV-DO", "北美全網通"]
+tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7354", "Mini PCIe", "IoT"]
 ---
+
+{{< alert "warning" >}}
+**法律免責聲明**：本產品為蜂窩通訊模組，使用前請確保符合當地法規與電信監理要求。未經授權的修改或使用可能違反法律。
+{{</alert >}}
 
 ## 產品概述
 
-Sierra Wireless AirPrime® MC7354 是一款功能極為強大的北美全網通 4G LTE Cat 3 Mini PCIe 模組。採用 Qualcomm MDM9615 多模晶片，同時相容 LTE、CDMA/EV-DO Rev A、GSM/GPRS/EDGE 及 HSPA+ 系統。
+MC7354 是 Sierra Wireless 推出的 LTE-Advanced Cat 4 蜂窩模組，採用 Qualcomm MDM9215 晶片組，支援下載速度最高 150 Mbps，上傳最高 50 Mbps。
 
-MC7354 獲有 Verizon, Sprint, AT&T 及 Bell/Rogers 的多重運營商認證，是北美跨網域備援網關與雙 SIM/多系統備援設備的標準配備。
+此模組採用標準 Mini PCIe Full Size 封裝。MC7354 主要差異在於其支援的特定頻段組合，適用於特定區域的運營商網路。支援 USB 2.0、UART 及 SPI 介面。
 
-## 產品特色
+MC7354 適用於工業自動化、交通運輸、智慧電網及基礎設施監控等需要穩定 LTE 連線的產業應用。
 
-- **北美全網通多模支援**：單一模組支援 LTE、CDMA/EV-DO 及 HSPA+ 多重協定。
-- **Qualcomm MDM9615 晶片**：多核心高效能廣域通訊處理器。
-- **高可靠備援切換**：適合無人值守工業站台與車載監控系統。
-- **高精準度 GNSS**：內建獨立 GPS / GLONASS 全球衛星定位。
+## 主要特點
+
+- 採用 Qualcomm MDM9215 晶片組
+- LTE-A Cat 4，下載高達 150 Mbps
+- 上傳速度最高 50 Mbps
+- Mini PCIe Full Size 標準封裝
+- 支援 USB 2.0、UART、SPI 介面
+- 特定區域運營商頻段優化
+- 內建 GPS / GLONASS GNSS
+- 寬溫設計 -40°C ~ +85°C
 
 ## 技術規格
 
-| 項目 | 規格細節 |
-|:---|:---|
-| **製造商** | Sierra Wireless (現隸屬 Semtech) |
-| **產品型號** | AirPrime® MC7354 |
-| **蜂窩技術** | 4G LTE Cat 3 / CDMA EV-DO / HSPA+ |
-| **核心晶片組** | Qualcomm MDM9615 |
-| **最高下載 / 上傳速率** | 100 Mbps / 50 Mbps |
-| **LTE 頻段** | B2, B4, B5, B13, B17, B25 |
-| **CDMA / EV-DO 頻段** | BC0 (800), BC1 (1900), BC10 (800) |
-| **外型尺寸** | Full-Size Mini PCIe (51 × 30 × 4.5 mm) |
-| **作業溫度** | -40°C ~ +85°C |
+| 項目 | 規格 |
+|------|------|
+| 晶片型號 | Qualcomm MDM9215 |
+| 蜂窩標準 | LTE-A Cat 4 |
+| 下載速度 | 150 Mbps (LTE) |
+| 上傳速度 | 50 Mbps (LTE) |
+| 載波聚合 | 不支援 |
+| LTE 類別 | Cat 4 |
+| 介面 | USB 2.0 / UART / SPI |
+| 外型規格 | Mini PCIe Full Size |
+| 尺寸 | 51 × 30 × 4.7 mm |
+| 重量 | 8.5 g |
+| 工作溫度 | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS |
+| 地區 | 全球 (多頻段) |
+| 供電電壓 | 3.135V ~ 4.4V |
+| 天線介面 | 2 × IPEX MHF4 |
+| 韌體更新 | USB / FOTA |
+
+## 作業系統支援
+
+| OS | Status | Notes |
+|------|---------|------|
+| Windows 10/11 | ✅ | 經 Sierra Wireless 驅動程式認證 |
+| Linux (Kernel ≥ 3.10) | ✅ | 核心內建 option 驅動 |
+| Android | ✅ | 可透過 USB OTG 連接 |
+| OpenWrt | ✅ | 需安裝 kmod-usb-serial-option |
+
+## 包裝內容
+
+- 1 × MC7354 蜂窩模組
+- 1 × 文件包裝
+
+## 資源與連結
+
+| 資源 | 連結 |
+|------|------|
+| 官方產品頁面 | https://www.sierrawireless.com/products/mc7354/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-需要詢問 MC7354 多模網關模組採購？請來信[與我們聯絡](/zh-tw/contact/)
-{{< /alert >}}
+需要詢問產品報價？請來信[與我們聯絡](/zh-tw/contact/)
+{{</alert >}}

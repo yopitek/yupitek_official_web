@@ -1,60 +1,84 @@
 ---
-title: "Sierra Wireless EM7430 — 4G LTE-Advanced Cat 6 模組 (APAC 亞太版)"
-description: "Sierra Wireless AirPrime EM7430，Qualcomm MDM9230 晶片，M.2 3042 介面，支援 LTE-A Cat 6 載波聚合 (最高 300 Mbps 下載 / 50 Mbps 上傳)，專為亞太地區 (APAC) 與台灣電信頻段設計。"
+title: "EM7430 LTE-A Cat 6 蜂窩模組"
+description: "EM7430 採用 Qualcomm MDM9230 晶片組，支援 LTE-A Cat 6 高達 300 Mbps 下載速度，M.2 封裝，適用於工業路由器與閘道器。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 6", "M.2 3042", "Qualcomm MDM9230", "APAC", "NCC 認證"]
+tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7430", "IoT", "M.2"]
 ---
+
+{{< alert "warning" >}}
+**法律免責聲明**：本產品為蜂窩通訊模組，使用前請確保符合當地法規與電信監理要求。未經授權的修改或使用可能違反法律。
+{{</alert >}}
 
 ## 產品概述
 
-Sierra Wireless AirPrime® EM7430 是一款專為亞太地區 (APAC) 設計的 4G LTE-Advanced Cat 6 工業級 M.2 蜂窩網絡通訊模組。採用 Qualcomm Snapdragon MDM9230 晶片組，最高提供 300 Mbps 的下載速率與 50 Mbps 的上傳速率，並具備 3G UMTS/HSPA+ 後退備援機制。
+EM7430 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窩模組，採用 Qualcomm MDM9230 晶片組，支援 2×20 MHz 載波聚合 (2×CA)，下載速度最高可達 300 Mbps，上傳最高 50 Mbps。
 
-EM7430 通過台灣 NCC、日本 JRF/JPA、澳洲 RCM 及各大電信業者（包含 Telstra, Softbank, KDDI, NTT DOCOMO）的官方認證，是工業控制網關、車載資通訊及邊緣運算設備的最佳通訊核心。
+此模組採用標準 M.2 3042 Key B 封裝，適用於工業路由器、物聯網閘道器、行動熱點及視訊監控等應用。支援 USB 3.0 及 PCIe Gen2 介面，提供靈活的系統整合方案。
 
-## 產品特色
+EM7430 支援全球主要 LTE 頻段 (B1–5/7/8/12/13/20/25/26/29/30/41)，適合於世界各地部署的 IoT 設備與 M2M 終端。
 
-- **4G LTE Cat 6 載波聚合 (CA)**：最高支援 300 Mbps 下載 / 50 Mbps 上傳速率。
-- **M.2 3042 標準外型**：尺寸僅 42 × 30 × 2.3 mm，支援 PCI Express 與 USB 介面設計。
-- **亞太全頻段覆蓋**：支援 LTE B1, B3, B5, B7, B8, B18, B19, B21, B28, B38, B39, B40, B41。
-- **多星座 GNSS 定位**：內建 GPS, GLONASS, BeiDou, Galileo 精準定位引擎。
-- **工業級寬溫運作**：支援 -40°C 至 +85°C 嚴苛環境運作。
+## 主要特點
+
+- 採用 Qualcomm MDM9230 晶片組，成熟穩定
+- LTE-A Cat 6，支援 2×CA 載波聚合
+- 下載速度高達 300 Mbps，上傳 50 Mbps
+- M.2 3042 Key B 工業級封裝
+- 支援 USB 3.0 與 PCIe Gen2 雙介面
+- 內建 GPS / GLONASS / BeiDoU GNSS
+- 寬溫設計 -40°C ~ +85°C
+- 支援 FOTA 韌體無線更新
 
 ## 技術規格
 
-| 項目 | 規格細節 |
-|:---|:---|
-| **製造商** | Sierra Wireless (現隸屬 Semtech) |
-| **產品型號** | AirPrime® EM7430 |
-| **蜂窩技術** | 4G LTE-Advanced Cat 6 (支援 3G 回落) |
-| **核心晶片組** | Qualcomm MDM9230 |
-| **最高下載 / 上傳速率** | 300 Mbps / 50 Mbps |
-| **LTE 頻段** | B1, B3, B5, B7, B8, B18, B19, B21, B28, B38, B39, B40, B41 |
-| **UMTS / 3G 頻段** | B1 (2100), B5 (850), B6 (800), B8 (900), B9 (1700), B19 (800) |
-| **外型尺寸 (Form Factor)** | M.2 Type 3042-S3-B (42 × 30 × 2.3 mm) |
-| **主機控制介面** | USB 3.0, USB 2.0, PCIe |
-| **SIM 卡介面** | 雙 SIM 卡切換支援 (1.8V / 3.0V) |
-| **天線介面** | IPEX MHF-4 接頭 (主天線、分集天線、MIMO、GNSS) |
-| **作業溫度** | -40°C ~ +85°C (工業級) |
-| **安全與韌體** | 支援 Secure Boot 與 FOTA 雲端韌體更新 |
+| 項目 | 規格 |
+|------|------|
+| 晶片型號 | Qualcomm MDM9230 |
+| 蜂窩標準 | LTE-Advanced Cat 6 |
+| 下載速度 | 300 Mbps (LTE) |
+| 上傳速度 | 50 Mbps (LTE) |
+| 載波聚合 | 2×CA (2×20 MHz) |
+| LTE 類別 | Cat 6 |
+| 介面 | USB 3.0 / PCIe Gen2 / I2S / UART |
+| 外型規格 | M.2 3042 Key B |
+| 尺寸 | 42 × 30 × 2.3 mm |
+| 重量 | 6.5 g |
+| 工作溫度 | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou |
+| 地區 | 全球 (多頻段) |
+| 供電電壓 | 3.135V ~ 4.4V |
+| 天線介面 | 4 × IPEX MHF4 |
+| 韌體更新 | USB / FOTA |
 
-## 作業系統與驅動支援
+## 作業系統支援
 
-| 作業系統 | 支援狀態 | 驅動程式 / 模組說明 |
-|:---|:---|:---|
-| **Windows 10 / 11** | ✅ 支援 | 提供官方 Windows MBIM / QMI 驅動與 Skylight 連線管理軟體 |
-| **Linux (Ubuntu / Debian / RHEL)** | ✅ 支援 | 內建 Linux Kernel qmi_wwan / cdc_mbim 核心驅動與 ModemManager |
-| **Android** | ✅ 支援 | 提供 Android RIL 整合驅動與範例庫 |
+| OS | Status | Notes |
+|------|---------|------|
+| Windows 10/11 | ✅ | 經 Sierra Wireless 驅動程式認證 |
+| Linux (Kernel ≥ 4.4) | ✅ | 核心內建 QMI_WWAN / option 驅動 |
+| Android | ✅ | 可透過 USB OTG 連接 |
+| OpenWrt | ✅ | 需安裝 kmod-usb-net-qmi-wwan |
 
-## 資源與文件下載
+## 包裝內容
 
-| 文件項目 | 連結 |
-|:---|:---|
-| 官方產品規格書 (PDF) | [📄 下載 EM7430 Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7430_product_technical_specification/) |
+- 1 × EM7430 蜂窩模組
+- 1 × 文件包裝
+
+## 資源與連結
+
+| 資源 | 連結 |
+|------|------|
+| 官方產品頁面 | https://www.sierrawireless.com/products/em7430/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/em7430.png" alt="Sierra Wireless EM7430" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-需要詢問 EM7430 模組報價、樣品申請或批量採購？請來信[與我們聯絡](/zh-tw/contact/)
-{{< /alert >}}
+需要詢問產品報價？請來信[與我們聯絡](/zh-tw/contact/)
+{{</alert >}}

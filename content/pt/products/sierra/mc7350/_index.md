@@ -1,40 +1,84 @@
 ---
-title: "Sierra Wireless MC7350 — 4G LTE Cat 3 模組 (北美 AT&T Mini PCIe)"
-description: "Sierra Wireless AirPrime MC7350，Qualcomm MDM9215 晶片，Mini PCIe 介面，Cat 3 (100 Mbps 下載 / 50 Mbps 上傳)，北美 AT&T 網路專用工業通訊模組。"
+title: "Módulo Celular MC7350 LTE-A Cat 4"
+description: "MC7350 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor with broad global carrier certification."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 3", "Mini PCIe", "Qualcomm MDM9215", "AT&T", "北美"]
+tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7350", "Mini PCIe", "IoT"]
 ---
+
+{{< alert "warning" >}}
+**Aviso Legal**: Este é um módulo de comunicação celular. Certifique-se de cumprir os regulamentos locais e requisitos de telecomunicações antes do uso. Modificação ou uso não autorizado pode violar as leis aplicáveis.
+{{</alert >}}
 
 ## Visão Geral do Produto
 
-Sierra Wireless AirPrime® MC7350 是一款專為北美 AT&T 網路優化的 4G LTE Cat 3 工業級 Mini PCIe 通訊模組。搭載 Qualcomm MDM9215 處理晶片，提供 100 Mbps 的下載速度與 50 Mbps 的上傳速度。
+The MC7350 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
 
-MC7350 廣泛應用於北美地區的自動化終端、智慧電網、加油站 POS 系統與工業路由器，具備經 AT&T 官方驗證的高穩定度通訊協定棧。
+This module uses a standard Mini PCIe Full Size form factor. The MC7350 is in the same family as the MC7304 but features broader global band support by default. It supports USB 2.0, UART, and SPI interfaces.
 
-## Recursos Principais
+The MC7350 is certified by major global carriers, making it suitable for industrial routers, asset tracking, smart meters, and remote healthcare devices.
 
-- **AT&T 電信網路最佳化**：通過 AT&T 官方專屬設備運營認證。
-- **Qualcomm MDM9215 晶片**：提供低功耗、高可靠度的通訊運算能力。
-- **標準 Mini PCIe 介面**：極高抗震性與工業級接插件相容度。
-- **獨立 GPS / GLONASS 定位**：支援精確資產追蹤與地理定位。
+## Principais Recursos
+
+- Qualcomm MDM9215 chipset
+- LTE-A Cat 4 with download up to 150 Mbps
+- Upload speed up to 50 Mbps
+- Mini PCIe Full Size standard form factor
+- USB 2.0, UART, SPI interface support
+- Broad global carrier certification
+- Integrated GPS / GLONASS GNSS
+- Wide temperature range -40°C ~ +85°C
 
 ## Especificações Técnicas
 
-| Item | Detalhes da Especificação |
-|:---|:---|
-| **Fabricante** | Sierra Wireless (現隸屬 Semtech) |
-| **Modelo** | AirPrime® MC7350 |
-| **Tecnologia Celular** | 4G LTE Cat 3 (支援 3G 回落) |
-| **Chipset** | Qualcomm MDM9215 |
-| **Taxas de Transmissão Máximas** | 100 Mbps / 50 Mbps |
-| **Bandas LTE** | B2 (1900), B4 (1700/AWS), B5 (850), B17 (700), B25 (1900) |
-| **Fator de Forma** | Full-Size Mini PCIe (51 × 30 × 4.5 mm) |
-| **Temperatura de Operação** | -40°C ~ +85°C |
+| Parâmetro | Valor |
+|------|------|
+| Chipset | Qualcomm MDM9215 |
+| Padrão Celular | LTE-A Cat 4 |
+| Velocidade de Download | 150 Mbps (LTE) |
+| Velocidade de Upload | 50 Mbps (LTE) |
+| Agregação de Portadoras | Não suportado |
+| Categoria LTE | Cat 4 |
+| Interface | USB 2.0 / UART / SPI |
+| Fator de Forma | Mini PCIe Full Size |
+| Dimensões | 51 × 30 × 4.7 mm |
+| Peso | 8.5 g |
+| Temperatura de Operação | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS |
+| Região | 全球 (多頻段) |
+| Tensão de Alimentação | 3.135V ~ 4.4V |
+| Interface de Antena | 2 × IPEX MHF4 |
+| Atualização de Firmware | USB / FOTA |
+
+## Suporte a SO
+
+| SO | Status | Observações |
+|------|---------|------|
+| Windows 10/11 | ✅ | Certificado por drivers Sierra Wireless |
+| Linux (Kernel ≥ 3.10) | ✅ | Driver option no kernel |
+| Android | ✅ | Disponível via USB OTG |
+| OpenWrt | ✅ | Requer kmod-usb-serial-option |
+
+## Conteúdo da Embalagem
+
+- 1 × MC7350 蜂窩模組
+- 1 × Pacote de documentação
+
+## Recursos e Links
+
+| Recurso | Link |
+|------|------|
+| Página oficial do produto | https://www.sierrawireless.com/products/mc7350/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7350.png" alt="Sierra Wireless MC7350" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-Precisa de avaliação de projetos ou cotação em lote para módulos Sierra Wireless? Por favor [entre em contato](/pt/contact/).
-{{< /alert >}}
+Precisa de uma cotação do produto? [Entre em contato](/pt/contact/)
+{{</alert >}}

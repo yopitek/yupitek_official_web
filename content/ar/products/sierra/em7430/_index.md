@@ -1,61 +1,84 @@
 ---
-title: "Sierra Wireless EM7430 — 4G LTE-Advanced Cat 6 模組 (APAC 亞太版)"
-description: "Sierra Wireless AirPrime EM7430，Qualcomm MDM9230 晶片，M.2 3042 介面，支援 LTE-A Cat 6 載波聚合 (最高 300 Mbps 下載 / 50 Mbps 上傳)，專為亞太地區 (APAC) 與台灣電信頻段設計。"
+title: "وحدة EM7430 LTE-A Cat 6 الخلوية"
+description: "EM7430 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, M.2 form factor, ideal for industrial IoT and M2M applications."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-dir: "rtl"
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 6", "M.2 3042", "Qualcomm MDM9230", "APAC", "NCC 認證"]
+tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7430", "IoT", "M.2"]
 ---
+
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
+{{</alert >}}
 
 ## نظرة عامة على المنتج
 
-Sierra Wireless AirPrime® EM7430 是一款專為亞太地區 (APAC) 設計的 4G LTE-Advanced Cat 6 工業級 M.2 蜂窩網絡通訊模組。採用 Qualcomm Snapdragon MDM9230 晶片組，最高提供 300 Mbps 的下載速率與 50 Mbps 的上傳速率，並具備 3G UMTS/HSPA+ 後退備援機制。
+The EM7430 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
 
-EM7430 通過台灣 NCC、日本 JRF/JPA、澳洲 RCM 及各大電信業者（包含 Telstra, Softbank, KDDI, NTT DOCOMO）的官方認證，是工業控制網關、車載資通訊及邊緣運算設備的最佳通訊核心。
+This module uses a standard M.2 3042 Key B form factor, ideal for industrial routers, IoT gateways, mobile hotspots, and video surveillance applications. It supports USB 3.0 and PCIe Gen2 interfaces for flexible system integration.
+
+The EM7430 supports major global LTE bands (B1–5/7/8/12/13/20/25/26/29/30/41), making it suitable for IoT devices and M2M terminals deployed worldwide.
 
 ## الميزات الرئيسية
 
-- **4G LTE Cat 6 載波聚合 (CA)**：最高支援 300 Mbps 下載 / 50 Mbps 上傳速率。
-- **M.2 3042 標準外型**：尺寸僅 42 × 30 × 2.3 mm，支援 PCI Express 與 USB 介面設計。
-- **亞太全頻段覆蓋**：支援 LTE B1, B3, B5, B7, B8, B18, B19, B21, B28, B38, B39, B40, B41。
-- **多星座 GNSS 定位**：內建 GPS, GLONASS, BeiDou, Galileo 精準定位引擎。
-- **工業級寬溫運作**：支援 -40°C 至 +85°C 嚴苛環境運作。
+- Qualcomm MDM9230 chipset for proven reliability
+- LTE-A Cat 6 with 2×CA carrier aggregation
+- Download up to 300 Mbps, upload up to 50 Mbps
+- M.2 3042 Key B industrial-grade form factor
+- USB 3.0 and PCIe Gen2 dual interface support
+- Integrated GPS / GLONASS / BeiDou GNSS
+- Wide temperature range -40°C ~ +85°C
+- FOTA firmware over-the-air update support
 
 ## المواصفات الفنية
 
-| العنصر | تفاصيل المواصفات |
-|:---|:---|
-| **الشركة المصنعة** | Sierra Wireless (現隸屬 Semtech) |
-| **الموديل** | AirPrime® EM7430 |
-| **التقنية الخلوية** | 4G LTE-Advanced Cat 6 (支援 3G 回落) |
-| **الشريحة الرئيسية** | Qualcomm MDM9230 |
-| **أقصى سرعة نقل** | 300 Mbps / 50 Mbps |
-| **نطاقات LTE** | B1, B3, B5, B7, B8, B18, B19, B21, B28, B38, B39, B40, B41 |
-| **UMTS / 3G 頻段** | B1 (2100), B5 (850), B6 (800), B8 (900), B9 (1700), B19 (800) |
-| **外型尺寸 (Form Factor)** | M.2 Type 3042-S3-B (42 × 30 × 2.3 mm) |
-| **主機控制介面** | USB 3.0, USB 2.0, PCIe |
-| **واجهة SIM** | 雙 SIM 卡切換支援 (1.8V / 3.0V) |
-| **天線介面** | IPEX MHF-4 接頭 (主天線、分集天線、MIMO、GNSS) |
-| **درجة حرارة التشغيل** | -40°C ~ +85°C (工業級) |
-| **安全與韌體** | 支援 Secure Boot 與 FOTA 雲端韌體更新 |
+| المعيار | المواصفات |
+|------|------|
+| رقاقة | Qualcomm MDM9230 |
+| معيار الشبكة الخلوية | LTE-Advanced Cat 6 |
+| سرعة التحميل | 300 Mbps (LTE) |
+| سرعة الرفع | 50 Mbps (LTE) |
+| تجميع الموجات | 2×CA (2×20 MHz) |
+| فئة LTE | Cat 6 |
+| الواجهة | USB 3.0 / PCIe Gen2 / I2S / UART |
+| شكل المنتج | M.2 3042 Key B |
+| الأبعاد | 42 × 30 × 2.3 mm |
+| الوزن | 6.5 g |
+| درجة حرارة التشغيل | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou |
+| المنطقة | 全球 (多頻段) |
+| جهد الإمداد | 3.135V ~ 4.4V |
+| واجهة الهوائي | 4 × IPEX MHF4 |
+| تحديث البرامج الثابتة | USB / FOTA |
 
-## دعم أنظمة التشغيل وبرامج التشغيل
+## دعم أنظمة التشغيل
 
-| 作業系統 | 支援狀態 | 驅動程式 / 模組說明 |
-|:---|:---|:---|
-| **Windows 10 / 11** | ✅ مدعوم | برامج تشغيل Windows MBIM / QMI الرسمية وبرنامج Skylight |
-| **Linux (Ubuntu / Debian / RHEL)** | ✅ مدعوم | برامج تشغيل Linux kernel qmi_wwan / cdc_mbim المدمجة |
-| **Android** | ✅ مدعوم | توفير برامج تشغيل Android RIL |
+| نظام التشغيل | الحالة | ملاحظات |
+|------|---------|------|
+| Windows 10/11 | ✅ | معتمد من برامج تشغيل Sierra Wireless |
+| Linux (Kernel ≥ 4.4) | ✅ | برنامج تشغيل QMI_WWAN / option مدمج في النواة |
+| Android | ✅ | متاح عبر USB OTG |
+| OpenWrt | ✅ | يتطلب تثبيت kmod-usb-net-qmi-wwan |
 
-## الموارد والتنزيلات
+## محتويات العبوة
 
-| 文件項目 | 連結 |
-|:---|:---|
-| 官方產品規格書 (PDF) | [📄 下載 EM7430 Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7430_product_technical_specification/) |
+- 1 × EM7430 蜂窩模組
+- 1 × حزمة المستندات
+
+## الموارد والروابط
+
+| المورد | الرابط |
+|------|------|
+| صفحة المنتج الرسمية | https://www.sierrawireless.com/products/em7430/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/em7430.png" alt="Sierra Wireless EM7430" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-هل تحتاج إلى تقييم مشروع أو عرض أسعار لشراء وحدات Sierra Wireless؟ يرجى [التواصل معنا](/ar/contact/).
-{{< /alert >}}
+هل تحتاج إلى عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/)
+{{</alert >}}

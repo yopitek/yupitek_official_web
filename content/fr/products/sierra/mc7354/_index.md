@@ -1,41 +1,84 @@
 ---
-title: "Sierra Wireless MC7354 — 4G LTE Cat 3 多業者模組 (北美全網通 Mini PCIe)"
-description: "Sierra Wireless AirPrime MC7354，Qualcomm MDM9615 晶片，Mini PCIe 介面，Cat 3 (100 Mbps)，支援 Verizon/Sprint/AT&T，包含 LTE, EV-DO Rev A, HSPA+ 跨系統備援。"
+title: "Module cellulaire MC7354 LTE-A Cat 4"
+description: "MC7354 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor optimized for regional carrier band combinations."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 3", "Mini PCIe", "Qualcomm MDM9615", "CDMA/EV-DO", "北美全網通"]
+tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7354", "Mini PCIe", "IoT"]
 ---
 
-## Présentation du Produit
+{{< alert "warning" >}}
+**Avis de non-responsabilité légal** : Ce module de communication cellulaire. Assurez-vous de respecter les réglementations locales et les exigences en matière de télécommunications avant utilisation. Toute modification ou utilisation non autorisée peut enfreindre les lois applicables.
+{{</alert >}}
 
-Sierra Wireless AirPrime® MC7354 是一款功能極為強大的北美全網通 4G LTE Cat 3 Mini PCIe 模組。採用 Qualcomm MDM9615 多模晶片，同時相容 LTE、CDMA/EV-DO Rev A、GSM/GPRS/EDGE 及 HSPA+ 系統。
+## Présentation du produit
 
-MC7354 獲有 Verizon, Sprint, AT&T 及 Bell/Rogers 的多重運營商認證，是北美跨網域備援網關與雙 SIM/多系統備援設備的標準配備。
+The MC7354 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
 
-## Caractéristiques Principales
+This module uses a standard Mini PCIe Full Size form factor. The MC7354 differs from other MC series modules in its specific band combination support, optimized for particular regional carrier networks. It supports USB 2.0, UART, and SPI interfaces.
 
-- **北美全網通多模支援**：單一模組支援 LTE、CDMA/EV-DO 及 HSPA+ 多重協定。
-- **Qualcomm MDM9615 晶片**：多核心高效能廣域通訊處理器。
-- **高可靠備援切換**：適合無人值守工業站台與車載監控系統。
-- **高精準度 GNSS**：內建獨立 GPS / GLONASS 全球衛星定位。
+The MC7354 is ideal for industrial automation, transportation, smart grid, and infrastructure monitoring applications requiring reliable LTE connectivity.
 
-## Spécifications Techniques
+## Caractéristiques principales
 
-| Élément | Détails |
-|:---|:---|
-| **Fabricant** | Sierra Wireless (現隸屬 Semtech) |
-| **Modèle** | AirPrime® MC7354 |
-| **Technologie Cellulaire** | 4G LTE Cat 3 / CDMA EV-DO / HSPA+ |
-| **Chipset** | Qualcomm MDM9615 |
-| **Débits Maximaux** | 100 Mbps / 50 Mbps |
-| **Bandes LTE** | B2, B4, B5, B13, B17, B25 |
-| **CDMA / EV-DO 頻段** | BC0 (800), BC1 (1900), BC10 (800) |
-| **Facteur de Forme** | Full-Size Mini PCIe (51 × 30 × 4.5 mm) |
-| **Température de Fonctionnement** | -40°C ~ +85°C |
+- Qualcomm MDM9215 chipset
+- LTE-A Cat 4 with download up to 150 Mbps
+- Upload speed up to 50 Mbps
+- Mini PCIe Full Size standard form factor
+- USB 2.0, UART, SPI interface support
+- Optimized for regional carrier band combinations
+- Integrated GPS / GLONASS GNSS
+- Wide temperature range -40°C ~ +85°C
+
+## Spécifications techniques
+
+| Paramètre | Valeur |
+|------|------|
+| Chipset | Qualcomm MDM9215 |
+| Norme cellulaire | LTE-A Cat 4 |
+| Débit descendant | 150 Mbps (LTE) |
+| Débit montant | 50 Mbps (LTE) |
+| Agrégation de porteuses | Non pris en charge |
+| Catégorie LTE | Cat 4 |
+| Interface | USB 2.0 / UART / SPI |
+| Facteur de forme | Mini PCIe Full Size |
+| Dimensions | 51 × 30 × 4.7 mm |
+| Poids | 8.5 g |
+| Température de fonctionnement | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS |
+| Région | 全球 (多頻段) |
+| Tension d'alimentation | 3.135V ~ 4.4V |
+| Interface antenne | 2 × IPEX MHF4 |
+| Mise à jour du firmware | USB / FOTA |
+
+## Systèmes d'exploitation supportés
+
+| OS | État | Remarques |
+|------|---------|------|
+| Windows 10/11 | ✅ | Certifié par les pilotes Sierra Wireless |
+| Linux (Kernel ≥ 3.10) | ✅ | Pilote option intégré au noyau |
+| Android | ✅ | Disponible via USB OTG |
+| OpenWrt | ✅ | Nécessite kmod-usb-serial-option |
+
+## Contenu de l'emballage
+
+- 1 × MC7354 蜂窩模組
+- 1 × Pack de documentation
+
+## Ressources et liens
+
+| Ressource | Lien |
+|------|------|
+| Page officielle du produit | https://www.sierrawireless.com/products/mc7354/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-Besoin d’une évaluation de projet ou d’un devis pour des modules Sierra Wireless ? Veuillez [nous contacter](/fr/contact/).
-{{< /alert >}}
+Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/)
+{{</alert >}}

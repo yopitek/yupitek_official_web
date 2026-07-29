@@ -1,41 +1,84 @@
 ---
-title: "Sierra Wireless MC7304 — 4G LTE Cat 3 網關模組 (EMEA/APAC 歐亞版 Mini PCIe)"
-description: "Sierra Wireless AirPrime MC7304，Mini PCIe 介面，4G LTE Cat 3 (100 Mbps 下載 / 50 Mbps 上傳)，支援 3G/2G 回落，適用於工業物聯網與備援網關。"
+title: "Módulo Celular MC7304 LTE-A Cat 4"
+description: "MC7304 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor for budget-sensitive industrial applications."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 3", "Mini PCIe", "EMEA", "APAC", "工業級"]
+tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7304", "Mini PCIe", "IoT"]
 ---
 
-## Descripción General
+{{< alert "warning" >}}
+**Aviso Legal**: Este es un módulo de comunicación celular. Asegúrese de cumplir con las regulaciones locales y los requisitos de telecomunicaciones antes de su uso. La modificación o uso no autorizado puede violar las leyes aplicables.
+{{</alert >}}
 
-Sierra Wireless AirPrime® MC7304 是一款採用標準 Full-Size Mini PCIe 外型規格的 4G LTE Cat 3 工業級通訊卡模組。專為歐洲、中東、非洲與亞太地區 (EMEA/APAC) 的工業控制、ATM 自動提款機、電力監控網關與資安設備設計。
+## Descripción del Producto
 
-MC7304 最高下載速度為 100 Mbps，上傳速度為 50 Mbps，具備極為完善的 3G HSPA+ 與 2G GSM/GPRS/EDGE 網絡回落機制，即使在偏遠地區通訊信號不佳時仍能保持不斷線連線。
+The MC7304 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+
+This module uses a standard Mini PCIe Full Size form factor, compatible with a wide range of existing industrial motherboards and embedded platforms. It supports USB 2.0, UART, and SPI interfaces, ideal for budget-sensitive applications requiring reliable LTE connectivity.
+
+The MC7304 supports major global LTE bands, widely deployed in industrial gateways, vending machines, digital signage, and remote monitoring applications.
 
 ## Características Principales
 
-- **經典 Full-Size Mini PCIe 規格**：具備金屬鎖固螺絲孔位與超高機械強度。
-- **歐亞 4G 頻段完整支援**：支援 LTE B1 (2100), B3 (1800), B7 (2600), B8 (900), B20 (800)。
-- **3G / 2G 多重回落能力**：包含 DC-HSPA+ 與 Dual-Band 2G，提供備援防護。
-- **獨立 GNSS 定位**：支援 Standalone GPS 與 GLONASS 全球衛星定位。
+- Qualcomm MDM9215 chipset
+- LTE-A Cat 4 with download up to 150 Mbps
+- Upload speed up to 50 Mbps
+- Mini PCIe Full Size standard form factor
+- USB 2.0, UART, SPI interface support
+- Integrated GPS / GLONASS GNSS
+- Wide temperature range -40°C ~ +85°C
+- Proven reliability with broad software support
 
 ## Especificaciones Técnicas
 
-| Elemento | Detalles de Especificación |
-|:---|:---|
-| **Fabricante** | Sierra Wireless (現隸屬 Semtech) |
-| **Modelo** | AirPrime® MC7304 |
-| **Tecnología Celular** | 4G LTE Cat 3 (支援 3G / 2G 回落) |
-| **Velocidades Máximas** | 100 Mbps / 50 Mbps |
-| **Bandas LTE** | B1, B3, B7, B8, B20 |
-| **3G / 2G 頻段** | 850/900/1900/2100 MHz (HSPA+), 900/1800 MHz (GSM) |
-| **Factor de Forma** | Full-Size Mini PCIe (51 × 30 × 4.5 mm) |
-| **Interfaces del Host** | USB 2.0 |
-| **Temperatura de Operación** | -40°C ~ +85°C |
+| Parámetro | Valor |
+|------|------|
+| Chipset | Qualcomm MDM9215 |
+| Estándar Celular | LTE-A Cat 4 |
+| Velocidad de Descarga | 150 Mbps (LTE) |
+| Velocidad de Carga | 50 Mbps (LTE) |
+| Agregación de Portadoras | No compatible |
+| Categoría LTE | Cat 4 |
+| Interfaz | USB 2.0 / UART / SPI |
+| Factor de Forma | Mini PCIe Full Size |
+| Dimensiones | 51 × 30 × 4.7 mm |
+| Peso | 8.5 g |
+| Temperatura de Operación | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS |
+| Región | 全球 (多頻段) |
+| Voltaje de Alimentación | 3.135V ~ 4.4V |
+| Interfaz de Antena | 2 × IPEX MHF4 |
+| Actualización de Firmware | USB / FOTA |
+
+## Sistemas Operativos Compatibles
+
+| SO | Estado | Notas |
+|------|---------|------|
+| Windows 10/11 | ✅ | Certificado por controladores Sierra Wireless |
+| Linux (Kernel ≥ 3.10) | ✅ | Controlador option en el núcleo |
+| Android | ✅ | Disponible vía USB OTG |
+| OpenWrt | ✅ | Requiere kmod-usb-serial-option |
+
+## Contenido del Paquete
+
+- 1 × MC7304 蜂窩模組
+- 1 × Paquete de documentación
+
+## Recursos y Enlaces
+
+| Recurso | Enlace |
+|------|------|
+| Página oficial del producto | https://www.sierrawireless.com/products/mc7304/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-¿Necesita evaluación de proyectos o cotización al por mayor para módulos Sierra Wireless? Por favor [contáctenos](/es/contact/).
-{{< /alert >}}
+Necesita una cotización del producto? Por favor [contáctenos](/es/contact/)
+{{</alert >}}

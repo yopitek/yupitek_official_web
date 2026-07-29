@@ -1,52 +1,84 @@
 ---
-title: "Sierra Wireless EM7455 — 4G LTE-Advanced Cat 6 模組 (Americas/EMEA 美歐版)"
-description: "Sierra Wireless AirPrime EM7455，Qualcomm MDM9230 晶片，M.2 3042 介面，Cat 6 (300 Mbps 下載 / 50 Mbps 上傳)，美洲與歐洲電信業者認證。"
+title: "EM7455 LTE-A Cat 6 蜂窩模組"
+description: "EM7455 採用 Qualcomm MDM9230 晶片組，支援 LTE-A Cat 6 與 FirstNet B14 頻段，M.2 封裝，適用於工業路由器與閘道器。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 6", "M.2 3042", "Qualcomm MDM9230", "Americas", "EMEA"]
+tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 ---
+
+{{< alert "warning" >}}
+**法律免責聲明**：本產品為蜂窩通訊模組，使用前請確保符合當地法規與電信監理要求。未經授權的修改或使用可能違反法律。
+{{</alert >}}
 
 ## 產品概述
 
-Sierra Wireless AirPrime® EM7455 是一款專為北美與歐洲 (Americas/EMEA) 市場打造的 4G LTE-Advanced Cat 6 M.2 工業模組。搭載 Qualcomm Snapdragon MDM9230 晶片，最高下載速率 300 Mbps，上傳 50 Mbps。
+EM7455 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窩模組，採用 Qualcomm MDM9230 晶片組，支援 2×20 MHz 載波聚合 (2×CA)，下載速度最高可達 300 Mbps，上傳最高 50 Mbps。
 
-EM7455 支援獨家的多電信業者認證韌體動態切換技術，可於 AT&T, Verizon, T-Mobile, Vodafone, Bell 等不同營運商之間無縫變更韌體配置，極大簡化企業跨國供應鏈管理。
+此模組採用標準 M.2 3042 Key B 封裝，與 EM7430 同系列但特別支援 Band 14 (FirstNet)，適合美國公共安全網路應用。支援 USB 3.0 及 PCIe Gen2 介面。
 
-## 產品特色
+EM7455 支援全球主要 LTE 頻段 (B1–5/7/8/12/13/14/20/25/26/29/30/41)，廣泛應用於企業路由、車聯網與公共安全通訊。
 
-- **美歐全頻段 LTE Cat 6**：支援 LTE-A 載波聚合，覆蓋北美與歐洲主要電信頻段。
-- **動態韌體切換 (Multi-Operator Firmware)**：內建多組電信業者認證韌體，可隨 SIM 卡切換。
-- **精準多星座 GNSS**：整合 GPS, GLONASS, BeiDou 與 Galileo 定位。
-- **M.2 3042 標準介面**：相容於多數工業筆電、企業網關與邊緣伺服器。
+## 主要特點
+
+- 採用 Qualcomm MDM9230 晶片組
+- LTE-A Cat 6，支援 2×CA 載波聚合
+- 下載速度高達 300 Mbps，上傳 50 Mbps
+- 支援 Band 14 FirstNet 公共安全頻段
+- M.2 3042 Key B 工業級封裝
+- 支援 USB 3.0 與 PCIe Gen2 雙介面
+- 內建 GPS / GLONASS / BeiDou GNSS
+- 寬溫設計 -40°C ~ +85°C
 
 ## 技術規格
 
-| 項目 | 規格細節 |
-|:---|:---|
-| **製造商** | Sierra Wireless (現隸屬 Semtech) |
-| **產品型號** | AirPrime® EM7455 |
-| **蜂窩技術** | 4G LTE-Advanced Cat 6 (支援 3G 回落) |
-| **核心晶片組** | Qualcomm MDM9230 |
-| **最高下載 / 上傳速率** | 300 Mbps / 50 Mbps |
-| **LTE 頻段** | B1, B2, B3, B4, B5, B7, B8, B12, B13, B20, B25, B26, B29, B30, B41 |
-| **UMTS / 3G 頻段** | B1 (2100), B2 (1900), B3 (1800), B4 (AWS), B5 (850), B8 (900) |
-| **外型尺寸** | M.2 Type 3042-S3-B (42 × 30 × 2.3 mm) |
-| **主機介面** | USB 3.0, USB 2.0, PCIe |
-| **電信認證** | AT&T, Verizon, T-Mobile, Sprint, Vodafone, Rogers, Bell, Telus |
-| **天線接頭** | IPEX MHF-4 |
-| **作業溫度** | -40°C ~ +85°C |
+| 項目 | 規格 |
+|------|------|
+| 晶片型號 | Qualcomm MDM9230 |
+| 蜂窩標準 | LTE-Advanced Cat 6 |
+| 下載速度 | 300 Mbps (LTE) |
+| 上傳速度 | 50 Mbps (LTE) |
+| 載波聚合 | 2×CA (2×20 MHz) |
+| LTE 類別 | Cat 6 |
+| 介面 | USB 3.0 / PCIe Gen2 / I2S / UART |
+| 外型規格 | M.2 3042 Key B |
+| 尺寸 | 42 × 30 × 2.3 mm |
+| 重量 | 6.5 g |
+| 工作溫度 | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou |
+| 地區 | 全球 (含 B14 FirstNet) |
+| 供電電壓 | 3.135V ~ 4.4V |
+| 天線介面 | 4 × IPEX MHF4 |
+| 韌體更新 | USB / FOTA |
 
-## 作業系統與驅動支援
+## 作業系統支援
 
-| 作業系統 | 支援狀態 | 備註 |
-|:---|:---|:---|
-| **Windows 10 / 11** | ✅ 支援 | 提供官方 Windows MBIM / QMI 驅動軟體包 |
-| **Linux** | ✅ 支援 | 核心內建 `qmi_wwan` / `cdc_mbim` 驅動 |
-| **Android** | ✅ 支援 | 支援 Android RIL 架構 |
+| OS | Status | Notes |
+|------|---------|------|
+| Windows 10/11 | ✅ | 經 Sierra Wireless 驅動程式認證 |
+| Linux (Kernel ≥ 4.4) | ✅ | 核心內建 QMI_WWAN / option 驅動 |
+| Android | ✅ | 可透過 USB OTG 連接 |
+| OpenWrt | ✅ | 需安裝 kmod-usb-net-qmi-wwan |
+
+## 包裝內容
+
+- 1 × EM7455 蜂窩模組
+- 1 × 文件包裝
+
+## 資源與連結
+
+| 資源 | 連結 |
+|------|------|
+| 官方產品頁面 | https://www.sierrawireless.com/products/em7455/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-需要詢問 EM7455 模組報價或批量採購？請來信[與我們聯絡](/zh-tw/contact/)
-{{< /alert >}}
+需要詢問產品報價？請來信[與我們聯絡](/zh-tw/contact/)
+{{</alert >}}

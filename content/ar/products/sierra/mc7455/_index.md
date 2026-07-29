@@ -1,41 +1,84 @@
 ---
-title: "Sierra Wireless MC7455 — 4G LTE-Advanced Cat 6 模組 (Americas/EMEA Mini PCIe)"
-description: "Sierra Wireless AirPrime MC7455，Qualcomm MDM9230 晶片，Mini PCIe 介面，Cat 6 (300 Mbps 下載 / 50 Mbps 上傳)，美洲與歐洲雙電信體系認證。"
+title: "وحدة MC7455 LTE-A Cat 6 الخلوية"
+description: "MC7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Mini PCIe form factor for high-performance industrial and vehicle communication systems."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-dir: "rtl"
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 6", "Mini PCIe", "Qualcomm MDM9230", "Americas", "EMEA"]
+tags: ["LTE", "Cat 6", "Cellular", "Module", "MC7455", "Mini PCIe", "IoT"]
 ---
+
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
+{{</alert >}}
 
 ## نظرة عامة على المنتج
 
-Sierra Wireless AirPrime® MC7455 是一款經典高頻寬 4G LTE-Advanced Cat 6 Mini PCIe 通訊卡模組。搭載 Qualcomm Snapdragon MDM9230 晶片，最高下載速率 300 Mbps，上傳 50 Mbps。
+The MC7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
 
-MC7455 專為偏好傳統 Mini PCIe 螺絲固定與卡槽架構的工業控制板卡、車載資通訊硬體及軍規電腦設計。支援多電信業者認證韌體切換，輕鬆跨越美洲與歐洲雙大洲電信防線。
+This module uses a standard Mini PCIe Full Size form factor and is the highest-performing model in the MC series. It supports USB 3.0, UART, and SPI interfaces for fast data throughput.
+
+The MC7455 supports major global LTE bands including FirstNet B14, widely deployed in high-performance industrial routers, vehicle communication systems, private network base stations, and enterprise connectivity solutions.
 
 ## الميزات الرئيسية
 
-- **Mini PCIe Form Factor Cat 6**：標準 Mini PCIe 介面提供高達 300 Mbps LTE-A 傳輸速度。
-- **美歐主要頻段完全涵蓋**：支援 LTE-A 載波聚合 (2CA)。
-- **多電信商韌體動態轉換**：隨 SIM 卡切換載入 AT&T, Verizon, Vodafone 等官方認證韌體。
-- **工業級高耐久性**：金屬防護上蓋與廣溫連線機制。
+- Qualcomm MDM9230 chipset
+- LTE-A Cat 6 with 2×CA carrier aggregation
+- Download up to 300 Mbps, upload up to 50 Mbps
+- Mini PCIe Full Size standard form factor
+- USB 3.0, UART, SPI interface support
+- FirstNet B14 band support
+- Integrated GPS / GLONASS / BeiDou GNSS
+- Wide temperature range -40°C ~ +85°C
 
 ## المواصفات الفنية
 
-| العنصر | تفاصيل المواصفات |
-|:---|:---|
-| **الشركة المصنعة** | Sierra Wireless (現隸屬 Semtech) |
-| **الموديل** | AirPrime® MC7455 |
-| **التقنية الخلوية** | 4G LTE-Advanced Cat 6 (支援 3G 回落) |
-| **الشريحة الرئيسية** | Qualcomm MDM9230 |
-| **أقصى سرعة نقل** | 300 Mbps / 50 Mbps |
-| **نطاقات LTE** | B1-B5, B7, B8, B12, B13, B20, B25, B26, B29, B30, B41 |
-| **عامل الشكل** | Full-Size Mini PCIe (51 × 30 × 4.5 mm) |
-| **درجة حرارة التشغيل** | -40°C ~ +85°C |
+| المعيار | المواصفات |
+|------|------|
+| رقاقة | Qualcomm MDM9230 |
+| معيار الشبكة الخلوية | LTE-Advanced Cat 6 |
+| سرعة التحميل | 300 Mbps (LTE) |
+| سرعة الرفع | 50 Mbps (LTE) |
+| تجميع الموجات | 2×CA (2×20 MHz) |
+| فئة LTE | Cat 6 |
+| الواجهة | USB 3.0 / UART / SPI |
+| شكل المنتج | Mini PCIe Full Size |
+| الأبعاد | 51 × 30 × 4.7 mm |
+| الوزن | 8.8 g |
+| درجة حرارة التشغيل | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou |
+| المنطقة | 全球 (多頻段) |
+| جهد الإمداد | 3.135V ~ 4.4V |
+| واجهة الهوائي | 4 × IPEX MHF4 |
+| تحديث البرامج الثابتة | USB / FOTA |
+
+## دعم أنظمة التشغيل
+
+| نظام التشغيل | الحالة | ملاحظات |
+|------|---------|------|
+| Windows 10/11 | ✅ | معتمد من برامج تشغيل Sierra Wireless |
+| Linux (Kernel ≥ 4.4) | ✅ | برنامج تشغيل QMI_WWAN / option مدمج في النواة |
+| Android | ✅ | متاح عبر USB OTG |
+| OpenWrt | ✅ | يتطلب تثبيت kmod-usb-net-qmi-wwan |
+
+## محتويات العبوة
+
+- 1 × MC7455 蜂窩模組
+- 2 × حزمة المستندات
+
+## الموارد والروابط
+
+| المورد | الرابط |
+|------|------|
+| صفحة المنتج الرسمية | https://www.sierrawireless.com/products/mc7455/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7455.png" alt="Sierra Wireless MC7455" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-هل تحتاج إلى تقييم مشروع أو عرض أسعار لشراء وحدات Sierra Wireless؟ يرجى [التواصل معنا](/ar/contact/).
-{{< /alert >}}
+هل تحتاج إلى عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/)
+{{</alert >}}

@@ -1,42 +1,85 @@
 ---
-title: "Sierra Wireless EM7511 — 4G LTE-Advanced Pro Cat 12 模組 (Americas / FirstNet)"
-description: "Sierra Wireless AirPrime EM7511，M.2 3042 介面，Cat 12 (600 Mbps 下載 / 150 Mbps 上傳)，專用支援 Band 14 FirstNet 公共安全網路、CBRS B48 與 LTE-LAA B46。"
+title: "EM7511 LTE-A Pro Cat 12 Cellular Module"
+description: "EM7511 LTE-A Pro Cat 12 cellular module with Qualcomm SDX20, 600 Mbps download, M.2 form factor for high-bandwidth enterprise and industrial applications."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE Pro", "Cat 12", "M.2 3042", "FirstNet Band 14", "CBRS", "Americas"]
+tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7511", "SDX20", "M.2"]
 ---
+
+{{< alert "warning" >}}
+**Legal Disclaimer**: This is a cellular communication module. Ensure compliance with local regulations and telecommunications requirements before use. Unauthorized modification or use may violate applicable laws.
+{{</alert >}}
 
 ## Product Overview
 
-Sierra Wireless AirPrime® EM7511 是一款高效能 4G LTE-Advanced Pro Cat 12 模組，專為北美地區及關鍵任務（FirstNet 公共安全網路）設計。具備高達 600 Mbps 的下載速率與 150 Mbps 的上傳速率。
+The EM7511 is Sierra Wireless' LTE-Advanced Pro Cat 12 cellular module, powered by the Qualcomm SDX20 chipset, supporting 3×20 MHz carrier aggregation (3×CA) with download speeds up to 600 Mbps and upload up to 150 Mbps.
 
-EM7511 獲得 AT&T FirstNet™ 官方認證，支援 LTE Band 14（700 MHz 第一響應者專用頻段），並整合 CBRS (Band 48) 私有 LTE 及 LTE-LAA (Band 46) 授權輔助存取技術，是急救車輛、警政執法、關鍵基礎設施與防救災網關的不二之選。
+This module uses a standard M.2 3042 Key B form factor with USB 3.1, PCIe Gen3, and RGMII interfaces, providing higher system bandwidth. The SDX20 modem delivers lower power consumption and superior RF performance compared to previous generations.
+
+The EM7511 supports global LTE bands and License-Assisted Access (LAA), ideal for high-bandwidth video surveillance, enterprise branch offices, and mobile hotspot applications.
 
 ## Key Features
 
-- **FirstNet Band 14 認證**：專為美國公共安全與緊急救援機構設計。
-- **LTE Cat 12 高速傳輸**：最高 600 Mbps 下載 / 150 Mbps 上傳，支援 3x 載波聚合 (3CA)。
-- **CBRS (Band 48) 與 LAA (Band 46)**：支援企業私有 LTE 網路與免執法 5 GHz 頻段擴充。
-- **高安全性保障**：支援 Secure Boot 密碼簽章驗證與預認證韌體。
+- Qualcomm SDX20 modem chipset
+- LTE-A Pro Cat 12 with 3×CA carrier aggregation
+- Download up to 600 Mbps, upload up to 150 Mbps
+- 256QAM DL / 64QAM UL support
+- M.2 3042 Key B industrial-grade form factor
+- USB 3.1, PCIe Gen3, RGMII interface support
+- Integrated GPS / GLONASS / BeiDou / Galileo
+- Wide temperature range -40°C ~ +85°C
 
 ## Technical Specifications
 
-| Item | Specification Details |
-|:---|:---|
-| **Manufacturer** | Sierra Wireless (現隸屬 Semtech) |
-| **Model** | AirPrime® EM7511 |
-| **Cellular Technology** | 4G LTE-Advanced Pro Cat 12 (支援 3G 回落) |
-| **Peak Data Rates** | 600 Mbps / 150 Mbps |
-| **LTE Bands** | B1-B5, B7-B9, B12-B14 (FirstNet), B18-B20, B26, B29, B30, B32, B41-B43, B46 (LAA), B48 (CBRS), B66 |
-| **Form Factor** | M.2 Type 3042 (42 × 30 × 2.3 mm) |
-| **Host Interfaces** | USB 3.0, USB 2.0 High Speed |
-| **SIM / eSIM** | 1.8V / 3.0V，支援 eUICC 遠端配置 |
-| **定位系統** | GPS, GLONASS, BeiDou, Galileo 精準 GNSS |
-| **Operating Temperature** | -40°C ~ +85°C |
+| Parameter | Value |
+|------|------|
+| Chipset | Qualcomm SDX20 |
+| Cellular Standard | LTE-Advanced Pro Cat 12 |
+| Download Speed | 600 Mbps (LTE) |
+| Upload Speed | 150 Mbps (LTE) |
+| Carrier Aggregation | 3×CA (3×20 MHz) |
+| LTE Category | Cat 12 |
+| Interface | USB 3.1 / PCIe Gen3 / I2S / UART / RGMII |
+| Form Factor | M.2 3042 Key B |
+| Dimensions | 42 × 30 × 2.3 mm |
+| Weight | 6.8 g |
+| Operating Temperature | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou / Galileo |
+| Region | 全球 (多頻段) |
+| Supply Voltage | 3.135V ~ 4.4V |
+| Antenna Interface | 4 × IPEX MHF4 |
+| Firmware Update | USB / FOTA |
+
+## OS Support
+
+| OS | Status | Notes |
+|------|---------|------|
+| Windows 10/11 | ✅ | Certified by Sierra Wireless drivers |
+| Linux (Kernel ≥ 4.8) | ✅ | In-kernel QMI_WWAN / MBIM driver |
+| Android | ✅ | Available via USB OTG |
+| OpenWrt | ✅ | Requires kmod-usb-net-qmi-wwan |
+| Yocto / Buildroot | ✅ | SDK integration supported |
+
+## Package Contents
+
+- 1 × EM7511 蜂窩模組
+- 1 × Documentation pack
+
+## Resources & Links
+
+| Resource | Link |
+|------|------|
+| Official Product Page | https://www.sierrawireless.com/products/em7511/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/em7511.png" alt="Sierra Wireless EM7511" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-Need Sierra Wireless module project evaluation or bulk purchase quote? Please [contact us](/en/contact/).
-{{< /alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{</alert >}}

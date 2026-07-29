@@ -1,42 +1,84 @@
 ---
-title: "Sierra Wireless MC7304 — 4G LTE Cat 3 網關模組 (EMEA/APAC 歐亞版 Mini PCIe)"
-description: "Sierra Wireless AirPrime MC7304，Mini PCIe 介面，4G LTE Cat 3 (100 Mbps 下載 / 50 Mbps 上傳)，支援 3G/2G 回落，適用於工業物聯網與備援網關。"
+title: "وحدة MC7304 LTE-A Cat 4 الخلوية"
+description: "MC7304 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor for budget-sensitive industrial applications."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-dir: "rtl"
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 3", "Mini PCIe", "EMEA", "APAC", "工業級"]
+tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7304", "Mini PCIe", "IoT"]
 ---
+
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
+{{</alert >}}
 
 ## نظرة عامة على المنتج
 
-Sierra Wireless AirPrime® MC7304 是一款採用標準 Full-Size Mini PCIe 外型規格的 4G LTE Cat 3 工業級通訊卡模組。專為歐洲、中東、非洲與亞太地區 (EMEA/APAC) 的工業控制、ATM 自動提款機、電力監控網關與資安設備設計。
+The MC7304 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
 
-MC7304 最高下載速度為 100 Mbps，上傳速度為 50 Mbps，具備極為完善的 3G HSPA+ 與 2G GSM/GPRS/EDGE 網絡回落機制，即使在偏遠地區通訊信號不佳時仍能保持不斷線連線。
+This module uses a standard Mini PCIe Full Size form factor, compatible with a wide range of existing industrial motherboards and embedded platforms. It supports USB 2.0, UART, and SPI interfaces, ideal for budget-sensitive applications requiring reliable LTE connectivity.
+
+The MC7304 supports major global LTE bands, widely deployed in industrial gateways, vending machines, digital signage, and remote monitoring applications.
 
 ## الميزات الرئيسية
 
-- **經典 Full-Size Mini PCIe 規格**：具備金屬鎖固螺絲孔位與超高機械強度。
-- **歐亞 4G 頻段完整支援**：支援 LTE B1 (2100), B3 (1800), B7 (2600), B8 (900), B20 (800)。
-- **3G / 2G 多重回落能力**：包含 DC-HSPA+ 與 Dual-Band 2G，提供備援防護。
-- **獨立 GNSS 定位**：支援 Standalone GPS 與 GLONASS 全球衛星定位。
+- Qualcomm MDM9215 chipset
+- LTE-A Cat 4 with download up to 150 Mbps
+- Upload speed up to 50 Mbps
+- Mini PCIe Full Size standard form factor
+- USB 2.0, UART, SPI interface support
+- Integrated GPS / GLONASS GNSS
+- Wide temperature range -40°C ~ +85°C
+- Proven reliability with broad software support
 
 ## المواصفات الفنية
 
-| العنصر | تفاصيل المواصفات |
-|:---|:---|
-| **الشركة المصنعة** | Sierra Wireless (現隸屬 Semtech) |
-| **الموديل** | AirPrime® MC7304 |
-| **التقنية الخلوية** | 4G LTE Cat 3 (支援 3G / 2G 回落) |
-| **أقصى سرعة نقل** | 100 Mbps / 50 Mbps |
-| **نطاقات LTE** | B1, B3, B7, B8, B20 |
-| **3G / 2G 頻段** | 850/900/1900/2100 MHz (HSPA+), 900/1800 MHz (GSM) |
-| **عامل الشكل** | Full-Size Mini PCIe (51 × 30 × 4.5 mm) |
-| **واجهات الجهاز** | USB 2.0 |
-| **درجة حرارة التشغيل** | -40°C ~ +85°C |
+| المعيار | المواصفات |
+|------|------|
+| رقاقة | Qualcomm MDM9215 |
+| معيار الشبكة الخلوية | LTE-A Cat 4 |
+| سرعة التحميل | 150 Mbps (LTE) |
+| سرعة الرفع | 50 Mbps (LTE) |
+| تجميع الموجات | غير مدعوم |
+| فئة LTE | Cat 4 |
+| الواجهة | USB 2.0 / UART / SPI |
+| شكل المنتج | Mini PCIe Full Size |
+| الأبعاد | 51 × 30 × 4.7 mm |
+| الوزن | 8.5 g |
+| درجة حرارة التشغيل | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS |
+| المنطقة | 全球 (多頻段) |
+| جهد الإمداد | 3.135V ~ 4.4V |
+| واجهة الهوائي | 2 × IPEX MHF4 |
+| تحديث البرامج الثابتة | USB / FOTA |
+
+## دعم أنظمة التشغيل
+
+| نظام التشغيل | الحالة | ملاحظات |
+|------|---------|------|
+| Windows 10/11 | ✅ | معتمد من برامج تشغيل Sierra Wireless |
+| Linux (Kernel ≥ 3.10) | ✅ | برنامج تشغيل option مدمج في النواة |
+| Android | ✅ | متاح عبر USB OTG |
+| OpenWrt | ✅ | يتطلب تثبيت kmod-usb-serial-option |
+
+## محتويات العبوة
+
+- 1 × MC7304 蜂窩模組
+- 1 × حزمة المستندات
+
+## الموارد والروابط
+
+| المورد | الرابط |
+|------|------|
+| صفحة المنتج الرسمية | https://www.sierrawireless.com/products/mc7304/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-هل تحتاج إلى تقييم مشروع أو عرض أسعار لشراء وحدات Sierra Wireless؟ يرجى [التواصل معنا](/ar/contact/).
-{{< /alert >}}
+هل تحتاج إلى عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/)
+{{</alert >}}

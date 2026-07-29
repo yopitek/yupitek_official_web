@@ -1,43 +1,87 @@
 ---
-title: "Sierra Wireless EM9191 — 5G NR Sub-6 旗艦模組 (Global 全球版)"
-description: "Sierra Wireless AirPrime EM9191 5G NR Sub-6 全球模組，Qualcomm Snapdragon X55 晶片，M.2 3042 介面，最高傳輸速度 4.5 Gbps 下載 / 660 Mbps 上傳，支援 SA/NSA 雙模。"
+title: "وحدة EM9191 5G NR Sub-6 + mmWave الخلوية"
+description: "EM9191 5G NR Sub-6 + mmWave cellular module with Qualcomm SDX55, 2.5 Gbps download, supporting n260/n261 for comprehensive 5G coverage."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-dir: "rtl"
 brands: ["sierra"]
-tags: ["5G NR", "Sub-6", "Snapdragon X55", "M.2 3042", "SA/NSA", "4.5 Gbps"]
+tags: ["5G", "mmWave", "Sub-6", "Cellular", "Module", "EM9191", "SDX55", "M.2"]
 ---
+
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
+{{</alert >}}
 
 ## نظرة عامة على المنتج
 
-Sierra Wireless AirPrime® EM9191 是一款專為全球 5G NR Sub-6 GHz 頻段設計的旗艦級 M.2 模組。搭載 Qualcomm® Snapdragon™ X55 晶片，最高下載速度高達 **4.5 Gbps**，上傳速率高達 **660 Mbps**。
+The EM9191 is Sierra Wireless' flagship 5G NR cellular module, powered by the Qualcomm SDX55 chipset, supporting both Sub-6 and mmWave (n260 39GHz / n261 28GHz) for the most comprehensive 5G coverage.
 
-EM9191 完整支援 5G Standalone (SA) 與 Non-Standalone (NSA) 雙網模式，具備全方位的 4G LTE Cat 20 回落能力與 CBRS (n48) 支援。適合於 5G 工業路由器、遠距醫療車、智慧城市監控網關及企業 SD-WAN 網域。
+Download speeds reach up to 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) with upload up to 900 Mbps (5G). It supports 6 antenna interfaces for mmWave beamforming requirements.
+
+The EM9191 supports all Sub-6 bands (same as EM9190) plus mmWave high-frequency bands, paired with multi-band GNSS. Ideal for Industry 4.0, smart healthcare, and edge computing applications requiring the lowest latency and highest bandwidth.
 
 ## الميزات الرئيسية
 
-- **5G Sub-6 頻段完整覆蓋**：支援全球 n1/n2/n3/n5/n7/n8/n12/n20/n25/n28/n38/n40/n41/n48/n66/n71/n77/n78/n79。
-- **4.5 Gbps 高速傳輸**：提供極低時延與高吞吐量連線品質。
-- **4G LTE Cat 20 回落**：即使在無 5G 覆蓋區域仍可享有最高 2 Gbps 4G 傳輸速度。
-- **工業級高穩定度**：支援 -40°C 至 +85°C 環境，全方位防護機制。
+- Qualcomm SDX55 5G modem chipset
+- 5G NR Sub-6 + mmWave (n260/n261) support
+- 5G download up to 2.5 Gbps, upload 900 Mbps
+- LTE Cat 22 download up to 2.0 Gbps
+- 8×CA and mmWave beamforming support
+- 6 antenna interfaces (including mmWave antennas)
+- M.2 3042 Key B industrial-grade form factor
+- Multi-band GNSS (GPS + GLONASS + BeiDou + Galileo + QZSS)
 
 ## المواصفات الفنية
 
-| العنصر | تفاصيل المواصفات |
-|:---|:---|
-| **الشركة المصنعة** | Sierra Wireless (現隸屬 Semtech) |
-| **الموديل** | AirPrime® EM9191 |
-| **5G 技術類別** | 5G NR Sub-6 (SA / NSA 雙模) |
-| **4G LTE 技術類別** | 4G LTE Cat 20 (最高 2.0 Gbps 下載) |
-| **الشريحة الرئيسية** | Qualcomm Snapdragon X55 (SDX55) |
-| **أقصى سرعة نقل** | **4.5 Gbps** / **660 Mbps** |
-| **5G Sub-6 頻段** | n1, n2, n3, n5, n7, n8, n12, n20, n25, n28, n38, n40, n41, n48 (CBRS), n66, n71, n77, n78, n79 |
-| **عامل الشكل** | M.2 Type 3042 (30 × 52 × 2.38 mm) |
-| **واجهات الجهاز** | PCIe Gen 3 x1, USB 3.1 / 2.0 |
-| **درجة حرارة التشغيل** | -40°C ~ +85°C (工業級) |
+| المعيار | المواصفات |
+|------|------|
+| رقاقة | Qualcomm SDX55 |
+| معيار الشبكة الخلوية | 5G NR Sub-6 + mmWave + LTE-A Pro Cat 22 |
+| سرعة التحميل | 2.5 Gbps (5G) / 2.0 Gbps (LTE) |
+| سرعة الرفع | 900 Mbps (5G) / 150 Mbps (LTE) |
+| تجميع الموجات | 8×CA (LTE) + NR CA |
+| فئة LTE | Cat 22 |
+| دعم 5G | ✅ 5G NR Sub-6 + mmWave (n260/n261) |
+| دعم mmWave | ✅ n260 (39 GHz) / n261 (28 GHz) |
+| الواجهة | USB 3.1 / PCIe Gen3 / I2S / UART / RGMII |
+| شكل المنتج | M.2 3042 Key B |
+| الأبعاد | 42 × 30 × 2.3 mm |
+| الوزن | 7.2 g |
+| درجة حرارة التشغيل | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou / Galileo / QZSS |
+| المنطقة | 全球 (多頻段) |
+| جهد الإمداد | 3.135V ~ 4.4V |
+| واجهة الهوائي | 6 × IPEX MHF4 |
+| تحديث البرامج الثابتة | USB / FOTA |
+
+## دعم أنظمة التشغيل
+
+| نظام التشغيل | الحالة | ملاحظات |
+|------|---------|------|
+| Windows 10/11 | ✅ | معتمد من برامج تشغيل Sierra Wireless |
+| Linux (Kernel ≥ 5.10) | ✅ | برنامج تشغيل MBIM / QMI_WWAN مدمج في النواة |
+| Android | ✅ | متاح عبر USB OTG |
+| OpenWrt | ✅ | يتطلب تثبيت kmod-usb-net-qmi-wwan |
+| Yocto / Buildroot | ✅ | يدعم تكامل SDK |
+
+## محتويات العبوة
+
+- 1 × EM9191 蜂窩模組
+- 1 × حزمة المستندات
+
+## الموارد والروابط
+
+| المورد | الرابط |
+|------|------|
+| صفحة المنتج الرسمية | https://www.sierrawireless.com/products/em9191/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-هل تحتاج إلى تقييم مشروع أو عرض أسعار لشراء وحدات Sierra Wireless؟ يرجى [التواصل معنا](/ar/contact/).
-{{< /alert >}}
+هل تحتاج إلى عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/)
+{{</alert >}}

@@ -1,40 +1,84 @@
 ---
-title: "Sierra Wireless MC7455 — 4G LTE-Advanced Cat 6 模組 (Americas/EMEA Mini PCIe)"
-description: "Sierra Wireless AirPrime MC7455，Qualcomm MDM9230 晶片，Mini PCIe 介面，Cat 6 (300 Mbps 下載 / 50 Mbps 上傳)，美洲與歐洲雙電信體系認證。"
+title: "MC7455 LTE-A Cat 6 Cellular Module"
+description: "MC7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Mini PCIe form factor for high-performance industrial and vehicle communication systems."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 6", "Mini PCIe", "Qualcomm MDM9230", "Americas", "EMEA"]
+tags: ["LTE", "Cat 6", "Cellular", "Module", "MC7455", "Mini PCIe", "IoT"]
 ---
+
+{{< alert "warning" >}}
+**Legal Disclaimer**: This is a cellular communication module. Ensure compliance with local regulations and telecommunications requirements before use. Unauthorized modification or use may violate applicable laws.
+{{</alert >}}
 
 ## Product Overview
 
-Sierra Wireless AirPrime® MC7455 是一款經典高頻寬 4G LTE-Advanced Cat 6 Mini PCIe 通訊卡模組。搭載 Qualcomm Snapdragon MDM9230 晶片，最高下載速率 300 Mbps，上傳 50 Mbps。
+The MC7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
 
-MC7455 專為偏好傳統 Mini PCIe 螺絲固定與卡槽架構的工業控制板卡、車載資通訊硬體及軍規電腦設計。支援多電信業者認證韌體切換，輕鬆跨越美洲與歐洲雙大洲電信防線。
+This module uses a standard Mini PCIe Full Size form factor and is the highest-performing model in the MC series. It supports USB 3.0, UART, and SPI interfaces for fast data throughput.
+
+The MC7455 supports major global LTE bands including FirstNet B14, widely deployed in high-performance industrial routers, vehicle communication systems, private network base stations, and enterprise connectivity solutions.
 
 ## Key Features
 
-- **Mini PCIe Form Factor Cat 6**：標準 Mini PCIe 介面提供高達 300 Mbps LTE-A 傳輸速度。
-- **美歐主要頻段完全涵蓋**：支援 LTE-A 載波聚合 (2CA)。
-- **多電信商韌體動態轉換**：隨 SIM 卡切換載入 AT&T, Verizon, Vodafone 等官方認證韌體。
-- **工業級高耐久性**：金屬防護上蓋與廣溫連線機制。
+- Qualcomm MDM9230 chipset
+- LTE-A Cat 6 with 2×CA carrier aggregation
+- Download up to 300 Mbps, upload up to 50 Mbps
+- Mini PCIe Full Size standard form factor
+- USB 3.0, UART, SPI interface support
+- FirstNet B14 band support
+- Integrated GPS / GLONASS / BeiDou GNSS
+- Wide temperature range -40°C ~ +85°C
 
 ## Technical Specifications
 
-| Item | Specification Details |
-|:---|:---|
-| **Manufacturer** | Sierra Wireless (現隸屬 Semtech) |
-| **Model** | AirPrime® MC7455 |
-| **Cellular Technology** | 4G LTE-Advanced Cat 6 (支援 3G 回落) |
-| **Chipset** | Qualcomm MDM9230 |
-| **Peak Data Rates** | 300 Mbps / 50 Mbps |
-| **LTE Bands** | B1-B5, B7, B8, B12, B13, B20, B25, B26, B29, B30, B41 |
-| **Form Factor** | Full-Size Mini PCIe (51 × 30 × 4.5 mm) |
-| **Operating Temperature** | -40°C ~ +85°C |
+| Parameter | Value |
+|------|------|
+| Chipset | Qualcomm MDM9230 |
+| Cellular Standard | LTE-Advanced Cat 6 |
+| Download Speed | 300 Mbps (LTE) |
+| Upload Speed | 50 Mbps (LTE) |
+| Carrier Aggregation | 2×CA (2×20 MHz) |
+| LTE Category | Cat 6 |
+| Interface | USB 3.0 / UART / SPI |
+| Form Factor | Mini PCIe Full Size |
+| Dimensions | 51 × 30 × 4.7 mm |
+| Weight | 8.8 g |
+| Operating Temperature | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou |
+| Region | 全球 (多頻段) |
+| Supply Voltage | 3.135V ~ 4.4V |
+| Antenna Interface | 4 × IPEX MHF4 |
+| Firmware Update | USB / FOTA |
+
+## OS Support
+
+| OS | Status | Notes |
+|------|---------|------|
+| Windows 10/11 | ✅ | Certified by Sierra Wireless drivers |
+| Linux (Kernel ≥ 4.4) | ✅ | In-kernel QMI_WWAN / option driver |
+| Android | ✅ | Available via USB OTG |
+| OpenWrt | ✅ | Requires kmod-usb-net-qmi-wwan |
+
+## Package Contents
+
+- 1 × MC7455 蜂窩模組
+- 2 × Documentation pack
+
+## Resources & Links
+
+| Resource | Link |
+|------|------|
+| Official Product Page | https://www.sierrawireless.com/products/mc7455/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7455.png" alt="Sierra Wireless MC7455" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-Need Sierra Wireless module project evaluation or bulk purchase quote? Please [contact us](/en/contact/).
-{{< /alert >}}
+Need a product quotation? Please [contact us](/en/contact/)
+{{</alert >}}

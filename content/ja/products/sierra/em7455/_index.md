@@ -1,52 +1,84 @@
 ---
-title: "Sierra Wireless EM7455 — 4G LTE-Advanced Cat 6 模組 (Americas/EMEA 美歐版)"
-description: "Sierra Wireless AirPrime EM7455，Qualcomm MDM9230 晶片，M.2 3042 介面，Cat 6 (300 Mbps 下載 / 50 Mbps 上傳)，美洲與歐洲電信業者認證。"
+title: "EM7455 LTE-A Cat 6 セルラーモジュール"
+description: "EM7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Band 14 FirstNet support, M.2 form factor for public safety and enterprise routing."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 6", "M.2 3042", "Qualcomm MDM9230", "Americas", "EMEA"]
+tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 ---
+
+{{< alert "warning" >}}
+**法的免責事項**：本製品はセルラー通信モジュールです。ご使用の前に現地の規制および電気通信要件に準拠していることを確認してください。許可されていない改造や使用は法律違反となる可能性があります。
+{{</alert >}}
 
 ## 製品概要
 
-Sierra Wireless AirPrime® EM7455 是一款專為北美與歐洲 (Americas/EMEA) 市場打造的 4G LTE-Advanced Cat 6 M.2 工業模組。搭載 Qualcomm Snapdragon MDM9230 晶片，最高下載速率 300 Mbps，上傳 50 Mbps。
+The EM7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
 
-EM7455 支援獨家的多電信業者認證韌體動態切換技術，可於 AT&T, Verizon, T-Mobile, Vodafone, Bell 等不同營運商之間無縫變更韌體配置，極大簡化企業跨國供應鏈管理。
+This module uses a standard M.2 3042 Key B form factor. It is part of the same family as the EM7430 but specifically supports Band 14 (FirstNet), making it ideal for US public safety network applications. It supports USB 3.0 and PCIe Gen2 interfaces.
 
-## 主な特徴
+The EM7455 supports major global LTE bands (B1–5/7/8/12/13/14/20/25/26/29/30/41), widely used in enterprise routing, connected vehicles, and public safety communications.
 
-- **美歐全頻段 LTE Cat 6**：支援 LTE-A 載波聚合，覆蓋北美與歐洲主要電信頻段。
-- **動態韌體切換 (Multi-Operator Firmware)**：內建多組電信業者認證韌體，可隨 SIM 卡切換。
-- **精準多星座 GNSS**：整合 GPS, GLONASS, BeiDou 與 Galileo 定位。
-- **M.2 3042 標準介面**：相容於多數工業筆電、企業網關與邊緣伺服器。
+## 主な特長
+
+- Qualcomm MDM9230 chipset
+- LTE-A Cat 6 with 2×CA carrier aggregation
+- Download up to 300 Mbps, upload up to 50 Mbps
+- Band 14 FirstNet public safety band support
+- M.2 3042 Key B industrial-grade form factor
+- USB 3.0 and PCIe Gen2 dual interface support
+- Integrated GPS / GLONASS / BeiDou GNSS
+- Wide temperature range -40°C ~ +85°C
 
 ## 技術仕様
 
-| 項目 | 仕様詳細 |
-|:---|:---|
-| **製造元** | Sierra Wireless (現隸屬 Semtech) |
-| **型番** | AirPrime® EM7455 |
-| **セルラー技術** | 4G LTE-Advanced Cat 6 (支援 3G 回落) |
-| **チップセット** | Qualcomm MDM9230 |
-| **最大伝送速度** | 300 Mbps / 50 Mbps |
-| **LTE バンド** | B1, B2, B3, B4, B5, B7, B8, B12, B13, B20, B25, B26, B29, B30, B41 |
-| **UMTS / 3G 頻段** | B1 (2100), B2 (1900), B3 (1800), B4 (AWS), B5 (850), B8 (900) |
-| **フォームファクタ** | M.2 Type 3042-S3-B (42 × 30 × 2.3 mm) |
-| **ホストインターフェース** | USB 3.0, USB 2.0, PCIe |
-| **電信認證** | AT&T, Verizon, T-Mobile, Sprint, Vodafone, Rogers, Bell, Telus |
-| **天線接頭** | IPEX MHF-4 |
-| **動作温度** | -40°C ~ +85°C |
+| 項目 | 仕様 |
+|------|------|
+| チップセット | Qualcomm MDM9230 |
+| セルラー規格 | LTE-Advanced Cat 6 |
+| ダウンロード速度 | 300 Mbps (LTE) |
+| アップロード速度 | 50 Mbps (LTE) |
+| キャリアアグリゲーション | 2×CA (2×20 MHz) |
+| LTEカテゴリ | Cat 6 |
+| インターフェース | USB 3.0 / PCIe Gen2 / I2S / UART |
+| フォームファクタ | M.2 3042 Key B |
+| 寸法 | 42 × 30 × 2.3 mm |
+| 重量 | 6.5 g |
+| 動作温度 | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou |
+| 地域 | 全球 (含 B14 FirstNet) |
+| 供給電圧 | 3.135V ~ 4.4V |
+| アンテナインターフェース | 4 × IPEX MHF4 |
+| ファームウェア更新 | USB / FOTA |
 
-## 対応OS・ドライバー
+## 対応OS
 
-| オペレーティングシステム | サポート状態 | 備考 |
-|:---|:---|:---|
-| **Windows 10 / 11** | ✅ 対応 | 公式 Windows MBIM / QMI ドライバーおよび Skylight コネクションマネージャー |
-| **Linux** | ✅ 対応 | Linux カーネル標準 qmi_wwan / cdc_mbim ドライバーおよび ModemManager |
-| **Android** | ✅ 対応 | Android RIL 統合ドライバー対応 |
+| OS | 状態 | 備考 |
+|------|---------|------|
+| Windows 10/11 | ✅ | Sierra Wireless ドライバー認証済み |
+| Linux (Kernel ≥ 4.4) | ✅ | カーネル内蔵 QMI_WWAN / option ドライバー |
+| Android | ✅ | USB OTG 経由で接続可能 |
+| OpenWrt | ✅ | kmod-usb-net-qmi-wwan のインストールが必要 |
+
+## 同梱内容
+
+- 1 × EM7455 蜂窩模組
+- 1 × ドキュメントパック
+
+## リソースとリンク
+
+| リソース | リンク |
+|------|------|
+| 公式製品ページ | https://www.sierrawireless.com/products/em7455/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-Sierra Wireless モジュールの導入評価や大口購入のお見積もりは、お気軽に[お問い合わせ](/ja/contact/)ください。
-{{< /alert >}}
+製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください
+{{</alert >}}

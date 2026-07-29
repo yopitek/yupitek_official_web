@@ -1,41 +1,84 @@
 ---
-title: "Sierra Wireless MC7304 — 4G LTE Cat 3 網關模組 (EMEA/APAC 歐亞版 Mini PCIe)"
-description: "Sierra Wireless AirPrime MC7304，Mini PCIe 介面，4G LTE Cat 3 (100 Mbps 下載 / 50 Mbps 上傳)，支援 3G/2G 回落，適用於工業物聯網與備援網關。"
+title: "MC7304 LTE-A Cat 4 蜂窝模块"
+description: "MC7304 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor for budget-sensitive industrial applications."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 3", "Mini PCIe", "EMEA", "APAC", "工業級"]
+tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7304", "Mini PCIe", "IoT"]
 ---
+
+{{< alert "warning" >}}
+**法律免责声明**：本产品为蜂窝通讯模块，使用前请确保符合当地法规与电信监管要求。未经授权的修改或使用可能违反法律。
+{{</alert >}}
 
 ## 产品概述
 
-Sierra Wireless AirPrime® MC7304 是一款採用標準 Full-Size Mini PCIe 外型規格的 4G LTE Cat 3 工業級通訊卡模組。專為歐洲、中東、非洲與亞太地區 (EMEA/APAC) 的工業控制、ATM 自動提款機、電力監控網關與資安設備設計。
+The MC7304 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
 
-MC7304 最高下載速度為 100 Mbps，上傳速度為 50 Mbps，具備極為完善的 3G HSPA+ 與 2G GSM/GPRS/EDGE 網絡回落機制，即使在偏遠地區通訊信號不佳時仍能保持不斷線連線。
+This module uses a standard Mini PCIe Full Size form factor, compatible with a wide range of existing industrial motherboards and embedded platforms. It supports USB 2.0, UART, and SPI interfaces, ideal for budget-sensitive applications requiring reliable LTE connectivity.
 
-## 产品特色
+The MC7304 supports major global LTE bands, widely deployed in industrial gateways, vending machines, digital signage, and remote monitoring applications.
 
-- **經典 Full-Size Mini PCIe 規格**：具備金屬鎖固螺絲孔位與超高機械強度。
-- **歐亞 4G 頻段完整支援**：支援 LTE B1 (2100), B3 (1800), B7 (2600), B8 (900), B20 (800)。
-- **3G / 2G 多重回落能力**：包含 DC-HSPA+ 與 Dual-Band 2G，提供備援防護。
-- **獨立 GNSS 定位**：支援 Standalone GPS 與 GLONASS 全球衛星定位。
+## 主要特点
+
+- Qualcomm MDM9215 chipset
+- LTE-A Cat 4 with download up to 150 Mbps
+- Upload speed up to 50 Mbps
+- Mini PCIe Full Size standard form factor
+- USB 2.0, UART, SPI interface support
+- Integrated GPS / GLONASS GNSS
+- Wide temperature range -40°C ~ +85°C
+- Proven reliability with broad software support
 
 ## 技术规格
 
-| 项目 | 规格细节 |
-|:---|:---|
-| **制造商** | Sierra Wireless (現隸屬 Semtech) |
-| **产品型号** | AirPrime® MC7304 |
-| **蜂窝技术** | 4G LTE Cat 3 (支援 3G / 2G 回落) |
-| **最高下载 / 上传速率** | 100 Mbps / 50 Mbps |
-| **LTE 频段** | B1, B3, B7, B8, B20 |
-| **3G / 2G 頻段** | 850/900/1900/2100 MHz (HSPA+), 900/1800 MHz (GSM) |
-| **外型尺寸** | Full-Size Mini PCIe (51 × 30 × 4.5 mm) |
-| **主机控制介面** | USB 2.0 |
-| **作业温度** | -40°C ~ +85°C |
+| 参数 | 规格 |
+|------|------|
+| 芯片型号 | Qualcomm MDM9215 |
+| 蜂窝标准 | LTE-A Cat 4 |
+| 下载速度 | 150 Mbps (LTE) |
+| 上传速度 | 50 Mbps (LTE) |
+| 载波聚合 | 不支持 |
+| LTE 类别 | Cat 4 |
+| 接口 | USB 2.0 / UART / SPI |
+| 外形规格 | Mini PCIe Full Size |
+| 尺寸 | 51 × 30 × 4.7 mm |
+| 重量 | 8.5 g |
+| 工作温度 | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS |
+| 地区 | 全球 (多頻段) |
+| 供电电压 | 3.135V ~ 4.4V |
+| 天线接口 | 2 × IPEX MHF4 |
+| 固件更新 | USB / FOTA |
+
+## 操作系统支持
+
+| 操作系统 | 状态 | 备注 |
+|------|---------|------|
+| Windows 10/11 | ✅ | 经 Sierra Wireless 驱动程序认证 |
+| Linux (Kernel ≥ 3.10) | ✅ | 内核内置 option 驱动 |
+| Android | ✅ | 可通过 USB OTG 连接 |
+| OpenWrt | ✅ | 需安装 kmod-usb-serial-option |
+
+## 包装内容
+
+- 1 × MC7304 蜂窩模組
+- 1 × 文件包装
+
+## 资源与链接
+
+| 资源 | 链接 |
+|------|------|
+| 官方产品页面 | https://www.sierrawireless.com/products/mc7304/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-需要 Sierra Wireless 模组项目评估、极低延迟 5G 工业网关规格咨询或批量采购报价？请来信[与我们联系](/zh-cn/contact/)
-{{< /alert >}}
+需要询问产品报价？请来信[与我们联系](/zh-cn/contact/)
+{{</alert >}}

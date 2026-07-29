@@ -1,41 +1,84 @@
 ---
-title: "Sierra Wireless MC7304 — 4G LTE Cat 3 網關模組 (EMEA/APAC 歐亞版 Mini PCIe)"
-description: "Sierra Wireless AirPrime MC7304，Mini PCIe 介面，4G LTE Cat 3 (100 Mbps 下載 / 50 Mbps 上傳)，支援 3G/2G 回落，適用於工業物聯網與備援網關。"
+title: "MC7304 LTE-A Cat 4 蜂窩模組"
+description: "MC7304 採用 Qualcomm MDM9215 晶片組，支援 LTE-A Cat 4 150 Mbps，Mini PCIe 封裝，適用於傳統工業閘道器與路由器。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 3", "Mini PCIe", "EMEA", "APAC", "工業級"]
+tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7304", "Mini PCIe", "IoT"]
 ---
+
+{{< alert "warning" >}}
+**法律免責聲明**：本產品為蜂窩通訊模組，使用前請確保符合當地法規與電信監理要求。未經授權的修改或使用可能違反法律。
+{{</alert >}}
 
 ## 產品概述
 
-Sierra Wireless AirPrime® MC7304 是一款採用標準 Full-Size Mini PCIe 外型規格的 4G LTE Cat 3 工業級通訊卡模組。專為歐洲、中東、非洲與亞太地區 (EMEA/APAC) 的工業控制、ATM 自動提款機、電力監控網關與資安設備設計。
+MC7304 是 Sierra Wireless 推出的 LTE-Advanced Cat 4 蜂窩模組，採用 Qualcomm MDM9215 晶片組，支援下載速度最高 150 Mbps，上傳最高 50 Mbps。
 
-MC7304 最高下載速度為 100 Mbps，上傳速度為 50 Mbps，具備極為完善的 3G HSPA+ 與 2G GSM/GPRS/EDGE 網絡回落機制，即使在偏遠地區通訊信號不佳時仍能保持不斷線連線。
+此模組採用標準 Mini PCIe Full Size 封裝，相容於大量現有工業主機板與嵌入式平台。支援 USB 2.0、UART 及 SPI 介面，適合預算敏感但仍需可靠 LTE 連線的應用。
 
-## 產品特色
+MC7304 支援全球主要 LTE 頻段，廣泛應用於工業閘道器、自動販賣機、數位看板與遠端監控。
 
-- **經典 Full-Size Mini PCIe 規格**：具備金屬鎖固螺絲孔位與超高機械強度。
-- **歐亞 4G 頻段完整支援**：支援 LTE B1 (2100), B3 (1800), B7 (2600), B8 (900), B20 (800)。
-- **3G / 2G 多重回落能力**：包含 DC-HSPA+ 與 Dual-Band 2G，提供備援防護。
-- **獨立 GNSS 定位**：支援 Standalone GPS 與 GLONASS 全球衛星定位。
+## 主要特點
+
+- 採用 Qualcomm MDM9215 晶片組
+- LTE-A Cat 4，下載高達 150 Mbps
+- 上傳速度最高 50 Mbps
+- Mini PCIe Full Size 標準封裝
+- 支援 USB 2.0、UART、SPI 介面
+- 內建 GPS / GLONASS GNSS
+- 寬溫設計 -40°C ~ +85°C
+- 成熟穩定，廣泛的軟體支援
 
 ## 技術規格
 
-| 項目 | 規格細節 |
-|:---|:---|
-| **製造商** | Sierra Wireless (現隸屬 Semtech) |
-| **產品型號** | AirPrime® MC7304 |
-| **蜂窩技術** | 4G LTE Cat 3 (支援 3G / 2G 回落) |
-| **最高下載 / 上傳速率** | 100 Mbps / 50 Mbps |
-| **LTE 頻段** | B1, B3, B7, B8, B20 |
-| **3G / 2G 頻段** | 850/900/1900/2100 MHz (HSPA+), 900/1800 MHz (GSM) |
-| **外型尺寸** | Full-Size Mini PCIe (51 × 30 × 4.5 mm) |
-| **主機介面** | USB 2.0 |
-| **作業溫度** | -40°C ~ +85°C |
+| 項目 | 規格 |
+|------|------|
+| 晶片型號 | Qualcomm MDM9215 |
+| 蜂窩標準 | LTE-A Cat 4 |
+| 下載速度 | 150 Mbps (LTE) |
+| 上傳速度 | 50 Mbps (LTE) |
+| 載波聚合 | 不支援 |
+| LTE 類別 | Cat 4 |
+| 介面 | USB 2.0 / UART / SPI |
+| 外型規格 | Mini PCIe Full Size |
+| 尺寸 | 51 × 30 × 4.7 mm |
+| 重量 | 8.5 g |
+| 工作溫度 | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS |
+| 地區 | 全球 (多頻段) |
+| 供電電壓 | 3.135V ~ 4.4V |
+| 天線介面 | 2 × IPEX MHF4 |
+| 韌體更新 | USB / FOTA |
+
+## 作業系統支援
+
+| OS | Status | Notes |
+|------|---------|------|
+| Windows 10/11 | ✅ | 經 Sierra Wireless 驅動程式認證 |
+| Linux (Kernel ≥ 3.10) | ✅ | 核心內建 option 驅動 |
+| Android | ✅ | 可透過 USB OTG 連接 |
+| OpenWrt | ✅ | 需安裝 kmod-usb-serial-option |
+
+## 包裝內容
+
+- 1 × MC7304 蜂窩模組
+- 1 × 文件包裝
+
+## 資源與連結
+
+| 資源 | 連結 |
+|------|------|
+| 官方產品頁面 | https://www.sierrawireless.com/products/mc7304/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-需要詢問 MC7304 Mini PCIe 模組採購或替代升級方案？請來信[與我們聯絡](/zh-tw/contact/)
-{{< /alert >}}
+需要詢問產品報價？請來信[與我們聯絡](/zh-tw/contact/)
+{{</alert >}}

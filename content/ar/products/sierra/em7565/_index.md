@@ -1,43 +1,85 @@
 ---
-title: "Sierra Wireless EM7565 — 4G LTE-Advanced Pro Cat 12 模組 (Global 全球版)"
-description: "Sierra Wireless AirPrime EM7565 全球版 Cat 12 模組，M.2 3042 介面，最高 600 Mbps 下載 / 150 Mbps 上傳，涵蓋 24+ 全球 LTE 頻段，支援 CBRS 與 LAA。"
+title: "وحدة EM7565 LTE-A Pro Cat 12 الخلوية"
+description: "EM7565 LTE-A Pro Cat 12 cellular module with Qualcomm SDX20, 600 Mbps download, FirstNet B14 support, M.2 form factor for mission-critical communications."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-dir: "rtl"
 brands: ["sierra"]
-tags: ["4G LTE Pro", "Cat 12", "M.2 3042", "Global 全球版", "CBRS", "Qualcomm"]
+tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7565", "SDX20", "M.2"]
 ---
+
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
+{{</alert >}}
 
 ## نظرة عامة على المنتج
 
-Sierra Wireless AirPrime® EM7565 是一款跨國通訊必備的全球版 4G LTE-Advanced Pro Cat 12 模組。單一模組即可涵蓋全球超過 24 個 LTE 頻段，最高下載速率 600 Mbps，上傳 150 Mbps。
+The EM7565 is Sierra Wireless' LTE-Advanced Pro Cat 12 cellular module, powered by the Qualcomm SDX20 chipset, supporting 3×20 MHz carrier aggregation (3×CA), DL 256QAM and UL 64QAM, with download speeds up to 600 Mbps and upload up to 150 Mbps.
 
-EM7565 同時支援 CBRS (Band 48) 私網 LTE 與 LAA (Band 46) 授權輔助存取技術，具備全球絕大多數主流電信業者認證，是企業跨國設備部署、車隊管理與全球工業物聯網（IoT）的終極模組方案。
+The EM7565 uses a standard M.2 3042 Key B form factor and offers broader carrier aggregation support compared to the EM7511. Its SDX20 platform delivers excellent RF performance with extremely low power consumption, ideal for 24/7 industrial operation.
+
+It supports major global LTE bands including B14 FirstNet and B71 600 MHz, suitable for industrial routers, mission-critical communications, and professional mobile hotspots.
 
 ## الميزات الرئيسية
 
-- **全球單一 SKU 覆蓋**：單一模組支援全球 24+ LTE 頻段，大幅降低營運與庫存複雜度。
-- **LTE Cat 12 600 Mbps 高速**：支援 3x 載波聚合 (3CA) 與 256-QAM 高階調變。
-- **CBRS 私有網與 LAA 支援**：彈性擴展企業專網與免執照頻段頻寬。
-- **多星座全球 GNSS**：內建 GPS, GLONASS, BeiDou, Galileo 精確定位系統。
+- Qualcomm SDX20 modem chipset
+- LTE-A Pro Cat 12 with 3×CA carrier aggregation
+- Download up to 600 Mbps, upload up to 150 Mbps
+- 256QAM DL / 64QAM UL / LAA support
+- M.2 3042 Key B industrial-grade form factor
+- USB 3.1, PCIe Gen3, RGMII interface support
+- FirstNet B14 and B71 band support
+- Dual-band GNSS (GPS + Galileo)
 
 ## المواصفات الفنية
 
-| العنصر | تفاصيل المواصفات |
-|:---|:---|
-| **الشركة المصنعة** | Sierra Wireless (現隸屬 Semtech) |
-| **الموديل** | AirPrime® EM7565 |
-| **التقنية الخلوية** | 4G LTE-Advanced Pro Cat 12 (支援 3G 回落) |
-| **أقصى سرعة نقل** | 600 Mbps / 150 Mbps |
-| **نطاقات LTE** | B1, B2, B3, B4, B5, B7, B8, B9, B12, B13, B18, B19, B20, B26, B28, B29, B30, B32, B41-B43, B46(LAA), B48(CBRS), B66 |
-| **3G HSPA+ 頻段** | B1, B2, B4, B5, B6, B8, B9, B19 |
-| **عامل الشكل** | M.2 Type 3042 (42 × 30 × 2.3 mm) |
-| **واجهات الجهاز** | USB 3.0, USB 2.0 High Speed |
-| **電信認證** | AT&T, NTT Docomo, Softbank, Telstra, Verizon, Vodafone, KDDI, KT, DT 等全球電信商 |
-| **درجة حرارة التشغيل** | -40°C ~ +85°C |
+| المعيار | المواصفات |
+|------|------|
+| رقاقة | Qualcomm SDX20 |
+| معيار الشبكة الخلوية | LTE-Advanced Pro Cat 12 |
+| سرعة التحميل | 600 Mbps (LTE) |
+| سرعة الرفع | 150 Mbps (LTE) |
+| تجميع الموجات | 3×CA (3×20 MHz) |
+| فئة LTE | Cat 12 |
+| الواجهة | USB 3.1 / PCIe Gen3 / I2S / UART / RGMII |
+| شكل المنتج | M.2 3042 Key B |
+| الأبعاد | 42 × 30 × 2.3 mm |
+| الوزن | 6.8 g |
+| درجة حرارة التشغيل | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou / Galileo |
+| المنطقة | 全球 (多頻段) |
+| جهد الإمداد | 3.135V ~ 4.4V |
+| واجهة الهوائي | 4 × IPEX MHF4 |
+| تحديث البرامج الثابتة | USB / FOTA |
+
+## دعم أنظمة التشغيل
+
+| نظام التشغيل | الحالة | ملاحظات |
+|------|---------|------|
+| Windows 10/11 | ✅ | معتمد من برامج تشغيل Sierra Wireless |
+| Linux (Kernel ≥ 4.8) | ✅ | برنامج تشغيل QMI_WWAN / MBIM مدمج في النواة |
+| Android | ✅ | متاح عبر USB OTG |
+| OpenWrt | ✅ | يتطلب تثبيت kmod-usb-net-qmi-wwan |
+| Yocto / Buildroot | ✅ | يدعم تكامل SDK |
+
+## محتويات العبوة
+
+- 1 × EM7565 蜂窩模組
+- 1 × حزمة المستندات
+
+## الموارد والروابط
+
+| المورد | الرابط |
+|------|------|
+| صفحة المنتج الرسمية | https://www.sierrawireless.com/products/em7565/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/em7565.png" alt="Sierra Wireless EM7565" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-هل تحتاج إلى تقييم مشروع أو عرض أسعار لشراء وحدات Sierra Wireless؟ يرجى [التواصل معنا](/ar/contact/).
-{{< /alert >}}
+هل تحتاج إلى عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/)
+{{</alert >}}

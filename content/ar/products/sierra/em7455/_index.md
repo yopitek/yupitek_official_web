@@ -1,53 +1,84 @@
 ---
-title: "Sierra Wireless EM7455 — 4G LTE-Advanced Cat 6 模組 (Americas/EMEA 美歐版)"
-description: "Sierra Wireless AirPrime EM7455，Qualcomm MDM9230 晶片，M.2 3042 介面，Cat 6 (300 Mbps 下載 / 50 Mbps 上傳)，美洲與歐洲電信業者認證。"
+title: "وحدة EM7455 LTE-A Cat 6 الخلوية"
+description: "EM7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Band 14 FirstNet support, M.2 form factor for public safety and enterprise routing."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-dir: "rtl"
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 6", "M.2 3042", "Qualcomm MDM9230", "Americas", "EMEA"]
+tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 ---
+
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
+{{</alert >}}
 
 ## نظرة عامة على المنتج
 
-Sierra Wireless AirPrime® EM7455 是一款專為北美與歐洲 (Americas/EMEA) 市場打造的 4G LTE-Advanced Cat 6 M.2 工業模組。搭載 Qualcomm Snapdragon MDM9230 晶片，最高下載速率 300 Mbps，上傳 50 Mbps。
+The EM7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
 
-EM7455 支援獨家的多電信業者認證韌體動態切換技術，可於 AT&T, Verizon, T-Mobile, Vodafone, Bell 等不同營運商之間無縫變更韌體配置，極大簡化企業跨國供應鏈管理。
+This module uses a standard M.2 3042 Key B form factor. It is part of the same family as the EM7430 but specifically supports Band 14 (FirstNet), making it ideal for US public safety network applications. It supports USB 3.0 and PCIe Gen2 interfaces.
+
+The EM7455 supports major global LTE bands (B1–5/7/8/12/13/14/20/25/26/29/30/41), widely used in enterprise routing, connected vehicles, and public safety communications.
 
 ## الميزات الرئيسية
 
-- **美歐全頻段 LTE Cat 6**：支援 LTE-A 載波聚合，覆蓋北美與歐洲主要電信頻段。
-- **動態韌體切換 (Multi-Operator Firmware)**：內建多組電信業者認證韌體，可隨 SIM 卡切換。
-- **精準多星座 GNSS**：整合 GPS, GLONASS, BeiDou 與 Galileo 定位。
-- **M.2 3042 標準介面**：相容於多數工業筆電、企業網關與邊緣伺服器。
+- Qualcomm MDM9230 chipset
+- LTE-A Cat 6 with 2×CA carrier aggregation
+- Download up to 300 Mbps, upload up to 50 Mbps
+- Band 14 FirstNet public safety band support
+- M.2 3042 Key B industrial-grade form factor
+- USB 3.0 and PCIe Gen2 dual interface support
+- Integrated GPS / GLONASS / BeiDou GNSS
+- Wide temperature range -40°C ~ +85°C
 
 ## المواصفات الفنية
 
-| العنصر | تفاصيل المواصفات |
-|:---|:---|
-| **الشركة المصنعة** | Sierra Wireless (現隸屬 Semtech) |
-| **الموديل** | AirPrime® EM7455 |
-| **التقنية الخلوية** | 4G LTE-Advanced Cat 6 (支援 3G 回落) |
-| **الشريحة الرئيسية** | Qualcomm MDM9230 |
-| **أقصى سرعة نقل** | 300 Mbps / 50 Mbps |
-| **نطاقات LTE** | B1, B2, B3, B4, B5, B7, B8, B12, B13, B20, B25, B26, B29, B30, B41 |
-| **UMTS / 3G 頻段** | B1 (2100), B2 (1900), B3 (1800), B4 (AWS), B5 (850), B8 (900) |
-| **عامل الشكل** | M.2 Type 3042-S3-B (42 × 30 × 2.3 mm) |
-| **واجهات الجهاز** | USB 3.0, USB 2.0, PCIe |
-| **電信認證** | AT&T, Verizon, T-Mobile, Sprint, Vodafone, Rogers, Bell, Telus |
-| **天線接頭** | IPEX MHF-4 |
-| **درجة حرارة التشغيل** | -40°C ~ +85°C |
+| المعيار | المواصفات |
+|------|------|
+| رقاقة | Qualcomm MDM9230 |
+| معيار الشبكة الخلوية | LTE-Advanced Cat 6 |
+| سرعة التحميل | 300 Mbps (LTE) |
+| سرعة الرفع | 50 Mbps (LTE) |
+| تجميع الموجات | 2×CA (2×20 MHz) |
+| فئة LTE | Cat 6 |
+| الواجهة | USB 3.0 / PCIe Gen2 / I2S / UART |
+| شكل المنتج | M.2 3042 Key B |
+| الأبعاد | 42 × 30 × 2.3 mm |
+| الوزن | 6.5 g |
+| درجة حرارة التشغيل | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou |
+| المنطقة | 全球 (含 B14 FirstNet) |
+| جهد الإمداد | 3.135V ~ 4.4V |
+| واجهة الهوائي | 4 × IPEX MHF4 |
+| تحديث البرامج الثابتة | USB / FOTA |
 
-## دعم أنظمة التشغيل وبرامج التشغيل
+## دعم أنظمة التشغيل
 
-| نظام التشغيل | حالة الدعم | ملاحظات |
-|:---|:---|:---|
-| **Windows 10 / 11** | ✅ مدعوم | برامج تشغيل Windows MBIM / QMI الرسمية وبرنامج Skylight |
-| **Linux** | ✅ مدعوم | برامج تشغيل Linux kernel qmi_wwan / cdc_mbim المدمجة |
-| **Android** | ✅ مدعوم | توفير برامج تشغيل Android RIL |
+| نظام التشغيل | الحالة | ملاحظات |
+|------|---------|------|
+| Windows 10/11 | ✅ | معتمد من برامج تشغيل Sierra Wireless |
+| Linux (Kernel ≥ 4.4) | ✅ | برنامج تشغيل QMI_WWAN / option مدمج في النواة |
+| Android | ✅ | متاح عبر USB OTG |
+| OpenWrt | ✅ | يتطلب تثبيت kmod-usb-net-qmi-wwan |
+
+## محتويات العبوة
+
+- 1 × EM7455 蜂窩模組
+- 1 × حزمة المستندات
+
+## الموارد والروابط
+
+| المورد | الرابط |
+|------|------|
+| صفحة المنتج الرسمية | https://www.sierrawireless.com/products/em7455/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-هل تحتاج إلى تقييم مشروع أو عرض أسعار لشراء وحدات Sierra Wireless؟ يرجى [التواصل معنا](/ar/contact/).
-{{< /alert >}}
+هل تحتاج إلى عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/)
+{{</alert >}}

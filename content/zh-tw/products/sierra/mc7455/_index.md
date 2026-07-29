@@ -1,40 +1,84 @@
 ---
-title: "Sierra Wireless MC7455 — 4G LTE-Advanced Cat 6 模組 (Americas/EMEA Mini PCIe)"
-description: "Sierra Wireless AirPrime MC7455，Qualcomm MDM9230 晶片，Mini PCIe 介面，Cat 6 (300 Mbps 下載 / 50 Mbps 上傳)，美洲與歐洲雙電信體系認證。"
+title: "MC7455 LTE-A Cat 6 蜂窩模組"
+description: "MC7455 採用 Qualcomm MDM9230 晶片組，支援 LTE-A Cat 6 300 Mbps，Mini PCIe 封裝，適用於高效能工業應用。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
-tags: ["4G LTE", "Cat 6", "Mini PCIe", "Qualcomm MDM9230", "Americas", "EMEA"]
+tags: ["LTE", "Cat 6", "Cellular", "Module", "MC7455", "Mini PCIe", "IoT"]
 ---
+
+{{< alert "warning" >}}
+**法律免責聲明**：本產品為蜂窩通訊模組，使用前請確保符合當地法規與電信監理要求。未經授權的修改或使用可能違反法律。
+{{</alert >}}
 
 ## 產品概述
 
-Sierra Wireless AirPrime® MC7455 是一款經典高頻寬 4G LTE-Advanced Cat 6 Mini PCIe 通訊卡模組。搭載 Qualcomm Snapdragon MDM9230 晶片，最高下載速率 300 Mbps，上傳 50 Mbps。
+MC7455 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窩模組，採用 Qualcomm MDM9230 晶片組，支援 2×20 MHz 載波聚合 (2×CA)，下載速度最高可達 300 Mbps，上傳最高 50 Mbps。
 
-MC7455 專為偏好傳統 Mini PCIe 螺絲固定與卡槽架構的工業控制板卡、車載資通訊硬體及軍規電腦設計。支援多電信業者認證韌體切換，輕鬆跨越美洲與歐洲雙大洲電信防線。
+此模組採用標準 Mini PCIe Full Size 封裝，是 MC 系列中最高階的型號。支援 USB 3.0、UART 及 SPI 介面，提供快速的資料傳輸能力。
 
-## 產品特色
+MC7455 支援全球主要 LTE 頻段與 FirstNet B14，廣泛應用於高效能工業路由器、車載通訊系統、專網基地台及企業級連網解決方案。
 
-- **Mini PCIe Form Factor Cat 6**：標準 Mini PCIe 介面提供高達 300 Mbps LTE-A 傳輸速度。
-- **美歐主要頻段完全涵蓋**：支援 LTE-A 載波聚合 (2CA)。
-- **多電信商韌體動態轉換**：隨 SIM 卡切換載入 AT&T, Verizon, Vodafone 等官方認證韌體。
-- **工業級高耐久性**：金屬防護上蓋與廣溫連線機制。
+## 主要特點
+
+- 採用 Qualcomm MDM9230 晶片組
+- LTE-A Cat 6，支援 2×CA 載波聚合
+- 下載速度高達 300 Mbps，上傳 50 Mbps
+- Mini PCIe Full Size 標準封裝
+- 支援 USB 3.0、UART、SPI 介面
+- 支援 FirstNet B14 頻段
+- 內建 GPS / GLONASS / BeiDou GNSS
+- 寬溫設計 -40°C ~ +85°C
 
 ## 技術規格
 
-| 項目 | 規格細節 |
-|:---|:---|
-| **製造商** | Sierra Wireless (現隸屬 Semtech) |
-| **產品型號** | AirPrime® MC7455 |
-| **蜂窩技術** | 4G LTE-Advanced Cat 6 (支援 3G 回落) |
-| **核心晶片組** | Qualcomm MDM9230 |
-| **最高下載 / 上傳速率** | 300 Mbps / 50 Mbps |
-| **LTE 頻段** | B1-B5, B7, B8, B12, B13, B20, B25, B26, B29, B30, B41 |
-| **外型尺寸** | Full-Size Mini PCIe (51 × 30 × 4.5 mm) |
-| **作業溫度** | -40°C ~ +85°C |
+| 項目 | 規格 |
+|------|------|
+| 晶片型號 | Qualcomm MDM9230 |
+| 蜂窩標準 | LTE-Advanced Cat 6 |
+| 下載速度 | 300 Mbps (LTE) |
+| 上傳速度 | 50 Mbps (LTE) |
+| 載波聚合 | 2×CA (2×20 MHz) |
+| LTE 類別 | Cat 6 |
+| 介面 | USB 3.0 / UART / SPI |
+| 外型規格 | Mini PCIe Full Size |
+| 尺寸 | 51 × 30 × 4.7 mm |
+| 重量 | 8.8 g |
+| 工作溫度 | -40°C ~ +85°C |
+| GNSS | GPS / GLONASS / BeiDou |
+| 地區 | 全球 (多頻段) |
+| 供電電壓 | 3.135V ~ 4.4V |
+| 天線介面 | 4 × IPEX MHF4 |
+| 韌體更新 | USB / FOTA |
+
+## 作業系統支援
+
+| OS | Status | Notes |
+|------|---------|------|
+| Windows 10/11 | ✅ | 經 Sierra Wireless 驅動程式認證 |
+| Linux (Kernel ≥ 4.4) | ✅ | 核心內建 QMI_WWAN / option 驅動 |
+| Android | ✅ | 可透過 USB OTG 連接 |
+| OpenWrt | ✅ | 需安裝 kmod-usb-net-qmi-wwan |
+
+## 包裝內容
+
+- 1 × MC7455 蜂窩模組
+- 2 × 文件包裝
+
+## 資源與連結
+
+| 資源 | 連結 |
+|------|------|
+| 官方產品頁面 | https://www.sierrawireless.com/products/mc7455/ |
+
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7455.png" alt="Sierra Wireless MC7455" />
+{{</gallery >}}
+
+---
 
 {{< alert >}}
-需要詢問 MC7455 模組報價或技術諮詢？請來信[與我們聯絡](/zh-tw/contact/)
-{{< /alert >}}
+需要詢問產品報價？請來信[與我們聯絡](/zh-tw/contact/)
+{{</alert >}}

@@ -1757,6 +1757,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: true
+featureimage: "/images/products/sierra/sierra_banner.png"
 ---
 
 {data['intro']}
@@ -1810,6 +1811,11 @@ def generate_product_page(lang, model):
         resources = translate_resources(model, lang)
         os_rows = translate_os_rows(model, lang)
 
+    if model in ("em9190", "em9191"):
+        featureimage_line = f'featureimage: "/images/products/sierra/{model}_hero.jpg"\n'
+    else:
+        featureimage_line = ""
+
     # Tags
     tags_str = ", ".join(f'"{t}"' for t in zh["tags"])
 
@@ -1862,7 +1868,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
 tags: [{tags_str}]
----
+{featureimage_line}---
 
 {{{{< alert "warning" >}}}}
 {legal_text}

@@ -7,6 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
 tags: ["5G", "mmWave", "Sub-6", "Cellular", "Module", "EM9191", "SDX55", "M.2"]
+featureimage: "/images/products/sierra/em9191_hero.jpg"
 ---
 
 {{< alert "warning" >}}

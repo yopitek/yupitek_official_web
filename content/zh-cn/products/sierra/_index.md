@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: true
+featureimage: "/images/products/sierra/sierra_banner.png"
 ---
 
 Sierra Wireless 是工业蜂窝模块领域的全球领导品牌，提供从 LTE Cat 4 到 5G NR 的完整产品线。Yupitek 代理 Sierra Wireless 全系列蜂窝模块，适用于物联网 (IoT) 终端、工业路由器、网关、车联网及移动宽带设备，支持全球各大电信频段。

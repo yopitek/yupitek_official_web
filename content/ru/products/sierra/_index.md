@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: true
+featureimage: "/images/products/sierra/sierra_banner.png"
 ---
 
 Sierra Wireless — мировой лидер в области промышленных сотовых модулей, предлагающий полную линейку продуктов от LTE Cat 4 до 5G NR. Yupitek распространяет весь портфель сотовых модулей Sierra Wireless, подходящих для терминалов IoT, промышленных маршрутизаторов, шлюзов, подключенных транспортных средств и устройств мобильной широкополосной связи.

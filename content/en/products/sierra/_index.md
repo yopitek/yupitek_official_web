@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: true
+featureimage: "/images/products/sierra/sierra_banner.png"
 ---
 
 Sierra Wireless is a global leader in industrial cellular modules, offering a complete product line from LTE Cat 4 to 5G NR. Yupitek distributes the full Sierra Wireless cellular module portfolio, suitable for IoT terminals, industrial routers, gateways, connected vehicles, and mobile broadband devices with support for major global carrier bands.

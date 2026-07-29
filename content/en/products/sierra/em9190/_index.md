@@ -7,6 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["sierra"]
 tags: ["5G", "Sub-6", "Cellular", "Module", "EM9190", "SDX55", "M.2", "IoT"]
+featureimage: "/images/products/sierra/em9190_hero.jpg"
 ---
 
 {{< alert "warning" >}}

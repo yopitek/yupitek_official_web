@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: true
+featureimage: "/images/products/sierra/sierra_banner.png"
 ---
 
 Sierra Wireless هي شركة رائدة عالمياً في مجال الوحدات الخلوية الصناعية، وتقدم مجموعة منتجات كاملة من LTE Cat 4 إلى 5G NR. تقوم Yupitek بتوزيع مجموعة وحدات Sierra Wireless الخلوية الكاملة، المناسبة لأجهزة IoT وأجهزة التوجيه الصناعية والبوابات والمركبات المتصلة وأجهزة النطاق العريض المتنقل.

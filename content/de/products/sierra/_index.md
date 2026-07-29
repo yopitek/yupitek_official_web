@@ -6,6 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 showChildPages: true
+featureimage: "/images/products/sierra/sierra_banner.png"
 ---
 
 Sierra Wireless ist ein weltweit führender Anbieter von industriellen Mobilfunkmodulen und bietet eine vollständige Produktpalette von LTE Cat 4 bis 5G NR. Yupitek vertreibt das gesamte Sierra Wireless Mobilfunkmodul-Portfolio, geeignet für IoT-Endgeräte, Industrierouter, Gateways, vernetzte Fahrzeuge und mobile Breitbandgeräte.

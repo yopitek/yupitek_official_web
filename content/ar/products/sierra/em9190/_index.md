@@ -14,6 +14,10 @@ featureimage: "/images/products/sierra/em9190_hero.jpg"
 **إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />
+{{</gallery >}}
+
 ## نظرة عامة على المنتج
 
 EM9190 هي الوحدة الخلوية الرائدة 5G NR Sub-6 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm SDX55، وتدعم أوضاع 5G SA/NSA بسرعات تحميل تصل إلى 2.5 جيجابت/ثانية (5G) / 2.0 جيجابت/ثانية (LTE Cat 22) ورفع يصل إلى 900 ميجابت/ثانية (5G).
@@ -76,10 +80,6 @@ EM9190 هي الوحدة الخلوية الرائدة 5G NR Sub-6 من Sierra W
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/em-series/em9190/ |
 | المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />
-{{</gallery >}}
 
 ---
 

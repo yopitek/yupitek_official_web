@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "MC7455", "Mini PCIe", "IoT"]
 **法律免责声明**：本产品为蜂窝通讯模块，使用前请确保符合当地法规与电信监管要求。未经授权的修改或使用可能违反法律。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7455.png" alt="Sierra Wireless MC7455" />
+{{</gallery >}}
+
 ## 产品概述
 
 MC7455 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窝模组，采用 Qualcomm MDM9230 芯片组，支持 2×20 MHz 载波聚合 (2×CA)，下载速度最高可达 300 Mbps，上传最高 50 Mbps。
@@ -73,10 +77,6 @@ MC7455 支持全球主要 LTE 频段与 FirstNet B14，广泛应用于高效能�
 |------|------|
 | 官方产品页面 | https://source.sierrawireless.com/devices/mc-series/mc7455/ |
 | 技术规格书 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116238-mc7455-pts-r15.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7455.png" alt="Sierra Wireless MC7455" />
-{{</gallery >}}
 
 ---
 

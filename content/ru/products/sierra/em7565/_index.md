@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7565", "SDX20", "M.2"]
 **Юридическое предупреждение**: Это модуль сотовой связи. Перед использованием убедитесь в соблюдении местных нормативных требований и требований к телекоммуникациям. Несанкционированная модификация или использование может нарушить законодательство.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7565.png" alt="Sierra Wireless EM7565" />
+{{</gallery >}}
+
 ## Обзор продукта
 
 EM7565 — это сотовый модуль LTE-Advanced Pro Cat 12 от Sierra Wireless на чипсете Qualcomm SDX20, поддерживающий агрегацию несущих 3×20 МГц (3×CA), DL 256QAM и UL 64QAM со скоростью загрузки до 600 Мбит/с и выгрузки до 150 Мбит/с.
@@ -74,10 +78,6 @@ EM7565 выполнен в стандартном форм-факторе M.2 30
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/em-series/em7565/ |
 | Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41110788-em7565-product-technical-specification-r16.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7565.png" alt="Sierra Wireless EM7565" />
-{{</gallery >}}
 
 ---
 

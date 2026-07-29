@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7565", "SDX20", "M.2"]
 **法律免责声明**：本产品为蜂窝通讯模块，使用前请确保符合当地法规与电信监管要求。未经授权的修改或使用可能违反法律。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7565.png" alt="Sierra Wireless EM7565" />
+{{</gallery >}}
+
 ## 产品概述
 
 EM7565 是 Sierra Wireless 推出的 LTE-Advanced Pro Cat 12 蜂窝模组，采用 Qualcomm SDX20 芯片组，支持 3×20 MHz 载波聚合 (3×CA)，DL 256QAM 与 UL 64QAM，下载速度最高 600 Mbps，上传最高 150 Mbps。
@@ -74,10 +78,6 @@ EM7565 采用标准 M.2 3042 Key B 封装，相较 EM7511 增加了對更多载�
 |------|------|
 | 官方产品页面 | https://source.sierrawireless.com/devices/em-series/em7565/ |
 | 技术规格书 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41110788-em7565-product-technical-specification-r16.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7565.png" alt="Sierra Wireless EM7565" />
-{{</gallery >}}
 
 ---
 

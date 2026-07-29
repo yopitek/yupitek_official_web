@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7354", "Mini PCIe", "IoT"]
 **إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />
+{{</gallery >}}
+
 ## نظرة عامة على المنتج
 
 MC7354 هي وحدة خلوية LTE-Advanced Cat 4 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm MDM9215 وتدعم سرعات تحميل تصل إلى 150 ميجابت/ثانية ورفع يصل إلى 50 ميجابت/ثانية.
@@ -73,10 +77,6 @@ MC7354 مثالية للأتمتة الصناعية والنقل والشبكا�
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/mc-series/mc7354/ |
 | المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/4114635_airprime-mc7354-product-technical-specification_r9.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />
-{{</gallery >}}
 
 ---
 

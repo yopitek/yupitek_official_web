@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7354", "Mini PCIe", "IoT"]
 **Rechtlicher Hinweis**: Dies ist ein Mobilfunkmodul. Stellen Sie vor der Verwendung die Einhaltung der örtlichen Vorschriften und Telekommunikationsanforderungen sicher. Unbefugte Änderungen oder Nutzung können gegen geltendes Recht verstoßen.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />
+{{</gallery >}}
+
 ## Produktübersicht
 
 Das MC7354 ist ein LTE-Advanced Cat 4 Mobilfunkmodul von Sierra Wireless. Es verwendet den Qualcomm MDM9215 Chipsatz und unterstützt Download-Geschwindigkeiten von bis zu 150 Mbps und Upload bis zu 50 Mbps.
@@ -73,10 +77,6 @@ Das MC7354 ist ideal für Industrieautomation, Transportwesen, Smart Grid und In
 |------|------|
 | Offizielle Produktseite | https://source.sierrawireless.com/devices/mc-series/mc7354/ |
 | Technisches Datenblatt (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/4114635_airprime-mc7354-product-technical-specification_r9.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />
-{{</gallery >}}
 
 ---
 

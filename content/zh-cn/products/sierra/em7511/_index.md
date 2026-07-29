@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7511", "SDX20", "M.2"]
 **法律免责声明**：本产品为蜂窝通讯模块，使用前请确保符合当地法规与电信监管要求。未经授权的修改或使用可能违反法律。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7511.png" alt="Sierra Wireless EM7511" />
+{{</gallery >}}
+
 ## 产品概述
 
 EM7511 是 Sierra Wireless 推出的 LTE-Advanced Pro Cat 12 蜂窝模组，采用 Qualcomm SDX20 芯片组，支持 3×20 MHz 载波聚合 (3×CA)，下载速度最高可达 600 Mbps，上传最高 150 Mbps。
@@ -74,10 +78,6 @@ EM7511 支持全球 LTE 频段与 License-Assisted Access (LAA)，适合需要�
 |------|------|
 | 官方产品页面 | https://source.sierrawireless.com/devices/em-series/em7511/ |
 | 技术规格书 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41112028-em7511-product-technical-specification-r14.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7511.png" alt="Sierra Wireless EM7511" />
-{{</gallery >}}
 
 ---
 

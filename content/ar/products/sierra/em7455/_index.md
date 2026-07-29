@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 **إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />
+{{</gallery >}}
+
 ## نظرة عامة على المنتج
 
 EM7455 هي وحدة خلوية LTE-Advanced Cat 6 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm MDM9230 وتدعم تجميع الموجات الحاملة 2×20 ميجاهرتز (2×CA) بسرعات تحميل تصل إلى 300 ميجابت/ثانية ورفع يصل إلى 50 ميجابت/ثانية.
@@ -73,10 +77,6 @@ EM7455 هي وحدة خلوية LTE-Advanced Cat 6 من Sierra Wireless. تست�
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/em-series/em7455/ |
 | المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116236-airprime-em7455-product-technical-specification-r15.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />
-{{</gallery >}}
 
 ---
 

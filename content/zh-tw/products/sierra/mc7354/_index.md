@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7354", "Mini PCIe", "IoT"]
 **法律免責聲明**：本產品為蜂窩通訊模組，使用前請確保符合當地法規與電信監理要求。未經授權的修改或使用可能違反法律。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />
+{{</gallery >}}
+
 ## 產品概述
 
 MC7354 是 Sierra Wireless 推出的 LTE-Advanced Cat 4 蜂窩模組，採用 Qualcomm MDM9215 晶片組，支援下載速度最高 150 Mbps，上傳最高 50 Mbps。
@@ -73,10 +77,6 @@ MC7354 適用於工業自動化、交通運輸、智慧電網及基礎設施監�
 |------|------|
 | 官方產品頁面 | https://source.sierrawireless.com/devices/mc-series/mc7354/ |
 | 技術規格書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/4114635_airprime-mc7354-product-technical-specification_r9.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />
-{{</gallery >}}
 
 ---
 

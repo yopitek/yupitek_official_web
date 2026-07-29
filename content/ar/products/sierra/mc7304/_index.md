@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7304", "Mini PCIe", "IoT"]
 **إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />
+{{</gallery >}}
+
 ## نظرة عامة على المنتج
 
 MC7304 هي وحدة خلوية LTE-Advanced Cat 4 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm MDM9215 وتدعم سرعات تحميل تصل إلى 150 ميجابت/ثانية ورفع يصل إلى 50 ميجابت/ثانية.
@@ -73,10 +77,6 @@ MC7304 هي وحدة خلوية LTE-Advanced Cat 4 من Sierra Wireless. تست�
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/mc-series/mc7304/ |
 | المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7304_product_technical_specification_and_customer_design_guidelines_rev12_0.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />
-{{</gallery >}}
 
 ---
 

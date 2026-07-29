@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7511", "SDX20", "M.2"]
 **Aviso Legal**: Este é um módulo de comunicação celular. Certifique-se de cumprir os regulamentos locais e requisitos de telecomunicações antes do uso. Modificação ou uso não autorizado pode violar as leis aplicáveis.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7511.png" alt="Sierra Wireless EM7511" />
+{{</gallery >}}
+
 ## Visão Geral do Produto
 
 O EM7511 é um módulo celular LTE-Advanced Pro Cat 12 da Sierra Wireless. Utiliza o chipset Qualcomm SDX20 e suporta agregação de portadoras 3×20 MHz (3×CA) com velocidades de download de até 600 Mbps e upload de até 150 Mbps.
@@ -74,10 +78,6 @@ O EM7511 suporta bandas LTE globais e License-Assisted Access (LAA), ideal para 
 |------|------|
 | Página oficial do produto | https://source.sierrawireless.com/devices/em-series/em7511/ |
 | Especificações técnicas (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41112028-em7511-product-technical-specification-r14.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7511.png" alt="Sierra Wireless EM7511" />
-{{</gallery >}}
 
 ---
 

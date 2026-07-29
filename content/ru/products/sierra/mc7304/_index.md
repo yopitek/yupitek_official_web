@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7304", "Mini PCIe", "IoT"]
 **Юридическое предупреждение**: Это модуль сотовой связи. Перед использованием убедитесь в соблюдении местных нормативных требований и требований к телекоммуникациям. Несанкционированная модификация или использование может нарушить законодательство.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />
+{{</gallery >}}
+
 ## Обзор продукта
 
 MC7304 — это сотовый модуль LTE-Advanced Cat 4 от Sierra Wireless на чипсете Qualcomm MDM9215, поддерживающий скорость загрузки до 150 Мбит/с и выгрузки до 50 Мбит/с.
@@ -73,10 +77,6 @@ MC7304 поддерживает основные глобальные диапа
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/mc-series/mc7304/ |
 | Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7304_product_technical_specification_and_customer_design_guidelines_rev12_0.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7304.png" alt="Sierra Wireless MC7304" />
-{{</gallery >}}
 
 ---
 

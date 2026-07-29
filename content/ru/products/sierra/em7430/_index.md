@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7430", "IoT", "M.2"]
 **Юридическое предупреждение**: Это модуль сотовой связи. Перед использованием убедитесь в соблюдении местных нормативных требований и требований к телекоммуникациям. Несанкционированная модификация или использование может нарушить законодательство.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7430.png" alt="Sierra Wireless EM7430" />
+{{</gallery >}}
+
 ## Обзор продукта
 
 EM7430 — это сотовый модуль LTE-Advanced Cat 6 от Sierra Wireless на чипсете Qualcomm MDM9230, поддерживающий агрегацию несущих 2×20 МГц (2×CA) со скоростью загрузки до 300 Мбит/с и выгрузки до 50 Мбит/с.
@@ -73,10 +77,6 @@ EM7430 поддерживает основные глобальные диапа
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/em-series/em7430/ |
 | Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116235-airprime-em7430-product-technical-specification-r12.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7430.png" alt="Sierra Wireless EM7430" />
-{{</gallery >}}
 
 ---
 

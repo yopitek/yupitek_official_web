@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7350", "Mini PCIe", "IoT"]
 **Legal Disclaimer**: This is a cellular communication module. Ensure compliance with local regulations and telecommunications requirements before use. Unauthorized modification or use may violate applicable laws.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7350.png" alt="Sierra Wireless MC7350" />
+{{</gallery >}}
+
 ## Product Overview
 
 The MC7350 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
@@ -73,10 +77,6 @@ The MC7350 is certified by major global carriers, making it suitable for industr
 |------|------|
 | Official Product Page | https://source.sierrawireless.com/devices/mc-series/mc7350/ |
 | Technical Specification (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7350_product_technical_specification_and_customer_design_guidelines_rev4_0.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7350.png" alt="Sierra Wireless MC7350" />
-{{</gallery >}}
 
 ---
 

@@ -14,6 +14,10 @@ featureimage: "/images/products/sierra/em9190_hero.jpg"
 **法的免責事項**：本製品はセルラー通信モジュールです。ご使用の前に現地の規制および電気通信要件に準拠していることを確認してください。許可されていない改造や使用は法律違反となる可能性があります。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />
+{{</gallery >}}
+
 ## 製品概要
 
 EM9190 は、Sierra Wireless が提供するフラッグシップ 5G NR Sub-6 セルラーモジュールです。Qualcomm SDX55 チップセットを採用し、5G SA/NSA モードに対応、ダウンロード速度は最大 2.5 Gbps（5G）/ 2.0 Gbps（LTE Cat 22）、アップロードは最大 900 Mbps（5G）です。
@@ -76,10 +80,6 @@ EM9190 は高度な電力管理と放熱設計を備えており、高性能産�
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/em-series/em9190/ |
 | 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />
-{{</gallery >}}
 
 ---
 

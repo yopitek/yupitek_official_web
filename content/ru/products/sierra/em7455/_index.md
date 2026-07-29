@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 **Юридическое предупреждение**: Это модуль сотовой связи. Перед использованием убедитесь в соблюдении местных нормативных требований и требований к телекоммуникациям. Несанкционированная модификация или использование может нарушить законодательство.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />
+{{</gallery >}}
+
 ## Обзор продукта
 
 EM7455 — это сотовый модуль LTE-Advanced Cat 6 от Sierra Wireless на чипсете Qualcomm MDM9230, поддерживающий агрегацию несущих 2×20 МГц (2×CA) со скоростью загрузки до 300 Мбит/с и выгрузки до 50 Мбит/с.
@@ -73,10 +77,6 @@ EM7455 поддерживает основные глобальные диапа
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/em-series/em7455/ |
 | Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116236-airprime-em7455-product-technical-specification-r15.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />
-{{</gallery >}}
 
 ---
 

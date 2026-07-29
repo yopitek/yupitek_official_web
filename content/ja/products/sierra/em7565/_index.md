@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7565", "SDX20", "M.2"]
 **法的免責事項**：本製品はセルラー通信モジュールです。ご使用の前に現地の規制および電気通信要件に準拠していることを確認してください。許可されていない改造や使用は法律違反となる可能性があります。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7565.png" alt="Sierra Wireless EM7565" />
+{{</gallery >}}
+
 ## 製品概要
 
 EM7565 は、Sierra Wireless が提供する LTE-Advanced Pro Cat 12 セルラーモジュールです。Qualcomm SDX20 チップセットを採用し、3×20 MHz キャリアアグリゲーション（3×CA）、DL 256QAM、UL 64QAM に対応、ダウンロード速度は最大 600 Mbps、アップロードは最大 150 Mbps です。
@@ -74,10 +78,6 @@ EM7565 は標準 M.2 3042 Key B パッケージを採用しており、EM7511 �
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/em-series/em7565/ |
 | 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41110788-em7565-product-technical-specification-r16.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7565.png" alt="Sierra Wireless EM7565" />
-{{</gallery >}}
 
 ---
 

@@ -14,6 +14,10 @@ featureimage: "/images/products/sierra/em9191_hero.jpg"
 **Юридическое предупреждение**: Это модуль сотовой связи. Перед использованием убедитесь в соблюдении местных нормативных требований и требований к телекоммуникациям. Несанкционированная модификация или использование может нарушить законодательство.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />
+{{</gallery >}}
+
 ## Обзор продукта
 
 EM9191 — это флагманский сотовый модуль 5G NR от Sierra Wireless на чипсете Qualcomm SDX55, поддерживающий как Sub-6, так и mmWave (n260 39 ГГц / n261 28 ГГц) для наиболее полного покрытия 5G.
@@ -77,10 +81,6 @@ EM9191 поддерживает все диапазоны Sub-6 (как EM9190) 
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/em-series/em9191/ |
 | Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />
-{{</gallery >}}
 
 ---
 

@@ -14,6 +14,10 @@ featureimage: "/images/products/sierra/em9190_hero.jpg"
 **Aviso Legal**: Este é um módulo de comunicação celular. Certifique-se de cumprir os regulamentos locais e requisitos de telecomunicações antes do uso. Modificação ou uso não autorizado pode violar as leis aplicáveis.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />
+{{</gallery >}}
+
 ## Visão Geral do Produto
 
 O EM9190 é o módulo celular 5G NR Sub-6 flagship da Sierra Wireless. Utiliza o chipset Qualcomm SDX55, suporta modos 5G SA/NSA com velocidades de download de até 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) e upload de até 900 Mbps (5G).
@@ -76,10 +80,6 @@ O EM9190 possui gerenciamento avançado de energia e design térmico otimizado, 
 |------|------|
 | Página oficial do produto | https://source.sierrawireless.com/devices/em-series/em9190/ |
 | Especificações técnicas (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />
-{{</gallery >}}
 
 ---
 

@@ -14,6 +14,10 @@ featureimage: "/images/products/sierra/em9191_hero.jpg"
 **Avis de non-responsabilité légal** : Ce module de communication cellulaire. Assurez-vous de respecter les réglementations locales et les exigences en matière de télécommunications avant utilisation. Toute modification ou utilisation non autorisée peut enfreindre les lois applicables.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />
+{{</gallery >}}
+
 ## Présentation du produit
 
 L'EM9191 est le module cellulaire 5G NR phare de Sierra Wireless. Il est équipé du chipset Qualcomm SDX55, prenant en charge à la fois le Sub-6 et le mmWave (n260 39GHz / n261 28GHz) pour la couverture 5G la plus complète.
@@ -77,10 +81,6 @@ L'EM9191 prend en charge toutes les bandes Sub-6 (comme l'EM9190) plus les bande
 |------|------|
 | Page officielle du produit | https://source.sierrawireless.com/devices/em-series/em9191/ |
 | Fiche technique (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />
-{{</gallery >}}
 
 ---
 

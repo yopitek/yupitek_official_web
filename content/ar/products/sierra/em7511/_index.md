@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7511", "SDX20", "M.2"]
 **إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7511.png" alt="Sierra Wireless EM7511" />
+{{</gallery >}}
+
 ## نظرة عامة على المنتج
 
 EM7511 هي وحدة خلوية LTE-Advanced Pro Cat 12 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm SDX20 وتدعم تجميع الموجات الحاملة 3×20 ميجاهرتز (3×CA) بسرعات تحميل تصل إلى 600 ميجابت/ثانية ورفع يصل إلى 150 ميجابت/ثانية.
@@ -74,10 +78,6 @@ EM7511 هي وحدة خلوية LTE-Advanced Pro Cat 12 من Sierra Wireless. ت
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/em-series/em7511/ |
 | المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41112028-em7511-product-technical-specification-r14.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7511.png" alt="Sierra Wireless EM7511" />
-{{</gallery >}}
 
 ---
 

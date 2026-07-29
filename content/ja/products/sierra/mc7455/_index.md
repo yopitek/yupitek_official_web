@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "MC7455", "Mini PCIe", "IoT"]
 **法的免責事項**：本製品はセルラー通信モジュールです。ご使用の前に現地の規制および電気通信要件に準拠していることを確認してください。許可されていない改造や使用は法律違反となる可能性があります。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7455.png" alt="Sierra Wireless MC7455" />
+{{</gallery >}}
+
 ## 製品概要
 
 MC7455 は、Sierra Wireless が提供する LTE-Advanced Cat 6 セルラーモジュールです。Qualcomm MDM9230 チップセットを採用し、2×20 MHz キャリアアグリゲーション（2×CA）に対応、ダウンロード速度は最大 300 Mbps、アップロードは最大 50 Mbps です。
@@ -73,10 +77,6 @@ MC7455 はグローバル主要 LTE 周波数帯と FirstNet B14 に対応して
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/mc-series/mc7455/ |
 | 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116238-mc7455-pts-r15.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7455.png" alt="Sierra Wireless MC7455" />
-{{</gallery >}}
 
 ---
 

@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7350", "Mini PCIe", "IoT"]
 **法的免責事項**：本製品はセルラー通信モジュールです。ご使用の前に現地の規制および電気通信要件に準拠していることを確認してください。許可されていない改造や使用は法律違反となる可能性があります。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7350.png" alt="Sierra Wireless MC7350" />
+{{</gallery >}}
+
 ## 製品概要
 
 MC7350 は、Sierra Wireless が提供する LTE-Advanced Cat 4 セルラーモジュールです。Qualcomm MDM9215 チップセットを採用し、ダウンロード速度は最大 150 Mbps、アップロードは最大 50 Mbps です。
@@ -73,10 +77,6 @@ MC7350 は世界各国の主要通信事業者から認証を取得しており�
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/mc-series/mc7350/ |
 | 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7350_product_technical_specification_and_customer_design_guidelines_rev4_0.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7350.png" alt="Sierra Wireless MC7350" />
-{{</gallery >}}
 
 ---
 

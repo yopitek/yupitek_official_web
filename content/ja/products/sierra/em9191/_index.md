@@ -14,6 +14,10 @@ featureimage: "/images/products/sierra/em9191_hero.jpg"
 **法的免責事項**：本製品はセルラー通信モジュールです。ご使用の前に現地の規制および電気通信要件に準拠していることを確認してください。許可されていない改造や使用は法律違反となる可能性があります。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />
+{{</gallery >}}
+
 ## 製品概要
 
 EM9191 は、Sierra Wireless が提供するフラッグシップ 5G NR セルラーモジュールです。Qualcomm SDX55 チップセットを採用し、Sub-6 と mmWave（n260 39GHz / n261 28GHz）の両方に対応、最も包括的な 5G カバレッジを提供します。
@@ -77,10 +81,6 @@ EM9191 は EM9190 と同様のすべての Sub-6 周波数帯に加え、mmWave 
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/em-series/em9191/ |
 | 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />
-{{</gallery >}}
 
 ---
 

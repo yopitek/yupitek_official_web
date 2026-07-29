@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7565", "SDX20", "M.2"]
 **إخلاء المسؤولية القانوني**: هذه وحدة اتصالات خلوية. تأكد من الامتثال للوائح المحلية ومتطلبات الاتصالات قبل الاستخدام. قد يؤدي التعديل أو الاستخدام غير المصرح به إلى انتهاك القوانين.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7565.png" alt="Sierra Wireless EM7565" />
+{{</gallery >}}
+
 ## نظرة عامة على المنتج
 
 EM7565 هي وحدة خلوية LTE-Advanced Pro Cat 12 من Sierra Wireless. تستخدم مجموعة شرائح Qualcomm SDX20 وتدعم تجميع الموجات الحاملة 3×20 ميجاهرتز (3×CA) و DL 256QAM و UL 64QAM بسرعات تحميل تصل إلى 600 ميجابت/ثانية ورفع يصل إلى 150 ميجابت/ثانية.
@@ -74,10 +78,6 @@ EM7565 هي وحدة خلوية LTE-Advanced Pro Cat 12 من Sierra Wireless. ت
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/em-series/em7565/ |
 | المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41110788-em7565-product-technical-specification-r16.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7565.png" alt="Sierra Wireless EM7565" />
-{{</gallery >}}
 
 ---
 

@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 **法的免責事項**：本製品はセルラー通信モジュールです。ご使用の前に現地の規制および電気通信要件に準拠していることを確認してください。許可されていない改造や使用は法律違反となる可能性があります。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />
+{{</gallery >}}
+
 ## 製品概要
 
 EM7455 は、Sierra Wireless が提供する LTE-Advanced Cat 6 セルラーモジュールです。Qualcomm MDM9230 チップセットを採用し、2×20 MHz キャリアアグリゲーション（2×CA）に対応、ダウンロード速度は最大 300 Mbps、アップロードは最大 50 Mbps です。
@@ -73,10 +77,6 @@ EM7455 はグローバル主要 LTE 周波数帯（B1–5/7/8/12/13/14/20/25/26/
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/em-series/em7455/ |
 | 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116236-airprime-em7455-product-technical-specification-r15.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />
-{{</gallery >}}
 
 ---
 

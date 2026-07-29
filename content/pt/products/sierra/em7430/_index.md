@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7430", "IoT", "M.2"]
 **Aviso Legal**: Este é um módulo de comunicação celular. Certifique-se de cumprir os regulamentos locais e requisitos de telecomunicações antes do uso. Modificação ou uso não autorizado pode violar as leis aplicáveis.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7430.png" alt="Sierra Wireless EM7430" />
+{{</gallery >}}
+
 ## Visão Geral do Produto
 
 O EM7430 é um módulo celular LTE-Advanced Cat 6 da Sierra Wireless. Utiliza o chipset Qualcomm MDM9230 e suporta agregação de portadoras 2×20 MHz (2×CA) com velocidades de download de até 300 Mbps e upload de até 50 Mbps.
@@ -73,10 +77,6 @@ O EM7430 suporta as principais bandas LTE globais (B1–5/7/8/12/13/20/25/26/29/
 |------|------|
 | Página oficial do produto | https://source.sierrawireless.com/devices/em-series/em7430/ |
 | Especificações técnicas (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116235-airprime-em7430-product-technical-specification-r12.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7430.png" alt="Sierra Wireless EM7430" />
-{{</gallery >}}
 
 ---
 

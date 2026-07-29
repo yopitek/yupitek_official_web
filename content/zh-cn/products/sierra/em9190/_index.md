@@ -14,6 +14,10 @@ featureimage: "/images/products/sierra/em9190_hero.jpg"
 **法律免责声明**：本产品为蜂窝通讯模块，使用前请确保符合当地法规与电信监管要求。未经授权的修改或使用可能违反法律。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />
+{{</gallery >}}
+
 ## 产品概述
 
 EM9190 是 Sierra Wireless 推出的旗舰级 5G NR Sub-6 蜂窝模组，采用 Qualcomm SDX55 芯片组，支持 5G SA/NSA 模式，下载速度最高可达 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22)，上传最高 900 Mbps (5G)。
@@ -76,10 +80,6 @@ EM9190 搭载先进的功率管理与散热设计，适用于高效能工业路�
 |------|------|
 | 官方产品页面 | https://source.sierrawireless.com/devices/em-series/em9190/ |
 | 技术规格书 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />
-{{</gallery >}}
 
 ---
 

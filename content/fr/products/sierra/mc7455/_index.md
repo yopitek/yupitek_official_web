@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "MC7455", "Mini PCIe", "IoT"]
 **Avis de non-responsabilité légal** : Ce module de communication cellulaire. Assurez-vous de respecter les réglementations locales et les exigences en matière de télécommunications avant utilisation. Toute modification ou utilisation non autorisée peut enfreindre les lois applicables.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7455.png" alt="Sierra Wireless MC7455" />
+{{</gallery >}}
+
 ## Présentation du produit
 
 Le MC7455 est un module cellulaire LTE-Advanced Cat 6 de Sierra Wireless. Il est équipé du chipset Qualcomm MDM9230 et prend en charge l'agrégation de porteuses 2×20 MHz (2×CA) avec des vitesses de téléchargement allant jusqu'à 300 Mbps et un upload jusqu'à 50 Mbps.
@@ -73,10 +77,6 @@ Le MC7455 prend en charge les principales bandes LTE mondiales, y compris FirstN
 |------|------|
 | Page officielle du produit | https://source.sierrawireless.com/devices/mc-series/mc7455/ |
 | Fiche technique (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116238-mc7455-pts-r15.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7455.png" alt="Sierra Wireless MC7455" />
-{{</gallery >}}
 
 ---
 

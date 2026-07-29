@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7430", "IoT", "M.2"]
 **法律免责声明**：本产品为蜂窝通讯模块，使用前请确保符合当地法规与电信监管要求。未经授权的修改或使用可能违反法律。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7430.png" alt="Sierra Wireless EM7430" />
+{{</gallery >}}
+
 ## 产品概述
 
 EM7430 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窝模组，采用 Qualcomm MDM9230 芯片组，支持 2×20 MHz 载波聚合 (2×CA)，下载速度最高可达 300 Mbps，上传最高 50 Mbps。
@@ -73,10 +77,6 @@ EM7430 支持全球主要 LTE 频段 (B1–5/7/8/12/13/20/25/26/29/30/41)，适�
 |------|------|
 | 官方产品页面 | https://source.sierrawireless.com/devices/em-series/em7430/ |
 | 技术规格书 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116235-airprime-em7430-product-technical-specification-r12.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7430.png" alt="Sierra Wireless EM7430" />
-{{</gallery >}}
 
 ---
 

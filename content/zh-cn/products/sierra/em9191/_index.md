@@ -14,6 +14,10 @@ featureimage: "/images/products/sierra/em9191_hero.jpg"
 **法律免责声明**：本产品为蜂窝通讯模块，使用前请确保符合当地法规与电信监管要求。未经授权的修改或使用可能违反法律。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />
+{{</gallery >}}
+
 ## 产品概述
 
 EM9191 是 Sierra Wireless 推出的旗舰级 5G NR 蜂窝模组，采用 Qualcomm SDX55 芯片组，同時支持 Sub-6 与 mmWave (n260 39GHz / n261 28GHz)，提供最全面的 5G 覆盖。
@@ -77,10 +81,6 @@ EM9191 支持所有 Sub-6 频段 (同 EM9190) 加上 mmWave 高频频段，搭�
 |------|------|
 | 官方产品页面 | https://source.sierrawireless.com/devices/em-series/em9191/ |
 | 技术规格书 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />
-{{</gallery >}}
 
 ---
 

@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7354", "Mini PCIe", "IoT"]
 **法的免責事項**：本製品はセルラー通信モジュールです。ご使用の前に現地の規制および電気通信要件に準拠していることを確認してください。許可されていない改造や使用は法律違反となる可能性があります。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />
+{{</gallery >}}
+
 ## 製品概要
 
 MC7354 は、Sierra Wireless が提供する LTE-Advanced Cat 4 セルラーモジュールです。Qualcomm MDM9215 チップセットを採用し、ダウンロード速度は最大 150 Mbps、アップロードは最大 50 Mbps です。
@@ -73,10 +77,6 @@ MC7354 は、安定した LTE 接続を必要とする産業オートメーシ�
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/mc-series/mc7354/ |
 | 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/4114635_airprime-mc7354-product-technical-specification_r9.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7354.png" alt="Sierra Wireless MC7354" />
-{{</gallery >}}
 
 ---
 

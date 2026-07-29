@@ -14,6 +14,10 @@ featureimage: "/images/products/sierra/em9191_hero.jpg"
 **Rechtlicher Hinweis**: Dies ist ein Mobilfunkmodul. Stellen Sie vor der Verwendung die Einhaltung der örtlichen Vorschriften und Telekommunikationsanforderungen sicher. Unbefugte Änderungen oder Nutzung können gegen geltendes Recht verstoßen.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />
+{{</gallery >}}
+
 ## Produktübersicht
 
 Das EM9191 ist das Flaggschiff-5G-NR-Mobilfunkmodul von Sierra Wireless. Es verwendet den Qualcomm SDX55 Chipsatz, der sowohl Sub-6 als auch mmWave (n260 39GHz / n261 28GHz) unterstützt und damit die umfassendste 5G-Abdeckung bietet.
@@ -77,10 +81,6 @@ Das EM9191 unterstützt alle Sub-6-Bänder (wie das EM9190) plus mmWave-Hochfreq
 |------|------|
 | Offizielle Produktseite | https://source.sierrawireless.com/devices/em-series/em9191/ |
 | Technisches Datenblatt (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em9191.png" alt="Sierra Wireless EM9191" />
-{{</gallery >}}
 
 ---
 

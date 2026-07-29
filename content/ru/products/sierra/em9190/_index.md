@@ -14,6 +14,10 @@ featureimage: "/images/products/sierra/em9190_hero.jpg"
 **Юридическое предупреждение**: Это модуль сотовой связи. Перед использованием убедитесь в соблюдении местных нормативных требований и требований к телекоммуникациям. Несанкционированная модификация или использование может нарушить законодательство.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />
+{{</gallery >}}
+
 ## Обзор продукта
 
 EM9190 — это флагманский сотовый модуль 5G NR Sub-6 от Sierra Wireless на чипсете Qualcomm SDX55, поддерживающий режимы 5G SA/NSA со скоростью загрузки до 2.5 Гбит/с (5G) / 2.0 Гбит/с (LTE Cat 22) и выгрузки до 900 Мбит/с (5G).
@@ -76,10 +80,6 @@ EM9190 оснащен передовым управлением питанием
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/em-series/em9190/ |
 | Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em9190.png" alt="Sierra Wireless EM9190" />
-{{</gallery >}}
 
 ---
 

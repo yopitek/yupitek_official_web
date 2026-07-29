@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 **法律免責聲明**：本產品為蜂窩通訊模組，使用前請確保符合當地法規與電信監理要求。未經授權的修改或使用可能違反法律。
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />
+{{</gallery >}}
+
 ## 產品概述
 
 EM7455 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窩模組，採用 Qualcomm MDM9230 晶片組，支援 2×20 MHz 載波聚合 (2×CA)，下載速度最高可達 300 Mbps，上傳最高 50 Mbps。
@@ -73,10 +77,6 @@ EM7455 支援全球主要 LTE 頻段 (B1–5/7/8/12/13/14/20/25/26/29/30/41)，�
 |------|------|
 | 官方產品頁面 | https://source.sierrawireless.com/devices/em-series/em7455/ |
 | 技術規格書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116236-airprime-em7455-product-technical-specification-r15.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/em7455.png" alt="Sierra Wireless EM7455" />
-{{</gallery >}}
 
 ---
 

@@ -13,6 +13,10 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7350", "Mini PCIe", "IoT"]
 **Юридическое предупреждение**: Это модуль сотовой связи. Перед использованием убедитесь в соблюдении местных нормативных требований и требований к телекоммуникациям. Несанкционированная модификация или использование может нарушить законодательство.
 {{</alert >}}
 
+{{< gallery >}}
+  <img src="/images/products/sierra/mc7350.png" alt="Sierra Wireless MC7350" />
+{{</gallery >}}
+
 ## Обзор продукта
 
 MC7350 — это сотовый модуль LTE-Advanced Cat 4 от Sierra Wireless на чипсете Qualcomm MDM9215, поддерживающий скорость загрузки до 150 Мбит/с и выгрузки до 50 Мбит/с.
@@ -73,10 +77,6 @@ MC7350 сертифицирован ведущими мировыми опера
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/mc-series/mc7350/ |
 | Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7350_product_technical_specification_and_customer_design_guidelines_rev4_0.ashx |
-
-{{< gallery >}}
-  <img src="/images/products/sierra/mc7350.png" alt="Sierra Wireless MC7350" />
-{{</gallery >}}
 
 ---
 

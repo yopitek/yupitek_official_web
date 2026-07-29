@@ -3538,6 +3538,10 @@ tags: [{tags_str}]
 {legal_text}
 {{{{</alert >}}}}
 
+{{{{< gallery >}}}}
+  <img src="/images/products/sierra/{model}.png" alt="Sierra Wireless {model.upper()}" />
+{{{{</gallery >}}}}
+
 ## {h['產品概述']}
 
 {overview}
@@ -3565,10 +3569,6 @@ tags: [{tags_str}]
 | {translate_text("資源", lang) if lang != "zh-tw" else "資源"} | {translate_text("連結", lang) if lang != "zh-tw" else "連結"} |
 |------|------|
 {res_table}
-
-{{{{< gallery >}}}}
-  <img src="/images/products/sierra/{model}.png" alt="Sierra Wireless {model.upper()}" />
-{{{{</gallery >}}}}
 
 ---
 

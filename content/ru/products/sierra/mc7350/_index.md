@@ -48,7 +48,7 @@ The MC7350 is certified by major global carriers, making it suitable for industr
 | Вес | 8.5 g |
 | Рабочая температура | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS |
-| Регион | 全球 (多頻段) |
+| Регион | Глобальный (Многодиапазонный) |
 | Напряжение питания | 3.135V ~ 4.4V |
 | Антенный интерфейс | 2 × IPEX MHF4 |
 | Обновление прошивки | USB / FOTA |
@@ -64,7 +64,7 @@ The MC7350 is certified by major global carriers, making it suitable for industr
 
 ## Комплектация
 
-- 1 × MC7350 蜂窩模組
+- 1 × MC7350 Сотовый модуль
 - 1 × Пакет документации
 
 ## Ресурсы и ссылки

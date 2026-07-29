@@ -49,7 +49,7 @@ The EM9190 features advanced power management and thermal design, suitable for h
 | Gewicht | 7.2 g |
 | Betriebstemperatur | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou / Galileo / QZSS |
-| Region | 全球 (多頻段) |
+| Region | Global (Multiband) |
 | Versorgungsspannung | 3.135V ~ 4.4V |
 | Antennenschnittstelle | 4 × IPEX MHF4 |
 | Firmware-Update | USB / FOTA |
@@ -66,7 +66,7 @@ The EM9190 features advanced power management and thermal design, suitable for h
 
 ## Lieferumfang
 
-- 1 × EM9190 蜂窩模組
+- 1 × EM9190 Mobilfunkmodul
 - 1 × Dokumentationspaket
 
 ## Ressourcen und Links

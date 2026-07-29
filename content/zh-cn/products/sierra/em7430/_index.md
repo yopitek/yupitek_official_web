@@ -1,6 +1,6 @@
 ---
 title: "EM7430 LTE-A Cat 6 蜂窝模块"
-description: "EM7430 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, M.2 form factor, ideal for industrial IoT and M2M applications."
+description: "EM7430 采用 Qualcomm MDM9230 芯片组，支持 LTE-A Cat 6 高达 300 Mbps 下载速度，M.2 封装，适用于工业路由器与闸道器。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,11 +15,11 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7430", "IoT", "M.2"]
 
 ## 产品概述
 
-The EM7430 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+EM7430 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窝模组，采用 Qualcomm MDM9230 芯片组，支持 2×20 MHz 载波聚合 (2×CA)，下载速度最高可达 300 Mbps，上传最高 50 Mbps。
 
-This module uses a standard M.2 3042 Key B form factor, ideal for industrial routers, IoT gateways, mobile hotspots, and video surveillance applications. It supports USB 3.0 and PCIe Gen2 interfaces for flexible system integration.
+此模组采用标准 M.2 3042 Key B 封装，适用于工业路由器、物聯网闸道器、行动热点及视讯监控等应用。支持 USB 3.0 及 PCIe Gen2 介面，提供灵活的系统集成方案。
 
-The EM7430 supports major global LTE bands (B1–5/7/8/12/13/20/25/26/29/30/41), making it suitable for IoT devices and M2M terminals deployed worldwide.
+EM7430 支持全球主要 LTE 频段 (B1–5/7/8/12/13/20/25/26/29/30/41)，适合于世界各地部署的 IoT 设備与 M2M 终端。
 
 ## 主要特点
 
@@ -48,7 +48,7 @@ The EM7430 supports major global LTE bands (B1–5/7/8/12/13/20/25/26/29/30/41),
 | 重量 | 6.5 g |
 | 工作温度 | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou |
-| 地区 | 全球 (多頻段) |
+| 地区 | 全球 (多频段) |
 | 供电电压 | 3.135V ~ 4.4V |
 | 天线接口 | 4 × IPEX MHF4 |
 | 固件更新 | USB / FOTA |
@@ -64,7 +64,7 @@ The EM7430 supports major global LTE bands (B1–5/7/8/12/13/20/25/26/29/30/41),
 
 ## 包装内容
 
-- 1 × EM7430 蜂窩模組
+- 1 × EM7430 蜂窝模块
 - 1 × 文件包装
 
 ## 资源与链接

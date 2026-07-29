@@ -48,7 +48,7 @@ It supports major global LTE bands including B14 FirstNet and B71 600 MHz, suita
 | Peso | 6.8 g |
 | Temperatura de Operación | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou / Galileo |
-| Región | 全球 (多頻段) |
+| Región | Global (Multibanda) |
 | Voltaje de Alimentación | 3.135V ~ 4.4V |
 | Interfaz de Antena | 4 × IPEX MHF4 |
 | Actualización de Firmware | USB / FOTA |
@@ -65,7 +65,7 @@ It supports major global LTE bands including B14 FirstNet and B71 600 MHz, suita
 
 ## Contenido del Paquete
 
-- 1 × EM7565 蜂窩模組
+- 1 × EM7565 Módulo Celular
 - 1 × Paquete de documentación
 
 ## Recursos y Enlaces

@@ -48,7 +48,7 @@ The MC7304 supports major global LTE bands, widely deployed in industrial gatewa
 | Weight | 8.5 g |
 | Operating Temperature | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS |
-| Region | 全球 (多頻段) |
+| Region | Global (Multi-band) |
 | Supply Voltage | 3.135V ~ 4.4V |
 | Antenna Interface | 2 × IPEX MHF4 |
 | Firmware Update | USB / FOTA |
@@ -64,7 +64,7 @@ The MC7304 supports major global LTE bands, widely deployed in industrial gatewa
 
 ## Package Contents
 
-- 1 × MC7304 蜂窩模組
+- 1 × MC7304 Cellular Module
 - 1 × Documentation pack
 
 ## Resources & Links

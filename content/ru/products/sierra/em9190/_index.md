@@ -49,7 +49,7 @@ The EM9190 features advanced power management and thermal design, suitable for h
 | Вес | 7.2 g |
 | Рабочая температура | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou / Galileo / QZSS |
-| Регион | 全球 (多頻段) |
+| Регион | Глобальный (Многодиапазонный) |
 | Напряжение питания | 3.135V ~ 4.4V |
 | Антенный интерфейс | 4 × IPEX MHF4 |
 | Обновление прошивки | USB / FOTA |
@@ -66,7 +66,7 @@ The EM9190 features advanced power management and thermal design, suitable for h
 
 ## Комплектация
 
-- 1 × EM9190 蜂窩模組
+- 1 × EM9190 Сотовый модуль
 - 1 × Пакет документации
 
 ## Ресурсы и ссылки

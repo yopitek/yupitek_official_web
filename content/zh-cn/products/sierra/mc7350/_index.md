@@ -1,6 +1,6 @@
 ---
 title: "MC7350 LTE-A Cat 4 蜂窝模块"
-description: "MC7350 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor with broad global carrier certification."
+description: "MC7350 采用 Qualcomm MDM9215 芯片组，支持 LTE-A Cat 4 150 Mbps，Mini PCIe 封装，适用于全球佈署的 IoT 应用。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,11 +15,11 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7350", "Mini PCIe", "IoT"]
 
 ## 产品概述
 
-The MC7350 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+MC7350 是 Sierra Wireless 推出的 LTE-Advanced Cat 4 蜂窝模组，采用 Qualcomm MDM9215 芯片组，支持下载速度最高 150 Mbps，上传最高 50 Mbps。
 
-This module uses a standard Mini PCIe Full Size form factor. The MC7350 is in the same family as the MC7304 but features broader global band support by default. It supports USB 2.0, UART, and SPI interfaces.
+此模组采用标准 Mini PCIe Full Size 封装。MC7350 与 MC7304 同系列，预设支持更廣泛的全球频段组合。支持 USB 2.0、UART 及 SPI 介面。
 
-The MC7350 is certified by major global carriers, making it suitable for industrial routers, asset tracking, smart meters, and remote healthcare devices.
+MC7350 經過全球各主要電信业者的认证，适用于工业路由器、資产追蹤、智慧電表与遠端醫療设備。
 
 ## 主要特点
 
@@ -48,7 +48,7 @@ The MC7350 is certified by major global carriers, making it suitable for industr
 | 重量 | 8.5 g |
 | 工作温度 | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS |
-| 地区 | 全球 (多頻段) |
+| 地区 | 全球 (多频段) |
 | 供电电压 | 3.135V ~ 4.4V |
 | 天线接口 | 2 × IPEX MHF4 |
 | 固件更新 | USB / FOTA |
@@ -64,7 +64,7 @@ The MC7350 is certified by major global carriers, making it suitable for industr
 
 ## 包装内容
 
-- 1 × MC7350 蜂窩模組
+- 1 × MC7350 蜂窝模块
 - 1 × 文件包装
 
 ## 资源与链接

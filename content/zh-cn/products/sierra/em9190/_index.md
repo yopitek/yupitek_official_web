@@ -1,6 +1,6 @@
 ---
 title: "EM9190 5G NR Sub-6 蜂窝模块"
-description: "EM9190 5G NR Sub-6 cellular module with Qualcomm SDX55, 2.5 Gbps download, M.2 form factor for next-generation industrial and 5G applications."
+description: "EM9190 采用 Qualcomm SDX55 芯片组，支持 5G NR Sub-6 高达 2.5 Gbps 与 LTE Cat 22，M.2 封装，适用于次世代工业应用。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,11 +15,11 @@ tags: ["5G", "Sub-6", "Cellular", "Module", "EM9190", "SDX55", "M.2", "IoT"]
 
 ## 产品概述
 
-The EM9190 is Sierra Wireless' flagship 5G NR Sub-6 cellular module, powered by the Qualcomm SDX55 chipset, supporting 5G SA/NSA modes with download speeds up to 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) and upload up to 900 Mbps (5G).
+EM9190 是 Sierra Wireless 推出的旗舰级 5G NR Sub-6 蜂窝模组，采用 Qualcomm SDX55 芯片组，支持 5G SA/NSA 模式，下载速度最高可达 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22)，上传最高 900 Mbps (5G)。
 
-This module supports Category 22 LTE (8×CA) with extensive 5G NR Sub-6 band coverage including n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79. It uses a standard M.2 3042 Key B form factor for complete 5G connectivity.
+此模组支持类別 22 LTE (8×CA) 与廣泛的 5G NR Sub-6 频段，涵蓋 n1/2/3/5/7/8/12/20/25/28/38/41/48/66/71/77/78/79。采用标准 M.2 3042 Key B 封装，提供完整的 5G 连线能力。
 
-The EM9190 features advanced power management and thermal design, suitable for high-performance industrial routers, CPE, enterprise gateways, and 5G mobile hotspots.
+EM9190 搭载先进的功率管理与散热设計，适用于高效能工业路由器、CPE、企业级闸道器与 5G 行动热点。
 
 ## 主要特点
 
@@ -49,7 +49,7 @@ The EM9190 features advanced power management and thermal design, suitable for h
 | 重量 | 7.2 g |
 | 工作温度 | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou / Galileo / QZSS |
-| 地区 | 全球 (多頻段) |
+| 地区 | 全球 (多频段) |
 | 供电电压 | 3.135V ~ 4.4V |
 | 天线接口 | 4 × IPEX MHF4 |
 | 固件更新 | USB / FOTA |
@@ -66,7 +66,7 @@ The EM9190 features advanced power management and thermal design, suitable for h
 
 ## 包装内容
 
-- 1 × EM9190 蜂窩模組
+- 1 × EM9190 蜂窝模块
 - 1 × 文件包装
 
 ## 资源与链接

@@ -1,6 +1,6 @@
 ---
 title: "MC7455 LTE-A Cat 6 蜂窝模块"
-description: "MC7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Mini PCIe form factor for high-performance industrial and vehicle communication systems."
+description: "MC7455 采用 Qualcomm MDM9230 芯片组，支持 LTE-A Cat 6 300 Mbps，Mini PCIe 封装，适用于高效能工业应用。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,11 +15,11 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "MC7455", "Mini PCIe", "IoT"]
 
 ## 产品概述
 
-The MC7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+MC7455 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窝模组，采用 Qualcomm MDM9230 芯片组，支持 2×20 MHz 载波聚合 (2×CA)，下载速度最高可达 300 Mbps，上传最高 50 Mbps。
 
-This module uses a standard Mini PCIe Full Size form factor and is the highest-performing model in the MC series. It supports USB 3.0, UART, and SPI interfaces for fast data throughput.
+此模组采用标准 Mini PCIe Full Size 封装，是 MC 系列中最高階的型号。支持 USB 3.0、UART 及 SPI 介面，提供快速的資料传輸能力。
 
-The MC7455 supports major global LTE bands including FirstNet B14, widely deployed in high-performance industrial routers, vehicle communication systems, private network base stations, and enterprise connectivity solutions.
+MC7455 支持全球主要 LTE 频段与 FirstNet B14，廣泛应用于高效能工业路由器、車载通讯系统、专网基地台及企业级连网解決方案。
 
 ## 主要特点
 
@@ -48,7 +48,7 @@ The MC7455 supports major global LTE bands including FirstNet B14, widely deploy
 | 重量 | 8.8 g |
 | 工作温度 | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou |
-| 地区 | 全球 (多頻段) |
+| 地区 | 全球 (多频段) |
 | 供电电压 | 3.135V ~ 4.4V |
 | 天线接口 | 4 × IPEX MHF4 |
 | 固件更新 | USB / FOTA |
@@ -64,7 +64,7 @@ The MC7455 supports major global LTE bands including FirstNet B14, widely deploy
 
 ## 包装内容
 
-- 1 × MC7455 蜂窩模組
+- 1 × MC7455 蜂窝模块
 - 2 × 文件包装
 
 ## 资源与链接

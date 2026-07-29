@@ -50,7 +50,7 @@ The EM9191 supports all Sub-6 bands (same as EM9190) plus mmWave high-frequency 
 | 重量 | 7.2 g |
 | 動作温度 | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou / Galileo / QZSS |
-| 地域 | 全球 (多頻段) |
+| 地域 | グローバル (マルチバンド) |
 | 供給電圧 | 3.135V ~ 4.4V |
 | アンテナインターフェース | 6 × IPEX MHF4 |
 | ファームウェア更新 | USB / FOTA |
@@ -67,7 +67,7 @@ The EM9191 supports all Sub-6 bands (same as EM9190) plus mmWave high-frequency 
 
 ## 同梱内容
 
-- 1 × EM9191 蜂窩模組
+- 1 × EM9191 セルラーモジュール
 - 1 × ドキュメントパック
 
 ## リソースとリンク

@@ -1,6 +1,6 @@
 ---
 title: "MC7354 LTE-A Cat 4 蜂窝模块"
-description: "MC7354 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor optimized for regional carrier band combinations."
+description: "MC7354 采用 Qualcomm MDM9215 芯片组，支持 LTE-A Cat 4 150 Mbps，Mini PCIe 封装，适用于工业 IoT 与 M2M 通讯。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,11 +15,11 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7354", "Mini PCIe", "IoT"]
 
 ## 产品概述
 
-The MC7354 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+MC7354 是 Sierra Wireless 推出的 LTE-Advanced Cat 4 蜂窝模组，采用 Qualcomm MDM9215 芯片组，支持下载速度最高 150 Mbps，上传最高 50 Mbps。
 
-This module uses a standard Mini PCIe Full Size form factor. The MC7354 differs from other MC series modules in its specific band combination support, optimized for particular regional carrier networks. It supports USB 2.0, UART, and SPI interfaces.
+此模组采用标准 Mini PCIe Full Size 封装。MC7354 主要差异在于其支持的特定频段组合，适用于特定區域的運營商网路。支持 USB 2.0、UART 及 SPI 介面。
 
-The MC7354 is ideal for industrial automation, transportation, smart grid, and infrastructure monitoring applications requiring reliable LTE connectivity.
+MC7354 适用于工业自动化、交通運輸、智慧電网及基礎设施监控等需要稳定 LTE 连线的产业应用。
 
 ## 主要特点
 
@@ -48,7 +48,7 @@ The MC7354 is ideal for industrial automation, transportation, smart grid, and i
 | 重量 | 8.5 g |
 | 工作温度 | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS |
-| 地区 | 全球 (多頻段) |
+| 地区 | 全球 (多频段) |
 | 供电电压 | 3.135V ~ 4.4V |
 | 天线接口 | 2 × IPEX MHF4 |
 | 固件更新 | USB / FOTA |
@@ -64,7 +64,7 @@ The MC7354 is ideal for industrial automation, transportation, smart grid, and i
 
 ## 包装内容
 
-- 1 × MC7354 蜂窩模組
+- 1 × MC7354 蜂窝模块
 - 1 × 文件包装
 
 ## 资源与链接

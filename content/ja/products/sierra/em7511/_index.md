@@ -48,7 +48,7 @@ The EM7511 supports global LTE bands and License-Assisted Access (LAA), ideal fo
 | 重量 | 6.8 g |
 | 動作温度 | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou / Galileo |
-| 地域 | 全球 (多頻段) |
+| 地域 | グローバル (マルチバンド) |
 | 供給電圧 | 3.135V ~ 4.4V |
 | アンテナインターフェース | 4 × IPEX MHF4 |
 | ファームウェア更新 | USB / FOTA |
@@ -65,7 +65,7 @@ The EM7511 supports global LTE bands and License-Assisted Access (LAA), ideal fo
 
 ## 同梱内容
 
-- 1 × EM7511 蜂窩模組
+- 1 × EM7511 セルラーモジュール
 - 1 × ドキュメントパック
 
 ## リソースとリンク

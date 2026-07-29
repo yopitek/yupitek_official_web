@@ -48,7 +48,7 @@ The MC7455 supports major global LTE bands including FirstNet B14, widely deploy
 | Вес | 8.8 g |
 | Рабочая температура | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou |
-| Регион | 全球 (多頻段) |
+| Регион | Глобальный (Многодиапазонный) |
 | Напряжение питания | 3.135V ~ 4.4V |
 | Антенный интерфейс | 4 × IPEX MHF4 |
 | Обновление прошивки | USB / FOTA |
@@ -64,7 +64,7 @@ The MC7455 supports major global LTE bands including FirstNet B14, widely deploy
 
 ## Комплектация
 
-- 1 × MC7455 蜂窩模組
+- 1 × MC7455 Сотовый модуль
 - 2 × Пакет документации
 
 ## Ресурсы и ссылки

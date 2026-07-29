@@ -48,7 +48,7 @@ The EM7455 supports major global LTE bands (B1–5/7/8/12/13/14/20/25/26/29/30/4
 | Poids | 6.5 g |
 | Température de fonctionnement | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou |
-| Région | 全球 (含 B14 FirstNet) |
+| Région | Monde (avec B14 FirstNet) |
 | Tension d'alimentation | 3.135V ~ 4.4V |
 | Interface antenne | 4 × IPEX MHF4 |
 | Mise à jour du firmware | USB / FOTA |
@@ -64,7 +64,7 @@ The EM7455 supports major global LTE bands (B1–5/7/8/12/13/14/20/25/26/29/30/4
 
 ## Contenu de l'emballage
 
-- 1 × EM7455 蜂窩模組
+- 1 × EM7455 Module cellulaire
 - 1 × Pack de documentation
 
 ## Ressources et liens

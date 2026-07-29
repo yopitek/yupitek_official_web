@@ -49,7 +49,7 @@ The EM9190 features advanced power management and thermal design, suitable for h
 | الوزن | 7.2 g |
 | درجة حرارة التشغيل | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou / Galileo / QZSS |
-| المنطقة | 全球 (多頻段) |
+| المنطقة | عالمي (متعدد النطاقات) |
 | جهد الإمداد | 3.135V ~ 4.4V |
 | واجهة الهوائي | 4 × IPEX MHF4 |
 | تحديث البرامج الثابتة | USB / FOTA |
@@ -66,7 +66,7 @@ The EM9190 features advanced power management and thermal design, suitable for h
 
 ## محتويات العبوة
 
-- 1 × EM9190 蜂窩模組
+- 1 × EM9190 الخلوية
 - 1 × حزمة المستندات
 
 ## الموارد والروابط

@@ -48,7 +48,7 @@ The MC7350 is certified by major global carriers, making it suitable for industr
 | Poids | 8.5 g |
 | Température de fonctionnement | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS |
-| Région | 全球 (多頻段) |
+| Région | Monde (Multibande) |
 | Tension d'alimentation | 3.135V ~ 4.4V |
 | Interface antenne | 2 × IPEX MHF4 |
 | Mise à jour du firmware | USB / FOTA |
@@ -64,7 +64,7 @@ The MC7350 is certified by major global carriers, making it suitable for industr
 
 ## Contenu de l'emballage
 
-- 1 × MC7350 蜂窩模組
+- 1 × MC7350 Module cellulaire
 - 1 × Pack de documentation
 
 ## Ressources et liens

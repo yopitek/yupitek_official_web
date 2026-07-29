@@ -48,7 +48,7 @@ The MC7354 is ideal for industrial automation, transportation, smart grid, and i
 | Вес | 8.5 g |
 | Рабочая температура | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS |
-| Регион | 全球 (多頻段) |
+| Регион | Глобальный (Многодиапазонный) |
 | Напряжение питания | 3.135V ~ 4.4V |
 | Антенный интерфейс | 2 × IPEX MHF4 |
 | Обновление прошивки | USB / FOTA |
@@ -64,7 +64,7 @@ The MC7354 is ideal for industrial automation, transportation, smart grid, and i
 
 ## Комплектация
 
-- 1 × MC7354 蜂窩模組
+- 1 × MC7354 Сотовый модуль
 - 1 × Пакет документации
 
 ## Ресурсы и ссылки

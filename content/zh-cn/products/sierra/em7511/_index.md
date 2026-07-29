@@ -1,6 +1,6 @@
 ---
 title: "EM7511 LTE-A Pro Cat 12 蜂窝模块"
-description: "EM7511 LTE-A Pro Cat 12 cellular module with Qualcomm SDX20, 600 Mbps download, M.2 form factor for high-bandwidth enterprise and industrial applications."
+description: "EM7511 采用 Qualcomm SDX20 芯片组，支持 LTE-A Pro Cat 12 高达 600 Mbps，M.2 封装，适用于高效能工业应用。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,11 +15,11 @@ tags: ["LTE", "Cat 12", "Cellular", "Module", "EM7511", "SDX20", "M.2"]
 
 ## 产品概述
 
-The EM7511 is Sierra Wireless' LTE-Advanced Pro Cat 12 cellular module, powered by the Qualcomm SDX20 chipset, supporting 3×20 MHz carrier aggregation (3×CA) with download speeds up to 600 Mbps and upload up to 150 Mbps.
+EM7511 是 Sierra Wireless 推出的 LTE-Advanced Pro Cat 12 蜂窝模组，采用 Qualcomm SDX20 芯片组，支持 3×20 MHz 载波聚合 (3×CA)，下载速度最高可达 600 Mbps，上传最高 150 Mbps。
 
-This module uses a standard M.2 3042 Key B form factor with USB 3.1, PCIe Gen3, and RGMII interfaces, providing higher system bandwidth. The SDX20 modem delivers lower power consumption and superior RF performance compared to previous generations.
+此模组采用标准 M.2 3042 Key B 封装，集成 USB 3.1、PCIe Gen3 及 RGMII 介面，提供更高的系统频宽。SDX20 数據机相較前代产品提供了更低的功耗与更优的 RF 性能。
 
-The EM7511 supports global LTE bands and License-Assisted Access (LAA), ideal for high-bandwidth video surveillance, enterprise branch offices, and mobile hotspot applications.
+EM7511 支持全球 LTE 频段与 License-Assisted Access (LAA)，适合需要高频宽的影片监控、企业分支机构及行动热点应用。
 
 ## 主要特点
 
@@ -48,7 +48,7 @@ The EM7511 supports global LTE bands and License-Assisted Access (LAA), ideal fo
 | 重量 | 6.8 g |
 | 工作温度 | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou / Galileo |
-| 地区 | 全球 (多頻段) |
+| 地区 | 全球 (多频段) |
 | 供电电压 | 3.135V ~ 4.4V |
 | 天线接口 | 4 × IPEX MHF4 |
 | 固件更新 | USB / FOTA |
@@ -65,7 +65,7 @@ The EM7511 supports global LTE bands and License-Assisted Access (LAA), ideal fo
 
 ## 包装内容
 
-- 1 × EM7511 蜂窩模組
+- 1 × EM7511 蜂窝模块
 - 1 × 文件包装
 
 ## 资源与链接

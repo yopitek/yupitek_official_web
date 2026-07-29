@@ -1,6 +1,6 @@
 ---
 title: "MC7304 LTE-A Cat 4 蜂窝模块"
-description: "MC7304 LTE-A Cat 4 cellular module with Qualcomm MDM9215, 150 Mbps download, Mini PCIe form factor for budget-sensitive industrial applications."
+description: "MC7304 采用 Qualcomm MDM9215 芯片组，支持 LTE-A Cat 4 150 Mbps，Mini PCIe 封装，适用于传统工业闸道器与路由器。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,11 +15,11 @@ tags: ["LTE", "Cat 4", "Cellular", "Module", "MC7304", "Mini PCIe", "IoT"]
 
 ## 产品概述
 
-The MC7304 is Sierra Wireless' LTE-Advanced Cat 4 cellular module, powered by the Qualcomm MDM9215 chipset, supporting download speeds up to 150 Mbps and upload up to 50 Mbps.
+MC7304 是 Sierra Wireless 推出的 LTE-Advanced Cat 4 蜂窝模组，采用 Qualcomm MDM9215 芯片组，支持下载速度最高 150 Mbps，上传最高 50 Mbps。
 
-This module uses a standard Mini PCIe Full Size form factor, compatible with a wide range of existing industrial motherboards and embedded platforms. It supports USB 2.0, UART, and SPI interfaces, ideal for budget-sensitive applications requiring reliable LTE connectivity.
+此模组采用标准 Mini PCIe Full Size 封装，相容于大量現有工业主机板与嵌入式平台。支持 USB 2.0、UART 及 SPI 介面，适合预算敏感但仍需可靠 LTE 连线的应用。
 
-The MC7304 supports major global LTE bands, widely deployed in industrial gateways, vending machines, digital signage, and remote monitoring applications.
+MC7304 支持全球主要 LTE 频段，廣泛应用于工业闸道器、自动販賣机、数位看板与遠端监控。
 
 ## 主要特点
 
@@ -48,7 +48,7 @@ The MC7304 supports major global LTE bands, widely deployed in industrial gatewa
 | 重量 | 8.5 g |
 | 工作温度 | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS |
-| 地区 | 全球 (多頻段) |
+| 地区 | 全球 (多频段) |
 | 供电电压 | 3.135V ~ 4.4V |
 | 天线接口 | 2 × IPEX MHF4 |
 | 固件更新 | USB / FOTA |
@@ -64,7 +64,7 @@ The MC7304 supports major global LTE bands, widely deployed in industrial gatewa
 
 ## 包装内容
 
-- 1 × MC7304 蜂窩模組
+- 1 × MC7304 蜂窝模块
 - 1 × 文件包装
 
 ## 资源与链接

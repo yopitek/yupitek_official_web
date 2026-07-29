@@ -1,6 +1,6 @@
 ---
 title: "EM7455 LTE-A Cat 6 蜂窝模块"
-description: "EM7455 LTE-A Cat 6 cellular module with Qualcomm MDM9230, 300 Mbps download, Band 14 FirstNet support, M.2 form factor for public safety and enterprise routing."
+description: "EM7455 采用 Qualcomm MDM9230 芯片组，支持 LTE-A Cat 6 与 FirstNet B14 频段，M.2 封装，适用于工业路由器与闸道器。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,11 +15,11 @@ tags: ["LTE", "Cat 6", "Cellular", "Module", "EM7455", "FirstNet", "M.2"]
 
 ## 产品概述
 
-The EM7455 is Sierra Wireless' LTE-Advanced Cat 6 cellular module, powered by the Qualcomm MDM9230 chipset, supporting 2×20 MHz carrier aggregation (2×CA) with download speeds up to 300 Mbps and upload up to 50 Mbps.
+EM7455 是 Sierra Wireless 推出的 LTE-Advanced Cat 6 蜂窝模组，采用 Qualcomm MDM9230 芯片组，支持 2×20 MHz 载波聚合 (2×CA)，下载速度最高可达 300 Mbps，上传最高 50 Mbps。
 
-This module uses a standard M.2 3042 Key B form factor. It is part of the same family as the EM7430 but specifically supports Band 14 (FirstNet), making it ideal for US public safety network applications. It supports USB 3.0 and PCIe Gen2 interfaces.
+此模组采用标准 M.2 3042 Key B 封装，与 EM7430 同系列但特別支持 Band 14 (FirstNet)，适合美國公共安全网路应用。支持 USB 3.0 及 PCIe Gen2 介面。
 
-The EM7455 supports major global LTE bands (B1–5/7/8/12/13/14/20/25/26/29/30/41), widely used in enterprise routing, connected vehicles, and public safety communications.
+EM7455 支持全球主要 LTE 频段 (B1–5/7/8/12/13/14/20/25/26/29/30/41)，廣泛应用于企业路由、車聯网与公共安全通讯。
 
 ## 主要特点
 
@@ -64,7 +64,7 @@ The EM7455 supports major global LTE bands (B1–5/7/8/12/13/14/20/25/26/29/30/4
 
 ## 包装内容
 
-- 1 × EM7455 蜂窩模組
+- 1 × EM7455 蜂窝模块
 - 1 × 文件包装
 
 ## 资源与链接

@@ -1,6 +1,6 @@
 ---
 title: "EM9191 5G NR Sub-6 + mmWave 蜂窝模块"
-description: "EM9191 5G NR Sub-6 + mmWave cellular module with Qualcomm SDX55, 2.5 Gbps download, supporting n260/n261 for comprehensive 5G coverage."
+description: "EM9191 采用 Qualcomm SDX55 芯片组，支持 5G NR Sub-6 与 mmWave (n260/n261)，M.2 封装，适用于最高階 5G 应用。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -15,11 +15,11 @@ tags: ["5G", "mmWave", "Sub-6", "Cellular", "Module", "EM9191", "SDX55", "M.2"]
 
 ## 产品概述
 
-The EM9191 is Sierra Wireless' flagship 5G NR cellular module, powered by the Qualcomm SDX55 chipset, supporting both Sub-6 and mmWave (n260 39GHz / n261 28GHz) for the most comprehensive 5G coverage.
+EM9191 是 Sierra Wireless 推出的旗舰级 5G NR 蜂窝模组，采用 Qualcomm SDX55 芯片组，同時支持 Sub-6 与 mmWave (n260 39GHz / n261 28GHz)，提供最全面的 5G 覆蓋。
 
-Download speeds reach up to 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22) with upload up to 900 Mbps (5G). It supports 6 antenna interfaces for mmWave beamforming requirements.
+下载速度最高可达 2.5 Gbps (5G) / 2.0 Gbps (LTE Cat 22)，上传最高 900 Mbps (5G)。支持 6 组天线介面以滿足 mmWave 波束成型需求。
 
-The EM9191 supports all Sub-6 bands (same as EM9190) plus mmWave high-frequency bands, paired with multi-band GNSS. Ideal for Industry 4.0, smart healthcare, and edge computing applications requiring the lowest latency and highest bandwidth.
+EM9191 支持所有 Sub-6 频段 (同 EM9190) 加上 mmWave 高频频段，搭配多频 GNSS 系统，适合需要最低延迟与最高频宽的工业 4.0、智慧醫療与邊緣運算应用。
 
 ## 主要特点
 
@@ -50,7 +50,7 @@ The EM9191 supports all Sub-6 bands (same as EM9190) plus mmWave high-frequency 
 | 重量 | 7.2 g |
 | 工作温度 | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou / Galileo / QZSS |
-| 地区 | 全球 (多頻段) |
+| 地区 | 全球 (多频段) |
 | 供电电压 | 3.135V ~ 4.4V |
 | 天线接口 | 6 × IPEX MHF4 |
 | 固件更新 | USB / FOTA |
@@ -67,7 +67,7 @@ The EM9191 supports all Sub-6 bands (same as EM9190) plus mmWave high-frequency 
 
 ## 包装内容
 
-- 1 × EM9191 蜂窩模組
+- 1 × EM9191 蜂窝模块
 - 1 × 文件包装
 
 ## 资源与链接

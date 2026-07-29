@@ -48,7 +48,7 @@ The MC7354 is ideal for industrial automation, transportation, smart grid, and i
 | Weight | 8.5 g |
 | Operating Temperature | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS |
-| Region | 全球 (多頻段) |
+| Region | Global (Multi-band) |
 | Supply Voltage | 3.135V ~ 4.4V |
 | Antenna Interface | 2 × IPEX MHF4 |
 | Firmware Update | USB / FOTA |
@@ -64,7 +64,7 @@ The MC7354 is ideal for industrial automation, transportation, smart grid, and i
 
 ## Package Contents
 
-- 1 × MC7354 蜂窩模組
+- 1 × MC7354 Cellular Module
 - 1 × Documentation pack
 
 ## Resources & Links

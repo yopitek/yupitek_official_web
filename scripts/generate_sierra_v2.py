@@ -1186,6 +1186,10 @@ TRANSLATION_DATA = {
         "MC7350 LTE-A Cat 4 蜂窩模組": "MC7350 LTE-A Cat 4 蜂窝模块",
         "MC7354 LTE-A Cat 4 蜂窩模組": "MC7354 LTE-A Cat 4 蜂窝模块",
         "MC7455 LTE-A Cat 6 蜂窩模組": "MC7455 LTE-A Cat 6 蜂窝模块",
+        # Spec values
+        "全球 (多頻段)": "全球 (多频段)",
+        "全球 (含 B14 FirstNet)": "全球 (含 B14 FirstNet)",
+        "蜂窩模組": "蜂窝模块",
     },
     "en": {
         "連結": "Link",
@@ -1221,6 +1225,9 @@ TRANSLATION_DATA = {
         "MC7350 LTE-A Cat 4 蜂窩模組": "MC7350 LTE-A Cat 4 Cellular Module",
         "MC7354 LTE-A Cat 4 蜂窩模組": "MC7354 LTE-A Cat 4 Cellular Module",
         "MC7455 LTE-A Cat 6 蜂窩模組": "MC7455 LTE-A Cat 6 Cellular Module",
+        "全球 (多頻段)": "Global (Multi-band)",
+        "全球 (含 B14 FirstNet)": "Global (with B14 FirstNet)",
+        "蜂窩模組": "Cellular Module",
     },
     "ja": {
         "連結": "リンク",
@@ -1256,6 +1263,9 @@ TRANSLATION_DATA = {
         "MC7350 LTE-A Cat 4 蜂窩模組": "MC7350 LTE-A Cat 4 セルラーモジュール",
         "MC7354 LTE-A Cat 4 蜂窩模組": "MC7354 LTE-A Cat 4 セルラーモジュール",
         "MC7455 LTE-A Cat 6 蜂窩模組": "MC7455 LTE-A Cat 6 セルラーモジュール",
+        "全球 (多頻段)": "グローバル (マルチバンド)",
+        "全球 (含 B14 FirstNet)": "グローバル (B14 FirstNet 対応)",
+        "蜂窩模組": "セルラーモジュール",
     },
     "ar": {
         "連結": "الرابط",
@@ -1291,6 +1301,9 @@ TRANSLATION_DATA = {
         "MC7350 LTE-A Cat 4 蜂窩模組": "وحدة MC7350 LTE-A Cat 4 الخلوية",
         "MC7354 LTE-A Cat 4 蜂窩模組": "وحدة MC7354 LTE-A Cat 4 الخلوية",
         "MC7455 LTE-A Cat 6 蜂窩模組": "وحدة MC7455 LTE-A Cat 6 الخلوية",
+        "全球 (多頻段)": "عالمي (متعدد النطاقات)",
+        "全球 (含 B14 FirstNet)": "عالمي (مع B14 FirstNet)",
+        "蜂窩模組": "الخلوية",
     },
     "es": {
         "連結": "Enlace",
@@ -1326,6 +1339,9 @@ TRANSLATION_DATA = {
         "MC7350 LTE-A Cat 4 蜂窩模組": "Módulo Celular MC7350 LTE-A Cat 4",
         "MC7354 LTE-A Cat 4 蜂窩模組": "Módulo Celular MC7354 LTE-A Cat 4",
         "MC7455 LTE-A Cat 6 蜂窩模組": "Módulo Celular MC7455 LTE-A Cat 6",
+        "全球 (多頻段)": "Global (Multibanda)",
+        "全球 (含 B14 FirstNet)": "Global (con B14 FirstNet)",
+        "蜂窩模組": "Módulo Celular",
     },
     "pt": {
         "連結": "Link",
@@ -1361,6 +1377,9 @@ TRANSLATION_DATA = {
         "MC7350 LTE-A Cat 4 蜂窩模組": "Módulo Celular MC7350 LTE-A Cat 4",
         "MC7354 LTE-A Cat 4 蜂窩模組": "Módulo Celular MC7354 LTE-A Cat 4",
         "MC7455 LTE-A Cat 6 蜂窩模組": "Módulo Celular MC7455 LTE-A Cat 6",
+        "全球 (多頻段)": "Global (Multibanda)",
+        "全球 (含 B14 FirstNet)": "Global (com B14 FirstNet)",
+        "蜂窩模組": "Módulo Celular",
     },
     "ru": {
         "連結": "Ссылка",
@@ -1396,6 +1415,9 @@ TRANSLATION_DATA = {
         "MC7350 LTE-A Cat 4 蜂窩模組": "Сотовый модуль MC7350 LTE-A Cat 4",
         "MC7354 LTE-A Cat 4 蜂窩模組": "Сотовый модуль MC7354 LTE-A Cat 4",
         "MC7455 LTE-A Cat 6 蜂窩模組": "Сотовый модуль MC7455 LTE-A Cat 6",
+        "全球 (多頻段)": "Глобальный (Многодиапазонный)",
+        "全球 (含 B14 FirstNet)": "Глобальный (с B14 FirstNet)",
+        "蜂窩模組": "Сотовый модуль",
     },
     "de": {
         "連結": "Link",
@@ -1431,6 +1453,9 @@ TRANSLATION_DATA = {
         "MC7350 LTE-A Cat 4 蜂窩模組": "MC7350 LTE-A Cat 4 Mobilfunkmodul",
         "MC7354 LTE-A Cat 4 蜂窩模組": "MC7354 LTE-A Cat 4 Mobilfunkmodul",
         "MC7455 LTE-A Cat 6 蜂窩模組": "MC7455 LTE-A Cat 6 Mobilfunkmodul",
+        "全球 (多頻段)": "Global (Multiband)",
+        "全球 (含 B14 FirstNet)": "Global (mit B14 FirstNet)",
+        "蜂窩模組": "Mobilfunkmodul",
     },
     "fr": {
         "連結": "Lien",
@@ -1466,34 +1491,119 @@ TRANSLATION_DATA = {
         "MC7350 LTE-A Cat 4 蜂窩模組": "Module cellulaire MC7350 LTE-A Cat 4",
         "MC7354 LTE-A Cat 4 蜂窩模組": "Module cellulaire MC7354 LTE-A Cat 4",
         "MC7455 LTE-A Cat 6 蜂窩模組": "Module cellulaire MC7455 LTE-A Cat 6",
+        "全球 (多頻段)": "Monde (Multibande)",
+        "全球 (含 B14 FirstNet)": "Monde (avec B14 FirstNet)",
+        "蜂窩模組": "Module cellulaire",
     },
 }
+
+
+# ── zh-tw → zh-cn character conversion ──────────────────────────────────────
+
+ZH_TW_TO_CN = str.maketrans({
+    "採": "采", "標": "标", "準": "准", "載": "载", "達": "达",
+    "業": "业", "級": "级", "裝": "装", "雙": "双", "內": "内",
+    "寬": "宽", "設": "设", "線": "线", "機": "机", "認": "认",
+    "證": "证", "體": "体", "優": "优", "監": "监", "熱": "热",
+    "點": "点", "視": "视", "訊": "讯", "終": "终", "導": "导",
+    "驅": "驱", "動": "动", "號": "号", "碼": "码", "稱": "称",
+    "組": "组", "統": "统", "靈": "灵", "閘": "闸", "頻": "频",
+    "範": "范", "圍": "围", "專": "专", "協": "协", "議": "议",
+    "韌": "韧", "異": "异", "構": "构", "網": "网", "絡": "络",
+    "維": "维", "護": "护", "連": "连", "萬": "万", "億": "亿",
+    "數": "数", "庫": "库", "雲": "云", "檔": "档", "關": "关",
+    "鍵": "键", "預": "预", "測": "测", "穩": "稳", "價": "价",
+    "臺": "台", "灣": "湾", "隊": "队", "際": "际", "與": "与",
+    "實": "实", "踐": "践", "積": "积", "極": "极", "權": "权",
+    "檢": "检", "驗": "验", "書": "书", "畫": "画", "節": "节",
+    "產": "产", "務": "务", "強": "强", "態": "态", "軟": "软",
+    "燒": "烧", "錄": "录", "適": "适", "於": "于", "應": "应",
+    "選": "选", "擇": "择", "進": "进", "規": "规", "評": "评",
+    "試": "试", "訂": "订", "變": "变", "壞": "坏", "確": "确",
+    "報": "报", "費": "费", "準": "准", "遲": "迟", "讓": "让",
+    "護": "护", "覽": "览", "釋": "释", "訊": "讯", "術": "术",
+    "傷": "伤", "類": "类", "觀": "观", "讀": "读",
+    "艦": "舰", "窩": "窝", "傳": "传", "棄": "弃",
+    "衛": "卫", "戰": "战", "爭": "争", "庫": "库",
+    "僅": "仅", "異": "异", "爾": "尔", "樂": "乐",
+    "標": "标", "準": "准", "處": "处", "眾": "众",
+    "團": "团", "隊": "队", "歸": "归", "禮": "礼",
+    "擊": "击", "敗": "败", "勝": "胜", "協": "协",
+})
+
+ZH_TW_TO_CN_WORDS = {
+    "支援": "支持", "晶片": "芯片", "數據機": "数据机",
+    "透過": "通过", "整合": "集成", "套件": "工具包",
+    "資訊": "信息", "檔案": "文件",
+}
+
+
+def zh_tw_to_cn(text):
+    text = text.translate(ZH_TW_TO_CN)
+    for tw, cn in ZH_TW_TO_CN_WORDS.items():
+        text = text.replace(tw, cn)
+    return text
 
 
 # ── Helper functions ─────────────────────────────────────────────────────────
 
 def translate_text(text, lang):
-    """Look up zh-tw phrase in TRANSLATION_DATA for the target locale.
-    Falls back to the original zh-tw text if no translation exists."""
     if lang == "zh-tw" or not text:
         return text
     return TRANSLATION_DATA.get(lang, {}).get(text, text)
 
 
-def translate_features(model, lang):
-    """Translate feature list for a product."""
-    features = PRODUCT_ZH[model]["features"]
+def translate_or_fallback(zh_text, lang, en_fallback):
     if lang == "zh-tw":
-        return features
-    return [translate_text(f, lang) for f in features]
+        return zh_text
+    translated = translate_text(zh_text, lang)
+    if translated != zh_text:
+        return translated
+    if lang == "zh-cn":
+        return zh_tw_to_cn(zh_text)
+    return en_fallback
+
+
+def translate_features(model, lang):
+    """Translate feature list, falling back to English per-feature."""
+    if lang == "zh-tw":
+        return PRODUCT_ZH[model]["features"]
+    en_list = PRODUCT_EN.get(model, {}).get("features", [])
+    zh_list = PRODUCT_ZH[model]["features"]
+    result = []
+    for i, zh_f in enumerate(zh_list):
+        translated = translate_text(zh_f, lang)
+        if translated == zh_f and i < len(en_list):
+            result.append(en_list[i])
+        else:
+            result.append(translated)
+    return result
 
 
 def translate_package(model, lang):
-    """Translate package items for a product."""
+    """Translate package items, handling 蜂窩模組 suffix per locale."""
     items = PACKAGE[model]
     if lang == "zh-tw":
         return items
-    return [translate_text(item, lang) for item in items]
+
+    CELLULAR_SUFFIX = {
+        "zh-cn": "蜂窝模块", "en": "Cellular Module",
+        "ja": "セルラーモジュール", "ar": "الخلوية",
+        "es": "Módulo Celular", "pt": "Módulo Celular",
+        "ru": "Сотовый модуль", "de": "Mobilfunkmodul",
+        "fr": "Module cellulaire",
+    }
+    suffix = CELLULAR_SUFFIX.get(lang)
+
+    result = []
+    for item in items:
+        if "蜂窩模組" in item and suffix:
+            idx = item.find("蜂窩模組")
+            prefix = item[:idx]
+            result.append(prefix + suffix)
+        else:
+            result.append(translate_text(item, lang))
+    return result
 
 
 def translate_resources(model, lang):
@@ -1602,12 +1712,12 @@ def generate_product_page(lang, model):
         resources = RESOURCES[model]
         os_rows = OS_ROWS[model]
     else:
-        # Use locale-specific English overrides for overview/features when available
+        # Try TRANSLATION_DATA first, fall back to PRODUCT_EN (English)
         en_data = PRODUCT_EN.get(model, {})
-        title = en_data.get("title", translate_text(zh["title"], lang))
-        desc = en_data.get("desc", translate_text(zh["desc"], lang))
-        overview = en_data.get("overview", translate_text(zh["overview"], lang))
-        features = en_data.get("features", translate_features(model, lang))
+        title = translate_text(zh["title"], lang)
+        desc = translate_or_fallback(zh["desc"], lang, en_data.get("desc", zh["desc"]))
+        overview = translate_or_fallback(zh["overview"], lang, en_data.get("overview", zh["overview"]))
+        features = translate_features(model, lang)
         package_items = translate_package(model, lang)
         resources = translate_resources(model, lang)
         os_rows = translate_os_rows(model, lang)

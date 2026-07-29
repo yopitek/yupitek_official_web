@@ -48,7 +48,7 @@ The EM7430 supports major global LTE bands (B1–5/7/8/12/13/20/25/26/29/30/41),
 | Peso | 6.5 g |
 | Temperatura de Operación | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou |
-| Región | 全球 (多頻段) |
+| Región | Global (Multibanda) |
 | Voltaje de Alimentación | 3.135V ~ 4.4V |
 | Interfaz de Antena | 4 × IPEX MHF4 |
 | Actualización de Firmware | USB / FOTA |
@@ -64,7 +64,7 @@ The EM7430 supports major global LTE bands (B1–5/7/8/12/13/20/25/26/29/30/41),
 
 ## Contenido del Paquete
 
-- 1 × EM7430 蜂窩模組
+- 1 × EM7430 Módulo Celular
 - 1 × Paquete de documentación
 
 ## Recursos y Enlaces

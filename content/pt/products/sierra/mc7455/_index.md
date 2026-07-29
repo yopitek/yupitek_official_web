@@ -48,7 +48,7 @@ The MC7455 supports major global LTE bands including FirstNet B14, widely deploy
 | Peso | 8.8 g |
 | Temperatura de Operação | -40°C ~ +85°C |
 | GNSS | GPS / GLONASS / BeiDou |
-| Região | 全球 (多頻段) |
+| Região | Global (Multibanda) |
 | Tensão de Alimentação | 3.135V ~ 4.4V |
 | Interface de Antena | 4 × IPEX MHF4 |
 | Atualização de Firmware | USB / FOTA |
@@ -64,7 +64,7 @@ The MC7455 supports major global LTE bands including FirstNet B14, widely deploy
 
 ## Conteúdo da Embalagem
 
-- 1 × MC7455 蜂窩模組
+- 1 × MC7455 Módulo Celular
 - 2 × Pacote de documentação
 
 ## Recursos e Links

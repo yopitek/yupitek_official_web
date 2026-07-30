@@ -131,14 +131,14 @@ Sierra Wireless には EM シリーズと MC シリーズの 2 シリーズ、�
 
 ## 付録：10モデル公式スペックシートリンク
 
-以下のリンクは Sierra Wireless 公式テクニカルリソースライブラリ（source.sierrawireless.com）からのものです。一部の文書は会員登録後のログインが必要です。本記事のスペック数値は公開情報から整理したものです。項目ごとに最終的なスペック数値（特に EM9190/EM9191 の上りピーク値）をご確認される場合は、当社まで公式文書をお問い合わせください。
+以下のリンクは各モジュールのスペックシート PDF を直接ダウンロードいただけます（ログイン不要）。原文書は Sierra Wireless 公式テクニカルリソースライブラリ（source.sierrawireless.com）を参照しています。MC7350 および MC7354 については個別の PDF がございませんので、公式外部リンクをそのまま記載しています（ログインが必要です）。本記事のスペック数値は公開情報から整理したものです。項目ごとに最終的な数値（特に EM9190/EM9191 の上りピーク値）をご確認される場合は、当社まで公式文書をお問い合わせください。
 
-- **EM7430**：https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7430_product_technical_specification/
-- **EM7455**：https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/
-- **EM7511**：https://source.sierrawireless.com/resources/airprime/minicard/75xx/airprime_em7511_product_technical_specification/
-- **EM7565**：https://source.sierrawireless.com/resources/airprime/minicard/75xx/airprime_em7565_product_technical_specification/
-- **EM9190 / EM9191**：https://source.sierrawireless.com/resources/airprime/minicard/airprime_em919x-7690_product_technical_specification/
-- **MC7304**：https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7304_product_technical_specification_and_customer_design_guidelines/
+- **EM7430**：https://yupitek.com/docs/sierra/em7430_spec.pdf
+- **EM7455**：https://yupitek.com/docs/sierra/em7455_spec.pdf
+- **EM7511**：https://yupitek.com/docs/sierra/EM7511_spec.pdf
+- **EM7565**：https://yupitek.com/docs/sierra/EM7565_spec.pdf
+- **EM9190 / EM9191**：https://yupitek.com/docs/sierra/EM919x.pdf
+- **MC7304**：https://yupitek.com/docs/sierra/MC7304_spec.pdf
 - **MC7350**：https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7350_product_technical_specification_and_customer_design_guidelines/
 - **MC7354**：https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7354_product_technical_specification_and_customer_design_guidelines/
-- **MC7455**：https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/
+- **MC7455**：https://yupitek.com/docs/sierra/mc7455_spec.pdf

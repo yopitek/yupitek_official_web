@@ -76,7 +76,7 @@ MC7350 經過全球各主要電信业者的认证，适用于工业路由器、�
 | 资源 | 链接 |
 |------|------|
 | 官方产品页面 | https://source.sierrawireless.com/devices/mc-series/mc7350/ |
-| 技术规格书 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7350_product_technical_specification_and_customer_design_guidelines_rev4_0.ashx |
+| 技术规格书 (PDF) | [📄 下载规格书](/docs/sierra/MC7350_7354.pdf) |
 
 ---
 

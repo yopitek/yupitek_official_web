@@ -77,7 +77,7 @@ EM7511 支援全球 LTE 頻段與 License-Assisted Access (LAA)，適合需要�
 | 資源 | 連結 |
 |------|------|
 | 官方產品頁面 | https://source.sierrawireless.com/devices/em-series/em7511/ |
-| 技術規格書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41112028-em7511-product-technical-specification-r14.ashx |
+| 技術規格書 (PDF) | [📄 下載規格書](/docs/sierra/EM7511_spec.pdf) |
 
 ---
 

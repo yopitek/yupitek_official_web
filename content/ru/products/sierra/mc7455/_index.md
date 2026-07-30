@@ -76,7 +76,7 @@ MC7455 поддерживает основные глобальные диапа
 | Ресурс | Ссылка |
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/mc-series/mc7455/ |
-| Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116238-mc7455-pts-r15.ashx |
+| Технические характеристики (PDF) | [📄 Скачать описание](/docs/sierra/mc7455_spec.pdf) |
 
 ---
 

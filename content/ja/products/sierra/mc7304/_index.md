@@ -76,7 +76,7 @@ MC7304 はグローバル主要 LTE 周波数帯に対応しており、産業�
 | リソース | リンク |
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/mc-series/mc7304/ |
-| 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7304_product_technical_specification_and_customer_design_guidelines_rev12_0.ashx |
+| 技術仕様書 (PDF) | [📄 仕様書をダウンロード](/docs/sierra/MC7304_spec.pdf) |
 
 ---
 

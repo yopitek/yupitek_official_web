@@ -79,7 +79,7 @@ EM9190 هي الوحدة الخلوية الرائدة 5G NR Sub-6 من Sierra W
 | المورد | الرابط |
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/em-series/em9190/ |
-| المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
+| المواصفات الفنية (PDF) | [📄 تنزيل ورقة البيانات](/docs/sierra/EM919x.pdf) |
 
 ---
 

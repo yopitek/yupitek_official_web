@@ -77,7 +77,7 @@ Il prend en charge les principales bandes LTE mondiales, y compris B14 FirstNet 
 | Ressource | Lien |
 |------|------|
 | Page officielle du produit | https://source.sierrawireless.com/devices/em-series/em7565/ |
-| Fiche technique (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41110788-em7565-product-technical-specification-r16.ashx |
+| Fiche technique (PDF) | [📄 Télécharger la fiche technique](/docs/sierra/EM7565_spec.pdf) |
 
 ---
 

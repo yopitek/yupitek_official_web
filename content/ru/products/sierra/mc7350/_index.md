@@ -76,7 +76,7 @@ MC7350 сертифицирован ведущими мировыми опера
 | Ресурс | Ссылка |
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/mc-series/mc7350/ |
-| Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7350_product_technical_specification_and_customer_design_guidelines_rev4_0.ashx |
+| Технические характеристики (PDF) | [📄 Скачать описание](/docs/sierra/MC7350_7354.pdf) |
 
 ---
 

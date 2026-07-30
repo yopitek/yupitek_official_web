@@ -77,7 +77,7 @@ EM7511 هي وحدة خلوية LTE-Advanced Pro Cat 12 من Sierra Wireless. ت
 | المورد | الرابط |
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/em-series/em7511/ |
-| المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41112028-em7511-product-technical-specification-r14.ashx |
+| المواصفات الفنية (PDF) | [📄 تنزيل ورقة البيانات](/docs/sierra/EM7511_spec.pdf) |
 
 ---
 

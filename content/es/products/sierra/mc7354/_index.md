@@ -76,7 +76,7 @@ El MC7354 es ideal para automatización industrial, transporte, redes inteligent
 | Recurso | Enlace |
 |------|------|
 | Página oficial del producto | https://source.sierrawireless.com/devices/mc-series/mc7354/ |
-| Ficha técnica (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/4114635_airprime-mc7354-product-technical-specification_r9.ashx |
+| Ficha técnica (PDF) | [📄 Descargar ficha técnica](/docs/sierra/MC7350_7354.pdf) |
 
 ---
 

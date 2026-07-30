@@ -79,7 +79,7 @@ L'EM9190 dispose d'une gestion avancée de l'alimentation et d'une conception th
 | Ressource | Lien |
 |------|------|
 | Page officielle du produit | https://source.sierrawireless.com/devices/em-series/em9190/ |
-| Fiche technique (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
+| Fiche technique (PDF) | [📄 Télécharger la fiche technique](/docs/sierra/EM919x.pdf) |
 
 ---
 

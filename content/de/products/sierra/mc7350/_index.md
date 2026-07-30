@@ -76,7 +76,7 @@ Das MC7350 ist von großen globalen Carriern zertifiziert und eignet sich für i
 | Ressource | Link |
 |------|------|
 | Offizielle Produktseite | https://source.sierrawireless.com/devices/mc-series/mc7350/ |
-| Technisches Datenblatt (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7350_product_technical_specification_and_customer_design_guidelines_rev4_0.ashx |
+| Technisches Datenblatt (PDF) | [📄 Datenblatt herunterladen](/docs/sierra/MC7350_7354.pdf) |
 
 ---
 

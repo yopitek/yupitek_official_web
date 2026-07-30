@@ -80,7 +80,7 @@ EM9191 поддерживает все диапазоны Sub-6 (как EM9190) 
 | Ресурс | Ссылка |
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/em-series/em9191/ |
-| Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
+| Технические характеристики (PDF) | [📄 Скачать описание](/docs/sierra/EM919x.pdf) |
 
 ---
 

@@ -76,7 +76,7 @@ Le MC7455 prend en charge les principales bandes LTE mondiales, y compris FirstN
 | Ressource | Lien |
 |------|------|
 | Page officielle du produit | https://source.sierrawireless.com/devices/mc-series/mc7455/ |
-| Fiche technique (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116238-mc7455-pts-r15.ashx |
+| Fiche technique (PDF) | [📄 Télécharger la fiche technique](/docs/sierra/mc7455_spec.pdf) |
 
 ---
 

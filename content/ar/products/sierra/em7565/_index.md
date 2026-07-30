@@ -77,7 +77,7 @@ EM7565 هي وحدة خلوية LTE-Advanced Pro Cat 12 من Sierra Wireless. ت
 | المورد | الرابط |
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/em-series/em7565/ |
-| المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41110788-em7565-product-technical-specification-r16.ashx |
+| المواصفات الفنية (PDF) | [📄 تنزيل ورقة البيانات](/docs/sierra/EM7565_spec.pdf) |
 
 ---
 

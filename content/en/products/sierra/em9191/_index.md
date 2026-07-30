@@ -80,7 +80,7 @@ The EM9191 supports all Sub-6 bands (same as EM9190) plus mmWave high-frequency 
 | Resource | Link |
 |------|------|
 | Official Product Page | https://source.sierrawireless.com/devices/em-series/em9191/ |
-| Technical Specification (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
+| Technical Specification (PDF) | [📄 Download Datasheet](/docs/sierra/EM919x.pdf) |
 
 ---
 

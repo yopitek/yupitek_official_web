@@ -76,7 +76,7 @@ EM7430 はグローバル主要 LTE 周波数帯（B1–5/7/8/12/13/20/25/26/29/
 | リソース | リンク |
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/em-series/em7430/ |
-| 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116235-airprime-em7430-product-technical-specification-r12.ashx |
+| 技術仕様書 (PDF) | [📄 仕様書をダウンロード](/docs/sierra/em7430_spec.pdf) |
 
 ---
 

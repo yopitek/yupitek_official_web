@@ -76,7 +76,7 @@ MC7354 は、安定した LTE 接続を必要とする産業オートメーシ�
 | リソース | リンク |
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/mc-series/mc7354/ |
-| 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/4114635_airprime-mc7354-product-technical-specification_r9.ashx |
+| 技術仕様書 (PDF) | [📄 仕様書をダウンロード](/docs/sierra/MC7350_7354.pdf) |
 
 ---
 

@@ -80,7 +80,7 @@ O EM9191 suporta todas as bandas Sub-6 (mesmo que o EM9190) mais as bandas de al
 | Recurso | Link |
 |------|------|
 | Página oficial do produto | https://source.sierrawireless.com/devices/em-series/em9191/ |
-| Especificações técnicas (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
+| Especificações técnicas (PDF) | [📄 Baixar ficha técnica](/docs/sierra/EM919x.pdf) |
 
 ---
 

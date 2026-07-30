@@ -76,7 +76,7 @@ MC7455 支持全球主要 LTE 频段与 FirstNet B14，广泛应用于高效能�
 | 资源 | 链接 |
 |------|------|
 | 官方产品页面 | https://source.sierrawireless.com/devices/mc-series/mc7455/ |
-| 技术规格书 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116238-mc7455-pts-r15.ashx |
+| 技术规格书 (PDF) | [📄 下载规格书](/docs/sierra/mc7455_spec.pdf) |
 
 ---
 

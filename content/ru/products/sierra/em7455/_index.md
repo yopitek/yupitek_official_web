@@ -76,7 +76,7 @@ EM7455 поддерживает основные глобальные диапа
 | Ресурс | Ссылка |
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/em-series/em7455/ |
-| Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116236-airprime-em7455-product-technical-specification-r15.ashx |
+| Технические характеристики (PDF) | [📄 Скачать описание](/docs/sierra/em7455_spec.pdf) |
 
 ---
 

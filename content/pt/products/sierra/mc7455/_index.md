@@ -76,7 +76,7 @@ O MC7455 suporta as principais bandas LTE globais, incluindo FirstNet B14, e é 
 | Recurso | Link |
 |------|------|
 | Página oficial do produto | https://source.sierrawireless.com/devices/mc-series/mc7455/ |
-| Especificações técnicas (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116238-mc7455-pts-r15.ashx |
+| Especificações técnicas (PDF) | [📄 Baixar ficha técnica](/docs/sierra/mc7455_spec.pdf) |
 
 ---
 

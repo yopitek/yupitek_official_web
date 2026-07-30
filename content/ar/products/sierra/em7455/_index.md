@@ -76,7 +76,7 @@ EM7455 هي وحدة خلوية LTE-Advanced Cat 6 من Sierra Wireless. تست�
 | المورد | الرابط |
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/em-series/em7455/ |
-| المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116236-airprime-em7455-product-technical-specification-r15.ashx |
+| المواصفات الفنية (PDF) | [📄 تنزيل ورقة البيانات](/docs/sierra/em7455_spec.pdf) |
 
 ---
 

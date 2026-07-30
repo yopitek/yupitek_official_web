@@ -76,7 +76,7 @@ EM7455 支援全球主要 LTE 頻段 (B1–5/7/8/12/13/14/20/25/26/29/30/41)，�
 | 資源 | 連結 |
 |------|------|
 | 官方產品頁面 | https://source.sierrawireless.com/devices/em-series/em7455/ |
-| 技術規格書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116236-airprime-em7455-product-technical-specification-r15.ashx |
+| 技術規格書 (PDF) | [📄 下載規格書](/docs/sierra/em7455_spec.pdf) |
 
 ---
 

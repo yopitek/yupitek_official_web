@@ -76,7 +76,7 @@ MC7350 هي وحدة خلوية LTE-Advanced Cat 4 من Sierra Wireless. تست�
 | المورد | الرابط |
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/mc-series/mc7350/ |
-| المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7350_product_technical_specification_and_customer_design_guidelines_rev4_0.ashx |
+| المواصفات الفنية (PDF) | [📄 تنزيل ورقة البيانات](/docs/sierra/MC7350_7354.pdf) |
 
 ---
 

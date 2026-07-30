@@ -77,7 +77,7 @@ El EM7511 soporta bandas LTE globales y License-Assisted Access (LAA), ideal par
 | Recurso | Enlace |
 |------|------|
 | Página oficial del producto | https://source.sierrawireless.com/devices/em-series/em7511/ |
-| Ficha técnica (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41112028-em7511-product-technical-specification-r14.ashx |
+| Ficha técnica (PDF) | [📄 Descargar ficha técnica](/docs/sierra/EM7511_spec.pdf) |
 
 ---
 

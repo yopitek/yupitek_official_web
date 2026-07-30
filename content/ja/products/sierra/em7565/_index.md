@@ -77,7 +77,7 @@ EM7565 は標準 M.2 3042 Key B パッケージを採用しており、EM7511 �
 | リソース | リンク |
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/em-series/em7565/ |
-| 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41110788-em7565-product-technical-specification-r16.ashx |
+| 技術仕様書 (PDF) | [📄 仕様書をダウンロード](/docs/sierra/EM7565_spec.pdf) |
 
 ---
 

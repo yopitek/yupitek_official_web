@@ -76,7 +76,7 @@ El MC7304 soporta las principales bandas LTE globales y se implementa ampliament
 | Recurso | Enlace |
 |------|------|
 | Página oficial del producto | https://source.sierrawireless.com/devices/mc-series/mc7304/ |
-| Ficha técnica (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7304_product_technical_specification_and_customer_design_guidelines_rev12_0.ashx |
+| Ficha técnica (PDF) | [📄 Descargar ficha técnica](/docs/sierra/MC7304_spec.pdf) |
 
 ---
 

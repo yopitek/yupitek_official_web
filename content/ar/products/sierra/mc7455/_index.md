@@ -76,7 +76,7 @@ MC7455 هي وحدة خلوية LTE-Advanced Cat 6 من Sierra Wireless. تست�
 | المورد | الرابط |
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/mc-series/mc7455/ |
-| المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116238-mc7455-pts-r15.ashx |
+| المواصفات الفنية (PDF) | [📄 تنزيل ورقة البيانات](/docs/sierra/mc7455_spec.pdf) |
 
 ---
 

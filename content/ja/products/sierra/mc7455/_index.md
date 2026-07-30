@@ -76,7 +76,7 @@ MC7455 はグローバル主要 LTE 周波数帯と FirstNet B14 に対応して
 | リソース | リンク |
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/mc-series/mc7455/ |
-| 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116238-mc7455-pts-r15.ashx |
+| 技術仕様書 (PDF) | [📄 仕様書をダウンロード](/docs/sierra/mc7455_spec.pdf) |
 
 ---
 

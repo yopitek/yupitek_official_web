@@ -76,7 +76,7 @@ MC7354 适用于工业自动化、交通運输、智慧電网及基礎设施监�
 | 资源 | 链接 |
 |------|------|
 | 官方产品页面 | https://source.sierrawireless.com/devices/mc-series/mc7354/ |
-| 技术规格书 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/4114635_airprime-mc7354-product-technical-specification_r9.ashx |
+| 技术规格书 (PDF) | [📄 下载规格书](/docs/sierra/MC7350_7354.pdf) |
 
 ---
 

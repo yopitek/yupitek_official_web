@@ -76,7 +76,7 @@ The EM7455 supports major global LTE bands (B1–5/7/8/12/13/14/20/25/26/29/30/4
 | Resource | Link |
 |------|------|
 | Official Product Page | https://source.sierrawireless.com/devices/em-series/em7455/ |
-| Technical Specification (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116236-airprime-em7455-product-technical-specification-r15.ashx |
+| Technical Specification (PDF) | [📄 Download Datasheet](/docs/sierra/em7455_spec.pdf) |
 
 ---
 

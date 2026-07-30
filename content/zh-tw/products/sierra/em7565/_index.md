@@ -77,7 +77,7 @@ EM7565 採用標準 M.2 3042 Key B 封裝，相較 EM7511 增加了對更多載�
 | 資源 | 連結 |
 |------|------|
 | 官方產品頁面 | https://source.sierrawireless.com/devices/em-series/em7565/ |
-| 技術規格書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41110788-em7565-product-technical-specification-r16.ashx |
+| 技術規格書 (PDF) | [📄 下載規格書](/docs/sierra/EM7565_spec.pdf) |
 
 ---
 

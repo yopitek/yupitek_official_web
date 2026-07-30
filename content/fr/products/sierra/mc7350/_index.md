@@ -76,7 +76,7 @@ Le MC7350 est certifié par les principaux opérateurs mondiaux, ce qui le rend 
 | Ressource | Lien |
 |------|------|
 | Page officielle du produit | https://source.sierrawireless.com/devices/mc-series/mc7350/ |
-| Fiche technique (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7350_product_technical_specification_and_customer_design_guidelines_rev4_0.ashx |
+| Fiche technique (PDF) | [📄 Télécharger la fiche technique](/docs/sierra/MC7350_7354.pdf) |
 
 ---
 

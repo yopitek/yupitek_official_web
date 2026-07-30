@@ -76,7 +76,7 @@ EM7430 поддерживает основные глобальные диапа
 | Ресурс | Ссылка |
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/em-series/em7430/ |
-| Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116235-airprime-em7430-product-technical-specification-r12.ashx |
+| Технические характеристики (PDF) | [📄 Скачать описание](/docs/sierra/em7430_spec.pdf) |
 
 ---
 

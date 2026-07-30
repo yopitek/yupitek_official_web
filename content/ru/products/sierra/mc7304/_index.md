@@ -76,7 +76,7 @@ MC7304 поддерживает основные глобальные диапа
 | Ресурс | Ссылка |
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/mc-series/mc7304/ |
-| Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/airprime_mc7304_product_technical_specification_and_customer_design_guidelines_rev12_0.ashx |
+| Технические характеристики (PDF) | [📄 Скачать описание](/docs/sierra/MC7304_spec.pdf) |
 
 ---
 

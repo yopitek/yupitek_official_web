@@ -76,7 +76,7 @@ EM7430 هي وحدة خلوية LTE-Advanced Cat 6 من Sierra Wireless. تست�
 | المورد | الرابط |
 |------|------|
 | صفحة المنتج الرسمية | https://source.sierrawireless.com/devices/em-series/em7430/ |
-| المواصفات الفنية (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116235-airprime-em7430-product-technical-specification-r12.ashx |
+| المواصفات الفنية (PDF) | [📄 تنزيل ورقة البيانات](/docs/sierra/em7430_spec.pdf) |
 
 ---
 

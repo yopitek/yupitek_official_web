@@ -80,7 +80,7 @@ EM9191 支援所有 Sub-6 頻段 (同 EM9190) 加上 mmWave 高頻頻段，搭�
 | 資源 | 連結 |
 |------|------|
 | 官方產品頁面 | https://source.sierrawireless.com/devices/em-series/em9191/ |
-| 技術規格書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
+| 技術規格書 (PDF) | [📄 下載規格書](/docs/sierra/EM919x.pdf) |
 
 ---
 

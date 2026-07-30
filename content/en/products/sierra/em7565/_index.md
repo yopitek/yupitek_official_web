@@ -77,7 +77,7 @@ It supports major global LTE bands including B14 FirstNet and B71 600 MHz, suita
 | Resource | Link |
 |------|------|
 | Official Product Page | https://source.sierrawireless.com/devices/em-series/em7565/ |
-| Technical Specification (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41110788-em7565-product-technical-specification-r16.ashx |
+| Technical Specification (PDF) | [📄 Download Datasheet](/docs/sierra/EM7565_spec.pdf) |
 
 ---
 

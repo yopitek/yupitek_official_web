@@ -79,7 +79,7 @@ O EM9190 possui gerenciamento avançado de energia e design térmico otimizado, 
 | Recurso | Link |
 |------|------|
 | Página oficial do produto | https://source.sierrawireless.com/devices/em-series/em9190/ |
-| Especificações técnicas (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
+| Especificações técnicas (PDF) | [📄 Baixar ficha técnica](/docs/sierra/EM919x.pdf) |
 
 ---
 

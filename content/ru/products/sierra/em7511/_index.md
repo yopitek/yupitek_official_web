@@ -77,7 +77,7 @@ EM7511 поддерживает глобальные диапазоны LTE и L
 | Ресурс | Ссылка |
 |------|------|
 | Официальная страница продукта | https://source.sierrawireless.com/devices/em-series/em7511/ |
-| Технические характеристики (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41112028-em7511-product-technical-specification-r14.ashx |
+| Технические характеристики (PDF) | [📄 Скачать описание](/docs/sierra/EM7511_spec.pdf) |
 
 ---
 

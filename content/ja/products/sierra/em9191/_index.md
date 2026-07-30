@@ -80,7 +80,7 @@ EM9191 は EM9190 と同様のすべての Sub-6 周波数帯に加え、mmWave 
 | リソース | リンク |
 |------|------|
 | 公式製品ページ | https://source.sierrawireless.com/devices/em-series/em9191/ |
-| 技術仕様書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
+| 技術仕様書 (PDF) | [📄 仕様書をダウンロード](/docs/sierra/EM919x.pdf) |
 
 ---
 

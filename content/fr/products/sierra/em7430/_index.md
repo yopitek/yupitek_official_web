@@ -76,7 +76,7 @@ L'EM7430 prend en charge les principales bandes LTE mondiales (B1–5/7/8/12/13/
 | Ressource | Lien |
 |------|------|
 | Page officielle du produit | https://source.sierrawireless.com/devices/em-series/em7430/ |
-| Fiche technique (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116235-airprime-em7430-product-technical-specification-r12.ashx |
+| Fiche technique (PDF) | [📄 Télécharger la fiche technique](/docs/sierra/em7430_spec.pdf) |
 
 ---
 

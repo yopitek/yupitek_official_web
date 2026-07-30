@@ -76,7 +76,7 @@ EM7430 支援全球主要 LTE 頻段 (B1–5/7/8/12/13/20/25/26/29/30/41)，適�
 | 資源 | 連結 |
 |------|------|
 | 官方產品頁面 | https://source.sierrawireless.com/devices/em-series/em7430/ |
-| 技術規格書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/74xx/4116235-airprime-em7430-product-technical-specification-r12.ashx |
+| 技術規格書 (PDF) | [📄 下載規格書](/docs/sierra/em7430_spec.pdf) |
 
 ---
 

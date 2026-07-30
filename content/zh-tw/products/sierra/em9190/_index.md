@@ -79,7 +79,7 @@ EM9190 搭載先進的功率管理與散熱設計，適用於高效能工業路�
 | 資源 | 連結 |
 |------|------|
 | 官方產品頁面 | https://source.sierrawireless.com/devices/em-series/em9190/ |
-| 技術規格書 (PDF) | https://source.sierrawireless.com/-/media/support_downloads/airprime/hardware_specs_user_guides/41113174-em919x-em7690-product-technical-specification-r11.ashx |
+| 技術規格書 (PDF) | [📄 下載規格書](/docs/sierra/EM919x.pdf) |
 
 ---
 

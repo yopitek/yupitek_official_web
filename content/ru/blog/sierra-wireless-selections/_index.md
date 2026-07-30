@@ -132,7 +132,7 @@ Sierra Wireless предлагает две серии — EM и MC — всег
 
 ## Приложение: ссылки на официальные технические описания (Spec Sheet)
 
-Ниже приведены ссылки на локальные PDF-копии технических спецификаций каждого модуля (прямая загрузка, без входа в систему), взятые из официального технического ресурса Sierra Wireless (source.sierrawireless.com). Для MC7350 и MC7354 оставлены оригинальные внешние ссылки, так как отдельных PDF-файлов нет (требуется вход по учётной записи). Приведённые характеристики основаны на общедоступных данных. Для получения окончательных спецификаций по каждому параметру (особенно пиковая скорость отправки для EM9190/EM9191), рекомендуем запросить у нас официальную документацию:
+Ниже приведены ссылки на локальные PDF-копии технических спецификаций каждого модуля (прямая загрузка, без входа в систему), взятые из официального технического ресурса Sierra Wireless (source.sierrawireless.com). Приведённые характеристики основаны на общедоступных данных. Для получения окончательных спецификаций по каждому параметру (особенно пиковая скорость отправки для EM9190/EM9191), рекомендуем запросить у нас официальную документацию:
 
 - **EM7430**: https://yupitek.com/docs/sierra/em7430_spec.pdf
 - **EM7455**: https://yupitek.com/docs/sierra/em7455_spec.pdf
@@ -140,6 +140,6 @@ Sierra Wireless предлагает две серии — EM и MC — всег
 - **EM7565**: https://yupitek.com/docs/sierra/EM7565_spec.pdf
 - **EM9190 / EM9191**: https://yupitek.com/docs/sierra/EM919x.pdf
 - **MC7304**: https://yupitek.com/docs/sierra/MC7304_spec.pdf
-- **MC7350**: https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7350_product_technical_specification_and_customer_design_guidelines/
-- **MC7354**: https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7354_product_technical_specification_and_customer_design_guidelines/
+- **MC7350**: https://yupitek.com/docs/sierra/MC7350_7354.pdf
+- **MC7354**: https://yupitek.com/docs/sierra/MC7350_7354.pdf
 - **MC7455**: https://yupitek.com/docs/sierra/mc7455_spec.pdf

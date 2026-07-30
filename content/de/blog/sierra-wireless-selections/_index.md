@@ -132,7 +132,7 @@ In Deutschland und Europa kannst du alle Sierra Wireless Mobilfunkmodule über Y
 
 ## Anhang: Offizielle Spec Sheet Links für alle zehn Modelle
 
-Die folgenden Links bieten dir lokale PDF-Kopien der Spezifikationen jedes Moduls (Direktdownload, kein Login nötig), basierend auf Sierra Wireless' offizieller technischer Dokumentation (source.sierrawireless.com). Für MC7350 und MC7354 bleiben die ursprünglichen externen Links erhalten, da keine einzelnen PDFs vorliegen (Login erforderlich). Die hier zitierten technischen Daten stammen aus öffentlich zugänglichen Quellen. Wenn du die finalen Spezifikationen Punkt für Punkt prüfen musst (besonders die Upload-Peaks von EM9190/EM9191), frag uns bitte direkt nach den offiziellen Unterlagen:
+Die folgenden Links bieten dir lokale PDF-Kopien der Spezifikationen jedes Moduls (Direktdownload, kein Login nötig), basierend auf Sierra Wireless' offizieller technischer Dokumentation (source.sierrawireless.com). Die hier zitierten technischen Daten stammen aus öffentlich zugänglichen Quellen. Wenn du die finalen Spezifikationen Punkt für Punkt prüfen musst (besonders die Upload-Peaks von EM9190/EM9191), frag uns bitte direkt nach den offiziellen Unterlagen:
 
 - **EM7430**: https://yupitek.com/docs/sierra/em7430_spec.pdf
 - **EM7455**: https://yupitek.com/docs/sierra/em7455_spec.pdf
@@ -140,6 +140,6 @@ Die folgenden Links bieten dir lokale PDF-Kopien der Spezifikationen jedes Modul
 - **EM7565**: https://yupitek.com/docs/sierra/EM7565_spec.pdf
 - **EM9190 / EM9191**: https://yupitek.com/docs/sierra/EM919x.pdf
 - **MC7304**: https://yupitek.com/docs/sierra/MC7304_spec.pdf
-- **MC7350**: https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7350_product_technical_specification_and_customer_design_guidelines/
-- **MC7354**: https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7354_product_technical_specification_and_customer_design_guidelines/
+- **MC7350**: https://yupitek.com/docs/sierra/MC7350_7354.pdf
+- **MC7354**: https://yupitek.com/docs/sierra/MC7350_7354.pdf
 - **MC7455**: https://yupitek.com/docs/sierra/mc7455_spec.pdf

@@ -133,7 +133,7 @@ In Taiwan, you can purchase the full Sierra Wireless cellular module lineup thro
 
 ## Appendix: Official Spec Sheet Links by Model
 
-The links below provide local PDF copies of each module's spec sheet (direct download, no login required), sourced from the Sierra Wireless technical resource library (source.sierrawireless.com). For MC7350 and MC7354, the original external links are retained as no individual PDFs are available (login required). The specifications quoted here are compiled from publicly available data. For final, line-by-line verified specs — particularly the EM9190/EM9191 uplink peak rates — contact us directly for the official documentation:
+The links below provide local PDF copies of each module's spec sheet (direct download, no login required), sourced from the Sierra Wireless technical resource library (source.sierrawireless.com). The specifications quoted here are compiled from publicly available data. For final, line-by-line verified specs — particularly the EM9190/EM9191 uplink peak rates — contact us directly for the official documentation:
 
 - **EM7430**: https://yupitek.com/docs/sierra/em7430_spec.pdf
 - **EM7455**: https://yupitek.com/docs/sierra/em7455_spec.pdf
@@ -141,6 +141,6 @@ The links below provide local PDF copies of each module's spec sheet (direct dow
 - **EM7565**: https://yupitek.com/docs/sierra/EM7565_spec.pdf
 - **EM9190 / EM9191**: https://yupitek.com/docs/sierra/EM919x.pdf
 - **MC7304**: https://yupitek.com/docs/sierra/MC7304_spec.pdf
-- **MC7350**: https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7350_product_technical_specification_and_customer_design_guidelines/
-- **MC7354**: https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7354_product_technical_specification_and_customer_design_guidelines/
+- **MC7350**: https://yupitek.com/docs/sierra/MC7350_7354.pdf
+- **MC7354**: https://yupitek.com/docs/sierra/MC7350_7354.pdf
 - **MC7455**: https://yupitek.com/docs/sierra/mc7455_spec.pdf

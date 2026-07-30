@@ -131,7 +131,7 @@ Sierra Wireless には EM シリーズと MC シリーズの 2 シリーズ、�
 
 ## 付録：10モデル公式スペックシートリンク
 
-以下のリンクは各モジュールのスペックシート PDF を直接ダウンロードいただけます（ログイン不要）。原文書は Sierra Wireless 公式テクニカルリソースライブラリ（source.sierrawireless.com）を参照しています。MC7350 および MC7354 については個別の PDF がございませんので、公式外部リンクをそのまま記載しています（ログインが必要です）。本記事のスペック数値は公開情報から整理したものです。項目ごとに最終的な数値（特に EM9190/EM9191 の上りピーク値）をご確認される場合は、当社まで公式文書をお問い合わせください。
+以下のリンクは各モジュールのスペックシート PDF を直接ダウンロードいただけます（ログイン不要）。原文書は Sierra Wireless 公式テクニカルリソースライブラリ（source.sierrawireless.com）を参照しています。本記事のスペック数値は公開情報から整理したものです。項目ごとに最終的な数値（特に EM9190/EM9191 の上りピーク値）をご確認される場合は、当社まで公式文書をお問い合わせください。
 
 - **EM7430**：https://yupitek.com/docs/sierra/em7430_spec.pdf
 - **EM7455**：https://yupitek.com/docs/sierra/em7455_spec.pdf
@@ -139,6 +139,6 @@ Sierra Wireless には EM シリーズと MC シリーズの 2 シリーズ、�
 - **EM7565**：https://yupitek.com/docs/sierra/EM7565_spec.pdf
 - **EM9190 / EM9191**：https://yupitek.com/docs/sierra/EM919x.pdf
 - **MC7304**：https://yupitek.com/docs/sierra/MC7304_spec.pdf
-- **MC7350**：https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7350_product_technical_specification_and_customer_design_guidelines/
-- **MC7354**：https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7354_product_technical_specification_and_customer_design_guidelines/
+- **MC7350**：https://yupitek.com/docs/sierra/MC7350_7354.pdf
+- **MC7354**：https://yupitek.com/docs/sierra/MC7350_7354.pdf
 - **MC7455**：https://yupitek.com/docs/sierra/mc7455_spec.pdf

@@ -132,14 +132,14 @@ Sierra Wireless 現有 EM 與 MC 兩大系列共十款模組，橫跨 LTE Cat 4 
 
 ## 附錄：十款型號官方 Spec Sheet 連結
 
-以下連結來源為 Sierra Wireless 官方技術資源庫（source.sierrawireless.com）。**部分文件為會員登入後才能下載 PDF**，本文規格數字係整理自公開可見資料，若需要逐項核對的最終規格數字（尤其是 EM9190/EM9191 上行峰值），建議直接向我們索取官方文件確認：
+以下連結提供各型號規格書 PDF 副本（可直接下載，無需登入），來源為 Sierra Wireless 官方技術資源庫（source.sierrawireless.com）。MC7350、MC7354 因無個別 PDF 檔案，仍保留官方外部連結（需會員登入）。本文規格數字整理自公開資料，若需逐項核對的最終規格數字（尤其是 EM9190/EM9191 上行峰值），建議直接向我們索取官方文件確認：
 
-- **EM7430**：https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7430_product_technical_specification/
-- **EM7455**：https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/
-- **EM7511**：https://source.sierrawireless.com/resources/airprime/minicard/75xx/airprime_em7511_product_technical_specification/
-- **EM7565**：https://source.sierrawireless.com/resources/airprime/minicard/75xx/airprime_em7565_product_technical_specification/
-- **EM9190 / EM9191**：https://source.sierrawireless.com/resources/airprime/minicard/airprime_em919x-7690_product_technical_specification/
-- **MC7304**：https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7304_product_technical_specification_and_customer_design_guidelines/
+- **EM7430**：https://yupitek.com/docs/sierra/em7430_spec.pdf
+- **EM7455**：https://yupitek.com/docs/sierra/em7455_spec.pdf
+- **EM7511**：https://yupitek.com/docs/sierra/EM7511_spec.pdf
+- **EM7565**：https://yupitek.com/docs/sierra/EM7565_spec.pdf
+- **EM9190 / EM9191**：https://yupitek.com/docs/sierra/EM919x.pdf
+- **MC7304**：https://yupitek.com/docs/sierra/MC7304_spec.pdf
 - **MC7350**：https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7350_product_technical_specification_and_customer_design_guidelines/
 - **MC7354**：https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7354_product_technical_specification_and_customer_design_guidelines/
-- **MC7455**：https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/
+- **MC7455**：https://yupitek.com/docs/sierra/mc7455_spec.pdf

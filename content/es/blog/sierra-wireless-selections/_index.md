@@ -131,14 +131,14 @@ Puede adquirir toda la gama de módulos celulares Sierra Wireless a través de Y
 
 ## Apéndice: Enlaces a las Fichas Técnicas Oficiales de los Diez Modelos
 
-Los siguientes enlaces provienen de la base de recursos técnicos oficial de Sierra Wireless (source.sierrawireless.com). **Algunos documentos requieren inicio de sesión para descargar el PDF**. Las cifras de especificaciones de este artículo se han recopilado a partir de fuentes públicas; si necesita verificar los valores exactos de las especificaciones finales (especialmente los picos de subida de EM9190/EM9191), le recomendamos contactarnos para solicitar los documentos oficiales de confirmación:
+Los siguientes enlaces proporcionan copias PDF de las hojas de especificaciones de cada módulo (descarga directa, sin inicio de sesión), con origen en la base de recursos técnicos oficial de Sierra Wireless (source.sierrawireless.com). Para MC7350 y MC7354, se mantienen los enlaces externos originales al no disponer de PDF individuales (requieren inicio de sesión). Las cifras de este artículo se han recopilado a partir de fuentes públicas; si necesita verificar los valores exactos de las especificaciones finales (especialmente los picos de subida de EM9190/EM9191), le recomendamos contactarnos para solicitar los documentos oficiales:
 
-- **EM7430**: https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7430_product_technical_specification/
-- **EM7455**: https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/
-- **EM7511**: https://source.sierrawireless.com/resources/airprime/minicard/75xx/airprime_em7511_product_technical_specification/
-- **EM7565**: https://source.sierrawireless.com/resources/airprime/minicard/75xx/airprime_em7565_product_technical_specification/
-- **EM9190 / EM9191**: https://source.sierrawireless.com/resources/airprime/minicard/airprime_em919x-7690_product_technical_specification/
-- **MC7304**: https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7304_product_technical_specification_and_customer_design_guidelines/
+- **EM7430**: https://yupitek.com/docs/sierra/em7430_spec.pdf
+- **EM7455**: https://yupitek.com/docs/sierra/em7455_spec.pdf
+- **EM7511**: https://yupitek.com/docs/sierra/EM7511_spec.pdf
+- **EM7565**: https://yupitek.com/docs/sierra/EM7565_spec.pdf
+- **EM9190 / EM9191**: https://yupitek.com/docs/sierra/EM919x.pdf
+- **MC7304**: https://yupitek.com/docs/sierra/MC7304_spec.pdf
 - **MC7350**: https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7350_product_technical_specification_and_customer_design_guidelines/
 - **MC7354**: https://source.sierrawireless.com/resources/airprime/minicard/airprime_mc7354_product_technical_specification_and_customer_design_guidelines/
-- **MC7455**: https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/
+- **MC7455**: https://yupitek.com/docs/sierra/mc7455_spec.pdf

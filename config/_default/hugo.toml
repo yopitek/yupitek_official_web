@@ -1,3 +1,5 @@
+disableAliases = true
+disableKinds = ["RSS"]
 baseURL = "https://yupitek.com/"
 title = "Yopitek Ltd | 榆閤科技有限公司"
 defaultContentLanguage = "zh-tw"
@@ -8,8 +10,8 @@ hasCJKLanguage = true
 theme = "blowfish"
 
 [outputs]
-  home    = ["HTML", "RSS", "JSON", "llms"]
-  section = ["HTML", "RSS"]
+  home    = ["HTML", "JSON", "llms"]
+  section = ["HTML"]
 
 [outputFormats.llms]
   mediaType = "text/plain"
@@ -34,3 +36,4 @@ theme = "blowfish"
 [related]
   includeNewer = true
   threshold = 50
+

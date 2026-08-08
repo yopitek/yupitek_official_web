@@ -1,12 +1,11 @@
 ---
-title: "MC7304 مقابل MC7350 مقابل MC7354: اختيار وحدات Cat 4 القديمة وتأمين مخزون طويل الأجل"
+title: "Sierra MC7304 مقابل MC7350 مقابل MC7354: اختيار وحدات Cat 4 القديمة وتأمين مخزون طويل الأجل"
 description: "كيف تختلف وحدات MC7304 وMC7350 وMC7354؟ تتقاطع هذه المقالة بين المواصفات الرسمية وملفات FCC لتوضح نطاقات LTE وسرعات التحميل والهوائيات ودرجات الحرارة، وتكشف الجدل حول تصنيف Cat 3/Cat 4، وتقدم نصائح للتخزين لوحدات mPCIe القديمة بالإضافة إلى تقييم ترقية EM7455. قراءة لا غنى عنها للمهندسين."
 date: 2026-08-01
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "cellular-module", "mc7304", "mc7350", "mc7354", "mpcie", "cat4", "lte", "eol", "module-selection"]
-featureimage: "/static/img/sierra/hero.webp"
 author: "benny-lai"
 lastmod: 2026-08-01
 faq:
@@ -20,7 +19,6 @@ faq:
     answer: "يسجل الدليل الرسمي لسلسلة MC ذروة تحميل 100 Mbps وذروة رفع 50 Mbps لسلسلة MC73XX، كما تصنفها ملفات اختبارات FCC على أنها LTE Cat 3 (100/50 Mbps). ادعاء 'Cat 4 / 150 Mbps' لا يزال بانتظار التأكيد من أحدث توثيق للبائع، لذلك نوصي باعتماد 100/50 Mbps كمرجع أساسي."
 ---
 
-# MC7304 مقابل MC7350 مقابل MC7354: اختيار وحدات Cat 4 القديمة وتأمين مخزون طويل الأجل
 
 > **الخلاصة أولاً**: إن MC7304 وMC7350 وMC7354 هي ثلاث وحدات خلوية mPCIe من سلسلة AirPrime MC من Sierra Wireless تنتمي إلى نفس عائلة MC73XX. يسجل الدليل الرسمي ذروة تحميل 100 Mbps وذروة رفع 50 Mbps، مع دعم LTE وHSPA+ وGSM/GPRS/EDGE. يضيف كل من MC7354 وMC7350 أيضاً دعم CDMA احتياطياً. تدمج الوحدات الثلاث تحديد المواقع GPS + GLONASS وتتطلب 3 هوائيات خارجية. مراجع فنية مفصلة: [MC7304](/ar/products/sierra/mc7304/) | [MC7350](/ar/products/sierra/mc7350/) | [MC7354](/ar/products/sierra/mc7354/).
 

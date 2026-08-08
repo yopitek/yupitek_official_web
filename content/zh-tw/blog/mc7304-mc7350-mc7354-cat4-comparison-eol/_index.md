@@ -1,12 +1,11 @@
 ---
-title: "MC7304 / MC7350 / MC7354 怎麼分？舊款 Cat 4 模組選型與長期備料建議"
+title: "Sierra MC7304 / MC7350 / MC7354 怎麼分？舊款 Cat 4 模組選型與長期備料建議"
 description: "MC7304、MC7350、MC7354 怎麼分？本文逐項核對官方規格書與 FCC 備案，解析 LTE 頻段、下載速率、天線與溫度，揭露 Cat 3/Cat 4 速率差異，並提供舊款 mPCIe 模組備料建議與 EM7455 升級評估，工程師必看。"
 date: 2026-08-01
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "cellular-module", "mc7304", "mc7350", "mc7354", "mpcie", "cat4", "lte", "eol", "module-selection"]
-featureimage: "/static/img/sierra/hero.webp"
 author: "benny-lai"
 lastmod: 2026-08-01
 faq:
@@ -20,7 +19,6 @@ faq:
     answer: "官方 MC 系列手冊載明 MC73XX 峰值下載 100 Mbps、上傳 50 Mbps；FCC 測試備案亦歸類為 LTE Cat 3（100/50 Mbps）。「Cat 4 / 150 Mbps」說法尚待原廠最新文件確認，建議以 100/50 Mbps 為基準。"
 ---
 
-# MC7304 / MC7350 / MC7354 怎麼分？舊款 Cat 4 模組選型與長期備料建議
 
 > **先講結論**：MC7304、MC7350、MC7354 是 Sierra Wireless AirPrime MC 系列的三顆 mPCIe 蜂窩模組，同屬 MC73XX 家族。官方手冊標示它們的峰值下載為 100 Mbps、上傳 50 Mbps，支援 LTE、HSPA+ 與 GSM/GPRS/EDGE。其中 MC7354 和 MC7350 還有 CDMA 回退。三顆都內建 GPS + GLONASS 定位，需要外接 3 支天線。詳細技術資料可參考：[MC7304](/zh-tw/products/sierra/mc7304/)｜[MC7350](/zh-tw/products/sierra/mc7350/)｜[MC7354](/zh-tw/products/sierra/mc7354/)。
 

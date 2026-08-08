@@ -1,12 +1,11 @@
 ---
-title: "MC7455 vs EM7455: Formato mPCIe ou M.2, qual você deve escolher?"
+title: "Sierra MC7455 vs EM7455: Formato mPCIe ou M.2, qual você deve escolher?"
 description: "O MC7455 (mPCIe) e o EM7455 (M.2) usam o mesmo chipset Qualcomm MDM9230, com velocidades LTE Cat 6 de 300/50 Mbps e o mesmo suporte de bandas LTE. As diferenças reais estão no formato, no tamanho, na alimentação e nos conectores de antena. Este guia compara os dois módulos ponto a ponto para ajudar você a decidir, seja para consertar um roteador antigo ou para atualizar um notebook."
 date: 2026-08-01
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "cellular-module", "mc7455", "em7455", "mpcie", "m2", "cat6", "lte", "module-selection"]
-featureimage: "/static/img/sierra/hero.webp"
 author: "benny-lai"
 lastmod: 2026-08-01
 faq:
@@ -20,7 +19,6 @@ faq:
     answer: "Pode ser instalado com uma placa adaptadora, mas observe que o EM7455 foi projetado para uma alimentação de 3.7 V (uma ranhura mPCIe geralmente fornece apenas 3.3 V), e seus conectores de antena são compatíveis com MHF4. Os cabos pigtail U.FL existentes não podem ser reutilizados diretamente, então planeje cabos adaptadores."
 ---
 
-# MC7455 vs EM7455: Formato mPCIe ou M.2, qual você deve escolher?
 
 **Resumo em uma frase da diferença: se a sua placa tem uma ranhura mPCIe, como um roteador industrial antigo, escolha o MC7455. Se ela tem uma ranhura M.2, como um notebook corporativo moderno ou uma placa-mãe embarcada nova, escolha o EM7455. Ambos usam o mesmo chipset Qualcomm MDM9230, então o desempenho 4G é idêntico. O que você realmente precisa comparar são os detalhes de formato e integração de hardware.**
 

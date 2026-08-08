@@ -1,12 +1,11 @@
 ---
-title: "Análisis profundo del EM7565: redes privadas CBRS y alta velocidad de subida, ¿cómo elegir su red privada empresarial?"
+title: "Sierra Análisis profundo del EM7565: redes privadas CBRS y alta velocidad de subida, ¿cómo elegir su red privada empresarial?"
 description: "Análisis profundo del EM7565: descarga Cat 12 a 600 Mbps, subida Cat 13 a 150 Mbps, Qualcomm MDM9250, formato M.2, MIMO de tres antenas y GNSS multiconstelación. Lectura imprescindible para elegir redes privadas CBRS y routers industriales, con tabla completa de bandas, temperaturas y certificaciones, preparado por Yupitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "em7565", "lte-a", "cat-12", "cat-13", "cbrs", "m2", "gnss", "wwan", "private-lte"]
-featureimage: "/images/products/sierra/EM7565_hero.jpg"
 author: "benny-lai"
 lastmod: 2026-07-31
 faq:
@@ -22,7 +21,6 @@ faq:
     answer: "Sí. La interfaz USB admite QMI (Linux y Android) y MBIM (Windows 8.1/10 y Linux), además de una interfaz de comandos AT según 3GPP TS 27.007 y un SDK para Linux. El soporte real de controladores depende de su distribución y de la versión del kernel."
 ---
 
-# Análisis profundo del EM7565: redes privadas CBRS y alta velocidad de subida, ¿cómo elegir su red privada empresarial?
 
 Si usted trabaja en un proyecto de laboratorio, o acaba de recibir un proyecto de LTE privado empresarial y redes CBRS, el EM7565 aparecerá sin duda en su lista de candidatos. Pero aquí está el punto clave: «que se mencione en todas las conversaciones» no significa «comprarlo, conectarlo y tener CBRS funcionando de inmediato».
 

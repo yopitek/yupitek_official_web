@@ -1,12 +1,11 @@
 ---
-title: "EM7565 徹底解説：CBRS プライベートネットワークと高速アップリンク、企業専用ネットワークの選び方"
+title: "Sierra EM7565 徹底解説：CBRS プライベートネットワークと高速アップリンク、企業専用ネットワークの選び方"
 description: "EM7565 徹底解説：Cat 12 ダウンリンク 600 Mbps、Cat 13 アップリンク 150 Mbps、Qualcomm MDM9250、M.2 パッケージ、3アンテナ MIMO、マルチコンステレーション GNSS。企業 CBRS プライベートネットワークと産業用ルーター選定に必読。周波数帯・温度・認証の完全比較表付き。Yupitek（榆閤科技）が技術資料を整理。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "em7565", "lte-a", "cat-12", "cat-13", "cbrs", "m2", "gnss", "wwan", "private-lte"]
-featureimage: "/images/products/sierra/EM7565_hero.jpg"
 author: "benny-lai"
 lastmod: 2026-07-31
 faq:
@@ -22,7 +21,6 @@ faq:
     answer: "使えます。USB インターフェースは QMI（Linux と Android）と MBIM（Windows 8.1/10 と Linux）に対応し、3GPP TS 27.007 の AT コマンドインターフェースと Linux SDK も提供されています。実際のドライバ対応はディストリビューションとカーネルバージョンに依存します。"
 ---
 
-# EM7565 徹底解説：CBRS プライベートネットワークと高速アップリンク、企業専用ネットワークの選び方
 
 研究室のプロジェクトで、あるいは企業プライベート LTE や CBRS 専用ネットワークの案件で、必ず候補に上がってくるのが EM7565 という M.2 モジュールです。ただし注意が必要です。「よく名前が挙がる」ことと「買って挿すだけで CBRS が動く」ことは、まったく別の話です。
 

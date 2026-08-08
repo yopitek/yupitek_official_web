@@ -1,12 +1,11 @@
 ---
-title: "EM7565 Deep Dive: CBRS Private LTE and High Uplink Explained"
+title: "Sierra EM7565 Deep Dive: CBRS Private LTE and High Uplink Explained"
 description: "EM7565 deep dive: Cat 12 downlink at 600 Mbps, Cat 13 uplink at 150 Mbps, Qualcomm MDM9250, M.2 form factor, 3-antenna MIMO, and multi-constellation GNSS. Everything you need for CBRS private network and industrial router selection, compiled by Yupitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "em7565", "lte-a", "cat-12", "cat-13", "cbrs", "m2", "gnss", "wwan", "private-lte"]
-featureimage: "/images/products/sierra/EM7565_hero.jpg"
 author: "benny-lai"
 lastmod: 2026-07-31
 faq:
@@ -22,7 +21,6 @@ faq:
     answer: "Yes. The USB interface supports QMI (Linux and Android) and MBIM (Windows 8.1/10 and Linux), plus a 3GPP TS 27.007 AT command interface and a Linux SDK. Actual driver support depends on your distribution and kernel version."
 ---
 
-# EM7565 Deep Dive: CBRS Private LTE and High Uplink Explained
 
 If you are running a lab project or building enterprise private LTE and CBRS networks, the EM7565 will come up in your shortlist. Here is the catch: getting named in every discussion does not mean you can plug it in and run CBRS out of the box.
 

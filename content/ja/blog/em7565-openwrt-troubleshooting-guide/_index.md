@@ -1,5 +1,5 @@
 ---
-title: "OpenWrt／Raspberry Pi で EM7565 を認識できない？QMI／MBIM トラブルシューティング完全ガイド"
+title: "Sierra OpenWrt／Raspberry Pi で EM7565 を認識できない？QMI／MBIM トラブルシューティング完全ガイド"
 description: "OpenWrt や Raspberry Pi で EM7565 を認識できない、QMI port が消えてしまった。このトラブルシューティングガイドでは、lsusb、dmesg から USB composition、ドライバのロード、EM7565 の設定手順までを解説し、ハードウェアとソフトウェアの接続問題を解決します。"
 date: 2026-07-31
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "EM7565 wird unter OpenWrt oder Raspberry Pi nicht erkannt? Vollständiger QMI/MBIM-Fehlerbehebungs-Leitfaden"
+title: "Sierra EM7565 wird unter OpenWrt oder Raspberry Pi nicht erkannt? Vollständiger QMI/MBIM-Fehlerbehebungs-Leitfaden"
 description: "EM7565 wird unter OpenWrt oder auf dem Raspberry Pi nicht erkannt oder der QMI-Port ist verschwunden? Dieser Leitfaden führt dich von lsusb und dmesg über die USB-Komposition, das Laden der Treiber und die EM7565-Konfigurationsschritte, um Hardware- und Software-Verbindungsprobleme zu lösen."
 date: 2026-07-31
 draft: false

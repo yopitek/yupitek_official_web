@@ -1,12 +1,11 @@
 ---
-title: "MC7304 vs MC7350 vs MC7354: Cómo elegir módulos Cat 4 heredados y mantener stock a largo plazo"
+title: "Sierra MC7304 vs MC7350 vs MC7354: Cómo elegir módulos Cat 4 heredados y mantener stock a largo plazo"
 description: "¿En qué se diferencian el MC7304, el MC7350 y el MC7354? Este artículo contrasta las especificaciones oficiales y los registros de la FCC para desglosar bandas LTE, velocidades de descarga, antenas y rangos de temperatura, expone el debate sobre la clasificación Cat 3/Cat 4 y ofrece consejos de almacenamiento para módulos mPCIe heredados, además de una evaluación de la actualización al EM7455. Lectura imprescindible para ingenieros."
 date: 2026-08-01
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "cellular-module", "mc7304", "mc7350", "mc7354", "mpcie", "cat4", "lte", "eol", "module-selection"]
-featureimage: "/static/img/sierra/hero.webp"
 author: "benny-lai"
 lastmod: 2026-08-01
 faq:
@@ -20,7 +19,6 @@ faq:
     answer: "El manual oficial de la serie MC lista un pico de descarga de 100 Mbps y un pico de subida de 50 Mbps para el MC73XX, y los registros de prueba de la FCC también los clasifican como LTE Cat 3 (100/50 Mbps). La afirmación de 'Cat 4 / 150 Mbps' aún espera confirmación en la documentación más reciente del proveedor, por lo que recomendamos usar 100/50 Mbps como referencia."
 ---
 
-# MC7304 vs MC7350 vs MC7354: Cómo elegir módulos Cat 4 heredados y mantener stock a largo plazo
 
 > **Lo esencial primero**: el MC7304, el MC7350 y el MC7354 son tres módulos celulares mPCIe de la serie AirPrime MC de Sierra Wireless, pertenecientes a la misma familia MC73XX. El manual oficial lista un pico de descarga de 100 Mbps y un pico de subida de 50 Mbps, con soporte de LTE, HSPA+ y GSM/GPRS/EDGE. El MC7354 y el MC7350 añaden además respaldo CDMA. Los tres integran posicionamiento GPS + GLONASS y requieren 3 antenas externas. Referencias técnicas detalladas: [MC7304](/es/products/sierra/mc7304/) | [MC7350](/es/products/sierra/mc7350/) | [MC7354](/es/products/sierra/mc7354/).
 

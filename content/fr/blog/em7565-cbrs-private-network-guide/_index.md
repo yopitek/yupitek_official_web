@@ -1,12 +1,11 @@
 ---
-title: "EM7565 en détail : réseau privé CBRS et vitesse d'envoi élevée, quel réseau privé d'entreprise choisir ?"
+title: "Sierra EM7565 en détail : réseau privé CBRS et vitesse d'envoi élevée, quel réseau privé d'entreprise choisir ?"
 description: "EM7565 en détail : Cat 12 à 600 Mbit/s en téléchargement, Cat 13 à 150 Mbit/s en envoi, Qualcomm MDM9250, format M.2, MIMO à trois antennes et GNSS multi-constellation. Lecture indispensable pour choisir un réseau privé CBRS d'entreprise et un routeur industriel, avec comparaison complète des bandes, des températures et des certifications. Préparé par Yupitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "em7565", "lte-a", "cat-12", "cat-13", "cbrs", "m2", "gnss", "wwan", "private-lte"]
-featureimage: "/images/products/sierra/EM7565_hero.jpg"
 author: "benny-lai"
 lastmod: 2026-07-31
 faq:
@@ -22,7 +21,6 @@ faq:
     answer: "Oui. L'interface USB prend en charge QMI (Linux et Android) et MBIM (Windows 8.1/10 et Linux), et propose une interface de commandes AT 3GPP TS 27.007 ainsi qu'un SDK Linux. La prise en charge réelle des pilotes dépend de la distribution et de la version du noyau."
 ---
 
-# EM7565 en détail : réseau privé CBRS et vitesse d'envoi élevée, quel réseau privé d'entreprise choisir ?
 
 Si tu prépares un projet de laboratoire, ou si tu viens de récupérer un projet de réseau privé LTE ou CBRS pour une entreprise, tu verras forcément le module M.2 EM7565 dans la liste des candidats. Mais voilà le point clé : « souvent cité » ne veut pas dire « tu l'achètes, tu le branches, et CBRS fonctionne tout de suite ».
 

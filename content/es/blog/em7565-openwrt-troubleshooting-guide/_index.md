@@ -1,5 +1,5 @@
 ---
-title: "¿EM7565 no detectado en OpenWrt o Raspberry Pi? Guía completa de solución de problemas QMI/MBIM"
+title: "Sierra ¿EM7565 no detectado en OpenWrt o Raspberry Pi? Guía completa de solución de problemas QMI/MBIM"
 description: "¿El EM7565 no se detecta en OpenWrt o Raspberry Pi, o desapareció el puerto QMI? Esta guía lo lleva desde lsusb y dmesg a través de la composición USB, la carga de controladores y los pasos de configuración del EM7565 para resolver problemas de conexión de hardware y software."
 date: 2026-07-31
 draft: false

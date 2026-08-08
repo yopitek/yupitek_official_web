@@ -1,12 +1,11 @@
 ---
-title: "MC7304 vs MC7350 vs MC7354 : choisir des modules Cat 4 hérités et constituer un stock à long terme"
+title: "Sierra MC7304 vs MC7350 vs MC7354 : choisir des modules Cat 4 hérités et constituer un stock à long terme"
 description: "Quelles sont les différences entre le MC7304, le MC7350 et le MC7354 ? Cet article recoupe les spécifications officielles et les dossiers FCC pour décomposer les bandes LTE, les débits descendants, les antennes et les plages de température, expose le débat Cat 3/Cat 4 et offre des conseils de stockage pour les modules mPCIe hérités, plus une évaluation de la mise à niveau vers l'EM7455. Une lecture incontournable pour les ingénieurs."
 date: 2026-08-01
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "cellular-module", "mc7304", "mc7350", "mc7354", "mpcie", "cat4", "lte", "eol", "module-selection"]
-featureimage: "/static/img/sierra/hero.webp"
 author: "benny-lai"
 lastmod: 2026-08-01
 faq:
@@ -20,7 +19,6 @@ faq:
     answer: "Le manuel officiel de la série MC indique un débit descendant maximal de 100 Mbit/s et un débit montant maximal de 50 Mbit/s pour le MC73XX, et les dossiers de tests FCC les classent également comme LTE Cat 3 (100/50 Mbit/s). La revendication « Cat 4 / 150 Mbit/s » attend toujours confirmation dans la documentation la plus récente du fabricant, nous recommandons donc d'utiliser 100/50 Mbit/s comme référence."
 ---
 
-# MC7304 vs MC7350 vs MC7354 : choisir des modules Cat 4 hérités et constituer un stock à long terme
 
 > **L'essentiel d'abord** : le MC7304, le MC7350 et le MC7354 sont trois modules cellulaires mPCIe de la série AirPrime MC de Sierra Wireless, issus de la même famille MC73XX. Le manuel officiel indique un débit descendant maximal de 100 Mbit/s et un débit montant maximal de 50 Mbit/s, avec prise en charge de LTE, HSPA+ et GSM/GPRS/EDGE. Le MC7354 et le MC7350 ajoutent également un repli CDMA. Les trois intègrent un positionnement GPS + GLONASS et nécessitent 3 antennes externes. Références techniques détaillées : [MC7304](/fr/products/sierra/mc7304/) | [MC7350](/fr/products/sierra/mc7350/) | [MC7354](/fr/products/sierra/mc7354/).
 

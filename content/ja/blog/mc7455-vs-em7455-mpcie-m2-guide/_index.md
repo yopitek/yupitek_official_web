@@ -1,12 +1,11 @@
 ---
-title: "MC7455 vs EM7455：mPCIe と M.2 パッケージ、どちらを選ぶべきか？（同じチップ、差はスロット）"
+title: "Sierra MC7455 vs EM7455：mPCIe と M.2 パッケージ、どちらを選ぶべきか？（同じチップ、差はスロット）"
 description: "MC7455（mPCIe）と EM7455（M.2）はどちらも Qualcomm MDM9230 チップセットを採用し、Cat 6 300/50 Mbps と同一の LTE バンドに対応します。違いはパッケージ、サイズ、電源供給、アンテナコネクタにあります。本記事では両者の仕様を項目ごとに比較し、旧ルーターの修理やノートPC のアップグレードで迷わないための選定ポイントを解説します。"
 date: 2026-08-01
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "cellular-module", "mc7455", "em7455", "mpcie", "m2", "cat6", "lte", "module-selection"]
-featureimage: "/static/img/sierra/hero.webp"
 author: "benny-lai"
 lastmod: 2026-08-01
 faq:
@@ -20,7 +19,6 @@ faq:
     answer: "変換アダプターを使えば取り付け可能です。ただし EM7455 は 3.7 V を基準に電源設計されており（mPCIe スロットは通常 3.3 V のみ）、アンテナコネクタは MHF4 互換です。既存の U.FL ケーブルはそのまま流用できないため、変換ケーブルを併せてご用意ください。"
 ---
 
-# MC7455 vs EM7455：mPCIe と M.2 パッケージ、どちらを選ぶべきか？（同じチップ、差はスロット）
 
 **MC7455 と EM7455 の違いを一言でまとめると、こうなります。基板が mPCIe スロットの場合（旧型の産業用ルーターなど）は MC7455 を、M.2 スロットの場合（最新のビジネスノートPC や新しい組み込みマザーボードなど）は EM7455 を選んでください。両者は同じ Qualcomm MDM9230 チップセットを搭載しており、4G の性能に違いはありません。比較すべきはパッケージとハードウェア統合の詳細です。**
 

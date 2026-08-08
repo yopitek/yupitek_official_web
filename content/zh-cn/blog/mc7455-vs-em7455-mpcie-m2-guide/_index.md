@@ -1,12 +1,11 @@
 ---
-title: "MC7455 vs EM7455：mPCIe 与 M.2 封装，该选哪一种？（同芯片、差在插槽）"
+title: "Sierra MC7455 vs EM7455：mPCIe 与 M.2 封装，该选哪一种？（同芯片、差在插槽）"
 description: "MC7455（mPCIe）与 EM7455（M.2）同采用 Qualcomm MDM9230 芯片，支持 Cat 6 300/50 Mbps 与相同 LTE 频段，差异在封装、尺寸、供电与天线接头。本文逐项对比两者规格并提供选型建议，帮你厘清旧路由器维修或笔记本升级的盲点。"
 date: 2026-08-01
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "cellular-module", "mc7455", "em7455", "mpcie", "m2", "cat6", "lte", "module-selection"]
-featureimage: "/static/img/sierra/hero.webp"
 author: "benny-lai"
 lastmod: 2026-08-01
 faq:
@@ -20,7 +19,6 @@ faq:
     answer: "可以通过转接板安装，但要注意 EM7455 以 3.7 V 为供电设计基准（mPCIe 槽通常只提供 3.3 V），且天线接头为 MHF4 兼容，旧的 U.FL 线材无法直接沿用，需一并准备转接线。"
 ---
 
-# MC7455 vs EM7455：mPCIe 与 M.2 封装，该选哪一种？（同芯片、差在插槽）
 
 **一句话总结 MC7455 和 EM7455 的区别：如果你的主板是 mPCIe 插槽（比如旧款工业路由器），选 MC7455；如果是 M.2 插槽（比如现代商用笔记本或新款嵌入式主板），选 EM7455。因为两者用的是同一颗 Qualcomm MDM9230 芯片，4G 性能根本没差别，你要比的是封装和硬件整合的细节。**
 

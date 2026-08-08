@@ -1,5 +1,5 @@
 ---
-title: "EM7565 Not Detected on OpenWrt or Raspberry Pi? Complete QMI/MBIM Troubleshooting Guide"
+title: "Sierra EM7565 Not Detected on OpenWrt or Raspberry Pi? Complete QMI/MBIM Troubleshooting Guide"
 description: "EM7565 not detected on OpenWrt or Raspberry Pi, or the QMI port disappeared? This guide walks you from lsusb and dmesg through USB composition, driver loading, and EM7565 configuration steps to resolve hardware and software connection issues."
 date: 2026-07-31
 draft: false

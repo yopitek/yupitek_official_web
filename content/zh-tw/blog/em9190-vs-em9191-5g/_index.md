@@ -1,12 +1,11 @@
 ---
-title: "EM9190 vs EM9191：5G Sub-6 與 mmWave 該怎麼選？幫你破除網路謠言"
+title: "Sierra EM9190 vs EM9191：5G Sub-6 與 mmWave 該怎麼選？幫你破除網路謠言"
 description: "EM9190 vs EM9191 怎麼選？依官方規格書（41113174 Rev 8）：EM9190 支援 5G Sub-6 + mmWave（n257/258/260/261，僅 NSA），EM9191 僅 Sub-6。皆採 Qualcomm SDX55、M.2，附台灣 5G 頻段對照，Yupitek 整理。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "em9190", "em9191", "5g", "mmwave", "sub-6", "n78", "m2", "gnss", "wwan"]
-featureimage: "/images/products/sierra/EM9190_hero.jpg"
 author: "benny-lai"
 lastmod: 2026-07-31
 faq:
@@ -22,7 +21,6 @@ faq:
     answer: "高度共通：同為 M.2（WWAN Type 3042-S3-B，長 52mm）、同 75-pin 腳位、同 USB 3.1 Gen2 / PCIe Gen3 介面、同 4× MHF4 Sub-6 天線埠。差異在 EM9190 多了 8× MHF7S mmWave IF 連接器與 QTM 控制腳位（pin 40/42/44/46/48，EM9191 為 NC）。"
 ---
 
-# EM9190 vs EM9191：5G Sub-6 與 mmWave 該怎麼選？幫你破除網路謠言
 
 如果你在學校跟著教授做 5G 專案，或是剛好在公司負責 5G 模組的選型，你上網爬文一定常常看到這句話：「EM9190 是平價 Sub-6 版本，EM9191 才是包含 mmWave（毫米波）的旗艦款」。
 

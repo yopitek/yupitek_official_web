@@ -1,5 +1,5 @@
 ---
-title: "EM7565 在 OpenWrt／樹莓派上抓不到？QMI／MBIM 除錯完整指南"
+title: "Sierra EM7565 在 OpenWrt／樹莓派上抓不到？QMI／MBIM 除錯完整指南"
 description: "EM7565 在 OpenWrt 或樹莓派上抓不到、QMI port 消失？這篇除錯指南帶你從 lsusb、dmesg 查到 USB composition，再到驅動載入與 EM7565 設定步驟，輕鬆排除硬體與軟體連線問題。"
 date: 2026-07-31
 draft: false

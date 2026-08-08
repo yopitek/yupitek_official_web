@@ -1,12 +1,11 @@
 ---
-title: "MC7304 / MC7350 / MC7354 の違い：旧型 Cat 4 モジュールの選定と長期調達のポイント"
+title: "Sierra MC7304 / MC7350 / MC7354 の違い：旧型 Cat 4 モジュールの選定と長期調達のポイント"
 description: "MC7304、MC7350、MC7354 はどう違うのか。本記事では公式仕様書と FCC 登録情報を項目ごとに照合し、LTE バンド、下り速度、アンテナ、温度仕様を解説。Cat 3/Cat 4 の速度論争を整理し、旧型 mPCIe モジュールの長期調達アドバイスと EM7455 へのアップグレード評価を提供します。エンジニア必見。"
 date: 2026-08-01
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "cellular-module", "mc7304", "mc7350", "mc7354", "mpcie", "cat4", "lte", "eol", "module-selection"]
-featureimage: "/static/img/sierra/hero.webp"
 author: "benny-lai"
 lastmod: 2026-08-01
 faq:
@@ -20,7 +19,6 @@ faq:
     answer: "公式の MC シリーズマニュアルには MC73XX の下りピーク 100 Mbps、上りピーク 50 Mbps と記載されており、FCC のテスト登録でも LTE Cat 3（100/50 Mbps）に分類されています。「Cat 4 / 150 Mbps」という説はメーカー最新文書での確認待ちですので、100/50 Mbps を基準にすることをお勧めします。"
 ---
 
-# MC7304 / MC7350 / MC7354 の違い：旧型 Cat 4 モジュールの選定と長期調達のポイント
 
 > **先に結論**：MC7304、MC7350、MC7354 は Sierra Wireless AirPrime MC シリーズに属する3つの mPCIe セルラーモジュールで、同じ MC73XX ファミリーです。公式マニュアルでは、下りピーク 100 Mbps、上りピーク 50 Mbps で、LTE、HSPA+、GSM/GPRS/EDGE に対応しています。MC7354 と MC7350 はさらに CDMA フォールバックにも対応します。3機種とも GPS + GLONASS 測位を内蔵し、外部アンテナ3本が必要です。詳細な技術資料：[MC7304](/ja/products/sierra/mc7304/)｜[MC7350](/ja/products/sierra/mc7350/)｜[MC7354](/ja/products/sierra/mc7354/)。
 

@@ -1,12 +1,11 @@
 ---
-title: "MC7304 vs MC7350 vs MC7354: Como escolher módulos Cat 4 legados e manter estoque de longo prazo"
+title: "Sierra MC7304 vs MC7350 vs MC7354: Como escolher módulos Cat 4 legados e manter estoque de longo prazo"
 description: "Como o MC7304, o MC7350 e o MC7354 se diferenciam? Este artigo cruza as especificações oficiais e os registros da FCC para detalhar bandas LTE, taxas de download, antenas e faixas de temperatura, expõe o debate sobre a classificação Cat 3/Cat 4 e oferece conselhos de estoque para módulos mPCIe legados, além de uma avaliação da atualização para o EM7455. Leitura obrigatória para engenheiros."
 date: 2026-08-01
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "cellular-module", "mc7304", "mc7350", "mc7354", "mpcie", "cat4", "lte", "eol", "module-selection"]
-featureimage: "/static/img/sierra/hero.webp"
 author: "benny-lai"
 lastmod: 2026-08-01
 faq:
@@ -20,7 +19,6 @@ faq:
     answer: "O manual oficial da série MC lista um pico de download de 100 Mbps e pico de upload de 50 Mbps para o MC73XX, e os registros de teste da FCC também os classificam como LTE Cat 3 (100/50 Mbps). A alegação de 'Cat 4 / 150 Mbps' ainda aguarda confirmação na documentação mais recente do fornecedor, então recomendamos usar 100/50 Mbps como referência."
 ---
 
-# MC7304 vs MC7350 vs MC7354: Como escolher módulos Cat 4 legados e manter estoque de longo prazo
 
 > **O essencial primeiro**: o MC7304, o MC7350 e o MC7354 são três módulos celulares mPCIe da série AirPrime MC da Sierra Wireless, da mesma família MC73XX. O manual oficial lista um pico de download de 100 Mbps e pico de upload de 50 Mbps, com suporte a LTE, HSPA+ e GSM/GPRS/EDGE. O MC7354 e o MC7350 também adicionam fallback CDMA. Os três integram posicionamento GPS + GLONASS e exigem 3 antenas externas. Referências técnicas detalhadas: [MC7304](/pt/products/sierra/mc7304/) | [MC7350](/pt/products/sierra/mc7350/) | [MC7354](/pt/products/sierra/mc7354/).
 

@@ -1,12 +1,11 @@
 ---
-title: "MC7304 vs MC7350 vs MC7354: Legacy-Cat-4-Module wählen und langfristig bevorraten"
+title: "Sierra MC7304 vs MC7350 vs MC7354: Legacy-Cat-4-Module wählen und langfristig bevorraten"
 description: "Wie unterscheiden sich MC7304, MC7350 und MC7354? Dieser Artikel gleicht die offiziellen Spezifikationen und FCC-Einreichungen ab, um LTE-Bänder, Downlink-Raten, Antennen und Temperaturbereiche aufzuschlüsseln, deckt die Cat-3/Cat-4-Debatte auf und bietet Bevorratungs-Tipps für Legacy-mPCIe-Module plus eine EM7455-Upgrade-Bewertung. Ein Muss für Ingenieure."
 date: 2026-08-01
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "cellular-module", "mc7304", "mc7350", "mc7354", "mpcie", "cat4", "lte", "eol", "module-selection"]
-featureimage: "/static/img/sierra/hero.webp"
 author: "benny-lai"
 lastmod: 2026-08-01
 faq:
@@ -20,7 +19,6 @@ faq:
     answer: "Das offizielle MC-Serien-Handbuch listet für den MC73XX einen Spitzen-Downlink von 100 Mbit/s und einen Spitzen-Uplink von 50 Mbit/s, und auch FCC-Testeinreichungen klassifizieren sie als LTE Cat 3 (100/50 Mbit/s). Die Behauptung „Cat 4 / 150 Mbit/s“ wartet noch auf Bestätigung in der neuesten Herstellerdokumentation, daher empfehlen wir, 100/50 Mbit/s als Basis zu verwenden."
 ---
 
-# MC7304 vs MC7350 vs MC7354: Legacy-Cat-4-Module wählen und langfristig bevorraten
 
 > **Erst das Wichtigste**: Der MC7304, der MC7350 und der MC7354 sind drei Sierra Wireless AirPrime MC-Serie mPCIe-Mobilfunkmodule aus derselben MC73XX-Familie. Das offizielle Handbuch listet einen Spitzen-Downlink von 100 Mbit/s und einen Spitzen-Uplink von 50 Mbit/s, mit Unterstützung für LTE, HSPA+ und GSM/GPRS/EDGE. Der MC7354 und der MC7350 fügen zusätzlich CDMA-Fallback hinzu. Alle drei integrieren GPS + GLONASS-Positionierung und benötigen 3 externe Antennen. Detaillierte technische Referenzen: [MC7304](/de/products/sierra/mc7304/) | [MC7350](/de/products/sierra/mc7350/) | [MC7354](/de/products/sierra/mc7354/).
 

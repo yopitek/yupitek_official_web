@@ -1,12 +1,11 @@
 ---
-title: "EM9190 vs EM9191：5G Sub-6 と mmWave の選び方、ネット上の誤解を解消します"
+title: "Sierra EM9190 vs EM9191：5G Sub-6 と mmWave の選び方、ネット上の誤解を解消します"
 description: "EM9190 vs EM9191 の選び方。公式仕様書（41113174 Rev 8）によると、EM9190 は 5G Sub-6 + mmWave（n257/258/260/261、NSA のみ）に対応し、EM9191 は Sub-6 のみ。どちらも Qualcomm SDX55、M.2。台湾の 5G 周波数帯の対応表付き。Yupitek が整理。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "em9190", "em9191", "5g", "mmwave", "sub-6", "n78", "m2", "gnss", "wwan"]
-featureimage: "/images/products/sierra/EM9190_hero.jpg"
 author: "benny-lai"
 lastmod: 2026-07-31
 faq:
@@ -22,7 +21,6 @@ faq:
     answer: "高い互換性があります。どちらも M.2（WWAN Type 3042-S3-B、長さ 52mm）、同じ 75-pin 配置、同じ USB 3.1 Gen2 / PCIe Gen3 インターフェース、同じ 4× MHF4 Sub-6 アンテナポートです。違いは、EM9190 に 8× MHF7S mmWave IF コネクタと QTM 制御ピン（pin 40/42/44/46/48、EM9191 では NC）が追加されている点です。"
 ---
 
-# EM9190 vs EM9191：5G Sub-6 と mmWave の選び方、ネット上の誤解を解消します
 
 大学で教授と 5G プロジェクトに取り組んでいる方、あるいは企業で 5G モジュールの選定を担当している方なら、ネットで検索するたびにこんな文言を見かけたことがあるはずです。「EM9190 は低価格な Sub-6 モデルで、mmWave（ミリ波）対応のフラッグシップは EM9191」。
 

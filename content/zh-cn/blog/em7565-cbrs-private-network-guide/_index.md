@@ -1,12 +1,11 @@
 ---
-title: "EM7565 深度解析：CBRS 私网与高上行速度，企业专网到底怎么选？"
+title: "Sierra EM7565 深度解析：CBRS 私网与高上行速度，企业专网到底怎么选？"
 description: "EM7565 深度解析：Cat 12 下载 600Mbps、Cat 13 上传 150Mbps，Qualcomm MDM9250、M.2 封装、三天线 MIMO 与多星系 GNSS。企业 CBRS 私网与工业路由器选型必读，含频段、温度与认证完整对照，由榆合科技（Yupitek）整理提供。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "em7565", "lte-a", "cat-12", "cat-13", "cbrs", "m2", "gnss", "wwan", "private-lte"]
-featureimage: "/images/products/sierra/EM7565_hero.jpg"
 author: "benny-lai"
 lastmod: 2026-07-31
 faq:
@@ -22,7 +21,6 @@ faq:
     answer: "可以。USB 接口支持 QMI（Linux 与 Android）与 MBIM（Windows 8.1/10 与 Linux），并提供 3GPP TS 27.007 AT 指令接口与 Linux SDK。实际驱动支持以发行版与内核版本为准。"
 ---
 
-# EM7565 深度解析：CBRS 私网与高上行速度，企业专网到底怎么选？
 
 如果你在实验室做课题，或者刚好接到了企业私有 LTE 与 CBRS 专网的项目，你一定会在讨论清单中看到 EM7565 这张 M.2 模块。但重点来了：「常被点名」不代表「买回来插上去就能直接跑 CBRS」。
 

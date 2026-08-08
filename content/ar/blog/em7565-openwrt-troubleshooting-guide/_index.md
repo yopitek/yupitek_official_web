@@ -1,5 +1,5 @@
 ---
-title: "EM7565 غير مكتشف على OpenWrt أو Raspberry Pi؟ دليل استكشاف الأخطاء الكامل لـ QMI/MBIM"
+title: "Sierra EM7565 غير مكتشف على OpenWrt أو Raspberry Pi؟ دليل استكشاف الأخطاء الكامل لـ QMI/MBIM"
 description: "هل EM7565 غير مكتشف على OpenWrt أو Raspberry Pi، أو اختفى منفذ QMI؟ يرشدك هذا الدليل من lsusb وdmesg عبر تكوين USB وتحميل برامج التشغيل وخطوات إعداد EM7565 لحل مشاكل الاتصال في العتاد والبرمجيات."
 date: 2026-07-31
 draft: false

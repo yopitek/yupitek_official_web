@@ -1,5 +1,4 @@
 ---
-
 title: "macOSでALFA WiFiアダプターを使う：VMware FusionとParallels USBパススルー完全ガイド"
 description: "macOSでALFA USB WiFiアダプターを使う方法。macOSネイティブサポート、VMware Fusion USBパススルー、Parallels Desktopを使ったKali LinuxのモニターモードとパケットインジェクションをApple Silicon対応で解説。"
 date: 2026-03-24

@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "ALFA AWUS036AXML WiFi 6E 深度评测：2026 实际渗透测试性能"
 description: "深度评测 ALFA AWUS036AXML WiFi 6E USB 网卡：规格、Kali Linux 驱动安装、监听模式性能、6 GHz 频段扫描，以及与 AWUS036ACH 的详细对比。"
 date: 2026-03-23

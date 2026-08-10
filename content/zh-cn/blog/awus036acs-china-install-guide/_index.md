@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "ALFA AWUS036ACS 中国安装指南：Kali Linux, Ubuntu, Debian 和 树莓派"
 description: "手把手教你在中国境内使用国内镜像源安装 ALFA AWUS036ACS 驱动。包含 RTL8811AU DKMS 驱动安装、监听模式和数据包注入教程。支持 Kali Linux, Ubuntu 22/24, Debian 和 树莓派。无需访问 GitHub。"
 date: 2026-04-24

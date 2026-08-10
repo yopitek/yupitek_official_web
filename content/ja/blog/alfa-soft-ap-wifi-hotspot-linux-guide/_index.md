@@ -1,5 +1,4 @@
 ---
-
 title: "ALFAネットワーク Soft AP完全ガイド2026：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5でWiFiホットスポットを構築"
 description: "ALFA Network USB無線LANアダプタのSoft AP（hostapd/WiFiホットスポット）機能をKali Linux、Ubuntu、Debian、Raspberry Pi 4/5で徹底検証。AWUS036ACM、AWUS036ACH、AWUS036AXMLの詳細設定ガイド、コミュニティの実践事例、トラブルシューティングを完全収録。"
 date: 2026-05-21

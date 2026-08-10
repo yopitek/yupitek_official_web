@@ -20,7 +20,6 @@ faq:
     answer: "Beim passiven Monitoring können Beacon-, Handshake- und PMKID-Daten normal erfasst werden, jedoch können keine aktiven Aktionen wie Deauth, Probe Request oder Association Floods ausgeführt werden. Für diese Aufgaben sollte stattdessen AWUS036ACH verwendet werden."
   - question: "Welche Kernel-Versionen verbessern die Stabilität von MT7921AUN?"
     answer: "Der Kernel 6.1 LTS oder höher enthält mehrere Stabilitäts-Patches für mt7921u, während der Kernel 6.6 und höher zusätzliche Verbesserungen des MediaTek USB-Treiber-Stacks aufweist."
-
 ---
 Wenn Sie den AWUS036AXML im aktiven Monitor-Modus verwenden (gleichzeitiges Überwachen und Senden von Frames), können zufällige Abstürze auftreten, die auf unzureichende Firmware-Unterstützung für aktive Überwachung beim MT7921AUN zurückzuführen sind.
 

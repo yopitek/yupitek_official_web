@@ -20,7 +20,6 @@ faq:
     answer: "Der Pager basiert auf dem MIPS32-basierten MT7628AN, unterstützt kein DKMS und verfügt über keine GCC-Toolchain. Nicht im Kernel integrierte Treiber müssen auf einem externen x86-Host cross-kompiliert werden."
   - question: "Welche bekannten Probleme gibt es mit dem RTL8812AU-Treiber auf dem Pager?"
     answer: "Auf der MIPS-Plattform liegt ein Kernfehler in wiphy_register für den RTL8812AU vor, der dazu führt, dass die Schnittstelle nicht geladen werden kann. Es ist erforderlich, einen Community-Patch anzuwenden. Wir empfehlen stattdessen die Verwendung des AWUS036ACM."
-
 ---
 Bevor du eine leistungsstarke USB-WLAN-Karte an den HAK5 Pager anschließt, solltest du zwei wesentliche Hürden verstehen: die CPU-Architektur und das Strombudget des USB-Ports.
 

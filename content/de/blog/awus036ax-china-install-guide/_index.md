@@ -25,7 +25,6 @@ faq:
     answer: "Nein, Sie können die rtl8852bu-Quellen von Gitee herunterladen und die Kompilierungswerkzeuge über ein inländisches Spiegelrepository installieren."
   - question: "Was ist die USB-ID des AWUS036AX?"
     answer: "Die USB-ID des Realtek RTL8832BU beträgt 0bda:8832, was mit lsusb bestätigt werden kann."
-
 ---
 
 Der AWUS036AX ist ALFAs WiFi 6 AX1800 Dual-Band Adapter. Sein RTL8832BU-Chip ist bei Linux-Versionen unter 6.14 nicht im Kernel enthalten — aber Ubuntu 24.04 (Kernel 6.8) enthält ihn nativ. Diese Anleitung verwendet Gitee-Mirrors für ältere Kernel und den integrierten Treiber für Ubuntu 24.04. Kein GitHub erforderlich.

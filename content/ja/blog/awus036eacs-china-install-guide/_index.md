@@ -1,5 +1,4 @@
 ---
-
 title: "ALFA AWUS036EACS 設定ガイド（中国版）：WindowsでのインストールとLinux互換性について"
 description: "中国国内でのALFA AWUS036EACSの設定ガイド。RTL8821CU WiFi 5 + Bluetooth 4.2 Nanoアダプター。Windows用ドライバは files.alfa.com.tw から入手可能です。LinuxおよびKali Linuxはサポートされていません。推奨される代替製品についても解説します。"
 date: 2026-04-24

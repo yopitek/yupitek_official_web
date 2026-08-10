@@ -20,7 +20,6 @@ faq:
     answer: "FuzzBox OS basiert auf Debian 12 Bookworm, läuft mit dem LTS-Kernel 6.1.x und ist vorinstalliert mit dem rtl88xxau-Injection-Treiber sowie Netzwerk-Tools wie airmon-ng."
   - question: "Wie können Sie überprüfen, ob die AWUS036ACH in den Monitor Mode wechselt?"
     answer: "Führen Sie den Befehl `iwconfig wlan0` aus. Die Ausgabe sollte „Mode: Monitor“ anzeigen und die aktuelle Betriebsfrequenz kennzeichnen, um zu bestätigen, dass der FuzzBox-Assistent den Schnittstellenmodus erfolgreich geändert hat."
-
 ---
 
 WLAN-Protokoll-Fuzzing – oft auch als negatives Drahtlostesten bezeichnet – ist einer der kritischsten Schritte bei der Validierung der Sicherheit und Robustheit von eingebetteten Drahtlosgeräten, Smart-Home-Geräten und Enterprise-Access-Points. Die Übertragung fehlerhafter 802.11-Management-, Kontroll- oder Datenframes über die Luft erfordert jedoch eine Low-Level-Steuerung der Media-Access-Control-Schicht (MAC), die Standard-Betriebssysteme und kommerzielle WLAN-Treiber schlichtweg nicht zulassen.

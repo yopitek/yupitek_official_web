@@ -1,5 +1,4 @@
 ---
-
 title: "AI生成プロダクト画像：baoyu-skillsを使った完全スタイルリファレンス"
 description: "GitHub Copilot CLIのbaoyu-skillsプラグインを使って、ブログカバー、インフォグラフィック、Instagramカード、漫画、プロダクトレンダリングを生成する方法——ALFA AWUS036ACMを実例として使用。B2Bマーケティング画像生成のための実用的なスタイルリファレンス。"
 date: 2026-04-02

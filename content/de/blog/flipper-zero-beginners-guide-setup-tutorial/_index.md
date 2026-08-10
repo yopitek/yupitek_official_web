@@ -16,13 +16,10 @@ date: 2026-08-10
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-slug: flipper-zero-beginners-guide-setup-tutorial
-tags:
   - Flipper Zero
   - Tutorial
 categories:
   - Technical
-author: Yupitek
 lastmod: 2026-08-10
 ---
 

@@ -18,7 +18,6 @@ showBreadcrumbs: true
 showTableOfContents: true
 categories:
   - Technical
-author: Yupitek
 lastmod: 2026-08-10
 ---
 

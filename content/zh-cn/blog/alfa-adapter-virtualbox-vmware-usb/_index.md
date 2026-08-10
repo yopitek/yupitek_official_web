@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "ALFA 网卡 USB 直通：VirtualBox 与 VMware 设置指南"
 description: "逐步教程：在 VirtualBox 和 VMware Workstation 上为 Kali Linux 配置 ALFA USB WiFi 网卡的 USB 直通。涵盖 AWUS036ACH、AWUS036AXML、USB 3.0 过滤器、Extension Pack 及故障排除。"
 date: 2026-03-24

@@ -20,7 +20,6 @@ faq:
     answer: "WPA3 wird nicht unterstützt, es kann nur WPA2-PSK verwendet werden. VIF (Virtual Interface) wird nicht unterstützt, sodass zwei Karten zur Aufgabenteilung erforderlich sind. Der Stromverbrauch beträgt ca. 800 mA, weshalb auf dem Pi ein aktiver USB-Hub erforderlich ist."
   - question: "Was tun, wenn die WiFi-Verbindung beim Betrieb von Soft-AP auf dem AWUS036AXML plötzlich abbricht?"
     answer: "Der im MT7921AUN integrierte Bluetooth 5.2 kann WiFi stören. Führen Sie echo 'install btusb /bin/false' aus, um die Konfiguration in /etc/modprobe.d/ zu schreiben, und starten Sie den Computer neu, um den Bluetooth-Treiber dauerhaft zu deaktivieren."
-
 ---
 > "Kann ich ALFA USB-WLAN-Adapter als WiFi-Hotspot (Soft AP) auf Kali Linux / Ubuntu / Raspberry Pi nutzen?"
 

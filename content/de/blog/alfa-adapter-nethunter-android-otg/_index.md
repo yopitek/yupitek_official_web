@@ -20,7 +20,6 @@ faq:
     answer: "Die Unterstützung ist begrenzt. Die Verfügbarkeit der Kernel-Module für den MT7921AUN-Chipsatz hängt vom Gerät und der Kernel-Version ab und ist im NetHunter-Kernel noch nicht weit verbreitet. Es wird empfohlen, einen Netzwerkadapter mit RTL8812AU zu verwenden."
   - question: "Welche Android-Geräte unterstützen NetHunter?"
     answer: "Offiziell unterstützte Geräte umfassen OnePlus, Google Pixel und einige Samsung Galaxy-Modelle. Die vollständige Liste finden Sie auf der offiziellen NetHunter-Geräte-Seite und stellen Sie sicher, dass das Gerät USB OTG unterstützt."
-
 ---
 
 Dein Android-Handy ist bereits ein leistungsstarker Computer in deiner Tasche. Mit installiertem Kali NetHunter auf einem gerooteten Gerät und einem ALFA WLAN-Adapter, der über USB OTG angeschlossen ist, wird es zu einer wirklich fähigen Pentesting-Plattform im Taschenformat. Kein Laptop erforderlich. Keine sperrige Hardware. Nur dein Handy, ein kurzes OTG-Kabel und ein Adapter, der Monitor Mode und Packet Injection unterstützt.

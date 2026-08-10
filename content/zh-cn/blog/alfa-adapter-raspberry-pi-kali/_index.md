@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "在 Raspberry Pi 搭配 Kali Linux 使用 ALFA WiFi 网卡：完整安装教程"
 description: "在运行 Kali Linux ARM64 的 Raspberry Pi 上安装 ALFA USB WiFi 网卡。涵盖 AWUS036ACH RTL8812AU 驱动编译、监听模式，以及便携式渗透测试平台搭建。"
 date: 2026-03-24

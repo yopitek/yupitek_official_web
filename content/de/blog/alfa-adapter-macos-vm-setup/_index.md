@@ -20,7 +20,6 @@ faq:
     answer: "Ja. Intel Macs basieren auf der x86_64-Architektur und können direkt das offizielle Standard-Kali Linux x86_64 ISO von kali.org verwenden, um eine VM zu erstellen."
   - question: "Ist VirtualBox für Sicherheits Tests auf Apple Silicon geeignet?"
     answer: "Nicht empfohlen. Die Unterstützung von VirtualBox für Apple Silicon ist noch experimentell, und USB-Passthrough weist bekannte Probleme auf. Verwenden Sie stattdessen VMware Fusion oder Parallels."
-
 ---
 
 macOS ist ein ausgefeiltes Betriebssystem für den professionellen Einsatz. Es ist jedoch keine Plattform, die für die drahtlose Sicherheitsforschung entwickelt wurde. Die beiden Funktionen, die das Toolkit jedes ernsthaften Pentesters definieren – **Monitor-Modus** und **Packet-Injection** – fehlen im macOS Wi-Fi-Stack vollständig. Die Wi-Fi-Treiber von Apple bieten eine saubere, funktionale Netzwerk-Schnittstelle und mehr nicht.

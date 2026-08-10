@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "ALFA AWUS036ACH 中国安装指南：Kali Linux, Ubuntu, Debian 和 树莓派"
 date: 2026-04-24
 author: "benny-lai"

@@ -1,5 +1,4 @@
 ---
-
 title: "DGX SparkのWi-Fiが繋がらない？ALFA USB無線アダプターで10分解決"
 description: "NVIDIA DGX Sparkの内蔵Wi-Fi問題を解決。ドライバ不要のUSB無線アダプターで10分で設定完了。ASUS ASCENT GX10、MSI EdgeXpert、HP ZGX Nano、ALTOS BrainSphere GB10 F1、GIGABYTE AI TOP ATOMにも対応。"
 date: 2026-05-20

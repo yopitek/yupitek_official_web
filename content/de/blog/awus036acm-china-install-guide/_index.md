@@ -25,7 +25,6 @@ faq:
     answer: "Unter Volllast beträgt der Verbrauch etwa 400mW. Es wird empfohlen, ein USB Hub mit separater Stromversorgung zu verwenden, um eine Drosselung durch den Raspberry Pi zu vermeiden."
   - question: "Warum wird die Netzwerkkarte des AWUS036ACM unter Debian erkannt, funktioniert aber nicht?"
     answer: "Das Firmware-Paket firmware-misc-nonfree fehlt. Nach der Installation kann die Netzwerkkarte normal initialisiert werden."
-
 ---
 
 Der AWUS036ACM ist einer der einfachsten Alfa-Adapter für die Einrichtung unter Linux. Sein MT7612U-Chip verwendet den `mt76x2u`-Treiber, der seit Kernel-Version 4.19 im Linux-Kernel integriert ist. Auf den meisten modernen Systemen funktioniert der Adapter mit zwei oder drei Befehlen. Diese Anleitung behandelt die vollständige Einrichtung — Treiberprüfung, Monitor-Modus, Paketeinspeisung und VIF — ausschließlich mit inländischen Spiegeln. GitHub ist nicht erforderlich.

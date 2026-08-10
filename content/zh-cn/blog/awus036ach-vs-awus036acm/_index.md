@@ -1,8 +1,4 @@
 ---
-
-
-
-
 title: "ALFA AWUS036ACH vs AWUS036ACM：Kali Linux 全面对比（2026）"
 description: "详细对比 ALFA AWUS036ACH 与 AWUS036ACM——芯片组、监听模式、数据包注入、驱动支持，以及哪款更适合 Kali Linux 渗透测试。"
 date: 2026-03-23

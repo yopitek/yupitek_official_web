@@ -20,7 +20,6 @@ faq:
     answer: "Dies ist möglich. Drittanbieter-Treiber können nach einem JetPack-Upgrade aufgrund von Änderungen in der Kernel-API nicht mehr funktionieren und müssen neu kompiliert werden. Im Kernel integrierte Treiber (wie mt76x2u) sind davon nicht betroffen."
   - question: "Welche Linux-Kernel-Version verwendet der AIB-NW01?"
     answer: "AIB-NW01 wird ab Werk mit Ubuntu 20.04.6 LTS und JetPack 5.0 ausgeliefert, verwendet den NVIDIA-kundenspezifischen Tegra-Kernel 5.10.x-tegra und die CPU-Architektur ARM64."
-
 ---Der Jetson Orin verwendet einen von NVIDIA angepassten Tegra-Core. Die Kompilierung von Drittanbieter-WiFi-Treibern schlägt häufig fehl. Der ALFA AWUS036ACM verwendet den MT7612U-Chip, dessen Treiber ab Kernel 4.19 im Kernel-Quellbaum enthalten ist. Er ist sofort nach dem Einstecken einsatzbereit und stellt die einzige wirklich kompilierfreie Lösung dar. Er unterstützt Monitor Mode, Packet Injection und AP Mode.
 
 {{< tldr >}}

@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "HAK5 WiFi Pineapple Mark VII + ALFA AWUS036ACM：5GHz 完整设置指南（2026）"
 description: "HAK5 WiFi Pineapple MK7 搭配 ALFA AWUS036ACM (MT7612U) 完整兼容性指南 — 即插即用 5GHz 监听模式、数据包注入与 PineAP 扩展。逐步设置教程，附验证命令。无需编译驱动程序。"
 date: 2026-06-10

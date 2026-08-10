@@ -25,7 +25,6 @@ faq:
     answer: "Die USB-ID des Realtek RTL8811AU lautet 0bda:0811, was mit lsusb bestätigt werden kann."
   - question: "Welcher Befehl wird unter Kali Linux zur Installation des Treibers für den AWUS036ACS verwendet?"
     answer: "Kali kann den Treiber direkt mit dem Befehl sudo apt install realtek-rtl88xxau-dkms installieren."
-
 ---
 
 Der AWUS036ACS ist ALFAs kompakter Dual-Band-Adapter für Sicherheitsforschung. Sein RTL8811AU-Chip unterstützt den vollen Monitor-Modus und Paket-Injektion unter Kali Linux – aber da der Treiber nicht im Kernel enthalten ist, müssen Sie ihn aus dem Quellcode kompilieren. In China ist GitHub blockiert, daher verwendet diese Anleitung ausschließlich Gitee-Mirrors. Kein GitHub erforderlich.

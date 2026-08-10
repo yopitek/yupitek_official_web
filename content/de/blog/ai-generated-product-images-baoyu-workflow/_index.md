@@ -20,7 +20,6 @@ faq:
     answer: "Type A-Bildausgaben umfassen Coverbilder, Infografiken, Comics, Präsentationsfolien, Produkt-Renderings und vertikale Karten für Xiaohongshu; Type B generiert stilisiertes HTML; Type C verarbeitet Übersetzungen und Veröffentlichungen in sozialen Medien."
   - question: "Wie kann man baoyu-skills auf eigene Produkte anwenden?"
     answer: "Finden Sie im vorliegenden Artikel eine Variante, die zum Markenton passt, kopieren Sie den Prompt und ersetzen Sie den Produktnamen sowie die Hauptspecs durch Ihr Zielprodukt, und führen Sie dann die entsprechende Fähigkeit in Copilot CLI aus."
-
 ---
 
 Bei Yopitek vertreiben wir technische Hardware-Produkte – WiFi-Adapter, Sicherheitsforschungs-Tools, SDR-Module – und die Erstellung konsistenter, hochwertiger Marketing-Visuals für 8 Sprachen war schon immer eine Herausforderung. Dieser Artikel dokumentiert, wie wir die **baoyu-skills** Plugin-Sammlung für GitHub Copilot CLI nutzen, um Produktbilder in verschiedenen Formaten und Stilen zu generieren.

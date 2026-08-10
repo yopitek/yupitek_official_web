@@ -1,5 +1,4 @@
 ---
-
 title: "WiFi 6E vs WiFi 5：ペネトレーションテストに最適な ALFA アダプターの選び方"
 description: "Kali Linux ペネトレーションテスト向けに ALFA AWUS036AXML（Wi-Fi 6E）と AWUS036ACH（Wi-Fi 5）を徹底比較。6 GHz 対応、ドライバーの成熟度、モニターモードを解説。"
 date: 2026-03-23

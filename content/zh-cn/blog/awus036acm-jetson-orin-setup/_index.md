@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "不用编译驱动！ALFA AWUS036ACM 在 Jetson Orin 边缘 AI 主机上的免设置实战指南"
 description: "针对 AVALUE AIB-NW01（NVIDIA Jetson Orin NX/Nano）客户，深度分析哪款 ALFA Network USB 无线网卡最适合边缘 AI 部署，并实证说明 AWUS036ACM 如何做到真正的即插即用。"
 date: 2026-05-20

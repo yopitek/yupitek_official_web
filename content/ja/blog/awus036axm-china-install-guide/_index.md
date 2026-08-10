@@ -1,5 +1,4 @@
 ---
-
 title: "ALFA AWUS036AXM ドライバインストールガイド（中国版）：Kali Linux, Ubuntu, Debian & Raspberry Pi"
 description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXMのドライバをインストールする手順をステップバイステップで解説します。MT7921AUN WiFi 6E インカーネルドライバ、モニターモード、VIFをサポート。Kali Linux、Ubuntu 22/24、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
 date: 2026-04-24

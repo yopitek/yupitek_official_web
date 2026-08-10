@@ -1,5 +1,4 @@
 ---
-
 title: "Kali Linux・Ubuntu 24.04 への ALFA USB WiFi ドライバーインストール完全ガイド（2026）"
 description: "Kali Linux 2024 と Ubuntu 24.04 に ALFA Network USB WiFi アダプターのドライバーをインストールする完全解説。RTL8812AU・MT7612U・MT7921AUN 対応、トラブルシューティング付き。"
 date: 2026-03-23

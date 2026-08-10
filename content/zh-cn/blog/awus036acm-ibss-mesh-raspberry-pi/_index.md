@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "ALFA AWUS036ACM：在 Raspberry Pi 上启用 IBSS Ad Hoc 与 802.11s Mesh 网络（MT7612U）"
 description: "ALFA AWUS036ACM（MT7612U）是目前唯一在售的 ALFA USB WiFi 无线网卡，可在 Raspberry Pi 上完整支持 IBSS Ad Hoc 与 802.11s Mesh 网络——即插即用，无需安装驱动程序。本文详解配置步骤。"
 date: 2026-03-27

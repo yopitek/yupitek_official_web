@@ -20,7 +20,6 @@ faq:
     answer: "Ja, Packet Injection wird unterstützt. Die Erfolgswerte liegen in praktischen Tests stabil über 90 %. Es sind jedoch bekannte Treiberbeschränkungen für den aktiven Monitor Mode vorhanden; es wird empfohlen, nur den passiven Monitor Mode zu verwenden."
   - question: "Für wen ist der Kauf des AWUS036AXML geeignet?"
     answer: "Ideal für Sicherheitsforscher, die Unternehmensumgebungen mit Wi-Fi 6E-Einsatz bewerten, für Sicherheitstrainingslabore sowie für Forscher, die sich mit der Analyse des 6-GHz-Protokolls befassen."
-
 ---
 | Feature | Wert | |---|---| | **Standard** | IEEE 802.11a/b/g/n/ac/ax (Wi-Fi 6E) | | **Chipsatz** | MediaTek MT7921AUN | | **Frequenzbänder** | 2,4 GHz + 5 GHz + **6 GHz** | | **Maximale Durchsatz** | AX1800 | | **Monitor-Modus** | Kernel 6.1+ erforderlich | | **Packet Injection** | Funktional, vor Einsatz testen | | **USB** | USB-C (USB 3.2 Gen 1) |
 

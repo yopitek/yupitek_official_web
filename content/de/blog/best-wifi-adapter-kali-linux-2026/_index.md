@@ -20,7 +20,6 @@ faq:
     answer: "Führen Sie zunächst sudo airmon-ng check kill aus, um störende Prozesse zu beenden, und dann sudo airmon-ng start wlan1, um den Monitor Mode zu aktivieren. Bestätigen Sie, dass iwconfig Mode:Monitor anzeigt."
   - question: "Welche ALFA-Karte wird Kali Linux-Anfängern empfohlen?"
     answer: "AWUS036ACH (RTL8812AU) verfügt über die umfangreichsten Community-Lehrressourcen, wird vom aircrack-ng-Offiziellen Treiber unterstützt, dient fast allen Kali-Anleitungen als Beispiel und weist das niedrigste Einstiegsrisiko für Neueinsteiger auf."
-
 ---
 Der **AWUS036ACH** mit RTL8812AU-Chipsatz bleibt der bewährte Standard für Penetration Testing. Mit hervorragender Monitor-Modus-Stabilität und Packet-Injection-Zuverlässigkeit ist er die erste Wahl für die meisten Sicherheitsforscher.
 

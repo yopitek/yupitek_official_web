@@ -20,7 +20,6 @@ faq:
     answer: "Melden Sie sich per SSH an und führen Sie den Befehl airmon-ng start wlan3 aus. Die Schnittstelle wird dann in wlan3mon umbenannt. Überprüfen Sie den Modus anschließend mit iwconfig."
   - question: "Welche ALFA-Netzwerkkarten sind nicht mit dem MK7 kompatibel?"
     answer: "AWUS036AX und AWUS036AXER verwenden den RTL8832BU-Chip, AWUS036EACS verwendet den RTL8811CU-Chip; die Treiber unterstützen weder Monitor Mode noch Packet Injection und sind daher nicht kompatibel."
-
 ---
 
 Der HAK5 WiFi Pineapple Mark VII ist der Goldstandard für portable Wireless-Security-Audits. Allerdings hat er eine entscheidende Einschränkung: Das eingebaute Funkmodul arbeitet ausschließlich auf **2,4 GHz**. Im Jahr 2026 sind die meisten Unternehmens- und Heimnetzwerke auf 5 GHz umgestiegen.

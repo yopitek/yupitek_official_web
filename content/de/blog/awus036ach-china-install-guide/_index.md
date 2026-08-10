@@ -25,7 +25,6 @@ faq:
     answer: "Ja, es wird empfohlen, einen USB Hub mit externer Stromversorgung zu verwenden und Kali Linux ARM64 zu installieren."
   - question: "Welcher Befehl wird zur Installation des AWUS036ACH-Treibers unter Kali Linux verwendet?"
     answer: "In Kali können Sie das vorkompilierte Treiberpaket mit dem Befehl sudo apt install realtek-rtl88xxau-dkms direkt installieren."
-
 ---
 
 Du hast den AWUS036ACH bekommen und dein Linux erkennt ihn nicht. Das ist normal — dieser Chip braucht den RTL8812AU-Treiber, der nicht automatisch funktioniert. Diese Anleitung führt dich in etwa 30 Minuten durch die vollständige Installation, ausschließlich mit inländischen Mirrors. GitHub-Zugang ist nicht erforderlich.

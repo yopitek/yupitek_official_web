@@ -16,7 +16,6 @@ date: "2026-08-10"
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-author: Yupitek
 lastmod: "2026-08-10"
 ---
 

@@ -20,7 +20,6 @@ faq:
     answer: "Das USB-Passthrough war erfolgreich, aber der Treiber wurde nicht geladen. Für RTL8812AU ist die Ausführung von modprobe 88XXau oder die Installation von realtek-rtl88xxau-dkms erforderlich, für MT7921AUN ist die Ausführung von modprobe mt7921u erforderlich."
   - question: "Was tun, wenn die USB-Netzwerkkarte auf dem Linux-Host kontinuierlich die Verbindung verliert?"
     answer: "Deaktivieren Sie die USB-Automatic-Suspend-Funktion: Führen Sie den Befehl `echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend` aus und stellen Sie sicher, dass der Benutzer der Gruppe `vboxusers` hinzugefügt wurde."
-
 ---
 
 Den Betrieb eines ALFA-WLAN-Adapters in einer virtuellen Maschine (VM) einzurichten, ist nicht so einfach wie das bloße Einstecken in der Hoffnung, dass das Gast-Betriebssystem ihn erkennt. Im Gegensatz zu freigegebenen Ordnern oder Bridge-Netzwerken erfordern der Monitor-Modus und die Paket-Injektion eine **vollständige USB-Kontrolle** — die VM muss exklusiven Zugriff auf das USB-Gerät haben und darf es nicht über den Netzwerkstack des Hosts teilen. Dies nennt man USB-Passthrough. Diesen Prozess korrekt einzurichten, ist die häufigste Hürde für Pentesters und CTF-Spieler, die in VMs arbeiten.

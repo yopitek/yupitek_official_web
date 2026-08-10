@@ -25,7 +25,6 @@ faq:
     answer: "Die USB-ID des Realtek RTL8832BU lautet 0bda:885a, was Sie mit lsusb bestätigen können."
   - question: "Muss man in China für die Installation des AWUS036AXER eine VPN-Verbindung (Umgehung der Zensur) nutzen?"
     answer: "Nicht erforderlich. Laden Sie den Quellcode von rtl8852bu von Gitee herunter und installieren Sie die Kompilierungswerkzeuge über ein inländisches Spiegelrepository."
-
 ---
 
 Der AWUS036AXER ist ALFAs WiFi 6 Nano-Adapter — ein kompakter Dongle, der so konzipiert ist, dass er permanent an einem Laptop angeschlossen bleiben kann. Sein RTL8832BU-Chip ist bei Linux-Versionen unter 6.14 nicht im Kernel enthalten, aber in Ubuntu 24.04 (Kernel 6.8) nativ integriert. Diese Anleitung verwendet Gitee-Mirrors für ältere Kernel. Kein GitHub erforderlich.

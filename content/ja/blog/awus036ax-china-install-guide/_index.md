@@ -1,5 +1,4 @@
 ---
-
 title: "ALFA AWUS036AX ドライバインストールガイド（中国版）：Kali Linux, Ubuntu, Debian & Raspberry Pi"
 description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXのドライバをインストールする手順をステップバイステップで解説します。RTL8832BUドライバ、WiFi 6 AX1800対応。Kali Linux、Ubuntu 22/24（24.04は標準対応）、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
 date: 2026-04-24

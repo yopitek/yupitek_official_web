@@ -20,7 +20,6 @@ faq:
     answer: "Der vorinstallierte Kernel 5.15 unterstützt diesen Chipsatz nicht. Sie müssen den HWE-Kernel linux-generic-hwe-22.04 installieren, um auf Version 6.2 oder höher zu aktualisieren, oder ein Upgrade auf Ubuntu 24.04 LTS durchführen."
   - question: "Was tun, wenn bei der Kompilierung des Treibers mit make der Fehler linux/module.h not found auftritt?"
     answer: "Die zentralen Header-Dateien sind nicht installiert. Führen Sie sudo apt install linux-headers-$(uname -r) aus, um die Header zur aktuellen Kernel-Version zu installieren, und kompilieren Sie anschließend erneut."
-
 ---
 | Chipsatz | Treiber-Repo |DKMS-Unterstützung | Komplettzeit | |---|---|---|---| | RTL8812AU | aircrack-ng/rtl8812au | ✓ | ~10 Min. | | MT7612U | Kernel-inklusive | N/A | ~2 Min. | | MT7921AUN | Kernel-inklusive | N/A | ~2 Min. | | RTL8832BU | aircrack-ng/rtl8832bu | ✓ | ~10 Min. |
 

@@ -1,5 +1,4 @@
 ---
-
 title: "Raspberry Pi と Kali Linux で ALFA WiFi アダプターを使う：セットアップガイド"
 description: "Kali Linux ARM64 を動かす Raspberry Pi に ALFA USB WiFi アダプターをインストール。AWUS036ACH RTL8812AU ドライバーのコンパイル、モニターモード、ポータブルペネトレーションテスト環境の構築を解説。"
 date: 2026-03-24

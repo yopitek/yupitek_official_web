@@ -1,5 +1,4 @@
 ---
-
 title: "ALFA AWUS036ACH セットアップガイド：Kali Linux モニターモード・パケットインジェクション設定"
 description: "ALFA AWUS036ACH を Kali Linux 2024/2025 で使用するための完全セットアップガイド。RTL8812AU ドライバーインストール、airmon-ng によるモニターモード有効化、パケットインジェクション確認手順。"
 date: 2026-03-23

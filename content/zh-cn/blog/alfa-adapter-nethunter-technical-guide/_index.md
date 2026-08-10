@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "ALFA 无线网卡搭配 Kali NetHunter 完整技术指南 2026"
 description: "ALFA USB 无线网卡搭配 Kali NetHunter 移动渗透测试完整技术参考。涵盖台湾上市手机兼容性、MT7610U/MT7612U 免驱动 vs RTL8812AU DKMS 驱动分析、OTG 设置指南及实测验证结果。"
 date: 2026-06-09

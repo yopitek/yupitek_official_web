@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "ALFA AWUS036EACS 中国安装指南：Windows 与 Linux 使用说明"
 date: 2026-04-24
 author: "benny-lai"

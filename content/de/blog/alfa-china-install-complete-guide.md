@@ -22,7 +22,6 @@ faq:
     answer: "Die AWUS036AXM und AWUS036AXML verwenden den MT7921AUN-Chipsatz, der WiFi 6E im Tri-Band-Betrieb unterstützt."
   - question: "Was ist bei der Verwendung von Alfa-Netzwerkkarten auf dem Raspberry Pi zu beachten?"
     answer: "Stellen Sie sicher, dass Sie ein aktives USB-Hub zur Stromversorgung verwenden und installieren Sie die Kali ARM64-Version, um optimale Treiberunterstützung zu erhalten."
-
 ---Der ultimative Leitfaden zur Installation von Alfa WiFi-Netzwerkkarten unter Linux in China, einschließlich Kali, Ubuntu, Debian, Raspberry Pi, unterstützt alle Chipsätze wie RTL8812AU, MT7612U, RTL8832BU usw. und bietet durchgängig chinesische Spiegelserver, ohne VPN.
 
 {{< tldr >}}

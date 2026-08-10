@@ -20,7 +20,6 @@ faq:
     answer: "Externe Antennen mit RP-SMA-Anschluss am Controller gelten als vom Benutzer zu wartende Teile. Der Austausch selbst hat keinen Einfluss auf die Garantie. Bitte bewahren Sie die Originalantenne auf, um sie bei einer Reparatur wieder einbauen zu können."
   - question: "Erlaubt das Antennen-Upgrade ein legaleres Fliegen über größere Distanzen?"
     answer: "Nein. Die meisten Länder verlangen die Einhaltung der Sichtverbindung (VLOS). Der Wert einer Antennenaufrüstung liegt in der Verbesserung der Link-Zuverlässigkeit und der Signalreserven innerhalb der gesetzlichen Grenzen, nicht im Umgehen der gesetzlichen Beschränkungen."
-
 ---
 Die Standardantennen des DJI-Controllers sind für allgemeine Zwecke ausgelegt. Beim Upgrading auf Hochleistungsantennen von ALFA können Sie:
 

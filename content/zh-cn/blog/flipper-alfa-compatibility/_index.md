@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Flipper Zero 与 Flipper One 搭配 ALFA 无线网卡：完整兼容性指南"
 description: "Flipper Zero 能接 ALFA USB 无线网卡做数据包注入吗？不行——这里解释为什么。Flipper One 支持 ALFA AWUS036AXML，完整监听模式与数据包注入。包含芯片分析、驱动兼容性与设置步骤的完整指南。"
 date: 2026-06-10

@@ -20,7 +20,6 @@ faq:
     answer: "Weniger als zehn Minuten. Nach dem Einstecken in den USB 3.0-Port lädt das System den Treiber automatisch. Die Verbindung zum WiFi kann anschließend durch Scannen und Herstellen der Verbindung über den nmcli-Befehl abgeschlossen werden. Es ist weder das Kompilieren eines Treibers noch ein Neustart erforderlich."
   - question: "Können Sie auf dem DGX Spark auch andere ALFA-Netzwerkkarten verwenden?"
     answer: "Für den AWUS036ACH (RTL8812AU) muss der Treiber manuell kompiliert werden, und auf der ARM64-Plattform von GB10 ist der Erfolg nicht garantiert. Der AWUS036ACM ist die einzige Lösung, die als vollständig plug-and-play und ohne Kompilierung bestätigt wurde."
-
 ---
 
 Ihr lang erwarteter **NVIDIA DGX Spark** (Codename Project DIGITS) ist endlich angekommen.

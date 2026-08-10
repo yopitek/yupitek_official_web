@@ -16,12 +16,10 @@ date: 2026-08-10
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-tags:
   - AWUS036AXML
   - Kali Linux
 categories:
   - Technical
-author: Yupitek
 lastmod: 2026-08-10
 dir: rtl
 ---

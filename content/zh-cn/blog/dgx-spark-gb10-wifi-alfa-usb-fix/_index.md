@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "DGX Spark Wi-Fi 连不上？只要十分钟，这张 ALFA USB 无线网卡帮你终结噩梦"
 description: "NVIDIA DGX Spark 内置 Wi-Fi 连接问题有解！免驱动 USB 无线网卡十分钟搞定。ASUS ASCENT GX10、MSI EdgeXpert、HP ZGX Nano、ALTOS BrainSphere GB10 F1、GIGABYTE AI TOP ATOM 全适用。"
 date: 2026-05-20

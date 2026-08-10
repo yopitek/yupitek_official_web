@@ -20,7 +20,6 @@ faq:
     answer: "Der IBSS-Modus im Linux-Kernel unterstützt kein Standard-WPA2-Personal. Für eine sichere Verbindung können Anwendungsschicht-Verschlüsselungen wie WireGuard oder OpenVPN verwendet werden, während 802.11s SAE unterstützt."
   - question: "Wie stellt man sicher, dass das Mesh-Netzwerk nach einem Neustart weiterhin funktioniert?"
     answer: "Über iw erstellte virtuelle Schnittstellen werden nach einem Neustart nicht beibehalten. Es muss ein systemd-Dienst (z. B. mesh-point.service) erstellt werden, der die Schnittstelle beim Systemstart automatisch neu erstellt und dem Mesh-Netzwerk hinzufügt."
-
 ---
 1. [Alfa Network AWUS036ACM Offizielle Dokumentation](https://docs.alfa.com.tw/Product/AWUS036ACM/) 2. [Linux Wireless Wiki — Schnittstellentypen (VIF)](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) 3. [MediaTek mt76 Linux Treiber](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) 4. [IEEE 802.11s Mesh NetzwerkStandard](https://standards.ieee.org/ieee/802.11s/4469/) 5. [morrownr USB-WiFi Liste der In-Kernel-Treiber](https://github.com/morrownr/USB-WiFi)
 

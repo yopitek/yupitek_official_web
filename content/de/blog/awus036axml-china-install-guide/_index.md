@@ -25,7 +25,6 @@ faq:
     answer: "Der Standardkernel 5.15 von Ubuntu 22.04 ist zu alt; Sie müssen den HWE-Kernel installieren, um auf Version 5.18 oder höher zu aktualisieren."
   - question: "Was ist die USB-ID des AWUS036AXML?"
     answer: "Die USB-ID von MediaTek MT7921AUN ist 0e8d:7961, was mit lsusb bestätigt werden kann."
-
 ---
 
 Der AWUS036AXML ist das WiFi 6E Flaggschiff von ALFA — ein Triband-USB-C-Adapter, der die Frequenzbereiche 2,4 GHz, 5 GHz und das unbelastete 6 GHz-Band abdeckt. Sein MT7921AUN-Chip verwendet den `mt7921u`-Treiber, der seit Version 5.18 in den Linux-Kernel integriert ist. Auf Ubuntu 24.04 und Kali 2025 ist er Plug-and-Play, sobald das Firmware-Paket von einem lokalen Mirror installiert wurde. Diese Anleitung deckt die vollständige Einrichtung ab — Firmware, Treiber-Verifizierung, Monitor-Modus, Paket-Injektion und VIF — ohne GitHub zu berühren.

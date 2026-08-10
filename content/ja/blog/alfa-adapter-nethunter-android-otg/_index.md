@@ -1,5 +1,4 @@
 ---
-
 title: "USB OTG経由でKali NetHunterとALFA WiFiアダプターをAndroidで使う方法"
 description: "USB OTGを使用してAndroidのKali NetHunterでALFA USB WiFiアダプターを利用する方法。AWUS036ACHドライバー、モニターモードコマンド、OTGケーブル要件、対応デバイスを解説。"
 date: 2026-03-24

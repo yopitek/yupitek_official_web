@@ -1,5 +1,4 @@
 ---
-
 title: "ALFA AWUS036ACH vs AWUS036ACM：Kali Linux 向け完全比較（2026）"
 description: "ALFA AWUS036ACH と AWUS036ACM を詳細比較。チップセット・モニターモード・パケットインジェクション・ドライバーサポートから、Kali Linux に最適な選択肢を解説。"
 date: 2026-03-23

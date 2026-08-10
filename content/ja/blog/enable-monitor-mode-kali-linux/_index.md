@@ -1,5 +1,4 @@
 ---
-
 title: "Kali Linux 2026 モニターモード有効化完全ガイド：WiFi アダプター設定手順"
 description: "Kali Linux 2024/2025 で airmon-ng または iw コマンドを使ってモニターモードを有効化する手順を解説。対応 ALFA アダプター一覧、トラブルシューティング、airodump-ng での確認方法付き。"
 date: 2026-03-23

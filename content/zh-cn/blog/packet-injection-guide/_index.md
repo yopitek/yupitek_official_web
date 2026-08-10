@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "什么是数据包注入？测试你的 WiFi 网卡在 Kali Linux 的兼容性"
 description: "了解 WiFi 数据包注入原理、为何需要特定网卡、如何用 aireplay-ng 测试你的 ALFA Network 网卡，以及哪些芯片组支持 Kali Linux 数据包注入。"
 date: 2026-03-23

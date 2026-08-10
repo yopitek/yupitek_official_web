@@ -20,7 +20,6 @@ faq:
     answer: "PMF verhindert Deauthentication- und Disassociation-Angriffe, indem es verhindert, dass Angreifer die Client-Verbindung zwangsweise unterbrechen, um Handshakes abzufangen oder Denial-of-Service-Angriffe durchzuführen; in WPA3 ist dies zwingend vorgeschrieben."
   - question: "Welche Risiken birgt der WPA3-Transition-Mode?"
     answer: "Der WPA3-Übergangsmodus akzeptiert sowohl SAE- als auch PSK-Authentifizierung, um die Kompatibilität aufrechtzuerhalten. Angreifer können Beacon-Frames senden, die nur WPA2 unterstützen, um Clients zu einem Downgrade zu zwingen, wodurch die Forward Secrecy unwirksam wird."
-
 ---
 Beginnen Sie mit der Definition des Umfangs:
 

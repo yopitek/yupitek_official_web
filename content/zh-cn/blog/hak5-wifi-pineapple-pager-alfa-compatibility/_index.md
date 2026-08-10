@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "HAK5 WiFi Pineapple Pager × ALFA Network：外接 USB 无线网卡兼容性评估与设置指南"
 description: "这是一份深入评估 HAK5 WiFi Pineapple Pager 在 OpenWrt 环境下与 ALFA Network 外接 USB 无线网卡兼容性的技术报告与安装指南。了解 MIPS 架构交叉编译、USB 2.0 供电限制及驱动程序设置细节。"
 date: 2026-06-19

@@ -1,5 +1,4 @@
 ---
-
 title: 'Flipper Zero × ALFA WiFi アダプター：完全互換性ガイド'
 description: 'Flipper Zero で ALFA USB WiFi アダプターのパケットインジェクションが可能か？結論から言うと、できません — その理由を解説します。Flipper One は AWUS036AXML とともにフルモニタモードとインジェクションをサポート。チップセット解析、ドライバ互換性、セットアップ手順付き完全ガイド。'
 tags: ['flipper-zero', 'flipper-one', 'alfa-network', 'wifi-adapter', 'monitor-mode', 'packet-injection', 'kali-linux', 'pentesting', 'AWUS036AXML', 'wireless-security']

@@ -20,7 +20,6 @@ faq:
     answer: "MT7921AUN verwendet einen im Kernel integrierten Treiber; das Problem liegt meist an der Firmware. Installieren Sie das Paket firmware-misc-nonfree und stellen Sie sicher, dass die Kernel-Version mindestens 5.18 beträgt."
   - question: "Wie können Sie verhindern, dass Kernel-Updates die Treiber erneut beschädigen?"
     answer: "Verwenden Sie anstelle von `apt upgrade` den Befehl `apt full-upgrade`, um sicherzustellen, dass Header und Kernel synchron installiert werden. Installieren Sie die Metapakete `dkms` und `linux-headers-generic`, um die Abhängigkeiten aufrechtzuerhalten."
-
 ---
 Nach einem Kernel-Update (z.B. über `apt upgrade`) ist Ihr ALFA-Adapter möglicherweise nicht mehr erkennbar oder der Monitor-Modus funktioniert nicht mehr.
 

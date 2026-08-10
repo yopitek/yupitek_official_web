@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "AI 生成产品图片：使用 baoyu-skills 的完整风格参考指南"
 description: "我们如何使用 GitHub Copilot CLI 的 baoyu-skills 插件，生成博客封面、信息图表、Instagram 卡片、漫画及产品渲染图——以 ALFA AWUS036ACM 为实际案例。B2B 营销图片生成的实用风格参考。"
 date: 2026-04-02

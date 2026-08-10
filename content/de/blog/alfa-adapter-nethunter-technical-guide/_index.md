@@ -16,7 +16,6 @@ faq:
     answer: "Die Treiber für MT7610U/MT7612U befinden sich im Kernel-Baum und sind nach dem Einstecken sofort einsatzbereit, ohne Kompilierung; für RTL8812AU muss der externe Treiber über DKMS kompiliert und installiert werden, und nach Kernel-Updates ist möglicherweise eine Neukompilierung erforderlich. Für den Einsatz in der IT-Sicherheit bietet der im Kernel-Baum integrierte Treiber eine höhere Stabilität."
   - question: "Werden ALFA-Netzwerkkarten auf NetHunter für den Monitor Mode unterstützt?"
     answer: "Ja, MT7610U/MT7612U unterstützen Monitor Mode und Packet Injection. RTL8812AU wird ebenfalls unterstützt, solange der Kernel < 6.12 ist; ab Kernel 6.12 ist die Unterstützung für Monitor Mode jedoch eingeschränkt. Für Sicherheitsforschungen wird vorrangig die Verwendung von MT7610U/MT7612U-Netzwerkkarten empfohlen."
-
 ---
 
 Wenn du bereits einen ALFA-Adapter mit NetHunter über die grundlegenden OTG-Anweisungen eingerichtet hast und die Kurzanleitung suchst, deckt unser [OTG-Einrichtungsleitfaden](/de/blog/alfa-adapter-nethunter-android-otg/) die wesentlichen Punkte ab. Dieser Artikel geht tiefer — er ist eine vollständige technische Referenz für Sicherheitsexperten, die vor dem Hardwarekauf die Telefon- und Adapterkompatibilität bewerten müssen, verstehen wollen, welcher Treiberansatz über Kernel-Updates hinweg funktionsfähig bleibt, und verifizierte Testergebnisse einsehen möchten, bevor sie sich für eine bestimmte Kombination entscheiden.

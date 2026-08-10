@@ -20,7 +20,6 @@ faq:
     answer: "Ja. Der Treiber für MT7921AUN ist seit Kernel 5.18 integriert, und die Kernel-Version der Kali ARM64-Images ist noch höher. Es ist lediglich erforderlich, das Firmware-Paket firmware-misc-nonfree zu installieren."
   - question: "Wie versorgt man den AWUS036ACH auf dem Raspberry Pi mit Strom?"
     answer: "Der Stromverbrauch des AWUS036ACH beträgt ca. 500 mW. Das direkte Anschließen an den Pi kann zu Taktratenreduzierung oder Neustarts führen. Verwenden Sie unbedingt einen aktiven USB 3.0-Hub zusammen mit einem offiziellen Pi USB-C-Netzteil mit mindestens 3 A."
-
 ---
 
 Ein Laptop mit Kali Linux ist der Standard-Arbeitsplatz für Pentesting – aber bei weitem nicht die einzige Option. Ein Raspberry Pi 4 oder Pi 5 kombiniert mit einem ALFA USB WLAN-Adapter bietet dir eine kompakte, lüfterlose und passiv gekühlte Plattform, die in eine Jackentasche passt, über eine USB-C Powerbank betrieben werden kann und stundenlang unbeaufsichtigt in einer Zielumgebung gelassen werden kann. Kali Linux ARM64-Images kommen direkt von Offensive Security und laufen nativ auf dem Pi 4 und Pi 5 ohne Emulation. Dir steht das volle Toolset zur Verfügung: Aircrack-ng, Kismet, Wireshark, Bettercap und der Rest der Standard-Kali-Metapakete.

@@ -20,7 +20,6 @@ faq:
     answer: "APA-M25 ist eine 7 dBi gerichtete Panelantenne, die sich für fokussierte Tests in Innenräumen eignet. ARS NT5B7 ist eine 5/7 dBi omnidirektionale Antenne, die universell für Innen- und Außenbereiche geeignet ist. Erstere hat eine starke Richtwirkung, während letztere eine breitere Abdeckung bietet."
   - question: "Erfordert der Austausch der Antenne die Installation von Treibern oder Einstellungen?"
     answer: "Nicht erforderlich. Die Antennen-Upgrades sind rein hardwarebasiert und erfordern keine Aktualisierung der Treiber, Einstellungen oder Neustarts. Nach der Installation funktioniert die Netzwerkkarte sofort mit der neuen Antenne."
-
 ---ALFA-Netzwerkkarten verwenden durchgehend RP-SMA-Anschlüsse. Die fünf Antennenzubehörteile decken Single-Band bis Tri-Band sowie gerichtet bis omnidirektional ab. Die Installation erfolgt werkzeuglos in weniger als 30 Sekunden, und die Signalstärke kann nach dem Upgrade um 4–8 dBm gesteigert werden.
 
 {{< tldr >}}

@@ -20,7 +20,6 @@ faq:
     answer: "Nein. Der MT7921AUN-Treiber ist bereits im Windows 11-Treiberrepository (Build 22000 und höher) integriert. Nach dem Einstecken der Netzwerkkarte wird der Treiber innerhalb weniger Minuten automatisch bezogen."
   - question: "Was tun, wenn der Geräte-Manager Code 43 anzeigt?"
     answer: "Nach der Deinstallation des Treibers und einem Neustart stecken Sie die Netzwerkkarte erneut ein und installieren den Treiber manuell mit Methode B. Wenn weiterhin Fehlercode 43 auftritt und dies auf mehreren Geräten identisch ist, deutet dies in der Regel auf einen Hardwaredefekt hin."
-
 ---
 
 ALFA Network USB-WLAN-Adapter sind in Sicherheitsforschungs- und Netzwerkkreisen bestens bekannt, aber die meisten Anleitungen konzentrieren sich ausschließlich auf Linux. Die gute Nachricht für Windows-Nutzer: Jeder gängige ALFA-Adapter funktioniert unter Windows 10 und Windows 11 mit den vom Hersteller bereitgestellten Treibern — eine Kompilierung aus dem Quellcode ist nicht erforderlich.

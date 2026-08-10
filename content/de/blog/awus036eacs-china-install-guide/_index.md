@@ -25,7 +25,6 @@ faq:
     answer: "Nach der Treiberinstallation wird es in der Regel automatisch aktiviert; Sie können Bluetooth in den Windows-Einstellungen aktivieren, um Geräte zu verbinden."
   - question: "Welche WLAN-Karte für Sicherheitsstudien unter Linux sollten Sie stattdessen wählen?"
     answer: "Wir empfehlen, auf AWUS036ACM oder AWUS036ACS umzusteigen, da beide Modelle in Linux den Monitor Mode vollständig unterstützen."
-
 ---
 
 Der AWUS036EACS ist der Nano WiFi 5 + Bluetooth 4.2 Kombi-Adapter von ALFA. Er wurde für Windows-Benutzer entwickelt, die ein kompaktes drahtloses Upgrade benötigen. Sein RTL8821CU-Chipsatz verfügt über keinen zuverlässigen Open-Source-Linux-Treiber — Monitor-Modus und Paket-Injektion werden nicht unterstützt. Diese Anleitung deckt die Windows-Installation aus chinesischen Quellen ab und erläutert die Linux-Einschränkungen klar und deutlich.

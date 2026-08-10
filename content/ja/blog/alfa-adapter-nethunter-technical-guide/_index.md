@@ -1,5 +1,4 @@
 ---
-
 title: "ALFA無線アダプターとKali NetHunter完全技術ガイド2026"
 description: "Kali NetHunterでALFA USB WiFiアダプターを使用するための技術リファレンス。台湾市場のスマートフォン互換性、カーネル内蔵ドライバー vs DKMS分析、OTGセットアップ、検証済みテスト結果を網羅。"
 date: 2026-06-09

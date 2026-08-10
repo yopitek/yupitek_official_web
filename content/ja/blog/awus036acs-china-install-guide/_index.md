@@ -1,5 +1,4 @@
 ---
-
 title: "ALFA AWUS036ACS ドライバインストールガイド（中国版）：Kali Linux, Ubuntu, Debian & Raspberry Pi"
 description: "中国国内のミラーサイトを利用して、ALFA AWUS036ACSのドライバをインストールする手順をステップバイステップで解説します。RTL8811AU DKMSドライバ、モニターモード、パケットインジェクションに対応。Kali Linux、Ubuntu 22/24、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
 date: 2026-04-24

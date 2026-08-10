@@ -20,7 +20,6 @@ faq:
     answer: "Nur wenn WPA3-Netzwerke im 6-GHz-Band getestet werden, ist AWUS036AXML erforderlich. Für WPA3-Tests auf 2,4/5 GHz reicht AWUS036ACH aus."
   - question: "Müssen Dragonblood-Schwachstellen noch getestet werden?"
     answer: "Moderne AP-Firmware ist größtenteils gepatcht, doch Umgebungen mit alter oder ungepatchter Firmware erfordern weiterhin Tests von Seitenkanalangriffen wie CVE-2019-9494 sowie SAE-Commit-DoS-Floods."
-
 ---
 | Merkmal | WPA2 | WPA3 | |---|---|---| | **Authentifizierung** | PSK (4-Way Handshake) | SAE (Dragonfly) | | **Verschlüsselung** | AES-CCMP | AES-GCMP | | **PMF** | Optional | Erforderlich | | **Open WiFi (OWE)** | N/A | Unterstützt | | **Downgrade-Schutz** | Schwach | Stark |
 

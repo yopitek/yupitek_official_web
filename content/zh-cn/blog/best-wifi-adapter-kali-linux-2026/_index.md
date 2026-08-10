@@ -1,8 +1,4 @@
 ---
-
-
-
-
 title: "2026 年 Kali Linux 最佳 WiFi 网卡完全指南"
 description: "2026 年 Kali Linux 最佳 USB WiFi 网卡全面比较，涵盖监听模式、数据包注入、芯片组与 ALFA Network 推荐机型。"
 date: 2026-03-23

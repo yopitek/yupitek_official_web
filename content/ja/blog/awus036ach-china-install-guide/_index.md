@@ -1,5 +1,4 @@
 ---
-
 title: "ALFA AWUS036ACH ドライバーインストールガイド（中国向け）: Kali Linux、Ubuntu、Debian & ラズベリーパイ"
 date: 2026-04-24
 draft: false

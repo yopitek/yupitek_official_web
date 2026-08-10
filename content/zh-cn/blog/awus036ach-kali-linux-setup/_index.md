@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "ALFA AWUS036ACH Kali Linux 配置指南：监听模式与数据包注入（2026）"
 description: "手把手教你在 Kali Linux 2024/2025 安装 ALFA AWUS036ACH，启用 airmon-ng 监听模式，验证数据包注入——附完整驱动安装命令。"
 date: 2026-03-23

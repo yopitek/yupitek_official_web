@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "完整教程：在中国大陆 Linux 系统安装所有 Alfa USB WiFi 网卡 — Kali、Ubuntu、Raspberry Pi"
 date: 2026-04-24
 author: "benny-lai"

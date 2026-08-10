@@ -20,7 +20,6 @@ faq:
     answer: "Die meisten Testfälle konzentrieren sich weiterhin auf 2,4/5 GHz. Wenn die Zielumgebung jedoch bereits Wi-Fi 6E-Zugangspunkte bereitgestellt hat, wird eine 6-GHz-Netzwerkkarte zu einer strategischen Notwendigkeit."
   - question: "Wie installiert man den Treiber für RTL8812AU des AWUS036ACH?"
     answer: "Kopieren Sie das rtl8812au-Repository von aircrack-ng GitHub und führen Sie make dkms_install aus, um es zu installieren. DKMS stellt sicher, dass der Treiber nach einem Kernel-Update automatisch neu erstellt wird."
-
 ---
 Beantworten Sie diese Fragen in Reihenfolge, um sofort Ihre Antwort zu finden:
 

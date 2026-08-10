@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "AWUS036AXML 监控模式固件修复：解决主动模式崩溃问题"
 description: "如何修复 AWUS036AXML 在 Kali Linux 上的监控模式固件崩溃问题。涵盖 MT7921AUN 固件更新、内核版本要求、主动与被动模式的解决方案，以及 hcxdumptool 替代方案。"
 date: 2026-03-24

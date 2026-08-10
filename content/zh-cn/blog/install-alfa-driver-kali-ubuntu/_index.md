@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "如何在 Kali Linux 与 Ubuntu 24.04 安装 ALFA USB WiFi 驱动程序（2026）"
 description: "完整教程：在 Kali Linux 2024 和 Ubuntu 24.04 安装 ALFA Network USB WiFi 网卡驱动，覆盖 RTL8812AU、MT7612U 和 MT7921AUN 芯片组，附故障排除技巧。"
 date: 2026-03-23

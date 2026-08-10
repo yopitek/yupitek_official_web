@@ -1,5 +1,4 @@
 ---
-
 title: "ALFA AWUS036ACM：Raspberry Pi で IBSS アドホックと 802.11s メッシュネットワークを構築する（MT7612U）"
 description: "ALFA AWUS036ACM（MT7612U）は、Raspberry Pi 上で IBSS アドホックと 802.11s メッシュネットワークを完全にサポートする唯一の現行 ALFA USB WiFi アダプターです。ドライバーのインストール不要で、すぐに使えます。設定手順を詳しく解説します。"
 date: 2026-03-27

@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "ALFA AWUS036AXM 中国安装指南：Kali Linux, Ubuntu, Debian 和 树莓派"
 description: "专为国内用户准备的 ALFA AWUS036AXM 安装教程。使用国内镜像源，涵盖 MT7921AUN WiFi 6E 驱动配置，支持监听模式和 VIF。适用于 Kali Linux, Ubuntu, Debian 以及树莓派。无需访问 GitHub。"
 date: 2026-04-24

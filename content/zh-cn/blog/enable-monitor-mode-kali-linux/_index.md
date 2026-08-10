@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Kali Linux 2026 启用监听模式完整教程：WiFi 网卡配置指南"
 description: "手把手教你在 Kali Linux 2024/2025 使用 airmon-ng 或 iw 命令启用监听模式，涵盖兼容 ALFA 网卡、故障排除，以及用 airodump-ng 验证。"
 date: 2026-03-23

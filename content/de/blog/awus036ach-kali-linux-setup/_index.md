@@ -20,7 +20,6 @@ faq:
     answer: "Eine Erfolgsquote von über 80 % zeigt eine zuverlässige Funktion an. Liegt sie unter 50 %, sollten Sie die Antennenposition, die ausreichende USB-Stromversorgung oder die korrekte Installation des Treibers überprüfen."
   - question: "Wie verhält es sich, wenn der Treiber für den AWUS036ACH nach einem Kernel-Update nicht mehr funktioniert?"
     answer: "Bei der Installation über DKMS wird der Treiber automatisch neu erstellt. Falls dies fehlschlägt, führen Sie dkms autoinstall aus und stellen Sie sicher, dass das linux-headers-Paket mit der aktuellen Kernel-Version übereinstimmt."
-
 ---
 
 Die meisten Benutzer stoßen auf drei Hauptprobleme beim Einrichten des AWUS036ACH unter Kali: Der Treiber kompiliert nicht, die VM leitet das USB-Gerät nicht weiter oder der Monitor-Modus funktioniert stillschweigend nicht. Dieses Handbuch deckt alle drei ab, plus die vollständige Setup-Anleitung von Grund auf.

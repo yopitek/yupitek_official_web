@@ -20,7 +20,6 @@ faq:
     answer: "Die Modelle AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN) und AWUS036ACM (MT7612U) werden alle vollständig unterstützt und funktionieren mit dem richtigen Treiber unter Kali Linux."
   - question: "Wie kann ich die Erfolgsquote bei Packet Injection-Tests verbessern, wenn sie unter 50 % liegt?"
     answer: "Bringen Sie sich dem Ziel-AP näher, sperren Sie den Monitor Mode auf denselben Kanal, überprüfen Sie die TX Power-Einstellungen und stellen Sie sicher, dass der Treiber eine aircrack-ng-Version und nicht die vom Distribution-Standard bereitgestellte Version ist."
-
 ---
 Packet Injection ist die Fähigkeit eines WiFi-Adapters, **beliebige Frames** zu senden — nicht nur solche, die an ihn gerichtet sind. Dies ermöglicht Angriffe wie:
 

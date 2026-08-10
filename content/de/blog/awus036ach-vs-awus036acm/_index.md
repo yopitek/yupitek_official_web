@@ -21,7 +21,6 @@ faq:
     answer: "Anfängern wird der AWUS036ACM empfohlen, da der MT7612U-Kernel-Nativtreiber Plug-and-Play ohne Kompilierung bietet. Wählen Sie stattdessen den AWUS036ACH, wenn Sie das stärkste Signal und die meisten Anleitungen wünschen und mit dem DKMS-Kompilierungsprozess vertraut sind."
   - question: "Welches Modell wird für eine VM-Umgebung empfohlen?"
     answer: "Für VM-Umgebungen wird der AWUS036ACM empfohlen, da der Kernel-Nativtreiber nach der USB-Weiterleitung sofort erkannt und verwendet werden kann, ohne dass Toolchains innerhalb der virtuellen Maschine installiert oder kompiliert werden müssen. Der AWUS036ACH erfordert die zusätzliche Installation des Treibers innerhalb der VM, um verwendet zu werden."
-
 ---Der AWUS036ACH eignet sich für professionelle Aufgaben, mit dem RTL8812AU-Treiber, 30 dBm Dual-Antennen und der stärksten Monitor Mode Packet Injection; der AWUS036ACM ist für Portabilität gedacht, mit dem MT7612U-Kern, nativem Treiber ohne Kompilierung und einem Preis von ca. 30–40 $.
 
 {{< tldr >}}

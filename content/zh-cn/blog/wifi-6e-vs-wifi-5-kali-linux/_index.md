@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "WiFi 6E vs WiFi 5：渗透测试该选哪款 ALFA 网卡？"
 description: "对比 ALFA AWUS036AXML（Wi-Fi 6E）与 AWUS036ACH（Wi-Fi 5）在 Kali Linux 渗透测试中的差异，涵盖 6 GHz 支持、驱动成熟度、监听模式与实际使用场景。"
 date: 2026-03-23

@@ -20,7 +20,6 @@ faq:
     answer: "Die Modelle AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN) und AWUS036ACM (MT7612U) werden alle vollständig unterstützt, wobei das ACM-Modul Plug-and-Play-fähig ist."
   - question: "Wie behebt man den Fehler „Fixed channel wlan0mon: -1“, der von airodump-ng angezeigt wird?"
     answer: "Zeigt an, dass airodump-ng den Kanal nicht wechseln kann. Führen Sie iwconfig wlan0mon channel 1 aus, um den Kanal festzulegen, und beenden Sie die verbleibenden wpa_supplicant-Prozesse."
-
 ---
 Im Managed-Modus (dem Standardmodus) kommuniziert Ihr Adapter nur mit Access-Points, mit denen er verbunden ist. Im **Monitor-Modus** hört der Adapter auf allen Kanälen auf und erfasst **alle** 802.11-Frames in Ihrer Umgebung — einschließlich Handshakes, Deauthentication-Frames, Probe Requests und mehr.
 

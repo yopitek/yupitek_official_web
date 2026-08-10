@@ -22,7 +22,6 @@ faq:
     answer: "Der Flipper One befindet sich derzeit in der Developer-Preview-Phase; das offizielle Erscheinungsdatum und der Preis werden über die Crowdfunding-Kampagne bekannt gegeben. Bitte verfolgen Sie flipper.net für weitere Details."
   - question: "Kann das WiFi Dev Board des Flipper Zero eine ALFA-Netzwerkkarte ersetzen?"
     answer: "Nein. Das WiFi Dev Board unterstützt nur die grundlegenden 2.4-GHz-Funktionen, verfügt über keinen USB-Host und bietet eine deutlich geringere Reichweite und Zuverlässigkeit bei der Packet Injection im Vergleich zu dedizierten ALFA-Netzwerkkarten."
-
 ---
 
 {{< alert "triangle-exclamation" >}}

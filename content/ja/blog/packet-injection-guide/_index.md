@@ -1,5 +1,4 @@
 ---
-
 title: "パケットインジェクションとは？Kali Linux での WiFi アダプター互換性テスト方法"
 description: "WiFi パケットインジェクションの仕組み、専用アダプターが必要な理由、aireplay-ng を使った ALFA Network アダプターのテスト方法、対応チップセットを解説。"
 date: 2026-03-23

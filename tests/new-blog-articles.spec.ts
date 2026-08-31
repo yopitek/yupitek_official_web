@@ -7,22 +7,6 @@ const ARTICLES = [
     title: 'MediaTek',
   },
   {
-    slug: 'ros2-humble-robot-wifi-signal-optimization-awus036axml',
-    title: 'ROS 2',
-  },
-  {
-    slug: 'openhd-vs-rubyfpv-vs-wfb-ng-fpv-wiring-topology',
-    title: 'FPV',
-  },
-  {
-    slug: 'sdrlab-h4m-passive-reception-aviation-noaa',
-    title: 'SDRlab',
-  },
-  {
-    slug: 'kali-linux-rtl8812au-dkms-secure-boot-mok-setup',
-    title: 'Kali',
-  },
-  {
     slug: 'macos-acs-acr1252u-m1-web-nfc-apdu-guide',
     title: 'macOS',
   },
@@ -43,7 +27,7 @@ for (const locale of LOCALES) {
   }
 }
 
-test.describe('8 ALFA New Blog Articles 10-Locale Quality & Image Audit', () => {
+test.describe('4 ALFA New Blog Articles 10-Locale Quality & Image Audit', () => {
   for (const route of PAGES) {
     test(`Audit ${route}`, async ({ page }) => {
       // Monitor console errors

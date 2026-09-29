@@ -76,6 +76,7 @@ test.describe('Yupitek Online Project Demo Showcase', () => {
 
   test('04 - Dynamic 5-Language Switching Functionality', async ({ page }) => {
     await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
+    await page.waitForSelector('html[data-app-ready="true"]');
 
     // 1. 切換至 EN
     await page.click('.lang-btn[data-lang="en"]');
@@ -119,6 +120,7 @@ test.describe('Yupitek Online Project Demo Showcase', () => {
 
   test('06 - Cinema Lightbox Modal Multi-Media Navigation', async ({ page }) => {
     await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
+    await page.waitForSelector('html[data-app-ready="true"]');
 
     const lightbox = page.locator('#lightbox');
     await expect(lightbox).not.toHaveClass(/open/);
@@ -152,6 +154,7 @@ test.describe('Yupitek Online Project Demo Showcase', () => {
 
   test('07 - Interactive Media Tabs & Filmstrip Switching', async ({ page }) => {
     await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
+    await page.waitForSelector('html[data-app-ready="true"]');
 
     const card01 = page.locator('#project-01');
     const tabGallery = card01.locator('.media-tab[data-tab="gallery"]');
@@ -309,6 +312,7 @@ test.describe('Yupitek Online Project Demo Showcase', () => {
 
   test('14 - Non-Video Project Lightbox & Cinema Mode Verification', async ({ page }) => {
     await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
+    await page.waitForSelector('html[data-app-ready="true"]');
 
     const lightbox = page.locator('#lightbox');
 

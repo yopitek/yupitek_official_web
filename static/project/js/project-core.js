@@ -22,6 +22,9 @@ async function bootstrap() {
 
   // 4. 初始化互動多媒體播放器與畫廊引擎 (含 Lightbox)
   initMediaPlayer();
+
+  // 5. 標註客戶端水合完成狀態 (供 E2E 測試與無縫互動確認)
+  document.documentElement.setAttribute('data-app-ready', 'true');
 }
 
 if (document.readyState === 'loading') {

@@ -11,6 +11,10 @@ showTableOfContents: true
 
 Yopitek Ltd (榆閤科技有限公司) is a Taipei, Taiwan-based technology company specializing in the planning, design, and integration of professional projection systems. We leverage advanced projection technology to seamlessly unite artistic vision with engineering precision, delivering breathtaking visual environments for government agencies, museums, corporations, and cultural events.
 
+{{< alert >}}
+✨ **Interactive Showcase Live**: [Explore our Online Project Demo](/en/solution/project/) — experience 11 flagship projection mapping and edge-blending cases in an interactive, immersive layout!
+{{< /alert >}}
+
 ## Services
 
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">

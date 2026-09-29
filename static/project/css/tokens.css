@@ -1,0 +1,548 @@
+/* ==========================================================================
+   Yupitek CIS — UI System v2 · 三方案 Token 層
+   對應：ui-system/03-scheme-spec.md（2026-08-22）
+   對應 gate：direction-approved.md（使用者直接指定三方向 A/B/C）
+
+   設計原則：
+   1. 僅追加 [data-scheme="..."] 切換層，不覆蓋既有 :root 變數（向後相容）
+   2. 三方案共用 yp-* 既有錨點（--yp-blue-500 / --yp-orange-500 / --yp-ink-*）
+   3. 方案特有變數用 yp-ui- 前綴，避免與既有衝突
+   4. 優先級：yp-ui > yp-color-* > yp-*
+
+   啟用方式：
+   <html data-scheme="tech-dark">    方案 A 黑底技術
+   <html data-scheme="formal-light">  方案 B 白底正式
+   <html data-scheme="bw-print">      方案 C 黑白列印
+   ========================================================================== */
+
+:root {
+  /* ────── 方案 A — Mecha Tech Docs（黑底技術） ────── */
+  [data-scheme="tech-dark"] {
+    /* 背景層 */
+    --yp-ui-bg:               #0B0E11;   /* 頁面底 */
+    --yp-ui-bg-elevated:      #14181D;   /* 略亮一階 */
+    --yp-ui-panel:            #23282E;   /* 卡片 / 面板 */
+    --yp-ui-panel-hover:      #2E353D;   /* 浮層 / hover */
+    --yp-ui-panel-active:     #383F47;   /* active */
+
+    /* 文字層 */
+    --yp-ui-text:             #FFFFFF;   /* 主文字 */
+    --yp-ui-text-muted:       #B5BCC4;   /* 次要文字 */
+    --yp-ui-text-subtle:      #8B939B;   /* 註腳、placeholder */
+    --yp-ui-text-onAccent:    #0B0E11;   /* 橘底上的文字 */
+    --yp-ui-text-onPrimary:   #FFFFFF;   /* 藍底上的文字 */
+
+    /* 邊框 */
+    --yp-ui-border:           #4A525B;
+    --yp-ui-border-strong:    #8B939B;
+    --yp-ui-border-tech:      #33B5EE;   /* 科技邊框 */
+    --yp-ui-border-accent:    #FF7A45;   /* 橘色邊框 */
+    --yp-ui-divider:          #23282E;   /* 分隔線（與 panel 同色，低調） */
+
+    /* 品牌色（沿用既有錨點，此處語意化） */
+    --yp-ui-primary:          var(--yp-blue-500);
+    --yp-ui-primary-bright:   var(--yp-blue-400);
+    --yp-ui-primary-deep:     var(--yp-blue-900);
+    --yp-ui-accent:           var(--yp-orange-500);
+    --yp-ui-accent-deep:      var(--yp-orange-700);
+    --yp-ui-accent-bright:    var(--yp-orange-300);
+
+    /* 語意色（不變） */
+    --yp-ui-success:          #1FA97A;
+    --yp-ui-warning:          #FFB020;
+    --yp-ui-danger:           #E5484D;
+    --yp-ui-info:             #3B82F6;
+
+    /* 圓角 */
+    --yp-ui-radius-sm:        4px;
+    --yp-ui-radius-md:        8px;
+    --yp-ui-radius-lg:        16px;
+    --yp-ui-radius-cut:       4px 12px 4px 12px;  /* 機甲斜切 */
+
+    /* 陰影 */
+    --yp-ui-shadow-sm:        0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --yp-ui-shadow-md:        0 4px 8px -2px rgba(0, 0, 0, 0.4);
+    --yp-ui-shadow-lg:        0 12px 24px -4px rgba(0, 0, 0, 0.5);
+    --yp-ui-shadow-cut:       4px 4px 0 0 #0B0E11;       /* 機甲硬投影 */
+    --yp-ui-shadow-cut-accent:4px 4px 0 0 #33B5EE;
+    --yp-ui-shadow-glow-orange: 0 0 24px rgba(255, 122, 69, 0.4);
+    --yp-ui-shadow-glow-blue:   0 0 24px rgba(2, 160, 233, 0.4);
+    --yp-ui-shadow-hud:       0 0 0 1px rgba(51, 181, 238, 0.35), 0 0 16px rgba(2, 160, 233, 0.25);
+
+    /* 互動 */
+    --yp-ui-focus-ring:       0 0 0 2px #33B5EE, 0 0 0 4px rgba(51, 181, 238, 0.3);
+    --yp-ui-hover-glow:       0 0 24px rgba(255, 122, 69, 0.3);
+    --yp-ui-active-scale:     0.98;
+    --yp-ui-duration-fast:    150ms;
+    --yp-ui-duration-normal:  250ms;
+    --yp-ui-duration-slow:    400ms;
+    --yp-ui-duration-mecha:   120ms;
+    --yp-ui-easing-standard:  cubic-bezier(0.4, 0, 0.2, 1);
+    --yp-ui-easing-mecha:     cubic-bezier(0.2, 0, 0, 1);
+
+    /* HUD 元件 */
+    --yp-ui-hud-corner-size:  12px;
+    --yp-ui-hud-corner-color: var(--yp-ui-primary-bright);
+    --yp-ui-hud-corner-border:2px solid var(--yp-ui-hud-corner-color);
+    --yp-ui-hud-wireframe:    1px solid rgba(51, 181, 238, 0.35);
+    --yp-ui-hud-wireframe-strong: 1px solid var(--yp-ui-primary-bright);
+    --yp-ui-panel-glass:      rgba(11, 14, 17, 0.7);
+    --yp-ui-panel-glass-border: 1px solid rgba(51, 181, 238, 0.35);
+    --yp-ui-panel-blur:       blur(8px);
+
+    /* 掃描線 overlay */
+    --yp-ui-scanline-opacity: 0.04;
+    --yp-ui-scanline-color:   #FFFFFF;
+    --yp-ui-scanline-gradient: repeating-linear-gradient(0deg, var(--yp-ui-scanline-color) 0 1px, transparent 1px 3px);
+
+    /* 表格 */
+    --yp-ui-table-header-bg:  #0B0E11;
+    --yp-ui-table-stripe:     rgba(255, 255, 255, 0.04);
+    --yp-ui-table-border:     1px solid #4A525B;
+
+    /* Code 區塊 */
+    --yp-ui-code-bg:          #14181D;
+    --yp-ui-code-container-bg:#1A1F25;
+    --yp-ui-code-keyword:     #33B5EE;
+    --yp-ui-code-string:      #FF7A45;
+    --yp-ui-code-comment:     #8B939B;
+    --yp-ui-code-number:      #FFA87A;
+    --yp-ui-code-func:        #FFFFFF;
+  }
+
+  /* ────── 方案 B — Mecha Formal（白底正式） ────── */
+  [data-scheme="formal-light"] {
+    /* 背景層 */
+    --yp-ui-bg:               #FFFFFF;
+    --yp-ui-bg-elevated:      #FAFBFC;
+    --yp-ui-panel:            #F7F7F8;
+    --yp-ui-panel-hover:      #EEF1F4;
+    --yp-ui-panel-active:     #E2E6EA;
+
+    /* 文字層 */
+    --yp-ui-text:             #0B0E11;
+    --yp-ui-text-muted:       #4A525B;
+    --yp-ui-text-subtle:      #8B939B;
+    --yp-ui-text-onAccent:    #FFFFFF;
+    --yp-ui-text-onPrimary:   #FFFFFF;
+
+    /* 邊框 */
+    --yp-ui-border:           #E6E9EC;
+    --yp-ui-border-strong:    #4A525B;
+    --yp-ui-border-tech:      var(--yp-blue-500);
+    --yp-ui-border-accent:    var(--yp-orange-700);
+    --yp-ui-divider:          #E6E9EC;
+
+    /* 品牌色（正式模式：橘色降一階） */
+    --yp-ui-primary:          var(--yp-blue-500);
+    --yp-ui-primary-bright:   var(--yp-blue-400);
+    --yp-ui-primary-deep:     var(--yp-blue-900);   /* 正式文件標題用 */
+    --yp-ui-accent:           var(--yp-orange-700); /* 降一階，僅 CTA / 簽名線 */
+    --yp-ui-accent-deep:      var(--yp-orange-900);
+    --yp-ui-accent-bright:    var(--yp-orange-500); /* 僅用於 14pt+ 高亮 */
+
+    /* 語意色（不變） */
+    --yp-ui-success:          #1FA97A;
+    --yp-ui-warning:          #FFB020;
+    --yp-ui-danger:           #E5484D;
+    --yp-ui-info:             #3B82F6;
+
+    /* 圓角（較小，較克制） */
+    --yp-ui-radius-sm:        4px;
+    --yp-ui-radius-md:        6px;
+    --yp-ui-radius-lg:        8px;
+    --yp-ui-radius-cut:       4px 4px 4px 4px;  /* 改回 4 邊等長（不機甲） */
+
+    /* 陰影（極輕） */
+    --yp-ui-shadow-sm:        0 1px 2px 0 rgba(11, 14, 17, 0.05);
+    --yp-ui-shadow-md:        0 4px 8px -2px rgba(11, 14, 17, 0.1);
+    --yp-ui-shadow-lg:        0 12px 24px -4px rgba(11, 14, 17, 0.15);
+    --yp-ui-shadow-cut:       none;  /* 不用硬投影 */
+    --yp-ui-shadow-cut-accent:none;
+    --yp-ui-shadow-glow-orange: none;
+    --yp-ui-shadow-glow-blue:   none;
+    --yp-ui-shadow-hud:       none;  /* 不用 HUD 角標陰影 */
+
+    /* 互動（極少） */
+    --yp-ui-focus-ring:       0 0 0 2px var(--yp-ui-primary), 0 0 0 4px rgba(2, 160, 233, 0.2);
+    --yp-ui-hover-glow:       none;
+    --yp-ui-active-scale:     1;     /* 無縮放 */
+    --yp-ui-duration-fast:    150ms;
+    --yp-ui-duration-normal:  200ms;
+    --yp-ui-duration-slow:    300ms;
+    --yp-ui-duration-mecha:   none;
+    --yp-ui-easing-standard:  cubic-bezier(0.4, 0, 0.2, 1);
+    --yp-ui-easing-mecha:     none;
+
+    /* HUD 元件（停用） */
+    --yp-ui-hud-corner-size:  0;
+    --yp-ui-hud-corner-color: transparent;
+    --yp-ui-hud-corner-border:0;
+    --yp-ui-hud-wireframe:    none;
+    --yp-ui-hud-wireframe-strong: none;
+    --yp-ui-panel-glass:      #FFFFFF;
+    --yp-ui-panel-glass-border:1px solid #E6E9EC;
+    --yp-ui-panel-blur:       none;
+
+    /* 掃描線（停用） */
+    --yp-ui-scanline-opacity: 0;
+    --yp-ui-scanline-color:   transparent;
+    --yp-ui-scanline-gradient: none;
+
+    /* 表格 */
+    --yp-ui-table-header-bg:  #0B0E11;
+    --yp-ui-table-stripe:     #F7F7F8;
+    --yp-ui-table-border:     1px solid #E6E9EC;
+
+    /* Code 區塊（正式文件不常用，僅備） */
+    --yp-ui-code-bg:          #F7F7F8;
+    --yp-ui-code-container-bg:#FFFFFF;
+    --yp-ui-code-keyword:     var(--yp-blue-700);
+    --yp-ui-code-string:      var(--yp-orange-700);
+    --yp-ui-code-comment:     #8B939B;
+    --yp-ui-code-number:      var(--yp-blue-900);
+    --yp-ui-code-func:        var(--yp-blue-900);
+  }
+
+  /* ────── 方案 C — Mecha B/W Print（白底黑字黑白列印） ────── */
+  [data-scheme="bw-print"] {
+    /* 背景層（純白） */
+    --yp-ui-bg:               #FFFFFF;
+    --yp-ui-bg-elevated:      #FFFFFF;
+    --yp-ui-panel:            #FFFFFF;
+    --yp-ui-panel-hover:      #F2F2F2;
+    --yp-ui-panel-active:     #E6E6E6;
+
+    /* 文字層（純黑 + 灰階） */
+    --yp-ui-text:             #000000;
+    --yp-ui-text-muted:       #4A525B;
+    --yp-ui-text-subtle:      #8B939B;
+    --yp-ui-text-onAccent:    #FFFFFF;
+    --yp-ui-text-onPrimary:   #FFFFFF;
+
+    /* 邊框（純黑 + 灰階） */
+    --yp-ui-border:           #000000;
+    --yp-ui-border-strong:    #000000;
+    --yp-ui-border-tech:      #000000;   /* 灰階映射：藍 #02A0E9 → 黑 */
+    --yp-ui-border-accent:    #4A525B;   /* 灰階映射：橘 #FF7A45 → 深灰 */
+    --yp-ui-divider:          #000000;
+
+    /* 品牌色（灰階映射） */
+    --yp-ui-primary:          #4A525B;   /* 灰階映射：藍 → 深灰 7.4:1 ✓AAA */
+    --yp-ui-primary-bright:   #000000;
+    --yp-ui-primary-deep:     #000000;
+    --yp-ui-accent:           #8B939B;   /* 灰階映射：橘 → 中灰 3.5:1（僅 ≥18pt） */
+    --yp-ui-accent-deep:      #4A525B;
+    --yp-ui-accent-bright:    #4A525B;
+
+    /* 語意色（灰階） */
+    --yp-ui-success:          #4A525B;
+    --yp-ui-warning:          #4A525B;
+    --yp-ui-danger:           #000000;
+    --yp-ui-info:             #4A525B;
+
+    /* 圓角（0 為主，列印無圓角） */
+    --yp-ui-radius-sm:        0;
+    --yp-ui-radius-md:        0;
+    --yp-ui-radius-lg:        0;
+    --yp-ui-radius-cut:       0;
+
+    /* 陰影（全部無） */
+    --yp-ui-shadow-sm:        none;
+    --yp-ui-shadow-md:        none;
+    --yp-ui-shadow-lg:        none;
+    --yp-ui-shadow-cut:       none;
+    --yp-ui-shadow-cut-accent:none;
+    --yp-ui-shadow-glow-orange: none;
+    --yp-ui-shadow-glow-blue:   none;
+    --yp-ui-shadow-hud:       none;
+
+    /* 互動（無動畫，列印導向） */
+    --yp-ui-focus-ring:       0 0 0 2px #000000;  /* 列印用黑 */
+    --yp-ui-hover-glow:       none;
+    --yp-ui-active-scale:     1;
+    --yp-ui-duration-fast:    0;
+    --yp-ui-duration-normal:  0;
+    --yp-ui-duration-slow:    0;
+    --yp-ui-duration-mecha:   0;
+    --yp-ui-easing-standard:  linear;
+    --yp-ui-easing-mecha:     linear;
+
+    /* HUD（停用） */
+    --yp-ui-hud-corner-size:  0;
+    --yp-ui-hud-corner-color: transparent;
+    --yp-ui-hud-corner-border:0;
+    --yp-ui-hud-wireframe:    none;
+    --yp-ui-hud-wireframe-strong: none;
+    --yp-ui-panel-glass:      #FFFFFF;
+    --yp-ui-panel-glass-border:1px solid #000000;
+    --yp-ui-panel-blur:       none;
+
+    /* 掃描線（停用） */
+    --yp-ui-scanline-opacity: 0;
+    --yp-ui-scanline-color:   transparent;
+    --yp-ui-scanline-gradient: none;
+
+    /* 表格（純黑框） */
+    --yp-ui-table-header-bg:  #000000;
+    --yp-ui-table-stripe:     #F2F2F2;
+    --yp-ui-table-border:     0.5pt solid #000000;  /* 雷射印表機最小可見線寬 */
+
+    /* Code 區塊（灰階，列印用） */
+    --yp-ui-code-bg:          #FFFFFF;
+    --yp-ui-code-container-bg:#F2F2F2;
+    --yp-ui-code-keyword:     #000000;
+    --yp-ui-code-string:      #4A525B;
+    --yp-ui-code-comment:     #8B939B;
+    --yp-ui-code-number:      #000000;
+    --yp-ui-code-func:        #000000;
+  }
+}
+
+/* ==========================================================================
+   列印專用 @media print（黑白列印方案強化）
+   觸發：列印時自動套用以下規則，抑制所有互動與裝飾
+   ========================================================================== */
+@media print {
+  /* 確保黑白 */
+  html, body {
+    color: #000000 !important;
+    background: #FFFFFF !important;
+  }
+
+  /* 抑制所有互動、動畫、陰影、圓角、漸層、玻璃 */
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+    filter: none !important;
+  }
+
+  /* 表格與分隔線強制 0.5pt 黑實線 */
+  table, th, td {
+    border: 0.5pt solid #000000 !important;
+    border-collapse: collapse !important;
+  }
+
+  /* 條碼 / QR 強制黑白 */
+  .yp-barcode, svg.barcode, img.barcode {
+    filter: grayscale(100%) contrast(200%) !important;
+  }
+
+  /* 不可分頁切斷 */
+  tr, .yp-no-break {
+    page-break-inside: avoid !important;
+  }
+
+  /* 簽名線 / 重要分隔線升為 1pt */
+  .yp-signature-line, .yp-divider-strong {
+    border-bottom: 1pt solid #000000 !important;
+  }
+
+  /* 隱藏互動元素 */
+  .yp-no-print, nav, button, .yp-btn {
+    display: none !important;
+  }
+
+  /* 連結顯示為純文字（不顯示 URL） */
+  a[href]:not(.yp-show-url)::after {
+    content: "" !important;
+  }
+
+  /* @page 設定（A4 直式 / 橫式由 .yp-page-portrait / .yp-page-landscape 切換） */
+  .yp-page-portrait  { page: portrait;  }
+  .yp-page-landscape { page: landscape; }
+  .yp-page-portrait  @page { size: A4 portrait;  margin: 20mm 18mm; }
+  .yp-page-landscape @page { size: A4 landscape; margin: 15mm 20mm; }
+}
+
+/* ==========================================================================
+   通用工具類別（給前端工程師）
+   ========================================================================== */
+.yp-scheme {
+  background: var(--yp-ui-bg);
+  color: var(--yp-ui-text);
+  font-family: var(--yp-font-body);
+  transition: background var(--yp-ui-duration-normal) var(--yp-ui-easing-standard);
+}
+
+.yp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--yp-ui-radius-md);
+  font-family: var(--yp-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--yp-ui-duration-fast) var(--yp-ui-easing-standard);
+  text-decoration: none;
+  user-select: none;
+}
+.yp-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--yp-ui-focus-ring);
+}
+.yp-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.yp-btn--primary {
+  background: var(--yp-ui-primary);
+  color: var(--yp-ui-text-onPrimary);
+}
+.yp-btn--primary:hover {
+  background: var(--yp-ui-primary-bright);
+  transform: translateY(-1px);
+  box-shadow: var(--yp-ui-shadow-glow-orange);
+}
+.yp-btn--primary:active {
+  transform: scale(var(--yp-ui-active-scale));
+  box-shadow: var(--yp-ui-shadow-cut);
+}
+
+.yp-btn--secondary {
+  background: transparent;
+  color: var(--yp-ui-text);
+  border: 1px solid var(--yp-ui-border-tech);
+}
+.yp-btn--secondary:hover {
+  background: var(--yp-ui-panel-hover);
+}
+
+.yp-btn--accent {
+  background: var(--yp-ui-accent);
+  color: var(--yp-ui-text-onAccent);
+}
+.yp-btn--accent:hover {
+  background: var(--yp-ui-accent-bright);
+  transform: translateY(-1px);
+}
+
+.yp-btn--ghost {
+  background: transparent;
+  color: var(--yp-ui-text-muted);
+  border: 1px solid var(--yp-ui-border);
+}
+.yp-btn--ghost:hover {
+  border-color: var(--yp-ui-border-tech);
+  color: var(--yp-ui-text);
+}
+
+.yp-btn--danger {
+  background: var(--yp-ui-danger);
+  color: #FFFFFF;
+}
+.yp-btn--danger:hover {
+  background: #C73A3F;
+}
+
+.yp-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--yp-ui-border);
+  border-radius: var(--yp-ui-radius-sm);
+  background: var(--yp-ui-panel);
+  color: var(--yp-ui-text);
+  font-family: var(--yp-font-body);
+  font-size: 14px;
+  transition: all var(--yp-ui-duration-fast) var(--yp-ui-easing-standard);
+}
+.yp-input::placeholder { color: var(--yp-ui-text-subtle); }
+.yp-input:focus {
+  outline: none;
+  border-color: var(--yp-ui-border-tech);
+  box-shadow: var(--yp-ui-focus-ring);
+}
+.yp-input--error {
+  border-color: var(--yp-ui-danger);
+}
+
+.yp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.yp-table th {
+  background: var(--yp-ui-table-header-bg);
+  color: var(--yp-ui-text-onPrimary);
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  border: var(--yp-ui-table-border);
+}
+.yp-table td {
+  padding: 12px 16px;
+  border: var(--yp-ui-table-border);
+  color: var(--yp-ui-text);
+}
+.yp-table tbody tr:nth-child(even) td {
+  background: var(--yp-ui-table-stripe);
+}
+.yp-table--bwprint {
+  font-size: 12px;
+}
+.yp-table--bwprint th,
+.yp-table--bwprint td {
+  border: 0.5pt solid #000000 !important;
+  color: #000000 !important;
+  background: #FFFFFF !important;
+}
+.yp-table--bwprint th {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.yp-card {
+  background: var(--yp-ui-panel);
+  border: 1px solid var(--yp-ui-border);
+  border-radius: var(--yp-ui-radius-md);
+  padding: 24px;
+  box-shadow: var(--yp-ui-shadow-sm);
+}
+.yp-card--hud {
+  position: relative;
+  border: var(--yp-ui-hud-wireframe);
+  background: var(--yp-ui-panel-glass);
+  backdrop-filter: var(--yp-ui-panel-blur);
+  border-radius: var(--yp-ui-radius-md);
+}
+.yp-card--cut {
+  border-radius: var(--yp-ui-radius-cut);
+}
+
+.yp-nav {
+  position: sticky;
+  top: 0;
+  background: var(--yp-ui-bg);
+  border-bottom: 1px solid var(--yp-ui-border);
+  z-index: 100;
+}
+.yp-nav--sticky {
+  position: sticky;
+  top: 0;
+}
+
+/* 文字 utility */
+.yp-text-mono {
+  font-family: var(--yp-font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.yp-text-display {
+  font-family: var(--yp-font-display-tech);
+  letter-spacing: 0.05em;
+}
+.yp-text-cjk-display {
+  font-family: var(--yp-font-display-cjk);
+  letter-spacing: -0.02em;
+}
+
+/* 反 AI slop：禁用 emoji 圖標統一用 SVG（範例） */
+.yp-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -0.125em; }

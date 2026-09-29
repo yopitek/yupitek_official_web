@@ -10,3 +10,4 @@ __pycache__/
 geo_translations.json
 zhtw_geo_data.json
 __pycache__/
+env/

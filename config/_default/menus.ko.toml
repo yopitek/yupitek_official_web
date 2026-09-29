@@ -1,0 +1,85 @@
+[[main]]
+  name       = "솔루션"
+  pageRef    = "/solution"
+  weight     = 10
+
+[[main]]
+  name       = "제품"
+  weight     = 20
+  [main.params]
+    icon     = "tag"
+
+  [[main]]
+    name     = "ACS"
+    pageRef  = "/products/acr"
+    parent   = "제품"
+    weight   = 21
+
+  [[main]]
+    name     = "ALFA Network"
+    pageRef  = "/products/alfa"
+    parent   = "제품"
+    weight   = 22
+
+  [[main]]
+    name     = "Flipper Zero"
+    pageRef  = "/products/flipperzero"
+    parent   = "제품"
+    weight   = 23
+
+  [[main]]
+    name     = "그래픽 카드"
+    pageRef  = "/products/graphiccard"
+    parent   = "제품"
+    weight   = 24
+
+  [[main]]
+    name     = "HAK5"
+    pageRef  = "/products/hak5"
+    parent   = "제품"
+    weight   = 25
+
+  [[main]]
+    name     = "iBeacon"
+    pageRef  = "/products/ibeacon"
+    parent   = "제품"
+    weight   = 26
+
+  [[main]]
+    name     = "Mellanox"
+    pageRef  = "/products/mellanox"
+    parent   = "제품"
+    weight   = 27
+
+  [[main]]
+    name     = "SDRLAB"
+    pageRef  = "/products/sdrlab"
+    parent   = "제품"
+    weight   = 28
+
+  [[main]]
+    name     = "Ubiquiti"
+    pageRef  = "/products/ubiquiti"
+    parent   = "제품"
+    weight   = 29
+
+  [[main]]
+    name     = "Sierra Wireless"
+    pageRef  = "/products/sierra"
+    parent   = "제품"
+    weight   = 30
+
+[[main]]
+  name       = "고객지원"
+  pageRef    = "/support"
+  weight     = 31
+
+[[main]]
+  name   = "블로그"
+  pageRef = "/blog"
+  weight  = 35
+
+[[main]]
+  name       = "문의하기"
+  pageRef    = "/contact"
+  weight     = 40

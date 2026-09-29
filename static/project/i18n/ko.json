@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "title": "온라인 프로젝트 쇼케이스 | Yopitek — 몰입형 인터랙티브 프로젝션",
+    "description": "대만 Yopitek(榆閤科技)의 11대 대표 프로젝션 맵핑 및 몰입형 공간 프로젝트. 2026 대만 등불축제, C-LAB 돔, 왕선 박물관, 판차오 방송소, 레이즈 치즈 폭포 등."
+  },
+  "nav": {
+    "back": "← 홈으로 이동",
+    "projects": "프로젝트 둘러보기"
+  },
+  "hero": {
+    "eyebrow": "IMMERSIVE VISUAL EXPERIENCE",
+    "titleHtml": "빛과 미디어로 재구성하는<br><span class=\"highlight\">공간과 감각의 경계</span>",
+    "subtitle": "11개의 대표 몰입형 프로젝션 프로젝트를 만나보세요. 유서 깊은 건축물 파사드 맵핑부터 360° 돔 몰입형 공간까지, 정밀한 엣지 블렌딩과 실시간 모션 인터랙션을 융합합니다.",
+    "ctaExplore": "프로젝트 탐색 ↓",
+    "ctaContact": "프로젝트 문의 →"
+  },
+  "labels": {
+    "client": "클라이언트",
+    "location": "위치",
+    "year": "전시 연도",
+    "playVideo": "영상 재생",
+    "viewImage": "크게 보기"
+  },
+  "projects": {
+    "01": {
+      "index": "01 / 11",
+      "title": "2026 대만 등불축제 TechWorld",
+      "subtitle": "Tech World Pavilion — Architectural & Indoor Cylinder Projection",
+      "tags": ["야외 대형 구조물 맵핑", "원통형 몰입 설치", "테마 파빌리온 통합"],
+      "client": "Tech World",
+      "location": "자이",
+      "year": "2026",
+      "description": "Tech World 생명관 프로젝트는 Yopitek의 대규모 공간 통합 역량을 입증하는 대표적인 사례입니다. 야외의 거대한 비계 구조물 전체를 캔버스로 삼아 고안시 프로젝터로 밤하늘을 수놓는 환상적인 미디어 파사드를 연출했습니다. 실내 생명관에는 특수 원통형 프로젝션 장치를 도입하여 꽃과 생명의 박동, 숲의 신비를 360도 몰입형 공간으로 구현했습니다."
+    },
+    "02": {
+      "index": "02 / 11",
+      "title": "대만 현대 문화 실험장 (C-LAB)",
+      "subtitle": "FUTURE VISION LAB — Multi-Projector Dome Edge-Blending",
+      "tags": ["구형 돔 프로젝션", "엣지 블렌딩 기술", "디지털 아트 캘리브레이션"],
+      "client": "대만 현대 문화 실험장 (C-LAB)",
+      "location": "타이베이",
+      "year": "2025",
+      "description": "C-LAB은 대만의 최첨단 미디어 아트 및 예술 과학 실험 기지입니다. Yopitek은 상징적인 돔 상영관의 다중 프로젝터 엣지 블렌딩 및 기하학적 왜곡 보정을 총괄했습니다. 곡면 구체 스크린의 까다로운 정밀도와 색상 일치도를 완벽히 구현하여 왜곡 없이 선명한 초고해상도 몰입형 돔 영상을 완성했습니다."
+    },
+    "03": {
+      "index": "03 / 11",
+      "title": "둥강 왕선 박물관",
+      "subtitle": "King's Boat Museum — Panoramic Immersive Projection Wall",
+      "tags": ["문화유산 디지털 복원", "곡면 파노라마 투사", "박물관 상설전시"],
+      "client": "핑둥현 둥강 왕선 문화관",
+      "location": "핑둥",
+      "year": "2024",
+      "description": "대만의 대표적인 국가무형유산인 둥강 왕선제를 현대적인 시각 예술로 재해석한 대형 곡면 몰입형 영상관입니다. 다수의 고성능 프로젝터를 원호 형태로 배치하고 정밀 엣지 블렌딩 기술을 적용하여 민속 예술 일러스트와 해양 신화의 세계를 웅장하게 투사했습니다."
+    },
+    "04": {
+      "index": "04 / 11",
+      "title": "2026 대만 화훼 과학기술 박람회",
+      "subtitle": "Houbi Orchid Exhibition — 64m Ultra-Wide Curved Panoramic Projection",
+      "tags": ["64m 초광폭 곡면 스크린", "대화면 블렌딩", "국제 화훼 엑스포"],
+      "client": "타이난시 정부",
+      "location": "타이난 허우비",
+      "year": "2026",
+      "description": "국제 난초 박람회의 핵심 전시관을 위해 제작된 64미터 초광폭 곡면 파노라마 프로젝션입니다. 부드러운 곡면 스크린 위로 열대 식물 군락과 숲의 생태계를 시뮬레이션하여 관람객이 실제 열대 식물원 한가운데 서 있는 듯한 자연스러운 몰입감을 선사했습니다."
+    },
+    "05": {
+      "index": "05 / 11",
+      "title": "송산 문창원구 야광 정원",
+      "subtitle": "The LUMINOUS GARDEN — Baroque Garden Heritage Projection Mapping",
+      "tags": ["근대 역사 건축 파사드", "상설 야간 미디어쇼", "문화거리 재생"],
+      "client": "송산 문창원구",
+      "location": "타이베이",
+      "year": "2025",
+      "description": "100년 역사를 지닌 담배 공장의 바로크 정원 건축 외벽을 캔버스로 활용한 야간 상설 미디어 파사드입니다. 건축물의 다층 창틀과 벽면 구조를 정밀 보정하여 고건축의 고즈넉한 멋과 최첨단 인터랙티브 조명 연출이 아름답게 조화를 이루도록 설계했습니다."
+    },
+    "06": {
+      "index": "06 / 11",
+      "title": "팔라디움 (PALLADIUM) 터미널",
+      "subtitle": "PALLADIUM Terminal — 360° Sensory Immersive Experience",
+      "tags": ["360° 파노라마 뷰", "브랜드 팝업스토어", "오감 체험·안개 비 연출"],
+      "client": "PALLADIUM Taiwan",
+      "location": "타이베이 중산 선형공원",
+      "year": "2026",
+      "description": "프랑스 아웃도어 탐험 브랜드 PALLADIUM의 플래그십 체험존입니다. 360도 원형 프로젝션 룸과 실내 10m 인공 비·안개 시스템을 결합하여 도심과 험준한 자연의 경계를 탐험하는 듯한 압도적인 오감 몰입 체험을 제공했습니다."
+    },
+    "07": {
+      "index": "07 / 11",
+      "title": "판차오 방송소",
+      "subtitle": "Banqiao Broadcasting Station — 360° Full Immersive Projection Space",
+      "tags": ["360° 상설 몰입 공간", "벽면·바닥 풀 프로젝션", "무대 공연 융합"],
+      "client": "신베이시 문화시설",
+      "location": "신베이 판차오",
+      "year": "2023",
+      "description": "사방 벽면은 물론 바닥까지 전면 투사하는 대만 최초의 360° 상설 몰입형 문화 공간입니다. 환상적인 숲과 생명의 빛을 투영하며, 공연자가 영상 안으로 들어가 함께 호흡하고 춤추는 무대 인터랙티브 설계를 완벽하게 구현했습니다."
+    },
+    "08": {
+      "index": "08 / 11",
+      "title": "레이즈(Lay's) 맛과 빛의 전시 (치즈 폭포)",
+      "subtitle": "Lay's Cheese Waterfall — Real-time Fluid Interactive Projection",
+      "tags": ["실시간 모션 센싱", "유체 반응 알고리즘", "화제의 브랜드 전시"],
+      "client": "펩시코 타이완 / 레이즈",
+      "location": "화산 1914 창의문화원구",
+      "year": "2024",
+      "description": "쏟아져 내리는 황금빛 치즈 폭포 벽면에 손을 대면, 모션 센서가 손 위치를 실시간 감지하여 치즈 물줄기가 손 주위로 갈라지며 황금 나비로 변신하는 첨단 유체 시뮬레이션 인터랙티브 프로젝션을 완성했습니다."
+    },
+    "09": {
+      "index": "09 / 11",
+      "title": "타이베이 시청사 미디어 파사드",
+      "subtitle": "Color Taipei — City Hall Dynamic Facade Projection Mapping",
+      "tags": ["랜드마크 건축 맵핑", "구조적 정밀 동기화", "도심 공공 예술"],
+      "client": "타이베이시 정부",
+      "location": "타이베이 신이구",
+      "year": "2021",
+      "description": "타이베이 시청사 전면 파사드를 캔버스로 활용한 초대형 미디어 파사드입니다. 복잡한 기둥과 창틀 요철을 레이저 프로젝터 신호 컨트롤러로 정밀 매핑하여 수만 명의 시민들에게 잊지 못할 밤의 감동을 선물했습니다."
+    },
+    "10": {
+      "index": "10 / 11",
+      "title": "2024 아시아태평양 지속가능성 엑스포",
+      "subtitle": "Rong Cheng Paper Industry — 4-Wall Panoramic Eco Exhibition",
+      "tags": ["기업 친환경관", "4면 파노라마 투사", "신속 전시 세팅"],
+      "client": "룽청제지 주식회사",
+      "location": "타이베이 세계무역센터",
+      "year": "2024",
+      "description": "타이베이 세계무역센터 전시홀 내부에 설치된 4면 서라운드 몰입형 전시관입니다. 제지 공장의 친환경 순환 공정을 파노라마 영상으로 구현하여 관람객이 제조 현장에 직접 서 있는 듯한 현장감을 제공했습니다."
+    },
+    "11": {
+      "index": "11 / 11",
+      "title": "샤오징텅 (Jam Hsiao) 아트전",
+      "subtitle": "Jam Hsiao Art Exhibition — Multi-Screen Framed Window Projection",
+      "tags": ["개인 예술 전시", "액자 창문 시뮬레이션", "음악과 영상의 시적 조화"],
+      "client": "샤오징텅 스튜디오",
+      "location": "타이베이",
+      "year": "2022",
+      "description": "정상급 뮤지션 샤오징텅의 감성적인 세계관을 표현한 개인 미디어 아트 공간입니다. 단초점 프로젝터로 벽면을 북유럽 호수와 숲이 내다보이는 액자형 창문으로 변신시켜, 피아노 선율과 빛이 어우러진 프라이빗한 예술 안식처를 창조했습니다."
+    }
+  },
+  "cta": {
+    "title": "몰입형 프로젝션 프로젝트를 준비 중이신가요?",
+    "subtitle": "역사 유적지 미디어 파사드, 360° 돔 극장, 대형 박람회 전시관까지, 광학 설계부터 시스템 통합 및 현장 보정까지 올인원 서비스를 제공합니다.",
+    "btn": "기술 컨설팅 신청하기 →"
+  },
+  "footer": {
+    "rights": "© 2026 Yopitek Ltd. All rights reserved."
+  }
+}

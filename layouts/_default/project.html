@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Locale }}" data-scheme="tech-dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Description }}">
+
+  <!-- hreflang 多語系 SEO -->
+  {{ range .AllTranslations }}
+  <link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}">
+  {{ end }}
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap">
+
+  <!-- 樣式表 (獨立於 Blowfish 主題，避免樣式衝突) -->
+  <link rel="stylesheet" href="/project/css/tokens.css">
+  <link rel="stylesheet" href="/project/css/fonts.css">
+  <link rel="stylesheet" href="/project/css/project.css">
+</head>
+<body class="tech-dark-body">
+
+  <!-- 置頂左上：返回首頁 -->
+  <a href="/{{ .Language.Lang }}/" class="back-home" data-i18n="nav.back">← 返回首頁</a>
+
+  <!-- 置頂右上：五語系即時切換器 -->
+  <nav class="lang-switcher" aria-label="Language Selector">
+    <button class="lang-btn" data-lang="zh-TW">繁中</button>
+    <button class="lang-btn" data-lang="zh-CN">简中</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ja">日本語</button>
+    <button class="lang-btn" data-lang="ko">한국어</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <canvas id="hero-canvas" class="hero__canvas"></canvas>
+    <div class="hero__content">
+      <div class="hero__eyebrow" data-i18n="hero.eyebrow">IMMERSIVE VISUAL EXPERIENCE</div>
+      <h1 class="hero__title" data-i18n-html="hero.titleHtml">
+        以光雕與動態影像<br>重塑<span class="highlight">空間與感知邊界</span>
+      </h1>
+      <p class="hero__subtitle" data-i18n="hero.subtitle">
+        精選 11 個代表性沉浸式投影專案。從歷史古蹟立面光雕到 360° 穹頂全沉浸展演，結合邊緣融合校準與即時體感互動技術。
+      </p>
+      <div class="hero__actions">
+        <a href="#projects-container" class="btn-mecha btn-mecha--primary" data-i18n="hero.ctaExplore">探索精選專案 ↓</a>
+        <a href="/{{ .Language.Lang }}/contact/" class="btn-mecha btn-mecha--ghost" data-i18n="hero.ctaContact">洽詢合作方案 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky 專案切換導航列 -->
+  <div class="project-nav-wrapper">
+    <nav class="project-nav" aria-label="Projects Quick Navigation">
+      <span class="project-nav__label" data-i18n="nav.projects">專案導覽</span>
+      <ul class="project-nav__list">
+        <li><a href="#project-01" class="project-nav__item active">01</a></li>
+        <li><a href="#project-02" class="project-nav__item">02</a></li>
+        <li><a href="#project-03" class="project-nav__item">03</a></li>
+        <li><a href="#project-04" class="project-nav__item">04</a></li>
+        <li><a href="#project-05" class="project-nav__item">05</a></li>
+        <li><a href="#project-06" class="project-nav__item">06</a></li>
+        <li><a href="#project-07" class="project-nav__item">07</a></li>
+        <li><a href="#project-08" class="project-nav__item">08</a></li>
+        <li><a href="#project-09" class="project-nav__item">09</a></li>
+        <li><a href="#project-10" class="project-nav__item">10</a></li>
+        <li><a href="#project-11" class="project-nav__item">11</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- 11 個專案展示區塊 -->
+  <main id="projects-container" class="projects-container">
+
+    <!-- 01 TechWorld -->
+    <article id="project-01" class="project-card">
+      <div class="project-card__info">
+        <div class="project-card__header">
+          <div class="project-card__index" data-i18n="projects.01.index">01 / 11</div>
+          <h2 class="project-card__title" data-i18n="projects.01.title">2026台灣燈會 TechWorld</h2>
+          <div class="project-card__subtitle" data-i18n="projects.01.subtitle">Tech World Pavilion — Architectural & Indoor Cylinder Projection</div>
+        </div>
+        <div class="project-card__tags">
+          <span class="tag-mecha" data-i18n="projects.01.tags.0">大型戶外結構光雕</span>
+          <span class="tag-mecha" data-i18n="projects.01.tags.1">圓柱沉浸裝置</span>
+          <span class="tag-mecha" data-i18n="projects.01.tags.2">主題館系統整合</span>
+        </div>
+        <div class="project-card__meta">
+          <div class="meta-item"><span data-i18n="labels.client">委託單位</span><strong data-i18n="projects.01.client">Tech World</strong></div>
+          <div class="meta-item"><span data-i18n="labels.location">專案地點</span><strong data-i18n="projects.01.location">嘉義</strong></div>
+        </div>
+        <p class="project-card__description" data-i18n="projects.01.description">
+          Tech World 生命館案例是榆閤科技跨場域整合能力的完整展現，同時承接戶外大型結構投影與室內沉浸裝置兩大主要場景。
+        </p>
+      </div>
+      <div class="project-card__media">
+        <div class="media-main" data-lightbox data-media-type="video" data-lightbox-src="/project/assets/video/01.mp4">
+          <img src="/project/assets/img/01/main.webp" alt="2026台灣燈會 TechWorld">
+          <div class="media-play-overlay">
+            <span class="play-badge">▶ <span data-i18n="labels.playVideo">播放影片</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="brand-divider"></div>
+
+    <!-- 02 C-LAB -->
+    <article id="project-02" class="project-card">
+      <div class="project-card__info">
+        <div class="project-card__header">
+          <div class="project-card__index" data-i18n="projects.02.index">02 / 11</div>
+          <h2 class="project-card__title" data-i18n="projects.02.title">臺灣當代文化實驗場 C-LAB</h2>
+          <div class="project-card__subtitle" data-i18n="projects.02.subtitle">FUTURE VISION LAB — Multi-Projector Dome Edge-Blending</div>
+        </div>
+        <div class="project-card__tags">
+          <span class="tag-mecha" data-i18n="projects.02.tags.0">穹頂球形展演</span>
+          <span class="tag-mecha" data-i18n="projects.02.tags.1">邊緣融合技術</span>
+          <span class="tag-mecha" data-i18n="projects.02.tags.2">數位藝術校準</span>
+        </div>
+        <div class="project-card__meta">
+          <div class="meta-item"><span data-i18n="labels.client">委託單位</span><strong data-i18n="projects.02.client">臺灣當代文化實驗場</strong></div>
+          <div class="meta-item"><span data-i18n="labels.location">專案地點</span><strong data-i18n="projects.02.location">台北</strong></div>
+        </div>
+        <p class="project-card__description" data-i18n="projects.02.description">
+          臺灣當代文化實驗場（C-LAB）是台灣重要的藝術科技實驗基地，致力於探索科技媒體與視覺藝術的創新極限。
+        </p>
+      </div>
+      <div class="project-card__media">
+        <div class="media-main" data-lightbox data-media-type="video" data-lightbox-src="/project/assets/video/02.mp4">
+          <img src="/project/assets/img/02/main.webp" alt="臺灣當代文化實驗場 C-LAB">
+          <div class="media-play-overlay">
+            <span class="play-badge">▶ <span data-i18n="labels.playVideo">播放影片</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="brand-divider"></div>
+
+    <!-- 03 東港王船博物館 -->
+    <article id="project-03" class="project-card">
+      <div class="project-card__info">
+        <div class="project-card__header">
+          <div class="project-card__index" data-i18n="projects.03.index">03 / 11</div>
+          <h2 class="project-card__title" data-i18n="projects.03.title">東港王船博物館</h2>
+          <div class="project-card__subtitle" data-i18n="projects.03.subtitle">King's Boat Museum — Panoramic Immersive Projection Wall</div>
+        </div>
+        <div class="project-card__tags">
+          <span class="tag-mecha" data-i18n="projects.03.tags.0">文化遺產數位化</span>
+          <span class="tag-mecha" data-i18n="projects.03.tags.1">環形曲面投影</span>
+          <span class="tag-mecha" data-i18n="projects.03.tags.2">博物館常設展</span>
+        </div>
+        <div class="project-card__meta">
+          <div class="meta-item"><span data-i18n="labels.client">委託單位</span><strong data-i18n="projects.03.client">屏東縣東港王船文化館</strong></div>
+          <div class="meta-item"><span data-i18n="labels.location">專案地點</span><strong data-i18n="projects.03.location">屏東</strong></div>
+        </div>
+        <p class="project-card__description" data-i18n="projects.03.description">
+          屏東東港王船祭是台灣最具代表性的無形文化遺產之一，被列為國家重要民俗。
+        </p>
+      </div>
+      <div class="project-card__media">
+        <div class="media-main" data-lightbox data-media-type="video" data-lightbox-src="/project/assets/video/03.mp4">
+          <img src="/project/assets/img/03/main.jpg" alt="東港王船博物館">
+          <div class="media-play-overlay">
+            <span class="play-badge">▶ <span data-i18n="labels.playVideo">播放影片</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="brand-divider"></div>
+
+    <!-- 04 花卉展 -->
+    <article id="project-04" class="project-card">
+      <div class="project-card__info">
+        <div class="project-card__header">
+          <div class="project-card__index" data-i18n="projects.04.index">04 / 11</div>
+          <h2 class="project-card__title" data-i18n="projects.04.title">2026台灣花卉科技展</h2>
+          <div class="project-card__subtitle" data-i18n="projects.04.subtitle">Houbi Orchid Exhibition — 64m Ultra-Wide Curved Panoramic Projection</div>
+        </div>
+        <div class="project-card__tags">
+          <span class="tag-mecha" data-i18n="projects.04.tags.0">64公尺超寬弧形幕</span>
+          <span class="tag-mecha" data-i18n="projects.04.tags.1">高亮度融合校準</span>
+          <span class="tag-mecha" data-i18n="projects.04.tags.2">國際花卉博覽會</span>
+        </div>
+        <div class="project-card__meta">
+          <div class="meta-item"><span data-i18n="labels.client">委託單位</span><strong data-i18n="projects.04.client">台南市政府</strong></div>
+          <div class="meta-item"><span data-i18n="labels.location">專案地點</span><strong data-i18n="projects.04.location">台南後壁</strong></div>
+        </div>
+        <p class="project-card__description" data-i18n="projects.04.description">
+          後壁蘭花展為台灣重要的國際花卉展覽活動。本次榆閤科技承接主展覽館核心沉浸場景的超大型曲面投影製作任務。
+        </p>
+      </div>
+      <div class="project-card__media">
+        <div class="media-main" data-lightbox data-media-type="video" data-lightbox-src="/project/assets/video/04.mp4">
+          <img src="/project/assets/img/04/main.webp" alt="2026台灣花卉科技展">
+          <div class="media-play-overlay">
+            <span class="play-badge">▶ <span data-i18n="labels.playVideo">播放影片</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="brand-divider"></div>
+
+    <!-- 05 松菸夜光花園 -->
+    <article id="project-05" class="project-card">
+      <div class="project-card__info">
+        <div class="project-card__header">
+          <div class="project-card__index" data-i18n="projects.05.index">05 / 11</div>
+          <h2 class="project-card__title" data-i18n="projects.05.title">松菸夜光花園</h2>
+          <div class="project-card__subtitle" data-i18n="projects.05.subtitle">The LUMINOUS GARDEN — Baroque Garden Heritage Projection Mapping</div>
+        </div>
+        <div class="project-card__tags">
+          <span class="tag-mecha" data-i18n="projects.05.tags.0">百年古蹟立面光雕</span>
+          <span class="tag-mecha" data-i18n="projects.05.tags.1">夜間常態劇場</span>
+          <span class="tag-mecha" data-i18n="projects.05.tags.2">文創園區活化</span>
+        </div>
+        <div class="project-card__meta">
+          <div class="meta-item"><span data-i18n="labels.client">委託單位</span><strong data-i18n="projects.05.client">松山文創園區</strong></div>
+          <div class="meta-item"><span data-i18n="labels.location">專案地點</span><strong data-i18n="projects.05.location">台北</strong></div>
+        </div>
+        <p class="project-card__description" data-i18n="projects.05.description">
+          松山文創園區「松菸夜光花園（The LUMINOUS GARDEN）」是園區極具指標性的常態夜間光影展演。
+        </p>
+      </div>
+      <div class="project-card__media">
+        <div class="media-main" data-lightbox data-media-type="image" data-lightbox-src="/project/assets/img/05/main.webp">
+          <img src="/project/assets/img/05/main.webp" alt="松菸夜光花園">
+          <div class="media-play-overlay">
+            <span class="play-badge">🔍 <span data-i18n="labels.viewImage">放大檢視</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="brand-divider"></div>
+
+    <!-- 06 PALLADIUM -->
+    <article id="project-06" class="project-card">
+      <div class="project-card__info">
+        <div class="project-card__header">
+          <div class="project-card__index" data-i18n="projects.06.index">06 / 11</div>
+          <h2 class="project-card__title" data-i18n="projects.06.title">PALLADIUM 全境轉運站</h2>
+          <div class="project-card__subtitle" data-i18n="projects.06.subtitle">PALLADIUM Terminal — 360° Sensory Immersive Experience</div>
+        </div>
+        <div class="project-card__tags">
+          <span class="tag-mecha" data-i18n="projects.06.tags.0">360度環景投影</span>
+          <span class="tag-mecha" data-i18n="projects.06.tags.1">品牌潮流快閃</span>
+          <span class="tag-mecha" data-i18n="projects.06.tags.2">實景雨霧五感整合</span>
+        </div>
+        <div class="project-card__meta">
+          <div class="meta-item"><span data-i18n="labels.client">委託單位</span><strong data-i18n="projects.06.client">PALLADIUM Taiwan</strong></div>
+          <div class="meta-item"><span data-i18n="labels.location">專案地點</span><strong data-i18n="projects.06.location">台北心中山</strong></div>
+        </div>
+        <p class="project-card__description" data-i18n="projects.06.description">
+          PALLADIUM 是來自法國的百年機能鞋履品牌，以探索城市地貌與戶外場域為核心品牌精神。
+        </p>
+      </div>
+      <div class="project-card__media">
+        <div class="media-main" data-lightbox data-media-type="video" data-lightbox-src="/project/assets/video/06.mp4">
+          <img src="/project/assets/img/06/main.webp" alt="PALLADIUM 全境轉運站">
+          <div class="media-play-overlay">
+            <span class="play-badge">▶ <span data-i18n="labels.playVideo">播放影片</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="brand-divider"></div>
+
+    <!-- 07 板橋放送所 -->
+    <article id="project-07" class="project-card">
+      <div class="project-card__info">
+        <div class="project-card__header">
+          <div class="project-card__index" data-i18n="projects.07.index">07 / 11</div>
+          <h2 class="project-card__title" data-i18n="projects.07.title">板橋放送所</h2>
+          <div class="project-card__subtitle" data-i18n="projects.07.subtitle">Banqiao Broadcasting Station — 360° Full Immersive Projection Space</div>
+        </div>
+        <div class="project-card__tags">
+          <span class="tag-mecha" data-i18n="projects.07.tags.0">360度全沉浸常設展</span>
+          <span class="tag-mecha" data-i18n="projects.07.tags.1">地空全覆蓋投影</span>
+          <span class="tag-mecha" data-i18n="projects.07.tags.2">表演藝術互動融合</span>
+        </div>
+        <div class="project-card__meta">
+          <div class="meta-item"><span data-i18n="labels.client">委託單位</span><strong data-i18n="projects.07.client">新北市文化場館</strong></div>
+          <div class="meta-item"><span data-i18n="labels.location">專案地點</span><strong data-i18n="projects.07.location">新北板橋</strong></div>
+        </div>
+        <p class="project-card__description" data-i18n="projects.07.description">
+          板橋放送所為榆閤科技最具代表性的旗艦常設展案例，同時也是台灣極少數完整實現 360° 全沉浸式投影空間的文化場館。
+        </p>
+      </div>
+      <div class="project-card__media">
+        <div class="media-main" data-lightbox data-media-type="video" data-lightbox-src="/project/assets/video/07.mp4">
+          <img src="/project/assets/img/07/main.webp" alt="板橋放送所">
+          <div class="media-play-overlay">
+            <span class="play-badge">▶ <span data-i18n="labels.playVideo">播放影片</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="brand-divider"></div>
+
+    <!-- 08 樂事起司瀑布 -->
+    <article id="project-08" class="project-card">
+      <div class="project-card__info">
+        <div class="project-card__header">
+          <div class="project-card__index" data-i18n="projects.08.index">08 / 11</div>
+          <h2 class="project-card__title" data-i18n="projects.08.title">樂事：風味光影展</h2>
+          <div class="project-card__subtitle" data-i18n="projects.08.subtitle">Lay's Cheese Waterfall — Real-time Fluid Interactive Projection</div>
+        </div>
+        <div class="project-card__tags">
+          <span class="tag-mecha" data-i18n="projects.08.tags.0">即時體感互動</span>
+          <span class="tag-mecha" data-i18n="projects.08.tags.1">流體分流演算法</span>
+          <span class="tag-mecha" data-i18n="projects.08.tags.2">現象級品牌沉浸展</span>
+        </div>
+        <div class="project-card__meta">
+          <div class="meta-item"><span data-i18n="labels.client">委託單位</span><strong data-i18n="projects.08.client">台灣百事食品 / 樂事</strong></div>
+          <div class="meta-item"><span data-i18n="labels.location">專案地點</span><strong data-i18n="projects.08.location">台北華山1914</strong></div>
+        </div>
+        <p class="project-card__description" data-i18n="projects.08.description">
+          樂事（Lay's）風味光影展是台灣零食界首創的沉浸式品牌體驗展覽，於台北華山 1914 文化創意產業園區盛大展出。
+        </p>
+      </div>
+      <div class="project-card__media">
+        <div class="media-main" data-lightbox data-media-type="video" data-lightbox-src="/project/assets/video/08.mp4">
+          <img src="/project/assets/img/08/main.webp" alt="樂事風味光影展">
+          <div class="media-play-overlay">
+            <span class="play-badge">▶ <span data-i18n="labels.playVideo">播放影片</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="brand-divider"></div>
+
+    <!-- 09 台北市政府光雕 -->
+    <article id="project-09" class="project-card">
+      <div class="project-card__info">
+        <div class="project-card__header">
+          <div class="project-card__index" data-i18n="projects.09.index">09 / 11</div>
+          <h2 class="project-card__title" data-i18n="projects.09.title">台北市政府光雕投影</h2>
+          <div class="project-card__subtitle" data-i18n="projects.09.subtitle">Color Taipei — City Hall Dynamic Facade Projection Mapping</div>
+        </div>
+        <div class="project-card__tags">
+          <span class="tag-mecha" data-i18n="projects.09.tags.0">地標建築立面光雕</span>
+          <span class="tag-mecha" data-i18n="projects.09.tags.1">幾何結構對位</span>
+          <span class="tag-mecha" data-i18n="projects.09.tags.2">城市節慶公共藝術</span>
+        </div>
+        <div class="project-card__meta">
+          <div class="meta-item"><span data-i18n="labels.client">委託單位</span><strong data-i18n="projects.09.client">台北市政府觀傳局</strong></div>
+          <div class="meta-item"><span data-i18n="labels.location">專案地點</span><strong data-i18n="projects.09.location">台北信義區</strong></div>
+        </div>
+        <p class="project-card__description" data-i18n="projects.09.description">
+          本案以台北市政府整棟建築立面作為投影畫布，配合 2021 年「Color Taipei」彩虹節慶活動。
+        </p>
+      </div>
+      <div class="project-card__media">
+        <div class="media-main" data-lightbox data-media-type="video" data-lightbox-src="/project/assets/video/09.mp4">
+          <img src="/project/assets/img/09/main.webp" alt="台北市政府光雕投影">
+          <div class="media-play-overlay">
+            <span class="play-badge">▶ <span data-i18n="labels.playVideo">播放影片</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="brand-divider"></div>
+
+    <!-- 10 亞太永續博覽會 -->
+    <article id="project-10" class="project-card">
+      <div class="project-card__info">
+        <div class="project-card__header">
+          <div class="project-card__index" data-i18n="projects.10.index">10 / 11</div>
+          <h2 class="project-card__title" data-i18n="projects.10.title">2024亞太永續博覽會</h2>
+          <div class="project-card__subtitle" data-i18n="projects.10.subtitle">Rong Cheng Paper Industry — 4-Wall Panoramic Eco Exhibition</div>
+        </div>
+        <div class="project-card__tags">
+          <span class="tag-mecha" data-i18n="projects.10.tags.0">企業永續形象展</span>
+          <span class="tag-mecha" data-i18n="projects.10.tags.1">四面沉浸環繞</span>
+          <span class="tag-mecha" data-i18n="projects.10.tags.2">快速展場融合佈設</span>
+        </div>
+        <div class="project-card__meta">
+          <div class="meta-item"><span data-i18n="labels.client">委託單位</span><strong data-i18n="projects.10.client">榮成紙業股份有限公司</strong></div>
+          <div class="meta-item"><span data-i18n="labels.location">專案地點</span><strong data-i18n="projects.10.location">台北世貿一館</strong></div>
+        </div>
+        <p class="project-card__description" data-i18n="projects.10.description">
+          本案於台北世貿展覽中心內打造多面牆環繞式沉浸投影展間，專為榮成紙業年度環保形象展而量身設計。
+        </p>
+      </div>
+      <div class="project-card__media">
+        <div class="media-main" data-lightbox data-media-type="image" data-lightbox-src="/project/assets/img/10/main.webp">
+          <img src="/project/assets/img/10/main.webp" alt="2024亞太永續博覽會">
+          <div class="media-play-overlay">
+            <span class="play-badge">🔍 <span data-i18n="labels.viewImage">放大檢視</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="brand-divider"></div>
+
+    <!-- 11 蕭敬騰展 -->
+    <article id="project-11" class="project-card">
+      <div class="project-card__info">
+        <div class="project-card__header">
+          <div class="project-card__index" data-i18n="projects.11.index">11 / 11</div>
+          <h2 class="project-card__title" data-i18n="projects.11.title">蕭敬騰展</h2>
+          <div class="project-card__subtitle" data-i18n="projects.11.subtitle">Jam Hsiao Art Exhibition — Multi-Screen Framed Window Projection</div>
+        </div>
+        <div class="project-card__tags">
+          <span class="tag-mecha" data-i18n="projects.11.tags.0">個人藝術特展</span>
+          <span class="tag-mecha" data-i18n="projects.11.tags.1">多幕窗景擬真</span>
+          <span class="tag-mecha" data-i18n="projects.11.tags.2">音樂與光影美學交融</span>
+        </div>
+        <div class="project-card__meta">
+          <div class="meta-item"><span data-i18n="labels.client">委託單位</span><strong data-i18n="projects.11.client">蕭敬騰個人藝術工作室</strong></div>
+          <div class="meta-item"><span data-i18n="labels.location">專案地點</span><strong data-i18n="projects.11.location">台北</strong></div>
+        </div>
+        <p class="project-card__description" data-i18n="projects.11.description">
+          本案為知名音樂人蕭敬騰量身打造的沉浸式個人藝術展覽空間，以音樂旅程、詩詞意境與北歐自然景觀為核心設計主題。
+        </p>
+      </div>
+      <div class="project-card__media">
+        <div class="media-main" data-lightbox data-media-type="image" data-lightbox-src="/project/assets/img/11/main.webp">
+          <img src="/project/assets/img/11/main.webp" alt="蕭敬騰藝術展">
+          <div class="media-play-overlay">
+            <span class="play-badge">🔍 <span data-i18n="labels.viewImage">放大檢視</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- CTA 底部區塊 -->
+  <section class="cta-section">
+    <div class="cta-section__inner">
+      <h2 class="cta-section__title" data-i18n="cta.title">開始規劃您的沉浸式投影專案</h2>
+      <p class="cta-section__desc" data-i18n="cta.subtitle">
+        無論是歷史古蹟光雕、360° 沉浸空間、大型商業博覽會或互動感測展演，榆閤科技提供從光學規劃、硬體融合到現場校準的一站式整合服務。
+      </p>
+      <a href="/{{ .Language.Lang }}/contact/" class="btn-mecha btn-mecha--primary" data-i18n="cta.btn">
+        立即預約技術諮詢 →
+      </a>
+    </div>
+  </section>
+
+  <!-- Lightbox 彈窗 -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Media Preview">
+    <button id="lightbox-close" class="lightbox__close" aria-label="Close modal">×</button>
+    <div id="lightbox-content" class="lightbox__content"></div>
+  </div>
+
+  <!-- GSAP 與 ScrollTrigger (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- 核心交互腳本 -->
+  <script type="module" src="/project/js/project-core.js"></script>
+</body>
+</html>

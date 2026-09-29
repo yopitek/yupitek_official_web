@@ -280,8 +280,8 @@ test.describe('Yupitek Online Project Demo Showcase', () => {
   test('13 - Project Media Inventory & Asset Integrity Check', async ({ page }) => {
     await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
 
-    const videoProjects = ['01', '02', '03', '04', '06', '07', '08', '09'];
-    const nonVideoProjects = ['05', '10', '11'];
+    const videoProjects = ['01', '02', '03', '04', '05', '06', '07', '08', '09'];
+    const nonVideoProjects = ['10', '11'];
 
     // 驗證有影片的專案具有 video container 與展示影片 Tab
     for (const id of videoProjects) {
@@ -316,28 +316,29 @@ test.describe('Yupitek Online Project Demo Showcase', () => {
 
     const lightbox = page.locator('#lightbox');
 
-    // 測試專案 05 (松菸夜光花園，無影片，2 張相片)
-    const cinemaBtn05 = page.locator('#project-05 .media-cinema-btn');
-    await cinemaBtn05.click();
+    // 測試專案 10 (2024亞太永續博覽會，無影片，3 張相片)
+    const cinemaBtn10 = page.locator('#project-10 .media-cinema-btn');
+    await cinemaBtn10.scrollIntoViewIfNeeded();
+    await cinemaBtn10.click();
     await expect(lightbox).toHaveClass(/open/);
 
-    // 驗證 Lightbox 顯示圖片模式，計數器為 1 / 2
+    // 驗證 Lightbox 顯示圖片模式，計數器為 1 / 3
     await expect(page.locator('.lightbox-image')).toBeVisible();
-    await expect(page.locator('.lightbox-hud__counter')).toContainText('1 / 2');
+    await expect(page.locator('.lightbox-hud__counter')).toContainText('1 / 3');
 
     // 點擊 Next 切換下一張相片
     await page.locator('.lightbox-arrow--next').click();
-    await expect(page.locator('.lightbox-hud__counter')).toContainText('2 / 2');
+    await expect(page.locator('.lightbox-hud__counter')).toContainText('2 / 3');
 
     // 關閉 Lightbox
     await page.click('#lightbox-close');
     await expect(lightbox).not.toHaveClass(/open/);
     await page.waitForTimeout(350);
 
-    // 測試專案 10 (2024亞太永續博覽會，無影片，3 張相片)
-    const cinemaBtn10 = page.locator('#project-10 .media-cinema-btn');
-    await cinemaBtn10.scrollIntoViewIfNeeded();
-    await cinemaBtn10.click();
+    // 測試專案 11 (蕭敬騰展，無影片，3 張相片)
+    const cinemaBtn11 = page.locator('#project-11 .media-cinema-btn');
+    await cinemaBtn11.scrollIntoViewIfNeeded();
+    await cinemaBtn11.click();
     await expect(lightbox).toHaveClass(/open/);
     await expect(page.locator('.lightbox-hud__counter')).toContainText('1 / 3');
     await page.click('#lightbox-close');

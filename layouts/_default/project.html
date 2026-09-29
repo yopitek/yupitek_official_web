@@ -377,11 +377,15 @@
         <!-- Media HUD Switcher -->
         <div class="media-hud-bar">
           <div class="media-tabs" role="tablist">
-            <button class="media-tab active" data-tab="gallery" role="tab" aria-selected="true">
+            <button class="media-tab active" data-tab="video" role="tab" aria-selected="true">
+              <span class="media-tab__icon">🎥</span>
+              <span class="media-tab__label" data-i18n="labels.tabVideo">展示影片</span>
+              <span class="media-tab__badge" data-i18n="labels.videoBadge">動態巡禮</span>
+            </button>
+            <button class="media-tab" data-tab="gallery" role="tab" aria-selected="false">
               <span class="media-tab__icon">🖼️</span>
               <span class="media-tab__label" data-i18n="labels.tabGallery">現場相簿</span>
               <span class="media-tab__count">2</span>
-              <span class="media-tab__badge" data-i18n="labels.galleryBadge">現場實景</span>
             </button>
           </div>
           <button class="media-cinema-btn" title="影院全螢幕模式">
@@ -391,8 +395,19 @@
         </div>
 
         <div class="media-stage-wrapper">
-          <!-- Gallery Panel (無影片直接啟用現場相簿) -->
-          <div class="media-panel media-panel--gallery active">
+          <!-- Video Panel -->
+          <div class="media-panel media-panel--video active">
+            <div class="video-container" data-video-src="/project/assets/video/05.mp4">
+              <img class="video-poster" src="/project/assets/img/05/img_01.webp" alt="松菸夜光花園" loading="lazy">
+              <div class="video-play-btn" role="button" aria-label="Play video">
+                <span class="play-icon">▶</span>
+                <span class="play-text" data-i18n="labels.playVideo">播放影片</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Panel -->
+          <div class="media-panel media-panel--gallery">
             <div class="gallery-main-view">
               <img class="gallery-active-img" src="/project/assets/img/05/img_01.webp" alt="松菸夜光花園" data-active-index="0" loading="lazy">
             </div>

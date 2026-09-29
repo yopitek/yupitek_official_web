@@ -145,8 +145,14 @@ export function initMediaPlayer() {
   // ==========================================
   // Lightbox 核心控制器 (支援 Prev / Next / ESC)
   // ==========================================
+  let closeTimer = null;
+
   function openLightbox(mediaList, index = 0) {
     if (!lightbox || !lightboxContent || !mediaList.length) return;
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
     currentProjectMedia = mediaList;
     currentMediaIndex = Math.max(0, Math.min(index, mediaList.length - 1));
 
@@ -234,9 +240,11 @@ export function initMediaPlayer() {
     // 停止影片播放
     const vid = lightbox.querySelector('video');
     if (vid) vid.pause();
-    setTimeout(() => {
+    if (closeTimer) clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
       if (lightboxContent) lightboxContent.innerHTML = '';
       currentProjectMedia = [];
+      closeTimer = null;
     }, 300);
   }
 

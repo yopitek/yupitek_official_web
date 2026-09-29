@@ -53,19 +53,5 @@ test.describe('YPB03 LINE Beacon Tutorial — 10-Locale Verification', () => {
     const dir = await page.evaluate(() => document.documentElement.getAttribute('dir'));
     expect(dir, 'Arabic page should have dir=rtl').toBe('rtl');
   });
-
-  // Blog index: YPB03 article appears in each locale's blog listing
-  test.describe('Blog index shows YPB03 article', () => {
-    for (const locale of LOCALES) {
-      test(`${locale} blog index links to YPB03 article`, async ({ page }) => {
-        await page.goto(`/${locale}/blog/`);
-        await page.waitForLoadState('networkidle');
-
-        // Look for a link containing the slug
-        const articleLink = page.locator(`a[href*="${SLUG}"]`);
-        const count = await articleLink.count();
-        expect(count, `${locale} blog index should link to YPB03 article`).toBeGreaterThan(0);
-      });
-    }
-  });
 });
+

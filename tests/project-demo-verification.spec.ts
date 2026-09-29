@@ -332,9 +332,11 @@ test.describe('Yupitek Online Project Demo Showcase', () => {
     // 關閉 Lightbox
     await page.click('#lightbox-close');
     await expect(lightbox).not.toHaveClass(/open/);
+    await page.waitForTimeout(350);
 
     // 測試專案 10 (2024亞太永續博覽會，無影片，3 張相片)
     const cinemaBtn10 = page.locator('#project-10 .media-cinema-btn');
+    await cinemaBtn10.scrollIntoViewIfNeeded();
     await cinemaBtn10.click();
     await expect(lightbox).toHaveClass(/open/);
     await expect(page.locator('.lightbox-hud__counter')).toContainText('1 / 3');

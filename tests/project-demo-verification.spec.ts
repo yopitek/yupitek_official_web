@@ -117,47 +117,82 @@ test.describe('Yupitek Online Project Demo Showcase', () => {
     await expect(project05).toBeInViewport();
   });
 
-  test('06 - Lightbox Modal Open and Close', async ({ page }) => {
+  test('06 - Cinema Lightbox Modal Multi-Media Navigation', async ({ page }) => {
     await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
 
     const lightbox = page.locator('#lightbox');
     await expect(lightbox).not.toHaveClass(/open/);
 
-    // 點擊專案 01 的媒體觸發 Lightbox
-    const mediaItem = page.locator('#project-01 [data-lightbox]').first();
-    await mediaItem.click();
+    // 點擊專案 01 的影院全螢幕模式按鈕
+    const cinemaBtn = page.locator('#project-01 .media-cinema-btn');
+    await cinemaBtn.click();
     await expect(lightbox).toHaveClass(/open/);
 
-    // 驗證彈窗內容載入
-    const content = page.locator('#lightbox-content');
-    await expect(content.locator('video, img')).toBeVisible();
+    // 驗證彈窗 HUD 標題與計數器 (1 影片 + 2 相片 = 3 則媒體)
+    await expect(page.locator('.lightbox-hud__title')).toBeVisible();
+    await expect(page.locator('.lightbox-hud__counter')).toContainText('/ 3');
+
+    // 點擊 Next 切換下一則媒體
+    const nextBtn = page.locator('.lightbox-arrow--next');
+    if (await nextBtn.isVisible()) {
+      await nextBtn.click();
+      await expect(page.locator('.lightbox-hud__counter')).toContainText('2 / 3');
+    }
 
     // 點擊關閉按鈕
     await page.click('#lightbox-close');
     await expect(lightbox).not.toHaveClass(/open/);
 
-    // 再次開啟並用 ESC 關閉
-    await mediaItem.click();
+    // 再次開啟並用 ESC 鍵關閉
+    await cinemaBtn.click();
     await expect(lightbox).toHaveClass(/open/);
     await page.keyboard.press('Escape');
     await expect(lightbox).not.toHaveClass(/open/);
   });
 
-  test('07 - Mobile Viewport Layout Verification (375px)', async ({ page }) => {
+  test('07 - Interactive Media Tabs & Filmstrip Switching', async ({ page }) => {
+    await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
+
+    const card01 = page.locator('#project-01');
+    const tabGallery = card01.locator('.media-tab[data-tab="gallery"]');
+    const tabVideo = card01.locator('.media-tab[data-tab="video"]');
+    const panelGallery = card01.locator('.media-panel--gallery');
+    const panelVideo = card01.locator('.media-panel--video');
+
+    // 預設為影片面板 active
+    await expect(panelVideo).toHaveClass(/active/);
+    await expect(panelGallery).not.toHaveClass(/active/);
+
+    // 切換至相簿面板
+    await tabGallery.click();
+    await expect(panelGallery).toHaveClass(/active/);
+    await expect(panelVideo).not.toHaveClass(/active/);
+
+    // 點擊縮圖 filmstrip 的第二張相片
+    const thumb2 = panelGallery.locator('.thumb-btn').nth(1);
+    await thumb2.click();
+    await expect(thumb2).toHaveClass(/active/);
+
+    // 切換回影片面板
+    await tabVideo.click();
+    await expect(panelVideo).toHaveClass(/active/);
+  });
+
+  test('08 - Mobile Viewport Layout Verification (375px)', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
 
     // 檢查無水平捲動破版
     const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
     const clientWidth = await page.evaluate(() => document.documentElement.clientWidth);
-    expect(scrollWidth).toBeLessThanOrEqual(clientWidth + 2); // 容許 1-2px 次像素微差
+    expect(scrollWidth).toBeLessThanOrEqual(clientWidth + 2);
 
     // 語言切換選單依然可視
     await expect(page.locator('.lang-switcher')).toBeVisible();
     await expect(page.locator('.hero__title')).toBeVisible();
   });
 
-  test('08 - CIS Tech-Dark Compliance Verification', async ({ page }) => {
+  test('09 - CIS Tech-Dark Compliance Verification', async ({ page }) => {
     await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
 
     // 背景色檢查

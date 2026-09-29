@@ -19,14 +19,25 @@
     "location": "위치",
     "year": "전시 연도",
     "playVideo": "영상 재생",
-    "viewImage": "크게 보기"
+    "viewImage": "크게 보기",
+    "tabVideo": "쇼케이스 비디오",
+    "tabGallery": "현장 갤러리",
+    "videoBadge": "비디오 워크스루",
+    "viewFullscreen": "시네마 모드",
+    "prevMedia": "이전",
+    "nextMedia": "다음",
+    "close": "닫기"
   },
   "projects": {
     "01": {
       "index": "01 / 11",
       "title": "2026 대만 등불축제 TechWorld",
       "subtitle": "Tech World Pavilion — Architectural & Indoor Cylinder Projection",
-      "tags": ["야외 대형 구조물 맵핑", "원통형 몰입 설치", "테마 파빌리온 통합"],
+      "tags": [
+        "야외 대형 구조물 맵핑",
+        "원통형 몰입 설치",
+        "테마 파빌리온 통합"
+      ],
       "client": "Tech World",
       "location": "자이",
       "year": "2026",
@@ -36,7 +47,11 @@
       "index": "02 / 11",
       "title": "대만 현대 문화 실험장 (C-LAB)",
       "subtitle": "FUTURE VISION LAB — Multi-Projector Dome Edge-Blending",
-      "tags": ["구형 돔 프로젝션", "엣지 블렌딩 기술", "디지털 아트 캘리브레이션"],
+      "tags": [
+        "구형 돔 프로젝션",
+        "엣지 블렌딩 기술",
+        "디지털 아트 캘리브레이션"
+      ],
       "client": "대만 현대 문화 실험장 (C-LAB)",
       "location": "타이베이",
       "year": "2025",
@@ -46,7 +61,11 @@
       "index": "03 / 11",
       "title": "둥강 왕선 박물관",
       "subtitle": "King's Boat Museum — Panoramic Immersive Projection Wall",
-      "tags": ["문화유산 디지털 복원", "곡면 파노라마 투사", "박물관 상설전시"],
+      "tags": [
+        "문화유산 디지털 복원",
+        "곡면 파노라마 투사",
+        "박물관 상설전시"
+      ],
       "client": "핑둥현 둥강 왕선 문화관",
       "location": "핑둥",
       "year": "2024",
@@ -56,7 +75,11 @@
       "index": "04 / 11",
       "title": "2026 대만 화훼 과학기술 박람회",
       "subtitle": "Houbi Orchid Exhibition — 64m Ultra-Wide Curved Panoramic Projection",
-      "tags": ["64m 초광폭 곡면 스크린", "대화면 블렌딩", "국제 화훼 엑스포"],
+      "tags": [
+        "64m 초광폭 곡면 스크린",
+        "대화면 블렌딩",
+        "국제 화훼 엑스포"
+      ],
       "client": "타이난시 정부",
       "location": "타이난 허우비",
       "year": "2026",
@@ -66,7 +89,11 @@
       "index": "05 / 11",
       "title": "송산 문창원구 야광 정원",
       "subtitle": "The LUMINOUS GARDEN — Baroque Garden Heritage Projection Mapping",
-      "tags": ["근대 역사 건축 파사드", "상설 야간 미디어쇼", "문화거리 재생"],
+      "tags": [
+        "근대 역사 건축 파사드",
+        "상설 야간 미디어쇼",
+        "문화거리 재생"
+      ],
       "client": "송산 문창원구",
       "location": "타이베이",
       "year": "2025",
@@ -76,7 +103,11 @@
       "index": "06 / 11",
       "title": "팔라디움 (PALLADIUM) 터미널",
       "subtitle": "PALLADIUM Terminal — 360° Sensory Immersive Experience",
-      "tags": ["360° 파노라마 뷰", "브랜드 팝업스토어", "오감 체험·안개 비 연출"],
+      "tags": [
+        "360° 파노라마 뷰",
+        "브랜드 팝업스토어",
+        "오감 체험·안개 비 연출"
+      ],
       "client": "PALLADIUM Taiwan",
       "location": "타이베이 중산 선형공원",
       "year": "2026",
@@ -86,7 +117,11 @@
       "index": "07 / 11",
       "title": "판차오 방송소",
       "subtitle": "Banqiao Broadcasting Station — 360° Full Immersive Projection Space",
-      "tags": ["360° 상설 몰입 공간", "벽면·바닥 풀 프로젝션", "무대 공연 융합"],
+      "tags": [
+        "360° 상설 몰입 공간",
+        "벽면·바닥 풀 프로젝션",
+        "무대 공연 융합"
+      ],
       "client": "신베이시 문화시설",
       "location": "신베이 판차오",
       "year": "2023",
@@ -96,7 +131,11 @@
       "index": "08 / 11",
       "title": "레이즈(Lay's) 맛과 빛의 전시 (치즈 폭포)",
       "subtitle": "Lay's Cheese Waterfall — Real-time Fluid Interactive Projection",
-      "tags": ["실시간 모션 센싱", "유체 반응 알고리즘", "화제의 브랜드 전시"],
+      "tags": [
+        "실시간 모션 센싱",
+        "유체 반응 알고리즘",
+        "화제의 브랜드 전시"
+      ],
       "client": "펩시코 타이완 / 레이즈",
       "location": "화산 1914 창의문화원구",
       "year": "2024",
@@ -106,7 +145,11 @@
       "index": "09 / 11",
       "title": "타이베이 시청사 미디어 파사드",
       "subtitle": "Color Taipei — City Hall Dynamic Facade Projection Mapping",
-      "tags": ["랜드마크 건축 맵핑", "구조적 정밀 동기화", "도심 공공 예술"],
+      "tags": [
+        "랜드마크 건축 맵핑",
+        "구조적 정밀 동기화",
+        "도심 공공 예술"
+      ],
       "client": "타이베이시 정부",
       "location": "타이베이 신이구",
       "year": "2021",
@@ -116,7 +159,11 @@
       "index": "10 / 11",
       "title": "2024 아시아태평양 지속가능성 엑스포",
       "subtitle": "Rong Cheng Paper Industry — 4-Wall Panoramic Eco Exhibition",
-      "tags": ["기업 친환경관", "4면 파노라마 투사", "신속 전시 세팅"],
+      "tags": [
+        "기업 친환경관",
+        "4면 파노라마 투사",
+        "신속 전시 세팅"
+      ],
       "client": "룽청제지 주식회사",
       "location": "타이베이 세계무역센터",
       "year": "2024",
@@ -126,7 +173,11 @@
       "index": "11 / 11",
       "title": "샤오징텅 (Jam Hsiao) 아트전",
       "subtitle": "Jam Hsiao Art Exhibition — Multi-Screen Framed Window Projection",
-      "tags": ["개인 예술 전시", "액자 창문 시뮬레이션", "음악과 영상의 시적 조화"],
+      "tags": [
+        "개인 예술 전시",
+        "액자 창문 시뮬레이션",
+        "음악과 영상의 시적 조화"
+      ],
       "client": "샤오징텅 스튜디오",
       "location": "타이베이",
       "year": "2022",

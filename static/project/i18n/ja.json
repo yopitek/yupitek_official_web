@@ -19,14 +19,25 @@
     "location": "実施場所",
     "year": "開催年",
     "playVideo": "動画を再生",
-    "viewImage": "拡大表示"
+    "viewImage": "拡大表示",
+    "tabVideo": "展示動画",
+    "tabGallery": "現場ギャラリー",
+    "videoBadge": "動画ウォークスルー",
+    "viewFullscreen": "シネマモード",
+    "prevMedia": "前へ",
+    "nextMedia": "次へ",
+    "close": "閉じる"
   },
   "projects": {
     "01": {
       "index": "01 / 11",
       "title": "2026 台湾ランタンフェス TechWorld",
       "subtitle": "Tech World Pavilion — Architectural & Indoor Cylinder Projection",
-      "tags": ["屋外大型構造マッピング", "円柱没入型インスタレーション", "パビリオン統合"],
+      "tags": [
+        "屋外大型構造マッピング",
+        "円柱没入型インスタレーション",
+        "パビリオン統合"
+      ],
       "client": "Tech World",
       "location": "嘉義",
       "year": "2026",
@@ -36,7 +47,11 @@
       "index": "02 / 11",
       "title": "台湾現代文化実験場 (C-LAB)",
       "subtitle": "FUTURE VISION LAB — Multi-Projector Dome Edge-Blending",
-      "tags": ["球形ドームプロジェクション", "エッジブレンディング技術", "メディアアート校正"],
+      "tags": [
+        "球形ドームプロジェクション",
+        "エッジブレンディング技術",
+        "メディアアート校正"
+      ],
       "client": "台湾現代文化実験場 (C-LAB)",
       "location": "台北",
       "year": "2025",
@@ -46,7 +61,11 @@
       "index": "03 / 11",
       "title": "東港・王船博物館",
       "subtitle": "King's Boat Museum — Panoramic Immersive Projection Wall",
-      "tags": ["文化遺産デジタル化", "円弧曲面パノラマ投影", "博物館常設展示"],
+      "tags": [
+        "文化遺産デジタル化",
+        "円弧曲面パノラマ投影",
+        "博物館常設展示"
+      ],
       "client": "屏東県東港王船文化館",
       "location": "屏東",
       "year": "2024",
@@ -56,7 +75,11 @@
       "index": "04 / 11",
       "title": "2026 台湾フラワーテック博覧会",
       "subtitle": "Houbi Orchid Exhibition — 64m Ultra-Wide Curved Panoramic Projection",
-      "tags": ["64m超ワイド湾曲スクリーン", "大画面ブレンディング", "国際園芸博覧会"],
+      "tags": [
+        "64m超ワイド湾曲スクリーン",
+        "大画面ブレンディング",
+        "国際園芸博覧会"
+      ],
       "client": "台南市政府",
       "location": "台南後壁",
       "year": "2026",
@@ -66,7 +89,11 @@
       "index": "05 / 11",
       "title": "松山文創園区・夜光の花園",
       "subtitle": "The LUMINOUS GARDEN — Baroque Garden Heritage Projection Mapping",
-      "tags": ["歴史的建造物ファサード", "夜間常設シアター", "文化地区再生"],
+      "tags": [
+        "歴史的建造物ファサード",
+        "夜間常設シアター",
+        "文化地区再生"
+      ],
       "client": "松山文創園区",
       "location": "台北",
       "year": "2025",
@@ -76,7 +103,11 @@
       "index": "06 / 11",
       "title": "PALLADIUM ターミナル",
       "subtitle": "PALLADIUM Terminal — 360° Sensory Immersive Experience",
-      "tags": ["360度パノラマ投影", "ブランドポップアップ", "五感演出・雨霧インスタレーション"],
+      "tags": [
+        "360度パノラマ投影",
+        "ブランドポップアップ",
+        "五感演出・雨霧インスタレーション"
+      ],
       "client": "PALLADIUM Taiwan",
       "location": "台北心中山線形公園",
       "year": "2026",
@@ -86,7 +117,11 @@
       "index": "07 / 11",
       "title": "板橋放送所",
       "subtitle": "Banqiao Broadcasting Station — 360° Full Immersive Projection Space",
-      "tags": ["360度常設没入シアター", "四面壁床フルマッピング", "舞台パフォーマンス連動"],
+      "tags": [
+        "360度常設没入シアター",
+        "四面壁床フルマッピング",
+        "舞台パフォーマンス連動"
+      ],
       "client": "新北市文化施設",
       "location": "新北板橋",
       "year": "2023",
@@ -96,7 +131,11 @@
       "index": "08 / 11",
       "title": "Lay's 風味と光影展 (チーズの滝)",
       "subtitle": "Lay's Cheese Waterfall — Real-time Fluid Interactive Projection",
-      "tags": ["リアルタイム体感センサー", "流体インタラクション", "話題のブランド体験"],
+      "tags": [
+        "リアルタイム体感センサー",
+        "流体インタラクション",
+        "話題のブランド体験"
+      ],
       "client": "ペプシコ・台湾 / Lay's",
       "location": "台北華山1914",
       "year": "2024",
@@ -106,7 +145,11 @@
       "index": "09 / 11",
       "title": "台北市庁舎 プロジェクションマッピング",
       "subtitle": "Color Taipei — City Hall Dynamic Facade Projection Mapping",
-      "tags": ["ランドマーク建築マッピング", "幾何構造同期", "都市フェスティバルアート"],
+      "tags": [
+        "ランドマーク建築マッピング",
+        "幾何構造同期",
+        "都市フェスティバルアート"
+      ],
       "client": "台北市政府観光伝播局",
       "location": "台北信義区",
       "year": "2021",
@@ -116,7 +159,11 @@
       "index": "10 / 11",
       "title": "2024 アジア太平洋サステナビリティ博覧会",
       "subtitle": "Rong Cheng Paper Industry — 4-Wall Panoramic Eco Exhibition",
-      "tags": ["企業環境展", "四面パノラマ投影", "短工期・高精度ブレンディング"],
+      "tags": [
+        "企業環境展",
+        "四面パノラマ投影",
+        "短工期・高精度ブレンディング"
+      ],
       "client": "栄成紙業株式会社",
       "location": "台北世界貿易センター",
       "year": "2024",
@@ -126,7 +173,11 @@
       "index": "11 / 11",
       "title": "蕭敬騰 (Jam Hsiao) アート展",
       "subtitle": "Jam Hsiao Art Exhibition — Multi-Screen Framed Window Projection",
-      "tags": ["個人アート展", "額装窓景シミュレーション", "音楽と映像の詩的調和"],
+      "tags": [
+        "個人アート展",
+        "額装窓景シミュレーション",
+        "音楽と映像の詩的調和"
+      ],
       "client": "Jam Hsiao Studio",
       "location": "台北",
       "year": "2022",

@@ -19,14 +19,25 @@
     "location": "项目地点",
     "year": "展出年份",
     "playVideo": "播放视频",
-    "viewImage": "放大查看"
+    "viewImage": "放大查看",
+    "tabVideo": "展示视频",
+    "tabGallery": "现场相册",
+    "videoBadge": "动态巡礼",
+    "viewFullscreen": "影院模式",
+    "prevMedia": "上一则",
+    "nextMedia": "下一则",
+    "close": "关闭"
   },
   "projects": {
     "01": {
       "index": "01 / 11",
       "title": "2026台湾灯会 TechWorld",
       "subtitle": "Tech World Pavilion — Architectural & Indoor Cylinder Projection",
-      "tags": ["大型户外结构光雕", "圆柱沉浸装置", "主题馆系统集成"],
+      "tags": [
+        "大型户外结构光雕",
+        "圆柱沉浸装置",
+        "主题馆系统集成"
+      ],
       "client": "Tech World",
       "location": "嘉义",
       "year": "2026",
@@ -36,7 +47,11 @@
       "index": "02 / 11",
       "title": "台湾当代文化实验场 C-LAB",
       "subtitle": "FUTURE VISION LAB — Multi-Projector Dome Edge-Blending",
-      "tags": ["穹顶球形展演", "边缘融合技术", "数字艺术校准"],
+      "tags": [
+        "穹顶球形展演",
+        "边缘融合技术",
+        "数字艺术校准"
+      ],
       "client": "台湾当代文化实验场",
       "location": "台北",
       "year": "2025",
@@ -46,7 +61,11 @@
       "index": "03 / 11",
       "title": "东港王船博物馆",
       "subtitle": "King's Boat Museum — Panoramic Immersive Projection Wall",
-      "tags": ["文化遗产数字化", "环形曲面投影", "博物馆常设展"],
+      "tags": [
+        "文化遗产数字化",
+        "环形曲面投影",
+        "博物馆常设展"
+      ],
       "client": "屏东县东港王船文化馆",
       "location": "屏东",
       "year": "2024",
@@ -56,7 +75,11 @@
       "index": "04 / 11",
       "title": "2026台湾花卉科技展",
       "subtitle": "Houbi Orchid Exhibition — 64m Ultra-Wide Curved Panoramic Projection",
-      "tags": ["64米超宽弧形幕", "高亮度融合校准", "国际花卉博览会"],
+      "tags": [
+        "64米超宽弧形幕",
+        "高亮度融合校准",
+        "国际花卉博览会"
+      ],
       "client": "台南市政府",
       "location": "台南后壁",
       "year": "2026",
@@ -66,7 +89,11 @@
       "index": "05 / 11",
       "title": "松烟夜光花园",
       "subtitle": "The LUMINOUS GARDEN — Baroque Garden Heritage Projection Mapping",
-      "tags": ["百年古迹立面光雕", "夜间常态剧场", "文创园区活化"],
+      "tags": [
+        "百年古迹立面光雕",
+        "夜间常态剧场",
+        "文创园区活化"
+      ],
       "client": "松山文创园区",
       "location": "台北",
       "year": "2025",
@@ -76,7 +103,11 @@
       "index": "06 / 11",
       "title": "PALLADIUM 全境转运站",
       "subtitle": "PALLADIUM Terminal — 360° Sensory Immersive Experience",
-      "tags": ["360度环景投影", "品牌潮流快闪", "实景雨雾五感整合"],
+      "tags": [
+        "360度环景投影",
+        "品牌潮流快闪",
+        "实景雨雾五感整合"
+      ],
       "client": "PALLADIUM Taiwan",
       "location": "台北心中山",
       "year": "2026",
@@ -86,7 +117,11 @@
       "index": "07 / 11",
       "title": "板桥广播所",
       "subtitle": "Banqiao Broadcasting Station — 360° Full Immersive Projection Space",
-      "tags": ["360度全沉浸常设展", "地空全覆盖投影", "表演艺术互动融合"],
+      "tags": [
+        "360度全沉浸常设展",
+        "地空全覆盖投影",
+        "表演艺术互动融合"
+      ],
       "client": "新北市文化场馆",
       "location": "新北板桥",
       "year": "2023",
@@ -96,7 +131,11 @@
       "index": "08 / 11",
       "title": "乐事：风味光影展",
       "subtitle": "Lay's Cheese Waterfall — Real-time Fluid Interactive Projection",
-      "tags": ["实时体感互动", "流体分流算法", "现象级品牌沉浸展"],
+      "tags": [
+        "实时体感互动",
+        "流体分流算法",
+        "现象级品牌沉浸展"
+      ],
       "client": "台湾百事食品 / 乐事",
       "location": "台北华山1914",
       "year": "2024",
@@ -106,7 +145,11 @@
       "index": "09 / 11",
       "title": "台北市政府光雕投影",
       "subtitle": "Color Taipei — City Hall Dynamic Facade Projection Mapping",
-      "tags": ["地标建筑立面光雕", "几何结构对位", "城市节庆公共艺术"],
+      "tags": [
+        "地标建筑立面光雕",
+        "几何结构对位",
+        "城市节庆公共艺术"
+      ],
       "client": "台北市政府观传局",
       "location": "台北信义区",
       "year": "2021",
@@ -116,7 +159,11 @@
       "index": "10 / 11",
       "title": "2024亚太永续博览会",
       "subtitle": "Rong Cheng Paper Industry — 4-Wall Panoramic Eco Exhibition",
-      "tags": ["企业可持续发展形象展", "四面沉浸环绕", "快速展场融合布设"],
+      "tags": [
+        "企业可持续发展形象展",
+        "四面沉浸环绕",
+        "快速展场融合布设"
+      ],
       "client": "荣成纸业股份有限公司",
       "location": "台北世贸一馆",
       "year": "2024",
@@ -126,7 +173,11 @@
       "index": "11 / 11",
       "title": "萧敬腾展",
       "subtitle": "Jam Hsiao Art Exhibition — Multi-Screen Framed Window Projection",
-      "tags": ["个人艺术特展", "多幕窗景拟真", "音乐与光影美学交融"],
+      "tags": [
+        "个人艺术特展",
+        "多幕窗景拟真",
+        "音乐与光影美学交融"
+      ],
       "client": "萧敬腾个人艺术工作室",
       "location": "台北",
       "year": "2022",

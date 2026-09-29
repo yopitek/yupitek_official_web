@@ -19,14 +19,25 @@
     "location": "Location",
     "year": "Year",
     "playVideo": "Play Video",
-    "viewImage": "Enlarge Image"
+    "viewImage": "Enlarge Image",
+    "tabVideo": "Demo Video",
+    "tabGallery": "Photo Gallery",
+    "videoBadge": "Video Walkthrough",
+    "viewFullscreen": "Cinema Mode",
+    "prevMedia": "Previous",
+    "nextMedia": "Next",
+    "close": "Close"
   },
   "projects": {
     "01": {
       "index": "01 / 11",
       "title": "2026 Taiwan Lantern Festival TechWorld",
       "subtitle": "Tech World Pavilion — Architectural & Indoor Cylinder Projection",
-      "tags": ["Outdoor Structure Mapping", "Cylinder Immersive Display", "System Integration"],
+      "tags": [
+        "Outdoor Structure Mapping",
+        "Cylinder Immersive Display",
+        "System Integration"
+      ],
       "client": "Tech World",
       "location": "Chiayi",
       "year": "2026",
@@ -36,7 +47,11 @@
       "index": "02 / 11",
       "title": "Taiwan Contemporary Culture Lab (C-LAB)",
       "subtitle": "FUTURE VISION LAB — Multi-Projector Dome Edge-Blending",
-      "tags": ["Spherical Dome Projection", "Edge-Blending Technology", "Digital Art Calibration"],
+      "tags": [
+        "Spherical Dome Projection",
+        "Edge-Blending Technology",
+        "Digital Art Calibration"
+      ],
       "client": "Taiwan Contemporary Culture Lab",
       "location": "Taipei",
       "year": "2025",
@@ -46,7 +61,11 @@
       "index": "03 / 11",
       "title": "Donggang King's Boat Museum",
       "subtitle": "King's Boat Museum — Panoramic Immersive Projection Wall",
-      "tags": ["Cultural Heritage Digitization", "Curved Wall Projection", "Permanent Museum Exhibition"],
+      "tags": [
+        "Cultural Heritage Digitization",
+        "Curved Wall Projection",
+        "Permanent Museum Exhibition"
+      ],
       "client": "Pingtung County King's Boat Cultural Museum",
       "location": "Pingtung",
       "year": "2024",
@@ -56,7 +75,11 @@
       "index": "04 / 11",
       "title": "2026 Taiwan Floral Tech Expo",
       "subtitle": "Houbi Orchid Exhibition — 64m Ultra-Wide Curved Panoramic Projection",
-      "tags": ["64m Ultra-Wide Screen", "High-Lumen Edge Blending", "International Floral Expo"],
+      "tags": [
+        "64m Ultra-Wide Screen",
+        "High-Lumen Edge Blending",
+        "International Floral Expo"
+      ],
       "client": "Tainan City Government",
       "location": "Houbi, Tainan",
       "year": "2026",
@@ -66,7 +89,11 @@
       "index": "05 / 11",
       "title": "Songshan Luminous Garden",
       "subtitle": "The LUMINOUS GARDEN — Baroque Garden Heritage Projection Mapping",
-      "tags": ["Centennial Heritage Facade", "Nightly Light Theater", "Cultural Park Revitalization"],
+      "tags": [
+        "Centennial Heritage Facade",
+        "Nightly Light Theater",
+        "Cultural Park Revitalization"
+      ],
       "client": "Songshan Cultural and Creative Park",
       "location": "Taipei",
       "year": "2025",
@@ -76,7 +103,11 @@
       "index": "06 / 11",
       "title": "PALLADIUM Terminal",
       "subtitle": "PALLADIUM Terminal — 360° Sensory Immersive Experience",
-      "tags": ["360° Panoramic Projection", "Brand Pop-up Experience", "Multi-Sensory Weather Installation"],
+      "tags": [
+        "360° Panoramic Projection",
+        "Brand Pop-up Experience",
+        "Multi-Sensory Weather Installation"
+      ],
       "client": "PALLADIUM Taiwan",
       "location": "Taipei Zhongshan Linear Park",
       "year": "2026",
@@ -86,7 +117,11 @@
       "index": "07 / 11",
       "title": "Banqiao Broadcasting Station",
       "subtitle": "Banqiao Broadcasting Station — 360° Full Immersive Projection Space",
-      "tags": ["360° Permanent Installation", "Floor & Wall Projection", "Live Performance Fusion"],
+      "tags": [
+        "360° Permanent Installation",
+        "Floor & Wall Projection",
+        "Live Performance Fusion"
+      ],
       "client": "New Taipei City Cultural Affairs Department",
       "location": "Banqiao, New Taipei",
       "year": "2023",
@@ -96,7 +131,11 @@
       "index": "08 / 11",
       "title": "Lay's Flavor & Light Exhibition",
       "subtitle": "Lay's Cheese Waterfall — Real-time Fluid Interactive Projection",
-      "tags": ["Motion Interactive Sensing", "Fluid Particle Algorithm", "Phenomenal Brand Experience"],
+      "tags": [
+        "Motion Interactive Sensing",
+        "Fluid Particle Algorithm",
+        "Phenomenal Brand Experience"
+      ],
       "client": "PepsiCo Foods Taiwan / Lay's",
       "location": "Huashan 1914 Creative Park, Taipei",
       "year": "2024",
@@ -106,7 +145,11 @@
       "index": "09 / 11",
       "title": "Color Taipei City Hall Mapping",
       "subtitle": "Color Taipei — City Hall Dynamic Facade Projection Mapping",
-      "tags": ["Landmark Facade Mapping", "Geometric Structural Alignment", "Public Festival Art"],
+      "tags": [
+        "Landmark Facade Mapping",
+        "Geometric Structural Alignment",
+        "Public Festival Art"
+      ],
       "client": "Taipei City Department of Information and Tourism",
       "location": "Xinyi District, Taipei",
       "year": "2021",
@@ -116,7 +159,11 @@
       "index": "10 / 11",
       "title": "2024 Asia-Pacific Sustainability Expo",
       "subtitle": "Rong Cheng Paper Industry — 4-Wall Panoramic Eco Exhibition",
-      "tags": ["Corporate Sustainability Showcase", "4-Wall Immersive Projection", "Rapid Venue Deployment"],
+      "tags": [
+        "Corporate Sustainability Showcase",
+        "4-Wall Immersive Projection",
+        "Rapid Venue Deployment"
+      ],
       "client": "Rong Cheng Paper Industry Co., Ltd.",
       "location": "Taipei World Trade Center Hall 1",
       "year": "2024",
@@ -126,7 +173,11 @@
       "index": "11 / 11",
       "title": "Jam Hsiao Art Exhibition",
       "subtitle": "Jam Hsiao Art Exhibition — Multi-Screen Framed Window Projection",
-      "tags": ["Solo Art Exhibition", "Framed Window Simulation", "Audiovisual Poetics"],
+      "tags": [
+        "Solo Art Exhibition",
+        "Framed Window Simulation",
+        "Audiovisual Poetics"
+      ],
       "client": "Jam Hsiao Art Studio",
       "location": "Taipei",
       "year": "2022",

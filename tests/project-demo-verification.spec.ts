@@ -206,4 +206,72 @@ test.describe('Yupitek Online Project Demo Showcase', () => {
     const scheme = await page.getAttribute('html', 'data-scheme');
     expect(scheme).toBe('tech-dark');
   });
+
+  test('10 - Issue 1: Sticky Nav 01-11 placed beside label with zero overlap on lang-switcher', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
+
+    // 往下拉滾動觸發 Sticky
+    await page.evaluate(() => window.scrollTo(0, 1000));
+    await page.waitForTimeout(300);
+
+    const navLabelBox = await page.locator('.project-nav__label').boundingBox();
+    const nav11Box = await page.locator('.project-nav__item[href="#project-11"]').boundingBox();
+    const langSwitcherBox = await page.locator('.lang-switcher').boundingBox();
+
+    expect(navLabelBox).not.toBeNull();
+    expect(nav11Box).not.toBeNull();
+    expect(langSwitcherBox).not.toBeNull();
+
+    // 1. 驗證 01-11 的第一個按鈕緊隨在「專案導覽」標籤旁邊
+    const nav01Box = await page.locator('.project-nav__item[href="#project-01"]').boundingBox();
+    expect(nav01Box!.x).toBeGreaterThan(navLabelBox!.x);
+
+    // 2. 驗證最後一個數字按鈕 11 的右邊界與右上角五國語言按鈕左邊界之間有充裕間隙（無重疊）
+    const gap = langSwitcherBox!.x - (nav11Box!.x + nav11Box!.width);
+    expect(gap).toBeGreaterThan(20); // 確保至少有 20px 以上安全距離
+  });
+
+  test('11 - Issue 2: Project descriptions match official project_details.md content', async ({ page }) => {
+    await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
+
+    // 檢查 01 包含生命館主秀與工研院平板花海
+    const desc01 = await page.locator('#project-01 .project-card__description').textContent();
+    expect(desc01).toContain('Tech World 生命館主秀');
+    expect(desc01).toContain('數位花海技術');
+
+    // 檢查 02 包含直立式大型平面 LED 顯示屏與歷史建築
+    const desc02 = await page.locator('#project-02 .project-card__description').textContent();
+    expect(desc02).toContain('直立式大型平面 LED 顯示屏');
+    expect(desc02).toContain('歷史建築改造');
+
+    // 檢查 08 包含起司瀑布與多感官連結
+    const desc08 = await page.locator('#project-08 .project-card__description').textContent();
+    expect(desc08).toContain('起司瀑布');
+    expect(desc08).toContain('多感官連結');
+  });
+
+  test('12 - Issue 3: Media stage and preview image dimensions are constrained & screenshot reviewed', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
+
+    const mediaStage = page.locator('#project-01 .media-stage-wrapper');
+    const stageBox = await mediaStage.boundingBox();
+    expect(stageBox).not.toBeNull();
+
+    // 驗證主媒體容器寬度已優化收斂，寬度不超過 500px，高度不超過 300px
+    expect(stageBox!.width).toBeLessThanOrEqual(500);
+    expect(stageBox!.height).toBeLessThanOrEqual(300);
+
+    // 切換到相簿檢查圖片尺寸
+    await page.click('#project-01 .media-tab[data-tab="gallery"]');
+    const activeImg = page.locator('#project-01 .gallery-active-img');
+    const imgBox = await activeImg.boundingBox();
+    expect(imgBox).not.toBeNull();
+    expect(imgBox!.width).toBeLessThanOrEqual(500);
+
+    // 儲存截圖以利檢視
+    await page.screenshot({ path: 'test-results/project-media-size-review.png', fullPage: false });
+  });
 });
+

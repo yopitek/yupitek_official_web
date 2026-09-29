@@ -236,22 +236,30 @@ body.tech-dark-body {
   position: sticky;
   top: 0;
   z-index: 900;
-  background: rgba(11, 14, 17, 0.9);
+  background: rgba(11, 14, 17, 0.92);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(51, 181, 238, 0.15);
-  padding: 0.75rem 0;
+  padding: 0.65rem 0;
 }
 
 .project-nav {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+  justify-content: flex-start; /* 數字bar 01 to 11 緊鄰專案導覽標籤 */
+  gap: 1.25rem;
   overflow-x: auto;
   scrollbar-width: none;
+}
+
+@media (min-width: 960px) {
+  .project-nav {
+    /* 預留右側空間，防止滾動時與右上角語言切換器重疊 */
+    padding-right: 280px;
+  }
 }
 
 .project-nav::-webkit-scrollbar {
@@ -264,17 +272,21 @@ body.tech-dark-body {
   color: var(--yp-ui-text-subtle, #8B939B);
   text-transform: uppercase;
   white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
 }
 
 .project-nav__list {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.45rem;
   list-style: none;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .project-nav__item {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.1rem;
+  height: 2.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -283,7 +295,7 @@ body.tech-dark-body {
   border-radius: 4px;
   color: var(--yp-ui-text-muted, #B5BCC4);
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -306,18 +318,18 @@ body.tech-dark-body {
 .projects-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 4rem 1.5rem 6rem;
+  padding: 3.5rem 1.5rem 6rem;
 }
 
 .project-card {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 2rem;
   background: var(--yp-ui-bg-elevated, #14181D);
   border: 1px solid rgba(51, 181, 238, 0.15);
   border-radius: 8px;
-  padding: 2.5rem;
-  margin-bottom: 5rem;
+  padding: 2rem;
+  margin-bottom: 4.5rem;
   position: relative;
   overflow: hidden;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -325,9 +337,10 @@ body.tech-dark-body {
 
 @media (min-width: 960px) {
   .project-card {
-    grid-template-columns: 1fr 1.1fr;
-    gap: 3.5rem;
-    padding: 3.5rem;
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 460px);
+    gap: 3rem;
+    padding: 3rem;
+    align-items: center;
   }
 }
 
@@ -449,6 +462,9 @@ body.tech-dark-body {
   flex-direction: column;
   gap: 0;
   justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 /* 媒體 HUD 控制列 */
@@ -461,25 +477,25 @@ body.tech-dark-body {
   border: 1px solid rgba(51, 181, 238, 0.25);
   border-bottom: none;
   border-radius: 4px 12px 0 0;
-  padding: 0.4rem 0.75rem;
+  padding: 0.35rem 0.75rem;
   font-family: var(--font-mono);
 }
 
 .media-tabs {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .media-tab {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
   background: transparent;
   border: 1px solid transparent;
-  padding: 0.3rem 0.7rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 3px;
   color: var(--yp-ui-text-muted, #B5BCC4);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-family: inherit;
   font-weight: 500;
   cursor: pointer;
@@ -500,7 +516,7 @@ body.tech-dark-body {
 }
 
 .media-tab__icon {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .media-tab__badge {
@@ -528,7 +544,7 @@ body.tech-dark-body {
   gap: 0.35rem;
   background: rgba(35, 40, 46, 0.8);
   border: 1px solid rgba(74, 82, 91, 0.7);
-  padding: 0.3rem 0.65rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 3px;
   color: var(--yp-ui-text-muted, #B5BCC4);
   font-size: 0.75rem;
@@ -547,14 +563,15 @@ body.tech-dark-body {
   font-size: 0.85rem;
 }
 
-/* 主舞台舞台容器 */
+/* 主舞台舞台容器 (精巧 16:9 尺寸，避免版面過大壓迫) */
 .media-stage-wrapper {
   position: relative;
   background: #000000;
   border: 1px solid rgba(51, 181, 238, 0.25);
   border-radius: 0 0 4px 12px;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
+  max-height: 270px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
 }
 
@@ -655,10 +672,10 @@ body.tech-dark-body {
 }
 
 .gallery-filmstrip {
-  height: 60px;
+  height: 48px;
   display: flex;
-  gap: 0.5rem;
-  padding: 0.4rem 0.6rem;
+  gap: 0.4rem;
+  padding: 0.3rem 0.5rem;
   background: #14181D;
   border-top: 1px solid rgba(74, 82, 91, 0.4);
   overflow-x: auto;

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Yupitek Online Project Demo Showcase', () => {
-  const BASE_URL = process.env.BASE_URL || 'http://localhost:1314';
+  const BASE_URL = process.env.BASE_URL || 'http://localhost:1313';
 
   test('01 - Page Loads & Multilingual Metadata Check', async ({ page }) => {
     await page.goto(`${BASE_URL}/zh-tw/solution/project/`);

@@ -2,64 +2,22 @@
 # -*- coding: utf-8 -*-
 
 import json
+import os
 
-# 讀取繁體中文單一真實資料源
+# 1. 讀取繁體中文單一真實資料源
 with open('static/project/i18n/zh-TW.json', 'r', encoding='utf-8') as f:
     zh_tw = json.load(f)
 
 projects_data = zh_tw['projects']
 
-media_map = {
-    '01': {
-        'video': '/project/assets/video/01.mp4',
-        'images': ['/project/assets/img/01/main.webp', '/project/assets/img/01/02.webp']
-    },
-    '02': {
-        'video': '/project/assets/video/02.mp4',
-        'images': ['/project/assets/img/02/main.webp', '/project/assets/img/02/02.webp', '/project/assets/img/02/03.webp']
-    },
-    '03': {
-        'video': '/project/assets/video/03.mp4',
-        'images': ['/project/assets/img/03/main.jpg', '/project/assets/img/03/02.webp']
-    },
-    '04': {
-        'video': '/project/assets/video/04.mp4',
-        'images': ['/project/assets/img/04/main.webp', '/project/assets/img/04/02.webp']
-    },
-    '05': {
-        'video': '/project/assets/video/05.mp4',
-        'images': ['/project/assets/img/05/main.webp', '/project/assets/img/05/02.webp']
-    },
-    '06': {
-        'video': '/project/assets/video/06.mp4',
-        'images': ['/project/assets/img/06/main.webp', '/project/assets/img/06/02.webp']
-    },
-    '07': {
-        'video': '/project/assets/video/07.mp4',
-        'images': ['/project/assets/img/07/main.webp', '/project/assets/img/07/02.webp']
-    },
-    '08': {
-        'video': '/project/assets/video/08.mp4',
-        'images': ['/project/assets/img/08/main.webp', '/project/assets/img/08/02.webp']
-    },
-    '09': {
-        'video': '/project/assets/video/09.mp4',
-        'images': ['/project/assets/img/09/main.webp', '/project/assets/img/09/02.webp']
-    },
-    '10': {
-        'video': '/project/assets/video/10.mp4',
-        'images': ['/project/assets/img/10/main.webp', '/project/assets/img/10/02.webp']
-    },
-    '11': {
-        'video': '/project/assets/video/11.mp4',
-        'images': ['/project/assets/img/11/main.webp', '/project/assets/img/11/02.webp']
-    }
-}
+# 2. 讀取真實多媒體配置 (來自 project_media_map.json)
+with open('scripts/project_media_map.json', 'r', encoding='utf-8') as f:
+    media_map = json.load(f)
 
 projects_meta = []
 for p_id in sorted(projects_data.keys()):
     p_info = projects_data[p_id]
-    m_info = media_map[p_id]
+    m_info = media_map.get(p_id, {'video': None, 'images': []})
     projects_meta.append({
         'id': p_id,
         'title': p_info['title'],
@@ -68,8 +26,8 @@ for p_id in sorted(projects_data.keys()):
         'client': p_info['client'],
         'location': p_info['location'],
         'desc': p_info['description'],
-        'video': m_info['video'],
-        'images': m_info['images']
+        'video': m_info.get('video'),
+        'images': m_info.get('images', [])
     })
 
 html_parts = []
@@ -154,6 +112,7 @@ html_parts.append('''<!DOCTYPE html>
 
 for idx, p in enumerate(projects_meta):
     p_id = p['id']
+    has_video = bool(p['video'])
     tags_html = '\n'.join([f'          <span class="tag-mecha" data-i18n="projects.{p_id}.tags.{t_i}">{t}</span>' for t_i, t in enumerate(p['tags'])])
     
     thumb_lines = []
@@ -161,6 +120,65 @@ for idx, p in enumerate(projects_meta):
         active_cls = "active" if img_i == 0 else ""
         thumb_lines.append(f'              <button class="thumb-btn {active_cls}" data-img-src="{img}" aria-label="相片 {img_i + 1}"><img src="{img}" alt="{p["title"]} 相片 {img_i + 1}" loading="lazy"></button>')
     thumbs_html = '\n'.join(thumb_lines)
+
+    if has_video:
+        hud_tabs_html = f'''          <div class="media-tabs" role="tablist">
+            <button class="media-tab active" data-tab="video" role="tab" aria-selected="true">
+              <span class="media-tab__icon">🎥</span>
+              <span class="media-tab__label" data-i18n="labels.tabVideo">展示影片</span>
+              <span class="media-tab__badge" data-i18n="labels.videoBadge">動態巡禮</span>
+            </button>
+            <button class="media-tab" data-tab="gallery" role="tab" aria-selected="false">
+              <span class="media-tab__icon">🖼️</span>
+              <span class="media-tab__label" data-i18n="labels.tabGallery">現場相簿</span>
+              <span class="media-tab__count">{len(p['images'])}</span>
+            </button>
+          </div>'''
+
+        stage_html = f'''        <div class="media-stage-wrapper">
+          <!-- Video Panel -->
+          <div class="media-panel media-panel--video active">
+            <div class="video-container" data-video-src="{p['video']}">
+              <img class="video-poster" src="{p['images'][0]}" alt="{p['title']}" loading="lazy">
+              <div class="video-play-btn" role="button" aria-label="Play video">
+                <span class="play-icon">▶</span>
+                <span class="play-text" data-i18n="labels.playVideo">播放影片</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Panel -->
+          <div class="media-panel media-panel--gallery">
+            <div class="gallery-main-view">
+              <img class="gallery-active-img" src="{p['images'][0]}" alt="{p['title']}" data-active-index="0" loading="lazy">
+            </div>
+            <div class="gallery-filmstrip">
+{thumbs_html}
+            </div>
+          </div>
+        </div>'''
+    else:
+        # 專案無影片：僅呈現現場相簿
+        hud_tabs_html = f'''          <div class="media-tabs" role="tablist">
+            <button class="media-tab active" data-tab="gallery" role="tab" aria-selected="true">
+              <span class="media-tab__icon">🖼️</span>
+              <span class="media-tab__label" data-i18n="labels.tabGallery">現場相簿</span>
+              <span class="media-tab__count">{len(p['images'])}</span>
+              <span class="media-tab__badge" data-i18n="labels.galleryBadge">現場實景</span>
+            </button>
+          </div>'''
+
+        stage_html = f'''        <div class="media-stage-wrapper">
+          <!-- Gallery Panel (無影片直接啟用現場相簿) -->
+          <div class="media-panel media-panel--gallery active">
+            <div class="gallery-main-view">
+              <img class="gallery-active-img" src="{p['images'][0]}" alt="{p['title']}" data-active-index="0" loading="lazy">
+            </div>
+            <div class="gallery-filmstrip">
+{thumbs_html}
+            </div>
+          </div>
+        </div>'''
 
     card_html = f'''    <!-- {p_id} {p['title']} -->
     <article id="project-{p_id}" class="project-card">
@@ -184,47 +202,14 @@ for idx, p in enumerate(projects_meta):
       <div class="project-card__media">
         <!-- Media HUD Switcher -->
         <div class="media-hud-bar">
-          <div class="media-tabs" role="tablist">
-            <button class="media-tab active" data-tab="video" role="tab" aria-selected="true">
-              <span class="media-tab__icon">🎥</span>
-              <span class="media-tab__label" data-i18n="labels.tabVideo">展示影片</span>
-              <span class="media-tab__badge" data-i18n="labels.videoBadge">動態巡禮</span>
-            </button>
-            <button class="media-tab" data-tab="gallery" role="tab" aria-selected="false">
-              <span class="media-tab__icon">🖼️</span>
-              <span class="media-tab__label" data-i18n="labels.tabGallery">現場相簿</span>
-              <span class="media-tab__count">{len(p['images'])}</span>
-            </button>
-          </div>
+{hud_tabs_html}
           <button class="media-cinema-btn" title="影院全螢幕模式">
             <span class="cinema-icon">⛶</span>
             <span class="cinema-label" data-i18n="labels.viewFullscreen">影院模式</span>
           </button>
         </div>
 
-        <!-- Stage Container -->
-        <div class="media-stage-wrapper">
-          <!-- Video Panel -->
-          <div class="media-panel media-panel--video active">
-            <div class="video-container" data-video-src="{p['video']}">
-              <img class="video-poster" src="{p['images'][0]}" alt="{p['title']}" loading="lazy">
-              <div class="video-play-btn" role="button" aria-label="Play video">
-                <span class="play-icon">▶</span>
-                <span class="play-text" data-i18n="labels.playVideo">播放影片</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Gallery Panel -->
-          <div class="media-panel media-panel--gallery">
-            <div class="gallery-main-view">
-              <img class="gallery-active-img" src="{p['images'][0]}" alt="{p['title']}" data-active-index="0" loading="lazy">
-            </div>
-            <div class="gallery-filmstrip">
-{thumbs_html}
-            </div>
-          </div>
-        </div>
+{stage_html}
       </div>
     </article>'''
 

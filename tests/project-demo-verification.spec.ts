@@ -273,5 +273,70 @@ test.describe('Yupitek Online Project Demo Showcase', () => {
     // 儲存截圖以利檢視
     await page.screenshot({ path: 'test-results/project-media-size-review.png', fullPage: false });
   });
+
+  test('13 - Project Media Inventory & Asset Integrity Check', async ({ page }) => {
+    await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
+
+    const videoProjects = ['01', '02', '03', '04', '06', '07', '08', '09'];
+    const nonVideoProjects = ['05', '10', '11'];
+
+    // 驗證有影片的專案具有 video container 與展示影片 Tab
+    for (const id of videoProjects) {
+      const card = page.locator(`#project-${id}`);
+      await expect(card.locator('.media-tab[data-tab="video"]')).toBeVisible();
+      await expect(card.locator('.video-container')).toHaveAttribute('data-video-src', new RegExp(`/project/assets/video/${id}.mp4`));
+    }
+
+    // 驗證無影片的專案僅有現場相簿 Tab 且直接為 active
+    for (const id of nonVideoProjects) {
+      const card = page.locator(`#project-${id}`);
+      await expect(card.locator('.media-tab[data-tab="video"]')).toHaveCount(0);
+      await expect(card.locator('.media-tab[data-tab="gallery"]')).toHaveClass(/active/);
+      await expect(card.locator('.media-panel--gallery')).toHaveClass(/active/);
+      await expect(card.locator('.video-container')).toHaveCount(0);
+    }
+
+    // 檢查專案展示區所有圖片的 src 均可正常載入 (HTTP 200)
+    const imgElements = await page.locator('.projects-container img').all();
+    expect(imgElements.length).toBeGreaterThan(20);
+    for (const img of imgElements.slice(0, 10)) {
+      const src = await img.getAttribute('src');
+      expect(src).toBeTruthy();
+      const res = await page.request.get(`${BASE_URL}${src}`);
+      expect(res.status()).toBe(200);
+    }
+  });
+
+  test('14 - Non-Video Project Lightbox & Cinema Mode Verification', async ({ page }) => {
+    await page.goto(`${BASE_URL}/zh-tw/solution/project/`);
+
+    const lightbox = page.locator('#lightbox');
+
+    // 測試專案 05 (松菸夜光花園，無影片，2 張相片)
+    const cinemaBtn05 = page.locator('#project-05 .media-cinema-btn');
+    await cinemaBtn05.click();
+    await expect(lightbox).toHaveClass(/open/);
+
+    // 驗證 Lightbox 顯示圖片模式，計數器為 1 / 2
+    await expect(page.locator('.lightbox-image')).toBeVisible();
+    await expect(page.locator('.lightbox-hud__counter')).toContainText('1 / 2');
+
+    // 點擊 Next 切換下一張相片
+    await page.locator('.lightbox-arrow--next').click();
+    await expect(page.locator('.lightbox-hud__counter')).toContainText('2 / 2');
+
+    // 關閉 Lightbox
+    await page.click('#lightbox-close');
+    await expect(lightbox).not.toHaveClass(/open/);
+
+    // 測試專案 10 (2024亞太永續博覽會，無影片，3 張相片)
+    const cinemaBtn10 = page.locator('#project-10 .media-cinema-btn');
+    await cinemaBtn10.click();
+    await expect(lightbox).toHaveClass(/open/);
+    await expect(page.locator('.lightbox-hud__counter')).toContainText('1 / 3');
+    await page.click('#lightbox-close');
+    await expect(lightbox).not.toHaveClass(/open/);
+  });
 });
+
 

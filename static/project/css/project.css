@@ -35,6 +35,33 @@ body.tech-dark-body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
+@media (max-width: 640px) {
+  .lang-switcher {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.2rem 0.3rem;
+    gap: 0.15rem;
+  }
+  .lang-btn {
+    padding: 0.2rem 0.35rem;
+    font-size: 0.7rem;
+  }
+  .back-home {
+    top: 0.75rem;
+    left: 0.75rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0;
+    justify-content: center;
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  .back-home .back-label {
+    display: none;
+  }
+}
+
+
 .lang-btn {
   background: transparent;
   color: var(--yp-ui-text-muted, #B5BCC4);

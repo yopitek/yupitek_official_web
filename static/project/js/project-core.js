@@ -7,7 +7,7 @@ import { initI18n } from './i18n.js';
 import { initScrollAnimations } from './project-scroll.js';
 import { initMediaPlayer } from './media-player.js';
 
-document.addEventListener('DOMContentLoaded', async () => {
+async function bootstrap() {
   // 1. 初始化多語系引擎
   await initI18n();
 
@@ -22,4 +22,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 4. 初始化互動多媒體播放器與畫廊引擎 (含 Lightbox)
   initMediaPlayer();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootstrap);
+} else {
+  bootstrap();
+}

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Flipper Zero 5G ��������� ��� ������������������</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body{font-family:-apple-system,"Noto Sans TC","Noto Sans SC",Segoe UI,Helvetica,Arial,sans-serif;max-width:860px;margin:0 auto;padding:2rem 1.5rem 6rem;line-height:1.75;color:#1a1a1a;background:#fff}
+h1{font-size:1.9rem;border-bottom:3px solid #222;padding-bottom:.5rem}
+h2{font-size:1.4rem;margin-top:2.5rem;border-left:5px solid #c62828;padding-left:.6rem}
+h3{font-size:1.15rem;margin-top:1.8rem;color:#333}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
+th,td{border:1px solid #ddd;padding:.5rem .7rem;text-align:left;vertical-align:top}
+th{background:#f5f5f5}
+code{background:#f2f2f2;padding:.1rem .35rem;border-radius:3px;font-size:.9em}
+pre{background:#1e1e1e;color:#eee;padding:1rem;border-radius:6px;overflow-x:auto}
+pre code{background:none;color:inherit;padding:0}
+blockquote{border-left:4px solid #f9a825;background:#fffbea;margin:1rem 0;padding:.6rem 1rem;border-radius:0 4px 4px 0}
+hr{border:none;border-top:1px solid #e0e0e0;margin:2.5rem 0}
+a{color:#1565c0}
+.meta{color:#888;font-size:.85rem;margin-bottom:2rem}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Flipper Zero 5G ��������� ��� ������������������</h1>
+</header>
+<h1 id="flipper-zero-5g-擴充板-完整使用手冊">Flipper Zero 5G 擴充板 —
+完整使用手冊</h1>
+<p><strong>ESP32-C5 Marauder 擴充板</strong> — WiFi 2.4G+5G · Bluetooth
+BLE · GPS · 433M RF · 2.8 吋螢幕</p>
+<blockquote>
+<p><strong>合法性聲明</strong>：本裝置僅供<strong>教育用途與已授權的資安研究</strong>。對您未擁有、或未取得書面授權的網路、裝置或基礎設施進行攻擊，在多數國家均屬違法。製造商與原廠不為誤用負責。<strong>請務必負責任並合乎倫理地使用。</strong></p>
+</blockquote>
+<hr />
+<h2 id="產品概述">01 產品概述</h2>
+<p><strong>Flipper Zero 5G 擴充板</strong>（又稱 <strong>ESP32 Marauder
+模組</strong>）是一個精巧的無線安全研究工具，透過 Flipper Zero 的 GPIO
+排針安裝，為您的 Flipper 增加四項研究能力。</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>能力</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>📶 <strong>WiFi 2.4GHz + 5GHz</strong></td>
+<td>以 ESP32-C5 晶片執行雙頻掃描、監測與測試。支援 802.11
+b/g/n/ax。</td>
+</tr>
+<tr class="even">
+<td>🔵 <strong>Bluetooth BLE</strong></td>
+<td>掃描藍牙裝置、偵測信用卡 skimmer、對 Apple／Samsung／Windows
+裝置執行 BLE 測試。</td>
+</tr>
+<tr class="odd">
+<td>🛰️ <strong>GPS 模組</strong></td>
+<td>記錄即時位置與網路資料以供 wardrive 對照。</td>
+</tr>
+<tr class="even">
+<td>📻 <strong>433M RF 模組</strong></td>
+<td>透過 Flipper Zero 的 Sub-GHz 選單進行 Sub-GHz 訊號研究。A07
+射頻模組，10 dBm 輸出。</td>
+</tr>
+</tbody>
+</table>
+<p>把它想成一台<strong>口袋裡的多頻段無線研究工具</strong>。所有資料都寫入
+microSD 供後續分析。</p>
+<hr />
+<h2 id="盒裝內容">02 盒裝內容</h2>
+<h3 id="隨附">✓ 隨附</h3>
+<ul>
+<li><p><strong>ESP32-C5 Marauder 模組</strong> ×1 已組裝，含 3D
+列印外殼與 2.8 吋螢幕</p></li>
+<li><p><strong>天線 ×4 支（SMA 螺絲式，皆為 5dBi）</strong></p>
+<ul>
+<li><code>2.4G</code> 天線 ×1 — Wi-Fi 2.4GHz 專用</li>
+<li><code>2.4G/5G</code> 雙頻天線 ×1 — Wi-Fi 2.4GHz + 5GHz</li>
+<li><code>433M A</code> 天線 ×1 — 433MHz 射頻</li>
+<li><code>GPS</code> 天線 ×1 — 主動 GPS 天線</li>
+</ul></li>
+</ul>
+<h3 id="需另行購買">✗ 需另行購買</h3>
+<ul>
+<li><p><strong>Flipper Zero 主機</strong>
+本板為擴充板，不含主機。</p></li>
+<li><p><strong>microSD 記憶卡</strong> 需 FAT32 格式、<strong>32GB
+以內</strong>。原廠不隨附。</p></li>
+</ul>
+<hr />
+<h2 id="硬體說明">03 硬體說明</h2>
+<h3 id="四組-sma-天線連接埠">四組 SMA 天線連接埠</h3>
+<p>背殼絲印清楚標示四個介面對應關係，安裝天線時請依標示對應插入：</p>
+<table>
+<thead>
+<tr class="header">
+<th>絲印</th>
+<th>位置</th>
+<th>對應天線／功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>433M A</code></td>
+<td>上緣左</td>
+<td>433MHz 射頻（A07 模組，10 dBm）</td>
+</tr>
+<tr class="even">
+<td><code>GPS</code></td>
+<td>上緣右</td>
+<td>主動 GPS 天線</td>
+</tr>
+<tr class="odd">
+<td><code>2.4G</code></td>
+<td>左翼</td>
+<td>Wi-Fi 2.4GHz <strong>專用</strong></td>
+</tr>
+<tr class="even">
+<td><code>2.4G/5G</code></td>
+<td>右翼</td>
+<td>Wi-Fi 雙頻 2.4GHz + 5GHz</td>
+</tr>
+</tbody>
+</table>
+<p>四個連接埠的絲印直接印在機殼上，<strong>不需要靠記憶或試插來分辨哪個是哪個</strong>。</p>
+<h3 id="金手指與-tvs-保護">金手指與 TVS 保護</h3>
+<p>所有訊號腳位皆為鍍金接觸。每個腳位內建
+TVS（瞬態電壓抑制器）二極體，在插拔 Flipper Zero 時提供突波保護。</p>
+<h3 id="gps-天線方向性">GPS 天線方向性</h3>
+<p>⚠️ <strong>GPS
+天線具有方向性</strong>，儘管商品標示為全向天線。安裝時請將天線朝向<strong>開闊天空方向</strong>放置，以利取得
+GPS 定位。</p>
+<h3 id="電量指示">電量指示</h3>
+<p>模組具備電量指示燈，充電或使用時可參考燈號判斷大致電量；精確的燈號段數與對照表請以實機為準。</p>
+<hr />
+<h2 id="規格">04 規格</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>項目</th>
+<th>數值</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>尺寸</strong></td>
+<td>90 × 58 × 15 mm（不含天線）</td>
+</tr>
+<tr class="even">
+<td><strong>外殼材質</strong></td>
+<td>3D 列印塑膠</td>
+</tr>
+<tr class="odd">
+<td><strong>可用顏色</strong></td>
+<td>黑／白／透明／紅／藍</td>
+</tr>
+<tr class="even">
+<td><strong>晶片</strong></td>
+<td><strong>Espressif ESP32-C5</strong>（RISC-V）</td>
+</tr>
+<tr class="odd">
+<td><strong>CPU</strong></td>
+<td>RISC-V 高效能核心，最高
+240MHz，另搭配低功耗（LP）核心處理背景任務</td>
+</tr>
+<tr class="even">
+<td><strong>Wi-Fi</strong></td>
+<td><strong>2.4GHz + 5GHz 雙頻</strong>，802.11
+b/g/n/<strong>ax</strong>（Wi-Fi 6）</td>
+</tr>
+<tr class="odd">
+<td><strong>Wi-Fi 天線埠</strong></td>
+<td><strong>2 組獨立 SMA 埠</strong>：<code>2.4G</code>（左翼）＋
+<code>2.4G/5G</code> 雙頻（右翼）</td>
+</tr>
+<tr class="even">
+<td><strong>藍牙</strong></td>
+<td><strong>BLE 5.0</strong> ⚠️ <strong>不支援 Bluetooth
+Classic（BR/EDR）</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>GPS</strong></td>
+<td>主動 GPS 模組 · 自動切換供電 · 冷啟動</td>
+</tr>
+<tr class="even">
+<td><strong>433M RF</strong></td>
+<td>A07 模組 · <strong>10 dBm</strong> 輸出</td>
+</tr>
+<tr class="odd">
+<td><strong>天線介面</strong></td>
+<td><strong>4 組 SMA
+母座</strong>（<code>433M A</code>／<code>GPS</code>／<code>2.4G</code>／<code>2.4G+5G</code>），<strong>四支天線全附，皆為
+5dBi</strong></td>
+</tr>
+<tr class="even">
+<td><strong>螢幕</strong></td>
+<td>2.8 吋 · 內建 Marauder UI</td>
+</tr>
+<tr class="odd">
+<td><strong>腳位保護</strong></td>
+<td>鍍金 + 每腳 TVS</td>
+</tr>
+<tr class="even">
+<td><strong>電池</strong></td>
+<td>800 mAh 鋰聚合物 · 可熱插拔</td>
+</tr>
+<tr class="odd">
+<td><strong>充電時間</strong></td>
+<td>約 2 小時</td>
+</tr>
+<tr class="even">
+<td><strong>輸入電壓</strong></td>
+<td>5V / 2A（USB-C）</td>
+</tr>
+<tr class="odd">
+<td><strong>輸出至 Flipper</strong></td>
+<td>5V / 2.4A</td>
+</tr>
+<tr class="even">
+<td><strong>SD 卡</strong></td>
+<td>microSD · <strong>FAT32 格式</strong> · <strong>32GB
+以內</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>充電埠</strong></td>
+<td>USB-C（上緣前面）</td>
+</tr>
+<tr class="even">
+<td><strong>燒錄埠</strong></td>
+<td>USB-C（前左側，<strong>僅供燒錄韌體</strong>）</td>
+</tr>
+<tr class="odd">
+<td><strong>預載韌體</strong></td>
+<td>ESP32 Marauder 5G（開源）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="開始使用">05 開始使用</h2>
+<h3 id="步驟-1-準備-microsd-記憶卡">步驟 1 — 準備 microSD 記憶卡</h3>
+<p>本板使用 SD 卡存放所有擷取到的資料。首次使用前：</p>
+<ul>
+<li>使用 <strong>32GB 或以下</strong>的 microSD</li>
+<li>格式化為 <strong>FAT32</strong>（<strong>不支援 exFAT、不支援
+NTFS</strong>）</li>
+<li>插入機身<strong>上緣前面</strong>的記憶卡槽</li>
+</ul>
+<blockquote>
+<p><strong>Mac</strong>：磁碟工具 → 選取 SD 卡 → 抹除 → 格式：MS-DOS
+(FAT32) <strong>Windows</strong>：檔案總管中右鍵 SD 卡 → 格式化 →
+FAT32</p>
+</blockquote>
+<h3 id="步驟-2-安裝天線">步驟 2 — 安裝天線</h3>
+<p>本板有<strong>四組</strong> SMA
+螺絲固定式天線埠。依絲印標示安裝：</p>
+<table>
+<thead>
+<tr class="header">
+<th>接到哪個埠</th>
+<th>裝哪支天線</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>GPS</code>（上緣右）</td>
+<td><strong>GPS 天線</strong></td>
+</tr>
+<tr class="even">
+<td><code>2.4G</code>（左翼）</td>
+<td><strong>2.4GHz 天線</strong></td>
+</tr>
+<tr class="odd">
+<td><code>2.4G/5G</code>（右翼）</td>
+<td><strong>雙頻天線</strong>（2.4G + 5GHz）</td>
+</tr>
+<tr class="even">
+<td><code>433M A</code>（上緣左）</td>
+<td><strong>433MHz 天線</strong></td>
+</tr>
+</tbody>
+</table>
+<p>ℹ️ <strong>兩個 Wi-Fi 天線埠各接一支</strong>：<code>2.4G</code> 埠接
+2.4GHz 天線，<code>2.4G/5G</code>
+埠接雙頻天線。兩支都要接，缺一支會少掉對應頻段的接收能力。</p>
+<h3 id="步驟-3-接上-flipper-zero">步驟 3 — 接上 Flipper Zero</h3>
+<ol type="1">
+<li>先將 <strong>Flipper Zero 關機</strong></li>
+<li>將模組的 GPIO 連接器對齊 Flipper Zero 上方 GPIO 排針</li>
+<li>輕壓至完全密合、穩固就位</li>
+<li><strong>開啟</strong> Flipper Zero 電源</li>
+</ol>
+<h3 id="步驟-4-設定-gpio-腳位">步驟 4 — 設定 GPIO 腳位</h3>
+<p>使用每一項功能前，先在 Flipper Zero 設定中指定正確的 GPIO 腳位。</p>
+<h4 id="gps">GPS</h4>
+<pre><code>Momentum → Protocol Settings → GPIO Pin Settings → GPS Pin</code></pre>
+<p>設為 <strong>Pin 13 或 Pin 14</strong>（依韌體版本擇一）</p>
+<p>接著：<code>Apps → GPIO → GPS</code></p>
+<h4 id="esp32-c5wifi-ble-marauder">ESP32-C5（WiFi / BLE /
+Marauder）</h4>
+<pre><code>Momentum → Protocol Settings → GPIO Pin Settings → ESP32 Pin</code></pre>
+<p>設為 <strong>Pin 15、16</strong></p>
+<p>接著：<code>Apps → GPIO → [ESP32] WiFiMarauder</code></p>
+<blockquote>
+<p>⚠️ <strong>GPS 與 ESP32 是兩組不同的 UART 腳位</strong>：GPS 用
+13／14，ESP32 用 15／16。<strong>不可設成同一組腳位</strong>，否則 GPS
+與 Wi-Fi 都會沒有反應。</p>
+</blockquote>
+<h4 id="mhz-rf">433MHz RF</h4>
+<pre><code>Flipper Zero → Sub-GHz 選單 → Advanced Settings → Module</code></pre>
+<p>改為 <strong>External</strong></p>
+<blockquote>
+<p>不做這一步，Flipper 會繼續使用內建的 CC1101，433MHz
+模組不會被啟用。</p>
+</blockquote>
+<h4 id="吋螢幕">2.8 吋螢幕</h4>
+<p>開啟機身上的螢幕開關。</p>
+<h3 id="步驟-5-充電">步驟 5 — 充電</h3>
+<p>用 USB-C
+線接到模組的<strong>充電埠（上緣前面，不是燒錄埠）</strong>。電量指示燈會顯示充電狀態。<strong>充滿約需
+2 小時。</strong></p>
+<blockquote>
+<p>⚠️ <strong>上緣 USB-C 埠用於充電；左側 USB-C
+埠僅用於燒錄韌體。</strong> 插在燒錄埠不會充電。</p>
+</blockquote>
+<hr />
+<h2 id="選單指南-wifi">06 選單指南 — WiFi</h2>
+<h3 id="sniffers被動監聽不發送任何訊號安全">🛡️
+Sniffers（被動監聽，不發送任何訊號，安全）</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>選單項目</th>
+<th>功能</th>
+<th>提示</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Probe Request Sniff</td>
+<td>顯示附近裝置廣播的偏好網路</td>
+<td>看周圍有哪些裝置</td>
+</tr>
+<tr class="even">
+<td>Beacon Sniff</td>
+<td>附近所有 Wi-Fi 訊號的即時清單</td>
+<td>像「可用網路」但更詳細</td>
+</tr>
+<tr class="odd">
+<td>Deauth Sniff</td>
+<td>偵測周遭的 Wi-Fi 斷線攻擊</td>
+<td>檢查附近是否有人在攻擊網路</td>
+</tr>
+<tr class="even">
+<td>EAPOL/PMKID Scan</td>
+<td>擷取認證握手封包</td>
+<td><strong>必須先掃描並選取目標 Wi-Fi</strong></td>
+</tr>
+<tr class="odd">
+<td>Packet Monitor</td>
+<td>三種 Wi-Fi 流量的即時圖表</td>
+<td>顯示 Beacon、Deauth、Probe</td>
+</tr>
+<tr class="even">
+<td>Scan AP</td>
+<td>掃描 Wi-Fi 網路</td>
+<td><strong>任何操作之前先做這一步</strong></td>
+</tr>
+<tr class="odd">
+<td>Raw Capture</td>
+<td>顯示附近 MAC 位置的 RSSI 訊號強度</td>
+<td>技術用途</td>
+</tr>
+<tr class="even">
+<td>Stations Sniff</td>
+<td>顯示哪些裝置連到哪個 Wi-Fi</td>
+<td>網路拓撲對照用</td>
+</tr>
+<tr class="odd">
+<td>Signal Monitor</td>
+<td>監控訊號變化（每 5 個 RSSI 單位更新）</td>
+<td><strong>必須先選取目標 Wi-Fi</strong></td>
+</tr>
+<tr class="even">
+<td>Wardrive</td>
+<td>GPS 標記的 Wi-Fi 記錄 → 存成 SD 卡上的 CSV</td>
+<td><strong>需要 GPS 定位 + SD 卡</strong></td>
+</tr>
+<tr class="odd">
+<td>Stations Wardrive</td>
+<td>GPS 標記的裝置記錄 → 存成 SD 卡</td>
+<td><strong>需要 GPS 定位 + SD 卡</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💾 <strong>所有擷取資料都以 <code>.pcap</code> 檔案存於 SD
+卡</strong>，用 <a href="https://www.wireshark.org">Wireshark</a> 開啟。
+⚠️ <strong>僅限授權使用</strong> —
+這些工具只能用在你自有或已取得書面授權的網路上。</p>
+</blockquote>
+<h3 id="attacks會實際發送訊號僅限自有網路">🔴
+Attacks（會實際發送訊號，僅限自有網路）</h3>
+<table>
+<thead>
+<tr class="header">
+<th>選單項目</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Beacon Spam List</td>
+<td>從已儲存清單廣播假的 Wi-Fi 網路名稱</td>
+</tr>
+<tr class="even">
+<td>Beacon Spam Random</td>
+<td>廣播隨機產生的假網路名稱</td>
+</tr>
+<tr class="odd">
+<td>Rick Roll Beacon</td>
+<td>廣播一個知名的網路梗作為假 SSID</td>
+</tr>
+<tr class="even">
+<td>Probe Req Flood</td>
+<td>大量發送 probe request</td>
+</tr>
+<tr class="odd">
+<td>Evil Portal</td>
+<td>建立假的 Wi-Fi 登入頁（需先設定 SD 卡）</td>
+</tr>
+<tr class="even">
+<td>Deauth Flood</td>
+<td>將裝置從選定的 Wi-Fi 斷開 — <strong>需先選取目標</strong></td>
+</tr>
+<tr class="odd">
+<td>AP Clone Spam</td>
+<td>複製已掃描清單中所有 Wi-Fi 名稱</td>
+</tr>
+<tr class="even">
+<td>Deauth Targeted</td>
+<td>針對特定裝置的斷線測試</td>
+</tr>
+</tbody>
+</table>
+<h3 id="general">⚙️ General</h3>
+<table>
+<thead>
+<tr class="header">
+<th>選單項目</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Generate SSIDs</td>
+<td>自動產生 Wi-Fi 網路名稱清單</td>
+</tr>
+<tr class="even">
+<td>Save/Load File</td>
+<td>儲存 SSID 清單或從 SD 卡載入</td>
+</tr>
+<tr class="odd">
+<td>Add SSIDs</td>
+<td>手動加入網路名稱</td>
+</tr>
+<tr class="even">
+<td>Clear SSIDs</td>
+<td>清除 SSID 清單</td>
+</tr>
+<tr class="odd">
+<td>Clear APs</td>
+<td>清除已掃描的網路清單</td>
+</tr>
+<tr class="even">
+<td>Select APs</td>
+<td>從已掃描清單中選擇 Wi-Fi 目標</td>
+</tr>
+<tr class="odd">
+<td>Select Stations</td>
+<td>從已掃描清單中選擇已連線裝置</td>
+</tr>
+<tr class="even">
+<td>Select EP HTML File</td>
+<td>選擇 Evil Portal 要使用的 HTML 檔</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="選單指南-bluetooth">07 選單指南 — Bluetooth</h2>
+<h3 id="sniffers">🔵 Sniffers</h3>
+<table>
+<thead>
+<tr class="header">
+<th>選單項目</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bluetooth Sniffer</td>
+<td>掃描附近藍牙裝置並顯示訊號強度（RSSI）</td>
+</tr>
+<tr class="even">
+<td>BT Wardrive</td>
+<td>將偵測到的所有藍牙裝置連同 GPS 記錄到 SD 卡</td>
+</tr>
+<tr class="odd">
+<td>Detect Card Skimmers</td>
+<td>尋找以藍牙控制的信用卡 skimmer 裝置</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>僅限授權測試</strong> —
+這些工具用於測試你自有裝置上的資安研究。</p>
+</blockquote>
+<h3 id="attacks">🔴 Attacks</h3>
+<table>
+<thead>
+<tr class="header">
+<th>選單項目</th>
+<th>目標</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sour Apple</td>
+<td>🍎 Apple iOS</td>
+<td>在 iPhone／iPad 上觸發推播通知轟炸</td>
+</tr>
+<tr class="even">
+<td>Swiftpair Spam</td>
+<td>💻 Windows PC</td>
+<td>在 Windows 上觸發藍牙配對視窗轟炸</td>
+</tr>
+<tr class="odd">
+<td>Samsung BLE SPAM</td>
+<td>📱 Samsung</td>
+<td>在 Samsung Galaxy 裝置上觸發推播轟炸</td>
+</tr>
+<tr class="even">
+<td>BLE Spam ALL</td>
+<td>以上全部</td>
+<td>同時執行三種轟炸</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="選單指南-device-與-settings">08 選單指南 — Device 與
+Settings</h2>
+<table>
+<thead>
+<tr class="header">
+<th>選單項目</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Update Firmware</td>
+<td>從 SD 卡更新韌體（見第 11 節）</td>
+</tr>
+<tr class="even">
+<td>Language</td>
+<td>介面語言（<strong>目前僅提供英文</strong>）</td>
+</tr>
+<tr class="odd">
+<td>Device Info</td>
+<td>顯示硬體詳情、韌體版本、MAC 位置</td>
+</tr>
+<tr class="even">
+<td>Settings</td>
+<td>切換 LED 燈 · 開啟／關閉 PCAP 儲存</td>
+</tr>
+<tr class="odd">
+<td>GPS Data</td>
+<td>GPS 即時顯示：緯度、經度、海拔、UTC 時間</td>
+</tr>
+<tr class="even">
+<td>NMEA Stream</td>
+<td>原始 GPS 語句輸出（技術用途）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🕐 <strong>時區說明</strong>：GPS 時間固定以 <strong>UTC+0</strong>
+回報。台灣為 UTC+8，請自行<strong>加上 8 小時</strong>。 ⚠️
+韌體選單<strong>沒有時區設定選項</strong>，出廠即固定 UTC+0。</p>
+</blockquote>
+<hr />
+<h2 id="常用工作流程">09 常用工作流程</h2>
+<h3 id="流程-a-掃描與監控-wi-fi新手">🔍 流程 A — 掃描與監控
+Wi-Fi（新手）</h3>
+<ol type="1">
+<li>進入 <code>WiFi → Sniffers → Scan AP</code></li>
+<li>等 5–10 秒讓網路出現</li>
+<li>按返回停止掃描</li>
+<li>進入 <code>WiFi → Sniffers → Beacon Sniff</code> 看即時流量</li>
+</ol>
+<p>✅
+<strong>此流程為被動模式，不發送任何訊號</strong>，可安全學習與監控。</p>
+<h3 id="流程-b-deauth-flood-測試中階">⚡ 流程 B — Deauth Flood
+測試（中階）</h3>
+<blockquote>
+<p>⚠️ <strong>僅限自有網路！</strong>
+只對你自有或已取得授權的網路使用。</p>
+</blockquote>
+<ol type="1">
+<li><code>WiFi → Sniffers → Scan AP</code> — 等你的網路出現</li>
+<li><code>WiFi → General → Select APs</code> — 選取目標網路</li>
+<li><code>WiFi → Attacks → Deauth Flood</code> — 自動開始</li>
+</ol>
+<blockquote>
+<p>ℹ️ 5GHz 請先確認韌體版本，見第 10 節。</p>
+</blockquote>
+<h3 id="流程-c-evil-portal-設定進階">🎣 流程 C — Evil Portal
+設定（進階）</h3>
+<blockquote>
+<p>⚠️ <strong>僅限已授權的滲透測試。</strong> 官方教學：<a href="https://github.com/justcallmekoko/ESP32Marauder/wiki/evil-portal-workflow">Evil
+Portal Workflow</a></p>
+</blockquote>
+<ol type="1">
+<li>建立 <code>index.html</code>（你的假登入頁）並存到 SD 卡根目錄</li>
+<li>在 SD 卡根目錄建立 <code>ap.config.txt</code></li>
+<li><code>WiFi → Sniffers → Scan AP</code>，然後
+<code>General → Select APs</code></li>
+<li><code>WiFi → General → Select EP HTML File</code> → 選取
+<code>index.html</code></li>
+<li><code>WiFi → Attacks → Evil Portal</code> → 啟動</li>
+</ol>
+<h3 id="流程-d-gps-wardrive網路記錄中階">🗺️ 流程 D — GPS
+Wardrive（網路記錄）（中階）</h3>
+<blockquote>
+<p>📋 <strong>需求</strong>：已取得 GPS 定位 + 已插入 microSD</p>
+</blockquote>
+<ol type="1">
+<li>將裝置帶到<strong>戶外</strong>（GPS 需要開闊天空視野）</li>
+<li>將 GPS 天線朝向開闊天空方向放置</li>
+<li>等候 GPS 定位 — <strong>冷啟動需數分鐘</strong></li>
+<li>確認定位：<code>Device → GPS Data</code>（應顯示有效座標）</li>
+<li><code>WiFi → Sniffers → Wardrive</code> — 自動以 GPS
+座標記錄網路</li>
+<li>資料存成 SD 卡上的 <code>wardrive_*.csv</code></li>
+</ol>
+<h3 id="流程-e-eapolpmkid-握手擷取進階">🔓 流程 E — EAPOL／PMKID
+握手擷取（進階）</h3>
+<blockquote>
+<p>⚠️ <strong>僅限授權測試。</strong> 只在你自有網路上擷取握手包。</p>
+</blockquote>
+<ol type="1">
+<li><code>WiFi → Sniffers → Scan AP</code></li>
+<li><code>WiFi → General → Select APs</code> → 選取目標</li>
+<li><code>WiFi → Sniffers → EAPOL/PMKID Scan</code></li>
+<li>依需要選擇頻道 <strong>CH1–CH13</strong></li>
+<li>等待 — 握手封包以 <code>.pcap</code> 存於 SD 卡</li>
+</ol>
+<hr />
+<h2 id="已知限制與疑難排解">10 已知限制與疑難排解</h2>
+<h3 id="已知限制請先讀過再說明期望值">⚠️
+已知限制（請先讀過再說明期望值）</h3>
+<h4 id="ghz-deauth-效果可能因韌體版本而異">1. 5GHz Deauth
+效果可能因韌體版本而異</h4>
+<p>ESP32-C5 的 5GHz deauth
+在開源韌體上的支援仍在持續改進中。<strong>建議用法</strong>：5GHz
+以<strong>掃描、訊號監測、wardrive 記錄</strong>為主；deauth 測試建議在
+2.4GHz 進行，使用前可至 <a href="https://github.com/justcallmekoko/ESP32Marauder">ESP32 Marauder
+GitHub</a> 查詢目前版本狀態。</p>
+<h4 id="gps-天線具方向性">2. GPS 天線具方向性</h4>
+<p>雖然商品標示全向，實際建議朝向開闊天空方向放置以利定位。</p>
+<h4 id="gps-冷啟動需數分鐘">3. GPS 冷啟動需數分鐘</h4>
+<p>首次開機需下載衛星星曆資料，熱啟動會快很多。</p>
+<h4 id="gps-時間固定-utc0">4. GPS 時間固定 UTC+0</h4>
+<p>韌體選單無時區設定。台灣時間請自行 +8 小時。</p>
+<h4 id="microsd-僅支援-fat3232gb-以內">5. microSD 僅支援 FAT32、32GB
+以內</h4>
+<p>不支援 exFAT、NTFS。</p>
+<h4 id="藍牙僅支援-ble-5.0">6. 藍牙僅支援 BLE 5.0</h4>
+<p>ESP32-C5 <strong>沒有 Bluetooth
+Classic（BR/EDR）</strong>。無法配對傳統藍牙裝置。</p>
+<h4 id="兩個-usb-c-埠功能不同">7. 兩個 USB-C 埠功能不同</h4>
+<p>上緣前面 = 充電；前左側 = 僅燒錄，不充電。</p>
+<h4 id="兩個-wi-fi-天線埠都要接">8. 兩個 Wi-Fi 天線埠都要接</h4>
+<p><code>2.4G</code> 與 <code>2.4G/5G</code>
+各接一支天線。缺一支會少掉對應頻段接收能力。</p>
+<h3 id="gps-一直無法定位">❓ GPS 一直無法定位</h3>
+<ul>
+<li>確認 GPS 天線朝向開闊天空方向</li>
+<li>走到<strong>戶外</strong> — 室內無法可靠定位</li>
+<li>冷啟動需要時間：裝置需下載衛星星曆資料（首次約數分鐘）</li>
+<li>確認 <code>GPS</code> 埠接的是 GPS 天線（不是 433MHz 或 Wi-Fi
+天線）</li>
+</ul>
+<h3 id="模組在-flipper-zero-上沒反應">❓ 模組在 Flipper Zero
+上沒反應</h3>
+<ul>
+<li>確認 GPIO 連接器<strong>完全密合</strong> — 輕壓至 flush</li>
+<li>重開 Flipper Zero 電源</li>
+<li>確認模組電池有電或已接 USB-C 供電</li>
+<li>確認 Momentum 韌體中的 GPIO 腳位設定（見步驟 4）</li>
+</ul>
+<h3 id="sd-卡無法辨識">❓ SD 卡無法辨識</h3>
+<ul>
+<li>確認格式：<strong>必須是 FAT32</strong>（不是 exFAT 或 NTFS）</li>
+<li>確認容量：<strong>必須 32GB 以內</strong></li>
+<li>嘗試從電腦重新格式化</li>
+<li>確認卡已完全插入記憶卡槽</li>
+</ul>
+<h3 id="沒有產生-pcap-檔">❓ 沒有產生 PCAP 檔</h3>
+<ul>
+<li>進入 <code>Device → Settings</code>，確認 <strong>PCAP saving
+已開啟</strong></li>
+<li>檢查 SD 卡是否已正確插入並被辨識</li>
+<li>換一張 SD 卡試試</li>
+</ul>
+<h3 id="wardrive-沒有記錄到任何網路">❓ Wardrive 沒有記錄到任何網路</h3>
+<ul>
+<li>GPS 必須已啟用並取得有效定位</li>
+<li>透過 <code>Device → GPS Data</code> 確認 GPS
+正常（應顯示有效座標，不是 0.000）</li>
+<li>確認 SD 卡已插入</li>
+</ul>
+<h3 id="應該使用哪個韌體版本">❓ 應該使用哪個韌體版本？</h3>
+<p>本板出廠已預燒 <strong>ESP32 Marauder
+5G</strong>，一般情況下不需要更新。若需更新，請先向原廠或經銷商索取<strong>本板專用</strong>的韌體檔案與版本號後再進行——開源釋出頁的通用版本不保證完全相容本板的螢幕、SD
+卡、GPS 與腳位配置。</p>
+<blockquote>
+<p>⚠️ <strong>不要使用 ESP8266 專用的刷機工具</strong>嘗試刷
+ESP32-C5，請先確認工具支援 ESP32-C5 晶片。</p>
+</blockquote>
+<h3 id="如何分辨哪個埠是-gps哪個是-wi-fi">❓ 如何分辨哪個埠是
+GPS、哪個是 Wi-Fi？</h3>
+<p><strong>看機殼上的絲印即可</strong>，四個埠都有標示：</p>
+<p><code>433M A</code> ｜ <code>GPS</code> ｜ <code>2.4G</code> ｜
+<code>2.4G/5G</code></p>
+<hr />
+<h2 id="韌體更新">11 韌體更新</h2>
+<p>本板出廠<strong>已預燒 Marauder
+5G</strong>，正常情況下不需要重新燒錄。</p>
+<p>若確實需要更新，請先向原廠或經銷商索取<strong>本板專用</strong>的韌體檔案後再進行，避免使用未經確認相容的通用版本，以免造成裝置無法開機。</p>
+<h3 id="方式-a-透過-sd-卡更新建議最簡單">方式 A — 透過 SD
+卡更新（建議，最簡單）</h3>
+<ol type="1">
+<li><strong>取得本板專用韌體檔</strong>（向原廠或經銷商索取
+<code>.bin</code> 檔）</li>
+<li><strong>複製到 SD 卡</strong> 把 <code>.bin</code> 檔複製到
+<strong>FAT32 microSD 的根目錄</strong>。</li>
+<li><strong>執行更新</strong>
+<ol type="1">
+<li>將 SD 卡插入模組</li>
+<li>進入 <code>Device → Update Firmware</code></li>
+<li>從清單中選取韌體檔案</li>
+<li>等待完成 — <strong>過程中不要斷電</strong></li>
+<li>裝置會自動重新啟動</li>
+</ol></li>
+</ol>
+<blockquote>
+<p>🚫 <strong>更新過程中請勿中斷電源。</strong>
+燒錄時斷電可能導致裝置無法開機。</p>
+</blockquote>
+<h3 id="方式-b-usb-c-燒錄模式進階">方式 B — USB-C 燒錄模式（進階）</h3>
+<ol type="1">
+<li><strong>按住機身背面按鍵</strong></li>
+<li><strong>保持按住</strong>的同時插入 USB-C 線（前左側燒錄埠）</li>
+<li>板子進入 bootloader 模式</li>
+<li>使用確認支援 <strong>ESP32-C5</strong> 的燒錄工具燒入韌體</li>
+<li>拔線、重開 Flipper Zero</li>
+</ol>
+<blockquote>
+<p>⚠️ 燒錄前請確認所用工具支援 ESP32-C5
+晶片；不確定時請以原廠／經銷商提供的說明為準。</p>
+</blockquote>
+<hr />
+<h2 id="資源與連結">12 資源與連結</h2>
+<h3 id="官方韌體與文件">官方韌體與文件</h3>
+<ul>
+<li>🐙 <a href="https://github.com/justcallmekoko/ESP32Marauder">ESP32
+Marauder GitHub</a></li>
+<li>📖 <a href="https://github.com/justcallmekoko/ESP32Marauder/wiki">官方
+Wiki</a></li>
+<li>⬇️ <a href="https://github.com/justcallmekoko/ESP32Marauder/releases">韌體
+Releases</a></li>
+<li>🎣 <a href="https://github.com/justcallmekoko/ESP32Marauder/wiki/evil-portal-workflow">Evil
+Portal 工作流程</a></li>
+<li>🔍 <a href="https://github.com/justcallmekoko/ESP32Marauder/wiki/EAPOL-PMKID-Scan">EAPOL／PMKID
+掃描說明</a></li>
+</ul>
+<h3 id="周邊工具">周邊工具</h3>
+<ul>
+<li>🐬 <a href="https://flipperzero.one">Flipper Zero 官方</a></li>
+<li>🦈 <a href="https://www.wireshark.org">Wireshark（PCAP
+分析）</a></li>
+<li>🐬 <a href="https://github.com/flipperdevices/flipperzero-firmware">Flipper
+Zero 韌體</a></li>
+</ul>
+<h3 id="產品頁">產品頁</h3>
+<ul>
+<li><a href="https://yupitek.com/zh-tw/products/sdrlab/flipper-5g/">Yupitek
+產品頁</a></li>
+<li><a href="https://doczhtw.yupitek.com/sdrlab/expansion/5g-board/">Wiki
+完整指南</a></li>
+</ul>
+</body>
+</html>

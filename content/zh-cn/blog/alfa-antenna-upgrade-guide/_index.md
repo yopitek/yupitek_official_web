@@ -64,8 +64,8 @@ ALFA 网卡配备 RP-SMA 接头可直接更换天线，APA-M25 定向板状天�
 
 **支持 RP-SMA 外置天线接口的 ALFA 网卡：**
 - AWUS036ACH（2× RP-SMA）
-- AWUS036ACM（1× RP-SMA）
-- AWUS036AXML（1× RP-SMA）
+- AWUS036ACM（2× RP-SMA）
+- AWUS036AXML（2× RP-SMA）
 - 以及其他带外置天线接口的 ALFA 型号
 
 本文介绍的五款天线配件均采用 **RP-SMA 接口**，与上述网卡直接兼容。安装过程完全免工具——拧下原装天线，旋上新天线即可，手拧至适度紧固为止。
@@ -281,8 +281,8 @@ ALFA 天线升级无需任何工具，无需任何软件操作：
 | 网卡型号 | 推荐天线 | 推荐理由 |
 |---|---|---|
 | AWUS036ACH（2× RP-SMA） | 2× APA-M25 或 1× APA-M25 + 1× ARS NT5B7 | 最大化双天线分集增益 |
-| AWUS036ACM（1× RP-SMA） | APA-M25 或 ARS NT5B7 | 通用升级首选 |
-| AWUS036AXML（1× RP-SMA） | APA-M25-6E | 覆盖 6 GHz 频段的必要选择 |
+| AWUS036ACM（2× RP-SMA） | APA-M25 或 ARS NT5B7 | 通用升级首选 |
+| AWUS036AXML（2× RP-SMA） | APA-M25-6E | 覆盖 6 GHz 频段的必要选择 |
 | 任意网卡，户外使用 | ARS 25-57A 或 ARS NT5B7 | 防水或灵活户外部署 |
 | 专注 2.4 GHz 工作 | APA-M04 | 单频段增益最优化 |
 

@@ -74,10 +74,10 @@ The Wi-Fi 5 generation (ACH, ACM, ACS) is cheaper, has more stable drivers, and 
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅✅ Best | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | Red team ops |
 | [AWUS036ACM](/en/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | Linux plug & play |
 | [AWUS036EACS](/en/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ❌ | rtl88xxcu (OOK) | ✅ | ⚠️ | Integrated 2dBi | Windows home WiFi + BT |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1200 | ⚠️ Limited | OOK (<6.14) | ✅ | ❌ | Integrated | Windows WiFi 6 |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1200 | ⚠️ Limited | OOK (<6.14) | ✅ | ❌ | 2× RP-SMA | Windows WiFi 6 |
 | [AWUS036AXER](/en/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ⚠️ Limited | OOK (<6.14) | ✅ | ❌ | Integrated nano | Compact travel adapter |
 | [AWUS036AXM](/en/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6E + dual antenna |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | WiFi 6E + Linux + USB-C |
+| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | WiFi 6E + Linux + USB-C |
 
 </div>
 
@@ -152,7 +152,7 @@ Both Wi-Fi 6 ALFA adapters use the Realtek RTL8832BU chipset. On Linux, the RTL8
 
 ### AWUS036AX — Wi-Fi 6 Windows Adapter
 
-The [AWUS036AX](/en/products/alfa/awus036ax/) is ALFA's Wi-Fi 6 adapter with an integrated antenna (no external RP-SMA connector). It delivers AX1200 speeds on 2.4 and 5 GHz bands and is well-suited for Windows 10/11 connectivity.
+The [AWUS036AX](/en/products/alfa/awus036ax/) is ALFA's Wi-Fi 6 adapter with two detachable RP-SMA antennas. It delivers AX1200 speeds on 2.4 and 5 GHz bands and is well-suited for Windows 10/11 connectivity.
 
 **Driver status:**
 - Windows: Full support via ALFA-supplied driver

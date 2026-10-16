@@ -13,7 +13,7 @@ faq:
   - question: "AWUS036ACH 和 AWUS036ACM 驱动安装有什么差异？"
     answer: "AWUS036ACH 采 RTL8812AU 芯片，需通过 DKMS 编译安装 aircrack-ng 社群驱动，内核更新后可能需重新编译；AWUS036ACM 的 MT7612U 驱动自核心 4.19 起整合进主线，即插即用无需编译。"
   - question: "哪款更适合 Monitor Mode 监听？"
-    answer: "AWUS036ACH 监听模式更稳定，双天线与 30 dBm 高功率在密集 AP 环境下数据包遗失率更低；ACM 亦支持监听但单天线功率较低，适合近距离捕获。"
+    answer: "AWUS036ACH 监听模式更稳定，双天线与 30 dBm 高功率在密集 AP 环境下数据包遗失率更低；ACM 亦支持监听但发射功率较低，适合近距离捕获。"
   - question: "新手应该选 ACH 还是 ACM？"
     answer: "新手建议选 AWUS036ACM，MT7612U 核心原生驱动即插即用免编译；若需最强信号与最多教学资源且不怕 DKMS 编译流程，再选 AWUS036ACH。"
   - question: "VM 虚拟机环境推荐哪款？"

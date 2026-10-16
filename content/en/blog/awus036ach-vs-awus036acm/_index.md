@@ -8,7 +8,7 @@ faq:
   - question: "What is the driver installation difference between AWUS036ACH and AWUS036ACM?"
     answer: "AWUS036ACH uses RTL8812AU and needs DKMS compilation of the aircrack-ng community driver, with possible recompilation after kernel updates. AWUS036ACM uses MT7612U, whose driver has been in the mainline kernel since 4.19, making it plug-and-play with no compilation."
   - question: "Which is better for Monitor Mode?"
-    answer: "AWUS036ACH is more stable for monitor mode. Its dual antennas and 30 dBm high power result in lower packet loss in dense AP environments. ACM also supports monitoring but with lower single-antenna power, suited for close-range capture."
+    answer: "AWUS036ACH is more stable for monitor mode. Its dual antennas and 30 dBm high power result in lower packet loss in dense AP environments. ACM also supports monitoring but with lower transmit power, suited for close-range capture."
   - question: "Should a beginner choose ACH or ACM?"
     answer: "Beginners should choose AWUS036ACM. The MT7612U kernel-native driver is plug-and-play with no compilation. If you need the strongest signal and most tutorials and are comfortable with DKMS, choose AWUS036ACH."
   - question: "Which is recommended for VM environments?"

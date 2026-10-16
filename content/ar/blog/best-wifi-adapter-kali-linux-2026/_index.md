@@ -89,9 +89,9 @@ faq:
 | المحول | المعيار | الشريحة المعالجة | وضع المراقبة | الهوائيات | الأنسب لـ |
 |---|---|---|---|---|---|
 | [AWUS036ACH](/ar/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | 2× RP-SMA | الأفضل شاملاً |
-| [AWUS036AXML](/ar/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 1× RP-SMA | الأنسب للمستقبل |
+| [AWUS036AXML](/ar/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 2× RP-SMA | الأنسب للمستقبل |
 | [AWUS036ACM](/ar/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | الاقتصادي المدمج |
-| [AWUS036AX](/ar/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limited | Integrated | Wi-Fi 6 Windows |
+| [AWUS036AX](/ar/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limited | 2× RP-SMA | Wi-Fi 6 Windows |
 
 ---
 
@@ -160,7 +160,7 @@ sudo modprobe mt76x2u
 
 **حجم مدمج**
 
-بهوائي RP-SMA واحد وهيكل أكثر إحكاماً، يسهل حمل AWUS036ACM في حقيبة أو إخفاؤه أثناء التقييمات الميدانية. إنه اختيار شائع بين فرق الفريق الأحمر الذين يحتاجون البقاء منخفضي الملف الشخصي.
+بهوائيي RP-SMA وهيكل أكثر إحكاماً، يسهل حمل AWUS036ACM في حقيبة أو إخفاؤه أثناء التقييمات الميدانية. إنه اختيار شائع بين فرق الفريق الأحمر الذين يحتاجون البقاء منخفضي الملف الشخصي.
 
 **القيود**
 

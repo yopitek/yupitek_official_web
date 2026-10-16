@@ -67,8 +67,8 @@ Before selecting an antenna, you need to confirm connector compatibility. ALFA N
 
 **ALFA adapters with RP-SMA connectors (external antenna capable):**
 - AWUS036ACH (2× RP-SMA)
-- AWUS036ACM (1× RP-SMA)
-- AWUS036AXML (1× RP-SMA)
+- AWUS036ACM (2× RP-SMA)
+- AWUS036AXML (2× RP-SMA)
 - And other ALFA models with external antenna ports
 
 All five antenna accessories covered in this guide use **RP-SMA connectors** and are directly compatible with these adapters. Installation requires no tools — simply unscrew the existing antenna and screw on the new one hand-tight.
@@ -281,8 +281,8 @@ Antenna gain improvements translate directly to measurable signal quality. Here'
 | Adapter | Recommended Antenna | Reason |
 |---|---|---|
 | AWUS036ACH (2× RP-SMA) | 2× APA-M25 or 1× APA-M25 + 1× ARS NT5B7 | Maximize dual-antenna diversity |
-| AWUS036ACM (1× RP-SMA) | APA-M25 or ARS NT5B7 | General upgrade |
-| AWUS036AXML (1× RP-SMA) | APA-M25-6E | Required for 6 GHz coverage |
+| AWUS036ACM (2× RP-SMA) | APA-M25 or ARS NT5B7 | General upgrade |
+| AWUS036AXML (2× RP-SMA) | APA-M25-6E | Required for 6 GHz coverage |
 | Any adapter, outdoor | ARS 25-57A or ARS NT5B7 | Weatherproof or flexible outdoor |
 | 2.4 GHz-focused work | APA-M04 | Optimized single-band gain |
 

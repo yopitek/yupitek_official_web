@@ -45,7 +45,7 @@ APA-M25 é a antena painel interior dual band de alto ganho da ALFA Network, com
 <thead><tr><th>Modelo</th><th>Banda</th><th>Padrão Wi-Fi</th><th>Conectores</th><th>Compatibilidade</th></tr></thead>
 <tbody>
 <tr><td><a href="/pt/products/alfa/awus036ach/">AWUS036ACH</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>2× RP-SMA</td><td>✅ Compatível dual band</td></tr>
-<tr><td><a href="/pt/products/alfa/awus036acm/">AWUS036ACM</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ Compatível dual band</td></tr>
+<tr><td><a href="/pt/products/alfa/awus036acm/">AWUS036ACM</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>2× RP-SMA</td><td>✅ Compatível dual band</td></tr>
 <tr><td><a href="/pt/products/alfa/awus036acs/">AWUS036ACS</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ Compatível dual band</td></tr>
 <tr><td><a href="/pt/products/alfa/awus036eacs/">AWUS036EACS</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ Compatível dual band</td></tr>
 <tr><td><a href="/pt/products/alfa/awus036ax/">AWUS036AX</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 6</td><td>2× RP-SMA</td><td>✅ Compatível dual band</td></tr>

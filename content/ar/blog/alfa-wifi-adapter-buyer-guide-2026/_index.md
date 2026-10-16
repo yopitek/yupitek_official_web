@@ -70,10 +70,10 @@ AWUS036ACH هو الخيار الأول لفرق Red Team في 2026: 500 mW به
 | [AWUS036ACH](/ar/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | عمليات Red Team |
 | [AWUS036ACM](/ar/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | ثنائي النطاق بميزانية محدودة |
 | [AWUS036EACS](/ar/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | الاستخدام العام (بدون حقن) |
-| [AWUS036AX](/ar/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated | تدقيق Wi-Fi 6 |
+| [AWUS036AX](/ar/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | 2× RP-SMA | تدقيق Wi-Fi 6 |
 | [AWUS036AXER](/ar/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | Wi-Fi 6 بنطاق ممتد |
 | [AWUS036AXM](/ar/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | مدخل Wi-Fi 6E |
-| [AWUS036AXML](/ar/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | الرائد في Wi-Fi 6E |
+| [AWUS036AXML](/ar/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | الرائد في Wi-Fi 6E |
 
 </div>
 
@@ -146,7 +146,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 ### AWUS036AX — الخيار النظيف لـ Wi-Fi 6
 
-[AWUS036AX](/ar/products/alfa/awus036ax/) هو محول Wi-Fi 6 بشريحة RTL8832BU (Realtek): هوائي مدمج (بدون موصل RP-SMA)، وAX1800 (يصل نظرياً إلى 1800 Mbps) على نطاقي 2.4 و 5 GHz.
+[AWUS036AX](/ar/products/alfa/awus036ax/) هو محول Wi-Fi 6 بشريحة RTL8832BU (Realtek): هوائيان قابلان للفصل عبر موصلي RP-SMA، وAX1800 (يصل نظرياً إلى 1800 Mbps) على نطاقي 2.4 و 5 GHz.
 
 **حالة برنامج التشغيل:**
 - برنامج التشغيل: OOK تحت Linux دون الإصدار 6.14؛ على 6.14 وما بعده تحسّن دعم RTL8832BU
@@ -162,7 +162,7 @@ sudo apt update && sudo apt install -y dkms-rtl8812au
 
 ### AWUS036AXER — نسخة النطاق الممتد
 
-[AWUS036AXER](/ar/products/alfa/awus036axer/) مطابق للـ AWUS036AX تقنياً في الشريحة وتهيئة الهوائيات، لكنه يضيف تضخيم RF معزز لنطاق تشغيل أوسع. وضع برنامج التشغيل متطابق — نفس RTL8832BU، ونفس برنامج التشغيل OOK تحت Linux دون الإصدار 6.14، ونفس القيود على وضع المراقبة وحقن الحزم.
+[AWUS036AXER](/ar/products/alfa/awus036axer/) يشترك مع AWUS036AX في الشريحة، لكنه يعتمد هوائياً مدمجاً صغيراً (بينما يحتوي AX على هوائيين قابلين للفصل)، ويضيف تضخيم RF معزز لنطاق تشغيل أوسع. وضع برنامج التشغيل متطابق — نفس RTL8832BU، ونفس برنامج التشغيل OOK تحت Linux دون الإصدار 6.14، ونفس القيود على وضع المراقبة وحقن الحزم.
 
 اختر AXER بدلاً من AX حين يكون نطاق التشغيل هو المحدد الفاصل: مسح المواقع للحرم الجامعية الكبيرة، أو التقييمات الخارجية، أو السيناريوهات التي تبعد فيها نقطة الوصول مسافةً كبيرة. رسوم الترقية معتدلة ومبررة إن كان المدى أولويةً في نشرك.
 

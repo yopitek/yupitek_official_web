@@ -99,9 +99,9 @@ External, detachable antennas (RP-SMA connectors) give you flexibility. You can 
 | Adapter | Standard | Chipset | Monitor Mode | Antennas | Best For |
 |---|---|---|---|---|---|
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅✅ Best | 2× RP-SMA | Best all-around |
-| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 1× RP-SMA | Future-proof 6E |
+| [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 2× RP-SMA | Future-proof 6E |
 | [AWUS036ACM](/en/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | Linux plug & play |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limited | Integrated | Windows WiFi 6 |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limited | 2× RP-SMA | Windows WiFi 6 |
 
 ---
 

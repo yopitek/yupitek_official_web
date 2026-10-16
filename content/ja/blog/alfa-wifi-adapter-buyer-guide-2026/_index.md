@@ -70,10 +70,10 @@ Wi-Fi 5 世代（ACH、ACM、ACS）は安価で、より安定したドライバ
 | [AWUS036ACH](/ja/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | レッドチーム運用 |
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | 低価格デュアルバンド |
 | [AWUS036EACS](/ja/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | 一般用途（injection 不可） |
-| [AWUS036AX](/ja/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated | Wi-Fi 6 監査 |
+| [AWUS036AX](/ja/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6 監査 |
 | [AWUS036AXER](/ja/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | 長距離 Wi-Fi 6 |
 | [AWUS036AXM](/ja/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6E エントリー |
-| [AWUS036AXML](/ja/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | フラッグシップ 6E |
+| [AWUS036AXML](/ja/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | フラッグシップ 6E |
 
 </div>
 
@@ -146,7 +146,7 @@ Wi-Fi 6（802.11ax）は、高密度環境でのパフォーマンス、ター�
 
 ### AWUS036AX — クリーンな Wi-Fi 6 の選択肢
 
-[AWUS036AX](/ja/products/alfa/awus036ax/) は RTL8832BU チップセットを搭載した Wi-Fi 6 アダプターです：統合アンテナ（外部 RP-SMA コネクターなし）、2.4 GHz および 5 GHz バンドで AX1800（理論上最大 1800 Mbps）。
+[AWUS036AX](/ja/products/alfa/awus036ax/) は RTL8832BU チップセットを搭載した Wi-Fi 6 アダプターです：着脱式 RP-SMA アンテナ 2 本、2.4 GHz および 5 GHz バンドで AX1800（理論上最大 1800 Mbps）。
 
 **ドライバーの状態：**
 - Windows：完全サポート（ALFA 提供ドライバー）

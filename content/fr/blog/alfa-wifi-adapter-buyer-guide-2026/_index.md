@@ -70,10 +70,10 @@ La génération Wi-Fi 5 (ACH, ACM, ACS) est moins chère, dispose de pilotes plu
 | [AWUS036ACH](/fr/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅✅ Top | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | Opérations Red Team |
 | [AWUS036ACM](/fr/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | Plug & play Linux |
 | [AWUS036EACS](/fr/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ❌ | rtl88xxcu (OOK) | ✅ | ⚠️ | 2dBi intégrée | WiFi maison Windows + BT |
-| [AWUS036AX](/fr/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1200 | ⚠️ Limité | OOK (<6.14) | ✅ | ❌ | Intégrée | WiFi 6 Windows |
+| [AWUS036AX](/fr/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1200 | ⚠️ Limité | OOK (<6.14) | ✅ | ❌ | 2× RP-SMA | WiFi 6 Windows |
 | [AWUS036AXER](/fr/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ⚠️ Limité | OOK (<6.14) | ✅ | ❌ | Nano intégrée | Adaptateur voyage compact |
 | [AWUS036AXM](/fr/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6E + double antenne |
-| [AWUS036AXML](/fr/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | WiFi 6E + Linux + USB-C |
+| [AWUS036AXML](/fr/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | WiFi 6E + Linux + USB-C |
 
 </div>
 
@@ -148,7 +148,7 @@ Ces deux adaptateurs utilisent le chipset Realtek RTL8832BU. Sous Linux, le pilo
 
 ### AWUS036AX — Adaptateur Wi-Fi 6 Windows
 
-L' [AWUS036AX](/fr/products/alfa/awus036ax/) est l'adaptateur Wi-Fi 6 d'ALFA avec une antenne intégrée (pas de connecteur RP-SMA externe). Il offre des vitesses AX1200 sur les bandes 2,4 et 5 GHz et est bien adapté à la connectivité Windows 10/11.
+L' [AWUS036AX](/fr/products/alfa/awus036ax/) est l'adaptateur Wi-Fi 6 d'ALFA avec deux antennes amovibles sur connecteurs RP-SMA. Il offre des vitesses AX1200 sur les bandes 2,4 et 5 GHz et est bien adapté à la connectivité Windows 10/11.
 
 **État des pilotes :**
 - Windows : Support complet via le pilote fourni par ALFA

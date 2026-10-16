@@ -94,9 +94,9 @@ faq:
 | 网卡 | 标准 | 芯片组 | 监听模式 | 天线 | 最适合场景 |
 |---|---|---|---|---|---|
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | 2× RP-SMA | 全能首选 |
-| [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 1× RP-SMA | 前瞻之选 |
+| [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 2× RP-SMA | 前瞻之选 |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | 经济便携 |
-| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limited | Integrated | Windows Wi-Fi 6 |
+| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limited | 2× RP-SMA | Windows Wi-Fi 6 |
 
 ---
 
@@ -165,7 +165,7 @@ AWUS036ACM 在 2.4 GHz 提供最高 200 Mbps，5 GHz 提供最高 433 Mbps。对
 
 **紧凑外形**
 
-单 RP-SMA 天线加上更小巧的机身，让 AWUS036ACM 更便于携带，在实地评估中也更低调。它是红队成员在需要保持低调时的常用备选网卡。
+双 RP-SMA 天线加上更小巧的机身，让 AWUS036ACM 更便于携带，在实地评估中也更低调。它是红队成员在需要保持低调时的常用备选网卡。
 
 **局限性**
 

@@ -47,7 +47,7 @@ The APA-M04 is a 2.4 GHz indoor panel directional antenna from ALFA Network, del
 <tbody>
 <tr><td><a href="/en/products/alfa/awus036acs/">AWUS036ACS</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ 2.4 GHz</td></tr>
 <tr><td><a href="/en/products/alfa/awus036ach/">AWUS036ACH</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>2× RP-SMA</td><td>✅ 2.4 GHz</td></tr>
-<tr><td><a href="/en/products/alfa/awus036acm/">AWUS036ACM</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ 2.4 GHz</td></tr>
+<tr><td><a href="/en/products/alfa/awus036acm/">AWUS036ACM</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>2× RP-SMA</td><td>✅ 2.4 GHz</td></tr>
 <tr><td><a href="/en/products/alfa/awus036eacs/">AWUS036EACS</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ 2.4 GHz</td></tr>
 <tr><td><a href="/en/products/alfa/awus036ax/">AWUS036AX</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 6</td><td>2× RP-SMA</td><td>✅ 2.4 GHz</td></tr>
 <tr><td><a href="/en/products/alfa/awus036axer/">AWUS036AXER</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 6</td><td>2× RP-SMA</td><td>✅ 2.4 GHz</td></tr>

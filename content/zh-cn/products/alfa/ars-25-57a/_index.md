@@ -45,7 +45,7 @@ ARS-25-57A 是 ALFA Network 的双频桨型（Paddle）全向天线，同时支�
 <thead><tr><th>型号</th><th>频段</th><th>Wi-Fi 标准</th><th>接头数量</th><th>兼容性</th></tr></thead>
 <tbody>
 <tr><td><a href="/zh-cn/products/alfa/awus036ach/">AWUS036ACH</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>2× RP-SMA</td><td>✅ 双频全支持</td></tr>
-<tr><td><a href="/zh-cn/products/alfa/awus036acm/">AWUS036ACM</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ 双频全支持</td></tr>
+<tr><td><a href="/zh-cn/products/alfa/awus036acm/">AWUS036ACM</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>2× RP-SMA</td><td>✅ 双频全支持</td></tr>
 <tr><td><a href="/zh-cn/products/alfa/awus036acs/">AWUS036ACS</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ 双频全支持</td></tr>
 <tr><td><a href="/zh-cn/products/alfa/awus036eacs/">AWUS036EACS</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ 双频全支持</td></tr>
 <tr><td><a href="/zh-cn/products/alfa/awus036ax/">AWUS036AX</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 6</td><td>2× RP-SMA</td><td>✅ 双频全支持</td></tr>

@@ -63,8 +63,8 @@ Antes de selecionar uma antena, você precisa confirmar a compatibilidade do con
 
 **Adaptadores ALFA com conectores RP-SMA (capazes de antena externa):**
 - AWUS036ACH (2× RP-SMA)
-- AWUS036ACM (1× RP-SMA)
-- AWUS036AXML (1× RP-SMA)
+- AWUS036ACM (2× RP-SMA)
+- AWUS036AXML (2× RP-SMA)
 - E outros modelos ALFA com portas de antena externa
 
 Todos os cinco acessórios de antena cobertos neste guia usam **conectores RP-SMA** e são diretamente compatíveis com esses adaptadores. A instalação não requer ferramentas — basta desaparafusar a antena existente e parafusar a nova à mão.
@@ -279,8 +279,8 @@ As melhorias de ganho da antena se traduzem diretamente em qualidade de sinal me
 | Adaptador | Antena Recomendada | Motivo |
 |---|---|---|
 | AWUS036ACH (2× RP-SMA) | 2× APA-M25 ou 1× APA-M25 + 1× ARS NT5B7 | Maximizar diversidade de antena dupla |
-| AWUS036ACM (1× RP-SMA) | APA-M25 ou ARS NT5B7 | Upgrade geral |
-| AWUS036AXML (1× RP-SMA) | APA-M25-6E | Necessário para cobertura de 6 GHz |
+| AWUS036ACM (2× RP-SMA) | APA-M25 ou ARS NT5B7 | Upgrade geral |
+| AWUS036AXML (2× RP-SMA) | APA-M25-6E | Necessário para cobertura de 6 GHz |
 | Qualquer adaptador, outdoor | ARS 25-57A ou ARS NT5B7 | Resistente a intempéries ou outdoor flexível |
 | Trabalho focado em 2,4 GHz | APA-M04 | Ganho otimizado de banda única |
 

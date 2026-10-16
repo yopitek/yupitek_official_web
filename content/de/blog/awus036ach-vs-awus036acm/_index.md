@@ -16,7 +16,7 @@ faq:
   - question: "Gibt es Unterschiede bei der Treiberinstallation zwischen dem AWUS036ACH und dem AWUS036ACM?"
     answer: "Der AWUS036ACH verwendet den RTL8812AU-Chip und erfordert die Installation des aircrack-ng-Community-Treibers über DKMS, was nach Kernel-Updates möglicherweise eine Neukompilierung erfordert; der Treiber für den MT7612U des AWUS036ACM ist seit Kernel 4.19 im Mainline integriert, sodass Plug-and-Play ohne Kompilierung möglich ist."
   - question: "Welches Modell ist besser für die Monitor Mode-Überwachung geeignet?"
-    answer: "Der Monitor Mode des AWUS036ACH ist stabiler; die Dual-Antennen und die hohe Leistung von 30 dBm führen in Umgebungen mit vielen Access Points zu einer geringeren Paketverlustrate. Der AWUS036ACM unterstützt ebenfalls den Monitor Mode, hat jedoch eine niedrigere Leistung der Single-Antenne und eignet sich besser für die Erfassung in kurzer Entfernung."
+    answer: "Der Monitor Mode des AWUS036ACH ist stabiler; die Dual-Antennen und die hohe Leistung von 30 dBm führen in Umgebungen mit vielen Access Points zu einer geringeren Paketverlustrate. Der AWUS036ACM unterstützt ebenfalls den Monitor Mode, hat jedoch eine niedrigere Sendeleistung und eignet sich besser für die Erfassung in kurzer Entfernung."
   - question: "Sollte ein Anfänger den AWUS036ACH oder den AWUS036ACM wählen?"
     answer: "Anfängern wird der AWUS036ACM empfohlen, da der MT7612U-Kernel-Nativtreiber Plug-and-Play ohne Kompilierung bietet. Wählen Sie stattdessen den AWUS036ACH, wenn Sie das stärkste Signal und die meisten Anleitungen wünschen und mit dem DKMS-Kompilierungsprozess vertraut sind."
   - question: "Welches Modell wird für eine VM-Umgebung empfohlen?"

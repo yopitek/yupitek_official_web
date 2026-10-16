@@ -70,10 +70,10 @@ La generación Wi-Fi 5 (ACH, ACM, ACS) es más económica, tiene controladores m
 | [AWUS036ACH](/es/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | Operaciones de red team |
 | [AWUS036ACM](/es/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | Doble banda económico |
 | [AWUS036EACS](/es/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | Uso general (sin inyección) |
-| [AWUS036AX](/es/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated | Auditoría Wi-Fi 6 |
+| [AWUS036AX](/es/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | 2× RP-SMA | Auditoría Wi-Fi 6 |
 | [AWUS036AXER](/es/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | Wi-Fi 6 de largo alcance |
 | [AWUS036AXM](/es/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Entrada Wi-Fi 6E |
-| [AWUS036AXML](/es/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | Flagship 6E |
+| [AWUS036AXML](/es/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Flagship 6E |
 
 </div>
 
@@ -146,7 +146,7 @@ Ambos adaptadores ALFA Wi-Fi 6 (AX, AXER) usan el chipset Realtek RTL8832BU. En 
 
 ### AWUS036AX — La Opción Limpia de Wi-Fi 6
 
-El [AWUS036AX](/es/products/alfa/awus036ax/) es el adaptador Wi-Fi 6 AX1800 de ALFA: antena integrada (sin conector RP-SMA), chipset RTL8832BU y operación en bandas de 2.4 y 5 GHz. Soporte completo en Windows; en Linux el controlador es OOK en kernels < 6.14.
+El [AWUS036AX](/es/products/alfa/awus036ax/) es el adaptador Wi-Fi 6 AX1800 de ALFA: dos antenas desmontables con conectores RP-SMA, chipset RTL8832BU y operación en bandas de 2.4 y 5 GHz. Soporte completo en Windows; en Linux el controlador es OOK en kernels < 6.14.
 
 **Estado del controlador:**
 - Kernel ≥ 6.14: controlador RTL8832BU integrado en el kernel, sin paquetes adicionales necesarios
@@ -162,7 +162,7 @@ El [AWUS036AX](/es/products/alfa/awus036ax/) es el adaptador Wi-Fi 6 AX1800 de A
 
 ### AWUS036AXER — Variante de Alcance Extendido
 
-El [AWUS036AXER](/es/products/alfa/awus036axer/) es idéntico en hardware al AWUS036AX en chipset y configuración de antenas (nano integrada), pero añade amplificación de RF mejorada para un mayor alcance operativo. La situación del controlador es idéntica — mismo RTL8832BU, misma ruta de soporte del kernel, mismo comportamiento de monitor mode e inyección limitados.
+El [AWUS036AXER](/es/products/alfa/awus036axer/) comparte chipset con el AWUS036AX pero usa una antena nano integrada (el AX tiene dos antenas desmontables), y añade amplificación de RF mejorada para un mayor alcance operativo. La situación del controlador es idéntica — mismo RTL8832BU, misma ruta de soporte del kernel, mismo comportamiento de monitor mode e inyección limitados.
 
 Elige AXER sobre AX cuando el alcance sea el factor decisivo: relevamientos de sitio en campus grandes, evaluaciones en exteriores o escenarios donde el punto de acceso está a distancia. El sobrecosto es moderado y justificado si el alcance importa para tu despliegue.
 

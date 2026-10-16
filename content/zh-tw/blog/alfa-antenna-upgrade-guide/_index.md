@@ -61,8 +61,8 @@ ALFA 網卡一律採用 RP-SMA 接頭，五款天線配件涵蓋單頻至三頻�
 
 **具備 RP-SMA 接頭的 ALFA 網路卡（可外接天線）：**
 - AWUS036ACH（2× RP-SMA）
-- AWUS036ACM（1× RP-SMA）
-- AWUS036AXML（1× RP-SMA）
+- AWUS036ACM（2× RP-SMA）
+- AWUS036AXML（2× RP-SMA）
 - 以及其他具備外接天線接口的 ALFA 型號
 
 本指南介紹的五款天線配件均採用 **RP-SMA 接頭**，可直接與上述網路卡相容。安裝過程完全不需要工具——只需將現有天線逆時針旋下，再將新天線以手力順時針鎖緊即可。
@@ -281,8 +281,8 @@ ALFA 天線升級完全不需要工具，也不需要更動任何軟體：
 | 網路卡 | 推薦天線 | 原因 |
 |---|---|---|
 | AWUS036ACH（2× RP-SMA） | 2× APA-M25 或 1× APA-M25 + 1× ARS NT5B7 | 最大化雙天線多樣性增益 |
-| AWUS036ACM（1× RP-SMA） | APA-M25 或 ARS NT5B7 | 通用升級 |
-| AWUS036AXML（1× RP-SMA） | APA-M25-6E | 6 GHz 覆蓋的必要選擇 |
+| AWUS036ACM（2× RP-SMA） | APA-M25 或 ARS NT5B7 | 通用升級 |
+| AWUS036AXML（2× RP-SMA） | APA-M25-6E | 6 GHz 覆蓋的必要選擇 |
 | 任意網路卡，戶外使用 | ARS 25-57A 或 ARS NT5B7 | 防水型或彈性戶外方案 |
 | 專注 2.4 GHz 作業 | APA-M04 | 單頻段增益最佳化 |
 

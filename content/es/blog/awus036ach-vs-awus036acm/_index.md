@@ -13,7 +13,7 @@ faq:
   - question: "¿Cuál es la diferencia en la instalación de controladores entre AWUS036ACH y AWUS036ACM?"
     answer: "El AWUS036ACH usa el chip RTL8812AU y requiere compilar e instalar el controlador de la comunidad aircrack-ng vía DKMS, con posible recompilación tras actualizar el kernel. El AWUS036ACM con MT7612U tiene el controlador integrado en el kernel principal desde la versión 4.19; es plug-and-play sin compilar."
   - question: "¿Cuál es mejor para el modo monitor?"
-    answer: "El AWUS036ACH es más estable en modo monitor: su doble antena y alta potencia de 30 dBm reducen la pérdida de paquetes en entornos con alta densidad de AP. El ACM también admite monitor pero con una sola antena y menor potencia, adecuado para captura a corta distancia."
+    answer: "El AWUS036ACH es más estable en modo monitor: su doble antena y alta potencia de 30 dBm reducen la pérdida de paquetes en entornos con alta densidad de AP. El ACM también admite monitor pero con menor potencia, adecuado para captura a corta distancia."
   - question: "¿ACH o ACM para principiantes?"
     answer: "Se recomienda el AWUS036ACM para principiantes: el controlador nativo MT7612U del núcleo es plug-and-play sin compilar. Si necesitas la máxima potencia de señal y abundantes recursos de tutorial y no temes el proceso DKMS, elige el AWUS036ACH."
   - question: "¿Cuál se recomienda para entornos de máquina virtual?"

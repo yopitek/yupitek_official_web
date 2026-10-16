@@ -75,10 +75,10 @@ Wi-Fi 5世代（ACH、ACM、ACS）价格较低、驱动更稳定，如果预算�
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | 红队作战 |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | 平价双频 |
 | [AWUS036EACS](/zh-cn/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | 普通使用（不支持注入）|
-| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated | Wi-Fi 6审计 |
+| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6审计 |
 | [AWUS036AXER](/zh-cn/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | 延伸范围Wi-Fi 6 |
 | [AWUS036AXM](/zh-cn/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6E入门 |
-| [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | 旗舰6E |
+| [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | 旗舰6E |
 
 </div>
 
@@ -151,7 +151,7 @@ Wi-Fi 6（802.11ax）在密集环境性能、目标丰富的MU-MIMO场景与用�
 
 ### AWUS036AX — Wi-Fi 6 Windows网卡
 
-[AWUS036AX](/zh-cn/products/alfa/awus036ax/)是ALFA的Wi-Fi 6网卡，配备集成天线（无外接RP-SMA接口）。在2.4和5 GHz双频上提供AX1200速度，非常适合Windows 10/11连接使用。
+[AWUS036AX](/zh-cn/products/alfa/awus036ax/)是ALFA的Wi-Fi 6网卡，配备 2 支可拆卸 RP-SMA 天线。在2.4和5 GHz双频上提供AX1200速度，非常适合Windows 10/11连接使用。
 
 **驱动状态：**
 - Windows：通过ALFA提供的驱动完整支持

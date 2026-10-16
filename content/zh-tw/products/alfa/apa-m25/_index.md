@@ -45,7 +45,7 @@ APA-M25 是 ALFA Network 的雙頻高增益室內面板天線，同時支援 2.4
 <thead><tr><th>型號</th><th>頻段</th><th>Wi-Fi 標準</th><th>接頭數量</th><th>相容性</th></tr></thead>
 <tbody>
 <tr><td><a href="/zh-tw/products/alfa/awus036ach/">AWUS036ACH</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>2× RP-SMA</td><td>✅ 雙頻全支援</td></tr>
-<tr><td><a href="/zh-tw/products/alfa/awus036acm/">AWUS036ACM</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ 雙頻全支援</td></tr>
+<tr><td><a href="/zh-tw/products/alfa/awus036acm/">AWUS036ACM</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>2× RP-SMA</td><td>✅ 雙頻全支援</td></tr>
 <tr><td><a href="/zh-tw/products/alfa/awus036acs/">AWUS036ACS</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ 雙頻全支援</td></tr>
 <tr><td><a href="/zh-tw/products/alfa/awus036eacs/">AWUS036EACS</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 5</td><td>1× RP-SMA</td><td>✅ 雙頻全支援</td></tr>
 <tr><td><a href="/zh-tw/products/alfa/awus036ax/">AWUS036AX</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 6</td><td>2× RP-SMA</td><td>✅ 雙頻全支援</td></tr>

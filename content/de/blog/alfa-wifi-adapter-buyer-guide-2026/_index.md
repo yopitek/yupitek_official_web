@@ -70,10 +70,10 @@ Die Wi-Fi 5 Generation (ACH, ACM, ACS) ist günstiger, hat stabilere Treiber und
 | [AWUS036ACH](/de/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅✅ Beste | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | Red-Team Operationen |
 | [AWUS036ACM](/de/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | Linux Plug & Play |
 | [AWUS036EACS](/de/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ❌ | rtl88xxcu (OOK) | ✅ | ⚠️ | Integriert 2dBi | Windows Home WiFi + BT |
-| [AWUS036AX](/de/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1200 | ⚠️ Begrenzt | OOK (<6.14) | ✅ | ❌ | Integriert | Windows WiFi 6 |
+| [AWUS036AX](/de/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1200 | ⚠️ Begrenzt | OOK (<6.14) | ✅ | ❌ | 2× RP-SMA | Windows WiFi 6 |
 | [AWUS036AXER](/de/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ⚠️ Begrenzt | OOK (<6.14) | ✅ | ❌ | Integriert Nano | Kompakter Reiseadapter |
 | [AWUS036AXM](/de/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6E + Dual-Antenne |
-| [AWUS036AXML](/de/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 1× RP-SMA | WiFi 6E + Linux + USB-C |
+| [AWUS036AXML](/de/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | WiFi 6E + Linux + USB-C |
 
 </div>
 
@@ -148,7 +148,7 @@ Beide Wi-Fi 6 ALFA-Adapter verwenden den Realtek RTL8832BU Chipsatz. Unter Linux
 
 ### AWUS036AX — Wi-Fi 6 Windows-Adapter
 
-Der [AWUS036AX](/de/products/alfa/awus036ax/) ist der Wi-Fi 6 Adapter von ALFA mit einer integrierten Antenne (kein externer RP-SMA Anschluss). Er liefert AX1200-Geschwindigkeiten auf den 2,4- und 5-GHz-Bändern und ist bestens für die Konnektivität unter Windows 10/11 geeignet.
+Der [AWUS036AX](/de/products/alfa/awus036ax/) ist der Wi-Fi 6 Adapter von ALFA mit zwei abnehmbaren Antennen an RP-SMA-Anschlüssen. Er liefert AX1200-Geschwindigkeiten auf den 2,4- und 5-GHz-Bändern und ist bestens für die Konnektivität unter Windows 10/11 geeignet.
 
 **Treiberstatus:**
 - Windows: Volle Unterstützung über den von ALFA bereitgestellten Treiber

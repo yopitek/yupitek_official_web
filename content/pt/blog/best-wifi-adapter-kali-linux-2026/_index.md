@@ -91,9 +91,9 @@ Antenas externas e removíveis (conectores RP-SMA) oferecem flexibilidade. Você
 | Adaptador | Padrão | Chipset | Modo Monitor | Antenas | Melhor Para |
 |---|---|---|---|---|---|
 | [AWUS036ACH](/pt/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | 2× RP-SMA | Melhor geral |
-| [AWUS036AXML](/pt/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 1× RP-SMA | À prova do futuro |
+| [AWUS036AXML](/pt/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 2× RP-SMA | À prova do futuro |
 | [AWUS036ACM](/pt/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | Compacto e acessível |
-| [AWUS036AX](/pt/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limitado | Integrada | Wi-Fi 6 Windows |
+| [AWUS036AX](/pt/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limitado | 2× RP-SMA | Wi-Fi 6 Windows |
 
 ---
 
@@ -162,7 +162,7 @@ O AWUS036ACM entrega até 200 Mbps em 2,4 GHz e 433 Mbps em 5 GHz. Para trabalho
 
 **Fator de Forma Compacto**
 
-Com uma única antena RP-SMA e um corpo mais compacto, o AWUS036ACM é mais fácil de carregar numa bolsa ou disfarçar durante avaliações físicas. É uma escolha popular entre operadores de red team que precisam manter um perfil baixo.
+Com duas antenas RP-SMA e um corpo mais compacto, o AWUS036ACM é mais fácil de carregar numa bolsa ou disfarçar durante avaliações físicas. É uma escolha popular entre operadores de red team que precisam manter um perfil baixo.
 
 **Limitações**
 

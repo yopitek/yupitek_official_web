@@ -15,7 +15,7 @@ tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "Tri-Band", "Bluetooth 5.2", "6GHz", "Ka
 
 ## Présentation du Produit
 
-L'AWUS036AXML est équipé du chipset MediaTek MT7921AUN avec support Wi-Fi 6E tri-bande (2,4 GHz / 5 GHz / 6 GHz), atteignant jusqu'à 3000 Mbps de débit combiné, plus Bluetooth 5.2 intégré. L'interface USB-C est livrée avec un câble 2-en-1 USB-C/USB-A pour une compatibilité avec les ordinateurs portables et de bureau modernes. Une antenne RP-SMA détachable et un support pince-écran sont inclus.
+L'AWUS036AXML est équipé du chipset MediaTek MT7921AUN avec support Wi-Fi 6E tri-bande (2,4 GHz / 5 GHz / 6 GHz), atteignant jusqu'à 3000 Mbps de débit combiné, plus Bluetooth 5.2 intégré. L'interface USB-C est livrée avec un câble 2-en-1 USB-C/USB-A pour une compatibilité avec les ordinateurs portables et de bureau modernes. Deux antennes RP-SMA détachables et un support pince-écran sont inclus.
 
 > **Avis macOS :** Tous les adaptateurs ALFA ont un support macOS limité ou inexistant. macOS 11 Big Sur et versions ultérieures, ainsi qu'Apple Silicon (M1/M2/M3), ne sont **PAS** pris en charge. Le support macOS maximum est 10.15 Catalina sur Mac Intel.
 
@@ -27,7 +27,7 @@ L'AWUS036AXML est équipé du chipset MediaTek MT7921AUN avec support Wi-Fi 6E t
 - Bluetooth 5.2 (puce combo)
 - Interface USB-C (USB 3.2 Gen 1, 5 Gbps)
 - Câble 2-en-1 USB-C/USB-A inclus
-- 1× antenne détachable RP-SMA
+- 2× antennes détachables RP-SMA
 - Support pince-écran inclus
 - WPA3/WPA2/WPA/WEP/WPS
 - Mode Moniteur Kali Linux (noyau ≥ 5.18)
@@ -41,7 +41,7 @@ L'AWUS036AXML est équipé du chipset MediaTek MT7921AUN avec support Wi-Fi 6E t
 | Bandes de Fréquence | 2,4 GHz (20/40 MHz) · 5 GHz (20/40/80 MHz) · 6 GHz (20/40/80 MHz) |
 | Débit Maximum | 2,4 GHz : 600 Mbps · 5 GHz : 1200 Mbps · 6 GHz : 1200 Mbps · Combiné : 3000 Mbps |
 | Bluetooth | BT 5.2 (puce combo) |
-| Connecteur d'Antenne | 1× RP-SMA femelle (détachable) |
+| Connecteur d'Antenne | 2× RP-SMA femelle (détachables) |
 | Interface USB | USB 3.2 Gen 1 Type-C (5 Gbps) |
 | Câble | 2-en-1 USB-C/USB-A |
 | Sécurité Sans Fil | WPA3 / WPA2 / WPA / WEP / WPS |
@@ -79,7 +79,7 @@ L'AWUS036AXML est équipé du chipset MediaTek MT7921AUN avec support Wi-Fi 6E t
 ## Contenu de la Boîte
 
 - 1× Adaptateur AWUS036AXML
-- 1× Antenne dipôle détachable
+- 2× Antennes dipôles détachables
 - 1× Câble 2-en-1 USB-C/USB-A
 - 1× Support pince-écran
 

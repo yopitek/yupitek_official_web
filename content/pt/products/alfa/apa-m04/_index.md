@@ -1,6 +1,6 @@
 ---
 title: "ALFA APA-M04 — Antena Painel Interior 2.4 GHz"
-description: "ALFA APA-M04, antena painel direcional interior 2.4 GHz 7 dBi, conector PR-SMA, ideal para atualização de adaptadores USB Wi-Fi ALFA, melhora cobertura 2.4 GHz em direção específica."
+description: "ALFA APA-M04, antena painel direcional interior 2.4 GHz 7 dBi, conector RP-SMA, ideal para atualização de adaptadores USB Wi-Fi ALFA, melhora cobertura 2.4 GHz em direção específica."
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
@@ -12,7 +12,7 @@ featureimage: "/images/products/alfa/apa-m04.webp"
 
 ## Visão Geral do Produto
 
-APA-M04 é a antena painel direcional interior 2.4 GHz da ALFA Network, com ganho de **7 dBi**, significativamente superior às antenas dipolo padrão (geralmente 2–3 dBi). A estrutura de painel plano concentra a energia do sinal na direção frontal, ideal para melhorar a cobertura 2.4 GHz em áreas específicas como cantos de escritório e corredores. O conector PR-SMA PLUG substitui diretamente as antenas originais de todos os adaptadores USB ALFA sem necessidade de adaptadores.
+APA-M04 é a antena painel direcional interior 2.4 GHz da ALFA Network, com ganho de **7 dBi**, significativamente superior às antenas dipolo padrão (geralmente 2–3 dBi). A estrutura de painel plano concentra a energia do sinal na direção frontal, ideal para melhorar a cobertura 2.4 GHz em áreas específicas como cantos de escritório e corredores. O conector RP-SMA Plug substitui diretamente as antenas originais de todos os adaptadores USB ALFA sem necessidade de adaptadores.
 
 ## Características Principais
 
@@ -21,7 +21,7 @@ APA-M04 é a antena painel direcional interior 2.4 GHz da ALFA Network, com ganh
 - **Uso em mesa / montagem em parede**: 61 × 173 × 145 mm, pode ser colocada verticalmente ou fixada na parede
 - **Ampla faixa de temperatura**: temperatura de operação -10°C ~ +55°C, adequado para ambientes interiores o ano todo
 - **Baixo VSWR ≤ 2.0**: baixa perda por reflexão, alta eficiência de transmissão de energia RF
-- **Plug and Play**: conector PR-SMA PLUG (= RP-SMA female) padrão, compatível com todos os adaptadores ALFA
+- **Plug and Play**: conector RP-SMA Plug padrão, compatível com todos os adaptadores ALFA
 
 ## Especificações Técnicas
 
@@ -33,7 +33,7 @@ APA-M04 é a antena painel direcional interior 2.4 GHz da ALFA Network, com ganh
 | Tipo de Antena | Panel Directional (painel direcional) |
 | Polarização | Linear, Vertical (polarização linear vertical) |
 | Impedância | 50 Ω |
-| Conector | PR-SMA PLUG (RP-SMA female) |
+| Conector | RP-SMA Plug |
 | Temperatura de Operação | -10°C ~ +55°C |
 | Umidade | 95% @ 25°C |
 | Dimensões | 61 × 173 × 145 mm |

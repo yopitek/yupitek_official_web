@@ -54,7 +54,7 @@ ALFA Network — известный тайваньский производит�
 
 {{< card-group >}}
   {{< card title="APA-M04" href="/ru/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
-    Внутренняя направленная панельная антенна 2.4 ГГц, усиление 7 дБи, разъём PR-SMA.
+    Внутренняя направленная панельная антенна 2.4 ГГц, усиление 7 дБи, разъём RP-SMA.
   {{< /card >}}
   {{< card title="APA-M25" href="/ru/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
     Двухдиапазонная панельная антенна 2.4/5 ГГц, 10 дБи на 5 ГГц, разъём RP-SMA.

@@ -12,7 +12,7 @@ featureimage: "/images/products/alfa/apa-m04.webp"
 
 ## Produktübersicht
 
-Die APA-M04 ist eine 2,4-GHz-Innen-Panel-Direktionalantenne von ALFA Network mit **7 dBi** Gewinn — deutlich mehr als Standard-Dipolantennen (typischerweise 2–3 dBi). Ihre flache Panelstruktur bündelt die Signalenergie in eine bestimmte Vorwärtsrichtung und eignet sich ideal zur Verbesserung der 2,4-GHz-Abdeckungsqualität in Büroecken, Fluren und anderen Zielbereichen. Der PR-SMA-PLUG-Anschluss ist ein direkter Ersatz für die Werksantenne aller ALFA USB-WLAN-Adapter — kein Adapter erforderlich.
+Die APA-M04 ist eine 2,4-GHz-Innen-Panel-Direktionalantenne von ALFA Network mit **7 dBi** Gewinn — deutlich mehr als Standard-Dipolantennen (typischerweise 2–3 dBi). Ihre flache Panelstruktur bündelt die Signalenergie in eine bestimmte Vorwärtsrichtung und eignet sich ideal zur Verbesserung der 2,4-GHz-Abdeckungsqualität in Büroecken, Fluren und anderen Zielbereichen. Der RP-SMA-Plug-Anschluss ist ein direkter Ersatz für die Werksantenne aller ALFA USB-WLAN-Adapter — kein Adapter erforderlich.
 
 ## Hauptmerkmale
 
@@ -21,7 +21,7 @@ Die APA-M04 ist eine 2,4-GHz-Innen-Panel-Direktionalantenne von ALFA Network mit
 - **Desktop / Wandmontage-Doppelnutzung**: 61 × 173 × 145 mm, kann aufrecht stehen oder an der Wand montiert werden
 - **Großer Temperaturbereich**: Betriebstemperatur -10 °C ~ +55 °C, geeignet für den ganzjährigen Inneneinsatz
 - **Niedriges VSWR ≤ 2,0**: Minimale Reflexionsverluste, hohe HF-Energieübertragungseffizienz
-- **Plug-and-Play**: PR-SMA PLUG (= RP-SMA female) Standardanschluss, kompatibel mit allen ALFA-Adaptern
+- **Plug-and-Play**: RP-SMA Plug Standardanschluss, kompatibel mit allen ALFA-Adaptern
 
 ## Technische Spezifikationen
 
@@ -33,7 +33,7 @@ Die APA-M04 ist eine 2,4-GHz-Innen-Panel-Direktionalantenne von ALFA Network mit
 | Antennentyp | Panel Direktional |
 | Polarisierung | Linear, Vertikal |
 | Impedanz | 50 Ω |
-| Anschluss | PR-SMA PLUG (RP-SMA female) |
+| Anschluss | RP-SMA Plug |
 | Betriebstemperatur | -10 °C ~ +55 °C |
 | Luftfeuchtigkeit | 95 % @ 25 °C |
 | Abmessungen | 61 × 173 × 145 mm |

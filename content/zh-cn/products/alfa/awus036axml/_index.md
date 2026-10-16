@@ -27,7 +27,7 @@ AWUS036AXML 搭载 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz 
 - Bluetooth 5.2（复合芯片）
 - USB-C 接口（USB 3.2 Gen 1，5 Gbps）
 - 附赠 2-in-1 USB-C/USB-A 传输线
-- 1× RP-SMA 可拆卸天线
+- 2× RP-SMA 可拆卸天线
 - 附赠屏幕夹架
 - WPA3/WPA2/WPA/WEP/WPS
 - Kali Linux Monitor Mode（内核 ≥ 5.18）
@@ -41,7 +41,7 @@ AWUS036AXML 搭载 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz 
 | 频段 | 2.4 GHz (20/40 MHz) · 5 GHz (20/40/80 MHz) · 6 GHz (20/40/80 MHz) |
 | 最高传输速率 | 2.4GHz: 600 Mbps · 5GHz: 1200 Mbps · 6GHz: 1200 Mbps · 合计: 3000 Mbps |
 | 蓝牙 | BT 5.2（复合芯片）|
-| 天线接头 | 1× RP-SMA female（可拆卸）|
+| 天线接头 | 2× RP-SMA female（可拆卸）|
 | USB 接口 | USB 3.2 Gen 1 Type-C（5 Gbps）|
 | 传输线 | 2-in-1 USB-C/USB-A |
 | 无线安全 | WPA3 / WPA2 / WPA / WEP / WPS |
@@ -79,7 +79,7 @@ AWUS036AXML 搭载 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz 
 ## 包装内容
 
 - 1× AWUS036AXML 无线网卡
-- 1× 可拆卸双频天线
+- 2× 可拆卸双频天线
 - 1× 2-in-1 USB-C/USB-A 传输线
 - 1× 屏幕夹架
 

@@ -1,6 +1,6 @@
 ---
 title: "ALFA APA-M04 — 2.4 GHz 室內面板天線"
-description: "ALFA APA-M04，2.4 GHz 7 dBi 室內面板指向天線，PR-SMA 接頭，適合 ALFA USB 無線網卡天線升級，強化特定方向 2.4 GHz 覆蓋。"
+description: "ALFA APA-M04，2.4 GHz 7 dBi 室內面板指向天線，RP-SMA 接頭，適合 ALFA USB 無線網卡天線升級，強化特定方向 2.4 GHz 覆蓋。"
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
@@ -12,7 +12,7 @@ featureimage: "/images/products/alfa/apa-m04.webp"
 
 ## 產品概述
 
-APA-M04 是 ALFA Network 推出的 2.4 GHz 室內面板指向天線，增益達 **7 dBi**，顯著優於標準偶極天線（通常 2–3 dBi）。採用平板面板結構，將訊號能量集中於正前方特定方向，適合強化辦公室角落、走廊等特定區域的 2.4 GHz 覆蓋品質。PR-SMA PLUG 接頭可直接替換所有 ALFA USB 無線網卡的原廠天線，無需任何轉接頭。
+APA-M04 是 ALFA Network 推出的 2.4 GHz 室內面板指向天線，增益達 **7 dBi**，顯著優於標準偶極天線（通常 2–3 dBi）。採用平板面板結構，將訊號能量集中於正前方特定方向，適合強化辦公室角落、走廊等特定區域的 2.4 GHz 覆蓋品質。RP-SMA Plug 接頭可直接替換所有 ALFA USB 無線網卡的原廠天線，無需任何轉接頭。
 
 ## 產品特色
 
@@ -21,7 +21,7 @@ APA-M04 是 ALFA Network 推出的 2.4 GHz 室內面板指向天線，增益達 
 - **室內桌面 / 牆掛兩用**：61 × 173 × 145 mm，可直立放置或固定牆面
 - **寬溫耐用**：工作溫度 -10°C ~ +55°C，全年室內環境適用
 - **低 VSWR ≤ 2.0**：反射損失低，射頻能量傳輸效率高
-- **即插即換**：PR-SMA PLUG（= RP-SMA female）標準接頭，相容所有 ALFA 網卡
+- **即插即換**：RP-SMA Plug 標準接頭，相容所有 ALFA 網卡
 
 ## 技術規格
 
@@ -33,7 +33,7 @@ APA-M04 是 ALFA Network 推出的 2.4 GHz 室內面板指向天線，增益達 
 | 天線類型 | Panel Directional（面板指向型）|
 | 極化方式 | Linear, Vertical（線性垂直極化）|
 | 阻抗 | 50 Ω |
-| 接頭規格 | PR-SMA PLUG（RP-SMA female）|
+| 接頭規格 | RP-SMA Plug|
 | 工作溫度 | -10°C ~ +55°C |
 | 工作濕度 | 95% @ 25°C |
 | 外觀尺寸 | 61 × 173 × 145 mm |

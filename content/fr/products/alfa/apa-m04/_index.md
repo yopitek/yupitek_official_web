@@ -12,7 +12,7 @@ featureimage: "/images/products/alfa/apa-m04.webp"
 
 ## Présentation du Produit
 
-L'APA-M04 est une antenne panneau directionnelle intérieure 2,4 GHz d'ALFA Network, offrant un gain de **7 dBi** — nettement supérieur aux antennes dipôle standard (généralement 2–3 dBi). Sa structure à panneau plat concentre l'énergie du signal dans une direction spécifique vers l'avant, ce qui la rend idéale pour améliorer la qualité de couverture 2,4 GHz dans les coins de bureaux, les couloirs et autres zones ciblées. Le connecteur PR-SMA PLUG remplace directement l'antenne d'usine de tous les adaptateurs USB Wi-Fi ALFA — aucun adaptateur nécessaire.
+L'APA-M04 est une antenne panneau directionnelle intérieure 2,4 GHz d'ALFA Network, offrant un gain de **7 dBi** — nettement supérieur aux antennes dipôle standard (généralement 2–3 dBi). Sa structure à panneau plat concentre l'énergie du signal dans une direction spécifique vers l'avant, ce qui la rend idéale pour améliorer la qualité de couverture 2,4 GHz dans les coins de bureaux, les couloirs et autres zones ciblées. Le connecteur RP-SMA Plug remplace directement l'antenne d'usine de tous les adaptateurs USB Wi-Fi ALFA — aucun adaptateur nécessaire.
 
 ## Caractéristiques Principales
 
@@ -21,7 +21,7 @@ L'APA-M04 est une antenne panneau directionnelle intérieure 2,4 GHz d'ALFA Netw
 - **Double Usage Bureau / Montage Mural** : 61 × 173 × 145 mm, peut être posée verticalement ou montée sur un mur
 - **Plage de Température Étendue** : Température de fonctionnement -10°C ~ +55°C, adaptée à une utilisation intérieure toute l'année
 - **Faible VSWR ≤ 2,0** : Perte par réflexion minimale, haute efficacité de transfert d'énergie RF
-- **Plug-and-Play** : Connecteur standard PR-SMA PLUG (= RP-SMA femelle), compatible avec tous les adaptateurs ALFA
+- **Plug-and-Play** : Connecteur standard RP-SMA Plug, compatible avec tous les adaptateurs ALFA
 
 ## Spécifications Techniques
 
@@ -33,7 +33,7 @@ L'APA-M04 est une antenne panneau directionnelle intérieure 2,4 GHz d'ALFA Netw
 | Type d'Antenne | Panneau Directionnelle |
 | Polarisation | Linéaire, Verticale |
 | Impédance | 50 Ω |
-| Connecteur | PR-SMA PLUG (RP-SMA femelle) |
+| Connecteur | RP-SMA Plug |
 | Température de Fonctionnement | -10°C ~ +55°C |
 | Humidité | 95 % @ 25°C |
 | Dimensions | 61 × 173 × 145 mm |

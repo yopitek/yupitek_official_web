@@ -1,6 +1,6 @@
 ---
 title: "ALFA APA-M04 — 2.4 GHz Indoor Panel Antenna"
-description: "ALFA APA-M04, 2.4 GHz 7 dBi indoor panel directional antenna, PR-SMA connector, ideal for upgrading ALFA USB Wi-Fi adapter antennas and boosting targeted 2.4 GHz coverage."
+description: "ALFA APA-M04, 2.4 GHz 7 dBi indoor panel directional antenna, RP-SMA connector, ideal for upgrading ALFA USB Wi-Fi adapter antennas and boosting targeted 2.4 GHz coverage."
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
@@ -12,7 +12,7 @@ featureimage: "/images/products/alfa/apa-m04.webp"
 
 ## Product Overview
 
-The APA-M04 is a 2.4 GHz indoor panel directional antenna from ALFA Network, delivering **7 dBi** gain — significantly higher than standard dipole antennas (typically 2–3 dBi). Its flat panel structure concentrates signal energy in a specific forward direction, making it ideal for enhancing 2.4 GHz coverage quality in office corners, hallways, and other targeted areas. The PR-SMA PLUG connector is a direct replacement for the factory antenna on all ALFA USB Wi-Fi adapters — no adapter needed.
+The APA-M04 is a 2.4 GHz indoor panel directional antenna from ALFA Network, delivering **7 dBi** gain — significantly higher than standard dipole antennas (typically 2–3 dBi). Its flat panel structure concentrates signal energy in a specific forward direction, making it ideal for enhancing 2.4 GHz coverage quality in office corners, hallways, and other targeted areas. The RP-SMA Plug connector is a direct replacement for the factory antenna on all ALFA USB Wi-Fi adapters — no adapter needed.
 
 ## Key Features
 
@@ -21,7 +21,7 @@ The APA-M04 is a 2.4 GHz indoor panel directional antenna from ALFA Network, del
 - **Desktop / Wall-Mount Dual Use**: 61 × 173 × 145 mm, can stand upright or be mounted on a wall
 - **Wide Temperature Range**: Operating temperature -10°C ~ +55°C, suitable for year-round indoor use
 - **Low VSWR ≤ 2.0**: Minimal reflection loss, high RF energy transfer efficiency
-- **Plug-and-Play**: PR-SMA PLUG (= RP-SMA female) standard connector, compatible with all ALFA adapters
+- **Plug-and-Play**: RP-SMA Plug standard connector, compatible with all ALFA adapters
 
 ## Technical Specifications
 
@@ -33,7 +33,7 @@ The APA-M04 is a 2.4 GHz indoor panel directional antenna from ALFA Network, del
 | Antenna Type | Panel Directional |
 | Polarization | Linear, Vertical |
 | Impedance | 50 Ω |
-| Connector | PR-SMA PLUG (RP-SMA female) |
+| Connector | RP-SMA Plug |
 | Operating Temperature | -10°C ~ +55°C |
 | Humidity | 95% @ 25°C |
 | Dimensions | 61 × 173 × 145 mm |

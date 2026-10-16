@@ -27,7 +27,7 @@ AWUS036AXML は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン
 - Bluetooth 5.2（コンボチップ）
 - USB-C インターフェース（USB 3.2 Gen 1、5 Gbps）
 - 2-in-1 USB-C/USB-A ケーブル付属
-- 1× RP-SMA 着脱可能アンテナ
+- 2× RP-SMA 着脱可能アンテナ
 - スクリーンクリップマウント付属
 - WPA3/WPA2/WPA/WEP/WPS
 - Kali Linux Monitor Mode（カーネル ≥ 5.18）
@@ -41,7 +41,7 @@ AWUS036AXML は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン
 | 周波数帯 | 2.4 GHz (20/40 MHz) · 5 GHz (20/40/80 MHz) · 6 GHz (20/40/80 MHz) |
 | 最大データレート | 2.4GHz: 600 Mbps · 5GHz: 1200 Mbps · 6GHz: 1200 Mbps · 合計: 3000 Mbps |
 | Bluetooth | BT 5.2（コンボチップ）|
-| アンテナコネクタ | 1× RP-SMA female（着脱可能）|
+| アンテナコネクタ | 2× RP-SMA female（着脱可能）|
 | USB インターフェース | USB 3.2 Gen 1 Type-C（5 Gbps）|
 | ケーブル | 2-in-1 USB-C/USB-A |
 | 無線セキュリティ | WPA3 / WPA2 / WPA / WEP / WPS |
@@ -79,7 +79,7 @@ AWUS036AXML は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン
 ## 同梱物
 
 - 1× AWUS036AXML アダプター
-- 1× 着脱可能ダイポールアンテナ
+- 2× 着脱可能ダイポールアンテナ
 - 1× 2-in-1 USB-C/USB-A ケーブル
 - 1× スクリーンクリップマウント
 

@@ -11,7 +11,7 @@ tags: ["Wi-Fi 6", "USB 3.0", "802.11ax", "Banda Dual", "OFDMA", "MU-MIMO"]
 
 ## Descripción del Producto
 
-El AWUS036AX incorpora el chipset Realtek RTL8832BU con soporte Wi-Fi 6 (802.11ax) de banda dual (2.4 GHz + 5 GHz), hasta 1200 Mbps combinados, con tecnología MU-MIMO 2×2 y OFDMA. La antena está integrada (no desmontable).
+El AWUS036AX incorpora el chipset Realtek RTL8832BU con soporte Wi-Fi 6 (802.11ax) de banda dual (2.4 GHz + 5 GHz), hasta 1200 Mbps combinados, con tecnología MU-MIMO 2×2 y OFDMA. Incluye dos antenas de doble banda desmontables con conectores RP-SMA.
 
 > ⚠️ **Importante:** Este modelo es **Wi-Fi 6**, NO Wi-Fi 6E — **sin banda de 6 GHz**. Para soporte de 6 GHz, véase AWUS036AXML o AWUS036AXM. Monitor mode limitado en kernels < 6.12; **no recomendado para investigación de seguridad en Linux**.
 
@@ -37,7 +37,7 @@ El AWUS036AX incorpora el chipset Realtek RTL8832BU con soporte Wi-Fi 6 (802.11a
 | Bandas de frecuencia | 2.4 GHz + 5 GHz (sin 6 GHz) |
 | Velocidad máxima | 1200 Mbps |
 | MIMO | MU-MIMO 2×2 |
-| Antena | Integrada (no desmontable) |
+| Antena | 2× RP-SMA, antenas de doble banda desmontables |
 | Interfaz USB | USB 3.0 Type-A |
 | Seguridad inalámbrica | WPA3 / WPA2 / WPA / WEP |
 
@@ -70,6 +70,7 @@ El AWUS036AX incorpora el chipset Realtek RTL8832BU con soporte Wi-Fi 6 (802.11a
 ## Contenido de la Caja
 
 - 1× Adaptador AWUS036AX
+- 2× Antenas de doble banda desmontables (5 dBi)
 
 ## Recursos y Enlaces
 

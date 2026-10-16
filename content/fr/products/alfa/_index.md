@@ -54,7 +54,7 @@ ALFA Network est un fabricant taiwanais bien connu d'equipements reseau sans fil
 
 {{< card-group >}}
   {{< card title="APA-M04" href="/fr/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
-    Antenne directe panneau interieur 2,4 GHz, 7 dBi haute puissance, connecteur PR-SMA.
+    Antenne directe panneau interieur 2,4 GHz, 7 dBi haute puissance, connecteur RP-SMA.
   {{< /card >}}
   {{< card title="APA-M25" href="/fr/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
     Antenne panneau interieur double bande 2,4/5 GHz, 10 dBi a 5 GHz, connecteur RP-SMA.

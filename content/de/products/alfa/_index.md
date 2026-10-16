@@ -54,7 +54,7 @@ ALFA Network ist ein bekannter taiwanesischer Hersteller von drahtloser Netzwerk
 
 {{< card-group >}}
   {{< card title="APA-M04" href="/de/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
-    2,4 GHz Innenpannen-Direktantenne, 7 dBi Hochleistung, PR-SMA Connector.
+    2,4 GHz Innenpannen-Direktantenne, 7 dBi Hochleistung, RP-SMA Connector.
   {{< /card >}}
   {{< card title="APA-M25" href="/de/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
     Dual-Band 2,4/5 GHz Innenpannenantenne, 10 dBi bei 5 GHz, RP-SMA Connector.

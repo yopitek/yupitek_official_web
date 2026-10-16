@@ -11,7 +11,7 @@ tags: ["Wi-Fi 6", "USB 3.0", "802.11ax", "デュアルバンド", "OFDMA", "MU-M
 
 ## 製品概要
 
-AWUS036AX は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）デュアルバンド（2.4 GHz + 5 GHz）対応、最大 1200 Mbps の合計スループット、MU-MIMO 2×2 と OFDMA 技術をサポートします。アンテナは一体型（着脱不可）です。
+AWUS036AX は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）デュアルバンド（2.4 GHz + 5 GHz）対応、最大 1200 Mbps の合計スループット、MU-MIMO 2×2 と OFDMA 技術をサポートします。RP-SMA コネクタで着脱できるデュアルバンドアンテナを 2 本備えています。
 
 > ⚠️ **重要：** このモデルは **Wi-Fi 6** であり、Wi-Fi 6E ではありません — **6 GHz 帯なし**。6 GHz が必要な場合は AWUS036AXML または AWUS036AXM をご検討ください。カーネル < 6.12 では Monitor mode が制限されます。**Linux セキュリティ研究には推奨しません**。
 
@@ -37,7 +37,7 @@ AWUS036AX は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）デ
 | 周波数帯 | 2.4 GHz + 5 GHz（6 GHz なし）|
 | 最大データレート | 1200 Mbps |
 | MIMO | MU-MIMO 2×2 |
-| アンテナ | 一体型（着脱不可）|
+| アンテナ | 2× RP-SMA 着脱式デュアルバンドアンテナ |
 | USB インターフェース | USB 3.0 Type-A |
 | 無線セキュリティ | WPA3 / WPA2 / WPA / WEP |
 
@@ -70,6 +70,7 @@ AWUS036AX は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）デ
 ## 同梱物
 
 - 1× AWUS036AX アダプター
+- 2× 着脱式デュアルバンドアンテナ（5 dBi）
 
 ## リソースとリンク
 

@@ -54,7 +54,7 @@ ALFA Network 是台灣知名無線網路設備、無線網路卡製造商，專�
 
 {{< card-group >}}
   {{< card title="APA-M04" href="/zh-tw/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
-    2.4 GHz 室內面板指向天線，7 dBi 高增益，PR-SMA 接頭，適合強化特定方向 2.4 GHz 訊號。
+    2.4 GHz 室內面板指向天線，7 dBi 高增益，RP-SMA 接頭，適合強化特定方向 2.4 GHz 訊號。
   {{< /card >}}
   {{< card title="APA-M25" href="/zh-tw/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
     雙頻 2.4/5 GHz 室內面板天線，5 GHz 達 10 dBi，RP-SMA 接頭，指向性高增益。

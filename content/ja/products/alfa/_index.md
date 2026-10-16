@@ -54,7 +54,7 @@ ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiア�
 
 {{< card-group >}}
   {{< card title="APA-M04" href="/ja/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
-    2.4 GHz 室内パネル指向性アンテナ、7 dBi 高ゲイン、PR-SMA コネクタ。
+    2.4 GHz 室内パネル指向性アンテナ、7 dBi 高ゲイン、RP-SMA コネクタ。
   {{< /card >}}
   {{< card title="APA-M25" href="/ja/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
     デュアルバンド 2.4/5 GHz 室内パネルアンテナ、5 GHz 10 dBi、RP-SMA 指向性高ゲイン。

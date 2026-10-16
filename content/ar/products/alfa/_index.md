@@ -55,7 +55,7 @@ ALFA Network هي شركة تايوانية رائدة في تصنيع معدا�
 
 {{< card-group >}}
   {{< card title="APA-M04" href="/ar/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
-    هوائي لوحي داخلي 2.4 GHz، كسب 7 dBi، موصل PR-SMA، مثالي لتعزيز إشارة اتجاهية.
+    هوائي لوحي داخلي 2.4 GHz، كسب 7 dBi، موصل RP-SMA، مثالي لتعزيز إشارة اتجاهية.
   {{< /card >}}
   {{< card title="APA-M25" href="/ar/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
     هوائي لوحي ثنائي النطاق 2.4/5 GHz، 10 dBi عند 5 GHz، موصل RP-SMA.

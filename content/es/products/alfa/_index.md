@@ -54,7 +54,7 @@ ALFA Network es un reconocido fabricante taiwanés de equipos de red inalámbric
 
 {{< card-group >}}
   {{< card title="APA-M04" href="/es/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
-    Antena de panel direccional interior 2.4 GHz, ganancia 7 dBi, conector PR-SMA.
+    Antena de panel direccional interior 2.4 GHz, ganancia 7 dBi, conector RP-SMA.
   {{< /card >}}
   {{< card title="APA-M25" href="/es/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
     Antena de panel doble banda 2.4/5 GHz, 10 dBi a 5 GHz, conector RP-SMA.

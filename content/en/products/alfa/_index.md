@@ -54,7 +54,7 @@ ALFA Network is a well-known Taiwanese manufacturer of wireless networking equip
 
 {{< card-group >}}
   {{< card title="APA-M04" href="/en/products/alfa/apa-m04/" image="/images/products/alfa/apa-m04.png" >}}
-    2.4 GHz indoor panel directional antenna, 7 dBi high gain, PR-SMA connector, ideal for boosting targeted 2.4 GHz coverage.
+    2.4 GHz indoor panel directional antenna, 7 dBi high gain, RP-SMA connector, ideal for boosting targeted 2.4 GHz coverage.
   {{< /card >}}
   {{< card title="APA-M25" href="/en/products/alfa/apa-m25/" image="/images/products/alfa/apa-m25.png" >}}
     Dual-band 2.4/5 GHz indoor panel antenna, 10 dBi at 5 GHz, RP-SMA connector, high-gain directional upgrade.

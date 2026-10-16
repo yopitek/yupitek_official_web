@@ -15,7 +15,7 @@ tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "Tri-Band", "Bluetooth 5.2", "6GHz", "Ka
 
 ## Product Overview
 
-The AWUS036AXML features the MediaTek MT7921AUN chipset with Wi-Fi 6E tri-band support (2.4 GHz / 5 GHz / 6 GHz), reaching up to 3000 Mbps combined throughput, plus integrated Bluetooth 5.2. The USB-C interface comes with a 2-in-1 USB-C/USB-A cable for compatibility with modern laptops and desktops. A detachable RP-SMA antenna and screen clip mount are included.
+The AWUS036AXML features the MediaTek MT7921AUN chipset with Wi-Fi 6E tri-band support (2.4 GHz / 5 GHz / 6 GHz), reaching up to 3000 Mbps combined throughput, plus integrated Bluetooth 5.2. The USB-C interface comes with a 2-in-1 USB-C/USB-A cable for compatibility with modern laptops and desktops. Two detachable RP-SMA antennas and a screen clip mount are included.
 
 > **macOS Notice:** All ALFA adapters have limited/no macOS support. macOS 11 Big Sur and later, and Apple Silicon (M1/M2/M3) are **NOT** supported. Maximum macOS support is 10.15 Catalina on Intel Macs.
 
@@ -27,7 +27,7 @@ The AWUS036AXML features the MediaTek MT7921AUN chipset with Wi-Fi 6E tri-band s
 - Bluetooth 5.2 (combo chip)
 - USB-C interface (USB 3.2 Gen 1, 5 Gbps)
 - Includes 2-in-1 USB-C/USB-A cable
-- 1× RP-SMA detachable antenna
+- 2× RP-SMA detachable antennas
 - Includes screen clip mount
 - WPA3/WPA2/WPA/WEP/WPS
 - Kali Linux Monitor Mode (kernel ≥ 5.18)
@@ -41,7 +41,7 @@ The AWUS036AXML features the MediaTek MT7921AUN chipset with Wi-Fi 6E tri-band s
 | Frequency Bands | 2.4 GHz (20/40 MHz) · 5 GHz (20/40/80 MHz) · 6 GHz (20/40/80 MHz) |
 | Max Data Rate | 2.4GHz: 600 Mbps · 5GHz: 1200 Mbps · 6GHz: 1200 Mbps · Combined: 3000 Mbps |
 | Bluetooth | BT 5.2 (combo chip) |
-| Antenna Connector | 1× RP-SMA female (detachable) |
+| Antenna Connector | 2× RP-SMA female (detachable) |
 | USB Interface | USB 3.2 Gen 1 Type-C (5 Gbps) |
 | Cable | 2-in-1 USB-C/USB-A |
 | Wireless Security | WPA3 / WPA2 / WPA / WEP / WPS |
@@ -79,7 +79,7 @@ The AWUS036AXML features the MediaTek MT7921AUN chipset with Wi-Fi 6E tri-band s
 ## What's in the Box
 
 - 1× AWUS036AXML adapter
-- 1× Detachable dipole antenna
+- 2× Detachable dipole antennas
 - 1× 2-in-1 USB-C/USB-A cable
 - 1× Screen clip mount
 

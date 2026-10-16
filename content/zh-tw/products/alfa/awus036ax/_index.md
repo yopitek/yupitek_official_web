@@ -11,7 +11,7 @@ tags: ["Wi-Fi 6", "USB 3.0", "802.11ax", "雙頻", "OFDMA", "MU-MIMO"]
 
 ## 產品概述
 
-AWUS036AX 採用 Realtek RTL8832BU 晶片，支援 Wi-Fi 6（802.11ax）雙頻（2.4 GHz + 5 GHz），最高傳輸速率 1200 Mbps，支援 MU-MIMO 2×2 與 OFDMA 技術。天線為一體化設計（不可拆卸）。
+AWUS036AX 採用 Realtek RTL8832BU 晶片，支援 Wi-Fi 6（802.11ax）雙頻（2.4 GHz + 5 GHz），最高傳輸速率 1200 Mbps，支援 MU-MIMO 2×2 與 OFDMA 技術。配備 2 支 RP-SMA 可拆卸雙頻天線。
 
 > ⚠️ **重要提示：** 此型號為 **Wi-Fi 6**，並非 Wi-Fi 6E，**不含 6 GHz 頻段**。若需 6 GHz 頻段，請選擇 AWUS036AXML 或 AWUS036AXM。此型號在核心 < 6.12 時 Monitor mode 受限，**不建議用於 Linux 資安研究**。
 
@@ -37,7 +37,7 @@ AWUS036AX 採用 Realtek RTL8832BU 晶片，支援 Wi-Fi 6（802.11ax）雙頻�
 | 頻段 | 2.4 GHz + 5 GHz（無 6 GHz）|
 | 最高傳輸速率 | 1200 Mbps |
 | MIMO | MU-MIMO 2×2 |
-| 天線 | 一體化（不可拆卸）|
+| 天線 | 2× RP-SMA 可拆卸雙頻天線 |
 | USB 介面 | USB 3.0 Type-A |
 | 無線安全 | WPA3 / WPA2 / WPA / WEP |
 
@@ -70,6 +70,7 @@ AWUS036AX 採用 Realtek RTL8832BU 晶片，支援 Wi-Fi 6（802.11ax）雙頻�
 ## 包裝內容
 
 - 1× AWUS036AX 無線網卡
+- 2× 可拆卸雙頻天線（5 dBi）
 
 ## 資源與連結
 

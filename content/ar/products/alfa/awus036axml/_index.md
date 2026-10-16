@@ -28,7 +28,7 @@ dir: rtl
 - Bluetooth 5.2 (شريحة مدمجة)
 - واجهة USB-C (USB 3.2 Gen 1، 5 Gbps)
 - كابل 2-in-1 USB-C/USB-A مرفق
-- هوائي 1× RP-SMA قابل للفصل
+- هوائيان 2× RP-SMA قابلان للفصل
 - حامل شاشة مرفق
 - WPA3/WPA2/WPA/WEP/WPS
 - Kali Linux Monitor Mode (نواة ≥ 5.18)
@@ -42,7 +42,7 @@ dir: rtl
 | نطاقات التردد | 2.4 GHz (20/40 MHz) · 5 GHz (20/40/80 MHz) · 6 GHz (20/40/80 MHz) |
 | أقصى معدل بيانات | 2.4GHz: 600 Mbps · 5GHz: 1200 Mbps · 6GHz: 1200 Mbps · المجموع: 3000 Mbps |
 | Bluetooth | BT 5.2 (شريحة مدمجة) |
-| موصل الهوائي | 1× RP-SMA female (قابل للفصل) |
+| موصل الهوائي | 2× RP-SMA female (قابلان للفصل) |
 | واجهة USB | USB 3.2 Gen 1 Type-C (5 Gbps) |
 | الكابل | 2-in-1 USB-C/USB-A |
 | الأمان اللاسلكي | WPA3 / WPA2 / WPA / WEP / WPS |
@@ -80,7 +80,7 @@ dir: rtl
 ## محتويات العبوة
 
 - 1× محول AWUS036AXML
-- 1× هوائي ثنائي القطب قابل للفصل
+- 2× هوائيان ثنائيا القطب قابلان للفصل
 - 1× كابل 2-in-1 USB-C/USB-A
 - 1× حامل شاشة
 

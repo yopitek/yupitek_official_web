@@ -15,7 +15,7 @@ tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "Tri-Band", "Bluetooth 5.2", "6GHz", "Ka
 
 ## Produktübersicht
 
-Der AWUS036AXML verfügt über den MediaTek MT7921AUN Chipsatz mit Wi-Fi-6E-Tri-Band-Unterstützung (2,4 GHz / 5 GHz / 6 GHz), erreicht bis zu 3000 Mbps kombinierten Durchsatz und integriert Bluetooth 5.2. Die USB-C-Schnittstelle wird mit einem 2-in-1-USB-C/USB-A-Kabel für die Kompatibilität mit modernen Laptops und Desktops geliefert. Eine abnehmbare RP-SMA-Antenne und eine Monitorhalterung sind im Lieferumfang enthalten.
+Der AWUS036AXML verfügt über den MediaTek MT7921AUN Chipsatz mit Wi-Fi-6E-Tri-Band-Unterstützung (2,4 GHz / 5 GHz / 6 GHz), erreicht bis zu 3000 Mbps kombinierten Durchsatz und integriert Bluetooth 5.2. Die USB-C-Schnittstelle wird mit einem 2-in-1-USB-C/USB-A-Kabel für die Kompatibilität mit modernen Laptops und Desktops geliefert. Zwei abnehmbare RP-SMA-Antennen und eine Monitorhalterung sind im Lieferumfang enthalten.
 
 > **macOS-Hinweis:** Alle ALFA-Adapter bieten eingeschränkte oder keine macOS-Unterstützung. macOS 11 Big Sur und höher sowie Apple Silicon (M1/M2/M3) werden **NICHT** unterstützt. Die maximale macOS-Unterstützung ist 10.15 Catalina auf Intel-Macs.
 
@@ -27,7 +27,7 @@ Der AWUS036AXML verfügt über den MediaTek MT7921AUN Chipsatz mit Wi-Fi-6E-Tri-
 - Bluetooth 5.2 (Combo-Chip)
 - USB-C-Schnittstelle (USB 3.2 Gen 1, 5 Gbps)
 - 2-in-1-USB-C/USB-A-Kabel im Lieferumfang
-- 1× RP-SMA abnehmbare Antenne
+- 2× abnehmbare RP-SMA-Antennen
 - Monitorhalterung (Screen Clip) im Lieferumfang
 - WPA3/WPA2/WPA/WEP/WPS
 - Kali Linux Monitor-Modus (Kernel ≥ 5.18)
@@ -41,7 +41,7 @@ Der AWUS036AXML verfügt über den MediaTek MT7921AUN Chipsatz mit Wi-Fi-6E-Tri-
 | Frequenzbänder | 2,4 GHz (20/40 MHz) · 5 GHz (20/40/80 MHz) · 6 GHz (20/40/80 MHz) |
 | Max. Datenrate | 2,4 GHz: 600 Mbps · 5 GHz: 1200 Mbps · 6 GHz: 1200 Mbps · Kombiniert: 3000 Mbps |
 | Bluetooth | BT 5.2 (Combo-Chip) |
-| Antennenanschluss | 1× RP-SMA-Buchse (abnehmbar) |
+| Antennenanschluss | 2× RP-SMA-Buchse (abnehmbar) |
 | USB-Schnittstelle | USB 3.2 Gen 1 Typ-C (5 Gbps) |
 | Kabel | 2-in-1 USB-C/USB-A |
 | WLAN-Sicherheit | WPA3 / WPA2 / WPA / WEP / WPS |
@@ -79,7 +79,7 @@ Der AWUS036AXML verfügt über den MediaTek MT7921AUN Chipsatz mit Wi-Fi-6E-Tri-
 ## Lieferumfang
 
 - 1× AWUS036AXML-Adapter
-- 1× Abnehmbare Dipol-Antenne
+- 2× Abnehmbare Dipol-Antennen
 - 1× 2-in-1-USB-C/USB-A-Kabel
 - 1× Monitorhalterung (Screen Clip)
 

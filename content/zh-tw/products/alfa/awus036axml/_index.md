@@ -15,7 +15,7 @@ tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "三頻", "藍牙 5.2", "6GHz", "Kali Li
 
 ## 產品概述
 
-AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，支援 Wi-Fi 6E 三頻（2.4 GHz / 5 GHz / 6 GHz），最高傳輸速率達 3000 Mbps，並內建 Bluetooth 5.2。採用 USB-C 介面，附贈 2-in-1 USB-C/USB-A 傳輸線，完美適配現代筆電與桌機。1× RP-SMA 可拆卸天線搭配附贈螢幕夾架。
+AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，支援 Wi-Fi 6E 三頻（2.4 GHz / 5 GHz / 6 GHz），最高傳輸速率達 3000 Mbps，並內建 Bluetooth 5.2。採用 USB-C 介面，附贈 2-in-1 USB-C/USB-A 傳輸線，完美適配現代筆電與桌機。2× RP-SMA 可拆卸天線搭配附贈螢幕夾架。
 
 > **注意：** 所有 ALFA 無線網卡對 macOS 支援有限。macOS 11 Big Sur 以上及 Apple Silicon（M1/M2/M3）均**不支援**。最高支援版本為 Intel Mac 上的 macOS 10.15 Catalina。
 
@@ -27,7 +27,7 @@ AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，支援 Wi-Fi 6E 三頻（2.4 GHz 
 - Bluetooth 5.2（複合晶片）
 - USB-C 介面（USB 3.2 Gen 1，5 Gbps）
 - 附贈 2-in-1 USB-C/USB-A 傳輸線
-- 1× RP-SMA 可拆卸天線
+- 2× RP-SMA 可拆卸天線
 - 附贈螢幕夾架
 - WPA3/WPA2/WPA/WEP/WPS
 - Kali Linux Monitor Mode（核心 ≥ 5.18）
@@ -41,7 +41,7 @@ AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，支援 Wi-Fi 6E 三頻（2.4 GHz 
 | 頻段 | 2.4 GHz (20/40 MHz) · 5 GHz (20/40/80 MHz) · 6 GHz (20/40/80 MHz) |
 | 最高傳輸速率 | 2.4GHz: 600 Mbps · 5GHz: 1200 Mbps · 6GHz: 1200 Mbps · 合計: 3000 Mbps |
 | 藍牙 | BT 5.2（複合晶片）|
-| 天線接頭 | 1× RP-SMA female（可拆卸）|
+| 天線接頭 | 2× RP-SMA female（可拆卸）|
 | USB 介面 | USB 3.2 Gen 1 Type-C（5 Gbps）|
 | 傳輸線 | 2-in-1 USB-C/USB-A |
 | 無線安全 | WPA3 / WPA2 / WPA / WEP / WPS |
@@ -79,7 +79,7 @@ AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，支援 Wi-Fi 6E 三頻（2.4 GHz 
 ## 包裝內容
 
 - 1× AWUS036AXML 無線網卡
-- 1× 可拆卸雙頻天線
+- 2× 可拆卸雙頻天線
 - 1× 2-in-1 USB-C/USB-A 傳輸線
 - 1× 螢幕夾架
 

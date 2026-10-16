@@ -27,7 +27,7 @@ O AWUS036AXML apresenta o chipset MediaTek MT7921AUN com suporte Wi-Fi 6E triban
 - Bluetooth 5.2 (chip combinado)
 - Interface USB-C (USB 3.2 Gen 1, 5 Gbps)
 - Cabo 2-in-1 USB-C/USB-A incluído
-- 1× antena RP-SMA removível
+- 2× antenas RP-SMA removíveis
 - Suporte de clipe de tela incluído
 - WPA3/WPA2/WPA/WEP/WPS
 - Monitor Mode no Kali Linux (kernel ≥ 5.18)
@@ -41,7 +41,7 @@ O AWUS036AXML apresenta o chipset MediaTek MT7921AUN com suporte Wi-Fi 6E triban
 | Bandas de frequência | 2.4 GHz (20/40 MHz) · 5 GHz (20/40/80 MHz) · 6 GHz (20/40/80 MHz) |
 | Velocidade máxima | 2.4GHz: 600 Mbps · 5GHz: 1200 Mbps · 6GHz: 1200 Mbps · Combinado: 3000 Mbps |
 | Bluetooth | BT 5.2 (chip combinado) |
-| Conector de antena | 1× RP-SMA female (removível) |
+| Conector de antena | 2× RP-SMA female (removíveis) |
 | Interface USB | USB 3.2 Gen 1 Type-C (5 Gbps) |
 | Cabo | 2-in-1 USB-C/USB-A |
 | Segurança sem fio | WPA3 / WPA2 / WPA / WEP / WPS |
@@ -79,7 +79,7 @@ O AWUS036AXML apresenta o chipset MediaTek MT7921AUN com suporte Wi-Fi 6E triban
 ## Conteúdo da Caixa
 
 - 1× Adaptador AWUS036AXML
-- 1× Antena dipolo removível
+- 2× Antenas dipolo removíveis
 - 1× Cabo 2-in-1 USB-C/USB-A
 - 1× Suporte de clipe de tela
 

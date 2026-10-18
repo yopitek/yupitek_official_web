@@ -1,6 +1,6 @@
 ---
 title: "Руководство по установке драйверов ALFA AWUS036ACS для Китая: Kali Linux, Ubuntu, Debian и Raspberry Pi"
-description: "Пошаговое руководство по установке драйверов ALFA AWUS036ACS в Китае с использованием внутренних зеркал. Драйвер RTL8811AU DKMS, полная поддержка режима монитора и инъекции пакетов. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi. GitHub не требуется."
+description: "Пошаговое руководство по установке драйверов ALFA AWUS036ACS в Китае с использованием внутренних зеркал. Драйвер RTL8811AU DKMS, полная поддержка режима монитора и инъекции пакетов. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi."
 date: 2026-04-24
 author: "benny-lai"
 lastmod: 2026-07-02
@@ -21,17 +21,17 @@ faq:
   - question: "Поддерживает ли AWUS036ACS режим монитора?"
     answer: "Да, RTL8811AU полностью поддерживает режим монитора и инъекцию пакетов, экономичный выбор для исследований безопасности."
   - question: "Нужен ли VPN для установки AWUS036ACS в Китае?"
-    answer: "Нет. В любом дистрибутиве соберите DKMS-драйвер 8821au с помощью install-driver.sh из зеркала Gitee."
+    answer: "Не обязательно. Клонируйте драйвер из проверенного репозитория GitHub (morrownr/8821au-20210708); если GitHub работает медленно, используйте надёжный прокси или зеркало. Инструменты сборки по-прежнему можно установить из внутренних зеркал."
   - question: "Какой USB ID у AWUS036ACS?"
     answer: "USB ID Realtek RTL8811AU — 0bda:0811, можно проверить через lsusb."
   - question: "Какая команда для установки драйвера AWUS036ACS в Kali Linux?"
-    answer: "Установите инструменты сборки, склонируйте драйвер 8821au (morrownr/8821au-20210708 или его зеркало на Gitee) и выполните `sudo sh install-driver.sh`. Пакет apt realtek-rtl88xxau-dkms — это драйвер RTL8812AU, он не подходит для этого адаптера."
+    answer: "Установите инструменты сборки, склонируйте драйвер 8821au (morrownr/8821au-20210708 на GitHub) и выполните `sudo sh install-driver.sh`. Пакет apt realtek-rtl88xxau-dkms — это драйвер RTL8812AU, он не подходит для этого адаптера."
 ---
 
-AWUS036ACS — это компактный двухдиапазонный адаптер ALFA для исследований в области безопасности. Его чип RTL8811AU поддерживает полноценный режим монитора и инъекцию пакетов в Kali Linux, но так как драйвер не входит в состав ядра, его необходимо скомпилировать из исходного кода. В Китае доступ к GitHub заблокирован, поэтому данное руководство использует исключительно зеркала Gitee. GitHub не требуется.
+AWUS036ACS — это компактный двухдиапазонный адаптер ALFA для исследований в области безопасности. Его чип RTL8811AU поддерживает полноценный режим монитора и инъекцию пакетов в Kali Linux, но так как драйвер не входит в состав ядра, его необходимо скомпилировать из исходного кода. В Китае GitHub может работать медленно, поэтому в этом руководстве инструменты сборки устанавливаются из внутренних зеркал, а драйвер клонируется из проверенного репозитория GitHub; если GitHub работает медленно, используйте надёжный прокси или зеркало.
 
 {{< tldr >}}
-AWUS036ACS использует чип RTL8811AU. В любом дистрибутиве DKMS-драйвер 8821au собирается с помощью install-driver.sh из зеркала Gitee. Поддерживает режим монитора и инъекцию пакетов.
+AWUS036ACS использует чип RTL8811AU. В любом дистрибутиве DKMS-драйвер 8821au собирается с помощью install-driver.sh из репозитория GitHub morrownr/8821au-20210708. Поддерживает режим монитора и инъекцию пакетов.
 {{< /tldr >}}
 
 Убедитесь, что у вас готовы:
@@ -106,14 +106,14 @@ sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 
 ---
 
-### Шаг 3: Клонирование драйвера из Gitee
+### Шаг 3: Клонирование драйвера из GitHub
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 ```
 
-> **ПРИМЕЧАНИЕ:** Если URL-адрес Gitee не загружается, выполните поиск в Gitee по запросу `8821au` и выберите наиболее свежий форк. Вы также можете скачать архивы драйверов с [files.alfa.com.tw](https://files.alfa.com.tw).
+> **ПРИМЕЧАНИЕ:** Поддерживаемый основной драйвер — [morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708). Если GitHub работает медленно, используйте надёжный прокси или зеркало. Архивы также можно скачать с [files.alfa.com.tw](https://files.alfa.com.tw).
 
 ---
 
@@ -213,11 +213,11 @@ sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
 
 ---
 
-### Шаг 3: Клонирование и установка драйвера из Gitee
+### Шаг 3: Клонирование и установка драйвера из GitHub
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -270,8 +270,8 @@ sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
 ### Шаг 3: Клонирование и установка
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -333,8 +333,8 @@ sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
 ### Шаг 4: Клонирование и установка драйвера
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -379,7 +379,7 @@ sudo aireplay-ng --test wlan1mon
 |----------|-------------------|---------|
 | `lsusb` не показывает 0bda:0811 | Нет питания или плохой кабель | Попробуйте другой USB-порт |
 | `install-driver.sh` завершается ошибкой | Отсутствуют заголовки ядра | Выполните `sudo apt install linux-headers-$(uname -r)` |
-| Ошибка клонирования из Gitee | Проблема с сетью | Поищите `8821au` на gitee.com, попробуйте другой форк |
+| Ошибка или медленное клонирование с GitHub | Проблема с сетью | Используйте надёжный прокси или зеркало |
 | Ошибка `airmon-ng start` | Запущен NetworkManager | Сначала выполните `sudo airmon-ng check kill` |
 | Нет трафика в режиме монитора | Неверный канал | Установите канал: `iwconfig wlan1mon channel 6` |
 | Ошибка инъекции "No Answer" | Точка доступа слишком далеко | Подойдите ближе. Используйте `wlan1mon`, а не `wlan1`. |
@@ -392,7 +392,7 @@ sudo aireplay-ng --test wlan1mon
 |----------|-----|----------------------|
 | Официальные драйверы Alfa | [files.alfa.com.tw](https://files.alfa.com.tw) | Пакеты драйверов |
 | Документация Alfa | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | Руководства пользователя |
-| Драйвер 8821au (Gitee) | [gitee.com/mirrors/8821au](https://gitee.com/mirrors/8821au) | Драйвер RTL8811AU |
+| Драйвер 8821au (GitHub) | [github.com/morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708) | Драйвер RTL8811AU |
 | Зеркало Tsinghua University | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | Зеркало Alibaba Cloud | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (рекомендуется) |
 | Зеркало USTC | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (рекомендуется) |
@@ -417,4 +417,4 @@ sudo aireplay-ng --test wlan1mon
 1. [Официальная документация aircrack-ng](https://www.aircrack-ng.org/)
 2. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
 3. [Официальная документация Kali Linux](https://www.kali.org/docs/)
-4. [Зеркало Gitee 8821au](https://gitee.com/mirrors/8821au)
+4. [GitHub: morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708)

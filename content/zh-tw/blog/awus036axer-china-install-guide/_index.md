@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AXER 中國安裝全攻略：Kali Linux / Ubuntu / Debian / 樹莓派"
-description: "手把手教你在中國網路環境下安裝 ALFA AWUS036AXER 驅動，全程使用國內鏡像，無需翻牆。RTL8832BU 晶片，WiFi 6 迷你網卡。"
+description: "手把手教你在中國網路環境下安裝 ALFA AWUS036AXER 驅動，編譯工具使用國內鏡像，驅動原始碼取自 GitHub。RTL8832BU 晶片，WiFi 6 迷你網卡。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -24,10 +24,10 @@ faq:
   - question: "AWUS036AXER 的 USB ID 是多少？"
     answer: "Realtek RTL8832BU 的廠商 ID 為 0bda，產品 ID 依機種為 8832 或 885a，請用 lsusb 確認你手上的裝置。"
   - question: "在中國安裝 AWUS036AXER 需要翻牆嗎？"
-    answer: "不需要，從 Gitee 下載 rtl8852bu 源碼並用國內鏡像安裝編譯工具即可。"
+    answer: "不一定。從已驗證的 GitHub 儲存庫（morrownr/rtl8852bu-20250826）下載驅動原始碼；若 GitHub 速度較慢，請使用你信任的代理或鏡像。編譯工具仍可用國內鏡像安裝。"
 ---
 
-AWUS036AXER 的 RTL8832BU 晶片沒有 Linux 核心內建驅動，因此在所有發行版（包括 Ubuntu 24.04）上都需要透過 DKMS 編譯一次社群版 rtl8852bu 驅動。本指南使用 Gitee 鏡像，不需要連線 GitHub。此驅動不支援 Monitor mode。
+AWUS036AXER 的 RTL8832BU 晶片沒有 Linux 核心內建驅動，因此在所有發行版（包括 Ubuntu 24.04）上都需要透過 DKMS 編譯一次社群版 rtl8852bu 驅動。驅動原始碼從已驗證的 GitHub 儲存庫下載；若 GitHub 速度較慢，請使用你信任的代理或鏡像。此驅動不支援 Monitor mode。
 
 {{< tldr >}}
 AWUS036AXER 採用 RTL8832BU 晶片，支援 WiFi 6。驅動不在核心中：所有發行版（包括 Ubuntu 24.04）都需要透過 DKMS 編譯 rtl8852bu。不支援 Monitor mode。
@@ -35,7 +35,7 @@ AWUS036AXER 採用 RTL8832BU 晶片，支援 WiFi 6。驅動不在核心中：�
 
 剛拿到這台輕巧迷你、方便攜帶的 AWUS036AXER，插上去結果 Linux 一點反應都沒有？別擔心，這再正常不過了。
 
-考慮到大家在國內存取 GitHub 不太方便，這份指南全程會帶大家使用 Gitee 鏡像，不用翻牆，花個 10 分鐘就能搞定。咱們現在就開始吧！
+考慮到大家在國內存取 GitHub 可能比較慢，這份指南的驅動原始碼取自已驗證的 GitHub 儲存庫；若速度不佳，請使用你信任的代理或鏡像。花個 10 分鐘就能搞定，咱們現在就開始吧！
 
 > **資安研究提示：** 社群版 rtl8852bu 驅動不支援 Monitor mode 與封包注入。做資安研究請改用核心內建 MediaTek 驅動的網卡，例如 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)。
 
@@ -104,13 +104,13 @@ sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 
 ---
 
-### 3. 從 Gitee 下載驅動原始碼
+### 3. 從 GitHub 下載驅動原始碼
 
-既然 GitHub 連不上，咱們改走 Gitee 鏡像：
+GitHub 較慢時，請先使用你信任的代理或鏡像，再複製驅動原始碼：
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 ```
 
 ---
@@ -136,8 +136,8 @@ sudo nano /etc/apt/sources.list.d/ubuntu.sources
 
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -151,8 +151,8 @@ sudo reboot
 ```bash
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -180,7 +180,7 @@ sudo reboot
 |------|------|------|
 | 清華大學鏡像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian |
 | 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推薦 |
-| rtl8852bu (Gitee) | [Gitee 鏡像](https://gitee.com/mirrors/rtl8852bu) | 驅動原始碼 |
+| rtl8852bu (GitHub) | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | 驅動原始碼 |
 
 {{< faq >}}
 
@@ -202,4 +202,4 @@ sudo reboot
 1. [Realtek 官方網站](https://www.realtek.com/)
 2. [ALFA Network 官網](https://www.alfa.com.tw/)
 3. [Kali Linux 官方文件](https://www.kali.org/docs/)
-4. [Gitee rtl8852bu 鏡像](https://gitee.com/mirrors/rtl8852bu)
+4. [GitHub: morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)

@@ -1,6 +1,6 @@
 ---
 title: "Guia de Instalação do Driver ALFA AWUS036AX para a China: Kali Linux, Ubuntu, Debian e Raspberry Pi"
-description: "Guia passo a passo para instalar drivers ALFA AWUS036AX na China usando mirrors domésticos. Driver RTL8832BU, WiFi 6 AX1800. Abrange Kali Linux, Ubuntu 22/24 (DKMS), Debian e Raspberry Pi. Não requer GitHub."
+description: "Guia passo a passo para instalar drivers ALFA AWUS036AX na China usando mirrors domésticos. Driver RTL8832BU, WiFi 6 AX1800. Abrange Kali Linux, Ubuntu 22/24 (DKMS), Debian e Raspberry Pi."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -23,12 +23,12 @@ faq:
   - question: "O AWUS036AX  é adequado para pesquisa de segurança sem fio?"
     answer: "Não. O driver comunitário rtl8852bu não suporta modo monitor nem injeção de pacotes. Use, em vez dele, um adaptador com driver MediaTek no kernel, como o AWUS036ACM."
   - question: "Preciso de VPN para instalar o AWUS036AX na China?"
-    answer: "Não. Baixe o código fonte rtl8852bu do Gitee e instale as ferramentas de compilação usando espelhos nacionais."
+    answer: "Não necessariamente. Clone o driver do repositório GitHub verificado (morrownr/rtl8852bu-20250826); se o GitHub estiver lento, use um proxy ou mirror de confiança. As ferramentas de compilação ainda podem ser instaladas por espelhos nacionais."
   - question: "Qual é o USB ID do AWUS036AX?"
     answer: "O ID do fabricante do Realtek RTL8832BU é 0bda. O ID do produto é 8832 ou 885a, dependendo da unidade; confirme com lsusb."
 ---
 
-O AWUS036AX é o adaptador dual-band WiFi 6 AX1800 da ALFA. O chip RTL8832BU do AWUS036AX não tem driver no kernel do Linux, então em qualquer distribuição (inclusive o Ubuntu 24.04) é preciso compilar uma vez o driver comunitário rtl8852bu via DKMS. Este guia usa mirrors do Gitee, portanto não é necessário acessar o GitHub. Este driver não suporta o modo monitor.
+O AWUS036AX é o adaptador dual-band WiFi 6 AX1800 da ALFA. O chip RTL8832BU do AWUS036AX não tem driver no kernel do Linux, então em qualquer distribuição (inclusive o Ubuntu 24.04) é preciso compilar uma vez o driver comunitário rtl8852bu via DKMS. O código-fonte do driver é clonado do repositório GitHub verificado; se o GitHub estiver lento, use um proxy ou mirror de confiança. Este driver não suporta o modo monitor.
 
 > **Nota sobre pesquisa de segurança:** O driver comunitário rtl8852bu não suporta modo monitor nem injeção de pacotes. Para pesquisa de segurança, use um adaptador com driver MediaTek no kernel, como o [AWUS036ACM](/pt/blog/awus036acm-china-install-guide/).
 
@@ -89,14 +89,14 @@ sudo apt update
 sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 ```
 
-### Passo 3: Clonar Driver do Gitee
+### Passo 3: Clonar Driver do GitHub
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 ```
 
-> **NOTA:** Se essa URL do Gitee não carregar, pesquise no Gitee por `rtl8852bu` e escolha o fork atualizado mais recentemente. Você também pode baixar arquivos em [files.alfa.com.tw](https://files.alfa.com.tw).
+> **NOTA:** O driver upstream mantido é [morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826). Se o GitHub estiver lento, use um proxy ou mirror de confiança. Você também pode baixar arquivos em [files.alfa.com.tw](https://files.alfa.com.tw).
 
 ### Passo 4: Compilar e Instalar
 
@@ -143,8 +143,8 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 ```bash
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -168,8 +168,8 @@ deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe mu
 ```bash
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -191,8 +191,8 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main 
 ```bash
 sudo apt update
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -216,8 +216,8 @@ deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-
 ```bash
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -245,7 +245,7 @@ sudo reboot
 |----------|---------------|---------|
 | `lsusb` não mostra 0bda:8832 ou 0bda:885a | Adaptador não detectado | Tente uma porta USB diferente |
 | `install-driver.sh` falha | Cabeçalhos ausentes | `sudo apt install linux-headers-$(uname -r)` |
-| Clone do Gitee falha | Problema de rede | Pesquise no gitee.com por `rtl8852bu` |
+| Clone do GitHub falha ou é lento | Problema de rede | Use um proxy ou mirror de confiança |
 | `modprobe 8852bu` falha | Driver não compilado ou não carregado | Execute `sudo ./install-driver.sh` novamente, verifique `sudo dkms status` e reinicie |
 | Modo monitor / injeção não funciona | Não suportado pelo driver rtl8852bu | Use o AWUS036ACM para trabalhos de pentest |
 
@@ -256,7 +256,7 @@ sudo reboot
 | Recurso | URL | Use para |
 |---------|-----|----------|
 | Drivers oficiais Alfa | [files.alfa.com.tw](https://files.alfa.com.tw) | Pacotes de drivers |
-| rtl8852bu (Gitee) | [gitee.com/mirrors/rtl8852bu](https://gitee.com/mirrors/rtl8852bu) | Driver RTL8832BU |
+| rtl8852bu (GitHub) | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | Driver RTL8832BU |
 | Mirror da USP/Tsinghua | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | Mirror da Aliyun | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
 | Mirror da USTC | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
@@ -282,4 +282,4 @@ Dúvidas? Deixe um comentário abaixo ou entre em contato em [yupitek.com](https
 1. [Site oficial da Realtek](https://www.realtek.com/)
 2. [Site oficial da ALFA Network](https://www.alfa.com.tw/)
 3. [Documentacao oficial do Kali Linux](https://www.kali.org/docs/)
-4. [Espelho Gitee rtl8852bu](https://gitee.com/mirrors/rtl8852bu)
+4. [GitHub: morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)

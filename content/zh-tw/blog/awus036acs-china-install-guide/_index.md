@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036ACS 中國安裝全攻略：Kali Linux / Ubuntu / Debian / 樹莓派"
-description: "手把手教你在中國網路環境下安裝 ALFA AWUS036ACS 驅動，全程使用國內鏡像，無需翻牆。RTL8811AU 晶片，支援監聽模式與封包注入。"
+description: "手把手教你在中國網路環境下安裝 ALFA AWUS036ACS 驅動，編譯工具使用國內鏡像，驅動原始碼取自 GitHub。RTL8811AU 晶片，支援監聽模式與封包注入。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -20,22 +20,22 @@ faq:
   - question: "AWUS036ACS 支援監聽模式嗎？"
     answer: "支援，RTL8811AU 完美支援監聽模式與封包注入，是安全研究的經濟實惠選擇。"
   - question: "在中國安裝 AWUS036ACS 需要翻牆嗎？"
-    answer: "不需要。所有發行版都從 Gitee 原始碼鏡像下載，並用 install-driver.sh 編譯 8821au DKMS 驅動。"
+    answer: "不一定。從已驗證的 GitHub 儲存庫（morrownr/8821au-20210708）下載驅動原始碼；若 GitHub 速度較慢，請使用你信任的代理或鏡像。編譯工具仍可用國內鏡像安裝。"
   - question: "AWUS036ACS 的 USB ID 是多少？"
     answer: "Realtek RTL8811AU 的 USB ID 為 0bda:0811，用 lsusb 可確認。"
   - question: "Kali Linux 安裝 AWUS036ACS 驅動的指令是什麼？"
-    answer: "先安裝編譯工具，複製 8821au 驅動（morrownr/8821au-20210708 或其 Gitee 鏡像），再執行 `sudo sh install-driver.sh`。apt 套件 realtek-rtl88xxau-dkms 是 RTL8812AU 的驅動，不適用於此網卡。"
+    answer: "先安裝編譯工具，複製 8821au 驅動（GitHub 上的 morrownr/8821au-20210708），再執行 `sudo sh install-driver.sh`。apt 套件 realtek-rtl88xxau-dkms 是 RTL8812AU 的驅動，不適用於此網卡。"
 ---
 
-ALFA AWUS036ACS 搭載 RTL8811AU 晶片，在中國透過國內鏡像與 Gitee 源碼安裝驅動即可支援監聽模式與封包注入，全程無需翻牆。
+ALFA AWUS036ACS 搭載 RTL8811AU 晶片，在中國以國內鏡像安裝編譯工具，並從 GitHub 儲存庫下載驅動原始碼，即可支援監聽模式與封包注入。
 
 {{< tldr >}}
-AWUS036ACS 採用 RTL8811AU 晶片。所有發行版都從 Gitee 鏡像下載，並用 install-driver.sh 編譯 8821au DKMS 驅動，支援監聽模式與封包注入。
+AWUS036ACS 採用 RTL8811AU 晶片。所有發行版都從 GitHub 儲存庫 morrownr/8821au-20210708 下載原始碼，並用 install-driver.sh 編譯 8821au DKMS 驅動，支援監聽模式與封包注入。
 {{< /tldr >}}
 
 剛拿到這台輕巧的 AWUS036ACS，興沖沖插上去結果 Linux 一點反應都沒有？別擔心，這再正常不過了。雖然它內建的 RTL8811AU 晶片是安全研究的神器，完美支援監聽模式與封包注入，但驅動程式並不在系統核心裡，得靠咱們動手裝一下。
 
-考慮到大家在國內存取 GitHub 可能會卡卡的，我特別找好了 Gitee 鏡像，不用翻牆，跟著我一步步把它「馴服」吧！
+考慮到大家在國內存取 GitHub 可能會卡卡的，這份指南的驅動原始碼取自已驗證的 GitHub 儲存庫；若速度不佳，請使用你信任的代理或鏡像，跟著我一步步把它「馴服」吧！
 
 ## 開始前的準備
 
@@ -99,12 +99,12 @@ sudo apt update
 
 ### 2. 安裝驅動程式
 
-RTL8811AU 沒有核心內建驅動，需要從 Gitee 鏡像下載社群版 8821au 驅動來編譯安裝：
+RTL8811AU 沒有核心內建驅動，需要從 GitHub 下載社群版 8821au 驅動來編譯安裝：
 
 ```bash
 sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -144,13 +144,13 @@ Ubuntu 24.04 使用 `ubuntu.sources`，22.04 則使用 `sources.list`。換好�
 sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r)
 ```
 
-### 3. 從 Gitee 下載驅動原始碼
+### 3. 從 GitHub 下載驅動原始碼
 
-既然 GitHub 連不上，咱們改走 Gitee 鏡像：
+GitHub 較慢時，請先使用你信任的代理或鏡像，再複製驅動原始碼：
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 ```
 
 > **溫馨提示：** 上游驅動為 [morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708)。RTL8812AU 使用另一套驅動，請不要混用。
@@ -192,7 +192,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main 
 
 建議直接刷 Kali ARM64 版本，省去很多麻煩。
 
-apt 套件庫沒有適用 RTL8811AU 的驅動，請參考上面的「Ubuntu」章節，從 Gitee 原始碼編譯 8821au 驅動。
+apt 套件庫沒有適用 RTL8811AU 的驅動，請參考上面的「Ubuntu」章節，從 GitHub 原始碼編譯 8821au 驅動。
 
 ---
 
@@ -244,4 +244,4 @@ apt 套件庫沒有適用 RTL8811AU 的驅動，請參考上面的「Ubuntu」�
 1. [aircrack-ng 官方文件](https://www.aircrack-ng.org/)
 2. [ALFA Network 官網](https://www.alfa.com.tw/)
 3. [Kali Linux 官方文件](https://www.kali.org/docs/)
-4. [Gitee 8821au 鏡像](https://gitee.com/mirrors/8821au)
+4. [GitHub: morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708)

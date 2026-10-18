@@ -1,6 +1,6 @@
 ---
 title: "Guía de instalación del controlador ALFA AWUS036ACS para China: Kali Linux, Ubuntu, Debian y Raspberry Pi"
-description: "Guía paso a paso para instalar los controladores ALFA AWUS036ACS en China utilizando espejos domésticos. Controlador DKMS RTL8811AU, modo monitor completo e inyección de paquetes. Cubre Kali Linux, Ubuntu 22/24, Debian y Raspberry Pi. No se requiere GitHub."
+description: "Guía paso a paso para instalar los controladores ALFA AWUS036ACS en China utilizando espejos domésticos. Controlador DKMS RTL8811AU, modo monitor completo e inyección de paquetes. Cubre Kali Linux, Ubuntu 22/24, Debian y Raspberry Pi."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -20,17 +20,17 @@ faq:
   - question: "¿El AWUS036ACS admite el modo monitor?"
     answer: "Sí, RTL8811AU admite perfectamente el modo monitor y la inyección de paquetes; es una opción económica para investigación de seguridad."
   - question: "¿Hace falta VPN para instalar el AWUS036ACS en China?"
-    answer: "No. En cualquier distribución se compila el controlador DKMS 8821au con install-driver.sh desde un espejo de Gitee."
+    answer: "No necesariamente. Clona el controlador desde el repositorio de GitHub verificado (morrownr/8821au-20210708); si GitHub va lento, usa un proxy o espejo de confianza. Las herramientas de compilación se pueden seguir instalando con espejos nacionales."
   - question: "¿Cuál es el USB ID del AWUS036ACS?"
     answer: "El USB ID de Realtek RTL8811AU es 0bda:0811, puedes confirmarlo con lsusb."
   - question: "¿Cuál es el comando para instalar el controlador del AWUS036ACS en Kali Linux?"
-    answer: "Instala las herramientas de compilación, clona el controlador 8821au (morrownr/8821au-20210708 o un espejo en Gitee) y ejecuta `sudo sh install-driver.sh`. El paquete apt realtek-rtl88xxau-dkms es el controlador del RTL8812AU y no sirve para este adaptador."
+    answer: "Instala las herramientas de compilación, clona el controlador 8821au (morrownr/8821au-20210708 en GitHub) y ejecuta `sudo sh install-driver.sh`. El paquete apt realtek-rtl88xxau-dkms es el controlador del RTL8812AU y no sirve para este adaptador."
 ---
 
-El AWUS036ACS es el adaptador de investigación de seguridad de doble banda compacto de ALFA. Su chip RTL8811AU admite el modo monitor completo y la inyección de paquetes en Kali Linux, pero debido a que el controlador está fuera del kernel, debes compilarlo desde el código fuente. En China, GitHub está bloqueado, por lo que esta guía utiliza exclusivamente espejos de Gitee. No se requiere GitHub.
+El AWUS036ACS es el adaptador de investigación de seguridad de doble banda compacto de ALFA. Su chip RTL8811AU admite el modo monitor completo y la inyección de paquetes en Kali Linux, pero debido a que el controlador está fuera del kernel, debes compilarlo desde el código fuente. En China GitHub puede ir lento, por lo que esta guía instala las herramientas de compilación con espejos nacionales y clona el controlador desde el repositorio de GitHub verificado; si GitHub va lento, usa un proxy o espejo de confianza.
 
 {{< tldr >}}
-El AWUS036ACS usa el chip RTL8811AU. En cualquier distribución se compila el controlador DKMS 8821au con install-driver.sh desde un espejo de Gitee. Admite modo monitor e inyección de paquetes.
+El AWUS036ACS usa el chip RTL8811AU. En cualquier distribución se compila el controlador DKMS 8821au con install-driver.sh desde el repositorio de GitHub morrownr/8821au-20210708. Admite modo monitor e inyección de paquetes.
 {{< /tldr >}}
 
 Asegúrate de tener esto listo:
@@ -105,14 +105,14 @@ sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 
 ---
 
-### Paso 3: Clonar el controlador desde Gitee
+### Paso 3: Clonar el controlador desde GitHub
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 ```
 
-> **NOTA:** Si esa URL de Gitee no carga, busca en Gitee `8821au` y elige el fork actualizado más recientemente. También puedes descargar archivos de controladores desde [files.alfa.com.tw](https://files.alfa.com.tw).
+> **NOTA:** El controlador upstream mantenido es [morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708). Si GitHub va lento, usa un proxy o espejo de confianza. También puedes descargar archivos desde [files.alfa.com.tw](https://files.alfa.com.tw).
 
 ---
 
@@ -212,11 +212,11 @@ sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
 
 ---
 
-### Paso 3: Clonar e instalar el controlador desde Gitee
+### Paso 3: Clonar e instalar el controlador desde GitHub
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -269,8 +269,8 @@ sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
 ### Paso 3: Clonar e instalar
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -332,8 +332,8 @@ sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
 ### Paso 4: Clonar e instalar el controlador
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -376,7 +376,7 @@ sudo aireplay-ng --test wlan1mon
 |----------|---------------|----------|
 | `lsusb` no muestra 0bda:0811 | El adaptador no tiene energía o el cable está mal | Prueba con un puerto USB diferente |
 | `install-driver.sh` falla | Faltan los encabezados | Ejecuta `sudo apt install linux-headers-$(uname -r)` |
-| La clonación de Gitee falla | Problema de red | Busca en gitee.com `8821au`, prueba con un fork diferente |
+| La clonación de GitHub falla o es lenta | Problema de red | Usa un proxy o espejo de confianza |
 | `airmon-ng start` falla | NetworkManager se está ejecutando | Ejecuta `sudo airmon-ng check kill` primero |
 | No hay tráfico en modo monitor | Canal incorrecto | Establece el canal: `iwconfig wlan1mon channel 6` |
 | Inyección "No Answer" | El AP está demasiado lejos | Acércate. Usa `wlan1mon`, no `wlan1`. |
@@ -389,7 +389,7 @@ sudo aireplay-ng --test wlan1mon
 |---------|-----|----------|
 | Controladores oficiales de Alfa | [files.alfa.com.tw](https://files.alfa.com.tw) | Paquetes de controladores |
 | Documentación de Alfa | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | Manuales de productos |
-| Controlador 8821au (Gitee) | [gitee.com/mirrors/8821au](https://gitee.com/mirrors/8821au) | Controlador RTL8811AU |
+| Controlador 8821au (GitHub) | [github.com/morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708) | Controlador RTL8811AU |
 | Espejo de la Universidad de Tsinghua | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | Espejo de Alibaba Cloud | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recomendado) |
 | Espejo de la USTC | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recomendado) |
@@ -415,4 +415,4 @@ sudo aireplay-ng --test wlan1mon
 1. [Documentación oficial de aircrack-ng](https://www.aircrack-ng.org/)
 2. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)
 3. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)
-4. [Espejo de 8821au en Gitee](https://gitee.com/mirrors/8821au)
+4. [GitHub: morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708)

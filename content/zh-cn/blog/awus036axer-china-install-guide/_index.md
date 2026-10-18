@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AXER 中国安装全攻略：Kali Linux / Ubuntu / Debian / 树莓派"
-description: "手把手教你在中国网络环境下安装 ALFA AWUS036AXER 驱动，全程使用国内镜像，无需翻墙。覆盖 Kali Linux、Ubuntu 22/24、Debian 和树莓派。"
+description: "手把手教你在中国网络环境下安装 ALFA AWUS036AXER 驱动，编译工具使用国内镜像，驱动源码取自 GitHub。覆盖 Kali Linux、Ubuntu 22/24、Debian 和树莓派。"
 date: 2026-04-24
 author: "benny-lai"
 lastmod: 2026-07-02
@@ -24,20 +24,20 @@ faq:
   - question: "AWUS036AXER 的 USB ID 是多少？"
     answer: "Realtek RTL8832BU 的厂商 ID 为 0bda，产品 ID 视机型为 8832 或 885a，请用 lsusb 确认你手上的设备。"
   - question: "在中国安装 AWUS036AXER 需要翻墙吗？"
-    answer: "不需要，从 Gitee 下载 rtl8852bu 源码并用国内镜像安装编译工具即可。"
+    answer: "不一定。从已验证的 GitHub 仓库（morrownr/rtl8852bu-20250826）下载驱动源码；如果 GitHub 速度较慢，请使用你信任的代理或镜像。编译工具仍可用国内镜像安装。"
 ---
 
 
 
 
-刚收到这款小巧玲珑的 AWUS036AXER，插上去发现 Linux 没反应？别担心，这很正常。AWUS036AXER 的 RTL8832BU 芯片没有 Linux 内核内置驱动，因此在所有发行版（包括 Ubuntu 24.04）上都需要通过 DKMS 编译一次社区版 rtl8852bu 驱动。本指南使用 Gitee 镜像，无需访问 GitHub。该驱动不支持 Monitor mode。
+刚收到这款小巧玲珑的 AWUS036AXER，插上去发现 Linux 没反应？别担心，这很正常。AWUS036AXER 的 RTL8832BU 芯片没有 Linux 内核内置驱动，因此在所有发行版（包括 Ubuntu 24.04）上都需要通过 DKMS 编译一次社区版 rtl8852bu 驱动。驱动源码从已验证的 GitHub 仓库下载；如果 GitHub 速度较慢，请使用你信任的代理或镜像。该驱动不支持 Monitor mode。
 
 {{< tldr >}}
 AWUS036AXER 采用 RTL8832BU 芯片，支持 WiFi 6。驱动不在内核中：所有发行版（包括 Ubuntu 24.04）都需要通过 DKMS 编译 rtl8852bu。不支持 Monitor mode。
 {{< /tldr >}}
 
 
-对于其他系统的用户，我也帮大家找好了国内的 Gitee 镜像。不用翻墙，咱们花个 10 分钟就能把它“调教”好。
+国内访问 GitHub 可能比较慢，本指南的驱动源码取自已验证的 GitHub 仓库；如果速度不佳，请使用你信任的代理或镜像。咱们花个 10 分钟就能把它“调教”好。
 
 > **安全研究提示：** 社区版 rtl8852bu 驱动不支持 Monitor mode 和封包注入。做安全研究请改用内核内置 MediaTek 驱动的网卡，例如 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)。
 
@@ -107,13 +107,13 @@ sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 
 ---
 
-### 3. 从 Gitee 把驱动“搬”过来
+### 3. 从 GitHub 把驱动“搬”过来
 
-不用翻墙，咱们直接用国内的 Gitee 镜像。
+GitHub 速度较慢时，请先使用你信任的代理或镜像，再克隆驱动源码：
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 ```
 
 ---
@@ -152,8 +152,8 @@ sudo nano /etc/apt/sources.list.d/ubuntu.sources
 
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -171,8 +171,8 @@ sudo nano /etc/apt/sources.list
 
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -189,8 +189,8 @@ sudo nano /etc/apt/sources.list
 
 sudo apt update
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -204,8 +204,8 @@ sudo reboot
 ```bash
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -238,7 +238,7 @@ sudo reboot
 | 资源名称 | 地址 | 说明 |
 |------|------|------|
 | Alfa 官方下载 | [files.alfa.com.tw](https://files.alfa.com.tw) | 官方驱动包 |
-| rtl8852bu 驱动镜像 | [Gitee 镜像](https://gitee.com/mirrors/rtl8852bu) | 国内克隆专用 |
+| rtl8852bu 驱动（GitHub） | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | 驱动源码 |
 | 清华大学镜像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Debian/Ubuntu 推荐 |
 
 
@@ -262,4 +262,4 @@ sudo reboot
 1. [Realtek 官方网站](https://www.realtek.com/)
 2. [ALFA Network 官网](https://www.alfa.com.tw/)
 3. [Kali Linux 官方文档](https://www.kali.org/docs/)
-4. [Gitee rtl8852bu 镜像](https://gitee.com/mirrors/rtl8852bu)
+4. [GitHub: morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)

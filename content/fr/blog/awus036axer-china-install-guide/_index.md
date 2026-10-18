@@ -1,6 +1,6 @@
 ---
 title: "Guide d'installation du pilote ALFA AWUS036AXER pour la Chine : Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "Guide étape par étape pour installer les pilotes ALFA AWUS036AXER en Chine en utilisant des miroirs domestiques. Pilote RTL8832BU, adaptateur WiFi 6 nano. Couvre Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi. Aucun GitHub requis."
+description: "Guide étape par étape pour installer les pilotes ALFA AWUS036AXER en Chine en utilisant des miroirs domestiques. Pilote RTL8832BU, adaptateur WiFi 6 nano. Couvre Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -24,14 +24,14 @@ faq:
   - question: "Quel est l'USB ID de l'AWUS036AXER ?"
     answer: "L'ID fabricant du Realtek RTL8832BU est 0bda. L'ID produit est 8832 ou 885a selon l'unité ; vérifiez-le avec lsusb."
   - question: "Faut-il un VPN pour installer l'AWUS036AXER en Chine ?"
-    answer: "Non, téléchargez le code source rtl8852bu depuis Gitee et utilisez les miroirs nationaux pour les outils de compilation."
+    answer: "Pas nécessairement. Clonez le pilote depuis le dépôt GitHub vérifié (morrownr/rtl8852bu-20250826) ; si GitHub est lent, utilisez un proxy ou un miroir de confiance. Les outils de compilation peuvent toujours être installés depuis des miroirs nationaux."
 ---
 
 {{< tldr >}}
 L'AWUS036AXER utilise le chipset RTL8832BU avec WiFi 6. Le pilote n'est pas dans le noyau : toutes les distributions (y compris Ubuntu 24.04) doivent compiler rtl8852bu via DKMS. Le mode moniteur n'est pas pris en charge.
 {{< /tldr >}}
 
-L'AWUS036AXER est l'adaptateur WiFi 6 nano d'ALFA — un dongle compact conçu pour rester branché en permanence sur un ordinateur portable. La puce RTL8832BU de l'AWUS036AXER n'a pas de pilote intégré au noyau Linux : sur toutes les distributions (y compris Ubuntu 24.04), il faut compiler une fois le pilote communautaire rtl8852bu via DKMS. Ce guide utilise des miroirs Gitee, aucun accès à GitHub n'est requis. Ce pilote ne prend pas en charge le mode moniteur.
+L'AWUS036AXER est l'adaptateur WiFi 6 nano d'ALFA — un dongle compact conçu pour rester branché en permanence sur un ordinateur portable. La puce RTL8832BU de l'AWUS036AXER n'a pas de pilote intégré au noyau Linux : sur toutes les distributions (y compris Ubuntu 24.04), il faut compiler une fois le pilote communautaire rtl8852bu via DKMS. Le code source du pilote est cloné depuis le dépôt GitHub vérifié ; si GitHub est lent, utilisez un proxy ou un miroir de confiance. Ce pilote ne prend pas en charge le mode moniteur.
 
 > **Remarque sur la recherche en sécurité:** Le pilote communautaire rtl8852bu ne prend en charge ni le mode moniteur ni l'injection de paquets. Pour la recherche en sécurité, utilisez un adaptateur avec pilote MediaTek intégré au noyau, comme l'[AWUS036ACM](/fr/blog/awus036acm-china-install-guide/).
 
@@ -94,11 +94,11 @@ sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 
 ---
 
-### Étape 3 : Cloner le pilote depuis Gitee
+### Étape 3 : Cloner le pilote depuis GitHub
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 ```
 
 ---
@@ -135,8 +135,8 @@ Remplacez les URIs par le miroir Aliyun :
 ```bash
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -160,8 +160,8 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free 
 ```bash
 sudo apt update
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -183,8 +183,8 @@ deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-
 ```bash
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -218,7 +218,7 @@ sudo reboot
 | Ressource | URL | Utilisation pour |
 |----------|-----|---------|
 | Pilotes officiels Alfa | [files.alfa.com.tw](https://files.alfa.com.tw) | Packs de pilotes |
-| rtl8852bu (Gitee) | [gitee.com/mirrors/rtl8852bu](https://gitee.com/mirrors/rtl8852bu) | Pilote RTL8832BU |
+| rtl8852bu (GitHub) | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | Pilote RTL8832BU |
 | Miroir Tsinghua | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 
 {{< faq >}}
@@ -242,4 +242,4 @@ Questions ? Laissez un commentaire ci-dessous ou contactez-nous sur [yupitek.com
 1. [Site officiel Realtek](https://www.realtek.com/)
 2. [Site officiel ALFA Network](https://www.alfa.com.tw/)
 3. [Documentation officielle Kali Linux](https://www.kali.org/docs/)
-4. [Miroir Gitee rtl8852bu](https://gitee.com/mirrors/rtl8852bu)
+4. [GitHub: morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)

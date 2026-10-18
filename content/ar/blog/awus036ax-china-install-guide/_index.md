@@ -1,6 +1,6 @@
 ---
 title: "دليل تثبيت برنامج تشغيل ALFA AWUS036AX للصين: Kali Linux، Ubuntu، Debian و Raspberry Pi"
-description: "دليل خطوة بخطوة لتثبيت برامج تشغيل ALFA AWUS036AX في الصين باستخدام المرايا المحلية. برنامج تشغيل RTL8832BU، WiFi 6 AX1800. يغطي Kali Linux و Ubuntu 22/24 (DKMS) و Debian و Raspberry Pi. لا يتطلب GitHub."
+description: "دليل خطوة بخطوة لتثبيت برامج تشغيل ALFA AWUS036AX في الصين باستخدام المرايا المحلية. برنامج تشغيل RTL8832BU، WiFi 6 AX1800. يغطي Kali Linux و Ubuntu 22/24 (DKMS) و Debian و Raspberry Pi."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -22,11 +22,11 @@ faq:
   - question: "هل AWUS036AX مناسب لأبحاث الأمن اللاسلكي؟"
     answer: "لا. برنامج التشغيل المجتمعي rtl8852bu لا يدعم وضع المراقبة ولا حقن الحزم. استخدم بدلاً منه محولاً ببرنامج تشغيل MediaTek مدمج في النواة مثل AWUS036ACM."
   - question: "هل أحتاج إلى VPN لتثبيت AWUS036AX في الصين؟"
-    answer: "لا، نزّل كود rtl8852bu من Gitee واستخدم المرايا المحلية لتثبيت أدوات التجميع."
+    answer: "ليس بالضرورة. استنسخ برنامج التشغيل من مستودع GitHub الموثّق (morrownr/rtl8852bu-20250826)؛ وإذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها. ويمكن مع ذلك تثبيت أدوات البناء من المرايا المحلية."
   - question: "ما هو USB ID لـ AWUS036AX؟"
     answer: "معرّف المورّد (Vendor ID) لشريحة Realtek RTL8832BU هو 0bda، أما معرّف المنتج (Product ID) فهو 8832 أو 885a حسب الوحدة، فتأكد منه باستخدام lsusb."
 ---
-يعتبر AWUS036AX محول WiFi 6 AX1800 ثنائي النطاق من ALFA. شريحة RTL8832BU في AWUS036AX ليس لها برنامج تشغيل مدمج في نواة Linux، لذا يجب في كل توزيعة (بما فيها Ubuntu 24.04) بناء برنامج التشغيل المجتمعي rtl8852bu مرة واحدة عبر DKMS. يستخدم هذا الدليل مرايا Gitee فلا حاجة إلى الوصول إلى GitHub. وضع المراقبة غير مدعوم في برنامج التشغيل هذا.
+يعتبر AWUS036AX محول WiFi 6 AX1800 ثنائي النطاق من ALFA. شريحة RTL8832BU في AWUS036AX ليس لها برنامج تشغيل مدمج في نواة Linux، لذا يجب في كل توزيعة (بما فيها Ubuntu 24.04) بناء برنامج التشغيل المجتمعي rtl8852bu مرة واحدة عبر DKMS. يُستنسخ المصدر البرمجي لبرنامج التشغيل من مستودع GitHub الموثّق؛ وإذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها. وضع المراقبة غير مدعوم في برنامج التشغيل هذا.
 
 {{< tldr >}}
 يستخدم AWUS036AX شريحة RTL8832BU ويدعم WiFi 6. برنامج التشغيل غير موجود في النواة: كل توزيعة (بما فيها Ubuntu 24.04) تحتاج إلى بناء rtl8852bu عبر DKMS. وضع المراقبة غير مدعوم.
@@ -82,14 +82,14 @@ sudo apt update
 sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 ```
 
-### الخطوة 3: استنساخ برنامج التشغيل من Gitee
+### الخطوة 3: استنساخ برنامج التشغيل من GitHub
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 ```
 
-> **ملاحظة:** إذا لم يتم تحميل عنوان URL الخاص بـ Gitee، فابحث في Gitee عن `rtl8852bu` واختر أحدث نسخة. يمكنك أيضًا تنزيل الأرشيفات من [files.alfa.com.tw](https://files.alfa.com.tw).
+> **ملاحظة:** برنامج التشغيل الأصلي المُصان هو [morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826). إذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها. يمكنك أيضًا تنزيل الأرشيفات من [files.alfa.com.tw](https://files.alfa.com.tw).
 
 ### الخطوة 4: التجميع والتثبيت
 
@@ -136,8 +136,8 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 ```bash
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -161,8 +161,8 @@ deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe mu
 ```bash
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -184,8 +184,8 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main 
 ```bash
 sudo apt update
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -209,8 +209,8 @@ deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-
 ```bash
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -238,7 +238,7 @@ sudo reboot
 |---------|-------------|-----|
 | `lsusb` لا يظهر 0bda:8832 أو 0bda:885a | لم يتم اكتشاف المحول | جرب منفذ USB مختلفًا |
 | فشل `install-driver.sh` | فقدان الرؤوس | `sudo apt install linux-headers-$(uname -r)` |
-| فشل استنساخ Gitee | مشكلة في الشبكة | ابحث في gitee.com عن `rtl8852bu` |
+| فشل استنساخ GitHub أو بطؤه | مشكلة في الشبكة | استخدم وكيلًا (proxy) أو مرآة تثق بها |
 | فشل `modprobe 8852bu` | لم يُبنَ برنامج التشغيل أو لم يُحمَّل | أعد تشغيل `sudo ./install-driver.sh` وتحقق من `sudo dkms status` ثم أعد التشغيل |
 | وضع المراقبة / الحقن لا يعمل | غير مدعوم في برنامج التشغيل rtl8852bu | استخدم AWUS036ACM لأعمال الاختبار الأمني |
 
@@ -249,7 +249,7 @@ sudo reboot
 | المورد | عنوان URL | الاستخدام |
 |----------|-----|---------|
 | برامج تشغيل Alfa الرسمية | [files.alfa.com.tw](https://files.alfa.com.tw) | حزم برامج التشغيل |
-| rtl8852bu (Gitee) | [gitee.com/mirrors/rtl8852bu](https://gitee.com/mirrors/rtl8852bu) | برنامج تشغيل RTL8832BU |
+| rtl8852bu (GitHub) | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | برنامج تشغيل RTL8832BU |
 | جامعة تسينغ-هوا | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | مرآة علي بابا | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
 | جامعة العلوم والتكنولوجيا في الصين | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
@@ -275,5 +275,5 @@ sudo reboot
 1. [موقع Realtek الرسمي](https://www.realtek.com/)
 2. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
 3. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
-4. [مرآة Gitee لـ rtl8852bu](https://gitee.com/mirrors/rtl8852bu)
+4. [GitHub: morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)
 

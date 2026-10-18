@@ -1,6 +1,6 @@
 ---
 title: "Руководство по установке драйверов ALFA AWUS036AX для Китая: Kali Linux, Ubuntu, Debian и Raspberry Pi"
-description: "Пошаговое руководство по установке драйверов ALFA AWUS036AX в Китае с использованием внутренних зеркал. Драйвер RTL8832BU, WiFi 6 AX1800. Охватывает Kali Linux, Ubuntu 22/24 (DKMS), Debian и Raspberry Pi. GitHub не требуется."
+description: "Пошаговое руководство по установке драйверов ALFA AWUS036AX в Китае с использованием внутренних зеркал. Драйвер RTL8832BU, WiFi 6 AX1800. Охватывает Kali Linux, Ubuntu 22/24 (DKMS), Debian и Raspberry Pi."
 date: 2026-04-24
 author: "benny-lai"
 lastmod: 2026-07-02
@@ -23,12 +23,12 @@ faq:
   - question: "Подходит ли AWUS036AX для исследований беспроводной безопасности?"
     answer: "Нет. Community-драйвер rtl8852bu не поддерживает режим монитора и инъекцию пакетов. Используйте вместо него адаптер со встроенным в ядро драйвером MediaTek, например AWUS036ACM."
   - question: "Нужен ли VPN для установки AWUS036AX в Китае?"
-    answer: "Нет, скачайте исходный код rtl8852bu с Gitee и используйте внутренние зеркала для установки инструментов компиляции."
+    answer: "Не обязательно. Клонируйте драйвер из проверенного репозитория GitHub (morrownr/rtl8852bu-20250826); если GitHub работает медленно, используйте надёжный прокси или зеркало. Инструменты сборки по-прежнему можно установить из внутренних зеркал."
   - question: "Какой USB ID у AWUS036AX?"
     answer: "Vendor ID Realtek RTL8832BU — 0bda. Product ID — 8832 или 885a в зависимости от экземпляра; подтвердите его командой lsusb."
 ---
 
-AWUS036AX — это двухдиапазонный адаптер ALFA WiFi 6 AX1800. У чипа RTL8832BU адаптера AWUS036AX нет драйвера в ядре Linux, поэтому в любом дистрибутиве (включая Ubuntu 24.04) нужно один раз собрать community-драйвер rtl8852bu через DKMS. В этом руководстве используются зеркала Gitee, доступ к GitHub не требуется. Этот драйвер не поддерживает режим монитора.
+AWUS036AX — это двухдиапазонный адаптер ALFA WiFi 6 AX1800. У чипа RTL8832BU адаптера AWUS036AX нет драйвера в ядре Linux, поэтому в любом дистрибутиве (включая Ubuntu 24.04) нужно один раз собрать community-драйвер rtl8852bu через DKMS. Исходный код драйвера клонируется из проверенного репозитория GitHub; если GitHub работает медленно, используйте надёжный прокси или зеркало. Этот драйвер не поддерживает режим монитора.
 
 {{< tldr >}}
 AWUS036AX использует чипсет RTL8832BU с WiFi 6. Драйвера в ядре нет: в любом дистрибутиве (включая Ubuntu 24.04) rtl8852bu нужно собрать через DKMS. Режим монитора не поддерживается.
@@ -83,14 +83,14 @@ sudo apt update
 sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 ```
 
-### Шаг 3: Клонирование драйвера из Gitee
+### Шаг 3: Клонирование драйвера из GitHub
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 ```
 
-> **ПРИМЕЧАНИЕ:** Если URL-адрес Gitee не загружается, выполните поиск в Gitee по запросу `rtl8852bu` и выберите наиболее свежий форк. Вы также можете скачать архивы с [files.alfa.com.tw](https://files.alfa.com.tw).
+> **ПРИМЕЧАНИЕ:** Поддерживаемый основной драйвер — [morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826). Если GitHub работает медленно, используйте надёжный прокси или зеркало. Архивы также можно скачать с [files.alfa.com.tw](https://files.alfa.com.tw).
 
 ### Шаг 4: Компиляция и установка
 
@@ -137,8 +137,8 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 ```bash
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -162,8 +162,8 @@ deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe mu
 ```bash
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -185,8 +185,8 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main 
 ```bash
 sudo apt update
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -210,8 +210,8 @@ deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-
 ```bash
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -241,7 +241,7 @@ sudo reboot
 |----------|-------------------|---------|
 | `lsusb` не показывает 0bda:8832 или 0bda:885a | Адаптер не обнаружен | Попробуйте другой USB-порт |
 | Ошибка `install-driver.sh` | Отсутствуют заголовки ядра | `sudo apt install linux-headers-$(uname -r)` |
-| Ошибка клонирования из Gitee | Проблема с сетью | Поищите `rtl8852bu` на gitee.com |
+| Ошибка или медленное клонирование с GitHub | Проблема с сетью | Используйте надёжный прокси или зеркало |
 | `modprobe 8852bu` завершается ошибкой | Драйвер не собран или не загружен | Повторно запустите `sudo ./install-driver.sh`, проверьте `sudo dkms status`, затем перезагрузитесь |
 | Режим монитора / инъекция не работает | Не поддерживается драйвером rtl8852bu | Используйте AWUS036ACM для задач пентеста |
 
@@ -252,7 +252,7 @@ sudo reboot
 | Ресурс | URL | Для чего использовать |
 |----------|-----|----------------------|
 | Официальные драйверы Alfa | [files.alfa.com.tw](https://files.alfa.com.tw) | Пакеты драйверов |
-| rtl8852bu (Gitee) | [gitee.com/mirrors/rtl8852bu](https://gitee.com/mirrors/rtl8852bu) | Драйвер RTL8832BU |
+| rtl8852bu (GitHub) | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | Драйвер RTL8832BU |
 | Зеркало Tsinghua University | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | Зеркало Alibaba Cloud | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
 | Зеркало USTC | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
@@ -277,4 +277,4 @@ sudo reboot
 1. [Официальный сайт Realtek](https://www.realtek.com/)
 2. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
 3. [Официальная документация Kali Linux](https://www.kali.org/docs/)
-4. [Зеркало Gitee rtl8852bu](https://gitee.com/mirrors/rtl8852bu)
+4. [GitHub: morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)

@@ -1,6 +1,6 @@
 ---
 title: "دليل تثبيت برنامج تشغيل ALFA AWUS036ACS للصين: Kali Linux، Ubuntu، Debian و Raspberry Pi"
-description: "دليل خطوة بخطوة لتثبيت برامج تشغيل ALFA AWUS036ACS في الصين باستخدام المرايا المحلية. برنامج تشغيل RTL8811AU DKMS، وضع المراقبة الكامل وحقن الحزم. يغطي Kali Linux و Ubuntu 22/24 و Debian و Raspberry Pi. لا يتطلب GitHub."
+description: "دليل خطوة بخطوة لتثبيت برامج تشغيل ALFA AWUS036ACS في الصين باستخدام المرايا المحلية. برنامج تشغيل RTL8811AU DKMS، وضع المراقبة الكامل وحقن الحزم. يغطي Kali Linux و Ubuntu 22/24 و Debian و Raspberry Pi."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -20,16 +20,16 @@ faq:
   - question: "هل يدعم AWUS036ACS وضع المراقبة؟"
     answer: "نعم، RTL8811AU يدعم وضع المراقبة وحقن الحزم بالكامل، وهو خيار اقتصادي لأبحاث الأمن."
   - question: "هل أحتاج إلى VPN لتثبيت AWUS036ACS في الصين؟"
-    answer: "لا. على كل التوزيعات ابنِ برنامج تشغيل DKMS الخاص بـ 8821au باستخدام install-driver.sh من مرآة Gitee."
+    answer: "ليس بالضرورة. استنسخ برنامج التشغيل من مستودع GitHub الموثّق (morrownr/8821au-20210708)؛ وإذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها. ويمكن مع ذلك تثبيت أدوات البناء من المرايا المحلية."
   - question: "ما هو USB ID لـ AWUS036ACS؟"
     answer: "USB ID لـ Realtek RTL8811AU هو 0bda:0811، يمكن التأكد بـ lsusb."
   - question: "ما أمر تثبيت تعريف AWUS036ACS على Kali Linux؟"
-    answer: "ثبّت أدوات البناء، ثم استنسخ برنامج التشغيل 8821au (morrownr/8821au-20210708 أو مرآة له على Gitee) ونفّذ `sudo sh install-driver.sh`. حزمة apt المسماة realtek-rtl88xxau-dkms هي برنامج تشغيل RTL8812AU ولا تناسب هذا المحول."
+    answer: "ثبّت أدوات البناء، ثم استنسخ برنامج التشغيل 8821au (morrownr/8821au-20210708 على GitHub) ونفّذ `sudo sh install-driver.sh`. حزمة apt المسماة realtek-rtl88xxau-dkms هي برنامج تشغيل RTL8812AU ولا تناسب هذا المحول."
 ---
-يعتبر AWUS036ACS محول أبحاث أمان مدمج ثنائي النطاق من ALFA. تدعم شريحة RTL8811AU الخاصة به وضع المراقبة الكامل وحقن الحزم على Kali Linux — ولكن نظرًا لأن برنامج التشغيل خارج النواة، فأنت بحاجة إلى تجميعه من المصدر. في الصين، يتم حظر GitHub، لذا يستخدم هذا الدليل مرايا Gitee حصريًا. لا داعي للقلق، GitHub ليس مطلوبًا على الإطلاق.
+يعتبر AWUS036ACS محول أبحاث أمان مدمج ثنائي النطاق من ALFA. تدعم شريحة RTL8811AU الخاصة به وضع المراقبة الكامل وحقن الحزم على Kali Linux — ولكن نظرًا لأن برنامج التشغيل خارج النواة، فأنت بحاجة إلى تجميعه من المصدر. في الصين قد يكون GitHub بطيئًا، لذلك يثبّت هذا الدليل أدوات البناء من المرايا المحلية ويستنسخ برنامج التشغيل من مستودع GitHub الموثّق؛ وإذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها.
 
 {{< tldr >}}
-يستخدم AWUS036ACS شريحة RTL8811AU. على كل التوزيعات ابنِ برنامج تشغيل DKMS الخاص بـ 8821au باستخدام install-driver.sh من مرآة Gitee. يدعم وضع المراقبة وحقن الحزم.
+يستخدم AWUS036ACS شريحة RTL8811AU. على كل التوزيعات ابنِ برنامج تشغيل DKMS الخاص بـ 8821au باستخدام install-driver.sh من مستودع GitHub‏ morrownr/8821au-20210708. يدعم وضع المراقبة وحقن الحزم.
 {{< /tldr >}}
 
 تأكد من توفر المتطلبات التالية لديك:
@@ -105,14 +105,14 @@ sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 
 ---
 
-### الخطوة 3: استنساخ برنامج التشغيل من Gitee
+### الخطوة 3: استنساخ برنامج التشغيل من GitHub
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 ```
 
-> **ملاحظة:** إذا لم يتم تحميل عنوان URL الخاص بـ Gitee، فابحث في Gitee عن `8821au` واختر أحدث نسخة (fork). يمكنك أيضًا تنزيل أرشيفات برامج التشغيل من [files.alfa.com.tw](https://files.alfa.com.tw).
+> **ملاحظة:** برنامج التشغيل الأصلي المُصان هو [morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708). إذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها. يمكنك أيضًا تنزيل الأرشيفات من [files.alfa.com.tw](https://files.alfa.com.tw).
 
 ---
 
@@ -212,11 +212,11 @@ sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
 
 ---
 
-### الخطوة 3: استنساخ وتثبيت برنامج التشغيل من Gitee
+### الخطوة 3: استنساخ وتثبيت برنامج التشغيل من GitHub
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -269,8 +269,8 @@ sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
 ### الخطوة 3: الاستنساخ والتثبيت
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -332,8 +332,8 @@ sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
 ### الخطوة 4: استنساخ وتثبيت برنامج التشغيل
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -376,7 +376,7 @@ sudo aireplay-ng --test wlan1mon
 |---------|-------------|-----|
 | `lsusb` لا يظهر 0bda:0811 | المحول غير متصل أو الكبل تالف | جرب منفذ USB مختلفًا |
 | فشل `install-driver.sh` | فقدان الرؤوس (headers) | قم بتشغيل `sudo apt install linux-headers-$(uname -r)` |
-| فشل استنساخ Gitee | مشكلة في الشبكة | ابحث في gitee.com عن `8821au` وجرب نسخة مختلفة |
+| فشل استنساخ GitHub أو بطؤه | مشكلة في الشبكة | استخدم وكيلًا (proxy) أو مرآة تثق بها |
 | فشل `airmon-ng start` | NetworkManager قيد التشغيل | قم بتشغيل `sudo airmon-ng check kill` أولاً |
 | لا توجد حركة مرور في وضع المراقبة | قناة خاطئة | اضبط القناة: `iwconfig wlan1mon channel 6` |
 | اختبار الحقن "No Answer" | نقطة الوصول بعيدة جدًا | اقترب أكثر. استخدم `wlan1mon` وليس `wlan1`. |
@@ -389,7 +389,7 @@ sudo aireplay-ng --test wlan1mon
 |----------|-----|---------|
 | برامج تشغيل Alfa الرسمية | [files.alfa.com.tw](https://files.alfa.com.tw) | حزم برامج التشغيل |
 | وثائق Alfa | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | أدلة المنتجات |
-| برنامج تشغيل 8821au (Gitee) | [gitee.com/mirrors/8821au](https://gitee.com/mirrors/8821au) | برنامج تشغيل RTL8811AU |
+| برنامج تشغيل 8821au (GitHub) | [github.com/morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708) | برنامج تشغيل RTL8811AU |
 | جامعة تسينغ-هوا | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | مرآة علي بابا | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (موصى به) |
 | جامعة العلوم والتكنولوجيا في الصين | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (موصى به) |
@@ -415,5 +415,5 @@ sudo aireplay-ng --test wlan1mon
 1. [وثائق aircrack-ng الرسمية](https://www.aircrack-ng.org/)
 2. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
 3. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
-4. [مرآة Gitee لـ 8821au](https://gitee.com/mirrors/8821au)
+4. [GitHub: morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708)
 

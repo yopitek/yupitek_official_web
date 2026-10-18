@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AX ドライバインストールガイド（中国版）：Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXのドライバをインストールする手順をステップバイステップで解説します。RTL8832BUドライバ、WiFi 6 AX1800対応。Kali Linux、Ubuntu 22/24(DKMS)、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
+description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXのドライバをインストールする手順をステップバイステップで解説します。RTL8832BUドライバ、WiFi 6 AX1800対応。Kali Linux、Ubuntu 22/24(DKMS)、Debian、Raspberry Piをカバーしています。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -22,12 +22,12 @@ faq:
   - question: "AWUS036AXは無線セキュリティリサーチに適していますか？"
     answer: "いいえ。コミュニティ版 rtl8852bu ドライバはモニターモードとパケットインジェクションをサポートしていません。代わりに AWUS036ACM などカーネル標準の MediaTek ドライバを持つアダプターをご利用ください。"
   - question: "中国でAWUS036AXをインストールするのにVPNは必要ですか？"
-    answer: "不要です。Giteeからrtl8852buソースコードをダウンロードし、国内ミラーでコンパイルツールをインストールするだけです。"
+    answer: "いいえ。検証済みの GitHub リポジトリ（morrownr/rtl8852bu-20250826）からドライバをクローンしてください。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。ビルドツールは国内ミラーからインストールできます。"
   - question: "AWUS036AXのUSB IDは何ですか？"
     answer: "Realtek RTL8832BUのベンダーIDは0bdaで、プロダクトIDは個体によって8832または885aです。お手元のデバイスはlsusbで確認してください。"
 ---
 
-AWUS036AXは、ALFAのWiFi 6 AX1800デュアルバンド・アダプターです。AWUS036AX の RTL8832BU チップには Linux カーネル標準のドライバがないため、Ubuntu 24.04 を含むどのディストリビューションでも、コミュニティ版 rtl8852bu ドライバを DKMS で一度ビルドする必要があります。このガイドは Gitee ミラーを使うので GitHub へのアクセスは不要です。このドライバはモニターモードをサポートしていません。
+AWUS036AXは、ALFAのWiFi 6 AX1800デュアルバンド・アダプターです。AWUS036AX の RTL8832BU チップには Linux カーネル標準のドライバがないため、Ubuntu 24.04 を含むどのディストリビューションでも、コミュニティ版 rtl8852bu ドライバを DKMS で一度ビルドする必要があります。ドライバのソースは検証済みの GitHub リポジトリからクローンします。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。このドライバはモニターモードをサポートしていません。
 
 
 {{< tldr >}}
@@ -82,14 +82,14 @@ sudo apt update
 sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 ```
 
-### ステップ 3: Giteeからドライバをクローンする
+### ステップ 3: GitHubからドライバをクローンする
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 ```
 
-> **注意:** もし上記のGitee URLが読み込めない場合は、Giteeで `rtl8852bu` を検索し、最新のフォークを選んでください。また、[files.alfa.com.tw](https://files.alfa.com.tw) からアーカイブをダウンロードすることも可能です。
+> **注意:** メンテナンスされている上流ドライバは [morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) です。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。[files.alfa.com.tw](https://files.alfa.com.tw) からアーカイブをダウンロードすることもできます。
 
 ### ステップ 4: コンパイルとインストール
 
@@ -136,8 +136,8 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 ```bash
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -161,8 +161,8 @@ deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe mu
 ```bash
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -184,8 +184,8 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main 
 ```bash
 sudo apt update
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -209,8 +209,8 @@ deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-
 ```bash
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
-git clone https://gitee.com/mirrors/rtl8852bu.git
-cd rtl8852bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -238,7 +238,7 @@ sudo reboot
 |---------|-------------|-----|
 | `lsusb` に 0bda:8832 または 0bda:885a が表示されない | アダプターが認識されていない | 別のUSBポートを試してください |
 | `install-driver.sh` が失敗する | ヘッダーが不足している | `sudo apt install linux-headers-$(uname -r)` |
-| Giteeのクローンが失敗する | ネットワークの問題 | Giteeで `rtl8852bu` を検索してください |
+| GitHub のクローンが失敗する／遅い | ネットワークの問題 | 信頼できるプロキシまたはミラーを使う |
 | `modprobe 8852bu` が失敗する | ドライバ未ビルドまたは未ロード | `sudo ./install-driver.sh` を再実行し、`sudo dkms status` を確認して再起動 |
 | モニターモード／インジェクションが動作しない | rtl8852bu ドライバは非対応 | ペンテストには AWUS036ACM を使用 |
 
@@ -249,7 +249,7 @@ sudo reboot
 | リソース | URL | 用途 |
 |----------|-----|---------|
 | Alfa 公式ドライバ | [files.alfa.com.tw](https://files.alfa.com.tw) | ドライバパッケージ |
-| rtl8852bu (Gitee) | [gitee.com/mirrors/rtl8852bu](https://gitee.com/mirrors/rtl8852bu) | RTL8832BU ドライバ |
+| rtl8852bu (GitHub) | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | RTL8832BU ドライバ |
 | 清華大学ミラー | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | 阿里巴巴ミラー | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
 | 中国科学技術大学ミラー | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
@@ -282,4 +282,4 @@ sudo reboot
 1. [Realtek公式ウェブサイト](https://www.realtek.com/)
 2. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
 3. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
-4. [Gitee rtl8852buミラー](https://gitee.com/mirrors/rtl8852bu)
+4. [GitHub: morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)

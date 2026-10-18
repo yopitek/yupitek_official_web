@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036ACS ドライバインストールガイド（中国版）：Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "中国国内のミラーサイトを利用して、ALFA AWUS036ACSのドライバをインストールする手順をステップバイステップで解説します。RTL8811AU DKMSドライバ、モニターモード、パケットインジェクションに対応。Kali Linux、Ubuntu 22/24、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
+description: "中国国内のミラーサイトを利用して、ALFA AWUS036ACSのドライバをインストールする手順をステップバイステップで解説します。RTL8811AU DKMSドライバ、モニターモード、パケットインジェクションに対応。Kali Linux、Ubuntu 22/24、Debian、Raspberry Piをカバーしています。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -20,18 +20,18 @@ faq:
   - question: "AWUS036ACSはモニターモードをサポートしていますか？"
     answer: "サポートしています。RTL8811AUはモニターモードとパケットインジェクションを完全にサポートし、セキュリティリサーチに経済的な選択肢です。"
   - question: "中国でAWUS036ACSをインストールするのにVPNは必要ですか？"
-    answer: "不要です。どのディストリビューションでも、Giteeのソースミラーから install-driver.sh で8821au DKMSドライバーをビルドします。"
+    answer: "いいえ。検証済みの GitHub リポジトリ（morrownr/8821au-20210708）からドライバをクローンしてください。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。ビルドツールは国内ミラーからインストールできます。"
   - question: "AWUS036ACSのUSB IDは何ですか？"
     answer: "Realtek RTL8811AUのUSB IDは0bda:0811で、lsusbで確認できます。"
   - question: "Kali LinuxでAWUS036ACSドライバーをインストールするコマンドは？"
-    answer: "ビルドツールをインストールし、8821auドライバー（morrownr/8821au-20210708 またはそのGiteeミラー）をクローンして `sudo sh install-driver.sh` を実行してください。aptパッケージ realtek-rtl88xxau-dkms はRTL8812AU用で、このアダプターには使えません。"
+    answer: "ビルドツールをインストールし、8821auドライバー（GitHub 上の morrownr/8821au-20210708）をクローンして `sudo sh install-driver.sh` を実行してください。aptパッケージ realtek-rtl88xxau-dkms はRTL8812AU用で、このアダプターには使えません。"
 ---
 
-AWUS036ACSは、ALFAのコンパクトなデュアルバンド・セキュリティリサーチ用アダプターです。搭載されているRTL8811AUチップは、Kali Linuxでモニターモードやパケットインジェクションをフルサポートしていますが、ドライバがカーネルに含まれていないため、ソースからコンパイルする必要があります。中国ではGitHubへのアクセスが制限されていることが多いため、このガイドでは国内のGiteeミラーのみを使用します。GitHubへのアクセスは一切不要ですので、安心してくださいね。
+AWUS036ACSは、ALFAのコンパクトなデュアルバンド・セキュリティリサーチ用アダプターです。搭載されているRTL8811AUチップは、Kali Linuxでモニターモードやパケットインジェクションをフルサポートしていますが、ドライバがカーネルに含まれていないため、ソースからコンパイルする必要があります。中国では GitHub への接続が遅いことがあるため、このガイドではビルドツールを国内ミラーからインストールし、ドライバは検証済みの GitHub リポジトリからクローンします。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。
 
 
 {{< tldr >}}
-AWUS036ACSはRTL8811AUチップを採用しています。どのディストリビューションでも、Giteeミラーから install-driver.sh で8821au DKMSドライバーをビルドします。モニターモードとパケットインジェクションに対応しています。
+AWUS036ACSはRTL8811AUチップを採用しています。どのディストリビューションでも、GitHub リポジトリ morrownr/8821au-20210708 から install-driver.sh で8821au DKMSドライバーをビルドします。モニターモードとパケットインジェクションに対応しています。
 {{< /tldr >}}
 
 始める前に、以下のものが手元にあるか確認しましょう：
@@ -105,14 +105,14 @@ sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
 
 ---
 
-### ステップ 3: Giteeからドライバをクローンする
+### ステップ 3: GitHubからドライバをクローンする
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 ```
 
-> **注意:** もし上記のGitee URLが読み込めない場合は、Giteeで `8821au` を検索し、最新のフォークを選んでください。また、[files.alfa.com.tw](https://files.alfa.com.tw) からドライバのアーカイブを直接ダウンロードすることも可能です。
+> **注意:** メンテナンスされている上流ドライバは [morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708) です。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。[files.alfa.com.tw](https://files.alfa.com.tw) からアーカイブをダウンロードすることもできます。
 
 ---
 
@@ -212,11 +212,11 @@ sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
 
 ---
 
-### ステップ 3: Giteeからドライバをクローンしてインストール
+### ステップ 3: GitHubからドライバをクローンしてインストール
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -269,8 +269,8 @@ sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
 ### ステップ 3: クローンとインストール
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -332,8 +332,8 @@ sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
 ### ステップ 4: ドライバのクローンとインストール
 
 ```bash
-git clone https://gitee.com/mirrors/8821au.git
-cd 8821au
+git clone https://github.com/morrownr/8821au-20210708.git
+cd 8821au-20210708
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -376,7 +376,7 @@ sudo aireplay-ng --test wlan1mon
 |---------|-------------|-----|
 | `lsusb` に 0bda:0811 が表示されない | 電源不足またはケーブルの不具合 | 別のUSBポートを試してください |
 | `install-driver.sh` が失敗する | カーネルヘッダーが不足している | `sudo apt install linux-headers-$(uname -r)` を実行してください |
-| Giteeからのクローンが失敗する | ネットワークの問題 | Giteeで `8821au` を検索し、別のリポジトリを試してください |
+| GitHub のクローンが失敗する／遅い | ネットワークの問題 | 信頼できるプロキシまたはミラーを使う |
 | `airmon-ng start` が失敗する | NetworkManagerが干渉している | 最初に `sudo airmon-ng check kill` を実行してください |
 | モニターモードでトラフィックが見えない | チャンネルが間違っている | チャンネルを設定します: `iwconfig wlan1mon channel 6` |
 | インジェクションテストで "No Answer" | アクセスポイントが遠すぎる | もっと近づいてください。`wlan1` ではなく `wlan1mon` を使用しているか確認してください。 |
@@ -389,7 +389,7 @@ sudo aireplay-ng --test wlan1mon
 |----------|-----|---------|
 | Alfa 公式ドライバ | [files.alfa.com.tw](https://files.alfa.com.tw) | ドライバパッケージ |
 | Alfa ドキュメント | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 製品マニュアル |
-| 8821au ドライバ (Gitee) | [gitee.com/mirrors/8821au](https://gitee.com/mirrors/8821au) | RTL8811AU ドライバ |
+| 8821au ドライバ (GitHub) | [github.com/morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708) | RTL8811AU ドライバ |
 | 清華大学ミラー | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | 阿里巴巴（アリババ）ミラー | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (推奨) |
 | 中国科学技術大学ミラー | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (推奨) |
@@ -422,4 +422,4 @@ sudo aireplay-ng --test wlan1mon
 1. [aircrack-ng公式ドキュメント](https://www.aircrack-ng.org/)
 2. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
 3. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
-4. [Gitee 8821auミラー](https://gitee.com/mirrors/8821au)
+4. [GitHub: morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708)

@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036ax-china-install-guide"
 tags: ["alfa", "awus036ax", "kali-linux", "ubuntu", "driver", "china", "wifi6", "rtl8832bu"]
-categories: ["Guías de controladores"]
+categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 related_product: "/es/products/alfa/awus036ax/"
 series_order: 4
@@ -105,11 +105,11 @@ lsmod | grep 8852bu
 iwconfig
 ```
 
-### Paso 5: Habilitar el modo monitor {#habilitar-el-modo-monitor}
+### Paso 5: Habilitar el modo monitor {#enable-monitor-mode}
 
 > **No compatible:** El controlador comunitario rtl8852bu del RTL8832BU no admite el modo monitor, por lo que aquí no hay comandos que ejecutar. Si necesitas modo monitor, usa un adaptador con controlador MediaTek en el kernel, como el [AWUS036ACM](/es/blog/awus036acm-china-install-guide/).
 
-### Paso 6: Probar la inyección de paquetes {#probar-la-inyeccion-de-paquetes}
+### Paso 6: Probar la inyección de paquetes {#test-packet-injection}
 
 > **No compatible:** La inyección de paquetes depende del modo monitor, que este controlador no ofrece. Usa el [AWUS036ACM](/es/blog/awus036acm-china-install-guide/) para pruebas de inyección.
 

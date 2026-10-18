@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036ax-china-install-guide"
 tags: ["alfa", "awus036ax", "kali-linux", "ubuntu", "driver", "china", "wifi6", "rtl8832bu"]
-categories: ["Guias de Drivers"]
+categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 related_product: "/pt/products/alfa/awus036ax/"
 series_order: 4
@@ -20,7 +20,7 @@ faq:
     answer: "Usa o chipset Realtek RTL8832BU, suportando WiFi 6 (802.11ax) em alta velocidade."
   - question: "O AWUS036AX precisa de instalação de driver no Ubuntu 24.04?"
     answer: "Sim. O RTL8832BU não está no kernel do Ubuntu 24.04. Compile uma vez o driver comunitário rtl8852bu (morrownr/rtl8852bu-20250826) via DKMS; depois ele é recompilado automaticamente a cada atualização do kernel."
-  - question: "O AWUS036AX  é adequado para pesquisa de segurança sem fio?"
+  - question: "O AWUS036AX é adequado para pesquisa de segurança sem fio?"
     answer: "Não. O driver comunitário rtl8852bu não suporta modo monitor nem injeção de pacotes. Use, em vez dele, um adaptador com driver MediaTek no kernel, como o AWUS036ACM."
   - question: "Preciso de VPN para instalar o AWUS036AX na China?"
     answer: "Não necessariamente. Clone o driver do repositório GitHub verificado (morrownr/rtl8852bu-20250826); se o GitHub estiver lento, use um proxy ou mirror de confiança. As ferramentas de compilação ainda podem ser instaladas por espelhos nacionais."
@@ -35,12 +35,6 @@ O AWUS036AX é o adaptador dual-band WiFi 6 AX1800 da ALFA. O chip RTL8832BU do 
 {{< tldr >}}
 O AWUS036AX usa o chipset RTL8832BU com WiFi 6. O driver não está no kernel: todas as distribuições (inclusive o Ubuntu 24.04) precisam compilar o rtl8852bu via DKMS. O modo monitor não é suportado.
 {{< /tldr >}}
-
-1. Adaptador **ALFA AWUS036AX**
-2. Cabo USB-A
-3. Conexão ativa com a internet
-
-
 
 ## Antes de Começar
 
@@ -112,11 +106,11 @@ lsmod | grep 8852bu
 iwconfig
 ```
 
-### Passo 5: Ativar Modo Monitor {#ativar-modo-monitor}
+### Passo 5: Ativar Modo Monitor {#enable-monitor-mode}
 
 > **Não suportado:** O driver comunitário rtl8852bu do RTL8832BU não suporta o modo monitor, portanto não há comandos a executar aqui. Se precisar do modo monitor, use um adaptador com driver MediaTek no kernel, como o [AWUS036ACM](/pt/blog/awus036acm-china-install-guide/).
 
-### Passo 6: Testar Injeção de Pacotes {#testar-injecao-de-pacotes}
+### Passo 6: Testar Injeção de Pacotes {#test-packet-injection}
 
 > **Não suportado:** A injeção de pacotes depende do modo monitor, que este driver não oferece. Use o [AWUS036ACM](/pt/blog/awus036acm-china-install-guide/) para testes de injeção.
 
@@ -224,7 +218,7 @@ sudo reboot
 
 ---
 
-## USB Passthrough em Máquina Virtual {#usb-passthrough-em-maquina-virtual}
+## USB Passthrough em Máquina Virtual {#virtual-machine-usb-passthrough}
 
 ### VirtualBox
 
@@ -257,7 +251,7 @@ sudo reboot
 |---------|-----|----------|
 | Drivers oficiais Alfa | [files.alfa.com.tw](https://files.alfa.com.tw) | Pacotes de drivers |
 | rtl8852bu (GitHub) | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | Driver RTL8832BU |
-| Mirror da USP/Tsinghua | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| Mirror da Univ. de Tsinghua | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | Mirror da Aliyun | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
 | Mirror da USTC | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
 | Mirror da Huawei Cloud | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Imagens Kali ARM |

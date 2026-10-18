@@ -35,7 +35,7 @@ AWUS036AXER 採用 RTL8832BU 晶片，支援 WiFi 6。驅動不在核心中：�
 
 剛拿到這台輕巧迷你、方便攜帶的 AWUS036AXER，插上去結果 Linux 一點反應都沒有？別擔心，這再正常不過了。
 
-考慮到大家在國內存取 GitHub 可能比較慢，這份指南的驅動原始碼取自已驗證的 GitHub 儲存庫；若速度不佳，請使用你信任的代理或鏡像。花個 10 分鐘就能搞定，咱們現在就開始吧！
+考慮到大家在國內存取 GitHub 可能比較慢，這份指南的驅動原始碼取自已驗證的 GitHub 儲存庫；若速度不佳，請使用你信任的代理或鏡像。咱們現在就開始吧！
 
 > **資安研究提示：** 社群版 rtl8852bu 驅動不支援 Monitor mode 與封包注入。做資安研究請改用核心內建 MediaTek 驅動的網卡，例如 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)。
 
@@ -65,7 +65,7 @@ Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
 - [Debian](#debian)
 - [樹莓派 (Raspberry Pi) 4B / 5](#raspberry-pi-4b--5)
 
-如果是老司機已經裝好驅動了，可以直接跳轉到：
+如果是老手已經裝好驅動了，可以直接跳轉到：
 - [虛擬機 USB 直通避坑指南](#virtual-machine-usb-passthrough)
 
 ---
@@ -124,6 +124,8 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
+重新開機後，可用 `lsmod | grep 8852bu` 與 `iwconfig` 確認驅動已載入。
+
 ### 5. 開啟監聽模式 {#enable-monitor-mode}
 
 > **不支援：** RTL8832BU 的社群版 rtl8852bu 驅動不支援 Monitor mode，這裡沒有可執行的指令。如需 Monitor mode，請改用核心內建 MediaTek 驅動的網卡，例如 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)。
@@ -159,6 +161,11 @@ sudo reboot
 ### Ubuntu 22.04 (Jammy) — 需要手動安裝
 
 ```bash
+sudo nano /etc/apt/sources.list
+# deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
 git clone https://github.com/morrownr/rtl8852bu-20250826.git
@@ -219,11 +226,11 @@ sudo reboot
 
 ## 虛擬機 USB 直通避坑指南 {#virtual-machine-usb-passthrough}
 
-很多小夥伴卡在虛擬機找不到網卡，通常是因為這幾步沒設定好：
+很多朋友卡在虛擬機找不到網卡，通常是因為這幾步沒設定好：
 
 ### VirtualBox
 1. 先關掉虛擬機。
-2. **Settings → USB** → 勾選 **USB 3.0 (xHCI)**。
+2. **設定 → USB** → 勾選 **USB 3.0 (xHCI)**。
 3. 點選右邊的 **+** 圖示，選擇 **Realtek (廠商 ID：0bda，產品 ID：8832 或 885a)**。
 
 ### VMware
@@ -248,8 +255,10 @@ sudo reboot
 
 | 資源名稱 | 網址 | 用途 |
 |------|------|------|
-| 清華大學鏡像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian |
-| 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推薦 |
+| 清華大學鏡像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
+| 中科大鏡像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
+| 華為雲鏡像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 | rtl8852bu (GitHub) | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | 驅動原始碼 |
 
 {{< faq >}}

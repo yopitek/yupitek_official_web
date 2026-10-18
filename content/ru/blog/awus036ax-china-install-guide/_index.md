@@ -9,7 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036ax-china-install-guide"
 tags: ["alfa", "awus036ax", "kali-linux", "ubuntu", "driver", "china", "wifi6", "rtl8832bu"]
-categories: ["Руководства по драйверам"]
+categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 related_product: "/ru/products/alfa/awus036ax/"
 series_order: 4
@@ -106,11 +106,11 @@ lsmod | grep 8852bu
 iwconfig
 ```
 
-### Шаг 5: Включение режима монитора {#включение-режима-монитора}
+### Шаг 5: Включение режима монитора {#enable-monitor-mode}
 
 > **Не поддерживается:** Community-драйвер rtl8852bu для RTL8832BU не поддерживает режим монитора, поэтому команд для выполнения здесь нет. Если нужен режим монитора, используйте адаптер со встроенным в ядро драйвером MediaTek, например [AWUS036ACM](/ru/blog/awus036acm-china-install-guide/).
 
-### Шаг 6: Тестирование инъекции пакетов {#тестирование-инъекции-пакетов}
+### Шаг 6: Тестирование инъекции пакетов {#test-packet-injection}
 
 > **Не поддерживается:** Инъекция пакетов зависит от режима монитора, которого этот драйвер не предоставляет. Для тестов инъекции используйте [AWUS036ACM](/ru/blog/awus036acm-china-install-guide/).
 
@@ -218,17 +218,17 @@ sudo reboot
 
 ---
 
-## Проброс USB в виртуальную машину {#проброс-usb-в-виртуальную-машину}
+## Проброс USB в виртуальную машину {#virtual-machine-usb-passthrough}
 
 ### VirtualBox
 
-1. **Settings → USB** → Включите **USB 3.0 (xHCI)**.
+1. **Настройки → USB** → Включите **USB 3.0 (xHCI)**.
 2. Добавьте фильтр: **Realtek** (Vendor ID: 0bda, Product ID: 8832 или 885a).
 3. Запустите ВМ → `lsusb` для подтверждения → следуйте шагам для Kali.
 
 ### VMware
 
-1. **Virtual Machine → USB & Bluetooth** → Найдите **Realtek RTL8832BU** → **Connect**.
+1. **Виртуальная машина → USB и Bluetooth** → Найдите **Realtek RTL8832BU** → **Подключить**.
 2. `lsusb` для подтверждения → следуйте шагам для Kali.
 
 ---

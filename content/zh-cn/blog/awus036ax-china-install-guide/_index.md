@@ -44,7 +44,7 @@ AWUS036AX 采用 RTL8832BU 芯片，支持 WiFi 6。驱动不在内核中：所�
 ## 动手前的准备
 
 1. **ALFA AWUS036AX** 网卡本人
-2. 包装盒里的 USB 3.0 数据线
+2. USB-A 数据线
 3. 畅通的网络（用来下载镜像源）
 
 插上网卡，咱们先看看系统有没有认出它。打开终端输入：
@@ -171,6 +171,8 @@ sudo reboot
 # 换成阿里云
 sudo nano /etc/apt/sources.list
 # deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
 
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
@@ -189,6 +191,8 @@ sudo reboot
 ```bash
 sudo nano /etc/apt/sources.list
 # deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+# deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+# deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
 
 sudo apt update
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
@@ -232,9 +236,13 @@ sudo reboot
 
 | 遇到的麻烦 | 可能的原因 | 怎么解决 |
 |---------|-------------|-----|
-| `lsusb` 刷不出 0bda:8832 或 0bda:885a | USB 接口或供电问题 | 尝试插在电脑背后的 USB 3.0 蓝色接口上 |
+| `lsusb` 刷不出 0bda:8832 或 0bda:885a | 未检测到网卡 | 换个 USB 接口试试 |
 | `install-driver.sh` 报错 | 缺少内核头文件 | 跑 `sudo apt install linux-headers-$(uname -r)` |
+| 克隆 GitHub 失败或很慢 | 网络问题 | 使用你信任的代理或镜像 |
+| `modprobe 8852bu` 失败 | 驱动未编译或未加载 | 重新执行 `sudo ./install-driver.sh`，用 `sudo dkms status` 检查后重启 |
 | Monitor mode／封包注入无法使用 | rtl8852bu 驱动不支持 | 做渗透测试请改用 AWUS036ACM |
+
+> **关于 VIF：** RTL8832BU 的内核外驱动不支持虚拟接口（VIF）。
 
 ## 国内常用资源汇总
 
@@ -242,7 +250,10 @@ sudo reboot
 |----------|-----|---------|
 | Alfa 官方下载 | [files.alfa.com.tw](https://files.alfa.com.tw) | 驱动离线包 |
 | rtl8852bu 驱动（GitHub） | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | 驱动源码 |
-| 清华大学镜像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Debian/Ubuntu 推荐 |
+| 清华大学镜像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里云镜像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
+| 中科大镜像站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
+| 华为云镜像站 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 
 
 {{< faq >}}

@@ -1,12 +1,12 @@
 ---
 title: "ALFA AWUS036AXER ドライバインストールガイド（中国版）：Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXERのドライバをインストールする手順をステップバイステップで解説します。RTL8832BUドライバ、WiFi 6 Nanoアダプター対応。Kali Linux、Ubuntu 22/24(DKMS)、Debian、Raspberry Piをカバーしています。"
+description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXERのドライバをインストールする手順をステップバイステップで解説します。RTL8832BUドライバ、WiFi 6 Nanoアダプター。Kali Linux、Ubuntu 22/24(DKMS)、Debian、Raspberry Piをカバーしています。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axer-china-install-guide"
-tags: ["alfa", "awus036axer", "kali-linux", "ubuntu", "driver", "china", "wifi6", "rtl8832bu", "nano"]
+tags: ["alfa", "awus036axer", "kali-linux", "ubuntu", "driver", "china", "wifi6", "rtl8832bu"]
 categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 5
@@ -27,7 +27,7 @@ faq:
     answer: "いいえ。検証済みの GitHub リポジトリ（morrownr/rtl8852bu-20250826）からドライバをクローンしてください。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。ビルドツールは国内ミラーからインストールできます。"
 ---
 
-AWUS036AXERは、ALFAの超小型（Nano）WiFi 6 AX1800デュアルバンド・アダプターです。AWUS036AXER の RTL8832BU チップには Linux カーネル標準のドライバがないため、Ubuntu 24.04 を含むどのディストリビューションでも、コミュニティ版 rtl8852bu ドライバを DKMS で一度ビルドする必要があります。ドライバのソースは検証済みの GitHub リポジトリからクローンします。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。このドライバはモニターモードをサポートしていません。
+AWUS036AXERは、ALFAのWiFi 6 Nanoアダプターで、ノートPCに挿しっぱなしにすることを想定した小型ドングルです。AWUS036AXER の RTL8832BU チップには Linux カーネル標準のドライバがないため、Ubuntu 24.04 を含むどのディストリビューションでも、コミュニティ版 rtl8852bu ドライバを DKMS で一度ビルドする必要があります。ドライバのソースは検証済みの GitHub リポジトリからクローンします。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。このドライバはモニターモードをサポートしていません。
 
 
 {{< tldr >}}
@@ -35,10 +35,13 @@ AWUS036AXER は RTL8832BU チップで WiFi 6 に対応します。ドライバ�
 {{< /tldr >}}
 > **セキュリティ研究に関する注意：** コミュニティ版 rtl8852bu ドライバはモニターモードとパケットインジェクションをサポートしていません。セキュリティ研究にはカーネル標準の MediaTek ドライバを持つ [AWUS036ACM](/ja/blog/awus036acm-china-install-guide/) などをご利用ください。
 
+> **レンジに関する注意：** AWUS036AXERは取り外し不可の内蔵アンテナを搭載しています。セキュリティ研究には、外部RP-SMAアンテナを備えたアダプター（AWUS036ACH、AWUS036ACM）の方が、大幅に優れた通信範囲を得られます。
+
 ## 準備するもの
 
 1. **ALFA AWUS036AXER** アダプター本体
-2. インターネット接続環境
+2. USB-A ケーブル
+3. インターネット接続環境
 
 ```bash
 lsusb

@@ -37,7 +37,7 @@ AWUS036AXER 采用 RTL8832BU 芯片，支持 WiFi 6。驱动不在内核中：�
 {{< /tldr >}}
 
 
-国内访问 GitHub 可能比较慢，本指南的驱动源码取自已验证的 GitHub 仓库；如果速度不佳，请使用你信任的代理或镜像。咱们花个 10 分钟就能把它“调教”好。
+国内访问 GitHub 可能比较慢，本指南的驱动源码取自已验证的 GitHub 仓库；如果速度不佳，请使用你信任的代理或镜像。咱们现在就开始吧！
 
 > **安全研究提示：** 社区版 rtl8852bu 驱动不支持 Monitor mode 和封包注入。做安全研究请改用内核内置 MediaTek 驱动的网卡，例如 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)。
 
@@ -174,6 +174,8 @@ sudo reboot
 # 换成阿里云
 sudo nano /etc/apt/sources.list
 # deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
 
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
@@ -192,6 +194,8 @@ sudo reboot
 ```bash
 sudo nano /etc/apt/sources.list
 # deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+# deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+# deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
 
 sudo apt update
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
@@ -235,9 +239,13 @@ sudo reboot
 
 | 遇到的麻烦 | 可能的原因 | 怎么解决 |
 |------|----------|----------|
-| `lsusb` 刷不出 0bda:8832 或 0bda:885a | 没插紧或 USB 供电不足 | 换个口试试，直接插主板背后的口 |
+| `lsusb` 刷不出 0bda:8832 或 0bda:885a | 未检测到网卡 | 换个 USB 接口试试 |
 | `install-driver.sh` 报错 | 缺少内核头文件 | 跑 `sudo apt install linux-headers-$(uname -r)` |
+| 克隆 GitHub 失败或很慢 | 网络问题 | 使用你信任的代理或镜像 |
+| `modprobe 8852bu` 失败 | 驱动未编译或未加载 | 重新执行 `sudo ./install-driver.sh`，用 `sudo dkms status` 检查后重启 |
 | Monitor mode／封包注入无法使用 | rtl8852bu 驱动不支持 | 做渗透测试请改用 AWUS036ACM |
+
+> **关于 VIF：** RTL8832BU 的内核外驱动不支持虚拟接口（VIF）。
 
 ## 国内常用资源汇总
 
@@ -245,7 +253,10 @@ sudo reboot
 |------|------|------|
 | Alfa 官方下载 | [files.alfa.com.tw](https://files.alfa.com.tw) | 官方驱动包 |
 | rtl8852bu 驱动（GitHub） | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | 驱动源码 |
-| 清华大学镜像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Debian/Ubuntu 推荐 |
+| 清华大学镜像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里云镜像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
+| 中科大镜像站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
+| 华为云镜像站 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 
 
 {{< faq >}}

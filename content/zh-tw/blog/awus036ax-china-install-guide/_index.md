@@ -42,7 +42,7 @@ AWUS036AX 採用 RTL8832BU 晶片，支援 WiFi 6。驅動不在核心中：所�
 ## 開始前的準備
 
 1. **ALFA AWUS036AX** 網卡本人
-2. 隨附的 USB 3.0 連接線
+2. USB-A 連接線
 3. 能存取國內鏡像的網路
 
 插好網卡，我們先確認系統有沒有認到它。打開終端機輸入：
@@ -66,7 +66,7 @@ Bus 001 Device 003: ID 0bda:8832 Realtek Semiconductor Corp.
 - [Debian](#debian)
 - [樹莓派 (Raspberry Pi) 4B / 5](#raspberry-pi-4b--5)
 
-如果是老司機已經裝好驅動了，可以直接跳轉到：
+如果是老手已經裝好驅動了，可以直接跳轉到：
 - [虛擬機 USB 直通避坑指南](#virtual-machine-usb-passthrough)
 
 ---
@@ -167,6 +167,11 @@ sudo reboot
 ### Ubuntu 22.04 (Jammy) — 需要手動安裝
 
 ```bash
+sudo nano /etc/apt/sources.list
+# deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+
 sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
 git clone https://github.com/morrownr/rtl8852bu-20250826.git
@@ -183,7 +188,9 @@ sudo reboot
 
 ```bash
 sudo nano /etc/apt/sources.list
-# 貼上這行：deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+# deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+# deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+# deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
 
 sudo apt update
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
@@ -220,11 +227,11 @@ sudo reboot
 
 ## 虛擬機 USB 直通避坑指南 {#virtual-machine-usb-passthrough}
 
-很多小夥伴卡在虛擬機找不到網卡，通常是因為這幾步沒設定好：
+很多朋友卡在虛擬機找不到網卡，通常是因為這幾步沒設定好：
 
 ### VirtualBox
 1. 先關掉虛擬機。
-2. **Settings → USB** → 勾選 **USB 3.0 (xHCI)**。
+2. **設定 → USB** → 勾選 **USB 3.0 (xHCI)**。
 3. 點選右邊的 **+** 圖示，選擇 **Realtek (廠商 ID：0bda，產品 ID：8832 或 885a)**。
 
 ### VMware
@@ -237,16 +244,22 @@ sudo reboot
 
 | 遇到的麻煩 | 可能的原因 | 解決方法 |
 |------|----------|----------|
-| `lsusb` 沒反應 | 供電不足 | 換個 USB 3.0 埠（藍色的）試試，或者插在主板後方 |
+| `lsusb` 沒顯示 0bda:8832 或 0bda:885a | 未偵測到網卡 | 換個 USB 埠試試 |
 | `install-driver.sh` 報錯 | 缺少核心標頭檔 | 跑一下 `sudo apt install linux-headers-$(uname -r)` |
+| GitHub 下載失敗或很慢 | 網路問題 | 使用你信任的代理或鏡像 |
+| `modprobe 8852bu` 失敗 | 驅動尚未編譯或未載入 | 重新執行 `sudo ./install-driver.sh`，用 `sudo dkms status` 檢查後重新開機 |
 | Monitor mode／封包注入無法使用 | rtl8852bu 驅動不支援 | 做滲透測試請改用 AWUS036ACM |
+
+> **關於 VIF：** RTL8832BU 的核心外驅動不支援虛擬介面（VIF）。
 
 ## 國內鏡像速查表
 
 | 資源名稱 | 網址 | 用途 |
 |------|------|------|
-| 清華大學鏡像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian |
-| 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推薦 |
+| 清華大學鏡像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
+| 中科大鏡像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
+| 華為雲鏡像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 | rtl8852bu (GitHub) | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | 驅動原始碼 |
 
 {{< faq >}}

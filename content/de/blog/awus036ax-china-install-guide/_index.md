@@ -17,7 +17,7 @@ featureimage: "/images/blog/awus036ax-china-install-guide.webp"
 faq:
   - question: "Welchen Chipsatz verwendet der AWUS036AX? Unterstützt er WiFi 6?"
     answer: "Er verwendet den Realtek RTL8832BU-Chipsatz und unterstützt das Hochgeschwindigkeitsnetzwerk WiFi 6 (802.11ax)."
-  - question: "Muss der AWUS036AX unter Ubuntu 24.04 getrieben werden?"
+  - question: "Braucht der AWUS036AX unter Ubuntu 24.04 einen Treiber?"
     answer: "Ja. Der RTL8832BU ist nicht im Kernel von Ubuntu 24.04 enthalten. Bauen Sie den Community-Treiber rtl8852bu (morrownr/rtl8852bu-20250826) einmalig über DKMS; er wird bei Kernel-Updates automatisch neu gebaut."
   - question: "Ist der AWUS036AX für drahtlose Sicherheitsforschung geeignet?"
     answer: "Nein. Der Community-Treiber rtl8852bu unterstützt weder Monitor-Modus noch Paket-Injektion. Verwenden Sie stattdessen einen Adapter mit In-Kernel-MediaTek-Treiber wie den AWUS036ACM."

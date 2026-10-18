@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axer-china-install-guide"
 tags: ["alfa", "awus036axer", "kali-linux", "ubuntu", "driver", "china", "wifi6", "rtl8832bu"]
-categories: ["Guides de Pilotes"]
+categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 5
 related_product: "/fr/products/alfa/awus036axer/"
@@ -193,6 +193,8 @@ Collez ceci (Debian 12 Bookworm) :
 
 ```
 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
 ```
 
 ```bash
@@ -235,11 +237,12 @@ sudo reboot
 
 1. **Paramètres → USB** → Activer le **Contrôleur USB 3.0 (xHCI)**.
 2. Ajouter un filtre : **Realtek** (ID fabricant : 0bda, ID produit : 8832 ou 885a).
-3. Démarrer la VM → `lsusb` pour confirmer.
+3. Démarrer la VM → `lsusb` pour confirmer → suivre les étapes Kali.
 
 ### VMware
 
 1. **Machine virtuelle → USB & Bluetooth** → Trouver **Realtek RTL8832BU** → **Connecter**.
+2. `lsusb` pour confirmer → suivre les étapes Kali.
 
 ---
 
@@ -249,7 +252,11 @@ sudo reboot
 |---------|-------------|-----|
 | `lsusb` n'affiche pas 0bda:8832 ou 0bda:885a | Adaptateur non détecté | Essayer un autre port USB |
 | `install-driver.sh` échoue | En-têtes manquants | `sudo apt install linux-headers-$(uname -r)` |
-| Mode moniteur non fiable | Limitation du RTL8832BU | Utiliser l'AWUS036ACM pour le pentest |
+| Le clone GitHub échoue ou est lent | Problème réseau | Utiliser un proxy ou un miroir de confiance |
+| `modprobe 8852bu` échoue | Pilote non compilé ou non chargé | Relancer `sudo ./install-driver.sh`, vérifier `sudo dkms status`, puis redémarrer |
+| Le mode moniteur / l'injection ne fonctionne pas | Non pris en charge par le pilote rtl8852bu | Utiliser l'AWUS036ACM pour le pentest |
+
+> **Note sur VIF :** Le pilote hors noyau RTL8832BU ne prend pas en charge les interfaces virtuelles (VIF).
 
 ## Référence des miroirs chinois
 
@@ -258,6 +265,9 @@ sudo reboot
 | Pilotes officiels Alfa | [files.alfa.com.tw](https://files.alfa.com.tw) | Packs de pilotes |
 | rtl8852bu (GitHub) | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | Pilote RTL8832BU |
 | Miroir Tsinghua | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| Miroir Alibaba Cloud | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
+| Miroir USTC | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
+| Miroir Huawei Cloud | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 
 {{< faq >}}
 

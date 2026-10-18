@@ -17,13 +17,13 @@ featureimage: "/images/blog/awus036axer-china-install-guide.webp"
 faq:
   - question: "Welchen Chipsatz verwendet der AWUS036AXER? Ist er derselbe wie beim AWUS036AX?"
     answer: "Er verwendet ebenfalls den Realtek RTL8832BU-Chipsatz, unterstützt WiFi 6, ist jedoch kleiner und tragbarer."
-  - question: "Muss der AWUS036AXER unter Ubuntu 24.04 getrieben werden?"
+  - question: "Braucht der AWUS036AXER unter Ubuntu 24.04 einen Treiber?"
     answer: "Ja. Der RTL8832BU ist nicht im Kernel von Ubuntu 24.04 enthalten. Bauen Sie den Community-Treiber rtl8852bu (morrownr/rtl8852bu-20250826) einmalig über DKMS; er wird bei Kernel-Updates automatisch neu gebaut."
   - question: "Ist der AWUS036AXER für drahtlose Sicherheitsforschung geeignet?"
     answer: "Nein. Der Community-Treiber rtl8852bu unterstützt weder Monitor-Modus noch Paket-Injektion. Verwenden Sie stattdessen einen Adapter mit In-Kernel-MediaTek-Treiber wie den AWUS036ACM."
   - question: "Was ist die USB-ID des AWUS036AXER?"
     answer: "Die Hersteller-ID (Vendor-ID) des Realtek RTL8832BU ist 0bda. Die Produkt-ID lautet je nach Gerät 8832 oder 885a; bestätigen Sie sie mit lsusb."
-  - question: "Muss man in China für die Installation des AWUS036AXER eine VPN-Verbindung (Umgehung der Zensur) nutzen?"
+  - question: "Brauche ich ein VPN, um den AWUS036AXER in China zu installieren?"
     answer: "Nicht unbedingt. Klonen Sie den Treiber aus dem geprüften GitHub-Repository (morrownr/rtl8852bu-20250826); falls GitHub langsam ist, nutzen Sie einen vertrauenswürdigen Proxy oder Mirror. Die Build-Tools lassen sich weiterhin über inländische Mirrors installieren."
 ---
 

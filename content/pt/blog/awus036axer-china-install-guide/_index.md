@@ -14,13 +14,12 @@ related_product: "/pt/products/alfa/awus036axer/"
 featureimage: "/images/blog/awus036axer-china-install-guide.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
-
 faq:
-  - question: "Qual chipset o AWUS036AXER usa? E o mesmo do AWUS036AX?"
-    answer: "Usa o mesmo chipset Realtek RTL8832BU, suportando WiFi 6, mas em um formato menor é mais portátil."
+  - question: "Qual chipset o AWUS036AXER usa? É o mesmo do AWUS036AX?"
+    answer: "Usa o mesmo chipset Realtek RTL8832BU, suportando WiFi 6, mas em um formato menor e mais portátil."
   - question: "O AWUS036AXER precisa de instalação de driver no Ubuntu 24.04?"
     answer: "Sim. O RTL8832BU não está no kernel do Ubuntu 24.04. Compile uma vez o driver comunitário rtl8852bu (morrownr/rtl8852bu-20250826) via DKMS; depois ele é recompilado automaticamente a cada atualização do kernel."
-  - question: "O AWUS036AXER  é adequado para pesquisa de segurança sem fio?"
+  - question: "O AWUS036AXER é adequado para pesquisa de segurança sem fio?"
     answer: "Não. O driver comunitário rtl8852bu não suporta modo monitor nem injeção de pacotes. Use, em vez dele, um adaptador com driver MediaTek no kernel, como o AWUS036ACM."
   - question: "Qual é o USB ID do AWUS036AXER?"
     answer: "O ID do fabricante do Realtek RTL8832BU é 0bda. O ID do produto é 8832 ou 885a, dependendo da unidade; confirme com lsusb."
@@ -37,12 +36,6 @@ O AWUS036AXER é o adaptador WiFi 6 nano da ALFA — um dongle compacto projetad
 {{< tldr >}}
 O AWUS036AXER usa o chipset RTL8832BU com WiFi 6. O driver não está no kernel: todas as distribuições (inclusive o Ubuntu 24.04) precisam compilar o rtl8852bu via DKMS. O modo monitor não é suportado.
 {{< /tldr >}}
-
-1. Adaptador **ALFA AWUS036AXER**
-2. Cabo USB-A
-3. Conexão de internet ativa
-
-
 
 ## Antes de Começar
 

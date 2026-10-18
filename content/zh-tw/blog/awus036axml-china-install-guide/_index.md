@@ -101,7 +101,7 @@ deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-
 sudo apt update
 ```
 
-> **備用鏡像站：** 若 中科大 (USTC) 速度較慢，請改用 清华 (Tsinghua)：
+> **備用鏡像站：** 若 中科大 (USTC) 速度較慢，請改用 清華 (Tsinghua)：
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
@@ -469,7 +469,7 @@ iwconfig
 | Alfa 官方驅動程式 | [files.alfa.com.tw](https://files.alfa.com.tw) | 驅動程式套件、韌體 |
 | Alfa 文件 | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 產品手冊 |
 | 清華大學鏡像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦） |
+| 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦） |
 | 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦） |
 | 華為雲鏡像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像檔（備用） |
 

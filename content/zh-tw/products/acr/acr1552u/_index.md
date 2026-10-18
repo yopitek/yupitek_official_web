@@ -13,7 +13,7 @@ ACR1552U
 
 ## 產品概述
 
-ACR1552U 是 ACS 符合 CCID 及 PC/SC 規範的 USB NFC IV 讀卡機，採用 13.56 MHz 非接觸式技術，通訊速度最高達 848 Kbps，內建 SAM 插槽。廣泛支援 ISO 14443 Type A/B、MIFARE®、FeliCa、ISO 18092 及 ISO 15693 卡片。具備 USB 韌體升級功能、擴展 APDU 支援（最大 64 kbytes）、FIDO 認證（PocketKey、YubiKey），以及三種 NFC 模式：讀寫器、卡片模擬、鍵盤模擬。為 ACR122U（產品終止）的推薦替代品。
+ACR1552U 是 ACS 符合 CCID 及 PC/SC 規範的 USB NFC IV 讀卡機，採用 13.56 MHz 非接觸式技術，通訊速度最高達 848 Kbps，內建 SAM 插槽。廣泛支援 ISO 14443 Type A/B、MIFARE®、FeliCa、ISO 18092 及 ISO 15693 卡片。具備 USB 韌體升級功能、擴展 APDU 支援，以及三種 NFC 模式：讀寫器、卡片模擬、鍵盤模擬。
 
 ## 主要規格
 
@@ -27,12 +27,10 @@ ACR1552U 是 ACS 符合 CCID 及 PC/SC 規範的 USB NFC IV 讀卡機，採用 1
 | SAM 讀寫速度 | 13.4 Kbps – 1,250 Kbps |
 | SAM 時鐘頻率 | 5 MHz，最高 10 MHz |
 | SAM 協議 | T=0、T=1 |
-| 支援協議 | ISO/IEC 14443-A、-B，ISO/IEC 15693，ISO/IEC 18092，ISO/IEC 21481 |
-| 擴展 APDU | 最大 64 kbytes |
+| 支援協議 | ISO/IEC 14443-A、-B，ISO/IEC 15693，ISO/IEC 18092 |
 | LED | 使用者可控（可配置） |
 | 蜂鳴器 | 使用者可控（可配置） |
-| 工作溫度 | -20°C – 70°C，90% RH（非冷凝） |
-| 儲存溫度 | 18°C – 28°C，10%–95% RH（非冷凝） |
+| 工作溫度 | 0°C – 60°C，90% RH（非冷凝） |
 | 合規認證 | PC/SC、CCID、CE、FCC、RoHS |
 | 附加功能 | 短路保護、USB 韌體升級 |
 
@@ -41,18 +39,15 @@ ACR1552U 是 ACS 符合 CCID 及 PC/SC 規範的 USB NFC IV 讀卡機，採用 1
 - 三種 NFC 模式：卡片讀寫器、卡片模擬、鍵盤模擬
 - 內建天線，讀取距離最遠達 70 mm
 - 高速通訊，最高達 848 Kbps
-- 擴展 APDU 支援（最大 64 kbytes）
+- 擴展 APDU 支援
 - 內建 SAM 插槽，支援金鑰分散化及相互認證
 - USB 韌體升級功能，支援部署後更新
 - 內建防衝突機制（每次一張標籤）
-- 支援 FIDO 認證（PocketKey、YubiKey）——無密碼 / 雙因素登入
 - 符合 CCID 及 PC/SC 規範，即插即用
 - 使用者可控 LED 及蜂鳴器
 - 短路保護
-- 鍵盤模擬模式，提升軟體相容性
-- 完整 SDK 含符合 PC/SC 的範例程式碼
+- 提供軟體開發工具包（SDK）
 - 適用於電子政務、銀行、電子醫療、交通、門禁、忠誠度計畫
-- 為 ACR122U（產品終止）的推薦替代品
 
 ## 支援標籤型號
 
@@ -63,13 +58,11 @@ ACR1552U 是 ACS 符合 CCID 及 PC/SC 規範的 USB NFC IV 讀卡機，採用 1
 | ISO 15693 卡片 | ISO 15693 |
 | ISO 18092 NFC 標籤 | ISO 18092 |
 | MIFARE Classic® | ISO 14443 Type A |
-| MIFARE Ultralight® | ISO 14443 Type A |
-| MIFARE Plus® | ISO 14443 Type A |
-| MIFARE DESFire® | ISO 14443 Type A |
 | FeliCa | ISO 18092 |
-| SRI / SRIX | ST Microelectronics |
-| Topaz Card | NFC Tag Type 1 |
-| NFC 標籤（Type 1–5） | ISO 18092 / ISO 15693 |
+| SRI / SRIX | — |
+| CTS | — |
+| Innovatron | — |
+| Topaz Card | — |
 | Picopass | — |
 
 ## 支援作業系統

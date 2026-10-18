@@ -355,7 +355,7 @@ ACR1252U-M1 を注文する前に、以下の表に回答してください。**
 
 - [ ] **macOS ローカルプログラム**で APDU によりリーダーを直接制御したい（ブザー、LED、非接触カードの読み書き）→ **買う**
 - [ ] **Android／ChromeOS の Chromium ブラウザ**で Web NFC により NDEF タグを読み書きしたい → **リーダーは不要**。デバイス内蔵 NFC で対応。ACR1252U は PC/SC 側の検証用のみ
-- [ ] **MIFARE DESFire／FeliCa／ISO 14443 B** などの産業用／入退室カードをサポートしたい → 買う（本機種は ISO 14443 A/B、MIFARE、DESFire、FeliCa 全シリーズに対応）
+- [ ] **MIFARE／FeliCa／ISO 14443 B** などの産業用／入退室カードをサポートしたい → 買う（本機種は ISO 14443 A/B、MIFARE、FeliCa に対応）
 - [ ] **SAM（セキュアアクセスモジュール）スロット**で鍵分散と双方向認証の実験をしたい → 買う（1× SIM サイズの SAM スロット内蔵）
 - [ ] **FIDO / WebAuthn** や YubiKey／PocketKey 類のテストをしたい → ACS 公式ドキュメントで FIDO のサポート状況を確認してから決定してください（本記事は未検証の仕様を保証しません）
 - [ ] パソコンに **USB-C ポートしかなく**、変換アダプタを使いたくない → ACS 公式製品ラインに USB-C インターフェースの同シリーズがあるか確認してください（ACS 公式サイト基準）。M1 は固定の USB-A ケーブルです
@@ -367,7 +367,7 @@ ACR1252U-M1 を注文する前に、以下の表に回答してください。**
 | インターフェース | USB Full Speed（12 Mbps）、固定 1 m USB-A ケーブル |
 | 読み取り距離 | 最大約 50 mm（タグによる） |
 | 読み書き速度 | 106／212／424 Kbps |
-| 対応カード種 | NFC 全 4 タイプ、ISO 14443 A/B、MIFARE Classic／Plus／DESFire、FeliCa |
+| 対応カード種 | NFC 全 4 タイプ、ISO 14443 A/B、MIFARE Classic、FeliCa |
 | 本体制御 | 2 色 LED（赤／緑）、単音ブザー（どちらもプログラム制御可能） |
 | 追加スロット | 1× SAM（SIM サイズ、ISO 7816 Class A）|
 | サイズ／重量 | 98 × 65 × 12.8 mm／81 g |

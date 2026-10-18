@@ -1,19 +1,19 @@
 ---
 title: "ACS ACR1252U — USB NFC Reader III (NFC Forum Certified)"
-description: "ACS ACR1252U, NFC Forum certified USB reader supporting all four NFC types (NFC-A/B/F/V). Ideal for enterprise NFC application development and deployment."
+description: "ACS ACR1252U, NFC Forum certified USB reader with card reader/writer, card emulation and peer-to-peer modes. Ideal for enterprise NFC application development and deployment."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
-tags: ["NFC", "NFC Forum", "ISO 14443", "ISO 15693", "USB", "Card Reader"]
+tags: ["NFC", "NFC Forum", "ISO 14443", "USB", "Card Reader"]
 ---
 
 ACR1252U
 
 ## Product Overview
 
-The ACR1252U is an NFC Forum-certified PC-linked reader based on 13.56 MHz contactless technology with a SAM slot for key diversification and mutual authentication. It supports three NFC modes (reader/writer, card emulation, peer-to-peer), ISO 14443 Type A/B, MIFARE®, FeliCa, ISO 18092 tags, and FIDO authentication (PocketKey, YubiKey). Available in USB Type-A (ACR1252U-M1) and USB Type-C (ACR1252U-MF). Also supports post-deployment USB firmware upgrades.
+The ACR1252U is an NFC Forum-certified PC-linked reader based on 13.56 MHz contactless technology with a SAM slot for key diversification and mutual authentication. It supports three NFC modes (reader/writer, card emulation, peer-to-peer), ISO 14443 Type A/B, MIFARE®, FeliCa and ISO 18092 tags. Available in USB Type-A (ACR1252U-M1) and USB Type-C (ACR1252U-MF). Also supports post-deployment USB firmware upgrades.
 
 ## Key Specifications
 
@@ -40,35 +40,25 @@ The ACR1252U is an NFC Forum-certified PC-linked reader based on 13.56 MHz conta
 
 ## Key Features
 
-- NFC Forum Certified — interoperable with all NFC devices
+- NFC Forum Certified
 - Three NFC modes: Card Reader/Writer, Card Emulation, Peer-to-Peer
 - Built-in antenna, reading distance up to 50 mm
-- Supports MIFARE® 7-byte UID, MIFARE® Plus, MIFARE® DESFire
 - Built-in anti-collision (1 tag at a time)
 - ISO 7816-compliant SAM slot for key diversification and mutual authentication
 - Post-deployment USB firmware upgrade support
-- FIDO authentication support (PocketKey, YubiKey) — passwordless / 2FA login
 - CCID and PC/SC compliant, plug-and-play
 - User-controllable bi-color LED and buzzer
 - Optional stand accessory
-- Comprehensive SDK with PC/SC-compliant sample codes
+- Software Development Kit (SDK) available
 - Ideal for e-Government, banking, e-healthcare, network security, smart posters
 
 ## Supported Tag Types
 
 | Tag / Card Type | Standard |
 |-----------------|----------|
-| NFC Tag Type 1 | ISO 14443 Type A |
-| NFC Tag Type 2 | ISO 14443 Type A |
-| NFC Tag Type 3 | FeliCa / ISO 18092 |
-| NFC Tag Type 4 | ISO 14443 Type A and B |
 | ISO 14443 Type A cards | ISO 14443 |
 | ISO 14443 Type B cards | ISO 14443 |
 | MIFARE Classic | ISO 14443 Type A |
-| MIFARE Ultralight | ISO 14443 Type A |
-| MIFARE 7-byte UID | ISO 14443 Type A |
-| MIFARE Plus | ISO 14443 Type A |
-| MIFARE DESFire | ISO 14443 Type A |
 | FeliCa | ISO 18092 |
 
 ## Supported Operating Systems

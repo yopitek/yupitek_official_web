@@ -31,7 +31,7 @@ O ACR122U é um leitor/gravador de cartões inteligentes sem contato conectado a
 | Velocidade de Leitura/Gravação | 106 Kbps / 212 Kbps / 424 Kbps |
 | Interface USB | USB Full Speed (12 Mbps) |
 | Tensão de Alimentação | 5V DC regulado |
-| Corrente de Alimentação | 200 mA máx. / 100 mA normal / 50 mA standby |
+| Corrente de Alimentação | Máx. 200 mA |
 | Tamanho da Antena | 50 mm × 40 mm |
 | Dimensões | 98 × 65 × 12,8 mm |
 | Peso | 70 g |
@@ -40,7 +40,6 @@ O ACR122U é um leitor/gravador de cartões inteligentes sem contato conectado a
 | MTBF | 408.500 horas |
 | LED | 1 bicolor Vermelho/Verde (controlável pelo usuário) |
 | Buzzer | Monotônico (controlável pelo usuário) |
-| Slot SAM | 1 × ISO 7816-3 (opcional) |
 | Conformidade | PC/SC, CCID, CE, FCC, RoHS |
 
 ## Recursos Principais
@@ -50,26 +49,16 @@ O ACR122U é um leitor/gravador de cartões inteligentes sem contato conectado a
 - Velocidade de leitura/gravação até 424 Kbps
 - Antena embutida, distância de leitura de cartão até 50 mm
 - Suporta todos os 4 tipos de tags NFC (ISO/IEC 18092)
-- Suporta MIFARE Ultralight C, MIFARE Plus, DESFire EV1
 - Leitor/gravador para ISO 14443 Tipo A/B, MIFARE, FeliCa e tags NFC
 - Anti-colisão embutida (1 tag por vez)
 - LED bicolor e buzzer controláveis pelo usuário
-- Slot SAM ISO 7816-3 opcional para segurança aprimorada
-- Disponível em formato de módulo para integração em POS/controle de acesso
 - Suporta PC/SC e CT-API
 
 ## Tipos de Etiquetas Suportadas
 
 | Tipo de Etiqueta / Cartão | Padrão |
 |--------------------------|--------|
-| NFC Tag Type 1 | ISO 14443 Type A |
-| NFC Tag Type 2 | ISO 14443 Type A |
-| NFC Tag Type 3 | FeliCa |
-| NFC Tag Type 4 | ISO 14443 Type A and B |
-| MIFARE Classic (1K, 4K, MINI) | ISO 14443 Type A |
-| MIFARE Ultralight / Ultralight C | ISO 14443 Type A |
-| MIFARE Plus | ISO 14443 Type A |
-| MIFARE DESFire / DESFire EV1 | ISO 14443 Type A |
+| MIFARE Classic | ISO 14443 Type A |
 | FeliCa | ISO 18092 |
 | Cartões ISO 14443 Type A | ISO 14443 |
 | Cartões ISO 14443 Type B | ISO 14443 |

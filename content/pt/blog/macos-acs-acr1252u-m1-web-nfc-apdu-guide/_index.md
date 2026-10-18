@@ -355,7 +355,7 @@ Antes de pedir o ACR1252U-M1, responda à tabela abaixo — **o resultado das su
 
 - [ ] Quero controlar o leitor diretamente com APDU em um **programa local do macOS** (buzzer, LED, leitura/gravação de cartões sem contato) → **Comprar**
 - [ ] Quero ler e gravar etiquetas NDEF com Web NFC em um **navegador Chromium no Android／ChromeOS** → **Não precisa comprar leitor**; use o NFC integrado do dispositivo; o ACR1252U serve apenas para verificação do lado PC/SC
-- [ ] Quero dar suporte a **MIFARE DESFire／FeliCa／ISO 14443 B** e outros cartões industriais／de controle de acesso → Comprar (este modelo suporta ISO 14443 A/B, MIFARE, DESFire e FeliCa em toda a série)
+- [ ] Quero dar suporte a **MIFARE／FeliCa／ISO 14443 B** e outros cartões industriais／de controle de acesso → Comprar (este modelo suporta ISO 14443 A/B, MIFARE e FeliCa)
 - [ ] Preciso de um **slot SAM (módulo de acesso seguro)** para experimentos de diversificação de chaves e autenticação mútua → Comprar (slot SAM integrado de 1× tamanho SIM)
 - [ ] Quero fazer testes de **FIDO / WebAuthn** ou dispositivos tipo YubiKey／PocketKey → Confirme o status do suporte a FIDO na documentação oficial da ACS antes de decidir (este artigo não endossa especificações não verificadas)
 - [ ] Meu computador só tem **portas USB-C** e não quero usar adaptadores → Verifique primeiro se a linha oficial de produtos da ACS tem um modelo da mesma série com interface USB-C (conforme o site oficial da ACS); o M1 tem cabo USB-A fixo
@@ -367,7 +367,7 @@ Antes de pedir o ACR1252U-M1, responda à tabela abaixo — **o resultado das su
 | Interface | USB Full Speed (12 Mbps), cabo USB-A fixo de 1 m |
 | Distância de leitura | Até aprox. 50 mm (depende da etiqueta) |
 | Velocidade de leitura/gravação | 106／212／424 Kbps |
-| Tipos de cartão certificados | Os quatro tipos NFC, ISO 14443 A/B, MIFARE Classic／Plus／DESFire, FeliCa |
+| Tipos de cartão certificados | Os quatro tipos NFC, ISO 14443 A/B, MIFARE Classic, FeliCa |
 | Controle do corpo | LED bicolor (vermelho／verde), buzzer de tom único (ambos programáveis) |
 | Slot adicional | 1× SAM (tamanho SIM, ISO 7816 Class A)|
 | Dimensões／peso | 98 × 65 × 12.8 mm／81 g |

@@ -1,19 +1,19 @@
 ---
 title: "ACS ACR1252U — NFC Forum 認證 USB 讀卡機"
-description: "ACS ACR1252U，NFC Forum 認證 USB 讀卡機，支援 NFC-A/B/F/V 四種 NFC 類型，適合 NFC 應用程式開發與企業部署。"
+description: "ACS ACR1252U，NFC Forum 認證 USB 讀卡機，支援讀寫器、卡片模擬及點對點三種 NFC 模式，適合 NFC 應用程式開發與企業部署。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
-tags: ["NFC", "NFC Forum", "ISO 14443", "ISO 15693", "USB", "讀卡機"]
+tags: ["NFC", "NFC Forum", "ISO 14443", "USB", "讀卡機"]
 ---
 
 ACR1252U
 
 ## 產品概述
 
-ACR1252U 是 ACS 取得 NFC Forum 認證的 PC 連接式讀卡機，採用 13.56 MHz 非接觸式技術，配備 SAM 插槽以支援金鑰分散化及相互認證。支援三種 NFC 模式（讀寫器、卡片模擬、點對點）、ISO 14443 Type A/B、MIFARE®、FeliCa、ISO 18092 標籤及 FIDO 認證（PocketKey、YubiKey）。提供 USB Type-A（ACR1252U-M1）及 USB Type-C（ACR1252U-MF）兩種版本，並支援部署後 USB 韌體升級。
+ACR1252U 是 ACS 取得 NFC Forum 認證的 PC 連接式讀卡機，採用 13.56 MHz 非接觸式技術，配備 SAM 插槽以支援金鑰分散化及相互認證。支援三種 NFC 模式（讀寫器、卡片模擬、點對點）、ISO 14443 Type A/B、MIFARE®、FeliCa 及 ISO 18092 標籤。提供 USB Type-A（ACR1252U-M1）及 USB Type-C（ACR1252U-MF）兩種版本，並支援部署後 USB 韌體升級。
 
 ## 主要規格
 
@@ -40,35 +40,25 @@ ACR1252U 是 ACS 取得 NFC Forum 認證的 PC 連接式讀卡機，採用 13.56
 
 ## 主要功能
 
-- NFC Forum 認證——與所有 NFC 裝置互通
+- NFC Forum 認證
 - 三種 NFC 模式：卡片讀寫器、卡片模擬、點對點
 - 內建天線，讀取距離最遠達 50 mm
-- 支援 MIFARE® 7-byte UID、MIFARE® Plus、MIFARE® DESFire
 - 內建防衝突機制（每次一張標籤）
 - 符合 ISO 7816 的 SAM 插槽，支援金鑰分散化及相互認證
 - 支援部署後 USB 韌體升級
-- 支援 FIDO 認證（PocketKey、YubiKey）——無密碼 / 雙因素登入
 - 符合 CCID 及 PC/SC 規範，即插即用
 - 使用者可控雙色 LED 及蜂鳴器
 - 選配支架配件
-- 完整 SDK 含符合 PC/SC 的範例程式碼
+- 提供軟體開發工具包（SDK）
 - 適用於電子政務、銀行、電子醫療、網路安全、智慧海報
 
 ## 支援標籤型號
 
 | 標籤 / 卡片類型 | 標準依據 |
 |-----------------|----------|
-| NFC Tag Type 1 | ISO 14443 Type A |
-| NFC Tag Type 2 | ISO 14443 Type A |
-| NFC Tag Type 3 | FeliCa / ISO 18092 |
-| NFC Tag Type 4 | ISO 14443 Type A and B |
 | ISO 14443 Type A 卡片 | ISO 14443 |
 | ISO 14443 Type B 卡片 | ISO 14443 |
 | MIFARE Classic | ISO 14443 Type A |
-| MIFARE Ultralight | ISO 14443 Type A |
-| MIFARE 7-byte UID | ISO 14443 Type A |
-| MIFARE Plus | ISO 14443 Type A |
-| MIFARE DESFire | ISO 14443 Type A |
 | FeliCa | ISO 18092 |
 
 ## 支援作業系統

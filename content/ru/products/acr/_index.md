@@ -14,7 +14,7 @@ featureimage: "/images/products/acr/banner-acr.png"
     USB NFC считыватель с поддержкой ISO 14443 A/B и MIFARE.
   {{< /card >}}
   {{< card title="ACR1252U NFC Forum Reader" href="/ru/products/acr/acr1252u/" image="/images/products/acr/ACR1252U.png" >}}
-    Сертифицированный NFC Forum считыватель с поддержкой NFC-A/B/F/V.
+    USB-считыватель, сертифицированный NFC Forum, с поддержкой ISO 14443 A/B, MIFARE и FeliCa.
   {{< /card >}}
   {{< card title="ACR1552U USB NFC IV Reader" href="/ru/products/acr/acr1552u/" image="/images/products/acr/ACR1552U.png" >}}
     Четвёртое поколение USB NFC считывателя с расширенной мультипротокольной поддержкой.

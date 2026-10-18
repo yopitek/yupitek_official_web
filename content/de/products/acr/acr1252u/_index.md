@@ -1,19 +1,19 @@
 ---
 title: "ACS ACR1252U — USB NFC Reader III (NFC Forum Certified)"
-description: "ACS ACR1252U, NFC Forum-zertifizierter USB-Leser mit Unterstützung aller vier NFC-Typen (NFC-A/B/F/V). Ideal für die Entwicklung und den Einsatz von NFC-Anwendungen im Unternehmensbereich."
+description: "ACS ACR1252U, NFC Forum-zertifizierter USB-Leser mit den Modi Reader/Writer, Card Emulation und Peer-to-Peer. Ideal für die Entwicklung und den Einsatz von NFC-Anwendungen im Unternehmensbereich."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
-tags: ["NFC", "NFC Forum", "ISO 14443", "ISO 15693", "USB", "Card Reader"]
+tags: ["NFC", "NFC Forum", "ISO 14443", "USB", "Card Reader"]
 ---
 
 ACR1252U
 
 ## Produktübersicht
 
-Der ACR1252U ist ein NFC Forum-zertifizierter, PC-gebundener Leser auf Basis der kontaktlosen 13,56 MHz-Technologie mit einem SAM-Slot für Schlüsseldiversifikation und gegenseitige Authentifizierung. Er unterstützt drei NFC-Modi (Reader/Writer, Card Emulation, Peer-to-Peer), ISO 14443 Typ A/B, MIFARE®, FeliCa, ISO 18092-Tags sowie FIDO-Authentifizierung (PocketKey, YubiKey). Erhältlich als USB Typ-A (ACR1252U-M1) und USB Typ-C (ACR1252U-MF). Unterstützt auch USB-Firmware-Upgrades nach der Bereitstellung.
+Der ACR1252U ist ein NFC Forum-zertifizierter, PC-gebundener Leser auf Basis der kontaktlosen 13,56 MHz-Technologie mit einem SAM-Slot für Schlüsseldiversifikation und gegenseitige Authentifizierung. Er unterstützt drei NFC-Modi (Reader/Writer, Card Emulation, Peer-to-Peer), ISO 14443 Typ A/B, MIFARE®, FeliCa sowie ISO 18092-Tags. Erhältlich als USB Typ-A (ACR1252U-M1) und USB Typ-C (ACR1252U-MF). Unterstützt auch USB-Firmware-Upgrades nach der Bereitstellung.
 
 ## Technische Spezifikationen
 
@@ -40,35 +40,25 @@ Der ACR1252U ist ein NFC Forum-zertifizierter, PC-gebundener Leser auf Basis der
 
 ## Hauptmerkmale
 
-- NFC Forum zertifiziert — interoperabel mit allen NFC-Geräten
+- NFC Forum zertifiziert
 - Drei NFC-Modi: Card Reader/Writer, Card Emulation, Peer-to-Peer
 - Eingebaute Antenne, Lesedistanz bis zu 50 mm
-- Unterstützt MIFARE® 7-Byte-UID, MIFARE® Plus, MIFARE® DESFire
 - Integrierte Anti-Kollision (1 Tag gleichzeitig)
 - ISO 7816-konformer SAM-Slot für Schlüsseldiversifikation und gegenseitige Authentifizierung
 - Unterstützung für USB-Firmware-Upgrades nach der Bereitstellung
-- FIDO-Authentifizierungsunterstützung (PocketKey, YubiKey) — passwortlos / 2FA-Anmeldung
 - CCID- und PC/SC-konform, Plug-and-Play
 - Benutzersteuerbare zweifarbige LED und Summer
 - Optionales Standzubehör
-- Umfassendes SDK mit PC/SC-konformen Beispielcodes
+- Software Development Kit (SDK) verfügbar
 - Ideal für E-Government, Banking, E-Healthcare, Netzwerksicherheit, Smart Poster
 
 ## Unterstützte Tag-Typen
 
 | Tag / Kartentyp | Standard |
 |-----------------|----------|
-| NFC Tag Typ 1 | ISO 14443 Typ A |
-| NFC Tag Typ 2 | ISO 14443 Typ A |
-| NFC Tag Typ 3 | FeliCa / ISO 18092 |
-| NFC Tag Typ 4 | ISO 14443 Typ A und B |
 | ISO 14443 Typ A Karten | ISO 14443 |
 | ISO 14443 Typ B Karten | ISO 14443 |
 | MIFARE Classic | ISO 14443 Typ A |
-| MIFARE Ultralight | ISO 14443 Typ A |
-| MIFARE 7-Byte-UID | ISO 14443 Typ A |
-| MIFARE Plus | ISO 14443 Typ A |
-| MIFARE DESFire | ISO 14443 Typ A |
 | FeliCa | ISO 18092 |
 
 ## Unterstützte Betriebssysteme

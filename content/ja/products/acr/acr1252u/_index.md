@@ -1,19 +1,19 @@
 ---
 title: "ACS ACR1252U — NFC Forum 認定 USB NFC リーダー III"
-description: "ACS ACR1252U、NFC Forum 認定 USB カードリーダー。NFC-A/B/F/V の 4 種類の NFC タイプに対応し、NFC アプリケーション開発・企業展開に最適です。"
+description: "ACS ACR1252U、NFC Forum 認定 USB カードリーダー。リーダー/ライター、カードエミュレーション、ピアツーピアの 3 つの NFC モードに対応し、NFC アプリケーション開発・企業展開に最適です。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
-tags: ["NFC", "NFC Forum", "ISO 14443", "ISO 15693", "USB", "カードリーダー"]
+tags: ["NFC", "NFC Forum", "ISO 14443", "USB", "カードリーダー"]
 ---
 
 ACR1252U
 
 ## 製品概要
 
-ACR1252U は、13.56 MHz 非接触技術を採用した NFC Forum 認定の PC 接続型リーダーで、鍵の多様化と相互認証のための SAM スロットを備えています。3 つの NFC モード（リーダー/ライター、カードエミュレーション、ピアツーピア）、ISO 14443 Type A/B、MIFARE®、FeliCa、ISO 18092 タグおよび FIDO 認証（PocketKey、YubiKey）をサポートしています。USB Type-A（ACR1252U-M1）と USB Type-C（ACR1252U-MF）の 2 種類があり、展開後の USB ファームウェアアップグレードにも対応しています。
+ACR1252U は、13.56 MHz 非接触技術を採用した NFC Forum 認定の PC 接続型リーダーで、鍵の多様化と相互認証のための SAM スロットを備えています。3 つの NFC モード（リーダー/ライター、カードエミュレーション、ピアツーピア）、ISO 14443 Type A/B、MIFARE®、FeliCa、ISO 18092 タグをサポートしています。USB Type-A（ACR1252U-M1）と USB Type-C（ACR1252U-MF）の 2 種類があり、展開後の USB ファームウェアアップグレードにも対応しています。
 
 ## 主要仕様
 
@@ -40,35 +40,25 @@ ACR1252U は、13.56 MHz 非接触技術を採用した NFC Forum 認定の PC �
 
 ## 主な機能
 
-- NFC Forum 認定——すべての NFC デバイスと相互運用可能
+- NFC Forum 認定
 - 3 つの NFC モード：カードリーダー/ライター、カードエミュレーション、ピアツーピア
 - 内蔵アンテナ、読み取り距離は最大 50 mm
-- MIFARE® 7-byte UID、MIFARE® Plus、MIFARE® DESFire をサポート
 - 内蔵アンチコリジョン（一度に 1 タグ）
 - ISO 7816 準拠 SAM スロット（鍵の多様化と相互認証）
 - 展開後の USB ファームウェアアップグレード対応
-- FIDO 認証サポート（PocketKey、YubiKey）——パスワードレス / 2 要素認証ログイン
 - CCID および PC/SC 準拠、プラグアンドプレイ
 - ユーザー制御可能な双色 LED とブザー
 - オプションのスタンドアクセサリー
-- PC/SC 準拠サンプルコードを含む包括的 SDK
+- ソフトウェア開発キット（SDK）を提供
 - 電子政府、銀行、電子医療、ネットワークセキュリティ、スマートポスターに最適
 
 ## 対応タグ種別
 
 | タグ / カード種別 | 規格 |
 |-----------------|------|
-| NFC Tag Type 1 | ISO 14443 Type A |
-| NFC Tag Type 2 | ISO 14443 Type A |
-| NFC Tag Type 3 | FeliCa / ISO 18092 |
-| NFC Tag Type 4 | ISO 14443 Type A and B |
 | ISO 14443 Type A カード | ISO 14443 |
 | ISO 14443 Type B カード | ISO 14443 |
 | MIFARE Classic | ISO 14443 Type A |
-| MIFARE Ultralight | ISO 14443 Type A |
-| MIFARE 7-byte UID | ISO 14443 Type A |
-| MIFARE Plus | ISO 14443 Type A |
-| MIFARE DESFire | ISO 14443 Type A |
 | FeliCa | ISO 18092 |
 
 ## 対応オペレーティングシステム

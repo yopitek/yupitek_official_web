@@ -355,7 +355,7 @@ Antes de pedir el ACR1252U-M1, responda la siguiente tabla — **el resultado de
 
 - [ ] Quiero controlar el lector directamente con APDU en un **programa local de macOS** (zumbador, LED, lectura/escritura de tarjetas sin contacto) → **Comprar**
 - [ ] Quiero leer y escribir etiquetas NDEF con Web NFC en un **navegador Chromium de Android／ChromeOS** → **No hace falta comprar lector**; use el NFC integrado del dispositivo; el ACR1252U solo sirve para verificación del lado PC/SC
-- [ ] Quiero dar soporte a **MIFARE DESFire／FeliCa／ISO 14443 B** y otras tarjetas industriales／de control de acceso → Comprar (este modelo admite ISO 14443 A/B, MIFARE, DESFire y FeliCa en toda la serie)
+- [ ] Quiero dar soporte a **MIFARE／FeliCa／ISO 14443 B** y otras tarjetas industriales／de control de acceso → Comprar (este modelo admite ISO 14443 A/B, MIFARE y FeliCa)
 - [ ] Necesito una **ranura SAM (módulo de acceso seguro)** para experimentos de diversificación de claves y autenticación mutua → Comprar (ranura SAM integrada de 1× tamaño SIM)
 - [ ] Quiero hacer pruebas de **FIDO / WebAuthn** o dispositivos tipo YubiKey／PocketKey → Confirme el estado del soporte FIDO en la documentación oficial de ACS antes de decidir (este artículo no avala especificaciones no verificadas)
 - [ ] Mi ordenador solo tiene **puertos USB-C** y no quiero usar adaptadores → Compruebe primero si la línea de productos oficial de ACS tiene un modelo de la misma serie con interfaz USB-C (según el sitio web oficial de ACS); el M1 tiene cable USB-A fijo
@@ -367,7 +367,7 @@ Antes de pedir el ACR1252U-M1, responda la siguiente tabla — **el resultado de
 | Interfaz | USB Full Speed (12 Mbps), cable USB-A fijo de 1 m |
 | Distancia de lectura | Hasta aprox. 50 mm (según la etiqueta) |
 | Velocidad de lectura/escritura | 106／212／424 Kbps |
-| Tipos de tarjeta certificados | Los cuatro tipos NFC, ISO 14443 A/B, MIFARE Classic／Plus／DESFire, FeliCa |
+| Tipos de tarjeta certificados | Los cuatro tipos NFC, ISO 14443 A/B, MIFARE Classic, FeliCa |
 | Control del cuerpo | LED bicolor (rojo／verde), zumbador de tono único (ambos programables) |
 | Ranura adicional | 1× SAM (tamaño SIM, ISO 7816 Class A)|
 | Dimensiones／peso | 98 × 65 × 12.8 mm／81 g |

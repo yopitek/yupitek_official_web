@@ -355,7 +355,7 @@ Bevor du das ACR1252U-M1 bestellst, beantworte die folgende Tabelle – **das Er
 
 - [ ] Ich will das Lesegerät in einem **lokalen macOS-Programm** direkt per APDU steuern (Summer, LED, kontaktloses Kartenlesen/-schreiben) → **Kaufen**
 - [ ] Ich will mit Web NFC in einem **Chromium-Browser auf Android／ChromeOS** NDEF-Tags lesen und schreiben → **Kein Lesegerät nötig**; nutze das eingebaute NFC des Geräts; das ACR1252U dient nur zur PC/SC-seitigen Verifikation
-- [ ] Ich will **MIFARE DESFire／FeliCa／ISO 14443 B** und andere Industrie-/Zutrittskarten unterstützen → Kaufen (dieses Modell unterstützt ISO 14443 A/B, MIFARE, DESFire und FeliCa in der ganzen Serie)
+- [ ] Ich will **MIFARE／FeliCa／ISO 14443 B** und andere Industrie-/Zutrittskarten unterstützen → Kaufen (dieses Modell unterstützt ISO 14443 A/B, MIFARE und FeliCa)
 - [ ] Ich brauche einen **SAM-Steckplatz (Secure Access Module)** für Experimente mit Schlüssel-Diversifikation und gegenseitiger Authentifizierung → Kaufen (eingebauter 1× SIM-großer SAM-Steckplatz)
 - [ ] Ich will **FIDO / WebAuthn** oder YubiKey／PocketKey-artige Geräte testen → Prüfe den FIDO-Support-Status in der offiziellen ACS-Dokumentation, bevor du entscheidest (dieser Artikel bestätigt keine ungeprüften Spezifikationen)
 - [ ] Mein Computer hat **nur USB-C-Anschlüsse** und ich will keine Adapter → Prüfe zuerst, ob die offizielle ACS-Produktlinie ein Modell derselben Serie mit USB-C-Schnittstelle hat (laut ACS-Website); das M1 hat ein festes USB-A-Kabel
@@ -367,7 +367,7 @@ Bevor du das ACR1252U-M1 bestellst, beantworte die folgende Tabelle – **das Er
 | Schnittstelle | USB Full Speed (12 Mbps), festes 1-m-USB-A-Kabel |
 | Leseabstand | Bis ca. 50 mm (je nach Tag) |
 | Lese-/Schreibgeschwindigkeit | 106／212／424 Kbps |
-| Zertifizierte Kartentypen | Alle vier NFC-Typen, ISO 14443 A/B, MIFARE Classic／Plus／DESFire, FeliCa |
+| Zertifizierte Kartentypen | Alle vier NFC-Typen, ISO 14443 A/B, MIFARE Classic, FeliCa |
 | Gehäuse-Steuerung | Zweifarbige LED (rot／grün), eintoniger Summer (beide programmierbar) |
 | Zusätzlicher Steckplatz | 1× SAM (SIM-Größe, ISO 7816 Class A)|
 | Abmessungen／Gewicht | 98 × 65 × 12,8 mm／81 g |

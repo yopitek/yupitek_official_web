@@ -13,7 +13,7 @@ ACR1552U
 
 ## Présentation du Produit
 
-L'ACR1552U est un lecteur NFC USB IV conforme CCID et PC/SC, basé sur la technologie sans contact 13,56 MHz avec une communication haute vitesse jusqu'à 848 Kbps et un slot SAM intégré. Il prend en charge de manière étendue les cartes ISO 14443 Type A/B, MIFARE®, FeliCa, ISO 18092 et ISO 15693. Offre la mise à jour du firmware USB, le support APDU étendu (max. 64 koctets), l'authentification FIDO (PocketKey, YubiKey) et trois modes NFC : lecteur/graveur, émulation de carte, émulation clavier. Remplacement recommandé de l'ACR122U en fin de vie.
+L'ACR1552U est un lecteur NFC USB IV conforme CCID et PC/SC, basé sur la technologie sans contact 13,56 MHz avec une communication haute vitesse jusqu'à 848 Kbps et un slot SAM intégré. Il prend en charge de manière étendue les cartes ISO 14443 Type A/B, MIFARE®, FeliCa, ISO 18092 et ISO 15693. Offre la mise à jour du firmware USB, le support APDU étendu et trois modes NFC : lecteur/graveur, émulation de carte, émulation clavier.
 
 ## Spécifications Techniques
 
@@ -27,12 +27,10 @@ L'ACR1552U est un lecteur NFC USB IV conforme CCID et PC/SC, basé sur la techno
 | Vitesse lecture/écriture SAM | 13,4 Kbps – 1 250 Kbps |
 | Fréquence d'horloge SAM | 5 MHz, jusqu'à 10 MHz |
 | Protocole SAM | T=0, T=1 |
-| Protocoles | ISO/IEC 14443-A, -B, ISO/IEC 15693, ISO/IEC 18092, ISO/IEC 21481 |
-| APDU étendu | Max. 64 koctets |
+| Protocoles | ISO/IEC 14443-A, -B, ISO/IEC 15693, ISO/IEC 18092 |
 | LED | Contrôlable par l'utilisateur (configurable) |
 | Buzzer | Contrôlable par l'utilisateur (configurable) |
-| Température de fonctionnement | -20°C – 70°C, 90 % HR (sans condensation) |
-| Température de stockage | 18°C – 28°C, 10 %–95 % HR (sans condensation) |
+| Température de fonctionnement | 0°C – 60°C, 90 % HR (sans condensation) |
 | Conformité | PC/SC, CCID, CE, FCC, RoHS |
 | Supplémentaire | Protection contre les courts-circuits, mise à jour firmware USB |
 
@@ -41,18 +39,15 @@ L'ACR1552U est un lecteur NFC USB IV conforme CCID et PC/SC, basé sur la techno
 - Trois modes NFC : Card Reader/Writer, Card Emulation, Keyboard Emulation
 - Antenne intégrée, distance de lecture jusqu'à 70 mm
 - Communication haute vitesse jusqu'à 848 Kbps
-- Support APDU étendu (max. 64 koctets)
+- Support APDU étendu
 - Slot SAM intégré pour la diversification des clés et l'authentification mutuelle
 - Mise à jour du firmware USB pour les mises à jour après déploiement
 - Anti-collision intégré (un tag à la fois)
-- Prise en charge de l'authentification FIDO (PocketKey, YubiKey) — connexion sans mot de passe / 2FA
 - Conforme CCID et PC/SC, plug-and-play
 - LED et buzzer contrôlables par l'utilisateur
 - Protection contre les courts-circuits
-- Mode d'émulation clavier pour une large compatibilité logicielle
-- SDK complet avec exemples de code conformes PC/SC
+- Kit de développement logiciel (SDK) disponible
 - Idéal pour l'e-gouvernement, la banque, l'e-santé, le transport, le contrôle d'accès, les programmes de fidélité
-- Remplacement recommandé de l'ACR122U (fin de vie)
 
 ## Types de Tags Pris en Charge
 
@@ -63,13 +58,11 @@ L'ACR1552U est un lecteur NFC USB IV conforme CCID et PC/SC, basé sur la techno
 | Cartes ISO 15693 | ISO 15693 |
 | Tags NFC ISO 18092 | ISO 18092 |
 | MIFARE Classic® | ISO 14443 Type A |
-| MIFARE Ultralight® | ISO 14443 Type A |
-| MIFARE Plus® | ISO 14443 Type A |
-| MIFARE DESFire® | ISO 14443 Type A |
 | FeliCa | ISO 18092 |
-| SRI / SRIX | ST Microelectronics |
-| Topaz Card | NFC Tag Type 1 |
-| Tags NFC (Type 1–5) | ISO 18092 / ISO 15693 |
+| SRI / SRIX | — |
+| CTS | — |
+| Innovatron | — |
+| Topaz Card | — |
 | Picopass | — |
 
 ## Systèmes d'exploitation pris en charge

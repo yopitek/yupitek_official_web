@@ -17,7 +17,7 @@ Advanced Card Systems (ACS) هو مصنع عالمي رائد لقارئات ا�
     قارئ NFC USB يدعم ISO 14443 A/B وMIFARE — مستخدم على نطاق واسع في بحث NFC.
   {{< /card >}}
   {{< card title="ACR1252U NFC Forum Reader" href="/ar/products/acr/acr1252u/" image="/images/products/acr/ACR1252U.png" >}}
-    قارئ معتمد من NFC Forum يدعم NFC-A/B/F/V — مثالي لتطوير تطبيقات NFC.
+    قارئ USB معتمد من NFC Forum يدعم ISO 14443 A/B وMIFARE وFeliCa — مثالي لتطوير تطبيقات NFC.
   {{< /card >}}
   {{< card title="ACR1552U USB NFC IV Reader" href="/ar/products/acr/acr1552u/" image="/images/products/acr/ACR1552U.png" >}}
     قارئ USB NFC الجيل الرابع مع دعم متعدد البروتوكولات المحسّن.

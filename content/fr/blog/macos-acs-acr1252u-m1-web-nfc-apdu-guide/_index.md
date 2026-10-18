@@ -355,7 +355,7 @@ Avant de commander le ACR1252U-M1, réponds au tableau ci-dessous — **le résu
 
 - [ ] Je veux piloter le lecteur directement avec de l'APDU dans un **programme local macOS** (buzzer, LED, lecture/écriture de cartes sans contact) → **Acheter**
 - [ ] Je veux lire et écrire des étiquettes NDEF avec Web NFC dans un **navigateur Chromium sur Android／ChromeOS** → **Pas besoin d'acheter de lecteur** ; utilise le NFC intégré de l'appareil ; le ACR1252U sert uniquement à la vérification côté PC/SC
-- [ ] Je veux prendre en charge **MIFARE DESFire／FeliCa／ISO 14443 B** et d'autres cartes industrielles／de contrôle d'accès → Acheter (ce modèle prend en charge ISO 14443 A/B, MIFARE, DESFire et FeliCa sur toute la série)
+- [ ] Je veux prendre en charge **MIFARE／FeliCa／ISO 14443 B** et d'autres cartes industrielles／de contrôle d'accès → Acheter (ce modèle prend en charge ISO 14443 A/B, MIFARE et FeliCa)
 - [ ] J'ai besoin d'un **emplacement SAM (module d'accès sécurisé)** pour des expériences de diversification de clés et d'authentification mutuelle → Acheter (emplacement SAM intégré de 1× taille SIM)
 - [ ] Je veux tester **FIDO / WebAuthn** ou des appareils type YubiKey／PocketKey → Confirme l'état de la prise en charge FIDO dans la documentation officielle d'ACS avant de décider (cet article ne cautionne pas les spécifications non vérifiées)
 - [ ] Mon ordinateur n'a que des **ports USB-C** et je ne veux pas d'adaptateurs → Vérifie d'abord si la gamme officielle d'ACS propose un modèle de la même série avec interface USB-C (selon le site officiel d'ACS) ; le M1 a un câble USB-A fixe
@@ -367,7 +367,7 @@ Avant de commander le ACR1252U-M1, réponds au tableau ci-dessous — **le résu
 | Interface | USB Full Speed (12 Mbps), câble USB-A fixe de 1 m |
 | Distance de lecture | Jusqu'à environ 50 mm (selon l'étiquette) |
 | Vitesse de lecture/écriture | 106／212／424 Kbps |
-| Types de cartes certifiés | Les quatre types NFC, ISO 14443 A/B, MIFARE Classic／Plus／DESFire, FeliCa |
+| Types de cartes certifiés | Les quatre types NFC, ISO 14443 A/B, MIFARE Classic, FeliCa |
 | Contrôle du corps | LED bicolore (rouge／vert), buzzer monotone (tous deux programmables) |
 | Emplacement supplémentaire | 1× SAM (taille SIM, ISO 7816 Class A)|
 | Dimensions／poids | 98 × 65 × 12,8 mm／81 g |

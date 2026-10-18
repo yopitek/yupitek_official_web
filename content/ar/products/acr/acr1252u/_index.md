@@ -1,12 +1,12 @@
 ---
 title: "ACS ACR1252U — قارئ NFC USB III معتمد من NFC Forum"
-description: "ACS ACR1252U، قارئ USB NFC حاصل على اعتماد NFC Forum، يدعم أنواع NFC-A/B/F/V الأربعة، مناسب لتطوير تطبيقات NFC والنشر المؤسسي."
+description: "ACS ACR1252U، قارئ USB NFC حاصل على اعتماد NFC Forum، يدعم أوضاع قارئ/كاتب ومحاكاة البطاقة ونظير إلى نظير، مناسب لتطوير تطبيقات NFC والنشر المؤسسي."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
-tags: ["NFC", "NFC Forum", "ISO 14443", "ISO 15693", "USB", "قارئ بطاقات"]
+tags: ["NFC", "NFC Forum", "ISO 14443", "USB", "قارئ بطاقات"]
 dir: rtl
 languageDirection: rtl
 ---
@@ -15,7 +15,7 @@ ACR1252U
 
 ## نظرة عامة على المنتج
 
-ACR1252U هو قارئ متصل بالحاسوب حاصل على اعتماد NFC Forum، يعتمد تقنية اللاتلامس بتردد 13.56 MHz مع فتحة SAM لتنويع المفاتيح والمصادقة المتبادلة. يدعم ثلاثة أوضاع NFC (قارئ/كاتب، محاكاة البطاقة، نظير إلى نظير)، وISO 14443 Type A/B، وMIFARE®، وFeliCa، وبطاقات ISO 18092، ومصادقة FIDO (PocketKey، YubiKey). متوفر بمنفذ USB Type-A (ACR1252U-M1) وUSB Type-C (ACR1252U-MF)، ويدعم ترقية البرنامج الثابت عبر USB بعد النشر.
+ACR1252U هو قارئ متصل بالحاسوب حاصل على اعتماد NFC Forum، يعتمد تقنية اللاتلامس بتردد 13.56 MHz مع فتحة SAM لتنويع المفاتيح والمصادقة المتبادلة. يدعم ثلاثة أوضاع NFC (قارئ/كاتب، محاكاة البطاقة، نظير إلى نظير)، وISO 14443 Type A/B، وMIFARE®، وFeliCa، وبطاقات ISO 18092. متوفر بمنفذ USB Type-A (ACR1252U-M1) وUSB Type-C (ACR1252U-MF)، ويدعم ترقية البرنامج الثابت عبر USB بعد النشر.
 
 ## المواصفات الرئيسية
 
@@ -42,35 +42,25 @@ ACR1252U هو قارئ متصل بالحاسوب حاصل على اعتماد NF
 
 ## الميزات الرئيسية
 
-- معتمد من NFC Forum — قابل للتشغيل مع جميع أجهزة NFC
+- معتمد من NFC Forum
 - ثلاثة أوضاع NFC: قارئ/كاتب البطاقات، محاكاة البطاقة، نظير إلى نظير
 - هوائي مدمج، مسافة القراءة تصل إلى 50 mm
-- يدعم MIFARE® 7-byte UID وMIFARE® Plus وMIFARE® DESFire
 - مكافحة التصادم المدمجة (بطاقة واحدة في كل مرة)
 - فتحة SAM متوافقة مع ISO 7816 لتنويع المفاتيح والمصادقة المتبادلة
 - دعم ترقية البرنامج الثابت عبر USB بعد النشر
-- دعم مصادقة FIDO (PocketKey، YubiKey) — تسجيل دخول بدون كلمة مرور / بعاملين
 - متوافق مع CCID وPC/SC، بالتوصيل والتشغيل
 - LED ثنائي اللون وجرس تنبيه قابلان للتحكم من قِبَل المستخدم
 - ملحق حامل اختياري
-- SDK شامل مع أكواد نماذج متوافقة مع PC/SC
+- مجموعة تطوير البرمجيات (SDK) متوفرة
 - مثالي للحكومة الإلكترونية والمصارف والرعاية الصحية الإلكترونية وأمن الشبكات والملصقات الذكية
 
 ## أنواع البطاقات المدعومة
 
 | نوع البطاقة / الوسم | المعيار |
 |---------------------|---------|
-| NFC Tag Type 1 | ISO 14443 Type A |
-| NFC Tag Type 2 | ISO 14443 Type A |
-| NFC Tag Type 3 | FeliCa / ISO 18092 |
-| NFC Tag Type 4 | ISO 14443 Type A and B |
 | بطاقات ISO 14443 Type A | ISO 14443 |
 | بطاقات ISO 14443 Type B | ISO 14443 |
 | MIFARE Classic | ISO 14443 Type A |
-| MIFARE Ultralight | ISO 14443 Type A |
-| MIFARE 7-byte UID | ISO 14443 Type A |
-| MIFARE Plus | ISO 14443 Type A |
-| MIFARE DESFire | ISO 14443 Type A |
 | FeliCa | ISO 18092 |
 
 ## أنظمة التشغيل المدعومة

@@ -31,7 +31,7 @@ The ACR122U is a PC-linked contactless smart card reader/writer based on 13.56 M
 | Read/Write Speed | 106 Kbps / 212 Kbps / 424 Kbps |
 | USB Interface | USB Full Speed (12 Mbps) |
 | Supply Voltage | 5V DC regulated |
-| Supply Current | 200 mA max / 100 mA normal / 50 mA standby |
+| Supply Current | Max. 200 mA |
 | Antenna Size | 50 mm × 40 mm |
 | Dimensions | 98 × 65 × 12.8 mm |
 | Weight | 70 g |
@@ -40,7 +40,6 @@ The ACR122U is a PC-linked contactless smart card reader/writer based on 13.56 M
 | MTBF | 408,500 hrs |
 | LED | 1 bi-color Red/Green (user-controllable) |
 | Buzzer | Monotone (user-controllable) |
-| SAM Slot | 1 × ISO 7816-3 (optional) |
 | Compliance | PC/SC, CCID, CE, FCC, RoHS |
 
 ## Key Features
@@ -50,26 +49,16 @@ The ACR122U is a PC-linked contactless smart card reader/writer based on 13.56 M
 - Read/write speed up to 424 Kbps
 - Built-in antenna, card reading distance up to 50 mm
 - Supports all 4 NFC tag types (ISO/IEC 18092)
-- Supports MIFARE Ultralight C, MIFARE Plus, DESFire EV1
 - Reader/writer for ISO 14443 Type A/B, MIFARE, FeliCa and NFC tags
 - Built-in anti-collision (1 tag at a time)
 - User-controllable bi-color LED and buzzer
-- Optional ISO 7816-3 SAM slot for enhanced security
-- Available in module form for POS/access control integration
 - Supports PC/SC and CT-API
 
 ## Supported Tag Types
 
 | Tag / Card Type | Standard |
 |-----------------|----------|
-| NFC Tag Type 1 | ISO 14443 Type A |
-| NFC Tag Type 2 | ISO 14443 Type A |
-| NFC Tag Type 3 | FeliCa |
-| NFC Tag Type 4 | ISO 14443 Type A and B |
-| MIFARE Classic (1K, 4K, MINI) | ISO 14443 Type A |
-| MIFARE Ultralight / Ultralight C | ISO 14443 Type A |
-| MIFARE Plus | ISO 14443 Type A |
-| MIFARE DESFire / DESFire EV1 | ISO 14443 Type A |
+| MIFARE Classic | ISO 14443 Type A |
 | FeliCa | ISO 18092 |
 | ISO 14443 Type A cards | ISO 14443 |
 | ISO 14443 Type B cards | ISO 14443 |

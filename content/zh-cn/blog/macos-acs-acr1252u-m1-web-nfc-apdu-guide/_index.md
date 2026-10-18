@@ -355,7 +355,7 @@ sw, data = conn.transmit([0xFF, 0x00, 0x40, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00])
 
 - [ ] 我要在 **macOS 本机程序**里用 APDU 直接控制读卡机（蜂鸣器、LED、感应式卡片读写）→ **买**
 - [ ] 我要在 **Android／ChromeOS 的 Chromium 浏览器**里用 Web NFC 读写 NDEF 标签 → **不必买读卡机**，用设备内置 NFC 即可，ACR1252U 仅作 PC/SC 侧验证用
-- [ ] 我要支持 **MIFARE DESFire／FeliCa／ISO 14443 B** 等工业／门禁卡片 → 买（此机型支持 ISO 14443 A/B、MIFARE、DESFire、FeliCa 全系列）
+- [ ] 我要支持 **MIFARE／FeliCa／ISO 14443 B** 等工业／门禁卡片 → 买（此机型支持 ISO 14443 A/B、MIFARE、FeliCa）
 - [ ] 我需要 **SAM（安全存取模块）插槽**做金钥分散与双向认证实验 → 买（内置 1× SIM 尺寸 SAM 插槽）
 - [ ] 我要做 **FIDO / WebAuthn** 或 YubiKey／PocketKey 类的测试 → 请以 ACS 官方文件确认 FIDO 支持状态后再决定（本文不背书未查证的规格）
 - [ ] 我的电脑只有 **USB-C** 连接埠，且不想用转接头 → 请先确认 ACS 官方产品线是否有 USB-C 接口的同系列型号（以 ACS 官网为准）；M1 是固定 USB-A 线
@@ -367,7 +367,7 @@ sw, data = conn.transmit([0xFF, 0x00, 0x40, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00])
 | 接口 | USB Full Speed（12 Mbps），固定 1 m USB-A 线 |
 | 感应距离 | 最远约 50 mm（依标签而定） |
 | 读写速率 | 106／212／424 Kbps |
-| 认证卡种 | NFC 全四型、ISO 14443 A/B、MIFARE Classic／Plus／DESFire、FeliCa |
+| 认证卡种 | NFC 全四型、ISO 14443 A/B、MIFARE Classic、FeliCa |
 | 本体控制 | 双色 LED（红／绿）、单音蜂鸣器（皆可程序控制） |
 | 额外插槽 | 1× SAM（SIM 尺寸，ISO 7816 A 级）|
 | 尺寸／重量 | 98 × 65 × 12.8 mm／81 g |

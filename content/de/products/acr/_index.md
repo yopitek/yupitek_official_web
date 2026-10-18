@@ -18,7 +18,7 @@ Advanced Card Systems (ACS) ist ein weltweit anerkannter Hersteller von Smart-Ca
     USB-NFC-Lesegerät mit Unterstützung für ISO 14443 A/B und MIFARE — Desktop-Design, weit verbreitet in der NFC-Forschung und Anwendungsentwicklung.
   {{< /card >}}
   {{< card title="ACR1252U NFC Forum Certified Reader" href="/de/products/acr/acr1252u/" image="/images/products/acr/ACR1252U.png" >}}
-    NFC-Forum-zertifiziertes Lesegerät mit Unterstützung für NFC-A/B/F/V über USB — ideal für NFC-Anwendungsentwicklung.
+    NFC-Forum-zertifiziertes USB-Lesegerät mit Unterstützung für ISO 14443 A/B, MIFARE und FeliCa — ideal für NFC-Anwendungsentwicklung.
   {{< /card >}}
   {{< card title="ACR1552U USB NFC IV-Lesegerät" href="/de/products/acr/acr1552u/" image="/images/products/acr/ACR1552U.png" >}}
     USB-NFC-Lesegerät der vierten Generation mit erweiterter Multi-Protocol-Unterstützung für Enterprise-Zugangskontrolle und Identitätsverifikation.

@@ -31,7 +31,7 @@ ACR122U 是 ACS 基於 13.56 MHz RFID 技術的 PC 連接式非接觸智慧卡�
 | 讀寫速度 | 106 Kbps / 212 Kbps / 424 Kbps |
 | USB 介面 | USB 全速（12 Mbps） |
 | 供電電壓 | 5V DC 穩壓 |
-| 供電電流 | 最大 200 mA / 正常 100 mA / 待機 50 mA |
+| 供電電流 | 最大 200 mA |
 | 天線尺寸 | 50 mm × 40 mm |
 | 外觀尺寸 | 98 × 65 × 12.8 mm |
 | 重量 | 70 g |
@@ -40,7 +40,6 @@ ACR122U 是 ACS 基於 13.56 MHz RFID 技術的 PC 連接式非接觸智慧卡�
 | MTBF | 408,500 小時 |
 | LED | 1 個雙色 紅/綠（使用者可控） |
 | 蜂鳴器 | 單音調（使用者可控） |
-| SAM 插槽 | 1 × ISO 7816-3（選配） |
 | 合規認證 | PC/SC、CCID、CE、FCC、RoHS |
 
 ## 主要功能
@@ -50,26 +49,16 @@ ACR122U 是 ACS 基於 13.56 MHz RFID 技術的 PC 連接式非接觸智慧卡�
 - 讀寫速度最高達 424 Kbps
 - 內建天線，卡片讀取距離最遠達 50 mm
 - 支援全部 4 種 NFC 標籤類型（ISO/IEC 18092）
-- 支援 MIFARE Ultralight C、MIFARE Plus、DESFire EV1
 - 支援 ISO 14443 Type A/B、MIFARE、FeliCa 及 NFC 標籤的讀寫器
 - 內建防衝突機制（每次一張標籤）
 - 使用者可控雙色 LED 及蜂鳴器
-- 選配 ISO 7816-3 SAM 插槽，提升安全性
-- 支援模組形式，可整合至 POS／門禁系統
 - 支援 PC/SC 及 CT-API
 
 ## 支援標籤型號
 
 | 標籤 / 卡片類型 | 標準依據 |
 |-----------------|----------|
-| NFC Tag Type 1 | ISO 14443 Type A |
-| NFC Tag Type 2 | ISO 14443 Type A |
-| NFC Tag Type 3 | FeliCa |
-| NFC Tag Type 4 | ISO 14443 Type A and B |
 | MIFARE Classic（1K、4K、MINI） | ISO 14443 Type A |
-| MIFARE Ultralight / Ultralight C | ISO 14443 Type A |
-| MIFARE Plus | ISO 14443 Type A |
-| MIFARE DESFire / DESFire EV1 | ISO 14443 Type A |
 | FeliCa | ISO 18092 |
 | ISO 14443 Type A 卡片 | ISO 14443 |
 | ISO 14443 Type B 卡片 | ISO 14443 |

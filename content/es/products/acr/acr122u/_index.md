@@ -31,7 +31,7 @@ El ACR122U es un lector/escritor de tarjetas inteligentes sin contacto conectado
 | Velocidad de Lectura/Escritura | 106 Kbps / 212 Kbps / 424 Kbps |
 | Interfaz USB | USB Full Speed (12 Mbps) |
 | Voltaje de Alimentación | 5V DC regulado |
-| Corriente de Alimentación | 200 mA máx. / 100 mA normal / 50 mA en espera |
+| Corriente de Alimentación | Máx. 200 mA |
 | Tamaño de Antena | 50 mm × 40 mm |
 | Dimensiones | 98 × 65 × 12.8 mm |
 | Peso | 70 g |
@@ -40,7 +40,6 @@ El ACR122U es un lector/escritor de tarjetas inteligentes sin contacto conectado
 | MTBF | 408,500 horas |
 | LED | 1 bicolor Rojo/Verde (controlable por el usuario) |
 | Buzzer | Monotono (controlable por el usuario) |
-| Ranura SAM | 1 × ISO 7816-3 (opcional) |
 | Cumplimiento | PC/SC, CCID, CE, FCC, RoHS |
 
 ## Características Principales
@@ -50,26 +49,16 @@ El ACR122U es un lector/escritor de tarjetas inteligentes sin contacto conectado
 - Velocidad de lectura/escritura hasta 424 Kbps
 - Antena incorporada, distancia de lectura de tarjetas hasta 50 mm
 - Compatible con los 4 tipos de etiquetas NFC (ISO/IEC 18092)
-- Compatible con MIFARE Ultralight C, MIFARE Plus, DESFire EV1
 - Lector/escritor para ISO 14443 Tipo A/B, MIFARE, FeliCa y etiquetas NFC
 - Anti-colisión incorporada (1 etiqueta a la vez)
 - LED bicolor y buzzer controlables por el usuario
-- Ranura SAM ISO 7816-3 opcional para mayor seguridad
-- Disponible en forma de módulo para integración en POS/control de acceso
 - Compatible con PC/SC y CT-API
 
 ## Tipos de Etiquetas Compatibles
 
 | Tipo de Etiqueta / Tarjeta | Estándar |
 |---------------------------|----------|
-| NFC Tag Type 1 | ISO 14443 Type A |
-| NFC Tag Type 2 | ISO 14443 Type A |
-| NFC Tag Type 3 | FeliCa |
-| NFC Tag Type 4 | ISO 14443 Type A and B |
-| MIFARE Classic (1K, 4K, MINI) | ISO 14443 Type A |
-| MIFARE Ultralight / Ultralight C | ISO 14443 Type A |
-| MIFARE Plus | ISO 14443 Type A |
-| MIFARE DESFire / DESFire EV1 | ISO 14443 Type A |
+| MIFARE Classic | ISO 14443 Type A |
 | FeliCa | ISO 18092 |
 | Tarjetas ISO 14443 Type A | ISO 14443 |
 | Tarjetas ISO 14443 Type B | ISO 14443 |

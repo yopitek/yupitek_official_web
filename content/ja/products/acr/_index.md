@@ -18,7 +18,7 @@ Advanced Card Systems (ACS) は世界的に著名なスマートカードリー�
     USB NFCリーダー、ISO 14443 A/BおよびMIFARE対応 — NFC研究と開発に広く使用。
   {{< /card >}}
   {{< card title="ACR1252U NFC Forum認証リーダー" href="/ja/products/acr/acr1252u/" image="/images/products/acr/ACR1252U.png" >}}
-    NFC Forum認証リーダー、NFC-A/B/F/V対応 — NFCアプリ開発に最適。
+    NFC Forum認証 USB リーダー、ISO 14443 A/B・MIFARE・FeliCa対応 — NFCアプリ開発に最適。
   {{< /card >}}
   {{< card title="ACR1552U USB NFC IV リーダー" href="/ja/products/acr/acr1552u/" image="/images/products/acr/ACR1552U.png" >}}
     第4世代USBNFCリーダー、強化されたマルチプロトコルサポート。

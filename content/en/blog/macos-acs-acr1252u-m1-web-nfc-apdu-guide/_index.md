@@ -355,7 +355,7 @@ Before ordering the ACR1252U-M1, answer the table below — **your answers direc
 
 - [ ] Control the reader directly with APDU in a **macOS local program** (buzzer, LED, contactless card read/write) → **Buy**
 - [ ] Read/write NDEF tags with Web NFC in a **Chromium browser on Android/ChromeOS** → **No reader needed**; use the device's built-in NFC; the ACR1252U is only for PC/SC-side verification
-- [ ] Support **MIFARE DESFire / FeliCa / ISO 14443 B** industrial or access-control cards → Buy (this model supports ISO 14443 A/B, MIFARE, DESFire, and FeliCa across the board)
+- [ ] Support **MIFARE / FeliCa / ISO 14443 B** industrial or access-control cards → Buy (this model supports ISO 14443 A/B, MIFARE and FeliCa)
 - [ ] Need a **SAM (Secure Access Module) slot** for key diversification and mutual-authentication experiments → Buy (built-in 1× SIM-size SAM slot)
 - [ ] Testing **FIDO / WebAuthn** or YubiKey/PocketKey-style devices → Confirm FIDO support status in ACS's official documentation first (this article does not endorse unverified specs)
 - [ ] Your computer has **only USB-C** ports and you do not want adapters → Check whether ACS's official product line has a USB-C variant of this series (per the ACS website); the M1 has a fixed USB-A cable
@@ -367,7 +367,7 @@ Before ordering the ACR1252U-M1, answer the table below — **your answers direc
 | Interface | USB Full Speed (12 Mbps), fixed 1 m USB-A cable |
 | Read distance | Up to ~50 mm (depends on the tag) |
 | Read/write rate | 106/212/424 Kbps |
-| Certified card types | All four NFC types, ISO 14443 A/B, MIFARE Classic/Plus/DESFire, FeliCa |
+| Certified card types | All four NFC types, ISO 14443 A/B, MIFARE Classic, FeliCa |
 | Body controls | Dual-color LED (red/green), single-tone buzzer (both programmable) |
 | Extra slot | 1× SAM (SIM size, ISO 7816 Class A) |
 | Dimensions / weight | 98 × 65 × 12.8 mm / 81 g |

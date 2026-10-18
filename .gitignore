@@ -9,7 +9,11 @@ __pycache__/
 *.py.tmp
 geo_translations.json
 zhtw_geo_data.json
-__pycache__/
 env/
 playwright-report/
 test-results/
+hugo.log
+.serena/
+.env.bak*
+index_status.png
+purge*.sh

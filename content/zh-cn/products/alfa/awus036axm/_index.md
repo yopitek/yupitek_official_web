@@ -15,7 +15,7 @@ tags: ["Wi-Fi 6E", "USB-A", "802.11ax", "三频", "蓝牙 5.2", "双天线", "Ka
 
 ## 产品概述
 
-AWUS036AXM 采用 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz / 5 GHz / 6 GHz），最高传输速率达 3000 Mbps，内置 Bluetooth 5.2（含独立 BT 天线）。L 型 USB-A 接头可避免遮挡相邻 USB 端口。附赠 2 根 5 dBi RP-SMA 可拆卸天线。
+AWUS036AXM 采用 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz / 5 GHz / 6 GHz），最高传输速率达 3000 Mbps，内置 Bluetooth 5.2（含内置 BT 天线）。L 型 USB-A 接头可避免遮挡相邻 USB 端口。附赠 2 根 5 dBi RP-SMA 可拆卸天线。
 
 > **注意：** 所有 ALFA 无线网卡对 macOS 支持有限。macOS 11 Big Sur 及以上版本和 Apple Silicon（M1/M2/M3）均**不支持**。最高支持 Intel Mac 上的 macOS 10.15 Catalina。
 
@@ -24,7 +24,7 @@ AWUS036AXM 采用 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz /
 - Wi-Fi 6E 三频：2.4 / 5 / 6 GHz
 - MediaTek MT7921AUN 芯片
 - 最高 3000 Mbps 传输速率
-- Bluetooth 5.2（含独立 BT 天线及 LED 指示灯）
+- Bluetooth 5.2（含内置 BT 天线及 LED 指示灯）
 - USB-A L 型接头（USB 3.2 Gen 1，5 Gbps）
 - 2× RP-SMA female 可拆卸天线（5 dBi）
 - WPA3/WPA2/WPA/WEP/WPS
@@ -69,7 +69,7 @@ AWUS036AXM 采用 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz /
 | Monitor Mode | ✅ 支持 |
 | Packet Injection | ✅ 支持 |
 | Soft AP 模式 | ✅ 支持 |
-| 蓝牙 | ✅ BT 5.2（含独立 BT 天线）|
+| 蓝牙 | ✅ BT 5.2（含内置 BT 天线）|
 | VIF | ✅ 支持 |
 
 ## 包装内容

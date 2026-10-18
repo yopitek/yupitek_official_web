@@ -15,7 +15,7 @@ tags: ["Wi-Fi 6E", "USB-A", "802.11ax", "トリバンド", "Bluetooth 5.2", "デ
 
 ## 製品概要
 
-AWUS036AXM は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバンド（2.4 GHz / 5 GHz / 6 GHz）対応、最大 3000 Mbps の合計スループットと Bluetooth 5.2（独立 BT アンテナ内蔵）を提供します。L 型 USB-A コネクタにより隣接ポートをふさぎません。2× 5 dBi RP-SMA アンテナ付属。
+AWUS036AXM は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバンド（2.4 GHz / 5 GHz / 6 GHz）対応、最大 3000 Mbps の合計スループットと Bluetooth 5.2（内蔵 BT アンテナ内蔵）を提供します。L 型 USB-A コネクタにより隣接ポートをふさぎません。2× 5 dBi RP-SMA アンテナ付属。
 
 > **macOSについて：** すべての ALFA アダプターは macOS サポートが限定的です。macOS 11 Big Sur 以降および Apple Silicon（M1/M2/M3）は**非対応**です。Intel Mac での最大サポートは macOS 10.15 Catalina です。
 
@@ -24,7 +24,7 @@ AWUS036AXM は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン�
 - Wi-Fi 6E トリバンド：2.4 / 5 / 6 GHz
 - MediaTek MT7921AUN チップ
 - 最大 3000 Mbps 合計スループット
-- Bluetooth 5.2（独立 BT アンテナ + LED インジケータ）
+- Bluetooth 5.2（内蔵 BT アンテナ + LED インジケータ）
 - USB-A L エルボーコネクタ（USB 3.2 Gen 1、5 Gbps）
 - 2× RP-SMA female 着脱可能アンテナ（5 dBi）
 - WPA3/WPA2/WPA/WEP/WPS
@@ -69,7 +69,7 @@ AWUS036AXM は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン�
 | Monitor Mode | ✅ あり |
 | Packet Injection | ✅ あり |
 | Soft AP モード | ✅ あり |
-| Bluetooth | ✅ BT 5.2（独立 BT アンテナ）|
+| Bluetooth | ✅ BT 5.2（内蔵 BT アンテナ）|
 | VIF | ✅ あり |
 
 ## 同梱物

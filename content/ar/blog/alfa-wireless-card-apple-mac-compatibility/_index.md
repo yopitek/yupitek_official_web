@@ -91,7 +91,7 @@ IOService
 
 يُشحن برنامج تشغيل macOS من Realtek كـ `RtWlanU.kext`، مُصرَّف حصرياً لـ **x86_64**. تعمل أجهزة Mac Apple Silicon على نواة **ARM64**. تُنفَّذ إضافات النواة في فضاء النواة — **لا يستطيع Rosetta 2 ترجمة إضافات النواة**.
 
-وثّق مستخدم في [نقاش chris1111 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) الفشل الدقيق على M1 MacBook Air مع Ventura 13.1 وبطاقة ALFA AWUS1900:
+وثّق مستخدم في [نقاش chris1111 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) الفشل الدقيق على M1 MacBook Air مع Ventura 13.1 وبطاقة ALFA RTL8814AU:
 
 ```
 Domain=KMErrorDomain Code=71

@@ -1,3 +1,7 @@
 # Korean site is disabled until content exists; send visitors to the English site
 /ko/*  /en/:splat  302
 /ko    /en/        302
+
+# AWUS1900 is discontinued; its product page was removed (2026-10-18)
+/:locale/products/alfa/awus1900/  /:locale/products/alfa/  301
+/:locale/products/alfa/awus1900   /:locale/products/alfa/  301

@@ -91,7 +91,7 @@ C'est précisément la combinaison KPI que nécessite chaque extension du noyau 
 
 Le pilote macOS de Realtek est fourni sous forme de `RtWlanU.kext`, compilé exclusivement pour **x86_64**. Les Mac Apple Silicon exécutent un noyau **ARM64**. Les extensions du noyau s'exécutent dans l'espace noyau — **Rosetta 2 ne peut pas traduire les extensions du noyau**.
 
-Un utilisateur dans la [discussion chris1111 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) a documenté l'échec exact sur un M1 MacBook Air avec Ventura 13.1 et un ALFA AWUS1900 :
+Un utilisateur dans la [discussion chris1111 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) a documenté l'échec exact sur un M1 MacBook Air avec Ventura 13.1 et un ALFA RTL8814AU :
 
 ```
 Domain=KMErrorDomain Code=71

@@ -91,7 +91,7 @@ Esta es precisamente la combinacion de KPI que requiere cada extension de kernel
 
 El controlador de macOS de Realtek se entrega como `RtWlanU.kext`, compilado exclusivamente para **x86_64**. Los Mac con Apple Silicon ejecutan un kernel **ARM64**. Las extensiones de kernel se ejecutan en el espacio del kernel, y **Rosetta 2 no puede traducir extensiones de kernel**.
 
-Un usuario en la [discusion de chris1111 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) documentó el fallo exacto en un MacBook Air M1 con Ventura 13.1 y un ALFA AWUS1900:
+Un usuario en la [discusion de chris1111 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) documentó el fallo exacto en un MacBook Air M1 con Ventura 13.1 y un ALFA RTL8814AU:
 
 ```
 Domain=KMErrorDomain Code=71

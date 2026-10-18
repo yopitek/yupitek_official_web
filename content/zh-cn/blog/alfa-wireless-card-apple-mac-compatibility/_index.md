@@ -91,7 +91,7 @@ Apple 的 [已弃用的内核扩展](https://developer.apple.com/support/kernel-
 
 Realtek 的 macOS 驱动程序以 `RtWlanU.kext` 形式发布，仅针对 **x86_64** 编译。Apple Silicon Mac 运行的是 **ARM64** 内核。内核扩展在内核空间执行，**Rosetta 2 无法翻译内核扩展。**
 
-[chris1111 讨论 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) 上的一位用户在搭载 Ventura 13.1 的 M1 MacBook Air 上使用 ALFA AWUS1900 时记录了确切的失败信息：
+[chris1111 讨论 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) 上的一位用户在搭载 Ventura 13.1 的 M1 MacBook Air 上使用 ALFA RTL8814AU 时记录了确切的失败信息：
 
 ```
 Domain=KMErrorDomain Code=71

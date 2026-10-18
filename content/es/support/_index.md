@@ -32,7 +32,6 @@ Descargue siempre los controladores desde los sitios web oficiales de las marcas
 
 | Model | Chipset | Descarga de Controladores | Documentación Oficial |
 |-------|---------|------|------|
-| AWUS1900 | RTL8814AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS1900) | [Docs](https://docs.alfa.com.tw/Product/AWUS1900/) |
 | AWUS036ACH | RTL8812AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACH) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACH/) |
 | AWUS036ACM | MT7612U | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
 | AWUS036ACS | RTL8811AU | [Download](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) | [Docs](https://docs.alfa.com.tw/Product/AWUS036ACS/) |

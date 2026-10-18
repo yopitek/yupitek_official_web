@@ -745,7 +745,6 @@ Se um adaptador USB WiFi suporta IBSS e mesh 802.11s no Linux depende inteiramen
 | AWUS036AXM | MT7921AUN | mt7921u (nativo ≥ 5.18) | ❌ | ❌ | mt7921u não expõe IBSS |
 | AWUS036AXML | MT7921AUN | mt7921u (nativo ≥ 5.18) | ❌ | ❌ | mt7921u não expõe IBSS |
 | ~~AWUS036ACHM~~ | ~~MT7610U~~ | ~~mt76x0u~~ | ~~✅~~ | ~~✅~~ | **Fim de Vida — descontinuado** |
-| ~~AWUS1900~~ | ~~RTL8814AU~~ | ~~OOK~~ | ~~Limitado~~ | ~~❌~~ | **Fim de Vida — descontinuado** |
 
 ### O que Isso Significa para Você
 

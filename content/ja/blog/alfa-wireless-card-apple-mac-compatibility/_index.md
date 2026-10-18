@@ -91,7 +91,7 @@ Appleの[Deprecated Kernel Extensions](https://developer.apple.com/support/kerne
 
 RealtekのmacOSドライバーは`RtWlanU.kext`として提供され、**x86_64**専用にコンパイルされています。Apple Silicon Macは**ARM64**カーネルで動作します。カーネル拡張はカーネル空間で実行されるため、**Rosetta 2はカーネル拡張を翻訳できません。**
 
-[chris1111 discussion #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128)のユーザーは、M1 MacBook Air（Ventura 13.1）とALFA AWUS1900での正確な失敗を記録しています：
+[chris1111 discussion #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128)のユーザーは、M1 MacBook Air（Ventura 13.1）とALFA RTL8814AUでの正確な失敗を記録しています：
 
 ```
 Domain=KMErrorDomain Code=71

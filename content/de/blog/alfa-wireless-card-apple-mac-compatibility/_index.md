@@ -91,7 +91,7 @@ Dies ist genau die KPI-Kombination, die jede USB-WLAN-Kernelerweiterung benötig
 
 Realteks macOS-Treiber wird als `RtWlanU.kext` ausgeliefert, ausschließlich für **x86_64** kompiliert. Apple Silicon Macs betreiben einen **ARM64**-Kernel. Kernelerweiterungen werden im Kernel-Bereich ausgeführt — **Rosetta 2 kann keine Kernelerweiterungen übersetzen**.
 
-Ein Benutzer in der [chris1111 Diskussion #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) dokumentierte den genauen Fehler auf einem M1 MacBook Air mit Ventura 13.1 und einem ALFA AWUS1900:
+Ein Benutzer in der [chris1111 Diskussion #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) dokumentierte den genauen Fehler auf einem M1 MacBook Air mit Ventura 13.1 und einem ALFA RTL8814AU:
 
 ```
 Domain=KMErrorDomain Code=71

@@ -91,7 +91,7 @@ Apple 的 [已淘汰核心擴充功能](https://developer.apple.com/support/kern
 
 Realtek 的 macOS 驅動程式以 `RtWlanU.kext` 發行，僅針對 **x86_64** 編譯。Apple Silicon Mac 執行的是 **ARM64** 核心。核心擴充功能在核心空間執行，**Rosetta 2 無法翻譯核心擴充功能。**
 
-[chris1111 討論區 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) 上的一位使用者記錄了 M1 MacBook Air 搭配 Ventura 13.1 與 ALFA AWUS1900 的確切失敗訊息：
+[chris1111 討論區 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) 上的一位使用者記錄了 M1 MacBook Air 搭配 Ventura 13.1 與 ALFA RTL8814AU 的確切失敗訊息：
 
 ```
 Domain=KMErrorDomain Code=71

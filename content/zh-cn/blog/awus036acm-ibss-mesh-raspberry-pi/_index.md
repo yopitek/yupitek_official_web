@@ -747,7 +747,6 @@ USB WiFi 无线网卡能否在 Linux 上支持 IBSS 和 802.11s Mesh，完全取
 | AWUS036AXM | MT7921AUN | mt7921u（内核 ≥ 5.18） | ❌ | ❌ | mt7921u 不开放 IBSS |
 | AWUS036AXML | MT7921AUN | mt7921u（内核 ≥ 5.18） | ❌ | ❌ | mt7921u 不开放 IBSS |
 | ~~AWUS036ACHM~~ | ~~MT7610U~~ | ~~mt76x0u~~ | ~~✅~~ | ~~✅~~ | **已停产** |
-| ~~AWUS1900~~ | ~~RTL8814AU~~ | ~~OOK~~ | ~~有限支持~~ | ~~❌~~ | **已停产** |
 
 ### 这对你意味着什么
 

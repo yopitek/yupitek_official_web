@@ -760,7 +760,6 @@ sudo tcpdump -i mon0 -w capture.pcap
 | AWUS036AXM | MT7921AUN | mt7921u (in-kernel ≥ 5.18) | ❌ | ❌ | mt7921u لا يكشف عن IBSS |
 | AWUS036AXML | MT7921AUN | mt7921u (in-kernel ≥ 5.18) | ❌ | ❌ | mt7921u لا يكشف عن IBSS |
 | ~~AWUS036ACHM~~ | ~~MT7610U~~ | ~~mt76x0u~~ | ~~✅~~ | ~~✅~~ | **انتهى دعمه — متوقف** |
-| ~~AWUS1900~~ | ~~RTL8814AU~~ | ~~OOK~~ | ~~Limited~~ | ~~❌~~ | **انتهى دعمه — متوقف** |
 
 ### ماذا يعني هذا بالنسبة لك
 

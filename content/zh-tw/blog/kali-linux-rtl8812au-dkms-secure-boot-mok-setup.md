@@ -20,7 +20,7 @@ faq:
 
 ![Linux Kernel DKMS and Secure Boot MOK Flowchart](/images/blog/05_dkms_mok_flow_blueprint.jpg)
 
-> **適用硬體**：ALFA AWUS036ACH（Realtek RTL8812AU）/ ALFA AWUS1900（Realtek RTL8814AU）
+> **適用硬體**：ALFA AWUS036ACH（Realtek RTL8812AU）
 > **適用平台**：Kali Linux、Debian／Ubuntu 等 Debian 系發行版（Linux x86_64／ARM64）
 > **不支援**：macOS（含 Apple Silicon）——詳見下方「相容性與平台紅線」。
 
@@ -28,7 +28,7 @@ faq:
 
 ## TL;DR
 
-AWUS036ACH 與 AWUS1900 使用的是 **非核心內建（out-of-tree）** 的 Realtek 驅動。執行 `apt upgrade` 升級核心（Kernel）後，舊模組因為核心 ABI 已變更而失效，這**不是網卡壞掉，而是驅動模組需要重新編譯**。
+AWUS036ACH 使用的是 **非核心內建（out-of-tree）** 的 Realtek 驅動。執行 `apt upgrade` 升級核心（Kernel）後，舊模組因為核心 ABI 已變更而失效，這**不是網卡壞掉，而是驅動模組需要重新編譯**。
 
 解法是安裝社群維護的 `aircrack-ng/rtl8812au`（或是 `morrownr/8814au`）驅動，並透過 **DKMS** 讓它在新核心安裝時自動重新編譯。如果系統開啟 **Secure Boot**，核心會拒絕載入未簽署的自訂模組，此時必須透過 **MOK（Machine Owner Key）金鑰簽署**機制匯入您的自簽金鑰——**請不要關閉 Secure Boot**。
 
@@ -45,7 +45,7 @@ Linux 的硬體驅動程式多以「**核心模組（Kernel Module）**」的形
 | **In-tree（核心內建）** | 驅動原始碼直接收錄在 Linux Kernel 原始碼樹，例如 `mt7921u`、`mt76x2u` | 隨核心一起編譯，更新後自動可用，**不需任何手動處理** |
 | **Out-of-tree（核心外掛）** | 驅動原始碼在核心樹之外，例如 Realtek `rtl8812au` | 只針對「當時的核心版本」編譯，新核心 ABI 變更後**模組失效** |
 
-AWUS036ACH 的 `RTL8812AU` 與 AWUS1900 的 `RTL8814AU` 都屬於 out-of-tree。Linux 對模組與核心之間的相容性（Kernel ABI / vermagic）要求嚴格，模組必須與**目前執行中的核心版本完全一致**（含 `uname -r` 的完整版本字串）才允許載入。
+AWUS036ACH 的 `RTL8812AU` 屬於 out-of-tree。Linux 對模組與核心之間的相容性（Kernel ABI / vermagic）要求嚴格，模組必須與**目前執行中的核心版本完全一致**（含 `uname -r` 的完整版本字串）才允許載入。
 
 當您執行：
 
@@ -96,7 +96,6 @@ ip link
 | 型號 | 晶片 | USB Vendor:Product | MIMO | 頻段與速率 |
 |------|------|--------------------|------|-----------|
 | **ALFA AWUS036ACH** | Realtek RTL8812AU | `0bda:8812` | 2×2 | 2.4 GHz 300 Mbps ＋ 5 GHz 867 Mbps（AC1200） |
-| **ALFA AWUS1900** | Realtek RTL8814AU | `0bda:8813` | 4×4 | 2.4 GHz 600 Mbps ＋ 5 GHz 1300 Mbps（AC1900） |
 
 ```bash
 lsusb
@@ -188,14 +187,6 @@ dpkg -l | grep linux-headers
 ```bash
 git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au
-sudo make dkms_install
-```
-
-**AWUS1900（RTL8814AU）** 若您想抓專門為 8814 優化的維護版本，可使用 morrownr 的儲存庫：
-
-```bash
-git clone https://github.com/morrownr/8814au.git
-cd 8814au
 sudo make dkms_install
 ```
 
@@ -333,7 +324,7 @@ lsmod | grep 88XXau
 
 ## 採購前相容性確認工作表
 
-> 如果您正在評估要不要購入 AWUS036ACH / AWUS1900，請先逐項核對下列清單，避免買回家才發現環境不符——這份表格同時也是日後開技術支援單時的自助檢查表。
+> 如果您正在評估要不要購入 AWUS036ACH，請先逐項核對下列清單，避免買回家才發現環境不符——這份表格同時也是日後開技術支援單時的自助檢查表。
 
 | # | 檢查項目 | 通過條件 | 過不了怎麼辦 |
 |---|---------|---------|------------|
@@ -365,7 +356,7 @@ lsmod | grep 88XXau
 不會。只要透過 MOK 機制把機器自己的公鑰（`/var/lib/dkms/mok.pub`）註冊為信任金鑰，DKMS 重新編譯後會自動用 `mok.key` 簽署模組，核心即可載入。這完全不需要關閉 Secure Boot。
 
 **Q3：`aircrack-ng/rtl8812au` 和 `morrownr` 的儲存庫差在哪？怎麼選？**
-`aircrack-ng/rtl8812au` 是 aircrack-ng 社群長期維護、被 Kali 官方文件引用最廣的版本，支援 RTL8812AU 與 RTL8814AU；`morrownr/8814au` 則是專門為 RTL8814AU（AWUS1900）優化的維護分支。**AWUS036ACH 建議用 `aircrack-ng/rtl8812au`（固定 `v5.6.4.2`），AWUS1900 可用 `aircrack-ng` 或 `morrownr/8814au`**。兩者皆是 DKMS 安裝、日後自動重建，功能與穩定性都在業界水準之上。
+`aircrack-ng/rtl8812au` 是 aircrack-ng 社群長期維護、被 Kali 官方文件引用最廣的版本，支援 RTL8812AU 與 RTL8814AU。**AWUS036ACH 建議用 `aircrack-ng/rtl8812au`（固定 `v5.6.4.2`）**。DKMS 安裝、日後自動重建，功能與穩定性都在業界水準之上。
 
 **Q4：我看到有人說直接關掉 Secure Boot 最省事，我可以做嗎？**
 **不建議。** Secure Boot 是開機鏈的信任根基，關閉會讓整台機器暴露在針對開機程序與 rootkit 的攻擊風險中。用 MOK 簽署只花您一次重新開機的時間，就能在保留防護的前提下載入驅動——**安全做法才值得複製到工作機上**。
@@ -386,7 +377,7 @@ Kali Linux 核心更新後網卡「罷工」是 out-of-tree 驅動最典型的�
 2. **用 DKMS 一勞永逸**——`sudo make dkms_install` 之後，未來核心升級會自動重建模組，不再需要每次手動處理。
 3. **Secure Boot 不是障礙**——透過 MOK 金鑰簽署（`mokutil --import /var/lib/dkms/mok.pub` ＋ UEFI 註冊）即可安全載入自訂模組，全程不需關閉任何安全防護。
 
-如果您正在採購，AWUS036ACH（RTL8812AU）與 AWUS1900（RTL8814AU）都是 Linux 資安社群高度驗證的選擇；而若您希望**隨插即用、零編譯**，可參考原生核心支援的 MediaTek 系列型號。動手之前，記得先跑完「採購前相容性確認工作表」，並確認您使用網卡的目的符合法規與授權範圍。
+如果您正在採購，AWUS036ACH（RTL8812AU）是 Linux 資安社群高度驗證的選擇；而若您希望**隨插即用、零編譯**，可參考原生核心支援的 MediaTek 系列型號。動手之前，記得先跑完「採購前相容性確認工作表」，並確認您使用網卡的目的符合法規與授權範圍。
 
 ---
 
@@ -395,7 +386,6 @@ Kali Linux 核心更新後網卡「罷工」是 out-of-tree 驅動最典型的�
 | 資源 | 連結 |
 |------|------|
 | aircrack-ng RTL8812AU 社群驅動（含 RTL8814AU） | https://github.com/aircrack-ng/rtl8812au |
-| morrownr RTL8814AU 驅動（AWUS1900） | https://github.com/morrownr/8814au |
 | morrownr USB-WiFi 情境指南（含 MOK 說明） | https://github.com/morrownr/USB-WiFi |
 | Linux 核心內建 RTL8xxx（rtw88/mac80211 生態系） | https://github.com/lwfinger/rtw88 |
 | ALFA AWUS036ACH 官方產品頁 | https://www.alfa.com.tw/products/awus036ach_1 |

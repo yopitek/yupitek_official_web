@@ -91,7 +91,7 @@ Esta é precisamente a combinação KPI que toda extensão de kernel USB Wi-Fi r
 
 O driver macOS da Realtek é fornecido como `RtWlanU.kext`, compilado exclusivamente para **x86_64**. Macs Apple Silicon executam um kernel **ARM64**. Extensões de kernel executam em espaço de kernel — **o Rosetta 2 não pode traduzir extensões de kernel**.
 
-Um usuário na [discussão chris1111 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) documentou a falha exata em um M1 MacBook Air com Ventura 13.1 e um ALFA AWUS1900:
+Um usuário na [discussão chris1111 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) documentou a falha exata em um M1 MacBook Air com Ventura 13.1 e um ALFA RTL8814AU:
 
 ```
 Domain=KMErrorDomain Code=71

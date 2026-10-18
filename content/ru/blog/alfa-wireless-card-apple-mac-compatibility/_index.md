@@ -91,7 +91,7 @@ IOService
 
 Драйвер macOS от Realtek поставляется как `RtWlanU.kext`, скомпилированный исключительно для **x86_64**. Apple Silicon Mac работают на ядре **ARM64**. Расширения ядра выполняются в пространстве ядра — **Rosetta 2 не может транслировать расширения ядра**.
 
-Пользователь в [обсуждении chris1111 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) задокументировал точную ошибку на M1 MacBook Air с Ventura 13.1 и ALFA AWUS1900:
+Пользователь в [обсуждении chris1111 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) задокументировал точную ошибку на M1 MacBook Air с Ventura 13.1 и ALFA RTL8814AU:
 
 ```
 Domain=KMErrorDomain Code=71

@@ -34,7 +34,6 @@ showTableOfContents: true
 
 | 型號 | 晶片組 | 驅動程式下載 | 官方文件 |
 |------|--------|-------------|---------|
-| AWUS1900 | RTL8814AU | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS1900) | [文件](https://docs.alfa.com.tw/Product/AWUS1900/) |
 | AWUS036ACH | RTL8812AU | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACH) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACH/) |
 | AWUS036ACM | MT7612U | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACM) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACM/) |
 | AWUS036ACS | RTL8811AU | [下載](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter/AWUS036ACS) | [文件](https://docs.alfa.com.tw/Product/AWUS036ACS/) |

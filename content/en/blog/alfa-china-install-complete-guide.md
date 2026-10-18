@@ -65,10 +65,10 @@ Before we dive in, let's figure out which Alfa adapter you have and what chip it
 
 | Model | Chipset | Driver | Best For |
 |-------|---------|--------|----------|
-| AWUS036AX | Realtek RTL8832BU | `rtl8832bu` | General use, good range |
-| AWUS036AXM | Realtek RTL8832BU | `rtl8832bu` | Compact design |
-| AWUS036AXML | Realtek RTL8832BU | `rtl8832bu` | Ultra-compact |
-| AWUS036AXER | Realtek RTL8832BU | `rtl8832bu` | Enhanced power |
+| AWUS036AX | Realtek RTL8832BU | `8852bu` | General use, good range |
+| AWUS036AXM | Realtek RTL8832BU | `8852bu` | Compact design |
+| AWUS036AXML | Realtek RTL8832BU | `8852bu` | Ultra-compact |
+| AWUS036AXER | Realtek RTL8832BU | `8852bu` | Enhanced power |
 
 ### AC Series (Wi-Fi 5 / 802.11ac)
 
@@ -293,16 +293,13 @@ sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r
 
 #### AX Series (RTL8832BU)
 
-Clone from Gitee:
+Clone from GitHub:
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8832bu.git
-cd rtl8832bu
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8832bu/5.9.6
-sudo modprobe rtl8832bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
+sudo modprobe 8852bu
 ```
 
 #### AC Series - Realtek (RTL8812AU)
@@ -378,13 +375,10 @@ sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r
 #### AX Series (RTL8832BU)
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8832bu.git
-cd rtl8832bu
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8832bu/5.9.6
-sudo modprobe rtl8832bu
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
+sudo modprobe 8852bu
 ```
 
 #### AC Series - Realtek (RTL8812AU)
@@ -672,11 +666,11 @@ Run `lsusb` to confirm, then follow the driver installation steps.
 |-------|---------|--------|---------------------|
 | AWUS036ACH | RTL8812AU | `88XXau` | Gitee: mirrors/rtl8812au |
 | AWUS036ACM | MT7612U | `mt76x2u` | Built-in kernel driver |
-| AWUS036ACS | RTL8811AU | `8811au` | Gitee: mirrors/rtl8811au |
-| AWUS036AX | RTL8832BU | `rtl8832bu` | Gitee: mirrors/rtl8832bu |
-| AWUS036AXM | RTL8832BU | `rtl8832bu` | Gitee: mirrors/rtl8832bu |
-| AWUS036AXML | RTL8832BU | `rtl8832bu` | Gitee: mirrors/rtl8832bu |
-| AWUS036AXER | RTL8832BU | `rtl8832bu` | Gitee: mirrors/rtl8832bu |
+| AWUS036ACS | RTL8811AU | `8821au` | GitHub: morrownr/8821au-20210708 |
+| AWUS036AX | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
+| AWUS036AXM | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
+| AWUS036AXML | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
+| AWUS036AXER | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
 | AWUS036EAC | RTL8814AU | `8814au` | Gitee: mirrors/rtl8814au |
 
 ---

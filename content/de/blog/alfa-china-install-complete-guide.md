@@ -60,8 +60,8 @@ Bevor wir eintauchen, lassen Sie uns herausfinden, welchen Alfa-Adapter Sie habe
 
 | Modell | Chipsatz | Treiber | Am besten für |
 |-------|---------|--------|----------|
-| AWUS036AX | Realtek RTL8832BU | `rtl8832bu` | Allgemeine Nutzung, gute Reichweite |
-| AWUS036AXM | Realtek RTL8832BU | `rtl8832bu` | Kompaktes Design |
+| AWUS036AX | Realtek RTL8832BU | `8852bu` | Allgemeine Nutzung, gute Reichweite |
+| AWUS036AXM | Realtek RTL8832BU | `8852bu` | Kompaktes Design |
 
 ### AC-Serie (Wi-Fi 5 / 802.11ac)
 

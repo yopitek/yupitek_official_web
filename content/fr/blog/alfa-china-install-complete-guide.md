@@ -60,8 +60,8 @@ Avant de commencer, identifions l'adaptateur Alfa que vous possédez et la puce 
 
 | Modèle | Chipset | Pilote | Idéal Pour |
 |-------|---------|--------|----------|
-| AWUS036AX | Realtek RTL8832BU | `rtl8832bu` | Utilisation générale, bonne portée |
-| AWUS036AXM | Realtek RTL8832BU | `rtl8832bu` | Design compact |
+| AWUS036AX | Realtek RTL8832BU | `8852bu` | Utilisation générale, bonne portée |
+| AWUS036AXM | Realtek RTL8832BU | `8852bu` | Design compact |
 
 ### Série AC (Wi-Fi 5 / 802.11ac)
 

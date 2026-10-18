@@ -1,3 +1,4 @@
+article.faq_title: "Preguntas frecuentes"
 footer.copyright: "© {{ .Year }} Yopitek Ltd · Todos los Derechos Reservados · Taipei, Taiwan"
 product.inquiry_button: "Solicitar Cotización"
 product.download_driver: "Descargar Driver"

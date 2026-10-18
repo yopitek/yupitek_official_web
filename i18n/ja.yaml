@@ -1,3 +1,4 @@
+article.faq_title: "よくある質問"
 footer.copyright: "© {{ .Year }} Yopitek Ltd · All Rights Reserved · Taipei, Taiwan"
 product.inquiry_button: "見積もり依頼"
 product.download_driver: "ドライバーダウンロード"

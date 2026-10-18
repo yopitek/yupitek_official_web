@@ -1,3 +1,4 @@
+article.faq_title: "Häufig gestellte Fragen"
 footer.copyright: "© {{ .Year }} Yopitek Ltd · Alle Rechte Vorbehalten · Taipei, Taiwan"
 footer.company_name: "Yopitek Ltd"
 footer.company_tagline: "Autorisierter Distributor in Taiwan · Premium-Technikprodukte · Professionelle visuelle Integration"

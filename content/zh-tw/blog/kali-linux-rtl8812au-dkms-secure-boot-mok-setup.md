@@ -83,7 +83,7 @@ uname -r
 lsmod | grep 88XXau
 lsmod | grep rtw
 
-# 直接插入網卡後確認介面
+# 直接插入網路卡後確認介面
 ip link
 ```
 

@@ -185,7 +185,7 @@ graph TD
     subgraph FuzzBox_System ["FuzzBox 主機 (FuzzBox OS - Debian 12 / 核心 6.1)"]
         B[FuzzBox 精靈]
         C[80211socket 注入引擎]
-        D[ALFA AWUS036ACH USB 網卡]
+        D[ALFA AWUS036ACH USB 網路卡]
     end
 
     subgraph Target_Device ["受測系統 (SUT)"]

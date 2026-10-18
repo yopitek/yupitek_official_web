@@ -349,7 +349,7 @@ AWUS036AX 和 AWUS036AXER 雖然是 WiFi 6 規格，但 RTL8832BU 晶片是所�
 ### Step 1：確認網路卡辨識與驅動
 
 ```bash
-# 確認網卡已辨識
+# 確認網路卡已辨識
 lsusb | grep MediaTek
 # 預期輸出：Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U
 

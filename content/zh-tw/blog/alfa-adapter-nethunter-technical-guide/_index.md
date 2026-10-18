@@ -272,7 +272,7 @@ cat /kali/etc/os-release
 ### 5.3 驗證網路卡識別
 
 ```bash
-# 列出 USB 裝置——確認網卡出現
+# 列出 USB 裝置——確認網路卡出現
 lsusb
 
 # 各型號預期輸出：
@@ -324,7 +324,7 @@ ip link show | grep wlan
 # 或使用 iw 工具
 iw dev
 
-# 外接網卡通常顯示為 wlan1
+# 外接網路卡通常顯示為 wlan1
 #（wlan0 通常為手機內建 WiFi）
 ```
 
@@ -334,7 +334,7 @@ iw dev
 # 終止可能干擾的進程
 sudo airmon-ng check kill
 
-# 對網卡啟用 Monitor Mode
+# 對網路卡啟用 Monitor Mode
 sudo airmon-ng start wlan1
 
 # 確認 Monitor Mode 已啟用

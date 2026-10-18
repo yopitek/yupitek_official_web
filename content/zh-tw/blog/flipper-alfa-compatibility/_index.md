@@ -276,7 +276,7 @@ uname -r
 # Flipper OS Profile 進行滲透測試，避免干擾正常網路連線。
 sudo airmon-ng check kill
 
-# 在網卡上啟動 Monitor Mode
+# 在網路卡上啟動 Monitor Mode
 sudo airmon-ng start wlan0
 # 介面重新命名為 wlan0mon
 

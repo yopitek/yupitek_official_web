@@ -87,7 +87,7 @@ opkg install kmod-usb-net-qmi-wwan uqmi luci-proto-qmi
 lsusb                                  # 看看有沒有 Sierra 裝置
 ls /dev/cdc-wdm*                       # QMI 的控制通道
 dmesg | grep qmi_wwan                  # 看看驅動有沒有載入
-ip link show wwan0                     # 看看有沒有出現網卡
+ip link show wwan0                     # 看看有沒有出現網路卡
 ```
 
 ### 3. 設定網路檔（`/etc/config/network`）

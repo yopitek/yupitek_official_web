@@ -194,7 +194,7 @@ Raspberry Pi 官方建議 **Pi 3B+ / 4 需要 2.5A–3A（5V）電源供應器**
     │
     └──▶ 獨立 5V BEC / UBEC（≥3A，預留電流餘裕）
                 │
-                ├──▶ 5V → AWUS036ACH 網卡（電源接頭，例如隨附的 USB 線改由 BEC 供電）
+                ├──▶ 5V → AWUS036ACH 網路卡（電源接頭，例如隨附的 USB 線改由 BEC 供電）
                 │
                 └──▶ 5V → 機載電腦（Pi）主電源輸入（5V/GPIO 電源腳）
 
@@ -225,7 +225,7 @@ Raspberry Pi 官方建議 **Pi 3B+ / 4 需要 2.5A–3A（5V）電源供應器**
 改完供電後，請實際驗證（不驗證 = 等於沒修）：
 
 ```bash
-# 1) 確認網卡介面與驅動狀態
+# 1) 確認網路卡介面與驅動狀態
 lsusb                          # 應看到 0bda:8812 Realtek 裝置
 iwconfig                       # wlanX 應顯示為 Monitor 模式（圖傳設定下）
 

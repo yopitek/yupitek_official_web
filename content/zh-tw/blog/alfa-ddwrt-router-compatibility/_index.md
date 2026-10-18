@@ -139,7 +139,7 @@ DD-WRT 透過 ipkg 套件管理系統安裝額外驅動，但官方套件庫中 
 ```bash
 # 檢查 USB 裝置是否被偵測
 lsusb
-# 預期輸出應包含 ALFA 網卡的 VID/PID，例如：
+# 預期輸出應包含 ALFA 網路卡的 VID/PID，例如：
 # Bus 001 Device 003: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac WLAN Adapter
 
 # 檢查網路介面是否被建立

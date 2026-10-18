@@ -283,7 +283,7 @@ sudo aireplay-ng --test wlan0
 **步驟 1：先檢查 kernel 是否已有 rtw89 USB 支援**
 
 ```bash
-# 插入網卡後檢查
+# 插入網路卡後檢查
 lsusb
 dmesg | grep -i "rtw89\|rtl8852\|8832"
 ip link show

@@ -159,16 +159,16 @@ sudo airmon-ng start wlan1
 ## NetHunter 上的監聽模式指令
 
 ```bash
-# 確認系統識別網卡
+# 確認系統識別網路卡
 lsusb | grep -i realtek
 
-# 若連接網卡後未自動載入，手動載入驅動程式
+# 若連接網路卡後未自動載入，手動載入驅動程式
 sudo modprobe 88XXau
 
 # 終止干擾監聽模式的程序（NetworkManager、wpa_supplicant 等）
 sudo airmon-ng check kill
 
-# 在 ALFA 網卡介面上啟動監聽模式
+# 在 ALFA 網路卡介面上啟動監聽模式
 sudo airmon-ng start wlan1
 
 # 掃描所有可見網路（按 Ctrl+C 停止）

@@ -183,7 +183,7 @@ make
 sudo make install
 sudo modprobe 8812au
 
-# 3. 插入網卡後確認介面
+# 3. 插入網路卡後確認介面
 ip link show
 
 # 4. 連線 WiFi

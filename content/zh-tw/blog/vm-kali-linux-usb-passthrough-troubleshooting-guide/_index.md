@@ -57,7 +57,7 @@ USB 的運作是**單一主控（single host）**架構：一個 USB 裝置在�
 以 VirtualBox 為例，穿透流程是這樣的：
 
 ```
-實體 USB 網卡（AWUS036ACH / AWUS036AXML）
+實體 USB 網路卡（AWUS036ACH / AWUS036AXML）
        │  插在主機的 USB 實體連接埠
        ▼
 主機作業系統（Host OS）的 USB 主控制器
@@ -66,7 +66,7 @@ USB 的運作是**單一主控（single host）**架構：一個 USB 裝置在�
 虛擬的 USB 主控制器（模擬的 EHCI / xHCI）
        │  Guest（Kali）看起來「就像插在自己身上」
        ▼
-Kali 的 USB 驅動程式 → 無線網卡驅動 → wlan 介面
+Kali 的 USB 驅動程式 → 無線網路卡驅動 → wlan 介面
 ```
 
 穿透成功後，這個裝置在**主機端的控制權會轉給 Guest**，行為上像被「拔走」，主機上無法再使用它。轉而在 Guest 內變成一個全新的 USB 裝置。**這是正常現象，不是 bug。** 主機的一個 USB 裝置不能同時給兩邊用。

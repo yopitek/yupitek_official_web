@@ -135,7 +135,7 @@ sudo make install
 # 步驟 5：載入驅動模組
 sudo modprobe 88XXau
 
-# 步驟 6：確認網卡偵測
+# 步驟 6：確認網路卡偵測
 lsusb | grep -i realtek
 iwconfig
 ```

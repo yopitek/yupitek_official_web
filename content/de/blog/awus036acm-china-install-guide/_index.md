@@ -146,18 +146,15 @@ Nach Abschluss der Installation das Modul erneut laden.
 sudo modprobe mt76x2u
 ```
 
-Wenn das Paket für deine genaue Kernel-Version nicht verfügbar ist, kompiliere den Treiber aus dem Quellcode.
+Wenn das Paket für deine genaue Kernel-Version nicht verfügbar ist, aktualisiere stattdessen auf einen neueren Kernel. Der Treiber ist Teil des Mainline-Linux-Kernels, Kompilieren ist nicht nötig.
 
 ```bash
-sudo apt install -y git build-essential libssl-dev
-git clone https://gitee.com/mirrors/mt76.git
-cd mt76
-make
-sudo make install
-sudo modprobe mt76x2u
+sudo apt update
+sudo apt full-upgrade -y
+sudo reboot
 ```
 
-> **HINWEIS:** Wenn diese Gitee-URL nicht lädt, suche auf Gitee nach `mt76` und wähle den zuletzt aktualisierten Fork. Du kannst Treiberarchive auch direkt von [files.alfa.com.tw](https://files.alfa.com.tw) herunterladen.
+> **HINWEIS:** `mt76x2u` ist Teil des Mainline-Linux-Kernels, ein Bauen aus dem Quellcode ist nicht nötig. Du kannst Treiberarchive auch direkt von [files.alfa.com.tw](https://files.alfa.com.tw) herunterladen.
 
 ---
 
@@ -590,7 +587,7 @@ Alle in dieser Anleitung verwendeten Ressourcen — kein GitHub erforderlich:
 | 阿里云 Spiegel | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (empfohlen) |
 | 中科大 Spiegel | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (empfohlen) |
 | 华为云 Spiegel | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM-Images (Backup) |
-| MT76-Treiber (Gitee) | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | Manuelles Kompilieren als Fallback |
+| MT76-Treiber (Mainline-Kernel) | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | Im Kernel enthalten, kein Kompilieren nötig |
 
 ---
 

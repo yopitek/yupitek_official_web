@@ -1,6 +1,6 @@
 ---
 title: "Руководство по установке драйвера ALFA AWUS036ACH для Китая: Kali Linux, Ubuntu, Debian и Raspberry Pi"
-description: "Пошаговое руководство по установке драйверов ALFA AWUS036ACH в Китае с использованием отечественных зеркал. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi. GitHub не требуется."
+description: "Пошаговое руководство по установке драйверов ALFA AWUS036ACH в Китае с использованием отечественных зеркал. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi. Инструменты сборки из внутренних зеркал, исходники драйвера — из проверенного репозитория GitHub."
 date: 2026-04-24
 author: "benny-lai"
 lastmod: 2026-07-02
@@ -19,7 +19,7 @@ faq:
   - question: "Какой чип используется в AWUS036ACH? Нужно ли устанавливать драйвер?"
     answer: "AWUS036ACH использует чип Realtek RTL8812AU, драйвер не встроен в ядро Linux, требует ручной установки."
   - question: "Нужен ли VPN для установки драйвера AWUS036ACH в Китае?"
-    answer: "Нет, используются внутренние зеркала USTC, Alibaba Cloud и зеркала исходного кода Gitee для завершения установки."
+    answer: "Не обязательно. Клонируйте драйвер из проверенного репозитория GitHub (morrownr/8812au-20210820); если GitHub работает медленно, используйте надёжный прокси или зеркало. Инструменты сборки по-прежнему можно установить из внутренних зеркал."
   - question: "Поддерживает ли AWUS036ACH режим монитора и инъекцию пакетов?"
     answer: "Да, после установки драйвера RTL8812AU используйте airmon-ng для включения режима монитора, aireplay-ng для тестирования инъекции пакетов."
   - question: "Можно ли использовать AWUS036ACH на Raspberry Pi?"
@@ -28,10 +28,10 @@ faq:
     answer: "В Kali выполните sudo apt install realtek-rtl88xxau-dkms для установки предкомпилированного драйвера."
 ---
 
-Вы только что получили AWUS036ACH, но Linux его не распознаёт. Это нормально — данный чип требует драйвер RTL8812AU, который не работает «из коробки». Это руководство проведёт вас через полную установку примерно за 30 минут, используя только отечественные зеркала. Доступ к GitHub не требуется.
+Вы только что получили AWUS036ACH, но Linux его не распознаёт. Это нормально — данный чип требует драйвер RTL8812AU, который не работает «из коробки». Это руководство проведёт вас через полную установку примерно за 30 минут, используя отечественные зеркала для системных пакетов и проверенный репозиторий GitHub для исходников драйвера. Если GitHub работает медленно, используйте надёжный прокси или зеркало.
 
 {{< tldr >}}
-AWUS036ACH использует чип RTL8812AU. В Kali драйвер DKMS устанавливается через apt, в Ubuntu/Debian компилируется из Gitee. 30 минут — и режим монитора с инъекцией пакетов готовы.
+AWUS036ACH использует чип RTL8812AU. В Kali драйвер DKMS устанавливается через apt, в Ubuntu/Debian компилируется из GitHub. 30 минут — и режим монитора с инъекцией пакетов готовы.
 {{< /tldr >}}
 
 Убедитесь, что у вас есть:
@@ -136,27 +136,25 @@ modinfo 88XXau | grep -E "filename|version"
 sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r)
 ```
 
-Скачайте исходники драйвера с Gitee.
+Скачайте исходники драйвера с GitHub.
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
-> **Примечание:** Если этот URL не загружается, найдите на Gitee `rtl8812au` и выберите форк с наиболее свежим коммитом. Также можно скачать архив с исходниками напрямую с [files.alfa.com.tw](https://files.alfa.com.tw).
+> **Примечание:** Поддерживаемый основной драйвер — [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820). Если GitHub работает медленно, используйте надёжный прокси или зеркало. Также можно скачать архив с исходниками напрямую с [files.alfa.com.tw](https://files.alfa.com.tw).
 
 Перейдите в скачанную директорию, затем скомпилируйте и установите.
 
 ```bash
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
+cd 8812au-20210820
+sudo ./install-driver.sh
 ```
 
 Загрузите драйвер в работающее ядро.
 
 ```bash
-sudo modprobe 88XXau
+sudo modprobe 8812au
 ```
 
 ---
@@ -276,58 +274,57 @@ sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r
 
 ---
 
-### Шаг 3: Загрузка исходников драйвера (зеркало в Китае)
+### Шаг 3: Загрузка исходников драйвера (GitHub)
 
-Клонируйте репозиторий драйвера с Gitee, доступного в Китае:
+Клонируйте репозиторий драйвера с GitHub:
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
 Перейдите в скачанную папку:
 
 ```bash
-cd rtl8812au
+cd 8812au-20210820
 ```
 
-> **Примечание:** Если URL не работает, перейдите на [gitee.com](https://gitee.com) и найдите `rtl8812au`. Выберите форк с наиболее свежей датой коммита.
+> **Примечание:** Если GitHub работает медленно, используйте надёжный прокси или зеркало.
 
 ---
 
 ### Шаг 4: Сборка и установка
 
-Соберите модуль ядра из исходников:
+Запустите скрипт установки. Он собирает модуль ядра и регистрирует его в DKMS, чтобы он пережил обновления ядра:
 
 ```bash
-make
+sudo ./install-driver.sh
 ```
 
-Установите его в систему:
+Убедитесь, что DKMS зарегистрировал модуль:
 
 ```bash
-sudo make install
+sudo dkms status
 ```
 
-Зарегистрируйте модуль в DKMS для автоматического пережития обновлений ядра:
+Перезагрузитесь, чтобы новый модуль загрузился корректно:
 
 ```bash
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
+sudo reboot
 ```
 
 Загрузите модуль в работающее ядро:
 
 ```bash
-sudo modprobe 88XXau
+sudo modprobe 8812au
 ```
 
 Проверьте корректность загрузки:
 
 ```bash
-modinfo 88XXau | grep filename
+modinfo 8812au | grep filename
 ```
 
-Вы должны увидеть путь, заканчивающийся на `88XXau.ko` или похожее. Если команда вернула вывод — драйвер активен.
+Вы должны увидеть путь, заканчивающийся на `8812au.ko` или похожее. Если команда вернула вывод — драйвер активен.
 
 ---
 
@@ -395,32 +392,29 @@ sudo apt update
 sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r)
 ```
 
-### Шаг 3: Загрузка исходников драйвера (зеркало в Китае)
+### Шаг 3: Загрузка исходников драйвера (GitHub)
 
-Клонируйте репозиторий с Gitee:
+Клонируйте репозиторий драйвера с GitHub:
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
 Перейдите в папку проекта:
 
 ```bash
-cd rtl8812au
+cd 8812au-20210820
 ```
 
-> **URL не работает?** Найдите на Gitee `rtl8812au` и выберите наиболее актуальный форк.
+> **Примечание:** Если GitHub работает медленно, используйте надёжный прокси или зеркало.
 
 ### Шаг 4: Сборка и установка
 
-Выполните команды последовательно в папке `rtl8812au`:
+Выполните команды последовательно в папке `8812au-20210820`:
 
 ```bash
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 `dkms` регистрирует драйвер для автоматической пережития обновлений ядра.
@@ -539,13 +533,10 @@ sudo apt install -y realtek-rtl88xxau-dkms
 
 ```bash
 sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 ---
@@ -617,16 +608,16 @@ sudo aireplay-ng --test wlan1mon
 | Проблема | Вероятная причина | Решение |
 |---------|-------------------|---------|
 | `lsusb` не показывает 0bda:8812 | Адаптер не подключён или плохой кабель | Попробуйте другой USB-порт. Используйте питаемый хаб на Raspberry Pi. |
-| `make` завершается с ошибками заголовков | Заголовки ядра отсутствуют или версия не совпадает | Выполните `sudo apt install linux-headers-$(uname -r)` |
+| `install-driver.sh` завершается с ошибками заголовков | Заголовки ядра отсутствуют или версия не совпадает | Выполните `sudo apt install linux-headers-$(uname -r)` |
 | `modprobe 88XXau` завершается ошибкой | Secure Boot блокирует неподписанные модули | Отключите Secure Boot в BIOS или подпишите модуль |
-| Драйвер исчезает после обновления ядра | Драйвер не зарегистрирован в DKMS | Повторно выполните `sudo dkms install rtl8812au/$(cat VERSION)` из директории исходников |
+| Драйвер исчезает после обновления ядра | Драйвер не зарегистрирован в DKMS | Повторно выполните `sudo ./install-driver.sh` из директории исходников |
 | `airmon-ng start wlan0` завершается ошибкой | NetworkManager всё ещё работает | Выполните `sudo airmon-ng check kill` сначала |
 | Режим монитора запустился, но трафик не перехватывается | Неверный канал или имя интерфейса | Проверьте интерфейс с `iwconfig`. Установите канал: `iwconfig wlan0mon channel 6` |
 | Тест инъекции выдаёт «No Answer» | Точка доступа слишком далеко или неверный интерфейс | Подойдите ближе к ТД. Используйте `wlan0mon`, а не `wlan0` |
 
 ## Справочник зеркал в Китае
 
-Все ресурсы из этого руководства — GitHub не требуется:
+Все ресурсы из этого руководства:
 
 | Ресурс | URL | Для чего |
 |--------|-----|---------|
@@ -636,7 +627,7 @@ sudo aireplay-ng --test wlan1mon
 | Зеркало 阿里云 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (рекомендуется) |
 | Зеркало 中科大 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (рекомендуется) |
 | Зеркало 华为云 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Образы Kali ARM (резерв) |
-| Драйвер RTL8812AU (Gitee) | [gitee.com/mirrors/rtl8812au](https://gitee.com/mirrors/rtl8812au) | Сборка из исходников (запасной вариант) |
+| Драйвер RTL8812AU (GitHub) | [github.com/morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | Сборка из исходников (запасной вариант) |
 
 ## Другие руководства по адаптерам Alfa для Китая
 
@@ -659,5 +650,5 @@ sudo aireplay-ng --test wlan1mon
 1. [Официальная документация aircrack-ng](https://www.aircrack-ng.org/)
 2. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
 3. [Официальная документация Kali Linux](https://www.kali.org/docs/)
-4. [Зеркало Gitee rtl8812au](https://gitee.com/mirrors/rtl8812au)
+4. [GitHub: morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820)
 5. [Драйвер Realtek RTL8812AU](https://www.realtek.com/)

@@ -9,11 +9,11 @@ tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "驱动程序", "中国",
 categories: ["驱动程序安装教程"]
 series: ["alfa-china-install-guide"]
 series_order: 9
-description: "终极 Alfa USB WiFi 网卡 Linux 安装指南，适用于中国大陆用户。涵盖 Kali Linux、Ubuntu 22/24、Debian、Raspberry Pi，全程使用境内镜像，无需访问 GitHub。"
+description: "终极 Alfa USB WiFi 网卡 Linux 安装指南，适用于中国大陆用户。涵盖 Kali Linux、Ubuntu 22/24、Debian、Raspberry Pi，系统软件包使用境内镜像，驱动源码取自已验证的 GitHub 仓库。"
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 faq:
   - question: "在中国安装 Alfa WiFi 网卡需要翻墙吗？"
-    answer: "不需要，全程使用中科大、阿里云、清华等国内镜像及 Gitee 源码镜像即可完成。"
+    answer: "不一定。系统软件包使用国内镜像（中科大、阿里云、清华等）安装；未内置于内核的驱动则从 morrownr 已验证的 GitHub 仓库克隆源码。如果 GitHub 速度较慢，请使用你信任的代理或镜像。"
   - question: "哪款 Alfa 网卡最适合监听模式和数据包注入？"
     answer: "AWUS036ACM 搭载 MT7612U 芯片，驱动核心内置且完整支持 VIF，是最佳选择。"
   - question: "哪款 Alfa 网卡支持 WiFi 6？"
@@ -32,7 +32,7 @@ faq:
 {{< /tldr >}}
 
 
-本指南涵盖在中国大陆所有主要 Linux 发行版上安装每一款 Alfa USB WiFi 网卡的完整步骤，全程使用国内镜像，无需访问 GitHub。
+本指南涵盖在中国大陆所有主要 Linux 发行版上安装每一款 Alfa USB WiFi 网卡的完整步骤，系统软件包使用国内镜像，驱动源码取自已验证的 GitHub 仓库。
 
 
 
@@ -42,7 +42,7 @@ faq:
 - 您需要启用监控模式（Monitor Mode）和封包注入（Packet Injection）进行无线测试
 - 不确定您的 Alfa 型号需要哪个驱动程序
 
-本指南解决**所有上述问题**。我们将带您在**所有主要 Linux 发行版**上安装**每一款 Alfa USB WiFi 网卡**，全程仅使用**中国大陆可访问的镜像**。无需 GitHub，告别挫败感。
+本指南解决**所有上述问题**。我们将带您在**所有主要 Linux 发行版**上安装**每一款 Alfa USB WiFi 网卡**，系统软件包使用**中国大陆可访问的镜像**，驱动源码取自已验证的 GitHub 仓库。告别挫败感。
 
 ---
 
@@ -50,7 +50,7 @@ faq:
 
 Alfa USB WiFi 网卡深受渗透测试员、网络工程师和无线爱好者的欢迎，因为它们支持监控模式和封包注入——这些功能是大多数消费级 WiFi 网卡所没有的。
 
-但问题在于：**大多数驱动程序安装教程都假设您能访问 GitHub**。在中国大陆这是不可能的。本指南专为中国大陆用户设计，全程仅使用境内可访问的镜像和资源。
+但问题在于：**大多数驱动程序安装教程都假设您能顺畅访问 GitHub**。在中国大陆，GitHub 可能较慢或不稳定。本指南使用国内镜像安装系统软件包，并从已验证的 GitHub 仓库克隆驱动源码；如果 GitHub 速度较慢，请使用您信任的代理或镜像。
 
 ---
 
@@ -143,7 +143,7 @@ lsusb
 | **阿里云镜像** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推荐）|
 | **中科大镜像** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推荐）|
 | **华为云镜像** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 镜像（备用）|
-| **Gitee（GitHub 替代）** | [gitee.com](https://gitee.com) | 驱动程序源代码 |
+| **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | 驱动程序源代码 |
 
 ---
 
@@ -303,16 +303,13 @@ sudo modprobe 8852bu
 
 #### AC 系列 - Realtek（RTL8812AU）
 
-从 Gitee 克隆：
+从 GitHub 克隆：
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### AC 系列 - MediaTek（MT7612U）
@@ -383,13 +380,10 @@ sudo modprobe 8852bu
 #### AC 系列 - Realtek（RTL8812AU）
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### AC 系列 - MediaTek（MT7612U）
@@ -665,14 +659,14 @@ sudo ip link set mon0 up
 
 | 型号 | 芯片组 | 驱动程序 | 中国大陆镜像来源 |
 |------|--------|---------|----------------|
-| AWUS036ACH | RTL8812AU | `88XXau` | Gitee: mirrors/rtl8812au |
+| AWUS036ACH | RTL8812AU | `8812au` | GitHub: morrownr/8812au-20210820 |
 | AWUS036ACM | MT7612U | `mt76x2u` | 内核内置驱动程序 |
 | AWUS036ACS | RTL8811AU | `8821au` | GitHub: morrownr/8821au-20210708 |
 | AWUS036AX | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
 | AWUS036AXM | MT7921AUN | `mt7921u` | 内核内置驱动程序 |
 | AWUS036AXML | MT7921AUN | `mt7921u` | 内核内置驱动程序 |
 | AWUS036AXER | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036EAC | RTL8814AU | `8814au` | Gitee: mirrors/rtl8814au |
+| AWUS036EAC | RTL8814AU | `8814au` | GitHub: morrownr/8814au |
 
 ---
 
@@ -716,4 +710,4 @@ sudo ip link set mon0 up
 2. [Linux Kernel mt76 驱动](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
 3. [ALFA Network 官网](https://www.alfa.com.tw/)
 4. [Kali Linux 官方文档](https://www.kali.org/docs/)
-5. [Gitee 驱动源码镜像](https://gitee.com/mirrors)
+5. [GitHub: morrownr](https://github.com/morrownr)

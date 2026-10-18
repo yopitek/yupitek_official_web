@@ -10,7 +10,7 @@ slug: "awus036ach-china-install-guide"
 tags: ["alfa", "awus036ach", "kali-linux", "ubuntu", "驱动", "中国", "监听模式"]
 categories: ["驱动指南"]
 series: ["alfa-china-install-guide"]
-description: "手把手教你在中国境内使用国内镜像源安装 ALFA AWUS036ACH 驱动。涵盖 Kali Linux, Ubuntu 22/24, Debian 和 树莓派。无需访问 GitHub。"
+description: "手把手教你在中国境内使用国内镜像源安装 ALFA AWUS036ACH 驱动。涵盖 Kali Linux, Ubuntu 22/24, Debian 和 树莓派。编译工具使用国内镜像，驱动源码取自 GitHub。"
 related_product: "/zh-cn/products/alfa/awus036ach/"
 series_order: 1
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
@@ -18,7 +18,7 @@ faq:
   - question: "AWUS036ACH 用什么芯片？需要额外安装驱动吗？"
     answer: "AWUS036ACH 采用 Realtek RTL8812AU 芯片，驱动不在 Linux 核心内置，需要手动安装。"
   - question: "在中国安装 AWUS036ACH 驱动需要翻墙吗？"
-    answer: "不需要，全程使用中科大、阿里云等国内镜像及 Gitee 源码镜像即可完成安装。"
+    answer: "不一定。从已验证的 GitHub 仓库（morrownr/8812au-20210820）下载驱动源码；如果 GitHub 速度较慢，请使用你信任的代理或镜像。编译工具仍可用国内镜像安装。"
   - question: "AWUS036ACH 支持监听模式和数据包注入吗？"
     answer: "支持，安装 RTL8812AU 驱动后用 airmon-ng 即可开启监听模式，aireplay-ng 可测试数据包注入。"
   - question: "AWUS036ACH 在树莓派上能用吗？"
@@ -30,10 +30,10 @@ faq:
 
 
 
-你刚拿到 ALFA AWUS036ACH，结果 Linux 系统没反应？别担心，这很正常。这款网卡用的芯片需要 RTL8812AU 驱动，而且它不是插上就能用的。本指南会带你花大约 30 分钟完成安装，全程只用国内镜像源，完全不需要翻墙去 GitHub。
+你刚拿到 ALFA AWUS036ACH，结果 Linux 系统没反应？别担心，这很正常。这款网卡用的芯片需要 RTL8812AU 驱动，而且它不是插上就能用的。本指南会带你花大约 30 分钟完成安装，系统软件包使用国内镜像源，驱动源码则从已验证的 GitHub 仓库下载；如果 GitHub 速度较慢，请使用你信任的代理或镜像。
 
 {{< tldr >}}
-AWUS036ACH 采用 RTL8812AU 芯片，Kali 用 apt 装 DKMS 驱动，Ubuntu/Debian 从 Gitee 编译，30 分钟完成监听模式与数据包注入。
+AWUS036ACH 采用 RTL8812AU 芯片，Kali 用 apt 装 DKMS 驱动，Ubuntu/Debian 从 GitHub 编译，30 分钟完成监听模式与数据包注入。
 {{< /tldr >}}
 
 请准备好以下物品：
@@ -181,13 +181,13 @@ sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
 ```
 
-### 第三步：从 Gitee 下载驱动
+### 第三步：从 GitHub 下载驱动
 
-国内访问 GitHub 慢，我们用 Gitee 镜像：
+上游驱动由 morrownr 维护；如果 GitHub 速度较慢，请使用你信任的代理或镜像。请在下面的命令中克隆驱动源码：
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -209,7 +209,7 @@ sudo reboot
 |----------|-----|---------|
 | 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 首选 |
 | 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 首选 |
-| Gitee | [gitee.com](https://gitee.com) | 驱动源码 |
+| GitHub (morrownr) | [github.com/morrownr](https://github.com/morrownr) | 驱动源码 |
 
 
 {{< faq >}}
@@ -227,5 +227,5 @@ sudo reboot
 1. [aircrack-ng 官方文档](https://www.aircrack-ng.org/)
 2. [ALFA Network 官网](https://www.alfa.com.tw/)
 3. [Kali Linux 官方文档](https://www.kali.org/docs/)
-4. [Gitee rtl8812au 镜像](https://gitee.com/mirrors/rtl8812au)
+4. [GitHub: morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820)
 5. [Realtek RTL8812AU 驱动](https://www.realtek.com/)

@@ -150,18 +150,15 @@ After the install completes, load the module again.
 sudo modprobe mt76x2u
 ```
 
-If the package is not available for your exact kernel version, compile the driver from source instead.
+If the package is not available for your exact kernel version, upgrade to a newer kernel instead. The driver is part of the mainline Linux kernel, so no compiling is needed.
 
 ```bash
-sudo apt install -y git build-essential libssl-dev
-git clone https://gitee.com/mirrors/mt76.git
-cd mt76
-make
-sudo make install
-sudo modprobe mt76x2u
+sudo apt update
+sudo apt full-upgrade -y
+sudo reboot
 ```
 
-> **NOTE:** If that Gitee URL does not load, search Gitee for `mt76` and pick the most recently updated fork. You can also download driver archives directly from [files.alfa.com.tw](https://files.alfa.com.tw).
+> **NOTE:** `mt76x2u` is part of the mainline Linux kernel, so no source build is needed. You can also download driver archives directly from [files.alfa.com.tw](https://files.alfa.com.tw).
 
 ---
 
@@ -596,7 +593,7 @@ All resources used in this guide — no GitHub required:
 | 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommended) |
 | 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommended) |
 | 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM images (backup) |
-| MT76 driver (Gitee) | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | Manual compile fallback |
+| MT76 driver (mainline kernel) | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | In-kernel, no compile needed |
 
 ## More Alfa Adapter Guides for China
 

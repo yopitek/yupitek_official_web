@@ -7,7 +7,7 @@ faq:
   - question: "What chipset does AWUS036ACH use? Does it need extra drivers?"
     answer: "AWUS036ACH uses the Realtek RTL8812AU chipset. The driver is not built into the Linux kernel and needs manual installation."
   - question: "Do I need a VPN to install AWUS036ACH drivers in China?"
-    answer: "No. You can complete the entire process using domestic mirrors like USTC, Aliyun, and Gitee source code mirrors."
+    answer: "Not necessarily. Clone the driver from the verified GitHub repository (morrownr/8812au-20210820); if GitHub is slow, use a proxy or mirror you trust. Build tools can still be installed from domestic mirrors."
   - question: "Does AWUS036ACH support monitor mode and packet injection?"
     answer: "Yes. After installing the RTL8812AU driver, use airmon-ng to enable monitor mode and aireplay-ng to test packet injection."
   - question: "Can AWUS036ACH work on a Raspberry Pi?"
@@ -22,15 +22,15 @@ tags: ["alfa", "awus036ach", "kali-linux", "ubuntu", "driver", "china", "monitor
 categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 1
-description: "Step-by-step guide to install ALFA AWUS036ACH drivers in China using domestic mirrors. Covers Kali Linux, Ubuntu 22/24, Debian, and Raspberry Pi. No GitHub required."
+description: "Step-by-step guide to install ALFA AWUS036ACH drivers in China using domestic mirrors. Covers Kali Linux, Ubuntu 22/24, Debian, and Raspberry Pi. Build tools from domestic mirrors; driver source from the verified GitHub repository."
 related_product: "/en/products/alfa/awus036ach/"
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
 ---
 
-You just got the AWUS036ACH and your Linux machine doesn't recognize it. That's normal — this chip needs the RTL8812AU driver, and it's not plug-and-play. This guide walks you through the full install in about 30 minutes, using only domestic mirrors. No GitHub access needed.
+You just got the AWUS036ACH and your Linux machine doesn't recognize it. That's normal — this chip needs the RTL8812AU driver, and it's not plug-and-play. This guide walks you through the full install in about 30 minutes, using domestic mirrors for system packages and the verified GitHub repository for the driver source. If GitHub is slow, use a proxy or mirror you trust.
 
 {{< tldr >}}
-AWUS036ACH uses the RTL8812AU chipset. Install the DKMS driver via apt on Kali, or compile from Gitee on Ubuntu/Debian. Monitor mode and packet injection are ready in 30 minutes.
+AWUS036ACH uses the RTL8812AU chipset. Install the DKMS driver via apt on Kali, or compile from GitHub on Ubuntu/Debian. Monitor mode and packet injection are ready in 30 minutes.
 {{< /tldr >}}
 
 Make sure you have these ready:
@@ -139,27 +139,25 @@ Only follow this section if the `apt install` above failed. First install the bu
 sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r)
 ```
 
-Download the driver source from Gitee.
+Download the driver source from GitHub.
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
-> **NOTE:** If that URL does not load, search Gitee for `rtl8812au` and pick the most recently updated fork. You can also download a source archive directly from [files.alfa.com.tw](https://files.alfa.com.tw).
+> **NOTE:** The maintained upstream driver is [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820). If GitHub is slow, use a proxy or mirror you trust. You can also download a source archive directly from [files.alfa.com.tw](https://files.alfa.com.tw).
 
 Move into the cloned directory, then compile and install.
 
 ```bash
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
+cd 8812au-20210820
+sudo ./install-driver.sh
 ```
 
 Load the driver into the running kernel.
 
 ```bash
-sudo modprobe 88XXau
+sudo modprobe 8812au
 ```
 
 ---
@@ -279,58 +277,57 @@ This pulls in gcc, make, and the exact headers that match your running kernel. T
 
 ---
 
-### Step 3: Download Driver Source (China Mirror)
+### Step 3: Download Driver Source (GitHub)
 
-Clone the driver repository from Gitee, which is accessible inside China:
+Clone the driver repository from GitHub:
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
 Then move into the cloned folder:
 
 ```bash
-cd rtl8812au
+cd 8812au-20210820
 ```
 
-> **Note:** If that URL times out or returns a 404, go to [gitee.com](https://gitee.com) and search for `rtl8812au`. Pick the fork with the most recent commit date.
+> **Note:** If GitHub is slow, use a proxy or mirror you trust.
 
 ---
 
 ### Step 4: Compile and Install
 
-Build the kernel module from source:
+Run the installer script. It builds the kernel module and registers it with DKMS so it survives kernel upgrades:
 
 ```bash
-make
+sudo ./install-driver.sh
 ```
 
-Install it into the system:
+Confirm that DKMS registered the module:
 
 ```bash
-sudo make install
+sudo dkms status
 ```
 
-Register the module with DKMS so it survives kernel upgrades:
+Reboot so the new module loads cleanly:
 
 ```bash
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
+sudo reboot
 ```
 
 Load the module into the running kernel:
 
 ```bash
-sudo modprobe 88XXau
+sudo modprobe 8812au
 ```
 
 Verify the module loaded correctly:
 
 ```bash
-modinfo 88XXau | grep filename
+modinfo 8812au | grep filename
 ```
 
-You should see a path ending in `88XXau.ko` or similar. If the command returns output, the driver is active.
+You should see a path ending in `8812au.ko` or similar. If the command returns output, the driver is active.
 
 ---
 
@@ -400,32 +397,29 @@ sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r
 
 This command tailors the header package to your running kernel version automatically.
 
-### Step 3: Download Driver Source (China Mirror)
+### Step 3: Download Driver Source (GitHub)
 
-Clone the driver repository from Gitee:
+Clone the driver repository from GitHub:
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
 Move into the project folder:
 
 ```bash
-cd rtl8812au
+cd 8812au-20210820
 ```
 
-> **Can't reach that URL?** Search Gitee for `rtl8812au` and pick the most recently updated fork.
+> **Note:** If GitHub is slow, use a proxy or mirror you trust.
 
 ### Step 4: Compile and Install
 
-Run these commands in sequence inside the `rtl8812au` folder:
+Run these commands in sequence inside the `8812au-20210820` folder:
 
 ```bash
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 `dkms` registers the driver so it survives kernel updates automatically.
@@ -544,13 +538,10 @@ If that command returns an error saying the package is not found, compile the dr
 
 ```bash
 sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 ---
@@ -622,16 +613,16 @@ If your workflow needs VIF — for example, running fake APs while monitoring si
 | Problem | Likely Cause | Fix |
 |---------|-------------|-----|
 | `lsusb` doesn't show 0bda:8812 | Adapter not powered or bad cable | Try a different USB port. Use a powered hub on Raspberry Pi. |
-| `make` fails with header errors | Kernel headers missing or version mismatch | Run `sudo apt install linux-headers-$(uname -r)` |
+| `install-driver.sh` fails with header errors | Kernel headers missing or version mismatch | Run `sudo apt install linux-headers-$(uname -r)` |
 | `modprobe 88XXau` fails | Secure Boot blocking unsigned modules | Disable Secure Boot in BIOS, or sign the module |
-| Driver disappears after kernel update | Driver not registered with DKMS | Re-run `sudo dkms install rtl8812au/$(cat VERSION)` from the source directory |
+| Driver disappears after kernel update | Driver not registered with DKMS | Re-run `sudo ./install-driver.sh` from the source directory |
 | `airmon-ng start wlan0` fails | NetworkManager still running | Run `sudo airmon-ng check kill` first |
 | Monitor mode starts but captures no traffic | Wrong channel or wrong interface name | Check interface with `iwconfig`. Set channel: `iwconfig wlan0mon channel 6` |
 | Injection test says "No Answer" | AP too far away, or using wrong interface | Move closer to the AP. Use `wlan0mon` not `wlan0` |
 
 ## China Mirror Reference
 
-All resources used in this guide — no GitHub required:
+All resources used in this guide:
 
 | Resource | URL | Use for |
 |----------|-----|---------|
@@ -641,7 +632,7 @@ All resources used in this guide — no GitHub required:
 | 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommended) |
 | 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommended) |
 | 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM images (backup) |
-| RTL8812AU driver (Gitee) | [gitee.com/mirrors/rtl8812au](https://gitee.com/mirrors/rtl8812au) | Manual compile fallback |
+| RTL8812AU driver (GitHub) | [github.com/morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | Manual compile fallback |
 
 ## More Alfa Adapter Guides for China
 
@@ -663,5 +654,5 @@ Questions? Leave a comment below or contact us at [yupitek.com](https://yupitek.
 1. [aircrack-ng Official Documentation](https://www.aircrack-ng.org/)
 2. [ALFA Network Official Website](https://www.alfa.com.tw/)
 3. [Kali Linux Official Documentation](https://www.kali.org/docs/)
-4. [Gitee rtl8812au Mirror](https://gitee.com/mirrors/rtl8812au)
+4. [GitHub: morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820)
 5. [Realtek RTL8812AU Driver](https://www.realtek.com/)

@@ -7,13 +7,13 @@ tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "driver", "china", "monit
 categories: ["Guías de drivers"]
 series: ["alfa-china-install-guide"]
 series_order: 9
-description: "La guía definitiva para instalar todos los adaptadores WiFi USB Alfa en Linux desde China. Cubre Kali Linux, Ubuntu 22/24, Debian y Raspberry Pi. Sin necesidad de GitHub - solo mirrors nacionales."
+description: "La guía definitiva para instalar todos los adaptadores WiFi USB Alfa en Linux desde China. Cubre Kali Linux, Ubuntu 22/24, Debian y Raspberry Pi. Mirrors nacionales para los paquetes del sistema y repositorios de GitHub verificados para el código de los controladores."
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "¿Hace falta usar VPN para instalar tarjetas WiFi Alfa en China?"
-    answer: "No, todo el proceso se puede completar usando espejos nacionales como USTC, Aliyun y Tsinghua, además del espejo de código fuente de Gitee."
+    answer: "No necesariamente. Los paquetes del sistema vienen de espejos nacionales (USTC, Aliyun, Tsinghua); el código de los controladores que no están en el kernel se clona desde los repositorios de GitHub verificados de morrownr. Si GitHub va lento, usa un proxy o espejo de confianza."
   - question: "¿Qué tarjeta Alfa es la más adecuada para modo monitor e inyección de paquetes?"
     answer: "El AWUS036ACM con chip MT7612U tiene el controlador integrado en el núcleo y soporte completo de VIF; es la mejor opción."
   - question: "¿Qué tarjetas Alfa admiten WiFi 6?"
@@ -22,16 +22,16 @@ faq:
     answer: "El AWUS036AXM y AWUS036AXML usan el chip MT7921AUN y admiten WiFi 6E en triple banda."
   - question: "¿Qué hay que tener en cuenta al usar tarjetas Alfa en Raspberry Pi?"
     answer: "Debes usar un concentrador USB con alimentación para proveer energía y flashear la versión Kali ARM64 para obtener el mejor soporte de controladores."
----Guía definitiva de instalación de tarjetas WiFi Alfa en Linux para China continental, que abarca Kali, Ubuntu, Debian y Raspberry Pi. Compatible con todos los chips RTL8812AU, MT7612U, RTL8832BU y más, usando exclusivamente espejos nacionales sin necesidad de VPN.
+---Guía definitiva de instalación de tarjetas WiFi Alfa en Linux para China continental, que abarca Kali, Ubuntu, Debian y Raspberry Pi. Compatible con todos los chips RTL8812AU, MT7612U, RTL8832BU y más, usando espejos nacionales para los paquetes del sistema y repositorios de GitHub verificados para el código de los controladores.
 
 {{< tldr >}}
-Guía definitiva de instalación de tarjetas WiFi Alfa en Linux para China continental, que abarca Kali, Ubuntu, Debian y Raspberry Pi. Compatible con todos los chips RTL8812AU, MT7612U, RTL8832BU y más, usando exclusivamente espejos nacionales sin necesidad de VPN.
+Guía definitiva de instalación de tarjetas WiFi Alfa en Linux para China continental, que abarca Kali, Ubuntu, Debian y Raspberry Pi. Compatible con todos los chips RTL8812AU, MT7612U, RTL8832BU y más, usando espejos nacionales para los paquetes del sistema y repositorios de GitHub verificados para el código de los controladores.
 {{< /tldr >}}
 
 
 ## Bienvenido a la guía definitiva de instalación de Alfa en Linux
 
-Esta guía cubre los pasos completos para instalar todos los adaptadores WiFi USB Alfa en las principales distribuciones Linux desde China continental, usando exclusivamente mirrors nacionales sin necesidad de acceder a GitHub.
+Esta guía cubre los pasos completos para instalar todos los adaptadores WiFi USB Alfa en las principales distribuciones Linux desde China continental, usando mirrors nacionales para los paquetes del sistema y repositorios de GitHub verificados para el código de los controladores.
 
 Si estás leyendo esto, probablemente compraste un adaptador WiFi USB Alfa y te encontraste atascado porque:
 
@@ -40,7 +40,7 @@ Si estás leyendo esto, probablemente compraste un adaptador WiFi USB Alfa y te 
 - Necesitas habilitar el modo monitor y la inyección de paquetes para pruebas inalámbricas
 - No sabes qué driver necesita tu modelo específico de Alfa
 
-Esta guía resuelve **todos esos problemas**. Te llevaremos paso a paso por la instalación de **todos los adaptadores WiFi USB Alfa** en **las principales distribuciones Linux**, usando únicamente **mirrors accesibles desde China**. Sin GitHub. Sin frustraciones.
+Esta guía resuelve **todos esos problemas**. Te llevaremos paso a paso por la instalación de **todos los adaptadores WiFi USB Alfa** en **las principales distribuciones Linux**, usando **mirrors accesibles desde China** para los paquetes del sistema y repositorios de GitHub verificados para el código de los drivers. Sin frustraciones.
 
 ---
 
@@ -48,7 +48,7 @@ Esta guía resuelve **todos esos problemas**. Te llevaremos paso a paso por la i
 
 Los adaptadores WiFi USB Alfa son muy populares entre los testers de penetración, ingenieros de redes y entusiastas de las redes inalámbricas. Admiten el modo monitor y la inyección de paquetes — funciones que la mayoría de los adaptadores WiFi de consumo no ofrecen.
 
-Pero aquí está el problema: **La mayoría de las guías de instalación de drivers asumen que puedes acceder a GitHub**. Si estás en China, eso no es posible. Esta guía está diseñada específicamente para usuarios en China, usando únicamente mirrors y recursos que funcionan dentro de la infraestructura de internet del país.
+Pero aquí está el problema: **La mayoría de las guías de instalación de drivers asumen que puedes acceder a GitHub con rapidez**. Desde China, GitHub puede ser lento o poco fiable. Esta guía instala los paquetes del sistema desde mirrors nacionales y clona el código de los drivers desde repositorios de GitHub verificados; si GitHub va lento, usa un proxy o espejo de confianza.
 
 ---
 
@@ -141,7 +141,7 @@ Todos los recursos de esta guía usan los siguientes mirrors accesibles desde Ch
 | **阿里云镜像 (Aliyun)** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recomendado) |
 | **中科大镜像 (USTC)** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recomendado) |
 | **华为云镜像** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Imágenes Kali ARM (alternativa) |
-| **Gitee (alternativa a GitHub)** | [gitee.com](https://gitee.com) | Código fuente de drivers |
+| **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | Código fuente de drivers |
 
 ---
 
@@ -301,16 +301,13 @@ sudo modprobe 8852bu
 
 #### Serie AC - Realtek (RTL8812AU)
 
-Clona desde Gitee:
+Clona desde GitHub:
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### Serie AC - MediaTek (MT7612U)
@@ -381,13 +378,10 @@ sudo modprobe 8852bu
 #### Serie AC - Realtek (RTL8812AU)
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### Serie AC - MediaTek (MT7612U)
@@ -663,14 +657,14 @@ Ejecuta `lsusb` para confirmar y luego sigue los pasos de instalación del drive
 
 | Modelo | Chipset | Driver | Fuente del mirror en China |
 |-------|---------|--------|---------------------|
-| AWUS036ACH | RTL8812AU | `88XXau` | Gitee: mirrors/rtl8812au |
+| AWUS036ACH | RTL8812AU | `8812au` | GitHub: morrownr/8812au-20210820 |
 | AWUS036ACM | MT7612U | `mt76x2u` | Driver integrado en el kernel |
 | AWUS036ACS | RTL8811AU | `8821au` | GitHub: morrownr/8821au-20210708 |
 | AWUS036AX | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
 | AWUS036AXM | MT7921AUN | `mt7921u` | Driver integrado en el kernel |
 | AWUS036AXML | MT7921AUN | `mt7921u` | Driver integrado en el kernel |
 | AWUS036AXER | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036EAC | RTL8814AU | `8814au` | Gitee: mirrors/rtl8814au |
+| AWUS036EAC | RTL8814AU | `8814au` | GitHub: morrownr/8814au |
 
 ---
 
@@ -713,4 +707,4 @@ Esta es parte de la serie **Alfa China Install Guide**:
 2. [Controlador mt76 del núcleo Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
 3. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)
 4. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)
-5. [Espejo de código fuente de controladores en Gitee](https://gitee.com/mirrors)
+5. [GitHub: morrownr](https://github.com/morrownr)

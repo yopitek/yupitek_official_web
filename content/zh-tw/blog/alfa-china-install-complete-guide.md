@@ -7,13 +7,13 @@ tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "驅動程式", "中國",
 categories: ["驅動程式安裝教學"]
 series: ["alfa-china-install-guide"]
 series_order: 9
-description: "終極 Alfa USB WiFi 網卡 Linux 安裝指南，適用於中國大陸用戶。涵蓋 Kali Linux、Ubuntu 22/24、Debian、Raspberry Pi，全程使用境內鏡像，無需訪問 GitHub。"
+description: "終極 Alfa USB WiFi 網卡 Linux 安裝指南，適用於中國大陸用戶。涵蓋 Kali Linux、Ubuntu 22/24、Debian、Raspberry Pi，系統套件使用境內鏡像，驅動原始碼取自已驗證的 GitHub 儲存庫。"
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "在中國安裝 Alfa WiFi 網卡需要翻牆嗎？"
-    answer: "不需要，全程使用中科大、阿里雲、清華等國內鏡像及 Gitee 源碼鏡像即可完成。"
+    answer: "不一定。系統套件使用國內鏡像（中科大、阿里雲、清華等）安裝；未內建於核心的驅動則從 morrownr 已驗證的 GitHub 儲存庫複製原始碼。若 GitHub 速度較慢，請使用你信任的代理或鏡像。"
   - question: "哪款 Alfa 網卡最適合監聽模式和封包注入？"
     answer: "AWUS036ACM 搭載 MT7612U 晶片，驅動核心內建且完整支援 VIF，是最佳選擇。"
   - question: "哪款 Alfa 網卡支援 WiFi 6？"
@@ -24,7 +24,7 @@ faq:
     answer: "務必搭配有源 USB Hub 供電，並刷 Kali ARM64 版本以獲得最佳驅動支援。"
 ---
 
-本指南涵蓋在中國大陸所有主要 Linux 發行版上安裝每一款 Alfa USB WiFi 網卡的完整步驟，全程使用國內鏡像，無需訪問 GitHub。
+本指南涵蓋在中國大陸所有主要 Linux 發行版上安裝每一款 Alfa USB WiFi 網卡的完整步驟，系統套件使用國內鏡像，驅動原始碼取自已驗證的 GitHub 儲存庫。
 
 {{< tldr >}}
 中國大陸 Alfa WiFi 網卡 Linux 安裝終極指南，涵蓋 Kali、Ubuntu、Debian、樹莓派，支援 RTL8812AU、MT7612U、RTL8832BU 等所有晶片，全程國內鏡像免翻牆。
@@ -39,7 +39,7 @@ faq:
 - 您需要啟用監控模式（Monitor Mode）和封包注入（Packet Injection）進行無線測試
 - 不確定您的 Alfa 型號需要哪個驅動程式
 
-本指南解決**所有上述問題**。我們將帶您在**所有主要 Linux 發行版**上安裝**每一款 Alfa USB WiFi 網卡**，全程僅使用**中國大陸可訪問的鏡像**。無需 GitHub，告別挫折感。
+本指南解決**所有上述問題**。我們將帶您在**所有主要 Linux 發行版**上安裝**每一款 Alfa USB WiFi 網卡**，系統套件使用**中國大陸可訪問的鏡像**，驅動原始碼取自已驗證的 GitHub 儲存庫。告別挫折感。
 
 ---
 
@@ -47,7 +47,7 @@ faq:
 
 Alfa USB WiFi 網卡深受滲透測試員、網路工程師和無線愛好者的歡迎，因為它們支援監控模式和封包注入——這些功能是大多數消費級 WiFi 網卡所沒有的。
 
-但問題在於：**大多數驅動程式安裝教學都假設您能訪問 GitHub**。在中國大陸這是不可能的。本指南專為中國大陸用戶設計，全程僅使用境內可訪問的鏡像和資源。
+但問題在於：**大多數驅動程式安裝教學都假設您能順暢訪問 GitHub**。在中國大陸，GitHub 可能較慢或不穩定。本指南使用國內鏡像安裝系統套件，並從已驗證的 GitHub 儲存庫複製驅動原始碼；若 GitHub 速度較慢，請使用您信任的代理或鏡像。
 
 ---
 
@@ -140,7 +140,7 @@ lsusb
 | **阿里雲鏡像** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦）|
 | **中科大鏡像** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦）|
 | **華為雲鏡像** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像（備用）|
-| **Gitee（GitHub 替代）** | [gitee.com](https://gitee.com) | 驅動程式原始碼 |
+| **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | 驅動程式原始碼 |
 
 ---
 
@@ -300,16 +300,13 @@ sudo modprobe 8852bu
 
 #### AC 系列 - Realtek（RTL8812AU）
 
-從 Gitee 克隆：
+從 GitHub 克隆：
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### AC 系列 - MediaTek（MT7612U）
@@ -380,13 +377,10 @@ sudo modprobe 8852bu
 #### AC 系列 - Realtek（RTL8812AU）
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### AC 系列 - MediaTek（MT7612U）
@@ -662,14 +656,14 @@ sudo ip link set mon0 up
 
 | 型號 | 晶片組 | 驅動程式 | 中國大陸鏡像來源 |
 |------|--------|---------|----------------|
-| AWUS036ACH | RTL8812AU | `88XXau` | Gitee: mirrors/rtl8812au |
+| AWUS036ACH | RTL8812AU | `8812au` | GitHub: morrownr/8812au-20210820 |
 | AWUS036ACM | MT7612U | `mt76x2u` | 核心內建驅動程式 |
 | AWUS036ACS | RTL8811AU | `8821au` | GitHub: morrownr/8821au-20210708 |
 | AWUS036AX | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
 | AWUS036AXM | MT7921AUN | `mt7921u` | 核心內建驅動程式 |
 | AWUS036AXML | MT7921AUN | `mt7921u` | 核心內建驅動程式 |
 | AWUS036AXER | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036EAC | RTL8814AU | `8814au` | Gitee: mirrors/rtl8814au |
+| AWUS036EAC | RTL8814AU | `8814au` | GitHub: morrownr/8814au |
 
 ---
 
@@ -712,4 +706,4 @@ sudo ip link set mon0 up
 2. [Linux Kernel mt76 驅動](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
 3. [ALFA Network 官網](https://www.alfa.com.tw/)
 4. [Kali Linux 官方文件](https://www.kali.org/docs/)
-5. [Gitee 驅動源碼鏡像](https://gitee.com/mirrors)
+5. [GitHub: morrownr](https://github.com/morrownr)

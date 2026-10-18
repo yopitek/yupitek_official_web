@@ -143,18 +143,15 @@ Après l'installation, chargez à nouveau le module.
 sudo modprobe mt76x2u
 ```
 
-Si le paquet n'est pas disponible pour votre version exacte du noyau, compilez le pilote depuis les sources.
+Si le paquet n'est pas disponible pour votre version exacte du noyau, passez à un noyau plus récent. Le pilote fait partie du noyau Linux principal (mainline), aucune compilation n'est nécessaire.
 
 ```bash
-sudo apt install -y git build-essential libssl-dev
-git clone https://gitee.com/mirrors/mt76.git
-cd mt76
-make
-sudo make install
-sudo modprobe mt76x2u
+sudo apt update
+sudo apt full-upgrade -y
+sudo reboot
 ```
 
-> **REMARQUE :** Si cette URL Gitee ne se charge pas, recherchez `mt76` sur Gitee et choisissez le fork le plus récemment mis à jour. Vous pouvez également télécharger les archives de pilotes directement depuis [files.alfa.com.tw](https://files.alfa.com.tw).
+> **REMARQUE :** `mt76x2u` fait partie du noyau Linux principal (mainline), aucune compilation depuis les sources n'est nécessaire. Vous pouvez également télécharger les archives de pilotes directement depuis [files.alfa.com.tw](https://files.alfa.com.tw).
 
 ---
 
@@ -587,7 +584,7 @@ Toutes les ressources utilisées dans ce guide — GitHub non requis :
 | Miroir 阿里云 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommandé) |
 | Miroir 中科大 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommandé) |
 | Miroir 华为云 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Images Kali ARM (sauvegarde) |
-| Pilote MT76 (Gitee) | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | Compilation manuelle en secours |
+| Pilote MT76 (noyau mainline) | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | Intégré au noyau, sans compilation |
 
 {{< faq >}}
 

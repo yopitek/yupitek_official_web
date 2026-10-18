@@ -1,6 +1,6 @@
 ---
 title: "دليل تثبيت تعريف ALFA AWUS036ACH للصين: Kali Linux وUbuntu وDebian وRaspberry Pi"
-description: "دليل خطوة بخطوة لتثبيت تعريفات ALFA AWUS036ACH في الصين باستخدام المرايا المحلية. يغطي Kali Linux وUbuntu 22/24 وDebian وRaspberry Pi. لا يلزم الوصول إلى GitHub."
+description: "دليل خطوة بخطوة لتثبيت تعريفات ALFA AWUS036ACH في الصين باستخدام المرايا المحلية. يغطي Kali Linux وUbuntu 22/24 وDebian وRaspberry Pi. أدوات البناء من المرايا المحلية ومصدر التعريف من مستودع GitHub الموثّق."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -18,7 +18,7 @@ faq:
   - question: "ما الشريحة التي يستخدمها AWUS036ACH؟ هل يحتاج إلى تعريف إضافي؟"
     answer: "يستخدم AWUS036ACH شريحة Realtek RTL8812AU، والتعريف غير مدمج في نواة Linux ويحتاج إلى تثبيت يدوي."
   - question: "هل أحتاج إلى VPN لتثبيت تعريف AWUS036ACH في الصين؟"
-    answer: "لا، يمكن إكمال التثبيت بالكامل باستخدام المرايا المحلية مثل USTC وAlibaba Cloud وGitee."
+    answer: "ليس بالضرورة. استنسخ برنامج التشغيل من مستودع GitHub الموثّق (morrownr/8812au-20210820)؛ وإذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها. ويمكن مع ذلك تثبيت أدوات البناء من المرايا المحلية."
   - question: "هل يدعم AWUS036ACH وضع المراقبة وحقن الحزم؟"
     answer: "نعم، بعد تثبيت تعريف RTL8812AU استخدم airmon-ng لتفعيل وضع المراقبة، وaireplay-ng لاختبار حقن الحزم."
   - question: "هل يعمل AWUS036ACH على Raspberry Pi؟"
@@ -26,10 +26,10 @@ faq:
   - question: "ما أمر تثبيت تعريف AWUS036ACH على Kali Linux؟"
     answer: "على Kali يمكن تنفيذ sudo apt install realtek-rtl88xxau-dkms لتثبيت التعريف المُجمَّع مسبقاً."
 ---
-حصلتَ للتو على AWUS036ACH ولكن Linux لا يتعرف عليه. هذا أمر طبيعي — يحتاج هذا الشريحة إلى تعريف RTL8812AU وهو ليس جاهزاً للتشغيل فوراً. سيرشدك هذا الدليل خلال التثبيت الكامل في حوالي 30 دقيقة، باستخدام المرايا المحلية فقط. لا حاجة للوصول إلى GitHub.
+حصلتَ للتو على AWUS036ACH ولكن Linux لا يتعرف عليه. هذا أمر طبيعي — يحتاج هذا الشريحة إلى تعريف RTL8812AU وهو ليس جاهزاً للتشغيل فوراً. سيرشدك هذا الدليل خلال التثبيت الكامل في حوالي 30 دقيقة، باستخدام المرايا المحلية لحزم النظام ومستودع GitHub الموثّق لمصدر التعريف. إذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها.
 
 {{< tldr >}}
-يستخدم AWUS036ACH شريحة RTL8812AU، على Kali ثبّت تعريف DKMS عبر apt، وعلى Ubuntu/Debian جمّع من Gitee. وضع المراقبة وحقن الحزم جاهزان خلال 30 دقيقة.
+يستخدم AWUS036ACH شريحة RTL8812AU، على Kali ثبّت تعريف DKMS عبر apt، وعلى Ubuntu/Debian جمّع من GitHub. وضع المراقبة وحقن الحزم جاهزان خلال 30 دقيقة.
 {{< /tldr >}}
 
 تأكد من توفر ما يلي:
@@ -135,27 +135,25 @@ modinfo 88XXau | grep -E "filename|version"
 sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r)
 ```
 
-نزّل مصدر التعريف من Gitee.
+نزّل مصدر التعريف من GitHub.
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
-> **ملاحظة:** إذا لم يُحمَّل هذا الرابط، ابحث في Gitee عن `rtl8812au` واختر الفرع ذو أحدث تاريخ commit. يمكنك أيضاً تنزيل أرشيف المصدر مباشرةً من [files.alfa.com.tw](https://files.alfa.com.tw).
+> **ملاحظة:** التعريف الأصلي المُصان هو [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820). إذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها. يمكنك أيضاً تنزيل أرشيف المصدر مباشرةً من [files.alfa.com.tw](https://files.alfa.com.tw).
 
 انتقل إلى المجلد المُنزَّل، ثم قم بالتجميع والتثبيت.
 
 ```bash
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
+cd 8812au-20210820
+sudo ./install-driver.sh
 ```
 
 حمّل التعريف في النواة الجارية.
 
 ```bash
-sudo modprobe 88XXau
+sudo modprobe 8812au
 ```
 
 ---
@@ -275,58 +273,57 @@ sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r
 
 ---
 
-### الخطوة 3: تنزيل مصدر التعريف (مرآة صينية)
+### الخطوة 3: تنزيل مصدر التعريف (GitHub)
 
-استنسخ مستودع التعريف من Gitee المتاح داخل الصين:
+استنسخ مستودع التعريف من GitHub:
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
 انتقل إلى المجلد المُستنسَخ:
 
 ```bash
-cd rtl8812au
+cd 8812au-20210820
 ```
 
-> **ملاحظة:** إذا انتهت مهلة الرابط، اذهب إلى [gitee.com](https://gitee.com) وابحث عن `rtl8812au`. اختر الفرع ذو أحدث تاريخ commit.
+> **ملاحظة:** إذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها.
 
 ---
 
 ### الخطوة 4: التجميع والتثبيت
 
-ابنِ وحدة النواة من المصدر:
+شغّل سكربت التثبيت. فهو يبني وحدة النواة ويسجّلها في DKMS لتبقى بعد ترقيات النواة:
 
 ```bash
-make
+sudo ./install-driver.sh
 ```
 
-ثبّتها في النظام:
+تأكد من أن DKMS سجّل الوحدة:
 
 ```bash
-sudo make install
+sudo dkms status
 ```
 
-سجّل الوحدة مع DKMS لتبقى بعد تحديثات النواة:
+أعد تشغيل الجهاز ليتم تحميل الوحدة الجديدة بشكل سليم:
 
 ```bash
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
+sudo reboot
 ```
 
 حمّل الوحدة في النواة الجارية:
 
 ```bash
-sudo modprobe 88XXau
+sudo modprobe 8812au
 ```
 
 تحقق من صحة التحميل:
 
 ```bash
-modinfo 88XXau | grep filename
+modinfo 8812au | grep filename
 ```
 
-يجب أن ترى مساراً ينتهي بـ `88XXau.ko` أو ما يشابهه. إذا أعاد الأمر مخرجات، فالتعريف نشط.
+يجب أن ترى مساراً ينتهي بـ `8812au.ko` أو ما يشابهه. إذا أعاد الأمر مخرجات، فالتعريف نشط.
 
 ---
 
@@ -394,32 +391,29 @@ sudo apt update
 sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r)
 ```
 
-### الخطوة 3: تنزيل مصدر التعريف (مرآة صينية)
+### الخطوة 3: تنزيل مصدر التعريف (GitHub)
 
-استنسخ المستودع من Gitee:
+استنسخ مستودع التعريف من GitHub:
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
 انتقل إلى مجلد المشروع:
 
 ```bash
-cd rtl8812au
+cd 8812au-20210820
 ```
 
-> **لا يمكن الوصول إلى الرابط؟** ابحث في Gitee عن `rtl8812au` واختر الفرع الأحدث.
+> **ملاحظة:** إذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها.
 
 ### الخطوة 4: التجميع والتثبيت
 
-شغّل هذه الأوامر بالتسلسل داخل مجلد `rtl8812au`:
+شغّل هذه الأوامر بالتسلسل داخل مجلد `8812au-20210820`:
 
 ```bash
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 يسجّل `dkms` التعريف ليبقى تلقائياً بعد تحديثات النواة.
@@ -538,13 +532,10 @@ sudo apt install -y realtek-rtl88xxau-dkms
 
 ```bash
 sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 ---
@@ -614,16 +605,16 @@ sudo aireplay-ng --test wlan1mon
 | المشكلة | السبب المحتمل | الحل |
 |---------|--------------|-------|
 | `lsusb` لا يُظهر 0bda:8812 | المحوّل غير مزوّد بطاقة أو كابل معيب | جرّب منفذ USB مختلفاً. استخدم محور بطاقة على Raspberry Pi. |
-| `make` يفشل بأخطاء ترويسات | ترويسات النواة مفقودة أو عدم تطابق الإصدار | شغّل `sudo apt install linux-headers-$(uname -r)` |
+| `install-driver.sh` يفشل بأخطاء ترويسات | ترويسات النواة مفقودة أو عدم تطابق الإصدار | شغّل `sudo apt install linux-headers-$(uname -r)` |
 | `modprobe 88XXau` يفشل | Secure Boot يحجب الوحدات غير الموقّعة | عطّل Secure Boot في BIOS، أو وقّع الوحدة |
-| التعريف يختفي بعد تحديث النواة | التعريف غير مسجّل في DKMS | أعد تشغيل `sudo dkms install rtl8812au/$(cat VERSION)` من مجلد المصدر |
+| التعريف يختفي بعد تحديث النواة | التعريف غير مسجّل في DKMS | أعد تشغيل `sudo ./install-driver.sh` من مجلد المصدر |
 | `airmon-ng start wlan0` يفشل | NetworkManager لا يزال يعمل | شغّل `sudo airmon-ng check kill` أولاً |
 | وضع المراقبة يعمل لكن لا يلتقط حركة مرور | قناة خاطئة أو اسم واجهة خاطئ | تحقق من الواجهة بـ `iwconfig`. اضبط القناة: `iwconfig wlan0mon channel 6` |
 | اختبار الحقن يُظهر «No Answer» | نقطة الوصول بعيدة جداً أو واجهة خاطئة | اقترب من نقطة الوصول. استخدم `wlan0mon` لا `wlan0` |
 
 ## مرجع المرايا في الصين
 
-جميع الموارد المستخدمة في هذا الدليل — لا يلزم GitHub:
+جميع الموارد المستخدمة في هذا الدليل:
 
 | المورد | الرابط | الاستخدام |
 |--------|--------|----------|
@@ -633,7 +624,7 @@ sudo aireplay-ng --test wlan1mon
 | مرآة 阿里云 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (موصى به) |
 | مرآة 中科大 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (موصى به) |
 | مرآة 华为云 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | صور Kali ARM (احتياطي) |
-| تعريف RTL8812AU (Gitee) | [gitee.com/mirrors/rtl8812au](https://gitee.com/mirrors/rtl8812au) | التجميع اليدوي (بديل) |
+| تعريف RTL8812AU (GitHub) | [github.com/morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | التجميع اليدوي (بديل) |
 
 {{< faq >}}
 
@@ -657,6 +648,6 @@ sudo aireplay-ng --test wlan1mon
 1. [وثائق aircrack-ng الرسمية](https://www.aircrack-ng.org/)
 2. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
 3. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
-4. [مرآة Gitee لـ rtl8812au](https://gitee.com/mirrors/rtl8812au)
+4. [GitHub: morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820)
 5. [موقع Realtek RTL8812AU](https://www.realtek.com/)
 

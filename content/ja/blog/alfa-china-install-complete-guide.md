@@ -7,13 +7,13 @@ tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "driver", "china", "monit
 categories: ["ドライバーガイド"]
 series: ["alfa-china-install-guide"]
 series_order: 9
-description: "AlfaUSB Wi-FiアダプターをLinuxにインストールするための決定版ガイド。Kali Linux・Ubuntu 22/24・Debian・Raspberry Piに対応。GitHubなし — 国内ミラーのみ使用。"
+description: "AlfaUSB Wi-FiアダプターをLinuxにインストールするための決定版ガイド。Kali Linux・Ubuntu 22/24・Debian・Raspberry Piに対応。システムパッケージは国内ミラー、ドライバーのソースは検証済みのGitHubリポジトリから取得。"
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "中国でAlfa WiFiアダプターをインストールするのにVPNは必要ですか？"
-    answer: "不要です。USTC、Alibaba Cloud、清華などの国内ミラーとGiteeソースコードミラーを使用すれば完了までVPNは不要です。"
+    answer: "必ずしも必要ではありません。システムパッケージは国内ミラー（USTC、Alibaba Cloud、清華など）から入れ、カーネル外ドライバーのソースは morrownr の検証済み GitHub リポジトリからクローンします。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。"
   - question: "モニターモードとパケットインジェクションに最も適したAlfaアダプターは？"
     answer: "AWUS036ACMはMT7612Uチップを搭載し、ドライバーはカーネル内蔵でVIFを完全サポートするため、最適な選択です。"
   - question: "WiFi 6をサポートするAlfaアダプターは？"
@@ -29,14 +29,14 @@ faq:
 
 
 {{< tldr >}}
-中国本土向けAlfa WiFiアダプターLinuxインストールの究極ガイド。Kali、Ubuntu、Debian、Raspberry Piをカバーし、RTL8812AU、MT7612U、RTL8832BUなどのすべてのチップをサポート、全程国内ミラーでVPN不要です。
+中国本土向けAlfa WiFiアダプターLinuxインストールの究極ガイド。Kali、Ubuntu、Debian、Raspberry Piをカバーし、RTL8812AU、MT7612U、RTL8832BUなどのすべてのチップをサポート、システムパッケージは国内ミラー、ドライバーのソースは検証済みの GitHub リポジトリから取得します。
 {{< /tldr >}}
 - 中国にいるため GitHub にアクセスできない
 - ドライバーのインストール手順が複雑でわからない
 - 無線テスト用にモニターモードとパケットインジェクションを有効にしたい
 - 自分の Alfa モデルに必要なドライバーがわからない
 
-このガイドは、**これらすべての問題**を解決します。**すべての Alfa USB Wi-Fiアダプター**を**主要な Linux ディストリビューション**にインストールする手順を、**中国国内からアクセスできるミラーのみ**を使って解説します。GitHub 不要、ストレスなし。
+このガイドは、**これらすべての問題**を解決します。**すべての Alfa USB Wi-Fiアダプター**を**主要な Linux ディストリビューション**にインストールする手順を、システムパッケージは**中国国内からアクセスできるミラー**、ドライバーのソースは検証済みの GitHub リポジトリから取得して解説します。ストレスなし。
 
 ---
 
@@ -44,7 +44,7 @@ faq:
 
 Alfa USB Wi-Fiアダプターは、ペネトレーションテスター・ネットワークエンジニア・ワイヤレス愛好家の間で広く使われています。モニターモードとパケットインジェクションをサポートしており、これは一般的な Wi-Fi アダプターにはない機能です。
 
-しかし問題があります：**ドライバーインストールの解説記事の多くは、GitHub にアクセスできることを前提としています**。中国にいる場合、それは不可能です。このガイドは中国のユーザー向けに特化しており、中国のインターネット環境で動作するミラーとリソースのみを使用しています。
+しかし問題があります：**ドライバーインストールの解説記事の多くは、GitHub に素早くアクセスできることを前提としています**。中国からは GitHub が遅い、または不安定なことがあります。このガイドでは、システムパッケージを国内ミラーから入れ、ドライバーのソースは検証済みの GitHub リポジトリからクローンします。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。
 
 ---
 
@@ -137,7 +137,7 @@ ID が表示されていれば、アダプターは検出されています。�
 | **阿里云镜像（Aliyun）** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推奨） |
 | **中科大镜像（USTC）** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推奨） |
 | **华为云镜像** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM イメージ（バックアップ） |
-| **Gitee（GitHub の代替）** | [gitee.com](https://gitee.com) | ドライバーのソースコード |
+| **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | ドライバーのソースコード |
 
 ---
 
@@ -297,16 +297,13 @@ sudo modprobe 8852bu
 
 #### AC シリーズ - Realtek（RTL8812AU）
 
-Gitee からクローンします：
+GitHub からクローンします：
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### AC シリーズ - MediaTek（MT7612U）
@@ -377,13 +374,10 @@ sudo modprobe 8852bu
 #### AC シリーズ - Realtek（RTL8812AU）
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### AC シリーズ - MediaTek（MT7612U）
@@ -659,14 +653,14 @@ VM 内で `lsusb` を実行して確認し、上記の Kali Linux の手順に�
 
 | モデル | チップセット | ドライバー | 中国ミラーソース |
 |-------|---------|--------|---------------------|
-| AWUS036ACH | RTL8812AU | `88XXau` | Gitee: mirrors/rtl8812au |
+| AWUS036ACH | RTL8812AU | `8812au` | GitHub: morrownr/8812au-20210820 |
 | AWUS036ACM | MT7612U | `mt76x2u` | カーネル組み込みドライバー |
 | AWUS036ACS | RTL8811AU | `8821au` | GitHub: morrownr/8821au-20210708 |
 | AWUS036AX | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
 | AWUS036AXM | MT7921AUN | `mt7921u` | カーネル組み込みドライバー |
 | AWUS036AXML | MT7921AUN | `mt7921u` | カーネル組み込みドライバー |
 | AWUS036AXER | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036EAC | RTL8814AU | `8814au` | Gitee: mirrors/rtl8814au |
+| AWUS036EAC | RTL8814AU | `8814au` | GitHub: morrownr/8814au |
 
 ---
 
@@ -714,4 +708,4 @@ VM 内で `lsusb` を実行して確認し、上記の Kali Linux の手順に�
 2. [Linux Kernel mt76ドライバー](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
 3. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
 4. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
-5. [Giteeドライバーソースコードミラー](https://gitee.com/mirrors)
+5. [GitHub: morrownr](https://github.com/morrownr)

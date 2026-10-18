@@ -145,18 +145,15 @@ sudo apt install -y linux-modules-extra-$(uname -r)
 sudo modprobe mt76x2u
 ```
 
-如果連這個套件都找不到，就從原始碼編譯：
+如果連這個套件都找不到，就升級到較新的核心（驅動已內建於 Linux 主線核心，不需要編譯）：
 
 ```bash
-sudo apt install -y git build-essential libssl-dev
-git clone https://gitee.com/mirrors/mt76.git
-cd mt76
-make
-sudo make install
-sudo modprobe mt76x2u
+sudo apt update
+sudo apt full-upgrade -y
+sudo reboot
 ```
 
-> **注意：** 如果那個 Gitee 網址打不開，在 Gitee 搜尋 `mt76` 找最近更新的 fork。也可以直接從 [files.alfa.com.tw](https://files.alfa.com.tw) 下載驅動套件。
+> **注意：** `mt76x2u` 已內建於 Linux 主線核心，不需要從原始碼編譯。也可以直接從 [files.alfa.com.tw](https://files.alfa.com.tw) 下載驅動套件。
 
 ---
 
@@ -569,7 +566,7 @@ sudo ip link set mon0 up
 | 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦） |
 | 中科大鏡像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦） |
 | 華為雲鏡像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像（備用） |
-| MT76 驅動（Gitee） | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | 手動編譯備選 |
+| MT76 驅動（主線核心） | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | 核心內建，免編譯 |
 
 {{< faq >}}
 

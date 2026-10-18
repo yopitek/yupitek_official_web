@@ -7,13 +7,13 @@ tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "driver", "china", "monit
 categories: ["أدلة التعريفات"]
 series: ["alfa-china-install-guide"]
 series_order: 9
-description: "الدليل الشامل لتثبيت جميع محوّلات Alfa USB WiFi على Linux في الصين. يغطي Kali Linux وUbuntu 22/24 وDebian وRaspberry Pi. لا حاجة إلى GitHub - استخدم المرايا المحلية فقط."
+description: "الدليل الشامل لتثبيت جميع محوّلات Alfa USB WiFi على Linux في الصين. يغطي Kali Linux وUbuntu 22/24 وDebian وRaspberry Pi. مرايا محلية لحزم النظام ومستودعات GitHub الموثّقة لمصدر التعريفات."
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "هل أحتاج إلى VPN لتثبيت محولات Alfa WiFi في الصين؟"
-    answer: "لا، يمكن إكمال كل شيء باستخدام المرايا المحلية مثل USTC و Alibaba Cloud و Tsinghua و Gitee."
+    answer: "ليس بالضرورة. تأتي حزم النظام من المرايا المحلية (USTC وAlibaba Cloud وTsinghua)، ويُستنسخ مصدر التعريفات غير المدمجة في النواة من مستودعات GitHub الموثّقة لـ morrownr. وإذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها."
   - question: "ما أفضل محول Alfa لوضع المراقبة وحقن الحزم؟"
     answer: "AWUS036ACM بشريحة MT7612U، تعريفه مدمج في النواة ويدعم VIF بالكامل، هو الخيار الأفضل."
   - question: "ما محولات Alfa التي تدعم WiFi 6؟"
@@ -24,7 +24,7 @@ faq:
     answer: "استخدم موزع USB مزوداً بمصدر طاقة، وثبّت Kali ARM64 للحصول على أفضل دعم للتعريفات."
 ---
 {{< tldr >}}
-الدليل الشامل لتثبيت محولات Alfa WiFi على Linux في الصين، يغطي Kali و Ubuntu و Debian و Raspberry Pi، يدعم RTL8812AU و MT7612U و RTL8832BU وجميع الشرائح، بمرايا محلية فقط دون VPN.
+الدليل الشامل لتثبيت محولات Alfa WiFi على Linux في الصين، يغطي Kali و Ubuntu و Debian و Raspberry Pi، يدعم RTL8812AU و MT7612U و RTL8832BU وجميع الشرائح، بمرايا محلية لحزم النظام ومستودعات GitHub الموثّقة لمصدر التعريفات.
 {{< /tldr >}}
 
 إذا كنت تقرأ هذا، فمن المرجح أنك اشتريت محوّل Alfa USB WiFi ووجدت نفسك عالقاً بسبب أحد هذه الأسباب:
@@ -39,7 +39,7 @@ faq:
 - تحتاج إلى تفعيل وضع المراقبة (monitor mode) وحقن الحزم (packet injection) لاختبار الشبكات اللاسلكية
 - لست متأكداً من التعريف المناسب لطراز Alfa الخاص بك
 
-هذا الدليل يحلّ **جميع تلك المشكلات**. سنرشدك خطوة بخطوة لتثبيت **كل محوّلات Alfa USB WiFi** على **جميع توزيعات Linux الرئيسية**، باستخدام **مرايا متاحة من داخل الصين** فقط. بدون GitHub. بدون إحباط.
+هذا الدليل يحلّ **جميع تلك المشكلات**. سنرشدك خطوة بخطوة لتثبيت **كل محوّلات Alfa USB WiFi** على **جميع توزيعات Linux الرئيسية**، باستخدام **مرايا متاحة من داخل الصين** لحزم النظام ومستودعات GitHub الموثّقة لمصدر التعريفات. بدون إحباط.
 
 ---
 
@@ -47,7 +47,7 @@ faq:
 
 تحظى محوّلات Alfa USB WiFi بشعبية واسعة بين مختبري الاختراق ومهندسي الشبكات وعشاق الشبكات اللاسلكية. فهي تدعم وضع المراقبة وحقن الحزم — وهي ميزات لا تتوفر في معظم محوّلات WiFi الاستهلاكية.
 
-لكن هنا تكمن المشكلة: **تفترض معظم أدلة تثبيت التعريفات أنك تستطيع الوصول إلى GitHub**. إذا كنت في الصين، فهذا غير متاح. صُمّم هذا الدليل تحديداً للمستخدمين في الصين، باستخدام مرايا وموارد تعمل ضمن البنية التحتية لإنترنت الصين فقط.
+لكن هنا تكمن المشكلة: **تفترض معظم أدلة تثبيت التعريفات أنك تستطيع الوصول إلى GitHub بسرعة**. من داخل الصين قد يكون GitHub بطيئًا أو غير مستقر. يثبّت هذا الدليل حزم النظام من المرايا المحلية ويستنسخ مصدر التعريفات من مستودعات GitHub الموثّقة؛ وإذا كان GitHub بطيئًا فاستخدم وكيلًا (proxy) أو مرآة تثق بها.
 
 ---
 
@@ -140,7 +140,7 @@ lsusb
 | **مرآة علي بابا السحابية (阿里云)** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (موصى بها) |
 | **مرآة USTC (中科大)** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (موصى بها) |
 | **مرآة هواوي السحابية** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | صور Kali ARM (احتياطية) |
-| **Gitee (بديل GitHub)** | [gitee.com](https://gitee.com) | شفرة مصدر التعريفات |
+| **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | شفرة مصدر التعريفات |
 
 ---
 
@@ -300,16 +300,13 @@ sudo modprobe 8852bu
 
 #### سلسلة AC - Realtek (RTL8812AU)
 
-استنسخ من Gitee:
+استنسخ من GitHub:
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### سلسلة AC - MediaTek (MT7612U)
@@ -380,13 +377,10 @@ sudo modprobe 8852bu
 #### سلسلة AC - Realtek (RTL8812AU)
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### سلسلة AC - MediaTek (MT7612U)
@@ -662,14 +656,14 @@ sudo ip link set mon0 up
 
 | الطراز | الشريحة | التعريف | مصدر المرآة الصينية |
 |--------|---------|---------|---------------------|
-| AWUS036ACH | RTL8812AU | `88XXau` | Gitee: mirrors/rtl8812au |
+| AWUS036ACH | RTL8812AU | `8812au` | GitHub: morrownr/8812au-20210820 |
 | AWUS036ACM | MT7612U | `mt76x2u` | تعريف مدمج في النواة |
 | AWUS036ACS | RTL8811AU | `8821au` | GitHub: morrownr/8821au-20210708 |
 | AWUS036AX | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
 | AWUS036AXM | MT7921AUN | `mt7921u` | تعريف مدمج في النواة |
 | AWUS036AXML | MT7921AUN | `mt7921u` | تعريف مدمج في النواة |
 | AWUS036AXER | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036EAC | RTL8814AU | `8814au` | Gitee: mirrors/rtl8814au |
+| AWUS036EAC | RTL8814AU | `8814au` | GitHub: morrownr/8814au |
 
 ---
 
@@ -712,4 +706,4 @@ sudo ip link set mon0 up
 2. [تعريف Linux Kernel mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
 3. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
 4. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
-5. [مرايا Gitee للكود المصدري للتعريفات](https://gitee.com/mirrors)
+5. [GitHub: morrownr](https://github.com/morrownr)

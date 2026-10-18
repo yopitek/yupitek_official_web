@@ -147,18 +147,15 @@ sudo apt install -y linux-modules-extra-$(uname -r)
 sudo modprobe mt76x2u
 ```
 
-Если пакет недоступен для вашей версии ядра, скомпилируйте драйвер из исходников.
+Если пакет недоступен для вашей версии ядра, обновите ядро до более новой версии. Драйвер входит в основное ядро Linux (mainline), поэтому компиляция не нужна.
 
 ```bash
-sudo apt install -y git build-essential libssl-dev
-git clone https://gitee.com/mirrors/mt76.git
-cd mt76
-make
-sudo make install
-sudo modprobe mt76x2u
+sudo apt update
+sudo apt full-upgrade -y
+sudo reboot
 ```
 
-> **Примечание:** Если ссылка на Gitee не открывается, найдите `mt76` на Gitee и выберите наиболее актуальный форк. Также можно загрузить архивы с драйвером напрямую с [files.alfa.com.tw](https://files.alfa.com.tw).
+> **Примечание:** `mt76x2u` входит в основное ядро Linux (mainline), поэтому сборка из исходников не нужна. Также можно загрузить архивы с драйвером напрямую с [files.alfa.com.tw](https://files.alfa.com.tw).
 
 ---
 
@@ -593,7 +590,7 @@ sudo ip link set mon0 up
 | 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (рекомендуется) |
 | 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (рекомендуется) |
 | 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Образы Kali ARM (резервное) |
-| Драйвер MT76 (Gitee) | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | Резервная компиляция из исходников |
+| Драйвер MT76 (основное ядро) | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | Встроен в ядро, компиляция не нужна |
 
 ## Другие руководства по адаптерам Alfa для Китая
 

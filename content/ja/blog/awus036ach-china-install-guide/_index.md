@@ -9,7 +9,7 @@ tags: ["alfa", "awus036ach", "kali-linux", "ubuntu", "driver", "china", "monitor
 categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 1
-description: "国内ミラーを使ってALFA AWUS036ACHドライバーを中国でインストールするステップバイステップガイド。Kali Linux、Ubuntu 22/24、Debian、ラズベリーパイ対応。GitHubなし。"
+description: "国内ミラーを使ってALFA AWUS036ACHドライバーを中国でインストールするステップバイステップガイド。Kali Linux、Ubuntu 22/24、Debian、ラズベリーパイ対応。ビルドツールは国内ミラー、ドライバーのソースは検証済みのGitHubリポジトリから取得します。"
 related_product: "/ja/products/alfa/awus036ach/"
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
 author: "benny-lai"
@@ -18,7 +18,7 @@ faq:
   - question: "AWUS036ACHはどのチップを使っていますか？ドライバーの追加インストールは必要ですか？"
     answer: "AWUS036ACHはRealtek RTL8812AUチップを採用し、ドライバーはLinuxカーネルに内蔵されていないため手動インストールが必要です。"
   - question: "中国でAWUS036ACHドライバーをインストールするのにVPNは必要ですか？"
-    answer: "不要です。USTC、Alibaba Cloudなどの国内ミラーとGiteeソースコードミラーを使用すればインストール完了までVPNは不要です。"
+    answer: "いいえ。検証済みの GitHub リポジトリ（morrownr/8812au-20210820）からドライバをクローンしてください。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。ビルドツールは国内ミラーからインストールできます。"
   - question: "AWUS036ACHはモニターモードとパケットインジェクションをサポートしていますか？"
     answer: "サポートしています。RTL8812AUドライバーインストール後、airmon-ngでモニターモードを有効化し、aireplay-ngでパケットインジェクションをテストできます。"
   - question: "AWUS036ACHはRaspberry Piで使えますか？"
@@ -27,11 +27,11 @@ faq:
     answer: "Kaliではsudo apt install realtek-rtl88xxau-dkmsを直接実行してプレビルドドライバーをインストールできます。"
 ---
 
-AWUS036ACHを入手したのに、Linuxがデバイスを認識しない。よくある話です。このチップにはRTL8812AUドライバーが必要で、最初からは動きません。このガイドでは、国内ミラーだけを使って約30分でセットアップを完了させます。GitHubへのアクセスは不要です。
+AWUS036ACHを入手したのに、Linuxがデバイスを認識しない。よくある話です。このチップにはRTL8812AUドライバーが必要で、最初からは動きません。このガイドでは、システムパッケージは国内ミラー、ドライバーのソースは検証済みのGitHubリポジトリから取得し、約30分でセットアップを完了させます。GitHubが遅い場合は、信頼できるプロキシまたはミラーを使ってください。
 
 
 {{< tldr >}}
-AWUS036ACHはRTL8812AUチップを採用し、KaliではaptでDKMSドライバーをインストール、Ubuntu/DebianではGiteeからコンパイル、30分でモニターモードとパケットインジェクションを利用できます。
+AWUS036ACHはRTL8812AUチップを採用し、KaliではaptでDKMSドライバーをインストール、Ubuntu/DebianではGitHubからコンパイル、30分でモニターモードとパケットインジェクションを利用できます。
 {{< /tldr >}}
 
 以下を用意してください：
@@ -135,27 +135,25 @@ modinfo 88XXau | grep -E "filename|version"
 sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r)
 ```
 
-Giteeからドライバーのソースコードをダウンロードします。
+GitHubからドライバーのソースコードをダウンロードします。
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
-> **注意：** そのURLが開かない場合は、Giteeで `rtl8812au` を検索して、最近更新されたフォークを選んでください。[files.alfa.com.tw](https://files.alfa.com.tw) からソースアーカイブを直接ダウンロードすることもできます。
+> **注意：** メンテナンスされている上流ドライバーは [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) です。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。[files.alfa.com.tw](https://files.alfa.com.tw) からソースアーカイブを直接ダウンロードすることもできます。
 
 クローンしたディレクトリに移動して、コンパイルとインストールを実行します。
 
 ```bash
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
+cd 8812au-20210820
+sudo ./install-driver.sh
 ```
 
 実行中のカーネルにドライバーを読み込みます。
 
 ```bash
-sudo modprobe 88XXau
+sudo modprobe 8812au
 ```
 
 ---
@@ -275,58 +273,57 @@ sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r
 
 ---
 
-### ステップ3：ドライバーソースをダウンロードする（中国ミラー）
+### ステップ3：ドライバーソースをダウンロードする（GitHub）
 
-中国国内でアクセス可能なGiteeからドライバーリポジトリをクローンします：
+GitHubからドライバーリポジトリをクローンします：
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
 クローンしたフォルダに移動します：
 
 ```bash
-cd rtl8812au
+cd 8812au-20210820
 ```
 
-> **注意：** URLがタイムアウトするか404が返る場合は、[gitee.com](https://gitee.com) で `rtl8812au` を検索して、最新のコミット日付があるフォークを選んでください。
+> **注意：** GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。
 
 ---
 
 ### ステップ4：コンパイルとインストール
 
-ソースからカーネルモジュールをビルドします：
+インストールスクリプトを実行します。カーネルモジュールをビルドし、カーネル更新後も維持されるようDKMSに登録します：
 
 ```bash
-make
+sudo ./install-driver.sh
 ```
 
-システムにインストールします：
+DKMSがモジュールを登録したことを確認します：
 
 ```bash
-sudo make install
+sudo dkms status
 ```
 
-カーネルアップグレード後も動作するようDKMSに登録します：
+新しいモジュールを正しく読み込むため、再起動します：
 
 ```bash
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
+sudo reboot
 ```
 
 実行中のカーネルにモジュールを読み込みます：
 
 ```bash
-sudo modprobe 88XXau
+sudo modprobe 8812au
 ```
 
 モジュールが正しく読み込まれているか確認します：
 
 ```bash
-modinfo 88XXau | grep filename
+modinfo 8812au | grep filename
 ```
 
-`88XXau.ko` で終わるパスが表示されれば、ドライバーは有効です。
+`8812au.ko` で終わるパスが表示されれば、ドライバーは有効です。
 
 ---
 
@@ -396,32 +393,29 @@ sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r
 
 このコマンドは実行中のカーネルバージョンに合ったヘッダーパッケージを自動的にインストールします。
 
-### ステップ3：ドライバーソースをダウンロードする（中国ミラー）
+### ステップ3：ドライバーソースをダウンロードする（GitHub）
 
-Giteeからドライバーリポジトリをクローンします：
+GitHubからドライバーリポジトリをクローンします：
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
+git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
 プロジェクトフォルダに移動します：
 
 ```bash
-cd rtl8812au
+cd 8812au-20210820
 ```
 
-> **URLにアクセスできない場合？** Giteeで `rtl8812au` を検索して、最近更新されたフォークを選んでください。
+> **注意：** GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。
 
 ### ステップ4：コンパイルとインストール
 
-`rtl8812au` フォルダ内で以下のコマンドを順番に実行します：
+`8812au-20210820` フォルダ内で以下のコマンドを順番に実行します：
 
 ```bash
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 `dkms` がドライバーを登録するので、カーネルアップデート後も自動的に機能し続けます。
@@ -540,13 +534,10 @@ sudo apt install -y realtek-rtl88xxau-dkms
 
 ```bash
 sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r)
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 ---
@@ -616,16 +607,16 @@ AWUS036ACHに搭載されたRTL8812AUチップは、Linux上でのVIFサポー�
 | 問題 | 考えられる原因 | 解決方法 |
 |------|--------------|---------|
 | `lsusb` に 0bda:8812 が表示されない | アダプターが給電されていない、またはケーブルが不良 | 別のUSBポートを試してください。ラズベリーパイではセルフパワーハブを使用してください。 |
-| `make` がヘッダーエラーで失敗する | カーネルヘッダーが見つからないかバージョンが一致しない | `sudo apt install linux-headers-$(uname -r)` を実行してください |
+| `install-driver.sh` がヘッダーエラーで失敗する | カーネルヘッダーが見つからないかバージョンが一致しない | `sudo apt install linux-headers-$(uname -r)` を実行してください |
 | `modprobe 88XXau` が失敗する | Secure Bootが未署名モジュールをブロックしている | BIOSでSecure Bootを無効にするか、モジュールに署名してください |
-| カーネルアップデート後にドライバーが消える | ドライバーがDKMSに登録されていない | ソースディレクトリから `sudo dkms install rtl8812au/$(cat VERSION)` を再実行してください |
+| カーネルアップデート後にドライバーが消える | ドライバーがDKMSに登録されていない | ソースディレクトリから `sudo ./install-driver.sh` を再実行してください |
 | `airmon-ng start wlan0` が失敗する | NetworkManagerがまだ実行中 | 先に `sudo airmon-ng check kill` を実行してください |
 | モニターモードが開始されるがトラフィックをキャプチャしない | チャンネルまたはインターフェース名が違う | `iwconfig` でインターフェースを確認し、チャンネルを設定：`iwconfig wlan0mon channel 6` |
 | インジェクションテストで "No Answer" と表示される | APが遠すぎるか、インターフェース名が間違っている | APに近づいてください。`wlan0` ではなく `wlan0mon` を使用してください |
 
 ## 中国ミラーリファレンス
 
-このガイドで使用するリソース一覧。GitHubは一切不要です：
+このガイドで使用するリソース一覧：
 
 | リソース | URL | 用途 |
 |---------|-----|------|
@@ -635,7 +626,7 @@ AWUS036ACHに搭載されたRTL8812AUチップは、Linux上でのVIFサポー�
 | 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推奨） |
 | 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推奨） |
 | 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARMイメージ（バックアップ） |
-| RTL8812AUドライバー（Gitee） | [gitee.com/mirrors/rtl8812au](https://gitee.com/mirrors/rtl8812au) | 手動コンパイルの代替 |
+| RTL8812AUドライバー（GitHub） | [github.com/morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | 手動コンパイルの代替 |
 
 
 ---
@@ -666,5 +657,5 @@ AWUS036ACHに搭載されたRTL8812AUチップは、Linux上でのVIFサポー�
 1. [aircrack-ng公式ドキュメント](https://www.aircrack-ng.org/)
 2. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
 3. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
-4. [Gitee rtl8812auミラー](https://gitee.com/mirrors/rtl8812au)
+4. [GitHub: morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820)
 5. [Realtek RTL8812AUドライバー](https://www.realtek.com/)

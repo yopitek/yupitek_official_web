@@ -8,7 +8,7 @@ slug: "awus036ach-china-install-guide"
 tags: ["alfa", "awus036ach", "kali-linux", "ubuntu", "驅動", "中國", "監聽模式"]
 categories: ["驅動指南"]
 series: ["alfa-china-install-guide"]
-description: "手把手教你在中國境內使用國內鏡像源安裝 ALFA AWUS036ACH 驅動。涵蓋 Kali Linux, Ubuntu 22/24, Debian 和 樹莓派。無需訪問 GitHub。"
+description: "手把手教你在中國境內使用國內鏡像源安裝 ALFA AWUS036ACH 驅動。涵蓋 Kali Linux, Ubuntu 22/24, Debian 和 樹莓派。編譯工具使用國內鏡像，驅動原始碼取自 GitHub。"
 related_product: "/zh-tw/products/alfa/awus036ach/"
 series_order: 1
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
@@ -18,7 +18,7 @@ faq:
   - question: "AWUS036ACH 用什麼晶片？需要額外安裝驅動嗎？"
     answer: "AWUS036ACH 採用 Realtek RTL8812AU 晶片，驅動不在 Linux 核心內建，需要手動安裝。"
   - question: "在中國安裝 AWUS036ACH 驅動需要翻牆嗎？"
-    answer: "不需要，全程使用中科大、阿里雲等國內鏡像及 Gitee 源碼鏡像即可完成安裝。"
+    answer: "不一定。從已驗證的 GitHub 儲存庫（morrownr/8812au-20210820）下載驅動原始碼；若 GitHub 速度較慢，請使用你信任的代理或鏡像。編譯工具仍可用國內鏡像安裝。"
   - question: "AWUS036ACH 支援監聽模式和封包注入嗎？"
     answer: "支援，安裝 RTL8812AU 驅動後用 airmon-ng 即可開啟監聽模式，aireplay-ng 可測試封包注入。"
   - question: "AWUS036ACH 在樹莓派上能用嗎？"
@@ -27,13 +27,13 @@ faq:
     answer: "Kali 可直接執行 sudo apt install realtek-rtl88xxau-dkms 安裝預編譯驅動。"
 ---
 
-ALFA AWUS036ACH 搭載 RTL8812AU 晶片，在中國透過國內鏡像源安裝驅動即可支援監聽模式與封包注入，全程無需翻牆。
+ALFA AWUS036ACH 搭載 RTL8812AU 晶片，在中國透過國內鏡像源安裝驅動即可支援監聽模式與封包注入，編譯工具使用國內鏡像，驅動原始碼取自 GitHub。
 
 {{< tldr >}}
-AWUS036ACH 採用 RTL8812AU 晶片，Kali 用 apt 裝 DKMS 驅動，Ubuntu/Debian 從 Gitee 編譯，30 分鐘完成監聽模式與封包注入。
+AWUS036ACH 採用 RTL8812AU 晶片，Kali 用 apt 裝 DKMS 驅動，Ubuntu/Debian 從 GitHub 編譯，30 分鐘完成監聽模式與封包注入。
 {{< /tldr >}}
 
-你剛拿到 ALFA AWUS036ACH，結果 Linux 系統沒反應？別擔心，這很正常。這款網卡用的晶片需要 RTL8812AU 驅動，而且它不是插上就能用的。本指南會帶你花大約 30 分鐘完成安裝，全程只用國內鏡像源，完全不需要翻牆去 GitHub。
+你剛拿到 ALFA AWUS036ACH，結果 Linux 系統沒反應？別擔心，這很正常。這款網卡用的晶片需要 RTL8812AU 驅動，而且它不是插上就能用的。本指南會帶你花大約 30 分鐘完成安裝，系統套件使用國內鏡像源，驅動原始碼則從已驗證的 GitHub 儲存庫下載；若 GitHub 速度較慢，請使用你信任的代理或鏡像。
 
 ## 在你開始之前
 
@@ -176,13 +176,13 @@ sudo apt update
 sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
 ```
 
-### 第三步：從 Gitee 下載驅動
+### 第三步：從 GitHub 下載驅動
 
-國內訪問 GitHub 慢，我們用 Gitee 鏡像：
+上游驅動由 morrownr 維護；若 GitHub 速度較慢，請使用你信任的代理或鏡像。請在下面的指令中複製驅動原始碼：
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
 sudo ./install-driver.sh
 sudo reboot
 ```
@@ -204,7 +204,7 @@ sudo reboot
 |----------|-----|---------|
 | 中科大鏡像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 首選 |
 | 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 首選 |
-| Gitee | [gitee.com](https://gitee.com) | 驅動源碼 |
+| GitHub (morrownr) | [github.com/morrownr](https://github.com/morrownr) | 驅動源碼 |
 
 {{< faq >}}
 
@@ -221,5 +221,5 @@ sudo reboot
 1. [aircrack-ng 官方文件](https://www.aircrack-ng.org/)
 2. [ALFA Network 官網](https://www.alfa.com.tw/)
 3. [Kali Linux 官方文件](https://www.kali.org/docs/)
-4. [Gitee rtl8812au 鏡像](https://gitee.com/mirrors/rtl8812au)
+4. [GitHub: morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820)
 5. [Realtek RTL8812AU 驅動](https://www.realtek.com/)

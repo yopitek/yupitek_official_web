@@ -146,18 +146,15 @@ sudo apt install -y linux-modules-extra-$(uname -r)
 sudo modprobe mt76x2u
 ```
 
-お使いのカーネルバージョン用のパッケージが利用できない場合は、ソースからドライバーをコンパイルしてください。
+お使いのカーネルバージョン用のパッケージが利用できない場合は、より新しいカーネルにアップグレードしてください。ドライバーはLinuxメインラインカーネルに含まれているため、コンパイルは不要です。
 
 ```bash
-sudo apt install -y git build-essential libssl-dev
-git clone https://gitee.com/mirrors/mt76.git
-cd mt76
-make
-sudo make install
-sudo modprobe mt76x2u
+sudo apt update
+sudo apt full-upgrade -y
+sudo reboot
 ```
 
-> **注意:** そのGitee URLが開かない場合は、Giteeで`mt76`を検索し、最近更新されたフォークを選んでください。[files.alfa.com.tw](https://files.alfa.com.tw) からドライバーアーカイブを直接ダウンロードすることもできます。
+> **注意：** `mt76x2u` はLinuxメインラインカーネルに含まれているため、ソースからのビルドは不要です。[files.alfa.com.tw](https://files.alfa.com.tw) からドライバーアーカイブを直接ダウンロードすることもできます。
 
 ---
 
@@ -590,7 +587,7 @@ sudo ip link set mon0 up
 | アリクラウドミラー | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推奨） |
 | 中科大ミラー | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推奨） |
 | 华为云ミラー | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARMイメージ（バックアップ） |
-| MT76ドライバー（Gitee） | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | 手動コンパイルの代替 |
+| MT76ドライバー（メインラインカーネル） | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | カーネル内蔵、コンパイル不要 |
 
 
 ---

@@ -146,18 +146,15 @@ sudo apt install -y linux-modules-extra-$(uname -r)
 sudo modprobe mt76x2u
 ```
 
-إذا لم تكن الحزمة متاحة لإصدار نواتك تحديدًا، فاصرف التعريف من المصدر عوضًا عن ذلك.
+إذا لم تكن الحزمة متاحة لإصدار نواتك تحديدًا، فقم بترقية النواة إلى إصدار أحدث. التعريف جزء من نواة Linux الرئيسية، لذا لا حاجة إلى التجميع.
 
 ```bash
-sudo apt install -y git build-essential libssl-dev
-git clone https://gitee.com/mirrors/mt76.git
-cd mt76
-make
-sudo make install
-sudo modprobe mt76x2u
+sudo apt update
+sudo apt full-upgrade -y
+sudo reboot
 ```
 
-> **ملاحظة:** إذا لم يُحمَّل رابط Gitee، ابحث في Gitee عن `mt76` واختر أحدث نسخة مُحدَّثة. يمكنك أيضًا تنزيل حزم التعريف مباشرةً من [files.alfa.com.tw](https://files.alfa.com.tw).
+> **ملاحظة:** `mt76x2u` جزء من نواة Linux الرئيسية، لذا لا حاجة إلى البناء من المصدر. يمكنك أيضًا تنزيل حزم التعريف مباشرةً من [files.alfa.com.tw](https://files.alfa.com.tw).
 
 ---
 
@@ -590,7 +587,7 @@ sudo ip link set mon0 up
 | 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (موصى به) |
 | 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (موصى به) |
 | 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | صور Kali ARM (احتياطي) |
-| تعريف MT76 (Gitee) | [gitee.com/mirrors/mt76](https://gitee.com/mirrors/mt76) | التصريف اليدوي الاحتياطي |
+| تعريف MT76 (نواة Linux الرئيسية) | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | مدمج في النواة، دون حاجة إلى تجميع |
 
 {{< faq >}}
 

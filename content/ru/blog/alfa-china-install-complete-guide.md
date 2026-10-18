@@ -9,12 +9,12 @@ tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "driver", "china", "monit
 categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 9
-description: "Исчерпывающее руководство по установке всех USB WiFi адаптеров Alfa на Linux в Китае. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi. Без GitHub — только отечественные зеркала."
+description: "Исчерпывающее руководство по установке всех USB WiFi адаптеров Alfa на Linux в Китае. Охватывает Kali Linux, Ubuntu 22/24, Debian и Raspberry Pi. Отечественные зеркала для системных пакетов и проверенные репозитории GitHub для исходников драйверов."
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 
 faq:
   - question: "Нужен ли VPN для установки адаптеров Alfa WiFi в Китае?"
-    answer: "Нет,全程 используются внутренние зеркала USTC, Alibaba Cloud, Tsinghua и зеркала исходного кода Gitee."
+    answer: "Не обязательно. Системные пакеты берутся из внутренних зеркал (USTC, Aliyun, Tsinghua); исходники драйверов, не входящих в ядро, клонируются из проверенных репозиториев GitHub автора morrownr. Если GitHub работает медленно, используйте надёжный прокси или зеркало."
   - question: "Какой адаптер Alfa лучше всего подходит для режима монитора и инъекции пакетов?"
     answer: "AWUS036ACM с чипом MT7612U, драйвер встроен в ядро и полностью поддерживает VIF — лучший выбор."
   - question: "Какой адаптер Alfa поддерживает WiFi 6?"
@@ -23,10 +23,10 @@ faq:
     answer: "AWUS036AXM и AWUS036AXML с чипом MT7921AUN поддерживают трёхдиапазонный WiFi 6E."
   - question: "На что обратить внимание при использовании адаптеров Alfa на Raspberry Pi?"
     answer: "Обязательно используйте USB-хаб с питанием и установите Kali ARM64 для лучшей поддержки драйверов."
----Полное руководство по установке адаптеров Alfa WiFi в Linux для Китая, охватывающее Kali, Ubuntu, Debian, Raspberry Pi, поддерживает все чипсеты RTL8812AU, MT7612U, RTL8832BU, используются внутренние зеркала без VPN.
+---Полное руководство по установке адаптеров Alfa WiFi в Linux для Китая, охватывающее Kali, Ubuntu, Debian, Raspberry Pi, поддерживает все чипсеты RTL8812AU, MT7612U, RTL8832BU, системные пакеты берутся из внутренних зеркал, исходники драйверов — из проверенных репозиториев GitHub.
 
 {{< tldr >}}
-Полное руководство по установке адаптеров Alfa WiFi в Linux для Китая, охватывающее Kali, Ubuntu, Debian, Raspberry Pi, поддерживает все чипсеты RTL8812AU, MT7612U, RTL8832BU, используются внутренние зеркала без VPN.
+Полное руководство по установке адаптеров Alfa WiFi в Linux для Китая, охватывающее Kali, Ubuntu, Debian, Raspberry Pi, поддерживает все чипсеты RTL8812AU, MT7612U, RTL8832BU, системные пакеты берутся из внутренних зеркал, исходники драйверов — из проверенных репозиториев GitHub.
 {{< /tldr >}}
 
 
@@ -39,7 +39,7 @@ faq:
 - Вам нужно включить режим мониторинга и инъекцию пакетов для тестирования беспроводных сетей
 - Вы не уверены, какой драйвер нужен вашей конкретной модели Alfa
 
-Это руководство решает **все эти проблемы**. Мы проведём вас через установку **каждого USB WiFi адаптера Alfa** на **всех основных дистрибутивах Linux**, используя только **зеркала, доступные из Китая**. Без GitHub. Без лишних сложностей.
+Это руководство решает **все эти проблемы**. Мы проведём вас через установку **каждого USB WiFi адаптера Alfa** на **всех основных дистрибутивах Linux**, используя **зеркала, доступные из Китая**, для системных пакетов и проверенные репозитории GitHub для исходников драйверов. Без лишних сложностей.
 
 ---
 
@@ -47,7 +47,7 @@ faq:
 
 USB WiFi адаптеры Alfa популярны среди специалистов по тестированию на проникновение, сетевых инженеров и энтузиастов беспроводных сетей. Они поддерживают режим мониторинга и инъекцию пакетов — функции, которых нет у большинства потребительских WiFi адаптеров.
 
-Но проблема в том, что **большинство руководств по установке драйверов предполагают наличие доступа к GitHub**. Если вы находитесь в Китае, это невозможно. Данное руководство разработано специально для пользователей в Китае и использует исключительно зеркала и ресурсы, работающие внутри китайской интернет-инфраструктуры.
+Но проблема в том, что **большинство руководств по установке драйверов предполагают, что вы быстро получаете доступ к GitHub**. Из Китая GitHub может работать медленно или нестабильно. Это руководство устанавливает системные пакеты из внутренних зеркал и клонирует исходники драйверов из проверенных репозиториев GitHub; если GitHub работает медленно, используйте надёжный прокси или зеркало.
 
 ---
 
@@ -140,7 +140,7 @@ lsusb
 | **Зеркало Aliyun** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (рекомендуется) |
 | **Зеркало USTC** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (рекомендуется) |
 | **Зеркало Huawei Cloud** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Образы Kali ARM (резервный) |
-| **Gitee (альтернатива GitHub)** | [gitee.com](https://gitee.com) | Исходный код драйверов |
+| **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | Исходный код драйверов |
 
 ---
 
@@ -300,16 +300,13 @@ sudo modprobe 8852bu
 
 #### Серия AC — Realtek (RTL8812AU)
 
-Клонируйте с Gitee:
+Клонируйте с GitHub:
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### Серия AC — MediaTek (MT7612U)
@@ -380,13 +377,10 @@ sudo modprobe 8852bu
 #### Серия AC — Realtek (RTL8812AU)
 
 ```bash
-git clone https://gitee.com/mirrors/rtl8812au.git
-cd rtl8812au
-make
-sudo make install
-sudo dkms add .
-sudo dkms install rtl8812au/$(cat VERSION)
-sudo modprobe 88XXau
+git clone https://github.com/morrownr/8812au-20210820.git
+cd 8812au-20210820
+sudo ./install-driver.sh
+sudo modprobe 8812au
 ```
 
 #### Серия AC — MediaTek (MT7612U)
@@ -662,14 +656,14 @@ sudo ip link set mon0 up
 
 | Модель | Чипсет | Драйвер | Источник для Китая |
 |-------|---------|--------|---------------------|
-| AWUS036ACH | RTL8812AU | `88XXau` | Gitee: mirrors/rtl8812au |
+| AWUS036ACH | RTL8812AU | `8812au` | GitHub: morrownr/8812au-20210820 |
 | AWUS036ACM | MT7612U | `mt76x2u` | Встроенный драйвер ядра |
 | AWUS036ACS | RTL8811AU | `8821au` | GitHub: morrownr/8821au-20210708 |
 | AWUS036AX | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
 | AWUS036AXM | MT7921AUN | `mt7921u` | Встроенный драйвер ядра |
 | AWUS036AXML | MT7921AUN | `mt7921u` | Встроенный драйвер ядра |
 | AWUS036AXER | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036EAC | RTL8814AU | `8814au` | Gitee: mirrors/rtl8814au |
+| AWUS036EAC | RTL8814AU | `8814au` | GitHub: morrownr/8814au |
 
 ---
 
@@ -712,4 +706,4 @@ sudo ip link set mon0 up
 2. [Драйвер Linux Kernel mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
 3. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
 4. [Официальная документация Kali Linux](https://www.kali.org/docs/)
-5. [Зеркало исходного кода драйверов Gitee](https://gitee.com/mirrors)
+5. [GitHub: morrownr](https://github.com/morrownr)

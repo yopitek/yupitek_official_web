@@ -7,13 +7,13 @@ tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "driver", "china", "monit
 categories: ["Guides de Pilotes"]
 series: ["alfa-china-install-guide"]
 series_order: 9
-description: "Le guide ultime pour installer tous les adaptateurs WiFi USB Alfa sous Linux en Chine. Couvre Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi. Aucun GitHub requis - utilisez uniquement des miroirs domestiques."
+description: "Le guide ultime pour installer tous les adaptateurs WiFi USB Alfa sous Linux en Chine. Couvre Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi. Miroirs domestiques pour les paquets système, dépôts GitHub vérifiés pour les sources des pilotes."
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "Faut-il un VPN pour installer un adaptateur WiFi Alfa en Chine ?"
-    answer: "Non, l'installation utilise uniquement des miroirs nationaux (USTC, Aliyun, Tsinghua) et Gitee pour le code source."
+    answer: "Pas nécessairement. Les paquets système viennent de miroirs nationaux (USTC, Aliyun, Tsinghua) ; les sources des pilotes hors noyau sont clonées depuis les dépôts GitHub vérifiés de morrownr. Si GitHub est lent, utilisez un proxy ou un miroir de confiance."
   - question: "Quel adaptateur Alfa est le meilleur pour le mode moniteur et l'injection de paquets ?"
     answer: "L'AWUS036ACM équipé de la puce MT7612U, dont le pilote est intégré au noyau et qui offre un support VIF complet, est le meilleur choix."
   - question: "Quels adaptateurs Alfa prennent en charge le Wi-Fi 6 ?"
@@ -25,7 +25,7 @@ faq:
 ---
 
 {{< tldr >}}
-Le guide ultime d'installation des adaptateurs WiFi Alfa sous Linux en Chine continentale, couvrant Kali, Ubuntu, Debian et Raspberry Pi, avec support de toutes les puces RTL8812AU, MT7612U et RTL8832BU via des miroirs nationaux sans VPN.
+Le guide ultime d'installation des adaptateurs WiFi Alfa sous Linux en Chine continentale, couvrant Kali, Ubuntu, Debian et Raspberry Pi, avec support de toutes les puces RTL8812AU, MT7612U et RTL8832BU via des miroirs nationaux pour les paquets système et des dépôts GitHub vérifiés pour les sources des pilotes.
 {{< /tldr >}}
 
 Si vous lisez ceci, c'est probablement parce que vous avez acheté un adaptateur WiFi USB Alfa et que vous vous retrouvez bloqué car :
@@ -40,7 +40,7 @@ Si vous lisez ceci, c'est probablement parce que vous avez acheté un adaptateur
 - Vous devez activer le mode moniteur et l'injection de paquets pour des tests sans fil
 - Vous ne savez pas de quel pilote votre modèle Alfa spécifique a besoin
 
-Ce guide résout **tous ces problèmes**. Nous vous accompagnerons dans l'installation de **chaque adaptateur WiFi USB Alfa** sur **toutes les distributions Linux majeures**, en utilisant uniquement des **miroirs accessibles en Chine**. Pas de GitHub. Pas de frustration.
+Ce guide résout **tous ces problèmes**. Nous vous accompagnerons dans l'installation de **chaque adaptateur WiFi USB Alfa** sur **toutes les distributions Linux majeures**, en utilisant des **miroirs accessibles en Chine** pour les paquets système et des dépôts GitHub vérifiés pour les sources des pilotes. Pas de frustration.
 
 ---
 
@@ -48,7 +48,7 @@ Ce guide résout **tous ces problèmes**. Nous vous accompagnerons dans l'instal
 
 Les adaptateurs WiFi USB Alfa sont populaires parmi les testeurs d'intrusion, les ingénieurs réseau et les passionnés du sans fil. Ils prennent en charge le mode moniteur et l'injection de paquets — des fonctionnalités que la plupart des adaptateurs WiFi grand public n'ont pas.
 
-Mais voici le problème : **la plupart des guides d'installation supposent que vous pouvez accéder à GitHub**. Si vous êtes en Chine, ce n'est pas possible. Ce guide est spécifiquement conçu pour les utilisateurs chinois, en utilisant uniquement des miroirs et des ressources qui fonctionnent au sein de l'infrastructure internet de la Chine.
+Mais voici le problème : **la plupart des guides d'installation supposent que vous pouvez accéder rapidement à GitHub**. Depuis la Chine, GitHub peut être lent ou peu fiable. Ce guide installe les paquets système depuis des miroirs nationaux et clone les sources des pilotes depuis des dépôts GitHub vérifiés ; si GitHub est lent, utilisez un proxy ou un miroir de confiance.
 
 ---
 
@@ -99,7 +99,7 @@ Toutes les ressources de ce guide utilisent ces miroirs accessibles en Chine :
 | **Téléchargements officiels Alfa** | [files.alfa.com.tw](https://files.alfa.com.tw) | Packs de pilotes, micrologiciels |
 | **Miroir Université Tsinghua** | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | **Miroir Aliyun** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommandé) |
-| **Gitee (alternative à GitHub)** | [gitee.com](https://gitee.com) | Code source des pilotes |
+| **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | Code source des pilotes |
 
 ---
 
@@ -160,4 +160,4 @@ Ce guide couvre **tous les adaptateurs WiFi USB Alfa** sur **toutes les distribu
 2. [Pilote mt76 du noyau Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek)
 3. [Site officiel ALFA Network](https://www.alfa.com.tw/)
 4. [Documentation officielle Kali Linux](https://www.kali.org/docs/)
-5. [Miroir des pilotes sur Gitee](https://gitee.com/mirrors)
+5. [GitHub: morrownr](https://github.com/morrownr)

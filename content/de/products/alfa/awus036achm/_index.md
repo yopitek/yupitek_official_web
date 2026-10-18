@@ -69,10 +69,10 @@ Alle ALFA-Adapter verfügen über einen Standard-RP-SMA-Anschluss. Erweitern Sie
 | Antenne | Frequenz | Gewinn | Typ |
 |---------|----------|--------|-----|
 | [ALFA APA-M04](/de/products/alfa/apa-m04/) | 2,4 GHz | 7 dBi | Innen-Panel |
-| [ALFA APA-M25](/de/products/alfa/apa-m25/) | 2,4 / 5 GHz | 7 dBi | Dual-Band Innen-Panel |
-| [ALFA APA-M25-6E](/de/products/alfa/apa-m25-6e/) | 2,4 / 5 / 6 GHz | 7 dBi | Tri-Band Innen-Panel |
+| [ALFA APA-M25](/de/products/alfa/apa-m25/) | 2,4 / 5 GHz | 8 / 10 dBi | Dual-Band Innen-Panel |
+| [ALFA APA-M25-6E](/de/products/alfa/apa-m25-6e/) | 2,4 / 5 / 6 GHz | 8 / 10 / 9 dBi | Tri-Band Innen-Panel |
 | [ARS 25-57A](/de/products/alfa/ars-25-57a/) | 2,4 / 5 GHz | 2,5 / 7 dBi | Outdoor Omni |
-| [ARS NT5B7](/de/products/alfa/ars-nt5b7/) | 2,4 / 5 GHz | 5 / 7 dBi | Omni |
+| [ARS NT5B7](/de/products/alfa/ars-nt5b7/) | 2,4 / 5 GHz | 4 / 5 / 7 dBi | Omni |
 
 {{< alert >}}
 Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).

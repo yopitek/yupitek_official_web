@@ -101,10 +101,10 @@ Todos os adaptadores USB ALFA utilizam um conector RP-SMA padrão. Faça upgrade
 | Antena | Frequência | Ganho | Tipo |
 |--------|-----------|-------|------|
 | [ALFA APA-M04](/pt/products/alfa/apa-m04/) | 2.4 GHz | 7 dBi | Painel interno direcional |
-| [ALFA APA-M25](/pt/products/alfa/apa-m25/) | 2.4 / 5 GHz | 7 dBi | Painel interno dual band |
-| [ALFA APA-M25-6E](/pt/products/alfa/apa-m25-6e/) | 2.4 / 5 / 6 GHz | 7 dBi | Painel interno tri band |
-| [ARS 25-57A](/pt/products/alfa/ars-25-57a/) | 2.4 / 5 GHz | 2.5 / 7 dBi | Omnidirecional exterior |
-| [ARS NT5B7](/pt/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | Omnidirecional |
+| [ALFA APA-M25](/pt/products/alfa/apa-m25/) | 2.4 / 5 GHz | 8 / 10 dBi | Painel interno dual band |
+| [ALFA APA-M25-6E](/pt/products/alfa/apa-m25-6e/) | 2.4 / 5 / 6 GHz | 8 / 10 / 9 dBi | Painel interno tri band |
+| [ARS 25-57A](/pt/products/alfa/ars-25-57a/) | 2.4 / 5 GHz | 5 / 7 dBi | Omnidirecional exterior |
+| [ARS NT5B7](/pt/products/alfa/ars-nt5b7/) | 2.4 / 5 / 6 GHz | 4 / 5 / 7 dBi | Omnidirecional |
 
 {{< alert >}}
 Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).

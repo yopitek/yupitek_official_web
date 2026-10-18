@@ -17,7 +17,7 @@ faq:
   - question: "Wie wählt man zwischen einer gerichteten und einer omnidirektionalen Antenne?"
     answer: "Eine gerichtete Antenne eignet sich für punktuelle Audits mit bekannter Zielrichtung, während eine omnidirektionale Antenne für mobile Inspektionen oder Szenarien mit unbekannter Zielposition geeignet ist. Die Wahl hängt von der Nutzungsumgebung ab."
   - question: "Was ist der Unterschied zwischen APA-M25 und ARS NT5B7?"
-    answer: "APA-M25 ist eine 7 dBi gerichtete Panelantenne, die sich für fokussierte Tests in Innenräumen eignet. ARS NT5B7 ist eine 5/7 dBi omnidirektionale Antenne, die universell für Innen- und Außenbereiche geeignet ist. Erstere hat eine starke Richtwirkung, während letztere eine breitere Abdeckung bietet."
+    answer: "APA-M25 ist eine 8/10 dBi gerichtete Panelantenne, die sich für fokussierte Tests in Innenräumen eignet. ARS NT5B7 ist eine 4/5/7 dBi omnidirektionale Antenne, die universell für Innen- und Außenbereiche geeignet ist. Erstere hat eine starke Richtwirkung, während letztere eine breitere Abdeckung bietet."
   - question: "Erfordert der Austausch der Antenne die Installation von Treibern oder Einstellungen?"
     answer: "Nicht erforderlich. Die Antennen-Upgrades sind rein hardwarebasiert und erfordern keine Aktualisierung der Treiber, Einstellungen oder Neustarts. Nach der Installation funktioniert die Netzwerkkarte sofort mit der neuen Antenne."
 ---ALFA-Netzwerkkarten verwenden durchgehend RP-SMA-Anschlüsse. Die fünf Antennenzubehörteile decken Single-Band bis Tri-Band sowie gerichtet bis omnidirektional ab. Die Installation erfolgt werkzeuglos in weniger als 30 Sekunden, und die Signalstärke kann nach dem Upgrade um 4–8 dBm gesteigert werden.
@@ -100,14 +100,14 @@ Die [APA-M25](/de/products/alfa/apa-m25/) erweitert das Konzept der Panel-Antenn
 
 **Spezifikationen:**
 - **Frequenz:** 2,4 GHz + 5 GHz (Dual-Band)
-- **Gewinn:** 7 dBi
+- **Gewinn:** 8 dBi (2,4 GHz) / 10 dBi (5 GHz)
 - **Typ:** Richtantenne (Panel)
 - **Umgebung:** Innenbereich
 - **Anschluss:** RP-SMA
 
 **Wann Sie die APA-M25 wählen sollten:**
 
-Für die meisten Penetration Tester, die den AWUS036ACH oder AWUS036ACM verwenden, ist die APA-M25 das **bevorzugte Antennen-Upgrade**. Sie deckt beide Frequenzbänder ab, auf denen Ihr Adapter arbeitet, bietet 7 dBi fokussierten Gewinn und funktioniert in den meisten Indoor-Assessment-Szenarien.
+Für die meisten Penetration Tester, die den AWUS036ACH oder AWUS036ACM verwenden, ist die APA-M25 das **bevorzugte Antennen-Upgrade**. Sie deckt beide Frequenzbänder ab, auf denen Ihr Adapter arbeitet, bietet 8–10 dBi fokussierten Gewinn und funktioniert in den meisten Indoor-Assessment-Szenarien.
 
 Aufgrund ihrer Richtwirkung richten Sie sie auf den Zielbereich aus. Dies ist besonders wertvoll bei:
 - Assessments in Bürogebäuden, bei denen Sie von einem Flur oder einem angrenzenden Raum aus prüfen
@@ -122,7 +122,7 @@ Die [APA-M25-6E](/de/products/alfa/apa-m25-6e/) ist die nächste Generation der 
 
 **Spezifikationen:**
 - **Frequenz:** 2,4 GHz + 5 GHz + 6 GHz (Tri-Band)
-- **Gewinn:** 7 dBi
+- **Gewinn:** 8 dBi (2,4 GHz) / 10 dBi (5 GHz) / 9 dBi (6 GHz)
 - **Typ:** Richtantenne (Panel)
 - **Umgebung:** Innenbereich
 - **Anschluss:** RP-SMA
@@ -147,7 +147,7 @@ Die [ARS 25-57A](/de/products/alfa/ars-25-57a/) bietet eine **wetterfeste Outdoo
 
 **Spezifikationen:**
 - **Frequenz:** 2,4 GHz + 5 GHz (Dual-Band)
-- **Gewinn:** 2,5 dBi (2,4 GHz) / 7 dBi (5 GHz)
+- **Gewinn:** 5 dBi (2,4 GHz) / 7 dBi (5 GHz)
 - **Typ:** Rundstrahlantenne (Omni)
 - **Umgebung:** Außenbereich (wetterfest)
 - **Anschluss:** RP-SMA
@@ -161,28 +161,28 @@ Das omnidirektionale Muster bedeutet, dass sie in alle horizontalen Richtungen g
 - **Perimeter-Assessments** — Umrunden eines Gebäudes im Außenbereich
 - **Parkplatz-Audits** — stationäre Außenbewertung mit natürlicher 360°-Abdeckung
 
-Der Unterschied im Gewinn zwischen den Bändern (2,5 dBi bei 2,4 GHz vs. 7 dBi bei 5 GHz) spiegelt die Physik wider — um omnidirektional einen hohen Gewinn bei 2,4 GHz zu erzielen, ist eine längere physische Antenne erforderlich, als die meisten Outdoor-Stäbe bieten, während 5 GHz mehr von derselben Antennenlänge profitiert.
+Der Unterschied im Gewinn zwischen den Bändern (5 dBi bei 2,4 GHz vs. 7 dBi bei 5 GHz) spiegelt die Physik wider — dieselbe Antennenlänge ist bei 5 GHz elektrisch länger und bietet daher mehr Gewinn als bei 2,4 GHz.
 
 ---
 
-### 5. ARS NT5B7 — 2,4/5 GHz Dual-Band Rundstrahlantenne für Innen/Außen
+### 5. ARS NT5B7 — 2,4/5/6 GHz Tri-Band Rundstrahlantenne für Innen/Außen
 
 Die [ARS NT5B7](/de/products/alfa/ars-nt5b7/) ist eine **vielseitige Rundstrahlantenne**, die den Einsatz im Innen- und Außenbereich mit einem ausgewogeneren Gewinnprofil als die ARS 25-57A verbindet.
 
 **Spezifikationen:**
-- **Frequenz:** 2,4 GHz + 5 GHz (Dual-Band)
-- **Gewinn:** 5 dBi (2,4 GHz) / 7 dBi (5 GHz)
+- **Frequenz:** 2,4 GHz + 5 GHz + 6 GHz (Tri-Band)
+- **Gewinn:** 4 dBi (2,4 GHz) / 5 dBi (5 GHz) / 7 dBi (6 GHz)
 - **Typ:** Rundstrahlantenne (Omni)
 - **Umgebung:** Innenbereich / Außenbereich
 - **Anschluss:** RP-SMA
 
 **Wann Sie die ARS NT5B7 wählen sollten:**
 
-Die NT5B7 ist ein praktischer Allrounder. Der Gewinn von 5 dBi bei 2,4 GHz ist eine spürbare Steigerung gegenüber den 2,5 dBi der ARS 25-57A, während die 7 dBi bei 5 GHz beibehalten werden. Dies macht sie zu einer stärkeren Universallösung für Nutzer, die Folgendes benötigen:
+Die NT5B7 ist ein praktischer Allrounder. Sie ist die einzige Antenne hier, die alle drei Bänder (2,4, 5 und 6 GHz) abdeckt, mit 7 dBi bei 6 GHz, um die höhere Dämpfung des Bands auszugleichen. Dies macht sie zur natürlichen Universallösung für Wi-Fi-6E-Adapter und für Nutzer, die Folgendes benötigen:
 
 - **Einen Allzweck-Ersatz** für die Standardantenne mit spürbar besserer Leistung
 - **Flexiblen Einsatz im Innen- und Außenbereich**, ohne dass Wetterschutz das Hauptkriterium ist
-- **Ausgewogene 2,4/5 GHz-Leistung**, wenn beide Bänder gleichermaßen wichtig sind
+- **Ausgewogene Multi-Band-Leistung**, wenn 2,4, 5 und 6 GHz gleichermaßen wichtig sind
 
 Für Nutzer, die ein einfaches "besser als das Original"-Upgrade ohne die Qual der Wahl zwischen Richtantenne und Rundstrahler suchen, ist die ARS NT5B7 die am einfachsten zu empfehlende Antenne.
 
@@ -193,12 +193,10 @@ Für Nutzer, die ein einfaches "besser als das Original"-Upgrade ohne die Qual d
 | Modell | Frequenz | Gewinn | Typ | Umgebung | Bester Anwendungsfall |
 |---|---|---|---|---|---|
 | [APA-M04](/de/products/alfa/apa-m04/) | 2,4 GHz | 7 dBi | Richtantenne | Innenbereich | Reine 2,4 GHz-Audits |
-| [APA-M25](/de/products/alfa/apa-m25/) | 2,4 + 5 GHz | 7 dBi | Richtantenne | Innenbereich | Allgemeines Pentesting (ACH/ACM) |
-| [APA-M25-6E](/de/products/alfa/apa-m25-6e/) | 2,4 + 5 + 6 GHz | 7 dBi | Richtantenne | Innenbereich | Wi-Fi 6E-Einsätze (AWUS036AXML) |
-| [ARS 25-57A](/de/products/alfa/ars-25-57a/) | 2,4 + 5 GHz | 2,5/7 dBi | Rundstrahler | Außenbereich | Wardriving, Perimeter-Audits |
-| [ARS NT5B7](/de/products/alfa/ars-nt5b7/) | 2,4 + 5 GHz | 5/7 dBi | Rundstrahler | Innen/Außen | Vielseitiges Allzweck-Upgrade |
-
----
+| [APA-M25](/de/products/alfa/apa-m25/) | 2,4 + 5 GHz | 8 / 10 dBi | Richtantenne | Innenbereich | Allgemeines Pentesting (ACH/ACM) |
+| [APA-M25-6E](/de/products/alfa/apa-m25-6e/) | 2,4 + 5 + 6 GHz | 8 / 10 / 9 dBi | Richtantenne | Innenbereich | Wi-Fi 6E-Einsätze (AWUS036AXML) |
+| [ARS 25-57A](/de/products/alfa/ars-25-57a/) | 2,4 + 5 GHz | 5/7 dBi | Rundstrahler | Außenbereich | Wardriving, Perimeter-Audits |
+| [ARS NT5B7](/de/products/alfa/ars-nt5b7/) | 2,4 + 5 + 6 GHz | 4/5/7 dBi | Rundstrahler | Innen/Außen | Vielseitiges Allzweck-Upgrade |
 
 ## Entscheidungshilfe: So wählen Sie richtig
 
@@ -256,14 +254,14 @@ Der gesamte Vorgang dauert weniger als 30 Sekunden. Keine Treiberänderungen, ke
 
 Verbesserungen beim Antennengewinn lassen sich direkt in messbarer Signalqualität ablesen. Das können Sie in typischen Szenarien erwarten:
 
-**Standard 5 dBi Rundstrahler vs. APA-M25 7 dBi Richtantenne:**
+**Standard 5 dBi Rundstrahler vs. APA-M25 8/10 dBi Richtantenne:**
 - Reichweite im Innenbereich zum Ziel-AP: Verbesserung von ~30 m auf ~60–80 m bei Sichtverbindung (basierend auf Indoor-LOS-Tests mit AWUS036ACH bei 2,4 GHz, 20 MHz Kanalbreite)
 - Signalstärke in 20 m Entfernung: Typischerweise +4 bis +8 dBm Verbesserung
 - Zuverlässigkeit der Handshake-Erfassung: Deutlich verbessert in Grenzbereichen
 - Rauschpegel: Niedriger in der Fokusrichtung des Panels (weniger Störungen von hinten)
 
-**Standard 5 dBi Stab vs. ARS NT5B7 5/7 dBi Rundstrahler:**
-- Messbare Verbesserung bei 5 GHz (7 dBi gegenüber typischen 3–4 dBi der Standardleistung)
+**Standard 5 dBi Stab vs. ARS NT5B7 4/4/5/7 dBi Rundstrahler:**
+- Messbare Verbesserung bei 6 GHz, wo die Standardantennen am schwächsten sind (7 dBi gegenüber typischen 3–4 dBi der Standardantennen)
 - Reichweite im Außenbereich: Verbesserung von ~50 m auf ~80–100 m bei der AP-Erkennung
 - Client-Erkennung: Verbesserte Fähigkeit, verbundene Clients in der Entfernung zu sehen
 

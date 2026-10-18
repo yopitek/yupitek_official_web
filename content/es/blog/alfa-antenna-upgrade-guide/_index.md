@@ -17,7 +17,7 @@ faq:
   - question: "¿Antena direccional u omnidireccional?"
     answer: "Las antenas direccionales son adecuadas para auditorías de punto fijo con dirección de objetivo conocida; las omnidireccionales para patrullas móviles o escenarios donde se desconoce la posición del objetivo. Elige según el entorno de uso."
   - question: "¿Cuál es la diferencia entre APA-M25 y ARS NT5B7?"
-    answer: "APA-M25 es una antena panel direccional de 7 dBi, ideal para enfoque interior; ARS NT5B7 es una antena omnidireccional de 5/7 dBi, adecuada para uso general interior y exterior. La primera tiene mayor direccionalidad, la segunda mayor cobertura."
+    answer: "APA-M25 es una antena panel direccional de 8/10 dBi, ideal para enfoque interior; ARS NT5B7 es una antena omnidireccional de 4/5/7 dBi, adecuada para uso general interior y exterior. La primera tiene mayor direccionalidad, la segunda mayor cobertura."
   - question: "¿Actualizar la antena necesita instalar controladores o configuración?"
     answer: "No. La actualización de antena es puramente un cambio de hardware; no necesita actualizar controladores, configuración ni reiniciar. La tarjeta funciona con la nueva antena inmediatamente después de la instalación."
 ---Las tarjetas ALFA usan siempre conectores RP-SMA. Cinco accesorios de antena cubren de banda única a triple banda y de direccional a omnidireccional. La instalación no requiere herramientas y toma menos de 30 segundos; la intensidad de señal puede mejorar 4-8 dBm.
@@ -100,14 +100,14 @@ El [APA-M25](/es/products/alfa/apa-m25/) extiende el concepto de antena de panel
 
 **Especificaciones:**
 - **Frecuencia:** 2.4 GHz + 5 GHz (doble banda)
-- **Ganancia:** 7 dBi
+- **Ganancia:** 8 dBi (2.4 GHz) / 10 dBi (5 GHz)
 - **Tipo:** Direccional (panel)
 - **Entorno:** Interior
 - **Conector:** RP-SMA
 
 **Cuándo elegir el APA-M25:**
 
-Para la mayoría de los pentesters que usan el AWUS036ACH o AWUS036ACM, el APA-M25 es la **actualización de antena predeterminada**. Cubre ambas bandas de frecuencia en las que opera tu adaptador, proporciona 7 dBi de ganancia enfocada y funciona en la mayoría de los escenarios de evaluación interior.
+Para la mayoría de los pentesters que usan el AWUS036ACH o AWUS036ACM, el APA-M25 es la **actualización de antena predeterminada**. Cubre ambas bandas de frecuencia en las que opera tu adaptador, proporciona 8–10 dBi de ganancia enfocada y funciona en la mayoría de los escenarios de evaluación interior.
 
 La naturaleza direccional significa que la apuntas hacia el área objetivo. Esto es particularmente valioso en:
 - Evaluaciones en edificios de oficinas donde auditas desde un pasillo o habitación adyacente
@@ -122,7 +122,7 @@ El [APA-M25-6E](/es/products/alfa/apa-m25-6e/) es la versión de próxima genera
 
 **Especificaciones:**
 - **Frecuencia:** 2.4 GHz + 5 GHz + 6 GHz (tribanda)
-- **Ganancia:** 7 dBi
+- **Ganancia:** 8 dBi (2.4 GHz) / 10 dBi (5 GHz) / 9 dBi (6 GHz)
 - **Tipo:** Direccional (panel)
 - **Entorno:** Interior
 - **Conector:** RP-SMA
@@ -147,7 +147,7 @@ El [ARS 25-57A](/es/products/alfa/ars-25-57a/) trae **construcción exterior res
 
 **Especificaciones:**
 - **Frecuencia:** 2.4 GHz + 5 GHz (doble banda)
-- **Ganancia:** 2.5 dBi (2.4 GHz) / 7 dBi (5 GHz)
+- **Ganancia:** 5 dBi (2.4 GHz) / 7 dBi (5 GHz)
 - **Tipo:** Omnidireccional
 - **Entorno:** Exterior (resistente a la intemperie)
 - **Conector:** RP-SMA
@@ -161,28 +161,28 @@ El patrón omnidireccional significa que recibe y transmite por igual en todas l
 - **Evaluaciones perimetrales** — caminar alrededor del exterior de un edificio
 - **Auditorías en estacionamientos** — evaluación estacionaria exterior con cobertura natural de 360°
 
-La diferencia de ganancia entre bandas (2.5 dBi en 2.4 GHz vs 7 dBi en 5 GHz) refleja la física — lograr alta ganancia en 2.4 GHz omnidireccionalmente requiere una antena física más larga que la que la mayoría de las varillas exteriores proporcionan, mientras que 5 GHz se beneficia más de la misma longitud de antena.
+La diferencia de ganancia entre bandas (5 dBi en 2.4 GHz vs 7 dBi en 5 GHz) refleja la física — la misma longitud de antena es eléctricamente más larga, y por lo tanto proporciona más ganancia, en 5 GHz que en 2.4 GHz.
 
 ---
 
-### 5. ARS NT5B7 — Omnidireccional Interior/Exterior de Doble Banda 2.4/5 GHz
+### 5. ARS NT5B7 — Omnidireccional Interior/Exterior de Triple Banda 2.4/5/6 GHz
 
 El [ARS NT5B7](/es/products/alfa/ars-nt5b7/) es una **antena omnidireccional versátil** que tiende puentes entre uso interior y exterior con un perfil de ganancia más equilibrado que el ARS 25-57A.
 
 **Especificaciones:**
-- **Frecuencia:** 2.4 GHz + 5 GHz (doble banda)
-- **Ganancia:** 5 dBi (2.4 GHz) / 7 dBi (5 GHz)
+- **Frecuencia:** 2.4 GHz + 5 GHz + 6 GHz (triple banda)
+- **Ganancia:** 4 dBi (2.4 GHz) / 5 dBi (5 GHz) / 7 dBi (6 GHz)
 - **Tipo:** Omnidireccional
 - **Entorno:** Interior / Exterior
 - **Conector:** RP-SMA
 
 **Cuándo elegir el ARS NT5B7:**
 
-El NT5B7 alcanza un punto práctico de equilibrio. La ganancia de 5 dBi en 2.4 GHz es un paso adelante significativo sobre los 2.5 dBi del ARS 25-57A, mientras mantiene 7 dBi en 5 GHz. Esto lo convierte en una mejor opción todo-en-uno para usuarios que necesitan:
+El NT5B7 alcanza un punto práctico de equilibrio. Es la única antena de esta lista que cubre las tres bandas (2.4, 5 y 6 GHz), con 7 dBi en 6 GHz para compensar la mayor atenuación de esta banda. Esto lo convierte en la opción natural todo-en-uno para adaptadores Wi-Fi 6E y para usuarios que necesitan:
 
 - **Reemplazo de uso general** para la antena de stock con rendimiento notablemente mejor
 - **Despliegue flexible interior/exterior** sin que las preocupaciones de resistencia a la intemperie dominen el caso de uso
-- **Rendimiento equilibrado en 2.4/5 GHz** cuando ambas bandas son igualmente importantes
+- **Rendimiento equilibrado multibanda** cuando 2.4, 5 y 6 GHz importan por igual
 
 Para usuarios que quieren una simple actualización "mejor que el stock" sin la complejidad de elegir entre directional vs omni, el ARS NT5B7 es la recomendación más accesible.
 
@@ -193,12 +193,10 @@ Para usuarios que quieren una simple actualización "mejor que el stock" sin la 
 | Modelo | Frecuencia | Ganancia | Tipo | Entorno | Mejor Caso de Uso |
 |---|---|---|---|---|---|
 | [APA-M04](/es/products/alfa/apa-m04/) | 2.4 GHz | 7 dBi | Panel direccional | Interior | Auditorías enfocadas solo en 2.4 GHz |
-| [APA-M25](/es/products/alfa/apa-m25/) | 2.4 + 5 GHz | 7 dBi | Panel direccional | Interior | Pentesting interior general (ACH/ACM) |
-| [APA-M25-6E](/es/products/alfa/apa-m25-6e/) | 2.4 + 5 + 6 GHz | 7 dBi | Panel direccional | Interior | Compromisos Wi-Fi 6E (AWUS036AXML) |
-| [ARS 25-57A](/es/products/alfa/ars-25-57a/) | 2.4 + 5 GHz | 2.5/7 dBi | Omnidireccional | Exterior | Wardriving, auditorías perimetrales |
-| [ARS NT5B7](/es/products/alfa/ars-nt5b7/) | 2.4 + 5 GHz | 5/7 dBi | Omnidireccional | Interior/Exterior | Mejora versátil de uso general |
-
----
+| [APA-M25](/es/products/alfa/apa-m25/) | 2.4 + 5 GHz | 8 / 10 dBi | Panel direccional | Interior | Pentesting interior general (ACH/ACM) |
+| [APA-M25-6E](/es/products/alfa/apa-m25-6e/) | 2.4 + 5 + 6 GHz | 8 / 10 / 9 dBi | Panel direccional | Interior | Compromisos Wi-Fi 6E (AWUS036AXML) |
+| [ARS 25-57A](/es/products/alfa/ars-25-57a/) | 2.4 + 5 GHz | 5/7 dBi | Omnidireccional | Exterior | Wardriving, auditorías perimetrales |
+| [ARS NT5B7](/es/products/alfa/ars-nt5b7/) | 2.4 + 5 + 6 GHz | 4/5/7 dBi | Omnidireccional | Interior/Exterior | Mejora versátil de uso general |
 
 ## Cómo Elegir: Marco de Decisión
 
@@ -256,13 +254,13 @@ El proceso completo toma menos de 30 segundos. Sin cambios de controlador, sin c
 
 Las mejoras de ganancia de la antena se traducen directamente en calidad de señal medible. Esto es lo que puedes esperar en escenarios típicos:
 
-**Omnidireccional predeterminado de 5 dBi vs panel direccional APA-M25 de 7 dBi:**
+**Omnidireccional predeterminado de 5 dBi vs panel direccional APA-M25 de 8/10 dBi:**
 - Alcance interior a un AP objetivo: mejora de ~30 m a ~60–80 m en línea de vista
 - Potencia de señal a 20 m: mejora típica de +4 a +8 dBm
 - Confiabilidad de captura de handshakes: significativamente mejorada en escenarios de alcance límite
 - Piso de ruido: más bajo en la dirección enfocada del panel (menos interferencia desde atrás)
 
-**Varilla predeterminada de 5 dBi vs omnidireccional ARS NT5B7 de 5/7 dBi:**
+**Varilla predeterminada de 5 dBi vs omnidireccional ARS NT5B7 de 4/5/7 dBi:**
 - Mejora medible en 5 GHz (7 dBi vs típico 3–4 dBi en rendimiento de 5 GHz del stock)
 - Alcance exterior: mejora de ~50 m a ~80–100 m para detección de AP
 - Detección de clientes: mejor capacidad de ver clientes asociados a distancia

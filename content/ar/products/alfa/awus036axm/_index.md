@@ -106,10 +106,10 @@ dir: rtl
 | الهوائي | التردد | الكسب | النوع |
 |---------|--------|-------|-------|
 | [ALFA APA-M04](/ar/products/alfa/apa-m04/) | 2.4 GHz | 7 dBi | لوحة داخلية اتجاهية |
-| [ALFA APA-M25](/ar/products/alfa/apa-m25/) | 2.4 / 5 GHz | 7 dBi | لوحة داخلية ثنائية النطاق |
-| [ALFA APA-M25-6E](/ar/products/alfa/apa-m25-6e/) | 2.4 / 5 / 6 GHz | 7 dBi | لوحة داخلية ثلاثية النطاق |
-| [ARS 25-57A](/ar/products/alfa/ars-25-57a/) | 2.4 / 5 GHz | 2.5 / 7 dBi | خارجي متعدد الاتجاهات |
-| [ARS NT5B7](/ar/products/alfa/ars-nt5b7/) | 2.4 / 5 GHz | 5 / 7 dBi | متعدد الاتجاهات |
+| [ALFA APA-M25](/ar/products/alfa/apa-m25/) | 2.4 / 5 GHz | 8 / 10 dBi | لوحة داخلية ثنائية النطاق |
+| [ALFA APA-M25-6E](/ar/products/alfa/apa-m25-6e/) | 2.4 / 5 / 6 GHz | 8 / 10 / 9 dBi | لوحة داخلية ثلاثية النطاق |
+| [ARS 25-57A](/ar/products/alfa/ars-25-57a/) | 2.4 / 5 GHz | 5 / 7 dBi | خارجي متعدد الاتجاهات |
+| [ARS NT5B7](/ar/products/alfa/ars-nt5b7/) | 2.4 / 5 / 6 GHz | 4 / 5 / 7 dBi | متعدد الاتجاهات |
 
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).

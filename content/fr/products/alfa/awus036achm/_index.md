@@ -69,10 +69,10 @@ Tous les adaptateurs ALFA disposent d'un connecteur RP-SMA standard. Améliorez 
 | Antenne | Fréquence | Gain | Type |
 |---------|-----------|------|------|
 | [ALFA APA-M04](/fr/products/alfa/apa-m04/) | 2,4 GHz | 7 dBi | Antenne Panneau Intérieure |
-| [ALFA APA-M25](/fr/products/alfa/apa-m25/) | 2,4 / 5 GHz | 7 dBi | Antenne Panneau Intérieure Double Bande |
-| [ALFA APA-M25-6E](/fr/products/alfa/apa-m25-6e/) | 2,4 / 5 / 6 GHz | 7 dBi | Antenne Panneau Intérieure Tri-Bande |
+| [ALFA APA-M25](/fr/products/alfa/apa-m25/) | 2,4 / 5 GHz | 8 / 10 dBi | Antenne Panneau Intérieure Double Bande |
+| [ALFA APA-M25-6E](/fr/products/alfa/apa-m25-6e/) | 2,4 / 5 / 6 GHz | 8 / 10 / 9 dBi | Antenne Panneau Intérieure Tri-Bande |
 | [ARS 25-57A](/fr/products/alfa/ars-25-57a/) | 2,4 / 5 GHz | 2,5 / 7 dBi | Omnidirectionnelle Extérieure |
-| [ARS NT5B7](/fr/products/alfa/ars-nt5b7/) | 2,4 / 5 GHz | 5 / 7 dBi | Omnidirectionnelle |
+| [ARS NT5B7](/fr/products/alfa/ars-nt5b7/) | 2,4 / 5 GHz | 4 / 5 / 7 dBi | Omnidirectionnelle |
 
 {{< alert >}}
 Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).

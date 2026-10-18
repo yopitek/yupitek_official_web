@@ -1,6 +1,6 @@
 ---
 title: "不用編譯驅動！ALFA AWUS036ACM 在 Jetson Orin 邊緣 AI 主機上的免設定實戰指南"
-description: "針對 AVALUE AIB-NW01（NVIDIA Jetson Orin NX/Nano）客戶，深度分析哪款 ALFA Network USB 無線網卡最適合邊緣 AI 部署，並實證說明 AWUS036ACM 如何做到真正的插上即用。"
+description: "針對 AVALUE AIB-NW01（NVIDIA Jetson Orin NX/Nano）客戶，深度分析哪款 ALFA Network USB 無線網路卡最適合邊緣 AI 部署，並實證說明 AWUS036ACM 如何做到真正的插上即用。"
 date: 2026-05-20
 draft: false
 showBreadcrumbs: true
@@ -10,19 +10,19 @@ featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
-  - question: "為什麼 USB WiFi 網卡在 Jetson Orin 上經常無法使用？"
+  - question: "為什麼 USB WiFi 網路卡在 Jetson Orin 上經常無法使用？"
     answer: "Jetson 使用 NVIDIA 客製化 Tegra 核心，非標準 Ubuntu 核心。第三方驅動常因核心 headers 無法取得或 ABI 不相容而編譯失敗。"
   - question: "AWUS036ACM 在 Jetson Orin 上需要編譯驅動嗎？"
     answer: "不需要。MT7612U 晶片的 mt76x2u 驅動自 Linux Kernel 4.19 起內建核心主線，AIB-NW01 的 Kernel 5.10 已包含，插入即用。"
   - question: "AWUS036ACH（RTL8812AU）能在 Jetson Orin 上使用嗎？"
     answer: "可以但需手動編譯驅動。JetPack 的 NVIDIA kernel patches 可能破壞 cfg80211 ABI，導致編譯失敗，建議有編譯經驗者才使用。"
-  - question: "JetPack 升級會讓 USB WiFi 網卡失效嗎？"
+  - question: "JetPack 升級會讓 USB WiFi 網路卡失效嗎？"
     answer: "有可能。第三方驅動在 JetPack 升級後可能因核心 API 變更而失效，需重新編譯。核心內建驅動（如 mt76x2u）則不受影響。"
   - question: "AIB-NW01 使用什麼 Linux 核心版本？"
     answer: "AIB-NW01 出廠搭載 Ubuntu 20.04.6 LTS 與 JetPack 5.0，使用 NVIDIA 客製化 Tegra 核心 5.10.x-tegra，CPU 架構為 ARM64。"
 ---
 
-ALFA AWUS036ACM 是 Jetson Orin 上唯一真正免編譯、即插即用的 USB WiFi 網卡，因 MT7612U 驅動自 Kernel 4.19 起內建核心主線，完全避開 Jetson 客製核心的驅動編譯問題。
+ALFA AWUS036ACM 是 Jetson Orin 上唯一真正免編譯、即插即用的 USB WiFi 網路卡，因 MT7612U 驅動自 Kernel 4.19 起內建核心主線，完全避開 Jetson 客製核心的驅動編譯問題。
 
 {{< tldr >}}
 Jetson Orin 使用 NVIDIA 客製 Tegra 核心，第三方 WiFi 驅動常編譯失敗。ALFA AWUS036ACM 採用 MT7612U 晶片，驅動自 Kernel 4.19 內建核心，插入即用，是唯一真正免編譯的方案。支援監聽模式、封包注入與 AP 模式。
@@ -30,11 +30,11 @@ Jetson Orin 使用 NVIDIA 客製 Tegra 核心，第三方 WiFi 驅動常編譯�
 
 ## 一封客戶來信，揭開一個關鍵問題
 
-> 「我有一台 AVALUE AIB-NW01（Jetson Orin NX），要部署在沒有有線網路的環境。你們的 USB 無線網卡哪一款可以直接用？」
+> 「我有一台 AVALUE AIB-NW01（Jetson Orin NX），要部署在沒有有線網路的環境。你們的 USB 無線網路卡哪一款可以直接用？」
 
-這是榆閤科技近期收到的客戶詢問。問題聽起來簡單，但如果你在 Jetson 開發者社群待過一陣子就會知道——**USB 無線網卡在 NVIDIA Jetson 平台上，比想像中難搞很多。**
+這是榆閤科技近期收到的客戶詢問。問題聽起來簡單，但如果你在 Jetson 開發者社群待過一陣子就會知道——**USB 無線網路卡在 NVIDIA Jetson 平台上，比想像中難搞很多。**
 
-我們從 Jetson 核心架構、NVIDIA 論壇的真實案例、GitHub 上的驅動編譯失敗回報，一路追到 ARM64 平台的實測數據，整理了這份選購指南。
+我們從 Jetson 核心架構、NVIDIA 論壇的真實案例、GitHub 上的驅動編譯失敗回報，一路追到 ARM64 平台的實測資料，整理了這份選購指南。
 
 ---
 
@@ -76,7 +76,7 @@ AVALUE AIB-NW01 是專為邊緣 AI 應用設計的**無風扇嵌入式系統**�
 | **CPU 架構** | ARM64 (aarch64) |
 | **AI SDK 資源** | [github.com/Avalue-Technology](https://github.com/Avalue-Technology/repositories.directory) |
 
-> **關鍵提醒**：Jetson 平台使用的是 NVIDIA 維護的客製化核心 `linux-tegra`，而非標準 Ubuntu 核心。這對第三方驅動的相容性有深遠影響——詳見下方「USB 無線網卡在 Jetson Orin 上的三大挑戰」。
+> **關鍵提醒**：Jetson 平台使用的是 NVIDIA 維護的客製化核心 `linux-tegra`，而非標準 Ubuntu 核心。這對第三方驅動的相容性有深遠影響——詳見下方「USB 無線網路卡在 Jetson Orin 上的三大挑戰」。
 
 這台主機提供了三種無線連線路徑：
 
@@ -88,42 +88,42 @@ AVALUE AIB-NW01 是專為邊緣 AI 應用設計的**無風扇嵌入式系統**�
 ### USB 3.1 Type-A（4 埠）
 
 **優點**：熱插拔、免拆機、天線可放置於最佳訊號位置、可跨設備共用
-**缺點**：USB 網卡體積較大、速度上限取決於 USB 介面
+**缺點**：USB 網路卡體積較大、速度上限取決於 USB 介面
 
 ### 5G M.2 B-Key（選配）
 
 **優點**：獨立連線、不需依賴場域 WiFi 基礎設施
 **缺點**：成本高、需 SIM 卡與月費方案、設定複雜
 
-對於大多數邊緣 AI 部署場景——POC 階段、戶外監控、工廠產線——**USB 無線網卡是彈性最高、成本最低的選擇。**
+對於大多數邊緣 AI 部署場景——POC 階段、戶外監控、工廠產線——**USB 無線網路卡是彈性最高、成本最低的選擇。**
 
-但問題來了：隨便買一張 USB WiFi 網卡插上 Jetson，能用嗎？
+但問題來了：隨便買一張 USB WiFi 網路卡插上 Jetson，能用嗎？
 
 答案是：**不一定。而且失敗的機率比你想像的高很多。**
 
 ---
 
-## USB 無線網卡在 Jetson Orin 上的三大挑戰
+## USB 無線網路卡在 Jetson Orin 上的三大挑戰
 
 大多數 USB WiFi 文章只談 x86 Linux，但 Jetson 平台完全是另一回事。
 
 ### 挑戰一：你的核心不是 Ubuntu 核心
 
-Jetson 運行的是 **NVIDIA 客製化的 Tegra Linux 核心**，而非標準的 Ubuntu 核心。這意味著：
+Jetson 執行的是 **NVIDIA 客製化的 Tegra Linux 核心**，而非標準的 Ubuntu 核心。這意味著：
 
 - `apt install linux-headers-$(uname -r)` 很可能**無法取得對應的核心 headers**
 - NVIDIA 會對核心施加 patch，可能破壞第三方驅動所需的 ABI
 - 核心模組編譯環境與 x86 桌機完全不同
 
-一般的「支援 Linux」USB 網卡，**不保證能在 Jetson 上編譯成功**。
+一般的「支援 Linux」USB 網路卡，**不保證能在 Jetson 上編譯成功**。
 
 ### 挑戰二：第三方驅動編譯在 Jetson 上經常失敗
 
-GitHub 上的真實案例（2025 年 4 月）：在 JetPack 6.2 (kernel 5.15.148-tegra) 上，RTL8812EU 驅動的 `make` 和 `dkms` 都報錯。社群分析後發現——**JetPack 的 NVIDIA kernel patches 會破壞 cfg80211 ABI**，導致第三方 WiFi 驅動無法正確編譯。
+GitHub 上的真實案例（2025 年 4 月）：在 JetPack 6.2 (kernel 5.15.148-tegra) 上，RTL8812EU 驅動的 `make` 和 `dkms` 都回報錯誤。社群分析後發現——**JetPack 的 NVIDIA kernel patches 會破壞 cfg80211 ABI**，導致第三方 WiFi 驅動無法正確編譯。
 
 > 來源：[GitHub issue #421 — RTL8812EU Driver Compilation Failed on Jetson Orin Nano](https://github.com/svpcom/wfb-ng/issues/421)
 
-### 挑戰三：JetPack 升級可能讓你的網卡「失效」
+### 挑戰三：JetPack 升級可能讓你的網路卡「失效」
 
 NVIDIA 論壇案例（2024 年 10 月）：RTL8188EUS 在 JetPack 5.1.x 上運作正常，升級到 JetPack 6 後**完全無法辨識**。解法是從 GitHub 手動重新編譯驅動——但如果新的 JetPack 又改了核心 API 呢？
 
@@ -131,15 +131,15 @@ NVIDIA 論壇案例（2024 年 10 月）：RTL8188EUS 在 JetPack 5.1.x 上運�
 
 ### 教訓總結
 
-> **在 Jetson 平台上，唯一真正可靠的選擇，是使用 Linux 核心內建（in-kernel）驅動的 USB 無線網卡。**
+> **在 Jetson 平台上，唯一真正可靠的選擇，是使用 Linux 核心內建（in-kernel）驅動的 USB 無線網路卡。**
 
-因為 NVIDIA 必須維持核心內建驅動的相容性——這是你的網卡在 JetPack 升級後還能繼續用的唯一保障。
+因為 NVIDIA 必須維持核心內建驅動的相容性——這是你的網路卡在 JetPack 升級後還能繼續用的唯一保障。
 
 ---
 
 ## 晶片相容性總覽：一張表看懂
 
-以下整理 Jetson Orin 常見的 ALFA Network USB 無線網卡晶片相容狀況：
+以下整理 Jetson Orin 常見的 ALFA Network USB 無線網路卡晶片相容狀況：
 
 | 晶片 | ALFA 型號 | 驅動方式 | 最低 Kernel 需求 | Jetson Orin 結論 |
 |------|-----------|----------|-----------------|------------------|
@@ -150,7 +150,7 @@ NVIDIA 論壇案例（2024 年 10 月）：RTL8188EUS 在 JetPack 5.1.x 上運�
 | MT7921AU | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ K5.10/5.15 不滿足 |
 | RTL8832CU | AWUS036AXER | Out-of-tree（需編譯） | 需手動編譯 | ❌ 不建議，ARM64 支援不明 |
 
-數據來源：[morrownr/USB-WiFi 晶片支援表](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
+資料來源：[morrownr/USB-WiFi 晶片支援表](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
 
 ---
 
@@ -195,12 +195,12 @@ mt76x2u 1-1:1.0 wlx00c0ca9821a5: renamed from wlan0
 
 ### 推薦原因三：完整專業功能支援
 
-這張網卡不只是能上網，還支援完整的無線網路專業功能：
+這張網路卡不只是能上網，還支援完整的無線網路專業功能：
 
 - 監控模式 (Monitor mode) — 適用於網路診斷與分析
 - 封包注入 (Packet injection) — 適用於滲透測試與研究
 - AP 模式 — 可將 AIB-NW01 變成 WiFi 熱點（5 GHz 可能需要 `disable_usb_sg` 模組參數）
-- VIF (Virtual Interface) — 可在同一張網卡上同時跑 monitor + managed 介面
+- VIF (Virtual Interface) — 可在同一張網路卡上同時跑 monitor + managed 介面
 
 ### 推薦原因四：天線彈性無可比擬
 
@@ -230,7 +230,7 @@ sudo nmcli device wifi connect "你的SSID" password "你的密碼"
 
 ### 效益二：避開 M.2 WiFi 模組的所有限制
 
-| M.2 WiFi 模組 | USB 無線網卡 (AWUS036ACM) |
+| M.2 WiFi 模組 | USB 無線網路卡 (AWUS036ACM) |
 |---------------|--------------------------|
 | 需拆機安裝 | 外接即可，免拆機 |
 | 天線固定在機殼內 | 天線可放置於最佳訊號位置 |
@@ -250,14 +250,14 @@ sudo nmcli device wifi connect "你的SSID" password "你的密碼"
 
 使用 in-kernel 驅動的好處很實際：
 
-- JetPack 升級後網卡照樣能用（NVIDIA 自己維護核心內建驅動）
+- JetPack 升級後網路卡照樣能用（NVIDIA 自己維護核心內建驅動）
 - 不用管 DKMS 或自己編譯驅動
 - 核心安全更新不會被卡住
 - 省下後續的維護和支援成本
 
 ### 效益五：訊號覆蓋可依需求優化
 
-2 × RP-SMA 外接天線設計，讓這張網卡同時也是一個可調配的無線方案。你可以根據部署環境：
+2 × RP-SMA 外接天線設計，讓這張網路卡同時也是一個可調配的無線方案。你可以根據部署環境：
 
 - 更換高增益天線（如 9 dBi）擴大覆蓋範圍
 - 使用指向性天線集中訊號
@@ -319,7 +319,7 @@ AWUS036ACH（RTL8812AU）和 AWUS036AX（RTL8812BU）並非不能使用，只是
 
 ## 結語：最簡單的方案往往是最好的
 
-回到最開始的客戶問題：哪一款 ALFA USB 無線網卡最適合 AVALUE AIB-NW01？
+回到最開始的客戶問題：哪一款 ALFA USB 無線網路卡最適合 AVALUE AIB-NW01？
 
 答案是 **ALFA AWUS036ACM**。
 

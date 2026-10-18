@@ -1,5 +1,5 @@
 ---
-title: "Kali Linux 核心更新後網卡罷工？RTL8812AU 驅動 DKMS 編譯失敗與 Secure Boot 排障"
+title: "Kali Linux 核心更新後網路卡罷工？RTL8812AU 驅動 DKMS 編譯失敗與 Secure Boot 排障"
 date: 2026-08-18
 draft: false
 slug: "kali-linux-rtl8812au-dkms-secure-boot-mok-setup"
@@ -28,13 +28,13 @@ faq:
 
 ## TL;DR
 
-AWUS036ACH 使用的是 **非核心內建（out-of-tree）** 的 Realtek 驅動。執行 `apt upgrade` 升級核心（Kernel）後，舊模組因為核心 ABI 已變更而失效，這**不是網卡壞掉，而是驅動模組需要重新編譯**。
+AWUS036ACH 使用的是 **非核心內建（out-of-tree）** 的 Realtek 驅動。執行 `apt upgrade` 升級核心（Kernel）後，舊模組因為核心 ABI 已變更而失效，這**不是網路卡壞掉，而是驅動模組需要重新編譯**。
 
 解法是安裝社群維護的 `aircrack-ng/rtl8812au`（或是 `morrownr/8814au`）驅動，並透過 **DKMS** 讓它在新核心安裝時自動重新編譯。如果系統開啟 **Secure Boot**，核心會拒絕載入未簽署的自訂模組，此時必須透過 **MOK（Machine Owner Key）金鑰簽署**機制匯入您的自簽金鑰——**請不要關閉 Secure Boot**。
 
 ---
 
-## 為什麼每次 `apt upgrade` 之後網卡就罷工？
+## 為什麼每次 `apt upgrade` 之後網路卡就罷工？
 
 ### 問題根源：核心 ABI 與 out-of-tree 模組
 
@@ -53,13 +53,13 @@ AWUS036ACH 的 `RTL8812AU` 屬於 out-of-tree。Linux 對模組與核心之間�
 sudo apt update && sudo apt upgrade -y
 ```
 
-系統若更新了 `linux-image-*`（核心映像檔），重開機後執行的就是新核心；而舊核心時期編譯的 `88XXau.ko` 模組無法載入到新核心，於是發生「網卡插上去，系統卻完全抓不到」。
+系統若更新了 `linux-image-*`（核心映像檔），重開機後執行的就是新核心；而舊核心時期編譯的 `88XXau.ko` 模組無法載入到新核心，於是發生「網路卡插上去，系統卻完全抓不到」。
 
 ### 症狀快速辨識
 
 | 症狀 | 典型原因 |
 |------|---------|
-| `lsusb` 看得到網卡，但 `ip link` 沒有 `wlan` 介面 | **驅動模組沒有被載入**（最常見） |
+| `lsusb` 看得到網路卡，但 `ip link` 沒有 `wlan` 介面 | **驅動模組沒有被載入**（最常見） |
 | `sudo modprobe 88XXau` 回傳錯誤 | 模組與目前核心不相容或根本不存在 |
 | `dmesg` 出現 `Required key not available` | **Secure Boot 沒有簽署**（見第五章） |
 | `dmesg` 出現 `Module 88XXau was not signed` 或 `signature` | Secure Boot 簽章驗證失敗 |
@@ -162,7 +162,7 @@ lsmod | grep 88XXau     # 應無輸出
 
 ### 為什麼要用 DKMS？
 
-DKMS（Dynamic Kernel Module Support）的核心價值：當您**之後再次升級核心**時，DKMS 會在新核心安裝完成後**自動重新編譯並安裝**驅動模組。這正是解決開頭「每次 `apt upgrade` 網卡就罷工」的根本辦法——一次設定，之後終生自動重建。
+DKMS（Dynamic Kernel Module Support）的核心價值：當您**之後再次升級核心**時，DKMS 會在新核心安裝完成後**自動重新編譯並安裝**驅動模組。這正是解決開頭「每次 `apt upgrade` 網路卡就罷工」的根本辦法——一次設定，之後終生自動重建。
 
 ### 1. 安裝編譯相依套件
 
@@ -208,7 +208,7 @@ sudo dkms status                   # 應顯示 installed
 
 ## 啟用監聽模式（Monitor Mode）與封包注入測試
 
-這個網卡被拿來做資安研究的核心原因，就是監聽模式與封包注入。在確認驅動載入、介面出現後，可以用標準流程驗證：
+這個網路卡被拿來做資安研究的核心原因，就是監聽模式與封包注入。在確認驅動載入、介面出現後，可以用標準流程驗證：
 
 ```bash
 # 1. 關閉會干擾監聽的網路服務
@@ -332,7 +332,7 @@ lsmod | grep 88XXau
 | 2 | 核心版本 | 已知版本並有對應 headers | 手動編譯前先 `lsusb` 確認晶片 |
 | 3 | 是否有編譯環境 | 可執行 `gcc`、`make`、`dkms` | `apt install build-essential dkms` |
 | 4 | Secure Boot 狀態 | 已知是否開啟 | `mokutil --sb-state` 查詢 |
-| 5 | USB 供電 | 直插主機板 USB 3.0 或**有供電的 USB Hub** | 高功率網卡需穩定供電（ACH 最高 0.7A@5V） |
+| 5 | USB 供電 | 直插主機板 USB 3.0 或**有供電的 USB Hub** | 高功率網路卡需穩定供電（ACH 最高 0.7A@5V） |
 | 6 | 需要監聽／注入？ | 是→社群驅動 DKMS；否→可考慮核心 ≥6.14 內建 | 見第二章 |
 
 ### 平台紅線（Support Boundary）
@@ -349,7 +349,7 @@ lsmod | grep 88XXau
 
 ## 常見問題（FAQ）
 
-**Q1：為什麼我每次升級核心，網卡就失靈，難道是硬體壞了？**
+**Q1：為什麼我每次升級核心，網路卡就失靈，難道是硬體壞了？**
 不是。RTL8812AU/RTL8814AU 的驅動是 out-of-tree（核心外掛），它只針對「安裝時的特定核心版本」編譯。核心更新後舊模組與新核心不相容，系統就載入失敗。**用 DKMS 安裝後，之後的核心更新會自動重建模組，問題就不再出現。**
 
 **Q2：Secure Boot 開著，會不會永遠灌不了這個驅動？**
@@ -365,19 +365,19 @@ lsmod | grep 88XXau
 一般**不需要**。DKMS 安裝後，系統每當安裝新核心，都會自動觸發重新編譯您的模組。您只需要在升級後重開機；萬一看到編譯失敗訊息，優先檢查 `linux-headers-$(uname -r)` 是否已同步更新即可。
 
 **Q6：Raspberry Pi 上插入後頻繁斷線或注入到一半掉卡，是驅動問題嗎？**
-多半是**供電不足**。這兩款高功率網卡在封包注入時瞬間電流較高（AWUS036ACH 最高約 0.7A@5V），Pi 的 USB 電源若不足會直接掉卡。請改用 **2.5A–3A 的電源供應器**或**有獨立供電的 USB Hub**，並可加入 `options 88XXau rtw_power_mgnt=0 rtw_enusbss=0` 關閉 USB 省電，避免動態省電干擾注入。
+多半是**供電不足**。這兩款高功率網路卡在封包注入時瞬間電流較高（AWUS036ACH 最高約 0.7A@5V），Pi 的 USB 電源若不足會直接掉卡。請改用 **2.5A–3A 的電源供應器**或**有獨立供電的 USB Hub**，並可加入 `options 88XXau rtw_power_mgnt=0 rtw_enusbss=0` 關閉 USB 省電，避免動態省電干擾注入。
 
 ---
 
 ## 結論
 
-Kali Linux 核心更新後網卡「罷工」是 out-of-tree 驅動最典型的宿命，**不是硬體故障，也不是系統中毒**。只要掌握三件事就能根治：
+Kali Linux 核心更新後網路卡「罷工」是 out-of-tree 驅動最典型的宿命，**不是硬體故障，也不是系統中毒**。只要掌握三件事就能根治：
 
 1. **認清根源**——RTL8812AU/RTL8814AU 需要為每個核心版本重新編譯，內建驅動（核心 ≥6.14）或原生核心支援型號（如 MediaTek MT7921AU）可省去大部分編譯麻煩。
 2. **用 DKMS 一勞永逸**——`sudo make dkms_install` 之後，未來核心升級會自動重建模組，不再需要每次手動處理。
 3. **Secure Boot 不是障礙**——透過 MOK 金鑰簽署（`mokutil --import /var/lib/dkms/mok.pub` ＋ UEFI 註冊）即可安全載入自訂模組，全程不需關閉任何安全防護。
 
-如果您正在採購，AWUS036ACH（RTL8812AU）是 Linux 資安社群高度驗證的選擇；而若您希望**隨插即用、零編譯**，可參考原生核心支援的 MediaTek 系列型號。動手之前，記得先跑完「採購前相容性確認工作表」，並確認您使用網卡的目的符合法規與授權範圍。
+如果您正在採購，AWUS036ACH（RTL8812AU）是 Linux 資安社群高度驗證的選擇；而若您希望**隨插即用、零編譯**，可參考原生核心支援的 MediaTek 系列型號。動手之前，記得先跑完「採購前相容性確認工作表」，並確認您使用網路卡的目的符合法規與授權範圍。
 
 ---
 

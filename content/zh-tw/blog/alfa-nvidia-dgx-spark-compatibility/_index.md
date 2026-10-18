@@ -1,5 +1,5 @@
 ---
-title: "ALFA 無線網卡是否支援 NVIDIA DGX Spark（GB10）"
+title: "ALFA 無線網路卡是否支援 NVIDIA DGX Spark（GB10）"
 date: 2026-09-03
 draft: false
 slug: "alfa-nvidia-dgx-spark-compatibility"
@@ -14,7 +14,7 @@ tags:
   - "ARM64"
 categories:
   - "邊緣 AI / GPU 伺服器"
-description: "DGX Spark 執行 NVIDIA DGX OS（基於 Ubuntu，kernel 6.x），對 ALFA 網卡的相容性與一般現代 Linux 桌面系統相同。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）使用 in-kernel 驅動，開箱即用；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需..."
+description: "DGX Spark 執行 NVIDIA DGX OS（基於 Ubuntu，kernel 6.x），對 ALFA 網路卡的相容性與一般現代 Linux 桌面系統相同。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）使用 in-kernel 驅動，開箱即用；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需..."
 featureimage: ""
 author: "benny-lai"
 lastmod: 2026-09-03
@@ -22,11 +22,11 @@ lastmod: 2026-09-03
 
 ## 1. 問題摘要
 
-客戶詢問：「ALFA 系列 USB 無線網卡能否在 NVIDIA DGX Spark（GB10 Grace Blackwell）個人 AI 超級電腦上使用？」
+客戶詢問：「ALFA 系列 USB 無線網路卡能否在 NVIDIA DGX Spark（GB10 Grace Blackwell）個人 AI 超級電腦上使用？」
 
-簡短結論：DGX Spark 執行 NVIDIA DGX OS（基於 Ubuntu，kernel 6.x），對 ALFA 網卡的相容性與一般現代 Linux 桌面系統相同。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）使用 in-kernel 驅動，開箱即用；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需編譯 out-of-tree 驅動（ARM64 / aarch64 架構）。注意：DGX Spark 的 USB 埠均為 USB Type-C，ALFA 網卡為 USB Type-A，需使用 USB-C to USB-A 轉接器或傳輸線。
+簡短結論：DGX Spark 執行 NVIDIA DGX OS（基於 Ubuntu，kernel 6.x），對 ALFA 網路卡的相容性與一般現代 Linux 桌面系統相同。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）使用 in-kernel 驅動，開箱即用；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需編譯 out-of-tree 驅動（ARM64 / aarch64 架構）。注意：DGX Spark 的 USB 埠均為 USB Type-C，ALFA 網路卡為 USB Type-A，需使用 USB-C to USB-A 轉接器或傳輸線。
 
-判定母體：ALFA 現役 9 款 USB 網卡（AWUS036ACM / ACHM / ACS / EACS / ACH / AX / AXER / AXML / AXM）。
+判定母體：ALFA 現役 9 款 USB 網路卡（AWUS036ACM / ACHM / ACS / EACS / ACH / AX / AXER / AXML / AXM）。
 
 ## 2. 分析目標硬體規格架構
 
@@ -64,14 +64,14 @@ lastmod: 2026-09-03
 
 ### 2.3 關鍵特徵：現代 kernel + ARM64
 
-DGX Spark 的軟體環境對 ALFA 網卡相容性有兩個關鍵影響：
+DGX Spark 的軟體環境對 ALFA 網路卡相容性有兩個關鍵影響：
 
 - Kernel 6.x（現代）：所有進入 mainline 的 WiFi 驅動均可直接使用，包括 mt76（MT7612U / MT7610U）和 mt7921u（MT7921AUN）。這與 Jetson Nano 的 kernel 4.9 形成鮮明對比。
 - ARM64（aarch64）架構：Realtek out-of-tree 驅動（8812au / 8821cu / rtl8852bu）需在 ARM64 上編譯。這些驅動的上游（morrownr）已支援 ARM64 編譯，但需確認 Makefile 中的 CONFIG_PLATFORM_ARM64 = y。
 
 ### 2.4 USB Type-C 轉接需求
 
-DGX Spark 的 4 個 USB 埠均為 Type-C，而 ALFA 全系列網卡（除 AXML 為 USB-C 外）均為 USB Type-A 介面：
+DGX Spark 的 4 個 USB 埠均為 Type-C，而 ALFA 全系列網路卡（除 AXML 為 USB-C 外）均為 USB Type-A 介面：
 
 | 機型 | 介面規格 | 是否需轉接 |
 |---|---|---|
@@ -89,7 +89,7 @@ DGX Spark 的 4 個 USB 埠均為 Type-C，而 ALFA 全系列網卡（除 AXML �
 
 ## 3. 分析目前 ALFA 網路卡規格和晶片組
 
-截至 2026 年 9 月，ALFA Network 現役 USB 無線網卡產品線如下（判定母體：9 款）：
+截至 2026 年 9 月，ALFA Network 現役 USB 無線網路卡產品線如下（判定母體：9 款）：
 
 | 機型 | Wi-Fi 等級 | 晶片組 | 介面 | Linux 驅動狀態 |
 |---|---|---|---|---|
@@ -127,7 +127,7 @@ DGX Spark 的 4 個 USB 埠均為 Type-C，而 ALFA 全系列網卡（除 AXML �
 | 已有 AWUS036ACH 想繼續用 | AWUS036ACH | 編譯 ARM64 驅動即可，功能完整 |
 | 不需要外接 WiFi（使用內建） | — | DGX Spark 已內建 Wi-Fi 7，一般上網不需外接 ALFA |
 
-注意：DGX Spark 已內建 Wi-Fi 7 + Bluetooth 5.4，一般上網場景不需要外接 ALFA 網卡。外接 ALFA 的主要需求是：滲透測試（監聽/注入）、特殊晶片組需求、或內建 WiFi 不夠用的場景。
+注意：DGX Spark 已內建 Wi-Fi 7 + Bluetooth 5.4，一般上網場景不需要外接 ALFA 網路卡。外接 ALFA 的主要需求是：滲透測試（監聽/注入）、特殊晶片組需求、或內建 WiFi 不夠用的場景。
 
 ## 5. 環境需求
 
@@ -194,11 +194,11 @@ sudo apt install -y build-essential git bc dkms
 
 ### 7.2 路徑 A：MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）— 開箱即用
 
-**步驟 1：插入網卡**
+**步驟 1：插入網路卡**
 
-使用 USB-C to USB-A 轉接器（AXML 可直接插入 USB-C 埠），將 ALFA 網卡插入 DGX Spark 的 USB 埠。
+使用 USB-C to USB-A 轉接器（AXML 可直接插入 USB-C 埠），將 ALFA 網路卡插入 DGX Spark 的 USB 埠。
 
-**步驟 2：確認網卡被偵測**
+**步驟 2：確認網路卡被偵測**
 
 ```bash
 lsusb
@@ -259,7 +259,7 @@ sudo make install
 sudo modprobe 8812au
 ```
 
-**步驟 4：插入 ALFA 網卡（透過 USB-C to USB-A 轉接器），確認介面**
+**步驟 4：插入 ALFA 網路卡（透過 USB-C to USB-A 轉接器），確認介面**
 
 ```bash
 ip link show
@@ -305,19 +305,19 @@ sudo modprobe rtl8852bu
 
 | 症狀 | 可能原因 | 排解方式 |
 |---|---|---|
-| lsusb 看不到 ALFA 網卡 | USB-C 轉接器不良 / 接觸不良 | 更換 USB-C to USB-A 轉接器；確認轉接器支援資料傳輸（非僅充電）；嘗試不同 USB-C 埠 |
+| lsusb 看不到 ALFA 網路卡 | USB-C 轉接器不良 / 接觸不良 | 更換 USB-C to USB-A 轉接器；確認轉接器支援資料傳輸（非僅充電）；嘗試不同 USB-C 埠 |
 | MediaTek 晶片插入後無 wlan 介面 | kernel module 未自動載入 / firmware 缺失 | 手動載入：`sudo modprobe mt76x2u`；檢查 `dmesg \| grep mt76`；安裝 firmware：`sudo apt install linux-firmware` |
-| Realtek 驅動 make 報錯 aarch64-linux-gnu-gcc: not found | 交叉編譯設定錯誤 | 確認在 DGX Spark 上原生編譯（非交叉編譯）；Makefile 中不應設定 CROSS_COMPILE |
+| Realtek 驅動 make 回報錯誤 aarch64-linux-gnu-gcc: not found | 交叉編譯設定錯誤 | 確認在 DGX Spark 上原生編譯（非交叉編譯）；Makefile 中不應設定 CROSS_COMPILE |
 | modprobe 8812au 報 Operation not permitted | Secure Boot / 模組簽章 | DGX Spark 預設不啟用 Secure Boot；若有啟用，需簽章模組或關閉 Secure Boot |
 | WiFi 連線不穩 / 速度慢 | USB-C 轉接器僅支援 USB 2.0 | 更換支援 USB 3.2 Gen 2×2 的轉接器；確認轉接器標示「Data」而非「Charge Only」 |
 | 內建 Wi-Fi 7 與外接 ALFA 衝突 | 兩個無線介面路由衝突 | 停用內建 WiFi：`sudo nmcli radio wifi off` 或在 BIOS/UEFI 中停用；或設定路由優先順序 |
 | 6GHz（Wi-Fi 6E）無法使用 | Regulatory Domain 限制 | 設定法規區域：`sudo iw reg set US`（美國開放 6GHz）；確認 AWUS036AXML/AXM 的 firmware 支援 6GHz |
 | AP 模式啟動失敗 | NetworkManager 與 hostapd 衝突 | 參考 Yupitek ALFA Soft AP 指南；停用 NetworkManager 管理該介面後手動設定 hostapd |
-| 喚醒後網卡消失 | USB 自動暫停 | 停用 USB 自動暫停：`echo 'options usbcore autosuspend=-1' \| sudo tee /etc/modprobe.d/usb.conf` |
+| 喚醒後網路卡消失 | USB 自動暫停 | 停用 USB 自動暫停：`echo 'options usbcore autosuspend=-1' \| sudo tee /etc/modprobe.d/usb.conf` |
 
 ## 9. 已知限制
 
-- USB Type-C 轉接需求：除 AXML 外，所有 ALFA 網卡需 USB-C to USB-A 轉接器，轉接器品質會影響效能與穩定性
+- USB Type-C 轉接需求：除 AXML 外，所有 ALFA 網路卡需 USB-C to USB-A 轉接器，轉接器品質會影響效能與穩定性
 - Realtek 晶片需手動編譯：RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU 未進入 mainline，需在 ARM64 上編譯 out-of-tree 驅動
 - 內建 Wi-Fi 7 可能與外接衝突：DGX Spark 已內建 Wi-Fi 7，同時使用內建與外接 WiFi 時可能出現路由或資源衝突
 - AP 模式需手動設定：DGX OS 預設為開發環境，AP 熱點模式需手動安裝設定 hostapd / dnsmasq
@@ -335,16 +335,16 @@ sudo modprobe rtl8852bu
 | 來源 | 說明 | URL | 查核狀態 | 查核日期 |
 |---|---|---|---|---|
 | NVIDIA DGX Spark 官方頁面 | DGX Spark 規格與平台資訊 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 已查核 | 2026-09-03 |
-| NVIDIA DGX 文檔 | DGX OS 系統架構與 kernel 版本 | https://docs.nvidia.com/dgx/dgx-spark | ✅ 已查核 | 2026-09-03 |
+| NVIDIA DGX 文件 | DGX OS 系統架構與 kernel 版本 | https://docs.nvidia.com/dgx/dgx-spark | ✅ 已查核 | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux 驅動（ARM64 支援） | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
 | morrownr/8821cu GitHub | RTL8811CU Linux 驅動 | https://github.com/morrownr/8821cu-20210916 | ✅ 已查核 | 2026-09-03 |
 | morrownr/rtl8852bu GitHub | RTL8832BU Linux 驅動 | https://github.com/morrownr/rtl8852bu-20250826 | ✅ 已查核 | 2026-09-03 |
-| Linux kernel mt76 驅動文檔 | MediaTek mt76 / mt7921 mainline 驅動說明（含各晶片支援起始 kernel 版本） | https://wireless.wiki.kernel.org/en/users/drivers/mediatek | ✅ 已查核 | 2026-09-03 |
+| Linux kernel mt76 驅動文件 | MediaTek mt76 / mt7921 mainline 驅動說明（含各晶片支援起始 kernel 版本） | https://wireless.wiki.kernel.org/en/users/drivers/mediatek | ✅ 已查核 | 2026-09-03 |
 | ALFA Soft AP WiFi Hotspot Linux Guide（Yupitek） | ALFA 在 Linux 上的 AP 模式設定指南 | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 已查核 | 2026-09-03 |
 | ALFA Network 產品總覽（Yupitek） | ALFA 現役產品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | 驅動維護者官方聲明：建議避開 rtl8852/32au（RTL8832BU）晶片 | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ 已查核 | 2026-09-03 |
 | morrownr/8812au-20210820 GitHub | RTL8812AU 驅動狀態最新公告（kernel 6.13 併入主線、6.14 品質成熟） | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
 
-相關文章：[ALFA 無線網卡是否支援 MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)｜[ALFA 無線網卡是否支援 ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA 無線網卡是否支援 ALTOS BrainSphere GB10 F1](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[ALFA 無線網卡是否支援 GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA 無線網卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
+相關文章：[ALFA 無線網路卡是否支援 MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)｜[ALFA 無線網路卡是否支援 ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA 無線網路卡是否支援 ALTOS BrainSphere GB10 F1](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[ALFA 無線網路卡是否支援 GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA 無線網路卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 
-免責聲明：本文相容性判定以 NVIDIA DGX OS（kernel 6.x, aarch64）為基準。MediaTek 晶片驅動為 Linux mainline，穩定性高；Realtek 晶片驅動為社群維護（morrownr），實際穩定性可能隨版本變化。DGX Spark 已內建 Wi-Fi 7，外接 ALFA 網卡主要用於滲透測試或特殊晶片組需求。USB-C 轉接器的品質會直接影響使用體驗，建議選擇有品牌、標示 USB 3.2 Gen 2×2 的轉接器。
+免責聲明：本文相容性判定以 NVIDIA DGX OS（kernel 6.x, aarch64）為基準。MediaTek 晶片驅動為 Linux mainline，穩定性高；Realtek 晶片驅動為社群維護（morrownr），實際穩定性可能隨版本變化。DGX Spark 已內建 Wi-Fi 7，外接 ALFA 網路卡主要用於滲透測試或特殊晶片組需求。USB-C 轉接器的品質會直接影響使用體驗，建議選擇有品牌、標示 USB 3.2 Gen 2×2 的轉接器。

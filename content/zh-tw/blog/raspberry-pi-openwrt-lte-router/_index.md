@@ -65,8 +65,8 @@ Pi 5 有 PCIe，加個 M.2 HAT+ 擴充板就能直接插 M.2 WWAN 模組（記�
 
 這兩個都是控制 4G/5G 模組上網的協定：
 
-- **QMI**：Qualcomm 自己搞的協定，Linux/OpenWrt 上的教學大多是用這個（網卡叫 `wwan0`）。
-- **MBIM**：後來標準化的協定，Windows 跟 Linux 都能用（網卡也叫 `wwan0`）。
+- **QMI**：Qualcomm 自己搞的協定，Linux/OpenWrt 上的教學大多是用這個（網路卡叫 `wwan0`）。
+- **MBIM**：後來標準化的協定，Windows 跟 Linux 都能用（網路卡也叫 `wwan0`）。
 
 **選哪個？** 大部分人直接用 QMI 就好。如果你的韌體特別要求 MBIM，再換成 MBIM。
 

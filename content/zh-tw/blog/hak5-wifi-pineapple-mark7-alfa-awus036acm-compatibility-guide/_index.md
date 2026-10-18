@@ -10,7 +10,7 @@ featureimage: "/images/blog/hak5-pineapple-mark7-alfa-awus036acm.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
-  - question: "WiFi Pineapple Mark VII 需要外接網卡嗎？"
+  - question: "WiFi Pineapple Mark VII 需要外接網路卡嗎？"
     answer: "需要。MK7 內建無線電僅支援 2.4 GHz，2026 年大多數網路已遷移至 5 GHz，外接 AWUS036ACM 可加入 5 GHz 監聽與注入能力。"
   - question: "AWUS036ACM 為什麼能在 MK7 上隨插即用？"
     answer: "MK7 Firmware 2.x 已預載 kmod-mt76x2u 驅動，MT7612U 晶片組自 Linux 4.19 起內建於核心，無需編譯或安裝。"
@@ -18,11 +18,11 @@ faq:
     answer: "USB 2.0 將吞吐量限制在 150-250 Mbps，但滲透測試工作負載如封包捕獲與握手收集不受影響，僅高吞吐橋接受限。"
   - question: "如何在 MK7 上啟用 Monitor Mode？"
     answer: "透過 SSH 登入後執行 airmon-ng start wlan3 指令，介面會重新命名為 wlan3mon，再以 iwconfig 驗證模式。"
-  - question: "哪些 ALFA 網卡不相容 MK7？"
+  - question: "哪些 ALFA 網路卡不相容 MK7？"
     answer: "AWUS036AX、AWUS036AXER 使用 RTL8832BU 晶片，AWUS036EACS 使用 RTL8811CU，驅動不支援監聽模式或注入，均不相容。"
 ---
 
-ALFA AWUS036ACM 是 HAK5 WiFi Pineapple Mark VII 唯一官方確認相容的 5 GHz 網卡，搭載 MT7612U 晶片隨插即用，無需編譯驅動。
+ALFA AWUS036ACM 是 HAK5 WiFi Pineapple Mark VII 唯一官方確認相容的 5 GHz 網路卡，搭載 MT7612U 晶片隨插即用，無需編譯驅動。
 
 {{< tldr >}}
 AWUS036ACM 採用 MT7612U 晶片組，MK7 Firmware 2.x 已預載驅動，插入後即為 wlan3 介面，支援 5 GHz 監聽模式、封包注入與 PineAP 擴充，10 分鐘內完成設定。
@@ -30,7 +30,7 @@ AWUS036ACM 採用 MT7612U 晶片組，MK7 Firmware 2.x 已預載驅動，插入�
 
 HAK5 WiFi Pineapple Mark VII 是可攜式無線安全稽核的業界標竿。但開箱即用的它有一個重要限制：內建無線電僅支援 **2.4 GHz**。到了 2026 年，大多數企業與家用網路已遷移至 5 GHz 以獲得更好的效能與更少的干擾——這意味著一台原廠 MK7 會錯過一半的無線頻譜。
 
-此時 **ALFA AWUS036ACM** 登場。它是少數被 Hak5 [官方確認相容](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters) 的 802.11ac 網卡之一，且因為 MK7 Firmware 2.x 已預載 `mt76x2u` 核心驅動程式，達到**完全無需編譯驅動**的即插即用體驗。
+此時 **ALFA AWUS036ACM** 登場。它是少數被 Hak5 [官方確認相容](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters) 的 802.11ac 網路卡之一，且因為 MK7 Firmware 2.x 已預載 `mt76x2u` 核心驅動程式，達到**完全無需編譯驅動**的即插即用體驗。
 
 本指南涵蓋所有內容：硬體規格、驅動相容性分析、經過驗證的 7 步驟設定流程，以及完整的滲透測試拓撲圖，讓你在 10 分鐘內為 Pineapple 加入 5 GHz Monitor Mode 與 Packet Injection 能力。
 
@@ -71,7 +71,7 @@ USB 2.0 埠值得特別注意。雖然 AWUS036ACM 是 USB 3.0 裝置，在 5 GHz
 
 ### 2.2 軟體環境
 
-MK7 運行由 Hak5 維護的高度客製化 OpenWrt 發行版：
+MK7 執行由 Hak5 維護的高度客製化 OpenWrt 發行版：
 
 | 層級 | 詳細資訊 |
 |---|---|
@@ -112,9 +112,9 @@ RP-SMA 天線接頭是一大優勢：你可以根據測試環境，將原廠 5 d
 
 ### 3.2 Hak5 官方確認相容
 
-Hak5 維護一份官方的[相容 802.11ac 網卡清單](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters)。AWUS036ACM (MT7612U) 被明確列為相容——與 Hak5 自家的 MK7AC Adapter 使用**相同 MT7612U 晶片組**。
+Hak5 維護一份官方的[相容 802.11ac 網路卡清單](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters)。AWUS036ACM (MT7612U) 被明確列為相容——與 Hak5 自家的 MK7AC Adapter 使用**相同 MT7612U 晶片組**。
 
-| 網卡 | 晶片組 | 狀態 |
+| 網路卡 | 晶片組 | 狀態 |
 |---|---|---|
 | Hak5 MK7AC Adapter | MT7612U | ✅ 官方配件 |
 | **ALFA AWUS036ACM** | **MT7612U** | ✅ **官方確認** |
@@ -146,7 +146,7 @@ USB 2.0 瓶頸是唯一有意義的限制，且僅影響大量資料傳輸速度
 
 ### 前置條件
 
-- WiFi Pineapple MK7 運行 **Firmware 2.x**（建議 2.1.3 Stable 或更新）
+- WiFi Pineapple MK7 執行 **Firmware 2.x**（建議 2.1.3 Stable 或更新）
 - ALFA AWUS036ACM——驗證正版晶片：`lsusb` 應顯示 PID `7612`
 - MK7 上的網際網路連線（供 `opkg update` 使用，若需要）
 - SSH 客戶端（macOS/Linux 內建 terminal；Windows 使用 PuTTY 或 MobaXterm）
@@ -173,7 +173,7 @@ lsusb
 Bus 001 Device 002: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/b/g/n/ac Wireless Adapter
 ```
 
-> ⚠️ 若 PID 不是 `7612`，你的網卡就不是 AWUS036ACM (MT7612U)。仿冒或標籤錯誤、搭載 RTL8812AU 晶片（PID `8812`）的網卡將**無法**使用預載驅動。
+> ⚠️ 若 PID 不是 `7612`，你的網路卡就不是 AWUS036ACM (MT7612U)。仿冒或標籤錯誤、搭載 RTL8812AU 晶片（PID `8812`）的網路卡將**無法**使用預載驅動。
 
 ---
 
@@ -347,7 +347,7 @@ EOF
 
 ## 7. 建議
 
-**ALFA AWUS036ACM 是目前能買到、最適合擴充 WiFi Pineapple Mark VII 至 5 GHz 的網卡。**
+**ALFA AWUS036ACM 是目前能買到、最適合擴充 WiFi Pineapple Mark VII 至 5 GHz 的網路卡。**
 
 它與 Hak5 自家的 MK7AC Adapter 採用完全相同的 MT7612U 晶片組，使用核心內建驅動、無需編譯，電流消耗完全在 MK7 USB 供電預算內，且支援完整的滲透測試工具鏈：Monitor Mode、Packet Injection 與跨所有 5 GHz 頻道的 Handshake 捕獲。
 
@@ -355,15 +355,15 @@ EOF
 
 👉 [ALFA AWUS036ACM 產品頁面](/zh-tw/products/alfa/awus036acm/)
 
-我們是 ALFA Network 授權經銷商，為所有 ALFA × HAK5 整合場景提供完整技術支援。瀏覽我們完整的 [ALFA 網卡產品線](/zh-tw/products/alfa/) 以找到適合你測試需求的工具。
+我們是 ALFA Network 授權經銷商，為所有 ALFA × HAK5 整合場景提供完整技術支援。瀏覽我們完整的 [ALFA 網路卡產品線](/zh-tw/products/alfa/) 以找到適合你測試需求的工具。
 
 **Yupitek 相關資源：**
 - [AWUS036ACH vs AWUS036ACM — Kali Linux 完整比較](/zh-tw/blog/awus036ach-vs-awus036acm/)
-- [2026 年 Kali Linux 最佳 WiFi 網卡推薦](/zh-tw/blog/best-wifi-adapter-kali-linux-2026/)
+- [2026 年 Kali Linux 最佳 WiFi 網路卡推薦](/zh-tw/blog/best-wifi-adapter-kali-linux-2026/)
 - [Kali Linux 啟用 Monitor Mode 完整指南](/zh-tw/blog/enable-monitor-mode-kali-linux/)
 
 **外部參考資源：**
-- [Hak5 官方文件 — 相容 802.11ac 網卡](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters)
+- [Hak5 官方文件 — 相容 802.11ac 網路卡](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters)
 - [OpenWrt mt76 驅動倉庫](https://github.com/openwrt/mt76)
 - [morrownr USB-WiFi 相容性清單](https://github.com/morrownr/USB-WiFi)
 
@@ -375,7 +375,7 @@ EOF
 
 ## 參考來源
 
-1. [Hak5 官方文件 — 相容 802.11ac 網卡清單](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters)
+1. [Hak5 官方文件 — 相容 802.11ac 網路卡清單](https://documentation.hak5.org/wifi-pineapple/faq/compatible-802.11ac-adapters)
 2. [OpenWrt mt76 驅動程式倉庫 — GitHub](https://github.com/openwrt/mt76)
 3. [aircrack-ng — 無線安全工具組官方網站](https://www.aircrack-ng.org/)
 4. [ALFA Network 官方網站 — AWUS036ACM 產品規格](https://www.alfa.com.tw/)

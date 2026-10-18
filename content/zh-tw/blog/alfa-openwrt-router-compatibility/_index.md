@@ -1,5 +1,5 @@
 ---
-title: "ALFA 無線網卡是否支援 OpenWrt"
+title: "ALFA 無線網路卡是否支援 OpenWrt"
 date: 2026-09-03
 draft: false
 slug: "alfa-openwrt-router-compatibility"
@@ -13,7 +13,7 @@ tags:
   - "Soft-AP"
 categories:
   - "路由器韌體"
-description: "OpenWrt 是三大第三方路由器韌體（DD-WRT / OpenWrt / Tomato）中對 ALFA USB WiFi 網卡支援最好的平台。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）透過官方 kmod-mt76 系列套件可直接支援；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需使用社群..."
+description: "OpenWrt 是三大第三方路由器韌體（DD-WRT / OpenWrt / Tomato）中對 ALFA USB WiFi 網路卡支援最好的平台。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）透過官方 kmod-mt76 系列套件可直接支援；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需使用社群..."
 featureimage: ""
 author: "benny-lai"
 lastmod: 2026-09-03
@@ -21,11 +21,11 @@ lastmod: 2026-09-03
 
 ## 1. 問題摘要
 
-客戶詢問：「ALFA 系列 USB 無線網卡能否在 OpenWrt 路由器上使用？」
+客戶詢問：「ALFA 系列 USB 無線網路卡能否在 OpenWrt 路由器上使用？」
 
-簡短結論：OpenWrt 是三大第三方路由器韌體（DD-WRT / OpenWrt / Tomato）中對 ALFA USB WiFi 網卡支援最好的平台。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）透過官方 kmod-mt76 系列套件可直接支援；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需使用社群維護的 out-of-tree 驅動套件，可用性因 OpenWrt 版本而異。首選 AWUS036ACM（MT7612U），驅動成熟、穩定、支援監聽與注入。
+簡短結論：OpenWrt 是三大第三方路由器韌體（DD-WRT / OpenWrt / Tomato）中對 ALFA USB WiFi 網路卡支援最好的平台。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）透過官方 kmod-mt76 系列套件可直接支援；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需使用社群維護的 out-of-tree 驅動套件，可用性因 OpenWrt 版本而異。首選 AWUS036ACM（MT7612U），驅動成熟、穩定、支援監聽與注入。
 
-判定母體：ALFA 現役 9 款 USB 網卡（AWUS036ACM / ACHM / ACS / EACS / ACH / AX / AXER / AXML / AXM）。
+判定母體：ALFA 現役 9 款 USB 網路卡（AWUS036ACM / ACHM / ACS / EACS / ACH / AX / AXER / AXML / AXM）。
 
 ## 2. 分析目標軟體規格與需求
 
@@ -59,7 +59,7 @@ opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 
 ## 3. 分析目前 ALFA 網路卡規格和晶片組
 
-截至 2026 年 9 月，ALFA Network 現役 USB 無線網卡產品線如下（判定母體：9 款）：
+截至 2026 年 9 月，ALFA Network 現役 USB 無線網路卡產品線如下（判定母體：9 款）：
 
 | 機型 | Wi-Fi 等級 | 晶片組 | 介面 | OpenWrt 驅動套件 |
 |---|---|---|---|---|
@@ -145,7 +145,7 @@ opkg update
 opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 ```
 
-**步驟 3：插入 ALFA 網卡，確認 USB 偵測**
+**步驟 3：插入 ALFA 網路卡，確認 USB 偵測**
 
 ```bash
 lsusb
@@ -304,13 +304,13 @@ opkg list | grep rtw89
 
 加入 kmod-rtw89 與對應 firmware。
 
-**替代建議**：在 OpenWrt 路由器上使用 Wi-Fi 6 USB 網卡的需求，目前以 AWUS036AXML（MT7921AUN）替代為佳。
+**替代建議**：在 OpenWrt 路由器上使用 Wi-Fi 6 USB 網路卡的需求，目前以 AWUS036AXML（MT7921AUN）替代為佳。
 
 ## 8. 常見錯誤與排解
 
 | 症狀 | 可能原因 | 排解方式 |
 |---|---|---|
-| lsusb 看不到 ALFA 網卡 | USB 核心未安裝 / 供電不足 | 確認已安裝 kmod-usb-core kmod-usb2 kmod-usb3；使用有電源 USB Hub |
+| lsusb 看不到 ALFA 網路卡 | USB 核心未安裝 / 供電不足 | 確認已安裝 kmod-usb-core kmod-usb2 kmod-usb3；使用有電源 USB Hub |
 | lsusb 看得到但 iw dev 無介面 | 驅動未安裝 / 驅動不相容 | 安裝對應 kmod 套件；檢查 dmesg 是否有 firmware 缺失錯誤 |
 | opkg install kmod-mt76x2u 報「kernel version mismatch」 | OpenWrt 版本與套件庫版本不一致 | 執行 opkg update 後重試；確認韌體版本與套件庫架構匹配 |
 | AP 模式啟動失敗（hostapd 錯誤） | 驅動不支援 AP / 通道設定錯誤 | 確認晶片支援 AP 模式；嘗試固定通道（如 6 或 149）；檢查 Regulatory Domain |
@@ -328,7 +328,7 @@ opkg list | grep rtw89
 - 監聽 / 注入功能差異：MediaTek mt76 系列支援最完整；Realtek 晶片的注入功能有限，不適合專業滲透測試
 - 路由器硬體資源：低階路由器（16MB Flash / 128MB RAM）安裝驅動後可能空間不足，影響其他功能
 - USB 3.0 干擾：USB 3.0 設備會對 2.4GHz WiFi 產生干擾，建議使用 USB 2.0 埠或隔離良好的 USB Hub
-- 多網卡同時使用：同時使用路由器內建 WiFi + USB WiFi 時，可能出現通道衝突或資源競爭
+- 多網路卡同時使用：同時使用路由器內建 WiFi + USB WiFi 時，可能出現通道衝突或資源競爭
 - ⚠️ **RTL8832BU（AWUS036AX/AXER）驅動維護者已公開建議避免使用**：本文第 4.1 節標為「❌ 不建議」，原因不只是 rtw89 USB 尚在開發，驅動維護者 morrownr 更公開表示該晶片系列「是很糟糕的驅動，懷疑晶片本身有問題」，建議 Linux 使用者現階段避開（來源見第 10 節）
 - **kernel 版本門檻用詞需澄清**：第 4.1 節「MT7921AUN 需 OpenWrt 23.05+ 且 kernel 5.15+」的寫法容易誤導——mt7921u 驅動本身在桌機 Linux 上實際需要 **kernel 5.19+** 才會存在（見驅動維護者原話），但 OpenWrt 官方套件常透過 backport 機制提前收錄，因此 OpenWrt 23.05（雖標示基礎 kernel 5.15）仍有使用者回報安裝 kmod-mt7921u 成功。**判定請以客戶版本 `opkg list` 實際查詢結果為準，不要用 kernel 版號反推**
 
@@ -338,7 +338,7 @@ opkg list | grep rtw89
 
 | 來源 | 說明 | URL | 查核狀態 | 查核日期 |
 |---|---|---|---|---|
-| OpenWrt 官方文檔 | OpenWrt 官方文件入口（無線設定 / 套件管理） | https://openwrt.org/docs/start | ✅ 已查核 | 2026-09-03 |
+| OpenWrt 官方文件 | OpenWrt 官方文件入口（無線設定 / 套件管理） | https://openwrt.org/docs/start | ✅ 已查核 | 2026-09-03 |
 | OpenWrt 官方論壇 | USB WiFi 驅動討論入口 | https://forum.openwrt.org/ | ✅ 已查核 | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux 驅動上游 | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
 | ALFA Network 產品總覽（Yupitek） | ALFA 現役產品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
@@ -346,6 +346,6 @@ opkg list | grep rtw89
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko 需 kernel 5.19+ 才會出現於核心（驅動維護者原話） | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ 已查核 | 2026-09-03 |
 | OpenWrt 官方論壇 — Best USB WiFi dongle for Raspberry Pi 4B | 使用者回報 OpenWrt 23.05.0 成功安裝 kmod-mt7921u | https://forum.openwrt.org/t/best-usb-wifi-dongle-for-raspberry-pi-4b/160103 | ✅ 已查核 | 2026-09-03 |
 
-相關文章：[ALFA 無線網卡是否支援 DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[ALFA 無線網卡是否支援 Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)｜[ALFA 無線網卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 無線網卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
+相關文章：[ALFA 無線網路卡是否支援 DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[ALFA 無線網路卡是否支援 Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)｜[ALFA 無線網路卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 無線網路卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 
 免責聲明：本文相容性判定以 OpenWrt 23.05.x / 24.10.x 官方套件庫為準。不同路由器架構（ath79 / ramips / mvebu / x86 等）的套件可用性可能不同。Realtek 晶片驅動為社群維護，實際穩定性可能隨版本變化。建議以 MediaTek 晶片機型（AWUS036ACM 為首選）作為 OpenWrt USB WiFi 的優先選擇。

@@ -1,5 +1,5 @@
 ---
-title: "Sierra EM7455 完整評測：為什麼它是 Maker 與實驗室做專題最愛的 Sierra 網卡"
+title: "Sierra EM7455 完整評測：為什麼它是 Maker 與實驗室做專題最愛的 Sierra 網路卡"
 description: "EM7455 完整評測：規格、EM7430 差異、OpenWrt/Linux 設定、Dell/Lenovo 相容性。本文由 Yupitek（榆閤科技）整理提供技術資料。"
 date: 2026-07-31
 draft: false
@@ -22,7 +22,7 @@ faq:
     answer: "是的，DW5811e 是 Dell 貼牌版的 EM7455，核心為同一顆 Qualcomm MDM9230。"
 ---
 
-# Sierra EM7455 完整評測：為什麼它是 Maker 與實驗室做專題最愛的 Sierra 網卡
+# Sierra EM7455 完整評測：為什麼它是 Maker 與實驗室做專題最愛的 Sierra 網路卡
 
 如果有在玩樹莓派加上 OpenWrt，或者想幫實驗室的設備升級 4G 網路，那你一定聽過 Sierra EM7455 這張神卡！它是 Sierra Wireless 推出的一款 LTE-A Cat 6 M.2 蜂窩模組，搭載了 Qualcomm MDM9230 晶片，最高支援 300 Mbps 的下載以及 50 Mbps 的上傳速度，而且還內建了 GNSS 定位功能，工作溫度甚至能扛住 -40°C 到 +85°C 的極端環境。
 
@@ -32,7 +32,7 @@ faq:
 
 ---
 
-## EM7455 完整規格表：硬核數據一次看
+## EM7455 完整規格表：硬核資料一次看
 
 下面的數字都是從 Sierra Wireless 官方規格書整理出來的。老話一句，如果真的要下單做專案，建議先跟我們索取最新版的官方文件核對一下，尤其是頻段或是韌體版本這類可能會更新的項目。
 
@@ -61,7 +61,7 @@ faq:
 
 ## EM7455 適合拿來做什麼專案？
 
-**簡單來說，EM7455 絕對是以下三種應用的救星：（1）自己用開源系統架 4G LTE 路由器（像是 OpenWrt 或 ROOter）、（2）幫 Dell 或 Lenovo 筆電升級 WWAN 上網卡、（3）工控實驗室做的物聯網閘道器或車聯網追蹤。**
+**簡單來說，EM7455 絕對是以下三種應用的救星：（1）自己用開源系統架 4G LTE 路由器（像是 OpenWrt 或 ROOter）、（2）幫 Dell 或 Lenovo 筆電升級 WWAN 上網路卡、（3）工控實驗室做的物聯網閘道器或車聯網追蹤。**
 
 它最大的優勢就在於 Linux 驅動太成熟了，社群網路上一堆教學資源，而且支援的頻段也很廣。
 
@@ -191,7 +191,7 @@ opkg install kmod-usb-net-qmi-wwan uqmi luci-proto-qmi kmod-usb-serial-option pi
 
 ### 編輯網路設定檔
 
-打開 `/etc/config/network`，加上這段介面設定：
+開啟 `/etc/config/network`，加上這段介面設定：
 
 ```
 config interface 'wwan'
@@ -239,7 +239,7 @@ AT!USBSPEED=0
 AT!RESET
 ```
 
-> ⚠️ **警告：這些指令是從論壇爬下來的，如果執行不當可能會把網卡變成磚頭喔！** 如果你不是那種喜歡拆裝硬體、承擔風險的進階玩家，建議下單前先問問我們有沒有比較安全的替代方案。
+> ⚠️ **警告：這些指令是從論壇爬下來的，如果執行不當可能會把網路卡變成磚頭喔！** 如果你不是那種喜歡拆裝硬體、承擔風險的進階玩家，建議下單前先問問我們有沒有比較安全的替代方案。
 
 ---
 

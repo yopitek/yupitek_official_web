@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036ACM：在 Raspberry Pi 上啟用 IBSS Ad Hoc 與 802.11s Mesh 網路（MT7612U）"
-description: "ALFA AWUS036ACM（MT7612U）是目前唯一現行生產的 ALFA USB WiFi 無線網卡，可在 Raspberry Pi 上完整支援 IBSS Ad Hoc 與 802.11s Mesh 網路——即插即用，無需安裝驅動程式。本文詳解設定步驟。"
+description: "ALFA AWUS036ACM（MT7612U）是目前唯一現行生產的 ALFA USB WiFi 無線網路卡，可在 Raspberry Pi 上完整支援 IBSS Ad Hoc 與 802.11s Mesh 網路——即插即用，無需安裝驅動程式。本文詳解設定步驟。"
 date: 2026-03-27
 author: "benny-lai"
 lastmod: 2026-07-02
@@ -22,7 +22,7 @@ faq:
     answer: "透過 iw 建立的虛擬介面不會在重開機後保留，需建立 systemd 服務（如 mesh-point.service）在開機時自動重建介面並加入 Mesh。"
 ---
 
-ALFA AWUS036ACM 搭載 MediaTek MT7612U 晶片組，是 ALFA 現行產品中唯一能在 Raspberry Pi 上完整支援 IBSS Ad Hoc 與 802.11s Mesh 網路的 USB WiFi 無線網卡，即插即用無需安裝驅動。
+ALFA AWUS036ACM 搭載 MediaTek MT7612U 晶片組，是 ALFA 現行產品中唯一能在 Raspberry Pi 上完整支援 IBSS Ad Hoc 與 802.11s Mesh 網路的 USB WiFi 無線網路卡，即插即用無需安裝驅動。
 
 {{< tldr >}}
 AWUS036ACM 採用 MT7612U 晶片組，其 mt76x2u 驅動程式建構於 Linux mac80211 之上，完整支援 IBSS Ad Hoc 與 802.11s Mesh Point 模式。本文詳解兩種模式的運作原理、逐步設定與實際應用場景。
@@ -30,7 +30,7 @@ AWUS036ACM 採用 MT7612U 晶片組，其 mt76x2u 驅動程式建構於 Linux ma
 
 # ALFA AWUS036ACM：在 Raspberry Pi 上啟用 IBSS Ad Hoc 與 802.11s Mesh 網路（MT7612U）
 
-如果你曾嘗試在多台 Raspberry Pi 節點之間建立**無需路由器**的 WiFi 網路，或是想打造一個能自動透過中繼節點轉發封包、具備自癒能力的無線 Mesh——你很快就會發現，大多數 USB WiFi 無線網卡根本辦不到。核心驅動程式根本沒有開放對應的模式。
+如果你曾嘗試在多台 Raspberry Pi 節點之間建立**無需路由器**的 WiFi 網路，或是想打造一個能自動透過中繼節點轉發封包、具備自癒能力的無線 Mesh——你很快就會發現，大多數 USB WiFi 無線網路卡根本辦不到。核心驅動程式根本沒有開放對應的模式。
 
 **ALFA AWUS036ACM** 搭載 **MediaTek MT7612U** 晶片組，是這個領域的例外。其內建的 `mt76` 核心驅動程式完整實作了 Linux mac80211 介面，這意味著它在 Raspberry Pi 上原生支援 **IBSS（Ad Hoc）模式**與 **802.11s Mesh Point 模式**——開箱即用，無需編譯任何驅動程式。
 
@@ -56,7 +56,7 @@ AWUS036ACM 採用 MT7612U 晶片組，其 mt76x2u 驅動程式建構於 Linux ma
 
 ### IBSS——獨立基本服務集（Ad Hoc 模式）
 
-當你將筆電連接到家中的 WiFi 路由器時，無線網卡處於**受管理（Station）模式**——它與單一中央 Access Point 通訊。IBSS 則完全相反：這是 IEEE 802.11 規範中定義的**對等無線網路，不需要任何中央基礎設施**。
+當你將筆電連接到家中的 WiFi 路由器時，無線網路卡處於**受管理（Station）模式**——它與單一中央 Access Point 通訊。IBSS 則完全相反：這是 IEEE 802.11 規範中定義的**對等無線網路，不需要任何中央基礎設施**。
 
 在 IBSS 模式下：
 
@@ -96,11 +96,11 @@ Pi A 可自動透過 Pi B 抵達 Pi D。
 
 當你有超過 3–4 個節點、節點分布在較大的區域，或希望網路在不需手動管理的情況下保持韌性時，802.11s 就是正確的選擇。
 
-### 為何很難找到可用的無線網卡
+### 為何很難找到可用的無線網路卡
 
 上述兩種模式都要求 WiFi 驅動程式建構於 Linux 的 **mac80211** 軟體 MAC 層之上——這是核心中的官方 802.11 協定堆疊。只有符合 mac80211 規範的驅動程式，才能將 IBSS 和 Mesh Point 作為可用的介面類型開放出來。
 
-許多常見的 USB WiFi 無線網卡使用**核心外驅動程式**，自行實作了簡化版的無線協定堆疊，刻意略過 IBSS 和 Mesh 支援。即便是部分較新晶片組的核心內驅動程式，也不一定開放這些模式。
+許多常見的 USB WiFi 無線網路卡使用**核心外驅動程式**，自行實作了簡化版的無線協定堆疊，刻意略過 IBSS 和 Mesh 支援。即便是部分較新晶片組的核心內驅動程式，也不一定開放這些模式。
 
 MT7612U 是少數可以對兩者都給出清楚、明確「是」的晶片組之一。
 
@@ -108,7 +108,7 @@ MT7612U 是少數可以對兩者都給出清楚、明確「是」的晶片組之
 
 ## 2. ALFA AWUS036ACM 硬體規格
 
-AWUS036ACM 是 ALFA Network 的 AC1200 雙頻 USB 3.0 無線網卡，專為 Linux 進階使用者與嵌入式開發者所設計。
+AWUS036ACM 是 ALFA Network 的 AC1200 雙頻 USB 3.0 無線網路卡，專為 Linux 進階使用者與嵌入式開發者所設計。
 
 ![ALFA AWUS036ACM](/images/products/alfa/awus036acm.png)
 
@@ -238,7 +238,7 @@ phy#1
         channel 6 (2437 MHz), width: 20 MHz (no HT), center1: 2437 MHz
 ```
 
-查看無線網卡的完整能力清單：
+查看無線網路卡的完整能力清單：
 ```bash
 iw phy phy1 info | grep -A 20 "Supported interface modes"
 ```
@@ -282,7 +282,7 @@ MediaTek MT7612U    ← 實體晶片（2×2 MIMO，USB 3.0）
 
 ### IBSS 的運作原理
 
-在 IBSS 模式下，每個無線網卡自行管理 802.11 幀。當兩個無線網卡設定為相同的 SSID 與頻道時：
+在 IBSS 模式下，每個無線網路卡自行管理 802.11 幀。當兩個無線網路卡設定為相同的 SSID 與頻道時：
 
 1. 第一台裝置產生一個隨機的 **BSSID**（IBSS 儲存格 ID）
 2. 它在所選頻道上廣播信標
@@ -673,7 +673,7 @@ sudo systemctl start mesh-point.service
 
 **設定：** 使用 2.4 GHz 頻道 1（2412 MHz）的 IBSS，以獲得最大通訊範圍。每個節點每 30 秒收集一次感測器資料，並傳送至中央紀錄節點（節點 1）。
 
-**選用 AWUS036ACM 的理由：** 5 dBi 天線搭配 2.4 GHz 的 23 dBm 發射功率，讓這張無線網卡擁有高於平均的通訊範圍——對於覆蓋農田中的行間距離非常實用。透過選配 RP-SMA 天線升級（例如方向性八木天線），通訊距離還可大幅延伸。
+**選用 AWUS036ACM 的理由：** 5 dBi 天線搭配 2.4 GHz 的 23 dBm 發射功率，讓這張無線網路卡擁有高於平均的通訊範圍——對於覆蓋農田中的行間距離非常實用。透過選配 RP-SMA 天線升級（例如方向性八木天線），通訊距離還可大幅延伸。
 
 **資料流程範例：**
 ```
@@ -738,9 +738,9 @@ sudo tcpdump -i mon0 -w capture.pcap
 
 ### 關鍵因素：mac80211 相容性
 
-USB WiFi 無線網卡是否能在 Linux 上支援 IBSS 和 802.11s Mesh，完全取決於其驅動程式架構。只有**基於 mac80211 的核心內驅動程式**才會開放這些模式。自行實作 WiFi 協定堆疊的驅動程式（大多數核心外 Realtek 驅動程式）根本不包含 IBSS 或 Mesh 功能。
+USB WiFi 無線網路卡是否能在 Linux 上支援 IBSS 和 802.11s Mesh，完全取決於其驅動程式架構。只有**基於 mac80211 的核心內驅動程式**才會開放這些模式。自行實作 WiFi 協定堆疊的驅動程式（大多數核心外 Realtek 驅動程式）根本不包含 IBSS 或 Mesh 功能。
 
-### 其他現行 ALFA 無線網卡的狀況
+### 其他現行 ALFA 無線網路卡的狀況
 
 | 型號 | 晶片組 | 驅動程式 | IBSS | 802.11s Mesh | 備註 |
 |---|---|---|---|---|---|
@@ -755,15 +755,15 @@ USB WiFi 無線網卡是否能在 Linux 上支援 IBSS 和 802.11s Mesh，完全
 
 ### 這對你意味著什麼
 
-AWUS036ACHM（MT7610U）曾是支援這些模式的前代 ALFA 無線網卡，但現已停產。目前 ALFA 現行製造的 USB 無線網卡中，沒有任何其他型號能在 Raspberry Pi 上提供乾淨、即插即用的 IBSS 與 802.11s Mesh 支援。
+AWUS036ACHM（MT7610U）曾是支援這些模式的前代 ALFA 無線網路卡，但現已停產。目前 ALFA 現行製造的 USB 無線網路卡中，沒有任何其他型號能在 Raspberry Pi 上提供乾淨、即插即用的 IBSS 與 802.11s Mesh 支援。
 
 **AWUS036ACM 不只是最佳選擇——在 ALFA 的現行產品線中，它是此用途的唯一選擇。**
 
 此外，AWUS036ACM 還提供：
-- **AC1200 雙頻**——可在 2.4 GHz（涵蓋範圍）或 5 GHz（吞吐量）上運行 IBSS/Mesh
+- **AC1200 雙頻**——可在 2.4 GHz（涵蓋範圍）或 5 GHz（吞吐量）上執行 IBSS/Mesh
 - **USB 3.0**——在 Pi 4/5 的 USB 3.0 埠上充分利用頻寬
 - **2 支可拆卸 RP-SMA 天線**——可升級至高增益方向性天線，將 Mesh 通訊距離大幅延伸，遠超隨附的 5 dBi 全向天線
-- **VIF 支援**——可在同一張無線網卡上同時運行 Mesh 骨幹與 AP 模式
+- **VIF 支援**——可在同一張無線網路卡上同時執行 Mesh 骨幹與 AP 模式
 - **支援 Raspberry Pi 3B+、4 和 5**——跨所有 Pi 世代均保持一致
 
 ---
@@ -772,7 +772,7 @@ AWUS036ACHM（MT7610U）曾是支援這些模式的前代 ALFA 無線網卡，�
 
 **問：我的 Pi 只顯示 `wlan0`，`wlan1` 在哪裡？**
 
-AWUS036ACM 介面會在插入無線網卡後才出現。插入後執行 `iw dev`。若 10 秒內仍未出現，請檢查 `dmesg | grep -i mt76` 是否有錯誤訊息。在 Raspberry Pi OS Lite 上，若套件尚未安裝，可能需要執行 `sudo apt install iw`。
+AWUS036ACM 介面會在插入無線網路卡後才出現。插入後執行 `iw dev`。若 10 秒內仍未出現，請檢查 `dmesg | grep -i mt76` 是否有錯誤訊息。在 Raspberry Pi OS Lite 上，若套件尚未安裝，可能需要執行 `sudo apt install iw`。
 
 ---
 
@@ -789,7 +789,7 @@ sudo pkill wpa_supplicant 2>/dev/null || true
 
 **問：`iw phy phy1 interface add mesh0 type mp` 回傳「Operation not supported」**
 
-無線網卡的 phy 名稱可能不是 `phy1`。請執行 `iw dev` 確認 AWUS036ACM 對應的 phy，並替換為正確名稱。
+無線網路卡的 phy 名稱可能不是 `phy1`。請執行 `iw dev` 確認 AWUS036ACM 對應的 phy，並替換為正確名稱。
 
 ---
 
@@ -838,7 +838,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 **問：這適用於 Raspberry Pi Zero 2W 嗎？**
 
-適用——Raspberry Pi Zero 2W 有完整尺寸的 USB-A 埠（透過 OTG 轉接頭），運行的 Raspberry Pi OS 核心版本遠高於 4.19。AWUS036ACM 可在其上正常運作，但請注意 Zero 2W 的 USB 埠為 USB 2.0，實際頻寬上限約為 300–400 Mbps。對於 IBSS/Mesh 控制流量和感測器資料而言，這已綽綽有餘。
+適用——Raspberry Pi Zero 2W 有完整尺寸的 USB-A 埠（透過 OTG 轉接頭），執行的 Raspberry Pi OS 核心版本遠高於 4.19。AWUS036ACM 可在其上正常運作，但請注意 Zero 2W 的 USB 埠為 USB 2.0，實際頻寬上限約為 300–400 Mbps。對於 IBSS/Mesh 控制流量和感測器資料而言，這已綽綽有餘。
 
 ---
 
@@ -849,7 +849,7 @@ ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 購買——ALFA Netwo
 **產品頁面：** [ALFA AWUS036ACM on Yupitek](https://yupitek.com)
 
 盒裝內容：
-- 1× AWUS036ACM 無線網卡
+- 1× AWUS036ACM 無線網路卡
 - 2× 可拆卸 5 dBi 雙頻全向天線（RP-SMA）
 - 1× USB 3.0 延長線
 - 1× 驅動程式光碟（Windows）
@@ -871,7 +871,7 @@ ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 購買——ALFA Netwo
 | 可拆卸天線 | ✅ 2× 5 dBi RP-SMA |
 | 目前唯一支援 IBSS + Mesh 的 ALFA 型號 | ✅ 是 |
 
-無論你需要在 Raspberry Pi 節點之間建立何種無線網路——從雙裝置直連到多跳自癒 Mesh——ALFA AWUS036ACM 都是讓這一切成真的無線網卡。
+無論你需要在 Raspberry Pi 節點之間建立何種無線網路——從雙裝置直連到多跳自癒 Mesh——ALFA AWUS036ACM 都是讓這一切成真的無線網路卡。
 
 ---
 

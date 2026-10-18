@@ -283,7 +283,7 @@ sudo iw dev wlan0mon scan | grep -E "BSS|SSID|freq|signal"
 | 目前唯一在 Kali Linux 上可靠支援 6 GHz 的 USB 網路卡 | 需要核心 5.18+（舊版 Kali 須先升級） |
 | 完整支援監聽模式與封包注入 | MT7921AUN 驅動程式較新，邊緣案例仍可能存在 |
 | MT76 驅動程式已納入 Linux 核心主線 | 隨附天線增益僅 2 dBi |
-| 在 Kali 2024.x / 2025.x 核心上穩定運行 | 不換高增益天線的話，6 GHz 有效距離不如 5 GHz |
+| 在 Kali 2024.x / 2025.x 核心上穩定運作 | 不換高增益天線的話，6 GHz 有效距離不如 5 GHz |
 | USB-A 3.0，與測試用筆電廣泛相容 | 單天線設計，無法提供 MIMO 擷取多樣性 |
 | RP-SMA 接頭，可自行升級天線 | 售價略高於雙頻替代方案 |
 

@@ -1,6 +1,6 @@
 ---
 title: "企業無線安全評估：完整方法論框架"
-description: "使用 ALFA 無線網卡進行企業無線安全評估的完整框架。涵蓋範疇界定、惡意 AP 偵測、WPA2/WPA3 稽核、PMF 測試與報告撰寫，適用於 IT 安全團隊。"
+description: "使用 ALFA 無線網路卡進行企業無線安全評估的完整框架。涵蓋範疇界定、惡意 AP 偵測、WPA2/WPA3 稽核、PMF 測試與報告撰寫，適用於 IT 安全團隊。"
 date: 2026-03-24
 author: "benny-lai"
 lastmod: 2026-07-02
@@ -25,7 +25,7 @@ faq:
 企業無線安全評估涵蓋六個依序階段：被動偵查、惡意 AP 偵測、WPA2/WPA3 握手分析、PMF 驗證、客戶端隔離測試與 EAP/RADIUS 評估，必須在取得書面授權後才能執行。
 
 {{< tldr >}}
-本框架以 ALFA 無線網卡為基礎，詳述企業無線安全評估的六階段方法論，涵蓋範疇界定、惡意 AP 偵測、WPA2/WPA3 稽核、PMF 測試、客戶端隔離與 802.1X 評估，並附報告範本與嚴重程度定義。
+本框架以 ALFA 無線網路卡為基礎，詳述企業無線安全評估的六階段方法論，涵蓋範疇界定、惡意 AP 偵測、WPA2/WPA3 稽核、PMF 測試、客戶端隔離與 802.1X 評估，並附報告範本與嚴重程度定義。
 {{< /tldr >}}
 
 {{< alert "triangle-exclamation" >}}
@@ -34,7 +34,7 @@ faq:
 
 企業無線安全評估並非只是詢問「我們能否破解密碼」。一份完整的評估需要檢視無線架構的每一層：身份驗證協定的強度、管理幀保護的完整性、授權 AP 清單的準確性、訪客區段的客戶端隔離穩健性，以及 802.1X 基礎設施對抗惡意 RADIUS 攻擊的抵禦能力。
 
-本框架涵蓋由專業滲透測試團隊在企業環境中實踐的完整評估生命週期，共分為六個依序進行的階段——範疇界定與前置作業、被動偵查、惡意 AP 偵測、WPA2/WPA3 握手分析、PMF 驗證、客戶端隔離測試，以及 EAP/RADIUS 評估——並附有報告範本與工具參考資料。每個階段均設計為搭配 ALFA Network 無線網卡執行，其提供了企業級無線測試所需的監聽模式穩定性、封包注入能力與多頻段覆蓋。
+本框架涵蓋由專業滲透測試團隊在企業環境中實踐的完整評估生命週期，共分為六個依序進行的階段——範疇界定與前置作業、被動偵查、惡意 AP 偵測、WPA2/WPA3 握手分析、PMF 驗證、客戶端隔離測試，以及 EAP/RADIUS 評估——並附有報告範本與工具參考資料。每個階段均設計為搭配 ALFA Network 無線網路卡執行，其提供了企業級無線測試所需的監聽模式穩定性、封包注入能力與多頻段覆蓋。
 
 無論您是委託年度無線稽核的 CISO、準備評估的內部紅隊，或是正在承接新企業客戶的外部滲透測試公司，本框架均提供可重複、可驗證的方法論。
 
@@ -111,7 +111,7 @@ Kismet 會同時寫入 `.kismet` SQLite 資料庫檔案與 `.pcapng` 擷取檔�
 | PMF 狀態 | 從 Beacon 幀中的 RSN IE 擷取：Required / Capable / Disabled |
 | 廠商 | 從 BSSID OUI 推導——有助於識別未授權的消費級硬體 |
 
-### 推薦網卡
+### 推薦網路卡
 
 - **AWUS036AXML** — 三頻（2.4/5/6 GHz），偵測運作於 6 GHz 頻道的 Wi-Fi 6E AP 時不可或缺。在部署 Wi-Fi 6E 基礎設施的現代企業環境中為必要設備
 - **AWUS036ACH** — 雙頻（2.4/5 GHz），採用可靠的 RTL8812AU 晶片組，適合 6 GHz 尚未使用、且需要最大程度相容現有工具的環境
@@ -266,9 +266,9 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ## 評估工具參考資料
 
-以下工具涵蓋完整的企業無線評估工作流程，均與 ALFA Network 無線網卡的監聽模式相容。網卡設定說明，請參閱我們的[在 Kali Linux 上啟用監聽模式指南](/zh-tw/blog/enable-monitor-mode-kali-linux/)。
+以下工具涵蓋完整的企業無線評估工作流程，均與 ALFA Network 無線網路卡的監聽模式相容。網路卡設定說明，請參閱我們的[在 Kali Linux 上啟用監聽模式指南](/zh-tw/blog/enable-monitor-mode-kali-linux/)。
 
-| 工具 | 用途 | 推薦網卡 | 關鍵指令 |
+| 工具 | 用途 | 推薦網路卡 | 關鍵指令 |
 |---|---|---|---|
 | airodump-ng | 被動掃描、握手擷取 | 任何 ALFA（AWUS036AXML / AWUS036ACH） | `sudo airodump-ng wlan0mon --band abg` |
 | hcxdumptool | PMKID 擷取、被動握手收集 | AWUS036AXML（Wi-Fi 6E） | `sudo hcxdumptool -i wlan0mon -o out.pcapng` |
@@ -320,8 +320,8 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 ## 相關資源
 
-- [封包注入指南：使用 aireplay-ng 測試您的 WiFi 網卡](/zh-tw/blog/packet-injection-guide/)
-- [WPA3 安全測試（使用 ALFA 網卡，2026）](/zh-tw/blog/wpa3-security-testing-alfa-2026/)
+- [封包注入指南：使用 aireplay-ng 測試您的 WiFi 網路卡](/zh-tw/blog/packet-injection-guide/)
+- [WPA3 安全測試（使用 ALFA 網路卡，2026）](/zh-tw/blog/wpa3-security-testing-alfa-2026/)
 - [在 Kali Linux 上啟用監聽模式](/zh-tw/blog/enable-monitor-mode-kali-linux/)
 
 ## 參考來源

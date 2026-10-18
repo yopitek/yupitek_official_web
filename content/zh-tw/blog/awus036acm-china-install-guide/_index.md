@@ -8,7 +8,7 @@ slug: "awus036acm-china-install-guide"
 tags: ["alfa", "awus036acm", "kali-linux", "ubuntu", "驅動", "中國", "monitor-mode", "vif"]
 categories: ["驅動安裝指南"]
 series: ["alfa-china-install-guide"]
-description: "手把手教你在中國網路環境下安裝 ALFA AWUS036ACM 驅動，全程使用國內鏡像，無需翻牆。MT7612U 核心原生驅動，完整 VIF 支援。涵蓋 Kali Linux、Ubuntu 22/24、Debian 和樹莓派。"
+description: "手把手教你在中國網路環境下安裝 ALFA AWUS036ACM 驅動，全程使用國內鏡射站，無需翻牆。MT7612U 核心原生驅動，完整 VIF 支援。涵蓋 Kali Linux、Ubuntu 22/24、Debian 和樹莓派。"
 related_product: "/zh-tw/products/alfa/awus036acm/"
 series_order: 2
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
@@ -20,11 +20,11 @@ faq:
   - question: "AWUS036ACM 支援 VIF 虛擬介面嗎？"
     answer: "支援，MT7612U 完整支援核心原生 VIF，可同時執行監聽介面和管理模式，無需打補丁。"
   - question: "在中國安裝 AWUS036ACM 需要翻牆嗎？"
-    answer: "不需要，驅動已內建核心，僅需從國內鏡像安裝韌體套件 firmware-misc-nonfree 即可。"
+    answer: "不需要，驅動已內建核心，僅需從國內鏡射站安裝韌體套件 firmware-misc-nonfree 即可。"
   - question: "AWUS036ACM 在樹莓派上耗電多少？"
     answer: "滿載約消耗 400mW，建議搭配帶獨立供電的 USB Hub 使用，避免樹莓派限速。"
-  - question: "Debian 安裝 AWUS036ACM 為什麼網卡能識別但無法運作？"
-    answer: "缺少 firmware-misc-nonfree 韌體套件，安裝後即可正常初始化網卡。"
+  - question: "Debian 安裝 AWUS036ACM 為什麼網路卡能識別但無法運作？"
+    answer: "缺少 firmware-misc-nonfree 韌體套件，安裝後即可正常初始化網路卡。"
 ---
 
 ALFA AWUS036ACM 採用 MT7612U 晶片，驅動自 Linux 4.19 起已內建核心，插上即用，完整支援監聽模式、封包注入與 VIF 虛擬介面。
@@ -33,18 +33,18 @@ ALFA AWUS036ACM 採用 MT7612U 晶片，驅動自 Linux 4.19 起已內建核心�
 AWUS036ACM 搭載 MT7612U 晶片，驅動核心內建免編譯，支援監聽模式、封包注入與 VIF 同時運作，中國境內僅需安裝韌體套件。
 {{< /tldr >}}
 
-AWUS036ACM 是 Alfa 無線網卡裡最好裝的一款。它使用 MT7612U 晶片，驅動 `mt76x2u` 從 Linux 4.19 起就已經內建在核心裡了。大多數情況下，插上就能用，最多跑兩三條指令。這篇文章涵蓋完整流程：驅動驗證、監聽模式、封包注入，以及 VIF（虛擬介面）——全部使用國內鏡像，不需要訪問 GitHub。
+AWUS036ACM 是 Alfa 無線網路卡裡最好裝的一款。它使用 MT7612U 晶片，驅動 `mt76x2u` 從 Linux 4.19 起就已經內建在核心裡了。大多數情況下，插上就能用，最多跑兩三條指令。這篇文章涵蓋完整流程：驅動驗證、監聽模式、封包注入，以及 VIF（虛擬介面）——全部使用國內鏡射站，不需要訪問 GitHub。
 
 ## 準備工作
 
 請確認以下幾樣東西都備齊了：
 
-1. **ALFA AWUS036ACM** 無線網卡
+1. **ALFA AWUS036ACM** 無線網路卡
 2. USB 傳輸線（盒子裡附帶的就行）
 3. 帶獨立供電的 USB Hub——樹莓派使用者必備
-4. 能存取國內鏡像的網路連線
+4. 能存取國內鏡射站的網路連線
 
-把網卡插上，確認系統能識別：
+把網路卡插上，確認系統能識別：
 
 ```bash
 lsusb
@@ -80,9 +80,9 @@ Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc.
 
 ## Kali Linux
 
-MT7612U 的驅動已經內建在 Kali 核心裡了。絕大多數情況下，網卡插上去就可以用。下面的步驟幫你確認驅動已經載入，然後直接進入監聽模式。
+MT7612U 的驅動已經內建在 Kali 核心裡了。絕大多數情況下，網路卡插上去就可以用。下面的步驟幫你確認驅動已經載入，然後直接進入監聽模式。
 
-### 第一步：切換到國內鏡像
+### 第一步：切換到國內鏡射站
 
 開啟軟體來源檔案：
 
@@ -96,20 +96,20 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-儲存：按 **Ctrl+O**，Enter，再按 Ctrl+X 離開。刷新套件索引：
+儲存：按 **Ctrl+O**，Enter，再按 Ctrl+X 離開。重新整理套件索引：
 
 ```bash
 sudo apt update
 ```
 
-> **備用鏡像：** 如果中科大鏡像速度慢，換清華大學鏡像：
+> **備用鏡射站：** 如果中科大鏡射站速度慢，換清華大學鏡射站：
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
 
 ### 第二步：驗證驅動
 
-檢查插上網卡後核心有沒有自動載入模組：
+檢查插上網路卡後核心有沒有自動載入模組：
 
 ```bash
 lsmod | grep mt76
@@ -121,7 +121,7 @@ lsmod | grep mt76
 sudo modprobe mt76x2u
 ```
 
-再執行一次 `lsmod | grep mt76` 確認。然後驗證網卡介面是否出現：
+再執行一次 `lsmod | grep mt76` 確認。然後驗證網路卡介面是否出現：
 
 ```bash
 iwconfig
@@ -133,7 +133,7 @@ iwconfig
 
 ### 第二步（備選）：安裝額外核心模組
 
-如果 `modprobe mt76x2u` 回報「找不到模組」，說明你的核心沒有包含 MT76 模組，從國內鏡像安裝：
+如果 `modprobe mt76x2u` 回報「找不到模組」，說明你的核心沒有包含 MT76 模組，從國內鏡射站安裝：
 
 ```bash
 sudo apt install -y linux-modules-extra-$(uname -r)
@@ -159,7 +159,7 @@ sudo reboot
 
 ### 第三步：開啟監聽模式 {#開啟監聽模式}
 
-先看看系統給網卡分配了什麼介面名稱：
+先看看系統給網路卡分配了什麼介面名稱：
 
 ```bash
 iwconfig
@@ -198,7 +198,7 @@ Injection is working!
 Found 1 AP
 ```
 
-如果失敗了，重新開機再試一次。還是不行的話，用 `iwconfig` 確認沒有其他程序佔用這個介面。
+如果失敗了，重新開機再試一次。還是不行的話，用 `iwconfig` 確認沒有其他程式佔用這個介面。
 
 ---
 
@@ -206,7 +206,7 @@ Found 1 AP
 
 MT7612U 驅動同樣內建在 Ubuntu 核心裡，不過有時候需要安裝 `linux-modules-extra` 才能載入。
 
-### 第一步：切換到國內鏡像
+### 第一步：切換到國內鏡射站
 
 #### Ubuntu 24.04 (Noble)
 
@@ -242,7 +242,7 @@ deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe mul
 deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
 ```
 
-儲存離開，然後刷新：
+儲存離開，然後重新整理：
 
 ```bash
 sudo apt update
@@ -288,7 +288,7 @@ sudo airmon-ng check kill
 sudo airmon-ng start wlan0
 ```
 
-> **注意：** 如果有其他無線網卡，介面名稱可能是 `wlan1`，先用 `iwconfig` 確認。
+> **注意：** 如果有其他無線網路卡，介面名稱可能是 `wlan1`，先用 `iwconfig` 確認。
 
 ---
 
@@ -306,7 +306,7 @@ sudo aireplay-ng --test wlan0mon
 
 MT7612U 的驅動在 Debian 核心裡，但有時候需要安裝 `firmware-misc-nonfree` 韌體套件才能完整初始化。
 
-### 第一步：切換到國內鏡像
+### 第一步：切換到國內鏡射站
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -320,7 +320,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib n
 deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
 ```
 
-儲存離開，刷新：
+儲存離開，重新整理：
 
 ```bash
 sudo apt update
@@ -328,7 +328,7 @@ sudo apt update
 
 ### 第二步：安裝非自由韌體
 
-MT7612U 需要 `firmware-misc-nonfree` 裡的韌體檔案，少了這個網卡能識別但無法正常運作：
+MT7612U 需要 `firmware-misc-nonfree` 裡的韌體檔案，少了這個網路卡能識別但無法正常運作：
 
 ```bash
 sudo apt install -y firmware-misc-nonfree
@@ -382,7 +382,7 @@ https://www.kali.org/get-kali/#kali-arm
 
 選 **Raspberry Pi 4 (64-bit)** 或 **Raspberry Pi 5 (64-bit)**，不要選 32 位版本。
 
-> **國內鏡像：** kali.org 慢的話用華為雲：
+> **國內鏡射站：** kali.org 慢的話用華為雲：
 > https://repo.huaweicloud.com/kali-images/
 > 找最新版本資料夾，下載同款 ARM64 映像。
 
@@ -408,7 +408,7 @@ sync
 
 ---
 
-### 第三步：切換到國內鏡像
+### 第三步：切換到國內鏡射站
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -431,7 +431,7 @@ sudo reboot
 
 ### 第四步：驗證驅動
 
-重新開機後插上網卡，檢查模組：
+重新開機後插上網路卡，檢查模組：
 
 ```bash
 lsmod | grep mt76
@@ -483,7 +483,7 @@ sudo aireplay-ng --test wlan1mon
 2. 啟用 **USB 3.0 (xHCI) 控制器**。
 3. 點 **+** 新增 USB 篩選器。
 4. 選擇：**MediaTek Inc. MT7612U**（ID: 0e8d:7612）。
-5. 啟動虛擬機器，網卡就會出現在 Kali 裡。
+5. 啟動虛擬機器，網路卡就會出現在 Kali 裡。
 
 在虛擬機器裡用 `lsusb` 確認 `0e8d:7612`，然後按上面的 Kali 步驟操作。
 
@@ -498,11 +498,11 @@ sudo aireplay-ng --test wlan1mon
 
 ## 虛擬介面（VIF）
 
-這是 AWUS036ACM 比 AWUS036ACH 強的地方。MT7612U 晶片完整支援核心原生 VIF，可以在同一張網卡上同時執行監聽介面和管理模式（或 AP 模式）——不需要打補丁，開箱即用。
+這是 AWUS036ACM 比 AWUS036ACH 強的地方。MT7612U 晶片完整支援核心原生 VIF，可以在同一張網路卡上同時執行監聽介面和管理模式（或 AP 模式）——不需要打補丁，開箱即用。
 
 ### 建立第二個虛擬介面
 
-在網卡以 `wlan0` 連接網路（管理模式）的同時，再新增一個監聽介面：
+在網路卡以 `wlan0` 連接網路（管理模式）的同時，再新增一個監聽介面：
 
 ```bash
 sudo iw dev wlan0 interface add mon0 type monitor
@@ -515,7 +515,7 @@ sudo ip link set mon0 up
 iwconfig
 ```
 
-你應該能同時看到 `wlan0`（已連線，管理模式）和 `mon0`（監聽模式）。一張網卡，兩個功能同時跑。
+你應該能同時看到 `wlan0`（已連線，管理模式）和 `mon0`（監聽模式）。一張網路卡，兩個功能同時跑。
 
 ### 用法一：連著網同時抓封包
 
@@ -538,7 +538,7 @@ sudo ip link set mon0 up
 
 `iwconfig` 確認 `wlan0`、`ap0`、`mon0` 三個介面都在。
 
-> **注意：** 完整的 AP 運作還需要設定 `hostapd`，那是另一個主題。上面的指令只是驗證網卡能建立這些介面。
+> **注意：** 完整的 AP 運作還需要設定 `hostapd`，那是另一個主題。上面的指令只是驗證網路卡能建立這些介面。
 
 ---
 
@@ -546,7 +546,7 @@ sudo ip link set mon0 up
 
 | 問題 | 可能原因 | 解決方法 |
 |------|---------|---------|
-| `lsusb` 看不到 0e8d:7612 | 網卡沒通電或傳輸線有問題 | 換 USB 埠，樹莓派用帶供電的 Hub |
+| `lsusb` 看不到 0e8d:7612 | 網路卡沒通電或傳輸線有問題 | 換 USB 埠，樹莓派用帶供電的 Hub |
 | `modprobe mt76x2u` 說找不到模組 | 核心缺少額外模組 | 執行 `sudo apt install linux-modules-extra-$(uname -r)` |
 | 介面出現但無法連線 | 韌體檔案缺失 | Debian 執行 `sudo apt install firmware-misc-nonfree` |
 | `airmon-ng start wlan0` 失敗 | NetworkManager 還在執行 | 先執行 `sudo airmon-ng check kill` |
@@ -554,7 +554,7 @@ sudo ip link set mon0 up
 | 注入測試回傳「No Answer」 | AP 太遠或介面名稱錯誤 | 靠近 AP，確認用的是 `wlan0mon` |
 | VIF 介面建立失敗 | 驅動未完整載入 | `sudo rmmod mt76x2u && sudo modprobe mt76x2u` |
 
-## 國內鏡像參考
+## 國內鏡射站參考
 
 本文用到的所有資源，全部不需要 GitHub：
 
@@ -562,17 +562,17 @@ sudo ip link set mon0 up
 |------|------|------|
 | Alfa 官方驅動 | [files.alfa.com.tw](https://files.alfa.com.tw) | 驅動套件、韌體 |
 | Alfa 文件 | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 產品手冊 |
-| 清華大學鏡像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里雲鏡像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦） |
-| 中科大鏡像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦） |
-| 華為雲鏡像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像（備用） |
+| 清華大學鏡射站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里雲鏡射站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦） |
+| 中科大鏡射站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦） |
+| 華為雲鏡射站 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像（備用） |
 | MT76 驅動（主線核心） | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | 核心內建，免編譯 |
 
 {{< faq >}}
 
 ## 系列文章
 
-本文是 **Alfa 網卡中國安裝全攻略** 系列的一部分，每篇文章對應一款型號：
+本文是 **Alfa 網路卡中國安裝全攻略** 系列的一部分，每篇文章對應一款型號：
 
 - [AWUS036ACH 中國安裝全攻略](/zh-tw/blog/awus036ach-china-install-guide/) — RTL8812AU，大功率
 - AWUS036ACM ← 目前文章

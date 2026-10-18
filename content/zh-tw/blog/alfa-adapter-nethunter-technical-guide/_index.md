@@ -1,6 +1,6 @@
 ---
-title: "ALFA 無線網卡搭配 Kali NetHunter 完整技術指南 2026"
-description: "ALFA USB 無線網卡搭配 Kali NetHunter 行動滲透測試完整技術參考。涵蓋台灣上市手機相容性、MT7610U/MT7612U 免驅動 vs RTL8812AU DKMS 驅動分析、OTG 設定指南及實測驗證結果。"
+title: "ALFA 無線網路卡搭配 Kali NetHunter 完整技術指南 2026"
+description: "ALFA USB 無線網路卡搭配 Kali NetHunter 行動滲透測試完整技術參考。涵蓋台灣上市手機相容性、MT7610U/MT7612U 免驅動 vs RTL8812AU DKMS 驅動分析、OTG 設定指南及實測驗證結果。"
 date: 2026-06-09
 draft: false
 showBreadcrumbs: true
@@ -10,20 +10,20 @@ tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
-  - question: "ALFA 無線網卡搭配 Kali NetHunter 需要哪些手機條件？"
-    answer: "需要支援 OTG 的 Android 手機、已 root 並刷入 Kali NetHunter 核心。已驗證相容的機型包括 Google Pixel 系列、OnePlus 較舊旗艦機型。具體相容性取決於核心版本與網卡晶片驅動位置。"
+  - question: "ALFA 無線網路卡搭配 Kali NetHunter 需要哪些手機條件？"
+    answer: "需要支援 OTG 的 Android 手機、已 root 並刷入 Kali NetHunter 核心。已驗證相容的機型包括 Google Pixel 系列、OnePlus 較舊旗艦機型。具體相容性取決於核心版本與網路卡晶片驅動位置。"
   - question: "MT7610U/MT7612U 和 RTL8812AU 驅動有什麼差別？"
     answer: "MT7610U/MT7612U 驅動位於核心樹內，插上即用不需編譯；RTL8812AU 需透過 DKMS 外部驅動編譯安裝，核心更新後可能需要重新編譯。對於資安現場使用，核心樹內驅動穩定性更高。"
-  - question: "ALFA 網卡在 NetHunter 上支援 Monitor Mode 嗎？"
-    answer: "是的，MT7610U/MT7612U 支援 Monitor Mode 與封包注入。RTL8812AU 在核心 < 6.12 時也支援，但核心 6.12 以上 Monitor Mode 受限。建議資安研究優先選用 MT7610U/MT7612U 網卡。"
+  - question: "ALFA 網路卡在 NetHunter 上支援 Monitor Mode 嗎？"
+    answer: "是的，MT7610U/MT7612U 支援 Monitor Mode 與封包注入。RTL8812AU 在核心 < 6.12 時也支援，但核心 6.12 以上 Monitor Mode 受限。建議資安研究優先選用 MT7610U/MT7612U 網路卡。"
 ---
 
-如果你已經完成基本的 OTG 設定，想看快速入門版本，我們的 [OTG 設定指南](/zh-tw/blog/alfa-adapter-nethunter-android-otg/) 涵蓋了所有基本步驟。本文是更深入的完整技術參考，為資安專業人員撰寫——在採購硬體前評估手機與網卡相容性、理解哪種驅動方式能跨核心更新持續運作、以及查看已驗證的測試結果後再決定特定組合。
+如果你已經完成基本的 OTG 設定，想看快速入門版本，我們的 [OTG 設定指南](/zh-tw/blog/alfa-adapter-nethunter-android-otg/) 涵蓋了所有基本步驟。本文是更深入的完整技術參考，為資安專業人員撰寫——在採購硬體前評估手機與網路卡相容性、理解哪種驅動方式能跨核心更新持續運作、以及查看已驗證的測試結果後再決定特定組合。
 
-我們聚焦大多數 NetHunter 指南跳過的核心問題：**哪張網卡真正插上就能用，哪張會在最重要的時刻讓你陷入驅動編譯的泥沼？** 答案取決於 chipset、手機核心版本，以及驅動是位於核心樹內還是外部 DKMS 儲存庫。弄錯了，你的網卡就只能躺在包包裡，你卻在現場盯著 `modprobe` 錯誤訊息。弄對了，插上去就能開始掃描。
+我們聚焦大多數 NetHunter 指南跳過的核心問題：**哪張網路卡真正插上就能用，哪張會在最重要的時刻讓你陷入驅動編譯的泥沼？** 答案取決於 chipset、手機核心版本，以及驅動是位於核心樹內還是外部 DKMS 儲存庫。弄錯了，你的網路卡就只能躺在包包裡，你卻在現場盯著 `modprobe` 錯誤訊息。弄對了，插上去就能開始掃描。
 
 {{< tldr >}}
-MT7610U/MT7612U 核心原生驅動即插即用，RTL8812AU 需 DKMS 編譯。NetHunter 手機需 root + OTG 支援，優先選 MT7612U 網卡避免驅動問題。
+MT7610U/MT7612U 核心原生驅動即插即用，RTL8812AU 需 DKMS 編譯。NetHunter 手機需 root + OTG 支援，優先選 MT7612U 網路卡避免驅動問題。
 {{< /tldr >}}
 
 > **免責聲明**：本文件僅供合法授權的資安測試與研究使用。未經授權存取網路設備屬違法行為。
@@ -34,7 +34,7 @@ MT7610U/MT7612U 核心原生驅動即插即用，RTL8812AU 需 DKMS 編譯。Net
 
 ### 1.1 使用情境
 
-行動滲透測試人員希望利用 Android 手機搭配 Kali NetHunter，透過 USB OTG 連接 ALFA 外接無線網卡，在不攜帶筆電的情況下執行 Wi-Fi 安全評估工作。核心工作流程——site survey、monitor mode 封包擷取、packet injection、WPA handshake 收集——必須在電池供電下穩定運作。
+行動滲透測試人員希望利用 Android 手機搭配 Kali NetHunter，透過 USB OTG 連接 ALFA 外接無線網路卡，在不攜帶筆電的情況下執行 Wi-Fi 安全評估工作。核心工作流程——site survey、monitor mode 封包擷取、packet injection、WPA handshake 收集——必須在電池供電下穩定運作。
 
 ### 1.2 核心需求
 
@@ -42,7 +42,7 @@ MT7610U/MT7612U 核心原生驅動即插即用，RTL8812AU 需 DKMS 編譯。Net
 |---------|------|
 | 平台 | Android 手機 + Kali NetHunter（Full 版，需自訂核心） |
 | 連接方式 | USB OTG 線或有獨立供電的 OTG Hub |
-| 無線網卡 | ALFA USB 無線網卡，支援 monitor mode 與 packet injection |
+| 無線網路卡 | ALFA USB 無線網路卡，支援 monitor mode 與 packet injection |
 | 驅動策略 | **優先選擇免驅動（In-kernel）chipset**，消除編譯依賴 |
 | 台灣市場 | 手機為台灣有上市的近期型號（2024–2026） |
 | 供電 | 電池供電；強烈建議使用有獨立供電的 OTG Hub 以維持長時間運作 |
@@ -65,7 +65,7 @@ NetHunter 支援超過 117 款裝置模組，但多數為舊型號。經過篩�
 **Samsung Exynos 警告：** Samsung 在台灣電信商銷售的型號大多使用 Exynos 晶片組。NetHunter 核心僅支援 Snapdragon 版本（代號 `r8q`）。購買 Samsung 裝置用於 NetHunter 前，務必確認 CPU 型號——若商品標示「Exynos」，將無法使用。請購買 Snapdragon 水貨版，或改選 OnePlus 11。
 {{< /alert >}}
 
-**NetHunter Rootless** 可在任何 Android 裝置上執行，無需 root，但無法支援外接 USB 無線網卡的 monitor mode。若你需要封包擷取與 packet injection，必須使用完整版 NetHunter 搭配自訂核心。
+**NetHunter Rootless** 可在任何 Android 裝置上執行，無需 root，但無法支援外接 USB 無線網路卡的 monitor mode。若你需要封包擷取與 packet injection，必須使用完整版 NetHunter 搭配自訂核心。
 
 ### 2.2 目標平台技術規格
 
@@ -76,7 +76,7 @@ NetHunter 支援超過 117 款裝置模組，但多數為舊型號。經過篩�
 | CPU 架構 | ARM64 (aarch64) |
 | SoC | Qualcomm Snapdragon 8 Gen 2 (SM8550) |
 | USB 控制器 | USB 3.1 Gen 1，支援 OTG |
-| USB 供電能力 | 5V / 900mA（建議使用有獨立供電的 OTG Hub 以維持網卡長時間運作） |
+| USB 供電能力 | 5V / 900mA（建議使用有獨立供電的 OTG Hub 以維持網路卡長時間運作） |
 
 ### 2.3 軟體環境需求
 
@@ -86,13 +86,13 @@ NetHunter 支援超過 117 款裝置模組，但多數為舊型號。經過篩�
 | NetHunter | Full 版（自訂核心） | 2024.4（最新穩定版） |
 | Linux Kernel | 裝置專屬自訂核心 | 建議 5.x 以上 |
 | 預載驅動 | 見第 4 章矩陣 | — |
-| DKMS | 僅 RTL8812AU 網卡需要 | 核心 headers 必須版本匹配 |
+| DKMS | 僅 RTL8812AU 網路卡需要 | 核心 headers 必須版本匹配 |
 | 無線工具 | aircrack-ng、Kismet、MANA Toolkit | NetHunter chroot 內建提供 |
 | Root | 完整功能需要 | Magisk 26.0+ |
 
 ---
 
-## 3. ALFA 網卡規格與驅動來源
+## 3. ALFA 網路卡規格與驅動來源
 
 ### 3.1 AWUS036ACHM — NetHunter 首選 ⭐
 
@@ -113,7 +113,7 @@ NetHunter 支援超過 117 款裝置模組，但多數為舊型號。經過篩�
 
 MT7610U chipset 被 Kali 與 NetHunter 社群廣泛推薦，因為其 `mt76x0u` 驅動自 Linux 4.19 起就在主線核心中。插上即用，核心自動識別，直接開工。不需要編譯工具鏈、不需要核心 headers、不需要 DKMS——只要 `lsusb` 確認後，接著 `airmon-ng start` 即可。
 
-**業界評價**：Lab401、morrownr USB-WiFi 資料庫均將 AWUS036ACHM 列為「最佳 Kali Linux 無線網卡」之一，理由是 MT7610U 的 in-kernel 支援確保跨 OS 版本更新的相容性穩定性。
+**業界評價**：Lab401、morrownr USB-WiFi 資料庫均將 AWUS036ACHM 列為「最佳 Kali Linux 無線網路卡」之一，理由是 MT7610U 的 in-kernel 支援確保跨 OS 版本更新的相容性穩定性。
 
 ### 3.2 AWUS036ACM — 高性能替代選擇 ⭐
 
@@ -172,10 +172,10 @@ ACS 是最便攜的選擇。300mW 的功耗對手機電池最友善，超薄機�
 
 ### 3.5 不建議用於 NetHunter 的型號
 
-| 網卡型號 | Chipset | 原因 |
+| 網路卡型號 | Chipset | 原因 |
 |---------|---------|------|
 | AWUS036AX / AWUS036AXER | RTL8832BU | 需要 kernel 6.14+；Monitor Mode 穩定性在 Android 核心上未經驗證 |
-| AWUS036AXML / AWUS036AXM | MT7921AUN | WiFi 6E / 6 GHz 在目前 NetHunter 核心版本上支援不穩定；不適合作為主要滲透測試網卡 |
+| AWUS036AXML / AWUS036AXM | MT7921AUN | WiFi 6E / 6 GHz 在目前 NetHunter 核心版本上支援不穩定；不適合作為主要滲透測試網路卡 |
 
 ### 3.6 驅動程式來源
 
@@ -192,7 +192,7 @@ ACS 是最便攜的選擇。300mW 的功耗對手機電池最友善，超薄機�
 
 ### 4.1 In-Kernel vs 外部 DKMS
 
-選擇 NetHunter 網卡時最關鍵的決策：驅動在核心樹內還是核心樹外。原因如下：
+選擇 NetHunter 網路卡時最關鍵的決策：驅動在核心樹內還是核心樹外。原因如下：
 
 | | In-Kernel（MT7610U、MT7612U） | 外部 DKMS（RTL8812AU、RTL8811AU） |
 |---|---|---|
@@ -203,7 +203,7 @@ ACS 是最便攜的選擇。300mW 的功耗對手機電池最友善，超薄機�
 | 社群文件量 | 中等 | 豐富（ACH 擁有最多的教學資源） |
 | 現場故障風險 | 低 | 中等（編譯依賴） |
 
-**底線：** 若你希望在現場將驅動問題風險降到最低，選擇 MT7610U 或 MT7612U 網卡。驅動已在核心中——不需編譯、沒有更新時損壞的風險、沒有在客戶現場需要排除的依賴問題。
+**底線：** 若你希望在現場將驅動問題風險降到最低，選擇 MT7610U 或 MT7612U 網路卡。驅動已在核心中——不需編譯、沒有更新時損壞的風險、沒有在客戶現場需要排除的依賴問題。
 
 ### 4.2 NetHunter 核心模組支援矩陣
 
@@ -224,17 +224,17 @@ ACS 是最便攜的選擇。300mW 的功耗對手機電池最友善，超薄機�
 - 根本原因：自訂核心編譯時未包含 `mt76x2u` 模組。這影響部分基於 4.14 的 NetHunter 核心（OnePlus 7T 時期）
 - 解決方案：使用包含該模組的核心版本，或改用 AWUS036ACHM（MT7610U）——後者在舊核心上有更廣泛的支援
 
-**問題 2：USB 供電不足導致網卡斷線**
+**問題 2：USB 供電不足導致網路卡斷線**
 
-- 症狀：網卡在掃描中途消失，`dmesg` 顯示 USB reset 錯誤
-- 根本原因：手機 USB 埠無法維持網卡的電流消耗，尤其是 USB 3.0 網卡（ACH 約 500mW）
-- 解決方案：使用有獨立供電的 OTG Hub，從變壓器提供 5V 給網卡，同時將資料傳遞給手機
+- 症狀：網路卡在掃描中途消失，`dmesg` 顯示 USB reset 錯誤
+- 根本原因：手機 USB 埠無法維持網路卡的電流消耗，尤其是 USB 3.0 網路卡（ACH 約 500mW）
+- 解決方案：使用有獨立供電的 OTG Hub，從變壓器提供 5V 給網路卡，同時將資料傳遞給手機
 
-**問題 3：chroot 啟動前插入網卡**
+**問題 3：chroot 啟動前插入網路卡**
 
-- 症狀：Android 跳出 USB 權限對話框，但 Kali 工具無法存取網卡
+- 症狀：Android 跳出 USB 權限對話框，但 Kali 工具無法存取網路卡
 - 根本原因：NetHunter chroot 環境必須先執行，USB 裝置才能被暴露給 chroot
-- 解決方案：先啟動 chroot（Kali Services → Start），再連接網卡並授予 USB 權限
+- 解決方案：先啟動 chroot（Kali Services → Start），再連接網路卡並授予 USB 權限
 
 ---
 
@@ -262,14 +262,14 @@ cat /kali/etc/os-release
 
 1. 啟動 **NetHunter App** → 前往 **Kali Services** → 點擊 **Start** 啟動 chroot 環境
 2. 將**有獨立供電的 OTG Hub** 連接到手機 USB 埠
-3. 將 **ALFA 網卡** 插入 OTG Hub
+3. 將 **ALFA 網路卡** 插入 OTG Hub
 4. 當 Android USB 權限對話框出現時，點擊**確定**並勾選「**永遠允許**」
 
 {{< alert "circle-info" >}}
 強烈建議使用有獨立供電的 OTG Hub。AWUS036ACH 消耗約 500mW——直接從手機電池供電會顯著加速耗電並可能造成 USB 不穩定。使用能從變壓器取電同時傳遞資料的 Hub 可同時解決這兩個問題。
 {{< /alert >}}
 
-### 5.3 驗證網卡識別
+### 5.3 驗證網路卡識別
 
 ```bash
 # 列出 USB 裝置——確認網卡出現
@@ -281,7 +281,7 @@ lsusb
 # AWUS036ACH:  Bus 001 Device 002: ID 0bda:8812 Realtek Semiconductor Corp.
 ```
 
-若網卡未出現：更換 OTG 線、確認 OTG 已在開發人員選項中啟用，或在電腦上測試網卡以確認功能正常。
+若網路卡未出現：更換 OTG 線、確認 OTG 已在開發人員選項中啟用，或在電腦上測試網路卡以確認功能正常。
 
 ### 5.4 載入驅動
 
@@ -369,7 +369,7 @@ sudo service NetworkManager restart
 
 以下組合已透過社群測試與廠商文件驗證：
 
-| 手機型號 | ALFA 網卡 | Chipset | Monitor Mode | Packet Injection | 狀態 |
+| 手機型號 | ALFA 網路卡 | Chipset | Monitor Mode | Packet Injection | 狀態 |
 |---------|---------|---------|:---:|:---:|------|
 | OnePlus 11 5G | AWUS036ACHM | MT7610U | ✅ | ✅ | 已驗證 |
 | OnePlus 11 5G | AWUS036ACM | MT7612U | ✅ | ✅ | 已驗證 |
@@ -408,7 +408,7 @@ wlan1mon  IEEE 802.11  Mode:Monitor  Frequency:2.437 GHz  Tx-Power=20 dBm
 
 ### 8.1 首選組合：OnePlus 11 5G + AWUS036ACHM
 
-此組合在已測試的所有設定中阻力最低。OnePlus 11 是目前在台灣市場仍可取得、具備官方 NetHunter 核心支援的最新旗艦機。AWUS036ACHM 的 MT7610U chipset 使用 `mt76x0u` 驅動——自核心 4.19 起就在主線中，完全免編譯，國際資安社群（Lab401、morrownr USB-WiFi 資料庫）一致將其列為 Kali 與 NetHunter 最安全的選擇。網卡體積小巧、單天線、USB 2.0——這些在行動場景中都是優點：功耗更低、發熱更少、出錯機會更少。
+此組合在已測試的所有設定中阻力最低。OnePlus 11 是目前在台灣市場仍可取得、具備官方 NetHunter 核心支援的最新旗艦機。AWUS036ACHM 的 MT7610U chipset 使用 `mt76x0u` 驅動——自核心 4.19 起就在主線中，完全免編譯，國際資安社群（Lab401、morrownr USB-WiFi 資料庫）一致將其列為 Kali 與 NetHunter 最安全的選擇。網路卡體積小巧、單天線、USB 2.0——這些在行動場景中都是優點：功耗更低、發熱更少、出錯機會更少。
 
 ### 8.2 高性能選擇：OnePlus 11 5G + AWUS036ACM
 
@@ -444,7 +444,7 @@ ACH 擁有 NetHunter 生態系中最豐富的教學資源、最大的社群故�
 
 ## 附錄：快速故障排除
 
-**網卡未出現在 `lsusb`：**
+**網路卡未出現在 `lsusb`：**
 1. 確認 OTG 已在開發人員選項中啟用
 2. 更換 OTG 線——線材品質是最常見的故障點
 3. 使用有獨立供電的 OTG Hub
@@ -479,7 +479,7 @@ sudo airodump-ng --band abg wlan1mon
 sudo iw dev wlan1mon info
 ```
 
-**網卡使用中斷線（USB reset）：**
+**網路卡使用中斷線（USB reset）：**
 
 ```bash
 # 降低發射功率（臨時解法）
@@ -496,10 +496,10 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ## 相關指南
 
-- [ALFA 網卡搭配 NetHunter 基本 OTG 設定](/zh-tw/blog/alfa-adapter-nethunter-android-otg/)
-- [ALFA WiFi 網卡選購指南 2026](/zh-tw/blog/alfa-wifi-adapter-buyer-guide-2026/)
+- [ALFA 網路卡搭配 NetHunter 基本 OTG 設定](/zh-tw/blog/alfa-adapter-nethunter-android-otg/)
+- [ALFA WiFi 網路卡選購指南 2026](/zh-tw/blog/alfa-wifi-adapter-buyer-guide-2026/)
 - [在 Kali Linux 與 Ubuntu 上安裝 ALFA 驅動](/zh-tw/blog/install-alfa-driver-kali-ubuntu/)
-- [ALFA 網卡搭配 Raspberry Pi 與 Kali 使用](/zh-tw/blog/alfa-adapter-raspberry-pi-kali/)
+- [ALFA 網路卡搭配 Raspberry Pi 與 Kali 使用](/zh-tw/blog/alfa-adapter-raspberry-pi-kali/)
 
 ---
 

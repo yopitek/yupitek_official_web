@@ -10,19 +10,19 @@ featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
-  - question: "核心更新後 ALFA 網卡為何會失效？"
+  - question: "核心更新後 ALFA 網路卡為何會失效？"
     answer: "RTL8812AU 使用核心外驅動，每次核心版本變更後已編譯模組不再相容。DKMS 可自動重建，但缺少核心標頭或過時設定會導致失敗。"
   - question: "如何快速診斷 ALFA 驅動失效原因？"
     answer: "執行 uname -r 確認核心版本，再以 dkms status 檢查模組建置狀態，最後用 dmesg 查看韌體或模組載入錯誤訊息。"
   - question: "RTL8812AU 驅動失效最快的修復方法是什麼？"
     answer: "安裝匹配的核心標頭後執行 dkms autoinstall。若失敗則從 aircrack-ng/rtl8812au 全新複製並執行 make dkms_install。"
-  - question: "MT7921AUN 網卡更新核心後無法連線怎麼辦？"
+  - question: "MT7921AUN 網路卡更新核心後無法連線怎麼辦？"
     answer: "MT7921AUN 為核心內建驅動，問題通常出在韌體。安裝 firmware-misc-nonfree 套件並確認核心版本不低於 5.18。"
   - question: "如何防止核心更新再次破壞驅動？"
     answer: "使用 apt full-upgrade 取代 apt upgrade，確保標頭與核心同步安裝。安裝 dkms 與 linux-headers-generic 元套件維持相依性。"
 ---
 
-核心更新後 ALFA 網卡失效是 Linux 使用者最常見的問題。RTL8812AU 需透過 DKMS 重建，MT7921AUN 需補韌體套件，兩者皆可透過系統化步驟在 15 分鐘內修復。
+核心更新後 ALFA 網路卡失效是 Linux 使用者最常見的問題。RTL8812AU 需透過 DKMS 重建，MT7921AUN 需補韌體套件，兩者皆可透過系統化步驟在 15 分鐘內修復。
 
 {{< tldr >}}
 核心更新破壞 ALFA 驅動的主因是標頭與模組不同步。RTL8812AU 透過 dkms autoinstall 重建，MT7921AUN 需安裝 firmware-misc-nonfree，長期修復則改用 apt full-upgrade。
@@ -138,7 +138,7 @@ ip link show | grep wlan
 
 ### 4.3 — 從原始碼完整重裝（DKMS 失敗時）
 
-若 `dkms autoinstall` 回報錯誤，代表已註冊的驅動程式原始碼已損毀或過舊。請完整移除後，從最新上游原始碼重新安裝：
+若 `dkms autoinstall` 回回報錯誤誤，代表已註冊的驅動程式原始碼已損毀或過舊。請完整移除後，從最新上游原始碼重新安裝：
 
 ```bash
 # 移除所有 DKMS 已註冊的驅動程式版本

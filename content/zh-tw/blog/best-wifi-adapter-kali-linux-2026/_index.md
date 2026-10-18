@@ -1,54 +1,54 @@
 ---
-title: "2026 Kali Linux 最佳無線網卡推薦 — ALFA 全系列完整比較"
-description: "2026 年 Kali Linux 最佳 USB 無線網卡完整推薦，比較 ALFA Network 全系列產品的監聽模式、封包注入、晶片組支援與購買建議。"
+title: "2026 Kali Linux 最佳無線網路卡推薦 — ALFA 全系列完整比較"
+description: "2026 年 Kali Linux 最佳 USB 無線網路卡完整推薦，比較 ALFA Network 全系列產品的監聽模式、封包注入、晶片組支援與購買建議。"
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
-tags: ["Kali-Linux", "無線網卡", "Monitor-Mode", "ALFA-Network", "滲透測試"]
+tags: ["Kali-Linux", "無線網路卡", "Monitor-Mode", "ALFA-Network", "滲透測試"]
 featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
-  - question: "為什麼 Kali Linux 需要外接無線網卡？"
-    answer: "筆電內建網卡不支援 Monitor Mode 與封包注入，無法執行 airodump-ng 等滲透測試工具，必須使用支援這兩項功能的外接 USB 網卡。"
+  - question: "為什麼 Kali Linux 需要外接無線網路卡？"
+    answer: "筆電內建網路卡不支援 Monitor Mode 與封包注入，無法執行 airodump-ng 等滲透測試工具，必須使用支援這兩項功能的外接 USB 網路卡。"
   - question: "RTL8812AU 和 MT7612U 哪個驅動更穩定？"
     answer: "MT7612U 的 mt76x2u 驅動自 Linux 核心 4.19 起內建於 mainline，免編譯即插即用；RTL8812AU 需透過 DKMS 外部安裝，核心更新後可能需重新編譯。"
-  - question: "WiFi 6E 網卡對 Kali Linux 有必要嗎？"
-    answer: "目前非必要。MT7921AUN 驅動自核心 5.18 起逐步整合，6 GHz 封包注入尚未完全穩定，建議有進階需求的用戶再選購 AWUS036AXML。"
+  - question: "WiFi 6E 網路卡對 Kali Linux 有必要嗎？"
+    answer: "目前非必要。MT7921AUN 驅動自核心 5.18 起逐步整合，6 GHz 封包注入尚未完全穩定，建議有進階需求的使用者再選購 AWUS036AXML。"
   - question: "如何在 Kali Linux 設定 Monitor Mode？"
     answer: "先執行 sudo airmon-ng check kill 終止干擾行程，再執行 sudo airmon-ng start wlan1 啟用監聽模式，確認 iwconfig 顯示 Mode:Monitor 即可。"
-  - question: "Kali Linux 新手推薦哪款 ALFA 網卡？"
+  - question: "Kali Linux 新手推薦哪款 ALFA 網路卡？"
     answer: "AWUS036ACH（RTL8812AU），社群教學資源最豐富，aircrack-ng 官方維護驅動，幾乎所有 Kali 教學皆以此型號為範例，新手上手風險最低。"
 ---
 
-2026 年 Kali Linux 最佳無線網卡首選 **ALFA AWUS036ACH**（RTL8812AU 晶片），aircrack-ng 官方維護驅動，社群支援最完整，新手老手皆宜。需要 Wi-Fi 6E 前瞻性則選 AWUS036AXML，預算有限選 AWUS036ACM。
+2026 年 Kali Linux 最佳無線網路卡首選 **ALFA AWUS036ACH**（RTL8812AU 晶片），aircrack-ng 官方維護驅動，社群支援最完整，新手老手皆宜。需要 Wi-Fi 6E 前瞻性則選 AWUS036AXML，預算有限選 AWUS036ACM。
 
 {{< tldr >}}
 首選 AWUS036ACH（RTL8812AU），aircrack-ng 官方驅動、社群教學最豐富；前瞻 AWUS036AXML（MT7921AUN）支援 Wi-Fi 6E；平價 AWUS036ACM（MT7612U）核心內建驅動免編譯。
 {{< /tldr >}}
 
-## 為什麼 Kali Linux 需要外接無線網卡？
+## 為什麼 Kali Linux 需要外接無線網路卡？
 
-很多剛接觸 Kali Linux 的使用者會發現，即便筆電內建了 Wi-Fi 晶片，許多工具（如 `airmon-ng`、`airodump-ng`、`Wireshark`）仍無法正常運作，甚至完全無法偵測到附近的無線網路。這背後的原因，在於**監聽模式（Monitor Mode）與封包注入（Packet Injection）**這兩項滲透測試必備功能，絕大多數的筆電內建網卡根本不支援。
+很多剛接觸 Kali Linux 的使用者會發現，即便筆電內建了 Wi-Fi 晶片，許多工具（如 `airmon-ng`、`airodump-ng`、`Wireshark`）仍無法正常運作，甚至完全無法偵測到附近的無線網路。這背後的原因，在於**監聽模式（Monitor Mode）與封包注入（Packet Injection）**這兩項滲透測試必備功能，絕大多數的筆電內建網路卡根本不支援。
 
-內建 Wi-Fi 晶片（例如 Intel AX201、Realtek RTL8852AE）的設計目標是日常連網，驅動程式針對省電與穩定性最佳化，不支援被動監聽所有無線封包，也無法主動發送偽造封包。對於資安研究與滲透測試來說，這意味著你必須準備一張**專門設計、社群驗證過的外接 USB 無線網卡**，才能在 Kali Linux 上發揮最大效用。
+內建 Wi-Fi 晶片（例如 Intel AX201、Realtek RTL8852AE）的設計目標是日常連網，驅動程式針對省電與穩定性最佳化，不支援被動監聽所有無線封包，也無法主動發送偽造封包。對於資安研究與滲透測試來說，這意味著你必須準備一張**專門設計、社群驗證過的外接 USB 無線網路卡**，才能在 Kali Linux 上發揮最大效用。
 
-本文將完整介紹 2026 年最值得推薦的 USB 無線網卡選擇，以 ALFA Network 全系列為主軸，提供詳細規格比較、使用情境建議，以及台灣購買管道。
+本文將完整介紹 2026 年最值得推薦的 USB 無線網路卡選擇，以 ALFA Network 全系列為主軸，提供詳細規格比較、使用情境建議，以及台灣購買管道。
 
 ---
 
 ## 關鍵選購標準
 
-在選購 Kali Linux 專用無線網卡之前，必須先了解三大核心標準：
+在選購 Kali Linux 專用無線網路卡之前，必須先了解三大核心標準：
 
 ### 1. 監聽模式（Monitor Mode）
 
-監聽模式允許網卡被動接收所有附近的 802.11 封包，不論該封包是否針對自己。這是執行無線封包分析、Wi-Fi 安全稽核的基礎。沒有這項功能，`airodump-ng` 等工具完全無用武之地。
+監聽模式允許網路卡被動接收所有附近的 802.11 封包，不論該封包是否針對自己。這是執行無線封包分析、Wi-Fi 安全稽核的基礎。沒有這項功能，`airodump-ng` 等工具完全無用武之地。
 
 ### 2. 封包注入（Packet Injection）
 
-封包注入讓網卡能夠主動發送任意建構的 802.11 封包，這是執行 WPA 握手擷取（deauthentication attack）、重播攻擊等測試的必要能力。必須與監聽模式同時支援，才算完整的滲透測試網卡。
+封包注入讓網路卡能夠主動發送任意建構的 802.11 封包，這是執行 WPA 握手擷取（deauthentication attack）、重播攻擊等測試的必要能力。必須與監聽模式同時支援，才算完整的滲透測試網路卡。
 
 ### 3. 晶片組支援
 
@@ -62,7 +62,7 @@ faq:
 
 ## ALFA Network 全系列比較表
 
-ALFA Network 是無線網卡領域最受資安社群信賴的品牌，以下是 2026 年主要在售型號的詳細比較：
+ALFA Network 是無線網路卡領域最受資安社群信賴的品牌，以下是 2026 年主要在售型號的詳細比較：
 
 | 型號 | Wi-Fi 標準 | 晶片組 | 監聽模式 | 封包注入 | 天線 | 最高速率 | 適合場景 |
 |------|-----------|--------|----------|----------|------|----------|----------|
@@ -97,7 +97,7 @@ AWUS036ACH 搭載 **Realtek RTL8812AU** 晶片組，是目前 Kali Linux 社群�
 
 **注意**：由於 MT7921AUN 驅動在 Linux 上仍屬相對新的整合，部分功能（如特定頻段的封包注入）可能需要額外調整。建議有一定 Linux 基礎的使用者選購。
 
-**適合對象**：希望搶先部署 Wi-Fi 6E 測試能力的進階用戶，或已購入 Wi-Fi 6E 路由器的企業資安團隊。
+**適合對象**：希望搶先部署 Wi-Fi 6E 測試能力的進階使用者，或已購入 Wi-Fi 6E 路由器的企業資安團隊。
 
 ---
 
@@ -163,13 +163,13 @@ iwconfig
 
 ## 總結
 
-2026 年 Kali Linux 最佳無線網卡推薦：
+2026 年 Kali Linux 最佳無線網路卡推薦：
 
 1. **首選**：AWUS036ACH — 社群支援最完整，新手老手皆宜
 2. **前瞻**：AWUS036AXML — Wi-Fi 6E 準備，面向未來
 3. **平價**：AWUS036ACM — 預算有限的最佳選擇
 
-選對工具，是滲透測試成功的第一步。搭配 Kali Linux 強大的工具套件，ALFA Network 無線網卡將讓你的資安研究如虎添翼。
+選對工具，是滲透測試成功的第一步。搭配 Kali Linux 強大的工具套件，ALFA Network 無線網路卡將讓你的資安研究如虎添翼。
 
 ---
 

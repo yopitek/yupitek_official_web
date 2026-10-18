@@ -19,16 +19,16 @@ faq:
   - question: "AWUS036AXM 在 Raspberry Pi 上能即插即用嗎？"
     answer: "可以。MT7921AUN 驅動自核心 5.18 起內建，Kali ARM64 映像核心版本更高。只需安裝 firmware-misc-nonfree 韌體套件即可。"
   - question: "如何為 Raspberry Pi 上的 AWUS036ACH 供電？"
-    answer: "AWUS036ACH 耗電約 500mW，直接插入 Pi 可能導致降頻或重啟。必須使用有源 USB 3.0 集線器，並搭配 3A 以上官方 Pi USB-C 電源供應器。"
+    answer: "AWUS036ACH 耗電約 500mW，直接插入 Pi 可能導致降頻或重啟。必須使用外接供電 USB 3.0 集線器，並搭配 3A 以上官方 Pi USB-C 電源供應器。"
 ---
 
 Raspberry Pi 4 或 Pi 5 搭配 ALFA WiFi 網路卡能打造攜帶式滲透測試平台，但 RTL8812AU 驅動需在 ARM64 核心上編譯，AWUS036ACM 則免驅即插即用。
 
 {{< tldr >}}
-Raspberry Pi 4/5 搭配 Kali Linux ARM64 與 ALFA 網路卡可打造口袋型滲透測試平台。AWUS036ACH 需編譯 RTL8812AU 驅動，AWUS036ACM 與 AWUS036AXM 因核心內建驅動可即插即用。需有源 USB 集線器供電。
+Raspberry Pi 4/5 搭配 Kali Linux ARM64 與 ALFA 網路卡可打造口袋型滲透測試平台。AWUS036ACH 需編譯 RTL8812AU 驅動，AWUS036ACM 與 AWUS036AXM 因核心內建驅動可即插即用。需外接供電 USB 集線器供電。
 {{< /tldr >}}
 
-執行 Kali Linux 的筆記型電腦是標準的滲透測試工作站——但絕非唯一選擇。Raspberry Pi 4 或 Pi 5 搭配 ALFA USB WiFi 網路卡，能打造出一個體積小巧、無風扇、被動散熱的平台：可以放進夾克口袋、靠 USB-C 行動電源供電，並在目標環境中無人看守運行數小時。Kali Linux ARM64 映像由 Offensive Security 官方提供，無需模擬即可在 Pi 4 和 Pi 5 上原生執行，完整提供 Aircrack-ng、Kismet、Wireshark、Bettercap 等 Kali 標準工具包。
+執行 Kali Linux 的筆記型電腦是標準的滲透測試工作站——但絕非唯一選擇。Raspberry Pi 4 或 Pi 5 搭配 ALFA USB WiFi 網路卡，能打造出一個體積小巧、無風扇、被動散熱的平台：可以放進夾克口袋、靠 USB-C 行動電源供電，並在目標環境中無人看守執行數小時。Kali Linux ARM64 映像由 Offensive Security 官方提供，無需模擬即可在 Pi 4 和 Pi 5 上原生執行，完整提供 Aircrack-ng、Kismet、Wireshark、Bettercap 等 Kali 標準工具包。
 
 最大的障礙是驅動程式。AWUS036ACH 內建的 RTL8812AU 晶片不在主線核心中，這代表你不能插上網路卡就期待它直接運作。你必須針對執行中的 ARM64 核心編譯驅動程式——而編譯參數與 x86-64 不同。本教學帶你完成每一個步驟。
 
@@ -44,12 +44,12 @@ Raspberry Pi 4/5 搭配 Kali Linux ARM64 與 ALFA 網路卡可打造口袋型滲
 | 主要網路卡 | ALFA AWUS036ACH | RTL8812AU 晶片；ARM 驅動支援最佳；雙頻 AC1200 |
 | 替代網路卡 | ALFA AWUS036ACM | MT7612U 晶片；驅動程式已內建核心 (mt76x2u)；Kali ARM64 免驅即插即用 |
 | WiFi 6 網路卡 | ALFA AWUS036AXM 或 AXML | MT7921AUN 晶片；核心 5.18 起內建；需安裝 firmware-misc-nonfree |
-| USB 集線器 | 有源 USB 3.0 集線器 | AWUS036ACH 耗電約 500 mW；不加集線器可能導致 Pi USB 電壓不足 |
+| USB 集線器 | 外接供電 USB 3.0 集線器 | AWUS036ACH 耗電約 500 mW；不加集線器可能導致 Pi USB 電壓不足 |
 | 儲存裝置 | MicroSD 32 GB+（Class 10 / A2） | A2 規格記憶卡啟動及 apt 操作明顯更快 |
 | 電源供應器 | 官方 Pi USB-C 電源供應器（≥ 3 A） | 第三方變壓器是穩定性問題的常見來源 |
 
 {{< alert "triangle-exclamation" >}}
-AWUS036ACH 是高電流 USB 裝置。在沒有有源 USB 集線器的情況下直接插入 Raspberry Pi 4 或 Pi 5，可能在負載下導致 Pi 降頻或重啟。同時使用其他 USB 周邊時，務必使用有源集線器。
+AWUS036ACH 是高電流 USB 裝置。在沒有外接供電 USB 集線器的情況下直接插入 Raspberry Pi 4 或 Pi 5，可能在負載下導致 Pi 降頻或重啟。同時使用其他 USB 周邊時，務必使用有源集線器。
 {{< /alert >}}
 
 ---
@@ -214,7 +214,7 @@ sudo systemctl start NetworkManager
 
 **無頭操作：** 避免在野外連接鍵盤、滑鼠和螢幕。在首次開機時設定好 SSH，透過筆電上的終端機存取所有功能。`tmux` 工作階段在重新連線後仍可恢復，在網路狀況不穩定時特別寶貴。
 
-**電源：** 使用最低 3 A 的官方 Raspberry Pi USB-C 電源供應器。若使用 AWUS036ACH，另加一個額定 2.5 A 以上的有源 USB 集線器。優質 USB-C 行動電源（65 W+）可同時為 Pi、集線器和網路卡供電，依負載可持續 4–6 小時。
+**電源：** 使用最低 3 A 的官方 Raspberry Pi USB-C 電源供應器。若使用 AWUS036ACH，另加一個額定 2.5 A 以上的外接供電 USB 集線器。優質 USB-C 行動電源（65 W+）可同時為 Pi、集線器和網路卡供電，依負載可持續 4–6 小時。
 
 **儲存：** 將 Kismet 記錄和擷取檔案寫入 USB SSD，而非 MicroSD 卡。MicroSD 卡有寫入次數限制，在持續記錄工作負載下會快速劣化。連接至有源集線器的 USB 3.0 SSD 更快且更耐用。
 
@@ -224,7 +224,7 @@ sudo systemctl start NetworkManager
 
 ## 在 Raspberry Pi 上執行 Kismet
 
-Kismet 是被動 WiFi 掃描器，以背景伺服器模式執行，並提供瀏覽器基礎的網頁介面。非常適合無頭 Pi 部署：讓 Pi 持續運行，從同一網路上的任何裝置查看網頁介面。
+Kismet 是被動 WiFi 掃描器，以背景伺服器模式執行，並提供瀏覽器基礎的網頁介面。非常適合無頭 Pi 部署：讓 Pi 持續執行，從同一網路上的任何裝置查看網頁介面。
 
 ```bash
 sudo apt install kismet
@@ -257,7 +257,7 @@ Kismet 預設將所有資料記錄至 `~/.kismet/` 中的 `.kismet` 資料庫檔
 - Raspberry Pi 4 或 Pi 5
 - ALFA AWUS036ACH
 - USB GPS 裝置（u-blox 晶片與 Kismet 相容性良好）
-- 有源 USB 集線器
+- 外接供電 USB 集線器
 - USB-C 行動電源（65 W+，支援直通充電）
 
 **設定步驟：**

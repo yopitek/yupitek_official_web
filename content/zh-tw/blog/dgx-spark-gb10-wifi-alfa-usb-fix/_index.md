@@ -1,6 +1,6 @@
 ---
 title: "DGX Spark Wi-Fi 連不上？只要十分鐘，這張 ALFA USB 無線網路卡幫你終結噩夢"
-description: "NVIDIA DGX Spark 內建 Wi-Fi 連線問題有解！免驅動 USB 無線網卡十分鐘搞定。ASUS ASCENT GX10、MSI EdgeXpert、HP ZGX Nano、ALTOS BrainSphere GB10 F1、GIGABYTE AI TOP ATOM 全適用。"
+description: "NVIDIA DGX Spark 內建 Wi-Fi 連線問題有解！免驅動 USB 無線網路卡十分鐘搞定。ASUS ASCENT GX10、MSI EdgeXpert、HP ZGX Nano、ALTOS BrainSphere GB10 F1、GIGABYTE AI TOP ATOM 全適用。"
 date: 2026-05-20
 draft: false
 showBreadcrumbs: true
@@ -12,20 +12,20 @@ lastmod: 2026-07-02
 faq:
   - question: "DGX Spark 的 Wi-Fi 為什麼連不上？"
     answer: "DGX Spark 內建 MediaTek MT7925 Wi-Fi 7 晶片，但 OOBE 階段的 wpa_supplicant 過度精簡，與特定品牌 AP（特別是 UniFi）不相容，WPA2-Enterprise 幾乎確定無法連線。"
-  - question: "ALFA USB 網卡解法適用所有 GB10 AI Server 嗎？"
+  - question: "ALFA USB 網路卡解法適用所有 GB10 AI Server 嗎？"
     answer: "適用。所有搭載 NVIDIA GB10 Grace Blackwell Superchip 的 AI Edge Server（ASUS、MSI、HP、ALTOS、GIGABYTE）均使用同一顆 MT7925 Wi-Fi 晶片，ALFA AWUS036ACM 解法全部通用。"
   - question: "AWUS036ACM 在 DGX Spark 上需要安裝驅動嗎？"
     answer: "不需要。MT7612U 的 mt76 驅動自 Linux Kernel 4.19 起內建核心主線，DGX OS 的 Kernel 6.17+ 自然完整支援，插入 USB 即自動載入。"
-  - question: "ALFA USB 網卡修復 Wi-Fi 問題需要多久？"
+  - question: "ALFA USB 網路卡修復 Wi-Fi 問題需要多久？"
     answer: "十分鐘以內。插入 USB 3.0 埠後系統自動載入驅動，透過 nmcli 指令掃描並連線 WiFi 即可完成，不需編譯驅動或重開機。"
-  - question: "可以在 DGX Spark 上用其他 ALFA 網卡嗎？"
+  - question: "可以在 DGX Spark 上用其他 ALFA 網路卡嗎？"
     answer: "AWUS036ACH（RTL8812AU）需手動編譯驅動，在 GB10 的 ARM64 平台上不保證成功。AWUS036ACM 是唯一確認零編譯、即插即用的方案。"
 ---
 
-DGX Spark 內建 Wi-Fi 因 MT7925 驅動與 wpa_supplicant 限制而無法可靠連線，解法是插入 ALFA AWUS036ACM USB 網卡，Kernel 內建驅動即插即用，十分鐘搞定。
+DGX Spark 內建 Wi-Fi 因 MT7925 驅動與 wpa_supplicant 限制而無法可靠連線，解法是插入 ALFA AWUS036ACM USB 網路卡，Kernel 內建驅動即插即用，十分鐘搞定。
 
 {{< tldr >}}
-NVIDIA DGX Spark 及所有 GB10 AI Server 的內建 MT7925 Wi-Fi 7 晶片存在已知連線缺陷。解法是插入 ALFA AWUS036ACM USB 網卡，mt76 驅動自 Kernel 4.19 內建核心，DGX OS Kernel 6.17+ 即插即用，十分鐘完成連線。
+NVIDIA DGX Spark 及所有 GB10 AI Server 的內建 MT7925 Wi-Fi 7 晶片存在已知連線缺陷。解法是插入 ALFA AWUS036ACM USB 網路卡，mt76 驅動自 Kernel 4.19 內建核心，DGX OS Kernel 6.17+ 即插即用，十分鐘完成連線。
 {{< /tldr >}}
 
 你期待已久的 **NVIDIA DGX Spark**（代號 Project DIGITS）終於到貨了。
@@ -62,7 +62,7 @@ NVIDIA 官方在 **DGX Spark Release Notes（2026 年 4 月更新）** 中已明
 
 **③ 隨機出現的「No Wi-Fi Adapter Found」**
 
-多名用戶在 NVIDIA 論壇回報（討論串 #356183），DGX Spark 會在正常使用中突然顯示「找不到無線網卡」，必須完整重開機才能恢復。更糟的是，**斷線後系統不會自動重連**——你必須手動執行 `nmcli` 指令。
+多名使用者在 NVIDIA 論壇回報（討論串 #356183），DGX Spark 會在正常使用中突然顯示「找不到無線網路卡」，必須完整重開機才能恢復。更糟的是，**斷線後系統不會自動重連**——你必須手動執行 `nmcli` 指令。
 
 | 問題 | 影響 |
 |------|------|
@@ -113,21 +113,21 @@ DGX Spark 的 Wi-Fi 問題之所以受到大量討論，純粹因為它是 NVIDI
 | 重量 | 1.48 kg | 1.2 kg | 1.2 kg | 1.25 kg | < 1.5 kg | 1.2 kg |
 | 獨家軟體 | — | — | — | HP ZGX Toolkit | Altos aiGeni 平台 | — |
 
-> ⚠️ **關鍵結論**：無論你買哪一家的 GB10 AI Edge Server，內建 Wi-Fi 都是同一顆 MediaTek MT7925，也都可能遇到同樣的連線問題。底下的 ALFA USB 無線網卡解法，**六款全部適用**。
+> ⚠️ **關鍵結論**：無論你買哪一家的 GB10 AI Edge Server，內建 Wi-Fi 都是同一顆 MediaTek MT7925，也都可能遇到同樣的連線問題。底下的 ALFA USB 無線網路卡解法，**六款全部適用**。
 
 ---
 
-## 解法：一張 USB 無線網卡，十分鐘搞定
+## 解法：一張 USB 無線網路卡，十分鐘搞定
 
 NVIDIA 官方僅測試 DGX OS（基於 Ubuntu 24.04），**所有 GB10 平台皆為 ARM64（aarch64）架構**，Kernel 版本 **6.17 以上**。
 
-這意味著你需要的 USB 無線網卡必須滿足三個條件：
+這意味著你需要的 USB 無線網路卡必須滿足三個條件：
 
 1. ✅ **Linux Kernel 內建驅動**——不需編譯、不需 DKMS
 2. ✅ **ARM64 (aarch64) 完整支援**——能在 GB10 上即插即用
 3. ✅ **成熟穩定**——經過社群廣泛驗證
 
-在市面上數十款 USB 無線網卡中，只有極少數能同時滿足這三點。
+在市面上數十款 USB 無線網路卡中，只有極少數能同時滿足這三點。
 
 ### 🥇 唯一推薦：ALFA AWUS036ACM
 
@@ -166,7 +166,7 @@ MT7612U 已在 Raspberry Pi OS（aarch64）、Ubuntu Server（ARM64）等多個 
 
 **6. 唯一 TAA 認證**
 
-如果你的單位有政府採購規範要求，ALFA AWUS036ACM 是少數具備 **TAA 認證**的外接 USB 無線網卡。
+如果你的單位有政府採購規範要求，ALFA AWUS036ACM 是少數具備 **TAA 認證**的外接 USB 無線網路卡。
 
 ---
 
@@ -174,11 +174,11 @@ MT7612U 已在 Raspberry Pi OS（aarch64）、Ubuntu Server（ARM64）等多個 
 
 以下是你在 DGX Spark 上使用 ALFA AWUS036ACM 的完整流程：
 
-### 第一步：插入 USB 網卡
+### 第一步：插入 USB 網路卡
 
 將 AWUS036ACM 插入 DGX Spark 的 USB 3.0 Type-A 連接埠。
 
-打開終端機，執行：
+開啟終端機，執行：
 
 ```bash
 dmesg | tail -20
@@ -195,7 +195,7 @@ ieee80211 phy1: rt2x00lib_probe_dev: Information - Successfully initialized devi
 
 **這就是「驅動已自動載入」的信號。** 整個過程你沒有安裝任何東西。
 
-### 第二步：確認網卡被系統辨識
+### 第二步：確認網路卡被系統辨識
 
 ```bash
 nmcli device status
@@ -270,7 +270,7 @@ AI 模型訓練時的網路流量非常可觀——下載預訓練權重、同�
 
 ---
 
-## 三種場景，一張網卡
+## 三種場景，一張網路卡
 
 ### 場景 A：AI 開發者
 ```
@@ -298,7 +298,7 @@ ALFA ACM + 高增益天線 → 連至辦公室管理 WiFi
 
 A：同為 MediaTek，但驅動架構完全不同。MT7925 使用 `mt7925e` 驅動，屬於較新的 PCIe 介面，驅動仍在打磨。MT7612U 使用 `mt76` USB 驅動，從 Kernel 4.19 發展至今已極度成熟。
 
-**Q：這張網卡在 DGX OS 以外還能用嗎？**
+**Q：這張網路卡在 DGX OS 以外還能用嗎？**
 
 A：當然。MT7612U 的驅動是 Linux Kernel 主線的一部分，Ubuntu、Debian、Raspberry Pi OS、Kali Linux、Fedora、Arch Linux——只要是 Kernel 4.19+，全部即插即用。
 
@@ -322,7 +322,7 @@ ALFA AWUS036ACM 的解決方案簡單到近乎荒謬：**插入 USB，搞定。*
 | 買一台 Wi-Fi 橋接器 | 30 分鐘設定 | 中等 | 中 |
 | **ALFA AWUS036ACM** | **< 10 分鐘** | **最高** | **零** |
 
-十分鐘，一張 USB 網卡，讓你的 AI Server 真正上線。
+十分鐘，一張 USB 網路卡，讓你的 AI Server 真正上線。
 
 ---
 

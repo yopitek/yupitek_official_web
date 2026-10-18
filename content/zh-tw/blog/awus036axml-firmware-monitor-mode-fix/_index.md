@@ -28,9 +28,9 @@ AWUS036AXML 在主動監控模式下會因 MT7921AUN 韌體限制導致介面當
 AWUS036AXML 的 mt7921u 驅動程式在主動封包注入時會觸發韌體當機。本文說明根本原因、診斷步驟，以及更新韌體、升級核心與改用 hcxdumptool 被動擷取等修復方案。
 {{< /tldr >}}
 
-**ALFA AWUS036AXML** 是 ALFA Network 的旗艦 WiFi 6E 網卡，搭載 MediaTek MT7921AUN 晶片組，支援三頻（2.4 / 5 / 6 GHz），是 2026 年少數能在 6 GHz 頻段進行被動監聽的 USB 網卡之一。在站點勘查、封包擷取、PMKID 收集等使用情境下，它的表現相當出色。
+**ALFA AWUS036AXML** 是 ALFA Network 的旗艦 WiFi 6E 網路卡，搭載 MediaTek MT7921AUN 晶片組，支援三頻（2.4 / 5 / 6 GHz），是 2026 年少數能在 6 GHz 頻段進行被動監聽的 USB 網路卡之一。在站點勘查、封包擷取、PMKID 收集等使用情境下，它的表現相當出色。
 
-但有一個已知問題會讓使用者措手不及：**主動監控模式指令會導致韌體當機**。執行 `aireplay-ng` 或 `mdk4` 等工具後，`wlan0mon` 介面會完全消失，必須拔插網卡才能恢復。這不是硬體缺陷，而是目前 Linux `mt7921u` 驅動程式與韌體的限制。
+但有一個已知問題會讓使用者措手不及：**主動監控模式指令會導致韌體當機**。執行 `aireplay-ng` 或 `mdk4` 等工具後，`wlan0mon` 介面會完全消失，必須拔插網路卡才能恢復。這不是硬體缺陷，而是目前 Linux `mt7921u` 驅動程式與韌體的限制。
 
 本指南說明根本原因，提供完整的診斷步驟，以及具體的修復與暫時解決方案，讓您不必中斷工作。
 
@@ -40,7 +40,7 @@ AWUS036AXML 的 mt7921u 驅動程式在主動封包注入時會觸發韌體當�
 
 ### 症狀
 
-啟用監控模式並執行主動指令（如 `aireplay-ng --test wlan0mon` 或任何取消驗證/注入操作）後，`wlan0mon` 介面從 `ip link` 和 `iwconfig` 輸出中消失。網卡變得無回應，必須實體拔除並重新插入才能恢復。部分情況下，`dmesg` 會在當機後立即顯示韌體錯誤或重置事件。
+啟用監控模式並執行主動指令（如 `aireplay-ng --test wlan0mon` 或任何取消驗證/注入操作）後，`wlan0mon` 介面從 `ip link` 和 `iwconfig` 輸出中消失。網路卡變得無回應，必須實體拔除並重新插入才能恢復。部分情況下，`dmesg` 會在當機後立即顯示韌體錯誤或重置事件。
 
 被動操作（使用 `airodump-ng` 掃描、擷取原始封包）在觸發主動注入前後均可正常運作。
 
@@ -51,7 +51,7 @@ AWUS036AXML 的 mt7921u 驅動程式在主動封包注入時會觸發韌體當�
 相較之下，**被動監聽**（嗅探空中已有的封包）不需要韌體傳送任何內容，不會觸發當機。問題僅限於傳送路徑操作：取消驗證封包、探測請求、關聯洪水等主動操作。
 
 {{< alert "triangle-exclamation" >}}
-**已知韌體當機錯誤。** 這是 2026 年初 Linux `mt7921u` 驅動程式中已確認的問題，影響 AWUS036AXML 及其他 MT7921AUN 的 USB 網卡。未來的核心或韌體更新可能會修復此問題——請查閱[驅動程式安裝指南](/zh-tw/blog/install-alfa-driver-kali-ubuntu/)以獲取最新狀態。
+**已知韌體當機錯誤。** 這是 2026 年初 Linux `mt7921u` 驅動程式中已確認的問題，影響 AWUS036AXML 及其他 MT7921AUN 的 USB 網路卡。未來的核心或韌體更新可能會修復此問題——請查閱[驅動程式安裝指南](/zh-tw/blog/install-alfa-driver-kali-ubuntu/)以取得最新狀態。
 {{< /alert >}}
 
 ---
@@ -80,7 +80,7 @@ sudo airodump-ng wlan0mon
 sudo aireplay-ng --test wlan0mon
 ```
 
-若 `aireplay-ng --test` 後網卡從 `ip link` 消失，即確認遇到韌體當機錯誤。
+若 `aireplay-ng --test` 後網路卡從 `ip link` 消失，即確認遇到韌體當機錯誤。
 
 透過核心日誌進行額外驗證：
 
@@ -178,14 +178,14 @@ hashcat -m 22000 hash.hc22000 /usr/share/wordlists/rockyou.txt
 
 對於確實需要主動封包注入的任務（強制 WPA 握手擷取、WPS 列舉等），**AWUS036ACH**（RTL8812AU 晶片組）是在 Kali Linux 上擁有成熟、經過充分測試驅動程式支援的首選解決方案。
 
-推薦的雙網卡專業設定：
+推薦的雙網路卡專業設定：
 
 - **AWUS036AXML** → 5 GHz / 6 GHz 被動掃描與擷取
 - **AWUS036ACH** → 2.4 GHz / 5 GHz 主動注入
 
 這個組合讓您完整覆蓋所有頻段，注入由 RTL8812AU 負責（其 Linux 主動模式支援已穩定多年），AWUS036AXML 負責 6 GHz 探索和高品質被動擷取。
 
-請參閱 [AWUS036AXML 評測](/zh-tw/blog/awus036axml-wifi-6e-review/)和[封包注入指南](/zh-tw/blog/packet-injection-guide/)以了解兩個網卡的設定詳情。
+請參閱 [AWUS036AXML 評測](/zh-tw/blog/awus036axml-wifi-6e-review/)和[封包注入指南](/zh-tw/blog/packet-injection-guide/)以了解兩個網路卡的設定詳情。
 
 ---
 
@@ -196,11 +196,11 @@ hashcat -m 22000 hash.hc22000 /usr/share/wordlists/rockyou.txt
 - **核心 6.6 或更新版本**搭配 firmware-misc-nonfree 20240610 或更新版本
 - 避免以爆發模式使用 `aireplay-ng --deauth`（高封包率取消驗證洪水比單一封包操作更容易觸發當機）
 - 使用 `--deauth 1` 或 `--deauth 3`，而非持續的取消驗證串流
-- 確保網卡連接至 USB 3.0 連接埠（USB 2.0 頻寬限制會增加韌體指令管線的壓力）
+- 確保網路卡連接至 USB 3.0 連接埠（USB 2.0 頻寬限制會增加韌體指令管線的壓力）
 - 在 2.4 GHz 而非 5 GHz 進行注入操作（部分驅動程式版本中低頻段似乎更穩定）
 
 {{< alert "triangle-exclamation" >}}
-**在實際評估前請先測試。** 即使主動模式看似正常，MT7921AUN 韌體仍可能在高負載下於操作途中當機。使用 AWUS036AXML 進行主動操作時，請務必備有恢復計畫（備用網卡或純被動工作流程）。
+**在實際評估前請先測試。** 即使主動模式看似正常，MT7921AUN 韌體仍可能在高負載下於操作途中當機。使用 AWUS036AXML 進行主動操作時，請務必備有恢復計畫（備用網路卡或純被動工作流程）。
 {{< /alert >}}
 
 ---

@@ -1,5 +1,5 @@
 ---
-title: "ALFA 無線網卡是否支援 ALTOS BrainSphere GB10 F1"
+title: "ALFA 無線網路卡是否支援 ALTOS BrainSphere GB10 F1"
 date: 2026-09-03
 draft: false
 slug: "alfa-altos-brainsphere-gb10-compatibility"
@@ -13,7 +13,7 @@ tags:
   - "DGX-OS"
 categories:
   - "邊緣 AI / GPU 伺服器"
-description: "ALTOS BrainSphere GB10 F1 與 NVIDIA DGX Spark 共享相同的 GB10 硬體平台與 DGX OS 軟體環境，對 ALFA 網卡的相容性完全一致（判定母體：ALFA 現役 9 款 USB 網卡）。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM，4 款）使用 in-kernel 驅動，開箱即用；Realtek 晶片..."
+description: "ALTOS BrainSphere GB10 F1 與 NVIDIA DGX Spark 共享相同的 GB10 硬體平台與 DGX OS 軟體環境，對 ALFA 網路卡的相容性完全一致（判定母體：ALFA 現役 9 款 USB 網路卡）。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM，4 款）使用 in-kernel 驅動，開箱即用；Realtek 晶片..."
 featureimage: ""
 author: "benny-lai"
 lastmod: 2026-09-03
@@ -21,9 +21,9 @@ lastmod: 2026-09-03
 
 ## 1. 問題摘要
 
-客戶詢問：「ALFA 系列 USB 無線網卡能否在 ALTOS BrainSphere GB10 F1（NVIDIA GB10 Grace Blackwell）AI 工作站上使用？」
+客戶詢問：「ALFA 系列 USB 無線網路卡能否在 ALTOS BrainSphere GB10 F1（NVIDIA GB10 Grace Blackwell）AI 工作站上使用？」
 
-簡短結論：ALTOS BrainSphere GB10 F1 與 NVIDIA DGX Spark 共享相同的 GB10 硬體平台與 DGX OS 軟體環境，對 ALFA 網卡的相容性完全一致（判定母體：ALFA 現役 9 款 USB 網卡）。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM，4 款）使用 in-kernel 驅動，開箱即用；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER，5 款）需在 ARM64 上編譯 out-of-tree 驅動。注意：BrainSphere GB10 F1 的 USB 埠為 3 個 Type-C 資料埠 + 1 個 Type-C PD 輸入埠，ALFA 網卡（AXML 除外）需使用 USB-C to USB-A 轉接器。
+簡短結論：ALTOS BrainSphere GB10 F1 與 NVIDIA DGX Spark 共享相同的 GB10 硬體平台與 DGX OS 軟體環境，對 ALFA 網路卡的相容性完全一致（判定母體：ALFA 現役 9 款 USB 網路卡）。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM，4 款）使用 in-kernel 驅動，開箱即用；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER，5 款）需在 ARM64 上編譯 out-of-tree 驅動。注意：BrainSphere GB10 F1 的 USB 埠為 3 個 Type-C 資料埠 + 1 個 Type-C PD 輸入埠，ALFA 網路卡（AXML 除外）需使用 USB-C to USB-A 轉接器。
 
 ## 2. 分析目標硬體規格架構
 
@@ -75,11 +75,11 @@ lastmod: 2026-09-03
 
 ### 2.4 USB Type-C 轉接需求
 
-BrainSphere GB10 F1 的 4 個 USB 埠均為 Type-C（3 個資料 + 1 個 PD 輸入），ALFA 全系列網卡（除 AXML 為 USB-C 外）均為 USB Type-A，需使用轉接器。
+BrainSphere GB10 F1 的 4 個 USB 埠均為 Type-C（3 個資料 + 1 個 PD 輸入），ALFA 全系列網路卡（除 AXML 為 USB-C 外）均為 USB Type-A，需使用轉接器。
 
 ## 3. 分析目前 ALFA 網路卡規格和晶片組
 
-截至 2026 年 9 月，ALFA Network 現役 USB 無線網卡產品線如下：
+截至 2026 年 9 月，ALFA Network 現役 USB 無線網路卡產品線如下：
 
 | 機型 | Wi-Fi 等級 | 晶片組 | 介面 | Linux 驅動狀態 |
 |---|---|---|---|---|
@@ -153,11 +153,11 @@ BrainSphere GB10 F1 的 4 個 USB 埠均為 Type-C（3 個資料 + 1 個 PD 輸�
 
 ## 7. 超詳細 Step by Step 設定步驟
 
-ALTOS BrainSphere GB10 F1 的安裝步驟與 NVIDIA DGX Spark 完全相同。以下為精簡版，完整步驟請參考 [ALFA 無線網卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/) 第 7 節。
+ALTOS BrainSphere GB10 F1 的安裝步驟與 NVIDIA DGX Spark 完全相同。以下為精簡版，完整步驟請參考 [ALFA 無線網路卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/) 第 7 節。
 
 ### 7.1 MediaTek 晶片機型（開箱即用）
 
-- 使用 USB-C to USB-A 轉接器（AXML 可直插），將 ALFA 網卡插入 BrainSphere 的 USB-C 資料埠
+- 使用 USB-C to USB-A 轉接器（AXML 可直插），將 ALFA 網路卡插入 BrainSphere 的 USB-C 資料埠
 - 確認偵測：`lsusb`
 - 確認介面：`ip link show`（應自動出現 wlan0）
 - 連線 WiFi：`nmcli dev wifi connect "SSID" password "密碼"`
@@ -197,7 +197,7 @@ sudo aireplay-ng --test wlan0
 
 ### 7.4 在 aiGeni 容器中使用 WiFi（進階）
 
-若需在 Altos aiGeni 的 Docker 容器中使用 ALFA 網卡：
+若需在 Altos aiGeni 的 Docker 容器中使用 ALFA 網路卡：
 
 1. 先在 host OS（DGX OS）完成驅動安裝與 WiFi 連線
 2. 啟動容器時加入 `--network=host` 或掛載對應網路介面
@@ -207,7 +207,7 @@ sudo aireplay-ng --test wlan0
 
 | 症狀 | 可能原因 | 排解方式 |
 |---|---|---|
-| lsusb 看不到 ALFA 網卡 | USB-C 轉接器不良 / 僅充電規格 | 更換支援資料傳輸的 USB 3.2 Gen 2×2 轉接器；嘗試不同 USB-C 埠 |
+| lsusb 看不到 ALFA 網路卡 | USB-C 轉接器不良 / 僅充電規格 | 更換支援資料傳輸的 USB 3.2 Gen 2×2 轉接器；嘗試不同 USB-C 埠 |
 | MediaTek 晶片無 wlan 介面 | module 未自動載入 / firmware 缺失 | `sudo modprobe mt76x2u`；`sudo apt install linux-firmware`；檢查 `dmesg \| grep mt76` |
 | Realtek 驅動編譯失敗 | 交叉編譯設定錯誤 | 確認在 BrainSphere 上原生編譯；Makefile 不應設定 CROSS_COMPILE |
 | WiFi 速度慢 | 轉接器僅支援 USB 2.0 | 更換 USB 3.2 Gen 2×2 轉接器 |
@@ -217,7 +217,7 @@ sudo aireplay-ng --test wlan0
 
 ## 9. 已知限制
 
-- USB Type-C 轉接需求：除 AXML 外，所有 ALFA 網卡需 USB-C to USB-A 轉接器
+- USB Type-C 轉接需求：除 AXML 外，所有 ALFA 網路卡需 USB-C to USB-A 轉接器
 - Realtek 晶片需手動編譯：RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU 未進入 mainline
 - 內建 Wi-Fi 7 可能與外接衝突：BrainSphere 已內建 Wi-Fi 7 + BT 5.4
 - AP 模式需手動設定：DGX OS 預設為開發環境
@@ -238,6 +238,6 @@ sudo aireplay-ng --test wlan0
 | morrownr/8812au GitHub | RTL8812AU Linux 驅動 | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
 | ALFA Network 產品總覽（Yupitek） | ALFA 現役產品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
 
-相關文章：[ALFA 無線網卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 無線網卡是否支援 ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA 無線網卡是否支援 GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA 無線網卡是否支援 MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
+相關文章：[ALFA 無線網路卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 無線網路卡是否支援 ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA 無線網路卡是否支援 GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA 無線網路卡是否支援 MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 
 免責聲明：本文相容性判定以 ALTOS BrainSphere GB10 F1 預裝的 NVIDIA DGX OS（kernel 6.x, aarch64）為基準。BrainSphere 與 DGX Spark 共享相同硬體平台，相容性完全一致。Altos aiGeni 為應用層軟體，不影響驅動相容性。MediaTek 晶片驅動為 Linux mainline，穩定性高；Realtek 晶片驅動為社群維護。BrainSphere 已內建 Wi-Fi 7，外接 ALFA 主要用於滲透測試或特殊晶片組需求。

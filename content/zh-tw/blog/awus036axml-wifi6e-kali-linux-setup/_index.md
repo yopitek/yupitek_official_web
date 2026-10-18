@@ -1,5 +1,5 @@
 ---
-title: "ALFA AWUS036AXML 安裝教學：Wi-Fi 6E 網卡在 Kali Linux 上的監聽模式與封包注入實測"
+title: "ALFA AWUS036AXML 安裝教學：Wi-Fi 6E 網路卡在 Kali Linux 上的監聽模式與封包注入實測"
 locale: "zh-TW"
 hreflang_group: "awus036axml-wifi6e-kali-linux-setup"
 description: "ALFA AWUS036AXML（MT7921AUN 晶片）在 Kali Linux 上的安裝教學：內建 mt7921u 驅動、kernel 版本條件、監聽模式、封包注入實測與常見排錯。"
@@ -8,22 +8,22 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axml-wifi6e-kali-linux-setup"
-tags: ["Fi 6E 網卡在 Kali Linux 上的監聽模式與封包注入實測", "TW", "wifi6e-kali-linux-setup", "wifi6e-kali-linux-setup", "08-10", "AWUS036AXML", "Kali Linux", "Fi 6E 監聽模式與封包注入教學｜Yupitek"]
+tags: ["Fi 6E 網路卡在 Kali Linux 上的監聽模式與封包注入實測", "TW", "wifi6e-kali-linux-setup", "wifi6e-kali-linux-setup", "08-10", "AWUS036AXML", "Kali Linux", "Fi 6E 監聽模式與封包注入教學｜Yupitek"]
 categories: ["Technical"]
 author: "Yupitek"
 lastmod: 2026-08-10
 ---
 
 
-# ALFA AWUS036AXML 安裝教學：Wi-Fi 6E 網卡在 Kali Linux 上的監聽模式與封包注入實測
+# ALFA AWUS036AXML 安裝教學：Wi-Fi 6E 網路卡在 Kali Linux 上的監聽模式與封包注入實測
 
 > TL;DR：ALFA AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，在 Kali Linux（kernel 5.18+）使用**內建 `mt7921u` 驅動即可運作**，不需要另外編譯驅動；若要做穩定的 active monitor mode / 封包注入，建議 kernel 6.12+ 與附電源的 USB Hub。插入後 `lsusb` 應看到 `0e8d:7961`，接著用 `airmon-ng` 或 `iw` 切換監聽模式即可。
 
-## 為什麼 Wi-Fi 6E 網卡開始被滲透測試關注？
+## 為什麼 Wi-Fi 6E 網路卡開始被滲透測試關注？
 
-Wi-Fi 6E 新增的 **6 GHz 頻段**（5925–7125 MHz）是近年企業無線網路升級的重點：新世代 AP、高密度會議室、工廠物聯網都開始部署 6 GHz。對資安稽核人員來說，如果稽核對象的環境已導入 6 GHz，你的測試網卡**必須能聽得到這個頻段**——否則稽核範圍直接少了一大塊。
+Wi-Fi 6E 新增的 **6 GHz 頻段**（5925–7125 MHz）是近年企業無線網路升級的重點：新世代 AP、高密度會議室、工廠物聯網都開始部署 6 GHz。對資安稽核人員來說，如果稽核對象的環境已導入 6 GHz，你的測試網路卡**必須能聽得到這個頻段**——否則稽核範圍直接少了一大塊。
 
-AWUS036AXML 是 ALFA Network 推出的 Wi-Fi 6E USB 網卡，支援 2.4 / 5 / 6 GHz 三頻，與前一代熱門的 AWUS036ACH（RTL8812AU，僅 2.4/5 GHz）相比，最大差異就是補上了 6 GHz 監聽能力。如果你已熟悉 AWUS036ACH 的流程，這篇的步驟會非常親切。
+AWUS036AXML 是 ALFA Network 推出的 Wi-Fi 6E USB 網路卡，支援 2.4 / 5 / 6 GHz 三頻，與前一代熱門的 AWUS036ACH（RTL8812AU，僅 2.4/5 GHz）相比，最大差異就是補上了 6 GHz 監聽能力。如果你已熟悉 AWUS036ACH 的流程，這篇的步驟會非常親切。
 
 ## AWUS036AXML 規格與版本條件
 
@@ -47,9 +47,9 @@ AWUS036AXML 是 ALFA Network 推出的 Wi-Fi 6E USB 網卡，支援 2.4 / 5 / 6 
 3. 一張可用的 USB 3.0 連接埠；若接在樹莓派或 USB Hub 上，**建議用附電源 Hub**（AWUS036AXML 功耗約 2.7 W，供電不足會出現「插了卻抓不到」）。
 4. 合法測試權限：本教學所有指令僅限用於你擁有或獲得授權的網路環境。
 
-## 步驟 1：連接網卡並確認系統抓到
+## 步驟 1：連接網路卡並確認系統抓到
 
-插入網卡後，用 `lsusb` 確認裝置是否被識別：
+插入網路卡後，用 `lsusb` 確認裝置是否被識別：
 
 ```bash
 lsusb
@@ -131,7 +131,7 @@ sudo airodump-ng wlan1mon
 sudo airodump-ng --band 6g wlan1mon
 ```
 
-> 注意：6 GHz 掃描需要你的網卡驅動/核心支援該頻段（kernel 6.12+ 較穩）；若 `--band 6g` 不支援，先掃 5 GHz（`--band a`）確認基本功能，再更新核心後重試。
+> 注意：6 GHz 掃描需要你的網路卡驅動/核心支援該頻段（kernel 6.12+ 較穩）；若 `--band 6g` 不支援，先掃 5 GHz（`--band a`）確認基本功能，再更新核心後重試。
 
 ## 步驟 5：封包注入測試
 
@@ -167,7 +167,7 @@ AWUS036AXML 也支援 Raspberry Pi 3B+ / 4 / 5（官方產品頁列出），適�
 驅動可能未被正確載入或核心太舊。先 `lsmod | grep mt7921` 確認模組，再 `uname -r` 確認 kernel ≥ 5.18。
 
 **Q：6 GHz 掃不到任何網路？**
-先確認 `iw dev wlan1mon info` 支援的頻段；6 GHz 環境本身較少（新部署），且台灣 6 GHz 執照頻段開放進度請依 NCC 公告為準。也可以先用 2.4/5 GHz 驗證網卡功能正常。
+先確認 `iw dev wlan1mon info` 支援的頻段；6 GHz 環境本身較少（新部署），且台灣 6 GHz 執照頻段開放進度請依 NCC 公告為準。也可以先用 2.4/5 GHz 驗證網路卡功能正常。
 
 **Q：跟 AWUS036ACH 比，該買哪張？**
 稽核對象已有 6 GHz 環境 → 選 AWUS036AXML；只需要 2.4/5 GHz 且預算優先 → AWUS036ACH 仍是非常成熟的選擇。兩者都在 Kali 上可用，差異在頻段涵蓋與驅動安裝方式（AXML 內建免編譯）。
@@ -183,14 +183,14 @@ AWUS036AXML 也支援 Raspberry Pi 3B+ / 4 / 5（官方產品頁列出），適�
 **Q3：Wi-Fi 6E 的 6 GHz 頻段在台灣能用於稽核嗎？**
 6 GHz 屬於受監管頻段，使用前請確認 NCC 對 6 GHz 頻段的開放進度與授權規定，並僅測試自己有權限的環境。
 
-**Q4：接在樹莓派上抓不到網卡怎麼辦？**
+**Q4：接在樹莓派上抓不到網路卡怎麼辦？**
 優先檢查供電——AWUS036AXML 功耗約 2.7 W，建議用附電源 USB Hub，並使用品質好的 USB 線。
 
 **Q5：AWUS036AXML 跟 AWUS036ACH 差在哪？**
-AXML 是 Wi-Fi 6E（多了 6 GHz）且驅動核心內建；ACH 是雙頻（2.4/5 GHz）、RTL8812AU 需手動裝驅動。兩者都是 Kali 上成熟的稽核網卡。
+AXML 是 Wi-Fi 6E（多了 6 GHz）且驅動核心內建；ACH 是雙頻（2.4/5 GHz）、RTL8812AU 需手動裝驅動。兩者都是 Kali 上成熟的稽核網路卡。
 
 ## 總結
 
 AWUS036AXML 的安裝流程比你想像的簡單：**核心 5.18+ → 插入即用（`mt7921u`）→ 確認 `0e8d:7961` → airmon-ng 切監聽 → aireplay-ng 驗證注入**。它與 AWUS036ACH 的差異核心在於 6 GHz 頻段與免編譯驅動——如果你的稽核範圍已進入 Wi-Fi 6E 世代，這張卡是補齊頻段覆蓋的選擇。記得所有測試只在合法授權環境進行。
 
-ALFA Network 系列網卡由 Yupitek（榆閤科技）在台灣提供銷售與技術支援；需要 AWUS036AXML 或搭配的供電 Hub、天線，歡迎來信 [sales@yupitek.com](mailto:sales@yupitek.com)。
+ALFA Network 系列網路卡由 Yupitek（榆閤科技）在台灣提供銷售與技術支援；需要 AWUS036AXML 或搭配的供電 Hub、天線，歡迎來信 [sales@yupitek.com](mailto:sales@yupitek.com)。

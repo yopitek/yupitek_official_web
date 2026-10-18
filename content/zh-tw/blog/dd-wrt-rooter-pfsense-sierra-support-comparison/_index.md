@@ -1,6 +1,6 @@
 ---
-title: "DD-WRT / ROOter / pfSense 能接 Sierra 網卡嗎？EM7455、EM7565、MC7455 三大平台支援度比較"
-description: "DD-WRT、ROOter、pfSense 能接 Sierra Wireless 網卡嗎？本文以 EM7455、EM7565、MC7455 官方規格書為依據，比較三大路由韌體對 QMI/MBIM 的支援度，帶你找出最佳備援 WAN 方案。"
+title: "DD-WRT / ROOter / pfSense 能接 Sierra 網路卡嗎？EM7455、EM7565、MC7455 三大平台支援度比較"
+description: "DD-WRT、ROOter、pfSense 能接 Sierra Wireless 網路卡嗎？本文以 EM7455、EM7565、MC7455 官方規格書為依據，比較三大路由韌體對 QMI/MBIM 的支援度，帶你找出最佳備援 WAN 方案。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -85,7 +85,7 @@ faq:
 
 ## 採購資訊（Call To Action）
 
-不確定手上的路由器能不能插這幾張網卡？或者找不到合適的轉接板跟天線？Yupitek（榆閤科技）有完整的硬體方案跟技術諮詢。
+不確定手上的路由器能不能插這幾張網路卡？或者找不到合適的轉接板跟天線？Yupitek（榆閤科技）有完整的硬體方案跟技術諮詢。
 歡迎來信：**sales@yupitek.com**
 產品傳送門：[EM7455](https://yupitek.com/zh-tw/products/sierra/em7455/)｜[EM7565](https://yupitek.com/zh-tw/products/sierra/em7565/)｜[MC7455](https://yupitek.com/zh-tw/products/sierra/mc7455/)
 

@@ -11,21 +11,21 @@ author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "監聽模式與受管理模式有何不同？"
-    answer: "監聽模式讓網卡擷取空中所有 802.11 訊框，不受管理模式只接收目標 MAC 符合自身封包的限制，是無線滲透測試的基礎。"
+    answer: "監聽模式讓網路卡擷取空中所有 802.11 訊框，不受管理模式只接收目標 MAC 符合自身封包的限制，是無線滲透測試的基礎。"
   - question: "airmon-ng 與 iw 指令啟用監聽模式有何差異？"
     answer: "airmon-ng 會自動處理干擾行程並建立 wlan0mon 虛擬介面；iw 則直接修改現有介面，不另建介面，適合需要精簡控制時使用。"
   - question: "啟用監聽模式後介面自動切回受管理模式怎麼辦？"
     answer: "wpa_supplicant 或 NetworkManager 在背景重新啟動所致。執行 airmon-ng check kill 終止這些行程即可解決。"
-  - question: "哪些 ALFA 網卡在 Kali Linux 上完整支援監聽模式？"
+  - question: "哪些 ALFA 網路卡在 Kali Linux 上完整支援監聽模式？"
     answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）三款均完整支援，其中 ACM 為即插即用。"
   - question: "airodump-ng 顯示 Fixed channel wlan0mon: -1 錯誤如何解決？"
-    answer: "表示 airodump-ng 無法切換頻道。執行 iwconfig wlan0mon channel 1 指定頻道，並終止殘留的 wpa_supplicant 程序。"
+    answer: "表示 airodump-ng 無法切換頻道。執行 iwconfig wlan0mon channel 1 指定頻道，並終止殘留的 wpa_supplicant 程式。"
 ---
 
-監聽模式讓無線網卡擷取空中所有 802.11 訊框，是 airodump-ng、Wireshark、Kismet 等工具運作的基礎。Kali Linux 上可透過 airmon-ng 或 iw 指令啟用。
+監聽模式讓無線網路卡擷取空中所有 802.11 訊框，是 airodump-ng、Wireshark、Kismet 等工具運作的基礎。Kali Linux 上可透過 airmon-ng 或 iw 指令啟用。
 
 {{< tldr >}}
-監聽模式解除網卡只接收自身封包的限制，是無線滲透測試的根基。使用 airmon-ng 或 iw 指令搭配 ALFA 網卡即可在 Kali Linux 上穩定啟用。
+監聽模式解除網路卡只接收自身封包的限制，是無線滲透測試的根基。使用 airmon-ng 或 iw 指令搭配 ALFA 網路卡即可在 Kali Linux 上穩定啟用。
 {{< /tldr >}}
 
 ## 什麼是監聽模式？為何滲透測試非它不可
@@ -63,9 +63,9 @@ ip link show
 
 ## 方法一：使用 airmon-ng 啟用監聽模式
 
-`airmon-ng` 是 **aircrack-ng** 套件的一部分，也是 Kali Linux 上切換監聽模式最常用的工具。它會自動處理許多邊緣情況，包括停止可能干擾模式切換的背景程序。
+`airmon-ng` 是 **aircrack-ng** 套件的一部分，也是 Kali Linux 上切換監聽模式最常用的工具。它會自動處理許多邊緣情況，包括停止可能干擾模式切換的背景程式。
 
-### 步驟一：終止干擾程序
+### 步驟一：終止干擾程式
 
 NetworkManager、wpa_supplicant 和 dhclient 都會與監聽模式競搶介面控制權，必須先行終止：
 
@@ -222,13 +222,13 @@ sudo systemctl stop wpa_supplicant
 
 ### 監聽模式自動還原為受管理模式
 
-部分驅動程式會在幾秒後自動切回受管理模式，通常是因為 wpa_supplicant 在背景重新啟動。確認目前執行中的程序：
+部分驅動程式會在幾秒後自動切回受管理模式，通常是因為 wpa_supplicant 在背景重新啟動。確認目前執行中的程式：
 
 ```bash
 ps aux | grep -E "wpa_supplicant|NetworkManager"
 ```
 
-依 PID 終止找到的程序，再重新啟用監聽模式。
+依 PID 終止找到的程式，再重新啟用監聽模式。
 
 ### 執行 airmon-ng 後介面名稱不同
 
@@ -242,7 +242,7 @@ ps aux | grep -E "wpa_supplicant|NetworkManager"
 sudo iwconfig wlan0mon channel 1
 ```
 
-若仍無效，終止所有殘留的 wpa_supplicant 程序後再試一次。
+若仍無效，終止所有殘留的 wpa_supplicant 程式後再試一次。
 
 ### RTL8812AU 驅動程式在新版核心上的問題
 

@@ -1,5 +1,5 @@
 ---
-title: "ALFA USB 網卡 Linux 驅動怎麼選：MediaTek 免編譯 vs Realtek 需編譯"
+title: "ALFA USB 網路卡 Linux 驅動怎麼選：MediaTek 免編譯 vs Realtek 需編譯"
 date: 2026-09-03
 draft: false
 slug: "alfa-usb-wifi-linux-driver-guide"
@@ -15,15 +15,15 @@ tags:
   - "rtl8812au"
 categories:
   - "驅動 / 選購指南"
-description: "> **技術支援文件 · 2026-09-03 初版（依 blog-writing-rules.md v1.0 規範撰寫）** > 判定母體：Yupitek 現役 ALFA USB 網卡中本次技術文件矩陣已收錄的 6 款機型（3 款 MediaTek、3 款 Realtek）。 > 相關文章：[AL"
+description: "> **技術支援文件 · 2026-09-03 初版（依 blog-writing-rules.md v1.0 規範撰寫）** > 判定母體：Yupitek 現役 ALFA USB 網路卡中本次技術文件矩陣已收錄的 6 款機型（3 款 MediaTek、3 款 Realtek）。 > 相關文章：[AL"
 featureimage: ""
 author: "benny-lai"
 lastmod: 2026-09-03
 ---
 
 > **技術支援文件 · 2026-09-03 初版（依 blog-writing-rules.md v1.0 規範撰寫）**
-> 判定母體：Yupitek 現役 ALFA USB 網卡中本次技術文件矩陣已收錄的 6 款機型（3 款 MediaTek、3 款 Realtek）。
-> 相關文章：[ALFA 無線網卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 無線網卡是否支援 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[ALFA 無線網卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)｜[ALFA 無線網卡是否支援 Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)｜[ALFA 無線網卡是否支援 DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)
+> 判定母體：Yupitek 現役 ALFA USB 網路卡中本次技術文件矩陣已收錄的 6 款機型（3 款 MediaTek、3 款 Realtek）。
+> 相關文章：[ALFA 無線網路卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 無線網路卡是否支援 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[ALFA 無線網路卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)｜[ALFA 無線網路卡是否支援 Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)｜[ALFA 無線網路卡是否支援 DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)
 
 ## 一句話結論
 
@@ -36,7 +36,7 @@ lastmod: 2026-09-03
 兩個真實情境：
 
 - 客戶 A 把 **AWUS036ACM** 插上 Ubuntu 桌機，`lsusb` 一跑、NetworkManager 直接出現 wlan0——什麼都沒裝。
-- 客戶 B 把 **AWUS036ACH** 插上同樣的機器，網卡完全沒反應，得上 GitHub 拉原始碼、裝 build 工具、編譯、重開機。
+- 客戶 B 把 **AWUS036ACH** 插上同樣的機器，網路卡完全沒反應，得上 GitHub 拉原始碼、裝 build 工具、編譯、重開機。
 
 差別不在運氣，也不在 Linux 發行版，而在**晶片組屬於哪個陣營**：MediaTek 的 USB WiFi 晶片驅動（mt76 系列）早已進入 Linux kernel mainline；Realtek 的高階 USB WiFi 晶片驅動至今仍以 out-of-tree（核心之外）形式散布，要靠社群維護的驅動 repo 手動安裝。
 
@@ -52,7 +52,7 @@ MediaTek USB 晶片的驅動由 kernel 的 **mt76** 子系統涵蓋：
 | AWUS036ACM | MT7612U | mt76x2u | kernel 內建，無版本門檻疑慮 |
 | AWUS036AXML / AXM | MT7921AUN | mt7921u | **需 kernel 5.19+** |
 
-⚠️ 唯一的坑：**MT7921AUN 的 kernel 門檻是 5.19+**。老平台（如 Jetson Nano 的 JetPack 4.x，kernel 4.9）無法 backport，直接不可用——這是我們在 Jetson Nano 技術文件中驗證過的結論（見 [ALFA 無線網卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/) §7.4）。
+⚠️ 唯一的坑：**MT7921AUN 的 kernel 門檻是 5.19+**。老平台（如 Jetson Nano 的 JetPack 4.x，kernel 4.9）無法 backport，直接不可用——這是我們在 Jetson Nano 技術文件中驗證過的結論（見 [ALFA 無線網路卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/) §7.4）。
 
 ### Realtek：out-of-tree，一律手動編譯
 
@@ -72,11 +72,11 @@ Realtek USB 晶片沒有可用的 mainline 驅動，依賴社群維護的驅動 
 | Jetson Nano（JetPack 4.x） | 4.9 | 7610U/7612U 可用；MT7921AUN **不可用** | 8812au 可編譯（ARM64 支援）；其餘未驗證 |
 | OpenWrt 路由器 | 依版本 | 全數可用（MT7921AUN 需 23.05+） | 需對應 kmod 或編譯，難度高 |
 
-（各環境的完整判定矩陣見 [ALFA 無線網卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)、[ALFA 無線網卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)、[ALFA 無線網卡是否支援 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)。）
+（各環境的完整判定矩陣見 [ALFA 無線網路卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)、[ALFA 無線網路卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)、[ALFA 無線網路卡是否支援 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)。）
 
 ## 第三幕：工具箱——三分鐘判定流程與安裝步驟
 
-### 判定表：拿到網卡先做這三步
+### 判定表：拿到網路卡先做這三步
 
 ```bash
 # 步驟 1：確認系統看得到網卡（記下 VID:PID）
@@ -126,7 +126,7 @@ ip link   # 應出現新的 wlan 介面
 本文結論在以下條件**不成立**，請改採替代方案：
 
 1. **kernel 5.19 以下 + MT7921AUN**：mt7921u 無法 backport（依賴現代 kernel 基礎設施），結論反轉為「不可用」。這是本文最重要的例外。
-2. **非 x86/ARM64 Linux**（如某些 MIPS 路由器）：morrownr repo 未保證可編譯，需以 OpenWrt 的 kmod 優先（見 [ALFA 無線網卡是否支援 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)）。
+2. **非 x86/ARM64 Linux**（如某些 MIPS 路由器）：morrownr repo 未保證可編譯，需以 OpenWrt 的 kmod 優先（見 [ALFA 無線網路卡是否支援 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)）。
 3. **驅動 repo 版本演進**：morrownr repo 以日期命名（如 rtl8852bu-20250826），未來可能改版或移除；安裝前請以 repo 現況為準。
 4. **monitor mode / AP 模式能力**：同晶片不同 kernel 版本的能力有差異（例如 OpenWrt 22.03+ 的 rtl8812au-ct 在 24.10 有 crash 回報），精細的能力矩陣以各環境專文為準。
 5. **RTL8832BU（AWUS036AX/AXER）不在本文盤點的 6 款機型內，但客服常會被連帶問到**：驅動維護者 morrownr 已公開表示該晶片系列「是很糟糕的驅動，懷疑晶片本身有問題」，建議 Linux 使用者現階段避開，不只是「需要編譯」的難度問題，回覆客戶時應如實說明。

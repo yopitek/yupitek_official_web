@@ -13,7 +13,7 @@ lastmod: 2026-07-31
 related_product: "/zh-tw/products/sierra/em7565/"
 faq:
   - question: "EM7565 在 OpenWrt 上抓不到，最常見的原因是什麼？"
-    answer: "最常見的是供電不足（VCC 不在 3.135 至 4.4V 內）導致 lsusb 看不到，或是 USB composition 設定錯誤沒有打開 QMI 介面。"
+    answer: "最常見的是供電不足（VCC 不在 3.135 至 4.4V 內）導致 lsusb 看不到，或是 USB composition 設定錯誤沒有開啟 QMI 介面。"
   - question: "EM7565 反覆重置、卡住不開機，是壞了嗎？"
     answer: "不一定。它有 SED 保護機制，連續 6 次不正常重啟後會進入保護狀態，重新下載韌體即可恢復。"
 ---

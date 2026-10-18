@@ -10,22 +10,22 @@ featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
-  - question: "ALFA USB WiFi 網卡在 Linux 上需要安裝驅動嗎？"
+  - question: "ALFA USB WiFi 網路卡在 Linux 上需要安裝驅動嗎？"
     answer: "視晶片組而定。MT7612U 與 MT7921AUN 已內建核心，執行 modprobe 即可。RTL8812AU 需從 aircrack-ng GitHub 安裝外部驅動。"
-  - question: "如何確認我的 ALFA 網卡使用哪種晶片組？"
-    answer: "插入網卡後執行 lsusb，對照 USB ID 即可辨識。0bda:8812 為 RTL8812AU，0e8d:7612 為 MT7612U，0e8d:7961 為 MT7921AUN。"
+  - question: "如何確認我的 ALFA 網路卡使用哪種晶片組？"
+    answer: "插入網路卡後執行 lsusb，對照 USB ID 即可辨識。0bda:8812 為 RTL8812AU，0e8d:7612 為 MT7612U，0e8d:7961 為 MT7921AUN。"
   - question: "DKMS 是什麼？為什麼需要它？"
     answer: "DKMS 會在新核心安裝時自動重新編譯驅動模組。未使用 DKMS 時，每次核心更新後外部驅動都會失效，需手動重新編譯。"
-  - question: "Ubuntu 22.04 能使用 MT7921AUN 網卡嗎？"
+  - question: "Ubuntu 22.04 能使用 MT7921AUN 網路卡嗎？"
     answer: "預裝核心 5.15 不支援。需安裝 HWE 核心 linux-generic-hwe-22.04 升級至 6.2 以上，或升級至 Ubuntu 24.04 LTS。"
-  - question: "make 編譯驅動時報錯 linux/module.h not found 怎麼辦？"
+  - question: "make 編譯驅動時回報錯誤 linux/module.h not found 怎麼辦？"
     answer: "核心標頭檔未安裝。執行 sudo apt install linux-headers-$(uname -r) 安裝與當前核心版本一致的標頭後重新編譯。"
 ---
 
 Linux USB WiFi 驅動安裝的關鍵在於晶片組。MT7612U 與 MT7921AUN 為核心內建驅動，RTL8812AU 需從 aircrack-ng 安裝外部驅動搭配 DKMS 使用。
 
 {{< tldr >}}
-ALFA 網卡驅動安裝取決於晶片組：MT7612U 與 MT7921AUN 內建核心即插即用，RTL8812AU 需從 aircrack-ng GitHub 安裝並搭配 DKMS 確保核心更新後持久運作。
+ALFA 網路卡驅動安裝取決於晶片組：MT7612U 與 MT7921AUN 內建核心即插即用，RTL8812AU 需從 aircrack-ng GitHub 安裝並搭配 DKMS 確保核心更新後持久運作。
 {{< /tldr >}}
 
 要讓 USB WiFi 網路卡在 Linux 上正常運作，關鍵幾乎都在驅動程式。Windows 有廠商提供的安裝程式，Linux 則不同——系統使用核心模組（kernel module）來與硬體溝通，也就是由作業系統在開機時或需要時載入的編譯程式碼。理解這個機制，除錯就會變得清晰，驅動程式安裝也更有規律可循。
@@ -38,7 +38,7 @@ ALFA 網卡驅動安裝取決於晶片組：MT7612U 與 MT7921AUN 內建核心�
 
 ### 核心模組
 
-Linux WiFi 驅動程式是一個**核心模組**——副檔名為 `.ko` 的檔案，在開機時或需要時載入正在運行的核心。當你插入 USB 裝置，核心會讀取其 USB Vendor ID 和 Product ID，從資料庫中找到對應的模組並自動載入。
+Linux WiFi 驅動程式是一個**核心模組**——副檔名為 `.ko` 的檔案，在開機時或需要時載入正在執行的核心。當你插入 USB 裝置，核心會讀取其 USB Vendor ID 和 Product ID，從資料庫中找到對應的模組並自動載入。
 
 以 MediaTek MT7612U 等常見晶片組為例，這個過程是透明的：插入網路卡、模組載入、介面出現。但對於較新或較少見的晶片組，核心內並沒有對應模組，你就必須自行從原始碼編譯。
 
@@ -258,7 +258,7 @@ echo "mt76x2u" | sudo tee -a /etc/modules
 
 ### 無需編譯
 
-這是 MT7612U 晶片組的最大優勢：完全不需要編譯、不需要驅動程式原始碼、也不依賴核心標頭檔。在所有受支援的發行版上都能直接使用。對於不想花時間管理驅動程式的用戶，[AWUS036ACM](/zh-tw/products/alfa/awus036acm/) 是目前最即插即用的滲透測試網路卡。
+這是 MT7612U 晶片組的最大優勢：完全不需要編譯、不需要驅動程式原始碼、也不依賴核心標頭檔。在所有受支援的發行版上都能直接使用。對於不想花時間管理驅動程式的使用者，[AWUS036ACM](/zh-tw/products/alfa/awus036acm/) 是目前最即插即用的滲透測試網路卡。
 
 ---
 
@@ -406,7 +406,7 @@ dkms status
 
 ## 確保購買到原廠正品
 
-驅動程式問題有時源自仿冒品——這類產品可能回報錯誤的 USB ID，或使用與標示不符的劣質晶片組。從授權經銷商購買的正品 ALFA Network 網路卡，其行為與本文說明完全一致。
+驅動程式問題有時源自仿冒品——這類產品可能回回報錯誤誤的 USB ID，或使用與標示不符的劣質晶片組。從授權經銷商購買的正品 ALFA Network 網路卡，其行為與本文說明完全一致。
 
 Yopitek 是 ALFA Network 的授權經銷商。歡迎瀏覽完整的 [ALFA Network 產品目錄](/zh-tw/products/alfa/)，確保你購買到附原廠保固、驅動程式相容性有保障的正品硬體。
 

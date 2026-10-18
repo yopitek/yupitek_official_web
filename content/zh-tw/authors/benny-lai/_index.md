@@ -16,7 +16,7 @@ Benny Lai 是 Yupitek 的網路解決架構師，專精企業級無線網路部�
 
 - WiFi 7 / WiFi 6E 企業部署
 - Ubiquiti UniFi 生態系
-- ALFA Network 無線網卡與滲透測試硬體
+- ALFA Network 無線網路卡與滲透測試硬體
 - 網路安全與封包分析
 
 ## 聯絡

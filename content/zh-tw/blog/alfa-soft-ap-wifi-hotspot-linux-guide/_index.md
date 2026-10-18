@@ -1,6 +1,6 @@
 ---
 title: "ALFA 網路卡 Soft AP 完整指南 2026：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5 建立 WiFi 熱點"
-description: "深度調查 ALFA Network USB 無線網卡在 Kali Linux、Ubuntu、Debian、Raspberry Pi 4 與 Pi 5 上使用 Soft AP（WiFi Hotspot / hostapd）的完整相容性。涵蓋 AWUS036ACM、AWUS036ACH、AWUS036AXML 詳細設定、社群反饋、常見疑難排解與產品選購建議。"
+description: "深度調查 ALFA Network USB 無線網路卡在 Kali Linux、Ubuntu、Debian、Raspberry Pi 4 與 Pi 5 上使用 Soft AP（WiFi Hotspot / hostapd）的完整相容性。涵蓋 AWUS036ACM、AWUS036ACH、AWUS036AXML 詳細設定、社群回饋、常見疑難排解與產品選購建議。"
 date: 2026-05-21
 draft: false
 showBreadcrumbs: true
@@ -10,14 +10,14 @@ featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
-  - question: "ALFA USB 網卡可以在 Linux 上當 WiFi 熱點用嗎？"
+  - question: "ALFA USB 網路卡可以在 Linux 上當 WiFi 熱點用嗎？"
     answer: "視晶片組而定。AWUS036ACM（MT7612U）完整支援且即插即用，AWUS036ACH（RTL8812AU）有條件支援，AWUS036AXML 部分支援需調校。"
-  - question: "哪款 ALFA 網卡最適合在 Raspberry Pi 上建立 Soft AP？"
+  - question: "哪款 ALFA 網路卡最適合在 Raspberry Pi 上建立 Soft AP？"
     answer: "AWUS036ACM 是最佳選擇。in-kernel 驅動即插即用、耗電僅 400mA 適合 Pi 供電、支援 WPA3 與 VIF 虛擬介面，全平台穩定。"
-  - question: "如何確認網卡支援 AP 模式？"
+  - question: "如何確認網路卡支援 AP 模式？"
     answer: "執行 iw list | grep -A 10 'Supported interface modes'，若輸出包含 * AP 即代表驅動支援 Soft AP，hostapd 才能正常運作。"
   - question: "RTL8812AU 驅動的 Soft AP 有哪些限制？"
-    answer: "不支援 WPA3 僅能用 WPA2-PSK、不支援 VIF 虛擬介面需兩張卡分工、耗電約 800mA 在 Pi 上需有源 USB Hub。"
+    answer: "不支援 WPA3 僅能用 WPA2-PSK、不支援 VIF 虛擬介面需兩張卡分工、耗電約 800mA 在 Pi 上需外接供電 USB Hub。"
   - question: "AWUS036AXML 跑 Soft AP 時 WiFi 突然斷線怎麼辦？"
     answer: "MT7921AUN 內建 Bluetooth 5.2 會干擾 WiFi。執行 echo 'install btusb /bin/false' 寫入 /etc/modprobe.d/ 永久禁用藍牙驅動後重開機。"
 ---
@@ -26,7 +26,7 @@ faq:
 ALFA AWUS036ACM（MT7612U）是 Linux Soft AP 最佳首選，in-kernel 驅動即插即用、支援 WPA3 與 VIF 虛擬介面。RTL8812AU 有條件支援，MT7921AUN 需手動調校。
 
 {{< tldr >}}
-ALFA 網卡 Soft AP 相容性取決於晶片驅動。AWUS036ACM 為全平台穩定首選，AWUS036ACH 可用但無 WPA3，AWUS036AXML 需禁用藍牙並更新韌體，RTL8832BU 不建議使用。
+ALFA 網路卡 Soft AP 相容性取決於晶片驅動。AWUS036ACM 為全平台穩定首選，AWUS036ACH 可用但無 WPA3，AWUS036AXML 需禁用藍牙並更新韌體，RTL8832BU 不建議使用。
 {{< /tldr >}}
 
 # ALFA 網路卡 Soft AP 完整指南 2026：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5 建立 WiFi 熱點
@@ -35,9 +35,9 @@ ALFA 網卡 Soft AP 相容性取決於晶片驅動。AWUS036ACM 為全平台穩�
 
 > 「ALFA 的 USB 無線網路卡，可以在 Kali Linux / Ubuntu / Raspberry Pi 上當 WiFi 熱點（Soft AP）用嗎？」
 
-這是榆閤科技最常收到的客戶詢問之一。問題聽起來簡單，但答案因型號和晶片組的不同而大相逕庭——**不是每一張 USB 無線網卡都能跑 Soft AP。**
+這是榆閤科技最常收到的客戶詢問之一。問題聽起來簡單，但答案因型號和晶片組的不同而大相逕庭——**不是每一張 USB 無線網路卡都能跑 Soft AP。**
 
-本文彙整 GitHub 上超過 500 則社群討論（morrownr/USB-WiFi 知識庫）、Reddit 技術論壇、Raspberry Pi 官方論壇紀錄，以及實際使用者反饋，給出一份誠實、完整的調查報告，告訴你哪些 ALFA 網卡適合、哪些不適合，以及從頭到尾的完整設定步驟。
+本文彙整 GitHub 上超過 500 則社群討論（morrownr/USB-WiFi 知識庫）、Reddit 技術論壇、Raspberry Pi 官方論壇紀錄，以及實際使用者回饋，給出一份誠實、完整的調查報告，告訴你哪些 ALFA 網路卡適合、哪些不適合，以及從頭到尾的完整設定步驟。
 
 ---
 
@@ -47,7 +47,7 @@ ALFA 網卡 Soft AP 相容性取決於晶片驅動。AWUS036ACM 為全平台穩�
 
 這個功能在以下場景中極其實用：
 
-- **旅行 / 家用路由器**：出差或露營時，筆電或 Raspberry Pi 插上 ALFA 網卡，立刻變成隨身 WiFi 熱點
+- **旅行 / 家用路由器**：出差或露營時，筆電或 Raspberry Pi 插上 ALFA 網路卡，立刻變成隨身 WiFi 熱點
 - **滲透測試練習環境**：在隔離環境中建立 Rogue AP 進行安全研究
 - **IoT 設備中繼**：在訊號死角建立中繼站，讓感測器回傳資料
 - **邊緣 AI 部署**：工業場景中沒有有線網路，需要讓設備作為熱點讓其他裝置連入
@@ -72,11 +72,11 @@ ALFA 網卡 Soft AP 相容性取決於晶片驅動。AWUS036ACM 為全平台穩�
 iw list | grep -A 10 "Supported interface modes"
 ```
 
-如果輸出中包含 `* AP`，代表該網卡的驅動支援 Soft AP。如果沒有，那這張卡就無法用於此用途。
+如果輸出中包含 `* AP`，代表該網路卡的驅動支援 Soft AP。如果沒有，那這張卡就無法用於此用途。
 
 ### 💡 In-kernel vs Out-of-kernel 驅動
 
-這是選擇 Soft AP 網卡時**最重要**的概念：
+這是選擇 Soft AP 網路卡時**最重要**的概念：
 
 | 類型 | 說明 | 對 Soft AP 的影響 |
 |------|------|------------------|
@@ -176,7 +176,7 @@ RTL8812AU 是 ALFA 最具知名度的滲透測試晶片，長期以來是 Kali L
 1. **WPA3 不支援**：RTL8812AU 驅動雖然在介面上顯示支援 WPA3，但多名使用者確認實際上無法運作，**只能使用 WPA2-PSK**
 2. **VIF 虛擬介面不支援**：無法同時在同一張卡上跑 AP + Monitor 模式。需要 AP 兼監控時，必須使用兩張不同的網路卡分工
 3. **Kali Linux 2025.x 驅動問題**：最新版 Kali 的 aircrack-ng/rtl8812au 驅動有相容性問題，需回退至特定的舊版 commit（`63cf0b4`）才能正常運作。Kernel 6.14+ 的 in-kernel rtw88 驅動有望改善此問題
-4. **高耗電**：最大約 800mA，在 Raspberry Pi 上若同時連接多個 USB 裝置，可能導致系統不穩定，建議使用有源 USB Hub
+4. **高耗電**：最大約 800mA，在 Raspberry Pi 上若同時連接多個 USB 裝置，可能導致系統不穩定，建議使用外接供電 USB Hub
 
 ### hostapd 設定範例（RTL8812AU）
 
@@ -290,7 +290,7 @@ AWUS036AX 和 AWUS036AXER 雖然是 WiFi 6 規格，但 RTL8832BU 晶片是所�
 
 **主要問題：**
 
-1. **Multi-state 裝置**：增加部署複雜度，插上去不會直接變成網卡
+1. **Multi-state 裝置**：增加部署複雜度，插上去不會直接變成網路卡
 2. **Monitor Mode 限制**：kernel 6.14 以下支援不完整
 3. **Soft AP 社群案例極少**：相較於 MT7612U 和 RTL8812AU，RTL8832BU 用於 Soft AP 的實際案例幾乎找不到
 4. **社群文件明確不推薦**：morrownr/USB-WiFi 將此晶片標記為「不建議用於 penetration testing」
@@ -318,7 +318,7 @@ AWUS036AX 和 AWUS036AXER 雖然是 WiFi 6 規格，但 RTL8832BU 晶片是所�
 | Kali Linux 2022.x – 2025.x | ⚠️ | 需安裝外部驅動；2025.x 需用舊版 commit `63cf0b4`。Kernel 6.14+ 後 in-kernel rtw88 有望改善 |
 | Ubuntu 22.04 / 24.04 | ⚠️ | 需手動安裝 rtw88 或 aircrack-ng 社群驅動 |
 | Debian 11 / 12 | ⚠️ | 同上 |
-| Raspberry Pi 4 | ⚠️ | 可運作，但高耗電（800mA），建議有源 USB Hub |
+| Raspberry Pi 4 | ⚠️ | 可運作，但高耗電（800mA），建議外接供電 USB Hub |
 | Raspberry Pi 5 | ⚠️ | 同上，Pi 5 USB controller 差異可能有不同表現 |
 
 ### AWUS036AXML / AWUS036AXM（MT7921AUN）
@@ -346,7 +346,7 @@ AWUS036AX 和 AWUS036AXER 雖然是 WiFi 6 規格，但 RTL8832BU 晶片是所�
 
 以下以 AWUS036ACM 在 Raspberry Pi 4 上建立 5GHz Soft AP 為例，提供從頭到尾的完整步驟。
 
-### Step 1：確認網卡辨識與驅動
+### Step 1：確認網路卡辨識與驅動
 
 ```bash
 # 確認網卡已辨識
@@ -491,7 +491,7 @@ ping -I eth0 8.8.8.8
 
 1. **使用了 DFS 頻道（100–144）**：MT7612U / MT7610U 缺乏 DFS 支援，應使用 UNII-1 頻道（36–48）
 2. **發射功率不足**：確認天線已正確鎖緊於 RP-SMA 接頭
-3. **USB 供電不足**（Raspberry Pi）：使用官方 5A 電源或外接有源 USB Hub
+3. **USB 供電不足**（Raspberry Pi）：使用官方 5A 電源或外接外接供電 USB Hub
 
 ---
 
@@ -503,8 +503,8 @@ ping -I eth0 8.8.8.8
 
 **解法**：
 - 使用官方 Pi 5A 電源供應器
-- 使用外部有源 USB Hub
-- 將網卡插入 USB 3.0 埠（Pi 4 才有）
+- 使用外部外接供電 USB Hub
+- 將網路卡插入 USB 3.0 埠（Pi 4 才有）
 
 ---
 
@@ -529,7 +529,7 @@ VIF（Virtual Interface）讓同一張物理網路卡可以同時以多個邏輯
 
 三種常見場景的需求分析：
 
-| 場景 | 是否需要 VIF | 最佳網卡 |
+| 場景 | 是否需要 VIF | 最佳網路卡 |
 |------|-------------|---------|
 | 基本 NAT 路由（eth0 上游 + wlan AP） | ❌ 不需要 | 所有支援 AP 的即可 |
 | 無線橋接（WiFi 接收 + WiFi AP 同時） | ✅ 需要 | ACM（MT7612U） |
@@ -673,11 +673,11 @@ AWUS036ACH（RTL8812AU）可以用，但需要接受 WPA3 不支援和驅動維�
 - **morrownr/USB-WiFi** GitHub 知識庫（4,100+ stars）及完整的 iw_list 記錄
 - **morrownr/7612u** — MT7612U Bridged AP on RPi4B 完整教學
 - **GitHub issue tracker** — issue #2（ACM AP 設定）、#476（AXML AP 測試）、Discussion #31（ACHM 全速 AP）
-- **koutto/pi-pwnbox-rogueap** — Alfa 網卡 RogueAP 實戰案例
+- **koutto/pi-pwnbox-rogueap** — Alfa 網路卡 RogueAP 實戰案例
 - **Rokland** 授權零售商 Linux 支援頁面
 - **Lab401** 技術評測與 2025 滲透測試最佳選擇報告
 - **Raspberry Pi 官方論壇** — Pi 4/5 USB WiFi 相容性討論
-- **Yupitek 現有部落格** — ACM China Install Guide、AXML WiFi 6E Review、Kali Linux 2026 最佳網卡
+- **Yupitek 現有部落格** — ACM China Install Guide、AXML WiFi 6E Review、Kali Linux 2026 最佳網路卡
 
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "Flipper Zero 與 Flipper One 搭配 ALFA 無線網卡：完整相容性指南"
-description: "Flipper Zero 能接 ALFA USB 無線網卡做封包注入嗎？不行——這裡解釋為什麼。Flipper One 支援 ALFA AWUS036AXML，完整監聽模式與封包注入。包含晶片分析、驅動相容性與設定步驟的完整指南。"
+title: "Flipper Zero 與 Flipper One 搭配 ALFA 無線網路卡：完整相容性指南"
+description: "Flipper Zero 能接 ALFA USB 無線網路卡做封包注入嗎？不行——這裡解釋為什麼。Flipper One 支援 ALFA AWUS036AXML，完整監聽模式與封包注入。包含晶片分析、驅動相容性與設定步驟的完整指南。"
 date: 2026-06-10
 draft: false
 showBreadcrumbs: true
@@ -12,22 +12,22 @@ featureimage: "/images/blog/flipper-alfa-compatibility.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
-  - question: "Flipper Zero 可以連接 ALFA USB 無線網卡嗎？"
-    answer: "不行。Flipper Zero 的 STM32WB55 微控制器僅支援 USB device 模式，硬體上無法作為 USB host 驅動外接網卡。"
-  - question: "Flipper One 支援哪些 ALFA 網卡型號？"
+  - question: "Flipper Zero 可以連接 ALFA USB 無線網路卡嗎？"
+    answer: "不行。Flipper Zero 的 STM32WB55 微控制器僅支援 USB device 模式，硬體上無法作為 USB host 驅動外接網路卡。"
+  - question: "Flipper One 支援哪些 ALFA 網路卡型號？"
     answer: "Flipper One 創辦人特別測試 AWUS036AXML 為首選，AWUS036ACM 為最佳 CP 值，兩者驅動皆已內建於 mainline Linux 核心。"
-  - question: "為什麼 AWUS036AXML 是 Flipper One 首選網卡？"
+  - question: "為什麼 AWUS036AXML 是 Flipper One 首選網路卡？"
     answer: "AWUS036AXML 採用 MT7921AUN 晶片，mt7921u 驅動自 Linux 5.18 起內建於核心，支援完整 2.4/5/6 GHz 三頻段與監聽模式。"
   - question: "Flipper One 何時正式上市？"
     answer: "Flipper One 目前處於開發者預覽階段，正式上市時間與定價將透過群眾募資公布，詳情請追蹤 flipper.net。"
-  - question: "Flipper Zero 的 WiFi Dev Board 能取代 ALFA 網卡嗎？"
-    answer: "不能。WiFi Dev Board 僅支援 2.4 GHz 基本功能，無 USB host，範圍與注入可靠性遠不及專用 ALFA 網卡。"
+  - question: "Flipper Zero 的 WiFi Dev Board 能取代 ALFA 網路卡嗎？"
+    answer: "不能。WiFi Dev Board 僅支援 2.4 GHz 基本功能，無 USB host，範圍與注入可靠性遠不及專用 ALFA 網路卡。"
 ---
 
-Flipper Zero 因硬體限制無法使用任何 ALFA USB 無線網卡；Flipper One 則完整支援 AWUS036AXML 等型號，可執行監聽模式與封包注入。
+Flipper Zero 因硬體限制無法使用任何 ALFA USB 無線網路卡；Flipper One 則完整支援 AWUS036AXML 等型號，可執行監聽模式與封包注入。
 
 {{< tldr >}}
-Flipper Zero 的 STM32WB55 僅支援 USB device 模式，無法驅動任何 ALFA 網卡；Flipper One 搭載 RK3576 與完整 Debian Linux，支援 AWUS036AXML 執行三頻監聽與注入。
+Flipper Zero 的 STM32WB55 僅支援 USB device 模式，無法驅動任何 ALFA 網路卡；Flipper One 搭載 RK3576 與完整 Debian Linux，支援 AWUS036AXML 執行三頻監聽與注入。
 {{< /tldr >}}
 
 {{< alert "triangle-exclamation" >}}
@@ -36,19 +36,19 @@ Flipper Zero 的 STM32WB55 僅支援 USB device 模式，無法驅動任何 ALFA
 
 ## 前言：每個滲透測試人員都會問的問題
 
-如果你擁有一台 Flipper Zero——或正在考慮購買——而且聽過 ALFA Network 在無線安全測試領域鼎鼎大名的 USB 無線網卡，你可能也問過自己：**「我可以把 ALFA 網卡插到 Flipper Zero 上，開始捕捉 WPA2 握手封包嗎？」**
+如果你擁有一台 Flipper Zero——或正在考慮購買——而且聽過 ALFA Network 在無線安全測試領域鼎鼎大名的 USB 無線網路卡，你可能也問過自己：**「我可以把 ALFA 網路卡插到 Flipper Zero 上，開始捕捉 WPA2 握手封包嗎？」**
 
 簡短的答案是：不行——但完整的答案有趣多了。
 
-**Flipper Zero 無法連接任何 ALFA USB 無線網卡。** 這是硬體限制，不是軟體問題。Flipper Zero 內部的 STM32WB55 微控制器，其 USB 控制器只能在 **device-only 模式**下運作——它實體上無法作為 USB host 來驅動外接裝置，例如 WiFi 網卡。
+**Flipper Zero 無法連接任何 ALFA USB 無線網路卡。** 這是硬體限制，不是軟體問題。Flipper Zero 內部的 STM32WB55 微控制器，其 USB 控制器只能在 **device-only 模式**下運作——它實體上無法作為 USB host 來驅動外接裝置，例如 WiFi 網路卡。
 
-但 Flipper Devices 已經宣布了一款全新的產品：**Flipper One**。基於 Rockchip RK3576 處理器，配備 8 GB 記憶體，運行完整的 Debian Linux，Flipper One 擁有兩個 USB 3.1 host 連接埠，可以直接使用 ALFA 網卡進行完整的無線安全測試——包括 6 GHz Wi-Fi 6E 分析。事實上，Flipper One 創辦人 Pavel Zhovner 在產品公告中，特別指名 **ALFA AWUS036AXML** 為官方測試網卡。
+但 Flipper Devices 已經宣布了一款全新的產品：**Flipper One**。基於 Rockchip RK3576 處理器，配備 8 GB 記憶體，執行完整的 Debian Linux，Flipper One 擁有兩個 USB 3.1 host 連接埠，可以直接使用 ALFA 網路卡進行完整的無線安全測試——包括 6 GHz Wi-Fi 6E 分析。事實上，Flipper One 創辦人 Pavel Zhovner 在產品公告中，特別指名 **ALFA AWUS036AXML** 為官方測試網路卡。
 
 本文將完整說明相容性全貌：什麼能用、什麼不行、為什麼，以及如何設定。
 
 ---
 
-## Flipper Zero：為什麼不能使用 ALFA 網卡
+## Flipper Zero：為什麼不能使用 ALFA 網路卡
 
 要理解這個限制，你需要了解 Flipper Zero 內部有什麼。
 
@@ -68,17 +68,17 @@ Flipper Zero 的 STM32WB55 僅支援 USB device 模式，無法驅動任何 ALFA
 
 STM32WB55 的 USB 控制器是一個 **USB Full-Speed Device Controller**。它可以讓 Flipper Zero 以 USB 裝置的身份連接到電腦（用於檔案傳輸、韌體更新和 CLI 介面），但無法作為 USB host。這顆晶片上沒有 host 控制器硬體——再多的韌體修改也無法增加這項能力。
 
-要使用 ALFA USB 無線網卡，裝置需要：
+要使用 ALFA USB 無線網路卡，裝置需要：
 1. **USB Host 控制器硬體**——用於列舉並與 USB 裝置通訊
 2. **Linux 核心與 WiFi 驅動支援**——載入 `mt7921u`、`mt76` 或 `rtw88` 等驅動程式
-3. **足夠的供電能力**——ALFA 網卡通常消耗 500 mA 至 900 mA @ 5V
+3. **足夠的供電能力**——ALFA 網路卡通常消耗 500 mA 至 900 mA @ 5V
 
 Flipper Zero 三項全都不符合：
 - ❌ 無 USB Host 控制器（硬體限制）
-- ❌ 運行 FreeRTOS，非 Linux——不存在核心驅動框架
+- ❌ 執行 FreeRTOS，非 Linux——不存在核心驅動框架
 - ⚠️ GPIO 5V 輸出在所有腳位總和不超過 1.2A，且需手動啟用
 
-> **結論：** 將任何 ALFA USB 無線網卡連接到 Flipper Zero 是**實體上不可能**的。這不是可以透過軟體、韌體更新或擴充板繞過的硬體限制——它已刻在晶片設計中。
+> **結論：** 將任何 ALFA USB 無線網路卡連接到 Flipper Zero 是**實體上不可能**的。這不是可以透過軟體、韌體更新或擴充板繞過的硬體限制——它已刻在晶片設計中。
 
 ---
 
@@ -102,9 +102,9 @@ Flipper Devices 銷售一款基於 **ESP32-S2** 微控制器的官方 **WiFi Dev
 
 它**無法**做到：
 
-- ❌ 使用外接 ALFA USB 網卡（無 USB host）
+- ❌ 使用外接 ALFA USB 網路卡（無 USB host）
 - ❌ 在 5 GHz 或 6 GHz 頻段上運作
-- ❌ 達到專用 ALFA 網卡的範圍或注入可靠性
+- ❌ 達到專用 ALFA 網路卡的範圍或注入可靠性
 - ❌ 執行基於 Linux 的工具，如 aircrack-ng、Kismet 或 Wireshark
 
 > **如果你只有 Flipper Zero 且需要基本的 2.4 GHz 測試**，WiFi Dev Board 搭配 ESP32 Marauder 是一個可行但**嚴重受限**的變通方案。若需要更多功能，你需要不同的硬體。
@@ -113,7 +113,7 @@ Flipper Devices 銷售一款基於 **ESP32-S2** 微控制器的官方 **WiFi Dev
 
 ## Flipper One：ALFA 等待已久的平台
 
-2026 年 5 月 21 日，Flipper Devices 創辦人 Pavel Zhovner 發表了一篇部落格文章，標題為 *「Flipper One — We Need Your Help」*，宣布了一款全新的產品。Flipper One 不是 Flipper Zero 的升級版——它是一個完全不同的裝置類別，設計用於不同的協議層級。
+2026 年 5 月 21 日，Flipper Devices 創辦人 Pavel Zhovner 發表了一篇部落格文章，標題為 *「Flipper One — We Need Your Help」*，宣布了一款全新的產品。Flipper One 不是 Flipper Zero 的升級版——它是一個完全不同的裝置類別，設計用於不同的協定層級。
 
 > *「Flipper Zero 是 Layer 0——離線點對點存取控制：NFC、RFID、Sub-GHz、紅外線。Flipper One 是 Layer 1——IP 連線：Wi-Fi、Ethernet、5G、衛星。兩者不互相取代。」*
 > —— Pavel Zhovner，flipper.net
@@ -138,7 +138,7 @@ Flipper Devices 銷售一款基於 **ESP32-S2** 微控制器的官方 **WiFi Dev
 | **Ethernet** | 2× RJ45 Gigabit（支援 inline/MitM 嗅探） |
 | **M.2 擴充** | Key-B：PCIe 2.1 ×1 / USB 3.1 / SATA3 / SIM 卡 |
 
-### 為什麼 Flipper One 能使用 ALFA 網卡
+### 為什麼 Flipper One 能使用 ALFA 網路卡
 
 與 Flipper Zero 不同，Flipper One 滿足全部三項要求：
 
@@ -146,11 +146,11 @@ Flipper Devices 銷售一款基於 **ESP32-S2** 微控制器的官方 **WiFi Dev
 2. ✅ **完整 Debian Linux**：標準 Linux 核心，支援 `mt7921u`、`mt76` 和 `rtw88` 的 in-kernel 驅動
 3. ✅ **充足供電**：USB 連接埠可提供標準匯流排電源；GPIO 提供 5V @ 2A 和 3.3V @ 2A，含 eFuse 保護
 
-USB 3.1 的頻寬（5 Gbps）綽綽有餘——即使是最快的 ALFA 網卡（AWUS036AXML，AXE3000），也受限於 USB 3.0 的實際吞吐量約 1.2 Gbps。
+USB 3.1 的頻寬（5 Gbps）綽綽有餘——即使是最快的 ALFA 網路卡（AWUS036AXML，AXE3000），也受限於 USB 3.0 的實際吞吐量約 1.2 Gbps。
 
 ### 軟體環境
 
-Flipper One 運行標準的 Debian 環境，意味著你可以直接透過 `apt` 安裝無線安全工具：
+Flipper One 執行標準的 Debian 環境，意味著你可以直接透過 `apt` 安裝無線安全工具：
 
 ```bash
 sudo apt update
@@ -161,9 +161,9 @@ Flipper One 還引入了 **Flipper OS Profiles**——一種基於快照的系�
 
 ---
 
-## Flipper One 推薦 ALFA 網卡
+## Flipper One 推薦 ALFA 網路卡
 
-並非所有 ALFA 網卡在無線安全測試上的表現都一樣好。關鍵因素是**晶片組**、**驅動成熟度**和 **in-kernel 支援**（表示無需 DKMS 編譯）。
+並非所有 ALFA 網路卡在無線安全測試上的表現都一樣好。關鍵因素是**晶片組**、**驅動成熟度**和 **in-kernel 支援**（表示無需 DKMS 編譯）。
 
 ### ⭐⭐⭐⭐⭐ 首選：AWUS036AXML（Wi-Fi 6E）
 
@@ -176,7 +176,7 @@ Flipper One 還引入了 **Flipper OS Profiles**——一種基於快照的系�
 | **需要 DKMS** | ❌ 不需要 |
 | **天線** | 雙 RP-SMA（可更換）+ Bluetooth 5.2 |
 
-> **為什麼是最佳選擇：** 這是 Flipper One 創辦人特別測試過的網卡。`mt7921u` 驅動已在 mainline kernel 中，無需任何 vendor patch。它支援全部三個 WiFi 頻段（2.4/5/6 GHz），使 Wi-Fi 6E 安全評估具備未來性。Monitor Mode 和 Packet Injection 穩定且經過充分測試。
+> **為什麼是最佳選擇：** 這是 Flipper One 創辦人特別測試過的網路卡。`mt7921u` 驅動已在 mainline kernel 中，無需任何 vendor patch。它支援全部三個 WiFi 頻段（2.4/5/6 GHz），使 Wi-Fi 6E 安全評估具備未來性。Monitor Mode 和 Packet Injection 穩定且經過充分測試。
 
 ### ⭐⭐⭐⭐⭐ 最佳 CP 值：AWUS036ACM（Wi-Fi 5 AC1200）
 
@@ -215,7 +215,7 @@ Flipper One 還引入了 **Flipper OS Profiles**——一種基於快照的系�
 | **需要 DKMS** | ❌ Flipper One 上不需要 / ⚠️ 舊核心可能需要 [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) DKMS |
 | **天線** | 雙 6 dBi RP-SMA（高 TX 功率） |
 
-> **為什麼是替代方案：** RTL8812AU 晶片組在滲透測試領域歷史悠久。預期在 Flipper One 規劃的核心上無需額外 DKMS 模組即可支援。對於舊系統，aircrack-ng DKMS 驅動仍可使用。高增益 6 dBi 天線提供優異的覆蓋範圍，但 MediaTek 系列的網卡因其更成熟的 in-kernel 驅動支援而通常更受推薦。
+> **為什麼是替代方案：** RTL8812AU 晶片組在滲透測試領域歷史悠久。預期在 Flipper One 規劃的核心上無需額外 DKMS 模組即可支援。對於舊系統，aircrack-ng DKMS 驅動仍可使用。高增益 6 dBi 天線提供優異的覆蓋範圍，但 MediaTek 系列的網路卡因其更成熟的 in-kernel 驅動支援而通常更受推薦。
 
 ### ⚠️ 不建議用於滲透測試
 
@@ -232,9 +232,9 @@ Flipper One 還引入了 **Flipper OS Profiles**——一種基於快照的系�
 
 ## 設定指南：Flipper One + ALFA AWUS036AXML
 
-本指南假設你有一台運行 Debian Linux 的 Flipper One，且網卡已實際連接到 USB host 連接埠。
+本指南假設你有一台執行 Debian Linux 的 Flipper One，且網路卡已實際連接到 USB host 連接埠。
 
-### 步驟 1：確認網卡已被識別
+### 步驟 1：確認網路卡已被識別
 
 ```bash
 # 檢查 USB 裝置列舉
@@ -336,11 +336,11 @@ sudo systemctl restart NetworkManager
 
 ### 架構總覽
 
-下圖展示 Flipper One 搭配 ALFA 網卡的完整無線滲透測試架構：
+下圖展示 Flipper One 搭配 ALFA 網路卡的完整無線滲透測試架構：
 
-![Flipper One + ALFA 無線網卡滲透測試架構](diagram/flipper-alfa-topology.svg)
+![Flipper One + ALFA 無線網路卡滲透測試架構](diagram/flipper-alfa-topology.svg)
 
-*拓樸：Flipper One 平台 → ALFA USB 網卡 → 滲透測試工具鏈 → 無線功能*
+*拓樸：Flipper One 平台 → ALFA USB 網路卡 → 滲透測試工具鏈 → 無線功能*
 
 ---
 
@@ -354,7 +354,7 @@ sudo systemctl restart NetworkManager
 | **儲存** | 1 MB Flash + MicroSD | 64 GB UFS 2.2 + MicroSD |
 | **GPU / NPU** | ❌ | Mali-G52 GPU + 6 TOPS NPU |
 | **USB Host** | ❌ Device only | ✅ USB-C2 + USB-A（USB 3.1） |
-| **ALFA 網卡支援** | ❌ | ✅ |
+| **ALFA 網路卡支援** | ❌ | ✅ |
 | **內建 WiFi** | ❌（僅 BLE） | ✅ Wi-Fi 6E（MT7921AUN） |
 | **5 GHz / 6 GHz WiFi** | ❌ | ✅ |
 | **Gigabit Ethernet** | ❌ | ✅ 2× RJ45 |
@@ -371,25 +371,25 @@ sudo systemctl restart NetworkManager
 
 ## 結語：對的工具做對的事
 
-如果你打算使用 ALFA 無線網卡進行無線安全測試，**Flipper Zero 是錯誤的平台**——這並非它的錯。它被設計用於不同的目的：離線存取控制測試（NFC、RFID、Sub-GHz、紅外線）。它在這些任務上表現出色，但 USB host 能力從未納入其設計。
+如果你打算使用 ALFA 無線網路卡進行無線安全測試，**Flipper Zero 是錯誤的平台**——這並非它的錯。它被設計用於不同的目的：離線存取控制測試（NFC、RFID、Sub-GHz、紅外線）。它在這些任務上表現出色，但 USB host 能力從未納入其設計。
 
-針對**Monitor Mode 和 Packet Injection 搭配 ALFA 網卡**的特定用途，你有兩條路徑：
+針對**Monitor Mode 和 Packet Injection 搭配 ALFA 網路卡**的特定用途，你有兩條路徑：
 
-| 路徑 | 平台 | ALFA 網卡 | 能力 |
+| 路徑 | 平台 | ALFA 網路卡 | 能力 |
 |------|----------|-------------|------------|
 | **最佳** | Flipper One | AWUS036AXML（MT7921AUN） | 完整 2.4/5/6 GHz，in-kernel 驅動，官方支援 |
 | **超值** | Flipper One | AWUS036ACM（MT7612U） | 完整 2.4/5 GHz，in-kernel 驅動，穩定性經過驗證 |
 | **變通** | Flipper Zero + WiFi Dev Board | 無（ESP32-S2 內建） | 僅 2.4 GHz，範圍有限，基本功能 |
 
-**Flipper One 代表了一次世代躍進**——它將完整 Debian Linux 環境與 USB 3.1 host 能力的強大功能，帶入一台可攜式、專用硬體平台。搭配 ALFA AWUS036AXML（Flipper One 創辦人特別測試的網卡），你就能在口袋中擁有一套完整的無線安全評估工具。
+**Flipper One 代表了一次世代躍進**——它將完整 Debian Linux 環境與 USB 3.1 host 能力的強大功能，帶入一台可攜式、專用硬體平台。搭配 ALFA AWUS036AXML（Flipper One 創辦人特別測試的網路卡），你就能在口袋中擁有一套完整的無線安全評估工具。
 
 ---
 
 ### 哪裡買
 
-所有推薦的 ALFA 網卡均可從 Yupitek——ALFA Network 授權經銷商處購得。瀏覽完整型號或比較規格：
+所有推薦的 ALFA 網路卡均可從 Yupitek——ALFA Network 授權經銷商處購得。瀏覽完整型號或比較規格：
 
-- [ALFA USB 無線網卡——完整型錄](https://yupitek.com/zh-tw/products/alfa/)——所有型號含規格與定價
+- [ALFA USB 無線網路卡——完整型錄](https://yupitek.com/zh-tw/products/alfa/)——所有型號含規格與定價
 - [ALFA 產品比較表](/en/alfa_compare/)——晶片組、頻段、驅動的並列比較
 
 ### 延伸閱讀
@@ -397,12 +397,12 @@ sudo systemctl restart NetworkManager
 - [Flipper One 官方部落格文章](https://blog.flipper.net/flipper-one-we-need-your-help/)——Pavel Zhovner，2026 年 5 月
 - [Flipper One Developer Portal](https://docs.flipper.net/one)——技術規格與文件
 - [什麼是 Packet Injection？](/en/blog/packet-injection-guide/)——我們的封包注入基礎指南
-- [AWUS036AXML WiFi 6E 評測](/en/blog/awus036axml-wifi-6e-review/)——旗艦網卡深度評測
+- [AWUS036AXML WiFi 6E 評測](/en/blog/awus036axml-wifi-6e-review/)——旗艦網路卡深度評測
 - [ALFA 產品比較](/en/alfa_compare/)——所有 ALFA 型號的並列規格
 
 ---
 
-*關於 Flipper One 與 ALFA 網卡相容性的售前諮詢，請聯絡 Yupitek 客服：support@yupitek.com 或致電 +886-2-87325338。*
+*關於 Flipper One 與 ALFA 網路卡相容性的售前諮詢，請聯絡 Yupitek 客服：support@yupitek.com 或致電 +886-2-87325338。*
 
 ---
 

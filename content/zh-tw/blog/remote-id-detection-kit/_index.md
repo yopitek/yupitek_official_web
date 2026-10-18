@@ -9,7 +9,7 @@ tags: ["Remote-ID", "ALFA-Network", "AWUS036ACH", "無人機偵測", "Counter-UA
 author: "benny-lai"
 lastmod: 2026-07-27
 faq:
-  - question: "為什麼 AWUS036ACH 是首選，而不是更新的 Wi-Fi 6/6E 網卡？"
+  - question: "為什麼 AWUS036ACH 是首選，而不是更新的 Wi-Fi 6/6E 網路卡？"
     answer: "Remote ID 擷取需要穩定的監聽模式與原始封包注入，目前社群驅動最成熟的是 Realtek rtl88xxau 分支（RTL8812AU / RTL8814AU）。Wi-Fi 6/6E（MediaTek MT7921AUN、Realtek RTL8832BU）在主流滲透／監聽工具鏈中尚無對應注入驅動，會被忽略。AWUS036ACH 是經社群與本套件雙重驗證的選擇。"
   - question: "nRF52840 是必要的嗎？"
     answer: "若只需 Wi-Fi Remote ID（NAN / Beacon），不需要；AWUS036ACH 即可。若要同時擷取 Bluetooth 5 Long Range 廣播，則需要 nRF52840（燒錄 sniffer 韌體）。建議套件含此模組以達完整覆蓋。"
@@ -23,7 +23,7 @@ faq:
 > 榆閤科技 Yupitek 技術團隊｜ALFA Network 台灣授權代理
 
 {{< tldr >}}
-Remote ID 偵測套件用 **ALFA AWUS036ACH** 網卡的監聽模式，被動接收無人機依法必須廣播的身分與位置資訊（等同無人機的「空中車牌」），是場域安全管理者合法、低成本的態勢感知手段。
+Remote ID 偵測套件用 **ALFA AWUS036ACH** 網路卡的監聽模式，被動接收無人機依法必須廣播的身分與位置資訊（等同無人機的「空中車牌」），是場域安全管理者合法、低成本的態勢感知手段。
 {{< /tldr >}}
 
 {{< alert "circle-info" >}}
@@ -31,10 +31,10 @@ Remote ID 偵測套件用 **ALFA AWUS036ACH** 網卡的監聽模式，被動接�
 
 我們部落格另有一篇《[自製長距離數位圖傳 / 遙測鏈路（基於 wfb-ng）](/zh-tw/blog/wfb-ng-long-range-link/)》，同樣用 ALFA AWUS036ACH，但用途完全相反：
 
-- **本文（這篇）＝「接收端」**：教你用 ALFA 網卡**被動接收**別人無人機廣播出來的身分資訊（如同看到無人機的車牌號碼）。適合你是**場域安全管理者 / 監管單位**。
-- **另一篇＝「發射端」**：教你把 ALFA 網卡裝在**自己的無人機**上，做出長距離、可加密的影像／遙測傳輸鏈路。適合你是**無人機操作者 / 開發者**。
+- **本文（這篇）＝「接收端」**：教你用 ALFA 網路卡**被動接收**別人無人機廣播出來的身分資訊（如同看到無人機的車牌號碼）。適合你是**場域安全管理者 / 監管單位**。
+- **另一篇＝「發射端」**：教你把 ALFA 網路卡裝在**自己的無人機**上，做出長距離、可加密的影像／遙測傳輸鏈路。適合你是**無人機操作者 / 開發者**。
 
-兩篇的共同點只有「同一張網卡、同一個 monitor mode 監聽模式技術」，實際應用情境與立場完全不同，別搞混了。
+兩篇的共同點只有「同一張網路卡、同一個 monitor mode 監聽模式技術」，實際應用情境與立場完全不同，別搞混了。
 
 不熟悉 Remote ID、SDR 等名詞的讀者，也可以先跳到文末的「新手必懂名詞表」附錄快速掃過一遍。
 {{< /alert >}}
@@ -79,7 +79,7 @@ Remote ID 偵測套件用 **ALFA AWUS036ACH** 網卡的監聽模式，被動接�
 
 | 項目 | 型號 / 規格 | 角色 | 必要性 |
 |---|---|---|---|
-| **核心網卡** | ALFA **AWUS036ACH**（RTL8812AU，雙頻 2.4/5 GHz，USB 3.0，雙 5 dBi RP-SMA 天線） | Wi-Fi Remote ID 擷取（監聽模式） | **必要** |
+| **核心網路卡** | ALFA **AWUS036ACH**（RTL8812AU，雙頻 2.4/5 GHz，USB 3.0，雙 5 dBi RP-SMA 天線） | Wi-Fi Remote ID 擷取（監聽模式） | **必要** |
 | 單板電腦 | Raspberry Pi 4（建議 2 GB+；3B / 5 亦可） | 運算主機 | **必要** |
 | 儲存 | microSD 16 GB+（Samsung / SanDisk Endurance 建議） | 系統碟 | **必要** |
 | Bluetooth 5 擷取 | **nRF52840** USB Dongle（燒錄 sniffer 韌體，如 Nordic Sniffer） | 擷取 BT5 Long Range Remote ID | 推薦（可選） |
@@ -249,7 +249,7 @@ curl -fsSL https://github.com/fduflyer/DroneAware-Node-Releases/releases/latest/
 ```
 
 {{< alert "circle-info" >}}
-**安全提醒**：對任何 `curl ... | sudo bash` 第三方腳本，建議先下載審閱再執行：`curl -fsSL <url> -o install.sh && less install.sh && sudo bash install.sh`。安裝程式會自動偵測 USB 網卡、提示節點名稱並引導至 droneaware.io 註冊，偵測結果即時顯示於 live map。
+**安全提醒**：對任何 `curl ... | sudo bash` 第三方腳本，建議先下載審閱再執行：`curl -fsSL <url> -o install.sh && less install.sh && sudo bash install.sh`。安裝程式會自動偵測 USB 網路卡、提示節點名稱並引導至 droneaware.io 註冊，偵測結果即時顯示於 live map。
 {{< /alert >}}
 
 ---
@@ -283,15 +283,15 @@ curl -fsSL https://github.com/fduflyer/DroneAware-Node-Releases/releases/latest/
 | **Remote ID（遠端識別）** | 無人機的「空中車牌」。法規要求無人機起飛後要一直對外廣播自己的身分、位置等資訊，讓地面上的人（尤其是監管單位）能知道「這是誰的機、飛去哪」。 |
 | **ASTM F3411 / EN 4709-002** | 分別是美國、歐盟制定的 Remote ID 廣播標準規格，規定廣播的內容、格式該長什麼樣子，讓不同廠牌的無人機與偵測設備能互通。 |
 | **被動偵測（Passive Detection）** | 只是「聽」廣播出來的公開訊息，不會主動發射訊號去干擾或攻擊無人機，合法性與主動干擾（jamming）完全不同。 |
-| **monitor mode（監聽模式）** | 讓 WiFi 網卡不去連任何路由器，改成「單純聽」空氣中的無線電封包，是擷取 Remote ID 廣播的前提。 |
+| **monitor mode（監聽模式）** | 讓 WiFi 網路卡不去連任何路由器，改成「單純聽」空氣中的無線電封包，是擷取 Remote ID 廣播的前提。 |
 | **NAN（Wi-Fi Aware）／ Beacon** | 兩種無人機用來廣播 Remote ID 的 Wi-Fi 訊框格式，本套件會同時嘗試解析這兩種。 |
 | **Bluetooth 5 Long Range** | 除了 Wi-Fi，部分無人機也會用藍牙廣播 Remote ID，需要額外的 nRF52840 才能擷取。 |
 | **DJI OcuSync / DroneID** | DJI 自家的私有影像 / 遙測傳輸協定，**不是**標準 Wi-Fi，也不是本文能解的 Remote ID；需要完全不同的 SDR 硬體與外掛才能解讀，本文有特別在第 7 節說明。 |
-| **SDR（Software Defined Radio，軟體定義無線電）** | 一種可以用軟體調整接收頻率範圍與解調方式的通用無線電硬體，像 ANTSDR、HackRF，能涵蓋 ALFA 網卡收不到的頻段（如 DJI OcuSync）。 |
-| **RTL8812AU** | ALFA AWUS036ACH 網卡內部使用的 Realtek 晶片型號，決定了這張卡支不支援監聽模式。 |
+| **SDR（Software Defined Radio，軟體定義無線電）** | 一種可以用軟體調整接收頻率範圍與解調方式的通用無線電硬體，像 ANTSDR、HackRF，能涵蓋 ALFA 網路卡收不到的頻段（如 DJI OcuSync）。 |
+| **RTL8812AU** | ALFA AWUS036ACH 網路卡內部使用的 Realtek 晶片型號，決定了這張卡支不支援監聽模式。 |
 | **GPX 檔案** | 一種記錄 GPS 座標軌跡的通用格式，可以直接用 Google Earth 等軟體開啟，畫出無人機飛過的路徑。 |
 
-> 一句話總結：本文教你把 ALFA 網卡變成一台「無人機身分掃描器」——被動接收天上無人機依法必須廣播的公開資訊，屬於場域安全管理的合法手段。
+> 一句話總結：本文教你把 ALFA 網路卡變成一台「無人機身分掃描器」——被動接收天上無人機依法必須廣播的公開資訊，屬於場域安全管理的合法手段。
 
 ---
 
@@ -310,7 +310,7 @@ curl -fsSL https://github.com/fduflyer/DroneAware-Node-Releases/releases/latest/
 
 ## 延伸閱讀
 
-- [用 ALFA AWUS036ACH 自製長距離數位圖傳 / 遙測鏈路（wfb-ng）](/zh-tw/blog/wfb-ng-long-range-link/) — 同一張網卡的「發射端」應用，教你把它裝上自己的無人機做長距離圖傳
+- [用 ALFA AWUS036ACH 自製長距離數位圖傳 / 遙測鏈路（wfb-ng）](/zh-tw/blog/wfb-ng-long-range-link/) — 同一張網路卡的「發射端」應用，教你把它裝上自己的無人機做長距離圖傳
 - [ALFA AWUS036ACH 產品頁](https://yupitek.com/zh-tw/products/alfa/awus036ach/) — 規格、選購與技術支援
 - [ALFA Network 全系列產品](https://yupitek.com/zh-tw/products/alfa/) — 依晶片、頻段、用途挑選其他型號
 

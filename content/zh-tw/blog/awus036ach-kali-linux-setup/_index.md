@@ -22,7 +22,7 @@ faq:
     answer: "若使用 DKMS 安裝，驅動會自動重建。若失效，執行 dkms autoinstall 並確認 linux-headers 套件與當前核心版本一致。"
 ---
 
-ALFA AWUS036ACH 是 Kali Linux 上最廣泛使用的 USB 無線網卡，搭載 RTL8812AU 晶片，完整支援監聽模式與封包注入。安裝 aircrack-ng 驅動即可運作。
+ALFA AWUS036ACH 是 Kali Linux 上最廣泛使用的 USB 無線網路卡，搭載 RTL8812AU 晶片，完整支援監聽模式與封包注入。安裝 aircrack-ng 驅動即可運作。
 
 {{< tldr >}}
 AWUS036ACH 搭載 RTL8812AU 晶片，透過 aircrack-ng 驅動搭配 DKMS 安裝，可穩定啟用監聽模式與封包注入，是 Kali Linux 滲透測試的標準配備。
@@ -30,7 +30,7 @@ AWUS036ACH 搭載 RTL8812AU 晶片，透過 aircrack-ng 驅動搭配 DKMS 安裝
 
 ## 前言
 
-ALFA AWUS036ACH 搭載 Realtek **RTL8812AU** 晶片組，長期以來是 Kali Linux 無線滲透測試社群中評價最高、使用最廣泛的 USB 無線網卡之一。它同時支援 2.4 GHz 與 5 GHz 雙頻、具備完整的監聽模式（Monitor Mode）與封包注入（Packet Injection）能力，加上 aircrack-ng 官方維護的開源驅動，幾乎成為所有 Wi-Fi 安全教學的標配器材。
+ALFA AWUS036ACH 搭載 Realtek **RTL8812AU** 晶片組，長期以來是 Kali Linux 無線滲透測試社群中評價最高、使用最廣泛的 USB 無線網路卡之一。它同時支援 2.4 GHz 與 5 GHz 雙頻、具備完整的監聽模式（Monitor Mode）與封包注入（Packet Injection）能力，加上 aircrack-ng 官方維護的開源驅動，幾乎成為所有 Wi-Fi 安全教學的標配器材。
 
 本教學將從零開始，帶你完成 AWUS036ACH 在 Kali Linux 上的完整安裝與設定流程，包含驅動安裝、監聽模式啟用、封包注入測試，以及常見問題的排解方法。
 
@@ -53,7 +53,7 @@ ALFA AWUS036ACH 搭載 Realtek **RTL8812AU** 晶片組，長期以來是 Kali Li
 
 ---
 
-## 步驟 1：連接網卡並確認偵測
+## 步驟 1：連接網路卡並確認偵測
 
 將 AWUS036ACH 插入電腦的 USB 接埠後，先確認系統是否正確識別到設備。
 
@@ -274,13 +274,13 @@ sudo modprobe 88XXau
 dmesg | tail -30
 ```
 
-若 `lsusb` 找不到裝置，請嘗試更換 USB 埠，或確認網卡連接是否穩固。
+若 `lsusb` 找不到裝置，請嘗試更換 USB 埠，或確認網路卡連接是否穩固。
 
 ---
 
 ### 問題 2：驅動未載入或載入失敗
 
-**症狀**：`modprobe 88XXau` 報錯，或 `dmesg` 顯示驅動錯誤。
+**症狀**：`modprobe 88XXau` 回報錯誤，或 `dmesg` 顯示驅動錯誤。
 
 **排解步驟**：
 ```bash
@@ -329,7 +329,7 @@ sudo systemctl start NetworkManager
 
 **排解步驟**：
 1. 調整天線方向與位置，靠近目標 AP
-2. 確認網卡的 TX Power 設定（`iwconfig wlan0mon txpower 30`）
+2. 確認網路卡的 TX Power 設定（`iwconfig wlan0mon txpower 30`）
 3. 嘗試更換 USB 埠，確保供電充足（建議使用 USB 3.0）
 4. 若使用 USB Hub，改用直接連接到主機的 USB 埠
 
@@ -337,7 +337,7 @@ sudo systemctl start NetworkManager
 
 ## 恢復正常模式
 
-測試完成後，將網卡切換回一般 Managed 模式並重啟網路管理：
+測試完成後，將網路卡切換回一般 Managed 模式並重啟網路管理：
 
 ```bash
 # 使用 airmon-ng 停止監聽模式
@@ -370,7 +370,7 @@ ALFA AWUS036ACH 由台灣授權代理商**榆閤科技（Yopitek）**在台灣�
 - ✅ 封包注入功能驗證
 - ✅ 常見問題排解方法
 
-有了正確運作的無線網卡，你可以進一步學習使用 `airodump-ng`、`aireplay-ng`、`aircrack-ng` 等工具，探索 Wi-Fi 安全的更多面向。記得所有測試必須在合法授權的環境中進行。
+有了正確運作的無線網路卡，你可以進一步學習使用 `airodump-ng`、`aireplay-ng`、`aircrack-ng` 等工具，探索 Wi-Fi 安全的更多面向。記得所有測試必須在合法授權的環境中進行。
 
 ## 參考來源
 

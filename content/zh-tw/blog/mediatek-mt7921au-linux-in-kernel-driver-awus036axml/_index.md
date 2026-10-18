@@ -19,11 +19,11 @@ featureimage: /images/blog/mediatek-mt7921au-linux-in-kernel-driver-awus036axml.
 
 ## 開場：那段「每次系統更新就要重編驅動」的日子
 
-如果你用過 Realtek RTL8812AU 這類晶片的 USB 網卡（例如市售熱門的 AWUS036ACH），你可能也有過類似的經驗：
+如果你用過 Realtek RTL8812AU 這類晶片的 USB 網路卡（例如市售熱門的 AWUS036ACH），你可能也有過類似的經驗：
 
 1. 裝好了社群維護的驅動，上網、監聽一切正常；
 2. 某天執行 `sudo apt upgrade`，Linux 核心升級到新版本；
-3. 重開機後網卡從系統消失，Wi-Fi 介面（`wlan0` / `wlan1`）完全不見；
+3. 重開機後網路卡從系統消失，Wi-Fi 介面（`wlan0` / `wlan1`）完全不見；
 4. 只好**重新下載原始碼、安裝 DKMS、重新編譯出核心模組**，折騰掉整個下午。
 
 問題不在產品本身，而在驅動程式的存在形式。Realtek 的 Linux 驅動大多沒有被收錄進 Linux 核心（mainline）。想用，就得靠外部原始碼「外掛」到系統裡。核心每升級一次，這份外掛就要重編一次，否則就會跟新的核心版本對不上而失效。
@@ -44,12 +44,12 @@ DKMS（Dynamic Kernel Module Support）就是為了解決「核心一更新模�
 
 - **工具鏈問題**：編譯需要 `build-essential`、`dkms`、原生核心標頭檔（`linux-headers-$(uname -r)`）。沒裝齊，DKMS 建置直接失敗。
 - **版本不相容**：最怕的是核心升級後，那份 GitHub 驅動還沒跟上新的 API 變更。你永遠不知道下次 `apt upgrade` 帶來的核心，會不會剛好踩到。
-- **Secure Boot / 核心模組簽署**：若系統啟用 Secure Boot，未簽署的核心模組會被系統拒絕載入，網卡介面連出現都不會出現。此時不能靠關閉安全防護解決，正確做法是透過 MOK（Machine Owner Key）機制匯入自簽憑證。這又是一道工序。
+- **Secure Boot / 核心模組簽署**：若系統啟用 Secure Boot，未簽署的核心模組會被系統拒絕載入，網路卡介面連出現都不會出現。此時不能靠關閉安全防護解決，正確做法是透過 MOK（Machine Owner Key）機制匯入自簽憑證。這又是一道工序。
 - **社群版本選擇焦慮**：同一個晶片在 GitHub 上有 `aircrack-ng/rtl8812au`、`morrownr/8812au-20210820` 等多個分支，版本不同、支援的核心範圍不同，選錯就白編一場。
 
 ### 1.3 你的時間成本才是真正的開銷
 
-假設你只在「裝好那一次」要編譯，OK；但**只要系統持續更新，這份驅動就是永久的維護責任**。對滲透測試人員、嵌入式開發者來說，寶貴的時間不該花在重編網卡驅動上，而是花在工具與腳本開發。
+假設你只在「裝好那一次」要編譯，OK；但**只要系統持續更新，這份驅動就是永久的維護責任**。對滲透測試人員、嵌入式開發者來說，寶貴的時間不該花在重編網路卡驅動上，而是花在工具與腳本開發。
 
 ---
 
@@ -62,7 +62,7 @@ MediaTek 的 Wi-Fi 晶片驅動長期收錄在 Linux 核心的 mt76 無線驅動
 - MT7921 系列最早自 Linux Kernel 5.12（PCIe / M.2 版本）進入主線核心；
 - 而 AWUS036AXML 使用的是 USB 版本的 `mt7921u` 驅動，自 Linux Kernel 5.18 起原生收錄於 mainline 核心。
 
-換句話說，**驅動本體不用從 GitHub 抓原始碼，不用 DKMS，不用自己編譯**。只要發行版核心夠新，插上網卡、補上韌體檔，就搞定了。介面會乖乖出現在 `ip link` 裡。
+換句話說，**驅動本體不用從 GitHub 抓原始碼，不用 DKMS，不用自己編譯**。只要發行版核心夠新，插上網路卡、補上韌體檔，就搞定了。介面會乖乖出現在 `ip link` 裡。
 
 ### 2.2 你只需要韌體（Firmware），不需要驅動原始碼
 
@@ -96,7 +96,7 @@ sudo reboot
 | Windows 10 / 11 | — | 原廠驅動 |
 | macOS（Intel / Apple Silicon） | 不支援 | **無驅動，請勿採購** |
 
-> **⚠️ 採購前最重要的支援性提醒**：AWUS036AXML **不支援 macOS**。無論 Intel 或 Apple Silicon，目前皆無 MT7921AU 的 macOS 驅動可用。若你的主力環境是 macOS，這類 Wi-Fi 6 / 6E 外接網卡對你而言就是壞的——請直接排除，別買了才發現。
+> **⚠️ 採購前最重要的支援性提醒**：AWUS036AXML **不支援 macOS**。無論 Intel 或 Apple Silicon，目前皆無 MT7921AU 的 macOS 驅動可用。若你的主力環境是 macOS，這類 Wi-Fi 6 / 6E 外接網路卡對你而言就是壞的——請直接排除，別買了才發現。
 
 ### 2.3 為什麼「原生支援」對 Kali 開發者特別重要
 
@@ -108,7 +108,7 @@ sudo reboot
 
 ### 3.1 插上、確認、開工：三步搞定
 
-把網卡插上 USB-C 連接埠後（隨附 2-in-1 USB-C/USB-A 傳輸線），執行：
+把網路卡插上 USB-C 連接埠後（隨附 2-in-1 USB-C/USB-A 傳輸線），執行：
 
 ```bash
 lsusb                 # 應看到 0e8d:7961 的 MediaTek 裝置
@@ -151,7 +151,7 @@ sudo aireplay-ng --test wlan1
 
 ### 3.3 融合模式（VIF / Fusion）：同時管理＋監聽
 
-許多滲透場景需要「網卡同時扮演用戶端上網、又同時監聽」，原生驅動透過 Virtual Interface 支援：
+許多滲透場景需要「網路卡同時扮演用戶端上網、又同時監聽」，原生驅動透過 Virtual Interface 支援：
 
 ```bash
 sudo iw dev wlan1 interface add mon0 type monitor
@@ -164,11 +164,11 @@ sudo ip link set mon0 up
 
 ---
 
-## 四、採購前評估工作表：你該買「原生免編譯」還是「DKMS 網卡」？
+## 四、採購前評估工作表：你該買「原生免編譯」還是「DKMS 網路卡」？
 
 為了降低採購後的支援成本，先做這份簡單的評估，再決定買 AWUS036AXML 還是 AWUS036ACH。
 
-### 4.1 兩款網卡快速對照
+### 4.1 兩款網路卡快速對照
 
 | 評估項目 | AWUS036AXML（MT7921AU） | AWUS036ACH（RTL8812AU） |
 |---|---|---|
@@ -188,7 +188,7 @@ sudo ip link set mon0 up
 
 - [ ] 我的主力系統是 **Kali Linux / Ubuntu / Debian**，核心版本 5.18 以上。
 - [ ] 我**只要插上就能用**，不想碰 `dkms`、`github clone`、編譯工具鏈。
-- [ ] 我需要 `mt76` 體系的原生支援，且核心升級不影響網卡。
+- [ ] 我需要 `mt76` 體系的原生支援，且核心升級不影響網路卡。
 - [ ] 我需要 **6 GHz 頻段**（Wi-Fi 6E 路由器環境）。
 - [ ] 主要用途：監聽、封包注入、Soft AP、融合模式（VIF）。
 - [ ] 我會搭配隨附的 USB-C / USB-A 2-in-1 傳輸線接到筆電或單板電腦。
@@ -207,7 +207,7 @@ sudo ip link set mon0 up
 
 ## 附錄：快速排障 Intake（給客服與使用者對照）
 
-如果網卡插上後沒出現介面，依序檢查：
+如果網路卡插上後沒出現介面，依序檢查：
 
 1. `lsusb` 是否有 `0e8d:7961`（MediaTek）裝置 → 沒有則換 USB 連接埠或供電。
 2. `sudo apt install linux-firmware firmware-misc-nonfree` 後重開機 → 韌體未裝是頭號原因。

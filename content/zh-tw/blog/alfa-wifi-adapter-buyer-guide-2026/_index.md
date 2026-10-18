@@ -10,19 +10,19 @@ featureimage: "/images/blog/alfa-wifi-adapter-buyer-guide-2026.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
-  - question: "ALFA 網卡選購標準是什麼？"
+  - question: "ALFA 網路卡選購標準是什麼？"
     answer: "選購標準包含晶片組驅動成熟度、作業系統相容性、Monitor Mode 支援與發射功率，RTL8812AU 驅動最成熟穩定。"
-  - question: "哪些 ALFA 網卡支援 Monitor Mode？"
+  - question: "哪些 ALFA 網路卡支援 Monitor Mode？"
     answer: "ACH、ACM、ACS、AX、AXER、AXM、AXML 均完整支援監聽模式與封包注入，EACS（RTL8821CU）不支援。"
-  - question: "WiFi 6E/6 網卡有必要嗎？"
+  - question: "WiFi 6E/6 網路卡有必要嗎？"
     answer: "若審計範圍含 6 GHz 頻段則有必要。AXML 支援三頻 AX3000，需 Linux 核心 ≥ 5.18 與 firmware-misc-nonfree。"
   - question: "RTL8812AU 和 MT7612U 驅動安裝差異？"
     answer: "RTL8812AU 需 DKMS 編譯安裝，核心更新後需重建；MT7612U 自核心 4.19 起內建主線，隨插即用免編譯。"
-  - question: "2026 年最推薦的 ALFA 網卡是哪款？"
+  - question: "2026 年最推薦的 ALFA 網路卡是哪款？"
     answer: "紅隊首選 AWUS036ACH（500mW 雙天線），平價首選 AWUS036ACM，企業 6E 首選 AWUS036AXML。"
 ---
 
-2026 年最推薦的 ALFA 無線網卡是 AWUS036ACH。它具備 500 mW 發射功率、雙天線 MIMO 與 RTL8812AU 驅動，覆蓋紅隊作戰與企業審計多數場景，是安全專業人員部署最廣的單款網卡。
+2026 年最推薦的 ALFA 無線網路卡是 AWUS036ACH。它具備 500 mW 發射功率、雙天線 MIMO 與 RTL8812AU 驅動，覆蓋紅隊作戰與企業審計多數場景，是安全專業人員部署最廣的單款網路卡。
 
 {{< tldr >}}
 AWUS036ACH 是 2026 年紅隊首選：500 mW 雙天線 AC1200，RTL8812AU 驅動最成熟。平價選 AWUS036ACM，企業 6E 選 AWUS036AXML（AX3000 三頻）。
@@ -256,7 +256,7 @@ CTF 無線挑戰通常在受控環境中進行，發射功率並非關鍵變數�
 
 **推薦：[AWUS036EACS](/zh-tw/products/alfa/awus036eacs/)**
 
-透過 Litchi 或 DJI GO 進行 DJI 距離延伸是常見的合法使用情境。此處特別推薦 EACS 搭配 RTL8821CU，因為它在 Windows（DJI 軟體運行平台）上無需額外驅動即可原生運作，且其一般用途連線特性適合此使用情境。無需監聽模式；用戶端連線能力與發射功率才是重點。搭配 [APA-M25](/zh-tw/products/alfa/apa-m25/) 板狀天線以獲得最大有效範圍。
+透過 Litchi 或 DJI GO 進行 DJI 距離延伸是常見的合法使用情境。此處特別推薦 EACS 搭配 RTL8821CU，因為它在 Windows（DJI 軟體執行平台）上無需額外驅動即可原生運作，且其一般用途連線特性適合此使用情境。無需監聽模式；用戶端連線能力與發射功率才是重點。搭配 [APA-M25](/zh-tw/products/alfa/apa-m25/) 板狀天線以獲得最大有效範圍。
 
 ---
 

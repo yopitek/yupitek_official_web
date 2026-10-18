@@ -57,7 +57,7 @@ ALFA Network 網路卡在 Linux 上改變了這個局面，驅動程式支援深
 你的 Mac 架構決定了需要哪個 Kali Linux 映像，以及哪些 Hypervisor 可用。
 
 **Intel Mac（x86_64）：**
-三大主流 Hypervisor——VMware Fusion、Parallels Desktop 與 VirtualBox——在 Intel Mac 上均可原生運行。可使用來自 kali.org 官方下載頁面的標準 **Kali Linux x86_64 ISO**。VM 內的驅動程式編譯步驟與所有線上 Kali 指南一致。
+三大主流 Hypervisor——VMware Fusion、Parallels Desktop 與 VirtualBox——在 Intel Mac 上均可原生執行。可使用來自 kali.org 官方下載頁面的標準 **Kali Linux x86_64 ISO**。VM 內的驅動程式編譯步驟與所有線上 Kali 指南一致。
 
 **Apple Silicon（M1/M2/M3）：**
 Apple Silicon 是 ARM64 架構。標準 x86_64 Kali ISO 即使在 Hypervisor 內也無法在 Apple Silicon 硬體上開機——沒有 x86 模擬層（Rosetta 只適用於 macOS 使用者空間應用程式，不適用於完整 OS 虛擬化）。必須使用 **Kali Linux ARM64** 映像，可在 [kali.org/get-kali](https://www.kali.org/get-kali/) 的 Apple Silicon / ARM 區段找到。

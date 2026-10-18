@@ -1,6 +1,6 @@
 ---
-title: "突破邊緣 AI 頻寬瓶頸：NVIDIA Jetson Orin Nano 安裝高功率網卡升級 6GHz 影音傳輸"
-description: "在 NVIDIA Jetson Orin Nano（JetPack/Ubuntu 22.04）上安裝 AWUS036AXML Wi-Fi 6E 網卡，切換乾淨的 6GHz 頻段，以實測數據證明多路 RTSP 4K 串流的頻寬優勢。"
+title: "突破邊緣 AI 頻寬瓶頸：NVIDIA Jetson Orin Nano 安裝高功率網路卡升級 6GHz 影音傳輸"
+description: "在 NVIDIA Jetson Orin Nano（JetPack/Ubuntu 22.04）上安裝 AWUS036AXML Wi-Fi 6E 網路卡，切換乾淨的 6GHz 頻段，以實測資料證明多路 RTSP 4K 串流的頻寬優勢。"
 date: 2026-08-31
 author: benny-lai
 lastmod: 2026-08-31
@@ -12,7 +12,7 @@ featureimage: /images/blog/jetson-orin-nano-wifi-6e-6ghz-high-bandwidth-streamin
 ---
 
 > **適用平台**：NVIDIA Jetson Orin Nano Developer Kit，JetPack 6.x（Ubuntu 22.04 LTS 基底，Linux Kernel 5.15 / 6.1）
-> **引導硬體**：ALFA AWUS036AXML（MediaTek MT7921AU 晶片，Wi-Fi 6E 三頻 USB 網卡）
+> **引導硬體**：ALFA AWUS036AXML（MediaTek MT7921AU 晶片，Wi-Fi 6E 三頻 USB 網路卡）
 > **本篇定位**：本方案為 DIY 開源學術 / 工程開發平台之 bench-test 評估，非商用成品之官方支援，亦不代表任何閉源平台原廠之官方認證。
 
 ---
@@ -25,7 +25,7 @@ featureimage: /images/blog/jetson-orin-nano-wifi-6e-6ghz-high-bandwidth-streamin
 - 延遲忽高忽低，影像 AI 模型推論的「時間錯位」愈來愈明顯。
 - 排程卡住，集控端畫面黑屏，一查是「無線掉包」。
 
-這篇文章用**物理層 → 設定層 → 量測層**三個角度，拆解「邊緣端多路 RTSP 4K 串流」的頻寬挑戰。接著示範在 **Jetson Orin Nano（JetPack / Ubuntu 22.04 LTS）** 上外接 **AWUS036AXML Wi-Fi 6E 網卡**，切換到乾淨的 **6GHz 頻段**。最後用數據證明「為什麼 6GHz 是這類工作量的首選」。
+這篇文章用**物理層 → 設定層 → 量測層**三個角度，拆解「邊緣端多路 RTSP 4K 串流」的頻寬挑戰。接著示範在 **Jetson Orin Nano（JetPack / Ubuntu 22.04 LTS）** 上外接 **AWUS036AXML Wi-Fi 6E 網路卡**，切換到乾淨的 **6GHz 頻段**。最後用資料證明「為什麼 6GHz 是這類工作量的首選」。
 
 如果你還沒決定要不要買這張卡，建議先跳去第 4 章的「採購前相容性確認工作表」逐項打勾。
 
@@ -62,7 +62,7 @@ RTSP（Real-Time Streaming Protocol）只是「交握與控制」協定，真正
 2. **環境損耗**：距離、牆壁、金屬反射都會讓 PHY 自動降階（從最高 MCS 掉到低 MCS）。
 3. **雙向排程**：影像上傳（uplink）與控制下載（downlink）共用同一條無線鏈路。
 
-所以一張宣稱 2400 Mbps class 的網卡，**在乾淨環境下的真實承載量通常落在 600–900 Mbps**，這對多路 4K（80–140 Mbps）綽綽有餘。但**一旦塞進擁堵的 2.4G/5G 通道，實測往往只剩 100–300 Mbps**——直接卡爆。
+所以一張宣稱 2400 Mbps class 的網路卡，**在乾淨環境下的真實承載量通常落在 600–900 Mbps**，這對多路 4K（80–140 Mbps）綽綽有餘。但**一旦塞進擁堵的 2.4G/5G 通道，實測往往只剩 100–300 Mbps**——直接卡爆。
 
 ### 1.4 三件你該先量起來的「基準值」
 
@@ -82,7 +82,7 @@ iw dev wlan0 link           # 看目前 AP、頻道、RSSI、bitrate
 ping -c 60 -i 1 <AP_閘道_IP>
 ```
 
-先把「舊網卡 / 舊頻段」的 RSSI、bitrate、ping 延遲與掉包率記下來——第 3 章最後要跟 6GHz 對比。
+先把「舊網路卡 / 舊頻段」的 RSSI、bitrate、ping 延遲與掉包率記下來——第 3 章最後要跟 6GHz 對比。
 
 ---
 
@@ -115,7 +115,7 @@ sudo reboot
 
 > **支援邊界（Support Reduction）**：AWUS036AXML **不支援 macOS（Intel 與 Apple Silicon 皆不支援）**。JetPack 只在 Jetson 專屬的 Ubuntu 22.04 LTS 環境運作，本篇全部指令都以 Linux 為前提；若你的開發主機是 Mac，請改用任一台 Linux 主機做邊緣運算節點。
 
-### 2.2 把網卡接上 Jetson：USB 連接埠與供電注意事項
+### 2.2 把網路卡接上 Jetson：USB 連接埠與供電注意事項
 
 Jetson Orin Nano Developer Kit 提供 2 個 USB 3.2 Type-A（藍色連接埠）與 2 個 USB 2.0 連接埠。AWUS036AXML 用 **USB-C 3.2 Gen1** 連接介面，隨附一條 2-in-1（USB-C 對 USB-A）的電源與資料線：
 
@@ -127,7 +127,7 @@ lsusb | grep -i mediatek
 **供電提醒（實測常見殺手）**：
 
 - AWUS036AXML 最大耗電約 **2.7W**，直插 Jetson 的 USB 3.2 連接埠通常沒問題。
-- 若同時插多支高功率網卡、外接 SSD 與 USB 鏡頭，**建議改用有獨立供電的 USB Hub（Powered Hub）**，避免瞬間抽電壓降導致網卡「時有時無」。
+- 若同時插多支高功率網路卡、外接 SSD 與 USB 鏡頭，**建議改用有獨立供電的 USB Hub（Powered Hub）**，避免瞬間抽電壓降導致網路卡「時有時無」。
 - 不要用延長線或前面板分接頭，USB 線越短、越粗越好。
 
 ### 2.3 連上基地台並鎖定頻段
@@ -161,13 +161,13 @@ nmcli con mod "連線名稱" 802-11-wireless.band a
 nmcli con up "連線名稱"
 ```
 
-> **法規提醒**：6GHz 頻段是否可用，取決於你所在國家/地區的法規與**基地台韌體**。以台灣為例，NCC 開放的 6GHz 範圍為 **5945–6425 MHz**，且**限室內低功率使用**，並非完整的 5925–7125 MHz。若 `iw reg get` 顯示的 regulatory domain 未開放 6GHz，或 AP 未啟用 6GHz，網卡是連不上的——這不是硬體故障，是法規/設定問題。
+> **法規提醒**：6GHz 頻段是否可用，取決於你所在國家/地區的法規與**基地台韌體**。以台灣為例，NCC 開放的 6GHz 範圍為 **5945–6425 MHz**，且**限室內低功率使用**，並非完整的 5925–7125 MHz。若 `iw reg get` 顯示的 regulatory domain 未開放 6GHz，或 AP 未啟用 6GHz，網路卡是連不上的——這不是硬體故障，是法規/設定問題。
 
 ---
 
 ## 3. 6GHz vs. 擁堵的 2.4G/5G：頻寬與延遲實測
 
-> 實測精神：**同一顆 Jetson、同一張網卡、同一台 AP、同一個距離**，只切換頻段，其他條件不變。這樣量到的差距，才是「頻段」本身的差距。
+> 實測精神：**同一顆 Jetson、同一張網路卡、同一台 AP、同一個距離**，只切換頻段，其他條件不變。這樣量到的差距，才是「頻段」本身的差距。
 
 ### 3.1 設計你的對照實驗
 
@@ -176,7 +176,7 @@ nmcli con up "連線名稱"
 | AP 位置 | 固定不動，三頻段共用同一台 WiFi 6E AP |
 | 距離 | 固定（例如 3 公尺直線無阻礙） |
 | 時段 | 同一天、相近時段（2.4/5GHz 的擁堵程度要現場量測） |
-| 網卡 | 同一張 AWUS036AXML，只切換 SSID |
+| 網路卡 | 同一張 AWUS036AXML，只切換 SSID |
 | 干擾環境 | 保留現場既有干擾（這正是「實測」的意義） |
 
 ### 3.2 量測項目一：RSSI 與單鏈路吞吐（iperf3）
@@ -204,7 +204,7 @@ iw dev wlan0 station dump | grep -E "signal|tx bitrate|rx bitrate"
 ping -c 60 -i 1 <接收端IP> | tail -2
 ```
 
-記錄三組數據的：**平均延遲（ms）**、**掉包率（%）**、**延遲抖動（max-min）**。
+記錄三組資料的：**平均延遲（ms）**、**掉包率（%）**、**延遲抖動（max-min）**。
 
 ### 3.4 量測項目三：實際多路 RTSP 4K 串流（GStreamer 壓力測試）
 
@@ -253,7 +253,7 @@ sudo tegrastats
 | Linux Kernel | `uname -r` | \_\_\_\_\_ |
 | `mt7921u` 是否內建 | `modinfo mt7921u` | 有輸出 / 無輸出 |
 
-> 若 `uname -r` 低於 5.18 且 `modinfo mt7921u` 無輸出：請先更新 JetPack（建議 6.2+，Kernel 6.1）再討論網卡。**不要在舊核心上硬編非主線驅動**，那只會變成另一篇排障文的主角。
+> 若 `uname -r` 低於 5.18 且 `modinfo mt7921u` 無輸出：請先更新 JetPack（建議 6.2+，Kernel 6.1）再討論網路卡。**不要在舊核心上硬編非主線驅動**，那只會變成另一篇排障文的主角。
 
 ### Step 2：確認你的無線環境
 
@@ -306,8 +306,8 @@ sudo tegrastats
 
 ## 結語與硬體建議
 
-多路 4K 影音進邊緣 AI 平台，卡點往往不在計算力，而在**無線承載量與通道乾淨度**。2.4G/5G 早已被裝置海淹沒，**Wi-Fi 6E 的 6GHz 提供了全新的無干擾通道**——搭配一顆原生驅動、免編譯的網卡，Jetson Orin Nano 就能穩定接下 2–4 路 4K 串流，把「頻寬天花板」的問題一口氣往後推。
+多路 4K 影音進邊緣 AI 平台，卡點往往不在計算力，而在**無線承載量與通道乾淨度**。2.4G/5G 早已被裝置海淹沒，**Wi-Fi 6E 的 6GHz 提供了全新的無干擾通道**——搭配一顆原生驅動、免編譯的網路卡，Jetson Orin Nano 就能穩定接下 2–4 路 4K 串流，把「頻寬天花板」的問題一口氣往後推。
 
 **推薦硬體**：ALFA AWUS036AXML（MediaTek MT7921AU，Linux 核心 5.18+ 原生免編譯、Wi-Fi 6E 三頻、雙 RP-SMA 5dBi 高增益天線、2.7W 低功耗）。同樣晶片架構的 AWUS036AXMR 是無天線的內嵌式機種，適合空間受限的機櫃型邊緣節點。
 
-**下一步**：先跑一遍第 1 章的「基準值量測」，再依照第 4 章的工作表打勾——把測量資料帶進場域，讓數據決定你的頻段策略。
+**下一步**：先跑一遍第 1 章的「基準值量測」，再依照第 4 章的工作表打勾——把測量資料帶進場域，讓資料決定你的頻段策略。

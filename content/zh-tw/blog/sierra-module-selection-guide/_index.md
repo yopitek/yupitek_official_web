@@ -30,7 +30,7 @@ faq:
 
 本文技術資料由榆閤科技（Yupitek）整理提供。
 
-## 十款規格總表：直接看數據最準
+## 十款規格總表：直接看資料最準
 
 先上重點表格！裡面的數字都是依照官方 Spec Sheet 整理的，方便大家直接比對。另外提醒一下，EM9190/EM9191 的上行峰值在不同資料來源可能會有一點點出入，如果是真的要採購做專案，建議先去翻一下最新的官方 Spec Sheet 或是直接問我們確認（文末有附錄連結）。
 
@@ -68,7 +68,7 @@ faq:
 **推薦：[EM7455](/zh-tw/products/sierra/em7455/) / [MC7455](/zh-tw/products/sierra/mc7455/)**
 理由很簡單，因為網路上的開源社群資源最多！如果你用 ROOter（一個基於 OpenWrt 的韌體），相關的教學跟 QMI/MBIM 設定範例非常完整，踩坑了隨便 google 都有救。
 
-### 2. 幫舊筆電升級 WWAN 網卡
+### 2. 幫舊筆電升級 WWAN 網路卡
 
 **推薦：[EM7430](/zh-tw/products/sierra/em7430/) / [EM7455](/zh-tw/products/sierra/em7455/)**
 這兩款都是 M.2 封裝，很適合對應 Dell、Lenovo 等商務筆電的 WWAN 插槽。特別是 EM7455 二手價通常滿香的，是升級首選（但實際頻段能不能合你的電信商，下單前還是先問我們確認一下）。
@@ -108,7 +108,7 @@ faq:
 
 ## 附錄：十款型號官方 Spec Sheet 傳送門
 
-下面這些連結都是連到 Sierra Wireless 官方的技術資源庫（source.sierrawireless.com）。**有些文件需要註冊登入才能下載 PDF**。文章裡的數據是整理自公開資料，如果你需要逐項確認超細節的規格（例如 EM9190/EM9191 的上行峰值），建議直接聯絡我們索取最新的官方文件。
+下面這些連結都是連到 Sierra Wireless 官方的技術資源庫（source.sierrawireless.com）。**有些文件需要註冊登入才能下載 PDF**。文章裡的資料是整理自公開資料，如果你需要逐項確認超細節的規格（例如 EM9190/EM9191 的上行峰值），建議直接聯絡我們索取最新的官方文件。
 
 - **EM7430**：https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7430_product_technical_specification/
 - **EM7455**：https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/

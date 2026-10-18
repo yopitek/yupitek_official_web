@@ -10,22 +10,22 @@ featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
-  - question: "VirtualBox 使用 ALFA 網卡需要安裝 Extension Pack 嗎？"
-    answer: "需要。VirtualBox 必須安裝 Extension Pack 才能支援 USB 2.0 與 USB 3.0 直通，否則只能使用 USB 1.1，不足以驅動現代 ALFA 網卡。"
-  - question: "ALFA 網卡應該選 USB 2.0 還是 USB 3.0 控制器？"
+  - question: "VirtualBox 使用 ALFA 網路卡需要安裝 Extension Pack 嗎？"
+    answer: "需要。VirtualBox 必須安裝 Extension Pack 才能支援 USB 2.0 與 USB 3.0 直通，否則只能使用 USB 1.1，不足以驅動現代 ALFA 網路卡。"
+  - question: "ALFA 網路卡應該選 USB 2.0 還是 USB 3.0 控制器？"
     answer: "AWUS036AXML 必須使用 USB 3.0（xHCI）。AWUS036ACH 本身是 USB 2.0 裝置，但使用 xHCI 不會造成問題，建議統一設為 USB 3.0。"
   - question: "VMware Workstation 需要額外安裝擴充套件嗎？"
     answer: "不需要。VMware Workstation 17+ 與 Fusion 13+ 已內建 USB 2.0/3.0 支援，只需確認 USB 仲裁器服務正在執行。"
-  - question: "為什麼 lsusb 看得到網卡卻沒有 wlan 介面？"
+  - question: "為什麼 lsusb 看得到網路卡卻沒有 wlan 介面？"
     answer: "USB 直通成功但驅動程式未載入。RTL8812AU 需執行 modprobe 88XXau 或安裝 realtek-rtl88xxau-dkms，MT7921AUN 需執行 modprobe mt7921u。"
-  - question: "Linux 主機上 USB 網卡持續斷線怎麼辦？"
+  - question: "Linux 主機上 USB 網路卡持續斷線怎麼辦？"
     answer: "停用 USB 自動暫停：執行 echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend，並確認使用者已加入 vboxusers 群組。"
 ---
 
-ALFA WiFi 網卡在虛擬機器中需要完整的 USB 直通才能執行監聽模式與封包注入，VirtualBox 需 Extension Pack，VMware 則需確認 USB 仲裁器服務。
+ALFA WiFi 網路卡在虛擬機器中需要完整的 USB 直通才能執行監聽模式與封包注入，VirtualBox 需 Extension Pack，VMware 則需確認 USB 仲裁器服務。
 
 {{< tldr >}}
-在 VirtualBox 或 VMware 中使用 ALFA 網卡需設定 USB 直通。VirtualBox 需安裝 Extension Pack 並啟用 USB 3.0 控制器；VMware 內建 USB 支援但需確認仲裁器服務運行。AWUS036ACH 用 88XXau 驅動，AWUS036AXML 用 mt7921u 驅動。
+在 VirtualBox 或 VMware 中使用 ALFA 網路卡需設定 USB 直通。VirtualBox 需安裝 Extension Pack 並啟用 USB 3.0 控制器；VMware 內建 USB 支援但需確認仲裁器服務執行。AWUS036ACH 用 88XXau 驅動，AWUS036AXML 用 mt7921u 驅動。
 {{< /tldr >}}
 
 在虛擬機器內執行 ALFA WiFi 介面卡並不像插上後等待客端作業系統自動偵測那麼簡單。與共用資料夾或橋接網路不同，監聽模式（monitor mode）和原始封包注入（packet injection）需要**完整的 USB 控制權**——虛擬機器必須獨佔 USB 裝置，而不是透過主機的網路堆疊共用。這稱為 USB 直通（USB passthrough），正確設定是在 VM 環境中工作的滲透測試人員和 CTF 玩家最常遇到的設定失敗原因。
@@ -181,7 +181,7 @@ sudo iwconfig wlan1mon
 |---|---|---|
 | USB 設定中「無可用 USB 裝置」 | 未安裝 Extension Pack 或版本不符 | 安裝對應版本的 Extension Pack |
 | 介面卡未被擷取 / lsusb 中不可見 | 使用者不在 `vboxusers` 群組（Linux 主機） | `sudo usermod -aG vboxusers $USER`，然後登出/登入 |
-| 「USB 裝置正被先前的請求使用」 | 主機上的其他程序正在使用該裝置 | 啟動 VM 前拔除並重新插入介面卡 |
+| 「USB 裝置正被先前的請求使用」 | 主機上的其他程式正在使用該裝置 | 啟動 VM 前拔除並重新插入介面卡 |
 | 裝置在 VM 內持續斷線 | 未啟用 USB 3.0 控制器；VM 使用 OHCI | 在 VM 設定 → USB 中切換至 USB 3.0（xHCI） |
 | 篩選器已新增但裝置未自動擷取 | 在安裝 Extension Pack 之前建立篩選器 | 刪除篩選器，安裝 Extension Pack，再重新新增 |
 
@@ -287,7 +287,7 @@ echo -1 | sudo tee /sys/module/usbcore/parameters/autosuspend
 **在滲透測試作業前建立 VM 快照。** 若驅動程式崩潰或韌體更新損壞您的設定，還原快照可在幾秒內回到已知良好狀態。
 
 {{< alert "circle-info" >}}
-對於超過 30 分鐘的擷取會話，考慮在介面卡和主機之間使用有源 USB 集線器。它提供穩定的電源，防止電壓降導致介面卡在關鍵擷取期間斷線。
+對於超過 30 分鐘的擷取會話，考慮在介面卡和主機之間使用外接供電 USB 集線器。它提供穩定的電源，防止電壓降導致介面卡在關鍵擷取期間斷線。
 {{< /alert >}}
 
 ---

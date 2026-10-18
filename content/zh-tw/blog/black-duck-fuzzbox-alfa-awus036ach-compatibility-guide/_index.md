@@ -1,6 +1,6 @@
 ---
-title: "Black Duck FuzzBox WLAN 網路卡相容性指南：尋找合適的 ALFA 無線網卡"
-description: "針對 Black Duck FuzzBox OS 選擇最佳 ALFA Network USB WiFi 網卡的完整硬體評估與相容性指南。了解如何設定並部署 ALFA AWUS036ACH (RTL8812AU) 以進行無線協定模糊測試。"
+title: "Black Duck FuzzBox WLAN 網路卡相容性指南：尋找合適的 ALFA 無線網路卡"
+description: "針對 Black Duck FuzzBox OS 選擇最佳 ALFA Network USB WiFi 網路卡的完整硬體評估與相容性指南。了解如何設定並部署 ALFA AWUS036ACH (RTL8812AU) 以進行無線協定模糊測試。"
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
@@ -12,27 +12,27 @@ lastmod: 2026-07-02
 faq:
   - question: "Black Duck FuzzBox 是什麼用途的工具？"
     answer: "Black Duck FuzzBox 是專用的無線協定模糊測試環境，透過注入異常 802.11 訊框驗證嵌入式無線設備與基地台的協定堆疊強健性。"
-  - question: "為什麼 Wi-Fi 6/6E 網卡無法在 FuzzBox 下運作？"
+  - question: "為什麼 Wi-Fi 6/6E 網路卡無法在 FuzzBox 下運作？"
     answer: "FuzzBox 注入引擎已針對 Realtek rtl88xxau 驅動最佳化，MediaTek 與較新 Realtek Wi-Fi 6 晶片組不使用此分支，會被精靈忽略。"
-  - question: "ALFA AWUS036ACH 為什麼是 FuzzBox 首選網卡？"
+  - question: "ALFA AWUS036ACH 為什麼是 FuzzBox 首選網路卡？"
     answer: "AWUS036ACH 採用 RTL8812AU 晶片組，擁有社群優化的注入驅動，可繞過作業系統網路堆疊實現零丟包原始訊框傳輸。"
   - question: "FuzzBox OS 基於哪個 Linux 版本？"
-    answer: "FuzzBox OS 基於 Debian 12 Bookworm，運行 LTS 核心 6.1.x，預載 rtl88xxau 注入驅動與 airmon-ng 等網路工具程式。"
+    answer: "FuzzBox OS 基於 Debian 12 Bookworm，執行 LTS 核心 6.1.x，預載 rtl88xxau 注入驅動與 airmon-ng 等網路工具程式。"
   - question: "如何驗證 AWUS036ACH 已切換至監聽模式？"
     answer: "執行 iwconfig wlan0 指令，輸出應顯示 Mode:Monitor 並標示目前運作頻率，確認 FuzzBox 精靈成功切換介面模式。"
 ---
 
-Black Duck FuzzBox 進行無線協定模糊測試時，唯一完全相容的 ALFA 網卡是 AWUS036ACH（RTL8812AU），Wi-Fi 6/6E 晶片組因驅動不相容皆無法運作。
+Black Duck FuzzBox 進行無線協定模糊測試時，唯一完全相容的 ALFA 網路卡是 AWUS036ACH（RTL8812AU），Wi-Fi 6/6E 晶片組因驅動不相容皆無法運作。
 
 {{< tldr >}}
-ALFA AWUS036ACH 是 Black Duck FuzzBox 協定模糊測試的唯一首選，RTL8812AU 驅動支援原始封包注入與監聽模式，Wi-Fi 6/6E 網卡因驅動不相容無法運作。
+ALFA AWUS036ACH 是 Black Duck FuzzBox 協定模糊測試的唯一首選，RTL8812AU 驅動支援原始封包注入與監聽模式，Wi-Fi 6/6E 網路卡因驅動不相容無法運作。
 {{< /tldr >}}
 
 WLAN 協定模糊測試（通常稱為無線負面測試，wireless negative testing）是驗證嵌入式無線設備、智慧家居家電以及企業級基地台（Access Point, AP）安全性與強健性最關鍵的步驟之一。然而，試圖透過無線傳輸異常（malformed）的 802.11 管理、控制或資料訊框，需要對媒體存取控制（MAC）層進行底層控制，而這在標準作業系統與商用 WiFi 驅動程式中通常是被禁止的。
 
-為了瞭解這個問題，安全團隊會使用 **Black Duck FuzzBox**（前身為 Synopsys Defensics FuzzBox），這是一個專用的軟體與硬體執行環境。為了進行測試，FuzzBox OS 必須與相容且高效能的 USB 無線網卡配對，且該網卡需支援穩定的監聽模式（monitor mode）與可靠的原始封包注入（raw packet injection）。
+為了瞭解這個問題，安全團隊會使用 **Black Duck FuzzBox**（前身為 Synopsys Defensics FuzzBox），這是一個專用的軟體與硬體執行環境。為了進行測試，FuzzBox OS 必須與相容且高效能的 USB 無線網路卡配對，且該網路卡需支援穩定的監聽模式（monitor mode）與可靠的原始封包注入（raw packet injection）。
 
-在此相容性指南中，我們分析了 Yupitek 現有的 ALFA Network 產品目錄，解釋了為什麼較新的 Wi-Fi 6/6E 網卡在 FuzzBox 下無法正常運作，並針對業界標準的首選：**ALFA AWUS036ACH** (RTL8812AU) 提供逐步安裝指南。
+在此相容性指南中，我們分析了 Yupitek 現有的 ALFA Network 產品目錄，解釋了為什麼較新的 Wi-Fi 6/6E 網路卡在 FuzzBox 下無法正常運作，並針對業界標準的首選：**ALFA AWUS036ACH** (RTL8812AU) 提供逐步安裝指南。
 
 ---
 
@@ -40,12 +40,12 @@ WLAN 協定模糊測試（通常稱為無線負面測試，wireless negative tes
 
 在進行協定模糊測試時，測試套件會產生數千個自訂且異常的無線訊框（例如經修改的 Beacon、關聯請求 Association Request 或 WPA 握手封包），以測試目標設備的協定堆疊是否會崩潰或產生異常行為。
 
-傳統的內建 WiFi 卡（如 Intel AX200 系列）或消費級 USB 網卡受到其韌體與作業系統驅動程式的限制。它們無法：
+傳統的內建 WiFi 卡（如 Intel AX200 系列）或消費級 USB 網路卡受到其韌體與作業系統驅動程式的限制。它們無法：
 *   在未與網路關聯（associated）的情況下注入原始 802.11 訊框。
 *   可靠地轉換至監聽模式（Monitor Mode, RFMON）以擷取目標設備的精確回應。
 *   在不丟包（dropping packets）的情況下強制執行精確的傳輸速度或鎖定特定的無線頻道（channels）。
 
-因此，系統需要一個專用的測試環境——Black Duck FuzzBox——並搭配可提供直接 MAC 層存取權限的高功率外接式 USB 無線網卡。
+因此，系統需要一個專用的測試環境——Black Duck FuzzBox——並搭配可提供直接 MAC 層存取權限的高功率外接式 USB 無線網路卡。
 
 ---
 
@@ -57,7 +57,7 @@ WLAN 協定模糊測試（通常稱為無線負面測試，wireless negative tes
 *   **主機系統（Host System）：** FuzzBox OS 運作於專用的 x86 64 位元硬體上，通常部署在迷你電腦中，例如 Intel® NUC（第 8 代至第 12 代）或 ASUS® NUC（第 14 代 Pro）。
 *   **CPU 架構：** x86_64 雙核心處理器，時脈為 2 GHz 或更高。
 *   **USB 控制器：** USB 3.0 / USB 3.2 主機控制器（Host Controller）。
-*   **USB 供電能力：** 這是常見的故障點。高功率的 ALFA 無線網卡在主動傳輸期間會消耗大量電流（最高達 900mA）。您必須將網卡直接連接到主機主機板上的高速 USB 3.0 連接埠。請避免使用未外接電源的 USB 集線器（unpowered USB hubs），這可能會導致網卡在測試中途斷線。
+*   **USB 供電能力：** 這是常見的故障點。高功率的 ALFA 無線網路卡在主動傳輸期間會消耗大量電流（最高達 900mA）。您必須將網路卡直接連接到主機主機板上的高速 USB 3.0 連接埠。請避免使用未外接電源的 USB 集線器（unpowered USB hubs），這可能會導致網路卡在測試中途斷線。
 
 ### 2.2 軟體環境
 FuzzBox OS 作為無週邊（headless）Linux 容器平台運作。軟體規格如下：
@@ -73,9 +73,9 @@ FuzzBox OS 作為無週邊（headless）Linux 容器平台運作。軟體規格�
 
 ---
 
-## 3. ALFA 網卡分析與 GitHub 驅動程式位置
+## 3. ALFA 網路卡分析與 GitHub 驅動程式位置
 
-從目前的現役型號中選擇正確的網卡至關重要。讓我們將 Yupitek 的 ALFA Network 現貨庫存與 FuzzBox OS 相容性矩陣進行比較。
+從目前的現役型號中選擇正確的網路卡至關重要。讓我們將 Yupitek 的 ALFA Network 現貨庫存與 FuzzBox OS 相容性矩陣進行比較。
 
 ### 3.1 現行 ALFA 型號嚴格評估
 ALFA Network 使用不同的晶片組製造網路卡。只有特定的晶片組才支援 FuzzBox 的原始注入引擎。
@@ -117,7 +117,7 @@ FuzzBox OS 預載了穩定的注入驅動程式。如果您需要在本機 Linux
 FuzzBox 封包傳輸的核心在於其專有的 `80211socket` 注入精靈（daemon）。
 
 ### 為什麼較新的 Wi-Fi 6/6E 晶片組無法運作
-許多測試人員認為購買較新、較快的網卡（例如使用 MT7921AUN 晶片組的 Wi-Fi 6E AWUS036AXML）可以提高效能。然而，FuzzBox 是專為協定漏洞測試而設計的，而不是為了提升網速吞吐量。
+許多測試人員認為購買較新、較快的網路卡（例如使用 MT7921AUN 晶片組的 Wi-Fi 6E AWUS036AXML）可以提高效能。然而，FuzzBox 是專為協定漏洞測試而設計的，而不是為了提升網速吞吐量。
 
 `80211socket` 注入器在 MAC 子層直接與無線驅動程式進行互動。為了實現這一點，驅動程式必須支援專用的原始注入擴充功能。目前，FuzzBox OS 的注入引擎已針對成熟的 **Realtek `rtl88xxau`** 驅動程式分支（特別是 RTL8812AU/RTL8814AU）進行了最佳化。MediaTek 晶片組（MT7921AUN、MT7612U）以及較新的 Realtek Wi-Fi 6 晶片組（RTL8832BU）並不使用此注入驅動程式分支，因此會被 FuzzBox 精靈忽略。
 
@@ -128,13 +128,13 @@ RTL8812AU 驅動程式已被反向移植（backported）並針對 Linux 6.1.x �
 
 ## 5. 安裝指南
 
-請按照以下步驟在您的 Black Duck FuzzBox 系統上部署與設定 ALFA AWUS036ACH 網卡。
+請按照以下步驟在您的 Black Duck FuzzBox 系統上部署與設定 ALFA AWUS036ACH 網路卡。
 
 ### 步驟 1：實體連接
 將 ALFA AWUS036ACH 直接連接到 FuzzBox NUC 上的 USB 3.0 連接埠（藍色或標有 `SS`）。確保雙 5 dBi 天線已牢固鎖緊。
 
 ### 步驟 2：驗證硬體偵測
-透過 SSH 或本機螢幕存取 FuzzBox 終端機介面，並執行以下指令以檢查 USB 介面是否已識別該網卡：
+透過 SSH 或本機螢幕存取 FuzzBox 終端機介面，並執行以下指令以檢查 USB 介面是否已識別該網路卡：
 ```bash
 lsusb
 ```
@@ -144,7 +144,7 @@ Bus 002 Device 003: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b
 ```
 
 ### 步驟 3：設定注入精靈
-FuzzBox 透過設定檔來對應其實體網卡。開啟 FuzzBox 注入器設定檔：
+FuzzBox 透過設定檔來對應其實體網路卡。開啟 FuzzBox 注入器設定檔：
 ```bash
 sudo nano /opt/defensics/fuzzbox/injectors/80211socket.conf
 ```
@@ -155,7 +155,7 @@ driver="usb:rtl88xxau;"
 儲存檔案並離開編輯器。
 
 ### 步驟 4：驗證監聽模式與運作
-驗證 FuzzBox 精靈是否成功將網卡切換至監聽模式。如果標準網路管理工具發生衝突，請先將其停用，然後啟用該介面：
+驗證 FuzzBox 精靈是否成功將網路卡切換至監聽模式。如果標準網路管理工具發生衝突，請先將其停用，然後啟用該介面：
 ```bash
 sudo ip link set wlan0 down
 sudo iw dev wlan0 set type monitor
@@ -165,13 +165,13 @@ sudo ip link set wlan0 up
 ```bash
 iwconfig wlan0
 ```
-輸出結果應確認為 `Mode:Monitor` 並顯示網卡目前的運作頻率。
+輸出結果應確認為 `Mode:Monitor` 並顯示網路卡目前的運作頻率。
 
 ---
 
 ## 6. 應用拓撲
 
-下圖說明了 FuzzBox 工作站、ALFA AWUS036ACH 網卡以及受測系統（System Under Test, SUT）在無線稽核網路中的互動關係：
+下圖說明了 FuzzBox 工作站、ALFA AWUS036ACH 網路卡以及受測系統（System Under Test, SUT）在無線稽核網路中的互動關係：
 
 ![Black Duck FuzzBox Network Topology](/images/blog/fuzzbox_topology.png)
 
@@ -202,9 +202,9 @@ graph TD
 
 ## 7. 驗證結果
 
-設定完成後，驗證 FuzzBox 系統是否已識別該無線網卡並準備好執行測試案例。
+設定完成後，驗證 FuzzBox 系統是否已識別該無線網路卡並準備好執行測試案例。
 
-執行 FuzzBox 內部網卡診斷工具程式：
+執行 FuzzBox 內部網路卡診斷工具程式：
 ```bash
 sudo ls -l /var/run/defensics/injectors/80211/adapters/
 ```
@@ -232,8 +232,8 @@ lrwxrwxrwx 1 root root 23 Jun 04 13:30 phy0 -> /sys/class/net/wlan0
 ### 8.1 硬體推薦矩陣
 對於部署 Black Duck FuzzBox 系統的安全測試實驗室，我們推薦以下硬體配置：
 
-*   **主要注入網卡：** **ALFA Network AWUS036ACH** (RTL8812AU)。具備雙天線、高輸出功率以及完整 USB 3.0 頻寬。這是進行基準測試的主要主力。
-*   **備用 / 輕巧型網卡：** **ALFA Network AWUS036ACS** (RTL8811AU)。非常適合快速的便攜式設定，但限制於 1×1 串流測試。
+*   **主要注入網路卡：** **ALFA Network AWUS036ACH** (RTL8812AU)。具備雙天線、高輸出功率以及完整 USB 3.0 頻寬。這是進行基準測試的主要主力。
+*   **備用 / 輕巧型網路卡：** **ALFA Network AWUS036ACS** (RTL8811AU)。非常適合快速的便攜式設定，但限制於 1×1 串流測試。
 *   **訊號最佳化 (強烈推薦)：** 搭配使用 **ALFA APA-M25** 或 **APA-M25-6E** 雙頻定向面板天線。將原廠全向天線替換為這些高增益定向天線面板，可將無線電訊號直接聚焦在受測系統 (SUT) 上，減少環境雜訊干擾並提高注入成功率。
 
 ### 8.2 諮詢與訂購

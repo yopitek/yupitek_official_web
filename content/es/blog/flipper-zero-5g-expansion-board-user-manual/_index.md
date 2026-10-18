@@ -75,8 +75,7 @@ Antes de conectar las antenas o acoplar la consola principal, dedique un minuto 
 
 El módulo 5G requiere una tarjeta de memoria para almacenar las configuraciones.
 
-1.  **Requisitos de especificación**: Capacidad **menor o igual a 32 GB** y el formato debe ser obligatoriamente **FAT32**.
-2.  **Orientación de la tarjeta**: Introduzca la tarjeta en la ranura MicroSD con los contactos metálicos hacia abajo y presiónela suavemente hasta que encaje en su lugar.
+1.  **Orientación de la tarjeta**: Introduzca la tarjeta en la ranura MicroSD con los contactos metálicos hacia abajo y presiónela suavemente hasta que encaje en su lugar.
 
 ![Detalle de la ranura para tarjeta MicroSD](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_07_sd_card_slot.jpg)
 *Figura 4: Detalle de la orientación correcta para insertar la tarjeta MicroSD*
@@ -154,15 +153,10 @@ Este módulo cuenta con una batería recargable integrada.
 *   **Puerto USB-C lateral**: **Exclusivo para grabación de firmware** (etiquetado como FLASH ONLY). No lo utilice para la carga diaria, ya que no suministrará energía a la batería.
 
 #### Estado de los indicadores LED de batería:
-En el frente del módulo se encuentran 4 indicadores luminosos de batería que representan diferentes porcentajes de carga restante:
+En el frente del módulo se encuentran 4 indicadores luminosos de batería que indican el nivel de carga restante.
 
 ![Explicación de los indicadores de batería](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_18_battery_led_indicators.jpg)
 *Figura 11: Nivel de carga restante correspondiente a los 4 indicadores LED*
-
-*   1 LED encendido: Carga aproximada del 25% (cargue el dispositivo lo antes posible)
-*   2 LED encendidos: Carga aproximada del 50%
-*   3 LED encendidos: Carga aproximada del 75%
-*   4 LED encendidos: Carga al 100% (completamente cargado)
 
 ---
 
@@ -173,7 +167,6 @@ Si su módulo no funciona correctamente, verifique uno a uno los siguientes elem
 *   [ ] **¿Están los pines GPIO totalmente insertados hasta el fondo?** (El módulo y la parte superior de la Flipper Zero deben quedar perfectamente acoplados y sin espacios, consulte la Figura 8)
 *   [ ] **¿Es correcta la orientación de la antena GPS?** (El lado cerámico debe apuntar hacia el cielo, consulte la Figura 6)
 *   [ ] **¿Ha conectado las antenas en los puertos correctos?** (Las posiciones pueden variar según el lote, verifique el texto impreso en la carcasa, consulte la Figura 3)
-*   [ ] **¿Cumple la tarjeta MicroSD con las especificaciones requeridas?** (La capacidad debe ser menor o igual a 32 GB y formateada en FAT32, consulte la Figura 4)
 *   [ ] **¿Ha colocado el interruptor de la pantalla en la posición UP?** (Consulte la Figura 9)
 
 ---

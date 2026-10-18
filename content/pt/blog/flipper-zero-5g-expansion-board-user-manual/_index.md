@@ -75,8 +75,7 @@ Antes de conectar as antenas ou acoplar o console, reserve um momento para se fa
 
 O módulo 5G requer um cartão de memória para salvar os arquivos de configuração.
 
-1.  **Requisitos técnicos**: Capacidade máxima de **até 32GB**, formatado no padrão de arquivos **FAT32**.
-2.  **Posição de inserção**: Insira o cartão no leitor de MicroSD com os contatos de metal voltados para baixo, pressionando levemente até travar.
+1.  **Posição de inserção**: Insira o cartão no leitor de MicroSD com os contatos de metal voltados para baixo, pressionando levemente até travar.
 
 ![Close do slot MicroSD](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_07_sd_card_slot.jpg)
 *Figura 4: Close mostrando o sentido correto de inserção do cartão MicroSD*
@@ -154,15 +153,10 @@ Este módulo possui uma bateria recarregável embutida.
 *   **Porta USB-C Lateral**: **Destinada exclusivamente para gravação de firmware** (com a inscrição FLASH ONLY). Não tente utilizá-la para carregar o módulo, pois ela não conduz energia para a bateria.
 
 #### Estados dos Indicadores de LED da Bateria:
-O painel frontal conta com 4 luzes de LED que indicam o nível de carga restante:
+O painel frontal conta com 4 luzes de LED que indicam o nível de carga restante.
 
 ![Esquema dos LEDs de bateria](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_18_battery_led_indicators.jpg)
 *Figura 11: Níveis de carga indicados pela combinação dos 4 LEDs*
-
-*   1 LED aceso: Carga próxima a 25% (recomenda-se recarregar em breve)
-*   2 LEDs acesos: Carga em aproximadamente 50%
-*   3 LEDs acesos: Carga em aproximadamente 75%
-*   4 LEDs acesos: Carga em 100% (bateria completamente carregada)
 
 ---
 
@@ -173,7 +167,6 @@ Caso note comportamentos inesperados no módulo, verifique cada um dos pontos ab
 *   [ ] **Os pinos GPIO estão encaixados até o final?** (Verifique se não há frestas entre o console e o módulo, conforme mostrado na Figura 8)
 *   [ ] **A antena GPS está apontada para a direção correta?** (A face cerâmica precisa estar voltada para o céu, conforme a Figura 6)
 *   [ ] **As antenas foram conectadas nas portas corretas?** (Confirme as marcações de texto na carcaça do seu aparelho, pois a ordem muda dependendo do lote, conforme a Figura 3)
-*   [ ] **O cartão MicroSD está dentro dos padrões suportados?** (Capacidade máxima de até 32GB com formatação em FAT32, conforme a Figura 4)
 *   [ ] **A chave da tela foi colocada na posição UP?** (Conforme a Figura 9)
 
 ---

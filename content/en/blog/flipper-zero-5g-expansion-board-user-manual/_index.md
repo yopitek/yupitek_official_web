@@ -75,8 +75,7 @@ Before attaching the antennas or connecting the module to your Flipper Zero cons
 
 The 5G module requires a MicroSD card to store configuration files.
 
-1.  **Card Requirements**: Capacity must be **32GB or smaller**, formatted to **FAT32**.
-2.  **Insertion Direction**: Insert the MicroSD card into the slot with the metal contacts facing down. Press the card gently until it clicks into place.
+1.  **Insertion Direction**: Insert the MicroSD card into the slot with the metal contacts facing down. Press the card gently until it clicks into place.
 
 ![MicroSD Card Slot Close-up](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_07_sd_card_slot.jpg)
 *Figure 4: Proper MicroSD card insertion orientation*
@@ -154,15 +153,10 @@ The module features a built-in rechargeable battery.
 *   **Side USB-C Port**: **Designed for firmware flashing only** (labeled FLASH ONLY). Don't connect a charger to this port as it doesn't charge the battery.
 
 #### Battery Indicator LEDs:
-The front of the module features four battery status LEDs, indicating different remaining charge levels:
+The front of the module features four battery status LEDs, indicating different remaining charge levels.
 
 ![Battery Level Indicator LEDs](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_18_battery_led_indicators.jpg)
 *Figure 11: Battery level readings for the four status LEDs*
-
-*   1 LED on: ~25% battery (charge the module soon)
-*   2 LEDs on: ~50% battery
-*   3 LEDs on: ~75% battery
-*   4 LEDs on: 100% battery (fully charged)
 
 ---
 
@@ -173,7 +167,6 @@ If your module doesn't work as expected, verify the following setup details:
 *   [ ] **Is the GPIO connection fully seated?** The module must sit flush with the top of the Flipper Zero, leaving no gaps (see Figure 8).
 *   [ ] **Is the GPS antenna oriented correctly?** The ceramic side must face the sky (see Figure 6).
 *   [ ] **Are the antennas connected to the correct ports?** Layouts vary between batches. Verify the printed text labels on the casing (see Figure 3).
-*   [ ] **Does the MicroSD card meet requirements?** It must be 32GB or smaller and formatted to FAT32 (see Figure 4).
 *   [ ] **Is the screen switch set to UP?** (see Figure 9).
 
 ---

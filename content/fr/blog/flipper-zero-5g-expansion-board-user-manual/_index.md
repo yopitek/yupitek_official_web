@@ -75,8 +75,7 @@ Avant de brancher les antennes ou de connecter la console, prends une minute pou
 
 Le module 5G a besoin d'une carte mémoire pour stocker ses paramètres.
 
-1.  **Spécifications requises** : une capacité maximale de **32 Go ou moins**, formatée impérativement en **FAT32**.
-2.  **Sens d'insertion** : insère la carte avec les broches dorées orientées vers le bas dans l'emplacement MicroSD, puis appuie doucement jusqu'au clic de verrouillage.
+1.  **Sens d'insertion** : insère la carte avec les broches dorées orientées vers le bas dans l'emplacement MicroSD, puis appuie doucement jusqu'au clic de verrouillage.
 
 ![MicroSD 卡插槽特寫](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_07_sd_card_slot.jpg)
 *Figure 4 : gros plan sur le sens correct d'insertion de la carte MicroSD*
@@ -154,15 +153,10 @@ Ce module intègre une batterie rechargeable.
 *   **Port USB-C latéral** : **dédié uniquement au flash du micrologiciel** (indiqué par « FLASH ONLY »). Ne l'utilise jamais pour la charge quotidienne, sous peine de ne pas pouvoir alimenter la batterie.
 
 #### État des indicateurs LED de batterie :
-La face avant du module comporte 4 indicateurs LED qui affichent le pourcentage de charge restant :
+La face avant du module comporte 4 indicateurs LED qui indiquent le niveau de charge restant.
 
 ![電量指示燈圖解](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_18_battery_led_indicators.jpg)
 *Figure 11 : niveau de charge correspondant aux 4 LED*
-
-*   1 LED allumée : environ 25 % de batterie (recharge au plus vite)
-*   2 LED allumées : environ 50 % de batterie
-*   3 LED allumées : environ 75 % de batterie
-*   4 LED allumées : 100 % de batterie (charge complète)
 
 ---
 
@@ -173,7 +167,6 @@ Si ton module ne fonctionne pas correctement, prends le temps de vérifier les p
 *   [ ] **Les broches GPIO sont-elles bien enfoncées au maximum ?** (Le module doit être parfaitement collé au dessus du Flipper Zero, sans espace visible, voir Figure 8)
 *   [ ] **L'orientation de l'antenne GPS est-elle correcte ?** (La face en céramique doit pointer vers le ciel, voir Figure 6)
 *   [ ] **Les antennes sont-elles vissées sur les bons ports ?** (Les emplacements peuvent varier selon les lots de fabrication, vérifie les indications imprimées sur le boîtier, voir Figure 3)
-*   [ ] **La carte MicroSD respecte-t-elle les spécifications ?** (La capacité doit être de 32 Go ou moins, formatée en FAT32, voir Figure 4)
 *   [ ] **L'interrupteur de l'écran est-il bien basculé sur UP ?** (Voir Figure 9)
 
 ---

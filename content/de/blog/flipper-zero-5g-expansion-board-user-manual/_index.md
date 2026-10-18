@@ -75,8 +75,7 @@ Nimm dir eine Minute Zeit, um dich mit den Anschlüssen und dem Hardware-Layout 
 
 Das 5G-Modul benötigt eine Speicherkarte, um Einstellungen zu sichern.
 
-1.  **Anforderungen**: Kapazität **bis zu 32 GB**, Dateisystem muss **FAT32** sein.
-2.  **Ausrichtung**: Schiebe die MicroSD-Karte mit den Goldkontakten nach unten in den Kartenslot, bis sie spürbar einrastet.
+1.  **Ausrichtung**: Schiebe die MicroSD-Karte mit den Goldkontakten nach unten in den Kartenslot, bis sie spürbar einrastet.
 
 ![Detailaufnahme des MicroSD-Kartenslots](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_07_sd_card_slot.jpg)
 *Bild 4: Korrekte Ausrichtung beim Einsetzen der MicroSD-Karte*
@@ -154,15 +153,10 @@ Dieses Modul besitzt einen eingebauten Akku.
 *   **Seitlicher USB-C-Anschluss**: **Nur für Firmware-Updates gedacht** (gekennzeichnet mit FLASH ONLY). Lade das Modul nicht über diesen Port auf, da der Akku sonst keinen Strom erhält.
 
 #### Bedeutung der Akku-LEDs:
-Auf der Vorderseite des Moduls befinden sich vier LEDs, die dir den Ladestand anzeigen:
+Auf der Vorderseite des Moduls befinden sich vier LEDs, die dir den Ladestand anzeigen.
 
 ![Akkustands-LEDs](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_18_battery_led_indicators.jpg)
 *Bild 11: Ladestand entsprechend der leuchtenden LEDs*
-
-*   1 LED leuchtet: Ladestand ca. 25% (bitte bald aufladen)
-*   2 LEDs leuchten: Ladestand ca. 50%
-*   3 LEDs leuchten: Ladestand ca. 75%
-*   4 LEDs leuchten: Ladestand 100% (vollständig geladen)
 
 ---
 
@@ -173,7 +167,6 @@ Falls dein Modul nicht wie gewünscht funktioniert, gehe bitte diese Punkte nach
 *   [ ] **Sind die GPIO-Pins vollständig eingesteckt?** (Das Modul muss bündig auf dem Flipper Zero aufliegen, siehe Bild 8)
 *   [ ] **Zeigt die GPS-Antenne in die richtige Richtung?** (Die Keramikseite muss zum Himmel zeigen, siehe Bild 6)
 *   [ ] **Sind die Antennen am richtigen Port angeschlossen?** (Die Port-Positionen können sich je nach Produktionsreihe unterscheiden. Vergleiche die Anschlüsse mit den Gehäuseaufdrucken, siehe Bild 3)
-*   [ ] **Passt die MicroSD-Karte?** (Maximal 32 GB Kapazität, FAT32-Formatierung erforderlich, siehe Bild 4)
 *   [ ] **Steht der Display-Schalter auf UP?** (Siehe Bild 9)
 
 ---

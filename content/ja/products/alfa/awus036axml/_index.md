@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "トリバンド", "Bluetooth 5.2", "6GHz", "Kali Linux"]
+faq:
+  - question: "AWUS036AXMLは6 GHz帯に対応していますか？"
+    answer: "はい。MediaTek MT7921AUNチップセットを搭載した、2.4 GHz、5 GHz、6 GHzをカバーするトライバンドWi-Fi 6Eアダプターです。Windowsでは、6 GHzの利用にWindows 11が必要です。"
+  - question: "AWUS036AXMLはLinuxでドライバーのインストールが必要ですか？"
+    answer: "DKMSでのビルドは不要です。mt7921uドライバーはバージョン5.18以降のLinuxカーネルに含まれているため、カーネル5.18以降（例：Ubuntu 22.10以降、またはUbuntu 22.04のHWEカーネル）が必要です。"
+  - question: "AWUS036AXMLはBluetoothを内蔵していますか？"
+    answer: "はい。同じUSB-CアダプターにBluetooth 5.2を内蔵しているため、1台のデバイスでWi-FiとBluetoothの両方を利用できます。"
 ---
 
 {{< alert "warning" >}}
@@ -119,3 +126,5 @@ AWUS036AXML は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+{{< faq >}}

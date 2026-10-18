@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB-C", "Dual Antenna", "Monitor Mode", "Kali Linux", "Security Research"]
+faq:
+  - question: "Does the AWUS036ACH need a driver installation on Linux?"
+    answer: "In most cases yes. The Realtek RTL8812AU chipset normally needs a one-time manual DKMS driver install, and DKMS rebuilds it after kernel updates. On kernels 6.14 and later an in-kernel driver is available."
+  - question: "Does the AWUS036ACH support monitor mode and packet injection?"
+    answer: "Yes. On Kali Linux it supports full monitor mode and packet injection with the aircrack-ng driver. Use these features only for authorized security testing."
+  - question: "Does the AWUS036ACH work on Windows and macOS?"
+    answer: "It works on Windows 10 and 11 and on Linux. macOS support is limited: macOS 10.15 Catalina needs a manual install, and macOS 11 and later and Apple Silicon are not supported."
 ---
 
 {{< alert "warning" >}}
@@ -116,3 +123,5 @@ All ALFA adapters feature a standard RP-SMA connector. Upgrade with an optional 
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+{{< faq >}}

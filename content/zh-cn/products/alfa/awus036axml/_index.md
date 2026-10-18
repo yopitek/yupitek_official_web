@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "三频", "蓝牙 5.2", "6GHz", "Kali Linux"]
+faq:
+  - question: "AWUS036AXML 是否支持 6 GHz 频段？"
+    answer: "支持。这是一款基于 MediaTek MT7921AUN 芯片组的三频 Wi-Fi 6E 适配器，覆盖 2.4 GHz、5 GHz 和 6 GHz 频段。在 Windows 系统上，使用 6 GHz 频段需要 Windows 11。"
+  - question: "AWUS036AXML 在 Linux 上是否需要安装驱动程序？"
+    answer: "无需进行 DKMS 编译。mt7921u 驱动程序自 Linux 内核 5.18 版本起已内置，因此您需要使用 5.18 或更高版本的内核，例如 Ubuntu 22.10 或更新版本，或者 Ubuntu 22.04 上的 HWE 内核。"
+  - question: "AWUS036AXML 是否包含蓝牙功能？"
+    answer: "包含。该 USB-C 适配器集成了 Bluetooth 5.2，因此单个设备即可同时提供 Wi-Fi 和蓝牙功能。"
 ---
 
 {{< alert "warning" >}}
@@ -119,3 +126,5 @@ AWUS036AXML 搭载 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz 
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}
+
+{{< faq >}}

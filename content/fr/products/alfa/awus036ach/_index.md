@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB-C", "Dual Antenna", "Monitor Mode", "Kali Linux", "Security Research"]
+faq:
+  - question: "Le AWUS036ACH nécessite-t-il une installation de pilote sur Linux ?"
+    answer: "Dans la plupart des cas, oui. Le chipset Realtek RTL8812AU nécessite normalement une installation manuelle unique du pilote DKMS, et DKMS le reconstruit après les mises à jour du noyau. Sur les noyaux 6.14 et ultérieurs, un pilote intégré au noyau est disponible."
+  - question: "Le AWUS036ACH prend-il en charge le mode moniteur et l'injection de paquets ?"
+    answer: "Oui. Sur Kali Linux, il prend en charge le mode moniteur complet et l'injection de paquets avec le pilote aircrack-ng. Utilisez ces fonctionnalités uniquement pour des tests de sécurité autorisés."
+  - question: "Le AWUS036ACH fonctionne-t-il sur Windows et macOS ?"
+    answer: "Il fonctionne sur Windows 10 et 11 et sur Linux. La prise en charge de macOS est limitée : macOS 10.15 Catalina nécessite une installation manuelle, et macOS 11 et versions ultérieures ainsi que Apple Silicon ne sont pas pris en charge."
 ---
 
 {{< alert "warning" >}}
@@ -116,3 +123,5 @@ Tous les adaptateurs ALFA disposent d'un connecteur RP-SMA standard. Améliorez 
 {{< alert >}}
 Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}
+
+{{< faq >}}

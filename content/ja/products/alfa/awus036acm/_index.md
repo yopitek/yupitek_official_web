@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB 3.0", "デュアルバンド", "Monitor Mode", "Kali Linux", "Raspberry Pi"]
+faq:
+  - question: "AWUS036ACMはLinuxでドライバのインストールが必要ですか？"
+    answer: "いいえ。MediaTek MT7612Uチップセットを使用しており、そのmt76x2uドライバはバージョン4.19以降のLinuxカーネルに組み込まれているため、現在のKali LinuxおよびUbuntuリリースではそのまま動作します。"
+  - question: "AWUS036ACMはモニタモードとパケットインジェクションに対応していますか？"
+    answer: "はい。カーネル内蔵ドライバを使用すれば、iwやaircrack-ngなどの標準的なツールを通じてモニタモードとパケットインジェクションが機能します。これらは認可されたセキュリティテストのみで使用してください。"
+  - question: "AWUS036ACMのアンテナを交換できますか？"
+    answer: "はい。2つのRP-SMAメスコネクタと取り外し可能な5 dBiデュアルバンドアンテナを備えているため、ALFAパネルやハイゲインアンテナなどの互換性のあるRP-SMAアンテナに交換できます。"
 ---
 
 {{< alert "warning" >}}
@@ -122,3 +129,5 @@ AWUS036ACM は、Linux ユーザーが設定なしで即座に使えるアダプ
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+{{< faq >}}

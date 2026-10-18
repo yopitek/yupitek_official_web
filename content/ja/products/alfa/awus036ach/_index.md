@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB-C", "デュアルアンテナ", "Monitor Mode", "Kali Linux", "セキュリティ研究"]
+faq:
+  - question: "AWUS036ACHはLinuxでドライバのインストールが必要ですか？"
+    answer: "ほとんどの場合、はい。Realtek RTL8812AUチップセットは通常、DKMSドライバを手動で一度インストールする必要があり、カーネルの更新後にDKMSが再ビルドします。カーネル6.14以降では、カーネル内蔵ドライバが利用可能です。"
+  - question: "AWUS036ACHはモニタモードとパケットインジェクションに対応していますか？"
+    answer: "はい。Kali Linuxでは、aircrack-ngドライバを使用して完全なモニタモードとパケットインジェクションに対応しています。これらの機能は、認可されたセキュリティテストのみで使用してください。"
+  - question: "AWUS036ACHはWindowsとmacOSで動作しますか？"
+    answer: "Windows 10および11、ならびにLinuxで動作します。macOSのサポートは限定的です：macOS 10.15 Catalinaは手動インストールが必要であり、macOS 11以降およびApple Siliconはサポートされていません。"
 ---
 
 {{< alert "warning" >}}
@@ -118,3 +125,5 @@ AWUS036ACH は ALFA Network の最も象徴的なセキュリティ研究用ア�
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+{{< faq >}}

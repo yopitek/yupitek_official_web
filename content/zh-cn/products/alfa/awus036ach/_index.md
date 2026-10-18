@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB-C", "双天线", "Monitor Mode", "Kali Linux", "安全研究"]
+faq:
+  - question: "AWUS036ACH 在 Linux 上是否需要安装驱动程序？"
+    answer: "大多数情况下需要。Realtek RTL8812AU 芯片组通常需要进行一次性的手动 DKMS 驱动安装，DKMS 会在内核更新后重新构建驱动。在 6.14 及更高版本的内核中，已提供内置驱动。"
+  - question: "AWUS036ACH 是否支持监控模式和数据包注入？"
+    answer: "支持。在 Kali Linux 上，它通过 aircrack-ng 驱动支持完整的监控模式和数据包注入。请仅在获得授权的安全测试中使用这些功能。"
+  - question: "AWUS036ACH 是否支持 Windows 和 macOS？"
+    answer: "它支持 Windows 10 和 11 以及 Linux。macOS 支持有限：macOS 10.15 Catalina 需要手动安装，而 macOS 11 及更高版本和 Apple Silicon 不受支持。"
 ---
 
 {{< alert "warning" >}}
@@ -116,3 +123,5 @@ AWUS036ACH 是 ALFA Network 安全研究社区公认的黄金标准无线网卡�
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}
+
+{{< faq >}}

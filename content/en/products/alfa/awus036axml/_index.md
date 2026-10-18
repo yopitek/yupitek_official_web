@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "Tri-Band", "Bluetooth 5.2", "6GHz", "Kali Linux"]
+faq:
+  - question: "Does the AWUS036AXML support the 6 GHz band?"
+    answer: "Yes. It is a tri-band Wi-Fi 6E adapter covering 2.4 GHz, 5 GHz and 6 GHz, built on the MediaTek MT7921AUN chipset. On Windows, 6 GHz requires Windows 11."
+  - question: "Does the AWUS036AXML need a driver installation on Linux?"
+    answer: "No DKMS build is needed. The mt7921u driver has been in the Linux kernel since version 5.18, so you need kernel 5.18 or later, for example Ubuntu 22.10 or newer, or the HWE kernel on Ubuntu 22.04."
+  - question: "Does the AWUS036AXML include Bluetooth?"
+    answer: "Yes. It includes Bluetooth 5.2 in the same USB-C adapter, so one device provides both Wi-Fi and Bluetooth."
 ---
 
 {{< alert "warning" >}}
@@ -118,3 +125,5 @@ All ALFA adapters feature a standard RP-SMA connector. Upgrade with an optional 
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+{{< faq >}}

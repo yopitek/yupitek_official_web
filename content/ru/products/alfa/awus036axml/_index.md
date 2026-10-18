@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "Трёхдиапазонный", "Bluetooth 5.2", "6GHz", "Kali Linux"]
+faq:
+  - question: "Поддерживает ли AWUS036AXML диапазон 6 GHz?"
+    answer: "Да. Это трёхдиапазонный адаптер Wi-Fi 6E, поддерживающий диапазоны 2,4 GHz, 5 GHz и 6 GHz, построенный на чипсете MediaTek MT7921AUN. В Windows для работы в диапазоне 6 GHz требуется Windows 11."
+  - question: "Требуется ли установка драйвера для AWUS036AXML в Linux?"
+    answer: "Сборка через DKMS не требуется. Драйвер mt7921u включён в ядро Linux начиная с версии 5.18, поэтому вам нужно ядро версии 5.18 или новее, например, Ubuntu 22.10 или более поздняя версия, либо ядро HWE в Ubuntu 22.04."
+  - question: "Включает ли AWUS036AXML Bluetooth?"
+    answer: "Да. Он включает Bluetooth 5.2 в том же адаптере USB-C, поэтому одно устройство обеспечивает работу и Wi-Fi, и Bluetooth."
 ---
 
 {{< alert "warning" >}}
@@ -118,3 +125,5 @@ AWUS036AXML оснащён чипсетом MediaTek MT7921AUN с поддерж
 {{< alert >}}
 Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
 {{< /alert >}}
+
+{{< faq >}}

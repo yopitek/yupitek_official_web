@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB 3.0", "双频", "Monitor Mode", "Kali Linux", "Raspberry Pi"]
+faq:
+  - question: "AWUS036ACM 在 Linux 上是否需要安装驱动程序？"
+    answer: "不需要。它采用 MediaTek MT7612U 芯片组，其 mt76x2u 驱动程序自 Linux 内核 4.19 版本起已集成在内核中，因此在当前的 Kali Linux 和 Ubuntu 发行版上可即插即用。"
+  - question: "AWUS036ACM 是否支持监控模式和数据包注入？"
+    answer: "支持。使用内核内置驱动程序时，可通过 iw 和 aircrack-ng 等标准工具实现监控模式和数据包注入。请仅在获得授权的安全测试中使用这些功能。"
+  - question: "我可以更换 AWUS036ACM 的天线吗？"
+    answer: "可以。它配备两个 RP-SMA 母头接口和可拆卸的 5 dBi 双频天线，因此您可以将其更换为兼容的 RP-SMA 天线，例如 ALFA 板状天线或高增益天线。"
 ---
 
 {{< alert "warning" >}}
@@ -122,3 +129,5 @@ AWUS036ACM 是 Linux 用户零配置即插即用的首选网卡。其 MediaTek M
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}
+
+{{< faq >}}

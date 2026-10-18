@@ -8,6 +8,13 @@ showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "ثلاثي النطاق", "Bluetooth 5.2", "6GHz", "Kali Linux"]
 dir: rtl
+faq:
+  - question: "هل يدعم AWUS036AXML نطاق 6 GHz؟"
+    answer: "نعم. إنه محول Wi-Fi 6E ثلاثي النطاق يغطي 2.4 GHz و5 GHz و6 GHz، مبني على شريحة MediaTek MT7921AUN. على نظام Windows، يتطلب نطاق 6 GHz نظام Windows 11."
+  - question: "هل يحتاج AWUS036AXML إلى تثبيت برنامج تشغيل على Linux؟"
+    answer: "لا حاجة لبناء DKMS. يوجد برنامج تشغيل mt7921u في نواة Linux منذ الإصدار 5.18، لذا تحتاج إلى نواة 5.18 أو أحدث، على سبيل المثال Ubuntu 22.10 أو أحدث، أو نواة HWE على Ubuntu 22.04."
+  - question: "هل يتضمن AWUS036AXML تقنية Bluetooth؟"
+    answer: "نعم. يتضمن Bluetooth 5.2 في نفس محول USB-C، لذا يوفر جهاز واحد كلاً من Wi-Fi وBluetooth."
 ---
 
 {{< alert "warning" >}}
@@ -119,3 +126,5 @@ dir: rtl
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}
+
+{{< faq >}}

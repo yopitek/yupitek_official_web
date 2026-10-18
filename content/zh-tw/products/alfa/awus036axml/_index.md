@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 6E", "USB-C", "802.11ax", "三頻", "藍牙 5.2", "6GHz", "Kali Linux"]
+faq:
+  - question: "AWUS036AXML 是否支援 6 GHz 頻段？"
+    answer: "是。這是一款三頻 Wi-Fi 6E 轉接器，涵蓋 2.4 GHz、5 GHz 和 6 GHz，採用 MediaTek MT7921AUN 晶片組。在 Windows 上，6 GHz 需要 Windows 11。"
+  - question: "AWUS036AXML 在 Linux 上是否需要安裝驅動程式？"
+    answer: "不需要 DKMS 編譯。mt7921u 驅動程式自 Linux 核心版本 5.18 起已內建，因此您需要 5.18 或更新版本的核心，例如 Ubuntu 22.10 或更新版本，或是 Ubuntu 22.04 上的 HWE 核心。"
+  - question: "AWUS036AXML 是否包含藍牙功能？"
+    answer: "是。它在同一個 USB-C 轉接器中包含藍牙 5.2，因此單一裝置即可同時提供 Wi-Fi 和藍牙功能。"
 ---
 
 {{< alert "warning" >}}
@@ -118,3 +125,5 @@ AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，支援 Wi-Fi 6E 三頻（2.4 GHz 
 {{< alert >}}
 需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}
+
+{{< faq >}}

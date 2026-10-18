@@ -8,6 +8,13 @@ showTableOfContents: true
 dir: rtl
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB-C", "هوائيان", "Monitor Mode", "Kali Linux", "أبحاث أمنية"]
+faq:
+  - question: "هل يحتاج AWUS036ACH إلى تثبيت برنامج تشغيل على Linux؟"
+    answer: "في معظم الحالات، نعم. عادةً ما تتطلب شريحة Realtek RTL8812AU تثبيتًا يدويًا لمرة واحدة لبرنامج تشغيل DKMS، ويقوم DKMS بإعادة بنائه بعد تحديثات النواة. في النوى 6.14 والإصدارات الأحدث، يتوفر برنامج تشغيل مدمج في النواة."
+  - question: "هل يدعم AWUS036ACH وضع المراقبة وحقن الحزم؟"
+    answer: "نعم. على Kali Linux، يدعم وضع المراقبة الكامل وحقن الحزم باستخدام برنامج تشغيل aircrack-ng. استخدم هذه الميزات فقط لاختبارات الأمن المصرح بها."
+  - question: "هل يعمل AWUS036ACH على Windows و macOS؟"
+    answer: "يعمل على Windows 10 و 11 وعلى Linux. دعم macOS محدود: يتطلب macOS 10.15 Catalina تثبيتًا يدويًا، ولا يتم دعم macOS 11 والإصدارات الأحدث و Apple Silicon."
 ---
 
 {{< alert "warning" >}}
@@ -119,3 +126,5 @@ AWUS036ACH هو المحول الأكثر شهرةً من ALFA Network، وال�
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}
+
+{{< faq >}}

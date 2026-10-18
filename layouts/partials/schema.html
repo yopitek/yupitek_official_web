@@ -87,8 +87,8 @@
         }
       ]
     }
-    {{- if and (eq .Section "blog") .Params.faq -}},{{- end -}}
-    {{- if and (eq .Section "blog") .Params.faq -}}
+    {{- if and (or (eq .Section "blog") (eq .Section "products")) .Params.faq -}},{{- end -}}
+    {{- if and (or (eq .Section "blog") (eq .Section "products")) .Params.faq -}}
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",

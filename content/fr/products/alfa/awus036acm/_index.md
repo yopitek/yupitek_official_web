@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB 3.0", "Dual-Band", "Monitor Mode", "Kali Linux", "Raspberry Pi"]
+faq:
+  - question: "L'AWUS036ACM nécessite-t-il l'installation d'un pilote sous Linux ?"
+    answer: "Non. Il utilise le chipset MediaTek MT7612U, dont le pilote mt76x2u fait partie du noyau Linux depuis la version 4.19 ; il fonctionne donc immédiatement sur les versions actuelles de Kali Linux et Ubuntu."
+  - question: "L'AWUS036ACM prend-il en charge le mode moniteur et l'injection de paquets ?"
+    answer: "Oui. Avec le pilote intégré au noyau, le mode moniteur et l'injection de paquets fonctionnent via des outils standard tels que iw et aircrack-ng. Utilisez-les uniquement pour des tests de sécurité autorisés."
+  - question: "Puis-je remplacer les antennes de l'AWUS036ACM ?"
+    answer: "Oui. Il dispose de deux connecteurs femelles RP-SMA avec des antennes détachables double bande de 5 dBi, vous pouvez donc les remplacer par des antennes RP-SMA compatibles telles que les antennes panel ou à gain élevé ALFA."
 ---
 
 {{< alert "warning" >}}
@@ -121,3 +128,5 @@ Tous les adaptateurs ALFA disposent d'un connecteur RP-SMA standard. Améliorez 
 {{< alert >}}
 Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}
+
+{{< faq >}}

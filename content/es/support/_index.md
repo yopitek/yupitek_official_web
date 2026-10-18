@@ -13,6 +13,10 @@ A continuación se encuentran los enlaces de descarga de controladores y firmwar
 Descargue siempre los controladores desde los sitios web oficiales de las marcas para garantizar la seguridad y la compatibilidad.
 {{< /alert >}}
 
+## Yupitek Wiki
+
+¿Buscas guías de instalación, información de compatibilidad con Linux o pasos para solucionar problemas? Visita la [Wiki de Yupitek](https://doc.yupitek.com/), nuestra base de conocimientos técnicos sobre productos ALFA Network, Hak5, Flipper Zero, SDRLAB y ACS.
+
 ## Controladores ALFA Network
 
 ### Serie Wi-Fi 6E

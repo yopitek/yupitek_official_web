@@ -13,6 +13,10 @@ A seguir estão os links de download de drivers e firmware oficiais. Visite o si
 Sempre baixe drivers dos sites oficiais das marcas para garantir segurança e compatibilidade.
 {{< /alert >}}
 
+## Yupitek Wiki
+
+Procura guias de instalação, informações de compatibilidade com Linux ou passos de resolução de problemas? Visite a [Wiki da Yupitek](https://doc.yupitek.com/), a nossa base de conhecimentos técnicos sobre produtos ALFA Network, Hak5, Flipper Zero, SDRLAB e ACS.
+
 ## Drivers ALFA Network
 
 ### Série Wi-Fi 6E

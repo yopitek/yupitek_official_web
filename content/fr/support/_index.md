@@ -11,6 +11,10 @@ showTableOfContents: true
 Téléchargez toujours les pilotes à partir des sites web officiels des marques.
 {{< /alert >}}
 
+## Yupitek Wiki
+
+Vous cherchez des guides d'installation, des informations sur la compatibilité Linux ou des étapes de dépannage ? Consultez le [Wiki Yupitek](https://doc.yupitek.com/), notre base de connaissances technique consacrée aux produits ALFA Network, Hak5, Flipper Zero, SDRLAB et ACS.
+
 ## Pilotes ALFA Network
 
 ### Série Wi-Fi 6E

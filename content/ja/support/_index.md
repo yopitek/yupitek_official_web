@@ -13,6 +13,10 @@ showTableOfContents: true
 セキュリティと互換性を確保するため、必ず公式ブランドサイトからドライバーをダウンロードしてください。
 {{< /alert >}}
 
+## Yupitek Wiki
+
+セットアップガイド、Linux 互換性情報、トラブルシューティングの手順については、[Yupitek Wiki](https://doc.yupitek.com/) をご覧ください。ALFA Network、Hak5、Flipper Zero、SDRLAB、ACS 製品の技術ドキュメントを提供しています。
+
 ## ALFA Network ドライバー
 
 ### Wi-Fi 6E シリーズ

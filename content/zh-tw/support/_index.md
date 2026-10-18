@@ -15,6 +15,10 @@ showTableOfContents: true
 請務必從各品牌官方網站下載驅動程式，以確保安全性與相容性。
 {{< /alert >}}
 
+## Yupitek Wiki 知識庫
+
+需要安裝指南、Linux 相容性說明或疑難排解步驟？請前往 [Yupitek Wiki 知識庫](https://doczhtw.yupitek.com/)，涵蓋 ALFA Network、Hak5、Flipper Zero、SDRLAB 與 ACS 產品的技術文件。
+
 ## ALFA Network 驅動程式
 
 ### Wi-Fi 6E 系列

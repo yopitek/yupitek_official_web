@@ -13,6 +13,10 @@ Nachfolgend finden Sie offizielle Treiber- und Firmware-Download-Links. Bitte be
 Laden Sie Treiber immer von offiziellen Markenwebseiten herunter, um Sicherheit und Kompatibilität zu gewährleisten.
 {{< /alert >}}
 
+## Yupitek Wiki
+
+Anleitungen zur Einrichtung, Informationen zur Linux-Kompatibilität oder Schritte zur Fehlerbehebung? Besuchen Sie das [Yupitek Wiki](https://doc.yupitek.com/) – unsere technische Wissensdatenbank zu ALFA Network, Hak5, Flipper Zero, SDRLAB und ACS.
+
 ## ALFA Network Treiber
 
 ### Wi-Fi 6E Serie

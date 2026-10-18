@@ -17,7 +17,7 @@ tags: ["Wi-Fi 7", "SFP+", "光纖", "10G", "企業 AP"]
 - 支援 Zero-Wait DFS，消除 DFS 頻道切換延遲
 - 內建即時頻譜分析（Real-Time Spectral Analysis）
 - UV 穩定聚碳酸酯 + 鋁合金外殼，適合嚴苛部署環境
-- 最多 500+ 同時連線用戶，覆蓋 160 m²
+- 最多 500+ 同時連線使用者，覆蓋 160 m²
 - NDAA 合規，CE/FCC/IC 認證
 
 ## 產品規格
@@ -32,7 +32,7 @@ tags: ["Wi-Fi 7", "SFP+", "光纖", "10G", "企業 AP"]
 | WiFi 標準 WiFi Standard | WiFi 7 (802.11be) |
 | 空間串流 Spatial Streams | 8 (2+4+2) |
 | 覆蓋範圍 Coverage Area | 160 m² (1,750 ft²) |
-| 最大用戶數 Max. Client Count | 500+ |
+| 最大使用者數 Max. Client Count | 500+ |
 | 上行埠 Uplink | 10 GbE RJ45 |
 | 供電方式 Power Method | PoE++ (42.5–57V DC) |
 | 最大功耗 Max. Power Consumption | 29W |

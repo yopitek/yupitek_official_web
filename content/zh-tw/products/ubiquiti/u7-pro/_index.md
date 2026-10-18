@@ -14,7 +14,7 @@ tags: ["Wi-Fi 7", "802.11be", "三頻", "6GHz", "PoE+", "企業 AP"]
 ![Ubiquiti UniFi U7 Pro](/images/products/ubiquiti/u7-pro.png)
 
 - WiFi 7 三頻無線基地台，支援 2.4 / 5 / 6 GHz，6 條空間串流
-- 覆蓋面積 140 m²，最多 300+ 同時連線用戶
+- 覆蓋面積 140 m²，最多 300+ 同時連線使用者
 - 2.5 GbE 上行埠，PoE+ 供電
 - 支援 802.11r 快速漫遊、PPSK、RADIUS/RadSec、Passpoint
 - 支援 8 個 BSSID（每頻段），含訪客隔離與網路排程
@@ -33,7 +33,7 @@ tags: ["Wi-Fi 7", "802.11be", "三頻", "6GHz", "PoE+", "企業 AP"]
 | WiFi 標準 WiFi Standard | WiFi 7 (802.11be/ax/ac/n) |
 | 空間串流 Spatial Streams | 6 (2+2+2) |
 | 覆蓋範圍 Coverage Area | 140 m² (1,500 ft²) |
-| 最大用戶數 Max. Client Count | 300+ |
+| 最大使用者數 Max. Client Count | 300+ |
 | 上行埠 Uplink | 2.5 GbE RJ45 |
 | 供電方式 Power Method | PoE+ (44–57V DC) |
 | 最大功耗 Max. Power Consumption | 21W |

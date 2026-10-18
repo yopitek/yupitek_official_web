@@ -36,7 +36,7 @@ LINE Beacon 之所以能成為 OMO（Online-Merge-Offline，線上線下整合�
 ### 常見行銷方式
 * **精準即時迎賓**：當顧客踏入範圍（觸發 `enter` 事件），立刻推播專屬的歡迎語或現領現用的折價券，精準攔截門口的路過客。
 * **互動式集點與踩點**：利用多個 Beacon 佈置在商場內的不同展區或櫃位。顧客到達特定點位即可解鎖關卡或累積點數，集滿後可直接在 LINE 上兌換 LINE Points 或實體贈品，提升探索樂趣。
-* **線下數據再行銷**：記錄顧客接觸 Beacon 的時間與頻率，品牌可以在線上透過 LINE 廣告平台（LAP）針對這群「曾實體到店」的精準客群進行二次行銷（Retargeting）。
+* **線下資料再行銷**：記錄顧客接觸 Beacon 的時間與頻率，品牌可以在線上透過 LINE 廣告平台（LAP）針對這群「曾實體到店」的精準客群進行二次行銷（Retargeting）。
 
 ### 台灣實體應用案例
 
@@ -80,21 +80,21 @@ LINE Beacon 之所以能成為 OMO（Online-Merge-Offline，線上線下整合�
 
 ### 1. 安裝設定工具
 請在手機上下載並安裝 Minew 官方的設定軟體：
-* iOS 用戶：請在 App Store 搜尋 **BeaconSET+**
-* Android 用戶：請在 Google Play 搜尋 **BeaconSET+**
+* iOS 使用者：請在 App Store 搜尋 **BeaconSET+**
+* Android 使用者：請在 Google Play 搜尋 **BeaconSET+**
 
 ### 2. 連線至 YPB03
-1. 開啟手機的藍牙功能，並打開 **BeaconSET+** App。
+1. 開啟手機的藍牙功能，並開啟 **BeaconSET+** App。
 2. 在設備清單中尋找名為 `YPB03` 或對應 MAC 位址的設備。
 3. 點擊連線，App 會要求輸入密碼。預設密碼為 `minew123`（連線成功後建議修改以確保安全）。
 
 ### 3. 配置 LINE Simple Beacon 廣播槽 (Slot)
 YPB03 支援多頻道同時廣播。我們要將其中一個 Slot 設定為 LINE 專用格式：
 1. 連線後，選擇一個未使用的廣播 Slot。
-2. 將 **Frame Type**（影格類型）修改為 **Service Data**（服務數據）。
+2. 將 **Frame Type**（影格類型）修改為 **Service Data**（服務資料）。
 3. 設定以下兩個關鍵參數：
    * **Service UUID**：輸入 `FE6F`（這是 LINE Beacon 專屬的標準 Service UUID）。
-   * **Data Value**：輸入組裝後的 9-Byte 16進位數據。組裝公式為：
+   * **Data Value**：輸入組裝後的 9-Byte 16進位資料。組裝公式為：
      $$\text{Data Value} = \text{Service UUID (FE6F)} + \text{您的 5-Byte HWID} + \text{結尾標記 (7F00)}$$
      *舉例：如果您的 HWID 是 `0123456789`，那麼您必須在 Data Value 欄位填入：`FE6F01234567897F00`*。
 4. 設定完成後點擊右上角的 **Save** 儲存。
@@ -115,7 +115,7 @@ pip install Flask
 ```
 
 ### 2. 撰寫程式碼 (`app.py`)
-請建立一個 `app.py` 檔案，並貼上以下代碼：
+請建立一個 `app.py` 檔案，並貼上以下程式碼：
 
 ```python
 from flask import Flask, request, jsonify
@@ -199,7 +199,7 @@ LINE 平台需要將 Webhook 送到一個公開的 HTTPS 網址。在開發階�
 | :--- | :--- | :--- |
 | **藍牙規格** | BLE 5.0 (nRF52 series) | 低功耗、高效率傳輸 |
 | **預設 Service UUID** | `0xFE6F` | LINE Beacon 專用服務識別碼 |
-| **設定軟體工具** | **BeaconSET+** | 支持 iOS 與 Android 進行無線配置 |
+| **設定軟體工具** | **BeaconSET+** | 支援 iOS 與 Android 進行無線配置 |
 | **防護級別** | IP65 | 防塵與防潑水設計，適合工業/半戶外場景 |
 | **供電規格** | 4 × AA 電池 (5800mAh) | 最長可達 10 年續航（視廣播間隔而定） |
 | **Service Data 欄位公式** | `FE6F` + `[5-Byte HWID]` + `7F00` | 寫入 BeaconSET+ 的十六進位值 |
@@ -209,7 +209,7 @@ LINE 平台需要將 Webhook 送到一個公開的 HTTPS 網址。在開發階�
 ## 常見問答 FAQ
 
 #### Q: YPB03 是否只能作為 LINE Beacon 使用？
-**A**: 不是。YPB03 是一款多功能藍牙信標設備，除了支持 LINE Simple Beacon 協議外，還能同時啟用標準的 **iBeacon** 與 **Eddystone** 廣播。開發者可以同時利用一個 Slot 廣播 iBeacon 供自製 App 定位，另一個 Slot 廣播 LINE Beacon 進行免安裝行銷。
+**A**: 不是。YPB03 是一款多功能藍牙信標設備，除了支援 LINE Simple Beacon 協定外，還能同時啟用標準的 **iBeacon** 與 **Eddystone** 廣播。開發者可以同時利用一個 Slot 廣播 iBeacon 供自製 App 定位，另一個 Slot 廣播 LINE Beacon 進行免安裝行銷。
 
 #### Q: 設定 BeaconSET+ 時，為什麼手機掃描不到 YPB03 設備？
 **A**: 請確認以下幾點：
@@ -226,6 +226,6 @@ LINE 平台需要將 Webhook 送到一個公開的 HTTPS 網址。在開發階�
 
 ## 總結
 
-透過 YPB03 工業級藍牙信標，實體店家能以最低的維護成本，在完全不需要開發自有 App 的前提下，與廣大 LINE 用戶進行線上與線下的無縫融合（OMO）互動。無論是學校專題展示還是大型商業佈署，YPB03 都是穩定性與覆蓋範圍的首選。
+透過 YPB03 工業級藍牙信標，實體店家能以最低的維護成本，在完全不需要開發自有 App 的前提下，與廣大 LINE 使用者進行線上與線下的無縫融合（OMO）互動。無論是學校專題展示還是大型商業佈署，YPB03 都是穩定性與覆蓋範圍的首選。
 
 如需取得 YPB03 設備報價或了解更多物聯網客製化方案，歡迎透過 [Yupitek 官方網站聯絡我們](https://www.yupitek.com/zh-tw/contact/)！

@@ -1,5 +1,5 @@
 ---
-title: "ALFA AWUS036ACH — AC1200 雙頻高功率 USB-C 無線網卡"
+title: "ALFA AWUS036ACH — AC1200 雙頻高功率 USB-C 無線網路卡"
 description: "ALFA AWUS036ACH，Realtek RTL8812AU，AC1200 雙頻，USB-C，雙 5 dBi 外接天線，Kali Linux 資安研究黃金標準，支援 Monitor Mode 與 Packet Injection。"
 date: 2026-03-12
 draft: false
@@ -22,17 +22,17 @@ faq:
 
 ## 產品概述
 
-AWUS036ACH 是 ALFA Network 資安研究社群公認的黃金標準無線網卡，自 2017 年起即為 Kali Linux 滲透測試的首選機款。採用 Realtek RTL8812AU 晶片，具備穩定的 Monitor Mode 與 Packet Injection 支援，內建功率放大器提升遠距感測能力，配備兩根可拆卸 5 dBi 天線。本機為全球首款搭載 USB Type-C 介面的 Wi-Fi 5 USB 網卡。
+AWUS036ACH 是 ALFA Network 資安研究社群公認的黃金標準無線網路卡，自 2017 年起即為 Kali Linux 滲透測試的首選機款。採用 Realtek RTL8812AU 晶片，具備穩定的 Monitor Mode 與 Packet Injection 支援，內建功率放大器提升遠距感測能力，配備兩根可拆卸 5 dBi 天線。本機為全球首款搭載 USB Type-C 介面的 Wi-Fi 5 USB 網路卡。
 
-> **macOS 注意事項：** 所有 ALFA 網卡對 macOS 支援有限。macOS 11 Big Sur 以上版本及 Apple Silicon（M1/M2/M3）均**不支援**，最高支援為 Intel Mac 上的 macOS 10.15 Catalina。
+> **macOS 注意事項：** 所有 ALFA 網路卡對 macOS 支援有限。macOS 11 Big Sur 以上版本及 Apple Silicon（M1/M2/M3）均**不支援**，最高支援為 Intel Mac 上的 macOS 10.15 Catalina。
 
 ## 產品特色
 
 - Realtek RTL8812AU 晶片 — 資安研究社群記錄最完整的晶片組
 - Wi-Fi 5（802.11ac）AC1200 雙頻：5 GHz 867 Mbps + 2.4 GHz 300 Mbps
-- 內建功率放大器 — 接收距離最高達一般筆電內建網卡的 3 倍
+- 內建功率放大器 — 接收距離最高達一般筆電內建網路卡的 3 倍
 - 2× RP-SMA female 天線接頭搭配 2× 5 dBi 可拆卸雙頻天線（可升級高增益天線）
-- 全球首款 Wi-Fi 5 USB Type-C 介面無線網卡
+- 全球首款 Wi-Fi 5 USB Type-C 介面無線網路卡
 - 附贈螢幕夾架
 - Kali Linux Packet Injection 支援自 Kali 2017.1 起
 - 相容 802.11a/b/g/n
@@ -83,7 +83,7 @@ AWUS036ACH 是 ALFA Network 資安研究社群公認的黃金標準無線網卡�
 
 ## 包裝內容
 
-- 1× AWUS036ACH 無線網卡
+- 1× AWUS036ACH 無線網路卡
 - 2× 可拆卸 5 dBi 雙頻偶極天線
 - 1× USB-C to USB-A 傳輸線
 - 1× 螢幕夾架
@@ -111,7 +111,7 @@ AWUS036ACH 是 ALFA Network 資安研究社群公認的黃金標準無線網卡�
 
 ## 可搭配的天線配件
 
-所有 ALFA USB 無線網卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
+所有 ALFA USB 無線網路卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
 
 | 天線型號 | 頻段 | 增益 | 類型 |
 |---------|------|------|------|

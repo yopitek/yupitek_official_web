@@ -63,9 +63,9 @@ NVIDIA Mellanox ConnectX 網路卡為企業伺服器與 AI 運算叢集提供極
 
 | 原廠料號 | 產品世代 / 晶片 | 埠數 | 傳輸速率 | 匯流排插槽 | 連接器規格 | 支援協定 | 外觀尺寸 | 特殊功能規格 |
 |-------------|---------------|-------|-------|-----------|-----------|----------|-------------|------------------|
-| **MCX515A-CCAT** | ConnectX-5 EN | 單埠 | 100GbE | PCIe 3.0 x16 | QSFP28 | 乙太網路 | 全高 PCIe | 標準 100G 網卡 |
+| **MCX515A-CCAT** | ConnectX-5 EN | 單埠 | 100GbE | PCIe 3.0 x16 | QSFP28 | 乙太網路 | 全高 PCIe | 標準 100G 網路卡 |
 | **MCX555A-ECAT** | ConnectX-5 VPI | 單埠 | 100G | PCIe 3.0 x16 | QSFP28 | VPI (IB/ETH) | 全高 PCIe | EDR IB 與 100GbE 雙協定 |
-| **MCX516A-CCAT** | ConnectX-5 EN | 雙埠 | 100GbE | PCIe 3.0 x16 | QSFP28 | 乙太網路 | 全高 PCIe | 雙埠 100G 網卡 |
+| **MCX516A-CCAT** | ConnectX-5 EN | 雙埠 | 100GbE | PCIe 3.0 x16 | QSFP28 | 乙太網路 | 全高 PCIe | 雙埠 100G 網路卡 |
 | **MCX516A-CDAT** | ConnectX-5 Ex | 雙埠 | 100GbE | PCIe 4.0 x16 | QSFP28 | 乙太網路 | 全高 PCIe | PCIe 4.0 介面 |
 | **MCX556A-ECAT** | ConnectX-5 VPI | 雙埠 | 100G | PCIe 3.0 x16 | QSFP28 | VPI (IB/ETH) | 全高 PCIe | 雙埠 EDR IB |
 | **MCX556A-EDAT** | ConnectX-5 Ex VPI| 雙埠 | 100G | PCIe 4.0 x16 | QSFP28 | VPI (IB/ETH) | 全高 PCIe | PCIe 4.0 雙埠 EDR |
@@ -117,7 +117,7 @@ NVIDIA Mellanox ConnectX 網路卡為企業伺服器與 AI 運算叢集提供極
 - 將 PCIe 4.0 網路卡插入 PCIe 3.0 插槽可向下相容，但傳輸吞吐量會受限於 PCIe 3.0 的頻寬上限 (x8 約為 64Gbps，x16 約為 128Gbps)。
 
 ### 3. OCP 3.0 與標準 PCIe 外觀規格
-型號結尾為 `-ADAB`、`-CDAB`、`-HEAB` 等產品採用 **OCP NIC 3.0** 規格。這類網卡是直接插入伺服器專用的 OCP 插槽 (常見於 Supermicro、Dell、HPE 及 Lenovo 新一代伺服器)，無法安裝在標準的 PCIe 插槽上。
+型號結尾為 `-ADAB`、`-CDAB`、`-HEAB` 等產品採用 **OCP NIC 3.0** 規格。這類網路卡是直接插入伺服器專用的 OCP 插槽 (常見於 Supermicro、Dell、HPE 及 Lenovo 新一代伺服器)，無法安裝在標準的 PCIe 插槽上。
 
 ---
 

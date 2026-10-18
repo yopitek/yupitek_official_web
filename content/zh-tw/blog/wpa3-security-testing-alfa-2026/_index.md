@@ -1,6 +1,6 @@
 ---
-title: "使用 ALFA 無線網卡進行 WPA3 安全測試 (2026)"
-description: "使用 ALFA Network 無線網卡進行 WPA3 安全測試的完整指南。涵蓋 SAE 握手分析、Dragonblood 漏洞、轉換模式降級攻擊、PMF 強制執行，以及 WPA3-Enterprise EAP 測試。"
+title: "使用 ALFA 無線網路卡進行 WPA3 安全測試 (2026)"
+description: "使用 ALFA Network 無線網路卡進行 WPA3 安全測試的完整指南。涵蓋 SAE 握手分析、Dragonblood 漏洞、轉換模式降級攻擊、PMF 強制執行，以及 WPA3-Enterprise EAP 測試。"
 date: 2026-03-24
 draft: false
 showBreadcrumbs: true
@@ -16,7 +16,7 @@ faq:
     answer: "不行。純 SAE 網路不產生可破解的雜湊值。擷取 SAE 幀僅用於協定層級分析，確認正確變體與 PMF 協商。"
   - question: "什麼是 WPA3 轉換模式降級攻擊？"
     answer: "轉換模式 AP 同時接受 SAE 與 PSK。攻擊者偽造純 WPA2 流氓 AP，若用戶端未強制 SAE 即完成降級，握手可被離線破解。"
-  - question: "測試 WPA3 需要 6 GHz 網卡嗎？"
+  - question: "測試 WPA3 需要 6 GHz 網路卡嗎？"
     answer: "僅測試 6 GHz 頻段上的 WPA3 網路時需要 AWUS036AXML。2.4/5 GHz 上的 WPA3 測試使用 AWUS036ACH 即可。"
   - question: "Dragonblood 漏洞還需要測試嗎？"
     answer: "現代 AP 韌體多已修補，但使用舊版或未修補韌體的環境仍需測試 CVE-2019-9494 等側通道攻擊與 SAE commit 洪泛 DoS。"
@@ -26,7 +26,7 @@ faq:
 **法律聲明：** 所有無線安全測試僅可在您擁有明確書面授權的網路和設備上執行。WPA3 測試技術（包括 SAE 封包擷取、去認證攻擊及流氓 AP 部署）與其他無線評估活動受相同法律規範約束。請僅於授權環境下進行測試。
 {{< /alert >}}
 
-WPA3 以 SAE 握手取代 PSK，具備前向保密與強制 PMF。主要攻擊面為轉換模式降級、Dragonblood 漏洞與企業 EAP 憑證驗證，需 ALFA 網卡進行完整評估。
+WPA3 以 SAE 握手取代 PSK，具備前向保密與強制 PMF。主要攻擊面為轉換模式降級、Dragonblood 漏洞與企業 EAP 憑證驗證，需 ALFA 網路卡進行完整評估。
 
 {{< tldr >}}
 WPA3 安全測試涵蓋 SAE 握手分析、轉換模式降級攻擊、Dragonblood 漏洞評估與 PMF 強制執行。AWUS036AXML 用於 6 GHz 測試，AWUS036ACH 適用 2.4/5 GHz。
@@ -34,7 +34,7 @@ WPA3 安全測試涵蓋 SAE 握手分析、轉換模式降級攻擊、Dragonbloo
 
 WPA3 在個人與企業無線安全性方面，相較 WPA2 有顯著的改進。Simultaneous Authentication of Equals (SAE) 取代了 Pre-Shared Key (PSK) 握手，改採對離線字典攻擊具備抵抗能力的密碼驗證金鑰交換機制。Protected Management Frames (PMF) 為強制要求。前向保密已內建於協定之中。
 
-然而，WPA3 並非毫無漏洞。Dragonblood 研究（2019 年）揭露了 SAE 握手中的側通道攻擊與阻斷服務漏洞。轉換模式引入了降級攻擊面。企業部署同樣面臨與 WPA2-Enterprise 相同的 802.1X 憑證驗證弱點。本指南使用 ALFA Network 無線網卡，涵蓋完整的 WPA3 安全測試方法論。ALFA 無線網卡具備進行全面評估所需的監聽模式穩定性與封包注入能力。
+然而，WPA3 並非毫無漏洞。Dragonblood 研究（2019 年）揭露了 SAE 握手中的側通道攻擊與阻斷服務漏洞。轉換模式引入了降級攻擊面。企業部署同樣面臨與 WPA2-Enterprise 相同的 802.1X 憑證驗證弱點。本指南使用 ALFA Network 無線網路卡，涵蓋完整的 WPA3 安全測試方法論。ALFA 無線網路卡具備進行全面評估所需的監聽模式穩定性與封包注入能力。
 
 ---
 
@@ -60,13 +60,13 @@ WPA3-Enterprise 強制要求使用 GCMP-256 與 HMAC-SHA-384 的 192 位元安�
 
 ---
 
-## 測試環境與網卡需求
+## 測試環境與網路卡需求
 
-### 網卡選擇
+### 網路卡選擇
 
-WPA3 測試需要具備可靠監聽模式、封包注入支援，以及——針對 6 GHz WPA3 網路——三頻段能力的網卡：
+WPA3 測試需要具備可靠監聽模式、封包注入支援，以及——針對 6 GHz WPA3 網路——三頻段能力的網路卡：
 
-- **AWUS036AXML** — Wi-Fi 6E (6 GHz) WPA3 網路的必要選擇。採用 Mediatek MT7921AUN 晶片組。在 Kali Linux 搭配 kernel 5.18+ 環境下，完整支援監聽模式與封包注入。這是唯一涵蓋 6 GHz 頻道的 ALFA 網卡，而純 WPA3 部署在該頻段日益普遍。
+- **AWUS036AXML** — Wi-Fi 6E (6 GHz) WPA3 網路的必要選擇。採用 Mediatek MT7921AUN 晶片組。在 Kali Linux 搭配 kernel 5.18+ 環境下，完整支援監聽模式與封包注入。這是唯一涵蓋 6 GHz 頻道的 ALFA 網路卡，而純 WPA3 部署在該頻段日益普遍。
 - **AWUS036ACH** — 適用於 2.4/5 GHz WPA3 測試。採用 RTL8812AU 晶片組。與 aircrack-ng 工具鏈相容性最佳，跨 Kali Linux 版本的驅動程式支援最廣泛。
 
 ### 啟用監聽模式
@@ -102,7 +102,7 @@ sudo airodump-ng wlan0mon --band abg | grep -i "SAE\|WPA3"
 
 ### 被動擷取的限制
 
-與 WPA2 不同，**SAE 握手無法用於離線字典攻擊**。使用任何監聽模式網卡擷取 SAE commit 與 confirm 幀相當直接，但擷取的內容不會產生可破解的雜湊值。擷取 SAE 幀的目的在於協定層級分析——驗證正在使用正確的 SAE 變體、確認 PMF 已協商完成，並在評估報告中提供佐證。
+與 WPA2 不同，**SAE 握手無法用於離線字典攻擊**。使用任何監聽模式網路卡擷取 SAE commit 與 confirm 幀相當直接，但擷取的內容不會產生可破解的雜湊值。擷取 SAE 幀的目的在於協定層級分析——驗證正在使用正確的 SAE 變體、確認 PMF 已協商完成，並在評估報告中提供佐證。
 
 ```bash
 # 在目標 AP 頻道上進行擷取
@@ -337,7 +337,7 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 <div class="table-nowrap" style="overflow-x: auto;">
 
-| 工具 | 用途 | 網卡 | 關鍵指令 |
+| 工具 | 用途 | 網路卡 | 關鍵指令 |
 |---|---|---|---|
 | airodump-ng | WPA3 網路探索、SAE 幀擷取 | AWUS036AXML / AWUS036ACH | `sudo airodump-ng wlan0mon --band abg` |
 | hcxdumptool | PMKID/SAE 擷取、轉換模式偵測 | AWUS036AXML | `sudo hcxdumptool -i wlan0mon -o out.pcapng --enable_status=3` |
@@ -371,7 +371,7 @@ sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 ## 相關資源
 
 - [企業無線安全評估：完整框架](/zh-tw/blog/enterprise-wireless-security-assessment/)
-- [封包注入指南：使用 aireplay-ng 測試您的 WiFi 網卡](/zh-tw/blog/packet-injection-guide/)
+- [封包注入指南：使用 aireplay-ng 測試您的 WiFi 網路卡](/zh-tw/blog/packet-injection-guide/)
 - [在 Kali Linux 上啟用監聽模式](/zh-tw/blog/enable-monitor-mode-kali-linux/)
 
 ## 參考來源

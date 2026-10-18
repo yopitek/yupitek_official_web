@@ -1,6 +1,6 @@
 ---
 title: "ALFA APA-M25 — 雙頻室內高增益面板天線"
-description: "ALFA APA-M25，2.4/5 GHz 雙頻室內面板天線，8/10 dBi 指向性高增益，RP-SMA 接頭，適合 ALFA Wi-Fi 5/6 網卡天線升級。"
+description: "ALFA APA-M25，2.4/5 GHz 雙頻室內面板天線，8/10 dBi 指向性高增益，RP-SMA 接頭，適合 ALFA Wi-Fi 5/6 網路卡天線升級。"
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
@@ -12,7 +12,7 @@ featureimage: "/images/products/alfa/apa-m25.webp"
 
 ## 產品概述
 
-APA-M25 是 ALFA Network 的雙頻高增益室內面板天線，同時支援 2.4 GHz（8 dBi）與 5 GHz（**10 dBi**）。指向性面板設計（水平波束角 66°，垂直波束角 16°）將能量集中於水平方向，特別適合同一樓層的水平距離延伸使用。超薄 18 mm 機身僅重 72 g，RP-SMA Plug 接頭可直接替換所有 ALFA 雙頻網卡的原廠天線。
+APA-M25 是 ALFA Network 的雙頻高增益室內面板天線，同時支援 2.4 GHz（8 dBi）與 5 GHz（**10 dBi**）。指向性面板設計（水平波束角 66°，垂直波束角 16°）將能量集中於水平方向，特別適合同一樓層的水平距離延伸使用。超薄 18 mm 機身僅重 72 g，RP-SMA Plug 接頭可直接替換所有 ALFA 雙頻網路卡的原廠天線。
 
 ## 產品特色
 
@@ -20,7 +20,7 @@ APA-M25 是 ALFA Network 的雙頻高增益室內面板天線，同時支援 2.4
 - **5 GHz 達 10 dBi 高增益**：有效補償 5 GHz 波長短、穿牆損耗大的缺點
 - **指向性面板設計**：水平波束角 66°，垂直波束角 16°，適合水平距離延伸
 - **超薄輕量設計**：僅 18 mm 厚，72 g，貼牆放置不佔空間
-- **即插即換**：RP-SMA Plug (Male) 標準接頭，適合所有 ALFA 無線網卡
+- **即插即換**：RP-SMA Plug (Male) 標準接頭，適合所有 ALFA 無線網路卡
 - **適用場景**：辦公桌面、書房，強化 5 GHz 連線品質（電競、4K 串流）
 
 ## 技術規格

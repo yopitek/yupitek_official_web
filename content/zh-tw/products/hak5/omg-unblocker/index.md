@@ -2,7 +2,7 @@
 title: "O.MG UnBlocker"
 date: 2025-01-01
 draft: false
-description: "外觀完全模擬合法 USB Data Blocker 的 Elite 等級 O.MG 植入裝置，可躲避安全意識用戶的警覺。"
+description: "外觀完全模擬合法 USB Data Blocker 的 Elite 等級 O.MG 植入裝置，可躲避安全意識使用者的警覺。"
 featureimage: "/images/products/hak5/omg-unBlocker.png"
 ---
 

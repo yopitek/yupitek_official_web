@@ -1,5 +1,5 @@
 ---
-title: "ALFA AWUS036ACS — AC600 雙頻 USB 無線網卡（入門資安研究）"
+title: "ALFA AWUS036ACS — AC600 雙頻 USB 無線網路卡（入門資安研究）"
 description: "ALFA AWUS036ACS，Realtek RTL8811AU，AC600 雙頻 USB 2.0，1× 2 dBi RP-SMA 可拆卸天線，支援 Monitor Mode 與 Packet Injection，入門級資安研究首選。"
 date: 2026-03-12
 draft: false
@@ -15,9 +15,9 @@ tags: ["Wi-Fi 5", "AC600", "USB 2.0", "RP-SMA", "Monitor Mode", "Kali Linux", "�
 
 ## 產品概述
 
-AWUS036ACS 是 Alfa 雙頻 802.11ac 產品線中最經濟實惠的入門款，搭載 Realtek RTL8811AU 晶片，支援 Monitor Mode 與 Packet Injection。機身輕巧小型，配備 1 支可拆卸 RP-SMA 天線，可依需求升級為高增益或方向性天線。雖然效能不及 ACH 或 ACM，但對於初學者或需要預算友好型 5 GHz 外接天線網卡的使用者而言，是十分實用的選擇。
+AWUS036ACS 是 Alfa 雙頻 802.11ac 產品線中最經濟實惠的入門款，搭載 Realtek RTL8811AU 晶片，支援 Monitor Mode 與 Packet Injection。機身輕巧小型，配備 1 支可拆卸 RP-SMA 天線，可依需求升級為高增益或方向性天線。雖然效能不及 ACH 或 ACM，但對於初學者或需要預算友好型 5 GHz 外接天線網路卡的使用者而言，是十分實用的選擇。
 
-> **macOS 注意事項：** 所有 ALFA 網卡對 macOS 支援有限。macOS 10.15 Catalina 以上及 Apple Silicon（M1/M2/M3）均**不支援**。AWUS036ACS 最高支援 macOS 10.14 Mojave（Intel Mac）。
+> **macOS 注意事項：** 所有 ALFA 網路卡對 macOS 支援有限。macOS 10.15 Catalina 以上及 Apple Silicon（M1/M2/M3）均**不支援**。AWUS036ACS 最高支援 macOS 10.14 Mojave（Intel Mac）。
 
 ## 產品特色
 
@@ -76,7 +76,7 @@ AWUS036ACS 是 Alfa 雙頻 802.11ac 產品線中最經濟實惠的入門款，�
 
 ## 包裝內容
 
-- 1× AWUS036ACS 無線網卡
+- 1× AWUS036ACS 無線網路卡
 - 1× 可拆卸 2 dBi 雙頻迷你偶極天線
 
 ## 資源與連結
@@ -101,7 +101,7 @@ AWUS036ACS 是 Alfa 雙頻 802.11ac 產品線中最經濟實惠的入門款，�
 
 ## 可搭配的天線配件
 
-所有 ALFA USB 無線網卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
+所有 ALFA USB 無線網路卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
 
 | 天線型號 | 頻段 | 增益 | 類型 |
 |---------|------|------|------|

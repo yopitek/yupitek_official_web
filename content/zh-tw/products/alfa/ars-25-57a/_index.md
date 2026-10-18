@@ -1,6 +1,6 @@
 ---
 title: "ALFA ARS-25-57A — 雙頻槳型全向天線"
-description: "ALFA ARS-25-57A，雙頻 2.4/5 GHz 槳型全向天線，5/7 dBi，RP-SMA 接頭，適合 ALFA USB 無線網卡直接替換升級。"
+description: "ALFA ARS-25-57A，雙頻 2.4/5 GHz 槳型全向天線，5/7 dBi，RP-SMA 接頭，適合 ALFA USB 無線網路卡直接替換升級。"
 date: 2026-03-23
 draft: false
 showBreadcrumbs: true
@@ -12,7 +12,7 @@ featureimage: "/images/products/alfa/ars-25-57a.webp"
 
 ## 產品概述
 
-ARS-25-57A 是 ALFA Network 的雙頻槳型（Paddle）全向天線，同時支援 2.4 GHz（5 dBi）與 5 GHz（**7 dBi**）。扁平寬板造型採用全向輻射設計，360° 水平均勻覆蓋，無需特別對準方向，適合桌面中心位置使用。RP-SMA Male 接頭可直接取代所有 ALFA 雙頻網卡的原廠天線。
+ARS-25-57A 是 ALFA Network 的雙頻槳型（Paddle）全向天線，同時支援 2.4 GHz（5 dBi）與 5 GHz（**7 dBi**）。扁平寬板造型採用全向輻射設計，360° 水平均勻覆蓋，無需特別對準方向，適合桌面中心位置使用。RP-SMA Male 接頭可直接取代所有 ALFA 雙頻網路卡的原廠天線。
 
 ## 產品特色
 

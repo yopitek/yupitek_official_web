@@ -14,7 +14,7 @@ tags: ["Wi-Fi 7", "三頻", "高功率", "企業 AP"]
 
 - WiFi 7 三頻無線基地台，8 條空間串流（2+4+2），5 GHz 升級為 4×4 MU-MIMO
 - 5 GHz 最高資料速率 8.6 Gbps，覆蓋面積 160 m²
-- 最多 500+ 同時連線用戶，適合高密度環境
+- 最多 500+ 同時連線使用者，適合高密度環境
 - 內建即時頻譜分析（Real-Time Spectral Analysis），主動偵測干擾
 - 鋁合金外殼設計，散熱效能更佳
 - 2.5 GbE 上行埠，PoE+ 供電
@@ -32,7 +32,7 @@ tags: ["Wi-Fi 7", "三頻", "高功率", "企業 AP"]
 | WiFi 標準 WiFi Standard | WiFi 7 (802.11be) |
 | 空間串流 Spatial Streams | 8 (2+4+2) |
 | 覆蓋範圍 Coverage Area | 160 m² (1,750 ft²) |
-| 最大用戶數 Max. Client Count | 500+ |
+| 最大使用者數 Max. Client Count | 500+ |
 | 上行埠 Uplink | 2.5 GbE RJ45 |
 | 供電方式 Power Method | PoE+ (44–57V DC) |
 | 最大功耗 Max. Power Consumption | 25W |
@@ -82,7 +82,7 @@ tags: ["Wi-Fi 7", "三頻", "高功率", "企業 AP"]
 
 ## 應用環境
 
-適用於高密度大型場館，如會議中心、展覽館、大型企業樓層。5 GHz 採 4×4 MU-MIMO，適合預期每台 AP 連接 500+ 用戶、5 GHz 頻段壅塞嚴重的場景。即時頻譜分析功能可主動偵測並規避無線干擾。
+適用於高密度大型場館，如會議中心、展覽館、大型企業樓層。5 GHz 採 4×4 MU-MIMO，適合預期每台 AP 連接 500+ 使用者、5 GHz 頻段壅塞嚴重的場景。即時頻譜分析功能可主動偵測並規避無線干擾。
 
 ---
 

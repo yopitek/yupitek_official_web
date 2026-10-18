@@ -12,7 +12,7 @@ featureimage: "/images/products/alfa/ars-nt5b7.webp"
 
 ## 產品概述
 
-ARS-NT5B7 是 ALFA Network 為 WiFi 7（802.11be）設計的三頻偶極天線，完整支援 2.4 GHz / 5 GHz / 6 GHz 三個頻段。工作溫度高達 **-40°C ~ +85°C**（工業級），遠優於同類產品（通常 -10°C ~ +55°C）。6 GHz 增益達 **7 dBi** 為三頻中最高，有效補償短波長的室內衰減。目前可搭配 ALFA WiFi 6E 網卡（AWUS036AXM / AWUS036AXML），未來 WiFi 7 網卡推出後可直接升級使用。
+ARS-NT5B7 是 ALFA Network 為 WiFi 7（802.11be）設計的三頻偶極天線，完整支援 2.4 GHz / 5 GHz / 6 GHz 三個頻段。工作溫度高達 **-40°C ~ +85°C**（工業級），遠優於同類產品（通常 -10°C ~ +55°C）。6 GHz 增益達 **7 dBi** 為三頻中最高，有效補償短波長的室內衰減。目前可搭配 ALFA WiFi 6E 網路卡（AWUS036AXM / AWUS036AXML），未來 WiFi 7 網路卡推出後可直接升級使用。
 
 ## 產品特色
 
@@ -22,7 +22,7 @@ ARS-NT5B7 是 ALFA Network 為 WiFi 7（802.11be）設計的三頻偶極天線�
 - **全向輻射（Omni）**：360° 水平均勻覆蓋，安裝方便
 - **超輕量 20 g**：不影響裝置散熱，安裝靈活
 - **低 VSWR ≤ 2.0**：三頻均達標，射頻傳輸效率高
-- **向下相容 WiFi 6E / WiFi 6 / WiFi 5**：可立即搭配現有 ALFA 網卡使用
+- **向下相容 WiFi 6E / WiFi 6 / WiFi 5**：可立即搭配現有 ALFA 網路卡使用
 
 ## 技術規格
 
@@ -50,13 +50,13 @@ ARS-NT5B7 是 ALFA Network 為 WiFi 7（802.11be）設計的三頻偶極天線�
 <tr><td><a href="/zh-tw/products/alfa/awus036axml/"><strong>AWUS036AXML</strong></a></td><td>2.4 + 5 + 6 GHz</td><td>Wi-Fi 6E</td><td>2× RP-SMA</td><td>⭐ 三頻全支援（推薦）</td></tr>
 <tr><td><a href="/zh-tw/products/alfa/awus036ax/">AWUS036AX</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 6</td><td>2× RP-SMA</td><td>⚠️ 可用，6 GHz 無效</td></tr>
 <tr><td><a href="/zh-tw/products/alfa/awus036axer/">AWUS036AXER</a></td><td>2.4 + 5 GHz</td><td>Wi-Fi 6</td><td>2× RP-SMA</td><td>⚠️ 可用，6 GHz 無效</td></tr>
-<tr><td>未來 WiFi 7 ALFA 網卡</td><td>2.4 + 5 + 6 GHz</td><td>Wi-Fi 7</td><td>RP-SMA</td><td>🔜 待推出，向前相容</td></tr>
+<tr><td>未來 WiFi 7 ALFA 網路卡</td><td>2.4 + 5 + 6 GHz</td><td>Wi-Fi 7</td><td>RP-SMA</td><td>🔜 待推出，向前相容</td></tr>
 </tbody>
 </table>
 </div>
 
 {{< alert "circle-info" >}}
-ARS-NT5B7 的工業級溫度規格（-40°C ~ +85°C）也適合路由器、AP 裝置的外接升級天線用途，不限於 USB 網卡。
+ARS-NT5B7 的工業級溫度規格（-40°C ~ +85°C）也適合路由器、AP 裝置的外接升級天線用途，不限於 USB 網路卡。
 {{< /alert >}}
 
 ## 規格書下載

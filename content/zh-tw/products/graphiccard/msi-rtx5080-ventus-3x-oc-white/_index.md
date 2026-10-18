@@ -17,7 +17,7 @@ MSI RTX5080 16G VENTUS 3X OC WHITE 是 VENTUS 3X OC 的白色版本，提供與�
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080（超頻） |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 散熱 | VENTUS 三風扇（白色） |
 | 介面 | PCIe 5.0 x16 |
 

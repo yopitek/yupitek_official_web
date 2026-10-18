@@ -15,7 +15,7 @@ tags: ["Cloud Gateway", "光纖 WAN", "UniFi 控制器", "企業閘道"]
 - 專為光纖 ISP 連線優化的緊湊型閘道器，配備雙 SFP+ + 10 GbE RJ45 WAN
 - IDS/IPS 吞吐量 5 Gbps，搭配 55,000+ CyberSecure 特徵碼
 - 支援選配 NVMe SSD 儲存（最高 2 TB），整合 UniFi Protect NVR
-- 最多管理 50+ UniFi 裝置、500+ 同時連線用戶、50 個門禁集線器
+- 最多管理 50+ UniFi 裝置、500+ 同時連線使用者、50 個門禁集線器
 - 支援最多 6 路 WAN 埠，多 WAN 負載均衡與備援
 - 搭載 Cortex-A73 四核心處理器，效能優於前代
 - 具備 0.96" LCM 狀態顯示螢幕，藍牙初始設定
@@ -31,7 +31,7 @@ tags: ["Cloud Gateway", "光纖 WAN", "UniFi 控制器", "企業閘道"]
 | 重量 Weight | 不含 SSD：675 g / 含 SSD：734 g |
 | 管理裝置數 Managed UniFi Devices | 50+ |
 | 管理門禁集線器 Managed Access Hubs | 50 |
-| 同時連線用戶 Simultaneous Users | 500+ |
+| 同時連線使用者 Simultaneous Users | 500+ |
 | IDS/IPS 吞吐量 | 5 Gbps |
 | 最大 WAN 埠數 Max. WAN Port Count | 6 |
 | 預設 WAN 埠 Default WAN Ports | (1) 10G SFP+ + (1) 10 GbE RJ45 |

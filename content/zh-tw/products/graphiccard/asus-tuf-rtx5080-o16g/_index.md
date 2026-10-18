@@ -17,7 +17,7 @@ ASUS TUF Gaming RTX5080-O16G-GAMING 以軍規 MIL-STD-810H 認證的耐用性為
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080（超頻） |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 散熱 | 三風扇 Axial-tech 設計 |
 | 認證 | 軍規 MIL-STD-810H |
 | 介面 | PCIe 5.0 x16 |

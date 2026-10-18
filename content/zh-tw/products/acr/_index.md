@@ -21,7 +21,7 @@ Advanced Card Systems (ACS) 是全球知名的智慧卡讀卡機製造商，ACR 
     NFC Forum 認證讀卡機，支援 ISO 14443 A/B、MIFARE、FeliCa，USB 介面，適合 NFC 應用程式開發。
   {{< /card >}}
   {{< card title="ACR1552U USB NFC IV 讀卡機" href="/zh-tw/products/acr/acr1552u/" image="/images/products/acr/ACR1552U.png" >}}
-    第四代 USB NFC 讀卡機，增強型多協議支援，適合企業門禁與身份驗證整合。
+    第四代 USB NFC 讀卡機，增強型多協定支援，適合企業門禁與身份驗證整合。
   {{< /card >}}
 {{< /card-group >}}
 

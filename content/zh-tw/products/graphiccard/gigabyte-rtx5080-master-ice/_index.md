@@ -17,7 +17,7 @@ GIGABYTE RTX5080 MASTER ICE 16G 是 RTX5080 MASTER 的白色（ICE）版本，�
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080 |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 外觀 | 全白配色（ICE） |
 | 系列 | GIGABYTE MASTER 旗艦 |
 | 介面 | PCIe 5.0 x16 |

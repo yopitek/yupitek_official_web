@@ -12,13 +12,13 @@ showChildPages: false
 
 {{< card-group >}}
   {{< card title="ALFA Network" href="/zh-tw/products/alfa/" >}}
-    高功率 USB Wi-Fi 無線網卡，支援 Monitor Mode 與 Packet Injection，適用資安研究與滲透測試環境。
+    高功率 USB Wi-Fi 無線網路卡，支援 Monitor Mode 與 Packet Injection，適用資安研究與滲透測試環境。
   {{< /card >}}
   {{< card title="HAK5" href="/zh-tw/products/hak5/" >}}
     專業資安研究工具：WiFi Pineapple、Rubber Ducky、Bash Bunny 等，授權滲透測試首選。
   {{< /card >}}
   {{< card title="Flipper Zero" href="/zh-tw/products/flipperzero/" >}}
-    多功能無線安全研究裝置，支援 Sub-GHz、NFC、RFID、紅外線等協議研究。
+    多功能無線安全研究裝置，支援 Sub-GHz、NFC、RFID、紅外線等協定研究。
   {{< /card >}}
   {{< card title="Ubiquiti UniFi" href="/zh-tw/products/ubiquiti/" >}}
     企業級 Wi-Fi 7 無線網路解決方案，UniFi 生態系統整合管理。

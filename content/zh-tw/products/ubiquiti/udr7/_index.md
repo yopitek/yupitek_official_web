@@ -16,7 +16,7 @@ tags: ["Wi-Fi 7", "Dream Router", "一體化路由器", "家用", "UniFi 控制�
 - IDS/IPS 吞吐量 2.3 Gbps，搭配 20,000+ CyberSecure 特徵碼
 - 支援完整 UniFi 應用套件：Network / Protect / Access / Talk / Connect
 - 內建 NVR 儲存（64 GB microSD），可擴充 microSD
-- 最多管理 30+ UniFi 裝置、300+ 同時連線用戶
+- 最多管理 30+ UniFi 裝置、300+ 同時連線使用者
 - 支援多 WAN（最多 4 路）、SD-WAN、OSPF 動態路由
 - 具備 0.96" LCM 狀態顯示螢幕，藍牙初始設定
 
@@ -31,7 +31,7 @@ tags: ["Wi-Fi 7", "Dream Router", "一體化路由器", "家用", "UniFi 控制�
 | 重量 Weight | 1.1 kg (2.4 lb) |
 | 覆蓋範圍 Coverage Area | 160 m² (1,750 ft²) |
 | 管理裝置數 Managed UniFi Devices | 30+ |
-| 同時連線用戶 Simultaneous Users | 300+ |
+| 同時連線使用者 Simultaneous Users | 300+ |
 | IDS/IPS 吞吐量 | 2.3 Gbps |
 | 最大 WAN 埠數 Max. WAN Port Count | 4 |
 | 預設 WAN 埠 Default WAN Ports | (1) 10G SFP+ + (1) 2.5 GbE RJ45 |

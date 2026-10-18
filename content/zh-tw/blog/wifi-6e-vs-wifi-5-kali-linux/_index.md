@@ -16,8 +16,8 @@ faq:
     answer: "日常滲透測試選 AWUS036ACH，驅動成熟且社群資源豐富。需稽核 6 GHz Wi-Fi 6E 環境則選 AWUS036AXML。條件允許建議兩款皆備。"
   - question: "AWUS036AXML 的監聽模式在 Kali Linux 上穩定嗎？"
     answer: "需核心 6.1 以上並安裝最新 linux-firmware 套件。封包注入可用但建議正式委外測試前先行驗證，特定核心與韌體組合可能不穩定。"
-  - question: "2026 年滲透測試需要 6 GHz 網卡嗎？"
-    answer: "大多數測試案例仍以 2.4/5 GHz 為主。但若目標環境已部署 Wi-Fi 6E 存取點，6 GHz 網卡即為策略必備。"
+  - question: "2026 年滲透測試需要 6 GHz 網路卡嗎？"
+    answer: "大多數測試案例仍以 2.4/5 GHz 為主。但若目標環境已部署 Wi-Fi 6E 存取點，6 GHz 網路卡即為策略必備。"
   - question: "AWUS036ACH 的 RTL8812AU 驅動如何安裝？"
     answer: "從 aircrack-ng GitHub 複製 rtl8812au 儲存庫，執行 make dkms_install 安裝。DKMS 確保核心更新後驅動自動重建。"
 ---

@@ -58,7 +58,7 @@ UniFi Cloud Gateway Ultra 是 Ubiquiti 的精巧型桌上型雲端閘道器，�
 
 ### VPN 支援
 
-| 協議 | 支援 |
+| 協定 | 支援 |
 |------|------|
 | WireGuard | ✓ |
 | OpenVPN | ✓ |

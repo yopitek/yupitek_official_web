@@ -1,5 +1,5 @@
 ---
-title: "ALFA AWUS036AX — Wi-Fi 6 雙頻 USB 無線網卡"
+title: "ALFA AWUS036AX — Wi-Fi 6 雙頻 USB 無線網路卡"
 description: "ALFA AWUS036AX，Realtek RTL8832BU 晶片，Wi-Fi 6（802.11ax）雙頻 2.4+5 GHz，最高 1200 Mbps，USB 3.0。注意：此為 Wi-Fi 6，非 Wi-Fi 6E，不含 6 GHz 頻段。"
 date: 2026-03-12
 draft: false
@@ -15,7 +15,7 @@ AWUS036AX 採用 Realtek RTL8832BU 晶片，支援 Wi-Fi 6（802.11ax）雙頻�
 
 > ⚠️ **重要提示：** 此型號為 **Wi-Fi 6**，並非 Wi-Fi 6E，**不含 6 GHz 頻段**。若需 6 GHz 頻段，請選擇 AWUS036AXML 或 AWUS036AXM。社群版 rtl8852bu 驅動**不支援 Monitor mode**，不建議用於 Linux 資安研究。
 
-> **注意：** 所有 ALFA 無線網卡對 macOS 支援有限。macOS 11 Big Sur 以上及 Apple Silicon（M1/M2/M3）均**不支援**。最高支援版本為 Intel Mac 上的 macOS 10.15 Catalina。
+> **注意：** 所有 ALFA 無線網路卡對 macOS 支援有限。macOS 11 Big Sur 以上及 Apple Silicon（M1/M2/M3）均**不支援**。最高支援版本為 Intel Mac 上的 macOS 10.15 Catalina。
 
 ## 產品特色
 
@@ -67,7 +67,7 @@ AWUS036AX 採用 Realtek RTL8832BU 晶片，支援 Wi-Fi 6（802.11ax）雙頻�
 
 ## 包裝內容
 
-- 1× AWUS036AX 無線網卡
+- 1× AWUS036AX 無線網路卡
 - 2× 可拆卸雙頻天線
 
 ## 資源與連結
@@ -91,7 +91,7 @@ AWUS036AX 採用 Realtek RTL8832BU 晶片，支援 Wi-Fi 6（802.11ax）雙頻�
 
 ## 可搭配的天線配件
 
-所有 ALFA USB 無線網卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
+所有 ALFA USB 無線網路卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
 
 | 天線型號 | 頻段 | 增益 | 類型 |
 |---------|------|------|------|

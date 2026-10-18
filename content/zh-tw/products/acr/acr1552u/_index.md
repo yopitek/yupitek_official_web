@@ -1,6 +1,6 @@
 ---
 title: "ACS ACR1552U — USB NFC IV 讀卡機"
-description: "ACS ACR1552U，第四代 USB NFC 讀卡機，增強多協議支援，適合企業門禁管理、電子簽章及身份驗證整合。"
+description: "ACS ACR1552U，第四代 USB NFC 讀卡機，增強多協定支援，適合企業門禁管理、電子簽章及身份驗證整合。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -26,8 +26,8 @@ ACR1552U 是 ACS 符合 CCID 及 PC/SC 規範的 USB NFC IV 讀卡機，採用 1
 | SAM 插槽 | 1 × ISO 7816 Class A（5V），標準 SIM 尺寸 |
 | SAM 讀寫速度 | 13.4 Kbps – 1,250 Kbps |
 | SAM 時鐘頻率 | 5 MHz，最高 10 MHz |
-| SAM 協議 | T=0、T=1 |
-| 支援協議 | ISO/IEC 14443-A、-B，ISO/IEC 15693，ISO/IEC 18092 |
+| SAM 協定 | T=0、T=1 |
+| 支援協定 | ISO/IEC 14443-A、-B，ISO/IEC 15693，ISO/IEC 18092 |
 | LED | 使用者可控（可配置） |
 | 蜂鳴器 | 使用者可控（可配置） |
 | 工作溫度 | 0°C – 60°C，90% RH（非冷凝） |

@@ -1,5 +1,5 @@
 ---
-title: "ALFA Network 無線網卡"
+title: "ALFA Network 無線網路卡"
 description: "榆閤科技代理 ALFA Network 高功率 USB Wi-Fi 無線網路卡製造商，在全球資安研究社群中享有高度評價。"
 date: 2026-03-12
 draft: false
@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/alfa/banner-alfa.png"
 ---
 
-ALFA Network 是台灣知名無線網路設備、無線網路卡製造商，專精高功率 USB Wi-Fi 無線網卡，在全球資安研究社群中享有高度評價。
+ALFA Network 是台灣知名無線網路設備、無線網路卡製造商，專精高功率 USB Wi-Fi 無線網路卡，在全球資安研究社群中享有高度評價。
 
 ## 產品系列
 
@@ -73,7 +73,7 @@ ALFA Network 是台灣知名無線網路設備、無線網路卡製造商，專�
 <div style="margin: 1.75rem 0; padding: 1rem 1.25rem; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
   <div>
     <span style="font-size: 1rem; font-weight: 600;">📊 型號規格比較表</span><br/>
-    <span style="font-size: 0.85rem; color: var(--text-muted);">一頁比較全部 8 款 ALFA USB 無線網卡規格、監聽模式、Linux 驅動支援。</span>
+    <span style="font-size: 0.85rem; color: var(--text-muted);">一頁比較全部 8 款 ALFA USB 無線網路卡規格、監聽模式、Linux 驅動支援。</span>
   </div>
   <a href="/alfa_compare.html" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.5rem 1.1rem; background: #0ea5e9; color: #fff; border-radius: 6px; font-weight: 600; font-size: 0.88rem; white-space: nowrap; text-decoration: none;">🔍 查看完整比較表 →</a>
 </div>

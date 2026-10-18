@@ -17,7 +17,7 @@ MSI RTX5080 16G INSPIRE 3X OC 是 MSI INSPIRE 系列的 RTX 5080 顯示卡，採
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080（超頻） |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 散熱 | INSPIRE 三風扇 |
 | 介面 | PCIe 5.0 x16 |
 

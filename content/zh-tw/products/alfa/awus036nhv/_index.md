@@ -1,6 +1,6 @@
 ---
-title: "ALFA AWUS036NHV — N150 高功率 2.4GHz USB 無線網卡"
-description: "ALFA AWUS036NHV，N150 2.4GHz 高功率 USB 2.0 無線網卡，5 dBi RP-SMA 外接天線，適合長距離 2.4GHz 連線應用。"
+title: "ALFA AWUS036NHV — N150 高功率 2.4GHz USB 無線網路卡"
+description: "ALFA AWUS036NHV，N150 2.4GHz 高功率 USB 2.0 無線網路卡，5 dBi RP-SMA 外接天線，適合長距離 2.4GHz 連線應用。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -15,7 +15,7 @@ tags: ["N150", "2.4GHz", "高功率", "USB 2.0", "長距離"]
 
 ## 產品概述
 
-AWUS036NHV 是 ALFA 高功率 2.4GHz 單頻無線網卡，支援 IEEE 802.11 b/g/n，最高傳輸速率 150 Mbps。採用高功率設計（確切數值依地區法規），配備 5 dBi RP-SMA 外接天線，適合長距離 2.4GHz 無線連線應用及 Kali Linux 資安研究環境。
+AWUS036NHV 是 ALFA 高功率 2.4GHz 單頻無線網路卡，支援 IEEE 802.11 b/g/n，最高傳輸速率 150 Mbps。採用高功率設計（確切數值依地區法規），配備 5 dBi RP-SMA 外接天線，適合長距離 2.4GHz 無線連線應用及 Kali Linux 資安研究環境。
 
 ## 規格表
 
@@ -43,7 +43,7 @@ AWUS036NHV 是 ALFA 高功率 2.4GHz 單頻無線網卡，支援 IEEE 802.11 b/g
 
 ## 包裝內容
 
-- AWUS036NHV USB 無線網卡 × 1
+- AWUS036NHV USB 無線網路卡 × 1
 - 外接天線 × 1
 
 ## 驅動程式下載
@@ -61,7 +61,7 @@ AWUS036NHV 是 ALFA 高功率 2.4GHz 單頻無線網卡，支援 IEEE 802.11 b/g
 
 ## 可搭配的天線配件
 
-所有 ALFA USB 無線網卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
+所有 ALFA USB 無線網路卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
 
 | 天線型號 | 頻段 | 增益 | 類型 |
 |---------|------|------|------|

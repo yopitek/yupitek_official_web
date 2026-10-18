@@ -1,5 +1,5 @@
 ---
-title: "ALFA AWUS036AXML — Wi-Fi 6E USB-C 三頻無線網卡"
+title: "ALFA AWUS036AXML — Wi-Fi 6E USB-C 三頻無線網路卡"
 description: "ALFA AWUS036AXML，MediaTek MT7921AUN 晶片，Wi-Fi 6E 三頻（2.4/5/6 GHz），USB-C 介面，Bluetooth 5.2，支援 Kali Linux Monitor Mode。"
 date: 2026-03-12
 draft: false
@@ -24,7 +24,7 @@ faq:
 
 AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，支援 Wi-Fi 6E 三頻（2.4 GHz / 5 GHz / 6 GHz），最高傳輸速率達 3000 Mbps，並內建 Bluetooth 5.2。採用 USB-C 介面，附贈 2-in-1 USB-C/USB-A 傳輸線，完美適配現代筆電與桌機。2× RP-SMA 可拆卸天線搭配附贈螢幕夾架。
 
-> **注意：** 所有 ALFA 無線網卡對 macOS 支援有限。macOS 11 Big Sur 以上及 Apple Silicon（M1/M2/M3）均**不支援**。最高支援版本為 Intel Mac 上的 macOS 10.15 Catalina。
+> **注意：** 所有 ALFA 無線網路卡對 macOS 支援有限。macOS 11 Big Sur 以上及 Apple Silicon（M1/M2/M3）均**不支援**。最高支援版本為 Intel Mac 上的 macOS 10.15 Catalina。
 
 ## 產品特色
 
@@ -85,7 +85,7 @@ AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，支援 Wi-Fi 6E 三頻（2.4 GHz 
 
 ## 包裝內容
 
-- 1× AWUS036AXML 無線網卡
+- 1× AWUS036AXML 無線網路卡
 - 2× 可拆卸雙頻天線
 - 1× 2-in-1 USB-C/USB-A 傳輸線
 - 1× 螢幕夾架
@@ -112,7 +112,7 @@ AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，支援 Wi-Fi 6E 三頻（2.4 GHz 
 
 ## 可搭配的天線配件
 
-所有 ALFA USB 無線網卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
+所有 ALFA USB 無線網路卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
 
 | 天線型號 | 頻段 | 增益 | 類型 |
 |---------|------|------|------|

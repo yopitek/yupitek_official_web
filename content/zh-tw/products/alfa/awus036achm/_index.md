@@ -1,5 +1,5 @@
 ---
-title: "ALFA AWUS036ACHM — AC433 雙頻輕巧型 USB 無線網卡"
+title: "ALFA AWUS036ACHM — AC433 雙頻輕巧型 USB 無線網路卡"
 description: "ALFA AWUS036ACHM，MediaTek MT7610U，AC433 雙頻，USB 2.0，單天線輕巧設計，支援 Monitor Mode，適合攜帶使用。"
 date: 2026-03-12
 draft: false
@@ -50,7 +50,7 @@ AWUS036ACHM 採用 MediaTek MT7610U 晶片，支援 IEEE 802.11ac 雙頻，最�
 
 ## 包裝內容
 
-- AWUS036ACHM USB 無線網卡 × 1
+- AWUS036ACHM USB 無線網路卡 × 1
 - 雙頻天線 × 1
 - USB 連接線（1 m）× 1
 - 快速安裝指南 × 1
@@ -71,7 +71,7 @@ AWUS036ACHM 採用 MediaTek MT7610U 晶片，支援 IEEE 802.11ac 雙頻，最�
 
 ## 可搭配的天線配件
 
-所有 ALFA USB 無線網卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
+所有 ALFA USB 無線網路卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
 
 | 天線型號 | 頻段 | 增益 | 類型 |
 |---------|------|------|------|

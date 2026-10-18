@@ -32,7 +32,7 @@ tags: ["Wi-Fi 7", "長距離", "高增益天線", "倉庫", "工廠"]
 | WiFi 標準 WiFi Standard | WiFi 7 (802.11be) |
 | 空間串流 Spatial Streams | 5（3×3 + 2×2，不含 6 GHz） |
 | 覆蓋範圍 Coverage Area | 160 m² (1,750 ft²) |
-| 最大用戶數 Max. Client Count | 300+ |
+| 最大使用者數 Max. Client Count | 300+ |
 | 上行埠 Uplink | 2.5 GbE RJ45 |
 | 供電方式 Power Method | PoE (42.5–57V DC) |
 | 最大功耗 Max. Power Consumption | 14W |

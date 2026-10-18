@@ -18,10 +18,10 @@ faq:
     answer: "使用 ModemManager 指令：先 mmcli -m 0 --location-enable-gps-raw，再用 --location-get 抓取座標。請確定 GNSS 天線有接好。"
 ---
 
-想在 Ubuntu、Debian 或 Linux Mint 上安裝 Sierra Wireless 的模組（EM7455、EM7565、MC7455、EM919x）嗎？其實 Linux 原生就支援這些設備，只要你知道怎麼安裝對的軟體包（像是 ModemManager 跟 libqmi-utils）。這篇文章從硬體怎麼接、驅動怎麼裝、怎麼撥號上網，一路講到怎麼把 GNSS 定位功能開起來。不管你是要做無人機還是工業電腦，照著做準沒錯。
+想在 Ubuntu、Debian 或 Linux Mint 上安裝 Sierra Wireless 的模組（EM7455、EM7565、MC7455、EM919x）嗎？其實 Linux 原生就支援這些設備，只要你知道怎麼安裝對的套件（像是 ModemManager 跟 libqmi-utils）。這篇文章從硬體怎麼接、驅動怎麼裝、怎麼撥號上網，一路講到怎麼把 GNSS 定位功能開起來。不管你是要做無人機還是工業電腦，照著做準沒錯。
 
 {{< tldr >}}
-想在 Ubuntu、Debian 或 Linux Mint 上安裝 Sierra Wireless 的模組（EM7455、EM7565、MC7455、EM919x）嗎？其實 Linux 原生就支援這些設備，只要安裝對的軟體包（ModemManager 跟 libqmi-utils）。從硬體怎麼接、驅動怎麼裝、怎麼撥號上網，一路講到怎麼把 GNSS 定位功能開起來。不管你是要做無人機還是工業電腦，照著做準沒錯。
+想在 Ubuntu、Debian 或 Linux Mint 上安裝 Sierra Wireless 的模組（EM7455、EM7565、MC7455、EM919x）嗎？其實 Linux 原生就支援這些設備，只要安裝對的套件（ModemManager 跟 libqmi-utils）。從硬體怎麼接、驅動怎麼裝、怎麼撥號上網，一路講到怎麼把 GNSS 定位功能開起來。不管你是要做無人機還是工業電腦，照著做準沒錯。
 {{< /tldr >}}
 
 **一句話總結：在 Linux 裝這些 Sierra 模組超簡單。只要用 `apt` 裝好 `modemmanager` 跟相關工具，就能用 NetworkManager 連上網路，甚至連 GPS 定位都能輕鬆讀出來！**
@@ -53,7 +53,7 @@ faq:
 
 在 Ubuntu / Debian / Linux Mint 裡面，你不用自己寫扣編譯驅動，套件庫都幫你準備好了。
 
-打開終端機，敲這兩行：
+開啟終端機，敲這兩行：
 ```bash
 sudo apt update
 sudo apt install modemmanager libqmi-utils libmbim-utils
@@ -62,13 +62,13 @@ sudo apt install modemmanager libqmi-utils libmbim-utils
 ```bash
 systemctl status ModemManager
 ```
-有了這幾個工具，你的 Linux 就能看得懂這張 4G/5G 網卡了。
+有了這幾個工具，你的 Linux 就能看得懂這張 4G/5G 網路卡了。
 
 ---
 
-## 步驟二：確認系統有抓到網卡
+## 步驟二：確認系統有抓到網路卡
 
-把網卡插好、開機後，用下面三個指令檢查：
+把網路卡插好、開機後，用下面三個指令檢查：
 
 1. **查 USB 硬體：**
    ```bash
@@ -136,9 +136,9 @@ mmcli -m 0 --location-get
 
 ## 常見的踩坑與急救
 
-1. **`mmcli -L` 什麼都沒顯示**：可能是 `ModemManager` 當掉了，或者你的 USB 供電根本推不動網卡。
+1. **`mmcli -L` 什麼都沒顯示**：可能是 `ModemManager` 當掉了，或者你的 USB 供電根本推不動網路卡。
 2. **GPS 定位一直失敗**：你是不是把 GPS 天線插到 Main 或 Aux 上了？GNSS 有自己專屬的洞！
-3. **EM919x 速度上不去**：它是 5G 網卡，支援 USB 3.1 Gen 2 甚至 PCIe Gen 3。如果你把它插在 USB 2.0 的孔，官方是不保證效能的。
+3. **EM919x 速度上不去**：它是 5G 網路卡，支援 USB 3.1 Gen 2 甚至 PCIe Gen 3。如果你把它插在 USB 2.0 的孔，官方是不保證效能的。
 
 ## 結論
 

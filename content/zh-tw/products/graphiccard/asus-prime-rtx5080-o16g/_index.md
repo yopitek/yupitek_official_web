@@ -17,7 +17,7 @@ ASUS PRIME RTX5080-O16G 是 PRIME RTX5080-16G 的超頻（OC）版本，出廠�
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080（超頻） |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 介面 | PCIe 5.0 x16 |
 | 輸出 | 3× DisplayPort 2.1 + 1× HDMI 2.1 |
 

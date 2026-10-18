@@ -17,7 +17,7 @@ ASUS PRIME RTX5080-16G 採用 NVIDIA GeForce RTX 5080 GPU，搭載 16GB GDDR7 �
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080 |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 介面 | PCIe 5.0 x16 |
 | 輸出 | 3× DisplayPort 2.1 + 1× HDMI 2.1 |
 | 供電接頭 | 16-pin（PCIe 5.0） |

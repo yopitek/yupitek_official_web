@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/mellanox/ai-generated/hero/mellanox-hero-banner.png"
 ---
 
-NVIDIA Mellanox 是高效能運算 (HPC)、AI 數據叢集、超大型雲端平台、企業級儲存 (NVMe-oF) 以及低延遲金融系統的全球產業標竿。Yupitek 提供完整的 Mellanox 高速網路卡、智慧型 DPU、主動式/被動式線纜與高密度交換器等全系列產品。
+NVIDIA Mellanox 是高效能運算 (HPC)、AI 資料叢集、超大型雲端平台、企業級儲存 (NVMe-oF) 以及低延遲金融系統的全球產業標竿。Yupitek 提供完整的 Mellanox 高速網路卡、智慧型 DPU、主動式/被動式線纜與高密度交換器等全系列產品。
 
 ---
 
@@ -20,7 +20,7 @@ NVIDIA Mellanox 是高效能運算 (HPC)、AI 數據叢集、超大型雲端平�
     提供 10G 到 400G 的高速網路介面卡。支援 PCIe Gen3/Gen4/Gen5，以及單/雙埠 SFP28、QSFP28、QSFP56、OSFP 等多種介面規格。
   {{< /card >}}
   {{< card title="BlueField DPU" href="/zh-tw/products/mellanox/dpu/" image="/images/products/mellanox/official/dpu/bluefield2-dpu-official.jpg" >}}
-    整合 ARM 核心與 ConnectX 網路引擎的數據處理器，適用於硬體安全加速、儲存卸載及軟體定義網路 (SDN)。
+    整合 ARM 核心與 ConnectX 網路引擎的資料處理器，適用於硬體安全加速、儲存卸載及軟體定義網路 (SDN)。
   {{< /card >}}
   {{< card title="光收發模組" href="/zh-tw/products/mellanox/transceiver/" image="/images/products/mellanox/ai-generated/qsfp28-100g-transceiver.jpg" >}}
     Mellanox LinkX 光收發模組，支援 25G、100G、400G 到 800G 速率，提供多模或單模光纖的 SR、SR4、LR4 等多種規格選擇。
@@ -44,7 +44,7 @@ NVIDIA Mellanox 是高效能運算 (HPC)、AI 數據叢集、超大型雲端平�
 ## 為什麼選擇 Mellanox / NVIDIA 網路產品？
 
 ### 1. 業界領先的極低延遲
-Mellanox 網路卡可達到次微秒 (sub-microsecond) 等級的端對端延遲，是用戶進行高頻交易 (HFT) 和大規模 AI 訓練叢集等分秒必爭場景的首選。
+Mellanox 網路卡可達到次微秒 (sub-microsecond) 等級的端對端延遲，是使用者進行高頻交易 (HFT) 和大規模 AI 訓練叢集等分秒必爭場景的首選。
 
 ### 2. 硬體卸載 RDMA (RoCE)
 藉由支援收斂式乙太網路上的遠端直接記憶體存取 (RoCEv2) 或 InfiniBand，資料能直接在伺服器記憶體空間之間傳輸，完全繞過作業系統的 TCP/IP 堆疊與 CPU 處理。這能大幅降低延遲，並將 CPU 運算資源釋放給應用程式工作負載使用。

@@ -17,7 +17,7 @@ ASUS ProArt RTX5080 O16G 是專為創作者設計的 RTX 5080 顯示卡，在標
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080（超頻） |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 設計定位 | 創作者專業用途 |
 | 介面 | PCIe 5.0 x16 |
 

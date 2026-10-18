@@ -31,7 +31,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "USB Powered", "Plug and Pl
 YPB05 的參數（如 UUID、Major、Minor、廣播功率和間隔時間）可透過 **BeaconSET+** 進行無線設定：
 1. 下載並安裝 **BeaconSET+**。
 2. 開啟手機藍牙與定位服務，掃描並連接 YPB05。
-3. 輸入預設密碼進行編輯與保存設定。
+3. 輸入預設密碼進行編輯與儲存設定。
 
 ## 技術規格
 

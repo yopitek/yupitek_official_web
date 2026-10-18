@@ -17,7 +17,7 @@ ASUS ROG ASTRAL RTX5080 O16G 是 ROG 系列的頂級旗艦顯示卡，採用 ROG
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080（頂級超頻） |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 散熱 | ROG ASTRAL 旗艦散熱系統 |
 | 介面 | PCIe 5.0 x16 |
 

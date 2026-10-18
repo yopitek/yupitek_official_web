@@ -32,7 +32,7 @@ tags: ["Wi-Fi 7", "10G", "高速上行", "企業 AP"]
 | WiFi 標準 WiFi Standard | WiFi 7 (802.11be) |
 | 空間串流 Spatial Streams | 6 (2+2+2) |
 | 覆蓋範圍 Coverage Area | 140 m² (1,500 ft²) |
-| 最大用戶數 Max. Client Count | 300+ |
+| 最大使用者數 Max. Client Count | 300+ |
 | 上行埠 Uplink | 10 GbE RJ45 |
 | 供電方式 Power Method | PoE+ (42.5–57V DC) |
 | 最大功耗 Max. Power Consumption | 22W |

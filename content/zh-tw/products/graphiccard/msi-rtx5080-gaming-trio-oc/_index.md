@@ -17,7 +17,7 @@ MSI RTX5080 16G GAMING TRIO OC 是 MSI 的 RTX 5080 旗艦機型，採用 GAMING
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080（超頻） |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 散熱 | GAMING TRIO 三風扇 |
 | 介面 | PCIe 5.0 x16 |
 

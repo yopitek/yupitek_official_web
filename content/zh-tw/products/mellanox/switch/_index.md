@@ -54,15 +54,15 @@ NVIDIA Mellanox InfiniBand 交換器是現代 AI 訓練叢集與高效能運算 
 - **超收 (例如 2:1 收容比)**：透過減少連至 Spine 交換器的鏈路數量來降低建置成本，適合計算通訊較為局部的應用負載。
 
 ### 2. 軌道優化 (Rail-Optimized) AI 網路
-在多 GPU 節點中 (如搭載 8 顆 GPU 的 NVIDIA HGX H100)，每顆 GPU 都配有專屬的 ConnectX 網路卡。軌道優化技術將所有伺服器上的「GPU 1」網卡連接到專用的「軌道交換器 1 (Rail Switch 1)」，將所有「GPU 2」連接到「軌道交換器 2」，依此類推。這種設計將深度學習通訊庫 (NCCL) 的環狀通訊模式 (Ring-communication) 直接對應到實體交換器上，能最大程度降低延遲。
+在多 GPU 節點中 (如搭載 8 顆 GPU 的 NVIDIA HGX H100)，每顆 GPU 都配有專屬的 ConnectX 網路卡。軌道優化技術將所有伺服器上的「GPU 1」網路卡連接到專用的「軌道交換器 1 (Rail Switch 1)」，將所有「GPU 2」連接到「軌道交換器 2」，依此類推。這種設計將深度學習通訊庫 (NCCL) 的環狀通訊模式 (Ring-communication) 直接對應到實體交換器上，能最大程度降低延遲。
 
 ---
 
 ## 網管 vs 非網管交換器與子網路管理程式 (Subnet Manager)
 
 與乙太網路透過 ARP 隨插即用不同，InfiniBand 網路**若沒有啟動的子網路管理程式 (Subnet Manager, SM)，將無法傳輸任何封包**。SM 負責偵測網路拓撲、分配區域識別碼 (LID) 並計算路由路徑。
-- **網管型交換器 (Managed Switches)**：內建運行 MLNX-OS/Onyx 的 CPU，並提供嵌入式子網路管理程式。適合獨立運作的中小型叢集 (約 36 個節點以內)。
-- **非網管型交換器 (Unmanaged Switches)**：具備極低的延遲，但無內建 CPU。需要透過主機伺服器運行外部 SM (如 OpenSM)，或由同網路中的其他網管型交換器來管理。
+- **網管型交換器 (Managed Switches)**：內建執行 MLNX-OS/Onyx 的 CPU，並提供嵌入式子網路管理程式。適合獨立運作的中小型叢集 (約 36 個節點以內)。
+- **非網管型交換器 (Unmanaged Switches)**：具備極低的延遲，但無內建 CPU。需要透過主機伺服器執行外部 SM (如 OpenSM)，或由同網路中的其他網管型交換器來管理。
 
 ---
 

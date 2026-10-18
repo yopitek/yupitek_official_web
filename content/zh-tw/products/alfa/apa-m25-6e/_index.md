@@ -22,7 +22,7 @@ APA-M25-6E 是 ALFA Network 針對 WiFi 6E 設計的三頻室內指向天線，�
 - **6 GHz 達 9 dBi 增益**：補償 6 GHz 短波長的室內衰減
 - **指向性面板設計**：水平波束角 60°，有效降低多路徑干擾
 - **直接取代 APA-M25**：相同外觀尺寸，無縫升級
-- **RP-SMA Plug 標準接頭**：與所有 ALFA WiFi 6E 網卡相容
+- **RP-SMA Plug 標準接頭**：與所有 ALFA WiFi 6E 網路卡相容
 
 ## 技術規格
 

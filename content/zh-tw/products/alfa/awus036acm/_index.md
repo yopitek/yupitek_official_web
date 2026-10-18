@@ -1,5 +1,5 @@
 ---
-title: "ALFA AWUS036ACM — AC1200 雙頻 USB 3.0 無線網卡（Linux 免驅首選）"
+title: "ALFA AWUS036ACM — AC1200 雙頻 USB 3.0 無線網路卡（Linux 免驅首選）"
 description: "ALFA AWUS036ACM，MediaTek MT7612U，AC1200 雙頻 USB 3.0，內建 Linux 核心驅動（Kernel 4.19+），無需手動安裝，支援 Monitor Mode、Packet Injection 與 VIF，Raspberry Pi 首選。"
 date: 2026-03-12
 draft: false
@@ -22,9 +22,9 @@ faq:
 
 ## 產品概述
 
-AWUS036ACM 是 Linux 使用者免設定上手的首選網卡。其 MediaTek MT7612U 晶片組自 Linux 核心 4.19 版本起已內建於核心中，意味著在 Ubuntu、Kali Linux、Raspberry Pi OS、Arch Linux 及幾乎所有現代發行版上，無需編譯任何程式碼即可即插即用。外觀尺寸與天線配置與 AWUS036ACH 完全相同，但採用 MediaTek 更穩定的核心內建驅動。Monitor Mode、Packet Injection 與 VIF（虛擬介面）均完整支援。
+AWUS036ACM 是 Linux 使用者免設定上手的首選網路卡。其 MediaTek MT7612U 晶片組自 Linux 核心 4.19 版本起已內建於核心中，意味著在 Ubuntu、Kali Linux、Raspberry Pi OS、Arch Linux 及幾乎所有現代發行版上，無需編譯任何程式碼即可即插即用。外觀尺寸與天線配置與 AWUS036ACH 完全相同，但採用 MediaTek 更穩定的核心內建驅動。Monitor Mode、Packet Injection 與 VIF（虛擬介面）均完整支援。
 
-> **macOS 注意事項：** 所有 ALFA 網卡對 macOS 支援有限。macOS 11+ 及 Apple Silicon（M1/M2/M3）均**不支援**。AWUS036ACM 最高支援 macOS 10.12 Sierra（比其他型號更嚴格）。
+> **macOS 注意事項：** 所有 ALFA 網路卡對 macOS 支援有限。macOS 11+ 及 Apple Silicon（M1/M2/M3）均**不支援**。AWUS036ACM 最高支援 macOS 10.12 Sierra（比其他型號更嚴格）。
 
 ## 產品特色
 
@@ -72,7 +72,7 @@ AWUS036ACM 是 Linux 使用者免設定上手的首選網卡。其 MediaTek MT76
 
 | 硬體 | 狀態 | 備註 |
 |------|------|------|
-| Raspberry Pi 3B+/4/5 | ✅ 極佳 | Raspberry Pi OS 即插即用，無需安裝驅動，ALFA 網卡中 Pi 首選 |
+| Raspberry Pi 3B+/4/5 | ✅ 極佳 | Raspberry Pi OS 即插即用，無需安裝驅動，ALFA 網路卡中 Pi 首選 |
 | 桌機/筆電 | ✅ 支援 | 標準 USB-A，附贈延長線 |
 | Mac（Intel）| ⚠️ 有限支援 | 僅限 macOS 10.7–10.12 |
 
@@ -88,7 +88,7 @@ AWUS036ACM 是 Linux 使用者免設定上手的首選網卡。其 MediaTek MT76
 
 ## 包裝內容
 
-- 1× AWUS036ACM 無線網卡
+- 1× AWUS036ACM 無線網路卡
 - 2× 可拆卸 5 dBi 雙頻偶極天線
 - 1× USB 3.0 延長線
 - 1× 驅動程式光碟（Windows）
@@ -115,7 +115,7 @@ AWUS036ACM 是 Linux 使用者免設定上手的首選網卡。其 MediaTek MT76
 
 ## 可搭配的天線配件
 
-所有 ALFA USB 無線網卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
+所有 ALFA USB 無線網路卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
 
 | 天線型號 | 頻段 | 增益 | 類型 |
 |---------|------|------|------|

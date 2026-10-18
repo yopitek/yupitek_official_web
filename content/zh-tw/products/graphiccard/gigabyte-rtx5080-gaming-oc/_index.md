@@ -17,7 +17,7 @@ GIGABYTE RTX5080 GAMING OC 16G 採用 GIGABYTE 三風扇 WINDFORCE 散熱系統�
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080（超頻） |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 散熱 | WINDFORCE 三風扇 |
 | 介面 | PCIe 5.0 x16 |
 

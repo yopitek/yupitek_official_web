@@ -1,5 +1,5 @@
 ---
-title: "ALFA AWUS036AXER — Wi-Fi 6 超輕薄 Nano 無線網卡"
+title: "ALFA AWUS036AXER — Wi-Fi 6 超輕薄 Nano 無線網路卡"
 description: "ALFA AWUS036AXER，Realtek RTL8832BU 晶片，Wi-Fi 6 雙頻，Nano 超輕薄設計（~65×24×10mm），適合日常使用。不建議用於 Kali Linux 資安研究。"
 date: 2026-03-12
 draft: false
@@ -15,7 +15,7 @@ AWUS036AXER 採用 Realtek RTL8832BU 晶片，支援 Wi-Fi 6（802.11ax）雙頻
 
 > ⚠️ **注意：** Nano 外型設計，**無 RP-SMA 接頭**，天線無法升級。社群版 rtl8852bu 驅動**不支援 Monitor mode**，**不建議用於 Kali Linux 或資安研究**。
 
-> **注意：** 所有 ALFA 無線網卡對 macOS 支援有限。macOS 11 Big Sur 以上及 Apple Silicon（M1/M2/M3）均**不支援**。最高支援版本為 Intel Mac 上的 macOS 10.15 Catalina。
+> **注意：** 所有 ALFA 無線網路卡對 macOS 支援有限。macOS 11 Big Sur 以上及 Apple Silicon（M1/M2/M3）均**不支援**。最高支援版本為 Intel Mac 上的 macOS 10.15 Catalina。
 
 ## 產品特色
 
@@ -66,7 +66,7 @@ AWUS036AXER 採用 Realtek RTL8832BU 晶片，支援 Wi-Fi 6（802.11ax）雙頻
 
 ## 包裝內容
 
-- 1× AWUS036AXER Nano 無線網卡
+- 1× AWUS036AXER Nano 無線網路卡
 
 ## 資源與連結
 
@@ -89,7 +89,7 @@ AWUS036AXER 採用 Realtek RTL8832BU 晶片，支援 Wi-Fi 6（802.11ax）雙頻
 
 ## 可搭配的天線配件
 
-所有 ALFA USB 無線網卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
+所有 ALFA USB 無線網路卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
 
 | 天線型號 | 頻段 | 增益 | 類型 |
 |---------|------|------|------|

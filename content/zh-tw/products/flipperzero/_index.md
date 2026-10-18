@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero 多功能無線安全研究裝置"
-description: "榆閤科技代理 Flipper Zero，支援 Sub-GHz、NFC、RFID、紅外線、藍牙等無線協議研究，適合資安教育與合法研究。"
+description: "榆閤科技代理 Flipper Zero，支援 Sub-GHz、NFC、RFID、紅外線、藍牙等無線協定研究，適合資安教育與合法研究。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 ---
 
-Flipper Zero 是一款開源多功能無線安全研究工具，支援多種無線通訊協議，被全球資安研究社群廣泛用於協議研究、資安教育及合法測試。
+Flipper Zero 是一款開源多功能無線安全研究工具，支援多種無線通訊協定，被全球資安研究社群廣泛用於協定研究、資安教育及合法測試。
 
 ## 產品系列
 

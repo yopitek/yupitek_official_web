@@ -17,7 +17,7 @@ ASUS RTX5080 O16G NOCTUA 是 ASUS 與奧地利頂級靜音散熱品牌 Noctua �
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080（超頻） |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 散熱風扇 | Noctua 工業級靜音風扇 |
 | 特色 | 極致靜音設計 |
 | 介面 | PCIe 5.0 x16 |

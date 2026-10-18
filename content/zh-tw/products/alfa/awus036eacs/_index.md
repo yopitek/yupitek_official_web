@@ -1,5 +1,5 @@
 ---
-title: "ALFA AWUS036EACS — AC600 + Bluetooth 4.2 迷你 USB 無線網卡"
+title: "ALFA AWUS036EACS — AC600 + Bluetooth 4.2 迷你 USB 無線網路卡"
 description: "ALFA AWUS036EACS，Realtek RTL8821CU，AC600 雙頻，USB 2.0 Nano 超輕薄，Bluetooth 4.2，適合 Windows 家用環境，不建議用於 Linux 或資安研究。"
 date: 2026-03-12
 draft: false
@@ -11,7 +11,7 @@ tags: ["Wi-Fi 5", "AC600", "USB 2.0", "Nano", "Bluetooth 4.2", "家用", "Window
 
 ## 產品概述
 
-AWUS036EACS 是 Alfa Network 專為家用與辦公室設計的超小型 WiFi + Bluetooth 複合型 USB 無線網卡。採用 Realtek RTL8821CU 晶片，整合 AC600 雙頻 WiFi 與 Bluetooth 4.2，Nano 機身設計插入 USB 埠後幾乎不佔空間。Windows 系統內建驅動支援，即插即用。支援 Soft AP 模式，可作為 WiFi 熱點分享網路。
+AWUS036EACS 是 Alfa Network 專為家用與辦公室設計的超小型 WiFi + Bluetooth 複合型 USB 無線網路卡。採用 Realtek RTL8821CU 晶片，整合 AC600 雙頻 WiFi 與 Bluetooth 4.2，Nano 機身設計插入 USB 埠後幾乎不佔空間。Windows 系統內建驅動支援，即插即用。支援 Soft AP 模式，可作為 WiFi 熱點分享網路。
 
 > ⚠️ **注意：** AWUS036EACS 為 Windows 家用機款。RTL8821CU 晶片在 Linux 社群驅動支援不佳，**不建議用於 Linux、Kali Linux 或 Raspberry Pi 環境**。無 RP-SMA 接頭，天線無法升級。
 
@@ -75,7 +75,7 @@ AWUS036EACS 是 Alfa Network 專為家用與辦公室設計的超小型 WiFi + B
 
 ## 包裝內容
 
-- 1× AWUS036EACS Nano 無線網卡
+- 1× AWUS036EACS Nano 無線網路卡
 
 ## 資源與連結
 
@@ -96,7 +96,7 @@ AWUS036EACS 是 Alfa Network 專為家用與辦公室設計的超小型 WiFi + B
 
 ## 可搭配的天線配件
 
-所有 ALFA USB 無線網卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
+所有 ALFA USB 無線網路卡均採用標準 RP-SMA 接頭，可搭配以下外接天線提升訊號範圍與增益：
 
 | 天線型號 | 頻段 | 增益 | 類型 |
 |---------|------|------|------|

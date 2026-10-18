@@ -17,7 +17,7 @@ GIGABYTE RTX5080 MASTER 16G 是 GIGABYTE 的 RTX 5080 旗艦機型，MASTER 系�
 | 項目 | 規格 |
 |------|------|
 | GPU | NVIDIA GeForce RTX 5080 |
-| 顯存 | 16GB GDDR7 |
+| 顯示記憶體 | 16GB GDDR7 |
 | 系列 | GIGABYTE MASTER 旗艦 |
 | 介面 | PCIe 5.0 x16 |
 

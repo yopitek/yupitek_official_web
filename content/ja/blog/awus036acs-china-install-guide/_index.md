@@ -16,22 +16,22 @@ author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "AWUS036ACSはどのチップを使っていますか？AWUS036ACHと同じですか？"
-    answer: "Realtek RTL8811AUチップを採用し、RTL8812AUと同じドライバーパッケージを共有しています。"
+    answer: "Realtek RTL8811AUチップを採用しています。RTL8812AUとはドライバーが異なり、コミュニティ版の8821auドライバー（morrownr/8821au-20210708、モジュール名 `8821au`）が必要です。"
   - question: "AWUS036ACSはモニターモードをサポートしていますか？"
     answer: "サポートしています。RTL8811AUはモニターモードとパケットインジェクションを完全にサポートし、セキュリティリサーチに経済的な選択肢です。"
   - question: "中国でAWUS036ACSをインストールするのにVPNは必要ですか？"
-    answer: "不要です。KaliではaptでDKMSドライバーをインストールし、Ubuntu/DebianではGiteeからソースコードをダウンロードしてコンパイルするだけです。"
+    answer: "不要です。どのディストリビューションでも、Giteeのソースミラーから install-driver.sh で8821au DKMSドライバーをビルドします。"
   - question: "AWUS036ACSのUSB IDは何ですか？"
     answer: "Realtek RTL8811AUのUSB IDは0bda:0811で、lsusbで確認できます。"
   - question: "Kali LinuxでAWUS036ACSドライバーをインストールするコマンドは？"
-    answer: "Kaliではsudo apt install realtek-rtl88xxau-dkmsを直接実行してドライバーをインストールできます。"
+    answer: "ビルドツールをインストールし、8821auドライバー（morrownr/8821au-20210708 またはそのGiteeミラー）をクローンして `sudo sh install-driver.sh` を実行してください。aptパッケージ realtek-rtl88xxau-dkms はRTL8812AU用で、このアダプターには使えません。"
 ---
 
 AWUS036ACSは、ALFAのコンパクトなデュアルバンド・セキュリティリサーチ用アダプターです。搭載されているRTL8811AUチップは、Kali Linuxでモニターモードやパケットインジェクションをフルサポートしていますが、ドライバがカーネルに含まれていないため、ソースからコンパイルする必要があります。中国ではGitHubへのアクセスが制限されていることが多いため、このガイドでは国内のGiteeミラーのみを使用します。GitHubへのアクセスは一切不要ですので、安心してくださいね。
 
 
 {{< tldr >}}
-AWUS036ACSはRTL8811AUチップを採用し、KaliではaptでDKMSドライバーをインストール、Ubuntu/DebianではGiteeからコンパイル、モニターモードとパケットインジェクションをサポートします。
+AWUS036ACSはRTL8811AUチップを採用しています。どのディストリビューションでも、Giteeミラーから install-driver.sh で8821au DKMSドライバーをビルドします。モニターモードとパケットインジェクションに対応しています。
 {{< /tldr >}}
 
 始める前に、以下のものが手元にあるか確認しましょう：
@@ -126,10 +126,10 @@ sudo reboot
 再起動後、ドライバが読み込まれているか確認します。
 
 ```bash
-lsmod | grep 88XXau
+lsmod | grep 8821au
 ```
 
-`88XXau` モジュールが表示されれば成功です。次に、インターフェースが表示されるか確認しましょう。
+`8821au` モジュールが表示されれば成功です。次に、インターフェースが表示されるか確認しましょう。
 
 ```bash
 iwconfig
@@ -422,4 +422,4 @@ sudo aireplay-ng --test wlan1mon
 1. [aircrack-ng公式ドキュメント](https://www.aircrack-ng.org/)
 2. [ALFA Network公式ウェブサイト](https://www.alfa.com.tw/)
 3. [Kali Linux公式ドキュメント](https://www.kali.org/docs/)
-4. [Gitee rtl8812auミラー](https://gitee.com/mirrors/rtl8812au)
+4. [Gitee 8821auミラー](https://gitee.com/mirrors/8821au)

@@ -18,26 +18,26 @@ faq:
   - question: "AWUS036AXER 用什麼晶片？跟 AWUS036AX 一樣嗎？"
     answer: "同樣採用 Realtek RTL8832BU 晶片，支援 WiFi 6，但體積更小更便攜。"
   - question: "AWUS036AXER 在 Ubuntu 24.04 上需要安裝驅動嗎？"
-    answer: "不需要，Ubuntu 24.04 核心已原生支援，插上即用。"
+    answer: "需要。RTL8832BU 不在 Ubuntu 24.04 核心中，請透過 DKMS 編譯一次社群版 rtl8852bu 驅動（morrownr/rtl8852bu-20250826），之後核心更新時會自動重新編譯。"
   - question: "AWUS036AXER 適合做無線安全研究嗎？"
-    answer: "較不適合，RTL8832BU 的監聽模式支援有限，建議改用 AWUS036ACM 或 AWUS036ACH。"
+    answer: "不適合。社群版 rtl8852bu 驅動不支援 Monitor mode 與封包注入，建議改用核心內建 MediaTek 驅動的 AWUS036ACM。"
   - question: "AWUS036AXER 的 USB ID 是多少？"
     answer: "Realtek RTL8832BU 的 USB ID 為 0bda:885a，用 lsusb 可確認。"
   - question: "在中國安裝 AWUS036AXER 需要翻牆嗎？"
     answer: "不需要，從 Gitee 下載 rtl8852bu 源碼並用國內鏡像安裝編譯工具即可。"
 ---
 
-ALFA AWUS036AXER 是 RTL8832BU 迷你 WiFi 6 網卡，Ubuntu 24.04 核心內建即插即用，其他系統從 Gitee 下載源碼編譯安裝。
+AWUS036AXER 的 RTL8832BU 晶片沒有 Linux 核心內建驅動，因此在所有發行版（包括 Ubuntu 24.04）上都需要透過 DKMS 編譯一次社群版 rtl8852bu 驅動。本指南使用 Gitee 鏡像，不需要連線 GitHub。此驅動不支援 Monitor mode。
 
 {{< tldr >}}
-AWUS036AXER 採用 RTL8832BU 晶片，迷你便攜 WiFi 6 網卡，Ubuntu 24.04 免驅即用，其他系統從 Gitee 編譯 rtl8852bu 安裝。
+AWUS036AXER 採用 RTL8832BU 晶片，支援 WiFi 6。驅動不在核心中：所有發行版（包括 Ubuntu 24.04）都需要透過 DKMS 編譯 rtl8852bu。不支援 Monitor mode。
 {{< /tldr >}}
 
-剛拿到這台輕巧迷你、方便攜帶的 AWUS036AXER，插上去結果 Linux 一點反應都沒有？別擔心，這再正常不過了。這張網卡用的是 RTL8832BU 晶片，在核心版本 6.14 以下驅動不是開箱即用的。好在如果你是用 Ubuntu 24.04，核心已經內建好了，插上就能直接起飛。
+剛拿到這台輕巧迷你、方便攜帶的 AWUS036AXER，插上去結果 Linux 一點反應都沒有？別擔心，這再正常不過了。
 
 考慮到大家在國內存取 GitHub 不太方便，這份指南全程會帶大家使用 Gitee 鏡像，不用翻牆，花個 10 分鐘就能搞定。咱們現在就開始吧！
 
-> **安全研究避坑指南：** 雖然這張網卡支援 WiFi 6，但 RTL8832BU 的監聽模式支援有限。如果你是為了封包注入的穩定性而來，我更推薦你選擇 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/) 或 [AWUS036ACH](/zh-tw/blog/awus036ach-china-install-guide/)。
+> **資安研究提示：** 社群版 rtl8852bu 驅動不支援 Monitor mode 與封包注入。做資安研究請改用核心內建 MediaTek 驅動的網卡，例如 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)。
 
 ## 開始前的準備
 
@@ -126,18 +126,23 @@ sudo reboot
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — 核心內建，插上即用
+### Ubuntu 24.04 (Noble) — 需要 DKMS
 
-24.04 核心較新，插上通常就能用了。建議換個阿里雲鏡像讓下載更快：
+Ubuntu 24.04（核心 6.8）並未內建 RTL8832BU 的驅動。先換成國內鏡像源，再依下方 Ubuntu 22.04 的方式編譯驅動。
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
 # 將 URIs 改為 http://mirrors.aliyun.com/ubuntu/
 
 sudo apt update
-sudo modprobe 88x2bu
-iwconfig
+sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
+git clone https://gitee.com/mirrors/rtl8852bu.git
+cd rtl8852bu
+sudo ./install-driver.sh
+sudo reboot
 ```
+
+重新開機後執行 `sudo modprobe 8852bu` 與 `iwconfig`。如果模組成功載入並出現網卡介面，就完成了（僅支援 Managed 模式，不支援 Monitor mode）。
 
 ---
 

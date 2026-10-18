@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "USB 3.0", "802.11ax", "Banda Dupla", "OFDMA", "MU-MIMO"]
 
 O AWUS036AX apresenta o chipset Realtek RTL8832BU com suporte Wi-Fi 6 (802.11ax) de banda dupla (2.4 GHz + 5 GHz), até 1200 Mbps combinados, com tecnologia MU-MIMO 2×2 e OFDMA. Inclui duas antenas dual-band removíveis com conectores RP-SMA.
 
-> ⚠️ **Importante:** Este modelo é **Wi-Fi 6**, NÃO Wi-Fi 6E — **sem banda de 6 GHz**. Para suporte de 6 GHz, veja AWUS036AXML ou AWUS036AXM. Monitor mode limitado em kernels < 6.12; **não recomendado para pesquisa de segurança em Linux**.
+> ⚠️ **Importante:** Este modelo é **Wi-Fi 6**, NÃO Wi-Fi 6E — **sem banda de 6 GHz**. Para suporte de 6 GHz, veja AWUS036AXML ou AWUS036AXM. **O modo monitor não é suportado** pelo driver comunitário rtl8852bu; não recomendado para pesquisa de segurança em Linux.
 
 > **Aviso macOS:** Todos os adaptadores ALFA têm suporte limitado ou nenhum para macOS. macOS 11 Big Sur e posteriores, e Apple Silicon (M1/M2/M3) **NÃO** são suportados. O suporte máximo é macOS 10.15 Catalina em Macs Intel.
 
@@ -47,39 +47,35 @@ O AWUS036AX apresenta o chipset Realtek RTL8832BU com suporte Wi-Fi 6 (802.11ax)
 |----|--------|-------|
 | Windows 10/11 | ✅ Suportado | Driver do site da Alfa |
 | macOS | ❌ Não suportado | Sem suporte para macOS 11+ ou Apple Silicon |
-| Ubuntu | ⚠️ Requer driver | Integrado no kernel ≥ 6.14 (Ubuntu 24.10+); versões anteriores precisam de DKMS manual |
-| Kali Linux | ⚠️ Limitado | Monitor mode limitado em kernels < 6.12; não recomendado para pen testing |
+| Ubuntu | ⚠️ Requer driver | Não integrado ao kernel; compile o driver comunitário rtl8852bu via DKMS |
+| Kali Linux | ⚠️ Limitado | Apenas modo gerenciado (driver DKMS); modo monitor não suportado |
 | NetHunter | ⚠️ Limitado | Dependente do kernel |
-
 ## Hardware Compatível
 
 | Hardware | Status | Notas |
 |----------|--------|-------|
-| Raspberry Pi 4/5 | ⚠️ Requer driver | Instalação manual no Pi OS com kernel < 6.14 |
+| Raspberry Pi 4/5 | ⚠️ Requer driver | Instalação manual do driver DKMS no Pi OS |
 | PC Desktop/Laptop | ✅ Suportado | USB-A padrão |
-
 ## Capacidades Avançadas
 
 | Função | Status |
 |--------|--------|
-| Monitor Mode | ⚠️ Limitado (kernel ≥ 6.12 recomendado) |
-| Packet Injection | ⚠️ Limitado |
+| Monitor Mode | ❌ Não suportado (driver da comunidade) |
+| Packet Injection | ❌ Não suportado |
 | Soft AP Mode | ✅ Sim |
 | Bluetooth | ❌ Não |
 
 ## Conteúdo da Caixa
 
 - 1× Adaptador AWUS036AX
-- 2× Antenas dual-band removíveis (5 dBi)
+- 2× Antenas dual-band removíveis
 
 ## Recursos e Links
 
 | Recurso | Link |
 |---------|------|
 | Documentação oficial | https://docs.alfa.com.tw/ |
-| Driver Linux (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20240418 |
-
-## Download da Ficha Técnica
+| Driver Linux (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20250826 |
 
 | Documento | Download |
 |------|------|

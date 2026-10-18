@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "802.11ax", "Ultra-Slim", "USB 3.2", "Portable", "Nano"]
 
 Der AWUS036AXER verfügt über den Realtek RTL8832BU Chipsatz mit Wi-Fi 6 (802.11ax) Dual-Band (2,4 GHz + 5 GHz), bis zu 1800 Mbps (2,4 GHz: 573 Mbps + 5 GHz: 1200 Mbps). Ultra-schlankes Nano-Design (~65 × 24 × 10 mm, ~10 g) für den portablen Alltagseinsatz.
 
-> ⚠️ **Hinweis:** Nano-Formfaktor — **kein RP-SMA-Anschluss**, Antenne kann nicht aufgerüstet werden. **NICHT empfohlen für Kali Linux oder Sicherheitsforschung**.
+> ⚠️ **Hinweis:** Nano-Formfaktor — **kein RP-SMA-Anschluss**, Antenne kann nicht aufgerüstet werden. **Der Monitor-Modus wird vom Community-Treiber rtl8852bu nicht unterstützt**; **NICHT empfohlen für Kali Linux oder Sicherheitsforschung**.
 
 > **macOS-Hinweis:** Alle ALFA-Adapter bieten eingeschränkte oder keine macOS-Unterstützung. macOS 11 Big Sur und höher sowie Apple Silicon (M1/M2/M3) werden **NICHT** unterstützt. Die maximale macOS-Unterstützung ist 10.15 Catalina auf Intel-Macs.
 
@@ -46,23 +46,21 @@ Der AWUS036AXER verfügt über den Realtek RTL8832BU Chipsatz mit Wi-Fi 6 (802.1
 |----|--------|-------|
 | Windows 10/11 | ✅ Unterstützt | Treiber von der Alfa-Website |
 | macOS | ❌ Nicht unterstützt | Keine Unterstützung für macOS 11+ oder Apple Silicon |
-| Ubuntu | ⚠️ Treiber erforderlich | Im Kernel ab ≥ 6.14 (Ubuntu 24.10+); ältere Versionen benötigen manuelle DKMS-Installation |
-| Kali Linux | ⚠️ Eingeschränkt | Monitor-Modus eingeschränkt bei Kerneln < 6.12; nicht empfohlen für Penetrationstests |
+| Ubuntu | ⚠️ Treiber erforderlich | Nicht im Kernel; den Community-Treiber rtl8852bu über DKMS erstellen |
+| Kali Linux | ⚠️ Eingeschränkt | Nur Managed-Modus (DKMS-Treiber); Monitor-Modus nicht unterstützt |
 | NetHunter | ⚠️ Eingeschränkt | Kernelabhängig |
-
 ## Hardware-Kompatibilität
 
 | Hardware | Status | Hinweise |
 |----------|--------|-------|
-| Raspberry Pi 4/5 | ⚠️ Treiber erforderlich | Manuelle Installation auf Pi OS mit Kernel < 6.14 erforderlich |
+| Raspberry Pi 4/5 | ⚠️ Treiber erforderlich | Manuelle DKMS-Treiberinstallation auf Pi OS erforderlich |
 | Desktop/Laptop-PC | ✅ Unterstützt | Standard-USB-A |
-
 ## Erweiterte Funktionen
 
 | Funktion | Status |
 |---------|--------|
-| Monitor-Modus | ⚠️ Eingeschränkt |
-| Paketinjektion | ⚠️ Eingeschränkt |
+| Monitor-Modus | ❌ Nicht unterstützt (Community-Treiber) |
+| Paketinjektion | ❌ Nicht unterstützt |
 | Soft-AP-Modus | ✅ Ja |
 | Bluetooth | ❌ Nein |
 
@@ -75,7 +73,7 @@ Der AWUS036AXER verfügt über den Realtek RTL8832BU Chipsatz mit Wi-Fi 6 (802.1
 | Ressource | Link |
 |----------|------|
 | Offizielle Dokumentation | https://docs.alfa.com.tw/ |
-| Linux-Treiber (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20240418 |
+| Linux-Treiber (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20250826 |
 
 ## Produktdatenblatt
 

@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AX Treiber-Installationsanleitung für China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "Schritt-für-Schritt-Anleitung zur Installation von ALFA AWUS036AX Treibern in China unter Verwendung lokaler Mirrors. RTL8832BU-Treiber, WiFi 6 AX1800. Deckt Kali Linux, Ubuntu 22/24 (in-kernel auf 24.04), Debian und Raspberry Pi ab. Kein GitHub erforderlich."
+description: "Schritt-für-Schritt-Anleitung zur Installation von ALFA AWUS036AX Treibern in China unter Verwendung lokaler Mirrors. RTL8832BU-Treiber, WiFi 6 AX1800. Deckt Kali Linux, Ubuntu 22/24 (DKMS), Debian und Raspberry Pi ab. Kein GitHub erforderlich."
 date: 2026-04-24
 author: "benny-lai"
 lastmod: 2026-07-02
@@ -18,22 +18,22 @@ faq:
   - question: "Welchen Chipsatz verwendet der AWUS036AX? Unterstützt er WiFi 6?"
     answer: "Er verwendet den Realtek RTL8832BU-Chipsatz und unterstützt das Hochgeschwindigkeitsnetzwerk WiFi 6 (802.11ax)."
   - question: "Muss der AWUS036AX unter Ubuntu 24.04 getrieben werden?"
-    answer: "Nein, der Kernel von Ubuntu 24.04 unterstützt den RTL8832BU nativ. Stecken Sie ihn einfach ein, und er funktioniert."
+    answer: "Ja. Der RTL8832BU ist nicht im Kernel von Ubuntu 24.04 enthalten. Bauen Sie den Community-Treiber rtl8852bu (morrownr/rtl8852bu-20250826) einmalig über DKMS; er wird bei Kernel-Updates automatisch neu gebaut."
   - question: "Ist der AWUS036AX für drahtlose Sicherheitsforschung geeignet?"
-    answer: "Eher nicht, da die Unterstützung für den Monitor Mode durch den RTL8832BU begrenzt ist. Wir empfehlen, stattdessen den AWUS036ACM oder AWUS036ACH zu verwenden."
+    answer: "Nein. Der Community-Treiber rtl8852bu unterstützt weder Monitor-Modus noch Paket-Injektion. Verwenden Sie stattdessen einen Adapter mit In-Kernel-MediaTek-Treiber wie den AWUS036ACM."
   - question: "Muss man in China für die Installation des AWUS036AX eine VPN-Verbindung herstellen?"
     answer: "Nein, Sie können die rtl8852bu-Quellen von Gitee herunterladen und die Kompilierungswerkzeuge über ein inländisches Spiegelrepository installieren."
   - question: "Was ist die USB-ID des AWUS036AX?"
     answer: "Die USB-ID des Realtek RTL8832BU beträgt 0bda:8832, was mit lsusb bestätigt werden kann."
 ---
 
-Der AWUS036AX ist ALFAs WiFi 6 AX1800 Dual-Band Adapter. Sein RTL8832BU-Chip ist bei Linux-Versionen unter 6.14 nicht im Kernel enthalten — aber Ubuntu 24.04 (Kernel 6.8) enthält ihn nativ. Diese Anleitung verwendet Gitee-Mirrors für ältere Kernel und den integrierten Treiber für Ubuntu 24.04. Kein GitHub erforderlich.
+Der AWUS036AX ist ALFAs WiFi 6 AX1800 Dual-Band Adapter. Der RTL8832BU-Chip des AWUS036AX hat keinen In-Kernel-Linux-Treiber, daher bauen Sie auf jeder Distribution (auch Ubuntu 24.04) den Community-Treiber rtl8852bu einmalig über DKMS. Diese Anleitung verwendet Gitee-Mirrors, ein GitHub-Zugang ist nicht nötig. Der Monitor-Modus wird von diesem Treiber nicht unterstützt.
 
 {{< tldr >}}
-Der AWUS036AX verwendet den RTL8832BU-Chipsatz und unterstützt WiFi 6. Unter Ubuntu 24.04 ist er treiberlos einsatzbereit. Für Kali/Ubuntu 22.04 laden Sie rtl8852bu von Gitee herunter, kompilieren und installieren Sie ihn.
+Der AWUS036AX verwendet den RTL8832BU-Chipsatz mit WiFi 6. Der Treiber ist nicht im Kernel enthalten: Jede Distribution (auch Ubuntu 24.04) braucht rtl8852bu per DKMS. Der Monitor-Modus wird nicht unterstützt.
 {{< /tldr >}}
 
-> **Sicherheitsforschung Hinweis:** Der RTL8832BU hat eine begrenzte Unterstützung für den Monitor-Modus. Die Ergebnisse variieren je nach Kernel- und Treiberversion. Für zuverlässige Paket-Injektion unter Kali Linux sind der [AWUS036ACM](/de/blog/awus036acm-china-install-guide/) oder [AWUS036ACH](/de/blog/awus036ach-china-install-guide/) die bessere Wahl.
+> **Hinweis zur Sicherheitsforschung:** Der Community-Treiber rtl8852bu unterstützt weder Monitor-Modus noch Paket-Injektion. Verwenden Sie für Sicherheitsforschung einen Adapter mit In-Kernel-MediaTek-Treiber, z. B. den [AWUS036ACM](/de/blog/awus036acm-china-install-guide/).
 
 ## Bevor du startest
 
@@ -101,37 +101,25 @@ sudo reboot
 Überprüfe, ob der Treiber geladen wurde:
 
 ```bash
-lsmod | grep 88x2bu
+lsmod | grep 8852bu
 iwconfig
 ```
 
 ### Schritt 5: Monitor-Modus aktivieren {#enable-monitor-mode}
 
-> **Hinweis:** Die Unterstützung des Monitor-Modus ist beim RTL8832BU begrenzt. Die folgenden Befehle funktionieren auf den meisten Setups, aber die Ergebnisse können variieren.
-
-```bash
-sudo airmon-ng check kill
-sudo ip link set wlan1 down
-sudo iw dev wlan1 set type monitor
-sudo ip link set wlan1 up
-iwconfig
-```
+> **Nicht unterstützt:** Der Community-Treiber rtl8852bu für den RTL8832BU unterstützt keinen Monitor-Modus, daher gibt es hier keine Befehle. Für den Monitor-Modus verwenden Sie einen Adapter mit In-Kernel-MediaTek-Treiber, z. B. den [AWUS036ACM](/de/blog/awus036acm-china-install-guide/).
 
 ### Schritt 6: Paket-Injektion testen {#test-packet-injection}
 
-```bash
-sudo aireplay-ng --test wlan1
-```
-
-Wenn die Injektion unzuverlässig ist, ziehe den [AWUS036ACM](/de/blog/awus036acm-china-install-guide/) für Penetrationstests in Betracht.
+> **Nicht unterstützt:** Paket-Injektion setzt den Monitor-Modus voraus, den dieser Treiber nicht bietet. Verwenden Sie für Injektionstests den [AWUS036ACM](/de/blog/awus036acm-china-install-guide/).
 
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — Treiber im Kernel, kein Gitee erforderlich
+### Ubuntu 24.04 (Noble) — DKMS erforderlich
 
-Ubuntu 24.04 wird mit Kernel 6.8 ausgeliefert, der den RTL8832BU-Treiber nativ enthält.
+Ubuntu 24.04 (Kernel 6.8) enthält keinen Treiber für den RTL8832BU. Wechseln Sie zu einem inländischen Mirror und bauen Sie den Treiber wie bei Ubuntu 22.04 unten.
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -147,11 +135,14 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 ```bash
 sudo apt update
-sudo modprobe 88x2bu
-iwconfig
+sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
+git clone https://gitee.com/mirrors/rtl8852bu.git
+cd rtl8852bu
+sudo ./install-driver.sh
+sudo reboot
 ```
 
-Wenn das Modul geladen wird und ein Interface erscheint, bist du fertig. Fahre mit den Schritten für den Monitor-Modus oben fort.
+Führen Sie nach dem Neustart `sudo modprobe 8852bu` und `iwconfig` aus. Wenn das Modul geladen wird und eine Schnittstelle erscheint, sind Sie fertig (nur Managed-Modus; der Monitor-Modus wird nicht unterstützt).
 
 ---
 
@@ -199,7 +190,7 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-Aktiviere den Monitor-Modus wie in den Kali-Schritten oben beschrieben.
+Der Monitor-Modus wird von diesem Treiber nicht unterstützt (siehe Kali, Schritt 5).
 
 ---
 
@@ -248,8 +239,8 @@ sudo reboot
 | `lsusb` zeigt 0bda:885a nicht an | Adapter nicht erkannt | Anderen USB-Port versuchen |
 | `install-driver.sh` schlägt fehl | Fehlende Header | `sudo apt install linux-headers-$(uname -r)` |
 | Gitee-Klon schlägt fehl | Netzwerkproblem | Auf gitee.com nach `rtl8852bu` suchen |
-| Ubuntu 24.04: `modprobe 88x2bu` schlägt fehl | Modul nicht vorhanden | `linux-modules-extra-$(uname -r)` installieren |
-| Monitor-Modus unzuverlässig | RTL8832BU-Einschränkung | AWUS036ACM für Pentest-Arbeiten verwenden |
+| `modprobe 8852bu` schlägt fehl | Treiber nicht gebaut oder nicht geladen | `sudo ./install-driver.sh` erneut ausführen, `sudo dkms status` prüfen, dann neu starten |
+| Monitor-Modus / Injektion funktioniert nicht | Vom Treiber rtl8852bu nicht unterstützt | AWUS036ACM für Pentest-Arbeiten verwenden |
 
 > **Hinweis zu VIF:** Der RTL8832BU Out-of-Kernel-Treiber unterstützt keine virtuellen Schnittstellen (VIF).
 

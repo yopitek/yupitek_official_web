@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AXER ドライバインストールガイド（中国版）：Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXERのドライバをインストールする手順をステップバイステップで解説します。RTL8832BUドライバ、WiFi 6 Nanoアダプター対応。Kali Linux、Ubuntu 22/24（24.04は標準対応）、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
+description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXERのドライバをインストールする手順をステップバイステップで解説します。RTL8832BUドライバ、WiFi 6 Nanoアダプター対応。Kali Linux、Ubuntu 22/24(DKMS)、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -18,22 +18,22 @@ faq:
   - question: "AWUS036AXERはどのチップを使っていますか？AWUS036AXと同じですか？"
     answer: "同じくRealtek RTL8832BUチップを採用しWiFi 6をサポートしていますが、より小型で携帯性に優れています。"
   - question: "AWUS036AXERはUbuntu 24.04でドライバーインストールが必要ですか？"
-    answer: "不要です。Ubuntu 24.04カーネルがネイティブサポートし、挿すだけで使えます。"
+    answer: "必要です。RTL8832BU は Ubuntu 24.04 のカーネルに含まれていません。コミュニティ版 rtl8852bu ドライバ（morrownr/rtl8852bu-20250826）を DKMS で一度ビルドすれば、カーネル更新時も自動で再ビルドされます。"
   - question: "AWUS036AXERは無線セキュリティリサーチに適していますか？"
-    answer: "あまり適していません。RTL8832BUのモニターモードサポートは限定的で、AWUS036ACMまたはAWUS036ACHを使用することを推奨します。"
+    answer: "いいえ。コミュニティ版 rtl8852bu ドライバはモニターモードとパケットインジェクションをサポートしていません。代わりに AWUS036ACM などカーネル標準の MediaTek ドライバを持つアダプターをご利用ください。"
   - question: "AWUS036AXERのUSB IDは何ですか？"
     answer: "Realtek RTL8832BUのUSB IDは0bda:885aで、lsusbで確認できます。"
   - question: "中国でAWUS036AXERをインストールするのにVPNは必要ですか？"
     answer: "不要です。Giteeからrtl8852buソースコードをダウンロードし、国内ミラーでコンパイルツールをインストールするだけです。"
 ---
 
-AWUS036AXERは、ALFAの超小型（Nano）WiFi 6 AX1800デュアルバンド・アダプターです。搭載されているRTL8832BUチップは、カーネルバージョン6.14未満のLinuxでは標準対応していませんが、Ubuntu 24.04（カーネル6.8）ではネイティブにサポートされています。このガイドでは、古いカーネル向けにはGiteeミラーを、Ubuntu 24.04向けには標準ドライバを使用する方法を解説します。GitHubへのアクセスは不要ですので、安心してくださいね。
+AWUS036AXERは、ALFAの超小型（Nano）WiFi 6 AX1800デュアルバンド・アダプターです。AWUS036AXER の RTL8832BU チップには Linux カーネル標準のドライバがないため、Ubuntu 24.04 を含むどのディストリビューションでも、コミュニティ版 rtl8852bu ドライバを DKMS で一度ビルドする必要があります。このガイドは Gitee ミラーを使うので GitHub へのアクセスは不要です。このドライバはモニターモードをサポートしていません。
 
 
 {{< tldr >}}
-AWUS036AXERはRTL8832BUチップを採用したミニポータブルWiFi 6アダプターで、Ubuntu 24.04ではドライバー不要でプラグアンドプレイ、その他のシステムではGiteeからrtl8852buをコンパイルしてインストールします。
+AWUS036AXER は RTL8832BU チップで WiFi 6 に対応します。ドライバはカーネルに含まれないため、Ubuntu 24.04 を含むすべてのディストリビューションで rtl8852bu を DKMS でビルドする必要があります。モニターモードは非対応です。
 {{< /tldr >}}
-> **セキュリティリサーチに関する注意:** RTL8832BUはモニターモードのサポートに制限があります。結果はカーネルやドライバのバージョンによって異なります。Kali Linuxで安定したパケットインジェクションが必要な場合は、[AWUS036ACM](/ja/blog/awus036acm-china-install-guide/) または [AWUS036ACH](/ja/blog/awus036ach-china-install-guide/) をお勧めします。
+> **セキュリティ研究に関する注意：** コミュニティ版 rtl8852bu ドライバはモニターモードとパケットインジェクションをサポートしていません。セキュリティ研究にはカーネル標準の MediaTek ドライバを持つ [AWUS036ACM](/ja/blog/awus036acm-china-install-guide/) などをご利用ください。
 
 ## 準備するもの
 
@@ -100,37 +100,25 @@ sudo reboot
 ドライバが読み込まれているか確認します：
 
 ```bash
-lsmod | grep 88x2bu
+lsmod | grep 8852bu
 iwconfig
 ```
 
 ### ステップ 5: モニターモードを有効にする {#enable-monitor-mode}
 
-> **注意:** RTL8832BUでのモニターモードのサポートは限定的です。以下のコマンドは多くの環境で動作しますが、結果は異なる場合があります。
-
-```bash
-sudo airmon-ng check kill
-sudo ip link set wlan1 down
-sudo iw dev wlan1 set type monitor
-sudo ip link set wlan1 up
-iwconfig
-```
+> **非対応:** RTL8832BU 向けのコミュニティ版 rtl8852bu ドライバはモニターモードをサポートしていないため、ここで実行するコマンドはありません。モニターモードが必要な場合は、カーネル標準の MediaTek ドライバを持つ [AWUS036ACM](/ja/blog/awus036acm-china-install-guide/) などをご利用ください。
 
 ### ステップ 6: パケットインジェクションのテスト {#test-packet-injection}
 
-```bash
-sudo aireplay-ng --test wlan1
-```
-
-インジェクションが不安定な場合は、ペネトレーションテスト作業用として [AWUS036ACM](/ja/blog/awus036acm-china-install-guide/) の使用を検討してください。
+> **非対応:** パケットインジェクションはモニターモードに依存しますが、このドライバはモニターモードを提供しません。インジェクションのテストには [AWUS036ACM](/ja/blog/awus036acm-china-install-guide/) をご利用ください。
 
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — ドライバ標準対応、Gitee不要
+### Ubuntu 24.04 (Noble) — DKMS が必要
 
-Ubuntu 24.04 はカーネル 6.8 を採用しており、RTL8832BU ドライバをネイティブに含んでいます。
+Ubuntu 24.04（カーネル 6.8）には RTL8832BU 用のドライバが含まれていません。国内ミラーに切り替えたうえで、下の Ubuntu 22.04 と同じ手順でドライバをビルドしてください。
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -146,11 +134,14 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 ```bash
 sudo apt update
-sudo modprobe 88x2bu
-iwconfig
+sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
+git clone https://gitee.com/mirrors/rtl8852bu.git
+cd rtl8852bu
+sudo ./install-driver.sh
+sudo reboot
 ```
 
-モジュールが読み込まれ、インターフェースが表示されれば完了です。上記のモニターモードの手順に進んでください。
+再起動後に `sudo modprobe 8852bu` と `iwconfig` を実行します。モジュールが読み込まれてインターフェースが表示されれば完了です（マネージドモードのみ。モニターモードは非対応）。
 
 ---
 
@@ -198,7 +189,7 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-モニターモードの有効化は、上記の Kali Linux の手順と同じです。
+このドライバはモニターモードをサポートしていません（Kali のステップ 5 を参照）。
 
 ---
 
@@ -247,8 +238,8 @@ sudo reboot
 | `lsusb` に 0bda:885a が表示されない | アダプターが認識されていない | 別のUSBポートを試してください |
 | `install-driver.sh` が失敗する | ヘッダーが不足している | `sudo apt install linux-headers-$(uname -r)` |
 | Giteeのクローンが失敗する | ネットワークの問題 | Giteeで `rtl8852bu` を検索してください |
-| Ubuntu 24.04: `modprobe 88x2bu` 失敗 | モジュールが存在しない | `linux-modules-extra-$(uname -r)` をインストール |
-| モニターモードが不安定 | RTL8832BUの制限 | ペネトレーションテストには AWUS036ACM を推奨 |
+| `modprobe 8852bu` が失敗する | ドライバ未ビルドまたは未ロード | `sudo ./install-driver.sh` を再実行し、`sudo dkms status` を確認して再起動 |
+| モニターモード／インジェクションが動作しない | rtl8852bu ドライバは非対応 | ペンテストには AWUS036ACM を使用 |
 
 > **VIFに関する注意:** RTL8832BU の標準外ドライバは仮想インターフェース (VIF) をサポートしていません。
 

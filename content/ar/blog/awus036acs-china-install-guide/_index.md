@@ -16,20 +16,20 @@ author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "ما الشريحة التي يستخدمها AWUS036ACS؟ هل هي نفس AWUS036ACH؟"
-    answer: "يستخدم شريحة Realtek RTL8811AU، وتشترك مع RTL8812AU في نفس حزمة التعريف."
+    answer: "يستخدم شريحة Realtek RTL8811AU. لا يشترك مع RTL8812AU في برنامج التشغيل، بل يحتاج إلى برنامج التشغيل المجتمعي 8821au (morrownr/8821au-20210708)، واسم الوحدة `8821au`."
   - question: "هل يدعم AWUS036ACS وضع المراقبة؟"
     answer: "نعم، RTL8811AU يدعم وضع المراقبة وحقن الحزم بالكامل، وهو خيار اقتصادي لأبحاث الأمن."
   - question: "هل أحتاج إلى VPN لتثبيت AWUS036ACS في الصين؟"
-    answer: "لا، على Kali استخدم apt لتثبيت تعريف DKMS، وعلى Ubuntu/Debian نزّل الكود المصدري من Gitee وجمّعه."
+    answer: "لا. على كل التوزيعات ابنِ برنامج تشغيل DKMS الخاص بـ 8821au باستخدام install-driver.sh من مرآة Gitee."
   - question: "ما هو USB ID لـ AWUS036ACS؟"
     answer: "USB ID لـ Realtek RTL8811AU هو 0bda:0811، يمكن التأكد بـ lsusb."
   - question: "ما أمر تثبيت تعريف AWUS036ACS على Kali Linux؟"
-    answer: "على Kali يمكن تنفيذ sudo apt install realtek-rtl88xxau-dkms لتثبيت التعريف."
+    answer: "ثبّت أدوات البناء، ثم استنسخ برنامج التشغيل 8821au (morrownr/8821au-20210708 أو مرآة له على Gitee) ونفّذ `sudo sh install-driver.sh`. حزمة apt المسماة realtek-rtl88xxau-dkms هي برنامج تشغيل RTL8812AU ولا تناسب هذا المحول."
 ---
 يعتبر AWUS036ACS محول أبحاث أمان مدمج ثنائي النطاق من ALFA. تدعم شريحة RTL8811AU الخاصة به وضع المراقبة الكامل وحقن الحزم على Kali Linux — ولكن نظرًا لأن برنامج التشغيل خارج النواة، فأنت بحاجة إلى تجميعه من المصدر. في الصين، يتم حظر GitHub، لذا يستخدم هذا الدليل مرايا Gitee حصريًا. لا داعي للقلق، GitHub ليس مطلوبًا على الإطلاق.
 
 {{< tldr >}}
-يستخدم AWUS036ACS شريحة RTL8811AU، على Kali ثبّت تعريف DKMS عبر apt، وعلى Ubuntu/Debian جمّع من Gitee. يدعم وضع المراقبة وحقن الحزم.
+يستخدم AWUS036ACS شريحة RTL8811AU. على كل التوزيعات ابنِ برنامج تشغيل DKMS الخاص بـ 8821au باستخدام install-driver.sh من مرآة Gitee. يدعم وضع المراقبة وحقن الحزم.
 {{< /tldr >}}
 
 تأكد من توفر المتطلبات التالية لديك:
@@ -126,10 +126,10 @@ sudo reboot
 بعد إعادة التشغيل، تأكد من تحميل برنامج التشغيل.
 
 ```bash
-lsmod | grep 88XXau
+lsmod | grep 8821au
 ```
 
-يجب أن ترى وحدة `88XXau` مدرجة. ثم تأكد من ظهور الواجهة.
+يجب أن ترى وحدة `8821au` مدرجة. ثم تأكد من ظهور الواجهة.
 
 ```bash
 iwconfig
@@ -415,5 +415,5 @@ sudo aireplay-ng --test wlan1mon
 1. [وثائق aircrack-ng الرسمية](https://www.aircrack-ng.org/)
 2. [موقع ALFA Network الرسمي](https://www.alfa.com.tw/)
 3. [وثائق Kali Linux الرسمية](https://www.kali.org/docs/)
-4. [مرآة Gitee لـ rtl8812au](https://gitee.com/mirrors/rtl8812au)
+4. [مرآة Gitee لـ 8821au](https://gitee.com/mirrors/8821au)
 

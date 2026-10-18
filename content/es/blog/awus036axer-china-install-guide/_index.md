@@ -1,6 +1,6 @@
 ---
 title: "Guía de instalación del controlador ALFA AWUS036AXER para China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "Guía paso a paso para instalar los controladores ALFA AWUS036AXER en China utilizando espejos domésticos. Controlador RTL8832BU, adaptador WiFi 6 nano. Cubre Kali Linux, Ubuntu 22/24 (integrado en 24.04), Debian y Raspberry Pi. No se requiere GitHub."
+description: "Guía paso a paso para instalar los controladores ALFA AWUS036AXER en China utilizando espejos domésticos. Controlador RTL8832BU, adaptador WiFi 6 nano. Cubre Kali Linux, Ubuntu 22/24 (DKMS), Debian y Raspberry Pi. No se requiere GitHub."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -18,22 +18,22 @@ faq:
   - question: "¿Qué chip usa el AWUS036AXER? ¿Es igual que el AWUS036AX?"
     answer: "Usa el mismo chip Realtek RTL8832BU y admite WiFi 6, pero con un tamaño más pequeño y portátil."
   - question: "¿El AWUS036AXER necesita instalar controlador en Ubuntu 24.04?"
-    answer: "No, el kernel de Ubuntu 24.04 ya lo admite nativamente; es plug-and-play."
+    answer: "Sí. El RTL8832BU no está en el kernel de Ubuntu 24.04. Compila una vez el controlador comunitario rtl8852bu (morrownr/rtl8852bu-20250826) con DKMS; después se recompila automáticamente al actualizar el kernel."
   - question: "¿El AWUS036AXER es adecuado para investigación de seguridad inalámbrica?"
-    answer: "No tanto. El soporte del modo monitor de RTL8832BU es limitado; se recomienda usar AWUS036ACM o AWUS036ACH."
+    answer: "No. El controlador comunitario rtl8852bu no admite modo monitor ni inyección de paquetes. Usa en su lugar un adaptador con controlador MediaTek en el kernel, como el AWUS036ACM."
   - question: "¿Cuál es el USB ID del AWUS036AXER?"
     answer: "El USB ID de Realtek RTL8832BU es 0bda:885a, puedes confirmarlo con lsusb."
   - question: "¿Hace falta VPN para instalar el AWUS036AXER en China?"
     answer: "No, descarga el código fuente rtl8852bu desde Gitee e instala las herramientas de compilación con espejos nacionales."
 ---
 
-El AWUS036AXER es el adaptador WiFi 6 nano de ALFA: un dongle compacto diseñado para permanecer conectado permanentemente a una computadora portátil. Su chip RTL8832BU está fuera del núcleo en versiones de Linux inferiores a 6.14, pero se incluye de forma nativa en Ubuntu 24.04 (núcleo 6.8). Esta guía utiliza espejos de Gitee para núcleos más antiguos. No se requiere GitHub.
+El AWUS036AXER es el adaptador WiFi 6 nano de ALFA: un dongle compacto diseñado para permanecer conectado permanentemente a una computadora portátil. El chip RTL8832BU del AWUS036AXER no tiene controlador en el kernel de Linux, así que en cualquier distribución (incluida Ubuntu 24.04) hay que compilar una vez el controlador comunitario rtl8852bu con DKMS. Esta guía usa espejos de Gitee, por lo que no se requiere GitHub. Este controlador no admite el modo monitor.
 
 {{< tldr >}}
-El AWUS036AXER usa el chip RTL8832BU, una tarjeta WiFi 6 mini portátil. En Ubuntu 24.04 funciona sin controlador; en otros sistemas se compila rtl8852bu desde Gitee.
+El AWUS036AXER usa el chipset RTL8832BU con WiFi 6. El controlador no está en el kernel: todas las distribuciones (incluida Ubuntu 24.04) necesitan compilar rtl8852bu con DKMS. No admite el modo monitor.
 {{< /tldr >}}
 
-> **Nota de investigación de seguridad:** El RTL8832BU tiene soporte limitado para el modo monitor. Los resultados varían según la versión del núcleo y del controlador. Para una inyección de paquetes confiable en Kali Linux, el [AWUS036ACM](/es/blog/awus036acm-china-install-guide/) o el [AWUS036ACH](/es/blog/awus036ach-china-install-guide/) son mejores opciones.
+> **Nota sobre investigación de seguridad:** El controlador comunitario rtl8852bu no admite modo monitor ni inyección de paquetes. Para investigación de seguridad usa un adaptador con controlador MediaTek en el kernel, como el [AWUS036ACM](/es/blog/awus036acm-china-install-guide/).
 
 > **Nota sobre el alcance:** El AWUS036AXER tiene una antena integrada no extraíble. Para la investigación de seguridad, los adaptadores con antenas RP-SMA externas (AWUS036ACH, AWUS036ACM) proporcionan un alcance significativamente mejor.
 
@@ -103,37 +103,25 @@ sudo reboot
 Verifique que el controlador se haya cargado:
 
 ```bash
-lsmod | grep 88x2bu
+lsmod | grep 8852bu
 iwconfig
 ```
 
 ### Paso 5: Activar el modo monitor {#enable-monitor-mode}
 
-> **Nota:** El soporte del modo monitor es limitado en el RTL8832BU. Los siguientes comandos funcionan en la mayoría de las configuraciones, pero los resultados pueden variar.
-
-```bash
-sudo airmon-ng check kill
-sudo ip link set wlan1 down
-sudo iw dev wlan1 set type monitor
-sudo ip link set wlan1 up
-iwconfig
-```
+> **No compatible:** El controlador comunitario rtl8852bu del RTL8832BU no admite el modo monitor, por lo que aquí no hay comandos que ejecutar. Si necesitas modo monitor, usa un adaptador con controlador MediaTek en el kernel, como el [AWUS036ACM](/es/blog/awus036acm-china-install-guide/).
 
 ### Paso 6: Probar la inyección de paquetes {#test-packet-injection}
 
-```bash
-sudo aireplay-ng --test wlan1
-```
-
-Si la inyección no es confiable, considere el [AWUS036ACM](/es/blog/awus036acm-china-install-guide/) para trabajos de pruebas de penetración.
+> **No compatible:** La inyección de paquetes depende del modo monitor, que este controlador no ofrece. Usa el [AWUS036ACM](/es/blog/awus036acm-china-install-guide/) para pruebas de inyección.
 
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — controlador en el núcleo, no se necesita Gitee
+### Ubuntu 24.04 (Noble) — requiere DKMS
 
-Ubuntu 24.04 incluye el núcleo 6.8, que contiene el controlador RTL8832BU de forma nativa.
+Ubuntu 24.04 (kernel 6.8) no incluye un controlador para el RTL8832BU. Cambia a un espejo doméstico y compila el controlador como en Ubuntu 22.04 más abajo.
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -149,11 +137,14 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 ```bash
 sudo apt update
-sudo modprobe 88x2bu
-iwconfig
+sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
+git clone https://gitee.com/mirrors/rtl8852bu.git
+cd rtl8852bu
+sudo ./install-driver.sh
+sudo reboot
 ```
 
-Si el módulo se carga y aparece una interfaz, ha terminado. Continúe con los pasos del modo monitor anteriores.
+Tras reiniciar, ejecuta `sudo modprobe 8852bu` e `iwconfig`. Si el módulo se carga y aparece una interfaz, has terminado (solo modo gestionado; el modo monitor no es compatible).
 
 ---
 
@@ -201,7 +192,7 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-Active el modo monitor igual que en los pasos de Kali anteriores.
+Este controlador no admite el modo monitor (consulta el paso 5 de Kali).
 
 ---
 
@@ -250,8 +241,8 @@ sudo reboot
 | `lsusb` no muestra 0bda:885a | Adaptador no detectado | Pruebe con un puerto USB diferente |
 | `install-driver.sh` falla | Faltan encabezados | `sudo apt install linux-headers-$(uname -r)` |
 | La clonación de Gitee falla | Problema de red | Busque en gitee.com `rtl8852bu` |
-| Ubuntu 24.04: `modprobe 88x2bu` falla | El módulo no está presente | Instale `linux-modules-extra-$(uname -r)` |
-| Modo monitor poco confiable | Limitación de RTL8832BU | Use AWUS036ACM para trabajos de pentest |
+| `modprobe 8852bu` falla | Controlador no compilado o no cargado | Vuelve a ejecutar `sudo ./install-driver.sh`, revisa `sudo dkms status` y reinicia |
+| El modo monitor / la inyección no funciona | No compatible con el controlador rtl8852bu | Usa el AWUS036ACM para trabajos de pentest |
 
 > **Nota sobre VIF:** El controlador fuera del núcleo RTL8832BU no admite interfaces virtuales (VIF).
 

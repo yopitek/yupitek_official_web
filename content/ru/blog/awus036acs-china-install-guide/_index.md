@@ -17,21 +17,21 @@ featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 
 faq:
   - question: "Какой чип используется в AWUS036ACS? Такой же, как в AWUS036ACH?"
-    answer: "Чип Realtek RTL8811AU, использует тот же пакет драйверов, что и RTL8812AU."
+    answer: "Чип Realtek RTL8811AU. Он не использует драйвер RTL8812AU: нужен community-драйвер 8821au (morrownr/8821au-20210708), модуль `8821au`."
   - question: "Поддерживает ли AWUS036ACS режим монитора?"
     answer: "Да, RTL8811AU полностью поддерживает режим монитора и инъекцию пакетов, экономичный выбор для исследований безопасности."
   - question: "Нужен ли VPN для установки AWUS036ACS в Китае?"
-    answer: "Нет, в Kali используйте apt для установки DKMS-драйвера, в Ubuntu/Debian скачайте исходный код с Gitee и скомпилируйте."
+    answer: "Нет. В любом дистрибутиве соберите DKMS-драйвер 8821au с помощью install-driver.sh из зеркала Gitee."
   - question: "Какой USB ID у AWUS036ACS?"
     answer: "USB ID Realtek RTL8811AU — 0bda:0811, можно проверить через lsusb."
   - question: "Какая команда для установки драйвера AWUS036ACS в Kali Linux?"
-    answer: "В Kali выполните sudo apt install realtek-rtl88xxau-dkms для установки драйвера."
+    answer: "Установите инструменты сборки, склонируйте драйвер 8821au (morrownr/8821au-20210708 или его зеркало на Gitee) и выполните `sudo sh install-driver.sh`. Пакет apt realtek-rtl88xxau-dkms — это драйвер RTL8812AU, он не подходит для этого адаптера."
 ---
 
 AWUS036ACS — это компактный двухдиапазонный адаптер ALFA для исследований в области безопасности. Его чип RTL8811AU поддерживает полноценный режим монитора и инъекцию пакетов в Kali Linux, но так как драйвер не входит в состав ядра, его необходимо скомпилировать из исходного кода. В Китае доступ к GitHub заблокирован, поэтому данное руководство использует исключительно зеркала Gitee. GitHub не требуется.
 
 {{< tldr >}}
-AWUS036ACS использует чип RTL8811AU. В Kali драйвер DKMS устанавливается через apt, в Ubuntu/Debian компилируется из Gitee, поддерживает режим монитора и инъекцию пакетов.
+AWUS036ACS использует чип RTL8811AU. В любом дистрибутиве DKMS-драйвер 8821au собирается с помощью install-driver.sh из зеркала Gitee. Поддерживает режим монитора и инъекцию пакетов.
 {{< /tldr >}}
 
 Убедитесь, что у вас готовы:
@@ -127,10 +127,10 @@ sudo reboot
 После перезагрузки проверьте, загрузился ли драйвер.
 
 ```bash
-lsmod | grep 88XXau
+lsmod | grep 8821au
 ```
 
-Вы должны увидеть модуль `88XXau` в списке. Затем подтвердите появление интерфейса.
+Вы должны увидеть модуль `8821au` в списке. Затем подтвердите появление интерфейса.
 
 ```bash
 iwconfig
@@ -417,4 +417,4 @@ sudo aireplay-ng --test wlan1mon
 1. [Официальная документация aircrack-ng](https://www.aircrack-ng.org/)
 2. [Официальный сайт ALFA Network](https://www.alfa.com.tw/)
 3. [Официальная документация Kali Linux](https://www.kali.org/docs/)
-4. [Зеркало Gitee rtl8812au](https://gitee.com/mirrors/rtl8812au)
+4. [Зеркало Gitee 8821au](https://gitee.com/mirrors/8821au)

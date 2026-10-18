@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "USB 3.0", "802.11ax", "Dual-Band", "OFDMA", "MU-MIMO"]
 
 The AWUS036AX features the Realtek RTL8832BU chipset with Wi-Fi 6 (802.11ax) dual-band support (2.4 GHz + 5 GHz), up to 1200 Mbps combined, with MU-MIMO 2×2 and OFDMA technology. It comes with two detachable dual-band antennas on RP-SMA connectors.
 
-> ⚠️ **Important:** This is **Wi-Fi 6**, NOT Wi-Fi 6E — **no 6 GHz band**. For 6 GHz support, see AWUS036AXML or AWUS036AXM. Monitor mode is limited on kernels below 6.12; **not recommended for Linux security research**.
+> ⚠️ **Important:** This is **Wi-Fi 6**, NOT Wi-Fi 6E — **no 6 GHz band**. For 6 GHz support, see AWUS036AXML or AWUS036AXM. **Monitor mode is not supported** by the community rtl8852bu driver; not recommended for Linux security research.
 
 > **macOS Notice:** All ALFA adapters have limited/no macOS support. macOS 11 Big Sur and later, and Apple Silicon (M1/M2/M3) are **NOT** supported. Maximum macOS support is 10.15 Catalina on Intel Macs.
 
@@ -47,37 +47,37 @@ The AWUS036AX features the Realtek RTL8832BU chipset with Wi-Fi 6 (802.11ax) dua
 |----|--------|-------|
 | Windows 10/11 | ✅ Supported | Driver from Alfa website |
 | macOS | ❌ Not supported | No macOS 11+ or Apple Silicon |
-| Ubuntu | ⚠️ Requires driver | In-kernel on kernel ≥ 6.14 (Ubuntu 24.10+); earlier versions need manual DKMS |
-| Kali Linux | ⚠️ Limited | Monitor mode limited on kernels < 6.12; not recommended for pen testing |
+| Ubuntu | ⚠️ Requires driver | Not in-kernel; build the community rtl8852bu driver via DKMS |
+| Kali Linux | ⚠️ Limited | Managed mode only (DKMS driver); monitor mode not supported |
 | NetHunter | ⚠️ Limited | Kernel-dependent |
 
 ## Hardware Support
 
 | Hardware | Status | Notes |
 |----------|--------|-------|
-| Raspberry Pi 4/5 | ⚠️ Requires driver | Manual install needed on Pi OS with kernel < 6.14 |
+| Raspberry Pi 4/5 | ⚠️ Requires driver | Manual DKMS driver install needed on Pi OS |
 | Desktop/Laptop PC | ✅ Supported | Standard USB-A |
 
 ## Advanced Capabilities
 
 | Feature | Status |
 |---------|--------|
-| Monitor Mode | ⚠️ Limited (kernel ≥ 6.12 recommended) |
-| Packet Injection | ⚠️ Limited |
+| Monitor Mode | ❌ Not supported (community driver) |
+| Packet Injection | ❌ Not supported |
 | Soft AP Mode | ✅ Yes |
 | Bluetooth | ❌ No |
 
 ## What's in the Box
 
 - 1× AWUS036AX adapter
-- 2× Detachable dual-band antennas (5 dBi)
+- 2× Detachable dual-band antennas
 
 ## Resources & Links
 
 | Resource | Link |
 |----------|------|
 | Official Documentation | https://docs.alfa.com.tw/ |
-| Linux Driver (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20240418 |
+| Linux Driver (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20250826 |
 
 ## Product Datasheet
 

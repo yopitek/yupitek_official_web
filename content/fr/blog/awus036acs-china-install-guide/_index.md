@@ -16,19 +16,19 @@ author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "Quel chipset utilise l'AWUS036ACS ? Est-ce le même que l'AWUS036ACH ?"
-    answer: "Il utilise le chipset Realtek RTL8811AU, qui partage le même paquet de pilote que le RTL8812AU."
+    answer: "Il utilise le chipset Realtek RTL8811AU. Il ne partage pas le pilote du RTL8812AU : il faut le pilote communautaire 8821au (morrownr/8821au-20210708), module `8821au`."
   - question: "L'AWUS036ACS supporte-t-il le mode moniteur ?"
     answer: "Oui, le RTL8811AU supporte parfaitement le mode moniteur et l'injection de paquets. C'est un choix économique pour la recherche en sécurité."
   - question: "Faut-il un VPN pour installer l'AWUS036ACS en Chine ?"
-    answer: "Non, Kali installe le pilote DKMS via apt. Sur Ubuntu/Debian, téléchargez le code source depuis Gitee et compilez."
+    answer: "Non. Sur toutes les distributions, compilez le pilote DKMS 8821au avec install-driver.sh depuis un miroir Gitee."
   - question: "Quel est l'USB ID de l'AWUS036ACS ?"
     answer: "L'USB ID du Realtek RTL8811AU est 0bda:0811, vérifiable avec lsusb."
   - question: "Quelle est la commande pour installer le pilote AWUS036ACS sur Kali Linux ?"
-    answer: "Kali permet d'installer directement avec sudo apt install realtek-rtl88xxau-dkms."
+    answer: "Installez les outils de compilation, clonez le pilote 8821au (morrownr/8821au-20210708 ou un miroir Gitee) puis exécutez `sudo sh install-driver.sh`. Le paquet apt realtek-rtl88xxau-dkms est le pilote du RTL8812AU, il ne convient pas à cet adaptateur."
 ---
 
 {{< tldr >}}
-L'AWUS036ACS utilise le chipset RTL8811AU. Sur Kali, installez le pilote DKMS via apt. Sur Ubuntu/Debian, compilez depuis Gitee. Supporte le mode moniteur et l'injection de paquets.
+L'AWUS036ACS utilise le chipset RTL8811AU. Sur toutes les distributions, compilez le pilote DKMS 8821au avec install-driver.sh depuis un miroir Gitee. Supporte le mode moniteur et l'injection de paquets.
 {{< /tldr >}}
 
 L'AWUS036ACS est l'adaptateur bi-bande compact d'ALFA pour la recherche en sécurité. Sa puce RTL8811AU prend en charge le mode moniteur complet et l'injection de paquets sur Kali Linux — mais comme le pilote est hors-noyau (out-of-kernel), vous devez le compiler à partir du code source. En Chine, GitHub est bloqué, ce guide utilise donc exclusivement des miroirs Gitee. Pas besoin de GitHub.
@@ -123,10 +123,10 @@ sudo reboot
 Après le redémarrage, vérifiez que le pilote est chargé.
 
 ```bash
-lsmod | grep 88XXau
+lsmod | grep 8821au
 ```
 
-Vous devriez voir un module `88XXau` listé. Confirmez ensuite que l'interface est apparue.
+Vous devriez voir un module `8821au` listé. Confirmez ensuite que l'interface est apparue.
 
 ```bash
 iwconfig
@@ -413,4 +413,4 @@ Des questions ? Laissez un commentaire ci-dessous ou contactez-nous sur [yupitek
 1. [Documentation officielle aircrack-ng](https://www.aircrack-ng.org/)
 2. [Site officiel ALFA Network](https://www.alfa.com.tw/)
 3. [Documentation officielle Kali Linux](https://www.kali.org/docs/)
-4. [Miroir Gitee rtl8812au](https://gitee.com/mirrors/rtl8812au)
+4. [Miroir Gitee 8821au](https://gitee.com/mirrors/8821au)

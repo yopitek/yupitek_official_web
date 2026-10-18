@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AX 中国安装指南：Kali Linux, Ubuntu, Debian 和 树莓派"
-description: "手把手教你在中国境内使用国内镜像源安装 ALFA AWUS036AX 驱动。包含 RTL8832BU 驱动安装、WiFi 6 AX1800 性能说明。支持 Kali Linux, Ubuntu 22/24 (24.04 内置驱动), Debian 和 树莓派。无需访问 GitHub。"
+description: "手把手教你在中国境内使用国内镜像源安装 ALFA AWUS036AX 驱动。包含 RTL8832BU 驱动安装、WiFi 6 AX1800 性能说明。支持 Kali Linux, Ubuntu 22/24 (DKMS), Debian 和 树莓派。无需访问 GitHub。"
 date: 2026-04-24
 author: "benny-lai"
 lastmod: 2026-07-02
@@ -18,9 +18,9 @@ faq:
   - question: "AWUS036AX 用什么芯片？支持 WiFi 6 吗？"
     answer: "采用 Realtek RTL8832BU 芯片，支持 WiFi 6 (802.11ax) 高速网络。"
   - question: "AWUS036AX 在 Ubuntu 24.04 上需要安装驱动吗？"
-    answer: "不需要，Ubuntu 24.04 核心已原生支持 RTL8832BU，插上即用。"
+    answer: "需要。RTL8832BU 不在 Ubuntu 24.04 内核中，请通过 DKMS 编译一次社区版 rtl8852bu 驱动（morrownr/rtl8852bu-20250826），之后内核更新时会自动重新编译。"
   - question: "AWUS036AX 适合做无线安全研究吗？"
-    answer: "较不适合，RTL8832BU 的监听模式支持有限，建议改用 AWUS036ACM 或 AWUS036ACH。"
+    answer: "不适合。社区版 rtl8852bu 驱动不支持 Monitor mode 和封包注入，建议改用内核内置 MediaTek 驱动的 AWUS036ACM。"
   - question: "在中国安装 AWUS036AX 需要翻墙吗？"
     answer: "不需要，从 Gitee 下载 rtl8852bu 源码并用国内镜像安装编译工具即可。"
   - question: "AWUS036AX 的 USB ID 是多少？"
@@ -30,16 +30,16 @@ faq:
 
 
 
-想要在 Linux 上体验 WiFi 6 的极速？AWUS036AX 是个不错的选择。它采用的 RTL8832BU 芯片在旧内核系统上可能需要咱们手动“调教”一下驱动。不过有个好消息：如果你用的是 Ubuntu 24.04，驱动已经内置好了，插上就能飞。
+想要在 Linux 上体验 WiFi 6 的极速？AWUS036AX 是个不错的选择。AWUS036AX 的 RTL8832BU 芯片没有 Linux 内核内置驱动，因此在所有发行版（包括 Ubuntu 24.04）上都需要通过 DKMS 编译一次社区版 rtl8852bu 驱动。本指南使用 Gitee 镜像，无需访问 GitHub。该驱动不支持 Monitor mode。
 
 {{< tldr >}}
-AWUS036AX 采用 RTL8832BU 芯片支持 WiFi 6，Ubuntu 24.04 免驱即用，Kali/Ubuntu 22.04 从 Gitee 下载 rtl8852bu 编译安装。
+AWUS036AX 采用 RTL8832BU 芯片，支持 WiFi 6。驱动不在内核中：所有发行版（包括 Ubuntu 24.04）都需要通过 DKMS 编译 rtl8852bu。不支持 Monitor mode。
 {{< /tldr >}}
 
 
 国内的小伙伴不用担心 GitHub 连不上的问题，本指南全程使用 Gitee 镜像。咱们现在就开始一步步把它跑起来！
 
-> **安全研究避坑指南：** 虽然 AX 速度很快，但 RTL8832BU 的监听模式支持比较有限。如果你是冲着数据包注入和 Kali Linux 深度渗透去的，我更推荐你看看 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/) 或 [AWUS036ACH](/zh-cn/blog/awus036ach-china-install-guide/)。
+> **安全研究提示：** 社区版 rtl8852bu 驱动不支持 Monitor mode 和封包注入。做安全研究请改用内核内置 MediaTek 驱动的网卡，例如 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)。
 
 ## 动手前的准备
 
@@ -125,7 +125,7 @@ sudo reboot
 重启回来，检查下网卡有没有乖乖上岗：
 
 ```bash
-lsmod | grep 88x2bu
+lsmod | grep 8852bu
 iwconfig
 ```
 
@@ -133,32 +133,29 @@ iwconfig
 
 ### 5. 开启监听模式 {#enable-monitor-mode}
 
-> **注意：** 这一步仅供测试，因为该网卡的监听模式支持并不算完美。
-
-```bash
-sudo airmon-ng check kill
-sudo ip link set wlan1 down
-sudo iw dev wlan1 set type monitor
-sudo ip link set wlan1 up
-iwconfig
-```
+> **不支持：** RTL8832BU 的社区版 rtl8852bu 驱动不支持 Monitor mode，这里没有可执行的命令。如需 Monitor mode，请改用内核内置 MediaTek 驱动的网卡，例如 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)。
 
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### 如果你是 Ubuntu 24.04 (Noble) — 躺赢模式
+### Ubuntu 24.04 (Noble) — 需要 DKMS
 
-Ubuntu 24.04 内核已经原生支持，插上就能用。建议换个阿里云源让更新更快：
+Ubuntu 24.04（内核 6.8）并未内置 RTL8832BU 的驱动。先换成国内镜像源，再按下方 Ubuntu 22.04 的方式编译驱动。
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
 # 将 URIs 改为 http://mirrors.aliyun.com/ubuntu/
 
 sudo apt update
-sudo modprobe 88x2bu
-iwconfig
+sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
+git clone https://gitee.com/mirrors/rtl8852bu.git
+cd rtl8852bu
+sudo ./install-driver.sh
+sudo reboot
 ```
+
+重启后执行 `sudo modprobe 8852bu` 和 `iwconfig`。如果模块成功加载并出现网卡接口，就完成了（仅支持 Managed 模式，不支持 Monitor mode）。
 
 ---
 
@@ -231,7 +228,7 @@ sudo reboot
 |---------|-------------|-----|
 | `lsusb` 刷不出 0bda:885a | USB 接口或供电问题 | 尝试插在电脑背后的 USB 3.0 蓝色接口上 |
 | `install-driver.sh` 报错 | 缺少内核头文件 | 跑 `sudo apt install linux-headers-$(uname -r)` |
-| 监听模式不稳定 | 芯片本身限制 | 如果需要深度渗透，建议换成 ACM 型号 |
+| Monitor mode／封包注入无法使用 | rtl8852bu 驱动不支持 | 做渗透测试请改用 AWUS036ACM |
 
 ## 国内常用资源汇总
 

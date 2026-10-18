@@ -1,6 +1,6 @@
 ---
 title: "دليل تثبيت برنامج تشغيل ALFA AWUS036AXER للصين: Kali Linux، Ubuntu، Debian و Raspberry Pi"
-description: "دليل خطوة بخطوة لتثبيت برامج تشغيل ALFA AWUS036AXER في الصين باستخدام المرايا المحلية. برنامج تشغيل RTL8832BU، محول نانو WiFi 6. يغطي Kali Linux و Ubuntu 22/24 (مدمج في 24.04) و Debian و Raspberry Pi. لا يتطلب GitHub."
+description: "دليل خطوة بخطوة لتثبيت برامج تشغيل ALFA AWUS036AXER في الصين باستخدام المرايا المحلية. برنامج تشغيل RTL8832BU، محول نانو WiFi 6. يغطي Kali Linux و Ubuntu 22/24 (DKMS) و Debian و Raspberry Pi. لا يتطلب GitHub."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -18,22 +18,22 @@ faq:
   - question: "ما الشريحة التي يستخدمها AWUS036AXER؟ هل هي نفس AWUS036AX؟"
     answer: "نفس الشريحة Realtek RTL8832BU وتدعم WiFi 6، لكن بحجم أصغر وأكثر قابلية للحمل."
   - question: "هل يحتاج AWUS036AXER إلى تثبيت تعريف على Ubuntu 24.04؟"
-    answer: "لا، نواة Ubuntu 24.04 تدعمه أصلياً ويعمل فور التوصيل."
+    answer: "نعم. شريحة RTL8832BU غير موجودة في نواة Ubuntu 24.04. قم ببناء برنامج التشغيل المجتمعي rtl8852bu (morrownr/rtl8852bu-20250826) مرة واحدة عبر DKMS؛ ثم تُعاد بناؤه تلقائياً عند تحديث النواة."
   - question: "هل AWUS036AXER مناسب لأبحاث الأمن اللاسلكي؟"
-    answer: "أقل ملاءمة، دعم وضع المراقبة لـ RTL8832BU محدود. يُنصح باستخدام AWUS036ACM أو AWUS036ACH بدلاً منه."
+    answer: "لا. برنامج التشغيل المجتمعي rtl8852bu لا يدعم وضع المراقبة ولا حقن الحزم. استخدم بدلاً منه محولاً ببرنامج تشغيل MediaTek مدمج في النواة مثل AWUS036ACM."
   - question: "ما هو USB ID لـ AWUS036AXER؟"
     answer: "USB ID لـ Realtek RTL8832BU هو 0bda:885a، يمكن التأكد بـ lsusb."
   - question: "هل أحتاج إلى VPN لتثبيت AWUS036AXER في الصين؟"
     answer: "لا، نزّل كود rtl8852bu من Gitee واستخدم المرايا المحلية لتثبيت أدوات التجميع."
 ---
-يعتبر AWUS036AXER أصغر محول WiFi 6 AX1800 ثنائي النطاق (نانو) من ALFA. شريحة RTL8832BU الخاصة به خارج النواة في إصدارات Linux الأقل من 6.14 — ولكن Ubuntu 24.04 (نواة 6.8) يتضمنها بشكل أصلي. يستخدم هذا الدليل مرايا Gitee للنواة القديمة وبرنامج التشغيل المدمج لـ Ubuntu 24.04. لا داعي للقلق، GitHub ليس مطلوبًا.
+يعتبر AWUS036AXER أصغر محول WiFi 6 AX1800 ثنائي النطاق (نانو) من ALFA. شريحة RTL8832BU في AWUS036AXER ليس لها برنامج تشغيل مدمج في نواة Linux، لذا يجب في كل توزيعة (بما فيها Ubuntu 24.04) بناء برنامج التشغيل المجتمعي rtl8852bu مرة واحدة عبر DKMS. يستخدم هذا الدليل مرايا Gitee فلا حاجة إلى الوصول إلى GitHub. وضع المراقبة غير مدعوم في برنامج التشغيل هذا.
 
 {{< tldr >}}
-يستخدم AWUS036AXER شريحة RTL8832BU، محول WiFi 6 مصغر ومحمول، Ubuntu 24.04 يعمل فور التوصيل، وعلى الأنظمة الأخرى جمّع rtl8852bu من Gitee.
+يستخدم AWUS036AXER شريحة RTL8832BU ويدعم WiFi 6. برنامج التشغيل غير موجود في النواة: كل توزيعة (بما فيها Ubuntu 24.04) تحتاج إلى بناء rtl8852bu عبر DKMS. وضع المراقبة غير مدعوم.
 {{< /tldr >}}
 
 
-> **ملاحظة حول أبحاث الأمان:** شريحة RTL8832BU لديها دعم محدود لوضع المراقبة. تختلف النتائج حسب إصدار النواة وبرنامج التشغيل. للحصول على حقن حزم موثوق على Kali Linux، فإن [AWUS036ACM](/ar/blog/awus036acm-china-install-guide/) أو [AWUS036ACH](/ar/blog/awus036ach-china-install-guide/) هما خيارات أفضل.
+> **ملاحظة حول أبحاث الأمان:** برنامج التشغيل المجتمعي rtl8852bu لا يدعم وضع المراقبة ولا حقن الحزم. لأبحاث الأمان استخدم محولاً ببرنامج تشغيل MediaTek مدمج في النواة مثل [AWUS036ACM](/ar/blog/awus036acm-china-install-guide/).
 
 ## قبل أن تبدأ
 
@@ -100,37 +100,25 @@ sudo reboot
 تأكد من تحميل برنامج التشغيل:
 
 ```bash
-lsmod | grep 88x2bu
+lsmod | grep 8852bu
 iwconfig
 ```
 
 ### الخطوة 5: تمكين وضع المراقبة {#enable-monitor-mode}
 
-> **ملاحظة:** دعم وضع المراقبة محدود في RTL8832BU. الأوامر التالية تعمل في معظم الإعدادات ولكن النتائج قد تختلف.
-
-```bash
-sudo airmon-ng check kill
-sudo ip link set wlan1 down
-sudo iw dev wlan1 set type monitor
-sudo ip link set wlan1 up
-iwconfig
-```
+> **غير مدعوم:** برنامج التشغيل المجتمعي rtl8852bu لشريحة RTL8832BU لا يدعم وضع المراقبة، لذلك لا توجد أوامر لتنفيذها هنا. إذا كنت تحتاج إلى وضع المراقبة فاستخدم محولاً ببرنامج تشغيل MediaTek مدمج في النواة مثل [AWUS036ACM](/ar/blog/awus036acm-china-install-guide/).
 
 ### الخطوة 6: اختبار حقن الحزم {#test-packet-injection}
 
-```bash
-sudo aireplay-ng --test wlan1
-```
-
-إذا كان الحقن غير موثوق به، ففكر في استخدام [AWUS036ACM](/ar/blog/awus036acm-china-install-guide/) لأعمال اختبار الاختراق.
+> **غير مدعوم:** يعتمد حقن الحزم على وضع المراقبة الذي لا يوفره برنامج التشغيل هذا. استخدم [AWUS036ACM](/ar/blog/awus036acm-china-install-guide/) لاختبارات الحقن.
 
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — برنامج التشغيل مدمج، لا حاجة لـ Gitee
+### Ubuntu 24.04 (Noble) — يتطلب DKMS
 
-يأتي Ubuntu 24.04 بنواة 6.8، والتي تتضمن برنامج تشغيل RTL8832BU بشكل أصلي.
+لا يتضمن Ubuntu 24.04 (النواة 6.8) برنامج تشغيل لشريحة RTL8832BU. انتقل إلى مرآة محلية ثم ابنِ برنامج التشغيل كما في Ubuntu 22.04 أدناه.
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -146,11 +134,14 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 ```bash
 sudo apt update
-sudo modprobe 88x2bu
-iwconfig
+sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
+git clone https://gitee.com/mirrors/rtl8852bu.git
+cd rtl8852bu
+sudo ./install-driver.sh
+sudo reboot
 ```
 
-إذا تم تحميل الوحدة وظهرت الواجهة، فقد انتهيت. انتقل إلى خطوات وضع المراقبة أعلاه.
+بعد إعادة التشغيل نفّذ `sudo modprobe 8852bu` و `iwconfig`. إذا تم تحميل الوحدة وظهرت واجهة فقد انتهيت (وضع الإدارة فقط؛ وضع المراقبة غير مدعوم).
 
 ---
 
@@ -198,7 +189,7 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-تمكين وضع المراقبة بنفس خطوات Kali أعلاه.
+وضع المراقبة غير مدعوم في برنامج التشغيل هذا (راجع الخطوة 5 في Kali).
 
 ---
 
@@ -247,8 +238,8 @@ sudo reboot
 | `lsusb` لا يظهر 0bda:885a | لم يتم اكتشاف المحول | جرب منفذ USB مختلفًا |
 | فشل `install-driver.sh` | فقدان الرؤوس | `sudo apt install linux-headers-$(uname -r)` |
 | فشل استنساخ Gitee | مشكلة في الشبكة | ابحث في gitee.com عن `rtl8852bu` |
-| Ubuntu 24.04: فشل `modprobe 88x2bu` | الوحدة غير موجودة | تثبيت `linux-modules-extra-$(uname -r)` |
-| وضع المراقبة غير موثوق | قيود RTL8832BU | استخدم AWUS036ACM لأعمال اختبار الاختراق |
+| فشل `modprobe 8852bu` | لم يُبنَ برنامج التشغيل أو لم يُحمَّل | أعد تشغيل `sudo ./install-driver.sh` وتحقق من `sudo dkms status` ثم أعد التشغيل |
+| وضع المراقبة / الحقن لا يعمل | غير مدعوم في برنامج التشغيل rtl8852bu | استخدم AWUS036ACM لأعمال الاختبار الأمني |
 
 > **ملاحظة حول VIF:** برنامج تشغيل RTL8832BU خارج النواة لا يدعم الواجهات الافتراضية (VIF).
 

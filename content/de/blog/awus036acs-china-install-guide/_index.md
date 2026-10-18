@@ -16,21 +16,21 @@ series_order: 3
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 faq:
   - question: "Welchen Chipsatz verwendet der AWUS036ACS? Ist er derselbe wie beim AWUS036ACH?"
-    answer: "Er verwendet den Realtek RTL8811AU-Chipsatz und teilt sich denselben Treiberpaket wie der RTL8812AU."
+    answer: "Er verwendet den Realtek RTL8811AU-Chipsatz. Er teilt sich nicht den Treiber des RTL8812AU, sondern braucht den Community-Treiber 8821au (morrownr/8821au-20210708), Modulname `8821au`."
   - question: "Unterstützt der AWUS036ACS den Monitor Mode?"
     answer: "Ja, der RTL8811AU unterstützt den Monitor Mode und Packet Injection einwandfrei und ist eine kostengünstige Wahl für Sicherheitsforschung."
   - question: "Muss man in China eine VPN-Verbindung (Great Firewall umgehen) nutzen, um den AWUS036ACS zu installieren?"
-    answer: "Nein, unter Kali Linux wird der DKMS-Treiber über apt installiert, und unter Ubuntu/Debian kann der Quellcode von Gitee heruntergeladen und kompiliert werden."
+    answer: "Nein. Auf jeder Distribution bauen Sie den DKMS-Treiber 8821au mit install-driver.sh aus einem Gitee-Quellcode-Mirror."
   - question: "Was ist die USB-ID des AWUS036ACS?"
     answer: "Die USB-ID des Realtek RTL8811AU lautet 0bda:0811, was mit lsusb bestätigt werden kann."
   - question: "Welcher Befehl wird unter Kali Linux zur Installation des Treibers für den AWUS036ACS verwendet?"
-    answer: "Kali kann den Treiber direkt mit dem Befehl sudo apt install realtek-rtl88xxau-dkms installieren."
+    answer: "Installieren Sie die Build-Tools, klonen Sie den 8821au-Treiber (morrownr/8821au-20210708 oder einen Gitee-Mirror davon) und führen Sie `sudo sh install-driver.sh` aus. Das apt-Paket realtek-rtl88xxau-dkms ist der RTL8812AU-Treiber und für diesen Adapter nicht geeignet."
 ---
 
 Der AWUS036ACS ist ALFAs kompakter Dual-Band-Adapter für Sicherheitsforschung. Sein RTL8811AU-Chip unterstützt den vollen Monitor-Modus und Paket-Injektion unter Kali Linux – aber da der Treiber nicht im Kernel enthalten ist, müssen Sie ihn aus dem Quellcode kompilieren. In China ist GitHub blockiert, daher verwendet diese Anleitung ausschließlich Gitee-Mirrors. Kein GitHub erforderlich.
 
 {{< tldr >}}
-Der AWUS036ACS verwendet den RTL8811AU-Chipsatz. Unter Kali Linux wird der DKMS-Treiber über apt installiert, unter Ubuntu/Debian wird er aus Gitee kompiliert. Er unterstützt den Monitor Mode und Packet Injection.
+Der AWUS036ACS verwendet den RTL8811AU-Chipsatz. Auf jeder Distribution wird der DKMS-Treiber 8821au mit install-driver.sh aus einem Gitee-Mirror gebaut. Er unterstützt Monitor-Modus und Paket-Injektion.
 {{< /tldr >}}
 
 Stellen Sie sicher, dass Sie Folgendes bereit haben:
@@ -126,10 +126,10 @@ sudo reboot
 Überprüfen Sie nach dem Neustart, ob der Treiber geladen wurde.
 
 ```bash
-lsmod | grep 88XXau
+lsmod | grep 8821au
 ```
 
-Sie sollten ein `88XXau`-Modul in der Liste sehen. Bestätigen Sie dann, dass das Interface erschienen ist.
+Sie sollten ein `8821au`-Modul in der Liste sehen. Bestätigen Sie dann, dass das Interface erschienen ist.
 
 ```bash
 iwconfig
@@ -417,4 +417,4 @@ Fragen? Hinterlassen Sie unten einen Kommentar oder kontaktieren Sie uns auf [yu
 1. [aircrack-ng Offizielle Dokumentation](https://www.aircrack-ng.org/)
 2. [ALFA Network Offizielle Website](https://www.alfa.com.tw/)
 3. [Kali Linux Offizielle Dokumentation](https://www.kali.org/docs/)
-4. [Gitee rtl8812au Spiegel](https://gitee.com/mirrors/rtl8812au)
+4. [Gitee 8821au Spiegel](https://gitee.com/mirrors/8821au)

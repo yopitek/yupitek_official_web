@@ -1,6 +1,6 @@
 ---
 title: "Guide d'installation du pilote ALFA AWUS036AX pour la Chine : Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "Guide étape par étape pour installer les pilotes ALFA AWUS036AX en Chine en utilisant des miroirs domestiques. Pilote RTL8832BU, WiFi 6 AX1800. Couvre Kali Linux, Ubuntu 22/24 (intégré sur 24.04), Debian et Raspberry Pi. Aucun GitHub requis."
+description: "Guide étape par étape pour installer les pilotes ALFA AWUS036AX en Chine en utilisant des miroirs domestiques. Pilote RTL8832BU, WiFi 6 AX1800. Couvre Kali Linux, Ubuntu 22/24 (DKMS), Debian et Raspberry Pi. Aucun GitHub requis."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -18,9 +18,9 @@ faq:
   - question: "Quel chipset utilise l'AWUS036AX ? Supporte-t-il le WiFi 6 ?"
     answer: "Il utilise le chipset Realtek RTL8832BU et supporte le WiFi 6 (802.11ax) haut débit."
   - question: "L'AWUS036AX nécessite-t-il un pilote sur Ubuntu 24.04 ?"
-    answer: "Non, le noyau d'Ubuntu 24.04 supporte nativement le RTL8832BU, plug-and-play."
+    answer: "Oui. Le RTL8832BU n'est pas dans le noyau d'Ubuntu 24.04. Compilez une fois le pilote communautaire rtl8852bu (morrownr/rtl8852bu-20250826) via DKMS ; il est ensuite recompilé automatiquement à chaque mise à jour du noyau."
   - question: "L'AWUS036AX convient-il à la recherche en sécurité sans fil ?"
-    answer: "Peu adapté. Le support du mode moniteur du RTL8832BU est limité. Préférez l'AWUS036ACM ou l'AWUS036ACH."
+    answer: "Non. Le pilote communautaire rtl8852bu ne prend en charge ni le mode moniteur ni l'injection de paquets. Utilisez plutôt un adaptateur avec pilote MediaTek intégré au noyau, comme l'AWUS036ACM."
   - question: "Faut-il un VPN pour installer l'AWUS036AX en Chine ?"
     answer: "Non, téléchargez le code source rtl8852bu depuis Gitee et utilisez les miroirs nationaux pour les outils de compilation."
   - question: "Quel est l'USB ID de l'AWUS036AX ?"
@@ -28,12 +28,12 @@ faq:
 ---
 
 {{< tldr >}}
-L'AWUS036AX utilise le chipset RTL8832BU supportant le WiFi 6. Plug-and-play sur Ubuntu 24.04. Sur Kali/Ubuntu 22.04, compilez rtl8852bu depuis Gitee.
+L'AWUS036AX utilise le chipset RTL8832BU avec WiFi 6. Le pilote n'est pas dans le noyau : toutes les distributions (y compris Ubuntu 24.04) doivent compiler rtl8852bu via DKMS. Le mode moniteur n'est pas pris en charge.
 {{< /tldr >}}
 
-L'AWUS036AX est l'adaptateur double bande WiFi 6 AX1800 d'ALFA. Sa puce RTL8832BU est hors noyau sur les versions de Linux inférieures à 6.14 — mais Ubuntu 24.04 (noyau 6.8) l'inclut nativement. Ce guide utilise des miroirs Gitee pour les noyaux plus anciens et le pilote intégré pour Ubuntu 24.04. Aucun GitHub requis.
+L'AWUS036AX est l'adaptateur double bande WiFi 6 AX1800 d'ALFA. La puce RTL8832BU de l'AWUS036AX n'a pas de pilote intégré au noyau Linux : sur toutes les distributions (y compris Ubuntu 24.04), il faut compiler une fois le pilote communautaire rtl8852bu via DKMS. Ce guide utilise des miroirs Gitee, aucun accès à GitHub n'est requis. Ce pilote ne prend pas en charge le mode moniteur.
 
-> **Note sur la recherche en sécurité :** Le RTL8832BU a un support limité du mode moniteur. Les résultats varient selon la version du noyau et du pilote. Pour une injection de paquets fiable sur Kali Linux, l'[AWUS036ACM](/fr/blog/awus036acm-china-install-guide/) ou l'[AWUS036ACH](/fr/blog/awus036ach-china-install-guide/) sont de meilleurs choix.
+> **Remarque sur la recherche en sécurité:** Le pilote communautaire rtl8852bu ne prend en charge ni le mode moniteur ni l'injection de paquets. Pour la recherche en sécurité, utilisez un adaptateur avec pilote MediaTek intégré au noyau, comme l'[AWUS036ACM](/fr/blog/awus036acm-china-install-guide/).
 
 ## Avant de commencer
 
@@ -101,37 +101,25 @@ sudo reboot
 Vérifiez que le pilote est chargé :
 
 ```bash
-lsmod | grep 88x2bu
+lsmod | grep 8852bu
 iwconfig
 ```
 
 ### Étape 5 : Activer le mode moniteur {#enable-monitor-mode}
 
-> **Note :** Le support du mode moniteur est limité sur le RTL8832BU. Les commandes suivantes fonctionnent sur la plupart des configurations mais les résultats peuvent varier.
-
-```bash
-sudo airmon-ng check kill
-sudo ip link set wlan1 down
-sudo iw dev wlan1 set type monitor
-sudo ip link set wlan1 up
-iwconfig
-```
+> **Non pris en charge :** Le pilote communautaire rtl8852bu du RTL8832BU ne prend pas en charge le mode moniteur, il n'y a donc aucune commande à exécuter ici. Si vous avez besoin du mode moniteur, utilisez un adaptateur avec pilote MediaTek intégré au noyau, comme l'[AWUS036ACM](/fr/blog/awus036acm-china-install-guide/).
 
 ### Étape 6 : Tester l'injection de paquets {#test-packet-injection}
 
-```bash
-sudo aireplay-ng --test wlan1
-```
-
-Si l'injection n'est pas fiable, envisagez l'[AWUS036ACM](/fr/blog/awus036acm-china-install-guide/) pour les travaux de test d'intrusion.
+> **Non pris en charge :** L'injection de paquets dépend du mode moniteur, que ce pilote ne fournit pas. Utilisez l'[AWUS036ACM](/fr/blog/awus036acm-china-install-guide/) pour les tests d'injection.
 
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — pilote dans le noyau, pas besoin de Gitee
+### Ubuntu 24.04 (Noble) — DKMS requis
 
-Ubuntu 24.04 est livré avec le noyau 6.8, qui inclut nativement le pilote RTL8832BU.
+Ubuntu 24.04 (noyau 6.8) n'inclut pas de pilote pour le RTL8832BU. Passez à un miroir domestique, puis compilez le pilote comme pour Ubuntu 22.04 ci-dessous.
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -147,11 +135,14 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 ```bash
 sudo apt update
-sudo modprobe 88x2bu
-iwconfig
+sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
+git clone https://gitee.com/mirrors/rtl8852bu.git
+cd rtl8852bu
+sudo ./install-driver.sh
+sudo reboot
 ```
 
-Si le module se charge et qu'une interface apparaît, vous avez terminé. Passez aux étapes du mode moniteur ci-dessus.
+Après le redémarrage, exécutez `sudo modprobe 8852bu` et `iwconfig`. Si le module se charge et qu'une interface apparaît, c'est terminé (mode géré uniquement ; le mode moniteur n'est pas pris en charge).
 
 ---
 
@@ -199,7 +190,7 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-Activez le mode moniteur de la même manière que pour Kali ci-dessus.
+Le mode moniteur n'est pas pris en charge par ce pilote (voir l'étape 5 de Kali).
 
 ---
 
@@ -248,8 +239,8 @@ sudo reboot
 | `lsusb` n'affiche pas 0bda:885a | Adaptateur non détecté | Essayer un autre port USB |
 | `install-driver.sh` échoue | En-têtes manquants | `sudo apt install linux-headers-$(uname -r)` |
 | Le clonage Gitee échoue | Problème de réseau | Rechercher `rtl8852bu` sur gitee.com |
-| Ubuntu 24.04 : `modprobe 88x2bu` échoue | Module non présent | Installer `linux-modules-extra-$(uname -r)` |
-| Mode moniteur peu fiable | Limitation du RTL8832BU | Utiliser l'AWUS036ACM pour les tests d'intrusion |
+| `modprobe 8852bu` échoue | Pilote non compilé ou non chargé | Relancer `sudo ./install-driver.sh`, vérifier `sudo dkms status`, puis redémarrer |
+| Le mode moniteur / l'injection ne fonctionne pas | Non pris en charge par le pilote rtl8852bu | Utiliser l'AWUS036ACM pour le pentest |
 
 > **Note sur le VIF :** Le pilote hors noyau RTL8832BU ne prend pas en charge les interfaces virtuelles (VIF).
 

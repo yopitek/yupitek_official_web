@@ -18,26 +18,26 @@ faq:
   - question: "AWUS036AX 用什麼晶片？支援 WiFi 6 嗎？"
     answer: "採用 Realtek RTL8832BU 晶片，支援 WiFi 6 (802.11ax) 高速網路。"
   - question: "AWUS036AX 在 Ubuntu 24.04 上需要安裝驅動嗎？"
-    answer: "不需要，Ubuntu 24.04 核心已原生支援 RTL8832BU，插上即用。"
+    answer: "需要。RTL8832BU 不在 Ubuntu 24.04 核心中，請透過 DKMS 編譯一次社群版 rtl8852bu 驅動（morrownr/rtl8852bu-20250826），之後核心更新時會自動重新編譯。"
   - question: "AWUS036AX 適合做無線安全研究嗎？"
-    answer: "較不適合，RTL8832BU 的監聽模式支援有限，建議改用 AWUS036ACM 或 AWUS036ACH。"
+    answer: "不適合。社群版 rtl8852bu 驅動不支援 Monitor mode 與封包注入，建議改用核心內建 MediaTek 驅動的 AWUS036ACM。"
   - question: "在中國安裝 AWUS036AX 需要翻牆嗎？"
     answer: "不需要，從 Gitee 下載 rtl8852bu 源碼並用國內鏡像安裝編譯工具即可。"
   - question: "AWUS036AX 的 USB ID 是多少？"
     answer: "Realtek RTL8832BU 的 USB ID 為 0bda:8832，用 lsusb 可確認。"
 ---
 
-ALFA AWUS036AX 搭載 RTL8832BU 晶片支援 WiFi 6，Ubuntu 24.04 核心內建驅動即插即用，其他系統從 Gitee 下載源碼編譯安裝。
+AWUS036AX 的 RTL8832BU 晶片沒有 Linux 核心內建驅動，因此在所有發行版（包括 Ubuntu 24.04）上都需要透過 DKMS 編譯一次社群版 rtl8852bu 驅動。本指南使用 Gitee 鏡像，不需要連線 GitHub。此驅動不支援 Monitor mode。
 
 {{< tldr >}}
-AWUS036AX 採用 RTL8832BU 晶片支援 WiFi 6，Ubuntu 24.04 免驅即用，Kali/Ubuntu 22.04 從 Gitee 下載 rtl8852bu 編譯安裝。
+AWUS036AX 採用 RTL8832BU 晶片，支援 WiFi 6。驅動不在核心中：所有發行版（包括 Ubuntu 24.04）都需要透過 DKMS 編譯 rtl8852bu。不支援 Monitor mode。
 {{< /tldr >}}
 
-想在 Linux 上體驗 WiFi 6 的飆速快感？剛拿到這台 AWUS036AX，插上去發現沒反應？別擔心，這很正常。因為它採用的 RTL8832BU 晶片在較舊的核心版本上需要手動安裝驅動。不過有個好消息：如果你是用 Ubuntu 24.04，驅動已經內建好了，插上就能直接起飛。
+想在 Linux 上體驗 WiFi 6 的飆速快感？剛拿到這台 AWUS036AX，插上去發現沒反應？別擔心，這很正常。
 
 考慮到國內存取 GitHub 不太方便，這份指南全程會帶大家使用 Gitee 鏡像，不用翻牆也能輕鬆搞定。咱們現在就開始吧！
 
-> **安全研究避坑指南：** 雖然這張網卡速度很快，但 RTL8832BU 的監聽模式支援有限。如果你是為了 Kali Linux 深度滲透和封包注入而來，我更推薦你參考 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/) 或 [AWUS036ACH](/zh-tw/blog/awus036ach-china-install-guide/)。
+> **資安研究提示：** 社群版 rtl8852bu 驅動不支援 Monitor mode 與封包注入。做資安研究請改用核心內建 MediaTek 驅動的網卡，例如 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)。
 
 ## 開始前的準備
 
@@ -126,7 +126,7 @@ sudo reboot
 重啟回來後，驗證一下網卡有沒有乖乖上線：
 
 ```bash
-lsmod | grep 88x2bu
+lsmod | grep 8852bu
 iwconfig
 ```
 
@@ -134,18 +134,23 @@ iwconfig
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — 內建驅動，插上即用
+### Ubuntu 24.04 (Noble) — 需要 DKMS
 
-24.04 核心已經原生支援，插上通常就能用了。建議換個阿里雲鏡像讓下載更快：
+Ubuntu 24.04（核心 6.8）並未內建 RTL8832BU 的驅動。先換成國內鏡像源，再依下方 Ubuntu 22.04 的方式編譯驅動。
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
 # 將 URIs 改為 http://mirrors.aliyun.com/ubuntu/
 
 sudo apt update
-sudo modprobe 88x2bu
-iwconfig
+sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
+git clone https://gitee.com/mirrors/rtl8852bu.git
+cd rtl8852bu
+sudo ./install-driver.sh
+sudo reboot
 ```
+
+重新開機後執行 `sudo modprobe 8852bu` 與 `iwconfig`。如果模組成功載入並出現網卡介面，就完成了（僅支援 Managed 模式，不支援 Monitor mode）。
 
 ---
 
@@ -201,7 +206,7 @@ sudo reboot
 |------|----------|----------|
 | `lsusb` 沒反應 | 供電不足 | 換個 USB 3.0 埠（藍色的）試試，或者插在主板後方 |
 | `install-driver.sh` 報錯 | 缺少核心標頭檔 | 跑一下 `sudo apt install linux-headers-$(uname -r)` |
-| 監聽模式不穩定 | 晶片限制 | 此型號主打 WiFi 6 高速上網，監聽模式支援較弱 |
+| Monitor mode／封包注入無法使用 | rtl8852bu 驅動不支援 | 做滲透測試請改用 AWUS036ACM |
 
 ## 國內鏡像速查表
 

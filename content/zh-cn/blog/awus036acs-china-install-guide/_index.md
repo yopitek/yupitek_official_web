@@ -16,15 +16,15 @@ series_order: 3
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 faq:
   - question: "AWUS036ACS 用什么芯片？跟 AWUS036ACH 一样吗？"
-    answer: "采用 Realtek RTL8811AU 芯片，与 RTL8812AU 共用同一个驱动程序软件包。"
+    answer: "采用 Realtek RTL8811AU 芯片。它不与 RTL8812AU 共用驱动，需要使用社区版 8821au 驱动（morrownr/8821au-20210708），模块名为 `8821au`。"
   - question: "AWUS036ACS 支持监听模式吗？"
     answer: "支持，RTL8811AU 完美支持监听模式与数据包注入，是安全研究的经济实惠选择。"
   - question: "在中国安装 AWUS036ACS 需要翻墙吗？"
-    answer: "不需要，Kali 用 apt 装 DKMS 驱动，Ubuntu/Debian 从 Gitee 下载源码编译即可。"
+    answer: "不需要。所有发行版都从 Gitee 源码镜像下载，并用 install-driver.sh 编译 8821au DKMS 驱动。"
   - question: "AWUS036ACS 的 USB ID 是多少？"
     answer: "Realtek RTL8811AU 的 USB ID 为 0bda:0811，用 lsusb 可确认。"
   - question: "Kali Linux 安装 AWUS036ACS 驱动的指令是什么？"
-    answer: "Kali 可直接执行 sudo apt install realtek-rtl88xxau-dkms 安装驱动。"
+    answer: "先安装编译工具，克隆 8821au 驱动（morrownr/8821au-20210708 或其 Gitee 镜像），再执行 `sudo sh install-driver.sh`。apt 软件包 realtek-rtl88xxau-dkms 是 RTL8812AU 的驱动，不适用于此网卡。"
 ---
 
 
@@ -33,7 +33,7 @@ faq:
 刚收到这款精巧的 AWUS036ACS，迫不及待插上电脑却发现 Linux 没反应？别急，这很正常。虽然它内置的 RTL8811AU 芯片是安全研究的神器，完美支持监听模式和数据包注入，但驱动并不在系统内核里，得咱们亲自动手装一下。
 
 {{< tldr >}}
-AWUS036ACS 采用 RTL8811AU 芯片，Kali 用 apt 装 DKMS 驱动，Ubuntu/Debian 从 Gitee 编译，支持监听模式与数据包注入。
+AWUS036ACS 采用 RTL8811AU 芯片。所有发行版都从 Gitee 镜像下载，并用 install-driver.sh 编译 8821au DKMS 驱动，支持监听模式与数据包注入。
 {{< /tldr >}}
 
 
@@ -136,10 +136,10 @@ sudo reboot
 重启回来，咱们检查下驱动有没有乖乖工作：
 
 ```bash
-lsmod | grep 88XXau
+lsmod | grep 8821au
 ```
 
-看到 `88XXau` 就算成功了一大半。接着确认下网卡接口：
+看到 `8821au` 就算成功了一大半。接着确认下网卡接口：
 
 ```bash
 iwconfig
@@ -359,4 +359,4 @@ sudo reboot
 1. [aircrack-ng 官方文档](https://www.aircrack-ng.org/)
 2. [ALFA Network 官网](https://www.alfa.com.tw/)
 3. [Kali Linux 官方文档](https://www.kali.org/docs/)
-4. [Gitee rtl8812au 镜像](https://gitee.com/mirrors/rtl8812au)
+4. [Gitee 8821au 镜像](https://gitee.com/mirrors/8821au)

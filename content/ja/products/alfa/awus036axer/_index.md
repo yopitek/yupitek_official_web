@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "802.11ax", "超薄型", "USB 3.2", "ポータブル", "ナノ
 
 AWUS036AXER は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）デュアルバンド（2.4 GHz + 5 GHz）対応、最大 1800 Mbps（2.4 GHz: 573 Mbps + 5 GHz: 1200 Mbps）。超薄型ナノデザイン（約 65 × 24 × 10 mm、約 10g）で携帯性に優れています。
 
-> ⚠️ **注意：** ナノフォームファクタ — **RP-SMA コネクタなし**、アンテナのアップグレード不可。**Kali Linux またはセキュリティ研究には推奨しません**。
+> ⚠️ **注意：** ナノフォームファクタ — **RP-SMA コネクタなし**、アンテナのアップグレード不可。コミュニティ版 rtl8852bu ドライバは **Monitor mode に対応していません**。**Kali Linux またはセキュリティ研究には推奨しません**。
 
 > **macOSについて：** すべての ALFA アダプターは macOS サポートが限定的です。macOS 11 Big Sur 以降および Apple Silicon（M1/M2/M3）は**非対応**です。Intel Mac での最大サポートは macOS 10.15 Catalina です。
 
@@ -46,23 +46,22 @@ AWUS036AXER は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）�
 |----|------|------|
 | Windows 10/11 | ✅ 対応 | Alfa ウェブサイトからドライバをダウンロード |
 | macOS | ❌ 非対応 | macOS 11+ および Apple Silicon 非対応 |
-| Ubuntu | ⚠️ ドライバ必要 | カーネル ≥ 6.14（Ubuntu 24.10+）で内蔵；旧バージョンは手動 DKMS |
-| Kali Linux | ⚠️ 限定 | カーネル < 6.12 では Monitor mode 制限；ペンテストには非推奨 |
+| Ubuntu | ⚠️ ドライバ必要 | カーネルに内蔵されていません；DKMS 経由でコミュニティ版 rtl8852bu ドライバをビルドしてください |
+| Kali Linux | ⚠️ 限定 | Managed mode のみ（DKMS ドライバ）；Monitor mode はサポートされていません |
 | NetHunter | ⚠️ 限定 | カーネル依存 |
-
 ## 対応ハードウェア
 
 | ハードウェア | 状態 | 備考 |
 |-------------|------|------|
-| Raspberry Pi 4/5 | ⚠️ ドライバ必要 | カーネル < 6.14 の Pi OS では手動インストール |
+| Raspberry Pi 4/5 | ⚠️ ドライバ必要 | Pi OS では DKMS ドライバの手動インストールが必要 |
 | デスクトップ/ノートPC | ✅ 対応 | 標準 USB-A |
 
 ## 高度な機能
 
 | 機能 | 状態 |
 |------|------|
-| Monitor Mode | ⚠️ 限定 |
-| Packet Injection | ⚠️ 限定 |
+| Monitor Mode | ❌ 非対応 (コミュニティドライバ) |
+| Packet Injection | ❌ 非対応 |
 | Soft AP モード | ✅ あり |
 | Bluetooth | ❌ なし |
 
@@ -75,7 +74,7 @@ AWUS036AXER は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）�
 | リソース | リンク |
 |----------|--------|
 | 公式ドキュメント | https://docs.alfa.com.tw/ |
-| Linux ドライバ（RTL8832BU）| https://github.com/morrownr/rtl8852bu-20240418 |
+| Linux ドライバ（RTL8832BU）| https://github.com/morrownr/rtl8852bu-20250826 |
 
 ## 製品仕様書ダウンロード
 

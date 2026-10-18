@@ -6,15 +6,15 @@ author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "What chipset does AWUS036ACS use? Is it the same as AWUS036ACH?"
-    answer: "It uses the Realtek RTL8811AU chipset, sharing the same driver package as RTL8812AU."
+    answer: "It uses the Realtek RTL8811AU chipset. It does not share the RTL8812AU driver; it needs the community 8821au driver (morrownr/8821au-20210708), module name `8821au`."
   - question: "Does AWUS036ACS support monitor mode?"
     answer: "Yes. RTL8811AU fully supports monitor mode and packet injection, making it a budget-friendly choice for security research."
   - question: "Do I need a VPN to install AWUS036ACS in China?"
-    answer: "No. Kali installs the DKMS driver via apt. Ubuntu/Debian compiles from the Gitee source code mirror."
+    answer: "No. On every distribution you build the 8821au DKMS driver with install-driver.sh from a Gitee source mirror."
   - question: "What is the USB ID of AWUS036ACS?"
     answer: "The Realtek RTL8811AU USB ID is 0bda:0811. Confirm with lsusb."
   - question: "What is the Kali Linux command to install AWUS036ACS drivers?"
-    answer: "Run sudo apt install realtek-rtl88xxau-dkms on Kali."
+    answer: "Install build tools, then clone the 8821au driver (morrownr/8821au-20210708, or a Gitee mirror of it) and run sudo sh install-driver.sh. The apt package realtek-rtl88xxau-dkms is the RTL8812AU driver, not for this adapter."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -30,7 +30,7 @@ featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 The AWUS036ACS is ALFA's compact dual-band security research adapter. Its RTL8811AU chip supports full monitor mode and packet injection on Kali Linux — but because the driver is out-of-kernel, you need to compile it from source. In China, GitHub is blocked, so this guide uses Gitee mirrors exclusively. No GitHub required.
 
 {{< tldr >}}
-AWUS036ACS uses the RTL8811AU chipset. Install the DKMS driver via apt on Kali, or compile from Gitee on Ubuntu/Debian. Supports monitor mode and packet injection.
+AWUS036ACS uses the RTL8811AU chipset. Build the 8821au DKMS driver with install-driver.sh from a Gitee mirror on every distribution. Supports monitor mode and packet injection.
 {{< /tldr >}}
 
 Make sure you have these ready:
@@ -116,7 +116,7 @@ git clone https://gitee.com/mirrors/8821au.git
 cd 8821au
 ```
 
-> **NOTE:** If that Gitee URL does not load, search Gitee for `8821au` and pick the most recently updated fork. You can also download driver archives from [files.alfa.com.tw](https://files.alfa.com.tw).
+> **NOTE:** The maintained upstream driver is [morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708). If that Gitee URL does not load, search Gitee for `8821au` and pick the most recently updated fork. You can also download driver archives from [files.alfa.com.tw](https://files.alfa.com.tw).
 
 ---
 
@@ -130,10 +130,10 @@ sudo reboot
 After reboot, verify the driver loaded.
 
 ```bash
-lsmod | grep 88XXau
+lsmod | grep 8821au
 ```
 
-You should see a `88XXau` module listed. Then confirm the interface appeared.
+You should see an `8821au` module listed. Then confirm the interface appeared.
 
 ```bash
 iwconfig
@@ -419,4 +419,4 @@ Questions? Leave a comment below or contact us at [yupitek.com](https://yupitek.
 1. [aircrack-ng Official Documentation](https://www.aircrack-ng.org/)
 2. [ALFA Network Official Website](https://www.alfa.com.tw/)
 3. [Kali Linux Official Documentation](https://www.kali.org/docs/)
-4. [Gitee rtl8812au Mirror](https://gitee.com/mirrors/rtl8812au)
+4. [Gitee 8821au Mirror](https://gitee.com/mirrors/8821au)

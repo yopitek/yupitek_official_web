@@ -18,9 +18,9 @@ faq:
   - question: "Quel chipset utilise l'AWUS036AXER ? Est-ce le même que l'AWUS036AX ?"
     answer: "Il utilise également le chipset Realtek RTL8832BU supportant le WiFi 6, mais dans un format plus compact et portable."
   - question: "L'AWUS036AXER nécessite-t-il un pilote sur Ubuntu 24.04 ?"
-    answer: "Non, le noyau d'Ubuntu 24.04 supporte nativement le RTL8832BU, plug-and-play."
+    answer: "Oui. Le RTL8832BU n'est pas dans le noyau d'Ubuntu 24.04. Compilez une fois le pilote communautaire rtl8852bu (morrownr/rtl8852bu-20250826) via DKMS ; il est ensuite recompilé automatiquement à chaque mise à jour du noyau."
   - question: "L'AWUS036AXER convient-il à la recherche en sécurité sans fil ?"
-    answer: "Peu adapté. Le support du mode moniteur du RTL8832BU est limité. Préférez l'AWUS036ACM ou l'AWUS036ACH."
+    answer: "Non. Le pilote communautaire rtl8852bu ne prend en charge ni le mode moniteur ni l'injection de paquets. Utilisez plutôt un adaptateur avec pilote MediaTek intégré au noyau, comme l'AWUS036ACM."
   - question: "Quel est l'USB ID de l'AWUS036AXER ?"
     answer: "L'USB ID du Realtek RTL8832BU est 0bda:885a, vérifiable avec lsusb."
   - question: "Faut-il un VPN pour installer l'AWUS036AXER en Chine ?"
@@ -28,12 +28,12 @@ faq:
 ---
 
 {{< tldr >}}
-L'AWUS036AXER utilise le chipset RTL8832BU, carte WiFi 6 mini portable. Plug-and-play sur Ubuntu 24.04. Sur les autres systèmes, compilez rtl8852bu depuis Gitee.
+L'AWUS036AXER utilise le chipset RTL8832BU avec WiFi 6. Le pilote n'est pas dans le noyau : toutes les distributions (y compris Ubuntu 24.04) doivent compiler rtl8852bu via DKMS. Le mode moniteur n'est pas pris en charge.
 {{< /tldr >}}
 
-L'AWUS036AXER est l'adaptateur WiFi 6 nano d'ALFA — un dongle compact conçu pour rester branché en permanence sur un ordinateur portable. Sa puce RTL8832BU est hors noyau sur les versions Linux inférieures à 6.14 mais est incluse nativement dans Ubuntu 24.04 (noyau 6.8). Ce guide utilise des miroirs Gitee pour les noyaux plus anciens. Aucun GitHub requis.
+L'AWUS036AXER est l'adaptateur WiFi 6 nano d'ALFA — un dongle compact conçu pour rester branché en permanence sur un ordinateur portable. La puce RTL8832BU de l'AWUS036AXER n'a pas de pilote intégré au noyau Linux : sur toutes les distributions (y compris Ubuntu 24.04), il faut compiler une fois le pilote communautaire rtl8852bu via DKMS. Ce guide utilise des miroirs Gitee, aucun accès à GitHub n'est requis. Ce pilote ne prend pas en charge le mode moniteur.
 
-> **Note sur la recherche en sécurité :** Le RTL8832BU a un support limité du mode moniteur. Les résultats varient selon le noyau et la version du pilote. Pour une injection de paquets fiable sur Kali Linux, l'[AWUS036ACM](/fr/blog/awus036acm-china-install-guide/) ou l'[AWUS036ACH](/fr/blog/awus036ach-china-install-guide/) sont de meilleurs choix.
+> **Remarque sur la recherche en sécurité:** Le pilote communautaire rtl8852bu ne prend en charge ni le mode moniteur ni l'injection de paquets. Pour la recherche en sécurité, utilisez un adaptateur avec pilote MediaTek intégré au noyau, comme l'[AWUS036ACM](/fr/blog/awus036acm-china-install-guide/).
 
 > **Note sur la portée :** L'AWUS036AXER possède une antenne intégrée non amovible. Pour la recherche en sécurité, les adaptateurs avec antennes externes RP-SMA (AWUS036ACH, AWUS036ACM) offrent une portée nettement meilleure.
 
@@ -113,7 +113,7 @@ sudo reboot
 Vérifiez que le pilote est chargé :
 
 ```bash
-lsmod | grep 88x2bu
+lsmod | grep 8852bu
 iwconfig
 ```
 
@@ -121,9 +121,9 @@ iwconfig
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — pilote dans le noyau, pas besoin de Gitee
+### Ubuntu 24.04 (Noble) — DKMS requis
 
-Ubuntu 24.04 utilise le noyau 6.8, qui inclut nativement le pilote RTL8832BU.
+Ubuntu 24.04 (noyau 6.8) n'inclut pas de pilote pour le RTL8832BU. Passez à un miroir domestique, puis compilez le pilote comme pour Ubuntu 22.04 ci-dessous.
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -134,9 +134,14 @@ Remplacez les URIs par le miroir Aliyun :
 
 ```bash
 sudo apt update
-sudo modprobe 88x2bu
-iwconfig
+sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
+git clone https://gitee.com/mirrors/rtl8852bu.git
+cd rtl8852bu
+sudo ./install-driver.sh
+sudo reboot
 ```
+
+Après le redémarrage, exécutez `sudo modprobe 8852bu` et `iwconfig`. Si le module se charge et qu'une interface apparaît, c'est terminé (mode géré uniquement ; le mode moniteur n'est pas pris en charge).
 
 ---
 

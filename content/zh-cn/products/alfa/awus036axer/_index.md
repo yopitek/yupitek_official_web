@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "802.11ax", "超薄", "USB 3.2", "随身型", "Nano"]
 
 AWUS036AXER 采用 Realtek RTL8832BU 芯片，支持 Wi-Fi 6（802.11ax）双频（2.4 GHz + 5 GHz），最高传输速率 1800 Mbps（2.4 GHz: 573 Mbps + 5 GHz: 1200 Mbps）。超薄 Nano 设计（约 65 × 24 × 10 mm，约 10g），适合随身携带使用。
 
-> ⚠️ **注意：** Nano 外型设计，**无 RP-SMA 接头**，天线无法升级。**不建议用于 Kali Linux 或安全研究**。
+> ⚠️ **注意：** Nano 外型设计，**无 RP-SMA 接头**，天线无法升级。社区版 rtl8852bu 驱动**不支持 Monitor mode**，**不建议用于 Kali Linux 或安全研究**。
 
 > **注意：** 所有 ALFA 无线网卡对 macOS 支持有限。macOS 11 Big Sur 及以上版本和 Apple Silicon（M1/M2/M3）均**不支持**。最高支持 Intel Mac 上的 macOS 10.15 Catalina。
 
@@ -46,23 +46,21 @@ AWUS036AXER 采用 Realtek RTL8832BU 芯片，支持 Wi-Fi 6（802.11ax）双频
 |---------|------|------|
 | Windows 10/11 | ✅ 支持 | 从 Alfa 官网下载驱动 |
 | macOS | ❌ 不支持 | 不支持 macOS 11+ 及 Apple Silicon |
-| Ubuntu | ⚠️ 需安装驱动 | 内核 ≥ 6.14（Ubuntu 24.10+）已内置；旧版需手动 DKMS |
-| Kali Linux | ⚠️ 有限 | 内核 < 6.12 时 Monitor mode 受限；不建议用于渗透测试 |
+| Ubuntu | ⚠️ 需安装驱动 | 未内置于内核；通过 DKMS 构建社区 rtl8852bu 驱动 |
+| Kali Linux | ⚠️ 有限 | 仅支持 Managed mode（DKMS 驱动）；不支持 Monitor mode |
 | NetHunter | ⚠️ 有限 | 依内核版本 |
-
 ## 硬件支持
 
 | 硬件 | 状态 | 备注 |
 |------|------|------|
-| Raspberry Pi 4/5 | ⚠️ 需安装驱动 | Pi OS 内核 < 6.14 需手动安装 |
+| Raspberry Pi 4/5 | ⚠️ 需安装驱动 | Pi OS 需手动安装 DKMS 驱动 |
 | 台式机/笔记本 | ✅ 支持 | 标准 USB-A |
-
 ## 高级功能
 
 | 功能 | 状态 |
 |------|------|
-| Monitor Mode | ⚠️ 有限 |
-| Packet Injection | ⚠️ 有限 |
+| Monitor Mode | ❌ 不支持（社区驱动） |
+| Packet Injection | ❌ 不支持 |
 | Soft AP 模式 | ✅ 支持 |
 | 蓝牙 | ❌ 无 |
 
@@ -75,7 +73,7 @@ AWUS036AXER 采用 Realtek RTL8832BU 芯片，支持 Wi-Fi 6（802.11ax）双频
 | 资源 | 链接 |
 |------|------|
 | 官方文档 | https://docs.alfa.com.tw/ |
-| Linux 驱动（RTL8832BU）| https://github.com/morrownr/rtl8852bu-20240418 |
+| Linux 驱动（RTL8832BU）| https://github.com/morrownr/rtl8852bu-20250826 |
 
 ## 产品规格书下载
 

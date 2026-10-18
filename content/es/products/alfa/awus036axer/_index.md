@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "802.11ax", "Ultradelgado", "USB 3.2", "Portátil", "Nano"]
 
 El AWUS036AXER incorpora el chipset Realtek RTL8832BU con Wi-Fi 6 (802.11ax) de banda dual (2.4 GHz + 5 GHz), hasta 1800 Mbps (2.4 GHz: 573 Mbps + 5 GHz: 1200 Mbps). Diseño nano ultradelgado (~65 × 24 × 10 mm, ~10g) para uso cotidiano portátil.
 
-> ⚠️ **Nota:** Factor de forma nano — **sin conector RP-SMA**, la antena no se puede actualizar. **NO recomendado para Kali Linux o investigación de seguridad**.
+> ⚠️ **Nota:** Factor de forma nano — **sin conector RP-SMA**, la antena no se puede actualizar. **El modo monitor no es compatible** con el driver comunitario rtl8852bu; **NO recomendado para Kali Linux o investigación de seguridad**.
 
 > **Nota macOS:** Todos los adaptadores ALFA tienen soporte limitado o nulo para macOS. macOS 11 Big Sur y versiones posteriores, y Apple Silicon (M1/M2/M3) **NO** son compatibles. El soporte máximo es macOS 10.15 Catalina en Mac Intel.
 
@@ -46,23 +46,21 @@ El AWUS036AXER incorpora el chipset Realtek RTL8832BU con Wi-Fi 6 (802.11ax) de 
 |----|--------|-------|
 | Windows 10/11 | ✅ Compatible | Driver del sitio web de Alfa |
 | macOS | ❌ No compatible | Sin soporte para macOS 11+ ni Apple Silicon |
-| Ubuntu | ⚠️ Requiere driver | Integrado en kernel ≥ 6.14 (Ubuntu 24.10+); versiones anteriores necesitan DKMS manual |
-| Kali Linux | ⚠️ Limitado | Monitor mode limitado en kernels < 6.12; no recomendado para pen testing |
+| Ubuntu | ⚠️ Requiere driver | No integrado en kernel; compilar el driver comunitario rtl8852bu vía DKMS |
+| Kali Linux | ⚠️ Limitado | Solo modo gestionado (driver DKMS); modo monitor no soportado |
 | NetHunter | ⚠️ Limitado | Depende del kernel |
-
 ## Hardware Compatible
 
 | Hardware | Estado | Notas |
 |----------|--------|-------|
-| Raspberry Pi 4/5 | ⚠️ Requiere driver | Instalación manual en Pi OS con kernel < 6.14 |
+| Raspberry Pi 4/5 | ⚠️ Requiere driver | Instalación manual del controlador DKMS en Pi OS |
 | PC de escritorio/portátil | ✅ Compatible | USB-A estándar |
-
 ## Capacidades Avanzadas
 
 | Función | Estado |
 |---------|--------|
-| Monitor Mode | ⚠️ Limitado |
-| Packet Injection | ⚠️ Limitado |
+| Monitor Mode | ❌ No compatible (controlador de la comunidad) |
+| Packet Injection | ❌ No compatible |
 | Soft AP Mode | ✅ Sí |
 | Bluetooth | ❌ No |
 
@@ -75,9 +73,7 @@ El AWUS036AXER incorpora el chipset Realtek RTL8832BU con Wi-Fi 6 (802.11ax) de 
 | Recurso | Enlace |
 |---------|--------|
 | Documentación oficial | https://docs.alfa.com.tw/ |
-| Driver Linux (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20240418 |
-
-## Descarga de Ficha Técnica
+| Driver Linux (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20250826 |
 
 | Documento | Descarga |
 |------|------|

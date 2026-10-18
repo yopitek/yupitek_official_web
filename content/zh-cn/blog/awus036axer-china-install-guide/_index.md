@@ -18,9 +18,9 @@ faq:
   - question: "AWUS036AXER 用什么芯片？跟 AWUS036AX 一样吗？"
     answer: "同样采用 Realtek RTL8832BU 芯片，支持 WiFi 6，但体积更小更便携。"
   - question: "AWUS036AXER 在 Ubuntu 24.04 上需要安装驱动吗？"
-    answer: "不需要，Ubuntu 24.04 核心已原生支持，插上即用。"
+    answer: "需要。RTL8832BU 不在 Ubuntu 24.04 内核中，请通过 DKMS 编译一次社区版 rtl8852bu 驱动（morrownr/rtl8852bu-20250826），之后内核更新时会自动重新编译。"
   - question: "AWUS036AXER 适合做无线安全研究吗？"
-    answer: "较不适合，RTL8832BU 的监听模式支持有限，建议改用 AWUS036ACM 或 AWUS036ACH。"
+    answer: "不适合。社区版 rtl8852bu 驱动不支持 Monitor mode 和封包注入，建议改用内核内置 MediaTek 驱动的 AWUS036ACM。"
   - question: "AWUS036AXER 的 USB ID 是多少？"
     answer: "Realtek RTL8832BU 的 USB ID 为 0bda:885a，用 lsusb 可确认。"
   - question: "在中国安装 AWUS036AXER 需要翻墙吗？"
@@ -30,16 +30,16 @@ faq:
 
 
 
-刚收到这款小巧玲珑的 AWUS036AXER，插上去发现 Linux 没反应？别担心，这很正常。这块网卡用的是 RTL8832BU 芯片，在内核版本 6.14 以下驱动不是开箱即用的。好在如果你用的是 Ubuntu 24.04，系统已经内置好了，插上就能飞。
+刚收到这款小巧玲珑的 AWUS036AXER，插上去发现 Linux 没反应？别担心，这很正常。AWUS036AXER 的 RTL8832BU 芯片没有 Linux 内核内置驱动，因此在所有发行版（包括 Ubuntu 24.04）上都需要通过 DKMS 编译一次社区版 rtl8852bu 驱动。本指南使用 Gitee 镜像，无需访问 GitHub。该驱动不支持 Monitor mode。
 
 {{< tldr >}}
-AWUS036AXER 采用 RTL8832BU 芯片，迷你便携 WiFi 6 网卡，Ubuntu 24.04 免驱即用，其他系统从 Gitee 编译 rtl8852bu 安装。
+AWUS036AXER 采用 RTL8832BU 芯片，支持 WiFi 6。驱动不在内核中：所有发行版（包括 Ubuntu 24.04）都需要通过 DKMS 编译 rtl8852bu。不支持 Monitor mode。
 {{< /tldr >}}
 
 
 对于其他系统的用户，我也帮大家找好了国内的 Gitee 镜像。不用翻墙，咱们花个 10 分钟就能把它“调教”好。
 
-> **安全研究避坑指南：** AXER 虽然支持 WiFi 6，但它的 RTL8832BU 芯片在监听模式上的表现比较一般。如果你是为了深度渗透和数据包注入而来的，我更建议你选择 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/) 或 [AWUS036ACH](/zh-cn/blog/awus036ach-china-install-guide/)。
+> **安全研究提示：** 社区版 rtl8852bu 驱动不支持 Monitor mode 和封包注入。做安全研究请改用内核内置 MediaTek 驱动的网卡，例如 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)。
 
 > **信号小贴士：** AXER 是迷你型网卡，天线是内置的，主打的是便携。如果你需要远距离抓包或信号覆盖，带外置大天线的型号会更适合你。
 
@@ -128,7 +128,7 @@ sudo reboot
 重启回来，检查下驱动有没有乖乖工作：
 
 ```bash
-lsmod | grep 88x2bu
+lsmod | grep 8852bu
 iwconfig
 ```
 
@@ -136,34 +136,29 @@ iwconfig
 
 ### 5. 开启监听模式 {#enable-monitor-mode}
 
-> **注意：** 这一步仅供测试，因为该网卡的监听模式支持并不完美。
-
-```bash
-sudo airmon-ng check kill
-sudo ip link set wlan1 down
-sudo iw dev wlan1 set type monitor
-sudo ip link set wlan1 up
-iwconfig
-```
+> **不支持：** RTL8832BU 的社区版 rtl8852bu 驱动不支持 Monitor mode，这里没有可执行的命令。如需 Monitor mode，请改用内核内置 MediaTek 驱动的网卡，例如 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)。
 
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### 如果你是 Ubuntu 24.04 (Noble) — 躺赢模式
+### Ubuntu 24.04 (Noble) — 需要 DKMS
 
-Ubuntu 24.04 内核已经原生支持，插上就能用。建议换个阿里云源让更新更快：
+Ubuntu 24.04（内核 6.8）并未内置 RTL8832BU 的驱动。先换成国内镜像源，再按下方 Ubuntu 22.04 的方式编译驱动。
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
 # 将 URIs 换成阿里云的：http://mirrors.aliyun.com/ubuntu/
 
 sudo apt update
-sudo modprobe 88x2bu
-iwconfig
+sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
+git clone https://gitee.com/mirrors/rtl8852bu.git
+cd rtl8852bu
+sudo ./install-driver.sh
+sudo reboot
 ```
 
-看到接口出现就大功告成了！
+重启后执行 `sudo modprobe 8852bu` 和 `iwconfig`。如果模块成功加载并出现网卡接口，就完成了（仅支持 Managed 模式，不支持 Monitor mode）。
 
 ---
 
@@ -236,7 +231,7 @@ sudo reboot
 |------|----------|----------|
 | `lsusb` 刷不出 0bda:885a | 没插紧或 USB 供电不足 | 换个口试试，直接插主板背后的口 |
 | `install-driver.sh` 报错 | 缺少内核头文件 | 跑 `sudo apt install linux-headers-$(uname -r)` |
-| 监听模式不稳定 | 芯片本身限制 | 正常，这块网卡主打的是 WiFi 6 便携上网 |
+| Monitor mode／封包注入无法使用 | rtl8852bu 驱动不支持 | 做渗透测试请改用 AWUS036ACM |
 
 ## 国内常用资源汇总
 

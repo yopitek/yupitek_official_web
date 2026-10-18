@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "USB 3.0", "802.11ax", "Dual-Band", "OFDMA", "MU-MIMO"]
 
 Der AWUS036AX verfügt über den Realtek RTL8832BU Chipsatz mit Wi-Fi-6-(802.11ax)-Dual-Band-Unterstützung (2,4 GHz + 5 GHz), bis zu 1200 Mbps kombiniert, mit MU-MIMO 2×2 und OFDMA-Technologie. Er wird mit zwei abnehmbaren Dualband-Antennen an RP-SMA-Anschlüssen geliefert.
 
-> ⚠️ **Wichtig:** Dies ist **Wi-Fi 6**, NICHT Wi-Fi 6E — **kein 6-GHz-Band**. Für 6-GHz-Unterstützung siehe AWUS036AXML oder AWUS036AXM. Der Monitor-Modus ist bei Kerneln unter 6.12 eingeschränkt; **nicht empfohlen für Linux-Sicherheitsforschung**.
+> ⚠️ **Wichtig:** Dies ist **Wi-Fi 6**, NICHT Wi-Fi 6E — **kein 6-GHz-Band**. Für 6-GHz-Unterstützung siehe AWUS036AXML oder AWUS036AXM. **Der Monitor-Modus wird vom Community-Treiber rtl8852bu nicht unterstützt**; nicht empfohlen für Linux-Sicherheitsforschung.
 
 > **macOS-Hinweis:** Alle ALFA-Adapter bieten eingeschränkte oder keine macOS-Unterstützung. macOS 11 Big Sur und höher sowie Apple Silicon (M1/M2/M3) werden **NICHT** unterstützt. Die maximale macOS-Unterstützung ist 10.15 Catalina auf Intel-Macs.
 
@@ -47,37 +47,35 @@ Der AWUS036AX verfügt über den Realtek RTL8832BU Chipsatz mit Wi-Fi-6-(802.11a
 |----|--------|-------|
 | Windows 10/11 | ✅ Unterstützt | Treiber von der Alfa-Website |
 | macOS | ❌ Nicht unterstützt | Keine Unterstützung für macOS 11+ oder Apple Silicon |
-| Ubuntu | ⚠️ Treiber erforderlich | Im Kernel ab ≥ 6.14 (Ubuntu 24.10+); ältere Versionen benötigen manuelle DKMS-Installation |
-| Kali Linux | ⚠️ Eingeschränkt | Monitor-Modus eingeschränkt bei Kerneln < 6.12; nicht empfohlen für Penetrationstests |
+| Ubuntu | ⚠️ Treiber erforderlich | Nicht im Kernel; den Community-Treiber rtl8852bu über DKMS erstellen |
+| Kali Linux | ⚠️ Eingeschränkt | Nur Managed-Modus (DKMS-Treiber); Monitor-Modus nicht unterstützt |
 | NetHunter | ⚠️ Eingeschränkt | Kernelabhängig |
-
 ## Hardware-Kompatibilität
 
 | Hardware | Status | Hinweise |
 |----------|--------|-------|
-| Raspberry Pi 4/5 | ⚠️ Treiber erforderlich | Manuelle Installation auf Pi OS mit Kernel < 6.14 erforderlich |
+| Raspberry Pi 4/5 | ⚠️ Treiber erforderlich | Manuelle DKMS-Treiberinstallation auf Pi OS erforderlich |
 | Desktop/Laptop-PC | ✅ Unterstützt | Standard-USB-A |
-
 ## Erweiterte Funktionen
 
 | Funktion | Status |
 |---------|--------|
-| Monitor-Modus | ⚠️ Eingeschränkt (Kernel ≥ 6.12 empfohlen) |
-| Paketinjektion | ⚠️ Eingeschränkt |
+| Monitor-Modus | ❌ Nicht unterstützt (Community-Treiber) |
+| Paketinjektion | ❌ Nicht unterstützt |
 | Soft-AP-Modus | ✅ Ja |
 | Bluetooth | ❌ Nein |
 
 ## Lieferumfang
 
 - 1× AWUS036AX-Adapter
-- 2× Abnehmbare Dualband-Antennen (5 dBi)
+- 2× Abnehmbare Dualband-Antennen
 
 ## Ressourcen & Links
 
 | Ressource | Link |
 |----------|------|
 | Offizielle Dokumentation | https://docs.alfa.com.tw/ |
-| Linux-Treiber (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20240418 |
+| Linux-Treiber (RTL8832BU) | https://github.com/morrownr/rtl8852bu-20250826 |
 
 ## Produktdatenblatt
 

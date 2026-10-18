@@ -16,21 +16,21 @@ author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "¿Qué chip usa el AWUS036ACS? ¿Es igual que el AWUS036ACH?"
-    answer: "Usa el chip Realtek RTL8811AU, que comparte el mismo paquete de controlador que RTL8812AU."
+    answer: "Usa el chip Realtek RTL8811AU. No comparte el controlador del RTL8812AU: necesita el controlador comunitario 8821au (morrownr/8821au-20210708), módulo `8821au`."
   - question: "¿El AWUS036ACS admite el modo monitor?"
     answer: "Sí, RTL8811AU admite perfectamente el modo monitor y la inyección de paquetes; es una opción económica para investigación de seguridad."
   - question: "¿Hace falta VPN para instalar el AWUS036ACS en China?"
-    answer: "No, Kali instala el controlador DKMS con apt; Ubuntu/Debian descarga el código fuente desde Gitee y compila."
+    answer: "No. En cualquier distribución se compila el controlador DKMS 8821au con install-driver.sh desde un espejo de Gitee."
   - question: "¿Cuál es el USB ID del AWUS036ACS?"
     answer: "El USB ID de Realtek RTL8811AU es 0bda:0811, puedes confirmarlo con lsusb."
   - question: "¿Cuál es el comando para instalar el controlador del AWUS036ACS en Kali Linux?"
-    answer: "Kali puede instalar directamente el controlador con sudo apt install realtek-rtl88xxau-dkms."
+    answer: "Instala las herramientas de compilación, clona el controlador 8821au (morrownr/8821au-20210708 o un espejo en Gitee) y ejecuta `sudo sh install-driver.sh`. El paquete apt realtek-rtl88xxau-dkms es el controlador del RTL8812AU y no sirve para este adaptador."
 ---
 
 El AWUS036ACS es el adaptador de investigación de seguridad de doble banda compacto de ALFA. Su chip RTL8811AU admite el modo monitor completo y la inyección de paquetes en Kali Linux, pero debido a que el controlador está fuera del kernel, debes compilarlo desde el código fuente. En China, GitHub está bloqueado, por lo que esta guía utiliza exclusivamente espejos de Gitee. No se requiere GitHub.
 
 {{< tldr >}}
-El AWUS036ACS usa el chip RTL8811AU. En Kali se instala el controlador DKMS con apt; en Ubuntu/Debian se compila desde Gitee. Admite modo monitor e inyección de paquetes.
+El AWUS036ACS usa el chip RTL8811AU. En cualquier distribución se compila el controlador DKMS 8821au con install-driver.sh desde un espejo de Gitee. Admite modo monitor e inyección de paquetes.
 {{< /tldr >}}
 
 Asegúrate de tener esto listo:
@@ -126,10 +126,10 @@ sudo reboot
 Después del reinicio, verifica que el controlador se haya cargado.
 
 ```bash
-lsmod | grep 88XXau
+lsmod | grep 8821au
 ```
 
-Deberías ver un módulo `88XXau` en la lista. Luego confirma que apareció la interfaz.
+Deberías ver un módulo `8821au` en la lista. Luego confirma que apareció la interfaz.
 
 ```bash
 iwconfig
@@ -415,4 +415,4 @@ sudo aireplay-ng --test wlan1mon
 1. [Documentación oficial de aircrack-ng](https://www.aircrack-ng.org/)
 2. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)
 3. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)
-4. [Espejo de rtl8812au en Gitee](https://gitee.com/mirrors/rtl8812au)
+4. [Espejo de 8821au en Gitee](https://gitee.com/mirrors/8821au)

@@ -114,6 +114,8 @@ git clone https://github.com/morrownr/rtl8852bu-20250826.git
 cd rtl8852bu-20250826
 ```
 
+> **注意：** 維護中的上游驅動為 [morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)。如果 GitHub 速度較慢，請使用你信任的代理或鏡像。你也可以從 [files.alfa.com.tw](https://files.alfa.com.tw) 下載壓縮檔。
+
 ---
 
 ### 4. 正式安裝並重新啟動
@@ -129,6 +131,14 @@ sudo reboot
 lsmod | grep 8852bu
 iwconfig
 ```
+
+### 5. 開啟監聽模式 {#enable-monitor-mode}
+
+> **不支援：** RTL8832BU 的社群版 rtl8852bu 驅動不支援 Monitor mode，這裡沒有可執行的指令。如需 Monitor mode，請改用核心內建 MediaTek 驅動的網卡，例如 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)。
+
+### 6. 測試封包注入 {#test-packet-injection}
+
+> **不支援：** 封包注入依賴 Monitor mode，而此驅動不提供 Monitor mode。請使用 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)（核心內建 MediaTek 驅動）進行注入測試。
 
 ---
 
@@ -177,6 +187,29 @@ sudo nano /etc/apt/sources.list
 
 sudo apt update
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
+sudo reboot
+```
+
+---
+
+## 樹莓派 (Raspberry Pi) 4B / 5
+
+先切換到國內鏡像：
+
+```bash
+sudo nano /etc/apt/sources.list
+```
+
+```
+deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
+```
+
+```bash
+sudo apt update && sudo apt full-upgrade -y
+sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
 git clone https://github.com/morrownr/rtl8852bu-20250826.git
 cd rtl8852bu-20250826
 sudo ./install-driver.sh

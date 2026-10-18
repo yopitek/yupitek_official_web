@@ -70,7 +70,7 @@ Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
 - [树莓派 4B / 5](#raspberry-pi-4b--5)
 
 如果是老手，可以直接跳转到：
-- [开启监听模式（测试版）](#enable-monitor-mode)
+- [开启监听模式（不支持）](#enable-monitor-mode)
 - [虚拟机 USB 透传避坑指南](#virtual-machine-usb-passthrough)
 
 ---
@@ -116,6 +116,8 @@ git clone https://github.com/morrownr/rtl8852bu-20250826.git
 cd rtl8852bu-20250826
 ```
 
+> **注意：** 维护中的上游驱动为 [morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)。如果 GitHub 速度较慢，请使用你信任的代理或镜像。你也可以从 [files.alfa.com.tw](https://files.alfa.com.tw) 下载压缩包。
+
 ---
 
 ### 4. 正式安装并重启
@@ -137,6 +139,10 @@ iwconfig
 ### 5. 开启监听模式 {#enable-monitor-mode}
 
 > **不支持：** RTL8832BU 的社区版 rtl8852bu 驱动不支持 Monitor mode，这里没有可执行的命令。如需 Monitor mode，请改用内核内置 MediaTek 驱动的网卡，例如 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)。
+
+### 6. 测试封包注入 {#test-packet-injection}
+
+> **不支持：** 封包注入依赖 Monitor mode，而此驱动不提供 Monitor mode。请使用 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)（内核内置 MediaTek 驱动）进行注入测试。
 
 ---
 

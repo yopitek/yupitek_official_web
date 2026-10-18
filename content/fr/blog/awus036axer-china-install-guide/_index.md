@@ -101,6 +101,8 @@ git clone https://github.com/morrownr/rtl8852bu-20250826.git
 cd rtl8852bu-20250826
 ```
 
+> **NOTE :** Le pilote amont maintenu est [morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826). Si GitHub est lent, utilisez un proxy ou un miroir de confiance. Vous pouvez également télécharger des archives sur [files.alfa.com.tw](https://files.alfa.com.tw).
+
 ---
 
 ### Étape 4 : Compiler et installer
@@ -117,6 +119,14 @@ lsmod | grep 8852bu
 iwconfig
 ```
 
+### Étape 5 : Activer le mode moniteur {#enable-monitor-mode}
+
+> **Non pris en charge :** Le pilote communautaire rtl8852bu du RTL8832BU ne prend pas en charge le mode moniteur, il n'y a donc aucune commande à exécuter ici. Si vous avez besoin du mode moniteur, utilisez un adaptateur avec pilote MediaTek intégré au noyau, comme l'[AWUS036ACM](/fr/blog/awus036acm-china-install-guide/).
+
+### Étape 6 : Tester l'injection de paquets {#test-packet-injection}
+
+> **Non pris en charge :** L'injection de paquets dépend du mode moniteur, que ce pilote ne fournit pas. Utilisez l'[AWUS036ACM](/fr/blog/awus036acm-china-install-guide/) pour les tests d'injection.
+
 ---
 
 ## Ubuntu 22.04 / 24.04
@@ -129,8 +139,13 @@ Ubuntu 24.04 (noyau 6.8) n'inclut pas de pilote pour le RTL8832BU. Passez à un 
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
 ```
 
-Remplacez les URIs par le miroir Aliyun :
-`URIs: http://mirrors.aliyun.com/ubuntu/`
+```
+Types: deb
+URIs: http://mirrors.aliyun.com/ubuntu/
+Suites: noble noble-updates noble-security
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+```
 
 ```bash
 sudo apt update
@@ -142,6 +157,29 @@ sudo reboot
 ```
 
 Après le redémarrage, exécutez `sudo modprobe 8852bu` et `iwconfig`. Si le module se charge et qu'une interface apparaît, c'est terminé (mode géré uniquement ; le mode moniteur n'est pas pris en charge).
+
+---
+
+### Ubuntu 22.04 (Jammy) — DKMS requis
+
+```bash
+sudo nano /etc/apt/sources.list
+```
+
+```
+deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+```
+
+```bash
+sudo apt update
+sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
+sudo reboot
+```
 
 ---
 

@@ -113,6 +113,8 @@ git clone https://github.com/morrownr/rtl8852bu-20250826.git
 cd rtl8852bu-20250826
 ```
 
+> **注意：** 維護中的上游驅動為 [morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)。如果 GitHub 速度較慢，請使用你信任的代理或鏡像。你也可以從 [files.alfa.com.tw](https://files.alfa.com.tw) 下載壓縮檔。
+
 ---
 
 ### 4. 正式安裝並重新啟動
@@ -121,6 +123,14 @@ cd rtl8852bu-20250826
 sudo ./install-driver.sh
 sudo reboot
 ```
+
+### 5. 開啟監聽模式 {#enable-monitor-mode}
+
+> **不支援：** RTL8832BU 的社群版 rtl8852bu 驅動不支援 Monitor mode，這裡沒有可執行的指令。如需 Monitor mode，請改用核心內建 MediaTek 驅動的網卡，例如 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)。
+
+### 6. 測試封包注入 {#test-packet-injection}
+
+> **不支援：** 封包注入依賴 Monitor mode，而此驅動不提供 Monitor mode。請使用 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)（核心內建 MediaTek 驅動）進行注入測試。
 
 ---
 
@@ -159,6 +169,54 @@ sudo reboot
 
 ---
 
+## Debian
+
+```bash
+sudo nano /etc/apt/sources.list
+```
+
+```
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
+```
+
+```bash
+sudo apt update
+sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
+sudo reboot
+```
+
+此驅動不支援 Monitor mode（見 Kali 第 5 步）。
+
+---
+
+## 樹莓派 (Raspberry Pi) 4B / 5
+
+先切換到國內鏡像：
+
+```bash
+sudo nano /etc/apt/sources.list
+```
+
+```
+deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
+```
+
+```bash
+sudo apt update && sudo apt full-upgrade -y
+sudo apt install -y git bc dkms build-essential raspberrypi-kernel-headers
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
+sudo reboot
+```
+
+---
+
 ## 虛擬機 USB 直通避坑指南 {#virtual-machine-usb-passthrough}
 
 很多小夥伴卡在虛擬機找不到網卡，通常是因為這幾步沒設定好：
@@ -173,6 +231,18 @@ sudo reboot
 2. 找到 **Realtek RTL8832BU**，點選 **連接**。
 
 ---
+
+## 故障排查「救火站」
+
+| 遇到的麻煩 | 可能的原因 | 解決方法 |
+|------|----------|----------|
+| `lsusb` 沒顯示 0bda:8832 或 0bda:885a | 未偵測到網卡 | 換個 USB 埠試試 |
+| `install-driver.sh` 報錯 | 缺少核心標頭檔 | 跑一下 `sudo apt install linux-headers-$(uname -r)` |
+| GitHub 下載失敗或很慢 | 網路問題 | 使用你信任的代理或鏡像 |
+| `modprobe 8852bu` 失敗 | 驅動尚未編譯或未載入 | 重新執行 `sudo ./install-driver.sh`，用 `sudo dkms status` 檢查後重新開機 |
+| Monitor mode／封包注入無法使用 | rtl8852bu 驅動不支援 | 做滲透測試請改用 AWUS036ACM |
+
+> **關於 VIF：** RTL8832BU 的核心外驅動不支援虛擬介面（VIF）。
 
 ## 國內鏡像速查表
 

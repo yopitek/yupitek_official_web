@@ -29,13 +29,11 @@ faq:
 
 
 
-
 刚收到这款精巧的 AWUS036ACS，迫不及待插上电脑却发现 Linux 没反应？别急，这很正常。虽然它内置的 RTL8811AU 芯片是安全研究的神器，完美支持监听模式和数据包注入，但驱动并不在系统内核里，得咱们亲自动手装一下。
 
 {{< tldr >}}
 AWUS036ACS 采用 RTL8811AU 芯片。所有发行版都从 GitHub 仓库 morrownr/8821au-20210708 下载源码，并用 install-driver.sh 编译 8821au DKMS 驱动，支持监听模式与数据包注入。
 {{< /tldr >}}
-
 
 国内的小伙伴访问 GitHub 可能不太顺畅，本指南的驱动源码取自已验证的 GitHub 仓库；如果速度不佳，请使用你信任的代理或镜像。咱们现在就开始一步步把它“驯服”。
 
@@ -122,7 +120,7 @@ git clone https://github.com/morrownr/8821au-20210708.git
 cd 8821au-20210708
 ```
 
-> **注意：** 如果 GitHub 速度较慢，请使用你信任的代理或镜像。
+> **注意：** 维护中的上游驱动为 [morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708)。如果 GitHub 速度较慢，请使用你信任的代理或镜像。你也可以从 [files.alfa.com.tw](https://files.alfa.com.tw) 下载压缩包。
 
 ---
 
@@ -337,7 +335,6 @@ sudo reboot
 | 8821au 驱动（GitHub） | [github.com/morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708) | 驱动源码 |
 | 中科大镜像站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 首选 |
 | 阿里云镜像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推荐 |
-
 
 {{< faq >}}
 

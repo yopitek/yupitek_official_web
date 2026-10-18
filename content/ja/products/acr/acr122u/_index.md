@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
 tags: ["NFC", "RFID", "ISO 14443", "MIFARE", "USB", "カードリーダー"]
+faq:
+  - question: "WindowsでACR122Uを使用するためにACSドライバをインストールする必要がありますか？"
+    answer: "いいえ。ACSは、ACR122UがPC/SC準拠であり、標準的なMicrosoft CCIDドライバを使用すると述べています。このドライバはオペレーティングシステムに既に組み込まれているため、WindowsではACSドライバは不要です。"
+  - question: "ACR122Uはどのカードやタグを読み書きできますか？"
+    answer: "ACSによると、ISO 14443-4 Type AおよびType Bカード、MIFARE、FeliCa、およびすべての4種類のNFC (ISO/IEC 18092) タグにアクセスでき、タグの種類に応じて最大50 mmのカード読み取り距離があります。内蔵の衝突防止機能により、一度に1つのタグのみがアクセスされます。"
+  - question: "独自アプリケーションでACR122Uをプログラムするにはどうすればよいですか？"
+    answer: "ACR122UはPC/SCをサポートしており、PC/SC上のラッパーを介してCT-APIもサポートしています。ISO 18092タグ用およびLEDとブザー用のコマンドは、疑似APDUとして送信されます。ACSはまた、Android 3.1以上でのサポートも記載しています。"
 ---
 
 ACR122U
@@ -93,3 +100,7 @@ ACR122U は、13.56 MHz RFID 技術を採用した PC 接続型非接触スマ�
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+{{< faq >}}
+
+[セットアップガイドと技術詳細 — doc.yupitek.com](https://doc.yupitek.com/acs/products/acr122u/)

@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
 tags: ["NFC", "RFID", "ISO 14443", "MIFARE", "USB", "Leitor de Cartão"]
+faq:
+  - question: "Preciso instalar um driver ACS para o ACR122U no Windows?"
+    answer: "Não. A ACS afirma que o ACR122U é compatível com PC/SC e usa o driver Microsoft CCID padrão, portanto, nenhum driver ACS é necessário no Windows, pois o driver já está integrado ao sistema operacional."
+  - question: "Quais cartões e tags o ACR122U pode ler e gravar?"
+    answer: "De acordo com a ACS, ele acessa cartões ISO 14443-4 Tipo A e Tipo B, MIFARE, FeliCa e todos os quatro tipos de tags NFC (ISO/IEC 18092), com uma distância de leitura de cartão de até 50 mm, dependendo do tipo de tag. Seu sistema anti-colisão integrado significa que apenas uma tag é acessada por vez."
+  - question: "Como programo o ACR122U na minha própria aplicação?"
+    answer: "O ACR122U suporta PC/SC e CT-API por meio de um wrapper sobre o PC/SC. Comandos para tags ISO 18092 e para o LED e o buzzer são enviados como pseudo-APDUs. A ACS também lista suporte para Android 3.1 e superior."
 ---
 
 ACR122U
@@ -93,3 +100,7 @@ O ACR122U é um leitor/gravador de cartões inteligentes sem contato conectado a
 {{< alert >}}
 Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}
+
+{{< faq >}}
+
+[Guias de configuração e detalhes técnicos — doc.yupitek.com](https://doc.yupitek.com/acs/products/acr122u/)

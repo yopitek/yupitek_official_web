@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
 tags: ["NFC", "RFID", "ISO 14443", "MIFARE", "USB", "读卡机"]
+faq:
+  - question: "在 Windows 上是否需要为 ACR122U 安装 ACS 驱动程序？"
+    answer: "不需要。ACS 指出 ACR122U 符合 PC/SC 标准，并使用标准的 Microsoft CCID 驱动程序，因此在 Windows 上无需安装 ACS 驱动程序，因为该驱动程序已内置于操作系统中。"
+  - question: "ACR122U 可以读写哪些卡片和标签？"
+    answer: "根据 ACS 的说明，它可以访问 ISO 14443-4 Type A 和 Type B 卡片、MIFARE、FeliCa 以及所有四种类型的 NFC (ISO/IEC 18092) 标签，读卡距离取决于标签类型，最远可达 50 mm。其内置的防冲突机制确保一次只访问一个标签。"
+  - question: "如何在自己的应用程序中对 ACR122U 进行编程？"
+    answer: "ACR122U 支持 PC/SC，并通过基于 PC/SC 的封装层支持 CT-API。针对 ISO 18092 标签以及 LED 和蜂鸣器的命令以伪 APDU 形式发送。ACS 还列出了对 Android 3.1 及更高版本的支持。"
 ---
 
 ACR122U
@@ -93,3 +100,7 @@ ACR122U 是 ACS 基于 13.56 MHz RFID 技术的 PC 连接式非接触智能卡�
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}
+
+{{< faq >}}
+
+[安装指南与技术细节 — doc.yupitek.com](https://doc.yupitek.com/acs/products/acr122u/)

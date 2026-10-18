@@ -33,6 +33,7 @@
             <img
               class="h-full w-full object-cover nozoom mt-0 mr-0 mb-0 ml-0"
               src="{{ $homepageImage.RelPermalink }}"
+              alt="{{ $.Site.Title }}"
               {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
             {{ if not $disableHeroImageFilter }}
               <div

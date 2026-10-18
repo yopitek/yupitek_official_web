@@ -17,7 +17,7 @@ faq:
 
 ![WiFi Pineapple Pager](/images/products/hak5/card/wifi-pineapple-pager.png)
 
-- **Producto insignia del 20.° aniversario de Hak5**: Motor PineAP de 8.a generación, más de 100 veces más rápido que la generación anterior
+- **Producto insignia del 20.° aniversario de Hak5**: Motor PineAP de 8.a generación
 - **Operación completamente autónoma**: Sin necesidad de computadora externa; dispositivo portátil independiente de auditoría Linux inalámbrica
 - **WiFi de triple banda + Bluetooth**: Soporta 2.4 GHz / 5 GHz / 6 GHz (802.11ax) y Bluetooth 5.2 / BLE 4.2
 - **Sistema de Payload**: Impulsado por DuckyScript™ + Bash + Python
@@ -41,7 +41,7 @@ faq:
 | Expansión | USB 2.0 (para módulos de hardware) |
 | Indicadores | 4 × RGB LED |
 | Otros | PWM Buzzer, motor de vibración, RTC |
-| Sistema operativo | OpenWrt-based Linux |
+| Sistema operativo | Linux |
 
 ## Entornos de Aplicación
 

@@ -17,7 +17,7 @@ faq:
 
 ![WiFi Pineapple Pager](/images/products/hak5/card/wifi-pineapple-pager.png)
 
-- **Hak5 20 週年旗艦產品**：第 8 代 PineAP 引擎，較前代快 100 倍以上
+- **Hak5 20 週年旗艦產品**：第 8 代 PineAP 引擎
 - **完全獨立操作**：無需外接電腦，獨立手持式 Linux 無線審計裝置
 - **三頻 WiFi + 藍牙**：支援 2.4 GHz / 5 GHz / 6 GHz（802.11ax）及 Bluetooth 5.2 / BLE 4.2
 - **Payload 系統**：以 DuckyScript™ + Bash + Python 驅動
@@ -41,7 +41,7 @@ faq:
 | 擴充 | USB 2.0（用於硬體模組 Mod） |
 | 指示燈 | 4 × RGB LED |
 | 其他 | PWM Buzzer、震動馬達、RTC（實時時鐘） |
-| 作業系統 | OpenWrt-based Linux |
+| 作業系統 | Linux |
 
 ## 應用環境
 

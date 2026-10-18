@@ -17,7 +17,7 @@ faq:
 
 ![WiFi Pineapple Pager](/images/products/hak5/card/wifi-pineapple-pager.png)
 
-- **Hak5 20. Jubiläums-Flaggschiff**: 8. Generation PineAP-Engine — über 100× schneller als die Vorgeneration
+- **Hak5 20. Jubiläums-Flaggschiff**: 8. Generation PineAP-Engine
 - **Vollständig eigenständiger Betrieb**: Kein externer Computer erforderlich — eigenständiges Handheld-Linux-WLAN-Prüfgerät
 - **Tri-Band-WLAN + Bluetooth**: Unterstützt 2,4 GHz / 5 GHz / 6 GHz (802.11ax) und Bluetooth 5.2 / BLE 4.2
 - **Payload-System**: Unterstützt von DuckyScript™ + Bash + Python
@@ -41,7 +41,7 @@ faq:
 | Erweiterung | USB 2.0 (für Hardware-Modul-Mods) |
 | Anzeigen | 4 × RGB LED |
 | Sonstiges | PWM-Summer, Vibrationsmotor, RTC (Echtzeituhr) |
-| Betriebssystem | OpenWrt-basiertes Linux |
+| Betriebssystem | Linux |
 
 ## Anwendungsszenarien
 

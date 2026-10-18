@@ -17,7 +17,7 @@ faq:
 
 ![WiFi Pineapple Pager](/images/products/hak5/card/wifi-pineapple-pager.png)
 
-- **Hak5 20周年フラッグシップ製品**：第8世代PineAPエンジン。前世代比100倍以上の高速化
+- **Hak5 20周年フラッグシップ製品**：第8世代PineAPエンジン
 - **完全独立動作**：外付けPCは不要。独立型ハンドヘルドLinux無線監査デバイス
 - **トライバンドWiFi + Bluetooth**：2.4 GHz / 5 GHz / 6 GHz（802.11ax）およびBluetooth 5.2 / BLE 4.2をサポート
 - **Payloadシステム**：DuckyScript™ + Bash + Pythonで駆動
@@ -41,7 +41,7 @@ faq:
 | 拡張 | USB 2.0（ハードウェアモジュールMod用） |
 | インジケーター | 4 × RGB LED |
 | その他 | PWMブザー、振動モーター、RTC（リアルタイムクロック） |
-| OS | OpenWrtベースLinux |
+| OS | Linux |
 
 ## 適用シナリオ
 

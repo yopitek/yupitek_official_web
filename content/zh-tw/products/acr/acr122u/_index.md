@@ -51,7 +51,7 @@ ACR122U 是 ACS 基於 13.56 MHz RFID 技術的 PC 連接式非接觸智慧卡�
 - 內建天線，卡片讀取距離最遠達 50 mm
 - 支援全部 4 種 NFC 標籤類型（ISO/IEC 18092）
 - 支援 MIFARE Ultralight C、MIFARE Plus、DESFire EV1
-- 支援 3 種 NFC 模式：讀寫器、卡片模擬、點對點
+- 支援 ISO 14443 Type A/B、MIFARE、FeliCa 及 NFC 標籤的讀寫器
 - 內建防衝突機制（每次一張標籤）
 - 使用者可控雙色 LED 及蜂鳴器
 - 選配 ISO 7816-3 SAM 插槽，提升安全性

@@ -51,7 +51,7 @@ Der ACR122U ist ein PC-gebundener kontaktloser Smartcard-Leser/Schreiber basiere
 - Eingebaute Antenne, Kartenlesedistanz bis zu 50 mm
 - Unterstützt alle 4 NFC-Tag-Typen (ISO/IEC 18092)
 - Unterstützt MIFARE Ultralight C, MIFARE Plus, DESFire EV1
-- Unterstützt 3 NFC-Modi: Reader/Writer, Card Emulation, Peer-to-Peer
+- Reader/Writer für ISO 14443 Typ A/B, MIFARE, FeliCa und NFC-Tags
 - Integrierte Anti-Kollision (1 Tag gleichzeitig)
 - Benutzersteuerbare zweifarbige LED und Summer
 - Optionaler ISO 7816-3 SAM-Slot für erhöhte Sicherheit

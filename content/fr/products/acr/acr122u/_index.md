@@ -51,7 +51,7 @@ L'ACR122U est un lecteur/graveur de carte à puce sans contact connecté à un P
 - Antenne intégrée, distance de lecture jusqu'à 50 mm
 - Prend en charge les 4 types de tags NFC (ISO/IEC 18092)
 - Prend en charge MIFARE Ultralight C, MIFARE Plus, DESFire EV1
-- Prend en charge 3 modes NFC : Reader/Writer, Card Emulation, Peer-to-Peer
+- Lecteur/enregistreur pour ISO 14443 Type A/B, MIFARE, FeliCa et tags NFC
 - Anti-collision intégré (1 tag à la fois)
 - LED bicolore et buzzer contrôlables par l'utilisateur
 - Slot SAM ISO 7816-3 optionnel pour une sécurité renforcée

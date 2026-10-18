@@ -51,7 +51,7 @@ O ACR122U é um leitor/gravador de cartões inteligentes sem contato conectado a
 - Antena embutida, distância de leitura de cartão até 50 mm
 - Suporta todos os 4 tipos de tags NFC (ISO/IEC 18092)
 - Suporta MIFARE Ultralight C, MIFARE Plus, DESFire EV1
-- Suporta 3 modos NFC: Leitor/Gravador, Emulação de Cartão, Peer-to-Peer
+- Leitor/gravador para ISO 14443 Tipo A/B, MIFARE, FeliCa e tags NFC
 - Anti-colisão embutida (1 tag por vez)
 - LED bicolor e buzzer controláveis pelo usuário
 - Slot SAM ISO 7816-3 opcional para segurança aprimorada

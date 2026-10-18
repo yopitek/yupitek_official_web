@@ -18,7 +18,7 @@ import time
 import urllib.request
 import opencc
 
-GLM_API_KEY = "7b1ca70b349c4dbbb071a62202aa99a1.ZBRrjqMIIagpuWc3"
+GLM_API_KEY = os.environ.get("GLM_API_KEY", "")  # service no longer used; key removed from source
 GLM_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
 
 SOURCE_DIR = "/home/yopitek/Documents/Obsidian_vault/GX10_HQ/F_Daily/01_Daily_note/2026-09/2026-09-03/blog_article"

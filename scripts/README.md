@@ -25,7 +25,7 @@ One-off and maintenance scripts. Draft by local Qwen; paths checked by code agai
 | `kanban-workflow.sh` | The script manages a seven-column Kanban workflow by moving tasks, checking limits, and scoring items, writing updates directly to local Markdown files. |
 | `link-skills.sh` | The script clones mattpocock/skills from GitHub and writes installed_skills.json to ~/.claude/skills, requiring network access. |
 | `pre_release_check.py` | It checks git status, scans for secrets, verifies Chinese characters, and builds Hugo, calling network and reading files without writing or printing secrets. |
-| `publish_10_articles_pipeline.py` | Translates 10 articles into 10 locales via the Zhipu GLM API (network) and creates/overwrites blog markdown under content/. WARNING: the GLM API key is hardcoded in source and committed to git — rotate it and move it to an environment variable. |
+| `publish_10_articles_pipeline.py` | Translates 10 articles into 10 locales via the Zhipu GLM API (network) and creates/overwrites blog markdown under content/. The GLM key was removed from source (now read from env `GLM_API_KEY`); the service is no longer used. The old key remains in git history. |
 | `qa/blog_verify.js` | This script uses Playwright to verify blog page titles and hreflang tags across multiple locales on yupitek.com, requiring network access but no secrets or file writes. |
 | `remove_ibeacon_tables.py` | The script removes iBeacon comparison markdown tables from specified files, modifying them in place without network access or secrets. |
 | `remove_ypb03_battery_life.py` | The script removes battery life claims from YPB03 documentation files in multiple languages by performing in-place text replacements. |

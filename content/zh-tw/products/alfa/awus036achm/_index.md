@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC433", "USB 2.0", "雙頻", "輕巧"]
+faq:
+  - question: "在 Linux 上是否需要為 AWUS036ACHM 安裝驅動程式？"
+    answer: "通常不需要。ALFA 的 Linux 支援頁面指出，該裝置在 Kali、Ubuntu 和 Raspberry Pi OS 上即插即用，並列出了自 Linux 核心版本 4.19 起的主線支援。在 Debian 上，您還需要新增 non-free APT 來源並安裝韌體套件。"
+  - question: "AWUS036ACHM 是否支援 Windows 和 macOS？"
+    answer: "ALFA 在 AWUS036ACHM 的文件頁面提供 Windows 和 macOS 的驅動程式下載，並附有快速安裝指南。在這些系統上首次使用前，請先安裝驅動程式。"
+  - question: "AWUS036ACHM 是否支援監控模式（monitor mode）和封包注入（packet injection）？"
+    answer: "ALFA 的文件未明確說明是否支援監控模式。但其 Linux 支援頁面顯示了 aireplay-ng 注入測試結果，全部回報為 OK。請在您的環境中自行測試，並僅將這些功能用於經授權的安全測試。"
 ---
 
 {{< alert "warning" >}}
@@ -77,3 +84,7 @@ AWUS036ACHM 採用 MediaTek MT7610U 晶片，支援 IEEE 802.11ac 雙頻，最�
 {{< alert >}}
 需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}
+
+{{< faq >}}
+
+[安裝指南與技術細節 — doc.yupitek.com](https://doc.yupitek.com/alfa-network/products/awus036achm/)

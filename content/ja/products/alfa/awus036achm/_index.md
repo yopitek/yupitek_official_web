@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC433", "USB 2.0", "デュアルバンド", "コンパクト"]
+faq:
+  - question: "Linux で AWUS036ACHM のドライバをインストールする必要がありますか？"
+    answer: "通常は不要です。ALFA の Linux サポートページによると、このデバイスは Kali、Ubuntu、Raspberry Pi OS でプラグアンドプレイに対応しており、mainline Linux kernel バージョン 4.19 以降でサポートされていると記載されています。Debian では、さらに non-free APT ソースを追加し、firmware パッケージをインストールする必要があります。"
+  - question: "AWUS036ACHM は Windows と macOS で動作しますか？"
+    answer: "ALFA は AWUS036ACHM のドキュメントページで Windows と macOS 用のドライバダウンロードとクイックインストールガイドを提供しています。これらのシステムでは初回使用前にドライバをインストールしてください。"
+  - question: "AWUS036ACHM はモニターモードとパケットインジェクションに対応していますか？"
+    answer: "ALFA のドキュメントにはモニターモードのサポートが明示されていません。ただし、Linux サポートページには aireplay-ng によるインジェクションテストの結果が表示されており、すべて OK と報告されています。ご自身の環境でテストし、これらの機能は認可されたセキュリティテストのみで使用してください。"
 ---
 
 {{< alert "warning" >}}
@@ -80,3 +87,7 @@ AWUS036ACHM は MediaTek MT7610U チップセットを採用し、IEEE 802.11ac 
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+{{< faq >}}
+
+[セットアップガイドと技術詳細 — doc.yupitek.com](https://doc.yupitek.com/alfa-network/products/awus036achm/)

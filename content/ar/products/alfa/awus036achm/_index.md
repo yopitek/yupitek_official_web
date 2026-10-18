@@ -8,6 +8,13 @@ dir: rtl
 languageDirection: rtl
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC433", "USB 2.0", "ثنائي النطاق", "خفيف الوزن"]
+faq:
+  - question: "هل أحتاج إلى تثبيت برنامج تشغيل لجهاز AWUS036ACHM على نظام Linux؟"
+    answer: "عادةً لا. تشير صفحة دعم ALFA لنظام Linux إلى أن الجهاز يعمل بتوصيل وتشغيل (plug and play) على أنظمة Kali و Ubuntu و Raspberry Pi OS، وتذكر الدعم في نواة Linux الرئيسية بدءًا من الإصدار 4.19. على نظام Debian، تحتاج بالإضافة إلى ذلك إلى إضافة مصدر APT غير الحر وتثبيت حزمة البرنامج الثابت (firmware)."
+  - question: "هل يعمل جهاز AWUS036ACHM على نظامي Windows و macOS؟"
+    answer: "توفر ALFA تنزيلات برامج التشغيل لأنظمة Windows و macOS على صفحة وثائق AWUS036ACHM، جنبًا إلى جنب مع دليل التثبيت السريع. قم بتثبيت برنامج التشغيل قبل الاستخدام الأول على هذه الأنظمة."
+  - question: "هل يدعم جهاز AWUS036ACHM وضع المراقبة (monitor mode) وحقن الحزم (packet injection)؟"
+    answer: "لا تذكر وثائق ALFA صراحةً دعم وضع المراقبة. ومع ذلك، تعرض صفحة دعم Linux الخاصة بها نتائج اختبار حقن aireplay-ng، حيث تم الإبلاغ عن جميعها على أنها OK. قم باختبار ذلك على إعدادك الخاص، واستخدم هذه الميزات فقط لاختبارات الأمن المصرح بها."
 ---
 
 {{< alert "warning" >}}
@@ -68,3 +75,7 @@ AWUS036ACHM يعتمد على مجموعة شرائح (Chipset) MediaTek MT7610U
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}
+
+{{< faq >}}
+
+[أدلة الإعداد والتفاصيل التقنية — doc.yupitek.com](https://doc.yupitek.com/alfa-network/products/awus036achm/)

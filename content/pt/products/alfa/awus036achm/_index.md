@@ -7,6 +7,13 @@ showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC433", "USB 2.0", "Dual Band", "Compacto"]
+faq:
+  - question: "Preciso instalar um driver para o AWUS036ACHM no Linux?"
+    answer: "Geralmente não. A página de suporte da ALFA para Linux afirma que o dispositivo é plug and play no Kali, Ubuntu e Raspberry Pi OS, e lista suporte no kernel Linux principal a partir da versão 4.19. No Debian, você deve adicionar adicionalmente a fonte APT non-free e instalar o pacote de firmware."
+  - question: "O AWUS036ACHM funciona no Windows e macOS?"
+    answer: "A ALFA fornece downloads de drivers para Windows e macOS na página de documentação do AWUS036ACHM, junto com um Guia de Instalação Rápida. Instale o driver antes do primeiro uso nesses sistemas."
+  - question: "O AWUS036ACHM suporta modo monitor e injeção de pacotes?"
+    answer: "A documentação da ALFA não afirma explicitamente o suporte ao modo monitor. Sua página de suporte para Linux mostra resultados de testes de injeção com aireplay-ng, todos reportados como OK. Teste em sua própria configuração e use esses recursos apenas para testes de segurança autorizados."
 ---
 
 {{< alert "warning" >}}
@@ -77,3 +84,7 @@ Todos os adaptadores USB ALFA utilizam um conector RP-SMA padrão. Faça upgrade
 {{< alert >}}
 Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).
 {{< /alert >}}
+
+{{< faq >}}
+
+[Guias de configuração e detalhes técnicos — doc.yupitek.com](https://doc.yupitek.com/alfa-network/products/awus036achm/)

@@ -4,6 +4,13 @@ date: 2025-01-01
 draft: false
 description: "Флагманское автономное устройство Hak5 к 20-летнему юбилею, оснащённое движком PineAP 8-го поколения, поддерживает трёхдиапазонный WiFi и Bluetooth без внешнего компьютера."
 featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
+faq:
+  - question: "Нужен ли компьютер для WiFi Pineapple Pager?"
+    answer: "Нет. Hak5 описывает WiFi Pineapple Pager как автономное портативное устройство размером с карман, которое выполняет атаки PineAP и полезную нагрузку DuckyScript без подключения к компьютеру. Оно работает на Linux с правами root и поддерживает DuckyScript и Bash."
+  - question: "Какие Wi-Fi диапазоны и радиомодули есть у WiFi Pineapple Pager?"
+    answer: "Hak5 указывает диапазоны 2.4 GHz, 5 GHz и 6 GHz. Основной радиомодуль — это dual PHY 2T2R 802.11a/b/g/n/ac/ax, а вторичный радиомодуль — single PHY 2T2R 802.11b/g/n. Также есть Bluetooth 5.2 и Bluetooth 4.2 Low Energy."
+  - question: "Какие аккумулятор и порты есть у WiFi Pineapple Pager?"
+    answer: "Он оснащен сменным аккумулятором LiPo емкостью 2000 mAh, который заряжается через USB-C (5V 2A). Порт USB-C также обеспечивает Ethernet, а порт USB 2.0 Host доступен для расширения. Hak5 указывает размеры 87 x 62 x 24 мм и вес 131 г."
 ---
 
 ## Особенности продукта
@@ -55,3 +62,7 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 {{< alert >}}
 Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
 {{< /alert >}}
+
+{{< faq >}}
+
+[Руководство по настройке и технические подробности — doc.yupitek.com](https://doc.yupitek.com/hak5/products/wifi-pineapple-pager/)

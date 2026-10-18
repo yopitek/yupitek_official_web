@@ -4,6 +4,13 @@ date: 2025-01-01
 draft: false
 description: "Dispositivo insignia autónomo de Hak5 por su 20.° aniversario, equipado con motor PineAP de 8.a generación, soporta WiFi de triple banda y Bluetooth, sin necesidad de computadora externa."
 featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
+faq:
+  - question: "¿El WiFi Pineapple Pager necesita una computadora?"
+    answer: "No. Hak5 describe el WiFi Pineapple Pager como un dispositivo portátil de bolsillo, autónomo, que ejecuta ataques PineAP y cargas útiles DuckyScript sin necesidad de una computadora conectada. Ejecuta Linux con acceso root y admite DuckyScript y Bash."
+  - question: "¿Qué bandas y radios Wi-Fi tiene el WiFi Pineapple Pager?"
+    answer: "Hak5 enumera 2.4 GHz, 5 GHz y 6 GHz. La radio principal es una dual PHY 2T2R 802.11a/b/g/n/ac/ax y la radio secundaria es una single PHY 2T2R 802.11b/g/n. También tiene Bluetooth 5.2 y Bluetooth 4.2 Low Energy."
+  - question: "¿Qué batería y puertos tiene el WiFi Pineapple Pager?"
+    answer: "Tiene una batería LiPo de 2000 mAh reemplazable, cargada mediante USB-C (5V 2A). El puerto USB-C también proporciona Ethernet, y hay disponible un puerto USB 2.0 Host para expansión. Hak5 enumera el tamaño como 87 x 62 x 24 mm y el peso como 131 g."
 ---
 
 ## Características del Producto
@@ -55,3 +62,7 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 {{< alert >}}
 ¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}
+
+{{< faq >}}
+
+[Guías de configuración y detalles técnicos — doc.yupitek.com](https://doc.yupitek.com/hak5/products/wifi-pineapple-pager/)

@@ -4,6 +4,13 @@ date: 2025-01-01
 draft: false
 description: "Hak5 20 週年旗艦獨立手持裝置，搭載第 8 代 PineAP 引擎，支援三頻 WiFi 與藍牙，無需外接電腦。"
 featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
+faq:
+  - question: "WiFi Pineapple Pager 是否需要電腦？"
+    answer: "不需要。Hak5 將 WiFi Pineapple Pager 描述為一款口袋型、獨立的手持裝置，無需連接電腦即可執行 PineAP 攻擊和 DuckyScript Payload。它執行 Linux 並擁有 root 存取權限，且支援 DuckyScript 和 Bash。"
+  - question: "WiFi Pineapple Pager 支援哪些 Wi-Fi 頻段和無線電？"
+    answer: "Hak5 列出 2.4 GHz、5 GHz 和 6 GHz。主要無線電為雙 PHY 2T2R 802.11a/b/g/n/ac/ax，次要無線電為單 PHY 2T2R 802.11b/g/n。它也具備 Bluetooth 5.2 和 Bluetooth 4.2 Low Energy。"
+  - question: "WiFi Pineapple Pager 配備什麼樣的電池和連接埠？"
+    answer: "它配備可自行維修的 2000 mAh LiPo 電池，透過 USB-C (5V 2A) 充電。USB-C 連接埠也提供乙太網路功能，並有一個 USB 2.0 Host 連接埠可用於擴充。Hak5 列出的尺寸為 87 x 62 x 24 mm，重量為 131 g。"
 ---
 
 ## 產品特色
@@ -55,3 +62,7 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 {{< alert >}}
 需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}
+
+{{< faq >}}
+
+[安裝指南與技術細節 — doc.yupitek.com](https://doc.yupitek.com/hak5/products/wifi-pineapple-pager/)

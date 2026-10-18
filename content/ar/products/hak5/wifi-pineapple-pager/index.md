@@ -5,6 +5,13 @@ draft: false
 dir: rtl
 description: "الجهاز الرائد المستقل لمناسبة الذكرى العشرين لـ Hak5، مزود بمحرك PineAP الجيل الثامن، يدعم WiFi ثلاثي النطاق والبلوتوث، لا يحتاج حاسوباً خارجياً."
 featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
+faq:
+  - question: "هل يحتاج WiFi Pineapple Pager إلى كمبيوتر؟"
+    answer: "لا. تصف Hak5 جهاز WiFi Pineapple Pager بأنه جهاز محمول بحجم الجيب ومستقل يعمل بشكل منفصل، ويشن هجمات PineAP وحمولات DuckyScript (payloads) دون الحاجة إلى توصيل كمبيوتر. يعمل بنظام Linux مع صلاحيات الجذر ويدعم DuckyScript و Bash."
+  - question: "ما هي نطاقات Wi-Fi والراديوهات التي يدعمها WiFi Pineapple Pager؟"
+    answer: "تدرج Hak5 نطاقات 2.4 GHz و 5 GHz و 6 GHz. الراديو الأساسي هو 802.11a/b/g/n/ac/ax مزدوج PHY 2T2R، والراديو الثانوي هو 802.11b/g/n أحادي PHY 2T2R. كما يدعم Bluetooth 5.2 و Bluetooth 4.2 Low Energy."
+  - question: "ما هي البطارية والمنافذ الموجودة في WiFi Pineapple Pager؟"
+    answer: "يحتوي على بطارية LiPo قابلة للاستبدال بسعة 2000 mAh يتم شحنها عبر منفذ USB-C (5V 2A). يوفر منفذ USB-C أيضاً اتصال Ethernet، ويتوفر منفذ USB 2.0 Host للتوسعة. تدرج Hak5 الأبعاد كـ 87 x 62 x 24 mm والوزن كـ 131 g."
 ---
 
 ## ميزات المنتج
@@ -56,3 +63,7 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}
+
+{{< faq >}}
+
+[أدلة الإعداد والتفاصيل التقنية — doc.yupitek.com](https://doc.yupitek.com/hak5/products/wifi-pineapple-pager/)

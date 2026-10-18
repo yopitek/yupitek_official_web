@@ -4,6 +4,13 @@ date: 2025-01-01
 draft: false
 description: "Hak5 20周年を記念するフラッグシップの独立型ハンドヘルドデバイスです。第8世代PineAPエンジン、トライバンドWiFi、Bluetoothを搭載し、外付けPCは不要です。"
 featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
+faq:
+  - question: "WiFi Pineapple Pagerはコンピュータが必要ですか？"
+    answer: "いいえ。Hak5は、WiFi Pineapple Pagerを、コンピュータを接続せずにPineAP攻撃とDuckyScriptペイロードを実行できる、ポケットサイズのスタンドアロンハンドヘルドデバイスとして説明しています。Linuxをrootアクセス権付きで実行し、DuckyScriptとBashをサポートしています。"
+  - question: "WiFi Pineapple PagerはどのWi-Fiバンドと無線に対応していますか？"
+    answer: "Hak5は2.4 GHz、5 GHz、6 GHzをリストしています。プライマリ無線はデュアルPHY 2T2R 802.11a/b/g/n/ac/ax、セカンダリ無線はシングルPHY 2T2R 802.11b/g/nです。また、Bluetooth 5.2とBluetooth 4.2 Low Energyも搭載しています。"
+  - question: "WiFi Pineapple Pagerのバッテリーとポートはどのようなものですか？"
+    answer: "USB-C（5V 2A）で充電可能な、交換可能な2000 mAh LiPoバッテリーを搭載しています。USB-CポートはEthernetも提供し、拡張用としてUSB 2.0 Hostポートが利用可能です。Hak5はサイズを87 x 62 x 24 mm、重量を131 gとリストしています。"
 ---
 
 ## 製品特長
@@ -55,3 +62,7 @@ featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+{{< faq >}}
+
+[セットアップガイドと技術詳細 — doc.yupitek.com](https://doc.yupitek.com/hak5/products/wifi-pineapple-pager/)

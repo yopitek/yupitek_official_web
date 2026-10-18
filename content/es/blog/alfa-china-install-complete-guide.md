@@ -22,7 +22,9 @@ faq:
     answer: "El AWUS036AXM y AWUS036AXML usan el chip MT7921AUN y admiten WiFi 6E en triple banda."
   - question: "¿Qué hay que tener en cuenta al usar tarjetas Alfa en Raspberry Pi?"
     answer: "Debes usar un concentrador USB con alimentación para proveer energía y flashear la versión Kali ARM64 para obtener el mejor soporte de controladores."
----Guía definitiva de instalación de tarjetas WiFi Alfa en Linux para China continental, que abarca Kali, Ubuntu, Debian y Raspberry Pi. Compatible con todos los chips RTL8812AU, MT7612U, RTL8832BU y más, usando espejos nacionales para los paquetes del sistema y repositorios de GitHub verificados para el código de los controladores.
+---
+
+Guía definitiva de instalación de tarjetas WiFi Alfa en Linux para China continental, que abarca Kali, Ubuntu, Debian y Raspberry Pi. Compatible con todos los chips RTL8812AU, MT7612U, RTL8832BU y más, usando espejos nacionales para los paquetes del sistema y repositorios de GitHub verificados para el código de los controladores.
 
 {{< tldr >}}
 Guía definitiva de instalación de tarjetas WiFi Alfa en Linux para China continental, que abarca Kali, Ubuntu, Debian y Raspberry Pi. Compatible con todos los chips RTL8812AU, MT7612U, RTL8832BU y más, usando espejos nacionales para los paquetes del sistema y repositorios de GitHub verificados para el código de los controladores.

@@ -25,7 +25,7 @@ faq:
     answer: "Use obrigatoriamente um hub USB com alimentação própria e instale a versão Kali ARM64 para obter o melhor suporte de driver."
 ---
 {{< tldr >}}
-Guia definitivo de instalacao Linux de adaptadores WiFi Alfa na China continental, cobrindo Kali, Ubuntu, Debian e Raspberry Pi. Suporta todos os chipsets incluindo RTL8812AU, MT7612U e RTL8832BU. Usa espelhos nacionais para os pacotes do sistema e repositórios GitHub verificados para o código dos drivers.
+Guia definitivo de instalação Linux de adaptadores WiFi Alfa na China continental, cobrindo Kali, Ubuntu, Debian e Raspberry Pi. Suporta todos os chipsets incluindo RTL8812AU, MT7612U e RTL8832BU. Usa espelhos nacionais para os pacotes do sistema e repositórios GitHub verificados para o código dos drivers.
 {{< /tldr >}}
 
 Se você está lendo isso, provavelmente comprou um adaptador USB WiFi Alfa e ficou travado porque:

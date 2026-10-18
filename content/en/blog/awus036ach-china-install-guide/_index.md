@@ -614,7 +614,7 @@ If your workflow needs VIF — for example, running fake APs while monitoring si
 |---------|-------------|-----|
 | `lsusb` doesn't show 0bda:8812 | Adapter not powered or bad cable | Try a different USB port. Use a powered hub on Raspberry Pi. |
 | `install-driver.sh` fails with header errors | Kernel headers missing or version mismatch | Run `sudo apt install linux-headers-$(uname -r)` |
-| `modprobe 88XXau` fails | Secure Boot blocking unsigned modules | Disable Secure Boot in BIOS, or sign the module |
+| `modprobe 8812au` fails | Secure Boot blocking unsigned modules | Disable Secure Boot in BIOS, or sign the module |
 | Driver disappears after kernel update | Driver not registered with DKMS | Re-run `sudo ./install-driver.sh` from the source directory |
 | `airmon-ng start wlan0` fails | NetworkManager still running | Run `sudo airmon-ng check kill` first |
 | Monitor mode starts but captures no traffic | Wrong channel or wrong interface name | Check interface with `iwconfig`. Set channel: `iwconfig wlan0mon channel 6` |

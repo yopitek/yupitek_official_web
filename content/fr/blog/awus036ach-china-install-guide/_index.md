@@ -605,7 +605,7 @@ Si votre flux de travail nécessite VIF — par exemple, faire tourner des faux 
 |----------|---------------|---------|
 | `lsusb` n'affiche pas 0bda:8812 | Adaptateur non alimenté ou câble défectueux | Essayez un autre port USB. Utilisez un hub alimenté sur Raspberry Pi. |
 | `install-driver.sh` échoue avec des erreurs d'en-tête | En-têtes du noyau manquants ou version incompatible | Lancez `sudo apt install linux-headers-$(uname -r)` |
-| `modprobe 88XXau` échoue | Secure Boot bloque les modules non signés | Désactivez Secure Boot dans le BIOS, ou signez le module |
+| `modprobe 8812au` échoue | Secure Boot bloque les modules non signés | Désactivez Secure Boot dans le BIOS, ou signez le module |
 | Le pilote disparaît après une mise à jour du noyau | Pilote non enregistré auprès de DKMS | Relancez `sudo ./install-driver.sh` depuis le répertoire source |
 | `airmon-ng start wlan0` échoue | NetworkManager toujours en cours d'exécution | Lancez d'abord `sudo airmon-ng check kill` |
 | Le mode moniteur démarre mais ne capture pas le trafic | Mauvais canal ou mauvais nom d'interface | Vérifiez l'interface avec `iwconfig`. Définissez le canal : `iwconfig wlan0mon channel 6` |

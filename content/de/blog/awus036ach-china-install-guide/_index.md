@@ -608,7 +608,7 @@ Wenn dein Workflow VIF benötigt — zum Beispiel gleichzeitig Fake-APs betreibe
 |---------|-----------------|--------|
 | `lsusb` zeigt 0bda:8812 nicht | Adapter ohne Strom oder schlechtes Kabel | Versuche einen anderen USB-Port. Verwende auf dem Raspberry Pi einen aktiven Hub. |
 | `install-driver.sh` schlägt mit Header-Fehlern fehl | Kernel-Header fehlen oder Versions-Mismatch | Führe `sudo apt install linux-headers-$(uname -r)` aus |
-| `modprobe 88XXau` schlägt fehl | Secure Boot blockiert unsignierte Module | Deaktiviere Secure Boot im BIOS oder signiere das Modul |
+| `modprobe 8812au` schlägt fehl | Secure Boot blockiert unsignierte Module | Deaktiviere Secure Boot im BIOS oder signiere das Modul |
 | Treiber verschwindet nach Kernel-Update | Treiber nicht mit DKMS registriert | Führe `sudo ./install-driver.sh` aus dem Quellverzeichnis erneut aus |
 | `airmon-ng start wlan0` schlägt fehl | NetworkManager läuft noch | Führe zuerst `sudo airmon-ng check kill` aus |
 | Monitor-Modus startet, aber erfasst keinen Traffic | Falscher Kanal oder falscher Interface-Name | Prüfe das Interface mit `iwconfig`. Setze den Kanal: `iwconfig wlan0mon channel 6` |

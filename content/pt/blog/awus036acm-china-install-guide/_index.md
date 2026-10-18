@@ -31,7 +31,7 @@ faq:
 O AWUS036ACM é um dos adaptadores Alfa mais fáceis de configurar no Linux. Seu chip MT7612U usa o driver `mt76x2u`, que está integrado ao kernel Linux desde a versão 4.19. Na maioria dos sistemas modernos, o adaptador funciona com dois ou três comandos. Este guia cobre a configuração completa — verificação do driver, modo monitor, injeção de pacotes e VIF — usando apenas espelhos domésticos. Sem necessidade de GitHub.
 
 {{< tldr >}}
-O AWUS036ACM equipado com chipset MT7612U tem driver integrado ao kernel sem compilacao. Suporta modo monitor, injecao de pacotes e VIF simultaneos. Na China, basta instalar o pacote de firmware.
+O AWUS036ACM equipado com chipset MT7612U tem driver integrado ao kernel sem compilação. Suporta modo monitor, injeção de pacotes e VIF simultaneos. Na China, basta instalar o pacote de firmware.
 {{< /tldr >}}
 
 Certifique-se de ter o seguinte pronto:

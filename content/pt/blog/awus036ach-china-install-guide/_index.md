@@ -31,7 +31,7 @@ faq:
 Você acabou de receber o AWUS036ACH e seu Linux não o reconhece. Isso é normal — este chip precisa do driver RTL8812AU, e ele não funciona automaticamente. Este guia te leva pela instalação completa em cerca de 30 minutos, usando espelhos domésticos para os pacotes do sistema e o repositório GitHub verificado para o código do driver. Se o GitHub estiver lento, use um proxy ou mirror de confiança.
 
 {{< tldr >}}
-O AWUS036ACH usa o chipset RTL8812AU. No Kali, instale o driver DKMS via apt. No Ubuntu/Debian, compile a partir do GitHub. Em 30 minutos voce tera modo monitor e injecao de pacotes funcionando.
+O AWUS036ACH usa o chipset RTL8812AU. No Kali, instale o driver DKMS via apt. No Ubuntu/Debian, compile a partir do GitHub. Em 30 minutos você terá modo monitor e injeção de pacotes funcionando.
 {{< /tldr >}}
 
 Certifique-se de ter o seguinte pronto:
@@ -610,7 +610,7 @@ Se seu fluxo de trabalho precisa de VIF — por exemplo, executar APs falsos enq
 |---------|---------------|---------|
 | `lsusb` não mostra 0bda:8812 | Adaptador sem energia ou cabo defeituoso | Tente uma porta USB diferente. Use um hub com alimentação no Raspberry Pi. |
 | `install-driver.sh` falha com erros de cabeçalho | Cabeçalhos do kernel faltando ou incompatibilidade de versão | Execute `sudo apt install linux-headers-$(uname -r)` |
-| `modprobe 88XXau` falha | Secure Boot bloqueando módulos não assinados | Desative o Secure Boot no BIOS, ou assine o módulo |
+| `modprobe 8812au` falha | Secure Boot bloqueando módulos não assinados | Desative o Secure Boot no BIOS, ou assine o módulo |
 | Driver desaparece após atualização do kernel | Driver não registrado no DKMS | Execute novamente `sudo ./install-driver.sh` do diretório fonte |
 | `airmon-ng start wlan0` falha | NetworkManager ainda em execução | Execute primeiro `sudo airmon-ng check kill` |
 | Modo monitor inicia mas não captura tráfego | Canal errado ou nome de interface incorreto | Verifique a interface com `iwconfig`. Defina o canal: `iwconfig wlan0mon channel 6` |

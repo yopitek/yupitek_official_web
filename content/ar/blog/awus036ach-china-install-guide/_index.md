@@ -606,7 +606,7 @@ sudo aireplay-ng --test wlan1mon
 |---------|--------------|-------|
 | `lsusb` لا يُظهر 0bda:8812 | المحوّل غير مزوّد بطاقة أو كابل معيب | جرّب منفذ USB مختلفاً. استخدم محور بطاقة على Raspberry Pi. |
 | `install-driver.sh` يفشل بأخطاء ترويسات | ترويسات النواة مفقودة أو عدم تطابق الإصدار | شغّل `sudo apt install linux-headers-$(uname -r)` |
-| `modprobe 88XXau` يفشل | Secure Boot يحجب الوحدات غير الموقّعة | عطّل Secure Boot في BIOS، أو وقّع الوحدة |
+| `modprobe 8812au` يفشل | Secure Boot يحجب الوحدات غير الموقّعة | عطّل Secure Boot في BIOS، أو وقّع الوحدة |
 | التعريف يختفي بعد تحديث النواة | التعريف غير مسجّل في DKMS | أعد تشغيل `sudo ./install-driver.sh` من مجلد المصدر |
 | `airmon-ng start wlan0` يفشل | NetworkManager لا يزال يعمل | شغّل `sudo airmon-ng check kill` أولاً |
 | وضع المراقبة يعمل لكن لا يلتقط حركة مرور | قناة خاطئة أو اسم واجهة خاطئ | تحقق من الواجهة بـ `iwconfig`. اضبط القناة: `iwconfig wlan0mon channel 6` |

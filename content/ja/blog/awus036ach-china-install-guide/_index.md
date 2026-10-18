@@ -608,7 +608,7 @@ AWUS036ACHに搭載されたRTL8812AUチップは、Linux上でのVIFサポー�
 |------|--------------|---------|
 | `lsusb` に 0bda:8812 が表示されない | アダプターが給電されていない、またはケーブルが不良 | 別のUSBポートを試してください。ラズベリーパイではセルフパワーハブを使用してください。 |
 | `install-driver.sh` がヘッダーエラーで失敗する | カーネルヘッダーが見つからないかバージョンが一致しない | `sudo apt install linux-headers-$(uname -r)` を実行してください |
-| `modprobe 88XXau` が失敗する | Secure Bootが未署名モジュールをブロックしている | BIOSでSecure Bootを無効にするか、モジュールに署名してください |
+| `modprobe 8812au` が失敗する | Secure Bootが未署名モジュールをブロックしている | BIOSでSecure Bootを無効にするか、モジュールに署名してください |
 | カーネルアップデート後にドライバーが消える | ドライバーがDKMSに登録されていない | ソースディレクトリから `sudo ./install-driver.sh` を再実行してください |
 | `airmon-ng start wlan0` が失敗する | NetworkManagerがまだ実行中 | 先に `sudo airmon-ng check kill` を実行してください |
 | モニターモードが開始されるがトラフィックをキャプチャしない | チャンネルまたはインターフェース名が違う | `iwconfig` でインターフェースを確認し、チャンネルを設定：`iwconfig wlan0mon channel 6` |

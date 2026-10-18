@@ -608,7 +608,7 @@ Si tu flujo de trabajo necesita VIF — por ejemplo, ejecutar APs falsos mientra
 |---------|---------------|---------|
 | `lsusb` no muestra 0bda:8812 | Adaptador sin alimentación o cable defectuoso | Prueba un puerto USB diferente. Usa un hub alimentado en Raspberry Pi. |
 | `install-driver.sh` falla con errores de encabezados | Encabezados del kernel faltantes o versión incompatible | Ejecuta `sudo apt install linux-headers-$(uname -r)` |
-| `modprobe 88XXau` falla | Secure Boot bloqueando módulos sin firmar | Desactiva Secure Boot en el BIOS, o firma el módulo |
+| `modprobe 8812au` falla | Secure Boot bloqueando módulos sin firmar | Desactiva Secure Boot en el BIOS, o firma el módulo |
 | El controlador desaparece después de actualizar el kernel | Controlador no registrado con DKMS | Vuelve a ejecutar `sudo ./install-driver.sh` desde el directorio fuente |
 | `airmon-ng start wlan0` falla | NetworkManager todavía en ejecución | Ejecuta primero `sudo airmon-ng check kill` |
 | El modo monitor inicia pero no captura tráfico | Canal equivocado o nombre de interfaz incorrecto | Verifica la interfaz con `iwconfig`. Establece el canal: `iwconfig wlan0mon channel 6` |

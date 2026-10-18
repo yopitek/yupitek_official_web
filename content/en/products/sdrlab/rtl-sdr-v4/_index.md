@@ -6,6 +6,13 @@ draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "Radio Reception", "USB", "GNU Radio"]
+faq:
+  - question: "Do I need direct sampling mode to receive HF on the RTL-SDR Blog V4?"
+    answer: "No. The V4 has a built-in upconverter instead of a direct sampling circuit, so HF signals are upconverted by 28.8 MHz and the driver handles the frequency shift. Enabling direct sampling on a V4 gives no results."
+  - question: "Does the RTL-SDR Blog V4 need special drivers?"
+    answer: "Yes. The V4 requires the RTL-SDR Blog drivers, which are backward compatible with V3 and older units. The default Osmocom branch now also supports the V4."
+  - question: "How does the bias tee on the RTL-SDR Blog V4 work?"
+    answer: "The bias tee is software controlled and rated at 4.5 V, supplying up to 180 mA continuously. On Linux it is switched with rtl_biast. Do not enable it with a DC-shorted antenna unless an LNA or powered device is in the chain."
 ---
 
 ## Features
@@ -55,3 +62,7 @@ tags: ["SDR", "RTL-SDR", "Radio Reception", "USB", "GNU Radio"]
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+{{< faq >}}
+
+[Setup guides and technical details — doc.yupitek.com](https://doc.yupitek.com/sdrlab/hardware/rtl-sdr-v4/)

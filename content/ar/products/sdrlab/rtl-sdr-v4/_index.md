@@ -7,6 +7,13 @@ showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "استقبال لاسلكي", "USB", "GNU Radio"]
 dir: rtl
+faq:
+  - question: "هل أحتاج إلى وضع أخذ العينات المباشر (direct sampling mode) لاستقبال نطاق HF على جهاز RTL-SDR Blog V4؟"
+    answer: "لا. يحتوي V4 على محول رفع مدمج (upconverter) بدلاً من دائرة أخذ العينات المباشر، لذا يتم رفع إشارات HF بمقدار 28.8 MHz ويتعامل البرنامج مع إزاحة التردد. لا يؤدي تفعيل وضع أخذ العينات المباشر على V4 إلى أي نتائج."
+  - question: "هل يحتاج جهاز RTL-SDR Blog V4 إلى برامج تشغيل خاصة؟"
+    answer: "نعم. يتطلب V4 برامج تشغيل RTL-SDR Blog، وهي متوافقة مع الإصدارات الأقدم مثل V3 والوحدات السابقة. كما يدعم فرع Osmocom الافتراضي الآن جهاز V4 أيضاً."
+  - question: "كيف يعمل محول الانحياز (bias tee) في جهاز RTL-SDR Blog V4؟"
+    answer: "يتم التحكم في محول الانحياز عبر البرمجيات، وهو مصمم بجهد 4.5 V، ويوفر تياراً مستمراً يصل إلى 180 mA. على نظام Linux، يتم تشغيله باستخدام الأمر rtl_biast. لا تقم بتفعيله مع هوائي مقصور للتيار المستمر (DC short) إلا إذا كان هناك مضخم ضوضاء منخفضة (LNA) أو جهاز يعمل بالطاقة في السلسلة."
 ---
 ## الميزات
 ![RTL-SDR Blog RTL SDR V4](/images/products/sdrlab/rtl-sdr-v4.png)
@@ -50,3 +57,7 @@ dir: rtl
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}
+
+{{< faq >}}
+
+[أدلة الإعداد والتفاصيل التقنية — doc.yupitek.com](https://doc.yupitek.com/sdrlab/hardware/rtl-sdr-v4/)

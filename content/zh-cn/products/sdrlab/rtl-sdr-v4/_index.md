@@ -6,6 +6,13 @@ draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "无线电接收", "USB", "GNU Radio"]
+faq:
+  - question: "在 RTL-SDR Blog V4 上接收 HF 需要直接采样模式吗？"
+    answer: "不需要。V4 内置了上变频器，而不是直接采样电路，因此 HF 信号会被上变频 28.8 MHz，驱动程序会处理频率偏移。在 V4 上启用直接采样模式不会有任何结果。"
+  - question: "RTL-SDR Blog V4 需要特殊的驱动程序吗？"
+    answer: "是的。V4 需要 RTL-SDR Blog 驱动程序，该驱动程序向后兼容 V3 及更早的设备。默认的 Osmocom 分支现在也支持 V4。"
+  - question: "RTL-SDR Blog V4 上的偏置器（bias tee）是如何工作的？"
+    answer: "偏置器由软件控制，额定电压为 4.5 V，可连续提供高达 180 mA 的电流。在 Linux 上，使用 rtl_biast 进行切换。除非链路中包含 LNA 或供电设备，否则请勿在直流短路的 antennas 上启用它。"
 ---
 
 ## 产品特色
@@ -55,3 +62,7 @@ tags: ["SDR", "RTL-SDR", "无线电接收", "USB", "GNU Radio"]
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}
+
+{{< faq >}}
+
+[安装指南与技术细节 — doc.yupitek.com](https://doc.yupitek.com/sdrlab/hardware/rtl-sdr-v4/)

@@ -6,6 +6,13 @@ draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "Radio Reception", "USB", "GNU Radio"]
+faq:
+  - question: "Ai-je besoin du mode d'échantillonnage direct pour recevoir les HF sur le RTL-SDR Blog V4 ?"
+    answer: "Non. Le V4 possède un convertisseur ascendant intégré au lieu d'un circuit d'échantillonnage direct, de sorte que les signaux HF sont convertis vers le haut de 28.8 MHz et le pilote gère le décalage de fréquence. L'activation de l'échantillonnage direct sur un V4 ne donne aucun résultat."
+  - question: "Le RTL-SDR Blog V4 a-t-il besoin de pilotes spéciaux ?"
+    answer: "Oui. Le V4 nécessite les pilotes RTL-SDR Blog, qui sont rétrocompatibles avec les unités V3 et plus anciennes. La branche Osmocom par défaut prend désormais également en charge le V4."
+  - question: "Comment fonctionne le bias tee sur le RTL-SDR Blog V4 ?"
+    answer: "Le bias tee est contrôlé par logiciel et est classé à 4.5 V, fournissant jusqu'à 180 mA en continu. Sous Linux, il est activé avec rtl_biast. Ne l'activez pas avec une antenne court-circuitée en DC sauf si un LNA ou un appareil alimenté est dans la chaîne."
 ---
 
 ## Caractéristiques
@@ -55,3 +62,7 @@ tags: ["SDR", "RTL-SDR", "Radio Reception", "USB", "GNU Radio"]
 {{< alert >}}
 Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}
+
+{{< faq >}}
+
+[Guides d'installation et détails techniques — doc.yupitek.com](https://doc.yupitek.com/sdrlab/hardware/rtl-sdr-v4/)

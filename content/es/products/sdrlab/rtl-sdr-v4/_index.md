@@ -6,6 +6,13 @@ draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "Recepción de radio", "USB", "GNU Radio"]
+faq:
+  - question: "¿Necesito el modo de muestreo directo para recibir HF en el RTL-SDR Blog V4?"
+    answer: "No. El V4 tiene un upconverter integrado en lugar de un circuito de muestreo directo, por lo que las señales HF se upconvierten 28.8 MHz y el controlador maneja el desplazamiento de frecuencia. Habilitar el muestreo directo en un V4 no produce resultados."
+  - question: "¿El RTL-SDR Blog V4 necesita controladores especiales?"
+    answer: "Sí. El V4 requiere los controladores RTL-SDR Blog, que son compatibles con versiones anteriores de las unidades V3 y anteriores. La rama Osmocom predeterminada ahora también admite el V4."
+  - question: "¿Cómo funciona el bias tee en el RTL-SDR Blog V4?"
+    answer: "El bias tee es controlado por software y está clasificado para 4.5 V, suministrando hasta 180 mA de forma continua. En Linux se activa con rtl_biast. No lo habilite con una antena en cortocircuito DC a menos que haya un LNA o un dispositivo alimentado en la cadena."
 ---
 ## Características
 ![RTL-SDR Blog RTL SDR V4](/images/products/sdrlab/rtl-sdr-v4.png)
@@ -50,3 +57,7 @@ tags: ["SDR", "RTL-SDR", "Recepción de radio", "USB", "GNU Radio"]
 {{< alert >}}
 ¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}
+
+{{< faq >}}
+
+[Guías de configuración y detalles técnicos — doc.yupitek.com](https://doc.yupitek.com/sdrlab/hardware/rtl-sdr-v4/)

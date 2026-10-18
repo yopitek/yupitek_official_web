@@ -6,6 +6,13 @@ draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "無線受信", "USB", "GNU Radio"]
+faq:
+  - question: "RTL-SDR Blog V4でHFを受信するためにダイレクトサンプリングモードは必要ですか？"
+    answer: "いいえ。V4にはダイレクトサンプリング回路の代わりに内蔵アップコンバータが搭載されているため、HF信号は28.8 MHzアップコンバートされ、ドライバーが周波数シフトを処理します。V4でダイレクトサンプリングを有効にしても結果は得られません。"
+  - question: "RTL-SDR Blog V4には特別なドライバーが必要ですか？"
+    answer: "はい。V4にはRTL-SDR Blogドライバーが必要で、V3およびそれ以前のユニットと下位互換性があります。デフォルトのOsmocomブランチも現在V4をサポートしています。"
+  - question: "RTL-SDR Blog V4のバイアスティーはどのように動作しますか？"
+    answer: "バイアスティーはソフトウェアで制御され、定格は4.5 Vで、最大180 mAを連続供給します。Linuxではrtl_biastで切り替えます。チェーン内にLNAまたは電源供給デバイスがない場合、DC短絡状態のアンテナで有効にしないでください。"
 ---
 
 ## 製品特長
@@ -55,3 +62,7 @@ tags: ["SDR", "RTL-SDR", "無線受信", "USB", "GNU Radio"]
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+{{< faq >}}
+
+[セットアップガイドと技術詳細 — doc.yupitek.com](https://doc.yupitek.com/sdrlab/hardware/rtl-sdr-v4/)

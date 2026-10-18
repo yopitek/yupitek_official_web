@@ -1,0 +1,3 @@
+# Korean site is disabled until content exists; send visitors to the English site
+/ko/*  /en/:splat  302
+/ko    /en/        302

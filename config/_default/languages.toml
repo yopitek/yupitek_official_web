@@ -92,6 +92,8 @@
     displayName        = "🇫🇷 Français"
 
 [ko]
+  # Disabled 2026-10-18: only the home page and /solution exist in Korean; every menu link was a 404 (see officialweb_issues/web_todo.md W-21). Re-enable when content exists.
+  disabled             = true
   title                = "ALFA Network 대만 공식 대리점 | Yopitek Ltd"
   locale               = "ko"
   label               = "한국어"

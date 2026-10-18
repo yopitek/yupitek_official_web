@@ -22,7 +22,7 @@ faq:
   - question: "¿El AWUS036AXER es adecuado para investigación de seguridad inalámbrica?"
     answer: "No. El controlador comunitario rtl8852bu no admite modo monitor ni inyección de paquetes. Usa en su lugar un adaptador con controlador MediaTek en el kernel, como el AWUS036ACM."
   - question: "¿Cuál es el USB ID del AWUS036AXER?"
-    answer: "El USB ID de Realtek RTL8832BU es 0bda:885a, puedes confirmarlo con lsusb."
+    answer: "El ID de fabricante del Realtek RTL8832BU es 0bda. El ID de producto es 8832 o 885a según la unidad; confírmalo con lsusb."
   - question: "¿Hace falta VPN para instalar el AWUS036AXER en China?"
     answer: "No, descarga el código fuente rtl8852bu desde Gitee e instala las herramientas de compilación con espejos nacionales."
 ---
@@ -47,7 +47,7 @@ El AWUS036AXER usa el chipset RTL8832BU con WiFi 6. El controlador no está en e
 lsusb
 ```
 
-Busque:
+Busca una línea como esta (salida de ejemplo; el ID de fabricante siempre es `0bda` y el ID de producto es `8832` o `885a` según la unidad):
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
@@ -224,7 +224,7 @@ sudo reboot
 ### VirtualBox
 
 1. **Configuración → USB** → Habilitar **USB 3.0 (xHCI)**.
-2. Agregar filtro: **Realtek** (ID: 0bda:885a).
+2. Agregar filtro: **Realtek** (ID de fabricante: 0bda, ID de producto: 8832 o 885a).
 3. Iniciar VM → `lsusb` para confirmar → seguir los pasos de Kali.
 
 ### VMware
@@ -238,7 +238,7 @@ sudo reboot
 
 | Problema | Causa probable | Solución |
 |----------|---------------|----------|
-| `lsusb` no muestra 0bda:885a | Adaptador no detectado | Pruebe con un puerto USB diferente |
+| `lsusb` no muestra 0bda:8832 o 0bda:885a | Adaptador no detectado | Pruebe con un puerto USB diferente |
 | `install-driver.sh` falla | Faltan encabezados | `sudo apt install linux-headers-$(uname -r)` |
 | La clonación de Gitee falla | Problema de red | Busque en gitee.com `rtl8852bu` |
 | `modprobe 8852bu` falla | Controlador no compilado o no cargado | Vuelve a ejecutar `sudo ./install-driver.sh`, revisa `sudo dkms status` y reinicia |

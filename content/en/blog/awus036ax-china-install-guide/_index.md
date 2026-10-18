@@ -14,7 +14,7 @@ faq:
   - question: "Do I need a VPN to install AWUS036AX in China?"
     answer: "No. Download rtl8852bu source from Gitee and install build tools from domestic mirrors."
   - question: "What is the USB ID of AWUS036AX?"
-    answer: "The Realtek RTL8832BU USB ID is 0bda:8832. Confirm with lsusb."
+    answer: "The Realtek RTL8832BU vendor ID is 0bda. The product ID is 8832 or 885a depending on the unit, so confirm yours with lsusb."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -49,7 +49,7 @@ AWUS036AX uses the RTL8832BU chipset with WiFi 6 support. The driver is not in t
 lsusb
 ```
 
-Look for:
+Look for a line like this (example output; the vendor ID is always `0bda`, and the product ID is `8832` or `885a` depending on the unit):
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
@@ -226,7 +226,7 @@ sudo reboot
 ### VirtualBox
 
 1. **Settings → USB** → Enable **USB 3.0 (xHCI)**.
-2. Add filter: **Realtek** (ID: 0bda:885a).
+2. Add filter: **Realtek** (Vendor ID: 0bda, Product ID: 8832 or 885a).
 3. Start VM → `lsusb` to confirm → follow Kali steps.
 
 ### VMware
@@ -242,7 +242,7 @@ sudo reboot
 
 | Problem | Likely Cause | Fix |
 |---------|-------------|-----|
-| `lsusb` doesn't show 0bda:885a | Adapter not detected | Try different USB port |
+| `lsusb` doesn't show 0bda:8832 or 0bda:885a | Adapter not detected | Try different USB port |
 | `install-driver.sh` fails | Missing headers | `sudo apt install linux-headers-$(uname -r)` |
 | Gitee clone fails | Network issue | Search gitee.com for `rtl8852bu` |
 | `modprobe 8852bu` fails | Driver not built or not loaded | Re-run `sudo ./install-driver.sh`, check `sudo dkms status`, then reboot |

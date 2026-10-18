@@ -22,7 +22,7 @@ faq:
   - question: "Ist der AWUS036AXER für drahtlose Sicherheitsforschung geeignet?"
     answer: "Nein. Der Community-Treiber rtl8852bu unterstützt weder Monitor-Modus noch Paket-Injektion. Verwenden Sie stattdessen einen Adapter mit In-Kernel-MediaTek-Treiber wie den AWUS036ACM."
   - question: "Was ist die USB-ID des AWUS036AXER?"
-    answer: "Die USB-ID des Realtek RTL8832BU lautet 0bda:885a, was Sie mit lsusb bestätigen können."
+    answer: "Die Hersteller-ID (Vendor-ID) des Realtek RTL8832BU ist 0bda. Die Produkt-ID lautet je nach Gerät 8832 oder 885a; bestätigen Sie sie mit lsusb."
   - question: "Muss man in China für die Installation des AWUS036AXER eine VPN-Verbindung (Umgehung der Zensur) nutzen?"
     answer: "Nicht erforderlich. Laden Sie den Quellcode von rtl8852bu von Gitee herunter und installieren Sie die Kompilierungswerkzeuge über ein inländisches Spiegelrepository."
 ---
@@ -47,7 +47,7 @@ Der AWUS036AXER verwendet den RTL8832BU-Chipsatz mit WiFi 6. Der Treiber ist nic
 lsusb
 ```
 
-Suche nach:
+Suche nach einer Zeile wie dieser (Beispielausgabe; die Vendor-ID ist immer `0bda`, die Produkt-ID ist je nach Gerät `8832` oder `885a`):
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
@@ -224,7 +224,7 @@ sudo reboot
 ### VirtualBox
 
 1. **Einstellungen → USB** → Aktiviere **USB 3.0 (xHCI)**.
-2. Filter hinzufügen: **Realtek** (ID: 0bda:885a).
+2. Filter hinzufügen: **Realtek** (Vendor-ID: 0bda, Produkt-ID: 8832 oder 885a).
 3. VM starten → `lsusb` zur Bestätigung → Kali-Schritte folgen.
 
 ### VMware
@@ -238,7 +238,7 @@ sudo reboot
 
 | Problem | Wahrscheinliche Ursache | Lösung |
 |----------|-------------------|---------|
-| `lsusb` zeigt 0bda:885a nicht an | Adapter nicht erkannt | Anderen USB-Port versuchen |
+| `lsusb` zeigt 0bda:8832 oder 0bda:885a nicht an | Adapter nicht erkannt | Anderen USB-Port versuchen |
 | `install-driver.sh` schlägt fehl | Fehlende Header | `sudo apt install linux-headers-$(uname -r)` |
 | Gitee-Klon schlägt fehl | Netzwerkproblem | Auf gitee.com nach `rtl8852bu` suchen |
 | `modprobe 8852bu` schlägt fehl | Treiber nicht gebaut oder nicht geladen | `sudo ./install-driver.sh` erneut ausführen, `sudo dkms status` prüfen, dann neu starten |

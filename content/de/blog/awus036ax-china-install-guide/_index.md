@@ -24,7 +24,7 @@ faq:
   - question: "Muss man in China für die Installation des AWUS036AX eine VPN-Verbindung herstellen?"
     answer: "Nein, Sie können die rtl8852bu-Quellen von Gitee herunterladen und die Kompilierungswerkzeuge über ein inländisches Spiegelrepository installieren."
   - question: "Was ist die USB-ID des AWUS036AX?"
-    answer: "Die USB-ID des Realtek RTL8832BU beträgt 0bda:8832, was mit lsusb bestätigt werden kann."
+    answer: "Die Hersteller-ID (Vendor-ID) des Realtek RTL8832BU ist 0bda. Die Produkt-ID lautet je nach Gerät 8832 oder 885a; bestätigen Sie sie mit lsusb."
 ---
 
 Der AWUS036AX ist ALFAs WiFi 6 AX1800 Dual-Band Adapter. Der RTL8832BU-Chip des AWUS036AX hat keinen In-Kernel-Linux-Treiber, daher bauen Sie auf jeder Distribution (auch Ubuntu 24.04) den Community-Treiber rtl8852bu einmalig über DKMS. Diese Anleitung verwendet Gitee-Mirrors, ein GitHub-Zugang ist nicht nötig. Der Monitor-Modus wird von diesem Treiber nicht unterstützt.
@@ -45,7 +45,7 @@ Der AWUS036AX verwendet den RTL8832BU-Chipsatz mit WiFi 6. Der Treiber ist nicht
 lsusb
 ```
 
-Suche nach:
+Suche nach einer Zeile wie dieser (Beispielausgabe; die Vendor-ID ist immer `0bda`, die Produkt-ID ist je nach Gerät `8832` oder `885a`):
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
@@ -222,7 +222,7 @@ sudo reboot
 ### VirtualBox
 
 1. **Einstellungen → USB** → Aktiviere **USB 3.0 (xHCI)**.
-2. Filter hinzufügen: **Realtek** (ID: 0bda:885a).
+2. Filter hinzufügen: **Realtek** (Vendor-ID: 0bda, Produkt-ID: 8832 oder 885a).
 3. VM starten → `lsusb` zur Bestätigung → Kali-Schritte folgen.
 
 ### VMware
@@ -236,7 +236,7 @@ sudo reboot
 
 | Problem | Wahrscheinliche Ursache | Lösung |
 |---------|-------------|-----|
-| `lsusb` zeigt 0bda:885a nicht an | Adapter nicht erkannt | Anderen USB-Port versuchen |
+| `lsusb` zeigt 0bda:8832 oder 0bda:885a nicht an | Adapter nicht erkannt | Anderen USB-Port versuchen |
 | `install-driver.sh` schlägt fehl | Fehlende Header | `sudo apt install linux-headers-$(uname -r)` |
 | Gitee-Klon schlägt fehl | Netzwerkproblem | Auf gitee.com nach `rtl8852bu` suchen |
 | `modprobe 8852bu` schlägt fehl | Treiber nicht gebaut oder nicht geladen | `sudo ./install-driver.sh` erneut ausführen, `sudo dkms status` prüfen, dann neu starten |

@@ -24,7 +24,7 @@ faq:
   - question: "¿Hace falta VPN para instalar el AWUS036AX en China?"
     answer: "No, descarga el código fuente rtl8852bu desde Gitee e instala las herramientas de compilación con espejos nacionales."
   - question: "¿Cuál es el USB ID del AWUS036AX?"
-    answer: "El USB ID de Realtek RTL8832BU es 0bda:8832, puedes confirmarlo con lsusb."
+    answer: "El ID de fabricante del Realtek RTL8832BU es 0bda. El ID de producto es 8832 o 885a según la unidad; confírmalo con lsusb."
 ---
 
 El AWUS036AX es el adaptador de doble banda WiFi 6 AX1800 de ALFA. El chip RTL8832BU del AWUS036AX no tiene controlador en el kernel de Linux, así que en cualquier distribución (incluida Ubuntu 24.04) hay que compilar una vez el controlador comunitario rtl8852bu con DKMS. Esta guía usa espejos de Gitee, por lo que no se requiere GitHub. Este controlador no admite el modo monitor.
@@ -45,7 +45,7 @@ El AWUS036AX usa el chipset RTL8832BU con WiFi 6. El controlador no está en el 
 lsusb
 ```
 
-Busca esto:
+Busca una línea como esta (salida de ejemplo; el ID de fabricante siempre es `0bda` y el ID de producto es `8832` o `885a` según la unidad):
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
@@ -222,7 +222,7 @@ sudo reboot
 ### VirtualBox
 
 1. **Configuración → USB** → Habilita **Controlador USB 3.0 (xHCI)**.
-2. Añade un filtro: **Realtek** (ID: 0bda:885a).
+2. Añade un filtro: **Realtek** (ID de fabricante: 0bda, ID de producto: 8832 o 885a).
 3. Inicia la VM → `lsusb` para confirmar → sigue los pasos de Kali.
 
 ### VMware
@@ -236,7 +236,7 @@ sudo reboot
 
 | Problema | Causa probable | Solución |
 |----------|---------------|----------|
-| `lsusb` no muestra 0bda:885a | Adaptador no detectado | Prueba con un puerto USB diferente |
+| `lsusb` no muestra 0bda:8832 o 0bda:885a | Adaptador no detectado | Prueba con un puerto USB diferente |
 | `install-driver.sh` falla | Faltan los encabezados | `sudo apt install linux-headers-$(uname -r)` |
 | La clonación de Gitee falla | Problema de red | Busca en gitee.com `rtl8852bu` |
 | `modprobe 8852bu` falla | Controlador no compilado o no cargado | Vuelve a ejecutar `sudo ./install-driver.sh`, revisa `sudo dkms status` y reinicia |

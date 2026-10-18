@@ -23,7 +23,7 @@ faq:
   - question: "O AWUS036AXER  é adequado para pesquisa de segurança sem fio?"
     answer: "Não. O driver comunitário rtl8852bu não suporta modo monitor nem injeção de pacotes. Use, em vez dele, um adaptador com driver MediaTek no kernel, como o AWUS036ACM."
   - question: "Qual é o USB ID do AWUS036AXER?"
-    answer: "O USB ID do Realtek RTL8832BU e 0bda:885a, verificável com lsusb."
+    answer: "O ID do fabricante do Realtek RTL8832BU é 0bda. O ID do produto é 8832 ou 885a, dependendo da unidade; confirme com lsusb."
   - question: "Preciso de VPN para instalar o AWUS036AXER na China?"
     answer: "Não. Baixe o código fonte rtl8852bu do Gitee e instale as ferramentas de compilação usando espelhos nacionais."
 ---
@@ -54,7 +54,7 @@ O AWUS036AXER usa o chipset RTL8832BU com WiFi 6. O driver não está no kernel:
 lsusb
 ```
 
-Procure por:
+Procure uma linha como esta (saída de exemplo; o ID do fabricante é sempre `0bda` e o ID do produto é `8832` ou `885a`, dependendo da unidade):
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
@@ -231,7 +231,7 @@ sudo reboot
 ### VirtualBox
 
 1. **Configurações → USB** → Ativar **USB 3.0 (xHCI)**.
-2. Adicionar filtro: **Realtek** (ID: 0bda:885a).
+2. Adicionar filtro: **Realtek** (ID do fabricante: 0bda, ID do produto: 8832 ou 885a).
 3. Iniciar VM → `lsusb` para confirmar → seguir as etapas do Kali.
 
 ### VMware
@@ -245,7 +245,7 @@ sudo reboot
 
 | Problema | Causa Provável | Correção |
 |----------|---------------|----------|
-| `lsusb` não mostra 0bda:885a | Adaptador não detectado | Tente uma porta USB diferente |
+| `lsusb` não mostra 0bda:8832 ou 0bda:885a | Adaptador não detectado | Tente uma porta USB diferente |
 | `install-driver.sh` falha | Headers ausentes | `sudo apt install linux-headers-$(uname -r)` |
 | Clone do Gitee falha | Problema de rede | Pesquise em gitee.com por `rtl8852bu` |
 | `modprobe 8852bu` falha | Driver não compilado ou não carregado | Execute `sudo ./install-driver.sh` novamente, verifique `sudo dkms status` e reinicie |

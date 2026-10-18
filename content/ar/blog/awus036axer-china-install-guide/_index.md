@@ -22,7 +22,7 @@ faq:
   - question: "هل AWUS036AXER مناسب لأبحاث الأمن اللاسلكي؟"
     answer: "لا. برنامج التشغيل المجتمعي rtl8852bu لا يدعم وضع المراقبة ولا حقن الحزم. استخدم بدلاً منه محولاً ببرنامج تشغيل MediaTek مدمج في النواة مثل AWUS036ACM."
   - question: "ما هو USB ID لـ AWUS036AXER؟"
-    answer: "USB ID لـ Realtek RTL8832BU هو 0bda:885a، يمكن التأكد بـ lsusb."
+    answer: "معرّف المورّد (Vendor ID) لشريحة Realtek RTL8832BU هو 0bda، أما معرّف المنتج (Product ID) فهو 8832 أو 885a حسب الوحدة، فتأكد منه باستخدام lsusb."
   - question: "هل أحتاج إلى VPN لتثبيت AWUS036AXER في الصين؟"
     answer: "لا، نزّل كود rtl8852bu من Gitee واستخدم المرايا المحلية لتثبيت أدوات التجميع."
 ---
@@ -44,7 +44,7 @@ faq:
 lsusb
 ```
 
-ابحث عن:
+ابحث عن سطر مشابه لما يلي (مثال على المخرجات؛ معرّف المورّد دائمًا `0bda`، ومعرّف المنتج هو `8832` أو `885a` حسب الوحدة):
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
@@ -221,7 +221,7 @@ sudo reboot
 ### VirtualBox
 
 1. **Settings → USB** → قم بتمكين **USB 3.0 (xHCI) Controller**.
-2. أضف فلتر: **Realtek** (ID: 0bda:885a).
+2. أضف فلتر: **Realtek** (معرّف المورّد: 0bda، معرّف المنتج: 8832 أو 885a).
 3. ابدأ VM → `lsusb` للتأكد → اتبع خطوات Kali.
 
 ### VMware
@@ -235,7 +235,7 @@ sudo reboot
 
 | المشكلة | السبب المرجح | الحل |
 |---------|-------------|-----|
-| `lsusb` لا يظهر 0bda:885a | لم يتم اكتشاف المحول | جرب منفذ USB مختلفًا |
+| `lsusb` لا يظهر 0bda:8832 أو 0bda:885a | لم يتم اكتشاف المحول | جرب منفذ USB مختلفًا |
 | فشل `install-driver.sh` | فقدان الرؤوس | `sudo apt install linux-headers-$(uname -r)` |
 | فشل استنساخ Gitee | مشكلة في الشبكة | ابحث في gitee.com عن `rtl8852bu` |
 | فشل `modprobe 8852bu` | لم يُبنَ برنامج التشغيل أو لم يُحمَّل | أعد تشغيل `sudo ./install-driver.sh` وتحقق من `sudo dkms status` ثم أعد التشغيل |

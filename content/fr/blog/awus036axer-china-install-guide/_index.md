@@ -22,7 +22,7 @@ faq:
   - question: "L'AWUS036AXER convient-il à la recherche en sécurité sans fil ?"
     answer: "Non. Le pilote communautaire rtl8852bu ne prend en charge ni le mode moniteur ni l'injection de paquets. Utilisez plutôt un adaptateur avec pilote MediaTek intégré au noyau, comme l'AWUS036ACM."
   - question: "Quel est l'USB ID de l'AWUS036AXER ?"
-    answer: "L'USB ID du Realtek RTL8832BU est 0bda:885a, vérifiable avec lsusb."
+    answer: "L'ID fabricant du Realtek RTL8832BU est 0bda. L'ID produit est 8832 ou 885a selon l'unité ; vérifiez-le avec lsusb."
   - question: "Faut-il un VPN pour installer l'AWUS036AXER en Chine ?"
     answer: "Non, téléchargez le code source rtl8852bu depuis Gitee et utilisez les miroirs nationaux pour les outils de compilation."
 ---
@@ -47,7 +47,7 @@ L'AWUS036AXER est l'adaptateur WiFi 6 nano d'ALFA — un dongle compact conçu p
 lsusb
 ```
 
-Recherchez ceci dans la sortie :
+Cherchez une ligne comme celle-ci (exemple de sortie ; l'ID fabricant est toujours `0bda`, et l'ID produit est `8832` ou `885a` selon l'unité) :
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
@@ -196,7 +196,7 @@ sudo reboot
 ### VirtualBox
 
 1. **Paramètres → USB** → Activer le **Contrôleur USB 3.0 (xHCI)**.
-2. Ajouter un filtre : **Realtek** (ID : 0bda:885a).
+2. Ajouter un filtre : **Realtek** (ID fabricant : 0bda, ID produit : 8832 ou 885a).
 3. Démarrer la VM → `lsusb` pour confirmer.
 
 ### VMware
@@ -209,7 +209,7 @@ sudo reboot
 
 | Problème | Cause probable | Solution |
 |---------|-------------|-----|
-| `lsusb` n'affiche pas 0bda:885a | Adaptateur non détecté | Essayer un autre port USB |
+| `lsusb` n'affiche pas 0bda:8832 ou 0bda:885a | Adaptateur non détecté | Essayer un autre port USB |
 | `install-driver.sh` échoue | En-têtes manquants | `sudo apt install linux-headers-$(uname -r)` |
 | Mode moniteur non fiable | Limitation du RTL8832BU | Utiliser l'AWUS036ACM pour le pentest |
 

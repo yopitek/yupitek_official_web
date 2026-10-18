@@ -25,7 +25,7 @@ faq:
   - question: "Preciso de VPN para instalar o AWUS036AX na China?"
     answer: "Não. Baixe o código fonte rtl8852bu do Gitee e instale as ferramentas de compilação usando espelhos nacionais."
   - question: "Qual é o USB ID do AWUS036AX?"
-    answer: "O USB ID do Realtek RTL8832BU e 0bda:8832, verificável com lsusb."
+    answer: "O ID do fabricante do Realtek RTL8832BU é 0bda. O ID do produto é 8832 ou 885a, dependendo da unidade; confirme com lsusb."
 ---
 
 O AWUS036AX é o adaptador dual-band WiFi 6 AX1800 da ALFA. O chip RTL8832BU do AWUS036AX não tem driver no kernel do Linux, então em qualquer distribuição (inclusive o Ubuntu 24.04) é preciso compilar uma vez o driver comunitário rtl8852bu via DKMS. Este guia usa mirrors do Gitee, portanto não é necessário acessar o GitHub. Este driver não suporta o modo monitor.
@@ -52,7 +52,7 @@ O AWUS036AX usa o chipset RTL8832BU com WiFi 6. O driver não está no kernel: t
 lsusb
 ```
 
-Procure por:
+Procure uma linha como esta (saída de exemplo; o ID do fabricante é sempre `0bda` e o ID do produto é `8832` ou `885a`, dependendo da unidade):
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
@@ -229,7 +229,7 @@ sudo reboot
 ### VirtualBox
 
 1. **Configurações → USB** → Ative **Controlador USB 3.0 (xHCI)**.
-2. Adicione filtro: **Realtek** (ID: 0bda:885a).
+2. Adicione filtro: **Realtek** (ID do fabricante: 0bda, ID do produto: 8832 ou 885a).
 3. Inicie a VM → `lsusb` para confirmar → siga os passos do Kali.
 
 ### VMware
@@ -243,7 +243,7 @@ sudo reboot
 
 | Problema | Causa Provável | Solução |
 |----------|---------------|---------|
-| `lsusb` não mostra 0bda:885a | Adaptador não detectado | Tente uma porta USB diferente |
+| `lsusb` não mostra 0bda:8832 ou 0bda:885a | Adaptador não detectado | Tente uma porta USB diferente |
 | `install-driver.sh` falha | Cabeçalhos ausentes | `sudo apt install linux-headers-$(uname -r)` |
 | Clone do Gitee falha | Problema de rede | Pesquise no gitee.com por `rtl8852bu` |
 | `modprobe 8852bu` falha | Driver não compilado ou não carregado | Execute `sudo ./install-driver.sh` novamente, verifique `sudo dkms status` e reinicie |

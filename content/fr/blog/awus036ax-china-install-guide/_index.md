@@ -24,7 +24,7 @@ faq:
   - question: "Faut-il un VPN pour installer l'AWUS036AX en Chine ?"
     answer: "Non, téléchargez le code source rtl8852bu depuis Gitee et utilisez les miroirs nationaux pour les outils de compilation."
   - question: "Quel est l'USB ID de l'AWUS036AX ?"
-    answer: "L'USB ID du Realtek RTL8832BU est 0bda:8832, vérifiable avec lsusb."
+    answer: "L'ID fabricant du Realtek RTL8832BU est 0bda. L'ID produit est 8832 ou 885a selon l'unité ; vérifiez-le avec lsusb."
 ---
 
 {{< tldr >}}
@@ -45,7 +45,7 @@ L'AWUS036AX est l'adaptateur double bande WiFi 6 AX1800 d'ALFA. La puce RTL8832B
 lsusb
 ```
 
-Cherchez :
+Cherchez une ligne comme celle-ci (exemple de sortie ; l'ID fabricant est toujours `0bda`, et l'ID produit est `8832` ou `885a` selon l'unité) :
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
@@ -222,7 +222,7 @@ sudo reboot
 ### VirtualBox
 
 1. **Configuration → USB** → Activer le **contrôleur USB 3.0 (xHCI)**.
-2. Ajouter un filtre : **Realtek** (ID: 0bda:885a).
+2. Ajouter un filtre : **Realtek** (ID fabricant : 0bda, ID produit : 8832 ou 885a).
 3. Démarrer la VM → `lsusb` pour confirmer → suivre les étapes Kali.
 
 ### VMware
@@ -236,7 +236,7 @@ sudo reboot
 
 | Problème | Cause probable | Solution |
 |----------|----------------|----------|
-| `lsusb` n'affiche pas 0bda:885a | Adaptateur non détecté | Essayer un autre port USB |
+| `lsusb` n'affiche pas 0bda:8832 ou 0bda:885a | Adaptateur non détecté | Essayer un autre port USB |
 | `install-driver.sh` échoue | En-têtes manquants | `sudo apt install linux-headers-$(uname -r)` |
 | Le clonage Gitee échoue | Problème de réseau | Rechercher `rtl8852bu` sur gitee.com |
 | `modprobe 8852bu` échoue | Pilote non compilé ou non chargé | Relancer `sudo ./install-driver.sh`, vérifier `sudo dkms status`, puis redémarrer |

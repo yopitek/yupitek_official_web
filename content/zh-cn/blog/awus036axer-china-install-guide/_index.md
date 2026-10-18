@@ -22,7 +22,7 @@ faq:
   - question: "AWUS036AXER 适合做无线安全研究吗？"
     answer: "不适合。社区版 rtl8852bu 驱动不支持 Monitor mode 和封包注入，建议改用内核内置 MediaTek 驱动的 AWUS036ACM。"
   - question: "AWUS036AXER 的 USB ID 是多少？"
-    answer: "Realtek RTL8832BU 的 USB ID 为 0bda:885a，用 lsusb 可确认。"
+    answer: "Realtek RTL8832BU 的厂商 ID 为 0bda，产品 ID 视机型为 8832 或 885a，请用 lsusb 确认你手上的设备。"
   - question: "在中国安装 AWUS036AXER 需要翻墙吗？"
     answer: "不需要，从 Gitee 下载 rtl8852bu 源码并用国内镜像安装编译工具即可。"
 ---
@@ -54,13 +54,13 @@ AWUS036AXER 采用 RTL8832BU 芯片，支持 WiFi 6。驱动不在内核中：�
 lsusb
 ```
 
-扫一眼输出，寻找这一行：
+扫一眼输出，寻找类似下面这样的一行（以下为示例输出；厂商 ID 始终是 `0bda`，产品 ID 视机型为 `8832` 或 `885a`）：
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
 ```
 
-看到 `0bda:885a` 就稳了。接着根据你的系统选教程。
+看到厂商 ID 为 `0bda`（产品 ID 为 `8832` 或 `885a`）就稳了。接着根据你的系统选教程。
 
 ## 你的系统是哪一个？
 
@@ -217,7 +217,7 @@ sudo reboot
 ### VirtualBox
 1. 关掉虚拟机。
 2. **设置 -> USB** -> 勾选 **USB 3.0 (xHCI) 控制器**。
-3. 点那个 **+** 图标，选 **Realtek (ID: 0bda:885a)**。
+3. 点那个 **+** 图标，选 **Realtek (厂商 ID：0bda，产品 ID：8832 或 885a)**。
 
 ### VMware
 1. 在顶部菜单选 **虚拟机 -> USB 与蓝牙**。
@@ -229,7 +229,7 @@ sudo reboot
 
 | 遇到的麻烦 | 可能的原因 | 怎么解决 |
 |------|----------|----------|
-| `lsusb` 刷不出 0bda:885a | 没插紧或 USB 供电不足 | 换个口试试，直接插主板背后的口 |
+| `lsusb` 刷不出 0bda:8832 或 0bda:885a | 没插紧或 USB 供电不足 | 换个口试试，直接插主板背后的口 |
 | `install-driver.sh` 报错 | 缺少内核头文件 | 跑 `sudo apt install linux-headers-$(uname -r)` |
 | Monitor mode／封包注入无法使用 | rtl8852bu 驱动不支持 | 做渗透测试请改用 AWUS036ACM |
 

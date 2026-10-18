@@ -24,7 +24,7 @@ faq:
   - question: "在中國安裝 AWUS036AX 需要翻牆嗎？"
     answer: "不需要，從 Gitee 下載 rtl8852bu 源碼並用國內鏡像安裝編譯工具即可。"
   - question: "AWUS036AX 的 USB ID 是多少？"
-    answer: "Realtek RTL8832BU 的 USB ID 為 0bda:8832，用 lsusb 可確認。"
+    answer: "Realtek RTL8832BU 的廠商 ID 為 0bda，產品 ID 依機種為 8832 或 885a，請用 lsusb 確認你手上的裝置。"
 ---
 
 AWUS036AX 的 RTL8832BU 晶片沒有 Linux 核心內建驅動，因此在所有發行版（包括 Ubuntu 24.04）上都需要透過 DKMS 編譯一次社群版 rtl8852bu 驅動。本指南使用 Gitee 鏡像，不需要連線 GitHub。此驅動不支援 Monitor mode。
@@ -51,13 +51,13 @@ AWUS036AX 採用 RTL8832BU 晶片，支援 WiFi 6。驅動不在核心中：所�
 lsusb
 ```
 
-在輸出中找找看有沒有這一行：
+在輸出中找找看有沒有類似這樣的一行（以下為範例輸出；廠商 ID 一律是 `0bda`，產品 ID 依機種為 `8832` 或 `885a`）：
 
 ```
 Bus 001 Device 003: ID 0bda:8832 Realtek Semiconductor Corp.
 ```
 
-只要看到 `0bda:8832` 就沒問題了。接著，根據你的系統選擇對應的章節。
+只要看到廠商 ID 為 `0bda`（產品 ID 為 `8832` 或 `885a`）就沒問題了。接著，根據你的系統選擇對應的章節。
 
 ## 你的系統是哪一個？
 
@@ -192,7 +192,7 @@ sudo reboot
 ### VirtualBox
 1. 先關掉虛擬機。
 2. **Settings → USB** → 勾選 **USB 3.0 (xHCI)**。
-3. 點選右邊的 **+** 圖示，選擇 **Realtek (ID: 0bda:8832)**。
+3. 點選右邊的 **+** 圖示，選擇 **Realtek (廠商 ID：0bda，產品 ID：8832 或 885a)**。
 
 ### VMware
 1. 在頂部選單選 **虛擬機 -> USB 與藍牙**。

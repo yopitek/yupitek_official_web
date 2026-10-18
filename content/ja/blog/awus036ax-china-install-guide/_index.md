@@ -24,7 +24,7 @@ faq:
   - question: "中国でAWUS036AXをインストールするのにVPNは必要ですか？"
     answer: "不要です。Giteeからrtl8852buソースコードをダウンロードし、国内ミラーでコンパイルツールをインストールするだけです。"
   - question: "AWUS036AXのUSB IDは何ですか？"
-    answer: "Realtek RTL8832BUのUSB IDは0bda:8832で、lsusbで確認できます。"
+    answer: "Realtek RTL8832BUのベンダーIDは0bdaで、プロダクトIDは個体によって8832または885aです。お手元のデバイスはlsusbで確認してください。"
 ---
 
 AWUS036AXは、ALFAのWiFi 6 AX1800デュアルバンド・アダプターです。AWUS036AX の RTL8832BU チップには Linux カーネル標準のドライバがないため、Ubuntu 24.04 を含むどのディストリビューションでも、コミュニティ版 rtl8852bu ドライバを DKMS で一度ビルドする必要があります。このガイドは Gitee ミラーを使うので GitHub へのアクセスは不要です。このドライバはモニターモードをサポートしていません。
@@ -45,7 +45,7 @@ AWUS036AX は RTL8832BU チップで WiFi 6 に対応します。ドライバは
 lsusb
 ```
 
-以下の行を探してください：
+以下のような行を探してください（以下は出力例です。ベンダーIDは常に `0bda`、プロダクトIDは個体によって `8832` または `885a` です）：
 
 ```
 Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
@@ -222,7 +222,7 @@ sudo reboot
 ### VirtualBox
 
 1. **設定 → USB** → **USB 3.0 (xHCI) コントローラー**を有効にします。
-2. フィルターを追加: **Realtek** (ID: 0bda:885a)。
+2. フィルターを追加: **Realtek** (ベンダーID: 0bda、プロダクトID: 8832 または 885a)。
 3. VMを起動し、`lsusb` で確認してから、Kaliの手順に従います。
 
 ### VMware
@@ -236,7 +236,7 @@ sudo reboot
 
 | 問題点 | 考えられる原因 | 解決策 |
 |---------|-------------|-----|
-| `lsusb` に 0bda:885a が表示されない | アダプターが認識されていない | 別のUSBポートを試してください |
+| `lsusb` に 0bda:8832 または 0bda:885a が表示されない | アダプターが認識されていない | 別のUSBポートを試してください |
 | `install-driver.sh` が失敗する | ヘッダーが不足している | `sudo apt install linux-headers-$(uname -r)` |
 | Giteeのクローンが失敗する | ネットワークの問題 | Giteeで `rtl8852bu` を検索してください |
 | `modprobe 8852bu` が失敗する | ドライバ未ビルドまたは未ロード | `sudo ./install-driver.sh` を再実行し、`sudo dkms status` を確認して再起動 |

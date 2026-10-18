@@ -61,7 +61,7 @@ Bevor wir eintauchen, lassen Sie uns herausfinden, welchen Alfa-Adapter Sie habe
 | Modell | Chipsatz | Treiber | Am besten für |
 |-------|---------|--------|----------|
 | AWUS036AX | Realtek RTL8832BU | `8852bu` | Allgemeine Nutzung, gute Reichweite |
-| AWUS036AXM | Realtek RTL8832BU | `8852bu` | Kompaktes Design |
+| AWUS036AXM | MediaTek MT7921AUN | `mt7921u` | Kompaktes Design |
 
 ### AC-Serie (Wi-Fi 5 / 802.11ac)
 
@@ -123,7 +123,9 @@ sudo apt update
 ### Schritt 2: Treiber nach Chipsatz installieren
 
 #### AX-Serie (RTL8832BU)
-`sudo apt install -y rtl8832bu-dkms`
+`git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh`
 
 #### AC-Serie - Realtek (RTL8812AU / RTL8811AU)
 `sudo apt install -y realtek-rtl88xxau-dkms`

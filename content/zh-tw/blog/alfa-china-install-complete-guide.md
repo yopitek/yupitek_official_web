@@ -60,8 +60,8 @@ Alfa USB WiFi 網卡深受滲透測試員、網路工程師和無線愛好者的
 | 型號 | 晶片組 | 驅動程式 | 最適合 |
 |------|--------|---------|--------|
 | AWUS036AX | Realtek RTL8832BU | `8852bu` | 通用，覆蓋範圍好 |
-| AWUS036AXM | Realtek RTL8832BU | `8852bu` | 緊湊設計 |
-| AWUS036AXML | Realtek RTL8832BU | `8852bu` | 超緊湊 |
+| AWUS036AXM | MediaTek MT7921AUN | `mt7921u` | 緊湊設計 |
+| AWUS036AXML | MediaTek MT7921AUN | `mt7921u` | 超緊湊 |
 | AWUS036AXER | Realtek RTL8832BU | `8852bu` | 增強功率 |
 
 ### AC 系列（Wi-Fi 5 / 802.11ac）
@@ -176,7 +176,9 @@ sudo apt update
 #### AX 系列（RTL8832BU）
 
 ```bash
-sudo apt install -y rtl8832bu-dkms
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
 ```
 
 #### AC 系列 - Realtek（RTL8812AU / RTL8811AU）
@@ -464,7 +466,9 @@ sudo reboot
 #### AX 系列（RTL8832BU）
 
 ```bash
-sudo apt install -y rtl8832bu-dkms
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
 ```
 
 #### AC 系列 - Realtek（RTL8812AU）
@@ -662,8 +666,8 @@ sudo ip link set mon0 up
 | AWUS036ACM | MT7612U | `mt76x2u` | 核心內建驅動程式 |
 | AWUS036ACS | RTL8811AU | `8821au` | GitHub: morrownr/8821au-20210708 |
 | AWUS036AX | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036AXM | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036AXML | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
+| AWUS036AXM | MT7921AUN | `mt7921u` | 核心內建驅動程式 |
+| AWUS036AXML | MT7921AUN | `mt7921u` | 核心內建驅動程式 |
 | AWUS036AXER | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
 | AWUS036EAC | RTL8814AU | `8814au` | Gitee: mirrors/rtl8814au |
 

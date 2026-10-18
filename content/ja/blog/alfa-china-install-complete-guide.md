@@ -57,8 +57,8 @@ Alfa USB Wi-Fiアダプターは、ペネトレーションテスター・ネッ
 | モデル | チップセット | ドライバー | 主な用途 |
 |-------|---------|--------|----------|
 | AWUS036AX | Realtek RTL8832BU | `8852bu` | 汎用、良好な通信距離 |
-| AWUS036AXM | Realtek RTL8832BU | `8852bu` | コンパクトデザイン |
-| AWUS036AXML | Realtek RTL8832BU | `8852bu` | 超コンパクト |
+| AWUS036AXM | MediaTek MT7921AUN | `mt7921u` | コンパクトデザイン |
+| AWUS036AXML | MediaTek MT7921AUN | `mt7921u` | 超コンパクト |
 | AWUS036AXER | Realtek RTL8832BU | `8852bu` | 強化出力 |
 
 ### AC シリーズ（Wi-Fi 5 / 802.11ac）
@@ -173,7 +173,9 @@ sudo apt update
 #### AX シリーズ（RTL8832BU）
 
 ```bash
-sudo apt install -y rtl8832bu-dkms
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
 ```
 
 #### AC シリーズ - Realtek（RTL8812AU / RTL8811AU）
@@ -461,7 +463,9 @@ sudo reboot
 #### AX シリーズ（RTL8832BU）
 
 ```bash
-sudo apt install -y rtl8832bu-dkms
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
 ```
 
 #### AC シリーズ - Realtek（RTL8812AU）
@@ -659,8 +663,8 @@ VM 内で `lsusb` を実行して確認し、上記の Kali Linux の手順に�
 | AWUS036ACM | MT7612U | `mt76x2u` | カーネル組み込みドライバー |
 | AWUS036ACS | RTL8811AU | `8821au` | GitHub: morrownr/8821au-20210708 |
 | AWUS036AX | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036AXM | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036AXML | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
+| AWUS036AXM | MT7921AUN | `mt7921u` | カーネル組み込みドライバー |
+| AWUS036AXML | MT7921AUN | `mt7921u` | カーネル組み込みドライバー |
 | AWUS036AXER | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
 | AWUS036EAC | RTL8814AU | `8814au` | Gitee: mirrors/rtl8814au |
 

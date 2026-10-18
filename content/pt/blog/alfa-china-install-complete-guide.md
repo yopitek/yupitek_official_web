@@ -62,8 +62,8 @@ Antes de começarmos, vamos descobrir qual adaptador Alfa você tem e qual chip 
 | Modelo | Chipset | Driver | Ideal Para |
 |--------|---------|--------|------------|
 | AWUS036AX | Realtek RTL8832BU | `8852bu` | Uso geral, bom alcance |
-| AWUS036AXM | Realtek RTL8832BU | `8852bu` | Design compacto |
-| AWUS036AXML | Realtek RTL8832BU | `8852bu` | Ultra-compacto |
+| AWUS036AXM | MediaTek MT7921AUN | `mt7921u` | Design compacto |
+| AWUS036AXML | MediaTek MT7921AUN | `mt7921u` | Ultra-compacto |
 | AWUS036AXER | Realtek RTL8832BU | `8852bu` | Potência aprimorada |
 
 ### Série AC (Wi-Fi 5 / 802.11ac)
@@ -178,7 +178,9 @@ sudo apt update
 #### Série AX (RTL8832BU)
 
 ```bash
-sudo apt install -y rtl8832bu-dkms
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
 ```
 
 #### Série AC - Realtek (RTL8812AU / RTL8811AU)
@@ -466,7 +468,9 @@ sudo reboot
 #### Série AX (RTL8832BU)
 
 ```bash
-sudo apt install -y rtl8832bu-dkms
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
 ```
 
 #### Série AC - Realtek (RTL8812AU)
@@ -664,8 +668,8 @@ Execute `lsusb` para confirmar e siga os passos de instalação do driver.
 | AWUS036ACM | MT7612U | `mt76x2u` | Driver embutido no kernel |
 | AWUS036ACS | RTL8811AU | `8821au` | GitHub: morrownr/8821au-20210708 |
 | AWUS036AX | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036AXM | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036AXML | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
+| AWUS036AXM | MT7921AUN | `mt7921u` | Driver embutido no kernel |
+| AWUS036AXML | MT7921AUN | `mt7921u` | Driver embutido no kernel |
 | AWUS036AXER | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
 | AWUS036EAC | RTL8814AU | `8814au` | Gitee: mirrors/rtl8814au |
 

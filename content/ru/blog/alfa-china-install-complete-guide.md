@@ -60,8 +60,8 @@ USB WiFi адаптеры Alfa популярны среди специалис�
 | Модель | Чипсет | Драйвер | Лучший выбор для |
 |-------|---------|--------|----------|
 | AWUS036AX | Realtek RTL8832BU | `8852bu` | Общее использование, хороший радиус действия |
-| AWUS036AXM | Realtek RTL8832BU | `8852bu` | Компактный форм-фактор |
-| AWUS036AXML | Realtek RTL8832BU | `8852bu` | Ультракомпактный |
+| AWUS036AXM | MediaTek MT7921AUN | `mt7921u` | Компактный форм-фактор |
+| AWUS036AXML | MediaTek MT7921AUN | `mt7921u` | Ультракомпактный |
 | AWUS036AXER | Realtek RTL8832BU | `8852bu` | Повышенная мощность |
 
 ### Серия AC (Wi-Fi 5 / 802.11ac)
@@ -176,7 +176,9 @@ sudo apt update
 #### Серия AX (RTL8832BU)
 
 ```bash
-sudo apt install -y rtl8832bu-dkms
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
 ```
 
 #### Серия AC — Realtek (RTL8812AU / RTL8811AU)
@@ -464,7 +466,9 @@ sudo reboot
 #### Серия AX (RTL8832BU)
 
 ```bash
-sudo apt install -y rtl8832bu-dkms
+git clone https://github.com/morrownr/rtl8852bu-20250826.git
+cd rtl8852bu-20250826
+sudo ./install-driver.sh
 ```
 
 #### Серия AC — Realtek (RTL8812AU)
@@ -662,8 +666,8 @@ sudo ip link set mon0 up
 | AWUS036ACM | MT7612U | `mt76x2u` | Встроенный драйвер ядра |
 | AWUS036ACS | RTL8811AU | `8821au` | GitHub: morrownr/8821au-20210708 |
 | AWUS036AX | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036AXM | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
-| AWUS036AXML | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
+| AWUS036AXM | MT7921AUN | `mt7921u` | Встроенный драйвер ядра |
+| AWUS036AXML | MT7921AUN | `mt7921u` | Встроенный драйвер ядра |
 | AWUS036AXER | RTL8832BU | `8852bu` | GitHub: morrownr/rtl8852bu-20250826 |
 | AWUS036EAC | RTL8814AU | `8814au` | Gitee: mirrors/rtl8814au |
 

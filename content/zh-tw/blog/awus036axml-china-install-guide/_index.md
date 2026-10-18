@@ -468,10 +468,10 @@ iwconfig
 |----------|-----|---------|
 | Alfa 官方驅動程式 | [files.alfa.com.tw](https://files.alfa.com.tw) | 驅動程式套件、韌體 |
 | Alfa 文件 | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 產品手冊 |
-| 清华大学镜像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 清華大學鏡像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦） |
 | 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦） |
-| 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像檔（備用） |
+| 華為雲鏡像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像檔（備用） |
 
 {{< faq >}}
 

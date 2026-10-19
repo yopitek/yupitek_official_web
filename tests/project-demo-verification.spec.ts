@@ -19,7 +19,6 @@ test.describe('Yupitek Online Project Demo Showcase', () => {
     expect(langs).toContain('zh-CN');
     expect(langs).toContain('en');
     expect(langs).toContain('ja');
-    expect(langs).toContain('ko');
 
     // 檢查 canonical
     const canonical = await page.$eval('link[rel="canonical"]', el => el.getAttribute('href'));

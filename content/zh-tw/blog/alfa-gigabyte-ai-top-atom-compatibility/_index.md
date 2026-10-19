@@ -225,7 +225,7 @@ sudo aireplay-ng --test wlan0
 | 來源 | 說明 | URL | 查核狀態 | 查核日期 |
 |---|---|---|---|---|
 | GIGABYTE AI TOP ATOM 官方產品頁 | AI TOP ATOM 硬體規格（ATAGB10-9000） | https://www.gigabyte.com/AI-TOP-PC/GIGABYTE-AI-TOP-ATOM | ✅ 已查核 | 2026-09-03 |
-| GIGABYTE AI TOP ATOM 官方頁（簡中鏡射站） | 產品特色與規格 | https://www.gigabyte.cn/AI-TOP-PC/GIGABYTE-AI-TOP-ATOM | ✅ 已查核 | 2026-09-03 |
+| GIGABYTE AI TOP ATOM 官方頁（簡中映像站） | 產品特色與規格 | https://www.gigabyte.cn/AI-TOP-PC/GIGABYTE-AI-TOP-ATOM | ✅ 已查核 | 2026-09-03 |
 | GIGABYTE AI TOP ATOM Review（LinuxGizmos） | 第三方評測與規格確認（BT 5.3 / 50.5mm） | https://linuxgizmos.com/gigabyte-ai-top-atom-introduces-nvidia-grace-blackwell-gb10-performance-for-the-desktop/ | ✅ 已查核 | 2026-09-03 |
 | NVIDIA DGX Spark 官方頁面 | GB10 平台資訊 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 已查核 | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux 驅動 | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |

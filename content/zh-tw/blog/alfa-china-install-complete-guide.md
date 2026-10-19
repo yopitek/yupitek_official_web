@@ -7,13 +7,13 @@ tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "驅動程式", "中國",
 categories: ["驅動程式安裝教學"]
 series: ["alfa-china-install-guide"]
 series_order: 9
-description: "終極 Alfa USB WiFi 網路卡 Linux 安裝指南，適用於中國大陸使用者。涵蓋 Kali Linux、Ubuntu 22/24、Debian、Raspberry Pi，系統套件使用境內鏡射站，驅動原始碼取自已驗證的 GitHub 儲存庫。"
+description: "終極 Alfa USB WiFi 網路卡 Linux 安裝指南，適用於中國大陸使用者。涵蓋 Kali Linux、Ubuntu 22/24、Debian、Raspberry Pi，系統套件使用境內映像站，驅動原始碼取自已驗證的 GitHub 儲存庫。"
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "在中國安裝 Alfa WiFi 網路卡需要翻牆嗎？"
-    answer: "不一定。系統套件使用國內鏡射站（中科大、阿里雲、清華等）安裝；未內建於核心的驅動則從 morrownr 已驗證的 GitHub 儲存庫複製原始碼。若 GitHub 速度較慢，請使用你信任的代理或鏡射站。"
+    answer: "不一定。系統套件使用國內映像站（中科大、阿里雲、清華等）安裝；未內建於核心的驅動則從 morrownr 已驗證的 GitHub 儲存庫複製原始碼。若 GitHub 速度較慢，請使用你信任的代理或映像站。"
   - question: "哪款 Alfa 網路卡最適合監聽模式和封包注入？"
     answer: "AWUS036ACM 搭載 MT7612U 晶片，驅動核心內建且完整支援 VIF，是最佳選擇。"
   - question: "哪款 Alfa 網路卡支援 WiFi 6？"
@@ -24,10 +24,10 @@ faq:
     answer: "務必搭配外接供電 USB Hub 供電，並刷 Kali ARM64 版本以獲得最佳驅動支援。"
 ---
 
-本指南涵蓋在中國大陸所有主要 Linux 發行版上安裝每一款 Alfa USB WiFi 網路卡的完整步驟，系統套件使用國內鏡射站，驅動原始碼取自已驗證的 GitHub 儲存庫。
+本指南涵蓋在中國大陸所有主要 Linux 發行版上安裝每一款 Alfa USB WiFi 網路卡的完整步驟，系統套件使用國內映像站，驅動原始碼取自已驗證的 GitHub 儲存庫。
 
 {{< tldr >}}
-中國大陸 Alfa WiFi 網路卡 Linux 安裝終極指南，涵蓋 Kali、Ubuntu、Debian、樹莓派，支援 RTL8812AU、MT7612U、RTL8832BU 等所有晶片，全程國內鏡射站免翻牆。
+中國大陸 Alfa WiFi 網路卡 Linux 安裝終極指南，涵蓋 Kali、Ubuntu、Debian、樹莓派，支援 RTL8812AU、MT7612U、RTL8832BU 等所有晶片，全程國內映像站免翻牆。
 {{< /tldr >}}
 
 ## 歡迎閱讀 Alfa Linux 終極安裝指南
@@ -39,7 +39,7 @@ faq:
 - 您需要啟用監控模式（Monitor Mode）和封包注入（Packet Injection）進行無線測試
 - 不確定您的 Alfa 型號需要哪個驅動程式
 
-本指南解決**所有上述問題**。我們將帶您在**所有主要 Linux 發行版**上安裝**每一款 Alfa USB WiFi 網路卡**，系統套件使用**中國大陸可訪問的鏡射站**，驅動原始碼取自已驗證的 GitHub 儲存庫。告別挫折感。
+本指南解決**所有上述問題**。我們將帶您在**所有主要 Linux 發行版**上安裝**每一款 Alfa USB WiFi 網路卡**，系統套件使用**中國大陸可訪問的映像站**，驅動原始碼取自已驗證的 GitHub 儲存庫。告別挫折感。
 
 ---
 
@@ -47,7 +47,7 @@ faq:
 
 Alfa USB WiFi 網路卡深受滲透測試員、網路工程師和無線愛好者的歡迎，因為它們支援監控模式和封包注入——這些功能是大多數消費級 WiFi 網路卡所沒有的。
 
-但問題在於：**大多數驅動程式安裝教學都假設您能順暢訪問 GitHub**。在中國大陸，GitHub 可能較慢或不穩定。本指南使用國內鏡射站安裝系統套件，並從已驗證的 GitHub 儲存庫複製驅動原始碼；若 GitHub 速度較慢，請使用您信任的代理或鏡射站。
+但問題在於：**大多數驅動程式安裝教學都假設您能順暢訪問 GitHub**。在中國大陸，GitHub 可能較慢或不穩定。本指南使用國內映像站安裝系統套件，並從已驗證的 GitHub 儲存庫複製驅動原始碼；若 GitHub 速度較慢，請使用您信任的代理或映像站。
 
 ---
 
@@ -89,7 +89,7 @@ Alfa USB WiFi 網路卡深受滲透測試員、網路工程師和無線愛好者
 1. **Alfa USB WiFi 網路卡** — 適合您需求的型號
 2. **USB 連接線** — 原廠附送的即可
 3. **外接供電 USB Hub** — 若使用 Raspberry Pi 則必備
-4. **可用的網路連線** — 用於連接中國大陸境內鏡射站
+4. **可用的網路連線** — 用於連接中國大陸境內映像站
 5. **sudo 權限** — 安裝驅動程式需要管理員權限
 
 先插入網路卡，確認系統能偵測到：
@@ -128,18 +128,18 @@ lsusb
 
 ---
 
-## 中國大陸可用鏡射站參考
+## 中國大陸可用映像站參考
 
-本指南所有步驟僅使用以下中國大陸可訪問的鏡射站：
+本指南所有步驟僅使用以下中國大陸可訪問的映像站：
 
 | 資源 | URL | 用途 |
 |------|-----|------|
 | **Alfa 官方下載** | [files.alfa.com.tw](https://files.alfa.com.tw) | 驅動程式套件、韌體 |
 | **Alfa 文件** | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 產品手冊（英文）|
-| **清華大學鏡射站** | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| **阿里雲鏡射站** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦）|
-| **中科大鏡射站** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦）|
-| **華為雲鏡射站** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像（備用）|
+| **清華大學映像站** | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| **阿里雲映像站** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦）|
+| **中科大映像站** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦）|
+| **華為雲映像站** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像（備用）|
 | **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | 驅動程式原始碼 |
 
 ---
@@ -148,7 +148,7 @@ lsusb
 
 Kali Linux 已預裝無線工具，讓 Alfa 網路卡運作只需幾個步驟。
 
-### 第一步：切換至中國大陸鏡射站
+### 第一步：切換至中國大陸映像站
 
 開啟軟體源清單：
 
@@ -168,7 +168,7 @@ deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-
 sudo apt update
 ```
 
-> **備用鏡射站：** 若中科大（USTC）速度慢，改用清華（Tsinghua）：
+> **備用映像站：** 若中科大（USTC）速度慢，改用清華（Tsinghua）：
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ### 第二步：依晶片組安裝驅動程式
@@ -237,7 +237,7 @@ iwconfig
 
 ## Ubuntu 22.04 / 24.04 安裝
 
-### 第一步：切換至中國大陸鏡射站
+### 第一步：切換至中國大陸映像站
 
 #### Ubuntu 24.04（Noble）
 
@@ -331,7 +331,7 @@ iwconfig
 
 ## Debian 12 (Bookworm) 安裝
 
-### 第一步：切換至中國大陸鏡射站
+### 第一步：切換至中國大陸映像站
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -417,7 +417,7 @@ iwconfig
 
 選擇 **Raspberry Pi 4（64 位元）** 或 **Raspberry Pi 5（64 位元）**。請勿使用 32 位元版本。
 
-> **中國大陸鏡射站：** 若 kali.org 速度慢，使用華為雲：https://repo.huaweicloud.com/kali-images/
+> **中國大陸映像站：** 若 kali.org 速度慢，使用華為雲：https://repo.huaweicloud.com/kali-images/
 
 ### 第二步：燒錄至 MicroSD
 
@@ -436,7 +436,7 @@ sync
 
 等待 `sync` 完成。啟動 Pi，預設帳號密碼：**kali / kali**。
 
-### 第三步：切換至中國大陸鏡射站
+### 第三步：切換至中國大陸映像站
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -654,7 +654,7 @@ sudo ip link set mon0 up
 
 ## 附錄：完整 Alfa 型號清單
 
-| 型號 | 晶片組 | 驅動程式 | 中國大陸鏡射站來源 |
+| 型號 | 晶片組 | 驅動程式 | 中國大陸映像站來源 |
 |------|--------|---------|----------------|
 | AWUS036ACH | RTL8812AU | `8812au` | GitHub: morrownr/8812au-20210820 |
 | AWUS036ACM | MT7612U | `mt76x2u` | 核心內建驅動程式 |

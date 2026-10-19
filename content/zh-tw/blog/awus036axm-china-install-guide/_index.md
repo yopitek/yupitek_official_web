@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AXM 中國安裝全攻略：Kali Linux / Ubuntu / Debian / 樹莓派"
-description: "專為國內使用者準備的 ALFA AWUS036AXM 安裝教程。使用國內鏡射站，涵蓋 MT7921AUN WiFi 6E 驅動配置，支援監聽模式和 VIF。適用於 Kali Linux, Ubuntu, Debian 以及樹莓派。無需訪問 GitHub。"
+description: "專為國內使用者準備的 ALFA AWUS036AXM 安裝教程。使用國內映像站，涵蓋 MT7921AUN WiFi 6E 驅動配置，支援監聽模式和 VIF。適用於 Kali Linux, Ubuntu, Debian 以及樹莓派。無需訪問 GitHub。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -35,7 +35,7 @@ AWUS036AXM 採用 MT7921AUN 晶片支援 WiFi 6E，驅動核心內建，安裝�
 
 想體驗 WiFi 6E 的飆速快感？AWUS036AXM 是個非常硬核的選擇，而且它那節省空間的 L 型介面設計真的很貼心，完全不會擋到筆電相鄰的 USB 埠。
 
-它的 MT7921AUN 晶片其實已經內建在 5.18 以上版本的 Linux 核心裡了，但國內的夥伴在實際使用時，往往會卡在「韌體下載」這一步。這份指南將帶你避開所有網路坑，全程使用國內鏡射站，手把手教你搞定監聽模式、封包注入以及超強大的 VIF 功能。
+它的 MT7921AUN 晶片其實已經內建在 5.18 以上版本的 Linux 核心裡了，但國內的夥伴在實際使用時，往往會卡在「韌體下載」這一步。這份指南將帶你避開所有網路坑，全程使用國內映像站，手把手教你搞定監聽模式、封包注入以及超強大的 VIF 功能。
 
 ## 開始前的準備
 
@@ -43,7 +43,7 @@ AWUS036AXM 採用 MT7921AUN 晶片支援 WiFi 6E，驅動核心內建，安裝�
 
 1. **ALFA AWUS036AXM** 網路卡本人
 2. **外接供電 USB 集線器 (Hub)** —— 如果你用的是樹莓派，這步非常關鍵，因為這張網路卡功耗較大
-3. 暢通的網路（用來存取國內鏡射站）
+3. 暢通的網路（用來存取國內映像站）
 
 插好網路卡，我們先看看系統有沒有認到它。開啟終端機輸入：
 
@@ -78,9 +78,9 @@ Bus 001 Device 003: ID 0e8d:7961 MediaTek Inc.
 
 好消息是，MT7921AUN 的驅動已經內建在 Kali 核心裡了。咱們只需要把 MediaTek 的韌體包裝好，它就能動起來。
 
-### 1. 先換個「快車道」（切換國內鏡射站）
+### 1. 先換個「快車道」（切換國內映像站）
 
-為了下載不卡頓，我們先把系統源換成中科大的鏡射站。
+為了下載不卡頓，我們先把系統源換成中科大的映像站。
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -145,7 +145,7 @@ sudo ip link set wlan1 up
 
 ### 如果你是 Ubuntu 24.04 (Noble) — 躺平模式
 
-24.04 核心已經原生支援。換個阿里雲鏡射站，裝好韌體就搞定了：
+24.04 核心已經原生支援。換個阿里雲映像站，裝好韌體就搞定了：
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -178,7 +178,7 @@ sudo reboot
 
 ## Debian
 
-### 1. 換成清華大學鏡射站
+### 1. 換成清華大學映像站
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -198,7 +198,7 @@ sudo reboot
 > **特別提醒：** AXM 在高負載下功耗不小，樹莓派使用者請務必配合 **外接供電 USB Hub** 使用。
 
 建議直接刷 Kali ARM64 版本（選 64 位版本）。
-國內鏡射站下載：[華為雲 Kali 鏡射站](https://repo.huaweicloud.com/kali-images/)。
+國內映像站下載：[華為雲 Kali 映像站](https://repo.huaweicloud.com/kali-images/)。
 
 ```bash
 # 換源並安裝韌體
@@ -259,13 +259,13 @@ sudo ip link set mon0 up
 | 封包注入測試顯示 "No Answer" | AP 太遠或介面選錯 | 湊近點，確認用的是正確的介面名稱 |
 | 無法建立 VIF 介面 | 驅動沒加載好 | 試試重啟，或者手動 `modprobe mt7921u` |
 
-## 國內鏡射站速查表
+## 國內映像站速查表
 
 | 資源名稱 | 網址 | 用途 |
 |------|------|------|
-| 清華大學鏡射站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian |
-| 阿里雲鏡射站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推薦 |
-| 中科大鏡射站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 推薦 |
+| 清華大學映像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian |
+| 阿里雲映像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推薦 |
+| 中科大映像站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 推薦 |
 
 {{< faq >}}
 

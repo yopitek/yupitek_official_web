@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036ACS 中國安裝全攻略：Kali Linux / Ubuntu / Debian / 樹莓派"
-description: "手把手教你在中國網路環境下安裝 ALFA AWUS036ACS 驅動，編譯工具使用國內鏡射站，驅動原始碼取自 GitHub。RTL8811AU 晶片，支援監聽模式與封包注入。"
+description: "手把手教你在中國網路環境下安裝 ALFA AWUS036ACS 驅動，編譯工具使用國內映像站，驅動原始碼取自 GitHub。RTL8811AU 晶片，支援監聽模式與封包注入。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -20,14 +20,14 @@ faq:
   - question: "AWUS036ACS 支援監聽模式嗎？"
     answer: "支援，RTL8811AU 完美支援監聽模式與封包注入，是安全研究的經濟實惠選擇。"
   - question: "在中國安裝 AWUS036ACS 需要翻牆嗎？"
-    answer: "不一定。從已驗證的 GitHub 儲存庫（morrownr/8821au-20210708）下載驅動原始碼；若 GitHub 速度較慢，請使用你信任的代理或鏡射站。編譯工具仍可用國內鏡射站安裝。"
+    answer: "不一定。從已驗證的 GitHub 儲存庫（morrownr/8821au-20210708）下載驅動原始碼；若 GitHub 速度較慢，請使用你信任的代理或映像站。編譯工具仍可用國內映像站安裝。"
   - question: "AWUS036ACS 的 USB ID 是多少？"
     answer: "Realtek RTL8811AU 的 USB ID 為 0bda:0811，用 lsusb 可確認。"
   - question: "Kali Linux 安裝 AWUS036ACS 驅動的指令是什麼？"
     answer: "先安裝編譯工具，複製 8821au 驅動（GitHub 上的 morrownr/8821au-20210708），再執行 `sudo sh install-driver.sh`。apt 套件 realtek-rtl88xxau-dkms 是 RTL8812AU 的驅動，不適用於此網路卡。"
 ---
 
-ALFA AWUS036ACS 搭載 RTL8811AU 晶片，在中國以國內鏡射站安裝編譯工具，並從 GitHub 儲存庫下載驅動原始碼，即可支援監聽模式與封包注入。
+ALFA AWUS036ACS 搭載 RTL8811AU 晶片，在中國以國內映像站安裝編譯工具，並從 GitHub 儲存庫下載驅動原始碼，即可支援監聽模式與封包注入。
 
 {{< tldr >}}
 AWUS036ACS 採用 RTL8811AU 晶片。所有發行版都從 GitHub 儲存庫 morrownr/8821au-20210708 下載原始碼，並用 install-driver.sh 編譯 8821au DKMS 驅動，支援監聽模式與封包注入。
@@ -35,14 +35,14 @@ AWUS036ACS 採用 RTL8811AU 晶片。所有發行版都從 GitHub 儲存庫 morr
 
 剛拿到這台輕巧的 AWUS036ACS，興沖沖插上去結果 Linux 一點反應都沒有？別擔心，這再正常不過了。雖然它內建的 RTL8811AU 晶片是安全研究的神器，完美支援監聽模式與封包注入，但驅動程式並不在系統核心裡，得靠咱們動手裝一下。
 
-考慮到大家在國內存取 GitHub 可能會卡卡的，這份指南的驅動原始碼取自已驗證的 GitHub 儲存庫；若速度不佳，請使用你信任的代理或鏡射站，跟著我一步步把它「馴服」吧！
+考慮到大家在國內存取 GitHub 可能會卡卡的，這份指南的驅動原始碼取自已驗證的 GitHub 儲存庫；若速度不佳，請使用你信任的代理或映像站，跟著我一步步把它「馴服」吧！
 
 ## 開始前的準備
 
 在動手折騰之前，先確認你手邊有這些東西：
 
 1. **ALFA AWUS036ACS** 網路卡本人
-2. 能存取國內鏡射站的網路環境（用來下載包）
+2. 能存取國內映像站的網路環境（用來下載包）
 
 插好網路卡，我們先看看系統有沒有認到它。開啟終端機輸入：
 
@@ -75,9 +75,9 @@ Bus 001 Device 003: ID 0bda:0811 Realtek Semiconductor Corp.
 
 ## Kali Linux
 
-### 1. 先換個「快車道」（切換國內鏡射站）
+### 1. 先換個「快車道」（切換國內映像站）
 
-為了下載不卡頓，我們先把系統換成中科大的鏡射站。
+為了下載不卡頓，我們先把系統換成中科大的映像站。
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -132,9 +132,9 @@ sudo airmon-ng start wlan0
 
 ## Ubuntu 22.04 / 24.04
 
-### 1. 切換國內鏡射站（阿里雲）
+### 1. 切換國內映像站（阿里雲）
 
-Ubuntu 24.04 使用 `ubuntu.sources`，22.04 則使用 `sources.list`。換好鏡射站後記得跑 `sudo apt update`。
+Ubuntu 24.04 使用 `ubuntu.sources`，22.04 則使用 `sources.list`。換好映像站後記得跑 `sudo apt update`。
 
 ### 2. 安裝編譯必備套件
 
@@ -146,7 +146,7 @@ sudo apt install -y git dkms build-essential libelf-dev linux-headers-$(uname -r
 
 ### 3. 從 GitHub 下載驅動原始碼
 
-GitHub 較慢時，請先使用你信任的代理或鏡射站，再複製驅動原始碼：
+GitHub 較慢時，請先使用你信任的代理或映像站，再複製驅動原始碼：
 
 ```bash
 git clone https://github.com/morrownr/8821au-20210708.git
@@ -166,7 +166,7 @@ sudo reboot
 
 ## Debian
 
-### 1. 換成清華大學鏡射站
+### 1. 換成清華大學映像站
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -216,13 +216,13 @@ apt 套件庫沒有適用 RTL8811AU 的驅動，請參考上面的「Ubuntu」�
 | 驅動裝了但沒訊號 | 需要重新啟動 | 跑一下 `sudo reboot` 看看 |
 | 監聽模式開不了 | 被其他行程佔用了 | 務必先執行 `sudo airmon-ng check kill` |
 
-## 國內鏡射站速查表
+## 國內映像站速查表
 
 | 資源名稱 | 網址 | 用途 |
 |------|------|------|
-| 清華大學鏡射站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian |
-| 阿里雲鏡射站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推薦 |
-| 中科大鏡射站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 推薦 |
+| 清華大學映像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian |
+| 阿里雲映像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 推薦 |
+| 中科大映像站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 推薦 |
 
 {{< faq >}}
 

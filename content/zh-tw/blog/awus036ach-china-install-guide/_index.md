@@ -8,7 +8,7 @@ slug: "awus036ach-china-install-guide"
 tags: ["alfa", "awus036ach", "kali-linux", "ubuntu", "驅動", "中國", "監聽模式"]
 categories: ["驅動指南"]
 series: ["alfa-china-install-guide"]
-description: "手把手教你在中國境內使用國內鏡射站安裝 ALFA AWUS036ACH 驅動。涵蓋 Kali Linux, Ubuntu 22/24, Debian 和 樹莓派。編譯工具使用國內鏡射站，驅動原始碼取自 GitHub。"
+description: "手把手教你在中國境內使用國內映像站安裝 ALFA AWUS036ACH 驅動。涵蓋 Kali Linux, Ubuntu 22/24, Debian 和 樹莓派。編譯工具使用國內映像站，驅動原始碼取自 GitHub。"
 related_product: "/zh-tw/products/alfa/awus036ach/"
 series_order: 1
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
@@ -18,7 +18,7 @@ faq:
   - question: "AWUS036ACH 用什麼晶片？需要額外安裝驅動嗎？"
     answer: "AWUS036ACH 採用 Realtek RTL8812AU 晶片，驅動不在 Linux 核心內建，需要手動安裝。"
   - question: "在中國安裝 AWUS036ACH 驅動需要翻牆嗎？"
-    answer: "不一定。從已驗證的 GitHub 儲存庫（morrownr/8812au-20210820）下載驅動原始碼；若 GitHub 速度較慢，請使用你信任的代理或鏡射站。編譯工具仍可用國內鏡射站安裝。"
+    answer: "不一定。從已驗證的 GitHub 儲存庫（morrownr/8812au-20210820）下載驅動原始碼；若 GitHub 速度較慢，請使用你信任的代理或映像站。編譯工具仍可用國內映像站安裝。"
   - question: "AWUS036ACH 支援監聽模式和封包注入嗎？"
     answer: "支援，安裝 RTL8812AU 驅動後用 airmon-ng 即可開啟監聽模式，aireplay-ng 可測試封包注入。"
   - question: "AWUS036ACH 在樹莓派上能用嗎？"
@@ -27,13 +27,13 @@ faq:
     answer: "Kali 可直接執行 sudo apt install realtek-rtl88xxau-dkms 安裝預編譯驅動。"
 ---
 
-ALFA AWUS036ACH 搭載 RTL8812AU 晶片，在中國透過國內鏡射站安裝驅動即可支援監聽模式與封包注入，編譯工具使用國內鏡射站，驅動原始碼取自 GitHub。
+ALFA AWUS036ACH 搭載 RTL8812AU 晶片，在中國透過國內映像站安裝驅動即可支援監聽模式與封包注入，編譯工具使用國內映像站，驅動原始碼取自 GitHub。
 
 {{< tldr >}}
 AWUS036ACH 採用 RTL8812AU 晶片，Kali 用 apt 裝 DKMS 驅動，Ubuntu/Debian 從 GitHub 編譯，30 分鐘完成監聽模式與封包注入。
 {{< /tldr >}}
 
-你剛拿到 ALFA AWUS036ACH，結果 Linux 系統沒反應？別擔心，這很正常。這款網路卡用的晶片需要 RTL8812AU 驅動，而且它不是插上就能用的。本指南會帶你花大約 30 分鐘完成安裝，系統套件使用國內鏡射站，驅動原始碼則從已驗證的 GitHub 儲存庫下載；若 GitHub 速度較慢，請使用你信任的代理或鏡射站。
+你剛拿到 ALFA AWUS036ACH，結果 Linux 系統沒反應？別擔心，這很正常。這款網路卡用的晶片需要 RTL8812AU 驅動，而且它不是插上就能用的。本指南會帶你花大約 30 分鐘完成安裝，系統套件使用國內映像站，驅動原始碼則從已驗證的 GitHub 儲存庫下載；若 GitHub 速度較慢，請使用你信任的代理或映像站。
 
 ## 在你開始之前
 
@@ -74,9 +74,9 @@ Bus 001 Device 003: ID 0bda:8812 Realtek Semiconductor Corp.
 
 ## Kali Linux
 
-Kali 內建了許多無線工具。裝好 AWUS036ACH 驅動只需要四步。先換到國內鏡射站，這樣下載速度才夠快。
+Kali 內建了許多無線工具。裝好 AWUS036ACH 驅動只需要四步。先換到國內映像站，這樣下載速度才夠快。
 
-### 第一步：切換到國內鏡射站
+### 第一步：切換到國內映像站
 
 開啟終端，編輯源列表：
 
@@ -146,7 +146,7 @@ sudo aireplay-ng --test wlan1mon
 
 Ubuntu 不像 Kali 那樣內建驅動，我們需要手動編譯。
 
-### 第一步：換到阿里雲鏡射站
+### 第一步：換到阿里雲映像站
 
 #### Ubuntu 24.04
 
@@ -178,7 +178,7 @@ sudo apt install -y build-essential dkms git linux-headers-$(uname -r)
 
 ### 第三步：從 GitHub 下載驅動
 
-上游驅動由 morrownr 維護；若 GitHub 速度較慢，請使用你信任的代理或鏡射站。請在下面的指令中複製驅動原始碼：
+上游驅動由 morrownr 維護；若 GitHub 速度較慢，請使用你信任的代理或映像站。請在下面的指令中複製驅動原始碼：
 
 ```bash
 git clone https://github.com/morrownr/8812au-20210820.git
@@ -198,12 +198,12 @@ sudo reboot
 | `lsusb` 看不到設備 | 線沒插好或供電不足 | 換個 USB 口或用帶供電的 Hub |
 | 安裝驅動回報錯誤 | 缺核心標頭檔 | 執行 `sudo apt install linux-headers-$(uname -r)` |
 
-## 國內鏡射站參考
+## 國內映像站參考
 
 | 資源 | 地址 | 用途 |
 |----------|-----|---------|
-| 中科大鏡射站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 首選 |
-| 阿里雲鏡射站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 首選 |
+| 中科大映像站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali 首選 |
+| 阿里雲映像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu 首選 |
 | GitHub (morrownr) | [github.com/morrownr](https://github.com/morrownr) | 驅動原始碼 |
 
 {{< faq >}}

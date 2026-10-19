@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AXML 驅動程式安裝全攻略（中國適用）：Kali Linux、Ubuntu、Debian 和 Raspberry Pi"
-description: "在中國使用國內鏡射站安裝 ALFA AWUS036AXML 驅動程式的完整步驟。MT7921AUN WiFi 6E 核心驅動程式，完整支援監控模式與 VIF。涵蓋 Kali Linux、Ubuntu 22/24、Debian 和 Raspberry Pi，無需訪問 GitHub。"
+description: "在中國使用國內映像站安裝 ALFA AWUS036AXML 驅動程式的完整步驟。MT7921AUN WiFi 6E 核心驅動程式，完整支援監控模式與 VIF。涵蓋 Kali Linux、Ubuntu 22/24、Debian 和 Raspberry Pi，無需訪問 GitHub。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -33,7 +33,7 @@ ALFA AWUS036AXML 是 WiFi 6E 三頻 USB-C 旗艦網路卡，搭載 MT7921AUN 晶
 AWUS036AXML 採用 MT7921AUN 晶片，WiFi 6E 三頻 USB-C 旗艦網路卡，驅動核心內建，安裝韌體後即可使用監控模式、封包注入與 VIF。
 {{< /tldr >}}
 
-AWUS036AXML 是 ALFA 的 WiFi 6E 旗艦機種——一款三頻 USB-C 無線網路卡，涵蓋 2.4 GHz、5 GHz 及較少壅塞的 6 GHz 頻段。其 MT7921AUN 晶片使用 `mt7921u` 驅動程式，自 Linux 核心 5.18 版起已內建支援。在 Ubuntu 24.04 與 Kali 2025 上，只需從國內鏡射站安裝韌體套件即可即插即用。本指南涵蓋完整設定步驟——韌體、驅動程式驗證、監控模式、封包注入與 VIF——無需訪問 GitHub。
+AWUS036AXML 是 ALFA 的 WiFi 6E 旗艦機種——一款三頻 USB-C 無線網路卡，涵蓋 2.4 GHz、5 GHz 及較少壅塞的 6 GHz 頻段。其 MT7921AUN 晶片使用 `mt7921u` 驅動程式，自 Linux 核心 5.18 版起已內建支援。在 Ubuntu 24.04 與 Kali 2025 上，只需從國內映像站安裝韌體套件即可即插即用。本指南涵蓋完整設定步驟——韌體、驅動程式驗證、監控模式、封包注入與 VIF——無需訪問 GitHub。
 
 ## 開始前的準備
 
@@ -41,7 +41,7 @@ AWUS036AXML 是 ALFA 的 WiFi 6E 旗艦機種——一款三頻 USB-C 無線網�
 
 1. **ALFA AWUS036AXML** 網路卡及 USB-C 連接線
 2. 附電源USB集線器——若在 Raspberry Pi 上使用則為必要
-3. 可連線至國內鏡射站的網路連線
+3. 可連線至國內映像站的網路連線
 
 插入網路卡後，確認系統是否偵測到它：
 
@@ -79,9 +79,9 @@ Bus 001 Device 003: ID 0e8d:7961 MediaTek Inc.
 
 ## Kali Linux
 
-MT7921AUN 驅動程式已內建於 Kali 核心。您只需安裝 MediaTek 韌體套件，可從國內鏡射站取得。
+MT7921AUN 驅動程式已內建於 Kali 核心。您只需安裝 MediaTek 韌體套件，可從國內映像站取得。
 
-### 步驟 1：切換至中國鏡射站
+### 步驟 1：切換至中國映像站
 
 在終端機中開啟套件來源清單。
 
@@ -101,7 +101,7 @@ deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-
 sudo apt update
 ```
 
-> **備用鏡射站：** 若 中科大 (USTC) 速度較慢，請改用 清華 (Tsinghua)：
+> **備用映像站：** 若 中科大 (USTC) 速度較慢，請改用 清華 (Tsinghua)：
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
@@ -186,7 +186,7 @@ Found 1 AP
 
 Ubuntu 24.04 搭載核心 6.8，已原生包含 MT7921AUN 驅動程式。
 
-### 步驟 1：切換至中國鏡射站
+### 步驟 1：切換至中國映像站
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -225,7 +225,7 @@ sudo reboot
 
 Ubuntu 22.04 搭載核心 5.15。MT7921AUN 驅動程式需要核心 ≥ 5.18，請先安裝 HWE 核心。
 
-### 步驟 1：切換至中國鏡射站
+### 步驟 1：切換至中國映像站
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -271,7 +271,7 @@ sudo reboot
 
 ## Debian
 
-### 步驟 1：切換至中國鏡射站
+### 步驟 1：切換至中國映像站
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -331,7 +331,7 @@ sudo aireplay-ng --test wlan1
 
 選擇 **Raspberry Pi 4 (64-bit)** 或 **Raspberry Pi 5 (64-bit)**——必須選擇 64 位元版本。
 
-> **中國鏡射站：** https://repo.huaweicloud.com/kali-images/ — 瀏覽至最新發布資料夾並下載 ARM64 映像檔。
+> **中國映像站：** https://repo.huaweicloud.com/kali-images/ — 瀏覽至最新發布資料夾並下載 ARM64 映像檔。
 
 ### 步驟 2：燒錄至 MicroSD
 
@@ -344,7 +344,7 @@ sync
 
 預設帳號密碼：**kali / kali**。
 
-### 步驟 3：切換至中國鏡射站並安裝韌體
+### 步驟 3：切換至中國映像站並安裝韌體
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -462,16 +462,16 @@ iwconfig
 | 注入測試顯示「No Answer」 | AP 距離過遠或介面錯誤 | 移近距離。以 `iwconfig` 確認 `Mode:Monitor`。 |
 | VIF 介面建立失敗 | 驅動程式未完全載入 | 拔除後執行：`sudo rmmod mt7921u && sudo modprobe mt7921u` |
 
-## 中國鏡射站參考
+## 中國映像站參考
 
 | 資源 | 網址 | 用途 |
 |----------|-----|---------|
 | Alfa 官方驅動程式 | [files.alfa.com.tw](https://files.alfa.com.tw) | 驅動程式套件、韌體 |
 | Alfa 文件 | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 產品手冊 |
-| 清華大學鏡射站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里雲鏡射站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦） |
+| 清華大學映像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里雲映像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦） |
 | 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦） |
-| 華為雲鏡射站 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像檔（備用） |
+| 華為雲映像站 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像檔（備用） |
 
 {{< faq >}}
 

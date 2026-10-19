@@ -8,7 +8,7 @@ slug: "awus036acm-china-install-guide"
 tags: ["alfa", "awus036acm", "kali-linux", "ubuntu", "驅動", "中國", "monitor-mode", "vif"]
 categories: ["驅動安裝指南"]
 series: ["alfa-china-install-guide"]
-description: "手把手教你在中國網路環境下安裝 ALFA AWUS036ACM 驅動，全程使用國內鏡射站，無需翻牆。MT7612U 核心原生驅動，完整 VIF 支援。涵蓋 Kali Linux、Ubuntu 22/24、Debian 和樹莓派。"
+description: "手把手教你在中國網路環境下安裝 ALFA AWUS036ACM 驅動，全程使用國內映像站，無需翻牆。MT7612U 核心原生驅動，完整 VIF 支援。涵蓋 Kali Linux、Ubuntu 22/24、Debian 和樹莓派。"
 related_product: "/zh-tw/products/alfa/awus036acm/"
 series_order: 2
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
@@ -20,7 +20,7 @@ faq:
   - question: "AWUS036ACM 支援 VIF 虛擬介面嗎？"
     answer: "支援，MT7612U 完整支援核心原生 VIF，可同時執行監聽介面和管理模式，無需打補丁。"
   - question: "在中國安裝 AWUS036ACM 需要翻牆嗎？"
-    answer: "不需要，驅動已內建核心，僅需從國內鏡射站安裝韌體套件 firmware-misc-nonfree 即可。"
+    answer: "不需要，驅動已內建核心，僅需從國內映像站安裝韌體套件 firmware-misc-nonfree 即可。"
   - question: "AWUS036ACM 在樹莓派上耗電多少？"
     answer: "滿載約消耗 400mW，建議搭配帶獨立供電的 USB Hub 使用，避免樹莓派限速。"
   - question: "Debian 安裝 AWUS036ACM 為什麼網路卡能識別但無法運作？"
@@ -33,7 +33,7 @@ ALFA AWUS036ACM 採用 MT7612U 晶片，驅動自 Linux 4.19 起已內建核心�
 AWUS036ACM 搭載 MT7612U 晶片，驅動核心內建免編譯，支援監聽模式、封包注入與 VIF 同時運作，中國境內僅需安裝韌體套件。
 {{< /tldr >}}
 
-AWUS036ACM 是 Alfa 無線網路卡裡最好裝的一款。它使用 MT7612U 晶片，驅動 `mt76x2u` 從 Linux 4.19 起就已經內建在核心裡了。大多數情況下，插上就能用，最多跑兩三條指令。這篇文章涵蓋完整流程：驅動驗證、監聽模式、封包注入，以及 VIF（虛擬介面）——全部使用國內鏡射站，不需要訪問 GitHub。
+AWUS036ACM 是 Alfa 無線網路卡裡最好裝的一款。它使用 MT7612U 晶片，驅動 `mt76x2u` 從 Linux 4.19 起就已經內建在核心裡了。大多數情況下，插上就能用，最多跑兩三條指令。這篇文章涵蓋完整流程：驅動驗證、監聽模式、封包注入，以及 VIF（虛擬介面）——全部使用國內映像站，不需要訪問 GitHub。
 
 ## 準備工作
 
@@ -42,7 +42,7 @@ AWUS036ACM 是 Alfa 無線網路卡裡最好裝的一款。它使用 MT7612U 晶
 1. **ALFA AWUS036ACM** 無線網路卡
 2. USB 傳輸線（盒子裡附帶的就行）
 3. 帶獨立供電的 USB Hub——樹莓派使用者必備
-4. 能存取國內鏡射站的網路連線
+4. 能存取國內映像站的網路連線
 
 把網路卡插上，確認系統能識別：
 
@@ -82,7 +82,7 @@ Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc.
 
 MT7612U 的驅動已經內建在 Kali 核心裡了。絕大多數情況下，網路卡插上去就可以用。下面的步驟幫你確認驅動已經載入，然後直接進入監聽模式。
 
-### 第一步：切換到國內鏡射站
+### 第一步：切換到國內映像站
 
 開啟軟體來源檔案：
 
@@ -102,7 +102,7 @@ deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-
 sudo apt update
 ```
 
-> **備用鏡射站：** 如果中科大鏡射站速度慢，換清華大學鏡射站：
+> **備用映像站：** 如果中科大映像站速度慢，換清華大學映像站：
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
@@ -133,7 +133,7 @@ iwconfig
 
 ### 第二步（備選）：安裝額外核心模組
 
-如果 `modprobe mt76x2u` 回報「找不到模組」，說明你的核心沒有包含 MT76 模組，從國內鏡射站安裝：
+如果 `modprobe mt76x2u` 回報「找不到模組」，說明你的核心沒有包含 MT76 模組，從國內映像站安裝：
 
 ```bash
 sudo apt install -y linux-modules-extra-$(uname -r)
@@ -206,7 +206,7 @@ Found 1 AP
 
 MT7612U 驅動同樣內建在 Ubuntu 核心裡，不過有時候需要安裝 `linux-modules-extra` 才能載入。
 
-### 第一步：切換到國內鏡射站
+### 第一步：切換到國內映像站
 
 #### Ubuntu 24.04 (Noble)
 
@@ -306,7 +306,7 @@ sudo aireplay-ng --test wlan0mon
 
 MT7612U 的驅動在 Debian 核心裡，但有時候需要安裝 `firmware-misc-nonfree` 韌體套件才能完整初始化。
 
-### 第一步：切換到國內鏡射站
+### 第一步：切換到國內映像站
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -382,7 +382,7 @@ https://www.kali.org/get-kali/#kali-arm
 
 選 **Raspberry Pi 4 (64-bit)** 或 **Raspberry Pi 5 (64-bit)**，不要選 32 位版本。
 
-> **國內鏡射站：** kali.org 慢的話用華為雲：
+> **國內映像站：** kali.org 慢的話用華為雲：
 > https://repo.huaweicloud.com/kali-images/
 > 找最新版本資料夾，下載同款 ARM64 映像。
 
@@ -408,7 +408,7 @@ sync
 
 ---
 
-### 第三步：切換到國內鏡射站
+### 第三步：切換到國內映像站
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -554,7 +554,7 @@ sudo ip link set mon0 up
 | 注入測試回傳「No Answer」 | AP 太遠或介面名稱錯誤 | 靠近 AP，確認用的是 `wlan0mon` |
 | VIF 介面建立失敗 | 驅動未完整載入 | `sudo rmmod mt76x2u && sudo modprobe mt76x2u` |
 
-## 國內鏡射站參考
+## 國內映像站參考
 
 本文用到的所有資源，全部不需要 GitHub：
 
@@ -562,10 +562,10 @@ sudo ip link set mon0 up
 |------|------|------|
 | Alfa 官方驅動 | [files.alfa.com.tw](https://files.alfa.com.tw) | 驅動套件、韌體 |
 | Alfa 文件 | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 產品手冊 |
-| 清華大學鏡射站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里雲鏡射站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦） |
-| 中科大鏡射站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦） |
-| 華為雲鏡射站 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像（備用） |
+| 清華大學映像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里雲映像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦） |
+| 中科大映像站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦） |
+| 華為雲映像站 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像（備用） |
 | MT76 驅動（主線核心） | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | 核心內建，免編譯 |
 
 {{< faq >}}

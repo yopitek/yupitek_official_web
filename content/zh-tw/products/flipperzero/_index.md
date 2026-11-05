@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero 多功能無線安全研究裝置"
-description: "榆閤科技代理 Flipper Zero，支援 Sub-GHz、NFC、RFID、紅外線、藍牙等無線協定研究，適合資安教育與合法研究。"
+description: "榆閤科技提供 Flipper Zero 產品與技術諮詢，支援 Sub-GHz、NFC、RFID、紅外線、藍牙等無線協定研究，適合資安教育與合法研究。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

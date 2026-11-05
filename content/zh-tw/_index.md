@@ -1,6 +1,6 @@
 ---
 title: "榆閤科技有限公司"
-description: "專業科技分銷與空間沉浸體驗整合商。ALFA Network、HAK5、Flipper Zero 台灣授權經銷。無線投影拼接系統整合服務。"
+description: "專業科技分銷與空間沉浸體驗整合商。ALFA Network、HAK5 台灣授權經銷；Flipper Zero 提供產品與技術諮詢。無線投影拼接系統整合服務。"
 date: 2026-03-12
 draft: false
 showHero: true

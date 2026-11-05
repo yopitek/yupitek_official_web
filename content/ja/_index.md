@@ -1,6 +1,6 @@
 ---
 title: "Yopitek Ltd"
-description: "専門的な技術製品の流通と没入型プロジェクション統合。ALFA Network、HAK5、Flipper Zeroの台湾正規代理店。プロジェクションシステム統合サービス。"
+description: "専門的な技術製品の流通と没入型プロジェクション統合。ALFA Network、HAK5の台湾正規代理店。Flipper Zeroの製品・技術相談も提供。プロジェクションシステム統合サービス。"
 date: 2026-03-12
 draft: false
 showHero: true

@@ -1,6 +1,6 @@
 ---
 title: "Produits"
-description: "Yopitek est le distributeur autorisé à Taïwan pour ALFA Network, HAK5, Flipper Zero, Ubiquiti, les cartes graphiques, SDRLAB et ACR."
+description: "Yopitek est le distributeur autorisé à Taïwan pour ALFA Network, HAK5, Ubiquiti, les cartes graphiques, SDRLAB et ACR ; nous proposons aussi les produits Flipper Zero et du conseil technique."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

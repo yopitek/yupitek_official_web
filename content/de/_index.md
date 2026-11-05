@@ -1,6 +1,6 @@
 ---
 title: "Yopitek Ltd"
-description: "Professioneller Technologievertrieb und immersive Projektionsintegration. Autorisierter Distributor in Taiwan für ALFA Network, HAK5 und Flipper Zero."
+description: "Professioneller Technologievertrieb und immersive Projektionsintegration. Autorisierter Distributor in Taiwan für ALFA Network und HAK5; außerdem Flipper Zero Produkte und technische Beratung."
 date: 2026-04-24
 draft: false
 showHero: true

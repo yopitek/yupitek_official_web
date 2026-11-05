@@ -57,7 +57,7 @@ AWUS036ACH 是 ALFA Network 安全研究社区公认的黄金标准无线网卡�
 |---------|------|------|
 | Windows 10/11 | ✅ 支持 | 从 ALFA 官网下载驱动；支持 WPA3 |
 | macOS 10.15 Catalina | ⚠️ 有限支持 | 需手动安装；不支持 macOS 11+ 及 Apple Silicon |
-| Ubuntu | ✅ 支持 | 需 DKMS 手动安装；Ubuntu 24.10+（内核 ≥ 6.14）已内置 |
+| Ubuntu | ✅ 支持 | 需 DKMS 手动安装；内核 ≥ 6.14（例如 Ubuntu 24.04.3 或更新版本的 HWE 内核）已内置 |
 | Kali Linux | ✅ 优秀 | 自 2017.1 起支持；完整 Monitor Mode + Packet Injection |
 | NetHunter（Android） | ✅ 支持 | OTG USB 连接 |
 

@@ -61,7 +61,7 @@ AWUS036ACH هو المحول الأكثر شهرةً من ALFA Network، وال�
 |-------------|--------|----------|
 | Windows 10 / 11 | ✅ مدعوم | تنزيل الدرايفر من موقع ALFA؛ دعم WPA3 (درايفر أكتوبر 2019+) |
 | macOS 10.15 Catalina | ⚠️ محدود | تثبيت يدوي؛ macOS 11+ وApple Silicon غير مدعومان |
-| Ubuntu | ✅ مدعوم | تثبيت RTL8812AU DKMS يدويًا؛ مدمج في Ubuntu 24.10+ (نواة ≥ 6.14) |
+| Ubuntu | ✅ مدعوم | تثبيت RTL8812AU DKMS يدويًا؛ مدمج في النواة ≥ 6.14 (مثل نواة HWE في Ubuntu 24.04.3 أو أحدث) |
 | Kali Linux | ✅ ممتاز | منذ Kali 2017.1؛ Monitor Mode + Packet Injection كاملان؛ استخدم درايفر aircrack-ng |
 | NetHunter (Android) | ✅ مدعوم | OTG USB؛ مؤكد على نطاق واسع |
 

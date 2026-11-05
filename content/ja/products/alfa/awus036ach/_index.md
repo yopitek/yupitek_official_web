@@ -60,7 +60,7 @@ AWUS036ACH は ALFA Network の最も象徴的なセキュリティ研究用ア�
 |----|------|------|
 | Windows 10 / 11 | ✅ 対応 | Alfa 公式サイトからドライバーをダウンロード；WPA3 対応（2019年10月以降のドライバー） |
 | macOS 10.15 Catalina | ⚠️ 限定対応 | 手動インストールが必要；macOS 11+ および Apple Silicon は非対応 |
-| Ubuntu | ✅ 対応 | RTL8812AU DKMS を手動インストール；Ubuntu 24.10+（カーネル ≥ 6.14）以降は標準搭載 |
+| Ubuntu | ✅ 対応 | RTL8812AU DKMS を手動インストール；カーネル ≥ 6.14（例：Ubuntu 24.04.3 以降の HWE カーネル）では標準搭載 |
 | Kali Linux | ✅ 優秀 | Kali 2017.1 以降；完全な Monitor Mode + Packet Injection；aircrack-ng ドライバーを推奨 |
 | NetHunter（Android） | ✅ 対応 | OTG USB；広く動作確認済み |
 

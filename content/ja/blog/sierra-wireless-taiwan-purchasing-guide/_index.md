@@ -8,7 +8,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "sierra-wireless-taiwan-purchasing-guide"
-tags: ["Sierra Wireless", "代理店", "購入ガイド", "正規品の見分け方", "IMEI", "FCC ID", "見積依頼", "LTE"]
+tags: ["Sierra Wireless", "台湾での調達", "購入ガイド", "正規品の見分け方", "IMEI", "FCC ID", "見積依頼", "LTE"]
 categories: ["Technical"]
 author: "benny-lai"
 lastmod: 2026-07-31

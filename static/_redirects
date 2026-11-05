@@ -5,3 +5,9 @@
 # AWUS1900 is discontinued; its product page was removed (2026-10-18)
 /:locale/products/alfa/awus1900/  /:locale/products/alfa/  301
 /:locale/products/alfa/awus1900   /:locale/products/alfa/  301
+
+# Sierra articles removed; 301 to their successors (2026-11-05, QW-12)
+/:locale/blog/em7455-review-guide/         /:locale/blog/sierra-em7455-review/           301
+/:locale/blog/em7455-review-guide          /:locale/blog/sierra-em7455-review/           301
+/:locale/blog/sierra-wireless-selections/  /:locale/blog/sierra-module-selection-guide/  301
+/:locale/blog/sierra-wireless-selections   /:locale/blog/sierra-module-selection-guide/  301

@@ -1,6 +1,6 @@
 ---
 title: "Série de modules cellulaires Sierra Wireless"
-description: "Distributeur agréé des modules cellulaires industriels Sierra Wireless : EM7430, EM7455, EM7511, EM7565, EM9190, EM9191, MC7304, MC7350, MC7354, MC7455. Idéal pour l'IoT, le M2M, les routeurs et les applications mobiles à large bande."
+description: "Informations produit et conseil technique sur les modules cellulaires industriels Sierra Wireless : EM7430, EM7455, EM7511, EM7565, EM9190, EM9191, MC7304, MC7350, MC7354, MC7455. Idéal pour l'IoT, le M2M, les routeurs et les applications mobiles à large bande."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -68,5 +68,7 @@ Sierra Wireless est un leader mondial des modules cellulaires industriels, offra
 ---
 
 {{< alert >}}
+Yupitek fournit des informations produits, des canaux d'approvisionnement et des contenus techniques sur Sierra Wireless / Semtech ; Yupitek n'est pas un distributeur agréé officiel, ces informations sont fournies à titre de référence technique uniquement.
+
 Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/)
 {{</alert >}}

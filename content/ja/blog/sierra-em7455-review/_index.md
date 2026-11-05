@@ -24,6 +24,10 @@ faq:
 
 # Sierra EM7455 完全レビュー：Maker と研究室で人気の Sierra カードの理由
 
+{{< alert >}}
+Yupitek は Sierra Wireless / Semtech の製品情報、供給チャネルおよび技術コンテンツを提供しています。公式の正規代理店ではなく、本資料は技術参考のみを目的としています。
+{{</alert >}}
+
 Raspberry Pi に OpenWrt を組み合わせて使っている方、あるいは研究室の機器に 4G 通信を追加したい方は、Sierra EM7455 という名カードをご存じでしょう。Sierra Wireless が提供する LTE-A Cat 6 の M.2 セルラーモジュールで、Qualcomm MDM9230 チップセットを搭載し、下り最大 300 Mbps、上り最大 50 Mbps を実現します。さらに GNSS 測位機能を内蔵し、動作温度は -40°C から +85°C の過酷な環境にも耐えます。
 
 本記事は Yupitek（榆閤科技）が整理し、この M.2 B-Key パッケージの 4G LTE-Advanced Cat 6 モジュールがなぜこれほど人気なのか、そして Linux システムでのドライバと設定の方法について解説します。

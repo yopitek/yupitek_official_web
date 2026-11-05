@@ -60,7 +60,7 @@ El AWUS036ACH es el adaptador más icónico de ALFA Network — el estándar de 
 |-------------------|--------|-------|
 | Windows 10 / 11 | ✅ Compatible | Descargar driver desde el sitio de Alfa; soporte WPA3 (driver oct. 2019+) |
 | macOS 10.15 Catalina | ⚠️ Limitado | Instalación manual; macOS 11+ y Apple Silicon NO compatibles |
-| Ubuntu | ✅ Compatible | Instalación manual RTL8812AU DKMS; integrado en Ubuntu 24.10+ (kernel ≥ 6.14) |
+| Ubuntu | ✅ Compatible | Instalación manual RTL8812AU DKMS; integrado en el kernel ≥ 6.14 (por ejemplo, el kernel HWE de Ubuntu 24.04.3 o posterior) |
 | Kali Linux | ✅ Excelente | Desde Kali 2017.1; Monitor Mode + Packet Injection completo; usar driver aircrack-ng |
 | NetHunter (Android) | ✅ Compatible | OTG USB; ampliamente confirmado |
 

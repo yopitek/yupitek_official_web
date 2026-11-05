@@ -59,7 +59,7 @@ AWUS036ACH 是 ALFA Network 資安研究社群公認的黃金標準無線網路�
 |---------|------|------|
 | Windows 10/11 | ✅ 支援 | 請至 ALFA 官網下載驅動；WPA3 支援（2019 年 10 月驅動後） |
 | macOS 10.15 Catalina | ⚠️ 有限支援 | 需手動安裝；不支援 macOS 11+ 及 Apple Silicon |
-| Ubuntu | ✅ 支援 | 需透過 DKMS 手動安裝 RTL8812AU 驅動；Ubuntu 24.10+（核心 ≥ 6.14）起內建 |
+| Ubuntu | ✅ 支援 | 需透過 DKMS 手動安裝 RTL8812AU 驅動；核心 ≥ 6.14（例如 Ubuntu 24.04.3 或更新版本的 HWE 核心）起內建 |
 | Kali Linux | ✅ 優異 | 自 Kali 2017.1 起支援；完整 Monitor Mode + Packet Injection；建議使用 aircrack-ng 驅動 |
 | NetHunter（Android） | ✅ 支援 | OTG USB 連接；廣泛確認可用 |
 

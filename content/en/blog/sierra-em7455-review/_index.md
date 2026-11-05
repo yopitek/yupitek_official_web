@@ -24,6 +24,10 @@ faq:
 
 # Sierra EM7455 Full Review: Why It Is the Favorite Sierra Card for Makers and Labs
 
+{{< alert >}}
+Yopitek provides Sierra Wireless / Semtech product information and technical content; not an official authorized distributor, for technical reference only.
+{{</alert >}}
+
 If you have played with a Raspberry Pi running OpenWrt, or wanted to add 4G to lab equipment, you have heard of the Sierra EM7455. It is an LTE-A Cat 6 M.2 cellular module from Sierra Wireless built on the Qualcomm MDM9230 chipset, delivering up to 300 Mbps downlink and 50 Mbps uplink, with built-in GNSS positioning and an operating range that survives -40°C to +85°C.
 
 This article, compiled by Yupitek, explains why this M.2 B-Key 4G LTE-Advanced Cat 6 module has become so popular and how to get the driver and configuration working on Linux.

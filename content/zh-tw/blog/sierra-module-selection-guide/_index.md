@@ -24,6 +24,10 @@ faq:
 
 # Sierra Wireless 十款蜂窩模組完整選購指南：LTE Cat 4 到 5G mmWave 怎麼選
 
+{{< alert >}}
+Yupitek 提供 Sierra Wireless / Semtech 相關產品資訊、通路供應與技術內容；非官方授權經銷商，本資料僅供技術參考。
+{{</alert >}}
+
 不管你是正在做物聯網專題的大學生，還是在實驗室搞網通設備，買通訊模組最怕遇到什麼？絕對是「規格表看半天、型號分不清，最後買錯封裝根本插不進機器」！
 
 這篇文章幫大家把 Sierra Wireless（現在隸屬於 Semtech）現役跟長青款的 10 款模組一次講清楚，帶你從基礎的 LTE Cat 4 一路看懂到 5G mmWave。本文提到的 EM 系列全部是 M.2 封裝，而 MC 系列則是 mPCIe 封裝。

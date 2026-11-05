@@ -24,6 +24,10 @@ faq:
 
 # Sierra EM7455 完整评测：为什么它是 Maker 与实验室做课题最爱的 Sierra 网卡
 
+{{< alert >}}
+Yupitek 提供 Sierra Wireless / Semtech 相关产品信息、渠道供应与技术内容；非官方授权经销商，本资料仅供技术参考。
+{{</alert >}}
+
 如果你在玩树莓派加 OpenWrt，或者想帮实验室的设备升级 4G 网络，那你一定听过 Sierra EM7455 这张神卡！它是 Sierra Wireless 推出的一款 LTE-A Cat 6 M.2 蜂窝模块，搭载 Qualcomm MDM9230 芯片，最高支持 300 Mbps 的下载和 50 Mbps 的上传速度，还内置了 GNSS 定位功能，工作温度甚至能扛住 -40°C 到 +85°C 的极端环境。
 
 这篇文章由榆合科技（Yupitek）整理，带大家看懂这张 M.2 B-Key 封装的 4G LTE-Advanced Cat 6 模块为什么这么火，以及怎么在 Linux 系统下把驱动和配置搞定。

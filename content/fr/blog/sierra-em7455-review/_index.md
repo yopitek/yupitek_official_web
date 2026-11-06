@@ -24,6 +24,10 @@ faq:
 
 # Test complet du Sierra EM7455 : pourquoi c'est la carte Sierra préférée des makers et des labos
 
+{{< alert >}}
+Yupitek fournit des informations produits, des canaux d'approvisionnement et des contenus techniques sur Sierra Wireless / Semtech ; Yupitek n'est pas un distributeur agréé officiel, ces informations sont fournies à titre de référence technique uniquement.
+{{</alert >}}
+
 Si vous avez déjà bidouillé un Raspberry Pi avec OpenWrt, ou voulu ajouter de la 4G à du matériel de laboratoire, vous avez forcément entendu parler de la carte légendaire Sierra EM7455 ! C'est un module cellulaire LTE-A Cat 6 au format M.2 signé Sierra Wireless, animé par le chipset Qualcomm MDM9230 : jusqu'à 300 Mbit/s en téléchargement et 50 Mbit/s en envoi, un GNSS intégré, et une plage de température de fonctionnement qui encaisse même les environnements extrêmes de -40°C à +85°C.
 
 Cet article, compilé par Yupitek, vous explique pourquoi ce module 4G LTE-Advanced Cat 6 au format M.2 B-Key est si populaire, et comment installer le pilote et la configuration sous Linux.

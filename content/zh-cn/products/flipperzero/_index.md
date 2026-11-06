@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero 多功能无线安全研究设备"
-description: "榆阖科技代理 Flipper Zero，支持 Sub-GHz、NFC、RFID、红外线、蓝牙等无线协议研究，适合安全教育与合法研究。"
+description: "榆阖科技提供 Flipper Zero 产品与技术咨询，支持 Sub-GHz、NFC、RFID、红外线、蓝牙等无线协议研究，适合安全教育与合法研究。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

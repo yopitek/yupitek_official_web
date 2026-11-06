@@ -1,6 +1,6 @@
 ---
 title: "Sierra Wireless 蜂窩模組系列"
-description: "代理 Sierra Wireless 全系列工業級蜂窩模組：EM7430、EM7455、EM7511、EM7565、EM9190、EM9191、MC7304、MC7350、MC7354、MC7455。適用於 IoT、M2M、路由器和行動寬頻應用。"
+description: "Sierra Wireless 全系列工業級蜂窩模組產品資訊與技術諮詢：EM7430、EM7455、EM7511、EM7565、EM9190、EM9191、MC7304、MC7350、MC7354、MC7455。適用於 IoT、M2M、路由器和行動寬頻應用。"
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showChildPages: true
 featureimage: "/images/products/sierra/sierra_banner.png"
 ---
 
-Sierra Wireless 是工業蜂窩模組領域的全球領導品牌，提供從 LTE Cat 4 到 5G NR 的完整產品線。Yupitek 代理 Sierra Wireless 全系列蜂窩模組，適用於物聯網 (IoT) 終端、工業路由器、閘道器、車聯網及行動寬頻設備，支援全球各大電信頻段。
+Sierra Wireless 是工業蜂窩模組領域的全球領導品牌，提供從 LTE Cat 4 到 5G NR 的完整產品線。Yupitek 提供 Sierra Wireless 全系列蜂窩模組的產品資訊與技術諮詢，模組適用於物聯網 (IoT) 終端、工業路由器、閘道器、車聯網及行動寬頻設備，支援全球各大電信頻段。
 
 ---
 
@@ -68,5 +68,7 @@ Sierra Wireless 是工業蜂窩模組領域的全球領導品牌，提供從 LTE
 ---
 
 {{< alert >}}
+Yupitek 提供 Sierra Wireless / Semtech 相關產品資訊、通路供應與技術內容；非官方授權經銷商，本資料僅供技術參考。
+
 需要詢問產品報價？請來信[與我們聯絡](/zh-tw/contact/)
 {{</alert >}}

@@ -1,6 +1,6 @@
 ---
 title: "Yopitek Ltd"
-description: "Distribución tecnológica profesional e integración de proyección inmersiva. Distribuidor autorizado en Taiwán de ALFA Network, HAK5 y Flipper Zero. Servicios de integración de sistemas de proyección y edge blending."
+description: "Distribución tecnológica profesional e integración de proyección inmersiva. Distribuidor autorizado en Taiwán de ALFA Network y HAK5; también ofrecemos productos Flipper Zero y asesoría técnica. Servicios de integración de sistemas de proyección y edge blending."
 date: 2026-03-12
 draft: false
 showHero: true

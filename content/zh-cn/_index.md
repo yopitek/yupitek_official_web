@@ -1,6 +1,6 @@
 ---
 title: "榆阖科技有限公司"
-description: "专业科技分销与空间沉浸体验整合商。ALFA Network、HAK5、Flipper Zero 台湾授权经销。无线投影拼接系统整合服务。"
+description: "专业科技分销与空间沉浸体验整合商。ALFA Network、HAK5 台湾授权经销；Flipper Zero 提供产品与技术咨询。无线投影拼接系统整合服务。"
 date: 2026-03-12
 draft: false
 showHero: true

@@ -8,7 +8,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "sierra-wireless-taiwan-purchasing-guide"
-tags: ["Sierra Wireless", "Taiwan distributor", "purchasing guide", "genuine verification", "IMEI", "FCC ID", "RFQ", "LTE"]
+tags: ["Sierra Wireless", "Taiwan sourcing", "purchasing guide", "genuine verification", "IMEI", "FCC ID", "RFQ", "LTE"]
 categories: ["Technical"]
 author: "benny-lai"
 lastmod: 2026-07-31

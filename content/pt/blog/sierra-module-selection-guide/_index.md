@@ -24,6 +24,10 @@ faq:
 
 # Guia completo de seleção de módulos celulares Sierra Wireless: de LTE Cat 4 a 5G mmWave
 
+{{< alert >}}
+A Yupitek oferece informações de produtos, canais de fornecimento e conteúdo técnico da Sierra Wireless / Semtech; não somos distribuidor autorizado oficial e estas informações são apenas para referência técnica.
+{{</alert >}}
+
 Seja você um estudante trabalhando em um projeto de IoT ou um engenheiro desenvolvendo equipamentos de rede no laboratório, qual é o maior medo na hora de comprar um módulo de comunicação? Exatamente: «passar horas olhando a folha de especificações, não distinguir os modelos e, no final, comprar o formato errado que nem entra na máquina».
 
 Este artigo explica de uma vez os dez módulos da Sierra Wireless (hoje pertencente à Semtech), tanto os atuais quanto os de longa duração, guiando você do LTE Cat 4 básico até o 5G mmWave. Todos os módulos da série EM mencionados aqui usam formato M.2, enquanto a série MC usa mPCIe.

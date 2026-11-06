@@ -24,6 +24,10 @@ faq:
 
 # Análise completa do Sierra EM7455: por que é a placa Sierra favorita de makers e laboratórios
 
+{{< alert >}}
+A Yupitek oferece informações de produtos, canais de fornecimento e conteúdo técnico da Sierra Wireless / Semtech; não somos distribuidor autorizado oficial e estas informações são apenas para referência técnica.
+{{</alert >}}
+
 Se você usa Raspberry Pi com OpenWrt, ou quer atualizar os equipamentos do laboratório para conectividade 4G, com certeza já ouviu falar da lendária placa Sierra EM7455. É um módulo celular LTE-A Cat 6 em formato M.2 da Sierra Wireless, equipado com o chipset Qualcomm MDM9230, que suporta até 300 Mbps de download e 50 Mbps de upload, além de incluir posicionamento GNSS integrado. A temperatura de operação aguenta até ambientes extremos de -40°C a +85°C.
 
 Este artigo foi compilado pela Yupitek para explicar por que este módulo 4G LTE-Advanced Cat 6 em formato M.2 B-Key é tão popular, e como deixar o driver e a configuração prontos em sistemas Linux.

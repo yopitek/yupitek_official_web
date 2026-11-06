@@ -1,6 +1,6 @@
 ---
 title: "产品总览"
-description: "榆阖科技代理品牌：ALFA Network、HAK5、Flipper Zero、Ubiquiti、显卡、SDRLAB、ACR，提供专业 IT 设备采购咨询。"
+description: "榆阖科技代理品牌：ALFA Network、HAK5、Ubiquiti、显卡、SDRLAB、ACR；另提供 Flipper Zero 产品与技术咨询，以及专业 IT 设备采购咨询。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

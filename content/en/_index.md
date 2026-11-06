@@ -1,6 +1,6 @@
 ---
 title: "Yopitek Ltd"
-description: "Professional technology distribution and immersive projection integration. Authorized Taiwan distributor for ALFA Network, HAK5, and Flipper Zero. Wireless projection and edge-blending system integration services."
+description: "Professional technology distribution and immersive projection integration. Authorized Taiwan distributor for ALFA Network and HAK5; Flipper Zero products and technical advice also available. Wireless projection and edge-blending system integration services."
 date: 2026-03-12
 draft: false
 showHero: true

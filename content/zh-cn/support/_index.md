@@ -1,6 +1,6 @@
 ---
 title: "技术支持与驱动下载"
-description: "榆閤科技代理品牌驱动程序下载中心。ALFA Network、HAK5、Flipper Zero、Ubiquiti 官方驱动与固件下载链接。"
+description: "榆閤科技产品驱动程序下载中心。ALFA Network、HAK5、Flipper Zero、Ubiquiti 官方驱动与固件下载链接。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

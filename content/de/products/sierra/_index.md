@@ -1,6 +1,6 @@
 ---
 title: "Sierra Wireless Mobilfunkmodul Serie"
-description: "Autorisierter Distributor von Sierra Wireless Industrie-Mobilfunkmodulen: EM7430, EM7455, EM7511, EM7565, EM9190, EM9191, MC7304, MC7350, MC7354, MC7455. Ideal für IoT, M2M, Router und mobile Breitbandanwendungen."
+description: "Produktinformationen und technische Beratung zu Sierra Wireless Industrie-Mobilfunkmodulen: EM7430, EM7455, EM7511, EM7565, EM9190, EM9191, MC7304, MC7350, MC7354, MC7455. Ideal für IoT, M2M, Router und mobile Breitbandanwendungen."
 date: 2026-07-29
 draft: false
 showBreadcrumbs: true
@@ -68,5 +68,7 @@ Sierra Wireless ist ein weltweit führender Anbieter von industriellen Mobilfunk
 ---
 
 {{< alert >}}
+Yupitek bietet Produktinformationen, Bezugskanäle und technische Inhalte zu Sierra Wireless / Semtech; kein offiziell autorisierter Distributor, nur zur technischen Referenz.
+
 Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/)
 {{</alert >}}

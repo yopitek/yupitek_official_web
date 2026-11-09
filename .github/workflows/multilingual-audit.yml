@@ -11,7 +11,7 @@ on:
 
 jobs:
   audit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
 
@@ -66,7 +66,7 @@ jobs:
           retention-days: 30
 
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: audit
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     concurrency:

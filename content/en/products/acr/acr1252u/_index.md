@@ -4,6 +4,7 @@ description: "ACS ACR1252U NFC Forum certified USB reader with reader/writer, ca
 seo_title: "ACR1252U | ACS Taiwan | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1252U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

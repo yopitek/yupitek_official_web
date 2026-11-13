@@ -3,6 +3,7 @@ title: "WiFi Devboard für Flipper Zero — Offizielles Wi-Fi Erweiterungsmodul"
 description: "Offizielles Flipper Zero Wi-Fi Entwicklungsboard basierend auf ESP32-S2, mit 2,4 GHz Wi-Fi-Fähigkeit. Kompatibel mit Marauder und anderen Sicherheitstest-Firmware-Versionen."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/wifi-devboard.png"
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "Flipper Zero Expansion", "Wi-Fi Security"]

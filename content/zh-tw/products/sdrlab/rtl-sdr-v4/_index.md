@@ -4,6 +4,7 @@ seo_title: "RTL-SDR Blog V4 SDRLab 台灣 | Yopitek"
 description: "RTL-SDR Blog V4 USB 接收器，500 kHz–1.766 GHz、R828D 調諧器、內建 HF 上轉換器、1 PPM TCXO，可向 Yopitek 詢價。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/rtl-sdr-v4.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "無線電接收", "USB", "GNU Radio"]

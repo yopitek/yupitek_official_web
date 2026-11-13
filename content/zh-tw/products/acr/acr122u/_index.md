@@ -4,6 +4,7 @@ description: "ACS ACR122U USB NFC 讀卡機，13.56 MHz，支援 ISO 14443 A/B�
 seo_title: "ACR122U ACS 台灣 | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

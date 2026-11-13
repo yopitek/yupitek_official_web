@@ -3,6 +3,7 @@ title: "OpenSourceSDRLab RTL-SDR Blog V4 — Receptor SDR de Nivel de Entrada"
 description: "RTL-SDR Blog RTL SDR V4, receptor SDR de banda ancha 500kHz–1.766GHz, TCXO de 1PPM, convertidor HF ascendente integrado, la primera opción para iniciarse en investigación RF."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/rtl-sdr-v4.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "Recepción de radio", "USB", "GNU Radio"]

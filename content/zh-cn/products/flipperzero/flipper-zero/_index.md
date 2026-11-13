@@ -3,6 +3,7 @@ title: "Flipper Zero — 多功能无线安全研究工具"
 description: "Flipper Zero，支持 Sub-GHz、NFC、RFID 125kHz、红外线、iButton、GPIO、蓝牙 5.4，开源固件，安全研究教育首选。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/flipper-zero.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["flipperzero"]

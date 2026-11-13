@@ -3,6 +3,7 @@ title: "Flipper Zero — Multifunktionales Wireless-Sicherheitsforschungstool"
 description: "Flipper Zero unterstützt Sub-GHz, NFC, RFID 125kHz, Infrarot, iButton, GPIO und Bluetooth 5.4 mit Open-Source-Firmware — die erste Wahl für Sicherheitsforschung und -ausbildung."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/flipper-zero.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["flipperzero"]

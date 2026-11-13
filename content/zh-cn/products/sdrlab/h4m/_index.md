@@ -3,6 +3,7 @@ title: "SDRLab H4M — 便携型 HackRF + PortaPack 组合"
 description: "SDRLab H4M，HackRF One + PortaPack H4M 便携型 SDR 组合，1MHz–6GHz，20MHz 带宽，Mayhem 固件，USB-C 快充，内置扬声器麦克风。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/h4m.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "便携型 SDR"]

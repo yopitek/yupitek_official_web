@@ -3,6 +3,7 @@ title: "Video Game Module für Flipper Zero — Video-Erweiterungsmodul"
 description: "Das offizielle Flipper Zero Video Game Module, angetrieben von RP2040, fügt Ihrem Flipper Zero Videoausgabe-Fähigkeit und Spielfunktionen hinzu."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/video-game-module.png"
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero Expansion", "RP2040", "Video Output", "Game Module"]

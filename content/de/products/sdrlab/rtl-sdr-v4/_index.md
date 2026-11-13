@@ -3,6 +3,7 @@ title: "OpenSourceSDRLab RTL-SDR Blog V4 — Einsteiger-SDR-Empfänger"
 description: "RTL-SDR Blog RTL SDR V4, 500kHz–1,766GHz Breitband-SDR-Empfänger, 1PPM TCXO, eingebauter HF-Aufwärtskonverter — die erste Wahl für den Einstieg in die RF-Forschung."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/rtl-sdr-v4.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "Radio Reception", "USB", "GNU Radio"]

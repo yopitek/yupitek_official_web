@@ -3,6 +3,7 @@ title: "Flipper Zero — 多機能ワイヤレスセキュリティ研究ツー�
 description: "Flipper Zero は Sub-GHz、NFC、RFID 125kHz、赤外線、iButton、GPIO、Bluetooth 5.4 に対応したオープンソースファームウェア搭載のセキュリティ研究・教育向けツールです。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/flipper-zero.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["flipperzero"]

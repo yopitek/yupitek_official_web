@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero WiFi متعددة اللوحات — لوحة توس
 description: "لوحة WiFi متعددة لـ Flipper Zero تجمع وحدات NRF24 وGPIO وCC1101 وGPS ووحدة استشعار بيئي كملحق لوحة تطوير."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["توسعة Flipper Zero", "لوحة تطوير WiFi", "NRF24", "CC1101", "GPS"]

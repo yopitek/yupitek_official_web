@@ -3,6 +3,7 @@ title: "OpenSourceSDRLab RTL-SDR Blog V4 — جهاز استقبال SDR للم�
 description: "RTL-SDR Blog RTL SDR V4، جهاز استقبال SDR عريض النطاق من 500kHz إلى 1.766GHz، دقة تردد 1PPM TCXO، محوّل HF مدمج، الخيار المثالي للبدء في أبحاث RF."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/rtl-sdr-v4.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "استقبال لاسلكي", "USB", "GNU Radio"]

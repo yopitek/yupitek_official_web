@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero 5G 拡張ボード — デュアルバンド Wi-Fi �
 description: "Flipper Zero 5G 拡張ボード、ESP32-C5 デュアルバンド（2.4+5GHz）Wi-Fi、Deauth ファームウェアプリインストール、GPIO 給電、Momentum/Unleashed 互換。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-5g.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 拡張", "5GHz", "Wi-Fi", "Deauth", "セキュリティ研究"]

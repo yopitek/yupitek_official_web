@@ -4,6 +4,7 @@ seo_title: "RTL-SDR Blog V4 | SDRLab Taiwan | Yopitek"
 description: "SDRLab RTL-SDR Blog V4 USB SDR receiver: 500 kHz–1.766 GHz, R828D tuner, built-in HF upconverter, 1 PPM TCXO, bias tee. Available in Taiwan from Yopitek."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/rtl-sdr-v4.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "Radio Reception", "USB", "GNU Radio"]

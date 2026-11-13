@@ -3,6 +3,7 @@ title: "Video Game Module for Flipper Zero — وحدة توسعة الألعا�
 description: "وحدة ألعاب الفيديو الرسمية لـ Flipper Zero، مدعومة بـ RP2040، تضيف قدرة الإخراج المرئي وميزات الألعاب إلى Flipper Zero."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/video-game-module.png"
 dir: rtl
 showBreadcrumbs: true
 brands: ["flipperzero"]

@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero 以太网络测试模块"
 description: "Flipper Zero 有线以太网测试扩充模块，耐温 105°C，洞洞板 DIY 设计，支持有线网络连通性诊断与 DHCP 验证。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-ethernet.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 扩充", "以太网", "网络测试", "有线网络"]

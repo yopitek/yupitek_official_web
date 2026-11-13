@@ -3,6 +3,7 @@ title: "OpenSourceSDRLab RTL-SDR Blog V4 — Начальный SDR-приёмн
 description: "RTL-SDR Blog RTL SDR V4, широкополосный SDR-приёмник 500 кГц–1,766 ГГц, TCXO с точностью 1 PPM, встроенный HF-апконвертер — лучший выбор для начинающих исследователей RF."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/rtl-sdr-v4.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "Приём радиосигналов", "USB", "GNU Radio"]

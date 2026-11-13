@@ -3,6 +3,7 @@ title: "WiFi Devboard para Flipper Zero — Módulo Wi-Fi Oficial"
 description: "Placa de desenvolvimento Wi-Fi oficial do Flipper Zero, baseada no ESP32-S2, suporte a Wi-Fi 2.4GHz, compatível com firmware de testes de segurança como Marauder."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/wifi-devboard.png"
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "Expansão Flipper Zero", "Segurança Wi-Fi"]

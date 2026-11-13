@@ -3,6 +3,7 @@ title: "ACS ACR1252U — Lector NFC USB III (Certificado NFC Forum)"
 description: "ACS ACR1252U, lector NFC USB certificado por NFC Forum, con modos lector/escritor, emulación de tarjeta y peer-to-peer, ideal para desarrollo de aplicaciones NFC y despliegue empresarial."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1252U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

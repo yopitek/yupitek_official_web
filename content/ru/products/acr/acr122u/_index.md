@@ -3,6 +3,7 @@ title: "ACS ACR122U — USB-считыватель NFC"
 description: "ACS ACR122U, USB NFC считыватель, поддерживает ISO 14443 A/B, MIFARE, FeliCa, 13.56МГц, для NFC-исследований и разработки приложений."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

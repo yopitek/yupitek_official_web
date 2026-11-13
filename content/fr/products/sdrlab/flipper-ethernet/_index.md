@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero Module de Test Ethernet"
 description: "Module d'extension de test Ethernet filaire pour Flipper Zero, résistant à 105°C, conception perfboard DIY — diagnostiquer la connectivité réseau filaire et valider DHCP sur le terrain."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-ethernet.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "Ethernet", "Network Testing", "Wired Network"]

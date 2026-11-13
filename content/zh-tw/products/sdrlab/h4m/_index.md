@@ -4,6 +4,7 @@ seo_title: "H4M SDRLab 台灣 | Yopitek"
 description: "SDRLab H4M 攜帶型 SDR 組合，HackRF One（R10C）+ PortaPack H4M，1 MHz–6 GHz、20 MHz 頻寬，可向 Yopitek 詢價。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/h4m.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "攜帶型 SDR"]

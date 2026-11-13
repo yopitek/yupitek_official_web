@@ -3,6 +3,7 @@ title: "SDRLab Módulo de Prueba Ethernet para Flipper Zero"
 description: "Módulo de expansión de prueba Ethernet cableada para Flipper Zero, resistente hasta 105°C, diseño DIY con placa perforada, compatible con diagnóstico de conectividad de red cableada y verificación DHCP."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-ethernet.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Expansión Flipper Zero", "Ethernet", "Prueba de red", "Red cableada"]

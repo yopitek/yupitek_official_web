@@ -3,6 +3,7 @@ title: "OpenSourceSDRLab RTL-SDR Blog V4 — 入門SDRレシーバー"
 description: "RTL-SDR Blog RTL SDR V4、500kHz〜1.766GHz広帯域SDRレシーバー、1PPM TCXO、内蔵HFアップコンバーター、RF研究入門に最適。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/rtl-sdr-v4.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "無線受信", "USB", "GNU Radio"]

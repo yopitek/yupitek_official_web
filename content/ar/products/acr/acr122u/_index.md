@@ -3,6 +3,7 @@ title: "ACS ACR122U — قارئ بطاقات NFC عبر USB"
 description: "ACS ACR122U، قارئ بطاقات NFC عبر USB، يدعم ISO 14443 A/B وMIFARE وFeliCa، بتردد 13.56MHz، مناسب لأبحاث NFC وتطوير التطبيقات."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

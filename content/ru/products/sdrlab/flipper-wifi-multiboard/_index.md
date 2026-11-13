@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero WiFi Мультиплата — многомодул
 description: "Flipper Zero WiFi Мультиплата — аксессуар-плата для разработки с модулями NRF24, GPIO, CC1101, GPS и датчиками окружающей среды."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Расширение Flipper Zero", "Плата разработки WiFi", "NRF24", "CC1101", "GPS"]

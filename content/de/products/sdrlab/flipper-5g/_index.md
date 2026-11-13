@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero 5G Add-On Board — Dual-Band WLAN Sicherheitsforsch
 description: "Flipper Zero 5G Add-On Board, ESP32-C5 Dual-Band (2,4+5GHz) WLAN, vorinstallierte Deauth-Firmware, GPIO-gespeist, kompatibel mit Momentum/Unleashed."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-5g.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "5GHz", "Wi-Fi", "Deauth", "Security Research"]

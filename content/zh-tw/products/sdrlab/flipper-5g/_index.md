@@ -4,6 +4,7 @@ seo_title: "Flipper Zero 5G 擴充板 SDRLab 台灣 | Yopitek"
 description: "Flipper Zero 5G 擴充板，ESP32-C5 雙頻 2.4/5 GHz Wi-Fi、433 MHz 模組、主動 GPS、2.8 吋螢幕，可向 Yopitek 詢價。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-5g.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 擴充", "5GHz", "Wi-Fi", "Deauth", "資安研究"]

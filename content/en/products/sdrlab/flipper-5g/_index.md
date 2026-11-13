@@ -4,6 +4,7 @@ seo_title: "Flipper Zero 5G Add-On Board | SDRLab Taiwan | Yopitek"
 description: "SDRLab Flipper Zero 5G add-on board: ESP32-C5 dual-band 2.4/5 GHz Wi-Fi, 433 MHz module, active GPS, 2.8-inch TFT. Available in Taiwan from Yopitek."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-5g.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "5GHz", "Wi-Fi", "Deauth", "Security Research"]

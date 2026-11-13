@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero イーサネットテストモジュール"
 description: "Flipper Zero 有線イーサネットテスト拡張モジュール、耐熱 105°C、ユニバーサル基板 DIY 設計、有線ネットワーク接続診断および DHCP 検証に対応。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-ethernet.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 拡張", "イーサネット", "ネットワークテスト", "有線ネットワーク"]

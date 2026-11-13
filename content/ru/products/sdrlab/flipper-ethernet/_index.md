@@ -2,6 +2,7 @@
 title: "SDRLab Flipper Zero Модуль тестирования Ethernet"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-ethernet.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Расширение Flipper Zero", "Ethernet", "Тестирование сети", "Проводная сеть"]

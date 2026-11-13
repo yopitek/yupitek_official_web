@@ -4,6 +4,7 @@ seo_title: "H4M | SDRLab Taiwan | Yopitek"
 description: "SDRLab H4M portable SDR bundle: HackRF One (R10C) + PortaPack H4M, 1 MHz–6 GHz, 20 MHz bandwidth, Mayhem firmware. Available in Taiwan from Yopitek."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/h4m.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Portable SDR"]

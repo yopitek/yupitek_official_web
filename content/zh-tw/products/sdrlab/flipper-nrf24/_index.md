@@ -4,6 +4,7 @@ seo_title: "Flipper Zero NRF24 模組 SDRLab 台灣 | Yopitek"
 description: "Flipper Zero NRF24 模組，nRF24L01 系列晶片、2.4GHz，支援 NRF Sniffer 與 MouseJacker 研究，可向 Yopitek 詢價。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-nrf24.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 擴充", "NRF24", "2.4GHz", "MouseJacker", "資安研究"]

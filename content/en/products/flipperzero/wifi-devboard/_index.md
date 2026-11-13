@@ -4,6 +4,7 @@ description: "Official WiFi Devboard for Flipper Zero, an ESP32-S2 based expansi
 seo_title: "WiFi Devboard | Flipper Taiwan | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/wifi-devboard.png"
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "Flipper Zero Expansion", "Wi-Fi Security"]

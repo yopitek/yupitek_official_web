@@ -4,6 +4,7 @@ seo_title: "Flipper Zero Ethernet Test Module | SDRLab Taiwan | Yopitek"
 description: "SDRLab Flipper Zero Ethernet test module for wired network checks: DHCP verification, ping latency, custom MAC, 105°C rated. Available in Taiwan from Yopitek."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-ethernet.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "Ethernet", "Network Testing", "Wired Network"]

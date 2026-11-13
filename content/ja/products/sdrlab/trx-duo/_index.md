@@ -3,6 +3,7 @@ title: "SDRLab TRX-duo — デュアルチャンネル 16-bit ZYNQ SDR プラッ
 description: "SDRLab TRX-duo、デュアルチャンネル 16-bit ADC/DAC SDR プラットフォーム、Xilinx Zynq 7010 SoC、Red Pitaya 互換、高度な HF 無線通信研究に最適。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/trx-duo.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]

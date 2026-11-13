@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero وحدة اختبار الإيثرنت"
 description: "وحدة اختبار الإيثرنت السلكي لـ Flipper Zero، متحملة لدرجات حرارة حتى 105°C، تصميم لوحة مثقّبة DIY، تدعم تشخيص الاتصال السلكي والتحقق من DHCP."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-ethernet.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["توسعة Flipper Zero", "إيثرنت", "اختبار الشبكة", "شبكة سلكية"]

@@ -3,6 +3,7 @@ title: "SDRLab H4M — مجموعة HackRF + PortaPack المحمولة"
 description: "SDRLab H4M، مجموعة SDR محمولة HackRF One + PortaPack H4M، من 1MHz إلى 6GHz، عرض نطاق 20MHz، برنامج Mayhem، شحن سريع USB-C، مكبر صوت وميكروفون مدمجان."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/h4m.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "SDR محمول"]

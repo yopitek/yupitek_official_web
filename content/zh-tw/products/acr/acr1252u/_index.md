@@ -4,6 +4,7 @@ description: "ACS ACR1252U NFC Forum 認證 USB 讀卡機，支援讀寫器、�
 seo_title: "ACR1252U ACS 台灣 | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1252U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

@@ -4,6 +4,7 @@ description: "Flipper Zero open-source multi-protocol tool with Bluetooth 5.4, 2
 seo_title: "Flipper Zero | Flipper Taiwan | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/flipper-zero.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["flipperzero"]

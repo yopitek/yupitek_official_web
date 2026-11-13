@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero Tarjeta de Expansión 5G — Módulo de Seguridad Wi
 description: "Tarjeta de expansión Flipper Zero 5G, ESP32-C5 Wi-Fi doble banda (2.4+5GHz), firmware Deauth preinstalado, alimentado por GPIO, compatible con Momentum/Unleashed."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-5g.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Expansión Flipper Zero", "5GHz", "Wi-Fi", "Deauth", "Investigación de seguridad"]

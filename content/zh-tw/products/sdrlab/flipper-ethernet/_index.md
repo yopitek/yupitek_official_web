@@ -4,6 +4,7 @@ seo_title: "Flipper Zero 乙太網路測試模組 SDRLab 台灣 | Yopitek"
 description: "SDRLab Flipper Zero 乙太網路測試模組，可驗證 DHCP、ping 延遲、自訂 MAC，耐溫 105°C，可向 Yopitek 詢價。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-ethernet.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 擴充", "乙太網路", "網路測試", "有線網路"]

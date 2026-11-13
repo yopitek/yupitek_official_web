@@ -3,6 +3,7 @@ title: "Étui en Silicone pour Flipper Zero — Étui de Protection Officiel en 
 description: "L'étui de protection officiel en silicone pour Flipper Zero offre une couverture complète, un ressenti de bouton agréable et une protection quotidienne contre les chutes et les rayures."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/silicone-case.png"
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero Accessories", "Protective Case"]

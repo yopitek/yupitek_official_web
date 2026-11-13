@@ -3,6 +3,7 @@ title: "ACS ACR122U — USB NFC リーダー"
 description: "ACS ACR122U、USB NFC カードリーダー。ISO 14443 A/B、MIFARE、FeliCa 対応、13.56MHz。NFC 研究・アプリケーション開発に最適です。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

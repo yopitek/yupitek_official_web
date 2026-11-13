@@ -4,6 +4,7 @@ description: "ACS ACR122U USB NFC reader for ISO 14443 A/B, MIFARE and FeliCa at
 seo_title: "ACR122U | ACS Taiwan | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

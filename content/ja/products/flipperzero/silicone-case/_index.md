@@ -3,6 +3,7 @@ title: "Silicone Case for Flipper Zero — 公式シリコン保護ケース"
 description: "Flipper Zero 公式シリコン保護ケースは、本体を完全に保護し、快適なボタン操作感と日常的な傷・衝撃からの保護を提供します。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/silicone-case.png"
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero アクセサリー", "保護ケース"]

@@ -3,6 +3,7 @@ title: "Flipper Zero — Многофункциональный инструме
 description: "Flipper Zero поддерживает Sub-GHz, NFC, RFID 125kHz, инфракрасный порт, iButton, GPIO и Bluetooth 5.4 с открытым исходным кодом прошивки — лучший выбор для исследований безопасности и обучения."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/flipper-zero.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["flipperzero"]

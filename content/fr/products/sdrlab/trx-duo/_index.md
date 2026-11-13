@@ -3,6 +3,7 @@ title: "SDRLab TRX-duo — Plateforme SDR ZYNQ 16 bits Double Canal"
 description: "SDRLab TRX-duo, plateforme SDR ADC/DAC 16 bits double canal, Xilinx Zynq 7010 SoC, compatible Red Pitaya — conçu pour la recherche radio HF avancée."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/trx-duo.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]

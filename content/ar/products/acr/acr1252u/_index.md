@@ -3,6 +3,7 @@ title: "ACS ACR1252U — قارئ NFC USB III معتمد من NFC Forum"
 description: "ACS ACR1252U، قارئ USB NFC حاصل على اعتماد NFC Forum، يدعم أوضاع قارئ/كاتب ومحاكاة البطاقة ونظير إلى نظير، مناسب لتطوير تطبيقات NFC والنشر المؤسسي."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1252U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

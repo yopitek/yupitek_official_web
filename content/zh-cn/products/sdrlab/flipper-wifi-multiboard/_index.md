@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero WiFi 多板 — 多模块扩展板"
 description: "Flipper Zero WiFi 多板，整合 NRF24、GPIO／CC1101、GPS 与环境传感模块的开发板配件。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 扩展", "WiFi 开发板", "NRF24", "CC1101", "GPS"]

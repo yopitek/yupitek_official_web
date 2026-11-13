@@ -4,6 +4,7 @@ description: "Flipper Zero 官方矽膠保護殼，完整包覆主機、按鍵�
 seo_title: "Silicone Case Flipper 台灣 | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/silicone-case.png"
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero 配件", "保護殼"]

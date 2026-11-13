@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero 5G لوحة التوسعة — وحدة أبحاث �
 description: "لوحة توسعة Flipper Zero 5G، ESP32-C5 Wi-Fi ثنائي النطاق (2.4+5GHz)، برنامج Deauth مُثبَّت مسبقاً، GPIO، متوافق مع Momentum/Unleashed."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-5g.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["توسعة Flipper Zero", "5GHz", "Wi-Fi", "Deauth", "أبحاث الأمن"]

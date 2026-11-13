@@ -2,6 +2,7 @@
 title: "SDRLab Flipper Zero Модуль NRF24 — Модуль исследования беспроводных HID-устройств 2,4 ГГц"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-nrf24.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Расширение Flipper Zero", "NRF24", "2.4GHz", "MouseJacker", "Исследование безопасности"]

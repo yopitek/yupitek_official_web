@@ -4,6 +4,7 @@ seo_title: "TRX-duo SDRLab 台灣 | Yopitek"
 description: "SDRLab TRX-duo 雙通道 16-bit ADC/DAC SDR 平台，Zynq 7010、125 MS/s，相容 Red Pitaya，可向 Yopitek 詢價。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/trx-duo.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]

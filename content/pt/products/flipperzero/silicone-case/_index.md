@@ -3,6 +3,7 @@ title: "Silicone Case for Flipper Zero — Capa de Silicone Protetora Oficial"
 description: "A capa de silicone protetora oficial do Flipper Zero oferece cobertura total do dispositivo, sensação confortável nos botões e proteção diária contra arranhões e impactos."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/silicone-case.png"
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Acessórios Flipper Zero", "Capa Protetora"]

@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero 5G Add-On Board — Module de Recherche Wi-Fi Double
 description: "Carte d'extension Flipper Zero 5G, Wi-Fi double bande ESP32-C5 (2,4+5GHz), firmware Deauth pré-flashé, alimenté par GPIO, compatible Momentum/Unleashed."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-5g.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "5GHz", "Wi-Fi", "Deauth", "Security Research"]

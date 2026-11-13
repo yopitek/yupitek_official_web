@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero 5G 扩充板 — 双频 Wi-Fi 安全研究模组"
 description: "Flipper Zero 5G 扩充板，ESP32-C5 双频（2.4+5GHz）Wi-Fi，预烧 Deauth 固件，GPIO 供电，兼容 Momentum/Unleashed。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-5g.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 扩充", "5GHz", "Wi-Fi", "Deauth", "信息安全研究"]

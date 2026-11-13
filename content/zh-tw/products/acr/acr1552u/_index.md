@@ -4,6 +4,7 @@ description: "ACS ACR1552U 第四代 USB NFC 讀卡機，通訊速度最高 848 
 seo_title: "ACR1552U ACS 台灣 | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1552U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

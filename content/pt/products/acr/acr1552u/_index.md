@@ -3,6 +3,7 @@ title: "ACS ACR1552U — Leitor NFC USB IV"
 description: "ACS ACR1552U, Leitor NFC USB de quarta geração, suporte aprimorado a múltiplos protocolos, ideal para controle de acesso empresarial, assinatura eletrônica e autenticação de identidade."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1552U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

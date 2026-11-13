@@ -4,6 +4,7 @@ seo_title: "Flipper Zero WiFi 多板 SDRLab 台灣 | Yopitek"
 description: "SDRLab Flipper Zero WiFi 多板，整合 NRF24、GPIO／CC1101、GPS 與環境感測模組的開發板配件，可向 Yopitek 詢價。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 擴充", "WiFi 開發板", "NRF24", "CC1101", "GPS"]

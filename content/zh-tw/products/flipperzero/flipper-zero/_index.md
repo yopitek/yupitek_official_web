@@ -4,6 +4,7 @@ description: "Flipper Zero 開源多協定工具，具備藍牙 5.4、2100 mAh �
 seo_title: "Flipper Zero 台灣 | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/flipper-zero.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["flipperzero"]

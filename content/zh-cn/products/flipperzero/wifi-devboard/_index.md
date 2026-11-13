@@ -3,6 +3,7 @@ title: "WiFi Devboard for Flipper Zero — 官方 Wi-Fi 扩充模块"
 description: "Flipper Zero 官方 Wi-Fi 开发板，基于 ESP32-S2，支持 2.4GHz Wi-Fi 功能扩充，适用 Marauder 等信息安全测试固件。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/wifi-devboard.png"
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "Flipper Zero 扩充", "Wi-Fi 安全"]

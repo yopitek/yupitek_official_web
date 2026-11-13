@@ -3,6 +3,7 @@ title: "SDRLab H4M — Tragbares HackRF + PortaPack Bundle"
 description: "SDRLab H4M, HackRF One + PortaPack H4M tragbares SDR-Bundle, 1MHz–6GHz, 20MHz Bandbreite, Mayhem Firmware, USB-C Schnellladung, eingebauter Lautsprecher und Mikrofon."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/h4m.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Portable SDR"]

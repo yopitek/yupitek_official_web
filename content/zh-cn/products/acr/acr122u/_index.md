@@ -3,6 +3,7 @@ title: "ACS ACR122U — USB NFC 读卡机"
 description: "ACS ACR122U，USB NFC 读卡机，支持 ISO 14443 A/B、MIFARE、FeliCa，13.56MHz，适合 NFC 研究与应用开发。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

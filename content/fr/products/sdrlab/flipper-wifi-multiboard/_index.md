@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero WiFi Multi-Board — Carte d'Extension Multimodule"
 description: "Flipper Zero WiFi Multi-Board, accessoire de carte de développement avec modules NRF24, GPIO, CC1101, GPS et capteur environnemental."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "Carte de développement WiFi", "NRF24", "CC1101", "GPS"]

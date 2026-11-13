@@ -3,6 +3,7 @@ title: "Flipper Zero — أداة بحث أمنية لاسلكية متعددة 
 description: "Flipper Zero يدعم Sub-GHz وNFC وRFID 125kHz والأشعة تحت الحمراء وiButton وGPIO وBluetooth 5.4 مع برنامج ثابت مفتوح المصدر — الخيار الأمثل لأبحاث الأمن والتعليم."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/flipper-zero.png"
 dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true

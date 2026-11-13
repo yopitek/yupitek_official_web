@@ -4,6 +4,7 @@ description: "Official Silicone Case for Flipper Zero with full-body coverage, r
 seo_title: "Silicone Case | Flipper Taiwan | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/silicone-case.png"
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero Accessories", "Protective Case"]

@@ -4,6 +4,7 @@ seo_title: "Flipper Zero NRF24 Module | SDRLab Taiwan | Yopitek"
 description: "SDRLab Flipper Zero NRF24 module with nRF24L01-series chip, 2.4 GHz, NRF Sniffer and MouseJacker research, antenna included. Available in Taiwan from Yopitek."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-nrf24.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "NRF24", "2.4GHz", "MouseJacker", "Security Research"]

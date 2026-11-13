@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero WiFi Multitarjeta — Tarjeta de Expansión Multimó
 description: "Flipper Zero WiFi Multitarjeta, accesorio de placa de desarrollo con módulos NRF24, GPIO, CC1101, GPS y sensor ambiental."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Expansión Flipper Zero", "Placa de desarrollo WiFi", "NRF24", "CC1101", "GPS"]

@@ -2,6 +2,7 @@
 title: "SDRLab Flipper Zero Módulo NRF24 — Módulo de Pesquisa HID Sem Fio 2,4GHz"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-nrf24.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Expansão Flipper Zero", "NRF24", "2.4GHz", "MouseJacker", "Pesquisa de Segurança"]

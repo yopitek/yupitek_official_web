@@ -4,6 +4,7 @@ seo_title: "Flipper Zero WiFi Multiboard | SDRLab Taiwan | Yopitek"
 description: "SDRLab Flipper Zero WiFi Multiboard, a development board accessory with NRF24, CC1101, GPS and environmental sensor modules. Available in Taiwan from Yopitek."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "WiFi DevBoard", "NRF24", "CC1101", "GPS"]

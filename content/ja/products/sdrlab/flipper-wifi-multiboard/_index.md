@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero WiFi マルチボード — マルチモジュール
 description: "Flipper Zero WiFi マルチボード。NRF24、GPIO／CC1101、GPS、環境センサーモジュールを備えた開発ボードアクセサリー。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 拡張", "WiFi 開発ボード", "NRF24", "CC1101", "GPS"]

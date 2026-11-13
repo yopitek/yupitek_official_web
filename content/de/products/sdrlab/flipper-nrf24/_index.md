@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero NRF24 Modul — 2,4-GHz-Funk-HID-Forschungsmodul"
 description: "Flipper Zero NRF24 Modul, nRF24L01-Chip, unterstützt MouseJacker Wireless HID Injection und NRF Sniffer, 2,4 GHz, GPIO-Verbindung, Antenne inklusive."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-nrf24.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "NRF24", "2.4GHz", "MouseJacker", "Security Research"]

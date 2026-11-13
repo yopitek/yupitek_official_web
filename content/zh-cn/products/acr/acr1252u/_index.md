@@ -3,6 +3,7 @@ title: "ACS ACR1252U — NFC Forum 认证 USB 读卡机"
 description: "ACS ACR1252U，NFC Forum 认证 USB 读卡机，支持读写器、卡片模拟及点对点三种 NFC 模式，适合 NFC 应用程序开发与企业部署。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1252U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

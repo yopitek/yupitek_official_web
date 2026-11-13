@@ -3,6 +3,7 @@ title: "ACS ACR122U — USB NFC Reader"
 description: "ACS ACR122U, USB NFC-Lesegerät mit Unterstützung von ISO 14443 A/B, MIFARE und FeliCa bei 13,56 MHz. Ideal für NFC-Forschung und Anwendungsentwicklung."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

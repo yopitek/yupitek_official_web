@@ -3,6 +3,7 @@ title: "Silicone Case for Flipper Zero — Funda de Silicona Protectora Oficial"
 description: "La funda de silicona protectora oficial de Flipper Zero ofrece cobertura total del dispositivo, cómoda sensación en los botones y protección diaria contra arañazos y golpes."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/silicone-case.png"
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Accesorios Flipper Zero", "Funda Protectora"]

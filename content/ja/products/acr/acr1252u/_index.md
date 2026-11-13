@@ -3,6 +3,7 @@ title: "ACS ACR1252U — NFC Forum 認定 USB NFC リーダー III"
 description: "ACS ACR1252U、NFC Forum 認定 USB カードリーダー。リーダー/ライター、カードエミュレーション、ピアツーピアの 3 つの NFC モードに対応し、NFC アプリケーション開発・企業展開に最適です。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1252U.png"
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

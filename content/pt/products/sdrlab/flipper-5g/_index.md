@@ -2,6 +2,7 @@
 title: "SDRLab Flipper Zero Placa de Expansão 5G — Módulo de Pesquisa Wi-Fi Dual-Band"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-5g.png"
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Expansão Flipper Zero", "5GHz", "Wi-Fi", "Deauth", "Pesquisa de Segurança"]

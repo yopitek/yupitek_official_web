@@ -43,7 +43,6 @@ The Hak5 WiFi Pineapple Mark VII is a WiFi auditing platform for authorized pene
 | Ports | USB-C (power / Ethernet), USB 2.0 Host |
 | Indicator | Single RGB LED |
 | Power | USB-C (5V) |
-| Operating Temperature | 35°C ~ 45°C |
 
 ## Application Scenarios
 

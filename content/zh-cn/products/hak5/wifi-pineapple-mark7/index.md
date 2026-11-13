@@ -33,7 +33,6 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 | 连接口 | USB-C（电源 / Ethernet）、USB 2.0 Host |
 | 指示灯 | 单颗 RGB LED |
 | 电源 | USB-C（5V） |
-| 工作温度 | 35°C ~ 45°C |
 
 ## 应用环境
 

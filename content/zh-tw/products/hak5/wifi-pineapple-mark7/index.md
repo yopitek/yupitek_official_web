@@ -43,7 +43,6 @@ Hak5 WiFi Pineapple Mark VII 是 WiFi 稽核平台，供授權的滲透測試與
 | 連接埠 | USB-C（電源 / Ethernet）、USB 2.0 Host |
 | 指示燈 | 單顆 RGB LED |
 | 電源 | USB-C（5V） |
-| 作業溫度 | 35°C ~ 45°C |
 
 ## 應用環境
 

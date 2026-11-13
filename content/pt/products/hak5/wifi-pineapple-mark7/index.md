@@ -33,7 +33,6 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 | Portas | USB-C (energia / Ethernet), USB 2.0 Host |
 | Indicador | 1 RGB LED |
 | Energia | USB-C (5V) |
-| Temperatura de operação | 35°C ~ 45°C |
 
 ## Ambientes de Aplicação
 

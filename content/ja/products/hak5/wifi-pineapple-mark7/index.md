@@ -33,7 +33,6 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 | ポート | USB-C（電源 / Ethernet）、USB 2.0 Host |
 | インジケーター | シングルRGB LED |
 | 電源 | USB-C（5V） |
-| 動作温度 | 35°C〜45°C |
 
 ## 適用シナリオ
 

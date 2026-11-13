@@ -105,7 +105,7 @@ solution:
   contact_us: "Fale Conosco"
 footer.copyright: "© {{ .Year }} Yopitek Ltd · Todos os Direitos Reservados · Taipei, Taiwan"
 footer.company_name: "Yopitek Ltd"
-footer.company_tagline: "Distribuidor autorizado em Taiwan × Produtos tech premium × Integração visual profissional"
+footer.company_tagline: "Distribuidor autorizado da ALFA Network em Taiwan × Produtos tech premium × Integração visual profissional"
 footer.address: "📍 72 Lane 34 Fuyang St, Taipei"
 footer.hours: "🕐 Seg–Sex 09:00–18:00 (GMT+8)"
 footer.quicknav: "Links rápidos"

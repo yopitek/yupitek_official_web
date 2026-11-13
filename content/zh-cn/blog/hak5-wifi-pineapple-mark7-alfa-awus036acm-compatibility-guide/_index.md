@@ -210,7 +210,7 @@ EOF
 
 👉 [ALFA AWUS036ACM 产品页面](/zh-cn/products/alfa/awus036acm/)
 
-我们是 ALFA Network 授权经销商，为所有 ALFA × HAK5 集成场景提供完整技术支持。
+我们是 ALFA Network 授权经销商；针对 ALFA × HAK5 集成场景，我们提供完整技术支持。
 
 *需要设置协助？联系 Yupitek 技术支持团队：[yupitek.com/support](/zh-cn/support/)*
 

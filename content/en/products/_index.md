@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-Yopitek is the authorized Taiwan distributor for multiple internationally recognized brands, covering wireless networking, security research, enterprise Wi-Fi, graphics cards, and SDR/RF equipment.
+Yopitek is the authorized Taiwan distributor for ALFA Network and also supplies other internationally recognized brands, covering wireless networking, security research, enterprise Wi-Fi, graphics cards, and SDR/RF equipment.
 
 {{< card-group >}}
   {{< card title="ALFA Network" href="/en/products/alfa/" >}}

@@ -295,4 +295,4 @@ curl -fsSL https://github.com/fduflyer/DroneAware-Node-Releases/releases/latest/
 
 ---
 
-*تم إعداد هذا المقال من قبل الفريق التقني لشركة Yupitek. AWUS036ACH والعتاد المرتبط بها متوفرة عبر Yupitek كموزع معتمد، مع دعم فني.*
+*تم إعداد هذا المقال من قبل الفريق التقني لشركة Yupitek. AWUS036ACH والعتاد المرتبط بها متوفرة عبر Yupitek مع دعم فني (Yupitek موزع معتمد لمنتجات ALFA Network).*

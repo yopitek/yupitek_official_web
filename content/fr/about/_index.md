@@ -19,7 +19,7 @@ La division IT_Application offre un service clé en main : consultation des beso
 
 ### IT_Distribution — Distribution de produits technologiques
 
-Distributeur autorisé de marques technologiques de renommée mondiale, offrant des produits originaux et un soutien technique expert aux entreprises taïwanaises, aux organisations de recherche en sécurité et aux institutions académiques.
+Distributeur autorisé d'ALFA Network à Taiwan, proposant également d'autres marques technologiques de renommée mondiale, avec des produits originaux et un soutien technique expert aux entreprises taïwanaises, aux organisations de recherche en sécurité et aux institutions académiques.
 
 ## Nos forces
 

@@ -295,4 +295,4 @@ Se é a primeira vez que se depara com a tecnologia de regulamentação / antidr
 
 ---
 
-*Este artigo foi preparado pela equipa técnica da Yupitek. A AWUS036ACH e o hardware relacionado estão disponíveis através da Yupitek como distribuidor autorizado, com suporte técnico.*
+*Este artigo foi preparado pela equipa técnica da Yupitek. A AWUS036ACH e o hardware relacionado estão disponíveis através da Yupitek, com suporte técnico (a Yupitek é distribuidora autorizada da ALFA Network em Taiwan).*

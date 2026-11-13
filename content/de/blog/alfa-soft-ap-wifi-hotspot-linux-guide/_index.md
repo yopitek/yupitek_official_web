@@ -672,7 +672,7 @@ Dieser Artikel aggregiert Informationen aus:
 - **morrownr/7612u** — MT7612U Bridged AP auf RPi4B Tutorial
 - **GitHub Issue Tracker** — issue #2 (ACM AP Konfiguration), #476 (AXML AP Tests), Discussion #31 (ACHM Volllast-AP)
 - **koutto/pi-pwnbox-rogueap** — Alfa Adapter RogueAP Implementierungsfall
-- **Rokland** autorisierter Händler Linux-Support-Seiten
+- **Rokland** Händler Linux-Support-Seiten
 - **Lab401** technische Bewertungen und 2025 Pentesting Best-Pick-Berichte
 - **Raspberry Pi Offizielles Forum** — Pi 4/5 USB WiFi Kompatibilitätsdiskussionen
 - **Yupitek bestehender Blog** — ACM China Installationsanleitung, AXML WiFi 6E Review, Kali Linux 2026 beste Adapter

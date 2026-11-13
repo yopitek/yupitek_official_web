@@ -1,6 +1,6 @@
 ---
 title: "產品總覽"
-description: "榆閤科技代理品牌：ALFA Network、HAK5、Ubiquiti、繪圖卡、SDRLAB、ACR；另提供 Flipper Zero 產品與技術諮詢，以及專業 IT 設備採購諮詢。"
+description: "榆閤科技提供品牌：ALFA Network、HAK5、Ubiquiti、繪圖卡、SDRLAB、ACR；另提供 Flipper Zero 產品與技術諮詢，以及專業 IT 設備採購諮詢。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-榆閤科技代理多個國際知名品牌，專注於無線網路、資安研究、企業 Wi-Fi、顯示卡及 SDR 射頻等領域。
+榆閤科技為 ALFA Network 台灣授權經銷。我們也供應其他國際知名品牌，專注於無線網路、資安研究、企業 Wi-Fi、顯示卡及 SDR 射頻等領域。
 
 {{< card-group >}}
   {{< card title="ALFA Network" href="/zh-tw/products/alfa/" >}}

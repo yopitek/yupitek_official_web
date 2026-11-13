@@ -295,4 +295,4 @@ If you are new to drone regulation and counter-UAV technology, here is a quick p
 
 ---
 
-*This article was compiled by the Yupitek technical team. AWUS036ACH and related hardware are available through Yupitek with authorized distribution and technical support.*
+*This article was compiled by the Yupitek technical team. AWUS036ACH and related hardware are available through Yupitek with technical support (Yupitek is an authorized ALFA Network distributor in Taiwan).*

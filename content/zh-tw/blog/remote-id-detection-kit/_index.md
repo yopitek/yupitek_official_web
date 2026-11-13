@@ -316,4 +316,4 @@ curl -fsSL https://github.com/fduflyer/DroneAware-Node-Releases/releases/latest/
 
 ---
 
-*本文由榆閤科技 Yupitek 技術團隊整理。AWUS036ACH 與相關硬體均可經 Yupitek 取得授權代理與技術支援。*
+*本文由榆閤科技 Yupitek 技術團隊整理。AWUS036ACH 與相關硬體均可經 Yupitek 取得並享技術支援（Yupitek 為 ALFA Network 台灣授權經銷商）。*

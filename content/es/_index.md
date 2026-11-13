@@ -1,6 +1,6 @@
 ---
 title: "Yopitek Ltd"
-description: "Distribución tecnológica profesional e integración de proyección inmersiva. Distribuidor autorizado en Taiwán de ALFA Network y HAK5; también ofrecemos productos Flipper Zero y asesoría técnica. Servicios de integración de sistemas de proyección y edge blending."
+description: "Distribución tecnológica profesional e integración de proyección inmersiva. Distribuidor autorizado en Taiwán de ALFA Network; también ofrecemos productos HAK5 y Flipper Zero y asesoría técnica. Servicios de integración de sistemas de proyección y edge blending."
 date: 2026-03-12
 draft: false
 showHero: true
@@ -10,7 +10,7 @@ heroStyle: "basic"
 
 Yopitek es una empresa profesional con profunda presencia en el mercado tecnológico de Taiwán, con dos divisiones de negocio: una enfocada en la distribución de productos tecnológicos de vanguardia, y otra en la planificación e integración de soluciones visuales de alto nivel.
 
-**Distribuidor Autorizado en Taiwán × Productos Tech Premium × Integración Visual Profesional**
+**Distribuidor Autorizado de ALFA Network en Taiwán × Productos Tech Premium × Integración Visual Profesional**
 
 <div class="flex flex-wrap gap-4 my-6">
   <a href="/es/solution/" class="btn-inquiry">Conocer Nuestras Soluciones</a>
@@ -42,7 +42,7 @@ Yopitek es una empresa profesional con profunda presencia en el mercado tecnoló
 
 ## IT Distribution｜Distribución y Representación de Productos Tecnológicos
 
-Yopitek es distribuidor autorizado de múltiples marcas reconocidas mundialmente, suministrando a empresas, instituciones académicas e investigadores de ciberseguridad equipos y soluciones tecnológicas avanzadas.
+Yopitek es distribuidor autorizado de ALFA Network en Taiwán y también suministra otras marcas reconocidas mundialmente, atendiendo a empresas, instituciones académicas e investigadores de ciberseguridad equipos y soluciones tecnológicas avanzadas.
 
 **Marcas que distribuimos:**
 

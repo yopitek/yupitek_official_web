@@ -355,7 +355,7 @@ EOF
 
 👉 [ALFA AWUS036ACM 產品頁面](/zh-tw/products/alfa/awus036acm/)
 
-我們是 ALFA Network 授權經銷商，為所有 ALFA × HAK5 整合場景提供完整技術支援。瀏覽我們完整的 [ALFA 網路卡產品線](/zh-tw/products/alfa/) 以找到適合你測試需求的工具。
+我們是 ALFA Network 授權經銷商；針對 ALFA × HAK5 整合場景，我們提供完整技術支援。瀏覽我們完整的 [ALFA 網路卡產品線](/zh-tw/products/alfa/) 以找到適合你測試需求的工具。
 
 **Yupitek 相關資源：**
 - [AWUS036ACH vs AWUS036ACM — Kali Linux 完整比較](/zh-tw/blog/awus036ach-vs-awus036acm/)

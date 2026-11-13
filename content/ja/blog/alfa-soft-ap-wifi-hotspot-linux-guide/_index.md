@@ -677,7 +677,7 @@ AWUS036ACH（RTL8812AU）は制限を受け入れれば使用可能です。AWUS
 - **morrownr/7612u** — MT7612U Bridged AP on RPi4Bチュートリアル
 - **GitHub Issue Tracker** — issue #2（ACM AP設定）、#476（AXML APテスト）、Discussion #31（ACHMフルスピードAP）
 - **koutto/pi-pwnbox-rogueap** — AlfaアダプタRogueAP実装事例
-- **Rokland** 正規販売店Linuxサポートページ
+- **Rokland** 販売店Linuxサポートページ
 - **Lab401** 技術レビューおよび2025年ペンテスト推奨製品レポート
 - **Raspberry Pi公式フォーラム** — Pi 4/5 USB WiFi互換性議論
 - **Yupitek既存ブログ** — ACM China Install Guide、AXML WiFi 6E Review、Kali Linux 2026ベストアダプタ

@@ -1,6 +1,6 @@
 ---
 title: "Espacio Inmersivo"
-description: "Soluciones de Yupitek para espacios de proyección inmersiva: proyección panorámica 360°, salas de exhibición inmersivas e instalaciones de arte interactivo; creando experiencias verdaderamente inmersivas."
+description: "Soluciones de Yopitek para espacios de proyección inmersiva: proyección panorámica 360°, salas de exhibición inmersivas e instalaciones de arte interactivo; creando experiencias verdaderamente inmersivas."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Espacios de Proyección Inmersiva
 
-La proyección en espacios inmersivos rompe con los esquemas tradicionales de exhibición, sumergiendo al público en un entorno visual envolvente. Ya sea para exposiciones especiales en museos, pabellones de experiencia corporativa o exhibiciones permanentes en destinos turísticos, Yupitek puede ofrecer soluciones de proyección inmersiva a medida.
+La proyección en espacios inmersivos rompe con los esquemas tradicionales de exhibición, sumergiendo al público en un entorno visual envolvente. Ya sea para exposiciones especiales en museos, pabellones de experiencia corporativa o exhibiciones permanentes en destinos turísticos, Yopitek puede ofrecer soluciones de proyección inmersiva a medida.
 
 ## Capacidades Técnicas
 

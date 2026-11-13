@@ -262,4 +262,4 @@ For a complete setup guide, see [ALFA USB WiFi on Raspberry Pi 4 & Pi 5](/en/blo
 1. [aircrack-ng rtl8812au Driver](https://github.com/aircrack-ng/rtl8812au)
 2. [kernel.org mt76 Driver](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
 3. [ALFA Network Official Website](https://www.alfa.com.tw)
-4. [Yupitek Official Website](https://www.yupitek.com)
+4. [Yopitek Official Website](https://www.yupitek.com)

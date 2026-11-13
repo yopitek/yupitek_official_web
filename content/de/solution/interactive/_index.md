@@ -1,6 +1,6 @@
 ---
 title: "Interaktive Projektion"
-description: "Yupitek interaktive Projektionslösungen: Touch-Interaktion, Bewegungserkennung und interaktive Bodenprojektion für Ausstellungen, Bildung und Gewerbeflächen."
+description: "Yopitek interaktive Projektionslösungen: Touch-Interaktion, Bewegungserkennung und interaktive Bodenprojektion für Ausstellungen, Bildung und Gewerbeflächen."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

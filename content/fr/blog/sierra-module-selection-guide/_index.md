@@ -1,6 +1,6 @@
 ---
 title: "Guide d'achat des modules cellulaires Sierra Wireless : du LTE Cat 4 au 5G mmWave"
-description: "Le comparatif complet des dix modules cellulaires Sierra Wireless (Semtech) des séries EM/MC, du LTE Cat 4 au 5G mmWave : spécifications, formats de boîtier et conseils de sélection. Données techniques compilées par Yupitek."
+description: "Le comparatif complet des dix modules cellulaires Sierra Wireless (Semtech) des séries EM/MC, du LTE Cat 4 au 5G mmWave : spécifications, formats de boîtier et conseils de sélection. Données techniques compilées par Yopitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -19,20 +19,20 @@ faq:
   - question: "Comment choisir entre un module cellulaire M.2 et mPCIe ?"
     answer: "Tout dépend du connecteur de votre appareil. Les laptops et les cartes embarquées modernes utilisent généralement le M.2 B-Key : prenez la série EM. Les routeurs industriels anciens et les PC industriels avec connecteur mPCIe prendront la série MC. Si votre carte n'a que du M.2 mais que vous voulez un module MC, il vous faudra un adaptateur M.2 vers mPCIe."
   - question: "Où acheter des modules Sierra Wireless à Taïwan ?"
-    answer: "Vous pouvez vous procurer toute la gamme de modules cellulaires Sierra Wireless via Yupitek. Consultez les pages produits du site Yupitek pour les modèles et les prix, ou écrivez directement à sales@yupitek.com."
+    answer: "Vous pouvez vous procurer toute la gamme de modules cellulaires Sierra Wireless via Yopitek. Consultez les pages produits du site Yopitek pour les modèles et les prix, ou écrivez directement à sales@yupitek.com."
 ---
 
 # Guide d'achat des modules cellulaires Sierra Wireless : du LTE Cat 4 au 5G mmWave
 
 {{< alert >}}
-Yupitek fournit des informations produits, des canaux d'approvisionnement et des contenus techniques sur Sierra Wireless / Semtech ; Yupitek n'est pas un distributeur agréé officiel, ces informations sont fournies à titre de référence technique uniquement.
+Yopitek fournit des informations produits, des canaux d'approvisionnement et des contenus techniques sur Sierra Wireless / Semtech ; Yopitek n'est pas un distributeur agréé officiel, ces informations sont fournies à titre de référence technique uniquement.
 {{</alert >}}
 
 Que vous soyez étudiant en train de monter un projet IoT ou ingénieur en train de développer du matériel réseau en laboratoire, le pire dans l'achat d'un module cellulaire est toujours le même : vous passez une heure sur les fiches techniques, les numéros de modèle se mélangent, et vous finissez avec le mauvais format qui ne rentre tout simplement pas dans votre appareil.
 
 Ce guide passe en revue les dix modules Sierra Wireless actuels et durables (désormais filiale de Semtech), du LTE Cat 4 d'entrée de gamme jusqu'au 5G mmWave. Tous les modules de la série EM abordés ici utilisent le format M.2, tandis que la série MC est en mPCIe.
 
-Les données techniques de cet article ont été compilées par Yupitek.
+Les données techniques de cet article ont été compilées par Yopitek.
 
 ## Le tableau des dix modules : les chiffres d'abord
 
@@ -104,7 +104,7 @@ C'est le premier choix pour entretenir les vieilles machines au format mPCIe. Ma
 
 ## Toujours indécis ? Parlez-nous-en
 
-Si après lecture vous ne savez toujours pas quoi choisir : à Taïwan, vous pouvez vous procurer les dix modules cellulaires des séries EM/MC via Yupitek, antennes, adaptateurs SIM ou cartes d'évaluation inclus. Que ce soit pour vérifier des spécifications, comparer des bandes, ou obtenir un devis et du support technique pour votre projet, on est là pour vous.
+Si après lecture vous ne savez toujours pas quoi choisir : à Taïwan, vous pouvez vous procurer les dix modules cellulaires des séries EM/MC via Yopitek, antennes, adaptateurs SIM ou cartes d'évaluation inclus. Que ce soit pour vérifier des spécifications, comparer des bandes, ou obtenir un devis et du support technique pour votre projet, on est là pour vous.
 
 ## Questions fréquentes
 

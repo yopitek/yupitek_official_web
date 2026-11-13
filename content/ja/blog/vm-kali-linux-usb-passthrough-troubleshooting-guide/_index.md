@@ -383,6 +383,6 @@ macOS ホストから仮想マシンを実行して USB パススルーを行う
 | aircrack-ng RTL8812AU コミュニティドライバー（Guest 内の AWUS036ACH 用） | https://github.com/aircrack-ng/rtl8812au |
 | ALFA AWUS036ACH 公式製品ページ | https://www.alfa.com.tw/products/awus036ach_1 |
 | ALFA AWUS036AXML 公式製品ページ | https://www.alfa.com.tw/ |
-| Yupitek 技術サポート | https://yupitek.com/ |
+| Yopitek 技術サポート | https://yupitek.com/ |
 
 > **合法的な使用に関する声明**：仮想マシン内でモニターモードやパケットインジェクションなどのセキュリティ操作を有効にするのは、ご自身が所有する、または明確な許可を得たネットワーク環境に限られます。利用者は所在地の法令を遵守し、すべてのテストに合法的な許可の根拠があることを確認する必要があります。

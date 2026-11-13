@@ -324,9 +324,9 @@ Zehn Minuten, ein USB-Adapter, und Ihr KI-Server ist wirklich online.
 
 ---
 
-> 📌 **ALFA AWUS036ACM auf Lager** → [Yupitek Produktseite](/de/products/alfa/awus036acm/)
+> 📌 **ALFA AWUS036ACM auf Lager** → [Yopitek Produktseite](/de/products/alfa/awus036acm/)
 >
-> Yupitek Ltd ist autorisierter ALFA Network Distributor in Taiwan
+> Yopitek Ltd ist autorisierter ALFA Network Distributor in Taiwan
 > Für Bestellungen oder technische Anfragen: sales@yupitek.com
 
 ---

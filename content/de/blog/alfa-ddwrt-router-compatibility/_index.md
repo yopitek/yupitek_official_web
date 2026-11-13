@@ -200,7 +200,7 @@ Wenn Sie die ALFA USB WiFi Netzwerkkarte auf dem Router verwenden möchten, empf
 | DD-WRT offizielle Wiki — Installation | Installationsanleitung (inkl. USB-Unterstützung) | https://wiki.dd-wrt.com/wiki/Installation | ✅ Über Hauptseitenverweis bestätigt | 2026-09-03 |
 | OpenWrt offizielle Dokumentation | USB WiFi Vergleichsreferenz | https://openwrt.org/docs/start | ✅ Geprüft | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux Treiber (nicht in DD-WRT integriert) | https://github.com/morrownr/8812au-20210820 | ✅ Geprüft | 2026-09-03 |
-| ALFA Network Produktübersicht (Yupitek) | ALFA aktuelle Produkt规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
+| ALFA Network Produktübersicht (Yopitek) | ALFA aktuelle Produkt规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
 
 Verwandte Artikel: [Ist das ALFA Wireless Netzwerkadapter kompatibel mit OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[Ist der ALFA Wireless Netzwerkadapter kompatibel mit Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)
 

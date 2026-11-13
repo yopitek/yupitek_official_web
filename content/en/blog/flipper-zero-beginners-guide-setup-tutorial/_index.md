@@ -4,13 +4,13 @@ locale: en
 hreflang_group: flipper-zero-beginners-guide-setup-tutorial
 slug: flipper-zero-beginners-guide-setup-tutorial
 published: 2026-08-10
-author: Yupitek
+author: Yopitek
 category: Technical
 tags:
   - Flipper Zero
   - Tutorial
 hero_image: /static/img/flipper-zero/hero.webp
-hero_alt: "Flipper Zero Beginner’s Guide: Unboxing, Firmware Updates, and 5 Key Features Tested | Yupitek"
+hero_alt: "Flipper Zero Beginner’s Guide: Unboxing, Firmware Updates, and 5 Key Features Tested | Yopitek"
 seo_description: "What is Flipper Zero? From unboxing, microSD setup, and qFlipper firmware updates to hands-on tests of RFID, Sub-GHz, NFC, IR, and BadUSB, this guide helps you get started with Flipper Zero."
 ---
 
@@ -141,7 +141,7 @@ Most modern transit cards have encryption and key protection. Flipper Zero can o
 Flipper Zero's built-in Sub-GHz transceiver focuses on common protocols (OOK/ASK/FSK, etc.) with intuitive operation. SDRs (like HackRF, RTL-SDR) offer a wider frequency range and raw spectrum analysis but require a computer and deeper technical background. They are complementary tools.
 
 **Q5: Where can I buy Flipper Zero?**
-Yupitek provides Flipper Zero products and related accessories, along with technical consultation. For setup questions after purchase, please email sales@yupitek.com.
+Yopitek provides Flipper Zero products and related accessories, along with technical consultation. For setup questions after purchase, please email sales@yupitek.com.
 
 **Q6: Can I install third-party firmware?**
 Yes, but it is not recommended for beginners. Third-party firmwares (e.g., Xtreme) offer interface customization and extra features, but stability and security must be evaluated independently, and you may lose official update support.
@@ -150,4 +150,4 @@ Yes, but it is not recommended for beginners. Third-party firmwares (e.g., Xtrem
 
 The path to getting started with Flipper Zero is straightforward: **Install microSD → Update to official stable firmware → Start with RFID reading and IR remote control → Explore Sub-GHz and BadUSB once familiar.** It is an excellent starting point for understanding wireless protocols and hardware security. However, remember: the more powerful the tool, the greater the need for self-discipline—only test devices you have permission to access.
 
-For Flipper Zero or related accessories, please contact [sales@yupitek.com](mailto:sales@yupitek.com). Yupitek provides product and technical consultation services.
+For Flipper Zero or related accessories, please contact [sales@yupitek.com](mailto:sales@yupitek.com). Yopitek provides product and technical consultation services.

@@ -37,7 +37,7 @@ La compatibilité Soft AP des cartes ALFA dépend du pilote du chipset. L'AWUS03
 
 > "Puis-je utiliser les adaptateurs USB WiFi ALFA comme hotspot WiFi (Soft AP) sur Kali Linux / Ubuntu / Raspberry Pi ?"
 
-C'est l'une des questions les plus fréquentes que nous recevons chez Yupitek. La question semble simple, mais la réponse varie considérablement selon le modèle et le chipset — **tous les adaptateurs USB WiFi ne peuvent pas fonctionner en mode Soft AP.**
+C'est l'une des questions les plus fréquentes que nous recevons chez Yopitek. La question semble simple, mais la réponse varie considérablement selon le modèle et le chipset — **tous les adaptateurs USB WiFi ne peuvent pas fonctionner en mode Soft AP.**
 
 Cet article rassemble plus de 500 discussions communautaires de GitHub (morrownr/USB-WiFi), des forums techniques Reddit, de la documentation officielle Raspberry Pi et des retours d'utilisateurs réels pour vous donner un rapport honnête et complet sur les adaptateurs ALFA qui fonctionnent, ceux qui ne fonctionnent pas, et le processus complet de configuration étape par étape.
 
@@ -91,7 +91,7 @@ C'est le concept **le plus important** lors du choix d'un adaptateur Soft AP :
 
 ## 2. Gamme de produits ALFA et aperçu des chipsets {#product-lineup}
 
-Voici la gamme actuelle de produits ALFA vendus par Yupitek, avec les chipsets et les évaluations préliminaires Soft AP :
+Voici la gamme actuelle de produits ALFA vendus par Yopitek, avec les chipsets et les évaluations préliminaires Soft AP :
 
 | Modèle | Chipset | Type de pilote | Norme WiFi | Évaluation Soft AP |
 |-------|---------|-------------|---------------|----------------|
@@ -102,7 +102,7 @@ Voici la gamme actuelle de produits ALFA vendus par Yupitek, avec les chipsets e
 | AWUS036AX | Realtek RTL8832BU | Out-of-kernel (noyau 6.12+ recommandé) | WiFi 6 AX1800 Double bande | ❌ Non recommandé |
 | AWUS036AXER | Realtek RTL8832BU | Out-of-kernel (idem ci-dessus) | WiFi 6 AX1800 Double bande | ❌ Non recommandé |
 
-> **Remarque** : L'AWUS036ACHM (MT7610U) a été abandonné et n'est plus répertorié sur la page produit Yupitek. Cet article couvre uniquement les produits actuellement disponibles.
+> **Remarque** : L'AWUS036ACHM (MT7610U) a été abandonné et n'est plus répertorié sur la page produit Yopitek. Cet article couvre uniquement les produits actuellement disponibles.
 
 ---
 
@@ -297,7 +297,7 @@ Bien qu'ils soient des adaptateurs WiFi 6, la puce RTL8832BU est un dispositif "
 3. **Cas communautaires Soft AP minimes** : Presque aucun cas réel de Soft AP RTL8832BU n'existe, compared to abundant MT7612U and RTL8812AU examples
 4. **La documentation communautaire le déconseille explicitement**: morrownr/USB-WiFi marks this chipset as "not recommended for penetration testing"
 
-> La documentation officielle de Yupitek indique clairement : « L'AWUS036AX / AWUS036AXER avec chipset RTL8832BU a un support limité du mode monitor en dessous du noyau 6.14 et n'est pas recommandé pour les tests d'intrusion. Utilisez plutôt l'AWUS036ACH ou l'AWUS036AXML. »
+> La documentation officielle de Yopitek indique clairement : « L'AWUS036AX / AWUS036AXER avec chipset RTL8832BU a un support limité du mode monitor en dessous du noyau 6.14 et n'est pas recommandé pour les tests d'intrusion. Utilisez plutôt l'AWUS036ACH ou l'AWUS036AXML. »
 
 ---
 
@@ -679,17 +679,17 @@ This article aggregates information from:
 - **Rokland** authorized retailer Linux support pages
 - **Lab401** technical reviews and 2025 pentesting best-pick reports
 - **Raspberry Pi Official Forum** — Pi 4/5 USB WiFi compatibility discussions
-- **Yupitek existing blog** — ACM China Install Guide, AXML WiFi 6E Review, Kali Linux 2026 best adapters
+- **Yopitek existing blog** — ACM China Install Guide, AXML WiFi 6E Review, Kali Linux 2026 best adapters
 
 ---
 
-> **Tags**: #ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #Yupitek
+> **Tags**: #ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #Yopitek
 >
-> **Auteur** : Yupitek Ltd — Distributeur Agréé ALFA Network Taiwan
+> **Auteur** : Yopitek Ltd — Distributeur Agréé ALFA Network Taiwan
 >
 > **Avertissement** : Données de recherche à jour en mai 2026. Linux kernels and distributions continue to evolve; driver support may change with new versions. Verify target platform kernel version and driver compatibility before deployment.
 >
-> **Support technique** : Pour les problèmes de configuration Soft AP, contactez le support technique Yupitek Taiwan. Demandes de produits : [yupitek.com](https://yupitek.com/fr/).
+> **Support technique** : Pour les problèmes de configuration Soft AP, contactez le support technique Yopitek Taiwan. Demandes de produits : [yupitek.com](https://yupitek.com/fr/).
 
 ---
 

@@ -13,7 +13,7 @@ tags: ["Application Défense", "Fusion Multi-Projecteurs", "Centre de Commandeme
 **Type** : Système de Projection pour Simulation de Guerre Numérique
 **Applications** : simulation tactique, entraînement au commandement, modélisation de scénarios
 
-Le Commandement de la Police Militaire a adopté un système de simulation de guerre numérique, Yupitek étant responsable de la planification et de l'installation du mur d'affichage grand format par projection. L'affichage cartographique surdimensionné offre aux commandants une vue claire et complète de la situation tactique tout au long des exercices, améliorant l'efficacité de la prise de décision.
+Le Commandement de la Police Militaire a adopté un système de simulation de guerre numérique, Yopitek étant responsable de la planification et de l'installation du mur d'affichage grand format par projection. L'affichage cartographique surdimensionné offre aux commandants une vue claire et complète de la situation tactique tout au long des exercices, améliorant l'efficacité de la prise de décision.
 
 ## Solution Technique
 

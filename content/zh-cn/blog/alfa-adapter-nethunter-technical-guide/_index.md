@@ -431,14 +431,14 @@ ACH 拥有 NetHunter 生态中最多的教程、最庞大的社区故障排查�
 
 | 资源 | 链接 |
 |---|---|
-| Yupitek — ALFA 台湾授权经销商 | [yupitek.com](https://www.yupitek.com) |
+| Yopitek — ALFA 台湾授权经销商 | [yupitek.com](https://www.yupitek.com) |
 | ALFA Network 官方产品页面 | [alfa.com.tw](https://www.alfa.com.tw) |
 | MT7610U 驱动（内核树） | [torvalds/linux — mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76) |
 | RTL8812AU 驱动（aircrack-ng） | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) |
 | NetHunter 支持设备列表 | [nethunter.kali.org/device-kernels.html](https://nethunter.kali.org/device-kernels.html) |
 | NetHunter 官方文档 | [kali.org/docs/nethunter/](https://www.kali.org/docs/nethunter/) |
 | XDA NetHunter 论坛 | [xdaforums.com/tags/nethunter/](https://xdaforums.com/tags/nethunter/) |
-| Yupitek ALFA 产品目录 | [/zh-cn/products/alfa/](/zh-cn/products/alfa/) |
+| Yopitek ALFA 产品目录 | [/zh-cn/products/alfa/](/zh-cn/products/alfa/) |
 
 ---
 
@@ -502,7 +502,7 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
-*本文档由 **Yupitek Ltd**（ALFA Network 台湾授权经销商）编写。*  
+*本文档由 **Yopitek Ltd**（ALFA Network 台湾授权经销商）编写。*  
 *数据截止日期：2026-06-09。Linux 内核及 NetHunter 版本持续更新，请以官方最新资料为准。*
 
 ## 参考文献

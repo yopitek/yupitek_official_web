@@ -212,7 +212,7 @@ EOF
 
 我们是 ALFA Network 授权经销商；针对 ALFA × HAK5 集成场景，我们提供完整技术支持。
 
-*需要设置协助？联系 Yupitek 技术支持团队：[yupitek.com/support](/zh-cn/support/)*
+*需要设置协助？联系 Yopitek 技术支持团队：[yupitek.com/support](/zh-cn/support/)*
 
 ## 参考文献
 

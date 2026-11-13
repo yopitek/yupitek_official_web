@@ -1,6 +1,6 @@
 ---
 title: "Mehrkanalprojektion"
-description: "Yupitek Mehrkanalprojektion-Lösungen: Edge Blending, Geometriekorrektur und Helligkeitsuniformität für die Integration von Ultraweitformat-Großprojektionssystemen."
+description: "Yopitek Mehrkanalprojektion-Lösungen: Edge Blending, Geometriekorrektur und Helligkeitsuniformität für die Integration von Ultraweitformat-Großprojektionssystemen."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 Wenn ein einzelner Projektor den Anforderungen eines übergroßen oder komplex geformten Projektionsbereichs nicht gerecht wird, fügt die Mehrkanalprojektion mehrere Projektorbilder nahtlos zu einem kontinuierlichen, einheitlichen Ultraweitformat-Display zusammen.
 
-Yupitek verfügt über umfangreiche Erfahrung in der Integration von Mehrkanalprojektion-Systemen – abgeschlossene Projekte reichen von 2-Projektor-Setups bis hin zu Großinstallationen mit 20 oder mehr Einheiten.
+Yopitek verfügt über umfangreiche Erfahrung in der Integration von Mehrkanalprojektion-Systemen – abgeschlossene Projekte reichen von 2-Projektor-Setups bis hin zu Großinstallationen mit 20 oder mehr Einheiten.
 
 ## Kerntechnologien
 

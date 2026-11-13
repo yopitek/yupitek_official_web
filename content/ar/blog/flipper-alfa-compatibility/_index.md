@@ -386,7 +386,7 @@ sudo systemctl restart NetworkManager
 
 ### أين تشتري
 
-جميع ملحقات ALFA الموصى بها متوفرة من شركة Yupitek — موزع معتمد من ALFA Network. تصفح المجموعة الكاملة أو قارن الطرز:
+جميع ملحقات ALFA الموصى بها متوفرة من شركة Yopitek — موزع معتمد من ALFA Network. تصفح المجموعة الكاملة أو قارن الطرز:
 
 - [ملحقات ALFA عبر WiFi — الكتالوج الكامل](https://yupitek.com/ar/products/alfa/) — جميع الطرز مع المواصفات والأسعار
 - [مقارنة منتجات ALFA](/ar/alfa_compare/) — مقارنة جنباً إلى جنب للرقائق والنطاقات والسواقات
@@ -401,7 +401,7 @@ sudo systemctl restart NetworkManager
 
 ---
 
-*للأسئلة المتعلقة بالبيع المسبق حول توافق Flipper One وملحقات ALFA، تواصل مع دعم Yupitek على support@yupitek.com أو اتصل على +886-2-87325338.*
+*للأسئلة المتعلقة بالبيع المسبق حول توافق Flipper One وملحقات ALFA، تواصل مع دعم Yopitek على support@yupitek.com أو اتصل على +886-2-87325338.*
 
 ## المراجع
 

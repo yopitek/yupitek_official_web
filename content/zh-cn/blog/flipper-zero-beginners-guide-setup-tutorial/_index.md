@@ -4,13 +4,13 @@ locale: zh-CN
 hreflang_group: flipper-zero-beginners-guide-setup-tutorial
 slug: flipper-zero-beginners-guide-setup-tutorial
 published: 2026-08-10
-author: Yupitek
+author: Yopitek
 category: technical
 tags:
   - Flipper Zero
   - 教程
 hero_image: /static/img/flipper-zero/hero.webp
-hero_alt: "Flipper Zero 入门教程：开箱、固件更新与五大功能实测｜Yupitek"
+hero_alt: "Flipper Zero 入门教程：开箱、固件更新与五大功能实测｜Yopitek"
 seo_description: "Flipper Zero 是什么？从开箱、microSD 设置、qFlipper 固件更新，到 RFID／Sub-GHz／NFC／IR／BadUSB 五大功能实测，一篇带你完成 Flipper Zero 入门。"
 ---
 
@@ -141,7 +141,7 @@ Flipper Zero 本身是合法工具，但使用场景有明确的法律边界：
 Flipper Zero 内置 Sub-GHz 收发器专攻常见协议（OOK/ASK/FSK 等），操作直观；SDR（如 HackRF、RTL-SDR）频率范围更广、可看原始频谱，但需要电脑与较深背景。两者是互补工具。
 
 **Q5：哪里可以买到 Flipper Zero？**
-Yupitek（榆合科技）提供 Flipper Zero 产品与相关配件，并提供技术咨询；购买后可来信 sales@yupitek.com 询问设置问题。
+Yopitek（榆合科技）提供 Flipper Zero 产品与相关配件，并提供技术咨询；购买后可来信 sales@yupitek.com 询问设置问题。
 
 **Q6：可以装第三方固件吗？**
 可以，但新手不建议。第三方固件（如 Xtreme）提供界面美化与额外功能，但稳定性与安全性需自行评估，且可能失去原厂更新支持。
@@ -150,4 +150,4 @@ Yupitek（榆合科技）提供 Flipper Zero 产品与相关配件，并提供�
 
 Flipper Zero 的入门路径很简单：**装 microSD → 更新官方稳定固件 → 从 RFID 读卡与 IR 遥控玩起 → 熟悉后再碰 Sub-GHz 与 BadUSB**。它是了解无线协议与硬件安全的绝佳起点，但请永远记得：功能越强，越要自律——只测试自己有权限的设备。
 
-需要 Flipper Zero 或相关配件，欢迎来信 [sales@yupitek.com](mailto:sales@yupitek.com)，Yupitek 提供产品与技术咨询服 务。
+需要 Flipper Zero 或相关配件，欢迎来信 [sales@yupitek.com](mailto:sales@yupitek.com)，Yopitek 提供产品与技术咨询服 务。

@@ -230,7 +230,7 @@ Widerspruchsbedingungen: Falls in den zukünftigen Versionen von FreshTomato in 
 | FreshTomato offizielle Webseite | FreshTomato neueste Version und unterstützte Geräte | https://freshtomato.org/ | ✅ Geprüft | 2026-09-03 |
 | OpenWrt offizielle Dokumentation | USB WiFi Treiber und Wireless-Einstellungen (Vergleichsreferenz) | https://openwrt.org/docs/start | ✅ Geprüft | 2026-09-03 |
 | OpenWrt offizieller Forum | USB WiFi Treiber Diskussion (Vergleichsreferenz) | https://forum.openwrt.org/ | ✅ Geprüft | 2026-09-03 |
-| ALFA Network Produktübersicht (Yupitek) | ALFA aktuelle Produkt规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
+| ALFA Network Produktübersicht (Yopitek) | ALFA aktuelle Produkt规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
 
 Verwandte Artikel: [Ist das ALFA Wireless Netzwerkadapter kompatibel mit DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[Ist das ALFA Wireless Netzwerkadapter kompatibel mit OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[Ist das ALFA Wireless Netzwerkadapter kompatibel mit NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Ist das ALFA Wireless Netzwerkadapter kompatibel mit NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

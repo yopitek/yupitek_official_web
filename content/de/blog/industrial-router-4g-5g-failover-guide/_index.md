@@ -1,5 +1,5 @@
 ---
-title: "4G/5G-Failover im Industrie-Router: EM9191 und der Weg ins private 5G | Yupitek"
+title: "4G/5G-Failover im Industrie-Router: EM9191 und der Weg ins private 5G | Yopitek"
 description: "Wie baust du ein 4G/5G-Failover in deinen Industrie-Router? Am Beispiel EM9191 zeigen wir den Unterschied zwischen privatem 5G-SA-Netz und LTE-Reserve sowie die wichtigsten Punkte bei Frequenzbändern, Antennen und Kühlung."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "industrial-router-4g-5g-failover-guide"
 slug: "industrial-router-4g-5g-failover-guide"
 tags: ["Sierra Wireless", "EM9191", "5G", "LTE", "Failover", "Private 5G"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/de/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ Im Werk verbrennt jede Minute Netzausfall bares Geld. Maschinendaten kommen nich
 
 In diesem Artikel schauen wir uns die offizielle Spezifikation (EM919X Product Technical Specification) an und zeigen dir, warum der **EM9191** die perfekte Wahl ist: heute fürs Backup, morgen fürs private Netz.
 
-> Technische Datenquelle: offizielle Sierra-Wireless-Spezifikation. Artikel zusammengestellt von Yupitek.
+> Technische Datenquelle: offizielle Sierra-Wireless-Spezifikation. Artikel zusammengestellt von Yopitek.
 
 ---
 
@@ -91,6 +91,6 @@ Mit starkem LTE Cat 20 und 5G-SA-Support deckt er perfekt beides ab: „4G-Backu
 
 ## Kaufinformationen (Call to Action)
 
-Willst du den EM9191 in deinen Industrie-Router integrieren? Yupitek bietet komplette Hardware-Lösungen und technischen Support und hilft dir bei den kniffligsten Punkten: Kühlung und Antennen.
+Willst du den EM9191 in deinen Industrie-Router integrieren? Yopitek bietet komplette Hardware-Lösungen und technischen Support und hilft dir bei den kniffligsten Punkten: Kühlung und Antennen.
 Schreib uns: **sales@yupitek.com**
 Schau dir die Produkte an: [Sierra Wireless Serie](https://yupitek.com/de/products/sierra/)

@@ -1,6 +1,6 @@
 ---
 title: "Reseña completa del Sierra EM7455: por qué es la tarjeta Sierra favorita de makers y laboratorios"
-description: "Reseña completa del EM7455: especificaciones, diferencias con el EM7430, configuración en OpenWrt/Linux, compatibilidad con Dell/Lenovo. Información técnica recopilada por Yupitek."
+description: "Reseña completa del EM7455: especificaciones, diferencias con el EM7430, configuración en OpenWrt/Linux, compatibilidad con Dell/Lenovo. Información técnica recopilada por Yopitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -25,14 +25,14 @@ faq:
 # Reseña completa del Sierra EM7455: por qué es la tarjeta Sierra favorita de makers y laboratorios
 
 {{< alert >}}
-Yupitek ofrece información de productos, canales de suministro y contenido técnico de Sierra Wireless / Semtech; no somos distribuidor autorizado oficial y esta información es solo de referencia técnica.
+Yopitek ofrece información de productos, canales de suministro y contenido técnico de Sierra Wireless / Semtech; no somos distribuidor autorizado oficial y esta información es solo de referencia técnica.
 {{</alert >}}
 
 Si usted usa Raspberry Pi con OpenWrt, o quiere actualizar los equipos del laboratorio a conectividad 4G, seguro que ha oído hablar de la legendaria tarjeta Sierra EM7455. Es un módulo celular LTE-A Cat 6 en formato M.2 de Sierra Wireless, equipado con el chipset Qualcomm MDM9230, que admite hasta 300 Mbps de descarga y 50 Mbps de subida, e incluye posicionamiento GNSS integrado. Su temperatura de funcionamiento soporta incluso entornos extremos de -40°C a +85°C.
 
-Este artículo ha sido recopilado por Yupitek para explicarle por qué este módulo 4G LTE-Advanced Cat 6 en formato M.2 B-Key es tan popular, y cómo dejar listos el controlador y la configuración en sistemas Linux.
+Este artículo ha sido recopilado por Yopitek para explicarle por qué este módulo 4G LTE-Advanced Cat 6 en formato M.2 B-Key es tan popular, y cómo dejar listos el controlador y la configuración en sistemas Linux.
 
-> Enlace al producto: [Página del EM7455 en Yupitek](/es/products/sierra/em7455/) | Hoja de especificaciones oficial: [AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
+> Enlace al producto: [Página del EM7455 en Yopitek](/es/products/sierra/em7455/) | Hoja de especificaciones oficial: [AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
 
 ---
 
@@ -277,7 +277,7 @@ Si se atasca en su proyecto, puede buscar en estas comunidades de código abiert
 
 ## ¿Quiere comprar para su laboratorio? Estamos a su disposición
 
-Este artículo ha sido recopilado por el equipo de ingeniería de Yupitek. Ya sea un proyecto universitario, un plan de laboratorio o una compra en volumen de EM7455 u otros módulos Sierra para su empresa, ¡puede consultarnos!
+Este artículo ha sido recopilado por el equipo de ingeniería de Yopitek. Ya sea un proyecto universitario, un plan de laboratorio o una compra en volumen de EM7455 u otros módulos Sierra para su empresa, ¡puede consultarnos!
 
 - **Vea esta tarjeta**: [https://yupitek.com/es/products/sierra/em7455/](/es/products/sierra/em7455/)
 - **Vea todos los modelos Sierra**: [https://yupitek.com/es/products/sierra/](/es/products/sierra/)

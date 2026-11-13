@@ -324,9 +324,9 @@ Diez minutos, un adaptador USB, y tu servidor IA está realmente en línea.
 
 ---
 
-> 📌 **ALFA AWUS036ACM en stock** → [Página de producto Yupitek](/es/products/alfa/awus036acm/)
+> 📌 **ALFA AWUS036ACM en stock** → [Página de producto Yopitek](/es/products/alfa/awus036acm/)
 >
-> Yupitek Ltd es distribuidor autorizado de ALFA Network en Taiwán
+> Yopitek Ltd es distribuidor autorizado de ALFA Network en Taiwán
 > Para pedidos o consultas técnicas: sales@yupitek.com
 
 ---

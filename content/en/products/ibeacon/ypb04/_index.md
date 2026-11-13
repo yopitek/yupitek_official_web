@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
 ---
 
 ## Product Overview
@@ -71,7 +71,7 @@ The parameters of YPB04 (including trigger behaviors, UUID, Major, and Minor) ar
 ## Product Gallery
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb04.png" alt="Yupitek YPB04 Rechargeable Smart Card Badge Beacon" />
+  <img src="/images/products/ibeacon/ypb04.png" alt="Yopitek YPB04 Rechargeable Smart Card Badge Beacon" />
 {{< /gallery >}}
 
 ---

@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/mellanox/ai-generated/hero/mellanox-hero-banner.png"
 ---
 
-NVIDIA Mellanox gilt als Branchenstandard für High-Performance Computing (HPC), KI-Cluster, Hyperscale-Cloud-Plattformen, Enterprise-Storage (NVMe-oF) und Finanzsysteme mit minimalen Latenzzeiten. Yupitek bietet das komplette Sortiment an schnellen Mellanox-Netzwerkkarten, intelligenten DPUs, aktiven und passiven Kabeln sowie Switches mit hoher Portdichte.
+NVIDIA Mellanox gilt als Branchenstandard für High-Performance Computing (HPC), KI-Cluster, Hyperscale-Cloud-Plattformen, Enterprise-Storage (NVMe-oF) und Finanzsysteme mit minimalen Latenzzeiten. Yopitek bietet das komplette Sortiment an schnellen Mellanox-Netzwerkkarten, intelligenten DPUs, aktiven und passiven Kabeln sowie Switches mit hoher Portdichte.
 
 ---
 

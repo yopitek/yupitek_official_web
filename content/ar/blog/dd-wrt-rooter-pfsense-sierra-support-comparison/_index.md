@@ -1,5 +1,5 @@
 ---
-title: "هل يمكن توصيل بطاقات Sierra بـ DD-WRT / ROOter / pfSense؟ مقارنة دعم المنصات الثلاث لـ EM7455 وEM7565 وMC7455 | Yupitek"
+title: "هل يمكن توصيل بطاقات Sierra بـ DD-WRT / ROOter / pfSense؟ مقارنة دعم المنصات الثلاث لـ EM7455 وEM7565 وMC7455 | Yopitek"
 description: "هل يمكن لـ DD-WRT وROOter وpfSense توصيل بطاقات Sierra Wireless؟ تستند هذه المقالة إلى المواصفات الرسمية لـ EM7455 وEM7565 وMC7455 لمقارنة دعم بروتوكولي QMI/MBIM في أنظمة التوجيه الثلاثة، لتحديد أفضل حل شبكة WAN احتياطية."
 date: 2026-07-31
 draft: false
@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "dd-wrt-rooter-pfsense-sierra-support-comparison"
 tags: ["Sierra Wireless", "DD-WRT", "pfSense", "ROOter"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ar/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ faq:
 
 كثير من اللاعبين أو مسؤولي تقنية المعلومات في الشركات، فور حصولهم على EM7455 أو EM7565 أو MC7455 من Sierra Wireless، أول ما يفكرون فيه هو تركيبها في جهاز توجيه مفتوح المصدر كشبكة احتياطية (Failover WAN). لكن تذكر جيداً أن الشركة الرسمية لا تضمن أبداً «دعم» أي برنامج ثابت مفتوح المصدر بعينه، بل تنظر إلى نظام التشغيل الأساسي. نفتح المواصفات الرسمية لنكشف لك حقيقة التوافق.
 
-> مصدر البيانات: المواصفات الرسمية من Sierra Wireless (EM7455 وEM7565 وMC7455). أعدّت هذه المقالة شركة Yupitek.
+> مصدر البيانات: المواصفات الرسمية من Sierra Wireless (EM7455 وEM7565 وMC7455). أعدّت هذه المقالة شركة Yopitek.
 
 ---
 
@@ -85,7 +85,7 @@ faq:
 
 ## معلومات الشراء (دعوة لاتخاذ إجراء)
 
-غير متأكد من إمكانية تركيب هذه البطاقات في جهاز التوجيه لديك؟ أو تبحث عن لوحة تحويل وهوائي مناسبين؟ توفر Yupitek حلاً متكاملاً من العتاد واستشارات تقنية.
+غير متأكد من إمكانية تركيب هذه البطاقات في جهاز التوجيه لديك؟ أو تبحث عن لوحة تحويل وهوائي مناسبين؟ توفر Yopitek حلاً متكاملاً من العتاد واستشارات تقنية.
 راسلنا عبر البريد: **sales@yupitek.com**
 روابط المنتجات: [EM7455](https://yupitek.com/ar/products/sierra/em7455/) | [EM7565](https://yupitek.com/ar/products/sierra/em7565/) | [MC7455](https://yupitek.com/ar/products/sierra/mc7455/)
 

@@ -13,7 +13,7 @@ tags: ["Exposition d'Entreprise", "Production Événementielle", "Thème Dévelo
 **Type** : Projection pour Exposition d'Entreprise à Thème RSE
 **Thème** : Durabilité Environnementale et Économie Circulaire
 
-Rong Cheng Paper a organisé une exposition d'entreprise centrée sur la responsabilité environnementale. Yupitek a fourni un système de projection immersive qui a transmis les concepts d'économie circulaire et de développement durable à travers des visuels grand format percutants, renforçant l'identité d'entreprise verte de la société.
+Rong Cheng Paper a organisé une exposition d'entreprise centrée sur la responsabilité environnementale. Yopitek a fourni un système de projection immersive qui a transmis les concepts d'économie circulaire et de développement durable à travers des visuels grand format percutants, renforçant l'identité d'entreprise verte de la société.
 
 ## Solution Technique
 

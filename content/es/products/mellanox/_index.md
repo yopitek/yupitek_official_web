@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/mellanox/ai-generated/hero/mellanox-hero-banner.png"
 ---
 
-NVIDIA Mellanox es el estándar en computación de alto rendimiento (HPC), clústeres de inteligencia artificial, plataformas en la nube a gran escala (hyperscale), almacenamiento corporativo (NVMe-oF) y sistemas financieros de baja latencia. En Yupitek ofrecemos un catálogo completo de tarjetas de red de alta velocidad Mellanox, unidades DPU inteligentes, cables activos y pasivos, y conmutadores de alta densidad.
+NVIDIA Mellanox es el estándar en computación de alto rendimiento (HPC), clústeres de inteligencia artificial, plataformas en la nube a gran escala (hyperscale), almacenamiento corporativo (NVMe-oF) y sistemas financieros de baja latencia. En Yopitek ofrecemos un catálogo completo de tarjetas de red de alta velocidad Mellanox, unidades DPU inteligentes, cables activos y pasivos, y conmutadores de alta densidad.
 
 ---
 

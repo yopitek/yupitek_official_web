@@ -13,7 +13,7 @@ tags: ["Órgão Governamental", "Salão Multifuncional", "Multi-Projetor"]
 **Tipo**: Sistema de projeção para salão multifuncional
 **Uso**: Reuniões governamentais, eventos e apresentações, exibições culturais locais
 
-O Salão Multifuncional da Administração do Distrito de Yangmei necessitava de um sistema de projeção flexível para atender a diversas necessidades de uso, desde reuniões administrativas cotidianas e grandes audiências públicas até eventos culturais locais. A Yupitek planejou e instalou um sistema de projeção multi-projetor com fusão de imagem para atender a múltiplos cenários de uso.
+O Salão Multifuncional da Administração do Distrito de Yangmei necessitava de um sistema de projeção flexível para atender a diversas necessidades de uso, desde reuniões administrativas cotidianas e grandes audiências públicas até eventos culturais locais. A Yopitek planejou e instalou um sistema de projeção multi-projetor com fusão de imagem para atender a múltiplos cenários de uso.
 
 ## Solução Técnica
 

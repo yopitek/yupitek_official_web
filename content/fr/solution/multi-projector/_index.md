@@ -1,6 +1,6 @@
 ---
 title: "Fusion Multi-Projecteurs"
-description: "Solutions de fusion multi-projecteurs Yupitek : Edge Blending, correction géométrique et uniformité de luminosité pour l'intégration de systèmes de projection ultra-larges grand format."
+description: "Solutions de fusion multi-projecteurs Yopitek : Edge Blending, correction géométrique et uniformité de luminosité pour l'intégration de systèmes de projection ultra-larges grand format."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 Lorsqu'un seul projecteur ne peut pas satisfaire les exigences d'une projection de très grande taille ou de forme complexe, la fusion multi-projecteurs assemble de manière transparente les images de plusieurs projecteurs en un affichage ultra-large continu et unifié.
 
-Yupitek possède une solide expérience dans l'intégration de systèmes multi-projecteurs, avec des projets réalisés allant de configurations à 2 projecteurs jusqu'à des déploiements à grande échelle de 20 unités ou plus.
+Yopitek possède une solide expérience dans l'intégration de systèmes multi-projecteurs, avec des projets réalisés allant de configurations à 2 projecteurs jusqu'à des déploiements à grande échelle de 20 unités ou plus.
 
 ## Technologies Clés
 

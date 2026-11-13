@@ -347,13 +347,13 @@ All tests performed on MK7 Firmware 2.1.3 with a genuine ALFA AWUS036ACM:
 
 It shares the exact MT7612U chipset with Hak5's own MK7AC Adapter, uses an in-kernel driver with zero compilation, draws well within the MK7's USB power budget, and supports the full penetration testing toolkit: monitor mode, packet injection, and handshake capture across all 5 GHz channels.
 
-**Buy the AWUS036ACM from Yupitek:**
+**Buy the AWUS036ACM from Yopitek:**
 
 👉 [ALFA AWUS036ACM Product Page](/en/products/alfa/awus036acm/)
 
 We are an authorized ALFA Network distributor and provide full technical support for all ALFA × HAK5 integration scenarios. Browse our complete [ALFA adapter lineup](/en/products/alfa/) to find the right tool for your testing needs.
 
-**Related resources from Yupitek:**
+**Related resources from Yopitek:**
 - [AWUS036ACH vs AWUS036ACM — Full Comparison for Kali Linux](/en/blog/awus036ach-vs-awus036acm/)
 - [Best WiFi Adapter for Kali Linux in 2026](/en/blog/best-wifi-adapter-kali-linux-2026/)
 - [Enable Monitor Mode on Kali Linux — Complete Guide](/en/blog/enable-monitor-mode-kali-linux/)
@@ -367,7 +367,7 @@ We are an authorized ALFA Network distributor and provide full technical support
 
 {{< faq >}}
 
-*Need help with your setup? Contact Yupitek technical support at [yupitek.com/support](/en/support/).*
+*Need help with your setup? Contact Yopitek technical support at [yupitek.com/support](/en/support/).*
 
 ## References
 

@@ -15,14 +15,14 @@ tags:
   - "rtl8812au"
 categories:
   - "Hardware-Leitfaden"
-description: "\"Yupitek ALFA USB 網卡技術文件，涵蓋6款機型（Mediatek、Realtek）\""
+description: "\"Yopitek ALFA USB 網卡技術文件，涵蓋6款機型（Mediatek、Realtek）\""
 featureimage: ""
 author: "benny-lai"
 lastmod: 2026-09-03
 ---
 
 > **Technikunterstützungs-Dokument · 2026-09-03 Erste Version (gemäß blog-writing-rules.md v1.0 erstellt)**
-> Beurteilungsmutter: In diesem technischen Dokument sind 6 Modelle der aktiven Yupitek ALFA USB Netzwerkkarten (3 MediaTek, 3 Realtek) enthalten.
+> Beurteilungsmutter: In diesem technischen Dokument sind 6 Modelle der aktiven Yopitek ALFA USB Netzwerkkarten (3 MediaTek, 3 Realtek) enthalten.
 > Verwandte Artikel: [Ist die ALFA WLAN-Karte kompatibel mit NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Ist die ALFA WLAN-Karte kompatibel mit OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[Ist die ALFA WLAN-Karte kompatibel mit NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)｜[Ist die ALFA WLAN-Karte kompatibel mit Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)｜[Ist die ALFA WLAN-Karte kompatibel mit DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)
 
 ## Einleitung
@@ -138,12 +138,12 @@ Die Schlussfolgerungen dieses Artikels sind unter folgenden Bedingungen **nicht 
 | morrownr/8812au GitHub | RTL8812AU Linux-Treiber | https://github.com/morrownr/8812au-20210820 | ✅ Geprüft | 03.09.2026 |
 | morrownr/8821cu GitHub | RTL8811CU Linux-Treiber | https://github.com/morrownr/8821cu-20210916 | ✅ Geprüft | 03.09.2026 |
 | morrownr/rtl8852bu GitHub | RTL8832BU Linux-Treiber | https://github.com/morrownr/rtl8852bu-20250826 | ✅ Geprüft | 03.09.2026 |
-| Yupitek ALFA Produktübersicht | Aktuelle Modelle und Spezifikationen | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 03.09.2026 |
-| Yupitek Blog: Soft AP Anleitung | AP-Modus Implementierung und Validierung | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Geprüft | 03.09.2026 |
+| Yopitek ALFA Produktübersicht | Aktuelle Modelle und Spezifikationen | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 03.09.2026 |
+| Yopitek Blog: Soft AP Anleitung | AP-Modus Implementierung und Validierung | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Geprüft | 03.09.2026 |
 | Diese Website Technische Dokumentation 9 Artikel | Bestimmungsmatrix und Umgebungsvalidierung | Relative Verknüpfungen (siehe Artikelkopf „Verwandte Artikel“) | ✅ Geprüft | 03.09.2026 |
 
 > Kernel mt76 offizielle Wiki-Seite: https://wireless.wiki.kernel.org/en/users/drivers/mediatek （Geprüft, zeigt die unterstützte Chip-Start-Kernel-Version an, kann als schnelle Überprüfung dienen）
 
 ## Haftungsausschluss
 
-Dieser Dokument wurde von Yupitek Ltd. technisch aufbereitet und kann aufgrund von Updates des Kernels und der Treiber-Repositorys in Bezug auf Spezifikationen und Treiberstatus variieren. Bitte stellen Sie sicher, dass Sie vor der Installation die offiziellen Repositorys und die Originalhersteller-Spezifikationsseiten verwenden. ALFA Network ist eine offiziell von uns autorisierte Vertriebsmarke.
+Dieser Dokument wurde von Yopitek Ltd. technisch aufbereitet und kann aufgrund von Updates des Kernels und der Treiber-Repositorys in Bezug auf Spezifikationen und Treiberstatus variieren. Bitte stellen Sie sicher, dass Sie vor der Installation die offiziellen Repositorys und die Originalhersteller-Spezifikationsseiten verwenden. ALFA Network ist eine offiziell von uns autorisierte Vertriebsmarke.

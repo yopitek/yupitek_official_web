@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "CR2477", "Waterproof"]
 ---
 
 ## 製品概要
@@ -66,7 +66,7 @@ YPB01 のパラメータ（UUID、Major、Minor、送信出力、およびアド
 ## 製品ギャラリー
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb01.png" alt="Yupitek YPB01" />
+  <img src="/images/products/ibeacon/ypb01.png" alt="Yopitek YPB01" />
 {{< /gallery >}}
 
 ---

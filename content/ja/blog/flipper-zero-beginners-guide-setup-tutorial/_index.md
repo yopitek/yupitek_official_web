@@ -10,7 +10,7 @@ tags:
   - Flipper Zero
   - チュートリアル
 hero_image: /static/img/flipper-zero/hero.webp
-hero_alt: "Flipper Zero 入門ガイド：開封、ファームウェア更新と5つの機能の実測｜Yupitek"
+hero_alt: "Flipper Zero 入門ガイド：開封、ファームウェア更新と5つの機能の実測｜Yopitek"
 seo_description: "Flipper Zero とは？開封、microSD 設定、qFlipper によるファームウェア更新から、RFID／Sub-GHz／NFC／IR／BadUSB の5つの機能実測まで。Flipper Zero の入門をこれ1本でマスターしましょう。"
 date: "2026-08-10"
 draft: false
@@ -148,7 +148,7 @@ Flipper Zero 自体は合法なツールですが、使用シーンには明確�
 Flipper Zero の内蔵 Sub-GHz トシーバーは、一般的なプロトコル（OOK/ASK/FSK など）に特化しており、操作が直感的です。一方、SDR（HackRF、RTL-SDR など）は周波数範囲が広く、生スペクトルを確認できますが、コンピュータとより深い背景知識が必要です。両者は補完的なツールです。
 
 **Q5：Flipper Zero はどこで購入できますか？**
-Yupitek（榆閤科技）では Flipper Zero 製品と関連アクセサリーを提供しており、技術相談にも対応しています。ご購入後は sales@yupitek.com までお問い合わせください。
+Yopitek（榆閤科技）では Flipper Zero 製品と関連アクセサリーを提供しており、技術相談にも対応しています。ご購入後は sales@yupitek.com までお問い合わせください。
 
 **Q6：サードパーティ製ファームウェアをインストールできますか？**
 可能です。ただし、初心者には推奨しません。Xtreme などのサードパーティ製ファームウェアは、インターフェースのカスタマイズや追加機能を提供しますが、安定性と安全性は自己責任で評価する必要があり、メーカーの更新サポートが受けられなくなる可能性があります。
@@ -157,4 +157,4 @@ Yupitek（榆閤科技）では Flipper Zero 製品と関連アクセサリー�
 
 Flipper Zero の入門パスはシンプルです：**microSD を装着 → 公式安定版ファームウェアを更新 → RFID カード読み取りと IR リモコンから始める → 慣れたら Sub-GHz と BadUSB に挑戦**。これは無線プロトコルとハードウェアセキュリティを理解するための素晴らしい出発点ですが、常に覚えておいてください。機能が強力であればあるほど、自律性が求められます。権限のあるデバイスでのみテストしてください。
 
-Flipper Zero や関連アクセサリーをご検討の方は、[sales@yupitek.com](mailto:sales@yupitek.com) までお気軽にお問い合わせください。Yupitek では製品と技術コンサルティングサービスを提供しています。
+Flipper Zero や関連アクセサリーをご検討の方は、[sales@yupitek.com](mailto:sales@yupitek.com) までお気軽にお問い合わせください。Yopitek では製品と技術コンサルティングサービスを提供しています。

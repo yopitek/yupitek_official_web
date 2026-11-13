@@ -18,7 +18,7 @@ faq:
   - question: "Muss ich zwingend den ALFA AWUS036ACH für wfb-ng verwenden?"
     answer: "Theoretisch funktioniert jeder RTL8812AU-Adapter. Der AWUS036ACH ist aber die vom wfb-ng-Projekt offiziell getestete Hardware mit dem stabilsten Treibersupport. Gerade für hohe Sendeleistung und große Reichweiten spielen ALFAs Power-Design und die abnehmbaren Antennen ihre Stärken aus."
 ---
-> Autor: Yupitek Technik-Team (offizieller ALFA-Network-Distributor, Taiwan)
+> Autor: Yopitek Technik-Team (offizieller ALFA-Network-Distributor, Taiwan)
 > Zielgruppe: Drohnen-Enthusiasten, Maker, Sicherheitsforscher, Entwickler von Agrar- und Inspektionsdrohnen
 > Schwierigkeit: ★★★☆☆ (grundlegende Linux- und Flugcontroller-Kenntnisse erforderlich)
 
@@ -431,4 +431,4 @@ Wenn du dich zum ersten Mal mit Drohnen-Link-Technik beschäftigst, hier eine ku
 
 ---
 
-*Dieser Artikel wurde vom Yupitek-Technikerteam (offizieller ALFA-Network-Distributor, Taiwan) auf Basis der wfb-ng-Dokumentation und praktischer Erfahrung erstellt. Prüfe vor dem Bau deines Links die lokalen Funkvorschriften und passe Sendeleistung und Frequenzen entsprechend an.*
+*Dieser Artikel wurde vom Yopitek-Technikerteam (offizieller ALFA-Network-Distributor, Taiwan) auf Basis der wfb-ng-Dokumentation und praktischer Erfahrung erstellt. Prüfe vor dem Bau deines Links die lokalen Funkvorschriften und passe Sendeleistung und Frequenzen entsprechend an.*

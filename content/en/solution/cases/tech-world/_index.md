@@ -13,7 +13,7 @@ tags: ["Theme Hall", "Science Exhibition", "Immersive Projection"]
 **Type**: Technology theme hall Immersive projection
 **Theme**: Life Science × Technology Experience
 
-Tech World Life Hall is a themed experience space combining technology and life science. Yupitek was responsible for the Immersive projection system integration, using large-format projection and interactive installations to enable visitors to explore the mysteries of life in an entirely new way.
+Tech World Life Hall is a themed experience space combining technology and life science. Yopitek was responsible for the Immersive projection system integration, using large-format projection and interactive installations to enable visitors to explore the mysteries of life in an entirely new way.
 
 ## Exhibition Highlights
 

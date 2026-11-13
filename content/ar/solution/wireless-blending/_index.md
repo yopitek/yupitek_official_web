@@ -1,6 +1,6 @@
 ---
 title: "مزج الحواف اللاسلكي Wireless Edge Blending"
-description: "حلول مزج الحواف اللاسلكي من Yupitek: مزامنة لاسلكية لأجهزة إسقاط متعددة دون كابلات معقدة، تقنية مزج الحواف (Edge Blending)، تركيب مرن وسهل."
+description: "حلول مزج الحواف اللاسلكي من Yopitek: مزامنة لاسلكية لأجهزة إسقاط متعددة دون كابلات معقدة، تقنية مزج الحواف (Edge Blending)، تركيب مرن وسهل."
 date: 2026-03-12
 showBreadcrumbs: true
 dir: rtl

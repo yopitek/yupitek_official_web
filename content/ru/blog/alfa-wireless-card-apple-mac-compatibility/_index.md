@@ -2,7 +2,7 @@
 title: "Беспроводные карты ALFA на Apple Mac (2026): Полный отчёт о совместимости для M1/M2/M3/M4 и Intel"
 description: "Полное руководство по совместимости USB-адаптеров ALFA Network на Apple Mac (MacBook, MacBook Pro, MacBook Air, Mac Mini, Mac Studio) с процессорами Intel и Apple Silicon M1/M2/M3/M4. Узнайте, какие карты ALFA работают, почему Apple Silicon не поддерживает их нативно и как включить режим монитора через виртуальную машину Linux."
 keywords: "ALFA беспроводная карта Mac, совместимость ALFA macOS, ALFA адаптер Apple Silicon, USB WiFi адаптер M1 M2 M3 M4, ALFA Network MacBook, режим монитора Mac, AWUS036ACH Mac, AWUS036ACM Mac, ALFA Network Mac Mini, тестирование на проникновение Apple Silicon"
-author: "Группа технической поддержки Yupitek"
+author: "Группа технической поддержки Yopitek"
 date: "2026-06-20"
 category: "Техническое руководство"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
@@ -23,7 +23,7 @@ tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", 
 
 ## 1. Матрица совместимости: Какая карта ALFA работает на каком Mac?
 
-Эта таблица является исчерпывающим справочником. В ней оцениваются все 9 доступных на сегодняшний день беспроводных адаптеров ALFA (не снятых с производства) из [линейки продуктов ALFA от Yupitek](https://yupitek.com/en/products/alfa/) в четырёх сценариях развёртывания.
+Эта таблица является исчерпывающим справочником. В ней оцениваются все 9 доступных на сегодняшний день беспроводных адаптеров ALFA (не снятых с производства) из [линейки продуктов ALFA от Yopitek](https://yupitek.com/en/products/alfa/) в четырёх сценариях развёртывания.
 
 ### 1.1 Полная матрица совместимости
 
@@ -413,10 +413,10 @@ Mac Apple Silicon (M1/M2/M3/M4) используют ядро ARM64, котор�
 
 | Ресурс | URL |
 |----------|-----|
-| Официальный сайт Yupitek | [https://www.yupitek.com](https://www.yupitek.com) |
-| Страница продуктов ALFA Yupitek | [https://yupitek.com/en/products/alfa/](https://yupitek.com/en/products/alfa/) |
+| Официальный сайт Yopitek | [https://www.yupitek.com](https://www.yupitek.com) |
+| Страница продуктов ALFA Yopitek | [https://yupitek.com/en/products/alfa/](https://yupitek.com/en/products/alfa/) |
 | Официальный сайт ALFA Network | [https://www.alfa.com.tw](https://www.alfa.com.tw) |
-| Таблица сравнения ALFA Yupitek | [https://yupitek.com/alfa_compare.html](https://yupitek.com/alfa_compare.html) |
+| Таблица сравнения ALFA Yopitek | [https://yupitek.com/alfa_compare.html](https://yupitek.com/alfa_compare.html) |
 
 ### Репозитории драйверов Linux (GitHub)
 
@@ -454,9 +454,9 @@ Mac Apple Silicon (M1/M2/M3/M4) используют ядро ARM64, котор�
 
 ---
 
-*Эта статья основана на технических исследованиях, собранных из документации для разработчиков Apple, репозиториев GitHub (chris1111, aircrack-ng, morrownr), технических спецификаций продуктов ALFA Network, отчётов сообщества Reddit/GitHub и документации реальных тестов. Все рекомендации по продуктам основаны на текущей линейке продуктов ALFA, находящейся на складе Yupitek.*
+*Эта статья основана на технических исследованиях, собранных из документации для разработчиков Apple, репозиториев GitHub (chris1111, aircrack-ng, morrownr), технических спецификаций продуктов ALFA Network, отчётов сообщества Reddit/GitHub и документации реальных тестов. Все рекомендации по продуктам основаны на текущей линейке продуктов ALFA, находящейся на складе Yopitek.*
 
 *⚠️ Оборудование и методы, описанные в этой статье, предназначены исключительно для авторизованных аудитов информационной безопасности и законного тестирования на проникновение. Пользователи должны обеспечить соответствие местным законам и нормативным актам.*
 
 ---
-*Версия статьи: 1.0 | 2026-06-20 | Yupitek Ltd.*
+*Версия статьи: 1.0 | 2026-06-20 | Yopitek Ltd.*

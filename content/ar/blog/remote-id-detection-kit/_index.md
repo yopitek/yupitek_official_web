@@ -20,7 +20,7 @@ faq:
   - question: "هل الاستقبال السلبي قانوني؟"
     answer: "استقبال بثوث Remote ID العامة من الطائرات بدون طيار هو قانوني، ويعادل قراءة معلومات عامة. لكن التداخل النشط (jamming) منظم بشدة ولا يندرج ضمن هذه المجموعة."
 ---
-> الفريق التقني لشركة Yupitek | الموزع المعتمد لـ ALFA Network في تايوان
+> الفريق التقني لشركة Yopitek | الموزع المعتمد لـ ALFA Network في تايوان
 
 {{< tldr >}}
 مجموعة كشف Remote ID تستخدم وضع المراقبة (monitor mode) لبطاقة **ALFA AWUS036ACH** لاستقبال معلومات الهوية والموضع التي يجب على الطائرات بدون طيار بثها قانونياً (ما يعادل «لوحة أرقام جوية») بشكل سلبي، مما يوفر لمديري الأمن أداة قانونية ومنخفضة التكلفة للوعي الظرفي.
@@ -290,9 +290,9 @@ curl -fsSL https://github.com/fduflyer/DroneAware-Node-Releases/releases/latest/
 4. [kismetwireless/kismet — إطار كشف لاسلكي](https://github.com/kismetwireless/kismet)
 5. [alphafox02/antsdr_dji_droneid — فك ترميز SDR لـ DJI OcuSync DroneID](https://github.com/alphafox02/antsdr_dji_droneid)
 6. [morrownr/8812au-20210629 — برنامج تشغيل لينكس RTL8812AU للمراقبة/الحقن](https://github.com/morrownr/8812au-20210629)
-7. [صفحة منتج ALFA AWUS036ACH (Yupitek)](https://yupitek.com/ar/products/alfa/awus036ach/)
-8. [اتصال وطلبات Yupitek](https://www.yupitek.com/ar/contact/)
+7. [صفحة منتج ALFA AWUS036ACH (Yopitek)](https://yupitek.com/ar/products/alfa/awus036ach/)
+8. [اتصال وطلبات Yopitek](https://www.yupitek.com/ar/contact/)
 
 ---
 
-*تم إعداد هذا المقال من قبل الفريق التقني لشركة Yupitek. AWUS036ACH والعتاد المرتبط بها متوفرة عبر Yupitek مع دعم فني (Yupitek موزع معتمد لمنتجات ALFA Network).*
+*تم إعداد هذا المقال من قبل الفريق التقني لشركة Yopitek. AWUS036ACH والعتاد المرتبط بها متوفرة عبر Yopitek مع دعم فني (Yopitek موزع معتمد لمنتجات ALFA Network).*

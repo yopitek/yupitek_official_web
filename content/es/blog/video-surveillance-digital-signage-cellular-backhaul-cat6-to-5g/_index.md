@@ -30,7 +30,7 @@ Y gastan una fortuna para luego descubrir que en realidad no lo necesitaban.
 
 Elegir una tarjeta de red no es elegir un coche de carreras; no se trata de que cuanto más rápida, mejor, sino de «recetar el remedio adecuado a cada caso». En este artículo tomamos los tres módulos M.2 más habituales de Sierra Wireless (EM7455, EM7565 y EM9191) y, con los números de las hojas de especificaciones oficiales, le enseñamos a elegir el más rentable.
 
-> Fuente de los datos técnicos: hojas de especificaciones oficiales de Sierra Wireless. Artículo recopilado por Yupitek (榆閤科技).
+> Fuente de los datos técnicos: hojas de especificaciones oficiales de Sierra Wireless. Artículo recopilado por Yopitek (榆閤科技).
 
 ---
 
@@ -109,7 +109,7 @@ Comprar una tarjeta de red es como alquilar un camión: según la carga que vaya
 
 ## Información de compra (Llamada a la acción)
 
-¿Está planificando una solución de red para retorno de vídeo o para cartelería digital? Yupitek (榆閤科技) ofrece módulos Sierra Wireless completos y asesoramiento técnico profesional para calcularle la combinación más rentable.
+¿Está planificando una solución de red para retorno de vídeo o para cartelería digital? Yopitek (榆閤科技) ofrece módulos Sierra Wireless completos y asesoramiento técnico profesional para calcularle la combinación más rentable.
 Escríbanos: **sales@yupitek.com**
 Vea los productos: [Sección de productos Sierra Wireless](/es/products/sierra/)
 

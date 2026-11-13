@@ -312,7 +312,7 @@ sudo modprobe rtl8852bu
 | عدم استقرار الاتصال بالWiFi أو بطء السرعة | دعم محول USB-C فقط لـ USB 2.0 | استبدال محول يدعم USB 3.2 Gen 2×2؛ التأكد من أن المحول يحتوي على علامة "Data" وليس "Charge Only" |
 | تعارض بين Wi-Fi الداخلي والبطاقة الخارجية ALFA | تعارض بين واجهتين لاسلكيتين في التوجيه | إيقاف WiFi الداخلي: `sudo nmcli radio wifi off` أو إيقافه في BIOS/UEFI؛ أو تعيين ترتيب التوجيه |
 | عدم استخدام 6GHz (Wi-Fi 6E) | قيود منطقة التنظيم | تعيين منطقة التنظيم: `sudo iw reg set US` (الولايات المتحدة مفتوحة 6GHz)； التأكد من أن firmware الخاص بـ AWUS036AXML/AXM يدعم 6GHz |
-| فشل بدء نمط AP | تعارض بين NetworkManager و hostapd | الاستعانة بمجلة Yupitek ALFA Soft AP؛ إيقاف NetworkManager من إدارة الواجهة بعد ذلك إعداد hostapd يدويًا |
+| فشل بدء نمط AP | تعارض بين NetworkManager و hostapd | الاستعانة بمجلة Yopitek ALFA Soft AP؛ إيقاف NetworkManager من إدارة الواجهة بعد ذلك إعداد hostapd يدويًا |
 | اختفاء بطاقة الشبكة بعد الاستيقاظ | إيقاف التشغيل التلقائي لـ USB | إيقاف التشغيل التلقائي لـ USB: `echo 'options usbcore autosuspend=-1' | sudo tee /etc/modprobe.d/usb.conf` |
 
 ## 9. الحدود المعروفة
@@ -340,8 +340,8 @@ sudo modprobe rtl8852bu
 | morrownr/8821cu GitHub | محرك RTL8811CU Linux | https://github.com/morrownr/8821cu-20210916 | ✅ تم التحقق | 2026-09-03 |
 | morrownr/rtl8852bu GitHub | محرك RTL8832BU Linux | https://github.com/morrownr/rtl8852bu-20250826 | ✅ تم التحقق | 2026-09-03 |
 | وثائق محرك mt76 Linux kernel | وثائق محرك MediaTek mt76 / mt7921 mainline (تتضمن إصدارات kernel الداعمة لكل معالج) | https://wireless.wiki.kernel.org/en/users/drivers/mediatek | ✅ تم التحقق | 2026-09-03 |
-| دليل Linux Guide للSoft AP WiFi Hotspot من ALFA (Yupitek) | دليل حول كيفية إعداد نمط AP على Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ تم التحقق | 2026-09-03 |
-| ملخص منتجات شبكة ALFA (Yupitek) | مواصفات المنتجات الحالية لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
+| دليل Linux Guide للSoft AP WiFi Hotspot من ALFA (Yopitek) | دليل حول كيفية إعداد نمط AP على Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ تم التحقق | 2026-09-03 |
+| ملخص منتجات شبكة ALFA (Yopitek) | مواصفات المنتجات الحالية لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | بيان رسمي من مدير المحرك: يُنصح بتجنب استخدام مكونات RTL8852/32au (RTL8832BU) | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ تم التحقق | 2026-09-03 |
 | morrownr/8812au-20210820 GitHub | بيانات أحدث حول محرك RTL8812AU (إدراج في kernel 6.13، مستوى جودة 6.14) | https://github.com/morrownr/8812au-20210820 | ✅ تم التحقق | 2026-09-03 |
 

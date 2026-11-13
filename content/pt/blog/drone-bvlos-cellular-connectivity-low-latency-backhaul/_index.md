@@ -29,7 +29,7 @@ Quando o drone ou o robô sai da sua linha de visão (é o que chamamos de BVLOS
 
 Neste artigo usamos as folhas de especificações oficiais da Sierra Wireless para desvendar o mistério: por que esses módulos combinam tão bem com drones e robôs? Como eles conseguem latência baixa?
 
-> Fonte dos dados técnicos: folhas de especificações oficiais da Sierra Wireless (EM9190/EM9191 e EM7565). Artigo organizado pela Yupitek (榆閤科技).
+> Fonte dos dados técnicos: folhas de especificações oficiais da Sierra Wireless (EM9190/EM9191 e EM7565). Artigo organizado pela Yopitek (榆閤科技).
 
 ---
 
@@ -83,7 +83,7 @@ Quem voa no céu, tem orçamento e quer uma rede 5G privada, que compre o **EM91
 
 ## Informações de compra (Call To Action)
 
-Está projetando a placa de comunicação de um drone ou de um robô de inspeção? Não sabe como planejar as antenas e a refrigeração? A Yupitek (榆閤科技) oferece módulos Sierra Wireless completos e serviço de consultoria de integração de hardware.
+Está projetando a placa de comunicação de um drone ou de um robô de inspeção? Não sabe como planejar as antenas e a refrigeração? A Yopitek (榆閤科技) oferece módulos Sierra Wireless completos e serviço de consultoria de integração de hardware.
 Escreva para nós: **sales@yupitek.com**
 Veja os produtos: [Seção de módulos Sierra Wireless](/pt/products/sierra/)
 

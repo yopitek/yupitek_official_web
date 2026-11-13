@@ -201,7 +201,7 @@ Contra-argumentos: Se o cliente estiver usando versões de compilação comunit�
 | Wiki Oficial DD-WRT — Instalação | Instrução de instalação (com suporte USB) | https://wiki.dd-wrt.com/wiki/Installation | ✅ Verificado através do link da página principal | 2026-09-03 |
 | Documentação Oficial OpenWrt | Referência de comparação de WiFi USB | https://openwrt.org/docs/start | ✅ Verificado | 2026-09-03 |
 | morrownr/8812au GitHub | Driver RTL8812AU para Linux (não integrado no DD-WRT) | https://github.com/morrownr/8812au-20210820 | ✅ Verificado | 2026-09-03 |
-| Catálogo de Produtos ALFA Network (Yupitek) | Especificações dos produtos atuais da ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
+| Catálogo de Produtos ALFA Network (Yopitek) | Especificações dos produtos atuais da ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
 
 Artigos Relacionados: [O adaptador Wi-Fi ALFA suporta OpenWrt?](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) | [O adaptador Wi-Fi ALFA suporta Tomato?](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)
 

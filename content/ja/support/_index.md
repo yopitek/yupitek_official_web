@@ -1,6 +1,6 @@
 ---
 title: "テクニカルサポート・ドライバーダウンロード"
-description: "Yupitek取扱ブランドの公式ドライバーダウンロードセンター。ALFA Network、HAK5、Flipper Zero、Ubiquitiの公式ドライバー・ファームウェアリンク。"
+description: "Yopitek取扱ブランドの公式ドライバーダウンロードセンター。ALFA Network、HAK5、Flipper Zero、Ubiquitiの公式ドライバー・ファームウェアリンク。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,9 +13,9 @@ showTableOfContents: true
 セキュリティと互換性を確保するため、必ず公式ブランドサイトからドライバーをダウンロードしてください。
 {{< /alert >}}
 
-## Yupitek Wiki
+## Yopitek Wiki
 
-セットアップガイド、Linux 互換性情報、トラブルシューティングの手順については、[Yupitek Wiki](https://doc.yupitek.com/) をご覧ください。ALFA Network、Hak5、Flipper Zero、SDRLAB、ACS 製品の技術ドキュメントを提供しています。
+セットアップガイド、Linux 互換性情報、トラブルシューティングの手順については、[Yopitek Wiki](https://doc.yupitek.com/) をご覧ください。ALFA Network、Hak5、Flipper Zero、SDRLAB、ACS 製品の技術ドキュメントを提供しています。
 
 ## ALFA Network ドライバー
 

@@ -231,7 +231,7 @@ Condiciones de refutación: Si en el futuro la versión de FreshTomato incluye e
 | Sitio web oficial de FreshTomato | Lista de versiones más recientes y dispositivos compatibles de FreshTomato | https://freshtomato.org/ | ✅ Verificado | 2026-09-03 |
 | Documentación oficial de OpenWrt | Configuración de controladores WiFi USB (referencia comparativa) | https://openwrt.org/docs/start | ✅ Verificado | 2026-09-03 |
 | Foro oficial de OpenWrt | Discusiones sobre controladores WiFi USB (referencia comparativa) | https://forum.openwrt.org/ | ✅ Verificado | 2026-09-03 |
-| Catálogo de productos de ALFA Network (Yupitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
+| Catálogo de productos de ALFA Network (Yopitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
 
 Artículos relacionados: [¿Soporta el adaptador inalámbrico ALFA DD-WRT?](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[¿Soporta el adaptador inalámbrico ALFA OpenWrt?](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[¿Soporta el adaptador inalámbrico ALFA NVIDIA DGX Spark?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[¿Soporta el adaptador inalámbrico ALFA NVIDIA Jetson Nano?](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

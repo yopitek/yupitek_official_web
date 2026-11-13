@@ -2,7 +2,7 @@
 title: "بطاقات ALFA اللاسلكية على Apple Mac (2026): التقرير الشامل للتوافق مع M1/M2/M3/M4 و Intel"
 description: "دليل توافق شامل لاستخدام محولات ALFA Network اللاسلكية USB على Apple Mac (MacBook وMacBook Pro وMacBook Air وMac Mini وMac Studio) مع معالجات Intel و Apple Silicon M1/M2/M3/M4. تعرف على بطاقات ALFA المتوافقة، ولماذا لا يدعم Apple Silicon أي بطاقة بشكل أصلي، وكيفية تفعيل وضع المراقبة عبر جهاز افتراضي Linux."
 keywords: "بطاقة ALFA اللاسلكية Mac، توافق ALFA macOS، محول ALFA Apple Silicon، محول USB WiFi M1 M2 M3 M4، ALFA Network MacBook، وضع المراقبة Mac، AWUS036ACH Mac، AWUS036ACM Mac، ALFA Network Mac Mini، اختبار الاختراق Apple Silicon"
-author: "فريق الدعم الفني Yupitek"
+author: "فريق الدعم الفني Yopitek"
 date: "2026-06-20"
 category: "دليل تقني"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
@@ -23,7 +23,7 @@ tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", 
 
 ## 1. مصفوفة التوافق: أي بطاقة ALFA تعمل على أي Mac؟
 
-هذا الجدول هو المرجع الشامل. يُقيّم جميع محولات ALFA اللاسلكية الـ 9 المتاحة حالياً (غير المتوقفة عن الإنتاج) من [خط منتجات ALFA لدى Yupitek](https://yupitek.com/en/products/alfa/) وفق أربعة سيناريوهات نشر.
+هذا الجدول هو المرجع الشامل. يُقيّم جميع محولات ALFA اللاسلكية الـ 9 المتاحة حالياً (غير المتوقفة عن الإنتاج) من [خط منتجات ALFA لدى Yopitek](https://yupitek.com/en/products/alfa/) وفق أربعة سيناريوهات نشر.
 
 ### 1.1 مصفوفة التوافق الكاملة
 
@@ -413,10 +413,10 @@ Mac Mini M4/M4 Pro هو **أول Mac Mini بلا منافذ USB-A**. الأهم 
 
 | المورد | الرابط |
 |----------|-----|
-| الموقع الرسمي لـ Yupitek | [https://www.yupitek.com](https://www.yupitek.com) |
-| صفحة منتجات ALFA في Yupitek | [https://yupitek.com/en/products/alfa/](https://yupitek.com/en/products/alfa/) |
+| الموقع الرسمي لـ Yopitek | [https://www.yupitek.com](https://www.yupitek.com) |
+| صفحة منتجات ALFA في Yopitek | [https://yupitek.com/en/products/alfa/](https://yupitek.com/en/products/alfa/) |
 | الموقع الرسمي لـ ALFA Network | [https://www.alfa.com.tw](https://www.alfa.com.tw) |
-| جدول مقارنة ALFA في Yupitek | [https://yupitek.com/alfa_compare.html](https://yupitek.com/alfa_compare.html) |
+| جدول مقارنة ALFA في Yopitek | [https://yupitek.com/alfa_compare.html](https://yupitek.com/alfa_compare.html) |
 
 ### مستودعات برامج تشغيل Linux (GitHub)
 
@@ -454,9 +454,9 @@ Mac Mini M4/M4 Pro هو **أول Mac Mini بلا منافذ USB-A**. الأهم 
 
 ---
 
-*يستند هذا المقال إلى بحوث تقنية مجمّعة من توثيق مطوري Apple، ومستودعات GitHub (chris1111، وaircrack-ng، ومorrownr)، ومواصفات منتجات ALFA Network، وتقارير مجتمع Reddit/GitHub، ووثائق الاختبارات الفعلية. جميع توصيات المنتجات مبنية على خط منتجات ALFA المتوفر حالياً في مخزون Yupitek.*
+*يستند هذا المقال إلى بحوث تقنية مجمّعة من توثيق مطوري Apple، ومستودعات GitHub (chris1111، وaircrack-ng، ومorrownr)، ومواصفات منتجات ALFA Network، وتقارير مجتمع Reddit/GitHub، ووثائق الاختبارات الفعلية. جميع توصيات المنتجات مبنية على خط منتجات ALFA المتوفر حالياً في مخزون Yopitek.*
 
 *⚠️ المعدات والتقنيات الموصوفة في هذا المقال مخصصة حصراً لعمليات تدقيق أمن المعلومات المعتمدة واختبارات الاختراق القانونية. يجب على المستخدمين التأكد من الامتثال للقوانين واللوائح المحلية.*
 
 ---
-*إصدار المقال: 1.0 | 2026-06-20 | Yupitek Ltd.*
+*إصدار المقال: 1.0 | 2026-06-20 | Yopitek Ltd.*

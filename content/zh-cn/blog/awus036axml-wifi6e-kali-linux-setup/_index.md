@@ -4,13 +4,13 @@ locale: zh-CN
 hreflang_group: awus036axml-wifi6e-kali-linux-setup
 slug: awus036axml-wifi6e-kali-linux-setup
 published: 2026-08-10
-author: Yupitek
+author: Yopitek
 category: technical
 tags:
   - AWUS036AXML
   - Kali Linux
 hero_image: /static/img/AWUS036AXML/hero.webp
-hero_alt: "AWUS036AXML 在 Kali Linux 上怎么装？Wi-Fi 6E 监听模式与包注入教程｜Yupitek"
+hero_alt: "AWUS036AXML 在 Kali Linux 上怎么装？Wi-Fi 6E 监听模式与包注入教程｜Yopitek"
 seo_description: "ALFA AWUS036AXML（MT7921AUN 芯片）在 Kali Linux 上的安装教程：内置 mt7921u 驱动、kernel 版本条件、监听模式、包注入实测与常见排错。"
 date: "2026-08-10"
 draft: false
@@ -199,4 +199,4 @@ AXML 是 Wi-Fi 6E（多了 6 GHz）且驱动内核内置；ACH 是双频（2.4/5
 
 AWUS036AXML 的安装流程比你想象的简单：**内核 5.18+ → 插入即用（`mt7921u`）→ 确认 `0e8d:7961` → airmon-ng 切监听 → aireplay-ng 验证注入**。它与 AWUS036ACH 的差异核心在于 6 GHz 频段与免编译驱动——如果你的审计范围已进入 Wi-Fi 6E 世代，这张卡是补齐频段覆盖的选择。记得所有测试只在合法授权环境进行。
 
-ALFA Network 系列网卡由 Yupitek（榆合科技）在台湾提供销售与技术支持；需要 AWUS036AXML 或搭配的供电 Hub、天线，欢迎来信 [sales@yupitek.com](mailto:sales@yupitek.com)。
+ALFA Network 系列网卡由 Yopitek（榆合科技）在台湾提供销售与技术支持；需要 AWUS036AXML 或搭配的供电 Hub、天线，欢迎来信 [sales@yupitek.com](mailto:sales@yupitek.com)。

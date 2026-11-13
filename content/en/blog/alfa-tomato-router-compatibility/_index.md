@@ -231,7 +231,7 @@ If you need specific features of USB WiFi (such as high-power output, monitor mo
 | FreshTomato Official Website | FreshTomato Latest Version and Supported Devices List | https://freshtomato.org/ | ✅ Verified | 2026-09-03 |
 | OpenWrt Official Documentation | USB WiFi Drivers and Wireless Configuration (Comparison Reference) | https://openwrt.org/docs/start | ✅ Verified | 2026-09-03 |
 | OpenWrt Official Forum | USB WiFi Driver Discussions (Comparison Reference) | https://forum.openwrt.org/ | ✅ Verified | 2026-09-03 |
-| ALFA Network Product Overview (Yupitek) | ALFA Current Product Specifications | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verified | 2026-09-03 |
+| ALFA Network Product Overview (Yopitek) | ALFA Current Product Specifications | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verified | 2026-09-03 |
 
 Related Articles: [Is ALFA Wireless Network Card Compatible with DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/) | [Is ALFA Wireless Network Card Compatible with OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) | [Is ALFA Wireless Network Card Compatible with NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/) | [Is ALFA Wireless Network Card Compatible with NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

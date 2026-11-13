@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "fleet-gps-telematics-em7455-mc7455-guide"
 tags: ["Sierra Wireless", "EM7455", "MC7455", "GNSS", "GPS", "Telematics", "Fleet Management", "LTE"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/en/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ A "fleet telematics system" sounds sophisticated, but the principle is simple: c
 
 Hardware engineers used to have a rough time of it. They had to squeeze a GPS chip and a 4G module onto a tiny board, then deal with the power and antenna interference between the two. But now, pick the right cellular module and everything gets much simpler. In this article we use the official spec sheets for the EM7455 and MC7455 to show you the "hidden superpower" of these two modules: GNSS satellite positioning.
 
-> Technical source: Sierra Wireless official specifications (EM7455, MC7455). Compiled by Yupitek.
+> Technical source: Sierra Wireless official specifications (EM7455, MC7455). Compiled by Yopitek.
 
 ---
 
@@ -86,6 +86,6 @@ Pick the EM7455 or MC7455, plug it into your board, attach a standard active GPS
 
 ## Purchasing Information (Call To Action)
 
-Developing a vehicle terminal and need to source the EM7455 or MC7455? Still have questions about antenna configuration or motherboard integration? Yupitek offers complete hardware solutions and first-line technical support.
+Developing a vehicle terminal and need to source the EM7455 or MC7455? Still have questions about antenna configuration or motherboard integration? Yopitek offers complete hardware solutions and first-line technical support.
 Contact us: **sales@yupitek.com**
 Browse the lineup: [Sierra Wireless Modules](https://yupitek.com/en/products/sierra/)

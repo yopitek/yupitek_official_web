@@ -29,7 +29,7 @@ O «sistema telematics de frotas» parece sofisticado, mas seu princípio é na 
 
 Os engenheiros de hardware passavam mal no passado: precisavam colocar um chip GPS e um módulo 4G juntos em uma placa pequena, e resolver as interferências de alimentação e antenas entre ambos. Hoje, basta escolher o módulo celular adequado para que tudo fique muito mais simples. Neste artigo usamos a folha de especificações oficial do EM7455 e do MC7455 para descobrir juntos o seu «superpoder oculto»: o posicionamento por satélite GNSS.
 
-> Fonte dos dados técnicos: folha de especificações oficial da Sierra Wireless (EM7455, MC7455). Artigo elaborado pela Yupitek (榆閤科技).
+> Fonte dos dados técnicos: folha de especificações oficial da Sierra Wireless (EM7455, MC7455). Artigo elaborado pela Yopitek (榆閤科技).
 
 ---
 
@@ -85,7 +85,7 @@ Escolha o EM7455 ou o MC7455, conecte-os à placa, encaixe uma antena ativa GPS 
 
 ## Informações de compra (Call To Action)
 
-Você está desenvolvendo um terminal veicular e precisa comprar o EM7455 ou o MC7455? Tem dúvidas sobre a configuração de antenas ou a integração na placa principal? A Yupitek (榆閤科技) oferece soluções de hardware completas e suporte técnico de primeira linha.
+Você está desenvolvendo um terminal veicular e precisa comprar o EM7455 ou o MC7455? Tem dúvidas sobre a configuração de antenas ou a integração na placa principal? A Yopitek (榆閤科技) oferece soluções de hardware completas e suporte técnico de primeira linha.
 Escreva para nós: **sales@yupitek.com**
 Veja os produtos: [Série de módulos Sierra Wireless](/pt/products/sierra/)
 
@@ -99,7 +99,7 @@ Veja os produtos: [Série de módulos Sierra Wireless](/pt/products/sierra/)
 
 ## Precisa comprar ou consultar? Fale conosco
 
-Se você está desenvolvendo um terminal veicular ou precisa das unidades EM7455 ou MC7455, pode entrar em contato com a equipe de engenharia da Yupitek. Também dispomos das antenas e das placas adaptadoras correspondentes.
+Se você está desenvolvendo um terminal veicular ou precisa das unidades EM7455 ou MC7455, pode entrar em contato com a equipe de engenharia da Yopitek. Também dispomos das antenas e das placas adaptadoras correspondentes.
 
 - **Página do módulo EM7455**: [https://yupitek.com/pt/products/sierra/em7455/](/pt/products/sierra/em7455/)
 - **Página do módulo MC7455**: [https://yupitek.com/pt/products/sierra/mc7455/](/pt/products/sierra/mc7455/)

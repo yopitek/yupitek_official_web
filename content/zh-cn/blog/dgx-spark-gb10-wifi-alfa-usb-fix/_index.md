@@ -329,9 +329,9 @@ ALFA AWUS036ACM 的解决方案简单到近乎荒谬：**插入 USB，搞定。*
 
 ---
 
-> 📌 **ALFA AWUS036ACM 现货供应中** → [Yupitek 产品页](/zh-cn/products/alfa/awus036acm/)
+> 📌 **ALFA AWUS036ACM 现货供应中** → [Yopitek 产品页](/zh-cn/products/alfa/awus036acm/)
 >
-> 榆阖科技 (Yupitek) 为 ALFA Network 台湾授权代理商
+> 榆阖科技 (Yopitek) 为 ALFA Network 台湾授权代理商
 > 产品订购或技术问题欢迎来信洽询：sales@yupitek.com
 
 ---

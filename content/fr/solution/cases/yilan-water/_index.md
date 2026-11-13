@@ -1,6 +1,6 @@
 ---
 title: "Musée de l'Eau de Yilan"
-description: "Un bâtiment hydraulique centenaire de Yilan reconverti en musée — Yupitek a fourni des systèmes de projection multimédia pour retracer l'histoire des ressources en eau."
+description: "Un bâtiment hydraulique centenaire de Yilan reconverti en musée — Yopitek a fourni des systèmes de projection multimédia pour retracer l'histoire des ressources en eau."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Musée", "Exposition Permanente", "Yilan"]
 **Type** : Système multimédia pour exposition permanente de musée
 **Caractéristique du Site** : Reconversion d'un bâtiment industriel centenaire
 
-Le Musée de l'Eau de Yilan a été établi dans une ancienne usine hydraulique centenaire reconvertie en lieu culturel. En travaillant dans les contraintes de l'architecture historique, Yupitek a conçu et installé un système de projection multimédia qui utilise la lumière et l'image pour retracer 100 ans d'histoire du développement des ressources en eau dans la région de Yilan.
+Le Musée de l'Eau de Yilan a été établi dans une ancienne usine hydraulique centenaire reconvertie en lieu culturel. En travaillant dans les contraintes de l'architecture historique, Yopitek a conçu et installé un système de projection multimédia qui utilise la lumière et l'image pour retracer 100 ans d'histoire du développement des ressources en eau dans la région de Yilan.
 
 ## Solution Technique
 

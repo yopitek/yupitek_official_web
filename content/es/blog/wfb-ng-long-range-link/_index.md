@@ -18,7 +18,7 @@ faq:
   - question: "¿Es obligatorio usar ALFA AWUS036ACH para wfb-ng?"
     answer: "Cualquier tarjeta con chip RTL8812AU funciona en teoría, pero la AWUS036ACH es el hardware probado oficialmente por el proyecto wfb-ng, con el soporte de controladores más estable. En escenarios de alta potencia y largo alcance, el diseño de potencia de ALFA y sus antenas desmontables ofrecen ventajas significativas."
 ---
-> Autor: Equipo técnico de Yupitek (distribuidor autorizado de ALFA Network en Taiwán)
+> Autor: Equipo técnico de Yopitek (distribuidor autorizado de ALFA Network en Taiwán)
 > Público objetivo: Entusiastas de drones, makers, investigadores de seguridad, desarrolladores de drones para agricultura e inspección
 > Dificultad: ★★★☆☆ (requiere conocimientos básicos de Linux y control de vuelo)
 
@@ -431,4 +431,4 @@ Si es la primera vez que se encuentra con esta tecnología, aquí tiene una expl
 
 ---
 
-*Este artículo fue escrito por el equipo técnico de Yupitek (distribuidor autorizado de ALFA Network en Taiwán), basado en la documentación oficial de wfb-ng y la experiencia práctica. Antes de implementarlo, asegúrese de cumplir con la normativa de radiofrecuencia de su país y ajuste la potencia y los canales según corresponda.*
+*Este artículo fue escrito por el equipo técnico de Yopitek (distribuidor autorizado de ALFA Network en Taiwán), basado en la documentación oficial de wfb-ng y la experiencia práctica. Antes de implementarlo, asegúrese de cumplir con la normativa de radiofrecuencia de su país y ajuste la potencia y los canales según corresponda.*

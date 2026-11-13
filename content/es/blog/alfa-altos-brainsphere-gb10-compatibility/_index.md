@@ -236,7 +236,7 @@ Condiciones de refutación: Las siguientes determinaciones se basan en DGX OS (b
 | Sitio web oficial de Altos Computing | Información del producto BrainSphere GB10 F1 | https://www.altoscomputing.com/en-Us | ✅ Verificado | 2026-09-03 |
 | Página oficial de NVIDIA DGX Spark | Información sobre la plataforma GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Verificado | 2026-09-03 |
 | morrownr/8812au GitHub | Controladores Linux para RTL8812AU | https://github.com/morrownr/8812au-20210820 | ✅ Verificado | 2026-09-03 |
-| Catálogo de productos de ALFA Network (Yupitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
+| Catálogo de productos de ALFA Network (Yopitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
 
 Artículos relacionados: [¿Soporta la tarjeta inalámbrica ALFA la plataforma NVIDIA DGX Spark?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[¿Soporta la tarjeta inalámbrica ALFA la plataforma ASUS Ascent GX10?](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[¿Soporta la tarjeta inalámbrica ALFA la plataforma GIGABYTE AI TOP ATOM?](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[¿Soporta la tarjeta inalámbrica ALFA la plataforma MSI EdgeXpert?](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 

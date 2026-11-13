@@ -87,4 +87,4 @@ Pour la plupart des tests de pénétration, l'AWUS036ACH reste le choix de réf�
 1. [Dépôt GitHub aircrack-ng rtl8812au](https://github.com/aircrack-ng/rtl8812au)
 2. [Pilote MT76 du noyau Linux](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
 3. [Site officiel ALFA Network](https://www.alfa.com.tw)
-4. [Yupitek — Distributeur agréé ALFA Network Taiwan](https://www.yupitek.com)
+4. [Yopitek — Distributeur agréé ALFA Network Taiwan](https://www.yupitek.com)

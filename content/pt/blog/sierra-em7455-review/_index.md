@@ -1,6 +1,6 @@
 ---
 title: "Análise completa do Sierra EM7455: por que é a placa Sierra favorita de makers e laboratórios"
-description: "Análise completa do EM7455: especificações, diferenças em relação ao EM7430, configuração em OpenWrt/Linux, compatibilidade com Dell/Lenovo. Informações técnicas compiladas pela Yupitek."
+description: "Análise completa do EM7455: especificações, diferenças em relação ao EM7430, configuração em OpenWrt/Linux, compatibilidade com Dell/Lenovo. Informações técnicas compiladas pela Yopitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -25,14 +25,14 @@ faq:
 # Análise completa do Sierra EM7455: por que é a placa Sierra favorita de makers e laboratórios
 
 {{< alert >}}
-A Yupitek oferece informações de produtos, canais de fornecimento e conteúdo técnico da Sierra Wireless / Semtech; não somos distribuidor autorizado oficial e estas informações são apenas para referência técnica.
+A Yopitek oferece informações de produtos, canais de fornecimento e conteúdo técnico da Sierra Wireless / Semtech; não somos distribuidor autorizado oficial e estas informações são apenas para referência técnica.
 {{</alert >}}
 
 Se você usa Raspberry Pi com OpenWrt, ou quer atualizar os equipamentos do laboratório para conectividade 4G, com certeza já ouviu falar da lendária placa Sierra EM7455. É um módulo celular LTE-A Cat 6 em formato M.2 da Sierra Wireless, equipado com o chipset Qualcomm MDM9230, que suporta até 300 Mbps de download e 50 Mbps de upload, além de incluir posicionamento GNSS integrado. A temperatura de operação aguenta até ambientes extremos de -40°C a +85°C.
 
-Este artigo foi compilado pela Yupitek para explicar por que este módulo 4G LTE-Advanced Cat 6 em formato M.2 B-Key é tão popular, e como deixar o driver e a configuração prontos em sistemas Linux.
+Este artigo foi compilado pela Yopitek para explicar por que este módulo 4G LTE-Advanced Cat 6 em formato M.2 B-Key é tão popular, e como deixar o driver e a configuração prontos em sistemas Linux.
 
-> Link do produto: [Página do EM7455 na Yupitek](/pt/products/sierra/em7455/) | Folha de especificações oficial: [AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
+> Link do produto: [Página do EM7455 na Yopitek](/pt/products/sierra/em7455/) | Folha de especificações oficial: [AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
 
 ---
 
@@ -277,7 +277,7 @@ Se você travar no seu projeto, pode procurar nestas comunidades de código aber
 
 ## Quer comprar para o seu laboratório? Fale com a gente
 
-Este artigo foi compilado pela equipe de engenharia da Yupitek. Seja um projeto universitário, um plano de laboratório ou uma compra em volume de EM7455 ou outros módulos Sierra para a sua empresa, pode conversar com a gente!
+Este artigo foi compilado pela equipe de engenharia da Yopitek. Seja um projeto universitário, um plano de laboratório ou uma compra em volume de EM7455 ou outros módulos Sierra para a sua empresa, pode conversar com a gente!
 
 - **Veja esta placa**: [https://yupitek.com/pt/products/sierra/em7455/](/pt/products/sierra/em7455/)
 - **Veja todos os modelos Sierra**: [https://yupitek.com/pt/products/sierra/](/pt/products/sierra/)

@@ -4,13 +4,13 @@ locale: pt
 hreflang_group: flipper-zero-beginners-guide-setup-tutorial
 slug: flipper-zero-beginners-guide-setup-tutorial
 published: 2026-08-10
-author: Yupitek
+author: Yopitek
 category: technical
 tags:
   - Flipper Zero
   - Tutorial
 hero_image: /static/img/flipper-zero/hero.webp
-hero_alt: "Guia para Iniciantes no Flipper Zero: Unboxing, Atualização de Firmware e Teste de 5 Funcionalidades | Yupitek"
+hero_alt: "Guia para Iniciantes no Flipper Zero: Unboxing, Atualização de Firmware e Teste de 5 Funcionalidades | Yopitek"
 seo_description: "O que é o Flipper Zero? Do unboxing e configuração do microSD à atualização de firmware via qFlipper, até testes práticos de RFID, Sub-GHz, NFC, IR e BadUSB. Um guia completo para iniciantes."
 ---
 
@@ -141,7 +141,7 @@ A maioria dos cartões de transporte modernos possui criptografia e proteção d
 O Flipper Zero possui um transceptor Sub-GHz integrado focado em protocolos comuns (OOK/ASK/FSK, etc.), com operação intuitiva. Um SDR (como HackRF ou RTL-SDR) oferece uma faixa de frequência mais ampla e visualização de espectro bruto, mas requer um computador e conhecimentos mais profundos. As duas ferramentas são complementares.
 
 **P5: Onde posso comprar o Flipper Zero?**
-A Yupitek oferece o Flipper Zero e acessórios relacionados, além de consultoria técnica. Após a compra, entre em contato pelo e-mail sales@yupitek.com para tirar dúvidas sobre configuração.
+A Yopitek oferece o Flipper Zero e acessórios relacionados, além de consultoria técnica. Após a compra, entre em contato pelo e-mail sales@yupitek.com para tirar dúvidas sobre configuração.
 
 **P6: É possível instalar firmwares de terceiros?**
 Sim, mas não é recomendado para iniciantes. Firmwares de terceiros (como Xtreme) oferecem melhorias na interface e funcionalidades extras, mas a estabilidade e a segurança devem ser avaliadas pelo usuário, e o suporte às atualizações oficiais pode ser perdido.
@@ -150,4 +150,4 @@ Sim, mas não é recomendado para iniciantes. Firmwares de terceiros (como Xtrem
 
 O caminho de aprendizado do Flipper Zero é simples: **instale o microSD → atualize para o firmware estável oficial → comece com a leitura de RFID e controles IR → após se familiarizar, explore Sub-GHz e BadUSB**. É um excelente ponto de partida para entender protocolos sem fio e segurança de hardware, mas lembre-se sempre: quanto mais poderosa a ferramenta, maior a necessidade de autodisciplina — teste apenas dispositivos aos quais você tem permissão.
 
-Para adquirir o Flipper Zero ou acessórios relacionados, entre em contato pelo [sales@yupitek.com](mailto:sales@yupitek.com). A Yupitek oferece serviços de consultoria de produtos e técnicos.
+Para adquirir o Flipper Zero ou acessórios relacionados, entre em contato pelo [sales@yupitek.com](mailto:sales@yupitek.com). A Yopitek oferece serviços de consultoria de produtos e técnicos.

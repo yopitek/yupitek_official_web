@@ -314,7 +314,7 @@ sudo modprobe rtl8852bu
 | WiFi-Verbindung instabil / langsam | USB-C Adapter unterstützt nur USB 2.0 | Ersetzen Sie den Adapter, der USB 3.2 Gen 2×2 unterstützt; stellen Sie sicher, dass der Adapter mit "Data" und nicht nur mit "Charge Only" gekennzeichnet ist |
 | Internes Wi-Fi und externer ALFA stoßen aufeinander | Konflikt zwischen zwei drahtlosen Schnittstellen | Deaktivieren Sie das interne WiFi: `sudo nmcli radio wifi off` oder deaktivieren Sie es im BIOS/UEFI; oder stellen Sie die Reihenfolge der Routen ein |
 | 6GHz (Wi-Fi 6E) kann nicht verwendet werden | Regulatory Domain-Beschränkung | Regulatorischen Bereich einstellen: `sudo iw reg set US` (6GHz in den USA freigegeben); überprüfen Sie, ob das Firmware des AWUS036AXML/AXM den 6GHz unterstützt |
-| AP-Modus kann nicht gestartet werden | Konflikt zwischen NetworkManager und hostapd | Beziehen Sie sich auf das Yupitek ALFA Soft AP Handbuch; deaktivieren Sie NetworkManager, um die Schnittstelle zu verwalten, und stellen Sie hostapd manuell ein |
+| AP-Modus kann nicht gestartet werden | Konflikt zwischen NetworkManager und hostapd | Beziehen Sie sich auf das Yopitek ALFA Soft AP Handbuch; deaktivieren Sie NetworkManager, um die Schnittstelle zu verwalten, und stellen Sie hostapd manuell ein |
 | Netzwerkkarte verschwindet nach dem Aufwachen | USB-Autostopp | Deaktivieren Sie den USB-Autostopp: `echo 'options usbcore autosuspend=-1' | sudo tee /etc/modprobe.d/usb.conf` |
 
 ## 9. Bekannte Einschränkungen
@@ -342,8 +342,8 @@ Widerspruchsbedingungen: Falls nach DGX OS-Updates die Kernel-Version oder die U
 | morrownr/8821cu GitHub | RTL8811CU Linux Treiber | https://github.com/morrownr/8821cu-20210916 | ✅ Geprüft | 2026-09-03 |
 | morrownr/rtl8852bu GitHub | RTL8832BU Linux Treiber | https://github.com/morrownr/rtl8852bu-20250826 | ✅ Geprüft | 2026-09-03 |
 | Linux kernel mt76 Treiberdokumentation | MediaTek mt76 / mt7921 Mainline Treiberbeschreibung (mit Unterstützung für verschiedene Chips und Kernel-Versionen) | https://wireless.wiki.kernel.org/en/users/drivers/mediatek | ✅ Geprüft | 2026-09-03 |
-| ALFA Soft AP WiFi Hotspot Linux Guide (Yupitek) | ALFA AP-Modus-Einrichtung unter Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Geprüft | 2026-09-03 |
-| ALFA Network Produktübersicht (Yupitek) | ALFA aktuelle Produkt规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
+| ALFA Soft AP WiFi Hotspot Linux Guide (Yopitek) | ALFA AP-Modus-Einrichtung unter Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Geprüft | 2026-09-03 |
+| ALFA Network Produktübersicht (Yopitek) | ALFA aktuelle Produkt规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | Offizielle Erklärung des Treiberpflegers: Empfehlung, RTL8852/32au (RTL8832BU) Chip zu vermeiden | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Geprüft | 2026-09-03 |
 | morrownr/8812au-20210820 GitHub | RTL8812AU Treiberstatus neueste Ankündigung (Kernel 6.13 in Mainline aufgenommen, 6.14 Qualitätsreif) | https://github.com/morrownr/8812au-20210820 | ✅ Geprüft | 2026-09-03 |
 

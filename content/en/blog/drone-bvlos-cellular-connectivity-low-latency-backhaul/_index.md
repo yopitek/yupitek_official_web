@@ -30,7 +30,7 @@ When a drone or robot leaves your line of sight (this is called BVLOS, Beyond Vi
 
 In this article we open up the Sierra Wireless official specification sheets and explain why these particular modules are so well suited to drones and robots, and how they achieve low latency.
 
-> Technical data source: Sierra Wireless official specification sheets (EM9190/EM9191, EM7565). Compiled by Yupitek.
+> Technical data source: Sierra Wireless official specification sheets (EM9190/EM9191, EM7565). Compiled by Yopitek.
 
 ---
 
@@ -92,6 +92,6 @@ If it flies, the budget is there, and you want a 5G private network, buy the **E
 
 ## Ready to Buy (Call To Action)
 
-Designing a communication board for a drone or an inspection robot? Not sure how to plan antennas and cooling? Yupitek offers the full Sierra Wireless module lineup plus hardware integration consulting services.
+Designing a communication board for a drone or an inspection robot? Not sure how to plan antennas and cooling? Yopitek offers the full Sierra Wireless module lineup plus hardware integration consulting services.
 Email us: **sales@yupitek.com**
 Browse the products: [https://yupitek.com/en/products/sierra/](/en/products/sierra/)

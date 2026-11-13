@@ -33,7 +33,7 @@ El ALFA AWUS036ACM es el único adaptador USB WiFi verdaderamente sin compilaci�
 
 > «Tengo un AVALUE AIB-NW01 (Jetson Orin NX) que voy a desplegar en un entorno sin red cableada. ¿Cuál de vuestros adaptadores USB WiFi funciona directamente?»
 
-Esta es una consulta que Yupitek ha recibido recientemente. La pregunta parece sencilla, pero si has pasado tiempo en la comunidad de desarrolladores de Jetson sabrás que — **los adaptadores USB WiFi en la plataforma NVIDIA Jetson son mucho más problemáticos de lo que imaginas.**
+Esta es una consulta que Yopitek ha recibido recientemente. La pregunta parece sencilla, pero si has pasado tiempo en la comunidad de desarrolladores de Jetson sabrás que — **los adaptadores USB WiFi en la plataforma NVIDIA Jetson son mucho más problemáticos de lo que imaginas.**
 
 Hemos investigado a fondo: desde la arquitectura del núcleo de Jetson, casos reales en los foros de NVIDIA, reportes de fallos de compilación de drivers en GitHub, hasta datos de pruebas reales en plataformas ARM64. Aquí tienes esta guía de compra.
 
@@ -329,7 +329,7 @@ No porque sea el más rápido o el más barato — sino porque es, en una plataf
 ### Actúa ahora
 
 - Consulta los detalles del producto: https://yupitek.com/es/products/alfa/awus036acm/
-- Soporte técnico: Yupitek ofrece soporte técnico local en Taiwán, no dudes en contactarnos
+- Soporte técnico: Yopitek ofrece soporte técnico local en Taiwán, no dudes en contactarnos
 
 ### Lecturas recomendadas
 
@@ -339,9 +339,9 @@ No porque sea el más rápido o el más barato — sino porque es, en una plataf
 
 ---
 
-> **Etiquetas**: #JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yupitek
+> **Etiquetas**: #JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yopitek
 >
-> **Autor**: Yupitek Ltd — Distribuidor autorizado de ALFA Network en Taiwán
+> **Autor**: Yopitek Ltd — Distribuidor autorizado de ALFA Network en Taiwán
 >
 > **Aviso legal**: Los datos de esta investigación están actualizados a mayo de 2026. La plataforma Jetson y el kernel de Linux están en continua evolución; se recomienda verificar el soporte del driver in-kernel con la última versión de JetPack antes de realizar el despliegue.
 

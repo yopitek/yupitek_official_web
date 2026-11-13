@@ -10,7 +10,7 @@ tags:
   - AWUS036AXML
   - Kali Linux
 hero_image: /static/img/AWUS036AXML/hero.webp
-hero_alt: "Como instalar o AWUS036AXML no Kali Linux? Tutorial de Monitor Mode Wi-Fi 6E e Injeção de Pacotes | Yupitek"
+hero_alt: "Como instalar o AWUS036AXML no Kali Linux? Tutorial de Monitor Mode Wi-Fi 6E e Injeção de Pacotes | Yopitek"
 seo_description: "Tutorial de instalação do ALFA AWUS036AXML (chipset MT7921AUN) no Kali Linux: driver mt7921u nativo, requisitos de kernel, Monitor Mode, teste de injeção de pacotes e solução de problemas comuns."
 ---
 
@@ -192,4 +192,4 @@ O AXML é Wi-Fi 6E (adiciona 6 GHz) e possui driver nativo no kernel; o ACH é d
 
 O processo de instalação do AWUS036AXML é mais simples do que você imagina: **Kernel 5.18+ → Plug and play (`mt7921u`) → Confirmar `0e8d:7961` → Alternar para Monitor Mode com airmon-ng → Validar injeção com aireplay-ng**. A diferença central em relação ao AWUS036ACH está na faixa de 6 GHz e no driver que não requer compilação — se o seu escopo de auditoria já entrou na era do Wi-Fi 6E, esta placa é a escolha para completar a cobertura de faixa. Lembre-se de realizar todos os testes apenas em ambientes com autorização legal.
 
-A série de placas de rede ALFA Network é vendida e conta com suporte técnico pela Yupitek (Yuhé Technology) em Taiwan. Para adquirir o AWUS036AXML ou Hubs de alimentação e antenas compatíveis, entre em contato pelo e-mail [sales@yupitek.com](mailto:sales@yupitek.com).
+A série de placas de rede ALFA Network é vendida e conta com suporte técnico pela Yopitek (Yuhé Technology) em Taiwan. Para adquirir o AWUS036AXML ou Hubs de alimentação e antenas compatíveis, entre em contato pelo e-mail [sales@yupitek.com](mailto:sales@yupitek.com).

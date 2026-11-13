@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range", "Waterproof", "LINE Beacon", "LINE Simple Beacon"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "AA Battery", "Long Range", "Waterproof", "LINE Beacon", "LINE Simple Beacon"]
 ---
 
 ## Product Overview
@@ -134,7 +134,7 @@ In your webhook server, parse the incoming JSON payload. The event object will l
 ## Product Gallery
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb03.png" alt="Yupitek YPB03 Long Range E2 Max LINE Beacon" />
+  <img src="/images/products/ibeacon/ypb03.png" alt="Yopitek YPB03 Long Range E2 Max LINE Beacon" />
 {{< /gallery >}}
 
 ---

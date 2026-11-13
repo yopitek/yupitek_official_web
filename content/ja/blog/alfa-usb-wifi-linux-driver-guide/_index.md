@@ -15,14 +15,14 @@ tags:
   - "rtl8812au"
 categories:
   - "ハードウェアガイド"
-description: "「Yupitek ALFA USB 網卡技術文件（Mediatek, Realtek）」"
+description: "「Yopitek ALFA USB 網卡技術文件（Mediatek, Realtek）」"
 featureimage: ""
 author: "benny-lai"
 lastmod: 2026-09-03
 ---
 
 > **技術支援文書 · 2026年9月3日 初版（依 blog-writing-rules.md v1.0 規範撰寫）**
-> 判定対象：Yupitek 現役 ALFA USB ネットワークアダプターの中で、本技術文書マトリックスに収録されている6モデル（MediaTek 3モデル、Realtek 3モデル）。
+> 判定対象：Yopitek 現役 ALFA USB ネットワークアダプターの中で、本技術文書マトリックスに収録されている6モデル（MediaTek 3モデル、Realtek 3モデル）。
 > 関連記事：[ALFA ネットワークアダプターが NVIDIA DGX Spark に対応しているか](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA ネットワークアダプターが OpenWrt に対応しているか](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[ALFA ネットワークアダプターが NVIDIA Jetson Nano に対応しているか](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)｜[ALFA ネットワークアダプターが Tomato に対応しているか](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)｜[ALFA ネットワークアダプターが DD-WRT に対応しているか](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)
 
 ## 一言でまとめ
@@ -138,8 +138,8 @@ ip link   # 新しいwlanインターフェースが表示されるべき
 | morrownr/8812au GitHub | RTL8812AU Linux ドライバ | https://github.com/morrownr/8812au-20210820 | ✅ 検証済み | 2026-09-03 |
 | morrownr/8821cu GitHub | RTL8811CU Linux ドライバ | https://github.com/morrownr/8821cu-20210916 | ✅ 検証済み | 2026-09-03 |
 | morrownr/rtl8852bu GitHub | RTL8832BU Linux ドライバ | https://github.com/morrownr/rtl8852bu-20250826 | ✅ 検証済み | 2026-09-03 |
-| Yupitek ALFA 製品総覧 | 現役機型およびスペック | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検証済み | 2026-09-03 |
-| Yupitek ブログ：Soft AP 指南 | AP モード実装検証文 | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 検証済み | 2026-09-03 |
+| Yopitek ALFA 製品総覧 | 現役機型およびスペック | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検証済み | 2026-09-03 |
+| Yopitek ブログ：Soft AP 指南 | AP モード実装検証文 | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 検証済み | 2026-09-03 |
 | 本サイト技術文書 9 篇 | 判定行列および環境検証の基礎 | 相対リンク（文末の「関連記事」を参照） | ✅ 検証済み | 2026-09-03 |
 
 > kernel mt76 公式 Wiki ページ：https://wireless.wiki.kernel.org/en/users/drivers/mediatek （検証済み、各チップセットがサポートする初期 kernel バージョンをリストアップ、迅速な確認に利用可能）

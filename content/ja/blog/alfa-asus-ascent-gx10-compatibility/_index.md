@@ -231,8 +231,8 @@ sudo aireplay-ng --test wlan0
 | ASUS Ascent GX10 公式オンラインストア（UK） | GX10 プロダクトページ（150 × 150 × 51mm） | https://uk.store.asus.com/asus-ascent-gx105004-33389.html | ✅ 検証済み | 2026年9月3日 |
 | NVIDIA DGX Spark 公式ページ | GB10 プラットフォーム情報 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 検証済み | 2026年9月3日 |
 | morrownr/8812au GitHub | RTL8812AU Linux ドライバ | https://github.com/morrownr/8812au-20210820 | ✅ 検証済み | 2026年9月3日 |
-| ALFA Soft AP WiFi Hotspot Linux Guide（Yupitek） | ALFA Linux AP モードガイド | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 検証済み | 2026年9月3日 |
-| ALFA Network 產品一覧（Yupitek） | ALFA 現行製品仕様 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検証済み | 2026年9月3日 |
+| ALFA Soft AP WiFi Hotspot Linux Guide（Yopitek） | ALFA Linux AP モードガイド | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 検証済み | 2026年9月3日 |
+| ALFA Network 產品一覧（Yopitek） | ALFA 現行製品仕様 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検証済み | 2026年9月3日 |
 
 関連記事：[ALFA 无線ネットワークカードがNVIDIA DGX Sparkに対応するか](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无線ネットワークカードがALTOS BrainSphere GB10 F1に対応するか](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[ALFA 无線ネットワークカードがGIGABYTE AI TOP ATOMに対応するか](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA 无線ネットワークカードがMSI EdgeXpertに対応するか](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 

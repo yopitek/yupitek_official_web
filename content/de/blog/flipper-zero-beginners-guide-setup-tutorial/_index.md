@@ -4,13 +4,13 @@ locale: de
 hreflang_group: flipper-zero-beginners-guide-setup-tutorial
 slug: flipper-zero-beginners-guide-setup-tutorial
 published: 2026-08-10
-author: Yupitek
+author: Yopitek
 category: Technical
 tags:
   - Flipper Zero
   - Tutorial
 hero_image: /static/img/flipper-zero/hero.webp
-hero_alt: "Flipper Zero Einsteiger-Tutorial: Auspacken, Firmware-Update und fünf Funktionen im Test | Yupitek"
+hero_alt: "Flipper Zero Einsteiger-Tutorial: Auspacken, Firmware-Update und fünf Funktionen im Test | Yopitek"
 seo_description: "Was ist Flipper Zero? Von Auspacken, microSD-Einrichtung und qFlipper-Firmware-Update bis hin zu Tests der fünf Funktionen RFID, Sub-GHz, NFC, IR und BadUSB – dieser Leitfaden bringt Sie schnell auf den Stand."
 date: 2026-08-10
 draft: false
@@ -150,7 +150,7 @@ Die meisten modernen Wertkarten sind verschlüsselt und durch Schlüssel geschü
 Flipper Zero verfügt über einen eingebauten Sub-GHz-Transceiver, der auf gängige Protokolle (OOK/ASK/FSK usw.) spezialisiert ist und eine intuitive Bedienung bietet. SDR-Geräte (wie HackRF, RTL-SDR) haben einen breiteren Frequenzbereich und ermöglichen die Anzeige des Rohspektrums, erfordern jedoch einen Computer und tieferes Hintergrundwissen. Beide sind sich ergänzende Werkzeuge.
 
 **F5: Wo kann man Flipper Zero kaufen?**
-Yupitek (Yuhé Technology) bietet Flipper Zero-Produkte und Zubehör an und bietet technische Beratung. Für Fragen zur Einrichtung können Sie uns nach dem Kauf unter sales@yupitek.com kontaktieren.
+Yopitek (Yuhé Technology) bietet Flipper Zero-Produkte und Zubehör an und bietet technische Beratung. Für Fragen zur Einrichtung können Sie uns nach dem Kauf unter sales@yupitek.com kontaktieren.
 
 **F6: Kann ich Drittanbieter-Firmware installieren?**
 Ja, das ist möglich, aber für Anfänger nicht empfohlen. Drittanbieter-Firmwares (wie Xtreme) bieten eine verbesserte Benutzeroberfläche und zusätzliche Funktionen, aber Stabilität und Sicherheit müssen selbst bewertet werden. Zudem kann der Support für offizielle Updates verloren gehen.
@@ -159,4 +159,4 @@ Ja, das ist möglich, aber für Anfänger nicht empfohlen. Drittanbieter-Firmwar
 
 Der Einstieg in Flipper Zero ist unkompliziert: **microSD einlegen → Offizielle stabile Firmware aktualisieren → Mit RFID-Auslesen und IR-Fernbedienung beginnen → Nach Einarbeitung Sub-GHz und BadUSB erkunden**. Es ist ein hervorragender Ausgangspunkt, um Funkprotokolle und Hardware-Sicherheit zu verstehen. Denken Sie jedoch immer daran: Je leistungsfähiger die Funktion, desto größer die Selbstkontrolle – testen Sie nur Geräte, für die Sie berechtigt sind.
 
-Wenn Sie Flipper Zero oder Zubehör benötigen, senden Sie uns bitte eine E-Mail an [sales@yupitek.com](mailto:sales@yupitek.com). Yupitek bietet Produkt- und technische Beratungsdienstleistungen an.
+Wenn Sie Flipper Zero oder Zubehör benötigen, senden Sie uns bitte eine E-Mail an [sales@yupitek.com](mailto:sales@yupitek.com). Yopitek bietet Produkt- und technische Beratungsdienstleistungen an.

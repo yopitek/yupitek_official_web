@@ -1,6 +1,6 @@
 ---
 title: "Support technique et téléchargements de pilotes"
-description: "Centre de téléchargement de pilotes officiels de Yupitek pour les produits ALFA Network, HAK5, Flipper Zero et Ubiquiti."
+description: "Centre de téléchargement de pilotes officiels de Yopitek pour les produits ALFA Network, HAK5, Flipper Zero et Ubiquiti."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,9 +11,9 @@ showTableOfContents: true
 Téléchargez toujours les pilotes à partir des sites web officiels des marques.
 {{< /alert >}}
 
-## Yupitek Wiki
+## Yopitek Wiki
 
-Vous cherchez des guides d'installation, des informations sur la compatibilité Linux ou des étapes de dépannage ? Consultez le [Wiki Yupitek](https://doc.yupitek.com/), notre base de connaissances technique consacrée aux produits ALFA Network, Hak5, Flipper Zero, SDRLAB et ACS.
+Vous cherchez des guides d'installation, des informations sur la compatibilité Linux ou des étapes de dépannage ? Consultez le [Wiki Yopitek](https://doc.yupitek.com/), notre base de connaissances technique consacrée aux produits ALFA Network, Hak5, Flipper Zero, SDRLAB et ACS.
 
 ## Pilotes ALFA Network
 

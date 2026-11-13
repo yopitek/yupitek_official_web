@@ -1,6 +1,6 @@
 ---
 title: "Mapeamento de Fachadas Building Mapping"
-description: "Soluções de mapeamento de fachadas da Yupitek: 3D Mapping em grandes edificações, shows de projeção para festivais, projeção para eventos de marca, com seleção completa de equipamentos e integração técnica."
+description: "Soluções de mapeamento de fachadas da Yopitek: 3D Mapping em grandes edificações, shows de projeção para festivais, projeção para eventos de marca, com seleção completa de equipamentos e integração técnica."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 O mapeamento de fachadas (Building Mapping) transforma as fachadas arquitetônicas em telas visuais dinâmicas. Por meio da tecnologia precisa de alinhamento de projeção, luz e estrutura se fundem perfeitamente para criar experiências visuais imersivas e impactantes.
 
-A Yupitek tem ampla experiência na execução de shows de mapeamento em grande escala, de fachadas de prefeituras a celebrações de aniversários corporativos. Oferecemos serviços completos cobrindo planejamento de equipamentos, seleção de projetores e suporte técnico no local.
+A Yopitek tem ampla experiência na execução de shows de mapeamento em grande escala, de fachadas de prefeituras a celebrações de aniversários corporativos. Oferecemos serviços completos cobrindo planejamento de equipamentos, seleção de projetores e suporte técnico no local.
 
 ## Tecnologias Principais
 

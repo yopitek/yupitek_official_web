@@ -24,7 +24,7 @@ faq:
 
 إن MC7455 هو وحدة PCI Express Mini Card (mPCIe) من Sierra Wireless، بينما EM7455 هو شقيقه بتنسيق M.2 ضمن نفس عائلة 74xx. تدمج الوحدتان LTE وUMTS وتحديد المواقع GNSS، وتستخدمان معالج النطاق الأساسي Qualcomm MDM9230. سرعات الشبكة متطابقة أيضاً: LTE Cat 6 بذروة تحميل 300 Mbps (FDD) / 222 Mbps (TDD) وذروة رفع 50 Mbps (FDD) / 26 Mbps (TDD). تستخرج هذه المقالة الاختلافات في العتاد من المواصفات الرسمية لتعرف بالضبط ما يمكن توقعه قبل الشراء.
 
-> المراجع الفنية: المواصفات الرسمية من Sierra Wireless، [المواصفات الفنية لمنتج AirPrime MC7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) و[المواصفات الفنية لمنتج AirPrime EM7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). من إعداد وتقديم Yupitek.
+> المراجع الفنية: المواصفات الرسمية من Sierra Wireless، [المواصفات الفنية لمنتج AirPrime MC7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) و[المواصفات الفنية لمنتج AirPrime EM7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). من إعداد وتقديم Yopitek.
 
 ---
 
@@ -131,10 +131,10 @@ faq:
 
 ## دعوة للتواصل (التوريد)
 
-هل تحتاج إلى MC7455 أو EM7455، أو غير متأكد من الفتحة التي يستخدمها جهازك الحالي؟ Yupitek مزود حلول لاسلكية صناعية محترف. يمكننا مساعدتك في تأكيد:
+هل تحتاج إلى MC7455 أو EM7455، أو غير متأكد من الفتحة التي يستخدمها جهازك الحالي؟ Yopitek مزود حلول لاسلكية صناعية محترف. يمكننا مساعدتك في تأكيد:
 
 - تقييم توافق فتحة اللوحة الأم والوحدة
 - محولات موصل الهوائي ومطابقة الكابلات
 - توفر المخزون طويل الأجل وتسعير الكميات
 
-راسلنا على **sales@yupitek.com** أو تصفح [موقع Yupitek](https://www.yupitek.com) للمنتجات ذات الصلة.
+راسلنا على **sales@yupitek.com** أو تصفح [موقع Yopitek](https://www.yupitek.com) للمنتجات ذات الصلة.

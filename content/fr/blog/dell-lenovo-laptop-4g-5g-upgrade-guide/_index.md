@@ -10,7 +10,7 @@ hreflang_group: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 slug: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 tags: ["Dell", "Lenovo", "EM7455", "EM7430", "WWAN", "M.2", "4G", "LTE", "laptop-upgrade"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/fr/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ Beaucoup de gens qui ont un Dell Latitude ou un Lenovo ThinkPad veulent glisser 
 
 Dans ce guide, on utilise les spécifications officielles Sierra Wireless pour comparer les deux cartes d'évolution les plus populaires, l'EM7455 et l'EM7430, et on te accompagne dans l'installation.
 
-> Sources : spécifications officielles Sierra Wireless (EM7455, EM7430). Compilé par Yupitek.
+> Sources : spécifications officielles Sierra Wireless (EM7455, EM7430). Compilé par Yopitek.
 
 ---
 
@@ -101,6 +101,6 @@ Ajouter une carte cellulaire à ton portable n'est pas difficile. Ce qui est dif
 
 ## Où acheter (appel à l'action)
 
-Tu veux acheter une carte Sierra Wireless, ou tu n'es pas sûr que ton PC industriel puisse en accueillir une ? Yupitek propose des solutions matérielles complètes et un support technique.
+Tu veux acheter une carte Sierra Wireless, ou tu n'es pas sûr que ton PC industriel puisse en accueillir une ? Yopitek propose des solutions matérielles complètes et un support technique.
 Écris-nous : **sales@yupitek.com**
 Découvre la gamme : [Série Sierra Wireless](https://yupitek.com/fr/products/sierra/)

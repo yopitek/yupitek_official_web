@@ -228,4 +228,4 @@ LINE 平台需要將 Webhook 送到一個公開的 HTTPS 網址。在開發階�
 
 透過 YPB03 工業級藍牙信標，實體店家能以最低的維護成本，在完全不需要開發自有 App 的前提下，與廣大 LINE 使用者進行線上與線下的無縫融合（OMO）互動。無論是學校專題展示還是大型商業佈署，YPB03 都是穩定性與覆蓋範圍的首選。
 
-如需取得 YPB03 設備報價或了解更多物聯網客製化方案，歡迎透過 [Yupitek 官方網站聯絡我們](https://www.yupitek.com/zh-tw/contact/)！
+如需取得 YPB03 設備報價或了解更多物聯網客製化方案，歡迎透過 [Yopitek 官方網站聯絡我們](https://www.yupitek.com/zh-tw/contact/)！

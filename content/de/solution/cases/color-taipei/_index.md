@@ -1,6 +1,6 @@
 ---
 title: "Rainbow Taipei City Hall – Architectural-Projection-Mapping-Show"
-description: "Großformatiges Architectural-Projection-Mapping auf der Fassade des Taipei City Hall, das urbane Motive mit einem Regenbogenthema kombiniert – ein Vorzeigeprojekt von Yupitek."
+description: "Großformatiges Architectural-Projection-Mapping auf der Fassade des Taipei City Hall, das urbane Motive mit einem Regenbogenthema kombiniert – ein Vorzeigeprojekt von Yopitek."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Architectural Projection Mapping", "Eventproduktion", "Taipei"]
 **Typ**: Architectural-Projection-Mapping (Building Mapping)
 **Maßstab**: Großformatige Outdoor-Projection-Mapping-Show
 
-Die Projection-Mapping-Show auf der Fassade des Taipei City Hall ist eines der Wahrzeichen-Projekte von Yupitek im Bereich Architectural Projection Mapping. Aufgebaut rund um ein „Regenbogen"-Thema verwandelte sie das Rathausgebäude in eine dynamische visuelle Leinwand. Präzises Multiprojektor-Blending schuf ein beeindruckendes urbanes Lichtkunstspektakel.
+Die Projection-Mapping-Show auf der Fassade des Taipei City Hall ist eines der Wahrzeichen-Projekte von Yopitek im Bereich Architectural Projection Mapping. Aufgebaut rund um ein „Regenbogen"-Thema verwandelte sie das Rathausgebäude in eine dynamische visuelle Leinwand. Präzises Multiprojektor-Blending schuf ein beeindruckendes urbanes Lichtkunstspektakel.
 
 ## Technische Herausforderungen
 

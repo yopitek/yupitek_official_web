@@ -2,7 +2,7 @@
 title: "Cartes sans fil ALFA sur Apple Mac (2026) : Le rapport complet de compatibilité pour M1/M2/M3/M4 & Intel"
 description: "Guide de compatibilité complet pour l'utilisation des adaptateurs sans fil USB ALFA Network sur Apple Mac (MacBook, MacBook Pro, MacBook Air, Mac Mini, Mac Studio) avec les processeurs Intel et Apple Silicon M1/M2/M3/M4. Découvrez quelles cartes ALFA fonctionnent, pourquoi Apple Silicon n'offre aucun support natif et comment activer le mode moniteur via une VM Linux."
 keywords: "carte sans fil ALFA Mac, compatibilité ALFA macOS, adaptateur ALFA Apple Silicon, adaptateur USB WiFi M1 M2 M3 M4, ALFA Network MacBook, mode moniteur Mac, AWUS036ACH Mac, AWUS036ACM Mac, ALFA Network Mac Mini, tests de pénétration Apple Silicon"
-author: "Équipe de support technique Yupitek"
+author: "Équipe de support technique Yopitek"
 date: "2026-06-20"
 category: "Guide technique"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
@@ -23,7 +23,7 @@ Ce guide fournit la matrice de compatibilité complète, explique les six raison
 
 ## 1. La matrice de compatibilité : Quelle carte ALFA fonctionne sur quel Mac ?
 
-Ce tableau est la référence définitive. Il évalue les 9 adaptateurs sans fil ALFA actuellement disponibles (non EOL) de la [gamme de produits ALFA de Yupitek](https://yupitek.com/en/products/alfa/) selon quatre scénarios de déploiement.
+Ce tableau est la référence définitive. Il évalue les 9 adaptateurs sans fil ALFA actuellement disponibles (non EOL) de la [gamme de produits ALFA de Yopitek](https://yupitek.com/en/products/alfa/) selon quatre scénarios de déploiement.
 
 ### 1.1 Matrice de compatibilité complète
 
@@ -413,10 +413,10 @@ Sur les Mac avec ports USB-A (Mac Mini, Mac Studio, anciens MacBook Pro/Air), no
 
 | Ressource | URL |
 |----------|-----|
-| Site officiel Yupitek | [https://www.yupitek.com](https://www.yupitek.com) |
-| Page produits ALFA Yupitek | [https://yupitek.com/en/products/alfa/](https://yupitek.com/en/products/alfa/) |
+| Site officiel Yopitek | [https://www.yupitek.com](https://www.yupitek.com) |
+| Page produits ALFA Yopitek | [https://yupitek.com/en/products/alfa/](https://yupitek.com/en/products/alfa/) |
 | ALFA Network Officiel | [https://www.alfa.com.tw](https://www.alfa.com.tw) |
-| Tableau comparatif ALFA Yupitek | [https://yupitek.com/alfa_compare.html](https://yupitek.com/alfa_compare.html) |
+| Tableau comparatif ALFA Yopitek | [https://yupitek.com/alfa_compare.html](https://yupitek.com/alfa_compare.html) |
 
 ### Dépôts de pilotes Linux (GitHub)
 
@@ -454,9 +454,9 @@ Sur les Mac avec ports USB-A (Mac Mini, Mac Studio, anciens MacBook Pro/Air), no
 
 ---
 
-*Cet article est basé sur des recherches techniques compilées à partir de la documentation développeur Apple, des dépôts GitHub (chris1111, aircrack-ng, morrownr), des spécifications produits ALFA Network, des rapports de la communauté Reddit/GitHub et de la documentation de tests réels. Toutes les recommandations de produits sont basées sur la gamme de produits ALFA actuellement en stock de Yupitek.*
+*Cet article est basé sur des recherches techniques compilées à partir de la documentation développeur Apple, des dépôts GitHub (chris1111, aircrack-ng, morrownr), des spécifications produits ALFA Network, des rapports de la communauté Reddit/GitHub et de la documentation de tests réels. Toutes les recommandations de produits sont basées sur la gamme de produits ALFA actuellement en stock de Yopitek.*
 
 *⚠️ Les équipements et techniques décrits dans cet article sont destinés uniquement aux audits de sécurité des informations autorisés et aux tests de pénétration légaux. Les utilisateurs doivent s'assurer de la conformité avec les lois et réglementations locales.*
 
 ---
-*Version de l'article : 1.0 | 2026-06-20 | Yupitek Ltd.*
+*Version de l'article : 1.0 | 2026-06-20 | Yopitek Ltd.*

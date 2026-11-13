@@ -1,6 +1,6 @@
 ---
 title: "ACS ACR シリーズ NFC スマートカードリーダー"
-description: "YupitekはACS ACRシリーズNFC/スマートカードリーダーを取り扱っています：ACR122U、ACR1252U、ACR1552U — アクセスコントロール、電子署名、身元確認に最適。"
+description: "YopitekはACS ACRシリーズNFC/スマートカードリーダーを取り扱っています：ACR122U、ACR1252U、ACR1552U — アクセスコントロール、電子署名、身元確認に最適。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

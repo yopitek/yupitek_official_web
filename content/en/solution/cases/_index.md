@@ -1,6 +1,6 @@
 ---
 title: "Case Studies"
-description: "Yupitek projection system integration portfolio: Architectural Projection Mapping, Immersive spaces, museum permanent exhibitions, and Interactive Projection displays."
+description: "Yopitek projection system integration portfolio: Architectural Projection Mapping, Immersive spaces, museum permanent exhibitions, and Interactive Projection displays."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

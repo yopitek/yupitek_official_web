@@ -27,7 +27,7 @@ featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
 
 ## Introduction
 
-This is one of the most common questions we receive at Yupitek. The question sounds simple, but the answer varies dramatically depending on the model and chipset — **not every USB WiFi adapter can run in Soft AP mode.**
+This is one of the most common questions we receive at Yopitek. The question sounds simple, but the answer varies dramatically depending on the model and chipset — **not every USB WiFi adapter can run in Soft AP mode.**
 
 {{< tldr >}}
 ALFA adapter Soft AP compatibility depends on the chipset driver. AWUS036ACM is the stable cross-platform choice. AWUS036ACH works but lacks WPA3. AWUS036AXML needs Bluetooth disabled and firmware updated. RTL8832BU is not recommended.
@@ -94,7 +94,7 @@ This is the **single most important** concept when choosing a Soft AP adapter:
 
 ## 2. ALFA Product Line & Chipset Overview {#product-lineup}
 
-Here is the current ALFA product line sold by Yupitek, with chipsets and preliminary Soft AP assessments:
+Here is the current ALFA product line sold by Yopitek, with chipsets and preliminary Soft AP assessments:
 
 | Model | Chipset | Driver Type | WiFi Standard | Soft AP Rating |
 |-------|---------|-------------|---------------|----------------|
@@ -105,7 +105,7 @@ Here is the current ALFA product line sold by Yupitek, with chipsets and prelimi
 | AWUS036AX | Realtek RTL8832BU | Out-of-kernel (kernel 6.12+ recommended) | WiFi 6 AX1800 Dual-band | ❌ Not Recommended |
 | AWUS036AXER | Realtek RTL8832BU | Out-of-kernel (same as above) | WiFi 6 AX1800 Dual-band | ❌ Not Recommended |
 
-> **Note**: AWUS036ACHM (MT7610U) has been discontinued and is no longer listed on the Yupitek product page. This article covers currently available products only.
+> **Note**: AWUS036ACHM (MT7610U) has been discontinued and is no longer listed on the Yopitek product page. This article covers currently available products only.
 
 ---
 
@@ -300,7 +300,7 @@ Despite being WiFi 6 adapters, the RTL8832BU chip is a "multi-state" device — 
 3. **Minimal Soft AP Community Cases**: Almost no real-world RTL8832BU Soft AP cases exist, compared to abundant MT7612U and RTL8812AU examples
 4. **Community Documentation Explicitly Discourages It**: morrownr/USB-WiFi marks this chipset as "not recommended for penetration testing"
 
-> Yupitek's official documentation clearly states: "AWUS036AX / AWUS036AXER with RTL8832BU chipset has limited monitor mode support below kernel 6.14 and is not recommended for penetration testing. Use AWUS036ACH or AWUS036AXML instead."
+> Yopitek's official documentation clearly states: "AWUS036AX / AWUS036AXER with RTL8832BU chipset has limited monitor mode support below kernel 6.14 and is not recommended for penetration testing. Use AWUS036ACH or AWUS036AXML instead."
 
 ---
 
@@ -680,19 +680,19 @@ This article aggregates information from:
 - **Rokland** authorized retailer Linux support pages
 - **Lab401** technical reviews and 2025 pentesting best-pick reports
 - **Raspberry Pi Official Forum** — Pi 4/5 USB WiFi compatibility discussions
-- **Yupitek existing blog** — ACM China Install Guide, AXML WiFi 6E Review, Kali Linux 2026 best adapters
+- **Yopitek existing blog** — ACM China Install Guide, AXML WiFi 6E Review, Kali Linux 2026 best adapters
 
 ---
 
 {{< faq >}}
 
-> **Tags**: #ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #Yupitek
+> **Tags**: #ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #Yopitek
 >
-> **Author**: Yupitek Ltd — ALFA Network Authorized Distributor Taiwan
+> **Author**: Yopitek Ltd — ALFA Network Authorized Distributor Taiwan
 >
 > **Disclaimer**: Research data current as of May 2026. Linux kernels and distributions continue to evolve; driver support may change with new versions. Verify target platform kernel version and driver compatibility before deployment.
 >
-> **Technical Support**: For Soft AP setup issues, contact Yupitek Taiwan technical support. Product inquiries: [yupitek.com](https://yupitek.com/en/).
+> **Technical Support**: For Soft AP setup issues, contact Yopitek Taiwan technical support. Product inquiries: [yupitek.com](https://yupitek.com/en/).
 
 ## References
 

@@ -91,7 +91,7 @@
       {{- $depth := len .Ancestors -}}
       {{- $brandNames := dict "acr" "ACS" "flipperzero" "Flipper Zero" "hak5" "Hak5" "sdrlab" "OpenSourceSDRLab" -}}
       {{- $brandKey := index (split (strings.TrimPrefix "/" .RelPermalink) "/") 2 -}}
-      {{- $seller := dict "@type" "Organization" "@id" "https://yupitek.com/#organization" "name" "Yupitek" "url" "https://yupitek.com" -}}
+      {{- $seller := dict "@type" "Organization" "@id" "https://yupitek.com/#organization" "name" "Yopitek Ltd" "url" "https://yupitek.com" -}}
       {{- if and (eq $depth 3) (isset $brandNames $brandKey) -}}
         {{- $product := dict "@context" "https://schema.org" "@type" "Product" "name" .Title "url" .Permalink "brand" (dict "@type" "Brand" "name" (index $brandNames $brandKey)) "inLanguage" .Site.Language.Locale -}}
         {{- with .Description }}{{ $product = merge $product (dict "description" .) }}{{ end -}}

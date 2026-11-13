@@ -1,5 +1,5 @@
 ---
-title: "Guia completo de compra de Sierra Wireless em Taiwan: identificação de produtos originais, comparação de fornecedores e processo de cotação | Yupitek"
+title: "Guia completo de compra de Sierra Wireless em Taiwan: identificação de produtos originais, comparação de fornecedores e processo de cotação | Yopitek"
 description: "Onde comprar módulos Sierra Wireless em Taiwan? Este guia de compra ensina a distinguir produtos novos originais de unidades usadas desmontadas por meio do código de barras IMEI, do FCC ID e da embalagem original de fábrica; inclui também comparação de fornecedores e uma lista padrão de solicitação de cotação."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "sierra-wireless-taiwan-purchasing-guide"
 slug: "sierra-wireless-taiwan-purchasing-guide"
 tags: ["Sierra Wireless", "Guia de compra", "Taiwan", "Produto original", "Fornecedor", "Cotação", "IMEI", "FCC ID"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/pt/products/sierra/"
 faq:
@@ -34,7 +34,7 @@ Ao comprar módulos celulares Sierra Wireless, o maior medo é comprar «unidade
 
 **Resumo em uma frase: comprar módulos Sierra não é comparar quem é mais barato, mas sim «quem pode salvá-lo quando algo der errado». Primeiro aprenda a conferir o código de barras IMEI e o FCC ID do módulo para evitar unidades usadas remontadas; depois procure um fornecedor que entenda de SKU e bandas, que consiga confirmar a versão do firmware e que esteja disposto a dar garantia. Leve a «ficha de cotação padrão» deste artigo e você não gastará dinheiro à toa.**
 
-> Fonte de dados de especificações e características: folhas de especificações oficiais da Sierra Wireless. Artigo elaborado pela Yupitek.
+> Fonte de dados de especificações e características: folhas de especificações oficiais da Sierra Wireless. Artigo elaborado pela Yopitek.
 
 ---
 
@@ -64,7 +64,7 @@ Se você comprar unidades novas em volume de um fornecedor, a embalagem padrão 
 
 | Canal | Condição do produto | Tecnologia e garantia | Para quem é? | Risco potencial |
 |---|---|---|---|---|
-| **Fornecedor profissional de produtos** (como a Yupitek) | Produtos novos originais, SKU verificável | ✅ Revisa as bandas, consulta a versão de firmware e tem janela de garantia | Projetos empresariais, produção industrial, abastecimento de longo prazo | Exige um pouco de tempo para o processo de cotação |
+| **Fornecedor profissional de produtos** (como a Yopitek) | Produtos novos originais, SKU verificável | ✅ Revisa as bandas, consulta a versão de firmware e tem janela de garantia | Projetos empresariais, produção industrial, abastecimento de longo prazo | Exige um pouco de tempo para o processo de cotação |
 | **Sites de leilão / vendedores avulsos** | Unidades usadas desmontadas, produtos remontados | ❌ Não aceitam devolução após a venda; se houver problema, você se vira | Makers individuais que querem economizar para experimentar | Comprar versões bloqueadas para uma marca específica de laptop ou firmware antigo demais que não conecta |
 
 > **A tragédia mais comum**: muitos responsáveis, para economizar no preço unitário, compram unidades desmontadas em sites de leilão e descobrem que são «versões exclusivas para bandas da América do Norte (SKU incorreto)» que não recebem sinal em Taiwan; ou compram versões bloqueadas pelos grandes fabricantes de laptops. No fim, o engenheiro perde uma semana depurando, e o dinheiro economizado vai para as horas extras.
@@ -105,7 +105,7 @@ Comprar um módulo de comunicação é comprar uma **tranquilidade**. Se você a
 
 ## Informações de compra (Chamada para ação)
 
-Você está procurando uma fonte confiável de módulos 4G/5G para os roteadores industriais ou projetos de IoT da sua empresa? A Yupitek é fornecedora de produtos Sierra Wireless e oferece soluções de conectividade sem fio industrial. Oferecemos a você:
+Você está procurando uma fonte confiável de módulos 4G/5G para os roteadores industriais ou projetos de IoT da sua empresa? A Yopitek é fornecedora de produtos Sierra Wireless e oferece soluções de conectividade sem fio industrial. Oferecemos a você:
 - Assessoria para verificar modelos e SKU de bandas precisos
 - Confirmação e atualização da versão de firmware no envio
 - Suporte técnico completo de integração de hardware e garantia

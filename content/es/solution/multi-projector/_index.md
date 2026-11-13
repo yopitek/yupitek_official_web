@@ -1,6 +1,6 @@
 ---
 title: "Fusión Multi-Proyector"
-description: "Soluciones de fusión multi-proyector de Yupitek: fusión de bordes, corrección geométrica, uniformidad de brillo; servicio integral de integración técnica para proyecciones de gran formato y ultra ancho."
+description: "Soluciones de fusión multi-proyector de Yopitek: fusión de bordes, corrección geométrica, uniformidad de brillo; servicio integral de integración técnica para proyecciones de gran formato y ultra ancho."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 Cuando un solo proyector no puede satisfacer los requisitos de proyección en formatos extragrandes o formas complejas, la tecnología de fusión multi-proyector une sin costuras las imágenes de múltiples proyectores, generando una imagen coherente y unificada en formato ultra ancho.
 
-Yupitek cuenta con amplia experiencia en la integración de sistemas de fusión multi-proyector, con casos realizados desde 2 proyectores hasta sistemas de gran escala de más de 20 unidades.
+Yopitek cuenta con amplia experiencia en la integración de sistemas de fusión multi-proyector, con casos realizados desde 2 proyectores hasta sistemas de gran escala de más de 20 unidades.
 
 ## Tecnologías Clave
 

@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
 ---
 
 ## Visão geral do produto
@@ -76,7 +76,7 @@ Use o aplicativo **BeaconSET+** para configurar o crachá:
 ## Galeria do produto
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb04.png" alt="Yupitek YPB04" />
+  <img src="/images/products/ibeacon/ypb04.png" alt="Yopitek YPB04" />
 {{< /gallery >}}
 
 ---

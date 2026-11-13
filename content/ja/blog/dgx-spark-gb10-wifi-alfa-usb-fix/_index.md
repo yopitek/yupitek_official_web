@@ -327,9 +327,9 @@ ALFA AWUS036ACMの解決策は、ほとんど馬鹿げているほどシンプ�
 
 ---
 
-> 📌 **ALFA AWUS036ACM 在庫あり** → [Yupitek製品ページ](/ja/products/alfa/awus036acm/)
+> 📌 **ALFA AWUS036ACM 在庫あり** → [Yopitek製品ページ](/ja/products/alfa/awus036acm/)
 >
-> Yupitek Ltd は ALFA Network の台湾正規販売代理店です
+> Yopitek Ltd は ALFA Network の台湾正規販売代理店です
 > ご注文・技術的なお問い合わせ：sales@yupitek.com
 
 ---

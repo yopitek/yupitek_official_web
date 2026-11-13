@@ -1,6 +1,6 @@
 ---
 title: "Proyección a Gran Escala — Estadios, Recintos y Eventos Masivos"
-description: "Yupitek: integración de sistemas de proyección a gran escala para estadios, recintos al aire libre, eventos corporativos masivos y espacios de gran formato."
+description: "Yopitek: integración de sistemas de proyección a gran escala para estadios, recintos al aire libre, eventos corporativos masivos y espacios de gran formato."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Proyección a Gran Escala para Grandes Audiencias
 
-Los eventos de gran formato exigen soluciones de proyección que estén a la altura del espacio y la audiencia. Desde estadios deportivos hasta explanadas de decenas de miles de metros cuadrados, Yupitek diseña e integra sistemas de proyección multi-proyector de alta luminosidad capaces de llenar cualquier superficie con imágenes de impacto, independientemente del tamaño del recinto o las condiciones de iluminación ambiental.
+Los eventos de gran formato exigen soluciones de proyección que estén a la altura del espacio y la audiencia. Desde estadios deportivos hasta explanadas de decenas de miles de metros cuadrados, Yopitek diseña e integra sistemas de proyección multi-proyector de alta luminosidad capaces de llenar cualquier superficie con imágenes de impacto, independientemente del tamaño del recinto o las condiciones de iluminación ambiental.
 
 Nuestro equipo de ingenieros especializados realiza estudios técnicos de viabilidad en sitio, diseña la disposición óptima de proyectores, gestiona la infraestructura de señal y coordina la operación técnica durante el evento.
 

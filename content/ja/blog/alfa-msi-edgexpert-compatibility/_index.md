@@ -260,7 +260,7 @@ sudo aireplay-ng --test wlan0
 | MSI 工業電腦公式公告 | EdgeXpert 產品発布情報 | https://ipc.msi.com/en/news/146241 | ✅ 已検核 | 2026-09-03 |
 | NVIDIA DGX Spark 公式ページ | GB10 平台情報 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 已検核 | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux ドライバ | https://github.com/morrownr/8812au-20210820 | ✅ 已検核 | 2026-09-03 |
-| ALFA Network 產品総覧（Yupitek） | ALFA 現役製品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已検核 | 2026-09-03 |
+| ALFA Network 產品総覧（Yopitek） | ALFA 現役製品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已検核 | 2026-09-03 |
 
 関連記事：[ALFA 无線网卡は NVIDIA DGX Spark に対応していますか](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无線网卡は ASUS Ascent GX10 に対応していますか](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA 无線网卡は ALTOS BrainSphere GB10 F1 に対応していますか](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[ALFA 无線网卡は GIGABYTE AI TOP ATOM に対応していますか](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA 无線网卡は NVIDIA Jetson Nano に対応していますか](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

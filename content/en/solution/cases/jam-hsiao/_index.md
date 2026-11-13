@@ -13,7 +13,7 @@ tags: ["Art Exhibition", "Immersive Projection", "Entertainment & Live Events"]
 **Type**: Art Exhibition Immersive Projection
 **Theme**: Musician's Cross-Discipline Visual Art Show
 
-Jam Hsiao's cross-discipline art exhibition engaged Yupitek to design and deploy an Immersive projection experience. Full-venue multi-projector coverage presented the artist's visual creations at maximum impact, fusing visual art and music into a cohesive sensory experience for attendees.
+Jam Hsiao's cross-discipline art exhibition engaged Yopitek to design and deploy an Immersive projection experience. Full-venue multi-projector coverage presented the artist's visual creations at maximum impact, fusing visual art and music into a cohesive sensory experience for attendees.
 
 ## Technical Highlights
 

@@ -213,7 +213,7 @@ Integrating an ALFA Network card into the HAK5 WiFi Pineapple Pager creates a hi
 - **For immediate, reliable deployments**: Choose the [ALFA AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm) due to its native MediaTek driver stability under Kernel 6.6 and simple setup.
 - **For power requirements**: Always use a high-quality, **externally powered USB Hub** to feed the high-power wireless cards.
 
-For more technical inquiries, hardware procurements, or custom OpenWrt SDK compilation requests, contact the **Yupitek Support Team**:
+For more technical inquiries, hardware procurements, or custom OpenWrt SDK compilation requests, contact the **Yopitek Support Team**:
 
 - 🌐 Official Website: [www.yupitek.com](https://www.yupitek.com)
 - 📧 Support Email: [sales@yupitek.com](mailto:sales@yupitek.com)

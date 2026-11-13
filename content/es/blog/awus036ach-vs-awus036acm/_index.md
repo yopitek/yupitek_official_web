@@ -248,4 +248,4 @@ Si solo puedes tener un adaptador, el **AWUS036ACH** es la elección más sólid
 1. aircrack-ng 社群維護 RTL8812AU 驅動程式儲存庫 — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
 2. Linux 核心主線 MT76 驅動程式（`mt76x2u`，自核心 4.19 起整合）— [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
 3. ALFA Network 官方網站與產品規格 — [alfa.com.tw](https://www.alfa.com.tw)
-4. Yupitek — ALFA Network 台灣授權經銷商 — [yupitek.com](https://www.yupitek.com)
+4. Yopitek — ALFA Network 台灣授權經銷商 — [yupitek.com](https://www.yupitek.com)

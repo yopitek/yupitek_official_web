@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero マルチプロトコル無線セキュリティリサーチデバイス"
-description: "YupitekはFlipper Zeroを取り扱っています。Sub-GHz、NFC、RFID、赤外線、Bluetoothなどの無線プロトコル研究をサポート。セキュリティ教育と合法的な研究に最適。"
+description: "YopitekはFlipper Zeroを取り扱っています。Sub-GHz、NFC、RFID、赤外線、Bluetoothなどの無線プロトコル研究をサポート。セキュリティ教育と合法的な研究に最適。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

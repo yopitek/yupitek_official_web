@@ -13,7 +13,7 @@ tags: ["Pavilhão Temático", "Exposição Científica", "Projeção Imersiva"]
 **Tipo**: Projeção imersiva em pavilhão temático tecnológico
 **Tema**: Ciências da Vida × Experiência Tecnológica
 
-O Pavilhão da Vida da Tech World é um espaço de experiência temático que integra tecnologia e ciências da vida. A Yupitek foi responsável pela integração do sistema de projeção imersiva, utilizando projeção em grande escala e instalações interativas para permitir que os visitantes explorem os mistérios da vida de uma forma totalmente nova.
+O Pavilhão da Vida da Tech World é um espaço de experiência temático que integra tecnologia e ciências da vida. A Yopitek foi responsável pela integração do sistema de projeção imersiva, utilizando projeção em grande escala e instalações interativas para permitir que os visitantes explorem os mistérios da vida de uma forma totalmente nova.
 
 ## Destaques da Exposição
 

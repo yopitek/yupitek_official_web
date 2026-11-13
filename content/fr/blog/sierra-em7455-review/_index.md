@@ -1,6 +1,6 @@
 ---
 title: "Test complet du Sierra EM7455 : pourquoi c'est la carte Sierra préférée des makers et des labos"
-description: "Test complet de l'EM7455 : spécifications, différences avec l'EM7430, configuration OpenWrt/Linux, compatibilité Dell et Lenovo. Données techniques compilées par Yupitek."
+description: "Test complet de l'EM7455 : spécifications, différences avec l'EM7430, configuration OpenWrt/Linux, compatibilité Dell et Lenovo. Données techniques compilées par Yopitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -25,14 +25,14 @@ faq:
 # Test complet du Sierra EM7455 : pourquoi c'est la carte Sierra préférée des makers et des labos
 
 {{< alert >}}
-Yupitek fournit des informations produits, des canaux d'approvisionnement et des contenus techniques sur Sierra Wireless / Semtech ; Yupitek n'est pas un distributeur agréé officiel, ces informations sont fournies à titre de référence technique uniquement.
+Yopitek fournit des informations produits, des canaux d'approvisionnement et des contenus techniques sur Sierra Wireless / Semtech ; Yopitek n'est pas un distributeur agréé officiel, ces informations sont fournies à titre de référence technique uniquement.
 {{</alert >}}
 
 Si vous avez déjà bidouillé un Raspberry Pi avec OpenWrt, ou voulu ajouter de la 4G à du matériel de laboratoire, vous avez forcément entendu parler de la carte légendaire Sierra EM7455 ! C'est un module cellulaire LTE-A Cat 6 au format M.2 signé Sierra Wireless, animé par le chipset Qualcomm MDM9230 : jusqu'à 300 Mbit/s en téléchargement et 50 Mbit/s en envoi, un GNSS intégré, et une plage de température de fonctionnement qui encaisse même les environnements extrêmes de -40°C à +85°C.
 
-Cet article, compilé par Yupitek, vous explique pourquoi ce module 4G LTE-Advanced Cat 6 au format M.2 B-Key est si populaire, et comment installer le pilote et la configuration sous Linux.
+Cet article, compilé par Yopitek, vous explique pourquoi ce module 4G LTE-Advanced Cat 6 au format M.2 B-Key est si populaire, et comment installer le pilote et la configuration sous Linux.
 
-> Lien produit : [EM7455 — page produit Yupitek](/fr/products/sierra/em7455/) | Fiche technique officielle : [AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
+> Lien produit : [EM7455 — page produit Yopitek](/fr/products/sierra/em7455/) | Fiche technique officielle : [AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
 
 ---
 
@@ -277,7 +277,7 @@ Si vous bloquez sur un projet, ces communautés open source valent le détour :
 
 ## Vous achetez pour un labo ? Parlez-nous-en
 
-Cet article a été compilé par l'équipe d'ingénierie de Yupitek. Que ce soit pour un projet universitaire, un programme de laboratoire ou un achat en volume en entreprise de l'EM7455 ou d'autres modules Sierra, venez en discuter avec nous !
+Cet article a été compilé par l'équipe d'ingénierie de Yopitek. Que ce soit pour un projet universitaire, un programme de laboratoire ou un achat en volume en entreprise de l'EM7455 ou d'autres modules Sierra, venez en discuter avec nous !
 
 - **Voir la carte** : [https://yupitek.com/fr/products/sierra/em7455/](/fr/products/sierra/em7455/)
 - **Voir tous les modèles Sierra** : [https://yupitek.com/fr/products/sierra/](/fr/products/sierra/)

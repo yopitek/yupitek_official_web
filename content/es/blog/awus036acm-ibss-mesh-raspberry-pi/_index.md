@@ -838,7 +838,7 @@ Sí — la Raspberry Pi Zero 2W tiene un puerto USB-A completo (mediante adaptad
 
 El ALFA AWUS036ACM está disponible en [yupitek.com](https://yupitek.com) — el distribuidor oficial de ALFA Network. Comprar a través de un distribuidor autorizado garantiza que recibes hardware genuino con la garantía estándar de Alfa Network Inc.
 
-**Página del producto:** [ALFA AWUS036ACM en Yupitek](https://yupitek.com)
+**Página del producto:** [ALFA AWUS036ACM en Yopitek](https://yupitek.com)
 
 Incluido en la caja:
 - 1× Adaptador AWUS036ACM
@@ -867,7 +867,7 @@ Si necesitas construir una red inalámbrica entre nodos Raspberry Pi — ya sea 
 
 ---
 
-*Artículo del Equipo Técnico de Yupitek · [yupitek.com](https://yupitek.com)*
+*Artículo del Equipo Técnico de Yopitek · [yupitek.com](https://yupitek.com)*
 
 *Referencias: [Documentación Oficial de Alfa Network](https://docs.alfa.com.tw/Product/AWUS036ACM/) · [Linux Wireless Wiki — Tipos de Interfaz](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) · [Controlador Linux MediaTek mt76](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) · [Lista de Controladores En-Núcleo USB-WiFi de morrownr](https://github.com/morrownr/USB-WiFi)*
 

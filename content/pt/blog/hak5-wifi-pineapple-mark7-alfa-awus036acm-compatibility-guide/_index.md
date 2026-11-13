@@ -86,7 +86,7 @@ aireplay-ng --test wlan3mon    # Testar injeção
 
 👉 [Página do Produto AWUS036ACM](/pt/products/alfa/awus036acm/)
 
-*Precisa de ajuda? Contate o suporte Yupitek: [yupitek.com/support](/pt/support/)*
+*Precisa de ajuda? Contate o suporte Yopitek: [yupitek.com/support](/pt/support/)*
 
 ## Referências
 

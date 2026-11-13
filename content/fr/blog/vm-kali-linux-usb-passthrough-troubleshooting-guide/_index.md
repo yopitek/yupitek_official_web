@@ -382,6 +382,6 @@ Plus de 90 % des cas de « la VM ne détecte pas l'adaptateur externe » viennen
 | Pilote communautaire aircrack-ng RTL8812AU (pour AWUS036ACH dans le Guest) | https://github.com/aircrack-ng/rtl8812au |
 | Page produit officielle ALFA AWUS036ACH | https://www.alfa.com.tw/products/awus036ach_1 |
 | Page produit officielle ALFA AWUS036AXML | https://www.alfa.com.tw/ |
-| Support technique Yupitek | https://yupitek.com/ |
+| Support technique Yopitek | https://yupitek.com/ |
 
 > **Déclaration d'utilisation légale** : activer des opérations de sécurité comme le mode monitor et l'injection de paquets dans la machine virtuelle est limité aux réseaux que vous possédez ou pour lesquels vous avez une autorisation explicite de test. L'utilisateur doit respecter les lois locales et s'assurer que tous les tests reposent sur une base d'autorisation légale.

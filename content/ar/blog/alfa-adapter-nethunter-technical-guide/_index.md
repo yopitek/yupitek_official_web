@@ -427,14 +427,14 @@ ACH لديه أكبر عدد من الدروس، وأكبر قاعدة مجتم�
 
 | المصدر | الرابط |
 |---|---|
-| Yupitek — الموزع المعتمد لـ ALFA في تايوان | [yupitek.com](https://www.yupitek.com) |
+| Yopitek — الموزع المعتمد لـ ALFA في تايوان | [yupitek.com](https://www.yupitek.com) |
 | صفحات منتجات ALFA Network الرسمية | [alfa.com.tw](https://www.alfa.com.tw) |
 | برنامج تشغيل MT7610U (شجرة النواة) | [torvalds/linux — mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76) |
 | برنامج تشغيل RTL8812AU (aircrack-ng) | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) |
 | أجهزة NetHunter المدعومة | [nethunter.kali.org/device-kernels.html](https://nethunter.kali.org/device-kernels.html) |
 | توثيق NetHunter الرسمي | [kali.org/docs/nethunter/](https://www.kali.org/docs/nethunter/) |
 | منتدى XDA NetHunter | [xdaforums.com/tags/nethunter/](https://xdaforums.com/tags/nethunter/) |
-| كتالوج منتجات Yupitek ALFA | [/ar/products/alfa/](/ar/products/alfa/) |
+| كتالوج منتجات Yopitek ALFA | [/ar/products/alfa/](/ar/products/alfa/) |
 
 ---
 
@@ -505,5 +505,5 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
-*أعد هذا المستند شركة **Yupitek Ltd** — الموزع المعتمد لـ ALFA Network في تايوان.*  
+*أعد هذا المستند شركة **Yopitek Ltd** — الموزع المعتمد لـ ALFA Network في تايوان.*  
 *البيانات حديثة حتى تاريخ 2026-06-09. يتم تحديث إصدارات نواة Linux و NetHunter بانتظام؛ تحقق من المصادر الرسمية للحصول على أحدث معلومات التوافق.*

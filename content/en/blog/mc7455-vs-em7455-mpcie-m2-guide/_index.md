@@ -24,7 +24,7 @@ faq:
 
 The MC7455 is Sierra Wireless's PCI Express Mini Card (mPCIe) module, while the EM7455 is its M.2 sibling in the same 74xx family. Both modules integrate LTE, UMTS, and GNSS positioning, and both use the Qualcomm MDM9230 baseband processor. Network speeds are identical as well: LTE Cat 6 with peak downlink of 300 Mbps (FDD) / 222 Mbps (TDD) and peak uplink of 50 Mbps (FDD) / 26 Mbps (TDD). This article extracts the hardware differences from the official specifications so you know exactly what to expect before you buy.
 
-> Technical references: Sierra Wireless official specifications, the [AirPrime MC7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) and the [AirPrime EM7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Compiled by Yupitek.
+> Technical references: Sierra Wireless official specifications, the [AirPrime MC7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) and the [AirPrime EM7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Compiled by Yopitek.
 
 ---
 
@@ -131,10 +131,10 @@ The MC7455 and EM7455 are like the same brain housed in different bodies. Since 
 
 ## Call to Action (Sourcing)
 
-Need the MC7455 or EM7455, or unsure which slot your existing equipment uses? Yupitek is a professional industrial wireless solutions provider. We can help you confirm:
+Need the MC7455 or EM7455, or unsure which slot your existing equipment uses? Yopitek is a professional industrial wireless solutions provider. We can help you confirm:
 
 - Motherboard slot and module compatibility assessment
 - Antenna connector adapters and cable matching
 - Long-term stock and volume pricing
 
-Email us at **sales@yupitek.com** or browse the [Yupitek website](https://www.yupitek.com) for related products.
+Email us at **sales@yupitek.com** or browse the [Yopitek website](https://www.yupitek.com) for related products.

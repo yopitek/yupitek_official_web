@@ -260,7 +260,7 @@ Condições de refutação: Se a página de especificações oficiais da MSI for
 | MSI Anúncios de Computadores Industriais | Informações de Lançamento do EdgeXpert | https://ipc.msi.com/en/news/146241 | ✅ Verificado | 2026-09-03 |
 | NVIDIA DGX Spark Página Oficial | Informações sobre a Plataforma GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Verificado | 2026-09-03 |
 | morrownr/8812au GitHub | Driver RTL8812AU para Linux | https://github.com/morrownr/8812au-20210820 | ✅ Verificado | 2026-09-03 |
-| ALFA Network Visão Geral de Produtos (Yupitek) | Especificações dos Produtos Atuais da ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
+| ALFA Network Visão Geral de Produtos (Yopitek) | Especificações dos Produtos Atuais da ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
 
 Artigos Relacionados: [A Placa de Rede sem Fio ALFA Suporta o NVIDIA DGX Spark?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[A Placa de Rede sem Fio ALFA Suporta o ASUS Ascent GX10?](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[A Placa de Rede sem Fio ALFA Suporta o ALTOS BrainSphere GB10 F1?](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[A Placa de Rede sem Fio ALFA Suporta o GIGABYTE AI TOP ATOM?](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[A Placa de Rede sem Fio ALFA Suporta o NVIDIA Jetson Nano?](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

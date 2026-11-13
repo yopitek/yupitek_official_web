@@ -1,6 +1,6 @@
 ---
 title: "Exibições em Museus"
-description: "Soluções de projeção para museus e exposições permanentes da Yupitek: integração multimídia para exposições culturais, recriação histórica imersiva, planejamento de sistemas de guia interativo."
+description: "Soluções de projeção para museus e exposições permanentes da Yopitek: integração multimídia para exposições culturais, recriação histórica imersiva, planejamento de sistemas de guia interativo."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Exibições Multimídia em Museus
 
-Museus e espaços culturais são uma das principais áreas de atuação do departamento IT_Application da Yupitek. Compreendemos profundamente as necessidades especiais dos espaços expositivos: operação estável por longos períodos, baixa frequência de manutenção, gerenciamento preciso de conteúdo e apresentação visual alinhada ao tema da exposição.
+Museus e espaços culturais são uma das principais áreas de atuação do departamento IT_Application da Yopitek. Compreendemos profundamente as necessidades especiais dos espaços expositivos: operação estável por longos períodos, baixa frequência de manutenção, gerenciamento preciso de conteúdo e apresentação visual alinhada ao tema da exposição.
 
 ## Serviços Oferecidos
 

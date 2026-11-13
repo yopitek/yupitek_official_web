@@ -13,7 +13,7 @@ tags: ["Öffentlicher Sektor", "Mehrzweckhalle", "Mehrkanalprojektion"]
 **Typ**: Mehrzweckhallen-Projektionssystem
 **Anwendung**: Behördliche Sitzungen, Veranstaltungen, Präsentationen
 
-Das Yangmei Bezirksamt benötigte ein Projektionssystem, das flexibel genug ist, um tägliche Verwaltungssitzungen, große öffentliche Anhörungen und lokale Kulturveranstaltungen zu unterstützen. Yupitek plante und installierte ein Mehrkanalprojektion-Blending-System für verschiedenste Nutzungsszenarien.
+Das Yangmei Bezirksamt benötigte ein Projektionssystem, das flexibel genug ist, um tägliche Verwaltungssitzungen, große öffentliche Anhörungen und lokale Kulturveranstaltungen zu unterstützen. Yopitek plante und installierte ein Mehrkanalprojektion-Blending-System für verschiedenste Nutzungsszenarien.
 
 ## Technische Lösung
 

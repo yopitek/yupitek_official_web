@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "flipper-zero-beginners-guide-setup-tutorial"
 tags: ["TW", "zero-beginners-guide-setup-tutorial", "zero-beginners-guide-setup-tutorial", "08-10", "Flipper Zero", "Tutorial", "zero/hero.webp", "GHz／NFC／IR／BadUSB 五大功能實測，一篇帶你完成 Flipper Zero 入門。"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-08-10
 ---
 
@@ -142,7 +142,7 @@ Flipper Zero 本身是合法工具，但使用場景有明確的法律邊界：
 Flipper Zero 內建 Sub-GHz 收發器專攻常見協定（OOK/ASK/FSK 等），操作直覺；SDR（如 HackRF、RTL-SDR）頻率範圍更廣、可看原始頻譜，但需要電腦與較深背景。兩者是互補工具。
 
 **Q5：哪裡可以買到 Flipper Zero？**
-Yupitek（榆閤科技）提供 Flipper Zero 產品與相關配件，並提供技術諮詢；購買後可來信 sales@yupitek.com 詢問設定問題。
+Yopitek（榆閤科技）提供 Flipper Zero 產品與相關配件，並提供技術諮詢；購買後可來信 sales@yupitek.com 詢問設定問題。
 
 **Q6：可以裝第三方韌體嗎？**
 可以，但新手不建議。第三方韌體（如 Xtreme）提供介面美化與額外功能，但穩定性與安全性需自行評估，且可能失去原廠更新支援。
@@ -151,4 +151,4 @@ Yupitek（榆閤科技）提供 Flipper Zero 產品與相關配件，並提供�
 
 Flipper Zero 的入門路徑很單純：**裝 microSD → 更新官方穩定韌體 → 從 RFID 讀卡與 IR 遙控玩起 → 熟悉後再碰 Sub-GHz 與 BadUSB**。它是了解無線協定與硬體安全的絕佳起點，但請永遠記得：功能越強，越要自律——只測試自己有權限的設備。
 
-需要 Flipper Zero 或相關配件，歡迎來信 [sales@yupitek.com](mailto:sales@yupitek.com)，Yupitek 提供產品與技術諮詢服務。
+需要 Flipper Zero 或相關配件，歡迎來信 [sales@yupitek.com](mailto:sales@yupitek.com)，Yopitek 提供產品與技術諮詢服務。

@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/mellanox/ai-generated/hero/mellanox-hero-banner.png"
 ---
 
-NVIDIA Mellanoxは、ハイパフォーマンス・コンピューティング（HPC）、AIデータクラスタ、ハイパースケールクラウド、企業向けストレージ（NVMe-oF）、低遅延が求められる金融取引システムにおいて、世界的なデファクトスタンダードとなっています。Yupitek（ユピテック）では、高速Mellanoxネットワークカード、インテリジェントDPU、各種アクティブ/パッシブケーブル、高密度スイッチを幅広く取り揃えています。
+NVIDIA Mellanoxは、ハイパフォーマンス・コンピューティング（HPC）、AIデータクラスタ、ハイパースケールクラウド、企業向けストレージ（NVMe-oF）、低遅延が求められる金融取引システムにおいて、世界的なデファクトスタンダードとなっています。Yopitek（ユピテック）では、高速Mellanoxネットワークカード、インテリジェントDPU、各種アクティブ/パッシブケーブル、高密度スイッチを幅広く取り揃えています。
 
 ---
 

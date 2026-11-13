@@ -1,6 +1,6 @@
 ---
 title: "Taipei 101 — Mapeamento de Projeção no Ícone de Taipei"
-description: "Case Yupitek: projeção mapping no Taipei 101, o arranha-céu mais icônico de Taiwan. Instalação de grande escala em fachada e espaços internos do edifício comercial mais famoso de Taipei."
+description: "Case Yopitek: projeção mapping no Taipei 101, o arranha-céu mais icônico de Taiwan. Instalação de grande escala em fachada e espaços internos do edifício comercial mais famoso de Taipei."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Taipei 101", "Mapeamento de Projeção", "Taipei"]
 **Tipo**: Edifício Comercial / Instalação de Projeção
 **Escopo**: Mapeamento de projeção em fachada e espaços internos do Taipei 101
 
-Com 508 metros de altura e reconhecido mundialmente como símbolo de Taipei, o Taipei 101 é um dos alvos de projeção mapping mais desafiadores e espetaculares da Ásia. A Yupitek participou de projeto de mapeamento de projeção para celebração especial no edifício, combinando shows de fachada com instalações nos espaços internos do complexo comercial.
+Com 508 metros de altura e reconhecido mundialmente como símbolo de Taipei, o Taipei 101 é um dos alvos de projeção mapping mais desafiadores e espetaculares da Ásia. A Yopitek participou de projeto de mapeamento de projeção para celebração especial no edifício, combinando shows de fachada com instalações nos espaços internos do complexo comercial.
 
 ## Solução Técnica
 
@@ -31,7 +31,7 @@ Projetos de projeção no Taipei 101 exigem equipamentos de altíssima performan
   <img src="/images/solution/case-taipei-101.webp" alt="Mapeamento de projeção no Taipei 101" />
 {{< /gallery >}}
 
-- Um dos projetos de maior escala e visibilidade executados pela Yupitek
+- Um dos projetos de maior escala e visibilidade executados pela Yopitek
 - Transmissão ao vivo para milhões de espectadores ao redor do mundo
 - Referência técnica em projeção mapping em edifícios de grande altura
 

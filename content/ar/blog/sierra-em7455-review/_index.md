@@ -1,6 +1,6 @@
 ---
 title: "مراجعة شاملة لـ Sierra EM7455: لماذا هي بطاقة Sierra المفضلة لدى المطورين والمختبرات؟"
-description: "مراجعة شاملة لـ EM7455: المواصفات، الفرق عن EM7430، إعداد OpenWrt/Linux، التوافق مع Dell/Lenovo. المعلومات الفنية من إعداد Yupitek."
+description: "مراجعة شاملة لـ EM7455: المواصفات، الفرق عن EM7430، إعداد OpenWrt/Linux، التوافق مع Dell/Lenovo. المعلومات الفنية من إعداد Yopitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -25,14 +25,14 @@ faq:
 # مراجعة شاملة لـ Sierra EM7455: لماذا هي بطاقة Sierra المفضلة لدى المطورين والمختبرات؟
 
 {{< alert >}}
-تقدم Yupitek معلومات منتجات Sierra Wireless / Semtech وقنوات التوريد والمحتوى التقني؛ لسنا موزعًا معتمدًا رسميًا، وهذه المعلومات للمرجعية التقنية فقط.
+تقدم Yopitek معلومات منتجات Sierra Wireless / Semtech وقنوات التوريد والمحتوى التقني؛ لسنا موزعًا معتمدًا رسميًا، وهذه المعلومات للمرجعية التقنية فقط.
 {{</alert >}}
 
 إذا كنت تستخدم Raspberry Pi مع OpenWrt، أو تريد ترقية أجهزة مختبرك إلى اتصال 4G، فلا بد أنك سمعت عن البطاقة الأسطورية Sierra EM7455! إنها وحدة خلوية LTE-A Cat 6 بتنسيق M.2 من Sierra Wireless، تعمل بمعالج Qualcomm MDM9230، وتدعم سرعة تحميل تصل إلى 300 Mbps وسرعة رفع تصل إلى 50 Mbps، مع ميزة تحديد المواقع GNSS المدمجة، كما تتحمل درجة حرارة تشغيل تصل إلى -40°C إلى +85°C في البيئات القاسية.
 
-أعدت هذه المقالة Yupitek لشرح سبب شهرة هذه الوحدة بتغليف M.2 B-Key القياسية 4G LTE-Advanced Cat 6، وكيفية إعداد التعريفات والإعدادات في أنظمة Linux.
+أعدت هذه المقالة Yopitek لشرح سبب شهرة هذه الوحدة بتغليف M.2 B-Key القياسية 4G LTE-Advanced Cat 6، وكيفية إعداد التعريفات والإعدادات في أنظمة Linux.
 
-> رابط المنتج: [صفحة EM7455 على Yupitek](/ar/products/sierra/em7455/) | ورقة المواصفات الرسمية: [AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
+> رابط المنتج: [صفحة EM7455 على Yopitek](/ar/products/sierra/em7455/) | ورقة المواصفات الرسمية: [AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
 
 ---
 
@@ -277,7 +277,7 @@ AT!RESET
 
 ## تريد الشراء لمختبرك؟ نحن في خدمتك
 
-هذه المقالة من إعداد الفريق الهندسي في Yupitek. سواء كان مشروعاً جامعياً، أو خطة مختبر، أو شراء كميات كبيرة من EM7455 أو وحدات Sierra أخرى لشركتك، يمكنك مناقشتها معنا!
+هذه المقالة من إعداد الفريق الهندسي في Yopitek. سواء كان مشروعاً جامعياً، أو خطة مختبر، أو شراء كميات كبيرة من EM7455 أو وحدات Sierra أخرى لشركتك، يمكنك مناقشتها معنا!
 
 - **تصفح هذه البطاقة**: [https://yupitek.com/ar/products/sierra/em7455/](/ar/products/sierra/em7455/)
 - **استعرض جميع طرازات Sierra**: [https://yupitek.com/ar/products/sierra/](/ar/products/sierra/)

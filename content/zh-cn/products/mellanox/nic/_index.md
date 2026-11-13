@@ -10,7 +10,7 @@ showChildPages: false
 
 # Mellanox / NVIDIA ConnectX 网卡 — 10G 至 400G
 
-NVIDIA Mellanox ConnectX 网卡为企业级服务器和 AI 集群提供领先的带宽与超低延迟表现。以下是 Yupitek 分销的完整产品目录，已按速率进行分类。
+NVIDIA Mellanox ConnectX 网卡为企业级服务器和 AI 集群提供领先的带宽与超低延迟表现。以下是 Yopitek 分销的完整产品目录，已按速率进行分类。
 
 ---
 

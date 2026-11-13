@@ -4,13 +4,13 @@ locale: ar
 hreflang_group: flipper-zero-beginners-guide-setup-tutorial
 slug: flipper-zero-beginners-guide-setup-tutorial
 published: 2026-08-10
-author: Yupitek
+author: Yopitek
 category: Technical
 tags:
   - Flipper Zero
   - Tutorial
 hero_image: /static/img/flipper-zero/hero.webp
-hero_alt: "دليل المبتدئين لـ Flipper Zero: الفتح، تحديث البرنامج الوظيفي واختبار خمس ميزات | Yupitek"
+hero_alt: "دليل المبتدئين لـ Flipper Zero: الفتح، تحديث البرنامج الوظيفي واختبار خمس ميزات | Yopitek"
 seo_description: "ما هو Flipper Zero؟ من الفتح، إعداد بطاقة microSD، وتحديث البرنامج الوظيفي عبر qFlipper، إلى اختبار عملي لخمس ميزات: RFID/Sub-GHz/NFC/IR/BadUSB. مقال شامل يأخذك في رحلة تعلم Flipper Zero من الصفر."
 date: 2026-08-10
 draft: false
@@ -151,7 +151,7 @@ dir: rtl
 يحتوي Flipper Zero على مستقبل/مرسل Sub-GHz مخصص للبروتوكولات الشائعة (OOK/ASK/FSK وما إلى ذلك)، وسهل الاستخدام؛ بينما يغطي SDR (مثل HackRF، RTL-SDR) نطاقاً ترددياً أوسع ويسمح برؤية الطيف الخام، ولكنه يتطلب كمبيوتر وخلفية تقنية أعمق. هما أداتان متكاملتان.
 
 **س5: أين يمكن شراء Flipper Zero؟**
-توفر Yupitek (Yuhé Technology) منتجات Flipper Zero وملحقاتها ذات الصلة، وتقدم استشارات تقنية؛ يمكنك إرسال بريد إلكتروني إلى sales@yupitek.com للاستفسار عن مشاكل الإعداد بعد الشراء.
+توفر Yopitek (Yuhé Technology) منتجات Flipper Zero وملحقاتها ذات الصلة، وتقدم استشارات تقنية؛ يمكنك إرسال بريد إلكتروني إلى sales@yupitek.com للاستفسار عن مشاكل الإعداد بعد الشراء.
 
 **س6: هل يمكن تثبيت برنامج وظيفي من طرف ثالث؟**
 نعم، ولكن لا يُنصح للمبتدئين. توفر البرامج الوظيفية من طرف ثالث (مثل Xtreme) تحسينات في الواجهة وميزات إضافية، ولكن يجب عليك تقييم الاستقرار والأمان بنفسك، وقد تفقد دعم التحديث من الشركة المصنعة.
@@ -160,4 +160,4 @@ dir: rtl
 
 مسار تعلم Flipper Zero بسيط: **تثبيت بطاقة microSD → تحديث البرنامج الوظيفي المستقر الرسمي → ابدأ باللعب بقراءة بطاقات RFID والتحكم بالأشعة تحت الحمراء → بعد الإلمام، انتقل إلى Sub-GHz و BadUSB**. إنه نقطة انطلاق ممتازة لفهم البروتوكولات اللاسلكية وأمان العتاد، ولكن تذكر دائماً: كلما كانت الوظائف أقوى، زاد الحاجة إلى الانضباط الذاتي — اختبر فقط الأجهزة التي لديك صلاحية استخدامها.
 
-للحصول على Flipper Zero أو الملحقات ذات الصلة، يرجى إرسال بريد إلكتروني إلى [sales@yupitek.com](mailto:sales@yupitek.com). تقدم Yupitek خدمات استشارات المنتجات والتقنية.
+للحصول على Flipper Zero أو الملحقات ذات الصلة، يرجى إرسال بريد إلكتروني إلى [sales@yupitek.com](mailto:sales@yupitek.com). تقدم Yopitek خدمات استشارات المنتجات والتقنية.

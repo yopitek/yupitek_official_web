@@ -13,7 +13,7 @@ tags: ["Salle Thématique", "Exposition Scientifique", "Projection Immersive"]
 **Type** : Projection Immersive pour Salle Thématique Technologique
 **Thème** : Sciences de la Vie × Expérience Technologique
 
-La Salle d'Exposition Tech World est un espace d'expérience thématique combinant technologie et sciences de la vie. Yupitek était responsable de l'intégration du système de projection immersive, utilisant la projection grand format et des installations interactives pour permettre aux visiteurs d'explorer les mystères du vivant d'une manière entièrement nouvelle.
+La Salle d'Exposition Tech World est un espace d'expérience thématique combinant technologie et sciences de la vie. Yopitek était responsable de l'intégration du système de projection immersive, utilisant la projection grand format et des installations interactives pour permettre aux visiteurs d'explorer les mystères du vivant d'une manière entièrement nouvelle.
 
 ## Points Forts de l'Exposition
 

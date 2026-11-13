@@ -30,7 +30,7 @@ Le fuzzing de protocoles WLAN — souvent appelé test négatif sans fil — est
 
 Pour résoudre ce problème, les équipes de sécurité utilisent **Black Duck FuzzBox** (anciennement Synopsys Defensics FuzzBox), un environnement d'exécution logiciel et matériel spécialisé. Pour effectuer les tests, le système d'exploitation FuzzBox OS doit être associé à un adaptateur sans fil USB compatible et performant, capable de prendre en charge un mode moniteur stable et une injection fiable de paquets bruts. 
 
-Dans ce guide de compatibilité, nous analysons le catalogue de produits ALFA Network actifs de Yupitek, expliquons pourquoi les adaptateurs Wi-Fi 6/6E plus récents échouent sous FuzzBox, et fournissons un guide d'installation étape par étape pour le choix standard de l'industrie : l'**ALFA AWUS036ACH** (RTL8812AU).
+Dans ce guide de compatibilité, nous analysons le catalogue de produits ALFA Network actifs de Yopitek, expliquons pourquoi les adaptateurs Wi-Fi 6/6E plus récents échouent sous FuzzBox, et fournissons un guide d'installation étape par étape pour le choix standard de l'industrie : l'**ALFA AWUS036ACH** (RTL8812AU).
 
 ---
 
@@ -73,7 +73,7 @@ FuzzBox OS fonctionne comme une plateforme de conteneurs Linux sans interface gr
 
 ## 3. Analyse des adaptateurs ALFA et emplacements des pilotes sur GitHub
 
-Il est crucial de choisir le bon adaptateur parmi les modèles actifs actuels. Comparons l'inventaire des produits ALFA Network actifs de Yupitek avec la matrice de compatibilité de FuzzBox OS.
+Il est crucial de choisir le bon adaptateur parmi les modèles actifs actuels. Comparons l'inventaire des produits ALFA Network actifs de Yopitek avec la matrice de compatibilité de FuzzBox OS.
 
 ### 3.1 Évaluation rigoureuse des modèles ALFA actuels
 ALFA Network fabrique des adaptateurs utilisant différents chipsets. Seuls certains chipsets prennent en charge le moteur d'injection brute de FuzzBox.
@@ -233,8 +233,8 @@ Pour les laboratoires de tests de sécurité qui déploient des systèmes Black 
 *   **Optimisation du signal (fortement recommandée) :** Ajoutez les antennes panneaux directionnelles double bande **ALFA APA-M25** ou **APA-M25-6E**. Remplacer les antennes omnidirectionnelles d'origine par ces panneaux à gain élevé concentre le signal radio directement sur le système sous test (SUT), réduisant le bruit ambiant et améliorant les taux de réussite de l'injection.
 
 ### 8.2 Demandes de renseignements et commandes
-Yupitek est un distributeur agréé des produits ALFA Network, offrant un support local et un approvisionnement en volume. Pour demander des devis de produits, passer des commandes groupées ou consulter notre équipe de support technique :
-*   Visitez la [page Contactez-nous de Yupitek](/fr/contact/)
+Yopitek est un distributeur agréé des produits ALFA Network, offrant un support local et un approvisionnement en volume. Pour demander des devis de produits, passer des commandes groupées ou consulter notre équipe de support technique :
+*   Visitez la [page Contactez-nous de Yopitek](/fr/contact/)
 *   Ou envoyez-nous un e-mail directement à **sales@yupitek.com**
 
 Notre équipe d'ingénieurs vous aidera à acquérir les configurations matérielles sans fil exactes nécessaires pour prendre en charge vos flux de travail de fuzzing de protocoles Black Duck FuzzBox.

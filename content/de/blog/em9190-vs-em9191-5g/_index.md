@@ -1,6 +1,6 @@
 ---
 title: "Sierra EM9190 vs EM9191: 5G Sub-6 oder mmWave, was solltest du wählen? Wir räumen mit Internet-Mythen auf"
-description: "EM9190 vs EM9191, was wählen? Laut offizieller Spezifikation (41113174 Rev 8): EM9190 unterstützt 5G Sub-6 + mmWave (n257/258/260/261, nur NSA), EM9191 nur Sub-6. Beide mit Qualcomm SDX55, M.2, inklusive Vergleich der taiwanischen 5G-Bänder. Zusammengestellt von Yupitek."
+description: "EM9190 vs EM9191, was wählen? Laut offizieller Spezifikation (41113174 Rev 8): EM9190 unterstützt 5G Sub-6 + mmWave (n257/258/260/261, nur NSA), EM9191 nur Sub-6. Beide mit Qualcomm SDX55, M.2, inklusive Vergleich der taiwanischen 5G-Bänder. Zusammengestellt von Yopitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -28,7 +28,7 @@ Wenn du an der Uni mit deinem Professor ein 5G-Projekt machst oder gerade in der
 
 Dieser Artikel stützt sich nicht auf Online-Weitererzählungen: Unsere einzige Grundlage ist die offizielle Spezifikation von Sierra Wireless, „EM919X/EM7690 Product Technical Specification" (Doc 41113174, Rev 8, Mai 2023). Wir prüfen die Unterschiede der beiden Module Punkt für Punkt. Besonders schauen wir auf die Bänder n78 und 28 GHz, die taiwanische Leser am meisten interessieren, damit du beim Kauf von 5G-Geräten nichts Falsches kaufst.
 
-> Produktlinks: [EM9190 — Yupitek-Produktseite](/de/products/sierra/em9190/) | [EM9191 — Yupitek-Produktseite](/de/products/sierra/em9191/) | Offizielle Spezifikation: [EM919X/EM7690 Product Technical Specification](https://yupitek.com/docs/sierra/EM919x.pdf)
+> Produktlinks: [EM9190 — Yopitek-Produktseite](/de/products/sierra/em9190/) | [EM9191 — Yopitek-Produktseite](/de/products/sierra/em9191/) | Offizielle Spezifikation: [EM919X/EM7690 Product Technical Specification](https://yupitek.com/docs/sierra/EM919x.pdf)
 
 ---
 
@@ -165,7 +165,7 @@ Du kannst also problemlos zuerst eine universelle Platine für den EM9191 design
 
 ## Kaufbedarf oder Fragen? Sprich uns an
 
-Wenn du nach diesem Artikel noch Fragen zur Hardware-Integration hast oder euer Labor/eure Firma diese beiden 5G-Module einkaufen will, kontaktiere gerne das Engineering-Team von Yupitek. Wir bieten auch passende Antennen und Adapterplatinen an.
+Wenn du nach diesem Artikel noch Fragen zur Hardware-Integration hast oder euer Labor/eure Firma diese beiden 5G-Module einkaufen will, kontaktiere gerne das Engineering-Team von Yopitek. Wir bieten auch passende Antennen und Adapterplatinen an.
 
 - **EM9190-Produktseite (das echte Flaggschiff mit mmWave)** : [https://yupitek.com/de/products/sierra/em9190/](/de/products/sierra/em9190/)
 - **EM9191-Produktseite (die praktische Sub-6-Version)** : [https://yupitek.com/de/products/sierra/em9191/](/de/products/sierra/em9191/)

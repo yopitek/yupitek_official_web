@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/mellanox/ai-generated/hero/mellanox-hero-banner.png"
 ---
 
-La gamme NVIDIA Mellanox s'impose comme la référence mondiale pour le calcul haute performance (HPC), les clusters d'intelligence artificielle, le cloud hyperscale, le stockage d'entreprise (NVMe-oF) et les systèmes financiers à ultra-faible latence. Yupitek propose un catalogue complet de cartes réseau Mellanox à haut débit, de DPU intelligents, de câbles passifs ou actifs, ainsi que de commutateurs haute densité.
+La gamme NVIDIA Mellanox s'impose comme la référence mondiale pour le calcul haute performance (HPC), les clusters d'intelligence artificielle, le cloud hyperscale, le stockage d'entreprise (NVMe-oF) et les systèmes financiers à ultra-faible latence. Yopitek propose un catalogue complet de cartes réseau Mellanox à haut débit, de DPU intelligents, de câbles passifs ou actifs, ainsi que de commutateurs haute densité.
 
 ---
 

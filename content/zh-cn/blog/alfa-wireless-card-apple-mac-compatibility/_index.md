@@ -2,7 +2,7 @@
 title: "ALFA 无线网卡在 Apple Mac 上的兼容性（2026）：M1/M2/M3/M4 与 Intel 完整兼容报告"
 description: "ALFA Network USB 无线网卡在 Apple Mac（MacBook、MacBook Pro、MacBook Air、Mac Mini、Mac Studio）上的完整兼容性指南，涵盖 Intel 和 Apple Silicon M1/M2/M3/M4 处理器。了解哪些 ALFA 网卡可用、为何 Apple Silicon 原生支持为零，以及如何通过 Linux 虚拟机启用监听模式。"
 keywords: "ALFA 无线网卡 Mac, ALFA macOS 兼容性, ALFA 网卡 Apple Silicon, USB WiFi 适配器 M1 M2 M3 M4, ALFA Network MacBook, Mac 监听模式, AWUS036ACH Mac, AWUS036ACM Mac, ALFA Network Mac Mini, Apple Silicon 渗透测试"
-author: "Yupitek 技术支持团队"
+author: "Yopitek 技术支持团队"
 date: "2026-06-20"
 category: "技术指南"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
@@ -23,7 +23,7 @@ tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", 
 
 ## 1. 兼容性矩阵：哪款 ALFA 网卡在哪款 Mac 上可用？
 
-下表是权威参考。它评估了 [Yupitek 的 ALFA 产品线](https://yupitek.com/en/products/alfa/) 中目前在售的全部 9 款 ALFA 无线适配器（不含已停产型号）在四种部署场景下的表现。
+下表是权威参考。它评估了 [Yopitek 的 ALFA 产品线](https://yupitek.com/en/products/alfa/) 中目前在售的全部 9 款 ALFA 无线适配器（不含已停产型号）在四种部署场景下的表现。
 
 ### 1.1 完整兼容性矩阵
 
@@ -413,10 +413,10 @@ Apple Silicon Mac（M1/M2/M3/M4）使用无法加载 x86_64 内核扩展的 ARM6
 
 | 资源 | URL |
 |----------|-----|
-| Yupitek 官方网站 | [https://www.yupitek.com](https://www.yupitek.com) |
-| Yupitek ALFA 产品页 | [https://yupitek.com/en/products/alfa/](https://yupitek.com/en/products/alfa/) |
+| Yopitek 官方网站 | [https://www.yupitek.com](https://www.yupitek.com) |
+| Yopitek ALFA 产品页 | [https://yupitek.com/en/products/alfa/](https://yupitek.com/en/products/alfa/) |
 | ALFA Network 官方 | [https://www.alfa.com.tw](https://www.alfa.com.tw) |
-| Yupitek ALFA 对比表 | [https://yupitek.com/alfa_compare.html](https://yupitek.com/alfa_compare.html) |
+| Yopitek ALFA 对比表 | [https://yupitek.com/alfa_compare.html](https://yupitek.com/alfa_compare.html) |
 
 ### Linux 驱动仓库（GitHub）
 
@@ -454,9 +454,9 @@ Apple Silicon Mac（M1/M2/M3/M4）使用无法加载 x86_64 内核扩展的 ARM6
 
 ---
 
-*本文基于从 Apple 开发者文档、GitHub 仓库（chris1111、aircrack-ng、morrownr）、ALFA Network 产品规格、Reddit/GitHub 社区报告以及实际测试文档中整理而成的技术研究。所有产品推荐均基于 Yupitek 当前在售的 ALFA 产品线。*
+*本文基于从 Apple 开发者文档、GitHub 仓库（chris1111、aircrack-ng、morrownr）、ALFA Network 产品规格、Reddit/GitHub 社区报告以及实际测试文档中整理而成的技术研究。所有产品推荐均基于 Yopitek 当前在售的 ALFA 产品线。*
 
 *⚠️ 本文所述设备和技术仅用于授权的信息安全审计和合法渗透测试。用户必须确保遵守当地法律法规。*
 
 ---
-*文章版本：1.0 | 2026-06-20 | Yupitek Ltd.*
+*文章版本：1.0 | 2026-06-20 | Yopitek Ltd.*

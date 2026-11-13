@@ -13,7 +13,7 @@ tags: ["Exposição Agrícola", "Eventos", "Tainan"]
 **Tipo**: Projeção para exposição com tema agrícola
 **Tema**: Cultura de Orquídeas × Visualização Tecnológica
 
-Houbi é uma importante região produtora de orquídeas em Taiwan, e a exposição anual de orquídeas é um importante evento cultural local. A Yupitek criou um espaço de exposição com projeção imersiva para a feira de orquídeas, ampliando a beleza natural das orquídeas por meio da tecnologia e atraindo mais jovens para conhecer a cultura agrícola de Taiwan.
+Houbi é uma importante região produtora de orquídeas em Taiwan, e a exposição anual de orquídeas é um importante evento cultural local. A Yopitek criou um espaço de exposição com projeção imersiva para a feira de orquídeas, ampliando a beleza natural das orquídeas por meio da tecnologia e atraindo mais jovens para conhecer a cultura agrícola de Taiwan.
 
 ## Solução Técnica
 

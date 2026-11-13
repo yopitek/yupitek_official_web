@@ -13,7 +13,7 @@ tags: ["Government", "Multi-Purpose Hall", "Multi-Projector"]
 **Type**: Multi-purpose hall projection system
 **Application**: Government meetings, events, presentations
 
-The Yangmei District Office required a projection system flexible enough to support daily administrative meetings, large public hearings, and local cultural events. Yupitek designed and installed a multi-projector blended projection system to accommodate diverse use scenarios.
+The Yangmei District Office required a projection system flexible enough to support daily administrative meetings, large public hearings, and local cultural events. Yopitek designed and installed a multi-projector blended projection system to accommodate diverse use scenarios.
 
 ## Technical Solution
 

@@ -1,6 +1,6 @@
 ---
-title: "Série Yupitek iBeacon — Balises BLE 5.0"
-description: "Yupitek distribue des balises professionnelles BLE 5.0 iBeacon et Eddystone : YPB01, YPB02, YPB03, YPB04 et YPB05 — pour la géolocalisation intérieure, le contrôle de présence et le suivi des actifs."
+title: "Série Yopitek iBeacon — Balises BLE 5.0"
+description: "Yopitek distribue des balises professionnelles BLE 5.0 iBeacon et Eddystone : YPB01, YPB02, YPB03, YPB04 et YPB05 — pour la géolocalisation intérieure, le contrôle de présence et le suivi des actifs."
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-Les produits iBeacon de Yupitek représentent une nouvelle génération de balises Bluetooth® Low Energy (BLE 5.0) conçues pour la localisation haute performance, le suivi du personnel et la publicité commerciale. Compatibles simultanément avec les protocoles Apple iBeacon™ et Google Eddystone™ (UID, URL, TLM), nos balises permettent des diffusions multiprotocoles (jusqu'à 6 slots) configurables facilement depuis l'application BeaconSET+.
+Les produits iBeacon de Yopitek représentent une nouvelle génération de balises Bluetooth® Low Energy (BLE 5.0) conçues pour la localisation haute performance, le suivi du personnel et la publicité commerciale. Compatibles simultanément avec les protocoles Apple iBeacon™ et Google Eddystone™ (UID, URL, TLM), nos balises permettent des diffusions multiprotocoles (jusqu'à 6 slots) configurables facilement depuis l'application BeaconSET+.
 
 ---
 

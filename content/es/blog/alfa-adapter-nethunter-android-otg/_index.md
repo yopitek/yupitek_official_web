@@ -182,7 +182,7 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan1mon
 ## Ataques WiFi con NetHunter (solo para pruebas autorizadas)
 
 {{< alert "triangle-exclamation" >}}
-Todas las pruebas de seguridad inalámbrica deben realizarse **únicamente en redes y dispositivos que poseas o para los que tengas autorización escrita explícita para probar**. El acceso no autorizado a redes informáticas es ilegal en la mayoría de las jurisdicciones del mundo. Las herramientas descritas aquí son solo para pruebas de penetración autorizadas, investigación de seguridad y fines educativos. Yupitek no acepta ninguna responsabilidad por uso indebido.
+Todas las pruebas de seguridad inalámbrica deben realizarse **únicamente en redes y dispositivos que poseas o para los que tengas autorización escrita explícita para probar**. El acceso no autorizado a redes informáticas es ilegal en la mayoría de las jurisdicciones del mundo. Las herramientas descritas aquí son solo para pruebas de penetración autorizadas, investigación de seguridad y fines educativos. Yopitek no acepta ninguna responsabilidad por uso indebido.
 {{< /alert >}}
 
 **WiFi Evil Portal (WPS3):** Disponible directamente en el menú principal de la app NetHunter. Crea un punto de acceso falso con un portal cautivo para captura de credenciales durante evaluaciones autorizadas de ingeniería social. Requiere un adaptador externo con soporte de modo AP.

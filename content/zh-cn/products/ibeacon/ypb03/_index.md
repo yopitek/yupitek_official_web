@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range", "Waterproof", "LINE Beacon", "LINE Simple Beacon"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "AA Battery", "Long Range", "Waterproof", "LINE Beacon", "LINE Simple Beacon"]
 ---
 
 ## 产品概述
@@ -113,7 +113,7 @@ YPB03 的各项参数（包括 UUID、Major、Minor、广播功率和广播间�
 ## 产品图片
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb03.png" alt="Yupitek YPB03" />
+  <img src="/images/products/ibeacon/ypb03.png" alt="Yopitek YPB03" />
 {{< /gallery >}}
 
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Espace Immersif"
-description: "Solutions d'espace de projection immersif Yupitek : projection panoramique 360°, salles d'exposition immersives et installations artistiques interactives pour des expériences visuelles enveloppantes."
+description: "Solutions d'espace de projection immersif Yopitek : projection panoramique 360°, salles d'exposition immersives et installations artistiques interactives pour des expériences visuelles enveloppantes."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Espaces de Projection Immersifs
 
-La projection en espace immersif brise les limites des écrans traditionnels en plongeant le public au cœur d'un environnement visuel à 360°. Qu'il s'agisse d'expositions muséales spéciales, de centres d'expérience d'entreprise ou d'installations permanentes pour sites touristiques, Yupitek conçoit des solutions de projection immersive sur mesure.
+La projection en espace immersif brise les limites des écrans traditionnels en plongeant le public au cœur d'un environnement visuel à 360°. Qu'il s'agisse d'expositions muséales spéciales, de centres d'expérience d'entreprise ou d'installations permanentes pour sites touristiques, Yopitek conçoit des solutions de projection immersive sur mesure.
 
 ## Capacités Techniques
 

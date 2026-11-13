@@ -206,7 +206,7 @@ Die Kombination eines ALFA Network WLAN-Adapters mit dem HAK5 WiFi Pineapple Pag
 - **Für den schnellen, unkomplizierten Einsatz**: Kaufe den [ALFA AWUS036ACM](https://yupitek.com/de/products/alfa/awus036acm). Seine MediaTek-Treiber laufen unter dem OpenWrt-Kernel 6.6 absolut stabil und er ist sofort einsatzbereit.
 - **Stabile Stromversorgung**: Verwende immer einen hochwertigen **aktiven USB-Hub**, um die volle Sendeleistung der Hochleistungskarten zu gewährleisten und Verbindungsabbrüche zu verhindern.
 
-Bei weiteren technischen Fragen, Hardware-Bestellungen oder Anfragen zu maßgeschneiderten OpenWrt-Kompilierungen wende dich einfach an das **Yupitek-Support-Team**:
+Bei weiteren technischen Fragen, Hardware-Bestellungen oder Anfragen zu maßgeschneiderten OpenWrt-Kompilierungen wende dich einfach an das **Yopitek-Support-Team**:
 
 - 🌐 Offizielle Website: [www.yupitek.com](https://www.yupitek.com)
 - 📧 Support-E-Mail: [sales@yupitek.com](mailto:sales@yupitek.com)

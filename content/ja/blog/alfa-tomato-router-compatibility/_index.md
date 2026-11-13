@@ -246,7 +246,7 @@ TomatoはBroadcomルーターの内蔵WiFiを完全にサポートしており�
 | FreshTomato 公式ウェブサイト | FreshTomato 最新バージョンおよびサポートデバイスリスト | https://freshtomato.org/ | ✅ 検証済み | 2026-09-03 |
 | OpenWrt 公式文書 | USB WiFi ドライバおよび無線設定（比較参考） | https://openwrt.org/docs/start | ✅ 検証済み | 2026-09-03 |
 | OpenWrt 公式フォーラム | USB WiFi ドライバディスカッション（比較参考） | https://forum.openwrt.org/ | ✅ 検証済み | 2026-09-03 |
-| ALFA Network 製品一覧（Yupitek） | ALFA 現行製品スペック | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検証済み | 2026-09-03 |
+| ALFA Network 製品一覧（Yopitek） | ALFA 現行製品スペック | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検証済み | 2026-09-03 |
 
 関連記事：[ALFA 无線ネットワークカードが DD-WRT に対応しているか](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[ALFA 无線ネットワークカードが OpenWrt に対応しているか](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[ALFA 无線ネットワークカードが NVIDIA DGX Spark に対応しているか](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无線ネットワークカードが NVIDIA Jetson Nano に対応しているか](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

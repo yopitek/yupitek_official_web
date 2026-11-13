@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "CR2477", "Waterproof"]
 ---
 
 ## 產品概述
@@ -67,7 +67,7 @@ YPB01 的各項參數（如 UUID、Major、Minor、廣播功率和廣播間隔�
 ## 產品圖片
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb01.png" alt="Yupitek YPB01" />
+  <img src="/images/products/ibeacon/ypb01.png" alt="Yopitek YPB01" />
 {{< /gallery >}}
 
 ---

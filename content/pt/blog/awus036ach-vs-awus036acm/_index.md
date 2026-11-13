@@ -249,4 +249,4 @@ Se você só pode ter um adaptador, o **AWUS036ACH** é a escolha mais forte par
 1. Repositorio de driver RTL8812AU mantido pela comunidade aircrack-ng — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
 2. Driver MT76 do kernel mainline (`mt76x2u`, integrado desde kernel 4.19) — [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
 3. Site oficial e especificacoes de produtos da ALFA Network — [alfa.com.tw](https://www.alfa.com.tw)
-4. Yupitek — Distribuidora autorizada da ALFA Network em Taiwan — [yupitek.com](https://www.yupitek.com)
+4. Yopitek — Distribuidora autorizada da ALFA Network em Taiwan — [yupitek.com](https://www.yupitek.com)

@@ -4,13 +4,13 @@ locale: ar
 hreflang_group: awus036axml-wifi6e-kali-linux-setup
 slug: awus036axml-wifi6e-kali-linux-setup
 published: 2026-08-10
-author: Yupitek
+author: Yopitek
 category: Technical
 tags:
   - AWUS036AXML
   - Kali Linux
 hero_image: /static/img/AWUS036AXML/hero.webp
-hero_alt: "كيفية تثبيت AWUS036AXML على Kali Linux؟ دليل وضع المراقبة Wi-Fi 6E وإدخال الحزم | Yupitek"
+hero_alt: "كيفية تثبيت AWUS036AXML على Kali Linux؟ دليل وضع المراقبة Wi-Fi 6E وإدخال الحزم | Yopitek"
 seo_description: "دليل تثبيت ALFA AWUS036AXML (شريحة MT7921AUN) على Kali Linux: يتضمن تعريف mt7921u المدمج، شروط إصدار النواة، وضع المراقبة، اختبار إدخال الحزم، وحل المشكلات الشائعة."
 date: 2026-08-10
 draft: false
@@ -202,4 +202,4 @@ AXML هو Wi-Fi 6E (يضيف 6 GHz) والتعريف مدمج في النواة�
 
 عملية تثبيت AWUS036AXML أبسط مما تتخيل: **نواة 5.18+ → الإدخال يعمل مباشرة (`mt7921u`) → التحقق من `0e8d:7961` → التبديل إلى المراقبة بواسطة airmon-ng → التحقق من الإدخال بواسطة aireplay-ng**. يكمن الفرق الجوهري بينه وبين AWUS036ACH في نطاق 6 GHz والتعريف الذي لا يحتاج إلى تجميع - إذا كان نطاق تدقيقك قد دخل إلى عصر Wi-Fi 6E، فهذه البطاقة هي الخيار لتكملة تغطية النطاق. تذكر إجراء جميع الاختبارات فقط في بيئات مرخصة قانونياً.
 
-تقوم Yupitek (شركة Yuhe Technology) بتوفير المبيعات والدعم الفني لبطاقات ALFA Network في تايوان؛ إذا كنت بحاجة إلى AWUS036AXML أو Hub USB المزود بالطاقة أو الهوائيات المرافقة، يرجى إرسال بريد إلكتروني إلى [sales@yupitek.com](mailto:sales@yupitek.com).
+تقوم Yopitek (شركة Yuhe Technology) بتوفير المبيعات والدعم الفني لبطاقات ALFA Network في تايوان؛ إذا كنت بحاجة إلى AWUS036AXML أو Hub USB المزود بالطاقة أو الهوائيات المرافقة، يرجى إرسال بريد إلكتروني إلى [sales@yupitek.com](mailto:sales@yupitek.com).

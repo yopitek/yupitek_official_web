@@ -30,7 +30,7 @@ Many companies choose Sierra Wireless 4G/5G modules for industrial routers, lapt
 
 This article gathers the identifying features from the official specifications so you can tell at a glance whether the module in your hand is genuine, and what to look for when you pick a supplier.
 
-> Specification and feature sources: Sierra Wireless official specifications. Compiled by Yupitek.
+> Specification and feature sources: Sierra Wireless official specifications. Compiled by Yopitek.
 
 ---
 
@@ -60,7 +60,7 @@ When you buy genuine new stock in volume from a supplier, the standard factory p
 
 | Channel | Stock condition | Technical support and warranty | Best for | Potential risks |
 |---|---|---|---|---|
-| **Professional supplier** (e.g. Yupitek) | Genuine new stock, SKU verifiable | ✅ Checks bands, verifies firmware versions, warranty channel available | Enterprise projects, industrial volume, long term inventory | Takes some time to run the RFQ process |
+| **Professional supplier** (e.g. Yopitek) | Genuine new stock, SKU verifiable | ✅ Checks bands, verifies firmware versions, warranty channel available | Enterprise projects, industrial volume, long term inventory | Takes some time to run the RFQ process |
 | **Auction sites / individuals** | Pull parts, rebuilt units | ❌ Sold as-is, no returns, you are on your own | Individual makers who want to save money | Region locked laptop versions, outdated firmware that cannot connect |
 
 > **The most common tragedy**: a manager buys cheap pull parts from an auction site to save on unit price, only to find the card is a North America band SKU that picks up no signal in Taiwan, or a version locked by a laptop OEM. The engineer then spends a week debugging, and the money saved is wiped out by the overtime.
@@ -103,7 +103,7 @@ Learn to read the label (IMEI barcode format, FSN) and match the FCC ID, and you
 
 ## Purchasing (Call To Action)
 
-Looking for a reliable 4G/5G module source for your company's industrial routers or IoT projects? Yupitek is a supplier of Sierra Wireless products and an industrial wireless solution provider. We offer:
+Looking for a reliable 4G/5G module source for your company's industrial routers or IoT projects? Yopitek is a supplier of Sierra Wireless products and an industrial wireless solution provider. We offer:
 - Model and exact SKU band verification advice
 - Confirmation and updates of firmware versions at shipment
 - Complete hardware integration technical support and warranty

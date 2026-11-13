@@ -428,14 +428,14 @@ wlan1mon  IEEE 802.11  Mode:Monitor  Frequency:2.437 GHz  Tx-Power=20 dBm
 
 | Ресурс | Ссылка |
 |---|---|
-| Yupitek — авторизованный дистрибьютор ALFA на Тайване | [yupitek.com](https://www.yupitek.com) |
+| Yopitek — авторизованный дистрибьютор ALFA на Тайване | [yupitek.com](https://www.yupitek.com) |
 | Официальные страницы продуктов ALFA Network | [alfa.com.tw](https://www.alfa.com.tw) |
 | Драйвер MT7610U (дерево ядра) | [torvalds/linux — mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76) |
 | Драйвер RTL8812AU (aircrack-ng) | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) |
 | Поддерживаемые устройства NetHunter | [nethunter.kali.org/device-kernels.html](https://nethunter.kali.org/device-kernels.html) |
 | Официальная документация NetHunter | [kali.org/docs/nethunter/](https://www.kali.org/docs/nethunter/) |
 | Форум XDA NetHunter | [xdaforums.com/tags/nethunter/](https://xdaforums.com/tags/nethunter/) |
-| Каталог продуктов Yupitek ALFA | [/ru/products/alfa/](/ru/products/alfa/) |
+| Каталог продуктов Yopitek ALFA | [/ru/products/alfa/](/ru/products/alfa/) |
 
 ---
 
@@ -498,7 +498,7 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
-*Этот документ подготовлен **Yupitek Ltd** — авторизованным дистрибьютором ALFA Network на Тайване.*  
+*Этот документ подготовлен **Yopitek Ltd** — авторизованным дистрибьютором ALFA Network на Тайване.*  
 *Данные актуальны на 2026-06-09. Версии ядра Linux и NetHunter регулярно обновляются; сверяйтесь с официальными источниками для получения актуальной информации о совместимости.*
 
 

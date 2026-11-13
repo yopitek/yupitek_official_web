@@ -846,7 +846,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 購買——ALFA Network 的官方授權經銷商。透過授權經銷商購買，可確保你取得的是 Alfa Network Inc. 提供正規保固的原廠硬體。
 
-**產品頁面：** [ALFA AWUS036ACM on Yupitek](https://yupitek.com)
+**產品頁面：** [ALFA AWUS036ACM on Yopitek](https://yupitek.com)
 
 盒裝內容：
 - 1× AWUS036ACM 無線網路卡
@@ -875,7 +875,7 @@ ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 購買——ALFA Netwo
 
 ---
 
-*文章由 Yupitek 技術團隊撰寫 · [yupitek.com](https://yupitek.com)*
+*文章由 Yopitek 技術團隊撰寫 · [yupitek.com](https://yupitek.com)*
 
 ## 參考來源
 

@@ -1,6 +1,6 @@
 ---
 title: "Espetáculo de Mapeamento de Projeção Arco-Íris na Prefeitura de Taipei"
-description: "Caso de projeção arquitetônica de grande escala na fachada da Prefeitura de Taipei, combinando imagem urbana com tema arco-íris — integração técnica completa pela Yupitek."
+description: "Caso de projeção arquitetônica de grande escala na fachada da Prefeitura de Taipei, combinando imagem urbana com tema arco-íris — integração técnica completa pela Yopitek."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Mapeamento Arquitetônico", "Eventos", "Taipei"]
 **Tipo**: Mapeamento Arquitetônico (Building Mapping)
 **Escala**: Espetáculo de mapeamento de projeção externo de grande escala
 
-O espetáculo de mapeamento de projeção na fachada da Prefeitura de Taipei é um caso representativo da tecnologia de mapeamento arquitetônico da Yupitek. Com o tema "Arco-Íris", o edifício da prefeitura foi transformado em uma tela visual dinâmica. Por meio de tecnologia precisa de fusão multi-projetor, foi criada uma experiência visual urbana impactante.
+O espetáculo de mapeamento de projeção na fachada da Prefeitura de Taipei é um caso representativo da tecnologia de mapeamento arquitetônico da Yopitek. Com o tema "Arco-Íris", o edifício da prefeitura foi transformado em uma tela visual dinâmica. Por meio de tecnologia precisa de fusão multi-projetor, foi criada uma experiência visual urbana impactante.
 
 ## Desafios Técnicos
 

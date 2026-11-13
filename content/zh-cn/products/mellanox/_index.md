@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/mellanox/ai-generated/hero/mellanox-hero-banner.png"
 ---
 
-NVIDIA Mellanox 是高性能计算 (HPC)、AI 数据集群、超大规模云平台、企业级存储 (NVMe-oF) 以及低延迟金融系统的全球行业标杆。Yupitek 提供完整的 Mellanox 零售产品目录，包括高速网卡、智能 DPU、有源/无源线缆以及高密度交换机。
+NVIDIA Mellanox 是高性能计算 (HPC)、AI 数据集群、超大规模云平台、企业级存储 (NVMe-oF) 以及低延迟金融系统的全球行业标杆。Yopitek 提供完整的 Mellanox 零售产品目录，包括高速网卡、智能 DPU、有源/无源线缆以及高密度交换机。
 
 ---
 

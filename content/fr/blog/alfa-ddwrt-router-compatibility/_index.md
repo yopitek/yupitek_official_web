@@ -201,7 +201,7 @@ Conditions de contestation : Si le client utilise des versions communautaires av
 | Wiki officiel DD-WRT — Installation | Instructions d'installation (y compris la support USB) | https://wiki.dd-wrt.com/wiki/Installation | ✅ Confirmé via le lien de la page principale | 2026-09-03 |
 | Documents officiels OpenWrt | Comparaison USB WiFi | https://openwrt.org/docs/start | ✅ Vérifié | 2026-09-03 |
 | morrownr/8812au GitHub | Pilote Linux RTL8812AU (non intégré dans DD-WRT) | https://github.com/morrownr/8812au-20210820 | ✅ Vérifié | 2026-09-03 |
-| Vue d'ensemble des produits ALFA Network (Yupitek) | Spécifications des produits actuels ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Vérifié | 2026-09-03 |
+| Vue d'ensemble des produits ALFA Network (Yopitek) | Spécifications des produits actuels ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Vérifié | 2026-09-03 |
 
 Articles associés : [Est-ce que la carte réseau sans fil ALFA est compatible avec OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) | [Est-ce que la carte réseau sans fil ALFA est compatible avec Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)
 

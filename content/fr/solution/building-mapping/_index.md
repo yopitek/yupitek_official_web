@@ -1,6 +1,6 @@
 ---
 title: "Projection Architecturale"
-description: "Solutions de projection architecturale Yupitek : mapping 3D grande échelle, spectacles de projection pour festivals, événements de marque, avec service complet de sélection d'équipements et d'intégration technique."
+description: "Solutions de projection architecturale Yopitek : mapping 3D grande échelle, spectacles de projection pour festivals, événements de marque, avec service complet de sélection d'équipements et d'intégration technique."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 Le Building Mapping transforme les façades architecturales en toiles visuelles dynamiques. Grâce à une technologie d'alignement de projection précise, la lumière et la structure se fondent harmonieusement pour créer des expériences visuelles immersives spectaculaires.
 
-Yupitek possède une solide expérience dans la réalisation de spectacles de projection mapping à grande échelle — des façades de mairies aux célébrations d'anniversaires d'entreprises. Nous proposons des services complets couvrant la planification des équipements, le choix des projecteurs et l'assistance technique sur site.
+Yopitek possède une solide expérience dans la réalisation de spectacles de projection mapping à grande échelle — des façades de mairies aux célébrations d'anniversaires d'entreprises. Nous proposons des services complets couvrant la planification des équipements, le choix des projecteurs et l'assistance technique sur site.
 
 ## Technologies Clés
 

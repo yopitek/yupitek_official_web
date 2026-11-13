@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 tags: ["Dell", "Lenovo", "EM7455", "EM7430", "WWAN", "M.2", "4G", "LTE", "ノートPCアップグレード"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ja/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ Dell Latitude や Lenovo ThinkPad をお使いの方は、出張先で Wi-Fi を
 
 本記事では、Sierra Wireless の公式仕様書に基づき、改造に最もよく使われる EM7455 と EM7430 を比較し、取り付け方法も解説します。
 
-> 規格資料の出典：Sierra Wireless 公式仕様書（EM7455、EM7430）。本記事は榆閤科技（Yupitek）が編集しました。
+> 規格資料の出典：Sierra Wireless 公式仕様書（EM7455、EM7430）。本記事は榆閤科技（Yopitek）が編集しました。
 
 ---
 
@@ -101,6 +101,6 @@ Dell Latitude や Lenovo ThinkPad をお使いの方は、出張先で Wi-Fi を
 
 ## 購入情報（Call To Action）
 
-Sierra Wireless シリーズの通信カードをご購入希望ですか？あるいはお使いの産業用 PC に対応するかどうか不明ですか？Yupitek（榆閤科技）が完全なハードウェアソリューションと技術サポートを提供しています。
+Sierra Wireless シリーズの通信カードをご購入希望ですか？あるいはお使いの産業用 PC に対応するかどうか不明ですか？Yopitek（榆閤科技）が完全なハードウェアソリューションと技術サポートを提供しています。
 お問い合わせはこちら：**sales@yupitek.com**
 製品を見る：[Sierra Wireless シリーズ](https://yupitek.com/ja/products/sierra/)

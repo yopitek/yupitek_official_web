@@ -8,9 +8,9 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axml-wifi6e-kali-linux-setup"
-tags: ["Fi 6E 網路卡在 Kali Linux 上的監聽模式與封包注入實測", "TW", "wifi6e-kali-linux-setup", "wifi6e-kali-linux-setup", "08-10", "AWUS036AXML", "Kali Linux", "Fi 6E 監聽模式與封包注入教學｜Yupitek"]
+tags: ["Fi 6E 網路卡在 Kali Linux 上的監聽模式與封包注入實測", "TW", "wifi6e-kali-linux-setup", "wifi6e-kali-linux-setup", "08-10", "AWUS036AXML", "Kali Linux", "Fi 6E 監聽模式與封包注入教學｜Yopitek"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-08-10
 ---
 
@@ -193,4 +193,4 @@ AXML 是 Wi-Fi 6E（多了 6 GHz）且驅動核心內建；ACH 是雙頻（2.4/5
 
 AWUS036AXML 的安裝流程比你想像的簡單：**核心 5.18+ → 插入即用（`mt7921u`）→ 確認 `0e8d:7961` → airmon-ng 切監聽 → aireplay-ng 驗證注入**。它與 AWUS036ACH 的差異核心在於 6 GHz 頻段與免編譯驅動——如果你的稽核範圍已進入 Wi-Fi 6E 世代，這張卡是補齊頻段覆蓋的選擇。記得所有測試只在合法授權環境進行。
 
-ALFA Network 系列網路卡由 Yupitek（榆閤科技）在台灣提供銷售與技術支援；需要 AWUS036AXML 或搭配的供電 Hub、天線，歡迎來信 [sales@yupitek.com](mailto:sales@yupitek.com)。
+ALFA Network 系列網路卡由 Yopitek（榆閤科技）在台灣提供銷售與技術支援；需要 AWUS036AXML 或搭配的供電 Hub、天線，歡迎來信 [sales@yupitek.com](mailto:sales@yupitek.com)。

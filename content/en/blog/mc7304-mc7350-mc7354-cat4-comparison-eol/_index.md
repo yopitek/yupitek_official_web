@@ -115,7 +115,7 @@ The MC7304, MC7350, and MC7354 trio is actually easy to tell apart: **choose the
 
 ## Sourcing Information (Call to Action)
 
-Need these modules or unsure how to choose? Yupitek is a professional hardware integration partner that can help you confirm bands, slots, and stocking questions.
+Need these modules or unsure how to choose? Yopitek is a professional hardware integration partner that can help you confirm bands, slots, and stocking questions.
 
 - **Product pages**: [MC7304](/en/products/sierra/mc7304/) | [MC7350](/en/products/sierra/mc7350/) | [MC7354](/en/products/sierra/mc7354/)
 - **Email**: sales@yupitek.com

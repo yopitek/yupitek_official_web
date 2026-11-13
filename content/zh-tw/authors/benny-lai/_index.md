@@ -1,6 +1,6 @@
 ---
 title: "關於 Benny Lai"
-description: "Yupitek 網路解決架構師，專精 WiFi 7、企業級網路部署、Ubiquiti 與 ALFA Network 產品。"
+description: "Yopitek 網路解決架構師，專精 WiFi 7、企業級網路部署、Ubiquiti 與 ALFA Network 產品。"
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
@@ -8,9 +8,9 @@ showTableOfContents: false
 
 # Benny Lai
 
-**Yupitek 網路解決架構師**
+**Yopitek 網路解決架構師**
 
-Benny Lai 是 Yupitek 的網路解決架構師，專精企業級無線網路部署，涵蓋 WiFi 7、Ubiquiti UniFi、ALFA Network 產品線。擁有多年企業網路規劃與資安測試實務經驗。
+Benny Lai 是 Yopitek 的網路解決架構師，專精企業級無線網路部署，涵蓋 WiFi 7、Ubiquiti UniFi、ALFA Network 產品線。擁有多年企業網路規劃與資安測試實務經驗。
 
 ## 專業領域
 

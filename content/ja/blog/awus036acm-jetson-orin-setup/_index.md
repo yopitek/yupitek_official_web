@@ -29,7 +29,7 @@ faq:
 {{< tldr >}}
 Jetson OrinはNVIDIAカスタムTegraカーネルを使用し、サードパーティWiFiドライバーのコンパイルがよく失敗します。ALFA AWUS036ACMはMT7612Uチップを採用し、ドライバーはKernel 4.19以降カーネルに内蔵、挿すだけで使えて唯一の真のコンパイル不要ソリューションです。モニターモード、パケットインジェクション、APモードをサポートします。
 {{< /tldr >}}
-これは Yupitek に最近寄せられた問い合わせだ。一見シンプルな質問だが、Jetson 開発者コミュニティにしばらくいればわかることだが——**USB 無線アダプターは NVIDIA Jetson プラットフォーム上では想像以上に扱いが難しい。**
+これは Yopitek に最近寄せられた問い合わせだ。一見シンプルな質問だが、Jetson 開発者コミュニティにしばらくいればわかることだが——**USB 無線アダプターは NVIDIA Jetson プラットフォーム上では想像以上に扱いが難しい。**
 
 Jetson のコアアーキテクチャ、NVIDIA フォーラムの実例、GitHub 上のドライバーコンパイル失敗報告、そして ARM64 プラットフォームでの実測データまでを追跡し、この選定ガイドをまとめた。
 
@@ -328,7 +328,7 @@ AWUS036ACH（RTL8812AU）および AWUS036AX（RTL8812BU）が使えないわけ
 ### 今すぐアクション
 
 - 製品詳細を見る：https://yupitek.com/ja/products/alfa/awus036acm/
-- 技術サポート：Yupitek は台湾国内の技術サポートを提供しています。お気軽にお問い合わせください。
+- 技術サポート：Yopitek は台湾国内の技術サポートを提供しています。お気軽にお問い合わせください。
 
 ### さらに読む
 
@@ -338,9 +338,9 @@ AWUS036ACH（RTL8812AU）および AWUS036AX（RTL8812BU）が使えないわけ
 
 ---
 
-> **タグ**：#JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yupitek
+> **タグ**：#JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yopitek
 >
-> **著者**：Yupitek Ltd.（ユーピテック） — ALFA Network 台湾正規代理店
+> **著者**：Yopitek Ltd.（ユーピテック） — ALFA Network 台湾正規代理店
 >
 > **免責事項**：本記事の調査データは 2026 年 5 月時点のものです。Jetson プラットフォームと Linux Kernel は継続的に更新されるため、デプロイ前に最新の JetPack バージョンとカーネル内蔵ドライバーのサポート状況を確認することを推奨します。
 

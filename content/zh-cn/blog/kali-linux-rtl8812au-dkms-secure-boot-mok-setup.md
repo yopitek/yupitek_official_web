@@ -391,6 +391,6 @@ Kali Linux 内核更新后网卡「罷工」是 out-of-tree 驅动最典型的�
 | ALFA AWUS036ACH 官方產品頁 | https://www.alfa.com.tw/products/awus036ach_1 |
 | ALFA AWUS036ACH 官方文件 | https://docs.alfa.com.tw/Product/AWUS036ACH/ |
 | Ubuntu Secure Boot 签署 DKMS 模组指引 | https://ubuntu.com/ 搜尋「dkms secure boot mok」 |
-| Yupitek 技术支持 | https://yupitek.com/ |
+| Yopitek 技术支持 | https://yupitek.com/ |
 
 > **合法使用声明**：本文所述之监听模式、数据包注入等操作，僅限於您拥有或已獲得明确授权之网络环境。用户須自行遵守所在地法律规范，並确保所有测试皆有合法授权依据。

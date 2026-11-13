@@ -387,7 +387,7 @@ sudo systemctl restart NetworkManager
 
 ### 哪裡買
 
-所有推薦的 ALFA 網路卡均可從 Yupitek——ALFA Network 授權經銷商處購得。瀏覽完整型號或比較規格：
+所有推薦的 ALFA 網路卡均可從 Yopitek——ALFA Network 授權經銷商處購得。瀏覽完整型號或比較規格：
 
 - [ALFA USB 無線網路卡——完整型錄](https://yupitek.com/zh-tw/products/alfa/)——所有型號含規格與定價
 - [ALFA 產品比較表](/en/alfa_compare/)——晶片組、頻段、驅動的並列比較
@@ -402,7 +402,7 @@ sudo systemctl restart NetworkManager
 
 ---
 
-*關於 Flipper One 與 ALFA 網路卡相容性的售前諮詢，請聯絡 Yupitek 客服：support@yupitek.com 或致電 +886-2-87325338。*
+*關於 Flipper One 與 ALFA 網路卡相容性的售前諮詢，請聯絡 Yopitek 客服：support@yupitek.com 或致電 +886-2-87325338。*
 
 ---
 

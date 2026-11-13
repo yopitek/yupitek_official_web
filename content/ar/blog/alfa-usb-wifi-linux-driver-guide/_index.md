@@ -15,7 +15,7 @@ tags:
   - "rtl8812au"
 categories:
   - "دليل الأجهزة"
-description: "\"Yupitek ALFA USB 網卡技術文件，涵蓋6款機型（Mediatek & Realtek）\""
+description: "\"Yopitek ALFA USB 網卡技術文件，涵蓋6款機型（Mediatek & Realtek）\""
 featureimage: ""
 author: "benny-lai"
 lastmod: 2026-09-03
@@ -138,8 +138,8 @@ ip link   # يجب أن يظهر واجهة wlan جديدة
 | morrownr/8812au GitHub | محرك التشغيل RTL8812AU لـ Linux | https://github.com/morrownr/8812au-20210820 | ✅ تم التحقق | 2026-09-03 |
 | morrownr/8821cu GitHub | محرك التشغيل RTL8811CU لـ Linux | https://github.com/morrownr/8821cu-20210916 | ✅ تم التحقق | 2026-09-03 |
 | morrownr/rtl8852bu GitHub | محرك التشغيل RTL8832BU لـ Linux | https://github.com/morrownr/rtl8852bu-20250826 | ✅ تم التحقق | 2026-09-03 |
-| Yupitek ALFA منتجات السلسلة | نماذج النشطة والمواصفات | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
-| Yupitek Blog: دليل Soft AP | تأكيد عمل نموذج AP | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ تم التحقق | 2026-09-03 |
+| Yopitek ALFA منتجات السلسلة | نماذج النشطة والمواصفات | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
+| Yopitek Blog: دليل Soft AP | تأكيد عمل نموذج AP | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ تم التحقق | 2026-09-03 |
 | ملفات التقنية على هذا الموقع 9 مقالات | معادلة المصفوفات والتحقق البيئي الأساسي | رابط متعلق (انظر المقالة المقدمة «مقالات مرتبطة») | ✅ تم التحقق | 2026-09-03 |
 
 > صفحة ويكي الراكسلر لـ kernel mt76 الرسمية: https://wireless.wiki.kernel.org/en/users/drivers/mediatek (تم التحقق، يُمكنها عرض إصدارات الرقائق المدعومة من قبل النواة، يمكن استخدامها كمرجع سريع)

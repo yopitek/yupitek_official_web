@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
 ---
 
 ## Product Overview
@@ -66,7 +66,7 @@ The parameters of YPB02 (including accelerometer thresholds, triggers, UUID, Maj
 ## Product Gallery
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb02.png" alt="Yupitek YPB02 Sensor BLE 5.0 Coin Beacon" />
+  <img src="/images/products/ibeacon/ypb02.png" alt="Yopitek YPB02 Sensor BLE 5.0 Coin Beacon" />
 {{< /gallery >}}
 
 ---

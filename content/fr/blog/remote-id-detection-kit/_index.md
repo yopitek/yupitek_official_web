@@ -20,7 +20,7 @@ faq:
   - question: "La réception passive est-elle légale ?"
     answer: "La réception des informations Remote ID diffusées publiquement par les drones est légale — équivalent à la lecture d'informations publiquement accessibles. Le brouillage actif (jamming) est en revanche strictement réglementé et ne fait pas partie de ce kit."
 ---
-> Équipe technique Yupitek | Distributeur officiel ALFA Network, Taïwan
+> Équipe technique Yopitek | Distributeur officiel ALFA Network, Taïwan
 
 {{< tldr >}}
 Le kit de détection Remote ID utilise le mode monitor de l'adaptateur **ALFA AWUS036ACH** pour recevoir passivement les informations d'identité et de position que les drones sont légalement tenus de diffuser — considère-le comme un « lecteur de plaques d'immatriculation » pour l'espace aérien. Il offre aux gestionnaires de sécurité un outil de connaissance situationnelle légal et peu coûteux.
@@ -290,9 +290,9 @@ Si tu débutes dans la réglementation des drones et la technologie anti-drone (
 4. [kismetwireless/kismet — Framework de détection sans fil](https://github.com/kismetwireless/kismet)
 5. [alphafox02/antsdr_dji_droneid — Décodeur SDR DroneID DJI OcuSync](https://github.com/alphafox02/antsdr_dji_droneid)
 6. [morrownr/8812au-20210629 — Pilote moniteur/injection RTL8812AU Linux](https://github.com/morrownr/8812au-20210629)
-7. [Page produit ALFA AWUS036ACH (Yupitek)](https://yupitek.com/fr/products/alfa/awus036ach/)
-8. [Contact et commande (Yupitek)](https://www.yupitek.com/fr/contact/)
+7. [Page produit ALFA AWUS036ACH (Yopitek)](https://yupitek.com/fr/products/alfa/awus036ach/)
+8. [Contact et commande (Yopitek)](https://www.yupitek.com/fr/contact/)
 
 ---
 
-*Cet article a été compilé par l'équipe technique Yupitek. L'AWUS036ACH et le matériel associé sont disponibles auprès de Yupitek avec une distribution autorisée et un support technique.*
+*Cet article a été compilé par l'équipe technique Yopitek. L'AWUS036ACH et le matériel associé sont disponibles auprès de Yopitek avec une distribution autorisée et un support technique.*

@@ -431,14 +431,14 @@ The ACH has the most tutorials, the largest community troubleshooting base, and 
 
 | Resource | Link |
 |---|---|
-| Yupitek — ALFA authorized distributor Taiwan | [yupitek.com](https://www.yupitek.com) |
+| Yopitek — ALFA authorized distributor Taiwan | [yupitek.com](https://www.yupitek.com) |
 | ALFA Network official product pages | [alfa.com.tw](https://www.alfa.com.tw) |
 | MT7610U driver (kernel tree) | [torvalds/linux — mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76) |
 | RTL8812AU driver (aircrack-ng) | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) |
 | NetHunter supported devices | [nethunter.kali.org/device-kernels.html](https://nethunter.kali.org/device-kernels.html) |
 | NetHunter official docs | [kali.org/docs/nethunter/](https://www.kali.org/docs/nethunter/) |
 | XDA NetHunter forum | [xdaforums.com/tags/nethunter/](https://xdaforums.com/tags/nethunter/) |
-| Yupitek ALFA product catalog | [/en/products/alfa/](/en/products/alfa/) |
+| Yopitek ALFA product catalog | [/en/products/alfa/](/en/products/alfa/) |
 
 ---
 
@@ -501,7 +501,7 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 {{< faq >}}
 
-*This document was prepared by **Yupitek Ltd** — ALFA Network authorized distributor for Taiwan.*  
+*This document was prepared by **Yopitek Ltd** — ALFA Network authorized distributor for Taiwan.*  
 *Data current as of 2026-06-09. Linux kernel and NetHunter versions are updated regularly; verify against official sources for the latest compatibility information.*
 
 ## References

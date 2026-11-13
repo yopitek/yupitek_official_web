@@ -20,7 +20,7 @@ faq:
   - question: "Законен ли пассивный приём?"
     answer: "Приём публичных передач Remote ID от дронов законен, это равносильно чтению общедоступной информации. Однако активное глушение (jamming) строго регулируется и не входит в состав данного комплекта."
 ---
-> Техническая команда Yupitek | Авторизованный дистрибьютор ALFA Network на Тайване
+> Техническая команда Yopitek | Авторизованный дистрибьютор ALFA Network на Тайване
 
 {{< tldr >}}
 Комплект обнаружения Remote ID использует режим монитора (monitor mode) карты **ALFA AWUS036ACH** для пассивного приёма информации об идентичности и положении, которую дроны обязаны передавать по закону (эквивалент «воздушного номерного знака»), предоставляя руководителям служб безопасности легальное и недорогое средство ситуационной осведомлённости.
@@ -290,9 +290,9 @@ curl -fsSL https://github.com/fduflyer/DroneAware-Node-Releases/releases/latest/
 4. [kismetwireless/kismet — Фреймворк беспроводного обнаружения](https://github.com/kismetwireless/kismet)
 5. [alphafox02/antsdr_dji_droneid — Декодирование DJI OcuSync DroneID через SDR](https://github.com/alphafox02/antsdr_dji_droneid)
 6. [morrownr/8812au-20210629 — Драйвер Linux RTL8812AU для монитора/инъекции](https://github.com/morrownr/8812au-20210629)
-7. [Страница продукта ALFA AWUS036ACH (Yupitek)](https://yupitek.com/ru/products/alfa/awus036ach/)
-8. [Контакты и заказы Yupitek](https://www.yupitek.com/ru/contact/)
+7. [Страница продукта ALFA AWUS036ACH (Yopitek)](https://yupitek.com/ru/products/alfa/awus036ach/)
+8. [Контакты и заказы Yopitek](https://www.yupitek.com/ru/contact/)
 
 ---
 
-*Эта статья подготовлена технической командой Yupitek. AWUS036ACH и связанное оборудование доступны через Yupitek с технической поддержкой (Yupitek — авторизованный дистрибьютор ALFA Network на Тайване).*
+*Эта статья подготовлена технической командой Yopitek. AWUS036ACH и связанное оборудование доступны через Yopitek с технической поддержкой (Yopitek — авторизованный дистрибьютор ALFA Network на Тайване).*

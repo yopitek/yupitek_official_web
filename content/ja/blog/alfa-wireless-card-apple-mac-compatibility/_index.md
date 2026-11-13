@@ -2,7 +2,7 @@
 title: "Apple Mac での ALFA Wireless Cards（2026年版）：M1/M2/M3/M4 & Intel 向け完全互換性レポート"
 description: "Apple Mac（MacBook、MacBook Pro、MacBook Air、Mac Mini、Mac Studio）での ALFA Network USBワイヤレスアダプタの使用に関する包括的な互換性ガイド。IntelおよびApple Silicon M1/M2/M3/M4 CPU全体で、どのALFAカードが動作するか、なぜApple Siliconでネイティブサポートがゼロなのか、そしてLinux VMでモニターモードを有効にする方法を解説します。"
 keywords: "ALFA wireless card Mac, ALFA macOS compatibility, ALFA adapter Apple Silicon, USB WiFi adapter M1 M2 M3 M4, ALFA Network MacBook, monitor mode Mac, AWUS036ACH Mac, AWUS036ACM Mac, ALFA Network Mac Mini, penetration testing Apple Silicon"
-author: "Yupitek Technical Support Team"
+author: "Yopitek Technical Support Team"
 date: "2026-06-20"
 category: "Technical Guide"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
@@ -23,7 +23,7 @@ Apple Mac（M3 Max搭載のMacBook Pro、M2 Ultra搭載のMac Studio、Intelベ�
 
 ## 1. 互換性マトリックス：どのALFAカードがどのMacで動作するか？
 
-この表は決定版です。[YupitekのALFA製品ライン](https://yupitek.com/en/products/alfa/)から現在入手可能な9つのALFAワイヤレスアダプタ（EOLではない）を、4つのデプロイメントシナリオに対して評価しています。
+この表は決定版です。[YopitekのALFA製品ライン](https://yupitek.com/en/products/alfa/)から現在入手可能な9つのALFAワイヤレスアダプタ（EOLではない）を、4つのデプロイメントシナリオに対して評価しています。
 
 ### 1.1 完全互換性マトリックス
 
@@ -415,10 +415,10 @@ USB-AポートがあるMac（Mac Mini、Mac Studio、旧型MacBook Pro/Air）で
 
 |リソース | URL |
 |----------|-----|
-| Yupitek公式ウェブサイト | [https://www.yupitek.com](https://www.yupitek.com) |
-| Yupitek ALFA製品ページ | [https://yupitek.com/en/products/alfa/](https://yupitek.com/en/products/alfa/) |
+| Yopitek公式ウェブサイト | [https://www.yupitek.com](https://www.yupitek.com) |
+| Yopitek ALFA製品ページ | [https://yupitek.com/en/products/alfa/](https://yupitek.com/en/products/alfa/) |
 | ALFA Network公式 | [https://www.alfa.com.tw](https://www.alfa.com.tw) |
-| Yupitek ALFA比較表 | [https://yupitek.com/alfa_compare.html](https://yupitek.com/alfa_compare.html) |
+| Yopitek ALFA比較表 | [https://yupitek.com/alfa_compare.html](https://yupitek.com/alfa_compare.html) |
 
 ### Linuxドライバーリポジトリ（GitHub）
 
@@ -456,9 +456,9 @@ USB-AポートがあるMac（Mac Mini、Mac Studio、旧型MacBook Pro/Air）で
 
 ---
 
-*本記事は、Apple developer documentation、GitHubリポジトリ（chris1111、aircrack-ng、morrownr）、ALFA Network製品仕様、Reddit/GitHubコミュニティレポート、および実世界テストドキュメントから収集した技術研究に基づいています。すべての製品推奨はYupitekの現在在庫のあるALFA製品ラインに基づいています。*
+*本記事は、Apple developer documentation、GitHubリポジトリ（chris1111、aircrack-ng、morrownr）、ALFA Network製品仕様、Reddit/GitHubコミュニティレポート、および実世界テストドキュメントから収集した技術研究に基づいています。すべての製品推奨はYopitekの現在在庫のあるALFA製品ラインに基づいています。*
 
 *⚠️ 本記事で説明されている機器と技術は、承認された情報セキュリティ監査と法的ペネトレーションテストのみに意図されています。ユーザーは現地の法律と規制への準拠を確保する必要があります。*
 
 ---
-*Article Version: 1.0 | 2026-06-20 | Yupitek Ltd.*
+*Article Version: 1.0 | 2026-06-20 | Yopitek Ltd.*

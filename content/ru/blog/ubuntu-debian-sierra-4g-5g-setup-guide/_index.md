@@ -1,5 +1,5 @@
 ---
-title: "Полное руководство по установке модулей Sierra 4G/5G на Ubuntu / Debian / Linux Mint: настройка EM7455, EM7565, EM919x, MC7455 и GNSS-позиционирование | Yupitek"
+title: "Полное руководство по установке модулей Sierra 4G/5G на Ubuntu / Debian / Linux Mint: настройка EM7455, EM7565, EM919x, MC7455 и GNSS-позиционирование | Yopitek"
 description: "Как установить модуль Sierra 4G/5G на Ubuntu/Debian/Linux Mint? Это руководство покажет, как установить ModemManager, настроить подключение через qmicli/mbimcli и включить GNSS-позиционирование. Охватывает EM7455, EM7565, EM919x и MC7455."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "ubuntu-debian-sierra-4g-5g-setup-guide"
 slug: "ubuntu-debian-sierra-4g-5g-setup-guide"
 tags: ["Sierra Wireless", "Ubuntu", "Debian", "Linux", "GNSS"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ru/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ faq:
 
 Многие получают EM7455, EM7565, EM919x или MC7455, подключают его к материнской плате, а потом не знают, как настроить выход в сеть. На самом деле поддержка этих модулей в Linux очень зрелая. Все они общаются по USB через протоколы QMI или MBIM. В этом руководстве мы шаг за шагом всё настроим.
 
-> Все спецификации и технические данные взяты из официальной документации Sierra Wireless. Подготовлено компанией Yupitek.
+> Все спецификации и технические данные взяты из официальной документации Sierra Wireless. Подготовлено компанией Yopitek.
 
 ---
 
@@ -148,7 +148,7 @@ mmcli -m 0 --location-get
 
 ## Где купить (Call To Action)
 
-Хотите интегрировать модуль Sierra в своё устройство на Ubuntu? Yupitek предлагает полные решения: модули, антенны, переходные платы, а также техническую поддержку первой линии.
+Хотите интегрировать модуль Sierra в своё устройство на Ubuntu? Yopitek предлагает полные решения: модули, антенны, переходные платы, а также техническую поддержку первой линии.
 Свяжитесь с нами: **sales@yupitek.com**
 Посмотрите продукцию: [Серия Sierra Wireless](https://yupitek.com/ru/products/sierra/)
 

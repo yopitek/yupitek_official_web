@@ -20,7 +20,7 @@ faq:
   - question: "¿Es legal la recepción pasiva?"
     answer: "Recibir las transmisiones públicas de Remote ID de drones es legal, equivalente a leer información pública. Sin embargo, la interferencia activa (jamming) está estrictamente regulada y no forma parte de este kit."
 ---
-> Equipo técnico de Yupitek | Distribuidor autorizado de ALFA Network en Taiwán
+> Equipo técnico de Yopitek | Distribuidor autorizado de ALFA Network en Taiwán
 
 {{< tldr >}}
 El kit de detección de Remote ID utiliza el modo monitor de la tarjeta **ALFA AWUS036ACH** para recibir pasivamente la información de identidad y posición que los drones deben transmitir por ley (el equivalente a una «matrícula aérea»), ofreciendo a los gestores de seguridad una herramienta legal y de bajo coste para la conciencia situacional.
@@ -290,9 +290,9 @@ Si es la primera vez que se encuentra con la tecnología de regulación / antidr
 4. [kismetwireless/kismet — Marco de detección inalámbrica](https://github.com/kismetwireless/kismet)
 5. [alphafox02/antsdr_dji_droneid — Decodificación SDR DJI OcuSync DroneID](https://github.com/alphafox02/antsdr_dji_droneid)
 6. [morrownr/8812au-20210629 — Controlador Linux RTL8812AU de monitor/inyección](https://github.com/morrownr/8812au-20210629)
-7. [Página del producto ALFA AWUS036ACH (Yupitek)](https://yupitek.com/es/products/alfa/awus036ach/)
-8. [Contacto y pedidos de Yupitek](https://www.yupitek.com/es/contact/)
+7. [Página del producto ALFA AWUS036ACH (Yopitek)](https://yupitek.com/es/products/alfa/awus036ach/)
+8. [Contacto y pedidos de Yopitek](https://www.yupitek.com/es/contact/)
 
 ---
 
-*Este artículo fue preparado por el equipo técnico de Yupitek. La AWUS036ACH y el hardware relacionado están disponibles a través de Yupitek con soporte técnico (Yupitek es distribuidor autorizado de ALFA Network en Taiwán).*
+*Este artículo fue preparado por el equipo técnico de Yopitek. La AWUS036ACH y el hardware relacionado están disponibles a través de Yopitek con soporte técnico (Yopitek es distribuidor autorizado de ALFA Network en Taiwán).*

@@ -200,7 +200,7 @@ ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
 | DD-WRT 公式 Wiki — インストール | インストール説明（USB サポート含む） | https://wiki.dd-wrt.com/wiki/Installation | ✅ メインページリンクで確認済み | 2026年9月3日 |
 | OpenWrt 公式文書 | USB WiFi 比較参考 | https://openwrt.org/docs/start | ✅ 検核済み | 2026年9月3日 |
 | morrownr/8812au GitHub | RTL8812AU Linux ドライバ（DD-WRT 未統合） | https://github.com/morrownr/8812au-20210820 | ✅ 検核済み | 2026年9月3日 |
-| ALFA Network 產品一覧（Yupitek） | ALFA 現役製品仕様 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検核済み | 2026年9月3日 |
+| ALFA Network 產品一覧（Yopitek） | ALFA 現役製品仕様 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検核済み | 2026年9月3日 |
 
 関連記事：[ALFA 无線网卡是否支持 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[ALFA 无線网卡是否支持 Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)
 

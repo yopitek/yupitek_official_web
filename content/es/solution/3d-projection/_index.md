@@ -1,6 +1,6 @@
 ---
 title: "Proyección 3D — Ilusión Tridimensional sobre Arquitectura"
-description: "Yupitek: soluciones de proyección 3D mapping para edificios y fachadas arquitectónicas. Transformamos superficies planas en ilusiones tridimensionales de alto impacto."
+description: "Yopitek: soluciones de proyección 3D mapping para edificios y fachadas arquitectónicas. Transformamos superficies planas en ilusiones tridimensionales de alto impacto."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 La proyección 3D (también conocida como 3D Projection Mapping) utiliza software de alineación geométrica avanzado para proyectar contenido tridimensional directamente sobre fachadas de edificios, esculturas y estructuras arquitectónicas. El resultado es una ilusión óptica de gran escala que hace que las superficies planas cobren vida: paredes que se desmoronan, edificios que se transforman y estructuras que parecen flotar o explotar visualmente ante el público.
 
-Yupitek domina esta tecnología integrando hardware de alta luminosidad con software de warping y blending de precisión, ejecutando instalaciones tanto temporales como permanentes en Taiwán y la región Asia-Pacífico.
+Yopitek domina esta tecnología integrando hardware de alta luminosidad con software de warping y blending de precisión, ejecutando instalaciones tanto temporales como permanentes en Taiwán y la región Asia-Pacífico.
 
 ## Capacidades Técnicas
 

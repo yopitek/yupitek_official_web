@@ -1,6 +1,6 @@
 ---
 title: "Museumsausstellungen"
-description: "Yupitek Museum- und Dauerausstellungsprojektionslösungen: Multimedia-Integration für Kulturausstellungen, immersive historische Nachbildung und Planung interaktiver Führungssysteme."
+description: "Yopitek Museum- und Dauerausstellungsprojektionslösungen: Multimedia-Integration für Kulturausstellungen, immersive historische Nachbildung und Planung interaktiver Führungssysteme."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Museum-Multimediaausstellungen
 
-Museen und Kultureinrichtungen sind ein Kerndienstleistungsbereich der Yupitek IT-Application-Abteilung. Wir verstehen die besonderen Anforderungen von Ausstellungsräumen tiefgründig: langfristiger Stabbetrieb, geringe Wartungshäufigkeit, präzises Content-Management und eine visuelle Präsentation, die dem Ausstellungsthema entspricht.
+Museen und Kultureinrichtungen sind ein Kerndienstleistungsbereich der Yopitek IT-Application-Abteilung. Wir verstehen die besonderen Anforderungen von Ausstellungsräumen tiefgründig: langfristiger Stabbetrieb, geringe Wartungshäufigkeit, präzises Content-Management und eine visuelle Präsentation, die dem Ausstellungsthema entspricht.
 
 ## Leistungen
 

@@ -29,7 +29,7 @@ Em uma fábrica, cada minuto de queda de rede custa dinheiro. Os dados das máqu
 
 Neste artigo tomamos como base a folha de especificações oficial (EM919X Product Technical Specification) para explicar por que o módulo **EM9191** é a escolha perfeita hoje para o backup e amanhã para a rede privada.
 
-> Fonte dos dados técnicos: folha de especificações oficial da Sierra Wireless. Artigo elaborado pela Yupitek (榆閤科技).
+> Fonte dos dados técnicos: folha de especificações oficial da Sierra Wireless. Artigo elaborado pela Yopitek (榆閤科技).
 
 ---
 
@@ -92,7 +92,7 @@ Graças ao seu forte suporte de LTE Cat 20 e 5G SA, ele cobre perfeitamente o «
 
 ## Informações de compra (Call To Action)
 
-Quer integrar o EM9191 ao seu roteador industrial? A Yupitek (榆閤科技) oferece soluções de hardware completas e suporte técnico de primeira linha para resolver os problemas mais difíceis de refrigeração e antenas.
+Quer integrar o EM9191 ao seu roteador industrial? A Yopitek (榆閤科技) oferece soluções de hardware completas e suporte técnico de primeira linha para resolver os problemas mais difíceis de refrigeração e antenas.
 Escreva para nós: **sales@yupitek.com**
 Veja os produtos: [Produtos da série Sierra Wireless](/pt/products/sierra/)
 
@@ -106,7 +106,7 @@ Veja os produtos: [Produtos da série Sierra Wireless](/pt/products/sierra/)
 
 ## Precisa comprar ou consultar? Fale conosco
 
-Se após ler este artigo você ainda tiver dúvidas sobre integração de hardware, ou se sua empresa precisar adquirir o módulo EM9191, pode entrar em contato com a equipe de engenharia da Yupitek. Também dispomos das antenas e das placas adaptadoras correspondentes.
+Se após ler este artigo você ainda tiver dúvidas sobre integração de hardware, ou se sua empresa precisar adquirir o módulo EM9191, pode entrar em contato com a equipe de engenharia da Yopitek. Também dispomos das antenas e das placas adaptadoras correspondentes.
 
 - **Página do módulo EM9191**: [https://yupitek.com/pt/products/sierra/em9191/](/pt/products/sierra/em9191/)
 - **Todos os modelos Sierra**: [https://yupitek.com/pt/products/sierra/](/pt/products/sierra/)

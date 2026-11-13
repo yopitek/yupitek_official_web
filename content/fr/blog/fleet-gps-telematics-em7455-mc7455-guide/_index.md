@@ -1,5 +1,5 @@
 ---
-title: "Suivi GPS de flotte et télématique : le GNSS intégré des modules EM7455/MC7455 | Yupitek"
+title: "Suivi GPS de flotte et télématique : le GNSS intégré des modules EM7455/MC7455 | Yopitek"
 description: "Comment construire un système de télématique pour ta flotte ? On dévoile les secrets du GNSS intégré des EM7455/MC7455 : positionnement sur quatre constellations, sensibilité de suivi à -160 dBm, alimentation de l'antenne active, et comment éviter le piège réglementaire de la bande 30."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "fleet-gps-telematics-em7455-mc7455-guide"
 slug: "fleet-gps-telematics-em7455-mc7455-guide"
 tags: ["Sierra Wireless", "EM7455", "MC7455", "GNSS", "GPS", "Telematics", "Fleet"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/fr/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ faq:
 
 Avant, les ingénieurs hardware souffraient : il fallait caser une puce GPS et un module 4G sur une petite carte, gérer l'alimentation et les interférences d'antennes des deux côtés. Aujourd'hui, avec le bon module cellulaire, tout devient ultra simple. Dans cet article, on ouvre les fiches techniques officielles des EM7455 et MC7455 pour te montrer leur « super-pouvoir caché » : la géolocalisation par satellite GNSS.
 
-> Source des données techniques : fiches techniques officielles Sierra Wireless (EM7455, MC7455). Article préparé par Yupitek.
+> Source des données techniques : fiches techniques officielles Sierra Wireless (EM7455, MC7455). Article préparé par Yopitek.
 
 ---
 
@@ -85,6 +85,6 @@ Choisis le EM7455 ou le MC7455, branche-les sur ta carte, connecte une antenne G
 
 ## Infos achat (Call to Action)
 
-Tu développes un terminal embarqué et tu as besoin du EM7455 ou du MC7455 ? Encore des questions sur la configuration des antennes ou l'intégration sur carte mère ? Yupitek propose des solutions matérielles complètes et un support technique de première ligne.
+Tu développes un terminal embarqué et tu as besoin du EM7455 ou du MC7455 ? Encore des questions sur la configuration des antennes ou l'intégration sur carte mère ? Yopitek propose des solutions matérielles complètes et un support technique de première ligne.
 Écris-nous : **sales@yupitek.com**
 Découvre les produits : [Série de modules Sierra Wireless](https://yupitek.com/fr/products/sierra/)

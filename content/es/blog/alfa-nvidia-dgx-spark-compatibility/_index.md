@@ -311,7 +311,7 @@ sudo modprobe rtl8852bu
 | Conexión WiFi inestable / velocidad lenta | El adaptador USB-C solo admite USB 2.0 | Cambiar a un adaptador que admite USB 3.2 Gen 2×2; verificar que el adaptador esté marcado como «Data» y no como «Charge Only» |
 | El Wi-Fi interno y el ALFA externo chocan | Colisión de interfaces inalámbricas | Desactivar el Wi-Fi interno: `sudo nmcli radio wifi off` o desactivar en BIOS/UEFI; o configurar el orden de prioridad de las rutas |
 | No se puede usar 6GHz (Wi-Fi 6E) | Restricciones del dominio regulatorio | Establecer el dominio regulatorio: `sudo iw reg set US` (Estados Unidos abre 6GHz); verificar que el firmware del AWUS036AXML/AXM admite 6GHz |
-| Falla al iniciar el modo AP | Conflictos entre NetworkManager y hostapd | Referirse a la guía de Yupitek ALFA Soft AP; desactivar NetworkManager para gestionar la interfaz y configurar manualmente hostapd |
+| Falla al iniciar el modo AP | Conflictos entre NetworkManager y hostapd | Referirse a la guía de Yopitek ALFA Soft AP; desactivar NetworkManager para gestionar la interfaz y configurar manualmente hostapd |
 | La tarjeta de red desaparece después de despertar | Suspensión automática de USB | Desactivar la suspensión automática de USB: `echo 'options usbcore autosuspend=-1' | sudo tee /etc/modprobe.d/usb.conf` |
 
 ## 9. Restricciones Conocidas
@@ -339,8 +339,8 @@ Condiciones de refutación: Si después de la actualización de DGX OS cambia la
 | morrownr/8821cu GitHub | Controladores Linux para RTL8811CU | https://github.com/morrownr/8821cu-20210916 | ✅ Verificado | 2026-09-03 |
 | morrownr/rtl8852bu GitHub | Controladores Linux para RTL8832BU | https://github.com/morrownr/rtl8852bu-20250826 | ✅ Verificado | 2026-09-03 |
 | Documentos de controladores mt76 del kernel Linux | Documentación de los controladores MediaTek mt76 / mt7921 mainline (versión de kernel de inicio de soporte para cada chip) | https://wireless.wiki.kernel.org/en/users/drivers/mediatek | ✅ Verificado | 2026-09-03 |
-| Guía de Linux para Soft AP WiFi Hotspot ALFA (Yupitek) | Guía de configuración del modo AP en Linux para ALFA | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Verificado | 2026-09-03 |
-| Catálogo de productos de Network ALFA (Yupitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
+| Guía de Linux para Soft AP WiFi Hotspot ALFA (Yopitek) | Guía de configuración del modo AP en Linux para ALFA | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Verificado | 2026-09-03 |
+| Catálogo de productos de Network ALFA (Yopitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
 | Issue #314 de morrownr/USB-WiFi | Declaración oficial del mantenedor de controladores: se recomienda evitar los chips rtl8852/32au (RTL8832BU) | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Verificado | 2026-09-03 |
 | morrownr/8812au-20210820 GitHub | Anuncios más recientes sobre el estado del controlador RTL8812AU (incorporado en la línea principal del kernel 6.13, maduro en calidad para el kernel 6.14) | https://github.com/morrownr/8812au-20210820 | ✅ Verificado | 2026-09-03 |
 

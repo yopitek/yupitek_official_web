@@ -1,6 +1,6 @@
 ---
 title: "SDRLAB ソフトウェア定義無線モジュール"
-description: "YupitekはSDRLAB SDRソフトウェア定義無線モジュールとFlipper Zero拡張ボードを取り扱っています。無線通信研究、アマチュア無線、RF信号分析に最適。"
+description: "YopitekはSDRLAB SDRソフトウェア定義無線モジュールとFlipper Zero拡張ボードを取り扱っています。無線通信研究、アマチュア無線、RF信号分析に最適。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

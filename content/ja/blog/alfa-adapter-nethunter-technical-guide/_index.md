@@ -427,14 +427,14 @@ ACHはNetHunterエコシステムにおいて、最も多くのチュートリ�
 
 | Resource | Link |
 |---|---|
-| Yupitek — ALFA正規代理店台湾 | [yupitek.com](https://www.yupitek.com) |
+| Yopitek — ALFA正規代理店台湾 | [yupitek.com](https://www.yupitek.com) |
 | ALFA Network公式製品ページ | [alfa.com.tw](https://www.alfa.com.tw) |
 | MT7610Uドライバー（カーネルツリー） | [torvalds/linux — mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76) |
 | RTL8812AUドライバー（aircrack-ng） | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) |
 | NetHunter対応デバイス一覧 | [nethunter.kali.org/device-kernels.html](https://nethunter.kali.org/device-kernels.html) |
 | NetHunter公式ドキュメント | [kali.org/docs/nethunter/](https://www.kali.org/docs/nethunter/) |
 | XDA NetHunterフォーラム | [xdaforums.com/tags/nethunter/](https://xdaforums.com/tags/nethunter/) |
-| Yupitek ALFA製品カタログ | [/ja/products/alfa/](/ja/products/alfa/) |
+| Yopitek ALFA製品カタログ | [/ja/products/alfa/](/ja/products/alfa/) |
 
 ---
 
@@ -500,7 +500,7 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
-*本文書は**Yupitek Ltd**（ALFA Network台湾正規代理店）が作成しました。*  
+*本文書は**Yopitek Ltd**（ALFA Network台湾正規代理店）が作成しました。*  
 *データは2026-06-09時点のものです。LinuxカーネルおよびNetHunterのバージョンは定期的に更新されます。最新の互換性情報については公式ソースを確認してください。*
 
 ---

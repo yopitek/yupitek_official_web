@@ -1,6 +1,6 @@
 ---
 title: "Sierra EM7565 深度解析：CBRS 私網與高上行速度，企業專網到底怎麼選？"
-description: "EM7565 深度解析：Cat 12 下載 600Mbps、Cat 13 上傳 150Mbps，Qualcomm MDM9250、M.2 封裝、三天線 MIMO 與多星系 GNSS。企業 CBRS 私網與工業路由器選型必讀，含頻段、溫度與認證完整對照，由榆閤科技（Yupitek）整理提供。"
+description: "EM7565 深度解析：Cat 12 下載 600Mbps、Cat 13 上傳 150Mbps，Qualcomm MDM9250、M.2 封裝、三天線 MIMO 與多星系 GNSS。企業 CBRS 私網與工業路由器選型必讀，含頻段、溫度與認證完整對照，由榆閤科技（Yopitek）整理提供。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -26,7 +26,7 @@ faq:
 
 這篇文章我們不講行銷術語，單純拿 Sierra Wireless 官方規格書《AirPrime EM7565 Product Technical Specification》（Doc 41110788, Rev 8, 2018 年 10 月）來做唯一標準。我們帶你逐項核對晶片、速率、頻段、天線、溫度與認證，並且會誠實告訴你規格書裡關於「待法規核准」的但書，幫做系統整合與網路架構的同學或工程師把關採購決策。
 
-> 產品連結：[EM7565 — Yupitek 產品頁](/zh-tw/products/sierra/em7565/) | 官方規格書：[AirPrime EM7565 Product Technical Specification](https://yupitek.com/docs/sierra/EM7565_spec.pdf)
+> 產品連結：[EM7565 — Yopitek 產品頁](/zh-tw/products/sierra/em7565/) | 官方規格書：[AirPrime EM7565 Product Technical Specification](https://yupitek.com/docs/sierra/EM7565_spec.pdf)
 
 ---
 
@@ -177,7 +177,7 @@ EM7565 吃的是 3.135V 到 4.4V（典型是 3.3V）。要注意的是，它在�
 
 ## 聯絡我們討論你的專題或專案
 
-這篇硬核解析是榆閤科技（Yupitek）的工程團隊幫大家整理的。如果你正在為實驗室挑選 4G 模組，或是公司專案需要 EM7565 的大量報價與天線設計支援，都歡迎來找我們聊聊。
+這篇硬核解析是榆閤科技（Yopitek）的工程團隊幫大家整理的。如果你正在為實驗室挑選 4G 模組，或是公司專案需要 EM7565 的大量報價與天線設計支援，都歡迎來找我們聊聊。
 
 - **EM7565 產品頁面**：[https://yupitek.com/zh-tw/products/sierra/em7565/](/zh-tw/products/sierra/em7565/)
 - **看更多 Sierra 型號**：[https://yupitek.com/zh-tw/products/sierra/](/zh-tw/products/sierra/)

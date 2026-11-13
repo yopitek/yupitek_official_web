@@ -1,6 +1,6 @@
 ---
 title: "Museo del Agua de Yilan"
-description: "La histórica planta de agua de Yilan, con más de cien años de antigüedad, fue reconvertida en museo. Yupitek proveyó el sistema de exhibición multimedia para recrear la historia y cultura del recurso hídrico."
+description: "La histórica planta de agua de Yilan, con más de cien años de antigüedad, fue reconvertida en museo. Yopitek proveyó el sistema de exhibición multimedia para recrear la historia y cultura del recurso hídrico."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Museo", "Exposición Permanente", "Yilan"]
 **Tipo**: Sistema multimedia para exposición permanente en museo
 **Característica del espacio**: Reutilización de edificio industrial histórico de más de cien años
 
-El Museo del Agua de Yilan es un espacio cultural creado a partir de la reconversión de una planta de agua con más de cien años de historia. Respetando la arquitectura histórica, Yupitek diseñó e instaló un sistema de proyección multimedia que, a través de la luz y las imágenes, recrea el centenario proceso de desarrollo del recurso hídrico en la región de Yilan.
+El Museo del Agua de Yilan es un espacio cultural creado a partir de la reconversión de una planta de agua con más de cien años de historia. Respetando la arquitectura histórica, Yopitek diseñó e instaló un sistema de proyección multimedia que, a través de la luz y las imágenes, recrea el centenario proceso de desarrollo del recurso hídrico en la región de Yilan.
 
 ## Solución Técnica
 

@@ -24,7 +24,7 @@ faq:
 
 O MC7455 é o módulo PCI Express Mini Card (mPCIe) da Sierra Wireless, enquanto o EM7455 é seu irmão M.2 na mesma família 74xx. Ambos os módulos integram LTE, UMTS e posicionamento GNSS, e ambos usam o processador de banda base Qualcomm MDM9230. As velocidades de rede também são idênticas: LTE Cat 6 com pico de download de 300 Mbps (FDD) / 222 Mbps (TDD) e pico de upload de 50 Mbps (FDD) / 26 Mbps (TDD). Este artigo extrai as diferenças de hardware das especificações oficiais para que você saiba exatamente o que esperar antes de comprar.
 
-> Referências técnicas: especificações oficiais da Sierra Wireless, a [Especificação Técnica do Produto AirPrime MC7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) e a [Especificação Técnica do Produto AirPrime EM7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Compilado pela Yupitek.
+> Referências técnicas: especificações oficiais da Sierra Wireless, a [Especificação Técnica do Produto AirPrime MC7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) e a [Especificação Técnica do Produto AirPrime EM7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Compilado pela Yopitek.
 
 ---
 
@@ -131,10 +131,10 @@ O MC7455 e o EM7455 são como o mesmo cérebro em corpos diferentes. Como veloci
 
 ## Chamada para ação (Compra)
 
-Precisa do MC7455 ou EM7455, ou não sabe qual ranhura o seu equipamento existente usa? A Yupitek é um fornecedor profissional de soluções sem fio industriais. Podemos ajudar você a confirmar:
+Precisa do MC7455 ou EM7455, ou não sabe qual ranhura o seu equipamento existente usa? A Yopitek é um fornecedor profissional de soluções sem fio industriais. Podemos ajudar você a confirmar:
 
 - Avaliação de compatibilidade de ranhura da placa-mãe e módulo
 - Adaptadores de conector de antena e correspondência de cabos
 - Estoque de longo prazo e preços por volume
 
-Envie um e-mail para **sales@yupitek.com** ou visite o [site da Yupitek](https://www.yupitek.com) para ver produtos relacionados.
+Envie um e-mail para **sales@yupitek.com** ou visite o [site da Yopitek](https://www.yupitek.com) para ver produtos relacionados.

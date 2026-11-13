@@ -1,6 +1,6 @@
 ---
 title: "Veranstaltungen & Ausstellungen"
-description: "Yupitek Veranstaltungs- und Ausstellungsprojektionslösungen: Konzert-Visualeffekte, Firmengalas, Kunstausstellungen und Messestand-Projektionsintegration."
+description: "Yopitek Veranstaltungs- und Ausstellungsprojektionslösungen: Konzert-Visualeffekte, Firmengalas, Kunstausstellungen und Messestand-Projektionsintegration."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Veranstaltungsprojektion
 
-Projektionsanforderungen für Veranstaltungen unterscheiden sich grundlegend von Dauerinstallationen: schneller Aufbau, flexible Konfiguration, hohe Helligkeit für komplexe Lichtverhältnisse und effizienter Abbau. Yupitek bietet umfassende Projektionsgerätevermietung, technischen Support und Vor-Ort-Überwachungsservices für Events.
+Projektionsanforderungen für Veranstaltungen unterscheiden sich grundlegend von Dauerinstallationen: schneller Aufbau, flexible Konfiguration, hohe Helligkeit für komplexe Lichtverhältnisse und effizienter Abbau. Yopitek bietet umfassende Projektionsgerätevermietung, technischen Support und Vor-Ort-Überwachungsservices für Events.
 
 ## Servicekategorien
 

@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "sierra-firmware-update-brand-lock-guide"
 tags: ["Sierra Wireless", "firmware-update", "qmi-firmware-update", "EM7455", "EM7565", "MC7455", "brand-lock", "SED", "flashing"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/en/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ faq:
 
 Plenty of people buy Sierra Wireless modules on the secondhand market, slot them into their laptop or router, and find the card won't work. The culprit is usually the OEM brand lock. This guide combines the hard facts from the official specification with what the community has learned the hard way, so you can flash your module safely.
 
-> Technical sources: Sierra Wireless official specifications (EM7455, EM7565, MC7455). Brand lock switching and third-party tools are based on community practice. Compiled by Yupitek.
+> Technical sources: Sierra Wireless official specifications (EM7455, EM7565, MC7455). Brand lock switching and third-party tools are based on community practice. Compiled by Yopitek.
 
 ---
 
@@ -123,6 +123,6 @@ Check the version (`AT+GMR`) before you start, have the correct image ready, and
 
 ## Where to Buy (Call To Action)
 
-Not sure whether your module is the Dell or the Lenovo edition? Looking for a reliable Sierra module to upgrade your device? Yupitek offers complete hardware solutions and technical consultation.
+Not sure whether your module is the Dell or the Lenovo edition? Looking for a reliable Sierra module to upgrade your device? Yopitek offers complete hardware solutions and technical consultation.
 Email us: **sales@yupitek.com**
 Browse the lineup: [Sierra Wireless Modules](https://yupitek.com/en/products/sierra/)

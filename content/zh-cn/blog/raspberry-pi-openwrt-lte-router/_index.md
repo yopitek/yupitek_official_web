@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "raspberry-pi-openwrt-lte-router"
 tags: ["LTE", "Sierra Wireless", "OpenWrt"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/zh-cn/products/sierra/"
 faq:
@@ -132,8 +132,8 @@ ifup wwan
 
 ## 采购信息（Call To Action）
 
-如果你需要购买 EM7455、EM7565、EM7511 等模块，或者想找搭配的 M.2 转接板和天线，Yupitek（榆閤科技）提供完整的硬件方案和技术咨询。
+如果你需要购买 EM7455、EM7565、EM7511 等模块，或者想找搭配的 M.2 转接板和天线，Yopitek（榆閤科技）提供完整的硬件方案和技术咨询。
 
 欢迎来信：**sales@yupitek.com**
 
-产品入口：[Yupitek Sierra Wireless 全系列](https://yupitek.com/zh-cn/products/sierra/)
+产品入口：[Yopitek Sierra Wireless 全系列](https://yupitek.com/zh-cn/products/sierra/)

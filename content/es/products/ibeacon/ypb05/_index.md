@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "USB Powered", "Plug and Play", "Ultra-lightweight"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "USB Powered", "Plug and Play", "Ultra-lightweight"]
 ---
 
 ## Descripción del producto
@@ -51,7 +51,7 @@ Se configura de manera inalámbrica con **BeaconSET+**:
 ## Galería del producto
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb05.png" alt="Yupitek YPB05" />
+  <img src="/images/products/ibeacon/ypb05.png" alt="Yopitek YPB05" />
 {{< /gallery >}}
 
 ---

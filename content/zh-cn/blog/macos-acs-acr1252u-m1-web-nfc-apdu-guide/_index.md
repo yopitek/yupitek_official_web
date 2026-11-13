@@ -190,7 +190,7 @@ document.getElementById('btnWrite').addEventListener('click', async () => {
     const writer = new NDEFReader();
 
     // 方式一：直接写一段文字（自动包成 text 记录）
-    // await writer.write('Yupitek Web NFC 测试');
+    // await writer.write('Yopitek Web NFC 测试');
 
     // 方式二：写入一笔网址记录（适合名片、导流）
     await writer.write({

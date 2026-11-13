@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "em7565-openwrt-troubleshooting-guide"
 tags: ["LTE", "Sierra Wireless", "OpenWrt"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/pt/products/sierra/em7565/"
 faq:
@@ -26,7 +26,7 @@ Quando o EM7565 não é detectado, verifique estas cinco coisas: 1. Confirme a c
 
 **O EM7565 é um módulo WWAN M.2 tipo 3042-S3-B 4G LTE-Advanced baseado no Qualcomm MDM9250. Ele suporta interfaces USB QMI e MBIM.** Quando o OpenWrt ou um Raspberry Pi falha em detectá-lo, a falha geralmente está em um de três lugares: o USB não está energizado, a composição USB está travada na configuração errada ou o driver Linux não carregou corretamente. Ocasionalmente, o módulo também entra em um modo de proteção após reinicializações repetidas. Seguindo o manual oficial da Sierra Wireless, montamos uma sequência de depuração confiável, passo a passo.
 
-> Link do produto: [Série Sierra Wireless da Yupitek](https://yupitek.com/pt/products/sierra/)
+> Link do produto: [Série Sierra Wireless da Yopitek](https://yupitek.com/pt/products/sierra/)
 
 ## Conclusão rápida: cinco etapas quando o EM7565 não é detectado
 
@@ -143,7 +143,7 @@ Contanto que você não refaça o flash do firmware às cegas, a maioria dos pro
 
 ## Informações de compra (chamada para ação)
 
-Não tem certeza se sua placa adaptadora ou antenas funcionam com o EM7565? A Yupitek oferece a linha completa de produtos Sierra Wireless e soluções completas de integração de hardware.
+Não tem certeza se sua placa adaptadora ou antenas funcionam com o EM7565? A Yopitek oferece a linha completa de produtos Sierra Wireless e soluções completas de integração de hardware.
 
 Envie um e-mail para: **sales@yupitek.com**
 

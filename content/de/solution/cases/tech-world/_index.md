@@ -13,7 +13,7 @@ tags: ["Themenhalle", "Wissenschaftsausstellung", "Immersive Projektion"]
 **Typ**: Technologie-Themenhalle – Immersive Projektion
 **Thema**: Biowissenschaften × Technologieerlebnis
 
-Die Tech World Life Hall ist ein thematischer Erlebnisraum, der Technologie und Biowissenschaften vereint. Yupitek war für die Integration des immersiven Projektionssystems zuständig und ermöglicht es Besuchern mit großformatiger Projektion und interaktiven Installationen, die Geheimnisse des Lebens auf völlig neue Weise zu erkunden.
+Die Tech World Life Hall ist ein thematischer Erlebnisraum, der Technologie und Biowissenschaften vereint. Yopitek war für die Integration des immersiven Projektionssystems zuständig und ermöglicht es Besuchern mit großformatiger Projektion und interaktiven Installationen, die Geheimnisse des Lebens auf völlig neue Weise zu erkunden.
 
 ## Ausstellungs-Highlights
 

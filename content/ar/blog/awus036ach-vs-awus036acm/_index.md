@@ -247,5 +247,5 @@ sudo aireplay-ng -0 3 -a [BSSID] wlan0mon
 1. مستودع تعريف RTL8812AU الذي يُصونه مجتمع aircrack-ng — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
 2. تعريف MT76 الرئيسي في النواة (`mt76x2u`، مدمج منذ 4.19) — [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
 3. موقع ALFA Network الرسمي ومواصفات المنتجات — [alfa.com.tw](https://www.alfa.com.tw)
-4. Yupitek — الموزع المعتمد لـ ALFA Network في تايوان — [yupitek.com](https://www.yupitek.com)
+4. Yopitek — الموزع المعتمد لـ ALFA Network في تايوان — [yupitek.com](https://www.yupitek.com)
 

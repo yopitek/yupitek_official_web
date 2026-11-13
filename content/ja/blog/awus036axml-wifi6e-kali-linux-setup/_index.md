@@ -4,13 +4,13 @@ locale: ja
 hreflang_group: awus036axml-wifi6e-kali-linux-setup
 slug: awus036axml-wifi6e-kali-linux-setup
 published: 2026-08-10
-author: Yupitek
+author: Yopitek
 category: Technical
 tags:
   - AWUS036AXML
   - Kali Linux
 hero_image: /static/img/AWUS036AXML/hero.webp
-hero_alt: "AWUS036AXML の Kali Linux へのインストール方法：Wi-Fi 6E モニターモードとパケットインジェクションのチュートリアル｜Yupitek"
+hero_alt: "AWUS036AXML の Kali Linux へのインストール方法：Wi-Fi 6E モニターモードとパケットインジェクションのチュートリアル｜Yopitek"
 seo_description: "ALFA AWUS036AXML（MT7921AUN チップセット）の Kali Linux へのインストールガイド：内蔵 mt7921u ドライバー、カーネル要件、モニターモード、パケットインジェクションの実測と一般的なトラブルシューティング。"
 date: "2026-08-10"
 draft: false
@@ -197,4 +197,4 @@ AXML は Wi-Fi 6E（6 GHz 追加）でドライバーがカーネル内蔵です
 
 AWUS036AXML のインストールプロセスは、想像以上に簡単です。**カーネル 5.18 以上 → 接続するだけで使用可能（`mt7921u`）→ `0e8d:7961` を確認 → airmon-ng でモニターモードに切り替え → aireplay-ng でインジェクションを検証**。AWUS036ACH との核心的な差異は、6 GHz 帯とコンパイル不要のドライバーにあります。あなたの監査範囲が Wi-Fi 6E 世代に入っている場合、このアダプターは周波数帯のカバレッジを補完する最適な選択です。すべてのテストは合法な権限のある環境でのみ実施してください。
 
-ALFA Network シリーズのアダプターは、Yupitek（榆閤科技）により台湾で販売および技術サポートを提供しています。AWUS036AXML や、それに適した給電付き Hub、アンテナのご購入・お問い合わせについては、[sales@yupitek.com](mailto:sales@yupitek.com) までお気軽にご連絡ください。
+ALFA Network シリーズのアダプターは、Yopitek（榆閤科技）により台湾で販売および技術サポートを提供しています。AWUS036AXML や、それに適した給電付き Hub、アンテナのご購入・お問い合わせについては、[sales@yupitek.com](mailto:sales@yupitek.com) までお気軽にご連絡ください。

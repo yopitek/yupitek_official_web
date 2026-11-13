@@ -228,4 +228,4 @@ La plataforma LINE necesita que el Webhook se entregue a una URL HTTPS pública.
 
 Gracias al Beacon Bluetooth industrial YPB03, los establecimientos físicos pueden, con el mínimo coste de mantenimiento y sin necesidad de desarrollar una App propia, interactuar de forma fluida con la gran base de usuarios de LINE y lograr una integración perfecta entre los canales online y offline (OMO). Ya sea para una demostración de proyecto académico o para un despliegue comercial a gran escala, YPB03 es la opción de referencia por su estabilidad y cobertura.
 
-Para obtener una oferta del dispositivo YPB03 o conocer más soluciones IoT personalizadas, le invitamos a [ponerse en contacto con nosotros a través del sitio web oficial de Yupitek](https://www.yupitek.com/es/contact/).
+Para obtener una oferta del dispositivo YPB03 o conocer más soluciones IoT personalizadas, le invitamos a [ponerse en contacto con nosotros a través del sitio web oficial de Yopitek](https://www.yupitek.com/es/contact/).

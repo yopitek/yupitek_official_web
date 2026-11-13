@@ -10,7 +10,7 @@ showChildPages: false
 
 # Mellanox / NVIDIA ConnectX Network Cards — 10G to 400G
 
-NVIDIA Mellanox ConnectX adapters deliver industry-leading bandwidth and latency for enterprise servers and AI clusters. Below is the complete catalog of models distributed by Yupitek, organized by speed tier.
+NVIDIA Mellanox ConnectX adapters deliver industry-leading bandwidth and latency for enterprise servers and AI clusters. Below is the complete catalog of models distributed by Yopitek, organized by speed tier.
 
 ---
 

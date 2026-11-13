@@ -1,6 +1,6 @@
 ---
 title: "Yilan Water Museum"
-description: "Century-old Yilan waterworks building converted into a museum — Yupitek provided multimedia projection systems to recreate the history of water resources."
+description: "Century-old Yilan waterworks building converted into a museum — Yopitek provided multimedia projection systems to recreate the history of water resources."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Museum", "Permanent Exhibition", "Yilan"]
 **Type**: Museum permanent exhibition multimedia system
 **Site Feature**: Century-old industrial building adaptive reuse
 
-The Yilan Water Museum was established in a century-old waterworks facility converted into a cultural venue. Working within the constraints of the historic architecture, Yupitek designed and installed a multimedia projection system that uses light and imagery to recreate 100 years of water resource development history in the Yilan region.
+The Yilan Water Museum was established in a century-old waterworks facility converted into a cultural venue. Working within the constraints of the historic architecture, Yopitek designed and installed a multimedia projection system that uses light and imagery to recreate 100 years of water resource development history in the Yilan region.
 
 ## Technical Solution
 

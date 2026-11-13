@@ -1,6 +1,6 @@
 ---
 title: "Sobre Benny Lai"
-description: "Arquitecto de Soluciones de Red de Yupitek, especializado en WiFi 7, redes empresariales, productos Ubiquiti y ALFA Network."
+description: "Arquitecto de Soluciones de Red de Yopitek, especializado en WiFi 7, redes empresariales, productos Ubiquiti y ALFA Network."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
@@ -8,9 +8,9 @@ showTableOfContents: false
 
 # Benny Lai
 
-**Arquitecto de Soluciones de Red de Yupitek**
+**Arquitecto de Soluciones de Red de Yopitek**
 
-Benny Lai es el Arquitecto de Soluciones de Red en Yupitek, especializado en el despliegue de redes inalámbricas empresariales que cubren WiFi 7, Ubiquiti UniFi y la línea de productos ALFA Network. Con años de experiencia práctica en planificación de redes empresariales y pruebas de seguridad.
+Benny Lai es el Arquitecto de Soluciones de Red en Yopitek, especializado en el despliegue de redes inalámbricas empresariales que cubren WiFi 7, Ubiquiti UniFi y la línea de productos ALFA Network. Con años de experiencia práctica en planificación de redes empresariales y pruebas de seguridad.
 
 ## Áreas de Especialización
 

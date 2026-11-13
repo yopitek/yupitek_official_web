@@ -383,7 +383,7 @@ Pour le cas d'usage spécifique de **Monitor Mode et Packet Injection avec les a
 
 ### Où Acheter
 
-Tous les adaptateurs ALFA recommandés sont disponibles chez Yupitek, un distributeur autorisé d'ALFA Network. Parcourt la sélection complète ou compare les modèles :
+Tous les adaptateurs ALFA recommandés sont disponibles chez Yopitek, un distributeur autorisé d'ALFA Network. Parcourt la sélection complète ou compare les modèles :
 
 - [Adaptateurs WiFi USB ALFA — Catalogue Complet](https://yupitek.com/fr/products/alfa/) — Tous les modèles avec specs et pricing
 - [Comparaison Produits ALFA](/en/alfa_compare/) — Comparaison côte à côte des chipsets, bandes et pilotes
@@ -398,7 +398,7 @@ Tous les adaptateurs ALFA recommandés sont disponibles chez Yupitek, un distrib
 
 ---
 
-*Pour les questions pré-vente concernant la compatibilité entre Flipper One et les adaptateurs ALFA, contacte le support Yupitek à support@yupitek.com ou appelle le +886-2-87325338.*
+*Pour les questions pré-vente concernant la compatibilité entre Flipper One et les adaptateurs ALFA, contacte le support Yopitek à support@yupitek.com ou appelle le +886-2-87325338.*
 
 ---
 

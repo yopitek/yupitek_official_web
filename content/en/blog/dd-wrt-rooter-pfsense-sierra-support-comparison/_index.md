@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "dd-wrt-rooter-pfsense-sierra-support-comparison"
 tags: ["Sierra Wireless", "DD-WRT", "pfSense", "ROOter"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/en/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ Want to plug a Sierra Wireless module (EM7455, EM7565, or MC7455) into your rout
 
 Many enthusiasts and enterprise MIS staff receive a Sierra Wireless EM7455, EM7565, or MC7455 and immediately want to drop it into an open source router as a failover WAN link. Keep in mind that the vendor never guarantees support for any particular open source firmware. What matters is the underlying operating system. We went through the official specifications to dig out the compatibility facts for you.
 
-> Reference: Sierra Wireless official specifications (EM7455, EM7565, MC7455). Compiled by Yupitek.
+> Reference: Sierra Wireless official specifications (EM7455, EM7565, MC7455). Compiled by Yopitek.
 
 ---
 
@@ -85,7 +85,7 @@ As long as you confirm the slot is correct, the antenna connector is right, and 
 
 ## Where to Buy (Call To Action)
 
-Not sure whether your router can take any of these cards, or cannot find a suitable adapter board and antenna? Yupitek offers complete hardware solutions and technical consultation.
+Not sure whether your router can take any of these cards, or cannot find a suitable adapter board and antenna? Yopitek offers complete hardware solutions and technical consultation.
 Contact us: **sales@yupitek.com**
 Product links: [EM7455](https://yupitek.com/en/products/sierra/em7455/) | [EM7565](https://yupitek.com/en/products/sierra/em7565/) | [MC7455](https://yupitek.com/en/products/sierra/mc7455/)
 

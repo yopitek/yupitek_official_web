@@ -13,7 +13,7 @@ tags: ["Landwirtschaftliche Ausstellung", "Eventproduktion", "Tainan"]
 **Typ**: Landwirtschaftlich thematisierte Ausstellungsprojektion
 **Thema**: Orchideenkultur × Technologievisualisierung
 
-Houbi ist eine der bedeutendsten Orchideenanbauregionen Taiwans, und die jährliche Orchideen-Ausstellung ist ein wichtiges lokales Kulturereignis. Yupitek entwarf einen immersiven Projektionsraum für die Ausstellung, der die natürliche Schönheit der Orchideen durch großformatige visuelle Technologie verstärkt, ein jüngeres Publikum anzieht und die Wertschätzung für das landwirtschaftliche Erbe Taiwans vertieft.
+Houbi ist eine der bedeutendsten Orchideenanbauregionen Taiwans, und die jährliche Orchideen-Ausstellung ist ein wichtiges lokales Kulturereignis. Yopitek entwarf einen immersiven Projektionsraum für die Ausstellung, der die natürliche Schönheit der Orchideen durch großformatige visuelle Technologie verstärkt, ein jüngeres Publikum anzieht und die Wertschätzung für das landwirtschaftliche Erbe Taiwans vertieft.
 
 ## Technische Lösung
 

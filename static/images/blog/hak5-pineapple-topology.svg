@@ -164,5 +164,5 @@
   <line x1="510" y1="770" x2="540" y2="770" stroke="#34d399" stroke-width="1.5"/><text x="546" y="775" fill="#94a3b8" font-size="8">WAN</text>
   <rect x="650" y="762" width="20" height="16" rx="3" fill="rgba(233,69,96,0.3)" stroke="#e94560" stroke-width="1"/><text x="676" y="775" fill="#94a3b8" font-size="8">AWUS036ACM</text>
   <rect x="810" y="762" width="20" height="16" rx="3" fill="rgba(8,51,68,0.3)" stroke="#22d3ee" stroke-width="1"/><text x="836" y="775" fill="#94a3b8" font-size="8">MK7 Radio</text>
-  <text x="1150" y="775" fill="#64748b" font-size="7" text-anchor="end">Yupitek Ltd · 2026</text>
+  <text x="1150" y="775" fill="#64748b" font-size="7" text-anchor="end">Yopitek Ltd · 2026</text>
 </svg>

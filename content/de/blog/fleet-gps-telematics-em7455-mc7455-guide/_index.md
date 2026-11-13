@@ -1,5 +1,5 @@
 ---
-title: "Flotten-GPS-Tracking und Telematik: Das integrierte GNSS von EM7455/MC7455 | Yupitek"
+title: "Flotten-GPS-Tracking und Telematik: Das integrierte GNSS von EM7455/MC7455 | Yopitek"
 description: "Wie baust du ein Flotten-Telematiksystem? Wir lüften die Geheimnisse des integrierten GNSS von EM7455/MC7455: Ortung über vier Satellitensysteme, Tracking-Empfindlichkeit von -160 dBm, Stromversorgung für aktive Antennen und die rechtliche Falle Band 30."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "fleet-gps-telematics-em7455-mc7455-guide"
 slug: "fleet-gps-telematics-em7455-mc7455-guide"
 tags: ["Sierra Wireless", "EM7455", "MC7455", "GNSS", "GPS", "Telematics", "Fleet"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/de/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ faq:
 
 Früher war das für Hardware-Entwickler eine Qual: Auf einem kleinen Board mussten GPS-Chip und 4G-Modul untergebracht werden, dazu Stromversorgung und Antenneninterferenzen auf beiden Seiten. Heute, mit dem richtigen Mobilfunkmodul, ist alles kinderleicht. In diesem Artikel schauen wir in die offiziellen Spezifikationen von EM7455 und MC7455 und zeigen dir ihre „versteckte Superkraft“ — die GNSS-Satellitenortung.
 
-> Technische Datenquelle: offizielle Sierra-Wireless-Spezifikationen (EM7455, MC7455). Artikel zusammengestellt von Yupitek.
+> Technische Datenquelle: offizielle Sierra-Wireless-Spezifikationen (EM7455, MC7455). Artikel zusammengestellt von Yopitek.
 
 ---
 
@@ -85,6 +85,6 @@ Wähl den EM7455 oder MC7455, steck ihn aufs Board, schließ eine normale aktive
 
 ## Kaufinformationen (Call to Action)
 
-Entwickelst du ein Fahrzeugterminal und brauchst EM7455 oder MC7455? Noch Fragen zu Antennenkonfiguration oder Mainboard-Integration? Yupitek bietet komplette Hardware-Lösungen und technischen Support aus erster Hand.
+Entwickelst du ein Fahrzeugterminal und brauchst EM7455 oder MC7455? Noch Fragen zu Antennenkonfiguration oder Mainboard-Integration? Yopitek bietet komplette Hardware-Lösungen und technischen Support aus erster Hand.
 Schreib uns: **sales@yupitek.com**
 Schau dir die Produkte an: [Sierra Wireless Modulserie](https://yupitek.com/de/products/sierra/)

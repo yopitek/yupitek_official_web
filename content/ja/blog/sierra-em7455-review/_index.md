@@ -1,6 +1,6 @@
 ---
 title: "Sierra EM7455 完全レビュー：Maker と研究室で人気の Sierra カードの理由"
-description: "EM7455 の完全レビュー：仕様、EM7430 との違い、OpenWrt/Linux 設定、Dell/Lenovo との互換性。技術資料は Yupitek（榆閤科技）が提供。"
+description: "EM7455 の完全レビュー：仕様、EM7430 との違い、OpenWrt/Linux 設定、Dell/Lenovo との互換性。技術資料は Yopitek（榆閤科技）が提供。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -25,14 +25,14 @@ faq:
 # Sierra EM7455 完全レビュー：Maker と研究室で人気の Sierra カードの理由
 
 {{< alert >}}
-Yupitek は Sierra Wireless / Semtech の製品情報、供給チャネルおよび技術コンテンツを提供しています。公式の正規代理店ではなく、本資料は技術参考のみを目的としています。
+Yopitek は Sierra Wireless / Semtech の製品情報、供給チャネルおよび技術コンテンツを提供しています。公式の正規代理店ではなく、本資料は技術参考のみを目的としています。
 {{</alert >}}
 
 Raspberry Pi に OpenWrt を組み合わせて使っている方、あるいは研究室の機器に 4G 通信を追加したい方は、Sierra EM7455 という名カードをご存じでしょう。Sierra Wireless が提供する LTE-A Cat 6 の M.2 セルラーモジュールで、Qualcomm MDM9230 チップセットを搭載し、下り最大 300 Mbps、上り最大 50 Mbps を実現します。さらに GNSS 測位機能を内蔵し、動作温度は -40°C から +85°C の過酷な環境にも耐えます。
 
-本記事は Yupitek（榆閤科技）が整理し、この M.2 B-Key パッケージの 4G LTE-Advanced Cat 6 モジュールがなぜこれほど人気なのか、そして Linux システムでのドライバと設定の方法について解説します。
+本記事は Yopitek（榆閤科技）が整理し、この M.2 B-Key パッケージの 4G LTE-Advanced Cat 6 モジュールがなぜこれほど人気なのか、そして Linux システムでのドライバと設定の方法について解説します。
 
-> 製品ページ：[EM7455 — Yupitek](/ja/products/sierra/em7455/) | 公式スペックシート：[AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
+> 製品ページ：[EM7455 — Yopitek](/ja/products/sierra/em7455/) | 公式スペックシート：[AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
 
 ---
 
@@ -277,7 +277,7 @@ AT!RESET
 
 ## 研究室での調達は、ぜひお問い合わせください
 
-本記事は Yupitek（榆閤科技）のエンジニアチームが整理しました。大学のプロジェクト、実験室の計画、あるいは EM7455 やその他の Sierra モジュールの法人向け大量調達まで、お気軽にご相談ください！
+本記事は Yopitek（榆閤科技）のエンジニアチームが整理しました。大学のプロジェクト、実験室の計画、あるいは EM7455 やその他の Sierra モジュールの法人向け大量調達まで、お気軽にご相談ください！
 
 - **このカードを見る**：[https://yupitek.com/ja/products/sierra/em7455/](/ja/products/sierra/em7455/)
 - **全 Sierra 型番を見る**：[https://yupitek.com/ja/products/sierra/](/ja/products/sierra/)

@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "raspberry-pi-openwrt-lte-router"
 tags: ["LTE", "Sierra Wireless", "OpenWrt"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/es/products/sierra/"
 faq:
@@ -132,8 +132,8 @@ Conducir un módulo Sierra desde una Raspberry Pi con OpenWrt es un proceso de l
 
 ## Información de compra (llamada a la acción)
 
-Si necesita módulos EM7455, EM7565 o EM7511, o placas adaptadoras M.2 y antenas compatibles, Yupitek ofrece soluciones de hardware completas y consultoría técnica.
+Si necesita módulos EM7455, EM7565 o EM7511, o placas adaptadoras M.2 y antenas compatibles, Yopitek ofrece soluciones de hardware completas y consultoría técnica.
 
 Escríbanos por correo: **sales@yupitek.com**
 
-Vea los productos: [Serie Sierra Wireless de Yupitek](https://yupitek.com/es/products/sierra/)
+Vea los productos: [Serie Sierra Wireless de Yopitek](https://yupitek.com/es/products/sierra/)

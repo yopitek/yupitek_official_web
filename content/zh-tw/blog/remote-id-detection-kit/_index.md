@@ -20,7 +20,7 @@ faq:
   - question: "被動接收合法嗎？"
     answer: "接收無人機公開廣播的 Remote ID 屬合法接收，等同讀取公開資訊；但主動干擾（jamming）受嚴格管制，不在此套件範圍。"
 ---
-> 榆閤科技 Yupitek 技術團隊｜ALFA Network 台灣授權代理
+> 榆閤科技 Yopitek 技術團隊｜ALFA Network 台灣授權代理
 
 {{< tldr >}}
 Remote ID 偵測套件用 **ALFA AWUS036ACH** 網路卡的監聽模式，被動接收無人機依法必須廣播的身分與位置資訊（等同無人機的「空中車牌」），是場域安全管理者合法、低成本的態勢感知手段。
@@ -303,8 +303,8 @@ curl -fsSL https://github.com/fduflyer/DroneAware-Node-Releases/releases/latest/
 4. [kismetwireless/kismet — 無線偵測框架](https://github.com/kismetwireless/kismet)
 5. [alphafox02/antsdr_dji_droneid — DJI OcuSync DroneID SDR 解碼](https://github.com/alphafox02/antsdr_dji_droneid)
 6. [morrownr/8812au-20210629 — RTL8812AU Linux 監聽 / 注入驅動](https://github.com/morrownr/8812au-20210629)
-7. [ALFA AWUS036ACH 產品頁（Yupitek）](https://yupitek.com/zh-tw/products/alfa/awus036ach/)
-8. [Yupitek 聯絡與訂購](https://www.yupitek.com/zh-tw/contact/)
+7. [ALFA AWUS036ACH 產品頁（Yopitek）](https://yupitek.com/zh-tw/products/alfa/awus036ach/)
+8. [Yopitek 聯絡與訂購](https://www.yupitek.com/zh-tw/contact/)
 
 ---
 
@@ -316,4 +316,4 @@ curl -fsSL https://github.com/fduflyer/DroneAware-Node-Releases/releases/latest/
 
 ---
 
-*本文由榆閤科技 Yupitek 技術團隊整理。AWUS036ACH 與相關硬體均可經 Yupitek 取得並享技術支援（Yupitek 為 ALFA Network 台灣授權經銷商）。*
+*本文由榆閤科技 Yopitek 技術團隊整理。AWUS036ACH 與相關硬體均可經 Yopitek 取得並享技術支援（Yopitek 為 ALFA Network 台灣授權經銷商）。*

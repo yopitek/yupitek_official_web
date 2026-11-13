@@ -231,7 +231,7 @@ Contre-arguments : Si une version future de FreshTomato ajoute explicitement la 
 | Site officiel de FreshTomato | Liste des versions les plus récentes et des appareils pris en charge par FreshTomato | https://freshtomato.org/ | ✅ Vérifié | 2026-09-03 |
 | Documentation officielle d'OpenWrt | Pilotes WiFi USB et paramètres sans fil (référence comparative) | https://openwrt.org/docs/start | ✅ Vérifié | 2026-09-03 |
 | Forum officiel d'OpenWrt | Discussions sur les pilotes WiFi USB (référence comparative) | https://forum.openwrt.org/ | ✅ Vérifié | 2026-09-03 |
-| Aperçu des produits d'ALFA Network (Yupitek) | Spécifications des produits actuels d'ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Vérifié | 2026-09-03 |
+| Aperçu des produits d'ALFA Network (Yopitek) | Spécifications des produits actuels d'ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Vérifié | 2026-09-03 |
 
 Articles associés : [Est-ce que la carte réseau sans fil ALFA est compatible avec DD-WRT ?](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/) | [Est-ce que la carte réseau sans fil ALFA est compatible avec OpenWrt ?](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) | [Est-ce que la carte réseau sans fil ALFA est compatible avec NVIDIA DGX Spark ?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/) | [Est-ce que la carte réseau sans fil ALFA est compatible avec NVIDIA Jetson Nano ?](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

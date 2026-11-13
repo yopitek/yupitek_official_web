@@ -13,7 +13,7 @@ tags: ["Institución Gubernamental", "Sala Multifuncional", "Proyección Multi-P
 **Tipo**: Sistema de proyección para sala multifuncional
 **Uso**: Reuniones gubernamentales, eventos y presentaciones
 
-La sala multifuncional de la Oficina del Distrito de Yangmei requería un sistema de proyección flexible para adaptarse a diversas necesidades: desde reuniones administrativas diarias, grandes audiencias públicas hasta actividades culturales locales. Yupitek diseñó e instaló un sistema de fusión multi-proyector para satisfacer múltiples escenarios de uso.
+La sala multifuncional de la Oficina del Distrito de Yangmei requería un sistema de proyección flexible para adaptarse a diversas necesidades: desde reuniones administrativas diarias, grandes audiencias públicas hasta actividades culturales locales. Yopitek diseñó e instaló un sistema de fusión multi-proyector para satisfacer múltiples escenarios de uso.
 
 ## Solución Técnica
 

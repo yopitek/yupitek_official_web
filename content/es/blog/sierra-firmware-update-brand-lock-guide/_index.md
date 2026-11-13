@@ -1,5 +1,5 @@
 ---
-title: "Guía de actualización de firmware y cambio de bloqueo de marca de Sierra Wireless: el proceso correcto para evitar que el módulo quede inutilizable (Brick) (EM7455 / EM7565 / MC7455) | Yupitek"
+title: "Guía de actualización de firmware y cambio de bloqueo de marca de Sierra Wireless: el proceso correcto para evitar que el módulo quede inutilizable (Brick) (EM7455 / EM7565 / MC7455) | Yopitek"
 description: "Guía completa de actualización de firmware y cambio de bloqueo de marca de los módulos Sierra Wireless (EM7455, EM7565 y MC7455): basada en las hojas de especificaciones oficiales, explica el proceso de flasheo, la verificación con AT+GMR, la copia de seguridad del firmware, el rescate de un módulo inutilizable (SED) y los pasos correctos para evitar fallos de flasheo."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "sierra-firmware-update-brand-lock-guide"
 slug: "sierra-firmware-update-brand-lock-guide"
 tags: ["Sierra Wireless", "Firmware", "EM7455", "EM7565", "MC7455", "Brand Lock", "WWAN"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/es/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ faq:
 
 Muchos usuarios compran módulos Sierra Wireless en el mercado de segunda mano y descubren que no funcionan al instalarlos en su portátil o router, y la causa suele ser el «bloqueo de marca (bloqueo OEM)». En este artículo combinamos el «conocimiento técnico documentado en las especificaciones oficiales» con la «experiencia práctica de la comunidad» para enseñarle a flashear el firmware con seguridad.
 
-> Fuente de información técnica: hojas de especificaciones oficiales de Sierra Wireless (EM7455, EM7565 y MC7455). El cambio de bloqueo de marca y las herramientas de terceros forman parte de la experiencia práctica de la comunidad. Artículo elaborado por Yupitek.
+> Fuente de información técnica: hojas de especificaciones oficiales de Sierra Wireless (EM7455, EM7565 y MC7455). El cambio de bloqueo de marca y las herramientas de terceros forman parte de la experiencia práctica de la comunidad. Artículo elaborado por Yopitek.
 
 ---
 
@@ -128,6 +128,6 @@ Mientras compruebe la versión (`AT+GMR`) antes de empezar, tenga el archivo cor
 
 ## Información de compra (Llamada a la acción)
 
-¿No está seguro de si su módulo es la versión Dell o la de Lenovo? ¿Busca módulos Sierra fiables para actualizar su equipo? Yupitek ofrece soluciones de hardware completas y asesoramiento técnico.
+¿No está seguro de si su módulo es la versión Dell o la de Lenovo? ¿Busca módulos Sierra fiables para actualizar su equipo? Yopitek ofrece soluciones de hardware completas y asesoramiento técnico.
 Escríbanos: **sales@yupitek.com**
 Vea los productos: [Sección de módulos Sierra Wireless](https://yupitek.com/es/products/sierra/)

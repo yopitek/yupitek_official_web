@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "dd-wrt-rooter-pfsense-sierra-support-comparison"
 tags: ["Sierra Wireless", "DD-WRT", "pfSense", "ROOter"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/zh-tw/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ faq:
 
 很多玩家或企業 MIS 拿到 Sierra Wireless 的 EM7455、EM7565 或 MC7455，第一件事就是想把它塞進開源路由器裡當備援網路（Failover WAN）。但請記得，官方從來不會保證「支援」哪一套開源韌體。它們看的是作業系統底層。我們翻開官方規格書，幫你把相容性的真相找出來。
 
-> 參考資料：Sierra Wireless 官方規格書（EM7455、EM7565、MC7455）。本文由榆閤科技（Yupitek）整理。
+> 參考資料：Sierra Wireless 官方規格書（EM7455、EM7565、MC7455）。本文由榆閤科技（Yopitek）整理。
 
 ---
 
@@ -85,7 +85,7 @@ faq:
 
 ## 採購資訊（Call To Action）
 
-不確定手上的路由器能不能插這幾張網路卡？或者找不到合適的轉接板跟天線？Yupitek（榆閤科技）有完整的硬體方案跟技術諮詢。
+不確定手上的路由器能不能插這幾張網路卡？或者找不到合適的轉接板跟天線？Yopitek（榆閤科技）有完整的硬體方案跟技術諮詢。
 歡迎來信：**sales@yupitek.com**
 產品傳送門：[EM7455](https://yupitek.com/zh-tw/products/sierra/em7455/)｜[EM7565](https://yupitek.com/zh-tw/products/sierra/em7565/)｜[MC7455](https://yupitek.com/zh-tw/products/sierra/mc7455/)
 

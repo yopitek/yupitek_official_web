@@ -1,5 +1,5 @@
 ---
-title: "Guia completo para atualizar notebooks Dell / Lenovo com placas 4G/5G: lista de modelos compatíveis + guia de instalação | Yupitek"
+title: "Guia completo para atualizar notebooks Dell / Lenovo com placas 4G/5G: lista de modelos compatíveis + guia de instalação | Yopitek"
 description: "Guia completo para atualizar notebooks Dell / Lenovo com placas 4G/5G: compara as diferenças de especificações entre EM7455 e EM7430 e ensina você a verificar o slot M.2, as antenas WWAN e a lista branca do BIOS. Download Cat 6 de 300 Mbps, com guia de instalação completo."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 slug: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 tags: ["Dell", "Lenovo", "4G", "5G", "EM7455", "EM7430", "WWAN", "M.2"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/pt/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ Muitos amigos que possuem um Dell Latitude ou um Lenovo ThinkPad querem instalar
 
 Neste artigo, usamos as especificações oficiais da Sierra Wireless para comparar o EM7455 e o EM7430, as duas placas mais usadas nesse tipo de upgrade, e explicamos como instalá-las.
 
-> Fonte dos dados de especificações: especificações oficiais da Sierra Wireless (EM7455 e EM7430). Artigo elaborado pela Yupitek.
+> Fonte dos dados de especificações: especificações oficiais da Sierra Wireless (EM7455 e EM7430). Artigo elaborado pela Yopitek.
 
 ---
 
@@ -105,6 +105,6 @@ Atualizar a placa de rede do seu notebook não é difícil; o difícil é a «pr
 
 ## Informações de compra (Call to Action)
 
-Quer adquirir placas da série Sierra Wireless? Ou não sabe se o seu equipamento industrial suporta? A Yupitek oferece soluções completas de hardware e suporte técnico.
+Quer adquirir placas da série Sierra Wireless? Ou não sabe se o seu equipamento industrial suporta? A Yopitek oferece soluções completas de hardware e suporte técnico.
 Escreva para: **sales@yupitek.com**
 Veja os produtos: [Série Sierra Wireless](https://yupitek.com/pt/products/sierra/)

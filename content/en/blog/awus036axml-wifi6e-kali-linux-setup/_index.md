@@ -4,13 +4,13 @@ locale: en
 hreflang_group: awus036axml-wifi6e-kali-linux-setup
 slug: awus036axml-wifi6e-kali-linux-setup
 published: 2026-08-10
-author: Yupitek
+author: Yopitek
 category: technical
 tags:
   - AWUS036AXML
   - Kali Linux
 hero_image: /static/img/AWUS036AXML/hero.webp
-hero_alt: "How to install AWUS036AXML on Kali Linux? Wi-Fi 6E Monitoring Mode and Packet Injection Tutorial | Yupitek"
+hero_alt: "How to install AWUS036AXML on Kali Linux? Wi-Fi 6E Monitoring Mode and Packet Injection Tutorial | Yopitek"
 seo_description: "ALFA AWUS036AXML (MT7921AUN Chipset) installation guide for Kali Linux: Built-in mt7921u driver, kernel version requirements, monitoring mode, packet injection testing, and common troubleshooting."
 date: 2026-08-10
 draft: false

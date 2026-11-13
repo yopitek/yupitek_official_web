@@ -1,5 +1,5 @@
 ---
-title: "Можно ли подключить модуль Sierra к DD-WRT, ROOter или pfSense? Сравнение поддержки трёх платформ для EM7455, EM7565 и MC7455 | Yupitek"
+title: "Можно ли подключить модуль Sierra к DD-WRT, ROOter или pfSense? Сравнение поддержки трёх платформ для EM7455, EM7565 и MC7455 | Yopitek"
 description: "Можно ли подключить модуль Sierra Wireless к DD-WRT, ROOter или pfSense? На основе официальных спецификаций EM7455, EM7565 и MC7455 в статье сравнивается поддержка QMI/MBIM в трёх прошивках роутера, чтобы вы могли выбрать лучшее резервное WAN-решение."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "dd-wrt-rooter-pfsense-sierra-support-comparison"
 slug: "dd-wrt-rooter-pfsense-sierra-support-comparison"
 tags: ["Sierra Wireless", "DD-WRT", "pfSense", "ROOter"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ru/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ faq:
 
 Многие энтузиасты и корпоративные IT-специалисты, получив Sierra Wireless EM7455, EM7565 или MC7455, сразу хотят установить его в роутер с открытым кодом как резервный WAN-канал. Помните: производитель никогда не гарантирует поддержку конкретной прошивки с открытым кодом. Значение имеет только базовая операционная система. Мы изучили официальные спецификации, чтобы раскрыть для вас реальные факты о совместимости.
 
-> Источник: официальные спецификации Sierra Wireless (EM7455, EM7565, MC7455). Подготовлено компанией Yupitek.
+> Источник: официальные спецификации Sierra Wireless (EM7455, EM7565, MC7455). Подготовлено компанией Yopitek.
 
 ---
 
@@ -87,7 +87,7 @@ faq:
 
 ## Где купить (Call To Action)
 
-Не уверены, подходит ли ваш роутер под эти карты, или не можете найти подходящий переходник и антенну? Yupitek предлагает полные аппаратные решения и технические консультации.
+Не уверены, подходит ли ваш роутер под эти карты, или не можете найти подходящий переходник и антенну? Yopitek предлагает полные аппаратные решения и технические консультации.
 Свяжитесь с нами: **sales@yupitek.com**
 Ссылки на продукцию: [EM7455](https://yupitek.com/ru/products/sierra/em7455/) | [EM7565](https://yupitek.com/ru/products/sierra/em7565/) | [MC7455](https://yupitek.com/ru/products/sierra/mc7455/)
 

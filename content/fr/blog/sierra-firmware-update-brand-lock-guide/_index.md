@@ -10,7 +10,7 @@ hreflang_group: "sierra-firmware-update-brand-lock-guide"
 slug: "sierra-firmware-update-brand-lock-guide"
 tags: ["Sierra Wireless", "firmware-update", "qmi-firmware-update", "EM7455", "EM7565", "MC7455", "brand-lock", "SED", "flashing"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/fr/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ faq:
 
 Beaucoup de gens achètent des modules Sierra Wireless sur le marché de l'occasion, les glissent dans leur portable ou leur routeur, et découvrent que la carte ne fonctionne pas. Le coupable, c'est le plus souvent le verrouillage OEM. Ce guide combine les faits solides de la spécification officielle avec ce que la communauté a appris à ses dépens, pour que tu puisses flasher ton module en toute sécurité.
 
-> Sources techniques : spécifications officielles Sierra Wireless (EM7455, EM7565, MC7455). Le changement de verrouillage de marque et les outils tiers reposent sur la pratique de la communauté. Compilé par Yupitek.
+> Sources techniques : spécifications officielles Sierra Wireless (EM7455, EM7565, MC7455). Le changement de verrouillage de marque et les outils tiers reposent sur la pratique de la communauté. Compilé par Yopitek.
 
 ---
 
@@ -123,6 +123,6 @@ Vérifie la version (`AT+GMR`) avant de commencer, prépare la bonne image et do
 
 ## Où acheter (appel à l'action)
 
-Tu ne sais pas si ton module est l'édition Dell ou Lenovo ? Tu cherches un module Sierra fiable pour faire évoluer ton appareil ? Yupitek propose des solutions matérielles complètes et des conseils techniques.
+Tu ne sais pas si ton module est l'édition Dell ou Lenovo ? Tu cherches un module Sierra fiable pour faire évoluer ton appareil ? Yopitek propose des solutions matérielles complètes et des conseils techniques.
 Écris-nous : **sales@yupitek.com**
 Découvre la gamme : [Modules Sierra Wireless](https://yupitek.com/fr/products/sierra/)

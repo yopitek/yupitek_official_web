@@ -1,6 +1,6 @@
 ---
 title: "Proyección Interactiva"
-description: "Soluciones de proyección interactiva de Yupitek: táctil interactivo, detección de movimiento, proyección interactiva en suelo; para espacios de exhibición, educación y comercio."
+description: "Soluciones de proyección interactiva de Yopitek: táctil interactivo, detección de movimiento, proyección interactiva en suelo; para espacios de exhibición, educación y comercio."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

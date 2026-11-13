@@ -10,7 +10,7 @@ showChildPages: false
 
 # Cartes réseau Mellanox / NVIDIA ConnectX — De 10G à 400G
 
-Les adaptateurs NVIDIA Mellanox ConnectX offrent une bande passante et une latence de premier ordre pour les serveurs d'entreprise et les clusters d'intelligence artificielle. Voici le catalogue complet des modèles distribués par Yupitek, classés par vitesse.
+Les adaptateurs NVIDIA Mellanox ConnectX offrent une bande passante et une latence de premier ordre pour les serveurs d'entreprise et les clusters d'intelligence artificielle. Voici le catalogue complet des modèles distribués par Yopitek, classés par vitesse.
 
 ---
 

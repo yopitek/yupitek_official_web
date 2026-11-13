@@ -854,7 +854,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 يتوفر ALFA AWUS036ACM من [yupitek.com](https://yupitek.com) — الموزّع الرسمي المعتمد لـ ALFA Network. الشراء عبر موزّع معتمد يضمن الحصول على أجهزة أصلية مع الضمان القياسي من Alfa Network Inc.
 
-**صفحة المنتج:** [ALFA AWUS036ACM على Yupitek](https://yupitek.com)
+**صفحة المنتج:** [ALFA AWUS036ACM على Yopitek](https://yupitek.com)
 
 محتويات الصندوق:
 - 1× محوّل AWUS036ACM
@@ -885,7 +885,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ---
 
-*مقال بقلم الفريق التقني في Yupitek · [yupitek.com](https://yupitek.com)*
+*مقال بقلم الفريق التقني في Yopitek · [yupitek.com](https://yupitek.com)*
 
 *المراجع: [التوثيق الرسمي لـ Alfa Network](https://docs.alfa.com.tw/Product/AWUS036ACM/) · [Linux Wireless Wiki — أنواع الواجهات](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) · [برنامج تشغيل MediaTek mt76 لـ Linux](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) · [قائمة morrownr للمحوّلات المدمجة في النواة](https://github.com/morrownr/USB-WiFi)*
 

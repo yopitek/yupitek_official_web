@@ -24,7 +24,7 @@ faq:
 
 Le MC7455 est le module PCI Express Mini Card (mPCIe) de Sierra Wireless, tandis que l'EM7455 est son homologue M.2 dans la même famille 74xx. Les deux modules intègrent LTE, UMTS et le positionnement GNSS, et les deux utilisent le processeur de bande de base Qualcomm MDM9230. Les vitesses réseau sont également identiques : LTE Cat 6 avec un débit descendant maximal de 300 Mbit/s (FDD) / 222 Mbit/s (TDD) et un débit montant maximal de 50 Mbit/s (FDD) / 26 Mbit/s (TDD). Cet article extrait les différences matérielles des spécifications officielles pour que tu saches exactement à quoi t'attendre avant d'acheter.
 
-> Références techniques : spécifications officielles de Sierra Wireless, la [Spécification technique du produit AirPrime MC7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) et la [Spécification technique du produit AirPrime EM7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Compilé par Yupitek.
+> Références techniques : spécifications officielles de Sierra Wireless, la [Spécification technique du produit AirPrime MC7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) et la [Spécification technique du produit AirPrime EM7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Compilé par Yopitek.
 
 ---
 
@@ -131,10 +131,10 @@ Le MC7455 et l'EM7455 sont comme le même cerveau logé dans des corps différen
 
 ## Appel à l'action (Approvisionnement)
 
-Tu as besoin du MC7455 ou de l'EM7455, ou tu ne sais pas quel emplacement utilise ton équipement existant ? Yupitek est un fournisseur professionnel de solutions sans fil industrielles. Nous pouvons t'aider à confirmer :
+Tu as besoin du MC7455 ou de l'EM7455, ou tu ne sais pas quel emplacement utilise ton équipement existant ? Yopitek est un fournisseur professionnel de solutions sans fil industrielles. Nous pouvons t'aider à confirmer :
 
 - Évaluation de la compatibilité entre l'emplacement de la carte mère et le module
 - Adaptateurs de connecteurs d'antenne et appariement des câbles
 - Stock à long terme et tarification en volume
 
-Envoie-nous un e-mail à **sales@yupitek.com** ou consulte le [site Web de Yupitek](https://www.yupitek.com) pour les produits associés.
+Envoie-nous un e-mail à **sales@yupitek.com** ou consulte le [site Web de Yopitek](https://www.yupitek.com) pour les produits associés.

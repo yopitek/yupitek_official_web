@@ -1,6 +1,6 @@
 ---
 title: "Immersiver Raum"
-description: "Yupitek immersive Projektionsraumlösungen: 360°-Panoramaprojektion, immersive Ausstellungshallen und interaktive Kunstinstallationen für vollständig umhüllende visuelle Erlebnisse."
+description: "Yopitek immersive Projektionsraumlösungen: 360°-Panoramaprojektion, immersive Ausstellungshallen und interaktive Kunstinstallationen für vollständig umhüllende visuelle Erlebnisse."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Immersive Projektionsräume
 
-Immersive Raumprojektion sprengt die Grenzen traditioneller Displays und versetzt das Publikum in ein allseitiges Bildfeld. Ob für spezielle Museumsausstellungen, Corporate-Experience-Center oder dauerhafte Touristenattraktionen – Yupitek liefert maßgeschneiderte immersive Projektionslösungen.
+Immersive Raumprojektion sprengt die Grenzen traditioneller Displays und versetzt das Publikum in ein allseitiges Bildfeld. Ob für spezielle Museumsausstellungen, Corporate-Experience-Center oder dauerhafte Touristenattraktionen – Yopitek liefert maßgeschneiderte immersive Projektionslösungen.
 
 ## Technische Fähigkeiten
 

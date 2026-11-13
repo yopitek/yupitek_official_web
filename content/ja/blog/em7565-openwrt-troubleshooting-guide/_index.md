@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "em7565-openwrt-troubleshooting-guide"
 tags: ["LTE", "Sierra Wireless", "OpenWrt"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ja/products/sierra/em7565/"
 faq:
@@ -26,7 +26,7 @@ EM7565 を認識できない場合は、次の 5 点を確認してください�
 
 **EM7565 は Qualcomm MDM9250 を搭載した M.2 WWAN Type 3042-S3-B の 4G LTE-Advanced モジュールです。QMI と MBIM の両方の USB インターフェースに対応しています。** OpenWrt や Raspberry Pi で「認識できない」場合、原因は通常 3 つあります。USB に電源が供給されていない、USB composition が誤った組み合わせのまま停止している、または Linux ドライバが正しくロードされていない、です。まれに、再起動の繰り返しによって保護モードに入ることもあります。本記事では、Sierra Wireless の公式マニュアルに沿って、最もミスの少ない調査手順を整理しました。
 
-> 製品リンク：[Yupitek Sierra Wireless シリーズ](https://yupitek.com/ja/products/sierra/)
+> 製品リンク：[Yopitek Sierra Wireless シリーズ](https://yupitek.com/ja/products/sierra/)
 
 ## クイック結論：EM7565 を認識できないときは、この 5 ステップで調査
 
@@ -143,7 +143,7 @@ OpenWrt や Raspberry Pi で EM7565 を認識できない問題は、パソコ�
 
 ## 購入情報（Call To Action）
 
-お手持ちの変換ボードやアンテナが EM7565 に対応するか不明ですか？Yupitek（榆閤科技）では、Sierra Wireless 全シリーズの製品と、完全なハードウェア統合ソリューションを提供しています。
+お手持ちの変換ボードやアンテナが EM7565 に対応するか不明ですか？Yopitek（榆閤科技）では、Sierra Wireless 全シリーズの製品と、完全なハードウェア統合ソリューションを提供しています。
 
 お問い合わせ：**sales@yupitek.com**
 

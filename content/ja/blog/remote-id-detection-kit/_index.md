@@ -20,7 +20,7 @@ faq:
   - question: "パッシブ受信は合法ですか？"
     answer: "ドローンが公開ブロードキャストする Remote ID を受信することは合法的な受信行為であり、公開情報の読み取りに相当します。ただし、能動的な妨害（jamming）は厳しく規制されており、本キットの範囲外です。"
 ---
-> Yupitek テクニカルチーム｜ALFA Network 台湾正規代理店
+> Yopitek テクニカルチーム｜ALFA Network 台湾正規代理店
 
 {{< tldr >}}
 Remote ID 検出キットは **ALFA AWUS036ACH** アダプターのモニターモードを利用して、ドローンが法令に従ってブロードキャストする身分情報と位置情報（ドローンの「中空ナンバープレート」）を受動的に受信します。施設のセキュリティ管理者にとって、合法的かつ低コストな状況認識手段です。
@@ -292,9 +292,9 @@ curl -fsSL https://github.com/fduflyer/DroneAware-Node-Releases/releases/latest/
 4. [kismetwireless/kismet — 無線検出フレームワーク](https://github.com/kismetwireless/kismet)
 5. [alphafox02/antsdr_dji_droneid — DJI OcuSync DroneID SDR デコード](https://github.com/alphafox02/antsdr_dji_droneid)
 6. [morrownr/8812au-20210629 — RTL8812AU Linux モニター / インジェクションドライバ](https://github.com/morrownr/8812au-20210629)
-7. [ALFA AWUS036ACH 製品ページ（Yupitek）](https://yupitek.com/ja/products/alfa/awus036ach/)
-8. [Yupitek お問い合わせ](https://www.yupitek.com/ja/contact/)
+7. [ALFA AWUS036ACH 製品ページ（Yopitek）](https://yupitek.com/ja/products/alfa/awus036ach/)
+8. [Yopitek お問い合わせ](https://www.yupitek.com/ja/contact/)
 
 ---
 
-*本記事は Yupitek テクニカルチームが作成しました。AWUS036ACH および関連ハードウェアは Yupitek より技術サポート付きでご購入いただけます（Yupitek は ALFA Network の台湾正規代理店です）。*
+*本記事は Yopitek テクニカルチームが作成しました。AWUS036ACH および関連ハードウェアは Yopitek より技術サポート付きでご購入いただけます（Yopitek は ALFA Network の台湾正規代理店です）。*

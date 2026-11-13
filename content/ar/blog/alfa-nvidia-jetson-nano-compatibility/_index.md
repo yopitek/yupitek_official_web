@@ -362,8 +362,8 @@ ip link show
 | صفحة NVIDIA JetPack SDK الرسمية | إصدارات JetPack وkernel | https://developer.nvidia.com/embedded/jetpack | ✅ تم التحقق | 2026-09-03 |
 | morrownr/8812au GitHub | محرك RTL8812AU Linux (مستدام لـ Jetson Nano) | https://github.com/morrownr/8812au-20210820 | ✅ تم التحقق | 2026-09-03 |
 | morrownr/8821cu GitHub | محرك RTL8811CU Linux | https://github.com/morrownr/8821cu-20210916 | ✅ تم التحقق | 2026-09-03 |
-| دليل Linux لـ ALFA Soft AP WiFi Hotspot (Yupitek) | إعداد نموذج AP لـ ALFA على Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ تم التحقق | 2026-09-03 |
-| ملخص منتجات شبكة ALFA (Yupitek) | مواصفات المنتجات الحالية لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
+| دليل Linux لـ ALFA Soft AP WiFi Hotspot (Yopitek) | إعداد نموذج AP لـ ALFA على Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ تم التحقق | 2026-09-03 |
+| ملخص منتجات شبكة ALFA (Yopitek) | مواصفات المنتجات الحالية لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | بيان رسمي من مالك المحرك: يُنصح بتجنب الرقائق rtl8852/32au (RTL8832BU) | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ تم التحقق | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko يتطلب kernel 5.19+ ليظهر في النواة (كلام مالك المحرك) | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ تم التحقق | 2026-09-03 |
 

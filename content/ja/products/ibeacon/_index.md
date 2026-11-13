@@ -1,6 +1,6 @@
 ---
-title: "Yupitek iBeacon シリーズ — BLE 5.0 ビーコン"
-description: "Yupitek プロフェッショナル BLE 5.0 iBeacon / Eddystone ビーコン：YPB01、YPB02、YPB03、YPB04、YPB05。屋内位置測位、勤怠管理、資産追跡に最適。"
+title: "Yopitek iBeacon シリーズ — BLE 5.0 ビーコン"
+description: "Yopitek プロフェッショナル BLE 5.0 iBeacon / Eddystone ビーコン：YPB01、YPB02、YPB03、YPB04、YPB05。屋内位置測位、勤怠管理、資産追跡に最適。"
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-Yupitek iBeacon 製品は、高性能な位置測位、人員追跡、商業広告配信向けに設計された新世代の Bluetooth® Low Energy (BLE 5.0) ビーコンデバイスです。Apple iBeacon™ および Google Eddystone™ (UID、URL、TLM) プロトコルの両方をサポートし、最大 6 スロットの同時マルチプロトコル配信に対応。BeaconSET+ アプリから簡単に設定できます。
+Yopitek iBeacon 製品は、高性能な位置測位、人員追跡、商業広告配信向けに設計された新世代の Bluetooth® Low Energy (BLE 5.0) ビーコンデバイスです。Apple iBeacon™ および Google Eddystone™ (UID、URL、TLM) プロトコルの両方をサポートし、最大 6 スロットの同時マルチプロトコル配信に対応。BeaconSET+ アプリから簡単に設定できます。
 
 ---
 

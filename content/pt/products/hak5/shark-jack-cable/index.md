@@ -6,6 +6,10 @@ description: "Shark Jack em formato de cabo Ethernet com interface serial USB UA
 featureimage: "/images/products/hak5/shark-jack-cable.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso de Uso Legal**: Shark Jack Cable é uma ferramenta profissional de pesquisa em segurança. Somente para testes de segurança e pesquisa autorizados. Destinada exclusivamente a profissionais de segurança com autorização por escrito válida.
+{{< /alert >}}
+
 ## Características do Produto
 
 ![Shark Jack Cable](/images/products/hak5/card/shark-jack-cable.png)
@@ -39,7 +43,7 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 
 | Recurso | Link |
 |---------|------|
-| 📖 Documentação oficial | [Ver online](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| 📖 Documentação oficial | [Ver online](https://documentation.hak5.org/shark-jack/getting-started/shark-jack-basics) |
 | ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/shark/cable) |
 
 {{< alert >}}

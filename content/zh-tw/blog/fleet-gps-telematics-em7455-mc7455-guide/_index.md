@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "fleet-gps-telematics-em7455-mc7455-guide"
 tags: ["Sierra Wireless", "EM7455", "MC7455", "GNSS", "GPS", "Telematics", "車隊管理", "LTE"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/zh-tw/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ faq:
 
 以前的硬體工程師很痛苦，要在一塊小小的板子上塞進 GPS 晶片跟 4G 模組，還要處理兩邊的電源跟天線干擾。但現在，只要選對蜂窩模組，一切都變得超簡單。這篇文章我們用 EM7455 跟 MC7455 的官方規格書，帶你看懂這兩顆模組的「隱藏版超能力」——GNSS 衛星定位。
 
-> 技術資料來源：Sierra Wireless 官方規格書（EM7455、MC7455）。本文由榆閤科技（Yupitek）整理。
+> 技術資料來源：Sierra Wireless 官方規格書（EM7455、MC7455）。本文由榆閤科技（Yopitek）整理。
 
 ---
 
@@ -86,6 +86,6 @@ faq:
 
 ## 採購資訊（Call To Action）
 
-正在開發車載終端，需要採購 EM7455 或 MC7455 嗎？對於天線配置或主板整合還有疑問嗎？Yupitek（榆閤科技）提供完整的硬體方案與第一線技術支援。
+正在開發車載終端，需要採購 EM7455 或 MC7455 嗎？對於天線配置或主板整合還有疑問嗎？Yopitek（榆閤科技）提供完整的硬體方案與第一線技術支援。
 歡迎來信：**sales@yupitek.com**
 看看產品：[Sierra Wireless 模組系列](https://yupitek.com/zh-tw/products/sierra/)

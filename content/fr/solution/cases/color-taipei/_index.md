@@ -1,6 +1,6 @@
 ---
 title: "Spectacle de Projection Architecturale Arc-en-Ciel sur la Mairie de Taipei"
-description: "Projection architecturale à grande échelle sur la façade de la Mairie de Taipei, combinant imagerie urbaine et thème arc-en-ciel — un projet d'intégration technique emblématique de Yupitek."
+description: "Projection architecturale à grande échelle sur la façade de la Mairie de Taipei, combinant imagerie urbaine et thème arc-en-ciel — un projet d'intégration technique emblématique de Yopitek."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Projection Architecturale", "Production Événementielle", "Taipei"]
 **Type** : Projection Architecturale (Building Mapping)
 **Envergure** : Spectacle de projection mapping extérieur grand format
 
-Le spectacle de projection architecturale sur la façade de la Mairie de Taipei est l'un des projets phares de Yupitek en matière de mapping architectural. Articulé autour d'un thème « Arc-en-Ciel », il a transformé le bâtiment de la Mairie en une toile visuelle dynamique. La fusion multi-projecteurs de précision a produit un spectacle d'art lumineux urbain saisissant.
+Le spectacle de projection architecturale sur la façade de la Mairie de Taipei est l'un des projets phares de Yopitek en matière de mapping architectural. Articulé autour d'un thème « Arc-en-Ciel », il a transformé le bâtiment de la Mairie en une toile visuelle dynamique. La fusion multi-projecteurs de précision a produit un spectacle d'art lumineux urbain saisissant.
 
 ## Défis Techniques
 

@@ -1,5 +1,5 @@
 ---
-title: "Guía completa para actualizar portátiles Dell / Lenovo con tarjetas 4G/5G: lista de modelos compatibles + guía de instalación | Yupitek"
+title: "Guía completa para actualizar portátiles Dell / Lenovo con tarjetas 4G/5G: lista de modelos compatibles + guía de instalación | Yopitek"
 description: "Guía completa para actualizar portátiles Dell / Lenovo con tarjetas 4G/5G: compara las diferencias de especificaciones entre EM7455 y EM7430 y le enseña a revisar la ranura M.2, las antenas WWAN y la lista blanca del BIOS. Descarga Cat 6 de 300 Mbps, con guía de instalación completa."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 slug: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 tags: ["Dell", "Lenovo", "4G", "5G", "EM7455", "EM7430", "WWAN", "M.2"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/es/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ Muchos amigos que tienen un Dell Latitude o un Lenovo ThinkPad quieren instalar 
 
 En este artículo utilizamos las hojas de especificaciones oficiales de Sierra Wireless para comparar el EM7455 y el EM7430, las dos tarjetas más usadas en estas actualizaciones, y le explicamos cómo instalarlas.
 
-> Fuente de datos de especificaciones: hojas de especificaciones oficiales de Sierra Wireless (EM7455 y EM7430). Artículo elaborado por Yupitek.
+> Fuente de datos de especificaciones: hojas de especificaciones oficiales de Sierra Wireless (EM7455 y EM7430). Artículo elaborado por Yopitek.
 
 ---
 
@@ -105,6 +105,6 @@ Actualizar la tarjeta de red de su portátil no es difícil; lo difícil es la �
 
 ## Información de compra (Llamada a la acción)
 
-¿Quiere adquirir tarjetas de la serie Sierra Wireless? ¿O no está seguro de si su equipo industrial las admite? Yupitek ofrece soluciones de hardware completas y soporte técnico.
+¿Quiere adquirir tarjetas de la serie Sierra Wireless? ¿O no está seguro de si su equipo industrial las admite? Yopitek ofrece soluciones de hardware completas y soporte técnico.
 Escríbanos: **sales@yupitek.com**
 Vea los productos: [Serie Sierra Wireless](https://yupitek.com/es/products/sierra/)

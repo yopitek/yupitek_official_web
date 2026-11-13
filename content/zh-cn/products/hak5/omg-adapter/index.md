@@ -6,6 +6,10 @@ description: "转接头形态的 O.MG 植入装置，可与现有 USB 线材结�
 featureimage: "/images/products/hak5/omg-adapter.png"
 ---
 
+{{< alert "warning" >}}
+**合法使用声明**：O.MG Adapter 为专业安全研究工具，仅限持有有效书面授权的安全专业人员使用。
+{{< /alert >}}
+
 ## 产品特色
 
 ![O.MG Adapter](/images/products/hak5/card/omg-adapter.png)
@@ -38,8 +42,7 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 
 | 资源 | 链接 |
 |------|------|
-| 📖 官方使用文件 | [在线查看](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/omg) |
+| ⬇️ 固件与工具下载 | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)

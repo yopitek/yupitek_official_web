@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/mellanox/ai-generated/hero/mellanox-hero-banner.png"
 ---
 
-NVIDIA Mellanox is the global benchmark for high-performance computing (HPC), AI data clusters, hyperscale cloud platforms, enterprise storage (NVMe-oF), and low-latency financial systems. Yupitek provides a complete retail catalog of high-speed Mellanox network cards, intelligent DPUs, active/passive cables, and high-density switches.
+NVIDIA Mellanox is the global benchmark for high-performance computing (HPC), AI data clusters, hyperscale cloud platforms, enterprise storage (NVMe-oF), and low-latency financial systems. Yopitek provides a complete retail catalog of high-speed Mellanox network cards, intelligent DPUs, active/passive cables, and high-density switches.
 
 ---
 

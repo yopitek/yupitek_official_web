@@ -250,4 +250,4 @@ ACM のゼロインストール体験は、ライブブート環境、クライ�
 1. aircrack-ngコミュニティ保守RTL8812AUドライバーリポジトリ — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
 2. LinuxカーネルメインラインMT76ドライバー（mt76x2u、カーネル4.19以降統合）— [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
 3. ALFA Network公式ウェブサイトと製品仕様 — [alfa.com.tw](https://www.alfa.com.tw)
-4. Yupitek — ALFA Network台湾認定販売代理店 — [yupitek.com](https://www.yupitek.com)
+4. Yopitek — ALFA Network台湾認定販売代理店 — [yupitek.com](https://www.yupitek.com)

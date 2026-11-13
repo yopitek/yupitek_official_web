@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "industrial-router-4g-5g-failover-guide"
 tags: ["Sierra Wireless", "EM9191", "4G", "5G", "Failover", "Industrial Router", "LTE", "5G SA", "M.2"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/en/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ In a factory, every minute of network downtime burns money. Machine data stops f
 
 In this article we walk through the official spec sheet (EM919X Product Technical Specification) and explain why the **EM9191** is the perfect choice for backup today and private 5G tomorrow.
 
-> Technical source: the Sierra Wireless official specification. Compiled by Yupitek.
+> Technical source: the Sierra Wireless official specification. Compiled by Yopitek.
 
 ---
 
@@ -91,6 +91,6 @@ With its strong LTE Cat 20 and 5G SA support, it perfectly covers "4G backup tod
 
 ## Purchasing Information (Call To Action)
 
-Want to integrate the EM9191 into your industrial router? Yupitek offers complete hardware solutions and technical support to solve the toughest cooling and antenna challenges.
+Want to integrate the EM9191 into your industrial router? Yopitek offers complete hardware solutions and technical support to solve the toughest cooling and antenna challenges.
 Contact us: **sales@yupitek.com**
 Browse the lineup: [Sierra Wireless Modules](https://yupitek.com/en/products/sierra/)

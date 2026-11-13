@@ -1,6 +1,6 @@
 ---
 title: "Sierra EM7565 徹底解説：CBRS プライベートネットワークと高速アップリンク、企業専用ネットワークの選び方"
-description: "EM7565 徹底解説：Cat 12 ダウンリンク 600 Mbps、Cat 13 アップリンク 150 Mbps、Qualcomm MDM9250、M.2 パッケージ、3アンテナ MIMO、マルチコンステレーション GNSS。企業 CBRS プライベートネットワークと産業用ルーター選定に必読。周波数帯・温度・認証の完全比較表付き。Yupitek（榆閤科技）が技術資料を整理。"
+description: "EM7565 徹底解説：Cat 12 ダウンリンク 600 Mbps、Cat 13 アップリンク 150 Mbps、Qualcomm MDM9250、M.2 パッケージ、3アンテナ MIMO、マルチコンステレーション GNSS。企業 CBRS プライベートネットワークと産業用ルーター選定に必読。周波数帯・温度・認証の完全比較表付き。Yopitek（榆閤科技）が技術資料を整理。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -26,7 +26,7 @@ faq:
 
 この記事ではマーケティング用語は一切使いません。唯一の基準として、Sierra Wireless 公式仕様書『AirPrime EM7565 Product Technical Specification』（Doc 41110788, Rev 8, 2018年10月）を取り上げ、チップセット、速度、周波数帯、アンテナ、温度、認証を項目ごとに照合します。仕様書に記載された「規制承認待ち」という但し書きについても正直にお伝えし、システムインテグレーションやネットワーク設計に携わる方の調達判断をお手伝いします。
 
-> 製品ページ：[EM7565 — Yupitek](/ja/products/sierra/em7565/) | 公式スペックシート：[AirPrime EM7565 Product Technical Specification](https://yupitek.com/docs/sierra/EM7565_spec.pdf)
+> 製品ページ：[EM7565 — Yopitek](/ja/products/sierra/em7565/) | 公式スペックシート：[AirPrime EM7565 Product Technical Specification](https://yupitek.com/docs/sierra/EM7565_spec.pdf)
 
 ---
 
@@ -177,7 +177,7 @@ EM7565 は 3.135V から 4.4V（通常 3.3V）で動作します。注意すべ�
 
 ## プロジェクトのご相談はこちら
 
-この本格的な解説は、Yupitek（榆閤科技）のエンジニアチームがまとめました。研究室向けの 4G モジュール選定や、企業プロジェクトでの EM7565 の大量見積もり、アンテナ設計サポートなど、お気軽にご相談ください。
+この本格的な解説は、Yopitek（榆閤科技）のエンジニアチームがまとめました。研究室向けの 4G モジュール選定や、企業プロジェクトでの EM7565 の大量見積もり、アンテナ設計サポートなど、お気軽にご相談ください。
 
 - **EM7565 製品ページ**：[https://yupitek.com/ja/products/sierra/em7565/](/ja/products/sierra/em7565/)
 - **Sierra の全型番を見る**：[https://yupitek.com/ja/products/sierra/](/ja/products/sierra/)

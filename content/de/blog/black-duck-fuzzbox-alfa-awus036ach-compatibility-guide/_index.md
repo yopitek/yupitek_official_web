@@ -30,7 +30,7 @@ Die ALFA AWUS036ACH ist die einzige bevorzugte Wahl für das Black Duck FuzzBox 
 
 Um dieses Problem zu lösen, setzen Sicherheitsteams die **Black Duck FuzzBox** (ehemals Synopsys Defensics FuzzBox) ein, eine spezialisierte Software- und Hardware-Ausführungsumgebung. Zur Durchführung von Tests muss das FuzzBox OS mit einem kompatiblen, leistungsstarken USB-WLAN-Adapter gekoppelt werden, der einen stabilen Monitor-Modus und eine zuverlässige Raw-Packet-Injection unterstützt. 
 
-In diesem Kompatibilitätsleitfaden analysieren wir das aktuelle Produktportfolio von ALFA Network bei Yupitek, erklären, warum neuere Wi-Fi 6/6E-Adapter unter FuzzBox fehlschlagen, und bieten eine Schritt-für-Schritt-Anleitung für die Branchenstandard-Wahl: den **ALFA AWUS036ACH** (RTL8812AU).
+In diesem Kompatibilitätsleitfaden analysieren wir das aktuelle Produktportfolio von ALFA Network bei Yopitek, erklären, warum neuere Wi-Fi 6/6E-Adapter unter FuzzBox fehlschlagen, und bieten eine Schritt-für-Schritt-Anleitung für die Branchenstandard-Wahl: den **ALFA AWUS036ACH** (RTL8812AU).
 
 ---
 
@@ -73,7 +73,7 @@ FuzzBox OS wird als Headless-Linux-Container-Plattform betrieben. Die Software-S
 
 ## 3. ALFA-Adapter-Analyse & GitHub-Treiber-Speicherort
 
-Die Auswahl des richtigen Adapters aus den aktuellen, aktiven Modellen ist entscheidend. Vergleichen wir das aktive ALFA Network-Sortiment von Yupitek mit der Kompatibilitätsmatrix des FuzzBox OS.
+Die Auswahl des richtigen Adapters aus den aktuellen, aktiven Modellen ist entscheidend. Vergleichen wir das aktive ALFA Network-Sortiment von Yopitek mit der Kompatibilitätsmatrix des FuzzBox OS.
 
 ### 3.1 Genaue Bewertung der aktuellen ALFA-Modelle
 ALFA Network stellt Adapter mit verschiedenen Chipsätzen her. Nur bestimmte Chipsätze unterstützen die Raw-Injection-Engine der FuzzBox.
@@ -233,8 +233,8 @@ Für Sicherheitsprüflabore, die Black Duck FuzzBox-Systeme einsetzen, empfehlen
 *   **Signaloptimierung (Dringend empfohlen):** Fügen Sie die gerichteten Dualband-Panel-Antennen **ALFA APA-M25** oder **APA-M25-6E** hinzu. Das Ersetzen der standardmäßigen omnidirektionalen Antennen durch diese High-Gain-Panel-Antennen fokussiert das Funksignal direkt auf das System Under Test (SUT), wodurch Umgebungsstörungen reduziert und die Erfolgsraten der Injektionen verbessert werden.
 
 ### 8.2 Anfragen und Bestellungen
-Yupitek ist ein autorisierter Distributor von ALFA Network-Produkten, der lokalen Support und Großbestellungen anbietet. Um Produktangebote anzufordern, Großbestellungen aufzugeben oder unser technisches Support-Team zu konsultieren:
-*   Besuchen Sie die [Yupitek Kontaktseite](/de/contact/)
+Yopitek ist ein autorisierter Distributor von ALFA Network-Produkten, der lokalen Support und Großbestellungen anbietet. Um Produktangebote anzufordern, Großbestellungen aufzugeben oder unser technisches Support-Team zu konsultieren:
+*   Besuchen Sie die [Yopitek Kontaktseite](/de/contact/)
 *   Oder schreiben Sie uns direkt eine E-Mail an **sales@yupitek.com**
 
 Unser Engineering-Team unterstützt Sie beim Erwerb der genauen WLAN-Hardwarekonfigurationen, die zur Unterstützung Ihrer Black Duck FuzzBox-Protokoll-Fuzzing-Workflows erforderlich sind.

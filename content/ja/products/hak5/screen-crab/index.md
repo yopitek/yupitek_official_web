@@ -2,15 +2,19 @@
 title: "Screen Crab"
 date: 2025-01-01
 draft: false
-description: "ペネトレーションテスト用の世界初HDMI中間者映像キャプチャデバイスです。ゼロレイテンシーの透過インストールとMPEG-4動画録画をサポートしています。"
+description: "ペネトレーションテスト用のステルス型HDMI中間者映像キャプチャデバイスです。ゼロレイテンシーの透過インストールとMPEG-4動画録画をサポートしています。"
 featureimage: "/images/products/hak5/screen-crab.png"
 ---
+
+{{< alert "warning" >}}
+**法的使用に関する免責事項**: Screen Crabは専門的なセキュリティ研究ツールです。許可されたセキュリティテストおよび研究目的でのみ使用してください。有効な書面による許可を得たセキュリティ専門家のみを対象としています。
+{{< /alert >}}
 
 ## 製品特長
 
 ![Screen Crab](/images/products/hak5/card/screen-crab.png)
 
-- **世界初のHDMI MitMデバイス**：ペネトレーションテスト専用に設計されたHDMI中間者映像キャプチャツール
+- **ステルス型HDMI MitM映像インプラント**：ペネトレーションテスト専用に設計されたHDMI中間者映像キャプチャツール
 - **ゼロレイテンシー透過インストール**：HDMIシグナルパスにインライン設置。ゼロレイテンシー、ゼロ中断
 - **複数の録画モード**：定期スクリーンショットまたは全動態動画録画（MPEG-4、2 / 4 / 16 Mbps）
 - **すぐに使える**：スクリーンショットはMicroSDに自動保存。設定不要。config.txtで機能を制御
@@ -25,7 +29,6 @@ featureimage: "/images/products/hak5/screen-crab.png"
 | インターフェース | HDMI（IN / OUT）、USB（電源）、MicroSD |
 | 規格 | HDMI 1.4 / DVI 1.0；802.11 b/g/n |
 | WiFi周波数帯 | 2.4 GHz（2.412〜2.4835 GHz） |
-| 対応解像度 | 1920×1080以下のほとんどの16:9フォーマット |
 | サイズ | 105 × 51 × 21 mm |
 | 電源 | 5W（USB 5V 1A） |
 | 動作温度 | 35°C〜45°C |
@@ -44,7 +47,7 @@ featureimage: "/images/products/hak5/screen-crab.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/screen-crab/screen-crab-by-hak5/) |
+| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/screen-crab/master) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/crab) |
 
 {{< alert >}}

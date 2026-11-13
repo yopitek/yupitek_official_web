@@ -190,7 +190,7 @@ document.getElementById('btnWrite').addEventListener('click', async () => {
     const writer = new NDEFReader();
 
     // 方法 1：テキストを直接書き込む（自動的に text レコードに）
-    // await writer.write('Yupitek Web NFC 測試');
+    // await writer.write('Yopitek Web NFC 測試');
 
     // 方法 2：URL レコードを書き込む（名刺・誘導に最適）
     await writer.write({

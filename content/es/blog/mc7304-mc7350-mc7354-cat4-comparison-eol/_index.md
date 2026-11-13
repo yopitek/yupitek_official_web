@@ -115,7 +115,7 @@ El trío MC7304, MC7350 y MC7354 es en realidad fácil de distinguir: **elija el
 
 ## Información de compra (Llamada a la acción)
 
-¿Necesita estos módulos o no sabe cómo elegir? Yupitek es un socio profesional de integración de hardware que puede ayudarle a confirmar bandas, ranuras y preguntas sobre almacenamiento.
+¿Necesita estos módulos o no sabe cómo elegir? Yopitek es un socio profesional de integración de hardware que puede ayudarle a confirmar bandas, ranuras y preguntas sobre almacenamiento.
 
 - **Páginas de producto**: [MC7304](/es/products/sierra/mc7304/) | [MC7350](/es/products/sierra/mc7350/) | [MC7354](/es/products/sierra/mc7354/)
 - **Correo electrónico**: sales@yupitek.com

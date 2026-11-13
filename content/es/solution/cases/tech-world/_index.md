@@ -13,7 +13,7 @@ tags: ["Pabellón Temático", "Exhibición Científica", "Proyección Inmersiva"
 **Tipo**: Proyección inmersiva en pabellón tecnológico temático
 **Temática**: Ciencias de la Vida × Experiencia Tecnológica
 
-El Tech World Centro de Vida es un pabellón de experiencias que combina tecnología y ciencias de la vida. Yupitek fue responsable de la integración del sistema de proyección inmersiva, utilizando grandes proyecciones e instalaciones interactivas para que los visitantes exploren los misterios de la vida de una manera totalmente nueva.
+El Tech World Centro de Vida es un pabellón de experiencias que combina tecnología y ciencias de la vida. Yopitek fue responsable de la integración del sistema de proyección inmersiva, utilizando grandes proyecciones e instalaciones interactivas para que los visitantes exploren los misterios de la vida de una manera totalmente nueva.
 
 ## Características de la Exhibición
 

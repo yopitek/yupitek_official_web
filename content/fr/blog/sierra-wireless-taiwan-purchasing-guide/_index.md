@@ -32,7 +32,7 @@ Lors de l'achat de modules cellulaires Sierra Wireless, la plus grande peur est 
 
 **En bref : acheter un module Sierra ne revient pas à comparer les prix les plus bas, mais à savoir qui peut vous sauver quand quelque chose tourne mal. Apprenez d'abord à lire le code-barres IMEI et l'ID FCC sur le module pour éviter les cartes d'occasion remontées. Trouvez ensuite un fournisseur qui connaît les bandes SKU, sait confirmer la version du firmware et offre une garantie. Reprenez la « liste standard de demande de devis » de cet article, et vous ne gaspillerez pas un centime.**
 
-> Sources des spécifications et des signes : spécifications officielles Sierra Wireless. Article compilé par Yupitek (Yughe Technology).
+> Sources des spécifications et des signes : spécifications officielles Sierra Wireless. Article compilé par Yopitek (Yughe Technology).
 
 ---
 
@@ -62,7 +62,7 @@ Pour un achat en volume de neuf chez un fournisseur, l'emballage standard est : 
 
 | Canal | État de la marchandise | Technique et garantie | Pour qui ? | Risques possibles |
 |---|---|---|---|---|
-| **Fournisseur professionnel** (par ex. Yupitek) | Neuf authentique, SKU vérifiable | ✅ Vérifie les bandes et la version du firmware, dispose d'un interlocuteur garantie | Projets d'entreprise, séries industrielles, approvisionnement long terme | Le processus de devis demande un peu de temps |
+| **Fournisseur professionnel** (par ex. Yopitek) | Neuf authentique, SKU vérifiable | ✅ Vérifie les bandes et la version du firmware, dispose d'un interlocuteur garantie | Projets d'entreprise, séries industrielles, approvisionnement long terme | Le processus de devis demande un peu de temps |
 | **Sites d'enchères / particuliers** | Occasion démontée, assemblages | ❌ Pas de retour après vente, débrouillez-vous | Makers individuels qui veulent économiser | Version verrouillée sur un laptop précis, firmware trop ancien, pas de connexion |
 
 > **La tragédie la plus courante** : beaucoup de chefs achètent de l'occasion sur les enchères pour réduire le prix unitaire, puis découvrent que c'est une « version pour bandes nord-américaines (SKU incorrecte) » qui ne capte aucun signal à Taïwan, ou une version verrouillée par un fabricant de laptops. Résultat : l'ingénieur passe une semaine à déboguer, et l'argent économisé part en heures supplémentaires.
@@ -100,7 +100,7 @@ Apprenez à lire les étiquettes (format du code-barres IMEI, FSN) et à confron
 
 ## Informations d'achat (Call to Action)
 
-Vous cherchez une source fiable de modules 4G/5G pour les routeurs industriels et les projets IoT de votre entreprise ? Yupitek (Yughe Technology) est fournisseur de produits Sierra Wireless et de solutions sans fil industrielles. Nous vous proposons :
+Vous cherchez une source fiable de modules 4G/5G pour les routeurs industriels et les projets IoT de votre entreprise ? Yopitek (Yughe Technology) est fournisseur de produits Sierra Wireless et de solutions sans fil industrielles. Nous vous proposons :
 - Des conseils sur le choix du modèle et la combinaison exacte de bandes SKU
 - La confirmation et la mise à jour de la version du firmware à l'expédition
 - Un support technique complet et une garantie pour l'intégration matérielle

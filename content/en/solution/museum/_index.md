@@ -1,6 +1,6 @@
 ---
 title: "Museum Exhibition"
-description: "Yupitek museum and permanent exhibition projection solutions: cultural exhibition multimedia integration, Immersive historical recreation, and interactive guide system planning."
+description: "Yopitek museum and permanent exhibition projection solutions: cultural exhibition multimedia integration, Immersive historical recreation, and interactive guide system planning."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Museum Multimedia Exhibitions
 
-Museums and cultural venues are a core service area for Yupitek's IT Application division. We deeply understand the unique requirements of exhibition spaces: long-term stable operation, low maintenance frequency, precise content management, and visual presentation aligned with the exhibition theme.
+Museums and cultural venues are a core service area for Yopitek's IT Application division. We deeply understand the unique requirements of exhibition spaces: long-term stable operation, low maintenance frequency, precise content management, and visual presentation aligned with the exhibition theme.
 
 ## Services
 

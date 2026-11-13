@@ -1,6 +1,6 @@
 ---
 title: "HAK5 Bash Bunny Mark II — Plateforme de Recherche d'Attaques USB Multifonction"
-description: "HAK5 Bash Bunny Mark II, une plateforme de recherche d'attaques USB multifonction prenant en charge l'injection HID, l'émulation Ethernet et la simulation de périphérique de stockage avec le langage BashBunny."
+description: "HAK5 Bash Bunny Mark II, une plateforme de recherche d'attaques USB multifonction prenant en charge l'injection HID, l'émulation Ethernet et la simulation de périphérique de stockage avec DuckyScript."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -14,7 +14,7 @@ tags: ["HID Injection", "USB Attack Platform", "Ethernet", "Penetration Testing"
 
 ## Présentation du Produit
 
-Bash Bunny Mark II est la plateforme de recherche d'attaques USB la plus complète, capable d'émuler simultanément plusieurs types de périphériques USB : clavier (HID), adaptateur Ethernet, stockage de masse USB, ou toute combinaison de ces modes. Il prend en charge le langage de script BashBunny pour l'exécution de tâches de collecte d'identifiants, de partage réseau, d'injection de frappes et d'autres tâches de Tests d'Intrusion autorisés.
+Bash Bunny Mark II est la plateforme de recherche d'attaques USB la plus complète, capable d'émuler simultanément plusieurs types de périphériques USB : clavier (HID), adaptateur Ethernet, stockage de masse USB, ou toute combinaison de ces modes. Il prend en charge DuckyScript pour l'exécution de tâches de collecte d'identifiants, de partage réseau, d'injection de frappes et d'autres tâches de Tests d'Intrusion autorisés.
 
 ## Modes d'Attaque Pris en Charge
 
@@ -23,6 +23,7 @@ Bash Bunny Mark II est la plateforme de recherche d'attaques USB la plus complè
 | HID | Émulation clavier, exécute des payloads DuckyScript |
 | RNDIS/ECM | Émulation Ethernet, tests man-in-the-middle |
 | STORAGE | Émulation de périphérique de stockage de masse USB |
+| SERIAL | Console série (ACM) |
 | Mode Combo | Plusieurs types de périphériques activés simultanément |
 
 ## Spécifications Techniques
@@ -30,7 +31,7 @@ Bash Bunny Mark II est la plateforme de recherche d'attaques USB la plus complè
 | Élément | Spécification |
 |---------|---------------|
 | Processeur | ARM quad-core |
-| Stockage | eMMC intégré |
+| Stockage | SSD NAND 8 Go |
 | Interface | USB-A |
 | Système d'exploitation | Debian Linux |
 

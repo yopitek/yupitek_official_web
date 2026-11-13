@@ -1,6 +1,6 @@
 ---
 title: "Estação de Rádio de Banqiao — Projeção Imersiva 360°"
-description: "Antiga estação de rádio da era colonial japonesa em Taiwan, com projeção imersiva 360° recriando cenas históricas — exposição permanente integrada pela Yupitek."
+description: "Antiga estação de rádio da era colonial japonesa em Taiwan, com projeção imersiva 360° recriando cenas históricas — exposição permanente integrada pela Yopitek."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Projeção Imersiva", "Projeção 360°", "Museu", "Nova Taipei"]
 **Tipo**: Exposição permanente com projeção imersiva 360°
 **Destaque**: Recriação da história e cultura da era colonial japonesa
 
-A Estação de Rádio de Banqiao foi construída durante o período colonial japonês e é um importante patrimônio histórico da radiodifusão em Taiwan. Com o compromisso de preservar a integridade do patrimônio histórico, a Yupitek implementou tecnologia de projeção imersiva 360°, permitindo que os visitantes se imerjam em cenas históricas e vivenciem a atmosfera da cultura radiofônica taiwanesa das décadas de 1930–1940.
+A Estação de Rádio de Banqiao foi construída durante o período colonial japonês e é um importante patrimônio histórico da radiodifusão em Taiwan. Com o compromisso de preservar a integridade do patrimônio histórico, a Yopitek implementou tecnologia de projeção imersiva 360°, permitindo que os visitantes se imerjam em cenas históricas e vivenciem a atmosfera da cultura radiofônica taiwanesa das décadas de 1930–1940.
 
 ## Especificações Técnicas
 

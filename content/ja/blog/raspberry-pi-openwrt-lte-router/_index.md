@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "raspberry-pi-openwrt-lte-router"
 tags: ["LTE", "Sierra Wireless", "OpenWrt"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ja/products/sierra/"
 faq:
@@ -132,8 +132,8 @@ Raspberry Pi と OpenWrt で Sierra モジュールを駆動する手順は、�
 
 ## 購入情報（Call To Action）
 
-EM7455、EM7565、EM7511 などのモジュールや、対応する M.2 変換ボード・アンテナをお求めの場合は、Yupitek（榆閤科技）がハードウェアソリューションと技術相談を提供しています。
+EM7455、EM7565、EM7511 などのモジュールや、対応する M.2 変換ボード・アンテナをお求めの場合は、Yopitek（榆閤科技）がハードウェアソリューションと技術相談を提供しています。
 
 お問い合わせ：**sales@yupitek.com**
 
-製品ページ：[Yupitek Sierra Wireless シリーズ](https://yupitek.com/ja/products/sierra/)
+製品ページ：[Yopitek Sierra Wireless シリーズ](https://yupitek.com/ja/products/sierra/)

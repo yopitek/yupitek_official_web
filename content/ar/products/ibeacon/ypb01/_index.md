@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "CR2477", "Waterproof"]
 ---
 
 ## نظرة عامة على المنتج
@@ -67,7 +67,7 @@ tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof"]
 ## معرض صور المنتج
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb01.png" alt="Yupitek YPB01" />
+  <img src="/images/products/ibeacon/ypb01.png" alt="Yopitek YPB01" />
 {{< /gallery >}}
 
 ---

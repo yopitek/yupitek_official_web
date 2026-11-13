@@ -18,7 +18,7 @@ faq:
   - question: "Suis-je obligé d'utiliser l'ALFA AWUS036ACH pour wfb-ng ?"
     answer: "Tout adaptateur basé sur RTL8812AU peut théoriquement fonctionner, mais l'AWUS036ACH est le matériel officiellement testé par le projet wfb-ng. Son support pilote est le plus stable, surtout pour les scénarios longue distance où la conception haute puissance d'ALFA et ses antennes détachables offrent un avantage certain."
 ---
-> Auteur : Équipe technique Yupitek (distributeur officiel ALFA Network, Taïwan)
+> Auteur : Équipe technique Yopitek (distributeur officiel ALFA Network, Taïwan)
 > Public cible : Passionnés de drones, makers, chercheurs en sécurité, développeurs de drones agricoles et d'inspection
 > Difficulté : ★★★☆☆ (connaissances de base Linux et contrôleur de vol requises)
 
@@ -431,4 +431,4 @@ Si c'est la première fois que tu découvres la technologie des liaisons drone, 
 
 ---
 
-*Cet article a été rédigé par l'équipe technique Yupitek (distributeur officiel ALFA Network, Taïwan), sur la base de la documentation officielle de wfb-ng et de l'expérience pratique. Avant de construire ta liaison, vérifie la réglementation radio locale et ajuste la puissance d'émission et les fréquences en conséquence.*
+*Cet article a été rédigé par l'équipe technique Yopitek (distributeur officiel ALFA Network, Taïwan), sur la base de la documentation officielle de wfb-ng et de l'expérience pratique. Avant de construire ta liaison, vérifie la réglementation radio locale et ajuste la puissance d'émission et les fréquences en conséquence.*

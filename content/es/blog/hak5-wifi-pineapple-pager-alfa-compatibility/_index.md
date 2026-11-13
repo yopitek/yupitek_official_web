@@ -207,7 +207,7 @@ La integración de una tarjeta inalámbrica de ALFA Network con el HAK5 WiFi Pin
 - **Para despliegues rápidos y sin complicaciones**: Adquiera el [ALFA AWUS036ACM](https://yupitek.com/es/products/alfa/awus036acm) por la estabilidad de su controlador MediaTek bajo OpenWrt Kernel 6.6 y su facilidad de instalación.
 - **Estabilidad de energía**: Asegúrese siempre de contar con un **Hub USB con alimentación externa** para garantizar la salida de señal óptima de las tarjetas inalámbricas de alta potencia y evitar desconexiones inesperadas.
 
-Si desea realizar consultas técnicas adicionales, cotizaciones de hardware o requiere compilaciones personalizadas a través del SDK de OpenWrt, no dude en ponerse en contacto con el **Equipo de Soporte Técnico de Yupitek**:
+Si desea realizar consultas técnicas adicionales, cotizaciones de hardware o requiere compilaciones personalizadas a través del SDK de OpenWrt, no dude en ponerse en contacto con el **Equipo de Soporte Técnico de Yopitek**:
 
 - 🌐 Sitio web oficial: [www.yupitek.com](https://www.yupitek.com)
 - 📧 Correo de soporte: [sales@yupitek.com](mailto:sales@yupitek.com)

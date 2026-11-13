@@ -18,7 +18,7 @@ faq:
   - question: "wfb-ng 一定要用 ALFA AWUS036ACH 嗎？"
     answer: "任何 RTL8812AU 晶片網路卡理論上都可用，但 AWUS036ACH 是 wfb-ng 專案官方實測的硬體，驅動支援最穩定。尤其在高功率、長距離場景下，ALFA 的功率設計與可拆式天線優勢明顯。"
 ---
-> 作者：榆閤科技 Yupitek（ALFA Network 台灣授權代理商）技術團隊
+> 作者：榆閤科技 Yopitek（ALFA Network 台灣授權代理商）技術團隊
 > 適用對象：無人機同好、Maker、資安研究員、農噴／巡檢機開發者
 > 難度：★★★☆☆（需基本 Linux 與飛控概念）
 
@@ -452,4 +452,4 @@ journalctl -xu wifibroadcast@gs
 
 ---
 
-*本文由榆閤科技 Yupitek（ALFA Network 台灣授權代理商）技術團隊撰寫，基於 wfb-ng 官方文件與實作經驗整理。實作前請務必確認所在地區無線電法規，並依規範調整發射功率與頻段。*
+*本文由榆閤科技 Yopitek（ALFA Network 台灣授權代理商）技術團隊撰寫，基於 wfb-ng 官方文件與實作經驗整理。實作前請務必確認所在地區無線電法規，並依規範調整發射功率與頻段。*

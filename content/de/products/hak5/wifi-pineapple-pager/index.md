@@ -20,10 +20,10 @@ faq:
 - **Hak5 20. Jubiläums-Flaggschiff**: 8. Generation PineAP-Engine
 - **Vollständig eigenständiger Betrieb**: Kein externer Computer erforderlich — eigenständiges Handheld-Linux-WLAN-Prüfgerät
 - **Tri-Band-WLAN + Bluetooth**: Unterstützt 2,4 GHz / 5 GHz / 6 GHz (802.11ax) und Bluetooth 5.2 / BLE 4.2
-- **Payload-System**: Unterstützt von DuckyScript™ + Bash + Python
-- **Farb-Retina-Display**: Klar sichtbar in Innen- und Außenbereichen
+- **Payload-System**: Unterstützt von DuckyScript™ + Bash
+- **2.4"-Farbdisplay (480×222, 221 PPI)**: Klar sichtbar in Innen- und Außenbereichen
 - **Multi-Sensor-Benachrichtigungen**: Eingebauter Lautsprecher (programmierbarer Ton) und Vibrationsmotor (lautlose Benachrichtigungen)
-- **Programmierbare Tasten**: 4 RGB-Tasten (DPAD + A/B-Steuerung)
+- **Programmierbare Tasten**: Programmierbares 4-Wege-D-Pad mit RGB-LED sowie A/B-Tasten
 - **Echtzeit-Alert-Payload**: Automatisches Auslösen basierend auf erkannter WLAN-Aktivität
 - **Modulare Erweiterung**: Vollständiger Root-Zugriff auf Linux, unterstützt GPS, zusätzliche Funkmodule und andere Hardware-Module
 
@@ -36,7 +36,7 @@ faq:
 | Bluetooth | Bluetooth 5.2 + BLE 4.2 |
 | Arbeitsspeicher | 256 MB DDR2 RAM + 128 MB SPI Flash |
 | Speicher | 4 GB eMMC |
-| Akku | 2000 mAh LiPo (mit BMS und LED-Ladeanzeige) |
+| Akku | 2000 mAh LiPo (mit BMS und LED-Ladeanzeige); ca. 4 Stunden pro Ladung (Hak5-Schätzung) |
 | Laden / Daten | USB-C (integrierte Ethernet-Schnittstelle) |
 | Erweiterung | USB 2.0 (für Hardware-Modul-Mods) |
 | Anzeigen | 4 × RGB LED |
@@ -48,7 +48,6 @@ faq:
 - Eigenständige WLAN-Penetrationstests im Feld ohne angeschlossenen Computer
 - Red-Team-Einsätze (am Gürtel befestigt, vollständig kabellos)
 - Gleichzeitige Tri-Band-WLAN- und Bluetooth-Prüfung
-- WPA3-Enterprise-Angriffstests
 - DuckyScript-gesteuerte automatisierte Payload-Aufgaben
 - Vor-Ort-OSINT, Handshake-Erfassung und Deauthentifizierungsangriffe
 

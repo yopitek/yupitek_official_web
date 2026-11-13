@@ -3,6 +3,8 @@ title: "ACS ACR1252U — Leitor NFC USB III (Certificado NFC Forum)"
 description: "ACS ACR1252U, Leitor NFC USB certificado pelo NFC Forum, com modos leitor/gravador, emulação de cartão e peer-to-peer, ideal para desenvolvimento de aplicações NFC e implantações empresariais."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1252U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
@@ -35,8 +37,10 @@ O ACR1252U é um leitor conectado ao PC certificado pelo NFC Forum, baseado em t
 | Velocidade Leitura/Gravação SAM | 9,6 Kbps – 215 Kbps |
 | LED | 1 bicolor Vermelho/Verde (controlável pelo usuário) |
 | Buzzer | Monotônico (controlável pelo usuário) |
-| Conformidade | EN/IEC 60950, ISO 18092, ISO 14443, ISO 7816, PC/SC, CCID, NFC Forum, FeliCa Performance, CE, FCC, RoHS 2, REACH |
-| Certificações Adicionais | J-LIS, VCCI, MIC (Japão), KC (Coreia), Microsoft WHQL |
+| Temperatura de Operação | 0°C – 60°C, 90% UR (sem condensação) |
+| MTBF | 500,000 horas |
+| Conformidade | IEC/EN 62368, ISO 18092, ISO 14443, ISO 7816, PC/SC, CCID, NFC Forum, CE, UKCA, FCC, RoHS 2, REACH, WEEE |
+| Certificações Adicionais | J-LIS, VCCI, TELEC (Japão), KC (Coreia), BIS, Microsoft WHQL |
 
 ## Recursos Principais
 
@@ -66,8 +70,7 @@ O ACR1252U é um leitor conectado ao PC certificado pelo NFC Forum, baseado em t
 - Windows® (múltiplas versões, incluindo Windows 10 e edições Server)
 - Linux®
 - macOS®
-- Solaris
-- Android™ 3.1 e versões posteriores
+- Android™
 
 
 ## 📄 Ficha Técnica

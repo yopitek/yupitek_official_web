@@ -1,6 +1,6 @@
 ---
 title: "Fusão de Projetores Sem Fio — Wireless Blending"
-description: "Soluções Yupitek de fusão multi-projetor sem fio: elimine a bagunça de cabos em eventos, simplifique a instalação para empresas de locação e obtenha flexibilidade total no posicionamento dos projetores."
+description: "Soluções Yopitek de fusão multi-projetor sem fio: elimine a bagunça de cabos em eventos, simplifique a instalação para empresas de locação e obtenha flexibilidade total no posicionamento dos projetores."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 Configurações tradicionais de multi-projetor com edge blending dependem de longas passagens de cabos — HDMI, DisplayPort ou SDI — entre a fonte de sinal e os projetores. Em eventos temporários, salas de reunião flexíveis e instalações em locais históricos onde a passagem de cabos é impraticável, o cabeamento torna a instalação lenta, cara e esteticamente indesejável.
 
-A solução de **Wireless Blending** da Yupitek permite transmitir sinais de vídeo de alta qualidade sem fio entre múltiplos projetores, mantendo a sincronização necessária para o edge blending preciso. O resultado: instalações mais rápidas, espaços mais limpos e maior flexibilidade de posicionamento.
+A solução de **Wireless Blending** da Yopitek permite transmitir sinais de vídeo de alta qualidade sem fio entre múltiplos projetores, mantendo a sincronização necessária para o edge blending preciso. O resultado: instalações mais rápidas, espaços mais limpos e maior flexibilidade de posicionamento.
 
 ## Benefícios da Solução Sem Fio
 
@@ -34,7 +34,7 @@ A solução de **Wireless Blending** da Yupitek permite transmitir sinais de ví
 
 O sistema de wireless blending utiliza transmissores e receptores de vídeo sem fio de baixa latência (tipicamente abaixo de 1 ms de latência de glass-to-glass), operando em frequências dedicadas para evitar interferências. O sinal é distribuído do servidor de mídia para cada projetor de forma sincronizada, permitindo que o software de edge blending funcione normalmente como em uma configuração cabeada convencional.
 
-A Yupitek integra soluções de wireless video transmission com sistemas de edge blending líderes do mercado, garantindo compatibilidade e estabilidade operacional.
+A Yopitek integra soluções de wireless video transmission com sistemas de edge blending líderes do mercado, garantindo compatibilidade e estabilidade operacional.
 
 ## Casos de Uso
 

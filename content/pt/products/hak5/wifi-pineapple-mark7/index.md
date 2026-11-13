@@ -6,6 +6,10 @@ description: "Plataforma padrão da indústria para testes de penetração WiFi 
 featureimage: "/images/products/hak5/wifi-pineapple.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso de Uso Legal**: WiFi Pineapple é uma ferramenta profissional de pesquisa em segurança. Somente para testes de segurança e pesquisa autorizados. Destinada exclusivamente a profissionais de segurança com autorização por escrito válida, pessoal autorizado de testes de penetração e instituições de ensino. O acesso não autorizado a redes sem fio de terceiros é ilegal.
+{{< /alert >}}
+
 ## Características do Produto
 
 ![WiFi Pineapple Mark VII](/images/products/hak5/card/wifi-pineapple-mark7.png)
@@ -17,21 +21,18 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 - **Suporte Cloud C²**: Comando e controle remoto
 - **Simulação de AP fraudulento**: Capaz de simular APs abertos, WPA-PSK e Enterprise (Rogue AP)
 - **Ataques WPA-Enterprise**: Suporta captura automática de Handshake
-- **Ecossistema de módulos**: Sistema de módulos compatível com módulo externo MK7AC 802.11ac 5GHz
+- **Ecossistema de módulos**: Sistema de módulos compatível com módulo externo MK7AC
 
 ## Especificações Principais
 
 | Especificação | Detalhes |
 |---------------|----------|
 | CPU | SoC MIPS de rede single-core |
-| Sem fio | 2.4 GHz 802.11 b/g/n; 5 GHz 802.11ac via módulo MK7AC |
-| Chipset de rádio | MediaTek MT7601U + MT7610U |
 | Memória | 256 MB RAM |
 | Armazenamento | 2 GB eMMC |
 | Portas | USB-C (energia / Ethernet), USB 2.0 Host |
 | Indicador | 1 RGB LED |
 | Energia | USB-C (5V) |
-| Temperatura de operação | 35°C ~ 45°C |
 
 ## Ambientes de Aplicação
 
@@ -46,7 +47,7 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 
 | Recurso | Link |
 |---------|------|
-| 📖 Documentação oficial | [Ver online](https://docs.hak5.org/wifi-pineapple/wifi-pineapple-mk7-by-hak5/) |
+| 📖 Documentação oficial | [Ver online](https://documentation.hak5.org/wifi-pineapple/master) |
 | ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/pineapple/mk7) |
 
 {{< alert >}}

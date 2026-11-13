@@ -351,13 +351,13 @@ EOF
 
 它與 Hak5 自家的 MK7AC Adapter 採用完全相同的 MT7612U 晶片組，使用核心內建驅動、無需編譯，電流消耗完全在 MK7 USB 供電預算內，且支援完整的滲透測試工具鏈：Monitor Mode、Packet Injection 與跨所有 5 GHz 頻道的 Handshake 捕獲。
 
-**立即在 Yupitek 購買 AWUS036ACM：**
+**立即在 Yopitek 購買 AWUS036ACM：**
 
 👉 [ALFA AWUS036ACM 產品頁面](/zh-tw/products/alfa/awus036acm/)
 
-我們是 ALFA Network 授權經銷商，為所有 ALFA × HAK5 整合場景提供完整技術支援。瀏覽我們完整的 [ALFA 網路卡產品線](/zh-tw/products/alfa/) 以找到適合你測試需求的工具。
+我們是 ALFA Network 授權經銷商；針對 ALFA × HAK5 整合場景，我們提供完整技術支援。瀏覽我們完整的 [ALFA 網路卡產品線](/zh-tw/products/alfa/) 以找到適合你測試需求的工具。
 
-**Yupitek 相關資源：**
+**Yopitek 相關資源：**
 - [AWUS036ACH vs AWUS036ACM — Kali Linux 完整比較](/zh-tw/blog/awus036ach-vs-awus036acm/)
 - [2026 年 Kali Linux 最佳 WiFi 網路卡推薦](/zh-tw/blog/best-wifi-adapter-kali-linux-2026/)
 - [Kali Linux 啟用 Monitor Mode 完整指南](/zh-tw/blog/enable-monitor-mode-kali-linux/)
@@ -369,7 +369,7 @@ EOF
 
 ---
 
-*需要設定協助？聯絡 Yupitek 技術支援團隊：[yupitek.com/support](/zh-tw/support/)*
+*需要設定協助？聯絡 Yopitek 技術支援團隊：[yupitek.com/support](/zh-tw/support/)*
 
 ---
 

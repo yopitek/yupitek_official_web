@@ -6,6 +6,10 @@ description: "Herramienta Ethernet multifunción de tamaño bolsillo para ataque
 featureimage: "/images/products/hak5/packet-squirrel.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso de Uso Legal**: Packet Squirrel es una herramienta profesional de investigación de seguridad. Solo para pruebas de seguridad e investigación autorizadas. Destinada exclusivamente a profesionales de seguridad con autorización escrita válida.
+{{< /alert >}}
+
 ## Características del Producto
 
 ![Packet Squirrel Mark II](/images/products/hak5/card/packet-squirrel.png)
@@ -29,6 +33,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 | IP de administración predeterminada | 172.16.32.1 |
 | Sistema operativo | Linux |
 | Indicador | LED de estado multicolor |
+| Dimensiones / Peso | 50 × 40 × 15 mm, 24 g |
 
 ## Entornos de Aplicación
 
@@ -43,7 +48,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 | Recurso | Enlace |
 |---------|--------|
-| 📖 Documentación oficial | [Ver en línea](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
+| 📖 Documentación oficial | [Ver en línea](https://documentation.hak5.org/packet-squirrel-mark-ii/packet-squirrel-mark-ii-by-hak5) |
 | ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/squirrel/mk2) |
 
 {{< alert >}}

@@ -1,49 +1,61 @@
 ---
-title: "SDRLab Flipper Zero WiFi Multi-Board — 3-in-1 Wireless Research Add-On"
-description: "Flipper Zero WiFi Multi-Board, NRF24 + CC1101 (300–928MHz) + ESP32 (Marauder firmware), three wireless protocols on one board, GPIO-powered."
+title: "SDRLab Flipper Zero WiFi Multiboard — Multi-Module Expansion Board"
+seo_title: "Flipper Zero WiFi Multiboard | SDRLab Taiwan | Yopitek"
+description: "SDRLab Flipper Zero WiFi Multiboard, a development board accessory with NRF24, CC1101, GPS and environmental sensor modules. Available in Taiwan from Yopitek."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
-tags: ["Flipper Zero Add-On", "ESP32", "CC1101", "NRF24", "Wi-Fi Marauder", "Security Research"]
+tags: ["Flipper Zero Add-On", "WiFi DevBoard", "NRF24", "CC1101", "GPS"]
+faq:
+  - question: "What is the SDRLab Flipper Zero WiFi Multiboard?"
+    answer: "It is a WiFi DevBoard / Multiboard accessory for the Flipper Zero. The manufacturer's listing names NRF24, GPIO, CC1101 and GPS modules, a plug-and-play positioning module and an MH-Z19 CO2 plus BME280 environmental sensor module."
+  - question: "Does the WiFi Multiboard work without a Flipper Zero?"
+    answer: "No. It is a development board accessory designed for the Flipper Zero, so a Flipper Zero is required. The Flipper Zero is not included."
+  - question: "Can I confirm the exact configuration before ordering?"
+    answer: "Yes. The board is offered in several variants, so please contact Yopitek to confirm the current configuration and availability before ordering."
 ---
+
+The SDRLab Flipper Zero WiFi Multiboard is a Flipper Zero development board accessory that combines NRF24, GPIO, CC1101 and GPS modules with a plug-and-play positioning module and an MH-Z19 CO2 and BME280 environmental sensor module. Contact Yopitek to confirm the current configuration before ordering.
 
 ## Features
 
 ![SDRLab Flipper Zero WiFi Multi-Board](/images/products/sdrlab/flipper-wifi-multiboard.png)
 
-- 3-in-1 integration: NRF24 + CC1101 + ESP32 on a single board for multi-protocol wireless research
-- NRF24 module handles 2.4 GHz keyboard/mouse signal sniffing and MouseJacker attacks
-- CC1101 module extends Sub-GHz coverage (300–928 MHz) with ASK/OOK/FSK modulation support
-- ESP32 module runs Wi-Fi Marauder firmware for 2.4 GHz Wi-Fi security research
-- Consolidates multiple wireless research capabilities on one add-on — no more swapping modules
-- Powered directly from the Flipper Zero GPIO header
+- Integrates NRF24 and WiFi/NRF24 modules for versatile wireless connectivity
+- GPIO module, CC1101 sub-GHz radio and GPS module for advanced sensor integration
+- Plug-and-play positioning module for quick GPS integration
+- Designed as a development board accessory for the Flipper Zero
+- MH-Z19 CO2 sensor and BME280 for non-professional environmental monitoring
+- The manufacturer's listing also names an Air Mouse module
 
 ## Specifications
 
 | Specification | Value / Description |
 |---------------|---------------------|
-| Form Factor | 3-in-1 Flipper Zero GPIO add-on board |
-| NRF24 Module | Nordic nRF24L01, 2.4 GHz — HID sniffing + MouseJacker |
-| CC1101 Module | Texas Instruments CC1101, 300–928 MHz Sub-GHz |
-| CC1101 Modulation | ASK, OOK, FSK |
-| ESP32 Module | ESP32 (Marauder firmware), 2.4 GHz Wi-Fi security research |
-| Connection Interface | Flipper Zero standard GPIO header |
-| Power | Supplied by Flipper Zero GPIO |
-| Firmware | Wi-Fi Marauder (ESP32), NRF24 Sniffer firmware |
-| Package Contents | 3-in-1 add-on board × 1 |
+| Product Type | WiFi DevBoard / Multiboard accessory for Flipper Zero |
+| Wireless Modules | NRF24; WiFi/NRF24 combination |
+| Sub-GHz and GPIO | GPIO module, CC1101 sub-GHz radio |
+| Positioning | GPS module; plug-and-play positioning module |
+| Environmental Sensing | MH-Z19 CO2 sensor, BME280 (non-professional monitoring) |
+| Host | Flipper Zero (not included) |
 
 ## Use Cases
 
-- Wi-Fi 2.4 GHz security research (Marauder toolset)
-- Sub-GHz (300–928 MHz) device interaction and research
-- IoT device wireless protocol testing (Sub-GHz range)
-- Wireless HID sniffing and MouseJacker demonstration
-- Extended Sub-GHz range for Flipper Zero
-- Red team multi-protocol wireless testing
+- Network security research (only on networks you own or are authorized to test)
+- IoT projects and development
+- Remote device management
+- GPS positioning for Flipper Zero projects
+- CO2 and environmental monitoring (non-professional)
 
 ---
 
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+{{< faq >}}
+
+[Manufacturer store page (OpenSourceSDRLab)](https://opensourcesdrlab.com/products/flipper-zero-modules-wifi-devboard-multiboard-esp8266-wifi-module-air-mouse-module-official?VariantsId=10382)

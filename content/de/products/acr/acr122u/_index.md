@@ -3,6 +3,8 @@ title: "ACS ACR122U — USB NFC Reader"
 description: "ACS ACR122U, USB NFC-Lesegerät mit Unterstützung von ISO 14443 A/B, MIFARE und FeliCa bei 13,56 MHz. Ideal für NFC-Forschung und Anwendungsentwicklung."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
@@ -40,7 +42,7 @@ Der ACR122U ist ein PC-gebundener kontaktloser Smartcard-Leser/Schreiber basiere
 | MTBF | 408.500 Std. |
 | LED | 1 zweifarbig Rot/Grün (benutzersteuerbar) |
 | Summer | Monoton (benutzersteuerbar) |
-| Konformität | PC/SC, CCID, CE, FCC, RoHS |
+| Konformität | PC/SC, CCID, CE, FCC, RoHS 2 |
 
 ## Hauptmerkmale
 
@@ -79,6 +81,12 @@ Der ACR122U ist ein PC-gebundener kontaktloser Smartcard-Leser/Schreiber basiere
 | Ressource | Link |
 |----------|------|
 | 📄 ACR122U Datenblatt (PDF) | [PDF herunterladen](/docs/acr/ACR122U_spec.pdf) |
+
+## Offizielle Ressourcen
+
+| Ressource | Link |
+|----------|------|
+| ACS ACR122U Produktseite | [acs.com.hk](https://www.acs.com.hk/cn/products/73/acr122u-nfc-%E9%9D%9E%E6%8E%A5%E8%A7%B8%E5%BC%8F%E6%99%BA%E8%83%BD%E5%8D%A1%E8%AF%BB%E5%86%99%E5%99%A8/) |
 
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC Reader" />

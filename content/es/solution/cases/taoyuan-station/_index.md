@@ -1,6 +1,6 @@
 ---
 title: "Estación de Taoyuan — Proyección en Hub Ferroviario Histórico"
-description: "Yupitek integró un sistema de proyección architectural en la Estación de Taoyuan (桃園車站), revitalizando el espacio de la estación histórica con contenido visual dinámico para los pasajeros."
+description: "Yopitek integró un sistema de proyección architectural en la Estación de Taoyuan (桃園車站), revitalizando el espacio de la estación histórica con contenido visual dinámico para los pasajeros."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["estación de tren", "proyección arquitectónica", "Taoyuan", "Taiwan", 
 **Tipo**: Instalación de proyección arquitectónica en infraestructura de transporte público
 **Temática**: Historia y desarrollo urbano de Taoyuan — de ciudad industrial a metrópolis moderna
 
-La Estación de Taoyuan es el punto neurálgico del sistema ferroviario de la ciudad y uno de los espacios públicos de mayor tránsito peatonal de la región. En el marco de la renovación del entorno de la estación y la revitalización del barrio histórico circundante, el municipio de Taoyuan encargó a Yupitek el diseño e integración de un sistema de proyección que convirtiera la fachada exterior de la estación en un espacio de comunicación visual y atracción cultural.
+La Estación de Taoyuan es el punto neurálgico del sistema ferroviario de la ciudad y uno de los espacios públicos de mayor tránsito peatonal de la región. En el marco de la renovación del entorno de la estación y la revitalización del barrio histórico circundante, el municipio de Taoyuan encargó a Yopitek el diseño e integración de un sistema de proyección que convirtiera la fachada exterior de la estación en un espacio de comunicación visual y atracción cultural.
 
 La instalación proyecta contenido informativo, artístico y de bienvenida en la fachada principal de la estación, creando un punto de referencia visual nocturno en el corazón del centro urbano de Taoyuan y contribuyendo a la revitalización del área comercial adyacente.
 

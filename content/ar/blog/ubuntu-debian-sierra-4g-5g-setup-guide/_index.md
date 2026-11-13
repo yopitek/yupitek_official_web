@@ -1,5 +1,5 @@
 ---
-title: "الدليل الكامل لتثبيت وحدات Sierra 4G/5G على Ubuntu / Debian / Linux Mint: إعداد EM7455 وEM7565 وEM919x وMC7455 مع تحديد الموقع GNSS | Yupitek"
+title: "الدليل الكامل لتثبيت وحدات Sierra 4G/5G على Ubuntu / Debian / Linux Mint: إعداد EM7455 وEM7565 وEM919x وMC7455 مع تحديد الموقع GNSS | Yopitek"
 description: "كيف تثبّت وحدات Sierra 4G/5G على Ubuntu/Debian/Linux Mint؟ يرشدك هذا الدليل إلى تثبيت ModemManager، واستخدام qmicli/mbimcli للاتصال بالشبكة، وضبط تحديد الموقع GNSS. يغطي EM7455 وEM7565 وEM919x وMC7455."
 date: 2026-07-31
 draft: false
@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "ubuntu-debian-sierra-4g-5g-setup-guide"
 tags: ["Sierra Wireless", "Ubuntu", "Debian", "Linux", "GNSS"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ar/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ faq:
 
 كثيرون يحصلون على EM7455 أو EM7565 أو EM919x أو MC7455، وبعد تركيبها على اللوحة الأم لا يعرفون كيفية إعداد الاتصال. في الواقع، نضج دعم هذه الوحدات على Linux بشكل كبير. تتواصل جميعها عبر USB باستخدام بروتوكول QMI أو MBIM. نرافقك خطوة بخطوة لإعدادها.
 
-> الأرقام والأساسات التقنية مأخوذة من المواصفات الرسمية من Sierra Wireless. أعدّت هذه المقالة شركة Yupitek.
+> الأرقام والأساسات التقنية مأخوذة من المواصفات الرسمية من Sierra Wireless. أعدّت هذه المقالة شركة Yopitek.
 
 ---
 
@@ -146,7 +146,7 @@ mmcli -m 0 --location-get
 
 ## معلومات الشراء (دعوة لاتخاذ إجراء)
 
-هل تريد دمج وحدات Sierra في جهاز Ubuntu الخاص بك؟ توفر Yupitek حلولاً كاملة من الوحدات والهوائيات ولوحات التحويل، مع دعم فني من الخط الأول.
+هل تريد دمج وحدات Sierra في جهاز Ubuntu الخاص بك؟ توفر Yopitek حلولاً كاملة من الوحدات والهوائيات ولوحات التحويل، مع دعم فني من الخط الأول.
 راسلنا عبر البريد: **sales@yupitek.com**
 شاهد المنتجات: [سلسلة Sierra Wireless](https://yupitek.com/ar/products/sierra/)
 

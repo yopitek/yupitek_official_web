@@ -1,6 +1,6 @@
 ---
 title: "SDRLAB — Modules Radio Logicielle (SDR)"
-description: "Yopitek distribue les modules SDR (Software-Defined Radio) SDRLAB et les cartes d'extension Flipper Zero — idéaux pour la recherche en communications sans fil, la radioamateurisme et l'analyse des signaux RF."
+description: "Yopitek propose les modules SDR (Software-Defined Radio) SDRLAB et les cartes d'extension Flipper Zero — idéaux pour la recherche en communications sans fil, la radioamateurisme et l'analyse des signaux RF."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -30,7 +30,7 @@ SDRLAB propose des modules radio logicielle (SDR) et des accessoires d'extension
     Module sans fil Flipper Zero NRF24L01+ pour la recherche sans fil 2,4 GHz.
   {{< /card >}}
   {{< card title="Flipper Zero WiFi Multiboard" href="/fr/products/sdrlab/flipper-wifi-multiboard/" image="/images/products/sdrlab/flipper-wifi-multiboard.png" >}}
-    Carte d'extension Wi-Fi multifonction Flipper Zero avec module Wi-Fi ESP8266 intégré.
+    Carte d'extension Wi-Fi multifonction Flipper Zero avec modules NRF24, GPIO, CC1101 et GPS.
   {{< /card >}}
   {{< card title="Module de Test Ethernet Flipper Zero" href="/fr/products/sdrlab/flipper-ethernet/" image="/images/products/sdrlab/flipper-ethernet.png" >}}
     Module d'extension de test réseau câblé Flipper Zero pour les tests Ethernet.

@@ -252,7 +252,7 @@ sudo aireplay-ng --test wlan0mon
 
 ---
 
-## Comprar con un Distribuidor Autorizado
+## Comprar con un Distribuidor Autorizado de ALFA Network
 
 Los productos ALFA Network son frecuentemente falsificados. Los adaptadores falsos usan chipsets inferiores, menor potencia de transmisión, y a menudo no soportan el modo monitor en absoluto — anulando completamente el propósito.
 

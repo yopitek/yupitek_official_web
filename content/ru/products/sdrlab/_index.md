@@ -1,6 +1,6 @@
 ---
 title: "Модули SDR SDRLAB — Радио, определяемое программным обеспечением"
-description: "Yopitek поставляет SDR-модули SDRLAB и платы расширения для Flipper Zero — для исследований беспроводных коммуникаций и анализа RF-сигналов."
+description: "Yopitek предлагает SDR-модули SDRLAB и платы расширения для Flipper Zero — для исследований беспроводных коммуникаций и анализа RF-сигналов."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -26,7 +26,7 @@ featureimage: "/images/products/sdrlab/banner-sdrlab.png"
     RF-плата расширения диапазона 5G для Flipper Zero.
   {{< /card >}}
   {{< card title="Flipper Zero WiFi Multiboard" href="/ru/products/sdrlab/flipper-wifi-multiboard/" image="/images/products/sdrlab/flipper-wifi-multiboard.png" >}}
-    Многофункциональная плата расширения Wi-Fi для Flipper Zero с интегрированным модулем ESP8266.
+    Многофункциональная плата расширения Wi-Fi для Flipper Zero с модулями NRF24, GPIO, CC1101 и GPS.
   {{< /card >}}
   {{< card title="Flipper Zero Ethernet Test Module" href="/ru/products/sdrlab/flipper-ethernet/" image="/images/products/sdrlab/flipper-ethernet.png" >}}
     Модуль расширения для тестирования проводных сетей для Flipper Zero.

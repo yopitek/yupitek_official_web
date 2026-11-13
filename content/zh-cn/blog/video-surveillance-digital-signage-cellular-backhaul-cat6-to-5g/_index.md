@@ -31,7 +31,7 @@ faq:
 
 选网卡不是选跑车，不是越快越好，而是要「对症下药」。这篇文章我们拿 Sierra Wireless 最常见的三颗 M.2 模块（EM7455、EM7565、EM9191）来拆解，用官方规格书的数字教你怎么选最划算。
 
-> 技术资料来源：Sierra Wireless 官方规格书。本文由榆合科技（Yupitek）整理。
+> 技术资料来源：Sierra Wireless 官方规格书。本文由榆合科技（Yopitek）整理。
 
 ---
 
@@ -117,6 +117,6 @@ faq:
 
 ## 采购信息（Call To Action）
 
-正在规划视频回传或是数字标牌的联网方案吗？Yupitek（榆合科技）提供完整的 Sierra Wireless 模块以及专业的技术咨询，帮你算出最符合经济效益的搭配！
+正在规划视频回传或是数字标牌的联网方案吗？Yopitek（榆合科技）提供完整的 Sierra Wireless 模块以及专业的技术咨询，帮你算出最符合经济效益的搭配！
 欢迎来信：**sales@yupitek.com**
 看看产品：[https://yupitek.com/zh-cn/products/sierra/](/zh-cn/products/sierra/)

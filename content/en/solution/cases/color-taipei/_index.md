@@ -1,6 +1,6 @@
 ---
 title: "Rainbow Taipei City Hall Architectural Projection Mapping Show"
-description: "Large-scale Architectural Projection Mapping on the facade of Taipei City Hall, combining urban imagery with a rainbow theme — a signature Yupitek technical integration project."
+description: "Large-scale Architectural Projection Mapping on the facade of Taipei City Hall, combining urban imagery with a rainbow theme — a signature Yopitek technical integration project."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Architectural Projection Mapping", "Event Production", "Taipei"]
 **Type**: Architectural Projection Mapping (Building Mapping)
 **Scale**: Large-format outdoor Projection Mapping show
 
-The Taipei City Hall facade Projection Mapping show is one of Yupitek's landmark Architectural Projection Mapping projects. Built around a "Rainbow" theme, it transformed the City Hall building into a dynamic visual canvas. Precision multi-projector blending delivered a striking urban light art spectacle.
+The Taipei City Hall facade Projection Mapping show is one of Yopitek's landmark Architectural Projection Mapping projects. Built around a "Rainbow" theme, it transformed the City Hall building into a dynamic visual canvas. Precision multi-projector blending delivered a striking urban light art spectacle.
 
 ## Technical Challenges
 

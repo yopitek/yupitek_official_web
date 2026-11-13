@@ -1,6 +1,6 @@
 ---
 title: "ACS ACR 系列 NFC 智能卡读卡机"
-description: "榆阖科技代理 ACS ACR 系列 NFC/智能卡读卡机：ACR122U、ACR1252U、ACR1552U，适用门禁、电子签章及身份验证应用。"
+description: "榆阖科技提供 ACS ACR 系列 NFC/智能卡读卡机：ACR122U、ACR1252U、ACR1552U，适用门禁、电子签章及身份验证应用。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -15,7 +15,7 @@ Advanced Card Systems (ACS) 是全球知名的智能卡读卡机制造商，ACR 
 
 {{< card-group >}}
   {{< card title="ACR122U NFC 读卡机" href="/zh-cn/products/acr/acr122u/" image="/images/products/acr/ACR122U.png" >}}
-    USB NFC 读卡机，支持 ISO 14443 A/B 及 MIFARE，桌面型设计，广泛用于 NFC 研究与应用开发。
+    USB NFC 读卡机，支持 ISO 14443 A/B 、MIFARE 及 FeliCa，桌面型设计，广泛用于 NFC 研究与应用开发。
   {{< /card >}}
   {{< card title="ACR1252U NFC 论坛认证读卡机" href="/zh-cn/products/acr/acr1252u/" image="/images/products/acr/ACR1252U.png" >}}
     NFC Forum 认证读卡机，支持 ISO 14443 A/B、MIFARE、FeliCa，USB 接口，适合 NFC 应用程序开发。

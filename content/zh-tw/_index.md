@@ -1,13 +1,13 @@
 ---
 title: "榆閤科技有限公司"
-description: "專業科技分銷與空間沉浸體驗整合商。ALFA Network、HAK5 台灣授權經銷；Flipper Zero 提供產品與技術諮詢。無線投影拼接系統整合服務。"
+description: "專業科技分銷與空間沉浸體驗整合商。ALFA Network 台灣授權經銷；HAK5、Flipper Zero 提供產品與技術諮詢。無線投影拼接系統整合服務。"
 date: 2026-03-12
 draft: false
 showHero: true
 heroStyle: "basic"
 ---
 
-**台灣授權代理 × 頂尖科技產品 × 專業視覺整合**
+**ALFA Network 台灣授權經銷 × 頂尖科技產品 × 專業視覺整合**
 
 榆閤科技是一家深耕台灣科技市場的專業公司，旗下設有兩大事業部，分別聚焦於頂尖科技產品分銷，以及高端視覺解決方案的規劃與整合。
 
@@ -31,7 +31,7 @@ heroStyle: "basic"
   </div>
   <div class="p-4 rounded-lg border border-neutral-700">
     <div class="text-3xl font-bold text-primary-400 mb-1">7</div>
-    <div class="text-sm text-neutral-300">國際代理品牌</div>
+    <div class="text-sm text-neutral-300">國際品牌</div>
   </div>
   <div class="p-4 rounded-lg border border-neutral-700">
     <div class="text-3xl font-bold text-primary-400 mb-1">8</div>
@@ -41,11 +41,11 @@ heroStyle: "basic"
 
 ---
 
-## IT Distribution｜科技產品代理暨分銷
+## IT Distribution｜科技產品經銷暨分銷
 
-榆閤科技代理多家全球知名品牌，為企業客戶、學術機構及資訊安全研究人員提供前瞻性的專業科技設備與解決方案。
+榆閤科技為 ALFA Network 台灣授權經銷，並供應其他全球知名品牌，為企業客戶、學術機構及資訊安全研究人員提供前瞻性的專業科技設備與解決方案。
 
-**代理品牌涵蓋：**
+**品牌涵蓋：**
 
 | 品牌 | 產品定位 |
 |------|---------|

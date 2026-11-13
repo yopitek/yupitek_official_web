@@ -35,7 +35,7 @@ ALFA AWUS036ACM（MT7612U）は Linux Soft AP に最適な選択肢です。in-k
 
 ## はじめに
 
-これはYupitekが最も頻繁に受けるお問い合わせの一つです。質問はシンプルに聞こえますが、答えはモデルとチップセットによって大きく異なります——**すべてのUSB WiFiアダプタがSoft APモードで動作するわけではありません。**
+これはYopitekが最も頻繁に受けるお問い合わせの一つです。質問はシンプルに聞こえますが、答えはモデルとチップセットによって大きく異なります——**すべてのUSB WiFiアダプタがSoft APモードで動作するわけではありません。**
 
 本記事では、GitHub（morrownr/USB-WiFi）の500件以上のコミュニティ議論、Redditの技術フォーラム、Raspberry Pi公式ドキュメント、実際のユーザーフィードバックを集約し、どのALFAアダプタが動作し、どれが動作しないかについて、誠実で包括的なレポートを提供します。
 
@@ -89,7 +89,7 @@ Soft APアダプタを選ぶ際の**最も重要な**概念です：
 
 ## 2. ALFA製品ラインアップとチップセット概要 {#product-lineup}
 
-Yupitekが現在販売しているALFA製品ライン、チップセット、およびSoft APの予備評価：
+Yopitekが現在販売しているALFA製品ライン、チップセット、およびSoft APの予備評価：
 
 | モデル | チップセット | ドライバタイプ | WiFi規格 | Soft AP評価 |
 |--------|------------|--------------|---------|-----------|
@@ -100,7 +100,7 @@ Yupitekが現在販売しているALFA製品ライン、チップセット、お
 | AWUS036AX | Realtek RTL8832BU | アウトオブカーネル（kernel 6.12+推奨） | WiFi 6 AX1800 デュアルバンド | ❌ 非推奨 |
 | AWUS036AXER | Realtek RTL8832BU | アウトオブカーネル（同上） | WiFi 6 AX1800 デュアルバンド | ❌ 非推奨 |
 
-> **注記**：AWUS036ACHM（MT7610U）は製造終了となり、Yupitek製品ページには掲載されていません。本記事では現行販売製品のみを対象とします。
+> **注記**：AWUS036ACHM（MT7610U）は製造終了となり、Yopitek製品ページには掲載されていません。本記事では現行販売製品のみを対象とします。
 
 ---
 
@@ -295,7 +295,7 @@ WiFi 6対応ですが、RTL8832BUチップは「マルチステート」デバ�
 3. **Soft APコミュニティ事例が極めて少ない**：MT7612UやRTL8812AUと比較して、RTL8832BUのSoft AP実例はほぼ存在しない
 4. **コミュニティドキュメントが明確に非推奨**：morrownr/USB-WiFiはこのチップセットを「ペネトレーションテストに非推奨」とマーク
 
-> Yupitekの公式ドキュメントは明確に述べています：「AWUS036AX / AWUS036AXERのRTL8832BUチップセットはkernel 6.14未満で制限付きモニターモードサポートのみであり、ペネトレーションテストには推奨されません。AWUS036ACHまたはAWUS036AXMLを使用してください。」
+> Yopitekの公式ドキュメントは明確に述べています：「AWUS036AX / AWUS036AXERのRTL8832BUチップセットはkernel 6.14未満で制限付きモニターモードサポートのみであり、ペネトレーションテストには推奨されません。AWUS036ACHまたはAWUS036AXMLを使用してください。」
 
 ---
 
@@ -677,20 +677,20 @@ AWUS036ACH（RTL8812AU）は制限を受け入れれば使用可能です。AWUS
 - **morrownr/7612u** — MT7612U Bridged AP on RPi4Bチュートリアル
 - **GitHub Issue Tracker** — issue #2（ACM AP設定）、#476（AXML APテスト）、Discussion #31（ACHMフルスピードAP）
 - **koutto/pi-pwnbox-rogueap** — AlfaアダプタRogueAP実装事例
-- **Rokland** 正規販売店Linuxサポートページ
+- **Rokland** 販売店Linuxサポートページ
 - **Lab401** 技術レビューおよび2025年ペンテスト推奨製品レポート
 - **Raspberry Pi公式フォーラム** — Pi 4/5 USB WiFi互換性議論
-- **Yupitek既存ブログ** — ACM China Install Guide、AXML WiFi 6E Review、Kali Linux 2026ベストアダプタ
+- **Yopitek既存ブログ** — ACM China Install Guide、AXML WiFi 6E Review、Kali Linux 2026ベストアダプタ
 
 ---
 
-> **タグ**：#ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #Yupitek
+> **タグ**：#ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #Yopitek
 >
-> **著者**：Yupitek Ltd — ALFA Network 正規販売代理店（台湾）
+> **著者**：Yopitek Ltd — ALFA Network 正規販売代理店（台湾）
 >
 > **免責事項**：調査データは2026年5月現在のものです。Linuxカーネルとディストリビューションは継続的に進化しており、ドライバサポートはバージョンによって変更される可能性があります。デプロイ前にターゲットプラットフォームのカーネルバージョンとドライバ互換性を確認してください。
 >
-> **テクニカルサポート**：Soft AP設定に関する問題は、Yupitek台湾テクニカルサポートまでお問い合わせください。製品に関するお問い合わせ：[yupitek.com](https://yupitek.com/ja/)。
+> **テクニカルサポート**：Soft AP設定に関する問題は、Yopitek台湾テクニカルサポートまでお問い合わせください。製品に関するお問い合わせ：[yupitek.com](https://yupitek.com/ja/)。
 
 ---
 

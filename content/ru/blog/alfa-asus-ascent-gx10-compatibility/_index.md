@@ -230,8 +230,8 @@ sudo aireplay-ng --test wlan0
 | ASUS Ascent GX10 официальный интернет-магазин (Великобритания) | Страница продукта GX10 (150 × 150 × 51mm) | https://uk.store.asus.com/asus-ascent-gx105004-33389.html | ✅ Проверено | 2026-09-03 |
 | NVIDIA DGX Spark официальная страница | Информация о платформе GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Проверено | 2026-09-03 |
 | morrownr/8812au GitHub | Драйверы для RTL8812AU Linux | https://github.com/morrownr/8812au-20210820 | ✅ Проверено | 2026-09-03 |
-| ALFA Soft AP WiFi Hotspot Linux Guide (Yupitek) | Руководство по режиму AP Linux для ALFA | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Проверено | 2026-09-03 |
-| ALFA Network обзор продуктов (Yupitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
+| ALFA Soft AP WiFi Hotspot Linux Guide (Yopitek) | Руководство по режиму AP Linux для ALFA | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Проверено | 2026-09-03 |
+| ALFA Network обзор продуктов (Yopitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
 
 Связанные статьи: [Поддерживает ли беспроводная карта ALFA NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Поддерживает ли беспроводная карта ALFA ALTOS BrainSphere GB10 F1](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[Поддерживает ли беспроводная карта ALFA GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[Поддерживает ли беспроводная карта ALFA MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 

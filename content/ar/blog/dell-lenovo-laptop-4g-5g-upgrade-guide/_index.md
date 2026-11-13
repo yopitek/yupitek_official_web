@@ -1,5 +1,5 @@
 ---
-title: "الدليل الشامل لترقية حواسيب Dell / Lenovo المحمولة ببطاقات 4G/5G: قائمة الطرازات المتوافقة + دليل التركيب | Yupitek"
+title: "الدليل الشامل لترقية حواسيب Dell / Lenovo المحمولة ببطاقات 4G/5G: قائمة الطرازات المتوافقة + دليل التركيب | Yopitek"
 description: "الدليل الشامل لترقية حواسيب Dell / Lenovo المحمولة ببطاقات 4G/5G: مقارنة الفروق بين EM7455 وEM7430، مع شرح فحص فتحة M.2 وهوائيات WWAN والقائمة البيضاء في BIOS. تنزيل Cat 6 بسرعة 300 ميجابت/ثانية، ويتضمن دليل تركيب كامل."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 slug: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 tags: ["Dell", "Lenovo", "4G", "5G", "EM7455", "EM7430", "WWAN", "M.2"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ar/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ faq:
 
 في هذه المقالة نعتمد على المواصفات الرسمية من Sierra Wireless لمقارنة EM7455 وEM7430، وهما البطاقتان الأكثر استخداماً في التعديلات، مع شرح طريقة التركيب.
 
-> مصدر بيانات المواصفات: المواصفات الرسمية من Sierra Wireless (EM7455 وEM7430). هذه المقالة من إعداد شركة Yupitek.
+> مصدر بيانات المواصفات: المواصفات الرسمية من Sierra Wireless (EM7455 وEM7430). هذه المقالة من إعداد شركة Yopitek.
 
 ---
 
@@ -105,6 +105,6 @@ faq:
 
 ## معلومات الشراء (دعوة لاتخاذ إجراء)
 
-ترغب في شراء بطاقات سلسلة Sierra Wireless؟ أو لست متأكداً مما إذا كان جهازك الصناعي يستوعبها؟ تقدم Yupitek حلولاً عتادية كاملة ودعماً فنياً.
+ترغب في شراء بطاقات سلسلة Sierra Wireless؟ أو لست متأكداً مما إذا كان جهازك الصناعي يستوعبها؟ تقدم Yopitek حلولاً عتادية كاملة ودعماً فنياً.
 تواصل معنا عبر البريد: **sales@yupitek.com**
 شاهد المنتجات: [سلسلة Sierra Wireless](https://yupitek.com/ar/products/sierra/)

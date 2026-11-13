@@ -3,6 +3,8 @@ title: "ACS ACR1252U — قارئ NFC USB III معتمد من NFC Forum"
 description: "ACS ACR1252U، قارئ USB NFC حاصل على اعتماد NFC Forum، يدعم أوضاع قارئ/كاتب ومحاكاة البطاقة ونظير إلى نظير، مناسب لتطوير تطبيقات NFC والنشر المؤسسي."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1252U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
@@ -37,8 +39,10 @@ ACR1252U هو قارئ متصل بالحاسوب حاصل على اعتماد NF
 | سرعة قراءة/كتابة SAM | 9.6 Kbps – 215 Kbps |
 | LED | 1 ثنائي اللون أحمر/أخضر (قابل للتحكم من قِبَل المستخدم) |
 | جرس تنبيه | أحادي النغمة (قابل للتحكم من قِبَل المستخدم) |
-| الاعتمادات | EN/IEC 60950، ISO 18092، ISO 14443، ISO 7816، PC/SC، CCID، NFC Forum، FeliCa Performance، CE، FCC، RoHS 2، REACH |
-| اعتمادات إضافية | J-LIS، VCCI، MIC (اليابان)، KC (كوريا)، Microsoft WHQL |
+| درجة حرارة التشغيل | 0°C – 60°C، 90% RH (بدون تكثف) |
+| MTBF | 500,000 ساعة |
+| الاعتمادات | IEC/EN 62368، ISO 18092، ISO 14443، ISO 7816، PC/SC، CCID، NFC Forum، CE، UKCA، FCC، RoHS 2، REACH، WEEE |
+| اعتمادات إضافية | J-LIS، VCCI، TELEC (اليابان)، KC (كوريا)، BIS، Microsoft WHQL |
 
 ## الميزات الرئيسية
 
@@ -68,8 +72,7 @@ ACR1252U هو قارئ متصل بالحاسوب حاصل على اعتماد NF
 - Windows® (إصدارات متعددة، بما في ذلك Windows 10 وإصدارات Server)
 - Linux®
 - macOS®
-- Solaris
-- Android™ 3.1 وما بعده
+- Android™
 
 
 ## 📄 ورقة البيانات

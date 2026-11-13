@@ -29,7 +29,7 @@ Cuando el dron o el robot sale de su línea de visión (esto es lo que se llama 
 
 En este artículo usamos las hojas de especificaciones oficiales de Sierra Wireless para descifrar el misterio: ¿por qué estos módulos encajan tan bien con drones y robots? ¿Cómo consiguen una latencia baja?
 
-> Fuente de los datos técnicos: hojas de especificaciones oficiales de Sierra Wireless (EM9190/EM9191 y EM7565). Artículo recopilado por Yupitek (榆閤科技).
+> Fuente de los datos técnicos: hojas de especificaciones oficiales de Sierra Wireless (EM9190/EM9191 y EM7565). Artículo recopilado por Yopitek (榆閤科技).
 
 ---
 
@@ -83,7 +83,7 @@ Quien vuela en el cielo, tiene presupuesto y quiere una red privada 5G, que comp
 
 ## Información de compra (Llamada a la acción)
 
-¿Está diseñando la placa de comunicaciones de un dron o de un robot de inspección? ¿No sabe cómo planificar las antenas y la refrigeración? Yupitek (榆閤科技) ofrece módulos Sierra Wireless completos y un servicio de consultoría de integración de hardware.
+¿Está diseñando la placa de comunicaciones de un dron o de un robot de inspección? ¿No sabe cómo planificar las antenas y la refrigeración? Yopitek (榆閤科技) ofrece módulos Sierra Wireless completos y un servicio de consultoría de integración de hardware.
 Escríbanos: **sales@yupitek.com**
 Vea los productos: [Sección de módulos Sierra Wireless](/es/products/sierra/)
 

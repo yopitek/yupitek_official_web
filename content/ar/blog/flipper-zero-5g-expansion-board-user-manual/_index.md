@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "flipper-zero-5g-expansion-board-user-manual"
 tags: ["Flipper Zero", "5G Expansion Board", "SDRLab", "Tutorial"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-10-18
 featureimage: "/images/blog/flipper-zero-5g-expansion-board-user-manual/img_01_all_components.jpg"
 hideFeatureImage: true

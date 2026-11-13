@@ -20,8 +20,8 @@ faq:
 - **Produit Phare du 20e Anniversaire de Hak5** : Moteur PineAP de 8e génération
 - **Fonctionnement Entièrement Autonome** : Aucun ordinateur externe requis — appareil Linux portable indépendant pour l'audit sans fil
 - **Wi-Fi Tri-Bande + Bluetooth** : Prend en charge 2,4 GHz / 5 GHz / 6 GHz (802.11ax) et Bluetooth 5.2 / BLE 4.2
-- **Système de Payloads** : Alimenté par DuckyScript™ + Bash + Python
-- **Écran Couleur Retina** : Clairement visible en intérieur et en extérieur
+- **Système de Payloads** : Alimenté par DuckyScript™ + Bash
+- **Écran couleur 2.4" (480×222, 221 PPI)** : Clairement visible en intérieur et en extérieur
 - **Notifications Multi-Sensorielles** : Haut-parleur intégré (sonnerie programmable) et moteur de vibration (notifications silencieuses)
 - **Boutons Programmables** : 4 boutons RGB (DPAD + contrôles A/B)
 - **Payload d'Alerte en Temps Réel** : Se déclenche automatiquement en fonction de l'activité WiFi détectée
@@ -36,7 +36,7 @@ faq:
 | Bluetooth | Bluetooth 5.2 + BLE 4.2 |
 | Mémoire | 256 Mo DDR2 RAM + 128 Mo SPI Flash |
 | Stockage | 4 Go eMMC |
-| Batterie | 2000 mAh LiPo (avec BMS et indicateur de charge LED) |
+| Batterie | 2000 mAh LiPo (avec BMS et indicateur de charge LED); environ 4 heures par charge (estimation de Hak5) |
 | Charge / Données | USB-C (interface Ethernet intégrée) |
 | Extension | USB 2.0 (pour modifications de modules matériels) |
 | Indicateurs | 4 × LED RGB |
@@ -48,7 +48,6 @@ faq:
 - Tests d'Intrusion sans fil autonomes sur le terrain sans ordinateur connecté
 - Opérations red team (accroché à la ceinture, fonctionnement entièrement sans fil)
 - Audit Wi-Fi et Bluetooth tri-bande simultané
-- Tests d'attaque WPA3 Enterprise
 - Tâches de Payload automatisées pilotées par DuckyScript
 - OSINT sur site, capture de handshake et attaques de désauthentification
 

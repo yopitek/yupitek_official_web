@@ -33,7 +33,7 @@ Le Jetson Orin utilise un noyau Tegra personnalisé NVIDIA, où les pilotes WiFi
 
 > « J'ai un AVALUE AIB-NW01 (Jetson Orin NX) à déployer dans un environnement sans réseau filaire. Quelle clé WiFi USB parmi les vôtres puis-je utiliser directement ? »
 
-Voici une question récemment reçue par Yupitek. Elle semble simple, mais si vous avez passé du temps dans la communauté des développeurs Jetson, vous savez que — **les clés WiFi USB sur la plateforme NVIDIA Jetson sont bien plus problématiques qu'on ne l'imagine.**
+Voici une question récemment reçue par Yopitek. Elle semble simple, mais si vous avez passé du temps dans la communauté des développeurs Jetson, vous savez que — **les clés WiFi USB sur la plateforme NVIDIA Jetson sont bien plus problématiques qu'on ne l'imagine.**
 
 Nous avons étudié l'architecture du noyau Jetson, les cas concrets du forum NVIDIA, les rapports d'échec de compilation de pilotes sur GitHub, jusqu'aux données de test réelles sur plateforme ARM64, pour compiler ce guide d'achat.
 
@@ -329,7 +329,7 @@ Non pas parce qu'elle est la plus rapide ou la moins chère — mais parce qu'el
 ### Passez à l'action
 
 - Voir les détails du produit：https://yupitek.com/fr/products/alfa/awus036acm/
-- Support technique：Yupitek fournit un support technique local à Taïwan, n'hésitez pas à nous contacter
+- Support technique：Yopitek fournit un support technique local à Taïwan, n'hésitez pas à nous contacter
 
 ### Pour aller plus loin
 
@@ -339,9 +339,9 @@ Non pas parce qu'elle est la plus rapide ou la moins chère — mais parce qu'el
 
 ---
 
-> **Tags**：#JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yupitek
+> **Tags**：#JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yopitek
 >
-> **Auteur**：Yupitek Ltd — Distributeur agréé ALFA Network à Taïwan
+> **Auteur**：Yopitek Ltd — Distributeur agréé ALFA Network à Taïwan
 >
 > **Avertissement**：les données de recherche de cet article sont à jour jusqu'en mai 2026. La plateforme Jetson et le noyau Linux évoluent en continu, il est conseillé de vérifier les dernières versions de JetPack et la prise en charge des pilotes intégrés au noyau avant tout déploiement.
 

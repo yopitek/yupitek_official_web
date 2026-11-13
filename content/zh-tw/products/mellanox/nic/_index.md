@@ -10,7 +10,7 @@ showChildPages: false
 
 # Mellanox / NVIDIA ConnectX 網路卡 — 10G 至 400G
 
-NVIDIA Mellanox ConnectX 網路卡為企業伺服器與 AI 運算叢集提供極佳的頻寬與低延遲表現。以下為 Yupitek 代理經銷的完整產品目錄，按傳輸速率規格分類。
+NVIDIA Mellanox ConnectX 網路卡為企業伺服器與 AI 運算叢集提供極佳的頻寬與低延遲表現。以下為 Yopitek 代理經銷的完整產品目錄，按傳輸速率規格分類。
 
 ---
 

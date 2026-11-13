@@ -1,6 +1,6 @@
 ---
 title: "Événements et Expositions"
-description: "Solutions de projection pour événements et expositions Yupitek : effets visuels pour concerts, galas d'entreprise, expositions artistiques et intégration de projection pour stands de salons professionnels."
+description: "Solutions de projection pour événements et expositions Yopitek : effets visuels pour concerts, galas d'entreprise, expositions artistiques et intégration de projection pour stands de salons professionnels."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Services de Projection Événementielle
 
-Les besoins en projection événementielle diffèrent fondamentalement des installations permanentes : montage rapide, configuration flexible, haute luminosité pour gérer des environnements d'éclairage complexes, et démontage efficace. Yupitek propose des services complets de location d'équipements de projection événementielle, d'assistance technique et de suivi sur site.
+Les besoins en projection événementielle diffèrent fondamentalement des installations permanentes : montage rapide, configuration flexible, haute luminosité pour gérer des environnements d'éclairage complexes, et démontage efficace. Yopitek propose des services complets de location d'équipements de projection événementielle, d'assistance technique et de suivi sur site.
 
 ## Catégories de Services
 

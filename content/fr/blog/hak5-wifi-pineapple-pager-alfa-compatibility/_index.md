@@ -208,7 +208,7 @@ L'association d'une carte Wi-Fi d'ALFA Network avec le HAK5 WiFi Pineapple Pager
 - **Pour un déploiement rapide et stable** : Achète l'[ALFA AWUS036ACM](https://yupitek.com/fr/products/alfa/awus036acm). Ses pilotes MediaTek intégrés fonctionnent parfaitement sous OpenWrt Kernel 6.6.
 - **Stabilité de l'alimentation** : Utilise toujours un **Hub USB avec alimentation externe** de bonne qualité pour garantir le signal de sortie des cartes Wi-Fi de haute puissance et éviter les déconnections.
 
-Si tu as d'autres questions techniques, besoin de devis matériel ou de compilations personnalisées via le SDK OpenWrt, contacte l'**Équipe de Support Technique de Yupitek** :
+Si tu as d'autres questions techniques, besoin de devis matériel ou de compilations personnalisées via le SDK OpenWrt, contacte l'**Équipe de Support Technique de Yopitek** :
 
 - 🌐 Site officiel : [www.yupitek.com](https://www.yupitek.com)
 - 📧 E-mail du support : [sales@yupitek.com](mailto:sales@yupitek.com)

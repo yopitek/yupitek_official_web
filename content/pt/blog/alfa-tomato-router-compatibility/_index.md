@@ -231,7 +231,7 @@ Contra-argumentos: Se a versão futura do FreshTomato incluir explicitamente sup
 | Site Oficial do FreshTomato | Lista de versões mais recentes e dispositivos suportados pelo FreshTomato | https://freshtomato.org/ | ✅ Verificado | 2026-09-03 |
 | Documentação Oficial do OpenWrt | Drivers USB WiFi e configurações sem fio (referência comparativa) | https://openwrt.org/docs/start | ✅ Verificado | 2026-09-03 |
 | Fórum Oficial do OpenWrt | Discussões sobre drivers USB WiFi (referência comparativa) | https://forum.openwrt.org/ | ✅ Verificado | 2026-09-03 |
-| Catálogo de Produtos da ALFA Network (Yupitek) | Especificações dos produtos atuais da ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
+| Catálogo de Produtos da ALFA Network (Yopitek) | Especificações dos produtos atuais da ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
 
 Artigos Relacionados: [A Placa de Rede Wireless ALFA suporta DD-WRT?](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[A Placa de Rede Wireless ALFA suporta OpenWrt?](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[A Placa de Rede Wireless ALFA suporta NVIDIA DGX Spark?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[A Placa de Rede Wireless ALFA suporta NVIDIA Jetson Nano?](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

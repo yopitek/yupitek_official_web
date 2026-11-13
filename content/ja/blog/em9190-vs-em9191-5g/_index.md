@@ -1,6 +1,6 @@
 ---
 title: "Sierra EM9190 vs EM9191：5G Sub-6 と mmWave の選び方、ネット上の誤解を解消します"
-description: "EM9190 vs EM9191 の選び方。公式仕様書（41113174 Rev 8）によると、EM9190 は 5G Sub-6 + mmWave（n257/258/260/261、NSA のみ）に対応し、EM9191 は Sub-6 のみ。どちらも Qualcomm SDX55、M.2。台湾の 5G 周波数帯の対応表付き。Yupitek が整理。"
+description: "EM9190 vs EM9191 の選び方。公式仕様書（41113174 Rev 8）によると、EM9190 は 5G Sub-6 + mmWave（n257/258/260/261、NSA のみ）に対応し、EM9191 は Sub-6 のみ。どちらも Qualcomm SDX55、M.2。台湾の 5G 周波数帯の対応表付き。Yopitek が整理。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -28,7 +28,7 @@ faq:
 
 この記事ではネット上の噂には頼りません。唯一の基準として、Sierra Wireless 公式仕様書『EM919X/EM7690 Product Technical Specification』（Doc 41113174, Rev 8, 2023年5月）を取り上げ、2 つのモジュールの違いを一つひとつ照合します。特に台湾の読者が最も気にする n78 と 28GHz 帯域が本当に使えるのかに注目し、5G 機器の調達で失敗しないようお手伝いします。
 
-> 製品ページ：[EM9190 — Yupitek](/ja/products/sierra/em9190/) | [EM9191 — Yupitek](/ja/products/sierra/em9191/) | 公式スペックシート：[EM919X/EM7690 Product Technical Specification](https://yupitek.com/docs/sierra/EM919x.pdf)
+> 製品ページ：[EM9190 — Yopitek](/ja/products/sierra/em9190/) | [EM9191 — Yopitek](/ja/products/sierra/em9191/) | 公式スペックシート：[EM919X/EM7690 Product Technical Specification](https://yupitek.com/docs/sierra/EM919x.pdf)
 
 ---
 
@@ -164,7 +164,7 @@ EM9190 で屋外の 5G レシーバー（CPE）を構築する場合、高出力
 
 ## 調達やご相談はこちら
 
-この記事を読んでハードウェア統合のご質問がある場合、あるいは研究室や企業でこの 2 つの 5G モジュールを調達したい場合は、Yupitek（榆閤科技）のエンジニアチームまでお気軽にご連絡ください。対応するアンテナや変換基板もご用意しています。
+この記事を読んでハードウェア統合のご質問がある場合、あるいは研究室や企業でこの 2 つの 5G モジュールを調達したい場合は、Yopitek（榆閤科技）のエンジニアチームまでお気軽にご連絡ください。対応するアンテナや変換基板もご用意しています。
 
 - **EM9190（mmWave 対応の真のフラッグシップ）製品ページ**：[https://yupitek.com/ja/products/sierra/em9190/](/ja/products/sierra/em9190/)
 - **EM9191（実用的な Sub-6 モデル）製品ページ**：[https://yupitek.com/ja/products/sierra/em9191/](/ja/products/sierra/em9191/)

@@ -1,6 +1,6 @@
 ---
-title: "HAK5 Plunder Bug LAN Tap — Passives LAN-Paketerfassungswerkzeug"
-description: "HAK5 Plunder Bug LAN Tap, ein passiver Ethernet-Tap, der Live-Datenverkehr auf einen per USB angeschlossenen Computer erfasst, ohne die normale Netzwerkkonnektivität zu beeinträchtigen."
+title: "HAK5 Plunder Bug LAN Tap — LAN-Paketerfassungswerkzeug"
+description: "HAK5 Plunder Bug LAN Tap, ein Ethernet-Tap mit aktivem und passivem Modus, der Live-Datenverkehr auf einen per USB-C angeschlossenen Computer erfasst, ohne die normale Netzwerkkonnektivität zu beeinträchtigen."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -14,15 +14,15 @@ tags: ["LAN Tap", "Packet Capture", "Passive Monitoring", "Ethernet"]
 
 ## Produktübersicht
 
-Plunder Bug LAN Tap ist ein passiver Ethernet-Tap, der inline in eine Ethernet-Verbindung eingebaut wird. Über USB mit einem Laptop verbunden, ermöglicht er die Echtzeit-Datenverkehrserfassung mit Tools wie Wireshark. Sein passives Überwachungsdesign beeinträchtigt weder Netzwerkgeschwindigkeit noch -stabilität.
+Plunder Bug LAN Tap ist ein Ethernet-Tap, der inline in eine Ethernet-Verbindung eingebaut wird. Über USB-C mit einem Laptop verbunden, ermöglicht er die Echtzeit-Datenverkehrserfassung mit Tools wie Wireshark. Er arbeitet standardmäßig im aktiven Modus und kann auf den passiven (stummen) Modus umgeschaltet werden.
 
 ## Technische Spezifikationen
 
 | Eigenschaft | Spezifikation |
 |-------------|--------------|
-| Überwachungsmodus | Passiv (kein Einfluss auf den Datenverkehr) |
+| Überwachungsmodus | Aktiv (Standard), umschaltbar auf passiv (stumm) |
 | Unterstützte Geschwindigkeit | 10/100 Mbps |
-| Schnittstelle | 2× RJ45 + 1× USB Micro-B |
+| Schnittstelle | 2× RJ45 + 1× USB-C |
 | Kompatible Software | Wireshark, tcpdump usw. |
 
 {{< gallery >}}

@@ -13,7 +13,7 @@ featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 
 {{< card-group >}}
   {{< card title="Flipper Zero" href="/ru/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.png" >}}
-    Основное устройство — Sub-GHz, NFC, RFID 125kHz, ИК, iButton, GPIO, Bluetooth 5.0, USB-C.
+    Основное устройство — Sub-GHz, NFC, RFID 125kHz, ИК, iButton, GPIO, Bluetooth 5.4, USB-C.
   {{< /card >}}
   {{< card title="WiFi Devboard for Flipper Zero" href="/ru/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.png" >}}
     Официальная плата расширения Wi-Fi (ESP32-S2) — добавляет возможности тестирования Wi-Fi.
@@ -25,6 +25,12 @@ featureimage: "/images/products/flipperzero/banner-flipperzero.png"
     Официальный силиконовый защитный чехол — полная защита устройства.
   {{< /card >}}
 {{< /card-group >}}
+
+## Официальные ресурсы
+
+| Ресурс | Ссылка |
+|--------|--------|
+| Официальная страница Flipper Zero | [flipper.net](https://flipper.net/products/flipper-zero) |
 
 ---
 

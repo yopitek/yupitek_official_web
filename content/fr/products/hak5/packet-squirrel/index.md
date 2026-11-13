@@ -14,14 +14,15 @@ tags: ["Packet Capture", "Man-in-the-Middle", "VPN", "DNS", "Ethernet"]
 
 ## Présentation du Produit
 
-Packet Squirrel Mark II est un dispositif de test man-in-the-middle réseau transparent en ligne. Placé en ligne sur une connexion Ethernet, il peut effectuer la capture de paquets, l'établissement de tunnels OpenVPN, la manipulation DNS et d'autres tâches de Tests d'Intrusion réseau autorisés. Il est transparent pour les deux extrémités de la connexion et ne perturbe pas le fonctionnement normal du réseau.
+Packet Squirrel Mark II est un dispositif de test man-in-the-middle réseau transparent en ligne. Placé en ligne sur une connexion Ethernet, il peut effectuer la capture de paquets, l'établissement de tunnels WireGuard et OpenVPN, la manipulation DNS et d'autres tâches de Tests d'Intrusion réseau autorisés. Il est transparent pour les deux extrémités de la connexion et ne perturbe pas le fonctionnement normal du réseau.
 
 ## Caractéristiques Principales
 
 - **Capture de Paquets** : Enregistrement pcap complet des paquets Ethernet
-- **Tunneling VPN** : Établissement de tunnel OpenVPN
+- **Tunneling VPN** : Établissement de tunnels WireGuard et OpenVPN
 - **Manipulation DNS** : Interception et redirection des requêtes DNS
-- **Man-in-the-Middle Réseau** : Mode proxy transparent
+- **Man-in-the-Middle Réseau** : Cinq modes réseau : NAT, BRIDGE, TRANSPARENT, JAIL, ISOLATE
+- **Dimensions** : 50 × 40 × 15 mm, 24 g
 
 {{< gallery >}}
   <img src="/images/products/hak5/packet-squirrel.png" alt="HAK5 Packet Squirrel Mark II" />

@@ -1,5 +1,5 @@
 ---
-title: "BVLOS-Konnektivität für Drohnen und Inspektionsroboter: So baust du ein Backhaul mit niedriger Latenz | Yupitek"
+title: "BVLOS-Konnektivität für Drohnen und Inspektionsroboter: So baust du ein Backhaul mit niedriger Latenz | Yopitek"
 description: "Wie verbindest du eine Drohne außerhalb der Sichtlinie (BVLOS)? Dieser Artikel vergleicht Sierra EM9190, EM9191 und EM7565: 5G-SA-Architektur mit niedriger Latenz, Video-Upload und Dualband-Positionierung L1/L5 werden analysiert, damit du eine unterbrechungsfreie Lösung für Inspektionsroboter und Drohnen baust."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "drone-bvlos-cellular-connectivity-low-latency-backhaul"
 slug: "drone-bvlos-cellular-connectivity-low-latency-backhaul"
 tags: ["Sierra Wireless", "EM9190", "EM9191", "EM7565", "Drohnen", "BVLOS", "5G", "niedrige Latenz", "GNSS", "LTE"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/de/products/sierra/"
 faq:
@@ -32,7 +32,7 @@ Nach dem Verlassen der Sichtlinie (BVLOS) nützt der Funkcontroller nichts mehr,
 
 In diesem Artikel nehmen wir die offiziellen Spezifikationen von Sierra Wireless zur Hand und lüften für dich das Geheimnis: Warum eignen sich diese Module besonders gut für Drohnen und Roboter? Wie schaffen sie die niedrige Latenz?
 
-> Quelle der technischen Daten: offizielle Spezifikationen von Sierra Wireless (EM9190/EM9191, EM7565). Artikel zusammengestellt von Yupitek.
+> Quelle der technischen Daten: offizielle Spezifikationen von Sierra Wireless (EM9190/EM9191, EM7565). Artikel zusammengestellt von Yopitek.
 
 ---
 
@@ -86,7 +86,7 @@ Fliegst du in der Luft, hast das Budget und willst ans 5G-Privatnetz: Nimm direk
 
 ## Wo kaufen (Call To Action)
 
-Designst du gerade eine Kommunikationsplatine für eine Drohne oder einen Inspektionsroboter? Weißt du nicht, wie du Antennen und Kühlung planen sollst? Yupitek bietet das komplette Sortiment an Sierra-Wireless-Modulen und Beratung für die Hardware-Integration.
+Designst du gerade eine Kommunikationsplatine für eine Drohne oder einen Inspektionsroboter? Weißt du nicht, wie du Antennen und Kühlung planen sollst? Yopitek bietet das komplette Sortiment an Sierra-Wireless-Modulen und Beratung für die Hardware-Integration.
 Schreib uns: **sales@yupitek.com**
 Produkte ansehen: [Sierra Wireless](https://yupitek.com/de/products/sierra/)
 

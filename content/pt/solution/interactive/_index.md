@@ -1,6 +1,6 @@
 ---
 title: "Projeção Interativa"
-description: "Soluções de projeção interativa da Yupitek: interação por toque, detecção gestual, projeção de chão interativa — adequadas para exposições, educação e espaços comerciais."
+description: "Soluções de projeção interativa da Yopitek: interação por toque, detecção gestual, projeção de chão interativa — adequadas para exposições, educação e espaços comerciais."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

@@ -34,7 +34,7 @@ O Jetson Orin usa o kernel Tegra customizado da NVIDIA, e drivers WiFi de tercei
 
 > "Tenho um AVALUE AIB-NW01 (Jetson Orin NX) que será implantado em um ambiente sem rede cabeada. Qual dos seus adaptadores USB WiFi funciona diretamente?"
 
-Esta é uma consulta recente recebida pela Yupitek. A pergunta parece simples, mas se você já passou algum tempo na comunidade de desenvolvedores Jetson, sabe que — **adaptadores USB WiFi na plataforma NVIDIA Jetson são muito mais problemáticos do que se imagina.**
+Esta é uma consulta recente recebida pela Yopitek. A pergunta parece simples, mas se você já passou algum tempo na comunidade de desenvolvedores Jetson, sabe que — **adaptadores USB WiFi na plataforma NVIDIA Jetson são muito mais problemáticos do que se imagina.**
 
 Compilamos este guia de seleção a partir da arquitetura central do Jetson, casos reais dos fóruns da NVIDIA, relatos de falhas de compilação de drivers no GitHub e dados de testes reais na plataforma ARM64.
 
@@ -328,7 +328,7 @@ Não por ser o mais rápido ou o mais barato — mas porque é a **única soluç
 ### Ação imediata
 
 - Veja os detalhes do produto: https://yupitek.com/pt/products/alfa/awus036acm/
-- Suporte técnico: A Yupitek oferece suporte técnico local em Taiwan, entre em contato conosco
+- Suporte técnico: A Yopitek oferece suporte técnico local em Taiwan, entre em contato conosco
 
 ### Leitura adicional
 
@@ -341,9 +341,9 @@ Não por ser o mais rápido ou o mais barato — mas porque é a **única soluç
 {{< faq >}}
 
 
-> **Tags**：#JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yupitek
+> **Tags**：#JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yopitek
 >
-> **Autor**：Yupitek Ltd — Distribuidor Autorizado ALFA Network em Taiwan
+> **Autor**：Yopitek Ltd — Distribuidor Autorizado ALFA Network em Taiwan
 >
 > **Aviso Legal**：Os dados desta pesquisa são de maio de 2026. A plataforma Jetson e o Linux Kernel estão em constante evolução. Recomenda-se verificar a versão mais recente do JetPack e o suporte de drivers integrados ao kernel antes da implantação.
 

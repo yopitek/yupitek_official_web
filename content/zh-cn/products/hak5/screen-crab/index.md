@@ -2,15 +2,19 @@
 title: "Screen Crab"
 date: 2025-01-01
 draft: false
-description: "世界首款渗透测试用 HDMI 中间人影像捕获装置，零延迟透明安装，支持截图与 MPEG-4 视频录制。"
+description: "隐蔽式渗透测试用 HDMI 中间人影像捕获装置，零延迟透明安装，支持截图与 MPEG-4 视频录制。"
 featureimage: "/images/products/hak5/screen-crab.png"
 ---
+
+{{< alert "warning" >}}
+**法律使用声明**: Screen Crab 为专业安全研究工具，仅限用于经授权的安全测试与研究，且仅供持有有效书面授权的安全专业人员使用。
+{{< /alert >}}
 
 ## 产品特色
 
 ![Screen Crab](/images/products/hak5/card/screen-crab.png)
 
-- **世界首款 HDMI MitM 装置**：专为渗透测试设计的 HDMI 中间人影像捕获工具
+- **隐蔽式 HDMI MitM 影像植入装置**：专为渗透测试设计的 HDMI 中间人影像捕获工具
 - **零延迟透明安装**：Inline 安装于 HDMI 信号路径，零延迟、零中断
 - **多种录制模式**：定时截图或全动态视频录制（MPEG-4，2 / 4 / 16 Mbps）
 - **开箱即用**：截图自动存至 MicroSD，无需设置，编辑 config.txt 控制功能
@@ -25,7 +29,6 @@ featureimage: "/images/products/hak5/screen-crab.png"
 | 接口 | HDMI（IN / OUT）、USB（电源）、MicroSD |
 | 标准 | HDMI 1.4 / DVI 1.0；802.11 b/g/n |
 | WiFi 频段 | 2.4 GHz（2.412 ~ 2.4835 GHz） |
-| 支持分辨率 | 多数 1920×1080 以下 16:9 格式 |
 | 尺寸 | 105 × 51 × 21 mm |
 | 电源 | 5W（USB 5V 1A） |
 | 工作温度 | 35°C ~ 45°C |
@@ -44,7 +47,7 @@ featureimage: "/images/products/hak5/screen-crab.png"
 
 | 资源 | 链接 |
 |------|------|
-| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/screen-crab/screen-crab-by-hak5/) |
+| 📖 官方使用文件 | [在线查看](https://documentation.hak5.org/screen-crab/master) |
 | ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/crab) |
 
 {{< alert >}}

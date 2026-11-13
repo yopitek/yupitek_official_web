@@ -341,7 +341,7 @@ Condiciones de refutación: Si el paquete posterior de OpenWrt actualiza y corri
 | Documentación oficial de OpenWrt | Entrada de documentos oficiales de OpenWrt (configuración inalámbrica / gestión de paquetes) | https://openwrt.org/docs/start | ✅ Revisado | 2026-09-03 |
 | Foro oficial de OpenWrt | Entrada de discusión sobre controladores WiFi USB | https://forum.openwrt.org/ | ✅ Revisado | 2026-09-03 |
 | morrownr/8812au GitHub | Fuente de controladores Linux RTL8812AU | https://github.com/morrownr/8812au-20210820 | ✅ Revisado | 2026-09-03 |
-| Catálogo de productos de ALFA Network (Yupitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Revisado | 2026-09-03 |
+| Catálogo de productos de ALFA Network (Yopitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Revisado | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | Declaración oficial del mantenedor de controladores: se recomienda evitar los chips rtl8852/32au (RTL8832BU) | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Revisado | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko solo aparecerá en el núcleo con kernel 5.19+ (palabras del mantenedor) | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ Revisado | 2026-09-03 |
 | Foro oficial de OpenWrt — Mejor dongle USB WiFi para Raspberry Pi 4B | Informes de usuarios sobre la instalación exitosa de kmod-mt7921u en OpenWrt 23.05.0 | https://forum.openwrt.org/t/mejor-dongle-usb-wifi-para-raspberry-pi-4b/160103 | ✅ Revisado | 2026-09-03 |

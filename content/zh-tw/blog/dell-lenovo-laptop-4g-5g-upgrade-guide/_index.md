@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 tags: ["Dell", "Lenovo", "EM7455", "EM7430", "WWAN", "M.2", "4G", "LTE", "筆電升級"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/zh-tw/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ faq:
 
 這篇文章我們用 Sierra Wireless 官方的規格書，帶你把最常拿來改裝的 EM7455 跟 EM7430 比較一次，順便教你怎麼安裝。
 
-> 規格資料來源：Sierra Wireless 官方規格書（EM7455、EM7430）。本文由榆閤科技（Yupitek）整理。
+> 規格資料來源：Sierra Wireless 官方規格書（EM7455、EM7430）。本文由榆閤科技（Yopitek）整理。
 
 ---
 
@@ -101,6 +101,6 @@ faq:
 
 ## 採購資訊（Call To Action）
 
-想要採購 Sierra Wireless 系列網路卡？或者不確定自己的工業電腦能不能裝？Yupitek（榆閤科技）有提供完整的硬體方案與技術支援。
+想要採購 Sierra Wireless 系列網路卡？或者不確定自己的工業電腦能不能裝？Yopitek（榆閤科技）有提供完整的硬體方案與技術支援。
 歡迎來信：**sales@yupitek.com**
 看看產品：[Sierra Wireless 系列](https://yupitek.com/zh-tw/products/sierra/)

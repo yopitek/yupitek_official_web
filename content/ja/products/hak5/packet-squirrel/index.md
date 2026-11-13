@@ -6,6 +6,10 @@ description: "WireGuard / OpenVPN VPNと5種類のネットワークモードを
 featureimage: "/images/products/hak5/packet-squirrel.png"
 ---
 
+{{< alert "warning" >}}
+**法的使用に関する免責事項**: Packet Squirrelは専門的なセキュリティ研究ツールです。許可されたセキュリティテストおよび研究目的でのみ使用してください。有効な書面による許可を得たセキュリティ専門家のみを対象としています。
+{{< /alert >}}
+
 ## 製品特長
 
 ![Packet Squirrel Mark II](/images/products/hak5/card/packet-squirrel.png)
@@ -29,6 +33,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 | デフォルト管理IP | 172.16.32.1 |
 | OS | Linuxベース |
 | LED | マルチカラーステータスLED |
+| サイズ／重量 | 50 × 40 × 15 mm, 24 g |
 
 ## 適用シナリオ
 
@@ -43,7 +48,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
+| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/packet-squirrel-mark-ii/packet-squirrel-mark-ii-by-hak5) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/squirrel/mk2) |
 
 {{< alert >}}

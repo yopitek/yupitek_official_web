@@ -341,7 +341,7 @@ opkg list | grep rtw89
 | OpenWrt 公式文書 | OpenWrt 公式ファイルエントリ（ワイヤレス設定 / パッケージ管理） | https://openwrt.org/docs/start | ✅ 検証済み | 2026-09-03 |
 | OpenWrt 公式フォーラム | USB WiFi ドライバ討論エントリ | https://forum.openwrt.org/ | ✅ 検証済み | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux ドライバのアップストリーム | https://github.com/morrownr/8812au-20210820 | ✅ 検証済み | 2026-09-03 |
-| ALFA Network 製品一覧（Yupitek） | ALFA 現行製品仕様 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検証済み | 2026-09-03 |
+| ALFA Network 製品一覧（Yopitek） | ALFA 現行製品仕様 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検証済み | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | ドライバ保守者公式声明：rtl8852/32au（RTL8832BU）チップセットを避ける推奨 | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ 検証済み | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko は kernel 5.19+ でのみコアに表示される（ドライバ保守者原話） | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ 検証済み | 2026-09-03 |
 | OpenWrt 公式フォーラム — Best USB WiFi dongle for Raspberry Pi 4B | 使用者からの報告：OpenWrt 23.05.0 で kmod-mt7921u が成功してインストール | https://forum.openwrt.org/t/best-usb-wifi-dongle-for-raspberry-pi-4b/160103 | ✅ 検証済み | 2026-09-03 |

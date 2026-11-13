@@ -3,6 +3,8 @@ title: "ACS ACR122U — USB NFC リーダー"
 description: "ACS ACR122U、USB NFC カードリーダー。ISO 14443 A/B、MIFARE、FeliCa 対応、13.56MHz。NFC 研究・アプリケーション開発に最適です。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
@@ -40,7 +42,7 @@ ACR122U は、13.56 MHz RFID 技術を採用した PC 接続型非接触スマ�
 | MTBF | 408,500 時間 |
 | LED | 1 個 双色 赤/緑（ユーザー制御可能） |
 | ブザー | 単音（ユーザー制御可能） |
-| 準拠規格 | PC/SC、CCID、CE、FCC、RoHS |
+| 準拠規格 | PC/SC、CCID、CE、FCC、RoHS 2 |
 
 ## 主な機能
 
@@ -79,6 +81,12 @@ ACR122U は、13.56 MHz RFID 技術を採用した PC 接続型非接触スマ�
 | リソース | リンク |
 |----------|------|
 | 📄 ACR122U 仕様書 (PDF) | [PDFをダウンロード](/docs/acr/ACR122U_spec.pdf) |
+
+## 公式リソース
+
+| リソース | リンク |
+|----------|--------|
+| ACS ACR122U 製品ページ | [acs.com.hk](https://www.acs.com.hk/cn/products/73/acr122u-nfc-%E9%9D%9E%E6%8E%A5%E8%A7%B8%E5%BC%8F%E6%99%BA%E8%83%BD%E5%8D%A1%E8%AF%BB%E5%86%99%E5%99%A8/) |
 
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC カードリーダー" />

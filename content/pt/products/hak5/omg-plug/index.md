@@ -2,16 +2,20 @@
 title: "O.MG Plug"
 date: 2025-01-01
 draft: false
-description: "Dispositivo O.MG do tamanho de um chaveiro em formato de plugue USB, com suporte a controle WiFi, injeção DuckyScript, Self-Destruct e Geo-Fencing."
+description: "Dispositivo O.MG do tamanho de um chaveiro em formato de plugue USB, com suporte a controle WiFi, injeção DuckyScript, Self-Destruct (somente Elite) e Geo-Fencing."
 featureimage: "/images/products/hak5/omg-plug.png"
 ---
+
+{{< alert "warning" >}}
+**Aviso legal de uso**: O.MG Plug é uma ferramenta profissional de pesquisa de segurança. Somente para testes de segurança e pesquisa autorizados. Destinada exclusivamente a profissionais de segurança com autorização escrita válida.
+{{< /alert >}}
 
 ## Características do Produto
 
 ![O.MG Plug](/images/products/hak5/card/omg-plug.png)
 
 - **Dispositivo O.MG em formato de plugue**: Tamanho chaveiro, em formato de plugue USB
-- **Funções O.MG completas**: Controle WiFi, injeção DuckyScript, Self-Destruct, Geo-Fencing
+- **Funções O.MG completas**: Controle WiFi, injeção DuckyScript, Self-Destruct (somente Elite), Geo-Fencing
 - **Sem cabo**: Funciona sem necessidade de cabo; inserido diretamente na porta USB
 - **Design para transporte diário**: Ideal para levar sempre como ferramenta de reserva (EDC)
 - **Funções Elite avançadas**: HIDX StealthLink, rede C2 criptografada, Port Stealthing
@@ -40,7 +44,7 @@ featureimage: "/images/products/hak5/omg-plug.png"
 | Recurso | Link |
 |---------|------|
 | 📖 Documentação oficial | [Ver online](https://o.mg.lol/setup/OMGPlug/) |
-| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/omg) |
+| ⬇️ Firmware e ferramentas | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).

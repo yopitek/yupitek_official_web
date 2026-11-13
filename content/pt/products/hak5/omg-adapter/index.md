@@ -6,6 +6,10 @@ description: "Dispositivo O.MG em formato de adaptador para uso com cabos USB ex
 featureimage: "/images/products/hak5/omg-adapter.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso legal de uso**: O.MG Adapter é uma ferramenta profissional de pesquisa de segurança destinada exclusivamente a profissionais de segurança com autorização escrita válida.
+{{< /alert >}}
+
 ## Características do Produto
 
 ![O.MG Adapter](/images/products/hak5/card/omg-adapter.png)
@@ -38,8 +42,7 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 
 | Recurso | Link |
 |---------|------|
-| 📖 Documentação oficial | [Ver online](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/omg) |
+| ⬇️ Firmware e ferramentas | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).

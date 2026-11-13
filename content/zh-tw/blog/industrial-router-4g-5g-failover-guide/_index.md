@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "industrial-router-4g-5g-failover-guide"
 tags: ["Sierra Wireless", "EM9191", "4G", "5G", "Failover", "工業路由器", "LTE", "5G SA", "M.2"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/zh-tw/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ faq:
 
 這篇文章我們拿官方規格書（EM919X Product Technical Specification）來拆解，告訴你為什麼 **EM9191** 這顆模組是現在做備援、未來上專網的完美首選。
 
-> 技術資料來源：Sierra Wireless 官方規格書。本文由榆閤科技（Yupitek）整理。
+> 技術資料來源：Sierra Wireless 官方規格書。本文由榆閤科技（Yopitek）整理。
 
 ---
 
@@ -92,6 +92,6 @@ EM9191 吃 3.3V 的電。重點來了：它在傳輸資料時的**瞬間峰值�
 
 ## 採購資訊（Call To Action）
 
-想要把 EM9191 整合進你的工業路由器嗎？ Yupitek（榆閤科技）有提供完整的硬體方案與技術支援，幫你解決最頭痛的散熱跟天線問題。
+想要把 EM9191 整合進你的工業路由器嗎？ Yopitek（榆閤科技）有提供完整的硬體方案與技術支援，幫你解決最頭痛的散熱跟天線問題。
 歡迎來信：**sales@yupitek.com**
 看看產品：[Sierra Wireless 系列產品](https://yupitek.com/zh-tw/products/sierra/)

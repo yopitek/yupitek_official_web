@@ -6,6 +6,10 @@ description: "外观完全模拟合法 USB Data Blocker 的 Elite 等级 O.MG �
 featureimage: "/images/products/hak5/omg-unBlocker.png"
 ---
 
+{{< alert "warning" >}}
+**合法使用声明**：O.MG UnBlocker 为专业安全研究工具，仅限用于经授权的安全测试与研究。仅供持有有效书面授权的安全专业人员使用。
+{{< /alert >}}
+
 ## 产品特色
 
 ![O.MG UnBlocker](/images/products/hak5/card/omg-unBlocker.png)
@@ -26,6 +30,7 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 | 连接口 | USB-A 公头（主动攻击端）+ USB-A 母头（电源直通端） |
 | 通过 | 5V 电源直通（无数据线路） |
 | 控制 | WiFi WebUI |
+| Payload 性能 | 最高 890 keys/sec、最多 300 个 Payload 槽、192 种键盘布局 |
 
 ## 应用环境
 
@@ -38,8 +43,7 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 | 资源 | 链接 |
 |------|------|
-| 📖 官方使用文件 | [在线查看](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/omg) |
+| ⬇️ 固件与工具下载 | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)

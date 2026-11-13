@@ -30,7 +30,7 @@ faq:
 
 这篇文章我们拿 Sierra Wireless 的官方规格书，为大家解密：为什么这几颗模块特别适合做无人机跟机器人？它们是怎么做到低延迟的？
 
-> 技术资料来源：Sierra Wireless 官方规格书（EM9190/EM9191、EM7565）。本文由榆合科技（Yupitek）整理。
+> 技术资料来源：Sierra Wireless 官方规格书（EM9190/EM9191、EM7565）。本文由榆合科技（Yopitek）整理。
 
 ---
 
@@ -92,6 +92,6 @@ faq:
 
 ## 采购信息（Call To Action）
 
-正在设计无人机或巡检机器人的通讯板？不知道怎么规划天线跟散热？Yupitek（榆合科技）有提供完整的 Sierra Wireless 模块与硬件整合顾问服务。
+正在设计无人机或巡检机器人的通讯板？不知道怎么规划天线跟散热？Yopitek（榆合科技）有提供完整的 Sierra Wireless 模块与硬件整合顾问服务。
 欢迎来信：**sales@yupitek.com**
 看看产品：[https://yupitek.com/zh-cn/products/sierra/](/zh-cn/products/sierra/)

@@ -6,6 +6,10 @@ description: "Устройство O.MG в форме переходника д�
 featureimage: "/images/products/hak5/omg-adapter.png"
 ---
 
+{{< alert "warning" >}}
+**Юридическое предупреждение об использовании**: O.MG Adapter — профессиональный инструмент для исследований в области безопасности, предназначенный исключительно для специалистов по безопасности, имеющих действительное письменное разрешение.
+{{< /alert >}}
+
 ## Особенности продукта
 
 ![O.MG Adapter](/images/products/hak5/card/omg-adapter.png)
@@ -38,8 +42,7 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 
 | Ресурс | Ссылка |
 |--------|--------|
-| 📖 Официальная документация | [Просмотреть онлайн](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ Прошивка и инструменты | [Портал загрузок Hak5](https://downloads.hak5.org/omg) |
+| ⬇️ Прошивка и инструменты | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).

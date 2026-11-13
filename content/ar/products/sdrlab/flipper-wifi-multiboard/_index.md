@@ -1,44 +1,49 @@
 ---
-title: "SDRLab Flipper Zero WiFi متعددة اللوحات — لوحة توسعة أبحاث لاسلكية 3-في-1"
-description: "لوحة WiFi متعددة لـ Flipper Zero، NRF24 + CC1101 (300-928MHz) + ESP32 (برنامج Marauder)، أبحاث بروتوكولات لاسلكية متعددة 3-في-1، طاقة GPIO."
+title: "SDRLab Flipper Zero WiFi متعددة اللوحات — لوحة توسعة متعددة الوحدات"
+description: "لوحة WiFi متعددة لـ Flipper Zero تجمع وحدات NRF24 وGPIO وCC1101 وGPS ووحدة استشعار بيئي كملحق لوحة تطوير."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
-tags: ["توسعة Flipper Zero", "ESP32", "CC1101", "NRF24", "Wi-Fi Marauder", "أبحاث الأمن"]
+tags: ["توسعة Flipper Zero", "لوحة تطوير WiFi", "NRF24", "CC1101", "GPS"]
 dir: rtl
 ---
+
 ## الميزات
+
 ![SDRLab Flipper Zero WiFi متعددة اللوحات](/images/products/sdrlab/flipper-wifi-multiboard.png)
-- تصميم ثلاثي التكامل: NRF24 + CC1101 + ESP32، يتيح لوحة واحدة لبروتوكولات لاسلكية متعددة
-- وحدة NRF24 تدعم استشعار إشارات لوحة المفاتيح والفأرة على 2.4 GHz وMouseJacker
-- وحدة CC1101 تُوسِّع التغطية في نطاق Sub-GHz (300–928 MHz) مع دعم تعديل ASK/OOK/FSK
-- وحدة ESP32 مُزوَّدة ببرنامج Wi-Fi Marauder لأبحاث أمان Wi-Fi على 2.4 GHz
-- لوحة توسعة واحدة تجمع وظائف بحث لاسلكي متعددة، مما يقلل من تبديل الملحقات
-- تعمل مباشرة بالطاقة من GPIO في Flipper Zero
+
+- تدمج وحدتي NRF24 وWiFi/NRF24 لاتصال لاسلكي متنوع
+- وحدة GPIO وراديو CC1101 (Sub-GHz) ووحدة GPS لتكامل متقدم مع المستشعرات
+- وحدة تحديد مواقع جاهزة للتوصيل والاستخدام لإضافة GPS بسهولة
+- مصممة كملحق لوحة تطوير لجهاز Flipper Zero
+- مستشعر ثاني أكسيد الكربون MH-Z19 وBME280 للمراقبة البيئية غير الاحترافية
+- تذكر صفحة المنتج لدى المصنّع أيضاً وحدة Air Mouse
 
 ## المواصفات
+
 | المواصفة | القيمة / الوصف |
 |---------|-----------|
-| نوع المنتج | لوحة توسعة GPIO لـ Flipper Zero ثلاثية الوظائف (3-in-1) |
-| وحدة NRF24 | Nordic nRF24L01، 2.4 GHz، استشعار لوحة المفاتيح والفأرة + MouseJacker |
-| وحدة CC1101 | Texas Instruments CC1101، 300–928 MHz Sub-GHz |
-| تنسيقات تعديل CC1101 | ASK، OOK، FSK |
-| وحدة ESP32 | ESP32 (برنامج Marauder)، أبحاث أمان Wi-Fi 2.4 GHz |
-| واجهة الاتصال | دبابيس GPIO القياسية لـ Flipper Zero |
-| الطاقة | تعمل بطاقة GPIO من Flipper Zero |
-| البرنامج الثابت | Wi-Fi Marauder (ESP32)، برنامج NRF24 Sniffer |
-| محتويات العبوة | لوحة توسعة 3-in-1 × 1 |
+| نوع المنتج | ملحق لوحة تطوير WiFi / لوحة متعددة لجهاز Flipper Zero |
+| الوحدات اللاسلكية | NRF24؛ تركيبة WiFi/NRF24 |
+| Sub-GHz وGPIO | وحدة GPIO، راديو CC1101 (Sub-GHz) |
+| تحديد المواقع | وحدة GPS؛ وحدة تحديد مواقع جاهزة للتوصيل |
+| الاستشعار البيئي | مستشعر CO2 من طراز MH-Z19 وBME280 (مراقبة غير احترافية) |
+| الجهاز المضيف | Flipper Zero (غير مرفق) |
 
 ## بيئات الاستخدام
-- أبحاث أمان Wi-Fi 2.4 GHz (أدوات Marauder)
-- التفاعل والبحث في أجهزة Sub-GHz (300–928 MHz)
-- اختبار بروتوكولات IoT اللاسلكية (نطاق Sub-GHz)
-- استشعار أجهزة HID اللاسلكية وعرض MouseJacker
-- توسيع نطاق استخدام Flipper Zero في Sub-GHz
-- اختبار لاسلكي متعدد البروتوكولات في تمارين الفريق الأحمر
+
+- أبحاث أمن الشبكات (فقط على الشبكات التي تملكها أو المصرح لك باختبارها)
+- مشاريع وتطوير إنترنت الأشياء
+- إدارة الأجهزة عن بُعد
+- تحديد المواقع عبر GPS في مشاريع Flipper Zero
+- مراقبة CO2 والبيئة (استخدام غير احترافي)
 
 ---
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}
+
+**صفحة المنتج لدى المصنّع (OpenSourceSDRLab)**: https://opensourcesdrlab.com/products/flipper-zero-modules-wifi-devboard-multiboard-esp8266-wifi-module-air-mouse-module-official?VariantsId=10382

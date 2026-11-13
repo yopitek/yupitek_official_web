@@ -8,9 +8,9 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axml-wifi6e-kali-linux-setup"
-tags: ["Test de Monitor Mode et de Packet Injection Wi-Fi 6E sur Kali Linux", "FR", "wifi6e-kali-linux-setup", "AWUS036AXML", "Kali Linux", "Tutoriel Monitor Mode et Packet Injection Wi-Fi 6E | Yupitek"]
+tags: ["Test de Monitor Mode et de Packet Injection Wi-Fi 6E sur Kali Linux", "FR", "wifi6e-kali-linux-setup", "AWUS036AXML", "Kali Linux", "Tutoriel Monitor Mode et Packet Injection Wi-Fi 6E | Yopitek"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-08-10
 ---
 
@@ -193,4 +193,4 @@ L'AXML supporte le Wi-Fi 6E (avec la bande 6 GHz en plus) et intègre son pilote
 
 L'installation de l'AWUS036AXML est bien plus simple qu'il n'y paraît : **un kernel 5.18+, un branchement direct utilisant le pilote intégré `mt7921u`, la vérification de l'ID `0e8d:7961`, le passage en Monitor Mode via airmon-ng, puis la validation de l'injection avec aireplay-ng**. La grande différence avec l'AWUS036ACH tient à la bande 6 GHz et à l'absence de compilation pour le pilote. Si ton périmètre d'audit englobe désormais le Wi-Fi 6E, cette carte représente une solution idéale pour compléter ta couverture de fréquences. N'oublie pas de mener tes tests uniquement sur des réseaux autorisés.
 
-La gamme de cartes ALFA Network bénéficie du support technique et commercial de Yupitek. Si tu as besoin d'une AWUS036AXML, d'un hub USB alimenté ou d'antennes adaptées, n'hésite pas à nous contacter à l'adresse [sales@yupitek.com](mailto:sales@yupitek.com).
+La gamme de cartes ALFA Network bénéficie du support technique et commercial de Yopitek. Si tu as besoin d'une AWUS036AXML, d'un hub USB alimenté ou d'antennes adaptées, n'hésite pas à nous contacter à l'adresse [sales@yupitek.com](mailto:sales@yupitek.com).

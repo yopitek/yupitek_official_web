@@ -1,6 +1,6 @@
 ---
 title: "Fusão Multi-Projetor"
-description: "Soluções de fusão multi-projetor da Yupitek: fusão de bordas, correção geométrica, uniformização de brilho — serviços de integração técnica para projeção ultra-widescreen em grande escala."
+description: "Soluções de fusão multi-projetor da Yopitek: fusão de bordas, correção geométrica, uniformização de brilho — serviços de integração técnica para projeção ultra-widescreen em grande escala."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 Quando um único projetor não é capaz de atender às necessidades de projeção em tamanhos extras grandes ou formas complexas, a tecnologia de fusão multi-projetor combina perfeitamente as imagens de vários projetores, apresentando uma tela ultra-widescreen unificada e contínua.
 
-A Yupitek possui ampla experiência em integração de sistemas multi-projetor com fusão, com projetos realizados desde 2 até mais de 20 projetores em sistemas de grande escala.
+A Yopitek possui ampla experiência em integração de sistemas multi-projetor com fusão, com projetos realizados desde 2 até mais de 20 projetores em sistemas de grande escala.
 
 ## Tecnologias Principais
 

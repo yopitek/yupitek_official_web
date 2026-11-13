@@ -1,6 +1,6 @@
 ---
 title: "Sierra EM7565 Deep Dive: CBRS Private LTE and High Uplink Explained"
-description: "EM7565 deep dive: Cat 12 downlink at 600 Mbps, Cat 13 uplink at 150 Mbps, Qualcomm MDM9250, M.2 form factor, 3-antenna MIMO, and multi-constellation GNSS. Everything you need for CBRS private network and industrial router selection, compiled by Yupitek."
+description: "EM7565 deep dive: Cat 12 downlink at 600 Mbps, Cat 13 uplink at 150 Mbps, Qualcomm MDM9250, M.2 form factor, 3-antenna MIMO, and multi-constellation GNSS. Everything you need for CBRS private network and industrial router selection, compiled by Yopitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -26,7 +26,7 @@ If you are running a lab project or building enterprise private LTE and CBRS net
 
 This article skips marketing talk. We use a single reference: the Sierra Wireless official specification, the AirPrime EM7565 Product Technical Specification (Doc 41110788, Rev 8, October 2018). We walk through the chipset, data rates, bands, antennas, temperature, and certifications line by line, and we will be honest about the "pending regulatory approval" caveat in the spec. If you are an integrator or an engineer making a purchasing decision, this is the checklist you need.
 
-> Product page: [EM7565 — Yupitek](/en/products/sierra/em7565/) | Official spec: [AirPrime EM7565 Product Technical Specification](https://yupitek.com/docs/sierra/EM7565_spec.pdf)
+> Product page: [EM7565 — Yopitek](/en/products/sierra/em7565/) | Official spec: [AirPrime EM7565 Product Technical Specification](https://yupitek.com/docs/sierra/EM7565_spec.pdf)
 
 ---
 
@@ -177,7 +177,7 @@ The spec lists compliance with FCC (US), NCC (Taiwan), RED (EU), plus GCF and PT
 
 ## Talk to Us About Your Project
 
-This deep dive was put together by the engineering team at Yupitek. If you are selecting a 4G module for a lab, or your company needs volume pricing and antenna design support for the EM7565, reach out.
+This deep dive was put together by the engineering team at Yopitek. If you are selecting a 4G module for a lab, or your company needs volume pricing and antenna design support for the EM7565, reach out.
 
 - **EM7565 product page**: [https://yupitek.com/en/products/sierra/em7565/](/en/products/sierra/em7565/)
 - **More Sierra models**: [https://yupitek.com/en/products/sierra/](/en/products/sierra/)

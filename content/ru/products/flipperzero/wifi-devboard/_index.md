@@ -3,6 +3,8 @@ title: "WiFi Devboard для Flipper Zero — официальный Wi-Fi мо�
 description: "Официальный Wi-Fi модуль расширения Flipper Zero на базе ESP32-S2, поддерживает 2.4GHz Wi-Fi, совместим с прошивками Marauder для тестирования безопасности."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/wifi-devboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "Flipper Zero расширение", "Wi-Fi безопасность"]
@@ -24,6 +26,12 @@ WiFi Devboard — официальный Wi-Fi модуль расширения
 | Wi-Fi | 2.4GHz 802.11 b/g/n |
 | Подключение | GPIO Flipper Zero |
 | Прошивка | поддержка сторонних прошивок Marauder и др. |
+
+## Официальные ресурсы
+
+| Ресурс | Ссылка |
+|--------|--------|
+| Официальная страница WiFi Devboard | [flipper.net](https://flipper.net/products/wifi-devboard) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/wifi-devboard.png" alt="WiFi Devboard для Flipper Zero" />

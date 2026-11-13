@@ -2,16 +2,20 @@
 title: "O.MG Plug"
 date: 2025-01-01
 draft: false
-description: "Устройство O.MG размером с брелок в форме USB-штекера, поддерживает управление по WiFi, инъекции DuckyScript, Self-Destruct и Geofencing."
+description: "Устройство O.MG размером с брелок в форме USB-штекера, поддерживает управление по WiFi, инъекции DuckyScript, Self-Destruct (только Elite) и Geofencing."
 featureimage: "/images/products/hak5/omg-plug.png"
 ---
+
+{{< alert "warning" >}}
+**Юридическое предупреждение об использовании**: O.MG Plug — профессиональный инструмент для исследований в области безопасности. Только для авторизованного тестирования безопасности и исследований. Предназначен исключительно для специалистов по безопасности, имеющих действительное письменное разрешение.
+{{< /alert >}}
 
 ## Особенности продукта
 
 ![O.MG Plug](/images/products/hak5/card/omg-plug.png)
 
 - **Устройство O.MG в форме USB-штекера**: Размером с брелок
-- **Полные функции O.MG**: Управление по WiFi, инъекции DuckyScript, Self-Destruct, Geo-Fencing
+- **Полные функции O.MG**: Управление по WiFi, инъекции DuckyScript, Self-Destruct (только Elite), Geo-Fencing
 - **Без кабеля**: Работает без кабеля; вставляется напрямую в порт USB
 - **Дизайн для ежедневного ношения**: Идеален как всегда готовый инструмент (EDC)
 - **Расширенные функции Elite**: HIDX StealthLink, зашифрованная сеть C2, Port Stealthing
@@ -40,7 +44,7 @@ featureimage: "/images/products/hak5/omg-plug.png"
 | Ресурс | Ссылка |
 |--------|--------|
 | 📖 Официальная документация | [Просмотреть онлайн](https://o.mg.lol/setup/OMGPlug/) |
-| ⬇️ Прошивка и инструменты | [Портал загрузок Hak5](https://downloads.hak5.org/omg) |
+| ⬇️ Прошивка и инструменты | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).

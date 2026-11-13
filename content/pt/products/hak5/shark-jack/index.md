@@ -6,6 +6,10 @@ description: "Ferramenta de ataque a rede cabeada do tamanho de um chaveiro com 
 featureimage: "/images/products/hak5/shark-jack.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso de Uso Legal**: Shark Jack é uma ferramenta profissional de pesquisa em segurança. Somente para testes de segurança e pesquisa autorizados. Destinada exclusivamente a profissionais de segurança com autorização por escrito válida.
+{{< /alert >}}
+
 ## Características do Produto
 
 ![Shark Jack](/images/products/hak5/card/shark-jack.png)
@@ -13,7 +17,7 @@ featureimage: "/images/products/hak5/shark-jack.png"
 - **Ferramenta de implante de rede cabeada ultra miniatura**: Tamanho chaveiro, deploy rápido
 - **Execução autônoma**: Bateria interna; executa Payload ao conectar ao Ethernet
 - **DuckyScript Payload**: Suporta comandos NETMODE / LED / SWITCH / BATTERY e mais
-- **Ferramentas de pentesting integradas**: nmap, curl, metasploit-framework e mais
+- **Ferramentas de pentesting integradas**: nmap, tcpdump e mais
 - **Suporte Cloud C²**: Gerenciamento remoto
 - **Interruptor de 3 posições**: Modo de ataque / Modo Arming / Desligamento
 
@@ -25,7 +29,8 @@ featureimage: "/images/products/hak5/shark-jack.png"
 | Interface | Ethernet (802.3) |
 | Dimensões | 62 × 21 × 12 mm |
 | Energia | 2.5W (USB 5V 0.5A) |
-| Bateria | 1S 401020 3.7V 50mAh 0.2Wh LiPo |
+| Bateria | 1S 401020 3.7V 50mAh LiPo |
+| Autonomia da bateria | Aprox. 10–15 minutos |
 | Temperatura de operação | 35°C ~ 45°C |
 | Temperatura de armazenamento | -20°C ~ 50°C |
 | Umidade relativa | 0% ~ 90% (sem condensação) |
@@ -41,7 +46,7 @@ featureimage: "/images/products/hak5/shark-jack.png"
 
 | Recurso | Link |
 |---------|------|
-| 📖 Documentação oficial | [Ver online](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| 📖 Documentação oficial | [Ver online](https://documentation.hak5.org/shark-jack/master) |
 | ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/shark) |
 
 {{< alert >}}

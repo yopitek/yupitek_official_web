@@ -1,5 +1,5 @@
 ---
-title: "Solution de liaison cellulaire pour la vidéosurveillance et l'affichage numérique : comment choisir entre Cat 6 et 5G ? | Yupitek"
+title: "Solution de liaison cellulaire pour la vidéosurveillance et l'affichage numérique : comment choisir entre Cat 6 et 5G ? | Yopitek"
 description: "Quel module cellulaire faut-il pour les caméras et l'affichage numérique ? Tout dépend de la direction du trafic : vers le haut ou vers le bas ! Cet article compare les EM7455 (Cat 6), EM7565 (Cat 12) et EM9191 (5G) sur la base des spécifications officielles, pour que tu choisisses précisément sans gaspiller ton argent."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "video-surveillance-digital-signage-cellular-backhaul-cat6-to-5g
 slug: "video-surveillance-digital-signage-cellular-backhaul-cat6-to-5g"
 tags: ["Sierra Wireless", "EM7455", "EM7565", "EM9191", "vidéosurveillance 4G", "affichage numérique", "retour vidéo 5G", "Cat 6", "LTE"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/fr/products/sierra/"
 faq:
@@ -35,7 +35,7 @@ Résultat : ils dépensent une grosse somme pour quelque chose dont ils n'ont en
 
 Choisir une carte réseau, ce n'est pas choisir une voiture de sport. Ce n'est pas « plus vite, c'est mieux », mais il faut traiter la cause. Dans cet article, nous passons au crible les trois modules M.2 les plus courants de Sierra Wireless (EM7455, EM7565, EM9191) et, avec les chiffres des spécifications officielles, nous t'apprenons à choisir le plus rentable.
 
-> Source des données techniques : spécifications officielles Sierra Wireless. Article compilé par Yupitek.
+> Source des données techniques : spécifications officielles Sierra Wireless. Article compilé par Yopitek.
 
 ---
 
@@ -113,7 +113,7 @@ Acheter une carte réseau, c'est comme louer un camion : selon la quantité de m
 
 ## Où acheter (Call To Action)
 
-Tu prépares une solution de retour vidéo ou de connexion pour l'affichage numérique ? Yupitek propose la gamme complète de modules Sierra Wireless ainsi qu'un accompagnement technique professionnel pour t'aider à trouver la combinaison la plus rentable !
+Tu prépares une solution de retour vidéo ou de connexion pour l'affichage numérique ? Yopitek propose la gamme complète de modules Sierra Wireless ainsi qu'un accompagnement technique professionnel pour t'aider à trouver la combinaison la plus rentable !
 Écris-nous : **sales@yupitek.com**
 Voir les produits : [Sierra Wireless](https://yupitek.com/fr/products/sierra/)
 

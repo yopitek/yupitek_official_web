@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
 ---
 
 ## 產品概述
@@ -64,7 +64,7 @@ YPB02 的各項參數（包括加速度計門檻、觸發條件、UUID、Major�
 ## 產品圖片
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb02.png" alt="Yupitek YPB02" />
+  <img src="/images/products/ibeacon/ypb02.png" alt="Yopitek YPB02" />
 {{< /gallery >}}
 
 ---

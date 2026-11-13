@@ -3,6 +3,8 @@ title: "Silicone Case for Flipper Zero — 官方硅胶保护壳"
 description: "Flipper Zero 官方硅胶保护壳，完整包覆主机，按键舒适，提供日常使用防护。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/silicone-case.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero 配件", "保护壳"]
@@ -18,6 +20,12 @@ Flipper Zero 官方硅胶保护壳，为主机提供完整的防护覆盖，防�
 - 硅胶材质，手感舒适
 - 按键触感良好
 - 预留 GPIO 与 USB-C 开口
+
+## 官方资源
+
+| 资源 | 链接 |
+|------|------|
+| Silicone Case 官方产品页面 | [flipper.net](https://flipper.net/products/flipper-silicone-case) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />

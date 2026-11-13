@@ -231,7 +231,7 @@ Tomato 对 Broadcom 路由器的内建 WiFi 支持完善，若你的需求是一
 | FreshTomato 官方网站 | FreshTomato 最新版本与支持装置列表 | https://freshtomato.org/ | ✅ 已查核 | 2026-09-03 |
 | OpenWrt 官方文档 | USB WiFi 驱动与无线设定（对比参考） | https://openwrt.org/docs/start | ✅ 已查核 | 2026-09-03 |
 | OpenWrt 官方论坛 | USB WiFi 驱动讨论（对比参考） | https://forum.openwrt.org/ | ✅ 已查核 | 2026-09-03 |
-| ALFA Network 产品总览（Yupitek） | ALFA 现役产品规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
+| ALFA Network 产品总览（Yopitek） | ALFA 现役产品规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
 
 相关文章：[ALFA 无线网卡是否支持 DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[ALFA 无线网卡是否支持 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[ALFA 无线网卡是否支持 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无线网卡是否支持 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

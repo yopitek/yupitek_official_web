@@ -92,7 +92,7 @@ iw list | grep -A 10 "Supported interface modes"
 
 ## 二、ALFA 产品线与芯片速覽 {#product-lineup}
 
-以下是 Yupitek 目前销售的 ALFA 网络卡型號、核心芯片与 Soft AP 初步評級：
+以下是 Yopitek 目前销售的 ALFA 网络卡型號、核心芯片与 Soft AP 初步評級：
 
 | 型號 | 芯片组 | 驱动类型 | WiFi 標準 | Soft AP 評級 |
 |------|--------|----------|-----------|-------------|
@@ -103,7 +103,7 @@ iw list | grep -A 10 "Supported interface modes"
 | AWUS036AX | Realtek RTL8832BU | Out-of-kernel（kernel 6.12+ 建议） | WiFi 6 AX1800 双频 | ❌ 不建议 |
 | AWUS036AXER | Realtek RTL8832BU | Out-of-kernel（同上） | WiFi 6 AX1800 双频 | ❌ 不建议 |
 
-> **備註**：AWUS036ACHM（MT7610U）已停產，Yupitek 产品页面不再列出。本文以現售产品为主。
+> **備註**：AWUS036ACHM（MT7610U）已停產，Yopitek 产品页面不再列出。本文以現售产品为主。
 
 ---
 
@@ -298,7 +298,7 @@ AWUS036AX 和 AWUS036AXER 雖然是 WiFi 6 規格，但 RTL8832BU 芯片是所�
 3. **Soft AP 社群案例極少**：相較於 MT7612U 和 RTL8812AU，RTL8832BU 用於 Soft AP 的实际案例幾乎找不到
 4. **社群文档明确不推荐**：morrownr/USB-WiFi 将此芯片標記为「不建议用於 penetration testing」
 
-> Yupitek 官方文章已明确指出：「AWUS036AX / AWUS036AXER 的 RTL8832BU 芯片在 kernel 6.14 以下有有限的 monitor mode 支持，不建议用於 penetration testing，請改用 AWUS036ACH 或 AWUS036AXML。」
+> Yopitek 官方文章已明确指出：「AWUS036AX / AWUS036AXER 的 RTL8832BU 芯片在 kernel 6.14 以下有有限的 monitor mode 支持，不建议用於 penetration testing，請改用 AWUS036ACH 或 AWUS036AXML。」
 
 ---
 
@@ -681,13 +681,13 @@ AWUS036ACH（RTL8812AU）可以用，但需要接受 WPA3 不支持和驱动维�
 - **Rokland** 授权零售商 Linux 支持页面
 - **Lab401** 技术評測与 2025 渗透测试最佳选择报告
 - **Raspberry Pi 官方論壇** — Pi 4/5 USB WiFi 兼容性讨论
-- **Yupitek 現有博客** — ACM China Install Guide、AXML WiFi 6E Review、Kali Linux 2026 最佳网卡
+- **Yopitek 現有博客** — ACM China Install Guide、AXML WiFi 6E Review、Kali Linux 2026 最佳网卡
 
 ---
 
-> **標籤**：#ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi4 #RaspberryPi5 #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #LinuxWiFiAP #USB无线网络卡 #树莓派WiFi热点 #Yupitek
+> **標籤**：#ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi4 #RaspberryPi5 #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #LinuxWiFiAP #USB无线网络卡 #树莓派WiFi热点 #Yopitek
 >
-> **作者**：榆合科技 (Yupitek Ltd) — ALFA Network 台湾授权总代理
+> **作者**：榆合科技 (Yopitek Ltd) — ALFA Network 台湾授权总代理
 >
 > **免責聲明**：本文研究資料截至 2026 年 5 月。Linux Kernel 与各發行版持續更新，驱动支持狀況可能隨版本變動。部署前建议确认目標平台的 kernel 版本与驱动兼容性。
 >

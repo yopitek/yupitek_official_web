@@ -21,7 +21,7 @@ The IT_Application division delivers a full turnkey service: requirements consul
 
 ### IT_Distribution — Technology Product Distribution
 
-Authorized distributor for world-leading technology brands, serving Taiwan enterprises, security research organizations, and academic institutions with genuine products and expert technical support.
+Authorized Taiwan distributor for ALFA Network, also supplying other world-leading technology brands, serving Taiwan enterprises, security research organizations, and academic institutions with genuine products and expert technical support.
 
 ## Our Strengths
 

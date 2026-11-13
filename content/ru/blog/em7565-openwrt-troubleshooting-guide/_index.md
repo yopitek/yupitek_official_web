@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "em7565-openwrt-troubleshooting-guide"
 tags: ["LTE", "Sierra Wireless", "OpenWrt"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ru/products/sierra/em7565/"
 faq:
@@ -26,7 +26,7 @@ faq:
 
 **EM7565 — это M.2 WWAN-модуль форм-фактора Type 3042-S3-B, 4G LTE-Advanced, построенный на чипсете Qualcomm MDM9250. Он поддерживает USB-интерфейсы QMI и MBIM.** Когда OpenWrt или Raspberry Pi не обнаруживает его, неисправность обычно кроется в одном из трёх мест: USB не запитан, USB-композиция застряла в неправильной конфигурации или драйвер Linux не загрузился корректно. Иногда модуль также переходит в режим защиты после повторных перезагрузок. Следуя официальному руководству Sierra Wireless, мы собрали надёжную пошаговую последовательность отладки.
 
-> Ссылка на продукт: [Серия Sierra Wireless от Yupitek](https://yupitek.com/en/products/sierra/)
+> Ссылка на продукт: [Серия Sierra Wireless от Yopitek](https://yupitek.com/en/products/sierra/)
 
 ## Краткий вывод: пять шагов, когда EM7565 не определяется
 
@@ -143,7 +143,7 @@ config interface 'wwan'
 
 ## Информация для покупки (призыв к действию)
 
-Не уверены, что ваша переходная плата или антенны совместимы с EM7565? Yupitek предоставляет полную линейку продукции Sierra Wireless и комплексные решения по интеграции оборудования.
+Не уверены, что ваша переходная плата или антенны совместимы с EM7565? Yopitek предоставляет полную линейку продукции Sierra Wireless и комплексные решения по интеграции оборудования.
 
 Напишите нам: **sales@yupitek.com**
 

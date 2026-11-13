@@ -1,6 +1,6 @@
 ---
 title: "Gebäude-Mapping"
-description: "Yupitek Building-Mapping-Projektionslösungen: großformatiges architektonisches 3D-Mapping, Festival-Projektionsshows, Markenevent-Projektion – mit vollständiger Geräteauswahl und technischer Integrationsdienstleistung."
+description: "Yopitek Building-Mapping-Projektionslösungen: großformatiges architektonisches 3D-Mapping, Festival-Projektionsshows, Markenevent-Projektion – mit vollständiger Geräteauswahl und technischer Integrationsdienstleistung."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 Building Mapping verwandelt Gebäudefassaden in dynamische visuelle Leinwände. Durch präzise Projektionsausrichtungstechnologie verschmelzen Licht und Architektur nahtlos miteinander und schaffen atemberaubende immersive Seherlebnisse.
 
-Yupitek verfügt über umfangreiche Erfahrung in der Durchführung großformatiger Projektions-Mapping-Shows – von Rathausfassaden-Events bis hin zu Firmenjubiläumsfeiern. Wir bieten End-to-End-Dienstleistungen, die Geräteplanung, Projektorauswahl und technischen Vor-Ort-Support umfassen.
+Yopitek verfügt über umfangreiche Erfahrung in der Durchführung großformatiger Projektions-Mapping-Shows – von Rathausfassaden-Events bis hin zu Firmenjubiläumsfeiern. Wir bieten End-to-End-Dienstleistungen, die Geräteplanung, Projektorauswahl und technischen Vor-Ort-Support umfassen.
 
 ## Kerntechnologien
 

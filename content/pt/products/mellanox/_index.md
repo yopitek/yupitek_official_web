@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/mellanox/ai-generated/hero/mellanox-hero-banner.png"
 ---
 
-A NVIDIA Mellanox é a principal referência global em computação de alto desempenho (HPC), clusters de dados para inteligência artificial, plataformas de nuvem hyperscale, armazenamento corporativo (NVMe-oF) e sistemas financeiros de baixa latência. A Yupitek oferece um portfólio completo de placas de rede Mellanox de alta velocidade, DPUs inteligentes, cabos ativos e passivos e switches de alta densidade.
+A NVIDIA Mellanox é a principal referência global em computação de alto desempenho (HPC), clusters de dados para inteligência artificial, plataformas de nuvem hyperscale, armazenamento corporativo (NVMe-oF) e sistemas financeiros de baixa latência. A Yopitek oferece um portfólio completo de placas de rede Mellanox de alta velocidade, DPUs inteligentes, cabos ativos e passivos e switches de alta densidade.
 
 ---
 

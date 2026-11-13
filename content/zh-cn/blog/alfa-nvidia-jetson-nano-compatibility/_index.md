@@ -363,8 +363,8 @@ ip link show
 | NVIDIA JetPack SDK 官方页 | JetPack 版本与 kernel 资讯 | https://developer.nvidia.com/embedded/jetpack | ✅ 已查核 | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux 驱动（Jetson Nano 适用） | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
 | morrownr/8821cu GitHub | RTL8811CU Linux 驱动 | https://github.com/morrownr/8821cu-20210916 | ✅ 已查核 | 2026-09-03 |
-| ALFA Soft AP WiFi Hotspot Linux Guide（Yupitek） | ALFA 在 Linux 上的 AP 模式设定指南 | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 已查核 | 2026-09-03 |
-| ALFA Network 产品总览（Yupitek） | ALFA 现役产品规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
+| ALFA Soft AP WiFi Hotspot Linux Guide（Yopitek） | ALFA 在 Linux 上的 AP 模式设定指南 | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 已查核 | 2026-09-03 |
+| ALFA Network 产品总览（Yopitek） | ALFA 现役产品规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | 驱动维护者官方声明：建议避开 rtl8852/32au（RTL8832BU）晶片 | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ 已查核 | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko 需 kernel 5.19+ 才会出现于核心（驱动维护者原话） | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ 已查核 | 2026-09-03 |
 

@@ -190,7 +190,7 @@ document.getElementById('btnWrite').addEventListener('click', async () => {
     const writer = new NDEFReader();
 
     // Option 1: write plain text (auto-wrapped as a text record)
-    // await writer.write('Yupitek Web NFC 測試');
+    // await writer.write('Yopitek Web NFC 測試');
 
     // Option 2: write a URL record (good for business cards, traffic)
     await writer.write({

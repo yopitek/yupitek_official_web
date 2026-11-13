@@ -7,6 +7,10 @@ description: "Shark Jack في هيئة كابل Ethernet، أضيفت إليه �
 featureimage: "/images/products/hak5/shark-jack-cable.png"
 ---
 
+{{< alert "warning" >}}
+**إخلاء مسؤولية الاستخدام القانوني**: Shark Jack Cable أداة احترافية لأبحاث الأمن. للاستخدام في اختبارات الأمن والأبحاث المصرّح بها فقط. مخصصة حصراً لمتخصصي الأمن الحاصلين على تفويض كتابي صالح.
+{{< /alert >}}
+
 ## ميزات المنتج
 
 ![Shark Jack Cable](/images/products/hak5/card/shark-jack-cable.png)
@@ -40,7 +44,7 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 
 | المورد | الرابط |
 |--------|--------|
-| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://documentation.hak5.org/shark-jack/getting-started/shark-jack-basics) |
 | ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/shark/cable) |
 
 {{< alert >}}

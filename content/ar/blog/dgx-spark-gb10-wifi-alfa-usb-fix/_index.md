@@ -324,9 +324,9 @@ ALFA ACM + هوائيات عالية الربح → Wi-Fi إدارة المكت�
 
 ---
 
-> 📌 **ALFA AWUS036ACM متوفر في المخزون** → [صفحة منتج Yupitek](/ar/products/alfa/awus036acm/)
+> 📌 **ALFA AWUS036ACM متوفر في المخزون** → [صفحة منتج Yopitek](/ar/products/alfa/awus036acm/)
 >
-> Yupitek Ltd هي موزع معتمد لـ ALFA Network في تايوان
+> Yopitek Ltd هي موزع معتمد لـ ALFA Network في تايوان
 > للطلبات أو الاستفسارات التقنية: sales@yupitek.com
 
 ---

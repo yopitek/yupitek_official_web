@@ -15,14 +15,14 @@ tags:
   - "rtl8812au"
 categories:
   - "驅動 / 選購指南"
-description: "> **技術支援文件 · 2026-09-03 初版（依 blog-writing-rules.md v1.0 規範撰寫）** > 判定母體：Yupitek 現役 ALFA USB 網路卡中本次技術文件矩陣已收錄的 6 款機型（3 款 MediaTek、3 款 Realtek）。 > 相關文章：[AL"
+description: "> **技術支援文件 · 2026-09-03 初版（依 blog-writing-rules.md v1.0 規範撰寫）** > 判定母體：Yopitek 現役 ALFA USB 網路卡中本次技術文件矩陣已收錄的 6 款機型（3 款 MediaTek、3 款 Realtek）。 > 相關文章：[AL"
 featureimage: ""
 author: "benny-lai"
 lastmod: 2026-09-03
 ---
 
 > **技術支援文件 · 2026-09-03 初版（依 blog-writing-rules.md v1.0 規範撰寫）**
-> 判定母體：Yupitek 現役 ALFA USB 網路卡中本次技術文件矩陣已收錄的 6 款機型（3 款 MediaTek、3 款 Realtek）。
+> 判定母體：Yopitek 現役 ALFA USB 網路卡中本次技術文件矩陣已收錄的 6 款機型（3 款 MediaTek、3 款 Realtek）。
 > 相關文章：[ALFA 無線網路卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 無線網路卡是否支援 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[ALFA 無線網路卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)｜[ALFA 無線網路卡是否支援 Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)｜[ALFA 無線網路卡是否支援 DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)
 
 ## 一句話結論
@@ -138,8 +138,8 @@ ip link   # 應出現新的 wlan 介面
 | morrownr/8812au GitHub | RTL8812AU Linux 驅動 | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
 | morrownr/8821cu GitHub | RTL8811CU Linux 驅動 | https://github.com/morrownr/8821cu-20210916 | ✅ 已查核 | 2026-09-03 |
 | morrownr/rtl8852bu GitHub | RTL8832BU Linux 驅動 | https://github.com/morrownr/rtl8852bu-20250826 | ✅ 已查核 | 2026-09-03 |
-| Yupitek ALFA 產品總覽 | 現役機型與規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
-| Yupitek Blog：Soft AP 指南 | AP 模式實作驗證文 | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 已查核 | 2026-09-03 |
+| Yopitek ALFA 產品總覽 | 現役機型與規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
+| Yopitek Blog：Soft AP 指南 | AP 模式實作驗證文 | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 已查核 | 2026-09-03 |
 | 本站技術文件 9 篇 | 判定矩陣與環境驗證基礎 | 相對連結（見文首「相關文章」） | ✅ 已查核 | 2026-09-03 |
 
 > kernel mt76 官方 wiki 頁：https://wireless.wiki.kernel.org/en/users/drivers/mediatek （已查核，列出各晶片支援起始 kernel 版本，可作為快速核對依據）

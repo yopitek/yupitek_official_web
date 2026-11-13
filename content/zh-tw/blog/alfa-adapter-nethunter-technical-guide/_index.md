@@ -431,14 +431,14 @@ ACH 擁有 NetHunter 生態系中最豐富的教學資源、最大的社群故�
 
 | 資源 | 連結 |
 |-----|------|
-| Yupitek — ALFA 台灣授權經銷商 | [yupitek.com](https://www.yupitek.com) |
+| Yopitek — ALFA 台灣授權經銷商 | [yupitek.com](https://www.yupitek.com) |
 | ALFA Network 官方產品頁面 | [alfa.com.tw](https://www.alfa.com.tw) |
 | MT7610U 驅動（核心樹） | [torvalds/linux — mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76) |
 | RTL8812AU 驅動（aircrack-ng） | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) |
 | NetHunter 支援裝置清單 | [nethunter.kali.org/device-kernels.html](https://nethunter.kali.org/device-kernels.html) |
 | NetHunter 官方文件 | [kali.org/docs/nethunter/](https://www.kali.org/docs/nethunter/) |
 | XDA NetHunter 論壇 | [xdaforums.com/tags/nethunter/](https://xdaforums.com/tags/nethunter/) |
-| Yupitek ALFA 產品型錄 | [/zh-tw/products/alfa/](/zh-tw/products/alfa/) |
+| Yopitek ALFA 產品型錄 | [/zh-tw/products/alfa/](/zh-tw/products/alfa/) |
 
 ---
 

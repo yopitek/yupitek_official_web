@@ -1,6 +1,7 @@
 ---
 title: "HAK5 Security Research Tools"
-description: "Yopitek distributes HAK5 security research tools: WiFi Pineapple, Bash Bunny, USB Rubber Ducky, Shark Jack, O.MG Cable, and more — the go-to brand for authorized penetration testing."
+seo_title: "Security Research Tools | Hak5 Taiwan | Yopitek"
+description: "Yopitek offers Hak5 tools in Taiwan: WiFi Pineapple, USB Rubber Ducky, Bash Bunny, Shark Jack, O.MG and more for authorized security testing."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,16 +10,16 @@ showChildPages: false
 featureimage: "/images/products/hak5/banner-hak5.png"
 ---
 
-HAK5 is a globally recognized manufacturer of security research tools, widely used in authorized penetration testing, red team operations, security training, and CTF competitions.
+HAK5 is a globally recognized manufacturer of security research tools, widely used in authorized penetration testing, red team operations, security training, and CTF competitions. The O.MG series is developed by Mischief Gadgets in partnership with Hak5.
 
 ## Product Line
 
 {{< card-group >}}
   {{< card title="WiFi Pineapple Mark VII" href="/en/products/hak5/wifi-pineapple-mark7/" image="/images/products/hak5/wifi-pineapple.png" >}}
-    Professional wireless network auditing platform, 802.11 a/b/g/n/ac dual-band, built-in OpenWRT — ideal for Wi-Fi security assessments.
+    Professional wireless network auditing platform with built-in OpenWRT — ideal for Wi-Fi security assessments.
   {{< /card >}}
   {{< card title="WiFi Pineapple Enterprise" href="/en/products/hak5/wifi-pineapple-enterprise/" image="/images/products/hak5/wifi-pineapple-enterprise.png" >}}
-    Enterprise-grade wireless auditing platform with enhanced antenna design for large-scale network security assessments.
+    Enterprise-grade wireless auditing platform with a quad-core CPU, dual Gigabit Ethernet and AC power for large-scale network security assessments.
   {{< /card >}}
   {{< card title="USB Rubber Ducky" href="/en/products/hak5/usb-rubber-ducky/" image="/images/products/hak5/usb-rubber-ducky.png" >}}
     Industry-standard HID injection tool that resembles a standard USB flash drive — executes pre-programmed keystroke scripts.
@@ -47,7 +48,7 @@ HAK5 is a globally recognized manufacturer of security research tools, widely us
   {{< card title="O.MG Programmer" href="/en/products/hak5/omg-programmer/" image="/images/products/hak5/omg-programmer.png" >}}
     Dedicated programmer for O.MG Cable — used for DuckyScript firmware flashing.
   {{< /card >}}
-  {{< card title="O.MG UnBlocker" href="/en/products/hak5/omg-unBlocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
+  {{< card title="O.MG UnBlocker" href="/en/products/hak5/omg-unblocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
     Bypasses USB data-blocking devices — for legitimate testing of charge-only cable solutions.
   {{< /card >}}
   {{< card title="Malicious Cable Detector" href="/en/products/hak5/malicious-cable-detector/" image="/images/products/hak5/malicious-cable-detector.png" >}}
@@ -64,6 +65,12 @@ HAK5 is a globally recognized manufacturer of security research tools, widely us
   {{< /card >}}
   {{< card title="Shark Jack Cable" href="/en/products/hak5/shark-jack-cable/" image="/images/products/hak5/shark-jack-cable.png" >}}
     Cable version of the Shark Jack for direct connection to network ports.
+  {{< /card >}}
+  {{< card title="Shark Jack Display" href="/en/products/hak5/shark-jack-display/" image="/images/products/hak5/shark-jack-display.jpg" >}}
+    Pocket-sized wired network assessment tool with a 1.2-inch OLED display and rocker switch for running interactive payloads on the device.
+  {{< /card >}}
+  {{< card title="LAN Turtle Hub" href="/en/products/hak5/lan-turtle-hub/" image="/images/products/hak5/lan-turtle-hub.jpg" >}}
+    USB-C Ethernet adapter with a 3-port USB 3 hub for remote access, USB interception and out-of-band WiFi, with DuckyScript payloads and a web interface.
   {{< /card >}}
 {{< /card-group >}}
 

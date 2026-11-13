@@ -7,6 +7,10 @@ description: "أداة Ethernet متعددة الوظائف للهجوم في ا
 featureimage: "/images/products/hak5/packet-squirrel.png"
 ---
 
+{{< alert "warning" >}}
+**إخلاء مسؤولية الاستخدام القانوني**: Packet Squirrel أداة احترافية لأبحاث الأمن. للاستخدام في اختبارات الأمن والأبحاث المصرّح بها فقط. مخصصة حصراً لمتخصصي الأمن الحاصلين على تفويض كتابي صالح.
+{{< /alert >}}
+
 ## ميزات المنتج
 
 ![Packet Squirrel Mark II](/images/products/hak5/card/packet-squirrel.png)
@@ -30,6 +34,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 | عنوان IP الافتراضي | 172.16.32.1 |
 | نظام التشغيل | Linux |
 | مؤشر الحالة | LED متعدد الألوان |
+| الأبعاد / الوزن | 50 × 40 × 15 mm, 24 g |
 
 ## بيئات التطبيق
 
@@ -44,7 +49,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 | المورد | الرابط |
 |--------|--------|
-| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://documentation.hak5.org/packet-squirrel-mark-ii/packet-squirrel-mark-ii-by-hak5) |
 | ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/squirrel/mk2) |
 
 {{< alert >}}

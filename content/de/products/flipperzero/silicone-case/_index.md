@@ -3,6 +3,8 @@ title: "Silikonhülle für Flipper Zero — Offizielle Schutzsilikon-Hülle"
 description: "Die offizielle Flipper Zero Silikonschutzhülle bietet vollständigen Schutz, angenehmes Tastengefühl und alltäglichen Schutz vor Stürzen und Kratzern."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/silicone-case.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero Accessories", "Protective Case"]
@@ -18,6 +20,12 @@ Die offizielle Flipper Zero Silikonschutzhülle bietet vollständige Abdeckung z
 - Silikonmaterial für angenehmen Grip
 - Reaktionsschnelles Tastengefühl
 - Ausschnitte für GPIO und USB-C-Zugang
+
+## Offizielle Ressourcen
+
+| Ressource | Link |
+|----------|------|
+| Silicone Case Produktseite | [flipper.net](https://flipper.net/products/flipper-silicone-case) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />

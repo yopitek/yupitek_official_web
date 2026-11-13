@@ -3,6 +3,8 @@ title: "Silicone Case for Flipper Zero — Официальный силикон
 description: "Официальный силиконовый защитный чехол для Flipper Zero обеспечивает полное покрытие устройства, комфортное нажатие кнопок и ежедневную защиту от царапин и ударов."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/silicone-case.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Аксессуары Flipper Zero", "Защитный чехол"]
@@ -18,6 +20,12 @@ tags: ["Аксессуары Flipper Zero", "Защитный чехол"]
 - Силиконовый материал для комфортного захвата
 - Хорошая тактильная отдача кнопок
 - Вырезы для доступа к GPIO и USB-C
+
+## Официальные ресурсы
+
+| Ресурс | Ссылка |
+|--------|--------|
+| Официальная страница Silicone Case | [flipper.net](https://flipper.net/products/flipper-silicone-case) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />

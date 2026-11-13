@@ -3,6 +3,8 @@ title: "ACS ACR1252U — NFC Forum 认证 USB 读卡机"
 description: "ACS ACR1252U，NFC Forum 认证 USB 读卡机，支持读写器、卡片模拟及点对点三种 NFC 模式，适合 NFC 应用程序开发与企业部署。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1252U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
@@ -35,8 +37,10 @@ ACR1252U 是 ACS 取得 NFC Forum 认证的 PC 连接式读卡机，采用 13.56
 | SAM 读写速度 | 9.6 Kbps – 215 Kbps |
 | LED | 1 个双色 红/绿（用户可控） |
 | 蜂鸣器 | 单音调（用户可控） |
-| 合规认证 | EN/IEC 60950、ISO 18092、ISO 14443、ISO 7816、PC/SC、CCID、NFC Forum、FeliCa Performance、CE、FCC、RoHS 2、REACH |
-| 附加认证 | J-LIS、VCCI、MIC（日本）、KC（韩国）、Microsoft WHQL |
+| 工作温度 | 0°C – 60°C，90% RH（非冷凝） |
+| MTBF | 500,000 小时 |
+| 合规认证 | IEC/EN 62368、ISO 18092、ISO 14443、ISO 7816、PC/SC、CCID、NFC Forum、CE、UKCA、FCC、RoHS 2、REACH、WEEE |
+| 附加认证 | J-LIS、VCCI、TELEC（日本）、KC（韩国）、BIS、Microsoft WHQL |
 
 ## 主要功能
 
@@ -66,8 +70,7 @@ ACR1252U 是 ACS 取得 NFC Forum 认证的 PC 连接式读卡机，采用 13.56
 - Windows®（多个版本，包含 Windows 10 及 Server 版本）
 - Linux®
 - macOS®
-- Solaris
-- Android™ 3.1 及以上版本
+- Android™
 
 
 ## 📄 产品规格书

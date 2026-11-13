@@ -24,7 +24,7 @@ faq:
 
 El MC7455 es el módulo PCI Express Mini Card (mPCIe) de Sierra Wireless, mientras que el EM7455 es su hermano M.2 dentro de la misma familia 74xx. Ambos módulos integran LTE, UMTS y posicionamiento GNSS, y ambos usan el procesador de banda base Qualcomm MDM9230. Las velocidades de red también son idénticas: LTE Cat 6 con pico de descarga de 300 Mbps (FDD) / 222 Mbps (TDD) y pico de subida de 50 Mbps (FDD) / 26 Mbps (TDD). Este artículo extrae las diferencias de hardware de las especificaciones oficiales para que sepa exactamente qué esperar antes de comprar.
 
-> Referencias técnicas: especificaciones oficiales de Sierra Wireless, la [Especificación Técnica del Producto AirPrime MC7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) y la [Especificación Técnica del Producto AirPrime EM7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Recopilado por Yupitek.
+> Referencias técnicas: especificaciones oficiales de Sierra Wireless, la [Especificación Técnica del Producto AirPrime MC7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) y la [Especificación Técnica del Producto AirPrime EM7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Recopilado por Yopitek.
 
 ---
 
@@ -131,10 +131,10 @@ El MC7455 y el EM7455 son como el mismo cerebro alojado en cuerpos diferentes. D
 
 ## Llamada a la acción (Adquisición)
 
-¿Necesita el MC7455 o el EM7455, o no sabe qué ranura usa su equipo existente? Yupitek es un proveedor profesional de soluciones inalámbricas industriales. Podemos ayudarle a confirmar:
+¿Necesita el MC7455 o el EM7455, o no sabe qué ranura usa su equipo existente? Yopitek es un proveedor profesional de soluciones inalámbricas industriales. Podemos ayudarle a confirmar:
 
 - Evaluación de compatibilidad de ranura de placa base y módulo
 - Adaptadores de conector de antena y emparejamiento de cables
 - Stock a largo plazo y precios por volumen
 
-Envíenos un correo a **sales@yupitek.com** o visite el [sitio web de Yupitek](https://www.yupitek.com) para ver productos relacionados.
+Envíenos un correo a **sales@yupitek.com** o visite el [sitio web de Yopitek](https://www.yupitek.com) para ver productos relacionados.

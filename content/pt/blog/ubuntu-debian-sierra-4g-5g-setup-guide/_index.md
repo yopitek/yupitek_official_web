@@ -1,5 +1,5 @@
 ---
-title: "Guia completo de instalação de módulos Sierra 4G/5G no Ubuntu / Debian / Linux Mint: configuração de EM7455, EM7565, EM919x e MC7455 com posicionamento GNSS | Yupitek"
+title: "Guia completo de instalação de módulos Sierra 4G/5G no Ubuntu / Debian / Linux Mint: configuração de EM7455, EM7565, EM919x e MC7455 com posicionamento GNSS | Yopitek"
 description: "Como instalar módulos Sierra 4G/5G no Ubuntu/Debian/Linux Mint? Este guia ensina a instalar o ModemManager, a usar qmicli/mbimcli para a conexão e a configurar o posicionamento GNSS. Abrange EM7455, EM7565, EM919x e MC7455."
 date: 2026-07-31
 draft: false
@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "ubuntu-debian-sierra-4g-5g-setup-guide"
 tags: ["Sierra Wireless", "Ubuntu", "Debian", "Linux", "GNSS"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/pt/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ O Linux oferece suporte nativo aos módulos da Sierra Wireless (EM7455, EM7565, 
 
 Muitas pessoas recebem uma EM7455, EM7565, EM919x ou MC7455, encaixam na placa-mãe e não sabem como configurar o acesso à internet. Na verdade, o suporte desses módulos no Linux é bastante maduro. Todos se comunicam via USB usando os protocolos QMI ou MBIM. A seguir, acompanhamos você passo a passo na configuração.
 
-> Os números e as bases técnicas provêm das especificações oficiais da Sierra Wireless. Artigo elaborado pela Yupitek.
+> Os números e as bases técnicas provêm das especificações oficiais da Sierra Wireless. Artigo elaborado pela Yopitek.
 
 ---
 
@@ -146,7 +146,7 @@ Trabalhar com módulos Sierra no Linux não é tão difícil quanto você imagin
 
 ## Informações de compra (Call to Action)
 
-Quer integrar módulos Sierra no seu dispositivo Ubuntu? A Yupitek oferece soluções completas de módulos, antenas e placas adaptadoras, além de suporte técnico de primeira linha.
+Quer integrar módulos Sierra no seu dispositivo Ubuntu? A Yopitek oferece soluções completas de módulos, antenas e placas adaptadoras, além de suporte técnico de primeira linha.
 Fale conosco: **sales@yupitek.com**
 Veja os produtos: [Série Sierra Wireless](https://yupitek.com/pt/products/sierra/)
 

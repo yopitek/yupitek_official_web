@@ -1,6 +1,7 @@
 ---
 title: "HAK5 資安研究工具"
-description: "榆閤科技代理 HAK5 資安研究工具：WiFi Pineapple、Bash Bunny、USB Rubber Ducky、Shark Jack、O.MG Cable 等，授權滲透測試首選品牌。"
+seo_title: "資安研究工具 Hak5 台灣 | Yopitek"
+description: "榆閤科技提供 Hak5 的 WiFi Pineapple、USB Rubber Ducky、Bash Bunny、Shark Jack 等授權滲透測試與研究工具，台灣可洽詢報價。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,16 +10,16 @@ showChildPages: false
 featureimage: "/images/products/hak5/banner-hak5.png"
 ---
 
-HAK5 是全球知名的資安研究工具製造商，產品廣泛應用於授權滲透測試、資安紅隊演練、資安教育訓練及 CTF 競賽。
+HAK5 是全球知名的資安研究工具製造商，產品廣泛應用於授權滲透測試、資安紅隊演練、資安教育訓練及 CTF 競賽。 O.MG 系列由 Mischief Gadgets 與 Hak5 合作開發。
 
 ## 產品系列
 
 {{< card-group >}}
   {{< card title="WiFi Pineapple Mark VII" href="/zh-tw/products/hak5/wifi-pineapple-mark7/" image="/images/products/hak5/wifi-pineapple.png" >}}
-    專業無線網路稽核平台，802.11 a/b/g/n/ac 雙頻，內建 OpenWRT，適合 Wi-Fi 安全評估。
+    專業無線網路稽核平台，內建 OpenWRT，適合 Wi-Fi 安全評估。
   {{< /card >}}
   {{< card title="WiFi Pineapple Enterprise" href="/zh-tw/products/hak5/wifi-pineapple-enterprise/" image="/images/products/hak5/wifi-pineapple-enterprise.png" >}}
-    企業級無線稽核平台，強化天線設計，適合大型企業網路安全評估。
+    企業級無線稽核平台，配備四核心處理器、雙 Gigabit 乙太網路與 AC 供電，適合大型企業網路安全評估。
   {{< /card >}}
   {{< card title="USB Rubber Ducky" href="/zh-tw/products/hak5/usb-rubber-ducky/" image="/images/products/hak5/usb-rubber-ducky.png" >}}
     業界標準 HID 注入工具，外觀如一般隨身碟，可執行預設鍵盤輸入腳本。
@@ -53,7 +54,7 @@ HAK5 是全球知名的資安研究工具製造商，產品廣泛應用於授權
   {{< card title="O.MG Programmer" href="/zh-tw/products/hak5/omg-programmer/" image="/images/products/hak5/omg-programmer.png" >}}
     O.MG 系列產品燒錄工具，支援 USB-A 及 USB-C 版本。
   {{< /card >}}
-  {{< card title="O.MG UnBlocker" href="/zh-tw/products/hak5/omg-unBlocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
+  {{< card title="O.MG UnBlocker" href="/zh-tw/products/hak5/omg-unblocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
     USB 資料封鎖旁路研究工具，用於測試 USB 資料封鎖裝置的有效性。
   {{< /card >}}
   {{< card title="Malicious Cable Detector" href="/zh-tw/products/hak5/malicious-cable-detector/" image="/images/products/hak5/malicious-cable-detector.png" >}}
@@ -64,6 +65,12 @@ HAK5 是全球知名的資安研究工具製造商，產品廣泛應用於授權
   {{< /card >}}
   {{< card title="Shark Jack Cable" href="/zh-tw/products/hak5/shark-jack-cable/" image="/images/products/hak5/shark-jack-cable.png" >}}
     Cable 版 Shark Jack，整合於 USB-C 線材中，攜帶更方便。
+  {{< /card >}}
+  {{< card title="Shark Jack Display" href="/zh-tw/products/hak5/shark-jack-display/" image="/images/products/hak5/shark-jack-display.jpg" >}}
+    口袋尺寸的有線網路評估工具，配備 1.2 吋 OLED 螢幕與搖桿開關，可在裝置上執行互動式 Payload。
+  {{< /card >}}
+  {{< card title="LAN Turtle Hub" href="/zh-tw/products/hak5/lan-turtle-hub/" image="/images/products/hak5/lan-turtle-hub.jpg" >}}
+    USB-C 乙太網路轉接器，內含 3 埠 USB 3 集線器，支援遠端存取、USB 攔截與帶外 WiFi，搭配 DuckyScript Payload 與網頁介面。
   {{< /card >}}
 {{< /card-group >}}
 

@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "industrial-router-4g-5g-failover-guide"
 tags: ["Sierra Wireless", "EM9191", "4G", "5G", "Failover", "産業用ルーター", "LTE", "5G SA", "M.2"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ja/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ faq:
 
 この記事では、公式仕様書（EM919X Product Technical Specification）を読み解きながら、**EM9191** が「今の冗長化」にも「将来のプライベート 5G」にも最適な理由をご説明します。
 
-> 技術資料の出典：Sierra Wireless 公式仕様書。本記事は榆閤科技（Yupitek）が編集しました。
+> 技術資料の出典：Sierra Wireless 公式仕様書。本記事は榆閤科技（Yopitek）が編集しました。
 
 ---
 
@@ -92,6 +92,6 @@ M.2 規格ですが、長さは **52mm** で、これまで一般的だった 42
 
 ## ご購入について（Call To Action）
 
-EM9191 を産業用ルーターに統合したいとお考えですか？Yupitek（榆閤科技）では、最も難しい放熱やアンテナの問題を解決する、完全なハードウェアソリューションと技術サポートを提供しています。
+EM9191 を産業用ルーターに統合したいとお考えですか？Yopitek（榆閤科技）では、最も難しい放熱やアンテナの問題を解決する、完全なハードウェアソリューションと技術サポートを提供しています。
 お問い合わせ：**sales@yupitek.com**
 製品を見る：[Sierra Wireless 製品シリーズ](https://yupitek.com/ja/products/sierra/)

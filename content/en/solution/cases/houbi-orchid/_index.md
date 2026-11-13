@@ -13,7 +13,7 @@ tags: ["Agricultural Exhibition", "Event Production", "Tainan"]
 **Type**: Agricultural-Themed Exhibition Projection
 **Theme**: Orchid Culture × Technology Visualization
 
-Houbi is one of Taiwan's premier orchid-growing regions, and the annual Orchid Exhibition is a key local cultural event. Yupitek designed an Immersive projection space for the exhibition, amplifying the natural beauty of orchids through large-scale visual technology to attract younger audiences and deepen appreciation for Taiwan's agricultural heritage.
+Houbi is one of Taiwan's premier orchid-growing regions, and the annual Orchid Exhibition is a key local cultural event. Yopitek designed an Immersive projection space for the exhibition, amplifying the natural beauty of orchids through large-scale visual technology to attract younger audiences and deepen appreciation for Taiwan's agricultural heritage.
 
 ## Technical Solution
 

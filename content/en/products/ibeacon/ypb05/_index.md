@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "USB Powered", "Plug and Play", "Ultra-lightweight"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "USB Powered", "Plug and Play", "Ultra-lightweight"]
 ---
 
 ## Product Overview
@@ -55,7 +55,7 @@ The parameters of YPB05 (including Tx Power, Broadcast Interval, UUID, Major, an
 ## Product Gallery
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb05.png" alt="Yupitek YPB05 Micro USB BLE 5.0 Beacon" />
+  <img src="/images/products/ibeacon/ypb05.png" alt="Yopitek YPB05 Micro USB BLE 5.0 Beacon" />
 {{< /gallery >}}
 
 ---

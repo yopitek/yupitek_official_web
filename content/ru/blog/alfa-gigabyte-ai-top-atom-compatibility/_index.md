@@ -228,7 +228,7 @@ sudo aireplay-ng --test wlan0
 | Обзор GIGABYTE AI TOP ATOM (LinuxGizmos) | Третий-party отзывы и подтверждение спецификаций (BT 5.3 / 50.5mm) | https://linuxgizmos.com/gigabyte-ai-top-atom-introduces-nvidia-grace-blackwell-gb10-performance-for-the-desktop/ | ✅ Проверено | 2026-09-03 |
 | Официальная страница NVIDIA DGX Spark | Информация о платформе GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Проверено | 2026-09-03 |
 | GitHub morrownr/8812au | Драйверы RTL8812AU для Linux | https://github.com/morrownr/8812au-20210820 | ✅ Проверено | 2026-09-03 |
-| Обзор продуктов ALFA Network (Yupitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
+| Обзор продуктов ALFA Network (Yopitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
 
 См. также статьи: [Поддерживает ли беспроводная карта ALFA NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/) | [Поддерживает ли беспроводная карта ALFA ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/) | [Поддерживает ли беспроводная карта ALFA ALTOS BrainSphere GB10 F1](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/) | [Поддерживает ли беспроводная карта ALFA MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 

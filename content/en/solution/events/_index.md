@@ -1,6 +1,6 @@
 ---
 title: "Events & Exhibitions"
-description: "Yupitek event and exhibition projection solutions: concert visual effects, corporate annual galas, art exhibitions, and trade show booth projection integration services."
+description: "Yopitek event and exhibition projection solutions: concert visual effects, corporate annual galas, art exhibitions, and trade show booth projection integration services."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Event Projection Services
 
-Event projection requirements differ fundamentally from permanent installations: rapid setup, flexible configuration, high-brightness output to handle complex lighting environments, and efficient teardown. Yupitek provides comprehensive event projection equipment rental, technical support, and on-site monitoring services.
+Event projection requirements differ fundamentally from permanent installations: rapid setup, flexible configuration, high-brightness output to handle complex lighting environments, and efficient teardown. Yopitek provides comprehensive event projection equipment rental, technical support, and on-site monitoring services.
 
 ## Service Categories
 

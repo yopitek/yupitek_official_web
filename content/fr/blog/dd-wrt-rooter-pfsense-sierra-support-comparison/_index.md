@@ -1,5 +1,5 @@
 ---
-title: "DD-WRT, ROOter ou pfSense peuvent-ils piloter une carte Sierra ? Comparaison de la compatibilité sur trois plateformes pour EM7455, EM7565 et MC7455 | Yupitek"
+title: "DD-WRT, ROOter ou pfSense peuvent-ils piloter une carte Sierra ? Comparaison de la compatibilité sur trois plateformes pour EM7455, EM7565 et MC7455 | Yopitek"
 description: "DD-WRT, ROOter et pfSense peuvent-ils piloter une carte Sierra Wireless ? Sur la base des spécifications officielles EM7455, EM7565 et MC7455, cet article compare la prise en charge QMI/MBIM dans trois firmwares de routeur pour t'aider à trouver la meilleure solution WAN de secours."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "dd-wrt-rooter-pfsense-sierra-support-comparison"
 slug: "dd-wrt-rooter-pfsense-sierra-support-comparison"
 tags: ["Sierra Wireless", "DD-WRT", "pfSense", "ROOter"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/fr/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ Tu veux brancher un module Sierra Wireless (EM7455, EM7565 ou MC7455) sur ton ro
 
 Beaucoup d'enthousiastes et d'équipes IT d'entreprise récupèrent un Sierra Wireless EM7455, EM7565 ou MC7455 et veulent immédiatement le glisser dans un routeur open source comme lien WAN de secours (failover). Rappelle-toi : le fabricant ne garantit jamais la prise en charge d'un firmware open source précis. Ce qui compte, c'est le système d'exploitation sous-jacent. Nous avons épluché les spécifications officielles pour te sortir les vrais faits de compatibilité.
 
-> Source : spécifications officielles Sierra Wireless (EM7455, EM7565, MC7455). Compilé par Yupitek.
+> Source : spécifications officielles Sierra Wireless (EM7455, EM7565, MC7455). Compilé par Yopitek.
 
 ---
 
@@ -87,7 +87,7 @@ Tant que le slot est le bon, que le connecteur d'antenne correspond et que l'OS 
 
 ## Où acheter (Call To Action)
 
-Tu n'es pas sûr que ton routeur accepte ces cartes, ou tu ne trouves pas le bon adaptateur et la bonne antenne ? Yupitek propose des solutions matérielles complètes et du conseil technique.
+Tu n'es pas sûr que ton routeur accepte ces cartes, ou tu ne trouves pas le bon adaptateur et la bonne antenne ? Yopitek propose des solutions matérielles complètes et du conseil technique.
 Contacte-nous : **sales@yupitek.com**
 Liens produits : [EM7455](https://yupitek.com/fr/products/sierra/em7455/) | [EM7565](https://yupitek.com/fr/products/sierra/em7565/) | [MC7455](https://yupitek.com/fr/products/sierra/mc7455/)
 

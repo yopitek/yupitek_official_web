@@ -13,7 +13,7 @@ tags: ["Gouvernement", "Salle Polyvalente", "Multi-Projecteurs"]
 **Type** : Système de Projection pour Salle Polyvalente
 **Application** : réunions gouvernementales, événements, présentations
 
-Le Bureau de District de Yangmei avait besoin d'un système de projection suffisamment flexible pour prendre en charge les réunions administratives quotidiennes, les grandes audiences publiques et les événements culturels locaux. Yupitek a conçu et installé un système de projection fusionnée multi-projecteurs pour s'adapter à une diversité de scénarios d'utilisation.
+Le Bureau de District de Yangmei avait besoin d'un système de projection suffisamment flexible pour prendre en charge les réunions administratives quotidiennes, les grandes audiences publiques et les événements culturels locaux. Yopitek a conçu et installé un système de projection fusionnée multi-projecteurs pour s'adapter à une diversité de scénarios d'utilisation.
 
 ## Solution Technique
 

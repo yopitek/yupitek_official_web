@@ -382,6 +382,6 @@ More than 90% of "VM can't see the adapter" cases come down to **passthrough set
 | aircrack-ng RTL8812AU community driver (for AWUS036ACH inside the Guest) | https://github.com/aircrack-ng/rtl8812au |
 | ALFA AWUS036ACH official product page | https://www.alfa.com.tw/products/awus036ach_1 |
 | ALFA AWUS036AXML official product page | https://www.alfa.com.tw/ |
-| Yupitek technical support | https://yupitek.com/ |
+| Yopitek technical support | https://yupitek.com/ |
 
 > **Legal use notice**: security operations such as monitor mode and packet injection inside a VM are only permitted on networks you own or are explicitly authorized to test. Users must comply with local laws and ensure every test has a legal authorization basis.

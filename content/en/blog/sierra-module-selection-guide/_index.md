@@ -1,6 +1,6 @@
 ---
 title: "Sierra Wireless Cellular Module Buyer's Guide: From LTE Cat 4 to 5G mmWave"
-description: "A complete comparison of ten Sierra Wireless (Semtech) EM/MC cellular modules from LTE Cat 4 to 5G mmWave, with specs, packaging differences, and selection advice. Sourced by Yupitek."
+description: "A complete comparison of ten Sierra Wireless (Semtech) EM/MC cellular modules from LTE Cat 4 to 5G mmWave, with specs, packaging differences, and selection advice. Sourced by Yopitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -19,7 +19,7 @@ faq:
   - question: "How do I choose between M.2 and mPCIe cellular modules?"
     answer: "It depends on your hardware slot. Laptops and modern embedded boards typically use M.2 B-Key, so choose the EM family. Older industrial routers and panel PCs with mPCIe slots take the MC family. If your board only has M.2 but you want an MC module, you will need an M.2-to-mPCIe adapter."
   - question: "Where can I buy Sierra Wireless modules?"
-    answer: "You can source the full Sierra Wireless cellular module lineup through Yupitek. Browse the Yupitek product pages for models and pricing, or email sales@yupitek.com directly."
+    answer: "You can source the full Sierra Wireless cellular module lineup through Yopitek. Browse the Yopitek product pages for models and pricing, or email sales@yupitek.com directly."
 ---
 
 # Sierra Wireless Cellular Module Buyer's Guide: From LTE Cat 4 to 5G mmWave
@@ -32,7 +32,7 @@ Whether you are a student building an IoT project or an engineer developing netw
 
 This guide walks through all ten current and long-running Sierra Wireless modules (now part of Semtech), from entry-level LTE Cat 4 all the way to 5G mmWave. Every EM-series module covered here uses M.2 packaging, while the MC series uses mPCIe.
 
-Technical data in this article is compiled by Yupitek.
+Technical data in this article is compiled by Yopitek.
 
 ## The Ten-Module Spec Sheet at a Glance
 
@@ -104,7 +104,7 @@ These are the first choice for servicing mPCIe-based legacy machines. To be fran
 
 ## Still Unsure? Let Us Help
 
-If you are still stuck after reading through, you can source all ten EM/MC cellular modules through Yupitek, together with antennas, SIM adapters, or evaluation boards. Whether you need to verify specs, compare bands, or get a quote and technical support for a project, we are here to help.
+If you are still stuck after reading through, you can source all ten EM/MC cellular modules through Yopitek, together with antennas, SIM adapters, or evaluation boards. Whether you need to verify specs, compare bands, or get a quote and technical support for a project, we are here to help.
 
 ## Frequently Asked Questions
 

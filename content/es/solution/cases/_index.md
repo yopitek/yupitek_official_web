@@ -1,6 +1,6 @@
 ---
 title: "Portafolio de Casos"
-description: "Portafolio de integración de sistemas de proyección de Yupitek: proyección arquitectónica, espacios inmersivos, exposiciones permanentes en museos y exhibiciones táctiles interactivas."
+description: "Portafolio de integración de sistemas de proyección de Yopitek: proyección arquitectónica, espacios inmersivos, exposiciones permanentes en museos y exhibiciones táctiles interactivas."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

@@ -13,7 +13,7 @@ tags: ["Exposition Artistique", "Projection Immersive", "Divertissement et Spect
 **Type** : Projection Immersive pour Exposition Artistique
 **Thème** : Exposition d'Art Visuel Pluridisciplinaire d'un Musicien
 
-L'exposition artistique pluridisciplinaire de Jam Hsiao a fait appel à Yupitek pour concevoir et déployer une expérience de projection immersive. Une couverture multi-projecteurs sur l'ensemble du site a présenté les créations visuelles de l'artiste avec un impact maximal, fusionnant art visuel et musique en une expérience sensorielle cohérente pour les visiteurs.
+L'exposition artistique pluridisciplinaire de Jam Hsiao a fait appel à Yopitek pour concevoir et déployer une expérience de projection immersive. Une couverture multi-projecteurs sur l'ensemble du site a présenté les créations visuelles de l'artiste avec un impact maximal, fusionnant art visuel et musique en une expérience sensorielle cohérente pour les visiteurs.
 
 ## Points Forts Techniques
 

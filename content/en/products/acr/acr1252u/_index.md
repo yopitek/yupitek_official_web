@@ -1,15 +1,27 @@
 ---
 title: "ACS ACR1252U — USB NFC Reader III (NFC Forum Certified)"
-description: "ACS ACR1252U, NFC Forum certified USB reader with card reader/writer, card emulation and peer-to-peer modes. Ideal for enterprise NFC application development and deployment."
+description: "ACS ACR1252U NFC Forum certified USB reader with reader/writer, card emulation and P2P modes and a SAM slot. Available from Yopitek in Taiwan."
+seo_title: "ACR1252U | ACS Taiwan | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1252U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
 tags: ["NFC", "NFC Forum", "ISO 14443", "USB", "Card Reader"]
+faq:
+  - question: "What NFC modes does the ACR1252U support?"
+    answer: "It is NFC Forum certified and supports three modes: card reader/writer, card emulation and peer-to-peer. It also reads ISO 14443 Type A/B, MIFARE, FeliCa and ISO 18092 tags at up to 50 mm."
+  - question: "What is the difference between the ACR1252U-M1 and ACR1252U-MF?"
+    answer: "The ACR1252U-M1 has a USB Type-A connector and the ACR1252U-MF has a USB Type-C connector. Both are 13.56 MHz readers with a SAM slot and post-deployment USB firmware upgrade support."
+  - question: "Does the ACR1252U have a SAM slot?"
+    answer: "Yes. It has one ISO 7816 Class A (5V) SAM slot in standard SIM size, supporting T=0 and T=1, for key diversification and mutual authentication."
 ---
 
 ACR1252U
+
+The ACS ACR1252U is an NFC Forum certified USB reader for NFC application development and enterprise deployment. It supports reader/writer, card emulation and peer-to-peer modes, has an ISO 7816 SAM slot, and reads up to 50 mm. Yopitek offers it in Taiwan.
 
 ## Product Overview
 
@@ -35,8 +47,10 @@ The ACR1252U is an NFC Forum-certified PC-linked reader based on 13.56 MHz conta
 | SAM Read/Write Speed | 9.6 Kbps – 215 Kbps |
 | LED | 1 bi-color Red/Green (user-controllable) |
 | Buzzer | Monotone (user-controllable) |
-| Compliance | EN/IEC 60950, ISO 18092, ISO 14443, ISO 7816, PC/SC, CCID, NFC Forum, FeliCa Performance, CE, FCC, RoHS 2, REACH |
-| Additional Certifications | J-LIS, VCCI, MIC (Japan), KC (Korea), Microsoft WHQL |
+| Operating Temperature | 0°C – 60°C, 90% RH (non-condensing) |
+| MTBF | 500,000 hrs |
+| Compliance | IEC/EN 62368, ISO 18092, ISO 14443, ISO 7816, PC/SC, CCID, NFC Forum, CE, UKCA, FCC, RoHS 2, REACH, WEEE |
+| Additional Certifications | J-LIS, VCCI, TELEC (Japan), KC (Korea), BIS, Microsoft WHQL |
 
 ## Key Features
 
@@ -66,8 +80,7 @@ The ACR1252U is an NFC Forum-certified PC-linked reader based on 13.56 MHz conta
 - Windows® (multiple versions, including Windows 10 and Server editions)
 - Linux®
 - macOS®
-- Solaris
-- Android™ 3.1 and later
+- Android™
 
 
 ## 📄 Product Datasheet
@@ -98,3 +111,5 @@ The ACR1252U is an NFC Forum-certified PC-linked reader based on 13.56 MHz conta
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+{{< faq >}}

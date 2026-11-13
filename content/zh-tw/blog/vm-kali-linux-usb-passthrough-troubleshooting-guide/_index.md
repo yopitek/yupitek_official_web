@@ -383,6 +383,6 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 | aircrack-ng RTL8812AU 社群驅動（AWUS036ACH Guest 內使用） | https://github.com/aircrack-ng/rtl8812au |
 | ALFA AWUS036ACH 官方產品頁 | https://www.alfa.com.tw/products/awus036ach_1 |
 | ALFA AWUS036AXML 官方產品頁 | https://www.alfa.com.tw/ |
-| Yupitek 技術支援 | https://yupitek.com/ |
+| Yopitek 技術支援 | https://yupitek.com/ |
 
 > **合法使用聲明**：在虛擬機內啟用監聽模式、封包注入等資安操作，僅限於您擁有或已獲得明確授權之網路環境。使用者須自行遵守所在地法律規範，並確保所有測試皆有合法授權依據。

@@ -1,6 +1,6 @@
 ---
 title: "HAK5 Shark Jack Cable — Portables Netzwerkprüfwerkzeug im Kabelformat"
-description: "HAK5 Shark Jack Cable, Netzwerkprüffunktionen integriert in einen USB-C-Kabelformfaktor. Gleiche Funktionalität wie der Shark Jack mit verbesserter Portabilität."
+description: "HAK5 Shark Jack Cable, Netzwerkprüffunktionen integriert in einen Ethernet-Kabelformfaktor (USB-C für Strom und serielle Konsole). Gleiche Funktionalität wie der Shark Jack."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -14,7 +14,7 @@ tags: ["Network Audit", "Ethernet", "USB-C", "Penetration Testing"]
 
 ## Produktübersicht
 
-Shark Jack Cable integriert Netzwerkprüffunktionalität in einen USB-C-Kabelformfaktor und verbindet sich direkt mit dem USB-C-Port eines Laptops. Es ist portabler und diskreter als der ursprüngliche Shark Jack und bietet die gleiche Funktionalität, einschließlich BashBunny-Skriptunterstützung.
+Shark Jack Cable integriert die Shark-Jack-Funktionalität in einen Ethernet-Kabelformfaktor. Stromversorgung und serieller Zugang (USB UART) erfolgen über USB-C. Es ist diskreter als der ursprüngliche Shark Jack und kompatibel mit dessen Payloads.
 
 {{< gallery >}}
   <img src="/images/products/hak5/shark-jack-cable.png" alt="HAK5 Shark Jack Cable" />

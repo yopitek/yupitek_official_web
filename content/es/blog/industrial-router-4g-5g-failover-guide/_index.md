@@ -29,7 +29,7 @@ En una fábrica, cada minuto de corte de red cuesta dinero. Los datos de las má
 
 En este artículo tomamos como base la hoja de especificaciones oficial (EM919X Product Technical Specification) para explicarle por qué el módulo **EM9191** es la elección perfecta hoy para el respaldo y mañana para la red privada.
 
-> Fuente de los datos técnicos: hoja de especificaciones oficial de Sierra Wireless. Artículo elaborado por Yupitek (榆閤科技).
+> Fuente de los datos técnicos: hoja de especificaciones oficial de Sierra Wireless. Artículo elaborado por Yopitek (榆閤科技).
 
 ---
 
@@ -92,7 +92,7 @@ Gracias a su potente soporte de LTE Cat 20 y 5G SA, cubre a la perfección el «
 
 ## Información de compra (Call To Action)
 
-¿Quiere integrar el EM9191 en su router industrial? Yupitek (榆閤科技) ofrece soluciones de hardware completas y soporte técnico de primera línea para resolverle los problemas más difíciles de refrigeración y antenas.
+¿Quiere integrar el EM9191 en su router industrial? Yopitek (榆閤科技) ofrece soluciones de hardware completas y soporte técnico de primera línea para resolverle los problemas más difíciles de refrigeración y antenas.
 Escríbanos: **sales@yupitek.com**
 Vea los productos: [Productos de la serie Sierra Wireless](/es/products/sierra/)
 
@@ -106,7 +106,7 @@ Vea los productos: [Productos de la serie Sierra Wireless](/es/products/sierra/)
 
 ## ¿Necesita comprar o consultar? Hable con nosotros
 
-Si después de leer este artículo le quedan dudas sobre la integración de hardware, o su empresa necesita adquirir el módulo EM9191, puede contactar al equipo de ingeniería de Yupitek. También disponemos de las antenas y las placas adaptadoras correspondientes.
+Si después de leer este artículo le quedan dudas sobre la integración de hardware, o su empresa necesita adquirir el módulo EM9191, puede contactar al equipo de ingeniería de Yopitek. También disponemos de las antenas y las placas adaptadoras correspondientes.
 
 - **Página del módulo EM9191**: [https://yupitek.com/es/products/sierra/em9191/](/es/products/sierra/em9191/)
 - **Todos los modelos Sierra**: [https://yupitek.com/es/products/sierra/](/es/products/sierra/)

@@ -20,7 +20,7 @@ faq:
   - question: "Ist passiver Empfang legal?"
     answer: "Der Empfang von öffentlich ausgestrahlten Remote-ID-Informationen von Drohnen ist legal – gleichbedeutend mit dem Lesen öffentlich zugänglicher Informationen. Aktives Stören (Jamming) ist dagegen streng reguliert und nicht Teil dieses Kits."
 ---
-> Yupitek Technik-Team | Offizieller ALFA-Network-Distributor, Taiwan
+> Yopitek Technik-Team | Offizieller ALFA-Network-Distributor, Taiwan
 
 {{< tldr >}}
 Das Remote-ID-Erkennungskit nutzt den Monitor Mode des **ALFA AWUS036ACH**-Adapters, um die Identitäts- und Positionsinformationen passiv zu empfangen, die Drohnen gesetzlich ausstrahlen müssen – stell dir das wie ein „Kennzeichenscanner" für den Luftraum vor. Es gibt Sicherheitsverantwortlichen ein legales, kostengünstiges Werkzeug für die Lageerkennung.
@@ -290,9 +290,9 @@ Wenn du neu im Bereich Drohnenregulierung und Counter-UAV-Technologie bist, hier
 4. [kismetwireless/kismet — Drahtloses Erkennungsframework](https://github.com/kismetwireless/kismet)
 5. [alphafox02/antsdr_dji_droneid — DJI OcuSync DroneID SDR-Decoder](https://github.com/alphafox02/antsdr_dji_droneid)
 6. [morrownr/8812au-20210629 — RTL8812AU Linux Monitor-/Injektionstreiber](https://github.com/morrownr/8812au-20210629)
-7. [ALFA AWUS036ACH Produktseite (Yupitek)](https://yupitek.com/de/products/alfa/awus036ach/)
-8. [Kontakt und Bestellung (Yupitek)](https://www.yupitek.com/de/contact/)
+7. [ALFA AWUS036ACH Produktseite (Yopitek)](https://yupitek.com/de/products/alfa/awus036ach/)
+8. [Kontakt und Bestellung (Yopitek)](https://www.yupitek.com/de/contact/)
 
 ---
 
-*Dieser Artikel wurde vom Yupitek-Technikerteam zusammengestellt. AWUS036ACH und verwandte Hardware sind über Yupitek mit autorisiertem Vertrieb und technischem Support erhältlich.*
+*Dieser Artikel wurde vom Yopitek-Technikerteam zusammengestellt. AWUS036ACH und verwandte Hardware sind über Yopitek mit autorisiertem Vertrieb und technischem Support erhältlich.*

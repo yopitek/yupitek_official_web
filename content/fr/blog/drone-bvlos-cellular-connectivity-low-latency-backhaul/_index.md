@@ -1,5 +1,5 @@
 ---
-title: "Connectivité cellulaire BVLOS pour drones et robots d'inspection : comment assurer un backhaul à faible latence | Yupitek"
+title: "Connectivité cellulaire BVLOS pour drones et robots d'inspection : comment assurer un backhaul à faible latence | Yopitek"
 description: "Comment connecter un drone hors ligne de vue (BVLOS) ? Cet article compare les Sierra EM9190, EM9191 et EM7565 : architecture 5G SA à faible latence, envoi vidéo et géolocalisation double fréquence L1/L5, pour que tu construises une solution sans coupure pour robots d'inspection et drones."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "drone-bvlos-cellular-connectivity-low-latency-backhaul"
 slug: "drone-bvlos-cellular-connectivity-low-latency-backhaul"
 tags: ["Sierra Wireless", "EM9190", "EM9191", "EM7565", "drones", "BVLOS", "5G", "faible latence", "GNSS", "LTE"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/fr/products/sierra/"
 faq:
@@ -32,7 +32,7 @@ Une fois hors ligne de vue (BVLOS), la télécommande ne sert plus à rien et le
 
 Dans cet article, nous prenons les spécifications officielles de Sierra Wireless pour te dévoiler : pourquoi ces modules conviennent-ils particulièrement aux drones et aux robots ? Comment parviennent-ils à une faible latence ?
 
-> Source des données techniques : spécifications officielles Sierra Wireless (EM9190/EM9191, EM7565). Article compilé par Yupitek.
+> Source des données techniques : spécifications officielles Sierra Wireless (EM9190/EM9191, EM7565). Article compilé par Yopitek.
 
 ---
 
@@ -86,7 +86,7 @@ Tu voles dans le ciel, tu as le budget et tu veux un réseau privé 5G : prends 
 
 ## Où acheter (Call To Action)
 
-Tu conçois la carte de communication d'un drone ou d'un robot d'inspection ? Tu ne sais pas comment planifier les antennes et le refroidissement ? Yupitek propose la gamme complète de modules Sierra Wireless et un service de conseil en intégration matérielle.
+Tu conçois la carte de communication d'un drone ou d'un robot d'inspection ? Tu ne sais pas comment planifier les antennes et le refroidissement ? Yopitek propose la gamme complète de modules Sierra Wireless et un service de conseil en intégration matérielle.
 Écris-nous : **sales@yupitek.com**
 Voir les produits : [Sierra Wireless](https://yupitek.com/fr/products/sierra/)
 

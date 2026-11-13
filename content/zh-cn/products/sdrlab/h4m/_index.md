@@ -3,6 +3,8 @@ title: "SDRLab H4M — 便携型 HackRF + PortaPack 组合"
 description: "SDRLab H4M，HackRF One + PortaPack H4M 便携型 SDR 组合，1MHz–6GHz，20MHz 带宽，Mayhem 固件，USB-C 快充，内置扬声器麦克风。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/h4m.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "便携型 SDR"]
@@ -20,25 +22,26 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "便携型 SDR"]
 - USB-C 连接器，快速充电、广泛兼容
 - 内置扬声器与麦克风，耳机插入时自动切换音源
 - GPIO 扩展接口可自制扩展配件（如 Flipper Zero）
-- 套装组合含 HackRF R10c 复刻版，支持 Mayhem 固件
+- 套装组合含 HackRF R10C，支持 Mayhem 固件；另配 microSD 插槽与 3.5 mm 耳机/麦克风孔
 
 ## 产品规格
 
 | 规格项目 | 数值／说明 |
 |---------|-----------|
-| 配套硬件 | HackRF One（R10c 复刻）+ PortaPack H4M PCB |
+| 配套硬件 | HackRF One（R10C）+ PortaPack H4M PCB |
 | 频率范围 | 1 MHz – 6 GHz（依 HackRF One 规格）|
 | 最大带宽 | 20 MHz |
 | ADC 分辨率 | 8-bit |
 | RF 接口 | SMA 母头 |
-| 主芯片 | MAX2837（HackRF 射频前端）|
-| 屏幕 | 3.2 英寸 TFT 磨砂屏 |
+| 屏幕 | 3.2 英寸 240×320 磨砂触控 LCD |
 | 电源接口 | USB-C（快速充电）|
-| 电池容量 | 2500 mAh 锂电池（依套装版本）|
+| 电池容量 | 2500 mAh 锂电池|
 | 电源管理 | 高级电池管理 IC（电量 %、电压、电流显示）|
 | 音频 | 内置扬声器 + 麦克风，自动耳机切换 |
-| 扩展接口 | I2C 兼容 GPIO 接口 |
-| 外壳 | 透明亚克力或 ABS 注塑外壳（依套装版本）|
+| 扩展接口 | GPIO 接口，可自制扩展配件 |
+| 存储 | microSD 插槽 |
+| 耳机/麦克风 | 3.5 mm 耳机/麦克风孔 |
+| 外壳 | 透明 ABS 注塑外壳|
 | 固件 | Mayhem Firmware（预装或需自行烧录）|
 | 操作系统支持 | Windows、macOS、Linux、Android（搭配外接电脑）|
 | 软件兼容 | GNU Radio、SDR#、GQRX 等（USB 连线模式）|
@@ -59,12 +62,12 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "便携型 SDR"]
 
 ## 📖 使用手册
 
-The complete beginner guide for getting started with your SDRLab H4M — from unboxing to advanced signal operations.
+从开箱到进阶信号操作，SDRLab H4M 完整新手入门指南。
 
 <div style="margin: 1.5rem 0 2rem; text-align: center;">
   <a href="/manual/h4m/" target="_blank" rel="noopener"
      style="display: inline-block; padding: 0.875rem 2.5rem; background: #ffffff; color: #111827; border: 2px solid #d1d5db; border-radius: 8px; font-size: 1rem; font-weight: 600; text-decoration: none; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-    Open manual in full screen ↗
+    全屏打开手册 ↗
   </a>
 </div>
 ---
@@ -72,3 +75,5 @@ The complete beginner guide for getting started with your SDRLab H4M — from un
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}
+
+**原厂商店页（OpenSourceSDRLab）**：https://opensourcesdrlab.com/products/h4m-receiver-and-spectrum-analyzer?VariantsId=10129

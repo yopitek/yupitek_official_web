@@ -115,7 +115,7 @@ Das Trio MC7304, MC7350 und MC7354 ist eigentlich leicht auseinanderzuhalten: **
 
 ## Beschaffungsinformationen (Call to Action)
 
-Brauchst du diese Module oder bist du unsicher bei der Auswahl? Yupitek ist ein professioneller Hardware-Integrationspartner, der dir hilft, Fragen zu Bändern, Slots und Bevorratung zu klären.
+Brauchst du diese Module oder bist du unsicher bei der Auswahl? Yopitek ist ein professioneller Hardware-Integrationspartner, der dir hilft, Fragen zu Bändern, Slots und Bevorratung zu klären.
 
 - **Produktseiten**: [MC7304](/de/products/sierra/mc7304/) | [MC7350](/de/products/sierra/mc7350/) | [MC7354](/de/products/sierra/mc7354/)
 - **E-Mail**: sales@yupitek.com

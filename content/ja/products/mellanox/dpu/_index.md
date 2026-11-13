@@ -16,7 +16,7 @@ NVIDIA® BlueField® データ処理ユニット（DPU）は、データセン�
 
 ## BlueField DPU 取扱製品一覧
 
-Yupitekでは、クラウド規模の仮想化、ソフトウェア定義ストレージ、ゼロトラストセキュリティ向けに構成されたBlueField DPU製品を提供しています。
+Yopitekでは、クラウド規模の仮想化、ソフトウェア定義ストレージ、ゼロトラストセキュリティ向けに構成されたBlueField DPU製品を提供しています。
 
 ![NVIDIA BlueField DPU](/images/products/mellanox/official/dpu/bluefield2-dpu-official.jpg)
 *NVIDIA BlueField プログラマブル・インフラストラクチャ・アダプター*

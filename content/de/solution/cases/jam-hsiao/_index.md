@@ -13,7 +13,7 @@ tags: ["Kunstausstellung", "Immersive Projektion", "Unterhaltung & Live-Events"]
 **Typ**: Kunstausstellung – Immersive Projektion
 **Thema**: Fächerübergreifende Visuelle Kunstshow eines Musikers
 
-Jam Hsiaos fächerübergreifende Kunstausstellung beauftragte Yupitek mit der Planung und Installation eines immersiven Projekionserlebnisses. Die vollständige Multikanalprojektion über den gesamten Ausstellungsraum präsentierte die visuellen Schöpfungen des Künstlers mit maximaler Wirkung und verband visuelle Kunst und Musik zu einem kohärenten sensorischen Erlebnis für die Besucher.
+Jam Hsiaos fächerübergreifende Kunstausstellung beauftragte Yopitek mit der Planung und Installation eines immersiven Projekionserlebnisses. Die vollständige Multikanalprojektion über den gesamten Ausstellungsraum präsentierte die visuellen Schöpfungen des Künstlers mit maximaler Wirkung und verband visuelle Kunst und Musik zu einem kohärenten sensorischen Erlebnis für die Besucher.
 
 ## Technische Highlights
 

@@ -1,6 +1,6 @@
 ---
 title: "قارئات بطاقات ACS ACR NFC"
-description: "توزع Yopitek قارئات بطاقات ACS ACR NFC/الذكية: ACR122U وACR1252U وACR1552U — للتحكم في الوصول والتوقيع الإلكتروني والتحقق من الهوية."
+description: "تقدّم Yopitek قارئات بطاقات ACS ACR NFC/الذكية: ACR122U وACR1252U وACR1552U — للتحكم في الوصول والتوقيع الإلكتروني والتحقق من الهوية."
 date: 2026-03-12
 draft: false
 dir: rtl
@@ -14,7 +14,7 @@ Advanced Card Systems (ACS) هو مصنع عالمي رائد لقارئات ا�
 
 {{< card-group >}}
   {{< card title="ACR122U NFC Reader" href="/ar/products/acr/acr122u/" image="/images/products/acr/ACR122U.png" >}}
-    قارئ NFC USB يدعم ISO 14443 A/B وMIFARE — مستخدم على نطاق واسع في بحث NFC.
+    قارئ NFC USB يدعم ISO 14443 A/B وMIFARE وFeliCa — مستخدم على نطاق واسع في بحث NFC.
   {{< /card >}}
   {{< card title="ACR1252U NFC Forum Reader" href="/ar/products/acr/acr1252u/" image="/images/products/acr/ACR1252U.png" >}}
     قارئ USB معتمد من NFC Forum يدعم ISO 14443 A/B وMIFARE وFeliCa — مثالي لتطوير تطبيقات NFC.

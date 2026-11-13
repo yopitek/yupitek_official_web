@@ -115,7 +115,7 @@ Le trio MC7304, MC7350 et MC7354 est en réalité facile à distinguer : **chois
 
 ## Informations d'approvisionnement (appel à l'action)
 
-Tu as besoin de ces modules ou tu ne sais pas comment choisir ? Yupitek est un partenaire professionnel d'intégration matérielle qui peut t'aider à confirmer les bandes, les emplacements et les questions de stockage.
+Tu as besoin de ces modules ou tu ne sais pas comment choisir ? Yopitek est un partenaire professionnel d'intégration matérielle qui peut t'aider à confirmer les bandes, les emplacements et les questions de stockage.
 
 - **Pages produits** : [MC7304](/fr/products/sierra/mc7304/) | [MC7350](/fr/products/sierra/mc7350/) | [MC7354](/fr/products/sierra/mc7354/)
 - **E-mail** : sales@yupitek.com

@@ -1,0 +1,26 @@
+{{- $parts := slice -}}
+{{- with .File }}{{ $parts = split (strings.Trim .Dir "/") "/" }}{{ end -}}
+{{- if and (ge (len $parts) 2) (eq (index $parts 0) "products") (isset hugo.Data.brand_articles (index $parts 1)) -}}
+  {{- $brand := index $parts 1 -}}
+  {{- $self := . -}}
+  {{- $siblings := slice -}}
+  {{- if ge (len $parts) 3 -}}
+    {{- $siblings = (where .Parent.Pages "RelPermalink" "ne" .RelPermalink) | first 6 -}}
+  {{- end -}}
+  {{- $articles := slice -}}
+  {{- range index hugo.Data.brand_articles $brand -}}
+    {{- with site.GetPage (printf "/blog/%s" .) -}}{{- $articles = $articles | append . -}}{{- end -}}
+  {{- end -}}
+  {{- if $siblings }}
+    <section class="mt-10 prose dark:prose-invert max-w-full">
+      <h2>{{ i18n "brand.related_products" }}</h2>
+      <ul>{{ range $siblings }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>
+    </section>
+  {{- end }}
+  {{- if $articles }}
+    <section class="mt-10 prose dark:prose-invert max-w-full">
+      <h2>{{ i18n "brand.related_articles" }}</h2>
+      <ul>{{ range $articles }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>
+    </section>
+  {{- end }}
+{{- end -}}

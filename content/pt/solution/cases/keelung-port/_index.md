@@ -1,6 +1,6 @@
 ---
 title: "Porto de Keelung — Instalação de Projeção em Espaço Público"
-description: "Case Yupitek: instalação de projeção multimídia na área histórica e turística do Porto de Keelung, Taiwan. Projeção em fachadas, espaços públicos e infraestrutura portuária."
+description: "Case Yopitek: instalação de projeção multimídia na área histórica e turística do Porto de Keelung, Taiwan. Projeção em fachadas, espaços públicos e infraestrutura portuária."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Porto", "Espaço Público", "Keelung"]
 **Tipo**: Espaço Público / Instalação Permanente
 **Escopo**: Sistema de projeção multimídia para revitalização do espaço público portuário
 
-O Porto de Keelung é um dos mais movimentados de Taiwan e também uma área de grande valor histórico e turístico. O projeto de revitalização da orla portuária incluiu a criação de instalações multimídia permanentes para atrair visitantes e destacar a identidade cultural da região. A Yupitek foi responsável pelo projeto e implantação do sistema de projeção da área pública.
+O Porto de Keelung é um dos mais movimentados de Taiwan e também uma área de grande valor histórico e turístico. O projeto de revitalização da orla portuária incluiu a criação de instalações multimídia permanentes para atrair visitantes e destacar a identidade cultural da região. A Yopitek foi responsável pelo projeto e implantação do sistema de projeção da área pública.
 
 ## Solução Técnica
 

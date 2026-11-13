@@ -6,6 +6,10 @@ description: "所有 O.MG 装置的通用启动、固件更新与救援工具，
 featureimage: "/images/products/hak5/omg-programmer.png"
 ---
 
+{{< alert "warning" >}}
+**合法使用声明**：O.MG Programmer 为 O.MG 系列研究工具的固件烧录设备，仅限用于经授权的安全测试与研究。
+{{< /alert >}}
+
 ## 产品特色
 
 ![O.MG Programmer USB A+C](/images/products/hak5/card/omg-programmer.png)
@@ -19,7 +23,7 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 
 | 规格项目 | 内容 |
 |---------|------|
-| 连接接口 | USB-A + USB-C（双头版本） |
+| 连接接口 | USB-A + USB-C（USB A+C 版本） |
 | 兼容设备 | 所有 O.MG 系列装置 |
 | 操作方式 | WebSerial（Chrome / Edge 浏览器）或 Python |
 | 通用性 | 1 个 Programmer 可用于所有 O.MG 装置 |
@@ -37,7 +41,6 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 | 资源 | 链接 |
 |------|------|
 | 📖 官方使用文件 | [在线查看](https://o-mg.github.io/WebFlasher/) |
-| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/omg) |
 
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)

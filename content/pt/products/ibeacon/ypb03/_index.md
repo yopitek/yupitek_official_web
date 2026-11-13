@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "AA Battery", "Long Range", "Waterproof", "LINE Beacon", "LINE Simple Beacon"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "AA Battery", "Long Range", "Waterproof", "LINE Beacon", "LINE Simple Beacon"]
 ---
 
 ## Visão geral do produto
@@ -105,7 +105,7 @@ Os parâmetros são configurados sem fio com o **BeaconSET+**:
 ## Galeria do produto
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb03.png" alt="Yupitek YPB03" />
+  <img src="/images/products/ibeacon/ypb03.png" alt="Yopitek YPB03" />
 {{< /gallery >}}
 
 ---

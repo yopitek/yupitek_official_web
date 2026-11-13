@@ -844,7 +844,7 @@ Yes — the Raspberry Pi Zero 2W has a full-size USB-A port (via OTG adapter) an
 
 The ALFA AWUS036ACM is available from [yupitek.com](https://yupitek.com) — the official ALFA Network reseller. Purchasing through an authorised reseller ensures you receive genuine hardware with the standard warranty from Alfa Network Inc.
 
-**Product page:** [ALFA AWUS036ACM on Yupitek](https://yupitek.com)
+**Product page:** [ALFA AWUS036ACM on Yopitek](https://yupitek.com)
 
 Included in the box:
 - 1× AWUS036ACM adapter
@@ -873,7 +873,7 @@ If you need to build a wireless network between Raspberry Pi nodes — whether a
 
 ---
 
-*Article by the Yupitek Technical Team · [yupitek.com](https://yupitek.com)*
+*Article by the Yopitek Technical Team · [yupitek.com](https://yupitek.com)*
 
 *References: [Alfa Network Official Documentation](https://docs.alfa.com.tw/Product/AWUS036ACM/) · [Linux Wireless Wiki — Interface Types](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) · [MediaTek mt76 Linux Driver](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) · [morrownr USB-WiFi In-Kernel List](https://github.com/morrownr/USB-WiFi)*
 

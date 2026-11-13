@@ -30,7 +30,7 @@ faq:
 
 這篇文章我們拿 Sierra Wireless 的官方規格書，為大家解密：為什麼這幾顆模組特別適合做無人機跟機器人？它們是怎麼做到低延遲的？
 
-> 技術資料來源：Sierra Wireless 官方規格書（EM9190/EM9191、EM7565）。本文由榆閤科技（Yupitek）整理。
+> 技術資料來源：Sierra Wireless 官方規格書（EM9190/EM9191、EM7565）。本文由榆閤科技（Yopitek）整理。
 
 ---
 
@@ -92,6 +92,6 @@ faq:
 
 ## 採購資訊（Call To Action）
 
-正在設計無人機或巡檢機器人的通訊板？不知道怎麼規劃天線跟散熱？Yupitek（榆閤科技）有提供完整的 Sierra Wireless 模組與硬體整合顧問服務。
+正在設計無人機或巡檢機器人的通訊板？不知道怎麼規劃天線跟散熱？Yopitek（榆閤科技）有提供完整的 Sierra Wireless 模組與硬體整合顧問服務。
 歡迎來信：**sales@yupitek.com**
 看看產品：[https://yupitek.com/zh-tw/products/sierra/](/zh-tw/products/sierra/)

@@ -20,10 +20,10 @@ faq:
 - **Producto insignia del 20.° aniversario de Hak5**: Motor PineAP de 8.a generación
 - **Operación completamente autónoma**: Sin necesidad de computadora externa; dispositivo portátil independiente de auditoría Linux inalámbrica
 - **WiFi de triple banda + Bluetooth**: Soporta 2.4 GHz / 5 GHz / 6 GHz (802.11ax) y Bluetooth 5.2 / BLE 4.2
-- **Sistema de Payload**: Impulsado por DuckyScript™ + Bash + Python
-- **Pantalla Retina a color**: Claramente visible en interiores y exteriores
+- **Sistema de Payload**: Impulsado por DuckyScript™ + Bash
+- **Pantalla a color de 2.4" (480×222, 221 PPI)**: Claramente visible en interiores y exteriores
 - **Notificaciones multisensoriales**: Altavoz integrado (tonos programables) y motor de vibración (notificaciones silenciosas)
-- **Botones programables**: 4 botones RGB (DPAD + A/B)
+- **Botones programables**: D-pad de 4 direcciones con LED RGB programable, más botones A / B
 - **Alert Payload en tiempo real**: Se activa automáticamente en respuesta a actividad WiFi detectada
 - **Expansión modular**: Linux con permisos root completos; soporta módulos de hardware como GPS y radios adicionales
 
@@ -36,7 +36,7 @@ faq:
 | Bluetooth | Bluetooth 5.2 + BLE 4.2 |
 | Memoria | 256 MB DDR2 RAM + 128 MB SPI Flash |
 | Almacenamiento | 4 GB eMMC |
-| Batería | 2000 mAh LiPo (con BMS e indicador LED de carga) |
+| Batería | 2000 mAh LiPo (con BMS e indicador LED de carga); aprox. 4 horas por carga (estimación de Hak5) |
 | Carga / Datos | USB-C (interfaz Ethernet integrada) |
 | Expansión | USB 2.0 (para módulos de hardware) |
 | Indicadores | 4 × RGB LED |
@@ -48,7 +48,6 @@ faq:
 - Pruebas de penetración inalámbrica autónoma en campo sin computadora
 - Operaciones del Red Team (se puede sujetar al cinturón, operación completamente inalámbrica)
 - Auditoría paralela de WiFi de triple banda y Bluetooth
-- Pruebas de ataques WPA3 Enterprise
 - Tareas de Payload automatizadas impulsadas por DuckyScript
 - OSINT en campo, captura de Handshake, ataques Deauth
 

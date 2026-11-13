@@ -1,5 +1,5 @@
 ---
-title: "Guia completo de perguntas frequentes sobre módulos Sierra Wireless: mapa de diagnóstico desde o dispositivo não detectado até a falta de conexão à internet | Yupitek"
+title: "Guia completo de perguntas frequentes sobre módulos Sierra Wireless: mapa de diagnóstico desde o dispositivo não detectado até a falta de conexão à internet | Yopitek"
 description: "Mapa de diagnóstico para módulos 4G/5G Sierra Wireless: desde o dispositivo não detectado, interfaces QMI/MBIM desaparecidas e SIM sem registro, até a impossibilidade de se conectar à internet. Aprenda a diagnosticar o problema em quatro camadas com comandos AT e ferramentas de Linux e Windows, sem rodeios."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "sierra-wireless-troubleshooting-faq-complete-guide"
 slug: "sierra-wireless-troubleshooting-faq-complete-guide"
 tags: ["Sierra Wireless", "Solução de problemas", "4G", "5G", "EM7455", "EM7565", "EM919x", "MC7455", "QMI", "MBIM"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/pt/products/sierra/"
 faq:
@@ -32,7 +32,7 @@ Seu módulo Sierra Wireless (EM7455, EM7565, EM919x, MC7455) está com problemas
 
 **Resumo em uma frase: sua placa de rede não conecta à internet? Primeiro verifique se «o computador a enxerga» (enumeração USB), depois se «existe um canal de dados» (interface QMI/MBIM), em seguida se «o SIM e o APN funcionam», e só por último verifique «a antena e a dissipação de calor». Nove em cada dez pessoas erram no terceiro passo. Nunca comece adivinhando que o firmware está danificado e fazendo flash de forma aleatória.**
 
-> Fonte de dados: folhas de especificações oficiais da Sierra Wireless. O processo de diagnóstico é baseado em experiência prática acumulada. Artigo elaborado pela Yupitek.
+> Fonte de dados: folhas de especificações oficiais da Sierra Wireless. O processo de diagnóstico é baseado em experiência prática acumulada. Artigo elaborado pela Yopitek.
 
 ---
 
@@ -130,7 +130,7 @@ Quando um módulo 4G/5G não se comporta bem, nunca se automedique de forma alea
 
 ## Informações de compra (Chamada para ação)
 
-Seu projeto ainda está travado com problemas de conexão? Você procura módulos Sierra Wireless estáveis e confiáveis com suporte técnico? A Yupitek oferece soluções completas de hardware e suporte técnico de primeira linha para ajudá-lo a sair do inferno das tentativas e erros.
+Seu projeto ainda está travado com problemas de conexão? Você procura módulos Sierra Wireless estáveis e confiáveis com suporte técnico? A Yopitek oferece soluções completas de hardware e suporte técnico de primeira linha para ajudá-lo a sair do inferno das tentativas e erros.
 
 Envie um e-mail: **sales@yupitek.com**
 

@@ -3,6 +3,8 @@ title: "SDRLab H4M — Combinación Portátil HackRF + PortaPack"
 description: "SDRLab H4M, combinación SDR portátil HackRF One + PortaPack H4M, 1MHz–6GHz, ancho de banda 20MHz, firmware Mayhem, carga rápida USB-C, altavoz y micrófono integrados."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/h4m.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "SDR portátil"]
@@ -16,25 +18,27 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "SDR portátil"]
 - Perilla plana de 360° (inspirada en la rueda Click Wheel del iPod) para uso portátil sin activaciones accidentales
 - Conector USB-C para carga rápida y amplia compatibilidad
 - Altavoz y micrófono integrados con conmutación automática al insertar auriculares
+- Ranura microSD y conector de audio de 3.5 mm para auriculares/micrófono
 - Puerto de expansión GPIO para fabricar accesorios personalizados (como Flipper Zero)
-- El bundle incluye una réplica del HackRF R10c compatible con el firmware Mayhem
+- El bundle incluye un HackRF R10C compatible con el firmware Mayhem
 
 ## Especificaciones
 | Especificación | Valor / Descripción |
 |----------------|---------------------|
-| Hardware incluido | HackRF One (réplica R10c) + PortaPack H4M PCB |
+| Hardware incluido | HackRF One (R10C) + PortaPack H4M PCB |
 | Rango de frecuencia | 1 MHz – 6 GHz (según especificaciones del HackRF One) |
 | Ancho de banda máximo | 20 MHz |
 | Resolución ADC | 8-bit |
 | Puerto RF | SMA hembra |
-| Chip principal | MAX2837 (front-end RF de HackRF) |
-| Pantalla | TFT mate de 3.2 pulgadas |
+| Pantalla | LCD táctil mate de 3.2 pulgadas, 240×320 |
 | Puerto de alimentación | USB-C (carga rápida) |
-| Capacidad de batería | Batería de litio de 2500 mAh (según versión del bundle) |
+| Capacidad de batería | Batería de litio de 2500 mAh |
 | Gestión de energía | IC avanzado de gestión de batería (% de carga, voltaje y corriente) |
 | Audio | Altavoz + micrófono integrados, conmutación automática de auriculares |
-| Interfaz de expansión | Puerto GPIO compatible con I2C |
-| Carcasa | Acrílico transparente o carcasa inyectada en ABS (según versión del bundle) |
+| Interfaz de expansión | Puerto GPIO para accesorios personalizados |
+| Almacenamiento | Ranura microSD |
+| Conectores de audio | Entrada para auriculares/micrófono de 3.5 mm |
+| Carcasa | Carcasa transparente de ABS inyectado |
 | Firmware | Mayhem Firmware (preinstalado o para flashear manualmente) |
 | Sistemas operativos | Windows, macOS, Linux, Android (con computadora externa conectada) |
 | Software compatible | GNU Radio, SDR#, GQRX y otros (modo conexión USB) |
@@ -54,12 +58,12 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "SDR portátil"]
 
 ## 📖 Manual de usuario
 
-The complete beginner guide for getting started with your SDRLab H4M — from unboxing to advanced signal operations.
+La guía completa para principiantes para comenzar con su SDRLab H4M: desde el desembalaje hasta las operaciones avanzadas con señales.
 
 <div style="margin: 1.5rem 0 2rem; text-align: center;">
   <a href="/manual/h4m/" target="_blank" rel="noopener"
      style="display: inline-block; padding: 0.875rem 2.5rem; background: #ffffff; color: #111827; border: 2px solid #d1d5db; border-radius: 8px; font-size: 1rem; font-weight: 600; text-decoration: none; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-    Open manual in full screen ↗
+    Abrir el manual en pantalla completa ↗
   </a>
 </div>
 ---
@@ -67,3 +71,5 @@ The complete beginner guide for getting started with your SDRLab H4M — from un
 {{< alert >}}
 ¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}
+
+Página oficial del fabricante (OpenSourceSDRLab, no verificada en línea): https://opensourcesdrlab.com/products/h4m-receiver-and-spectrum-analyzer?VariantsId=10129

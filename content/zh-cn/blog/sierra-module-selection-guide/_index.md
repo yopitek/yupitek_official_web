@@ -1,6 +1,6 @@
 ---
 title: "Sierra Wireless 十款蜂窝模块完整选购指南：LTE Cat 4 到 5G mmWave 怎么选"
-description: "榆合科技整理 Sierra Wireless（Semtech）十款蜂窝模块 EM/MC 系列规格对比与选型建议，覆盖 LTE Cat 4 到 5G mmWave。全系列 Sierra Wireless 模块采购请联系 Yupitek。"
+description: "榆合科技整理 Sierra Wireless（Semtech）十款蜂窝模块 EM/MC 系列规格对比与选型建议，覆盖 LTE Cat 4 到 5G mmWave。全系列 Sierra Wireless 模块采购请联系 Yopitek。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -19,20 +19,20 @@ faq:
   - question: "M.2 和 mPCIe 蜂窝模块该怎么选？"
     answer: "看你的设备插槽。笔记本、现代嵌入式主板多为 M.2 B-Key，选 EM 系列；旧款工业路由器、工控机若是 mPCIe 槽，选 MC 系列。若主板只有 M.2 却想用 MC，需要加 M.2 to mPCIe 转接板。"
   - question: "Sierra Wireless 哪里买？"
-    answer: "可通过榆合科技（Yupitek）采购 Sierra Wireless 全系列蜂窝模块。请到 Yupitek 官网产品页查询型号与报价，或直接 email: sales@yupitek.com"
+    answer: "可通过榆合科技（Yopitek）采购 Sierra Wireless 全系列蜂窝模块。请到 Yopitek 官网产品页查询型号与报价，或直接 email: sales@yupitek.com"
 ---
 
 # Sierra Wireless 十款蜂窝模块完整选购指南：LTE Cat 4 到 5G mmWave 怎么选
 
 {{< alert >}}
-Yupitek 提供 Sierra Wireless / Semtech 相关产品信息、渠道供应与技术内容；非官方授权经销商，本资料仅供技术参考。
+Yopitek 提供 Sierra Wireless / Semtech 相关产品信息、渠道供应与技术内容；非官方授权经销商，本资料仅供技术参考。
 {{</alert >}}
 
 无论你是在做物联网课题的大学生，还是在实验室里做网络设备，买通信模块最怕遇到什么？绝对是「规格表看半天、型号分不清，最后买错封装根本插不进设备」！
 
 这篇文章帮大家把 Sierra Wireless（现隶属于 Semtech）现役与常青款的 10 款模块一次讲清楚，带你从基础的 LTE Cat 4 一路看懂到 5G mmWave。本文提到的 EM 系列全部是 M.2 封装，而 MC 系列则是 mPCIe 封装。
 
-本文技术资料由榆合科技（Yupitek）整理提供。
+本文技术资料由榆合科技（Yopitek）整理提供。
 
 ## 十款规格总表：直接看数据最准
 
@@ -104,7 +104,7 @@ Yupitek 提供 Sierra Wireless / Semtech 相关产品信息、渠道供应与技
 
 ## 选型还是一头雾水？找我们帮忙吧
 
-如果看完还是不知道怎么挑，你可以通过 Yupitek 榆合科技采购这十款 EM/MC 系列的蜂窝模块，连天线、SIM 转接板或评估板都可以一起搞定。不管是确认规格、对比频段，还是项目需要的报价与技术支持，都可以找我们。
+如果看完还是不知道怎么挑，你可以通过 Yopitek 榆合科技采购这十款 EM/MC 系列的蜂窝模块，连天线、SIM 转接板或评估板都可以一起搞定。不管是确认规格、对比频段，还是项目需要的报价与技术支持，都可以找我们。
 
 ## 常见问题快速 Q&A
 

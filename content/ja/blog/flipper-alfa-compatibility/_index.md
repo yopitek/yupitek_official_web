@@ -390,7 +390,7 @@ ALFA WiFi アダプターを無線セキュリティテスティングに使い�
 
 ### 購入先
 
-推奨されるすべての ALFA アダプターは Yupitek で購入可能です — 公式 ALFA Network 販売店です。全カタログを見るかモデルを比較：
+推奨されるすべての ALFA アダプターは Yopitek で購入可能です — 公式 ALFA Network 販売店です。全カタログを見るかモデルを比較：
 
 - [ALFA USB WiFi アダプター — 全カタログ](https://yupitek.com/ja/products/alfa/) — 全モデルの仕様と価格
 - [ALFA 製品比較](/ja/alfa_compare/) — チップセット、帯域、ドライバの並列比較
@@ -405,7 +405,7 @@ ALFA WiFi アダプターを無線セキュリティテスティングに使い�
 
 ---
 
-*Flipper One と ALFA アダプターの互換性に関する販売前の質問は、Yupitek サポート support@yupitek.com または +886-2-87325338 までお問い合わせください。*
+*Flipper One と ALFA アダプターの互換性に関する販売前の質問は、Yopitek サポート support@yupitek.com または +886-2-87325338 までお問い合わせください。*
 
 ---
 

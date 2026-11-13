@@ -1,6 +1,6 @@
 ---
-title: "Yupitek iBeacon Serie — BLE 5.0 Beacons"
-description: "Yupitek vertreibt professionelle BLE 5.0 iBeacon und Eddystone Beacons: YPB01, YPB02, YPB03, YPB04, und YPB05 — für Indoor-Lokalisierung, Zeiterfassung und Asset-Tracking."
+title: "Yopitek iBeacon Serie — BLE 5.0 Beacons"
+description: "Yopitek vertreibt professionelle BLE 5.0 iBeacon und Eddystone Beacons: YPB01, YPB02, YPB03, YPB04, und YPB05 — für Indoor-Lokalisierung, Zeiterfassung und Asset-Tracking."
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-Yupitek iBeacon-Produkte repräsentieren eine neue Generation von Bluetooth® Low Energy (BLE 5.0) Beacons für hochpräzise Lokalisierung, Personen-Tracking und kommerzielle Werbung. Durch die gleichzeitige Unterstützung von Apple iBeacon™ und Google Eddystone™ (UID, URL, TLM) ermöglichen unsere Beacons parallele Ausstrahlungen auf bis zu 6 Kanälen und lassen sich einfach über die BeaconSET+ App konfigurieren.
+Yopitek iBeacon-Produkte repräsentieren eine neue Generation von Bluetooth® Low Energy (BLE 5.0) Beacons für hochpräzise Lokalisierung, Personen-Tracking und kommerzielle Werbung. Durch die gleichzeitige Unterstützung von Apple iBeacon™ und Google Eddystone™ (UID, URL, TLM) ermöglichen unsere Beacons parallele Ausstrahlungen auf bis zu 6 Kanälen und lassen sich einfach über die BeaconSET+ App konfigurieren.
 
 ---
 

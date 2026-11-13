@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero — جهاز بحث أمن لاسلكي متعدد البروتوكولات"
-description: "توزع Yopitek جهاز Flipper Zero الذي يدعم بحث بروتوكولات Sub-GHz وNFC وRFID والأشعة تحت الحمراء والبلوتوث. مثالي للتعليم الأمني والبحث المشروع."
+description: "تقدّم Yopitek جهاز Flipper Zero الذي يدعم بحث بروتوكولات Sub-GHz وNFC وRFID والأشعة تحت الحمراء والبلوتوث. مثالي للتعليم الأمني والبحث المشروع."
 date: 2026-03-12
 draft: false
 dir: rtl
@@ -14,7 +14,7 @@ featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 
 {{< card-group >}}
   {{< card title="Flipper Zero" href="/ar/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.png" >}}
-    الجهاز الرئيسي — يدعم Sub-GHz وNFC وRFID 125kHz والأشعة تحت الحمراء وiButton وGPIO وBluetooth 5.0 وUSB-C.
+    الجهاز الرئيسي — يدعم Sub-GHz وNFC وRFID 125kHz والأشعة تحت الحمراء وiButton وGPIO وBluetooth 5.4 وUSB-C.
   {{< /card >}}
   {{< card title="WiFi Devboard for Flipper Zero" href="/ar/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.png" >}}
     لوحة توسعة Wi-Fi الرسمية (مبنية على ESP32-S2) — تضيف قدرات اختبار Wi-Fi.
@@ -26,6 +26,12 @@ featureimage: "/images/products/flipperzero/banner-flipperzero.png"
     غطاء سيليكون وقائي رسمي — يحمي الجهاز بالكامل.
   {{< /card >}}
 {{< /card-group >}}
+
+## الموارد الرسمية
+
+| المورد | الرابط |
+|--------|--------|
+| الصفحة الرسمية لـ Flipper Zero | [flipper.net](https://flipper.net/products/flipper-zero) |
 
 ---
 

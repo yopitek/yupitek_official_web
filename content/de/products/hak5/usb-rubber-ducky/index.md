@@ -14,7 +14,7 @@ tags: ["HID Injection", "Penetration Testing", "USB", "DuckyScript"]
 
 ## Produktübersicht
 
-USB Rubber Ducky ist das weltweit bekannteste HID-Injection-Forschungswerkzeug in der globalen Sicherheits-Community. Äußerlich identisch mit einem gewöhnlichen USB-Stick, emuliert es beim Einstecken ein Tastaturgerät und führt vorkonfigurierte DuckyScript-Payloads mit über 1.000 Tastenanschlägen pro Minute für automatisierte Sicherheitstestaufgaben aus.
+USB Rubber Ducky ist das weltweit bekannteste HID-Injection-Forschungswerkzeug in der globalen Sicherheits-Community. Äußerlich identisch mit einem gewöhnlichen USB-Stick, emuliert es beim Einstecken ein Tastaturgerät und führt vorkonfigurierte DuckyScript-Payloads für automatisierte Sicherheitstestaufgaben aus.
 
 ## Technische Spezifikationen
 
@@ -23,8 +23,7 @@ USB Rubber Ducky ist das weltweit bekannteste HID-Injection-Forschungswerkzeug i
 | Typ | USB-HID-Tastaturemulator |
 | Skriptsprache | DuckyScript 3.0 |
 | Speicher | MicroSD-Karte (Skriptspeicher) |
-| Schnittstelle | USB-A |
-| Kompatibilität | Windows / macOS / Linux / Android |
+| Schnittstelle | USB-A + USB-C |
 
 ## DuckyScript-Highlights
 

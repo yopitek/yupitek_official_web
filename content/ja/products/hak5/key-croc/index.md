@@ -6,6 +6,10 @@ description: "キーボードパススルーアダプターに偽装したハー
 featureimage: "/images/products/hak5/key-croc.png"
 ---
 
+{{< alert "warning" >}}
+**法的使用に関する免責事項**：Key Crocは専門的なセキュリティ研究ツールであり、有効な書面による許可を得たセキュリティ専門家のみが使用できます。
+{{< /alert >}}
+
 ## 製品特長
 
 ![Key Croc](/images/products/hak5/card/key-croc.png)
@@ -15,6 +19,7 @@ featureimage: "/images/products/hak5/key-croc.png"
 - **キーワードトリガーPayload**：側録したキーワードが自動でPayloadをトリガー
 - **高性能ハードウェア**：クアッドコア1.2 GHz ARM CPU、デスクトップ級SSD、豊富なツール
 - **Cloud C²統合**：リアルタイムキー入力確認、リモートキーボードインジェクション / Payload管理 / rootシェル
+- **WiFi・SSHリモートアクセス**：2.4 GHz WiFi内蔵。リモート管理とSSHアクセスに対応
 - **自動録画**：挿入後のすべてのキー入力を自動記録。設定不要
 - **デュアルPayload言語**：DuckyScript™ + Bash Payloadに対応
 
@@ -27,6 +32,9 @@ featureimage: "/images/products/hak5/key-croc.png"
 | インターフェース | USB-A（ホスト側）、USB-A（キーボード側）、シリアルコンソール |
 | OS | Linux |
 | Cloud C² | 対応 |
+| 無線 | 2.4 GHz WiFi (2.412 ~ 2.4835 GHz) |
+| 寸法 | 74 × 27 × 14 mm |
+| 電源 | 5 W (USB 5V 1A) |
 
 ## 適用シナリオ
 
@@ -39,7 +47,7 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/key-croc/keycroc-by-hak5/) |
+| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/key-croc) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/croc) |
 
 {{< alert >}}

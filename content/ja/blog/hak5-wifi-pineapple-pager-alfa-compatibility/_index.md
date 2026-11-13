@@ -207,7 +207,7 @@ ALFA NetworkのワイヤレスカードとHAK5 WiFi Pineapple Pagerを組み合�
 - **プラグ＆プレイで即戦力**：[ALFA AWUS036ACM](https://yupitek.com/ja/products/alfa/awus036acm)をお選びください。OpenWrtカーネルとの相性が抜群で、極めて安定しています。
 - **電源供給の確保**：動作の切断を防ぎ、十分な電波強度を維持するため、必ず**セルフパワー（外部給電）対応のUSBハブ**をご使用ください。
 
-技術的なご質問、ハードウェアの選定、またはカスタムOpenWrtビルドのご相談は、**Yupitekサポートチーム**までお気軽にお問い合わせください。
+技術的なご質問、ハードウェアの選定、またはカスタムOpenWrtビルドのご相談は、**Yopitekサポートチーム**までお気軽にお問い合わせください。
 
 - 🌐 公式ウェブサイト: [www.yupitek.com](https://www.yupitek.com)
 - 📧 お問い合わせ窓口: [sales@yupitek.com](mailto:sales@yupitek.com)

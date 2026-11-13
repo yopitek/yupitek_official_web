@@ -222,8 +222,8 @@ sudo aireplay-ng --test wlan0
 | ASUS Ascent GX10 Loja Oficial (Reino Unido) | Página do Produto GX10 (150 × 150 × 51mm) | https://uk.store.asus.com/asus-ascent-gx105004-33389.html | ✅ Verificado | 2026-09-03 |
 | NVIDIA DGX Spark Página Oficial | Informações sobre a Plataforma GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Verificado | 2026-09-03 |
 | morrownr/8812au GitHub | Driver RTL8812AU para Linux | https://github.com/morrownr/8812au-20210820 | ✅ Verificado | 2026-09-03 |
-| Guia de Linux para ALFA Soft AP WiFi Hotspot (Yupitek) | Guia de Modo AP do ALFA Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Verificado | 2026-09-03 |
-| Visão Geral de Produtos da ALFA Network (Yupitek) | Especificações dos Produtos Atuais da ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
+| Guia de Linux para ALFA Soft AP WiFi Hotspot (Yopitek) | Guia de Modo AP do ALFA Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Verificado | 2026-09-03 |
+| Visão Geral de Produtos da ALFA Network (Yopitek) | Especificações dos Produtos Atuais da ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
 
 Artigos Relacionados: [O Cartão de Rede sem Fio ALFA suporta o NVIDIA DGX Spark?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[O Cartão de Rede sem Fio ALFA suporta o ALTOS BrainSphere GB10 F1?](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[O Cartão de Rede sem Fio ALFA suporta o GIGABYTE AI TOP ATOM?](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[O Cartão de Rede sem Fio ALFA suporta o MSI EdgeXpert?](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 

@@ -10,7 +10,7 @@ showChildPages: false
 
 # Mellanox / NVIDIA ConnectX-Netzwerkschnittstellenkarten – 10G bis 400G
 
-NVIDIA Mellanox ConnectX-Adapter bieten extrem hohe Bandbreiten und minimale Latenzzeiten für Enterprise-Server und KI-Cluster. Nachfolgend finden Sie das vollständige Portfolio der von Yupitek vertriebenen Modelle, sortiert nach Geschwindigkeitsstufen.
+NVIDIA Mellanox ConnectX-Adapter bieten extrem hohe Bandbreiten und minimale Latenzzeiten für Enterprise-Server und KI-Cluster. Nachfolgend finden Sie das vollständige Portfolio der von Yopitek vertriebenen Modelle, sortiert nach Geschwindigkeitsstufen.
 
 ---
 

@@ -34,7 +34,7 @@ ALFA AWUS036ACH is the only preferred adapter for Black Duck FuzzBox protocol fu
 
 To solve this, security teams use **Black Duck FuzzBox** (formerly Synopsys Defensics FuzzBox), a specialized software and hardware execution environment. To conduct tests, FuzzBox OS must be paired with a compatible, high-performance USB wireless adapter capable of stable monitor mode and reliable raw packet injection. 
 
-In this compatibility guide, we analyze Yupitek's active ALFA Network product catalog, explain why newer Wi-Fi 6/6E adapters fail under FuzzBox, and provide a step-by-step setup guide for the industry-standard choice: the **ALFA AWUS036ACH** (RTL8812AU).
+In this compatibility guide, we analyze Yopitek's active ALFA Network product catalog, explain why newer Wi-Fi 6/6E adapters fail under FuzzBox, and provide a step-by-step setup guide for the industry-standard choice: the **ALFA AWUS036ACH** (RTL8812AU).
 
 ---
 
@@ -77,7 +77,7 @@ FuzzBox OS operates as a headless Linux container platform. The software specs i
 
 ## 3. ALFA Adapter Analysis & GitHub Driver Location
 
-Selecting the right adapter from current, active models is crucial. Let's compare Yupitek's active ALFA Network inventory against the FuzzBox OS compatibility matrix.
+Selecting the right adapter from current, active models is crucial. Let's compare Yopitek's active ALFA Network inventory against the FuzzBox OS compatibility matrix.
 
 ### 3.1 Hard Evaluation of Current ALFA Models
 ALFA Network manufactures adapters using different chipsets. Only specific chipsets support FuzzBox's raw injection engine.
@@ -237,8 +237,8 @@ For security testing labs deploying Black Duck FuzzBox systems, we recommend the
 *   **Signal Optimization (Highly Recommended):** Add the **ALFA APA-M25** or **APA-M25-6E** dual-band directional panel antennas. Replacing the stock omni-directional antennas with these high-gain panels focuses the radio signal directly onto the System Under Test (SUT), reducing ambient environmental noise and improving injection success rates.
 
 ### 8.2 Inquiries and Ordering
-Yupitek is an authorized distributor of ALFA Network products, providing local support and bulk supply. To request product quotes, place bulk orders, or consult with our technical support team:
-*   Visit the [Yupitek Contact Us Page](/en/contact/)
+Yopitek is an authorized distributor of ALFA Network products, providing local support and bulk supply. To request product quotes, place bulk orders, or consult with our technical support team:
+*   Visit the [Yopitek Contact Us Page](/en/contact/)
 *   Or email us directly at **sales@yupitek.com**
 
 Our engineering team will assist you in acquiring the exact wireless hardware configurations needed to support your Black Duck FuzzBox protocol fuzzing workflows.

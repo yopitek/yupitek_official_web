@@ -6,6 +6,10 @@ description: "Ferramenta universal de ativação, atualização de firmware e re
 featureimage: "/images/products/hak5/omg-programmer.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso legal de uso**: O.MG Programmer é um dispositivo de programação de firmware para as ferramentas de pesquisa da série O.MG. Somente para testes de segurança e pesquisa autorizados.
+{{< /alert >}}
+
 ## Características do Produto
 
 ![O.MG Programmer USB A+C](/images/products/hak5/card/omg-programmer.png)
@@ -19,7 +23,7 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 
 | Especificação | Detalhes |
 |---------------|----------|
-| Interface de conexão | USB-A + USB-C (versão com duas pontas) |
+| Interface de conexão | USB-A + USB-C (modelo USB A+C) |
 | Dispositivos compatíveis | Todos os dispositivos da série O.MG |
 | Método de operação | WebSerial (navegador Chrome / Edge) ou Python |
 | Universalidade | 1 Programmer para todos os dispositivos O.MG |
@@ -37,7 +41,6 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 | Recurso | Link |
 |---------|------|
 | 📖 Documentação oficial | [Ver online](https://o-mg.github.io/WebFlasher/) |
-| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/omg) |
 
 {{< alert >}}
 Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).

@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "sierra-firmware-update-brand-lock-guide"
 tags: ["Sierra Wireless", "固件更新", "qmi-firmware-update", "EM7455", "EM7565", "MC7455", "品牌锁", "SED", "刷机"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/zh-cn/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ faq:
 
 很多朋友在二手市场买了 Sierra Wireless 的模块，发现装到自己的笔记本或路由器上不能用，这通常是因为「品牌锁（OEM 锁）」在作怪。这篇文章我们把「官方规格书里写明的硬知识」和「社区玩家的实战经验」结合起来，教你如何安全地给模块刷固件。
 
-> 技术资料来源：Sierra Wireless 官方规格书（EM7455、EM7565、MC7455）。品牌锁切换与第三方工具属于社区实战经验。本文由榆合科技（Yupitek）整理。
+> 技术资料来源：Sierra Wireless 官方规格书（EM7455、EM7565、MC7455）。品牌锁切换与第三方工具属于社区实战经验。本文由榆合科技（Yopitek）整理。
 
 ---
 
@@ -124,6 +124,6 @@ Sierra 模块里内置了一个叫做 **SED（Smart Error Detection）** 的救�
 
 ## 采购信息（Call To Action）
 
-不确定手上的模块是 Dell 版还是 Lenovo 版？想找可靠的 Sierra 模块来升级你的设备？Yupitek（榆合科技）提供完整的硬件方案和技术咨询。
+不确定手上的模块是 Dell 版还是 Lenovo 版？想找可靠的 Sierra 模块来升级你的设备？Yopitek（榆合科技）提供完整的硬件方案和技术咨询。
 欢迎来信：**sales@yupitek.com**
 看看产品：[Sierra Wireless 模块专区](https://yupitek.com/zh-cn/products/sierra/)

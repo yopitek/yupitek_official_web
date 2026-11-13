@@ -2,7 +2,7 @@
 title: "Malicious Cable Detector"
 date: 2025-01-01
 draft: false
-description: "A única ferramenta do mundo capaz de detectar todos os cabos USB maliciosos conhecidos, usando análise de potência de canal lateral a 200.000 análises por segundo."
+description: "Ferramenta dedicada capaz de detectar todos os cabos USB maliciosos conhecidos, usando análise de potência de canal lateral a 200.000 análises por segundo."
 featureimage: "/images/products/hak5/malicious-cable-detector.png"
 ---
 
@@ -10,11 +10,12 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 
 ![O.MG Malicious Cable Detector](/images/products/hak5/card/malicious-cable-detector.png)
 
-- **Única ferramenta de detecção no mundo**: Capaz de detectar todos os cabos USB maliciosos conhecidos (incluindo O.MG Cable)
+- **Detecção defensiva de cabos maliciosos**: Ferramenta defensiva de inspeção de cabos USB que detecta todos os cabos USB maliciosos conhecidos (incluindo O.MG Cable)
 - **Análise de potência de canal lateral**: 200.000 análises por segundo; detecta o chip implantado mesmo em modo sleep completo
 - **Função USB Data Blocker**: Fornece carregamento seguro bloqueando transferência de dados simultaneamente
 - **Fácil de usar**: Insira o cabo no detector e depois na porta USB; o LED mostra o resultado imediatamente
-- **Cobertura abrangente**: Cobre todos os tipos de cabos USB maliciosos conhecidos no mercado
+- **Cobertura abrangente**: Cobre todos os tipos de cabos USB maliciosos conhecidos
+- **Interpretação do LED**: A atividade do LED indica componentes ativos dentro do cabo. Alguns cabos legítimos (como chips Apple MFi) também os têm e carregadores ruidosos podem acender o LED; tente outra fonte de energia. É uma verificação de primeira linha, não substitui a análise forense de laboratório
 
 ## Especificações Principais
 
@@ -25,6 +26,7 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 | Interface | USB-A (conexão ao PC) + USB-A (inserção do cabo a examinar) |
 | Função adicional | USB Data Blocker (carregamento seguro, bloqueio de transferência de dados) |
 | Indicador | LED de atividade |
+| Corrente de carregamento | Projetada para 500-900 mA |
 
 ## Ambientes de Aplicação
 
@@ -39,7 +41,7 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 | Recurso | Link |
 |---------|------|
 | 📖 Documentação oficial | [Ver online](https://github.com/O-MG/MaliciousCableDetector/wiki) |
-| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/malicious-cable-detector) |
+| 🛒 Página oficial do produto | [Loja Hak5](https://shop.hak5.org/products/malicious-cable-detector-by-o-mg) |
 
 {{< alert >}}
 Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).

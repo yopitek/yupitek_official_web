@@ -29,7 +29,7 @@ faq:
 玩 Sierra Wireless 的 4G/5G 模块（不管是 EM7455、EM7565 还是最新的 EM919x），最怕的就是插上去「没反应」或是「连不上网」。
 网上的教程很散，有时候叫你刷固件，有时候叫你改设置。这篇文章帮你整理出一张「四层排错地图」，跟着步骤一步步查，你一定能找到问题点。
 
-> 资料来源：Sierra Wireless 官方规格书。排错流程为实战经验整理。本文由榆合科技（Yupitek）整理。
+> 资料来源：Sierra Wireless 官方规格书。排错流程为实战经验整理。本文由榆合科技（Yopitek）整理。
 
 ---
 
@@ -127,6 +127,6 @@ AT!PCTEMP
 
 ## 采购信息（Call To Action）
 
-你的项目还卡在连接问题上吗？想要寻找稳定可靠的 Sierra Wireless 模块与技术支援？Yupitek（榆合科技）有提供完整的硬件方案与一线技术支援，帮你摆脱踩坑的地狱。
+你的项目还卡在连接问题上吗？想要寻找稳定可靠的 Sierra Wireless 模块与技术支援？Yopitek（榆合科技）有提供完整的硬件方案与一线技术支援，帮你摆脱踩坑的地狱。
 欢迎来信：**sales@yupitek.com**
 看看产品：[Sierra Wireless 模块专区](/zh-cn/products/sierra/)

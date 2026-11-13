@@ -2,9 +2,27 @@
 title: "O.MG UnBlocker"
 date: 2025-01-01
 draft: false
-description: "An Elite-grade O.MG implant device that perfectly mimics a legitimate USB Data Blocker, designed to evade security-conscious users."
+description: "Hak5 O.MG UnBlocker: Elite-grade O.MG implant in a USB data blocker form, with WiFi WebUI and 5V power pass-through. Available in Taiwan via Yopitek."
 featureimage: "/images/products/hak5/omg-unBlocker.png"
+seo_title: "O.MG UnBlocker | Hak5 Taiwan | Yopitek"
+faq:
+  - question: "What is the O.MG UnBlocker?"
+    answer: "It is an Elite-grade O.MG wireless implant built into a USB data blocker enclosure, for authorized security research and training."
+  - question: "What does the pass-through port carry?"
+    answer: "It passes 5V power only, with no data lines, like a real data blocker."
+  - question: "How is the O.MG UnBlocker controlled?"
+    answer: "Through a WiFi WebUI."
+  - question: "Does it need activation?"
+    answer: "Yes. It requires the O.MG Programmer for activation."
+  - question: "How do I buy or get a quote for the O.MG UnBlocker in Taiwan?"
+    answer: "Contact Yopitek through the contact page to request a quotation."
 ---
+
+{{< alert "warning" >}}
+**Legal Use Disclaimer**: O.MG UnBlocker is a professional security research tool. For authorized security testing and research use only. Intended solely for security professionals with valid written authorization.
+{{< /alert >}}
+
+O.MG UnBlocker is a Hak5 Elite-grade O.MG device housed in a USB data blocker form, for authorized security research and awareness training. It passes 5V power only and is controlled through a WiFi WebUI. Yopitek offers it in Taiwan; contact us for a quotation.
 
 ## Product Features
 
@@ -26,6 +44,7 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 | Ports | USB-A male (active attack side) + USB-A female (power pass-through side) |
 | Pass-Through | 5V power only (no data lines) |
 | Control | WiFi WebUI |
+| Payload Performance | Up to 890 keys/sec, up to 300 payload slots, 192 keyboard layouts |
 
 ## Application Scenarios
 
@@ -38,9 +57,10 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 | Resource | Link |
 |----------|------|
-| 📖 Official Documentation | [View Online](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/omg) |
+| ⬇️ Firmware & Tools | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+{{< faq >}}

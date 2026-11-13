@@ -21,7 +21,7 @@ Shark Jack est un outil d'audit réseau filaire portable et compact qui exécute
 - Scripts de reconnaissance réseau plug-and-execute
 - Découverte d'hôtes (nmap et autres outils)
 - Exfiltration de données via Cloud C2
-- Compatible avec le format de script BashBunny
+- Autonomie sur batterie : environ 10–15 minutes (selon Hak5)
 
 {{< gallery >}}
   <img src="/images/products/hak5/shark-jack.png" alt="HAK5 Shark Jack" />

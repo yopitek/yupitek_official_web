@@ -1,6 +1,6 @@
 ---
 title: "Sierra-Wireless-Kaufberatung für Mobilfunkmodule: Von LTE Cat 4 bis 5G mmWave"
-description: "Der komplette Vergleich von zehn Sierra-Wireless-(Semtech-)Mobilfunkmodulen der Serien EM/MC: von LTE Cat 4 bis 5G mmWave mit Spezifikationen, Gehäusetypen und Auswahlhilfe. Technische Daten von Yupitek."
+description: "Der komplette Vergleich von zehn Sierra-Wireless-(Semtech-)Mobilfunkmodulen der Serien EM/MC: von LTE Cat 4 bis 5G mmWave mit Spezifikationen, Gehäusetypen und Auswahlhilfe. Technische Daten von Yopitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -19,20 +19,20 @@ faq:
   - question: "Wie wähle ich zwischen M.2- und mPCIe-Mobilfunkmodulen?"
     answer: "Das hängt vom Steckplatz deines Geräts ab. Laptops und moderne Embedded-Boards nutzen meist M.2 B-Key, also nimm die EM-Serie. Ältere Industrierouter und Panel-PCs mit mPCIe-Steckplatz nehmen die MC-Serie. Wenn dein Board nur M.2 hat, du aber ein MC-Modul willst, brauchst du einen M.2-auf-mPCIe-Adapter."
   - question: "Wo kann ich Sierra-Wireless-Module kaufen?"
-    answer: "Du kannst die komplette Sierra-Wireless-Mobilfunkmodul-Reihe über Yupitek beziehen. Schau auf den Yupitek-Produktseiten nach Modellen und Preisen oder schreib direkt an sales@yupitek.com."
+    answer: "Du kannst die komplette Sierra-Wireless-Mobilfunkmodul-Reihe über Yopitek beziehen. Schau auf den Yopitek-Produktseiten nach Modellen und Preisen oder schreib direkt an sales@yupitek.com."
 ---
 
 # Sierra-Wireless-Kaufberatung für Mobilfunkmodule: Von LTE Cat 4 bis 5G mmWave
 
 {{< alert >}}
-Yupitek bietet Produktinformationen, Bezugskanäle und technische Inhalte zu Sierra Wireless / Semtech; kein offiziell autorisierter Distributor, nur zur technischen Referenz.
+Yopitek bietet Produktinformationen, Bezugskanäle und technische Inhalte zu Sierra Wireless / Semtech; kein offiziell autorisierter Distributor, nur zur technischen Referenz.
 {{</alert >}}
 
 Ob du als Student an einem IoT-Projekt arbeitest oder in der Laborentwicklung Netzwerkhardware baust, das Schlimmste beim Kauf eines Mobilfunkmoduls ist immer dasselbe: Man starrt eine Stunde auf Spezifikationstabellen, die Modellnummern verschwimmen, und am Ende kauft man das falsche Gehäuse, das gar nicht ins Gerät passt.
 
 Dieser Leitfaden stellt alle zehn aktuellen und langlebigen Sierra-Wireless-Module (heute Teil von Semtech) vor, vom Einstiegsmodell LTE Cat 4 bis hin zu 5G mmWave. Alle hier behandelten EM-Module verwenden das M.2-Gehäuse, die MC-Serie kommt im mPCIe-Format.
 
-Die technischen Daten dieses Artikels wurden von Yupitek zusammengestellt.
+Die technischen Daten dieses Artikels wurden von Yopitek zusammengestellt.
 
 ## Die Zehn-Module-Übersicht: Schau direkt auf die Zahlen
 
@@ -104,7 +104,7 @@ Das ist die erste Wahl für die Wartung alter Geräte mit mPCIe-Steckplatz. Aber
 
 ## Immer noch unsicher? Sprich uns an
 
-Wenn du nach dem Lesen immer noch nicht weißt, was du nehmen sollst: In Taiwan kannst du alle zehn Mobilfunkmodule der Serien EM/MC über Yupitek beziehen, inklusive Antennen, SIM-Adapter oder Evaluierungsboards. Ob Spezifikationen prüfen, Bänder vergleichen oder Angebot und technischen Support für dein Projekt einholen, wir helfen dir.
+Wenn du nach dem Lesen immer noch nicht weißt, was du nehmen sollst: In Taiwan kannst du alle zehn Mobilfunkmodule der Serien EM/MC über Yopitek beziehen, inklusive Antennen, SIM-Adapter oder Evaluierungsboards. Ob Spezifikationen prüfen, Bänder vergleichen oder Angebot und technischen Support für dein Projekt einholen, wir helfen dir.
 
 ## Häufig gestellte Fragen
 

@@ -363,8 +363,8 @@ ip link show
 | Официальная страница NVIDIA JetPack SDK | Версии JetPack и информация о kernel | https://developer.nvidia.com/embedded/jetpack | ✅ Проверено | 2026-09-03 |
 | morrownr/8812au GitHub | Linux-драйверы для RTL8812AU (поддержка Jetson Nano) | https://github.com/morrownr/8812au-20210820 | ✅ Проверено | 2026-09-03 |
 | morrownr/8821cu GitHub | Linux-драйверы для RTL8811CU | https://github.com/morrownr/8821cu-20210916 | ✅ Проверено | 2026-09-03 |
-| ALFA Soft AP WiFi Hotspot Linux Guide (Yupitek) | Инструкции по настройке AP-режима ALFA в Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Проверено | 2026-09-03 |
-| ALFA Network Product Overview (Yupitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
+| ALFA Soft AP WiFi Hotspot Linux Guide (Yopitek) | Инструкции по настройке AP-режима ALFA в Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Проверено | 2026-09-03 |
+| ALFA Network Product Overview (Yopitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | Официальное заявление разработчика драйвера: рекомендуется избегать чипов rtl8852/32au (RTL8832BU) | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Проверено | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko будет доступен в ядре только с kernel 5.19+ (оригинальное заявление разработчика драйвера) | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ Проверено | 2026-09-03 |
 

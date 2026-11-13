@@ -1,6 +1,6 @@
 ---
 title: "HAK5 Screen Crab — Outil de Recherche pour la Capture d'Écran HDMI"
-description: "HAK5 Screen Crab, un outil de recherche de capture d'écran et d'injection vidéo HDMI en ligne pour les tests de sécurité physique autorisés."
+description: "HAK5 Screen Crab, un outil de recherche de capture d'écran HDMI en ligne pour les tests de sécurité physique autorisés."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -14,7 +14,7 @@ tags: ["HDMI", "Screen Capture", "Physical Security", "Penetration Testing"]
 
 ## Présentation du Produit
 
-Screen Crab est un outil de recherche de capture d'écran HDMI en ligne qui intercepte de manière transparente le chemin du signal HDMI pour capturer le contenu affiché en temps réel. Il prend également en charge l'injection vidéo. Adapté aux scénarios de tests de sécurité physique autorisés évaluant les défenses contre les attaques physiques HDMI.
+Screen Crab est un outil de recherche de capture d'écran HDMI en ligne qui intercepte de manière transparente le chemin du signal HDMI pour capturer le contenu affiché en temps réel. Adapté aux scénarios de tests de sécurité physique autorisés évaluant les défenses contre les attaques physiques HDMI.
 
 ## Caractéristiques Principales
 

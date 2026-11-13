@@ -3,6 +3,8 @@ title: "WiFi Devboard for Flipper Zero — 公式 Wi-Fi 拡張モジュール"
 description: "Flipper Zero 公式 Wi-Fi 開発ボード。ESP32-S2 ベース、2.4GHz Wi-Fi 機能拡張に対応。Marauder などのセキュリティテスト用ファームウェアに対応します。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/wifi-devboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "Flipper Zero 拡張", "Wi-Fi セキュリティ"]
@@ -24,6 +26,12 @@ WiFi Devboard は Flipper Zero の公式 Wi-Fi 拡張モジュールです。ESP
 | Wi-Fi | 2.4GHz 802.11 b/g/n |
 | 接続方式 | Flipper Zero GPIO |
 | ファームウェア | Marauder 等のサードパーティ製ファームウェアに対応 |
+
+## 公式リソース
+
+| リソース | リンク |
+|----------|--------|
+| WiFi Devboard 製品ページ | [flipper.net](https://flipper.net/products/wifi-devboard) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/wifi-devboard.png" alt="WiFi Devboard for Flipper Zero" />

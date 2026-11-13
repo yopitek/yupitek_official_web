@@ -1,6 +1,6 @@
 ---
 title: "عن Benny Lai"
-description: "مهندس حلول الشبكات في Yupitek، متخصص في WiFi 7 وشبكات المؤسسات ومنتجات Ubiquiti و ALFA Network."
+description: "مهندس حلول الشبكات في Yopitek، متخصص في WiFi 7 وشبكات المؤسسات ومنتجات Ubiquiti و ALFA Network."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
@@ -8,9 +8,9 @@ showTableOfContents: false
 
 # Benny Lai
 
-**مهندس حلول الشبكات في Yupitek**
+**مهندس حلول الشبكات في Yopitek**
 
-Benny Lai هو مهندس حلول الشبكات في Yupitek، متخصص في نشر شبكات المؤسسات اللاسلكية بما في ذلك WiFi 7 و Ubiquiti UniFi وخط منتجات ALFA Network. يمتلك سنوات من الخبرة العملية في تخطيط شبكات المؤسسات واختبار الأمان.
+Benny Lai هو مهندس حلول الشبكات في Yopitek، متخصص في نشر شبكات المؤسسات اللاسلكية بما في ذلك WiFi 7 و Ubiquiti UniFi وخط منتجات ALFA Network. يمتلك سنوات من الخبرة العملية في تخطيط شبكات المؤسسات واختبار الأمان.
 
 ## مجالات الخبرة
 

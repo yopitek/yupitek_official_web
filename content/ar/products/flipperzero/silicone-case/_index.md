@@ -3,6 +3,8 @@ title: "Silicone Case for Flipper Zero — غطاء سيليكون الحماي�
 description: "غطاء سيليكون الحماية الرسمي لـ Flipper Zero يوفر تغطية كاملة للجهاز، وإحساساً مريحاً بالأزرار، وحماية يومية من الخدوش والصدمات."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/silicone-case.png"
+hideFeatureImage: true
 dir: rtl
 showBreadcrumbs: true
 brands: ["flipperzero"]
@@ -19,6 +21,12 @@ tags: ["إكسسوارات Flipper Zero", "غطاء حماية"]
 - مادة سيليكون لقبضة مريحة
 - إحساس جيد بالأزرار
 - فتحات للوصول إلى GPIO وUSB-C
+
+## الموارد الرسمية
+
+| المورد | الرابط |
+|--------|--------|
+| الصفحة الرسمية لـ Silicone Case | [flipper.net](https://flipper.net/products/flipper-silicone-case) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />

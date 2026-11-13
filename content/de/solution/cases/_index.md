@@ -1,6 +1,6 @@
 ---
 title: "Fallstudien"
-description: "Yupitek Projektionssystem-Integrationsportfolio: Architectural-Projection-Mapping, immersive Räume, Museen-Dauerausstellungen und interaktive Projektionsdisplays."
+description: "Yopitek Projektionssystem-Integrationsportfolio: Architectural-Projection-Mapping, immersive Räume, Museen-Dauerausstellungen und interaktive Projektionsdisplays."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

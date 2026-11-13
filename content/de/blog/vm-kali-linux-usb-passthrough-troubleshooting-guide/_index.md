@@ -382,6 +382,6 @@ Mehr als 90 % der Fälle von «VM erkennt externen Adapter nicht» liegen an **P
 | Community-Treiber aircrack-ng RTL8812AU (für AWUS036ACH im Guest) | https://github.com/aircrack-ng/rtl8812au |
 | Offizielle Produktseite ALFA AWUS036ACH | https://www.alfa.com.tw/products/awus036ach_1 |
 | Offizielle Produktseite ALFA AWUS036AXML | https://www.alfa.com.tw/ |
-| Yupitek-Techniksupport | https://yupitek.com/ |
+| Yopitek-Techniksupport | https://yupitek.com/ |
 
 > **Hinweis zur legalen Nutzung**: Das Aktivieren von Sicherheitsoperationen wie Monitor-Modus und Paketinjektion in der VM ist nur in Netzwerken zulässig, die dir gehören oder für die du eine ausdrückliche Testfreigabe hast. Der Nutzer muss die lokalen Gesetze einhalten und sicherstellen, dass alle Tests eine rechtliche Grundlage haben.

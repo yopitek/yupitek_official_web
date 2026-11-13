@@ -24,7 +24,7 @@ faq:
 
 MC7455 是 Sierra Wireless 的 PCI Express Mini Card（mPCIe）模块，而 EM7455 则是同属 74xx 系列的 M.2 兄弟款。这两颗都内置了 LTE、UMTS 和 GNSS 定位功能，用的都是 Qualcomm MDM9230 基带处理器。网络速度也都一样：LTE Cat 6 下行最快 300 Mbps（FDD）/ 222 Mbps（TDD），上行最快 50 Mbps（FDD）/ 26 Mbps（TDD）。这篇文章会帮你把官方规格书里的硬件差异找出来，让你采购前心里有底。
 
-> 技术资料来源：Sierra Wireless 官方规格书 — [AirPrime MC7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) 与 [AirPrime EM7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/)。本文由榆合科技（Yupitek）整理。
+> 技术资料来源：Sierra Wireless 官方规格书 — [AirPrime MC7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) 与 [AirPrime EM7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/)。本文由榆合科技（Yopitek）整理。
 
 ---
 
@@ -131,10 +131,10 @@ MC7455 与 EM7455 就像是同一个大脑装在不同的躯壳里。既然网�
 
 ## Call To Action（采购信息）
 
-需要 MC7455 或 EM7455，或是不确定手边的设备到底该用哪种插槽？Yupitek（榆合科技）是专业的工业无线解决方案提供商，我们可以帮你确认：
+需要 MC7455 或 EM7455，或是不确定手边的设备到底该用哪种插槽？Yopitek（榆合科技）是专业的工业无线解决方案提供商，我们可以帮你确认：
 
 - 主板插槽与模块兼容性评估
 - 天线接头转接与线材搭配
 - 长期备货与量价报价
 
-欢迎来信 **sales@yupitek.com** 或前往 [Yupitek 官网](https://www.yupitek.com) 查询相关产品。
+欢迎来信 **sales@yupitek.com** 或前往 [Yopitek 官网](https://www.yupitek.com) 查询相关产品。

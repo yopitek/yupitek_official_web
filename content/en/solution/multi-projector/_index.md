@@ -1,6 +1,6 @@
 ---
 title: "Multi-Projector Blending"
-description: "Yupitek multi-projector blending solutions: Edge Blending, geometric correction, and brightness uniformity for ultra-wide large-format projection system integration."
+description: "Yopitek multi-projector blending solutions: Edge Blending, geometric correction, and brightness uniformity for ultra-wide large-format projection system integration."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 When a single projector cannot meet the demands of an oversized or complex projection shape, multi-projector blending seamlessly stitches multiple projectors' images into a continuous, unified ultra-wide display.
 
-Yupitek has extensive experience integrating multi-projector systems, with completed projects ranging from 2-projector setups to large-scale deployments of 20 or more units.
+Yopitek has extensive experience integrating multi-projector systems, with completed projects ranging from 2-projector setups to large-scale deployments of 20 or more units.
 
 ## Core Technologies
 

@@ -1,6 +1,6 @@
 ---
 title: "Études de Cas"
-description: "Portfolio d'intégration de systèmes de projection Yupitek : projection architecturale, espaces immersifs, expositions permanentes muséales et affichages de projection interactive."
+description: "Portfolio d'intégration de systèmes de projection Yopitek : projection architecturale, espaces immersifs, expositions permanentes muséales et affichages de projection interactive."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

@@ -1,6 +1,6 @@
 ---
 title: "Exhibición en Museo"
-description: "Soluciones de proyección para museos y exposiciones permanentes de Yupitek: integración multimedia para exhibiciones culturales, recreación histórica inmersiva, planificación de sistemas de guía interactiva."
+description: "Soluciones de proyección para museos y exposiciones permanentes de Yopitek: integración multimedia para exhibiciones culturales, recreación histórica inmersiva, planificación de sistemas de guía interactiva."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Exhibición Multimedia en Museos
 
-Los museos y espacios culturales son el área de servicio principal del departamento IT_Application de Yupitek. Comprendemos profundamente las necesidades especiales de los espacios expositivos: operación estable durante largos períodos, baja frecuencia de mantenimiento, gestión precisa del contenido y una presentación visual coherente con la temática de la exposición.
+Los museos y espacios culturales son el área de servicio principal del departamento IT_Application de Yopitek. Comprendemos profundamente las necesidades especiales de los espacios expositivos: operación estable durante largos períodos, baja frecuencia de mantenimiento, gestión precisa del contenido y una presentación visual coherente con la temática de la exposición.
 
 ## Contenido del Servicio
 

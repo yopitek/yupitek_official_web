@@ -1,6 +1,6 @@
 ---
-title: "HAK5 O.MG Plug — Outil de Recherche HID Sans Fil en Forme d'Adaptateur"
-description: "HAK5 O.MG Plug, un outil de recherche d'injection HID sans fil en forme d'adaptateur USB prenant en charge plusieurs types de connecteurs USB avec déclenchement à distance via Wi-Fi."
+title: "HAK5 O.MG Plug — Prise USB Porte-Clés pour la Recherche HID Sans Fil"
+description: "HAK5 O.MG Plug, un outil de recherche d'injection HID sans fil au format de prise USB de la taille d'un porte-clés avec déclenchement à distance via Wi-Fi."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -14,7 +14,7 @@ tags: ["O.MG", "HID Injection", "Wi-Fi", "USB Adapter"]
 
 ## Présentation du Produit
 
-L'O.MG Plug est le produit en forme d'adaptateur de la gamme O.MG, logé dans un boîtier de chargeur ou d'adaptateur USB avec une capacité d'injection HID sans fil. Les payloads peuvent être déclenchés à distance via Wi-Fi. Il est adapté à l'évaluation de la sensibilisation des environnements cibles aux risques posés par les accessoires de charge USB.
+L'O.MG Plug est une prise USB de la taille d'un porte-clés de la gamme O.MG, dotée d'une capacité d'injection HID sans fil. Les payloads peuvent être déclenchés à distance via Wi-Fi. Son format compact convient au port quotidien, au porte-clés ou dans la poche.
 
 {{< gallery >}}
   <img src="/images/products/hak5/omg-plug.png" alt="HAK5 O.MG Plug" />

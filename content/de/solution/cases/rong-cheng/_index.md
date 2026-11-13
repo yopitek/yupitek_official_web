@@ -13,7 +13,7 @@ tags: ["Unternehmensausstellung", "Eventproduktion", "Nachhaltigkeitsthema"]
 **Typ**: Unternehmens-CSR-thematisierte Ausstellungsprojektion
 **Thema**: Umweltnachhaltigkeit & Kreislaufwirtschaft
 
-Rong Cheng Paper veranstaltete eine Unternehmensausstellung mit dem Schwerpunkt Umweltverantwortung. Yupitek lieferte ein immersives Projektionssystem, das Konzepte der Kreislaufwirtschaft und nachhaltigen Entwicklung durch wirkungsvolle großformatige Visuals vermittelte und die grüne Unternehmensidentität stärkte.
+Rong Cheng Paper veranstaltete eine Unternehmensausstellung mit dem Schwerpunkt Umweltverantwortung. Yopitek lieferte ein immersives Projektionssystem, das Konzepte der Kreislaufwirtschaft und nachhaltigen Entwicklung durch wirkungsvolle großformatige Visuals vermittelte und die grüne Unternehmensidentität stärkte.
 
 ## Technische Lösung
 

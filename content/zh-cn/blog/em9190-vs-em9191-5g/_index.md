@@ -1,6 +1,6 @@
 ---
 title: "Sierra EM9190 vs EM9191：5G Sub-6 与 mmWave 该怎么选？帮你破除网络谣言"
-description: "EM9190 vs EM9191 怎么选？依据官方规格书（41113174 Rev 8）：EM9190 支持 5G Sub-6 + mmWave（n257/258/260/261，仅 NSA），EM9191 仅 Sub-6。均采用 Qualcomm SDX55、M.2，附台湾 5G 频段对照，Yupitek 整理。"
+description: "EM9190 vs EM9191 怎么选？依据官方规格书（41113174 Rev 8）：EM9190 支持 5G Sub-6 + mmWave（n257/258/260/261，仅 NSA），EM9191 仅 Sub-6。均采用 Qualcomm SDX55、M.2，附台湾 5G 频段对照，Yopitek 整理。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -28,7 +28,7 @@ faq:
 
 这篇文章不靠网络转述，直接拿出 Sierra Wireless 官方规格书《EM919X/EM7690 Product Technical Specification》（Doc 41113174, Rev 8, 2023 年 5 月）来当唯一标准，一项一项核对这两颗模块的差异。特别是针对台湾读者最在意的 n78 和 28GHz 频段到底能不能用，帮大家把关，让你做 5G 设备采购时不会买错。
 
-> 产品链接：[EM9190 — Yupitek 产品页](/zh-cn/products/sierra/em9190/) | [EM9191 — Yupitek 产品页](/zh-cn/products/sierra/em9191/) | 官方规格书：[EM919X/EM7690 Product Technical Specification](https://yupitek.com/docs/sierra/EM919x.pdf)
+> 产品链接：[EM9190 — Yopitek 产品页](/zh-cn/products/sierra/em9190/) | [EM9191 — Yopitek 产品页](/zh-cn/products/sierra/em9191/) | 官方规格书：[EM919X/EM7690 Product Technical Specification](https://yupitek.com/docs/sierra/EM919x.pdf)
 
 ---
 
@@ -165,7 +165,7 @@ faq:
 
 ## 需要采购或讨论？来找我们吧
 
-看完这篇如果还有硬件集成的问题，或者你们实验室/公司需要采购这两款 5G 模块，欢迎联系榆合科技（Yupitek）的工程团队，我们也有提供对应的天线和转接板。
+看完这篇如果还有硬件集成的问题，或者你们实验室/公司需要采购这两款 5G 模块，欢迎联系榆合科技（Yopitek）的工程团队，我们也有提供对应的天线和转接板。
 
 - **EM9190（含 mmWave 的真旗舰）产品页**：[https://yupitek.com/zh-cn/products/sierra/em9190/](/zh-cn/products/sierra/em9190/)
 - **EM9191（实用的 Sub-6 款）产品页**：[https://yupitek.com/zh-cn/products/sierra/em9191/](/zh-cn/products/sierra/em9191/)

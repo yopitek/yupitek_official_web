@@ -341,7 +341,7 @@ Counter-arguments: If the OpenWrt subsequent package update fixes the kernel cra
 | OpenWrt Official Documentation | OpenWrt official document entry (Wireless Settings / Package Management) | https://openwrt.org/docs/start | ✅ Verified | 2026-09-03 |
 | OpenWrt Official Forum | USB WiFi Driver Discussion Entry | https://forum.openwrt.org/ | ✅ Verified | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux Driver Upstream | https://github.com/morrownr/8812au-20210820 | ✅ Verified | 2026-09-03 |
-| ALFA Network Product Overview (Yupitek) | ALFA current product specifications | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verified | 2026-09-03 |
+| ALFA Network Product Overview (Yopitek) | ALFA current product specifications | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verified | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | Driver Maintainer's Official Statement: Suggest to avoid rtl8852/32au (RTL8832BU) chip | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Verified | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko appears in the kernel only with kernel 5.19+ (Driver Maintainer's Original Words) | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ Verified | 2026-09-03 |
 | OpenWrt Official Forum — Best USB WiFi Dongle for Raspberry Pi 4B | User Reports Successful Installation of kmod-mt7921u with OpenWrt 23.05.0 | https://forum.openwrt.org/t/best-usb-wifi-dongle-for-raspberry-pi-4b/160103 | ✅ Verified | 2026-09-03 |

@@ -101,9 +101,9 @@ aireplay-ng --test wlan3mon    # Schritt 6: Injection testen
 
 👉 [ALFA AWUS036ACM Produktseite](/de/products/alfa/awus036acm/)
 
-Yupitek ist autorisierter ALFA Network-Distributor mit vollständigem technischen Support.
+Yopitek ist autorisierter ALFA Network-Distributor mit vollständigem technischen Support.
 
-*Brauchst du Hilfe bei der Einrichtung? Kontaktiere den Yupitek-Support: [yupitek.com/support](/de/support/)*
+*Brauchst du Hilfe bei der Einrichtung? Kontaktiere den Yopitek-Support: [yupitek.com/support](/de/support/)*
 
 ## Referenzen
 

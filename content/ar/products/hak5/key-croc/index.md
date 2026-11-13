@@ -7,6 +7,10 @@ description: "مسجّل لوحة مفاتيح برمجي مُتنكّر في ه
 featureimage: "/images/products/hak5/key-croc.png"
 ---
 
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانونية للاستخدام**: Key Croc أداة احترافية لأبحاث الأمن، مخصصة حصراً لمتخصصي الأمن الحاصلين على تصريح كتابي ساري.
+{{< /alert >}}
+
 ## ميزات المنتج
 
 ![Key Croc](/images/products/hak5/card/key-croc.png)
@@ -16,6 +20,7 @@ featureimage: "/images/products/hak5/key-croc.png"
 - **Payload مُشغَّل بكلمات مفتاحية**: يُشغّل Payload عند رصد كلمات مفتاحية محددة
 - **أجهزة قوية**: معالج ARM رباعي النواة 1.2 GHz، SSD بمستوى سطح المكتب، أدوات غنية
 - **تكامل Cloud C²**: عرض النقرات في الوقت الفعلي، حقن عن بُعد، إدارة Payload، root shell
+- **وصول عن بُعد عبر WiFi وSSH**: WiFi مدمج بتردد 2.4 GHz للإدارة عن بُعد، مع دعم الوصول عبر SSH
 - **تسجيل تلقائي**: يسجّل تلقائياً جميع ضغطات لوحة المفاتيح بعد التوصيل دون أي إعداد
 - **لغتا Payload**: يدعم DuckyScript™ + Bash Payload
 
@@ -28,6 +33,9 @@ featureimage: "/images/products/hak5/key-croc.png"
 | الواجهة | USB-A (جانب المضيف)، USB-A (جانب لوحة المفاتيح)، Console تسلسلي |
 | نظام التشغيل | Linux |
 | Cloud C² | مدعوم |
+| اللاسلكي | 2.4 GHz WiFi (2.412 ~ 2.4835 GHz) |
+| الأبعاد | 74 × 27 × 14 mm |
+| الطاقة | 5 W (USB 5V 1A) |
 
 ## بيئات التطبيق
 
@@ -40,7 +48,7 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 | المورد | الرابط |
 |--------|--------|
-| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/key-croc/keycroc-by-hak5/) |
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://documentation.hak5.org/key-croc) |
 | ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/croc) |
 
 {{< alert >}}

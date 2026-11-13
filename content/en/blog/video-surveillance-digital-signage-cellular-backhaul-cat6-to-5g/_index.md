@@ -31,7 +31,7 @@ Then they spend a fortune and find out they never needed it.
 
 Picking a modem is not like picking a sports car. Faster is not automatically better. You need the right tool for the job. This article takes the three most common Sierra Wireless M.2 modules (EM7455, EM7565 and EM9191) and shows you, using the numbers in the official spec sheets, how to choose the most cost-effective one.
 
-> Technical data source: Sierra Wireless official specification sheets. Compiled by Yupitek.
+> Technical data source: Sierra Wireless official specification sheets. Compiled by Yopitek.
 
 ---
 
@@ -117,6 +117,6 @@ Buying a modem is like renting a truck. Match the truck size to the load.
 
 ## Ready to Buy (Call To Action)
 
-Planning a video backhaul or digital signage connectivity project? Yupitek offers the full Sierra Wireless module lineup plus professional technical consulting to help you find the most cost-effective combination!
+Planning a video backhaul or digital signage connectivity project? Yopitek offers the full Sierra Wireless module lineup plus professional technical consulting to help you find the most cost-effective combination!
 Email us: **sales@yupitek.com**
 Browse the products: [https://yupitek.com/en/products/sierra/](/en/products/sierra/)

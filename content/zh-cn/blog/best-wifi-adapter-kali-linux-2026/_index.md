@@ -257,7 +257,7 @@ sudo aireplay-ng --test wlan0mon
 
 ---
 
-## 从授权经销商购买
+## 从 ALFA Network 授权经销商购买
 
 ALFA Network 产品仿冒现象严重。假冒网卡使用劣质芯片组，发射功率更低，往往根本不支持监听模式——这完全违背了购买的初衷。
 

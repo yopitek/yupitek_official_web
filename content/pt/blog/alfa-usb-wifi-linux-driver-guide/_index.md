@@ -15,7 +15,7 @@ tags:
   - "rtl8812au"
 categories:
   - "Guia de Hardware"
-description: "\"Manual de suporte técnico para Yupitek ALFA USB adaptadores, versão 2026-09-03\""
+description: "\"Manual de suporte técnico para Yopitek ALFA USB adaptadores, versão 2026-09-03\""
 featureimage: ""
 author: "benny-lai"
 lastmod: 2026-09-03
@@ -138,12 +138,12 @@ A conclusão deste artigo não se aplica nas seguintes condições, favor adotar
 | morrownr/8812au GitHub | Driver RTL8812AU para Linux | https://github.com/morrownr/8812au-20210820 | ✅ Verificado | 03/09/2026 |
 | morrownr/8821cu GitHub | Driver RTL8811CU para Linux | https://github.com/morrownr/8821cu-20210916 | ✅ Verificado | 03/09/2026 |
 | morrownr/rtl8852bu GitHub | Driver RTL8832BU para Linux | https://github.com/morrownr/rtl8852bu-20250826 | ✅ Verificado | 03/09/2026 |
-| Yupitek ALFA Product Overview | Modelos atuais e especificações | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 03/09/2026 |
-| Yupitek Blog: Guia Soft AP | Documentação de verificação do modo AP | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Verificado | 03/09/2026 |
+| Yopitek ALFA Product Overview | Modelos atuais e especificações | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 03/09/2026 |
+| Yopitek Blog: Guia Soft AP | Documentação de verificação do modo AP | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Verificado | 03/09/2026 |
 | Documentos Técnicos do Site 9 | Matrizes de decisão e bases de verificação ambiental | Link Relativo (veja "Artigos Relacionados" no início do texto) | ✅ Verificado | 03/09/2026 |
 
 > Página oficial do wiki kernel mt76: https://wireless.wiki.kernel.org/en/users/drivers/mediatek （Verificado, lista as versões de kernel inicial suportadas por cada chip, pode ser usado como base para verificação rápida）
 
 ## Declaração de Isenção de Responsabilidade
 
-Este arquivo foi organizado pela Suporte Técnico da Yupitek Ltd, e as especificações e status dos drivers podem variar conforme as atualizações do kernel e dos repositórios de drivers. Antes da instalação, por favor, utilize os repositórios oficiais e as páginas de especificações do fabricante como referência. A ALFA Network é uma marca oficialmente autorizada pela nossa empresa.
+Este arquivo foi organizado pela Suporte Técnico da Yopitek Ltd, e as especificações e status dos drivers podem variar conforme as atualizações do kernel e dos repositórios de drivers. Antes da instalação, por favor, utilize os repositórios oficiais e as páginas de especificações do fabricante como referência. A ALFA Network é uma marca oficialmente autorizada pela nossa empresa.

@@ -3,6 +3,8 @@ title: "ACS ACR122U — قارئ بطاقات NFC عبر USB"
 description: "ACS ACR122U، قارئ بطاقات NFC عبر USB، يدعم ISO 14443 A/B وMIFARE وFeliCa، بتردد 13.56MHz، مناسب لأبحاث NFC وتطوير التطبيقات."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
@@ -42,7 +44,7 @@ ACR122U هو قارئ/كاتب بطاقات ذكية لاتلامسية متصل
 | MTBF | 408,500 ساعة |
 | LED | 1 ثنائي اللون أحمر/أخضر (قابل للتحكم من قِبَل المستخدم) |
 | جرس تنبيه | أحادي النغمة (قابل للتحكم من قِبَل المستخدم) |
-| الاعتمادات | PC/SC، CCID، CE، FCC، RoHS |
+| الاعتمادات | PC/SC، CCID، CE، FCC، RoHS 2 |
 
 ## الميزات الرئيسية
 
@@ -81,6 +83,12 @@ ACR122U هو قارئ/كاتب بطاقات ذكية لاتلامسية متصل
 | المورد | الرابط |
 |----------|------|
 | 📄 ACR122U مواصفات (PDF) | [تنزيل PDF](/docs/acr/ACR122U_spec.pdf) |
+
+## الموارد الرسمية
+
+| المورد | الرابط |
+|--------|--------|
+| الصفحة الرسمية لـ ACS ACR122U | [acs.com.hk](https://www.acs.com.hk/cn/products/73/acr122u-nfc-%E9%9D%9E%E6%8E%A5%E8%A7%B8%E5%BC%8F%E6%99%BA%E8%83%BD%E5%8D%A1%E8%AF%BB%E5%86%99%E5%99%A8/) |
 
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U قارئ بطاقات NFC" />

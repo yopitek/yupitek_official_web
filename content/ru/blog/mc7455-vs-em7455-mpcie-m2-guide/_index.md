@@ -24,7 +24,7 @@ faq:
 
 MC7455 — это модуль PCI Express Mini Card (mPCIe) от Sierra Wireless, а EM7455 — его «собрат» в форм-факторе M.2 из того же семейства 74xx. Оба модуля интегрируют LTE, UMTS и позиционирование GNSS, и оба используют процессор Qualcomm MDM9230. Скорости сети также идентичны: LTE Cat 6 с пиковой скоростью скачивания 300 Мбит/с (FDD) / 222 Мбит/с (TDD) и пиковой скоростью загрузки 50 Мбит/с (FDD) / 26 Мбит/с (TDD). В этой статье мы выделили аппаратные различия из официальных спецификаций, чтобы вы точно знали, чего ожидать до покупки.
 
-> Технические ссылки: официальные спецификации Sierra Wireless — [Техническая спецификация продукта AirPrime MC7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) и [Техническая спецификация продукта AirPrime EM7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Составлено Yupitek.
+> Технические ссылки: официальные спецификации Sierra Wireless — [Техническая спецификация продукта AirPrime MC7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) и [Техническая спецификация продукта AirPrime EM7455](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Составлено Yopitek.
 
 ---
 
@@ -131,10 +131,10 @@ MC7455 и EM7455 — как один и тот же мозг в разных к�
 
 ## Призыв к действию (закупка)
 
-Нужен MC7455 или EM7455, или не знаете, какой слот используется в вашем оборудовании? Yupitek — профессиональный поставщик промышленных беспроводных решений. Мы поможем вам подтвердить:
+Нужен MC7455 или EM7455, или не знаете, какой слот используется в вашем оборудовании? Yopitek — профессиональный поставщик промышленных беспроводных решений. Мы поможем вам подтвердить:
 
 - Оценку совместимости слота материнской платы и модуля
 - Переходники для разъёмов антенн и подбор кабелей
 - Долгосрочные запасы и оптовые цены
 
-Напишите нам на **sales@yupitek.com** или посетите [сайт Yupitek](https://www.yupitek.com), чтобы посмотреть связанные продукты.
+Напишите нам на **sales@yupitek.com** или посетите [сайт Yopitek](https://www.yupitek.com), чтобы посмотреть связанные продукты.

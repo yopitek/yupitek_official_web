@@ -1,10 +1,24 @@
 ---
 title: "Packet Squirrel Mark II"
+seo_title: "Packet Squirrel Mark II | Hak5 Taiwan | Yopitek"
 date: 2025-01-01
 draft: false
-description: "A pocket-sized Ethernet man-in-the-middle multi-function tool supporting WireGuard / OpenVPN and five network modes."
+description: "Hak5 Packet Squirrel Mark II, a pocket-sized Ethernet man-in-the-middle tool with WireGuard, OpenVPN and five modes. Available from Yopitek in Taiwan."
 featureimage: "/images/products/hak5/packet-squirrel.png"
+faq:
+  - question: "Which VPN protocols does the Packet Squirrel Mark II support?"
+    answer: "It supports both WireGuard and OpenVPN connections."
+  - question: "What network modes does the Packet Squirrel Mark II offer?"
+    answer: "It offers five network modes: NAT, BRIDGE, TRANSPARENT, JAIL and ISOLATE."
+  - question: "How do I manage the Packet Squirrel Mark II?"
+    answer: "It is managed through a Web UI or SSH at the default address 172.16.32.1:1471. It is powered over USB-C at 5V and has a USB-A 2.0 port for storage."
 ---
+
+{{< alert "warning" >}}
+**Legal Use Disclaimer**: Packet Squirrel is a professional security research tool. For authorized security testing and research use only. Intended solely for security professionals with valid written authorization.
+{{< /alert >}}
+
+The Hak5 Packet Squirrel Mark II is a pocket-sized Ethernet man-in-the-middle tool for authorized network testing and security research. It supports WireGuard and OpenVPN, five network modes (NAT, BRIDGE, TRANSPARENT, JAIL, ISOLATE), and USB-A 2.0 storage. Yopitek offers it for purchase in Taiwan.
 
 ## Product Features
 
@@ -29,6 +43,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 | Default Management IP | 172.16.32.1 |
 | OS | Linux-based |
 | LED | Multi-color status LED |
+| Dimensions / Weight | 50 × 40 × 15 mm, 24 g |
 
 ## Application Scenarios
 
@@ -43,9 +58,11 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 | Resource | Link |
 |----------|------|
-| 📖 Official Documentation | [View Online](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
+| 📖 Official Documentation | [View Online](https://documentation.hak5.org/packet-squirrel-mark-ii/packet-squirrel-mark-ii-by-hak5) |
 | ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/squirrel/mk2) |
 
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+{{< faq >}}

@@ -1,6 +1,6 @@
 ---
 title: "Casos de Sucesso"
-description: "Projetos de integração de sistemas de projeção da Yupitek: mapeamento arquitetônico, espaços imersivos, exposições permanentes em museus, displays interativos."
+description: "Projetos de integração de sistemas de projeção da Yopitek: mapeamento arquitetônico, espaços imersivos, exposições permanentes em museus, displays interativos."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

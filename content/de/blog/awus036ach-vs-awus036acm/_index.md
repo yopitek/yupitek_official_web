@@ -260,4 +260,4 @@ Eine vollständige Einrichtungsanleitung finden Sie unter [ALFA USB WiFi auf Ras
 1. aircrack-ng Community-gepflegt RTL8812AU Treiber-Repository — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
 2. Linux Kernel Mainline MT76 Treiber (`mt76x2u`, integriert ab Kernel 4.19) — [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
 3. ALFA Network Offizielle Website und Produktspezifikationen — [alfa.com.tw](https://www.alfa.com.tw)
-4. Yupitek — ALFA Network Autorisierter Haendler in Taiwan — [yupitek.com](https://www.yupitek.com)
+4. Yopitek — ALFA Network Autorisierter Haendler in Taiwan — [yupitek.com](https://www.yupitek.com)

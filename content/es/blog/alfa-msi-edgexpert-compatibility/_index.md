@@ -260,7 +260,7 @@ Condiciones de refutación: Si la página de especificaciones oficial de MSI cam
 | MSI Computadoras Industriales Anuncios Oficiales | Información de lanzamiento de productos EdgeXpert | https://ipc.msi.com/en/news/146241 | ✅ Verificado | 2026-09-03 |
 | NVIDIA DGX Spark Página Oficial | Información sobre la plataforma GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Verificado | 2026-09-03 |
 | morrownr/8812au GitHub | Controladores Linux para RTL8812AU | https://github.com/morrownr/8812au-20210820 | ✅ Verificado | 2026-09-03 |
-| ALFA Network Catálogo de Productos (Yupitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
+| ALFA Network Catálogo de Productos (Yopitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
 
 Artículos relacionados: [¿Soporta la tarjeta inalámbrica ALFA NVIDIA DGX Spark?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[¿Soporta la tarjeta inalámbrica ALFA ASUS Ascent GX10?](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[¿Soporta la tarjeta inalámbrica ALFA ALTOS BrainSphere GB10 F1?](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[¿Soporta la tarjeta inalámbrica ALFA GIGABYTE AI TOP ATOM?](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[¿Soporta la tarjeta inalámbrica ALFA NVIDIA Jetson Nano?](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

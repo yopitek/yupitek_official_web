@@ -237,7 +237,7 @@ Widerspruchskonditionen: Die obigen Feststellungen basieren auf DGX OS (Ubuntu-B
 | Altos Computing offizielle Webseite | BrainSphere GB10 F1 Produktinformationen | https://www.altoscomputing.com/en-Us | ✅ Geprüft | 2026-09-03 |
 | NVIDIA DGX Spark offizielle Seite | GB10 Plattform-Informationen | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Geprüft | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux-Treiber | https://github.com/morrownr/8812au-20210820 | ✅ Geprüft | 2026-09-03 |
-| ALFA Network Produktübersicht (Yupitek) | ALFA aktuelle Produkt-Spezifikationen | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
+| ALFA Network Produktübersicht (Yopitek) | ALFA aktuelle Produkt-Spezifikationen | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
 
 Verwandte Artikel: [Ist das ALFA Wireless LAN kompatibel mit NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Ist das ALFA Wireless LAN kompatibel mit ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[Ist das ALFA Wireless LAN kompatibel mit GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[Ist das ALFA Wireless LAN kompatibel mit MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 

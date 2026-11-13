@@ -222,8 +222,8 @@ sudo aireplay-ng --test wlan0
 | ASUS Ascent GX10 متجر الرسمي (المملكة المتحدة) | صفحة المنتج GX10 (150 × 150 × 51mm) | https://uk.store.asus.com/asus-ascent-gx105004-33389.html | ✅ تم التحقق | 2026-09-03 |
 | NVIDIA DGX Spark الصفحة الرسمية | معلومات منصة GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ تم التحقق | 2026-09-03 |
 | morrownr/8812au GitHub | محرك التشغيل RTL8812AU لـ Linux | https://github.com/morrownr/8812au-20210820 | ✅ تم التحقق | 2026-09-03 |
-| دليل Linux لـ ALFA Soft AP WiFi Hotspot (Yupitek) | دليل تشغيل AP Linux لـ ALFA | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ تم التحقق | 2026-09-03 |
-| ملخص منتجات ALFA (Yupitek) | مواصفات المنتجات النشطة لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
+| دليل Linux لـ ALFA Soft AP WiFi Hotspot (Yopitek) | دليل تشغيل AP Linux لـ ALFA | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ تم التحقق | 2026-09-03 |
+| ملخص منتجات ALFA (Yopitek) | مواصفات المنتجات النشطة لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
 
 مقالات مرتبطة: [هل يدعم بطاقات الشبكة اللاسلكية لـ ALFA NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/) | [هل يدعم بطاقات الشبكة اللاسلكية لـ ALFA ALTOS BrainSphere GB10 F1](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/) | [هل يدعم بطاقات الشبكة اللاسلكية لـ ALFA GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/) | [هل يدعم بطاقات الشبكة اللاسلكية لـ ALFA MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 

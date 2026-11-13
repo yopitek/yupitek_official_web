@@ -6,6 +6,10 @@ description: "口袋大小的以太网窃听器，USB-C 接口连接分析设备
 featureimage: "/images/products/hak5/plunder-bug.png"
 ---
 
+{{< alert "warning" >}}
+**法律使用声明**: Plunder Bug 为专业安全研究工具，仅限用于经授权的安全测试与研究，且仅供持有有效书面授权的安全专业人员使用。
+{{< /alert >}}
+
 ## 产品特色
 
 ![Plunder Bug LAN Tap](/images/products/hak5/card/plunder-bug.png)

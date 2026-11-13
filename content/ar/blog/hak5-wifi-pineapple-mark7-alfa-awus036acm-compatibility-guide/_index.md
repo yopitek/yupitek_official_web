@@ -84,7 +84,7 @@ aireplay-ng --test wlan3mon    # اختبار الحقن
 
 👉 [صفحة منتج AWUS036ACM](/ar/products/alfa/awus036acm/)
 
-*هل تحتاج مساعدة؟ اتصل بدعم Yupitek: [yupitek.com/support](/ar/support/)*
+*هل تحتاج مساعدة؟ اتصل بدعم Yopitek: [yupitek.com/support](/ar/support/)*
 
 ## المراجع
 

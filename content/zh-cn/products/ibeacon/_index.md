@@ -1,6 +1,6 @@
 ---
-title: "Yupitek iBeacon 系列 — BLE 5.0 蓝牙信标"
-description: "Yupitek 代理专业 BLE 5.0 iBeacon 与 Eddystone 蓝牙信标：YPB01、YPB02、YPB03、YPB04、YPB05，适用于室内定位、考勤打卡与资产追踪。"
+title: "Yopitek iBeacon 系列 — BLE 5.0 蓝牙信标"
+description: "Yopitek 代理专业 BLE 5.0 iBeacon 与 Eddystone 蓝牙信标：YPB01、YPB02、YPB03、YPB04、YPB05，适用于室内定位、考勤打卡与资产追踪。"
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-Yupitek iBeacon 产品是新一代蓝牙低功耗 (BLE 5.0) 信标设备，适用于高性能定位、人员追踪与商业广告推送。支持 Apple iBeacon™ 和 Google Eddystone™ (UID, URL, TLM) 协议，可同时广播最多 6 个通道的多协议信号，并能通过 BeaconSET+ 移动 App 进行配置。
+Yopitek iBeacon 产品是新一代蓝牙低功耗 (BLE 5.0) 信标设备，适用于高性能定位、人员追踪与商业广告推送。支持 Apple iBeacon™ 和 Google Eddystone™ (UID, URL, TLM) 协议，可同时广播最多 6 个通道的多协议信号，并能通过 BeaconSET+ 移动 App 进行配置。
 
 ---
 

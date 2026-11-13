@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "sierra-firmware-update-brand-lock-guide"
 tags: ["Sierra Wireless", "ファームウェア更新", "qmi-firmware-update", "EM7455", "EM7565", "MC7455", "ブランドロック", "SED", "書き込み"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ja/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ faq:
 
 中古市場で Sierra Wireless のモジュールを購入し、自分のノートPC やルーターに取り付けたものの、動作しないというケースがよくあります。原因はたいてい「ブランドロック（OEM ロック）」です。本記事では、公式仕様書に記載されている確かな情報と、コミュニティの実践的なノウハウを組み合わせて、安全にファームウェアを書き込む方法を解説します。
 
-> 技術資料の出典：Sierra Wireless 公式仕様書（EM7455、EM7565、MC7455）。ブランドロックの切り替えとサードパーティ製ツールについては、コミュニティでの実践に基づいています。本記事は榆閤科技（Yupitek）が編集しました。
+> 技術資料の出典：Sierra Wireless 公式仕様書（EM7455、EM7565、MC7455）。ブランドロックの切り替えとサードパーティ製ツールについては、コミュニティでの実践に基づいています。本記事は榆閤科技（Yopitek）が編集しました。
 
 ---
 
@@ -124,6 +124,6 @@ Sierra Wireless モジュールへのファームウェア書き込みやブラ�
 
 ## 購入情報（Call To Action）
 
-手元のモジュールが Dell 版なのか Lenovo 版なのかおわかりでない場合や、信頼できる Sierra モジュールでデバイスをアップグレードしたい場合は、Yupitek（榆閤科技）が完全なハードウェアソリューションと技術相談を提供しています。
+手元のモジュールが Dell 版なのか Lenovo 版なのかおわかりでない場合や、信頼できる Sierra モジュールでデバイスをアップグレードしたい場合は、Yopitek（榆閤科技）が完全なハードウェアソリューションと技術相談を提供しています。
 お問い合わせはこちら：**sales@yupitek.com**
 製品を見る：[Sierra Wireless モジュール特集](https://yupitek.com/ja/products/sierra/)

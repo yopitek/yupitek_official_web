@@ -211,7 +211,7 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 - **快速部署、免維護首選**：請購買 [ALFA AWUS036ACM](https://yupitek.com/zh-tw/products/alfa/awus036acm)。其原生 MediaTek 驅動在 OpenWrt 6.6 核心上極為穩定且開箱即用。
 - **供電保證**：務必隨身攜帶優質的 **外接供電 USB Hub**，以確保高功率網路卡的射頻輸出功率穩定，防止斷線。
 
-如有進一步技術諮詢、大宗硬體採購或客製化 OpenWrt SDK 編譯需求，歡迎隨時聯絡 **Yupitek 技術支援團隊**：
+如有進一步技術諮詢、大宗硬體採購或客製化 OpenWrt SDK 編譯需求，歡迎隨時聯絡 **Yopitek 技術支援團隊**：
 
 - 🌐 官方網站：[www.yupitek.com](https://www.yupitek.com)
 - 📧 聯絡信箱：[sales@yupitek.com](mailto:sales@yupitek.com)

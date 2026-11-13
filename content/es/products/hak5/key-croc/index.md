@@ -6,6 +6,10 @@ description: "Keylogger de hardware disfrazado de adaptador de paso de teclado, 
 featureimage: "/images/products/hak5/key-croc.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso legal de uso**: Key Croc es una herramienta profesional de investigación de seguridad destinada exclusivamente a profesionales de la seguridad con autorización escrita válida.
+{{< /alert >}}
+
 ## Características del Producto
 
 ![Key Croc](/images/products/hak5/card/key-croc.png)
@@ -15,6 +19,7 @@ featureimage: "/images/products/hak5/key-croc.png"
 - **Payload activado por palabras clave**: Ejecuta Payload al detectar palabras clave específicas (Keyword Triggered Payloads)
 - **Hardware potente**: CPU ARM de cuatro núcleos a 1.2 GHz, SSD de nivel escritorio, herramientas abundantes
 - **Integración Cloud C²**: Ver pulsaciones en tiempo real, inyección remota, gestión de Payload, root shell
+- **Acceso remoto WiFi y SSH**: WiFi de 2.4 GHz integrado para gestión remota, con acceso SSH
 - **Grabación automática**: Registra automáticamente todas las pulsaciones tras la inserción, sin configuración
 - **Doble lenguaje de Payload**: Soporta DuckyScript™ + Bash Payload
 
@@ -27,6 +32,9 @@ featureimage: "/images/products/hak5/key-croc.png"
 | Interfaz | USB-A (lado del host), USB-A (lado del teclado), Console serial |
 | Sistema operativo | Linux |
 | Cloud C² | Soportado |
+| Inalámbrico | 2.4 GHz WiFi (2.412 ~ 2.4835 GHz) |
+| Dimensiones | 74 × 27 × 14 mm |
+| Alimentación | 5 W (USB 5V 1A) |
 
 ## Entornos de Aplicación
 
@@ -39,7 +47,7 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 | Recurso | Enlace |
 |---------|--------|
-| 📖 Documentación oficial | [Ver en línea](https://docs.hak5.org/key-croc/keycroc-by-hak5/) |
+| 📖 Documentación oficial | [Ver en línea](https://documentation.hak5.org/key-croc) |
 | ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/croc) |
 
 {{< alert >}}

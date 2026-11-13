@@ -1,6 +1,6 @@
 ---
 title: "SDRLAB Software-Defined Radio Modules"
-description: "Yopitek vertreibt SDRLAB SDR-Software-Defined-Radio-Module und Flipper Zero Erweiterungsboards — ideal für Funkkommunikationsforschung, Amateurfunk und RF-Signalanalyse."
+description: "Yopitek bietet SDRLAB SDR-Software-Defined-Radio-Module und Flipper Zero Erweiterungsboards an — ideal für Funkkommunikationsforschung, Amateurfunk und RF-Signalanalyse."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -30,7 +30,7 @@ SDRLAB bietet Software-Defined-Radio (SDR)-Module und Flipper Zero Erweiterungsz
     Flipper Zero NRF24L01+-Drahtlosmodul für 2,4-GHz-Drahtlosforschung.
   {{< /card >}}
   {{< card title="Flipper Zero WiFi Multiboard" href="/de/products/sdrlab/flipper-wifi-multiboard/" image="/images/products/sdrlab/flipper-wifi-multiboard.png" >}}
-    Flipper Zero Multifunktions-Wi-Fi-Erweiterungsboard mit integriertem ESP8266-Wi-Fi-Modul.
+    Flipper Zero Multifunktions-Wi-Fi-Erweiterungsboard mit NRF24-, GPIO-, CC1101- und GPS-Modulen.
   {{< /card >}}
   {{< card title="Flipper Zero Ethernet Testmodul" href="/de/products/sdrlab/flipper-ethernet/" image="/images/products/sdrlab/flipper-ethernet.png" >}}
     Flipper Zero kabelgebundenes Netzwerk-Test-Erweiterungsmodul für Ethernet-Tests.

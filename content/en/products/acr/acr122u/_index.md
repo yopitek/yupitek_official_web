@@ -1,8 +1,11 @@
 ---
 title: "ACS ACR122U — USB NFC Reader"
-description: "ACS ACR122U, USB NFC reader supporting ISO 14443 A/B, MIFARE, and FeliCa at 13.56 MHz. Ideal for NFC research and application development."
+description: "ACS ACR122U USB NFC reader for ISO 14443 A/B, MIFARE and FeliCa at 13.56 MHz, PC/SC and CCID compliant. Available from Yopitek in Taiwan."
+seo_title: "ACR122U | ACS Taiwan | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
@@ -17,6 +20,8 @@ faq:
 ---
 
 ACR122U
+
+The ACS ACR122U is a USB NFC reader/writer for developers and integrators working with 13.56 MHz cards. It supports ISO 14443 Type A/B, MIFARE and FeliCa, reads at up to 50 mm, and is PC/SC and CCID compliant. Yopitek offers it in Taiwan.
 
 ## Product Overview
 
@@ -40,7 +45,7 @@ The ACR122U is a PC-linked contactless smart card reader/writer based on 13.56 M
 | MTBF | 408,500 hrs |
 | LED | 1 bi-color Red/Green (user-controllable) |
 | Buzzer | Monotone (user-controllable) |
-| Compliance | PC/SC, CCID, CE, FCC, RoHS |
+| Compliance | PC/SC, CCID, CE, FCC, RoHS 2 |
 
 ## Key Features
 
@@ -79,6 +84,12 @@ The ACR122U is a PC-linked contactless smart card reader/writer based on 13.56 M
 | Resource | Link |
 |----------|------|
 | 📄 ACR122U Datasheet (PDF) | [Download PDF](/docs/acr/ACR122U_spec.pdf) |
+
+## Official Resources
+
+| Resource | Link |
+|----------|------|
+| ACS ACR122U Product Page | [acs.com.hk](https://www.acs.com.hk/cn/products/73/acr122u-nfc-%E9%9D%9E%E6%8E%A5%E8%A7%B8%E5%BC%8F%E6%99%BA%E8%83%BD%E5%8D%A1%E8%AF%BB%E5%86%99%E5%99%A8/) |
 
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC Reader" />

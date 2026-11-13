@@ -312,7 +312,7 @@ sudo modprobe rtl8852bu
 | Неустойчивое подключение WiFi / Медленная скорость | Адаптер USB-C поддерживает только USB 2.0 | Заменить адаптер, поддерживающий USB 3.2 Gen 2×2; Убедиться, что адаптер помечен как «Data», а не «Charge Only» |
 | Конфликт встроенного Wi-Fi с внешним ALFA | Конфликт двух无线 интерфейсов | Отключить встроенный WiFi: `sudo nmcli radio wifi off` или отключить в BIOS/UEFI; Или настроить приоритет маршрутизации |
 | 6GHz (Wi-Fi 6E) не может быть использован | Ограничения Регуляторного домена | Настроить Регуляторный домен: `sudo iw reg set US` (США открыли 6GHz); Убедиться, что firmware AWUS036AXML/AXM поддерживает 6GHz |
-| Неудача при запуске режима AP | Конфликт NetworkManager и hostapd | Справка: Yupitek ALFA Soft AP руководство; Отключить NetworkManager для управления этим интерфейсом и手动 настроить hostapd |
+| Неудача при запуске режима AP | Конфликт NetworkManager и hostapd | Справка: Yopitek ALFA Soft AP руководство; Отключить NetworkManager для управления этим интерфейсом и手动 настроить hostapd |
 | Устройство исчезает после пробуждения | Автоматическая приостановка USB | Отключить автоматическую приостановку USB: `echo 'options usbcore autosuspend=-1' | sudo tee /etc/modprobe.d/usb.conf` |
 
 ## 9. Известные ограничения
@@ -339,8 +339,8 @@ sudo modprobe rtl8852bu
 | morrownr/8821cu GitHub | Драйверы Linux для RTL8811CU | https://github.com/morrownr/8821cu-20210916 | ✅ Проверено | 2026-09-03 |
 | morrownr/rtl8852bu GitHub | Драйверы Linux для RTL8832BU | https://github.com/morrownr/rtl8852bu-20250826 | ✅ Проверено | 2026-09-03 |
 | Документация по драйверам Linux kernel mt76 | Объяснение драйверов MediaTek mt76 / mt7921 mainline (с указанием версий kernel, поддерживающих различные чипы) | https://wireless.wiki.kernel.org/en/users/drivers/mediatek | ✅ Проверено | 2026-09-03 |
-| ALFA Soft AP WiFi Hotspot Linux Guide (Yupitek) | Руководство по настройке AP-режима ALFA в Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Проверено | 2026-09-03 |
-| Обзор продуктов ALFA Network (Yupitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
+| ALFA Soft AP WiFi Hotspot Linux Guide (Yopitek) | Руководство по настройке AP-режима ALFA в Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Проверено | 2026-09-03 |
+| Обзор продуктов ALFA Network (Yopitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | Официальное заявление разработчика драйверов: рекомендуется избегать чипов rtl8852/32au (RTL8832BU) | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Проверено | 2026-09-03 |
 | morrownr/8812au-20210820 GitHub | Последние объявления о состоянии драйверов RTL8812AU (включая интеграцию в主线 kernel 6.13 и достижение зрелости качества в 6.14) | https://github.com/morrownr/8812au-20210820 | ✅ Проверено | 2026-09-03 |
 

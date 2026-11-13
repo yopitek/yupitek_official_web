@@ -1,6 +1,6 @@
 ---
 title: "Mapeamento 3D — Projeção 3D Mapping"
-description: "Soluções de projeção 3D Mapping da Yupitek: correção geométrica avançada, mapeamento em superfícies tridimensionais, edge blending multi-projetor para eventos, museus e espaços temáticos."
+description: "Soluções de projeção 3D Mapping da Yopitek: correção geométrica avançada, mapeamento em superfícies tridimensionais, edge blending multi-projetor para eventos, museus e espaços temáticos."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 O 3D Mapping é uma das tecnologias de projeção mais avançadas disponíveis atualmente. Diferentemente da projeção tradicional em telas planas, o 3D Mapping aplica conteúdo visual diretamente sobre superfícies tridimensionais — esculturas, objetos, cenários físicos e fachadas com relevos — de forma perfeitamente alinhada com a geometria real do objeto.
 
-A Yupitek oferece soluções completas de 3D Mapping para eventos corporativos, instalações em museus, espaços temáticos e exposições interativas. Nossa equipe técnica cuida de todo o processo: levantamento da superfície, calibração geométrica, integração multi-projetor e suporte no local.
+A Yopitek oferece soluções completas de 3D Mapping para eventos corporativos, instalações em museus, espaços temáticos e exposições interativas. Nossa equipe técnica cuida de todo o processo: levantamento da superfície, calibração geométrica, integração multi-projetor e suporte no local.
 
 ## Tecnologias Principais
 
@@ -40,7 +40,7 @@ A Yupitek oferece soluções completas de 3D Mapping para eventos corporativos, 
 
 ## Equipamentos Recomendados
 
-Para projetos de 3D Mapping, a Yupitek recomenda projetores laser de alta luminosidade (10.000 lm ou mais) com lentes intercambiáveis, combinados com software de warping e blending profissional. A escolha exata de equipamentos depende do tamanho da superfície, ambiente (interno ou externo) e complexidade geométrica do projeto.
+Para projetos de 3D Mapping, a Yopitek recomenda projetores laser de alta luminosidade (10.000 lm ou mais) com lentes intercambiáveis, combinados com software de warping e blending profissional. A escolha exata de equipamentos depende do tamanho da superfície, ambiente (interno ou externo) e complexidade geométrica do projeto.
 
 {{< gallery >}}
   <img src="/images/solution/case-3d-mapping.webp" alt="Projeção 3D Mapping em espaço temático" />

@@ -1,6 +1,6 @@
 ---
 title: "Immersive Space"
-description: "Yupitek Immersive projection space solutions: 360° panoramic projection, immersive exhibition halls, and interactive art installations for fully enveloping visual experiences."
+description: "Yopitek Immersive projection space solutions: 360° panoramic projection, immersive exhibition halls, and interactive art installations for fully enveloping visual experiences."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Immersive Projection Spaces
 
-Immersive space projection breaks the boundaries of traditional displays, placing audiences within a field of surrounding imagery. Whether for special museum exhibitions, corporate experience centers, or permanent tourist attraction installations, Yupitek delivers custom Immersive projection solutions.
+Immersive space projection breaks the boundaries of traditional displays, placing audiences within a field of surrounding imagery. Whether for special museum exhibitions, corporate experience centers, or permanent tourist attraction installations, Yopitek delivers custom Immersive projection solutions.
 
 ## Technical Capabilities
 

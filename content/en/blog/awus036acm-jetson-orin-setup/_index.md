@@ -25,7 +25,7 @@ featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
 
 ## A Customer Email Raises a Critical Question
 
-This is a real question we received at Yupitek recently. It sounds simple enough — but if you've spent any time in the Jetson developer community, you'll know that **USB WiFi on the NVIDIA Jetson platform is far trickier than most people expect.**
+This is a real question we received at Yopitek recently. It sounds simple enough — but if you've spent any time in the Jetson developer community, you'll know that **USB WiFi on the NVIDIA Jetson platform is far trickier than most people expect.**
 
 {{< tldr >}}
 Jetson Orin uses the NVIDIA customized Tegra kernel, where third-party WiFi drivers often fail to compile. ALFA AWUS036ACM with MT7612U has a driver in-kernel since 4.19, making it plug-and-play with zero compilation. It supports monitor mode, packet injection, and AP mode.
@@ -334,7 +334,7 @@ Not because it's the fastest or the cheapest — but because on a platform as pa
 ### Take Action
 
 - View product details: https://yupitek.com/en/products/alfa/awus036acm/
-- Technical support: Yupitek provides local technical support in Taiwan — contact us for assistance
+- Technical support: Yopitek provides local technical support in Taiwan — contact us for assistance
 
 ### Further Reading
 
@@ -344,9 +344,9 @@ Not because it's the fastest or the cheapest — but because on a platform as pa
 
 ---
 
-> **Tags**: #JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yupitek
+> **Tags**: #JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yopitek
 >
-> **Author**: Yupitek Ltd — ALFA Network Authorized Distributor in Taiwan
+> **Author**: Yopitek Ltd — ALFA Network Authorized Distributor in Taiwan
 >
 > **Disclaimer**: The research in this article is current as of May 2026. Jetson platform and Linux kernel updates are ongoing — we recommend verifying the latest JetPack version and in-kernel driver support before deployment.
 

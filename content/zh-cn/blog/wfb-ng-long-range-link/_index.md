@@ -18,7 +18,7 @@ faq:
   - question: "wfb-ng 一定要用 ALFA AWUS036ACH 吗？"
     answer: "任何 RTL8812AU 芯片网卡理论上都可用，但 AWUS036ACH 是 wfb-ng 专案官方实测的硬件，驱动支持最稳定。尤其在高功率、长距离场景下，ALFA 的功率设计与可拆式天线优势明显。"
 ---
-> 作者：榆合科技 Yupitek（ALFA Network 台湾授权代理商）技术团队
+> 作者：榆合科技 Yopitek（ALFA Network 台湾授权代理商）技术团队
 > 适用对象：无人机同好、Maker、资安研究员、农喷／巡检机开发者
 > 难度：★★★☆☆（需基本 Linux 与飞控概念）
 
@@ -431,4 +431,4 @@ journalctl -xu wifibroadcast@gs
 
 ---
 
-*本文由榆合科技 Yupitek（ALFA Network 台湾授权代理商）技术团队撰写，基于 wfb-ng 官方文件与实作经验整理。实作前请务必确认所在地区无线电法规，并依规范调整发射功率与频段。*
+*本文由榆合科技 Yopitek（ALFA Network 台湾授权代理商）技术团队撰写，基于 wfb-ng 官方文件与实作经验整理。实作前请务必确认所在地区无线电法规，并依规范调整发射功率与频段。*

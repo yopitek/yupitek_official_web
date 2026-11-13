@@ -260,7 +260,7 @@ sudo aireplay-ng --test wlan0
 | Официальные уведомления MSI Industrial Computer | Информация о выпуске продукта EdgeXpert | https://ipc.msi.com/en/news/146241 | ✅ Проверено | 2026-09-03 |
 | Официальная страница NVIDIA DGX Spark | Информация о платформе GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Проверено | 2026-09-03 |
 | morrownr/8812au GitHub | Драйверы для RTL8812AU Linux | https://github.com/morrownr/8812au-20210820 | ✅ Проверено | 2026-09-03 |
-| Обзор продуктов ALFA Network (Yupitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
+| Обзор продуктов ALFA Network (Yopitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
 
 Связанные статьи: [Поддерживает ли беспроводная карта ALFA NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Поддерживает ли беспроводная карта ALFA ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[Поддерживает ли беспроводная карта ALFA ALTOS BrainSphere GB10 F1](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[Поддерживает ли беспроводная карта ALFA GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[Поддерживает ли беспроводная карта ALFA NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

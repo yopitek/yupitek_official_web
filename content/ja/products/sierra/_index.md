@@ -9,7 +9,7 @@ showChildPages: true
 featureimage: "/images/products/sierra/sierra_banner.png"
 ---
 
-Sierra Wireless は産業用セルラーモジュールの世界的リーダーであり、LTE Cat 4 から 5G NR までの完全な製品ラインを提供しています。Yupitek は Sierra Wireless の全セルラーモジュールポートフォリオを取り扱い、IoT端末、産業用ルーター、ゲートウェイ、コネクテッドビークル、モバイルブロードバンド機器に適しています。
+Sierra Wireless は産業用セルラーモジュールの世界的リーダーであり、LTE Cat 4 から 5G NR までの完全な製品ラインを提供しています。Yopitek は Sierra Wireless の全セルラーモジュールポートフォリオを取り扱い、IoT端末、産業用ルーター、ゲートウェイ、コネクテッドビークル、モバイルブロードバンド機器に適しています。
 
 ---
 
@@ -68,7 +68,7 @@ Sierra Wireless は産業用セルラーモジュールの世界的リーダー�
 ---
 
 {{< alert >}}
-Yupitek は Sierra Wireless / Semtech の製品情報、供給チャネルおよび技術コンテンツを提供しています。公式の正規代理店ではなく、本資料は技術参考のみを目的としています。
+Yopitek は Sierra Wireless / Semtech の製品情報、供給チャネルおよび技術コンテンツを提供しています。公式の正規代理店ではなく、本資料は技術参考のみを目的としています。
 
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください
 {{</alert >}}

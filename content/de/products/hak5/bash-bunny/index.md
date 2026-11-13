@@ -1,6 +1,6 @@
 ---
 title: "HAK5 Bash Bunny Mark II — Multifunktionale USB-Angriffsforschungsplattform"
-description: "HAK5 Bash Bunny Mark II, eine multifunktionale USB-Angriffsforschungsplattform mit Unterstützung für HID-Injection, Ethernet-Emulation und Massenspeichergerät-Simulation mit BashBunny-Scripting."
+description: "HAK5 Bash Bunny Mark II, eine multifunktionale USB-Angriffsforschungsplattform mit Unterstützung für HID-Injection, Ethernet-Emulation und Massenspeichergerät-Simulation mit DuckyScript."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -14,7 +14,7 @@ tags: ["HID Injection", "USB Attack Platform", "Ethernet", "Penetration Testing"
 
 ## Produktübersicht
 
-Bash Bunny Mark II ist die umfassendste USB-Angriffsforschungsplattform, die gleichzeitig mehrere USB-Gerätetypen emulieren kann: Tastatur (HID), Ethernet-Adapter, USB-Massenspeicher oder beliebige Kombinationen davon. Sie unterstützt die BashBunny-Skriptsprache zur Ausführung von Credential Harvesting, Netzwerkfreigabe, Tastatureingabe-Injection und anderen autorisierten Penetrationstests.
+Bash Bunny Mark II ist die umfassendste USB-Angriffsforschungsplattform, die gleichzeitig mehrere USB-Gerätetypen emulieren kann: Tastatur (HID), Ethernet-Adapter, USB-Massenspeicher oder beliebige Kombinationen davon. Sie unterstützt DuckyScript zur Ausführung von Credential Harvesting, Netzwerkfreigabe, Tastatureingabe-Injection und anderen autorisierten Penetrationstests.
 
 ## Unterstützte Angriffsmodi
 
@@ -23,6 +23,7 @@ Bash Bunny Mark II ist die umfassendste USB-Angriffsforschungsplattform, die gle
 | HID | Tastaturemulation, führt DuckyScript-Payloads aus |
 | RNDIS/ECM | Ethernet-Emulation, Man-in-the-Middle-Tests |
 | STORAGE | USB-Massenspeichergerät-Emulation |
+| SERIAL | Serielle Konsole (ACM) |
 | Combo Mode | Mehrere Gerätetypen gleichzeitig aktiviert |
 
 ## Technische Spezifikationen
@@ -30,7 +31,7 @@ Bash Bunny Mark II ist die umfassendste USB-Angriffsforschungsplattform, die gle
 | Eigenschaft | Spezifikation |
 |-------------|---------------|
 | Prozessor | Quad-Core ARM |
-| Speicher | Integrierter eMMC |
+| Speicher | 8 GB NAND-SSD |
 | Schnittstelle | USB-A |
 | Betriebssystem | Debian Linux |
 

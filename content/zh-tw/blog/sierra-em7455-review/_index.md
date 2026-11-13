@@ -1,6 +1,6 @@
 ---
 title: "Sierra EM7455 完整評測：為什麼它是 Maker 與實驗室做專題最愛的 Sierra 網路卡"
-description: "EM7455 完整評測：規格、EM7430 差異、OpenWrt/Linux 設定、Dell/Lenovo 相容性。本文由 Yupitek（榆閤科技）整理提供技術資料。"
+description: "EM7455 完整評測：規格、EM7430 差異、OpenWrt/Linux 設定、Dell/Lenovo 相容性。本文由 Yopitek（榆閤科技）整理提供技術資料。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -25,14 +25,14 @@ faq:
 # Sierra EM7455 完整評測：為什麼它是 Maker 與實驗室做專題最愛的 Sierra 網路卡
 
 {{< alert >}}
-Yupitek 提供 Sierra Wireless / Semtech 相關產品資訊、通路供應與技術內容；非官方授權經銷商，本資料僅供技術參考。
+Yopitek 提供 Sierra Wireless / Semtech 相關產品資訊、通路供應與技術內容；非官方授權經銷商，本資料僅供技術參考。
 {{</alert >}}
 
 如果有在玩樹莓派加上 OpenWrt，或者想幫實驗室的設備升級 4G 網路，那你一定聽過 Sierra EM7455 這張神卡！它是 Sierra Wireless 推出的一款 LTE-A Cat 6 M.2 蜂窩模組，搭載了 Qualcomm MDM9230 晶片，最高支援 300 Mbps 的下載以及 50 Mbps 的上傳速度，而且還內建了 GNSS 定位功能，工作溫度甚至能扛住 -40°C 到 +85°C 的極端環境。
 
-這篇文章由榆閤科技（Yupitek）整理，帶大家看懂這張 M.2 B-Key 封裝的 4G LTE-Advanced Cat 6 模組為什麼這麼紅，以及怎麼在 Linux 系統下把驅動跟設定搞定。
+這篇文章由榆閤科技（Yopitek）整理，帶大家看懂這張 M.2 B-Key 封裝的 4G LTE-Advanced Cat 6 模組為什麼這麼紅，以及怎麼在 Linux 系統下把驅動跟設定搞定。
 
-> 產品連結：[EM7455 — Yupitek 產品頁](/zh-tw/products/sierra/em7455/) | 官方規格書：[AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
+> 產品連結：[EM7455 — Yopitek 產品頁](/zh-tw/products/sierra/em7455/) | 官方規格書：[AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
 
 ---
 
@@ -277,7 +277,7 @@ AT!RESET
 
 ## 實驗室想採購？找我們就對了
 
-這篇文章是由榆閤科技（Yupitek）的工程團隊整理出來的。不管是做大學專題、實驗室計畫，還是企業需要大量採購 EM7455 或其他 Sierra 模組，都可以來找我們討論！
+這篇文章是由榆閤科技（Yopitek）的工程團隊整理出來的。不管是做大學專題、實驗室計畫，還是企業需要大量採購 EM7455 或其他 Sierra 模組，都可以來找我們討論！
 
 - **逛逛這張卡**：[https://yupitek.com/zh-tw/products/sierra/em7455/](/zh-tw/products/sierra/em7455/)
 - **看所有 Sierra 型號**：[https://yupitek.com/zh-tw/products/sierra/](/zh-tw/products/sierra/)

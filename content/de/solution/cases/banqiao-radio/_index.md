@@ -1,6 +1,6 @@
 ---
 title: "Banqiao Rundfunkstation – 360° Vollimmersive Projektion"
-description: "Eine ehemalige japanische Kolonial-Radiostation in Taiwan wurde in eine permanente 360°-Vollimmersiv-Projektionsausstellung umgewandelt – ein Vorzeigeprojekt für Museumsintegration von Yupitek."
+description: "Eine ehemalige japanische Kolonial-Radiostation in Taiwan wurde in eine permanente 360°-Vollimmersiv-Projektionsausstellung umgewandelt – ein Vorzeigeprojekt für Museumsintegration von Yopitek."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Immersive Projektion", "360°-Projektion", "Museum", "New Taipei City"]
 **Typ**: 360°-Vollimmersiv-Projektion – Dauerausstellung
 **Thema**: Rundfunkgeschichte aus der japanischen Kolonialzeit
 
-Die Banqiao Rundfunkstation wurde während der japanischen Kolonialzeit erbaut und ist eines der bedeutendsten Rundfunk-Kulturdenkmäler Taiwans. Unter strenger Einhaltung denkmalpflegerischer Auflagen installierte Yupitek ein 360°-Immersiv-Projektionssystem, das Besucher in die Atmosphäre der taiwanesischen Rundfunkkultur der 1930er und 1940er Jahre versetzt.
+Die Banqiao Rundfunkstation wurde während der japanischen Kolonialzeit erbaut und ist eines der bedeutendsten Rundfunk-Kulturdenkmäler Taiwans. Unter strenger Einhaltung denkmalpflegerischer Auflagen installierte Yopitek ein 360°-Immersiv-Projektionssystem, das Besucher in die Atmosphäre der taiwanesischen Rundfunkkultur der 1930er und 1940er Jahre versetzt.
 
 ## Technische Spezifikationen
 

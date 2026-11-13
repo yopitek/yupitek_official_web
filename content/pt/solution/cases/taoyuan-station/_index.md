@@ -1,6 +1,6 @@
 ---
 title: "Estação de Taoyuan — Instalação Multimídia em Espaço de Transporte Público"
-description: "Case Yupitek: instalação de projeção multimídia na Estação Ferroviária de Taoyuan, Taiwan. Sistema de projeção para espaços de espera e circulação do terminal de transporte público."
+description: "Case Yopitek: instalação de projeção multimídia na Estação Ferroviária de Taoyuan, Taiwan. Sistema de projeção para espaços de espera e circulação do terminal de transporte público."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Estação", "Espaço Público", "Taoyuan"]
 **Tipo**: Espaço Público / Transporte
 **Escopo**: Sistema de projeção multimídia para espaços internos da estação
 
-A Estação de Taoyuan é um dos principais hubs de transporte do norte de Taiwan, recebendo centenas de milhares de passageiros diariamente. O projeto de renovação da estação incluiu a implantação de instalações multimídia nos espaços de espera e circulação, com o objetivo de melhorar a experiência dos passageiros e criar um ambiente visual mais dinâmico e informativo. A Yupitek foi selecionada para o projeto e implantação do sistema de projeção.
+A Estação de Taoyuan é um dos principais hubs de transporte do norte de Taiwan, recebendo centenas de milhares de passageiros diariamente. O projeto de renovação da estação incluiu a implantação de instalações multimídia nos espaços de espera e circulação, com o objetivo de melhorar a experiência dos passageiros e criar um ambiente visual mais dinâmico e informativo. A Yopitek foi selecionada para o projeto e implantação do sistema de projeção.
 
 ## Solução Técnica
 

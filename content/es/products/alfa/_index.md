@@ -1,6 +1,6 @@
 ---
 title: "Adaptadores Inalámbricos ALFA Network"
-description: "Yupitek distribuye adaptadores USB Wi-Fi de alta potencia ALFA Network, altamente valorados en la comunidad de investigación de seguridad."
+description: "Yopitek distribuye adaptadores USB Wi-Fi de alta potencia ALFA Network, altamente valorados en la comunidad de investigación de seguridad."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

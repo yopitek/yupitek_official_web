@@ -29,7 +29,7 @@ faq:
 Anyone who works with Sierra Wireless 4G/5G modules, whether the EM7455, the EM7565 or the latest EM919x, knows the two worst moments: plugging it in and getting nothing, or plugging it in and getting no internet.
 The tutorials scattered around the web can be contradictory. One tells you to flash firmware, another tells you to change a setting. This article compiles everything into a single four layer debugging map. Work through it one step at a time and you will find the fault.
 
-> Sources: Sierra Wireless official specifications. The troubleshooting flow is compiled from field experience. Compiled by Yupitek.
+> Sources: Sierra Wireless official specifications. The troubleshooting flow is compiled from field experience. Compiled by Yopitek.
 
 ---
 
@@ -127,6 +127,6 @@ When a 4G/5G module misbehaves, do not panic and flash firmware all over the pla
 
 ## Purchasing (Call To Action)
 
-Is your project still stuck on connectivity issues? Looking for reliable Sierra Wireless modules with real technical support? Yupitek offers complete hardware solutions and first line technical support to keep you out of the weeds.
+Is your project still stuck on connectivity issues? Looking for reliable Sierra Wireless modules with real technical support? Yopitek offers complete hardware solutions and first line technical support to keep you out of the weeds.
 Email us: **sales@yupitek.com**
 Browse products: [Sierra Wireless module lineup](/en/products/sierra/)

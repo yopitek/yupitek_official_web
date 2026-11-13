@@ -251,4 +251,4 @@ AWUS036ACM 约 $30–40，以下人群能从中获得极高性价比：
 1. aircrack-ng 社群维护 RTL8812AU 驱动程序仓库 — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
 2. Linux 核心主线 MT76 驱动程序（`mt76x2u`，自核心 4.19 起整合）— [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
 3. ALFA Network 官方网站与产品规格 — [alfa.com.tw](https://www.alfa.com.tw)
-4. Yupitek — ALFA Network 台湾授权经销商 — [yupitek.com](https://www.yupitek.com)
+4. Yopitek — ALFA Network 台湾授权经销商 — [yupitek.com](https://www.yupitek.com)

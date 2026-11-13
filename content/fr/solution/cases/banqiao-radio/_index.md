@@ -1,6 +1,6 @@
 ---
 title: "Projection Immersive 360° à la Station de Radiodiffusion de Banqiao"
-description: "Une ancienne station de radio de l'ère coloniale japonaise à Taïwan transformée en exposition permanente de projection immersive 360°, illustrant l'expertise muséale de Yupitek."
+description: "Une ancienne station de radio de l'ère coloniale japonaise à Taïwan transformée en exposition permanente de projection immersive 360°, illustrant l'expertise muséale de Yopitek."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Projection Immersive", "Projection 360°", "Musée", "New Taipei City"]
 **Type** : Projection Immersive 360° — Exposition Permanente
 **Thème** : Histoire de la Radiodiffusion à l'Ère Coloniale Japonaise
 
-Construite durant la période coloniale japonaise, la Station de Radiodiffusion de Banqiao est l'un des sites patrimoniaux de la radio les plus importants de Taïwan. En respectant des directives strictes de préservation du patrimoine historique, Yupitek a déployé un système de projection immersive 360° qui transporte les visiteurs dans l'atmosphère de la culture radiophonique taïwanaise des années 1930–1940.
+Construite durant la période coloniale japonaise, la Station de Radiodiffusion de Banqiao est l'un des sites patrimoniaux de la radio les plus importants de Taïwan. En respectant des directives strictes de préservation du patrimoine historique, Yopitek a déployé un système de projection immersive 360° qui transporte les visiteurs dans l'atmosphère de la culture radiophonique taïwanaise des années 1930–1940.
 
 ## Spécifications Techniques
 

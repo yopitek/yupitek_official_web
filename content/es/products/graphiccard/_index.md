@@ -1,6 +1,6 @@
 ---
 title: "Tarjetas Gráficas NVIDIA RTX 5080"
-description: "Yupitek distribuye tarjetas gráficas NVIDIA RTX 5080 de ASUS, GIGABYTE y MSI — para cómputo IA, renderizado y estaciones de trabajo de proyección."
+description: "Yopitek distribuye tarjetas gráficas NVIDIA RTX 5080 de ASUS, GIGABYTE y MSI — para cómputo IA, renderizado y estaciones de trabajo de proyección."
 date: 2026-03-12
 showBreadcrumbs: true
 showTableOfContents: false
@@ -8,7 +8,7 @@ showChildPages: false
 featureimage: "/images/products/graphiccard/banner-graphiccard.png"
 ---
 
-Yupitek ofrece servicios de adquisición de tarjetas gráficas NVIDIA RTX 5080 para generación de imágenes IA, renderizado 3D y estaciones de trabajo de proyección.
+Yopitek ofrece servicios de adquisición de tarjetas gráficas NVIDIA RTX 5080 para generación de imágenes IA, renderizado 3D y estaciones de trabajo de proyección.
 
 ## ASUS RTX 5080 Series
 

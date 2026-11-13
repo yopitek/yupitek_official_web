@@ -13,9 +13,9 @@ showTableOfContents: true
 请务必从各品牌官方网站下载驱动程序，以确保安全性与兼容性。
 {{< /alert >}}
 
-## Yupitek Wiki 知识库
+## Yopitek Wiki 知识库
 
-需要安装指南、Linux 兼容性说明或故障排除步骤？请访问 [Yupitek Wiki 知识库](https://doczhcn.yupitek.com/)，涵盖 ALFA Network、Hak5、Flipper Zero、SDRLAB 与 ACS 产品的技术文档。
+需要安装指南、Linux 兼容性说明或故障排除步骤？请访问 [Yopitek Wiki 知识库](https://doczhcn.yupitek.com/)，涵盖 ALFA Network、Hak5、Flipper Zero、SDRLAB 与 ACS 产品的技术文档。
 
 ## ALFA Network 驱动程序
 

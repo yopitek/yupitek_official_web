@@ -10,7 +10,7 @@ showTableOfContents: true
 slug: "fleet-gps-telematics-em7455-mc7455-guide"
 tags: ["Sierra Wireless", "EM7455", "MC7455", "GNSS", "GPS", "Telematics", "フリート管理", "LTE"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ja/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ faq:
 
 かつてハードウェアエンジニアは、小さな基板に GPS チップと 4G モジュールを詰め込み、両者の電源とアンテナ干渉を処理しなければならず、苦労していました。しかし現在は、正しいセルラーモジュールを選べば、すべてがとても簡単になります。この記事では、EM7455 と MC7455 の公式仕様書をもとに、この 2 つのモジュールに隠された「スーパーパワー」、GNSS 衛星測位をご紹介します。
 
-> 技術資料の出典：Sierra Wireless 公式仕様書（EM7455、MC7455）。本記事は榆閤科技（Yupitek）が編集しました。
+> 技術資料の出典：Sierra Wireless 公式仕様書（EM7455、MC7455）。本記事は榆閤科技（Yopitek）が編集しました。
 
 ---
 
@@ -86,6 +86,6 @@ EM7455 または MC7455 を選び、基板に挿して、一般的な車載用�
 
 ## ご購入について（Call To Action）
 
-車載端末を開発中で、EM7455 または MC7455 の調達をお考えですか？アンテナ構成やマザーボード統合についてご不明な点はありますか？Yupitek（榆閤科技）では、完全なハードウェアソリューションと最前線の技術サポートを提供しています。
+車載端末を開発中で、EM7455 または MC7455 の調達をお考えですか？アンテナ構成やマザーボード統合についてご不明な点はありますか？Yopitek（榆閤科技）では、完全なハードウェアソリューションと最前線の技術サポートを提供しています。
 お問い合わせ：**sales@yupitek.com**
 製品を見る：[Sierra Wireless モジュールシリーズ](https://yupitek.com/ja/products/sierra/)

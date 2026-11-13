@@ -241,7 +241,7 @@ sudo aireplay-ng --test wlan0
 | GIGABYTE AI TOP ATOM レビュー（LinuxGizmos） | 第三者レビューと仕様確認（BT 5.3 / 50.5mm） | https://linuxgizmos.com/gigabyte-ai-top-atom-introduces-nvidia-grace-blackwell-gb10-performance-for-the-desktop/ | ✅ 検証済み | 2026年9月3日 |
 | NVIDIA DGX Spark 公式ページ | GB10 プラットフォーム情報 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 検証済み | 2026年9月3日 |
 | morrownr/8812au GitHub | RTL8812AU Linux ドライバ | https://github.com/morrownr/8812au-20210820 | ✅ 検証済み | 2026年9月3日 |
-| ALFA Network 製品一覧（Yupitek） | ALFA 現行製品仕様 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検証済み | 2026年9月3日 |
+| ALFA Network 製品一覧（Yopitek） | ALFA 現行製品仕様 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検証済み | 2026年9月3日 |
 
 関連記事：[ALFA 无線ネットワークカードが NVIDIA DGX Spark に対応するか](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无線ネットワークカードが ASUS Ascent GX10 に対応するか](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA 无線ネットワークカードが ALTOS BrainSphere GB10 F1 に対応するか](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[ALFA 无線ネットワークカードが MSI EdgeXpert に対応するか](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 

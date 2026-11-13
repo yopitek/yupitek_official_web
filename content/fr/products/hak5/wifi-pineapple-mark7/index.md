@@ -1,6 +1,6 @@
 ---
 title: "HAK5 WiFi Pineapple Mark VII — Plateforme Professionnelle d'Audit Réseau Sans Fil"
-description: "HAK5 WiFi Pineapple Mark VII, double bande 802.11 a/b/g/n/ac avec firmware OpenWRT. Conçu pour l'évaluation de la sécurité Wi-Fi et les Tests d'Intrusion autorisés."
+description: "HAK5 WiFi Pineapple Mark VII, plateforme d'audit Wi-Fi avec firmware OpenWRT. Conçu pour l'évaluation de la sécurité Wi-Fi et les Tests d'Intrusion autorisés."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -15,17 +15,14 @@ tags: ["Wi-Fi Audit", "Penetration Testing", "OpenWRT", "Wireless Security"]
 
 ## Présentation du Produit
 
-WiFi Pineapple Mark VII est la plateforme phare d'audit réseau sans fil de HAK5, construite sur le Firmware open source OpenWRT avec prise en charge de la double bande IEEE 802.11 a/b/g/n/ac. La plateforme fournit un riche écosystème de modules permettant aux chercheurs en sécurité d'exécuter des tâches de reconnaissance Wi-Fi, d'émulation de points d'accès, de capture de paquets et d'autres tests autorisés.
+WiFi Pineapple Mark VII est la plateforme phare d'audit réseau sans fil de HAK5, construite sur le Firmware open source OpenWRT. La plateforme fournit un riche écosystème de modules permettant aux chercheurs en sécurité d'exécuter des tâches de reconnaissance Wi-Fi, d'émulation de points d'accès, de capture de paquets et d'autres tests autorisés.
 
 ## Spécifications Techniques
 
 | Élément | Spécification |
 |---------|--------------|
-| Wi-Fi | IEEE 802.11 a/b/g/n/ac, double bande 2,4 GHz / 5 GHz |
-| Processeur | MT7628AN (principal) + AR9331 |
 | Système d'exploitation | OpenWRT |
 | Interface | Alimentation USB-C, hôte USB-A, Ethernet |
-| Antenne | Prise en charge d'antenne RP-SMA détachable |
 
 ## Caractéristiques Principales
 

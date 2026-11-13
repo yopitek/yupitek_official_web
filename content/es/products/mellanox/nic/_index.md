@@ -10,7 +10,7 @@ showChildPages: false
 
 # Tarjetas de red ConnectX de Mellanox / NVIDIA: de 10G a 400G
 
-Los adaptadores NVIDIA Mellanox ConnectX proporcionan un ancho de banda y una latencia excelentes para servidores corporativos y clústeres de inteligencia artificial. A continuación se detalla el catálogo completo de modelos disponibles en Yupitek, organizados por velocidad.
+Los adaptadores NVIDIA Mellanox ConnectX proporcionan un ancho de banda y una latencia excelentes para servidores corporativos y clústeres de inteligencia artificial. A continuación se detalla el catálogo completo de modelos disponibles en Yopitek, organizados por velocidad.
 
 ---
 

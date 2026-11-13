@@ -21,7 +21,7 @@ Shark Jack ist ein kompaktes portables kabelgebundenes Netzwerkprüfwerkzeug, da
 - Plug-and-Execute-Netzwerk-Reconnaissance-Skripte
 - Host-Erkennung (nmap und andere Tools)
 - Datenexfiltration über Cloud C2
-- BashBunny-Skriptformat-kompatibel
+- Akkulaufzeit: ca. 10–15 Minuten (laut Hak5)
 
 {{< gallery >}}
   <img src="/images/products/hak5/shark-jack.png" alt="HAK5 Shark Jack" />

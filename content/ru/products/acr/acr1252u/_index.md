@@ -3,6 +3,8 @@ title: "ACS ACR1252U — USB NFC Reader III (сертифицирован NFC Fo
 description: "ACS ACR1252U, сертифицированный NFC Forum USB NFC считыватель с режимами считывателя/записывателя, эмуляции карты и «точка — точка», для разработки NFC-приложений и корпоративного развёртывания."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1252U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
@@ -35,8 +37,10 @@ ACR1252U — сертифицированный NFC Forum считыватель
 | Скорость чтения/записи SAM | 9,6 Кбит/с – 215 Кбит/с |
 | Светодиод | 1 двухцветный красный/зелёный (управляется пользователем) |
 | Зуммер | Монотонный (управляется пользователем) |
-| Соответствие стандартам | EN/IEC 60950, ISO 18092, ISO 14443, ISO 7816, PC/SC, CCID, NFC Forum, FeliCa Performance, CE, FCC, RoHS 2, REACH |
-| Дополнительные сертификаты | J-LIS, VCCI, MIC (Япония), KC (Корея), Microsoft WHQL |
+| Рабочая температура | 0°C – 60°C, 90% ОВ (без конденсации) |
+| MTBF | 500,000 ч |
+| Соответствие стандартам | IEC/EN 62368, ISO 18092, ISO 14443, ISO 7816, PC/SC, CCID, NFC Forum, CE, UKCA, FCC, RoHS 2, REACH, WEEE |
+| Дополнительные сертификаты | J-LIS, VCCI, TELEC (Япония), KC (Корея), BIS, Microsoft WHQL |
 
 ## Ключевые возможности
 
@@ -66,8 +70,7 @@ ACR1252U — сертифицированный NFC Forum считыватель
 - Windows® (несколько версий, включая Windows 10 и серверные редакции)
 - Linux®
 - macOS®
-- Solaris
-- Android™ 3.1 и более поздние версии
+- Android™
 
 
 ## 📄 Техническая спецификация

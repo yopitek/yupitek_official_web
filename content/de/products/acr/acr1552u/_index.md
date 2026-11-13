@@ -3,6 +3,8 @@ title: "ACS ACR1552U — USB NFC Reader IV"
 description: "ACS ACR1552U, USB NFC-Leser der 4. Generation mit erweiterter Multi-Protokoll-Unterstützung. Geeignet für Zugangssteuerung, digitale Signaturen und Identitätsverifizierung."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1552U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
@@ -25,13 +27,21 @@ Der ACR1552U ist ein CCID- und PC/SC-konformer USB NFC Reader IV auf Basis der k
 | USB-Schnittstelle | USB 2.0 Full Speed (12 Mbps) |
 | SAM-Slot | 1 × ISO 7816 Klasse A (5V), Standard-SIM-Größe |
 | SAM Lese-/Schreibgeschwindigkeit | 13,4 Kbps – 1.250 Kbps |
-| SAM-Taktfrequenz | 5 MHz, bis zu 10 MHz |
+| SAM-Taktfrequenz | 5 MHz (10 MHz auf besondere Anfrage) |
 | SAM-Protokoll | T=0, T=1 |
 | Protokolle | ISO/IEC 14443-A, -B, ISO/IEC 15693, ISO/IEC 18092 |
-| LED | Benutzersteuerbar (konfigurierbar) |
+| Modelle | USB Type-A: ACR1552U-M1; USB Type-C: ACR1552U-MF |
+| Abmessungen | 98,0 × 65,0 × 12,8 mm |
+| Gewicht | 89 g (±5 g, USB Type-A) |
+| Farbe | Weiß |
+| Kabellänge | 1 m (fest) |
+| Versorgungsstrom | max. 300 mA |
+| FIDO / FIDO2 | Unterstützt FIDO/FIDO2-NFC-Geräte und -Karten (z. B. PocketKey) |
+| LED | 1 × programmierbare LED (blau/grün), benutzersteuerbar |
 | Summer | Benutzersteuerbar (konfigurierbar) |
-| Betriebstemperatur | 0°C – 60°C, 90 % RH (nicht kondensierend) |
-| Konformität | PC/SC, CCID, CE, FCC, RoHS |
+| Betriebstemperatur | -20°C – 70°C, 90 % RH (nicht kondensierend) |
+| MTBF | 500,000 Std. |
+| Konformität | PC/SC, CCID, CE, UKCA, FCC, VCCI, MIC, J-LIS, RoHS, REACH, WEEE, Microsoft WHQL |
 | Zusätzlich | Kurzschlussschutz, USB-Firmware-Upgrade |
 
 ## Hauptmerkmale

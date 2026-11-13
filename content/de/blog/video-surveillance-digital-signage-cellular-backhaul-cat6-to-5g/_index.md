@@ -1,5 +1,5 @@
 ---
-title: "Mobiles Backhaul für Videoüberwachung und Digital Signage: Wie wählst du zwischen Cat 6 und 5G? | Yupitek"
+title: "Mobiles Backhaul für Videoüberwachung und Digital Signage: Wie wählst du zwischen Cat 6 und 5G? | Yopitek"
 description: "Welches Mobilfunkmodul brauchen Kameras und Digital Signage? Der Schlüssel liegt darin, ob der Traffic nach oben oder unten fließt! Dieser Artikel vergleicht EM7455 (Cat 6), EM7565 (Cat 12) und EM9191 (5G) anhand der offiziellen Spezifikationen, damit du präzise auswählst und kein Geld verbrennst."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "video-surveillance-digital-signage-cellular-backhaul-cat6-to-5g
 slug: "video-surveillance-digital-signage-cellular-backhaul-cat6-to-5g"
 tags: ["Sierra Wireless", "EM7455", "EM7565", "EM9191", "4G Videoüberwachung", "Digital Signage", "5G Video-Backhaul", "Cat 6", "LTE"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/de/products/sierra/"
 faq:
@@ -35,7 +35,7 @@ Am Ende geben sie viel Geld aus und stellen fest, dass sie es gar nicht brauchen
 
 Die Auswahl einer Netzwerkkarte ist keine Sportwagenwahl. Es geht nicht um maximale Geschwindigkeit, sondern darum, das passende Mittel für die Aufgabe zu wählen. In diesem Artikel nehmen wir die drei gängigsten M.2-Module von Sierra Wireless (EM7455, EM7565, EM9191) unter die Lupe und zeigen dir anhand der Zahlen aus den offiziellen Spezifikationen, wie du am wirtschaftlichsten auswählst.
 
-> Quelle der technischen Daten: offizielle Spezifikationen von Sierra Wireless. Artikel zusammengestellt von Yupitek.
+> Quelle der technischen Daten: offizielle Spezifikationen von Sierra Wireless. Artikel zusammengestellt von Yopitek.
 
 ---
 
@@ -113,7 +113,7 @@ Eine Netzwerkkarte zu kaufen ist wie einen LKW zu mieten: Je nachdem, wie viel F
 
 ## Wo kaufen (Call To Action)
 
-Planst du eine Lösung für Video-Backhaul oder die Anbindung von Digital Signage? Yupitek bietet das komplette Sortiment an Sierra-Wireless-Modulen und professionelle technische Beratung, damit du die wirtschaftlichste Kombination zusammenstellst!
+Planst du eine Lösung für Video-Backhaul oder die Anbindung von Digital Signage? Yopitek bietet das komplette Sortiment an Sierra-Wireless-Modulen und professionelle technische Beratung, damit du die wirtschaftlichste Kombination zusammenstellst!
 Schreib uns: **sales@yupitek.com**
 Produkte ansehen: [Sierra Wireless](https://yupitek.com/de/products/sierra/)
 

@@ -21,7 +21,7 @@ Die Sparte IT_Application bietet eine Rundum-Sorglos-Service: Bedarfsberatung, V
 
 ### IT_Distribution — Technologie-Produktvertrieb
 
-Autorisierter Vertriebshändler weltweit führender Technologiemarken, der taiwanesischen Unternehmen, Sicherheitsforschungsorganisationen und akademischen Einrichtungen originale Produkte und technische Fachunterstützung bietet.
+Autorisierter Vertriebshändler von ALFA Network in Taiwan, der zudem weitere weltweit führende Technologiemarken anbietet und taiwanesischen Unternehmen, Sicherheitsforschungsorganisationen und akademischen Einrichtungen originale Produkte und technische Fachunterstützung bietet.
 
 ## Unsere Stärken
 

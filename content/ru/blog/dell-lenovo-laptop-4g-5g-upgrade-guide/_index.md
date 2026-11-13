@@ -10,7 +10,7 @@ hreflang_group: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 slug: "dell-lenovo-laptop-4g-5g-upgrade-guide"
 tags: ["Dell", "Lenovo", "EM7455", "EM7430", "WWAN", "M.2", "4G", "LTE", "laptop-upgrade"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ru/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ faq:
 
 В этом руководстве мы используем официальные спецификации Sierra Wireless, чтобы сравнить две самые популярные карты для апгрейда, EM7455 и EM7430, и провести вас по шагам установки.
 
-> Источники: официальные спецификации Sierra Wireless (EM7455, EM7430). Подготовлено Yupitek.
+> Источники: официальные спецификации Sierra Wireless (EM7455, EM7430). Подготовлено Yopitek.
 
 ---
 
@@ -101,6 +101,6 @@ faq:
 
 ## Где купить (призыв к действию)
 
-Хотите купить карту Sierra Wireless или не уверены, что ваш промышленный ПК сможет её принять? Yupitek предлагает комплексные аппаратные решения и техническую поддержку.
+Хотите купить карту Sierra Wireless или не уверены, что ваш промышленный ПК сможет её принять? Yopitek предлагает комплексные аппаратные решения и техническую поддержку.
 Напишите нам: **sales@yupitek.com**
 Посмотрите линейку: [Серия Sierra Wireless](https://yupitek.com/ru/products/sierra/)

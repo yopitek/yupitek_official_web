@@ -260,7 +260,7 @@ sudo aireplay-ng --test wlan0
 | إعلانات MSI للكمبيوتر الصناعي | معلومات إصدار EdgeXpert | https://ipc.msi.com/en/news/146241 | ✅ تم التحقق | 2026-09-03 |
 | صفحة NVIDIA DGX Spark الرسمية | معلومات منصة GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ تم التحقق | 2026-09-03 |
 | GitHub morrownr/8812au | محرك التشغيل RTL8812AU لـ Linux | https://github.com/morrownr/8812au-20210820 | ✅ تم التحقق | 2026-09-03 |
-| ملخص منتجات ALFA Network (Yupitek) | مواصفات المنتجات الحالية لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
+| ملخص منتجات ALFA Network (Yopitek) | مواصفات المنتجات الحالية لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
 
 مقالات مرتبطة: [هل يدعم بطاقات الشبكة اللاسلكية ALFA NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/) | [هل يدعم بطاقات الشبكة اللاسلكية ALFA ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/) | [هل يدعم بطاقات الشبكة اللاسلكية ALFA ALTOS BrainSphere GB10 F1](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/) | [هل يدعم بطاقات الشبكة اللاسلكية ALFA GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/) | [هل يدعم بطاقات الشبكة اللاسلكية ALFA NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

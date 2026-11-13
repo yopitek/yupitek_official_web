@@ -260,7 +260,7 @@ Widerspruchsbedingungen: Falls sich die MSI offiziellen Spezifikationen ändern 
 | MSI Industriecomputer offizielle Ankündigung | EdgeXpert Produktveröffentlichungsinformationen | https://ipc.msi.com/en/news/146241 | ✅ Geprüft | 2026-09-03 |
 | NVIDIA DGX Spark offizielle Seite | GB10 Plattforminformationen | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Geprüft | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux Treiber | https://github.com/morrownr/8812au-20210820 | ✅ Geprüft | 2026-09-03 |
-| ALFA Network Produktübersicht (Yupitek) | ALFA aktuelle Produkt spezifikationen | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
+| ALFA Network Produktübersicht (Yopitek) | ALFA aktuelle Produkt spezifikationen | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
 
 Verwandte Artikel: [Ist das ALFA Wireless LAN kompatibel mit NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Ist das ALFA Wireless LAN kompatibel mit ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[Ist das ALFA Wireless LAN kompatibel mit ALTOS BrainSphere GB10 F1](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[Ist das ALFA Wireless LAN kompatibel mit GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[Ist das ALFA Wireless LAN kompatibel mit NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

@@ -3,6 +3,8 @@ title: "WiFi Devboard for Flipper Zero — وحدة توسعة Wi-Fi الرسم�
 description: "لوحة تطوير Wi-Fi الرسمية لـ Flipper Zero، مبنية على ESP32-S2، تدعم توسعة وظائف Wi-Fi بتردد 2.4GHz، مناسبة لاختبار الأمان باستخدام البرامج الثابتة (Firmware) مثل Marauder."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/wifi-devboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "توسعة Flipper Zero", "أمان Wi-Fi"]
@@ -26,6 +28,12 @@ WiFi Devboard هو وحدة توسعة Wi-Fi الرسمية لـ Flipper Zero، 
 | Wi-Fi | 2.4GHz 802.11 b/g/n |
 | طريقة الاتصال | GPIO عبر Flipper Zero |
 | البرنامج الثابت | قابل لتحميل Marauder وبرامج ثابتة أخرى من طرف ثالث |
+
+## الموارد الرسمية
+
+| المورد | الرابط |
+|--------|--------|
+| الصفحة الرسمية لـ WiFi Devboard | [flipper.net](https://flipper.net/products/wifi-devboard) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/wifi-devboard.png" alt="WiFi Devboard for Flipper Zero" />

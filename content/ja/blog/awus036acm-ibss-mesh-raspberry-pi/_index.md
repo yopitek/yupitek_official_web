@@ -835,7 +835,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ALFA AWUS036ACM は、ALFA Network の公式リセラーである [yupitek.com](https://yupitek.com) から購入できます。正規リセラーからの購入により、Alfa Network Inc. の標準保証付きの正規品を確実に入手できます。
 
-**製品ページ：** [Yupitek の ALFA AWUS036ACM](https://yupitek.com)
+**製品ページ：** [Yopitek の ALFA AWUS036ACM](https://yupitek.com)
 
 同梱物：
 - AWUS036ACM アダプター × 1
@@ -867,7 +867,7 @@ Raspberry Pi ノード間にワイヤレスネットワークを構築する必�
 
 ---
 
-*記事：Yupitek テクニカルチーム · [yupitek.com](https://yupitek.com)*
+*記事：Yopitek テクニカルチーム · [yupitek.com](https://yupitek.com)*
 
 *参考資料：[Alfa Network 公式ドキュメント](https://docs.alfa.com.tw/Product/AWUS036ACM/) · [Linux Wireless Wiki — インターフェース型](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) · [MediaTek mt76 Linux ドライバー](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) · [morrownr USB-WiFi インカーネル一覧](https://github.com/morrownr/USB-WiFi)*
 

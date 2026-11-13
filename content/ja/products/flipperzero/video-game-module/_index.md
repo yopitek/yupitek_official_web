@@ -3,6 +3,8 @@ title: "Video Game Module for Flipper Zero — ビデオゲーム拡張モジュ
 description: "Flipper Zero 公式ビデオゲームモジュールは RP2040 搭載で、ビデオ出力とゲーム機能を Flipper Zero に追加します。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/video-game-module.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero 拡張", "RP2040", "ビデオ出力", "ゲームモジュール"]
@@ -17,8 +19,14 @@ Video Game Module は Flipper Zero の公式ゲーム拡張モジュールです
 | 項目 | 仕様 |
 |------|------|
 | プロセッサ | RP2040（デュアルコア ARM Cortex-M0+） |
-| ビデオ出力 | 外部ディスプレイ接続に対応 |
+| ビデオ出力 | DVI-D ビデオ出力（外部テレビ、モニター、プロジェクターに接続） |
 | 接続方式 | Flipper Zero GPIO |
+
+## 公式リソース
+
+| リソース | リンク |
+|----------|--------|
+| Video Game Module 製品ページ | [flipper.net](https://flipper.net/products/video-game-module-for-flipper-zero) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/video-game-module.png" alt="Video Game Module for Flipper Zero" />

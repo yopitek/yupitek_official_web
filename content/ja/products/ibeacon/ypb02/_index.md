@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
 ---
 
 ## 製品概要
@@ -63,7 +63,7 @@ YPB02 のパラメータ（加速度しきい値、トリガー、UUID、Major�
 ## 製品ギャラリー
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb02.png" alt="Yupitek YPB02" />
+  <img src="/images/products/ibeacon/ypb02.png" alt="Yopitek YPB02" />
 {{< /gallery >}}
 
 ---

@@ -6,6 +6,10 @@ description: "Dispositivo O.MG Elite perfeitamente disfarçado como um USB Data 
 featureimage: "/images/products/hak5/omg-unBlocker.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso legal de uso**: O.MG UnBlocker é uma ferramenta profissional de pesquisa de segurança. Somente para testes de segurança e pesquisa autorizados. Destinada exclusivamente a profissionais de segurança com autorização escrita válida.
+{{< /alert >}}
+
 ## Características do Produto
 
 ![O.MG UnBlocker](/images/products/hak5/card/omg-unBlocker.png)
@@ -26,6 +30,7 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 | Portas | USB-A macho (extremidade de ataque ativo) + USB-A fêmea (extremidade de passagem de energia) |
 | Passagem | Somente 5V de energia (sem linhas de dados) |
 | Controle | WiFi WebUI |
+| Desempenho de Payload | Até 890 teclas/seg, até 300 slots Payload, 192 layouts de teclado |
 
 ## Ambientes de Aplicação
 
@@ -38,8 +43,7 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 | Recurso | Link |
 |---------|------|
-| 📖 Documentação oficial | [Ver online](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/omg) |
+| ⬇️ Firmware e ferramentas | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 Precisa de uma cotação do produto? Por favor, [entre em contato conosco](/pt/contact/).

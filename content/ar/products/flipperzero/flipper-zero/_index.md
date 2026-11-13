@@ -1,8 +1,10 @@
 ---
 title: "Flipper Zero — أداة بحث أمنية لاسلكية متعددة الوظائف"
-description: "Flipper Zero يدعم Sub-GHz وNFC وRFID 125kHz والأشعة تحت الحمراء وiButton وGPIO وBluetooth 5.0 مع برنامج ثابت مفتوح المصدر — الخيار الأمثل لأبحاث الأمن والتعليم."
+description: "Flipper Zero يدعم Sub-GHz وNFC وRFID 125kHz والأشعة تحت الحمراء وiButton وGPIO وBluetooth 5.4 مع برنامج ثابت مفتوح المصدر — الخيار الأمثل لأبحاث الأمن والتعليم."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/flipper-zero.png"
+hideFeatureImage: true
 dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true
@@ -22,13 +24,13 @@ Flipper Zero أداة بحث أمني لاسلكية متعددة الوظائف
 
 | البروتوكول | الوصف |
 |-----------|-------|
-| Sub-GHz | قراءة الإشارات اللاسلكية بين 300–928 MHz وإعادة تشغيلها وتحليلها |
-| NFC | قراءة بطاقات ISO 14443A/B وISO 15693 ومحاكاتها (للاختبارات المعتمدة فقط) |
+| Sub-GHz | قراءة الإشارات اللاسلكية وإعادة تشغيلها وتحليلها (تختلف نطاقات التردد حسب المنطقة) |
+| NFC | قراءة ومحاكاة بطاقات ISO 14443A/B وMIFARE وFeliCa وHID iClass وبروتوكولات NFC Forum (للاختبارات المعتمدة فقط) |
 | RFID 125kHz | أبحاث بطاقات RFID منخفضة التردد: EM4100 وHID Prox وغيرها |
 | أشعة تحت الحمراء | تعلّم إشارات التحكم عن بُعد بالأجهزة المنزلية وإعادة تشغيلها |
 | iButton | قراءة مفاتيح iButton التلامسية عبر 1-Wire |
-| Bluetooth 5.0 | اتصال BLE، التحكم عبر تطبيق الجوال |
-| GPIO | 23 دبوس GPIO لتوصيل لوحات التوسعة |
+| Bluetooth 5.4 | اتصال BLE، التحكم عبر تطبيق الجوال |
+| GPIO | 13 منفذ إدخال/إخراج متاح للمستخدم لتوصيل لوحات التوسعة |
 | USB-C | نقل الملفات، تحديث البرنامج الثابت، BadUSB (أبحاث حقن HID) |
 
 ## المواصفات الرئيسية
@@ -37,15 +39,25 @@ Flipper Zero أداة بحث أمني لاسلكية متعددة الوظائف
 |-------|---------|
 | المعالج | STM32WB55 |
 | الشاشة | شاشة LCD أحادية اللون 1.4 بوصة |
-| البطارية | 2000mAh Li-Po |
-| الواجهات | USB-C، GPIO × 23 |
+| البطارية | 2100 mAh Li-Po |
+| الواجهات | USB-C، GPIO (13 I/O) |
 | البرنامج الثابت | مفتوح المصدر (GitHub) |
-| الأبعاد | 102 × 40 × 25 mm |
+| الأبعاد | 100 × 40 × 25 mm |
+| الوزن | 102 g |
 
 ## محتويات العبوة
 
 - وحدة Flipper Zero × 1
-- كابل USB-C × 1
+- كابل USB-A إلى USB-C × 1
+- دليل المستخدم
+- ملصق
+- بطاقة microSD غير مضمنة
+
+## الموارد الرسمية
+
+| المورد | الرابط |
+|--------|--------|
+| الصفحة الرسمية لـ Flipper Zero | [flipper.net](https://flipper.net/products/flipper-zero) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/flipper-zero.png" alt="Flipper Zero" />

@@ -1,6 +1,6 @@
 ---
 title: "Sierra EM7565 en détail : réseau privé CBRS et vitesse d'envoi élevée, quel réseau privé d'entreprise choisir ?"
-description: "EM7565 en détail : Cat 12 à 600 Mbit/s en téléchargement, Cat 13 à 150 Mbit/s en envoi, Qualcomm MDM9250, format M.2, MIMO à trois antennes et GNSS multi-constellation. Lecture indispensable pour choisir un réseau privé CBRS d'entreprise et un routeur industriel, avec comparaison complète des bandes, des températures et des certifications. Préparé par Yupitek."
+description: "EM7565 en détail : Cat 12 à 600 Mbit/s en téléchargement, Cat 13 à 150 Mbit/s en envoi, Qualcomm MDM9250, format M.2, MIMO à trois antennes et GNSS multi-constellation. Lecture indispensable pour choisir un réseau privé CBRS d'entreprise et un routeur industriel, avec comparaison complète des bandes, des températures et des certifications. Préparé par Yopitek."
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -26,7 +26,7 @@ Si tu prépares un projet de laboratoire, ou si tu viens de récupérer un proje
 
 Dans cet article, pas de jargon marketing. Notre seule référence est la fiche technique officielle de Sierra Wireless, « AirPrime EM7565 Product Technical Specification » (Doc 41110788, Rev 8, octobre 2018). Nous vérifions point par point le chip, les vitesses, les bandes, les antennes, les températures et la certification, et nous te disons honnêtement ce que signifie la réserve « en attente d'approbation réglementaire » de la fiche. Ainsi, les étudiants et les ingénieurs en intégration système et architecture réseau peuvent sécuriser leur décision d'achat.
 
-> Lien produit : [EM7565 — page produit Yupitek](/fr/products/sierra/em7565/) | Fiche technique officielle : [AirPrime EM7565 Product Technical Specification](https://yupitek.com/docs/sierra/EM7565_spec.pdf)
+> Lien produit : [EM7565 — page produit Yopitek](/fr/products/sierra/em7565/) | Fiche technique officielle : [AirPrime EM7565 Product Technical Specification](https://yupitek.com/docs/sierra/EM7565_spec.pdf)
 
 ---
 
@@ -177,7 +177,7 @@ La fiche technique indique que la conception est conforme aux normes FCC (États
 
 ## Contacte-nous pour discuter de ton projet
 
-Cette analyse technique approfondie a été préparée par l'équipe d'ingénieurs de Yupitek. Si tu choisis un module 4G pour ton laboratoire, ou si ton projet d'entreprise a besoin d'une tarification en volume sur l'EM7565 et d'un accompagnement pour la conception d'antennes, n'hésite pas à nous contacter.
+Cette analyse technique approfondie a été préparée par l'équipe d'ingénieurs de Yopitek. Si tu choisis un module 4G pour ton laboratoire, ou si ton projet d'entreprise a besoin d'une tarification en volume sur l'EM7565 et d'un accompagnement pour la conception d'antennes, n'hésite pas à nous contacter.
 
 - **Page produit EM7565** : [https://yupitek.com/fr/products/sierra/em7565/](/fr/products/sierra/em7565/)
 - **Voir d'autres modèles Sierra** : [https://yupitek.com/fr/products/sierra/](/fr/products/sierra/)

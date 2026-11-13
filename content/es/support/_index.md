@@ -1,6 +1,6 @@
 ---
 title: "Soporte Técnico y Descarga de Controladores"
-description: "Centro oficial de descarga de controladores de Yupitek para ALFA Network, HAK5, Flipper Zero y Ubiquiti."
+description: "Centro oficial de descarga de controladores de Yopitek para ALFA Network, HAK5, Flipper Zero y Ubiquiti."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,9 +13,9 @@ A continuación se encuentran los enlaces de descarga de controladores y firmwar
 Descargue siempre los controladores desde los sitios web oficiales de las marcas para garantizar la seguridad y la compatibilidad.
 {{< /alert >}}
 
-## Yupitek Wiki
+## Yopitek Wiki
 
-¿Buscas guías de instalación, información de compatibilidad con Linux o pasos para solucionar problemas? Visita la [Wiki de Yupitek](https://doc.yupitek.com/), nuestra base de conocimientos técnicos sobre productos ALFA Network, Hak5, Flipper Zero, SDRLAB y ACS.
+¿Buscas guías de instalación, información de compatibilidad con Linux o pasos para solucionar problemas? Visita la [Wiki de Yopitek](https://doc.yupitek.com/), nuestra base de conocimientos técnicos sobre productos ALFA Network, Hak5, Flipper Zero, SDRLAB y ACS.
 
 ## Controladores ALFA Network
 

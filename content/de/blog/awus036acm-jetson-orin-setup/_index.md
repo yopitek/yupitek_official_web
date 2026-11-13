@@ -33,7 +33,7 @@ Der ALFA AWUS036ACM ist der einzige USB-WiFi-Adapter auf dem Jetson Orin, der wi
 
 > „Ich habe einen AVALUE AIB-NW01 (Jetson Orin NX) und muss ihn in einer Umgebung ohne kabelgebundenes Netzwerk einsetzen. Welcher Ihrer USB-WLAN-Adapter funktioniert direkt?“
 
-Diese Frage erreichte uns kürzlich bei Yupitek. Sie klingt einfach – aber wer sich länger in der Jetson-Entwickler-Community bewegt hat, weiß: **USB-WLAN-Adapter auf NVIDIA-Jetson-Plattformen sind weitaus problematischer, als man denkt.**
+Diese Frage erreichte uns kürzlich bei Yopitek. Sie klingt einfach – aber wer sich länger in der Jetson-Entwickler-Community bewegt hat, weiß: **USB-WLAN-Adapter auf NVIDIA-Jetson-Plattformen sind weitaus problematischer, als man denkt.**
 
 Wir haben ausgehend von der Jetson-Kernarchitektur, echten Fällen aus den NVIDIA-Foren, fehlgeschlagenen Treiberkompilierungen auf GitHub und Messdaten von ARM64-Plattformen diesen Auswahlleitfaden zusammengestellt.
 
@@ -329,7 +329,7 @@ Nicht weil er der schnellste oder günstigste ist – sondern weil er auf der ei
 ### Jetzt handeln
 
 - Produktdetails ansehen: https://yupitek.com/de/products/alfa/awus036acm/
-- Technischer Support: Yupitek bietet technischen Support vor Ort in Taiwan – kontaktieren Sie uns
+- Technischer Support: Yopitek bietet technischen Support vor Ort in Taiwan – kontaktieren Sie uns
 
 ### Weiterführende Informationen
 
@@ -339,9 +339,9 @@ Nicht weil er der schnellste oder günstigste ist – sondern weil er auf der ei
 
 ---
 
-> **Tags**: #JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yupitek
+> **Tags**: #JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yopitek
 >
-> **Autor**: Yupitek Ltd — autorisierter ALFA Network Distributor in Taiwan
+> **Autor**: Yopitek Ltd — autorisierter ALFA Network Distributor in Taiwan
 >
 > **Haftungsausschluss**: Die Recherche für diesen Artikel ist auf dem Stand von Mai 2026. Die Jetson-Plattform und der Linux-Kernel werden kontinuierlich weiterentwickelt; wir empfehlen, vor dem Deployment die aktuelle JetPack-Version und die In-Kernel-Treiberunterstützung zu prüfen.
 

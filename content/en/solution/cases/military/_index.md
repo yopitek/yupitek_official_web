@@ -13,7 +13,7 @@ tags: ["Defense Application", "Multi-Projector Blending", "Command Center"]
 **Type**: Digital War Game Simulation Projection System
 **Applications**: Tactical simulation, command training, scenario modeling
 
-The Military Police Command adopted a digital war game simulation system, with Yupitek responsible for planning and installing the large-format projection display wall. The oversized map display gives commanders a clear, comprehensive view of the tactical picture throughout exercises, improving decision-making efficiency.
+The Military Police Command adopted a digital war game simulation system, with Yopitek responsible for planning and installing the large-format projection display wall. The oversized map display gives commanders a clear, comprehensive view of the tactical picture throughout exercises, improving decision-making efficiency.
 
 ## Technical Solution
 

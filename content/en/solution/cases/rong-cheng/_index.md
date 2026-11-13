@@ -13,7 +13,7 @@ tags: ["Corporate Exhibition", "Event Production", "Sustainability Theme"]
 **Type**: Corporate CSR-Themed Exhibition Projection
 **Theme**: Environmental Sustainability & Circular Economy
 
-Rong Cheng Paper held a corporate exhibition centered on environmental responsibility. Yupitek provided an Immersive projection system that conveyed concepts of circular economy and sustainable development through compelling large-scale visuals, reinforcing the company's green corporate identity.
+Rong Cheng Paper held a corporate exhibition centered on environmental responsibility. Yopitek provided an Immersive projection system that conveyed concepts of circular economy and sustainable development through compelling large-scale visuals, reinforcing the company's green corporate identity.
 
 ## Technical Solution
 

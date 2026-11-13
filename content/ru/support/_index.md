@@ -1,6 +1,6 @@
 ---
 title: "Техническая поддержка и загрузка драйверов"
-description: "Официальный центр загрузки драйверов Yupitek для ALFA Network, HAK5, Flipper Zero и Ubiquiti."
+description: "Официальный центр загрузки драйверов Yopitek для ALFA Network, HAK5, Flipper Zero и Ubiquiti."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,9 +13,9 @@ showTableOfContents: true
 Всегда загружайте драйверы с официальных сайтов брендов для обеспечения безопасности и совместимости.
 {{< /alert >}}
 
-## Yupitek Wiki
+## Yopitek Wiki
 
-Ищете руководства по установке, сведения о совместимости с Linux или инструкции по устранению неполадок? Посетите [Yupitek Wiki](https://doc.yupitek.com/) — техническую базу знаний по продуктам ALFA Network, Hak5, Flipper Zero, SDRLAB и ACS.
+Ищете руководства по установке, сведения о совместимости с Linux или инструкции по устранению неполадок? Посетите [Yopitek Wiki](https://doc.yupitek.com/) — техническую базу знаний по продуктам ALFA Network, Hak5, Flipper Zero, SDRLAB и ACS.
 
 ## Драйверы ALFA Network
 

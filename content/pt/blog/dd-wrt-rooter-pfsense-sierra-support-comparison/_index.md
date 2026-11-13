@@ -1,5 +1,5 @@
 ---
-title: "DD-WRT, ROOter ou pfSense podem conectar placas Sierra? Comparativo de suporte das três plataformas para EM7455, EM7565 e MC7455 | Yupitek"
+title: "DD-WRT, ROOter ou pfSense podem conectar placas Sierra? Comparativo de suporte das três plataformas para EM7455, EM7565 e MC7455 | Yopitek"
 description: "DD-WRT, ROOter e pfSense podem conectar placas Sierra Wireless? Este artigo compara, com base nas especificações oficiais de EM7455, EM7565 e MC7455, o suporte a QMI/MBIM nos três firmwares de roteador, para ajudar você a encontrar a melhor solução de WAN de backup."
 date: 2026-07-31
 draft: false
@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "dd-wrt-rooter-pfsense-sierra-support-comparison"
 tags: ["Sierra Wireless", "DD-WRT", "pfSense", "ROOter"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/pt/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ Todos os roteadores são compatíveis com os módulos da Sierra Wireless (EM7455
 
 Muitos entusiastas ou administradores de TI corporativos, ao receberem uma EM7455, EM7565 ou MC7455 da Sierra Wireless, pensam primeiro em instalá-la num roteador de código aberto como rede de backup (Failover WAN). Mas lembre-se: o fabricante nunca garante "suporte" a nenhum firmware de código aberto específico. O que importa é o sistema operacional de base. Abrimos as especificações oficiais para mostrar a verdade sobre a compatibilidade.
 
-> Fonte de dados: especificações oficiais da Sierra Wireless (EM7455, EM7565 e MC7455). Artigo elaborado pela Yupitek.
+> Fonte de dados: especificações oficiais da Sierra Wireless (EM7455, EM7565 e MC7455). Artigo elaborado pela Yopitek.
 
 ---
 
@@ -85,7 +85,7 @@ Desde que você confirme "se o slot está correto", "se o conector de antena nã
 
 ## Informações de compra (Call to Action)
 
-Não tem certeza se o seu roteador comporta essas placas? Ou procura a placa adaptadora e a antena adequadas? A Yupitek oferece soluções completas de hardware e consultoria técnica.
+Não tem certeza se o seu roteador comporta essas placas? Ou procura a placa adaptadora e a antena adequadas? A Yopitek oferece soluções completas de hardware e consultoria técnica.
 Fale conosco: **sales@yupitek.com**
 Links dos produtos: [EM7455](https://yupitek.com/pt/products/sierra/em7455/) | [EM7565](https://yupitek.com/pt/products/sierra/em7565/) | [MC7455](https://yupitek.com/pt/products/sierra/mc7455/)
 

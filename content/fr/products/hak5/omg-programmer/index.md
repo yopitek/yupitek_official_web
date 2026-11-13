@@ -1,6 +1,6 @@
 ---
 title: "HAK5 O.MG Programmer — Programmeur de Firmware pour la Gamme O.MG"
-description: "HAK5 O.MG Programmer, un outil dédié au flashage de Firmware pour les appareils de la gamme O.MG. Prend en charge les produits O.MG en USB-A et USB-C."
+description: "HAK5 O.MG Programmer, un outil dédié au flashage de Firmware pour les appareils de la gamme O.MG. Compatible avec O.MG Cable, Plug, Adapter et UnBlocker."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -14,7 +14,7 @@ tags: ["O.MG", "Firmware", "USB"]
 
 ## Présentation du Produit
 
-L'O.MG Programmer est l'outil dédié au flashage de Firmware pour l'O.MG Cable, l'O.MG Plug et les autres produits de la gamme O.MG. Il est utilisé pour mettre à jour le Firmware des appareils et configurer les paramètres de payload, prenant en charge les variantes USB-A et USB-C des produits O.MG.
+L'O.MG Programmer est l'outil dédié au flashage de Firmware pour l'O.MG Cable, l'O.MG Plug et les autres produits de la gamme O.MG. Il sert à l'activation initiale et à la mise à jour du Firmware des appareils, et fonctionne avec O.MG Cable, Plug, Adapter et UnBlocker.
 
 {{< gallery >}}
   <img src="/images/products/hak5/omg-programmer.png" alt="HAK5 O.MG Programmer" />

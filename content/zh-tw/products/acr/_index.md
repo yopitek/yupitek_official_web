@@ -1,6 +1,7 @@
 ---
 title: "ACS ACR 系列 NFC 智慧卡讀卡機"
-description: "榆閤科技代理 ACS ACR 系列 NFC/智慧卡讀卡機：ACR122U、ACR1252U、ACR1552U，適用門禁、電子簽章及身份驗證應用。"
+description: "榆閤科技提供 ACS ACR122U、ACR1252U、ACR1552U USB NFC 讀卡機，適用門禁與身份驗證，台灣購買與報價請聯絡我們。"
+seo_title: "ACR 系列 ACS 台灣 | Yopitek"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,11 +12,13 @@ featureimage: "/images/products/acr/banner-acr.png"
 
 Advanced Card Systems (ACS) 是全球知名的智慧卡讀卡機製造商，ACR 系列廣泛應用於門禁管理、電子簽章、NFC 行動支付及身份驗證系統。
 
+ACS ACR 系列是 USB NFC 智慧卡讀卡機，含 ACR122U、ACR1252U 與 ACR1552U，皆為 13.56 MHz 非接觸式。榆閤科技於台灣提供此系列，歡迎洽詢報價。
+
 ## 產品系列
 
 {{< card-group >}}
   {{< card title="ACR122U NFC 讀卡機" href="/zh-tw/products/acr/acr122u/" image="/images/products/acr/ACR122U.png" >}}
-    USB NFC 讀卡機，支援 ISO 14443 A/B 及 MIFARE，桌面型設計，廣泛用於 NFC 研究與應用開發。
+    USB NFC 讀卡機，支援 ISO 14443 A/B 、MIFARE 及 FeliCa，桌面型設計，廣泛用於 NFC 研究與應用開發。
   {{< /card >}}
   {{< card title="ACR1252U NFC 論壇認證讀卡機" href="/zh-tw/products/acr/acr1252u/" image="/images/products/acr/ACR1252U.png" >}}
     NFC Forum 認證讀卡機，支援 ISO 14443 A/B、MIFARE、FeliCa，USB 介面，適合 NFC 應用程式開發。

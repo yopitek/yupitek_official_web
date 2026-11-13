@@ -20,10 +20,10 @@ faq:
 - **Hak5 20 周年旗舰产品**：第 8 代 PineAP 引擎
 - **完全独立操作**：无需外接电脑，独立手持式 Linux 无线审计装置
 - **三频 WiFi + 蓝牙**：支持 2.4 GHz / 5 GHz / 6 GHz（802.11ax）及 Bluetooth 5.2 / BLE 4.2
-- **Payload 系统**：以 DuckyScript™ + Bash + Python 驱动
-- **彩色 Retina 显示屏**：室内外皆清晰可视
+- **Payload 系统**：以 DuckyScript™ + Bash 驱动
+- **2.4 英寸彩色显示屏（480×222，221 PPI）**：室内外皆清晰可视
 - **多感知通知**：内置扬声器（可编程铃声）与振动马达（静默通知）
-- **可编程按钮**：4 颗 RGB 按钮（DPAD + A/B 控制）
+- **可编程按钮**：可编程 RGB LED 四向方向键，另有 A / B 按键
 - **实时 Alert Payload**：依检测到的 WiFi 活动自动触发
 - **模块化扩展**：全 root 权限 Linux，支持 GPS、额外无线电等硬件模块
 
@@ -36,7 +36,7 @@ faq:
 | 蓝牙 | Bluetooth 5.2 + BLE 4.2 |
 | 内存 | 256 MB DDR2 RAM + 128 MB SPI Flash |
 | 储存 | 4 GB eMMC |
-| 电池 | 2000 mAh LiPo（含 BMS 及 LED 充电指示） |
+| 电池 | 2000 mAh LiPo（含 BMS 及 LED 充电指示）；每次充电约 4 小时（Hak5 估计） |
 | 充电 / 数据 | USB-C（整合 Ethernet 接口） |
 | 扩展 | USB 2.0（用于硬件模块 Mod） |
 | 指示灯 | 4 × RGB LED |
@@ -48,7 +48,6 @@ faq:
 - 外勤无附电脑的独立无线渗透测试
 - 红队行动（可夹于腰带，全程无线操作）
 - 三频 WiFi 与蓝牙并行审计
-- WPA3 Enterprise 攻击测试
 - 以 DuckyScript 驱动的自动化 Payload 任务
 - 现场 OSINT、握手捕获、Deauth 攻击
 

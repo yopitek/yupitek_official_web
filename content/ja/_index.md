@@ -1,6 +1,6 @@
 ---
 title: "Yopitek Ltd"
-description: "専門的な技術製品の流通と没入型プロジェクション統合。ALFA Network、HAK5の台湾正規代理店。Flipper Zeroの製品・技術相談も提供。プロジェクションシステム統合サービス。"
+description: "専門的な技術製品の流通と没入型プロジェクション統合。ALFA Networkの台湾正規代理店。HAK5、Flipper Zeroの製品・技術相談も提供。プロジェクションシステム統合サービス。"
 date: 2026-03-12
 draft: false
 showHero: true
@@ -10,7 +10,7 @@ heroStyle: "basic"
 
 Yopitekは台湾のテクノロジー市場に深く根ざした専門企業です。最先端技術製品の流通と高品質ビジュアルソリューションの企画・統合という、2つの事業部門を持ちます。
 
-**台湾正規代理店 × 先端テクノロジー製品 × プロフェッショナルビジュアル統合**
+**ALFA Network 台湾正規代理店 × 先端テクノロジー製品 × プロフェッショナルビジュアル統合**
 
 <div class="flex flex-wrap gap-4 my-6">
   <a href="/ja/solution/" class="btn-inquiry">ソリューションを見る</a>
@@ -30,7 +30,7 @@ Yopitekは台湾のテクノロジー市場に深く根ざした専門企業で�
   </div>
   <div class="p-4 rounded-lg border border-neutral-700">
     <div class="text-3xl font-bold text-primary-400 mb-1">7</div>
-    <div class="text-sm text-neutral-300">正規代理ブランド</div>
+    <div class="text-sm text-neutral-300">取扱ブランド</div>
   </div>
   <div class="p-4 rounded-lg border border-neutral-700">
     <div class="text-3xl font-bold text-primary-400 mb-1">8</div>
@@ -42,7 +42,7 @@ Yopitekは台湾のテクノロジー市場に深く根ざした専門企業で�
 
 ## IT Distribution｜技術製品流通・代理販売
 
-Yopitekは世界的に著名なブランドの正規代理店として、企業・学術機関・情報セキュリティ研究者に向けて先進的な専門技術機器とソリューションを提供しています。
+YopitekはALFA Networkの台湾正規代理店であり、他の世界的に著名なブランドも取り扱い、企業・学術機関・情報セキュリティ研究者に向けて先進的な専門技術機器とソリューションを提供しています。
 
 **取り扱いブランド：**
 

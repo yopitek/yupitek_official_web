@@ -1,6 +1,6 @@
 ---
-title: "Серия маяков Yupitek iBeacon — BLE 5.0"
-description: "Yupitek поставляет профессиональные BLE 5.0 iBeacon и Eddystone маяки: YPB01, YPB02, YPB03, YPB04 и YPB05 — для позиционирования внутри помещений, учета рабочего времени и отслеживания активов."
+title: "Серия маяков Yopitek iBeacon — BLE 5.0"
+description: "Yopitek поставляет профессиональные BLE 5.0 iBeacon и Eddystone маяки: YPB01, YPB02, YPB03, YPB04 и YPB05 — для позиционирования внутри помещений, учета рабочего времени и отслеживания активов."
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-Маяки iBeacon от Yupitek представляют собой новое поколение устройств Bluetooth® Low Energy (BLE 5.0), предназначенных для высокоточного позиционирования, мониторинга персонала и рекламных рассылок. Поддерживая протоколы Apple iBeacon™ и Google Eddystone™ (UID, URL, TLM), наши маяки осуществляют трансляцию на 6 слотах одновременно, легко настраиваясь через приложение BeaconSET+.
+Маяки iBeacon от Yopitek представляют собой новое поколение устройств Bluetooth® Low Energy (BLE 5.0), предназначенных для высокоточного позиционирования, мониторинга персонала и рекламных рассылок. Поддерживая протоколы Apple iBeacon™ и Google Eddystone™ (UID, URL, TLM), наши маяки осуществляют трансляцию на 6 слотах одновременно, легко настраиваясь через приложение BeaconSET+.
 
 ---
 

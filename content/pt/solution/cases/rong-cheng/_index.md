@@ -13,7 +13,7 @@ tags: ["Exposição Corporativa", "Eventos", "Tema Ambiental"]
 **Tipo**: Projeção para exposição corporativa com tema de RSC
 **Tema**: Sustentabilidade Ambiental, Economia Circular
 
-A Rong Cheng Paper Industry realizou uma exposição corporativa com tema ambiental, e a Yupitek forneceu um sistema de projeção imersiva para apresentar os conceitos de economia circular e desenvolvimento sustentável aos visitantes por meio de projeções visuais impactantes, reforçando a imagem ambiental da empresa.
+A Rong Cheng Paper Industry realizou uma exposição corporativa com tema ambiental, e a Yopitek forneceu um sistema de projeção imersiva para apresentar os conceitos de economia circular e desenvolvimento sustentável aos visitantes por meio de projeções visuais impactantes, reforçando a imagem ambiental da empresa.
 
 ## Solução Técnica
 

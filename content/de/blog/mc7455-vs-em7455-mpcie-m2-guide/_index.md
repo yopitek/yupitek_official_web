@@ -24,7 +24,7 @@ faq:
 
 Der MC7455 ist Sierra Wireless' PCI Express Mini Card (mPCIe)-Modul, während der EM7455 sein M.2-Geschwistermodell in derselben 74xx-Familie ist. Beide Module integrieren LTE, UMTS und GNSS-Positionierung, und beide nutzen den Qualcomm-MDM9230-Basisbandprozessor. Auch die Netzgeschwindigkeiten sind identisch: LTE Cat 6 mit Spitzen-Downlink von 300 Mbit/s (FDD) / 222 Mbit/s (TDD) und Spitzen-Uplink von 50 Mbit/s (FDD) / 26 Mbit/s (TDD). Dieser Artikel extrahiert die Hardware-Unterschiede aus den offiziellen Spezifikationen, damit du vor dem Kauf genau weißt, was dich erwartet.
 
-> Technische Referenzen: Offizielle Spezifikationen von Sierra Wireless, die [AirPrime MC7455 Produkttechnische Spezifikation](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) und die [AirPrime EM7455 Produkttechnische Spezifikation](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Zusammengestellt von Yupitek.
+> Technische Referenzen: Offizielle Spezifikationen von Sierra Wireless, die [AirPrime MC7455 Produkttechnische Spezifikation](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) und die [AirPrime EM7455 Produkttechnische Spezifikation](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/). Zusammengestellt von Yopitek.
 
 ---
 
@@ -131,10 +131,10 @@ MC7455 und EM7455 sind wie dasselbe Gehirn in verschiedenen Körpern. Da Netzges
 
 ## Call to Action (Beschaffung)
 
-Brauchst du den MC7455 oder EM7455 oder weißt nicht, welchen Slot deine vorhandene Ausrüstung verwendet? Yupitek ist ein professioneller Anbieter industrieller drahtloser Lösungen. Wir helfen dir, Folgendes zu klären:
+Brauchst du den MC7455 oder EM7455 oder weißt nicht, welchen Slot deine vorhandene Ausrüstung verwendet? Yopitek ist ein professioneller Anbieter industrieller drahtloser Lösungen. Wir helfen dir, Folgendes zu klären:
 
 - Bewertung der Kompatibilität von Mainboard-Slot und Modul
 - Antennenanschluss-Adapter und Kabelabstimmung
 - Langfristige Lagerhaltung und Mengenpreise
 
-Schreib uns an **sales@yupitek.com** oder stöbere auf der [Yupitek-Website](https://www.yupitek.com) nach verwandten Produkten.
+Schreib uns an **sales@yupitek.com** oder stöbere auf der [Yopitek-Website](https://www.yupitek.com) nach verwandten Produkten.

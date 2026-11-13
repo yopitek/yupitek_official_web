@@ -341,7 +341,7 @@ opkg list | grep rtw89
 | وثائق OpenWrt الرسمية | مدخل وثائق OpenWrt الرسمية (إعدادات اللاسلكي / إدارة الحزم) | https://openwrt.org/docs/start | ✅ تم التحقق | 2026-09-03 |
 | منتدى OpenWrt الرسمي | مدخل مناقشة محركات الـ USB WiFi | https://forum.openwrt.org/ | ✅ تم التحقق | 2026-09-03 |
 | morrownr/8812au GitHub | المورد الأصلي لمحركات الـ RTL8812AU لـ Linux | https://github.com/morrownr/8812au-20210820 | ✅ تم التحقق | 2026-09-03 |
-| ملخص منتجات ALFA Network (Yupitek) | مواصفات المنتجات الحالية لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
+| ملخص منتجات ALFA Network (Yopitek) | مواصفات المنتجات الحالية لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | بيان رسمي من قدماء المحركات: يُنصح بتجنب الرقائق rtl8852/32au (RTL8832BU) | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ تم التحقق | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko يتطلب kernel 5.19+ ليظهر في النواة (كلام قدماء المحركات) | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ تم التحقق | 2026-09-03 |
 | منتدى OpenWrt الرسمي — أفضل وحدة توصيل WiFi USB للـ Raspberry Pi 4B | تقارير المستخدمين حول نجاح تثبيت kmod-mt7921u في OpenWrt 23.05.0 | https://forum.openwrt.org/t/best-usb-wifi-dongle-for-raspberry-pi-4b/160103 | ✅ تم التحقق | 2026-09-03 |

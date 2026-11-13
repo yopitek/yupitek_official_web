@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "Rechargeable", "Badge", "RFID", "Sensor", "Vibration"]
 ---
 
 ## 产品概述
@@ -78,7 +78,7 @@ YPB04 的各项参数（包括按键触发定义、UUID、Major、Minor、广播
 ## 产品图片
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb04.png" alt="Yupitek YPB04" />
+  <img src="/images/products/ibeacon/ypb04.png" alt="Yopitek YPB04" />
 {{< /gallery >}}
 
 ---

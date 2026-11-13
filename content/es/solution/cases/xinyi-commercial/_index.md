@@ -1,6 +1,6 @@
 ---
 title: "Distrito Comercial de Xinyi — Proyección en el Corazón Financiero de Taipei"
-description: "Yupitek diseñó la instalación de proyección architectural del Distrito Comercial de Xinyi en Taipei, creando un espectáculo visual nocturno que anima la principal zona de compras y entretenimiento de la ciudad."
+description: "Yopitek diseñó la instalación de proyección architectural del Distrito Comercial de Xinyi en Taipei, creando un espectáculo visual nocturno que anima la principal zona de compras y entretenimiento de la ciudad."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["comercial", "proyección exterior", "Xinyi", "Taipei", "Taiwan", "entret
 **Tipo**: Instalación de proyección multi-edificio en zona comercial premium
 **Temática**: Cultura pop taiwanesa, moda, entretenimiento urbano y vida nocturna
 
-El Distrito de Xinyi es el área comercial y de entretenimiento más vibrante de Taipei, hogar de los principales centros comerciales, hoteles de lujo y el propio Taipei 101. Para reforzar el atractivo nocturno del distrito y crear una experiencia unificada de entretenimiento visual que recorra las calles principales, la asociación de gestión del distrito convocó a Yupitek para diseñar e integrar un sistema de proyección multi-punto que anime las fachadas de varios edificios comerciales simultáneamente.
+El Distrito de Xinyi es el área comercial y de entretenimiento más vibrante de Taipei, hogar de los principales centros comerciales, hoteles de lujo y el propio Taipei 101. Para reforzar el atractivo nocturno del distrito y crear una experiencia unificada de entretenimiento visual que recorra las calles principales, la asociación de gestión del distrito convocó a Yopitek para diseñar e integrar un sistema de proyección multi-punto que anime las fachadas de varios edificios comerciales simultáneamente.
 
 El proyecto implicó la coordinación entre múltiples propietarios de edificios y la gestión de una infraestructura de señal distribuida por varias manzanas del distrito, creando un "corredor visual" de proyección que los visitantes recorren mientras se desplazan entre los distintos establecimientos comerciales.
 

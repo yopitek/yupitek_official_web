@@ -6,6 +6,10 @@ description: "正規のUSB Data Blockerを完全に模倣した外観を持つEl
 featureimage: "/images/products/hak5/omg-unBlocker.png"
 ---
 
+{{< alert "warning" >}}
+**法的使用に関する免責事項**：O.MG UnBlockerは専門的なセキュリティ研究ツールです。許可されたセキュリティテストおよび研究目的のみに使用してください。有効な書面による許可を得たセキュリティ専門家のみを対象としています。
+{{< /alert >}}
+
 ## 製品特長
 
 ![O.MG UnBlocker](/images/products/hak5/card/omg-unBlocker.png)
@@ -26,6 +30,7 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 | ポート | USB-Aオス（攻撃側）+ USB-Aメス（電源パススルー側） |
 | パススルー | 5V電源のみ（データラインなし） |
 | コントロール | WiFi WebUI |
+| Payload性能 | 最大890 keys/sec、最大300スロット、192種類のキーボードレイアウト |
 
 ## 適用シナリオ
 
@@ -38,8 +43,7 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/omg) |
+| ⬇️ ファームウェア & ツール | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。

@@ -325,9 +325,9 @@ ALFA ACM + антенны с высоким усилением → Офисны�
 
 ---
 
-> 📌 **ALFA AWUS036ACM в наличии** → [Страница продукта Yupitek](/ru/products/alfa/awus036acm/)
+> 📌 **ALFA AWUS036ACM в наличии** → [Страница продукта Yopitek](/ru/products/alfa/awus036acm/)
 >
-> Yupitek Ltd — авторизованный дистрибьютор ALFA Network в Тайване
+> Yopitek Ltd — авторизованный дистрибьютор ALFA Network в Тайване
 > Для заказов или технических вопросов: sales@yupitek.com
 
 ---

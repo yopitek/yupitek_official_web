@@ -1,6 +1,6 @@
 ---
 title: "Produkte"
-description: "Yopitek ist der autorisierte Taiwan-Distributor für ALFA Network, HAK5, Ubiquiti, Grafikkarten, SDRLAB und ACR; außerdem Flipper Zero Produkte und technische Beratung — mit fachkundiger IT-Ausrüstungsberatungsberatung."
+description: "Yopitek ist der autorisierte Taiwan-Distributor für ALFA Network; wir bieten außerdem HAK5, Ubiquiti, Grafikkarten, SDRLAB, ACR, Flipper Zero Produkte und technische Beratung — mit fachkundiger IT-Ausrüstungsberatungsberatung."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-Yopitek ist der autorisierte Taiwan-Distributor für mehrere weltweit anerkannte Marken, abgedeckt von drahtloser Netzwerktechnik, Sicherheitsforschung, Enterprise-Wi-Fi, Grafikkarten und SDR/RF-Ausrüstung.
+Yopitek ist der autorisierte Taiwan-Distributor für ALFA Network und bietet zudem weitere weltweit anerkannte Marken an, abgedeckt von drahtloser Netzwerktechnik, Sicherheitsforschung, Enterprise-Wi-Fi, Grafikkarten und SDR/RF-Ausrüstung.
 
 {{< card-group >}}
   {{< card title="ALFA Network" href="/de/products/alfa/" >}}

@@ -1,8 +1,10 @@
 ---
 title: "SDRLab TRX-duo — منصة SDR ZYNQ ثنائية القنوات بدقة 16-bit"
-description: "SDRLab TRX-duo، منصة SDR ثنائية القنوات ADC/DAC بدقة 16-bit، Xilinx Zynq 7010 SoC، متوافقة مع Red Pitaya، أخذ عينات مباشر من 10kHz إلى 60MHz، مناسبة لأبحاث الاتصالات اللاسلكية HF المتقدمة."
+description: "SDRLab TRX-duo، منصة SDR ثنائية القنوات ADC/DAC بدقة 16-bit، Xilinx Zynq 7010 SoC، متوافقة مع Red Pitaya، مناسبة لأبحاث الاتصالات اللاسلكية HF المتقدمة."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/trx-duo.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]
@@ -16,7 +18,6 @@ dir: rtl
 - Xilinx Zynq 7010 SoC مدمج في اللوحة (ARM Cortex-A9 ثنائي النواة + FPGA)، يمكن تشغيل برامج الفك مباشرة على الجهاز
 - يدعم النشر عن بُعد عبر الشبكة لإنشاء محطات استقبال SDR بعيدة
 - متوافق مع البرامج الرئيسية: HDSDR، SDR#، PowerSDR، SDR Console V3
-- أقل تكلفةً بنحو النصف مقارنةً بـ Red Pitaya SDRlab 122-16 الرسمي (حوالي 622 دولار أمريكي)
 
 ## المواصفات
 | المواصفة | القيمة / الوصف |
@@ -24,7 +25,6 @@ dir: rtl
 | المعالج | ARM Cortex-A9 ثنائي النواة (Zynq 7010 SoC) |
 | FPGA | Xilinx Zynq 7010 |
 | الذاكرة (RAM) | 512 MB |
-| نطاق تردد الاستقبال | 10 kHz – 60 MHz (أخذ عينات مباشر) |
 | عدد قنوات الاستقبال | 2 (موصّل SMA) |
 | دقة ADC | 16-bit (LTC2208) |
 | معدل أخذ عينات ADC | 125 MS/s |
@@ -36,7 +36,6 @@ dir: rtl
 | معدل أخذ عينات DAC | 125 MS/s |
 | جهد إخراج الإرسال | 1 Vpp / +4 dBm |
 | مقاومة حِمل الإرسال | 50 Ω |
-| قدرة الإرسال | حوالي 2.5 mW (يتطلب مضخّم قدرة خارجي) |
 | الإيثرنت | 1 Gbit |
 | USB | Type-C (USB 2.0) |
 | Wi-Fi | يتطلب دونجل Wi-Fi خارجي (غير مدرج) |
@@ -46,17 +45,16 @@ dir: rtl
 | معدل أخذ عينات المدخلات التمثيلية | 100 kS/s / 12-bit |
 | واجهات الاتصال | I2C، UART، SPI |
 | إخراج طاقة موسّع | +3.3 V |
-| نظام التشغيل | Linux مدمج في اللوحة (برنامج Red Pitaya) |
 
 ## بيئات الاستخدام
 - استقبال وإرسال راديو HF الهواة (CW، SSB، AM، FM)
-- مراقبة إشارات WSPR ضعيفة متعددة الترددات (حتى 8 ترددات في آنٍ واحد)
 - إنشاء محطات استقبال SDR بعيدة (وصول كامل عبر الشبكة)
 - تحليل طيف HF وأبحاث الإشارات
-- تطوير برامج متوافقة مع HPSDR
 - تجارب اتصالات الراديو الهواة (مسابقات الراديو، الرصد الفلكي)
 
 ---
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}
+
+الصفحة الرسمية للمصنّع (OpenSourceSDRLab، لم يتم التحقق منها عبر الإنترنت): https://opensourcesdrlab.com/products/trx-duo-compatible-with-red-pitaya-sdr-dual-16bit-adc-zynq7010?VariantsId=10980

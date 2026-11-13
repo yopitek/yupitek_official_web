@@ -175,9 +175,9 @@ EOF
 
 👉 [ALFA AWUS036ACM 製品ページ](/ja/products/alfa/awus036acm/)
 
-Yupitek は ALFA Network 正規代理店です。全 ALFA × HAK5 統合シナリオに対して完全な技術サポートを提供します。
+Yopitek は ALFA Network 正規代理店です。全 ALFA × HAK5 統合シナリオに対して完全な技術サポートを提供します。
 
-*設定サポートが必要ですか？Yupitek テクニカルサポートまで：[yupitek.com/support](/ja/support/)*
+*設定サポートが必要ですか？Yopitek テクニカルサポートまで：[yupitek.com/support](/ja/support/)*
 
 ---
 

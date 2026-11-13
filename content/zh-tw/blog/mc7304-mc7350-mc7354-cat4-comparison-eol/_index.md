@@ -115,7 +115,7 @@ MC7304、MC7350、MC7354 這三兄弟其實很好分：**亞洲選 04，北美�
 
 ## 採購資訊（Call To Action）
 
-需要這幾款模組或是不知道怎麼選？Yupitek（榆閤科技）是專業的硬體整合夥伴，可以幫你確認頻段、插槽和備料問題。
+需要這幾款模組或是不知道怎麼選？Yopitek（榆閤科技）是專業的硬體整合夥伴，可以幫你確認頻段、插槽和備料問題。
 
 - **產品頁**：[MC7304](/zh-tw/products/sierra/mc7304/)｜[MC7350](/zh-tw/products/sierra/mc7350/)｜[MC7354](/zh-tw/products/sierra/mc7354/)
 - **Email**：sales@yupitek.com

@@ -32,7 +32,7 @@ Votre module Sierra Wireless (EM7455, EM7565, EM919x, MC7455) pose problème ? B
 
 **En bref : votre carte ne se connecte pas ? Vérifiez d'abord si l'ordinateur la voit (énumération USB), ensuite si un canal de données existe (interface QMI/MBIM), puis si la carte SIM et l'APN sont bons (enregistrement), et seulement à la fin les antennes et le refroidissement. Neuf personnes sur dix échouent à la troisième étape. Surtout, ne vous lancez pas à l'aveugle dans un flash de firmware !**
 
-> Sources : spécifications officielles Sierra Wireless. Les procédures de dépannage proviennent de l'expérience terrain. Article compilé par Yupitek (Yughe Technology).
+> Sources : spécifications officielles Sierra Wireless. Les procédures de dépannage proviennent de l'expérience terrain. Article compilé par Yopitek (Yughe Technology).
 
 ---
 
@@ -126,7 +126,7 @@ Quand un module 4G/5G refuse de travailler, ne vous jetez pas à l'aveugle sur l
 
 ## Informations d'achat (Call to Action)
 
-Votre projet est bloqué sur des problèmes de connexion ? Vous cherchez des modules Sierra Wireless fiables avec un support technique ? Yupitek (Yughe Technology) fournit des solutions matérielles complètes et un support de première ligne pour vous sortir de l'enfer du dépannage.
+Votre projet est bloqué sur des problèmes de connexion ? Vous cherchez des modules Sierra Wireless fiables avec un support technique ? Yopitek (Yughe Technology) fournit des solutions matérielles complètes et un support de première ligne pour vous sortir de l'enfer du dépannage.
 Écrivez-nous : **sales@yupitek.com**
 Voir les produits : [Section des modules Sierra Wireless](https://yupitek.com/fr/products/sierra/)
 

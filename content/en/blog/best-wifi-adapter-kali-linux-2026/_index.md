@@ -262,7 +262,7 @@ sudo aireplay-ng --test wlan0mon
 
 ---
 
-## Buying from an Authorized Dealer
+## Buying from an Authorized ALFA Network Dealer
 
 ALFA Network products are frequently counterfeited. Fake adapters use inferior chipsets, lower transmit power, and often don't support monitor mode at all — defeating the entire purpose.
 

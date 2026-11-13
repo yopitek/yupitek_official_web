@@ -1,6 +1,6 @@
 ---
 title: "Yopitek Ltd"
-description: "Professioneller Technologievertrieb und immersive Projektionsintegration. Autorisierter Distributor in Taiwan für ALFA Network und HAK5; außerdem Flipper Zero Produkte und technische Beratung."
+description: "Professioneller Technologievertrieb und immersive Projektionsintegration. Autorisierter Distributor in Taiwan für ALFA Network; außerdem HAK5 und Flipper Zero Produkte und technische Beratung."
 date: 2026-04-24
 draft: false
 showHero: true
@@ -43,7 +43,7 @@ Yopitek ist ein professionelles Unternehmen, das tief im taiwanesischen Technolo
 
 ## IT Distribution
 
-Yopitek ist autorisierter Distributor für mehrere weltweit anerkannte Marken und versorgt Unternehmen, Bildungseinrichtungen und IT-Sicherheitsforscher mit zukunftsweisenden professionellen Technologieprodukten und Lösungen.
+Yopitek ist autorisierter Distributor von ALFA Network in Taiwan und liefert zudem weitere weltweit anerkannte Marken; wir versorgen Unternehmen, Bildungseinrichtungen und IT-Sicherheitsforscher mit zukunftsweisenden professionellen Technologieprodukten und Lösungen.
 
 **Unsere Marken:**
 

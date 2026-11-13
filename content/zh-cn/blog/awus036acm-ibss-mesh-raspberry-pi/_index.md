@@ -841,7 +841,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 购买——ALFA Network 官方授权经销商。通过授权渠道购买，可确保您获得正品硬件并享有 Alfa Network Inc. 标准保修服务。
 
-**产品页面：** [Yupitek 上的 ALFA AWUS036ACM](https://yupitek.com)
+**产品页面：** [Yopitek 上的 ALFA AWUS036ACM](https://yupitek.com)
 
 包装内含：
 - 1× AWUS036ACM 无线网卡
@@ -871,7 +871,7 @@ ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 购买——ALFA Netwo
 
 ---
 
-*本文由 Yupitek 技术团队撰写 · [yupitek.com](https://yupitek.com)*
+*本文由 Yopitek 技术团队撰写 · [yupitek.com](https://yupitek.com)*
 
 *参考资料：[Alfa Network 官方文档](https://docs.alfa.com.tw/Product/AWUS036ACM/) · [Linux Wireless Wiki——接口类型](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) · [MediaTek mt76 Linux 驱动程序](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) · [morrownr USB-WiFi 内核驱动列表](https://github.com/morrownr/USB-WiFi)*
 

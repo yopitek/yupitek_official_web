@@ -1,5 +1,5 @@
 ---
-title: "Comment faire un failover 4G/5G sur un routeur industriel : le cas du module EM9191 en 5G privée | Yupitek"
+title: "Comment faire un failover 4G/5G sur un routeur industriel : le cas du module EM9191 en 5G privée | Yopitek"
 description: "Comment mettre en place un failover 4G/5G sur ton routeur industriel ? Avec le module EM9191 en exemple, on explique la différence entre un réseau 5G SA privé et une architecture LTE de secours, plus les points clés : bandes de fréquence, antennes et dissipation thermique."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "industrial-router-4g-5g-failover-guide"
 slug: "industrial-router-4g-5g-failover-guide"
 tags: ["Sierra Wireless", "EM9191", "5G", "LTE", "Failover", "Private 5G"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/fr/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ Dans une usine, chaque minute de coupure réseau coûte de l'argent. Les donnée
 
 Dans cet article, on décortique la fiche technique officielle (EM919X Product Technical Specification) pour te montrer pourquoi le **EM9191** est le choix parfait : pour le secours aujourd'hui, pour le réseau privé demain.
 
-> Source des données techniques : fiche technique officielle Sierra Wireless. Article préparé par Yupitek.
+> Source des données techniques : fiche technique officielle Sierra Wireless. Article préparé par Yopitek.
 
 ---
 
@@ -91,6 +91,6 @@ Avec son LTE Cat 20 costaud et son support 5G SA, il couvre idéalement les deux
 
 ## Infos achat (Call to Action)
 
-Tu veux intégrer le EM9191 dans ton routeur industriel ? Yupitek propose des solutions matérielles complètes et un support technique de première ligne, pour t'aider sur les points les plus délicats : la chaleur et les antennes.
+Tu veux intégrer le EM9191 dans ton routeur industriel ? Yopitek propose des solutions matérielles complètes et un support technique de première ligne, pour t'aider sur les points les plus délicats : la chaleur et les antennes.
 Écris-nous : **sales@yupitek.com**
 Découvre les produits : [Série Sierra Wireless](https://yupitek.com/fr/products/sierra/)

@@ -15,14 +15,14 @@ tags:
   - "rtl8812au"
 categories:
   - "Руководство по оборудованию"
-description: "\"Техподдержка Yupitek ALFA USB网卡，6 моделей (Mediatek, Realtek), блог-правила.\""
+description: "\"Техподдержка Yopitek ALFA USB网卡，6 моделей (Mediatek, Realtek), блог-правила.\""
 featureimage: ""
 author: "benny-lai"
 lastmod: 2026-09-03
 ---
 
 > **Технический документ по поддержке · 1-е издание, 2026-09-03 (согласно правилам написания статей blog-writing-rules.md v1.0)**
-> Объект оценки: В данном техническом документе включены 6 моделей текущих ALFA USB сетевых карт Yupitek (3 модели MediaTek, 3 модели Realtek).
+> Объект оценки: В данном техническом документе включены 6 моделей текущих ALFA USB сетевых карт Yopitek (3 модели MediaTek, 3 модели Realtek).
 > Связанные статьи: [Поддерживает ли ALFA беспроводная сетевая карта NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/) | [Поддерживает ли ALFA беспроводная сетевая карта OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) | [Поддерживает ли ALFA беспроводная сетевая карта NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/) | [Поддерживает ли ALFA беспроводная сетевая карта Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/) | [Поддерживает ли ALFA беспроводная сетевая карта DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)
 
 ## Односложный вывод
@@ -138,12 +138,12 @@ ip link   # должен появиться новый интерфейс wlan
 | morrownr/8812au GitHub | RTL8812AU Linux драйвер | https://github.com/morrownr/8812au-20210820 | ✅ Проверено | 2026-09-03 |
 | morrownr/8821cu GitHub | RTL8811CU Linux драйвер | https://github.com/morrownr/8821cu-20210916 | ✅ Проверено | 2026-09-03 |
 | morrownr/rtl8852bu GitHub | RTL8832BU Linux драйвер | https://github.com/morrownr/rtl8852bu-20250826 | ✅ Проверено | 2026-09-03 |
-| Yupitek ALFA Продукция | Текущие модели и спецификации | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
-| Yupitek Blog: Руководство по Soft AP | Документация по реализации AP-режима | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Проверено | 2026-09-03 |
+| Yopitek ALFA Продукция | Текущие модели и спецификации | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
+| Yopitek Blog: Руководство по Soft AP | Документация по реализации AP-режима | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Проверено | 2026-09-03 |
 | Технические документы на сайте 9 шт. | Оценка матриц и основы проверки окружающей среды | Относительная ссылка (смотрите в начале статьи «См. также статьи») | ✅ Проверено | 2026-09-03 |
 
 > Официальная страница wiki kernel mt76: https://wireless.wiki.kernel.org/en/users/drivers/mediatek （Проверено, перечислены начальные версии ядра, поддерживаемые различными чипами, может служить быстрým справочным материалом）
 
 ## Отказ от ответственности
 
-Этот документ был подготовлен технической поддержкой компании Yupitek Ltd., спецификации и состояние драйверов могут изменяться в зависимости от обновлений ядра и репозитория драйверов. Перед установкой, пожалуйста, руководствуйтесь официальным репозиторием и страницами спецификаций производителя. ALFA Network является официальным авторизованным агентом нашей компании.
+Этот документ был подготовлен технической поддержкой компании Yopitek Ltd., спецификации и состояние драйверов могут изменяться в зависимости от обновлений ядра и репозитория драйверов. Перед установкой, пожалуйста, руководствуйтесь официальным репозиторием и страницами спецификаций производителя. ALFA Network является официальным авторизованным агентом нашей компании.

@@ -10,7 +10,7 @@ showChildPages: false
 
 # Mellanox / NVIDIA ConnectX ネットワークカード — 10G〜400G
 
-NVIDIA Mellanox ConnectX アダプターは、企業向けサーバーやAIクラスタへ業界最高水準の帯域幅と極めて低いレイテンシを提供します。以下は、Yupitekが取り扱うConnectXシリーズの製品カタログです。通信速度別に分類しています。
+NVIDIA Mellanox ConnectX アダプターは、企業向けサーバーやAIクラスタへ業界最高水準の帯域幅と極めて低いレイテンシを提供します。以下は、Yopitekが取り扱うConnectXシリーズの製品カタログです。通信速度別に分類しています。
 
 ---
 

@@ -232,7 +232,7 @@ ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
 | موقع FreshTomato الرسمي | قائمة الأصدار الأخيرة وأجهزة الدعم | https://freshtomato.org/ | ✅ تم التحقق | 2026-09-03 |
 | وثائق OpenWrt الرسمية | تعريفات USB WiFi والضبط اللاسلكي (للإشارة إلى المقارنة) | https://openwrt.org/docs/start | ✅ تم التحقق | 2026-09-03 |
 | منتدى OpenWrt الرسمي | مناقشة تعريفات USB WiFi (للإشارة إلى المقارنة) | https://forum.openwrt.org/ | ✅ تم التحقق | 2026-09-03 |
-| ملخص منتجات ALFA Network (Yupitek) | مواصفات المنتجات النشطة لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
+| ملخص منتجات ALFA Network (Yopitek) | مواصفات المنتجات النشطة لـ ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ تم التحقق | 2026-09-03 |
 
 مقالات مرتبطة: [هل يدعم بطاقة الشبكة اللاسلكية ALFA DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/) | [هل يدعم بطاقة الشبكة اللاسلكية ALFA OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) | [هل يدعم بطاقة الشبكة اللاسلكية ALFA NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/) | [هل يدعم بطاقة الشبكة اللاسلكية ALFA NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

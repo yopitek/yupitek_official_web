@@ -1,6 +1,7 @@
 ---
 title: "SDRLAB 軟體定義無線電模組"
-description: "榆閤科技代理 SDRLAB SDR 軟體定義無線電模組與 Flipper Zero 擴充板，適用無線通訊研究、業餘無線電及 RF 信號分析。"
+seo_title: "SDR 軟體定義無線電模組 SDRLab 台灣 | Yopitek"
+description: "Yopitek 榆閤科技提供 SDRLab SDR 軟體定義無線電模組與 Flipper Zero 擴充板，適用無線通訊研究、業餘無線電與 RF 訊號分析，歡迎洽詢報價。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -10,6 +11,8 @@ featureimage: "/images/products/sdrlab/banner-sdrlab.png"
 ---
 
 SDRLAB 提供軟體定義無線電（SDR）模組及 Flipper Zero 擴充配件，適合無線通訊研究、業餘無線電愛好者及 RF 信號分析應用。
+
+Yopitek 提供 SDRLab 軟體定義無線電與 Flipper Zero 擴充板，包含 RTL-SDR Blog V4、TRX-duo、H4M 與多款 Flipper Zero 模組，歡迎聯絡 Yopitek 詢價。
 
 ## 產品系列
 
@@ -30,7 +33,7 @@ SDRLAB 提供軟體定義無線電（SDR）模組及 Flipper Zero 擴充配件�
     Flipper Zero NRF24L01+ 無線模組，支援 2.4GHz 無線研究。
   {{< /card >}}
   {{< card title="Flipper Zero WiFi 多板" href="/zh-tw/products/sdrlab/flipper-wifi-multiboard/" image="/images/products/sdrlab/flipper-wifi-multiboard.png" >}}
-    Flipper Zero Wi-Fi 多功能擴充板，整合 ESP8266 Wi-Fi 模組。
+    Flipper Zero Wi-Fi 多功能擴充板，含 NRF24、GPIO、CC1101 與 GPS 模組。
   {{< /card >}}
   {{< card title="Flipper Zero 以太網路測試模組" href="/zh-tw/products/sdrlab/flipper-ethernet/" image="/images/products/sdrlab/flipper-ethernet.png" >}}
     Flipper Zero 有線網路測試擴充模組，支援乙太網路測試功能。

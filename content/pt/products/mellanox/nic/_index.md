@@ -10,7 +10,7 @@ showChildPages: false
 
 # Placas de rede Mellanox / NVIDIA ConnectX — 10G a 400G
 
-Os adaptadores NVIDIA Mellanox ConnectX oferecem máxima largura de banda e baixíssima latência para servidores corporativos e clusters de inteligência artificial. Veja abaixo o catálogo completo de modelos distribuídos pela Yupitek, organizados por faixa de velocidade.
+Os adaptadores NVIDIA Mellanox ConnectX oferecem máxima largura de banda e baixíssima latência para servidores corporativos e clusters de inteligência artificial. Veja abaixo o catálogo completo de modelos distribuídos pela Yopitek, organizados por faixa de velocidade.
 
 ---
 

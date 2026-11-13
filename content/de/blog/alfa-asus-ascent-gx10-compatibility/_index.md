@@ -231,8 +231,8 @@ Widerspruchskonditionen: Die obigen Feststellungen basieren auf DGX OS (Ubuntu-B
 | ASUS Ascent GX10 offizieller Online-Shop (UK) | GX10 Produktseite (150 × 150 × 51mm) | https://uk.store.asus.com/asus-ascent-gx105004-33389.html | ✅ Geprüft | 2026-09-03 |
 | NVIDIA DGX Spark offizielle Seite | GB10 Plattform-Informationen | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Geprüft | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux-Treiber | https://github.com/morrownr/8812au-20210820 | ✅ Geprüft | 2026-09-03 |
-| ALFA Soft AP WiFi Hotspot Linux Guide (Yupitek) | ALFA Linux AP-Modus-Anleitung | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Geprüft | 2026-09-03 |
-| ALFA Network Produktübersicht (Yupitek) | ALFA aktuelle Produkt-Spezifikationen | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
+| ALFA Soft AP WiFi Hotspot Linux Guide (Yopitek) | ALFA Linux AP-Modus-Anleitung | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Geprüft | 2026-09-03 |
+| ALFA Network Produktübersicht (Yopitek) | ALFA aktuelle Produkt-Spezifikationen | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
 
 Verwandte Artikel: [Ist die ALFA Wireless Karte kompatibel mit NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Ist die ALFA Wireless Karte kompatibel mit ALTOS BrainSphere GB10 F1](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[Ist die ALFA Wireless Karte kompatibel mit GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[Ist die ALFA Wireless Karte kompatibel mit MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 

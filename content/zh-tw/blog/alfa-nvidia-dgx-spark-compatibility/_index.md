@@ -312,7 +312,7 @@ sudo modprobe rtl8852bu
 | WiFi 連線不穩 / 速度慢 | USB-C 轉接器僅支援 USB 2.0 | 更換支援 USB 3.2 Gen 2×2 的轉接器；確認轉接器標示「Data」而非「Charge Only」 |
 | 內建 Wi-Fi 7 與外接 ALFA 衝突 | 兩個無線介面路由衝突 | 停用內建 WiFi：`sudo nmcli radio wifi off` 或在 BIOS/UEFI 中停用；或設定路由優先順序 |
 | 6GHz（Wi-Fi 6E）無法使用 | Regulatory Domain 限制 | 設定法規區域：`sudo iw reg set US`（美國開放 6GHz）；確認 AWUS036AXML/AXM 的 firmware 支援 6GHz |
-| AP 模式啟動失敗 | NetworkManager 與 hostapd 衝突 | 參考 Yupitek ALFA Soft AP 指南；停用 NetworkManager 管理該介面後手動設定 hostapd |
+| AP 模式啟動失敗 | NetworkManager 與 hostapd 衝突 | 參考 Yopitek ALFA Soft AP 指南；停用 NetworkManager 管理該介面後手動設定 hostapd |
 | 喚醒後網路卡消失 | USB 自動暫停 | 停用 USB 自動暫停：`echo 'options usbcore autosuspend=-1' \| sudo tee /etc/modprobe.d/usb.conf` |
 
 ## 9. 已知限制
@@ -340,8 +340,8 @@ sudo modprobe rtl8852bu
 | morrownr/8821cu GitHub | RTL8811CU Linux 驅動 | https://github.com/morrownr/8821cu-20210916 | ✅ 已查核 | 2026-09-03 |
 | morrownr/rtl8852bu GitHub | RTL8832BU Linux 驅動 | https://github.com/morrownr/rtl8852bu-20250826 | ✅ 已查核 | 2026-09-03 |
 | Linux kernel mt76 驅動文件 | MediaTek mt76 / mt7921 mainline 驅動說明（含各晶片支援起始 kernel 版本） | https://wireless.wiki.kernel.org/en/users/drivers/mediatek | ✅ 已查核 | 2026-09-03 |
-| ALFA Soft AP WiFi Hotspot Linux Guide（Yupitek） | ALFA 在 Linux 上的 AP 模式設定指南 | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 已查核 | 2026-09-03 |
-| ALFA Network 產品總覽（Yupitek） | ALFA 現役產品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
+| ALFA Soft AP WiFi Hotspot Linux Guide（Yopitek） | ALFA 在 Linux 上的 AP 模式設定指南 | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 已查核 | 2026-09-03 |
+| ALFA Network 產品總覽（Yopitek） | ALFA 現役產品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | 驅動維護者官方聲明：建議避開 rtl8852/32au（RTL8832BU）晶片 | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ 已查核 | 2026-09-03 |
 | morrownr/8812au-20210820 GitHub | RTL8812AU 驅動狀態最新公告（kernel 6.13 併入主線、6.14 品質成熟） | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
 

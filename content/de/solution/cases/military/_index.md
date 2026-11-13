@@ -13,7 +13,7 @@ tags: ["Verteidigungsanwendung", "Mehrkanalprojektion", "Kommandozentrum"]
 **Typ**: Digitales Kriegsspielsimulations-Projektionssystem
 **Anwendungen**: Taktische Simulation, Kommandotraining, Szenariomodellierung
 
-Das Militärpolizeikommando führte ein digitales Kriegsspielsimulationssystem ein; Yupitek war für die Planung und Installation der großformatigen Projektionsdisplaywand verantwortlich. Die überdimensionale Kartendarstellung bietet Kommandeuren während Übungen eine klare und umfassende Übersicht über das taktische Lagebild und verbessert die Entscheidungseffizienz.
+Das Militärpolizeikommando führte ein digitales Kriegsspielsimulationssystem ein; Yopitek war für die Planung und Installation der großformatigen Projektionsdisplaywand verantwortlich. Die überdimensionale Kartendarstellung bietet Kommandeuren während Übungen eine klare und umfassende Übersicht über das taktische Lagebild und verbessert die Entscheidungseffizienz.
 
 ## Technische Lösung
 

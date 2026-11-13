@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "em7565-openwrt-troubleshooting-guide"
 tags: ["LTE", "Sierra Wireless", "OpenWrt"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/zh-tw/products/sierra/em7565/"
 faq:
@@ -26,7 +26,7 @@ EM7565 抓不到時照這五步查：1. 用 `lsusb` 確認 USB 層級（檢查�
 
 **EM7565 是一顆基於 Qualcomm MDM9250 的 M.2 WWAN Type 3042-S3-B 4G LTE-Advanced 模組。它同時支援 QMI 與 MBIM 兩種 USB 介面。** 如果它在 OpenWrt 或樹莓派上「抓不到」，通常是三個地方出錯：USB 沒通電、USB composition 停在錯誤的組合，或是 Linux 驅動沒正確載入。偶爾它還會因為連續重啟進入保護模式。這篇文章我們照著 Sierra Wireless 的官方手冊，幫大家整理出一套最不容易出錯的排查流程。
 
-> 產品連結：[Yupitek Sierra Wireless 專區](https://yupitek.com/zh-tw/products/sierra/)
+> 產品連結：[Yopitek Sierra Wireless 專區](https://yupitek.com/zh-tw/products/sierra/)
 
 ## 快速結論：EM7565 抓不到時，照這五步查
 
@@ -143,7 +143,7 @@ EM7565 在 OpenWrt 或樹莓派上抓不到，其實就跟修電腦一樣，順�
 
 ## 採購資訊（Call To Action）
 
-不確定手上的轉接板、天線能不能配 EM7565？Yupitek（榆閤科技）有提供 Sierra Wireless 全系列產品跟完整的硬體整合方案。
+不確定手上的轉接板、天線能不能配 EM7565？Yopitek（榆閤科技）有提供 Sierra Wireless 全系列產品跟完整的硬體整合方案。
 
 歡迎來信：**sales@yupitek.com**
 

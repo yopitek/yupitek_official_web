@@ -1,6 +1,6 @@
 ---
 title: "榆阖科技有限公司"
-description: "专业科技分销与空间沉浸体验整合商。ALFA Network、HAK5 台湾授权经销；Flipper Zero 提供产品与技术咨询。无线投影拼接系统整合服务。"
+description: "专业科技分销与空间沉浸体验整合商。ALFA Network 台湾授权经销；HAK5、Flipper Zero 提供产品与技术咨询。无线投影拼接系统整合服务。"
 date: 2026-03-12
 draft: false
 showHero: true
@@ -10,7 +10,7 @@ heroStyle: "basic"
 
 榆阖科技是一家深耕台湾科技市场的专业公司，旗下设有两大事业部，分别聚焦于顶尖科技产品分销，以及高端视觉解决方案的规划与整合。
 
-**台湾授权代理 × 顶尖科技产品 × 专业视觉整合**
+**ALFA Network 台湾授权经销 × 顶尖科技产品 × 专业视觉整合**
 
 <div class="flex flex-wrap gap-4 my-6">
   <a href="/zh-cn/solution/" class="btn-inquiry">了解我们的解决方案</a>
@@ -30,7 +30,7 @@ heroStyle: "basic"
   </div>
   <div class="p-4 rounded-lg border border-neutral-700">
     <div class="text-3xl font-bold text-primary-400 mb-1">7</div>
-    <div class="text-sm text-neutral-300">国际代理品牌</div>
+    <div class="text-sm text-neutral-300">国际品牌</div>
   </div>
   <div class="p-4 rounded-lg border border-neutral-700">
     <div class="text-3xl font-bold text-primary-400 mb-1">8</div>
@@ -40,11 +40,11 @@ heroStyle: "basic"
 
 ---
 
-## IT Distribution｜科技产品代理暨分销
+## IT Distribution｜科技产品经销暨分销
 
-榆阖科技代理多家全球知名品牌，为企业客户、学术机构及信息安全研究人员提供前瞻性的专业科技设备与解决方案。
+榆阖科技为 ALFA Network 台湾授权经销，并供应其他全球知名品牌，为企业客户、学术机构及信息安全研究人员提供前瞻性的专业科技设备与解决方案。
 
-**代理品牌涵盖：**
+**品牌涵盖：**
 
 | 品牌 | 产品定位 |
 |------|---------|

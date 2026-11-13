@@ -236,7 +236,7 @@ Countercondition: The above judgments are based on DGX OS (Ubuntu-based, kernel 
 | Altos Computing Official Website | BrainSphere GB10 F1 Product Information | https://www.altoscomputing.com/en-Us | ✅ Verified | 2026-09-03 |
 | NVIDIA DGX Spark Official Page | GB10 Platform Information | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Verified | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux Driver | https://github.com/morrownr/8812au-20210820 | ✅ Verified | 2026-09-03 |
-| ALFA Network Product Overview (Yupitek) | ALFA Current Product Specifications | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verified | 2026-09-03 |
+| ALFA Network Product Overview (Yopitek) | ALFA Current Product Specifications | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verified | 2026-09-03 |
 
 Related Articles: [Does ALFA Wireless Network Card Support NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Does ALFA Wireless Network Card Support ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[Does ALFA Wireless Network Card Support GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[Does ALFA Wireless Network Card Support MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 

@@ -24,7 +24,7 @@ faq:
 
 MC7455 は Sierra Wireless の PCI Express Mini Card（mPCIe）モジュールで、EM7455 は同じ 74xx シリーズに属する M.2 の兄弟モデルです。どちらも LTE、UMTS、GNSS 測位機能を内蔵し、Qualcomm MDM9230 ベースバンドプロセッサを採用しています。通信速度も同じで、LTE Cat 6 の下りは最大 300 Mbps（FDD）/ 222 Mbps（TDD）、上りは最大 50 Mbps（FDD）/ 26 Mbps（TDD）です。本記事では公式仕様書からハードウェアの違いを抽出し、購入前に押さえておくべきポイントを整理します。
 
-> 技術資料の出典：Sierra Wireless 公式仕様書 — [AirPrime MC7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) と [AirPrime EM7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/)。本記事は Yupitek（榆閤科技）が整理しました。
+> 技術資料の出典：Sierra Wireless 公式仕様書 — [AirPrime MC7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_mc7455_product_technical_specification/) と [AirPrime EM7455 Product Technical Specification](https://source.sierrawireless.com/resources/airprime/minicard/74xx/airprime_em7455_product_technical_specification/)。本記事は Yopitek（榆閤科技）が整理しました。
 
 ---
 
@@ -131,10 +131,10 @@ MC7455 と EM7455 は、同じ頭脳を異なるボディに搭載したよう�
 
 ## お問い合わせ（調達について）
 
-MC7455 や EM7455 が必要な場合、あるいはお手持ちの機器がどちらのスロットに対応しているかわからない場合は、産業用ワイヤレスソリューションの専門プロバイダーである Yupitek にお任せください。以下を確認いたします。
+MC7455 や EM7455 が必要な場合、あるいはお手持ちの機器がどちらのスロットに対応しているかわからない場合は、産業用ワイヤレスソリューションの専門プロバイダーである Yopitek にお任せください。以下を確認いたします。
 
 - マザーボードのスロットとモジュールの互換性評価
 - アンテナコネクタの変換とケーブル選定
 - 長期在庫と数量ベースの見積り
 
-お問い合わせは **sales@yupitek.com** まで、または [Yupitek 公式サイト](https://www.yupitek.com) で関連製品をご覧ください。
+お問い合わせは **sales@yupitek.com** まで、または [Yopitek 公式サイト](https://www.yupitek.com) で関連製品をご覧ください。

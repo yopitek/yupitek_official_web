@@ -13,7 +13,7 @@ tags: ["aplicación de defensa", "fusión multi-proyector", "centro de mando"]
 **Tipo**: Sistema de proyección para simulación digital de guerra
 **Uso**: Simulación táctica, entrenamiento de mando, simulación de escenarios
 
-El Cuerpo de Policía Militar implementó un sistema digitalizado de simulación de guerra, y Yupitek fue responsable de la planificación e instalación de la pared de visualización de proyección a gran escala. La pantalla de mapas de gran formato permite a los oficiales de mando tener una visión clara del panorama táctico durante los ejercicios, mejorando la eficiencia en la toma de decisiones de mando.
+El Cuerpo de Policía Militar implementó un sistema digitalizado de simulación de guerra, y Yopitek fue responsable de la planificación e instalación de la pared de visualización de proyección a gran escala. La pantalla de mapas de gran formato permite a los oficiales de mando tener una visión clara del panorama táctico durante los ejercicios, mejorando la eficiencia en la toma de decisiones de mando.
 
 ## Solución Técnica
 

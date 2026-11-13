@@ -1,6 +1,6 @@
 ---
 title: "Distrito Comercial Xinyi — Projeção em Grande Escala na Área de Compras de Taipei"
-description: "Case Yupitek: instalação de projeção em grande escala no Distrito Comercial Xinyi, Taipei. Mapeamento de fachadas e projeção exterior em área comercial premium do coração de Taipei."
+description: "Case Yopitek: instalação de projeção em grande escala no Distrito Comercial Xinyi, Taipei. Mapeamento de fachadas e projeção exterior em área comercial premium do coração de Taipei."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Área Comercial", "Xinyi", "Taipei"]
 **Tipo**: Área Comercial / Instalação Exterior
 **Escopo**: Projeção em grande escala em fachadas e espaços públicos do distrito
 
-O Distrito de Xinyi é o principal polo comercial e de entretenimento de Taipei, reunindo shoppings, arranha-céus corporativos e espaços públicos de alto fluxo. Com o Taipei 101 como pano de fundo icônico, a área atrai tanto residentes quanto turistas, tornando-se um dos palcos mais visíveis para instalações de projeção em escala urbana. A Yupitek executou projeto de mapeamento de fachadas e projeção exterior em edifício comercial de destaque no distrito.
+O Distrito de Xinyi é o principal polo comercial e de entretenimento de Taipei, reunindo shoppings, arranha-céus corporativos e espaços públicos de alto fluxo. Com o Taipei 101 como pano de fundo icônico, a área atrai tanto residentes quanto turistas, tornando-se um dos palcos mais visíveis para instalações de projeção em escala urbana. A Yopitek executou projeto de mapeamento de fachadas e projeção exterior em edifício comercial de destaque no distrito.
 
 ## Solução Técnica
 

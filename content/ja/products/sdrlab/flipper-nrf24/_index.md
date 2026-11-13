@@ -3,6 +3,8 @@ title: "SDRLab Flipper Zero NRF24 モジュール — 2.4GHz 無線 HID 研究�
 description: "Flipper Zero NRF24 モジュール、nRF24L01 チップ、MouseJacker 無線 HID インジェクション・NRF Sniffer 対応、2.4GHz、GPIO 接続、アンテナ付き。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-nrf24.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 拡張", "NRF24", "2.4GHz", "MouseJacker", "セキュリティ研究"]
@@ -48,3 +50,5 @@ tags: ["Flipper Zero 拡張", "NRF24", "2.4GHz", "MouseJacker", "セキュリテ
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+**メーカー販売ページ（OpenSourceSDRLab）**：https://opensourcesdrlab.com/products/improved-version-nrf24-module-and-gpio-for-flipper-for-sniffer-and-mouse-jacker?VariantsId=10383

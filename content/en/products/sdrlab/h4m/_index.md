@@ -1,12 +1,26 @@
 ---
 title: "SDRLab H4M — Portable HackRF + PortaPack Bundle"
-description: "SDRLab H4M, HackRF One + PortaPack H4M portable SDR bundle, 1MHz–6GHz, 20MHz bandwidth, Mayhem firmware, USB-C fast charging, built-in speaker and microphone."
+seo_title: "H4M | SDRLab Taiwan | Yopitek"
+description: "SDRLab H4M portable SDR bundle: HackRF One (R10C) + PortaPack H4M, 1 MHz–6 GHz, 20 MHz bandwidth, Mayhem firmware. Available in Taiwan from Yopitek."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/h4m.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Portable SDR"]
+faq:
+  - question: "What frequency range and bandwidth does the SDRLab H4M cover?"
+    answer: "The bundled HackRF One covers 1 MHz to 6 GHz with a maximum bandwidth of 20 MHz and 8-bit ADC resolution. The RF connector is SMA female."
+  - question: "What is included in the SDRLab H4M bundle?"
+    answer: "The bundle includes a HackRF One (R10C) and a PortaPack H4M PCB with Mayhem firmware support. The PortaPack adds a screen, battery, speaker and microphone."
+  - question: "What are the display, battery and ports of the H4M?"
+    answer: "It has a 3.2-inch 240×320 matte touchscreen, a 2500 mAh lithium battery, USB-C fast charging, a microSD slot and a 3.5 mm headphone/microphone jack. A GPIO port supports custom add-ons."
+  - question: "Which firmware and computer software does the H4M support?"
+    answer: "It runs Mayhem firmware, and in USB-connected mode it works with GNU Radio, SDR# and GQRX on Windows, macOS, Linux and Android hosts. Use transmit functions only where local regulations allow."
 ---
+
+The SDRLab H4M is a portable SDR bundle pairing a HackRF One (R10C) with a PortaPack H4M running Mayhem firmware, for authorized RF research and education. It covers 1 MHz–6 GHz with 20 MHz maximum bandwidth, a 3.2-inch touchscreen and a 2500 mAh battery. Contact Yopitek for a quotation in Taiwan.
 
 ## Features
 
@@ -19,26 +33,28 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Portable SDR"]
 - 360° flat rotary knob (inspired by the iPod click wheel) — portable-friendly and resistant to accidental input
 - USB-C connector for fast charging and broad compatibility
 - Built-in speaker and microphone; audio source switches automatically when headphones are plugged in
-- GPIO expansion port supports DIY accessories (e.g., Flipper Zero add-ons)
-- Bundle includes an HackRF R10c clone with Mayhem firmware support
+- GPIO expansion port for custom add-ons
+- Bundle includes an R10C HackRF with Mayhem firmware support
+- 3.2" 240×320 matte touchscreen, microSD card slot, and 3.5 mm headphone/microphone jack
 
 ## Specifications
 
 | Specification | Value / Description |
 |---------------|---------------------|
-| Bundled Hardware | HackRF One (R10c clone) + PortaPack H4M PCB |
+| Bundled Hardware | HackRF One (R10C) + PortaPack H4M PCB |
 | Frequency Range | 1 MHz – 6 GHz (per HackRF One specs) |
 | Maximum Bandwidth | 20 MHz |
 | ADC Resolution | 8-bit |
 | RF Connector | SMA Female |
-| Main RF Chip | MAX2837 (HackRF RF frontend) |
-| Display | 3.2" TFT matte screen |
+| Display | 3.2" 240×320 matte touchscreen LCD |
 | Power Port | USB-C (fast charging) |
-| Battery Capacity | 2500 mAh lithium battery (varies by bundle) |
+| Battery Capacity | 2500 mAh lithium battery |
 | Power Management | Advanced battery management IC (%, voltage, current readout) |
 | Audio | Built-in speaker + microphone, automatic headphone switching |
-| Expansion Interface | I2C-compatible GPIO port |
-| Enclosure | Clear acrylic or ABS injection-molded shell (varies by bundle) |
+| Expansion Interface | GPIO port for custom add-ons |
+| Storage | microSD card slot |
+| Headphone / Microphone | 3.5 mm headphone/microphone jack |
+| Enclosure | Clear ABS injection-molded shell |
 | Firmware | Mayhem Firmware (pre-flashed or user-installable) |
 | OS Support | Windows, macOS, Linux, Android (via USB host computer) |
 | Software Compatibility | GNU Radio, SDR#, GQRX, and more (USB-connected mode) |
@@ -72,3 +88,7 @@ The complete beginner guide for getting started with your SDRLab H4M — from un
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+[Manufacturer store page (OpenSourceSDRLab)](https://opensourcesdrlab.com/products/h4m-receiver-and-spectrum-analyzer?VariantsId=10129)
+
+{{< faq >}}

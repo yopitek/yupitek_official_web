@@ -382,6 +382,6 @@ Más del 90% de los casos de «la VM no detecta el adaptador externo» se deben 
 | Controlador comunitario aircrack-ng RTL8812AU (para AWUS036ACH dentro del Guest) | https://github.com/aircrack-ng/rtl8812au |
 | Página oficial del producto ALFA AWUS036ACH | https://www.alfa.com.tw/products/awus036ach_1 |
 | Página oficial del producto ALFA AWUS036AXML | https://www.alfa.com.tw/ |
-| Soporte técnico de Yupitek | https://yupitek.com/ |
+| Soporte técnico de Yopitek | https://yupitek.com/ |
 
 > **Declaración de uso legal**: activar operaciones de seguridad como el modo monitor y la inyección de paquetes dentro de la máquina virtual está limitado a redes de su propiedad o con autorización explícita para pruebas. El usuario debe cumplir las leyes locales y asegurarse de que todas las pruebas tengan una base de autorización legal.

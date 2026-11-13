@@ -2,6 +2,8 @@
 title: "SDRLab H4M — Портативный комплект HackRF + PortaPack"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/h4m.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Портативный SDR"]
@@ -16,24 +18,25 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Портативный SD
 - Разъём USB-C для быстрой зарядки и широкой совместимости
 - Встроенные динамик и микрофон с автоматическим переключением при подключении наушников
 - Разъём расширения GPIO позволяет создавать собственные аксессуары (например, для Flipper Zero)
-- В комплекте реплика HackRF R10c с поддержкой прошивки Mayhem
+- В комплекте HackRF R10C с поддержкой прошивки Mayhem
 
 ## Технические характеристики
 | Параметр | Значение / Описание |
 |---------|-----------|
-| Комплект оборудования | HackRF One (реплика R10c) + PortaPack H4M PCB |
+| Комплект оборудования | HackRF One (R10C) + PortaPack H4M PCB |
 | Диапазон частот | 1 МГц – 6 ГГц (согласно спецификациям HackRF One) |
 | Максимальная полоса | 20 МГц |
 | Разрядность АЦП | 8 бит |
 | RF-разъём | SMA «мама» |
-| Основной чип | MAX2837 (RF-фронтенд HackRF) |
-| Экран | 3,2" TFT матовый |
+| Экран | 3,2" матовый сенсорный LCD, 240×320 |
 | Разъём питания | USB-C (быстрая зарядка) |
-| Ёмкость аккумулятора | 2500 mAh литиевый (зависит от версии комплекта) |
+| Ёмкость аккумулятора | 2500 mAh литиевый |
 | Управление питанием | Усовершенствованная микросхема BMS (отображение %, В, А) |
 | Аудио | Встроенные динамик + микрофон, автопереключение наушников |
-| Интерфейс расширения | GPIO-разъём, совместимый с I2C |
-| Корпус | Прозрачный акрил или литой ABS (зависит от версии комплекта) |
+| Интерфейс расширения | GPIO-разъём для собственных аксессуаров |
+| Накопитель | Слот microSD |
+| Аудиоразъём | 3.5 mm для наушников/микрофона |
+| Корпус | Прозрачный литой корпус из ABS |
 | Прошивка | Mayhem Firmware (предустановлена или требует прошивки) |
 | Поддержка ОС | Windows, macOS, Linux, Android (в режиме подключения к ПК) |
 | Совместимое ПО | GNU Radio, SDR#, GQRX и др. (в режиме USB) |
@@ -53,15 +56,17 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Портативный SD
 
 ## 📖 Руководство пользователя
 
-The complete beginner guide for getting started with your SDRLab H4M — from unboxing to advanced signal operations.
+Полное руководство для начинающих по SDRLab H4M — от распаковки до продвинутых операций с сигналами.
 
 <div style="margin: 1.5rem 0 2rem; text-align: center;">
   <a href="/manual/h4m/" target="_blank" rel="noopener"
      style="display: inline-block; padding: 0.875rem 2.5rem; background: #ffffff; color: #111827; border: 2px solid #d1d5db; border-radius: 8px; font-size: 1rem; font-weight: 600; text-decoration: none; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-    Open manual in full screen ↗
+    Открыть руководство на весь экран ↗
   </a>
 </div>
 ---
 {{< alert >}}
 Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
 {{< /alert >}}
+
+Официальная страница товара (OpenSourceSDRLab): [https://opensourcesdrlab.com/products/h4m-receiver-and-spectrum-analyzer?VariantsId=10129](https://opensourcesdrlab.com/products/h4m-receiver-and-spectrum-analyzer?VariantsId=10129)

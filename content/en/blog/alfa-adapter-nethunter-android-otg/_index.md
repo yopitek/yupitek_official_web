@@ -206,7 +206,7 @@ The output should show `Mode:Monitor` if everything is working correctly.
 The NetHunter app includes built-in GUI interfaces for several WiFi-focused attack modules. These are accessible without typing any terminal commands, making them useful for demonstrations or when operating in the field.
 
 {{< alert "triangle-exclamation" >}}
-All wireless security testing must be performed **only on networks and devices you own or have explicit written authorization to test**. Unauthorized access to computer networks is illegal in most jurisdictions worldwide. The tools described here are for authorized penetration testing, security research, and educational purposes only. Yupitek accepts no liability for misuse.
+All wireless security testing must be performed **only on networks and devices you own or have explicit written authorization to test**. Unauthorized access to computer networks is illegal in most jurisdictions worldwide. The tools described here are for authorized penetration testing, security research, and educational purposes only. Yopitek accepts no liability for misuse.
 {{< /alert >}}
 
 **WiFi Evil Portal (WPS3):** Available directly in the NetHunter app's main menu. Creates a rogue access point with a captive portal for credential harvesting during authorized social engineering assessments. Requires an external adapter with AP mode support.

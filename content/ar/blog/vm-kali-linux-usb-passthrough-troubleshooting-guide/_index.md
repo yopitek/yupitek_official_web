@@ -382,6 +382,6 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 | مشغّل aircrack-ng RTL8812AU المجتمعي (للاستخدام داخل Guest مع AWUS036ACH) | https://github.com/aircrack-ng/rtl8812au |
 | صفحة منتج ALFA AWUS036ACH الرسمية | https://www.alfa.com.tw/products/awus036ach_1 |
 | صفحة منتج ALFA AWUS036AXML الرسمية | https://www.alfa.com.tw/ |
-| الدعم الفني لـ Yupitek | https://yupitek.com/ |
+| الدعم الفني لـ Yopitek | https://yupitek.com/ |
 
 > **إعلان الاستخدام القانوني**: تفعيل عمليات أمنية مثل وضع المراقبة وحقن الحزم داخل الجهاز الافتراضي يقتصر على شبكات تملكها أو حصلت على تفويض صريح لاختبارها. يجب على المستخدم الالتزام بالقوانين المحلية والتأكد من أن جميع الاختبارات تستند إلى تفويض قانوني.

@@ -15,7 +15,7 @@ Flipper Zeroはオープンソースのマルチプロトコル無線セキュ�
 
 {{< card-group >}}
   {{< card title="Flipper Zero" href="/ja/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.png" >}}
-    コアデバイス — Sub-GHz、NFC、RFID 125kHz、赤外線、iButton、GPIO、Bluetooth 5.0、USB-C内蔵。
+    コアデバイス — Sub-GHz、NFC、RFID 125kHz、赤外線、iButton、GPIO、Bluetooth 5.4、USB-C内蔵。
   {{< /card >}}
   {{< card title="WiFi Devboard for Flipper Zero" href="/ja/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.png" >}}
     公式Wi-Fi拡張ボード（ESP32-S2ベース）— Wi-Fiセキュリティテスト機能を追加。
@@ -27,6 +27,12 @@ Flipper Zeroはオープンソースのマルチプロトコル無線セキュ�
     公式シリコン保護ケース — デバイスを完全に保護し、ボタンの操作感も良好。
   {{< /card >}}
 {{< /card-group >}}
+
+## 公式リソース
+
+| リソース | リンク |
+|----------|--------|
+| Flipper Zero 製品ページ | [flipper.net](https://flipper.net/products/flipper-zero) |
 
 ---
 

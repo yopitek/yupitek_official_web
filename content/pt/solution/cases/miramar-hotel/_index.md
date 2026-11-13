@@ -1,6 +1,6 @@
 ---
 title: "Hotel Miramar — Sistema de Projeção para Saguão e Espaços de Eventos"
-description: "Case Yupitek: sistema de projeção imersiva para o saguão principal e espaços de eventos do Hotel Miramar, Taiwan. Projeção em grande formato para hospitalidade de alto padrão."
+description: "Case Yopitek: sistema de projeção imersiva para o saguão principal e espaços de eventos do Hotel Miramar, Taiwan. Projeção em grande formato para hospitalidade de alto padrão."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Hotel", "Entretenimento", "Projeção"]
 **Tipo**: Hotel / Espaço de Entretenimento
 **Escopo**: Sistema de projeção imersiva para saguão e salões de eventos
 
-O Hotel Miramar é um estabelecimento de referência no setor de hospitalidade premium em Taiwan. Para elevar a experiência dos hóspedes e oferecer uma proposta diferenciada aos clientes de eventos corporativos, a administração do hotel investiu em um sistema de projeção de grande formato para o saguão principal e os principais salões de eventos. A Yupitek foi responsável pela concepção técnica e implantação completa do sistema.
+O Hotel Miramar é um estabelecimento de referência no setor de hospitalidade premium em Taiwan. Para elevar a experiência dos hóspedes e oferecer uma proposta diferenciada aos clientes de eventos corporativos, a administração do hotel investiu em um sistema de projeção de grande formato para o saguão principal e os principais salões de eventos. A Yopitek foi responsável pela concepção técnica e implantação completa do sistema.
 
 ## Solução Técnica
 

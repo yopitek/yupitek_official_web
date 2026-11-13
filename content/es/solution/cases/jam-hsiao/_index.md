@@ -13,7 +13,7 @@ tags: ["exposición de arte", "proyección inmersiva", "espectáculo de entreten
 **Tipo**: Proyección inmersiva para exposición artística
 **Característica**: Exposición de arte visual interdisciplinario del artista musical
 
-La exposición artística interdisciplinaria de Jam Hsiao invitó a Yupitek a crear un espacio de experiencia de proyección inmersiva. A través de proyección en todo el recinto con múltiples proyectores, las creaciones visuales del artista se presentaron de la forma más impactante al público, convirtiendo la exposición en una experiencia inmersiva que fusiona lo visual con la música.
+La exposición artística interdisciplinaria de Jam Hsiao invitó a Yopitek a crear un espacio de experiencia de proyección inmersiva. A través de proyección en todo el recinto con múltiples proyectores, las creaciones visuales del artista se presentaron de la forma más impactante al público, convirtiendo la exposición en una experiencia inmersiva que fusiona lo visual con la música.
 
 ## Aspectos Técnicos Destacados
 

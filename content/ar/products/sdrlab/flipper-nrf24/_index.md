@@ -3,6 +3,8 @@ title: "SDRLab Flipper Zero NRF24 — وحدة أبحاث HID اللاسلكي 2
 description: "وحدة Flipper Zero NRF24، شريحة nRF24L01، تدعم حقن HID اللاسلكي MouseJacker وNRF Sniffer، 2.4GHz، اتصال GPIO، مع هوائي."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/sdrlab/flipper-nrf24.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["توسعة Flipper Zero", "NRF24", "2.4GHz", "MouseJacker", "أبحاث الأمن"]
@@ -43,3 +45,5 @@ dir: rtl
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}
+
+الصفحة الرسمية للمصنّع (OpenSourceSDRLab، لم يتم التحقق منها عبر الإنترنت): https://opensourcesdrlab.com/products/improved-version-nrf24-module-and-gpio-for-flipper-for-sniffer-and-mouse-jacker?VariantsId=10383

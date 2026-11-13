@@ -1,5 +1,5 @@
 ---
-title: "Guide complet d'installation des modules Sierra 4G/5G sur Ubuntu / Debian / Linux Mint : configuration EM7455, EM7565, EM919x, MC7455 et positionnement GNSS | Yupitek"
+title: "Guide complet d'installation des modules Sierra 4G/5G sur Ubuntu / Debian / Linux Mint : configuration EM7455, EM7565, EM919x, MC7455 et positionnement GNSS | Yopitek"
 description: "Comment installer un module Sierra 4G/5G sur Ubuntu/Debian/Linux Mint ? Ce guide t'accompagne dans l'installation de ModemManager, la connexion avec qmicli/mbimcli et la configuration du positionnement GNSS. Couvre EM7455, EM7565, EM919x et MC7455."
 date: 2026-07-31
 draft: false
@@ -10,7 +10,7 @@ hreflang_group: "ubuntu-debian-sierra-4g-5g-setup-guide"
 slug: "ubuntu-debian-sierra-4g-5g-setup-guide"
 tags: ["Sierra Wireless", "Ubuntu", "Debian", "Linux", "GNSS"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/fr/products/sierra/"
 faq:
@@ -30,7 +30,7 @@ Tu veux installer un module Sierra Wireless (EM7455, EM7565, MC7455, EM919x) sur
 
 Beaucoup reçoivent un EM7455, EM7565, EM919x ou MC7455, le branchent sur la carte mère, puis ne savent pas comment se connecter. En réalité, la prise en charge de ces modules sous Linux est très mature. Ils communiquent tous via USB, avec les protocoles QMI ou MBIM. Dans ce guide, on te fait faire la configuration pas à pas.
 
-> Toutes les spécifications et références techniques proviennent de la documentation officielle Sierra Wireless. Compilé par Yupitek.
+> Toutes les spécifications et références techniques proviennent de la documentation officielle Sierra Wireless. Compilé par Yopitek.
 
 ---
 
@@ -148,7 +148,7 @@ Travailler avec les modules Sierra sous Linux n'est pas si dur qu'il n'y paraît
 
 ## Où acheter (Call To Action)
 
-Tu veux intégrer un module Sierra dans ton appareil sous Ubuntu ? Yupitek propose des solutions complètes : modules, antennes, cartes adaptatrices, plus un support technique en première ligne.
+Tu veux intégrer un module Sierra dans ton appareil sous Ubuntu ? Yopitek propose des solutions complètes : modules, antennes, cartes adaptatrices, plus un support technique en première ligne.
 Contacte-nous : **sales@yupitek.com**
 Voir les produits : [Série Sierra Wireless](https://yupitek.com/fr/products/sierra/)
 

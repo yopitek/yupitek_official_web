@@ -836,7 +836,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ALFA AWUS036ACM доступен на [yupitek.com](https://yupitek.com) — официальном дилере ALFA Network. Покупка через авторизованного дилера гарантирует получение оригинального оборудования со стандартной гарантией Alfa Network Inc.
 
-**Страница товара:** [ALFA AWUS036ACM на Yupitek](https://yupitek.com)
+**Страница товара:** [ALFA AWUS036ACM на Yopitek](https://yupitek.com)
 
 Содержимое коробки:
 - 1× адаптер AWUS036ACM
@@ -865,7 +865,7 @@ ALFA AWUS036ACM доступен на [yupitek.com](https://yupitek.com) — о�
 
 ---
 
-*Статья подготовлена технической командой Yupitek · [yupitek.com](https://yupitek.com)*
+*Статья подготовлена технической командой Yopitek · [yupitek.com](https://yupitek.com)*
 
 *Источники: [Официальная документация Alfa Network](https://docs.alfa.com.tw/Product/AWUS036ACM/) · [Linux Wireless Wiki — типы интерфейсов](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) · [Драйвер MediaTek mt76 для Linux](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) · [morrownr USB-WiFi In-Kernel List](https://github.com/morrownr/USB-WiFi)*
 

@@ -1,6 +1,6 @@
 ---
 title: "Exposition Muséale"
-description: "Solutions de projection pour musées et expositions permanentes Yupitek : intégration multimédia pour expositions culturelles, recréation historique immersive et planification de systèmes de guidage interactifs."
+description: "Solutions de projection pour musées et expositions permanentes Yopitek : intégration multimédia pour expositions culturelles, recréation historique immersive et planification de systèmes de guidage interactifs."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Expositions Multimédias Muséales
 
-Les musées et les lieux culturels constituent un domaine de service central pour la division Applications IT de Yupitek. Nous comprenons en profondeur les exigences spécifiques des espaces d'exposition : stabilité opérationnelle à long terme, faible fréquence de maintenance, gestion précise du contenu et présentation visuelle alignée sur la thématique de l'exposition.
+Les musées et les lieux culturels constituent un domaine de service central pour la division Applications IT de Yopitek. Nous comprenons en profondeur les exigences spécifiques des espaces d'exposition : stabilité opérationnelle à long terme, faible fréquence de maintenance, gestion précise du contenu et présentation visuelle alignée sur la thématique de l'exposition.
 
 ## Services
 

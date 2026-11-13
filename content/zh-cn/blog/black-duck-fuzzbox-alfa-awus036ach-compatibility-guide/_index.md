@@ -34,7 +34,7 @@ ALFA AWUS036ACH 是 Black Duck FuzzBox 协议模糊测试的唯一首选，RTL88
 
 为了解决这个问题，安全团队使用 **Black Duck FuzzBox**（前身为 Synopsys Defensics FuzzBox），这是一种专门的软件和硬件执行环境。为了进行测试，FuzzBox OS 必须与兼容的高性能 USB 无线适配器配对，该适配器需具备稳定的监听模式（monitor mode）和可靠的原始数据包注入（raw packet injection）能力。 
 
-在本兼容性指南中，我们将分析 Yupitek 当前的 ALFA Network 产品目录，解释为什么较新的 Wi-Fi 6/6E 适配器在 FuzzBox 下无法使用，并为行业标准选择 —— **ALFA AWUS036ACH** (RTL8812AU) 提供逐步设置指南。
+在本兼容性指南中，我们将分析 Yopitek 当前的 ALFA Network 产品目录，解释为什么较新的 Wi-Fi 6/6E 适配器在 FuzzBox 下无法使用，并为行业标准选择 —— **ALFA AWUS036ACH** (RTL8812AU) 提供逐步设置指南。
 
 ---
 
@@ -77,7 +77,7 @@ FuzzBox OS 作为一个无头（headless）Linux 容器平台运行。软件规�
 
 ## 3. ALFA 适配器分析与 GitHub 驱动位置
 
-从当前活跃的型号中选择正确的适配器至关重要。让我们将 Yupitek 当前活跃的 ALFA Network 库存与 FuzzBox OS 兼容性矩阵进行对比。
+从当前活跃的型号中选择正确的适配器至关重要。让我们将 Yopitek 当前活跃的 ALFA Network 库存与 FuzzBox OS 兼容性矩阵进行对比。
 
 ### 3.1 现有 ALFA 型号的硬性评估
 ALFA Network 使用不同的芯片组制造适配器。只有特定的芯片组才支持 FuzzBox 的原始注入引擎。
@@ -238,8 +238,8 @@ lrwxrwxrwx 1 root root 23 Jun 04 13:30 phy0 -> /sys/class/net/wlan0
 *   **信号优化（强烈推荐）：** 增配 **ALFA APA-M25** 或 **APA-M25-6E** 双频定向面板天线。用这些高增益面板天线替换原装的全向天线，可将无线电信号直接聚焦在被测系统（SUT）上，从而减少周围的环境噪声并提高注入成功率。
 
 ### 8.2 业务咨询与订购
-Yupitek 是 ALFA Network 产品的授权经销商，提供本地支持和批量供应。如需索取产品报价、进行批量订购或咨询我们的技术支持团队：
-*   请访问 [Yupitek 联系我们页面](/zh-cn/contact/)
+Yopitek 是 ALFA Network 产品的授权经销商，提供本地支持和批量供应。如需索取产品报价、进行批量订购或咨询我们的技术支持团队：
+*   请访问 [Yopitek 联系我们页面](/zh-cn/contact/)
 *   或者直接发送电子邮件至 **sales@yupitek.com**
 
 我们的工程团队将协助您获取支持 Black Duck FuzzBox 协议模糊测试工作流所需的精确无线硬件配置。

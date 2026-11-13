@@ -1,6 +1,6 @@
 ---
 title: "Technical Support & Driver Downloads"
-description: "Yupitek official driver download center for ALFA Network, HAK5, Flipper Zero, Ubiquiti, and NVIDIA Mellanox products. Includes interactive NIC selector tool."
+description: "Yopitek official driver download center for ALFA Network, HAK5, Flipper Zero, Ubiquiti, and NVIDIA Mellanox products. Includes interactive NIC selector tool."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,9 +13,9 @@ The following are official driver and firmware download links. Please visit each
 Always download drivers from official brand websites to ensure security and compatibility.
 {{< /alert >}}
 
-## Yupitek Wiki
+## Yopitek Wiki
 
-Looking for setup guides, Linux compatibility information, or troubleshooting steps? Visit the [Yupitek Wiki](https://doc.yupitek.com/) — our technical knowledge base covering ALFA Network, Hak5, Flipper Zero, SDRLAB and ACS products.
+Looking for setup guides, Linux compatibility information, or troubleshooting steps? Visit the [Yopitek Wiki](https://doc.yupitek.com/) — our technical knowledge base covering ALFA Network, Hak5, Flipper Zero, SDRLAB and ACS products.
 
 ## ALFA Network Drivers
 

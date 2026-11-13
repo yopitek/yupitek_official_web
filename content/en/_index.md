@@ -1,6 +1,6 @@
 ---
 title: "Yopitek Ltd"
-description: "Professional technology distribution and immersive projection integration. Authorized Taiwan distributor for ALFA Network and HAK5; Flipper Zero products and technical advice also available. Wireless projection and edge-blending system integration services."
+description: "Professional technology distribution and immersive projection integration. Authorized Taiwan distributor for ALFA Network; HAK5 and Flipper Zero products and technical advice also available. Wireless projection and edge-blending system integration services."
 date: 2026-03-12
 draft: false
 showHero: true
@@ -11,7 +11,7 @@ heroStyle: "basic"
 
 Yopitek is a professional company deeply rooted in the Taiwan technology market, operating two business divisions — one focused on the distribution of cutting-edge technology products, and the other on planning and integrating high-end visual solutions.
 
-**Authorized Taiwan Distributor × Premium Tech Products × Professional Visual Integration**
+**ALFA Network Authorized Distributor Taiwan × Premium Tech Products × Professional Visual Integration**
 
 <div class="flex flex-wrap gap-4 my-6">
   <a href="/en/solution/" class="btn-inquiry">Explore Our Solutions</a>
@@ -31,7 +31,7 @@ Yopitek is a professional company deeply rooted in the Taiwan technology market,
   </div>
   <div class="p-4 rounded-lg border border-neutral-700">
     <div class="text-3xl font-bold text-primary-400 mb-1">8</div>
-    <div class="text-sm text-neutral-300">Authorized Brands</div>
+    <div class="text-sm text-neutral-300">Brands</div>
   </div>
   <div class="p-4 rounded-lg border border-neutral-700">
     <div class="text-3xl font-bold text-primary-400 mb-1">8</div>
@@ -43,7 +43,7 @@ Yopitek is a professional company deeply rooted in the Taiwan technology market,
 
 ## IT Distribution
 
-Yopitek is an authorized distributor for multiple globally recognized brands, supplying enterprises, academic institutions, and cybersecurity researchers with forward-looking professional technology equipment and solutions.
+Yopitek is the authorized Taiwan distributor for ALFA Network and also supplies other globally recognized brands, serving enterprises, academic institutions, and cybersecurity researchers with forward-looking professional technology equipment and solutions.
 
 **Brands we carry:**
 

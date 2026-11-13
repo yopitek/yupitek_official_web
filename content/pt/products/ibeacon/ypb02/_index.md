@@ -6,7 +6,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["ibeacon"]
-tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yupitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
+tags: ["iBeacon", "BLE 5.0", "Bluetooth", "Yopitek", "CR2477", "Waterproof", "Sensor", "Accelerometer"]
 ---
 
 ## Visão geral do produto
@@ -63,7 +63,7 @@ A configuração é feita sem fio pelo aplicativo **BeaconSET+**:
 ## Galeria do produto
 
 {{< gallery >}}
-  <img src="/images/products/ibeacon/ypb02.png" alt="Yupitek YPB02" />
+  <img src="/images/products/ibeacon/ypb02.png" alt="Yopitek YPB02" />
 {{< /gallery >}}
 
 ---

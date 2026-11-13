@@ -6,6 +6,10 @@ description: "Универсальный инструмент активации
 featureimage: "/images/products/hak5/omg-programmer.png"
 ---
 
+{{< alert "warning" >}}
+**Юридическое предупреждение об использовании**: O.MG Programmer — устройство для программирования прошивки исследовательских инструментов серии O.MG. Только для авторизованного тестирования безопасности и исследований.
+{{< /alert >}}
+
 ## Особенности продукта
 
 ![O.MG Programmer USB A+C](/images/products/hak5/card/omg-programmer.png)
@@ -19,7 +23,7 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 
 | Характеристика | Значение |
 |----------------|----------|
-| Интерфейс подключения | USB-A + USB-C (двусторонняя версия) |
+| Интерфейс подключения | USB-A + USB-C (модель USB A+C) |
 | Совместимые устройства | Все устройства серии O.MG |
 | Метод работы | WebSerial (браузер Chrome / Edge) или Python |
 | Универсальность | 1 Programmer для всех устройств O.MG |
@@ -37,7 +41,6 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 | Ресурс | Ссылка |
 |--------|--------|
 | 📖 Официальная документация | [Просмотреть онлайн](https://o-mg.github.io/WebFlasher/) |
-| ⬇️ Прошивка и инструменты | [Портал загрузок Hak5](https://downloads.hak5.org/omg) |
 
 {{< alert >}}
 Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).

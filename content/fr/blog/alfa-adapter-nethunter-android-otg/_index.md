@@ -202,7 +202,7 @@ La sortie devrait afficher `Mode:Monitor` si tout fonctionne correctement.
 L'application NetHunter comprend des interfaces graphiques intégrées pour plusieurs modules d'attaque axés sur le WiFi. Ceux-ci sont accessibles sans taper de commandes dans le terminal, ce qui les rend utiles pour des démonstrations ou lors d'opérations sur le terrain.
 
 {{< alert "triangle-exclamation" >}}
-Tous les tests de sécurité sans fil doivent être effectués **uniquement sur des réseaux et des appareils que vous possédez ou pour lesquels vous avez une autorisation écrite explicite**. L'accès non autorisé aux réseaux informatiques est illégal dans la plupart des juridictions mondiales. Les outils décrits ici sont destinés uniquement aux tests de pénétration autorisés, à la recherche en sécurité et à des fins éducatives. Yupitek n'accepte aucune responsabilité en cas de mauvaise utilisation.
+Tous les tests de sécurité sans fil doivent être effectués **uniquement sur des réseaux et des appareils que vous possédez ou pour lesquels vous avez une autorisation écrite explicite**. L'accès non autorisé aux réseaux informatiques est illégal dans la plupart des juridictions mondiales. Les outils décrits ici sont destinés uniquement aux tests de pénétration autorisés, à la recherche en sécurité et à des fins éducatives. Yopitek n'accepte aucune responsabilité en cas de mauvaise utilisation.
 {{< /alert >}}
 
 **WiFi Evil Portal (WPS3) :** Disponible directement dans le menu principal de l'application NetHunter. Crée un point d'accès malveillant avec un portail captif pour la collecte d'identifiants lors d'évaluations d'ingénierie sociale autorisées. Nécessite un adaptateur externe avec support du mode AP.

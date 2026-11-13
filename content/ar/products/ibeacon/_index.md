@@ -1,6 +1,6 @@
 ---
-title: "سلسلة منارات BLE 5.0 iBeacon من Yupitek"
-description: "تقوم Yupitek بتوزيع منارات BLE 5.0 iBeacon و Eddystone الاحترافية: YPB01 و YPB02 و YPB03 و YPB04 و YPB05 - لتحديد المواقع داخلياً وحضور الموظفين وتتبع الأصول."
+title: "سلسلة منارات BLE 5.0 iBeacon من Yopitek"
+description: "تقوم Yopitek بتوزيع منارات BLE 5.0 iBeacon و Eddystone الاحترافية: YPB01 و YPB02 و YPB03 و YPB04 و YPB05 - لتحديد المواقع داخلياً وحضور الموظفين وتتبع الأصول."
 date: 2026-06-04
 draft: false
 showBreadcrumbs: true
@@ -8,7 +8,7 @@ showTableOfContents: false
 showChildPages: false
 ---
 
-تمثل منتجات iBeacon من Yupitek جيلاً جديداً من أجهزة البلوتوث منخفض الطاقة (BLE 5.0) المصممة لتحديد المواقع عالي الأداء وتتبع الموظفين والترويج التجاري. من خلال دعم بروتوكولات Apple iBeacon™ و Google Eddystone™ (UID, URL, TLM) في آن واحد، تدعم مناراتنا بث بروتوكولات متعددة في وقت واحد (حتى 6 قنوات) ويتم تهيئتها بسهولة عبر تطبيق BeaconSET+ للهواتف المحمولة.
+تمثل منتجات iBeacon من Yopitek جيلاً جديداً من أجهزة البلوتوث منخفض الطاقة (BLE 5.0) المصممة لتحديد المواقع عالي الأداء وتتبع الموظفين والترويج التجاري. من خلال دعم بروتوكولات Apple iBeacon™ و Google Eddystone™ (UID, URL, TLM) في آن واحد، تدعم مناراتنا بث بروتوكولات متعددة في وقت واحد (حتى 6 قنوات) ويتم تهيئتها بسهولة عبر تطبيق BeaconSET+ للهواتف المحمولة.
 
 ---
 

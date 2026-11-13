@@ -31,7 +31,7 @@ faq:
 
 選網路卡不是選跑車，不是越快越好，而是要「對症下藥」。這篇文章我們拿 Sierra Wireless 最常見的三顆 M.2 模組（EM7455、EM7565、EM9191）來開刀，用官方規格書的數字教你怎麼選最划算。
 
-> 技術資料來源：Sierra Wireless 官方規格書。本文由榆閤科技（Yupitek）整理。
+> 技術資料來源：Sierra Wireless 官方規格書。本文由榆閤科技（Yopitek）整理。
 
 ---
 
@@ -117,6 +117,6 @@ faq:
 
 ## 採購資訊（Call To Action）
 
-正在規劃視訊回傳或是數位看板的連網方案嗎？Yupitek（榆閤科技）提供完整的 Sierra Wireless 模組以及專業的技術諮詢，幫你算出最符合經濟效益的搭配！
+正在規劃視訊回傳或是數位看板的連網方案嗎？Yopitek（榆閤科技）提供完整的 Sierra Wireless 模組以及專業的技術諮詢，幫你算出最符合經濟效益的搭配！
 歡迎來信：**sales@yupitek.com**
 看看產品：[https://yupitek.com/zh-tw/products/sierra/](/zh-tw/products/sierra/)

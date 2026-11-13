@@ -1,6 +1,6 @@
 ---
 title: "Teatro Nacional de Taiwan — Projeção Multimídia em Espaço Cultural"
-description: "Case Yupitek: sistema de projeção multimídia para o Teatro Nacional de Taiwan, na área do Memorial Chiang Kai-shek, Taipei. Integração de projeção cênica e instalações culturais permanentes."
+description: "Case Yopitek: sistema de projeção multimídia para o Teatro Nacional de Taiwan, na área do Memorial Chiang Kai-shek, Taipei. Integração de projeção cênica e instalações culturais permanentes."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Teatro", "Cultura", "Taipei"]
 **Tipo**: Teatro / Espaço Cultural
 **Escopo**: Sistema de projeção multimídia para uso cênico e instalações culturais
 
-O Teatro Nacional de Taiwan, localizado na icônica Praça da Liberdade ao lado do Memorial Chiang Kai-shek, é um dos mais importantes centros de artes cênicas da Ásia. A Yupitek foi convidada a contribuir com a modernização da infraestrutura de projeção do teatro, atendendo às crescentes demandas por recursos técnicos avançados em produções de teatro contemporâneo, ópera, dança e performances multimídia.
+O Teatro Nacional de Taiwan, localizado na icônica Praça da Liberdade ao lado do Memorial Chiang Kai-shek, é um dos mais importantes centros de artes cênicas da Ásia. A Yopitek foi convidada a contribuir com a modernização da infraestrutura de projeção do teatro, atendendo às crescentes demandas por recursos técnicos avançados em produções de teatro contemporâneo, ópera, dança e performances multimídia.
 
 ## Solução Técnica
 
@@ -33,7 +33,7 @@ O teatro impõe exigências técnicas elevadas: precisão, confiabilidade, silê
 
 - Infraestrutura versátil que atende desde produções de grande orçamento até eventos culturais independentes
 - Controle técnico preciso integrado ao workflow da equipe técnica do teatro
-- Solução de longo prazo com suporte técnico contínuo da Yupitek
+- Solução de longo prazo com suporte técnico contínuo da Yopitek
 
 ---
 

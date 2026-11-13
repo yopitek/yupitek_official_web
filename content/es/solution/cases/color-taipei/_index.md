@@ -1,6 +1,6 @@
 ---
 title: "Espectáculo de Mapping Arquitectónico Arcoíris en el Ayuntamiento de Taipéi"
-description: "Caso de proyección de mapping arquitectónico en la fachada del Ayuntamiento de Taipéi, combinando iconografía urbana con temática de arcoíris, logro de integración técnica completa de Yupitek."
+description: "Caso de proyección de mapping arquitectónico en la fachada del Ayuntamiento de Taipéi, combinando iconografía urbana con temática de arcoíris, logro de integración técnica completa de Yopitek."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["mapping arquitectónico", "evento y espectáculo", "Taipéi"]
 **Tipo**: Mapping Arquitectónico (Building Mapping)
 **Escala**: Espectáculo de mapping exterior a gran escala
 
-El espectáculo de mapping en la fachada del Ayuntamiento de Taipéi es el caso representativo de la tecnología de mapping arquitectónico de Yupitek. El evento tomó el "arcoíris" como tema y transformó la fachada del edificio del Ayuntamiento en un lienzo visual dinámico, presentando un impresionante paisaje visual de mapping urbano mediante una técnica precisa de fusión multi-proyector.
+El espectáculo de mapping en la fachada del Ayuntamiento de Taipéi es el caso representativo de la tecnología de mapping arquitectónico de Yopitek. El evento tomó el "arcoíris" como tema y transformó la fachada del edificio del Ayuntamiento en un lienzo visual dinámico, presentando un impresionante paisaje visual de mapping urbano mediante una técnica precisa de fusión multi-proyector.
 
 ## Desafíos Técnicos
 

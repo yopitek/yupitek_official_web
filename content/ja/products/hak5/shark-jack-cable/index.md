@@ -6,6 +6,10 @@ description: "EthernetケーブルフォームファクターにShark Jackを統
 featureimage: "/images/products/hak5/shark-jack-cable.png"
 ---
 
+{{< alert "warning" >}}
+**法的使用に関する免責事項**: Shark Jack Cableは専門的なセキュリティ研究ツールです。許可されたセキュリティテストおよび研究目的でのみ使用してください。有効な書面による許可を得たセキュリティ専門家のみを対象としています。
+{{< /alert >}}
+
 ## 製品特長
 
 ![Shark Jack Cable](/images/products/hak5/card/shark-jack-cable.png)
@@ -39,7 +43,7 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/shark-jack/getting-started/shark-jack-basics) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/shark/cable) |
 
 {{< alert >}}

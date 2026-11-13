@@ -231,7 +231,7 @@ Tomato имеет完善的 поддержку встроенного WiFi для
 | Официальный веб-сайт FreshTomato | Список поддерживаемых версий и устройств FreshTomato | https://freshtomato.org/ | ✅ Проверено | 2026-09-03 |
 | Официальная документация OpenWrt | Драйверы USB WiFi и无线 настройки (для сравнения) | https://openwrt.org/docs/start | ✅ Проверено | 2026-09-03 |
 | Официальный форум OpenWrt | Обсуждение драйверов USB WiFi (для сравнения) | https://forum.openwrt.org/ | ✅ Проверено | 2026-09-03 |
-| Обзор продуктов ALFA Network (Yupitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
+| Обзор продуктов ALFA Network (Yopitek) | Спецификации текущих продуктов ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Проверено | 2026-09-03 |
 
 См. также статьи: [Поддерживает ли ALFA Wireless Network Card DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[Поддерживает ли ALFA Wireless Network Card OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[Поддерживает ли ALFA Wireless Network Card NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Поддерживает ли ALFA Wireless Network Card NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 

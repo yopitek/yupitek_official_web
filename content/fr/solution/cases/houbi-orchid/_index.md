@@ -13,7 +13,7 @@ tags: ["Exposition Agricole", "Production Événementielle", "Tainan"]
 **Type** : Projection pour Exposition à Thème Agricole
 **Thème** : Culture des Orchidées × Visualisation Technologique
 
-Houbi est l'une des principales régions productrices d'orchidées de Taïwan, et l'Exposition annuelle des Orchidées est un événement culturel local majeur. Yupitek a conçu un espace de projection immersive pour l'exposition, mettant en valeur la beauté naturelle des orchidées grâce à une technologie visuelle grand format, afin d'attirer un public plus jeune et d'approfondir l'appréciation du patrimoine agricole taïwanais.
+Houbi est l'une des principales régions productrices d'orchidées de Taïwan, et l'Exposition annuelle des Orchidées est un événement culturel local majeur. Yopitek a conçu un espace de projection immersive pour l'exposition, mettant en valeur la beauté naturelle des orchidées grâce à une technologie visuelle grand format, afin d'attirer un public plus jeune et d'approfondir l'appréciation du patrimoine agricole taïwanais.
 
 ## Solution Technique
 

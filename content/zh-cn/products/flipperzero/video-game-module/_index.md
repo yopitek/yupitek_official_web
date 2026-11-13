@@ -3,6 +3,8 @@ title: "Video Game Module for Flipper Zero — 视频游戏扩展模块"
 description: "Flipper Zero 官方视频游戏模块，基于 RP2040，支持视频输出，为 Flipper Zero 加入游戏与显示功能。"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/flipperzero/video-game-module.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero 扩展", "RP2040", "视频输出", "游戏模块"]
@@ -17,8 +19,14 @@ Video Game Module 是 Flipper Zero 的官方游戏扩展模块，基于 Raspberr
 | 项目 | 规格 |
 |------|------|
 | 处理器 | RP2040（双核心 ARM Cortex-M0+） |
-| 视频输出 | 支持外部屏幕连接 |
+| 视频输出 | DVI-D 视频输出，可连接外部电视、显示器或投影仪 |
 | 连接方式 | Flipper Zero GPIO |
+
+## 官方资源
+
+| 资源 | 链接 |
+|------|------|
+| Video Game Module 官方产品页面 | [flipper.net](https://flipper.net/products/video-game-module-for-flipper-zero) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/video-game-module.png" alt="Video Game Module for Flipper Zero" />

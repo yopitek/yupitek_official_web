@@ -1,6 +1,6 @@
 ---
 title: "SDRLAB 软件定义无线电模块"
-description: "榆阖科技代理 SDRLAB SDR 软件定义无线电模块与 Flipper Zero 扩展板，适用无线通信研究、业余无线电及 RF 信号分析。"
+description: "榆阖科技提供 SDRLAB SDR 软件定义无线电模块与 Flipper Zero 扩展板，适用无线通信研究、业余无线电及 RF 信号分析。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -30,7 +30,7 @@ SDRLAB 提供软件定义无线电（SDR）模块及 Flipper Zero 扩展配件�
     Flipper Zero NRF24L01+ 无线模块，支持 2.4GHz 无线研究。
   {{< /card >}}
   {{< card title="Flipper Zero WiFi 多板" href="/zh-cn/products/sdrlab/flipper-wifi-multiboard/" image="/images/products/sdrlab/flipper-wifi-multiboard.png" >}}
-    Flipper Zero Wi-Fi 多功能扩展板，整合 ESP8266 Wi-Fi 模块。
+    Flipper Zero Wi-Fi 多功能扩展板，含 NRF24、GPIO、CC1101 与 GPS 模块。
   {{< /card >}}
   {{< card title="Flipper Zero 以太网测试模块" href="/zh-cn/products/sdrlab/flipper-ethernet/" image="/images/products/sdrlab/flipper-ethernet.png" >}}
     Flipper Zero 有线网络测试扩展模块，支持以太网测试功能。

@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "dd-wrt-rooter-pfsense-sierra-support-comparison"
 tags: ["Sierra Wireless", "DD-WRT", "pfSense", "ROOter"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ja/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ Sierra Wireless のモジュール（EM7455、EM7565、MC7455）をルーター�
 
 多くの愛好家や企業の MIS 担当者は、Sierra Wireless の EM7455、EM7565、MC7455 を入手したら、まずオープンソースルーターに組み込んでフェイルオーバー WAN（Failover WAN）として使おうと考えます。ただし、メーカーが特定のオープンソースファームウェアの「サポート」を保証することは決してありません。重要なのはオペレーティングシステムの基盤です。公式仕様書を調べて、互換性の真相をまとめました。
 
-> 参考資料：Sierra Wireless 公式仕様書（EM7455、EM7565、MC7455）。本記事は Yupitek（榆閤科技）が編集しました。
+> 参考資料：Sierra Wireless 公式仕様書（EM7455、EM7565、MC7455）。本記事は Yopitek（榆閤科技）が編集しました。
 
 ---
 
@@ -85,7 +85,7 @@ Sierra Wireless のモジュール（EM7455、EM7565、MC7455）をルーター�
 
 ## 購入情報（Call To Action）
 
-お手持ちのルーターにこれらのモデムが取り付けられるか不明ですか？あるいは適切な変換ボードやアンテナが見つかりませんか？Yupitek（榆閤科技）では、完全なハードウェアソリューションと技術相談を提供しています。
+お手持ちのルーターにこれらのモデムが取り付けられるか不明ですか？あるいは適切な変換ボードやアンテナが見つかりませんか？Yopitek（榆閤科技）では、完全なハードウェアソリューションと技術相談を提供しています。
 ご連絡はこちら：**sales@yupitek.com**
 製品ページ：[EM7455](https://yupitek.com/ja/products/sierra/em7455/)｜[EM7565](https://yupitek.com/ja/products/sierra/em7565/)｜[MC7455](https://yupitek.com/ja/products/sierra/mc7455/)
 

@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "ubuntu-debian-sierra-4g-5g-setup-guide"
 tags: ["Sierra Wireless", "Ubuntu", "Debian", "Linux", "GNSS"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/en/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ Want to install a Sierra Wireless module (EM7455, EM7565, MC7455, EM919x) on Ubu
 
 Many people receive an EM7455, EM7565, EM919x, or MC7455, plug it into the motherboard, and then have no idea how to get online. In fact, support for these modules on Linux is very mature. They all communicate over USB using the QMI or MBIM protocols. In this guide we walk you through the setup one step at a time.
 
-> All specifications and technical references come from the Sierra Wireless official documentation. Compiled by Yupitek.
+> All specifications and technical references come from the Sierra Wireless official documentation. Compiled by Yopitek.
 
 ---
 
@@ -146,7 +146,7 @@ Working with Sierra modules on Linux is not as hard as it seems. Confirm the har
 
 ## Where to Buy (Call To Action)
 
-Want to integrate a Sierra module into your Ubuntu device? Yupitek offers complete module, antenna, and adapter board solutions, plus first line technical support.
+Want to integrate a Sierra module into your Ubuntu device? Yopitek offers complete module, antenna, and adapter board solutions, plus first line technical support.
 Contact us: **sales@yupitek.com**
 Browse the range: [Sierra Wireless Series](https://yupitek.com/en/products/sierra/)
 

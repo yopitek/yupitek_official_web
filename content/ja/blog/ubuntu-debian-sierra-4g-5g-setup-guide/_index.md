@@ -8,7 +8,7 @@ showTableOfContents: true
 slug: "ubuntu-debian-sierra-4g-5g-setup-guide"
 tags: ["Sierra Wireless", "Ubuntu", "Debian", "Linux", "GNSS"]
 categories: ["Technical"]
-author: "Yupitek"
+author: "Yopitek"
 lastmod: 2026-07-31
 related_product: "/ja/products/sierra/"
 faq:
@@ -28,7 +28,7 @@ Ubuntu、Debian、Linux Mint で Sierra Wireless のモジュール（EM7455、E
 
 EM7455、EM7565、EM919x、MC7455 を入手してマザーボードに挿しても、インターネットへの接続設定方法がわからないという方は多いです。実は、これらのモジュールの Linux でのサポートは非常に成熟しています。すべて USB 経由で QMI または MBIM プロトコルを使用して通信します。ここからは、ステップごとに設定方法を説明します。
 
-> 仕様値と技術的な根拠は、すべて Sierra Wireless 公式仕様書に基づいています。本記事は Yupitek（榆閤科技）が編集しました。
+> 仕様値と技術的な根拠は、すべて Sierra Wireless 公式仕様書に基づいています。本記事は Yopitek（榆閤科技）が編集しました。
 
 ---
 
@@ -146,7 +146,7 @@ Linux での Sierra モジュールの利用は、想像するほど難しくあ
 
 ## 購入情報（Call To Action）
 
-Sierra モジュールを Ubuntu デバイスに統合したいですか？Yupitek（榆閤科技）では、モジュール、アンテナ、変換ボードの完全なソリューションに加え、最前線の技術サポートを提供しています。
+Sierra モジュールを Ubuntu デバイスに統合したいですか？Yopitek（榆閤科技）では、モジュール、アンテナ、変換ボードの完全なソリューションに加え、最前線の技術サポートを提供しています。
 ご連絡はこちら：**sales@yupitek.com**
 製品情報はこちら：[Sierra Wireless シリーズ](https://yupitek.com/ja/products/sierra/)
 

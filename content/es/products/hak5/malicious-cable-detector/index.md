@@ -2,7 +2,7 @@
 title: "Malicious Cable Detector"
 date: 2025-01-01
 draft: false
-description: "La única herramienta del mundo capaz de detectar todos los cables USB maliciosos conocidos, utilizando análisis de potencia de canal lateral a 200,000 análisis por segundo."
+description: "Herramienta dedicada capaz de detectar todos los cables USB maliciosos conocidos, utilizando análisis de potencia de canal lateral a 200,000 análisis por segundo."
 featureimage: "/images/products/hak5/malicious-cable-detector.png"
 ---
 
@@ -10,11 +10,12 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 
 ![O.MG Malicious Cable Detector](/images/products/hak5/card/malicious-cable-detector.png)
 
-- **Única herramienta de detección en el mundo**: Capaz de detectar todos los cables USB maliciosos conocidos (incluyendo O.MG Cable)
+- **Detección defensiva de cables maliciosos**: Herramienta defensiva de inspección de cables USB que detecta todos los cables USB maliciosos conocidos (incluyendo O.MG Cable)
 - **Análisis de potencia de canal lateral**: 200,000 análisis por segundo; detecta el chip implantado incluso en reposo total
 - **Función USB Data Blocker**: Proporciona carga segura bloqueando la transferencia de datos simultáneamente
 - **Fácil de usar**: Inserte el cable en el detector y luego en el puerto USB; el LED muestra el resultado
-- **Cobertura completa**: Cubre todos los tipos de cables USB maliciosos conocidos en el mercado
+- **Cobertura completa**: Cubre todos los tipos de cables USB maliciosos conocidos
+- **Interpretación del LED**: La actividad del LED indica que hay componentes activos dentro del cable. Algunos cables legítimos (como los chips Apple MFi) también los tienen y los cargadores con ruido pueden encender el LED; pruebe con otra fuente de alimentación. Es una verificación de primera línea, no sustituye el análisis forense de laboratorio
 
 ## Especificaciones Principales
 
@@ -25,6 +26,7 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 | Interfaz | USB-A (conexión al PC) + USB-A (inserción del cable a examinar) |
 | Función adicional | USB Data Blocker (carga segura, bloqueo de transferencia de datos) |
 | Indicador | LED de actividad |
+| Corriente de carga | Diseñada para 500-900 mA |
 
 ## Entornos de Aplicación
 
@@ -39,7 +41,7 @@ featureimage: "/images/products/hak5/malicious-cable-detector.png"
 | Recurso | Enlace |
 |---------|--------|
 | 📖 Documentación oficial | [Ver en línea](https://github.com/O-MG/MaliciousCableDetector/wiki) |
-| ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/malicious-cable-detector) |
+| 🛒 Página oficial del producto | [Tienda Hak5](https://shop.hak5.org/products/malicious-cable-detector-by-o-mg) |
 
 {{< alert >}}
 ¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).

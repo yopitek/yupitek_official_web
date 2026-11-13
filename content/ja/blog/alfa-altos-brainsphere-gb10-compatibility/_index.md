@@ -236,7 +236,7 @@ Altos aiGeniのDockerコンテナ内でALFAネットワークカードを使用�
 | Altos Computing 公式ウェブサイト | BrainSphere GB10 F1 產品情報 | https://www.altoscomputing.com/en-Us | ✅ 已検核 | 2026-09-03 |
 | NVIDIA DGX Spark 公式ページ | GB10 平台情報 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 已検核 | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux 驅動 | https://github.com/morrownr/8812au-20210820 | ✅ 已検核 | 2026-09-03 |
-| ALFA Network 產品総覧（Yupitek） | ALFA 現役製品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已検核 | 2026-09-03 |
+| ALFA Network 產品総覧（Yopitek） | ALFA 現役製品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已検核 | 2026-09-03 |
 
 関連記事：[ALFA 无線网卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无線网卡是否支援 ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA 无線网卡是否支援 GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA 无線网卡是否支援 MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
 

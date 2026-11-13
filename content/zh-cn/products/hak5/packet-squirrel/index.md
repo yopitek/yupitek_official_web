@@ -6,6 +6,10 @@ description: "口袋大小的以太网中间人多功能工具，支持 WireGuar
 featureimage: "/images/products/hak5/packet-squirrel.png"
 ---
 
+{{< alert "warning" >}}
+**法律使用声明**: Packet Squirrel 为专业安全研究工具，仅限用于经授权的安全测试与研究，且仅供持有有效书面授权的安全专业人员使用。
+{{< /alert >}}
+
 ## 产品特色
 
 ![Packet Squirrel Mark II](/images/products/hak5/card/packet-squirrel.png)
@@ -29,6 +33,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 | 默认管理 IP | 172.16.32.1 |
 | 操作系统 | Linux-based |
 | LED | 多色状态 LED |
+| 尺寸／重量 | 50 × 40 × 15 mm, 24 g |
 
 ## 应用环境
 
@@ -43,7 +48,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 | 资源 | 链接 |
 |------|------|
-| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
+| 📖 官方使用文件 | [在线查看](https://documentation.hak5.org/packet-squirrel-mark-ii/packet-squirrel-mark-ii-by-hak5) |
 | ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/squirrel/mk2) |
 
 {{< alert >}}

@@ -1,8 +1,11 @@
 ---
 title: "ACS ACR122U — USB NFC 讀卡機"
-description: "ACS ACR122U，USB NFC 讀卡機，支援 ISO 14443 A/B、MIFARE、FeliCa，13.56MHz，適合 NFC 研究與應用開發。"
+description: "ACS ACR122U USB NFC 讀卡機，13.56 MHz，支援 ISO 14443 A/B、MIFARE、FeliCa，符合 PC/SC，台灣購買請洽榆閤科技。"
+seo_title: "ACR122U ACS 台灣 | Yopitek"
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR122U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
@@ -17,6 +20,8 @@ faq:
 ---
 
 ACR122U
+
+ACS ACR122U 是 USB NFC 讀寫器，13.56 MHz，支援 ISO 14443 A/B、MIFARE、FeliCa，讀取最遠 50 mm。榆閤科技於台灣提供此產品，歡迎洽詢報價。
 
 ## 產品概述
 
@@ -40,7 +45,7 @@ ACR122U 是 ACS 基於 13.56 MHz RFID 技術的 PC 連接式非接觸智慧卡�
 | MTBF | 408,500 小時 |
 | LED | 1 個雙色 紅/綠（使用者可控） |
 | 蜂鳴器 | 單音調（使用者可控） |
-| 合規認證 | PC/SC、CCID、CE、FCC、RoHS |
+| 合規認證 | PC/SC、CCID、CE、FCC、RoHS 2 |
 
 ## 主要功能
 
@@ -79,6 +84,12 @@ ACR122U 是 ACS 基於 13.56 MHz RFID 技術的 PC 連接式非接觸智慧卡�
 | 資源 | 連結 |
 |----------|------|
 | 📄 ACR122U 規格書 (PDF) | [下載 PDF](/docs/acr/ACR122U_spec.pdf) |
+
+## 官方資源
+
+| 資源 | 連結 |
+|------|------|
+| ACS ACR122U 官方頁面 | [acs.com.hk](https://www.acs.com.hk/cn/products/73/acr122u-nfc-%E9%9D%9E%E6%8E%A5%E8%A7%B8%E5%BC%8F%E6%99%BA%E8%83%BD%E5%8D%A1%E8%AF%BB%E5%86%99%E5%99%A8/) |
 
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC 讀卡機" />

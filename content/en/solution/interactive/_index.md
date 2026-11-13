@@ -1,6 +1,6 @@
 ---
 title: "Interactive Projection"
-description: "Yupitek Interactive Projection solutions: touch interaction, motion detection, and interactive floor projection for exhibitions, education, and commercial spaces."
+description: "Yopitek Interactive Projection solutions: touch interaction, motion detection, and interactive floor projection for exhibitions, education, and commercial spaces."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

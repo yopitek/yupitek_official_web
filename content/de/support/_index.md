@@ -1,6 +1,6 @@
 ---
 title: "Technische Unterstützung & Treiber-Downloads"
-description: "Yupitek offizieller Treiber-Download-Center für ALFA Network, HAK5, Flipper Zero und Ubiquiti Produkte."
+description: "Yopitek offizieller Treiber-Download-Center für ALFA Network, HAK5, Flipper Zero und Ubiquiti Produkte."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,9 +13,9 @@ Nachfolgend finden Sie offizielle Treiber- und Firmware-Download-Links. Bitte be
 Laden Sie Treiber immer von offiziellen Markenwebseiten herunter, um Sicherheit und Kompatibilität zu gewährleisten.
 {{< /alert >}}
 
-## Yupitek Wiki
+## Yopitek Wiki
 
-Anleitungen zur Einrichtung, Informationen zur Linux-Kompatibilität oder Schritte zur Fehlerbehebung? Besuchen Sie das [Yupitek Wiki](https://doc.yupitek.com/) – unsere technische Wissensdatenbank zu ALFA Network, Hak5, Flipper Zero, SDRLAB und ACS.
+Anleitungen zur Einrichtung, Informationen zur Linux-Kompatibilität oder Schritte zur Fehlerbehebung? Besuchen Sie das [Yopitek Wiki](https://doc.yupitek.com/) – unsere technische Wissensdatenbank zu ALFA Network, Hak5, Flipper Zero, SDRLAB und ACS.
 
 ## ALFA Network Treiber
 

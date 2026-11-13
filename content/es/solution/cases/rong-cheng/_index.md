@@ -13,7 +13,7 @@ tags: ["exhibición corporativa", "evento y espectáculo", "temática ambiental"
 **Tipo**: Proyección para exposición corporativa con temática de RSE
 **Tema**: Sostenibilidad ambiental, economía circular
 
-Rong Cheng Paper organizó una exposición corporativa con temática ambiental. Yupitek proporcionó un sistema de proyección inmersiva que presentó los conceptos de economía circular y desarrollo sostenible a los visitantes mediante impactantes proyecciones visuales, reforzando la imagen ambiental corporativa.
+Rong Cheng Paper organizó una exposición corporativa con temática ambiental. Yopitek proporcionó un sistema de proyección inmersiva que presentó los conceptos de economía circular y desarrollo sostenible a los visitantes mediante impactantes proyecciones visuales, reforzando la imagen ambiental corporativa.
 
 ## Solución Técnica
 

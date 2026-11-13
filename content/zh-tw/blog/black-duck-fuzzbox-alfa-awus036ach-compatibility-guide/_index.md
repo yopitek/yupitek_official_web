@@ -32,7 +32,7 @@ WLAN 協定模糊測試（通常稱為無線負面測試，wireless negative tes
 
 為了瞭解這個問題，安全團隊會使用 **Black Duck FuzzBox**（前身為 Synopsys Defensics FuzzBox），這是一個專用的軟體與硬體執行環境。為了進行測試，FuzzBox OS 必須與相容且高效能的 USB 無線網路卡配對，且該網路卡需支援穩定的監聽模式（monitor mode）與可靠的原始封包注入（raw packet injection）。
 
-在此相容性指南中，我們分析了 Yupitek 現有的 ALFA Network 產品目錄，解釋了為什麼較新的 Wi-Fi 6/6E 網路卡在 FuzzBox 下無法正常運作，並針對業界標準的首選：**ALFA AWUS036ACH** (RTL8812AU) 提供逐步安裝指南。
+在此相容性指南中，我們分析了 Yopitek 現有的 ALFA Network 產品目錄，解釋了為什麼較新的 Wi-Fi 6/6E 網路卡在 FuzzBox 下無法正常運作，並針對業界標準的首選：**ALFA AWUS036ACH** (RTL8812AU) 提供逐步安裝指南。
 
 ---
 
@@ -75,7 +75,7 @@ FuzzBox OS 作為無週邊（headless）Linux 容器平台運作。軟體規格�
 
 ## 3. ALFA 網路卡分析與 GitHub 驅動程式位置
 
-從目前的現役型號中選擇正確的網路卡至關重要。讓我們將 Yupitek 的 ALFA Network 現貨庫存與 FuzzBox OS 相容性矩陣進行比較。
+從目前的現役型號中選擇正確的網路卡至關重要。讓我們將 Yopitek 的 ALFA Network 現貨庫存與 FuzzBox OS 相容性矩陣進行比較。
 
 ### 3.1 現行 ALFA 型號嚴格評估
 ALFA Network 使用不同的晶片組製造網路卡。只有特定的晶片組才支援 FuzzBox 的原始注入引擎。
@@ -237,8 +237,8 @@ lrwxrwxrwx 1 root root 23 Jun 04 13:30 phy0 -> /sys/class/net/wlan0
 *   **訊號最佳化 (強烈推薦)：** 搭配使用 **ALFA APA-M25** 或 **APA-M25-6E** 雙頻定向面板天線。將原廠全向天線替換為這些高增益定向天線面板，可將無線電訊號直接聚焦在受測系統 (SUT) 上，減少環境雜訊干擾並提高注入成功率。
 
 ### 8.2 諮詢與訂購
-Yupitek 是 ALFA Network 產品的授權代理商，提供在地支援與批量供應。如需索取產品報價、進行大宗訂購或諮詢我們的技術支援團隊：
-*   請造訪 [Yupitek 聯絡我們頁面](/zh-tw/contact/)
+Yopitek 是 ALFA Network 產品的授權代理商，提供在地支援與批量供應。如需索取產品報價、進行大宗訂購或諮詢我們的技術支援團隊：
+*   請造訪 [Yopitek 聯絡我們頁面](/zh-tw/contact/)
 *   或直接寄信至 **sales@yupitek.com**
 
 我們的工程團隊將協助您取得支援 Black Duck FuzzBox 協定模糊測試工作流程所需的精確無線硬體配置。

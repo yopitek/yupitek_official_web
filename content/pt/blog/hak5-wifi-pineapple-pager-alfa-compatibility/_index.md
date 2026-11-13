@@ -208,7 +208,7 @@ A integração de uma placa sem fio da ALFA Network com o HAK5 WiFi Pineapple Pa
 - **Para implantações rápidas e sem complicações**: Adquira o [ALFA AWUS036ACM](https://yupitek.com/pt/products/alfa/awus036acm) pela estabilidade de seu driver MediaTek sob o OpenWrt Kernel 6.6 e sua facilidade de instalação.
 - **Estabilidade de energia**: Certifique-se sempre de contar com um **Hub USB com alimentação externa** para garantir a saída de sinal ideal das placas sem fio de alta potência e evitar desconexões inesperadas.
 
-Se desejar realizar consultas técnicas adicionais, cotações de hardware ou requerer compilações personalizadas por meio do SDK do OpenWrt, não hesite em entrar em contato com a **Equipe de Suporte Técnico da Yupitek**:
+Se desejar realizar consultas técnicas adicionais, cotações de hardware ou requerer compilações personalizadas por meio do SDK do OpenWrt, não hesite em entrar em contato com a **Equipe de Suporte Técnico da Yopitek**:
 
 - 🌐 Site oficial: [www.yupitek.com](https://www.yupitek.com)
 - 📧 E-mail de suporte: [sales@yupitek.com](mailto:sales@yupitek.com)

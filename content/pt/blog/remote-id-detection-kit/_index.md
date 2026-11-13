@@ -20,7 +20,7 @@ faq:
   - question: "A receção passiva é legal?"
     answer: "Receber as transmissões públicas de Remote ID de drones é legal, equivalente a ler informação pública. No entanto, a interferência ativa (jamming) está estritamente regulada e não faz parte deste kit."
 ---
-> Equipa técnica da Yupitek | Distribuidor autorizado da ALFA Network em Taiwan
+> Equipa técnica da Yopitek | Distribuidor autorizado da ALFA Network em Taiwan
 
 {{< tldr >}}
 O kit de deteção de Remote ID utiliza o modo monitor da placa **ALFA AWUS036ACH** para receber passivamente a informação de identidade e posição que os drones devem transmitir por lei (o equivalente a uma «matrícula aérea»), oferecendo aos gestores de segurança uma ferramenta legal e de baixo custo para a consciência situacional.
@@ -290,9 +290,9 @@ Se é a primeira vez que se depara com a tecnologia de regulamentação / antidr
 4. [kismetwireless/kismet — Estrutura de deteção sem fios](https://github.com/kismetwireless/kismet)
 5. [alphafox02/antsdr_dji_droneid — Descodificação SDR DJI OcuSync DroneID](https://github.com/alphafox02/antsdr_dji_droneid)
 6. [morrownr/8812au-20210629 — Driver Linux RTL8812AU de monitor/injeção](https://github.com/morrownr/8812au-20210629)
-7. [Página do produto ALFA AWUS036ACH (Yupitek)](https://yupitek.com/pt/products/alfa/awus036ach/)
-8. [Contacto e pedidos da Yupitek](https://www.yupitek.com/pt/contact/)
+7. [Página do produto ALFA AWUS036ACH (Yopitek)](https://yupitek.com/pt/products/alfa/awus036ach/)
+8. [Contacto e pedidos da Yopitek](https://www.yupitek.com/pt/contact/)
 
 ---
 
-*Este artigo foi preparado pela equipa técnica da Yupitek. A AWUS036ACH e o hardware relacionado estão disponíveis através da Yupitek como distribuidor autorizado, com suporte técnico.*
+*Este artigo foi preparado pela equipa técnica da Yopitek. A AWUS036ACH e o hardware relacionado estão disponíveis através da Yopitek, com suporte técnico (a Yopitek é distribuidora autorizada da ALFA Network em Taiwan).*

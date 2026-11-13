@@ -13,7 +13,7 @@ tags: ["Aplicação de Defesa", "Fusão Multi-Projetor", "Centro de Comando"]
 **Tipo**: Sistema de projeção para simulação digital de guerra
 **Uso**: Simulação tática, treinamento de comando, simulação de cenários
 
-O Comando da Polícia Militar implementou um sistema digital de simulação de guerra, com a Yupitek responsável pelo planejamento e instalação da parede de projeção de grande escala. A exibição do mapa em tamanho grande permite que os oficiais de comando tenham uma visão clara de toda a tática durante as simulações, aprimorando a eficiência das decisões de comando.
+O Comando da Polícia Militar implementou um sistema digital de simulação de guerra, com a Yopitek responsável pelo planejamento e instalação da parede de projeção de grande escala. A exibição do mapa em tamanho grande permite que os oficiais de comando tenham uma visão clara de toda a tática durante as simulações, aprimorando a eficiência das decisões de comando.
 
 ## Solução Técnica
 

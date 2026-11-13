@@ -1,6 +1,6 @@
 ---
 title: "Taipei 101 — Proyección Mapping en el Icónico Rascacielos"
-description: "Yupitek ejecutó la integración de un sistema de proyección mapping sobre la fachada del Taipei 101, uno de los edificios más reconocidos del mundo, para shows especiales y celebraciones de Año Nuevo."
+description: "Yopitek ejecutó la integración de un sistema de proyección mapping sobre la fachada del Taipei 101, uno de los edificios más reconocidos del mundo, para shows especiales y celebraciones de Año Nuevo."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Taipei 101", "building mapping", "proyección arquitectónica", "Taipei"
 **Tipo**: Building mapping de gran escala sobre rascacielos icónico
 **Temática**: Celebración de Año Nuevo y espectáculos culturales de Taiwán
 
-El Taipei 101 es uno de los edificios más reconocibles del mundo y el símbolo por excelencia de la modernidad taiwanesa. Para complementar su ya famoso show de fuegos artificiales de Año Nuevo y agregar una nueva dimensión al espectáculo, Yupitek fue convocado para integrar un sistema de proyección mapping de gran escala sobre la fachada inferior del rascacielos — una hazaña técnica que requirió superar desafíos únicos de distancia de proyección, luminosidad y coordinación logística en pleno corazón del distrito comercial más activo de Taipei.
+El Taipei 101 es uno de los edificios más reconocibles del mundo y el símbolo por excelencia de la modernidad taiwanesa. Para complementar su ya famoso show de fuegos artificiales de Año Nuevo y agregar una nueva dimensión al espectáculo, Yopitek fue convocado para integrar un sistema de proyección mapping de gran escala sobre la fachada inferior del rascacielos — una hazaña técnica que requirió superar desafíos únicos de distancia de proyección, luminosidad y coordinación logística en pleno corazón del distrito comercial más activo de Taipei.
 
 El sistema proyecta animaciones de alta resolución sobre los primeros 30 pisos de la fachada norte del edificio, creando un telón visual de 150 metros de altura que sirve de marco al show pirotécnico y como atracción autónoma en eventos especiales a lo largo del año.
 

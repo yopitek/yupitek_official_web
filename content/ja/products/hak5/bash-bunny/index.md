@@ -2,22 +2,25 @@
 title: "Bash Bunny Mark II"
 date: 2025-01-01
 draft: false
-description: "HID・ネットワーク・ストレージを同時エミュレートする世界初のマルチベクターUSB攻撃プラットフォームです。完全なDebian Linux環境を搭載しています。"
+description: "HID・ネットワーク・ストレージを同時エミュレートする世界で最も先進的なUSB攻撃プラットフォームです。完全なDebian Linux環境を搭載しています。"
 featureimage: "/images/products/hak5/bash-bunny.png"
 ---
+
+{{< alert "warning" >}}
+**法的使用に関する免責事項**：Bash Bunnyは専門的なセキュリティ研究ツールであり、有効な書面による許可を得たセキュリティ専門家のみが使用できます。
+{{< /alert >}}
 
 ## 製品特長
 
 ![Bash Bunny](/images/products/hak5/card/bash-bunny.png)
 
-- **マルチベクターUSB攻撃プラットフォーム**：世界初。挿入から侵入完了まで最短7秒
+- **マルチベクターUSB攻撃プラットフォーム**：Mark IIは挿入から侵入（plug to pwn）まで最短7秒
 - **マルチデバイスエミュレーション**：HIDキーボード + USB Ethernet + シリアルデバイス + USBストレージを同時エミュレート
 - **完全なLinux環境**：nmap / responder / impacket / metasploitを内蔵
 - **Bluetooth LE**：リモートトリガーおよびジオフェンシングに対応
 - **大容量拡張**：MicroSD XC対応（最大2TB）による大規模データ漏洩
 - **高性能ハードウェア**：クアッドコームARM CPU、8 GB デスクトップ級SSD、前世代比2倍のRAM
 - **クイック切替**：3段スイッチ + RGB LEDによるPayload高速切替
-- **Cloud C²対応**：遠隔管理、専用シリアルコンソールによるrootシェルアクセス
 
 ## 主な仕様
 
@@ -44,7 +47,7 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/bash-bunny/bash-bunny-by-hak5/) |
+| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/bash-bunny) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/bunny) |
 
 {{< alert >}}

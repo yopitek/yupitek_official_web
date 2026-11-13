@@ -3,6 +3,8 @@ title: "ACS ACR1552U — Lector NFC USB IV"
 description: "ACS ACR1552U, lector NFC USB de cuarta generación, con soporte multi-protocolo mejorado, ideal para control de acceso empresarial, firma electrónica y verificación de identidad."
 date: 2026-03-12
 draft: false
+featureimage: "/images/products/acr/ACR1552U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
@@ -25,13 +27,21 @@ El ACR1552U es un Lector NFC USB IV compatible con CCID y PC/SC, basado en tecno
 | Interfaz USB | USB 2.0 Full Speed (12 Mbps) |
 | Ranura SAM | 1 × ISO 7816 Class A (5V), tamaño SIM estándar |
 | Velocidad Lectura/Escritura SAM | 13.4 Kbps – 1,250 Kbps |
-| Frecuencia de Reloj SAM | 5 MHz, hasta 10 MHz |
+| Frecuencia de Reloj SAM | 5 MHz (10 MHz bajo solicitud especial) |
 | Protocolo SAM | T=0, T=1 |
 | Protocolos | ISO/IEC 14443-A, -B, ISO/IEC 15693, ISO/IEC 18092 |
-| LED | Controlable por el usuario (configurable) |
+| Modelos | USB Type-A: ACR1552U-M1; USB Type-C: ACR1552U-MF |
+| Dimensiones | 98.0 × 65.0 × 12.8 mm |
+| Peso | 89 g (±5 g, USB Type-A) |
+| Color | Blanco |
+| Longitud del Cable | 1 m (fijo) |
+| Corriente de Alimentación | Máx. 300 mA |
+| FIDO / FIDO2 | Compatible con dispositivos y tarjetas NFC FIDO/FIDO2 (p. ej., PocketKey) |
+| LED | 1 × LED programable (azul/verde), controlable por el usuario |
 | Buzzer | Controlable por el usuario (configurable) |
-| Temperatura de Operación | 0°C – 60°C, 90% HR (sin condensación) |
-| Cumplimiento | PC/SC, CCID, CE, FCC, RoHS |
+| Temperatura de Operación | -20°C – 70°C, 90% HR (sin condensación) |
+| MTBF | 500,000 horas |
+| Cumplimiento | PC/SC, CCID, CE, UKCA, FCC, VCCI, MIC, J-LIS, RoHS, REACH, WEEE, Microsoft WHQL |
 | Adicional | Protección contra cortocircuitos, actualización de firmware USB |
 
 ## Características Principales

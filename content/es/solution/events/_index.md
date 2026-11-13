@@ -1,6 +1,6 @@
 ---
 title: "Eventos y Exposiciones"
-description: "Soluciones de proyección para eventos y exposiciones de Yupitek: efectos visuales para conciertos, galas corporativas, exposiciones de arte y stands en ferias; servicios integrales de proyección."
+description: "Soluciones de proyección para eventos y exposiciones de Yopitek: efectos visuales para conciertos, galas corporativas, exposiciones de arte y stands en ferias; servicios integrales de proyección."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showTableOfContents: false
 
 ## Servicios de Proyección para Eventos y Exposiciones
 
-Las necesidades de proyección en eventos difieren completamente de las exposiciones permanentes: montaje rápido, configuración flexible, alto brillo para entornos de iluminación complejos y desmontaje eficiente al finalizar el evento. Yupitek ofrece servicios integrales de alquiler de equipos de proyección, soporte técnico y monitoreo en sitio.
+Las necesidades de proyección en eventos difieren completamente de las exposiciones permanentes: montaje rápido, configuración flexible, alto brillo para entornos de iluminación complejos y desmontaje eficiente al finalizar el evento. Yopitek ofrece servicios integrales de alquiler de equipos de proyección, soporte técnico y monitoreo en sitio.
 
 ## Tipos de Servicio
 

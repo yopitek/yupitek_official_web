@@ -1,6 +1,6 @@
 ---
 title: "Mapping Arquitectónico Building Mapping"
-description: "Soluciones de mapping arquitectónico de Yupitek: 3D Mapping en fachadas de grandes edificios, shows de proyección para festivales, proyección para eventos de marca, con selección de equipos e integración técnica completa."
+description: "Soluciones de mapping arquitectónico de Yopitek: 3D Mapping en fachadas de grandes edificios, shows de proyección para festivales, proyección para eventos de marca, con selección de equipos e integración técnica completa."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ showTableOfContents: false
 
 El mapping arquitectónico (Building Mapping) transforma las fachadas de los edificios en lienzos visuales dinámicos. A través de la tecnología de alineación de proyección precisa, la luz y la estructura se fusionan perfectamente para crear experiencias visuales inmersivas e impactantes.
 
-Yupitek tiene una amplia experiencia en la ejecución de shows de mapping a gran escala, desde fachadas de palacios municipales hasta celebraciones de aniversarios corporativos. Ofrecemos servicios integrales que cubren planificación de equipos, selección de proyectores y soporte técnico en sitio.
+Yopitek tiene una amplia experiencia en la ejecución de shows de mapping a gran escala, desde fachadas de palacios municipales hasta celebraciones de aniversarios corporativos. Ofrecemos servicios integrales que cubren planificación de equipos, selección de proyectores y soporte técnico en sitio.
 
 ## Tecnologías Principales
 

@@ -14,7 +14,7 @@ tags: ["O.MG", "HID Injection", "USB Adapter"]
 
 ## Produktübersicht
 
-Der O.MG Adapter erscheint als gewöhnlicher USB-Adapter, der mit bestehenden USB-Kabeln kombiniert werden kann und dabei drahtlose HID-Injection-Funktionalität über WLAN integriert. Er ist dafür konzipiert, das Sicherheitsbewusstsein der Benutzer gegenüber normal aussehenden USB-Adaptern zu bewerten.
+Der O.MG Adapter erscheint als gewöhnlicher USB-Adapter, der mit bestehenden USB-Kabeln kombiniert werden kann und dabei drahtlose HID-Injection-Funktionalität über WLAN integriert. Er ist dafür konzipiert, dass Red Teams Angriffsszenarien versierter Angreifer nachbilden und Verteidigungsteams neue Erkennungsmöglichkeiten testen können; er eignet sich auch für Schulung und Training.
 
 {{< gallery >}}
   <img src="/images/products/hak5/omg-adapter.png" alt="HAK5 O.MG Adapter" />

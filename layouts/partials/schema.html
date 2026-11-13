@@ -12,7 +12,7 @@
     "publisher": {
       "@type": "Organization",
       "@id": "https://yupitek.com/#organization",
-      "name": "Yupitek",
+      "name": "Yopitek Ltd",
       "url": "https://yupitek.com"
     }
   }
@@ -45,7 +45,7 @@
       "publisher": {
         "@type": "Organization",
         "@id": "https://yupitek.com/#organization",
-        "name": "Yupitek",
+        "name": "Yopitek Ltd",
         "url": "https://yupitek.com"
       },
       {{ with .PublishDate }}"copyrightYear": "{{ .Format "2006" }}",{{ end }}
@@ -67,7 +67,7 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         {{- $position := 0 -}}
-        {{- range .Ancestors -}}
+        {{- range .Ancestors.Reverse -}}
           {{- if not .IsHome -}}
             {{- $position = add $position 1 -}}
             {
@@ -87,6 +87,25 @@
         }
       ]
     }
+    {{- if eq .Section "products" -}}
+      {{- $depth := len .Ancestors -}}
+      {{- $brandNames := dict "acr" "ACS" "flipperzero" "Flipper Zero" "hak5" "Hak5" "sdrlab" "OpenSourceSDRLab" -}}
+      {{- $brandKey := index (split (strings.TrimPrefix "/" .RelPermalink) "/") 2 -}}
+      {{- $seller := dict "@type" "Organization" "@id" "https://yupitek.com/#organization" "name" "Yupitek" "url" "https://yupitek.com" -}}
+      {{- if and (eq $depth 3) (isset $brandNames $brandKey) -}}
+        {{- $product := dict "@context" "https://schema.org" "@type" "Product" "name" .Title "url" .Permalink "brand" (dict "@type" "Brand" "name" (index $brandNames $brandKey)) "inLanguage" .Site.Language.Locale -}}
+        {{- with .Description }}{{ $product = merge $product (dict "description" .) }}{{ end -}}
+        {{- with .Params.featureimage }}{{ $product = merge $product (dict "image" (. | absURL)) }}{{ end -}}
+        ,{{ $product | jsonify | safeJS }}
+      {{- else if and (eq $depth 2) (isset $brandNames $brandKey) -}}
+        {{- $items := slice -}}
+        {{- range $i, $p := .Pages.ByWeight -}}
+          {{- $items = $items | append (dict "@type" "ListItem" "position" (add $i 1) "url" $p.Permalink "name" $p.Title) -}}
+        {{- end -}}
+        ,{{ dict "@context" "https://schema.org" "@type" "CollectionPage" "name" .Title "url" .Permalink "inLanguage" .Site.Language.Locale "publisher" $seller | jsonify | safeJS }}
+        ,{{ dict "@context" "https://schema.org" "@type" "ItemList" "name" .Title "numberOfItems" (len $items) "itemListElement" $items | jsonify | safeJS }}
+      {{- end -}}
+    {{- end -}}
     {{- if and (or (eq .Section "blog") (eq .Section "products")) .Params.faq -}},{{- end -}}
     {{- if and (or (eq .Section "blog") (eq .Section "products")) .Params.faq -}}
     {
@@ -100,7 +119,7 @@
           "name": {{ $item.question | jsonify }},
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": {{ $item.answer | jsonify }}
+            "text": {{ $item.answer | jsonify | safeJS }}
           }
         }
         {{- end -}}

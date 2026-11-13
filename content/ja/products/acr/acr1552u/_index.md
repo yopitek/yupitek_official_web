@@ -25,13 +25,21 @@ ACR1552U は、13.56 MHz 非接触技術を採用した CCID および PC/SC 準
 | USB インターフェース | USB 2.0 フルスピード（12 Mbps） |
 | SAM スロット | 1 × ISO 7816 Class A（5V）、標準 SIM サイズ |
 | SAM 読み取り／書き込み速度 | 13.4 Kbps – 1,250 Kbps |
-| SAM クロック周波数 | 5 MHz、最大 10 MHz |
+| SAM クロック周波数 | 5 MHz（10 MHz は要請により対応） |
 | SAM プロトコル | T=0、T=1 |
 | 対応プロトコル | ISO/IEC 14443-A、-B、ISO/IEC 15693、ISO/IEC 18092 |
-| LED | ユーザー制御可能（設定可能） |
+| 型番 | USB Type-A: ACR1552U-M1、USB Type-C: ACR1552U-MF |
+| 外形寸法 | 98.0 × 65.0 × 12.8 mm |
+| 重量 | 89 g (±5 g, USB Type-A) |
+| カラー | ホワイト |
+| ケーブル長 | 1 m（固定） |
+| 供給電流 | 最大 300 mA |
+| FIDO / FIDO2 | FIDO／FIDO2 対応の NFC デバイスおよびカードをサポート（例：PocketKey） |
+| LED | プログラム可能な LED × 1（青／緑）、ユーザー制御可能 |
 | ブザー | ユーザー制御可能（設定可能） |
-| 動作温度 | 0°C – 60°C、90% RH（結露なし） |
-| 準拠規格 | PC/SC、CCID、CE、FCC、RoHS |
+| 動作温度 | -20°C – 70°C、90% RH（結露なし） |
+| MTBF | 500,000 時間 |
+| 準拠規格 | PC/SC、CCID、CE、UKCA、FCC、VCCI、MIC、J-LIS、RoHS、REACH、WEEE、Microsoft WHQL |
 | 追加機能 | 短絡保護、USB ファームウェアアップグレード |
 
 ## 主な機能

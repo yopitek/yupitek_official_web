@@ -25,13 +25,21 @@ ACR1552U 是 ACS 符合 CCID 及 PC/SC 规范的 USB NFC IV 读卡机，采用 1
 | USB 接口 | USB 2.0 全速（12 Mbps） |
 | SAM 插槽 | 1 × ISO 7816 Class A（5V），标准 SIM 尺寸 |
 | SAM 读写速度 | 13.4 Kbps – 1,250 Kbps |
-| SAM 时钟频率 | 5 MHz，最高 10 MHz |
+| SAM 时钟频率 | 5 MHz（10 MHz 需另行要求） |
 | SAM 协议 | T=0、T=1 |
 | 支持协议 | ISO/IEC 14443-A、-B，ISO/IEC 15693，ISO/IEC 18092 |
-| LED | 用户可控（可配置） |
+| 型号 | USB Type-A: ACR1552U-M1、USB Type-C: ACR1552U-MF |
+| 外观尺寸 | 98.0 × 65.0 × 12.8 mm |
+| 重量 | 89 g (±5 g, USB Type-A) |
+| 颜色 | 白色 |
+| 线长 | 1 m（固定） |
+| 供电电流 | 最大 300 mA |
+| FIDO / FIDO2 | 支持 FIDO／FIDO2 NFC 设备与卡片（例如 PocketKey） |
+| LED | 1 颗可编程 LED（蓝／绿），用户可控 |
 | 蜂鸣器 | 用户可控（可配置） |
-| 工作温度 | 0°C – 60°C，90% RH（非冷凝） |
-| 合规认证 | PC/SC、CCID、CE、FCC、RoHS |
+| 工作温度 | -20°C – 70°C，90% RH（非冷凝） |
+| MTBF | 500,000 小时 |
+| 合规认证 | PC/SC、CCID、CE、UKCA、FCC、VCCI、MIC、J-LIS、RoHS、REACH、WEEE、Microsoft WHQL |
 | 附加功能 | 短路保护、USB 固件升级 |
 
 ## 主要功能

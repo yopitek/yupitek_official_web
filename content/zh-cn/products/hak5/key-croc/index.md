@@ -6,6 +6,10 @@ description: "伪装成键盘直通转接器的硬件键盘侧录器与 HID 注�
 featureimage: "/images/products/hak5/key-croc.png"
 ---
 
+{{< alert "warning" >}}
+**合法使用声明**：Key Croc 为专业安全研究工具，仅限持有有效书面授权的安全专业人员使用。
+{{< /alert >}}
+
 ## 产品特色
 
 ![Key Croc](/images/products/hak5/card/key-croc.png)
@@ -15,6 +19,7 @@ featureimage: "/images/products/hak5/key-croc.png"
 - **关键字触发 Payload**：侧录关键字触发 Payload（Keyword Triggered Payloads）
 - **强大硬件**：四核 1.2 GHz ARM CPU，桌机级 SSD，工具丰富
 - **Cloud C² 整合**：实时查看键盘输入、远程注入键盘 / 管理 Payload / root shell
+- **WiFi 与 SSH 远程访问**：内置 2.4 GHz WiFi，可远程管理并支持 SSH 访问
 - **自动录制**：自动录制插入后的所有键盘输入，无需设置
 - **双 Payload 语言**：支持 DuckyScript™ + Bash Payload
 
@@ -27,6 +32,9 @@ featureimage: "/images/products/hak5/key-croc.png"
 | 接口 | USB-A（连接主机端）、USB-A（连接键盘端）、串行 Console |
 | 操作系统 | Linux |
 | Cloud C² | 支持 |
+| 无线 | 2.4 GHz WiFi (2.412 ~ 2.4835 GHz) |
+| 尺寸 | 74 × 27 × 14 mm |
+| 电源 | 5 W (USB 5V 1A) |
 
 ## 应用环境
 
@@ -39,7 +47,7 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 | 资源 | 链接 |
 |------|------|
-| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/key-croc/keycroc-by-hak5/) |
+| 📖 官方使用文件 | [在线查看](https://documentation.hak5.org/key-croc) |
 | ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/croc) |
 
 {{< alert >}}

@@ -13,6 +13,7 @@ tags: ["Expansión Flipper Zero", "Ethernet", "Prueba de red", "Red cableada"]
 - Permite probar la conectividad de red cableada y verificar el correcto funcionamiento de la asignación DHCP
 - Resistencia térmica de hasta 105°C, apta para una amplia variedad de condiciones ambientales
 - Diseño con placa perforada (perforated board) que soporta expansiones DIY personalizadas
+- Permite hacer ping a una dirección específica para probar la conectividad y la latencia, y configurar una MAC personalizada para ver la IP obtenida
 - Compacto y portátil, listo para diagnóstico en campo al instante
 
 ## Especificaciones
@@ -30,11 +31,11 @@ tags: ["Expansión Flipper Zero", "Ethernet", "Prueba de red", "Red cableada"]
 - Diagnóstico de conectividad de red cableada para ingenieros de redes en campo
 - Verificación del funcionamiento de asignación de servidores DHCP
 - Pruebas de infraestructura de red cableada
-- Herramienta auxiliar para pruebas de penetración de redes
-- Experimentos educativos con protocolos de red
 
 ---
 
 {{< alert >}}
 ¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}
+
+Página oficial del fabricante (OpenSourceSDRLab, no verificada en línea): https://opensourcesdrlab.com/products/for-flipper-zero-ethernet-test-module-wired-network-module-devboard-for-flipper-zero-attachment-accessory

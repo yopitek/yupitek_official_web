@@ -2,22 +2,25 @@
 title: "Bash Bunny Mark II"
 date: 2025-01-01
 draft: false
-description: "Primeira plataforma de ataque USB multivetor do mundo, capaz de emular simultaneamente HID, rede e armazenamento, com ambiente Debian Linux completo."
+description: "A plataforma de ataque USB mais avançada do mundo, capaz de emular simultaneamente HID, rede e armazenamento, com ambiente Debian Linux completo."
 featureimage: "/images/products/hak5/bash-bunny.png"
 ---
+
+{{< alert "warning" >}}
+**Aviso legal de uso**: Bash Bunny é uma ferramenta profissional de pesquisa de segurança destinada exclusivamente a profissionais de segurança com autorização escrita válida.
+{{< /alert >}}
 
 ## Características do Produto
 
 ![Bash Bunny](/images/products/hak5/card/bash-bunny.png)
 
-- **Plataforma de ataque USB multivetor**: Primeira no mundo, da inserção à intrusão completa em apenas 7 segundos
+- **Plataforma de ataque USB multivetor**: O Mark II vai da conexão à invasão (plug to pwn) em apenas 7 segundos
 - **Emulação múltipla de dispositivos**: Emula simultaneamente HID + USB Ethernet + dispositivo serial + armazenamento USB
 - **Ambiente Linux completo**: nmap / responder / impacket / metasploit pré-instalados
 - **Bluetooth LE**: Suporta Remote Triggers e Geofencing
 - **Grande capacidade de expansão**: MicroSD XC (até 2 TB) para exfiltração massiva de dados
 - **Hardware potente**: CPU ARM quad-core, SSD nível desktop 8 GB, o dobro de RAM em relação à geração anterior
 - **Troca rápida**: Interruptor de 3 posições + RGB LED para troca veloz de Payloads
-- **Suporte Cloud C²**: Gerenciamento remoto com acesso dedicado a root shell via Console serial
 
 ## Especificações Principais
 
@@ -44,7 +47,7 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 
 | Recurso | Link |
 |---------|------|
-| 📖 Documentação oficial | [Ver online](https://docs.hak5.org/bash-bunny/bash-bunny-by-hak5/) |
+| 📖 Documentação oficial | [Ver online](https://documentation.hak5.org/bash-bunny) |
 | ⬇️ Firmware e ferramentas | [Portal de downloads Hak5](https://downloads.hak5.org/bunny) |
 
 {{< alert >}}

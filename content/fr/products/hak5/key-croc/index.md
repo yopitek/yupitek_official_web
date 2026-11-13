@@ -23,6 +23,7 @@ Key Croc est un outil de recherche en sécurité qui s'insère entre un clavier 
 - Connectivité sans fil Wi-Fi pour la gestion à distance
 - Capacité d'injection HID
 - Prise en charge de l'accès distant SSH
+- WiFi 2.4 GHz (2.412 ~ 2.4835 GHz), dimensions 74 × 27 × 14 mm, alimentation 5 W (USB 5V 1A)
 
 {{< gallery >}}
   <img src="/images/products/hak5/key-croc.png" alt="HAK5 Key Croc" />

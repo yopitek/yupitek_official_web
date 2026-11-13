@@ -1,49 +1,47 @@
 ---
-title: "SDRLab Flipper Zero WiFi 多板 — 三合一无线研究扩充板"
-description: "Flipper Zero WiFi 多板，NRF24 + CC1101（300-928MHz）+ ESP32（Marauder 固件），三合一无线协议研究，GPIO 供电。"
+title: "SDRLab Flipper Zero WiFi 多板 — 多模块扩展板"
+description: "Flipper Zero WiFi 多板，整合 NRF24、GPIO／CC1101、GPS 与环境传感模块的开发板配件。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
-tags: ["Flipper Zero 扩充", "ESP32", "CC1101", "NRF24", "Wi-Fi Marauder", "信息安全研究"]
+tags: ["Flipper Zero 扩展", "WiFi 开发板", "NRF24", "CC1101", "GPS"]
 ---
 
 ## 产品特色
 
 ![SDRLab Flipper Zero WiFi 多板](/images/products/sdrlab/flipper-wifi-multiboard.png)
 
-- 三合一集成设计：NRF24 + CC1101 + ESP32，单板实现多种无线协议
-- NRF24 模块支持 2.4 GHz 键鼠信号嗅探与 MouseJacker
-- CC1101 模块扩展 Sub-GHz 覆盖范围（300–928 MHz），支持 ASK/OOK/FSK 调制
-- ESP32 模块搭载 Wi-Fi Marauder 固件，用于 2.4 GHz Wi-Fi 安全研究
-- 单一扩充板集中多种无线研究功能，减少配件切换
-- 直接由 Flipper Zero GPIO 供电
+- 整合 NRF24 与 WiFi/NRF24 模块，提供多样化的无线连接能力
+- 具备 GPIO 模块、CC1101 Sub-GHz 无线电与 GPS 模块，便于集成各类传感器
+- 即插即用的定位模块，快速加入 GPS 功能
+- 专为 Flipper Zero 设计的开发板配件
+- 搭载 MH-Z19 二氧化碳传感器与 BME280，可用于非专业级的环境监测
+- 原厂商品页名称另列有 Air Mouse 模块
 
 ## 产品规格
 
 | 规格项目 | 数值／说明 |
 |---------|-----------|
-| 产品形态 | 3-in-1 Flipper Zero GPIO 扩充板 |
-| NRF24 模块 | Nordic nRF24L01，2.4 GHz，键鼠嗅探 + MouseJacker |
-| CC1101 模块 | Texas Instruments CC1101，300–928 MHz Sub-GHz |
-| CC1101 调制格式 | ASK、OOK、FSK |
-| ESP32 模块 | ESP32（Marauder 固件），2.4 GHz Wi-Fi 安全研究 |
-| 连接接口 | Flipper Zero 标准 GPIO 排针 |
-| 供电 | 由 Flipper Zero GPIO 供电 |
-| 固件 | Wi-Fi Marauder（ESP32）、NRF24 Sniffer 固件 |
-| 包装内容 | 3-in-1 扩充板 × 1 |
+| 产品形态 | Flipper Zero 用 WiFi 开发板／多功能板配件 |
+| 无线模块 | NRF24；WiFi/NRF24 组合 |
+| Sub-GHz 与 GPIO | GPIO 模块、CC1101 Sub-GHz 无线电 |
+| 定位 | GPS 模块；即插即用定位模块 |
+| 环境传感 | MH-Z19 二氧化碳传感器、BME280（非专业监测） |
+| 搭配主机 | Flipper Zero（不含） |
 
 ## 应用环境
 
-- Wi-Fi 2.4 GHz 安全研究（Marauder 工具）
-- Sub-GHz（300–928 MHz）设备互动与研究
-- IoT 设备无线协议测试（Sub-GHz 范围）
-- 无线 HID 设备嗅探与 MouseJacker 演示
-- Flipper Zero Sub-GHz 使用范围延伸
-- 红队演练多协议无线测试
+- 网络安全研究（仅限你拥有或已获授权的网络）
+- 物联网项目与开发
+- 远程设备管理
+- Flipper Zero 项目的 GPS 定位
+- 二氧化碳与环境监测（非专业用途）
 
 ---
 
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)
 {{< /alert >}}
+
+**原厂商店页（OpenSourceSDRLab）**：https://opensourcesdrlab.com/products/flipper-zero-modules-wifi-devboard-multiboard-esp8266-wifi-module-air-mouse-module-official?VariantsId=10382

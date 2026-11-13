@@ -1,15 +1,25 @@
 ---
 title: "ACS ACR1552U — USB NFC Reader IV"
-description: "ACS ACR1552U, 4th-generation USB NFC reader with enhanced multi-protocol support. Suitable for access control, digital signatures, and identity verification."
+description: "ACS ACR1552U 4th-generation USB NFC reader with up to 848 Kbps, 70 mm reading distance and a SAM slot. Available from Yopitek in Taiwan."
+seo_title: "ACR1552U | ACS Taiwan | Yopitek"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
 tags: ["NFC", "ISO 14443", "USB", "Access Control", "Digital Signature", "Card Reader"]
+faq:
+  - question: "What are the key specifications of the ACR1552U?"
+    answer: "It is a CCID and PC/SC compliant USB NFC reader with communication speeds up to 848 Kbps, a reading distance up to 70 mm and a built-in SAM slot. It comes as ACR1552U-M1 (USB Type-A) or ACR1552U-MF (USB Type-C)."
+  - question: "Which NFC modes does the ACR1552U support?"
+    answer: "It supports three NFC modes: card reader/writer, card emulation and keyboard emulation. It also provides extended APDU support and USB firmware upgrades after deployment."
+  - question: "Does the ACR1552U support FIDO2?"
+    answer: "ACS lists support for FIDO/FIDO2 NFC devices and cards, for example PocketKey. The reader operates from -20°C to 70°C with an MTBF of 500,000 hours."
 ---
 
 ACR1552U
+
+The ACS ACR1552U is a fourth-generation USB NFC reader for access control, digital signatures and identity verification projects. It communicates at up to 848 Kbps, reads up to 70 mm and has a built-in SAM slot. Yopitek offers it in Taiwan.
 
 ## Product Overview
 
@@ -25,13 +35,21 @@ The ACR1552U is a CCID & PC/SC compliant USB NFC Reader IV based on 13.56 MHz co
 | USB Interface | USB 2.0 Full Speed (12 Mbps) |
 | SAM Slot | 1 × ISO 7816 Class A (5V), Standard SIM size |
 | SAM Read/Write Speed | 13.4 Kbps – 1,250 Kbps |
-| SAM Clock Frequency | 5 MHz, up to 10 MHz |
+| SAM Clock Frequency | 5 MHz (10 MHz on special request) |
 | SAM Protocol | T=0, T=1 |
 | Protocols | ISO/IEC 14443-A, -B, ISO/IEC 15693, ISO/IEC 18092 |
-| LED | User-controllable (configurable) |
+| Models | USB Type-A: ACR1552U-M1; USB Type-C: ACR1552U-MF |
+| Dimensions | 98.0 × 65.0 × 12.8 mm |
+| Weight | 89 g (±5 g, USB Type-A) |
+| Color | White |
+| Cable Length | 1 m (fixed) |
+| Supply Current | Max. 300 mA |
+| FIDO / FIDO2 | Supports FIDO/FIDO2 NFC devices and cards (e.g. PocketKey) |
+| LED | 1 × programmable LED (Blue/Green), user-controllable |
 | Buzzer | User-controllable (configurable) |
-| Operating Temperature | 0°C – 60°C, 90% RH (non-condensing) |
-| Compliance | PC/SC, CCID, CE, FCC, RoHS |
+| Operating Temperature | -20°C – 70°C, 90% RH (non-condensing) |
+| MTBF | 500,000 hrs |
+| Compliance | PC/SC, CCID, CE, UKCA, FCC, VCCI, MIC, J-LIS, RoHS, REACH, WEEE, Microsoft WHQL |
 | Additional | Short-circuit protection, USB firmware upgrade |
 
 ## Key Features
@@ -100,3 +118,5 @@ The ACR1552U is a CCID & PC/SC compliant USB NFC Reader IV based on 13.56 MHz co
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+{{< faq >}}

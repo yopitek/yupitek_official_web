@@ -48,3 +48,5 @@ tags: ["Flipper Zero 拡張", "NRF24", "2.4GHz", "MouseJacker", "セキュリテ
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+**メーカー販売ページ（OpenSourceSDRLab）**：https://opensourcesdrlab.com/products/improved-version-nrf24-module-and-gpio-for-flipper-for-sniffer-and-mouse-jacker?VariantsId=10383

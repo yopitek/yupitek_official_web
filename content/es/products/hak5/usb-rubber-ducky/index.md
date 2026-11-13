@@ -6,6 +6,10 @@ description: "Herramienta de inyección de teclado idéntica en apariencia a una
 featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso de Uso Legal**: USB Rubber Ducky es una herramienta profesional de investigación de inyección HID. Solo para pruebas de seguridad e investigación autorizadas. Destinada exclusivamente a profesionales de seguridad con autorización escrita válida, instituciones de formación en seguridad y competiciones CTF. La inyección HID no autorizada en dispositivos de terceros es ilegal.
+{{< /alert >}}
+
 ## Características del Producto
 
 ![USB Rubber Ducky](/images/products/hak5/card/usb-rubber-ducky.png)
@@ -13,7 +17,7 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 - **Pionera en Keystroke Injection**: Inventó la inyección de teclado en 2010; actualización completa en 2022
 - **Camuflaje perfecto**: Idéntica en apariencia a una unidad USB común; reconocida automáticamente como HID confiable
 - **DuckyScript™ 3.0**: Soporta variables, control de flujo, lógica condicional, detección de SO y funciones
-- **Fingerprinting pasivo de SO**: Distingue entre escritorio y dispositivos móviles en menos de 1 segundo
+- **Detección de SO**: Identifica el SO objetivo (Windows, macOS, Linux, ChromeOS, Android, iOS) con la extensión OS_DETECT
 - **Keystroke Reflection**: Lectura del estado de la máquina objetivo
 - **Modo de ataque dinámico**: Cambio dinámico entre modos HID + Storage (ATTACKMODE)
 - **Suplantación de dispositivo**: Suplanta VID / PID, fabricante y número de serie de cualquier dispositivo USB
@@ -23,11 +27,9 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 | Especificación | Detalles |
 |----------------|----------|
-| Microcontrolador | AT32UC3B1256, 60 MHz, RISC de 32 bits |
-| Flash | 256KB Flash integrado |
 | USB | USB 2.0 de alta velocidad |
 | Interfaz | USB-A + USB-C dual (versión Mark II) |
-| Almacenamiento | Flash integrado (sin necesidad de MicroSD) |
+| Almacenamiento | Incluye tarjeta MicroSD (almacenamiento de payloads) |
 | Lenguaje de script | DuckyScript™ 3.0 |
 
 ## Entornos de Aplicación
@@ -41,7 +43,7 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 | Recurso | Enlace |
 |---------|--------|
-| 📖 Documentación oficial | [Ver en línea](https://docs.hak5.org/hak5-usb-rubber-ducky/usb-rubber-ducky-by-hak5/) |
+| 📖 Documentación oficial | [Ver en línea](https://documentation.hak5.org/hak5-usb-rubber-ducky/master) |
 | ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/ducky) |
 
 {{< alert >}}

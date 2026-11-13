@@ -40,7 +40,7 @@ El ACR122U es un lector/escritor de tarjetas inteligentes sin contacto conectado
 | MTBF | 408,500 horas |
 | LED | 1 bicolor Rojo/Verde (controlable por el usuario) |
 | Buzzer | Monotono (controlable por el usuario) |
-| Cumplimiento | PC/SC, CCID, CE, FCC, RoHS |
+| Cumplimiento | PC/SC, CCID, CE, FCC, RoHS 2 |
 
 ## Características Principales
 
@@ -79,6 +79,12 @@ El ACR122U es un lector/escritor de tarjetas inteligentes sin contacto conectado
 | Recurso | Enlace |
 |----------|------|
 | 📄 ACR122U Especificación (PDF) | [Descargar PDF](/docs/acr/ACR122U_spec.pdf) |
+
+## Recursos Oficiales
+
+| Recurso | Enlace |
+|---------|--------|
+| Página oficial ACS ACR122U | [acs.com.hk](https://www.acs.com.hk/cn/products/73/acr122u-nfc-%E9%9D%9E%E6%8E%A5%E8%A7%B8%E5%BC%8F%E6%99%BA%E8%83%BD%E5%8D%A1%E8%AF%BB%E5%86%99%E5%99%A8/) |
 
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U Lector NFC USB" />

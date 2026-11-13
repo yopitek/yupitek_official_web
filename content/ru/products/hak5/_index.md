@@ -1,6 +1,6 @@
 ---
 title: "Инструменты для исследований безопасности HAK5"
-description: "Yopitek поставляет инструменты HAK5: WiFi Pineapple, Bash Bunny, USB Rubber Ducky, Shark Jack, O.MG Cable — предпочтительный бренд для авторизованного пентестинга."
+description: "Yopitek предлагает инструменты HAK5: WiFi Pineapple, Bash Bunny, USB Rubber Ducky, Shark Jack, O.MG Cable — предпочтительный бренд для авторизованного пентестинга."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,11 +9,11 @@ showChildPages: false
 featureimage: "/images/products/hak5/banner-hak5.png"
 ---
 
-## Линейка продуктов
+## Линейка продуктов Серия O.MG разработана Mischief Gadgets в партнёрстве с Hak5.
 
 {{< card-group >}}
   {{< card title="WiFi Pineapple Mark VII" href="/ru/products/hak5/wifi-pineapple-mark7/" image="/images/products/hak5/wifi-pineapple.png" >}}
-    Профессиональная платформа аудита беспроводных сетей, 802.11 a/b/g/n/ac.
+    Профессиональная платформа аудита беспроводных сетей со встроенной OpenWRT.
   {{< /card >}}
   {{< card title="USB Rubber Ducky" href="/ru/products/hak5/usb-rubber-ducky/" image="/images/products/hak5/usb-rubber-ducky.png" >}}
     Отраслевой стандарт для HID-инъекций — выглядит как обычный USB-флеш-накопитель.
@@ -31,7 +31,7 @@ featureimage: "/images/products/hak5/banner-hak5.png"
     Карманный трёхдиапазонный инструмент Wi-Fi пентестинга с DuckyScript-пейлоудами, цветным дисплеем 2.4" и виброоповещениями — полностью автономный.
   {{< /card >}}
   {{< card title="WiFi Pineapple Enterprise" href="/ru/products/hak5/wifi-pineapple-enterprise/" image="/images/products/hak5/wifi-pineapple-enterprise.png" >}}
-    Корпоративная платформа аудита беспроводных сетей с улучшенной антенной для масштабных оценок безопасности.
+    Корпоративная платформа аудита беспроводных сетей с четырёхъядерным процессором, двумя портами Gigabit Ethernet и питанием от сети переменного тока для масштабных оценок безопасности.
   {{< /card >}}
   {{< card title="Key Croc" href="/ru/products/hak5/key-croc/" image="/images/products/hak5/key-croc.png" >}}
     Кейлоггер и инструмент HID-инъекций со встроенным Wi-Fi для удалённого доступа.
@@ -48,7 +48,7 @@ featureimage: "/images/products/hak5/banner-hak5.png"
   {{< card title="O.MG Programmer" href="/ru/products/hak5/omg-programmer/" image="/images/products/hak5/omg-programmer.png" >}}
     Специализированный программатор для O.MG Cable — прошивка DuckyScript.
   {{< /card >}}
-  {{< card title="O.MG UnBlocker" href="/ru/products/hak5/omg-unBlocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
+  {{< card title="O.MG UnBlocker" href="/ru/products/hak5/omg-unblocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
     Обходит USB-блокировщики данных — для легитимного тестирования решений «только зарядка».
   {{< /card >}}
   {{< card title="Malicious Cable Detector" href="/ru/products/hak5/malicious-cable-detector/" image="/images/products/hak5/malicious-cable-detector.png" >}}
@@ -62,6 +62,12 @@ featureimage: "/images/products/hak5/banner-hak5.png"
   {{< /card >}}
   {{< card title="Shark Jack Cable" href="/ru/products/hak5/shark-jack-cable/" image="/images/products/hak5/shark-jack-cable.png" >}}
     Кабельная версия Shark Jack для прямого подключения к сетевым портам.
+  {{< /card >}}
+  {{< card title="Shark Jack Display" href="/ru/products/hak5/shark-jack-display/" image="/images/products/hak5/shark-jack-display.jpg" >}}
+    Карманный инструмент оценки проводных сетей с OLED-дисплеем 1,2 дюйма и качающимся переключателем для запуска интерактивных пейлоадов прямо на устройстве.
+  {{< /card >}}
+  {{< card title="LAN Turtle Hub" href="/ru/products/hak5/lan-turtle-hub/" image="/images/products/hak5/lan-turtle-hub.jpg" >}}
+    USB-C Ethernet-адаптер с 3-портовым хабом USB 3 для удалённого доступа, перехвата USB и внеполосного WiFi, с пейлоадами DuckyScript и веб-интерфейсом.
   {{< /card >}}
 {{< /card-group >}}
 

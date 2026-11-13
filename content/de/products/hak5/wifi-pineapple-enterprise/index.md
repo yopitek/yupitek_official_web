@@ -1,6 +1,6 @@
 ---
 title: "HAK5 WiFi Pineapple Enterprise — Unternehmens-WLAN-Prüfplattform"
-description: "HAK5 WiFi Pineapple Enterprise, eine unternehmenstaugliche WLAN-Sicherheitsbewertungsplattform mit erweitertem Antennendesign für groß angelegte autorisierte Penetrationstests."
+description: "HAK5 WiFi Pineapple Enterprise, eine unternehmenstaugliche WLAN-Sicherheitsbewertungsplattform mit Vierkern-CPU und zwei Gigabit-Ethernet-Anschlüssen für groß angelegte autorisierte Penetrationstests."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -14,13 +14,12 @@ tags: ["Wi-Fi Audit", "Enterprise Security", "Penetration Testing"]
 
 ## Produktübersicht
 
-WiFi Pineapple Enterprise ist eine für Unternehmensumgebungen konzipierte WLAN-Sicherheitsbewertungsplattform. Im Vergleich zur Standardversion verfügt sie über ein erweitertes Antennendesign und erweiterte Signalabdeckung, was sie für autorisierte WLAN-Sicherheitsprüfungen in großen Unternehmens- oder Campusumgebungen besonders geeignet macht.
+WiFi Pineapple Enterprise ist eine für Unternehmensumgebungen konzipierte WLAN-Sicherheitsbewertungsplattform. Sie verfügt über eine Vierkern-CPU, zwei Gigabit-Ethernet-Anschlüsse und AC-Stromversorgung, was sie für autorisierte WLAN-Sicherheitsprüfungen in großen Unternehmens- oder Campusumgebungen besonders geeignet macht.
 
 ## Hauptmerkmale
 
 - Unternehmens-WLAN-Sicherheitsbewertung
-- Erweitertes Antennendesign für erweiterte Signalabdeckung
-- OpenWRT Open-Source-Firmware mit umfangreichem Modul-Ökosystem
+- Vierkern-CPU, zwei Gigabit-Ethernet-Anschlüsse und AC-Stromversorgung
 - Dual-Band 802.11 a/b/g/n/ac-Unterstützung
 
 {{< gallery >}}

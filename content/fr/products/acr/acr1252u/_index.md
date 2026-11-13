@@ -35,8 +35,10 @@ L'ACR1252U est un lecteur PC certifié NFC Forum, basé sur la technologie sans 
 | Vitesse lecture/écriture SAM | 9,6 Kbps – 215 Kbps |
 | LED | 1 bicolore rouge/vert (contrôlable par l'utilisateur) |
 | Buzzer | Monotone (contrôlable par l'utilisateur) |
-| Conformité | EN/IEC 60950, ISO 18092, ISO 14443, ISO 7816, PC/SC, CCID, NFC Forum, FeliCa Performance, CE, FCC, RoHS 2, REACH |
-| Certifications supplémentaires | J-LIS, VCCI, MIC (Japon), KC (Corée), Microsoft WHQL |
+| Température de fonctionnement | 0°C – 60°C, 90 % HR (sans condensation) |
+| MTBF | 500,000 heures |
+| Conformité | IEC/EN 62368, ISO 18092, ISO 14443, ISO 7816, PC/SC, CCID, NFC Forum, CE, UKCA, FCC, RoHS 2, REACH, WEEE |
+| Certifications supplémentaires | J-LIS, VCCI, TELEC (Japon), KC (Corée), BIS, Microsoft WHQL |
 
 ## Caractéristiques Principales
 
@@ -66,8 +68,7 @@ L'ACR1252U est un lecteur PC certifié NFC Forum, basé sur la technologie sans 
 - Windows® (plusieurs versions, dont Windows 10 et les éditions Server)
 - Linux®
 - macOS®
-- Solaris
-- Android™ 3.1 et versions ultérieures
+- Android™
 
 
 ## 📄 Fiche Technique

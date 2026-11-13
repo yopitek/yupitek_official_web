@@ -6,6 +6,10 @@ description: "手工制造的 USB 传输线，内藏完整 WiFi + HID 注入植�
 featureimage: "/images/products/hak5/omg-cable.png"
 ---
 
+{{< alert "warning" >}}
+**合法使用声明**：O.MG Cable 为专业安全研究工具，仅限用于经授权的安全测试与研究。仅供持有有效书面授权的安全专业人员、安全意识培训及教育用途使用。
+{{< /alert >}}
+
 ## 产品特色
 
 ![O.MG Cable](/images/products/hak5/card/omg-cable.png)
@@ -45,7 +49,7 @@ featureimage: "/images/products/hak5/omg-cable.png"
 | 资源 | 链接 |
 |------|------|
 | 📖 官方使用文件 | [在线查看](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/omg) |
+| ⬇️ 固件与工具下载 | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)

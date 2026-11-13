@@ -7,6 +7,10 @@ description: "جهاز O.MG Elite مُتنكّر تماماً في هيئة USB 
 featureimage: "/images/products/hak5/omg-unBlocker.png"
 ---
 
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانونية للاستخدام**: O.MG UnBlocker أداة احترافية لأبحاث الأمن. للاستخدام في اختبارات الأمن والأبحاث المصرّح بها فقط. مخصصة حصراً لمتخصصي الأمن الحاصلين على تصريح كتابي ساري.
+{{< /alert >}}
+
 ## ميزات المنتج
 
 ![O.MG UnBlocker](/images/products/hak5/card/omg-unBlocker.png)
@@ -27,6 +31,7 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 | المنافذ | USB-A ذكر (طرف الهجوم النشط) + USB-A أنثى (طرف تمرير الطاقة) |
 | التمرير | 5V طاقة فقط (بلا خطوط بيانات) |
 | التحكم | WiFi WebUI |
+| أداء Payload | حتى 890 ضغطة/ثانية، حتى 300 فتحة Payload، 192 تخطيط لوحة مفاتيح |
 
 ## بيئات التطبيق
 
@@ -39,8 +44,7 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 | المورد | الرابط |
 |--------|--------|
-| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/omg) |
+| ⬇️ البرامج الثابتة والأدوات | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).

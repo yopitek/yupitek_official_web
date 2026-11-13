@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero — 多機能ワイヤレスセキュリティ研究ツール"
-description: "Flipper Zero は Sub-GHz、NFC、RFID 125kHz、赤外線、iButton、GPIO、Bluetooth 5.0 に対応したオープンソースファームウェア搭載のセキュリティ研究・教育向けツールです。"
+description: "Flipper Zero は Sub-GHz、NFC、RFID 125kHz、赤外線、iButton、GPIO、Bluetooth 5.4 に対応したオープンソースファームウェア搭載のセキュリティ研究・教育向けツールです。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -21,13 +21,13 @@ Flipper Zero は、複数のワイヤレス通信プロトコルを1台に統合
 
 | プロトコル | 説明 |
 |-----------|------|
-| Sub-GHz | 300–928 MHz 無線信号の読み取り、リプレイ、分析 |
-| NFC | ISO 14443A/B、ISO 15693 カードの読み取りとエミュレーション（許可されたテストのみ） |
+| Sub-GHz | 無線信号の読み取り、リプレイ、分析（対応周波数帯は地域により異なります） |
+| NFC | ISO 14443A/B、MIFARE、FeliCa、HID iClass カードおよび NFC Forum プロトコルの読み取りとエミュレーション（許可されたテストのみ） |
 | RFID 125kHz | EM4100、HID Prox などの低周波 RFID カード研究 |
 | 赤外線 | 家電リモコン信号の学習とリプレイ |
 | iButton | 1-Wire 接触式 iButton キーの読み取り |
-| Bluetooth 5.0 | BLE 接続、モバイルアプリ制御 |
-| GPIO | 23ピン GPIO、拡張ボード接続 |
+| Bluetooth 5.4 | BLE 接続、モバイルアプリ制御 |
+| GPIO | ユーザー利用可能な I/O 13 本、拡張ボード接続 |
 | USB-C | ファイル転送、ファームウェア更新、BadUSB（HID インジェクション研究） |
 
 ## 主要仕様
@@ -36,15 +36,25 @@ Flipper Zero は、複数のワイヤレス通信プロトコルを1台に統合
 |------|------|
 | プロセッサ | STM32WB55 |
 | ディスプレイ | 1.4インチ モノクロ LCD |
-| バッテリー | 2000mAh Li-Po |
-| インターフェース | USB-C、GPIO × 23 |
+| バッテリー | 2100 mAh Li-Po |
+| インターフェース | USB-C、GPIO (13 I/O) |
 | ファームウェア | オープンソース（GitHub） |
-| サイズ | 102 × 40 × 25 mm |
+| サイズ | 100 × 40 × 25 mm |
+| 重量 | 102 g |
 
 ## パッケージ内容
 
 - Flipper Zero 本体 × 1
-- USB-C ケーブル × 1
+- USB-A to USB-C ケーブル × 1
+- 取扱説明書
+- ステッカー
+- microSD カードは付属しません
+
+## 公式リソース
+
+| リソース | リンク |
+|----------|--------|
+| Flipper Zero 製品ページ | [flipper.net](https://flipper.net/products/flipper-zero) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/flipper-zero.png" alt="Flipper Zero" />

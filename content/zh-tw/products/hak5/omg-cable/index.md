@@ -2,9 +2,29 @@
 title: "O.MG Cable"
 date: 2025-01-01
 draft: false
-description: "手工製造的 USB 傳輸線，內藏完整 WiFi + HID 注入植入晶片，外觀觸感與正常 USB 線完全相同。"
+description: "O.MG Cable 手工 USB 線材，內藏 WiFi 與 HID 晶片，Elite 最高 890 keys/sec、可記錄 65 萬次按鍵，Yopitek 台灣報價。"
 featureimage: "/images/products/hak5/omg-cable.png"
+seo_title: "O.MG Cable Hak5 台灣 | Yopitek"
+faq:
+  - question: "O.MG Cable 是什麼？"
+    answer: "它是內藏 WiFi 與 HID 植入晶片的手工 USB 線材，用於經授權的資安測試與意識訓練。"
+  - question: "O.MG Cable 的按鍵注入速度多快？"
+    answer: "Basic 最高 120 keys/sec，Elite 最高 890 keys/sec。"
+  - question: "支援多少 Payload 欄位與鍵盤配置？"
+    answer: "Basic 有 8 個 Payload 欄位，Elite 最多 300 個；支援 192 種鍵盤配置。"
+  - question: "Elite 版可記錄多少按鍵？"
+    answer: "Elite 版最多可記錄 650,000 次按鍵。"
+  - question: "O.MG Cable 如何控制？"
+    answer: "透過內建 802.11 b/g/n WiFi，以任何瀏覽器操作，無需連接電腦。"
+  - question: "如何在台灣購買或詢價 O.MG Cable？"
+    answer: "請透過聯絡頁面與 Yopitek 聯繫以取得報價。"
 ---
+
+{{< alert "warning" >}}
+**合法使用聲明**：O.MG Cable 為專業資安研究工具，僅限用於經授權的資安測試與研究。僅供持有有效書面授權的資安專業人員、資安意識訓練及教育用途使用。
+{{< /alert >}}
+
+O.MG Cable 是 Hak5 內藏 WiFi 與 HID 晶片的 USB 線材，限授權測試，Elite 最高 890 keys/sec。Yopitek 提供台灣購買與報價服務。
 
 ## 產品特色
 
@@ -45,8 +65,10 @@ featureimage: "/images/products/hak5/omg-cable.png"
 | 資源 | 連結 |
 |------|------|
 | 📖 官方使用文件 | [線上查看](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/omg) |
+| ⬇️ 韌體與工具下載 | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}
+
+{{< faq >}}

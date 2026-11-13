@@ -6,6 +6,10 @@ description: "Plataforma estándar de la industria para pruebas de penetración 
 featureimage: "/images/products/hak5/wifi-pineapple.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso de Uso Legal**: WiFi Pineapple es una herramienta profesional de investigación de seguridad. Solo para pruebas de seguridad e investigación autorizadas. Destinada exclusivamente a profesionales de seguridad con autorización escrita válida, personal autorizado de pruebas de penetración e instituciones educativas. El acceso no autorizado a redes inalámbricas de terceros es ilegal.
+{{< /alert >}}
+
 ## Características del Producto
 
 ![WiFi Pineapple Mark VII](/images/products/hak5/card/wifi-pineapple-mark7.png)
@@ -17,15 +21,13 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 - **Soporte Cloud C²**: Comando y control remoto
 - **Simulación de AP fraudulento**: Puede simular APs abiertos, WPA-PSK y Enterprise (Rogue AP)
 - **Ataques WPA-Enterprise**: Soporta captura automática de Handshake
-- **Ecosistema de módulos**: Sistema de módulos compatible con módulo externo MK7AC 802.11ac 5GHz
+- **Ecosistema de módulos**: Sistema de módulos compatible con módulo externo MK7AC
 
 ## Especificaciones Principales
 
 | Especificación | Detalles |
 |----------------|----------|
 | CPU | SoC MIPS de red de núcleo único |
-| Inalámbrico | 2.4 GHz 802.11 b/g/n; 5 GHz 802.11ac vía módulo MK7AC |
-| Chipset de radio | MediaTek MT7601U + MT7610U |
 | Memoria | 256 MB RAM |
 | Almacenamiento | 2 GB eMMC |
 | Puertos | USB-C (alimentación / Ethernet), USB 2.0 Host |
@@ -46,7 +48,7 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 
 | Recurso | Enlace |
 |---------|--------|
-| 📖 Documentación oficial | [Ver en línea](https://docs.hak5.org/wifi-pineapple/wifi-pineapple-mk7-by-hak5/) |
+| 📖 Documentación oficial | [Ver en línea](https://documentation.hak5.org/wifi-pineapple/master) |
 | ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/pineapple/mk7) |
 
 {{< alert >}}

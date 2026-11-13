@@ -25,13 +25,21 @@ O ACR1552U é um Leitor NFC USB IV compatível com CCID e PC/SC, baseado em tecn
 | Interface USB | USB 2.0 Full Speed (12 Mbps) |
 | Slot SAM | 1 × ISO 7816 Class A (5V), tamanho SIM padrão |
 | Velocidade Leitura/Gravação SAM | 13,4 Kbps – 1.250 Kbps |
-| Frequência de Clock SAM | 5 MHz, até 10 MHz |
+| Frequência de Clock SAM | 5 MHz (10 MHz mediante solicitação especial) |
 | Protocolo SAM | T=0, T=1 |
 | Protocolos | ISO/IEC 14443-A, -B, ISO/IEC 15693, ISO/IEC 18092 |
-| LED | Controlável pelo usuário (configurável) |
+| Modelos | USB Type-A: ACR1552U-M1; USB Type-C: ACR1552U-MF |
+| Dimensões | 98,0 × 65,0 × 12,8 mm |
+| Peso | 89 g (±5 g, USB Type-A) |
+| Cor | Branco |
+| Comprimento do Cabo | 1 m (fixo) |
+| Corrente de Alimentação | Máx. 300 mA |
+| FIDO / FIDO2 | Compatível com dispositivos e cartões NFC FIDO/FIDO2 (por exemplo, PocketKey) |
+| LED | 1 × LED programável (azul/verde), controlável pelo usuário |
 | Buzzer | Controlável pelo usuário (configurável) |
-| Temperatura de Operação | 0°C – 60°C, 90% UR (sem condensação) |
-| Conformidade | PC/SC, CCID, CE, FCC, RoHS |
+| Temperatura de Operação | -20°C – 70°C, 90% UR (sem condensação) |
+| MTBF | 500,000 horas |
+| Conformidade | PC/SC, CCID, CE, UKCA, FCC, VCCI, MIC, J-LIS, RoHS, REACH, WEEE, Microsoft WHQL |
 | Adicional | Proteção contra curto-circuito, atualização de firmware USB |
 
 ## Recursos Principais

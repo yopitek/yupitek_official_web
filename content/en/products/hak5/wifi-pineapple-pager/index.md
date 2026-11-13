@@ -1,8 +1,9 @@
 ---
 title: "WiFi Pineapple Pager"
+seo_title: "WiFi Pineapple Pager | Hak5 Taiwan | Yopitek"
 date: 2025-01-01
 draft: false
-description: "Hak5's 20th anniversary flagship standalone handheld device featuring the 8th-generation PineAP engine, tri-band WiFi, and Bluetooth — no external computer required."
+description: "Hak5 WiFi Pineapple Pager, a standalone handheld with PineAP, tri-band Wi-Fi (2.4/5/6 GHz) and Bluetooth, no computer needed. Available from Yopitek in Taiwan."
 featureimage: "/images/products/hak5/wifi-pineapple-pager.png"
 faq:
   - question: "Does the WiFi Pineapple Pager need a computer?"
@@ -10,8 +11,13 @@ faq:
   - question: "Which Wi-Fi bands and radios does the WiFi Pineapple Pager have?"
     answer: "Hak5 lists 2.4 GHz, 5 GHz and 6 GHz. The primary radio is a dual PHY 2T2R 802.11a/b/g/n/ac/ax and the secondary radio is a single PHY 2T2R 802.11b/g/n. It also has Bluetooth 5.2 and Bluetooth 4.2 Low Energy."
   - question: "What battery and ports does the WiFi Pineapple Pager have?"
-    answer: "It has a serviceable 2000 mAh LiPo battery charged over USB-C (5V 2A). The USB-C port also provides Ethernet, and a USB 2.0 Host port is available for expansion. Hak5 lists the size as 87 x 62 x 24 mm and the weight as 131 g."
+    answer: "It has a serviceable 2000 mAh LiPo battery charged over USB-C (5V 2A). Hak5 estimates about 4 hours of battery life per charge. The USB-C port also provides Ethernet, and a USB 2.0 Host port is available for expansion. Hak5 lists the size as 87 x 62 x 24 mm and the weight as 131 g."
+  - question: "What payload languages does the WiFi Pineapple Pager support?"
+    answer: "Payloads are written in DuckyScript or Bash, and the device runs Linux with root access."
 ---
+
+
+The Hak5 WiFi Pineapple Pager is a pocket-sized standalone handheld for authorized Wi-Fi security assessments, running Linux and DuckyScript payloads without a computer. It covers 2.4, 5 and 6 GHz Wi-Fi plus Bluetooth 5.2. Yopitek offers it for purchase in Taiwan.
 
 ## Product Features
 
@@ -20,10 +26,10 @@ faq:
 - **Hak5 20th Anniversary Flagship**: 8th-generation PineAP engine
 - **Fully Standalone Operation**: No external computer required — independent handheld Linux wireless audit device
 - **Tri-Band WiFi + Bluetooth**: Supports 2.4 GHz / 5 GHz / 6 GHz (802.11ax) and Bluetooth 5.2 / BLE 4.2
-- **Payload System**: Powered by DuckyScript™ + Bash + Python
-- **Color Retina Display**: Clearly visible indoors and outdoors
+- **Payload System**: Powered by DuckyScript™ + Bash
+- **2.4" Color Display (480×222, 221 PPI)**: Clearly visible indoors and outdoors
 - **Multi-Sensory Notifications**: Built-in speaker (programmable chime) and vibration motor (silent notifications)
-- **Programmable Buttons**: 4 RGB buttons (DPAD + A/B controls)
+- **Programmable Buttons**: Programmable RGB LED 4-way D-pad plus A and B buttons
 - **Real-Time Alert Payload**: Auto-triggers based on detected WiFi activity
 - **Modular Expansion**: Full root-access Linux, supports GPS, additional radios, and other hardware modules
 
@@ -36,7 +42,7 @@ faq:
 | Bluetooth | Bluetooth 5.2 + BLE 4.2 |
 | Memory | 256 MB DDR2 RAM + 128 MB SPI Flash |
 | Storage | 4 GB eMMC |
-| Battery | 2000 mAh LiPo (with BMS and LED charge indicator) |
+| Battery | 2000 mAh LiPo (with BMS and LED charge indicator); approx. 4 hours per charge (Hak5 estimate) |
 | Charge / Data | USB-C (integrated Ethernet interface) |
 | Expansion | USB 2.0 (for hardware module mods) |
 | Indicators | 4 × RGB LED |
@@ -48,7 +54,6 @@ faq:
 - Standalone wireless penetration testing in the field without an attached computer
 - Red team operations (clip to belt, fully wireless operation)
 - Concurrent tri-band WiFi and Bluetooth auditing
-- WPA3 Enterprise attack testing
 - DuckyScript-driven automated Payload tasks
 - On-site OSINT, handshake capture, and deauthentication attacks
 

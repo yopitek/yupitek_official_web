@@ -7,6 +7,10 @@ description: "كابل USB مصنوع يدوياً يحتوي في داخله ع
 featureimage: "/images/products/hak5/omg-cable.png"
 ---
 
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانونية للاستخدام**: O.MG Cable أداة احترافية لأبحاث الأمن. للاستخدام في اختبارات الأمن والأبحاث المصرّح بها فقط. مخصصة حصراً لمتخصصي الأمن الحاصلين على تصريح كتابي ساري، ولأغراض التدريب على الوعي الأمني والأغراض التعليمية.
+{{< /alert >}}
+
 ## ميزات المنتج
 
 ![O.MG Cable](/images/products/hak5/card/omg-cable.png)
@@ -46,7 +50,7 @@ featureimage: "/images/products/hak5/omg-cable.png"
 | المورد | الرابط |
 |--------|--------|
 | 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/omg) |
+| ⬇️ البرامج الثابتة والأدوات | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).

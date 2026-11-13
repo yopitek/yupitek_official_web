@@ -9,13 +9,13 @@ showChildPages: false
 featureimage: "/images/products/hak5/banner-hak5.png"
 ---
 
-HAK5は世界的に著名なセキュリティリサーチツールメーカーで、認可されたペネトレーションテスト、レッドチーム演習、セキュリティトレーニング、CTF競技で広く使用されています。
+HAK5は世界的に著名なセキュリティリサーチツールメーカーで、認可されたペネトレーションテスト、レッドチーム演習、セキュリティトレーニング、CTF競技で広く使用されています。 O.MGシリーズはMischief GadgetsがHak5と提携して開発しています。
 
 ## 製品ラインナップ
 
 {{< card-group >}}
   {{< card title="WiFi Pineapple Mark VII" href="/ja/products/hak5/wifi-pineapple-mark7/" image="/images/products/hak5/wifi-pineapple.png" >}}
-    プロフェッショナルな無線ネットワーク監査プラットフォーム、802.11 a/b/g/n/acデュアルバンド。
+    プロフェッショナルな無線ネットワーク監査プラットフォーム。OpenWRT内蔵。
   {{< /card >}}
   {{< card title="USB Rubber Ducky" href="/ja/products/hak5/usb-rubber-ducky/" image="/images/products/hak5/usb-rubber-ducky.png" >}}
     業界標準のHIDインジェクションツール — 通常のUSBフラッシュドライブに偽装。
@@ -42,7 +42,7 @@ HAK5は世界的に著名なセキュリティリサーチツールメーカー�
     ポケットサイズのトライバンド Wi-Fi ペネトレーションテストツール。DuckyScript ペイロード、2.4" カラーディスプレイ、バイブレーション通知搭載で完全スタンドアロン動作。
   {{< /card >}}
   {{< card title="WiFi Pineapple Enterprise" href="/ja/products/hak5/wifi-pineapple-enterprise/" image="/images/products/hak5/wifi-pineapple-enterprise.png" >}}
-    エンタープライズ向け無線ネットワーク監査プラットフォーム、強化アンテナ設計で大規模セキュリティ評価に対応。
+    エンタープライズ向け無線ネットワーク監査プラットフォーム。クアッドコアCPU、デュアルGigabit Ethernet、AC電源を備え、大規模セキュリティ評価に対応。
   {{< /card >}}
   {{< card title="Key Croc" href="/ja/products/hak5/key-croc/" image="/images/products/hak5/key-croc.png" >}}
     キーロガー兼HIDインジェクションツール、Wi-Fi内蔵でリモートアクセス可能。
@@ -56,7 +56,7 @@ HAK5は世界的に著名なセキュリティリサーチツールメーカー�
   {{< card title="O.MG Programmer" href="/ja/products/hak5/omg-programmer/" image="/images/products/hak5/omg-programmer.png" >}}
     O.MG Cable専用プログラマー — DuckyScriptファームウェアのフラッシュに使用。
   {{< /card >}}
-  {{< card title="O.MG UnBlocker" href="/ja/products/hak5/omg-unBlocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
+  {{< card title="O.MG UnBlocker" href="/ja/products/hak5/omg-unblocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
     USB データブロッカーを回避 — 充電専用ケーブルソリューションの正当なテストに使用。
   {{< /card >}}
   {{< card title="Malicious Cable Detector" href="/ja/products/hak5/malicious-cable-detector/" image="/images/products/hak5/malicious-cable-detector.png" >}}
@@ -64,6 +64,12 @@ HAK5は世界的に著名なセキュリティリサーチツールメーカー�
   {{< /card >}}
   {{< card title="Shark Jack Cable" href="/ja/products/hak5/shark-jack-cable/" image="/images/products/hak5/shark-jack-cable.png" >}}
     ネットワークポートへの直接接続用Shark Jackのケーブル版。
+  {{< /card >}}
+  {{< card title="Shark Jack Display" href="/ja/products/hak5/shark-jack-display/" image="/images/products/hak5/shark-jack-display.jpg" >}}
+    1.2インチOLEDディスプレイとロッカースイッチを備えたポケットサイズの有線ネットワーク評価ツール。デバイス上でインタラクティブなペイロードを実行。
+  {{< /card >}}
+  {{< card title="LAN Turtle Hub" href="/ja/products/hak5/lan-turtle-hub/" image="/images/products/hak5/lan-turtle-hub.jpg" >}}
+    3ポートUSB 3ハブ内蔵のUSB-C Ethernetアダプター。リモートアクセス、USBインターセプト、帯域外WiFiに対応し、DuckyScriptペイロードとWebインターフェースを搭載。
   {{< /card >}}
 {{< /card-group >}}
 

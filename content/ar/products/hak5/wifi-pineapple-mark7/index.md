@@ -7,6 +7,10 @@ description: "المنصة القياسية في الصناعة لاختبار �
 featureimage: "/images/products/hak5/wifi-pineapple.png"
 ---
 
+{{< alert "warning" >}}
+**إخلاء مسؤولية الاستخدام القانوني**: WiFi Pineapple أداة احترافية لأبحاث الأمن. للاستخدام في اختبارات الأمن والأبحاث المصرّح بها فقط. مخصصة حصراً لمتخصصي الأمن الحاصلين على تفويض كتابي صالح وفرق اختبار الاختراق المصرّح لها والمؤسسات التعليمية. الوصول غير المصرّح به إلى شبكات الغير اللاسلكية غير قانوني.
+{{< /alert >}}
+
 ## ميزات المنتج
 
 ![WiFi Pineapple Mark VII](/images/products/hak5/card/wifi-pineapple-mark7.png)
@@ -18,15 +22,13 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 - **دعم Cloud C²**: القيادة والتحكم عن بُعد
 - **محاكاة نقاط وصول مزيفة**: يمكنه محاكاة نقاط وصول مفتوحة وWPA-PSK وEnterprise (Rogue AP)
 - **هجمات WPA-Enterprise**: يدعم التقاط المصافحة (Handshake Capture) آلياً
-- **نظام بيئي للوحدات الإضافية**: نظام Module يتوافق مع وحدة MK7AC الخارجية 802.11ac 5GHz
+- **نظام بيئي للوحدات الإضافية**: نظام Module يتوافق مع وحدة MK7AC الخارجية
 
 ## المواصفات الرئيسية
 
 | المواصفة | التفاصيل |
 |----------|----------|
 | المعالج | MIPS SoC أحادي النواة للشبكات |
-| اللاسلكي | 2.4 GHz 802.11 b/g/n؛ 5 GHz 802.11ac عبر وحدة MK7AC |
-| شرائح الراديو | MediaTek MT7601U + MT7610U |
 | الذاكرة | 256 MB RAM |
 | التخزين | 2 GB eMMC |
 | المنافذ | USB-C (طاقة / Ethernet)، USB 2.0 Host |
@@ -47,7 +49,7 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 
 | المورد | الرابط |
 |--------|--------|
-| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/wifi-pineapple/wifi-pineapple-mk7-by-hak5/) |
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://documentation.hak5.org/wifi-pineapple/master) |
 | ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/pineapple/mk7) |
 
 {{< alert >}}

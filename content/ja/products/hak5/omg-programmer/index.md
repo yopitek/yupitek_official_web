@@ -6,6 +6,10 @@ description: "すべてのO.MGデバイスに対応した汎用の有効化・�
 featureimage: "/images/products/hak5/omg-programmer.png"
 ---
 
+{{< alert "warning" >}}
+**法的使用に関する免責事項**：O.MG ProgrammerはO.MGシリーズ研究ツール用のファームウェア書き込みデバイスです。許可されたセキュリティテストおよび研究目的のみに使用してください。
+{{< /alert >}}
+
 ## 製品特長
 
 ![O.MG Programmer USB A+C](/images/products/hak5/card/omg-programmer.png)
@@ -19,7 +23,7 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 
 | 仕様項目 | 内容 |
 |---------|------|
-| 接続インターフェース | USB-A + USB-C（デュアルヘッド版） |
+| 接続インターフェース | USB-A + USB-C（USB A+C モデル） |
 | 対応デバイス | すべてのO.MGシリーズデバイス |
 | 操作方法 | WebSerial（Chrome / Edgeブラウザー）またはPython |
 | 汎用性 | 1台のProgrammerですべてのO.MGデバイスに対応 |
@@ -37,7 +41,6 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 | リソース | リンク |
 |----------|--------|
 | �� 公式ドキュメント | [オンラインで見る](https://o-mg.github.io/WebFlasher/) |
-| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/omg) |
 
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。

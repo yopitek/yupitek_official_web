@@ -15,7 +15,7 @@ Flipper Zero 是一款开源多功能无线安全研究工具，支持多种无�
 
 {{< card-group >}}
   {{< card title="Flipper Zero" href="/zh-cn/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.png" >}}
-    核心主机，支持 Sub-GHz、NFC、RFID 125kHz、红外线、iButton、GPIO、蓝牙 5.0，内置 USB-C。
+    核心主机，支持 Sub-GHz、NFC、RFID 125kHz、红外线、iButton、GPIO、蓝牙 5.4，内置 USB-C。
   {{< /card >}}
   {{< card title="WiFi Devboard for Flipper Zero" href="/zh-cn/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.png" >}}
     Flipper Zero 官方 Wi-Fi 扩展板，基于 ESP32-S2，支持 Wi-Fi 安全测试功能扩展。
@@ -27,6 +27,12 @@ Flipper Zero 是一款开源多功能无线安全研究工具，支持多种无�
     Flipper Zero 官方硅胶保护壳，完整保护主机，按键手感良好。
   {{< /card >}}
 {{< /card-group >}}
+
+## 官方资源
+
+| 资源 | 链接 |
+|------|------|
+| Flipper Zero 官方产品页面 | [flipper.net](https://flipper.net/products/flipper-zero) |
 
 ---
 

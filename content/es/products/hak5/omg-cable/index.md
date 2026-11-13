@@ -6,6 +6,10 @@ description: "Cable USB fabricado a mano con un chip de implante WiFi + HID comp
 featureimage: "/images/products/hak5/omg-cable.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso legal de uso**: O.MG Cable es una herramienta profesional de investigación de seguridad. Solo para pruebas de seguridad e investigación autorizadas. Destinada exclusivamente a profesionales de la seguridad con autorización escrita válida, formación en concienciación sobre seguridad y fines educativos.
+{{< /alert >}}
+
 ## Características del Producto
 
 ![O.MG Cable](/images/products/hak5/card/omg-cable.png)
@@ -45,7 +49,7 @@ featureimage: "/images/products/hak5/omg-cable.png"
 | Recurso | Enlace |
 |---------|--------|
 | 📖 Documentación oficial | [Ver en línea](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/omg) |
+| ⬇️ Firmware y herramientas | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 ¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).

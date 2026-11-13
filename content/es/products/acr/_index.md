@@ -1,6 +1,6 @@
 ---
 title: "Lectores NFC ACS ACR"
-description: "Yupitek distribuye lectores NFC/tarjeta inteligente ACS ACR: ACR122U, ACR1252U, ACR1552U — para control de acceso, firma electrónica y verificación de identidad."
+description: "Yopitek ofrece lectores NFC/tarjeta inteligente ACS ACR: ACR122U, ACR1252U, ACR1552U — para control de acceso, firma electrónica y verificación de identidad."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,7 +11,7 @@ featureimage: "/images/products/acr/banner-acr.png"
 
 {{< card-group >}}
   {{< card title="ACR122U NFC Reader" href="/es/products/acr/acr122u/" image="/images/products/acr/ACR122U.png" >}}
-    Lector NFC USB con soporte ISO 14443 A/B y MIFARE.
+    Lector NFC USB con soporte ISO 14443 A/B, MIFARE y FeliCa.
   {{< /card >}}
   {{< card title="ACR1252U NFC Forum Reader" href="/es/products/acr/acr1252u/" image="/images/products/acr/ACR1252U.png" >}}
     Lector USB certificado NFC Forum con soporte ISO 14443 A/B, MIFARE y FeliCa.

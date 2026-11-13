@@ -6,6 +6,10 @@ description: "Многофункциональный карманный инст
 featureimage: "/images/products/hak5/packet-squirrel.png"
 ---
 
+{{< alert "warning" >}}
+**Юридическое уведомление об использовании**: Packet Squirrel — профессиональный инструмент для исследований в области безопасности. Только для авторизованного тестирования безопасности и исследований. Предназначен исключительно для специалистов по безопасности, имеющих действительное письменное разрешение.
+{{< /alert >}}
+
 ## Особенности продукта
 
 ![Packet Squirrel Mark II](/images/products/hak5/card/packet-squirrel.png)
@@ -29,6 +33,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 | Стандартный IP управления | 172.16.32.1 |
 | Операционная система | Linux |
 | Индикатор | Многоцветный светодиод |
+| Размеры / Вес | 50 × 40 × 15 mm, 24 g |
 
 ## Области применения
 
@@ -43,7 +48,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 | Ресурс | Ссылка |
 |--------|--------|
-| 📖 Официальная документация | [Просмотреть онлайн](https://docs.hak5.org/packet-squirrel-mk-ii/packet-squirrel-mark-ii-by-hak5/) |
+| 📖 Официальная документация | [Просмотреть онлайн](https://documentation.hak5.org/packet-squirrel-mark-ii/packet-squirrel-mark-ii-by-hak5) |
 | ⬇️ Прошивка и инструменты | [Портал загрузок Hak5](https://downloads.hak5.org/squirrel/mk2) |
 
 {{< alert >}}

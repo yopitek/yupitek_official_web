@@ -1,6 +1,6 @@
 ---
 title: "Série ACS ACR — Lecteurs de Cartes NFC"
-description: "Yopitek distribue les lecteurs de cartes NFC/smart card de série ACS ACR : ACR122U, ACR1252U, ACR1552U — pour le contrôle d'accès, les signatures numériques et la vérification d'identité."
+description: "Yopitek propose les lecteurs de cartes NFC/smart card de série ACS ACR : ACR122U, ACR1252U, ACR1552U — pour le contrôle d'accès, les signatures numériques et la vérification d'identité."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -15,7 +15,7 @@ Advanced Card Systems (ACS) est un fabricant reconnu mondialement de lecteurs de
 
 {{< card-group >}}
   {{< card title="ACR122U Lecteur NFC" href="/fr/products/acr/acr122u/" image="/images/products/acr/ACR122U.png" >}}
-    Lecteur NFC USB supportant ISO 14443 A/B et MIFARE — design de bureau largement utilisé dans la recherche et le développement NFC.
+    Lecteur NFC USB supportant ISO 14443 A/B, MIFARE et FeliCa — design de bureau largement utilisé dans la recherche et le développement NFC.
   {{< /card >}}
   {{< card title="ACR1252U Lecteur Certifié NFC Forum" href="/fr/products/acr/acr1252u/" image="/images/products/acr/ACR1252U.png" >}}
     Lecteur USB certifié NFC Forum supportant ISO 14443 A/B, MIFARE et FeliCa — idéal pour le développement d'applications NFC.

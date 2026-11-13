@@ -17,8 +17,14 @@ Video Game Module 是 Flipper Zero 的官方游戏扩展模块，基于 Raspberr
 | 项目 | 规格 |
 |------|------|
 | 处理器 | RP2040（双核心 ARM Cortex-M0+） |
-| 视频输出 | 支持外部屏幕连接 |
+| 视频输出 | DVI-D 视频输出，可连接外部电视、显示器或投影仪 |
 | 连接方式 | Flipper Zero GPIO |
+
+## 官方资源
+
+| 资源 | 链接 |
+|------|------|
+| Video Game Module 官方产品页面 | [flipper.net](https://flipper.net/products/video-game-module-for-flipper-zero) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/video-game-module.png" alt="Video Game Module for Flipper Zero" />

@@ -3,22 +3,25 @@ title: "Bash Bunny Mark II"
 date: 2025-01-01
 draft: false
 dir: rtl
-description: "منصة هجوم USB متعددة المتجهات، الأولى من نوعها عالمياً، تحاكي HID والشبكة والتخزين في آنٍ واحد، مع بيئة Debian Linux كاملة."
+description: "أكثر منصات هجوم USB تقدماً في العالم، تحاكي HID والشبكة والتخزين في آنٍ واحد، مع بيئة Debian Linux كاملة."
 featureimage: "/images/products/hak5/bash-bunny.png"
 ---
+
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانونية للاستخدام**: Bash Bunny أداة احترافية لأبحاث الأمن، مخصصة حصراً لمتخصصي الأمن الحاصلين على تصريح كتابي ساري.
+{{< /alert >}}
 
 ## ميزات المنتج
 
 ![Bash Bunny](/images/products/hak5/card/bash-bunny.png)
 
-- **منصة هجوم USB متعددة المتجهات**: الأولى عالمياً، من الإدخال إلى اختراق كامل في 7 ثوانٍ فقط
+- **منصة هجوم USB متعددة المتجهات**: ينتقل Mark II من التوصيل إلى الاختراق (plug to pwn) في 7 ثوانٍ فقط
 - **محاكاة أجهزة متعددة**: تحاكي HID + USB Ethernet + منفذ تسلسلي + تخزين USB في آنٍ واحد
 - **بيئة Linux كاملة**: تأتي مُثبَّتاً عليها nmap / responder / impacket / metasploit
 - **Bluetooth LE**: يدعم Remote Triggers والسياج الجغرافي (Geofencing)
 - **سعة تخزين ضخمة**: دعم MicroSD XC (حتى 2 TB) لتسريب كميات هائلة من البيانات
 - **أجهزة قوية**: معالج رباعي النواة ARM، SSD بمستوى سطح المكتب 8 GB، ضعف سعة RAM عن الجيل السابق
 - **تبديل سريع**: مفتاح ثلاثي الأوضاع + RGB LED للتبديل السريع بين Payloads
-- **دعم Cloud C²**: إدارة عن بُعد مع وصول مخصص إلى root shell عبر Console تسلسلي
 
 ## المواصفات الرئيسية
 
@@ -45,7 +48,7 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 
 | المورد | الرابط |
 |--------|--------|
-| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/bash-bunny/bash-bunny-by-hak5/) |
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://documentation.hak5.org/bash-bunny) |
 | ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/bunny) |
 
 {{< alert >}}

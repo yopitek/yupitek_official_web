@@ -40,7 +40,7 @@ ACR122U 是 ACS 基于 13.56 MHz RFID 技术的 PC 连接式非接触智能卡�
 | MTBF | 408,500 小时 |
 | LED | 1 个双色 红/绿（用户可控） |
 | 蜂鸣器 | 单音调（用户可控） |
-| 合规认证 | PC/SC、CCID、CE、FCC、RoHS |
+| 合规认证 | PC/SC、CCID、CE、FCC、RoHS 2 |
 
 ## 主要功能
 
@@ -79,6 +79,12 @@ ACR122U 是 ACS 基于 13.56 MHz RFID 技术的 PC 连接式非接触智能卡�
 | 资源 | 链接 |
 |----------|------|
 | 📄 ACR122U 规格书 (PDF) | [下载 PDF](/docs/acr/ACR122U_spec.pdf) |
+
+## 官方资源
+
+| 资源 | 链接 |
+|------|------|
+| ACS ACR122U 官方产品页面 | [acs.com.hk](https://www.acs.com.hk/cn/products/73/acr122u-nfc-%E9%9D%9E%E6%8E%A5%E8%A7%B8%E5%BC%8F%E6%99%BA%E8%83%BD%E5%8D%A1%E8%AF%BB%E5%86%99%E5%99%A8/) |
 
 {{< gallery >}}
   <img src="/images/products/acr/acr122u.webp" alt="ACS ACR122U NFC 读卡机" />

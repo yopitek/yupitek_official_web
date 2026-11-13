@@ -1,6 +1,6 @@
 ---
 title: "HAK5 — Outils de Recherche en Sécurité"
-description: "Yopitek distribue les outils de recherche en sécurité HAK5 : WiFi Pineapple, Bash Bunny, USB Rubber Ducky, Shark Jack, O.MG Cable et plus — la marque de référence pour les tests de pénétration autorisés."
+description: "Yopitek propose les outils de recherche en sécurité HAK5 : WiFi Pineapple, Bash Bunny, USB Rubber Ducky, Shark Jack, O.MG Cable et plus — la marque de référence pour les tests de pénétration autorisés."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,16 +9,16 @@ showChildPages: false
 featureimage: "/images/products/hak5/banner-hak5.png"
 ---
 
-HAK5 est un fabricant mondialement reconnu d'outils de recherche en sécurité, largement utilisé dans les tests de pénétration autorisés, les opérations Red Team, la formation en sécurité et les compétitions CTF.
+HAK5 est un fabricant mondialement reconnu d'outils de recherche en sécurité, largement utilisé dans les tests de pénétration autorisés, les opérations Red Team, la formation en sécurité et les compétitions CTF. La série O.MG est développée par Mischief Gadgets en partenariat avec Hak5.
 
 ## Gamme de Produits
 
 {{< card-group >}}
   {{< card title="WiFi Pineapple Mark VII" href="/fr/products/hak5/wifi-pineapple-mark7/" image="/images/products/hak5/wifi-pineapple.png" >}}
-    Plateforme professionnelle d'audit réseau sans fil, 802.11 a/b/g/n/ac double bande, OpenWRT intégré — idéal pour les évaluations de sécurité Wi-Fi.
+    Plateforme professionnelle d'audit réseau sans fil avec OpenWRT intégré — idéal pour les évaluations de sécurité Wi-Fi.
   {{< /card >}}
   {{< card title="WiFi Pineapple Enterprise" href="/fr/products/hak5/wifi-pineapple-enterprise/" image="/images/products/hak5/wifi-pineapple-enterprise.png" >}}
-    Plateforme d'audit sans fil de qualité enterprise avec conception d'antenne améliorée pour les évaluations de sécurité réseau à grande échelle.
+    Plateforme d'audit sans fil de qualité enterprise avec processeur quad-core, double Gigabit Ethernet et alimentation secteur pour les évaluations de sécurité réseau à grande échelle.
   {{< /card >}}
   {{< card title="USB Rubber Ducky" href="/fr/products/hak5/usb-rubber-ducky/" image="/images/products/hak5/usb-rubber-ducky.png" >}}
     Outil d'injection HID standard de l'industrie ressemblant à une clé USB standard — exécute des scripts de frappes pré-programmés.
@@ -47,7 +47,7 @@ HAK5 est un fabricant mondialement reconnu d'outils de recherche en sécurité, 
   {{< card title="O.MG Programmer" href="/fr/products/hak5/omg-programmer/" image="/images/products/hak5/omg-programmer.png" >}}
     Programmeur dédié pour O.MG Cable — utilisé pour le flash du firmware DuckyScript.
   {{< /card >}}
-  {{< card title="O.MG UnBlocker" href="/fr/products/hak5/omg-unBlocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
+  {{< card title="O.MG UnBlocker" href="/fr/products/hak5/omg-unblocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
     Contourne les dispositifs de blocage de données USB — pour les tests légaux des solutions de câbles charge uniquement.
   {{< /card >}}
   {{< card title="Malicious Cable Detector" href="/fr/products/hak5/malicious-cable-detector/" image="/images/products/hak5/malicious-cable-detector.png" >}}
@@ -64,6 +64,12 @@ HAK5 est un fabricant mondialement reconnu d'outils de recherche en sécurité, 
   {{< /card >}}
   {{< card title="Shark Jack Cable" href="/fr/products/hak5/shark-jack-cable/" image="/images/products/hak5/shark-jack-cable.png" >}}
     Version câble du Shark Jack pour connexion directe aux ports réseau.
+  {{< /card >}}
+  {{< card title="Shark Jack Display" href="/fr/products/hak5/shark-jack-display/" image="/images/products/hak5/shark-jack-display.jpg" >}}
+    Outil d'évaluation de réseaux filaires de poche avec écran OLED de 1,2 pouce et commutateur à bascule pour exécuter des payloads interactifs sur l'appareil.
+  {{< /card >}}
+  {{< card title="LAN Turtle Hub" href="/fr/products/hak5/lan-turtle-hub/" image="/images/products/hak5/lan-turtle-hub.jpg" >}}
+    Adaptateur USB-C Ethernet avec hub USB 3 à 3 ports pour l'accès à distance, l'interception USB et le WiFi hors bande, avec payloads DuckyScript et interface web.
   {{< /card >}}
 {{< /card-group >}}
 

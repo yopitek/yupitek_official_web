@@ -19,6 +19,12 @@ A capa de silicone protetora oficial do Flipper Zero fornece cobertura total par
 - Boa resposta tátil nos botões
 - Recortes para acesso ao GPIO e USB-C
 
+## Recursos Oficiais
+
+| Recurso | Link |
+|---------|------|
+| Página oficial Silicone Case | [flipper.net](https://flipper.net/products/flipper-silicone-case) |
+
 {{< gallery >}}
   <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}

@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero — Dispositivo Multi-Protocolo de Pesquisa Sem Fio"
-description: "Yopitek distribui Flipper Zero com suporte para Sub-GHz, NFC, RFID, infravermelho, Bluetooth. Ideal para educação em segurança e pesquisa legal."
+description: "Yopitek oferece Flipper Zero com suporte para Sub-GHz, NFC, RFID, infravermelho, Bluetooth. Ideal para educação em segurança e pesquisa legal."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 
 {{< card-group >}}
   {{< card title="Flipper Zero" href="/pt/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.png" >}}
-    Dispositivo principal — Sub-GHz, NFC, RFID 125kHz, infravermelho, iButton, GPIO, Bluetooth 5.0, USB-C.
+    Dispositivo principal — Sub-GHz, NFC, RFID 125kHz, infravermelho, iButton, GPIO, Bluetooth 5.4, USB-C.
   {{< /card >}}
   {{< card title="WiFi Devboard for Flipper Zero" href="/pt/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.png" >}}
     Placa de expansão Wi-Fi oficial (ESP32-S2) — adiciona capacidades de teste Wi-Fi.
@@ -25,6 +25,12 @@ featureimage: "/images/products/flipperzero/banner-flipperzero.png"
     Capa de silicone oficial — proteção completa do dispositivo.
   {{< /card >}}
 {{< /card-group >}}
+
+## Recursos Oficiais
+
+| Recurso | Link |
+|---------|------|
+| Página oficial Flipper Zero | [flipper.net](https://flipper.net/products/flipper-zero) |
 
 ---
 

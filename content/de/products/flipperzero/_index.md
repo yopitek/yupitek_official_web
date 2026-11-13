@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero Multi-Protocol Wireless Security Research Device"
-description: "Yopitek vertreibt Flipper Zero — unterstützt Sub-GHz, NFC, RFID, Infrarot, Bluetooth und mehr drahtlose Protokoll-Forschung. Ideal für Sicherheitbildung und legale Forschung."
+description: "Yopitek bietet Flipper Zero an — unterstützt Sub-GHz, NFC, RFID, Infrarot, Bluetooth und mehr drahtlose Protokoll-Forschung. Ideal für Sicherheitbildung und legale Forschung."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -15,7 +15,7 @@ Flipper Zero ist ein Open-Source-Multi-Protokoll-Funk-Sicherheitsforschungstool,
 
 {{< card-group >}}
   {{< card title="Flipper Zero" href="/de/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.png" >}}
-    Kerngerät mit Unterstützung für Sub-GHz, NFC, RFID 125 kHz, Infrarot, iButton, GPIO, Bluetooth 5.0, integriertes USB-C.
+    Kerngerät mit Unterstützung für Sub-GHz, NFC, RFID 125 kHz, Infrarot, iButton, GPIO, Bluetooth 5.4, integriertes USB-C.
   {{< /card >}}
   {{< card title="WiFi Devboard für Flipper Zero" href="/de/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.png" >}}
     Offizielles Flipper Zero Wi-Fi-Erweiterungsboard auf Basis von ESP32-S2 — ermöglicht Wi-Fi-Sicherheitstests.
@@ -27,6 +27,12 @@ Flipper Zero ist ein Open-Source-Multi-Protokoll-Funk-Sicherheitsforschungstool,
     Offizielle Flipper Zero Silikon-Schutzkiste — kompletter Geräteschutz mit taktiler Tasten-Anmutung.
   {{< /card >}}
 {{< /card-group >}}
+
+## Offizielle Ressourcen
+
+| Ressource | Link |
+|----------|------|
+| Flipper Zero Produktseite | [flipper.net](https://flipper.net/products/flipper-zero) |
 
 ---
 

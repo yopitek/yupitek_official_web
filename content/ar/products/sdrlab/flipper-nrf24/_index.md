@@ -43,3 +43,5 @@ dir: rtl
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}
+
+الصفحة الرسمية للمصنّع (OpenSourceSDRLab، لم يتم التحقق منها عبر الإنترنت): https://opensourcesdrlab.com/products/improved-version-nrf24-module-and-gpio-for-flipper-for-sniffer-and-mouse-jacker?VariantsId=10383

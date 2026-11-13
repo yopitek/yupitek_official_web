@@ -1,6 +1,6 @@
 ---
-title: "HAK5 O.MG UnBlocker — Outil de Recherche pour le Contournement de Bloqueurs de Données USB"
-description: "HAK5 O.MG UnBlocker, un outil de recherche pour tester l'efficacité des dispositifs de blocage de données USB et valider les mesures d'isolation de données USB."
+title: "HAK5 O.MG UnBlocker — Implant O.MG Déguisé en Bloqueur de Données USB"
+description: "HAK5 O.MG UnBlocker, un implant O.MG de série Elite déguisé en bloqueur de données USB, pour les tests de sécurité autorisés."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,12 +9,12 @@ tags: ["USB Security", "Data Blocker", "Security Testing"]
 ---
 
 {{< alert "warning" >}}
-**Avertissement Légal** : O.MG UnBlocker est un outil professionnel de recherche en sécurité. Réservé aux tests de sécurité et à la recherche autorisés uniquement. Destiné exclusivement aux professionnels de la sécurité disposant d'une autorisation écrite valide pour tester et évaluer l'efficacité des mesures de sécurité USB.
+**Avertissement Légal** : O.MG UnBlocker est un outil professionnel de recherche en sécurité. Réservé aux tests de sécurité et à la recherche autorisés uniquement. Destiné exclusivement aux professionnels de la sécurité disposant d'une autorisation écrite valide.
 {{< /alert >}}
 
 ## Présentation du Produit
 
-L'O.MG UnBlocker est utilisé pour tester l'efficacité des dispositifs de blocage de données USB (USB condoms / bloqueurs de données USB), aidant les chercheurs en sécurité à évaluer si les mesures de sécurité USB actuelles peuvent effectivement empêcher le transfert de données et l'injection HID.
+L'O.MG UnBlocker ressemble à un bloqueur de données USB ordinaire (USB condom) et en reproduit le fonctionnement, mais renferme un implant sans fil O.MG de série Elite en sommeil. Il se contrôle via une WebUI Wi-Fi et doit être activé avec l'O.MG Programmer avant utilisation.
 
 {{< gallery >}}
   <img src="/images/products/hak5/omg-unBlocker.png" alt="HAK5 O.MG UnBlocker" />

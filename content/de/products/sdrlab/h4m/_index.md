@@ -20,25 +20,26 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Portable SDR"]
 - USB-C-Anschluss für Schnellladung und breite Kompatibilität
 - Eingebauter Lautsprecher und Mikrofon; Audioquelle wechselt automatisch beim Einstecken von Kopfhörern
 - GPIO-Erweiterungsport unterstützt DIY-Zubehör (z. B. Flipper Zero Add-Ons)
-- Bundle enthält einen HackRF R10c-Klon mit Mayhem Firmware-Unterstützung
+- Bundle enthält einen HackRF R10C mit Mayhem Firmware-Unterstützung
 
 ## Spezifikationen
 
 | Spezifikation | Wert / Beschreibung |
 |---------------|---------------------|
-| Bundle-Hardware | HackRF One (R10c Klon) + PortaPack H4M PCB |
+| Bundle-Hardware | HackRF One (R10C) + PortaPack H4M PCB |
 | Frequenzbereich | 1 MHz – 6 GHz (gemäß HackRF One Spezifikationen) |
 | Maximale Bandbreite | 20 MHz |
 | ADC-Auflösung | 8-bit |
 | RF-Anschluss | SMA Female |
-| Haupt-RF-Chip | MAX2837 (HackRF RF Frontend) |
-| Display | 3,2" TFT Matte Bildschirm |
+| Display | 3,2" TFT, 240×320, matt, Touchscreen |
 | Stromanschluss | USB-C (Schnellladung) |
-| Akkukapazität | 2500 mAh Lithium-Akku (je nach Bundle) |
+| Akkukapazität | 2500 mAh Lithium-Akku |
 | Energiemanagement | Fortschrittlicher Batteriemanagemant-IC (%, Spannung, Stromanzeige) |
 | Audio | Eingebauter Lautsprecher + Mikrofon, automatische Kopfhörererkennung |
-| Erweiterungsschnittstelle | I2C-kompatibler GPIO-Port |
-| Gehäuse | Klares Acryl oder ABS-Spritzguss-Gehäuse (je nach Bundle) |
+| Erweiterungsschnittstelle | GPIO-Port für eigene Zusatzmodule |
+| Speicher | microSD-Steckplatz |
+| Audioanschluss | 3.5 mm Kopfhörer-/Mikrofonbuchse |
+| Gehäuse | Transparentes ABS-Spritzguss-Gehäuse |
 | Firmware | Mayhem Firmware (vorinstalliert oder benutzerseitig installierbar) |
 | OS-Unterstützung | Windows, macOS, Linux, Android (via USB-Hostcomputer) |
 | Software-Kompatibilität | GNU Radio, SDR#, GQRX und mehr (USB-verbundener Modus) |
@@ -74,3 +75,5 @@ Der vollständige Einsteigerleitfaden für den Einstieg in Ihr SDRLab H4M — vo
 {{< alert >}}
 Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}
+
+**Originalhersteller-Shopseite (OpenSourceSDRLab)**: https://opensourcesdrlab.com/products/h4m-receiver-and-spectrum-analyzer?VariantsId=10129

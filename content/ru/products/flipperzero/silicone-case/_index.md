@@ -19,6 +19,12 @@ tags: ["Аксессуары Flipper Zero", "Защитный чехол"]
 - Хорошая тактильная отдача кнопок
 - Вырезы для доступа к GPIO и USB-C
 
+## Официальные ресурсы
+
+| Ресурс | Ссылка |
+|--------|--------|
+| Официальная страница Silicone Case | [flipper.net](https://flipper.net/products/flipper-silicone-case) |
+
 {{< gallery >}}
   <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}

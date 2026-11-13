@@ -18,8 +18,14 @@ Video Game Module هي وحدة التوسعة الرسمية للألعاب ل�
 | البند | المواصفة |
 |-------|---------|
 | المعالج | RP2040 (ARM Cortex-M0+ ثنائي النواة) |
-| إخراج الفيديو | يدعم توصيل شاشة خارجية |
+| إخراج الفيديو | إخراج فيديو بصيغة DVI-D إلى تلفاز أو شاشة أو جهاز عرض خارجي |
 | طريقة التوصيل | Flipper Zero GPIO |
+
+## الموارد الرسمية
+
+| المورد | الرابط |
+|--------|--------|
+| الصفحة الرسمية لـ Video Game Module | [flipper.net](https://flipper.net/products/video-game-module-for-flipper-zero) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/video-game-module.png" alt="Video Game Module for Flipper Zero" />

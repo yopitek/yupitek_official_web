@@ -11,7 +11,7 @@ featureimage: "/images/products/acr/banner-acr.png"
 
 {{< card-group >}}
   {{< card title="ACR122U NFC Reader" href="/ru/products/acr/acr122u/" image="/images/products/acr/ACR122U.png" >}}
-    USB NFC считыватель с поддержкой ISO 14443 A/B и MIFARE.
+    USB NFC считыватель с поддержкой ISO 14443 A/B, MIFARE и FeliCa.
   {{< /card >}}
   {{< card title="ACR1252U NFC Forum Reader" href="/ru/products/acr/acr1252u/" image="/images/products/acr/ACR1252U.png" >}}
     USB-считыватель, сертифицированный NFC Forum, с поддержкой ISO 14443 A/B, MIFARE и FeliCa.

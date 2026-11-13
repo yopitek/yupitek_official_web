@@ -1,10 +1,24 @@
 ---
 title: "Shark Jack Cable"
+seo_title: "Shark Jack Cable | Hak5 Taiwan | Yopitek"
 date: 2025-01-01
 draft: false
-description: "A Shark Jack integrated into an Ethernet cable form factor, adding a USB UART serial interface for easier covert implantation."
+description: "Hak5 Shark Jack Cable, a Shark Jack in an Ethernet cable form factor with a CP2102 USB UART serial interface. Available from Yopitek in Taiwan."
 featureimage: "/images/products/hak5/shark-jack-cable.png"
+faq:
+  - question: "How is the Shark Jack Cable different from the Shark Jack?"
+    answer: "It integrates the Shark Jack into an Ethernet cable form factor and adds a CP2102 USB UART serial interface."
+  - question: "Are Shark Jack payloads compatible with the Shark Jack Cable?"
+    answer: "Yes. Payload development is fully compatible with the Shark Jack, and Android Serial Setup is supported."
+  - question: "What are the Shark Jack Cable's key specifications?"
+    answer: "It uses a MediaTek MT7628DAN SoC with Ethernet 802.3 and USB UART (CP2102) interfaces. It measures 62 x 21 x 12 mm and is rated at 2.5W (USB 5V 0.5A)."
 ---
+
+{{< alert "warning" >}}
+**Legal Use Disclaimer**: Shark Jack Cable is a professional security research tool. For authorized security testing and research use only. Intended solely for security professionals with valid written authorization.
+{{< /alert >}}
+
+The Hak5 Shark Jack Cable is a Shark Jack built into an Ethernet cable form factor for authorized network assessments and security research. It adds a CP2102 USB UART serial interface and keeps Shark Jack payload compatibility. Yopitek offers it for purchase in Taiwan.
 
 ## Product Features
 
@@ -39,9 +53,11 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 
 | Resource | Link |
 |----------|------|
-| 📖 Official Documentation | [View Online](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| 📖 Official Documentation | [View Online](https://documentation.hak5.org/shark-jack/getting-started/shark-jack-basics) |
 | ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/shark/cable) |
 
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+{{< faq >}}

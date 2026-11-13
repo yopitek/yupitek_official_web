@@ -25,6 +25,12 @@ El WiFi Devboard es el módulo de expansión Wi-Fi oficial para Flipper Zero, ba
 | Conexión | GPIO de Flipper Zero |
 | Firmware | Compatible con Marauder y otros Firmware de terceros |
 
+## Recursos Oficiales
+
+| Recurso | Enlace |
+|---------|--------|
+| Página oficial WiFi Devboard | [flipper.net](https://flipper.net/products/wifi-devboard) |
+
 {{< gallery >}}
   <img src="/images/products/flipperzero/wifi-devboard.png" alt="WiFi Devboard para Flipper Zero" />
 {{< /gallery >}}

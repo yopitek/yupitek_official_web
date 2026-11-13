@@ -6,6 +6,10 @@ description: "钥匙扣大小的有线网络攻击工具，内置电池，插入
 featureimage: "/images/products/hak5/shark-jack.png"
 ---
 
+{{< alert "warning" >}}
+**法律使用声明**: Shark Jack 为专业安全研究工具，仅限用于经授权的安全测试与研究，且仅供持有有效书面授权的安全专业人员使用。
+{{< /alert >}}
+
 ## 产品特色
 
 ![Shark Jack](/images/products/hak5/card/shark-jack.png)
@@ -13,7 +17,7 @@ featureimage: "/images/products/hak5/shark-jack.png"
 - **超小型有线网络植入工具**：钥匙扣大小，快速部署
 - **独立执行**：内置电池，插入 Ethernet 即可执行 Payload
 - **DuckyScript Payload**：支持 NETMODE / LED / SWITCH / BATTERY 等命令
-- **内置渗透测试工具**：nmap、curl、metasploit-framework 等
+- **内置渗透测试工具**：nmap、tcpdump 等
 - **Cloud C² 支持**：远程管理
 - **3 段开关**：攻击模式 / Arming 模式 / 关机
 
@@ -25,7 +29,8 @@ featureimage: "/images/products/hak5/shark-jack.png"
 | 接口 | Ethernet（802.3） |
 | 尺寸 | 62 × 21 × 12 mm |
 | 电源 | 2.5W（USB 5V 0.5A） |
-| 电池 | 1S 401020 3.7V 50mAh 0.2Wh LiPo |
+| 电池 | 1S 401020 3.7V 50mAh LiPo |
+| 电池续航 | 约 10–15 分钟 |
 | 工作温度 | 35°C ~ 45°C |
 | 储存温度 | -20°C ~ 50°C |
 | 相对湿度 | 0% ~ 90%（不凝露） |
@@ -41,7 +46,7 @@ featureimage: "/images/products/hak5/shark-jack.png"
 
 | 资源 | 链接 |
 |------|------|
-| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| 📖 官方使用文件 | [在线查看](https://documentation.hak5.org/shark-jack/master) |
 | ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/shark) |
 
 {{< alert >}}

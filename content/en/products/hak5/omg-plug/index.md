@@ -2,16 +2,34 @@
 title: "O.MG Plug"
 date: 2025-01-01
 draft: false
-description: "A keychain-sized USB plug-form O.MG device supporting WiFi control, DuckyScript injection, Self-Destruct, and Geo-Fencing."
+description: "Hak5 O.MG Plug: keychain-size USB plug with WiFi control and DuckyScript, up to 890 keys/sec, 300 payload slots (Elite). Available in Taiwan via Yopitek."
 featureimage: "/images/products/hak5/omg-plug.png"
+seo_title: "O.MG Plug | Hak5 Taiwan | Yopitek"
+faq:
+  - question: "What is the O.MG Plug?"
+    answer: "It is a keychain-size USB plug form of the O.MG device with WiFi control and DuckyScript injection, for authorized security research."
+  - question: "What are the O.MG Plug's performance figures?"
+    answer: "Basic offers 120 keys/sec and 8 payload slots; Elite offers 890 keys/sec and up to 300 payload slots."
+  - question: "Which features are exclusive to the Elite version?"
+    answer: "Self-Destruct is Elite only, and Elite adds HIDX StealthLink, encrypted network C2 and Port Stealthing."
+  - question: "Does the O.MG Plug work out of the box?"
+    answer: "No. It is disabled by default and requires the O.MG Programmer for activation."
+  - question: "How do I buy or get a quote for the O.MG Plug in Taiwan?"
+    answer: "Contact Yopitek through the contact page to request a quotation."
 ---
+
+{{< alert "warning" >}}
+**Legal Use Disclaimer**: O.MG Plug is a professional security research tool. For authorized security testing and research use only. Intended solely for security professionals with valid written authorization.
+{{< /alert >}}
+
+O.MG Plug is a keychain-size Hak5 USB plug with WiFi control and DuckyScript injection, for authorized security research. Elite reaches 890 keys/sec and up to 300 payload slots, with 192 keyboard layouts. Yopitek offers it in Taiwan; contact us for a quotation.
 
 ## Product Features
 
 ![O.MG Plug](/images/products/hak5/card/omg-plug.png)
 
 - **Plug-Form O.MG Device**: Keychain-sized, USB plug form factor
-- **Full O.MG Feature Set**: WiFi control, DuckyScript injection, Self-Destruct, Geo-Fencing
+- **Full O.MG Feature Set**: WiFi control, DuckyScript injection, Self-Destruct (Elite only), Geo-Fencing
 - **Cable-Free Operation**: No cable required — plugs directly into a USB port
 - **Everyday Carry Design**: Ideal for everyday carry (EDC), always ready for deployment
 - **Elite Advanced Features**: HIDX StealthLink, encrypted network C2, Port Stealthing
@@ -40,8 +58,10 @@ featureimage: "/images/products/hak5/omg-plug.png"
 | Resource | Link |
 |----------|------|
 | 📖 Official Documentation | [View Online](https://o.mg.lol/setup/OMGPlug/) |
-| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/omg) |
+| ⬇️ Firmware & Tools | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+{{< faq >}}

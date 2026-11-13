@@ -1,49 +1,47 @@
 ---
-title: "SDRLab Flipper Zero WiFi Multi-Board — Add-On de Recherche sans Fil 3-en-1"
-description: "Flipper Zero WiFi Multi-Board, NRF24 + CC1101 (300–928MHz) + ESP32 (firmware Marauder), trois protocoles sans fil sur une seule carte, alimenté par GPIO."
+title: "SDRLab Flipper Zero WiFi Multi-Board — Carte d'Extension Multimodule"
+description: "Flipper Zero WiFi Multi-Board, accessoire de carte de développement avec modules NRF24, GPIO, CC1101, GPS et capteur environnemental."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
-tags: ["Flipper Zero Add-On", "ESP32", "CC1101", "NRF24", "Wi-Fi Marauder", "Security Research"]
+tags: ["Flipper Zero Add-On", "Carte de développement WiFi", "NRF24", "CC1101", "GPS"]
 ---
 
 ## Caractéristiques
 
 ![SDRLab Flipper Zero WiFi Multi-Board](/images/products/sdrlab/flipper-wifi-multiboard.png)
 
-- Intégration 3-en-1 : NRF24 + CC1101 + ESP32 sur une seule carte pour la recherche multi-protocole sans fil
-- Le module NRF24 gère l'interception des signaux clavier/souris 2,4 GHz et les attaques MouseJacker
-- Le module CC1101 étend la couverture Sub-GHz (300–928 MHz) avec support de modulation ASK/OOK/FSK
-- Le module ESP32 exécute le firmware Wi-Fi Marauder pour la recherche en sécurité Wi-Fi 2,4 GHz
-- Regroupe plusieurs capacités de recherche sans fil sur un seul add-on — plus besoin de changer de module
-- Alimenté directement par le connecteur GPIO du Flipper Zero
+- Intègre les modules NRF24 et WiFi/NRF24 pour une connectivité sans fil polyvalente
+- Module GPIO, radio Sub-GHz CC1101 et module GPS pour une intégration avancée de capteurs
+- Module de positionnement plug-and-play pour ajouter facilement le GPS
+- Conçue comme accessoire de carte de développement pour le Flipper Zero
+- Capteur de CO2 MH-Z19 et BME280 pour une surveillance environnementale non professionnelle
+- La fiche du fabricant mentionne aussi un module Air Mouse
 
 ## Spécifications Techniques
 
 | Spécification | Valeur / Description |
 |---------------|---------------------|
-| Facteur de Forme | Carte d'extension GPIO Flipper Zero 3-en-1 |
-| Module NRF24 | Nordic nRF24L01, 2,4 GHz — sniffing HID + MouseJacker |
-| Module CC1101 | Texas Instruments CC1101, 300–928 MHz Sub-GHz |
-| Modulation CC1101 | ASK, OOK, FSK |
-| Module ESP32 | ESP32 (firmware Marauder), recherche sécurité Wi-Fi 2,4 GHz |
-| Interface de Connexion | Connecteur GPIO standard Flipper Zero |
-| Alimentation | Fournie par le GPIO du Flipper Zero |
-| Firmware | Wi-Fi Marauder (ESP32), firmware NRF24 Sniffer |
-| Contenu de la Boîte | Carte d'extension 3-en-1 × 1 |
+| Type de Produit | Accessoire de carte de développement WiFi / Multiboard pour Flipper Zero |
+| Modules Sans Fil | NRF24 ; combinaison WiFi/NRF24 |
+| Sub-GHz et GPIO | Module GPIO, radio Sub-GHz CC1101 |
+| Positionnement | Module GPS ; module de positionnement plug-and-play |
+| Capteurs Environnementaux | Capteur de CO2 MH-Z19, BME280 (surveillance non professionnelle) |
+| Hôte | Flipper Zero (non inclus) |
 
 ## Cas d'Utilisation
 
-- Recherche en sécurité Wi-Fi 2,4 GHz (suite d'outils Marauder)
-- Interaction et recherche avec des appareils Sub-GHz (300–928 MHz)
-- Test de protocoles sans fil d'appareils IoT (gamme Sub-GHz)
-- Sniffing HID sans fil et démonstration MouseJacker
-- Plage Sub-GHz étendue pour Flipper Zero
-- Test sans fil multi-protocole Red Team
+- Recherche en sécurité réseau (uniquement sur vos propres réseaux ou ceux que vous êtes autorisé à tester)
+- Projets et développement IoT
+- Gestion à distance d'appareils
+- Positionnement GPS dans les projets Flipper Zero
+- Surveillance du CO2 et de l'environnement (usage non professionnel)
 
 ---
 
 {{< alert >}}
 Besoin d'un devis pour le produit ? Veuillez [nous contacter](/fr/contact/).
 {{< /alert >}}
+
+**Page boutique du fabricant (OpenSourceSDRLab)** : https://opensourcesdrlab.com/products/flipper-zero-modules-wifi-devboard-multiboard-esp8266-wifi-module-air-mouse-module-official?VariantsId=10382

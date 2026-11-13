@@ -17,8 +17,14 @@ El Video Game Module es el módulo oficial de expansión para juegos del Flipper
 | Elemento | Especificación |
 |----------|----------------|
 | Procesador | RP2040 (ARM Cortex-M0+ de doble núcleo) |
-| Salida de Video | Soporta conexión a pantalla externa |
+| Salida de Video | Salida de video DVI-D a TV, monitor o proyector externo |
 | Conexión | Flipper Zero GPIO |
+
+## Recursos Oficiales
+
+| Recurso | Enlace |
+|---------|--------|
+| Página oficial Video Game Module | [flipper.net](https://flipper.net/products/video-game-module-for-flipper-zero) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/video-game-module.png" alt="Video Game Module for Flipper Zero" />

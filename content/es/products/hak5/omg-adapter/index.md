@@ -6,6 +6,10 @@ description: "Dispositivo O.MG en forma de adaptador que puede usarse con cables
 featureimage: "/images/products/hak5/omg-adapter.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso legal de uso**: O.MG Adapter es una herramienta profesional de investigación de seguridad destinada exclusivamente a profesionales de la seguridad con autorización escrita válida.
+{{< /alert >}}
+
 ## Características del Producto
 
 ![O.MG Adapter](/images/products/hak5/card/omg-adapter.png)
@@ -38,8 +42,7 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 
 | Recurso | Enlace |
 |---------|--------|
-| 📖 Documentación oficial | [Ver en línea](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/omg) |
+| ⬇️ Firmware y herramientas | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 ¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).

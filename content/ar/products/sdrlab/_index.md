@@ -1,6 +1,6 @@
 ---
 title: "وحدات SDRLAB للراديو المُعرَّف بالبرمجيات"
-description: "توزع Yopitek وحدات SDRLAB SDR ولوحات توسعة Flipper Zero — مثالية لأبحاث الاتصالات اللاسلكية والراديو الهاوي وتحليل إشارات RF."
+description: "تقدم Yopitek وحدات SDRLAB SDR ولوحات توسعة Flipper Zero — مثالية لأبحاث الاتصالات اللاسلكية والراديو الهاوي وتحليل إشارات RF."
 date: 2026-03-12
 draft: false
 dir: rtl
@@ -27,7 +27,7 @@ featureimage: "/images/products/sdrlab/banner-sdrlab.png"
     لوحة توسعة RF بنطاق 5G مصممة لـ Flipper Zero.
   {{< /card >}}
   {{< card title="Flipper Zero WiFi Multiboard" href="/ar/products/sdrlab/flipper-wifi-multiboard/" image="/images/products/sdrlab/flipper-wifi-multiboard.png" >}}
-    لوحة توسعة Wi-Fi متعددة الوظائف لـ Flipper Zero مع وحدة ESP8266.
+    لوحة توسعة Wi-Fi متعددة الوظائف لـ Flipper Zero مع وحدات NRF24 وGPIO وCC1101 وGPS.
   {{< /card >}}
   {{< card title="Flipper Zero Ethernet Test Module" href="/ar/products/sdrlab/flipper-ethernet/" image="/images/products/sdrlab/flipper-ethernet.png" >}}
     وحدة توسعة اختبار الشبكة السلكية لـ Flipper Zero.

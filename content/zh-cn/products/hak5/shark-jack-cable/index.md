@@ -6,6 +6,10 @@ description: "融入以太网线材外型的 Shark Jack，新增 USB UART 串行
 featureimage: "/images/products/hak5/shark-jack-cable.png"
 ---
 
+{{< alert "warning" >}}
+**法律使用声明**: Shark Jack Cable 为专业安全研究工具，仅限用于经授权的安全测试与研究，且仅供持有有效书面授权的安全专业人员使用。
+{{< /alert >}}
+
 ## 产品特色
 
 ![Shark Jack Cable](/images/products/hak5/card/shark-jack-cable.png)
@@ -39,7 +43,7 @@ featureimage: "/images/products/hak5/shark-jack-cable.png"
 
 | 资源 | 链接 |
 |------|------|
-| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| 📖 官方使用文件 | [在线查看](https://documentation.hak5.org/shark-jack/getting-started/shark-jack-basics) |
 | ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/shark/cable) |
 
 {{< alert >}}

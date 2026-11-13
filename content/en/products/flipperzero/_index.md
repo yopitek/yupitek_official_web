@@ -1,6 +1,7 @@
 ---
 title: "Flipper Zero Multi-Protocol Wireless Security Research Device"
-description: "Yopitek distributes Flipper Zero — supporting Sub-GHz, NFC, RFID, infrared, Bluetooth, and more wireless protocol research. Ideal for security education and lawful research."
+description: "Yopitek offers Flipper Zero, WiFi Devboard, Video Game Module and Silicone Case in Taiwan for authorized security research and education."
+seo_title: "Flipper Zero Series | Flipper Taiwan | Yopitek"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -11,11 +12,13 @@ featureimage: "/images/products/flipperzero/banner-flipperzero.png"
 
 Flipper Zero is an open-source multi-protocol wireless security research tool supporting a wide range of wireless communication protocols. It is widely used by the global security research community for protocol research, security education, and lawful testing.
 
+Flipper Zero is an open-source, pocket-sized multi-protocol tool for authorized security research, education and lawful testing. This line covers the Flipper Zero device and its official accessories: the WiFi Devboard, Video Game Module and Silicone Case. Yopitek offers these products in Taiwan; contact us for a quotation.
+
 ## Product Line
 
 {{< card-group >}}
   {{< card title="Flipper Zero" href="/en/products/flipperzero/flipper-zero/" image="/images/products/flipperzero/flipper-zero.png" >}}
-    Core device supporting Sub-GHz, NFC, RFID 125kHz, infrared, iButton, GPIO, Bluetooth 5.0, built-in USB-C.
+    Core device supporting Sub-GHz, NFC, RFID 125kHz, infrared, iButton, GPIO, Bluetooth 5.4, built-in USB-C.
   {{< /card >}}
   {{< card title="WiFi Devboard for Flipper Zero" href="/en/products/flipperzero/wifi-devboard/" image="/images/products/flipperzero/wifi-devboard.png" >}}
     Official Flipper Zero Wi-Fi expansion board based on ESP32-S2 — enables Wi-Fi security testing capabilities.
@@ -27,6 +30,12 @@ Flipper Zero is an open-source multi-protocol wireless security research tool su
     Official Flipper Zero silicone protective case — full device protection with tactile button feel.
   {{< /card >}}
 {{< /card-group >}}
+
+## Official Resources
+
+| Resource | Link |
+|----------|------|
+| Flipper Zero Product Page | [flipper.net](https://flipper.net/products/flipper-zero) |
 
 ---
 

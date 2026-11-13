@@ -1,44 +1,47 @@
 ---
-title: "SDRLab Flipper Zero WiFi Multitarjeta — Tarjeta de Expansión Inalámbrica 3 en 1"
-description: "Flipper Zero WiFi Multitarjeta, NRF24 + CC1101 (300-928MHz) + ESP32 (firmware Marauder), investigación de protocolos inalámbricos 3 en 1, alimentado por GPIO."
+title: "SDRLab Flipper Zero WiFi Multitarjeta — Tarjeta de Expansión Multimódulo"
+description: "Flipper Zero WiFi Multitarjeta, accesorio de placa de desarrollo con módulos NRF24, GPIO, CC1101, GPS y sensor ambiental."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 brands: ["sdrlab"]
-tags: ["Expansión Flipper Zero", "ESP32", "CC1101", "NRF24", "Wi-Fi Marauder", "Investigación de seguridad"]
+tags: ["Expansión Flipper Zero", "Placa de desarrollo WiFi", "NRF24", "CC1101", "GPS"]
 ---
+
 ## Características
+
 ![SDRLab Flipper Zero WiFi Multitarjeta](/images/products/sdrlab/flipper-wifi-multiboard.png)
-- Diseño integrado 3 en 1: NRF24 + CC1101 + ESP32 para múltiples protocolos inalámbricos en una sola tarjeta
-- El módulo NRF24 soporta sniffing de señales de teclados/ratones de 2.4 GHz y MouseJacker
-- El módulo CC1101 amplía la cobertura Sub-GHz (300–928 MHz) con soporte de modulación ASK/OOK/FSK
-- El módulo ESP32 corre el firmware Wi-Fi Marauder para investigación de seguridad Wi-Fi de 2.4 GHz
-- Una sola tarjeta de expansión concentra múltiples funciones de investigación inalámbrica, reduciendo el cambio de accesorios
-- Alimentado directamente desde el GPIO del Flipper Zero
+
+- Integra módulos NRF24 y WiFi/NRF24 para una conectividad inalámbrica versátil
+- Módulo GPIO, radio Sub-GHz CC1101 y módulo GPS para una integración avanzada de sensores
+- Módulo de posicionamiento plug-and-play para añadir GPS fácilmente
+- Diseñada como accesorio de placa de desarrollo para el Flipper Zero
+- Sensor de CO2 MH-Z19 y BME280 para monitoreo ambiental no profesional
+- El listado del fabricante también menciona un módulo Air Mouse
 
 ## Especificaciones
+
 | Especificación | Valor / Descripción |
 |----------------|---------------------|
-| Tipo de producto | Tarjeta de expansión GPIO 3 en 1 para Flipper Zero |
-| Módulo NRF24 | Nordic nRF24L01, 2.4 GHz, sniffing de teclados/ratones + MouseJacker |
-| Módulo CC1101 | Texas Instruments CC1101, Sub-GHz 300–928 MHz |
-| Formatos de modulación CC1101 | ASK, OOK, FSK |
-| Módulo ESP32 | ESP32 (firmware Marauder), investigación de seguridad Wi-Fi 2.4 GHz |
-| Interfaz de conexión | Pines GPIO estándar del Flipper Zero |
-| Alimentación | Desde el GPIO del Flipper Zero |
-| Firmware | Wi-Fi Marauder (ESP32), firmware NRF24 Sniffer |
-| Contenido del paquete | Tarjeta de expansión 3 en 1 × 1 |
+| Tipo de producto | Accesorio de placa de desarrollo WiFi / Multitarjeta para Flipper Zero |
+| Módulos inalámbricos | NRF24; combinación WiFi/NRF24 |
+| Sub-GHz y GPIO | Módulo GPIO, radio Sub-GHz CC1101 |
+| Posicionamiento | Módulo GPS; módulo de posicionamiento plug-and-play |
+| Sensores ambientales | Sensor de CO2 MH-Z19, BME280 (monitoreo no profesional) |
+| Host | Flipper Zero (no incluido) |
 
 ## Casos de Uso
-- Investigación de seguridad Wi-Fi 2.4 GHz (herramienta Marauder)
-- Interacción e investigación de dispositivos Sub-GHz (300–928 MHz)
-- Pruebas de protocolos inalámbricos en dispositivos IoT (rango Sub-GHz)
-- Sniffing de dispositivos HID inalámbricos y demostración de MouseJacker
-- Extensión del rango de uso Sub-GHz del Flipper Zero
-- Pruebas inalámbricas multi-protocolo en ejercicios de Red Team
+
+- Investigación de seguridad de redes (solo en redes propias o con autorización para probarlas)
+- Proyectos y desarrollo de IoT
+- Gestión remota de dispositivos
+- Posicionamiento GPS en proyectos con Flipper Zero
+- Monitoreo de CO2 y del ambiente (uso no profesional)
 
 ---
 
 {{< alert >}}
 ¿Necesita una cotización del producto? Por favor, [contáctenos](/es/contact/).
 {{< /alert >}}
+
+Página oficial del fabricante (OpenSourceSDRLab, no verificada en línea): https://opensourcesdrlab.com/products/flipper-zero-modules-wifi-devboard-multiboard-esp8266-wifi-module-air-mouse-module-official?VariantsId=10382

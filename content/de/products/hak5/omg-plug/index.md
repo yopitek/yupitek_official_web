@@ -1,6 +1,6 @@
 ---
-title: "HAK5 O.MG Plug — Adapterwerkzeug für drahtlose HID-Forschung"
-description: "HAK5 O.MG Plug, ein drahtloses HID-Injection-Forschungswerkzeug in USB-Adapterform mit Unterstützung für mehrere USB-Anschlusstypen und WLAN-Fernauslösung."
+title: "HAK5 O.MG Plug — Schlüsselanhänger-USB-Stecker für drahtlose HID-Forschung"
+description: "HAK5 O.MG Plug, ein drahtloses HID-Injection-Forschungswerkzeug in Schlüsselanhängergröße (USB-Stecker) mit WLAN-Fernauslösung."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -14,7 +14,7 @@ tags: ["O.MG", "HID Injection", "Wi-Fi", "USB Adapter"]
 
 ## Produktübersicht
 
-Der O.MG Plug ist das Adapter-Formfaktorprodukt der O.MG-Serie, untergebracht in einem USB-Ladegerät- oder Adaptergehäuse mit drahtloser HID-Injection-Funktion. Payloads können per WLAN remote ausgelöst werden und eignen sich zur Bewertung des Zielbewusstseins gegenüber den Risiken von USB-Ladezubehör.
+Der O.MG Plug ist ein schlüsselanhängergroßer USB-Stecker der O.MG-Serie mit drahtloser HID-Injection-Funktion. Payloads können per WLAN remote ausgelöst werden Die kompakte Bauform eignet sich zum täglichen Mitführen am Schlüsselbund oder in der Hosentasche.
 
 {{< gallery >}}
   <img src="/images/products/hak5/omg-plug.png" alt="HAK5 O.MG Plug" />

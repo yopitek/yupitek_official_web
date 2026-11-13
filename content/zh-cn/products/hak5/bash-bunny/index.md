@@ -2,22 +2,25 @@
 title: "Bash Bunny Mark II"
 date: 2025-01-01
 draft: false
-description: "世界首款多向量 USB 攻击平台，可同时模拟 HID、网络、储存等设备，搭载完整 Debian Linux 环境。"
+description: "全球最先进的 USB 攻击平台，可同时模拟 HID、网络、储存等设备，搭载完整 Debian Linux 环境。"
 featureimage: "/images/products/hak5/bash-bunny.png"
 ---
+
+{{< alert "warning" >}}
+**合法使用声明**：Bash Bunny 为专业安全研究工具，仅限持有有效书面授权的安全专业人员使用。
+{{< /alert >}}
 
 ## 产品特色
 
 ![Bash Bunny](/images/products/hak5/card/bash-bunny.png)
 
-- **多向量 USB 攻击平台**：世界首款，从插入到完成渗透仅需 7 秒
+- **多向量 USB 攻击平台**：Mark II 从插入到上线（plug to pwn）仅需 7 秒
 - **多设备模拟**：同时模拟 HID 键盘 + USB Ethernet + 串行设备 + USB 储存
 - **完整 Linux 环境**：内置 nmap / responder / impacket / metasploit
 - **Bluetooth LE**：支持远程触发（Remote Triggers）与地理围栏（Geofencing）
 - **超大容量扩展**：MicroSD XC 支持（最高 2TB），大量数据外泄
 - **强大硬件**：四核 ARM CPU，8 GB 桌机级 SSD，RAM 较前代翻倍
 - **快速切换**：3 段开关 + RGB LED，快速切换 Payload
-- **Cloud C² 支持**：远程管理，专用串行 Console 访问 root shell
 
 ## 主要规格
 
@@ -44,7 +47,7 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 
 | 资源 | 链接 |
 |------|------|
-| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/bash-bunny/bash-bunny-by-hak5/) |
+| 📖 官方使用文件 | [在线查看](https://documentation.hak5.org/bash-bunny) |
 | ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/bunny) |
 
 {{< alert >}}

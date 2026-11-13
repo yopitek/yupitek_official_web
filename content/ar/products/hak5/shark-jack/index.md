@@ -7,6 +7,10 @@ description: "أداة هجوم شبكي سلكي بحجم حلقة المفات
 featureimage: "/images/products/hak5/shark-jack.png"
 ---
 
+{{< alert "warning" >}}
+**إخلاء مسؤولية الاستخدام القانوني**: Shark Jack أداة احترافية لأبحاث الأمن. للاستخدام في اختبارات الأمن والأبحاث المصرّح بها فقط. مخصصة حصراً لمتخصصي الأمن الحاصلين على تفويض كتابي صالح.
+{{< /alert >}}
+
 ## ميزات المنتج
 
 ![Shark Jack](/images/products/hak5/card/shark-jack.png)
@@ -14,7 +18,7 @@ featureimage: "/images/products/hak5/shark-jack.png"
 - **أداة زرع شبكي سلكي فائقة الصغر**: بحجم حلقة المفاتيح، نشر سريع
 - **تشغيل مستقل**: بطارية داخلية، تنفّذ Payload فور الاتصال بـ Ethernet
 - **DuckyScript Payload**: يدعم أوامر NETMODE / LED / SWITCH / BATTERY وغيرها
-- **أدوات اختراق مدمجة**: nmap، curl، metasploit-framework وغيرها
+- **أدوات اختراق مدمجة**: nmap، tcpdump وغيرها
 - **دعم Cloud C²**: إدارة عن بُعد
 - **مفتاح ثلاثي الأوضاع**: وضع الهجوم / وضع Arming / إيقاف التشغيل
 
@@ -26,7 +30,8 @@ featureimage: "/images/products/hak5/shark-jack.png"
 | الواجهة | Ethernet (802.3) |
 | الأبعاد | 62 × 21 × 12 mm |
 | الطاقة | 2.5W (USB 5V 0.5A) |
-| البطارية | 1S 401020 3.7V 50mAh 0.2Wh LiPo |
+| البطارية | 1S 401020 3.7V 50mAh LiPo |
+| مدة التشغيل بالبطارية | حوالي 10–15 دقيقة |
 | درجة حرارة التشغيل | 35°C ~ 45°C |
 | درجة حرارة التخزين | -20°C ~ 50°C |
 | الرطوبة النسبية | 0% ~ 90% (غير متكثّف) |
@@ -42,7 +47,7 @@ featureimage: "/images/products/hak5/shark-jack.png"
 
 | المورد | الرابط |
 |--------|--------|
-| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/shark-jack/shark-jack-by-hak5/) |
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://documentation.hak5.org/shark-jack/master) |
 | ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/shark) |
 
 {{< alert >}}

@@ -1,6 +1,6 @@
 ---
 title: "SDRLab TRX-duo — デュアルチャンネル 16-bit ZYNQ SDR プラットフォーム"
-description: "SDRLab TRX-duo、デュアルチャンネル 16-bit ADC/DAC SDR プラットフォーム、Xilinx Zynq 7010 SoC、Red Pitaya 互換、10kHz〜60MHz ダイレクトサンプリング、高度な HF 無線通信研究に最適。"
+description: "SDRLab TRX-duo、デュアルチャンネル 16-bit ADC/DAC SDR プラットフォーム、Xilinx Zynq 7010 SoC、Red Pitaya 互換、高度な HF 無線通信研究に最適。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -18,7 +18,6 @@ tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]
 - Xilinx Zynq 7010 SoC 搭載（デュアルコア ARM Cortex-A9 + FPGA）、デバイス上でデコードソフトウェアを直接実行可能
 - ネットワークリモートデプロイに対応、リモート SDR 受信局の構築が可能
 - HDSDR、SDR#、PowerSDR、SDR Console V3 などの主要ソフトウェアと互換
-- 公式 Red Pitaya SDRlab 122-16（約 $622 USD）の約半額で購入可能
 
 ## 仕様
 
@@ -27,7 +26,6 @@ tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]
 | プロセッサ | デュアルコア ARM Cortex-A9（Zynq 7010 SoC） |
 | FPGA | Xilinx Zynq 7010 |
 | メモリ（RAM） | 512 MB |
-| 受信周波数範囲 | 10 kHz – 60 MHz（ダイレクトサンプリング） |
 | 受信チャンネル数 | 2（SMA コネクタ） |
 | ADC 解像度 | 16-bit（LTC2208） |
 | ADC サンプルレート | 125 MS/s |
@@ -39,7 +37,6 @@ tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]
 | DAC サンプルレート | 125 MS/s |
 | 送信出力電圧 | 1 Vpp / +4 dBm |
 | 送信負荷インピーダンス | 50 Ω |
-| 送信出力電力 | 約 2.5 mW（外部パワーアンプが必要） |
 | イーサネット | 1 Gbit |
 | USB | Type-C（USB 2.0） |
 | Wi-Fi | 外付け Wi-Fi ドングルが必要（付属なし） |
@@ -49,15 +46,12 @@ tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]
 | アナログ入力サンプルレート | 100 kS/s / 12-bit |
 | 通信インターフェース | I2C、UART、SPI |
 | 拡張電源出力 | +3.3 V |
-| オペレーティングシステム | 搭載 Linux（Red Pitaya ファームウェア） |
 
 ## 用途
 
 - HF（短波）アマチュア無線送受信（CW、SSB、AM、FM）
-- マルチバンド WSPR 弱信号モニタリング（最大 8 バンド同時）
 - リモート SDR 受信局の構築（フルネットワークリモートアクセス）
 - HF スペクトラム分析と信号研究
-- HPSDR 互換アプリケーションソフトウェア開発
 - アマチュア無線通信実験（コンテスト、天文観測）
 
 ---
@@ -65,3 +59,5 @@ tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+**メーカー販売ページ（OpenSourceSDRLab）**：https://opensourcesdrlab.com/products/trx-duo-compatible-with-red-pitaya-sdr-dual-16bit-adc-zynq7010?VariantsId=10980

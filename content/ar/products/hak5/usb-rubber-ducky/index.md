@@ -7,6 +7,10 @@ description: "أداة حقن لوحة مفاتيح مطابقة في مظهره
 featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 ---
 
+{{< alert "warning" >}}
+**إخلاء مسؤولية الاستخدام القانوني**: USB Rubber Ducky أداة احترافية لأبحاث حقن HID. للاستخدام في اختبارات الأمن والأبحاث المصرّح بها فقط. مخصصة حصراً لمتخصصي الأمن الحاصلين على تفويض كتابي صالح ومؤسسات التعليم الأمني ومسابقات CTF. حقن HID غير المصرّح به على أجهزة الغير غير قانوني.
+{{< /alert >}}
+
 ## ميزات المنتج
 
 ![USB Rubber Ducky](/images/products/hak5/card/usb-rubber-ducky.png)
@@ -14,7 +18,7 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 - **رائدة Keystroke Injection**: اخترعت حقن لوحة المفاتيح عام 2010، تحديث شامل عام 2022
 - **تمويه مثالي**: مظهر مطابق تماماً لمحرك USB عادي، يُعرَّف تلقائياً بوصفه HID موثوقاً
 - **DuckyScript™ 3.0**: يدعم المتغيرات والتحكم في التدفق والمنطق الشرطي واكتشاف نظام التشغيل والوظائف
-- **بصمة OS سلبية**: يُحدد بين سطح المكتب والأجهزة المحمولة في أقل من ثانية
+- **كشف نظام التشغيل**: يحدد نظام تشغيل الهدف (Windows وmacOS وLinux وChromeOS وAndroid وiOS) عبر امتداد OS_DETECT
 - **Keystroke Reflection**: قراءة حالة الجهاز المستهدف
 - **وضع هجوم ديناميكي**: تبديل ديناميكي بين وضعَي HID + Storage (ATTACKMODE)
 - **انتحال الجهاز**: انتحال VID / PID وبيانات أي جهاز USB
@@ -24,11 +28,9 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 | المواصفة | التفاصيل |
 |----------|----------|
-| المتحكم الدقيق | AT32UC3B1256، 60 MHz، 32-bit RISC |
-| Flash | 256KB Flash مدمج |
 | USB | USB 2.0 عالي السرعة |
 | الواجهة | USB-A + USB-C مزدوج (إصدار Mark II) |
-| التخزين | Flash مدمج (لا يحتاج MicroSD) |
+| التخزين | يأتي مع بطاقة MicroSD (لتخزين Payload) |
 | لغة السكريبت | DuckyScript™ 3.0 |
 
 ## بيئات التطبيق
@@ -42,7 +44,7 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 | المورد | الرابط |
 |--------|--------|
-| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://docs.hak5.org/hak5-usb-rubber-ducky/usb-rubber-ducky-by-hak5/) |
+| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://documentation.hak5.org/hak5-usb-rubber-ducky/master) |
 | ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/ducky) |
 
 {{< alert >}}

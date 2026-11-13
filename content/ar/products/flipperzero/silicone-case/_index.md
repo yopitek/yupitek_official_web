@@ -20,6 +20,12 @@ tags: ["إكسسوارات Flipper Zero", "غطاء حماية"]
 - إحساس جيد بالأزرار
 - فتحات للوصول إلى GPIO وUSB-C
 
+## الموارد الرسمية
+
+| المورد | الرابط |
+|--------|--------|
+| الصفحة الرسمية لـ Silicone Case | [flipper.net](https://flipper.net/products/flipper-silicone-case) |
+
 {{< gallery >}}
   <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}

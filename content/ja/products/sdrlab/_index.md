@@ -1,6 +1,6 @@
 ---
 title: "SDRLAB ソフトウェア定義無線モジュール"
-description: "YopitekはSDRLAB SDRソフトウェア定義無線モジュールとFlipper Zero拡張ボードを取り扱っています。無線通信研究、アマチュア無線、RF信号分析に最適。"
+description: "YupitekはSDRLAB SDRソフトウェア定義無線モジュールとFlipper Zero拡張ボードを取り扱っています。無線通信研究、アマチュア無線、RF信号分析に最適。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -27,7 +27,7 @@ SDRLABはソフトウェア定義無線（SDR）モジュールとFlipper Zero�
     2.4GHz無線研究用NRF24L01+モジュール。
   {{< /card >}}
   {{< card title="Flipper Zero WiFi Multiboard" href="/ja/products/sdrlab/flipper-wifi-multiboard/" image="/images/products/sdrlab/flipper-wifi-multiboard.png" >}}
-    ESP8266統合Wi-Fi多機能拡張ボード。
+    NRF24・GPIO・CC1101・GPS モジュールを備えた Wi-Fi 多機能拡張ボード。
   {{< /card >}}
   {{< card title="SDRLab H4M" href="/ja/products/sdrlab/h4m/" image="/images/products/sdrlab/h4m.png" >}}
     SDRLab H4M — 高性能SDRモジュール、高度な無線通信研究向け。

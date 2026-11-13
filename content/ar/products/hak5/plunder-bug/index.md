@@ -7,6 +7,10 @@ description: "أداة التنصت على الشبكة المحلية بحجم 
 featureimage: "/images/products/hak5/plunder-bug.png"
 ---
 
+{{< alert "warning" >}}
+**إخلاء مسؤولية الاستخدام القانوني**: Plunder Bug أداة احترافية لأبحاث الأمن. للاستخدام في اختبارات الأمن والأبحاث المصرّح بها فقط. مخصصة حصراً لمتخصصي الأمن الحاصلين على تفويض كتابي صالح.
+{{< /alert >}}
+
 ## ميزات المنتج
 
 ![Plunder Bug LAN Tap](/images/products/hak5/card/plunder-bug.png)

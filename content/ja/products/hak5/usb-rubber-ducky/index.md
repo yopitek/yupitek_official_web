@@ -6,6 +6,10 @@ description: "普通のUSBフラッシュドライブと外観が全く同一の
 featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 ---
 
+{{< alert "warning" >}}
+**法的使用に関する免責事項**: USB Rubber Duckyは専門的なHIDインジェクション研究ツールです。許可されたセキュリティテストおよび研究目的でのみ使用してください。有効な書面による許可を得たセキュリティ専門家、セキュリティ教育機関、CTF競技会のみを対象としています。第三者のデバイスに対する無許可のHIDインジェクションは違法です。
+{{< /alert >}}
+
 ## 製品特長
 
 ![USB Rubber Ducky](/images/products/hak5/card/usb-rubber-ducky.png)
@@ -13,7 +17,7 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 - **キーストロークインジェクションの始祖**：2010年にキーストロークインジェクション攻撃を発明。2022年に全面刷新
 - **完璧な偽装**：普通のUSBフラッシュドライブと外観が完全に同一。PCが自動的に信頼済みHIDキーボードとして認識
 - **DuckyScript™ 3.0**：変数、フロー制御、ロジック判断、OS検出、関数をサポート
-- **パッシブOSフィンガープリンティング**：1秒以内にデスクトップ / モバイルデバイスを識別
+- **OS検出**：OS_DETECT拡張機能でターゲットOS（Windows、macOS、Linux、ChromeOS、Android、iOS）を識別
 - **Keystroke Reflection**：ターゲットマシンの状態を読み返す
 - **ダイナミック攻撃モード**：HID + ストレージ攻撃モードを動的切替（ATTACKMODE）
 - **デバイスなりすまし**：任意のUSBデバイスのVID / PID / ベンダー / シリアル番号をなりすまし
@@ -23,11 +27,9 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 | 仕様項目 | 内容 |
 |---------|------|
-| マイクロコントローラー | AT32UC3B1256、60 MHz、32ビットRISC |
-| Flash | 256KB オンボードFlash |
 | USB | ハイスピードUSB 2.0 |
 | インターフェース | USB-A + USB-Cデュアルヘッド（Mark II版） |
-| ストレージ | 内蔵Flash（MicroSD不要） |
+| ストレージ | MicroSDカード付属（ペイロード保存用） |
 | スクリプト言語 | DuckyScript™ 3.0 |
 
 ## 適用シナリオ
@@ -41,7 +43,7 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/hak5-usb-rubber-ducky/usb-rubber-ducky-by-hak5/) |
+| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/hak5-usb-rubber-ducky/master) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/ducky) |
 
 {{< alert >}}

@@ -6,6 +6,10 @@ description: "既存のUSBケーブルと組み合わせて使用できるアダ
 featureimage: "/images/products/hak5/omg-adapter.png"
 ---
 
+{{< alert "warning" >}}
+**法的使用に関する免責事項**：O.MG Adapterは専門的なセキュリティ研究ツールであり、有効な書面による許可を得たセキュリティ専門家のみが使用できます。
+{{< /alert >}}
+
 ## 製品特長
 
 ![O.MG Adapter](/images/products/hak5/card/omg-adapter.png)
@@ -38,8 +42,7 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/omg) |
+| ⬇️ ファームウェア & ツール | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。

@@ -2,9 +2,29 @@
 title: "O.MG Cable"
 date: 2025-01-01
 draft: false
-description: "A handcrafted USB cable with a full WiFi + HID injection implant chip concealed inside, visually and tactilely indistinguishable from a normal USB cable."
+description: "Hak5 O.MG Cable: handcrafted USB cable with WiFi and HID implant, up to 890 keys/sec, 650,000 keystroke log, 192 layouts. Available in Taiwan via Yopitek."
 featureimage: "/images/products/hak5/omg-cable.png"
+seo_title: "O.MG Cable | Hak5 Taiwan | Yopitek"
+faq:
+  - question: "What is the O.MG Cable?"
+    answer: "It is a handcrafted USB cable that hides a WiFi and HID implant chip, used for authorized security testing and awareness training."
+  - question: "How fast is the O.MG Cable's keystroke injection?"
+    answer: "Basic reaches up to 120 keys/sec and Elite up to 890 keys/sec."
+  - question: "How many payload slots and keyboard layouts are supported?"
+    answer: "Basic has 8 payload slots and Elite up to 300; 192 keyboard layouts are supported."
+  - question: "How many keystrokes can the Elite version log?"
+    answer: "The Elite version can capture up to 650,000 keystrokes."
+  - question: "How is the O.MG Cable controlled?"
+    answer: "Over its built-in 802.11 b/g/n WiFi using any browser, with no computer connection required."
+  - question: "How do I buy or get a quote for the O.MG Cable in Taiwan?"
+    answer: "Contact Yopitek through the contact page to request a quotation."
 ---
+
+{{< alert "warning" >}}
+**Legal Use Disclaimer**: O.MG Cable is a professional security research tool. For authorized security testing and research use only. Intended solely for security professionals with valid written authorization, security awareness training, and educational purposes.
+{{< /alert >}}
+
+O.MG Cable is a Hak5 handcrafted USB cable with a WiFi and HID implant chip, built for authorized security testing and awareness training. The Elite version reaches 890 keys/sec, 300 payload slots and a 650,000-keystroke log. Yopitek offers it in Taiwan; contact us for a quotation.
 
 ## Product Features
 
@@ -45,8 +65,10 @@ featureimage: "/images/products/hak5/omg-cable.png"
 | Resource | Link |
 |----------|------|
 | 📖 Official Documentation | [View Online](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ Firmware & Tools | [Hak5 Download Portal](https://downloads.hak5.org/omg) |
+| ⬇️ Firmware & Tools | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 Need a product quotation? Please [contact us](/en/contact/)
 {{< /alert >}}
+
+{{< faq >}}

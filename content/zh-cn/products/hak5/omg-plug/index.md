@@ -2,16 +2,20 @@
 title: "O.MG Plug"
 date: 2025-01-01
 draft: false
-description: "钥匙扣大小的 USB 插头形态 O.MG 装置，支持 WiFi 控制、DuckyScript 注入、Self-Destruct 与地理围栏。"
+description: "钥匙扣大小的 USB 插头形态 O.MG 装置，支持 WiFi 控制、DuckyScript 注入、Self-Destruct（仅限 Elite） 与地理围栏。"
 featureimage: "/images/products/hak5/omg-plug.png"
 ---
+
+{{< alert "warning" >}}
+**合法使用声明**：O.MG Plug 为专业安全研究工具，仅限用于经授权的安全测试与研究。仅供持有有效书面授权的安全专业人员使用。
+{{< /alert >}}
 
 ## 产品特色
 
 ![O.MG Plug](/images/products/hak5/card/omg-plug.png)
 
 - **插头形态 O.MG 装置**：钥匙扣大小，USB 插头形态
-- **完整 O.MG 功能**：WiFi 控制、DuckyScript 注入、Self-Destruct、Geo-Fencing
+- **完整 O.MG 功能**：WiFi 控制、DuckyScript 注入、Self-Destruct（仅限 Elite）、Geo-Fencing
 - **无线材操作**：不需要线材即可操作，直接插入 USB 口
 - **日常携带设计**：适合随身携带，随时备用（EDC 日常携带）
 - **Elite 进阶功能**：HIDX StealthLink、加密网络 C2、端口隐身（Port Stealthing）
@@ -40,7 +44,7 @@ featureimage: "/images/products/hak5/omg-plug.png"
 | 资源 | 链接 |
 |------|------|
 | 📖 官方使用文件 | [在线查看](https://o.mg.lol/setup/OMGPlug/) |
-| ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/omg) |
+| ⬇️ 固件与工具下载 | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 需要询问产品报价?请来信[与我们联系](/zh-cn/contact/)

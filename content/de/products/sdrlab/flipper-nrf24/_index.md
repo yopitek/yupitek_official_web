@@ -48,3 +48,5 @@ tags: ["Flipper Zero Add-On", "NRF24", "2.4GHz", "MouseJacker", "Security Resear
 {{< alert >}}
 Benötigen Sie ein Produktangebot? Bitte [kontaktieren Sie uns](/de/contact/).
 {{< /alert >}}
+
+**Originalhersteller-Shopseite (OpenSourceSDRLab)**: https://opensourcesdrlab.com/products/improved-version-nrf24-module-and-gpio-for-flipper-for-sniffer-and-mouse-jacker?VariantsId=10383

@@ -20,25 +20,26 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "ポータブル SDR"]
 - USB-C コネクタ採用、急速充電・広範な互換性
 - 内蔵スピーカーとマイク、ヘッドフォン接続時に自動切り替え
 - GPIO 拡張ポートにより自作拡張アクセサリーを製作可能（Flipper Zero 等）
-- バンドルセットに HackRF R10c クローンを含み、Mayhem ファームウェアに対応
+- バンドルセットに HackRF R10C を含み、Mayhem ファームウェアに対応。microSD スロットと 3.5 mm ヘッドフォン／マイク端子も搭載
 
 ## 仕様
 
 | 仕様項目 | 値／説明 |
 |---------|---------|
-| 同梱ハードウェア | HackRF One（R10c クローン）+ PortaPack H4M PCB |
+| 同梱ハードウェア | HackRF One（R10C）+ PortaPack H4M PCB |
 | 周波数範囲 | 1 MHz – 6 GHz（HackRF One 仕様に準ずる） |
 | 最大帯域幅 | 20 MHz |
 | ADC 解像度 | 8-bit |
 | RF コネクタ | SMA メス |
-| メインチップ | MAX2837（HackRF RF フロントエンド） |
-| ディスプレイ | 3.2 インチ TFT マットスクリーン |
+| ディスプレイ | 3.2 インチ 240×320 マットタッチ LCD |
 | 電源コネクタ | USB-C（急速充電対応） |
-| バッテリー容量 | 2500 mAh リチウムバッテリー（バンドル版により異なる） |
+| バッテリー容量 | 2500 mAh リチウムバッテリー |
 | 電源管理 | 高度なバッテリー管理 IC（残量 %・電圧・電流表示） |
 | オーディオ | 内蔵スピーカー + マイク、自動ヘッドフォン切り替え |
-| 拡張インターフェース | I2C 互換 GPIO ポート |
-| ケース | 透明アクリルまたは ABS 射出成型ケース（バンドル版により異なる） |
+| 拡張インターフェース | GPIO ポート（自作拡張アクセサリー用） |
+| ストレージ | microSD スロット |
+| ヘッドフォン／マイク端子 | 3.5 mm ヘッドフォン／マイク端子 |
+| ケース | 透明 ABS 射出成型ケース |
 | ファームウェア | Mayhem Firmware（プリインストールまたは要自己書き込み） |
 | 対応 OS | Windows、macOS、Linux、Android（外部 PC 接続時） |
 | 互換ソフトウェア | GNU Radio、SDR#、GQRX 等（USB 接続モード） |
@@ -59,12 +60,12 @@ tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "ポータブル SDR"]
 
 ## 📖 ユーザーマニュアル
 
-The complete beginner guide for getting started with your SDRLab H4M — from unboxing to advanced signal operations.
+開封から高度な信号操作まで、SDRLab H4M を使い始めるための初心者向け完全ガイドです。
 
 <div style="margin: 1.5rem 0 2rem; text-align: center;">
   <a href="/manual/h4m/" target="_blank" rel="noopener"
      style="display: inline-block; padding: 0.875rem 2.5rem; background: #ffffff; color: #111827; border: 2px solid #d1d5db; border-radius: 8px; font-size: 1rem; font-weight: 600; text-decoration: none; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-    Open manual in full screen ↗
+    マニュアルを全画面で開く ↗
   </a>
 </div>
 ---
@@ -72,3 +73,5 @@ The complete beginner guide for getting started with your SDRLab H4M — from un
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+**メーカー販売ページ（OpenSourceSDRLab）**：https://opensourcesdrlab.com/products/h4m-receiver-and-spectrum-analyzer?VariantsId=10129

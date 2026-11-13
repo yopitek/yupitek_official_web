@@ -1,15 +1,25 @@
 ---
 title: "ACS ACR1252U — NFC Forum 認證 USB 讀卡機"
-description: "ACS ACR1252U，NFC Forum 認證 USB 讀卡機，支援讀寫器、卡片模擬及點對點三種 NFC 模式，適合 NFC 應用程式開發與企業部署。"
+description: "ACS ACR1252U NFC Forum 認證 USB 讀卡機，支援讀寫器、卡片模擬、點對點三種模式並內建 SAM 插槽，台灣購買請洽榆閤科技。"
+seo_title: "ACR1252U ACS 台灣 | Yopitek"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]
 tags: ["NFC", "NFC Forum", "ISO 14443", "USB", "讀卡機"]
+faq:
+  - question: "ACR1252U 支援哪些 NFC 模式？"
+    answer: "ACR1252U 通過 NFC Forum 認證，支援讀寫器、卡片模擬與點對點三種模式，並可讀取 ISO 14443 Type A/B、MIFARE、FeliCa 與 ISO 18092 標籤，讀取距離最遠 50 mm。"
+  - question: "ACR1252U-M1 與 ACR1252U-MF 有什麼差別？"
+    answer: "ACR1252U-M1 採用 USB Type-A 接頭，ACR1252U-MF 採用 USB Type-C 接頭。兩者皆為 13.56 MHz 讀卡機，具備 SAM 插槽並支援部署後 USB 韌體升級。"
+  - question: "ACR1252U 有 SAM 插槽嗎？"
+    answer: "有。內建一個 ISO 7816 Class A（5V）標準 SIM 尺寸的 SAM 插槽，支援 T=0 與 T=1，可用於金鑰分散化與相互認證。"
 ---
 
 ACR1252U
+
+ACS ACR1252U 是 NFC Forum 認證的 USB 讀卡機，支援讀寫器、卡片模擬、點對點三種模式，內建 SAM 插槽，讀取距離最遠 50 mm。榆閤科技於台灣提供此產品，歡迎洽詢報價。
 
 ## 產品概述
 
@@ -35,8 +45,10 @@ ACR1252U 是 ACS 取得 NFC Forum 認證的 PC 連接式讀卡機，採用 13.56
 | SAM 讀寫速度 | 9.6 Kbps – 215 Kbps |
 | LED | 1 個雙色 紅/綠（使用者可控） |
 | 蜂鳴器 | 單音調（使用者可控） |
-| 合規認證 | EN/IEC 60950、ISO 18092、ISO 14443、ISO 7816、PC/SC、CCID、NFC Forum、FeliCa Performance、CE、FCC、RoHS 2、REACH |
-| 附加認證 | J-LIS、VCCI、MIC（日本）、KC（韓國）、Microsoft WHQL |
+| 工作溫度 | 0°C – 60°C，90% RH（非冷凝） |
+| MTBF | 500,000 小時 |
+| 合規認證 | IEC/EN 62368、ISO 18092、ISO 14443、ISO 7816、PC/SC、CCID、NFC Forum、CE、UKCA、FCC、RoHS 2、REACH、WEEE |
+| 附加認證 | J-LIS、VCCI、TELEC（日本）、KC（韓國）、BIS、Microsoft WHQL |
 
 ## 主要功能
 
@@ -66,8 +78,7 @@ ACR1252U 是 ACS 取得 NFC Forum 認證的 PC 連接式讀卡機，採用 13.56
 - Windows®（多個版本，包含 Windows 10 及 Server 版本）
 - Linux®
 - macOS®
-- Solaris
-- Android™ 3.1 及以上版本
+- Android™
 
 
 ## 📄 產品規格書
@@ -98,3 +109,5 @@ ACR1252U 是 ACS 取得 NFC Forum 認證的 PC 連接式讀卡機，採用 13.56
 {{< alert >}}
 需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}
+
+{{< faq >}}

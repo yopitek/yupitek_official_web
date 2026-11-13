@@ -7,6 +7,10 @@ description: "أداة التفعيل الشامل وتحديث البرامج �
 featureimage: "/images/products/hak5/omg-programmer.png"
 ---
 
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانونية للاستخدام**: O.MG Programmer جهاز برمجة البرامج الثابتة لأدوات أبحاث سلسلة O.MG. للاستخدام في اختبارات الأمن والأبحاث المصرّح بها فقط.
+{{< /alert >}}
+
 ## ميزات المنتج
 
 ![O.MG Programmer USB A+C](/images/products/hak5/card/omg-programmer.png)
@@ -20,7 +24,7 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 
 | المواصفة | التفاصيل |
 |----------|----------|
-| واجهة الاتصال | USB-A + USB-C (إصدار مزدوج الرأس) |
+| واجهة الاتصال | USB-A + USB-C (طراز USB A+C) |
 | الأجهزة المتوافقة | جميع أجهزة سلسلة O.MG |
 | طريقة التشغيل | WebSerial (متصفح Chrome / Edge) أو Python |
 | الشمولية | 1 Programmer يعمل مع جميع أجهزة O.MG |
@@ -38,7 +42,6 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 | المورد | الرابط |
 |--------|--------|
 | 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://o-mg.github.io/WebFlasher/) |
-| ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/omg) |
 
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).

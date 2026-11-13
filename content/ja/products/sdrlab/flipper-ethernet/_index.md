@@ -14,6 +14,7 @@ tags: ["Flipper Zero 拡張", "イーサネット", "ネットワークテスト
 
 - Flipper Zero 専用に設計された有線イーサネットテスト拡張ボード
 - 有線ネットワーク接続性および DHCP 割り当ての正常動作を確認可能
+- 指定アドレスへ ping を実行して接続性と遅延を測定可能。MAC アドレスを任意に設定し、取得した IP を確認可能
 - 最大 105°C の耐熱性、多様な環境条件に対応
 - ユニバーサル基板（パーフォレーテッドボード）設計、DIY カスタマイズ拡張に対応
 - 軽量かつ携帯性に優れ、現場での即時診断が可能
@@ -35,11 +36,11 @@ tags: ["Flipper Zero 拡張", "イーサネット", "ネットワークテスト
 - 現場ネットワークエンジニアによる有線ネットワーク接続診断
 - DHCP サーバーの割り当て機能検証
 - 有線ネットワークインフラのテスト
-- ネットワークペネトレーションテストの補助ツール
-- 教育目的のネットワークプロトコル実験
 
 ---
 
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。
 {{< /alert >}}
+
+**メーカー販売ページ（OpenSourceSDRLab）**：https://opensourcesdrlab.com/products/for-flipper-zero-ethernet-test-module-wired-network-module-devboard-for-flipper-zero-attachment-accessory

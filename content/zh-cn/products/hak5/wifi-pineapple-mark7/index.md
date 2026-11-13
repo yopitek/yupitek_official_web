@@ -6,6 +6,10 @@ description: "搭载 PineAP Suite 的业界标准 WiFi 渗透测试平台，支�
 featureimage: "/images/products/hak5/wifi-pineapple.png"
 ---
 
+{{< alert "warning" >}}
+**法律使用声明**: WiFi Pineapple 为专业安全研究工具，仅限用于经授权的安全测试与研究，且仅供持有有效书面授权的安全专业人员使用、经授权的渗透测试人员与教育机构使用。未经授权访问第三方无线网络属违法行为。
+{{< /alert >}}
+
 ## 产品特色
 
 ![WiFi Pineapple Mark VII](/images/products/hak5/card/wifi-pineapple-mark7.png)
@@ -17,15 +21,13 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 - **Cloud C² 支持**：远程指挥与控制
 - **伪 AP 模拟**：可模拟开放式、WPA-PSK 与 Enterprise 伪 AP（Rogue AP）
 - **WPA-Enterprise 攻击**：支持自动握手捕获（Handshake Capture）
-- **扩展模块生态系**：Module ecosystem，兼容 MK7AC 802.11ac 5GHz 外接模块
+- **扩展模块生态系**：Module ecosystem，兼容 MK7AC 外接模块
 
 ## 主要规格
 
 | 规格项目 | 内容 |
 |---------|------|
 | CPU | 单核 MIPS 网络 SoC |
-| 无线 | 2.4 GHz 802.11 b/g/n；通过 MK7AC 模块支持 5 GHz 802.11ac |
-| 无线芯片组 | MediaTek MT7601U + MT7610U |
 | 内存 | 256 MB RAM |
 | 储存 | 2 GB eMMC |
 | 连接口 | USB-C（电源 / Ethernet）、USB 2.0 Host |
@@ -46,7 +48,7 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 
 | 资源 | 链接 |
 |------|------|
-| 📖 官方使用文件 | [在线查看](https://docs.hak5.org/wifi-pineapple/wifi-pineapple-mk7-by-hak5/) |
+| 📖 官方使用文件 | [在线查看](https://documentation.hak5.org/wifi-pineapple/master) |
 | ⬇️ 固件与工具下载 | [Hak5 下载中心](https://downloads.hak5.org/pineapple/mk7) |
 
 {{< alert >}}

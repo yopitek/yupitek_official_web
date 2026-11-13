@@ -1,6 +1,7 @@
 ---
 title: "SDRLAB Software-Defined Radio Modules"
-description: "Yopitek distributes SDRLAB SDR software-defined radio modules and Flipper Zero expansion boards — ideal for wireless communication research, amateur radio, and RF signal analysis."
+seo_title: "SDR Modules | SDRLab Taiwan | Yopitek"
+description: "Yopitek offers SDRLab SDR modules and Flipper Zero expansion boards in Taiwan for wireless research, amateur radio and RF analysis. Contact us for a quote."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -10,6 +11,8 @@ featureimage: "/images/products/sdrlab/banner-sdrlab.png"
 ---
 
 SDRLAB provides software-defined radio (SDR) modules and Flipper Zero expansion accessories for wireless communication research, amateur radio enthusiasts, and RF signal analysis applications.
+
+Yopitek offers SDRLab software-defined radio products and Flipper Zero expansion boards in Taiwan for wireless research, amateur radio and RF analysis. The range includes the RTL-SDR Blog V4, TRX-duo, H4M, and the Flipper Zero 5G, NRF24, WiFi Multiboard and Ethernet modules. Contact Yopitek for a quotation.
 
 ## Product Line
 
@@ -30,7 +33,7 @@ SDRLAB provides software-defined radio (SDR) modules and Flipper Zero expansion 
     Flipper Zero NRF24L01+ wireless module for 2.4 GHz wireless research.
   {{< /card >}}
   {{< card title="Flipper Zero WiFi Multiboard" href="/en/products/sdrlab/flipper-wifi-multiboard/" image="/images/products/sdrlab/flipper-wifi-multiboard.png" >}}
-    Flipper Zero multi-function Wi-Fi expansion board with integrated ESP8266 Wi-Fi module.
+    Flipper Zero multi-function Wi-Fi expansion board with NRF24, GPIO, CC1101 and GPS modules.
   {{< /card >}}
   {{< card title="Flipper Zero Ethernet Test Module" href="/en/products/sdrlab/flipper-ethernet/" image="/images/products/sdrlab/flipper-ethernet.png" >}}
     Flipper Zero wired network test expansion module for Ethernet testing.

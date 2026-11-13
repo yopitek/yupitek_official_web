@@ -2,15 +2,19 @@
 title: "Screen Crab"
 date: 2025-01-01
 draft: false
-description: "Primer dispositivo HDMI man-in-the-middle del mundo para pruebas de penetración, instalación transparente sin latencia, compatible con capturas de pantalla y grabación de video MPEG-4."
+description: "Dispositivo sigiloso de captura de video HDMI man-in-the-middle para pruebas de penetración, instalación transparente sin latencia, compatible con capturas de pantalla y grabación de video MPEG-4."
 featureimage: "/images/products/hak5/screen-crab.png"
 ---
+
+{{< alert "warning" >}}
+**Aviso de Uso Legal**: Screen Crab es una herramienta profesional de investigación de seguridad. Solo para pruebas de seguridad e investigación autorizadas. Destinada exclusivamente a profesionales de seguridad con autorización escrita válida.
+{{< /alert >}}
 
 ## Características del Producto
 
 ![Screen Crab](/images/products/hak5/card/screen-crab.png)
 
-- **Primer dispositivo HDMI MitM del mundo**: Herramienta de captura de imagen HDMI man-in-the-middle diseñada para pruebas de penetración
+- **Implante sigiloso de video HDMI MitM**: Herramienta de captura de imagen HDMI man-in-the-middle diseñada para pruebas de penetración
 - **Instalación transparente sin latencia**: Se instala en línea en la ruta de señal HDMI sin latencia ni interrupciones
 - **Múltiples modos de grabación**: Capturas de pantalla programadas o grabación de video completa (MPEG-4 a 2 / 4 / 16 Mbps)
 - **Listo para usar**: Las capturas se guardan automáticamente en MicroSD sin configuración; control mediante config.txt
@@ -25,7 +29,6 @@ featureimage: "/images/products/hak5/screen-crab.png"
 | Interfaces | HDMI (IN / OUT), USB (alimentación), MicroSD |
 | Estándar | HDMI 1.4 / DVI 1.0; 802.11 b/g/n |
 | Banda WiFi | 2.4 GHz (2.412 ~ 2.4835 GHz) |
-| Resoluciones soportadas | La mayoría de formatos 16:9 hasta 1920×1080 |
 | Dimensiones | 105 × 51 × 21 mm |
 | Alimentación | 5W (USB 5V 1A) |
 | Temperatura de operación | 35°C ~ 45°C |
@@ -44,7 +47,7 @@ featureimage: "/images/products/hak5/screen-crab.png"
 
 | Recurso | Enlace |
 |---------|--------|
-| 📖 Documentación oficial | [Ver en línea](https://docs.hak5.org/screen-crab/screen-crab-by-hak5/) |
+| 📖 Documentación oficial | [Ver en línea](https://documentation.hak5.org/screen-crab/master) |
 | ⬇️ Firmware y herramientas | [Portal de descargas Hak5](https://downloads.hak5.org/crab) |
 
 {{< alert >}}

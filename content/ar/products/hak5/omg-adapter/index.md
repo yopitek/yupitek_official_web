@@ -7,6 +7,10 @@ description: "جهاز O.MG بهيئة محوّل يمكن استخدامه مع
 featureimage: "/images/products/hak5/omg-adapter.png"
 ---
 
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانونية للاستخدام**: O.MG Adapter أداة احترافية لأبحاث الأمن، مخصصة حصراً لمتخصصي الأمن الحاصلين على تصريح كتابي ساري.
+{{< /alert >}}
+
 ## ميزات المنتج
 
 ![O.MG Adapter](/images/products/hak5/card/omg-adapter.png)
@@ -39,8 +43,7 @@ featureimage: "/images/products/hak5/omg-adapter.png"
 
 | المورد | الرابط |
 |--------|--------|
-| 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/omg) |
+| ⬇️ البرامج الثابتة والأدوات | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).

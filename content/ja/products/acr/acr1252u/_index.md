@@ -35,8 +35,10 @@ ACR1252U は、13.56 MHz 非接触技術を採用した NFC Forum 認定の PC �
 | SAM 読み取り／書き込み速度 | 9.6 Kbps – 215 Kbps |
 | LED | 1 個 双色 赤/緑（ユーザー制御可能） |
 | ブザー | 単音（ユーザー制御可能） |
-| 準拠規格 | EN/IEC 60950、ISO 18092、ISO 14443、ISO 7816、PC/SC、CCID、NFC Forum、FeliCa Performance、CE、FCC、RoHS 2、REACH |
-| 追加認定 | J-LIS、VCCI、MIC（日本）、KC（韓国）、Microsoft WHQL |
+| 動作温度 | 0°C – 60°C、90% RH（結露なし） |
+| MTBF | 500,000 時間 |
+| 準拠規格 | IEC/EN 62368、ISO 18092、ISO 14443、ISO 7816、PC/SC、CCID、NFC Forum、CE、UKCA、FCC、RoHS 2、REACH、WEEE |
+| 追加認定 | J-LIS、VCCI、TELEC（日本）、KC（韓国）、BIS、Microsoft WHQL |
 
 ## 主な機能
 
@@ -66,8 +68,7 @@ ACR1252U は、13.56 MHz 非接触技術を採用した NFC Forum 認定の PC �
 - Windows®（Windows 10 およびサーバーエディションを含む複数バージョン）
 - Linux®
 - macOS®
-- Solaris
-- Android™ 3.1 以降
+- Android™
 
 
 ## 📄 製品仕様書

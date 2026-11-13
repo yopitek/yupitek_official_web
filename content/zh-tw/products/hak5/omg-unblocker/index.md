@@ -2,9 +2,27 @@
 title: "O.MG UnBlocker"
 date: 2025-01-01
 draft: false
-description: "外觀完全模擬合法 USB Data Blocker 的 Elite 等級 O.MG 植入裝置，可躲避安全意識使用者的警覺。"
+description: "Hak5 O.MG UnBlocker 採 USB 資料阻斷器外型的 Elite 等級 O.MG 裝置，WiFi WebUI、僅 5V 電源直通，Yopitek 台灣提供報價。"
 featureimage: "/images/products/hak5/omg-unBlocker.png"
+seo_title: "O.MG UnBlocker Hak5 台灣 | Yopitek"
+faq:
+  - question: "O.MG UnBlocker 是什麼？"
+    answer: "它是內建於 USB 資料阻斷器外殼的 Elite 等級 O.MG 無線植入裝置，用於經授權的資安研究與訓練。"
+  - question: "直通埠傳遞什麼訊號？"
+    answer: "僅傳遞 5V 電源，沒有資料線，與真正的資料阻斷器相同。"
+  - question: "O.MG UnBlocker 如何控制？"
+    answer: "透過 WiFi WebUI 控制。"
+  - question: "需要啟用嗎？"
+    answer: "需要，須使用 O.MG Programmer 進行啟用。"
+  - question: "如何在台灣購買或詢價 O.MG UnBlocker？"
+    answer: "請透過聯絡頁面與 Yopitek 聯繫以取得報價。"
 ---
+
+{{< alert "warning" >}}
+**合法使用聲明**：O.MG UnBlocker 為專業資安研究工具，僅限用於經授權的資安測試與研究。僅供持有有效書面授權的資安專業人員使用。
+{{< /alert >}}
+
+O.MG UnBlocker 是 Hak5 的 Elite 等級 O.MG 裝置，外型為 USB 資料阻斷器，限授權研究，直通埠僅傳 5V 電源。Yopitek 提供台灣購買與報價服務。
 
 ## 產品特色
 
@@ -26,6 +44,7 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 | 連接埠 | USB-A 公頭（主動攻擊端）+ USB-A 母頭（電源直通端） |
 | 通過 | 5V 電源直通（無資料線路） |
 | 控制 | WiFi WebUI |
+| Payload 效能 | 最高 890 keys/sec、最多 300 個 Payload 槽、192 種鍵盤布局 |
 
 ## 應用環境
 
@@ -38,9 +57,10 @@ featureimage: "/images/products/hak5/omg-unBlocker.png"
 
 | 資源 | 連結 |
 |------|------|
-| 📖 官方使用文件 | [線上查看](https://o.mg.lol/setup/OMGCable/) |
-| ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/omg) |
+| ⬇️ 韌體與工具下載 | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}
+
+{{< faq >}}

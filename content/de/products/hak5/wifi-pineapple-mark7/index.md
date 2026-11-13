@@ -1,6 +1,6 @@
 ---
 title: "HAK5 WiFi Pineapple Mark VII — Professionelle WLAN-Netzwerkprüfplattform"
-description: "HAK5 WiFi Pineapple Mark VII, 802.11 a/b/g/n/ac Dual-Band mit OpenWRT-Firmware. Für WLAN-Sicherheitsbewertung und autorisierte Penetrationstests konzipiert."
+description: "HAK5 WiFi Pineapple Mark VII, WLAN-Prüfplattform mit OpenWRT-Firmware. Für WLAN-Sicherheitsbewertung und autorisierte Penetrationstests konzipiert."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -15,17 +15,14 @@ tags: ["Wi-Fi Audit", "Penetration Testing", "OpenWRT", "Wireless Security"]
 
 ## Produktübersicht
 
-WiFi Pineapple Mark VII ist HAK5s Flaggschiff-WLAN-Netzwerkprüfplattform, basierend auf OpenWRT Open-Source-Firmware mit Unterstützung für IEEE 802.11 a/b/g/n/ac Dual-Band-Betrieb. Die Plattform bietet ein reichhaltiges Modul-Ökosystem, das Sicherheitsforschern die Durchführung von WLAN-Reconnaissance, Access-Point-Emulation, Paketerfassung und anderen autorisierten Testaufgaben ermöglicht.
+WiFi Pineapple Mark VII ist HAK5s Flaggschiff-WLAN-Netzwerkprüfplattform, basierend auf OpenWRT Open-Source-Firmware. Die Plattform bietet ein reichhaltiges Modul-Ökosystem, das Sicherheitsforschern die Durchführung von WLAN-Reconnaissance, Access-Point-Emulation, Paketerfassung und anderen autorisierten Testaufgaben ermöglicht.
 
 ## Technische Spezifikationen
 
 | Eigenschaft | Spezifikation |
 |-------------|--------------|
-| Wi-Fi | IEEE 802.11 a/b/g/n/ac, Dual-Band 2,4 GHz / 5 GHz |
-| Prozessor | MT7628AN (primär) + AR9331 |
 | Betriebssystem | OpenWRT |
 | Schnittstelle | USB-C-Stromversorgung, USB-A-Host, Ethernet |
-| Antenne | Abnehmbare RP-SMA-Antennenunterstützung |
 
 ## Hauptmerkmale
 

@@ -1,10 +1,24 @@
 ---
 title: "WiFi Pineapple Mark VII"
+seo_title: "WiFi Pineapple Mark VII Hak5 台灣 | Yopitek"
 date: 2025-01-01
 draft: false
-description: "搭載 PineAP Suite 的業界標準 WiFi 滲透測試平台，支援三頻無線電與自動化 Campaign 情報收集。"
+description: "Hak5 WiFi Pineapple Mark VII 搭載 PineAP Suite 的 WiFi 稽核平台，具備三組專用無線電，榆閤科技提供台灣購買與詢價。"
 featureimage: "/images/products/hak5/wifi-pineapple.png"
+faq:
+  - question: "WiFi Pineapple Mark VII 的 PineAP Suite 是什麼？"
+    answer: "PineAP 是 Hak5 的 WiFi 稽核套件，以網頁介面管理，支援可產出報告的自動化 Campaign，以及 Cloud C² 遠端管理。"
+  - question: "WiFi Pineapple Mark VII 的硬體規格？"
+    answer: "採用單核 MIPS 網路 SoC，256 MB RAM 與 2 GB eMMC 儲存空間，具備三組專用無線電，以 USB-C（5V）供電。"
+  - question: "WiFi Pineapple Mark VII 有哪些連接埠？"
+    answer: "具備一個 USB-C 連接埠（供電與乙太網路）與一個 USB 2.0 Host 連接埠，並配有單顆 RGB LED 指示燈。"
 ---
+
+{{< alert "warning" >}}
+**法律使用聲明**: WiFi Pineapple 為專業資安研究工具，僅限用於經授權的資安測試與研究，且僅供持有有效書面授權的資安專業人員使用、經授權的滲透測試人員與教育機構使用。未經授權存取第三方無線網路屬違法行為。
+{{< /alert >}}
+
+Hak5 WiFi Pineapple Mark VII 是 WiFi 稽核平台，供授權的滲透測試與無線安全研究使用，搭載 PineAP Suite 與網頁介面，具備三組專用無線電。榆閤科技提供台灣購買與詢價服務。
 
 ## 產品特色
 
@@ -17,15 +31,13 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 - **Cloud C² 支援**：遠端指揮與控制
 - **偽 AP 模擬**：可模擬開放式、WPA-PSK 與 Enterprise 偽 AP（Rogue AP）
 - **WPA-Enterprise 攻擊**：支援自動握手擷取（Handshake Capture）
-- **擴充模組生態系**：Module ecosystem，相容 MK7AC 802.11ac 5GHz 外接模組
+- **擴充模組生態系**：Module ecosystem，相容 MK7AC 外接模組
 
 ## 主要規格
 
 | 規格項目 | 內容 |
 |---------|------|
 | CPU | 單核 MIPS 網路 SoC |
-| 無線 | 2.4 GHz 802.11 b/g/n；透過 MK7AC 模組支援 5 GHz 802.11ac |
-| 無線晶片組 | MediaTek MT7601U + MT7610U |
 | 記憶體 | 256 MB RAM |
 | 儲存 | 2 GB eMMC |
 | 連接埠 | USB-C（電源 / Ethernet）、USB 2.0 Host |
@@ -46,9 +58,11 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 
 | 資源 | 連結 |
 |------|------|
-| 📖 官方使用文件 | [線上查看](https://docs.hak5.org/wifi-pineapple/wifi-pineapple-mk7-by-hak5/) |
+| 📖 官方使用文件 | [線上查看](https://documentation.hak5.org/wifi-pineapple/master) |
 | ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/pineapple/mk7) |
 
 {{< alert >}}
 需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}
+
+{{< faq >}}

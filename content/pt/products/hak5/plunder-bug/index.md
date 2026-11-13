@@ -6,6 +6,10 @@ description: "Interceptador de rede LAN de tamanho bolso com interface USB-C par
 featureimage: "/images/products/hak5/plunder-bug.png"
 ---
 
+{{< alert "warning" >}}
+**Aviso de Uso Legal**: Plunder Bug é uma ferramenta profissional de pesquisa em segurança. Somente para testes de segurança e pesquisa autorizados. Destinada exclusivamente a profissionais de segurança com autorização por escrito válida.
+{{< /alert >}}
+
 ## Características do Produto
 
 ![Plunder Bug LAN Tap](/images/products/hak5/card/plunder-bug.png)

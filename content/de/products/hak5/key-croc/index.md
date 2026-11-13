@@ -23,6 +23,7 @@ Key Croc ist ein Sicherheitsforschungswerkzeug, das inline zwischen einer Tastat
 - WLAN-Konnektivität für die Fernverwaltung
 - HID-Injection-Funktion
 - SSH-Fernzugriff-Unterstützung
+- 2.4 GHz WLAN (2.412 ~ 2.4835 GHz), Abmessungen 74 × 27 × 14 mm, Leistungsaufnahme 5 W (USB 5V 1A)
 
 {{< gallery >}}
   <img src="/images/products/hak5/key-croc.png" alt="HAK5 Key Croc" />

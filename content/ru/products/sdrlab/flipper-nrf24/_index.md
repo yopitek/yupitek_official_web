@@ -41,3 +41,5 @@ tags: ["Расширение Flipper Zero", "NRF24", "2.4GHz", "MouseJacker", "�
 {{< alert >}}
 Нужно коммерческое предложение? Пожалуйста, [свяжитесь с нами](/ru/contact/).
 {{< /alert >}}
+
+Официальная страница товара (OpenSourceSDRLab): [https://opensourcesdrlab.com/products/improved-version-nrf24-module-and-gpio-for-flipper-for-sniffer-and-mouse-jacker?VariantsId=10383](https://opensourcesdrlab.com/products/improved-version-nrf24-module-and-gpio-for-flipper-for-sniffer-and-mouse-jacker?VariantsId=10383)

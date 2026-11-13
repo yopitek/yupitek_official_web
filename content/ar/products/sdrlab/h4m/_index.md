@@ -17,25 +17,27 @@ dir: rtl
 - مقبض دوّار مسطّح 360° (مستوحى من عجلة نقر iPod)، مريح للحمل ومقاوم للضغط العرضي
 - موصّل USB-C للشحن السريع وتوافق واسع
 - مكبر صوت وميكروفون مدمجان مع تبديل تلقائي عند توصيل سماعات الرأس
+- فتحة microSD ومقبس صوت 3.5 mm للسماعة/الميكروفون
 - منفذ GPIO القابل للتوسعة لصنع ملحقات مخصصة (مثل Flipper Zero)
-- المجموعة تشمل نسخة طبق الأصل من HackRF R10c، تدعم برنامج Mayhem
+- المجموعة تشمل HackRF R10C، يدعم برنامج Mayhem
 
 ## المواصفات
 | المواصفة | القيمة / الوصف |
 |---------|-----------|
-| الأجهزة المرفقة | HackRF One (نسخة طبق الأصل R10c) + PortaPack H4M PCB |
+| الأجهزة المرفقة | HackRF One (R10C) + PortaPack H4M PCB |
 | نطاق التردد | 1 MHz – 6 GHz (وفق مواصفات HackRF One) |
 | أقصى عرض نطاق | 20 MHz |
 | دقة ADC | 8-bit |
 | منفذ RF | SMA أنثى |
-| الشريحة الرئيسية | MAX2837 (الواجهة الأمامية لراديو HackRF) |
-| الشاشة | TFT مطفأة اللمعة 3.2 بوصة |
+| الشاشة | شاشة LCD تعمل باللمس مطفأة اللمعة 3.2 بوصة، 240×320 |
 | منفذ الطاقة | USB-C (شحن سريع) |
-| سعة البطارية | بطارية ليثيوم 2500 mAh (حسب إصدار المجموعة) |
+| سعة البطارية | بطارية ليثيوم 2500 mAh |
 | إدارة الطاقة | شريحة إدارة بطارية متقدمة (عرض % الشحن والجهد والتيار) |
 | الصوت | مكبر صوت مدمج + ميكروفون، تبديل تلقائي للسماعة |
-| واجهة التوسعة | منفذ GPIO متوافق مع I2C |
-| الهيكل | أكريليك شفاف أو قالب ABS (حسب إصدار المجموعة) |
+| واجهة التوسعة | منفذ GPIO للملحقات المخصصة |
+| التخزين | فتحة microSD |
+| موصلات الصوت | مقبس سماعة/ميكروفون 3.5 mm |
+| الهيكل | غلاف شفاف من ABS المقولب بالحقن |
 | البرنامج الثابت | Mayhem Firmware (مُثبَّت مسبقاً أو يتطلب الحرق يدوياً) |
 | أنظمة التشغيل المدعومة | Windows، macOS، Linux، Android (مع حاسوب خارجي) |
 | البرامج المتوافقة | GNU Radio، SDR#، GQRX وغيرها (وضع الاتصال USB) |
@@ -55,15 +57,17 @@ dir: rtl
 
 ## 📖 دليل المستخدم
 
-The complete beginner guide for getting started with your SDRLab H4M — from unboxing to advanced signal operations.
+الدليل الكامل للمبتدئين لبدء استخدام SDRLab H4M — من فتح العبوة إلى عمليات الإشارة المتقدمة.
 
 <div style="margin: 1.5rem 0 2rem; text-align: center;">
   <a href="/manual/h4m/" target="_blank" rel="noopener"
      style="display: inline-block; padding: 0.875rem 2.5rem; background: #ffffff; color: #111827; border: 2px solid #d1d5db; border-radius: 8px; font-size: 1rem; font-weight: 600; text-decoration: none; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-    Open manual in full screen ↗
+    فتح الدليل بملء الشاشة ↗
   </a>
 </div>
 ---
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).
 {{< /alert >}}
+
+الصفحة الرسمية للمصنّع (OpenSourceSDRLab، لم يتم التحقق منها عبر الإنترنت): https://opensourcesdrlab.com/products/h4m-receiver-and-spectrum-analyzer?VariantsId=10129

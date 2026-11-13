@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero — Outil de Recherche en Sécurité Sans Fil Multifonction"
-description: "Flipper Zero prend en charge Sub-GHz, NFC, RFID 125kHz, infrarouge, iButton, GPIO et Bluetooth 5.0 avec un firmware open source — le premier choix pour la recherche en sécurité et la formation."
+description: "Flipper Zero prend en charge Sub-GHz, NFC, RFID 125kHz, infrarouge, iButton, GPIO et Bluetooth 5.4 avec un firmware open source — le premier choix pour la recherche en sécurité et la formation."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -21,13 +21,13 @@ Flipper Zero est un outil de recherche en sécurité sans fil polyvalent, de tai
 
 | Protocole | Description |
 |-----------|-------------|
-| Sub-GHz | Lecture, rejeu et analyse de signaux sans fil 300–928 MHz |
-| NFC | Lecture et émulation de cartes ISO 14443A/B, ISO 15693 (tests autorisés uniquement) |
+| Sub-GHz | Lecture, rejeu et analyse de signaux sans fil (les bandes de fréquences dépendent de la région) |
+| NFC | Lecture et émulation de cartes ISO 14443A/B, MIFARE, FeliCa, HID iClass et de protocoles NFC Forum (tests autorisés uniquement) |
 | RFID 125kHz | Recherche sur les cartes RFID basse fréquence : EM4100, HID Prox, et plus |
 | Infrarouge | Apprentissage et rejeu de signaux de télécommande pour appareils ménagers |
 | iButton | Lecture de clés iButton à contact 1-Wire |
-| Bluetooth 5.0 | Connectivité BLE, contrôle via application mobile |
-| GPIO | GPIO 23 broches pour connexion de carte d'extension |
+| Bluetooth 5.4 | Connectivité BLE, contrôle via application mobile |
+| GPIO | 13 broches d'E/S utilisables pour la connexion de cartes d'extension |
 | USB-C | Transfert de fichiers, mise à jour du firmware, BadUSB (recherche sur l'injection HID) |
 
 ## Spécifications Techniques
@@ -36,15 +36,25 @@ Flipper Zero est un outil de recherche en sécurité sans fil polyvalent, de tai
 |---------|---------------|
 | Processeur | STM32WB55 |
 | Écran | LCD monochrome 1,4 pouce |
-| Batterie | 2000 mAh Li-Po |
-| Interface | USB-C, GPIO × 23 |
+| Batterie | 2100 mAh Li-Po |
+| Interface | USB-C, GPIO (13 I/O) |
 | Firmware | Open source (GitHub) |
-| Dimensions | 102 × 40 × 25 mm |
+| Dimensions | 100 × 40 × 25 mm |
+| Poids | 102 g |
 
 ## Contenu de la Boîte
 
 - Flipper Zero × 1
-- Câble USB-C × 1
+- Câble USB-A vers USB-C × 1
+- Manuel d'utilisation
+- Autocollant
+- Carte microSD non incluse
+
+## Ressources Officielles
+
+| Ressource | Lien |
+|----------|------|
+| Page produit Flipper Zero | [flipper.net](https://flipper.net/products/flipper-zero) |
 
 {{< gallery >}}
   <img src="/images/products/flipperzero/flipper-zero.png" alt="Flipper Zero" />

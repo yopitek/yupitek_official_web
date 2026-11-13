@@ -1,16 +1,30 @@
 ---
 title: "Screen Crab"
+seo_title: "Screen Crab Hak5 台灣 | Yopitek"
 date: 2025-01-01
 draft: false
-description: "世界首款滲透測試用 HDMI 中間人影像擷取裝置，零延遲透明安裝，支援截圖與 MPEG-4 影片錄製。"
+description: "Hak5 Screen Crab HDMI 中間人影像擷取裝置，支援 MicroSD 儲存、2.4 GHz Wi-Fi 與 MPEG-4 錄影，榆閤科技提供台灣購買與詢價。"
 featureimage: "/images/products/hak5/screen-crab.png"
+faq:
+  - question: "Screen Crab 錄製什麼影像格式？"
+    answer: "可錄製 MPEG-4 影片，位元率為 2、4 或 16 Mbps，也可設定定時截圖。"
+  - question: "Screen Crab 的儲存與 Wi-Fi 規格為何？"
+    answer: "影像存於 MicroSD，支援高容量 SDXC 卡與循環錄影。內建 802.11 b/g/n Wi-Fi，使用 2.4 GHz 頻段（2.412～2.4835 GHz）。"
+  - question: "Screen Crab 的尺寸與供電需求？"
+    answer: "尺寸為 105 × 51 × 21 mm，由 USB 供電，功耗 5W（5V 1A），HDMI 標準為 HDMI 1.4 / DVI 1.0。"
 ---
+
+{{< alert "warning" >}}
+**法律使用聲明**: Screen Crab 為專業資安研究工具，僅限用於經授權的資安測試與研究，且僅供持有有效書面授權的資安專業人員使用。
+{{< /alert >}}
+
+Hak5 Screen Crab 是 HDMI 中間人影像擷取裝置，供授權的滲透測試與資安研究使用，可錄製 MPEG-4 影片至 MicroSD，並內建 2.4 GHz Wi-Fi。榆閤科技提供台灣購買與詢價服務。
 
 ## 產品特色
 
 ![Screen Crab](/images/products/hak5/card/screen-crab.png)
 
-- **世界首款 HDMI MitM 裝置**：專為滲透測試設計的 HDMI 中間人影像擷取工具
+- **隱蔽式 HDMI MitM 影像植入裝置**：專為滲透測試設計的 HDMI 中間人影像擷取工具
 - **零延遲透明安裝**：Inline 安裝於 HDMI 訊號路徑，零延遲、零中斷
 - **多種錄製模式**：定時截圖或全動態影片錄製（MPEG-4，2 / 4 / 16 Mbps）
 - **開箱即用**：截圖自動存至 MicroSD，無需設定，編輯 config.txt 控制功能
@@ -25,7 +39,6 @@ featureimage: "/images/products/hak5/screen-crab.png"
 | 介面 | HDMI（IN / OUT）、USB（電源）、MicroSD |
 | 標準 | HDMI 1.4 / DVI 1.0；802.11 b/g/n |
 | WiFi 頻段 | 2.4 GHz（2.412 ~ 2.4835 GHz） |
-| 支援解析度 | 多數 1920×1080 以下 16:9 格式 |
 | 尺寸 | 105 × 51 × 21 mm |
 | 電源 | 5W（USB 5V 1A） |
 | 作業溫度 | 35°C ~ 45°C |
@@ -44,9 +57,11 @@ featureimage: "/images/products/hak5/screen-crab.png"
 
 | 資源 | 連結 |
 |------|------|
-| 📖 官方使用文件 | [線上查看](https://docs.hak5.org/screen-crab/screen-crab-by-hak5/) |
+| 📖 官方使用文件 | [線上查看](https://documentation.hak5.org/screen-crab/master) |
 | ⬇️ 韌體與工具下載 | [Hak5 下載中心](https://downloads.hak5.org/crab) |
 
 {{< alert >}}
 需要詢問產品報價?請來信[與我們聯絡](/zh-tw/contact/)
 {{< /alert >}}
+
+{{< faq >}}

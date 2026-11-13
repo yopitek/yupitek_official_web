@@ -1,6 +1,6 @@
 ---
 title: "أدوات HAK5 للبحث الأمني"
-description: "توزع Yopitek أدوات HAK5 للبحث الأمني: WiFi Pineapple وBash Bunny وUSB Rubber Ducky وShark Jack وO.MG Cable — العلامة التجارية المفضلة لاختبار الاختراق المعتمد."
+description: "تقدم Yopitek أدوات HAK5 للبحث الأمني: WiFi Pineapple وBash Bunny وUSB Rubber Ducky وShark Jack وO.MG Cable — العلامة التجارية المفضلة لاختبار الاختراق المعتمد."
 date: 2026-03-12
 draft: false
 dir: rtl
@@ -10,13 +10,13 @@ showChildPages: false
 featureimage: "/images/products/hak5/banner-hak5.png"
 ---
 
-HAK5 هو مصنع أدوات بحث أمني معروف عالميًا، تُستخدم منتجاته في اختبار الاختراق المعتمد وعمليات الفريق الأحمر والتدريب الأمني ومسابقات CTF.
+HAK5 هو مصنع أدوات بحث أمني معروف عالميًا، تُستخدم منتجاته في اختبار الاختراق المعتمد وعمليات الفريق الأحمر والتدريب الأمني ومسابقات CTF. تم تطوير سلسلة O.MG بواسطة Mischief Gadgets بالشراكة مع Hak5.
 
 ## خط المنتجات
 
 {{< card-group >}}
   {{< card title="WiFi Pineapple Mark VII" href="/ar/products/hak5/wifi-pineapple-mark7/" image="/images/products/hak5/wifi-pineapple.png" >}}
-    منصة مراجعة الشبكات اللاسلكية الاحترافية، 802.11 a/b/g/n/ac ثنائي النطاق.
+    منصة مراجعة الشبكات اللاسلكية الاحترافية مع OpenWRT مدمج.
   {{< /card >}}
   {{< card title="USB Rubber Ducky" href="/ar/products/hak5/usb-rubber-ducky/" image="/images/products/hak5/usb-rubber-ducky.png" >}}
     أداة HID Injection معيارية في الصناعة — تبدو مثل محرك USB عادي.
@@ -34,7 +34,7 @@ HAK5 هو مصنع أدوات بحث أمني معروف عالميًا، تُس
     أداة اختبار اختراق Wi-Fi ثلاثية النطاق بحجم الجيب، تدعم DuckyScript وشاشة ملونة 2.4" وتنبيهات بالاهتزاز، تعمل باستقلالية تامة.
   {{< /card >}}
   {{< card title="WiFi Pineapple Enterprise" href="/ar/products/hak5/wifi-pineapple-enterprise/" image="/images/products/hak5/wifi-pineapple-enterprise.png" >}}
-    منصة تدقيق شبكات لاسلكية من الدرجة المؤسسية مع تصميم هوائي محسّن للتقييمات الأمنية الواسعة النطاق.
+    منصة تدقيق شبكات لاسلكية من الدرجة المؤسسية بمعالج رباعي النواة ومنفذَي Gigabit Ethernet وتغذية تيار متردد للتقييمات الأمنية الواسعة النطاق.
   {{< /card >}}
   {{< card title="Key Croc" href="/ar/products/hak5/key-croc/" image="/images/products/hak5/key-croc.png" >}}
     مسجل لوحة مفاتيح وأداة حقن HID مع Wi-Fi مدمج للوصول عن بُعد.
@@ -51,7 +51,7 @@ HAK5 هو مصنع أدوات بحث أمني معروف عالميًا، تُس
   {{< card title="O.MG Programmer" href="/ar/products/hak5/omg-programmer/" image="/images/products/hak5/omg-programmer.png" >}}
     مبرمج مخصص لكابل O.MG — يستخدم لكتابة البرامج الثابتة بـ DuckyScript.
   {{< /card >}}
-  {{< card title="O.MG UnBlocker" href="/ar/products/hak5/omg-unBlocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
+  {{< card title="O.MG UnBlocker" href="/ar/products/hak5/omg-unblocker/" image="/images/products/hak5/omg-unBlocker.png" >}}
     يتجاوز أجهزة حظر بيانات USB — لاختبار حلول الشحن فقط بشكل شرعي.
   {{< /card >}}
   {{< card title="Malicious Cable Detector" href="/ar/products/hak5/malicious-cable-detector/" image="/images/products/hak5/malicious-cable-detector.png" >}}
@@ -65,6 +65,12 @@ HAK5 هو مصنع أدوات بحث أمني معروف عالميًا، تُس
   {{< /card >}}
   {{< card title="Shark Jack Cable" href="/ar/products/hak5/shark-jack-cable/" image="/images/products/hak5/shark-jack-cable.png" >}}
     نسخة الكابل من Shark Jack للاتصال المباشر بمنافذ الشبكة.
+  {{< /card >}}
+  {{< card title="Shark Jack Display" href="/ar/products/hak5/shark-jack-display/" image="/images/products/hak5/shark-jack-display.jpg" >}}
+    أداة تقييم شبكات سلكية بحجم الجيب مع شاشة OLED مقاس 1.2 بوصة ومفتاح تمرير لتشغيل حمولات تفاعلية على الجهاز.
+  {{< /card >}}
+  {{< card title="LAN Turtle Hub" href="/ar/products/hak5/lan-turtle-hub/" image="/images/products/hak5/lan-turtle-hub.jpg" >}}
+    محول USB-C Ethernet مع موزع USB 3 بثلاثة منافذ للوصول عن بُعد واعتراض USB وWiFi خارج النطاق، مع حمولات DuckyScript وواجهة ويب.
   {{< /card >}}
 {{< /card-group >}}
 

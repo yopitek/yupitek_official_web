@@ -3,16 +3,20 @@ title: "O.MG Plug"
 date: 2025-01-01
 draft: false
 dir: rtl
-description: "جهاز O.MG بحجم حلقة المفاتيح وهيئة قابس USB، يدعم التحكم WiFi وحقن DuckyScript وSelf-Destruct والسياج الجغرافي."
+description: "جهاز O.MG بحجم حلقة المفاتيح وهيئة قابس USB، يدعم التحكم WiFi وحقن DuckyScript وSelf-Destruct (في إصدار Elite فقط) والسياج الجغرافي."
 featureimage: "/images/products/hak5/omg-plug.png"
 ---
+
+{{< alert "warning" >}}
+**إخلاء المسؤولية القانونية للاستخدام**: O.MG Plug أداة احترافية لأبحاث الأمن. للاستخدام في اختبارات الأمن والأبحاث المصرّح بها فقط. مخصصة حصراً لمتخصصي الأمن الحاصلين على تصريح كتابي ساري.
+{{< /alert >}}
 
 ## ميزات المنتج
 
 ![O.MG Plug](/images/products/hak5/card/omg-plug.png)
 
 - **جهاز O.MG بهيئة قابس**: بحجم حلقة المفاتيح، في هيئة قابس USB
-- **وظائف O.MG كاملة**: تحكم WiFi، حقن DuckyScript، Self-Destruct، Geo-Fencing
+- **وظائف O.MG كاملة**: تحكم WiFi، حقن DuckyScript، Self-Destruct (في إصدار Elite فقط)، Geo-Fencing
 - **بلا كابل**: يعمل دون الحاجة إلى كابل، يُدخَل مباشرة في منفذ USB
 - **تصميم للحمل اليومي**: مناسب للحمل الدائم كأداة احتياطية (EDC)
 - **وظائف Elite متقدمة**: HIDX StealthLink، شبكة C2 مشفّرة، Port Stealthing
@@ -41,7 +45,7 @@ featureimage: "/images/products/hak5/omg-plug.png"
 | المورد | الرابط |
 |--------|--------|
 | 📖 التوثيق الرسمي | [عرض عبر الإنترنت](https://o.mg.lol/setup/OMGPlug/) |
-| ⬇️ البرامج الثابتة والأدوات | [بوابة التنزيل](https://downloads.hak5.org/omg) |
+| ⬇️ البرامج الثابتة والأدوات | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 هل تحتاج إلى طلب عرض سعر للمنتج؟ يرجى [الاتصال بنا](/ar/contact/).

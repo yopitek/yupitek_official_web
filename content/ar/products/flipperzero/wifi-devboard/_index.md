@@ -27,6 +27,12 @@ WiFi Devboard هو وحدة توسعة Wi-Fi الرسمية لـ Flipper Zero، 
 | طريقة الاتصال | GPIO عبر Flipper Zero |
 | البرنامج الثابت | قابل لتحميل Marauder وبرامج ثابتة أخرى من طرف ثالث |
 
+## الموارد الرسمية
+
+| المورد | الرابط |
+|--------|--------|
+| الصفحة الرسمية لـ WiFi Devboard | [flipper.net](https://flipper.net/products/wifi-devboard) |
+
 {{< gallery >}}
   <img src="/images/products/flipperzero/wifi-devboard.png" alt="WiFi Devboard for Flipper Zero" />
 {{< /gallery >}}

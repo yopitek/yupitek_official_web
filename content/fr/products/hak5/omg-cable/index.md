@@ -20,15 +20,17 @@ L'O.MG Cable est physiquement indiscernable d'un câble USB standard, mais intè
 
 | Variante | Description |
 |----------|-------------|
-| O.MG Cable Basic | Édition standard — USB-A vers USB-C / Lightning |
-| O.MG Cable Elite | Édition avancée avec plus d'options de connecteurs et de fonctionnalités étendues |
+| O.MG Cable Basic | Niveau Basic — DuckyScript 2, 8 emplacements de payload, jusqu'à 120 keys/sec |
+| O.MG Cable Elite | Niveau Elite — DuckyScript 3, jusqu'à 300 emplacements de payload, jusqu'à 890 keys/sec, keylogger matériel |
+
+Les options de connecteurs (extrémité active USB-C ou USB-A ; extrémité de passage Lightning, Micro ou USB-C) se choisissent indépendamment du niveau.
 
 ## Caractéristiques Principales
 
 - Injection HID déclenchée à distance via Wi-Fi
 - Prise en charge des payloads DuckyScript
 - Fonctionnalité de géo-clôture (geofencing)
-- Fonction d'exfiltration (auto-destruction)
+- Fonction d'auto-destruction (Self-Destruct)
 
 {{< gallery >}}
   <img src="/images/products/hak5/omg-cable.png" alt="HAK5 O.MG Cable" />

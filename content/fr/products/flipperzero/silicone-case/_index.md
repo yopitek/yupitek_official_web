@@ -19,6 +19,12 @@ L'étui de protection officiel en silicone pour Flipper Zero offre une couvertur
 - Ressenti tactile réactif des boutons
 - Découpes pour l'accès GPIO et USB-C
 
+## Ressources Officielles
+
+| Ressource | Lien |
+|----------|------|
+| Page produit Silicone Case | [flipper.net](https://flipper.net/products/flipper-silicone-case) |
+
 {{< gallery >}}
   <img src="/images/products/flipperzero/silicone-case.png" alt="Silicone Case for Flipper Zero" />
 {{< /gallery >}}

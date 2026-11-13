@@ -4,6 +4,7 @@ description: "Flipper Zero 官方 Wi-Fi 开发板，基于 ESP32-S2，支持 2.4
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/wifi-devboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "Flipper Zero 扩充", "Wi-Fi 安全"]

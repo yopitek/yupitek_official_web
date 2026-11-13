@@ -4,6 +4,7 @@ description: "El módulo oficial de videojuegos para Flipper Zero, impulsado por
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/video-game-module.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Expansión Flipper Zero", "RP2040", "Salida de Video", "Módulo de Juegos"]

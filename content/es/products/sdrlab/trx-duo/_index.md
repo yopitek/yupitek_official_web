@@ -4,6 +4,7 @@ description: "SDRLab TRX-duo, plataforma SDR ADC/DAC de 16-bit y doble canal, Xi
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/trx-duo.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "ADC 16-bit"]

@@ -5,6 +5,7 @@ seo_title: "Video Game Module Flipper 台灣 | Yopitek"
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/video-game-module.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero 擴充", "RP2040", "視訊輸出", "遊戲模組"]

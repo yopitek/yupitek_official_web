@@ -4,6 +4,7 @@ description: "وحدة اختبار الإيثرنت السلكي لـ Flipper Z
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-ethernet.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["توسعة Flipper Zero", "إيثرنت", "اختبار الشبكة", "شبكة سلكية"]

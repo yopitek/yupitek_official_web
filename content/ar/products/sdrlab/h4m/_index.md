@@ -4,6 +4,7 @@ description: "SDRLab H4M، مجموعة SDR محمولة HackRF One + PortaPack 
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/h4m.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "SDR محمول"]

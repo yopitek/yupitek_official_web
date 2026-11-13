@@ -4,6 +4,7 @@ description: "A capa de silicone protetora oficial do Flipper Zero oferece cober
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/silicone-case.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Acessórios Flipper Zero", "Capa Protetora"]

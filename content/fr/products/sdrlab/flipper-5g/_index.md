@@ -4,6 +4,7 @@ description: "Carte d'extension Flipper Zero 5G, Wi-Fi double bande ESP32-C5 (2,
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-5g.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "5GHz", "Wi-Fi", "Deauth", "Security Research"]

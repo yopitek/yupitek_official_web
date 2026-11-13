@@ -4,6 +4,7 @@ description: "Flipper Zero kabelgebundenes Ethernet-Test-Add-On-Modul, bis 105°
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-ethernet.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "Ethernet", "Network Testing", "Wired Network"]

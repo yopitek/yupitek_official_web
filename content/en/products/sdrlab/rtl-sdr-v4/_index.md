@@ -5,6 +5,7 @@ description: "SDRLab RTL-SDR Blog V4 USB SDR receiver: 500 kHz–1.766 GHz, R828
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/rtl-sdr-v4.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "Radio Reception", "USB", "GNU Radio"]

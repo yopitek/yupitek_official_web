@@ -4,6 +4,7 @@ description: "Placa de desenvolvimento Wi-Fi oficial do Flipper Zero, baseada no
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/wifi-devboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "Expansão Flipper Zero", "Segurança Wi-Fi"]

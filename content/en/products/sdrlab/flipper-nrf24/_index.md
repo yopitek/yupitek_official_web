@@ -5,6 +5,7 @@ description: "SDRLab Flipper Zero NRF24 module with nRF24L01-series chip, 2.4 GH
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-nrf24.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "NRF24", "2.4GHz", "MouseJacker", "Security Research"]

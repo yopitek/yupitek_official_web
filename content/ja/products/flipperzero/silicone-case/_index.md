@@ -4,6 +4,7 @@ description: "Flipper Zero 公式シリコン保護ケースは、本体を完�
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/silicone-case.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero アクセサリー", "保護ケース"]

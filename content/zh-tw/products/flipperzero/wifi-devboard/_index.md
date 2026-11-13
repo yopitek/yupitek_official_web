@@ -5,6 +5,7 @@ seo_title: "WiFi Devboard Flipper 台灣 | Yopitek"
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/wifi-devboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "Flipper Zero 擴充", "Wi-Fi 安全"]

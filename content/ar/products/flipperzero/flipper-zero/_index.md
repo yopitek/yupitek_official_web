@@ -4,6 +4,7 @@ description: "Flipper Zero يدعم Sub-GHz وNFC وRFID 125kHz والأشعة �
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/flipper-zero.png"
+hideFeatureImage: true
 dir: rtl
 showBreadcrumbs: true
 showTableOfContents: true

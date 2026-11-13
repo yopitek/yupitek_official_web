@@ -4,6 +4,7 @@ description: "SDRLab TRX-duo，双通道 16-bit ADC/DAC SDR 平台，Xilinx Zynq
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/trx-duo.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "TRX-duo", "ZYNQ", "Red Pitaya", "16-bit ADC"]

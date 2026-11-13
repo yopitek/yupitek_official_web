@@ -4,6 +4,7 @@ description: "RTL-SDR Blog RTL SDR V4, 500kHz–1,766GHz Breitband-SDR-Empfänge
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/rtl-sdr-v4.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "Radio Reception", "USB", "GNU Radio"]

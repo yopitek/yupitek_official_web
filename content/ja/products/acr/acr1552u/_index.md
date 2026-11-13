@@ -4,6 +4,7 @@ description: "ACS ACR1552U、第 4 世代 USB NFC カードリーダー。強化
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/acr/ACR1552U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

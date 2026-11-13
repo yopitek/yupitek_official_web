@@ -5,6 +5,7 @@ seo_title: "Silicone Case | Flipper Taiwan | Yopitek"
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/silicone-case.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero Accessories", "Protective Case"]

@@ -4,6 +4,7 @@ description: "لوحة توسعة Flipper Zero 5G، ESP32-C5 Wi-Fi ثنائي ا
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-5g.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["توسعة Flipper Zero", "5GHz", "Wi-Fi", "Deauth", "أبحاث الأمن"]

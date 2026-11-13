@@ -4,6 +4,7 @@ description: "Flipper Zero 官方视频游戏模块，基于 RP2040，支持视�
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/video-game-module.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero 扩展", "RP2040", "视频输出", "游戏模块"]

@@ -4,6 +4,7 @@ description: "Flipper Zero NRF24 模块，nRF24L01 芯片，支持 MouseJacker �
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-nrf24.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 扩充", "NRF24", "2.4GHz", "MouseJacker", "信息安全研究"]

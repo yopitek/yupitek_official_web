@@ -4,6 +4,7 @@ description: "Tarjeta de expansión Flipper Zero 5G, ESP32-C5 Wi-Fi doble banda 
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-5g.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Expansión Flipper Zero", "5GHz", "Wi-Fi", "Deauth", "Investigación de seguridad"]

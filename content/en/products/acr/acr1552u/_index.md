@@ -5,6 +5,7 @@ seo_title: "ACR1552U | ACS Taiwan | Yopitek"
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/acr/ACR1552U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

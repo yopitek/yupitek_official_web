@@ -4,6 +4,7 @@ description: "ACS ACR1552U，第四代 USB NFC 读卡机，增强多协议支持
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/acr/ACR1552U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

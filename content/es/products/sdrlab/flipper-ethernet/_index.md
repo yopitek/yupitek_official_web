@@ -4,6 +4,7 @@ description: "Módulo de expansión de prueba Ethernet cableada para Flipper Zer
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-ethernet.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Expansión Flipper Zero", "Ethernet", "Prueba de red", "Red cableada"]

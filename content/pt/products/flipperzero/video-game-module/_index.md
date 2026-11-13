@@ -4,6 +4,7 @@ description: "O módulo oficial de videogames para Flipper Zero, baseado no RP20
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/video-game-module.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Expansão Flipper Zero", "RP2040", "Saída de Vídeo", "Módulo de Jogos"]

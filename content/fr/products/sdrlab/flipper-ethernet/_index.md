@@ -4,6 +4,7 @@ description: "Module d'extension de test Ethernet filaire pour Flipper Zero, ré
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-ethernet.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "Ethernet", "Network Testing", "Wired Network"]

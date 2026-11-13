@@ -4,6 +4,7 @@ description: "وحدة ألعاب الفيديو الرسمية لـ Flipper Zer
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/video-game-module.png"
+hideFeatureImage: true
 dir: rtl
 showBreadcrumbs: true
 brands: ["flipperzero"]

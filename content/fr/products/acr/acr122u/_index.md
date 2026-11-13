@@ -4,6 +4,7 @@ description: "ACS ACR122U, lecteur NFC USB prenant en charge ISO 14443 A/B, MIFA
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/acr/ACR122U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

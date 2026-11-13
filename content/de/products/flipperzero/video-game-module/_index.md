@@ -4,6 +4,7 @@ description: "Das offizielle Flipper Zero Video Game Module, angetrieben von RP2
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/video-game-module.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero Expansion", "RP2040", "Video Output", "Game Module"]

@@ -4,6 +4,7 @@ description: "Flipper Zero 有线以太网测试扩充模块，耐温 105°C，�
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-ethernet.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 扩充", "以太网", "网络测试", "有线网络"]

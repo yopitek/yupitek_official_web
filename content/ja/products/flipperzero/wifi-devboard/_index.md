@@ -4,6 +4,7 @@ description: "Flipper Zero 公式 Wi-Fi 開発ボード。ESP32-S2 ベース、2
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/wifi-devboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "Flipper Zero 拡張", "Wi-Fi セキュリティ"]

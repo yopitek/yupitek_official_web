@@ -4,6 +4,7 @@ description: "Flipper Zero 有線イーサネットテスト拡張モジュー�
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-ethernet.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 拡張", "イーサネット", "ネットワークテスト", "有線ネットワーク"]

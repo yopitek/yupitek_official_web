@@ -4,6 +4,7 @@ description: "ACS ACR1252U，NFC Forum 认证 USB 读卡机，支持读写器、
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/acr/ACR1252U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

@@ -4,6 +4,7 @@ description: "Flipper Zero WiFi 多板，整合 NRF24、GPIO／CC1101、GPS 与�
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 扩展", "WiFi 开发板", "NRF24", "CC1101", "GPS"]

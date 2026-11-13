@@ -5,6 +5,7 @@ description: "SDRLab Flipper Zero 乙太網路測試模組，可驗證 DHCP、pi
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-ethernet.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 擴充", "乙太網路", "網路測試", "有線網路"]

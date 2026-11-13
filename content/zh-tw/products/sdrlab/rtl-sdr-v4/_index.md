@@ -5,6 +5,7 @@ description: "RTL-SDR Blog V4 USB 接收器，500 kHz–1.766 GHz、R828D 調諧
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/rtl-sdr-v4.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "RTL-SDR", "無線電接收", "USB", "GNU Radio"]

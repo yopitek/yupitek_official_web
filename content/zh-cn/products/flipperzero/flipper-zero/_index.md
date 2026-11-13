@@ -4,6 +4,7 @@ description: "Flipper Zero，支持 Sub-GHz、NFC、RFID 125kHz、红外线、iB
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/flipper-zero.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["flipperzero"]

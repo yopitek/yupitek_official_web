@@ -4,6 +4,7 @@ description: "لوحة WiFi متعددة لـ Flipper Zero تجمع وحدات N
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["توسعة Flipper Zero", "لوحة تطوير WiFi", "NRF24", "CC1101", "GPS"]

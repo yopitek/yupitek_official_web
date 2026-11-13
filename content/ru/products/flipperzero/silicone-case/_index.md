@@ -4,6 +4,7 @@ description: "Официальный силиконовый защитный ч�
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/silicone-case.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Аксессуары Flipper Zero", "Защитный чехол"]

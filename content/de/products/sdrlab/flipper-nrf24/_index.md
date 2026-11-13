@@ -4,6 +4,7 @@ description: "Flipper Zero NRF24 Modul, nRF24L01-Chip, unterstützt MouseJacker 
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-nrf24.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero Add-On", "NRF24", "2.4GHz", "MouseJacker", "Security Research"]

@@ -5,6 +5,7 @@ description: "Flipper Zero NRF24 模組，nRF24L01 系列晶片、2.4GHz，支�
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-nrf24.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 擴充", "NRF24", "2.4GHz", "MouseJacker", "資安研究"]

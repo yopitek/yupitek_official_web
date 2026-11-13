@@ -4,6 +4,7 @@ description: "ACS ACR1252U, Leitor NFC USB certificado pelo NFC Forum, com modos
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/acr/ACR1252U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

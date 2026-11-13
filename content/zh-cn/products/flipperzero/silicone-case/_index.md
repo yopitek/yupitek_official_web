@@ -4,6 +4,7 @@ description: "Flipper Zero 官方硅胶保护壳，完整包覆主机，按键�
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/silicone-case.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Flipper Zero 配件", "保护壳"]

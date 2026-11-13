@@ -5,6 +5,7 @@ description: "Flipper Zero 5G 擴充板，ESP32-C5 雙頻 2.4/5 GHz Wi-Fi、433 
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-5g.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Flipper Zero 擴充", "5GHz", "Wi-Fi", "Deauth", "資安研究"]

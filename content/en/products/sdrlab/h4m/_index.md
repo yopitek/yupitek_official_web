@@ -5,6 +5,7 @@ description: "SDRLab H4M portable SDR bundle: HackRF One (R10C) + PortaPack H4M,
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/h4m.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "Portable SDR"]

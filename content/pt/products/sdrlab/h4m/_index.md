@@ -3,6 +3,7 @@ title: "SDRLab H4M — Combinação Portátil HackRF + PortaPack"
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/h4m.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["SDR", "H4M", "HackRF", "PortaPack", "Mayhem", "SDR Portátil"]

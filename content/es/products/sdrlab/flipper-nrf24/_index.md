@@ -4,6 +4,7 @@ description: "Módulo NRF24 para Flipper Zero, chip nRF24L01, compatible con iny
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-nrf24.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Expansión Flipper Zero", "NRF24", "2.4GHz", "MouseJacker", "Investigación de seguridad"]

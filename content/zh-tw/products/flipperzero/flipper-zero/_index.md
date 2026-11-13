@@ -5,6 +5,7 @@ seo_title: "Flipper Zero 台灣 | Yopitek"
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/flipper-zero.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["flipperzero"]

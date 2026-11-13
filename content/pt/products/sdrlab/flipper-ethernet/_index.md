@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero Módulo de Teste Ethernet"
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-ethernet.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Expansão Flipper Zero", "Ethernet", "Teste de Rede", "Rede Cabeada"]

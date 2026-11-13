@@ -4,6 +4,7 @@ description: "ACS ACR122U, Leitor NFC USB, suporta ISO 14443 A/B, MIFARE, FeliCa
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/acr/ACR122U.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["acr"]

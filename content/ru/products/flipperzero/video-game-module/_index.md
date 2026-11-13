@@ -4,6 +4,7 @@ description: "Официальный игровой модуль для Flipper 
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/video-game-module.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Расширение Flipper Zero", "RP2040", "Видеовыход", "Игровой модуль"]

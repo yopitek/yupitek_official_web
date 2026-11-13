@@ -4,6 +4,7 @@ description: "Официальный Wi-Fi модуль расширения Fli
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/wifi-devboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Wi-Fi", "ESP32", "Flipper Zero расширение", "Wi-Fi безопасность"]

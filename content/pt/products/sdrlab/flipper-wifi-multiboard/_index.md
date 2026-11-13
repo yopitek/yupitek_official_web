@@ -4,6 +4,7 @@ description: "Flipper Zero WiFi Multi-Board, acessório de placa de desenvolvime
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-wifi-multiboard.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Expansão Flipper Zero", "Placa de desenvolvimento WiFi", "NRF24", "CC1101", "GPS"]

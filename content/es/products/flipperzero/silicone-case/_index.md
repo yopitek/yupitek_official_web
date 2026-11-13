@@ -4,6 +4,7 @@ description: "La funda de silicona protectora oficial de Flipper Zero ofrece cob
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/silicone-case.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["flipperzero"]
 tags: ["Accesorios Flipper Zero", "Funda Protectora"]

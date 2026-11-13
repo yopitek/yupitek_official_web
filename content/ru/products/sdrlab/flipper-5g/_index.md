@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero Плата расширения 5G — Двухди�
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-5g.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Расширение Flipper Zero", "5GHz", "Wi-Fi", "Deauth", "Исследование безопасности"]

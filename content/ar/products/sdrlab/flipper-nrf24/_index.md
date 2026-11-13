@@ -4,6 +4,7 @@ description: "وحدة Flipper Zero NRF24، شريحة nRF24L01، تدعم حق�
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-nrf24.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["توسعة Flipper Zero", "NRF24", "2.4GHz", "MouseJacker", "أبحاث الأمن"]

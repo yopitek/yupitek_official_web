@@ -4,6 +4,7 @@ description: "غطاء سيليكون الحماية الرسمي لـ Flipper Z
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/silicone-case.png"
+hideFeatureImage: true
 dir: rtl
 showBreadcrumbs: true
 brands: ["flipperzero"]

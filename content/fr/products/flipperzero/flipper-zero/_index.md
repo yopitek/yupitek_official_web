@@ -4,6 +4,7 @@ description: "Flipper Zero prend en charge Sub-GHz, NFC, RFID 125kHz, infrarouge
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/flipperzero/flipper-zero.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["flipperzero"]

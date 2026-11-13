@@ -3,6 +3,7 @@ title: "SDRLab Flipper Zero Модуль NRF24 — Модуль исследов
 date: 2026-03-12
 draft: false
 featureimage: "/images/products/sdrlab/flipper-nrf24.png"
+hideFeatureImage: true
 showBreadcrumbs: true
 brands: ["sdrlab"]
 tags: ["Расширение Flipper Zero", "NRF24", "2.4GHz", "MouseJacker", "Исследование безопасности"]

@@ -1,27 +1,42 @@
-/* ── Google Fonts: Huninn (headings) + Noto Sans TC + Inter (body reading) ── */
-@import url('https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
+/* ── Google Fonts: Huninn (headings) + Noto Sans TC/SC/JP/KR + Inter (body reading) ── */
+/* Browsers only download a family when an element on the page actually uses it. */
+@import url('https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
 
 /* Headings keep Huninn for brand character */
 html[lang="zh-TW"] h1, html[lang="zh-TW"] h2, html[lang="zh-TW"] h3,
-html[lang="zh-TW"] h4, html[lang="zh-TW"] h5, html[lang="zh-TW"] h6,
-html[lang="zh-CN"] h1, html[lang="zh-CN"] h2, html[lang="zh-CN"] h3,
-html[lang="zh-CN"] h4, html[lang="zh-CN"] h5, html[lang="zh-CN"] h6 {
+html[lang="zh-TW"] h4, html[lang="zh-TW"] h5, html[lang="zh-TW"] h6 {
   font-family: 'Huninn', 'Noto Sans TC', sans-serif;
 }
 
-/* Body text switches to Noto Sans TC — optimized for screen reading */
-html[lang="zh-TW"] body,
+/* Simplified Chinese needs Simplified glyph forms (Huninn / Noto Sans TC are Traditional fonts) */
+html[lang="zh-CN"] h1, html[lang="zh-CN"] h2, html[lang="zh-CN"] h3,
+html[lang="zh-CN"] h4, html[lang="zh-CN"] h5, html[lang="zh-CN"] h6,
 html[lang="zh-CN"] body {
+  font-family: 'Noto Sans SC', 'Microsoft YaHei UI', 'PingFang SC', sans-serif;
+}
+
+/* Long unbreakable words (German compounds, Russian words, slash-joined terms) must not widen the page on mobile */
+h1, h2, h3 {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+/* Body text switches to Noto Sans TC — optimized for screen reading */
+html[lang="zh-TW"] body {
   font-family: 'Noto Sans TC', 'Microsoft JhengHei UI', sans-serif;
   font-size: 17px;
 }
 
-/* Prose reading area: Inter for Latin, Noto Sans TC for CJK fallback */
+/* Prose reading area: Inter for Latin, then the CJK font that matches the page language
+   (Han characters have different glyph forms in zh-TW / zh-CN / ja) */
 .prose {
   font-family: 'Inter', 'Noto Sans TC', 'Microsoft JhengHei UI', sans-serif;
   font-size: 1.0625rem; /* 17px */
   line-height: 1.8;
 }
+html[lang="zh-CN"] .prose { font-family: 'Inter', 'Noto Sans SC', 'Microsoft YaHei UI', 'PingFang SC', sans-serif; }
+html[lang="ja"] .prose    { font-family: 'Inter', 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif; }
+html[lang="ko"] .prose    { font-family: 'Inter', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; }
 
 /* Chinese paragraphs: generous line height + subtle letter spacing */
 html[lang="zh-TW"] .prose p,

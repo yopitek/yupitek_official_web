@@ -1,3 +1,15 @@
+{{/* Web fonts: Inter for Latin text plus the script font each language needs (see custom.css font stacks) */}}
+{{ $fonts := dict
+  "zh-tw" "family=Huninn&family=Noto+Sans+TC:wght@400;500;700&"
+  "zh-cn" "family=Noto+Sans+SC:wght@400;500;700&"
+  "ja" "family=Noto+Sans+JP:wght@400;500;700&"
+  "ko" "family=Noto+Sans+KR:wght@400;500;700&"
+  "ar" "family=Noto+Sans+Arabic:wght@400;500;700&"
+}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{{ index $fonts .Site.Language.Lang | default "" | safeURL }}family=Inter:wght@400;500;600&display=swap">
+
 {{/* hreflang alternate links for multilingual SEO */}}
 {{/* Uses .Language.Locale for proper BCP 47 tags (e.g. zh-TW, zh-CN) */}}
 {{/* x-default points to English — the neutral fallback for unmatched locales */}}

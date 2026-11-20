@@ -19,9 +19,6 @@ theme = "blowfish"
   isPlainText = true
   notAlternative = true
 
-[services.googleAnalytics]
-  id = "G-XXXXXXXXXX"  # 待 user 建立 GA4 property 後替換（Blowfish analytics/ga.html 模板會讀取此值）
-
 [taxonomies]
   brand    = "brands"
   category = "categories"

@@ -33,10 +33,10 @@ faq:
 draft: false
 ---
 
-**Resumen (TL;DR)**: según las pruebas de Yupitek (distribuidor de ALFA Network en Taiwán), la AWUS036ACS en ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) no necesita instalar controlador y funciona en monitor y AP de doble banda (AP 5G utilizable, ancho de canal no confirmado); inyección 2,4G 100 %, 5G 96 %, captura .22000 de extremo a extremo superada; no admite mesh / IBSS.
+**Resumen (TL;DR)**: según las pruebas de Yopitek (distribuidor de ALFA Network en Taiwán), la AWUS036ACS en ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) no necesita instalar controlador y funciona en monitor y AP de doble banda (AP 5G utilizable, ancho de canal no confirmado); inyección 2,4G 100 %, 5G 96 %, captura .22000 de extremo a extremo superada; no admite mesh / IBSS.
 
-> Este artículo es el registro de pruebas prácticas de compatibilidad y capacidades que Yupitek realizó sobre la ALFA AWUS036ACS en una plataforma Linux moderna, pensado como apoyo para la selección de modelo.
-> Plataforma de pruebas: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Todos los datos son extractos de pruebas reales de Yupitek, realizadas sobre **equipo propio y la Wi-Fi propia de la oficina** (SSID `YUPITEK`, 2,4G ch5 / 5G ch36) contra un **teléfono de prueba propio** (Apple iPhone 7 Plus); las direcciones MAC están parcialmente ocultas.
+> Este artículo es el registro de pruebas prácticas de compatibilidad y capacidades que Yopitek realizó sobre la ALFA AWUS036ACS en una plataforma Linux moderna, pensado como apoyo para la selección de modelo.
+> Plataforma de pruebas: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Todos los datos son extractos de pruebas reales de Yopitek, realizadas sobre **equipo propio y la Wi-Fi propia de la oficina** (SSID `YUPITEK`, 2,4G ch5 / 5G ch36) contra un **teléfono de prueba propio** (Apple iPhone 7 Plus); las direcciones MAC están parcialmente ocultas.
 > ⚠️ **Declaración legal y de alcance**: la captura de modo monitor, inyección y handshake se realiza únicamente sobre redes y dispositivos propios o para los que se cuenta con autorización; en modo AP, respete la normativa de radio local. Este artículo se centra en las capacidades, la compatibilidad y la configuración de la propia tarjeta, y **no contempla ninguna operación ofensiva contra redes de terceros**.
 
 ---
@@ -228,4 +228,4 @@ No admite active monitor, IBSS, mesh (802.11s) ni Wi-Fi Direct (P2P). hcxdumptoo
 
 ---
 
-*Unidad de pruebas: Yupitek (distribuidor de ALFA Network en Taiwán) — https://www.yupitek.com | Entorno de pruebas: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de prueba: Apple iPhone 7 Plus*
+*Unidad de pruebas: Yopitek (distribuidor de ALFA Network en Taiwán) — https://www.yupitek.com | Entorno de pruebas: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de prueba: Apple iPhone 7 Plus*

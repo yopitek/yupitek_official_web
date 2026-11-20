@@ -24,7 +24,7 @@ faq:
   - question: "AWUS036ACM은 Ubuntu나 Kali에서 드라이버를 설치해야 하나요?"
     answer: "필요 없습니다. MT7612U는 커널에 내장된 mt76x2u 드라이버가 담당하므로 Ubuntu 24.04(kernel 6.17)에서 꽂으면 바로 인식되며, DKMS도 수동 펌웨어 설치도 필요 없습니다. 이번 실측 플랫폼은 Ubuntu 24.04 ARM64이며, Kali도 커널이 충분히 최신이면 원칙적으로 동일하지만 이번에는 Kali 실기에서 검증하지 않았습니다."
   - question: "AWUS036ACM은 모니터 모드에 들어가고 패킷 인젝션을 할 수 있나요? 성공률은 얼마인가요?"
-    answer: "가능합니다. 2.4GHz와 5GHz 모두 모니터 모드에 들어가 정상적으로 캡처할 수 있으며, aireplay-ng 인젝션 테스트는 2.4GHz에서 63–83%, 5GHz에서 76%로 아홉 장의 카드 중 중간 수준입니다. 듀얼 밴드 인젝션을 모두 100%로 원한다면 Yupitek 실측 기준 AWUS036ACH, AWUS036EACS가 더 낫습니다."
+    answer: "가능합니다. 2.4GHz와 5GHz 모두 모니터 모드에 들어가 정상적으로 캡처할 수 있으며, aireplay-ng 인젝션 테스트는 2.4GHz에서 63–83%, 5GHz에서 76%로 아홉 장의 카드 중 중간 수준입니다. 듀얼 밴드 인젝션을 모두 100%로 원한다면 Yopitek 실측 기준 AWUS036ACH, AWUS036EACS가 더 낫습니다."
   - question: "AWUS036ACM은 핫스팟을 열면서 동시에 인터넷에 접속할 수 있나요(VIF)?"
     answer: "가능합니다. STA+AP(한쪽은 상위망에 연결, 한쪽은 핫스팟 개설)와 AP+monitor(핫스팟을 열면서 동시에 모니터링) 두 가지 조합 모두 실측에서 성립했으며, 이는 mt76 드라이버의 다중 인터페이스 동시 운용이 비교적 완성도 높은 부분입니다. 5GHz 핫스팟은 VHT 80 MHz까지 열 수 있습니다."
   - question: "AWUS036ACM은 mesh(802.11s)와 IBSS를 지원하나요?"
@@ -34,13 +34,13 @@ faq:
 draft: false
 ---
 
-> 본 글은 Yupitek이 ALFA AWUS036ACM을 최신 Linux 플랫폼에서 테스트한 제품 호환성 및 능력 실측 기록으로, 제품 선정 평가용입니다.
-> 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. 모든 데이터는 Yupitek이 **자체 장비, 자체 사무실 Wi-Fi**(SSID `YUPITEK`, 2.4G ch5 / 5G ch36, ch157)에서 **자체 테스트용 스마트폰**(Apple iPhone 7 Plus, WPA3는 iPhone 15 Pro로 추가 재측정)을 대상으로 한 실측 발췌입니다.
+> 본 글은 Yopitek이 ALFA AWUS036ACM을 최신 Linux 플랫폼에서 테스트한 제품 호환성 및 능력 실측 기록으로, 제품 선정 평가용입니다.
+> 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. 모든 데이터는 Yopitek이 **자체 장비, 자체 사무실 Wi-Fi**(SSID `YUPITEK`, 2.4G ch5 / 5G ch36, ch157)에서 **자체 테스트용 스마트폰**(Apple iPhone 7 Plus, WPA3는 iPhone 15 Pro로 추가 재측정)을 대상으로 한 실측 발췌입니다.
 > ⚠️ **합법성 및 범위 고지**: 모니터, 인젝션, 핸드셰이크 캡처는 본인 소유 또는 허가된 네트워크와 기기에서만 진행하며, AP 모드는 현지 무선 전파 규정을 준수하십시오. 본 글은 네트워크 카드 자체의 능력, 호환성, 설정에 초점을 맞추며, **제3자 네트워크를 대상으로 한 어떠한 공격 행위도 다루지 않습니다**.
 
 ## 핵심 요약(TL;DR)
 
-Yupitek(ALFA Network 대만 총판)이 ASUS GX10 / Ubuntu 24.04 ARM64(kernel 6.17)에서 실측한 결과, AWUS036ACM은 듀얼 밴드 monitor 모드가 가능하고, 패킷 인젝션은 2.4G 63–83%, 5G 76%이며, 두 밴드 모두 AP 핫스팟을 구성할 수 있습니다(5G는 VHT 80 MHz).
+Yopitek(ALFA Network 대만 총판)이 ASUS GX10 / Ubuntu 24.04 ARM64(kernel 6.17)에서 실측한 결과, AWUS036ACM은 듀얼 밴드 monitor 모드가 가능하고, 패킷 인젝션은 2.4G 63–83%, 5G 76%이며, 두 밴드 모두 AP 핫스팟을 구성할 수 있습니다(5G는 VHT 80 MHz).
 
 - Ubuntu 24.04(ARM64) 드라이버 설치 불필요: MT7612U는 kernel 6.17에 내장된 mt76x2u가 담당하여 꽂으면 바로 인식되며, DKMS가 필요 없습니다.
 - 듀얼 밴드 모니터 모드(monitor mode) 사용 가능; 패킷 인젝션은 2.4G 63–83%, 5G 76%로 아홉 장 중 중간 수준입니다.
@@ -191,7 +191,7 @@ AWUS036ACM은 단일 기기에서 802.11s mesh와 ad-hoc(IBSS) 인터페이스�
 필요 없습니다. MT7612U는 커널에 내장된 mt76x2u 드라이버가 담당하므로 Ubuntu 24.04(kernel 6.17)에서 꽂으면 바로 인식되며, DKMS도 수동 펌웨어 설치도 필요 없습니다. 이번 실측 플랫폼은 Ubuntu 24.04 ARM64이며, Kali도 커널이 충분히 최신이면 원칙적으로 동일하지만 이번에는 Kali 실기에서 검증하지 않았습니다.
 
 **Q: AWUS036ACM은 monitor mode에 들어가고 패킷 인젝션을 할 수 있나요? 성공률은 얼마인가요?**
-가능합니다. 2.4GHz와 5GHz 모두 monitor mode에 들어가 정상적으로 캡처할 수 있으며, aireplay-ng 인젝션 테스트는 2.4GHz에서 63–83%, 5GHz에서 76%로 아홉 장의 카드 중 중간 수준입니다. 듀얼 밴드 인젝션을 모두 100%로 원한다면 Yupitek 실측 기준 AWUS036ACH, AWUS036EACS가 더 낫습니다.
+가능합니다. 2.4GHz와 5GHz 모두 monitor mode에 들어가 정상적으로 캡처할 수 있으며, aireplay-ng 인젝션 테스트는 2.4GHz에서 63–83%, 5GHz에서 76%로 아홉 장의 카드 중 중간 수준입니다. 듀얼 밴드 인젝션을 모두 100%로 원한다면 Yopitek 실측 기준 AWUS036ACH, AWUS036EACS가 더 낫습니다.
 
 **Q: AWUS036ACM은 핫스팟을 열면서 동시에 인터넷에 접속할 수 있나요(VIF)?**
 가능합니다. 실측에서 STA+AP(한쪽은 상위망에 연결, 한쪽은 핫스팟 개설)와 AP+monitor(핫스팟을 열면서 동시에 모니터링) 두 조합 모두 성립했으며, 이는 mt76 드라이버의 다중 인터페이스 동시 운용이 비교적 완성도 높은 부분입니다. 5GHz 핫스팟은 VHT 80 MHz까지 열 수 있습니다.
@@ -213,4 +213,4 @@ AWUS036ACM은 단일 기기에서 802.11s mesh와 ad-hoc(IBSS) 인터페이스�
 
 ---
 
-*테스트 기관: Yupitek(ALFA Network 대만 유통사) — https://www.yupitek.com | 테스트 환경: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | 테스트 기기: Apple iPhone 7 Plus(WPA3는 iPhone 15 Pro로 추가 측정)*
+*테스트 기관: Yopitek(ALFA Network 대만 유통사) — https://www.yupitek.com | 테스트 환경: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | 테스트 기기: Apple iPhone 7 Plus(WPA3는 iPhone 15 Pro로 추가 측정)*

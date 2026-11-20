@@ -34,15 +34,15 @@ faq:
 draft: false
 ---
 
-> Unidade de teste: Yupitek (distribuidor da ALFA Network em Taiwan) | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de teste: iPhone 7 Plus próprio (WPA3 testado também em iPhone 15 Pro) | Alvo de teste: Wi-Fi do próprio escritório (SSID YUPITEK, 2.4G ch5 / 5G ch36, 157).
+> Unidade de teste: Yopitek (distribuidor da ALFA Network em Taiwan) | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de teste: iPhone 7 Plus próprio (WPA3 testado também em iPhone 15 Pro) | Alvo de teste: Wi-Fi do próprio escritório (SSID YUPITEK, 2.4G ch5 / 5G ch36, 157).
 >
-> Este artigo é um teste prático de capacidade e compatibilidade da placa única AWUS036EACS. Todas as medições de Monitor / Injection / captura de handshake foram realizadas em equipamentos próprios da Yupitek, no Wi-Fi do próprio escritório e contra um celular de teste próprio, como verificação legítima de hardware feita pelo distribuidor; sem visar qualquer rede de terceiros e sem fornecer passos de ataque.
+> Este artigo é um teste prático de capacidade e compatibilidade da placa única AWUS036EACS. Todas as medições de Monitor / Injection / captura de handshake foram realizadas em equipamentos próprios da Yopitek, no Wi-Fi do próprio escritório e contra um celular de teste próprio, como verificação legítima de hardware feita pelo distribuidor; sem visar qualquer rede de terceiros e sem fornecer passos de ataque.
 
 **Resumo (TL;DR)**: o AWUS036EACS dispensa driver no GX10 / Ubuntu 24.04 (kernel 6.17); injeção de pacotes 100% em ambas as bandas, aprovação ponta a ponta em .22000 (79 ACKs); por ser uma placa combo BT+Wi-Fi, é preciso ficar atento à reinserção.
 
 ## 1. Esta placa e a plataforma de teste
 
-O AWUS036EACS é uma placa de rede sem fio (USB) Wi-Fi 5 (802.11ac) leve e portátil da ALFA, com chip Realtek RTL8821CU, fluxo único 1x1, dupla banda 2.4GHz e 5GHz, e ainda Bluetooth integrado — ou seja, um dispositivo combo BT + WiFi. Neste artigo a colocamos sozinha na bancada de testes da Yupitek, verificando item a item no ambiente ASUS GX10 (ARM64) com Ubuntu 24.04, para responder às perguntas que mais importam ao cliente: o driver é reconhecido em ARM64, em quais modos ela entra e até onde vai o desempenho.
+O AWUS036EACS é uma placa de rede sem fio (USB) Wi-Fi 5 (802.11ac) leve e portátil da ALFA, com chip Realtek RTL8821CU, fluxo único 1x1, dupla banda 2.4GHz e 5GHz, e ainda Bluetooth integrado — ou seja, um dispositivo combo BT + WiFi. Neste artigo a colocamos sozinha na bancada de testes da Yopitek, verificando item a item no ambiente ASUS GX10 (ARM64) com Ubuntu 24.04, para responder às perguntas que mais importam ao cliente: o driver é reconhecido em ARM64, em quais modos ela entra e até onde vai o desempenho.
 
 Primeiro, deixemos o posicionamento claro. Esta é uma verificação de compatibilidade e dos limites de capacidade que o distribuidor faz do próprio produto, não um tutorial de ataque. Todas as medições de capacidade relacionadas a injection e handshake no texto foram feitas exclusivamente em ambiente fechado próprio, contra dispositivos próprios, sem fornecer qualquer passo de operação contra redes externas.
 
@@ -169,4 +169,4 @@ Não suporta. O active-monitor, IBSS, mesh e P2P do rtw88 retornam -95 ou join i
 
 ---
 
-*Unidade de teste: Yupitek (distribuidor da ALFA Network em Taiwan) — https://www.yupitek.com*
+*Unidade de teste: Yopitek (distribuidor da ALFA Network em Taiwan) — https://www.yupitek.com*

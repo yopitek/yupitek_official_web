@@ -33,10 +33,10 @@ faq:
 draft: false
 ---
 
-**TL;DR**: In hands-on testing by Yupitek (ALFA Network's Taiwan distributor), the AWUS036ACS needs no driver install on the ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) and works for dual-band monitor and AP (5G AP usable, channel width not confirmed); injection is 100% on 2.4G and 96% on 5G, end-to-end .22000 passes, and mesh / IBSS are not supported.
+**TL;DR**: In hands-on testing by Yopitek (ALFA Network's Taiwan distributor), the AWUS036ACS needs no driver install on the ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) and works for dual-band monitor and AP (5G AP usable, channel width not confirmed); injection is 100% on 2.4G and 96% on 5G, end-to-end .22000 passes, and mesh / IBSS are not supported.
 
-> This is Yupitek's product compatibility and capability test log for the ALFA AWUS036ACS on a recent Linux platform, intended for evaluation and selection.
-> Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. All data are excerpts from Yupitek's hands-on testing on **our own equipment and our own office Wi-Fi** (SSID `YUPITEK`, 2.4G ch5 / 5G ch36) against **our own test phone** (Apple iPhone 7 Plus); MAC addresses are partially masked.
+> This is Yopitek's product compatibility and capability test log for the ALFA AWUS036ACS on a recent Linux platform, intended for evaluation and selection.
+> Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. All data are excerpts from Yopitek's hands-on testing on **our own equipment and our own office Wi-Fi** (SSID `YUPITEK`, 2.4G ch5 / 5G ch36) against **our own test phone** (Apple iPhone 7 Plus); MAC addresses are partially masked.
 > ⚠️ **Legal and scope statement**: Monitor, injection, and handshake capture were performed only on networks and devices we own or are authorized to test; for AP mode, follow your local radio regulations. This article focuses on the adapter's own capabilities, compatibility, and configuration, and **does not involve any attack operation against third-party networks**.
 
 ---
@@ -228,4 +228,4 @@ Active monitor, IBSS, mesh (802.11s), and Wi-Fi Direct (P2P) are not supported. 
 
 ---
 
-*Test unit: Yupitek (ALFA Network distributor in Taiwan) — https://www.yupitek.com | Test environment: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Test device: Apple iPhone 7 Plus*
+*Test unit: Yopitek (ALFA Network distributor in Taiwan) — https://www.yupitek.com | Test environment: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Test device: Apple iPhone 7 Plus*

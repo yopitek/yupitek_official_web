@@ -35,7 +35,7 @@ draft: false
 
 ## 重点摘要（TL;DR）
 
-Yupitek（ALFA Network 台湾经销）在 ASUS GX10（ARM64 / Ubuntu 24.04 / kernel 6.17）实测 9 款 ALFA USB 无线网卡：9 款都能进 monitor mode 并作为 AP，AWUS036ACH 与 AWUS036EACS 两频注入达 100%，MT7921 的 AWUS036AXM / AWUS036AXML 在本平台注入失败。
+Yopitek（ALFA Network 台湾经销）在 ASUS GX10（ARM64 / Ubuntu 24.04 / kernel 6.17）实测 9 款 ALFA USB 无线网卡：9 款都能进 monitor mode 并作为 AP，AWUS036ACH 与 AWUS036EACS 两频注入达 100%，MT7921 的 AWUS036AXM / AWUS036AXML 在本平台注入失败。
 
 - **Monitor 全员可用**：9 款都能进 monitor mode，差别只在收讯强弱。
 - **Injection 是分水岭**：Realtek `rtw88` 的 ACH、EACS 两频注入达 100%，ACS 次之；MT7921 的 AXM / AXML 在本平台注入失败。
@@ -43,9 +43,9 @@ Yupitek（ALFA Network 台湾经销）在 ASUS GX10（ARM64 / Ubuntu 24.04 / ker
 - **AP 与 WPA3-SAE 几乎全员过关**：仅 AWUS036ACHM 需设 `sae_pwe=0` 以兼容旧款 iPhone。
 - **ARM64 免编译**：9 款全走 kernel 6.17 内置驱动，插上即用、免 DKMS。
 
-Yupitek 是 ALFA Network 的台湾经销商。客户选购 USB 无线网卡时，最常问的三个问题几乎都一样：「这张卡在我的 Linux 环境能不能进 monitor mode？能不能做 injection？能不能架 AP？」与其凭规格表回答，我们直接把 9 款现役 ALFA 网卡搬上自家实验桌，在 **ASUS GX10（ARM64）** 搭配 **Ubuntu 24.04 LTS** 的环境逐张实测，把 Monitor、Injection、AP、WPA3-SAE 四条能力线一次拉出来比较，并且诚实标注哪几张「在这个平台做不到什么」。
+Yopitek 是 ALFA Network 的台湾经销商。客户选购 USB 无线网卡时，最常问的三个问题几乎都一样：「这张卡在我的 Linux 环境能不能进 monitor mode？能不能做 injection？能不能架 AP？」与其凭规格表回答，我们直接把 9 款现役 ALFA 网卡搬上自家实验桌，在 **ASUS GX10（ARM64）** 搭配 **Ubuntu 24.04 LTS** 的环境逐张实测，把 Monitor、Injection、AP、WPA3-SAE 四条能力线一次拉出来比较，并且诚实标注哪几张「在这个平台做不到什么」。
 
-需要先讲清楚定位：本文所有测试都在 Yupitek 自有的设备与自有办公室 Wi-Fi 上完成，对象是我们自己的测试手机。这是经销商对产品兼容性与能力边界的硬件验证，不是针对第三方网络的攻击教学。文中不提供任何对外部网络的操作步骤；injection 与 handshake 相关能力，一律在自有封闭环境、对自有设备量测。
+需要先讲清楚定位：本文所有测试都在 Yopitek 自有的设备与自有办公室 Wi-Fi 上完成，对象是我们自己的测试手机。这是经销商对产品兼容性与能力边界的硬件验证，不是针对第三方网络的攻击教学。文中不提供任何对外部网络的操作步骤；injection 与 handshake 相关能力，一律在自有封闭环境、对自有设备量测。
 
 这是一篇总表型的 Hub 文章。每一张卡的逐步设置与完整证据，会另外拆成单卡深入文（见文末延伸阅读）。
 
@@ -137,7 +137,7 @@ Yupitek 是 ALFA Network 的台湾经销商。客户选购 USB 无线网卡时�
 | 8 | AWUS036AXM | ❌ 注入失败 | ✅ | 🟡 | N/A | N/A |
 | 9 | AWUS036AXML | ❌ 注入失败 | ✅ | 🟡 | N/A | N/A |
 
-这里的「端到端」有明确定义：用该卡对 **Yupitek 自有的 iPhone 7 Plus**（连在自家 `YUPITEK` SSID 上）运行 injection，截取完整的 4-way handshake（M1–M4），再用 `hcxpcapngtool --all` 转成 hashcat 的 `.22000` 格式。整条链路能不能跑通，才是「渗透测试能力」的验收点，不是「能进 monitor」就算。
+这里的「端到端」有明确定义：用该卡对 **Yopitek 自有的 iPhone 7 Plus**（连在自家 `YUPITEK` SSID 上）运行 injection，截取完整的 4-way handshake（M1–M4），再用 `hcxpcapngtool --all` 转成 hashcat 的 `.22000` 格式。整条链路能不能跑通，才是「渗透测试能力」的验收点，不是「能进 monitor」就算。
 
 - **端到端通过（9 款中的 7 款）**：ACM、ACHM、ACH、ACS、EACS、AX、AXER 都能产出 `.22000`，其中 EACS 收到 79 个 ACK，信号回馈最扎实；ACH 两频注入 100%，已于 2026-11-19 补测转出 47 行 hashline 的 `.22000`。ACHM 在 5GHz（ch36）完成；ACM 虽注入成功率较低，仍完成端到端。
 - **端到端断链**：AXM / AXML 因 injection 失败，整条 handshake 跟着断。这再次印证：MT7921 在本平台不适合渗透测试用途。
@@ -195,7 +195,7 @@ ARM64 补充：`aircrack-ng` 需自源代码编译，`wifite` 建议用 git 3.0.
 6. **hcxdumptool 全平台 failed to arm（例外：EACS 在 2.4 GHz）**：三频内置卡与上述驱动都不支持 active-monitor，直接改用 aircrack-ng 套件（`airodump-ng` + `aireplay-ng`）。
 7. **ARM64 的编译细节**：`aircrack-ng` 需自源代码编译，`wifite` 用 git 版绕过 apt 依赖冲突。
 
-再次强调定位：上述 injection / deauth / handshake 的能力，全部在 Yupitek 自有封闭环境、对自有测试设备量测，用途是验证产品能力与兼容性边界。本文不提供、也不建议对任何第三方网络进行上述操作。
+再次强调定位：上述 injection / deauth / handshake 的能力，全部在 Yopitek 自有封闭环境、对自有测试设备量测，用途是验证产品能力与兼容性边界。本文不提供、也不建议对任何第三方网络进行上述操作。
 
 ## 小结
 
@@ -239,4 +239,4 @@ A：Kali Linux 基于 Debian/Ubuntu 体系，使用同一套 rtw88 / rtw89 / mt7
 
 ---
 
-*测试单位：Yupitek（ALFA Network 台湾经销）｜ 测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ 测试设备：Apple iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）｜ 测试环境：自有办公室 Wi-Fi。本文为产品兼容性与能力验证，非针对第三方网络之操作教学。*
+*测试单位：Yopitek（ALFA Network 台湾经销）｜ 测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ 测试设备：Apple iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）｜ 测试环境：自有办公室 Wi-Fi。本文为产品兼容性与能力验证，非针对第三方网络之操作教学。*

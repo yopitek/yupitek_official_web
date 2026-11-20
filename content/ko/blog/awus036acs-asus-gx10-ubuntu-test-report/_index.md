@@ -33,10 +33,10 @@ faq:
 draft: false
 ---
 
-**핵심 요약(TL;DR)**: Yupitek(ALFA Network 대만 총판) 실측 결과, AWUS036ACS는 ASUS GX10 / Ubuntu 24.04 ARM64(kernel 6.17)에서 드라이버 설치 불필요이며 듀얼 밴드 monitor와 AP(5G AP 사용 가능, 채널 폭은 확인하지 못함)가 가능하고, 인젝션은 2.4G 100%, 5G 96%, 엔드투엔드 .22000 통과, 메시/IBSS는 미지원입니다.
+**핵심 요약(TL;DR)**: Yopitek(ALFA Network 대만 총판) 실측 결과, AWUS036ACS는 ASUS GX10 / Ubuntu 24.04 ARM64(kernel 6.17)에서 드라이버 설치 불필요이며 듀얼 밴드 monitor와 AP(5G AP 사용 가능, 채널 폭은 확인하지 못함)가 가능하고, 인젝션은 2.4G 100%, 5G 96%, 엔드투엔드 .22000 통과, 메시/IBSS는 미지원입니다.
 
-> 본문은 Yupitek이 ALFA AWUS036ACS를 최신 Linux 플랫폼에서 테스트한 제품 호환성 및 성능 실측 기록으로, 제품 선정 평가에 활용하기 위한 것입니다.
-> 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. 모든 데이터는 Yupitek이 **본인 소유 장비, 본인 소유 사무실 Wi-Fi**(SSID `YUPITEK`, 2.4G ch5 / 5G ch36)에서 **본인 소유 테스트 휴대폰**(Apple iPhone 7 Plus)을 대상으로 실측한 발췌이며, MAC 주소는 일부 가렸습니다.
+> 본문은 Yopitek이 ALFA AWUS036ACS를 최신 Linux 플랫폼에서 테스트한 제품 호환성 및 성능 실측 기록으로, 제품 선정 평가에 활용하기 위한 것입니다.
+> 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. 모든 데이터는 Yopitek이 **본인 소유 장비, 본인 소유 사무실 Wi-Fi**(SSID `YUPITEK`, 2.4G ch5 / 5G ch36)에서 **본인 소유 테스트 휴대폰**(Apple iPhone 7 Plus)을 대상으로 실측한 발췌이며, MAC 주소는 일부 가렸습니다.
 > ⚠️ **합법성 및 범위 고지**: 모니터, 인젝션, 핸드셰이크 캡처는 본인 소유 또는 허가된 네트워크와 장치에서만 수행했으며, AP 모드는 현지 무선 규제를 준수하십시오. 본문은 네트워크 카드 자체의 성능, 호환성, 설정에 초점을 맞추며, **제3자 네트워크에 대한 어떠한 공격 행위도 포함하지 않습니다**.
 
 ---
@@ -228,4 +228,4 @@ sudo aireplay-ng --test --ignore-negative-one -a <YUPITEK-BSSID> $IF
 
 ---
 
-*테스트 기관: Yupitek(ALFA Network 대만 총판) — https://www.yupitek.com | 테스트 환경: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | 테스트 장치: Apple iPhone 7 Plus*
+*테스트 기관: Yopitek(ALFA Network 대만 총판) — https://www.yupitek.com | 테스트 환경: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | 테스트 장치: Apple iPhone 7 Plus*

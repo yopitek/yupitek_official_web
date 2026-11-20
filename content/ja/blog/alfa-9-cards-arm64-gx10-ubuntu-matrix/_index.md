@@ -35,7 +35,7 @@ draft: false
 
 ## 要点まとめ（TL;DR）
 
-Yupitek（ALFA Network 台湾代理店）が ASUS GX10（ARM64 / Ubuntu 24.04 / kernel 6.17）で ALFA の USB 無線 LAN アダプタ 9 製品を実測した結果、9 製品すべてが monitor モードと AP に対応し、AWUS036ACH と AWUS036EACS は両バンドでインジェクション 100% に達し、MT7921 搭載の AWUS036AXM / AWUS036AXML は本プラットフォームでインジェクションに失敗しました。
+Yopitek（ALFA Network 台湾代理店）が ASUS GX10（ARM64 / Ubuntu 24.04 / kernel 6.17）で ALFA の USB 無線 LAN アダプタ 9 製品を実測した結果、9 製品すべてが monitor モードと AP に対応し、AWUS036ACH と AWUS036EACS は両バンドでインジェクション 100% に達し、MT7921 搭載の AWUS036AXM / AWUS036AXML は本プラットフォームでインジェクションに失敗しました。
 
 - **Monitor は全製品で利用可能**：9 製品すべてが monitor mode に入れます。差は受信感度の強弱のみです。
 - **Injection が分かれ目**：Realtek `rtw88` の ACH と EACS は両バンドで injection 成功率 100%、ACS がそれに続きます。MT7921 の AXM / AXML は本プラットフォームでは injection に失敗しました。
@@ -43,9 +43,9 @@ Yupitek（ALFA Network 台湾代理店）が ASUS GX10（ARM64 / Ubuntu 24.04 / 
 - **AP と WPA3-SAE はほぼ全製品が合格**：AWUS036ACHM のみ、旧型 iPhone との互換性のために `sae_pwe=0` の設定が必要です。
 - **ARM64 でもビルド不要**：9 製品すべてが kernel 6.17 の内蔵ドライバで動作し、挿すだけで使えます。DKMS も不要です。
 
-Yupitek は ALFA Network の台湾代理店です。お客様が USB 無線 LAN アダプタを選ぶ際、ほぼ必ず出てくる質問は次の 3 つです。「このアダプタは私の Linux 環境で monitor mode に入れますか？ injection はできますか？ AP は立てられますか？」。スペック表だけで答えるのではなく、現行の ALFA アダプタ 9 製品を自社の検証デスクに持ち込み、**ASUS GX10（ARM64）** と **Ubuntu 24.04 LTS** の環境で 1 枚ずつ実測しました。Monitor、Injection、AP、WPA3-SAE の 4 つの能力を一度に比較し、「このプラットフォームでできないこと」も正直に記載しています。
+Yopitek は ALFA Network の台湾代理店です。お客様が USB 無線 LAN アダプタを選ぶ際、ほぼ必ず出てくる質問は次の 3 つです。「このアダプタは私の Linux 環境で monitor mode に入れますか？ injection はできますか？ AP は立てられますか？」。スペック表だけで答えるのではなく、現行の ALFA アダプタ 9 製品を自社の検証デスクに持ち込み、**ASUS GX10（ARM64）** と **Ubuntu 24.04 LTS** の環境で 1 枚ずつ実測しました。Monitor、Injection、AP、WPA3-SAE の 4 つの能力を一度に比較し、「このプラットフォームでできないこと」も正直に記載しています。
 
-まず位置づけを明確にしておきます。本記事のすべてのテストは、Yupitek 自社の機器と自社オフィスの Wi-Fi 上で、自社のテスト用スマートフォンを対象に実施しました。これは代理店による製品の互換性と能力の限界に関するハードウェア検証であり、第三者のネットワークに対する攻撃手法の解説ではありません。外部ネットワークに対する操作手順は一切掲載しません。injection や handshake に関する能力は、すべて自社の閉じた環境で、自社の機器に対してのみ測定しています。
+まず位置づけを明確にしておきます。本記事のすべてのテストは、Yopitek 自社の機器と自社オフィスの Wi-Fi 上で、自社のテスト用スマートフォンを対象に実施しました。これは代理店による製品の互換性と能力の限界に関するハードウェア検証であり、第三者のネットワークに対する攻撃手法の解説ではありません。外部ネットワークに対する操作手順は一切掲載しません。injection や handshake に関する能力は、すべて自社の閉じた環境で、自社の機器に対してのみ測定しています。
 
 本記事は総括表型のハブ記事です。各アダプタの詳細な設定手順と完全な検証結果は、アダプタごとの詳細記事に分けて公開します（記事末尾の関連記事をご覧ください）。
 
@@ -137,7 +137,7 @@ Yupitek は ALFA Network の台湾代理店です。お客様が USB 無線 LAN 
 | 8 | AWUS036AXM | ❌ injection 失敗 | ✅ | 🟡 | N/A | N/A |
 | 9 | AWUS036AXML | ❌ injection 失敗 | ✅ | 🟡 | N/A | N/A |
 
-ここでの「エンドツーエンド」には明確な定義があります。そのアダプタで **Yupitek 自社の iPhone 7 Plus**（自社の `YUPITEK` SSID に接続中）に対して injection を実行し、完全な 4-way handshake（M1–M4）をキャプチャし、`hcxpcapngtool --all` で hashcat 用の `.22000` 形式に変換するところまでを指します。この経路全体が通るかどうかが、「ペネトレーションテスト能力」の受け入れ基準であり、「monitor に入れる」だけでは合格とはしません。
+ここでの「エンドツーエンド」には明確な定義があります。そのアダプタで **Yopitek 自社の iPhone 7 Plus**（自社の `YUPITEK` SSID に接続中）に対して injection を実行し、完全な 4-way handshake（M1–M4）をキャプチャし、`hcxpcapngtool --all` で hashcat 用の `.22000` 形式に変換するところまでを指します。この経路全体が通るかどうかが、「ペネトレーションテスト能力」の受け入れ基準であり、「monitor に入れる」だけでは合格とはしません。
 
 - **エンドツーエンド合格（9 製品中 7 製品）**：ACM、ACHM、ACH、ACS、EACS、AX、AXER が `.22000` を出力できました。そのうち EACS は 79 個の ACK を受信しており、信号の返りが最も確実です。ACH は両バンドで injection 100% を達成し、2026-11-19 の追加テストで 47 行の hashline を持つ `.22000` への変換に成功しました。ACHM は 5GHz（ch36）で完走し、ACM は injection 成功率が低めでも完走しました。
 - **エンドツーエンドが途切れる製品**：AXM / AXML は injection が失敗するため、handshake の経路全体が途切れます。MT7921 は本プラットフォームではペネトレーションテスト用途に向かないことが、ここでも裏付けられました。
@@ -195,7 +195,7 @@ ASUS GX10 + Ubuntu 24.04（ARM64）でこれらのアダプタを操作する際
 6. **hcxdumptool はプラットフォーム全体で failed to arm（例外は 2.4 GHz の EACS）**：トライバンドの内蔵アダプタと上記のドライバはいずれも active-monitor に非対応のため、aircrack-ng スイート（`airodump-ng` + `aireplay-ng`）に切り替えてください。
 7. **ARM64 でのビルドの細部**：`aircrack-ng` はソースからのビルドが必要です。`wifite` は git 版を使い、apt の依存関係の競合を回避します。
 
-改めて位置づけを強調します。上記の injection / deauth / handshake の能力は、すべて Yupitek 自社の閉じた環境で、自社のテスト機器に対して測定したものであり、製品の能力と互換性の限界を検証することが目的です。本記事は、第三者のネットワークに対して上記の操作を行うことを提供も推奨もしていません。
+改めて位置づけを強調します。上記の injection / deauth / handshake の能力は、すべて Yopitek 自社の閉じた環境で、自社のテスト機器に対して測定したものであり、製品の能力と互換性の限界を検証することが目的です。本記事は、第三者のネットワークに対して上記の操作を行うことを提供も推奨もしていません。
 
 ## まとめ
 
@@ -239,4 +239,4 @@ A：Kali Linux は Debian/Ubuntu 系で、同じ rtw88 / rtw89 / mt76 の in-ker
 
 ---
 
-*テスト実施：Yupitek（ALFA Network 台湾代理店）｜ テストプラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ テスト端末：Apple iPhone 7 Plus（WPA3 は iPhone 15 Pro でも別途テスト）｜ テスト環境：自社オフィスの Wi-Fi。本記事は製品の互換性と能力の検証であり、第三者のネットワークに対する操作手順の解説ではありません。*
+*テスト実施：Yopitek（ALFA Network 台湾代理店）｜ テストプラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ テスト端末：Apple iPhone 7 Plus（WPA3 は iPhone 15 Pro でも別途テスト）｜ テスト環境：自社オフィスの Wi-Fi。本記事は製品の互換性と能力の検証であり、第三者のネットワークに対する操作手順の解説ではありません。*

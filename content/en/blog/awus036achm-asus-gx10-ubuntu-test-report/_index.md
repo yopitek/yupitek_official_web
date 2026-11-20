@@ -35,9 +35,9 @@ faq:
 draft: false
 ---
 
-> Tested by: Yupitek (ALFA Network's Taiwan distributor) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia` | Test device: our own iPhone 7 Plus (WPA3 also tested with iPhone 15 Pro) | Test target: our own office Wi-Fi (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, 157).
+> Tested by: Yopitek (ALFA Network's Taiwan distributor) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia` | Test device: our own iPhone 7 Plus (WPA3 also tested with iPhone 15 Pro) | Test target: our own office Wi-Fi (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, 157).
 >
-> This article is a distributor's hardware verification of product compatibility and capability boundaries. All Monitor / Injection / AP / WPA3 tests were performed on Yupitek's own equipment, our own office Wi-Fi, against our own test phones — a legitimate capability check; it does not target any third-party network, nor does it provide attack procedures. The injection in this article only sends probe requests for a capability self-test, not attack packets.
+> This article is a distributor's hardware verification of product compatibility and capability boundaries. All Monitor / Injection / AP / WPA3 tests were performed on Yopitek's own equipment, our own office Wi-Fi, against our own test phones — a legitimate capability check; it does not target any third-party network, nor does it provide attack procedures. The injection in this article only sends probe requests for a capability self-test, not attack packets.
 
 ## TL;DR
 
@@ -245,4 +245,4 @@ It's usually hostapd's sae_pwe setting. In testing, with sae_pwe=0 both iPhone 7
 
 ---
 
-*Tested by: Yupitek (ALFA Network's Taiwan distributor) — https://www.yupitek.com | Test environment: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Test device: Apple iPhone 7 Plus (WPA3 also tested with iPhone 15 Pro). Data cited from the hands-on test reports of 2026-11-16 to 11-18; does not target any third-party network, nor does it provide attack procedures.*
+*Tested by: Yopitek (ALFA Network's Taiwan distributor) — https://www.yupitek.com | Test environment: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Test device: Apple iPhone 7 Plus (WPA3 also tested with iPhone 15 Pro). Data cited from the hands-on test reports of 2026-11-16 to 11-18; does not target any third-party network, nor does it provide attack procedures.*

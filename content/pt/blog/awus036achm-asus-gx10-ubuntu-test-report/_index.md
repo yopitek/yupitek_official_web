@@ -35,9 +35,9 @@ faq:
 draft: false
 ---
 
-> Unidade de teste: Yupitek (distribuidor da ALFA Network em Taiwan) | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia` | Dispositivo de teste: iPhone 7 Plus próprio (WPA3 também testado em iPhone 15 Pro) | Alvo de teste: Wi-Fi do próprio escritório (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, 157).
+> Unidade de teste: Yopitek (distribuidor da ALFA Network em Taiwan) | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia` | Dispositivo de teste: iPhone 7 Plus próprio (WPA3 também testado em iPhone 15 Pro) | Alvo de teste: Wi-Fi do próprio escritório (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, 157).
 >
-> Este artigo é uma verificação de hardware feita pelo distribuidor sobre a compatibilidade e os limites de capacidade do produto. Todos os testes de Monitor / Injection / AP / WPA3 foram realizados em equipamentos próprios da Yupitek, no Wi-Fi do próprio escritório e contra um celular de teste próprio, sendo uma verificação legítima de capacidade; não visa qualquer rede de terceiros e não fornece passos de ataque. A injeção no texto envia apenas probe request para o autoteste de capacidade, sem enviar pacotes de ataque.
+> Este artigo é uma verificação de hardware feita pelo distribuidor sobre a compatibilidade e os limites de capacidade do produto. Todos os testes de Monitor / Injection / AP / WPA3 foram realizados em equipamentos próprios da Yopitek, no Wi-Fi do próprio escritório e contra um celular de teste próprio, sendo uma verificação legítima de capacidade; não visa qualquer rede de terceiros e não fornece passos de ataque. A injeção no texto envia apenas probe request para o autoteste de capacidade, sem enviar pacotes de ataque.
 
 ## Resumo (TL;DR)
 
@@ -245,4 +245,4 @@ Na maioria das vezes é a configuração sae_pwe do hostapd. Em teste, com sae_p
 
 ---
 
-*Unidade de teste: Yupitek (distribuidor da ALFA Network em Taiwan) — https://www.yupitek.com | Ambiente de teste: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de teste: Apple iPhone 7 Plus (WPA3 também testado em iPhone 15 Pro). Os dados são citados dos relatórios de teste em hardware real de 2026-11-16 a 11-18, não visam qualquer rede de terceiros e não fornecem passos de ataque.*
+*Unidade de teste: Yopitek (distribuidor da ALFA Network em Taiwan) — https://www.yupitek.com | Ambiente de teste: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de teste: Apple iPhone 7 Plus (WPA3 também testado em iPhone 15 Pro). Os dados são citados dos relatórios de teste em hardware real de 2026-11-16 a 11-18, não visam qualquer rede de terceiros e não fornecem passos de ataque.*

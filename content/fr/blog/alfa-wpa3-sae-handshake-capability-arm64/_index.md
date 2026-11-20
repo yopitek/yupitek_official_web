@@ -31,9 +31,9 @@ faq:
 draft: false
 ---
 
-> Unité de test : Yupitek (distributeur ALFA Network à Taïwan) | Plateforme de test : ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Appareil de test : notre propre iPhone 7 Plus (WPA3 aussi testé sur iPhone 15 Pro) | Cible de test : notre propre Wi-Fi de bureau (SSID YUPITEK, 2,4G ch5 / 5G ch36, 157).
+> Unité de test : Yopitek (distributeur ALFA Network à Taïwan) | Plateforme de test : ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Appareil de test : notre propre iPhone 7 Plus (WPA3 aussi testé sur iPhone 15 Pro) | Cible de test : notre propre Wi-Fi de bureau (SSID YUPITEK, 2,4G ch5 / 5G ch36, 157).
 >
-> Cet article est une vue d'ensemble des capacités et de la compatibilité des cartes Wi-Fi ALFA. Toutes les captures Monitor / Injection / handshake sont réalisées sur les propres équipements de Yupitek, son propre Wi-Fi de bureau, à destination de ses propres téléphones de test : il s'agit d'une vérification matérielle légitime par le distributeur ; elle ne vise aucun réseau tiers et ne fournit aucune procédure offensive.
+> Cet article est une vue d'ensemble des capacités et de la compatibilité des cartes Wi-Fi ALFA. Toutes les captures Monitor / Injection / handshake sont réalisées sur les propres équipements de Yopitek, son propre Wi-Fi de bureau, à destination de ses propres téléphones de test : il s'agit d'une vérification matérielle légitime par le distributeur ; elle ne vise aucun réseau tiers et ne fournit aucune procédure offensive.
 
 ## L'essentiel (TL;DR)
 
@@ -113,7 +113,7 @@ La norme WPA3-SAE force `ieee80211w=2` (Management Frame Protection). Cela signi
 Au-delà des capacités matérielles, la chaîne d'outils de la plateforme influe aussi sur l'efficacité de l'audit. Voici quelques enseignements tirés de ce lot sur le GX10 (ARM64) :
 
 - **Export systématique avec `hcxpcapngtool --all`**. Les paramètres par défaut sont assez stricts et renvoient souvent « not enough M1 » sans exporter ; en ajoutant `--all`, on exporte le `.22000` de façon stable à partir des M1–M4 complets.
-- **Quand plusieurs AP homonymes sont au bureau, ne verrouillez pas `--bssid`**. Le bureau de Yupitek a plusieurs AP YUPITEK homonymes sur un même canal, et l'iPhone se connecte au signal le plus fort. Verrouiller un seul BSSID avec `--bssid` à la capture risque de filtrer celui auquel l'iPhone est réellement connecté et de faire échouer toute la capture. La conclusion mesurée est de **ne pas verrouiller de BSSID et de capturer directement tout le canal**, puis de sélectionner la poignée de main complète dans le fichier déposé.
+- **Quand plusieurs AP homonymes sont au bureau, ne verrouillez pas `--bssid`**. Le bureau de Yopitek a plusieurs AP YUPITEK homonymes sur un même canal, et l'iPhone se connecte au signal le plus fort. Verrouiller un seul BSSID avec `--bssid` à la capture risque de filtrer celui auquel l'iPhone est réellement connecté et de faire échouer toute la capture. La conclusion mesurée est de **ne pas verrouiller de BSSID et de capturer directement tout le canal**, puis de sélectionner la poignée de main complète dans le fichier déposé.
 - **`hcxdumptool` 8.x échoue en `failed to arm` sur cette plateforme, sauf l'EACS en 2,4 GHz (échec en 5 GHz)**. Ni rtw88, ni rtw89, ni mt7921u ne fournissent l'active-monitor, que hcxdumptool 8.x exige ; la solution est de passer au flux aircrack-ng traditionnel `airodump-ng` + `aireplay-ng`.
 - **Si plus rien n'est détecté après des bascules répétées de mode, débranchez/rebranchez d'abord la carte**. Les rtw88 / rtw89 peuvent connaître un RX stall (balayage à 0 paquet) après des bascules répétées monitor / AP ; une ré-énumération USB y remédie, et le nom d'interface, déterminé par la MAC, ne change pas au rebranchement. Avant de capturer un handshake, il est conseillé de rebrancher la carte une fois en premier.
 - **Les dispositifs composites BT+WiFi (EACS / AXML) ont une condition de concurrence au rebranchement**. Les cartes composites avec Bluetooth peuvent, au rebranchement ou sur certains ports USB, avoir leur fonction Wi-Fi bloquée en probe, sans créer d'interface `wlx` ; la solution est de rebrancher sur un autre port USB, `modprobe` ou le bind manuel étant le plus souvent inefficaces.
@@ -158,4 +158,4 @@ R : Pas forcément. Le domaine réglementaire par défaut limite la puissance d'
 
 ---
 
-*Tous les tests de cet article sont réalisés sur le propre Wi-Fi de bureau de Yupitek (SSID YUPITEK), à destination de notre propre iPhone 7 Plus : il s'agit d'une vérification matérielle légitime des cartes Wi-Fi ALFA par le distributeur. Données issues des rapports de tests sur machine réelle du 2026-11-16 au 11-18 ; elles ne visent aucun réseau tiers et ne fournissent aucune procédure offensive. Unité de test : Yupitek (distributeur ALFA Network à Taïwan) — https://www.yupitek.com*
+*Tous les tests de cet article sont réalisés sur le propre Wi-Fi de bureau de Yopitek (SSID YUPITEK), à destination de notre propre iPhone 7 Plus : il s'agit d'une vérification matérielle légitime des cartes Wi-Fi ALFA par le distributeur. Données issues des rapports de tests sur machine réelle du 2026-11-16 au 11-18 ; elles ne visent aucun réseau tiers et ne fournissent aucune procédure offensive. Unité de test : Yopitek (distributeur ALFA Network à Taïwan) — https://www.yupitek.com*

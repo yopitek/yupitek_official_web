@@ -24,7 +24,7 @@ faq:
   - question: "AWUS036ACM は Ubuntu や Kali でドライバのインストールが必要ですか？"
     answer: "不要です。MT7612U は kernel 組み込みの mt76x2u ドライバが処理するため、Ubuntu 24.04（kernel 6.17）では挿すだけで認識され、DKMS も手動のファームウェア導入も要りません。今回の検証プラットフォームは Ubuntu 24.04 ARM64 です。Kali もカーネルが十分に新しければ原則として同様ですが、今回は Kali 実機では検証していません。"
   - question: "AWUS036ACM は monitor mode に入れますか？パケットインジェクションはできますか？成功率はどのくらいですか？"
-    answer: "できます。2.4GHz・5GHz のどちらでも monitor mode に入り、正常にキャプチャできます。aireplay-ng によるインジェクションテストでは 2.4GHz が 63–83%、5GHz が 76% で、9 枚のカードの中では中位です。両バンドともインジェクション 100% を求めるなら、Yupitek の実測では AWUS036ACH や AWUS036EACS が適しています。"
+    answer: "できます。2.4GHz・5GHz のどちらでも monitor mode に入り、正常にキャプチャできます。aireplay-ng によるインジェクションテストでは 2.4GHz が 63–83%、5GHz が 76% で、9 枚のカードの中では中位です。両バンドともインジェクション 100% を求めるなら、Yopitek の実測では AWUS036ACH や AWUS036EACS が適しています。"
   - question: "AWUS036ACM でホットスポットを開きながらインターネットにも接続できますか（VIF）？"
     answer: "できます。STA+AP（上流に接続しつつホットスポットを開く）と AP+monitor（ホットスポットを開きながらモニタリング）のどちらの組み合わせも成立しました。mt76 ドライバのマルチインターフェース同時動作が比較的充実している点です。5GHz ホットスポットは VHT 80 MHz まで開けます。"
   - question: "AWUS036ACM は mesh（802.11s）と IBSS に対応していますか？"
@@ -34,13 +34,13 @@ faq:
 draft: false
 ---
 
-> 本記事は、Yupitek が ALFA AWUS036ACM を新しい Linux プラットフォーム上で検証した、製品の互換性と機能の実測記録です。機種選定の判断材料としてお使いください。
-> 検証プラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。すべての数値は、Yupitek が**自社機材・自社オフィスの Wi-Fi**（SSID `YUPITEK`、2.4G ch5 / 5G ch36、ch157）上で、**自社のテスト用スマートフォン**（Apple iPhone 7 Plus。WPA3 のみ iPhone 15 Pro でも再テスト）に対して実測した結果の抜粋です。
+> 本記事は、Yopitek が ALFA AWUS036ACM を新しい Linux プラットフォーム上で検証した、製品の互換性と機能の実測記録です。機種選定の判断材料としてお使いください。
+> 検証プラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。すべての数値は、Yopitek が**自社機材・自社オフィスの Wi-Fi**（SSID `YUPITEK`、2.4G ch5 / 5G ch36、ch157）上で、**自社のテスト用スマートフォン**（Apple iPhone 7 Plus。WPA3 のみ iPhone 15 Pro でも再テスト）に対して実測した結果の抜粋です。
 > ⚠️ **合法使用と範囲に関する宣言**：Monitor、injection、handshake キャプチャは、自分が所有する、または許可を得たネットワークと機器でのみ実施しています。AP モードは各地域の電波法規に従ってください。本記事はネットワークカード自体の機能・互換性・設定に焦点を当てており、**第三者のネットワークに対するいかなる攻撃操作も扱いません**。
 
 ## 要点まとめ（TL;DR）
 
-Yupitek（ALFA Network 台湾代理店）が ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）で実測した結果、AWUS036ACM は両バンドで monitor モードが使え、パケットインジェクションは 2.4G で 63–83%、5G で 76%、AP ホットスポットも両バンドで構築できます（5G は VHT 80 MHz で動作）。
+Yopitek（ALFA Network 台湾代理店）が ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）で実測した結果、AWUS036ACM は両バンドで monitor モードが使え、パケットインジェクションは 2.4G で 63–83%、5G で 76%、AP ホットスポットも両バンドで構築できます（5G は VHT 80 MHz で動作）。
 
 - Ubuntu 24.04（ARM64）ではドライバのインストール不要：MT7612U は kernel 6.17 組み込みの mt76x2u が処理し、挿すだけで認識されます。DKMS は不要です。
 - デュアルバンドのモニターモード（monitor mode）が利用可能。パケットインジェクションは 2.4G で 63–83%、5G で 76% で、9 枚のカードの中では中位です。
@@ -191,7 +191,7 @@ AWUS036ACM は単機で 802.11s mesh と ad-hoc（IBSS）のインターフェ�
 不要です。MT7612U は kernel 組み込みの mt76x2u ドライバが処理するため、Ubuntu 24.04（kernel 6.17）では挿すだけで認識され、DKMS も手動のファームウェア導入も要りません。今回の検証プラットフォームは Ubuntu 24.04 ARM64 です。Kali もカーネルが十分に新しければ原則として同様ですが、今回は Kali 実機では検証していません。
 
 **Q：AWUS036ACM は monitor mode に入れますか？パケットインジェクションはできますか？成功率はどのくらいですか？**
-できます。2.4GHz・5GHz のどちらでも monitor mode に入り、正常にキャプチャできます。aireplay-ng によるインジェクションテストでは 2.4GHz が 63–83%、5GHz が 76% で、9 枚のカードの中では中位です。両バンドともインジェクション 100% を求めるなら、Yupitek の実測では AWUS036ACH や AWUS036EACS が適しています。
+できます。2.4GHz・5GHz のどちらでも monitor mode に入り、正常にキャプチャできます。aireplay-ng によるインジェクションテストでは 2.4GHz が 63–83%、5GHz が 76% で、9 枚のカードの中では中位です。両バンドともインジェクション 100% を求めるなら、Yopitek の実測では AWUS036ACH や AWUS036EACS が適しています。
 
 **Q：AWUS036ACM でホットスポットを開きながらインターネットにも接続できますか（VIF）？**
 できます。STA+AP（上流に接続しつつホットスポットを開く）と AP+monitor（ホットスポットを開きながらモニタリング）のどちらの組み合わせも成立しました。mt76 ドライバのマルチインターフェース同時動作が比較的充実している点です。5GHz ホットスポットは VHT 80 MHz まで開けます。
@@ -213,4 +213,4 @@ AWUS036ACM は単機で 802.11s mesh と ad-hoc（IBSS）のインターフェ�
 
 ---
 
-*検証担当：Yupitek（ALFA Network 台湾代理店）— https://www.yupitek.com ｜ 検証環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ テスト機器：Apple iPhone 7 Plus（WPA3 のみ iPhone 15 Pro でも測定）*
+*検証担当：Yopitek（ALFA Network 台湾代理店）— https://www.yupitek.com ｜ 検証環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ テスト機器：Apple iPhone 7 Plus（WPA3 のみ iPhone 15 Pro でも測定）*

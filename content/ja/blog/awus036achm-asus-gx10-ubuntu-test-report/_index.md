@@ -35,9 +35,9 @@ faq:
 draft: false
 ---
 
-> 検証担当：Yupitek（ALFA Network 台湾代理店）｜検証プラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`|テスト機器：自社の iPhone 7 Plus（WPA3 のみ iPhone 15 Pro でも測定）|テスト対象：自社オフィスの Wi-Fi（SSID `YUPITEK`、2.4G ch5 / 5G ch36、157）。
+> 検証担当：Yopitek（ALFA Network 台湾代理店）｜検証プラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`|テスト機器：自社の iPhone 7 Plus（WPA3 のみ iPhone 15 Pro でも測定）|テスト対象：自社オフィスの Wi-Fi（SSID `YUPITEK`、2.4G ch5 / 5G ch36、157）。
 >
-> 本記事は、代理店による製品の互換性と機能の限界についてのハードウェア検証です。Monitor / Injection / AP / WPA3 のテストはすべて、Yupitek が所有する機材と自社オフィスの Wi-Fi 上で、自社のテスト用スマートフォンに対して実施した正当な機能検証であり、第三者のネットワークは対象とせず、攻撃手順も提供しません。本文中の injection は probe request を送って機能を自己テストしただけで、攻撃用パケットは送信していません。
+> 本記事は、代理店による製品の互換性と機能の限界についてのハードウェア検証です。Monitor / Injection / AP / WPA3 のテストはすべて、Yopitek が所有する機材と自社オフィスの Wi-Fi 上で、自社のテスト用スマートフォンに対して実施した正当な機能検証であり、第三者のネットワークは対象とせず、攻撃手順も提供しません。本文中の injection は probe request を送って機能を自己テストしただけで、攻撃用パケットは送信していません。
 
 ## 要点まとめ（TL;DR）
 
@@ -245,4 +245,4 @@ ACHM を 9 機種の選定の文脈に戻すと、その位置づけは明確で
 
 ---
 
-*検証担当：Yupitek（ALFA Network 台湾代理店）— https://www.yupitek.com ｜ 検証環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ テスト機器：Apple iPhone 7 Plus（WPA3 のみ iPhone 15 Pro でも測定）。数値は 2026-11-16～11-18 の実機テストレポートからの引用であり、第三者のネットワークを対象とせず、攻撃手順も提供しません。*
+*検証担当：Yopitek（ALFA Network 台湾代理店）— https://www.yupitek.com ｜ 検証環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ テスト機器：Apple iPhone 7 Plus（WPA3 のみ iPhone 15 Pro でも測定）。数値は 2026-11-16～11-18 の実機テストレポートからの引用であり、第三者のネットワークを対象とせず、攻撃手順も提供しません。*

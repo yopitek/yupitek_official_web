@@ -34,15 +34,15 @@ faq:
 draft: false
 ---
 
-> Unité de test : Yupitek (distributeur ALFA Network à Taïwan) | Plateforme de test : ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Appareil de test : notre propre iPhone 7 Plus (WPA3 aussi testé sur iPhone 15 Pro) | Cible de test : notre propre Wi-Fi de bureau (SSID YUPITEK, 2,4G ch5 / 5G ch36, 157).
+> Unité de test : Yopitek (distributeur ALFA Network à Taïwan) | Plateforme de test : ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Appareil de test : notre propre iPhone 7 Plus (WPA3 aussi testé sur iPhone 15 Pro) | Cible de test : notre propre Wi-Fi de bureau (SSID YUPITEK, 2,4G ch5 / 5G ch36, 157).
 >
-> Cet article est un test de capacités et de compatibilité de l'AWUS036EACS en carte individuelle. Toutes les captures Monitor / Injection / handshake sont réalisées sur les propres équipements de Yupitek, son propre Wi-Fi de bureau, à destination de ses propres téléphones de test : il s'agit d'une vérification matérielle légitime par le distributeur ; elle ne vise aucun réseau tiers et ne fournit aucune procédure offensive.
+> Cet article est un test de capacités et de compatibilité de l'AWUS036EACS en carte individuelle. Toutes les captures Monitor / Injection / handshake sont réalisées sur les propres équipements de Yopitek, son propre Wi-Fi de bureau, à destination de ses propres téléphones de test : il s'agit d'une vérification matérielle légitime par le distributeur ; elle ne vise aucun réseau tiers et ne fournit aucune procédure offensive.
 
 **L'essentiel (TL;DR)** : l'AWUS036EACS fonctionne sans installation de pilote sur GX10 / Ubuntu 24.04 (kernel 6.17) ; injection bi-bande 100 %, bout en bout .22000 validé (79 ACKs) ; en tant que carte composite BT+Wi-Fi, attention au rebranchement.
 
 ## 1. Cette carte et la plateforme de test
 
-L'AWUS036EACS est la carte Wi-Fi 5 (802.11ac) USB nomade légère d'ALFA, à base de puce Realtek RTL8821CU, 1x1 flux unique, bi-bande 2,4 GHz et 5 GHz, avec un Bluetooth intégré : c'est un dispositif composite BT + WiFi. Cet article la place seule sur le banc d'essai de Yupitek, pour la passer point par point en revue dans un environnement ASUS GX10 (ARM64) sous Ubuntu 24.04, et répondre aux questions qui comptent le plus pour les clients : le pilote est-il reconnu sous ARM64, quels modes sont accessibles, jusqu'où va la performance.
+L'AWUS036EACS est la carte Wi-Fi 5 (802.11ac) USB nomade légère d'ALFA, à base de puce Realtek RTL8821CU, 1x1 flux unique, bi-bande 2,4 GHz et 5 GHz, avec un Bluetooth intégré : c'est un dispositif composite BT + WiFi. Cet article la place seule sur le banc d'essai de Yopitek, pour la passer point par point en revue dans un environnement ASUS GX10 (ARM64) sous Ubuntu 24.04, et répondre aux questions qui comptent le plus pour les clients : le pilote est-il reconnu sous ARM64, quels modes sont accessibles, jusqu'où va la performance.
 
 Précisons d'abord le positionnement. Il s'agit d'une vérification, par le distributeur, de la compatibilité et des limites de capacités de son propre produit, pas d'un tutoriel offensif. Toutes les mesures de capacités liées à l'injection et au handshake sont réalisées dans un environnement fermé en propre, à destination de nos propres appareils, sans fournir aucune procédure visant un réseau externe.
 
@@ -169,4 +169,4 @@ Non. L'active-monitor, l'IBSS, le mesh et le P2P de rtw88 renvoient -95 ou un jo
 
 ---
 
-*Unité de test : Yupitek (distributeur ALFA Network à Taïwan) — https://www.yupitek.com*
+*Unité de test : Yopitek (distributeur ALFA Network à Taïwan) — https://www.yupitek.com*

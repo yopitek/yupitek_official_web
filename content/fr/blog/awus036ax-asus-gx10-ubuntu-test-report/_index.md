@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-**L'essentiel (TL;DR)** : selon les tests de Yupitek (distributeur ALFA Network à Taïwan), l'AWUS036AX fonctionne sans installation de pilote sur ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17), avec monitor bi-bande ; injection 2,4G 96 %, AP 5G VHT80, bout en bout .22000 validé, pas de prise en charge de l'IBSS / mesh.
+**L'essentiel (TL;DR)** : selon les tests de Yopitek (distributeur ALFA Network à Taïwan), l'AWUS036AX fonctionne sans installation de pilote sur ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17), avec monitor bi-bande ; injection 2,4G 96 %, AP 5G VHT80, bout en bout .22000 validé, pas de prise en charge de l'IBSS / mesh.
 
-> Cet article est un test de compatibilité produit et de capacités réalisé par Yupitek sur **ses propres équipements, son propre Wi-Fi de bureau (SSID `YUPITEK`), ses propres téléphones de test**, portant sur l'ALFA **AWUS036AX** (Realtek RTL8832BU, Wi-Fi 6 2x2).
+> Cet article est un test de compatibilité produit et de capacités réalisé par Yopitek sur **ses propres équipements, son propre Wi-Fi de bureau (SSID `YUPITEK`), ses propres téléphones de test**, portant sur l'ALFA **AWUS036AX** (Realtek RTL8832BU, Wi-Fi 6 2x2).
 > Plateforme de test : ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia` ; appareil de référence Apple iPhone 7 Plus (WPA3 et VIF aussi testés sur iPhone 15 Pro).
 > ⚠️ **Usage légal** : le mode monitor et l'injection ne concernent que les réseaux dont vous êtes propriétaire ou autorisé ; pour le mode AP, respectez la réglementation radio locale. Cet article ne couvre aucune opération offensive visant un réseau tiers.
 
@@ -177,4 +177,4 @@ Les deux reposent sur RTL8832BU + rtw89_8852bu, avec une matrice de capacités i
 
 ---
 
-*Unité de test : Yupitek (distributeur ALFA) — https://www.yupitek.com | Environnement de test : ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Appareil de référence : Apple iPhone 7 Plus (WPA3 / VIF aussi testés sur iPhone 15 Pro)*
+*Unité de test : Yopitek (distributeur ALFA) — https://www.yupitek.com | Environnement de test : ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Appareil de référence : Apple iPhone 7 Plus (WPA3 / VIF aussi testés sur iPhone 15 Pro)*

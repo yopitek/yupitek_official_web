@@ -101,7 +101,7 @@ Tabela de referência:
 | JetPack 5.1.x | Ubuntu 20.04 (verifique você mesmo) | 5.10 | Precisa verificar o driver; recomendamos atualizar direto para o JetPack 6.x |
 | JetPack 6.0 / 6.1 / 6.2 / 6.2.2 (L4T 36.2–36.5) | Ubuntu 22.04 LTS | 5.15 LTS (por ex. `5.15.116-release-tegra`) | Anterior à inclusão no kernel principal (5.18); só funciona se o kernel L4T da NVIDIA fizer backport do driver, execute `modinfo mt7921u` primeiro |
 
-> **Este adaptador não foi testado em Jetson.** A única plataforma de testes da Yupitek é o ASUS GX10 (Ubuntu 24.04, kernel 6.17): o 6 GHz do AXML funciona, o modo monitor é fraco e a injeção de pacotes falha. Todas as versões do JetPack 6.x usam o Kernel 5.15, portanto atualizar para o JetPack 6.2 não torna o driver integrado. Execute `modinfo mt7921u`: se houver saída, o kernel L4T já traz o driver; caso contrário, é preciso um driver com backport / DKMS ou um kernel upstream 5.18 ou superior (a NVIDIA informa que o JetPack 6 aceita um kernel upstream 5.14 ou superior, mas essa não é a configuração padrão).
+> **Este adaptador não foi testado em Jetson.** A única plataforma de testes da Yopitek é o ASUS GX10 (Ubuntu 24.04, kernel 6.17): o 6 GHz do AXML funciona, o modo monitor é fraco e a injeção de pacotes falha. Todas as versões do JetPack 6.x usam o Kernel 5.15, portanto atualizar para o JetPack 6.2 não torna o driver integrado. Execute `modinfo mt7921u`: se houver saída, o kernel L4T já traz o driver; caso contrário, é preciso um driver com backport / DKMS ou um kernel upstream 5.18 ou superior (a NVIDIA informa que o JetPack 6 aceita um kernel upstream 5.14 ou superior, mas essa não é a configuração padrão).
 
 Verifique se o driver e o firmware estão prontos:
 

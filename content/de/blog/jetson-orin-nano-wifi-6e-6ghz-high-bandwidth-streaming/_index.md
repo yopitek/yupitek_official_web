@@ -101,7 +101,7 @@ Referenztabelle:
 | JetPack 5.1.x | Ubuntu 20.04 (selbst prüfen) | 5.10 | Treiber muss geprüft werden; wir empfehlen, direkt auf JetPack 6.x zu aktualisieren |
 | JetPack 6.0 / 6.1 / 6.2 / 6.2.2 (L4T 36.2–36.5) | Ubuntu 22.04 LTS | 5.15 LTS (z. B. `5.15.116-release-tegra`) | Älter als die Mainline-Aufnahme (5.18); funktioniert nur, wenn NVIDIAs L4T-Kernel den Treiber zurückportiert – zuerst `modinfo mt7921u` ausführen |
 
-> **Diese Karte wurde nicht auf Jetson getestet.** Yupitek testet nur auf dem ASUS GX10 (Ubuntu 24.04, Kernel 6.17): Das 6 GHz des AXML funktioniert, der Monitor-Modus ist schwach, Packet Injection schlägt fehl. Alle JetPack-6.x-Versionen verwenden Kernel 5.15; ein Upgrade auf JetPack 6.2 macht den Treiber also nicht zum Bestandteil. Führe `modinfo mt7921u` aus: Gibt es eine Ausgabe, bringt der L4T-Kernel den Treiber mit; andernfalls brauchst du einen Backport-/DKMS-Treiber oder einen Upstream-Kernel ab 5.18 (laut NVIDIA kann JetPack 6 einen Upstream-Kernel ab 5.14 nutzen, das ist aber nicht die Standardkonfiguration).
+> **Diese Karte wurde nicht auf Jetson getestet.** Yopitek testet nur auf dem ASUS GX10 (Ubuntu 24.04, Kernel 6.17): Das 6 GHz des AXML funktioniert, der Monitor-Modus ist schwach, Packet Injection schlägt fehl. Alle JetPack-6.x-Versionen verwenden Kernel 5.15; ein Upgrade auf JetPack 6.2 macht den Treiber also nicht zum Bestandteil. Führe `modinfo mt7921u` aus: Gibt es eine Ausgabe, bringt der L4T-Kernel den Treiber mit; andernfalls brauchst du einen Backport-/DKMS-Treiber oder einen Upstream-Kernel ab 5.18 (laut NVIDIA kann JetPack 6 einen Upstream-Kernel ab 5.14 nutzen, das ist aber nicht die Standardkonfiguration).
 
 Prüfe, ob Treiber und Firmware bereit sind:
 

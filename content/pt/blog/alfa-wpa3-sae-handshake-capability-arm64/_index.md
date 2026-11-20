@@ -31,9 +31,9 @@ faq:
 draft: false
 ---
 
-> Unidade de teste: Yupitek (distribuidor da ALFA Network em Taiwan) | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Dispositivo de teste: iPhone 7 Plus próprio (WPA3 também testado no iPhone 15 Pro) | Alvo de teste: Wi-Fi do próprio escritório (SSID YUPITEK, 2.4G ch5 / 5G ch36, 157).
+> Unidade de teste: Yopitek (distribuidor da ALFA Network em Taiwan) | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Dispositivo de teste: iPhone 7 Plus próprio (WPA3 também testado no iPhone 15 Pro) | Alvo de teste: Wi-Fi do próprio escritório (SSID YUPITEK, 2.4G ch5 / 5G ch36, 157).
 >
-> Este artigo é um panorama geral de capacidade e compatibilidade das placas de rede sem fio ALFA. Todas as capturas de Monitor / Injection / handshake foram feitas em equipamentos próprios da Yupitek, no Wi-Fi do próprio escritório e contra um celular de teste próprio, constituindo uma validação legítima de hardware pelo distribuidor; não visam qualquer rede de terceiros e não fornecem passos de operação de ataque.
+> Este artigo é um panorama geral de capacidade e compatibilidade das placas de rede sem fio ALFA. Todas as capturas de Monitor / Injection / handshake foram feitas em equipamentos próprios da Yopitek, no Wi-Fi do próprio escritório e contra um celular de teste próprio, constituindo uma validação legítima de hardware pelo distribuidor; não visam qualquer rede de terceiros e não fornecem passos de operação de ataque.
 
 ## Resumo (TL;DR)
 
@@ -113,7 +113,7 @@ A especificação WPA3-SAE força `ieee80211w=2` (Management Frame Protection). 
 Além da capacidade de hardware, a toolchain da plataforma também afeta a eficiência da auditoria. A seguir, alguns aprendizados reais deste lote no GX10 (ARM64):
 
 - **Conversão sempre com `hcxpcapngtool --all`.** Os parâmetros padrão são mais rígidos e frequentemente retornam "not enough M1" sem exportar o arquivo; com `--all`, é possível exportar o `.22000` de forma estável a partir dos M1–M4 completos.
-- **Com vários APs de mesmo nome no escritório, não trave o `--bssid`.** No escritório da Yupitek há vários APs YUPITEK de mesmo nome no mesmo canal, e o iPhone conecta no de sinal mais forte. Se, ao capturar, você travar um único BSSID com `--bssid`, é bem provável filtrar justamente aquele a que o iPhone realmente se conectou e perder toda a captura. A conclusão do teste real é **não travar o BSSID e capturar o canal inteiro diretamente**, e depois escolher o handshake completo a partir do arquivo gravado.
+- **Com vários APs de mesmo nome no escritório, não trave o `--bssid`.** No escritório da Yopitek há vários APs YUPITEK de mesmo nome no mesmo canal, e o iPhone conecta no de sinal mais forte. Se, ao capturar, você travar um único BSSID com `--bssid`, é bem provável filtrar justamente aquele a que o iPhone realmente se conectou e perder toda a captura. A conclusão do teste real é **não travar o BSSID e capturar o canal inteiro diretamente**, e depois escolher o handshake completo a partir do arquivo gravado.
 - **O `hcxdumptool` 8.x dá `failed to arm` nesta plataforma, exceto o EACS em 2.4 GHz (em 5 GHz falha).** rtw88 / rtw89 / mt7921u não oferecem active-monitor, e o hcxdumptool 8.x precisa dele; a solução é passar para o fluxo tradicional do aircrack-ng com `airodump-ng` + `aireplay-ng`.
 - **Se não captar nada após alternar modos repetidamente, desconecte e reconecte a placa primeiro.** rtw88 / rtw89 podem apresentar RX stall (varredura com 0 pacotes) após alternar monitor / AP repetidamente; a reenumeração do USB recupera, e o nome da interface é determinado pelo MAC, não mudando ao reconectar. Antes de capturar o handshake, a primeira coisa recomendada é reinserir a placa uma vez.
 - **Dispositivos combo BT+WiFi (EACS / AXML) têm condição de corrida ao reinserir.** As placas combo com Bluetooth, ao serem reinseridas ou plugadas em certas portas USB, apresentam travamento do probe da função WiFi e não geram a interface `wlx`; a solução é reinserir em outra porta USB — `modprobe` ou bind manual na maioria das vezes não funcionam.
@@ -158,4 +158,4 @@ R: Não necessariamente. O domínio regulatório padrão limita a potência de t
 
 ---
 
-*Todos os testes deste artigo foram feitos no Wi-Fi do próprio escritório da Yupitek (SSID YUPITEK), contra um iPhone 7 Plus próprio, constituindo uma validação legítima de capacidade das placas de rede sem fio ALFA pelo distribuidor. Os dados são citados dos relatórios de testes em hardware real de 2026-11-16 a 11-18, não visam qualquer rede de terceiros e não fornecem passos de operação de ataque. Unidade de teste: Yupitek (distribuidor da ALFA Network em Taiwan) — https://www.yupitek.com*
+*Todos os testes deste artigo foram feitos no Wi-Fi do próprio escritório da Yopitek (SSID YUPITEK), contra um iPhone 7 Plus próprio, constituindo uma validação legítima de capacidade das placas de rede sem fio ALFA pelo distribuidor. Os dados são citados dos relatórios de testes em hardware real de 2026-11-16 a 11-18, não visam qualquer rede de terceiros e não fornecem passos de operação de ataque. Unidade de teste: Yopitek (distribuidor da ALFA Network em Taiwan) — https://www.yupitek.com*

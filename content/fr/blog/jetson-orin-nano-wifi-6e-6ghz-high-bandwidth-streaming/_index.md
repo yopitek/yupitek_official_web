@@ -101,7 +101,7 @@ Tableau de référence :
 | JetPack 5.1.x | Ubuntu 20.04 (à vérifier soi-même) | 5.10 | Pilote à vérifier ; nous recommandons de passer directement à JetPack 6.x |
 | JetPack 6.0 / 6.1 / 6.2 / 6.2.2 (L4T 36.2–36.5) | Ubuntu 22.04 LTS | 5.15 LTS (par ex. `5.15.116-release-tegra`) | Antérieur à l'intégration principale (5.18) ; ne fonctionne que si le noyau L4T de NVIDIA rétroporte le pilote, exécutez d'abord `modinfo mt7921u` |
 
-> **Cette carte n'a pas été testée sur Jetson.** La seule plateforme de test de Yupitek est l'ASUS GX10 (Ubuntu 24.04, kernel 6.17) : le 6 GHz de l'AXML fonctionne, le mode monitor est faible et l'injection de paquets échoue. Toutes les versions de JetPack 6.x utilisent le Kernel 5.15 ; passer à JetPack 6.2 n'intègre donc pas le pilote. Exécutez `modinfo mt7921u` : s'il y a une sortie, le noyau L4T fournit déjà le pilote ; sinon, il faut un pilote rétroporté / DKMS ou un noyau amont 5.18 ou supérieur (NVIDIA indique que JetPack 6 peut utiliser un noyau amont 5.14 ou supérieur, mais ce n'est pas la configuration par défaut).
+> **Cette carte n'a pas été testée sur Jetson.** La seule plateforme de test de Yopitek est l'ASUS GX10 (Ubuntu 24.04, kernel 6.17) : le 6 GHz de l'AXML fonctionne, le mode monitor est faible et l'injection de paquets échoue. Toutes les versions de JetPack 6.x utilisent le Kernel 5.15 ; passer à JetPack 6.2 n'intègre donc pas le pilote. Exécutez `modinfo mt7921u` : s'il y a une sortie, le noyau L4T fournit déjà le pilote ; sinon, il faut un pilote rétroporté / DKMS ou un noyau amont 5.18 ou supérieur (NVIDIA indique que JetPack 6 peut utiliser un noyau amont 5.14 ou supérieur, mais ce n'est pas la configuration par défaut).
 
 Vérifiez que le pilote et le firmware sont prêts :
 

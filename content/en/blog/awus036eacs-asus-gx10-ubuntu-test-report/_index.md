@@ -34,15 +34,15 @@ faq:
 draft: false
 ---
 
-> Test unit: Yupitek (ALFA Network distributor in Taiwan) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Test device: our own iPhone 7 Plus (WPA3 also tested on iPhone 15 Pro) | Target: our own office Wi-Fi (SSID YUPITEK, 2.4G ch5 / 5G ch36, 157).
+> Test unit: Yopitek (ALFA Network distributor in Taiwan) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Test device: our own iPhone 7 Plus (WPA3 also tested on iPhone 15 Pro) | Target: our own office Wi-Fi (SSID YUPITEK, 2.4G ch5 / 5G ch36, 157).
 >
-> This article is a single-card capability and compatibility test of the AWUS036EACS. All Monitor / Injection / handshake capture was performed on Yupitek's own equipment, our own office Wi-Fi, against our own test phone — a legitimate hardware capability verification by the distributor. It targets no third-party network and provides no attack procedures.
+> This article is a single-card capability and compatibility test of the AWUS036EACS. All Monitor / Injection / handshake capture was performed on Yopitek's own equipment, our own office Wi-Fi, against our own test phone — a legitimate hardware capability verification by the distributor. It targets no third-party network and provides no attack procedures.
 
 **TL;DR**: The AWUS036EACS needs no driver install on the GX10 / Ubuntu 24.04 (kernel 6.17); injection is 100% on both bands, end-to-end .22000 passes (79 ACKs); as a BT+Wi-Fi combo card, watch out for re-plugging.
 
 ## 1. This Card and the Test Platform
 
-The AWUS036EACS is a lightweight travel-class Wi-Fi 5 (802.11ac) USB adapter from ALFA. Its chipset is the Realtek RTL8821CU — 1x1 single stream, dual-band 2.4 GHz and 5 GHz — and it also has built-in Bluetooth, making it a BT + WiFi combo device. This article puts it alone on Yupitek's test bench and runs through each item in an ASUS GX10 (ARM64) + Ubuntu 24.04 environment, answering the questions customers care about most: does the driver work on ARM64, which modes can it enter, and how far does performance go.
+The AWUS036EACS is a lightweight travel-class Wi-Fi 5 (802.11ac) USB adapter from ALFA. Its chipset is the Realtek RTL8821CU — 1x1 single stream, dual-band 2.4 GHz and 5 GHz — and it also has built-in Bluetooth, making it a BT + WiFi combo device. This article puts it alone on Yopitek's test bench and runs through each item in an ASUS GX10 (ARM64) + Ubuntu 24.04 environment, answering the questions customers care about most: does the driver work on ARM64, which modes can it enter, and how far does performance go.
 
 First, let's be clear about the framing. This is a distributor's verification of the compatibility and capability boundaries of its own product, not an attack tutorial. Every injection- and handshake-related capability measurement in this article was performed in our own closed environment against our own devices, and no procedure against any external network is provided.
 
@@ -169,4 +169,4 @@ No. rtw88's active-monitor, IBSS, mesh, and P2P return -95 or an invalid join; h
 
 ---
 
-*Test unit: Yupitek (ALFA Network distributor in Taiwan) — https://www.yupitek.com*
+*Test unit: Yopitek (ALFA Network distributor in Taiwan) — https://www.yupitek.com*

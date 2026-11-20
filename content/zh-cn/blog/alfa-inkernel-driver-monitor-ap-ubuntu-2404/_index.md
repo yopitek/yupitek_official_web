@@ -33,14 +33,14 @@ draft: false
 ---
 
 > 本文为标准 Linux 网络设置教学，示范如何在新版 kernel 用**内置（in-kernel）驱动**激活 ALFA 无线网卡的 Monitor（监听）与 AP（热点）模式。
-> 测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。所有数据均为 Yupitek 于自有设备、自有办公室 Wi-Fi（SSID `YUPITEK`）上的产品兼容性实测节录。
+> 测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。所有数据均为 Yopitek 于自有设备、自有办公室 Wi-Fi（SSID `YUPITEK`）上的产品兼容性实测节录。
 > ⚠️ **合法使用**：Monitor 模式仅限监听自己拥有或已取得授权的网络；AP 模式请遵守当地无线电法规。本文不涉及针对第三方网络的任何攻击操作。
 
 ---
 
 ## 重点摘要（TL;DR）
 
-在 ASUS GX10（ARM64 / Ubuntu 24.04 / kernel 6.17）上，Yupitek（ALFA Network 台湾经销）实测的 9 款 ALFA USB 无线网卡全部走 in-kernel 驱动（`rtw88` / `rtw89` / `mt76`），免装驱动即可用同一套流程启用 Monitor 与 AP 模式，2.4G 与 5G AP 下 iPhone 7 Plus / 15 Pro 都能正常连接；各卡最低 kernel 介于 4.19 至 6.17。
+在 ASUS GX10（ARM64 / Ubuntu 24.04 / kernel 6.17）上，Yopitek（ALFA Network 台湾经销）实测的 9 款 ALFA USB 无线网卡全部走 in-kernel 驱动（`rtw88` / `rtw89` / `mt76`），免装驱动即可用同一套流程启用 Monitor 与 AP 模式，2.4G 与 5G AP 下 iPhone 7 Plus / 15 Pro 都能正常连接；各卡最低 kernel 介于 4.19 至 6.17。
 
 - **新 kernel 免装驱动**：Realtek `rtw88` / `rtw89` 与 MediaTek `mt76` 已把 ALFA 这些 USB 芯片纳入 in-kernel 支持；kernel 6.17（GX10 实测）9 张卡均已内置，各卡最低版本不同，插上即用、免编译、免 DKMS。
 - **Monitor 与 AP 流程三家族一致**：交回 NetworkManager →`iw` 切 monitor／`hostapd` 起 AP。
@@ -288,4 +288,4 @@ A：实测中 `mt76` 家族（如 AWUS036ACM / ACHM）可单机创建 mesh（802
 
 ---
 
-*测试单位：Yupitek（ALFA Network 台湾经销）— https://www.yupitek.com ｜ 测试环境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ 测试设备：Apple iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）*
+*测试单位：Yopitek（ALFA Network 台湾经销）— https://www.yupitek.com ｜ 测试环境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ 测试设备：Apple iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）*

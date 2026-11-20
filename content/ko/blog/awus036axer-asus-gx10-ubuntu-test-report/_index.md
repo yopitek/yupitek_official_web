@@ -37,7 +37,7 @@ draft: false
 
 {{< tldr >}}AWUS036AXER는 ASUS GX10 / Ubuntu 24.04 ARM64에서 꽂자마자 바로 사용 가능합니다(커널 내장 rtw89_8852bu). 모니터 60초 동안 63 AP+12 client를 캡처하고, 2.4 GHz 인젝션 73%, AP와 WPA3 모두 통과합니다. active monitor, IBSS, mesh는 지원하지 않습니다.{{< /tldr >}}
 
-> 본 글은 Yupitek(ALFA 대만 유통사)이 본인 소유 장비에서 수행한 제품 호환성 및 성능 실측입니다.
+> 본 글은 Yopitek(ALFA 대만 유통사)이 본인 소유 장비에서 수행한 제품 호환성 및 성능 실측입니다.
 > 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. 테스트 환경은 본인 소유 사무실 Wi-Fi(SSID `YUPITEK`)이며, 본인 소유 테스트용 스마트폰 iPhone 7 Plus(WPA3는 별도로 iPhone 15 Pro)로 진행했습니다.
 > ⚠️ **합법적 사용**: 모니터와 인젝션은 본인 소유 또는 허가된 네트워크와 기기에서만 수행하세요. AP 모드는 해당 지역의 무선 전파 규정을 준수하세요. 본 글은 랜카드의 성능, 호환성, 설정, 제품 선정에 초점을 맞추며, 제3자 네트워크에 대한 어떠한 공격 행위도 다루지 않습니다.
 
@@ -202,4 +202,4 @@ Ubuntu 24.04(ARM64, kernel 6.17.0-1014-nvidia)에서는 필요 없습니다. 커
 
 ---
 
-*테스트 기관: Yupitek(ALFA 유통사) — https://www.yupitek.com | 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | 테스트 기기: Apple iPhone 7 Plus(WPA3는 별도로 iPhone 15 Pro)*
+*테스트 기관: Yopitek(ALFA 유통사) — https://www.yupitek.com | 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | 테스트 기기: Apple iPhone 7 Plus(WPA3는 별도로 iPhone 15 Pro)*

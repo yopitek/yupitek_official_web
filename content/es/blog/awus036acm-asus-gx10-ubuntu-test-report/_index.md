@@ -24,7 +24,7 @@ faq:
   - question: "¿El AWUS036ACM necesita instalar controladores en Ubuntu o Kali?"
     answer: "No. El MT7612U lo gestiona el controlador mt76x2u integrado en el kernel; en Ubuntu 24.04 (kernel 6.17) se reconoce nada más conectarlo, sin DKMS y sin cargar firmware a mano. La plataforma de esta prueba es Ubuntu 24.04 ARM64; en Kali, con un kernel suficientemente reciente, el comportamiento debería ser el mismo en principio, pero esta vez no se verificó en Kali sobre hardware real."
   - question: "¿El AWUS036ACM puede entrar en modo monitor y hacer inyección de paquetes? ¿Con qué tasa de éxito?"
-    answer: "Sí. Tanto en 2.4GHz como en 5GHz entra en modo monitor y captura con normalidad; en la prueba de inyección con aireplay-ng alcanza 63–83% en 2.4GHz y 76% en 5GHz, un nivel intermedio dentro de las nueve tarjetas. Si necesita 100% de inyección en ambas bandas, en las pruebas de Yupitek destacan el AWUS036ACH y el AWUS036EACS."
+    answer: "Sí. Tanto en 2.4GHz como en 5GHz entra en modo monitor y captura con normalidad; en la prueba de inyección con aireplay-ng alcanza 63–83% en 2.4GHz y 76% en 5GHz, un nivel intermedio dentro de las nueve tarjetas. Si necesita 100% de inyección en ambas bandas, en las pruebas de Yopitek destacan el AWUS036ACH y el AWUS036EACS."
   - question: "¿El AWUS036ACM puede crear un punto de acceso y conectarse a Internet al mismo tiempo (VIF)?"
     answer: "Sí. Se verificaron las dos combinaciones: STA+AP (conectado a la red superior por un lado y con punto de acceso abierto por otro) y AP+monitor (punto de acceso abierto y captura simultánea). Aquí es donde la concurrencia de múltiples interfaces del controlador mt76 es más completa; el punto de acceso en 5GHz puede abrirse a VHT 80 MHz."
   - question: "¿El AWUS036ACM admite mesh (802.11s) e IBSS?"
@@ -34,13 +34,13 @@ faq:
 draft: false
 ---
 
-> Este artículo es el registro de pruebas prácticas de compatibilidad y capacidades del ALFA AWUS036ACM realizadas por Yupitek sobre una plataforma Linux reciente, pensado para la evaluación y selección de modelo.
-> Plataforma de prueba: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Todos los datos son extractos de pruebas prácticas realizadas por Yupitek sobre **equipo propio y la Wi-Fi propia de la oficina** (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, ch157) frente a un **teléfono de prueba propio** (Apple iPhone 7 Plus; WPA3 también se verificó con un iPhone 15 Pro).
+> Este artículo es el registro de pruebas prácticas de compatibilidad y capacidades del ALFA AWUS036ACM realizadas por Yopitek sobre una plataforma Linux reciente, pensado para la evaluación y selección de modelo.
+> Plataforma de prueba: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Todos los datos son extractos de pruebas prácticas realizadas por Yopitek sobre **equipo propio y la Wi-Fi propia de la oficina** (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, ch157) frente a un **teléfono de prueba propio** (Apple iPhone 7 Plus; WPA3 también se verificó con un iPhone 15 Pro).
 > ⚠️ **Declaración legal y de alcance**: el modo monitor, la inyección y la captura de handshake solo se realizan en redes y dispositivos propios o para los que se cuenta con autorización; en modo AP, respete la normativa de radio local. Este artículo se centra en las capacidades, la compatibilidad y la configuración de la propia tarjeta, y **no contempla ninguna operación de ataque contra redes de terceros**.
 
 ## Resumen (TL;DR)
 
-Según las pruebas de Yupitek (distribuidor de ALFA Network en Taiwán) en ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17), la AWUS036ACM funciona en modo monitor de doble banda, logra una inyección de paquetes del 63–83% en 2.4G y del 76% en 5G, y monta un punto de acceso en ambas bandas (5G a VHT 80 MHz).
+Según las pruebas de Yopitek (distribuidor de ALFA Network en Taiwán) en ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17), la AWUS036ACM funciona en modo monitor de doble banda, logra una inyección de paquetes del 63–83% en 2.4G y del 76% en 5G, y monta un punto de acceso en ambas bandas (5G a VHT 80 MHz).
 
 - En Ubuntu 24.04 (ARM64) no hace falta instalar controladores: el MT7612U lo gestiona el mt76x2u integrado en el kernel 6.17; se reconoce nada más conectarlo, sin DKMS.
 - Modo monitor en doble banda disponible; la inyección de paquetes es 63–83% en 2.4G y 76% en 5G, un nivel intermedio entre las nueve tarjetas.
@@ -191,7 +191,7 @@ Selección en una frase: si quiere jugar con mesh / IBSS, necesita concurrencia 
 No. El MT7612U lo gestiona el controlador mt76x2u integrado en el kernel; en Ubuntu 24.04 (kernel 6.17) se reconoce nada más conectarlo, sin DKMS y sin cargar firmware a mano. La plataforma de esta prueba es Ubuntu 24.04 ARM64; en Kali, con un kernel suficientemente reciente, el comportamiento debería ser el mismo en principio, pero esta vez no se verificó en Kali sobre hardware real.
 
 **P: ¿El AWUS036ACM puede entrar en modo monitor y hacer inyección de paquetes? ¿Con qué tasa de éxito?**
-Sí. Tanto en 2.4GHz como en 5GHz entra en modo monitor y captura con normalidad; en la prueba de inyección con aireplay-ng alcanza 63–83% en 2.4GHz y 76% en 5GHz, un nivel intermedio dentro de las nueve tarjetas. Si necesita 100% de inyección en ambas bandas, en las pruebas de Yupitek destacan el AWUS036ACH y el AWUS036EACS.
+Sí. Tanto en 2.4GHz como en 5GHz entra en modo monitor y captura con normalidad; en la prueba de inyección con aireplay-ng alcanza 63–83% en 2.4GHz y 76% en 5GHz, un nivel intermedio dentro de las nueve tarjetas. Si necesita 100% de inyección en ambas bandas, en las pruebas de Yopitek destacan el AWUS036ACH y el AWUS036EACS.
 
 **P: ¿El AWUS036ACM puede crear un punto de acceso y conectarse a Internet al mismo tiempo (VIF)?**
 Sí. Se verificaron las dos combinaciones: STA+AP (conectado a la red superior por un lado y con punto de acceso abierto por otro) y AP+monitor (punto de acceso abierto y captura simultánea). Aquí es donde la concurrencia de múltiples interfaces del controlador mt76 es más completa; el punto de acceso en 5GHz puede abrirse a VHT 80 MHz.
@@ -213,4 +213,4 @@ Sí. Frente a nuestro propio AP y nuestro propio iPhone 7 Plus, la prueba de ext
 
 ---
 
-*Entidad de prueba: Yupitek (distribuidor de ALFA Network en Taiwán) — https://www.yupitek.com | Entorno de prueba: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de prueba: Apple iPhone 7 Plus (WPA3 también probado con iPhone 15 Pro)*
+*Entidad de prueba: Yopitek (distribuidor de ALFA Network en Taiwán) — https://www.yupitek.com | Entorno de prueba: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de prueba: Apple iPhone 7 Plus (WPA3 también probado con iPhone 15 Pro)*

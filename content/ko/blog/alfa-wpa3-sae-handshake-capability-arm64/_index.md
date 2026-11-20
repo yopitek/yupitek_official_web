@@ -31,9 +31,9 @@ faq:
 draft: false
 ---
 
-> 테스트 기관: Yupitek(ALFA Network 대만 총판) | 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | 테스트 장치: 자사 소유 iPhone 7 Plus(WPA3는 iPhone 15 Pro로 별도 측정) | 테스트 대상: 자사 사무실 Wi-Fi(SSID YUPITEK, 2.4G ch5 / 5G ch36, 157).
+> 테스트 기관: Yopitek(ALFA Network 대만 총판) | 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | 테스트 장치: 자사 소유 iPhone 7 Plus(WPA3는 iPhone 15 Pro로 별도 측정) | 테스트 대상: 자사 사무실 Wi-Fi(SSID YUPITEK, 2.4G ch5 / 5G ch36, 157).
 >
-> 이 글은 ALFA 무선 랜카드의 능력과 호환성 총람입니다. 모든 Monitor / Injection / handshake 캡처는 Yupitek 소유 장비, 자사 사무실 Wi-Fi에서 자사 테스트 전화기를 대상으로 수행했으며, 총판이 하드웨어에 대해 수행하는 정당한 능력 검증에 해당합니다. 어떠한 제3자 네트워크도 겨냥하지 않으며, 공격 조작 절차도 제공하지 않습니다.
+> 이 글은 ALFA 무선 랜카드의 능력과 호환성 총람입니다. 모든 Monitor / Injection / handshake 캡처는 Yopitek 소유 장비, 자사 사무실 Wi-Fi에서 자사 테스트 전화기를 대상으로 수행했으며, 총판이 하드웨어에 대해 수행하는 정당한 능력 검증에 해당합니다. 어떠한 제3자 네트워크도 겨냥하지 않으며, 공격 조작 절차도 제공하지 않습니다.
 
 ## 핵심 요약(TL;DR)
 
@@ -113,7 +113,7 @@ WPA3-SAE 규격은 `ieee80211w=2`(Management Frame Protection)를 강제합니�
 하드웨어 능력 외에, 플랫폼 도구 체인도 감사 효율에 영향을 줍니다. 다음은 이번 묶음이 GX10(ARM64)에서 정리한 몇 가지 실측 심득입니다.
 
 - **변환은 일괄 `hcxpcapngtool --all`.** 기본 파라미터는 더 엄격해서 흔히 "not enough M1"을 반환하며 파일이 안 나옵니다. `--all`을 붙여야 완전한 M1–M4에서 `.22000`을 안정적으로 변환할 수 있습니다.
-- **사무실에 동일 이름 AP가 여러 대일 때는 `--bssid`를 고정하지 마십시오.** Yupitek 사무실에는 같은 채널에 동일 이름 YUPITEK AP가 여러 대 있어서 iPhone은 신호가 가장 강한 한 대에 연결됩니다. 캡처 시 `--bssid`로 단일 BSSID를 고정하면 iPhone이 실제로 연결된 그 대를 걸러내 캡처 전체가 허탕이 되기 쉽습니다. 실측 결론은 **BSSID를 고정하지 말고 채널 전체를 캡처한 뒤**, 산출 파일에서 완전한 핸드셰이크를 골라내는 것입니다.
+- **사무실에 동일 이름 AP가 여러 대일 때는 `--bssid`를 고정하지 마십시오.** Yopitek 사무실에는 같은 채널에 동일 이름 YUPITEK AP가 여러 대 있어서 iPhone은 신호가 가장 강한 한 대에 연결됩니다. 캡처 시 `--bssid`로 단일 BSSID를 고정하면 iPhone이 실제로 연결된 그 대를 걸러내 캡처 전체가 허탕이 되기 쉽습니다. 실측 결론은 **BSSID를 고정하지 말고 채널 전체를 캡처한 뒤**, 산출 파일에서 완전한 핸드셰이크를 골라내는 것입니다.
 - **`hcxdumptool` 8.x는 이 플랫폼에서 2.4 GHz의 EACS를 제외하고 `failed to arm`(5 GHz에서는 실패).** rtw88 / rtw89 / mt7921u 모두 active-monitor를 제공하지 않는데 hcxdumptool 8.x는 그것을 요구합니다. 해법은 `airodump-ng` + `aireplay-ng`라는 전통적 aircrack-ng 흐름으로 전환하는 것입니다.
 - **모드를 반복 전환한 뒤 아무것도 스캔 안 되면 먼저 카드를 뽑았다 꽂으십시오.** rtw88 / rtw89은 monitor / AP를 반복 전환한 뒤 RX stall(스캔 0 패킷)이 발생할 수 있습니다. USB 재열거로 복구되며, 인터페이스 이름은 MAC으로 결정되어 뽑았다 꽂아도 변하지 않습니다. handshake 캡처 전에 가장 먼저 할 일은 카드를 한 번 다시 꽂는 것을 권장합니다.
 - **BT+WiFi 복합 장치(EACS / AXML)는 다시 꽂을 때 경쟁 상태가 있음.** 블루투스를 포함한 복합 카드는 다시 꽂거나 특정 USB 포트에 꽂을 때 WiFi 기능 probe가 멈춰 `wlx` 인터페이스가 생성되지 않을 수 있습니다. 해법은 USB 포트를 바꿔 다시 꽂는 것이며, `modprobe`나 수동 bind는 대개 무효입니다.
@@ -158,4 +158,4 @@ A: 반드시 그렇지는 않습니다. 기본 규제 도메인이 일부 5GHz �
 
 ---
 
-*본문의 모든 테스트는 Yupitek 자사 사무실 Wi-Fi(SSID YUPITEK)에서 자사 소유 iPhone 7 Plus를 대상으로 수행했으며, 총판이 ALFA 무선 랜카드에 대해 수행하는 정당한 능력 검증에 해당합니다. 데이터는 2026-11-16~11-18의 실기 테스트 보고서에서 인용했으며, 어떠한 제3자 네트워크도 겨냥하지 않고 공격 조작 절차도 제공하지 않습니다. 테스트 기관: Yupitek(ALFA Network 대만 총판) — https://www.yupitek.com*
+*본문의 모든 테스트는 Yopitek 자사 사무실 Wi-Fi(SSID YUPITEK)에서 자사 소유 iPhone 7 Plus를 대상으로 수행했으며, 총판이 ALFA 무선 랜카드에 대해 수행하는 정당한 능력 검증에 해당합니다. 데이터는 2026-11-16~11-18의 실기 테스트 보고서에서 인용했으며, 어떠한 제3자 네트워크도 겨냥하지 않고 공격 조작 절차도 제공하지 않습니다. 테스트 기관: Yopitek(ALFA Network 대만 총판) — https://www.yupitek.com*

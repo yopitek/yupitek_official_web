@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-**要点まとめ（TL;DR）**：Yupitek（ALFA Network 台湾代理店）の実測では、AWUS036AX は ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）でドライバのインストールが不要で、両バンドの monitor が使えます。2.4G のインジェクションは 96%、5G の AP は VHT80 で、エンドツーエンドの .22000 取得も通りました。IBSS / mesh には対応していません。
+**要点まとめ（TL;DR）**：Yopitek（ALFA Network 台湾代理店）の実測では、AWUS036AX は ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）でドライバのインストールが不要で、両バンドの monitor が使えます。2.4G のインジェクションは 96%、5G の AP は VHT80 で、エンドツーエンドの .22000 取得も通りました。IBSS / mesh には対応していません。
 
-> 本記事は、Yupitek が**自社設備・自社オフィスの Wi-Fi（SSID `YUPITEK`）・自社のテスト用スマートフォン**上で実施した、製品の互換性と機能の実機検証です。対象は ALFA **AWUS036AX**（Realtek RTL8832BU、Wi-Fi 6 2x2）です。
+> 本記事は、Yopitek が**自社設備・自社オフィスの Wi-Fi（SSID `YUPITEK`）・自社のテスト用スマートフォン**上で実施した、製品の互換性と機能の実機検証です。対象は ALFA **AWUS036AX**（Realtek RTL8832BU、Wi-Fi 6 2x2）です。
 > 検証プラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。比較用の端末は Apple iPhone 7 Plus（WPA3 と VIF は iPhone 15 Pro でも別途検証）です。
 > ⚠️ **合法的な使用について**：Monitor と Injection は、自分が所有する、または許可を得たネットワークでのみ実施してください。AP モードは各地域の電波法規に従ってください。本記事は第三者のネットワークに対する攻撃操作を一切扱いません。
 
@@ -177,4 +177,4 @@ AX は取得できます。自前の AP と自前の iPhone 7 Plus で、`airepl
 
 ---
 
-*検証担当：Yupitek（ALFA 代理店）— https://www.yupitek.com ｜ 検証環境：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 ｜ 比較用端末：Apple iPhone 7 Plus（WPA3 / VIF は iPhone 15 Pro でも別途検証）*
+*検証担当：Yopitek（ALFA 代理店）— https://www.yupitek.com ｜ 検証環境：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 ｜ 比較用端末：Apple iPhone 7 Plus（WPA3 / VIF は iPhone 15 Pro でも別途検証）*

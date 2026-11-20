@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-> Tested by: Yupitek (ALFA Network's Taiwan distributor) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Test device: our own Apple iPhone 7 Plus | Test target: our own office Wi-Fi (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, 157) | Test date: 2026-11-18.
+> Tested by: Yopitek (ALFA Network's Taiwan distributor) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Test device: our own Apple iPhone 7 Plus | Test target: our own office Wi-Fi (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, 157) | Test date: 2026-11-18.
 >
-> This article is a distributor's hardware verification of product compatibility and capability boundaries: all Monitor / Injection / AP / handshake measurements were performed on Yupitek's own equipment, our own office Wi-Fi, against our own test phones; it does not target any third-party network, nor does it provide attack procedures against external networks. All data are numbers and states measured on real hardware, not inferred from spec sheets.
+> This article is a distributor's hardware verification of product compatibility and capability boundaries: all Monitor / Injection / AP / handshake measurements were performed on Yopitek's own equipment, our own office Wi-Fi, against our own test phones; it does not target any third-party network, nor does it provide attack procedures against external networks. All data are numbers and states measured on real hardware, not inferred from spec sheets.
 
 ## TL;DR
 

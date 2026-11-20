@@ -103,7 +103,7 @@ uname -r
 | JetPack 5.1.x | Ubuntu 20.04（需自行確認） | 5.10 | 需自行確認驅動；建議直接升上 JetPack 6.x |
 | JetPack 6.0 / 6.1 / 6.2 / 6.2.2（L4T 36.2–36.5） | Ubuntu 22.04 LTS | 5.15 LTS（例如 `5.15.116-release-tegra`） | 早於主線收錄版本（5.18）；能否使用取決於 NVIDIA 的 L4T kernel 有無 backport，先跑 `modinfo mt7921u` |
 
-> **這張卡沒有在 Jetson 上實測。** Yupitek 的測試平台只有 ASUS GX10（Ubuntu 24.04、kernel 6.17）：AXML 的 6 GHz 可用、monitor 偏弱、封包注入失敗。JetPack 6.x 全系列都是 Kernel 5.15，升級到 JetPack 6.2 並不會讓驅動變成內建。請執行 `modinfo mt7921u`：有輸出，代表 L4T kernel 已帶有這個驅動；沒有輸出，就需要 backport／DKMS 驅動，或自行換裝 5.18 以上的上游 kernel（NVIDIA 說明 JetPack 6 可換裝 5.14 以上的上游 kernel，但這不是預設組合）。
+> **這張卡沒有在 Jetson 上實測。** Yopitek 的測試平台只有 ASUS GX10（Ubuntu 24.04、kernel 6.17）：AXML 的 6 GHz 可用、monitor 偏弱、封包注入失敗。JetPack 6.x 全系列都是 Kernel 5.15，升級到 JetPack 6.2 並不會讓驅動變成內建。請執行 `modinfo mt7921u`：有輸出，代表 L4T kernel 已帶有這個驅動；沒有輸出，就需要 backport／DKMS 驅動，或自行換裝 5.18 以上的上游 kernel（NVIDIA 說明 JetPack 6 可換裝 5.14 以上的上游 kernel，但這不是預設組合）。
 
 驗證驅動與韌體是否就緒：
 

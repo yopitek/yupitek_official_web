@@ -33,14 +33,14 @@ draft: false
 ---
 
 > Cet article est un tutoriel standard de configuration réseau Linux, montrant comment activer les modes Monitor (écoute) et AP (point d'accès) des cartes Wi-Fi ALFA avec le pilote **intégré (in-kernel)** sur un kernel récent.
-> Plateforme de test : ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Toutes les données sont des extraits de tests de compatibilité produit réalisés par Yupitek sur ses propres équipements et son propre Wi-Fi de bureau (SSID `YUPITEK`).
+> Plateforme de test : ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Toutes les données sont des extraits de tests de compatibilité produit réalisés par Yopitek sur ses propres équipements et son propre Wi-Fi de bureau (SSID `YUPITEK`).
 > ⚠️ **Usage légal** : le mode monitor ne concerne que l'écoute de réseaux dont vous êtes propriétaire ou autorisé ; pour le mode AP, respectez la réglementation radio locale. Cet article ne couvre aucune opération offensive visant un réseau tiers.
 
 ---
 
 ## L'essentiel (TL;DR)
 
-Sur l'ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17), les 9 adaptateurs Wi-Fi USB ALFA testés par Yupitek (distributeur ALFA Network à Taïwan) tournent tous sur des pilotes in-kernel (`rtw88` / `rtw89` / `mt76`) sans installation de pilote, activent les modes Monitor et AP avec le même flux et laissent l'iPhone 7 Plus / 15 Pro se connecter normalement en AP 2,4G et 5G ; le kernel minimal va de 4.19 à 6.17 selon la carte.
+Sur l'ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17), les 9 adaptateurs Wi-Fi USB ALFA testés par Yopitek (distributeur ALFA Network à Taïwan) tournent tous sur des pilotes in-kernel (`rtw88` / `rtw89` / `mt76`) sans installation de pilote, activent les modes Monitor et AP avec le même flux et laissent l'iPhone 7 Plus / 15 Pro se connecter normalement en AP 2,4G et 5G ; le kernel minimal va de 4.19 à 6.17 selon la carte.
 
 - **Sans installation de pilote sur un kernel récent** : les Realtek `rtw88` / `rtw89` et le MediaTek `mt76` ont intégré ces puces USB ALFA au support in-kernel ; avec le kernel 6.17 (testé sur le GX10), les 9 cartes sont intégrées, la version minimale variant selon la carte, prêtes à l'emploi, sans compilation ni DKMS.
 - **Le flux Monitor et AP est identique pour les trois familles** : rendre la main à NetworkManager → `iw` pour passer en monitor / `hostapd` pour monter un AP.
@@ -288,4 +288,4 @@ R : En test, la famille `mt76` (comme les AWUS036ACM / ACHM) crée en local le m
 
 ---
 
-*Unité de test : Yupitek (distributeur ALFA Network à Taïwan) — https://www.yupitek.com | Environnement de test : ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Appareil de test : Apple iPhone 7 Plus (WPA3 aussi testé sur iPhone 15 Pro)*
+*Unité de test : Yopitek (distributeur ALFA Network à Taïwan) — https://www.yupitek.com | Environnement de test : ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Appareil de test : Apple iPhone 7 Plus (WPA3 aussi testé sur iPhone 15 Pro)*

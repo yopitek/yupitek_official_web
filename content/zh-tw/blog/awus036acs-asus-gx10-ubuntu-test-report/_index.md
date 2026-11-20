@@ -33,10 +33,10 @@ faq:
 draft: false
 ---
 
-**重點摘要（TL;DR）**：Yupitek（ALFA Network 台灣經銷）實測，AWUS036ACS 在 ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）免裝驅動，雙頻 monitor 與 AP（5G AP 可用，頻寬未確認）可用；注入 2.4G 100%、5G 96%，端到端 .22000 通過，不支援 mesh / IBSS。
+**重點摘要（TL;DR）**：Yopitek（ALFA Network 台灣經銷）實測，AWUS036ACS 在 ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）免裝驅動，雙頻 monitor 與 AP（5G AP 可用，頻寬未確認）可用；注入 2.4G 100%、5G 96%，端到端 .22000 通過，不支援 mesh / IBSS。
 
-> 本文是 Yupitek 針對 ALFA AWUS036ACS 在新版 Linux 平台上的產品相容性與能力實測紀錄，供評估選型用。
-> 測試平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。所有數據均為 Yupitek 於**自有設備、自有辦公室 Wi-Fi**（SSID `YUPITEK`，2.4G ch5 / 5G ch36）對**自有測試手機**（Apple iPhone 7 Plus）的實測節錄，MAC 位址部分遮蔽。
+> 本文是 Yopitek 針對 ALFA AWUS036ACS 在新版 Linux 平台上的產品相容性與能力實測紀錄，供評估選型用。
+> 測試平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。所有數據均為 Yopitek 於**自有設備、自有辦公室 Wi-Fi**（SSID `YUPITEK`，2.4G ch5 / 5G ch36）對**自有測試手機**（Apple iPhone 7 Plus）的實測節錄，MAC 位址部分遮蔽。
 > ⚠️ **合法與範圍聲明**：Monitor、Injection、handshake 擷取僅於自己擁有或已取得授權的網路與裝置上進行；AP 模式請遵守當地無線電法規。本文聚焦網卡本身的能力、相容性與設定，**不涉及針對第三方網路的任何攻擊操作**。
 
 ---
@@ -228,4 +228,4 @@ sudo aireplay-ng --test --ignore-negative-one -a <YUPITEK-BSSID> $IF
 
 ---
 
-*測試單位：Yupitek（ALFA Network 台灣經銷）— https://www.yupitek.com ｜ 測試環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ 測試裝置：Apple iPhone 7 Plus*
+*測試單位：Yopitek（ALFA Network 台灣經銷）— https://www.yupitek.com ｜ 測試環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ 測試裝置：Apple iPhone 7 Plus*

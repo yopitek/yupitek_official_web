@@ -37,7 +37,7 @@ draft: false
 
 {{< tldr >}}AWUS036AXER 在 ASUS GX10／Ubuntu 24.04 ARM64 插上即用（内置 rtw89_8852bu）；monitor 60 秒扫到 63 AP＋12 client，2.4 GHz 注入 73%，AP 与 WPA3 皆通过；不支持 active monitor、IBSS、mesh。{{< /tldr >}}
 
-> 本文为 Yupitek（ALFA 台湾经销）于自有设备上的产品兼容性与能力实测。
+> 本文为 Yopitek（ALFA 台湾经销）于自有设备上的产品兼容性与能力实测。
 > 测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。测试环境为自有办公室 Wi-Fi（SSID `YUPITEK`），对自有测试手机 iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）进行。
 > ⚠️ **合法使用**：Monitor 与 Injection 仅限自己拥有或已取得授权的网络与设备；AP 模式请遵守当地无线电法规。本文聚焦网卡能力、兼容性、设置与选型，不涉及针对第三方网络的任何攻击操作。
 
@@ -202,4 +202,4 @@ handshake 能力则是在**自有办公室 Wi-Fi（YUPITEK）＋ 自有测试设
 
 ---
 
-*测试单位：Yupitek（ALFA 经销）— https://www.yupitek.com ｜ 测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ 测试设备：Apple iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）*
+*测试单位：Yopitek（ALFA 经销）— https://www.yupitek.com ｜ 测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ 测试设备：Apple iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）*

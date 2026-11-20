@@ -36,9 +36,9 @@ draft: false
 
 {{< tldr >}}En ASUS GX10/Ubuntu 24.04 ARM64, la AWUS036AXM tiene monitor, AP, WPA3 y VIF funcionales, pero la inyección de paquetes falló en la prueba (No Answer/Found 0 APs): no puede hacer deauth ni capturar handshakes, no se recomienda para pruebas de penetración; su sitio es el AP puro y la conexión.{{< /tldr >}}
 
-Yupitek es el distribuidor de ALFA Network en Taiwán. Este es el informe de pruebas tarjeta por tarjeta de la AWUS036AXM, con un objetivo muy sencillo: medir con claridad qué «puede y qué no puede hacer» esta tarjeta Wi-Fi 6 en **ASUS GX10 (ARM64) + Ubuntu 24.04**, para que el cliente que la compre no tenga que adivinarlo a partir de una hoja de especificaciones.
+Yopitek es el distribuidor de ALFA Network en Taiwán. Este es el informe de pruebas tarjeta por tarjeta de la AWUS036AXM, con un objetivo muy sencillo: medir con claridad qué «puede y qué no puede hacer» esta tarjeta Wi-Fi 6 en **ASUS GX10 (ARM64) + Ubuntu 24.04**, para que el cliente que la compre no tenga que adivinarlo a partir de una hoja de especificaciones.
 
-Dejemos clara la premisa: todas las pruebas se realizaron sobre equipo propio de Yupitek y la Wi-Fi propia de la oficina, frente a nuestros propios teléfonos de prueba. Es una validación de hardware que un distribuidor hace sobre la compatibilidad y los límites de capacidad del producto, no un tutorial de ataque contra redes de terceros. El texto no ofrece ningún procedimiento de operación contra redes externas; las mediciones relacionadas con monitor e inyección se hicieron siempre en un entorno cerrado propio y sobre dispositivos propios.
+Dejemos clara la premisa: todas las pruebas se realizaron sobre equipo propio de Yopitek y la Wi-Fi propia de la oficina, frente a nuestros propios teléfonos de prueba. Es una validación de hardware que un distribuidor hace sobre la compatibilidad y los límites de capacidad del producto, no un tutorial de ataque contra redes de terceros. El texto no ofrece ningún procedimiento de operación contra redes externas; las mediciones relacionadas con monitor e inyección se hicieron siempre en un entorno cerrado propio y sobre dispositivos propios.
 
 Lo primero que hay que saber de esta tarjeta: **en esta plataforma, su inyección falla**. Si su uso requiere inyección o captura de handshake, puede saltar directamente a los apartados cuatro y cinco para ver la conclusión de selección; si lo que busca es una conexión estable y montar un AP, la AWUS036AXM cumplirá a la perfección.
 
@@ -176,7 +176,7 @@ En román paladino: para conexión estable y para hacer de AP, la AWUS036AXM cum
 
 - [La prueba práctica más completa de 2026: matriz global de 9 tarjetas Wi-Fi ALFA en ASUS GX10 (ARM64 / Ubuntu 24.04)](/es/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)
 
-Insistimos en la premisa: todas las mediciones de monitor / inyección de este artículo se realizaron en el entorno cerrado propio de Yupitek, sobre nuestros propios dispositivos de prueba, con el fin de validar las capacidades del producto y sus límites de compatibilidad; no ofrecemos ni recomendamos realizar esas operaciones contra ninguna red de terceros.
+Insistimos en la premisa: todas las mediciones de monitor / inyección de este artículo se realizaron en el entorno cerrado propio de Yopitek, sobre nuestros propios dispositivos de prueba, con el fin de validar las capacidades del producto y sus límites de compatibilidad; no ofrecemos ni recomendamos realizar esas operaciones contra ninguna red de terceros.
 
 ## Preguntas frecuentes (FAQ)
 
@@ -206,4 +206,4 @@ Los siguientes artículos relacionados irán publicándose (enlaces en construcc
 
 ---
 
-*Unidad de prueba: Yupitek (distribuidor de ALFA) | Plataforma: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de prueba: Apple iPhone 7 Plus (WPA3 / VIF revalidados además con un iPhone 15 Pro)*
+*Unidad de prueba: Yopitek (distribuidor de ALFA) | Plataforma: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de prueba: Apple iPhone 7 Plus (WPA3 / VIF revalidados además con un iPhone 15 Pro)*

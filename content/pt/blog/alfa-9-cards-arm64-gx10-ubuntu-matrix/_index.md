@@ -35,7 +35,7 @@ draft: false
 
 ## Resumo (TL;DR)
 
-A Yupitek (distribuidor da ALFA Network em Taiwan) testou 9 adaptadores Wi-Fi USB ALFA no ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17): os 9 funcionam em modo monitor e como AP, os AWUS036ACH e AWUS036EACS atingem 100% de injeção nas duas bandas, e os AWUS036AXM / AWUS036AXML com MT7921 falham na injeção nesta plataforma.
+A Yopitek (distribuidor da ALFA Network em Taiwan) testou 9 adaptadores Wi-Fi USB ALFA no ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17): os 9 funcionam em modo monitor e como AP, os AWUS036ACH e AWUS036EACS atingem 100% de injeção nas duas bandas, e os AWUS036AXM / AWUS036AXML com MT7921 falham na injeção nesta plataforma.
 
 - **Monitor funciona em todas**: as 9 placas entram em modo monitor; a diferença está apenas na força da recepção.
 - **Injection é o divisor de águas**: o ACH e o EACS, com Realtek `rtw88`, atingem 100% de injeção em ambas as bandas, o ACS vem em seguida; os AXM / AXML, com MT7921, falham na injeção nesta plataforma.
@@ -43,9 +43,9 @@ A Yupitek (distribuidor da ALFA Network em Taiwan) testou 9 adaptadores Wi-Fi US
 - **AP e WPA3-SAE passam em quase todas**: apenas o AWUS036ACHM exige `sae_pwe=0` para compatibilidade com iPhones antigos.
 - **ARM64 dispensa compilação**: as 9 usam o driver integrado ao kernel 6.17, plug-and-play, dispensa DKMS.
 
-A Yupitek é a distribuidora da ALFA Network em Taiwan. Quando o cliente escolhe uma placa de rede sem fio USB, as três perguntas mais comuns são quase sempre as mesmas: "Esta placa entra em modo monitor no meu ambiente Linux? Consegue fazer injection? Consegue montar AP?" Em vez de responder pela folha de especificações, levamos diretamente 9 placas ALFA em uso para a nossa própria bancada de testes e, no ambiente **ASUS GX10 (ARM64)** com **Ubuntu 24.04 LTS**, testamos uma a uma, puxando de uma vez para comparação as quatro linhas de capacidade — Monitor, Injection, AP e WPA3-SAE — e marcando honestamente quais delas "não conseguem fazer o quê nesta plataforma".
+A Yopitek é a distribuidora da ALFA Network em Taiwan. Quando o cliente escolhe uma placa de rede sem fio USB, as três perguntas mais comuns são quase sempre as mesmas: "Esta placa entra em modo monitor no meu ambiente Linux? Consegue fazer injection? Consegue montar AP?" Em vez de responder pela folha de especificações, levamos diretamente 9 placas ALFA em uso para a nossa própria bancada de testes e, no ambiente **ASUS GX10 (ARM64)** com **Ubuntu 24.04 LTS**, testamos uma a uma, puxando de uma vez para comparação as quatro linhas de capacidade — Monitor, Injection, AP e WPA3-SAE — e marcando honestamente quais delas "não conseguem fazer o quê nesta plataforma".
 
-É preciso deixar o posicionamento claro: todos os testes deste artigo foram feitos em equipamentos próprios da Yupitek e no Wi-Fi do próprio escritório, tendo como alvo o nosso próprio celular de teste. Esta é uma verificação de hardware feita pelo distribuidor sobre a compatibilidade e os limites de capacidade do produto, não um tutorial de ataque a redes de terceiros. O texto não fornece qualquer passo de operação contra redes externas; as capacidades de injection e handshake foram todas medidas em ambiente fechado próprio, contra dispositivos próprios.
+É preciso deixar o posicionamento claro: todos os testes deste artigo foram feitos em equipamentos próprios da Yopitek e no Wi-Fi do próprio escritório, tendo como alvo o nosso próprio celular de teste. Esta é uma verificação de hardware feita pelo distribuidor sobre a compatibilidade e os limites de capacidade do produto, não um tutorial de ataque a redes de terceiros. O texto não fornece qualquer passo de operação contra redes externas; as capacidades de injection e handshake foram todas medidas em ambiente fechado próprio, contra dispositivos próprios.
 
 Este é um artigo do tipo tabela-mestra, um Hub. A configuração passo a passo e as evidências completas de cada placa serão desdobradas em artigos individuais aprofundados (veja a leitura complementar no fim).
 
@@ -137,7 +137,7 @@ Puxando o escopo mais a fundo, olhamos o handshake ponta a ponta, a interface vi
 | 8 | AWUS036AXM | ❌ injeção falha | ✅ | 🟡 | N/A | N/A |
 | 9 | AWUS036AXML | ❌ injeção falha | ✅ | 🟡 | N/A | N/A |
 
-Aqui, "ponta a ponta" tem uma definição precisa: usar a placa para executar injection contra o **iPhone 7 Plus próprio da Yupitek** (conectado ao SSID `YUPITEK` próprio), capturar o 4-way handshake completo (M1–M4) e, em seguida, convertê-lo para o formato `.22000` do hashcat com `hcxpcapngtool --all`. Se toda essa cadeia roda ou não é que é o ponto de aceitação da "capacidade de teste de penetração", e não o simples "consegue entrar em monitor".
+Aqui, "ponta a ponta" tem uma definição precisa: usar a placa para executar injection contra o **iPhone 7 Plus próprio da Yopitek** (conectado ao SSID `YUPITEK` próprio), capturar o 4-way handshake completo (M1–M4) e, em seguida, convertê-lo para o formato `.22000` do hashcat com `hcxpcapngtool --all`. Se toda essa cadeia roda ou não é que é o ponto de aceitação da "capacidade de teste de penetração", e não o simples "consegue entrar em monitor".
 
 - **Aprovadas ponta a ponta (7 das 9)**: ACM, ACHM, ACH, ACS, EACS, AX e AXER conseguem produzir `.22000`, sendo que o EACS recebeu 79 ACKs, o retorno de sinal mais sólido; o ACH, com injeção 100% em ambas as bandas, teve o reteste de 2026-11-19 exportando um `.22000` com 47 linhas de hashline. O ACHM concluiu em 5GHz (ch36); o ACM concluiu mesmo com taxa de injeção menor.
 - **Cadeia rompida ponta a ponta**: AXM / AXML, por falha de injeção, têm toda a cadeia de handshake rompida junto. Isto confirma mais uma vez: o MT7921 não é adequado para uso de teste de penetração nesta plataforma.
@@ -195,7 +195,7 @@ Estes são os pontos práticos comuns às 9 placas ao operar esta leva no ASUS G
 6. **hcxdumptool com `failed to arm` em toda a plataforma (a exceção é o EACS em 2.4 GHz)**: a placa tri-banda integrada e os drivers acima não suportam active-monitor; use diretamente a suíte aircrack-ng (`airodump-ng` + `aireplay-ng`).
 7. **Detalhes de compilação em ARM64**: o `aircrack-ng` precisa ser compilado do código-fonte, e o `wifite` deve usar a versão git para contornar os conflitos de dependência do apt.
 
-Reforçando o posicionamento mais uma vez: as capacidades de injection / deauth / handshake acima foram todas medidas em ambiente fechado próprio da Yupitek, contra dispositivos de teste próprios, com o propósito de verificar as capacidades e os limites de compatibilidade do produto. Este artigo não fornece nem recomenda tais operações contra qualquer rede de terceiros.
+Reforçando o posicionamento mais uma vez: as capacidades de injection / deauth / handshake acima foram todas medidas em ambiente fechado próprio da Yopitek, contra dispositivos de teste próprios, com o propósito de verificar as capacidades e os limites de compatibilidade do produto. Este artigo não fornece nem recomenda tais operações contra qualquer rede de terceiros.
 
 ## Conclusão
 
@@ -239,4 +239,4 @@ Este artigo é a tabela-mestra, um Hub. Os artigos aprofundados e os testes indi
 
 ---
 
-*Unidade de teste: Yupitek (distribuidor da ALFA Network em Taiwan) | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de teste: Apple iPhone 7 Plus (WPA3 reconferido com iPhone 15 Pro) | Ambiente de teste: Wi-Fi do próprio escritório. Este artigo é uma verificação de compatibilidade e capacidade do produto, não um tutorial de operação contra redes de terceiros.*
+*Unidade de teste: Yopitek (distribuidor da ALFA Network em Taiwan) | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de teste: Apple iPhone 7 Plus (WPA3 reconferido com iPhone 15 Pro) | Ambiente de teste: Wi-Fi do próprio escritório. Este artigo é uma verificação de compatibilidade e capacidade do produto, não um tutorial de operação contra redes de terceiros.*

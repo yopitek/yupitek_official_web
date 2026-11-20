@@ -36,9 +36,9 @@ draft: false
 
 {{< tldr >}}AWUS036AXM 在 ASUS GX10／Ubuntu 24.04 ARM64 上 monitor、AP、WPA3、VIF 可用，但 packet injection 實測失敗（No Answer／Found 0 APs），無法 deauth 或擷取 handshake，不建議用於滲透測試；定位純 AP 與連線。{{< /tldr >}}
 
-Yupitek 是 ALFA Network 的台灣經銷商。這篇是 AWUS036AXM 的逐卡實測，目的很單純：把這張 Wi-Fi 6 網卡在 **ASUS GX10（ARM64）+ Ubuntu 24.04** 上「能做什麼、不能做什麼」量到清楚，讓選購的客戶不必靠規格表猜。
+Yopitek 是 ALFA Network 的台灣經銷商。這篇是 AWUS036AXM 的逐卡實測，目的很單純：把這張 Wi-Fi 6 網卡在 **ASUS GX10（ARM64）+ Ubuntu 24.04** 上「能做什麼、不能做什麼」量到清楚，讓選購的客戶不必靠規格表猜。
 
-先把定位講明白：以下所有測試都在 Yupitek 自有設備、自有辦公室 Wi-Fi 上完成，對象是我們自己的測試手機。這是經銷商對產品相容性與能力邊界的硬體驗證，不是針對第三方網路的攻擊教學。文中不提供任何對外部網路的操作步驟；monitor 與注入相關的量測，一律在自有封閉環境、對自有裝置進行。
+先把定位講明白：以下所有測試都在 Yopitek 自有設備、自有辦公室 Wi-Fi 上完成，對象是我們自己的測試手機。這是經銷商對產品相容性與能力邊界的硬體驗證，不是針對第三方網路的攻擊教學。文中不提供任何對外部網路的操作步驟；monitor 與注入相關的量測，一律在自有封閉環境、對自有裝置進行。
 
 這張卡最需要先知道的一件事：**它在本平台的 injection（注入）是失敗的**。如果你的用途會用到注入或 handshake 擷取，可以直接跳到第四、第五節看選型結論；如果你要的是穩定連線與架 AP，那 AWUS036AXM 會是一張很稱職的卡。
 
@@ -176,7 +176,7 @@ Found 0 APs
 
 - [2026 最完整實測：9 款 ALFA 無線網卡在 ASUS GX10（ARM64 / Ubuntu 24.04）全矩陣](/zh-tw/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)
 
-再次強調定位：本文所有 monitor / 注入相關的量測，全部在 Yupitek 自有封閉環境、對自有測試裝置進行，用途是驗證產品能力與相容性邊界，不提供也不建議對任何第三方網路進行上述操作。
+再次強調定位：本文所有 monitor / 注入相關的量測，全部在 Yopitek 自有封閉環境、對自有測試裝置進行，用途是驗證產品能力與相容性邊界，不提供也不建議對任何第三方網路進行上述操作。
 
 ## 常見問題（FAQ）
 
@@ -206,4 +206,4 @@ Found 0 APs
 
 ---
 
-*測試單位：Yupitek（ALFA 經銷）｜ 平台：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ 測試裝置：Apple iPhone 7 Plus（WPA3 / VIF 另測 iPhone 15 Pro）*
+*測試單位：Yopitek（ALFA 經銷）｜ 平台：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ 測試裝置：Apple iPhone 7 Plus（WPA3 / VIF 另測 iPhone 15 Pro）*

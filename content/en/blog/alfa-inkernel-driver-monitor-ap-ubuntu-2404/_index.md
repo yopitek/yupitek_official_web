@@ -33,14 +33,14 @@ draft: false
 ---
 
 > This is a standard Linux networking configuration guide, demonstrating how to use the **in-kernel (built-in) driver** on a recent kernel to enable Monitor and AP (hotspot) mode on ALFA Wi-Fi adapters.
-> Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. All data are excerpts from Yupitek's product-compatibility testing on its own equipment and its own office Wi-Fi (SSID `YUPITEK`).
+> Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. All data are excerpts from Yopitek's product-compatibility testing on its own equipment and its own office Wi-Fi (SSID `YUPITEK`).
 > ⚠️ **Legal use**: Monitor mode is only for listening to networks you own or are authorized to test; AP mode must comply with local radio regulations. This article involves no attack operations against any third-party network.
 
 ---
 
 ## Summary (TL;DR)
 
-On the ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17), all 9 ALFA USB Wi-Fi adapters tested by Yupitek (ALFA Network's Taiwan distributor) run on in-kernel drivers (`rtw88` / `rtw89` / `mt76`) with no driver install, enable Monitor and AP mode through the same flow, and let the iPhone 7 Plus / 15 Pro connect normally under 2.4G and 5G AP; the minimum kernel ranges from 4.19 to 6.17 depending on the card.
+On the ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17), all 9 ALFA USB Wi-Fi adapters tested by Yopitek (ALFA Network's Taiwan distributor) run on in-kernel drivers (`rtw88` / `rtw89` / `mt76`) with no driver install, enable Monitor and AP mode through the same flow, and let the iPhone 7 Plus / 15 Pro connect normally under 2.4G and 5G AP; the minimum kernel ranges from 4.19 to 6.17 depending on the card.
 
 - **No driver install on recent kernels**: Realtek `rtw88` / `rtw89` and MediaTek `mt76` already include these ALFA USB chips in in-kernel support; on kernel 6.17 (tested on the GX10) all 9 cards are built in, though the minimum kernel differs per card — plug and play, no compilation, no DKMS.
 - **The Monitor and AP flow is identical across the three families**: hand the interface back from NetworkManager → `iw` to switch to monitor / `hostapd` to bring up an AP.
@@ -288,4 +288,4 @@ A: In testing, the `mt76` family (e.g. AWUS036ACM / ACHM) can establish mesh (80
 
 ---
 
-*Testing unit: Yupitek (ALFA Network Taiwan distributor) — https://www.yupitek.com | Test environment: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Test device: Apple iPhone 7 Plus (WPA3 also tested with iPhone 15 Pro)*
+*Testing unit: Yopitek (ALFA Network Taiwan distributor) — https://www.yupitek.com | Test environment: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Test device: Apple iPhone 7 Plus (WPA3 also tested with iPhone 15 Pro)*

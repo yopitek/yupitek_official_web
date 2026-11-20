@@ -34,15 +34,15 @@ faq:
 draft: false
 ---
 
-> 検証担当：Yupitek（ALFA Network 台湾代理店）｜検証プラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia｜テスト端末：自社の iPhone 7 Plus（WPA3 は iPhone 15 Pro でも別途検証）｜検証対象：自社オフィスの Wi-Fi（SSID YUPITEK、2.4G ch5 / 5G ch36、157）。
+> 検証担当：Yopitek（ALFA Network 台湾代理店）｜検証プラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia｜テスト端末：自社の iPhone 7 Plus（WPA3 は iPhone 15 Pro でも別途検証）｜検証対象：自社オフィスの Wi-Fi（SSID YUPITEK、2.4G ch5 / 5G ch36、157）。
 >
-> 本記事は AWUS036EACS 単体の機能と互換性の実機検証です。Monitor / Injection / handshake の取得はすべて、Yupitek の自社設備・自社オフィスの Wi-Fi・自社のテスト用スマートフォンに対して実施しており、販売代理店によるハードウェアの正当な機能検証です。第三者のネットワークは対象とせず、攻撃の操作手順も提供しません。
+> 本記事は AWUS036EACS 単体の機能と互換性の実機検証です。Monitor / Injection / handshake の取得はすべて、Yopitek の自社設備・自社オフィスの Wi-Fi・自社のテスト用スマートフォンに対して実施しており、販売代理店によるハードウェアの正当な機能検証です。第三者のネットワークは対象とせず、攻撃の操作手順も提供しません。
 
 **要点まとめ（TL;DR）**：AWUS036EACS は GX10 / Ubuntu 24.04（kernel 6.17）でドライバのインストールが不要です。両帯域のインジェクションが 100% で、エンドツーエンドの .22000 取得も通りました（79 ACKs）。ただし BT+Wi-Fi 複合カードのため、抜き差しには注意が必要です。
 
 ## 1. このカードと検証プラットフォーム
 
-AWUS036EACS は ALFA の軽量・携帯向け Wi-Fi 5（802.11ac）USB 無線 LAN カードです。チップは Realtek RTL8821CU で、1x1 シングルストリーム、2.4GHz と 5GHz のデュアルバンドに対応し、さらに Bluetooth も内蔵した BT + WiFi 複合デバイスです。本記事ではこのカードを単独で Yupitek の検証台に載せ、ASUS GX10（ARM64）と Ubuntu 24.04 の環境で項目ごとに検収し、お客様が最も気にされる点に答えます。ARM64 でドライバが認識されるか、どのモードに入れるか、性能はどこまで出るか、の 3 点です。
+AWUS036EACS は ALFA の軽量・携帯向け Wi-Fi 5（802.11ac）USB 無線 LAN カードです。チップは Realtek RTL8821CU で、1x1 シングルストリーム、2.4GHz と 5GHz のデュアルバンドに対応し、さらに Bluetooth も内蔵した BT + WiFi 複合デバイスです。本記事ではこのカードを単独で Yopitek の検証台に載せ、ASUS GX10（ARM64）と Ubuntu 24.04 の環境で項目ごとに検収し、お客様が最も気にされる点に答えます。ARM64 でドライバが認識されるか、どのモードに入れるか、性能はどこまで出るか、の 3 点です。
 
 まず位置づけをはっきりさせておきます。これは販売代理店が自社取り扱い製品の互換性と機能の限界を検証したものであり、攻撃の手ほどきではありません。本文中の injection や handshake に関する機能測定は、すべて自社の閉じた環境で自社の機器に対して行ったもので、外部のネットワークに対する操作手順は一切提供しません。
 
@@ -169,4 +169,4 @@ BT+Wi-Fi 複合デバイスにおける probe の競合状態です。Bluetooth 
 
 ---
 
-*検証担当：Yupitek（ALFA Network 台湾代理店）— https://www.yupitek.com*
+*検証担当：Yopitek（ALFA Network 台湾代理店）— https://www.yupitek.com*

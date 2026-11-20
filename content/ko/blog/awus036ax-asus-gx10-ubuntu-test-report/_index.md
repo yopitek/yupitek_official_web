@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-**핵심 요약(TL;DR)**: Yupitek(ALFA Network 대만 총판) 실측 결과, AWUS036AX는 ASUS GX10 / Ubuntu 24.04 ARM64(kernel 6.17)에서 드라이버 설치 불필요이며 듀얼 밴드 monitor가 가능하고, 2.4G 인젝션 96%, 5G AP VHT80, 엔드투엔드 .22000 통과, IBSS / 메시는 미지원입니다.
+**핵심 요약(TL;DR)**: Yopitek(ALFA Network 대만 총판) 실측 결과, AWUS036AX는 ASUS GX10 / Ubuntu 24.04 ARM64(kernel 6.17)에서 드라이버 설치 불필요이며 듀얼 밴드 monitor가 가능하고, 2.4G 인젝션 96%, 5G AP VHT80, 엔드투엔드 .22000 통과, IBSS / 메시는 미지원입니다.
 
-> 본문은 Yupitek이 **본인 소유 장비, 본인 소유 사무실 Wi-Fi(SSID `YUPITEK`), 본인 소유 테스트 휴대폰**에서 완료한 제품 호환성 및 성능 실측으로, 대상은 ALFA **AWUS036AX**(Realtek RTL8832BU, Wi-Fi 6 2x2)입니다.
+> 본문은 Yopitek이 **본인 소유 장비, 본인 소유 사무실 Wi-Fi(SSID `YUPITEK`), 본인 소유 테스트 휴대폰**에서 완료한 제품 호환성 및 성능 실측으로, 대상은 ALFA **AWUS036AX**(Realtek RTL8832BU, Wi-Fi 6 2x2)입니다.
 > 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`; 대조 장치는 Apple iPhone 7 Plus(WPA3과 VIF는 iPhone 15 Pro로 별도 테스트).
 > ⚠️ **합법 사용**: 모니터와 인젝션은 본인 소유 또는 허가된 네트워크에서만 가능하며, AP 모드는 현지 무선 규제를 준수하십시오. 본문은 제3자 네트워크에 대한 어떠한 공격 행위도 포함하지 않습니다.
 
@@ -177,4 +177,4 @@ AX는 가능합니다. 본인 소유 AP와 본인 소유 iPhone 7 Plus에서 `ai
 
 ---
 
-*테스트 기관: Yupitek(ALFA 총판) — https://www.yupitek.com | 테스트 환경: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | 대조 장치: Apple iPhone 7 Plus(WPA3 / VIF는 iPhone 15 Pro로 별도 테스트)*
+*테스트 기관: Yopitek(ALFA 총판) — https://www.yupitek.com | 테스트 환경: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | 대조 장치: Apple iPhone 7 Plus(WPA3 / VIF는 iPhone 15 Pro로 별도 테스트)*

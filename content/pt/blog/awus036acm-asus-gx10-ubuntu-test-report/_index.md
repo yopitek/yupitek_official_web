@@ -24,7 +24,7 @@ faq:
   - question: "O AWUS036ACM precisa de driver no Ubuntu ou no Kali?"
     answer: "Não precisa. O MT7612U é assumido pelo driver mt76x2u integrado ao kernel; no Ubuntu 24.04 (kernel 6.17) basta conectar, sem DKMS e sem carregar firmware manualmente. A plataforma deste teste foi Ubuntu 24.04 ARM64; no Kali, desde que o kernel seja recente, o princípio é o mesmo, mas desta vez não validamos em hardware Kali."
   - question: "O AWUS036ACM consegue entrar em modo monitor e fazer injeção de pacotes? Qual a taxa de sucesso?"
-    answer: "Sim. Tanto 2.4GHz quanto 5GHz entram em modo monitor e capturam normalmente; no teste de injeção com aireplay-ng a taxa foi de 63–83% em 2.4GHz e 76% em 5GHz, posição intermediária entre as nove placas. Para injeção 100% em ambas as bandas, a Yupitek mediu o AWUS036ACH e o AWUS036EACS como os melhores."
+    answer: "Sim. Tanto 2.4GHz quanto 5GHz entram em modo monitor e capturam normalmente; no teste de injeção com aireplay-ng a taxa foi de 63–83% em 2.4GHz e 76% em 5GHz, posição intermediária entre as nove placas. Para injeção 100% em ambas as bandas, a Yopitek mediu o AWUS036ACH e o AWUS036EACS como os melhores."
   - question: "O AWUS036ACM consegue abrir um hotspot e ao mesmo tempo ficar conectado à internet (VIF)?"
     answer: "Sim. Em teste, tanto STA+AP (de um lado conectado ao upstream, do outro abrindo o hotspot) quanto AP+monitor (hotspot aberto monitorando ao mesmo tempo) se confirmaram — é onde a concorrência de múltiplas interfaces do driver mt76 é mais completa; o hotspot em 5GHz pode chegar a VHT 80 MHz."
   - question: "O AWUS036ACM suporta mesh (802.11s) e IBSS?"
@@ -34,13 +34,13 @@ faq:
 draft: false
 ---
 
-> Este artigo é o registro da Yupitek sobre o teste prático de compatibilidade e capacidade do produto ALFA AWUS036ACM na nova plataforma Linux, para apoio à avaliação e escolha.
-> Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Todos os dados são medições feitas pela Yupitek em **equipamentos próprios, no Wi-Fi do próprio escritório** (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, ch157) contra um **celular de teste próprio** (Apple iPhone 7 Plus; o WPA3 foi reconferido com um iPhone 15 Pro).
+> Este artigo é o registro da Yopitek sobre o teste prático de compatibilidade e capacidade do produto ALFA AWUS036ACM na nova plataforma Linux, para apoio à avaliação e escolha.
+> Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Todos os dados são medições feitas pela Yopitek em **equipamentos próprios, no Wi-Fi do próprio escritório** (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, ch157) contra um **celular de teste próprio** (Apple iPhone 7 Plus; o WPA3 foi reconferido com um iPhone 15 Pro).
 > ⚠️ **Declaração de legalidade e escopo**: Monitor, injection e captura de handshake foram feitos apenas em redes e dispositivos próprios ou autorizados; no modo AP, respeite as regulamentações de rádio locais. Este artigo foca nas capacidades, compatibilidade e configuração da própria placa e **não envolve qualquer operação de ataque contra redes de terceiros**.
 
 ## Resumo (TL;DR)
 
-Nos testes da Yupitek (distribuidor da ALFA Network em Taiwan) no ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17), o AWUS036ACM funciona em modo monitor de banda dupla, atinge injeção de pacotes de 63–83% em 2.4G e 76% em 5G, e sobe um hotspot AP nas duas bandas (5G em VHT 80 MHz).
+Nos testes da Yopitek (distribuidor da ALFA Network em Taiwan) no ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17), o AWUS036ACM funciona em modo monitor de banda dupla, atinge injeção de pacotes de 63–83% em 2.4G e 76% em 5G, e sobe um hotspot AP nas duas bandas (5G em VHT 80 MHz).
 
 - Ubuntu 24.04 (ARM64) dispensa DKMS: o MT7612U é assumido pelo mt76x2u integrado ao kernel 6.17, reconhecido ao conectar, sem DKMS.
 - O modo monitor de dupla banda funciona; a injeção de pacotes é de 63–83% em 2.4G e 76% em 5G, posição intermediária entre as nove placas.
@@ -191,7 +191,7 @@ Em uma frase para a escolha: para brincar com mesh / IBSS, para concorrência VI
 Não precisa. O MT7612U é assumido pelo driver mt76x2u integrado ao kernel; no Ubuntu 24.04 (kernel 6.17) basta conectar, sem DKMS e sem carregar firmware manualmente. A plataforma deste teste foi Ubuntu 24.04 ARM64; no Kali, desde que o kernel seja recente, o princípio é o mesmo, mas desta vez não validamos em hardware Kali.
 
 **P: O AWUS036ACM consegue entrar em modo monitor e fazer injeção de pacotes? Qual a taxa de sucesso?**
-Sim. Tanto 2.4GHz quanto 5GHz entram em modo monitor e capturam normalmente; no teste de injeção com aireplay-ng a taxa foi de 63–83% em 2.4GHz e 76% em 5GHz, posição intermediária entre as nove placas. Para injeção 100% em ambas as bandas, a Yupitek mediu o AWUS036ACH e o AWUS036EACS como os melhores.
+Sim. Tanto 2.4GHz quanto 5GHz entram em modo monitor e capturam normalmente; no teste de injeção com aireplay-ng a taxa foi de 63–83% em 2.4GHz e 76% em 5GHz, posição intermediária entre as nove placas. Para injeção 100% em ambas as bandas, a Yopitek mediu o AWUS036ACH e o AWUS036EACS como os melhores.
 
 **P: O AWUS036ACM consegue abrir um hotspot e ao mesmo tempo ficar conectado à internet (VIF)?**
 Sim. Em teste, tanto STA+AP (de um lado conectado ao upstream, do outro abrindo o hotspot) quanto AP+monitor (hotspot aberto monitorando ao mesmo tempo) se confirmaram — é onde a concorrência de múltiplas interfaces do driver mt76 é mais completa; o hotspot em 5GHz pode chegar a VHT 80 MHz.
@@ -213,4 +213,4 @@ Sim. Contra o nosso próprio AP e o nosso próprio iPhone 7 Plus, o fluxo ponta 
 
 ---
 
-*Unidade de teste: Yupitek (distribuidor da ALFA Network em Taiwan) — https://www.yupitek.com | Ambiente de teste: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de teste: Apple iPhone 7 Plus (WPA3 também testado em iPhone 15 Pro)*
+*Unidade de teste: Yopitek (distribuidor da ALFA Network em Taiwan) — https://www.yupitek.com | Ambiente de teste: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de teste: Apple iPhone 7 Plus (WPA3 também testado em iPhone 15 Pro)*

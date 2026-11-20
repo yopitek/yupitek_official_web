@@ -35,7 +35,7 @@ draft: false
 
 ## Kernaussagen (TL;DR)
 
-Yupitek (ALFA-Network-Distributor Taiwan) hat 9 ALFA-USB-WLAN-Adapter auf dem ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17) getestet: Alle 9 beherrschen Monitor-Modus und AP-Betrieb, AWUS036ACH und AWUS036EACS erreichen auf beiden Bändern 100 % Injektion, und die MT7921-basierten AWUS036AXM / AWUS036AXML scheitern auf dieser Plattform an der Injektion.
+Yopitek (ALFA-Network-Distributor Taiwan) hat 9 ALFA-USB-WLAN-Adapter auf dem ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17) getestet: Alle 9 beherrschen Monitor-Modus und AP-Betrieb, AWUS036ACH und AWUS036EACS erreichen auf beiden Bändern 100 % Injektion, und die MT7921-basierten AWUS036AXM / AWUS036AXML scheitern auf dieser Plattform an der Injektion.
 
 - **Monitor bei allen nutzbar**: Alle 9 Karten können in den Monitor-Modus wechseln, der Unterschied liegt nur in der Empfangsstärke.
 - **Injection ist die Wasserscheide**: Die Realtek-`rtw88`-Karten ACH und EACS erreichen in beiden Bändern 100 % Injektion, ACS folgt knapp dahinter; die MT7921-Karten AXM / AXML schlagen auf dieser Plattform bei der Injektion fehl.
@@ -43,9 +43,9 @@ Yupitek (ALFA-Network-Distributor Taiwan) hat 9 ALFA-USB-WLAN-Adapter auf dem AS
 - **AP und WPA3-SAE fast durchweg bestanden**: Nur der AWUS036ACHM benötigt `sae_pwe=0`, um mit älteren iPhones kompatibel zu sein.
 - **ARM64 ohne Kompilieren**: Alle 9 Karten nutzen die in kernel 6.17 enthaltenen Treiber, direkt nach dem Einstecken einsatzbereit, ohne DKMS.
 
-Yupitek ist der Taiwan-Distributor von ALFA Network. Wenn Kunden eine USB-WLAN-Karte auswählen, sind die drei häufigsten Fragen fast immer dieselben: „Kann diese Karte in meiner Linux-Umgebung in den Monitor-Modus? Kann sie Injection? Kann sie einen AP aufbauen?“ Statt aus dem Datenblatt zu antworten, haben wir die 9 aktuellen ALFA-Karten direkt auf unseren eigenen Labortisch gelegt und in der Umgebung aus **ASUS GX10 (ARM64)** und **Ubuntu 24.04 LTS** eine nach der anderen praktisch getestet; die vier Fähigkeitslinien Monitor, Injection, AP und WPA3-SAE werden auf einen Schlag vergleichend ausgezogen – und ehrlich gekennzeichnet, welche Karten „auf dieser Plattform etwas nicht können“.
+Yopitek ist der Taiwan-Distributor von ALFA Network. Wenn Kunden eine USB-WLAN-Karte auswählen, sind die drei häufigsten Fragen fast immer dieselben: „Kann diese Karte in meiner Linux-Umgebung in den Monitor-Modus? Kann sie Injection? Kann sie einen AP aufbauen?“ Statt aus dem Datenblatt zu antworten, haben wir die 9 aktuellen ALFA-Karten direkt auf unseren eigenen Labortisch gelegt und in der Umgebung aus **ASUS GX10 (ARM64)** und **Ubuntu 24.04 LTS** eine nach der anderen praktisch getestet; die vier Fähigkeitslinien Monitor, Injection, AP und WPA3-SAE werden auf einen Schlag vergleichend ausgezogen – und ehrlich gekennzeichnet, welche Karten „auf dieser Plattform etwas nicht können“.
 
-Die Positionierung muss vorab klar sein: Alle Tests dieses Artikels wurden auf Yupiteks eigener Hardware und im eigenen Büro-WLAN durchgeführt, Testobjekte sind unsere eigenen Testgeräte. Es handelt sich um eine Hardware-Verifizierung der Produktkompatibilität und der Fähigkeitsgrenzen durch den Distributor, nicht um eine Angriffsanleitung gegen fremde Netzwerke. Der Artikel liefert keinerlei Schritte für Operationen an externen Netzwerken; die Injection- und Handshake-bezogenen Fähigkeiten werden ausnahmslos in einer eigenen, geschlossenen Umgebung und an eigenen Geräten gemessen.
+Die Positionierung muss vorab klar sein: Alle Tests dieses Artikels wurden auf Yopiteks eigener Hardware und im eigenen Büro-WLAN durchgeführt, Testobjekte sind unsere eigenen Testgeräte. Es handelt sich um eine Hardware-Verifizierung der Produktkompatibilität und der Fähigkeitsgrenzen durch den Distributor, nicht um eine Angriffsanleitung gegen fremde Netzwerke. Der Artikel liefert keinerlei Schritte für Operationen an externen Netzwerken; die Injection- und Handshake-bezogenen Fähigkeiten werden ausnahmslos in einer eigenen, geschlossenen Umgebung und an eigenen Geräten gemessen.
 
 Dies ist ein Hub-Artikel im Gesamttabellen-Format. Die schrittweise Konfiguration und die vollständigen Belege jeder einzelnen Karte werden gesondert in Einzelkarten-Detailartikeln aufgeschlüsselt (siehe weiterführende Literatur am Ende).
 
@@ -137,7 +137,7 @@ Eine Ebene tiefer betrachten wir End-to-End-Handshake, virtuelle Schnittstellen 
 | 8 | AWUS036AXM | ❌ Injektion fehlgeschlagen | ✅ | 🟡 | N/A | N/A |
 | 9 | AWUS036AXML | ❌ Injektion fehlgeschlagen | ✅ | 🟡 | N/A | N/A |
 
-Das „End-to-End“ hat hier eine klare Definition: mit der jeweiligen Karte eine Injektion gegen das **eigene iPhone 7 Plus von Yupitek** (verbunden mit der eigenen `YUPITEK`-SSID) durchführen, den vollständigen 4-Way-Handshake (M1–M4) erfassen und ihn dann mit `hcxpcapngtool --all` in das hashcat-Format `.22000` umwandeln. Ob die gesamte Kette durchläuft, ist der Abnahmepunkt für „Penetrationstest-Fähigkeit“, nicht schon das bloße „in den Monitor-Modus wechseln können“.
+Das „End-to-End“ hat hier eine klare Definition: mit der jeweiligen Karte eine Injektion gegen das **eigene iPhone 7 Plus von Yopitek** (verbunden mit der eigenen `YUPITEK`-SSID) durchführen, den vollständigen 4-Way-Handshake (M1–M4) erfassen und ihn dann mit `hcxpcapngtool --all` in das hashcat-Format `.22000` umwandeln. Ob die gesamte Kette durchläuft, ist der Abnahmepunkt für „Penetrationstest-Fähigkeit“, nicht schon das bloße „in den Monitor-Modus wechseln können“.
 
 - **End-to-End bestanden (7 von 9 Karten)**: ACM, ACHM, ACH, ACS, EACS, AX und AXER können alle eine `.22000` erzeugen, wobei EACS 79 ACKs empfing und die solideste Signalrückmeldung lieferte; ACH injiziert in beiden Bändern 100 % und wurde am 2026-11-19 nachgemessen, mit Export einer `.22000` von 47 Hashlines. Der ACHM hat es auf 5 GHz (ch36) geschafft; der ACM hat es trotz niedrigerer Injektionserfolgsrate geschafft.
 - **End-to-End-Kette unterbrochen**: AXM / AXML – da die Injektion fehlschlägt, bricht die gesamte Handshake-Kette mit ab. Das bestätigt erneut: MT7921 eignet sich auf dieser Plattform nicht für Penetrationstest-Zwecke.
@@ -195,7 +195,7 @@ Diese Punkte sind beim Betrieb dieser Kartencharge auf dem ASUS GX10 + Ubuntu 24
 6. **hcxdumptool plattformweit failed to arm (Ausnahme: EACS auf 2,4 GHz)**: Weder die interne Tri-Band-Karte noch die genannten Treiber unterstützen active-monitor, daher direkt auf die aircrack-ng-Suite (`airodump-ng` + `aireplay-ng`) umsteigen.
 7. **Kompilierdetails unter ARM64**: `aircrack-ng` muss aus dem Quellcode kompiliert werden, `wifite` in der git-Version verwenden, um apt-Abhängigkeitskonflikte zu umgehen.
 
-Noch einmal die Positionierung betont: Die oben genannten Injection-/deauth-/Handshake-Fähigkeiten wurden allesamt in Yupiteks eigener, geschlossener Umgebung und an eigenen Testgeräten gemessen, mit dem Zweck, Produktfähigkeiten und Kompatibilitätsgrenzen zu verifizieren. Dieser Artikel liefert und empfiehlt keine solchen Operationen an irgendeinem fremden Netzwerk.
+Noch einmal die Positionierung betont: Die oben genannten Injection-/deauth-/Handshake-Fähigkeiten wurden allesamt in Yopiteks eigener, geschlossener Umgebung und an eigenen Testgeräten gemessen, mit dem Zweck, Produktfähigkeiten und Kompatibilitätsgrenzen zu verifizieren. Dieser Artikel liefert und empfiehlt keine solchen Operationen an irgendeinem fremden Netzwerk.
 
 ## Fazit
 
@@ -239,4 +239,4 @@ Dieser Artikel ist der Gesamttabellen-Hub. Die folgenden Detailartikel und Einze
 
 ---
 
-*Testinstanz: Yupitek (ALFA-Network-Distributor Taiwan) | Testplattform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Testgerät: Apple iPhone 7 Plus (WPA3 zusätzlich iPhone 15 Pro) | Testumgebung: eigenes Büro-WLAN. Dieser Artikel dient der Verifizierung von Produktkompatibilität und -fähigkeit, nicht als Anleitung für Operationen an fremden Netzwerken.*
+*Testinstanz: Yopitek (ALFA-Network-Distributor Taiwan) | Testplattform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Testgerät: Apple iPhone 7 Plus (WPA3 zusätzlich iPhone 15 Pro) | Testumgebung: eigenes Büro-WLAN. Dieser Artikel dient der Verifizierung von Produktkompatibilität und -fähigkeit, nicht als Anleitung für Operationen an fremden Netzwerken.*

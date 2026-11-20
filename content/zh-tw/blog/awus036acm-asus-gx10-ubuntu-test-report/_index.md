@@ -24,7 +24,7 @@ faq:
   - question: "AWUS036ACM 在 Ubuntu 或 Kali 需要裝驅動嗎？"
     answer: "不需要。MT7612U 由 kernel 內建的 mt76x2u 驅動接管，Ubuntu 24.04（kernel 6.17）插上即認，不用 DKMS、不用手動灌韌體。本次實測平台是 Ubuntu 24.04 ARM64，Kali 只要核心夠新原則上相同，但本次未在 Kali 實機驗證。"
   - question: "AWUS036ACM 可以進 monitor mode 和做封包注入嗎？成功率多少？"
-    answer: "可以。2.4GHz 與 5GHz 都能進 monitor mode 並正常擷取；aireplay-ng 注入測試 2.4GHz 為 63–83%、5GHz 為 76%，在九張卡中屬中段。要雙頻注入都 100%，Yupitek 實測以 AWUS036ACH、AWUS036EACS 為佳。"
+    answer: "可以。2.4GHz 與 5GHz 都能進 monitor mode 並正常擷取；aireplay-ng 注入測試 2.4GHz 為 63–83%、5GHz 為 76%，在九張卡中屬中段。要雙頻注入都 100%，Yopitek 實測以 AWUS036ACH、AWUS036EACS 為佳。"
   - question: "AWUS036ACM 可以同時開熱點又連上網（VIF）嗎？"
     answer: "可以。實測 STA+AP（一邊連上游、一邊開熱點）與 AP+monitor（開熱點同時監聽）兩種組合都成立，這是 mt76 驅動多介面併發較完整的地方；5GHz 熱點可開到 VHT 80 MHz。"
   - question: "AWUS036ACM 支援 mesh（802.11s）和 IBSS 嗎？"
@@ -34,13 +34,13 @@ faq:
 draft: false
 ---
 
-> 本文是 Yupitek 針對 ALFA AWUS036ACM 在新版 Linux 平台上的產品相容性與能力實測紀錄，供評估選型用。
-> 測試平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。所有數據均為 Yupitek 於**自有設備、自有辦公室 Wi-Fi**（SSID `YUPITEK`，2.4G ch5 / 5G ch36、ch157）對**自有測試手機**（Apple iPhone 7 Plus；WPA3 另以 iPhone 15 Pro 複測）的實測節錄。
+> 本文是 Yopitek 針對 ALFA AWUS036ACM 在新版 Linux 平台上的產品相容性與能力實測紀錄，供評估選型用。
+> 測試平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。所有數據均為 Yopitek 於**自有設備、自有辦公室 Wi-Fi**（SSID `YUPITEK`，2.4G ch5 / 5G ch36、ch157）對**自有測試手機**（Apple iPhone 7 Plus；WPA3 另以 iPhone 15 Pro 複測）的實測節錄。
 > ⚠️ **合法與範圍聲明**：Monitor、injection、handshake 擷取僅於自己擁有或已取得授權的網路與裝置上進行；AP 模式請遵守當地無線電法規。本文聚焦網卡本身的能力、相容性與設定，**不涉及針對第三方網路的任何攻擊操作**。
 
 ## 重點摘要（TL;DR）
 
-Yupitek（ALFA Network 台灣經銷）於 ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）實測：AWUS036ACM 雙頻 monitor 可用，封包注入 2.4G 為 63–83%、5G 為 76%，雙頻 AP 熱點皆可架設（5G 可跑 VHT 80 MHz）。
+Yopitek（ALFA Network 台灣經銷）於 ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）實測：AWUS036ACM 雙頻 monitor 可用，封包注入 2.4G 為 63–83%、5G 為 76%，雙頻 AP 熱點皆可架設（5G 可跑 VHT 80 MHz）。
 
 - Ubuntu 24.04（ARM64）免裝驅動：MT7612U 由 kernel 6.17 內建的 mt76x2u 接管，插上即認，不用 DKMS。
 - 雙頻監聽模式（monitor mode）可用；封包注入 2.4G 為 63–83%、5G 為 76%，在九卡中屬中段。
@@ -191,7 +191,7 @@ AWUS036ACM 在單機上能把 802.11s mesh 與 ad-hoc（IBSS）介面建起來�
 不需要。MT7612U 由 kernel 內建的 mt76x2u 驅動接管，Ubuntu 24.04（kernel 6.17）插上即認，不用 DKMS、不用手動灌韌體。本次實測平台是 Ubuntu 24.04 ARM64，Kali 只要核心夠新原則上相同，但本次未在 Kali 實機驗證。
 
 **Q：AWUS036ACM 可以進 monitor mode 和做封包注入嗎？成功率多少？**
-可以。2.4GHz 與 5GHz 都能進 monitor mode 並正常擷取；aireplay-ng 注入測試 2.4GHz 為 63–83%、5GHz 為 76%，在九張卡中屬中段。要雙頻注入都 100%，Yupitek 實測以 AWUS036ACH、AWUS036EACS 為佳。
+可以。2.4GHz 與 5GHz 都能進 monitor mode 並正常擷取；aireplay-ng 注入測試 2.4GHz 為 63–83%、5GHz 為 76%，在九張卡中屬中段。要雙頻注入都 100%，Yopitek 實測以 AWUS036ACH、AWUS036EACS 為佳。
 
 **Q：AWUS036ACM 可以同時開熱點又連上網（VIF）嗎？**
 可以。實測 STA+AP（一邊連上游、一邊開熱點）與 AP+monitor（開熱點同時監聽）兩種組合都成立，這是 mt76 驅動多介面併發較完整的地方；5GHz 熱點可開到 VHT 80 MHz。
@@ -213,4 +213,4 @@ AWUS036ACM 在單機上能把 802.11s mesh 與 ad-hoc（IBSS）介面建起來�
 
 ---
 
-*測試單位：Yupitek（ALFA Network 台灣經銷）— https://www.yupitek.com ｜ 測試環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ 測試裝置：Apple iPhone 7 Plus（WPA3 另測 iPhone 15 Pro）*
+*測試單位：Yopitek（ALFA Network 台灣經銷）— https://www.yupitek.com ｜ 測試環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ 測試裝置：Apple iPhone 7 Plus（WPA3 另測 iPhone 15 Pro）*

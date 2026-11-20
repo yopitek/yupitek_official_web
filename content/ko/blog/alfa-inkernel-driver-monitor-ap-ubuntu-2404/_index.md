@@ -33,14 +33,14 @@ draft: false
 ---
 
 > 이 글은 표준 Linux 네트워크 설정 가이드로, 최신 커널에서 **내장(in-kernel) 드라이버**로 ALFA 무선 랜카드의 Monitor(모니터)와 AP(핫스팟) 모드를 활성화하는 방법을 시연합니다.
-> 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. 모든 데이터는 Yupitek가 본인 소유 장비, 자사 사무실 Wi-Fi(SSID `YUPITEK`)에서 수행한 제품 호환성 실측에서 발췌한 것입니다.
+> 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. 모든 데이터는 Yopitek가 본인 소유 장비, 자사 사무실 Wi-Fi(SSID `YUPITEK`)에서 수행한 제품 호환성 실측에서 발췌한 것입니다.
 > ⚠️ **합법적 사용**: Monitor 모드는 본인 소유 또는 허가된 네트워크의 모니터링에만 한정되며, AP 모드는 현지 무선 전파 법규를 준수하시기 바랍니다. 본문은 제3자 네트워크를 겨냥한 어떠한 공격 조작도 다루지 않습니다.
 
 ---
 
 ## 핵심 요약(TL;DR)
 
-ASUS GX10(ARM64 / Ubuntu 24.04 / kernel 6.17)에서 Yupitek(ALFA Network 대만 총판)이 실측한 ALFA USB 무선 랜카드 9종은 모두 in-kernel 드라이버(`rtw88` / `rtw89` / `mt76`)로 동작해 드라이버 설치 없이 동일한 절차로 Monitor와 AP 모드를 활성화할 수 있었고, 2.4G와 5G AP에서 iPhone 7 Plus / 15 Pro가 정상 연결되었습니다. 카드별 최소 kernel은 4.19~6.17입니다.
+ASUS GX10(ARM64 / Ubuntu 24.04 / kernel 6.17)에서 Yopitek(ALFA Network 대만 총판)이 실측한 ALFA USB 무선 랜카드 9종은 모두 in-kernel 드라이버(`rtw88` / `rtw89` / `mt76`)로 동작해 드라이버 설치 없이 동일한 절차로 Monitor와 AP 모드를 활성화할 수 있었고, 2.4G와 5G AP에서 iPhone 7 Plus / 15 Pro가 정상 연결되었습니다. 카드별 최소 kernel은 4.19~6.17입니다.
 
 - **최신 kernel에서는 드라이버 설치 불필요**: Realtek `rtw88` / `rtw89`과 MediaTek `mt76`이 이 ALFA USB 칩들을 인커널 지원에 포함시켰습니다. kernel 6.17(GX10 실측)에서는 9장 모두 내장되어 있으므로(카드별 최소 버전은 다름) 꽂으면 바로 사용되고 컴파일도 DKMS도 필요 없습니다.
 - **Monitor와 AP 절차는 세 계열이 동일**: NetworkManager에 반환 → `iw`로 monitor 전환 / `hostapd`로 AP 기동.
@@ -288,4 +288,4 @@ A: 실측에서 `mt76` 계열(예: AWUS036ACM / ACHM)은 단일 기기로 mesh(8
 
 ---
 
-*테스트 기관: Yupitek(ALFA Network 대만 총판) — https://www.yupitek.com | 테스트 환경: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | 테스트 장치: Apple iPhone 7 Plus(WPA3는 iPhone 15 Pro로 별도 측정)*
+*테스트 기관: Yopitek(ALFA Network 대만 총판) — https://www.yupitek.com | 테스트 환경: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | 테스트 장치: Apple iPhone 7 Plus(WPA3는 iPhone 15 Pro로 별도 측정)*

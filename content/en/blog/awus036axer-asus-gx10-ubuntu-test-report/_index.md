@@ -37,7 +37,7 @@ draft: false
 
 {{< tldr >}}On ASUS GX10 / Ubuntu 24.04 ARM64, AWUS036AXER is plug-and-play (in-kernel rtw89_8852bu); a 60-second monitor scan caught 63 APs + 12 clients, 2.4 GHz injection hit 73%, and both AP and WPA3 passed; active monitor, IBSS, and mesh are unsupported.{{< /tldr >}}
 
-> This article is Yupitek's (ALFA's Taiwan distributor) product-compatibility and capability testing on our own equipment.
+> This article is Yopitek's (ALFA's Taiwan distributor) product-compatibility and capability testing on our own equipment.
 > Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. The test environment was our own office Wi-Fi (SSID `YUPITEK`), against our own test phone, an iPhone 7 Plus (WPA3 separately tested with an iPhone 15 Pro).
 > ⚠️ **Legal use**: Monitor and injection are limited to networks and devices you own or are authorized to test; for AP mode, follow your local radio regulations. This article focuses on adapter capability, compatibility, configuration, and selection, and does not cover any attack operations against third-party networks.
 
@@ -202,4 +202,4 @@ Yes. Both 2.4 GHz 802.11n and 5 GHz VHT80 (VHT-NSS2, 351 Mbit) saw an iPhone con
 
 ---
 
-*Tested by: Yupitek (ALFA distributor) — https://www.yupitek.com | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Test device: Apple iPhone 7 Plus (WPA3 separately tested with iPhone 15 Pro)*
+*Tested by: Yopitek (ALFA distributor) — https://www.yupitek.com | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Test device: Apple iPhone 7 Plus (WPA3 separately tested with iPhone 15 Pro)*

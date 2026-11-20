@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-> Entidad de prueba: Yupitek (distribuidor de ALFA Network en Taiwán) | Plataforma de prueba: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de prueba: Apple iPhone 7 Plus propio | Objetivo de prueba: Wi-Fi propia de la oficina (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, 157) | Fecha de prueba: 2026-11-18.
+> Entidad de prueba: Yopitek (distribuidor de ALFA Network en Taiwán) | Plataforma de prueba: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de prueba: Apple iPhone 7 Plus propio | Objetivo de prueba: Wi-Fi propia de la oficina (SSID `YUPITEK`, 2.4G ch5 / 5G ch36, 157) | Fecha de prueba: 2026-11-18.
 >
-> Este artículo es una verificación de hardware, por parte del distribuidor, de la compatibilidad y los límites de capacidad del producto: todas las mediciones de Monitor / Inyección / AP / handshake se realizaron sobre equipo propio de Yupitek, la Wi-Fi propia de la oficina y un teléfono de prueba propio; no se dirige contra ninguna red de terceros ni se ofrecen pasos de operación de ataque contra redes externas. Todos los datos del texto son cifras y estados medidos sobre hardware real, no inferidos de la hoja de especificaciones.
+> Este artículo es una verificación de hardware, por parte del distribuidor, de la compatibilidad y los límites de capacidad del producto: todas las mediciones de Monitor / Inyección / AP / handshake se realizaron sobre equipo propio de Yopitek, la Wi-Fi propia de la oficina y un teléfono de prueba propio; no se dirige contra ninguna red de terceros ni se ofrecen pasos de operación de ataque contra redes externas. Todos los datos del texto son cifras y estados medidos sobre hardware real, no inferidos de la hoja de especificaciones.
 
 ## Resumen (TL;DR)
 

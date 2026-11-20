@@ -35,9 +35,9 @@ faq:
 draft: false
 ---
 
-> Testinstanz: Yupitek (ALFA-Network-Distributor Taiwan) | Testplattform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia` | Testgerät: eigenes iPhone 7 Plus (WPA3 zusätzlich iPhone 15 Pro) | Testobjekt: eigenes Büro-WLAN (SSID `YUPITEK`, 2,4G ch5 / 5G ch36, 157).
+> Testinstanz: Yopitek (ALFA-Network-Distributor Taiwan) | Testplattform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia` | Testgerät: eigenes iPhone 7 Plus (WPA3 zusätzlich iPhone 15 Pro) | Testobjekt: eigenes Büro-WLAN (SSID `YUPITEK`, 2,4G ch5 / 5G ch36, 157).
 >
-> Dieser Artikel ist eine Hardware-Verifizierung der Produktkompatibilität und Fähigkeitsgrenzen durch den Distributor. Alle Monitor- / Injection- / AP- / WPA3-Tests wurden auf Yupiteks eigener Hardware, im eigenen Büro-WLAN und gegen eigene Testgeräte durchgeführt und stellen eine legitime Fähigkeitsverifizierung dar; sie richten sich gegen kein fremdes Netzwerk und liefern keine Anleitung zu Angriffsoperationen. Die Injektion im Text sendet nur Probe Requests zur Selbstprüfung der Fähigkeit, keine Angriffspakete.
+> Dieser Artikel ist eine Hardware-Verifizierung der Produktkompatibilität und Fähigkeitsgrenzen durch den Distributor. Alle Monitor- / Injection- / AP- / WPA3-Tests wurden auf Yopiteks eigener Hardware, im eigenen Büro-WLAN und gegen eigene Testgeräte durchgeführt und stellen eine legitime Fähigkeitsverifizierung dar; sie richten sich gegen kein fremdes Netzwerk und liefern keine Anleitung zu Angriffsoperationen. Die Injektion im Text sendet nur Probe Requests zur Selbstprüfung der Fähigkeit, keine Angriffspakete.
 
 ## Kernaussagen (TL;DR)
 
@@ -245,4 +245,4 @@ Meist liegt es an der sae_pwe-Einstellung von hostapd. Im Test verbanden sich be
 
 ---
 
-*Testinstanz: Yupitek (ALFA-Network-Distributor Taiwan) — https://www.yupitek.com | Testumgebung: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Testgerät: Apple iPhone 7 Plus (WPA3 zusätzlich iPhone 15 Pro). Die Daten stammen aus den Hardware-Testberichten vom 16.–18.11.2026, richten sich gegen kein fremdes Netzwerk und liefern keine Anleitung zu Angriffsoperationen.*
+*Testinstanz: Yopitek (ALFA-Network-Distributor Taiwan) — https://www.yupitek.com | Testumgebung: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Testgerät: Apple iPhone 7 Plus (WPA3 zusätzlich iPhone 15 Pro). Die Daten stammen aus den Hardware-Testberichten vom 16.–18.11.2026, richten sich gegen kein fremdes Netzwerk und liefern keine Anleitung zu Angriffsoperationen.*

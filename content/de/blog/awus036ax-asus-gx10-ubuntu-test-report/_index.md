@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-**Kernaussagen (TL;DR)**: Laut Praxistest von Yupitek (ALFA-Network-Distributor Taiwan) läuft der AWUS036AX am ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) ohne Treiberinstallation, mit Dual-Band-Monitor; 2,4G-Injektion 96 %, 5G-AP VHT80, End-to-End-.22000 bestanden, kein Support für IBSS / mesh.
+**Kernaussagen (TL;DR)**: Laut Praxistest von Yopitek (ALFA-Network-Distributor Taiwan) läuft der AWUS036AX am ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) ohne Treiberinstallation, mit Dual-Band-Monitor; 2,4G-Injektion 96 %, 5G-AP VHT80, End-to-End-.22000 bestanden, kein Support für IBSS / mesh.
 
-> Dieser Artikel ist Yupiteks Kompatibilitäts- und Fähigkeits-Praxistest, durchgeführt auf **eigener Hardware, im eigenen Büro-WLAN (SSID `YUPITEK`), mit eigenem Testgerät**, Testobjekt ist der ALFA **AWUS036AX** (Realtek RTL8832BU, Wi-Fi 6 2x2).
+> Dieser Artikel ist Yopiteks Kompatibilitäts- und Fähigkeits-Praxistest, durchgeführt auf **eigener Hardware, im eigenen Büro-WLAN (SSID `YUPITEK`), mit eigenem Testgerät**, Testobjekt ist der ALFA **AWUS036AX** (Realtek RTL8832BU, Wi-Fi 6 2x2).
 > Testplattform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`; Vergleichsgerät Apple iPhone 7 Plus (WPA3 und VIF zusätzlich mit iPhone 15 Pro).
 > ⚠️ **Rechtmäßige Nutzung**: Monitor und Injection nur in Netzwerken, die Ihnen gehören oder für die Sie eine Genehmigung haben; im AP-Modus halten Sie bitte die lokalen Funkvorschriften ein. Dieser Artikel umfasst keinerlei Angriffsoperationen gegen fremde Netzwerke.
 
@@ -177,4 +177,4 @@ Beide nutzen RTL8832BU + rtw89_8852bu, die Fähigkeitsmatrix ist identisch; der 
 
 ---
 
-*Testinstanz: Yupitek (ALFA-Distributor) — https://www.yupitek.com | Testumgebung: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Vergleichsgerät: Apple iPhone 7 Plus (WPA3 / VIF zusätzlich iPhone 15 Pro)*
+*Testinstanz: Yopitek (ALFA-Distributor) — https://www.yupitek.com | Testumgebung: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Vergleichsgerät: Apple iPhone 7 Plus (WPA3 / VIF zusätzlich iPhone 15 Pro)*

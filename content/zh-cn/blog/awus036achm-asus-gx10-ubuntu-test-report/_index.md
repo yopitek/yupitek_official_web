@@ -35,9 +35,9 @@ faq:
 draft: false
 ---
 
-> 测试单位：Yupitek（ALFA Network 台湾经销）｜测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`|测试设备：自有 iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）|测试对象：自有办公室 Wi-Fi（SSID `YUPITEK`，2.4G ch5 / 5G ch36、157）。
+> 测试单位：Yopitek（ALFA Network 台湾经销）｜测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`|测试设备：自有 iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）|测试对象：自有办公室 Wi-Fi（SSID `YUPITEK`，2.4G ch5 / 5G ch36、157）。
 >
-> 本文为经销商对产品兼容性与能力边界的硬件验证。所有 Monitor / Injection / AP / WPA3 测试均于 Yupitek 自有设备、自有办公室 Wi-Fi、对自有测试手机进行，属正当能力验证；不针对任何第三方网络，亦不提供攻击操作步骤。文中 injection 仅送 probe request 做能力自测，不送攻击数据包。
+> 本文为经销商对产品兼容性与能力边界的硬件验证。所有 Monitor / Injection / AP / WPA3 测试均于 Yopitek 自有设备、自有办公室 Wi-Fi、对自有测试手机进行，属正当能力验证；不针对任何第三方网络，亦不提供攻击操作步骤。文中 injection 仅送 probe request 做能力自测，不送攻击数据包。
 
 ## 重点摘要（TL;DR）
 
@@ -245,4 +245,4 @@ sae_password=请改成你的密码
 
 ---
 
-*测试单位：Yupitek（ALFA Network 台湾经销）— https://www.yupitek.com ｜ 测试环境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ 测试设备：Apple iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）。数据引用自 2026-11-16～11-18 的实机测试报告，不针对任何第三方网络，亦不提供攻击操作步骤。*
+*测试单位：Yopitek（ALFA Network 台湾经销）— https://www.yupitek.com ｜ 测试环境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ 测试设备：Apple iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）。数据引用自 2026-11-16～11-18 的实机测试报告，不针对任何第三方网络，亦不提供攻击操作步骤。*

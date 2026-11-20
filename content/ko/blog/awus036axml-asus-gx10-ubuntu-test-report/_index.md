@@ -40,7 +40,7 @@ draft: false
 
 ALFA AWUS036AXML은 이번 9종 랜카드 중 유일한 "MediaTek Wi-Fi 6 + 블루투스" 복합 모델입니다. 블루투스가 없는 AWUS036AXM과 동일 세대 칩셋(MT7921, `mt7921u` 드라이버 사용)이며, 차이는 블루투스 한 조가 추가된 것뿐입니다. 고객이 가장 자주 묻는 것은 역시 그 세 가지입니다. monitor로 들어갈 수 있는가? injection이 되는가? AP를 구축할 수 있는가? 이 글은 AWUS036AXML을 따로 떼어, ASUS GX10(ARM64)에 Ubuntu 24.04를 조합해 항목별로 실측하고, 할 수 있는 것과 할 수 없는 것을 한 번에 분명히 밝힙니다. 특히 가장 핵심적인 제약은: **injection이 이 플랫폼에서 실패한다**는 것입니다.
 
-먼저 포지셔닝을 분명히 하면: 아래 모든 측정은 Yupitek 본인 소유 장비, 본인 소유 사무실 Wi-Fi(SSID `YUPITEK`), 본인 소유 테스트용 스마트폰(iPhone 7 Plus, WPA3는 별도로 iPhone 15 Pro로 재검증)에서 완료했습니다. 이것은 유통사가 제품 호환성과 성능 경계를 검증하는 하드웨어 검증이지, 제3자 네트워크에 대한 조작 교육이 아닙니다. 본문의 monitor, AP, injection 자체 테스트는 전부 본인 소유 폐쇄 환경에서 본인 소유 기기를 대상으로 진행했습니다.
+먼저 포지셔닝을 분명히 하면: 아래 모든 측정은 Yopitek 본인 소유 장비, 본인 소유 사무실 Wi-Fi(SSID `YUPITEK`), 본인 소유 테스트용 스마트폰(iPhone 7 Plus, WPA3는 별도로 iPhone 15 Pro로 재검증)에서 완료했습니다. 이것은 유통사가 제품 호환성과 성능 경계를 검증하는 하드웨어 검증이지, 제3자 네트워크에 대한 조작 교육이 아닙니다. 본문의 monitor, AP, injection 자체 테스트는 전부 본인 소유 폐쇄 환경에서 본인 소유 기기를 대상으로 진행했습니다.
 
 ## 1. 이 카드와 테스트 플랫폼
 
@@ -249,4 +249,4 @@ AWUS036AXML을 9종의 전체 그림 속에 다시 놓고 보면, 포지셔닝�
 
 ---
 
-*테스트 기관: Yupitek(ALFA Network 대만 유통사) | 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | 테스트 기기: Apple iPhone 7 Plus(WPA3는 별도로 iPhone 15 Pro) | 테스트 환경: 본인 소유 사무실 Wi-Fi(SSID YUPITEK). 본 글은 제품 호환성과 성능 검증이며, 제3자 네트워크에 대한 조작 교육이 아닙니다.*
+*테스트 기관: Yopitek(ALFA Network 대만 유통사) | 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | 테스트 기기: Apple iPhone 7 Plus(WPA3는 별도로 iPhone 15 Pro) | 테스트 환경: 본인 소유 사무실 Wi-Fi(SSID YUPITEK). 본 글은 제품 호환성과 성능 검증이며, 제3자 네트워크에 대한 조작 교육이 아닙니다.*

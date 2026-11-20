@@ -37,7 +37,7 @@ draft: false
 
 {{< tldr >}}O AWUS036AXER funciona ao conectar no ASUS GX10 / Ubuntu 24.04 ARM64 (driver integrado rtw89_8852bu); o monitor encontra 63 APs + 12 clients em 60 s, a injeção em 2.4 GHz é de 73%, e AP e WPA3 são aprovados; não suporta active monitor, IBSS nem mesh.{{< /tldr >}}
 
-> Este artigo é um teste prático de compatibilidade e capacidade de produto feito pela Yupitek (distribuidor da ALFA em Taiwan) em equipamentos próprios.
+> Este artigo é um teste prático de compatibilidade e capacidade de produto feito pela Yopitek (distribuidor da ALFA em Taiwan) em equipamentos próprios.
 > Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. O ambiente de teste é o Wi-Fi do próprio escritório (SSID `YUPITEK`), contra o celular de teste próprio iPhone 7 Plus (WPA3 testado também em iPhone 15 Pro).
 > ⚠️ **Uso legal**: Monitor e Injection apenas em redes e dispositivos próprios ou autorizados; no modo AP, respeite a legislação de radiofrequência local. Este artigo foca na capacidade, compatibilidade, configuração e escolha da placa, sem envolver qualquer operação de ataque contra redes de terceiros.
 
@@ -202,4 +202,4 @@ Pode. Tanto 2.4 GHz 802.11n quanto 5 GHz VHT80 (VHT-NSS2, 351 Mbit) têm iPhone 
 
 ---
 
-*Unidade de teste: Yupitek (distribuidor da ALFA) — https://www.yupitek.com | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de teste: Apple iPhone 7 Plus (WPA3 testado também em iPhone 15 Pro)*
+*Unidade de teste: Yopitek (distribuidor da ALFA) — https://www.yupitek.com | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de teste: Apple iPhone 7 Plus (WPA3 testado também em iPhone 15 Pro)*

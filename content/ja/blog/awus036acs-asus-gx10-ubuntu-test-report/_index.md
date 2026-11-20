@@ -33,10 +33,10 @@ faq:
 draft: false
 ---
 
-**要点まとめ（TL;DR）**：Yupitek（ALFA Network 台湾代理店）の実測では、AWUS036ACS は ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）でドライバのインストールが不要で、両バンドの monitor と AP（5G の AP は使用可、帯域幅は未確認）が使えます。インジェクションは 2.4G が 100%、5G が 96% で、エンドツーエンドの .22000 取得も通りました。一方、mesh / IBSS には対応していません。
+**要点まとめ（TL;DR）**：Yopitek（ALFA Network 台湾代理店）の実測では、AWUS036ACS は ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）でドライバのインストールが不要で、両バンドの monitor と AP（5G の AP は使用可、帯域幅は未確認）が使えます。インジェクションは 2.4G が 100%、5G が 96% で、エンドツーエンドの .22000 取得も通りました。一方、mesh / IBSS には対応していません。
 
 > 本記事は、ALFA AWUS036ACS を新しい Linux プラットフォーム上で検証した、製品の互換性と機能の実測記録です。機種選定の判断材料としてお使いください。
-> 検証プラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。掲載データはすべて、Yupitek が**自社設備・自社オフィスの Wi-Fi**（SSID `YUPITEK`、2.4G ch5 / 5G ch36）上で**自社のテスト用スマートフォン**（Apple iPhone 7 Plus）を相手に実測したものの抜粋で、MAC アドレスは一部伏せています。
+> 検証プラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。掲載データはすべて、Yopitek が**自社設備・自社オフィスの Wi-Fi**（SSID `YUPITEK`、2.4G ch5 / 5G ch36）上で**自社のテスト用スマートフォン**（Apple iPhone 7 Plus）を相手に実測したものの抜粋で、MAC アドレスは一部伏せています。
 > ⚠️ **合法性と範囲に関する宣言**：Monitor、Injection、handshake の取得は、自分が所有する、または許可を得たネットワークと機器でのみ実施しています。AP モードは各地域の電波法規に従ってください。本記事はカード自体の機能・互換性・設定に焦点を当てており、**第三者のネットワークに対する攻撃操作は一切扱いません**。
 
 ---
@@ -228,4 +228,4 @@ active monitor、IBSS、mesh（802.11s）、Wi-Fi Direct（P2P）には対応し
 
 ---
 
-*検証担当：Yupitek（ALFA Network 台湾代理店）— https://www.yupitek.com ｜ 検証環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ テスト端末：Apple iPhone 7 Plus*
+*検証担当：Yopitek（ALFA Network 台湾代理店）— https://www.yupitek.com ｜ 検証環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ テスト端末：Apple iPhone 7 Plus*

@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-**重点摘要（TL;DR）**：Yupitek（ALFA Network 台湾经销）实测，AWUS036AX 在 ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）免装驱动，双频 monitor 可用；2.4G 注入 96%、5G AP VHT80，端到端 .22000 通过，不支持 IBSS / mesh。
+**重点摘要（TL;DR）**：Yopitek（ALFA Network 台湾经销）实测，AWUS036AX 在 ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）免装驱动，双频 monitor 可用；2.4G 注入 96%、5G AP VHT80，端到端 .22000 通过，不支持 IBSS / mesh。
 
-> 本文为 Yupitek 于**自有设备、自有办公室 Wi-Fi（SSID `YUPITEK`）、自有测试手机**上完成的产品兼容性与能力实测，对象为 ALFA **AWUS036AX**（Realtek RTL8832BU、Wi-Fi 6 2x2）。
+> 本文为 Yopitek 于**自有设备、自有办公室 Wi-Fi（SSID `YUPITEK`）、自有测试手机**上完成的产品兼容性与能力实测，对象为 ALFA **AWUS036AX**（Realtek RTL8832BU、Wi-Fi 6 2x2）。
 > 测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`；对照设备 Apple iPhone 7 Plus（WPA3 与 VIF 另测 iPhone 15 Pro）。
 > ⚠️ **合法使用**：Monitor 与 Injection 仅限自己拥有或已取得授权的网络；AP 模式请遵守当地无线电法规。本文不涉及任何针对第三方网络的攻击操作。
 
@@ -177,4 +177,4 @@ AX 能：自有 AP 加自有 iPhone 7 Plus，`aireplay-ng -0` 触发重连、`ai
 
 ---
 
-*测试单位：Yupitek（ALFA 经销）— https://www.yupitek.com ｜ 测试环境：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 ｜ 对照设备：Apple iPhone 7 Plus（WPA3 / VIF 另测 iPhone 15 Pro）*
+*测试单位：Yopitek（ALFA 经销）— https://www.yupitek.com ｜ 测试环境：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 ｜ 对照设备：Apple iPhone 7 Plus（WPA3 / VIF 另测 iPhone 15 Pro）*

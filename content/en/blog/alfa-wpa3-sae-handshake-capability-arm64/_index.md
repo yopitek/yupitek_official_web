@@ -31,9 +31,9 @@ faq:
 draft: false
 ---
 
-> Testing unit: Yupitek (ALFA Network Taiwan distributor) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Test device: our own iPhone 7 Plus (WPA3 also tested with iPhone 15 Pro) | Test target: our own office Wi-Fi (SSID YUPITEK, 2.4G ch5 / 5G ch36, 157).
+> Testing unit: Yopitek (ALFA Network Taiwan distributor) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Test device: our own iPhone 7 Plus (WPA3 also tested with iPhone 15 Pro) | Test target: our own office Wi-Fi (SSID YUPITEK, 2.4G ch5 / 5G ch36, 157).
 >
-> This article is a capability and compatibility overview of ALFA Wi-Fi adapters. All Monitor / Injection / handshake capture was performed on Yupitek's own equipment, our own office Wi-Fi, against our own test phone — a distributor's legitimate hardware capability validation; it targets no third-party network and provides no attack procedures.
+> This article is a capability and compatibility overview of ALFA Wi-Fi adapters. All Monitor / Injection / handshake capture was performed on Yopitek's own equipment, our own office Wi-Fi, against our own test phone — a distributor's legitimate hardware capability validation; it targets no third-party network and provides no attack procedures.
 
 ## Summary (TL;DR)
 
@@ -113,7 +113,7 @@ The WPA3-SAE spec forces `ieee80211w=2` (Management Frame Protection). This mean
 Beyond hardware capability, the platform toolchain affects audit efficiency just as much. Here are a few test takeaways this batch compiled on the GX10 (ARM64):
 
 - **Always convert with `hcxpcapngtool --all`.** The default parameters are stricter and often return "not enough M1" and won't produce a file; adding `--all` lets a complete M1–M4 export a `.22000` reliably.
-- **When the office has multiple same-named APs, don't lock `--bssid`.** The Yupitek office has multiple same-named YUPITEK APs on the same channel, and the iPhone connects to whichever has the strongest signal. If you lock a single BSSID with `--bssid` during capture, you may filter out the very AP the iPhone is actually on and come up empty. The tested conclusion is to **not lock the BSSID and capture the whole channel directly**, then pick the complete handshake out of the on-file capture.
+- **When the office has multiple same-named APs, don't lock `--bssid`.** The Yopitek office has multiple same-named YUPITEK APs on the same channel, and the iPhone connects to whichever has the strongest signal. If you lock a single BSSID with `--bssid` during capture, you may filter out the very AP the iPhone is actually on and come up empty. The tested conclusion is to **not lock the BSSID and capture the whole channel directly**, then pick the complete handshake out of the on-file capture.
 - **`hcxdumptool` 8.x `failed to arm` on this platform, except the EACS on 2.4 GHz (5 GHz fails).** rtw88 / rtw89 / mt7921u none provide active-monitor, which hcxdumptool 8.x requires; the fix is to switch to the traditional aircrack-ng flow of `airodump-ng` + `aireplay-ng`.
 - **If you can't scan anything after repeated mode switches, unplug/replug the card first.** rtw88 / rtw89 can hit an RX stall (scanning 0 packets) after repeatedly switching monitor / AP; USB re-enumeration recovers it, and the interface name is derived from the MAC and unchanged after a replug. Before capturing a handshake, the first thing to do is reseat the card once.
 - **BT+WiFi combo devices (EACS / AXML) have a re-plug race.** Bluetooth-bearing combo cards, when re-plugged or placed in certain USB ports, can hang during WiFi probe and fail to create the `wlx` interface; the fix is to re-plug into a different USB port — `modprobe` or manual bind is mostly ineffective.
@@ -158,4 +158,4 @@ A: Not necessarily. The default regulatory domain restricts transmit power on so
 
 ---
 
-*All tests in this article were performed on Yupitek's own office Wi-Fi (SSID YUPITEK), against our own iPhone 7 Plus — a distributor's legitimate capability validation of ALFA Wi-Fi adapters. Data cited from the 2026-11-16 to 11-18 hands-on test reports. It targets no third-party network and provides no attack procedures. Testing unit: Yupitek (ALFA Network Taiwan distributor) — https://www.yupitek.com*
+*All tests in this article were performed on Yopitek's own office Wi-Fi (SSID YUPITEK), against our own iPhone 7 Plus — a distributor's legitimate capability validation of ALFA Wi-Fi adapters. Data cited from the 2026-11-16 to 11-18 hands-on test reports. It targets no third-party network and provides no attack procedures. Testing unit: Yopitek (ALFA Network Taiwan distributor) — https://www.yupitek.com*

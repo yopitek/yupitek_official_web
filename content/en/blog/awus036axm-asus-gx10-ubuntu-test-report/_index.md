@@ -36,9 +36,9 @@ draft: false
 
 {{< tldr >}}On ASUS GX10 / Ubuntu 24.04 ARM64, AWUS036AXM works for monitor, AP, WPA3, and VIF, but packet injection fails in testing (No Answer / Found 0 APs), so it cannot deauth or capture a handshake and is not recommended for penetration testing; positioned for pure AP and connectivity.{{< /tldr >}}
 
-Yupitek is ALFA Network's Taiwan distributor. This is a per-adapter hands-on of the AWUS036AXM with a simple goal: to measure clearly what this Wi-Fi 6 adapter can and can't do on **ASUS GX10 (ARM64) + Ubuntu 24.04**, so buyers don't have to guess from the spec sheet.
+Yopitek is ALFA Network's Taiwan distributor. This is a per-adapter hands-on of the AWUS036AXM with a simple goal: to measure clearly what this Wi-Fi 6 adapter can and can't do on **ASUS GX10 (ARM64) + Ubuntu 24.04**, so buyers don't have to guess from the spec sheet.
 
-Let's be clear on positioning up front: all of the tests below were done on Yupitek's own equipment and own office Wi-Fi, against our own test phones. This is a distributor's hardware validation of product compatibility and capability boundaries, not an attack tutorial against third-party networks. The article provides no steps for operating against external networks; all monitor- and injection-related measurements are done in our own closed environment, against our own devices.
+Let's be clear on positioning up front: all of the tests below were done on Yopitek's own equipment and own office Wi-Fi, against our own test phones. This is a distributor's hardware validation of product compatibility and capability boundaries, not an attack tutorial against third-party networks. The article provides no steps for operating against external networks; all monitor- and injection-related measurements are done in our own closed environment, against our own devices.
 
 The one thing to know about this adapter first: **its injection fails on this platform**. If your use case involves injection or handshake capture, you can jump straight to Sections Four and Five for the selection conclusion; if what you want is stable connectivity and running an AP, the AWUS036AXM is a very capable adapter.
 
@@ -176,7 +176,7 @@ In plain terms: for stable connectivity and running an AP, the AWUS036AXM is ver
 
 - [The most complete 2026 hands-on: full matrix of 9 ALFA wireless adapters on ASUS GX10 (ARM64 / Ubuntu 24.04)](/en/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)
 
-To reiterate the positioning: all monitor/injection-related measurements in this article were done entirely in Yupitek's own closed environment, against our own test devices, to validate product capabilities and compatibility boundaries; we neither provide nor recommend performing the above operations against any third-party network.
+To reiterate the positioning: all monitor/injection-related measurements in this article were done entirely in Yopitek's own closed environment, against our own test devices, to validate product capabilities and compatibility boundaries; we neither provide nor recommend performing the above operations against any third-party network.
 
 ## FAQ
 
@@ -206,4 +206,4 @@ The following related articles are coming online (links under construction):
 
 ---
 
-*Tested by: Yupitek (ALFA distributor) | Platform: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Test device: Apple iPhone 7 Plus (WPA3 / VIF separately tested with iPhone 15 Pro)*
+*Tested by: Yopitek (ALFA distributor) | Platform: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Test device: Apple iPhone 7 Plus (WPA3 / VIF separately tested with iPhone 15 Pro)*

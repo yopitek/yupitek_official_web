@@ -33,10 +33,10 @@ faq:
 draft: false
 ---
 
-**Resumo (TL;DR)**: nos testes da Yupitek (distribuidor da ALFA Network em Taiwan), o AWUS036ACS dispensa driver no ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) e funciona em monitor e AP de banda dupla (AP em 5G utilizável, largura de canal não confirmada); injeção de 100% em 2.4G e 96% em 5G, ponta a ponta `.22000` aprovado, sem suporte a mesh / IBSS.
+**Resumo (TL;DR)**: nos testes da Yopitek (distribuidor da ALFA Network em Taiwan), o AWUS036ACS dispensa driver no ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) e funciona em monitor e AP de banda dupla (AP em 5G utilizável, largura de canal não confirmada); injeção de 100% em 2.4G e 96% em 5G, ponta a ponta `.22000` aprovado, sem suporte a mesh / IBSS.
 
-> Este artigo é o registro da Yupitek sobre o teste prático de compatibilidade e capacidade do produto ALFA AWUS036ACS na nova plataforma Linux, para apoio à avaliação e escolha.
-> Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Todos os dados são medições feitas pela Yupitek em **equipamentos próprios, no Wi-Fi do próprio escritório** (SSID `YUPITEK`, 2.4G ch5 / 5G ch36) contra um **celular de teste próprio** (Apple iPhone 7 Plus), com os endereços MAC parcialmente ocultados.
+> Este artigo é o registro da Yopitek sobre o teste prático de compatibilidade e capacidade do produto ALFA AWUS036ACS na nova plataforma Linux, para apoio à avaliação e escolha.
+> Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Todos os dados são medições feitas pela Yopitek em **equipamentos próprios, no Wi-Fi do próprio escritório** (SSID `YUPITEK`, 2.4G ch5 / 5G ch36) contra um **celular de teste próprio** (Apple iPhone 7 Plus), com os endereços MAC parcialmente ocultados.
 > ⚠️ **Declaração de legalidade e escopo**: Monitor, Injection e captura de handshake foram feitos apenas em redes e dispositivos próprios ou autorizados; no modo AP, respeite as regulamentações de rádio locais. Este artigo foca nas capacidades, compatibilidade e configuração da própria placa e **não envolve qualquer operação de ataque contra redes de terceiros**.
 
 ---
@@ -228,4 +228,4 @@ Não suporta active monitor, IBSS, mesh (802.11s) nem Wi-Fi Direct (P2P). O hcxd
 
 ---
 
-*Unidade de teste: Yupitek (distribuidor da ALFA Network em Taiwan) — https://www.yupitek.com | Ambiente de teste: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de teste: Apple iPhone 7 Plus*
+*Unidade de teste: Yopitek (distribuidor da ALFA Network em Taiwan) — https://www.yupitek.com | Ambiente de teste: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Dispositivo de teste: Apple iPhone 7 Plus*

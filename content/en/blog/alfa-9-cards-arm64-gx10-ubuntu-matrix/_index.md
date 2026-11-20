@@ -35,7 +35,7 @@ draft: false
 
 ## Summary (TL;DR)
 
-Yupitek (ALFA Network's Taiwan distributor) tested 9 ALFA USB Wi-Fi adapters on the ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17): all 9 work in monitor mode and as an AP, the AWUS036ACH and AWUS036EACS reach 100% packet injection on both bands, and the MT7921-based AWUS036AXM / AWUS036AXML fail injection on this platform.
+Yopitek (ALFA Network's Taiwan distributor) tested 9 ALFA USB Wi-Fi adapters on the ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17): all 9 work in monitor mode and as an AP, the AWUS036ACH and AWUS036EACS reach 100% packet injection on both bands, and the MT7921-based AWUS036AXM / AWUS036AXML fail injection on this platform.
 
 - **Monitor works on all of them**: all 9 can enter monitor mode; they differ only in reception strength.
 - **Injection is the dividing line**: Realtek `rtw88` ACH and EACS hit 100% injection on both bands, with ACS close behind; MT7921's AXM / AXML fail to inject on this platform.
@@ -43,9 +43,9 @@ Yupitek (ALFA Network's Taiwan distributor) tested 9 ALFA USB Wi-Fi adapters on 
 - **AP and WPA3-SAE pass on nearly all**: only the AWUS036ACHM needs `sae_pwe=0` to stay compatible with older iPhones.
 - **No compilation on ARM64**: all 9 run on the kernel 6.17 in-tree drivers — plug and play, no DKMS.
 
-Yupitek is the Taiwan distributor for ALFA Network. When customers shop for a USB Wi-Fi adapter, the three questions they ask most are almost always the same: "Can this card enter monitor mode in my Linux setup? Can it do injection? Can it run an AP?" Rather than answering from a spec sheet, we put 9 current ALFA adapters on our own bench and tested each one on an **ASUS GX10 (ARM64)** running **Ubuntu 24.04 LTS**. We pulled all four capability lines — Monitor, Injection, AP, WPA3-SAE — into a single comparison, and we honestly flag which cards "can't do what" on this platform.
+Yopitek is the Taiwan distributor for ALFA Network. When customers shop for a USB Wi-Fi adapter, the three questions they ask most are almost always the same: "Can this card enter monitor mode in my Linux setup? Can it do injection? Can it run an AP?" Rather than answering from a spec sheet, we put 9 current ALFA adapters on our own bench and tested each one on an **ASUS GX10 (ARM64)** running **Ubuntu 24.04 LTS**. We pulled all four capability lines — Monitor, Injection, AP, WPA3-SAE — into a single comparison, and we honestly flag which cards "can't do what" on this platform.
 
-A word on framing first: every test here was done on Yupitek's own equipment and our own office Wi-Fi, against our own test phones. This is a distributor's hardware validation of product compatibility and capability boundaries, not an attack tutorial aimed at third-party networks. The article provides no procedures for operating against external networks; all injection and handshake work was measured in a self-owned, closed environment against our own devices.
+A word on framing first: every test here was done on Yopitek's own equipment and our own office Wi-Fi, against our own test phones. This is a distributor's hardware validation of product compatibility and capability boundaries, not an attack tutorial aimed at third-party networks. The article provides no procedures for operating against external networks; all injection and handshake work was measured in a self-owned, closed environment against our own devices.
 
 This is a hub-style overview article. The step-by-step configuration and full evidence for each card are split out into dedicated per-card deep dives (see the further reading at the end).
 
@@ -137,7 +137,7 @@ Going one layer deeper: end-to-end handshake, virtual interfaces (VIF), active m
 | 8 | AWUS036AXM | ❌ injection fail | ✅ | 🟡 | N/A | N/A |
 | 9 | AWUS036AXML | ❌ injection fail | ✅ | 🟡 | N/A | N/A |
 
-"End-to-end" here has a precise definition: use the card to perform injection against **Yupitek's own iPhone 7 Plus** (connected to our own `YUPITEK` SSID), capture the complete 4-way handshake (M1–M4), then convert it to hashcat's `.22000` format with `hcxpcapngtool --all`. Whether the whole chain runs through is the real "penetration-testing capability" checkpoint — not merely "can enter monitor."
+"End-to-end" here has a precise definition: use the card to perform injection against **Yopitek's own iPhone 7 Plus** (connected to our own `YUPITEK` SSID), capture the complete 4-way handshake (M1–M4), then convert it to hashcat's `.22000` format with `hcxpcapngtool --all`. Whether the whole chain runs through is the real "penetration-testing capability" checkpoint — not merely "can enter monitor."
 
 - **End-to-end passed (7 of 9 cards)**: ACM, ACHM, ACH, ACS, EACS, AX, AXER can all produce a `.22000`. Among them EACS received 79 ACKs, giving the most solid signal feedback; ACH injects at 100% on both bands and, on 2026-11-19, was re-tested to export a `.22000` with 47 hashlines. ACHM completed it on 5GHz (ch36); ACM completed it even though its injection success rate is lower.
 - **End-to-end broken**: AXM / AXML have the whole handshake chain broken because injection fails. This again confirms: MT7921 is unsuitable for penetration-testing use on this platform.
@@ -195,7 +195,7 @@ These are the practical points common to all 9 cards when operating this batch o
 6. **hcxdumptool fails to arm across the platform (the exception is the EACS on 2.4 GHz)**: the three-band built-in cards and the drivers above do not support active-monitor, so switch directly to the aircrack-ng suite (`airodump-ng` + `aireplay-ng`).
 7. **ARM64 build details**: `aircrack-ng` must be built from source, and `wifite` uses the git version to bypass apt dependency conflicts.
 
-To reiterate the framing: all of the injection / deauth / handshake capabilities above were measured in Yupitek's own closed environment against our own test devices, for the purpose of validating product capability and compatibility boundaries. This article does not provide, nor recommend, performing any of the above against any third-party network.
+To reiterate the framing: all of the injection / deauth / handshake capabilities above were measured in Yopitek's own closed environment against our own test devices, for the purpose of validating product capability and compatibility boundaries. This article does not provide, nor recommend, performing any of the above against any third-party network.
 
 ## Conclusion
 
@@ -239,4 +239,4 @@ This is the overview hub. The following deep dives and per-card tests are coming
 
 ---
 
-*Testing unit: Yupitek (ALFA Network Taiwan distributor) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Test device: Apple iPhone 7 Plus (WPA3 also tested with iPhone 15 Pro) | Test environment: our own office Wi-Fi. This article is product compatibility and capability validation, not an operating tutorial aimed at third-party networks.*
+*Testing unit: Yopitek (ALFA Network Taiwan distributor) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Test device: Apple iPhone 7 Plus (WPA3 also tested with iPhone 15 Pro) | Test environment: our own office Wi-Fi. This article is product compatibility and capability validation, not an operating tutorial aimed at third-party networks.*

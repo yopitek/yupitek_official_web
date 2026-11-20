@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-> 测试单位：Yupitek（ALFA Network 台湾经销）｜测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia｜测试设备：自有 Apple iPhone 7 Plus｜测试对象：自有办公室 Wi-Fi（SSID `YUPITEK`，2.4G ch5 / 5G ch36、157）｜测试日期：2026-11-18。
+> 测试单位：Yopitek（ALFA Network 台湾经销）｜测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia｜测试设备：自有 Apple iPhone 7 Plus｜测试对象：自有办公室 Wi-Fi（SSID `YUPITEK`，2.4G ch5 / 5G ch36、157）｜测试日期：2026-11-18。
 >
-> 本文属经销商对产品兼容性与能力边界的硬件验证：所有 Monitor / Injection / AP / handshake 量测，皆于 Yupitek 自有设备、自有办公室 Wi-Fi、对自有测试手机进行，不针对任何第三方网络，亦不提供对外部网络的攻击操作步骤。文中数据皆为实机量到的数字与状态，不以规格书推测。
+> 本文属经销商对产品兼容性与能力边界的硬件验证：所有 Monitor / Injection / AP / handshake 量测，皆于 Yopitek 自有设备、自有办公室 Wi-Fi、对自有测试手机进行，不针对任何第三方网络，亦不提供对外部网络的攻击操作步骤。文中数据皆为实机量到的数字与状态，不以规格书推测。
 
 ## 重点摘要（TL;DR）
 

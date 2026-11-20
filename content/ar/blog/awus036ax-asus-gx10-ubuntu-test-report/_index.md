@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-**الملخص السريع (TL;DR)**: وفق اختبارات Yupitek (الموزّع المعتمد لـ ALFA Network في تايوان)، تعمل AWUS036AX على ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) بلا تثبيت تعريف، مع monitor على النطاقين؛ الحقن 96% على 2.4G، وAP على 5G بـ VHT80، واجتازت .22000 من طرف إلى طرف، ولا تدعم IBSS / mesh.
+**الملخص السريع (TL;DR)**: وفق اختبارات Yopitek (الموزّع المعتمد لـ ALFA Network في تايوان)، تعمل AWUS036AX على ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) بلا تثبيت تعريف، مع monitor على النطاقين؛ الحقن 96% على 2.4G، وAP على 5G بـ VHT80، واجتازت .22000 من طرف إلى طرف، ولا تدعم IBSS / mesh.
 
-> هذه المقالة اختبار عملي لتوافق وقدرات المنتج أجرته Yupitek على **أجهزتها الخاصة وشبكة مكتبها الخاصة (SSID `YUPITEK`) وهاتف اختبار مملوك**، والهدف هو بطاقة ALFA **AWUS036AX** (Realtek RTL8832BU، Wi-Fi 6 2x2).
+> هذه المقالة اختبار عملي لتوافق وقدرات المنتج أجرته Yopitek على **أجهزتها الخاصة وشبكة مكتبها الخاصة (SSID `YUPITEK`) وهاتف اختبار مملوك**، والهدف هو بطاقة ALFA **AWUS036AX** (Realtek RTL8832BU، Wi-Fi 6 2x2).
 > منصة الاختبار: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`؛ وجهاز المقارنة Apple iPhone 7 Plus (واختُبر WPA3 وVIF أيضًا على iPhone 15 Pro).
 > ⚠️ **الاستخدام المشروع**: يقتصر Monitor وInjection على الشبكات التي تملكها أو مصرّح لك باختبارها؛ وفي وضع AP يُرجى الالتزام باللوائح الراديوية المحلية. لا تتناول هذه المقالة أي عمليات هجومية على شبكات الغير.
 
@@ -177,4 +177,4 @@ AX تستطيع: AP مملوك مع iPhone 7 Plus مملوك، و`aireplay-ng -0
 
 ---
 
-*جهة الاختبار: Yupitek (موزّع ALFA) — https://www.yupitek.com · بيئة الاختبار: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 · جهاز المقارنة: Apple iPhone 7 Plus (واختُبر WPA3 / VIF على iPhone 15 Pro)*
+*جهة الاختبار: Yopitek (موزّع ALFA) — https://www.yupitek.com · بيئة الاختبار: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 · جهاز المقارنة: Apple iPhone 7 Plus (واختُبر WPA3 / VIF على iPhone 15 Pro)*

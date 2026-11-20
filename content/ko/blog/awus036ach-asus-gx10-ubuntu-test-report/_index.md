@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-> 테스트 기관: Yupitek(ALFA Network 대만 유통사) | 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | 테스트 기기: 자체 Apple iPhone 7 Plus | 테스트 대상: 자체 사무실 Wi-Fi(SSID `YUPITEK`, 2.4G ch5 / 5G ch36, 157) | 테스트 일자: 2026-11-18.
+> 테스트 기관: Yopitek(ALFA Network 대만 유통사) | 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | 테스트 기기: 자체 Apple iPhone 7 Plus | 테스트 대상: 자체 사무실 Wi-Fi(SSID `YUPITEK`, 2.4G ch5 / 5G ch36, 157) | 테스트 일자: 2026-11-18.
 >
-> 본 글은 유통사가 제품 호환성과 능력 경계를 검증한 하드웨어 검증입니다. 모든 Monitor / Injection / AP / handshake 측정은 Yupitek 자체 장비, 자체 사무실 Wi-Fi에서 자체 테스트용 스마트폰을 대상으로 진행했으며, 어떠한 제3자 네트워크도 대상으로 하지 않고 외부 네트워크에 대한 공격 행위 절차도 제공하지 않습니다. 본문의 데이터는 모두 실기에서 측정한 수치와 상태이며, 사양서로 추측하지 않았습니다.
+> 본 글은 유통사가 제품 호환성과 능력 경계를 검증한 하드웨어 검증입니다. 모든 Monitor / Injection / AP / handshake 측정은 Yopitek 자체 장비, 자체 사무실 Wi-Fi에서 자체 테스트용 스마트폰을 대상으로 진행했으며, 어떠한 제3자 네트워크도 대상으로 하지 않고 외부 네트워크에 대한 공격 행위 절차도 제공하지 않습니다. 본문의 데이터는 모두 실기에서 측정한 수치와 상태이며, 사양서로 추측하지 않았습니다.
 
 ## 핵심 요약(TL;DR)
 

@@ -34,15 +34,15 @@ faq:
 draft: false
 ---
 
-> 測試單位：Yupitek（ALFA Network 台灣經銷）｜測試平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia｜測試裝置：自有 iPhone 7 Plus（WPA3 另測 iPhone 15 Pro）｜測試對象：自有辦公室 Wi-Fi（SSID YUPITEK，2.4G ch5 / 5G ch36、157）。
+> 測試單位：Yopitek（ALFA Network 台灣經銷）｜測試平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia｜測試裝置：自有 iPhone 7 Plus（WPA3 另測 iPhone 15 Pro）｜測試對象：自有辦公室 Wi-Fi（SSID YUPITEK，2.4G ch5 / 5G ch36、157）。
 >
-> 本文為 AWUS036EACS 單卡的能力與相容性實測。所有 Monitor / Injection / handshake 擷取，均於 Yupitek 自有設備、自有辦公室 Wi-Fi、對自有測試手機進行，屬經銷商對硬體的正當能力驗證；不針對任何第三方網路，亦不提供攻擊操作步驟。
+> 本文為 AWUS036EACS 單卡的能力與相容性實測。所有 Monitor / Injection / handshake 擷取，均於 Yopitek 自有設備、自有辦公室 Wi-Fi、對自有測試手機進行，屬經銷商對硬體的正當能力驗證；不針對任何第三方網路，亦不提供攻擊操作步驟。
 
 **重點摘要（TL;DR）**：AWUS036EACS 在 GX10 / Ubuntu 24.04（kernel 6.17）免裝驅動；兩頻注入 100%，端到端 .22000 通過（79 ACKs）；BT+Wi-Fi 複合卡須留意重插。
 
 ## 1. 這張卡與測試平台
 
-AWUS036EACS 是 ALFA 的輕量隨身型 Wi-Fi 5（802.11ac）USB 網卡，晶片是 Realtek RTL8821CU，1x1 單串流、2.4GHz 與 5GHz 雙頻，還內建藍牙，屬於 BT + WiFi 複合裝置。這篇把它單獨搬上 Yupitek 的實驗桌，在 ASUS GX10（ARM64）配 Ubuntu 24.04 的環境逐項驗收，回答客戶最在意的幾個問題：驅動在 ARM64 上認不認、能進哪些模式、效能到哪裡。
+AWUS036EACS 是 ALFA 的輕量隨身型 Wi-Fi 5（802.11ac）USB 網卡，晶片是 Realtek RTL8821CU，1x1 單串流、2.4GHz 與 5GHz 雙頻，還內建藍牙，屬於 BT + WiFi 複合裝置。這篇把它單獨搬上 Yopitek 的實驗桌，在 ASUS GX10（ARM64）配 Ubuntu 24.04 的環境逐項驗收，回答客戶最在意的幾個問題：驅動在 ARM64 上認不認、能進哪些模式、效能到哪裡。
 
 先把定位講清楚。這是經銷商對自家貨的相容性與能力邊界驗證，不是攻擊教學。文中所有 injection 與 handshake 相關的能力量測，一律在自有封閉環境、對自有裝置進行，不提供任何對外部網路的操作步驟。
 
@@ -169,4 +169,4 @@ monitor 在 2.4G、5G 都穩，多數頻道收滿 300 frames；`aireplay-ng --te
 
 ---
 
-*測試單位：Yupitek（ALFA Network 台灣經銷）— https://www.yupitek.com*
+*測試單位：Yopitek（ALFA Network 台灣經銷）— https://www.yupitek.com*

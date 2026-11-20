@@ -31,9 +31,9 @@ faq:
 draft: false
 ---
 
-> 測試單位：Yupitek（ALFA Network 台灣經銷）｜測試平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17｜測試裝置：自有 iPhone 7 Plus（WPA3 另測 iPhone 15 Pro）｜測試對象：自有辦公室 Wi-Fi（SSID YUPITEK，2.4G ch5 / 5G ch36、157）。
+> 測試單位：Yopitek（ALFA Network 台灣經銷）｜測試平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17｜測試裝置：自有 iPhone 7 Plus（WPA3 另測 iPhone 15 Pro）｜測試對象：自有辦公室 Wi-Fi（SSID YUPITEK，2.4G ch5 / 5G ch36、157）。
 >
-> 本文為 ALFA 無線網卡的能力與相容性總覽。所有 Monitor / Injection / handshake 擷取，均於 Yupitek 自有設備、自有辦公室 Wi-Fi、對自有測試手機進行，屬經銷商對硬體的正當能力驗證；不針對任何第三方網路，亦不提供攻擊操作步驟。
+> 本文為 ALFA 無線網卡的能力與相容性總覽。所有 Monitor / Injection / handshake 擷取，均於 Yopitek 自有設備、自有辦公室 Wi-Fi、對自有測試手機進行，屬經銷商對硬體的正當能力驗證；不針對任何第三方網路，亦不提供攻擊操作步驟。
 
 ## 重點摘要（TL;DR）
 
@@ -113,7 +113,7 @@ WPA3-SAE 規範強制 `ieee80211w=2`（Management Frame Protection）。這代�
 硬體能力之外，平台工具鏈同樣影響稽核效率。以下是本批在 GX10（ARM64）上整理出的幾個實測心得：
 
 - **轉檔一律 `hcxpcapngtool --all`**。預設參數較嚴格，常回「not enough M1」而轉不出檔；加上 `--all`，才能由完整的 M1–M4 穩定轉出 `.22000`。
-- **辦公室多台同名 AP 時，不要鎖 `--bssid`**。Yupitek 辦公室同一個頻道上有多台同名 YUPITEK AP，iPhone 會連上訊號最強的那一台。擷取時若用 `--bssid` 鎖單一 BSSID，很可能把 iPhone 實際連上的那台濾掉、整場擷取落空。實測結論是**不鎖 BSSID、直接擷取整個頻道**，再從落檔裡挑出完整握手。
+- **辦公室多台同名 AP 時，不要鎖 `--bssid`**。Yopitek 辦公室同一個頻道上有多台同名 YUPITEK AP，iPhone 會連上訊號最強的那一台。擷取時若用 `--bssid` 鎖單一 BSSID，很可能把 iPhone 實際連上的那台濾掉、整場擷取落空。實測結論是**不鎖 BSSID、直接擷取整個頻道**，再從落檔裡挑出完整握手。
 - **`hcxdumptool` 8.x 在本平台除 EACS 的 2.4 GHz 外全軍 `failed to arm`（5 GHz 失敗）**。rtw88 / rtw89 / mt7921u 都不提供 active-monitor，而 hcxdumptool 8.x 需要它；解法是改用 `airodump-ng` + `aireplay-ng` 這套傳統 aircrack-ng 流程。
 - **反覆切換模式後掃不到東西，先拔插卡**。rtw88 / rtw89 在反覆切 monitor / AP 之後可能發生 RX stall（掃描 0 封包）；USB 重新列舉即可復原，且介面名由 MAC 決定、拔插後不變。擷取 handshake 前，建議第一件事就是重插一次卡。
 - **BT+WiFi 複合裝置（EACS / AXML）重插有競態**。含藍牙的複合卡在重插、或插在某些 USB 孔時，會發生 WiFi 功能 probe 卡死、生不出 `wlx` 介面；解法是換一個 USB 孔重插，`modprobe` 或手動 bind 多半無效。
@@ -158,4 +158,4 @@ A：不一定。預設法規網域會限制部分 5GHz 頻段的發射功率，�
 
 ---
 
-*本文所有測試均於 Yupitek 自有辦公室 Wi-Fi（SSID YUPITEK）、對自有 iPhone 7 Plus 進行，屬經銷商對 ALFA 無線網卡的正當能力驗證。數據引用自 2026-11-16～11-18 的實機測試報告，不針對任何第三方網路，亦不提供攻擊操作步驟。測試單位：Yupitek（ALFA Network 台灣經銷）— https://www.yupitek.com*
+*本文所有測試均於 Yopitek 自有辦公室 Wi-Fi（SSID YUPITEK）、對自有 iPhone 7 Plus 進行，屬經銷商對 ALFA 無線網卡的正當能力驗證。數據引用自 2026-11-16～11-18 的實機測試報告，不針對任何第三方網路，亦不提供攻擊操作步驟。測試單位：Yopitek（ALFA Network 台灣經銷）— https://www.yupitek.com*

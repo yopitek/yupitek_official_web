@@ -35,7 +35,7 @@ draft: false
 
 ## Resumen (TL;DR)
 
-Yupitek (distribuidor de ALFA Network en Taiwán) probó 9 adaptadores Wi-Fi USB ALFA en ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17): los 9 funcionan en modo monitor y como AP, los AWUS036ACH y AWUS036EACS alcanzan el 100% de inyección en ambas bandas, y los AWUS036AXM / AWUS036AXML con MT7921 fallan la inyección en esta plataforma.
+Yopitek (distribuidor de ALFA Network en Taiwán) probó 9 adaptadores Wi-Fi USB ALFA en ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17): los 9 funcionan en modo monitor y como AP, los AWUS036ACH y AWUS036EACS alcanzan el 100% de inyección en ambas bandas, y los AWUS036AXM / AWUS036AXML con MT7921 fallan la inyección en esta plataforma.
 
 - **Modo monitor disponible en todas**: los 9 adaptadores pueden entrar en modo monitor; la única diferencia está en la potencia de recepción.
 - **La inyección es la línea divisoria**: con el controlador `rtw88` de Realtek, el ACH y el EACS alcanzan el 100% de inyección en ambas bandas, seguidos del ACS; el AXM / AXML de MT7921 falla la inyección en esta plataforma.
@@ -43,9 +43,9 @@ Yupitek (distribuidor de ALFA Network en Taiwán) probó 9 adaptadores Wi-Fi USB
 - **AP y WPA3-SAE superados casi por todos**: solo el AWUS036ACHM necesita `sae_pwe=0` para ser compatible con los iPhone antiguos.
 - **Sin compilación en ARM64**: los 9 modelos usan el controlador integrado en el kernel 6.17; funcionan nada más conectarlos, sin DKMS.
 
-Yupitek es el distribuidor de ALFA Network en Taiwán. Cuando los clientes eligen un adaptador WiFi USB, las tres preguntas que más repiten son casi siempre las mismas: «¿Esta tarjeta puede entrar en modo monitor en mi entorno Linux? ¿Puede hacer inyección? ¿Puede montar un AP?». En lugar de responder a partir de la hoja de especificaciones, llevamos directamente los 9 adaptadores ALFA en activo a nuestra propia mesa de laboratorio y los probamos uno a uno en un **ASUS GX10 (ARM64)** con **Ubuntu 24.04 LTS**, comparando de una sola vez las cuatro líneas de capacidad —Monitor, Injection, AP y WPA3-SAE— y señalando con honestidad cuáles «no pueden hacer ciertas cosas en esta plataforma».
+Yopitek es el distribuidor de ALFA Network en Taiwán. Cuando los clientes eligen un adaptador WiFi USB, las tres preguntas que más repiten son casi siempre las mismas: «¿Esta tarjeta puede entrar en modo monitor en mi entorno Linux? ¿Puede hacer inyección? ¿Puede montar un AP?». En lugar de responder a partir de la hoja de especificaciones, llevamos directamente los 9 adaptadores ALFA en activo a nuestra propia mesa de laboratorio y los probamos uno a uno en un **ASUS GX10 (ARM64)** con **Ubuntu 24.04 LTS**, comparando de una sola vez las cuatro líneas de capacidad —Monitor, Injection, AP y WPA3-SAE— y señalando con honestidad cuáles «no pueden hacer ciertas cosas en esta plataforma».
 
-Conviene aclarar primero el enfoque: todas las pruebas de este artículo se realizaron sobre equipos propios de Yupitek y sobre el WiFi de nuestra propia oficina, usando nuestros propios teléfonos de prueba. Es una validación de hardware por parte de un distribuidor sobre la compatibilidad y los límites de capacidad del producto, no un tutorial de ataque contra redes de terceros. El texto no ofrece ningún paso de operación contra redes externas; la inyección y el handshake se miden exclusivamente en un entorno cerrado propio, sobre dispositivos propios.
+Conviene aclarar primero el enfoque: todas las pruebas de este artículo se realizaron sobre equipos propios de Yopitek y sobre el WiFi de nuestra propia oficina, usando nuestros propios teléfonos de prueba. Es una validación de hardware por parte de un distribuidor sobre la compatibilidad y los límites de capacidad del producto, no un tutorial de ataque contra redes de terceros. El texto no ofrece ningún paso de operación contra redes externas; la inyección y el handshake se miden exclusivamente en un entorno cerrado propio, sobre dispositivos propios.
 
 Este es un artículo tipo Hub, con la tabla maestra. La configuración paso a paso y la evidencia completa de cada tarjeta se desgranan en artículos individuales por modelo (véase Lecturas adicionales al final).
 
@@ -137,7 +137,7 @@ Profundicemos un nivel más y veamos el handshake de extremo a extremo, la inter
 | 8 | AWUS036AXM | ❌ la inyección falla | ✅ | 🟡 | N/A | N/A |
 | 9 | AWUS036AXML | ❌ la inyección falla | ✅ | 🟡 | N/A | N/A |
 
-Aquí «extremo a extremo» tiene una definición precisa: usar la tarjeta para ejecutar inyección contra el **iPhone 7 Plus propio de Yupitek** (conectado a nuestro SSID `YUPITEK`), capturar el 4-way handshake completo (M1–M4) y luego convertirlo al formato `.22000` de hashcat con `hcxpcapngtool --all`. El punto de aceptación de la «capacidad de pruebas de penetración» es que toda la cadena funcione de principio a fin, no que «pueda entrar en monitor».
+Aquí «extremo a extremo» tiene una definición precisa: usar la tarjeta para ejecutar inyección contra el **iPhone 7 Plus propio de Yopitek** (conectado a nuestro SSID `YUPITEK`), capturar el 4-way handshake completo (M1–M4) y luego convertirlo al formato `.22000` de hashcat con `hcxpcapngtool --all`. El punto de aceptación de la «capacidad de pruebas de penetración» es que toda la cadena funcione de principio a fin, no que «pueda entrar en monitor».
 
 - **Superan el extremo a extremo (7 de 9 modelos)**: ACM, ACHM, ACH, ACS, EACS, AX y AXER pueden generar el `.22000`; entre ellos, el EACS recibió 79 ACKs, con la realimentación de señal más sólida; el ACH alcanza el 100% de inyección en ambas bandas y, en la reverificación del 2026-11-19, exportó un `.22000` de 47 líneas de hashline. El ACHM lo completó en 5GHz (ch36); el ACM lo completó aunque su tasa de éxito de inyección es menor.
 - **Cadena rota en el extremo a extremo**: AXM / AXML, al fallar la inyección, cortan toda la cadena del handshake. Esto confirma de nuevo que el MT7921 no es adecuado para pruebas de penetración en esta plataforma.
@@ -195,7 +195,7 @@ Estos son los puntos prácticos comunes a los 9 modelos al operar este lote de t
 6. **hcxdumptool con failed to arm en toda la plataforma (la excepción es el EACS en 2.4 GHz)**: las tarjetas integradas de triple banda y los controladores citados no admiten active-monitor; cambie directamente al paquete aircrack-ng (`airodump-ng` + `aireplay-ng`).
 7. **Detalles de compilación en ARM64**: `aircrack-ng` debe compilarse desde el código fuente, y `wifite` se usa en su versión de git para esquivar el conflicto de dependencias de apt.
 
-Insistimos de nuevo en el enfoque: las capacidades de inyección / deauth / handshake descritas se miden íntegramente en un entorno cerrado propio de Yupitek, sobre dispositivos de prueba propios, con el fin de validar las capacidades del producto y los límites de compatibilidad. Este artículo no ofrece ni recomienda realizar dichas operaciones contra ninguna red de terceros.
+Insistimos de nuevo en el enfoque: las capacidades de inyección / deauth / handshake descritas se miden íntegramente en un entorno cerrado propio de Yopitek, sobre dispositivos de prueba propios, con el fin de validar las capacidades del producto y los límites de compatibilidad. Este artículo no ofrece ni recomienda realizar dichas operaciones contra ninguna red de terceros.
 
 ## Conclusión
 
@@ -239,4 +239,4 @@ Este artículo es la tabla maestra (Hub). Los siguientes artículos en profundid
 
 ---
 
-*Unidad de pruebas: Yupitek (distribuidor de ALFA Network en Taiwán) | Plataforma de pruebas: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de prueba: Apple iPhone 7 Plus (WPA3 verificado adicionalmente con iPhone 15 Pro) | Entorno de prueba: WiFi propio de la oficina. Este artículo es una validación de compatibilidad y capacidades del producto, no un tutorial de operación contra redes de terceros.*
+*Unidad de pruebas: Yopitek (distribuidor de ALFA Network en Taiwán) | Plataforma de pruebas: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de prueba: Apple iPhone 7 Plus (WPA3 verificado adicionalmente con iPhone 15 Pro) | Entorno de prueba: WiFi propio de la oficina. Este artículo es una validación de compatibilidad y capacidades del producto, no un tutorial de operación contra redes de terceros.*

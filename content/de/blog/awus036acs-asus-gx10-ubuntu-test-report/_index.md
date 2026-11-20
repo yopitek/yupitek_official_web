@@ -33,10 +33,10 @@ faq:
 draft: false
 ---
 
-**Kernaussagen (TL;DR)**: Laut Praxistest von Yupitek (ALFA-Network-Distributor Taiwan) läuft der AWUS036ACS auf dem ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) ohne Treiberinstallation, mit Dual-Band-Monitor und AP (5G-AP nutzbar, Kanalbreite nicht bestätigt); Injektion 2,4G 100 %, 5G 96 %, End-to-End-.22000 bestanden, kein Mesh / IBSS.
+**Kernaussagen (TL;DR)**: Laut Praxistest von Yopitek (ALFA-Network-Distributor Taiwan) läuft der AWUS036ACS auf dem ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) ohne Treiberinstallation, mit Dual-Band-Monitor und AP (5G-AP nutzbar, Kanalbreite nicht bestätigt); Injektion 2,4G 100 %, 5G 96 %, End-to-End-.22000 bestanden, kein Mesh / IBSS.
 
-> Dieser Artikel ist Yupiteks Protokoll eines praktischen Kompatibilitäts- und Fähigkeitstests des ALFA AWUS036ACS auf einer aktuellen Linux-Plattform, gedacht zur Unterstützung der Produktauswahl.
-> Testplattform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Alle Werte sind Auszüge aus Yupiteks Praxistests auf **eigener Hardware, im eigenen Büro-WLAN** (SSID `YUPITEK`, 2,4G ch5 / 5G ch36) gegen **eigene Testgeräte** (Apple iPhone 7 Plus); MAC-Adressen sind teilweise verdeckt.
+> Dieser Artikel ist Yopiteks Protokoll eines praktischen Kompatibilitäts- und Fähigkeitstests des ALFA AWUS036ACS auf einer aktuellen Linux-Plattform, gedacht zur Unterstützung der Produktauswahl.
+> Testplattform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Alle Werte sind Auszüge aus Yopiteks Praxistests auf **eigener Hardware, im eigenen Büro-WLAN** (SSID `YUPITEK`, 2,4G ch5 / 5G ch36) gegen **eigene Testgeräte** (Apple iPhone 7 Plus); MAC-Adressen sind teilweise verdeckt.
 > ⚠️ **Rechtlicher Hinweis und Geltungsbereich**: Monitor, Injection und Handshake-Erfassung erfolgen ausschließlich in Netzwerken und auf Geräten, die Ihnen gehören oder für die Sie eine Genehmigung haben; im AP-Modus halten Sie bitte die lokalen Funkvorschriften ein. Dieser Artikel konzentriert sich auf die Fähigkeiten, Kompatibilität und Konfiguration der Karte selbst und **umfasst keinerlei Angriffsoperationen gegen fremde Netzwerke**.
 
 ---
@@ -228,4 +228,4 @@ Nicht unterstützt werden active monitor, IBSS, Mesh (802.11s) und Wi-Fi Direct 
 
 ---
 
-*Testinstanz: Yupitek (ALFA-Network-Distributor Taiwan) — https://www.yupitek.com | Testumgebung: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Testgerät: Apple iPhone 7 Plus*
+*Testinstanz: Yopitek (ALFA-Network-Distributor Taiwan) — https://www.yupitek.com | Testumgebung: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Testgerät: Apple iPhone 7 Plus*

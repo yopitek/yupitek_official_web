@@ -37,7 +37,7 @@ draft: false
 
 {{< tldr >}}AWUS036AXER على ASUS GX10 / Ubuntu 24.04 ARM64 تعمل بمجرد التوصيل (rtw89_8852bu المدمج)؛ مسح monitor لمدة 60 ثانية وجد 63 AP + 12 client، والحقن على 2.4 GHz 73%، واجتازت AP وWPA3؛ ولا تدعم active monitor وIBSS وmesh.{{< /tldr >}}
 
-> هذه المقالة اختبار عملي لتوافق المنتج وقدراته أجرته Yupitek (موزّع ALFA في تايوان) على أجهزتها الخاصة.
+> هذه المقالة اختبار عملي لتوافق المنتج وقدراته أجرته Yopitek (موزّع ALFA في تايوان) على أجهزتها الخاصة.
 > منصة الاختبار: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. وبيئة الاختبار شبكة مكتب خاصة (SSID `YUPITEK`)، على هاتف اختبار مملوك iPhone 7 Plus (واختُبر WPA3 أيضًا على iPhone 15 Pro).
 > ⚠️ **الاستخدام المشروع**: يقتصر Monitor وInjection على الشبكات والأجهزة التي تملكها أو مصرّح لك باختبارها؛ وفي وضع AP يُرجى الالتزام باللوائح الراديوية المحلية. تركّز هذه المقالة على قدرات البطاقة وتوافقها وإعداداتها واختيارها، ولا تتناول أي عمليات هجومية على شبكات الغير.
 
@@ -202,4 +202,4 @@ sudo aireplay-ng --test $IF
 
 ---
 
-*جهة الاختبار: Yupitek (موزّع ALFA) — https://www.yupitek.com · منصة الاختبار: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia · جهاز الاختبار: Apple iPhone 7 Plus (واختُبر WPA3 على iPhone 15 Pro)*
+*جهة الاختبار: Yopitek (موزّع ALFA) — https://www.yupitek.com · منصة الاختبار: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia · جهاز الاختبار: Apple iPhone 7 Plus (واختُبر WPA3 على iPhone 15 Pro)*

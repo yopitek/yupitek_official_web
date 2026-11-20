@@ -40,7 +40,7 @@ draft: false
 
 O ALFA AWUS036AXML é o único modelo combinado "MediaTek Wi-Fi 6 + Bluetooth" desta leva de 9 placas. Ele e o AWUS036AXM, sem Bluetooth, são da mesma geração de chip (MT7921, com driver `mt7921u`), diferindo apenas por ter um conjunto de Bluetooth a mais. O cliente ainda costuma perguntar aquelas três coisas: entra em monitor? consegue injetar? consegue montar AP? Este artigo isola o AWUS036AXML e o testa item a item no ASUS GX10 (ARM64) com Ubuntu 24.04, deixando claro de uma vez o que ele faz e o que não faz — especialmente a limitação mais crítica: **a injeção falha nesta plataforma**.
 
-Primeiro, deixemos o posicionamento claro: todas as medições a seguir foram feitas em equipamentos próprios da Yupitek, no Wi-Fi do próprio escritório (SSID `YUPITEK`), contra celulares de teste próprios (iPhone 7 Plus, com o WPA3 reconferido com um iPhone 15 Pro). Esta é uma verificação de hardware feita pelo distribuidor sobre a compatibilidade e os limites de capacidade do produto, não um tutorial de operação contra redes de terceiros. Os autotestes de monitor, AP e injeção do texto foram todos feitos em ambiente fechado próprio, contra dispositivos próprios.
+Primeiro, deixemos o posicionamento claro: todas as medições a seguir foram feitas em equipamentos próprios da Yopitek, no Wi-Fi do próprio escritório (SSID `YUPITEK`), contra celulares de teste próprios (iPhone 7 Plus, com o WPA3 reconferido com um iPhone 15 Pro). Esta é uma verificação de hardware feita pelo distribuidor sobre a compatibilidade e os limites de capacidade do produto, não um tutorial de operação contra redes de terceiros. Os autotestes de monitor, AP e injeção do texto foram todos feitos em ambiente fechado próprio, contra dispositivos próprios.
 
 ## 1. Esta placa e a plataforma de teste
 
@@ -249,4 +249,4 @@ Nesta plataforma o comportamento de Wi-Fi das duas é idêntico: usam o mesmo mt
 
 ---
 
-*Unidade de teste: Yupitek (distribuidor da ALFA Network em Taiwan) | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de teste: Apple iPhone 7 Plus (WPA3 reconferido com iPhone 15 Pro) | Ambiente de teste: Wi-Fi do próprio escritório (SSID YUPITEK). Este artigo é uma verificação de compatibilidade e capacidade do produto, não um tutorial de operação contra redes de terceiros.*
+*Unidade de teste: Yopitek (distribuidor da ALFA Network em Taiwan) | Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Dispositivo de teste: Apple iPhone 7 Plus (WPA3 reconferido com iPhone 15 Pro) | Ambiente de teste: Wi-Fi do próprio escritório (SSID YUPITEK). Este artigo é uma verificação de compatibilidade e capacidade do produto, não um tutorial de operação contra redes de terceiros.*

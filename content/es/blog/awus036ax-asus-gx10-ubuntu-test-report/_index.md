@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-**Resumen (TL;DR)**: según las pruebas de Yupitek (distribuidor de ALFA Network en Taiwán), la AWUS036AX en ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) no necesita instalar controlador y funciona en monitor de doble banda; inyección 2,4G 96 %, AP 5G VHT80, captura .22000 de extremo a extremo superada; no admite IBSS / mesh.
+**Resumen (TL;DR)**: según las pruebas de Yopitek (distribuidor de ALFA Network en Taiwán), la AWUS036AX en ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) no necesita instalar controlador y funciona en monitor de doble banda; inyección 2,4G 96 %, AP 5G VHT80, captura .22000 de extremo a extremo superada; no admite IBSS / mesh.
 
-> Este artículo es la prueba práctica de compatibilidad y capacidades que Yupitek completó sobre **equipo propio, la Wi-Fi propia de la oficina (SSID `YUPITEK`) y un teléfono de prueba propio**, con la ALFA **AWUS036AX** (Realtek RTL8832BU, Wi-Fi 6 2x2) como objeto de prueba.
+> Este artículo es la prueba práctica de compatibilidad y capacidades que Yopitek completó sobre **equipo propio, la Wi-Fi propia de la oficina (SSID `YUPITEK`) y un teléfono de prueba propio**, con la ALFA **AWUS036AX** (Realtek RTL8832BU, Wi-Fi 6 2x2) como objeto de prueba.
 > Plataforma de pruebas: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`; dispositivo de referencia Apple iPhone 7 Plus (WPA3 y VIF verificados además con iPhone 15 Pro).
 > ⚠️ **Uso legal**: el modo monitor y la inyección solo sobre redes propias o para las que se cuenta con autorización; en modo AP, respete la normativa de radio local. Este artículo no contempla ninguna operación ofensiva contra redes de terceros.
 
@@ -177,4 +177,4 @@ Ambas son RTL8832BU + rtw89_8852bu y comparten matriz de capacidades; la diferen
 
 ---
 
-*Unidad de pruebas: Yupitek (distribuidor de ALFA) — https://www.yupitek.com | Entorno de pruebas: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Dispositivo de referencia: Apple iPhone 7 Plus (WPA3 / VIF verificados además con iPhone 15 Pro)*
+*Unidad de pruebas: Yopitek (distribuidor de ALFA) — https://www.yupitek.com | Entorno de pruebas: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Dispositivo de referencia: Apple iPhone 7 Plus (WPA3 / VIF verificados además con iPhone 15 Pro)*

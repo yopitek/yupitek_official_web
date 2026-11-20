@@ -686,7 +686,7 @@ sudo ip link set ap0 up
 - **morrownr/7612u** — دليل Bridged AP بـ MT7612U على RPi4B
 - **متتبع مشكلات GitHub** — issue #2 (إعدادات AP لـ ACM)، و #476 (اختبار AP على AXML)، و Discussion #31 (AP بالسرعة الكاملة على ACHM)
 - **koutto/pi-pwnbox-rogueap** — حالة تطبيق RogueAP بمحول Alfa
-- صفحات دعم Linux لدى الموزع المعتمد **Rokland**
+- صفحات دعم Linux لدى الموزع **Rokland**
 - مراجعات **Lab401** التقنية وتقارير أفضل الخيارات لاختبار الاختراق لعام 2025
 - **منتدى Raspberry Pi الرسمي** — نقاشات توافق USB WiFi مع Pi 4/5
 - **مدونة Yopitek الحالية** — دليل تثبيت ACM في الصين، مراجعة AXML WiFi 6E، أفضل محولات Kali Linux 2026

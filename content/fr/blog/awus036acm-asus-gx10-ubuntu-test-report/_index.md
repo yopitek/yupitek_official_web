@@ -24,7 +24,7 @@ faq:
   - question: "L'AWUS036ACM nécessite-t-elle l'installation d'un pilote sous Ubuntu ou Kali ?"
     answer: "Non. Le MT7612U est pris en charge par le pilote mt76x2u intégré au kernel : sous Ubuntu 24.04 (kernel 6.17), la carte est reconnue dès le branchement, sans DKMS ni flashage manuel de firmware. La plateforme de ce test est Ubuntu 24.04 ARM64 ; sous Kali, le comportement devrait être identique dès lors que le kernel est suffisamment récent, mais cela n'a pas été vérifié sur une machine Kali réelle cette fois-ci."
   - question: "L'AWUS036ACM peut-elle passer en mode monitor et faire de l'injection de paquets ? Quel est le taux de réussite ?"
-    answer: "Oui. Le mode monitor et la capture fonctionnent correctement en 2,4 GHz comme en 5 GHz ; au test d'injection aireplay-ng, le taux est de 63–83 % en 2,4 GHz et de 76 % en 5 GHz, ce qui la situe en milieu de tableau parmi les neuf cartes. Pour une injection bi-bande à 100 %, les mesures Yupitek désignent l'AWUS036ACH et l'AWUS036EACS comme les meilleures."
+    answer: "Oui. Le mode monitor et la capture fonctionnent correctement en 2,4 GHz comme en 5 GHz ; au test d'injection aireplay-ng, le taux est de 63–83 % en 2,4 GHz et de 76 % en 5 GHz, ce qui la situe en milieu de tableau parmi les neuf cartes. Pour une injection bi-bande à 100 %, les mesures Yopitek désignent l'AWUS036ACH et l'AWUS036EACS comme les meilleures."
   - question: "L'AWUS036ACM peut-elle ouvrir un point d'accès tout en restant connectée à Internet (VIF) ?"
     answer: "Oui. Les deux combinaisons STA+AP (connexion au réseau amont d'un côté, point d'accès de l'autre) et AP+monitor (point d'accès et écoute simultanés) ont été vérifiées. C'est là que la concurrence multi-interface du pilote mt76 est la plus complète ; le point d'accès 5 GHz peut monter jusqu'à VHT 80 MHz."
   - question: "L'AWUS036ACM prend-elle en charge le mesh (802.11s) et l'IBSS ?"
@@ -34,13 +34,13 @@ faq:
 draft: false
 ---
 
-> Cet article est le compte rendu, réalisé par Yupitek, des tests de compatibilité produit et de capacités de l'ALFA AWUS036ACM sur une plateforme Linux récente, destiné à l'évaluation et au choix de modèle.
-> Plateforme de test : ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Toutes les données sont des extraits de mesures réalisées par Yupitek sur **ses propres équipements, son propre réseau Wi-Fi de bureau** (SSID `YUPITEK`, 2,4G ch5 / 5G ch36, ch157) à destination de **ses propres téléphones de test** (Apple iPhone 7 Plus ; le WPA3 a été revérifié avec un iPhone 15 Pro).
+> Cet article est le compte rendu, réalisé par Yopitek, des tests de compatibilité produit et de capacités de l'ALFA AWUS036ACM sur une plateforme Linux récente, destiné à l'évaluation et au choix de modèle.
+> Plateforme de test : ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Toutes les données sont des extraits de mesures réalisées par Yopitek sur **ses propres équipements, son propre réseau Wi-Fi de bureau** (SSID `YUPITEK`, 2,4G ch5 / 5G ch36, ch157) à destination de **ses propres téléphones de test** (Apple iPhone 7 Plus ; le WPA3 a été revérifié avec un iPhone 15 Pro).
 > ⚠️ **Déclaration de légalité et de périmètre** : le mode monitor, l'injection et la capture de handshake ne sont réalisés que sur des réseaux et des appareils dont vous êtes propriétaire ou autorisé ; pour le mode AP, respectez la réglementation radio locale. Cet article se concentre sur les capacités, la compatibilité et la configuration de la carte elle-même, et **ne couvre aucune opération offensive visant un réseau tiers**.
 
 ## L'essentiel (TL;DR)
 
-Mesuré par Yupitek (distributeur ALFA Network à Taïwan) sur ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) : l'AWUS036ACM fonctionne en mode monitor bi-bande, atteint 63–83 % d'injection de paquets sur 2,4G et 76 % sur 5G, et monte un point d'accès sur les deux bandes (5G en VHT 80 MHz).
+Mesuré par Yopitek (distributeur ALFA Network à Taïwan) sur ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) : l'AWUS036ACM fonctionne en mode monitor bi-bande, atteint 63–83 % d'injection de paquets sur 2,4G et 76 % sur 5G, et monte un point d'accès sur les deux bandes (5G en VHT 80 MHz).
 
 - Sous Ubuntu 24.04 (ARM64), aucune installation de pilote : le MT7612U est pris en charge par le mt76x2u intégré au kernel 6.17, reconnu dès le branchement, sans DKMS.
 - Mode monitor bi-bande disponible ; injection de paquets 63–83 % en 2,4G et 76 % en 5G, soit un milieu de tableau parmi les neuf cartes.
@@ -191,7 +191,7 @@ Le choix en une phrase : pour jouer avec le mesh / IBSS, pour la concurrence VIF
 Non. Le MT7612U est pris en charge par le pilote mt76x2u intégré au kernel : sous Ubuntu 24.04 (kernel 6.17), la carte est reconnue dès le branchement, sans DKMS ni flashage manuel de firmware. La plateforme de ce test est Ubuntu 24.04 ARM64 ; sous Kali, le comportement devrait être identique dès lors que le kernel est suffisamment récent, mais cela n'a pas été vérifié sur une machine Kali réelle cette fois-ci.
 
 **Q : L'AWUS036ACM peut-elle passer en mode monitor et faire de l'injection de paquets ? Quel est le taux de réussite ?**
-Oui. Le mode monitor et la capture fonctionnent correctement en 2,4 GHz comme en 5 GHz ; au test d'injection aireplay-ng, le taux est de 63–83 % en 2,4 GHz et de 76 % en 5 GHz, ce qui la situe en milieu de tableau parmi les neuf cartes. Pour une injection bi-bande à 100 %, les mesures Yupitek désignent l'AWUS036ACH et l'AWUS036EACS comme les meilleures.
+Oui. Le mode monitor et la capture fonctionnent correctement en 2,4 GHz comme en 5 GHz ; au test d'injection aireplay-ng, le taux est de 63–83 % en 2,4 GHz et de 76 % en 5 GHz, ce qui la situe en milieu de tableau parmi les neuf cartes. Pour une injection bi-bande à 100 %, les mesures Yopitek désignent l'AWUS036ACH et l'AWUS036EACS comme les meilleures.
 
 **Q : L'AWUS036ACM peut-elle ouvrir un point d'accès tout en restant connectée à Internet (VIF) ?**
 Oui. Les deux combinaisons STA+AP (connexion au réseau amont d'un côté, point d'accès de l'autre) et AP+monitor (point d'accès et écoute simultanés) ont été vérifiées. C'est là que la concurrence multi-interface du pilote mt76 est la plus complète ; le point d'accès 5 GHz peut monter jusqu'à VHT 80 MHz.
@@ -213,4 +213,4 @@ Oui. Sur notre propre AP et notre propre iPhone 7 Plus, le test de bout en bout 
 
 ---
 
-*Unité de test : Yupitek (distributeur ALFA Network à Taïwan) — https://www.yupitek.com | Environnement de test : ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Appareil de test : Apple iPhone 7 Plus (WPA3 aussi testé sur iPhone 15 Pro)*
+*Unité de test : Yopitek (distributeur ALFA Network à Taïwan) — https://www.yupitek.com | Environnement de test : ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Appareil de test : Apple iPhone 7 Plus (WPA3 aussi testé sur iPhone 15 Pro)*

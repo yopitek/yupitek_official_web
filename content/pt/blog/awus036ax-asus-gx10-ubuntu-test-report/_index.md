@@ -34,9 +34,9 @@ faq:
 draft: false
 ---
 
-**Resumo (TL;DR)**: nos testes da Yupitek (distribuidor da ALFA Network em Taiwan), o AWUS036AX dispensa driver no ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) e funciona em monitor de banda dupla; injeção de 96% em 2.4G, AP 5G VHT80, aprovação ponta a ponta em .22000; não suporta IBSS / mesh.
+**Resumo (TL;DR)**: nos testes da Yopitek (distribuidor da ALFA Network em Taiwan), o AWUS036AX dispensa driver no ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) e funciona em monitor de banda dupla; injeção de 96% em 2.4G, AP 5G VHT80, aprovação ponta a ponta em .22000; não suporta IBSS / mesh.
 
-> Este artigo é um teste prático de compatibilidade e capacidade de produto realizado pela Yupitek em **equipamentos próprios, Wi-Fi do próprio escritório (SSID `YUPITEK`) e celular de teste próprio**, tendo como alvo o ALFA **AWUS036AX** (Realtek RTL8832BU, Wi-Fi 6 2x2).
+> Este artigo é um teste prático de compatibilidade e capacidade de produto realizado pela Yopitek em **equipamentos próprios, Wi-Fi do próprio escritório (SSID `YUPITEK`) e celular de teste próprio**, tendo como alvo o ALFA **AWUS036AX** (Realtek RTL8832BU, Wi-Fi 6 2x2).
 > Plataforma de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`; dispositivo de referência Apple iPhone 7 Plus (WPA3 e VIF testados também em iPhone 15 Pro).
 > ⚠️ **Uso legal**: Monitor e Injection apenas em redes próprias ou autorizadas; no modo AP, respeite a legislação de radiofrequência local. Este artigo não envolve qualquer operação de ataque contra redes de terceiros.
 
@@ -177,4 +177,4 @@ Ambos usam o mesmo RTL8832BU + rtw89_8852bu e têm matriz de capacidades idênti
 
 ---
 
-*Unidade de teste: Yupitek (distribuidor da ALFA) — https://www.yupitek.com | Ambiente de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Dispositivo de referência: Apple iPhone 7 Plus (WPA3 / VIF testados também em iPhone 15 Pro)*
+*Unidade de teste: Yopitek (distribuidor da ALFA) — https://www.yupitek.com | Ambiente de teste: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17 | Dispositivo de referência: Apple iPhone 7 Plus (WPA3 / VIF testados também em iPhone 15 Pro)*

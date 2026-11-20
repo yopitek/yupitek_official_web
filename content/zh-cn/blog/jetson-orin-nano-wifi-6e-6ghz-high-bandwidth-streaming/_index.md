@@ -101,7 +101,7 @@ uname -r
 | JetPack 5.1.x | Ubuntu 20.04（需自行确认） | 5.10 | 需自行确认驱动；建议直接升上 JetPack 6.x |
 | JetPack 6.0 / 6.1 / 6.2 / 6.2.2（L4T 36.2–36.5） | Ubuntu 22.04 LTS | 5.15 LTS（例如 `5.15.116-release-tegra`） | 早于主线收录版本（5.18）；能否使用取决于 NVIDIA 的 L4T kernel 有无 backport，先跑 `modinfo mt7921u` |
 
-> **这张网卡没有在 Jetson 上实测。** Yupitek 的测试平台只有 ASUS GX10（Ubuntu 24.04、kernel 6.17）：AXML 的 6 GHz 可用、monitor 偏弱、数据包注入失败。JetPack 6.x 全系列都是 Kernel 5.15，升级到 JetPack 6.2 并不会让驱动变成内建。请执行 `modinfo mt7921u`：有输出，代表 L4T kernel 已带有这个驱动；没有输出，就需要 backport／DKMS 驱动，或自行换装 5.18 以上的上游 kernel（NVIDIA 说明 JetPack 6 可换装 5.14 以上的上游 kernel，但这不是默认组合）。
+> **这张网卡没有在 Jetson 上实测。** Yopitek 的测试平台只有 ASUS GX10（Ubuntu 24.04、kernel 6.17）：AXML 的 6 GHz 可用、monitor 偏弱、数据包注入失败。JetPack 6.x 全系列都是 Kernel 5.15，升级到 JetPack 6.2 并不会让驱动变成内建。请执行 `modinfo mt7921u`：有输出，代表 L4T kernel 已带有这个驱动；没有输出，就需要 backport／DKMS 驱动，或自行换装 5.18 以上的上游 kernel（NVIDIA 说明 JetPack 6 可换装 5.14 以上的上游 kernel，但这不是默认组合）。
 
 验证驱动与韧体是否就绪：
 

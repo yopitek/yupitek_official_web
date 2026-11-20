@@ -40,7 +40,7 @@ draft: false
 
 ALFA AWUS036AXML は、この 9 製品の中で唯一の「MediaTek Wi-Fi 6 + Bluetooth」複合型番です。Bluetooth なしの AWUS036AXM と同じ世代のチップ（MT7921、`mt7921u` ドライバで動作）で、違いは Bluetooth が追加されている点だけです。お客様から最もよく聞かれるのは、やはり次の 3 つです。monitor に入れるか、injection はできるか、AP は構築できるか。本記事では AWUS036AXML を単独で取り上げ、ASUS GX10（ARM64）と Ubuntu 24.04 で項目ごとに実測し、できること・できないことを一度で明らかにします。特に最も重要な制限は、**このプラットフォームでは injection が失敗する**ことです。
 
-まず位置づけをはっきりさせておきます。以下の測定はすべて、Yupitek の自社設備、自社オフィスの Wi-Fi（SSID `YUPITEK`）、自社のテスト用スマートフォン（iPhone 7 Plus、WPA3 は iPhone 15 Pro でも再テスト）で実施しました。これは代理店による製品の互換性と機能の限界に関するハードウェア検証であり、第三者のネットワークに対する操作の解説ではありません。本文中の monitor、AP、injection のセルフテストは、すべて自社の閉じた環境で、自社デバイスを対象に行っています。
+まず位置づけをはっきりさせておきます。以下の測定はすべて、Yopitek の自社設備、自社オフィスの Wi-Fi（SSID `YUPITEK`）、自社のテスト用スマートフォン（iPhone 7 Plus、WPA3 は iPhone 15 Pro でも再テスト）で実施しました。これは代理店による製品の互換性と機能の限界に関するハードウェア検証であり、第三者のネットワークに対する操作の解説ではありません。本文中の monitor、AP、injection のセルフテストは、すべて自社の閉じた環境で、自社デバイスを対象に行っています。
 
 ## 一、このアダプターとテストプラットフォーム
 
@@ -249,4 +249,4 @@ AWUS036AXML を 9 製品の全体像の中に置いてみると、位置づけ�
 
 ---
 
-*テスト実施：Yupitek（ALFA Network 台湾代理店）｜ テストプラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ テストデバイス：Apple iPhone 7 Plus（WPA3 は iPhone 15 Pro でも測定）｜ テスト環境：自社オフィスの Wi-Fi（SSID YUPITEK）。本記事は製品の互換性と機能の検証であり、第三者のネットワークに対する操作の解説ではありません。*
+*テスト実施：Yopitek（ALFA Network 台湾代理店）｜ テストプラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ テストデバイス：Apple iPhone 7 Plus（WPA3 は iPhone 15 Pro でも測定）｜ テスト環境：自社オフィスの Wi-Fi（SSID YUPITEK）。本記事は製品の互換性と機能の検証であり、第三者のネットワークに対する操作の解説ではありません。*

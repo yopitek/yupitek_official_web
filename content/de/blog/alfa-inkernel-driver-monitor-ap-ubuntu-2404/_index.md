@@ -33,14 +33,14 @@ draft: false
 ---
 
 > Dieser Artikel ist eine standardmäßige Linux-Netzwerkkonfigurationsanleitung und zeigt, wie Sie unter einem aktuellen Kernel mit dem **integrierten (in-kernel) Treiber** den Monitor- (Mithör-) und AP- (Hotspot-)Modus einer ALFA-WLAN-Karte aktivieren.
-> Testplattform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Alle Werte sind Auszüge aus Yupiteks Produktkompatibilitätstests auf eigener Hardware, im eigenen Büro-WLAN (SSID `YUPITEK`).
+> Testplattform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Alle Werte sind Auszüge aus Yopiteks Produktkompatibilitätstests auf eigener Hardware, im eigenen Büro-WLAN (SSID `YUPITEK`).
 > ⚠️ **Rechtmäßige Nutzung**: Der Monitor-Modus dient ausschließlich dem Mithören in Netzwerken, die Ihnen gehören oder für die Sie eine Genehmigung haben; im AP-Modus halten Sie bitte die lokalen Funkvorschriften ein. Dieser Artikel umfasst keinerlei Angriffsoperationen gegen fremde Netzwerke.
 
 ---
 
 ## Kernaussagen (TL;DR)
 
-Auf dem ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17) laufen alle 9 von Yupitek (ALFA-Network-Distributor Taiwan) getesteten ALFA-USB-WLAN-Adapter mit in-kernel-Treibern (`rtw88` / `rtw89` / `mt76`) ohne Treiberinstallation, aktivieren Monitor- und AP-Modus mit demselben Ablauf und lassen iPhone 7 Plus / 15 Pro im 2,4G- und 5G-AP normal verbinden; der Mindest-Kernel liegt je nach Karte zwischen 4.19 und 6.17.
+Auf dem ASUS GX10 (ARM64 / Ubuntu 24.04 / kernel 6.17) laufen alle 9 von Yopitek (ALFA-Network-Distributor Taiwan) getesteten ALFA-USB-WLAN-Adapter mit in-kernel-Treibern (`rtw88` / `rtw89` / `mt76`) ohne Treiberinstallation, aktivieren Monitor- und AP-Modus mit demselben Ablauf und lassen iPhone 7 Plus / 15 Pro im 2,4G- und 5G-AP normal verbinden; der Mindest-Kernel liegt je nach Karte zwischen 4.19 und 6.17.
 
 - **Auf aktuellen Kerneln ohne Treiberinstallation**: Realtek `rtw88` / `rtw89` und MediaTek `mt76` haben diese ALFA-USB-Chips in die in-kernel-Unterstützung aufgenommen; mit kernel 6.17 (auf dem GX10 getestet) sind alle 9 Karten integriert, die Mindestversion unterscheidet sich je Karte, direkt nach dem Einstecken einsatzbereit, ohne Kompilieren, ohne DKMS.
 - **Monitor- und AP-Ablauf bei allen drei Familien gleich**: an den NetworkManager zurückgeben → mit `iw` auf monitor schalten / mit `hostapd` AP starten.
@@ -288,4 +288,4 @@ A: Im Test kann die `mt76`-Familie (wie AWUS036ACM / ACHM) im Einzelbetrieb Mesh
 
 ---
 
-*Testinstanz: Yupitek (ALFA-Network-Distributor Taiwan) — https://www.yupitek.com | Testumgebung: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Testgerät: Apple iPhone 7 Plus (WPA3 zusätzlich iPhone 15 Pro)*
+*Testinstanz: Yopitek (ALFA-Network-Distributor Taiwan) — https://www.yupitek.com | Testumgebung: ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 | Testgerät: Apple iPhone 7 Plus (WPA3 zusätzlich iPhone 15 Pro)*

@@ -40,7 +40,7 @@ draft: false
 
 ALFA AWUS036AXML 是这批 9 款网卡里唯一「MediaTek Wi-Fi 6 + 蓝牙」的复合型号。它和不带蓝牙的 AWUS036AXM 是同一世代芯片（MT7921，走 `mt7921u` 驱动），差别就在多了一组蓝牙。客户最常问的还是那三题：monitor 进得去吗？能不能 injection？能不能架 AP？这篇把 AWUS036AXML 单独拉出来，在 ASUS GX10（ARM64）搭配 Ubuntu 24.04 逐项实测，做得到、做不到的一次讲清楚，尤其是最关键的那条限制：**injection 在这个平台上失败**。
 
-先把定位讲明白：以下所有量测都在 Yupitek 自有设备、自有办公室 Wi-Fi（SSID `YUPITEK`）、对自有测试手机（iPhone 7 Plus，WPA3 另以 iPhone 15 Pro 复测）上完成。这是经销商对产品兼容性与能力边界的硬件验证，不是针对第三方网络的操作教学。文中的 monitor、AP、injection 自我测试，全部在自有封闭环境、对自有设备进行。
+先把定位讲明白：以下所有量测都在 Yopitek 自有设备、自有办公室 Wi-Fi（SSID `YUPITEK`）、对自有测试手机（iPhone 7 Plus，WPA3 另以 iPhone 15 Pro 复测）上完成。这是经销商对产品兼容性与能力边界的硬件验证，不是针对第三方网络的操作教学。文中的 monitor、AP、injection 自我测试，全部在自有封闭环境、对自有设备进行。
 
 ## 一、这张卡与测试平台
 
@@ -249,4 +249,4 @@ AWUS036AXML 内含蓝牙，是这批里两款复合设备之一（另一款是 R
 
 ---
 
-*测试单位：Yupitek（ALFA Network 台湾经销）｜ 测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ 测试设备：Apple iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）｜ 测试环境：自有办公室 Wi-Fi（SSID YUPITEK）。本文为产品兼容性与能力验证，非针对第三方网络之操作教学。*
+*测试单位：Yopitek（ALFA Network 台湾经销）｜ 测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ 测试设备：Apple iPhone 7 Plus（WPA3 另测 iPhone 15 Pro）｜ 测试环境：自有办公室 Wi-Fi（SSID YUPITEK）。本文为产品兼容性与能力验证，非针对第三方网络之操作教学。*

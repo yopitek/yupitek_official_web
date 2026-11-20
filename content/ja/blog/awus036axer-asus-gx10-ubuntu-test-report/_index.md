@@ -37,7 +37,7 @@ draft: false
 
 {{< tldr >}}AWUS036AXER は ASUS GX10／Ubuntu 24.04 ARM64 で挿すだけで使えます（内蔵の rtw89_8852bu）。monitor 60 秒で 63 AP＋12 client を検出し、2.4 GHz の injection は 73%、AP と WPA3 も合格しました。active monitor、IBSS、mesh には対応していません。{{< /tldr >}}
 
-> 本記事は、Yupitek（ALFA 台湾代理店）が自社設備で実施した、製品の互換性と機能の実測レポートです。
+> 本記事は、Yopitek（ALFA 台湾代理店）が自社設備で実施した、製品の互換性と機能の実測レポートです。
 > テストプラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。テスト環境は自社オフィスの Wi-Fi（SSID `YUPITEK`）で、自社のテスト用スマートフォン iPhone 7 Plus（WPA3 のみ iPhone 15 Pro を追加使用）を対象に実施しました。
 > ⚠️ **合法的な使用**：Monitor と Injection は、自分が所有している、または許可を得たネットワークとデバイスに限ってください。AP モードは各地域の電波法規に従ってください。本記事はアダプターの機能、互換性、設定、選定に焦点を当てており、第三者のネットワークに対する攻撃操作は一切扱いません。
 
@@ -202,4 +202,4 @@ Ubuntu 24.04（ARM64、kernel 6.17.0-1014-nvidia）では不要です。内蔵�
 
 ---
 
-*テスト実施：Yupitek（ALFA 代理店）— https://www.yupitek.com ｜ テストプラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ テストデバイス：Apple iPhone 7 Plus（WPA3 のみ iPhone 15 Pro を追加使用）*
+*テスト実施：Yopitek（ALFA 代理店）— https://www.yupitek.com ｜ テストプラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia ｜ テストデバイス：Apple iPhone 7 Plus（WPA3 のみ iPhone 15 Pro を追加使用）*

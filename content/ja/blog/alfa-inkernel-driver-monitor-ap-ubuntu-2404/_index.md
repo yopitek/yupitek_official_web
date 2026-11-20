@@ -33,14 +33,14 @@ draft: false
 ---
 
 > 本記事は標準的な Linux ネットワーク設定のガイドです。新しい kernel で**内蔵（in-kernel）ドライバ**を使い、ALFA 無線 LAN アダプタの Monitor（モニタリング）モードと AP（ホットスポット）モードを有効にする方法を示します。
-> テストプラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。掲載する数値はすべて、Yupitek が自社の機器と自社オフィスの Wi-Fi（SSID `YUPITEK`）で行った製品互換性の実測からの抜粋です。
+> テストプラットフォーム：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。掲載する数値はすべて、Yopitek が自社の機器と自社オフィスの Wi-Fi（SSID `YUPITEK`）で行った製品互換性の実測からの抜粋です。
 > ⚠️ **適法な利用について**：Monitor モードは、自分が所有している、または許可を得たネットワークのモニタリングにのみ使用してください。AP モードは、各地域の電波法令を遵守してください。本記事は、第三者のネットワークに対する攻撃的な操作には一切触れません。
 
 ---
 
 ## 要点まとめ（TL;DR）
 
-ASUS GX10（ARM64 / Ubuntu 24.04 / kernel 6.17）上で Yupitek（ALFA Network 台湾代理店）が実測した ALFA の USB 無線 LAN アダプタ 9 製品はすべて in-kernel ドライバ（`rtw88` / `rtw89` / `mt76`）で動作し、ドライバのインストールなしに共通の手順で Monitor モードと AP モードを有効化でき、2.4G と 5G の AP で iPhone 7 Plus / 15 Pro が正常に接続しました。最低 kernel は製品ごとに 4.19〜6.17 です。
+ASUS GX10（ARM64 / Ubuntu 24.04 / kernel 6.17）上で Yopitek（ALFA Network 台湾代理店）が実測した ALFA の USB 無線 LAN アダプタ 9 製品はすべて in-kernel ドライバ（`rtw88` / `rtw89` / `mt76`）で動作し、ドライバのインストールなしに共通の手順で Monitor モードと AP モードを有効化でき、2.4G と 5G の AP で iPhone 7 Plus / 15 Pro が正常に接続しました。最低 kernel は製品ごとに 4.19〜6.17 です。
 
 - **新しい kernel ならドライバ不要**：Realtek `rtw88` / `rtw89` と MediaTek `mt76` が、ALFA のこれらの USB チップを in-kernel でサポートしました。kernel 6.17（GX10 で実測）では 9 製品すべてが内蔵済みで（最低 kernel は製品ごとに異なります）、挿すだけで使え、ビルドも DKMS も不要です。
 - **Monitor と AP の手順は 3 ファミリーで共通**：NetworkManager の管理から外し、`iw` で monitor に切り替えるか、`hostapd` で AP を起動します。
@@ -288,4 +288,4 @@ A：実測では、`mt76` ファミリー（AWUS036ACM / ACHM など）が単体
 
 ---
 
-*テスト実施：Yupitek（ALFA Network 台湾代理店）— https://www.yupitek.com ｜ テスト環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ テスト端末：Apple iPhone 7 Plus（WPA3 は iPhone 15 Pro でも別途テスト）*
+*テスト実施：Yopitek（ALFA Network 台湾代理店）— https://www.yupitek.com ｜ テスト環境：ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 ｜ テスト端末：Apple iPhone 7 Plus（WPA3 は iPhone 15 Pro でも別途テスト）*

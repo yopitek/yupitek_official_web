@@ -40,7 +40,7 @@ draft: false
 
 The ALFA AWUS036AXML is the only "MediaTek Wi-Fi 6 + Bluetooth" combo model among this batch of 9 adapters. It's the same chip generation as the Bluetooth-free AWUS036AXM (MT7921, via the `mt7921u` driver); the difference is just the added Bluetooth. The three questions customers ask most are still: Can it enter monitor? Can it inject? Can it run an AP? This article pulls the AWUS036AXML out on its own and tests it item by item on ASUS GX10 (ARM64) with Ubuntu 24.04, spelling out what it can and can't do, especially that most critical limitation: **injection fails on this platform**.
 
-Let's be clear on positioning up front: all of the measurements below were done on Yupitek's own equipment, own office Wi-Fi (SSID `YUPITEK`), against our own test phone (iPhone 7 Plus, with WPA3 re-tested on an iPhone 15 Pro). This is a distributor's hardware validation of product compatibility and capability boundaries, not an operational tutorial against third-party networks. The monitor, AP, and injection self-tests in this article were all done in our own closed environment, against our own devices.
+Let's be clear on positioning up front: all of the measurements below were done on Yopitek's own equipment, own office Wi-Fi (SSID `YUPITEK`), against our own test phone (iPhone 7 Plus, with WPA3 re-tested on an iPhone 15 Pro). This is a distributor's hardware validation of product compatibility and capability boundaries, not an operational tutorial against third-party networks. The monitor, AP, and injection self-tests in this article were all done in our own closed environment, against our own devices.
 
 ## 1. This Adapter and the Test Platform
 
@@ -249,4 +249,4 @@ On this platform the two have identical Wi-Fi behavior: same mt7921u driver, inj
 
 ---
 
-*Tested by: Yupitek (ALFA Network Taiwan distributor) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Test device: Apple iPhone 7 Plus (WPA3 separately tested with iPhone 15 Pro) | Test environment: own office Wi-Fi (SSID YUPITEK). This article is product-compatibility and capability validation, not an operational tutorial against third-party networks.*
+*Tested by: Yopitek (ALFA Network Taiwan distributor) | Test platform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel 6.17.0-1014-nvidia | Test device: Apple iPhone 7 Plus (WPA3 separately tested with iPhone 15 Pro) | Test environment: own office Wi-Fi (SSID YUPITEK). This article is product-compatibility and capability validation, not an operational tutorial against third-party networks.*

@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "為什麼 USB WiFi 網路卡在 Jetson Orin 上經常無法使用？"
     answer: "Jetson 使用 NVIDIA 客製化 Tegra 核心，非標準 Ubuntu 核心。第三方驅動常因核心 headers 無法取得或 ABI 不相容而編譯失敗。"
@@ -146,9 +146,9 @@ NVIDIA 論壇案例（2024 年 10 月）：RTL8188EUS 在 JetPack 5.1.x 上運�
 | **MT7612U** | **AWUS036ACM** | **In-kernel (mt76x2u)** | **4.19+** | ✅ 完美相容，插上即用 |
 | RTL8812AU | AWUS036ACH | Out-of-tree（需編譯） | 需手動編譯 | ⚠️ 可考慮但編譯有風險 |
 | RTL8811AU | AWUS036ACS | Out-of-tree（需編譯） | 需手動編譯 | ⚠️ 同 RTL8812AU 問題 |
-| RTL8812BU | AWUS036AX | Out-of-tree（需編譯） | 需手動編譯 | ⚠️ 需編譯，有已知問題 |
+| RTL8832BU | AWUS036AX | Out-of-tree（需編譯） | 需手動編譯 | ⚠️ 需編譯，有已知問題 |
 | MT7921AU | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ K5.10/5.15 不滿足 |
-| RTL8832CU | AWUS036AXER | Out-of-tree（需編譯） | 需手動編譯 | ❌ 不建議，ARM64 支援不明 |
+| RTL8832BU | AWUS036AXER | Out-of-tree（需編譯） | 需手動編譯 | ❌ 不建議，ARM64 支援不明 |
 
 資料來源：[morrownr/USB-WiFi 晶片支援表](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
 
@@ -276,10 +276,10 @@ sudo nmcli device wifi connect "你的SSID" password "你的密碼"
 
 ```bash
 lsusb | grep MediaTek
-# 預期輸出：ID 0e8d:7612 MediaTek Inc. MT7612U
+# 預期輸出: ID 0e8d:7612 MediaTek Inc. MT7612U
 
 dmesg | grep mt76
-# 預期輸出：mt76x2u 1-1:1.0 wlx...: renamed from wlan0
+# 預期輸出: mt76x2u 1-1:1.0 wlx...: renamed from wlan0
 ```
 
 ### Step 3：連線 WiFi
@@ -311,7 +311,7 @@ GitHub issue #574 的驗證是在 **Odroid M1**（ARM64 + Kernel 5.10）上完�
 
 ### 其他型號的適用場景
 
-AWUS036ACH（RTL8812AU）和 AWUS036AX（RTL8812BU）並非不能使用，只是需要在 Jetson 上手動編譯驅動。如果你有編譯環境的經驗且願意維護驅動，這些型號也值得考慮。
+AWUS036ACH（RTL8812AU）和 AWUS036AX（RTL8832BU）並非不能使用，只是需要在 Jetson 上手動編譯驅動。如果你有編譯環境的經驗且願意維護驅動，這些型號也值得考慮。
 
 ---
 

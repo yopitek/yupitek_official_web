@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "USB WiFiアダプターがJetson Orinでよく使えないのはなぜですか？"
     answer: "JetsonはNVIDIAカスタムTegraカーネルを使用し、標準Ubuntuカーネルではありません。サードパーティドライバーはカーネルheadersが取得できないかABI非互換でコンパイルに失敗することがよくあります。"
@@ -143,9 +143,9 @@ NVIDIA フォーラムの事例（2024 年 10 月）：RTL8188EUS が JetPack 5.
 | **MT7612U** | **AWUS036ACM** | **In-kernel (mt76x2u)** | **4.19+** | ✅ 完全互換、プラグ＆プレイ |
 | RTL8812AU | AWUS036ACH | Out-of-tree（コンパイル要） | 手動コンパイル要 | ⚠️ 検討可能だがコンパイルリスクあり |
 | RTL8811AU | AWUS036ACS | Out-of-tree（コンパイル要） | 手動コンパイル要 | ⚠️ RTL8812AU と同様の問題 |
-| RTL8812BU | AWUS036AX | Out-of-tree（コンパイル要） | 手動コンパイル要 | ⚠️ コンパイル要、既知の問題あり |
+| RTL8832BU | AWUS036AX | Out-of-tree（コンパイル要） | 手動コンパイル要 | ⚠️ コンパイル要、既知の問題あり |
 | MT7921AU | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ K5.10/5.15 では要件未達 |
-| RTL8832CU | AWUS036AXER | Out-of-tree（コンパイル要） | 手動コンパイル要 | ❌ 非推奨、ARM64 サポート不明 |
+| RTL8832BU | AWUS036AXER | Out-of-tree（コンパイル要） | 手動コンパイル要 | ❌ 非推奨、ARM64 サポート不明 |
 
 データ出典：[morrownr/USB-WiFi チップセットサポート表](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
 
@@ -273,10 +273,10 @@ AWUS036ACM を AIB-NW01 の USB 3.0 Type-A ポートに挿入する。
 
 ```bash
 lsusb | grep MediaTek
-# 期待される出力：ID 0e8d:7612 MediaTek Inc. MT7612U
+# 期待される出力: ID 0e8d:7612 MediaTek Inc. MT7612U
 
 dmesg | grep mt76
-# 期待される出力：mt76x2u 1-1:1.0 wlx...: renamed from wlan0
+# 期待される出力: mt76x2u 1-1:1.0 wlx...: renamed from wlan0
 ```
 
 ### Step 3：WiFi に接続
@@ -308,7 +308,7 @@ GitHub issue #574 の検証は **Odroid M1**（ARM64 + Kernel 5.10）上で実�
 
 ### 他モデルの適用シナリオ
 
-AWUS036ACH（RTL8812AU）および AWUS036AX（RTL8812BU）が使えないわけではなく、単に Jetson 上で手動ドライバーコンパイルが必要なだけである。コンパイル環境の経験があり、ドライバーをメンテナンスする意思があるのであれば、これらのモデルも検討に値する。
+AWUS036ACH（RTL8812AU）および AWUS036AX（RTL8832BU）が使えないわけではなく、単に Jetson 上で手動ドライバーコンパイルが必要なだけである。コンパイル環境の経験があり、ドライバーをメンテナンスする意思があるのであれば、これらのモデルも検討に値する。
 
 ---
 

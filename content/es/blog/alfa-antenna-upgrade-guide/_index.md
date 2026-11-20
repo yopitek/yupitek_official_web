@@ -20,7 +20,7 @@ faq:
     answer: "APA-M25 es una antena panel direccional de 8/10 dBi, ideal para enfoque interior; ARS NT5B7 es una antena omnidireccional de 4/5/7 dBi, adecuada para uso general interior y exterior. La primera tiene mayor direccionalidad, la segunda mayor cobertura."
   - question: "¿Actualizar la antena necesita instalar controladores o configuración?"
     answer: "No. La actualización de antena es puramente un cambio de hardware; no necesita actualizar controladores, configuración ni reiniciar. La tarjeta funciona con la nueva antena inmediatamente después de la instalación."
----Las tarjetas ALFA usan siempre conectores RP-SMA. Cinco accesorios de antena cubren de banda única a triple banda y de direccional a omnidireccional. La instalación no requiere herramientas y toma menos de 30 segundos; la intensidad de señal puede mejorar 4-8 dBm.
+---
 
 {{< tldr >}}
 Las tarjetas ALFA usan siempre conectores RP-SMA. Cinco accesorios de antena cubren de banda única a triple banda y de direccional a omnidireccional. La instalación no requiere herramientas y toma menos de 30 segundos; la intensidad de señal puede mejorar 4-8 dBm.

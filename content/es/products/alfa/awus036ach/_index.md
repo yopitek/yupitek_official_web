@@ -9,7 +9,7 @@ brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB-C", "Doble Antena", "Monitor Mode", "Kali Linux", "Investigación de Seguridad"]
 faq:
   - question: "¿Necesita el AWUS036ACH una instalación de controladores en Linux?"
-    answer: "En la mayoría de los casos, sí. El chipset Realtek RTL8812AU normalmente requiere una instalación manual única del controlador DKMS, y DKMS lo reconstruye tras las actualizaciones del kernel. En los kernels 6.14 y posteriores, hay disponible un controlador integrado en el kernel."
+    answer: "En la mayoría de los casos, sí. El chipset Realtek RTL8812AU normalmente requiere una instalación manual única del controlador DKMS, y DKMS lo reconstruye tras las actualizaciones del kernel. En los kernels 6.13 y posteriores, hay disponible un controlador integrado en el kernel."
   - question: "¿Admite el AWUS036ACH el modo monitor y la inyección de paquetes?"
     answer: "Sí. En Kali Linux admite el modo monitor completo y la inyección de paquetes con el controlador aircrack-ng. Utilice estas funciones solo para pruebas de seguridad autorizadas."
   - question: "¿Funciona el AWUS036ACH en Windows y macOS?"
@@ -60,7 +60,7 @@ El AWUS036ACH es el adaptador más icónico de ALFA Network — el estándar de 
 |-------------------|--------|-------|
 | Windows 10 / 11 | ✅ Compatible | Descargar driver desde el sitio de Alfa; soporte WPA3 (driver oct. 2019+) |
 | macOS 10.15 Catalina | ⚠️ Limitado | Instalación manual; macOS 11+ y Apple Silicon NO compatibles |
-| Ubuntu | ✅ Compatible | Instalación manual RTL8812AU DKMS; integrado en el kernel ≥ 6.14 (por ejemplo, el kernel HWE de Ubuntu 24.04.3 o posterior) |
+| Ubuntu | ✅ Compatible | Instalación manual RTL8812AU DKMS; integrado en el kernel ≥ 6.13 (por ejemplo, el kernel HWE de Ubuntu 24.04.3 o posterior) |
 | Kali Linux | ✅ Excelente | Desde Kali 2017.1; Monitor Mode + Packet Injection completo; usar driver aircrack-ng |
 | NetHunter (Android) | ✅ Compatible | OTG USB; ampliamente confirmado |
 

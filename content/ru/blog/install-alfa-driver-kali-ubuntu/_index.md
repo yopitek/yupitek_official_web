@@ -70,7 +70,7 @@ faq:
 |---|---|---|---|
 | [AWUS036ACH](/ru/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/ru/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (встроен в ядро) |
-| [AWUS036AX](/ru/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AX](/ru/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.17) |
 | [AWUS036AXML](/ru/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (ядро 5.18+) |
 
 ### Определение адаптера через lsusb
@@ -400,7 +400,7 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/ru/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/ru/products/alfa/awus036acm/) | MT7612U | Встроен (`mt76x2u`) | Встроен (`mt76x2u`) |
-| [AWUS036AX](/ru/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
+| [AWUS036AX](/ru/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.17) | OOK (<6.17) |
 | [AWUS036AXML](/ru/products/alfa/awus036axml/) | MT7921AUN | Встроен (`mt7921u`, ядро 5.18+) | Встроен (`mt7921u`, ядро 6.8) |
 
 ---

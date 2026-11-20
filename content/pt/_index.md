@@ -40,7 +40,7 @@ A Yopitek é uma empresa profissional com profunda presença no mercado tecnoló
 
 ---
 
-## IT Distribution｜Distribuição e Representação de Produtos Tecnológicos
+## IT Distribution | Distribuição e Representação de Produtos Tecnológicos
 
 A Yopitek é distribuidora autorizada da ALFA Network em Taiwan e também fornece outras marcas reconhecidas mundialmente, atendendo a empresas, instituições acadêmicas e pesquisadores de segurança cibernética equipamentos e soluções tecnológicas avançadas.
 
@@ -58,7 +58,7 @@ A Yopitek é distribuidora autorizada da ALFA Network em Taiwan e também fornec
 
 ---
 
-## IT Application｜Soluções Visuais Profissionais
+## IT Application | Soluções Visuais Profissionais
 
 A Yopitek oferece serviços completos de soluções de projeção — desde avaliação de necessidades, planejamento do sistema e design técnico até integração no local — criando experiências visuais impactantes em todos os tipos de espaços.
 

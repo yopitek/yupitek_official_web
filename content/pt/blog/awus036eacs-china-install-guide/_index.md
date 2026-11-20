@@ -1,6 +1,6 @@
 ---
 title: "Guia de Configuração do ALFA AWUS036EACS para a China: Instalação no Windows e Compatibilidade com Linux"
-description: "Guia de configuração para o ALFA AWUS036EACS na China. Adaptador nano WiFi 5 + Bluetooth 4.2 RTL8821CU. Driver para Windows disponível em files.alfa.com.tw. Linux e Kali Linux não são suportados — veja as alternativas recomendadas."
+description: "Guia de configuração para o ALFA AWUS036EACS na China. Adaptador nano WiFi 5 + Bluetooth 4.2 RTL8821CU. Driver para Windows disponível em files.alfa.com.tw. No kernel do Linux 6.2+, o driver integrado rtw88_8821cu funciona ao conectar — modo monitor e injeção testados e funcionando."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -19,24 +19,26 @@ faq:
   - question: "Qual chipset o AWUS036EACS usa? Suporta Bluetooth?"
     answer: "Usa o chipset Realtek RTL8821CU, suportando WiFi 5 e Bluetooth 4.2."
   - question: "O AWUS036EACS  é recomendado para uso no Linux?"
-    answer: "Não recomendado. O RTL8821CU não tem um driver Linux bem mantido, e o modo monitor e muito instável."
+    answer: "Sim. No kernel do Linux 6.2+ (por exemplo, Ubuntu 24.04 HWE / kernel 6.17), o driver rtw88_8821cu está integrado ao kernel, sem compilação e pronto ao conectar. Medimos o modo monitor e a injeção de pacotes a 100% em ambas as bandas (2,4 GHz / 5 GHz) com captura WPA .22000 de ponta a ponta, e o Bluetooth também foi testado com sucesso."
   - question: "Como instalar o driver do AWUS036EACS no Windows?"
     answer: "Baixe o pacote de drivers do Windows do site oficial da Alfa em files.alfa.com.tw, instale como administrador e reinicie."
   - question: "Como ativar o Bluetooth do AWUS036EACS?"
     answer: "Após instalar o driver, geralmente é ativado automaticamente. Ative o Bluetooth nas Configurações do Windows para conectar dispositivos."
   - question: "Se preciso de um adaptador para pesquisa de segurança sem fio no Linux, qual escolher?"
-    answer: "Recomenda-se o AWUS036ACM ou AWUS036ACS, que suportam completamente o modo monitor no Linux."
+    answer: "O próprio AWUS036EACS funciona para modo monitor e injeção de pacotes no kernel 6.2+, com Bluetooth como bônus. Se quiser mais opções, o AWUS036ACM e o AWUS036ACS também suportam completamente o modo monitor no Linux. Use apenas em redes que você possui ou está autorizado a testar."
 ---
 
-O AWUS036EACS é o adaptador combo nano WiFi 5 + Bluetooth 4.2 da ALFA. Ele foi projetado para usuários de Windows que precisam de um upgrade sem fio compacto. Seu chipset RTL8821CU não possui um driver Linux de código aberto confiável — o modo monitor e a injeção de pacotes não são suportados. Este guia cobre a instalação no Windows a partir de fontes chinesas e explica claramente as limitações no Linux.
+O AWUS036EACS é o adaptador combo nano WiFi 5 + Bluetooth 4.2 da ALFA. É um upgrade sem fio compacto para usuários de Windows e, no kernel do Linux 6.2+, o driver integrado rtw88_8821cu o suporta ao conectar (sem compilação). Este guia cobre a instalação no Windows a partir de fontes chinesas e o uso no Linux.
 
 {{< tldr >}}
-O AWUS036EACS usa o chipset RTL8821CU. E um adaptador WiFi 5 com Bluetooth 4.2, simples de instalar no Windows, mas com driver Linux instavel, nao recomendado para modo monitor.
+O AWUS036EACS usa o chipset RTL8821CU. É um adaptador WiFi 5 com Bluetooth 4.2, simples de instalar no Windows; no kernel do Linux 6.2+, o driver rtw88_8821cu está integrado, então o modo monitor e a injeção de pacotes funcionam ao conectar, e o Bluetooth também está testado e funcionando.
 {{< /tldr >}}
 
-> **O AWUS036EACS não funciona de forma confiable no Kali Linux, Ubuntu, Debian ou Raspberry Pi.** O chipset RTL8821CU não possui um driver de código aberto mantido. O modo monitor, a injeção de pacotes e o VIF não estão disponíveis.
+> **O AWUS036EACS funciona ao conectar no kernel do Linux 6.2+.** Os kernels 6.2 e mais recentes (por exemplo, Ubuntu 24.04 HWE / kernel 6.17) incluem o driver integrado rtw88_8821cu, então nenhuma compilação é necessária. Medimos o modo monitor e a injeção de pacotes a 100% em ambas as bandas (2,4 GHz / 5 GHz), capturamos um handshake WPA de ponta a ponta (.22000), e o Bluetooth (BT) também está testado e funcionando (BR/EDR + BLE escaneiam dispositivos e coexistem com o WiFi). Use apenas em redes que você possui ou está autorizado a testar.
 >
-> Se você precisa de um adaptador compatível com Linux para pesquisa de segurança, use um destes em seu lugar:
+> **Dica operacional:** Esta é uma placa combo BT+WiFi. Após alternar de modo repetidamente, a recepção WiFi pode travar (`ip link set up` retorna `Operation already in progress` e `iw ... set channel` retorna `-16 busy`). Antes de cada etapa de teste, desconecte o adaptador e reconecte-o em outra porta USB para restaurá-lo.
+>
+> Outros adaptadores Linux da mesma série:
 > - **[AWUS036ACM](/pt/blog/awus036acm-china-install-guide/)** — Driver no kernel MT7612U, modo monitor completo + VIF
 > - **[AWUS036ACS](/pt/blog/awus036acs-china-install-guide/)** — RTL8811AU, modo monitor econômico
 
@@ -44,9 +46,11 @@ O AWUS036EACS usa o chipset RTL8821CU. E um adaptador WiFi 5 com Bluetooth 4.2, 
 
 ## Usuários de Linux: Por favor, leiam primeiro
 
-> **O AWUS036EACS não funciona de forma confiable no Kali Linux, Ubuntu, Debian ou Raspberry Pi.** O chipset RTL8821CU não possui um driver de código aberto mantido. O modo monitor, a injeção de pacotes e o VIF não estão disponíveis.
+> **O AWUS036EACS funciona ao conectar no kernel do Linux 6.2+.** Os kernels 6.2 e mais recentes (por exemplo, Ubuntu 24.04 HWE / kernel 6.17) incluem o driver integrado rtw88_8821cu, então nenhuma compilação é necessária. Medimos o modo monitor e a injeção de pacotes a 100% em ambas as bandas (2,4 GHz / 5 GHz), capturamos um handshake WPA de ponta a ponta (.22000), e o Bluetooth (BT) também está testado e funcionando (BR/EDR + BLE escaneiam dispositivos e coexistem com o WiFi). Use apenas em redes que você possui ou está autorizado a testar.
 >
-> Se você precisa de um adaptador compatível com Linux para pesquisa de segurança, use um destes em seu lugar:
+> **Dica operacional:** Esta é uma placa combo BT+WiFi. Após alternar de modo repetidamente, a recepção WiFi pode travar (`ip link set up` retorna `Operation already in progress` e `iw ... set channel` retorna `-16 busy`). Antes de cada etapa de teste, desconecte o adaptador e reconecte-o em outra porta USB para restaurá-lo.
+>
+> Outros adaptadores Linux da mesma série:
 > - **[AWUS036ACM](/pt/blog/awus036acm-china-install-guide/)** — Driver no kernel MT7612U, modo monitor completo + VIF
 > - **[AWUS036ACS](/pt/blog/awus036acs-china-install-guide/)** — RTL8811AU, modo monitor econômico
 
@@ -73,11 +77,26 @@ Navegue até a pasta do produto **AWUS036EACS** e baixe o pacote de driver para 
 
 ## Detalhes de Compatibilidade com Linux
 
+No **kernel 6.2+**, o RTL8821CU é controlado pelo módulo integrado `rtw88_8821cu`, então não há nada para compilar — conecte e ele é reconhecido. Confira primeiro a sua versão de kernel com `uname -r`.
+
 ### Kali Linux
 
-O RTL8821CU não possui um driver DKMS mantido para os kernels modernos do Kali. Existem drivers mantidos pela comunidade, mas são instáveis.
+Com um kernel 6.2+, o driver integrado `rtw88_8821cu` carrega automaticamente. Testamos o modo monitor e a injeção de pacotes a 100% em ambas as bandas (2,4 GHz / 5 GHz) e capturamos um handshake WPA de ponta a ponta (.22000). Use apenas em redes que você possui ou está autorizado a testar.
 
-**Recomendação:** Use o [AWUS036ACM](/pt/blog/awus036acm-china-install-guide/) para trabalhos de segurança no Kali Linux.
+```bash
+sudo nmcli dev set wlxXXXX managed no
+sudo ip link set wlxXXXX down
+sudo iw dev wlxXXXX set type monitor
+sudo ip link set wlxXXXX up
+```
+
+### Ubuntu / Debian / Raspberry Pi
+
+Assim que o kernel for 6.2 ou mais recente (incluindo compilações ARM64 como no Raspberry Pi), o driver integrado `rtw88_8821cu` gerencia o adaptador sem compilação. Em um kernel mais antigo, atualize para o kernel HWE para obter o driver integrado.
+
+### Dica operacional (placa combo BT+WiFi)
+
+Como o EACS reúne Bluetooth e WiFi em um único chip, alternar de modo repetidamente pode travar a recepção WiFi — `ip link set up` retorna `Operation already in progress` e `iw ... set channel` retorna `-16 busy`. Antes de cada etapa de teste, desconecte o adaptador e reconecte-o em outra porta USB para limpar o estado. O Bluetooth (BR/EDR + BLE) está testado, funciona e coexiste com o WiFi.
 
 ---
 

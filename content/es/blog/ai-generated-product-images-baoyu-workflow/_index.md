@@ -46,8 +46,8 @@ La colección tiene 19 skills, organizadas en tres tipos:
 
 | # | Skill | Tipo | Propósito | Palabras Clave |
 |---|-------|------|-----------|----------------|
-| 01 | `baoyu-article-illustrator` | Imagen | Genera automáticamente ilustraciones para cada sección de un artículo | 为文章配图 · illustrate article · add images |
-| 02 | `baoyu-comic` | Imagen | Crea tiras cómicas manga/webtoon/educativas en múltiples estilos artísticos | 知识漫画 · biography comic · tutorial comic |
+| 01 | `baoyu-article-illustrator` | Imagen | Genera automáticamente ilustraciones para cada sección de un artículo | 为文章配图 (en chino: ilustrar artículo) · illustrate article · add images |
+| 02 | `baoyu-comic` | Imagen | Crea tiras cómicas manga/webtoon/educativas en múltiples estilos artísticos | 知识漫画 (en chino: cómic de divulgación) · biography comic · tutorial comic |
 | 03 | `baoyu-compress-image` | Utilidad | Comprime imágenes a WebP/PNG con una reducción de tamaño del 80–99% | compress image · optimize image · convert to webp |
 | 04 | `baoyu-cover-image` | Imagen | Genera imágenes de portada con 5 dimensiones de diseño (tipo, paleta, renderizado, texto, mood) | generate cover image · create article cover · make cover |
 | 05 | `baoyu-danger-gemini-web` | Motor API | Generación de texto e imágenes vía Gemini Web API; conversaciones multi-turno, entrada de visión | generate image with Gemini |
@@ -55,16 +55,16 @@ La colección tiene 19 skills, organizadas en tres tipos:
 | 07 | `baoyu-format-markdown` | Texto | Formatea texto plano en Markdown estructurado con encabezados, frontmatter, bloques de código | format markdown · beautify article |
 | 08 | `baoyu-image-gen` | Imagen | Generación de imágenes IA multi-proveedor (OpenAI, Google, DashScope, Replicate); modo paralelo | generate / create / draw images |
 | 09 | `baoyu-imagine` | Imagen | Generación libre de imágenes IA — renders fotorrealistas, escenas de lifestyle, vistas explosionadas | imagine · create visual |
-| 10 | `baoyu-infographic` | Imagen | Infografías profesionales: 21 tipos de diseño × 20 estilos visuales | infographic · 信息图 · visual summary |
-| 11 | `baoyu-markdown-to-html` | HTML | Convierte Markdown a HTML con estilo con temas WeChat, resaltado de código, matemáticas, PlantUML | markdown to html · md转html |
-| 12 | `baoyu-post-to-wechat` | Social | Publica artículos y contenido imagen-texto en la Cuenta Oficial de WeChat | 发布公众号 · post to wechat |
+| 10 | `baoyu-infographic` | Imagen | Infografías profesionales: 21 tipos de diseño × 20 estilos visuales | infographic · 信息图 (en chino: infografía) · visual summary |
+| 11 | `baoyu-markdown-to-html` | HTML | Convierte Markdown a HTML con estilo con temas WeChat, resaltado de código, matemáticas, PlantUML | markdown to html · md转html (en chino: md a html) |
+| 12 | `baoyu-post-to-wechat` | Social | Publica artículos y contenido imagen-texto en la Cuenta Oficial de WeChat | 发布公众号 (en chino: publicar en la cuenta oficial) · post to wechat |
 | 13 | `baoyu-post-to-x` | Social | Publica en X (Twitter) con imágenes/video; soporta el formato X Articles de formato largo | post to X · tweet · publish to Twitter |
 | 14 | `baoyu-slide-deck` | Imagen | Genera imágenes de diapositivas desde contenido con estilo consistente | create slides · make a presentation · PPT |
-| 15 | `baoyu-translate` | Texto | Traducción en tres modos: rápida / normal (análisis+traducción) / refinada (análisis→traducción→revisión→pulido) | translate · 翻译 · 精翻 |
+| 15 | `baoyu-translate` | Texto | Traducción en tres modos: rápida / normal (análisis+traducción) / refinada (análisis→traducción→revisión→pulido) | translate · 翻译 (en chino: traducir) · 精翻 (en chino: traducción refinada) |
 | 16 | `baoyu-url-to-markdown` | Texto | Obtiene cualquier URL y la convierte a Markdown usando Chrome CDP | save webpage as markdown |
-| 17 | `baoyu-xhs-images` | Imagen | Tarjetas verticales XHS (Xiaohongshu/Little Red Book): 10 estilos × 8 layouts, optimizadas para Instagram | 小红书图片 · XHS images · RedNote |
+| 17 | `baoyu-xhs-images` | Imagen | Tarjetas verticales XHS (Xiaohongshu/Little Red Book): 10 estilos × 8 layouts, optimizadas para Instagram | 小红书图片 (en chino: imágenes de Xiaohongshu) · XHS images · RedNote |
 | 18 | `baoyu-youtube-transcript` | Texto | Extrae transcripciones y subtítulos de YouTube como Markdown estructurado | extract transcript · youtube captions |
-| 19 | `baoyu-post-to-weibo` | Social | Publica en Weibo con texto, imágenes, etiquetas de tema y manejo del límite de caracteres | 发布微博 · post to weibo |
+| 19 | `baoyu-post-to-weibo` | Social | Publica en Weibo con texto, imágenes, etiquetas de tema y manejo del límite de caracteres | 发布微博 (en chino: publicar en Weibo) · post to weibo |
 
 ---
 
@@ -230,6 +230,8 @@ Genera series de tarjetas verticales (relación de aspecto 3:4) optimizadas para
 
 **Cuándo usar:** Publicaciones de Instagram, tarjetas de productos XHS, contenido de redes sociales enfocado en productos.
 
+> Los prompts de abajo se muestran en el chino original con el que se generaron las imágenes; puede copiarlos tal cual. Debajo de cada uno se incluye una traducción de referencia.
+
 ### Variantes de Estilo
 
 **Variante 1 — Notion · Predeterminado**
@@ -240,6 +242,8 @@ Genera series de tarjetas verticales (relación de aspecto 3:4) optimizadas para
 小红书风格产品种草卡片, notion简约风格, 介绍Alfa AWUS036ACM WiFi网卡, 白色背景,
 简洁排版, 重点标注: MT7612U芯片/AC1200双频/Linux免驱
 ```
+
+*Traducción:* Tarjeta de recomendación de producto estilo Xiaohongshu, estilo minimalista Notion, presenta el adaptador WiFi Alfa AWUS036ACM, fondo blanco, maquetación limpia, destacados: chip MT7612U / doble banda AC1200 / sin controladores en Linux
 
 ---
 
@@ -252,6 +256,8 @@ Genera series de tarjetas verticales (relación de aspecto 3:4) optimizadas para
 强烈视觉冲击, 关键词: Kali Linux必备
 ```
 
+*Traducción:* Portada viral de Xiaohongshu, estilo bold con letras grandes en negrita, recomendación del AWUS036ACM como herramienta estrella para pentesting, colores de alto contraste rojo/negro/blanco, fuerte impacto visual, palabra clave: imprescindible para Kali Linux
+
 ---
 
 **Variante 3 — Pastel · Predeterminado**
@@ -262,6 +268,8 @@ Genera series de tarjetas verticales (relación de aspecto 3:4) optimizadas para
 小红书粉彩风格种草图, pastel柔和色调, Alfa AWUS036ACM开箱分享, 奶油色背景,
 可爱贴纸元素, 标注: 双天线/USB3.0/即插即用
 ```
+
+*Traducción:* Imagen de recomendación estilo pastel de Xiaohongshu, tonos pastel suaves, unboxing del Alfa AWUS036ACM, fondo color crema, elementos de pegatinas tiernas, destacados: doble antena / USB 3.0 / plug and play
 
 ---
 
@@ -274,6 +282,8 @@ Genera series de tarjetas verticales (relación de aspecto 3:4) optimizadas para
 简洁checklist样式, 适合技术宅
 ```
 
+*Traducción:* Tarjeta de lista estilo Notion de Xiaohongshu, guía de compra del AWUS036ACM, diseño de lista horizontal, enumera 5 razones para comprarlo, estilo checklist limpio, pensada para entusiastas de la tecnología
+
 ---
 
 **Variante 5 — Negrita · Comparación**
@@ -285,6 +295,8 @@ Genera series de tarjetas verticales (relación de aspecto 3:4) optimizadas para
 突出MT7612U优势, 醒目配色
 ```
 
+*Traducción:* Tarjeta comparativa de Xiaohongshu, estilo bold, tabla comparativa AWUS036ACM vs adaptador WiFi común, diseño comparativo izquierda/derecha, resalta las ventajas del MT7612U, colores llamativos
+
 ---
 
 **Variante 6 — Pastel · Línea de Tiempo**
@@ -295,6 +307,8 @@ Genera series de tarjetas verticales (relación de aspecto 3:4) optimizadas para
 小红书pastel时间线卡片, AWUS036ACM从开箱到使用的步骤图, 纵向timeline布局,
 温柔色调, 步骤: 开箱→插入USB→Linux免驱识别→开始使用
 ```
+
+*Traducción:* Tarjeta de línea de tiempo pastel de Xiaohongshu, diagrama de pasos del AWUS036ACM desde el unboxing hasta el uso, diseño de línea de tiempo vertical, tonos suaves, pasos: unboxing → conectar USB → reconocimiento sin controladores en Linux → empezar a usar
 
 ---
 

@@ -24,8 +24,6 @@ faq:
 ---
 1. [O que são IBSS e Mesh 802.11s — e por que são importantes?](#1-what-are-ibss-and-80211s-mesh) 2. [Especificações de Hardware do ALFA AWUS036ACM](#2-alfa-awus036acm-hardware-specifications) 3. [O Driver MT7612U no Raspberry Pi](#3-the-mt7612u-driver-on-raspberry-pi) 4. [Modo 1: Rede IBSS Ad Hoc](#4-mode-1-ibss-ad-hoc-networking) 5. [Modo 2: Rede 802.11s Mesh Point](#5-mode-2-80211s-mesh-point-networking) 6. [Casos de Uso no Mundo Real](#6-real-world-use-cases) 7. [Por que o AWUS036ACM é a Única Opção ALFA para Isso](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this) 8. [Perguntas Frequentes e Solução de Problemas](#8-faq-and-troubleshooting) 9. [Onde Comprar](#9-where-to-buy)
 
-# ALFA AWUS036ACM: Habilitando Redes IBSS Ad Hoc e 802.11s Mesh no Raspberry Pi com MT7612U
-
 Se você já tentou construir uma rede WiFi entre nós Raspberry Pi **sem um roteador** — ou criar uma rede mesh sem fio auto-regenerativa que roteie o tráfego automaticamente por saltos intermediários — logo descobre que a maioria dos adaptadores USB WiFi simplesmente não consegue fazer isso. O driver do kernel não expõe os modos necessários.
 
 O **ALFA AWUS036ACM**, alimentado pelo chipset **MediaTek MT7612U**, é a exceção. Seu driver `mt76` nativo do kernel implementa a interface completa Linux mac80211, o que significa que ele suporta nativamente tanto o modo **IBSS (Ad Hoc)** quanto o modo **802.11s Mesh Point** no Raspberry Pi — pronto para uso, sem necessidade de compilar nenhum driver.
@@ -45,7 +43,7 @@ O ALFA AWUS036ACM com chipset MediaTek MT7612U é o único adaptador USB WiFi da
 
 ---
 
-## 1. O que são IBSS e Mesh 802.11s?
+## 1. O que são IBSS e Mesh 802.11s? {#1-what-are-ibss-and-80211s-mesh}
 
 ### IBSS — Independent Basic Service Set (Modo Ad Hoc)
 
@@ -99,7 +97,7 @@ O MT7612U é um dos poucos chipsets onde a resposta é um **sim** claro e inequ�
 
 ---
 
-## 2. Especificações de Hardware do ALFA AWUS036ACM
+## 2. Especificações de Hardware do ALFA AWUS036ACM {#2-alfa-awus036acm-hardware-specifications}
 
 O AWUS036ACM é o adaptador USB 3.0 dual-band AC1200 da ALFA Network, projetado para usuários Linux avançados e desenvolvedores embarcados.
 
@@ -178,7 +176,7 @@ WPA2 / WPA / WEP / WPA-PSK / 802.1X / WEP 64–128 bits
 
 ---
 
-## 3. O Driver MT7612U no Raspberry Pi
+## 3. O Driver MT7612U no Raspberry Pi {#3-the-mt7612u-driver-on-raspberry-pi}
 
 ### Driver: mt76x2u (Parte da Família mt76)
 
@@ -271,7 +269,7 @@ Drivers que contornam o mac80211 (drivers fora do kernel da Realtek, por exemplo
 
 ---
 
-## 4. Modo 1: Rede IBSS Ad Hoc
+## 4. Modo 1: Rede IBSS Ad Hoc {#4-mode-1-ibss-ad-hoc-networking}
 
 ### Como o IBSS Funciona
 
@@ -460,7 +458,7 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 ---
 
-## 5. Modo 2: Rede 802.11s Mesh Point
+## 5. Modo 2: Rede 802.11s Mesh Point {#5-mode-2-80211s-mesh-point-networking}
 
 ### Como o 802.11s Funciona
 
@@ -623,7 +621,7 @@ sudo batctl o    # Tabela de originadores (todos os nós conhecidos)
 sudo batctl tg   # Tabela de tradução (mapeamento MAC → IP)
 ```
 
-### Tornando o Mesh 802.11s Persistente
+### Tornando o Mesh 802.11s Persistente {#making-80211s-mesh-persistent}
 
 Crie `/etc/systemd/system/mesh-point.service`:
 
@@ -658,7 +656,7 @@ sudo systemctl start mesh-point.service
 
 ---
 
-## 6. Casos de Uso no Mundo Real
+## 6. Casos de Uso no Mundo Real {#6-real-world-use-cases}
 
 ### Caso de Uso 1 — Rede de Sensores Off-Grid (Agricultura Inteligente / Monitoramento Ambiental)
 
@@ -727,7 +725,7 @@ sudo tcpdump -i mon0 -w capture.pcap
 
 ---
 
-## 7. Por que o AWUS036ACM é a Única Opção ALFA para Isso
+## 7. Por que o AWUS036ACM é a Única Opção ALFA para Isso {#7-why-the-awus036acm-is-the-only-alfa-choice-for-this}
 
 ### O Fator Decisivo: Conformidade com mac80211
 
@@ -738,7 +736,7 @@ Se um adaptador USB WiFi suporta IBSS e mesh 802.11s no Linux depende inteiramen
 | Modelo | Chipset | Driver | IBSS | 802.11s Mesh | Observações |
 |---|---|---|---|---|---|
 | **AWUS036ACM** | MT7612U | mt76x2u (nativo ≥ 4.19) | ✅ | ✅ | **A única escolha** |
-| AWUS036ACH | RTL8812AU | rtw88 (nativo ≥ 6.14) | ✅ (apenas kernel ≥ 6.14) | ❌ | Novo driver nativo; sem mesh point |
+| AWUS036ACH | RTL8812AU | rtw88 (nativo ≥ 6.13) | ✅ (apenas kernel ≥ 6.13) | ❌ | Novo driver nativo; sem mesh point |
 | AWUS036ACS | RTL8811AU | rtl8812au-dkms (OOK) | ❌ | ❌ | Driver fora do kernel; sem IBSS/mesh |
 | AWUS036AX | RTL8832BU | rtw88 (nativo) | ❌ | ❌ | Sem suporte ao Raspberry Pi |
 | AWUS036AXER | RTL8832BU | rtw88 (nativo) | ❌ | ❌ | Sem suporte ao Raspberry Pi |
@@ -761,7 +759,7 @@ Além disso, o AWUS036ACM oferece:
 
 ---
 
-## 8. Perguntas Frequentes e Solução de Problemas
+## 8. Perguntas Frequentes e Solução de Problemas {#8-faq-and-troubleshooting}
 
 **P: Meu Pi mostra apenas `wlan0`. Onde está `wlan1`?**
 
@@ -835,7 +833,7 @@ Sim — o Raspberry Pi Zero 2W tem uma porta USB-A completa (via adaptador OTG) 
 
 ---
 
-## 9. Onde Comprar
+## 9. Onde Comprar {#9-where-to-buy}
 
 O ALFA AWUS036ACM está disponível em [yupitek.com](https://yupitek.com) — o revendedor oficial da ALFA Network. Comprar através de um revendedor autorizado garante que você receba hardware genuíno com a garantia padrão da Alfa Network Inc.
 

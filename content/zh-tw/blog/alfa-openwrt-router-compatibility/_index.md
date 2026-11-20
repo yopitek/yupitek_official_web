@@ -13,10 +13,10 @@ tags:
   - "Soft-AP"
 categories:
   - "路由器韌體"
-description: "OpenWrt 是三大第三方路由器韌體（DD-WRT / OpenWrt / Tomato）中對 ALFA USB WiFi 網路卡支援最好的平台。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）透過官方 kmod-mt76 系列套件可直接支援；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需使用社群..."
+description: "OpenWrt 是三大第三方路由器韌體（DD-WRT / OpenWrt / Tomato）中對 ALFA USB WiFi 網路卡支援最好的平台。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）透過官方 kmod-mt76 系列套件可直接支援；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需使用社群維護的 out-of-tree 驅動套件，可用性因 OpenWrt 版本而異。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. 問題摘要
@@ -43,7 +43,7 @@ OpenWrt 官方套件庫包含以下 USB WiFi 驅動：
 | kmod-mt76-usb + kmod-mt76x0u | 官方 in-kernel | MediaTek MT7610U（AWUS036ACHM） | 活躍 |
 | kmod-mt7921u | 官方 in-kernel | MediaTek MT7921AUN（AWUS036AXML / AXM） | 23.05+ 版本可用 |
 | kmod-rtl8812au-ct | 社群 out-of-tree | Realtek RTL8812AU / RTL8811AU（AWUS036ACH / ACS） | 社群維護，24.10 有 kernel crash 回報 |
-| kmod-rtl8821cu | 社群 out-of-tree | Realtek RTL8811CU（AWUS036EACS） | 社群維護 |
+| kmod-rtl8821cu | 社群 out-of-tree | Realtek RTL8821CU（AWUS036EACS） | 社群維護 |
 | kmod-rtw89 / kmod-rtl8852bu | 開發中 | Realtek RTL8832BU（AWUS036AX / AXER） | rtw89 USB 支援逐步合入，需較新 kernel |
 
 ### 2.3 先決條件：USB 核心支援
@@ -68,10 +68,10 @@ opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | kmod-rtw89（開發中）/ 自編 rtl8852bu |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | 同上 |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | kmod-rtl8812au-ct（社群） |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | kmod-mt76x0u（官方） |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | kmod-mt76x0u（官方） |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | kmod-mt76x2u（官方）⭐ 首選 |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | kmod-rtl8812au-ct（涵蓋） |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | kmod-rtl8821cu（社群） |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | kmod-rtl8812au-ct（涵蓋） |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | kmod-rtl8821cu（社群） |
 
 ## 4. 適用機型與晶片組
 
@@ -84,7 +84,7 @@ opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 | ✅ 推薦（新版本） | AWUS036AXML / AXM（MT7921AUN） | Wi-Fi 6E，官方驅動，需 OpenWrt 23.05+ 且 kernel 5.15+ |
 | ⚠️ 可用但需注意 | AWUS036ACH（RTL8812AU） | 社群驅動，24.10 版本有 kernel crash 回報，建議用 23.05 |
 | ⚠️ 可用但需注意 | AWUS036ACS（RTL8811AU） | 同上，由 8812au 驅動涵蓋 |
-| ⚠️ 可用但需注意 | AWUS036EACS（RTL8811CU） | 社群驅動，穩定性中等 |
+| ⚠️ 可用但需注意 | AWUS036EACS（RTL8821CU） | 社群驅動，穩定性中等 |
 | ❌ 不建議 | AWUS036AX / AXER（RTL8832BU） | Wi-Fi 6，rtw89 USB 支援尚在開發，多數 OpenWrt 版本無法直接使用 |
 
 ### 4.2 路由器硬體需求
@@ -122,7 +122,7 @@ opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 | AWUS036AXM | MT7921AUN | kmod-mt7921u | ✅ | ✅ | ✅ | ⚠️ 有限 | 23.05+ | ✅ 良好 |
 | AWUS036ACH | RTL8812AU | kmod-rtl8812au-ct | ✅ | ✅ | ✅ | ⚠️ 有限 | 22.03+（24.10 有 crash） | ⚠️ 可用 |
 | AWUS036ACS | RTL8811AU | kmod-rtl8812au-ct | ✅ | ✅ | ⚠️ | ❌ | 22.03+ | ⚠️ 可用 |
-| AWUS036EACS | RTL8811CU | kmod-rtl8821cu | ✅ | ⚠️ | ❌ | ❌ | 23.05+ | ⚠️ 可用 |
+| AWUS036EACS | RTL8821CU | kmod-rtl8821cu | ✅ | ⚠️ | ❌ | ❌ | 23.05+ | ⚠️ 可用 |
 | AWUS036AX | RTL8832BU | rtw89（開發中） | ⚠️ | ❌ | ❌ | ❌ | 需自訂編譯 | ❌ 不建議 |
 | AWUS036AXER | RTL8832BU | rtw89（開發中） | ⚠️ | ❌ | ❌ | ❌ | 需自訂編譯 | ❌ 不建議 |
 
@@ -149,7 +149,7 @@ opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 
 ```bash
 lsusb
-# 預期輸出範例（AWUS036ACM / MT7612U）：
+# 預期輸出範例 (AWUS036ACM / MT7612U):
 # Bus 002 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/b/g/n/ac Wireless Adapter
 ```
 
@@ -166,7 +166,7 @@ opkg install kmod-mt76-usb kmod-mt76x2u
 # AWUS036ACHM (MT7610U) — 改用
 # opkg install kmod-mt76-usb kmod-mt76x0u
 
-# AWUS036AXML / AXM (MT7921AUN) — 改用（需 23.05+）
+# AWUS036AXML / AXM (MT7921AUN) — 改用 (需 23.05+)
 # opkg install kmod-mt7921u
 ```
 
@@ -252,7 +252,7 @@ iw dev wlan0 info
 opkg update
 opkg install kmod-rtl8812au-ct
 
-# AWUS036EACS (RTL8811CU) — 改用
+# AWUS036EACS (RTL8821CU) — 改用
 # opkg install kmod-rtl8821cu
 ```
 
@@ -266,7 +266,7 @@ opkg install iw iwinfo wireless-tools hostapd-common wpa-supplicant
 
 ```bash
 iw dev
-# 注意：rtl8812au-ct 驅動的介面名可能是 wlan0 或 wlan1
+# 注意: rtl8812au-ct 驅動的介面名可能是 wlan0 或 wlan1
 ```
 
 設定方式同 7.2 步驟 5-7（STA / AP 模式設定）。
@@ -278,13 +278,13 @@ iw dev
 ip link set wlan0 down
 iw dev wlan0 set type monitor
 ip link set wlan0 up
-# 封包注入功能有限，建議用 mt76 晶片做滲透測試
+# 封包注入功能有限, 建議用 mt76 晶片做滲透測試
 ```
 
 **步驟 5：若遇到 kernel crash（24.10 版本已知問題）**
 
 ```bash
-# 降回 23.05 穩定版，或使用自訂編譯的驅動
+# 降回 23.05 穩定版, 或使用自訂編譯的驅動
 # 檢查 crash 日誌
 logread | grep -i "panic\|crash\|rtl8812"
 ```
@@ -297,7 +297,7 @@ logread | grep -i "panic\|crash\|rtl8812"
 
 ```bash
 opkg list | grep rtw89
-# 若無結果，代表該版本未包含
+# 若無結果, 代表該版本未包含
 ```
 
 **步驟 2：若需使用，需自行編譯 OpenWrt 映像檔**

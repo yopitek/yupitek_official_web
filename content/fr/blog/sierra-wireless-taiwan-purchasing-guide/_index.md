@@ -20,8 +20,6 @@ faq:
     answer: "Le fournisseur vérifie le SKU exact (pour garantir les bonnes bandes de fréquence), fournit la version de firmware à jour à l'expédition, et dispose d'une fenêtre de garantie avec échange et d'un support technique. C'est essentiel pour la stabilité à long terme des projets d'entreprise."
 ---
 
-# Acheter Sierra Wireless à Taïwan : le guide complet pour reconnaître l'authentique, comparer les fournisseurs et demander un devis
-
 De nombreux fabricants choisissent les modules 4G/5G Sierra Wireless pour leurs routeurs industriels, les mises à niveau de laptops ou les projets IoT. Mais une recherche en ligne suffit pour constater : la même référence de module peut coûter jusqu'au double ! Pourquoi ? Parce que le marché mélange « neuf d'origine », « cartes démontées de machines retirées » et « assemblages avec étiquettes refaites ».
 
 Cet article compile les signes distinctifs issus des spécifications officielles : comment repérer d'un coup d'œil si votre module est authentique, et à quoi faire attention quand vous cherchez un fournisseur.

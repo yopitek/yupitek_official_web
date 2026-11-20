@@ -7,10 +7,10 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Remote-ID", "ALFA-Network", "AWUS036ACH", "detección-drones", "Counter-UAV", "ASTM-F3411", "EN-4709-002", "opendroneid", "unix_rid_capture", "DJI-OcuSync", "Raspberry-Pi"]
 author: "benny-lai"
-lastmod: 2026-07-27
+lastmod: 2026-11-20
 faq:
   - question: "¿Por qué la AWUS036ACH es la opción preferida en lugar de tarjetas WiFi 6/6E más nuevas?"
-    answer: "La captura de Remote ID requiere un modo monitor estable e inyección de paquetes raw. Actualmente, el controlador más maduro en la comunidad es la rama Realtek rtl88xxau (RTL8812AU / RTL8814AU). Las tarjetas WiFi 6/6E (MediaTek MT7921AUN, Realtek RTL8832BU) aún no tienen controladores de inyección en las principales herramientas de monitoreo, por lo que se omiten. La AWUS036ACH es una opción doblemente validada por la comunidad y este kit."
+    answer: "La captura de Remote ID requiere un modo monitor estable e inyección de paquetes raw. Actualmente, el controlador más maduro en la comunidad es la rama Realtek rtl88xxau (RTL8812AU / RTL8814AU). Entre los chipsets WiFi 6/6E, el MediaTek MT7921AUN (AWUS036AXM / AXML) no supera la prueba de inyección en el kernel estándar 6.17, mientras que el Realtek RTL8832BU (AWUS036AX / AXER) inyecta con el rtw89_8852bu integrado a partir del kernel 6.17 (prueba en GX10, 2.4 GHz: AX 96%, AXER 73%), aunque no se ha verificado con este kit. La AWUS036ACH es una opción doblemente validada por la comunidad y este kit."
   - question: "¿Es necesario el nRF52840?"
     answer: "Si solo necesita Remote ID por WiFi (NAN / Beacon), no; la AWUS036ACH es suficiente. Si desea capturar también transmisiones Bluetooth 5 Long Range, necesitará el nRF52840 (con firmware sniffer). Se recomienda incluir este módulo para una cobertura completa."
   - question: "¿Puede este kit decodificar drones DJI?"

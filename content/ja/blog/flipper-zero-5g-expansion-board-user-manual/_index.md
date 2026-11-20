@@ -14,8 +14,6 @@ featureimage: "/images/blog/flipper-zero-5g-expansion-board-user-manual/img_01_a
 hideFeatureImage: true
 ---
 
-# Flipper Zero 5G Expansion Board 図解インストール・使用マニュアル (v2.0)
-
 > **対象読者**：本モジュールを初めて使用されるお客様。  
 > **作成方針**：間違いやすい手順やわかりにくい専門用語について、高解像度の設計図を用いてステップごとに詳しく解説します。文章から推測することなく、スムーズにインストールすることができます。
 

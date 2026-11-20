@@ -23,8 +23,6 @@ faq:
 ---
 | Chipsatz | Treiber-Repo |DKMS-Unterstützung | Komplettzeit | |---|---|---|---| | RTL8812AU | aircrack-ng/rtl8812au | ✓ | ~10 Min. | | MT7612U | Kernel-inklusive | N/A | ~2 Min. | | MT7921AUN | Kernel-inklusive | N/A | ~2 Min. | | RTL8832BU | aircrack-ng/rtl8832bu | ✓ | ~10 Min. |
 
-# ALFA-USB-WiFi-Treiber unter Kali Linux & Ubuntu 24.04 installieren (2026)
-
 {{< tldr >}}
 Die Installation der ALFA-Netzwerktreiber hängt vom Chipsatz ab: MT7612U und MT7921AUN sind im Kernel integriert und funktionieren nach dem Einstecken sofort (Plug-and-Play), während für RTL8812AU ein Treiber aus dem aircrack-ng GitHub-Repository installiert werden muss und DKMS erforderlich ist, um die Funktionalität nach Kernel-Updates sicherzustellen.
 {{< /tldr >}}
@@ -58,7 +56,7 @@ dkms status
 
 ## Installation: MT7612U (Plug-and-Play)
 
-Der MT7612U-Treiber (`mt76`) ist im主线-Linux-Kernel enthalten. Kein zusätzlicher Treiber erforderlich:
+Der MT7612U-Treiber (`mt76`) ist im Mainline-Linux-Kernel enthalten. Kein zusätzlicher Treiber erforderlich:
 
 ```bash
 # Adapter einstecken und überprüfen
@@ -75,7 +73,7 @@ iwconfig
 
 ## Installation: MT7921AUN (Kernel 5.18+)
 
-Der MT7921AUN-Treiber (`mt7921u`) ist ab Kernel 5.18 im主线-Kernel:
+Der MT7921AUN-Treiber (`mt7921u`) ist ab Kernel 5.18 im Mainline-Kernel:
 
 ```bash
 # Kernel-Modul überprüfen

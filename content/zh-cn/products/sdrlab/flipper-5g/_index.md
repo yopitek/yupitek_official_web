@@ -130,7 +130,7 @@ tags: ["Flipper Zero 扩充", "5GHz", "Wi-Fi", "Deauth", "信息安全研究"]
 
 ---
 
-**产品页连结**：https://yupitek.com/zh-tw/products/sdrlab/flipper-5g/
-**完整使用手册**：https://doczhtw.yupitek.com/sdrlab/expansion/5g-board/
+**产品页连结**：https://yupitek.com/zh-cn/products/sdrlab/flipper-5g/
+**完整使用手册**：https://doczhcn.yupitek.com/sdrlab/expansion/5g-board/
 
 **原厂商店页（OpenSourceSDRLab）**：https://opensourcesdrlab.com/products/opensourcesdrlab-new-5g-multi-in-one-module-flipperzero-module-with-screen-flipperzero5g-expansion-board?VariantsId=10754

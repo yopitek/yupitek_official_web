@@ -13,10 +13,10 @@ tags:
   - "Compatibility"
 categories:
   - "Guia de Hardware"
-description: "ALFA系列無驅動支援Tomato，recomenda OpenWrt para USB WiFi."
+description: "Nenhum modelo ALFA tem suporte de driver USB WiFi no Tomato, por isso o uso não é recomendado; prefira o OpenWrt."
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. Resumo do Problema
@@ -58,7 +58,7 @@ O kernel do Tomato pré-definido inclui o módulo de driver de WiFi de código f
 
 - Tomato suporta apenas roteadores com chipsets Broadcom, enquanto os ports USB dos roteadores Broadcom geralmente são usados apenas para armazenamento / impressoras
 - Embora o FreshTomato ainda esteja em manutenção, o foco do desenvolvimento é a correção de bugs na plataforma Broadcom, não há planos para adicionar drivers de WiFi USB
-- O espaço do sistema de arquivos do Tomato é extremamente pequeno (geralmente 4-16MB), então, mesmo que queira traduzir manualmente o driver, não há espaço para instalá-lo
+- O espaço do sistema de arquivos do Tomato é extremamente pequeno (geralmente 4-16MB), então, mesmo que queira compilar manualmente o driver, não há espaço para instalá-lo
 - O Tomato não possui sistemas de gerenciamento de pacotes modernos como o opkg, então não é possível instalar drivers kmod de forma simples, como no OpenWrt
 
 ## 3. Análise das Especificações e Chipsets da Placa de Rede ALFA
@@ -72,10 +72,10 @@ Até setembro de 2026, a linha de produtos de placas de rede sem fio USB da ALFA
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ❌ Sem |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ❌ Sem |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ❌ Sem |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ❌ Sem |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ❌ Sem |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ❌ Sem |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ❌ Sem |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ❌ Sem |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ❌ Sem |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | ❌ Sem |
 
 ## 4. Modelos Aplicáveis e Chipsets
 
@@ -92,7 +92,7 @@ Até setembro de 2026, a linha de produtos de placas de rede sem fio USB da ALFA
 
 Todos os modelos atuais ALFA (veja a tabela do Capítulo 3) não são compatíveis com o Tomato por os seguintes motivos:
 
-- Chipsets Realtek (RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU): O Tomato não possui nenhum driver correspondente e não pode ser instalado através da gestão de pacotes
+- Chipsets Realtek (RTL8812AU / RTL8811AU / RTL8821CU / RTL8832BU): O Tomato não possui nenhum driver correspondente e não pode ser instalado através da gestão de pacotes
 - Chipsets MediaTek (MT7612U / MT7610U / MT7921AUN): O Tomato não inclui os drivers mt76 / mt7921 e a equipe de desenvolvimento do FreshTomato não tem planos de adicioná-los
 - Mesmo que o lsusb consiga identificar o dispositivo (se o Tomato tiver o suporte ao núcleo USB habilitado), isso apenas identifica o nível de pilha de controle de USB e não permite a criação de uma interface de rede
 
@@ -125,7 +125,7 @@ Conclusão: Para 99,9% dos usuários, a utilização da placa de rede WiFi USB A
 | AWUS036ACHM | MT7610U | ⚠️ | ❌ | ❌ | ❌ | ❌ | Não suportado |
 | AWUS036ACM | MT7612U | ⚠️ | ❌ | ❌ | ❌ | ❌ | Não suportado |
 | AWUS036ACS | RTL8811AU | ⚠️ | ❌ | ❌ | ❌ | ❌ | Não suportado |
-| AWUS036EACS | RTL8811CU | ⚠️ | ❌ | ❌ | ❌ | ❌ | Não suportado |
+| AWUS036EACS | RTL8821CU | ⚠️ | ❌ | ❌ | ❌ | ❌ | Não suportado |
 
 Critério de Determinação: O Tomato (inclusive FreshTomato) não inclui nenhuma driver para chipsets de WiFi USB moderno em sua biblioteca oficial. O objetivo de design do Tomato nunca incluiu a funcionalidade de expansão de WiFi via USB.
 
@@ -188,7 +188,7 @@ ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
 Se o seu modelo de roteador também suportar OpenWrt, recomendamos que você atualize o firmware do Tomato para OpenWrt. O OpenWrt possui uma biblioteca completa de drivers para WiFi USB, suportando a maioria dos modelos ALFA.
 
 - Confirme se o seu roteador está na lista de dispositivos suportados pelo OpenWrt
-- Se for suportado, consulte [Compatibilidade do Router ALFA com OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) para os passos de instalação
+- Se for suportado, consulte [Compatibilidade do Router ALFA com OpenWrt](/pt/blog/alfa-openwrt-router-compatibility/) para os passos de instalação
 
 #### Solução 2: Uso do WiFi Interno do Roteador
 
@@ -206,7 +206,7 @@ Se você precisa de funcionalidades específicas do WiFi USB (como saída de pot
 
 | Sintoma | Possível Causa | Solução |
 |---|---|---|
-| A interface de gerenciamento do Tomato não possui a opção "USB Wireless Device Support" | A versão do Tomato não traduziu o suporte USB WiFi | Isso é normal, não um bug; a maioria das versões do Tomato não possui essa funcionalidade |
+| A interface de gerenciamento do Tomato não possui a opção "USB Wireless Device Support" | A versão do Tomato não foi compilada com suporte USB WiFi | Isso é normal, não um bug; a maioria das versões do Tomato não possui essa funcionalidade |
 | Após inserir a placa de rede ALFA, o dmesg detecta o USB mas não há interface de rede | Faltando driver | Isso não pode ser resolvido, o Tomato não possui driver correspondente |
 | Quer instalar manualmente o pacote ipkg, mas não encontra o driver WiFi | A biblioteca de pacotes do Tomato não possui driver USB WiFi | Isso é normal; é recomendado usar o OpenWrt |
 | O modelo antigo ALFA (RT3070) é detectado no Tomato mas não consegue se conectar | Driver incompleto / firmware faltando | Mesmo que o chip seja antigo, não há garantia de que será compatível; é recomendado usar o OpenWrt |
@@ -222,7 +222,7 @@ Se você precisa de funcionalidades específicas do WiFi USB (como saída de pot
 - **Nenhum suporte para monitoramento / injecção**: A arquitetura WiFi do Tomato (driver Broadcom wl) não suporta funcionalidades de teste de penetração e, portanto, a conexão de um USB WiFi externo não altera essa situação.
 - **Nenhum suporte para expansão em modo AP**: Mesmo que os chipsets antigos possam carregar o driver, a interface de configuração de rede do Tomato não suporta a configuração do USB WiFi em modo AP.
 
-Contra-argumentos: Se a versão futura do FreshTomato incluir explicitamente suporte a drivers USB WiFi no release notes oficiais ou se a comunidade apresentar um projeto de移植 do mt76 / rtl8812au amplamente validado, a avaliação de "não suportado" descrita no capítulo 6 precisará ser reavaliada; se o FreshTomato mudar para um núcleo de arquitetura mac80211 de código aberto, a descrição das limitações também precisará ser atualizada.
+Contra-argumentos: Se a versão futura do FreshTomato incluir explicitamente suporte a drivers USB WiFi no release notes oficiais ou se a comunidade apresentar um projeto de portabilidade do mt76 / rtl8812au amplamente validado, a avaliação de "não suportado" descrita no capítulo 6 precisará ser reavaliada; se o FreshTomato mudar para um núcleo de arquitetura mac80211 de código aberto, a descrição das limitações também precisará ser atualizada.
 
 ## 10. Fontes de Referência URL
 
@@ -231,8 +231,8 @@ Contra-argumentos: Se a versão futura do FreshTomato incluir explicitamente sup
 | Site Oficial do FreshTomato | Lista de versões mais recentes e dispositivos suportados pelo FreshTomato | https://freshtomato.org/ | ✅ Verificado | 2026-09-03 |
 | Documentação Oficial do OpenWrt | Drivers USB WiFi e configurações sem fio (referência comparativa) | https://openwrt.org/docs/start | ✅ Verificado | 2026-09-03 |
 | Fórum Oficial do OpenWrt | Discussões sobre drivers USB WiFi (referência comparativa) | https://forum.openwrt.org/ | ✅ Verificado | 2026-09-03 |
-| Catálogo de Produtos da ALFA Network (Yopitek) | Especificações dos produtos atuais da ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
+| Catálogo de Produtos da ALFA Network (Yopitek) | Especificações dos produtos atuais da ALFA | /pt/products/alfa/ | ✅ Verificado | 2026-09-03 |
 
-Artigos Relacionados: [A Placa de Rede Wireless ALFA suporta DD-WRT?](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[A Placa de Rede Wireless ALFA suporta OpenWrt?](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[A Placa de Rede Wireless ALFA suporta NVIDIA DGX Spark?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[A Placa de Rede Wireless ALFA suporta NVIDIA Jetson Nano?](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
+Artigos Relacionados: [A Placa de Rede Wireless ALFA suporta DD-WRT?](/pt/blog/alfa-ddwrt-router-compatibility/) | [A Placa de Rede Wireless ALFA suporta OpenWrt?](/pt/blog/alfa-openwrt-router-compatibility/) | [A Placa de Rede Wireless ALFA suporta NVIDIA DGX Spark?](/pt/blog/alfa-nvidia-dgx-spark-compatibility/) | [A Placa de Rede Wireless ALFA suporta NVIDIA Jetson Nano?](/pt/blog/alfa-nvidia-jetson-nano-compatibility/)
 
 Declaração de Isenção de Responsabilidade: A determinação de compatibilidade deste artigo se baseia no núcleo oficial do Tomato / FreshTomato e no repositório de pacotes. Em alguns casos extremamente raros, usuários avançados podem tentar compilar cruzadamente para implementar funcionalidades básicas em chips antigos, mas isso não faz parte do suporte oficial e não é recomendado para usuários comuns. Para cenários que exigem o uso de USB WiFi em roteadores, o OpenWrt é a única solução de firmware de terceiros viável.

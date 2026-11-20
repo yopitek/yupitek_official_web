@@ -23,8 +23,6 @@ faq:
 ---
 | Merkmal | WPA2 | WPA3 | |---|---|---| | **Authentifizierung** | PSK (4-Way Handshake) | SAE (Dragonfly) | | **Verschlüsselung** | AES-CCMP | AES-GCMP | | **PMF** | Optional | Erforderlich | | **Open WiFi (OWE)** | N/A | Unterstützt | | **Downgrade-Schutz** | Schwach | Stark |
 
-# WPA3-Sicherheitstests mit ALFA-Adapters (2026)
-
 {{< tldr >}}
 WPA3-Sicherheitstests umfassen die Analyse von SAE-Handshakes, Downgrade-Angriffe durch Übergangsmodi, die Bewertung der Dragonblood-Schwachstelle und die Durchsetzung von PMF. AWUS036AXML wird für 6-GHz-Tests verwendet, AWUS036ACH ist für 2,4/5 GHz geeignet.
 {{< /tldr >}}
@@ -98,7 +96,7 @@ WPA3 bietet signifikante Verbesserungen in Authentifizierung, Verschlüsselung u
 
 ## Referenzen
 
-1. [Dragonblood Offizielles Forschungspapier（Vanhoef & Ronen, 2019）](https://papers.mathyvanhoef.com/dragonblood.pdf)
+1. [Dragonblood Offizielles Forschungspapier (Vanhoef & Ronen, 2019)](https://papers.mathyvanhoef.com/dragonblood.pdf)
 2. [Wi-Fi Alliance WPA3 Zertifizierungsdokumentation](https://www.wi-fi.org/discover-wi-fi/wpa3)
 3. [aircrack-ng Offizielle Dokumentation](https://www.aircrack-ng.org/documentation.html)
 4. [hcxdumptool Tool-Dokumentation](https://github.com/ZerBea/hcxdumptool)

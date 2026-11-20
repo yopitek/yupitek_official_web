@@ -2,7 +2,7 @@
 title: "完整教程：在中国大陆 Linux 系统安装所有 Alfa USB WiFi 网卡 — Kali、Ubuntu、Raspberry Pi"
 date: 2026-04-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 slug: "alfa-china-install-complete-guide"
 tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "驱动程序", "中国", "监控模式", "封包注入", "无线网络"]
@@ -19,7 +19,7 @@ faq:
   - question: "哪款 Alfa 网卡支持 WiFi 6？"
     answer: "AWUS036AX 和 AWUS036AXER 采用 RTL8832BU 芯片支持 WiFi 6，Ubuntu 24.04 免驱即用。"
   - question: "哪款 Alfa 网卡支持 WiFi 6E？"
-    answer: "AWUS036AXM 和 AWUS036AXML 采用 MT7921AUN 芯片支持 WiFi 6E 三频段。"
+    answer: "AWUS036AXM 和 AWUS036AXML 均采用 MT7921AUN 芯片，依规格支持 WiFi 6E；其中 AXML 的 6 GHz 本机实测可用，AXM 的 6 GHz 未实测。"
   - question: "树莓派上使用 Alfa 网卡需要注意什么？"
     answer: "务必搭配有源 USB Hub 供电，并刷 Kali ARM64 版本以获得最佳驱动支持。"
 ---
@@ -560,7 +560,7 @@ Found 1 AP
 
 ---
 
-## 虚拟接口（VIF）支持
+## 虚拟接口（VIF）支持 {#虚拟接口-vif-支持}
 
 VIF（虚拟接口功能）允许在单一网卡上同时运行多个接口，例如：
 
@@ -573,7 +573,7 @@ VIF（虚拟接口功能）允许在单一网卡上同时运行多个接口，�
 |--------|---------|------|
 | **MT7612U（AWUS036ACM）** | ✅ 完整原生支持 | VIF 工作流程的最佳选择 |
 | **RTL8812AU（AWUS036ACH）** | ⚠️ 有限 | 无法同时运行托管模式和监控模式 |
-| **RTL8832BU（AX 系列）** | ⚠️ 有限 | 请查阅特定型号文档 |
+| **RTL8832BU（AX 系列）** | ✅ STA+AP 可用 | 内核内置 rtw89_8852bu（kernel 6.17+）实测可用；旧 kernel 的社区 DKMS 驱动不支持 VIF |
 
 ### 创建虚拟接口（MT7612U）
 

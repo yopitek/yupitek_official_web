@@ -13,17 +13,17 @@ tags:
   - "Compatibility"
 categories:
   - "Guía de Hardware"
-description: "ALFA USB網卡無DD-WRT官方驅動，建議使用OpenWrt。"
+description: "Los adaptadores USB WiFi de ALFA no tienen controladores oficiales para DD-WRT; se recomienda usar OpenWrt."
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. Resumen del Problema
 
 Pregunta del cliente: «¿Los adaptadores inalámbricos USB de la serie ALFA pueden utilizarse en routers que han sido flashados con el firmware DD-WRT?»
 
-Conclusión breve: Actualmente, todos los modelos activos de la serie ALFA (AWUS036ACH / ACM / ACHM / ACS / EACS / AX / AXER / AXML / AXM, un total de 9 modelos) no tienen soporte oficial de controladores en DD-WRT y no se recomienda su uso. (Determinante: 9 adaptadores USB de red activos de ALFA) El soporte de WiFi USB en DD-WRT se limita a una cantidad muy reducida de chipsets Atheros / Ralink antiguos y requiere una versión de compilación específica. Si es necesario utilizar un adaptador inalámbrico USB en el router, se recomienda utilizar OpenWrt (ver [Compatibilidad de los adaptadores inalámbricos USB de ALFA con OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)).
+Conclusión breve: Actualmente, todos los modelos activos de la serie ALFA (AWUS036ACH / ACM / ACHM / ACS / EACS / AX / AXER / AXML / AXM, un total de 9 modelos) no tienen soporte oficial de controladores en DD-WRT y no se recomienda su uso. (Determinante: 9 adaptadores USB de red activos de ALFA) El soporte de WiFi USB en DD-WRT se limita a una cantidad muy reducida de chipsets Atheros / Ralink antiguos y requiere una versión de compilación específica. Si es necesario utilizar un adaptador inalámbrico USB en el router, se recomienda utilizar OpenWrt (ver [Compatibilidad de los adaptadores inalámbricos USB de ALFA con OpenWrt](/es/blog/alfa-openwrt-router-compatibility/)).
 
 ## 2. Análisis de Especificaciones y Requisitos del Software Objetivo
 
@@ -62,10 +62,10 @@ Al 9 de septiembre de 2026, la línea de productos de tarjetas de red USB inalá
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | Out-of-tree (rtl8852bu / rtw89) |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | Out-of-tree (rtl8852bu / rtw89) |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | Out-of-tree (8812au, mantenida por morrownr) |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | Linux in-kernel (mt76x0u) |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | Linux in-kernel (mt76x0u) |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | Linux in-kernel (mt76x2u) |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | Out-of-tree (8812au cubierto) |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | Out-of-tree (8821cu, mantenida por morrownr) |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | Out-of-tree (8812au cubierto) |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | Out-of-tree (8821cu, mantenida por morrownr) |
 
 ## 4. Modelos Aplicables y Chipsets
 
@@ -81,7 +81,7 @@ Al 9 de septiembre de 2026, la línea de productos de tarjetas de red USB inalá
 
 Todos los modelos actuales de ALFA (véase la tabla del capítulo 3) no están oficialmente soportados por DD-WRT, por los siguientes motivos:
 
-- Chipsets Realtek (RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU): DD-WRT no tiene paquetes de controladores out-of-tree correspondientes
+- Chipsets Realtek (RTL8812AU / RTL8811AU / RTL8821CU / RTL8832BU): DD-WRT no tiene paquetes de controladores out-of-tree correspondientes
 - Chipsets MediaTek (MT7612U / MT7610U / MT7921AUN): DD-WRT no ha integrado los controladores mt76 / mt7921
 - Incluso si el router tiene un puerto USB y el nivel de hardware puede identificar el dispositivo (se puede ver VID/PID con lsusb), sin controladores no se puede establecer la interfaz de red
 
@@ -103,7 +103,7 @@ Si el cliente desea intentar usar la tarjeta de red ALFA en DD-WRT, debe cumplir
 
 | Modelo | Chipset | Detección de Puertos USB | Carga de Controladores | STA de Conexión a Internet | Modo AP | Monitor | Evaluación General |
 |---|---|---|---|---|---|---|---|
-| AWUS036AXML | MT7921AUN | ✅（lsusb） | ❌ | ❌ | ❌ | ❌ | No soportado |
+| AWUS036AXML | MT7921AUN | ✅ (lsusb) | ❌ | ❌ | ❌ | ❌ | No soportado |
 | AWUS036AXM | MT7921AUN | ✅ | ❌ | ❌ | ❌ | ❌ | No soportado |
 | AWUS036AX | RTL8832BU | ✅ | ❌ | ❌ | ❌ | ❌ | No soportado |
 | AWUS036AXER | RTL8832BU | ✅ | ❌ | ❌ | ❌ | ❌ | No soportado |
@@ -111,7 +111,7 @@ Si el cliente desea intentar usar la tarjeta de red ALFA en DD-WRT, debe cumplir
 | AWUS036ACHM | MT7610U | ✅ | ❌ | ❌ | ❌ | ❌ | No soportado |
 | AWUS036ACM | MT7612U | ✅ | ❌ | ❌ | ❌ | ❌ | No soportado |
 | AWUS036ACS | RTL8811AU | ✅ | ❌ | ❌ | ❌ | ❌ | No soportado |
-| AWUS036EACS | RTL8811CU | ✅ | ❌ | ❌ | ❌ | ❌ | No soportado |
+| AWUS036EACS | RTL8821CU | ✅ | ❌ | ❌ | ❌ | ❌ | No soportado |
 
 Criterio de Evaluación: La biblioteca oficial de DD-WRT y la compilación predeterminada del núcleo no incluyen los controladores de WiFi USB para los chips mencionados anteriormente. La visualización de dispositivos en lsusb solo indica la identificación a nivel de la placa de conexión USB y no garantiza la funcionalidad de la red.
 
@@ -128,7 +128,7 @@ Ingrese `192.168.1.1` (o la dirección IP de su router) en el navegador.
 **Paso 2: Activar la soporte USB**
 
 - Vaya a Services > USB
-- Marque Core USB Support、USB 2.0 Support、USB 3.0 Support (si está disponible)
+- Marque Core USB Support, USB 2.0 Support, USB 3.0 Support (si está disponible)
 - Marque USB Wireless Device Support (si está disponible)
 - Haga clic en Save > Apply Settings
 
@@ -169,7 +169,7 @@ ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
 
 ### Ruta B: Solución alternativa sugerida — Cambiar a OpenWrt
 
-Si el cliente necesita usar la tarjeta de red WiFi ALFA USB en el router, se recomienda encarecidamente cambiar el firmware del router de DD-WRT a OpenWrt. OpenWrt tiene una biblioteca de controladores WiFi USB activa, que admite chips MT7612U / MT7610U / RTL8812AU, entre otros. Para obtener los pasos detallados, consulte [¿Es compatible la tarjeta de red inalámbrica ALFA con OpenWrt?](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/).
+Si el cliente necesita usar la tarjeta de red WiFi ALFA USB en el router, se recomienda encarecidamente cambiar el firmware del router de DD-WRT a OpenWrt. OpenWrt tiene una biblioteca de controladores WiFi USB activa, que admite chips MT7612U / MT7610U / RTL8812AU, entre otros. Para obtener los pasos detallados, consulte [¿Es compatible la tarjeta de red inalámbrica ALFA con OpenWrt?](/es/blog/alfa-openwrt-router-compatibility/).
 
 ## 8. Errores Comunes y Soluciones
 
@@ -189,7 +189,7 @@ Si el cliente necesita usar la tarjeta de red WiFi ALFA USB en el router, se rec
 - **Inestabilidad en modo AP**: Incluso si los chips Ralink antiguos pueden funcionar, el modo AP de USB WiFi en DD-WRT suele presentar problemas de desconexión y rendimiento.
 - **Fragmentación de versiones**: Las versiones de compilación de DD-WRT para diferentes modelos de routers difieren significativamente, lo que no garantiza que un controlador de una versión funcione en otra.
 - **No mantenimiento activo**: El ritmo de desarrollo de DD-WRT se ha ralentizado, por lo que la posibilidad de agregar nuevos controladores USB WiFi es baja.
-- **Complemento**: Incluso dejando de lado las limitaciones propias de DD-WRT, el mantenedor de los controladores de los modelos AWUS036AX / AXER (RTL8832BU), morrownr, ha recomendado abiertamente a los usuarios de Linux evitar esta serie de chips (ver [¿Es compatible el router inalámbrico ALFA con OpenWrt?](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) Capítulo 9), y no es solo un problema del plataforma DD-WRT.
+- **Complemento**: Incluso dejando de lado las limitaciones propias de DD-WRT, el mantenedor de los controladores de los modelos AWUS036AX / AXER (RTL8832BU), morrownr, ha recomendado abiertamente a los usuarios de Linux evitar esta serie de chips (ver [¿Es compatible el router inalámbrico ALFA con OpenWrt?](/es/blog/alfa-openwrt-router-compatibility/) Capítulo 9), y no es solo un problema del plataforma DD-WRT.
 
 Condiciones de rebate: Si el cliente utiliza versiones de compilación comunitarias con controladores adicionales como BrainSlayer / Kong, las condiciones de soporte podrían ser diferentes; esta determinación se realiza con base en las versiones oficialmente publicadas.
 
@@ -201,8 +201,8 @@ Condiciones de rebate: Si el cliente utiliza versiones de compilación comunitar
 | Wiki oficial de DD-WRT — Instalación | Instrucciones de instalación (con soporte USB) | https://wiki.dd-wrt.com/wiki/Installation | ✅ Verificado a través de la liga desde la página principal | 2026-09-03 |
 | Documentos oficiales de OpenWrt | Referencia de comparación de WiFi USB | https://openwrt.org/docs/start | ✅ Verificado | 2026-09-03 |
 | morrownr/8812au GitHub | Controladores Linux para RTL8812AU (no integrados en DD-WRT) | https://github.com/morrownr/8812au-20210820 | ✅ Verificado | 2026-09-03 |
-| Catálogo de productos de ALFA Network (Yopitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 2026-09-03 |
+| Catálogo de productos de ALFA Network (Yopitek) | Especificaciones de productos actuales de ALFA | /es/products/alfa/ | ✅ Verificado | 2026-09-03 |
 
-Artículos relacionados: [¿Soporta el adaptador inalámbrico ALFA OpenWrt?](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) | [¿Soporta el adaptador inalámbrico ALFA Tomato?](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)
+Artículos relacionados: [¿Soporta el adaptador inalámbrico ALFA OpenWrt?](/es/blog/alfa-openwrt-router-compatibility/) | [¿Soporta el adaptador inalámbrico ALFA Tomato?](/es/blog/alfa-tomato-router-compatibility/)
 
 Aviso legal: La determinación de la compatibilidad de este documento se realiza en función del estado del controlador del chip y la biblioteca de paquetes oficiales de DD-WRT. Existe una gran cantidad de versiones de compilación personalizadas en la comunidad de DD-WRT, y si el cliente utiliza una versión no oficial, los resultados reales pueden ser diferentes. Se recomienda al cliente utilizar OpenWrt como opción preferente para el WiFi USB en los routers.

@@ -45,7 +45,7 @@ sequenceDiagram
     Beacon->>User: 蓝牙广播 (UUID: FE6F + HWID)
     User->>LINE: 转发 HWID + 用户 ID
     LINE->>Bot: Webhook POST (beacon 事件: enter/stay/banner)
-    Bot->>User: 回复/推送消息 (例如：发送优惠券)
+    Bot->>User: 回复/推送消息 (例如: 发送优惠券)
 ```
 
 ### 步骤 1：注册您的硬件 ID (HWID)

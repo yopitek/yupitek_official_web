@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036EACS 設定ガイド（中国版）：WindowsでのインストールとLinux互換性について"
-description: "中国国内でのALFA AWUS036EACSの設定ガイド。RTL8821CU WiFi 5 + Bluetooth 4.2 Nanoアダプター。Windows用ドライバは files.alfa.com.tw から入手可能です。LinuxおよびKali Linuxはサポートされていません。推奨される代替製品についても解説します。"
+description: "中国国内でのALFA AWUS036EACSの設定ガイド。RTL8821CU WiFi 5 + Bluetooth 4.2 Nanoアダプター。Windows用ドライバは files.alfa.com.tw から入手可能です。Linuxカーネル6.2以降では内蔵のrtw88_8821cuドライバが挿すだけで動作し、モニターモードとインジェクションも実測で動作します。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
@@ -18,33 +18,37 @@ faq:
   - question: "AWUS036EACSはどのチップを使っていますか？Bluetoothをサポートしていますか？"
     answer: "Realtek RTL8821CUチップを採用し、WiFi 5とBluetooth 4.2をサポートしています。"
   - question: "AWUS036EACSはLinuxでの使用に適していますか？"
-    answer: "推奨しません。RTL8821CUには適切に保守されたLinuxドライバーがなく、モニターモードは非常に不安定です。"
+    answer: "適しています。Linuxカーネル6.2以降（例：Ubuntu 24.04 HWE / kernel 6.17）には内蔵のrtw88_8821cuドライバが含まれ、コンパイル不要で挿すだけで認識します。モニターモードとパケットインジェクションは両バンド（2.4GHz / 5GHz）で100%、WPA .22000のエンドツーエンド取得も実測でき、Bluetoothも動作確認済みです。"
   - question: "AWUS036EACSのWindowsドライバーはどうインストールしますか？"
     answer: "Alfa公式サイトfiles.alfa.com.twからWindowsドライバーパッケージをダウンロードし、管理者としてインストール後に再起動するだけです。"
   - question: "AWUS036EACSのBluetoothはどう有効にしますか？"
     answer: "ドライバーインストール後に通常自動的に有効になり、Windowsの設定でBluetoothスイッチをオンにしてデバイスに接続できます。"
   - question: "Linuxで無線セキュリティリサーチ用アダプターが必要な場合、どれを選ぶべきですか？"
-    answer: "AWUS036ACMまたはAWUS036ACSをお勧めします。これらはLinuxでモニターモードを完全にサポートします。"
+    answer: "AWUS036EACS自体がカーネル6.2以降でモニターモードとパケットインジェクションに対応し、Bluetoothも使えます。さらに選択肢が欲しい場合は、AWUS036ACMやAWUS036ACSもLinuxでモニターモードを完全にサポートします。自分が所有または許可されたネットワークでのみ使用してください。"
 ---
 
-AWUS036EACSは、ALFAの超小型（Nano）WiFi 5 + Bluetooth 4.2 コンボアダプターです。主にコンパクトなワイヤレスアップグレードを必要とするWindowsユーザー向けに設計されています。搭載されているRTL8821CUチップセットには、信頼できるオープンソースのLinuxドライバが存在せず、モニターモードやパケットインジェクションもサポートされていません。このガイドでは、中国国内のソースからのWindowsへのインストール方法と、Linuxにおける制限事項について詳しく解説します。
+AWUS036EACSは、ALFAの超小型（Nano）WiFi 5 + Bluetooth 4.2 コンボアダプターです。コンパクトなワイヤレスアップグレードを必要とするWindowsユーザーに最適で、Linuxカーネル6.2以降では内蔵のrtw88_8821cuドライバが挿すだけで対応します（コンパイル不要）。このガイドでは、中国国内のソースからのWindowsへのインストール方法と、Linuxでの使い方について解説します。
 
 
 {{< tldr >}}
-AWUS036EACSはRTL8821CUチップを採用したWiFi 5とBluetooth 4.2搭載のミニアダプターで、Windowsインストールは簡単ですがLinuxドライバーが不安定で、モニターモードには推奨されません。
+AWUS036EACSはRTL8821CUチップを採用したWiFi 5とBluetooth 4.2搭載のミニアダプターで、Windowsインストールは簡単です。Linuxカーネル6.2以降では内蔵のrtw88_8821cuドライバが含まれるため、モニターモードとパケットインジェクションが挿すだけで動作し、Bluetoothも動作確認済みです。
 {{< /tldr >}}
 
-> **AWUS036EACSは、Kali Linux、Ubuntu、Debian、Raspberry Piでは安定して動作しません。** RTL8821CUチップセットには、メンテナンスされているオープンソースドライバがありません。モニターモード、パケットインジェクション、VIF（仮想インターフェース）は利用できません。
+> **AWUS036EACSは、Linuxカーネル6.2以降で挿すだけで動作します。** カーネル6.2以降（例：Ubuntu 24.04 HWE / kernel 6.17）には内蔵のrtw88_8821cuドライバが含まれるため、コンパイルは不要です。モニターモードとパケットインジェクションは両バンド（2.4GHz / 5GHz）で100%、WPAハンドシェイクのエンドツーエンド取得（.22000）も実測でき、Bluetooth（BT）も動作確認済みです（BR/EDR・BLEともにデバイスをスキャンでき、WiFiと共存します）。自分が所有または許可されたネットワークでのみ使用してください。
 >
-> セキュリティリサーチ用にLinux互換のアダプターが必要な場合は、以下のいずれかを検討してください：
+> **運用のヒント：** これはBT+WiFiコンボカードです。モードを繰り返し切り替えるとWiFiの受信が固まることがあります（`ip link set up` が `Operation already in progress`、`iw ... set channel` が `-16 busy` を返す）。各テスト段階の前に、アダプターを抜いて別のUSBポートに挿し直すと回復します。
+>
+> 同シリーズのその他のLinux対応アダプター：
 > - **[AWUS036ACM](/ja/blog/awus036acm-china-install-guide/)** — MT7612U インカーネルドライバ、モニターモード・VIFに完全対応
 > - **[AWUS036ACS](/ja/blog/awus036acs-china-install-guide/)** — RTL8811AU、手頃な価格でモニターモードに対応
 
 ## Linuxユーザーの方へ：最初にお読みください
 
-> **AWUS036EACSは、Kali Linux、Ubuntu、Debian、Raspberry Piでは安定して動作しません。** RTL8821CUチップセットには、メンテナンスされているオープンソースドライバがありません。モニターモード、パケットインジェクション、VIF（仮想インターフェース）は利用できません。
+> **AWUS036EACSは、Linuxカーネル6.2以降で挿すだけで動作します。** カーネル6.2以降（例：Ubuntu 24.04 HWE / kernel 6.17）には内蔵のrtw88_8821cuドライバが含まれるため、コンパイルは不要です。モニターモードとパケットインジェクションは両バンド（2.4GHz / 5GHz）で100%、WPAハンドシェイクのエンドツーエンド取得（.22000）も実測でき、Bluetooth（BT）も動作確認済みです（BR/EDR・BLEともにデバイスをスキャンでき、WiFiと共存します）。自分が所有または許可されたネットワークでのみ使用してください。
 >
-> セキュリティリサーチ用にLinux互換のアダプターが必要な場合は、以下のいずれかを検討してください：
+> **運用のヒント：** これはBT+WiFiコンボカードです。モードを繰り返し切り替えるとWiFiの受信が固まることがあります（`ip link set up` が `Operation already in progress`、`iw ... set channel` が `-16 busy` を返す）。各テスト段階の前に、アダプターを抜いて別のUSBポートに挿し直すと回復します。
+>
+> 同シリーズのその他のLinux対応アダプター：
 > - **[AWUS036ACM](/ja/blog/awus036acm-china-install-guide/)** — MT7612U インカーネルドライバ、モニターモード・VIFに完全対応
 > - **[AWUS036ACS](/ja/blog/awus036acs-china-install-guide/)** — RTL8811AU、手頃な価格でモニターモードに対応
 
@@ -102,23 +106,30 @@ AWUS036EACSには Bluetooth 4.2 も搭載されています。ドライバのイ
 
 ## Linux 互換性の詳細
 
+**カーネル6.2以降**では、RTL8821CUは内蔵の `rtw88_8821cu` モジュールで駆動されるため、コンパイルは不要です。挿すだけで認識されます。まず `uname -r` でカーネルバージョンを確認してください。
+
 ### Kali Linux
 
-RTL8821CUには、現代の Kali カーネル向けにメンテナンスされている DKMS ドライバがありません。コミュニティによるドライバは存在しますが、不安定であり、カーネルアップデート後にアダプターが動作しなくなったり、システムが不安定になったりするという報告があります。モニターモードやパケットインジェクションも、信頼できる形では利用できません。
+6.2以降のカーネルでは、内蔵の `rtw88_8821cu` ドライバが自動的に読み込まれます。モニターモードとパケットインジェクションを両バンド（2.4GHz / 5GHz）で100%実測し、WPAハンドシェイクのエンドツーエンド取得（.22000）も確認しました。自分が所有または許可されたネットワークでのみ使用してください。
 
-**推奨:** Kali Linux でのセキュリティ業務には、[AWUS036ACM](/ja/blog/awus036acm-china-install-guide/) または [AWUS036ACH](/ja/blog/awus036ach-china-install-guide/) を使用してください。
+```bash
+sudo nmcli dev set wlxXXXX managed no
+sudo ip link set wlxXXXX down
+sudo iw dev wlxXXXX set type monitor
+sudo ip link set wlxXXXX up
+```
 
 ### Ubuntu 22.04 / 24.04
 
-Ubuntu にも、RTL8821CU 用の安定したインカーネルドライバや DKMS サポートはありません。モニターモード、パケットインジェクション、VIF はサポート対象外です。
+Ubuntu 24.04 は GA カーネル 6.8・HWE カーネル（例：kernel 6.17）のいずれにも内蔵の `rtw88_8821cu` ドライバ（カーネル6.2でmainlineに統合）が含まれ、モニターモード、パケットインジェクション、クライアント接続が挿すだけで動作します。旧カーネル（6.2未満、例：Ubuntu 22.04 の GA カーネル）の場合は、HWE カーネルに更新すると内蔵ドライバが利用できます。
 
-### Debian
+### Debian / Raspberry Pi
 
-Ubuntu と同様の状況です。信頼できるオープンソースドライバがないため、推奨されません。
+状況は同じです。カーネルが6.2以降（ARM64ビルドを含む）であれば、内蔵の `rtw88_8821cu` ドライバがコンパイル不要でアダプターを処理します。
 
-### Raspberry Pi
+### 運用のヒント（BT+WiFiコンボカード）
 
-Raspberry Pi での RTL8821CU の使用は強くお勧めしません。ARM アーキテクチャでのドライバコンパイルは失敗することが非常に多いためです。Raspberry Pi を使用するプロジェクトには、[AWUS036ACM](/ja/blog/awus036acm-china-install-guide/) を選択してください。
+EACSはBluetoothとWiFiを1つのチップに搭載しているため、モードを繰り返し切り替えるとWiFiの受信が固まることがあります（`ip link set up` が `Operation already in progress`、`iw ... set channel` が `-16 busy` を返す）。各テスト段階の前に、アダプターを抜いて別のUSBポートに挿し直すと状態がクリアされます。Bluetooth（BR/EDR・BLE）は動作確認済みで、WiFiと共存します。
 
 ---
 

@@ -2,6 +2,7 @@
 title: "Adaptadores Sem Fio ALFA Network"
 description: "Yopitek distribui adaptadores USB Wi-Fi de alta potência ALFA Network, altamente reconhecidos na comunidade de pesquisa de segurança."
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
@@ -37,16 +38,16 @@ ALFA Network é um renomado fabricante taiwanês de equipamentos de rede sem fio
     AC1200 dual-band, Realtek RTL8812AU, USB 3.0, dual antena externa 5 dBi, alta potência.
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/pt/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 banda dupla, chipset MediaTek MT7610U, USB 2.0, design compacto com antena única — ideal para pentesting portátil.
+    AC600 banda dupla, chipset MediaTek MT7610U, USB 2.0, design compacto com antena única — ideal para pentesting portátil.
   {{< /card >}}
   {{< card title="AWUS036ACM" href="/pt/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 dual-band, MediaTek MT7612U, USB 3.0, 300+867 Mbps, antena dupla 5 dBi.
   {{< /card >}}
   {{< card title="AWUS036ACS" href="/pt/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
-    AC433 dual-band, Realtek RTL8811AU, USB 2.0, design ultrafino mini 55mm.
+    AC600 dual-band, Realtek RTL8811AU, USB 2.0, design ultrafino mini 55mm.
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/pt/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
-    AC600 dual-band, Realtek RTL8811CU, USB 2.0, design compacto ultrafino.
+    AC600 dual-band, Realtek RTL8821CU, USB 2.0, design compacto ultrafino.
   {{< /card >}}
 {{< /card-group >}}
 

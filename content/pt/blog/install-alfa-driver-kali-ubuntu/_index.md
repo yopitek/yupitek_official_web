@@ -71,7 +71,7 @@ O driver que você precisa depende inteiramente do chipset, não do nome de mark
 |---|---|---|---|
 | [AWUS036ACH](/pt/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/pt/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (no kernel) |
-| [AWUS036AX](/pt/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AX](/pt/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.17) |
 | [AWUS036AXML](/pt/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (kernel 5.18+) |
 
 ### Identificar Seu Adaptador com lsusb
@@ -401,7 +401,7 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/pt/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/pt/products/alfa/awus036acm/) | MT7612U | Nativo (`mt76x2u`) | Nativo (`mt76x2u`) |
-| [AWUS036AX](/pt/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
+| [AWUS036AX](/pt/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.17) | OOK (<6.17) |
 | [AWUS036AXML](/pt/products/alfa/awus036axml/) | MT7921AUN | Nativo (`mt7921u`, kernel 5.18+) | Nativo (`mt7921u`, kernel 6.8) |
 
 ---

@@ -3,7 +3,7 @@ title: "HAK5 WiFi Pineapple Pager × ALFA Network：外接 USB 无线网卡兼�
 description: "这是一份深入评估 HAK5 WiFi Pineapple Pager 在 OpenWrt 环境下与 ALFA Network 外接 USB 无线网卡兼容性的技术报告与安装指南。了解 MIPS 架构交叉编译、USB 2.0 供电限制及驱动程序设置细节。"
 date: 2026-06-19
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -22,8 +22,6 @@ faq:
     answer: "RTL8812AU 在 MIPS 平台存在 wiphy_register 核心错误，导致接口无法加载，需套用社群修正 patch，建议改用 AWUS036ACM。"
 ---
 在将任何高功率 USB 无线网卡插入 HAK5 Pager 之前，您必须了解以下两大主要障碍：CPU 架构与 USB 供电限制。
-
-# HAK5 WiFi Pineapple Pager × ALFA Network：外接 USB 无线网卡兼容性评估与设置指南
 
 无线网络安全审计需要高度精准、多功能性以及合适的硬件支持。**HAK5 WiFi Pineapple Pager** 作为搭载强大 **PineAP v8** 引擎的超便携、口袋型审计工具，吸引了大量渗透测试人员的关注。
 
@@ -71,10 +69,10 @@ HAK5 Pager 仅配备单个 USB 2.0 Host 接口。根据标准 USB 2.0 规范，�
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **AWUS036ACM** | MediaTek **MT7612U** | 2.4 GHz / 5 GHz | ~600 mA (需 Hub) | **内核内置 (Native)** | 使用 `opkg` 直接安装 | ✅ 支持 / ✅ 支持 | 🏆 **首选推荐（最稳定）** |
 | **AWUS036ACH** | Realtek **RTL8812AU** | 2.4 GHz / 5 GHz | ~720 mA (需供电 Hub) | 内核未内置 (Out-of-Kernel) | 需使用 SDK 交叉编译 | ✅ 支持 / ✅ 支持 | ⭐⭐ **高级用户**（MIPS 平台有 wiphy bug） |
-| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4/5/6 GHz (WiFi 6E) | ~720 mA (需供电 Hub) | **内核内置 (Native)** | 使用 `opkg` + 手动置入固件 | ✅ 支持 / ✅ 支持 | ⭐⭐⭐ **潜力大**，但供电要求严格 |
+| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4/5/6 GHz (WiFi 6E) | ~720 mA (需供电 Hub) | **内核内置 (Native)** | 使用 `opkg` + 手动置入固件 | ✅ 支持 / ⚠️ kernel 6.16 以前有社区反馈；kernel 6.17 实测失败 | ⭐⭐⭐ **潜力大**，但供电要求严格 |
 | **AWUS036ACHM** | MediaTek **MT7610U** | 2.4 GHz / 5 GHz | ~400 mA (Pager 可直接供电) | 部分内置 | 使用 `opkg` 安装 | ✅ 支持 / ✅ 支持 | ⭐⭐⭐ **预算折中方案** |
 | **AWUS036ACS** | Realtek **RTL8811AU** | 2.4 GHz / 5 GHz | ~500 mA (边缘) | 内核未内置 | 需使用 SDK 交叉编译 | ✅ 支持 / ✅ 支持 | ⭐⭐ **普通**（需要手动编译驱动） |
-| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | ~500 mA | 内核未内置 | 不建议 | ❌ **不支持监听** | ❌ **无法使用** |
+| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | ~500 mA | 主线已含 `rtw88_8821cu`，Pager 固件是否编入未验证 | 未验证 | GX10 内核 6.17 实测 monitor／injection 可用，Pager 上未实测 | ⚠️ **未于 Pager 验证** |
 
 ---
 
@@ -98,7 +96,7 @@ HAK5 Pager 仅配备单个 USB 2.0 Host 接口。根据标准 USB 2.0 规范，�
 运行 `lsusb` 确认系统已成功识别 MediaTek 芯片组：
 ```bash
 lsusb
-# 应显示以下信息：
+# 应显示以下信息:
 # Bus 001 Device 002: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/b/g/n/ac Wireless Adapter
 ```
 
@@ -128,7 +126,7 @@ reboot
 重启完成后，SSH 登录并检查无线网卡接口：
 ```bash
 iw dev
-# 应看到新增的 wlan 接口（如 wlan2）
+# 应看到新增的 wlan 接口 (如 wlan2)
 ```
 
 启用 Monitor Mode：
@@ -140,7 +138,7 @@ ip link set wlan2 up
 验证接口状态：
 ```bash
 iw dev wlan2 info
-# 应看到："type monitor"
+# 应看到: "type monitor"
 ```
 
 ---
@@ -172,7 +170,7 @@ git clone https://github.com/aircrack-ng/rtl8812au.git package/kernel/rtl8812au
 进入配置菜单并选取无线网卡驱动：
 ```bash
 make menuconfig
-# 进入：Kernel modules -> Wireless Drivers -> 勾选 kmod-rtl8812au
+# 进入: Kernel modules -> Wireless Drivers -> 勾选 kmod-rtl8812au
 ```
 开始编译：
 ```bash
@@ -216,7 +214,7 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 - 🌐 官方网站：[www.yupitek.com](https://www.yupitek.com)
 - 📧 联系信箱：[sales@yupitek.com](mailto:sales@yupitek.com)
 - 📞 联系电话：+886-2-87325338
-- 📍 公司地址：台北市信义区富阳街34巷72號1楼
+- 📍 公司地址：台北市信义区富阳街34巷72号1楼
 
 ## 参考文献
 

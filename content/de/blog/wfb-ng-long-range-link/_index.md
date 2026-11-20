@@ -57,15 +57,15 @@ Dieser Guide soll kein DJI-System ersetzen. Er zeigt einen praktischen Open-Sour
 
 **wfb-ng** (Wireless Fibre / WiFi Broadcast – next generation) ist ein Open-Source-Projekt für digitales FPV und Telemetrie mit einer cleveren Grundidee:
 
-> Es nutzt WLAN nicht als „Netzwerk", sondern als „Funk".
+> Es nutzt WLAN nicht als „Netzwerk“, sondern als „Funk“.
 
 Normales 802.11 wurde für lokale Netzwerke entwickelt – Verbindungsaufbau, ACK, Neuübertragung. Über große Entfernungen, mit bewegten Fahrzeugen und schwachen Signalen wird dieser Overhead zum Problem. wfb-ng geht einen anderen Weg mit **raw WiFi injection**:
 
-- Der Adapter wechselt in den **Monitor Mode** – er „verbindet" sich mit niemandem.
+- Der Adapter wechselt in den **Monitor Mode** – er „verbindet“ sich mit niemandem.
 - Er injiziert direkt rohe WLAN-Frames. **Kein ACK, keine Neuübertragung** (FEC Forward Error Correction gleicht Paketverluste aus).
 - Das umgeht die Reichweiten- und Latenzgrenzen von Standard-802.11 und treibt Distanz und Stabilität an das physische Limit der Hardware.
 
-Einfach gesagt: Ein handelsüblicher USB-Adapter wird zu einem Paar „Digitalfunkgeräte", die RTP-Video, MAVLink-Telemetrie und sogar einen IP-Tunnel übertragen können.
+Einfach gesagt: Ein handelsüblicher USB-Adapter wird zu einem Paar „Digitalfunkgeräte“, die RTP-Video, MAVLink-Telemetrie und sogar einen IP-Tunnel übertragen können.
 
 - Projektseite (GitHub): https://github.com/svpcom/wfb-ng.git
 - Weit verbreitet im PX4-/ArduPilot-Ökosystem für DIY-Digital-FPV. Aktive Community, auch in der ukrainischen Drohnen-Community im Einsatz.
@@ -74,7 +74,7 @@ Einfach gesagt: Ein handelsüblicher USB-Adapter wird zu einem Paar „Digitalfu
 
 ## 3. Der Hauptdarsteller: ALFA AWUS036ACH
 
-Das „Funkgerät" dieses Links ist der **ALFA AWUS036ACH**.
+Das „Funkgerät“ dieses Links ist der **ALFA AWUS036ACH**.
 
 Er verwendet den **Realtek RTL8812AU**-Chipsatz mit **802.11ac (WiFi 5)**, **Dualband 2,4 GHz / 5 GHz**, USB 3.0 Type-C und abnehmbaren RP-SMA-Antennen. Entscheidend: **Die offizielle wfb-ng-Testhardware verwendet AWUS036ACH auf beiden Enden im 5-GHz-Modus**. Dieser Adapter wurde vom Projektautor für den stabilsten Treibersupport validiert.
 
@@ -85,7 +85,7 @@ Drei Gründe für diese Wahl:
 3. **Universell und robust**: Das USB-Format funktioniert sowohl an der Drohne als auch an der Bodenstation. Keine verschiedenen Adapter für verschiedene Geräte. Fällt einer aus, wird er einfach getauscht.
 
 {{< alert "triangle-exclamation" >}}
-**Hinweis**: wfb-ng benötigt einen **gepatchten Treiber** (z. B. `rtl88xxau_wfb`). Der Standard-Linux-Kernel-Treiber kann den von wfb-ng benötigten Injection-Modus nicht aktivieren. Die Installationsanleitung findest du in den Abschnitten „Softwareliste" und „Step-by-Step".
+**Hinweis**: wfb-ng benötigt einen **gepatchten Treiber** (z. B. `rtl88xxau_wfb`). Der Standard-Linux-Kernel-Treiber kann den von wfb-ng benötigten Injection-Modus nicht aktivieren. Die Installationsanleitung findest du in den Abschnitten „Softwareliste“ und „Step-by-Step“.
 {{< /alert >}}
 
 ---
@@ -183,7 +183,7 @@ sudo apt install -y \
 
 ## 7. Schritt-für-Schritt-Einrichtung
 
-Dieser Abschnitt hat vier Teile. **Pfad A (Raspberry Pi Quick Start)** ist die empfohlene Methode – nahezu „brennen und loslegen". **Pfad B** ist für die manuelle Installation auf x86-Linux-Bodenstationen. **Pfad C und D** behandeln Schlüsselpaarung und Konfiguration; beide Pfade nutzen diese.
+Dieser Abschnitt hat vier Teile. **Pfad A (Raspberry Pi Quick Start)** ist die empfohlene Methode – nahezu „brennen und loslegen“. **Pfad B** ist für die manuelle Installation auf x86-Linux-Bodenstationen. **Pfad C und D** behandeln Schlüsselpaarung und Konfiguration; beide Pfade nutzen diese.
 
 ### A. Raspberry Pi Quick Start (Empfohlen)
 
@@ -291,7 +291,7 @@ wfb_keygen
 
 # drone.key auf die Drohne legen
 # gs.key auf die Bodenstation legen
-# Beide müssen zusammengehören – sonst zeigt der Link „verbunden" aber keine Daten
+# Beide müssen zusammengehören – sonst zeigt der Link „verbunden“ aber keine Daten
 ```
 
 > Wenn du **Pfad B's Auto-Installations-Skript (install_gs.sh)** verwendet hast, werden die Schlüssel automatisch erzeugt und konfiguriert. Bei manueller Installation stell sicher, dass `drone.key` und `gs.key` ein Paar sind.
@@ -356,7 +356,7 @@ Lösung (auf der Drohnenseite zwingend erforderlich):
 
 ### Stolperfalle 2: Verschlüsselungsfehler / keine Verbindung
 
-Wenn `wfb-cli gs` „verbunden" anzeigt, aber **kein Video und keine Telemetrie ankommt**, liegt es fast immer an einem der folgenden Punkte:
+Wenn `wfb-cli gs` „verbunden“ anzeigt, aber **kein Video und keine Telemetrie ankommt**, liegt es fast immer an einem der folgenden Punkte:
 
 - **Schlüsselkonflikt**: Prüfe, ob `drone.key` auf der Drohne und `gs.key` auf der Bodenstation zusammengehören.
 - **Kanal- oder link_domain-Konflikt**: Beide Seiten müssen identische `wifi_channel`- und `link_domain`-Einstellungen haben.
@@ -373,7 +373,7 @@ journalctl -xu wifibroadcast@gs
 Dieser Link sendet aktiv Funkwellen. Er ist eine Funkübertragungseinrichtung.
 
 - **Prüfe vor der Nutzung, ob deine lokalen Vorschriften diese Art von WLAN-Übertragung mit der geplanten Leistung und den verwendeten Frequenzen erlauben.**
-- Taiwan, China, die EU und die USA haben jeweils eigene Regelungen für Sendeleistung, verfügbare Kanäle und „Nicht-Verbindungs"-Übertragungen im 5,8-GHz-ISM-Band.
+- Taiwan, China, die EU und die USA haben jeweils eigene Regelungen für Sendeleistung, verfügbare Kanäle und „Nicht-Verbindungs“-Übertragungen im 5,8-GHz-ISM-Band.
 - Die Einstellung `wifi_region = 'BO'` hebt das Hardware-Leistungslimit auf, aber **macht die Nutzung nicht automatisch in deinem Land legal**. Passe Kanäle und Leistung an die lokalen Funkvorschriften an.
 - Verwende den Link nur in autorisierten Umgebungen (privates Ackerland, abgeschlossene Testgelände, Schulungseinrichtungen). Störe nicht den Funkverkehr anderer.
 

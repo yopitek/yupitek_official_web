@@ -22,8 +22,6 @@ faq:
     answer: "Ja. Der DW5811e ist Dells umgelabelter EM7455 auf Basis desselben Qualcomm-MDM9230-Chipsatzes."
 ---
 
-# Sierra EM7455 im Test: Warum es die Lieblings-Sierra-Karte für Makers und Labore ist
-
 {{< alert >}}
 Yopitek bietet Produktinformationen, Bezugskanäle und technische Inhalte zu Sierra Wireless / Semtech; kein offiziell autorisierter Distributor, nur zur technischen Referenz.
 {{</alert >}}
@@ -109,7 +107,7 @@ Diese Frage kommt sehr oft. Tatsächlich **nutzen EM7455 und EM7430 exakt densel
 
 ## EM7455 vs. MC7455: Identischer Chip, nur anderer Anschluss
 
-Wie oben erwähnt, nutzen EM7455 (M.2) und MC7455 (mPCIe) denselben Qualcomm MDM9230, elektrisch sind sie komplett identisch. Der einzige Unterschied ist die „Haut", also das Gehäuse:
+Wie oben erwähnt, nutzen EM7455 (M.2) und MC7455 (mPCIe) denselben Qualcomm MDM9230, elektrisch sind sie komplett identisch. Der einzige Unterschied ist die „Haut“, also das Gehäuse:
 
 | Punkt | EM7455 | MC7455 |
 |---|---|---|
@@ -212,7 +210,7 @@ config interface 'wwan'
 /etc/init.d/network restart
 ```
 
-Wenn du lieber mit der Maus arbeitest (LuCI-Web-Interface): unter „Network" → „Interfaces" ein neues Interface anlegen, Protokoll „QMI" wählen, Gerät `/dev/cdc-wdm0` auswählen und deinen APN eintragen, fertig.
+Wenn du lieber mit der Maus arbeitest (LuCI-Web-Interface): unter „Network“ → „Interfaces“ ein neues Interface anlegen, Protokoll „QMI“ wählen, Gerät `/dev/cdc-wdm0` auswählen und deinen APN eintragen, fertig.
 
 > Tipp für Raspberry-Pi-Fans: Probier unbedingt ROOter aus (eine OpenWrt-basierte Firmware, die speziell auf 4G/5G-Routing ausgelegt ist) — viele praktische Konfigurations-Hooks sind schon eingebaut.
 

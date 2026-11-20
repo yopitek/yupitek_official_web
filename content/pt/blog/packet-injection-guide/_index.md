@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["injeção-pacotes", "aireplay-ng", "Kali-Linux", "adaptador-WiFi", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "O que é injeção de pacotes WiFi?"
@@ -18,12 +18,12 @@ faq:
   - question: "Como testar se o adaptador suporta injeção de pacotes?"
     answer: "Primeiro ative o modo monitor, depois execute aireplay-ng --test wlan0mon. Se a saída mostrar Injection is working!, o suporte está confirmado. Taxa de sucesso acima de 80% e confiável."
   - question: "Quais adaptadores ALFA suportam injeção de pacotes?"
-    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN) e AWUS036ACM (MT7612U) suportam completamente. Com o driver correto, funcionam no Kali Linux."
+    answer: "AWUS036ACH (RTL8812AU) e AWUS036ACM (MT7612U) suportam completamente com o driver correto no Kali Linux. O AWUS036AXML (MT7921AUN) tem relatos da comunidade de injeção funcional em kernels anteriores ao 6.16, mas em nossos testes com o kernel stock 6.17 o teste de injeção falhou (monitor, AP e WPA3 continuam funcionando); se precisar de injeção, use ACH, EACS, ACS ou AX."
   - question: "Como melhorar quando a taxa de injeção de pacotes  é inferior a 50%?"
     answer: "Aproxime-se do AP alvo, bloqueie a interface de monitor no mesmo canal, confirme a configuração de TX Power, e verifique se o driver e a versão do aircrack-ng e não a versão da distribuição."
 ---
 {{< tldr >}}
-Injecao de pacotes e a capacidade do adaptador de transmitir frames 802.11 arbitrarios, limitada pelo driver e nao pelo hardware. Adaptadores ALFA com chipsets RTL8812AU, MT7612U e MT7921AUN suportam completamente com o driver aircrack-ng.
+Injecao de pacotes e a capacidade do adaptador de transmitir frames 802.11 arbitrarios, limitada pelo driver e nao pelo hardware. Adaptadores ALFA com chipsets RTL8812AU e MT7612U suportam completamente com o driver aircrack-ng; o MT7921AUN (AWUS036AXML) é uma exceção em kernels recentes (veja as notas do chipset abaixo).
 {{< /tldr >}}
 
 A injeção de pacotes — formalmente conhecida como **injeção de frames 802.11** — é a capacidade de um adaptador wireless de transmitir frames 802.11 arbitrários no meio wireless, incluindo frames que não se originam da própria pilha de rede do adaptador. Em operação normal, um driver wireless constrói e transmite apenas os frames que o sistema operacional gerou legitimamente: requisições de associação, frames de dados para redes conectadas, e assim por diante. A injeção de pacotes contorna essas restrições, permitindo que uma ferramenta como `aireplay-ng` crie e envie qualquer tipo de frame — gerenciamento, controle ou dados — com conteúdo arbitrário, endereços de origem e endereços de destino.
@@ -72,7 +72,7 @@ Chipset 802.11ac dual-band com um driver bem mantido no kernel (`mt76`). O modo 
 
 ### MediaTek MT7921AUN (Wi-Fi 6E)
 
-O chipset mais novo desta lista, usado no AWUS036AXML. Suporta tri-band 2,4/5/6 GHz com 802.11ax. O driver `mt7921u` requer kernel 5.18 ou posterior. O suporte a modo monitor e injeção está confirmado, mas o driver é mais novo e pode ter problemas pontuais em distribuições mais antigas.
+O chipset mais novo desta lista, usado no AWUS036AXML. Suporta tri-band 2,4/5/6 GHz com 802.11ax. O driver `mt7921u` requer kernel 5.18 ou posterior. Modo monitor, modo AP e WPA3 funcionam. Em relatos da comunidade com kernels anteriores ao 6.16 a injeção funcionava, mas em nossos testes com o kernel stock 6.17 o `aireplay-ng --test` falhou (Found 0 APs / No Answer), portanto não é possível fazer deauth nem capturar handshakes. A causa é uma regressão do mac80211 chanctx a partir do kernel 6.16, e não uma limitação do chip; drivers corrigidos (patched) da comunidade restauram a injeção, mas o firmware ainda trava a taxa (1/6 Mbps, sem injeção HT/VHT). Se precisar de injeção, use ACH, EACS, ACS ou AX.
 
 ---
 
@@ -151,7 +151,7 @@ Todos os principais modelos de adaptadores [ALFA Network](/pt/products/alfa/) su
 | Modelo | Chipset | Banda | Suporte a Injeção |
 |---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2,4 / 5 GHz | ✅ Completo |
-| AWUS036AXML | MT7921AUN | 2,4 / 5 / 6 GHz | ✅ Completo (kernel 5.18+) |
+| AWUS036AXML | MT7921AUN | 2,4 / 5 / 6 GHz | ⚠️ Relatos da comunidade antes do kernel 6.16; falhou em nossos testes com 6.17 |
 | AWUS036ACM | MT7612U | 2,4 / 5 GHz | ✅ Completo |
 
 ---

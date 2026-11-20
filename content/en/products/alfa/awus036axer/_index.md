@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AXER — Wi-Fi 6 Ultra-Slim Nano USB Adapter"
-description: "ALFA AWUS036AXER with Realtek RTL8832BU chipset. Wi-Fi 6 dual-band nano form factor (~65×24×10mm). For everyday connectivity — not recommended for Kali Linux or security research."
+description: "ALFA AWUS036AXER with Realtek RTL8832BU chipset. Wi-Fi 6 dual-band nano form factor (~65×24×10mm). Mainline rtw89_8852bu driver on kernel 6.17+; monitor mode and packet injection verified on GX10."
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "802.11ax", "Ultra-Slim", "USB 3.2", "Portable", "Nano"]
 
 The AWUS036AXER features the Realtek RTL8832BU chipset with Wi-Fi 6 (802.11ax) dual-band (2.4 GHz + 5 GHz), up to 1800 Mbps (2.4 GHz: 573 Mbps + 5 GHz: 1200 Mbps). Ultra-slim nano design (~65 × 24 × 10 mm, ~10g) for portable everyday use.
 
-> ⚠️ **Note:** Nano form factor — **no RP-SMA connector**, antenna cannot be upgraded. **Monitor mode is not supported** by the community rtl8852bu driver; NOT recommended for Kali Linux or security research.
+> ⚠️ **Note:** Nano form factor — **no RP-SMA connector**, antenna cannot be upgraded. On the GX10 (Ubuntu 24.04, kernel 6.17) with the mainline rtw89_8852bu driver, monitor mode and packet injection both passed our tests (injection 73% on 2.4 GHz, working on 5 GHz).
 
 > **macOS Notice:** All ALFA adapters have limited/no macOS support. macOS 11 Big Sur and later, and Apple Silicon (M1/M2/M3) are **NOT** supported. Maximum macOS support is 10.15 Catalina on Intel Macs.
 
@@ -46,8 +46,8 @@ The AWUS036AXER features the Realtek RTL8832BU chipset with Wi-Fi 6 (802.11ax) d
 |----|--------|-------|
 | Windows 10/11 | ✅ Supported | Driver from Alfa website |
 | macOS | ❌ Not supported | No macOS 11+ or Apple Silicon |
-| Ubuntu | ⚠️ Requires driver | Not in-kernel; build the community rtl8852bu driver via DKMS |
-| Kali Linux | ⚠️ Limited | Managed mode only (DKMS driver); monitor mode not supported |
+| Ubuntu | ✅ Kernel 6.17+ | Mainline rtw89_8852bu driver (included since Linux 6.17). Older kernels: build the community rtl8852bu driver via DKMS |
+| Kali Linux | ✅ Supported | Monitor mode and packet injection verified on GX10 (Ubuntu 24.04, kernel 6.17) with the mainline driver; older kernels need the DKMS driver. Not tested on a real Kali install |
 | NetHunter | ⚠️ Limited | Kernel-dependent |
 
 ## Hardware Support
@@ -61,8 +61,8 @@ The AWUS036AXER features the Realtek RTL8832BU chipset with Wi-Fi 6 (802.11ax) d
 
 | Feature | Status |
 |---------|--------|
-| Monitor Mode | ❌ Not supported (community driver) |
-| Packet Injection | ❌ Not supported |
+| Monitor Mode | ✅ Yes (mainline rtw89_8852bu, kernel 6.17+; strong reception in GX10 test) |
+| Packet Injection | ✅ Yes (GX10 test: 2.4 GHz 73%, 5 GHz working) |
 | Soft AP Mode | ✅ Yes |
 | Bluetooth | ❌ No |
 

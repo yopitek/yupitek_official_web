@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "哪一款 Raspberry Pi 最適合滲透測試？"
     answer: "Raspberry Pi 5（4 GB 或 8 GB）是最佳選擇。Pi 4（4 GB+）也能正常運作；Pi 3B+ 速度不足以應付即時封包擷取。"
@@ -65,7 +65,7 @@ Kali Linux 在 [https://www.kali.org/get-kali/#kali-arm](https://www.kali.org/ge
 可使用 Raspberry Pi Imager 圖形工具或命令列的 `dd` 進行燒錄：
 
 ```bash
-# 將 /dev/sdX 替換為你的實際 SD 卡裝置（用 lsblk 確認）
+# 將 /dev/sdX 替換為你的實際 SD 卡裝置 (用 lsblk 確認)
 sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=progress conv=fsync
 sync
 ```
@@ -167,7 +167,7 @@ sudo modprobe mt7921u
 ip link show
 ```
 
-若 `lsusb` 顯示 MediaTek 裝置，且 `ip link show` 列出新的無線介面，網路卡即已就緒。MT7921AUN 的監聽模式支援自核心 5.18 起已大幅改善，但在某些封包注入測試中可能不如 RTL8812AU 穩定。若需最大程度相容舊有滲透測試工作流程，AWUS036ACH 仍是更穩健的選擇。
+若 `lsusb` 顯示 MediaTek 裝置，且 `ip link show` 列出新的無線介面，網路卡即已就緒。MT7921AUN 的監聽模式支援自核心 5.18 起已大幅改善，但在某些封包注入測試中可能不如 RTL8812AU 穩定。若需最大程度相容舊有滲透測試工作流程，AWUS036ACH 仍是更穩健的選擇。但注入需視核心版本而定：kernel 6.16 以前的社群回報中注入可用；在 stock kernel 6.16 以上（實測 6.17）上，AXML 的封包注入測試未通過（`aireplay-ng --test` 顯示 Found 0 APs / No Answer），因此無法 deauth 或擷取 handshake。原因是 mac80211 chanctx 回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps，無法注入 HT/VHT）。monitor、AP、WPA3 不受影響。需要注入請改用 AWUS036ACH 或 AWUS036EACS。
 
 ---
 
@@ -176,7 +176,7 @@ ip link show
 Raspberry Pi 有內建 WiFi 介面（`wlan0`）。保持它連線至你的網路以維持 SSH 存取。專用 ALFA 網路卡（`wlan1`）只用於監聽模式和封包擷取。在無頭 Pi 上絕不要將 `wlan0` 切換至監聽模式——這會中斷你的 SSH 連線。
 
 ```bash
-# 終止干擾監聽模式的程序（NetworkManager、wpa_supplicant）
+# 終止干擾監聽模式的程序 (NetworkManager, wpa_supplicant)
 sudo airmon-ng check kill
 
 # 在 ALFA 網路卡介面上啟用監聽模式
@@ -218,7 +218,7 @@ sudo systemctl start NetworkManager
 
 **儲存：** 將 Kismet 記錄和擷取檔案寫入 USB SSD，而非 MicroSD 卡。MicroSD 卡有寫入次數限制，在持續記錄工作負載下會快速劣化。連接至有源集線器的 USB 3.0 SSD 更快且更耐用。
 
-**外殼：** 選擇有開放 USB 端口或切口的 Pi 外殼，以容納有源集線器。帶被動散熱鰭片的鋁製外殼有助於在持續擷取時控制溫度。
+**外殼：** 選擇有開放 USB 連接埠或切口的 Pi 外殼，以容納有源集線器。帶被動散熱鰭片的鋁製外殼有助於在持續擷取時控制溫度。
 
 ---
 

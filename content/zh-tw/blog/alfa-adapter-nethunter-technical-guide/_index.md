@@ -8,7 +8,7 @@ showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ALFA 無線網路卡搭配 Kali NetHunter 需要哪些手機條件？"
     answer: "需要支援 OTG 的 Android 手機、已 root 並刷入 Kali NetHunter 核心。已驗證相容的機型包括 Google Pixel 系列、OnePlus 較舊旗艦機型。具體相容性取決於核心版本與網路卡晶片驅動位置。"
@@ -100,7 +100,7 @@ NetHunter 支援超過 117 款裝置模組，但多數為舊型號。經過篩�
 |-----|------|
 | Chipset | **MediaTek MT7610U** |
 | USB VID/PID | `0x0e8d:0x7610` |
-| 支援頻段 | 2.4 GHz + 5 GHz（雙頻 AC433） |
+| 支援頻段 | 2.4 GHz + 5 GHz（雙頻 AC600） |
 | 最大傳輸速率 | 150 Mbps（2.4 GHz）/ 433 Mbps（5 GHz） |
 | USB 版本 | USB 2.0 |
 | Monitor Mode | ✅ 完整支援 |
@@ -159,7 +159,7 @@ ACH 多年來一直是 Kali 與 NetHunter 環境的預設標準。大多數 NetH
 |-----|------|
 | Chipset | Realtek RTL8811AU |
 | USB VID/PID | `0x0bda:0x0811` |
-| 支援頻段 | 2.4 GHz + 5 GHz（AC433） |
+| 支援頻段 | 2.4 GHz + 5 GHz（AC600） |
 | USB 版本 | USB 2.0 |
 | Monitor Mode | ✅ 支援（與 RTL8812AU 相同驅動家族） |
 | Packet Injection | ✅ 支援 |
@@ -168,13 +168,13 @@ ACH 多年來一直是 Kali 與 NetHunter 環境的預設標準。大多數 NetH
 | 驅動模式 | 外部驅動（與 RTL8812AU 共用 aircrack-ng repo） |
 | 產品頁面 | [/zh-tw/products/alfa/awus036acs/](/zh-tw/products/alfa/awus036acs/) |
 
-ACS 是最便攜的選擇。300mW 的功耗對手機電池最友善，超薄機身可輕鬆放入口袋。取捨在於單串流 AC433 效能以及與 RTL8812AU 家族共有的外部 DKMS 驅動依賴。
+ACS 是最便攜的選擇。300mW 的功耗對手機電池最友善，超薄機身可輕鬆放入口袋。取捨在於單串流 AC600 效能以及與 RTL8812AU 家族共有的外部 DKMS 驅動依賴。
 
 ### 3.5 不建議用於 NetHunter 的型號
 
 | 網路卡型號 | Chipset | 原因 |
 |---------|---------|------|
-| AWUS036AX / AWUS036AXER | RTL8832BU | 需要 kernel 6.14+；Monitor Mode 穩定性在 Android 核心上未經驗證 |
+| AWUS036AX / AWUS036AXER | RTL8832BU | 需要 kernel 6.17+；Monitor Mode 穩定性在 Android 核心上未經驗證 |
 | AWUS036AXML / AWUS036AXM | MT7921AUN | WiFi 6E / 6 GHz 在目前 NetHunter 核心版本上支援不穩定；不適合作為主要滲透測試網路卡 |
 
 ### 3.6 驅動程式來源
@@ -253,7 +253,7 @@ cat /kali/etc/os-release
 # 應顯示 Kali Linux with NetHunter
 
 # 確認 USB OTG 已啟用
-# 設定 → 開發人員選項 → OTG（實際位置依 Android 版本而異）
+# 設定 → 開發人員選項 → OTG (實際位置依 Android 版本而異)
 ```
 
 ### 5.2 硬體連接順序
@@ -275,7 +275,7 @@ cat /kali/etc/os-release
 # 列出 USB 裝置——確認網路卡出現
 lsusb
 
-# 各型號預期輸出：
+# 各型號預期輸出:
 # AWUS036ACHM: Bus 001 Device 002: ID 0e8d:7610 MediaTek Inc.
 # AWUS036ACM:  Bus 001 Device 002: ID 0e8d:7612 MediaTek Inc. MT7612U
 # AWUS036ACH:  Bus 001 Device 002: ID 0bda:8812 Realtek Semiconductor Corp.
@@ -291,7 +291,7 @@ lsusb
 # 確認模組自動載入
 lsmod | grep mt76
 
-# 若未自動載入（少見情況）
+# 若未自動載入 (少見情況)
 sudo modprobe mt76x0u
 ```
 
@@ -325,7 +325,7 @@ ip link show | grep wlan
 iw dev
 
 # 外接網路卡通常顯示為 wlan1
-#（wlan0 通常為手機內建 WiFi）
+# (wlan0 通常為手機內建 WiFi)
 ```
 
 ### 5.6 啟用 Monitor Mode
@@ -339,12 +339,12 @@ sudo airmon-ng start wlan1
 
 # 確認 Monitor Mode 已啟用
 iwconfig wlan1mon
-# 預期輸出：Mode:Monitor
+# 預期輸出: Mode:Monitor
 
-# 掃描周圍網路（僅限授權測試）
+# 掃描周圍網路 (僅限授權測試)
 sudo airodump-ng wlan1mon
 
-# 掃描所有頻段（2.4 GHz + 5 GHz）
+# 掃描所有頻段 (2.4 GHz + 5 GHz)
 sudo airodump-ng --band abg wlan1mon
 ```
 
@@ -482,10 +482,10 @@ sudo iw dev wlan1mon info
 **網路卡使用中斷線（USB reset）：**
 
 ```bash
-# 降低發射功率（臨時解法）
+# 降低發射功率 (臨時解法)
 sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
-# 根本解法：使用有獨立供電的 OTG Hub
+# 根本解法: 使用有獨立供電的 OTG Hub
 ```
 
 ---

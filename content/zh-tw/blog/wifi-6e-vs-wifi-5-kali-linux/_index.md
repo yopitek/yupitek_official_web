@@ -8,14 +8,14 @@ showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "滲透測試", "Kali-Linux"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Wi-Fi 6E 與 Wi-Fi 5 在滲透測試上有何差異？"
     answer: "Wi-Fi 6E 新增 6 GHz 頻段與 1.2 GHz 頻譜，適合稽核現代企業部署。Wi-Fi 5 驅動成熟，在 2.4/5 GHz 上穩定性更高。"
   - question: "AWUS036ACH 與 AWUS036AXML 該選哪一款？"
     answer: "日常滲透測試選 AWUS036ACH，驅動成熟且社群資源豐富。需稽核 6 GHz Wi-Fi 6E 環境則選 AWUS036AXML。條件允許建議兩款皆備。"
   - question: "AWUS036AXML 的監聽模式在 Kali Linux 上穩定嗎？"
-    answer: "需核心 6.1 以上並安裝最新 linux-firmware 套件。封包注入可用但建議正式委外測試前先行驗證，特定核心與韌體組合可能不穩定。"
+    answer: "需核心 6.1 以上並安裝最新 linux-firmware 套件。kernel 6.16 以前有社群回報封包注入可用，但 stock kernel 6.17 實測未通過（mac80211 chanctx 回歸，非晶片先天限制），需要注入請改用 AWUS036ACH。"
   - question: "2026 年滲透測試需要 6 GHz 網路卡嗎？"
     answer: "大多數測試案例仍以 2.4/5 GHz 為主。但若目標環境已部署 Wi-Fi 6E 存取點，6 GHz 網路卡即為策略必備。"
   - question: "AWUS036ACH 的 RTL8812AU 驅動如何安裝？"
@@ -104,11 +104,11 @@ MT7921AUN 的驅動程式（`mt7921u`）**自 Linux 核心 5.18 版起已正式�
 # 確認核心模組已載入
 lsmod | grep mt7921u
 
-# 若尚未載入：
+# 若尚未載入:
 sudo modprobe mt7921u
 ```
 
-不過，MT7921AUN 的**監聽模式支援**相對較新，實際可用性取決於核心版本與韌體。截至 2026 年初，監聽模式需在核心 6.1 以上並安裝最新的 `linux-firmware` 套件後方可正常運作。封包注入功能目前可用，但在特定核心與韌體組合下曾出現偶發性不穩定——建議在正式委外測試前務必先行驗證。
+不過，MT7921AUN 的**監聽模式支援**相對較新，實際可用性取決於核心版本與韌體。截至 2026 年初，監聽模式需在核心 6.1 以上並安裝最新的 `linux-firmware` 套件後方可正常運作。封包注入在 kernel 6.16 以前有社群回報可用，但 stock kernel 6.17 實測未通過（aireplay-ng --test 顯示 Found 0 APs / No Answer，無法 deauth 或擷取 handshake）。主因是 kernel 6.16 以後 mac80211 chanctx 回歸，非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖速率（1/6 Mbps，不可注入 HT/VHT）。監聽、AP、WPA3 與 VIF 則可正常使用；需要注入請改用 AWUS036ACH。
 
 ```bash
 sudo apt update && sudo apt install linux-firmware
@@ -126,7 +126,7 @@ sudo airmon-ng start wlan0
 | **支援頻段** | 2.4 GHz + 5 GHz | 2.4 GHz + 5 GHz + 6 GHz |
 | **最高傳輸速率** | AC1200 | AX1800 |
 | **監聽模式穩定性** | ★★★★★（極度穩定） | ★★★★☆（需核心 6.1 以上） |
-| **封包注入** | ★★★★★（高度可靠） | ★★★★☆（可用，建議先測試） |
+| **封包注入** | ★★★★★（高度可靠） | ⚠️ kernel 6.16 以前有社群回報；6.17 實測失敗 |
 | **驅動程式安裝** | 手動 DKMS（約 10 分鐘） | 核心內建（核心 5.18 以上） |
 | **6 GHz 支援** | ✗ | ✓ |
 | **天線數量** | 2 支 RP-SMA | 1 支 RP-SMA |

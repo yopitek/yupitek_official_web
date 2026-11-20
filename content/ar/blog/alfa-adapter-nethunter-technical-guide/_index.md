@@ -8,7 +8,7 @@ showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ما هي متطلبات الهاتف لاستخدام محولات ALFA مع Kali NetHunter؟"
     answer: "يلزم هاتف Android يدعم OTG، مع صلاحيات root ونواة Kali NetHunter مخصصة. الأجهزة المتوافقة الموثقة تشمل سلسلة Google Pixel وطرازات OnePlus القديمة. يعتمد التوافق المحدد على إصدار النواة وموقع برنامج تشغيل شريحة المحول."
@@ -98,7 +98,7 @@ faq:
 |---|---|
 | الشريحة (Chipset) | **MediaTek MT7610U** |
 | USB VID/PID | `0x0e8d:0x7610` |
-| النطاقات | 2.4 GHz + 5 GHz (AC433) |
+| النطاقات | 2.4 GHz + 5 GHz (AC600) |
 | أقصى معدل بيانات | 150 Mbps (2.4 GHz) / 433 Mbps (5 GHz) |
 | USB | USB 2.0 |
 | وضع المراقبة (Monitor Mode) | ✅ دعم كامل |
@@ -155,7 +155,7 @@ faq:
 |---|---|
 | الشريحة (Chipset) | Realtek RTL8811AU |
 | USB VID/PID | `0x0bda:0x0811` |
-| النطاقات | 2.4 GHz + 5 GHz (AC433) |
+| النطاقات | 2.4 GHz + 5 GHz (AC600) |
 | USB | USB 2.0 |
 | وضع المراقبة (Monitor Mode) | ✅ مدعوم (نفس عائلة برامج تشغيل RTL8812AU) |
 | حقن الحزم (Packet Injection) | ✅ مدعوم |
@@ -164,13 +164,13 @@ faq:
 | برنامج التشغيل | خارجي (مستودع aircrack-ng المشترك مع RTL8812AU) |
 | صفحة المنتج | [/ar/products/alfa/awus036acs/](/ar/products/alfa/awus036acs/) |
 
-ACS هو الخيار الأكثر قابلية للحمل. باستهلاك طاقة 300mW يعد الأقل طلباً على بطاريات الهواتف، ويختفي شكله النحيف في الجيب. المقايضة هي أداء AC433 أحادي التدفق واعتمادية برنامج التشغيل DKMS الخارجي المشترك مع عائلة RTL8812AU.
+ACS هو الخيار الأكثر قابلية للحمل. باستهلاك طاقة 300mW يعد الأقل طلباً على بطاريات الهواتف، ويختفي شكله النحيف في الجيب. المقايضة هي أداء AC600 أحادي التدفق واعتمادية برنامج التشغيل DKMS الخارجي المشترك مع عائلة RTL8812AU.
 
 ### 3.5 المحولات غير الموصى بها لـ NetHunter
 
 | المحول | الشريحة | السبب |
 |---|---|---|
-| AWUS036AX / AWUS036AXER | RTL8832BU | يتطلب نواة 6.14+؛ استقرار وضع المراقبة غير موثق على أنوية Android |
+| AWUS036AX / AWUS036AXER | RTL8832BU | يتطلب نواة 6.17+؛ استقرار وضع المراقبة غير موثق على أنوية Android |
 | AWUS036AXML / AWUS036AXM | MT7921AUN | دعم WiFi 6E / 6 GHz غير مستقر في إصدارات أنوية NetHunter الحالية؛ غير مناسب كمحول اختبار اختراق أساسي |
 
 ### 3.6 مستودعات مصادر برامج التشغيل

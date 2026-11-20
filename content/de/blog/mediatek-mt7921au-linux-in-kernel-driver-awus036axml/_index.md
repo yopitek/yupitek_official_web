@@ -1,9 +1,9 @@
 ---
 title: "Schluss mit Treiber-Kompilierung: Warum MT7921AU die Wahl für Linux und Kali ist"
-description: "Vergleiche MediaTek MT7921AU (mt7921u-Treiber im Kernel) mit Realtek RTL8812AU (DKMS-Kompilierung) und erfahre, warum der ALFA AWUS036AXML unter Kali Linux einfach Plug-and-Play funktioniert."
+description: "Vergleiche MediaTek MT7921AUN (mt7921u-Treiber im Kernel) mit Realtek RTL8812AU (DKMS-Kompilierung) und erfahre, warum der ALFA AWUS036AXML unter Kali Linux einfach Plug-and-Play funktioniert."
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,7 +11,7 @@ tags: ["mt7921au", "kali-linux", "linux", "awus036axml", "monitor-mode", "dkms",
 featureimage: /images/blog/mediatek-mt7921au-linux-in-kernel-driver-awus036axml.webp
 ---
 
-> **Behandeltes Produkt**: ALFA AWUS036AXML (MediaTek MT7921AU / MT7921AUN) ｜ **Vergleichsgerät**: ALFA AWUS036ACH (Realtek RTL8812AU)
+> **Behandeltes Produkt**: ALFA AWUS036AXML (MediaTek MT7921AUN / MT7921AUN) | **Vergleichsgerät**: ALFA AWUS036ACH (Realtek RTL8812AU)
 > **Für wen**: Penetrationstester mit Kali Linux, Linux-Embedded-Entwickler, Nutzer von Raspberry Pi / Single-Board-Computern
 > **Ziel des Artikels**: Vor dem Kauf den Unterschied zwischen «nativem Support im Kernel» und «DKMS-Treiber-Kompilierung» verstehen und weniger Zeit mit Installation und Fehlersuche verbringen.
 
@@ -28,7 +28,7 @@ Wenn du einen USB-Adapter mit einem Chipset der Klasse Realtek RTL8812AU benutzt
 
 Das Problem liegt nicht am Produkt, sondern an der Form, in der der Treiber existiert. Die meisten Linux-Treiber von Realtek sind nicht in den Linux-Kernel (mainline) aufgenommen. Um sie zu nutzen, musst du externen Quellcode an das System «andocken». Bei jedem Kernel-Update muss dieses Andockstück neu kompiliert werden — sonst passt es nicht mehr zur neuen Kernel-Version und fällt aus.
 
-Und der heutige Hauptdarsteller — der ALFA AWUS036AXML mit MediaTek MT7921AU — geht einen völlig anderen Weg: Sein Treiber **lebt nativ direkt im Linux-Kernel**.
+Und der heutige Hauptdarsteller — der ALFA AWUS036AXML mit MediaTek MT7921AUN — geht einen völlig anderen Weg: Sein Treiber **lebt nativ direkt im Linux-Kernel**.
 
 ---
 
@@ -96,11 +96,11 @@ Die Mindest-Kernel-Anforderungen der Distributionen auf einen Blick:
 | Windows 10 / 11 | — | Herstellertreiber |
 | macOS (Intel / Apple Silicon) | Nicht unterstützt | **Kein Treiber — nicht kaufen** |
 
-> **⚠️ Der wichtigste Support-Hinweis vor dem Kauf**: Der AWUS036AXML **unterstützt kein macOS**. Weder für Intel noch für Apple Silicon gibt es derzeit einen MT7921AU-Treiber für macOS. Wenn macOS deine Hauptumgebung ist, ist diese Klasse von Wi-Fi-6-/6E-USB-Adaptern für dich wertlos — streiche sie direkt von der Liste, statt es nach dem Kauf zu merken.
+> **⚠️ Der wichtigste Support-Hinweis vor dem Kauf**: Der AWUS036AXML **unterstützt kein macOS**. Weder für Intel noch für Apple Silicon gibt es derzeit einen MT7921AUN-Treiber für macOS. Wenn macOS deine Hauptumgebung ist, ist diese Klasse von Wi-Fi-6-/6E-USB-Adaptern für dich wertlos — streiche sie direkt von der Liste, statt es nach dem Kauf zu merken.
 
 ### 2.3 Warum «nativ unterstützt» für Kali-Entwickler besonders wichtig ist
 
-Unter Kali Linux kommen Kernel-Updates sehr häufig vor (Rolling-Release). RTL8812AU-Nutzer halten bei jedem Rolling-Update den Atem an. `mt7921u` dagegen wird zusammen mit dem Kernel gepflegt und getestet — **egal wie neu der Kernel wird, der Treiber bleibt dran**. ALFA hat dieses Produkt genau für Sicherheitstests positioniert: Monitor Mode und Packet Injection sind Standardfunktionen, die out of the box funktionieren.
+Unter Kali Linux kommen Kernel-Updates sehr häufig vor (Rolling-Release). RTL8812AU-Nutzer halten bei jedem Rolling-Update den Atem an. `mt7921u` dagegen wird zusammen mit dem Kernel gepflegt und getestet — **egal wie neu der Kernel wird, der Treiber bleibt dran**. ALFA hat dieses Produkt genau für Sicherheitstests positioniert: Monitor Mode funktioniert out of the box, Packet Injection hängt dagegen von der Kernel-Version ab (siehe Abschnitt 3.2).
 
 ---
 
@@ -147,7 +147,7 @@ Als Nächstes testest du die Packet Injection:
 sudo aireplay-ng --test wlan1
 ```
 
-Erscheint `Injection is working!` (oder eine gleichwertige Ausgabe), funktioniert die Injektion. Beim nativen `mt7921u`-Treiber ist das eine eingebaute Fähigkeit — keine zusätzlichen Hacks nötig.
+In Community-Berichten für Kernel vor 6.16 erscheint beim nativen `mt7921u`-Treiber `Injection is working!` (oder eine gleichwertige Ausgabe). Auf dem Stock-Kernel ab 6.16 (getestet mit Kernel 6.17 auf ASUS GX10, Ubuntu 24.04 ARM64) schlägt der Injektionstest jedoch fehl: `aireplay-ng --test` zeigt Found 0 APs / No Answer, daher sind weder Deauth noch Handshake-Capture möglich. Ursache ist eine Regression in mac80211 chanctx seit Kernel 6.16, keine Einschränkung des Chips; gepatchte Community-Treiber ermöglichen Injektion, die Firmware sperrt die Rate aber weiterhin (1/6 Mbps, keine HT/VHT-Injektion). Wer Injektion braucht, nutzt AWUS036ACH, EACS oder ACS.
 
 ### 3.3 Fusion Mode (VIF): Verwalten und Mithören gleichzeitig
 
@@ -170,7 +170,7 @@ Um die Support-Kosten nach dem Kauf niedrig zu halten, mach zuerst diese einfach
 
 ### 4.1 Die zwei Adapter im Schnellvergleich
 
-| Bewertungspunkt | AWUS036AXML (MT7921AU) | AWUS036ACH (RTL8812AU) |
+| Bewertungspunkt | AWUS036AXML (MT7921AUN) | AWUS036ACH (RTL8812AU) |
 |---|---|---|
 | Funk-Spezifikation | Wi-Fi 6E Tri-Band (2.4/5/6 GHz) | AC1200 Dual-Band (2.4/5 GHz) |
 | USB-Schnittstelle | USB-C (USB 3.2 Gen 1) | USB 3.0 Type-A |
@@ -178,7 +178,7 @@ Um die Support-Kosten nach dem Kauf niedrig zu halten, mach zuerst diese einfach
 | Installationsaufwand | Nur Firmware ergänzen | Toolchain + Kompilierung + (bei Secure Boot) Signierung |
 | Auswirkung von Kernel-Updates | Keine | Nach jedem Update neu kompilieren |
 | Monitor Mode | Nativer Support | Unterstützt |
-| Packet Injection | Nativer Support | Unterstützt |
+| Packet Injection | ⚠️ Community-Berichte vor Kernel 6.16; Test mit 6.17 fehlgeschlagen | Unterstützt |
 | macOS | Nicht unterstützt | Nicht unterstützt |
 | Geeignet für | Moderne Linux / Kali / Embedded-Systeme | Ältere Systeme oder 2.4/5-GHz-Szenarien |
 
@@ -190,7 +190,7 @@ Je mehr Häkchen du bei der Beschreibung unten setzt, **desto eher ist der AWUS0
 - [ ] Ich will, dass es **einfach nach dem Einstecken funktioniert** — ohne `dkms`, `github clone` und Kompilier-Toolchain.
 - [ ] Ich brauche nativen Support aus der `mt76`-Familie, und Kernel-Updates dürfen den Adapter nicht beeinflussen.
 - [ ] Ich brauche das **6-GHz-Band** (Wi-Fi-6E-Router-Umgebung).
-- [ ] Hauptzwecke: Monitoring, Packet Injection, Soft AP, Fusion Mode (VIF).
+- [ ] Hauptzwecke: Monitoring, Soft AP, Fusion Mode (VIF) (Packet Injection funktioniert ab Kernel 6.16 nicht, siehe Abschnitt 3.2).
 - [ ] Ich nutze das mitgelieferte 2-in-1-USB-C/USB-A-Kabel mit Laptop oder Single-Board-Computer.
 
 Umgekehrt: Wenn du kein 6 GHz brauchst, dein System einen älteren Kernel unter 5.18 fährt und du den DKMS-Wartungsablauf kennst, hat der AWUS036ACH weiterhin seine Berechtigung. Aber sei mental vorbereitet: Bei jedem Kernel-Update muss der Treiber neu kompiliert werden.
@@ -199,7 +199,7 @@ Umgekehrt: Wenn du kein 6 GHz brauchst, dein System einen älteren Kernel unter 
 
 ## 5. Fazit
 
-Für moderne Linux- und Kali-Entwickler ist Zeit der größte Kostenfaktor. **Der MediaTek MT7921AU (AWUS036AXML) nimmt dir die endlose Last der «Treiber-Wartung» ab**. Der Treiber lebt im Kernel, die Firmware kommt in einem Paket, Monitoring und Injection funktionieren out of the box — egal wie oft der Kernel rollend aktualisiert wird.
+Für moderne Linux- und Kali-Entwickler ist Zeit der größte Kostenfaktor. **Der MediaTek MT7921AUN (AWUS036AXML) nimmt dir die endlose Last der «Treiber-Wartung» ab**. Der Treiber lebt im Kernel, die Firmware kommt in einem Paket, Monitoring funktioniert out of the box (Packet Injection schlägt auf dem Stock-Kernel ab 6.16 fehl; für Injektion ACH, EACS oder ACS verwenden) — egal wie oft der Kernel rollend aktualisiert wird.
 
 Vor dem Kauf reichen zwei Checks: **System-Kernel ≥ 5.18** und **kein macOS**. Den Rest erledigt der native Treiber.
 

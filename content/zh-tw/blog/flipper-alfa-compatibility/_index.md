@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero 與 Flipper One 搭配 ALFA 無線網路卡：完整相容性指南"
-description: "Flipper Zero 能接 ALFA USB 無線網路卡做封包注入嗎？不行——這裡解釋為什麼。Flipper One 支援 ALFA AWUS036AXML，完整監聽模式與封包注入。包含晶片分析、驅動相容性與設定步驟的完整指南。"
+description: "Flipper Zero 能接 ALFA USB 無線網路卡做封包注入嗎？不行——這裡解釋為什麼。Flipper One 支援 ALFA AWUS036AXML 監聽模式（封包注入視核心版本而定）。包含晶片分析、驅動相容性與設定步驟的完整指南。"
 date: 2026-06-10
 draft: false
 showBreadcrumbs: true
@@ -10,7 +10,7 @@ tags: ["flipper-zero", "flipper-one", "alfa-network", "wifi-adapter", "monitor-m
 categories: ["Technical"]
 featureimage: "/images/blog/flipper-alfa-compatibility.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Flipper Zero 可以連接 ALFA USB 無線網路卡嗎？"
     answer: "不行。Flipper Zero 的 STM32WB55 微控制器僅支援 USB device 模式，硬體上無法作為 USB host 驅動外接網路卡。"
@@ -24,10 +24,10 @@ faq:
     answer: "不能。WiFi Dev Board 僅支援 2.4 GHz 基本功能，無 USB host，範圍與注入可靠性遠不及專用 ALFA 網路卡。"
 ---
 
-Flipper Zero 因硬體限制無法使用任何 ALFA USB 無線網路卡；Flipper One 則完整支援 AWUS036AXML 等型號，可執行監聽模式與封包注入。
+Flipper Zero 因硬體限制無法使用任何 ALFA USB 無線網路卡；Flipper One 則支援 AWUS036AXML 等型號，可執行監聽模式（封包注入視核心版本而定，詳見下文）。
 
 {{< tldr >}}
-Flipper Zero 的 STM32WB55 僅支援 USB device 模式，無法驅動任何 ALFA 網路卡；Flipper One 搭載 RK3576 與完整 Debian Linux，支援 AWUS036AXML 執行三頻監聽與注入。
+Flipper Zero 的 STM32WB55 僅支援 USB device 模式，無法驅動任何 ALFA 網路卡；Flipper One 搭載 RK3576 與完整 Debian Linux，支援 AWUS036AXML 執行三頻監聽（注入視核心版本而定）。
 {{< /tldr >}}
 
 {{< alert "triangle-exclamation" >}}
@@ -176,7 +176,7 @@ Flipper One 還引入了 **Flipper OS Profiles**——一種基於快照的系�
 | **需要 DKMS** | ❌ 不需要 |
 | **天線** | 雙 RP-SMA（可更換）+ Bluetooth 5.2 |
 
-> **為什麼是最佳選擇：** 這是 Flipper One 創辦人特別測試過的網路卡。`mt7921u` 驅動已在 mainline kernel 中，無需任何 vendor patch。它支援全部三個 WiFi 頻段（2.4/5/6 GHz），使 Wi-Fi 6E 安全評估具備未來性。Monitor Mode 和 Packet Injection 穩定且經過充分測試。
+> **為什麼是最佳選擇：** 這是 Flipper One 創辦人特別測試過的網路卡。`mt7921u` 驅動已在 mainline kernel 中，無需任何 vendor patch。它支援全部三個 WiFi 頻段（2.4/5/6 GHz），使 Wi-Fi 6E 安全評估具備未來性。Monitor Mode 穩定且經過充分測試；Packet Injection 在 kernel 6.16 以前有社群回報可用，但在 stock kernel 6.17 實測失敗（aireplay-ng --test 顯示 Found 0 APs / No Answer），原因是 kernel 6.16 以後 mac80211 chanctx 回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖速率（1/6 Mbps）。需要注入請改用 AWUS036ACM 或 ACH。
 
 ### ⭐⭐⭐⭐⭐ 最佳 CP 值：AWUS036ACM（Wi-Fi 5 AC1200）
 
@@ -191,13 +191,13 @@ Flipper One 還引入了 **Flipper OS Profiles**——一種基於快照的系�
 
 > **為什麼是最佳 CP 值：** MT7612U 晶片組在滲透測試社群中歷經考驗。`mt76` 驅動已在 kernel 中存在多年，異常穩定。在 kernel 6.5 及以上版本中，Monitor Mode 和 Injection 運作無瑕。價格低於 AXML，為 2.4/5 GHz 測試提供最佳的價格能力比。
 
-### ⭐⭐⭐⭐ 輕量選擇：AWUS036ACHM（Wi-Fi 5 AC433）
+### ⭐⭐⭐⭐ 輕量選擇：AWUS036ACHM（Wi-Fi 5 AC600）
 
 | 規格 | 詳情 |
 |------|--------|
 | **晶片組** | MediaTek MT7610U |
 | **頻段** | 2.4 / 5 GHz（Wi-Fi 5） |
-| **最大速率** | AC433（理論值） |
+| **最大速率** | AC600（理論值） |
 | **驅動** | `mt76`——自 Linux 4.19 起 in-kernel |
 | **需要 DKMS** | ❌ 不需要 |
 | **天線** | 單高增益 RP-SMA（可更換） |
@@ -217,16 +217,27 @@ Flipper One 還引入了 **Flipper OS Profiles**——一種基於快照的系�
 
 > **為什麼是替代方案：** RTL8812AU 晶片組在滲透測試領域歷史悠久。預期在 Flipper One 規劃的核心上無需額外 DKMS 模組即可支援。對於舊系統，aircrack-ng DKMS 驅動仍可使用。高增益 6 dBi 天線提供優異的覆蓋範圍，但 MediaTek 系列的網路卡因其更成熟的 in-kernel 驅動支援而通常更受推薦。
 
-### ⚠️ 不建議用於滲透測試
+### ⭐⭐ 可用替代方案：AWUS036EACS（Wi-Fi 5 AC1200，RTL8821CU）
 
-以下 ALFA 型號使用 Monitor Mode 和 Packet Injection 的 Linux 驅動不成熟或不穩定的 Realtek 晶片組。**請避免在 Flipper One 的無線安全工作中使用這些型號：**
+| 規格 | 詳情 |
+|------|--------|
+| **晶片組** | Realtek RTL8821CU |
+| **頻段** | 2.4 / 5 GHz（Wi-Fi 5） |
+| **驅動** | `rtw88_8821cu`——自 Linux 6.2 起內建於主線核心 |
+| **需要 DKMS** | ❌ kernel 6.2 以上不需要 / ⚠️ 舊核心才需要社群驅動（如 morrownr/8821cu） |
+| **實測結果** | ASUS GX10（kernel 6.17）上 monitor 與注入在 2.4G／5G 皆可用 |
+
+> **注意：** 以上為本站在 GX10 上的實測；Flipper One 本身尚未實測。是否可用取決於 Flipper One 實際出貨的核心版本是否為 6.2 以上並包含該模組。
+
+### ⚠️ 使用前請留意
+
+以下 ALFA 型號本站未在 Flipper One 上實測。在 ASUS GX10 測試平台（Ubuntu 24.04 ARM64、kernel 6.17）上 Monitor Mode 皆可用，但所需的內建驅動僅存在於較新的 kernel，實際注入表現依晶片而異。**請先確認 Flipper One 的 kernel 版本，再用於無線安全工作：**
 
 | 型號 | 晶片組 | 問題 |
 |-------|---------|-------|
-| AWUS036AX | RTL8832BU | Wi-Fi 6 晶片，2026 年驅動支援仍在發展中 |
-| AWUS036AXER | RTL8832BU | 與 AWUS036AX 相同的晶片組問題 |
-| AWUS036ACS | RTL8811AU | Monitor Mode 有限，Injection 不穩定 |
-| AWUS036EACS | RTL8811CU | Monitor Mode 有限，Injection 不穩定 |
+| AWUS036AX | RTL8832BU | RTL8832BU 的 rtw89_8852bu 驅動自 kernel 6.17 起進入主線；GX10 實測 Monitor 可用，注入 2.4 GHz 96%、5 GHz 可用；舊 kernel 需社群驅動 |
+| AWUS036AXER | RTL8832BU | 同為 RTL8832BU；GX10 實測 Monitor 可用，注入 2.4 GHz 73%、5 GHz 可用 |
+| AWUS036ACS | RTL8811AU | rtw88_8821au 驅動自 kernel 6.13 起進入主線；GX10 實測 Monitor 可用，注入 2.4 GHz 100%、5 GHz 96% |
 
 ---
 
@@ -239,12 +250,12 @@ Flipper One 還引入了 **Flipper OS Profiles**——一種基於快照的系�
 ```bash
 # 檢查 USB 裝置列舉
 lsusb
-# 預期輸出（範例）：
+# 預期輸出 (範例):
 # Bus 001 Device 003: ID 0e8d:7961 MediaTek Inc. Wireless_Device
 
 # 列出無線介面
 iw dev
-# 預期：wlan0（若內建 WiFi 佔用 wlan0，則為 wlan1）
+# 預期: wlan0 (若內建 WiFi 佔用 wlan0, 則為 wlan1)
 
 # 替代檢查方式
 ip link show
@@ -253,16 +264,16 @@ ip link show
 ### 步驟 2：確認驅動已載入
 
 ```bash
-# AWUS036AXML / AWUS036AXM（MT7921AUN）：
+# AWUS036AXML / AWUS036AXM (MT7921AUN):
 lsmod | grep mt7921u
 
-# AWUS036ACM / AWUS036ACHM（MT7612U / MT7610U）：
+# AWUS036ACM / AWUS036ACHM (MT7612U / MT7610U):
 lsmod | grep mt76
 
-# AWUS036ACH（RTL8812AU）：
+# AWUS036ACH (RTL8812AU):
 lsmod | grep rtw88
 
-# 檢查核心版本（最佳 MT7921AUN 支援建議 6.12+）：
+# 檢查核心版本 (最佳 MT7921AUN 支援建議 6.12+):
 uname -r
 ```
 
@@ -271,9 +282,9 @@ uname -r
 ### 步驟 3：啟用 Monitor Mode
 
 ```bash
-# 終止干擾程序（NetworkManager、wpa_supplicant 等）
-# 注意：這會同時中斷 Flipper One 的內建 WiFi——請使用專用的
-# Flipper OS Profile 進行滲透測試，避免干擾正常網路連線。
+# 終止干擾程序 (NetworkManager, wpa_supplicant 等)
+# 注意: 這會同時中斷 Flipper One 的內建 WiFi——請使用專用的
+# Flipper OS Profile 進行滲透測試, 避免干擾正常網路連線.
 sudo airmon-ng check kill
 
 # 在網路卡上啟動 Monitor Mode
@@ -282,7 +293,7 @@ sudo airmon-ng start wlan0
 
 # 確認 Monitor Mode 已啟用
 iw dev wlan0mon info
-# 應顯示：type monitor
+# 應顯示: type monitor
 ```
 
 手動方法（若不偏好使用 airmon-ng）：
@@ -299,13 +310,14 @@ sudo ip link set wlan0 up
 # 測試注入能力
 sudo aireplay-ng --test wlan0mon
 # 看到 "Injection is working!" 表示成功
+# 註: AXML/AXM 在 kernel 6.16 以上 (實測 6.17) 會失敗 (Found 0 APs / No Answer), 需要注入請改用 ACM / ACH
 
 # 執行基本掃描
 sudo airodump-ng wlan0mon
 
-# 掃描所有支援頻段（僅 AWUS036AXML）
+# 掃描所有支援頻段 (僅 AWUS036AXML)
 sudo airodump-ng --band abg wlan0mon     # 2.4 GHz + 5 GHz
-sudo airodump-ng --band 6 wlan0mon       # 6 GHz（aircrack-ng 1.7+）
+sudo airodump-ng --band 6 wlan0mon       # 6 GHz (aircrack-ng 1.7+)
 
 # 指定頻道掃描
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF wlan0mon
@@ -314,13 +326,13 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF wlan0mon
 ### 步驟 5：捕捉 WPA2 握手封包
 
 ```bash
-# Terminal 1：在目標頻道上開始捕捉
+# Terminal 1: 在目標頻道上開始捕捉
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan0mon
 
-# Terminal 2：發送 deauth 強制重新連線
+# Terminal 2: 發送 deauth 強制重新連線
 sudo aireplay-ng -0 5 -a AA:BB:CC:DD:EE:FF wlan0mon
 
-# 在 Terminal 1 中查看握手捕捉：
+# 在 Terminal 1 中查看握手捕捉:
 # 當出現 "WPA handshake: AA:BB:CC:DD:EE:FF" 表示已捕捉
 ```
 

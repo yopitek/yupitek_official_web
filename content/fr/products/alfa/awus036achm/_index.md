@@ -1,12 +1,13 @@
 ---
-title: "ALFA AWUS036ACHM — Adaptateur USB Sans Fil AC433 Double Bande Compact"
-description: "ALFA AWUS036ACHM, MediaTek MT7610U, AC433 double bande, USB 2.0, conception compacte à antenne unique, supporte le Mode Moniteur, idéal pour une utilisation portable."
+title: "ALFA AWUS036ACHM — Adaptateur USB Sans Fil AC600 Double Bande Compact"
+description: "ALFA AWUS036ACHM, MediaTek MT7610U, AC600 double bande, USB 2.0, conception compacte à antenne unique, supporte le Mode Moniteur, idéal pour une utilisation portable."
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 5", "AC433", "USB 2.0", "Dual-Band", "Compact"]
+tags: ["Wi-Fi 5", "AC600", "USB 2.0", "Dual-Band", "Compact"]
 faq:
   - question: "Dois-je installer un pilote pour l'AWUS036ACHM sur Linux ?"
     answer: "Généralement non. La page de support Linux d'ALFA indique que l'appareil est plug and play sur Kali, Ubuntu et Raspberry Pi OS, et mentionne une prise en charge dans le noyau Linux principal à partir de la version 4.19. Sur Debian, vous devez également ajouter la source APT non-free et installer le package de firmware."

@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AXER — Wi-Fi 6 超薄 Nano 无线网卡"
-description: "ALFA AWUS036AXER，Realtek RTL8832BU 芯片，Wi-Fi 6 双频，Nano 超薄设计（~65×24×10mm），适合日常使用。不建议用于 Kali Linux 安全研究。"
+description: "ALFA AWUS036AXER，Realtek RTL8832BU 芯片，Wi-Fi 6 双频，Nano 超薄设计（~65×24×10mm）。内核 6.17 及以上使用 mainline rtw89_8852bu 驱动，GX10 实测 Monitor mode 与数据包注入均通过。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "802.11ax", "超薄", "USB 3.2", "随身型", "Nano"]
 
 AWUS036AXER 采用 Realtek RTL8832BU 芯片，支持 Wi-Fi 6（802.11ax）双频（2.4 GHz + 5 GHz），最高传输速率 1800 Mbps（2.4 GHz: 573 Mbps + 5 GHz: 1200 Mbps）。超薄 Nano 设计（约 65 × 24 × 10 mm，约 10g），适合随身携带使用。
 
-> ⚠️ **注意：** Nano 外型设计，**无 RP-SMA 接头**，天线无法升级。社区版 rtl8852bu 驱动**不支持 Monitor mode**，**不建议用于 Kali Linux 或安全研究**。
+> ⚠️ **注意：** Nano 外型设计，**无 RP-SMA 接头**，天线无法升级。在 GX10（Ubuntu 24.04、内核 6.17）搭配 mainline rtw89_8852bu 驱动的实测中，Monitor mode 与数据包注入均通过（2.4 GHz 注入成功率 73%，5 GHz 可用）。
 
 > **注意：** 所有 ALFA 无线网卡对 macOS 支持有限。macOS 11 Big Sur 及以上版本和 Apple Silicon（M1/M2/M3）均**不支持**。最高支持 Intel Mac 上的 macOS 10.15 Catalina。
 
@@ -46,8 +46,8 @@ AWUS036AXER 采用 Realtek RTL8832BU 芯片，支持 Wi-Fi 6（802.11ax）双频
 |---------|------|------|
 | Windows 10/11 | ✅ 支持 | 从 Alfa 官网下载驱动 |
 | macOS | ❌ 不支持 | 不支持 macOS 11+ 及 Apple Silicon |
-| Ubuntu | ⚠️ 需安装驱动 | 未内置于内核；通过 DKMS 构建社区 rtl8852bu 驱动 |
-| Kali Linux | ⚠️ 有限 | 仅支持 Managed mode（DKMS 驱动）；不支持 Monitor mode |
+| Ubuntu | ✅ 内核 6.17 及以上 | 使用 mainline rtw89_8852bu 驱动（Linux 6.17 起内置）；旧版内核需通过 DKMS 构建社区版 rtl8852bu 驱动 |
+| Kali Linux | ✅ 支持 | 在 GX10（Ubuntu 24.04、内核 6.17）以 mainline 驱动实测 Monitor mode 与数据包注入均通过；旧版内核需使用 DKMS 驱动。Kali 实机未实测 |
 | NetHunter | ⚠️ 有限 | 依内核版本 |
 ## 硬件支持
 
@@ -59,8 +59,8 @@ AWUS036AXER 采用 Realtek RTL8832BU 芯片，支持 Wi-Fi 6（802.11ax）双频
 
 | 功能 | 状态 |
 |------|------|
-| Monitor Mode | ❌ 不支持（社区驱动） |
-| Packet Injection | ❌ 不支持 |
+| Monitor Mode | ✅ 支持（mainline rtw89_8852bu，内核 6.17 及以上；GX10 实测接收强） |
+| Packet Injection | ✅ 支持（GX10 实测：2.4 GHz 73%，5 GHz 可用） |
 | Soft AP 模式 | ✅ 支持 |
 | 蓝牙 | ❌ 无 |
 

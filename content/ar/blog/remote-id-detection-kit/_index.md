@@ -7,10 +7,10 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Remote-ID", "ALFA-Network", "AWUS036ACH", "كشف-طائرات-بدون-طيار", "Counter-UAV", "ASTM-F3411", "EN-4709-002", "opendroneid", "unix_rid_capture", "DJI-OcuSync", "Raspberry-Pi"]
 author: "benny-lai"
-lastmod: 2026-07-27
+lastmod: 2026-11-20
 faq:
   - question: "لماذا تعتبر AWUS036ACH الخيار المفضل بدلاً من بطاقات WiFi 6/6E الأحدث؟"
-    answer: "التقاط Remote ID يتطلب وضع مراقبة (monitor mode) مستقراً وحقن حزم خام (raw packet injection). حالياً، أكثر برامج التشغيل (drivers) نضجاً في المجتمع هو فرع Realtek rtl88xxau (RTL8812AU / RTL8814AU). بطاقات WiFi 6/6E (MediaTek MT7921AUN، Realtek RTL8832BU) لا تملك بعد برامج تشغيل للحقن في أدوات المراقبة الرئيسية، لذلك يتم تجاهلها. AWUS036ACH هي خيار تم التحقق منه مزدوجاً من المجتمع وهذه المجموعة."
+    answer: "التقاط Remote ID يتطلب وضع مراقبة (monitor mode) مستقراً وحقن حزم خام (raw packet injection). حالياً، أكثر برامج التشغيل (drivers) نضجاً في المجتمع هو فرع Realtek rtl88xxau (RTL8812AU / RTL8814AU). من بين شرائح WiFi 6/6E، تفشل MediaTek MT7921AUN (AWUS036AXM / AXML) في اختبار الحقن على النواة القياسية 6.17، بينما تنجح Realtek RTL8832BU (AWUS036AX / AXER) في الحقن مع rtw89_8852bu المدمج ابتداءً من النواة 6.17 (اختبار GX10، نطاق 2.4 GHz: AX بنسبة 96%، AXER بنسبة 73%)، لكنها لم تُختبر مع هذه المجموعة. AWUS036ACH هي خيار تم التحقق منه مزدوجاً من المجتمع وهذه المجموعة."
   - question: "هل nRF52840 ضروري؟"
     answer: "إذا كنت تحتاج فقط Remote ID عبر WiFi (NAN / Beacon)، لا؛ AWUS036ACH كافية. إذا كنت ترغب أيضاً في التقاط بثوث Bluetooth 5 Long Range، فستحتاج إلى nRF52840 (مع برنامج ثابت sniffer). يُوصى بتضمين هذه الوحدة لتغطية كاملة."
   - question: "هل يمكن لهذه المجموعة فك تشفير طائرات DJI؟"
@@ -84,7 +84,7 @@ faq:
 |---|---|---|
 | Raspberry Pi OS Lite (64-bit) | نظام التشغيل (بدون واجهة) | raspberrypi.com |
 | **برنامج تشغيل rtl88xxau** | برنامج تشغيل للمراقبة/الحقن لـ RTL8812AU | [morrownr/8812au-20210629](https://github.com/morrownr/8812au-20210629) |
-| `libpcap-dev`، `libbluetooth-dev`، `libncurses-dev` | تبعيات ترجمة `unix_rid_capture` | APT |
+| `libpcap-dev`، `libbluetooth-dev`، `libncurses-dev` | تبعيات تجميع `unix_rid_capture` | APT |
 | **opendroneid-core-c** | مكتبة C لترميز/فك ترميز رسائل Open Drone ID (ASTM F3411 / EN 4709-002) | [opendroneid/opendroneid-core-c](https://github.com/opendroneid/opendroneid-core-c) |
 | **unix_rid_capture** | برنامج التقاط RID WiFi/BT للينكس (مخرجات JSON) | [sxjack/unix_rid_capture](https://github.com/sxjack/unix_rid_capture) |
 | DroneAware Node (اختياري) | الاتصال بخريطة المجتمع الفورية | [fduflyer/DroneAware-Node-Releases](https://github.com/fduflyer/DroneAware-Node-Releases) |
@@ -160,14 +160,14 @@ iwconfig wlan0
 
 يجب أن يُظهر الإخراج **`Mode:Monitor`** .
 
-### الخطوة 5 — تثبيت تبعيات الترجمة
+### الخطوة 5 — تثبيت تبعيات التجميع
 
 ```bash
 sudo apt install -y git cmake libncurses-dev libpcap-dev \
   libbluetooth-dev libgps-dev libnl-genl-3-dev libgtest-dev build-essential
 ```
 
-### الخطوة 6 — ترجمة opendroneid-core-c
+### الخطوة 6 — تجميع opendroneid-core-c
 
 ```bash
 git clone --recursive https://github.com/opendroneid/opendroneid-core-c
@@ -178,7 +178,7 @@ make -j
 # ينتج libopendroneid/libopendroneid.so و test/odidtest
 ```
 
-### الخطوة 7 — ترجمة unix_rid_capture
+### الخطوة 7 — تجميع unix_rid_capture
 
 `unix_rid_capture` يحتاج `opendroneid.c` / `opendroneid.h`؛ انسخهما من الخطوة السابقة:
 

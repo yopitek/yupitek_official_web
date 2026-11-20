@@ -28,8 +28,6 @@ ALFA AWUS036ACM 搭載 MediaTek MT7612U 晶片組，是 ALFA 現行產品中唯�
 AWUS036ACM 採用 MT7612U 晶片組，其 mt76x2u 驅動程式建構於 Linux mac80211 之上，完整支援 IBSS Ad Hoc 與 802.11s Mesh Point 模式。本文詳解兩種模式的運作原理、逐步設定與實際應用場景。
 {{< /tldr >}}
 
-# ALFA AWUS036ACM：在 Raspberry Pi 上啟用 IBSS Ad Hoc 與 802.11s Mesh 網路（MT7612U）
-
 如果你曾嘗試在多台 Raspberry Pi 節點之間建立**無需路由器**的 WiFi 網路，或是想打造一個能自動透過中繼節點轉發封包、具備自癒能力的無線 Mesh——你很快就會發現，大多數 USB WiFi 無線網路卡根本辦不到。核心驅動程式根本沒有開放對應的模式。
 
 **ALFA AWUS036ACM** 搭載 **MediaTek MT7612U** 晶片組，是這個領域的例外。其內建的 `mt76` 核心驅動程式完整實作了 Linux mac80211 介面，這意味著它在 Raspberry Pi 上原生支援 **IBSS（Ad Hoc）模式**與 **802.11s Mesh Point 模式**——開箱即用，無需編譯任何驅動程式。
@@ -52,7 +50,7 @@ AWUS036ACM 採用 MT7612U 晶片組，其 mt76x2u 驅動程式建構於 Linux ma
 
 ---
 
-## 1. 什麼是 IBSS 與 802.11s Mesh？
+## 1. 什麼是 IBSS 與 802.11s Mesh？ {#1-what-are-ibss-and-80211s-mesh}
 
 ### IBSS——獨立基本服務集（Ad Hoc 模式）
 
@@ -83,15 +81,15 @@ AWUS036ACM 採用 MT7612U 晶片組，其 mt76x2u 驅動程式建構於 Linux ma
 - 預設使用 **Hybrid Wireless Mesh Protocol（HWMP）** 進行路徑選擇
 
 ```
-範例：4 節點 Mesh
+範例: 4 節點 Mesh
 
   [Pi A] ──── [Pi B] ──── [Pi C]
                 │
               [Pi D]
 
-Pi A 可自動透過 Pi B 抵達 Pi C。
-Pi A 可自動透過 Pi B 抵達 Pi D。
-若 Pi B 失效，Mesh 會嘗試尋找替代路徑。
+Pi A 可自動透過 Pi B 抵達 Pi C.
+Pi A 可自動透過 Pi B 抵達 Pi D.
+若 Pi B 失效, Mesh 會嘗試尋找替代路徑.
 ```
 
 當你有超過 3–4 個節點、節點分布在較大的區域，或希望網路在不需手動管理的情況下保持韌性時，802.11s 就是正確的選擇。
@@ -106,7 +104,7 @@ MT7612U 是少數可以對兩者都給出清楚、明確「是」的晶片組之
 
 ---
 
-## 2. ALFA AWUS036ACM 硬體規格
+## 2. ALFA AWUS036ACM 硬體規格 {#2-alfa-awus036acm-hardware-specifications}
 
 AWUS036ACM 是 ALFA Network 的 AC1200 雙頻 USB 3.0 無線網路卡，專為 Linux 進階使用者與嵌入式開發者所設計。
 
@@ -185,7 +183,7 @@ WPA2 / WPA / WEP / WPA-PSK / 802.1X / 64–128 位元 WEP
 
 ---
 
-## 3. MT7612U 驅動程式在 Raspberry Pi 上的表現
+## 3. MT7612U 驅動程式在 Raspberry Pi 上的表現 {#3-the-mt7612u-driver-on-raspberry-pi}
 
 ### 驅動程式：mt76x2u（mt76 家族成員）
 
@@ -261,7 +259,7 @@ Supported interface modes:
 AWUS036ACM 的驅動程式堆疊結構如下：
 
 ```
-你的應用程式（ping、iperf3、batman-adv……）
+你的應用程式 (ping, iperf3, batman-adv……)
         ↓
 nl80211 / cfg80211  ← 核心 WiFi 設定 API
         ↓
@@ -269,7 +267,7 @@ mac80211            ← IEEE 802.11 軟體 MAC 層
         ↓
 mt76x2u             ← MT7612U USB 硬體驅動程式
         ↓
-MediaTek MT7612U    ← 實體晶片（2×2 MIMO，USB 3.0）
+MediaTek MT7612U    ← 實體晶片 (2×2 MIMO, USB 3.0)
 ```
 
 **mac80211** 是 Linux 核心對完整 802.11 狀態機的實作——負責處理信標管理、幀構建、省電模式、IBSS 對等節點探索，以及 Mesh 路徑路由。建構在 mac80211 之上的驅動程式會自動繼承這些所有能力。
@@ -278,7 +276,7 @@ MediaTek MT7612U    ← 實體晶片（2×2 MIMO，USB 3.0）
 
 ---
 
-## 4. 模式一：IBSS Ad Hoc 網路
+## 4. 模式一：IBSS Ad Hoc 網路 {#4-mode-1-ibss-ad-hoc-networking}
 
 ### IBSS 的運作原理
 
@@ -413,10 +411,10 @@ PING 192.168.88.2 (192.168.88.2) 56(84) bytes of data.
 
 以 iperf3 測試吞吐量：
 ```bash
-# 在節點 2（伺服器端）：
+# 在節點 2 (伺服器端):
 iperf3 -s
 
-# 在節點 1（用戶端）：
+# 在節點 1 (用戶端):
 iperf3 -c 192.168.88.2 -t 10
 ```
 
@@ -467,7 +465,7 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 ---
 
-## 5. 模式二：802.11s Mesh Point 網路
+## 5. 模式二：802.11s Mesh Point 網路 {#5-mode-2-80211s-mesh-point-networking}
 
 ### 802.11s 的運作原理
 
@@ -536,13 +534,13 @@ sudo ip link set mesh0 up
 **步驟 5——為每個節點指派唯一 IP 位址：**
 
 ```bash
-# 節點 1：
+# 節點 1:
 sudo ip addr add 10.88.0.1/24 dev mesh0
 
-# 節點 2：
+# 節點 2:
 sudo ip addr add 10.88.0.2/24 dev mesh0
 
-# 節點 3：
+# 節點 3:
 sudo ip addr add 10.88.0.3/24 dev mesh0
 ```
 
@@ -588,7 +586,7 @@ xx:xx:xx:xx:xx:03 xx:xx:xx:xx:xx:02 mesh0   18      2316    0       0       100 
 **跨 Mesh 進行 Ping 測試：**
 
 ```bash
-# 從節點 1：
+# 從節點 1:
 ping -c 4 10.88.0.3
 ```
 
@@ -618,7 +616,7 @@ sudo batctl if add mesh0
 # 啟用 batman 介面
 sudo ip link set bat0 up
 
-# 將 IP 指派給 batman 介面（而非 mesh0）
+# 將 IP 指派給 batman 介面 (而非 mesh0)
 sudo ip addr add 10.88.0.1/24 dev bat0
 ```
 
@@ -626,11 +624,11 @@ sudo ip addr add 10.88.0.1/24 dev bat0
 
 ```bash
 sudo batctl n    # 鄰居節點
-sudo batctl o    # 發起者表（所有已知節點）
-sudo batctl tg   # 轉換表（MAC → IP 對應）
+sudo batctl o    # 發起者表 (所有已知節點)
+sudo batctl tg   # 轉換表 (MAC → IP 對應)
 ```
 
-### 讓 802.11s Mesh 在重開機後持續生效
+### 讓 802.11s Mesh 在重開機後持續生效 {#making-80211s-mesh-persistent}
 
 建立 `/etc/systemd/system/mesh-point.service`：
 
@@ -665,7 +663,7 @@ sudo systemctl start mesh-point.service
 
 ---
 
-## 6. 實際應用場景
+## 6. 實際應用場景 {#6-real-world-use-cases}
 
 ### 場景一——離網感測器網路（智慧農業／環境監測）
 
@@ -677,8 +675,8 @@ sudo systemctl start mesh-point.service
 
 **資料流程範例：**
 ```
-[感測器 Pi A] ──IBSS──> [邊緣 Pi B（記錄器）]
-[感測器 Pi C] ──IBSS──> [邊緣 Pi B（記錄器）]
+[感測器 Pi A] ──IBSS──> [邊緣 Pi B (記錄器)]
+[感測器 Pi C] ──IBSS──> [邊緣 Pi B (記錄器)]
 ```
 
 ---
@@ -728,13 +726,13 @@ sudo systemctl start mesh-point.service
 # 在 IBSS 旁建立監控介面
 sudo iw phy phy1 interface add mon0 type monitor
 sudo ip link set mon0 up
-# 開始擷取：
+# 開始擷取:
 sudo tcpdump -i mon0 -w capture.pcap
 ```
 
 ---
 
-## 7. 為何 AWUS036ACM 是此用途的唯一 ALFA 選擇
+## 7. 為何 AWUS036ACM 是此用途的唯一 ALFA 選擇 {#7-why-the-awus036acm-is-the-only-alfa-choice-for-this}
 
 ### 關鍵因素：mac80211 相容性
 
@@ -745,7 +743,7 @@ USB WiFi 無線網路卡是否能在 Linux 上支援 IBSS 和 802.11s Mesh，完
 | 型號 | 晶片組 | 驅動程式 | IBSS | 802.11s Mesh | 備註 |
 |---|---|---|---|---|---|
 | **AWUS036ACM** | MT7612U | mt76x2u（核心內建 ≥ 4.19） | ✅ | ✅ | **唯一選擇** |
-| AWUS036ACH | RTL8812AU | rtw88（核心內建 ≥ 6.14） | ✅（僅限核心 ≥ 6.14） | ❌ | 新版核心內驅動程式；不支援 Mesh Point |
+| AWUS036ACH | RTL8812AU | rtw88（核心內建 ≥ 6.13） | ✅（僅限核心 ≥ 6.13） | ❌ | 新版核心內驅動程式；不支援 Mesh Point |
 | AWUS036ACS | RTL8811AU | rtl8812au-dkms（核心外） | ❌ | ❌ | 核心外驅動程式；不支援 IBSS/Mesh |
 | AWUS036AX | RTL8832BU | rtw88（核心內建） | ❌ | ❌ | 不支援 Raspberry Pi |
 | AWUS036AXER | RTL8832BU | rtw88（核心內建） | ❌ | ❌ | 不支援 Raspberry Pi |
@@ -768,7 +766,7 @@ AWUS036ACHM（MT7610U）曾是支援這些模式的前代 ALFA 無線網路卡�
 
 ---
 
-## 8. 常見問題與疑難排解
+## 8. 常見問題與疑難排解 {#8-faq-and-troubleshooting}
 
 **問：我的 Pi 只顯示 `wlan0`，`wlan1` 在哪裡？**
 
@@ -820,7 +818,7 @@ Linux 核心的 IBSS 模式不支援標準 WPA2-Personal（PSK）。若需要安
 可以——這正是 VIF（虛擬介面）的用途。你可以讓 `wlan1` 保持受管理模式連接家用路由器以存取網際網路，同時新增第二個虛擬介面處於 IBSS 或 Mesh 模式，用於 Pi 對 Pi 網路：
 
 ```bash
-# wlan1 保持受管理模式（網際網路）
+# wlan1 保持受管理模式 (網際網路)
 # 新增第二個介面用於 IBSS
 sudo iw phy phy1 interface add adhoc0 type ibss
 sudo ip link set adhoc0 up
@@ -842,7 +840,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ---
 
-## 9. 購買管道
+## 9. 購買管道 {#9-where-to-buy}
 
 ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 購買——ALFA Network 的官方授權經銷商。透過授權經銷商購買，可確保你取得的是 Alfa Network Inc. 提供正規保固的原廠硬體。
 

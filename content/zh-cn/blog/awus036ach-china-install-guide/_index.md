@@ -67,8 +67,6 @@ Bus 001 Device 003: ID 0bda:8812 Realtek Semiconductor Corp.
 
 - [Kali Linux](#kali-linux)
 - [Ubuntu 22.04 / 24.04](#ubuntu-2204--2404)
-- [Debian](#debian)
-- [树莓派 4B / 5](#raspberry-pi-4b--5)
 
 已经安装好了？直接跳到：
 

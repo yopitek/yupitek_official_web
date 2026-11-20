@@ -162,20 +162,20 @@ sudo airmon-ng start wlan1
 # 確認系統識別網路卡
 lsusb | grep -i realtek
 
-# 若連接網路卡後未自動載入，手動載入驅動程式
+# 若連接網路卡後未自動載入, 手動載入驅動程式
 sudo modprobe 88XXau
 
-# 終止干擾監聽模式的程序（NetworkManager、wpa_supplicant 等）
+# 終止干擾監聽模式的程序 (NetworkManager, wpa_supplicant 等)
 sudo airmon-ng check kill
 
 # 在 ALFA 網路卡介面上啟動監聽模式
 sudo airmon-ng start wlan1
 
-# 掃描所有可見網路（按 Ctrl+C 停止）
+# 掃描所有可見網路 (按 Ctrl+C 停止)
 sudo airodump-ng wlan1mon
 
 # 擷取特定網路的流量
-# -c：頻道，--bssid：目標 AP MAC 位址，-w：輸出檔案前綴
+# -c: 頻道, --bssid: 目標 AP MAC 位址, -w: 輸出檔案前綴
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan1mon
 ```
 

@@ -6,15 +6,15 @@ author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "What chipset does AWUS036ACS use? Is it the same as AWUS036ACH?"
-    answer: "It uses the Realtek RTL8811AU chipset. It does not share the RTL8812AU driver; it needs the community 8821au driver (morrownr/8821au-20210708), module name `8821au`."
+    answer: "It uses the Realtek RTL8811AU chipset. Driver support depends on your kernel: Linux kernel 6.13+ (e.g. Ubuntu 24.04 HWE / kernel 6.17) ships the built-in rtw88_8821au driver, so it works plug-and-play with no DKMS. Only on older kernels (below 6.13) do you need the community 8821au driver (morrownr/8821au-20210708, module name `8821au`). It does not share the RTL8812AU driver. Check your kernel with uname -r."
   - question: "Does AWUS036ACS support monitor mode?"
-    answer: "Yes. RTL8811AU fully supports monitor mode and packet injection, making it a budget-friendly choice for security research."
+    answer: "Yes. RTL8811AU fully supports monitor mode and packet injection, making it a budget-friendly choice for security research (we tested injection at 2.4GHz 100% and 5GHz 96% under the built-in rtw88_8821au driver on kernel 6.17, with an end-to-end WPA .22000 capture). Only on networks you own or are authorized to test."
   - question: "Do I need a VPN to install AWUS036ACS in China?"
     answer: "Not necessarily. Clone the driver from the verified GitHub repository (morrownr/8821au-20210708); if GitHub is slow, use a proxy or mirror you trust. Build tools can still be installed from domestic mirrors."
   - question: "What is the USB ID of AWUS036ACS?"
     answer: "The Realtek RTL8811AU USB ID is 0bda:0811. Confirm with lsusb."
   - question: "What is the Kali Linux command to install AWUS036ACS drivers?"
-    answer: "Install build tools, then clone the 8821au driver (morrownr/8821au-20210708 on GitHub) and run sudo sh install-driver.sh. The apt package realtek-rtl88xxau-dkms is the RTL8812AU driver, not for this adapter."
+    answer: "Check your kernel first with uname -r. Kernel 6.13+ already ships the built-in rtw88_8821au driver, so it works plug-and-play with no install needed. Only on older kernels do you install build tools, clone the 8821au driver (morrownr/8821au-20210708 on GitHub), and run sudo sh install-driver.sh. The apt package realtek-rtl88xxau-dkms is the RTL8812AU driver, not for this adapter."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -27,10 +27,12 @@ related_product: "/en/products/alfa/awus036acs/"
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 ---
 
-The AWUS036ACS is ALFA's compact dual-band security research adapter. Its RTL8811AU chip supports full monitor mode and packet injection on Kali Linux — but because the driver is out-of-kernel, you need to compile it from source. In China GitHub can be slow, so this guide installs build tools from domestic mirrors and clones the driver from the verified GitHub repository; if GitHub is slow, use a proxy or mirror you trust.
+The AWUS036ACS is ALFA's compact dual-band security research adapter. Its RTL8811AU chip supports full monitor mode and packet injection on Kali Linux. On **Linux kernel 6.13+** (e.g. Ubuntu 24.04 HWE / kernel 6.17) the kernel already ships the built-in rtw88_8821au driver, so it works plug-and-play with no DKMS. Only on **older kernels** (below 6.13) do you need to compile the community 8821au driver from source. In China GitHub can be slow, so for that case this guide installs build tools from domestic mirrors and clones the driver from the verified GitHub repository; if GitHub is slow, use a proxy or mirror you trust.
+
+> **Check your kernel first:** Run `uname -r`. Kernel 6.13+ (e.g. Ubuntu 24.04 HWE / kernel 6.17) ships the built-in rtw88_8821au driver — plug-and-play, no DKMS, with monitor mode and injection tested working (2.4GHz 100%, 5GHz 96%, end-to-end WPA .22000). The compile-and-install steps below are only needed on older kernels (below 6.13). Only on networks you own or are authorized to test.
 
 {{< tldr >}}
-AWUS036ACS uses the RTL8811AU chipset. On every distribution, build the 8821au DKMS driver with install-driver.sh from the GitHub repository morrownr/8821au-20210708. Supports monitor mode and packet injection.
+AWUS036ACS uses the RTL8811AU chipset. Kernel 6.13+ (including Ubuntu 24.04 HWE / kernel 6.17) ships the built-in rtw88_8821au driver — no DKMS, plug-and-play, with monitor mode and injection tested working (2.4GHz 100%, 5GHz 96%, end-to-end WPA .22000). Only on older kernels do you build the community 8821au DKMS driver with install-driver.sh from the GitHub repository morrownr/8821au-20210708.
 {{< /tldr >}}
 
 Make sure you have these ready:
@@ -396,10 +398,10 @@ sudo aireplay-ng --test wlan1mon
 | Alfa official drivers | [files.alfa.com.tw](https://files.alfa.com.tw) | Driver packages |
 | Alfa documentation | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | Product manuals |
 | 8821au driver (GitHub) | [github.com/morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708) | RTL8811AU driver |
-| 清华大学镜像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommended) |
-| 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommended) |
-| 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM images |
+| 清华大学镜像 (Tsinghua University mirror) | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里云镜像 (Aliyun mirror) | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommended) |
+| 中科大镜像 (USTC mirror) | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommended) |
+| 华为云镜像 (Huawei Cloud mirror) | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM images |
 
 ## More Alfa Adapter Guides for China
 

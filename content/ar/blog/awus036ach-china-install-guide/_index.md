@@ -469,7 +469,7 @@ https://www.kali.org/get-kali/#kali-arm
 
 اختر **Raspberry Pi 4 (64-bit)** أو **Raspberry Pi 5 (64-bit)** ليتوافق مع لوحتك. لا تنزّل الصورة 32-bit — بناء التعريف يتطلب نواة 64-bit.
 
-> **مرآة صينية:** إذا كان kali.org بطيئاً، جرّب 华为云 بدلاً من ذلك:
+> **مرآة صينية:** إذا كان kali.org بطيئاً، جرّب 华为云 (Huawei Cloud) بدلاً من ذلك:
 > https://repo.huaweicloud.com/kali-images/
 > تصفّح إلى مجلد الإصدار الأخير ونزّل صورة ARM64 من هناك.
 

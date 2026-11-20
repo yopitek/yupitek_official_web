@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AXER — Wi-Fi 6 超薄型ナノ USB アダプター"
-description: "ALFA AWUS036AXER、Realtek RTL8832BUチップ、Wi-Fi 6デュアルバンド、ナノフォームファクタ（~65×24×10mm）。日常接続向け — Kali Linux・セキュリティ研究には非推奨。"
+description: "ALFA AWUS036AXER、Realtek RTL8832BUチップ、Wi-Fi 6デュアルバンド、ナノフォームファクタ（~65×24×10mm）。カーネル 6.17 以降は mainline の rtw89_8852bu ドライバー、GX10 で Monitor mode とパケットインジェクションを確認済み。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "802.11ax", "超薄型", "USB 3.2", "ポータブル", "ナノ
 
 AWUS036AXER は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）デュアルバンド（2.4 GHz + 5 GHz）対応、最大 1800 Mbps（2.4 GHz: 573 Mbps + 5 GHz: 1200 Mbps）。超薄型ナノデザイン（約 65 × 24 × 10 mm、約 10g）で携帯性に優れています。
 
-> ⚠️ **注意：** ナノフォームファクタ — **RP-SMA コネクタなし**、アンテナのアップグレード不可。コミュニティ版 rtl8852bu ドライバは **Monitor mode に対応していません**。**Kali Linux またはセキュリティ研究には推奨しません**。
+> ⚠️ **注意：** ナノフォームファクタ — **RP-SMA コネクタなし**、アンテナのアップグレード不可。GX10（Ubuntu 24.04、カーネル 6.17）で mainline の rtw89_8852bu ドライバーを使用したテストでは、Monitor mode とパケットインジェクションの両方が通過しました（インジェクション成功率は 2.4 GHz で 73%、5 GHz で動作確認）。
 
 > **macOSについて：** すべての ALFA アダプターは macOS サポートが限定的です。macOS 11 Big Sur 以降および Apple Silicon（M1/M2/M3）は**非対応**です。Intel Mac での最大サポートは macOS 10.15 Catalina です。
 
@@ -46,8 +46,8 @@ AWUS036AXER は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）�
 |----|------|------|
 | Windows 10/11 | ✅ 対応 | Alfa ウェブサイトからドライバをダウンロード |
 | macOS | ❌ 非対応 | macOS 11+ および Apple Silicon 非対応 |
-| Ubuntu | ⚠️ ドライバ必要 | カーネルに内蔵されていません；DKMS 経由でコミュニティ版 rtl8852bu ドライバをビルドしてください |
-| Kali Linux | ⚠️ 限定 | Managed mode のみ（DKMS ドライバ）；Monitor mode はサポートされていません |
+| Ubuntu | ✅ カーネル 6.17 以降 | mainline の rtw89_8852bu ドライバー（Linux 6.17 から搭載）。古いカーネルでは DKMS 経由でコミュニティ版 rtl8852bu ドライバをビルド |
+| Kali Linux | ✅ 対応 | GX10（Ubuntu 24.04、カーネル 6.17）で mainline ドライバーにより Monitor mode とパケットインジェクションを確認；古いカーネルでは DKMS ドライバが必要。実機の Kali は未検証 |
 | NetHunter | ⚠️ 限定 | カーネル依存 |
 ## 対応ハードウェア
 
@@ -60,8 +60,8 @@ AWUS036AXER は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）�
 
 | 機能 | 状態 |
 |------|------|
-| Monitor Mode | ❌ 非対応 (コミュニティドライバ) |
-| Packet Injection | ❌ 非対応 |
+| Monitor Mode | ✅ あり（mainline rtw89_8852bu、カーネル 6.17 以降；GX10 テストで受信性能は良好） |
+| Packet Injection | ✅ あり（GX10 テスト：2.4 GHz 73%、5 GHz 動作確認） |
 | Soft AP モード | ✅ あり |
 | Bluetooth | ❌ なし |
 

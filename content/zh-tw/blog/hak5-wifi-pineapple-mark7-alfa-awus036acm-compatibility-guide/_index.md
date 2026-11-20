@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["HAK5", "WiFi-Pineapple", "AWUS036ACM", "MT7612U", "monitor-mode", "packet-injection", "PineAP", "OpenWrt", "5GHz", "滲透測試"]
 featureimage: "/images/blog/hak5-pineapple-mark7-alfa-awus036acm.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "WiFi Pineapple Mark VII 需要外接網路卡嗎？"
     answer: "需要。MK7 內建無線電僅支援 2.4 GHz，2026 年大多數網路已遷移至 5 GHz，外接 AWUS036ACM 可加入 5 GHz 監聽與注入能力。"
@@ -19,7 +19,7 @@ faq:
   - question: "如何在 MK7 上啟用 Monitor Mode？"
     answer: "透過 SSH 登入後執行 airmon-ng start wlan3 指令，介面會重新命名為 wlan3mon，再以 iwconfig 驗證模式。"
   - question: "哪些 ALFA 網路卡不相容 MK7？"
-    answer: "AWUS036AX、AWUS036AXER 使用 RTL8832BU 晶片，AWUS036EACS 使用 RTL8811CU，驅動不支援監聽模式或注入，均不相容。"
+    answer: "AWUS036AX、AWUS036AXER 使用 RTL8832BU 晶片，rtw89_8852bu 驅動自 kernel 6.17 起內建，在 GX10（kernel 6.17）實測 monitor 與注入可用，但 Mark7 上未實測。AWUS036EACS（RTL8821CU）的 rtw88_8821cu 自 kernel 6.2 起進入主線，在 GX10（kernel 6.17）實測 monitor 與注入可用；但 Mark7 韌體所用的 kernel 與驅動是否內建、本站未於 Mark7 實測，故未列入已驗證相容清單。"
 ---
 
 ALFA AWUS036ACM 是 HAK5 WiFi Pineapple Mark VII 唯一官方確認相容的 5 GHz 網路卡，搭載 MT7612U 晶片隨插即用，無需編譯驅動。

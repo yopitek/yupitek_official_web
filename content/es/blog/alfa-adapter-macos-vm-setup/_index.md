@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Pueden las tarjetas de red ALFA usar el modo monitor de forma nativa en macOS?"
     answer: "No. La arquitectura CoreWLAN e IO80211Family de macOS no admite el modo monitor ni la inyección de paquetes para tarjetas de red de terceros. Debes ejecutar una VM de Kali Linux con tránsito USB."
@@ -202,7 +202,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**Recomendación para Macs con chip M:** Si estás adquiriendo un adaptador ALFA específicamente para usar en un Mac Apple Silicon con Kali en una VM, el **AWUS036AXML (MT7921AUN)** es la mejor opción. Su controlador integrado en el kernel elimina por completo el paso de compilación con DKMS y funciona de manera confiable en compilaciones de Kali ARM64. El AWUS036ACH es funcional pero requiere el controlador RTL8812AU fuera del árbol del kernel, añadiendo una dependencia de mantenimiento en la disponibilidad de encabezados del kernel.
+**Recomendación para Macs con chip M:** Si estás adquiriendo un adaptador ALFA específicamente para usar en un Mac Apple Silicon con Kali en una VM, el **AWUS036AXML (MT7921AUN)** es la mejor opción. Su controlador integrado en el kernel elimina por completo el paso de compilación con DKMS y funciona de manera confiable en compilaciones de Kali ARM64. El AWUS036ACH es funcional pero requiere el controlador RTL8812AU fuera del árbol del kernel, añadiendo una dependencia de mantenimiento en la disponibilidad de encabezados del kernel. Tenga en cuenta que la inyección depende del kernel: hay informes de la comunidad de inyección funcional en kernels anteriores a 6.16, pero en el kernel stock 6.16 y posteriores (probado en 6.17) el AXML no supera la prueba de inyección de paquetes (`aireplay-ng --test`: Found 0 APs / No Answer), por lo que no es posible el deauth ni la captura de handshakes. La causa es una regresión de mac80211 chanctx, no una limitación del chip; los controladores comunitarios parcheados pueden restaurar la inyección, pero el firmware sigue bloqueando la velocidad (1/6 Mbps, sin inyección HT/VHT). El modo monitor, el AP y WPA3 no se ven afectados. Si necesita inyección, elija en su lugar el AWUS036ACH o el AWUS036EACS.
 
 ---
 
@@ -288,4 +288,4 @@ Para detalles específicos del adaptador AWUS036AXML recomendado en esta guía, 
 2. [Página de descarga oficial de Kali Linux](https://www.kali.org/get-kali/)
 3. [Página del producto VMware Fusion](https://www.vmware.com/products/fusion.html)
 4. [Sitio oficial de Parallels Desktop](https://www.parallels.com/)
-5. [aircrack-ng rtl8812au 驅動專案](https://github.com/aircrack-ng/rtl8812au)
+5. [Proyecto del controlador rtl8812au de aircrack-ng](https://github.com/aircrack-ng/rtl8812au)

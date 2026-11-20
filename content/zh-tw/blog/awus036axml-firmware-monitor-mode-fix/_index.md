@@ -3,7 +3,7 @@ title: "AWUS036AXML 監控模式韌體修復：解決主動模式當機問題"
 description: "如何修復 AWUS036AXML 在 Kali Linux 上的監控模式韌體當機問題。涵蓋 MT7921AUN 韌體更新、核心版本需求、主動與被動模式的解決方案，以及 hcxdumptool 替代方案。"
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -48,6 +48,8 @@ AWUS036AXML 的 mt7921u 驅動程式在主動封包注入時會觸發韌體當�
 
 **MT7921AUN 晶片組**採用韌體式 MAC 架構。Linux 核心的 `mt7921u` 驅動程式依賴晶片組內嵌韌體來處理某些底層操作，包括監控模式下的封包注入。目前的韌體與驅動程式組合未完整實作 Linux 主動注入監控模式所需的指令路徑。
 
+補充：在 ASUS GX10（stock kernel 6.17）上實測，注入失敗的主因是 kernel 6.16 以後 mac80211 chanctx 回歸，並非晶片本身的限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps，無法注入 HT/VHT）。
+
 相較之下，**被動監聽**（嗅探空中已有的封包）不需要韌體傳送任何內容，不會觸發當機。問題僅限於傳送路徑操作：取消驗證封包、探測請求、關聯洪水等主動操作。
 
 {{< alert "triangle-exclamation" >}}
@@ -67,16 +69,16 @@ lsusb | grep -i mediatek
 # 確認驅動程式已載入
 lsmod | grep mt7921u
 
-# 確認核心版本（必須 >= 5.18）
+# 確認核心版本 (必須 >= 5.18)
 uname -r
 
 # 啟動監控模式
 sudo airmon-ng start wlan0
 
-# 測試被動擷取（應正常運作）
+# 測試被動擷取 (應正常運作)
 sudo airodump-ng wlan0mon
 
-# 測試主動注入（可能當機）
+# 測試主動注入 (可能當機)
 sudo aireplay-ng --test wlan0mon
 ```
 
@@ -156,7 +158,7 @@ sudo reboot
 ```bash
 sudo apt install hcxdumptool hcxtools
 
-# 被動擷取——無需取消驗證，無韌體當機風險
+# 被動擷取——無需取消驗證, 無韌體當機風險
 sudo hcxdumptool -i wlan0mon -o capture.pcapng --enable_status=1
 
 # 轉換為 hashcat 格式

@@ -13,7 +13,7 @@ series_order: 7
 related_product: "/ja/products/alfa/awus036axml/"
 featureimage: "/images/blog/awus036axml-china-install-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "AWUS036AXMLはどのチップを使っていますか？AWUS036AXMと同じですか？"
     answer: "同じくMediaTek MT7921AUNチップを採用していますが、AWUS036AXMLはUSB-Cインターフェースのフラッグシップ版です。"
@@ -27,11 +27,11 @@ faq:
     answer: "MediaTek MT7921AUNのUSB IDは0e8d:7961で、lsusbで確認できます。"
 ---
 
-AWUS036AXMLは、ALFAのWiFi 6Eフラッグシップモデルです。2.4 GHz、5 GHzに加えて、混雑の少ない6 GHz帯をカバーするUSB-Cアダプターです。搭載されているMT7921AUNチップは、Linuxカーネルバージョン5.18以降で `mt7921u` ドライバが標準組み込みされています。Ubuntu 24.04やKali 2025では、国内ミラーからファームウェアパッケージをインストールするだけで、プラグアンドプレイで使用可能です。このガイドでは、GitHubに触れることなく、ファームウェアの設定、ドライバの確認、モニターモード、パケットインジェクション、VIFの設定までを完全にカバーします。
+AWUS036AXMLは、ALFAのWiFi 6Eフラッグシップモデルです。2.4 GHz、5 GHzに加えて、混雑の少ない6 GHz帯をカバーするUSB-Cアダプターです。搭載されているMT7921AUNチップは、Linuxカーネルバージョン5.18以降で `mt7921u` ドライバが標準組み込みされています。Ubuntu 24.04やKali 2025では、国内ミラーからファームウェアパッケージをインストールするだけで、プラグアンドプレイで使用可能です。このガイドでは、GitHubに触れることなく、ファームウェアの設定、ドライバの確認、モニターモード、VIFの設定、およびパケットインジェクションに関する注意（stock kernel 6.17 では失敗）までを完全にカバーします。
 
 
 {{< tldr >}}
-AWUS036AXMLはMT7921AUNチップを採用したWiFi 6EトリバンドUSB-Cフラッグシップアダプターで、ドライバーはカーネル内蔵、ファームウェアインストール後にモニターモード、パケットインジェクション、VIFが利用できます。
+AWUS036AXMLはMT7921AUNチップを採用したWiFi 6EトリバンドUSB-Cフラッグシップアダプターで、ドライバーはカーネル内蔵、ファームウェアインストール後にモニターモード、AP/WPA3、VIFが利用できます（パケットインジェクションは stock kernel 6.17 での実測で失敗）。
 {{< /tldr >}}
 
 1. **ALFA AWUS036AXML** アダプター本体と USB-C ケーブル
@@ -160,6 +160,8 @@ iwconfig
 ---
 
 ### ステップ 5: パケットインジェクションのテスト {#test-packet-injection}
+
+⚠️ **バージョンに関する前提：**カーネル 6.16 以前ではインジェクションが動作するとのコミュニティ報告があります。しかし stock kernel 6.17（ASUS GX10、Ubuntu 24.04 ARM64）での実測では失敗しました。`aireplay-ng --test` は `Found 0 APs` / `No Answer` を表示し、deauth やハンドシェイクの取得はできません。原因はカーネル 6.16 以降の mac80211 chanctx のリグレッションであり、チップ自体の制限ではありません。コミュニティの patched ドライバーでインジェクションは動作しますが、ファームウェアがレートを固定しています（1/6 Mbps、HT/VHT のインジェクション不可）。インジェクションが必要な場合は AWUS036ACH / EACS / ACS / AX（ACM / ACHM も可）をご利用ください。モニターモード、AP、WPA3、VIF は正常に動作します。
 
 ```bash
 sudo aireplay-ng --test wlan1
@@ -304,6 +306,8 @@ iwconfig
 
 ### ステップ 4: パケットインジェクションのテスト
 
+⚠️ stock kernel 6.17 ではこのテストは失敗します（上記のバージョンに関する前提を参照）。インジェクションが必要な場合は AWUS036ACH / EACS / ACS / AX をご利用ください。
+
 ```bash
 sudo aireplay-ng --test wlan1
 ```
@@ -378,6 +382,8 @@ iwconfig
 
 ### ステップ 6: パケットインジェクションのテスト
 
+⚠️ stock kernel 6.17 ではこのテストは失敗します（上記のバージョンに関する前提を参照）。インジェクションが必要な場合は AWUS036ACH / EACS / ACS / AX をご利用ください。
+
 ```bash
 sudo aireplay-ng --test wlan1
 ```
@@ -450,7 +456,7 @@ iwconfig
 | Ubuntu 22.04 でドライバが読み込まれない | カーネル 5.15 は古すぎます | HWE をインストール: `sudo apt install linux-generic-hwe-22.04` |
 | インターフェースは見えるが関連付けられない | ファームウェアの blob が不足している | `sudo apt install firmware-misc-nonfree` を実行して再起動 |
 | モニターモードへの切り替えが失敗する | インターフェースがまだ UP 状態 | `iw dev` コマンドの前に `sudo ip link set wlan1 down` を実行 |
-| インジェクションテストが "No Answer" | AP が遠すぎるかインターフェース間違い | もっと近づいてください。`iwconfig` で `Mode:Monitor` を確認 |
+| インジェクションテストが "No Answer" | AP が遠すぎるかインターフェース間違い（またはカーネル 6.16 以降：mac80211 chanctx のリグレッション） | もっと近づいてください。`iwconfig` で `Mode:Monitor` を確認 6.16 以降でインジェクションが必要な場合は ACH / EACS / ACS / AX を使用。 |
 | VIF インターフェース作成が失敗する | ドライバが完全にロードされていない | 一度抜き、次を実行: `sudo rmmod mt7921u && sudo modprobe mt7921u` |
 
 ## 中国国内ミラーリファレンス

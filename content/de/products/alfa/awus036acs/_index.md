@@ -52,8 +52,8 @@ Der AWUS036ACS ist Alfas günstigster Einstieg in die Dual-Band-802.11ac-Produkt
 |---|---|---|
 | Windows XP–11 | ✅ Unterstützt | Treiber von der Alfa-Website verfügbar |
 | macOS 10.5–10.14 | ⚠️ Eingeschränkt | macOS 10.15+ und Apple Silicon NICHT unterstützt |
-| Ubuntu | ✅ Unterstützt | Manuelle DKMS-Treiberinstallation erforderlich (morrownr/8821au). Keine In-Kernel-Unterstützung. |
-| Kali Linux | ✅ Unterstützt | Monitor-Modus + Paketinjektion unterstützt. Community-Treiber von morrownr GitHub. |
+| Ubuntu | ✅ Unterstützt | Ab Kernel 6.13: Mainline-Treiber rtw88_8821au, keine Installation nötig. Ältere Kernel benötigen den DKMS-Treiber (morrownr/8821au). |
+| Kali Linux | ✅ Unterstützt | Monitor-Modus + Paketinjektion unterstützt (GX10, Ubuntu 24.04, Kernel 6.17: Injektion 100 % auf 2,4 GHz, 96 % auf 5 GHz). Ab Kernel 6.13 Mainline-Treiber; ältere Kernel nutzen den Community-Treiber von morrownr. Auf echtem Kali nicht getestet. |
 | NetHunter (Android) | ✅ Unterstützt | OTG-USB-Verbindung; RTL8811AU hat bestätigte NetHunter-Kompatibilität |
 
 ## Hardware-Kompatibilität

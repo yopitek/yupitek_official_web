@@ -7,10 +7,10 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Remote-ID", "ALFA-Network", "AWUS036ACH", "无人机侦测", "Counter-UAV", "ASTM-F3411", "EN-4709-002", "opendroneid", "unix_rid_capture", "DJI-OcuSync", "Raspberry-Pi"]
 author: "benny-lai"
-lastmod: 2026-07-27
+lastmod: 2026-11-20
 faq:
   - question: "为什么 AWUS036ACH 是首选，而不是更新的 Wi-Fi 6/6E 网卡？"
-    answer: "Remote ID 撷取需要稳定的监听模式与原始封包注入，目前社群驱动最成熟的是 Realtek rtl88xxau 分支（RTL8812AU / RTL8814AU）。Wi-Fi 6/6E（MediaTek MT7921AUN、Realtek RTL8832BU）在主流渗透／监听工具链中尚无对应注入驱动，会被忽略。AWUS036ACH 是经社群与本套件双重验证的选择。"
+    answer: "Remote ID 撷取需要稳定的监听模式与原始封包注入，目前社群驱动最成熟的是 Realtek rtl88xxau 分支（RTL8812AU / RTL8814AU）。Wi-Fi 6/6E 方面，MediaTek MT7921AUN（AWUS036AXM／AXML）在 stock kernel 6.17 上注入测试未通过；Realtek RTL8832BU（AWUS036AX／AXER）在内核 6.17 以上以内置 rtw89_8852bu 可注入（GX10 实测 2.4 GHz：AX 96%、AXER 73%），但尚未与本套件验证。AWUS036ACH 是经社群与本套件双重验证的选择。"
   - question: "nRF52840 是必要的吗？"
     answer: "若只需 Wi-Fi Remote ID（NAN / Beacon），不需要；AWUS036ACH 即可。若要同时撷取 Bluetooth 5 Long Range 广播，则需要 nRF52840（烧录 sniffer 韧体）。建议套件含此模块以达完整覆盖。"
   - question: "这套件能解码 DJI 无人机吗？"
@@ -20,7 +20,7 @@ faq:
   - question: "被动接收合法吗？"
     answer: "接收无人机公开广播的 Remote ID 属合法接收，等同读取公开信息；但主动干扰（jamming）受严格管制，不在此套件范围。"
 ---
-> 榆合科技 Yopitek 技术团队｜ALFA Network 台湾授权代理
+> 榆閤科技 Yopitek 技术团队｜ALFA Network 台湾授权代理
 
 {{< tldr >}}
 Remote ID 侦测套件用 **ALFA AWUS036ACH** 网卡的监听模式，被动接收无人机依法必须广播的身份与位置信息（等同无人机的「空中车牌」），是场域安全管理者合法、低成本的态势感知手段。
@@ -95,19 +95,19 @@ Remote ID 侦测套件用 **ALFA AWUS036ACH** 网卡的监听模式，被动接�
 ## 5. GitHub 专案链接
 
 ```text
-# 核心解码库（ASTM F3411 / EN 4709-002 消息编解码）
+# 核心解码库 (ASTM F3411 / EN 4709-002 消息编解码)
 https://github.com/opendroneid/opendroneid-core-c
 
-# Linux 撷取程序（本套件主程序，已验证 rtl8812au + nRF52840 + RPi）
+# Linux 撷取程序 (本套件主程序, 已验证 rtl8812au + nRF52840 + RPi)
 https://github.com/sxjack/unix_rid_capture
 
-# 社群即时地图网络（一键安装，自动上传 droneaware.io）
+# 社群即时地图网络 (一键安装, 自动上传 droneaware.io)
 https://github.com/fduflyer/DroneAware-Node-Releases
 
-# 无线侦测框架（DJI OcuSync 路径需搭配 SDR 外挂）
+# 无线侦测框架 (DJI OcuSync 路径需搭配 SDR 外挂)
 https://github.com/kismetwireless/kismet
 
-# RTL8812AU 监听 / 注入驱动（AWUS036ACH 必装）
+# RTL8812AU 监听 / 注入驱动 (AWUS036ACH 必装)
 https://github.com/morrownr/8812au-20210629
 ```
 
@@ -295,4 +295,4 @@ curl -fsSL https://github.com/fduflyer/DroneAware-Node-Releases/releases/latest/
 
 ---
 
-*本文由榆合科技 Yopitek 技术团队整理。AWUS036ACH 与相关硬件均可经 Yopitek 取得并享技术支援（Yopitek 为 ALFA Network 台湾授权经销商）。*
+*本文由榆閤科技 Yopitek 技术团队整理。AWUS036ACH 与相关硬件均可经 Yopitek 取得并享技术支援（Yopitek 为 ALFA Network 台湾授权经销商）。*

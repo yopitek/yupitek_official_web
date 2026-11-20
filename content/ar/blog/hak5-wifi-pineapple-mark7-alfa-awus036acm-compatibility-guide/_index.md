@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["HAK5", "WiFi-Pineapple", "AWUS036ACM", "MT7612U", "monitor-mode", "packet-injection", "PineAP", "OpenWrt", "5GHz"]
 featureimage: "/images/blog/hak5-pineapple-mark7-alfa-awus036acm.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "هل تحتاج WiFi Pineapple Mark VII إلى محول خارجي؟"
     answer: "نعم. اللاسلكي المدمج في MK7 يدعم 2.4 GHz فقط، ومعظم الشبكات انتقلت إلى 5 GHz في 2026. محول AWUS036ACM الخارجي يضيف قدرة مراقبة وحقن 5 GHz."
@@ -19,7 +19,7 @@ faq:
   - question: "كيف أفعّل وضع المراقبة على MK7؟"
     answer: "عبر SSH نفّذ airmon-ng start wlan3، ستُعاد تسمية الواجهة إلى wlan3mon، تحقق بالوضع عبر iwconfig."
   - question: "ما محولات ALFA غير المتوافقة مع MK7؟"
-    answer: "AWUS036AX و AWUS036AXER يستخدمان RTL8832BU، و AWUS036EACS يستخدم RTL8811CU. تعريفاتها لا تدعم وضع المراقبة أو الحقن، جميعها غير متوافقة."
+    answer: "AWUS036AX و AWUS036AXER يستخدمان RTL8832BU، وبرنامج التشغيل rtw89_8852bu مدمج في النواة منذ 6.17، وقد أثبت الاختبار على GX10 (النواة 6.17) أن وضع المراقبة والحقن يعملان، لكنه لم يُختبر على Mark7. أما AWUS036EACS (RTL8821CU) فبرنامج التشغيل rtw88_8821cu مدمج في النواة الرئيسية منذ Linux 6.2، وقد أثبت الاختبار على GX10 (النواة 6.17) أن وضع المراقبة والحقن يعملان؛ لكن لم يُختبر على Mark7 ولا يُعرف إن كانت نواة/تعريفات برنامجه الثابت تضمّه، لذلك لم نُدرجه ضمن قائمة التوافق المُتحقَّق منها."
 ---
 جهاز HAK5 WiFi Pineapple Mark VII هو المعيار الذهبي لتدقيق الأمن اللاسلكي المحمول. لكنه يأتي بقيود: الراديو المدمج يعمل فقط على **2.4 GHz**. في عام 2026، انتقلت معظم الشبكات إلى 5 GHz.
 

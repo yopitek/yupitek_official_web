@@ -52,8 +52,8 @@ L'AWUS036ACS est le point d'entrée le plus abordable d'Alfa dans la gamme 802.1
 |---|---|---|
 | Windows XP–11 | ✅ Pris en charge | Pilote disponible sur le site Alfa |
 | macOS 10.5–10.14 | ⚠️ Limité | macOS 10.15+ et Apple Silicon NON pris en charge |
-| Ubuntu | ✅ Pris en charge | Installation manuelle du pilote DKMS requise (morrownr/8821au). Pas de support intégré au noyau. |
-| Kali Linux | ✅ Pris en charge | Mode moniteur + injection de paquets pris en charge. Pilote communautaire depuis GitHub morrownr. |
+| Ubuntu | ✅ Pris en charge | Noyau 6.13+ : pilote mainline rtw88_8821au, aucune installation requise. Les noyaux plus anciens nécessitent le pilote DKMS (morrownr/8821au). |
+| Kali Linux | ✅ Pris en charge | Mode moniteur + injection de paquets pris en charge (GX10, Ubuntu 24.04, noyau 6.17 : injection 100 % en 2,4 GHz, 96 % en 5 GHz). Pilote mainline à partir du noyau 6.13 ; noyaux plus anciens : pilote communautaire morrownr. Non testé sur un vrai Kali. |
 | NetHunter (Android) | ✅ Pris en charge | Connexion USB OTG ; compatibilité NetHunter confirmée pour RTL8811AU |
 
 ## Compatibilité Matérielle

@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["modo-monitor", "Kali-Linux", "airmon-ng", "iw", "adaptador-WiFi", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Qual a diferenca entre modo monitor e modo gerenciado?"
@@ -18,7 +18,7 @@ faq:
   - question: "O que fazer quando a interface volta automaticamente para modo gerenciado após ativar o monitor?"
     answer: "E causado pelo wpa_supplicant ou NetworkManager reiniciando em segundo plano. Execute airmon-ng check kill para encerrar esses processos e resolver o problema."
   - question: "Quais adaptadores ALFA suportam completamente modo monitor no Kali Linux?"
-    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN) e AWUS036ACM (MT7612U) suportam completamente. O ACM é plug-and-play."
+    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN) e AWUS036ACM (MT7612U) suportam completamente. O ACM é plug-and-play. Nota: a injeção de pacotes do AWUS036AXML falha no kernel stock 6.17 (regressão do mac80211 chanctx; há relatos da comunidade para kernels anteriores ao 6.16). Para injeção, use ACH / ACM / AX."
   - question: "Como resolver o erro Fixed channel wlan0mon: -1 no airodump-ng?"
     answer: "Indica que o airodump-ng não consegue trocar de canal. Execute iwconfig wlan0mon channel 1 para definir o canal e encerre processos wpa_supplicant residuais."
 ---
@@ -204,7 +204,7 @@ Adaptadores [ALFA Network](/pt/products/alfa/) são o padrão da indústria para
 | Modelo | Chipset | Banda | Modo Monitor | Injeção | Notas |
 |---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2,4 / 5 GHz | ✅ | ✅ | Mais popular para pentest |
-| AWUS036AXML | MT7921AUN | 2,4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E, requer kernel 5.18+ |
+| AWUS036AXML | MT7921AUN | 2,4 / 5 / 6 GHz | ✅ | ⚠️ Relatado em kernels anteriores ao 6.16; falha no 6.17 | Wi-Fi 6E, requer kernel 5.18+ |
 | AWUS036ACM | MT7612U | 2,4 / 5 GHz | ✅ | ✅ | Excelente suporte a driver Linux |
 
 Todos os modelos listados acima têm suporte de driver verificado no Kali Linux 2024.x e 2025.x. Para chipsets como RTL8812AU, pode ser necessário instalar o driver do repositório GitHub do Aircrack-ng se a versão do seu kernel for muito recente.

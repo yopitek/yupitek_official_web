@@ -20,8 +20,6 @@ faq:
     answer: "Dans neuf cas sur dix, c'est la carte SIM ou l'APN. Ouvrez le terminal, saisissez AT+CPIN? pour vérifier l'état de la SIM, puis AT!GSTATUS? pour confirmer l'enregistrement auprès de la station de base. Vérifiez enfin que vos paramètres APN correspondent aux exigences de votre opérateur."
 ---
 
-# FAQ des modules Sierra Wireless : la carte de dépannage du « périphérique non détecté » au « pas de connexion réseau »
-
 Quand on travaille avec des modules 4G/5G Sierra Wireless (que ce soit l'EM7455, l'EM7565 ou le tout récent EM919x), le pire est quand le module « ne réagit pas » ou « ne se connecte pas » une fois branché.
 
 Les tutos sur Internet sont éparpillés : tantôt on vous dit de flasher le firmware, tantôt de changer les réglages. Cet article vous donne une « carte de dépannage en quatre couches ». Suivez les étapes dans l'ordre, et vous trouverez forcément le problème.

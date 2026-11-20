@@ -22,8 +22,6 @@ faq:
     answer: "Puede adquirir toda la serie de módulos celulares Sierra Wireless a través de Yopitek. Visite la página de productos del sitio oficial de Yopitek para consultar modelos y precios, o escríbanos directamente a: sales@yupitek.com"
 ---
 
-# Guía completa para elegir módulos celulares Sierra Wireless: de LTE Cat 4 a 5G mmWave
-
 {{< alert >}}
 Yopitek ofrece información de productos, canales de suministro y contenido técnico de Sierra Wireless / Semtech; no somos distribuidor autorizado oficial y esta información es solo de referencia técnica.
 {{</alert >}}

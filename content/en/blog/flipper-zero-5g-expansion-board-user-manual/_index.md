@@ -14,8 +14,6 @@ featureimage: "/images/blog/flipper-zero-5g-expansion-board-user-manual/img_01_a
 hideFeatureImage: true
 ---
 
-# Flipper Zero 5G Expansion Board User Manual (v2.0)
-
 > **Audience**: Customers new to the 5G Expansion Board.  
 > **Key Goal**: This guide provides detailed isometric diagrams for all critical setup steps. Each step includes a dedicated visual reference to ensure a smooth, error-free installation.
 

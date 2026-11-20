@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi", "USB-無線網路卡", "樹莓派-WiFi-熱點"]
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ALFA USB 網路卡可以在 Linux 上當 WiFi 熱點用嗎？"
     answer: "視晶片組而定。AWUS036ACM（MT7612U）完整支援且即插即用，AWUS036ACH（RTL8812AU）有條件支援，AWUS036AXML 部分支援需調校。"
@@ -26,10 +26,8 @@ faq:
 ALFA AWUS036ACM（MT7612U）是 Linux Soft AP 最佳首選，in-kernel 驅動即插即用、支援 WPA3 與 VIF 虛擬介面。RTL8812AU 有條件支援，MT7921AUN 需手動調校。
 
 {{< tldr >}}
-ALFA 網路卡 Soft AP 相容性取決於晶片驅動。AWUS036ACM 為全平台穩定首選，AWUS036ACH 可用但無 WPA3，AWUS036AXML 需禁用藍牙並更新韌體，RTL8832BU 不建議使用。
+ALFA 網路卡 Soft AP 相容性取決於晶片驅動。AWUS036ACM 為全平台穩定首選，AWUS036ACH 可用但無 WPA3，AWUS036AXML 需禁用藍牙並更新韌體，RTL8832BU（AX / AXER）在 kernel 6.17 以上以內建驅動可用。
 {{< /tldr >}}
-
-# ALFA 網路卡 Soft AP 完整指南 2026：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5 建立 WiFi 熱點
 
 ## 前言
 
@@ -94,11 +92,11 @@ iw list | grep -A 10 "Supported interface modes"
 | 型號 | 晶片組 | 驅動類型 | WiFi 標準 | Soft AP 評級 |
 |------|--------|----------|-----------|-------------|
 | **AWUS036ACM** | MediaTek MT7612U | In-kernel（kernel 4.19+） | WiFi 5 AC1200 雙頻 | ✅ 完整支援 |
-| AWUS036ACH | Realtek RTL8812AU | Out-of-kernel（kernel 6.14+ 納入 in-kernel） | WiFi 5 AC1200 雙頻 | ⚠️ 有條件支援 |
+| AWUS036ACH | Realtek RTL8812AU | Out-of-kernel（kernel 6.13+ 納入 in-kernel） | WiFi 5 AC1200 雙頻 | ⚠️ 有條件支援 |
 | AWUS036AXML | MediaTek MT7921AUN | In-kernel（kernel 5.18+，AP 模式 5.19+） | WiFi 6E AX3000 三頻 | ⚠️ 部分支援 |
-| AWUS036AXM | MediaTek MT7921AUN | In-kernel（同上） | WiFi 6E AX3000 三頻 | ⚠️ 部分支援 |
-| AWUS036AX | Realtek RTL8832BU | Out-of-kernel（kernel 6.12+ 建議） | WiFi 6 AX1800 雙頻 | ❌ 不建議 |
-| AWUS036AXER | Realtek RTL8832BU | Out-of-kernel（同上） | WiFi 6 AX1800 雙頻 | ❌ 不建議 |
+| AWUS036AXM | MediaTek MT7921AUN | In-kernel（同上） | WiFi 6E AX3000 三頻（依規格；6 GHz 未實測）| ⚠️ 部分支援 |
+| AWUS036AX | Realtek RTL8832BU | 內建 rtw89_8852bu（kernel 6.17+）；較舊 kernel 需社群 DKMS 驅動 | WiFi 6 AX1800 雙頻 | ✅ 可用（kernel 6.17+） |
+| AWUS036AXER | Realtek RTL8832BU | 內建 rtw89_8852bu（kernel 6.17+，同 AX） | WiFi 6 AX1800 雙頻 | ✅ 可用（kernel 6.17+） |
 
 > **備註**：AWUS036ACHM（MT7610U）已停產，Yopitek 產品頁面不再列出。本文以現售產品為主。
 
@@ -126,8 +124,8 @@ MT7612U 是目前 ALFA 現售產品中，Soft AP 表現最穩定的晶片。它�
 interface=wlan1
 driver=nl80211
 ssid=YourNetworkName
-hw_mode=a                     # 5GHz；改為 g 則使用 2.4GHz
-channel=36                    # UNII-1，非 DFS，最安全的選擇
+hw_mode=a                     # 5GHz; 改為 g 則使用 2.4GHz
+channel=36                    # UNII-1, 非 DFS, 最安全的選擇
 ieee80211n=1
 ieee80211ac=1
 wmm_enabled=1
@@ -139,7 +137,7 @@ vht_capab=[RXLDPC][TX-STBC-2BY1][SHORT-GI-80][RX-ANTENNA-PATTERN][TX-ANTENNA-PAT
 vht_oper_chwidth=1
 vht_oper_centr_freq_seg0_idx=42    # channel 36 對應的中心頻道索引
 
-# 安全性：WPA2 + WPA3 混合模式
+# 安全性: WPA2 + WPA3 混合模式
 auth_algs=1
 wpa=2
 wpa_key_mgmt=WPA-PSK SAE       # WPA2 + WPA3 雙支援
@@ -175,18 +173,18 @@ RTL8812AU 是 ALFA 最具知名度的滲透測試晶片，長期以來是 Kali L
 
 1. **WPA3 不支援**：RTL8812AU 驅動雖然在介面上顯示支援 WPA3，但多名使用者確認實際上無法運作，**只能使用 WPA2-PSK**
 2. **VIF 虛擬介面不支援**：無法同時在同一張卡上跑 AP + Monitor 模式。需要 AP 兼監控時，必須使用兩張不同的網路卡分工
-3. **Kali Linux 2025.x 驅動問題**：最新版 Kali 的 aircrack-ng/rtl8812au 驅動有相容性問題，需回退至特定的舊版 commit（`63cf0b4`）才能正常運作。Kernel 6.14+ 的 in-kernel rtw88 驅動有望改善此問題
+3. **Kali Linux 2025.x 驅動問題**：最新版 Kali 的 aircrack-ng/rtl8812au 驅動有相容性問題，需回退至特定的舊版 commit（`63cf0b4`）才能正常運作。Kernel 6.13+ 的 in-kernel rtw88 驅動有望改善此問題
 4. **高耗電**：最大約 800mA，在 Raspberry Pi 上若同時連接多個 USB 裝置，可能導致系統不穩定，建議使用外接供電 USB Hub
 
 ### hostapd 設定範例（RTL8812AU）
 
 ```ini
 # /etc/hostapd/hostapd.conf — AWUS036ACH (RTL8812AU)
-# 注意：與 MT7612U 的 capabilities 完全不同！
+# 注意: 與 MT7612U 的 capabilities 完全不同!
 ht_capab=[HT40+][HT40-][GF][SHORT-GI-20][SHORT-GI-40][TX-STBC][RX-STBC1]
 vht_capab=[RXLDPC][SHORT-GI-80][TX-STBC-2BY1][RX-STBC-1][MAX-A-MPDU-LEN-EXP3][RX-ANTENNA-PATTERN][TX-ANTENNA-PATTERN]
 
-# 安全性：只能用 WPA2，WPA3 不要加
+# 安全性: 只能用 WPA2, WPA3 不要加
 wpa=2
 wpa_key_mgmt=WPA-PSK
 wpa_pairwise=CCMP
@@ -222,7 +220,7 @@ sudo modprobe 88XXau
 
 ### Soft AP 支援狀態：⚠️ 部分支援，有已知韌體/驅動問題
 
-AWUS036AXML 與 AWUS036AXM 是 ALFA 的 WiFi 6E 三頻旗艦，能覆蓋 2.4 GHz、5 GHz 和全新的 6 GHz 頻段。它的 in-kernel 驅動 `mt7921u` 從 kernel 5.18 起就已內建，AP 模式支援則在 kernel 5.19 正式加入。然而，MT7921AUN 晶片同時整合了 Bluetooth 5.2，這成為了 2024–2025 年社群最頭疼的問題根源。
+AWUS036AXML 與 AWUS036AXM 是 ALFA 的 WiFi 6E 三頻旗艦，依規格能覆蓋 2.4 GHz、5 GHz 和全新的 6 GHz 頻段（本機實測 AXML 的 6 GHz 可用，AXM 的 6 GHz 未實測）。它的 in-kernel 驅動 `mt7921u` 從 kernel 5.18 起就已內建，AP 模式支援則在 kernel 5.19 正式加入。然而，MT7921AUN 晶片同時整合了 Bluetooth 5.2，這成為了 2024–2025 年社群最頭疼的問題根源。
 
 ### AP 模式支援的 kernel 版本里程碑
 
@@ -251,9 +249,9 @@ sudo reboot
 ```bash
 # 確認當前韌體版本
 dmesg | grep "WM Firmware"
-# 應顯示：Build Time: 20241106151045 或更新
+# 應顯示: Build Time: 20241106151045 或更新
 
-# 若版本過舊，從 kernel.org 下載更新
+# 若版本過舊, 從 kernel.org 下載更新
 sudo cp WIFI_MT7961_patch_mcu_1a_2_hdr.bin /lib/firmware/mediatek/
 sudo cp WIFI_RAM_CODE_MT7961_1a.bin /lib/firmware/mediatek/
 sudo reboot
@@ -282,20 +280,29 @@ sudo reboot
 
 ---
 
-## 六、AWUS036AX / AWUS036AXER（RTL8832BU）— 不建議用於 Soft AP {#ax}
+## 六、AWUS036AX / AWUS036AXER（RTL8832BU）— kernel 6.17 以上可用於 Soft AP {#ax}
 
-### Soft AP 支援狀態：❌ 不建議
+### Soft AP 支援狀態：✅ kernel 6.17 以上可用（舊 kernel 需社群 DKMS 驅動）
 
-AWUS036AX 和 AWUS036AXER 雖然是 WiFi 6 規格，但 RTL8832BU 晶片是所謂的「multi-state」裝置——出廠預設以 USB 大量儲存模式枚舉，Linux 需要先做 USB mode switch 才能切換為無線網路卡模式。
+在 ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17）上以內建 `rtw89_8852bu` 驅動實測，AWUS036AX 與 AWUS036AXER（同晶片、同驅動）行為相同，2.4 GHz 與 5 GHz 的 Soft AP 皆可用。
 
-**主要問題：**
+**實測結果（kernel 6.17）：**
 
-1. **Multi-state 裝置**：增加部署複雜度，插上去不會直接變成網路卡
-2. **Monitor Mode 限制**：kernel 6.14 以下支援不完整
-3. **Soft AP 社群案例極少**：相較於 MT7612U 和 RTL8812AU，RTL8832BU 用於 Soft AP 的實際案例幾乎找不到
-4. **社群文件明確不推薦**：morrownr/USB-WiFi 將此晶片標記為「不建議用於 penetration testing」
+1. **AP 模式**：2.4 GHz（802.11n）與 5 GHz（VHT 80 MHz）皆可用
+2. **VIF（STA + AP）**：可用——同一頻道上同時維持用戶端連線與 AP 介面
+3. **WPA3-SAE AP**：2.4 GHz 可用（iPhone 15 Pro 連入，MFP 啟用；5 GHz 未實測）
+4. **Monitor／注入**：2.4 與 5 GHz 的 monitor 接收強；2.4 GHz 注入 AX 96%、AXER 73%，5 GHz 可用；端到端 WPA handshake 擷取成功
+5. **不支援**：IBSS、Mesh、Active monitor
 
-> Yopitek 官方文章已明確指出：「AWUS036AX / AWUS036AXER 的 RTL8832BU 晶片在 kernel 6.14 以下有有限的 monitor mode 支援，不建議用於 penetration testing，請改用 AWUS036ACH 或 AWUS036AXML。」
+**注意事項：**
+
+- **kernel 版本是前提**：rtw89_8852bu 自 kernel 6.17 起內建；較舊 kernel 需使用社群 DKMS 驅動（rtl8852bu），該驅動下 monitor 可能受限，且不支援 VIF。
+- **USB 模式**：部分裝置可能以光碟模式（`0bda:1a2b`）列舉，需執行 `usb_modeswitch -v 0bda -p 1a2b -K`；本次測試的裝置直接以無線網路卡模式列舉。
+- **社群案例**：相較於 MT7612U 與 RTL8812AU，此晶片的 Soft AP 社群案例仍較少。
+
+> Yopitek 實測結果（ASUS GX10、kernel 6.17）：AWUS036AX / AWUS036AXER 在內建驅動下 monitor 接收強、封包注入可用，也可用於滲透測試。monitor 受限僅限於舊 kernel 搭配社群 DKMS 驅動的情況。
+>
+> 補充：在 stock kernel 6.16 以上（實測 6.17）上，AWUS036AXML 的 monitor、AP、WPA3、VIF 皆可用，但封包注入測試未通過（aireplay-ng --test 顯示 Found 0 APs / No Answer），原因是 mac80211 chanctx 回歸，並非晶片先天限制。需要封包注入請改用 AWUS036ACH、EACS、ACS 或 AX。
 
 ---
 
@@ -315,7 +322,7 @@ AWUS036AX 和 AWUS036AXER 雖然是 WiFi 6 規格，但 RTL8832BU 晶片是所�
 
 | 平台 | Soft AP | 備註 |
 |------|---------|------|
-| Kali Linux 2022.x – 2025.x | ⚠️ | 需安裝外部驅動；2025.x 需用舊版 commit `63cf0b4`。Kernel 6.14+ 後 in-kernel rtw88 有望改善 |
+| Kali Linux 2022.x – 2025.x | ⚠️ | 需安裝外部驅動；2025.x 需用舊版 commit `63cf0b4`。Kernel 6.13+ 後 in-kernel rtw88 有望改善 |
 | Ubuntu 22.04 / 24.04 | ⚠️ | 需手動安裝 rtw88 或 aircrack-ng 社群驅動 |
 | Debian 11 / 12 | ⚠️ | 同上 |
 | Raspberry Pi 4 | ⚠️ | 可運作，但高耗電（800mA），建議外接供電 USB Hub |
@@ -336,9 +343,9 @@ AWUS036AX 和 AWUS036AXER 雖然是 WiFi 6 規格，但 RTL8832BU 晶片是所�
 
 | 平台 | Soft AP | 備註 |
 |------|---------|------|
-| Kali Linux | ❌ | Multi-state，需 USB mode switch，社群案例極少 |
-| Ubuntu / Debian | ❌ | 同上 |
-| Raspberry Pi 4 / 5 | ❌ | 同上 |
+| Kali Linux | ✅ | kernel 6.17+ 內建 rtw89_8852bu；較舊 kernel 需社群 DKMS 驅動 |
+| Ubuntu / Debian | ✅ | Ubuntu 24.04 需 HWE kernel 6.17+（GA 6.8／HWE 6.14 需社群 DKMS 驅動）；Debian 需 kernel 6.17+ |
+| Raspberry Pi 4 / 5 | ⚠️ | 未在樹莓派上測試；kernel 低於 6.17 需社群 DKMS 驅動 |
 
 ---
 
@@ -351,11 +358,11 @@ AWUS036AX 和 AWUS036AXER 雖然是 WiFi 6 規格，但 RTL8832BU 晶片是所�
 ```bash
 # 確認網路卡已辨識
 lsusb | grep MediaTek
-# 預期輸出：Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U
+# 預期輸出: Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U
 
 # 檢查驅動已載入
 dmesg | grep mt76
-# 預期輸出：mt76x2u 1-1.4:1.0 wlx00c0ca9821a5: renamed from wlan0
+# 預期輸出: mt76x2u 1-1.4:1.0 wlx00c0ca9821a5: renamed from wlan0
 
 # 確認 AP 模式支援
 iw list | grep -A 10 "Supported interface modes"
@@ -378,13 +385,13 @@ interface=wlan0
 driver=nl80211
 ssid=Yupitek_AP
 hw_mode=a                       # a=5GHz, g=2.4GHz
-channel=36                      # UNII-1 非 DFS，最安全
+channel=36                      # UNII-1 非 DFS, 最安全
 ieee80211n=1
 ieee80211ac=1
 wmm_enabled=1
 country_code=TW
 
-# HT/VHT 設定（MT7612U 專用）
+# HT/VHT 設定 (MT7612U 專用)
 ht_capab=[LDPC][HT40+][HT40-][GF][SHORT-GI-20][SHORT-GI-40][TX-STBC][RX-STBC1]
 vht_capab=[RXLDPC][TX-STBC-2BY1][SHORT-GI-80][RX-ANTENNA-PATTERN][TX-ANTENNA-PATTERN]
 vht_oper_chwidth=1
@@ -422,7 +429,7 @@ sudo ip addr add 192.168.10.1/24 dev wlan0
 # 啟用 IP 轉送
 sudo sysctl net.ipv4.ip_forward=1
 
-# 設定 NAT（假設 eth0 是上游網路介面）
+# 設定 NAT (假設 eth0 是上游網路介面)
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
 sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
@@ -473,7 +480,7 @@ sudo systemctl enable dnsmasq
 ```bash
 # 1. 檢查 IP 轉送是否啟用
 cat /proc/sys/net/ipv4/ip_forward
-# 應輸出：1
+# 應輸出: 1
 
 # 2. 檢查 NAT 規則是否存在
 sudo iptables -t nat -L POSTROUTING -v
@@ -541,7 +548,7 @@ VIF（Virtual Interface）讓同一張物理網路卡可以同時以多個邏輯
 # 在現有 wlan1 之外建立額外的 AP 虛擬介面
 sudo iw phy phy1 interface add ap0 type __ap
 sudo ip link set ap0 up
-# 現在 wlan1 可以連上游網路，ap0 跑 hostapd
+# 現在 wlan1 可以連上游網路, ap0 跑 hostapd
 ```
 
 僅 MediaTek in-kernel 驅動（mt76x2u、mt7921u）完整支援 VIF。Realtek out-of-kernel 驅動基本上無此能力，若需要 AP + Monitor 同時運作，必須使用兩張不同的網路卡。
@@ -555,7 +562,7 @@ sudo ip link set ap0 up
 | MT7612U | AWUS036ACM | ✅ | ✅ 原生支援 SAE |
 | MT7921AUN | AWUS036AXML / AXM | ✅ | ✅ 原生支援 SAE |
 | RTL8812AU | AWUS036ACH | ✅ | ❌ 宣稱支援但實際無效 |
-| RTL8832BU | AWUS036AX / AXER | ✅ | ⚠️ 未確認 |
+| RTL8832BU | AWUS036AX / AXER | ✅ | ✅ kernel 6.17 實測可用（`sae_pwe=0`，MFP 啟用） |
 
 ---
 
@@ -618,7 +625,7 @@ DFS（Dynamic Frequency Selection）頻道（ch100–ch140）需要 kernel 層�
 | 🥇 **首選** | **AWUS036ACM** | 所有人，尤其第一次建立 Soft AP | 全平台穩定，零煩惱 |
 | 🥈 有條件可用 | AWUS036ACH | 已擁有此型號的使用者 | 需裝驅動，無 WPA3 |
 | 🥉 進階選擇 | AWUS036AXML | 需要 WiFi 6E 且願意花時間調校 | 6GHz 優勢，需手動排除問題 |
-| ❌ 不建議 | AWUS036AX / AXER | N/A | Soft AP 未經社群驗證 |
+| ✅ kernel 6.17+ 可用 | AWUS036AX / AXER | Wi-Fi 6 AP，同時可用於 monitor 與注入 | 內建驅動；2.4 / 5 GHz AP、VIF 已實測，WPA3 於 2.4 GHz 實測 |
 
 ### 🎯 簡明決策指南
 
@@ -644,7 +651,7 @@ DFS（Dynamic Frequency Selection）頻道（ch100–ch140）需要 kernel 層�
 
 在我們調查的所有 ALFA 產品中，**AWUS036ACM（MT7612U）** 是唯一同時滿足「in-kernel 驅動、WPA3 原生支援、VIF 虛擬介面、低耗電、全平台穩定」的選擇。morrownr 親測、GitHub 社群驗證、eBay 使用者背書——ACM 是 Soft AP 用途中，你唯一不會後悔的選擇。
 
-AWUS036ACH（RTL8812AU）可以用，但需要接受 WPA3 不支援和驅動維護成本。AWUS036AXML/AXM（MT7921AUN）潛力很大，但目前驅動成熟度仍在路上。AWUS036AX/AXER（RTL8832BU），不建議用於 Soft AP。
+AWUS036ACH（RTL8812AU）可以用，但需要接受 WPA3 不支援和驅動維護成本。AWUS036AXML/AXM（MT7921AUN）潛力很大，但目前驅動成熟度仍在路上。AWUS036AX/AXER（RTL8832BU）在 kernel 6.17 以上以內建驅動即可使用（AP、VIF、WPA3 已實測）；舊 kernel 需社群 DKMS 驅動。
 
 **如果你是第一次嘗試在 Raspberry Pi 或 Kali Linux 上建立 Soft AP——選 ACM。**
 

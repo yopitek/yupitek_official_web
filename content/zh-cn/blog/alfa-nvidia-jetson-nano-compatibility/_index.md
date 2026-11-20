@@ -14,17 +14,17 @@ tags:
   - "Linux-WiFi"
 categories:
   - "边缘 AI / 单板电脑"
-description: "Jetson Nano 可使用多数 ALFA 网卡，但关键限制在于 JetPack 4.x 的 Linux kernel 4.9 版本较旧（判定母体：ALFA 现役 9 款 USB 网卡，其中 3 款成熟可用、2 款需进阶编译、2 款未验证、2 款不可用）。Realtek 晶片机型（AWUS036ACH / ACS / EACS）可直接编译 out-of-tree 驱动，是 Jetson N..."
+description: "Jetson Nano 可使用多数 ALFA 网卡，但关键限制在于 JetPack 4.x 的 Linux kernel 4.9 版本较旧（判定母体：ALFA 现役 9 款 USB 网卡，其中 3 款成熟可用、2 款需进阶编译、2 款未验证、2 款不可用）。Realtek 晶片机型（AWUS036ACH / ACS / EACS）可直接编译 out-of-tree 驱动，是 Jetson Nano 上的实用选择；MediaTek MT7612U / MT7610U 需 backport 或自行编译 mt76 驱动；Wi-Fi 6E 的 MT7921AUN 机型（AWUS036AXML / AXM）因需要 kernel 5.18+，在 Jetson Nano 上实际不可用。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. 问题摘要
 
 客户询问：「ALFA 系列 USB 无线网卡能否在 NVIDIA Jetson Nano 开发板上使用？」
 
-简短结论：Jetson Nano 可使用多数 ALFA 网卡，但关键限制在于 JetPack 4.x 的 Linux kernel 4.9 版本较旧（判定母体：ALFA 现役 9 款 USB 网卡，其中 3 款成熟可用、2 款需进阶编译、2 款未验证、2 款不可用）。Realtek 晶片机型（AWUS036ACH / ACS / EACS）可直接编译 out-of-tree 驱动，是 Jetson Nano 上的实用选择；MediaTek MT7612U / MT7610U 需 backport 或自行编译 mt76 驱动；Wi-Fi 6E 的 MT7921AUN 机型（AWUS036AXML / AXM）因需要 kernel 5.19+，在 Jetson Nano 上实际不可用。渗透测试场景首选 AWUS036ACH（RTL8812AU），一般上网场景首选 AWUS036ACH（稳定）或 AWUS036ACM（需编译 mt76）。
+简短结论：Jetson Nano 可使用多数 ALFA 网卡，但关键限制在于 JetPack 4.x 的 Linux kernel 4.9 版本较旧（判定母体：ALFA 现役 9 款 USB 网卡，其中 3 款成熟可用、2 款需进阶编译、2 款未验证、2 款不可用）。Realtek 晶片机型（AWUS036ACH / ACS / EACS）可直接编译 out-of-tree 驱动，是 Jetson Nano 上的实用选择；MediaTek MT7612U / MT7610U 需 backport 或自行编译 mt76 驱动；Wi-Fi 6E 的 MT7921AUN 机型（AWUS036AXML / AXM）因需要 kernel 5.18+，在 Jetson Nano 上实际不可用。渗透测试场景首选 AWUS036ACH（RTL8812AU），一般上网场景首选 AWUS036ACH（稳定）或 AWUS036ACM（需编译 mt76）。
 
 ## 2. 分析目标硬体规格架构
 
@@ -62,10 +62,10 @@ Jetson Nano 的 kernel 4.9 是相容性判定的核心变数：
 |---|---|---|
 | mt76x2u（MT7612U） | 4.19 | ❌ 需 backport / 自行编译 |
 | mt76x0u（MT7610U） | 4.19 | ❌ 需 backport / 自行编译 |
-| mt7921u（MT7921AUN） | 5.19 | ❌ 无法实用（差距过大） |
-| rtl8812au（RTL8812AU） | 从未进入 mainline | ✅ 可编译 out-of-tree 驱动 |
-| rtl8821cu（RTL8811CU） | 从未进入 mainline | ✅ 可编译 out-of-tree 驱动 |
-| rtw89（RTL8832BU） | 5.16（PCIe）/ USB 陆续合入 | ❌ 需自行编译，相容性未知 |
+| mt7921u（MT7921AUN） | 5.18 | ❌ 无法实用（差距过大）；GX10（kernel 6.17）实测 monitor 可用，但注入失败（主因是 kernel 6.16 起 mac80211 chanctx 回归，另有固件锁速率，非芯片本身限制） |
+| rtl8812au（RTL8812AU） | 6.13（rtw88_8812au） | ✅ kernel 4.9 无内置驱动，需编译 out-of-tree 驱动；GX10（kernel 6.17）以内置驱动实测双频注入均为 100% |
+| rtw88_8821cu（RTL8821CU） | 6.2 | ✅ Jetson Nano kernel 4.9 低于 6.2，需编译 out-of-tree 驱动（morrownr/8821cu） |
+| rtw89（RTL8832BU） | 6.17（rtw89_8852bu） | ❌ kernel 4.9 无内置，需自行编译，兼容性未知；GX10（kernel 6.17）实测 monitor 可用，2.4G 注入：AX 96%、AXER 73% |
 
 ### 2.4 USB 供电限制
 
@@ -82,15 +82,15 @@ Jetson Nano 开发板的 4 个 USB 3.0 Type-A 埠共用电源预算：
 
 | 机型 | Wi-Fi 等级 | 晶片组 | 介面 | Jetson Nano 适用性 |
 |---|---|---|---|---|
-| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ❌ 需 kernel 5.19+，不可用 |
+| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ❌ 需 kernel 5.18+，不可用 |
 | AWUS036AXM | Wi-Fi 6E | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ❌ 同上 |
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ 需自编 rtl8852bu，未验证 |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ 同上 |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ✅ 编译 morrownr/8812au，成熟 |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ⚠️ 需 backport mt76x0u |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ⚠️ 需 backport mt76x0u |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ⚠️ 需 backport mt76x2u |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ✅ 由 8812au 驱动涵盖 |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ✅ 编译 morrownr/8821cu |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ✅ 由 8812au 驱动涵盖 |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | ✅ 编译 morrownr/8821cu |
 
 ## 4. 适用机型与晶片组
 
@@ -100,12 +100,12 @@ Jetson Nano 开发板的 4 个 USB 3.0 Type-A 埠共用电源预算：
 |---|---|---|
 | ⭐ 强烈推荐（渗透测试） | AWUS036ACH（RTL8812AU） | 驱动成熟，支持 Monitor Mode + Packet Injection，Jetson Nano 上最常被使用的 ALFA 网卡 |
 | ✅ 推荐（一般上网） | AWUS036ACH（RTL8812AU） | 双频 AC1200，驱动安装简单，稳定 |
-| ✅ 推荐（低功耗） | AWUS036EACS（RTL8811CU） | AC600 双频，USB 2.0 低功耗，适合简单上网 |
-| ✅ 推荐（入门） | AWUS036ACS（RTL8811AU） | AC433 双频，由 8812au 驱动涵盖 |
+| ✅ 推荐（低功耗） | AWUS036EACS（RTL8821CU） | AC600 双频，USB 2.0 低功耗，适合简单上网 |
+| ✅ 推荐（入门） | AWUS036ACS（RTL8811AU） | AC600 双频，由 8812au 驱动涵盖 |
 | ⚠️ 可用但需手动编译 | AWUS036ACM（MT7612U） | 需 backport mt76 驱动到 kernel 4.9，技术门槛较高 |
 | ⚠️ 可用但需手动编译 | AWUS036ACHM（MT7610U） | 同上，仅 433Mbps |
 | ⚠️ 未验证 / 不建议 | AWUS036AX / AXER（RTL8832BU） | Wi-Fi 6，需编译 rtl8852bu，kernel 4.9 相容性未验证 |
-| ❌ 不可用 | AWUS036AXML / AXM（MT7921AUN） | Wi-Fi 6E，需 kernel 5.19+，Jetson Nano 无法升级 |
+| ❌ 不可用 | AWUS036AXML / AXM（MT7921AUN） | Wi-Fi 6E，需 kernel 5.18+，Jetson Nano 无法升级 |
 
 ### 4.2 使用场景建议
 
@@ -146,15 +146,15 @@ Jetson Nano 开发板的 4 个 USB 3.0 Type-A 埠共用电源预算：
 |---|---|---|---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 编译 8812au | ✅ | ✅ | ✅ | ✅ | 中 | ⭐ 最佳 |
 | AWUS036ACS | RTL8811AU | 8812au 涵盖 | ✅ | ✅ | ⚠️ | ❌ | 中 | ✅ 良好 |
-| AWUS036EACS | RTL8811CU | 编译 8821cu | ✅ | ⚠️ | ❌ | ❌ | 中 | ✅ 良好 |
+| AWUS036EACS | RTL8821CU | 编译 8821cu | ✅ | ⚠️ | ❌ | ❌ | 中 | ✅ 良好 |
 | AWUS036ACM | MT7612U | backport mt76x2u | ✅ | ✅ | ✅ | ✅ | 高 | ⚠️ 可用 |
 | AWUS036ACHM | MT7610U | backport mt76x0u | ✅ | ✅ | ⚠️ | ⚠️ | 高 | ⚠️ 可用 |
 | AWUS036AX | RTL8832BU | 编译 rtl8852bu | ⚠️ | ❌ | ❌ | ❌ | 高 | ❌ 不建议 |
 | AWUS036AXER | RTL8832BU | 同上 | ⚠️ | ❌ | ❌ | ❌ | 高 | ❌ 不建议 |
-| AWUS036AXML | MT7921AUN | 需 kernel 5.19+ | ❌ | ❌ | ❌ | ❌ | — | ❌ 不可用 |
+| AWUS036AXML | MT7921AUN | 需 kernel 5.18+ | ❌ | ❌ | ❌ | ❌ | — | ❌ 不可用 |
 | AWUS036AXM | MT7921AUN | 同上 | ❌ | ❌ | ❌ | ❌ | — | ❌ 不可用 |
 
-判定依据：Jetson Nano JetPack 4.x kernel 4.9 的驱动可用性 + 社群实测回报（Jetson Nano 论坛、GitHub morrownr 驱动 issue）。MT7921AUN 因 Jetson Nano 无法升级至 kernel 5.19+，判定为不可用。
+判定依据：Jetson Nano JetPack 4.x kernel 4.9 的驱动可用性 + 社群实测回报（Jetson Nano 论坛、GitHub morrownr 驱动 issue）。MT7921AUN 因 Jetson Nano 无法升级至 kernel 5.18+，判定为不可用。
 
 ## 7. 超详细 Step by Step 设定步骤
 
@@ -183,10 +183,12 @@ sudo apt install -y build-essential git bc libssl-dev flex bison dkms
 
 ```bash
 uname -r
-# 预期输出：4.9.337-tegra（或类似 4.9.x-tegra）
+# 预期输出: 4.9.337-tegra (或类似 4.9.x-tegra)
 ```
 
 ### 7.2 路径 A：Realtek 晶片机型（AWUS036ACH / ACS / EACS）— 推荐
+
+（版本前提：以下编译步骤针对 JetPack 4.x 的 kernel 4.9；EACS 的 rtw88_8821cu 自 kernel 6.2 起内建，kernel ≥ 6.2 不需编译。）
 
 以 AWUS036ACH（RTL8812AU）为例：
 
@@ -227,7 +229,7 @@ sudo reboot
 ```bash
 ip link show
 # 预期出现 wlan0 介面
-# 若无，检查 dmesg
+# 若无, 检查 dmesg
 dmesg | grep -i "8812au\|rtl8812\|usb"
 ```
 
@@ -251,7 +253,7 @@ nmcli dev wifi connect "你的WiFi名称" password "你的WiFi密码"
 # 安装 hostapd 与 dnsmasq
 sudo apt install -y hostapd dnsmasq
 # 参考 ALFA Soft AP 指南进行设定
-# https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/
+# /zh-cn/blog/alfa-soft-ap-wifi-hotspot-linux-guide/
 ```
 
 **步骤 9：启用监听模式（渗透测试用）**
@@ -276,7 +278,7 @@ sudo aireplay-ng --test wlan0
 
 ```bash
 # 根据 L4T 版本下载对应 kernel source
-# 例如 L4T R32.7.4：
+# 例如 L4T R32.7.4:
 wget https://developer.nvidia.com/embedded/l4t/r32_release_v7.4/sources/public_sources.tbz2
 tar -xjf public_sources.tbz2
 cd Linux_for_Tegra/source/public
@@ -289,11 +291,11 @@ tar -xjf kernel_src.tbz2
 cd kernel/kernel-4.9
 # 产生预设设定
 make tegra_defconfig
-# 启用 mt76 相关选项（menuconfig）
+# 启用 mt76 相关选项 (menuconfig)
 make menuconfig
-# 导航到：Device Drivers > Network device support > Wireless LAN
-# 选取：<M> MediaTek MT76x2U USB support
-# 选取：<M> MediaTek MT76x0U USB support
+# 导航到: Device Drivers > Network device support > Wireless LAN
+# 选取: <M> MediaTek MT76x2U USB support
+# 选取: <M> MediaTek MT76x0U USB support
 ```
 
 **步骤 3：编译 kernel modules**
@@ -323,8 +325,8 @@ ip link show
 
 ### 7.4 路径 C：Wi-Fi 6 / 6E 机型（AWUS036AX / AXER / AXML / AXM）
 
-- AWUS036AXML / AXM（MT7921AUN）：不可用。Jetson Nano 的 kernel 4.9 无法升级至 5.19+，mt7921u 驱动无法 backport（差距过大，依赖现代 kernel 基础设施）。
-- AWUS036AX / AXER（RTL8832BU）：不建议。理论上可尝试编译 morrownr/rtl8852bu 驱动，但 kernel 4.9 相容性未经社群验证，且 Wi-Fi 6 功能可能无法正常运作。若需要 Wi-Fi 6，建议使用 Jetson Orin Nano（JetPack 5.x，kernel 5.10+）或 x86 电脑。
+- AWUS036AXML / AXM（MT7921AUN）：不可用。Jetson Nano 的 kernel 4.9 无法升级至 5.18+，mt7921u 驱动无法 backport（差距过大，依赖现代 kernel 基础设施）。
+- AWUS036AX / AXER（RTL8832BU）：Jetson Nano 上不建议。kernel 4.9 无内置驱动，需自行编译 morrownr/rtl8852bu，兼容性未经社区验证。rtw89_8852bu 自 kernel 6.17 起进入 mainline，GX10（kernel 6.17）实测 monitor 可用、2.4G 注入 AX 96%、AXER 73%；若需要 Wi-Fi 6，建议改用 kernel 6.17 以上的平台。
 
 ## 8. 常见错误与排解
 
@@ -343,9 +345,9 @@ ip link show
 ## 9. 已知限制
 
 - Kernel 版本冻结在 4.9：Jetson Nano 不支持 JetPack 5.x，无法升级 kernel，这是所有相容性问题的根源
-- MT7921AUN（Wi-Fi 6E）完全不可用：需要 kernel 5.19+，无法 backport 到 4.9
+- MT7921AUN（Wi-Fi 6E）完全不可用：需要 kernel 5.18+，无法 backport 到 4.9
 - MediaTek mt76 晶片需手动 backport：AWUS036ACM / ACHM 的使用者需自行编译 kernel module，技术门槛高
-- ⚠️ **Wi-Fi 6（RTL8832BU）驱动维护者已公开建议避免使用**：驱动维护者 morrownr 在其官方公告中明确指出 rtl8852/32au 系列「是很糟糕的驱动，怀疑晶片本身有问题」，并建议 Linux 使用者现阶段避开此晶片（来源见第 10 节）。这比单纯「kernel 4.9 相容性未验证」更严重，本文与其他相关文件对 AWUS036AX / AXER 的判定应理解为「不建议」而非「可尝试但较麻烦」
+- ℹ️ **Wi-Fi 6（RTL8832BU）**：rtw89_8852bu 自 kernel 6.17 起进入 mainline，旧 kernel（如 Jetson Nano 的 4.9）才需要社区驱动 morrownr/rtl8852bu，且该社区驱动在 kernel 4.9 上未经验证。GX10（kernel 6.17）实测 monitor 可用，2.4G 注入：AX 96%、AXER 73%。
 - USB 供电限制：4 个 USB 埠共用约 1.5A（DC 供电时），高功率网卡需使用有电源 Hub
 - AP 模式效能：Jetson Nano 的 CPU 效能有限，USB WiFi 做 AP 时吞吐量可能低于预期
 - 监听 / 注入功能差异：RTL8812AU 支持最佳；MediaTek 晶片在 kernel 4.9 backport 后的注入功能可能不稳定
@@ -362,12 +364,12 @@ ip link show
 | NVIDIA Jetson Nano 官方页面 | Jetson Nano 硬体规格 | https://developer.nvidia.com/embedded/jetson-nano | ✅ 已查核 | 2026-09-03 |
 | NVIDIA JetPack SDK 官方页 | JetPack 版本与 kernel 资讯 | https://developer.nvidia.com/embedded/jetpack | ✅ 已查核 | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux 驱动（Jetson Nano 适用） | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
-| morrownr/8821cu GitHub | RTL8811CU Linux 驱动 | https://github.com/morrownr/8821cu-20210916 | ✅ 已查核 | 2026-09-03 |
-| ALFA Soft AP WiFi Hotspot Linux Guide（Yopitek） | ALFA 在 Linux 上的 AP 模式设定指南 | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 已查核 | 2026-09-03 |
-| ALFA Network 产品总览（Yopitek） | ALFA 现役产品规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
-| morrownr/USB-WiFi Issue #314 | 驱动维护者官方声明：建议避开 rtl8852/32au（RTL8832BU）晶片 | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ 已查核 | 2026-09-03 |
+| morrownr/8821cu GitHub | RTL8821CU Linux 驱动 | https://github.com/morrownr/8821cu-20210916 | ✅ 已查核 | 2026-09-03 |
+| ALFA Soft AP WiFi Hotspot Linux Guide（Yopitek） | ALFA 在 Linux 上的 AP 模式设定指南 | /zh-cn/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 已查核 | 2026-09-03 |
+| ALFA Network 产品总览（Yopitek） | ALFA 现役产品规格 | /zh-cn/products/alfa/ | ✅ 已查核 | 2026-09-03 |
+| morrownr/USB-WiFi Issue #314 | 驱动维护者对 rtl8852/32au（RTL8832BU）社区驱动的历史评论；kernel 6.17 起已有内置 rtw89_8852bu 驱动 | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ 已查核 | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko 需 kernel 5.19+ 才会出现于核心（驱动维护者原话） | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ 已查核 | 2026-09-03 |
 
-相关文章：[ALFA 无线网卡是否支持 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)（GB10 平台对照，kernel 6.x 环境）｜[ALFA 无线网卡是否支持 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)
+相关文章：[ALFA 无线网卡是否支持 NVIDIA DGX Spark](/zh-cn/blog/alfa-nvidia-dgx-spark-compatibility/)（GB10 平台对照，kernel 6.x 环境）｜[ALFA 无线网卡是否支持 OpenWrt](/zh-cn/blog/alfa-openwrt-router-compatibility/)
 
 免责声明：本文相容性判定以 Jetson Nano JetPack 4.6.x（kernel 4.9）为基准。Realtek 晶片驱动为社群维护（morrownr），实际稳定性可能随版本变化。MediaTek mt76 晶片的 backport 操作需要 kernel 编译经验，不保证 100% 成功。若需要 Wi-Fi 6/6E 或现代 kernel 支持，建议升级至 Jetson Orin 系列（JetPack 5.x+）或使用 x86 电脑。

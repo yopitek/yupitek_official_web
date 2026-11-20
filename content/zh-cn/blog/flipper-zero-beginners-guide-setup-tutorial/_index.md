@@ -14,8 +14,6 @@ hero_alt: "Flipper Zero 入门教程：开箱、固件更新与五大功能实�
 seo_description: "Flipper Zero 是什么？从开箱、microSD 设置、qFlipper 固件更新，到 RFID／Sub-GHz／NFC／IR／BadUSB 五大功能实测，一篇带你完成 Flipper Zero 入门。"
 ---
 
-# Flipper Zero 入门教程：开箱设置、固件更新与五大实用功能
-
 > TL;DR：Flipper Zero 是一台掌上型的硬件探索工具，内置 125 kHz RFID、Sub-GHz、NFC、红外与 BLE，可用 USB-C 连接电脑模拟键盘（BadUSB）。入手后先装 microSD、用 qFlipper 或手机 App 更新固件，再从 RFID 读卡与 IR 遥控开始玩，就能快速上手。所有功能请只用在**你拥有或获得授权的设备**上。
 
 ## Flipper Zero 是什么？适合谁用？
@@ -141,7 +139,7 @@ Flipper Zero 本身是合法工具，但使用场景有明确的法律边界：
 Flipper Zero 内置 Sub-GHz 收发器专攻常见协议（OOK/ASK/FSK 等），操作直观；SDR（如 HackRF、RTL-SDR）频率范围更广、可看原始频谱，但需要电脑与较深背景。两者是互补工具。
 
 **Q5：哪里可以买到 Flipper Zero？**
-Yopitek（榆合科技）提供 Flipper Zero 产品与相关配件，并提供技术咨询；购买后可来信 sales@yupitek.com 询问设置问题。
+Yopitek（榆閤科技）提供 Flipper Zero 产品与相关配件，并提供技术咨询；购买后可来信 sales@yupitek.com 询问设置问题。
 
 **Q6：可以装第三方固件吗？**
 可以，但新手不建议。第三方固件（如 Xtreme）提供界面美化与额外功能，但稳定性与安全性需自行评估，且可能失去原厂更新支持。

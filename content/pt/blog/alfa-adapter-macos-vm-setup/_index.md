@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Adaptadores ALFA podem usar modo monitor nativamente no macOS?"
@@ -204,7 +204,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**Recomendação para Macs com chip M:** Se você está adquirindo um adaptador ALFA especificamente para uso em um Mac Apple Silicon com Kali em uma VM, o **AWUS036AXML (MT7921AUN)** é a melhor escolha. Seu driver integrado ao kernel elimina completamente a etapa de compilação com DKMS e funciona de forma confiável nas builds do Kali ARM64. O AWUS036ACH é funcional, mas requer o driver RTL8812AU fora da árvore do kernel, adicionando uma dependência de manutenção na disponibilidade de headers do kernel.
+**Recomendação para Macs com chip M:** Se você está adquirindo um adaptador ALFA especificamente para uso em um Mac Apple Silicon com Kali em uma VM, o **AWUS036AXML (MT7921AUN)** é a melhor escolha. Seu driver integrado ao kernel elimina completamente a etapa de compilação com DKMS e funciona de forma confiável nas builds do Kali ARM64. O AWUS036ACH é funcional, mas requer o driver RTL8812AU fora da árvore do kernel, adicionando uma dependência de manutenção na disponibilidade de headers do kernel. Note, porém, que a injeção depende do kernel: há relatos da comunidade de injeção funcional em kernels anteriores ao 6.16, mas no kernel stock 6.16 e posteriores (testado no 6.17) o AXML falha no teste de injeção de pacotes (`aireplay-ng --test`: Found 0 APs / No Answer), impossibilitando deauth e captura de handshake. A causa é uma regressão do mac80211 chanctx, não uma limitação do chip; drivers comunitários com patch podem restaurar a injeção, mas o firmware ainda trava a taxa (1/6 Mbps, sem injeção HT/VHT). Modo monitor, AP e WPA3 não são afetados. Se precisar de injeção, escolha o AWUS036ACH ou o AWUS036EACS.
 
 ---
 

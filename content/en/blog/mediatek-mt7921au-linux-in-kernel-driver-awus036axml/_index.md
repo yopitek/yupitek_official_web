@@ -1,9 +1,9 @@
 ---
 title: "Stop Recompiling Drivers: Why MT7921AU Wins on Linux & Kali"
-description: "MT7921AU ships in the Linux kernel (mt7921u); RTL8812AU needs DKMS builds. See why the AWUS036AXML is plug-and-play on Kali Linux."
+description: "MT7921AUN ships in the Linux kernel (mt7921u); RTL8812AU needs DKMS builds. See why the AWUS036AXML is plug-and-play on Kali Linux."
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,7 +11,7 @@ tags: ["mt7921au", "kali-linux", "linux", "awus036axml", "monitor-mode", "dkms",
 featureimage: /images/blog/mediatek-mt7921au-linux-in-kernel-driver-awus036axml.webp
 ---
 
-> **Product covered**: ALFA AWUS036AXML (MediaTek MT7921AU / MT7921AUN) | **Comparison unit**: ALFA AWUS036ACH (Realtek RTL8812AU)
+> **Product covered**: ALFA AWUS036AXML (MediaTek MT7921AUN / MT7921AUN) | **Comparison unit**: ALFA AWUS036ACH (Realtek RTL8812AU)
 > **Who this is for**: Kali Linux penetration testers, Linux embedded developers, Raspberry Pi / single-board computer users
 > **Goal of this article**: Understand the difference between "native in-kernel support" and "DKMS driver compilation" before you buy — and spend less time installing and troubleshooting.
 
@@ -28,7 +28,7 @@ If you have used a USB adapter built around a Realtek RTL8812AU-class chipset (l
 
 The problem is not the hardware. It is the form the driver takes. Most Realtek Linux drivers are not merged into the Linux kernel (mainline). To use them, you have to bolt external source code onto your system. Every time the kernel is upgraded, that bolt-on has to be recompiled — otherwise it stops matching the new kernel and fails.
 
-Today's protagonist — the ALFA AWUS036AXML with the MediaTek MT7921AU — takes a completely different path: its driver **lives natively inside the Linux kernel**.
+Today's protagonist — the ALFA AWUS036AXML with the MediaTek MT7921AUN — takes a completely different path: its driver **lives natively inside the Linux kernel**.
 
 ---
 
@@ -96,11 +96,11 @@ Minimum kernel requirements per distro, at a glance:
 | Windows 10 / 11 | — | Vendor driver |
 | macOS (Intel / Apple Silicon) | Not supported | **No driver — do not buy** |
 
-> **⚠️ The most important support note before you buy**: The AWUS036AXML **does not support macOS**. Neither Intel nor Apple Silicon has a usable MT7921AU macOS driver today. If macOS is your primary environment, this class of Wi-Fi 6 / 6E USB adapter is a dead end for you — rule it out now, before you find out after buying.
+> **⚠️ The most important support note before you buy**: The AWUS036AXML **does not support macOS**. Neither Intel nor Apple Silicon has a usable MT7921AUN macOS driver today. If macOS is your primary environment, this class of Wi-Fi 6 / 6E USB adapter is a dead end for you — rule it out now, before you find out after buying.
 
 ### 2.3 Why Native Support Matters Especially to Kali Developers
 
-On Kali Linux, kernel upgrades are very frequent (it is a Rolling release). RTL8812AU users hold their breath at every rolling update. `mt7921u`, by contrast, is maintained and tested together with the kernel — **no matter how new the kernel gets, the driver keeps up**. ALFA positioned this product for security testing: monitor mode and packet injection are standard, out-of-the-box features.
+On Kali Linux, kernel upgrades are very frequent (it is a Rolling release). RTL8812AU users hold their breath at every rolling update. `mt7921u`, by contrast, is maintained and tested together with the kernel — **no matter how new the kernel gets, the driver keeps up**. ALFA positioned this product for security testing: monitor mode works out of the box, while packet injection depends on the kernel version (see section 3.2).
 
 ---
 
@@ -147,7 +147,7 @@ Next, test packet injection:
 sudo aireplay-ng --test wlan1
 ```
 
-Seeing `Injection is working!` (or equivalent output) means injection works. On the native `mt7921u` driver this is a built-in capability — no extra hacks required.
+On kernel 6.16 and earlier, community reports show `Injection is working!` (or equivalent output) on the native `mt7921u` driver. On stock kernel 6.16 and later (tested on ASUS GX10, Ubuntu 24.04 ARM64, kernel 6.17), however, the injection test fails: `aireplay-ng --test` shows Found 0 APs / No Answer, so deauth and handshake capture are not possible. The cause is a mac80211 chanctx regression since kernel 6.16, not a limitation of the chip itself; community patched drivers make injection work, but the firmware still locks the rate (1/6 Mbps, no HT/VHT injection). If you need injection, use the AWUS036ACH, EACS or ACS instead.
 
 ### 3.3 Fusion Mode (VIF): Manage and Monitor at the Same Time
 
@@ -170,7 +170,7 @@ To keep post-purchase support costs low, run this quick evaluation before decidi
 
 ### 4.1 The Two Adapters Side by Side
 
-| Evaluation item | AWUS036AXML (MT7921AU) | AWUS036ACH (RTL8812AU) |
+| Evaluation item | AWUS036AXML (MT7921AUN) | AWUS036ACH (RTL8812AU) |
 |---|---|---|
 | Wireless spec | Wi-Fi 6E tri-band (2.4/5/6 GHz) | AC1200 dual-band (2.4/5 GHz) |
 | USB interface | USB-C (USB 3.2 Gen 1) | USB 3.0 Type-A |
@@ -178,7 +178,7 @@ To keep post-purchase support costs low, run this quick evaluation before decidi
 | Installation difficulty | Just add firmware | Toolchain + compilation + (with Secure Boot) signing |
 | Kernel upgrade impact | None | Recompile after every upgrade |
 | Monitor mode | Native support | Supported |
-| Packet injection | Native support | Supported |
+| Packet injection | ⚠️ Community reports before kernel 6.16; failed on 6.17 in testing | Supported |
 | macOS | Not supported | Not supported |
 | Best for | Modern Linux / Kali / embedded | Older systems or 2.4/5 GHz scenarios |
 
@@ -190,7 +190,7 @@ The more boxes you tick, **the more the AWUS036AXML is the right pick**:
 - [ ] I want it to **work right out of the box** — no `dkms`, no `github clone`, no build toolchain.
 - [ ] I want native `mt76`-family support, and kernel upgrades must not affect the adapter.
 - [ ] I need the **6 GHz band** (Wi-Fi 6E router environment).
-- [ ] Primary uses: monitoring, packet injection, Soft AP, fusion mode (VIF).
+- [ ] Primary uses: monitoring, Soft AP, fusion mode (VIF). (Packet injection does not work on kernel 6.16 and later, see section 3.2.)
 - [ ] I will use the included USB-C / USB-A 2-in-1 cable with a laptop or single-board computer.
 
 Conversely, if you have no 6 GHz need, your system runs an older kernel below 5.18, and you are comfortable with the DKMS maintenance workflow, the AWUS036ACH still has its place. Just be mentally prepared: every kernel update means recompiling the driver.
@@ -199,7 +199,7 @@ Conversely, if you have no 6 GHz need, your system runs an older kernel below 5.
 
 ## 5. Conclusion
 
-For modern Linux and Kali developers, time is the biggest cost. **The MediaTek MT7921AU (AWUS036AXML) lifts the endless burden of driver maintenance off your shoulders**. The driver lives in the kernel, firmware comes in one package, monitoring and injection work out of the box — rolling kernel updates are nothing to fear.
+For modern Linux and Kali developers, time is the biggest cost. **The MediaTek MT7921AUN (AWUS036AXML) lifts the endless burden of driver maintenance off your shoulders**. The driver lives in the kernel, firmware comes in one package, monitoring works out of the box (packet injection fails on stock kernel 6.16 and later; use ACH, EACS or ACS if you need injection) — rolling kernel updates are nothing to fear.
 
 Before buying, confirm just two things: **kernel ≥ 5.18** and **not macOS**. The native driver handles the rest.
 

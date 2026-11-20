@@ -2,6 +2,7 @@
 title: "ALFA Network 無線網路卡"
 description: "榆閤科技代理 ALFA Network 高功率 USB Wi-Fi 無線網路卡製造商，在全球資安研究社群中享有高度評價。"
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
@@ -37,16 +38,16 @@ ALFA Network 是台灣知名無線網路設備、無線網路卡製造商，專�
     AC1200 雙頻，Realtek RTL8812AU，USB 3.0，雙 5 dBi 外接天線，高功率穩定輸出。
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/zh-tw/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 雙頻，MediaTek MT7610U 晶片，USB 2.0，單天線輕巧設計 — 適合隨身攜帶與滲透測試。
+    AC600 雙頻，MediaTek MT7610U 晶片，USB 2.0，單天線輕巧設計 — 適合隨身攜帶與滲透測試。
   {{< /card >}}
   {{< card title="AWUS036ACM" href="/zh-tw/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 雙頻，MediaTek MT7612U，USB 3.0，300+867 Mbps，5 dBi 雙天線，經典款。
   {{< /card >}}
   {{< card title="AWUS036ACS" href="/zh-tw/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
-    AC433 雙頻，Realtek RTL8811AU，USB 2.0，超輕薄設計，55mm 迷你機身。
+    AC600 雙頻，Realtek RTL8811AU，USB 2.0，超輕薄設計，55mm 迷你機身。
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/zh-tw/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
-    AC600 雙頻，Realtek RTL8811CU，USB 2.0，超輕薄小巧機身設計。
+    AC600 雙頻，Realtek RTL8821CU，USB 2.0，超輕薄小巧機身設計。
   {{< /card >}}
 {{< /card-group >}}
 

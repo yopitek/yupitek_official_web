@@ -3,7 +3,7 @@ title: "HAK5 WiFi Pineapple Pager × ALFA Network: External USB Wireless Cards C
 description: "An in-depth compatibility evaluation and step-by-step setup guide for connecting ALFA Network USB wireless cards to the HAK5 WiFi Pineapple Pager under OpenWrt. Learn about MIPS architecture cross-compilation, USB 2.0 power limits, and driver configurations."
 date: 2026-06-19
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Can HAK5 WiFi Pineapple Pager use external ALFA adapters?"
     answer: "Yes, but note MIPS architecture limitations and USB 2.0 power. AWUS036ACM is the top choice with the most stable in-kernel driver."
@@ -22,8 +22,6 @@ tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
 ---
 Before plugging any high-power USB adapter into the HAK5 Pager, you must understand two major barriers: CPU architecture and USB power limits.
-
-# HAK5 WiFi Pineapple Pager × ALFA Network: The Ultimate Technical Guide to External USB Wireless Cards Compatibility
 
 Wireless security auditing requires high precision, versatility, and the right hardware. The **HAK5 WiFi Pineapple Pager** has captured the attention of penetration testers as an ultra-portable, pocket-sized auditing tool running the powerful **PineAP v8** engine. 
 
@@ -74,10 +72,10 @@ The table below evaluates the compatibility of current ALFA Network USB adapters
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **AWUS036ACM** | MediaTek **MT7612U** | 2.4 GHz / 5 GHz | ~600 mA (Needs Hub) | **In-Kernel (Native)** | Install via `opkg` | ✅ Yes / ✅ Yes | 🏆 **Gold Standard / Best Choice** |
 | **AWUS036ACH** | Realtek **RTL8812AU** | 2.4 GHz / 5 GHz | ~720 mA (Requires Hub) | Out-of-Kernel | Cross-compile with SDK | ✅ Yes / ✅ Yes | ⭐⭐ **Advanced Users Only** (MIPS wiphy bug) |
-| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4 / 5 / 6 GHz (Wi-Fi 6E) | ~720 mA (Requires Hub) | **In-Kernel (Native)** | Install via `opkg` + manual firmware | ✅ Yes / ✅ Yes | ⭐⭐⭐ **Great potential**, but high power |
+| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4 / 5 / 6 GHz (Wi-Fi 6E) | ~720 mA (Requires Hub) | **In-Kernel (Native)** | Install via `opkg` + manual firmware | ✅ Yes / ⚠️ Community reports on kernel < 6.16; failed in testing on kernel 6.17 | ⭐⭐⭐ **Great potential**, but high power |
 | **AWUS036ACHM** | MediaTek **MT7610U** | 2.4 GHz / 5 GHz | ~400 mA (Bus-powered) | In-Kernel (Partially) | Install via `opkg` | ✅ Yes / ✅ Yes | ⭐⭐⭐ **Good budget option** |
 | **AWUS036ACS** | Realtek **RTL8811AU** | 2.4 GHz / 5 GHz | ~500 mA (Borderline) | Out-of-Kernel | Cross-compile with SDK | ✅ Yes / ✅ Yes | ⭐⭐ **Intermediate** (Requires compiling) |
-| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | ~500 mA | Out-of-Kernel | Not recommended | ❌ **No Monitor** | ❌ **Do Not Use** |
+| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | ~500 mA | In mainline since kernel 6.2 (`rtw88_8821cu`); not verified on Pager firmware | Not verified | ✅ / ✅ on GX10 kernel 6.17; not tested on Pager | ⚠️ **Not verified on Pager** |
 
 ---
 

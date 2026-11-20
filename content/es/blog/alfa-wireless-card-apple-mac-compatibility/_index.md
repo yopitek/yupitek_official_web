@@ -4,6 +4,7 @@ description: "Guía de compatibilidad exhaustiva para utilizar adaptadores USB d
 keywords: "tarjeta inalámbrica ALFA Mac, compatibilidad ALFA macOS, adaptador ALFA Apple Silicon, adaptador USB WiFi M1 M2 M3 M4, ALFA Network MacBook, modo monitor Mac, AWUS036ACH Mac, AWUS036ACM Mac, ALFA Network Mac Mini, pruebas de penetración Apple Silicon"
 author: "Yopitek Technical Support Team"
 date: "2026-06-20"
+lastmod: 2026-11-20
 category: "Technical Guide"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
@@ -35,9 +36,9 @@ Esta tabla es la referencia definitiva. Evalua las 9 tarjetas inalámbricas ALFA
 | **AWUS036AXM** | MediaTek MT7921AUN |❌ |❌ |✅ |✅ |
 | **AWUS036ACHM** | MediaTek MT7610U |❌ |❌ |✅ |✅ |
 | **AWUS036ACS** | Realtek RTL8811AU |❌ |⚠️ Solo cliente (≤10.14) |✅ |✅ |
-| **AWUS036AX** | Realtek RTL8832BU |❌ |❌ |⚠️ Limitado |⚠️ Limitado |
-| **AWUS036AXER** | Realtek RTL8832BU |❌ |❌ |⚠️ Limitado |⚠️ Limitado |
-| **AWUS036EACS** | Realtek RTL8821CU |❌ |⚠️ Solo cliente |❌ Sin modo monitor |⚠️ No recomendado |
+| **AWUS036AX** | Realtek RTL8832BU |❌ |❌ |✅ Kernel ≥6.17 |⚠️ Requiere kernel ≥6.17 (no probado en Pi) |
+| **AWUS036AXER** | Realtek RTL8832BU |❌ |❌ |✅ Kernel ≥6.17 |⚠️ Requiere kernel ≥6.17 (no probado en Pi) |
+| **AWUS036EACS** | Realtek RTL8821CU |❌ |⚠️ Solo cliente |✅ Monitor/inyección (requiere kernel Linux ≥6.2) |⚠️ Requiere kernel ≥6.2; no probado en Pi |
 
 **Leyenda:**✅ = Verificado que funciona |⚠️ = Limitado / requiere condiciones |❌ = No compatible
 
@@ -207,7 +208,7 @@ Descargue el instalador de Kali Linux ARM64 y cree una nueva VM en UTM:
 
 **Para AWUS036ACH (RTL8812AU):**
 
-Si su kernel de Kali es **≥6.14**, el controlador principal `rtw88` ya esta incluido, no se necesita instalacion. Para kernels mas antiguos:
+Si su kernel de Kali es **≥6.13**, el controlador principal `rtw88` ya esta incluido, no se necesita instalacion. Para kernels mas antiguos:
 
 ```bash
 sudo apt update
@@ -274,7 +275,7 @@ sudo aireplay-ng --test wlan0mon
 | La tarjeta se desconecta durante escaneos intensos | Error de cambio de modo USB 3.0 (morrownr/USB-WiFi #676) | Utilice un hub USB 2.0 entre la tarjeta y el Mac |
 | `airmon-ng` no ve la tarjeta | Controlador USB incorrecto en los ajustes de la VM | Configure el USB de la VM en USB 3.0 (xHCI), no USB 2.0 |
 | El controlador no se compila en la VM | Faltan los encabezados del kernel | `sudo apt install linux-headers-$(uname -r)` |
-| Tarjeta reconocida pero sin modo monitor | Chipset RTL8832BU (AWUS036AX/AXER) | Este chipset tiene soporte limitado de modo monitor, utilice AWUS036ACH en su lugar |
+| Tarjeta reconocida pero sin modo monitor | Chipset RTL8832BU (AWUS036AX/AXER) | Kernel invitado anterior a 6.17 con el controlador DKMS comunitario (el modo monitor puede estar limitado); utilice un kernel ≥6.17 (rtw89_8852bu integrado) o AWUS036ACH |
 
 ### 5.4 Alternativa: Raspberry Pi como Nodo Remoto de Pentesting
 
@@ -364,8 +365,8 @@ El Mac Mini M4/M4 Pro es el **primer Mac Mini sin puertos USB-A**. Mas important
 
 | Tarjeta | Por que Evitar |
 |------|-----------|
-| AWUS036AX / AWUS036AXER (RTL8832BU) | Soporte de modo monitor limitado e inestable en Linux, sin controlador macOS |
-| AWUS036EACS (RTL8821CU) | **No** admite modo monitor en absoluto, no apta para auditoria de seguridad |
+| AWUS036AX / AWUS036AXER (RTL8832BU) | Sin controlador macOS; en una VM Linux el modo monitor funciona con kernel ≥6.17 (rtw89_8852bu integrado) y puede estar limitado con el controlador DKMS comunitario en kernels antiguos |
+| AWUS036EACS (RTL8821CU) | macOS no tiene controlador nativo de modo monitor; en una VM Linux (kernel ≥6.2) sí funcionan monitor e inyección, por lo que no es una tarjeta a evitar |
 | AWUS036ACHM (MT7610U) | Sin controlador macOS (chris1111 no admite MediaTek), requiere compilacion en Linux |
 
 ---
@@ -426,11 +427,11 @@ En los Mac con puertos USB-A (Mac Mini, Mac Studio, MacBook Pro/Air mas antiguos
 |---------|-------------|-------------------|-------------|
 | RTL8812AU | AWUS036ACH, AWUS036ACS | [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | DKMS (recomendado) |
 | RTL8812AU | AWUS036ACH | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) | Comunitario (descontinuado) |
-| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | Principal (kernel >=6.14) |
+| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | Principal (kernel >=6.13) |
 | MT7612U | AWUS036ACM | Kernel de Linux (`mt76`) | En el kernel (>=4.19) |
 | MT7921AUN | AWUS036AXML, AWUS036AXM | Kernel de Linux (`mt7921u`) | En el kernel (>=5.18) |
 | MT7610U | AWUS036ACHM | [imzyxwvu/mt7610u](https://github.com/imzyxwvu/mt7610u) | Fuera del kernel |
-| RTL8832BU | AWUS036AX, AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | Soporte limitado |
+| RTL8832BU | AWUS036AX, AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | rtw89_8852bu integrado (≥6.17); DKMS comunitario en kernels antiguos (monitor posiblemente limitado) |
 
 ### Controlador de macOS (Solo Mac Intel)
 

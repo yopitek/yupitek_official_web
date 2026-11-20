@@ -3,7 +3,7 @@ title: "什么是数据包注入？测试你的 WiFi 网卡在 Kali Linux 的兼
 description: "了解 WiFi 数据包注入原理、为何需要特定网卡、如何用 aireplay-ng 测试你的 ALFA Network 网卡，以及哪些芯片组支持 Kali Linux 数据包注入。"
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -17,7 +17,7 @@ faq:
   - question: "如何测试网卡是否支持数据包注入？"
     answer: "先启用监听模式，再执行 aireplay-ng --test wlan0mon。若输出 Injection is working! 即确认支持，成功率 80% 以上为可靠。"
   - question: "哪些 ALFA 网卡支持数据包注入？"
-    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）三款均完整支持，搭配正确驱动即可在 Kali Linux 上运行。"
+    answer: "AWUS036ACH（RTL8812AU）与 AWUS036ACM（MT7612U）搭配正确驱动即可在 Kali Linux 上完整支持。AWUS036AXML（MT7921AUN）在内核 6.16 以前有社区反馈可注入，但本站在 stock 内核 6.17 实测注入测试未通过（monitor、AP、WPA3 仍可用）；需要注入请改用 ACH、EACS、ACS 或 AX。"
   - question: "数据包注入测试成功率低于 50% 该如何改善？"
     answer: "靠近目标 AP、将监听接口锁定至相同信道、确认 TX Power 设定，并检查驱动程序是否为 aircrack-ng 版本而非发行版内置版本。"
 ---
@@ -26,7 +26,7 @@ faq:
 ## 什么是数据包注入？
 
 {{< tldr >}}
-数据包注入是网卡传送任意 802.11 讯框的能力，受限于驱动程序而非硬件。RTL8812AU、MT7612U、MT7921AUN 芯片组的 ALFA 网卡搭配 aircrack-ng 驱动即可完整支持。
+数据包注入是网卡传送任意 802.11 讯框的能力，受限于驱动程序而非硬件。RTL8812AU、MT7612U 芯片组的 ALFA 网卡搭配 aircrack-ng 驱动即可完整支持；MT7921AUN（AWUS036AXML）在较新的内核上则是例外（详见下方芯片组说明）。
 {{< /tldr >}}
 
 
@@ -73,7 +73,7 @@ faq:
 
 ### Mediatek MT7921AUN（Wi-Fi 6E）
 
-本列表中最新的芯片组，搭载于 AWUS036AXML。支持 2.4/5/6 GHz 三频、802.11ax 协议。`mt7921u` 驱动程序需要内核 5.18 或更高版本。监听模式与数据包注入已获确认支持，但由于驱动程序较新，在较旧的发行版上可能存在个别边缘情况问题。
+本列表中最新的芯片组，搭载于 AWUS036AXML。支持 2.4/5/6 GHz 三频、802.11ax 协议。`mt7921u` 驱动程序需要内核 5.18 或更高版本。监听模式、AP 模式与 WPA3 均可用。在内核 6.16 以前的社区反馈中数据包注入可运行，但本站在 stock 内核 6.17 实测 `aireplay-ng --test` 未通过（Found 0 APs / No Answer），因此无法 deauth 或抓取 handshake。原因是内核 6.16 以后 mac80211 chanctx 回归，并非芯片先天限制；社区 patched 驱动可让注入运行，但固件仍锁定速率（1/6 Mbps，无法注入 HT/VHT）。需要注入请改用 ACH、EACS、ACS 或 AX。
 
 ---
 
@@ -94,7 +94,7 @@ sudo airmon-ng start wlan0
 
 ```bash
 iwconfig
-# 查找输出中包含：Mode:Monitor
+# 查找输出中包含: Mode:Monitor
 ```
 
 ### 执行注入测试
@@ -152,7 +152,7 @@ sudo aireplay-ng --test wlan0mon
 | 型号 | 芯片组 | 频段 | 注入支持 |
 |---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ 完整支持 |
-| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ 完整支持（需内核 5.18+） |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ⚠️ 内核 6.16 以前有社区反馈；6.17 实测失败 |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ 完整支持 |
 
 ---
@@ -204,10 +204,10 @@ dmesg | tail -30
 这是专业渗透测试中最常见的注入应用场景。先用 airodump-ng 在目标接入点的信道上开始抓包，然后用 aireplay-ng 发送解除认证帧，强制客户端断线重连：
 
 ```bash
-# 终端 1：开始捕获
+# 终端 1: 开始捕获
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w handshake wlan0mon
 
-# 终端 2：发送解除认证帧（向指定客户端发送 5 个解除认证帧）
+# 终端 2: 发送解除认证帧 (向指定客户端发送 5 个解除认证帧)
 sudo aireplay-ng --deauth 5 -a AA:BB:CC:DD:EE:FF -c 11:22:33:44:55:66 wlan0mon
 ```
 

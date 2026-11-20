@@ -3,7 +3,7 @@ title: "Komplettleitfaden: Die besten WiFi-Adapter für Kali Linux 2026"
 description: "Umfassender Vergleich der besten USB-WiFi-Adapter für Kali Linux 2026, einschließlich Monitor-Modus, Packet Injection, Chipsätze und unsere Top-Auswahlen von ALFA Network."
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -15,15 +15,13 @@ faq:
   - question: "Welcher Treiber ist stabiler: RTL8812AU oder MT7612U?"
     answer: "Der mt76x2u-Treiber für MT7612U ist seit Linux Kernel 4.19 im Mainline-Kernel integriert und funktioniert ohne Kompilierung sofort nach dem Einstecken (Plug-and-Play); für RTL8812AU muss der Treiber über DKMS extern installiert werden, und nach Kernel-Updates ist möglicherweise eine Neukompilierung erforderlich."
   - question: "Ist eine WiFi 6E-Karte für Kali Linux notwendig?"
-    answer: "Derzeit nicht erforderlich. Der Treiber für MT7921AUN wird schrittweise ab Kernel 5.18 integriert, und die Packet Injection im 6-GHz-Bereich ist noch nicht vollständig stabil. Wir empfehlen, AWUS036AXML nur für fortgeschrittene Anforderungen zu erwerben."
+    answer: "Derzeit nicht erforderlich. Der Treiber für MT7921AUN wird schrittweise ab Kernel 5.18 integriert, aber die Packet Injection schlug beim AWUS036AXML im Test mit dem Stock-Kernel 6.17 fehl (Community-Berichte besagen, dass sie vor Kernel 6.16 funktionierte). Für Injection empfehlen wir den AWUS036ACH; den AWUS036AXML nur für fortgeschrittene Anwender, die vor allem 6-GHz-Monitoring benötigen."
   - question: "Wie wird in Kali Linux der Monitor Mode eingerichtet?"
     answer: "Führen Sie zunächst sudo airmon-ng check kill aus, um störende Prozesse zu beenden, und dann sudo airmon-ng start wlan1, um den Monitor Mode zu aktivieren. Bestätigen Sie, dass iwconfig Mode:Monitor anzeigt."
   - question: "Welche ALFA-Karte wird Kali Linux-Anfängern empfohlen?"
     answer: "AWUS036ACH (RTL8812AU) verfügt über die umfangreichsten Community-Lehrressourcen, wird vom aircrack-ng-Offiziellen Treiber unterstützt, dient fast allen Kali-Anleitungen als Beispiel und weist das niedrigste Einstiegsrisiko für Neueinsteiger auf."
 ---
 Der **AWUS036ACH** mit RTL8812AU-Chipsatz bleibt der bewährte Standard für Penetration Testing. Mit hervorragender Monitor-Modus-Stabilität und Packet-Injection-Zuverlässigkeit ist er die erste Wahl für die meisten Sicherheitsforscher.
-
-# Komplettleitfaden: Die besten WiFi-Adapter für Kali Linux 2026
 
 {{< tldr >}}
 Empfohlen: AWUS036ACH (RTL8812AU) mit der umfangreichsten offiziellen Treiberunterstützung durch aircrack-ng und Community-Anleitungen; Zukunftsorientiert: AWUS036AXML (MT7921AUN) unterstützt Wi-Fi 6E; Preiswert: AWUS036ACM (MT7612U) mit im Kernel integriertem Treiber, keine Kompilierung erforderlich.
@@ -43,7 +41,7 @@ Die Wahl des richtigen USB-WiFi-Adapters für Kali Linux kann überwältigend se
 
 ### 2. ALFA AWUS036AXML — Beste Wi-Fi-6E-Wahl
 
-Der **AWUS036AXML** mit MT7921AUN-Chipsatz bietet 6-GHz-Abdeckung und ist die zukünftige Option für Teams, die moderne Wi-Fi-6E-Infrastruktur auditieren.
+Der **AWUS036AXML** mit MT7921AUN-Chipsatz bietet 6-GHz-Abdeckung und ist die zukünftige Option für Teams, die moderne Wi-Fi-6E-Infrastruktur auditieren. Monitor-Modus, AP und WPA3 funktionieren; die Packet Injection schlug jedoch im Test mit dem Stock-Kernel 6.17 fehl (Ursache: mac80211-chanctx-Regression ab Kernel 6.16, keine Chip-Einschränkung; ein gepatchter Treiber kann sie ermöglichen, die Firmware sperrt aber die Rate). Wer Injection braucht, wählt den AWUS036ACH.
 
 **Preis:** ~55–70 USD
 
@@ -60,7 +58,7 @@ Der **AWUS036ACM** mit MT7612U-Chipsatz ist der einzige ALFA-Adapter, der IBSS A
 | Adapter | Chipsatz | Bänder | Monitor-Modus | Injection | Preis |
 |---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2,4 + 5 GHz | ★★★★★ | ★★★★★ | ~40–50 |
-| AWUS036AXML | MT7921AUN | 2,4 + 5 + 6 GHz | ★★★★☆ | ★★★★☆ | ~55–70 |
+| AWUS036AXML | MT7921AUN | 2,4 + 5 + 6 GHz | ★★★★☆ | ⚠️ bis Kernel 6.16 Community-Berichte; 6.17 Test fehlgeschlagen | ~55–70 |
 | AWUS036ACM | MT7612U | 2,4 + 5 GHz | ★★★★☆ | ★★★★☆ | ~35–45 |
 | AWUS036AX | RTL8832BU | 2,4 + 5 GHz | ★★★★☆ | ★★★★☆ | ~45–55 |
 
@@ -72,7 +70,7 @@ Der **AWUS036ACM** mit MT7612U-Chipsatz ist der einzige ALFA-Adapter, der IBSS A
 
 Bei der Auswahl eines WiFi-Adapters für Kali Linux sind die wichtigsten Faktoren:
 
-1. **Chipsatz-Kompatibilität** — Muss vom aircrack-ng-Team oder主线-Linux unterstützt werden
+1. **Chipsatz-Kompatibilität** — Muss vom aircrack-ng-Team oder Mainline-Linux unterstützt werden
 2. **Monitor-Modus-Stabilität** — Muss zuverlässig über mehrere Stunden Betrieb bleiben
 3. **Packet-Injection-Rate** — Mindestens 80% Erfolgsrate bei Nahbereichstests
 4. **Community-Unterstützung** — Verfügbare Dokumentation und Troubleshooting-Ressourcen

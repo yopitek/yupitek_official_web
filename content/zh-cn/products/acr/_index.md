@@ -1,6 +1,6 @@
 ---
 title: "ACS ACR 系列 NFC 智能卡读卡机"
-description: "榆阖科技提供 ACS ACR 系列 NFC/智能卡读卡机：ACR122U、ACR1252U、ACR1552U，适用门禁、电子签章及身份验证应用。"
+description: "榆閤科技提供 ACS ACR 系列 NFC/智能卡读卡机：ACR122U、ACR1252U、ACR1552U，适用门禁、电子签章及身份验证应用。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

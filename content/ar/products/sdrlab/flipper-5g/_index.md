@@ -132,6 +132,6 @@ dir: rtl
 ---
 
 
-**رابط صفحة المنتج**: https://yupitek.com/zh-tw/products/sdrlab/flipper-5g/
-**دليل الاستخدام الكامل**: https://doczhtw.yupitek.com/sdrlab/expansion/5g-board/
+**رابط صفحة المنتج**: https://yupitek.com/ar/products/sdrlab/flipper-5g/
+**دليل الاستخدام الكامل**: https://doc.yupitek.com/sdrlab/expansion/5g-board/
 **الصفحة الرسمية للمصنّع (OpenSourceSDRLab، لم يتم التحقق منها عبر الإنترنت)**: https://opensourcesdrlab.com/products/opensourcesdrlab-new-5g-multi-in-one-module-flipperzero-module-with-screen-flipperzero5g-expansion-board?VariantsId=10754

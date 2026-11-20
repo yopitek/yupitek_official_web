@@ -64,7 +64,7 @@ Der AWUS036ACM ist die Top-Empfehlung für Linux-Benutzer, die ein problemloses 
 |----|--------|-------|
 | Windows XP–11 | ✅ Unterstützt | Treiber von der Alfa-Website. Windows 10/11 empfohlen. |
 | macOS 10.7–10.12 | ⚠️ Eingeschränkt | Offizielle Unterstützung endet bei macOS 10.12 Sierra. macOS 11+ und Apple Silicon NICHT unterstützt. |
-| Ubuntu 19.04+ | ✅ Plug & Play | In-Kernel-mt76-Treiber (Kernel ≥ 4.19). Keine Treiberinstallation auf Ubuntu 20.04 LTS und höher. |
+| Ubuntu 19.04+ | ✅ Plug & Play | In-Kernel-mt76x2u-Treiber (Kernel ≥ 4.19). Keine Treiberinstallation auf Ubuntu 20.04 LTS und höher. |
 | Kali Linux 2019.3+ | ✅ Plug & Play | In-Kernel-Treiber. Monitor-Modus bestätigt. VIF (Virtuelles Interface) unterstützt. AP-Modus bei 5 GHz erfordert ggf. den Modulparameter `disable_usb_sg`. |
 | NetHunter (Android) | ✅ Unterstützt | OTG-USB; In-Kernel-Treiber bedeutet breitere Android-Kompatibilität als RTL-Adapter. |
 
@@ -99,7 +99,7 @@ Der AWUS036ACM ist die Top-Empfehlung für Linux-Benutzer, die ein problemloses 
 |----------|------|
 | Offizielle Produktseite | https://www.alfa.com.tw/products/awus036acm_1 |
 | Offizielle Dokumentation | https://docs.alfa.com.tw/Product/AWUS036ACM/ |
-| Linux-Treiber-Info (In-Kernel) | mt76-Treiber — im Linux-Kernel ≥ 4.19 enthalten, keine Installation nötig |
+| Linux-Treiber-Info (In-Kernel) | mt76x2u-Treiber — im Linux-Kernel ≥ 4.19 enthalten, keine Installation nötig |
 
 ## Datenblatt-Download
 

@@ -22,8 +22,6 @@ faq:
     answer: "Le module a 3 connecteurs RF : Main, GNSS et Aux. Connecte au moins Main pour les données cellulaires, ajoute Aux pour la pleine vitesse, et connecte GNSS uniquement si tu as besoin du positionnement GPS."
 ---
 
-# Le guide complet pour ajouter la 4G/5G à ton portable Dell ou Lenovo : modèles compatibles et installation
-
 **La version courte : avant d'équiper ton portable d'une carte 4G, vérifie que les antennes et le slot sont vraiment là, puis que le BIOS t'autorise l'installation. Côté carte : pour un usage à Taïwan ou dans la région Asie-Pacifique, l'EM7455 comme l'EM7430 font l'affaire. Elles sont basées sur le même chipset MDM9230 et sont toutes deux des cartes Cat 6, donc la vitesse est identique ; la seule vraie différence, c'est les bandes couvertes.**
 
 Beaucoup de gens qui ont un Dell Latitude ou un Lenovo ThinkPad veulent glisser une carte 4G dans le slot WWAN libre pour arrêter de chercher du Wi-Fi en déplacement professionnel. Mais ce n'est pas aussi simple que ça en a l'air. Il faut confirmer que la carte mère a le bon slot, que les antennes sont réellement câblées et que le fabricant n'a pas verrouillé le BIOS avec une liste blanche.

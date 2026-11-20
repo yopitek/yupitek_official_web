@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "USB 3.0", "802.11ax", "Banda Dupla", "OFDMA", "MU-MIMO"]
 
 O AWUS036AX apresenta o chipset Realtek RTL8832BU com suporte Wi-Fi 6 (802.11ax) de banda dupla (2.4 GHz + 5 GHz), até 1200 Mbps combinados, com tecnologia MU-MIMO 2×2 e OFDMA. Inclui duas antenas dual-band removíveis com conectores RP-SMA.
 
-> ⚠️ **Importante:** Este modelo é **Wi-Fi 6**, NÃO Wi-Fi 6E — **sem banda de 6 GHz**. Para suporte de 6 GHz, veja AWUS036AXML ou AWUS036AXM. **O modo monitor não é suportado** pelo driver comunitário rtl8852bu; não recomendado para pesquisa de segurança em Linux.
+> ⚠️ **Importante:** Este modelo é **Wi-Fi 6**, NÃO Wi-Fi 6E — **sem banda de 6 GHz**. Para suporte de 6 GHz, veja AWUS036AXML ou AWUS036AXM. No GX10 (Ubuntu 24.04, kernel 6.17) com o driver mainline rtw89_8852bu, o monitor mode e a injeção de pacotes passaram nos nossos testes (injeção 96% em 2.4 GHz, funcional em 5 GHz).
 
 > **Aviso macOS:** Todos os adaptadores ALFA têm suporte limitado ou nenhum para macOS. macOS 11 Big Sur e posteriores, e Apple Silicon (M1/M2/M3) **NÃO** são suportados. O suporte máximo é macOS 10.15 Catalina em Macs Intel.
 
@@ -47,8 +47,8 @@ O AWUS036AX apresenta o chipset Realtek RTL8832BU com suporte Wi-Fi 6 (802.11ax)
 |----|--------|-------|
 | Windows 10/11 | ✅ Suportado | Driver do site da Alfa |
 | macOS | ❌ Não suportado | Sem suporte para macOS 11+ ou Apple Silicon |
-| Ubuntu | ⚠️ Requer driver | Não integrado ao kernel; compile o driver comunitário rtl8852bu via DKMS |
-| Kali Linux | ⚠️ Limitado | Apenas modo gerenciado (driver DKMS); modo monitor não suportado |
+| Ubuntu | ✅ Kernel 6.17 ou superior | Driver mainline rtw89_8852bu (incluído desde o Linux 6.17). Kernels mais antigos: compile o driver comunitário rtl8852bu via DKMS |
+| Kali Linux | ✅ Suportado | Monitor mode e injeção de pacotes verificados no GX10 (Ubuntu 24.04, kernel 6.17) com o driver mainline; kernels mais antigos precisam do driver DKMS. Não testado em um Kali real |
 | NetHunter | ⚠️ Limitado | Dependente do kernel |
 ## Hardware Compatível
 
@@ -60,8 +60,8 @@ O AWUS036AX apresenta o chipset Realtek RTL8832BU com suporte Wi-Fi 6 (802.11ax)
 
 | Função | Status |
 |--------|--------|
-| Monitor Mode | ❌ Não suportado (driver da comunidade) |
-| Packet Injection | ❌ Não suportado |
+| Monitor Mode | ✅ Sim (mainline rtw89_8852bu, kernel 6.17 ou superior; recepção forte no teste GX10) |
+| Packet Injection | ✅ Sim (teste GX10: 2.4 GHz 96%, 5 GHz funcional) |
 | Soft AP Mode | ✅ Sim |
 | Bluetooth | ❌ Não |
 

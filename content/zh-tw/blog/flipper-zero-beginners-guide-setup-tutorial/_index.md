@@ -15,8 +15,6 @@ lastmod: 2026-08-10
 ---
 
 
-# Flipper Zero 入門教學：開箱設定、韌體更新與五大實用功能
-
 > TL;DR：Flipper Zero 是一台掌上型的硬體探索工具，內建 125 kHz RFID、Sub-GHz、NFC、紅外線與 BLE，可用 USB-C 連接電腦模擬鍵盤（BadUSB）。入手後先裝 microSD、用 qFlipper 或手機 App 更新韌體，再從 RFID 讀卡與 IR 遙控開始玩，就能快速上手。所有功能請只用在**你擁有或獲得授權的裝置**上。
 
 ## Flipper Zero 是什麼？適合誰用？

@@ -14,8 +14,6 @@ hero_alt: "Guia para Iniciantes no Flipper Zero: Unboxing, Atualização de Firm
 seo_description: "O que é o Flipper Zero? Do unboxing e configuração do microSD à atualização de firmware via qFlipper, até testes práticos de RFID, Sub-GHz, NFC, IR e BadUSB. Um guia completo para iniciantes."
 ---
 
-# Guia para Iniciantes no Flipper Zero: Unboxing, Configuração, Atualização de Firmware e 5 Funcionalidades Úteis
-
 > TL;DR: O Flipper Zero é uma ferramenta de exploração de hardware portátil, com RFID de 125 kHz, Sub-GHz, NFC, infravermelho e BLE integrados, capaz de simular um teclado via USB-C (BadUSB). Após adquirir o dispositivo, instale um cartão microSD, atualize o firmware usando o qFlipper ou o aplicativo móvel e comece a explorar com a leitura de cartões RFID e controles IR para um início rápido. Utilize todas as funcionalidades apenas em **dispositivos de sua propriedade ou com autorização explícita**.
 
 ## O que é o Flipper Zero? Para quem é indicado?
@@ -96,7 +94,7 @@ O transceptor CC1101 integrado pode capturar sinais enviados por controles remot
 O módulo NFC suporta padrões comuns de 13.56 MHz, podendo ler o UID e os blocos de dados de cartões sem contato (como cartões de transporte). A capacidade de simulação completa depende do mecanismo de criptografia do cartão:
 
 1. Menu principal → `NFC` → `Read`.
-2. Coloque o cartão na área de感应 (indução) na parte traseira do dispositivo para ler as informações.
+2. Coloque o cartão na área de indução na parte traseira do dispositivo para ler as informações.
 3. Dependendo do tipo de cartão, selecione `Emulate` ou `Write`.
 
 ### 4. IR: Aprendizado e retransmissão de controles remotos
@@ -134,7 +132,7 @@ Não é obrigatório, mas fortemente recomendado. A maioria dos aplicativos, bib
 **P2: A atualização de firmware pode tornar o dispositivo inutilizável (brick)?**
 O risco com o firmware estável oficial é extremamente baixo. Desde que a atualização não sofra interrupções de energia ou desconexões, ela quase nunca falha. Em caso de anomalia, é possível reflashar o firmware usando o modo de recuperação.
 
-**P3: É possível duplicar um cartão EasyCard (悠遊卡)?**
+**P3: É possível duplicar um cartão EasyCard (cartão de transporte de Taiwan)?**
 A maioria dos cartões de transporte modernos possui criptografia e proteção de chaves. O Flipper Zero pode ler apenas o UID ou blocos não criptografados, não conseguindo duplicá-lo completamente. Além disso, a duplicação não autorizada de cartões de transporte é ilegal.
 
 **P4: Qual a diferença entre o Flipper Zero e um SDR (Software Defined Radio)?**

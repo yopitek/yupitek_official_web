@@ -8,12 +8,12 @@ showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
 featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Para qué sirve Black Duck FuzzBox?"
     answer: "Black Duck FuzzBox es un entorno dedicado de fuzzing de protocolos inalámbricos que inyecta tramas 802.11 anómalas para verificar la robustez de la pila de protocolos de dispositivos inalámbricos embebidos y puntos de acceso."
-  - question: "¿Por qué las tarjetas Wi-Fi 6/6E no funcionan con FuzzBox?"
-    answer: "El motor de inyección de FuzzBox está optimizado para el controlador rtl88xxau de Realtek. Los chipsets de MediaTek y los Realtek Wi-Fi 6 más nuevos no usan esta rama y son ignorados por el daemon."
+  - question: "¿Se pueden usar las tarjetas Wi-Fi 6/6E con FuzzBox?"
+    answer: "El motor de inyección de FuzzBox está optimizado solo para el controlador rtl88xxau de Realtek. Los demás chipsets no usan esta rama y el daemon los ignora, por lo que no están verificados en FuzzBox. En nuestras pruebas en GX10 (Ubuntu 24.04, kernel 6.17), la inyección funciona en AWUS036AX y AXER (RTL8832BU); AWUS036AXM y AXML (MT7921AU) fallan por la regresión de mac80211 chanctx a partir del kernel 6.16, no por una limitación del chip."
   - question: "¿Por qué el ALFA AWUS036ACH es la tarjeta preferida de FuzzBox?"
     answer: "El AWUS036ACH usa el chipset RTL8812AU, con un controlador de inyección optimizado por la comunidad que puede eludir la pila de red del sistema operativo para transmitir tramas sin procesar sin pérdida de paquetes."
   - question: "¿En qué versión de Linux se basa FuzzBox OS?"
@@ -25,12 +25,12 @@ faq:
 El fuzzing de protocolos WLAN (a menudo denominado pruebas negativas inalámbricas) es uno de los pasos más críticos para validar la seguridad y robustez de los dispositivos inalámbricos integrados, los electrodomésticos inteligentes y los puntos de acceso empresariales. Sin embargo, intentar transmitir tramas de datos, control o gestión 802.11 malformadas a través del aire requiere un control de bajo nivel de la capa de control de acceso al medio (MAC) que los sistemas operativos estándar y los controladores de WiFi comerciales simplemente no permiten.
 
 {{< tldr >}}
-El ALFA AWUS036ACH es la única opción preferida para el fuzzing de protocolos de Black Duck FuzzBox. El controlador RTL8812AU admite inyección de paquetes sin procesar y modo monitor. Las tarjetas Wi-Fi 6/6E no funcionan por incompatibilidad de controladores.
+El ALFA AWUS036ACH es la única opción preferida para el fuzzing de protocolos de Black Duck FuzzBox. El controlador RTL8812AU admite inyección de paquetes sin procesar y modo monitor. Las tarjetas Wi-Fi 6/6E no están verificadas en FuzzBox, y AXM/AXML fallan en la inyección con el kernel 6.17 (regresión de chanctx, no una limitación del chip).
 {{< /tldr >}}
 
 Para solucionar esto, los equipos de seguridad utilizan **Black Duck FuzzBox** (anteriormente Synopsys Defensics FuzzBox), un entorno de ejecución de software y hardware especializado. Para realizar las pruebas, FuzzBox OS debe emparejarse con un adaptador inalámbrico USB compatible y de alto rendimiento que sea capaz de ofrecer un modo monitor estable y una inyección de paquetes sin procesar (raw) confiable. 
 
-En esta guía de compatibilidad, analizamos el catálogo activo de productos de ALFA Network en Yopitek, explicamos por qué los adaptadores Wi-Fi 6/6E más nuevos fallan con FuzzBox y proporcionamos una guía de configuración paso a paso para la opción estándar de la industria: el **ALFA AWUS036ACH** (RTL8812AU).
+En esta guía de compatibilidad, analizamos el catálogo activo de productos de ALFA Network en Yopitek, explicamos en qué situación están los adaptadores Wi-Fi 6/6E más nuevos con FuzzBox y proporcionamos una guía de configuración paso a paso para la opción estándar de la industria: el **ALFA AWUS036ACH** (RTL8812AU).
 
 ---
 
@@ -82,12 +82,12 @@ ALFA Network fabrica adaptadores con diferentes chipsets. Solo chipsets específ
 |------------|---------|-------------|-----------|--------------------------------------|
 | **AWUS036ACH** | **Realtek RTL8812AU** | **USB 3.0** | **Wi-Fi 5** | **✅ 100% compatible (elección principal)** |
 | **AWUS036ACS** | **Realtek RTL8811AU** | **USB 2.0** | **Wi-Fi 5** | **✅ Compatible (respaldo / compacto)** |
-| **AWUS036AXML** | MediaTek MT7921AUN | USB-C 3.2 | Wi-Fi 6E | ❌ No compatible (sin controlador de inyección) |
-| **AWUS036AXM** | MediaTek MT7921AUN | USB 3.2 | Wi-Fi 6E | ❌ No compatible (sin controlador de inyección) |
-| **AWUS036AX** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ❌ No compatible (sin controlador de inyección) |
-| **AWUS036AXER** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ❌ No compatible (sin controlador de inyección) |
-| **AWUS036ACM** | MediaTek MT7612U | USB 3.0 | Wi-Fi 5 | ❌ No compatible (sin controlador de inyección) |
-| **AWUS036EACS** | Realtek RTL8811CU | USB 2.0 | Wi-Fi 5 | ❌ No compatible (controlador incompatible) |
+| **AWUS036AXML** | MediaTek MT7921AUN | USB-C 3.2 | Wi-Fi 6E | ❌ La inyección falla en el kernel 6.17 (regresión de mac80211 chanctx + velocidad bloqueada por el firmware); no verificado en FuzzBox |
+| **AWUS036AXM** | MediaTek MT7921AUN | USB 3.2 | Wi-Fi 6E | ❌ La inyección falla en el kernel 6.17 (regresión de mac80211 chanctx + velocidad bloqueada por el firmware); no verificado en FuzzBox |
+| **AWUS036AX** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ⚠️ La inyección funciona en GX10 (kernel 6.17); no verificado en FuzzBox |
+| **AWUS036AXER** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ⚠️ La inyección funciona en GX10 (kernel 6.17); no verificado en FuzzBox |
+| **AWUS036ACM** | MediaTek MT7612U | USB 3.0 | Wi-Fi 5 | ⚠️ La inyección funciona en GX10 (kernel 6.17); no verificado en FuzzBox |
+| **AWUS036EACS** | Realtek RTL8821CU | USB 2.0 | Wi-Fi 5 | No figura en la lista de verificación de FuzzBox; en Linux con kernel 6.2+ el modo monitor y la inyección funcionan en pruebas |
 
 ### 3.2 La elección principal: ALFA AWUS036ACH
 El **ALFA AWUS036ACH** es la elección estándar de la industria para las pruebas profesionales de protocolos.
@@ -114,10 +114,10 @@ FuzzBox OS viene precargado con controladores de inyección estables. Si necesit
 
 El núcleo de la transmisión de paquetes de FuzzBox reside en su daemon inyector propietario `80211socket`. 
 
-### Por qué no funcionan los chipsets Wi-Fi 6/6E más nuevos
+### Por qué FuzzBox no admite los chipsets Wi-Fi 6/6E más nuevos
 Muchos probadores asumen que comprar un adaptador más nuevo y rápido (como el Wi-Fi 6E AWUS036AXML que utiliza el chipset MT7921AUN) mejorará el rendimiento. Sin embargo, FuzzBox está diseñado para pruebas de vulnerabilidad de protocolos, no para el rendimiento de Internet. 
 
-El inyector `80211socket` se conecta directamente con el controlador inalámbrico a nivel de la subcapa MAC. Para lograr esto, el controlador debe admitir extensiones especializadas de inyección sin procesar (raw). Actualmente, el motor de inyección de FuzzBox OS está optimizado para el árbol de controladores maduro **Realtek `rtl88xxau`** (específicamente RTL8812AU/RTL8814AU). Los chipsets de MediaTek (MT7921AUN, MT7612U) y los chipsets Realtek Wi-Fi 6 más nuevos (RTL8832BU) no utilizan este árbol de controladores de inyección y, por lo tanto, el daemon de FuzzBox los ignora.
+El inyector `80211socket` se conecta directamente con el controlador inalámbrico a nivel de la subcapa MAC. Para lograr esto, el controlador debe admitir extensiones especializadas de inyección sin procesar (raw). Actualmente, el motor de inyección de FuzzBox OS está optimizado para el árbol de controladores maduro **Realtek `rtl88xxau`** (específicamente RTL8812AU/RTL8814AU). Los chipsets de MediaTek (MT7921AUN, MT7612U) y los chipsets Realtek Wi-Fi 6 más nuevos (RTL8832BU) no utilizan este árbol de controladores de inyección y, por lo tanto, el daemon de FuzzBox los ignora y no están verificados en FuzzBox. Es una limitación de la plataforma, no una incapacidad de estos chips para inyectar: en nuestras pruebas en GX10 (Ubuntu 24.04 ARM64, kernel 6.17), la inyección funciona en ACM (mt76x2u), AX y AXER (rtw89_8852bu), mientras que AXM y AXML (mt7921u) fallan en el kernel 6.17 estándar por la regresión de mac80211 chanctx a partir del kernel 6.16, además de un firmware que bloquea la velocidad (1/6 Mbps); tampoco es una limitación del chip.
 
 ### Estabilidad bajo el Kernel 6.1.x
 El controlador RTL8812AU ha sido adaptado (backported) y parcheado extensamente para el kernel de Linux 6.1.x. Admite un bloqueo de canal estable, protege contra desbordamientos de búfer bajo una gran carga de paquetes y evita pánicos del kernel (kernel panics) durante campañas de fuzzing de desautenticación a alta velocidad.

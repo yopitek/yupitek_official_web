@@ -3,7 +3,7 @@ title: "ALFA AWUS036AXML Treiber-Installationsanleitung für China: Kali Linux, 
 description: "Schritt-für-Schritt-Anleitung zur Installation von ALFA AWUS036AXML-Treibern in China unter Verwendung lokaler Mirrors. MT7921AUN WiFi 6E In-Kernel-Treiber, volle Monitor-Modus- und VIF-Unterstützung. Deckt Kali Linux, Ubuntu 22/24, Debian und Raspberry Pi ab. Kein GitHub erforderlich."
 date: 2026-04-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -27,10 +27,10 @@ faq:
     answer: "Die USB-ID von MediaTek MT7921AUN ist 0e8d:7961, was mit lsusb bestätigt werden kann."
 ---
 
-Der AWUS036AXML ist das WiFi 6E Flaggschiff von ALFA — ein Triband-USB-C-Adapter, der die Frequenzbereiche 2,4 GHz, 5 GHz und das unbelastete 6 GHz-Band abdeckt. Sein MT7921AUN-Chip verwendet den `mt7921u`-Treiber, der seit Version 5.18 in den Linux-Kernel integriert ist. Auf Ubuntu 24.04 und Kali 2025 ist er Plug-and-Play, sobald das Firmware-Paket von einem lokalen Mirror installiert wurde. Diese Anleitung deckt die vollständige Einrichtung ab — Firmware, Treiber-Verifizierung, Monitor-Modus, Paket-Injektion und VIF — ohne GitHub zu berühren.
+Der AWUS036AXML ist das WiFi 6E Flaggschiff von ALFA — ein Triband-USB-C-Adapter, der die Frequenzbereiche 2,4 GHz, 5 GHz und das unbelastete 6 GHz-Band abdeckt. Sein MT7921AUN-Chip verwendet den `mt7921u`-Treiber, der seit Version 5.18 in den Linux-Kernel integriert ist. Auf Ubuntu 24.04 und Kali 2025 ist er Plug-and-Play, sobald das Firmware-Paket von einem lokalen Mirror installiert wurde. Diese Anleitung deckt die vollständige Einrichtung ab — Firmware, Treiber-Verifizierung, Monitor-Modus und VIF (samt Hinweis zur Paket-Injektion, die unter Stock-Kernel 6.17 fehlschlägt) — ohne GitHub zu berühren.
 
 {{< tldr >}}
-Der AWUS036AXML verwendet den MT7921AUN-Chip, ist ein WiFi 6E Tri-Band USB-C Flaggschiff-Netzwerkadapter, dessen Treiber im Kernel integriert ist, und unterstützt nach der Installation der Firmware Monitor Mode, Packet Injection und VIF.
+Der AWUS036AXML verwendet den MT7921AUN-Chip, ist ein WiFi 6E Tri-Band USB-C Flaggschiff-Netzwerkadapter, dessen Treiber im Kernel integriert ist, und unterstützt nach der Installation der Firmware Monitor Mode, AP/WPA3 und VIF; Packet Injection schlug unter Stock-Kernel 6.17 im Test fehl (siehe unten).
 {{< /tldr >}}
 
 Stellen Sie sicher, dass Sie Folgendes bereit haben:
@@ -65,7 +65,6 @@ Springen Sie zum richtigen Abschnitt für Ihr Betriebssystem:
 - [Kali Linux](#kali-linux)
 - [Ubuntu 22.04 / 24.04](#ubuntu-2204--2404)
 - [Debian](#debian)
-- [Raspberry Pi 4B / 5](#raspberry-pi-4b--5)
 
 ---
 
@@ -139,6 +138,8 @@ Suchen Sie nach `Mode:Monitor` auf der Schnittstelle.
 ---
 
 ### Schritt 5: Paket-Injektion testen {#test-packet-injection}
+
+⚠️ **Versionshinweis:** Community-Berichte besagen, dass Injektion unter Kerneln vor 6.16 funktioniert. Unter Stock-Kernel 6.17 (ASUS GX10, Ubuntu 24.04 ARM64) ist unser Test fehlgeschlagen — `aireplay-ng --test` zeigt `Found 0 APs` / `No Answer` —, daher sind Deauth und Handshake-Mitschnitt nicht möglich. Ursache ist eine mac80211-chanctx-Regression seit Kernel 6.16, keine Chip-Einschränkung; gepatchte Community-Treiber können die Injektion ermöglichen, aber die Firmware sperrt weiterhin die Rate (1/6 Mbps, keine HT/VHT-Injektion). Wenn Sie Injektion benötigen, verwenden Sie stattdessen AWUS036ACH / EACS / ACS / AX (oder ACM / ACHM). Monitor-Modus, AP, WPA3 und VIF funktionieren normal.
 
 ```bash
 sudo aireplay-ng --test wlan1

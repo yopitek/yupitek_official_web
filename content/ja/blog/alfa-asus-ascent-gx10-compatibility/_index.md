@@ -1,5 +1,5 @@
 ---
-title: "ALFA無線ネットワークカードがASUS Ascent GX10（GB10）に対応しているかどうか"
+title: "ALFA無線LANアダプターはASUS Ascent GX10（GB10）に対応しているか"
 date: 2026-09-03
 draft: false
 slug: "alfa-asus-ascent-gx10-compatibility"
@@ -14,226 +14,238 @@ tags:
   - "ARM64"
 categories:
   - "ハードウェアガイド"
-description: "ASUS GX10 & NVIDIA DGX Spark、ALFA USB网卡完全互換。MediaTekモデルは即インストール可、RealtekモデルはARM64でドライバ編集必要。GX10はUSB-Cポート全て。"
+description: "ALFA USB無線LAN 9機種をASUS Ascent GX10（GB10）で実機検証。kernel 6.17で全機種が内蔵ドライバーで動作しDKMS不要、注入はEACS／ACH／ACSが安定、AXM／AXMLは失敗しました。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
-## 1. 問題要約
+> 📌 本記事は2026年11月のGX10実機テストに基づいて更新しました：ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）では、ALFA現行9機種のアダプターがすべてkernel内蔵ドライバで動作し、挿すだけで使用でき、DKMSは不要です。詳細データは[ALFA 9機種 ARM64 実機テスト総まとめ](/ja/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)をご覧ください。テストはGX10のみで実施しており、他のGB10機種は個別にテストしていません。
 
-お客様の質問：「ALFAシリーズのUSBワイヤレスネットワークアダプターがASUS Ascent GX10（NVIDIA GB10 Grace Blackwell）AIスーパーコンピュータで使用可能ですか？」
+## 1. 質問の要約
 
-簡要結論：ASUS Ascent GX10とNVIDIA DGX Sparkは同じGB10ハードウェアプラットフォームとDGX OSソフトウェア環境を共有しており、ALFAネットワークアダプターの互換性は完全に一致しています（判定基準：ALFAの現役9モデルのUSBネットワークアダプター）。MediaTekチップセットモデル（AWUS036ACM / ACHM / AXML / AXM、4モデル）はin-kernelドライバを使用し、開箱即用です；Realtekチップセットモデル（AWUS036ACH / ACS / EACS / AX / AXER、5モデル）はARM64上でout-of-treeドライバをコンパイルする必要があります。注意：GX10のUSBポートはすべてUSB Type-C（3つのデータポート + 1つのPD入力ポート）であり、ALFAネットワークアダプター（AXMLを除く）はUSB-C to USB-Aコンバータを使用する必要があります。
+お客様からの質問：「ALFAシリーズのUSB無線LANアダプターは、ASUS Ascent GX10（NVIDIA GB10 Grace Blackwell）AIスーパーコンピューターで使用できますか？」
 
-## 2. 分析目標ハードウェア規格構造
+簡潔な結論：ASUS Ascent GX10とNVIDIA DGX Sparkは、同じGB10チップとNVIDIA kernel系列を使用しています。当社はASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）でALFA現行9機種のUSB無線LANアダプター（AWUS036ACM / ACHM / ACH / ACS / EACS / AX / AXER / AXM / AXML）を実機テストし、全機種がkernel内蔵ドライバで動作し、挿すだけで使用でき、コンパイルやDKMSは不要であることを確認しました。本記事の機種がテスト実機です。機能差：MediaTek MT7921機種（AWUS036AXM / AXML）はstock kernel 6.17上でパケットインジェクション（packet injection）に失敗し、monitor、AP、WPA3は使用可能です。残り7機種はmonitorとインジェクションの両方が実機で動作しました。各アダプターのドライバーがメインラインに入った最低kernelバージョンは異なり（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）、コミュニティのDKMSドライバーが必要なのはそれより古いkernelのみです。注意：GX10のUSBポートはすべてUSB Type-C（データポート3基 + PD入力ポート1基）のため、ALFAアダプター（AXMLを除く）にはUSB-C to USB-A変換アダプターが必要です。
 
-### 2.1 ASUS Ascent GX10 ハードウェア規格
+## 2. 分析対象ハードウェアの仕様構成
 
-| 項目 | 規格 |
+### 2.1 ASUS Ascent GX10 ハードウェア仕様
+
+| 項目 | 仕様 |
 |---|---|
-| 製品名稱 | ASUS Ascent GX10 |
-| 核心チップ | NVIDIA GB10 Grace Blackwell Superchip（DGX Spark プラットフォーム） |
-| CPU | 20-core Arm（10× Cortex-X925 + 10× Cortex-A725），ARMv9.2-A |
-| GPU | NVIDIA Blackwell アーキテクチャ，6144 CUDA コア，第5世代 Tensor Core，第4世代 RT Core |
-| AI 性能 | 最高 1 PetaFLOP（FP4, Sparse）/ 1000 TOPS |
-| システムメモリ | 128GB LPDDR5x 一貫メモリ（256-bit、273 GB/s） |
-| 儲蔵 | 最高 4TB NVMe M.2 SSD（自暗号化） |
-| USB | 3× USB 3.2 Gen 2×2 Type-C（20Gbps、DP Alt Mode / DisplayPort 2.1）+ 1× USB 3.2 Gen 2×2 Type-C（PD インプット、180W EPR PD3.1） |
-| 画面出力 | 1× HDMI 2.1（USB-C DP Alt Mode と組み合わせて多画面出力が可能） |
+| 製品名 | ASUS Ascent GX10 |
+| コアチップ | NVIDIA GB10 Grace Blackwell Superchip（DGX Spark プラットフォーム） |
+| CPU | 20-core Arm（10× Cortex-X925 + 10× Cortex-A725）、ARMv9.2-A |
+| GPU | NVIDIA Blackwell アーキテクチャ、6144 CUDA コア、第5世代 Tensor Core、第4世代 RT Core |
+| AI 性能 | 最大 1 PetaFLOP（FP4, Sparse）/ 1000 TOPS |
+| システムメモリ | 128GB LPDDR5x 統合メモリ（256-bit、273 GB/s） |
+| ストレージ | 最大 4TB NVMe M.2 SSD（自己暗号化） |
+| USB | 3× USB 3.2 Gen 2×2 Type-C（20Gbps、DP Alt Mode / DisplayPort 2.1）+ 1× USB 3.2 Gen 2×2 Type-C（PD 入力、180W EPR PD3.1） |
+| 映像出力 | 1× HDMI 2.1（USB-C DP Alt Mode と組み合わせてマルチディスプレイ出力が可能） |
 | 有線ネットワーク | 1× 10GbE RJ45 + NVIDIA ConnectX-7 SmartNIC（2× 200G QSFP112） |
 | 無線ネットワーク | Wi-Fi 7（MediaTek AW-EM637、2×2 MIMO）+ Bluetooth 5.4 |
-| オペレーティングシステム | NVIDIA DGX OS（Ubuntu Linux 基于、kernel 6.x） |
+| オペレーティングシステム | NVIDIA DGX OS（Ubuntu Linux ベース、kernel 6.x） |
 | アーキテクチャ | aarch64（ARM64） |
 | サイズ | 150 × 150 × 51 mm（5.91 × 5.91 × 2.01 インチ） |
 | 重量 | 1.48 kg |
-| クーラリング | ASUS 専用クーラーシステム（静音ファン + 熱伝導管） |
-| その他 | Kensington 防犯鎖孔 |
+| 冷却 | ASUS 独自の冷却システム（静音ファン + ヒートパイプ） |
+| その他 | Kensington セキュリティスロット |
 
-> ⚠️ 規格修正記載：原稿のサイズは「150 × 150 × 50 mm」と記載されており、重量は記載されていません。ASUS 公式 techspec によると、**150 × 150 × 51 mm / 1.48 kg** とされていますので、修正しました。HDMI バージョンは公式のものに従って 2.1（原稿では 2.1b と記載されていました）と修正しました。第10節の参考文献を参照してください。
+> ⚠️ 仕様修正の注記：原稿ではサイズが「150 × 150 × 50 mm」と記載され、重量の記載がありませんでした。ASUS 公式 techspec を確認した結果、**150 × 150 × 51 mm / 1.48 kg** であるため修正しました。HDMI のバージョンも公式に従い 2.1 に修正しました（原稿は 2.1b）。第10節の参考情報を参照してください。
 
 ### 2.2 ソフトウェア環境：NVIDIA DGX OS
 
-| 項目 | 具体内容 |
+| 項目 | 内容 |
 |---|---|
-| 基底 OS | Ubuntu Linux（NVIDIA カスタマイズ） |
+| ベース OS | Ubuntu Linux（NVIDIA カスタマイズ） |
 | Kernel | Linux 6.x |
 | アーキテクチャ | aarch64（ARM64） |
-| 預装ソフトウェア | NVIDIA AI ソフトウェアスタック（CUDA、cuDNN、TensorRT、PyTorch、Jupyter など） |
+| プリインストールソフトウェア | NVIDIA AI ソフトウェアスタック（CUDA、cuDNN、TensorRT、PyTorch、Jupyter など） |
 | パッケージ管理 | apt |
 
 ### 2.3 DGX Sparkとの違い
 
-| 差異項目 | ASUS GX10 | NVIDIA DGX Spark |
+| 相違点 | ASUS GX10 | NVIDIA DGX Spark |
 |---|---|---|
-| クーラリングデザイン | ASUS 専用クーラーシステム | NVIDIA 参考クーラー |
-| 機構デザイン | ASUS カスタマイズボックス | NVIDIA 参考ボックス |
-| 無線モジュール | MediaTek AW-EM637（Wi-Fi 7） | 同級 Wi-Fi 7 モジュール |
-| アクセサリー | ASUS 原厂アクセサリー | NVIDIA 原厂アクセサリー |
+| 冷却設計 | ASUS 独自の冷却システム | NVIDIA リファレンス冷却 |
+| 筐体設計 | ASUS カスタム筐体 | NVIDIA リファレンス筐体 |
+| 無線モジュール | MediaTek AW-EM637（Wi-Fi 7） | 同等の Wi-Fi 7 モジュール |
+| 付属品 | ASUS 純正付属品 | NVIDIA 純正付属品 |
 | 保証 | ASUS 保証 | NVIDIA 保証 |
 
-ALFAの互換性への影響：影響なし。USB コントローラー、kernel バージョン、ドライバーフレームワークは DGX Spark と完全に同じです。
+ALFAの互換性への影響：影響はないと見込まれます（テストはGX10のみで、他のGB10機種は個別にテストしていません）。USB コントローラー、kernel バージョン、ドライバーフレームワークは DGX Spark と完全に同じです。
 
-### 2.4 USB Type-C 転換の必要性
+### 2.4 USB Type-C 変換の必要性
 
 GX10の4つのUSBポートはすべてType-Cです：
 
-- 3つのデータポート（DP Alt Modeをサポートし、画面接続が可能）
-- 1つのPDインプットポート（電源供給用）
+- データポート 3 基（DP Alt Modeに対応し、ディスプレイを接続可能）
+- PD 入力ポート 1 基（給電用）
 
-ALFAの全シリーズのネットワークカード（AXMLがUSB-C以外の場合）はすべてUSB Type-Aであり、コンバータを使用する必要があります。
+ALFAの全シリーズのアダプター（USB-CのAXMLを除く）はUSB Type-Aのため、変換アダプターが必要です。
 
-## 3. 現在のALFAネットワークカード規格およびチップセットの分析
+## 3. 現行ALFAアダプターの仕様とチップセットの分析
 
-2026年9月現在、ALFA Networkの現役USB無線ネットワークカード製品ラインは以下の通りです：
+2026年9月時点で、ALFA Networkの現行USB無線LANアダプターのラインナップは以下のとおりです：
 
-| 機型 | Wi-Fi レベル | チップセット | インターフェース | Linux 驅動状態 |
+| 機種 | Wi-Fi 規格 | チップセット | インターフェース | Linux 内蔵ドライバー（最低 kernel バージョン） |
 |---|---|---|---|---|
-| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ in-kernel（mt7921u） |
-| AWUS036AXM | Wi-Fi 6E | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ in-kernel（mt7921u） |
-| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ rtw89 / out-of-tree |
-| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ 同上 |
-| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ⚠️ out-of-tree（8812au） |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ✅ in-kernel（mt76x0u） |
-| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ in-kernel（mt76x2u）⭐ 首選 |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ⚠️ out-of-tree（8812au 涵蓋） |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ⚠️ out-of-tree（8821cu） |
+| AWUS036AXML | Wi-Fi 6E（6GHz 実機で動作確認） | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ 内蔵（mt7921u、5.18+） |
+| AWUS036AXM | Wi-Fi 6E（メーカー公称、6GHz 未テスト） | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ 内蔵（mt7921u、5.18+） |
+| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ 内蔵（rtw89_8852bu、6.17+） |
+| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ 内蔵（rtw89_8852bu、6.17+） |
+| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ✅ 内蔵（rtw88_8812au、6.13+） |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ✅ 内蔵（mt76x0u、4.19+） |
+| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ 内蔵（mt76x2u、4.19+） |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ✅ 内蔵（rtw88_8821au、6.13+） |
+| AWUS036EACS | Wi-Fi 5 (AC600) + Bluetooth | Realtek RTL8821CU | USB 2.0 | ✅ 内蔵（rtw88_8821cu、6.2+） |
 
-## 4. 推薦機型とチップセット
+注：GX10 で実測した kernel 6.17 には 9 機種すべてのドライバーが内蔵されています。最低 kernel バージョンは機種ごとに異なります（上表の括弧内）。コミュニティ保守の DKMS ドライバーのインストールが必要なのは、kernel がその機種の最低バージョンより古いシステムのみです。
 
-### 4.1 推薦レベル分類
+## 4. 対応機種とチップセット
 
-| 推薦レベル | 機型（チップセット） | 説明 |
+### 4.1 推奨レベル
+
+| 推奨レベル | 機種（チップセット） | 説明 |
 |---|---|---|
-| ⭐ 強烈推薦 | AWUS036ACM（MT7612U） | カーネル内蔵ドライバ、開箱即使用可能、AC1200 双頻、AP / Monitor / Injection サポート |
-| ✅ 推薦 | AWUS036ACHM（MT7610U） | カーネル内蔵ドライバ、低消費電力、AC433 双頻 |
-| ✅ 推薦（Wi-Fi 6E） | AWUS036AXML / AXM（MT7921AUN） | カーネル内蔵ドライバ、Wi-Fi 6E、AXML は USB-C で直接挿入可能 |
-| ⚠️ 使用可能但し、翻訳が必要 | AWUS036ACH（RTL8812AU） | morrownr/8812au（ARM64）を翻訳する必要があり、翻訳が完了すると機能が完全 |
-| ⚠️ 使用可能但し、翻訳が必要 | AWUS036ACS / EACS |対応する out-of-tree ドライバを翻訳する必要があります |
-| ⚠️ 使用可能但し、注意が必要 | AWUS036AX / AXER（RTL8832BU） | カーネル 6.xの rtw89が既にサポートしている可能性があります；翻訳は必要ありません |
+| ⭐ ペネトレーションテストに最適 | AWUS036EACS（RTL8821CU）/ AWUS036ACH（RTL8812AU）/ AWUS036ACS（RTL8811AU） | 内蔵ドライバーでインストール不要。インジェクション実測値は EACS、ACH が両バンド 100%、ACS が 2.4GHz 100%・5GHz 96%。WPA handshake をエンドツーエンドで取得可能 |
+| ✅ 推奨 | AWUS036ACM（MT7612U） | 内蔵ドライバーでインストール不要。monitor、インジェクション（2.4GHz 63–83%、5GHz 76%）、AP、WPA3 すべて使用可能 |
+| ✅ 推奨 | AWUS036ACHM（MT7610U） | 内蔵ドライバーでインストール不要。2.4GHz インジェクション 96–100%、5GHz インジェクションはブロードキャストのみ可能。WPA3 AP には sae_pwe=0 の設定が必要 |
+| ✅ 推奨（Wi-Fi 6） | AWUS036AX / AXER（RTL8832BU） | 内蔵ドライバーでインストール不要。monitor の受信感度が高く、インジェクション可能（2.4GHz：AX 96%、AXER 73%）、AP は 80MHz に対応 |
+| ⚠️ 接続／AP 用途のみ | AWUS036AXML / AXM（MT7921AUN） | 内蔵ドライバーでインストール不要。monitor、AP、WPA3 は使用可能だが、stock kernel 6.17 ではインジェクションに失敗するため、ペネトレーションテストには不向き。AXML は USB-C で直挿し可能 |
 
-### 4.2 使用シーン推薦
+### 4.2 用途別のおすすめ
 
-| 使用シーン | 推薦機型 | 説明 |
+| 用途 | おすすめ機種 | 説明 |
 |---|---|---|
-| 一般的な無線インターネット（最も簡単） | AWUS036ACM / ACHM | カーネル内蔵ドライバ、翻訳は不要 |
-| 無線パイプラインテスト / 監視 / 注入 | AWUS036ACH または AWUS036ACM | 両者とも Monitor + Injection サポート |
-| Wi-Fi 6E / 6GHz | AWUS036AXML / AXM | MT7921AUN カーネル内蔵ドライバ |
-| 外接WiFiは必要なし | — | GX10 は内蔵 Wi-Fi 7 があり、一般的なインターネット使用には外接WiFiは不要です |
+| 一般的な無線インターネット接続（最も簡単） | 9 機種すべて可（例：AWUS036ACM / ACHM） | すべて kernel 内蔵ドライバーで、挿すだけで使用可能 |
+| 無線ペネトレーションテスト / 監視 / インジェクション | AWUS036EACS / ACH / ACS | インジェクション実測 96–100%、WPA handshake をエンドツーエンドで取得可能。AXM / AXML は選ばないこと（インジェクション失敗） |
+| Wi-Fi 6 + AP ホットスポット | AWUS036AX / AXER | 2x2、80MHz AP が実機で動作 |
+| 6GHz 帯 | AWUS036AXML | 6GHz で WPA3 AP を構築できることを実機で確認。AXM は同じチップだが 6GHz は未テスト |
+| 外付け WiFi が不要な場合 | — | GX10 は Wi-Fi 7 を内蔵しており、一般的なインターネット接続には外付け不要 |
 
-## 5. 環境要求
+## 5. 環境要件
 
-### 5.1 �硬体要求
+### 5.1 ハードウェア要件
 
-| 項目 | 需求 |
+| 項目 | 要件 |
 |---|---|
-| USB 転接器 | USB-C to USB-A 転接アダプターまたは伝送線（AXMLを除く）、USB 3.2 Gen 2×2をサポートする推奨 |
-| 供給電源 | ASUS GX10 原厂 USB-C 電源供給アダプター（180W EPR PD3.1） |
+| USB 変換アダプター | USB-C to USB-A 変換アダプターまたはケーブル（AXML を除く）、USB 3.2 Gen 2×2 対応を推奨 |
+| 電源 | ASUS GX10 純正 USB-C 電源アダプター（180W EPR PD3.1） |
 
-### 5.2 軟体要求
+### 5.2 ソフトウェア要件
 
-| 項目 | 需求 |
+| 項目 | 要件 |
 |---|---|
-| DGX OS 版本 | 任意の現役バージョン（kernel 6.x） |
-| 編訳ツール（Realtek チップセットが必要） | build-essential、git、bc、dkms |
-| 無線管理ツール | iw、network-manager（DGX OS でデフォルトでインストール） |
+| DGX OS バージョン | 現行の任意のバージョン（kernel 6.x） |
+| Kernel バージョン | kernel 6.17（実測 6.17.0-1014-nvidia）には 9 機種すべてのドライバーが内蔵されており、コンパイルツールは不要。最低バージョンは機種ごとに異なり（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）、それより古い場合のみコミュニティの DKMS ドライバーのインストールが必要 |
+| 無線管理ツール | iw、network-manager（DGX OS にデフォルトでインストール済み） |
 
-## 6. 兼容性判定
+## 6. 互換性の判定
 
-### ALFA 現役機型 × ASUS Ascent GX10（GB10）相容性マトリックス
+### ALFA 現行機種 × ASUS Ascent GX10（GB10）互換性マトリックス
 
-| 機型 | クリスタルセット | 驅動方式 | USB 偵測 | STA 上網 | AP モード | モニターモード | 安装難度 | 総合評価 |
-|---|---|---|---|---|---|---|---|---|
-| AWUS036ACM | MT7612U | in-kernel（mt76x2u） | ✅ | ✅ | ✅ | ✅ | 免安装 | ⭐ 最佳 |
-| AWUS036ACHM | MT7610U | in-kernel（mt76x0u） | ✅ | ✅ | ✅ | ⚠️ 有限 | 免安装 | ✅ 良好 |
-| AWUS036AXML | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ 有限 | 免安装 | ✅ 良好 |
-| AWUS036AXM | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ 有限 | 免安装 | ✅ 良好 |
-| AWUS036ACH | RTL8812AU | out-of-tree（8812au） | ✅ | ✅ | ✅ | ✅ | 中（翻訳） | ⚠️ 利用可能 |
-| AWUS036ACS | RTL8811AU | out-of-tree（8812au） | ✅ | ✅ | ⚠️ | ❌ | 中（翻訳） | ⚠️ 利用可能 |
-| AWUS036EACS | RTL8811CU | out-of-tree（8821cu） | ✅ | ⚠️ | ❌ | ❌ | 中（翻訳） | ⚠️ 利用可能 |
-| AWUS036AX | RTL8832BU | rtw89 / out-of-tree | ✅ | ⚠️ | ⚠️ | ❌ | 中-高 | ⚠️ 利用可能 |
-| AWUS036AXER | RTL8832BU | 同上 | ✅ | ⚠️ | ⚠️ | ❌ | 中-高 | ⚠️ 利用可能 |
+| 機種 | チップセット | ドライバー（kernel 内蔵） | USB 検出 | STA 接続 | AP モード | Monitor | パケットインジェクション | 導入難易度 | 総合評価 |
+|---|---|---|---|---|---|---|---|---|---|
+| AWUS036EACS | RTL8821CU | rtw88_8821cu | ✅ | ✅ | ✅ | ✅ | ✅ 両バンド 100% | インストール不要 | ⭐ 最適 |
+| AWUS036ACH | RTL8812AU | rtw88_8812au | ✅ | ✅ | ✅ | ✅ | ✅ 両バンド 100% | インストール不要 | ⭐ 最適 |
+| AWUS036ACS | RTL8811AU | rtw88_8821au | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 100%／5G 96% | インストール不要 | ⭐ 最適 |
+| AWUS036ACM | MT7612U | mt76x2u | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 63–83%／5G 76% | インストール不要 | ✅ 良好 |
+| AWUS036ACHM | MT7610U | mt76x0u | ✅ | ✅ | ✅ | ✅ | ⚠️ 2.4G 96–100%／5G ブロードキャストのみ | インストール不要 | ✅ 良好 |
+| AWUS036AX | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ 受信強 | ✅ 2.4G 96%／5G 可 | インストール不要 | ✅ 良好 |
+| AWUS036AXER | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ 受信強 | ✅ 2.4G 73%／5G 可 | インストール不要 | ✅ 良好 |
+| AWUS036AXML | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ 受信弱 | ❌ 失敗 | インストール不要 | ⚠️ 接続／AP のみ |
+| AWUS036AXM | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ 受信弱 | ❌ 失敗 | インストール不要 | ⚠️ 接続／AP のみ |
 
-判定基準：ASUS GX10 と DGX Spark は共に GB10 ハードウェアプラットフォームと DGX OS（kernel 6.x, aarch64）を共有しており、相容性判定は DGX Spark と完全に一致しています。
+判定根拠：2026年11月16日～18日に ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）で実機テストを実施し、テスト対象は自社所有の Wi-Fi と自社所有のスマートフォンです。本記事の機種がテスト実機です。詳細データは[ALFA 9機種 ARM64 実機テスト総まとめ](/ja/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)をご覧ください。
 
 ## 7. 超詳細 Step by Step 設定手順
 
-ASUS GX10のインストール手順はNVIDIA DGX Sparkと完全に同じです。以下は簡易版で、詳細な手順は[ALFA無線网卡がNVIDIA DGX Sparkをサポートするか](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)の第7節を参照してください。
+ASUS GX10 のセットアップ手順は NVIDIA DGX Spark と完全に同じです。以下は簡易版です。詳細な手順は[ALFA無線LANアダプターはNVIDIA DGX Sparkに対応しているか](/ja/blog/alfa-nvidia-dgx-spark-compatibility/)の第7節を参照してください。
 
-### 7.1 MediaTekチップセット機型（開箱即用）
+### 7.1 MediaTek チップセット機種（AWUS036ACM / ACHM / AXM / AXML）
 
-- USB-C to USB-A変換アダプター（AXMLが直接挿入可能）を使用し、ALFA网卡をGX10のUSB-C端子に挿入してください
-- 偵測確認：`lsusb`
-- インターフェース確認：`ip link show`（自動的にwlan0が表示されるべきです）
-- WiFi接続：`nmcli dev wifi connect "SSID" password "パスワード"`
+- USB-C to USB-A 変換アダプター（AXML は直挿し可能）を使い、ALFA アダプターを GX10 の USB-C データポートに挿します
+- 検出の確認：`lsusb`
+- インターフェースの確認：`ip link show`（wlx で始まるインターフェースが自動的に表示されるはずです）
+- WiFi 接続：`nmcli dev wifi connect "SSID" password "パスワード"`
 
-### 7.2 Realtekチップセット機型（編譯必要）
+### 7.2 Realtek チップセット機種（AWUS036ACH / ACS / EACS / AX / AXER）
 
-AWUS036ACH（RTL8812AU）を例にします：
+kernel 6.17（GX10 の実測バージョン）にはすべての Realtek 機種のドライバーが内蔵されているため、手順は MediaTek 機種と同じで、コンパイルは不要です（最低バージョン：EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）：
 
 ```bash
-# 1. 編譯ツールのインストール
-sudo apt update && sudo apt install -y build-essential git bc dkms
+# 1. kernel バージョンを確認 (6.17 以上なら全 Realtek 機種のドライバーを内蔵. GX10 の実測は 6.17.0-1014-nvidia)
+uname -r
 
-# 2. 驅動のダウンロードと編譯
-git clone https://github.com/morrownr/8812au-20210820.git
-cd 8812au-20210820
-# Makefile内でCONFIG_PLATFORM_ARM64 = yを確認してください
-make
-sudo make install
-sudo modprobe 8812au
-
-# 3. ネットワークカードを挿入後、インターフェースを確認
+# 2. アダプターを挿した後, ドライバーが自動ロードされたことを確認
+lsusb
+lsmod | grep -E "rtw88|rtw89"
 ip link show
 
-# 4. WiFi接続
+# 3. WiFi 接続
 nmcli dev wifi connect "SSID" password "パスワード"
 ```
 
-### 7.3 監視モード（渗透テスト）
+各機種で自動ロードされるモジュール：ACH → `rtw88_8812au`、ACS → `rtw88_8821au`、EACS → `rtw88_8821cu`、AX / AXER → `rtw89_8852bu`。`uname -r` がその機種の最低バージョンより古い（古いシステムの）場合に限り、コミュニティ保守の DKMS ドライバー（例：RTL8812AU 用の morrownr/8812au-20210820）のインストールが必要です。
+
+### 7.3 モニターモード（ペネトレーションテスト）
+
+⚠️ 監視とインジェクションのテストは、自分が所有する、または許可を得たネットワークでのみ行ってください。
 
 ```bash
 sudo apt install -y aircrack-ng
-sudo ip link set wlan0 down
-sudo iw dev wlan0 set type monitor
-sudo ip link set wlan0 up
-sudo aireplay-ng --test wlan0
+IF=wlx00c0cafe0000   # ip link で確認したインターフェース名に置き換える
+sudo ip link set $IF down
+sudo iw dev $IF set type monitor
+sudo ip link set $IF up
+sudo aireplay-ng --test $IF
 ```
 
-## 8. 常見なエラーとその解決策
+- `airmon-ng check kill` は実行しないでください：NetworkManager が停止し、ホストの外部接続が切断されます。
+- AWUS036AXM / AXML は stock kernel 6.17 上で `aireplay-ng --test` が失敗し（Found 0 APs）、deauth や handshake の取得はできません。
+- hcxdumptool 8.x は 2.4 GHz の EACS を除く全機種で `failed to arm`（ドライバーが active monitor 非対応）となるため、airodump-ng + aireplay-ng を使用してください。
 
-| 症狀 | 可能な原因 | 解決方法 |
+## 8. よくあるエラーと対処法
+
+| 症状 | 考えられる原因 | 対処法 |
 |---|---|---|
-| lsusb で ALFA ネットワークカードが見られない | USB-C 転換アダプター不良 / 充電規格のみ | サポートする資料転送用の USB 3.2 Gen 2×2 転換アダプターを交換；異なる USB-C ポートを試す |
-| MediaTek クリスタルチップセットに wlan インターフェースがない | モジュールが自動的にロードされていない / ファームウェアが欠けている | `sudo modprobe mt76x2u`；`sudo apt install linux-firmware`；`dmesg | grep mt76` を確認 |
-| Realtek ドライバのコンパイル失敗 | クロスコンパイル設定の誤り | GX10 上でネイティブコンパイルを確認；Makefile には CROSS_COMPILE が設定されていないべきです |
-| WiFiの速度が遅い | アダプターが USB 2.0 しかサポートしていない | USB 3.2 Gen 2×2 転換アダプターを交換 |
-| 内蔵 Wi-Fi 7 と外付けの衝突 | ルーター衝突 | `sudo nmcli radio wifi off` で内蔵 WiFi を停止し、外付けを使用する |
-| 6GHz が使用できない | 法規制地域の制限 | `sudo iw reg set US`；最新の法規を確認 |
+| lsusb で ALFA アダプターが表示されない | USB-C 変換アダプターの不良 / 充電専用規格 | データ転送対応の USB 3.2 Gen 2×2 変換アダプターに交換。別の USB-C ポートを試す |
+| MediaTek チップで wlan インターフェースが出ない | モジュールが自動ロードされない / ファームウェアの欠落 | `sudo modprobe mt76x2u`；`sudo apt install linux-firmware`；`dmesg \| grep mt76` を確認 |
+| Realtek アダプターを挿しても wlan インターフェースが出ない | kernel がその機種の最低バージョン（EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）より古く、対応ドライバーが内蔵されていない | `uname -r` でバージョンを確認。kernel をアップグレードするか、古い kernel ではコミュニティの DKMS ドライバーをインストール |
+| monitor／AP を繰り返し切り替えた後、何も受信できない | RX 停止（RX stall） | アダプターを抜き差しして USB を再列挙させる |
+| EACS／AXML を挿し直した後に wlx インターフェースが出ない | Bluetooth＋Wi-Fi 複合デバイスの probe が停止 | 別の USB ポートに挿し直す |
+| WiFi の速度が遅い | 変換アダプターが USB 2.0 のみ対応 | USB 3.2 Gen 2×2 変換アダプターに交換 |
+| 内蔵 Wi-Fi 7 と外付けが競合する | ルーティングの競合 | `sudo nmcli radio wifi off` で内蔵 WiFi を無効にしてから外付けを使用 |
+| 6GHz が使えない | Regulatory Domain の制限 | `sudo iw reg set US`；最新の法規を確認 |
 
-## 9. 既知制約
+## 9. 既知の制限
 
-- USB Type-C 変換要件：AXML以外、すべてのALFAネットワークカードはUSB-C to USB-A 変換アダプターが必要です
-- Realtek クリスタルチップの手動翻訳が必要：RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BUはmainlineに未統合
-- 内蔵Wi-Fi 7が外部接続と衝突する可能性があります：GX10は内蔵Wi-Fi 7（MediaTek AW-EM637）を搭載
-- AP モードの手動設定が必要：DGX OSはデフォルトで開発環境として設定されています
-- 6GHz 法規制限：Wi-Fi 6Eの利用可能性は法規区域によって異なります
-- ドライバの更新は上位の依存関係に依存：Realtekのout-of-treeドライバはコミュニティで保守されています、カーネルの更新後は再コンパイルが必要です
-- ASUSのハードウェアの差異は互換性に影響を与えません：冷却と機構設計の差異はUSB WiFiドライバの互換性に影響を与えません
+- USB Type-C 変換が必要：AXML 以外のすべての ALFA アダプターに USB-C to USB-A 変換アダプターが必要です
+- MT7921 機種のインジェクション失敗：AWUS036AXM / AXML は stock kernel 6.17 上でパケットインジェクションに失敗し、deauth や handshake の取得ができません。monitor、AP、WPA3 は使用可能です。主な原因は kernel 6.16 以降の mac80211 chanctx のリグレッションで、コミュニティのパッチ版ドライバーにもまだレート制限があります
+- テスト範囲：ASUS GX10（kernel 6.17.0-1014-nvidia）でのみ実機テストしており、他の GB10 機種は個別にテストしていません
+- hcxdumptool は使用不可：2.4 GHz の EACS を除く全機種で `failed to arm` となるため、airodump-ng + aireplay-ng を使用してください
+- 内蔵 Wi-Fi 7 と外付けが競合する可能性：GX10 は Wi-Fi 7（MediaTek AW-EM637）を内蔵しています
+- AP モードは手動設定が必要：DGX OS はデフォルトで開発環境として構成されています
+- 6GHz の法規制限：Wi-Fi 6E の利用可否は規制地域によって異なります
+- 古い kernel：Realtek 機種でコミュニティの DKMS ドライバーが必要なのは kernel がその機種の最低バージョン（EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）より古いシステムのみで、その場合は kernel 更新のたびに再コンパイルが必要です
+- ASUS のハードウェアの違いは互換性に影響しない：冷却や筐体設計の違いは USB WiFi ドライバーの互換性に影響しません
 
-反論条件：上記の判定はDGX OS（Ubuntuベース、カーネル6.x）を前提としています。ASUSが将来DGX OS以外のバージョン（自社のAndroidやカスタマイズされたOSなど）をリリースする場合、判定は再確認が必要です。
+反証条件：上記の判定は DGX OS（Ubuntu ベース、kernel 6.x）を前提としています。ASUS が将来 DGX OS 以外のファームウェア（独自の Android やカスタマイズ OS など）をリリースした場合は、判定を再検証する必要があります。
 
 ## 10. 参考情報 URL
 
-| 情報源 | 説明 | URL | 検証状態 | 検証日 |
+| 情報源 | 説明 | URL | 確認状態 | 確認日 |
 |---|---|---|---|---|
-| ASUS Ascent GX10 公式 Techspec | GX10 ハードウェア仕様（**150×150×51mm / 1.48kg** / USB 配置 / HDMI 2.1） | https://www.asus.com/ph/networking-iot-servers/desktop-ai-supercomputer/ultra-small-ai-supercomputers/asus-ascent-gx10/techspec/ | ✅ 検証済み | 2026年9月3日 |
-| ASUS Ascent GX10 公式オンラインストア（UK） | GX10 プロダクトページ（150 × 150 × 51mm） | https://uk.store.asus.com/asus-ascent-gx105004-33389.html | ✅ 検証済み | 2026年9月3日 |
-| NVIDIA DGX Spark 公式ページ | GB10 プラットフォーム情報 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 検証済み | 2026年9月3日 |
-| morrownr/8812au GitHub | RTL8812AU Linux ドライバ | https://github.com/morrownr/8812au-20210820 | ✅ 検証済み | 2026年9月3日 |
-| ALFA Soft AP WiFi Hotspot Linux Guide（Yopitek） | ALFA Linux AP モードガイド | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 検証済み | 2026年9月3日 |
-| ALFA Network 產品一覧（Yopitek） | ALFA 現行製品仕様 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 検証済み | 2026年9月3日 |
+| ASUS Ascent GX10 公式 Techspec | GX10 ハードウェア仕様（**150×150×51mm / 1.48kg** / USB 構成 / HDMI 2.1） | https://www.asus.com/ph/networking-iot-servers/desktop-ai-supercomputer/ultra-small-ai-supercomputers/asus-ascent-gx10/techspec/ | ✅ 確認済み | 2026年9月3日 |
+| ASUS Ascent GX10 公式オンラインストア（UK） | GX10 製品ページ（150 × 150 × 51mm） | https://uk.store.asus.com/asus-ascent-gx105004-33389.html | ✅ 確認済み | 2026年9月3日 |
+| NVIDIA DGX Spark 公式ページ | GB10 プラットフォーム情報 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 確認済み | 2026年9月3日 |
+| morrownr/8812au GitHub | RTL8812AU Linux ドライバー | https://github.com/morrownr/8812au-20210820 | ✅ 確認済み | 2026年9月3日 |
+| ALFA Soft AP WiFi Hotspot Linux Guide（Yopitek） | ALFA Linux AP モードガイド | /ja/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 確認済み | 2026年9月3日 |
+| ALFA Network 製品一覧（Yopitek） | ALFA 現行製品仕様 | /ja/products/alfa/ | ✅ 確認済み | 2026年9月3日 |
+| ALFA 9機種 ARM64 実機テスト総まとめ（Yopitek） | ASUS GX10 + Ubuntu 24.04 ARM64 実機テスト | https://yupitek.com/ja/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/ | ✅ 実機テスト | 2026年11月18日 |
 
-関連記事：[ALFA 无線ネットワークカードがNVIDIA DGX Sparkに対応するか](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无線ネットワークカードがALTOS BrainSphere GB10 F1に対応するか](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[ALFA 无線ネットワークカードがGIGABYTE AI TOP ATOMに対応するか](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA 无線ネットワークカードがMSI EdgeXpertに対応するか](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
+関連記事：[ALFA無線LANアダプターはNVIDIA DGX Sparkに対応しているか](/ja/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA無線LANアダプターはALTOS BrainSphere GB10 F1に対応しているか](/ja/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[ALFA無線LANアダプターはGIGABYTE AI TOP ATOMに対応しているか](/ja/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA無線LANアダプターはMSI EdgeXpertに対応しているか](/ja/blog/alfa-msi-edgexpert-compatibility/)
 
-免責事項：本記事の互換性判定は、ASUS Ascent GX10にプリインストールされているNVIDIA DGX OS（kernel 6.x, aarch64）を基準としています。GX10とDGX Sparkは同じハードウェアプラットフォームを共有しており、互換性は完全に一致します。MediaTek クリスタルチップドライバはLinux mainlineであり、安定性が高い；Realtek クリスタルチップドライバはコミュニティの保守が行われています。GX10はWi-Fi 7を内蔵しており、ALFAは主に渗透テストや特殊なチップセットの需要に外接されます。
+免責事項：本記事の互換性判定は、2026年11月に ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）で行った実機テストを基準としています。GX10 で実測した kernel 6.17 には ALFA 9 機種のドライバーがすべて内蔵されており（最低バージョンは機種ごとに異なる）、コミュニティの DKMS ドライバーが必要なのは kernel がその機種の最低バージョンより古い場合のみです。GX10 は Wi-Fi 7 を内蔵しており、外付けの ALFA は主にペネトレーションテストや特定チップセットが必要な用途に使われます。監視とインジェクションは、自分が所有する、または許可を得たネットワークでのみ行ってください。

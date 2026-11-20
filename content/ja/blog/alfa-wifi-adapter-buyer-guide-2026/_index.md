@@ -8,25 +8,25 @@ showTableOfContents: true
 tags: ["alfa-network", "wifi-adapter", "buyer-guide", "kali-linux", "penetration-testing", "monitor-mode"]
 featureimage: "/images/blog/alfa-wifi-adapter-buyer-guide-2026.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ALFAアダプターの選択基準は何ですか？"
     answer: "選択基準にはチップセットドライバーの成熟度、OS互換性、Monitor Modeサポート、送信出力が含まれ、RTL8812AUドライバーが最も成熟して安定しています。"
   - question: "どのALFAアダプターがMonitor Modeをサポートしていますか？"
-    answer: "ACH、ACM、ACS、AX、AXER、AXM、AXMLはすべてモニターモードとパケットインジェクションを完全サポートしますが、EACS（RTL8821CU）はサポートしていません。"
+    answer: "ACH、ACM、ACS、AX、AXER はモニターモードとパケットインジェクションをサポートします。AXM と AXML（MT7921AU）はモニターモード、AP、WPA3 をサポートしますが、パケットインジェクションは stock カーネル 6.17 での実測で失敗しました（カーネル 6.16 以降の mac80211 chanctx のリグレッションが原因で、チップ自体の制限ではありません。インジェクション可能とのコミュニティ報告はカーネル 6.16 より前、または patched ドライバーの場合で、ファームウェアはレートを 1/6 Mbps に固定します）。インジェクションが必要な場合は ACH、ACM、ACS、AX または EACS を使ってください。EACS（RTL8821CU）は kernel 6.2 以降で内蔵の rtw88_8821cu ドライバーにより、monitor mode と両バンドでのインジェクションが GX10（kernel 6.17）で実測可能でした。"
   - question: "WiFi 6E/6アダプターは必要ですか？"
     answer: "監査範囲に6 GHz帯域が含まれる場合は必要です。AXMLはトライバンドAX3000をサポートし、Linuxカーネル5.18以上とfirmware-misc-nonfreeが必要です。"
   - question: "RTL8812AUとMT7612Uドライバーのインストールの違いは？"
     answer: "RTL8812AUはDKMSコンパイルインストールが必要で、カーネル更新後にリビルドが必要です。MT7612Uはカーネル4.19以降メインラインに内蔵され、プラグアンドプレイでコンパイル不要です。"
   - question: "2026年最も推奨されるALFAアダプターはどれですか？"
-    answer: "レッドチーム首选はAWUS036ACH（500mWデュアルアンテナ）、低価格首选はAWUS036ACM、エンタープライズ6E首选はAWUS036AXMLです。"
+    answer: "レッドチーム向けの第一候補はAWUS036ACH（500mWデュアルアンテナ）、低価格帯の第一候補はAWUS036ACM、エンタープライズ6E向けの第一候補はAWUS036AXMLです。"
 ---
 
 このガイドは、2026年に最適な ALFA Network USB WiFi アダプターを選ぶ必要があるネットワークセキュリティエンジニア、エンタープライズIT専門家、レッドチームのオペレーターのために、情報の混乱を整理します。現在量産中の全8モデル — [AWUS036ACS](/ja/products/alfa/awus036acs/)、[AWUS036ACH](/ja/products/alfa/awus036ach/)、[AWUS036ACM](/ja/products/alfa/awus036acm/)、[AWUS036EACS](/ja/products/alfa/awus036eacs/)、[AWUS036AX](/ja/products/alfa/awus036ax/)、[AWUS036AXER](/ja/products/alfa/awus036axer/)、[AWUS036AXM](/ja/products/alfa/awus036axm/)、[AWUS036AXML](/ja/products/alfa/awus036axml/) — を対象に、チップセット、ドライバーの成熟度、OSサポート、実際のユースケースを比較することで、ドライバーのトラブルシューティングに費やす時間を減らし、本来の作業に集中できるようにします。
 
 
 {{< tldr >}}
-AWUS036ACHは2026年のレッドチーム首选：500 mWデュアルアンテナAC1200、RTL8812AUドライバーが最も成熟。低価格ならAWUS036ACM、エンタープライズ6EならAWUS036AXML（AX3000トライバンド）。
+AWUS036ACHは2026年のレッドチーム向け第一候補：500 mWデュアルアンテナAC1200、RTL8812AUドライバーが最も成熟。低価格ならAWUS036ACM、エンタープライズ6EならAWUS036AXML（AX3000トライバンド）。
 {{< /tldr >}}
 ---
 
@@ -46,7 +46,7 @@ AWUS036ACHは2026年のレッドチーム首选：500 mWデュアルアンテナ
 
 ### (b) monitor mode と packet injection は必要ですか？
 
-答えが「はい」なら — そしてペネトレーションテストや無線監査作業であれば必ずそうなります — [AWUS036EACS](/ja/products/alfa/awus036eacs/) は候補リストからすぐに除外してください。その RTL8821CU チップセットは、Linux での monitor mode や injection を確実にサポートしません。このガイドの他の全モデルはサポートしています。
+答えが「はい」なら — そしてペネトレーションテストや無線監査作業であれば必ずそうなります — [AWUS036EACS](/ja/products/alfa/awus036eacs/) も候補に入れられます。その RTL8821CU チップセットは、kernel 6.2 以降に内蔵された rtw88_8821cu ドライバーで、monitor mode（2.4 GHz／5 GHz）、両バンド 100% のインジェクション、エンドツーエンドの WPA handshake 取得が GX10（kernel 6.17）で実測できました。このガイドの他の全モデルもサポートしています。例外：AXM と AXML（MT7921AU）は monitor mode をサポートしますが、packet injection はカーネル 6.16 以降（実測 6.17）で失敗しました。下記の AXML の注記を参照してください。
 
 ### (c) VM それともベアメタルですか？
 
@@ -69,9 +69,9 @@ Wi-Fi 5 世代（ACH、ACM、ACS）は安価で、より安定したドライバ
 | [AWUS036ACS](/ja/products/alfa/awus036acs/) | Wi-Fi 5 | RTL8811AU | AC600 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | 軽量トラベルキット |
 | [AWUS036ACH](/ja/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | レッドチーム運用 |
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | 低価格デュアルバンド |
-| [AWUS036EACS](/ja/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | 一般用途（injection 不可） |
-| [AWUS036AX](/ja/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6 監査 |
-| [AWUS036AXER](/ja/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | 長距離 Wi-Fi 6 |
+| [AWUS036EACS](/ja/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ✅ | rtw88_8821cu（kernel ≥6.2） | ✅ | ✅ | 1× RP-SMA | 一般用途／injection・ペンテスト、Bluetooth 複合 |
+| [AWUS036AX](/ja/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.17) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6 監査 |
+| [AWUS036AXER](/ja/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.17) | ✅ | ❌ | Integrated nano | 長距離 Wi-Fi 6 |
 | [AWUS036AXM](/ja/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6E エントリー |
 | [AWUS036AXML](/ja/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | フラッグシップ 6E |
 
@@ -80,7 +80,7 @@ Wi-Fi 5 世代（ACH、ACM、ACS）は安価で、より安定したドライバ
 **凡例：** ✅ サポート済み · ⚠️ 限定的／部分的 · ❌ 非サポート
 
 {{< alert "circle-info" >}}
-**macOS に関する注記：** 全 ALFA アダプターは macOS Ventura および Sonoma でドライバーの問題に直面します。最も一般的なコミュニティの解決策は、Kali Linux を VM で動作させ USB パススルーを使用することです。AWUS036EACS は例外で、macOS ネイティブの Realtek ドライバーを介して動作する可能性がありますが、monitor mode は利用できません。
+**macOS に関する注記：** 全 ALFA アダプターは macOS Ventura および Sonoma でドライバーの問題に直面します。最も一般的なコミュニティの解決策は、Kali Linux を VM で動作させ USB パススルーを使用することです。AWUS036EACS は例外で、macOS ネイティブの Realtek ドライバーを介して動作する可能性がありますが、macOS ネイティブドライバーでは monitor mode は利用できません（Linux では monitor mode が実測で動作します）。
 {{< /alert >}}
 
 ---
@@ -126,12 +126,12 @@ RTL8811AU ドライバーは Kali 上で同じ `rtl8812au-dkms` パッケージ�
 
 **ACH/ACM とのトレードオフ：** 送信電力が低い（遠距離での距離が短い）、単一アンテナ（MIMO なし）、最大スループットが AC1200 に対して AC600。ほとんどのキャプチャ・インジェクションワークフローではこれらの違いは無関係です。長距離運用では問題になります。
 
-### AWUS036EACS — 一般用途向け、ペンテストには不向き
+### AWUS036EACS — kernel 6.2 以降は monitor・injection 対応（Bluetooth 複合）
 
-[AWUS036EACS](/ja/products/alfa/awus036eacs/) は Realtek RTL8821CU チップセットを搭載し、`rtl88xxcu` カーネルドライバーを使用します。このチップセットはクライアント接続向けに設計されており、パケット操作向けではありません。`rtl88xxcu` での monitor mode サポートは不安定であり、標準ドライバー設定では packet injection はサポートされていません。
+[AWUS036EACS](/ja/products/alfa/awus036eacs/) は Realtek RTL8821CU チップセットを搭載し、kernel 6.2 以降は mainline 内蔵の `rtw88_8821cu` ドライバーを使用します。GX10（Ubuntu 24.04 ARM64、kernel 6.17）での実測では、monitor mode は 2.4 GHz／5 GHz の両方で動作し、packet injection は両バンドで 100%、WPA handshake のエンドツーエンド取得（.22000）にも成功し、Bluetooth と Wi-Fi の同時使用も可能でした。kernel 6.2 より前の古い環境では、morrownr/8821cu などのコミュニティドライバーが必要です。
 
 {{< alert "triangle-exclamation" >}}
-**AWUS036EACS をペネトレーションテスト、レッドチーム運用、または monitor mode や packet injection を必要とするタスクに使用しないでください。** 一般的な無線接続、DJI ドローンコントローラーの距離延長（一般的に組み合わせられる用途）、標準クライアントアダプターの動作が許容される Windows 優先の展開に適しています。
+**kernel 6.2 より前の環境では、内蔵の `rtw88_8821cu` がないため、monitor mode や packet injection にはコミュニティドライバーが必要です。** kernel 6.2 以降（GX10 の kernel 6.17 で実測）では追加インストール不要で、ペネトレーションテストや無線監査にも使えます。一般的な無線接続、DJI ドローンコントローラーの距離延長、Windows 優先の展開にも適しています。
 {{< /alert >}}
 
 macOS 互換性においてリスト入りの理由があります — Realtek や MediaTek チップセットと比較して RTL8821CU の macOS でのドライバー状況は良好です — また、アダプターが純粋にクライアントとして使用されるコンシューマー／エンタープライズ接続展開にも適しています。
@@ -142,7 +142,7 @@ macOS 互換性においてリスト入りの理由があります — Realtek �
 
 Wi-Fi 6（802.11ax）は、高密度環境でのパフォーマンス、ターゲットリッチな MU-MIMO シナリオ、ネットワーク識別のための BSS Coloring に意義ある改善をもたらしました。エンタープライズ展開が 802.11ax インフラへ積極的にシフトするにつれ、Wi-Fi 6 アダプターは無線監査担当者にとってますます重要になっています。
 
-両方の Wi-Fi 6 ALFA アダプター（AX、AXER）は Realtek RTL8832BU チップセットを使用しています。Linux では、カーネル 6.14 未満で RTL8832BU ドライバーはアウトオブカーネル（OOK）となり、monitor mode と packet injection は限定的なサポートとなります。主に Windows クライアント接続向けに設計されています。
+両方の Wi-Fi 6 ALFA アダプター（AX、AXER）は Realtek RTL8832BU チップセットを使用しています。Linux では、カーネル 6.17 以降は内蔵の rtw89_8852bu ドライバーでサポートされます。ASUS GX10（Ubuntu 24.04 / kernel 6.17）での実測では、monitor mode は 2.4 GHz・5 GHz の両方で動作し、packet injection も利用できます（2.4 GHz：AX 96%、AXER 73%、5 GHz も利用可）。カーネル 6.17 未満ではアウトオブカーネル（OOK）のコミュニティ版 DKMS ドライバーが必要で、その場合 monitor mode は制限されることがあります。主に Windows クライアント接続向けに設計されています。
 
 ### AWUS036AX — クリーンな Wi-Fi 6 の選択肢
 
@@ -150,19 +150,20 @@ Wi-Fi 6（802.11ax）は、高密度環境でのパフォーマンス、ター�
 
 **ドライバーの状態：**
 - Windows：完全サポート（ALFA 提供ドライバー）
-- カーネル ≥ 6.14：インカーネルドライバーサポート
-- カーネル < 6.14：アウトオブカーネル（OOK）ドライバーが必要
-- Monitor mode：⚠️ 限定的
+- カーネル ≥ 6.17：インカーネルドライバーサポート
+- カーネル < 6.17：アウトオブカーネル（OOK）ドライバーが必要
+- Monitor mode：✅ カーネル 6.17 以降で動作（古いカーネルのコミュニティ版 DKMS ドライバーでは制限される場合あり）
+- Packet injection：✅ カーネル 6.17 以降で動作（実測 2.4 GHz：AX 96%、AXER 73%）
 
-**monitor mode に関する実用的な注記：** RTL8832BU の monitor mode サポートはカーネル 6.14 未満では限定的です。ペネトレーションテストや packet injection が主な用途であれば、RTL8812AU ベースのアダプター（ACH、ACM）または MT7921AUN ベースの AXM/AXML を検討してください。
+**monitor mode に関する実用的な注記：** カーネル 6.17 以降（内蔵 rtw89_8852bu、Ubuntu 24.04 / kernel 6.17 で実測）では、RTL8832BU の monitor mode と packet injection は動作します。コミュニティ版 DKMS ドライバーを使う古いカーネルでのみ monitor mode が制限されることがあるため、先に `uname -r` で確認してください。（注：AXML はカーネル 6.16 以降ではインジェクションできません。下記の AXML の注記を参照。）
 
 {{< alert "circle-info" >}}
-**カーネルの確認：** 購入前に `uname -r` を実行してカーネルバージョンを確認してください。カーネル ≥ 6.14 では RTL8832BU のインカーネルドライバーが利用可能です。
+**カーネルの確認：** 購入前に `uname -r` を実行してカーネルバージョンを確認してください。カーネル ≥ 6.17 では RTL8832BU のインカーネルドライバーが利用可能です。
 {{< /alert >}}
 
 ### AWUS036AXER — 長距離バリアント
 
-[AWUS036AXER](/ja/products/alfa/awus036axer/) は AWUS036AX と同じ RTL8832BU チップセットを搭載した超コンパクトなナノフォームファクターのアダプターです。ドライバーの状況は同一です — 同じ RTL8832BU、同じ Linux の制限（カーネル < 6.14 では OOK）、同じ Windows 互換性。
+[AWUS036AXER](/ja/products/alfa/awus036axer/) は AWUS036AX と同じ RTL8832BU チップセットを搭載した超コンパクトなナノフォームファクターのアダプターです。ドライバーの状況は同一です — 同じ RTL8832BU、同じ Linux サポート状況（カーネル < 6.17 では OOK）と同じ実測結果、同じ Windows 互換性。
 
 動作距離が決定要因である場合に AX より AXER を選択してください：大規模キャンパスのサイトサーベイ、屋外評価、または AP が遠距離にあるシナリオ。価格プレミアムは控えめで、距離が展開に重要であれば正当化できます。
 
@@ -176,9 +177,9 @@ Wi-Fi 6E は 802.11ax を 6 GHz バンドに拡張し、新しい 5.925–7.125 
 
 ### AWUS036AXM — Wi-Fi 6E エントリーポイント
 
-[AWUS036AXM](/ja/products/alfa/awus036axm/) は 6 GHz バンドサポートが有効になった MT7921AUN チップセットを使用しています。2本の RP-SMA コネクターが付属し、2T2R デュアルアンテナ動作に対応しています。
+[AWUS036AXM](/ja/products/alfa/awus036axm/) は Wi-Fi 6E 対応（仕様上）の MT7921AUN チップセットを使用しています（6 GHz は当サイトでは未実測。AXML の 6 GHz は実測済み）。2本の RP-SMA コネクターが付属し、2T2R デュアルアンテナ動作に対応しています。
 
-主に 2.4 GHz および 5 GHz 環境で作業しながら、フラッグシップ価格を払わずに新興ネットワーク評価のための 6 GHz 対応を必要とするオペレーターにとって、AXM は論理的なエントリーポイントです。
+主に 2.4 GHz および 5 GHz 環境で作業しながら、フラッグシップ価格を払わずに新興ネットワーク評価のための 6 GHz 対応（仕様上）を必要とするオペレーターにとって、AXM は論理的なエントリーポイントです。
 
 **バンドカバレッジ：** 2.4 GHz、5 GHz、6 GHz（トライバンド）
 **アンテナ：** 2× RP-SMA — 対応する ALFA アンテナと交換可能
@@ -200,7 +201,7 @@ Wi-Fi 6E は 802.11ax を 6 GHz バンドに拡張し、新しい 5.925–7.125 
 - Monitor mode での 6 GHz バンドには、規制ドメインが 6 GHz チャネルでのパッシブスキャンを許可している必要があります
 
 {{< alert "triangle-exclamation" >}}
-**AWUS036AXML ファームウェア注記：** カーネル 6.1 未満では、AXML を monitor mode とマネージドモード間で繰り返し切り替える際にファームウェアクラッシュを経験するユーザーがいます。ワークフローで頻繁なモード切り替えが必要な場合は、カーネル ≥ 6.1 で実行し、最新の `firmware-misc-nonfree` パッケージをインストールしてください。
+**AWUS036AXML ファームウェア注記：** カーネル 6.1 未満では、AXML を monitor mode とマネージドモード間で繰り返し切り替える際にファームウェアクラッシュを経験するユーザーがいます。ワークフローで頻繁なモード切り替えが必要な場合は、カーネル ≥ 6.1 で実行し、最新の `firmware-misc-nonfree` パッケージをインストールしてください。**インジェクションに関する注記：** AXM／AXML でパケットインジェクションが可能というコミュニティ報告は、カーネル 6.16 より前の場合です。stock カーネル 6.16 以降（実測 6.17、ASUS GX10、Ubuntu 24.04 ARM64）では、monitor、AP、WPA3、VIF は動作しますが、インジェクションのテストは失敗し（aireplay-ng --test で Found 0 APs / No Answer）、deauth や handshake の取得はできません。原因は mac80211 chanctx のリグレッションであり、チップ自体の制限ではありません。patched ドライバーでインジェクションは動作しますが、ファームウェアがレートを固定します（1/6 Mbps、HT/VHT のインジェクション不可）。インジェクションが必要な場合は ACH、ACM、ACS または AX を使ってください。
 {{< /alert >}}
 
 ---
@@ -214,7 +215,7 @@ Wi-Fi 6E は 802.11ax を 6 GHz バンドに拡張し、新しい 5.925–7.125 
 | [AWUS036ACS](/ja/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | 手動ビルド | ✅ rtl8812au-dkms | ✅ ALFA ドライバー |
 | [AWUS036ACH](/ja/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | 手動ビルド | ✅ rtl8812au-dkms | ✅ ALFA ドライバー |
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | MT7612U | `mt76x2u (in-kernel)` | カーネル ≥ 4.19 | ✅ mt76x2u (≥4.19) | ✅ ALFA ドライバー |
-| [AWUS036EACS](/ja/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` | カーネル内蔵 | ⚠️ 限定的 | ✅ 内蔵 |
+| [AWUS036EACS](/ja/products/alfa/awus036eacs/) | RTL8821CU | `rtw88_8821cu`（kernel ≥6.2、内蔵） | カーネル内蔵（≥6.2） | ✅ 内蔵（kernel ≥6.2。monitor／injection は GX10・kernel 6.17 で実測、Pi では未実測） | ✅ 内蔵 |
 | [AWUS036AX](/ja/products/alfa/awus036ax/) | RTL8832BU | `firmware-misc-nonfree` | カーネル ≥ 5.18 | ⚠️ ファームウェア要 | ✅ ALFA ドライバー |
 | [AWUS036AXER](/ja/products/alfa/awus036axer/) | RTL8832BU | `firmware-misc-nonfree` | カーネル ≥ 5.18 | ⚠️ ファームウェア要 | ✅ ALFA ドライバー |
 | [AWUS036AXM](/ja/products/alfa/awus036axm/) | MT7921AUN | `firmware-misc-nonfree` | カーネル ≥ 5.18 | ⚠️ ファームウェア要 | ✅ ALFA ドライバー |
@@ -279,7 +280,7 @@ sudo modprobe 88XXau
 **クイックセットアップ（MT7921AUN ファミリー）：**
 ```bash
 sudo apt update && sudo apt install -y firmware-misc-nonfree
-# 再起動またはモジュールの再読み込み：
+# 再起動またはモジュールの再読み込み:
 sudo modprobe mt7921u
 ```
 
@@ -314,17 +315,17 @@ Acrylic Wi-Fi、inSSIDer、または Windows 版の Wireshark などのツール
 
 2026年において、macOS Sonoma に対して公式サポートされている ALFA アダプターはありません。RTL8812AU 向けのコミュニティ kext プロジェクトは存在しますが、署名されておらず System Integrity Protection（SIP）を無効にする必要があります。現実的な推奨事項は、ALFA アダプターへの USB パススルーで Kali Linux を VM（Parallels、VMware Fusion、または UTM）で実行することです。
 
-RTL8821CU を搭載した AWUS036EACS は、ネイティブの Realtek kext を通じて最も機能的な macOS サポートを持っていますが、標準クライアント接続のみで monitor mode は対応していません。
+RTL8821CU を搭載した AWUS036EACS は、ネイティブの Realtek kext を通じて最も機能的な macOS サポートを持っていますが、macOS ネイティブドライバーでは標準クライアント接続のみで monitor mode は対応していません（Linux VM／実機の kernel 6.2 以降では monitor mode・injection が実測で動作します）。
 
 ### Raspberry Pi / Kali NetHunter
 
 Kali NetHunter を実行する Raspberry Pi 4 および Pi 5 上で：
 
 ```bash
-# RTL8812AU アダプターの場合：
+# RTL8812AU アダプターの場合:
 sudo apt update && sudo apt install -y dkms-rtl8812au
 
-# MT7921AUN アダプターの場合（最新カーネルの Pi 5 推奨）：
+# MT7921AUN アダプターの場合 (最新カーネルの Pi 5 推奨):
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 

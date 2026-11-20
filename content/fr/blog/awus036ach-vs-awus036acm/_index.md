@@ -35,8 +35,6 @@ L'AWUS036ACH convient aux missions professionnelles avec son pilote RTL8812AU, 3
 | **Mode Mesh** | Limité | Plein support (802.11s) |
 
 
-# ALFA AWUS036ACH vs AWUS036ACM : Comparaison complète pour Kali Linux (2026)
-
 Lors du choix entre les deux appareils phares d'ALFA pour Kali Linux, il est important de comprendre leurs différences clés. Cet article compare l'AWUS036ACH et l'AWUS036ACM en détail.
 
 ---

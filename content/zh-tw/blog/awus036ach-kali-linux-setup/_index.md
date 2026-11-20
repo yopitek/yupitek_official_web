@@ -90,21 +90,21 @@ RTL8812AU 的驅動程式需要手動安裝，以下提供兩種方法，建議�
 這是 aircrack-ng 專案維護的驅動版本，針對滲透測試功能進行了優化，是 Kali Linux 官方推薦的安裝方式。
 
 ```bash
-# 步驟 2-1：更新套件清單並安裝必要工具
+# 步驟 2-1: 更新套件清單並安裝必要工具
 sudo apt update
 sudo apt install -y git dkms build-essential linux-headers-$(uname -r)
 
-# 步驟 2-2：複製 aircrack-ng 官方驅動倉庫
+# 步驟 2-2: 複製 aircrack-ng 官方驅動倉庫
 git clone https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au
 
-# 步驟 2-3：編譯驅動
+# 步驟 2-3: 編譯驅動
 make
 
-# 步驟 2-4：安裝驅動
+# 步驟 2-4: 安裝驅動
 sudo make install
 
-# 步驟 2-5：載入核心模組
+# 步驟 2-5: 載入核心模組
 sudo modprobe 88XXau
 ```
 
@@ -113,18 +113,18 @@ sudo modprobe 88XXau
 DKMS（Dynamic Kernel Module Support）可確保每次核心更新後，驅動程式自動重新編譯，避免升級後需要手動重裝的麻煩。
 
 ```bash
-# 步驟 2-1：安裝必要套件
+# 步驟 2-1: 安裝必要套件
 sudo apt update
 sudo apt install -y git dkms build-essential linux-headers-$(uname -r)
 
-# 步驟 2-2：複製驅動倉庫
+# 步驟 2-2: 複製驅動倉庫
 git clone https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au
 
-# 步驟 2-3：使用 DKMS 安裝
+# 步驟 2-3: 使用 DKMS 安裝
 sudo make dkms_install
 
-# 步驟 2-4：確認 DKMS 模組狀態
+# 步驟 2-4: 確認 DKMS 模組狀態
 dkms status
 ```
 
@@ -155,10 +155,10 @@ iwconfig
 `airmon-ng` 是 aircrack-ng 套件中的標準工具，可自動處理監聽模式切換的相關細節。
 
 ```bash
-# 首先，停止可能干擾的行程
+# 首先, 停止可能干擾的行程
 sudo airmon-ng check kill
 
-# 啟用監聽模式（將 wlan0 替換為你的實際介面名稱）
+# 啟用監聽模式 (將 wlan0 替換為你的實際介面名稱)
 sudo airmon-ng start wlan0
 ```
 
@@ -247,7 +247,7 @@ sudo aireplay-ng --test wlan0mon
 若要針對特定頻道或頻段進行注入測試：
 
 ```bash
-# 指定 5 GHz 頻段（頻道 36）
+# 指定 5 GHz 頻段 (頻道 36)
 sudo aireplay-ng --test -c 36 wlan0mon
 ```
 
@@ -267,7 +267,7 @@ lsusb | grep -i realtek
 # 確認驅動模組已載入
 lsmod | grep 88XXau
 
-# 若模組未載入，手動載入
+# 若模組未載入, 手動載入
 sudo modprobe 88XXau
 
 # 查看核心訊息以獲取更多線索

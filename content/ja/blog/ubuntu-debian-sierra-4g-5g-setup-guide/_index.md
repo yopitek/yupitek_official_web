@@ -95,10 +95,10 @@ systemctl status ModemManager
 デスクトップ版の Ubuntu や Mint を使っている場合は、システム標準のネットワーク管理ツールが最も便利です。
 
 ```bash
-# 接続を作成する（"internet" を通信事業者の APN に置き換えてください）
+# 接続を作成する ("internet" を通信事業者の APN に置き換えてください)
 nmcli connection add type gsm ifname cdc-wdm0 con-name "mobile" apn "internet"
 
-# 接続を開始！
+# 接続を開始!
 nmcli connection up mobile
 ```
 これだけです！`ip addr show` で `wwan0` に IP が割り当てられたか確認できます。

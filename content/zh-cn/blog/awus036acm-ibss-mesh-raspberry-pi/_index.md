@@ -23,8 +23,6 @@ faq:
 ---
 1. [什么是 IBSS 与 802.11s Mesh，为何重要？](#1-what-are-ibss-and-80211s-mesh) 2. [ALFA AWUS036ACM 硬件规格](#2-alfa-awus036acm-hardware-specifications) 3. [MT7612U 驱动程序在 Raspberry Pi 上的表现](#3-the-mt7612u-driver-on-raspberry-pi) 4. [模式一：IBSS Ad Hoc 组网](#4-mode-1-ibss-ad-hoc-networking) 5. [模式二：802.11s Mesh Point 组网](#5-mode-2-80211s-mesh-point-networking) 6. [实际应用场景](#6-real-world-use-cases) 7. [为何 AWUS036ACM 是 ALFA 系列中的唯一选择](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this) 8. [常见问题与故障排查](#8-faq-and-troubleshooting) 9. [购买渠道](#9-where-to-buy)
 
-# ALFA AWUS036ACM：在 Raspberry Pi 上启用 IBSS Ad Hoc 与 802.11s Mesh 网络（MT7612U）
-
 如果你曾尝试在**不借助路由器**的情况下，在多台 Raspberry Pi 节点之间搭建 WiFi 网络——或者构建一个能够自动通过中间跳点转发流量、具备自愈能力的无线 Mesh——你很快就会发现：绝大多数 USB WiFi 无线网卡根本做不到。内核驱动程序压根不开放所需的工作模式。
 
 {{< tldr >}}
@@ -47,7 +45,7 @@ ALFA AWUS036ACM 搭载 MediaTek MT7612U 芯片组，是 ALFA 现行产品中唯�
 
 ---
 
-## 1. 什么是 IBSS 与 802.11s Mesh？
+## 1. 什么是 IBSS 与 802.11s Mesh？ {#1-what-are-ibss-and-80211s-mesh}
 
 ### IBSS——独立基本服务集（Ad Hoc 模式）
 
@@ -78,15 +76,15 @@ ALFA AWUS036ACM 搭载 MediaTek MT7612U 芯片组，是 ALFA 现行产品中唯�
 - 默认使用 **混合无线 Mesh 协议（HWMP）** 进行路径选择
 
 ```
-示例：4 节点 Mesh
+示例: 4 节点 Mesh
 
   [Pi A] ──── [Pi B] ──── [Pi C]
                 │
               [Pi D]
 
-Pi A 可通过 Pi B 自动到达 Pi C。
-Pi A 可通过 Pi B 自动到达 Pi D。
-若 Pi B 发生故障，Mesh 会自动尝试寻找备用路由。
+Pi A 可通过 Pi B 自动到达 Pi C.
+Pi A 可通过 Pi B 自动到达 Pi D.
+若 Pi B 发生故障, Mesh 会自动尝试寻找备用路由.
 ```
 
 当节点数量超过 3～4 个、节点分布范围较广，或者你希望网络具备弹性而无需手动管理时，802.11s 就是正确的选择。
@@ -101,7 +99,7 @@ MT7612U 是少数对上述两种模式均能给出明确"支持"答案的芯片�
 
 ---
 
-## 2. ALFA AWUS036ACM 硬件规格
+## 2. ALFA AWUS036ACM 硬件规格 {#2-alfa-awus036acm-hardware-specifications}
 
 AWUS036ACM 是 ALFA Network 面向 Linux 高级用户和嵌入式开发者推出的 AC1200 双频 USB 3.0 无线网卡。
 
@@ -180,7 +178,7 @@ WPA2 / WPA / WEP / WPA-PSK / 802.1X / 64～128 位 WEP
 
 ---
 
-## 3. MT7612U 驱动程序在 Raspberry Pi 上的表现
+## 3. MT7612U 驱动程序在 Raspberry Pi 上的表现 {#3-the-mt7612u-driver-on-raspberry-pi}
 
 ### 驱动程序：mt76x2u（mt76 家族成员）
 
@@ -256,7 +254,7 @@ Supported interface modes:
 AWUS036ACM 的驱动程序栈结构如下：
 
 ```
-你的应用程序（ping、iperf3、batman-adv……）
+你的应用程序 (ping, iperf3, batman-adv……)
         ↓
 nl80211 / cfg80211  ← 内核 WiFi 配置 API
         ↓
@@ -264,7 +262,7 @@ mac80211            ← IEEE 802.11 软件 MAC 层
         ↓
 mt76x2u             ← MT7612U USB 硬件驱动程序
         ↓
-MediaTek MT7612U    ← 物理芯片（2×2 MIMO，USB 3.0）
+MediaTek MT7612U    ← 物理芯片 (2×2 MIMO, USB 3.0)
 ```
 
 **mac80211** 是 Linux 内核对完整 802.11 状态机的实现——它负责处理信标管理、帧构造、节能、IBSS 对等发现以及 Mesh 路径路由。构建在 mac80211 之上的驱动程序会自动继承所有这些能力。
@@ -273,7 +271,7 @@ MediaTek MT7612U    ← 物理芯片（2×2 MIMO，USB 3.0）
 
 ---
 
-## 4. 模式一：IBSS Ad Hoc 组网
+## 4. 模式一：IBSS Ad Hoc 组网 {#4-mode-1-ibss-ad-hoc-networking}
 
 ### IBSS 的工作原理
 
@@ -408,10 +406,10 @@ PING 192.168.88.2 (192.168.88.2) 56(84) bytes of data.
 
 使用 iperf3 测试吞吐量：
 ```bash
-# 在节点 2（服务端）上：
+# 在节点 2 (服务端) 上:
 iperf3 -s
 
-# 在节点 1（客户端）上：
+# 在节点 1 (客户端) 上:
 iperf3 -c 192.168.88.2 -t 10
 ```
 
@@ -462,7 +460,7 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 ---
 
-## 5. 模式二：802.11s Mesh Point 组网
+## 5. 模式二：802.11s Mesh Point 组网 {#5-mode-2-80211s-mesh-point-networking}
 
 ### 802.11s 的工作原理
 
@@ -531,13 +529,13 @@ sudo ip link set mesh0 up
 **第五步——为每个节点分配唯一 IP 地址：**
 
 ```bash
-# 节点 1：
+# 节点 1:
 sudo ip addr add 10.88.0.1/24 dev mesh0
 
-# 节点 2：
+# 节点 2:
 sudo ip addr add 10.88.0.2/24 dev mesh0
 
-# 节点 3：
+# 节点 3:
 sudo ip addr add 10.88.0.3/24 dev mesh0
 ```
 
@@ -583,7 +581,7 @@ xx:xx:xx:xx:xx:03 xx:xx:xx:xx:xx:02 mesh0   18      2316    0       0       100 
 **跨 Mesh ping 测试：**
 
 ```bash
-# 从节点 1：
+# 从节点 1:
 ping -c 4 10.88.0.3
 ```
 
@@ -606,14 +604,14 @@ sudo modprobe batman-adv
 **将 Mesh 接口配置为 batman-adv 从接口：**
 
 ```bash
-# 先不分配 IP，直接启用 mesh0
+# 先不分配 IP, 直接启用 mesh0
 sudo ip link set mesh0 up
 sudo batctl if add mesh0
 
 # 启用 batman 接口
 sudo ip link set bat0 up
 
-# 将 IP 分配给 batman 接口（而非 mesh0）
+# 将 IP 分配给 batman 接口 (而非 mesh0)
 sudo ip addr add 10.88.0.1/24 dev bat0
 ```
 
@@ -621,11 +619,11 @@ sudo ip addr add 10.88.0.1/24 dev bat0
 
 ```bash
 sudo batctl n    # 邻居节点
-sudo batctl o    # 源节点表（所有已知节点）
-sudo batctl tg   # 转换表（MAC → IP 映射）
+sudo batctl o    # 源节点表 (所有已知节点)
+sudo batctl tg   # 转换表 (MAC → IP 映射)
 ```
 
-### 让 802.11s Mesh 在重启后自动恢复
+### 让 802.11s Mesh 在重启后自动恢复 {#making-80211s-mesh-persistent}
 
 创建 `/etc/systemd/system/mesh-point.service`：
 
@@ -660,7 +658,7 @@ sudo systemctl start mesh-point.service
 
 ---
 
-## 6. 实际应用场景
+## 6. 实际应用场景 {#6-real-world-use-cases}
 
 ### 场景一——离网传感器网络（智慧农业 / 环境监测）
 
@@ -672,8 +670,8 @@ sudo systemctl start mesh-point.service
 
 **示例数据管道：**
 ```
-[传感器 Pi A] ──IBSS──> [边缘 Pi B（日志节点）]
-[传感器 Pi C] ──IBSS──> [边缘 Pi B（日志节点）]
+[传感器 Pi A] ──IBSS──> [边缘 Pi B (日志节点)]
+[传感器 Pi C] ──IBSS──> [边缘 Pi B (日志节点)]
 ```
 
 ---
@@ -723,13 +721,13 @@ sudo systemctl start mesh-point.service
 # 在 IBSS 旁创建监听接口
 sudo iw phy phy1 interface add mon0 type monitor
 sudo ip link set mon0 up
-# 开始抓包：
+# 开始抓包:
 sudo tcpdump -i mon0 -w capture.pcap
 ```
 
 ---
 
-## 7. 为何 AWUS036ACM 是 ALFA 系列中的唯一选择
+## 7. 为何 AWUS036ACM 是 ALFA 系列中的唯一选择 {#7-why-the-awus036acm-is-the-only-alfa-choice-for-this}
 
 ### 决定性因素：mac80211 合规性
 
@@ -740,7 +738,7 @@ USB WiFi 无线网卡能否在 Linux 上支持 IBSS 和 802.11s Mesh，完全取
 | 型号 | 芯片 | 驱动程序 | IBSS | 802.11s Mesh | 备注 |
 |---|---|---|---|---|---|
 | **AWUS036ACM** | MT7612U | mt76x2u（内核 ≥ 4.19） | ✅ | ✅ | **唯一选择** |
-| AWUS036ACH | RTL8812AU | rtw88（内核 ≥ 6.14） | ✅（仅限内核 ≥ 6.14） | ❌ | 新内核驱动程序；不支持 Mesh Point |
+| AWUS036ACH | RTL8812AU | rtw88（内核 ≥ 6.13） | ✅（仅限内核 ≥ 6.13） | ❌ | 新内核驱动程序；不支持 Mesh Point |
 | AWUS036ACS | RTL8811AU | rtl8812au-dkms（OOK） | ❌ | ❌ | 内核外驱动程序；不支持 IBSS/Mesh |
 | AWUS036AX | RTL8832BU | rtw88（内核原生） | ❌ | ❌ | 不支持 Raspberry Pi |
 | AWUS036AXER | RTL8832BU | rtw88（内核原生） | ❌ | ❌ | 不支持 Raspberry Pi |
@@ -763,7 +761,7 @@ AWUS036ACHM（MT7610U）是此前支持上述模式的 ALFA 无线网卡，现�
 
 ---
 
-## 8. 常见问题与故障排查
+## 8. 常见问题与故障排查 {#8-faq-and-troubleshooting}
 
 **问：我的 Pi 只显示 `wlan0`，`wlan1` 在哪里？**
 
@@ -815,7 +813,7 @@ Linux 内核不支持在 IBSS 模式下使用标准 WPA2-Personal（PSK）。如
 可以——这正是 VIF（虚拟接口）的用途。你可以让 `wlan1` 保持 Managed 模式连接家用路由器上网，同时添加第二个虚拟接口用于 Pi 间的 IBSS 或 Mesh 网络：
 
 ```bash
-# wlan1 保持 Managed 模式（连接互联网）
+# wlan1 保持 Managed 模式 (连接互联网)
 # 添加第二个接口用于 IBSS
 sudo iw phy phy1 interface add adhoc0 type ibss
 sudo ip link set adhoc0 up
@@ -837,7 +835,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ---
 
-## 9. 购买渠道
+## 9. 购买渠道 {#9-where-to-buy}
 
 ALFA AWUS036ACM 可在 [yupitek.com](https://yupitek.com) 购买——ALFA Network 官方授权经销商。通过授权渠道购买，可确保您获得正品硬件并享有 Alfa Network Inc. 标准保修服务。
 

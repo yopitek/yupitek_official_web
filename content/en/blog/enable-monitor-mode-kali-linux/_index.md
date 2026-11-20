@@ -3,7 +3,7 @@ title: "How to Enable Monitor Mode on Kali Linux 2026: Complete WiFi Adapter Gui
 description: "Step-by-step guide to enabling monitor mode on Kali Linux 2024/2025 using airmon-ng or iw command. Covers compatible ALFA adapters, troubleshooting, and verification with airodump-ng."
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "How is monitor mode different from managed mode?"
     answer: "Monitor mode lets the adapter capture all 802.11 frames in the air, unrestricted by managed mode which only receives packets matching its own MAC. It is the foundation of wireless penetration testing."
@@ -12,7 +12,7 @@ faq:
   - question: "What should I do if the interface auto-switches back to managed mode?"
     answer: "wpa_supplicant or NetworkManager restarted in the background. Run airmon-ng check kill to terminate these processes."
   - question: "Which ALFA adapters fully support monitor mode on Kali Linux?"
-    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN), and AWUS036ACM (MT7612U) all fully support it. ACM is plug-and-play."
+    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN), and AWUS036ACM (MT7612U) all fully support it. ACM is plug-and-play. Note: AWUS036AXML packet injection fails on stock kernel 6.17 (mac80211 chanctx regression; community reports exist for kernels before 6.16). For injection use the ACH / ACM / AX instead."
   - question: "How do I fix the airodump-ng Fixed channel wlan0mon: -1 error?"
     answer: "It means airodump-ng cannot switch channels. Run iwconfig wlan0mon channel 1 to set the channel, and kill any residual wpa_supplicant processes."
 draft: false
@@ -210,7 +210,7 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan0mon
 | Model | Chipset | Band | Monitor Mode | Injection | Notes |
 |---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ | ✅ | Most popular for pentesting |
-| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E, kernel 5.18+ required |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ⚠️ Reported on kernels before 6.16; fails on 6.17 | Wi-Fi 6E, kernel 5.18+ required |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ | ✅ | Excellent Linux driver support |
 
 All models listed above have verified driver support in Kali Linux 2024.x and 2025.x. For chipsets like RTL8812AU, you may need to install the driver from the Aircrack-ng GitHub repository if your kernel version is very recent.

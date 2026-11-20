@@ -4,6 +4,7 @@ description: "ALFA Network USB 无线网卡在 Apple Mac（MacBook、MacBook Pro
 keywords: "ALFA 无线网卡 Mac, ALFA macOS 兼容性, ALFA 网卡 Apple Silicon, USB WiFi 适配器 M1 M2 M3 M4, ALFA Network MacBook, Mac 监听模式, AWUS036ACH Mac, AWUS036ACM Mac, ALFA Network Mac Mini, Apple Silicon 渗透测试"
 author: "Yopitek 技术支持团队"
 date: "2026-06-20"
+lastmod: 2026-11-20
 category: "技术指南"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
@@ -35,9 +36,9 @@ tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", 
 | **AWUS036AXM** | MediaTek MT7921AUN | ❌ | ❌ | ✅ | ✅ |
 | **AWUS036ACHM** | MediaTek MT7610U | ❌ | ❌ | ✅ | ✅ |
 | **AWUS036ACS** | Realtek RTL8811AU | ❌ | ⚠️ 仅客户端（≤10.14） | ✅ | ✅ |
-| **AWUS036AX** | Realtek RTL8832BU | ❌ | ❌ | ⚠️ 有限 | ⚠️ 有限 |
-| **AWUS036AXER** | Realtek RTL8832BU | ❌ | ❌ | ⚠️ 有限 | ⚠️ 有限 |
-| **AWUS036EACS** | Realtek RTL8821CU | ❌ | ⚠️ 仅客户端 | ❌ 无监听模式 | ⚠️ 不推荐 |
+| **AWUS036AX** | Realtek RTL8832BU | ❌ | ❌ | ✅ 内核 ≥6.17 | ⚠️ 需内核 ≥6.17（Pi 上未测试） |
+| **AWUS036AXER** | Realtek RTL8832BU | ❌ | ❌ | ✅ 内核 ≥6.17 | ⚠️ 需内核 ≥6.17（Pi 上未测试） |
+| **AWUS036EACS** | Realtek RTL8821CU | ❌ | ⚠️ 仅客户端 | ✅ 监听/注入（需 Linux 内核 ≥ 6.2） | ⚠️ 需内核 ≥ 6.2，未于 Pi 实测 |
 
 **图例：** ✅ = 已验证可用 | ⚠️ = 有限制 / 需要特定条件 | ❌ = 不支持
 
@@ -66,7 +67,7 @@ Apple 从未发布原生 Wi-Fi 驱动的内核编程接口（KPI）。类层次�
 IOService
   └─ IONetworkController
        └─ IOEthernetController        公共 KPI
-            └─ IO80211Controller      私有（仅限 Apple 内部使用）
+            └─ IO80211Controller      私有 (仅限 Apple 内部使用)
 ```
 
 第三方厂商历史上直接继承 `IOEthernetController`，这就是为什么 macOS 上的 USB Wi-Fi 适配器显示为"以太网"接口，而不是与菜单栏 Wi-Fi 图标、AirDrop、Sidecar 或"查找"集成。
@@ -206,7 +207,7 @@ Rokland（ALFA 的美国经销商）[强烈警告](https://store.rokland.com/blo
 
 **对于 AWUS036ACH（RTL8812AU）：**
 
-如果你的 Kali 内核版本 **≥6.14**，`rtw88` 主线驱动已包含在内，无需安装。对于较旧的内核：
+如果你的 Kali 内核版本 **≥6.13**，`rtw88` 主线驱动已包含在内，无需安装。对于较旧的内核：
 
 ```bash
 sudo apt update
@@ -234,7 +235,7 @@ iw dev
 
 ```bash
 sudo apt install -y firmware-misc-nonfree
-# 验证固件是否存在：
+# 验证固件是否存在:
 ls /lib/firmware/mediatek/
 # WIFI_MT7922_patch_mcu_1_1_hdr.bin
 # WIFI_RAM_CODE_MT7922_1.bin
@@ -273,7 +274,7 @@ sudo aireplay-ng --test wlan0mon
 | 重度扫描期间网卡断开 | USB 3.0 模式切换 bug（morrownr/USB-WiFi #676） | 在网卡和 Mac 之间使用 USB 2.0 集线器 |
 | `airmon-ng` 看不到网卡 | 虚拟机设置中 USB 控制器不正确 | 将虚拟机 USB 设置为 USB 3.0（xHCI），而非 USB 2.0 |
 | 驱动在虚拟机中无法编译 | 缺少内核头文件 | `sudo apt install linux-headers-$(uname -r)` |
-| 网卡已识别但无监听模式 | RTL8832BU 芯片组（AWUS036AX/AXER） | 此芯片组监听模式支持有限，改用 AWUS036ACH |
+| 网卡已识别但无监听模式 | RTL8832BU 芯片组（AWUS036AX/AXER） | 客体内核低于 6.17 且使用社区版 DKMS 驱动时，监听模式可能受限；请改用内核 ≥6.17（内置 rtw89_8852bu）或 AWUS036ACH |
 
 ### 5.4 替代方案：Raspberry Pi 作为远程渗透测试节点
 
@@ -286,10 +287,10 @@ sudo aireplay-ng --test wlan0mon
 - 便携且不影响主工作机
 
 ```bash
-# 从 Mac SSH 到 Pi：
+# 从 Mac SSH 到 Pi:
 ssh kali@192.168.1.100
 
-# 在 Pi 上运行无线审计：
+# 在 Pi 上运行无线审计:
 sudo airmon-ng start wlan1
 sudo airodump-ng wlan1mon
 sudo aireplay-ng --test wlan1mon
@@ -362,8 +363,7 @@ Mac Mini M4/M4 Pro 是 **首款没有 USB-A 端口的 Mac Mini。** 更重要的
 
 | 网卡 | 避免原因 |
 |------|-----------|
-| AWUS036AX / AWUS036AXER（RTL8832BU） | Linux 中监听模式支持有限且不稳定，无 macOS 驱动 |
-| AWUS036EACS（RTL8821CU） | 完全 **不支持** 监听模式，不适合安全审计 |
+| AWUS036AX / AWUS036AXER（RTL8832BU） | 无 macOS 驱动；在 Linux 虚拟机中，内核 ≥6.17（内置 rtw89_8852bu）监听模式可用，旧内核的社区版 DKMS 驱动可能受限 |
 | AWUS036ACHM（MT7610U） | 无 macOS 驱动（chris1111 不支持 MediaTek），需要 Linux 编译 |
 
 ---
@@ -424,11 +424,11 @@ Apple Silicon Mac（M1/M2/M3/M4）使用无法加载 x86_64 内核扩展的 ARM6
 |---------|-------------|-------------------|-------------|
 | RTL8812AU | AWUS036ACH, AWUS036ACS | [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | DKMS（推荐） |
 | RTL8812AU | AWUS036ACH | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) | 社区（已弃用） |
-| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | 主线（内核≥6.14） |
+| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | 主线（内核≥6.13） |
 | MT7612U | AWUS036ACM | Linux 即内核（`mt76`） | 即内核（≥4.19） |
 | MT7921AUN | AWUS036AXML, AWUS036AXM | Linux 即内核（`mt7921u`） | 即内核（≥5.18） |
 | MT7610U | AWUS036ACHM | [imzyxwvu/mt7610u](https://github.com/imzyxwvu/mt7610u) | 内核外 |
-| RTL8832BU | AWUS036AX, AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | 有限支持 |
+| RTL8832BU | AWUS036AX, AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | 内核 ≥6.17 内置 rtw89_8852bu；旧内核用社区 DKMS（监听可能受限） |
 
 ### macOS 驱动（仅限 Intel Mac）
 

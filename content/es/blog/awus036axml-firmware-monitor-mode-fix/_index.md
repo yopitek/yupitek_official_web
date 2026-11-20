@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Por qué el AWUS036AXML se cuelga en modo monitor activo?"
     answer: "El MT7921AUN usa una arquitectura MAC basada en firmware. La combinación actual del controlador mt7921u y el firmware de Linux no implementa completamente las rutas de comando necesarias para la inyección activa; la interfaz desaparece tras ejecutar aireplay-ng."
@@ -45,6 +45,8 @@ Las operaciones pasivas (escaneo con `airodump-ng`, captura de frames en bruto) 
 ### Causa Raíz
 
 El **chipset MT7921AUN** utiliza una arquitectura MAC basada en firmware. El driver `mt7921u` del kernel de Linux depende del firmware embebido del chipset para manejar ciertas operaciones de nivel inferior, incluyendo la inyección de frames en modo monitor. La combinación actual de firmware y driver no implementa completamente la ruta de comandos necesaria para la inyección activa en modo monitor en Linux.
+
+**Nota:** en nuestras pruebas con el kernel stock 6.17 (ASUS GX10), la causa principal del fallo de inyección es una regresión de mac80211 chanctx desde el kernel 6.16, no una limitación del chip. Los controladores parcheados de la comunidad permiten que la inyección funcione, pero el firmware sigue bloqueando la tasa (1/6 Mbps) y no se pueden inyectar tramas HT/VHT.
 
 En contraste, el **monitoreo pasivo** (capturar frames que ya están en el aire) no requiere que el firmware transmita nada y funciona sin provocar el crash. El problema está limitado a operaciones de la ruta de transmisión: frames de deautenticación, solicitudes de sondeo, floods de asociación y operaciones activas similares.
 

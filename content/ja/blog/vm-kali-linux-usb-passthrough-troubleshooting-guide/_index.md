@@ -3,7 +3,7 @@ title: "仮想マシンの Kali Linux が外付け USB アダプターを認識�
 description: "VirtualBox Extension Pack、USB 3.0 (xHCI) コントローラー、vboxusers グループ、VMware の USB アービトレーション、lsusb→iwconfig→dmesg の診断手順、FAQ をまとめた標準的な USB パススルー排障マニュアルです。"
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -17,7 +17,7 @@ faq:
   - question: "USB フィルターを設定したら、ホスト側でアダプターが使えなくなりました。正常ですか？"
     answer: "正常です。Guest にパススルーすると、デバイスの制御権は Guest 側に移り、ホスト側では同時に使用できません。ホストで他の作業に使いたい場合は、VM ウィンドウの USB アイコンから「リリース（release）」してホストに戻してください。"
   - question: "Guest 内の lsusb では認識されるのに wlan インターフェースがありません。どのドライバーを入れればよいですか？"
-    answer: "チップセットによります：AWUS036AXML（MediaTek MT7921AU）はカーネル内蔵の mt7921u ドライバーを使用し、Kernel 5.18+ ならプラグアンドプレイで動作します。まず apt install linux-firmware が更新されているか確認してください。AWUS036ACH（Realtek RTL8812AU）はカーネル外（out-of-tree）ドライバーのため、コミュニティ保守の aircrack-ng/rtl8812au をインストールし、DKMS でコンパイルする必要があります（Secure Boot の MOK 署名にも対応してください。Secure Boot は無効にしないでください）。"
+    answer: "チップセットによります：AWUS036AXML（MediaTek MT7921AUN）はカーネル内蔵の mt7921u ドライバーを使用し、Kernel 5.18+ ならプラグアンドプレイで動作します。まず apt install linux-firmware が更新されているか確認してください。AWUS036ACH（Realtek RTL8812AU）はカーネル外（out-of-tree）ドライバーのため、コミュニティ保守の aircrack-ng/rtl8812au をインストールし、DKMS でコンパイルする必要があります（Secure Boot の MOK 署名にも対応してください。Secure Boot は無効にしないでください）。"
   - question: "USB 3.0 コントローラーを選んだら、Guest が起動できなくなりました。なぜですか？"
     answer: "一部の古い Guest カーネルは xHCI のサポートが不十分です。Kali が古いバージョンの場合は、「シャットダウン → USB 2.0 (EHCI) Controller に戻す → 起動 → カーネルをアップグレード → USB 3.0 に戻す」の順でお試しください。Kali はできるだけ最新版を維持してください。xHCI のサポートがより完全になります。"
   - question: "アダプターは実機では速いのに、仮想マシン内では遅くなります。正常ですか？"
@@ -25,7 +25,7 @@ faq:
 ---
 
 > **対応プラットフォーム**：Windows / Linux / macOS ホスト + Oracle VirtualBox / VMware Workstation 仮想マシン（Guest = Kali Linux / Debian / Ubuntu）
-> **対象ハードウェア**：ALFA AWUS036ACH（Realtek RTL8812AU）/ ALFA AWUS036AXML（MediaTek MT7921AU）
+> **対象ハードウェア**：ALFA AWUS036ACH（Realtek RTL8812AU）/ ALFA AWUS036AXML（MediaTek MT7921AUN）
 > **本記事の位置づけ**：「USB パススルー（USB Pass-through）」の排障診断を標準化したマニュアルです。macOS ホストの USB パススルー制限については第 5 章をご覧ください。
 
 ---
@@ -57,14 +57,14 @@ USB は**シングルホスト（single host）**アーキテクチャで動作�
 VirtualBox を例にすると、パススルーの流れは次のとおりです：
 
 ```
-物理 USB アダプター（AWUS036ACH / AWUS036AXML）
+物理 USB アダプター (AWUS036ACH / AWUS036AXML)
        │  ホストの物理 USB ポートに挿す
        ▼
-ホスト OS（Host OS）の USB ホストコントローラー
-       │  Hypervisor（VirtualBox）がインターセプトしてリダイレクト
+ホスト OS (Host OS) の USB ホストコントローラー
+       │  Hypervisor (VirtualBox) がインターセプトしてリダイレクト
        ▼
-仮想 USB ホストコントローラー（エミュレートされた EHCI / xHCI）
-       │  Guest（Kali）には「自分に挿さっている」ように見える
+仮想 USB ホストコントローラー (エミュレートされた EHCI / xHCI)
+       │  Guest (Kali) には"自分に挿さっている"ように見える
        ▼
 Kali の USB ドライバー → ワイヤレスドライバー → wlan インターフェース
 ```
@@ -104,8 +104,8 @@ Oracle 公式ダウンロードページ（https://www.virtualbox.org/wiki/Downl
 `Oracle_VM_VirtualBox_Extension_Pack-<バージョン>.vbox-extpack` をダウンロードし、次の手順を実行します：
 
 ```bash
-# 方法 1：GUI インストール（VirtualBox 本体 → ファイル → ツール → Extension Pack Manager → インストール）
-# 方法 2：コマンドラインでインストール
+# 方法 1: GUI インストール (VirtualBox 本体 → ファイル → ツール → Extension Pack Manager → インストール)
+# 方法 2: コマンドラインでインストール
 sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-*.vbox-extpack
 
 # インストール済みか確認
@@ -119,10 +119,10 @@ VBoxManage list extpacks
 Linux ホストでは、VirtualBox が USB デバイスにアクセスするために、**ユーザーが `vboxusers` グループに属している必要があります**。拡張パックをインストールしても失敗する多くのケースは、この権限が原因です。
 
 ```bash
-# グループに追加（<user> は自分のユーザー名に置き換えてください）
+# グループに追加 (<user> は自分のユーザー名に置き換えてください)
 sudo usermod -aG vboxusers $USER
 
-# ログアウトして再ログイン（または再起動）してグループを有効化；確認する
+# ログアウトして再ログイン (または再起動) してグループを有効化; 確認する
 id $USER
 ```
 
@@ -149,7 +149,7 @@ Kali 仮想マシンを起動したら、ウィンドウ**右下の USB アイ�
 1. **ホスト側サービス**：Linux ホストでは `vmware-usbarbitrator`（USB アービトレーションサービス）が動作しているか確認してください：
    ```bash
    sudo systemctl status vmware-usbarbitrator
-   # 動作していない場合は起動し、起動時に自動実行するよう設定
+   # 動作していない場合は起動し, 起動時に自動実行するよう設定
    sudo systemctl enable --now vmware-usbarbitrator
    ```
 2. **仮想マシン設定**：仮想マシン設定 → USB Controller → **USB 3.1（または USB 3.0）** にチェックを入れます。
@@ -174,9 +174,9 @@ lsusb
 期待される出力（モデルによる）：
 
 ```
-# AWUS036ACH（Realtek RTL8812AU）
+# AWUS036ACH (Realtek RTL8812AU)
 Bus ... ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac 2T2R DB WLAN Adapter
-# または AWUS036AXML（MediaTek MT7921AU）
+# または AWUS036AXML (MediaTek MT7921AUN)
 Bus ... ID 0e8d:7961 MediaTek Inc. Wireless_Device
 ```
 
@@ -198,7 +198,7 @@ lsusb
 
 ```bash
 iwconfig
-# または（新しいバージョン）
+# または (新しいバージョン)
 iw dev
 ip link
 ```
@@ -346,7 +346,7 @@ macOS ホストから仮想マシンを実行して USB パススルーを行う
 
 **Q4：Guest 内の `lsusb` では認識されるのに wlan インターフェースがありません。どのドライバーを入れればよいですか？**
 チップセットによります：
-- **AWUS036AXML（MediaTek MT7921AU）**：カーネル内蔵の `mt7921u` ドライバーを使用し、Kernel 5.18+ ならプラグアンドプレイで動作します。まず `apt install linux-firmware` が更新されているか確認してください。
+- **AWUS036AXML（MediaTek MT7921AUN）**：カーネル内蔵の `mt7921u` ドライバーを使用し、Kernel 5.18+ ならプラグアンドプレイで動作します。まず `apt install linux-firmware` が更新されているか確認してください。
 - **AWUS036ACH（Realtek RTL8812AU）**：カーネル外（out-of-tree）ドライバーのため、コミュニティ保守の `aircrack-ng/rtl8812au` をインストールし、DKMS でコンパイルする必要があります（Secure Boot の MOK 署名にも対応してください。Secure Boot は無効にしないでください）。
 
 **Q5：USB 3.0 コントローラーを選んだら、Guest が起動できなくなりました。なぜですか？**
@@ -366,7 +366,7 @@ macOS ホストから仮想マシンを実行して USB パススルーを行う
 3. **USB コントローラーを USB 3.0 (xHCI) に設定**し、USB フィルターでアダプターを自動マウントさせます。
 4. **Guest 内で `lsusb → iwconfig / ip link → dmesg` の順に層を特定**し、ドライバーが不足していれば補います。アダプターの故障を推測するのはやめましょう。
 
-**推奨ハードウェア**：ALFA AWUS036AXML（MediaTek MT7921AU）は、新しいカーネルの Kali では**カーネル内蔵ドライバーでプラグアンドプレイ**動作し、仮想マシンでのパススルー後に最も手間がかかりません。ALFA AWUS036ACH（Realtek RTL8812AU）も同様に使えますが、Guest 内で DKMS によりコミュニティドライバーをコンパイルし、Secure Boot の署名を処理することを忘れないでください（当サイトの RTL8812AU DKMS 排障記事を参照できます）。どちらも、ホスト側で独立給電の USB ポート／Hub を使用し、「デバイスが落ちる」という変数を一度に排除することをお勧めします。
+**推奨ハードウェア**：ALFA AWUS036AXML（MediaTek MT7921AUN）は、新しいカーネルの Kali では**カーネル内蔵ドライバーでプラグアンドプレイ**動作し、仮想マシンでのパススルー後に最も手間がかかりません。ALFA AWUS036ACH（Realtek RTL8812AU）も同様に使えますが、Guest 内で DKMS によりコミュニティドライバーをコンパイルし、Secure Boot の署名を処理することを忘れないでください（当サイトの RTL8812AU DKMS 排障記事を参照できます）。どちらも、ホスト側で独立給電の USB ポート／Hub を使用し、「デバイスが落ちる」という変数を一度に排除することをお勧めします。ただしインジェクションはカーネルバージョンに依存します。kernel 6.16 以前ではインジェクションが動作するというコミュニティ報告がありますが、stock kernel 6.16 以降（6.17 で実測）では AXML のパケットインジェクションテストは失敗し（`aireplay-ng --test` は Found 0 APs / No Answer）、deauth やハンドシェイク取得はできません。原因は mac80211 chanctx のリグレッションでチップ固有の制限ではなく、コミュニティの patched ドライバーでインジェクションは動作しますが、ファームウェアがレートを固定しており（1/6 Mbps、HT/VHT のインジェクション不可）。モニターモード、AP、WPA3 には影響しません。インジェクションが必要な場合は AWUS036ACH または AWUS036EACS をお選びください。
 
 **次のステップ**：第 6 章の排障ワークシートを Kali 仮想マシンのデスクトップに保存しておきましょう。「アダプターを認識しない」たびに、まず一通り実行してから技術サポートのチケットを開くかどうか決めてください——表に従って進めれば、データがすべてを解決します。
 

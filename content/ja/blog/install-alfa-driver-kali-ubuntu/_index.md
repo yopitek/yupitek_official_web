@@ -69,7 +69,7 @@ MediaTek MT7612U のような一般的なチップセットなら、この処理
 |---|---|---|---|
 | [AWUS036ACH](/ja/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u（カーネル内蔵） |
-| [AWUS036AX](/ja/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AX](/ja/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.17) |
 | [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u（カーネル 5.18+） |
 
 ### lsusb でアダプターを確認する
@@ -127,7 +127,7 @@ uname -r
 # 例: 6.6.9-amd64
 
 ls /lib/modules/$(uname -r)/build
-# このパスが存在すれば OK。存在しない場合はヘッダーが入っていません
+# このパスが存在すれば OK. 存在しない場合はヘッダーが入っていません
 ```
 
 ---
@@ -180,17 +180,17 @@ lsmod | grep 8812au
 手動で制御したい場合：
 
 ```bash
-# ドライバーをクローン（どちらのフォークでも可）
+# ドライバーをクローン (どちらのフォークでも可)
 git clone https://github.com/aircrack-ng/rtl8812au
 
 # Makefile からバージョンを確認
 grep "^MODULE_VERSION" rtl8812au/Makefile
-# バージョンを確認、例：v5.6.4.2 → 5.6.4.2 として使用
+# バージョンを確認, 例: v5.6.4.2 → 5.6.4.2 として使用
 
 # ソースを DKMS ディレクトリにコピー
 sudo cp -r rtl8812au /usr/src/rtl8812au-5.6.4.2
 
-# 登録・ビルド・インストール
+# 登録 · ビルド · インストール
 sudo dkms add -m rtl8812au -v 5.6.4.2
 sudo dkms build -m rtl8812au -v 5.6.4.2
 sudo dkms install -m rtl8812au -v 5.6.4.2
@@ -397,7 +397,7 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/ja/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/ja/products/alfa/awus036acm/) | MT7612U | 内蔵（`mt76x2u`） | 内蔵（`mt76x2u`） |
-| [AWUS036AX](/ja/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
+| [AWUS036AX](/ja/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.17) | OOK (<6.17) |
 | [AWUS036AXML](/ja/products/alfa/awus036axml/) | MT7921AUN | 内蔵（`mt7921u`、カーネル 5.18+） | 内蔵（`mt7921u`、カーネル 6.8） |
 
 ---

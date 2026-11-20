@@ -14,8 +14,6 @@ featureimage: "/images/blog/flipper-zero-5g-expansion-board-user-manual/img_01_a
 hideFeatureImage: true
 ---
 
-# Manual de Instalação Ilustrado e de Usuário da Placa de Expansão Flipper Zero 5G (v2.0)
-
 > **Público-alvo**: Clientes iniciantes que nunca usaram este módulo antes.  
 > **Princípio de redação**: Instruções passo a passo com diagramas detalhados de alta definição para cada etapa propensa a erros ou com termos técnicos complexos, eliminando dúvidas para garantir uma instalação sem complicações.
 

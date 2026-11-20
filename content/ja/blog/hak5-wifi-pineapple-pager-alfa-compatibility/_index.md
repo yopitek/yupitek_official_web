@@ -8,13 +8,13 @@ showTableOfContents: true
 tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH", "compatibility", "wireless-security"]
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "HAK5 WiFi Pineapple Pagerに外付けALFAアダプターを接続できますか？"
-    answer: "できますが、MIPSアーキテクチャの制限とUSB 2.0給電に注意が必要です。AWUS036ACMが首选で、カーネル内蔵ドライバーが最も安定しています。"
+    answer: "できますが、MIPSアーキテクチャの制限とUSB 2.0給電に注意が必要です。AWUS036ACMが第一候補で、カーネル内蔵ドライバーが最も安定しています。"
   - question: "Pagerに電源付きUSB Hubが必要なのはなぜですか？"
     answer: "PagerはUSB 2.0ポートのみで最大出力500mAですが、高出力ALFAアダプターはピーク720mAに達し、直接挿入すると再起動やカーネルクラッシュを引き起こします。"
-  - question: "AWUS036ACMがPager首选アダプターなのはなぜですか？"
+  - question: "AWUS036ACMがPagerの第一候補アダプターなのはなぜですか？"
     answer: "MT7612UドライバーはOpenWrt 6.6カーネルに統合されており、Pagerでopkgから直接インストールでき、クロスコンパイル不要で最も安定しています。"
   - question: "MIPSアーキテクチャはドライバーインストールにどんな制限がありますか？"
     answer: "PagerはMIPS32ベースのMT7628ANでDKMSをサポートせず、GCCツールチェーンがないため、内蔵ドライバー以外は外部x86ホストでクロスコンパイルする必要があります。"
@@ -22,8 +22,6 @@ faq:
     answer: "RTL8812AUはMIPSプラットフォームでwiphy_registerカーネルエラーが発生しインターフェースを読み込めない場合があり、コミュニティ修正パッチの適用が必要です。AWUS036ACMの使用をお勧めします。"
 ---
 高出力のUSBワイヤレスカードをHAK5 Pagerに接続する前に、以下の2つの大きなハードウェア・ソフトウェアの壁を理解しておく必要があります。
-
-# HAK5 WiFi Pineapple Pager × ALFA Network：外付けUSBワイヤレスカードの互換性評価とセットアップガイド
 
 
 {{< tldr >}}
@@ -45,7 +43,7 @@ PagerはMIPSアーキテクチャでDKMS非対応、AWUS036ACMはMT7612Uドラ�
 x86_64アーキテクチャの標準的なKali Linuxマシンや、ARMを採用するRaspberry Piとは異なり、HAK5 Pagerには**MediaTek MT7628AN SoC**（OpenWrtでは`mipsel_24kc`としてコンパイルされる**MIPS32r2, Little-Endian**コア）が搭載されています。
 
 > [!IMPORTANT]
-> Pager OSは**OpenWrt（バージョン 24.10.1、カーネル 6.6.86）**ベースであるため、**DKMS（動態カーネルモジュール支援）に対応していません**。Pager単体ではGCCやMakeなどのビルドツールが不足しているため、カーネル外（Out-of-Kernel）のドライバーソースコードを直接ビルドすることは不可能です。内蔵されていないドライバーは、外部のx86_64 Linuxホスト上でOpenWrt SDKを使用してクロスコンパイルする必要があります。
+> Pager OSは**OpenWrt（バージョン 24.10.1、カーネル 6.6.86）**ベースであるため、**DKMS（動的カーネルモジュールサポート）に対応していません**。Pager単体ではGCCやMakeなどのビルドツールが不足しているため、カーネル外（Out-of-Kernel）のドライバーソースコードを直接ビルドすることは不可能です。内蔵されていないドライバーは、外部のx86_64 Linuxホスト上でOpenWrt SDKを使用してクロスコンパイルする必要があります。
 
 ### 1.2 USB 2.0の給電能力：電圧安定性の制限
 HAK5 Pagerに搭載されているUSBポートはUSB 2.0 Hostが1つのみです。標準のUSB 2.0仕様では、最大電流出力は**500 mA @ 5V（2.5W）**に制限されています。
@@ -61,14 +59,14 @@ HAK5 Pagerに搭載されているUSBポートはUSB 2.0 Hostが1つのみです
 
 以下の表は、Pager OS（カーネル 6.6）を搭載したHAK5 Pagerと現行のALFA Network USBワイヤレスアダプターとの互換性を示したものです。
 
-| ALFA型番 | チップセット | 対応バンド | USB消費電力 | カーネル 6.6 互換ステータス | インストール方法 | Monitor / Injection 支援 | 評価・購入アドバイス |
+| ALFA型番 | チップセット | 対応バンド | USB消費電力 | カーネル 6.6 互換ステータス | インストール方法 | Monitor / Injection 対応 | 評価・購入アドバイス |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **AWUS036ACM** | MediaTek **MT7612U** | 2.4 GHz / 5 GHz | ~600 mA (ハブ推奨) | **内蔵ドライバー (Native)** | `opkg`で直接インストール | ✅ 対応 / ✅ 対応 | 🏆 **一押し・ベストチョイス（最推奨）** |
 | **AWUS036ACH** | Realtek **RTL8812AU** | 2.4 GHz / 5 GHz | ~720 mA (電源付きハブ必須) | カーネル外ドライバー | SDKによるクロスコンパイル | ✅ 対応 / ✅ 対応 | ⭐⭐ **上級者向け**（MIPS環境でwiphyバグあり） |
-| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4/5/6 GHz (WiFi 6E) | ~720 mA (電源付きハブ必須) | **内蔵ドライバー (Native)** | `opkg` + 手動ファームウェア配置 | ✅ 対応 / ✅ 対応 | ⭐⭐⭐ **将来性大**、ただし給電に注意 |
+| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4/5/6 GHz (WiFi 6E) | ~720 mA (電源付きハブ必須) | **内蔵ドライバー (Native)** | `opkg` + 手動ファームウェア配置 | ✅ 対応 / ⚠️ kernel 6.16 以前はコミュニティ報告あり、kernel 6.17 では実測で失敗 | ⭐⭐⭐ **将来性大**、ただし給電に注意 |
 | **AWUS036ACHM** | MediaTek **MT7610U** | 2.4 GHz / 5 GHz | ~400 mA (直接給電可) | 部分内蔵 | `opkg`でインストール | ✅ 対応 / ✅ 対応 | ⭐⭐⭐ **コストパフォーマンス重視** |
 | **AWUS036ACS** | Realtek **RTL8811AU** | 2.4 GHz / 5 GHz | ~500 mA (限界値) | カーネル外ドライバー | SDKによるクロスコンパイル | ✅ 対応 / ✅ 対応 | ⭐⭐ **普通**（手動ビルドが必要） |
-| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | ~500 mA | カーネル外ドライバー | 非推奨 | ❌ **モニターモード非対応** | ❌ **使用不可** |
+| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | ~500 mA | 主線 kernel 6.6 に rtw88_8821cu を含む（Pager ファームウェアが同モジュールを組み込んでいるかは未確認） | 未確認 | GX10（kernel 6.17）では monitor／injection とも実測で可、Pager 上では未実測 | ⚠️ **Pager では未検証** |
 
 ---
 
@@ -122,7 +120,7 @@ reboot
 再起動後、SSHで再度ログインし、ワイヤレスインターフェースを確認します：
 ```bash
 iw dev
-# 新しいインターフェース（例：wlan2）が表示されていることを確認します
+# 新しいインターフェース (例: wlan2) が表示されていることを確認します
 ```
 
 モニターモードの有効化：
@@ -134,7 +132,7 @@ ip link set wlan2 up
 状態の確認：
 ```bash
 iw dev wlan2 info
-# 「type monitor」が表示されれば設定成功です
+# "type monitor"が表示されれば設定成功です
 ```
 
 ---

@@ -262,7 +262,7 @@ AWUS036ACH 是 **USB 2.0** 裝置，在 VM 環境中是測試最充分的介面�
 
 ### AWUS036AXML（MT7921AUN）
 
-AWUS036AXML 是支援 WiFi 6E 的 **USB 3.0** 裝置，在 VM 環境中有一些特殊情況。**必須**使用 USB 3.0（xHCI）USB 控制器。固件套件：`firmware-misc-nonfree`。某些早期型號在 VirtualBox USB 3.0 仲裁下可能發生週期性凍結問題。VMware Workstation 對 AWUS036AXML 的 USB 3.0 直通通常比 VirtualBox 更穩定。
+AWUS036AXML 是支援 WiFi 6E 的 **USB 3.0** 裝置，在 VM 環境中有一些特殊情況。**必須**使用 USB 3.0（xHCI）USB 控制器。韌體套件：`firmware-misc-nonfree`。某些早期型號在 VirtualBox USB 3.0 仲裁下可能發生週期性凍結問題。VMware Workstation 對 AWUS036AXML 的 USB 3.0 直通通常比 VirtualBox 更穩定。
 
 完整評測：[AWUS036AXML WiFi 6E 評測](/zh-tw/blog/awus036axml-wifi-6e-review/)。
 

@@ -8,7 +8,7 @@ showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Quelles sont les conditions requises pour utiliser une carte ALFA avec Kali NetHunter ?"
     answer: "Il faut un téléphone Android supportant OTG, rooté et flashé avec le noyau Kali NetHunter. Les modèles compatibles vérifiés incluent Google Pixel et les anciens flagships OnePlus."
@@ -98,7 +98,7 @@ En utilisant le OnePlus 11 5G comme plateforme de référence :
 |---|---|
 | Chipset | **MediaTek MT7610U** |
 | USB VID/PID | `0x0e8d:0x7610` |
-| Bandes | 2,4 GHz + 5 GHz (AC433) |
+| Bandes | 2,4 GHz + 5 GHz (AC600) |
 | Débit max | 150 Mbps (2,4 GHz) / 433 Mbps (5 GHz) |
 | USB | USB 2.0 |
 | Mode Monitor | ✅ Support complet |
@@ -155,7 +155,7 @@ L'ACH est le standard de facto pour les configurations Kali et NetHunter depuis 
 |---|---|
 | Chipset | Realtek RTL8811AU |
 | USB VID/PID | `0x0bda:0x0811` |
-| Bandes | 2,4 GHz + 5 GHz (AC433) |
+| Bandes | 2,4 GHz + 5 GHz (AC600) |
 | USB | USB 2.0 |
 | Mode Monitor | ✅ Supporté (même famille de pilotes que RTL8812AU) |
 | Injection de paquets | ✅ Supportée |
@@ -164,13 +164,13 @@ L'ACH est le standard de facto pour les configurations Kali et NetHunter depuis 
 | Pilote | Externe (dépôt aircrack-ng partagé avec RTL8812AU) |
 | Page produit | [/fr/products/alfa/awus036acs/](/fr/products/alfa/awus036acs/) |
 
-L'ACS est l'option la plus portable. Avec une consommation de 300mW, c'est le moins exigeant pour les batteries de téléphone, et son format fin disparaît dans une poche. Le compromis : des performances AC433 single-stream et la dépendance au pilote DKMS externe partagée avec la famille RTL8812AU.
+L'ACS est l'option la plus portable. Avec une consommation de 300mW, c'est le moins exigeant pour les batteries de téléphone, et son format fin disparaît dans une poche. Le compromis : des performances AC600 single-stream et la dépendance au pilote DKMS externe partagée avec la famille RTL8812AU.
 
 ### 3.5 Adaptateurs Non Recommandés pour NetHunter
 
 | Adaptateur | Chipset | Raison |
 |---|---|---|
-| AWUS036AX / AWUS036AXER | RTL8832BU | Nécessite kernel 6.14+ ; stabilité du mode monitor non vérifiée sur les kernels Android |
+| AWUS036AX / AWUS036AXER | RTL8832BU | Nécessite kernel 6.17+ ; stabilité du mode monitor non vérifiée sur les kernels Android |
 | AWUS036AXML / AWUS036AXM | MT7921AUN | Support WiFi 6E / 6 GHz instable dans les builds NetHunter actuelles ; inadapté comme adaptateur de pentest principal |
 
 ### 3.6 Dépôts des Sources des Pilotes

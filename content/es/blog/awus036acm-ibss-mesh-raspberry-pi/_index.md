@@ -23,8 +23,6 @@ faq:
 ---
 1. [¿Qué son IBSS y 802.11s Mesh — y por qué importan?](#1-what-are-ibss-and-80211s-mesh) 2. [Especificaciones de Hardware del ALFA AWUS036ACM](#2-alfa-awus036acm-hardware-specifications) 3. [El Controlador MT7612U en Raspberry Pi](#3-the-mt7612u-driver-on-raspberry-pi) 4. [Modo 1: Redes IBSS Ad Hoc](#4-mode-1-ibss-ad-hoc-networking) 5. [Modo 2: Redes 802.11s Mesh Point](#5-mode-2-80211s-mesh-point-networking) 6. [Casos de Uso Reales](#6-real-world-use-cases) 7. [Por Qué el AWUS036ACM es la Única Opción ALFA para Esto](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this) 8. [Preguntas Frecuentes y Solución de Problemas](#8-faq-and-troubleshooting) 9. [Dónde Comprar](#9-where-to-buy)
 
-# ALFA AWUS036ACM: Habilitando Redes IBSS Ad Hoc y 802.11s Mesh en Raspberry Pi con MT7612U
-
 {{< tldr >}}
 El AWUS036ACM usa el chipset MT7612U, cuyo controlador mt76x2u está construido sobre mac80211 de Linux y admite completamente los modos IBSS Ad Hoc y 802.11s Mesh Point. Este artículo detalla los principios de funcionamiento, configuración paso a paso y escenarios de aplicación reales.
 {{< /tldr >}}
@@ -44,7 +42,7 @@ Esta guía explica exactamente cómo funcionan ambos modos, proporciona instrucc
 
 ---
 
-## 1. ¿Qué son IBSS y 802.11s Mesh?
+## 1. ¿Qué son IBSS y 802.11s Mesh? {#1-what-are-ibss-and-80211s-mesh}
 
 ### IBSS — Independent Basic Service Set (Modo Ad Hoc)
 
@@ -98,7 +96,7 @@ El MT7612U es uno de los pocos chipsets donde la respuesta es un **sí** claro e
 
 ---
 
-## 2. Especificaciones de Hardware del ALFA AWUS036ACM
+## 2. Especificaciones de Hardware del ALFA AWUS036ACM {#2-alfa-awus036acm-hardware-specifications}
 
 El AWUS036ACM es el adaptador USB 3.0 de doble banda AC1200 de ALFA Network, diseñado para usuarios avanzados de Linux y desarrolladores embebidos.
 
@@ -177,7 +175,7 @@ WPA2 / WPA / WEP / WPA-PSK / 802.1X / WEP de 64–128 bits
 
 ---
 
-## 3. El Controlador MT7612U en Raspberry Pi
+## 3. El Controlador MT7612U en Raspberry Pi {#3-the-mt7612u-driver-on-raspberry-pi}
 
 ### Controlador: mt76x2u (Parte de la Familia mt76)
 
@@ -270,7 +268,7 @@ Los controladores que eluden mac80211 (controladores fuera del núcleo de Realte
 
 ---
 
-## 4. Modo 1: Redes IBSS Ad Hoc
+## 4. Modo 1: Redes IBSS Ad Hoc {#4-mode-1-ibss-ad-hoc-networking}
 
 ### Cómo Funciona IBSS
 
@@ -459,7 +457,7 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 ---
 
-## 5. Modo 2: Redes 802.11s Mesh Point
+## 5. Modo 2: Redes 802.11s Mesh Point {#5-mode-2-80211s-mesh-point-networking}
 
 ### Cómo Funciona 802.11s
 
@@ -622,7 +620,7 @@ sudo batctl o    # Tabla de originadores (todos los nodos conocidos)
 sudo batctl tg   # Tabla de traducción (mapeo MAC → IP)
 ```
 
-### Hacer 802.11s Mesh Persistente
+### Hacer 802.11s Mesh Persistente {#making-80211s-mesh-persistent}
 
 Crea `/etc/systemd/system/mesh-point.service`:
 
@@ -657,7 +655,7 @@ sudo systemctl start mesh-point.service
 
 ---
 
-## 6. Casos de Uso Reales
+## 6. Casos de Uso Reales {#6-real-world-use-cases}
 
 ### Caso de Uso 1 — Red de Sensores Fuera de la Red Eléctrica (Agricultura Inteligente / Monitoreo Ambiental)
 
@@ -726,7 +724,7 @@ sudo tcpdump -i mon0 -w capture.pcap
 
 ---
 
-## 7. Por Qué el AWUS036ACM es la Única Opción ALFA para Esto
+## 7. Por Qué el AWUS036ACM es la Única Opción ALFA para Esto {#7-why-the-awus036acm-is-the-only-alfa-choice-for-this}
 
 ### El Factor Decisivo: Conformidad con mac80211
 
@@ -737,7 +735,7 @@ Si un adaptador USB WiFi soporta IBSS y mesh 802.11s en Linux depende enterament
 | Modelo | Chipset | Controlador | IBSS | Mesh 802.11s | Notas |
 |---|---|---|---|---|---|
 | **AWUS036ACM** | MT7612U | mt76x2u (en núcleo ≥ 4.19) | ✅ | ✅ | **La única opción** |
-| AWUS036ACH | RTL8812AU | rtw88 (en núcleo ≥ 6.14) | ✅ (solo núcleo ≥ 6.14) | ❌ | Nuevo controlador en núcleo; sin mesh point |
+| AWUS036ACH | RTL8812AU | rtw88 (en núcleo ≥ 6.13) | ✅ (solo núcleo ≥ 6.13) | ❌ | Nuevo controlador en núcleo; sin mesh point |
 | AWUS036ACS | RTL8811AU | rtl8812au-dkms (OOK) | ❌ | ❌ | Controlador fuera del núcleo; sin IBSS/mesh |
 | AWUS036AX | RTL8832BU | rtw88 (en núcleo) | ❌ | ❌ | Sin soporte para Raspberry Pi |
 | AWUS036AXER | RTL8832BU | rtw88 (en núcleo) | ❌ | ❌ | Sin soporte para Raspberry Pi |
@@ -760,7 +758,7 @@ Además, el AWUS036ACM ofrece:
 
 ---
 
-## 8. Preguntas Frecuentes y Solución de Problemas
+## 8. Preguntas Frecuentes y Solución de Problemas {#8-faq-and-troubleshooting}
 
 **P: Mi Pi solo muestra `wlan0`. ¿Dónde está `wlan1`?**
 
@@ -834,7 +832,7 @@ Sí — la Raspberry Pi Zero 2W tiene un puerto USB-A completo (mediante adaptad
 
 ---
 
-## 9. Dónde Comprar
+## 9. Dónde Comprar {#9-where-to-buy}
 
 El ALFA AWUS036ACM está disponible en [yupitek.com](https://yupitek.com) — el distribuidor oficial de ALFA Network. Comprar a través de un distribuidor autorizado garantiza que recibes hardware genuino con la garantía estándar de Alfa Network Inc.
 

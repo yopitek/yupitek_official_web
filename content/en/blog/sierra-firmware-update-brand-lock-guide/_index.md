@@ -22,8 +22,6 @@ faq:
     answer: "Let the module reboot until it reaches boot-and-hold mode (after 6 consecutive reboots), reconnect it over USB, and use a flashing tool to write the correct firmware image."
 ---
 
-# Sierra Wireless Firmware Update & Brand Lock Switching Guide: The Safe Way to Flash Without Bricking
-
 **The short version: you can update Sierra module firmware over the air (FOTA, pushed by the carrier) or by flashing it yourself over USB. The brand lock everyone worries about (the difference between Dell or Lenovo editions and the generic one) is actually just a firmware image swap. Check the version with `AT+GMR` before you flash, never cut power mid-flash, and if it does fail, the module ships with a built-in SED recovery mode that can bring it back.**
 
 Plenty of people buy Sierra Wireless modules on the secondhand market, slot them into their laptop or router, and find the card won't work. The culprit is usually the OEM brand lock. This guide combines the hard facts from the official specification with what the community has learned the hard way, so you can flash your module safely.

@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["WPA3", "SAE", "dragonblood", "transition-mode", "PMF", "kali-linux", "ALFA-network", "penetration-testing"]
 featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ما الفرق بين WPA3 و WPA2 في اختبار الأمن؟"
     answer: "يستخدم WPA3 مصافحة SAE بدلاً من PSK، يوفر سرية أمامية ولا يمكن مهاجمته بقاموس دون اتصال. PMF إلزامي، لكن وضع التحويل يُدخل سطح هجوم تخفيض."
@@ -64,7 +64,7 @@ faq:
 
 يتطلب اختبار WPA3 محولاً بوضع مراقبة موثوق ودعم حقن، وللشبكات WPA3 على 6 GHz — قدرة ثلاثية النطاق:
 
-- **AWUS036AXML** — ضروري لشبكات WPA3 على Wi-Fi 6E (6 GHz). شريحة Mediatek MT7921AUN. دعم كامل لوضع المراقبة والحقن على Kali Linux مع نواة 5.18+. المحول ALFA الوحيد الذي يغطي قنوات 6 GHz حيث تتزايد عمليات نشر WPA3-only.
+- **AWUS036AXML** — ضروري لشبكات WPA3 على Wi-Fi 6E (6 GHz). شريحة Mediatek MT7921AUN. يعمل وضع المراقبة وAP وWPA3 على Kali Linux مع نواة 5.18+؛ وتفيد تقارير المجتمع بأن حقن الحزم كان يعمل قبل النواة 6.16، لكنه فشل في اختبارنا على نواة stock 6.17 (تراجع في mac80211 chanctx وليس قيداً في الشريحة)، لذا استخدم AWUS036ACH إذا احتجت إلى الحقن. المحول ALFA الوحيد الذي يغطي قنوات 6 GHz حيث تتزايد عمليات نشر WPA3-only.
 - **AWUS036ACH** — مناسب لاختبار WPA3 على 2.4/5 GHz. شريحة RTL8812AU. أقصى توافق مع سلسلة أدوات aircrack-ng وأوسع دعم لمشغّلات الأجهزة عبر إصدارات Kali Linux.
 
 ### تفعيل وضع المراقبة

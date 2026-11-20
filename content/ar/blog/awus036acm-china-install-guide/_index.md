@@ -401,7 +401,7 @@ https://www.kali.org/get-kali/#kali-arm
 
 اختر **Raspberry Pi 4 (64-bit)** أو **Raspberry Pi 5 (64-bit)**. لا تستخدم الصورة 32-bit — يُشترط 64-bit.
 
-> **مرايا الصين:** إذا كان kali.org بطيئًا، استخدم 华为云:
+> **مرايا الصين:** إذا كان kali.org بطيئًا، استخدم 华为云 (Huawei Cloud):
 > https://repo.huaweicloud.com/kali-images/
 > تصفّح إلى مجلد الإصدار الأحدث ونزّل صورة ARM64 من هناك.
 
@@ -583,10 +583,10 @@ sudo ip link set mon0 up
 |--------|--------|-----------|
 | تعريفات Alfa الرسمية | [files.alfa.com.tw](https://files.alfa.com.tw) | حزم التعريف والبرامج الثابتة |
 | توثيق Alfa | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | أدلة المنتجات |
-| 清华大学镜像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (موصى به) |
-| 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (موصى به) |
-| 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | صور Kali ARM (احتياطي) |
+| مرآة 清华大学 (Tsinghua) | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| مرآة 阿里云 (Aliyun) | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (موصى به) |
+| مرآة 中科大 (USTC) | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (موصى به) |
+| مرآة 华为云 (Huawei Cloud) | [repo.huaweicloud.com](https://repo.huaweicloud.com) | صور Kali ARM (احتياطي) |
 | تعريف MT76 (نواة Linux الرئيسية) | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | مدمج في النواة، دون حاجة إلى تجميع |
 
 {{< faq >}}

@@ -23,8 +23,6 @@ faq:
 ---
 Im Managed-Modus (dem Standardmodus) kommuniziert Ihr Adapter nur mit Access-Points, mit denen er verbunden ist. Im **Monitor-Modus** hört der Adapter auf allen Kanälen auf und erfasst **alle** 802.11-Frames in Ihrer Umgebung — einschließlich Handshakes, Deauthentication-Frames, Probe Requests und mehr.
 
-# Monitor-Modus unter Kali Linux 2026 aktivieren: Komplettanleitung
-
 {{< tldr >}}
 Der Monitor-Modus hebt die Einschränkung der Netzwerkkarte auf, nur eigene Pakete zu empfangen, und bildet die Grundlage für drahtlose Penetrationstests. Mit airmon-ng oder dem iw-Befehl in Kombination mit einer ALFA-Netzwerkkarte kann er unter Kali Linux stabil aktiviert werden.
 {{< /tldr >}}

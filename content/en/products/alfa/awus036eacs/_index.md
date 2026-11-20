@@ -1,7 +1,8 @@
 ---
 title: "ALFA AWUS036EACS — AC600 + Bluetooth 4.2 Nano USB Adapter"
-description: "ALFA AWUS036EACS, Realtek RTL8821CU, AC600 dual-band, USB 2.0 Nano form factor, Bluetooth 4.2, designed for Windows home users. Not recommended for Linux or security research."
+description: "ALFA AWUS036EACS, Realtek RTL8821CU, AC600 dual-band, USB 2.0 Nano form factor, Bluetooth 4.2. Mainline rtw88_8821cu driver since kernel 6.2; GX10 tests passed monitor mode and injection on both bands."
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,9 +12,9 @@ tags: ["Wi-Fi 5", "AC600", "USB 2.0", "Nano", "Bluetooth 4.2", "Windows", "Home"
 
 ## Product Overview
 
-The AWUS036EACS is Alfa's ultra-compact WiFi + Bluetooth combination adapter, designed for home and office users who want both wireless connectivity in a single discreet USB dongle. Built around the Realtek RTL8821CU chipset, it integrates AC600 dual-band WiFi and Bluetooth 4.2 in a nano form factor with built-in driver support on Windows. Its Soft AP mode lets you share your internet connection. This adapter prioritises simplicity and compactness over performance — it is NOT recommended for Linux power users, Kali Linux, or security research.
+The AWUS036EACS is Alfa's ultra-compact WiFi + Bluetooth combination adapter, designed for home and office users who want both wireless connectivity in a single discreet USB dongle. Built around the Realtek RTL8821CU chipset, it integrates AC600 dual-band WiFi and Bluetooth 4.2 in a nano form factor with built-in driver support on Windows. Its Soft AP mode lets you share your internet connection. On Linux, the mainline rtw88_8821cu driver has been included since kernel 6.2. In GX10 testing (Ubuntu 24.04, kernel 6.17), monitor mode and packet injection both reached 100% on 2.4 GHz and 5 GHz, an end-to-end WPA handshake capture succeeded, and Bluetooth and Wi-Fi worked at the same time.
 
-> ⚠️ **Note:** AWUS036EACS is designed for Windows home use. RTL8821CU has poor Linux community driver support. NOT recommended for Linux, Kali Linux, or Raspberry Pi. No RP-SMA port — antenna is non-upgradeable.
+> ⚠️ **Note:** AWUS036EACS is designed for Windows home use, but it also works on Linux with the mainline rtw88_8821cu driver (kernel 6.2+). No RP-SMA port — antenna is non-upgradeable.
 
 ## Product Features
 
@@ -51,15 +52,15 @@ The AWUS036EACS is Alfa's ultra-compact WiFi + Bluetooth combination adapter, de
 |----|--------|-------|
 | Windows XP–10 | ✅ Supported | Built-in driver; plug and play. Check Alfa driver page for Windows 11 compatibility. |
 | macOS | ⚠️ Limited | Exact version range TBC. No Apple Silicon support. |
-| Ubuntu / Linux | ⚠️ Poor | RTL8821CU has poor community driver support. Not recommended. |
-| Kali Linux | ❌ Not recommended | Monitor mode and packet injection not reliably supported. |
+| Ubuntu / Linux | ✅ Kernel 6.2+ | Mainline rtw88_8821cu driver, no installation needed (tested on GX10, Ubuntu 24.04, kernel 6.17). |
+| Kali Linux | ✅ Supported | Monitor mode and packet injection verified on GX10 (Ubuntu 24.04, kernel 6.17): 100% on both bands, end-to-end WPA handshake capture succeeded. Not tested on a real Kali install. |
 | NetHunter (Android) | ❌ Not recommended | RTL8821CU not confirmed working with NetHunter. |
 
 ## Hardware Support
 
 | Hardware | Status | Notes |
 |----------|--------|-------|
-| Raspberry Pi | ❌ Not recommended | RTL8821CU driver issues on Pi OS. |
+| Raspberry Pi | ⚠️ Not tested | Not tested by us; kernel 6.2+ includes the mainline rtw88_8821cu driver. |
 | Desktop / Laptop PC | ✅ Supported | Windows only recommended. |
 | Embedded / IoT (Windows) | ⚠️ Windows only | Compact design suits embedded Windows systems. |
 
@@ -67,11 +68,11 @@ The AWUS036EACS is Alfa's ultra-compact WiFi + Bluetooth combination adapter, de
 
 | Feature | Status |
 |---------|--------|
-| Monitor Mode | ❌ Not reliably supported |
-| Packet Injection | ❌ Not reliably supported |
+| Monitor Mode | ✅ Yes (GX10 test: 100% on both bands) |
+| Packet Injection | ✅ Yes (GX10 test: 100% on both bands) |
 | Soft AP Mode | ✅ Yes |
-| Bluetooth | ✅ BT 4.2 |
-| VIF | ❌ No |
+| Bluetooth | ✅ BT 4.2 (usable at the same time as Wi-Fi) |
+| VIF | 🟡 Partial (passive monitor + managed on the same channel; no independent dual VIF) |
 
 ## What's in the Box
 

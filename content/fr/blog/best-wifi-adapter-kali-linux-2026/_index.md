@@ -8,14 +8,14 @@ showTableOfContents: true
 tags: ["kali-linux", "wifi-adapter", "monitor-mode", "packet-injection", "ALFA-Network"]
 featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Pourquoi Kali Linux nécessite-t-il une carte WiFi USB externe ?"
     answer: "Les cartes WiFi intégrées des ordinateurs portables ne supportent pas le mode moniteur ni l'injection de paquets, empêchant l'utilisation d'outils comme airodump-ng. Une carte USB externe avec support de ces fonctionnalités est indispensable."
   - question: "Quel pilote est le plus stable : RTL8812AU ou MT7612U ?"
     answer: "Le MT7612U (pilote mt76x2u) est intégré au noyau mainline depuis 4.19, plug-and-play sans compilation. Le RTL8812AU nécessite une installation DKMS externe et une recompilation possible après mise à jour du noyau."
   - question: "Les cartes WiFi 6E sont-elles nécessaires pour Kali Linux ?"
-    answer: "Pas actuellement indispensables. Le pilote MT7921AUN s'intègre depuis le noyau 5.18, mais l'injection 6 GHz n'est pas encore entièrement stable. L'AWUS036AXML est pour les utilisateurs avancés."
+    answer: "Pas actuellement indispensables. Le pilote MT7921AUN s'intègre depuis le noyau 5.18, mais l'injection de paquets a échoué avec l'AWUS036AXML lors des tests sur le noyau stock 6.17 (des retours de la communauté indiquent qu'elle fonctionnait avant le noyau 6.16). Pour l'injection, choisissez l'AWUS036ACH ; l'AWUS036AXML est réservé aux utilisateurs avancés ayant surtout besoin de la surveillance 6 GHz."
   - question: "Comment activer le mode moniteur sur Kali Linux ?"
     answer: "Exécutez sudo airmon-ng check kill pour terminer les processus interférents, puis sudo airmon-ng start wlan1. Confirmez avec iwconfig que Mode:Monitor est affiché."
   - question: "Quelle carte ALFA est recommandée pour un débutant sur Kali Linux ?"
@@ -28,8 +28,6 @@ Premier choix : AWUS036ACH (RTL8812AU), pilote officiel aircrack-ng, ressources 
 
 L'**AWUS036ACH** avec la puce RTL8812AU reste la référence éprouvée pour le test de pénétration. Avec une stabilité exceptionnelle du mode moniteur et une fiabilité d'injection de paquets, c'est le premier choix pour la plupart des chercheurs en sécurité.
 
-
-# Guide complet : Les meilleurs adaptateurs WiFi pour Kali Linux en 2026
 
 Le choix du bon adaptateur WiFi USB pour Kali Linux peut être accablant. Ce guide compare les meilleures options pour 2026 en se concentrant sur les besoins de test de pénétration.
 
@@ -45,7 +43,7 @@ L'**AWUS036ACH** avec la puce RTL8812AU reste la référence éprouvée pour le 
 
 ### 2. ALFA AWUS036AXML — Meilleur choix Wi-Fi 6E
 
-L'**AWUS036AXML** avec la puce MT7921AUN offre une couverture 6 GHz et est le choix tourné vers l'avenir pour les équipes auditant des infrastructures Wi-Fi 6E modernes.
+L'**AWUS036AXML** avec la puce MT7921AUN offre une couverture 6 GHz et est le choix tourné vers l'avenir pour les équipes auditant des infrastructures Wi-Fi 6E modernes. Le mode moniteur, le point d'accès et le WPA3 fonctionnent ; en revanche, l'injection de paquets a échoué lors des tests sur le noyau stock 6.17 (cause : régression mac80211 chanctx depuis le noyau 6.16, pas une limite de la puce ; un pilote patché peut la rendre possible, mais le firmware verrouille le débit). Pour l'injection, choisissez l'AWUS036ACH.
 
 **Prix :** ~55–70 $
 
@@ -62,7 +60,7 @@ L'**AWUS036ACM** avec la puce MT7612U est le seul adaptateur ALFA qui supporte n
 | Adaptateur | Puce | Bandes | Mode moniteur | Injection | Prix |
 |---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2,4 + 5 GHz | ★★★★★ | ★★★★★ | ~40–50 |
-| AWUS036AXML | MT7921AUN | 2,4 + 5 + 6 GHz | ★★★★☆ | ★★★★☆ | ~55–70 |
+| AWUS036AXML | MT7921AUN | 2,4 + 5 + 6 GHz | ★★★★☆ | ⚠️ retours communauté avant noyau 6.16 ; échec en 6.17 | ~55–70 |
 | AWUS036ACM | MT7612U | 2,4 + 5 GHz | ★★★★☆ | ★★★★☆ | ~35–45 |
 | AWUS036AX | RTL8832BU | 2,4 + 5 GHz | ★★★★☆ | ★★★★☆ | ~45–55 |
 
@@ -74,7 +72,7 @@ L'**AWUS036ACM** avec la puce MT7612U est le seul adaptateur ALFA qui supporte n
 
 Lors du choix d'un adaptateur WiFi pour Kali Linux, les facteurs clés sont :
 
-1. **Compatibilité des puces** — Doit être supporté par l'équipe aircrack-ng ou le noyau Linux主线
+1. **Compatibilité des puces** — Doit être supporté par l'équipe aircrack-ng ou le noyau Linux mainline
 2. **Stabilité du mode moniteur** — Doit rester fiable sur plusieurs heures de fonctionnement
 3. **Taux d'injection de paquets** — Au moins 80% de taux de succès lors des tests de proximité
 4. **Support communautaire** — Documentation et ressources de dépannage disponibles

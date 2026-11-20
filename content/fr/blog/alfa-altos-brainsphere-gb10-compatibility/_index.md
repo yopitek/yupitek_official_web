@@ -1,5 +1,5 @@
 ---
-title: "Carte réseau sans fil ALFA : prise en charge du système ALTOS BrainSphere GB10 F1 ?"
+title: "Les cartes Wi-Fi ALFA sont-elles compatibles avec l'ALTOS BrainSphere GB10 F1 ?"
 date: 2026-09-03
 draft: false
 slug: "alfa-altos-brainsphere-gb10-compatibility"
@@ -13,17 +13,19 @@ tags:
   - "DGX-OS"
 categories:
   - "Guide Matériel"
-description: "Altos GB10 F1 & NVIDIA DGX Spark: compatibilité ALFA, MediaTek et Realtek, drivers inclus, USB-C ports."
+description: "Cartes USB ALFA sur ALTOS BrainSphere GB10 F1 : 9 modèles testés sur ASUS GX10 en kernel 6.17, pilotes intégrés sans DKMS ; injection en échec sur AXM/AXML."
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
+
+> 📌 Article mis à jour d'après nos tests sur GX10 de novembre 2026 : sur l'ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17.0-1014-nvidia), les 9 cartes réseau ALFA actuelles utilisent toutes les pilotes intégrés au kernel et fonctionnent dès le branchement, sans DKMS. Données complètes : [Tableau des tests ARM64 des 9 cartes réseau ALFA](/fr/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/). Tests effectués uniquement sur le GX10 ; les autres machines GB10 n'ont pas été testées une par une.
 
 ## 1. Résumé du problème
 
-Client demande : « L'ALFA série USB carte sans fil peut-elle être utilisée sur l'ALTOS BrainSphere GB10 F1 (NVIDIA GB10 Grace Blackwell) station de travail IA ? »
+Question d'un client : « Les cartes réseau sans fil USB de la gamme ALFA peuvent-elles être utilisées sur la station de travail IA ALTOS BrainSphere GB10 F1 (NVIDIA GB10 Grace Blackwell) ? »
 
-Conclusion rapide : L'ALTOS BrainSphere GB10 F1 et le NVIDIA DGX Spark partagent la même plateforme matérielle GB10 et l'environnement logiciel DGX OS, ce qui garantit une compatibilité complète avec les cartes ALFA (évaluée sur les 9 modèles de cartes USB ALFA en service). Les modèles de puces MediaTek (AWUS036ACM / ACHM / AXML / AXM, 4 modèles) utilisent des pilotes in-kernel, prêts à l'emploi ; les modèles de puces Realtek (AWUS036ACH / ACS / EACS / AX / AXER, 5 modèles) nécessitent la compilation de pilotes out-of-tree sur ARM64. Attention : le BrainSphere GB10 F1 dispose de 3 ports USB-C données + 1 port d'entrée USB-C PD, les cartes ALFA (à l'exception de l'AXML) doivent utiliser un adaptateur USB-C to USB-A.
+Conclusion rapide : l'ALTOS BrainSphere GB10 F1 et le NVIDIA DGX Spark utilisent la même puce GB10 et la même famille de kernels NVIDIA. Nous avons testé sur l'ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17.0-1014-nvidia) les 9 cartes réseau USB ALFA actuelles (AWUS036ACM / ACHM / ACH / ACS / EACS / AX / AXER / AXM / AXML) : toutes utilisent les pilotes intégrés au kernel et fonctionnent dès le branchement, sans compilation ni DKMS. Le comportement attendu est identique, mais les tests ont été effectués uniquement sur le GX10 : l'ALTOS BrainSphere GB10 F1 n'a pas été testé individuellement. Différences fonctionnelles : les modèles MediaTek MT7921 (AWUS036AXM / AXML) échouent à l'injection de paquets (packet injection) sur le kernel 6.17 d'origine, tandis que les modes monitor, AP et WPA3 fonctionnent ; pour les 7 autres modèles, le mode monitor et l'injection ont été validés en test. La version minimale du kernel à partir de laquelle chaque pilote est intégré à la branche principale diffère selon la carte (ACM / ACHM 4.19, AXM / AXML 5.18, EACS 6.2, ACH / ACS 6.13, AX / AXER 6.17) ; seuls les kernels antérieurs à cette version nécessitent les pilotes DKMS de la communauté. Attention : le BrainSphere GB10 F1 dispose de 3 ports USB-C de données + 1 port d'entrée USB-C PD ; les cartes ALFA (à l'exception de l'AXML) doivent utiliser un adaptateur USB-C vers USB-A.
 
 ## 2. Analyse des spécifications matérielles cibles
 
@@ -49,7 +51,7 @@ Conclusion rapide : L'ALTOS BrainSphere GB10 F1 et le NVIDIA DGX Spark partagent
 | Consommation maximale | 170W |
 | Logiciels inclus | Altos aiGeni (plateforme de développement AI en un clic, prend en charge TensorFlow / PyTorch / Jupyter / Ollama) |
 
-> Vérification des spécifications : Les dimensions / poids / consommation / configuration USB mentionnées ci-dessus sont conformes au document de spécification produit officiel d'Altos (voir la section 10 Sources de référence).
+> Vérification des spécifications : les dimensions / poids / consommation / configuration USB mentionnés ci-dessus sont conformes au document de spécification produit officiel d'Altos (voir la section 10 Sources de référence).
 
 ### 2.2 Environnement logiciel : NVIDIA DGX OS + Altos aiGeni
 
@@ -71,27 +73,29 @@ Conclusion rapide : L'ALTOS BrainSphere GB10 F1 et le NVIDIA DGX Spark partagent
 | Marché cible | Entreprise AI / Organismes de recherche / Éducation | Développement AI de bureau |
 | Consommation maximale | 170W | Environ 240W (y compris la conversion d'alimentation) |
 
-Impact sur la compatibilité avec ALFA : Aucun impact. Altos aiGeni est un logiciel d'application, il n'affecte pas le cadre de pilote du kernel. Les contrôleurs USB, la version du kernel et l'architecture des pilotes sont complètement identiques à ceux du DGX Spark.
+Impact sur la compatibilité avec ALFA : aucun impact attendu (tests effectués uniquement sur le GX10 ; les autres machines GB10 n'ont pas été testées une par une). Altos aiGeni est un logiciel applicatif, il n'affecte pas le framework de pilotes du kernel. Les contrôleurs USB, la version du kernel et l'architecture des pilotes sont identiques à ceux du DGX Spark.
 
 ### 2.4 Besoins en adaptateurs USB Type-C
 
-Les 4 ports USB du BrainSphere GB10 F1 sont tous de type-C (3 ports de données + 1 port d'entrée PD), tandis que la gamme complète des cartes réseau ALFA (sauf AXML qui est en USB-C) est en USB Type-A. Un adaptateur est nécessaire.
+Les 4 ports USB du BrainSphere GB10 F1 sont tous de type C (3 ports de données + 1 port d'entrée PD), tandis que toute la gamme des cartes réseau ALFA (sauf l'AXML qui est en USB-C) est en USB Type-A. Un adaptateur est nécessaire.
 
 ## 3. Analyse des spécifications et des puces des cartes réseau ALFA
 
-Au 9 septembre 2026, la gamme de produits de cartes réseau USB sans fil actuels d'ALFA Network est la suivante :
+Au 9 septembre 2026, la gamme de cartes réseau USB sans fil actuelles d'ALFA Network est la suivante :
 
-| Modèle | Niveau Wi-Fi | Puce | Interface | État du pilote Linux |
+| Modèle | Niveau Wi-Fi | Puce | Interface | Pilote Linux intégré (version minimale du kernel) |
 |---|---|---|---|---|
-| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ in-kernel (mt7921u) |
-| AWUS036AXM | Wi-Fi 6E | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ in-kernel (mt7921u) |
-| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ rtw89 / out-of-tree |
-| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ Comme ci-dessus |
-| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ⚠️ out-of-tree (8812au) |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ✅ in-kernel (mt76x0u) |
-| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ in-kernel (mt76x2u)⭐ Recommandé |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ⚠️ out-of-tree (8812au couvert) |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ⚠️ out-of-tree (8821cu) |
+| AWUS036AXML | Wi-Fi 6E (6GHz validé en test) | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ Intégré (mt7921u, 5.18+) |
+| AWUS036AXM | Wi-Fi 6E (selon le fabricant, 6GHz non testé) | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ Intégré (mt7921u, 5.18+) |
+| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ Intégré (rtw89_8852bu, 6.17+) |
+| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ Intégré (rtw89_8852bu, 6.17+) |
+| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ✅ Intégré (rtw88_8812au, 6.13+) |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ✅ Intégré (mt76x0u, 4.19+) |
+| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ Intégré (mt76x2u, 4.19+) |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ✅ Intégré (rtw88_8821au, 6.13+) |
+| AWUS036EACS | Wi-Fi 5 (AC600) + Bluetooth | Realtek RTL8821CU | USB 2.0 | ✅ Intégré (rtw88_8821cu, 6.2+) |
+
+Remarque : le kernel 6.17 testé sur le GX10 intègre les pilotes des 9 modèles ; la version minimale du kernel diffère selon la carte (voir entre parenthèses dans le tableau). Seuls les anciens systèmes dont le kernel est antérieur à la version minimale de la carte nécessitent l'installation des pilotes DKMS maintenus par la communauté.
 
 ## 4. Modèles et SoC applicables
 
@@ -99,134 +103,141 @@ Au 9 septembre 2026, la gamme de produits de cartes réseau USB sans fil actuels
 
 | Catégorie recommandée | Modèle (SoC) | Description |
 |---|---|---|
-| ⭐ Fortement recommandé | AWUS036ACM (MT7612U) | Pilote in-kernel, prêt à l'emploi, AC1200 double bande, supporte AP / Monitor / Injection |
-| ✅ Recommandé | AWUS036ACHM (MT7610U) | Pilote in-kernel, faible consommation d'énergie, AC433 double bande |
-| ✅ Recommandé (Wi-Fi 6E) | AWUS036AXML / AXM (MT7921AUN) | Pilote in-kernel, Wi-Fi 6E, AXML peut être inséré directement en USB-C |
-| ⚠️ Disponible mais nécessite la compilation | AWUS036ACH (RTL8812AU) | Nécessite la compilation de morrownr/8812au (ARM64), fonctionnalités complètes après compilation |
-| ⚠️ Disponible mais nécessite la compilation | AWUS036ACS / EACS | Nécessite la compilation du pilote out-of-tree correspondant |
-| ⚠️ Disponible mais à utiliser avec précaution | AWUS036AX / AXER (RTL8832BU) | Le rtw89 du kernel 6.x pourrait déjà le prendre en charge ; pas besoin de compiler |
+| ⭐ Premier choix pour les tests d'intrusion | AWUS036EACS (RTL8821CU) / AWUS036ACH (RTL8812AU) / AWUS036ACS (RTL8811AU) | Pilote intégré, aucune installation ; injection testée à 100 % sur les deux bandes pour EACS et ACH, ACS à 100 % en 2.4GHz et 96 % en 5GHz ; capture de handshake WPA de bout en bout possible |
+| ✅ Recommandé | AWUS036ACM (MT7612U) | Pilote intégré, aucune installation ; monitor, injection (2.4GHz 63–83 %, 5GHz 76 %), AP et WPA3 fonctionnent |
+| ✅ Recommandé | AWUS036ACHM (MT7610U) | Pilote intégré, aucune installation ; injection 2.4GHz 96–100 %, en 5GHz seule l'injection en broadcast fonctionne ; un AP WPA3 nécessite sae_pwe=0 |
+| ✅ Recommandé (Wi-Fi 6) | AWUS036AX / AXER (RTL8832BU) | Pilote intégré, aucune installation ; bonne réception en monitor, injection fonctionnelle (2.4GHz : AX 96 %, AXER 73 %), AP en 80MHz |
+| ⚠️ Connexion / AP uniquement | AWUS036AXML / AXM (MT7921AUN) | Pilote intégré, aucune installation ; monitor, AP et WPA3 fonctionnent, mais l'injection échoue sur le kernel 6.17 d'origine, donc inadapté aux tests d'intrusion ; l'AXML se branche directement en USB-C |
 
 ### 4.2 Suggestions de scénarios d'utilisation
 
 | Scénario d'utilisation | Modèle recommandé | Description |
 |---|---|---|
-| Laboratoire d'entreprise pour les expériences AI sans fil | AWUS036ACM / ACHM | Pilote in-kernel, stable, sans maintenance, adapté à l'environnement d'entreprise |
-| Tests de pénétration sans fil / Recherche en sécurité | AWUS036ACH ou AWUS036ACM | Les deux supportent Monitor + Injection |
-| Wi-Fi 6E / Fréquence 6GHz | AWUS036AXML / AXM | Pilote in-kernel MT7921AUN |
-| Pas besoin de Wi-Fi externe | — | BrainSphere est intégré avec Wi-Fi 7, l'accès à Internet en général n'a pas besoin d'un Wi-Fi externe |
+| Accès Internet sans fil pour un laboratoire IA d'entreprise | Les 9 modèles conviennent (par exemple AWUS036ACM / ACHM) | Tous utilisent des pilotes intégrés au kernel et fonctionnent dès le branchement |
+| Tests d'intrusion sans fil / Recherche en sécurité | AWUS036EACS / ACH / ACS | Injection testée à 96–100 %, capture de handshake WPA de bout en bout ; évitez AXM / AXML (injection en échec) |
+| Wi-Fi 6 + point d'accès AP | AWUS036AX / AXER | AP 2x2 en 80MHz validé en test |
+| Bande 6GHz | AWUS036AXML | Création d'un AP WPA3 en 6GHz validée en test ; l'AXM a la même puce mais le 6GHz n'a pas été testé |
+| Pas besoin de Wi-Fi externe | — | Le BrainSphere intègre le Wi-Fi 7 ; un accès Internet classique ne nécessite pas de Wi-Fi externe |
 
-## 5. Besoins Environnementaux
+## 5. Besoins environnementaux
 
-### 5.1 Besoins Hardware
+### 5.1 Besoins matériels
 
 | Élément | Besoin |
 |---|---|
-| Adaptateur USB | Adaptateur USB-C vers USB-A ou câble de transmission (sauf pour AXML), recommandé pour prendre en charge USB 3.2 Gen 2×2 |
+| Adaptateur USB | Adaptateur ou câble USB-C vers USB-A (sauf pour l'AXML), de préférence compatible USB 3.2 Gen 2×2 |
 | Alimentation | Alimentation USB-C d'origine ALTOS (180W EPR PD3.1) |
 
-### 5.2 Besoins Logiciels
+### 5.2 Besoins logiciels
 
 | Élément | Besoin |
 |---|---|
-| Version DGX OS | Version en service (kernel 6.x) |
-| Outils de compilation (nécessaire pour les puces Realtek) | build-essential, git, bc, dkms |
-| Outils de gestion sans fil | iw, network-manager (installé par défaut dans DGX OS) |
-| Remarques pour aiGeni | Si vous utilisez l'environnement de conteneurs d'aiGeni, assurez-vous que les appareils USB sont correctement montés dans le conteneur (pour une connexion Internet, il est recommandé de le configurer au niveau de l'OS hôte). |
+| Version DGX OS | Version actuelle (kernel 6.x) |
+| Version du kernel | Le kernel 6.17 (testé sur 6.17.0-1014-nvidia) intègre les pilotes des 9 cartes réseau, aucun outil de compilation n'est nécessaire ; la version minimale diffère selon la carte (ACM / ACHM 4.19, AXM / AXML 5.18, EACS 6.2, ACH / ACS 6.13, AX / AXER 6.17), et seuls les kernels antérieurs à cette version nécessitent les pilotes DKMS de la communauté |
+| Outils de gestion sans fil | iw, network-manager (installés par défaut dans DGX OS) |
+| Remarques pour aiGeni | Si vous utilisez l'environnement de conteneurs d'aiGeni, assurez-vous que les périphériques USB sont correctement montés dans le conteneur (pour la connexion Internet, il est recommandé de la configurer au niveau de l'OS hôte). |
 
 ## 6. Détermination de la compatibilité
 
-### Matrice de compatibilité ALFA modèles actuels × ALTOS BrainSphere GB10 F1
+### Matrice de compatibilité modèles ALFA actuels × ALTOS BrainSphere GB10 F1
 
-| Modèle | Processeur | Mode de pilotage | Détection USB | STA Internet | Mode AP | Monitor | Difficulté d'installation | Évaluation globale |
-|---|---|---|---|---|---|---|---|---|
-| AWUS036ACM | MT7612U | in-kernel（mt76x2u） | ✅ | ✅ | ✅ | ✅ | Sans installation | ⭐ Meilleur |
-| AWUS036ACHM | MT7610U | in-kernel（mt76x0u） | ✅ | ✅ | ✅ | ⚠️ Limité | Sans installation | ✅ Bon |
-| AWUS036AXML | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ Limité | Sans installation | ✅ Bon |
-| AWUS036AXM | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ Limité | Sans installation | ✅ Bon |
-| AWUS036ACH | RTL8812AU | out-of-tree（8812au） | ✅ | ✅ | ✅ | ✅ | Moyen（compilation） | ⚠️ Disponible |
-| AWUS036ACS | RTL8811AU | out-of-tree（8812au） | ✅ | ✅ | ⚠️ | ❌ | Moyen（compilation） | ⚠️ Disponible |
-| AWUS036EACS | RTL8811CU | out-of-tree（8821cu） | ✅ | ⚠️ | ❌ | ❌ | Moyen（compilation） | ⚠️ Disponible |
-| AWUS036AX | RTL8832BU | rtw89 / out-of-tree | ✅ | ⚠️ | ⚠️ | ❌ | Moyen-Haut | ⚠️ Disponible |
-| AWUS036AXER | RTL8832BU | Comme ci-dessus | ✅ | ⚠️ | ⚠️ | ❌ | Moyen-Haut | ⚠️ Disponible |
+| Modèle | Puce | Pilote (intégré au kernel) | Détection USB | STA Internet | Mode AP | Monitor | Injection de paquets | Difficulté d'installation | Évaluation globale |
+|---|---|---|---|---|---|---|---|---|---|
+| AWUS036EACS | RTL8821CU | rtw88_8821cu | ✅ | ✅ | ✅ | ✅ | ✅ 100 % sur les deux bandes | Sans installation | ⭐ Meilleur |
+| AWUS036ACH | RTL8812AU | rtw88_8812au | ✅ | ✅ | ✅ | ✅ | ✅ 100 % sur les deux bandes | Sans installation | ⭐ Meilleur |
+| AWUS036ACS | RTL8811AU | rtw88_8821au | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 100 % / 5G 96 % | Sans installation | ⭐ Meilleur |
+| AWUS036ACM | MT7612U | mt76x2u | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 63–83 % / 5G 76 % | Sans installation | ✅ Bon |
+| AWUS036ACHM | MT7610U | mt76x0u | ✅ | ✅ | ✅ | ✅ | ⚠️ 2.4G 96–100 % / 5G broadcast uniquement | Sans installation | ✅ Bon |
+| AWUS036AX | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ Bonne réception | ✅ 2.4G 96 % / 5G fonctionnel | Sans installation | ✅ Bon |
+| AWUS036AXER | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ Bonne réception | ✅ 2.4G 73 % / 5G fonctionnel | Sans installation | ✅ Bon |
+| AWUS036AXML | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ Réception faible | ❌ Échec | Sans installation | ⚠️ Connexion / AP uniquement |
+| AWUS036AXM | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ Réception faible | ❌ Échec | Sans installation | ⚠️ Connexion / AP uniquement |
 
-Critère de détermination : ALTOS BrainSphere GB10 F1 et DGX Spark partagent la même plateforme matérielle GB10 et le même DGX OS (kernel 6.x, aarch64), la détermination de la compatibilité est complètement identique à celle de DGX Spark. Altos aiGeni est un logiciel d'application, il n'affecte pas la compatibilité des pilotes.
+Critère de détermination : tests sur machine réelle du 16 au 18 novembre 2026 sur l'ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17.0-1014-nvidia), avec notre propre réseau Wi-Fi et nos propres téléphones comme cibles. L'ALTOS BrainSphere GB10 F1 utilise la même puce GB10 et la même famille de kernels NVIDIA ; le comportement attendu est identique, mais les tests ont été effectués uniquement sur le GX10 et l'ALTOS BrainSphere GB10 F1 n'a pas été testé individuellement. Données complètes : [Tableau des tests ARM64 des 9 cartes réseau ALFA](/fr/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/).
 
-## 7. Détails ultra détaillés des étapes de configuration
+## 7. Guide ultra détaillé des étapes de configuration
 
-Les étapes d'installation de l'ALTOS BrainSphere GB10 F1 sont identiques à celles de l'installation de NVIDIA DGX Spark. Voici une version raccourcie ; pour les étapes complètes, consultez la section 7 de l'article [ALFA 无线网卡是否支持 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/).
+Les étapes d'installation de l'ALTOS BrainSphere GB10 F1 devraient être identiques à celles du NVIDIA DGX Spark (étapes validées sur le GX10). Voici une version abrégée ; pour les étapes complètes, consultez la section 7 de l'article [Les cartes réseau sans fil ALFA sont-elles compatibles avec le NVIDIA DGX Spark ?](/fr/blog/alfa-nvidia-dgx-spark-compatibility/).
 
-### 7.1 Modèle de puce MediaTek (prêt à l'emploi)
+### 7.1 Modèles à puce MediaTek (AWUS036ACM / ACHM / AXM / AXML)
 
-- Utilisez un adaptateur USB-C to USB-A (AXML peut être inséré directement) pour insérer la carte réseau ALFA dans le port USB-C du BrainSphere
+- Utilisez un adaptateur USB-C vers USB-A (l'AXML se branche directement) pour insérer la carte réseau ALFA dans un port USB-C du BrainSphere
 - Confirmez la détection : `lsusb`
-- Confirmez l'interface : `ip link show` (wlan0 devrait apparaître automatiquement)
+- Confirmez l'interface : `ip link show` (une interface commençant par wlx devrait apparaître automatiquement)
 - Connectez-vous au WiFi : `nmcli dev wifi connect "SSID" password "mot de passe"`
 
-### 7.2 Modèle de puce Realtek (nécessite la compilation)
+### 7.2 Modèles à puce Realtek (AWUS036ACH / ACS / EACS / AX / AXER)
 
-Prenez AWUS036ACH (RTL8812AU) comme exemple :
+Le kernel 6.17 (version testée sur le GX10) intègre les pilotes de tous les modèles Realtek ; les étapes sont identiques à celles des modèles MediaTek, sans compilation (versions minimales : EACS 6.2, ACH / ACS 6.13, AX / AXER 6.17) :
 
 ```bash
-# 1. Installez les outils de compilation
-sudo apt update && sudo apt install -y build-essential git bc dkms
+# 1. Vérifiez la version du kernel (à partir de 6.17, les pilotes de tous les modèles Realtek sont intégrés ; testé sur GX10 en 6.17.0-1014-nvidia)
+uname -r
 
-# 2. Téléchargez et compilez le pilote
-git clone https://github.com/morrownr/8812au-20210820.git
-cd 8812au-20210820
-# Vérifiez que CONFIG_PLATFORM_ARM64 = y est confirmé dans Makefile
-make
-sudo make install
-sudo modprobe 8812au
-
-# 3. Confirmez l'interface après l'insertion de la carte réseau
+# 2. Après avoir branché la carte réseau, vérifiez que le pilote est chargé automatiquement
+lsusb
+lsmod | grep -E "rtw88|rtw89"
 ip link show
 
-# 4. Connectez-vous au WiFi
+# 3. Connectez-vous au WiFi
 nmcli dev wifi connect "SSID" password "mot de passe"
 ```
 
+Modules chargés automatiquement pour chaque modèle : ACH → `rtw88_8812au`, ACS → `rtw88_8821au`, EACS → `rtw88_8821cu`, AX / AXER → `rtw89_8852bu`. Ce n'est que si `uname -r` est inférieur à la version minimale de la carte (anciens systèmes) qu'il faut installer les pilotes DKMS maintenus par la communauté (par exemple morrownr/8812au-20210820 pour le RTL8812AU).
+
 ### 7.3 Mode écoute (test d'intrusion)
+
+⚠️ N'effectuez des tests d'écoute et d'injection que sur vos propres réseaux ou sur des réseaux pour lesquels vous disposez d'une autorisation.
 
 ```bash
 sudo apt install -y aircrack-ng
-sudo ip link set wlan0 down
-sudo iw dev wlan0 set type monitor
-sudo ip link set wlan0 up
-sudo aireplay-ng --test wlan0
+IF=wlx00c0cafe0000   # remplacez par le nom d'interface trouvé avec ip link
+sudo ip link set $IF down
+sudo iw dev $IF set type monitor
+sudo ip link set $IF up
+sudo aireplay-ng --test $IF
 ```
 
-### 7.4 Utilisation du WiFi dans le conteneur aiGeni (avancé)
+- N'exécutez pas `airmon-ng check kill` : cette commande arrête NetworkManager et coupe la connexion réseau de la machine.
+- Sur le kernel 6.17 d'origine, `aireplay-ng --test` échoue avec les AWUS036AXM / AXML (Found 0 APs) : impossible d'effectuer une deauth ou de capturer un handshake.
+- hcxdumptool 8.x affiche `failed to arm` avec les 9 cartes sauf l'EACS en 2,4 GHz (le pilote ne prend pas en charge l'active monitor) ; utilisez plutôt airodump-ng + aireplay-ng.
 
-Si vous souhaitez utiliser la carte réseau ALFA dans le conteneur Docker d'Altos aiGeni :
+### 7.4 Utilisation du WiFi dans un conteneur aiGeni (avancé)
 
-1. Terminez d'installer le pilote et de vous connecter au WiFi sur l'OS hôte (DGX OS)
+Si vous souhaitez utiliser la carte réseau ALFA dans un conteneur Docker d'Altos aiGeni :
+
+1. Vérifiez d'abord sur l'OS hôte (DGX OS) que le pilote est chargé automatiquement et connectez-vous au WiFi
 2. Lancez le conteneur avec `--network=host` ou montez l'interface réseau correspondante
-3. Il est recommandé de terminer les connexions Internet sur l'OS hôte, et le conteneur utilise `--network=bridge` pour partager le réseau
+3. Il est recommandé d'établir la connexion Internet sur l'OS hôte, le conteneur utilisant `--network=bridge` pour partager le réseau
 
-## 8. Erreurs Courantes et Solutions
+## 8. Erreurs courantes et solutions
 
-| Symptômes | Causes Probables | Solutions |
+| Symptômes | Causes probables | Solutions |
 |---|---|---|
-| `lsusb` ne voit pas la carte réseau ALFA | Adaptateur USB-C défectueux / Seulement en charge | Changer un adaptateur USB 3.2 Gen 2×2 compatible avec la transmission de données ; essayer un autre port USB-C |
-| Interface wlan du processeur MediaTek absente | Module non chargé automatiquement / Firmware manquant | `sudo modprobe mt76x2u` ; `sudo apt install linux-firmware` ; vérifier `dmesg | grep mt76` |
-| Échec de la compilation du pilote Realtek | Paramètres de compilation croisée incorrects | Vérifier la compilation native sur BrainSphere ; le Makefile ne devrait pas définir CROSS_COMPILE |
-| Vitesse WiFi lente | Adaptateur ne supporte que USB 2.0 | Changer un adaptateur USB 3.2 Gen 2×2 |
-| Conflit entre le Wi-Fi intégré et externe | Conflit de routeur | `sudo nmcli radio wifi off` pour désactiver le Wi-Fi intégré avant d'utiliser le Wi-Fi externe |
-| Impossible de voir le WiFi dans le conteneur aiGeni | Problème de mode réseau du conteneur | Utiliser `--network=host` ; ou permettre au conteneur de partager le réseau après la connexion sur l'OS hôte |
+| `lsusb` ne voit pas la carte réseau ALFA | Adaptateur USB-C défectueux / charge uniquement | Utiliser un adaptateur USB 3.2 Gen 2×2 compatible avec la transmission de données ; essayer un autre port USB-C |
+| Interface wlan absente pour la puce MediaTek | Module non chargé automatiquement / firmware manquant | `sudo modprobe mt76x2u` ; `sudo apt install linux-firmware` ; vérifier `dmesg \| grep mt76` |
+| Aucune interface wlan après avoir branché une carte Realtek | Kernel antérieur à la version minimale de la carte (EACS 6.2, ACH / ACS 6.13, AX / AXER 6.17), sans pilote correspondant intégré | Vérifier la version avec `uname -r` ; mettre à jour le kernel, ou installer les pilotes DKMS de la communauté sur l'ancien kernel |
+| Plus aucun signal détecté après plusieurs bascules monitor / AP | Blocage de la réception (RX stall) | Débrancher et rebrancher la carte pour forcer une nouvelle énumération USB |
+| Pas d'interface wlx après avoir rebranché l'EACS / l'AXML | Blocage du probe du périphérique composite Bluetooth + Wi-Fi | Rebrancher sur un autre port USB |
+| Vitesse WiFi lente | Adaptateur limité à l'USB 2.0 | Utiliser un adaptateur USB 3.2 Gen 2×2 |
+| Conflit entre le Wi-Fi intégré et externe | Conflit de routage | `sudo nmcli radio wifi off` pour désactiver le Wi-Fi intégré avant d'utiliser le Wi-Fi externe |
+| Impossible de voir le WiFi dans le conteneur aiGeni | Problème de mode réseau du conteneur | Utiliser `--network=host` ; ou laisser le conteneur partager le réseau après la connexion sur l'OS hôte |
 | Impossible d'utiliser la bande 6GHz | Limitation du domaine réglementaire | `sudo iw reg set US` ; vérifier les dernières réglementations |
 
-## 9. Conditions Connues
+## 9. Limitations connues
 
-- Nécessité de convertisseur USB Type-C : tous les cartes réseaux ALFA, sauf AXML, nécessitent un adaptateur USB-C to USB-A
-- Nécessité de traduction manuelle pour les puces Realtek : RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU ne sont pas intégrés dans le mainline
-- Possibilité de conflit avec Wi-Fi intégré : BrainSphere intègre déjà Wi-Fi 7 + BT 5.4
+- Adaptateur USB Type-C nécessaire : toutes les cartes réseau ALFA, sauf l'AXML, nécessitent un adaptateur USB-C vers USB-A
+- Échec de l'injection sur les modèles MT7921 : sur le kernel 6.17 d'origine, les AWUS036AXM / AXML échouent à l'injection de paquets et ne peuvent ni effectuer de deauth ni capturer de handshake ; les modes monitor, AP et WPA3 fonctionnent. La cause principale est une régression du chanctx de mac80211 apparue après le kernel 6.16 ; les pilotes corrigés par la communauté restent limités en débit
+- Périmètre des tests : tests effectués uniquement sur l'ASUS GX10 (kernel 6.17.0-1014-nvidia) ; l'ALTOS BrainSphere GB10 F1 n'a pas été testé individuellement, mais le comportement attendu est identique
+- hcxdumptool inutilisable : toutes les cartes sauf l'EACS en 2,4 GHz affichent `failed to arm` ; utilisez plutôt airodump-ng + aireplay-ng
+- Possibilité de conflit avec le Wi-Fi intégré : le BrainSphere intègre déjà le Wi-Fi 7 + BT 5.4
 - Configuration manuelle du mode AP : DGX OS est par défaut un environnement de développement
 - Limitations réglementaires pour la bande 6GHz : la disponibilité du Wi-Fi 6E dépend des zones réglementaires
-- Mise à jour des pilotes dépendante de l'upstream : les pilotes out-of-tree pour Realtek sont maintenus par la communauté, et nécessitent une recompilation après une mise à jour du kernel
-- Isolation de conteneurs aiGeni : si vous utilisez WiFi dans un conteneur aiGeni, veillez à la gestion des espaces de noms réseau et des montage de périphériques ; il est recommandé de gérer le WiFi au niveau du système d'exploitation hôte
-- Différences de logiciel Altos n'affectent pas la compatibilité : aiGeni est une plateforme d'application, elle n'affecte pas la compatibilité des pilotes USB WiFi pour le kernel
+- Anciens kernels : sur les systèmes dont le kernel est antérieur à la version minimale de la carte (EACS 6.2, ACH / ACS 6.13, AX / AXER 6.17), seuls les modèles Realtek nécessitent les pilotes DKMS de la communauté, qui doivent être recompilés après chaque mise à jour du kernel
+- Isolation des conteneurs aiGeni : si vous utilisez le WiFi dans un conteneur aiGeni, veillez à la gestion des espaces de noms réseau et au montage des périphériques ; il est recommandé de gérer le WiFi au niveau du système d'exploitation hôte
+- Les différences logicielles d'Altos n'affectent pas la compatibilité : aiGeni est une plateforme applicative, elle n'affecte pas la compatibilité des pilotes USB WiFi du kernel
 
-Conditions de réfutation : les jugements ci-dessus sont basés sur DGX OS (basé sur Ubuntu, kernel 6.x). Si Altos passe à un OS maison non basé sur Ubuntu à l'avenir, ou si le kernel de DGX OS change de version principale, les jugements in-kernel / out-of-tree devront être réévalués.
+Conditions de réfutation : les conclusions ci-dessus reposent sur DGX OS (basé sur Ubuntu, kernel 6.x). Si Altos passe à l'avenir à un OS maison non basé sur Ubuntu, ou si la version majeure du kernel de DGX OS change, la conclusion sur les pilotes intégrés devra être vérifiée par de nouveaux tests.
 
 ## 10. Sources de référence URL
 
@@ -234,10 +245,11 @@ Conditions de réfutation : les jugements ci-dessus sont basés sur DGX OS (bas�
 |---|---|---|---|---|
 | Fiche produit officielle ALTOS BrainSphere GB10 F1 (PDF) | Spécifications matérielles (170W / 50mm / configuration USB) | https://www.altoscomputing.com/filepic/pdf/Altos_BrainSphere_GB10_F1_Product_Sheet_TW.pdf | ✅ Vérifié | 2026-09-03 |
 | Site officiel d'Altos Computing | Informations sur le produit BrainSphere GB10 F1 | https://www.altoscomputing.com/en-Us | ✅ Vérifié | 2026-09-03 |
-| Page officielle NVIDIA DGX Spark | Informations sur la plate-forme GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Vérifié | 2026-09-03 |
+| Page officielle NVIDIA DGX Spark | Informations sur la plateforme GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Vérifié | 2026-09-03 |
 | morrownr/8812au GitHub | Pilote Linux pour RTL8812AU | https://github.com/morrownr/8812au-20210820 | ✅ Vérifié | 2026-09-03 |
-| Vue d'ensemble des produits ALFA Network (Yopitek) | Spécifications des produits actuels ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Vérifié | 2026-09-03 |
+| Vue d'ensemble des produits ALFA Network (Yopitek) | Spécifications des produits actuels ALFA | /fr/products/alfa/ | ✅ Vérifié | 2026-09-03 |
+| Tableau des tests ARM64 des 9 cartes réseau ALFA (Yopitek) | Tests sur machine réelle ASUS GX10 + Ubuntu 24.04 ARM64 | https://yupitek.com/fr/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/ | ✅ Testé | 2026-11-18 |
 
-Articles associés : [Est-ce que la carte réseau sans fil ALFA est compatible avec NVIDIA DGX Spark ?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Est-ce que la carte réseau sans fil ALFA est compatible avec ASUS Ascent GX10 ?](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[Est-ce que la carte réseau sans fil ALFA est compatible avec GIGABYTE AI TOP ATOM ?](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[Est-ce que la carte réseau sans fil ALFA est compatible avec MSI EdgeXpert ?](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
+Articles associés : [Les cartes réseau sans fil ALFA sont-elles compatibles avec le NVIDIA DGX Spark ?](/fr/blog/alfa-nvidia-dgx-spark-compatibility/) | [Les cartes réseau sans fil ALFA sont-elles compatibles avec l'ASUS Ascent GX10 ?](/fr/blog/alfa-asus-ascent-gx10-compatibility/) | [Les cartes réseau sans fil ALFA sont-elles compatibles avec le GIGABYTE AI TOP ATOM ?](/fr/blog/alfa-gigabyte-ai-top-atom-compatibility/) | [Les cartes réseau sans fil ALFA sont-elles compatibles avec le MSI EdgeXpert ?](/fr/blog/alfa-msi-edgexpert-compatibility/)
 
-Déclaration de non-responsabilité : La détermination de la compatibilité de cet article est basée sur le NVIDIA DGX OS préinstallé sur ALTOS BrainSphere GB10 F1 (kernel 6.x, aarch64). BrainSphere et DGX Spark partagent la même plate-forme matérielle, la compatibilité est complètement identique. Altos aiGeni est un logiciel d'application, il n'affecte pas la compatibilité du pilote. Les pilotes de puce MediaTek sont du Linux mainline, leur stabilité est élevée ; les pilotes de puce Realtek sont maintenus par la communauté. BrainSphere est intégré avec Wi-Fi 7, l'ALFA externe est principalement utilisé pour des tests de pénétration ou des besoins spéciaux de puce.
+Déclaration de non-responsabilité : les conclusions de compatibilité de cet article reposent sur les tests sur machine réelle effectués en novembre 2026 sur l'ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17.0-1014-nvidia). L'ALTOS BrainSphere GB10 F1 utilise la même puce GB10 et la même famille de kernels NVIDIA que le GX10 ; le comportement attendu est identique, mais il n'a pas été testé individuellement. Altos aiGeni est un logiciel applicatif, il n'affecte pas la compatibilité des pilotes. Le kernel 6.17 testé sur le GX10 intègre les pilotes des 9 cartes réseau ALFA (la version minimale diffère selon la carte) ; seuls les kernels antérieurs à la version minimale de la carte nécessitent les pilotes DKMS de la communauté. Le BrainSphere intègre le Wi-Fi 7 ; une carte ALFA externe sert principalement aux tests d'intrusion ou aux besoins de puces spécifiques. L'écoute et l'injection ne doivent être effectuées que sur vos propres réseaux ou sur des réseaux pour lesquels vous disposez d'une autorisation.

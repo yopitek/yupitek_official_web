@@ -22,8 +22,6 @@ faq:
     answer: "Yes. The DW5811e is Dell's rebranded EM7455, built on the same Qualcomm MDM9230 chipset."
 ---
 
-# Sierra EM7455 Full Review: Why It Is the Favorite Sierra Card for Makers and Labs
-
 {{< alert >}}
 Yopitek provides Sierra Wireless / Semtech product information and technical content; not an official authorized distributor, for technical reference only.
 {{</alert >}}

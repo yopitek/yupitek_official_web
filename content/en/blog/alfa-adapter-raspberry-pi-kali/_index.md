@@ -3,7 +3,7 @@ title: "ALFA WiFi Adapter on Raspberry Pi with Kali Linux: Setup Guide"
 description: "Install ALFA USB WiFi adapters on Raspberry Pi running Kali Linux ARM64. Covers AWUS036ACH RTL8812AU driver compile, monitor mode, and portable penetration testing setup."
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Which Raspberry Pi is best for penetration testing?"
     answer: "The Raspberry Pi 5 (4 GB or 8 GB) is the best choice. Pi 4 (4 GB+) also works well. Pi 3B+ lacks the speed for real-time packet capture."
@@ -169,7 +169,7 @@ sudo modprobe mt7921u
 ip link show
 ```
 
-If `lsusb` shows a MediaTek device and `ip link show` lists a new wireless interface, the adapter is ready. Monitor mode support on the MT7921AUN has improved significantly since kernel 5.18 but may be less reliable than RTL8812AU-based adapters for certain packet injection tests. For maximum compatibility with older pentesting workflows, the AWUS036ACH remains the stronger choice.
+If `lsusb` shows a MediaTek device and `ip link show` lists a new wireless interface, the adapter is ready. Monitor mode support on the MT7921AUN has improved significantly since kernel 5.18 but may be less reliable than RTL8812AU-based adapters for certain packet injection tests. For maximum compatibility with older pentesting workflows, the AWUS036ACH remains the stronger choice. Note that injection depends on the kernel: community reports of working injection exist for kernels before 6.16, but on stock kernel 6.16 and later (tested on 6.17) the AXML fails the packet-injection test (`aireplay-ng --test`: Found 0 APs / No Answer), so deauth and handshake capture are not possible. The cause is a mac80211 chanctx regression, not a chip limitation; patched community drivers can restore injection, but the firmware still locks the rate (1/6 Mbps, no HT/VHT injection). Monitor mode, AP and WPA3 are unaffected. If you need injection, choose the AWUS036ACH or AWUS036EACS instead.
 
 ---
 

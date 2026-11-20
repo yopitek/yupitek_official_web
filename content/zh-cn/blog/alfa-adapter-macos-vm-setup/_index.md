@@ -3,7 +3,7 @@ title: "在 macOS 使用 ALFA WiFi 网卡：VMware Fusion 与 Parallels USB 直�
 description: "如何在 macOS 使用 ALFA USB WiFi 网卡。涵盖 macOS 原生支持、VMware Fusion USB 直通、Parallels Desktop，以及在 Kali Linux 启用监听模式与数据包注入。"
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -190,7 +190,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**M 芯片 Mac 推荐：** 如果你是专门为在 Apple Silicon Mac 上的 VM 中使用而购买 ALFA 网卡，**AWUS036AXML（MT7921AUN）** 是更好的选择。其内置内核驱动程序完全省去 DKMS 编译步骤，并在 ARM64 Kali 上可靠运作。
+**M 芯片 Mac 推荐：** 如果你是专门为在 Apple Silicon Mac 上的 VM 中使用而购买 ALFA 网卡，**AWUS036AXML（MT7921AUN）** 是更好的选择。其内置内核驱动程序完全省去 DKMS 编译步骤，并在 ARM64 Kali 上可靠运作。但注入需视内核版本而定：kernel 6.16 以前的社区反馈中注入可用；在 stock kernel 6.16 以上（实测 6.17）上，AXML 的封包注入测试未通过（`aireplay-ng --test` 显示 Found 0 APs / No Answer），因此无法 deauth 或抓取 handshake。原因是 mac80211 chanctx 回归，并非芯片先天限制；社区 patched 驱动可让注入运作，但固件仍锁定速率（1/6 Mbps，无法注入 HT/VHT）。monitor、AP、WPA3 不受影响。需要注入请改用 AWUS036ACH 或 AWUS036EACS。
 
 ---
 

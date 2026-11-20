@@ -10,7 +10,7 @@ series_order: 9
 description: "終極 Alfa USB WiFi 網路卡 Linux 安裝指南，適用於中國大陸使用者。涵蓋 Kali Linux、Ubuntu 22/24、Debian、Raspberry Pi，系統套件使用境內映像站，驅動原始碼取自已驗證的 GitHub 儲存庫。"
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "在中國安裝 Alfa WiFi 網路卡需要翻牆嗎？"
     answer: "不一定。系統套件使用國內映像站（中科大、阿里雲、清華等）安裝；未內建於核心的驅動則從 morrownr 已驗證的 GitHub 儲存庫複製原始碼。若 GitHub 速度較慢，請使用你信任的代理或映像站。"
@@ -19,7 +19,7 @@ faq:
   - question: "哪款 Alfa 網路卡支援 WiFi 6？"
     answer: "AWUS036AX 和 AWUS036AXER 採用 RTL8832BU 晶片支援 WiFi 6，Ubuntu 24.04 免驅即用。"
   - question: "哪款 Alfa 網路卡支援 WiFi 6E？"
-    answer: "AWUS036AXM 和 AWUS036AXML 採用 MT7921AUN 晶片支援 WiFi 6E 三頻段。"
+    answer: "AWUS036AXML 採用 MT7921AUN 晶片，6 GHz 已於本機實測可用；AWUS036AXM 依規格支援 Wi-Fi 6E，但 6 GHz 未實測。"
   - question: "樹莓派上使用 Alfa 網路卡需要注意什麼？"
     answer: "務必搭配外接供電 USB Hub 供電，並刷 Kali ARM64 版本以獲得最佳驅動支援。"
 ---
@@ -557,7 +557,7 @@ Found 1 AP
 
 ---
 
-## 虛擬介面（VIF）支援
+## 虛擬介面（VIF）支援 {#虛擬介面-vif-支援}
 
 VIF（虛擬介面功能）允許在單一網路卡上同時執行多個介面，例如：
 
@@ -570,7 +570,7 @@ VIF（虛擬介面功能）允許在單一網路卡上同時執行多個介面�
 |--------|---------|------|
 | **MT7612U（AWUS036ACM）** | ✅ 完整原生支援 | VIF 工作流程的最佳選擇 |
 | **RTL8812AU（AWUS036ACH）** | ⚠️ 有限 | 無法同時執行受管模式和監控模式 |
-| **RTL8832BU（AX 系列）** | ⚠️ 有限 | 請查閱特定型號文件 |
+| **RTL8832BU（AX 系列）** | ✅ STA+AP 可用 | 核心內建 rtw89_8852bu（kernel 6.17+）實測可用；舊 kernel 的社群 DKMS 驅動不支援 VIF |
 
 ### 建立虛擬介面（MT7612U）
 

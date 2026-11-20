@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ALFAアダプターはmacOSでネイティブにモニターモードを使えますか？"
     answer: "使えません。macOSのCoreWLANとIO80211Familyアーキテクチャはサードパーティアダプターのモニターモードやパケットインジェクションをサポートしておらず、VMでKali Linuxを実行しUSBパススルーを使用する必要があります。"
@@ -184,7 +184,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**Mチップ Mac向け推奨：** Apple Silicon Mac上のVMで使用するためにALFAアダプターを購入するなら、**AWUS036AXML（MT7921AUN）** がより良い選択です。カーネル内蔵ドライバーによりDKMSコンパイル手順が不要で、ARM64 Kaliで確実に動作します。
+**Mチップ Mac向け推奨：** Apple Silicon Mac上のVMで使用するためにALFAアダプターを購入するなら、**AWUS036AXML（MT7921AUN）** がより良い選択です。カーネル内蔵ドライバーによりDKMSコンパイル手順が不要で、ARM64 Kaliで確実に動作します。ただしインジェクションはカーネルバージョンに依存します。kernel 6.16 以前ではインジェクションが動作するというコミュニティ報告がありますが、stock kernel 6.16 以降（6.17 で実測）では AXML のパケットインジェクションテストは失敗し（`aireplay-ng --test` は Found 0 APs / No Answer）、deauth やハンドシェイク取得はできません。原因は mac80211 chanctx のリグレッションでチップ固有の制限ではなく、コミュニティの patched ドライバーでインジェクションは動作しますが、ファームウェアがレートを固定しており（1/6 Mbps、HT/VHT のインジェクション不可）。モニターモード、AP、WPA3 には影響しません。インジェクションが必要な場合は AWUS036ACH または AWUS036EACS をお選びください。
 
 ---
 

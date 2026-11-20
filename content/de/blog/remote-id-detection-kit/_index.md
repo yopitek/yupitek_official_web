@@ -7,10 +7,10 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Remote-ID", "ALFA-Network", "AWUS036ACH", "Drohnenerkennung", "Counter-UAV", "ASTM-F3411", "EN-4709-002", "opendroneid", "unix_rid_capture", "DJI-OcuSync", "Raspberry-Pi"]
 author: "benny-lai"
-lastmod: 2026-07-27
+lastmod: 2026-11-20
 faq:
   - question: "Warum ist der AWUS036ACH die erste Wahl statt neuerer Wi-Fi-6/6E-Adapter?"
-    answer: "Remote-ID-Erfassung benötigt stabilen Monitor Mode und rohe Paketinjektion. Der ausgereifteste Community-Treiber ist derzeit Realtek rtl88xxau (RTL8812AU / RTL8814AU). Wi-Fi-6/6E-Chipsätze (MediaTek MT7921AUN, Realtek RTL8832BU) haben in der gängigen Penetrations-/Sniffing-Toolchain keine Injektionstreiber. Der AWUS036ACH ist doppelt von der Community und diesem Kit verifiziert."
+    answer: "Remote-ID-Erfassung benötigt stabilen Monitor Mode und rohe Paketinjektion. Der ausgereifteste Community-Treiber ist derzeit Realtek rtl88xxau (RTL8812AU / RTL8814AU). Bei den Wi-Fi-6/6E-Chipsätzen besteht der MediaTek MT7921AUN (AWUS036AXM / AXML) den Injektionstest auf dem Standard-Kernel 6.17 nicht, während der Realtek RTL8832BU (AWUS036AX / AXER) mit dem In-Kernel-Treiber rtw89_8852bu ab Kernel 6.17 injizieren kann (GX10-Test, 2,4 GHz: AX 96 %, AXER 73 %); mit diesem Kit wurde er jedoch nicht verifiziert. Der AWUS036ACH ist doppelt von der Community und diesem Kit verifiziert."
   - question: "Ist der nRF52840 zwingend erforderlich?"
     answer: "Nur für Wi-Fi-Remote-ID (NAN / Beacon) – nein, der AWUS036ACH reicht aus. Um gleichzeitig Bluetooth-5-Long-Range-Broadcasts zu empfangen, brauchst du den nRF52840 (mit Sniffer-Firmware geflasht). Wir empfehlen, dieses Modul für vollständige Abdeckung beizulegen."
   - question: "Kann dieses Kit DJI-Drohnen decodieren?"
@@ -23,14 +23,14 @@ faq:
 > Yopitek Technik-Team | Offizieller ALFA-Network-Distributor, Taiwan
 
 {{< tldr >}}
-Das Remote-ID-Erkennungskit nutzt den Monitor Mode des **ALFA AWUS036ACH**-Adapters, um die Identitäts- und Positionsinformationen passiv zu empfangen, die Drohnen gesetzlich ausstrahlen müssen – stell dir das wie ein „Kennzeichenscanner" für den Luftraum vor. Es gibt Sicherheitsverantwortlichen ein legales, kostengünstiges Werkzeug für die Lageerkennung.
+Das Remote-ID-Erkennungskit nutzt den Monitor Mode des **ALFA AWUS036ACH**-Adapters, um die Identitäts- und Positionsinformationen passiv zu empfangen, die Drohnen gesetzlich ausstrahlen müssen – stell dir das wie ein „Kennzeichenscanner“ für den Luftraum vor. Es gibt Sicherheitsverantwortlichen ein legales, kostengünstiges Werkzeug für die Lageerkennung.
 {{< /tldr >}}
 
 ---
 
 ## 1. Warum du ein Remote-ID-Erkennungskit brauchst
 
-Die Drohnenregulierung weltweit ist in die Ära der „Broadcast-Identität" eingetreten. Standards schreiben vor, dass Drohnen während des Flugs kontinuierlich folgende Informationen ausstrahlen müssen:
+Die Drohnenregulierung weltweit ist in die Ära der „Broadcast-Identität“ eingetreten. Standards schreiben vor, dass Drohnen während des Flugs kontinuierlich folgende Informationen ausstrahlen müssen:
 
 | Broadcast-Feld | Beschreibung |
 |---|---|
@@ -44,7 +44,7 @@ Die Ausstrahlung erfolgt über zwei Arten von Funkträgern:
 - **Bluetooth**: BT4 Legacy Advertising, BT5 Long Range (Extended Advertising)
 - **Wi-Fi**: NAN (Wi-Fi Aware, 2,4 / 5 GHz), Beacon (2,4 / 5 GHz)
 
-Für Sicherheitsverantwortliche an Flughäfen, in Industriegebieten, Gefängnissen und bei Großveranstaltungen ist der **passive Empfang dieser öffentlichen Ausstrahlungen** (im Wesentlichen das „Kennzeichen" einer Drohne) eine konforme und kostengünstige Methode zur Lageerkennung – kein aktiver Eingriff erforderlich.
+Für Sicherheitsverantwortliche an Flughäfen, in Industriegebieten, Gefängnissen und bei Großveranstaltungen ist der **passive Empfang dieser öffentlichen Ausstrahlungen** (im Wesentlichen das „Kennzeichen“ einer Drohne) eine konforme und kostengünstige Methode zur Lageerkennung – kein aktiver Eingriff erforderlich.
 
 {{< alert "triangle-exclamation" >}}
 **Rechtlicher Hinweis**: Alle in diesem Guide beschriebenen Methoden sind **passiver Empfang öffentlich ausgestrahlter Daten**. Aktives Stören (Jamming) ist in allen Rechtsordnungen streng reguliert und weder Teil dieses Kits noch empfehlenswert.
@@ -58,7 +58,7 @@ Nach der Bewertung mehrerer technischer Ansätze haben wir uns für eine Konfigu
 
 - Der AWUS036ACH verwendet den **Realtek RTL8812AU**-Chipsatz, Dualband 2,4 + 5 GHz (802.11ac), 2×2 MIMO, zwei abnehmbare 5-dBi-Hochgewinn-RP-SMA-Antennen und reichlich USB-3.0-Bandbreite.
 - Der von der Community gepflegte Treiber `rtl88xxau` bietet stabilen **Monitor Mode** und **rohe Paketinjektion (raw packet injection)** – die Voraussetzung für den Empfang von Wi-Fi-RID-Beacon-/NAN-Frames.
-- Entscheidend: Die README von `sxjack/unix_rid_capture` **gibt explizit an: „Getestet mit einem rtl8812au-basierten WiFi-Dongle, einem nRF52840-Dongle und einem Raspberry Pi 3B"**. Die Community hat die Hardwarevalidierung bereits für uns durchgeführt. Ihre Architektur für ein productisiertes Kit zu reproduzieren, ist der Weg mit dem geringsten Risiko.
+- Entscheidend: Die README von `sxjack/unix_rid_capture` **gibt explizit an: „Getestet mit einem rtl8812au-basierten WiFi-Dongle, einem nRF52840-Dongle und einem Raspberry Pi 3B“**. Die Community hat die Hardwarevalidierung bereits für uns durchgeführt. Ihre Architektur für ein productisiertes Kit zu reproduzieren, ist der Weg mit dem geringsten Risiko.
 
 ---
 
@@ -267,10 +267,10 @@ Wenn du neu im Bereich Drohnenregulierung und Counter-UAV-Technologie bist, hier
 
 | Begriff | Einfache Erklärung |
 |---|---|
-| **Remote ID** | Das „digitale Kennzeichen" einer Drohne. Vorschriften verlangen, dass Drohnen während des Flugs kontinuierlich ihre Identität, Position und andere Informationen ausstrahlen, damit Personen am Boden – insbesondere Aufsichtsbehörden – sehen können, „wem diese Drohne gehört und wohin sie fliegt". |
+| **Remote ID** | Das „digitale Kennzeichen“ einer Drohne. Vorschriften verlangen, dass Drohnen während des Flugs kontinuierlich ihre Identität, Position und andere Informationen ausstrahlen, damit Personen am Boden – insbesondere Aufsichtsbehörden – sehen können, „wem diese Drohne gehört und wohin sie fliegt“. |
 | **ASTM F3411 / EN 4709-002** | Die US-amerikanischen bzw. EU-Standards für Remote-ID-Broadcast-Spezifikationen. Sie legen fest, welche Informationen ausgestrahlt werden müssen und wie sie formatiert sein müssen, um die Interoperabilität zwischen verschiedenen Drohnenmarken und Erkennungsgeräten zu gewährleisten. |
-| **Passive Erkennung (Passive Detection)** | Nur „zuhören" bei öffentlich ausgestrahlten Nachrichten. Es werden keine aktiven Signale gesendet, um die Drohne zu stören oder anzugreifen. Rechtlich völlig anders zu bewerten als aktives Stören (Jamming). |
-| **Monitor Mode** | Ein Zustand, in dem ein WLAN-Adapter aufhört, sich mit Access Points zu verbinden, und stattdessen „passiv" alle Funkpakete in der Luft mithört – die Voraussetzung für den Empfang von Remote-ID-Broadcasts. |
+| **Passive Erkennung (Passive Detection)** | Nur „zuhören“ bei öffentlich ausgestrahlten Nachrichten. Es werden keine aktiven Signale gesendet, um die Drohne zu stören oder anzugreifen. Rechtlich völlig anders zu bewerten als aktives Stören (Jamming). |
+| **Monitor Mode** | Ein Zustand, in dem ein WLAN-Adapter aufhört, sich mit Access Points zu verbinden, und stattdessen „passiv“ alle Funkpakete in der Luft mithört – die Voraussetzung für den Empfang von Remote-ID-Broadcasts. |
 | **NAN (Wi-Fi Aware) / Beacon** | Zwei WLAN-Frame-Formate, die Drohnen zum Ausstrahlen von Remote-ID verwenden. Dieses Kit versucht, beide zu decodieren. |
 | **Bluetooth 5 Long Range** | Neben WLAN senden manche Drohnen Remote-ID auch über Bluetooth aus. Ein zusätzlicher nRF52840-Dongle ist erforderlich, um diese zu empfangen. |
 | **DJI OcuSync / DroneID** | DJIs proprietäres Video- und Telemetrie-Übertragungsprotokoll. Es ist **kein** Standard-WLAN und **nicht** Teil des in diesem Artikel behandelten Remote-ID-Protokolls. Es erfordert völlig andere SDR-Hardware und Plugins – siehe Abschnitt 7 für Details. |
@@ -278,7 +278,7 @@ Wenn du neu im Bereich Drohnenregulierung und Counter-UAV-Technologie bist, hier
 | **RTL8812AU** | Der Realtek-Chipsatz im ALFA AWUS036ACH. Dieser Chip bestimmt, ob der Adapter den Monitor Mode unterstützt. |
 | **GPX-Datei** | Ein Standardformat zum Aufzeichnen von GPS-Koordinaten-Tracks. Du kannst sie direkt in Google Earth und ähnlicher Software öffnen, um den Flugweg einer Drohne zu visualisieren. |
 
-> Zusammengefasst: Dieser Guide zeigt dir, wie du einen ALFA-Adapter in einen „Drohnen-Identitätsscanner" verwandelst – passiver Empfang der öffentlichen Informationen, die Drohnen gesetzlich ausstrahlen müssen. Eine legale Methode für die Sicherheit von Liegenschaften.
+> Zusammengefasst: Dieser Guide zeigt dir, wie du einen ALFA-Adapter in einen „Drohnen-Identitätsscanner“ verwandelst – passiver Empfang der öffentlichen Informationen, die Drohnen gesetzlich ausstrahlen müssen. Eine legale Methode für die Sicherheit von Liegenschaften.
 
 ---
 

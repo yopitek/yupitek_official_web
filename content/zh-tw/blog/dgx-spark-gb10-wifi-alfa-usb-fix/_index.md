@@ -8,21 +8,23 @@ showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "DGX Spark 的 Wi-Fi 為什麼連不上？"
     answer: "DGX Spark 內建 MediaTek MT7925 Wi-Fi 7 晶片，但 OOBE 階段的 wpa_supplicant 過度精簡，與特定品牌 AP（特別是 UniFi）不相容，WPA2-Enterprise 幾乎確定無法連線。"
   - question: "ALFA USB 網路卡解法適用所有 GB10 AI Server 嗎？"
-    answer: "適用。所有搭載 NVIDIA GB10 Grace Blackwell Superchip 的 AI Edge Server（ASUS、MSI、HP、ALTOS、GIGABYTE）均使用同一顆 MT7925 Wi-Fi 晶片，ALFA AWUS036ACM 解法全部通用。"
+    answer: "適用。所有搭載 NVIDIA GB10 Grace Blackwell Superchip 的 AI Edge Server（ASUS、MSI、HP、ALTOS、GIGABYTE）均使用同一顆 MT7925 Wi-Fi 晶片，ALFA AWUS036ACM 解法預期全部通用（僅在 ASUS GX10 實測，其他機型未逐台測試）。"
   - question: "AWUS036ACM 在 DGX Spark 上需要安裝驅動嗎？"
     answer: "不需要。MT7612U 的 mt76 驅動自 Linux Kernel 4.19 起內建核心主線，DGX OS 的 Kernel 6.17+ 自然完整支援，插入 USB 即自動載入。"
   - question: "ALFA USB 網路卡修復 Wi-Fi 問題需要多久？"
-    answer: "十分鐘以內。插入 USB 3.0 埠後系統自動載入驅動，透過 nmcli 指令掃描並連線 WiFi 即可完成，不需編譯驅動或重開機。"
+    answer: "十分鐘以內。透過 USB-C 轉 USB-A 轉接器接上 GX10 的 USB-C 埠後，系統自動載入驅動，透過 nmcli 指令掃描並連線 WiFi 即可完成，不需編譯驅動或重開機。"
   - question: "可以在 DGX Spark 上用其他 ALFA 網路卡嗎？"
-    answer: "AWUS036ACH（RTL8812AU）需手動編譯驅動，在 GB10 的 ARM64 平台上不保證成功。AWUS036ACM 是唯一確認零編譯、即插即用的方案。"
+    answer: "可以。我們在 ASUS GX10（GB10、Ubuntu 24.04 ARM64、kernel 6.17）實測 ALFA 現役 9 款網路卡，全部使用 kernel 內建驅動，插上即可用，不需 DKMS；AWUS036ACH 使用內建 rtw88_8812au。但 AWUS036AXM / AXML 在 stock kernel 6.17 上封包注入失敗，只適合連線與 AP。其他 GB10 機型未逐台測試。"
 ---
 
 DGX Spark 內建 Wi-Fi 因 MT7925 驅動與 wpa_supplicant 限制而無法可靠連線，解法是插入 ALFA AWUS036ACM USB 網路卡，Kernel 內建驅動即插即用，十分鐘搞定。
+
+> 📌 本文已依 2026-11 GX10 實測更新：在 ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）上，ALFA 現役 9 款網路卡全部使用 kernel 內建驅動，插上即可用，不需 DKMS。完整數據見 [ALFA 9 款網路卡 ARM64 實測總表](/zh-tw/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)。僅在 GX10 實測，其他 GB10 機型未逐台測試。
 
 {{< tldr >}}
 NVIDIA DGX Spark 及所有 GB10 AI Server 的內建 MT7925 Wi-Fi 7 晶片存在已知連線缺陷。解法是插入 ALFA AWUS036ACM USB 網路卡，mt76 驅動自 Kernel 4.19 內建核心，DGX OS Kernel 6.17+ 即插即用，十分鐘完成連線。
@@ -113,7 +115,7 @@ DGX Spark 的 Wi-Fi 問題之所以受到大量討論，純粹因為它是 NVIDI
 | 重量 | 1.48 kg | 1.2 kg | 1.2 kg | 1.25 kg | < 1.5 kg | 1.2 kg |
 | 獨家軟體 | — | — | — | HP ZGX Toolkit | Altos aiGeni 平台 | — |
 
-> ⚠️ **關鍵結論**：無論你買哪一家的 GB10 AI Edge Server，內建 Wi-Fi 都是同一顆 MediaTek MT7925，也都可能遇到同樣的連線問題。底下的 ALFA USB 無線網路卡解法，**六款全部適用**。
+> ⚠️ **關鍵結論**：無論你買哪一家的 GB10 AI Edge Server，內建 Wi-Fi 都是同一顆 MediaTek MT7925，也都可能遇到同樣的連線問題。底下的 ALFA USB 無線網路卡解法，**六款預期全部適用**（僅在 ASUS GX10 實測，其他機型未逐台測試）。
 
 ---
 
@@ -127,9 +129,9 @@ NVIDIA 官方僅測試 DGX OS（基於 Ubuntu 24.04），**所有 GB10 平台皆
 2. ✅ **ARM64 (aarch64) 完整支援**——能在 GB10 上即插即用
 3. ✅ **成熟穩定**——經過社群廣泛驗證
 
-在市面上數十款 USB 無線網路卡中，只有極少數能同時滿足這三點。
+ALFA 現役 9 款 USB 網路卡在 GX10 實測的 kernel 6.17 上都符合這三點（GX10 實測，見文末「其他 ALFA 網路卡」）。本文以最適合當作管理網路的 AWUS036ACM 為例。
 
-### 🥇 唯一推薦：ALFA AWUS036ACM
+### 🥇 推薦：ALFA AWUS036ACM
 
 | 項目 | 內容 |
 |------|------|
@@ -142,29 +144,29 @@ NVIDIA 官方僅測試 DGX OS（基於 Ubuntu 24.04），**所有 GB10 平台皆
 | AP 模式 | ✅ 支援 |
 | TAA 認證 | ✅ 符合美國政府採購規範 |
 
-#### 為什麼是它？六個「唯一」
+#### 為什麼是它？六個理由
 
-**1. 唯一真正的免驅即插即用**
+**1. 免驅即插即用**
 
 mt76 驅動自 Linux Kernel 4.19 起內建於核心主線。DGX Spark 的 Kernel 6.17 自然完整支援。插入 USB 後，系統**自動載入驅動**——你什麼都不需要安裝。
 
-**2. 唯一 ARM64 完整驗證**
+**2. ARM64 實測驗證**
 
-MT7612U 已在 Raspberry Pi OS（aarch64）、Ubuntu Server（ARM64）等多個 ARM 平台上經過多年驗證。GB10 的 ARM64 架構完全相容，不需任何 patch。
+MT7612U 已在 Raspberry Pi OS（aarch64）、Ubuntu Server（ARM64）等多個 ARM 平台上經過多年驗證。我們也在 GB10 平台的 ASUS GX10（kernel 6.17）實測：插上即自動載入 `mt76x2u`，不需任何 patch。
 
-**3. 唯一零編譯、零設定**
+**3. 零編譯、零設定**
 
-對比 Realtek RTL8812AU 需要 DKMS 每次 Kernel 更新後重新編譯，ACM 完全不需要。你的 DGX OS 更新 Kernel 後——ACM 依然即插即用。
+mt76 驅動已在主線多年，DGX OS 更新 Kernel 後，ACM 依然即插即用。（Realtek 機型在 kernel 6.17 上同樣免編譯；各卡最低版本不同，低於該版本才需要 DKMS。）
 
-**4. 唯一完整支援監聽模式與封包注入**
+**4. 支援監聽模式與封包注入**
 
-如果你打算在 DGX Spark 上跑 Kali Linux VM 進行安全研究，ACM 是目前唯一支援監聽模式（Monitor Mode）、封包注入（Packet Injection）和虛擬介面（VIF）的免驅方案。
+如果你打算在 DGX Spark 上跑 Kali Linux VM 進行安全研究，ACM 支援監聽模式（Monitor Mode）、封包注入（Packet Injection）和虛擬介面（VIF）。GX10 實測注入成功率為 2.4GHz 63–83%、5GHz 76%；若以注入為主要用途，AWUS036EACS、ACH（兩頻 100%）表現更好。
 
-**5. 唯一可換天線的中高階方案**
+**5. 可換天線**
 
 2 支 RP-SMA 可拆卸天線。出廠附 5dBi，你可以視需求更換為 7dBi 或 9dBi 高增益天線——非常適合機房、工廠等 Wi-Fi 訊號較弱的邊緣部署場景。
 
-**6. 唯一 TAA 認證**
+**6. TAA 認證**
 
 如果你的單位有政府採購規範要求，ALFA AWUS036ACM 是少數具備 **TAA 認證**的外接 USB 無線網路卡。
 
@@ -176,7 +178,7 @@ MT7612U 已在 Raspberry Pi OS（aarch64）、Ubuntu Server（ARM64）等多個 
 
 ### 第一步：插入 USB 網路卡
 
-將 AWUS036ACM 插入 DGX Spark 的 USB 3.0 Type-A 連接埠。
+DGX Spark 的 USB 埠都是 USB-C，請透過 USB-C 轉 USB-A 轉接器（支援資料傳輸）將 AWUS036ACM 插入。
 
 開啟終端機，執行：
 
@@ -186,11 +188,16 @@ dmesg | tail -20
 
 你應該會看到類似這樣的輸出：
 
+以下為 AWUS036ACM 在 ASUS GX10（kernel 6.17.0-1014-nvidia）上的實測 dmesg 輸出（MAC 位址已遮蔽）：
+
 ```
-mt76_usb 3-1:1.0: MAC/BBP MT7612U (rev 2)
-mt76_usb 3-1:1.0: firmware loaded: mt7612u.bin
-ieee80211 phy1: rt2x00_set_rt: Info - RT chipset 7612, rev 0200 detected
-ieee80211 phy1: rt2x00lib_probe_dev: Information - Successfully initialized device
+usb 5-1: new high-speed USB device number 2 using xhci-hcd
+usb 5-1: New USB device found, idVendor=0e8d, idProduct=7612, bcdDevice= 1.00
+mt76x2u 5-1:1.0: ASIC revision: 76120044
+mt76x2u 5-1:1.0: ROM patch build: 20141115060606a
+mt76x2u 5-1:1.0: Firmware Version: 0.0.00
+usbcore: registered new interface driver mt76x2u
+mt76x2u 5-1:1.0 wlxXXXXXXXXXXXX: renamed from wlan0
 ```
 
 **這就是「驅動已自動載入」的信號。** 整個過程你沒有安裝任何東西。
@@ -209,7 +216,7 @@ nmcli device status
 # 掃描可用網路
 nmcli device wifi list
 
-# 連線到你的 SSID（以 "MyLabWiFi" 為例）
+# 連線到你的 SSID (以 "MyLabWiFi" 為例)
 sudo nmcli device wifi connect "MyLabWiFi" password "your-password"
 
 # 確認連線狀態
@@ -274,11 +281,11 @@ AI 模型訓練時的網路流量非常可觀——下載預訓練權重、同�
 
 ### 場景 A：AI 開發者
 ```
-10GbE → 模型推論、資料傳輸
-ALFA ACM → SSH、Jupyter Notebook、系統更新
+10GbE → 模型推論, 資料傳輸
+ALFA ACM → SSH, Jupyter Notebook, 系統更新
 ```
 
-### 場景 B：資安研究實驗室
+### 場景 B：資安研究實驗室（僅限自有或已取得授權的網路）
 ```
 GB10 → 跑 LLM fine-tuning
 Kali Linux VM → USB 直通 ALFA ACM → 無線網路滲透測試
@@ -301,6 +308,26 @@ A：同為 MediaTek，但驅動架構完全不同。MT7925 使用 `mt7925e` 驅�
 **Q：這張網路卡在 DGX OS 以外還能用嗎？**
 
 A：當然。MT7612U 的驅動是 Linux Kernel 主線的一部分，Ubuntu、Debian、Raspberry Pi OS、Kali Linux、Fedora、Arch Linux——只要是 Kernel 4.19+，全部即插即用。
+
+---
+
+## 其他 ALFA 網路卡：GX10 實測結果
+
+我們在 ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）實測 ALFA 現役 9 款網路卡，全部使用 kernel 內建驅動，插上即可用，不需 DKMS。其他 GB10 機型（DGX Spark、MSI EdgeXpert、GIGABYTE AI TOP ATOM、ALTOS BrainSphere、HP ZGX Nano）使用同一款 GB10 與 NVIDIA kernel 系列，預期行為相同，但未逐台測試。
+
+| 機型 | 晶片 | 內建驅動 | 封包注入（GX10 實測） | 適合用途 |
+|------|------|----------|----------------------|----------|
+| AWUS036ACM | MediaTek MT7612U | mt76x2u | ✅ 2.4G 63–83%／5G 76% | 管理網路、AP、滲透測試 |
+| AWUS036ACHM | MediaTek MT7610U | mt76x0u | ⚠️ 2.4G 96–100%／5G 僅廣播 | 管理網路、AP |
+| AWUS036ACH | Realtek RTL8812AU | rtw88_8812au | ✅ 兩頻 100% | 滲透測試、長距離收訊 |
+| AWUS036ACS | Realtek RTL8811AU | rtw88_8821au | ✅ 2.4G 100%／5G 96% | 滲透測試、隨身攜帶 |
+| AWUS036EACS | Realtek RTL8821CU（含藍牙） | rtw88_8821cu | ✅ 兩頻 100% | 滲透測試 |
+| AWUS036AX | Realtek RTL8832BU | rtw89_8852bu | ✅ 2.4G 96% | Wi-Fi 6 連線、AP |
+| AWUS036AXER | Realtek RTL8832BU | rtw89_8852bu | ✅ 2.4G 73% | Wi-Fi 6 連線、AP、監聽收訊 |
+| AWUS036AXM | MediaTek MT7921AUN | mt7921u | ❌ 失敗 | 僅連線、AP |
+| AWUS036AXML | MediaTek MT7921AUN | mt7921u | ❌ 失敗 | 僅連線、AP（6GHz 實測可用） |
+
+AWUS036AXM / AXML 在 stock kernel 6.17 上封包注入失敗（monitor、AP、WPA3 可用），不適合滲透測試。各卡驅動進入主線的最低 kernel 版本不同（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17），低於該版本才需要社群 DKMS 驅動。完整數據見 [ALFA 9 款網路卡 ARM64 實測總表](/zh-tw/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)。
 
 ---
 

@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH", "compatibility", "wireless-security"]
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "O HAK5 WiFi Pineapple Pager pode conectar adaptador ALFA externo?"
@@ -23,8 +23,6 @@ faq:
     answer: "O RTL8812AU tem um bug de wiphy_register na plataforma MIPS, impedindo o carregamento da interface. E necessário aplicar um patch da comunidade. Recomenda-se usar o AWUS036ACM em vez disso."
 ---
 Antes de conectar qualquer adaptador USB de alta potência ao HAK5 Pager, você deve compreender duas barreiras principais: a arquitetura da CPU e os limites de alimentação da porta USB.
-
-# HAK5 WiFi Pineapple Pager × ALFA Network: Guia de compatibilidade de placas sem fio USB externas
 
 A auditoria de segurança sem fio exige alta precisão, versatilidade e o hardware adequado. O **HAK5 WiFi Pineapple Pager** chamou a atenção de profissionais de segurança da informação como uma ferramenta de auditoria ultraportátil e de tamanho de bolso, impulsionada pelo poderoso motor **PineAP v8**.
 
@@ -69,10 +67,10 @@ A tabela a seguir avalia a compatibilidade dos adaptadores USB atuais da ALFA Ne
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **AWUS036ACM** | MediaTek **MT7612U** | 2.4 GHz / 5 GHz | ~600 mA (Requer Hub) | **Integrado no Kernel (Nativo)** | Instalação via `opkg` | ✅ Sim / ✅ Sim | 🏆 **Padrão de ouro / A melhor opção** |
 | **AWUS036ACH** | Realtek **RTL8812AU** | 2.4 GHz / 5 GHz | ~720 mA (Requer Hub com energia) | Fora do Kernel | Compilação cruzada com SDK | ✅ Sim / ✅ Sim | ⭐⭐ **Apenas usuários avançados** (Existe bug wiphy no MIPS) |
-| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4 / 5 / 6 GHz (Wi-Fi 6E) | ~720 mA (Requer Hub com energia) | **Integrado no Kernel (Nativo)** | Instalação via `opkg` + firmware manual | ✅ Sim / ✅ Sim | ⭐⭐⭐ **Grande potencial**, mas alto consumo |
+| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4 / 5 / 6 GHz (Wi-Fi 6E) | ~720 mA (Requer Hub com energia) | **Integrado no Kernel (Nativo)** | Instalação via `opkg` + firmware manual | ✅ Sim / ⚠️ Relatos da comunidade em kernel anterior ao 6.16; falhou em testes com kernel 6.17 | ⭐⭐⭐ **Grande potencial**, mas alto consumo |
 | **AWUS036ACHM** | MediaTek **MT7610U** | 2.4 GHz / 5 GHz | ~400 mA (Alimentação direta) | Integrado parcialmente | Instalação via `opkg` | ✅ Sim / ✅ Sim | ⭐⭐⭐ **Excelente opção econômica** |
 | **AWUS036ACS** | Realtek **RTL8811AU** | 2.4 GHz / 5 GHz | ~500 mA (No limite) | Fora do Kernel | Compilação cruzada com SDK | ✅ Sim / ✅ Sim | ⭐⭐ **Intermediário** (Requer compilar driver) |
-| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | ~500 mA | Fora do Kernel | Não recomendado | ❌ **Não suporta modo monitor** | ❌ **Incompatível / Não usar** |
+| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | ~500 mA | `rtw88_8821cu` no kernel mainline desde o 6.2 (o Pager OS usa o kernel 6.6; inclusão no firmware não testada) | Não testado no Pager | Monitor/Injeção: ✅ testado no GX10 (kernel 6.17) / ⚠️ não testado no Pager | ⚠️ **Não verificado no Pager** (comportamento na plataforma MIPS não testado) |
 
 ---
 

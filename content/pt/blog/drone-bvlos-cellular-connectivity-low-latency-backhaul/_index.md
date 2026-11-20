@@ -21,15 +21,13 @@ faq:
     answer: "Para inspeção em fábrica, normalmente basta transmitir imagens comuns, e o EM7565 (Cat 12, upload de 150 Mbps) já atende à necessidade, com custo menor."
 ---
 
-# Conectividade celular BVLOS para drones e robôs de inspeção: como obter um backhaul de baixa latência
-
 **Resumo em uma frase: para um drone voar para fora da sua linha de visão, você precisa de um módulo 4G/5G capaz de cuidar ao mesmo tempo de «transmissão de vídeo, controle remoto e posicionamento». Se o seu drone vai se conectar a uma rede 5G privada e precisa de velocidade de vídeo extrema com posicionamento ultrapreciso dual L1+L5, escolha o EM9191; se for apenas um robô de inspeção andando devagar pela fábrica, o módulo 4G barato e ótimo EM7565 já resolve.**
 
 Quando o drone ou o robô sai da sua linha de visão (é o que chamamos de BVLOS, Beyond Visual Line of Sight), o controle remoto tradicional na sua mão deixa de funcionar. Nesse momento, a máquina só consegue se conectar à estação base pela placa 4G/5G instalada nela, enviar imagens de alta qualidade e receber seus comandos de manche.
 
 Neste artigo usamos as folhas de especificações oficiais da Sierra Wireless para desvendar o mistério: por que esses módulos combinam tão bem com drones e robôs? Como eles conseguem latência baixa?
 
-> Fonte dos dados técnicos: folhas de especificações oficiais da Sierra Wireless (EM9190/EM9191 e EM7565). Artigo organizado pela Yopitek (榆閤科技).
+> Fonte dos dados técnicos: folhas de especificações oficiais da Sierra Wireless (EM9190/EM9191 e EM7565). Artigo organizado pela Yopitek.
 
 ---
 
@@ -83,7 +81,7 @@ Quem voa no céu, tem orçamento e quer uma rede 5G privada, que compre o **EM91
 
 ## Informações de compra (Call To Action)
 
-Está projetando a placa de comunicação de um drone ou de um robô de inspeção? Não sabe como planejar as antenas e a refrigeração? A Yopitek (榆閤科技) oferece módulos Sierra Wireless completos e serviço de consultoria de integração de hardware.
+Está projetando a placa de comunicação de um drone ou de um robô de inspeção? Não sabe como planejar as antenas e a refrigeração? A Yopitek oferece módulos Sierra Wireless completos e serviço de consultoria de integração de hardware.
 Escreva para nós: **sales@yupitek.com**
 Veja os produtos: [Seção de módulos Sierra Wireless](/pt/products/sierra/)
 

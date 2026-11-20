@@ -1,12 +1,13 @@
 ---
-title: "ALFA AWUS036ACHM — AC433 双频轻巧型 USB 无线网卡"
-description: "ALFA AWUS036ACHM，MediaTek MT7610U，AC433 双频，USB 2.0，单天线轻巧设计，支持 Monitor Mode，适合随身携带使用。"
+title: "ALFA AWUS036ACHM — AC600 双频轻巧型 USB 无线网卡"
+description: "ALFA AWUS036ACHM，MediaTek MT7610U，AC600 双频，USB 2.0，单天线轻巧设计，支持 Monitor Mode，适合随身携带使用。"
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 5", "AC433", "USB 2.0", "双频", "轻巧"]
+tags: ["Wi-Fi 5", "AC600", "USB 2.0", "双频", "轻巧"]
 faq:
   - question: "在 Linux 上是否需要为 AWUS036ACHM 安装驱动程序？"
     answer: "通常不需要。ALFA 的 Linux 支持页面指出，该设备在 Kali、Ubuntu 和 Raspberry Pi OS 上即插即用，并列出其受 4.19 及更高版本的主线 Linux 内核支持。在 Debian 上，您还需要添加 non-free APT 源并安装固件包。"

@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Quel Raspberry Pi convient le mieux au pentesting ?"
     answer: "Le Raspberry Pi 5 (4 Go ou 8 Go) est le meilleur choix. Le Pi 4 (4 Go+) fonctionne aussi correctement. Le Pi 3B+ n'est pas assez rapide pour la capture de paquets en temps réel."
@@ -165,7 +165,7 @@ sudo modprobe mt7921u
 ip link show
 ```
 
-Si `lsusb` affiche un périphérique MediaTek et `ip link show` liste une nouvelle interface sans fil, l'adaptateur est prêt. Le support du mode moniteur sur l'MT7921AUN s'est considérablement amélioré depuis le noyau 5.18 mais peut être moins fiable que les adaptateurs basés sur RTL8812AU pour certains tests d'injection de paquets. Pour une compatibilité maximale avec les anciens flux de travail de test de pénétration, l'AWUS036ACH reste le choix le plus solide.
+Si `lsusb` affiche un périphérique MediaTek et `ip link show` liste une nouvelle interface sans fil, l'adaptateur est prêt. Le support du mode moniteur sur l'MT7921AUN s'est considérablement amélioré depuis le noyau 5.18 mais peut être moins fiable que les adaptateurs basés sur RTL8812AU pour certains tests d'injection de paquets. Pour une compatibilité maximale avec les anciens flux de travail de test de pénétration, l'AWUS036ACH reste le choix le plus solide. Notez toutefois que l'injection dépend du noyau : des retours de la communauté font état d'une injection fonctionnelle avant le noyau 6.16, mais sur le noyau stock 6.16 et ultérieur (testé sur 6.17), l'AXML échoue au test d'injection de paquets (`aireplay-ng --test` : Found 0 APs / No Answer), ce qui empêche le deauth et la capture de handshake. La cause est une régression mac80211 chanctx, et non une limitation de la puce ; des pilotes communautaires patchés peuvent rétablir l'injection, mais le firmware verrouille toujours le débit (1/6 Mbps, pas d'injection HT/VHT). Le mode moniteur, l'AP et le WPA3 ne sont pas affectés. Si vous avez besoin de l'injection, choisissez plutôt l'AWUS036ACH ou l'AWUS036EACS.
 
 ---
 

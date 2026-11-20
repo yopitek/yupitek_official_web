@@ -8,12 +8,12 @@ showTableOfContents: true
 tags: ["alfa-network", "wifi-adapter", "buyer-guide", "kali-linux", "penetration-testing", "monitor-mode"]
 featureimage: "/images/blog/alfa-wifi-adapter-buyer-guide-2026.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ALFA 網路卡選購標準是什麼？"
     answer: "選購標準包含晶片組驅動成熟度、作業系統相容性、Monitor Mode 支援與發射功率，RTL8812AU 驅動最成熟穩定。"
   - question: "哪些 ALFA 網路卡支援 Monitor Mode？"
-    answer: "ACH、ACM、ACS、AX、AXER、AXM、AXML 均完整支援監聽模式與封包注入，EACS（RTL8821CU）不支援。"
+    answer: "ACH、ACM、ACS、AX、AXER 支援監聽模式與封包注入；AXM、AXML（MT7921AU）支援監聽、AP 與 WPA3，但封包注入在 stock kernel 6.17 實測失敗（kernel 6.16 以後 mac80211 chanctx 回歸所致，並非晶片先天限制；社群回報可注入者為 kernel 6.16 以前或 patched 驅動，且韌體鎖速率 1/6 Mbps）。需要注入可改用 ACH、ACM、ACS、AX 或 EACS。EACS（RTL8821CU）自 kernel 6.2 起內建 rtw88_8821cu，在 GX10（kernel 6.17）實測 monitor 與注入皆可用。"
   - question: "WiFi 6E/6 網路卡有必要嗎？"
     answer: "若審計範圍含 6 GHz 頻段則有必要。AXML 支援三頻 AX3000，需 Linux 核心 ≥ 5.18 與 firmware-misc-nonfree。"
   - question: "RTL8812AU 和 MT7612U 驅動安裝差異？"
@@ -48,7 +48,7 @@ AWUS036ACH 是 2026 年紅隊首選：500 mW 雙天線 AC1200，RTL8812AU 驅動
 
 ### (b) 你需要監聽模式與封包注入嗎？
 
-若答案為是——任何滲透測試或無線審計工作都應如此——請立即將 [AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) 從你的清單中劃掉。其 RTL8821CU 晶片在 Linux 下不可靠地支援監聽模式或注入功能。本指南中的其他所有機型均支援。
+若答案為是——任何滲透測試或無線審計工作都應如此——請確認你的 Linux kernel 版本。[AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) 的 RTL8821CU 在 kernel 6.2 以上已內建 rtw88_8821cu 驅動，於 GX10（kernel 6.17）實測 monitor 兩頻可用、注入兩頻 100%、WPA handshake 擷取端到端可行，可用於注入。本指南中的其他所有機型也都支援。例外：AXM 與 AXML（MT7921AU）支援監聽模式，但封包注入在 kernel 6.16 以上（實測 6.17）失敗，詳見下方 AXML 說明。
 
 ### (c) 虛擬機還是裸機？
 
@@ -71,9 +71,9 @@ Wi-Fi 5 世代（ACH、ACM、ACS）價格較低、驅動更穩定，若預算有
 | [AWUS036ACS](/zh-tw/products/alfa/awus036acs/) | Wi-Fi 5 | RTL8811AU | AC600 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | 輕量旅行裝備 |
 | [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | 紅隊作戰 |
 | [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | 平價雙頻 |
-| [AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | 一般使用（不支援注入）|
-| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6 審計 |
-| [AWUS036AXER](/zh-tw/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | 延伸範圍 Wi-Fi 6 |
+| [AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ✅ | rtw88_8821cu（kernel ≥6.2）| ✅ | ✅ | 1× RP-SMA | 注入／滲透測試、藍牙複合、一般使用 |
+| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.17) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6 審計 |
+| [AWUS036AXER](/zh-tw/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.17) | ✅ | ❌ | Integrated nano | 延伸範圍 Wi-Fi 6 |
 | [AWUS036AXM](/zh-tw/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6E 入門 |
 | [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | 旗艦 6E |
 
@@ -82,7 +82,7 @@ Wi-Fi 5 世代（ACH、ACM、ACS）價格較低、驅動更穩定，若預算有
 **圖例：** ✅ 支援 · ⚠️ 有限/部分支援 · ❌ 不支援
 
 {{< alert "circle-info" >}}
-**macOS 注意事項：** 所有 ALFA 網路卡在 macOS Ventura 與 Sonoma 上都面臨驅動挑戰。最常見的社群方案是在 VM 中使用 Kali Linux 搭配 USB 直通。AWUS036EACS 是例外——可能透過原生 macOS Realtek 驅動運作，但不支援監聽模式。
+**macOS 注意事項：** 所有 ALFA 網路卡在 macOS Ventura 與 Sonoma 上都面臨驅動挑戰。最常見的社群方案是在 VM 中使用 Kali Linux 搭配 USB 直通。AWUS036EACS 是例外——可能透過原生 macOS Realtek 驅動運作，但 macOS 原生驅動不支援監聽模式（Linux 下實測可用）。
 {{< /alert >}}
 
 ---
@@ -130,12 +130,12 @@ RTL8811AU 驅動在 Kali 上使用相同的 `rtl8812au-dkms` 套件，安裝流�
 
 **與 ACH/ACM 的取捨：** 較低發射功率（遠距離範圍較小）、單天線（無 MIMO）、AC600 對 AC1200 最高吞吐量。對於大多數擷取與注入工作流程，這些差異無關緊要。對於長距離作業，則有所影響。
 
-### AWUS036EACS — 一般使用，不適用於滲透測試
+### AWUS036EACS — kernel 6.2+ 內建驅動，可監聽與注入
 
-[AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) 採用 Realtek RTL8821CU 晶片組。RTL8821CU 的 Linux 驅動支援有限——不支援監聽模式與封包注入。此網路卡專為 Windows 用戶端連線設計，並包含藍牙 4.2，不適用於安全測試任務。
+[AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) 採用 Realtek RTL8821CU 晶片組。RTL8821CU 的 rtw88_8821cu 驅動自 kernel 6.2 起進入主線；在 ASUS GX10（Ubuntu 24.04、kernel 6.17）實測，monitor 在 2.4G／5G 皆可用，注入 2.4G 與 5G 皆 100%，並成功端到端擷取 WPA handshake。此網路卡同時包含藍牙 4.2，藍牙與 Wi-Fi 可同時使用。
 
 {{< alert "triangle-exclamation" >}}
-**請勿將 AWUS036EACS 用於滲透測試、紅隊作戰或任何需要監聽模式或封包注入的任務。** 它適合一般無線連線、DJI 無人機控制器距離延伸（常見配對用途），以及標準用戶端網路卡行為可接受的 Windows 優先部署環境。
+**kernel 6.2 以前的舊系統需改用社群驅動（如 morrownr/8821cu），穩定度因版本而異。** kernel 6.2 以上則免安裝即可用於監聽與注入。它同樣適合一般無線連線、DJI 無人機控制器距離延伸（常見配對用途），以及 Windows 優先部署環境。
 {{< /alert >}}
 
 ---
@@ -144,7 +144,7 @@ RTL8811AU 驅動在 Kali 上使用相同的 `rtl8812au-dkms` 套件，安裝流�
 
 Wi-Fi 6（802.11ax）在密集環境效能、目標豐富的 MU-MIMO 情境與用於網路識別的 BSS 著色方面帶來了顯著改進。AWUS036AX 與 AWUS036AXER 是 ALFA 的 Wi-Fi 6 網路卡，主要針對 Windows 連線設計。
 
-兩款 Wi-Fi 6 ALFA 網路卡均使用 Realtek RTL8832BU 晶片組。在 Linux 上，RTL8832BU 驅動在核心 6.14 以下為核心外驅動（OOK），這意味著**監聽模式與封包注入支援有限**。若你的主要使用場景是在 Linux 上進行滲透測試，請選擇 AWUS036ACH 或 AWUS036AXML。
+兩款 Wi-Fi 6 ALFA 網路卡均使用 Realtek RTL8832BU 晶片組。在 Linux 上，RTL8832BU 自核心 6.17 起由核心內建的 rtw89_8852bu 驅動支援；在 ASUS GX10（Ubuntu 24.04 / kernel 6.17）實測中，監聽模式在 2.4 與 5 GHz 皆可用，封包注入也可用（2.4 GHz：AX 96%、AXER 73%，5 GHz 可用）。核心 6.17 以下需使用核心外（OOK）的社群 DKMS 驅動，該驅動下的監聽模式可能受限。（注意：AXML 在 kernel 6.16 以上無法注入，詳見下方 AXML 說明。）
 
 ### AWUS036AX — Wi-Fi 6 Windows 網路卡
 
@@ -152,18 +152,18 @@ Wi-Fi 6（802.11ax）在密集環境效能、目標豐富的 MU-MIMO 情境與�
 
 **驅動狀態：**
 - Windows：透過 ALFA 提供的驅動完整支援
-- Linux 核心 ≥ 6.14：核心內建 RTL8832BU 驅動
-- Linux 核心 < 6.14：需要核心外驅動
-- 監聽模式：⚠️ 有限
-- 封包注入：⚠️ 有限
+- Linux 核心 ≥ 6.17：核心內建 RTL8832BU 驅動
+- Linux 核心 < 6.17：需要核心外驅動
+- 監聽模式：✅ 核心 6.17 以上可用（舊核心的社群 DKMS 驅動可能受限）
+- 封包注入：✅ 核心 6.17 以上可用（實測 2.4 GHz：AX 96%、AXER 73%）
 
 {{< alert "triangle-exclamation" >}}
-**Linux 滲透測試注意事項：** AWUS036AX 使用 RTL8832BU 晶片組，在 Linux 核心 6.14 以下的監聽模式與封包注入支援有限。如需 Kali Linux 安全工作，請改用 [AWUS036ACH](/zh-tw/products/alfa/awus036ach/)（RTL8812AU）或 [AWUS036AXML](/zh-tw/products/alfa/awus036axml/)（MT7921AUN）。
+**Linux 滲透測試注意事項：** AWUS036AX 使用 RTL8832BU 晶片組，在 Linux 核心 6.17 以上（核心內建 rtw89_8852bu，Ubuntu 24.04 / kernel 6.17 實測）監聽模式與封包注入皆可用；僅在舊核心改用社群 DKMS 驅動時，監聽模式可能受限，請先以 `uname -r` 確認核心版本。（注意：AXML 在 kernel 6.16 以上無法注入，詳見下方 AXML 說明。）
 {{< /alert >}}
 
 ### AWUS036AXER — 輕巧旅行 Wi-Fi 6 網路卡
 
-[AWUS036AXER](/zh-tw/products/alfa/awus036axer/) 採用與 AWUS036AX 相同的 RTL8832BU 晶片組，但採用超緊湊奈米外形（10.5g）。驅動情況完全相同——同樣的 RTL8832BU、同樣的 Linux 限制、同樣的 Windows 相容性。
+[AWUS036AXER](/zh-tw/products/alfa/awus036axer/) 採用與 AWUS036AX 相同的 RTL8832BU 晶片組，但採用超緊湊奈米外形（10.5g）。驅動情況完全相同——同樣的 RTL8832BU、同樣的 Linux 支援情況與實測結果、同樣的 Windows 相容性。
 
 當攜帶便利性是決定性因素時，請選擇 AXER 而非 AX：商務出行、最小化部署，或偏好緊湊加密狗而非全尺寸網路卡的情況。
 
@@ -177,11 +177,11 @@ Wi-Fi 6E 將 802.11ax 擴展至 6 GHz 頻段，提供對新 5.925–7.125 GHz �
 
 ### AWUS036AXM — Wi-Fi 6E 入門款
 
-[AWUS036AXM](/zh-tw/products/alfa/awus036axm/) 使用 MT7921AUN 晶片組，完整支援三頻包含 6 GHz。出廠配備兩個 RP-SMA 接頭，支援 2T2R 雙天線操作。
+[AWUS036AXM](/zh-tw/products/alfa/awus036axm/) 使用 MT7921AUN 晶片組，依規格支援三頻包含 6 GHz（AXM 的 6 GHz 本站未實測；AXML 已實測可用）。出廠配備兩個 RP-SMA 接頭，支援 2T2R 雙天線操作。
 
-對於主要在 2.4 和 5 GHz 環境工作，但希望在不支付旗艦價格的情況下具備 6 GHz 能力以應對新興網路評估的操作人員，AXM 是合乎邏輯的入門點。
+對於主要在 2.4 和 5 GHz 環境工作，但希望在不支付旗艦價格的情況下取得依規格支援的 6 GHz 能力以應對新興網路評估的操作人員，AXM 是合乎邏輯的入門點（6 GHz 實測請以 AXML 為準）。
 
-**頻段覆蓋：** 2.4 GHz、5 GHz、6 GHz（三頻）
+**頻段覆蓋：** 2.4 GHz、5 GHz 已實測；6 GHz 依規格支援，未實測
 **天線：** 2× RP-SMA——可更換為任何相容的 ALFA 天線
 
 ### AWUS036AXML — 旗艦 6E 網路卡
@@ -196,7 +196,7 @@ Wi-Fi 6E 將 802.11ax 擴展至 6 GHz 頻段，提供對新 5.925–7.125 GHz �
 - USB-C 3.2——比 USB-A 更快的主機匯流排頻寬
 
 {{< alert "triangle-exclamation" >}}
-**AWUS036AXML 韌體注意事項：** 在核心 6.1 以下，部分使用者在 AXML 的監聽模式與管理模式之間重複切換時會遇到韌體崩潰。若你的工作流程需要頻繁切換模式，請使用核心 ≥ 6.1 並安裝最新的 `firmware-misc-nonfree` 套件。
+**AWUS036AXML 韌體注意事項：** 在核心 6.1 以下，部分使用者在 AXML 的監聽模式與管理模式之間重複切換時會遇到韌體崩潰。若你的工作流程需要頻繁切換模式，請使用核心 ≥ 6.1 並安裝最新的 `firmware-misc-nonfree` 套件。**注入說明：** AXM／AXML 的封包注入社群回報僅適用於 kernel 6.16 以前。在 stock kernel 6.16 以上（實測 6.17，ASUS GX10、Ubuntu 24.04 ARM64），監聽、AP、WPA3、VIF 可用，但注入測試失敗（aireplay-ng --test 顯示 Found 0 APs / No Answer），因此無法 deauth 或擷取 handshake。原因是 mac80211 chanctx 回歸，並非晶片先天限制；patched 驅動可讓注入運作，但韌體仍鎖速率（1/6 Mbps，不可注入 HT/VHT）。需要注入請改用 ACH、ACM、ACS 或 AX。
 {{< /alert >}}
 
 ---
@@ -210,7 +210,7 @@ Wi-Fi 6E 將 802.11ax 擴展至 6 GHz 頻段，提供對新 5.925–7.125 GHz �
 | [AWUS036ACS](/zh-tw/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | 手動編譯 | ✅ rtl8812au-dkms | ✅ ALFA 驅動 |
 | [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | 手動編譯 | ✅ rtl8812au-dkms | ✅ ALFA 驅動 |
 | [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | MT7612U | `mt76x2u` (in-kernel) | 核心 ≥ 4.19 | ✅ mt76x2u (≥4.19) | ✅ ALFA 驅動 |
-| [AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` | 核心內建 | ⚠️ 有限 | ✅ 內建 |
+| [AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) | RTL8821CU | `rtw88_8821cu`（kernel ≥6.2）| 核心內建 | ⚠️ 需 kernel ≥6.2，未於 Pi 實測 | ✅ 內建 |
 | [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | RTL8832BU | `firmware-misc-nonfree` | 核心 ≥ 5.18 | ⚠️ 需要韌體 | ✅ ALFA 驅動 |
 | [AWUS036AXER](/zh-tw/products/alfa/awus036axer/) | RTL8832BU | `firmware-misc-nonfree` | 核心 ≥ 5.18 | ⚠️ 需要韌體 | ✅ ALFA 驅動 |
 | [AWUS036AXM](/zh-tw/products/alfa/awus036axm/) | MT7921AUN | `firmware-misc-nonfree` | 核心 ≥ 5.18 | ⚠️ 需要韌體 | ✅ ALFA 驅動 |
@@ -275,7 +275,7 @@ sudo modprobe 88XXau
 **快速設定（MT7921AUN 家族）：**
 ```bash
 sudo apt update && sudo apt install -y firmware-misc-nonfree
-# 重新開機或重新載入模組：
+# 重新開機或重新載入模組:
 sudo modprobe mt7921u
 ```
 
@@ -313,10 +313,10 @@ cd rtl8812au && sudo make dkms_install
 在執行 Kali NetHunter 的 Raspberry Pi 4 和 Pi 5 上：
 
 ```bash
-# 用於 RTL8812AU 網路卡：
+# 用於 RTL8812AU 網路卡:
 sudo apt update && sudo apt install -y dkms-rtl8812au
 
-# 用於 MT7921AUN 網路卡（建議使用配備近期核心的 Pi 5）：
+# 用於 MT7921AUN 網路卡 (建議使用配備近期核心的 Pi 5):
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 

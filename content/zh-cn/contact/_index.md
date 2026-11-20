@@ -1,13 +1,13 @@
 ---
 title: "联系我们"
-description: "欢迎联系榆阖科技有限公司，询问产品报价、投影系统规划方案，或预约现场评估。"
+description: "欢迎联系榆閤科技有限公司，询问产品报价、投影系统规划方案，或预约现场评估。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
 ---
 
-## 联系榆阖科技
+## 联系榆閤科技
 
 欢迎来信或来电，我们的专业团队将于 1-2 个工作日内回复您的询问。
 

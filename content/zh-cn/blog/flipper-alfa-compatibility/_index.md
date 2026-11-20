@@ -1,9 +1,9 @@
 ---
 title: "Flipper Zero 与 Flipper One 搭配 ALFA 无线网卡：完整兼容性指南"
-description: "Flipper Zero 能接 ALFA USB 无线网卡做数据包注入吗？不行——这里解释为什么。Flipper One 支持 ALFA AWUS036AXML，完整监听模式与数据包注入。包含芯片分析、驱动兼容性与设置步骤的完整指南。"
+description: "Flipper Zero 能接 ALFA USB 无线网卡做数据包注入吗？不行——这里解释为什么。Flipper One 支持 ALFA AWUS036AXML 监听模式（数据包注入视内核版本而定）。包含芯片分析、驱动兼容性与设置步骤的完整指南。"
 date: 2026-06-10
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -32,7 +32,7 @@ faq:
 {{< /alert >}}
 
 {{< tldr >}}
-Flipper Zero 的 STM32WB55 仅支持 USB device 模式，无法驱动任何 ALFA 网卡；Flipper One 搭载 RK3576 与完整 Debian Linux，支持 AWUS036AXML 执行三频监听与注入。
+Flipper Zero 的 STM32WB55 仅支持 USB device 模式，无法驱动任何 ALFA 网卡；Flipper One 搭载 RK3576 与完整 Debian Linux，支持 AWUS036AXML 执行三频监听（注入视内核版本而定）。
 {{< /tldr >}}
 
 如果你拥有一台 Flipper Zero——或正在考虑购买——而且听过 ALFA Network 在无线安全测试领域大名鼎鼎的 USB 无线网卡，你可能也问过自己：**"我可以把 ALFA 网卡插到 Flipper Zero 上，开始捕获 WPA2 握手数据包吗？"**
@@ -181,7 +181,7 @@ Flipper One 还引入了 **Flipper OS Profiles**——一种基于快照的系�
 | **需要 DKMS** | ❌ 不需要 |
 | **天线** | 双 RP-SMA（可更换）+ Bluetooth 5.2 |
 
-> **为什么是最佳选择：** 这是 Flipper One 创始人特别测试过的网卡。`mt7921u` 驱动已在 mainline kernel 中，无需任何 vendor patch。它支持全部三个 WiFi 频段（2.4/5/6 GHz），使 Wi-Fi 6E 安全评估具备前瞻性。Monitor Mode 和 Packet Injection 稳定且经过充分测试。
+> **为什么是最佳选择：** 这是 Flipper One 创始人特别测试过的网卡。`mt7921u` 驱动已在 mainline kernel 中，无需任何 vendor patch。它支持全部三个 WiFi 频段（2.4/5/6 GHz），使 Wi-Fi 6E 安全评估具备前瞻性。Monitor Mode 稳定且经过充分测试；Packet Injection 在内核 6.16 以前有社区反馈可用，但在 stock 内核 6.17 实测失败（aireplay-ng --test 显示 Found 0 APs / No Answer），原因是内核 6.16 以后 mac80211 chanctx 回归，并非芯片先天限制；社区 patched 驱动可让注入运作，但固件仍锁速率（1/6 Mbps）。需要注入请改用 AWUS036ACM 或 ACH。
 
 ### ⭐⭐⭐⭐⭐ 最佳性价比：AWUS036ACM（Wi-Fi 5 AC1200）
 
@@ -196,13 +196,13 @@ Flipper One 还引入了 **Flipper OS Profiles**——一种基于快照的系�
 
 > **为什么是最佳性价比：** MT7612U 芯片组在渗透测试社区中历经考验。`mt76` 驱动已在内核中存在多年，异常稳定。在内核 6.5 及以上版本中，Monitor Mode 和 Injection 运作无瑕。价格低于 AXML，为 2.4/5 GHz 测试提供最佳的价格能力比。
 
-### ⭐⭐⭐⭐ 轻量选择：AWUS036ACHM（Wi-Fi 5 AC433）
+### ⭐⭐⭐⭐ 轻量选择：AWUS036ACHM（Wi-Fi 5 AC600）
 
 | 规格 | 详情 |
 |------|--------|
 | **芯片组** | MediaTek MT7610U |
 | **频段** | 2.4 / 5 GHz（Wi-Fi 5） |
-| **最大速率** | AC433（理论值） |
+| **最大速率** | AC600（理论值） |
 | **驱动** | `mt76`——自 Linux 4.19 起 in-kernel |
 | **需要 DKMS** | ❌ 不需要 |
 | **天线** | 单高增益 RP-SMA（可更换） |
@@ -222,16 +222,26 @@ Flipper One 还引入了 **Flipper OS Profiles**——一种基于快照的系�
 
 > **为什么是替代方案：** RTL8812AU 芯片组在渗透测试领域历史悠久。预期在 Flipper One 规划的内核上无需额外 DKMS 模块即可支持。对于旧系统，aircrack-ng DKMS 驱动仍可使用。高增益 6 dBi 天线提供优异的覆盖范围，但 MediaTek 系列的网卡因其更成熟的 in-kernel 驱动支持而通常更受推荐。
 
-### ⚠️ 不建议用于渗透测试
+### ⭐⭐⭐ 替代方案：AWUS036EACS（Wi-Fi 5 AC1200，RTL8821CU）
 
-以下 ALFA 型号使用 Monitor Mode 和 Packet Injection 的 Linux 驱动不成熟或不稳定的 Realtek 芯片组。**请避免在 Flipper One 的无线安全工作中使用这些型号：**
+| 规格 | 详情 |
+|------|--------|
+| **芯片组** | Realtek RTL8821CU |
+| **频段** | 2.4 / 5 GHz（Wi-Fi 5） |
+| **驱动** | `rtw88_8821cu`——自 Linux 内核 6.2 起 in-kernel |
+| **需要 DKMS** | ❌ 内核 ≥ 6.2 不需要 / ⚠️ 更旧的内核才需要 morrownr/8821cu 等社区驱动 |
+
+> **实测说明：** 在 ASUS GX10（Ubuntu 24.04 ARM64、内核 6.17）上，AWUS036EACS 的 monitor 模式与数据包注入（2.4G 与 5G）皆可用。Flipper One 本身尚未实测，此结果仅代表内核 ≥ 6.2 的 Linux 环境；仅旧内核才需要社区驱动。
+
+### ⚠️ 使用前请留意
+
+以下 ALFA 型号本站未在 Flipper One 上实测。在 ASUS GX10 测试平台（Ubuntu 24.04 ARM64、内核 6.17）上 Monitor Mode 均可用，但所需的内置驱动仅存在于较新的内核，实际注入表现因芯片而异。**请先确认 Flipper One 的内核版本，再用于无线安全工作：**
 
 | 型号 | 芯片组 | 问题 |
 |-------|---------|-------|
-| AWUS036AX | RTL8832BU | Wi-Fi 6 芯片，2026 年驱动支持仍在发展中 |
-| AWUS036AXER | RTL8832BU | 与 AWUS036AX 相同的芯片组问题 |
-| AWUS036ACS | RTL8811AU | Monitor Mode 有限，Injection 不稳定 |
-| AWUS036EACS | RTL8811CU | Monitor Mode 有限，Injection 不稳定 |
+| AWUS036AX | RTL8832BU | RTL8832BU 的 rtw89_8852bu 驱动自内核 6.17 起进入主线；GX10 实测 Monitor 可用，注入 2.4 GHz 96%、5 GHz 可用；旧内核需社区驱动 |
+| AWUS036AXER | RTL8832BU | 同为 RTL8832BU；GX10 实测 Monitor 可用，注入 2.4 GHz 73%、5 GHz 可用 |
+| AWUS036ACS | RTL8811AU | rtw88_8821au 驱动自内核 6.13 起进入主线；GX10 实测 Monitor 可用，注入 2.4 GHz 100%、5 GHz 96% |
 
 ---
 
@@ -244,12 +254,12 @@ Flipper One 还引入了 **Flipper OS Profiles**——一种基于快照的系�
 ```bash
 # 检查 USB 设备枚举
 lsusb
-# 预期输出（示例）：
+# 预期输出 (示例):
 # Bus 001 Device 003: ID 0e8d:7961 MediaTek Inc. Wireless_Device
 
 # 列出无线接口
 iw dev
-# 预期：wlan0（若内置 WiFi 占用 wlan0，则为 wlan1）
+# 预期: wlan0 (若内置 WiFi 占用 wlan0, 则为 wlan1)
 
 # 替代检查方式
 ip link show
@@ -258,16 +268,16 @@ ip link show
 ### 步骤 2：确认驱动已加载
 
 ```bash
-# AWUS036AXML / AWUS036AXM（MT7921AUN）：
+# AWUS036AXML / AWUS036AXM (MT7921AUN):
 lsmod | grep mt7921u
 
-# AWUS036ACM / AWUS036ACHM（MT7612U / MT7610U）：
+# AWUS036ACM / AWUS036ACHM (MT7612U / MT7610U):
 lsmod | grep mt76
 
-# AWUS036ACH（RTL8812AU）：
+# AWUS036ACH (RTL8812AU):
 lsmod | grep rtw88
 
-# 检查内核版本（最佳 MT7921AUN 支持建议 6.12+）：
+# 检查内核版本 (最佳 MT7921AUN 支持建议 6.12+):
 uname -r
 ```
 
@@ -276,9 +286,9 @@ uname -r
 ### 步骤 3：启用 Monitor Mode
 
 ```bash
-# 终止干扰进程（NetworkManager、wpa_supplicant 等）
-# 注意：这也会同时中断 Flipper One 的内置 WiFi——请使用专用的
-# Flipper OS Profile 进行渗透测试，避免干扰正常网络连接。
+# 终止干扰进程 (NetworkManager, wpa_supplicant 等)
+# 注意: 这也会同时中断 Flipper One 的内置 WiFi——请使用专用的
+# Flipper OS Profile 进行渗透测试, 避免干扰正常网络连接.
 sudo airmon-ng check kill
 
 # 在网卡上启动 Monitor Mode
@@ -287,7 +297,7 @@ sudo airmon-ng start wlan0
 
 # 确认 Monitor Mode 已启用
 iw dev wlan0mon info
-# 应显示：type monitor
+# 应显示: type monitor
 ```
 
 手动方法（若不偏好使用 airmon-ng）：
@@ -304,13 +314,14 @@ sudo ip link set wlan0 up
 # 测试注入能力
 sudo aireplay-ng --test wlan0mon
 # 看到 "Injection is working!" 表示成功
+# 注: AXML/AXM 在内核 6.16 以上 (实测 6.17) 会失败 (Found 0 APs / No Answer), 需要注入请改用 ACM / ACH
 
 # 执行基本扫描
 sudo airodump-ng wlan0mon
 
-# 扫描所有支持频段（仅 AWUS036AXML）
+# 扫描所有支持频段 (仅 AWUS036AXML)
 sudo airodump-ng --band abg wlan0mon     # 2.4 GHz + 5 GHz
-sudo airodump-ng --band 6 wlan0mon       # 6 GHz（aircrack-ng 1.7+）
+sudo airodump-ng --band 6 wlan0mon       # 6 GHz (aircrack-ng 1.7+)
 
 # 指定信道扫描
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF wlan0mon
@@ -319,13 +330,13 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF wlan0mon
 ### 步骤 5：捕获 WPA2 握手数据包
 
 ```bash
-# Terminal 1：在目标信道上开始捕获
+# Terminal 1: 在目标信道上开始捕获
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan0mon
 
-# Terminal 2：发送 deauth 强制重新连接
+# Terminal 2: 发送 deauth 强制重新连接
 sudo aireplay-ng -0 5 -a AA:BB:CC:DD:EE:FF wlan0mon
 
-# 在 Terminal 1 中查看握手捕获：
+# 在 Terminal 1 中查看握手捕获:
 # 当出现 "WPA handshake: AA:BB:CC:DD:EE:FF" 表示已捕获
 ```
 

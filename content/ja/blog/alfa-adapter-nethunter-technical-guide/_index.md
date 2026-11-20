@@ -8,7 +8,7 @@ showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ALFA無線アダプターをKali NetHunterで使うのに必要なスマートフォンの条件は？"
     answer: "OTG対応のAndroidスマートフォン、Root取得済みでKali NetHunterカーネルをフラッシュ済みであること。互換性確認済み機種はGoogle Pixelシリーズ、OnePlusの旧フラッグシップ機種です。具体的な互換性はカーネルバージョンとアダプターチップドライバーの配置に依存します。"
@@ -98,7 +98,7 @@ OnePlus 11 5Gをリファレンスプラットフォームとして：
 |---|---|
 | Chipset | **MediaTek MT7610U** |
 | USB VID/PID | `0x0e8d:0x7610` |
-| Bands | 2.4 GHz + 5 GHz (AC433) |
+| Bands | 2.4 GHz + 5 GHz (AC600) |
 | Max Data Rate | 150 Mbps (2.4 GHz) / 433 Mbps (5 GHz) |
 | USB | USB 2.0 |
 | Monitor Mode | ✅ 完全サポート |
@@ -155,7 +155,7 @@ ACHは長年、KaliとNetHunterセットアップのデファクトスタンダ�
 |---|---|
 | Chipset | Realtek RTL8811AU |
 | USB VID/PID | `0x0bda:0x0811` |
-| Bands | 2.4 GHz + 5 GHz (AC433) |
+| Bands | 2.4 GHz + 5 GHz (AC600) |
 | USB | USB 2.0 |
 | Monitor Mode | ✅ 対応（RTL8812AUと同一ドライバーファミリー） |
 | Packet Injection | ✅ 対応 |
@@ -164,13 +164,13 @@ ACHは長年、KaliとNetHunterセットアップのデファクトスタンダ�
 | Driver | 外部（RTL8812AUとaircrack-ngリポジトリを共有） |
 | Product Page | [/ja/products/alfa/awus036acs/](/ja/products/alfa/awus036acs/) |
 
-ACSは最もポータブルな選択肢です。300mWの消費電力はスマートフォンのバッテリーに最も優しく、スリムなフォームファクターはポケットにすっぽり収まります。トレードオフはシングルストリームAC433性能と、RTL8812AUファミリーと共通の外部DKMSドライバー依存です。
+ACSは最もポータブルな選択肢です。300mWの消費電力はスマートフォンのバッテリーに最も優しく、スリムなフォームファクターはポケットにすっぽり収まります。トレードオフはシングルストリームAC600性能と、RTL8812AUファミリーと共通の外部DKMSドライバー依存です。
 
 ### 3.5 NetHunterに非推奨のアダプター
 
 | Adapter | Chipset | Reason |
 |---|---|---|
-| AWUS036AX / AWUS036AXER | RTL8832BU | カーネル6.14+が必要。Androidカーネルでのモニターモード安定性未検証 |
+| AWUS036AX / AWUS036AXER | RTL8832BU | カーネル6.17+が必要。Androidカーネルでのモニターモード安定性未検証 |
 | AWUS036AXML / AWUS036AXM | MT7921AUN | WiFi 6E / 6 GHzサポートが現行NetHunterカーネルビルドで不安定。主要ペネトレーションテスト用アダプターとして不適 |
 
 ### 3.6 ドライバーソースリポジトリ
@@ -249,7 +249,7 @@ cat /kali/etc/os-release
 # NetHunter搭載のKali Linuxと表示されるはず
 
 # USB OTGが有効化されていることを確認
-# 設定 → 開発者向けオプション → OTG（正確な場所はAndroidバージョンにより異なります）
+# 設定 → 開発者向けオプション → OTG (正確な場所はAndroidバージョンにより異なります)
 ```
 
 ### 5.2 ハードウェア接続手順
@@ -271,7 +271,7 @@ cat /kali/etc/os-release
 # USBデバイスを一覧表示 — アダプターが表示されることを確認
 lsusb
 
-# モデル別の想定出力：
+# モデル別の想定出力:
 # AWUS036ACHM: Bus 001 Device 002: ID 0e8d:7610 MediaTek Inc.
 # AWUS036ACM:  Bus 001 Device 002: ID 0e8d:7612 MediaTek Inc. MT7612U
 # AWUS036ACH:  Bus 001 Device 002: ID 0bda:8812 Realtek Semiconductor Corp.
@@ -287,7 +287,7 @@ lsusb
 # 自動ロードを確認
 lsmod | grep mt76
 
-# 必要に応じて手動ロード（稀）
+# 必要に応じて手動ロード (稀)
 sudo modprobe mt76x0u
 ```
 
@@ -321,7 +321,7 @@ ip link show | grep wlan
 iw dev
 
 # 外部アダプターは通常wlan1として表示されます
-# （wlan0は通常、スマートフォン内蔵WiFiです）
+# (wlan0は通常, スマートフォン内蔵WiFiです)
 ```
 
 ### 5.6 モニターモードの有効化
@@ -335,12 +335,12 @@ sudo airmon-ng start wlan1
 
 # モニターモードが有効であることを確認
 iwconfig wlan1mon
-# 想定出力：Mode:Monitor
+# 想定出力: Mode:Monitor
 
-# 近隣ネットワークをスキャン（許可されたテストのみ）
+# 近隣ネットワークをスキャン (許可されたテストのみ)
 sudo airodump-ng wlan1mon
 
-# 全バンドをスキャン（2.4 GHz + 5 GHz）
+# 全バンドをスキャン (2.4 GHz + 5 GHz)
 sudo airodump-ng --band abg wlan1mon
 ```
 

@@ -16,7 +16,7 @@ categories:
 description: "OpenWrt: óptimo para AWUS036ACM (MT7612U), soporte completo y estable para WiFi."
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. Resumen del Problema
@@ -43,7 +43,7 @@ La biblioteca de paquetes oficial de OpenWrt incluye los siguientes controladore
 | kmod-mt76-usb + kmod-mt76x0u | Oficial in-kernel | MediaTek MT7610U (AWUS036ACHM) | Activo |
 | kmod-mt7921u | Oficial in-kernel | MediaTek MT7921AUN (AWUS036AXML / AXM) | Disponible en versiones 23.05+ |
 | kmod-rtl8812au-ct | Comunidad out-of-tree | Realtek RTL8812AU / RTL8811AU (AWUS036ACH / ACS) | Mantenido por la comunidad, se han reportado crashes de kernel en la versión 24.10 |
-| kmod-rtl8821cu | Comunidad out-of-tree | Realtek RTL8811CU (AWUS036EACS) | Mantenido por la comunidad |
+| kmod-rtl8821cu | Comunidad out-of-tree | Realtek RTL8821CU (AWUS036EACS) | Mantenido por la comunidad |
 | kmod-rtw89 / kmod-rtl8852bu | En desarrollo | Realtek RTL8832BU (AWUS036AX / AXER) | Soporte USB de rtw89 gradualmente integrado, requiere kernel más nuevo |
 
 ### 2.3 Prerrequisitos: Soporte del Núcleo USB
@@ -68,10 +68,10 @@ Hasta septiembre de 2026, la línea de productos de tarjetas de red inalámbrica
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | kmod-rtw89 (en desarrollo) / rtl8852bu personalizado |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | Igual que el anterior |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | kmod-rtl8812au-ct (comunidad) |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | kmod-mt76x0u (oficial) |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | kmod-mt76x0u (oficial) |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | kmod-mt76x2u (oficial)⭐ Recomendado |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | kmod-rtl8812au-ct (cubriendo) |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | kmod-rtl8821cu (comunidad) |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | kmod-rtl8812au-ct (cubriendo) |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | kmod-rtl8821cu (comunidad) |
 
 ## 4. Modelos Aplicables y Conjuntos de Chip
 
@@ -84,7 +84,7 @@ Hasta septiembre de 2026, la línea de productos de tarjetas de red inalámbrica
 | ✅ Recomendado (Versión Nueva) | AWUS036AXML / AXM (MT7921AUN) | Wi-Fi 6E, controladores oficiales, requiere OpenWrt 23.05+ y kernel 5.15+ |
 | ⚠️ Disponible pero con Precaución | AWUS036ACH (RTL8812AU) | Controladores de la comunidad, versión 24.10 con informes de crash de kernel, se recomienda usar 23.05 |
 | ⚠️ Disponible pero con Precaución | AWUS036ACS (RTL8811AU) | Como el 8812au, cubierto por el controlador 8812au |
-| ⚠️ Disponible pero con Precaución | AWUS036EACS (RTL8811CU) | Controladores de la comunidad, estabilidad media |
+| ⚠️ Disponible pero con Precaución | AWUS036EACS (RTL8821CU) | Controladores de la comunidad, estabilidad media |
 | ❌ No Recomendado | AWUS036AX / AXER (RTL8832BU) | Wi-Fi 6, soporte rtw89 USB en desarrollo, la mayoría de las versiones de OpenWrt no se pueden usar directamente |
 
 ### 4.2 Requisitos de Hardware del Router
@@ -120,11 +120,11 @@ Hasta septiembre de 2026, la línea de productos de tarjetas de red inalámbrica
 | AWUS036ACHM | MT7610U | kmod-mt76x0u | ✅ | ✅ | ✅ | ⚠️ Limitada | 21.02+ | ✅ Buena |
 | AWUS036AXML | MT7921AUN | kmod-mt7921u | ✅ | ✅ | ✅ | ⚠️ Limitada | 23.05+ | ✅ Buena |
 | AWUS036AXM | MT7921AUN | kmod-mt7921u | ✅ | ✅ | ✅ | ⚠️ Limitada | 23.05+ | ✅ Buena |
-| AWUS036ACH | RTL8812AU | kmod-rtl8812au-ct | ✅ | ✅ | ✅ | ⚠️ Limitada | 22.03+（24.10 con fallo） | ⚠️ Disponible |
+| AWUS036ACH | RTL8812AU | kmod-rtl8812au-ct | ✅ | ✅ | ✅ | ⚠️ Limitada | 22.03+ (24.10 con fallo) | ⚠️ Disponible |
 | AWUS036ACS | RTL8811AU | kmod-rtl8812au-ct | ✅ | ✅ | ⚠️ | ❌ | 22.03+ | ⚠️ Disponible |
-| AWUS036EACS | RTL8811CU | kmod-rtl8821cu | ✅ | ⚠️ | ❌ | ❌ | 23.05+ | ⚠️ Disponible |
-| AWUS036AX | RTL8832BU | rtw89（en desarrollo） | ⚠️ | ❌ | ❌ | ❌ | Necesario compilación personalizada | ❌ No recomendado |
-| AWUS036AXER | RTL8832BU | rtw89（en desarrollo） | ⚠️ | ❌ | ❌ | ❌ | Necesario compilación personalizada | ❌ No recomendado |
+| AWUS036EACS | RTL8821CU | kmod-rtl8821cu | ✅ | ⚠️ | ❌ | ❌ | 23.05+ | ⚠️ Disponible |
+| AWUS036AX | RTL8832BU | rtw89 (en desarrollo) | ⚠️ | ❌ | ❌ | ❌ | Necesario compilación personalizada | ❌ No recomendado |
+| AWUS036AXER | RTL8832BU | rtw89 (en desarrollo) | ⚠️ | ❌ | ❌ | ❌ | Necesario compilación personalizada | ❌ No recomendado |
 
 Criterios de Determinación: Disponibilidad de paquetes kmod en el repositorio oficial de OpenWrt (23.05 / 24.10) + Informes de usuarios en el foro de OpenWrt. Los controladores de chips Realtek son mantenidos por la comunidad, su estabilidad y funcionalidad no alcanzan a la serie MediaTek mt76.
 
@@ -252,7 +252,7 @@ Tomando como ejemplo AWUS036ACH (RTL8812AU):
 opkg update
 opkg install kmod-rtl8812au-ct
 
-# AWUS036EACS (RTL8811CU) — Cambiar por
+# AWUS036EACS (RTL8821CU) — Cambiar por
 # opkg install kmod-rtl8821cu
 ```
 
@@ -341,11 +341,11 @@ Condiciones de refutación: Si el paquete posterior de OpenWrt actualiza y corri
 | Documentación oficial de OpenWrt | Entrada de documentos oficiales de OpenWrt (configuración inalámbrica / gestión de paquetes) | https://openwrt.org/docs/start | ✅ Revisado | 2026-09-03 |
 | Foro oficial de OpenWrt | Entrada de discusión sobre controladores WiFi USB | https://forum.openwrt.org/ | ✅ Revisado | 2026-09-03 |
 | morrownr/8812au GitHub | Fuente de controladores Linux RTL8812AU | https://github.com/morrownr/8812au-20210820 | ✅ Revisado | 2026-09-03 |
-| Catálogo de productos de ALFA Network (Yopitek) | Especificaciones de productos actuales de ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Revisado | 2026-09-03 |
+| Catálogo de productos de ALFA Network (Yopitek) | Especificaciones de productos actuales de ALFA | /es/products/alfa/ | ✅ Revisado | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | Declaración oficial del mantenedor de controladores: se recomienda evitar los chips rtl8852/32au (RTL8832BU) | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Revisado | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko solo aparecerá en el núcleo con kernel 5.19+ (palabras del mantenedor) | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ Revisado | 2026-09-03 |
 | Foro oficial de OpenWrt — Mejor dongle USB WiFi para Raspberry Pi 4B | Informes de usuarios sobre la instalación exitosa de kmod-mt7921u en OpenWrt 23.05.0 | https://forum.openwrt.org/t/mejor-dongle-usb-wifi-para-raspberry-pi-4b/160103 | ✅ Revisado | 2026-09-03 |
 
-Artículos relacionados: [¿Soporta el adaptador inalámbrico ALFA DD-WRT?](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[¿Soporta el adaptador inalámbrico ALFA Tomato?](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)｜[¿Soporta el adaptador inalámbrico ALFA NVIDIA DGX Spark?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[¿Soporta el adaptador inalámbrico ALFA NVIDIA Jetson Nano?](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
+Artículos relacionados: [¿Soporta el adaptador inalámbrico ALFA DD-WRT?](/es/blog/alfa-ddwrt-router-compatibility/) | [¿Soporta el adaptador inalámbrico ALFA Tomato?](/es/blog/alfa-tomato-router-compatibility/) | [¿Soporta el adaptador inalámbrico ALFA NVIDIA DGX Spark?](/es/blog/alfa-nvidia-dgx-spark-compatibility/) | [¿Soporta el adaptador inalámbrico ALFA NVIDIA Jetson Nano?](/es/blog/alfa-nvidia-jetson-nano-compatibility/)
 
 Declaración de exención de responsabilidad: La determinación de compatibilidad de este documento se realiza según la biblioteca oficial de paquetes de OpenWrt 23.05.x / 24.10.x. La disponibilidad de paquetes puede variar según la arquitectura del router (ath79 / ramips / mvebu / x86, etc.). Los controladores de chips Realtek son mantenidos por la comunidad, y su estabilidad puede variar según la versión. Se recomienda utilizar modelos de chips MediaTek (AWUS036ACM como opción preferente) como elección prioritaria para el OpenWrt USB WiFi.

@@ -22,13 +22,11 @@ faq:
     answer: "等待模块连续重启 6 次进入 boot-and-hold 模式后，重新用 USB 连接并使用刷机工具写入正确的固件即可救援。"
 ---
 
-# Sierra Wireless 固件更新与品牌锁切换教程：避免刷机变砖的正确流程
-
 **一句话总结：Sierra 模块的固件更新可以走「运营商空中推送（FOTA）」或是「通过 USB 自己刷」。很多人关心的品牌锁（比如 Dell 或 Lenovo 专用版和通用版的差异），其实只要用对固件包就能切换。只要你刷机前用 `AT+GMR` 查清楚版本、不要刷到一半断电，万一真的失败了也别慌，官方有内置的 SED 救援模式可以救你！**
 
 很多朋友在二手市场买了 Sierra Wireless 的模块，发现装到自己的笔记本或路由器上不能用，这通常是因为「品牌锁（OEM 锁）」在作怪。这篇文章我们把「官方规格书里写明的硬知识」和「社区玩家的实战经验」结合起来，教你如何安全地给模块刷固件。
 
-> 技术资料来源：Sierra Wireless 官方规格书（EM7455、EM7565、MC7455）。品牌锁切换与第三方工具属于社区实战经验。本文由榆合科技（Yopitek）整理。
+> 技术资料来源：Sierra Wireless 官方规格书（EM7455、EM7565、MC7455）。品牌锁切换与第三方工具属于社区实战经验。本文由榆閤科技（Yopitek）整理。
 
 ---
 
@@ -124,6 +122,6 @@ Sierra 模块里内置了一个叫做 **SED（Smart Error Detection）** 的救�
 
 ## 采购信息（Call To Action）
 
-不确定手上的模块是 Dell 版还是 Lenovo 版？想找可靠的 Sierra 模块来升级你的设备？Yopitek（榆合科技）提供完整的硬件方案和技术咨询。
+不确定手上的模块是 Dell 版还是 Lenovo 版？想找可靠的 Sierra 模块来升级你的设备？Yopitek（榆閤科技）提供完整的硬件方案和技术咨询。
 欢迎来信：**sales@yupitek.com**
 看看产品：[Sierra Wireless 模块专区](https://yupitek.com/zh-cn/products/sierra/)

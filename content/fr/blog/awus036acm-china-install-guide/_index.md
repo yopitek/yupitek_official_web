@@ -398,7 +398,7 @@ https://www.kali.org/get-kali/#kali-arm
 
 Choisissez **Raspberry Pi 4 (64-bit)** ou **Raspberry Pi 5 (64-bit)**. N'utilisez pas l'image 32 bits — le 64 bits est requis.
 
-> **Miroir chinois :** Si kali.org est lent, utilisez 华为云 :
+> **Miroir chinois :** Si kali.org est lent, utilisez 华为云 (Huawei Cloud) :
 > https://repo.huaweicloud.com/kali-images/
 > Naviguez jusqu'au dossier de la dernière version et téléchargez l'image ARM64 depuis là.
 
@@ -491,7 +491,7 @@ sudo aireplay-ng --test wlan1mon
 
 ---
 
-## Passage USB en machine virtuelle
+## Passage USB en machine virtuelle {#virtual-machine-usb-passthrough}
 
 ### VirtualBox
 
@@ -512,7 +512,7 @@ Lancez `lsusb` dans la VM pour confirmer `0e8d:7612`, puis suivez les étapes Ka
 
 ---
 
-## Interface virtuelle (VIF)
+## Interface virtuelle (VIF) {#virtual-interface-vif}
 
 C'est là que l'AWUS036ACM surpasse l'ACH. La puce MT7612U bénéficie d'une prise en charge VIF native complète dans le noyau. Vous pouvez faire fonctionner une interface moniteur et une interface managée ou AP sur le même adaptateur simultanément — sans correctifs, sans astuces.
 
@@ -580,10 +580,10 @@ Toutes les ressources utilisées dans ce guide — GitHub non requis :
 |-----------|-----|------------|
 | Pilotes officiels Alfa | [files.alfa.com.tw](https://files.alfa.com.tw) | Paquets de pilotes, firmware |
 | Documentation Alfa | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | Manuels de produits |
-| Miroir 清华大学 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| Miroir 阿里云 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommandé) |
-| Miroir 中科大 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommandé) |
-| Miroir 华为云 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Images Kali ARM (sauvegarde) |
+| Miroir 清华大学 (Université Tsinghua) | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| Miroir 阿里云 (Aliyun) | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommandé) |
+| Miroir 中科大 (USTC) | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommandé) |
+| Miroir 华为云 (Huawei Cloud) | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Images Kali ARM (sauvegarde) |
 | Pilote MT76 (noyau mainline) | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | Intégré au noyau, sans compilation |
 
 {{< faq >}}

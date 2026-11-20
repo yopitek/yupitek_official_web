@@ -62,7 +62,7 @@ O AWUS036AXML apresenta o chipset MediaTek MT7921AUN com suporte Wi-Fi 6E triban
 | Windows 11 | ✅ Suportado | Tribanda completo incluindo 6 GHz |
 | macOS | ❌ Não suportado | Sem suporte para macOS 11+ ou Apple Silicon |
 | Ubuntu | ✅ Suportado | Driver mt7921u integrado no kernel ≥ 5.18 (Ubuntu 22.10+) |
-| Kali Linux | ✅ Suportado | Monitor mode ≥ kernel 5.18; monitor mode ativo ≥ 6.12; injeção de pacotes suportada |
+| Kali Linux | ⚠️ Parcial | Monitor mode ≥ kernel 5.18; monitor mode ativo ≥ 6.12. A injeção de pacotes não passou no nosso teste interno no GX10 / kernel stock 6.17 (regressão do mac80211 chanctx a partir do kernel 6.16, não é limitação do chip). Não testado em um Kali real |
 | NetHunter (Android) | ⚠️ Parcial | OTG; dependente do kernel |
 
 ## Hardware Compatível
@@ -78,7 +78,7 @@ O AWUS036AXML apresenta o chipset MediaTek MT7921AUN com suporte Wi-Fi 6E triban
 | Função | Status |
 |--------|--------|
 | Monitor Mode | ✅ Sim (kernel ≥ 5.18; modo ativo ≥ 6.12) |
-| Packet Injection | ✅ Sim |
+| Packet Injection | ❌ Não passou (teste interno, GX10, kernel stock 6.17) |
 | Soft AP Mode | ✅ Sim |
 | Bluetooth | ✅ BT 5.2 |
 | VIF | ✅ Sim |

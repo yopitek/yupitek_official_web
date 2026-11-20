@@ -1,12 +1,12 @@
 ---
 title: "ALFA AWUS036AXM Driver Install Guide for China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "Step-by-step guide to install ALFA AWUS036AXM drivers in China using domestic mirrors. MT7921AUN WiFi 6E in-kernel driver, full monitor mode and VIF support. Covers Kali Linux, Ubuntu 22/24, Debian, and Raspberry Pi. No GitHub required."
+description: "Step-by-step guide to install ALFA AWUS036AXM drivers in China using domestic mirrors. MT7921AUN WiFi 6 in-kernel driver, monitor mode and VIF support (packet injection is not supported on this adapter). Covers Kali Linux, Ubuntu 22/24, Debian, and Raspberry Pi. No GitHub required."
 date: 2026-04-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
-  - question: "What chipset does AWUS036AXM use? Does it support WiFi 6E?"
-    answer: "It uses the MediaTek MT7921AUN chipset, supporting WiFi 6E tri-band (2.4/5/6 GHz)."
+  - question: "What chipset does AWUS036AXM use? Does it support WiFi 6?"
+    answer: "It uses the MediaTek MT7921AUN chipset, supporting WiFi 6 (dual-band 2.4/5 GHz). We tested 2.4/5 GHz; 6 GHz was not verified on our bench."
   - question: "Does AWUS036AXM need manual driver installation?"
     answer: "No. The mt7921u driver has been in the Linux kernel since 5.18. Only the firmware package needs installing."
   - question: "Does AWUS036AXM support VIF virtual interfaces?"
@@ -19,7 +19,7 @@ draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axm-china-install-guide"
-tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6e", "vif"]
+tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6", "vif"]
 categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 6
@@ -27,10 +27,10 @@ related_product: "/en/products/alfa/awus036axm/"
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 ---
 
-The AWUS036AXM is ALFA's WiFi 6E tri-band adapter with a space-saving L-shaped USB-A connector. Its MT7921AUN chip uses the `mt7921u` driver, built into the Linux kernel since version 5.18. The L-shaped connector keeps adjacent USB ports free on laptops. This guide covers the full setup — firmware, driver verification, monitor mode, packet injection, and VIF — without touching GitHub.
+The AWUS036AXM is ALFA's WiFi 6 adapter with a space-saving L-shaped USB-A connector. Its MT7921AUN chip uses the `mt7921u` driver, built into the Linux kernel since version 5.18. The L-shaped connector keeps adjacent USB ports free on laptops. This guide covers the full setup — firmware, driver verification, monitor mode, and VIF — without touching GitHub. Note: packet injection does not work on this adapter (see below).
 
 {{< tldr >}}
-AWUS036AXM uses the MT7921AUN chipset with WiFi 6E support. The driver is in-kernel. After installing the firmware package, monitor mode, packet injection, and VIF are ready to use.
+AWUS036AXM uses the MT7921AUN chipset with WiFi 6 support (2.4/5 GHz). The `mt7921u` driver is in-kernel, no compilation needed. After installing the firmware package, monitor mode, AP/WPA3, and VIF are confirmed working — but packet injection fails on stock kernel 6.17 (mainly because of a mac80211 chanctx regression since kernel 6.16, not a chip limitation), so the AWUS036AXM is not suitable for injection / penetration testing on that kernel (for injection, use AWUS036ACM / ACS / AX / EACS instead).
 {{< /tldr >}}
 
 Make sure you have these ready:
@@ -76,7 +76,7 @@ Jump to the right section for your OS:
 Already installed? Skip to:
 
 - [Enable Monitor Mode](#enable-monitor-mode)
-- [Test Packet Injection](#test-packet-injection)
+- [About Packet Injection](#test-packet-injection)
 - [Virtual Interface (VIF)](#virtual-interface-vif)
 - [VM USB Passthrough](#virtual-machine-usb-passthrough)
 
@@ -167,21 +167,11 @@ Look for `Mode:Monitor` on the interface.
 
 ---
 
-### Step 5: Test Packet Injection {#test-packet-injection}
+### Step 5: About Packet Injection {#test-packet-injection}
 
-```bash
-sudo aireplay-ng --test wlan1
-```
+⚠️ **The AWUS036AXM does not support packet injection.** On stock kernel 6.17, `sudo aireplay-ng --test wlan1` fails — the main cause is a mac80211 chanctx regression since kernel 6.16 (not a chip-level limitation). Community-patched drivers can make injection work, but the firmware still locks the rate (1/6 Mbps) and cannot inject HT/VHT frames.
 
-A successful result:
-
-```
-Trying broadcast probe requests...
-Injection is working!
-Found 1 AP
-```
-
-If it fails, reboot and try again.
+So the AWUS036AXM is a good fit for plain connectivity, AP hotspots, and monitor-mode capture, but **not for packet injection or penetration testing**. If you need injection, use the AWUS036ACM / ACHM / ACS / ACH / AX / EACS instead. Only test on networks you own or are authorized to use.
 
 ---
 
@@ -316,13 +306,9 @@ sudo ip link set wlan1 up
 iwconfig
 ```
 
-### Step 4: Test Packet Injection
+### Step 4: Note on Packet Injection
 
-```bash
-sudo aireplay-ng --test wlan1
-```
-
-`Injection is working!` confirms the adapter is fully operational.
+The AWUS036AXM does not support packet injection (see [About Packet Injection](#test-packet-injection)). Monitor mode and VIF work, but `aireplay-ng --test` fails on the mt7921u driver. For injection, use the AWUS036ACM / ACS / AX instead.
 
 ---
 
@@ -390,11 +376,9 @@ sudo ip link set wlan1 up
 iwconfig
 ```
 
-### Step 6: Test Packet Injection
+### Step 6: Note on Packet Injection
 
-```bash
-sudo aireplay-ng --test wlan1
-```
+The AWUS036AXM does not support packet injection (see [About Packet Injection](#test-packet-injection)). Monitor mode works, but `aireplay-ng --test` fails on the mt7921u driver. For injection, use the AWUS036ACM / ACS / AX instead.
 
 ---
 
@@ -466,7 +450,7 @@ iwconfig
 | Ubuntu 22.04 doesn't load driver | Kernel 5.15 too old | Install HWE: `sudo apt install linux-generic-hwe-22.04` |
 | Interface appears but won't associate | Firmware blobs missing | Run `sudo apt install firmware-misc-nonfree` then reboot |
 | Monitor mode switch fails | Interface still up | Run `sudo ip link set wlan1 down` before the `iw dev` command |
-| Injection test says "No Answer" | AP too far or wrong interface | Move closer. Verify `Mode:Monitor` with `iwconfig`. |
+| Injection test fails | On stock kernel 6.17 AXM injection fails (mac80211 chanctx regression since kernel 6.16, not a chip limitation; patched drivers can inject, but the firmware locks the rate to 1/6 Mbps) | For injection, use the AWUS036ACM / ACS / AX / EACS instead |
 | VIF interface creation fails | Driver not fully loaded | Unplug, then: `sudo rmmod mt7921u && sudo modprobe mt7921u` |
 
 ## China Mirror Reference
@@ -475,10 +459,10 @@ iwconfig
 |----------|-----|---------|
 | Alfa official drivers | [files.alfa.com.tw](https://files.alfa.com.tw) | Driver packages, firmware |
 | Alfa documentation | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | Product manuals |
-| 清华大学镜像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommended) |
-| 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommended) |
-| 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM images (backup) |
+| 清华大学镜像 (Tsinghua University mirror) | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里云镜像 (Aliyun mirror) | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommended) |
+| 中科大镜像 (USTC mirror) | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommended) |
+| 华为云镜像 (Huawei Cloud mirror) | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM images (backup) |
 
 ## More Alfa Adapter Guides for China
 

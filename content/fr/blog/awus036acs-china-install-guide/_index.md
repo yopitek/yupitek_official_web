@@ -16,22 +16,24 @@ author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "Quel chipset utilise l'AWUS036ACS ? Est-ce le même que l'AWUS036ACH ?"
-    answer: "Il utilise le chipset Realtek RTL8811AU. Il ne partage pas le pilote du RTL8812AU : il faut le pilote communautaire 8821au (morrownr/8821au-20210708), module `8821au`."
+    answer: "Il utilise le chipset Realtek RTL8811AU. La prise en charge du pilote dépend de votre noyau : le noyau Linux 6.13+ (p. ex. Ubuntu 24.04 HWE / kernel 6.17) intègre déjà le pilote rtw88_8821au, il fonctionne donc en plug-and-play, sans DKMS. Ce n'est que sur les anciens noyaux (inférieurs à 6.13) qu'il faut le pilote communautaire 8821au (morrownr/8821au-20210708, module `8821au`). Il ne partage pas le pilote du RTL8812AU. Vérifiez votre noyau avec uname -r."
   - question: "L'AWUS036ACS supporte-t-il le mode moniteur ?"
-    answer: "Oui, le RTL8811AU supporte parfaitement le mode moniteur et l'injection de paquets. C'est un choix économique pour la recherche en sécurité."
+    answer: "Oui, le RTL8811AU supporte parfaitement le mode moniteur et l'injection de paquets. C'est un choix économique pour la recherche en sécurité (nous avons mesuré l'injection à 100% en 2,4 GHz et 96% en 5 GHz avec le pilote intégré rtw88_8821au sur le kernel 6.17, avec une capture WPA .22000 de bout en bout). Uniquement sur des réseaux que vous possédez ou pour lesquels vous avez une autorisation."
   - question: "Faut-il un VPN pour installer l'AWUS036ACS en Chine ?"
     answer: "Pas nécessairement. Clonez le pilote depuis le dépôt GitHub vérifié (morrownr/8821au-20210708) ; si GitHub est lent, utilisez un proxy ou un miroir de confiance. Les outils de compilation peuvent toujours être installés depuis des miroirs nationaux."
   - question: "Quel est l'USB ID de l'AWUS036ACS ?"
     answer: "L'USB ID du Realtek RTL8811AU est 0bda:0811, vérifiable avec lsusb."
   - question: "Quelle est la commande pour installer le pilote AWUS036ACS sur Kali Linux ?"
-    answer: "Installez les outils de compilation, clonez le pilote 8821au (morrownr/8821au-20210708 sur GitHub) puis exécutez `sudo sh install-driver.sh`. Le paquet apt realtek-rtl88xxau-dkms est le pilote du RTL8812AU, il ne convient pas à cet adaptateur."
+    answer: "Vérifiez d'abord votre noyau avec uname -r. Le noyau 6.13+ intègre déjà le pilote rtw88_8821au, il fonctionne en plug-and-play sans aucune installation. Ce n'est que sur les anciens noyaux que vous installez les outils de compilation, clonez le pilote 8821au (morrownr/8821au-20210708 sur GitHub) puis exécutez `sudo sh install-driver.sh`. Le paquet apt realtek-rtl88xxau-dkms est le pilote du RTL8812AU, il ne convient pas à cet adaptateur."
 ---
 
 {{< tldr >}}
-L'AWUS036ACS utilise le chipset RTL8811AU. Sur toutes les distributions, compilez le pilote DKMS 8821au avec install-driver.sh depuis le dépôt GitHub morrownr/8821au-20210708. Supporte le mode moniteur et l'injection de paquets.
+L'AWUS036ACS utilise le chipset RTL8811AU. Le noyau 6.13+ (y compris Ubuntu 24.04 HWE / kernel 6.17) intègre déjà le pilote rtw88_8821au : sans DKMS, plug-and-play, avec mode moniteur et injection mesurés comme fonctionnels (2,4 GHz 100%, 5 GHz 96%, WPA .22000 de bout en bout). Ce n'est que sur les anciens noyaux que vous compilez le pilote communautaire DKMS 8821au avec install-driver.sh depuis le dépôt GitHub morrownr/8821au-20210708.
 {{< /tldr >}}
 
-L'AWUS036ACS est l'adaptateur bi-bande compact d'ALFA pour la recherche en sécurité. Sa puce RTL8811AU prend en charge le mode moniteur complet et l'injection de paquets sur Kali Linux — mais comme le pilote est hors-noyau (out-of-kernel), vous devez le compiler à partir du code source. En Chine, GitHub peut être lent ; ce guide installe donc les outils de compilation depuis des miroirs nationaux et clone le pilote depuis le dépôt GitHub vérifié. Si GitHub est lent, utilisez un proxy ou un miroir de confiance.
+L'AWUS036ACS est l'adaptateur bi-bande compact d'ALFA pour la recherche en sécurité. Sa puce RTL8811AU prend en charge le mode moniteur complet et l'injection de paquets sur Kali Linux. Sur le **noyau Linux 6.13+** (p. ex. Ubuntu 24.04 HWE / kernel 6.17), le noyau intègre déjà le pilote rtw88_8821au : il fonctionne en plug-and-play, sans DKMS. Ce n'est que sur les **anciens noyaux** (inférieurs à 6.13) que vous devez compiler le pilote communautaire 8821au à partir du code source. En Chine, GitHub peut être lent ; pour ce cas, ce guide installe donc les outils de compilation depuis des miroirs nationaux et clone le pilote depuis le dépôt GitHub vérifié. Si GitHub est lent, utilisez un proxy ou un miroir de confiance.
+
+> **Vérifiez d'abord votre noyau :** Exécutez `uname -r`. Le noyau 6.13+ (p. ex. Ubuntu 24.04 HWE / kernel 6.17) intègre le pilote rtw88_8821au : sans DKMS, plug-and-play, avec mode moniteur et injection mesurés comme fonctionnels (2,4 GHz 100%, 5 GHz 96%, WPA .22000 de bout en bout). Les étapes de compilation et d'installation ci-dessous ne sont nécessaires que sur les anciens noyaux (inférieurs à 6.13). Uniquement sur des réseaux que vous possédez ou pour lesquels vous avez une autorisation.
 
 ## Avant de commencer
 

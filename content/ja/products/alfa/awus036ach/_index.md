@@ -9,7 +9,7 @@ brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB-C", "デュアルアンテナ", "Monitor Mode", "Kali Linux", "セキュリティ研究"]
 faq:
   - question: "AWUS036ACHはLinuxでドライバのインストールが必要ですか？"
-    answer: "ほとんどの場合、はい。Realtek RTL8812AUチップセットは通常、DKMSドライバを手動で一度インストールする必要があり、カーネルの更新後にDKMSが再ビルドします。カーネル6.14以降では、カーネル内蔵ドライバが利用可能です。"
+    answer: "ほとんどの場合、はい。Realtek RTL8812AUチップセットは通常、DKMSドライバを手動で一度インストールする必要があり、カーネルの更新後にDKMSが再ビルドします。カーネル6.13以降では、カーネル内蔵ドライバが利用可能です。"
   - question: "AWUS036ACHはモニタモードとパケットインジェクションに対応していますか？"
     answer: "はい。Kali Linuxでは、aircrack-ngドライバを使用して完全なモニタモードとパケットインジェクションに対応しています。これらの機能は、認可されたセキュリティテストのみで使用してください。"
   - question: "AWUS036ACHはWindowsとmacOSで動作しますか？"
@@ -60,7 +60,7 @@ AWUS036ACH は ALFA Network の最も象徴的なセキュリティ研究用ア�
 |----|------|------|
 | Windows 10 / 11 | ✅ 対応 | Alfa 公式サイトからドライバーをダウンロード；WPA3 対応（2019年10月以降のドライバー） |
 | macOS 10.15 Catalina | ⚠️ 限定対応 | 手動インストールが必要；macOS 11+ および Apple Silicon は非対応 |
-| Ubuntu | ✅ 対応 | RTL8812AU DKMS を手動インストール；カーネル ≥ 6.14（例：Ubuntu 24.04.3 以降の HWE カーネル）では標準搭載 |
+| Ubuntu | ✅ 対応 | RTL8812AU DKMS を手動インストール；カーネル ≥ 6.13（例：Ubuntu 24.04.3 以降の HWE カーネル）では標準搭載 |
 | Kali Linux | ✅ 優秀 | Kali 2017.1 以降；完全な Monitor Mode + Packet Injection；aircrack-ng ドライバーを推奨 |
 | NetHunter（Android） | ✅ 対応 | OTG USB；広く動作確認済み |
 

@@ -13,10 +13,10 @@ tags:
   - "Compatibility"
 categories:
   - "路由器韌體"
-description: "目前 ALFA 全系列現役機型（AWUS036ACH / ACM / ACHM / ACS / EACS / AX / AXER / AXML / AXM，共 9 款）在 DD-WRT 上均無官方驅動支援，不建議使用。（判定母體：ALFA 現役 9 款 USB 網路卡）DD-WRT 的 USB WiFi 支援僅限極少數舊型 Atheros / Ralink 晶片，且需特定編譯版本。若需要在路由..."
+description: "目前 ALFA 全系列現役機型（AWUS036ACH / ACM / ACHM / ACS / EACS / AX / AXER / AXML / AXM，共 9 款）在 DD-WRT 上均無官方驅動支援，不建議使用。（判定母體：ALFA 現役 9 款 USB 網路卡）DD-WRT 的 USB WiFi 支援僅限極少數舊型 Atheros / Ralink 晶片，且需特定編譯版本。若需要在路由器上使用 USB WiFi 網路卡，建議改用 OpenWrt。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. 問題摘要
@@ -62,10 +62,10 @@ DD-WRT 透過 ipkg 套件管理系統安裝額外驅動，但官方套件庫中 
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | Out-of-tree（rtl8852bu / rtw89） |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | Out-of-tree（rtl8852bu / rtw89） |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | Out-of-tree（8812au，morrownr 維護） |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | Linux in-kernel（mt76x0u） |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | Linux in-kernel（mt76x0u） |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | Linux in-kernel（mt76x2u） |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | Out-of-tree（8812au 涵蓋） |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | Out-of-tree（8821cu，morrownr 維護） |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | Out-of-tree（8812au 涵蓋） |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | Out-of-tree（8821cu，morrownr 維護） |
 
 ## 4. 適用機型與晶片組
 
@@ -81,7 +81,7 @@ DD-WRT 透過 ipkg 套件管理系統安裝額外驅動，但官方套件庫中 
 
 所有現役 ALFA 機型（見第 3 節表格）均不被 DD-WRT 官方支援，原因：
 
-- Realtek 晶片（RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU）：DD-WRT 無對應 out-of-tree 驅動套件
+- Realtek 晶片（RTL8812AU / RTL8811AU / RTL8821CU / RTL8832BU）：DD-WRT 無對應 out-of-tree 驅動套件
 - MediaTek 晶片（MT7612U / MT7610U / MT7921AUN）：DD-WRT 未編入 mt76 / mt7921 驅動
 - 即使路由器有 USB 埠，硬體層面可以辨識裝置（lsusb 可看到 VID/PID），但無驅動無法建立網路介面
 
@@ -111,7 +111,7 @@ DD-WRT 透過 ipkg 套件管理系統安裝額外驅動，但官方套件庫中 
 | AWUS036ACHM | MT7610U | ✅ | ❌ | ❌ | ❌ | ❌ | 不支援 |
 | AWUS036ACM | MT7612U | ✅ | ❌ | ❌ | ❌ | ❌ | 不支援 |
 | AWUS036ACS | RTL8811AU | ✅ | ❌ | ❌ | ❌ | ❌ | 不支援 |
-| AWUS036EACS | RTL8811CU | ✅ | ❌ | ❌ | ❌ | ❌ | 不支援 |
+| AWUS036EACS | RTL8821CU | ✅ | ❌ | ❌ | ❌ | ❌ | 不支援 |
 
 判定依據：DD-WRT 官方套件庫與核心預設編譯均未包含上述晶片的 USB WiFi 驅動。lsusb 能看到裝置僅代表 USB 匯流排層級的辨識，不代表網路功能可用。
 
@@ -139,16 +139,16 @@ DD-WRT 透過 ipkg 套件管理系統安裝額外驅動，但官方套件庫中 
 ```bash
 # 檢查 USB 裝置是否被偵測
 lsusb
-# 預期輸出應包含 ALFA 網路卡的 VID/PID，例如：
+# 預期輸出應包含 ALFA 網路卡的 VID/PID, 例如:
 # Bus 001 Device 003: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac WLAN Adapter
 
 # 檢查網路介面是否被建立
 ip link show
-# 若沒有 wlan0 / wlan1 等新介面，代表驅動未載入
+# 若沒有 wlan0 / wlan1 等新介面, 代表驅動未載入
 
 # 檢查核心日誌
 dmesg | tail -30
-# 若出現 "no driver" 或僅有 USB 列舉訊息，確認驅動缺失
+# 若出現 "no driver" 或僅有 USB 列舉訊息, 確認驅動缺失
 ```
 
 **步驟 5：檢查可用的 WiFi 驅動模組**
@@ -156,7 +156,7 @@ dmesg | tail -30
 ```bash
 # 列出已載入的無線驅動
 lsmod | grep -E "ath|rt2|rtl|mt76|mac80211|cfg80211"
-# 若僅有路由器內建 WiFi 的驅動（如 wl / b43 / ath9k），代表無 USB WiFi 驅動
+# 若僅有路由器內建 WiFi 的驅動 (如 wl / b43 / ath9k), 代表無 USB WiFi 驅動
 ```
 
 **步驟 6：嘗試安裝社群驅動（若有）**
@@ -164,7 +164,7 @@ lsmod | grep -E "ath|rt2|rtl|mt76|mac80211|cfg80211"
 ```bash
 ipkg update
 ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
-# 若搜尋結果為空，確認該 DD-WRT 版本無可用驅動
+# 若搜尋結果為空, 確認該 DD-WRT 版本無可用驅動
 ```
 
 ### 路徑 B：建議替代方案 — 改用 OpenWrt

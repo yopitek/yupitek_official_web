@@ -122,7 +122,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# LINE Developers で登録した HWID（ここを申請した HWID に変更してください）
+# LINE Developers で登録した HWID (ここを申請した HWID に変更してください)
 TARGET_HWID = "0123456789"
 
 @app.route("/callback", methods=["POST"])
@@ -144,18 +144,18 @@ def callback():
             hwid = beacon_data.get("hwid")
             beacon_type = beacon_data.get("type") # enter (進入), stay (滞在), banner (バナークリック)
             
-            print(f"Beacon イベントを受信！ユーザー ID: {user_id}")
+            print(f"Beacon イベントを受信! ユーザー ID: {user_id}")
             print(f"デバイス HWID: {hwid} | トリガータイプ: {beacon_type}")
             
             # 当社の YPB03 デバイスかどうかを判定
             if hwid == TARGET_HWID:
                 if beacon_type == "enter":
-                    print("--> ユーザーが YPB03 の範囲に入りました！ウェルカムメカニズムをトリガー。")
-                    # ここで、LINE Messaging API を呼び出して user_id にウェルカムクーポンを送信できます
+                    print("--> ユーザーが YPB03 の範囲に入りました! ウェルカムメカニズムをトリガー.")
+                    # ここで, LINE Messaging API を呼び出して user_id にウェルカムクーポンを送信できます
                 elif beacon_type == "stay":
                     print("--> ユーザーが範囲内に継続して滞在しています...")
                 elif beacon_type == "banner":
-                    print("--> ユーザーがチャットルーム上部の LINE Beacon バナーをクリックしました！")
+                    print("--> ユーザーがチャットルーム上部の LINE Beacon バナーをクリックしました!")
                     
     return jsonify({"status": "ok"}), 200
 
@@ -186,14 +186,14 @@ LINE プラットフォームは Webhook を公開された HTTPS URL に送信�
 4. スマートフォンを持って、YPB03 のブロードキャスト範囲内にゆっくりと近づきます（室内テストの際は送信功率を小さくすると便利です）。
 5. Python コンソールを確認すると、リアルタイムで出力される Log メッセージが表示されます：
    ```text
-   Beacon イベントを受信！ユーザー ID: U1234567890abcdef...
+   Beacon イベントを受信! ユーザー ID: U1234567890abcdef...
    デバイス HWID: 0123456789 | トリガータイプ: enter
-   --> ユーザーが YPB03 の範囲に入りました！ウェルカムメカニズムをトリガー。
+   --> ユーザーが YPB03 の範囲に入りました! ウェルカムメカニズムをトリガー.
    ```
 
 ---
 
-## YPB03 コアパラメータ对照表
+## YPB03 コアパラメータ対照表
 
 | 技術パラメータ項目 | スペック値 / 設定値 | 説明 |
 | :--- | :--- | :--- |

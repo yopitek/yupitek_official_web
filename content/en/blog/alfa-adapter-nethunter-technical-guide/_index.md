@@ -3,7 +3,7 @@ title: "ALFA Wireless Adapters with Kali NetHunter: Complete Technical Guide 202
 description: "How to use ALFA WiFi adapters with Kali NetHunter. Taiwan phone models, in-kernel vs DKMS drivers, OTG setup guide, and verified compatibility results."
 date: 2026-06-09
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "What phone requirements are needed for ALFA adapters with Kali NetHunter?"
     answer: "You need an OTG-capable Android phone, rooted with a Kali NetHunter kernel flashed. Verified models include Google Pixel series and older OnePlus flagships. Compatibility depends on kernel version and chipset driver support."
@@ -102,7 +102,7 @@ Using the OnePlus 11 5G as the reference platform:
 |---|---|
 | Chipset | **MediaTek MT7610U** |
 | USB VID/PID | `0x0e8d:0x7610` |
-| Bands | 2.4 GHz + 5 GHz (AC433) |
+| Bands | 2.4 GHz + 5 GHz (AC600) |
 | Max Data Rate | 150 Mbps (2.4 GHz) / 433 Mbps (5 GHz) |
 | USB | USB 2.0 |
 | Monitor Mode | ✅ Full support |
@@ -159,7 +159,7 @@ The ACH has been the de facto standard for Kali and NetHunter setups for years. 
 |---|---|
 | Chipset | Realtek RTL8811AU |
 | USB VID/PID | `0x0bda:0x0811` |
-| Bands | 2.4 GHz + 5 GHz (AC433) |
+| Bands | 2.4 GHz + 5 GHz (AC600) |
 | USB | USB 2.0 |
 | Monitor Mode | ✅ Supported (same driver family as RTL8812AU) |
 | Packet Injection | ✅ Supported |
@@ -168,13 +168,13 @@ The ACH has been the de facto standard for Kali and NetHunter setups for years. 
 | Driver | External (shared aircrack-ng repo with RTL8812AU) |
 | Product Page | [/en/products/alfa/awus036acs/](/en/products/alfa/awus036acs/) |
 
-The ACS is the most portable option. At 300mW power draw it is the least demanding on phone batteries, and its slim form factor disappears into a pocket. The trade-off is single-stream AC433 performance and the external DKMS driver dependency shared with the RTL8812AU family.
+The ACS is the most portable option. At 300mW power draw it is the least demanding on phone batteries, and its slim form factor disappears into a pocket. The trade-off is single-stream AC600 performance and the external DKMS driver dependency shared with the RTL8812AU family.
 
 ### 3.5 Adapters Not Recommended for NetHunter
 
 | Adapter | Chipset | Reason |
 |---|---|---|
-| AWUS036AX / AWUS036AXER | RTL8832BU | Requires kernel 6.14+; monitor mode stability unverified on Android kernels |
+| AWUS036AX / AWUS036AXER | RTL8832BU | Requires kernel 6.17+; monitor mode stability unverified on Android kernels |
 | AWUS036AXML / AWUS036AXM | MT7921AUN | WiFi 6E / 6 GHz support unstable in current NetHunter kernel builds; not suitable as a primary pentest adapter |
 
 ### 3.6 Driver Source Repositories

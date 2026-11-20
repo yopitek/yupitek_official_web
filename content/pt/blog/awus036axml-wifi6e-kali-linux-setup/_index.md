@@ -4,6 +4,7 @@ locale: pt
 hreflang_group: awus036axml-wifi6e-kali-linux-setup
 slug: awus036axml-wifi6e-kali-linux-setup
 published: 2026-08-10
+lastmod: 2026-11-20
 author: yupitek
 category: technical
 tags:
@@ -11,12 +12,10 @@ tags:
   - Kali Linux
 hero_image: /static/img/AWUS036AXML/hero.webp
 hero_alt: "Como instalar o AWUS036AXML no Kali Linux? Tutorial de Monitor Mode Wi-Fi 6E e Injeção de Pacotes | Yopitek"
-seo_description: "Tutorial de instalação do ALFA AWUS036AXML (chipset MT7921AUN) no Kali Linux: driver mt7921u nativo, requisitos de kernel, Monitor Mode, teste de injeção de pacotes e solução de problemas comuns."
+seo_description: "Tutorial de instalação do ALFA AWUS036AXML (chipset MT7921AUN) no Kali Linux: driver mt7921u nativo, requisitos de kernel, Monitor Mode, situação da injeção de pacotes (falhou no kernel stock 6.17 em nossos testes) e solução de problemas comuns."
 ---
 
-# Tutorial de instalação do ALFA AWUS036AXML: Teste de Monitor Mode e Injeção de Pacotes no Kali Linux com placa Wi-Fi 6E
-
-> TL;DR: O ALFA AWUS036AXML utiliza o chipset MediaTek MT7921AUN e funciona no Kali Linux (kernel 5.18+) com o **driver nativo `mt7921u`**, sem necessidade de compilação adicional. Para um Monitor Mode ativo estável e injeção de pacotes, recomenda-se o kernel 6.12+ e um Hub USB com fonte de alimentação. Após conectar, `lsusb` deve exibir `0e8d:7961`; em seguida, use `airmon-ng` ou `iw` para alternar para o Monitor Mode.
+> TL;DR: O ALFA AWUS036AXML utiliza o chipset MediaTek MT7921AUN e funciona no Kali Linux (kernel 5.18+) com o **driver nativo `mt7921u`**, sem necessidade de compilação adicional. Para um Monitor Mode ativo estável, recomenda-se o kernel 6.12+ e um Hub USB com fonte de alimentação. A injeção de pacotes tem relatos da comunidade em kernels anteriores ao 6.16, mas falhou em nossos testes com o kernel stock 6.17 (regressão do mac80211 chanctx, não uma limitação do chip); se precisar de injeção, use ACH, EACS, ACS ou AX. Após conectar, `lsusb` deve exibir `0e8d:7961`; em seguida, use `airmon-ng` ou `iw` para alternar para o Monitor Mode.
 
 ## Por que as placas Wi-Fi 6E estão atraindo atenção para testes de penetração?
 
@@ -35,7 +34,7 @@ O AWUS036AXML é uma placa USB Wi-Fi 6E lançada pela ALFA Network, suportando a
 | Monitor Mode ativo | Kernel ≥ 6.12 recomendado | Padrão | Padrão |
 | ID USB (lsusb) | `0e8d:7961` | `0bda:8812` | `0e8d:7612` |
 | Consumo de energia | ~2.7 W (Hub com alimentação recomendado) | Menor | Menor |
-| Injeção de pacotes | Suportado (Recomenda-se teste) | Suportado | Suportado |
+| Injeção de pacotes | ⚠️ Relatos da comunidade antes do kernel 6.16; falhou em nossos testes com 6.17 | Suportado | Suportado |
 
 > Nota sobre requisitos de versão: O `mt7921u` foi integrado ao kernel principal a partir da versão 5.18, com o suporte à faixa de 6 GHz sendo adicionado gradualmente; **para Monitor Mode ativo, recomenda-se o kernel 6.12+**. O Kali 2026 vem com o kernel 6.14 por padrão, atendendo diretamente a este requisito.
 
@@ -146,6 +145,8 @@ Injection is working!
 
 Uma taxa de sucesso acima de 80% indica operação confiável; se for inferior a 50%, verifique a direção da antena, a alimentação USB ou use uma porta USB 3.0 conectada diretamente.
 
+> Nota: em nossos testes com o kernel stock 6.17, o AWUS036AXML não passa neste teste (Found 0 APs / No Answer), portanto não é possível fazer deauth nem capturar handshakes. A causa é uma regressão do mac80211 chanctx a partir do kernel 6.16, e não uma limitação do chip; drivers corrigidos (patched) da comunidade restauram a injeção, mas o firmware ainda trava a taxa (1/6 Mbps, sem injeção HT/VHT). Se precisar de injeção, use ACH, EACS, ACS ou AX.
+
 ## Nota adicional para Raspberry Pi: Plataforma de auditoria portátil
 
 O AWUS036AXML também é compatível com Raspberry Pi 3B+ / 4 / 5 (listado na página oficial do produto), sendo ideal para montar um kit de auditoria portátil. Pontos de atenção:
@@ -190,6 +191,6 @@ O AXML é Wi-Fi 6E (adiciona 6 GHz) e possui driver nativo no kernel; o ACH é d
 
 ## Conclusão
 
-O processo de instalação do AWUS036AXML é mais simples do que você imagina: **Kernel 5.18+ → Plug and play (`mt7921u`) → Confirmar `0e8d:7961` → Alternar para Monitor Mode com airmon-ng → Validar injeção com aireplay-ng**. A diferença central em relação ao AWUS036ACH está na faixa de 6 GHz e no driver que não requer compilação — se o seu escopo de auditoria já entrou na era do Wi-Fi 6E, esta placa é a escolha para completar a cobertura de faixa. Lembre-se de realizar todos os testes apenas em ambientes com autorização legal.
+O processo de instalação do AWUS036AXML é mais simples do que você imagina: **Kernel 5.18+ → Plug and play (`mt7921u`) → Confirmar `0e8d:7961` → Alternar para Monitor Mode com airmon-ng → Validar injeção com aireplay-ng (falhou no kernel stock 6.17, veja o passo 5)**. A diferença central em relação ao AWUS036ACH está na faixa de 6 GHz e no driver que não requer compilação — se o seu escopo de auditoria já entrou na era do Wi-Fi 6E, esta placa é a escolha para completar a cobertura de faixa. Lembre-se de realizar todos os testes apenas em ambientes com autorização legal.
 
 A série de placas de rede ALFA Network é vendida e conta com suporte técnico pela Yopitek (Yuhé Technology) em Taiwan. Para adquirir o AWUS036AXML ou Hubs de alimentação e antenas compatíveis, entre em contato pelo e-mail [sales@yupitek.com](mailto:sales@yupitek.com).

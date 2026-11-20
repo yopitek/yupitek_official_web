@@ -22,8 +22,6 @@ faq:
     answer: "Unbedingt auf die Vorschriften! Die US-amerikanische FCC verbietet strikt den Einsatz einer außen am Fahrzeug montierten Antenne im Band 30. Achte beim Gehäusedesign unbedingt darauf, diese Falle zu vermeiden."
 ---
 
-# Flotten-GPS-Tracking und Telematik: Das integrierte GNSS von EM7455/MC7455
-
 **Kurz gesagt: Für ein Flottenmanagementsystem ist der klügste Weg, „einen Chip doppelt zu nutzen“. Die Sierra-Wireless-Module EM7455 und MC7455 berechnen mit dem integrierten GNSS die exakten Koordinaten des LKWs und schicken sie gleichzeitig in Echtzeit per 4G an die Firmenzentrale. Kein extra GPS-Modul nötig: spart Platz, spart Geld und ist stabil.**
 
 „Flotten-Telematiksystem“ klingt hochtrabend, ist aber im Prinzip einfach: Position, Geschwindigkeit und Motorzustand der Fahrzeuge sammeln und per Netzwerk an den Server schicken.

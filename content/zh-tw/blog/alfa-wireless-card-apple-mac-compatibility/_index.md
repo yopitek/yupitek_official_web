@@ -4,6 +4,7 @@ description: "ALFA Network USB 無線網路卡於 Apple Mac（MacBook、MacBook 
 keywords: "ALFA 無線網路卡 Mac, ALFA macOS 相容性, ALFA 網路卡 Apple Silicon, USB WiFi 網路卡 M1 M2 M3 M4, ALFA Network MacBook, 監控模式 Mac, AWUS036ACH Mac, AWUS036ACM Mac, ALFA Network Mac Mini, 滲透測試 Apple Silicon"
 author: "Yopitek 技術支援團隊"
 date: "2026-06-20"
+lastmod: 2026-11-20
 category: "技術指南"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
@@ -35,9 +36,9 @@ tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", 
 | **AWUS036AXM** | MediaTek MT7921AUN |❌ |❌ |✅ |✅ |
 | **AWUS036ACHM** | MediaTek MT7610U |❌ |❌ |✅ |✅ |
 | **AWUS036ACS** | Realtek RTL8811AU |❌ |⚠️ 僅客戶端（≤10.14）|✅ |✅ |
-| **AWUS036AX** | Realtek RTL8832BU |❌ |❌ |⚠️ 有限支援|⚠️ 有限支援|
-| **AWUS036AXER** | Realtek RTL8832BU |❌ |❌ |⚠️ 有限支援|⚠️ 有限支援|
-| **AWUS036EACS** | Realtek RTL8821CU |❌ |⚠️ 僅客戶端|❌ 無監控模式|⚠️ 不建議|
+| **AWUS036AX** | Realtek RTL8832BU |❌ |❌ |✅ 核心 ≥6.17|⚠️ 需核心 ≥6.17（Pi 上未測試）|
+| **AWUS036AXER** | Realtek RTL8832BU |❌ |❌ |✅ 核心 ≥6.17|⚠️ 需核心 ≥6.17（Pi 上未測試）|
+| **AWUS036EACS** | Realtek RTL8821CU |❌ |⚠️ 僅客戶端|✅ 實測可監控／注入（Linux guest 需 kernel ≥6.2）|⚠️ 需 kernel ≥6.2，未於 Pi 實測|
 
 **圖例：**✅ = 已驗證可用 |⚠️ = 有限制 / 需符合條件 |❌ = 不支援
 
@@ -66,7 +67,7 @@ Apple 從未公開原生 Wi-Fi 驅動程式的核心程式介面（KPI）。類�
 IOService
   └─ IONetworkController
        └─ IOEthernetController        公開 KPI
-            └─ IO80211Controller      私有（僅 Apple 內部使用）
+            └─ IO80211Controller      私有 (僅 Apple 內部使用)
 ```
 
 第三方廠商過去直接繼承 `IOEthernetController`，這就是為什麼 macOS 上的 USB Wi-Fi 網路卡會顯示為「乙太網路」介面，而非整合到選單列的 Wi-Fi 圖示、AirDrop、Sidecar 或 Find My。
@@ -95,7 +96,7 @@ Realtek 的 macOS 驅動程式以 `RtWlanU.kext` 發行，僅針對 **x86_64** �
 
 ```
 Domain=KMErrorDomain Code=71
-不相容的架構：二進位檔是 x86_64，但需要 arm64
+不相容的架構: 二進位檔是 x86_64, 但需要 arm64
 Kext com.realtek.driver.RtWlanU v1830.32.b27
 ```
 
@@ -206,7 +207,7 @@ Rokland（ALFA 的美國經銷商）[強烈警告](https://store.rokland.com/blo
 
 **AWUS036ACH（RTL8812AU）：**
 
-如果你的 Kali 核心版本**≥6.14**，`rtw88` 主線驅動程式已內建，無需安裝。對於較舊的核心：
+如果你的 Kali 核心版本**≥6.13**，`rtw88` 主線驅動程式已內建，無需安裝。對於較舊的核心：
 
 ```bash
 sudo apt update
@@ -234,7 +235,7 @@ iw dev
 
 ```bash
 sudo apt install -y firmware-misc-nonfree
-# 驗證韌體是否存在：
+# 驗證韌體是否存在:
 ls /lib/firmware/mediatek/
 # WIFI_MT7922_patch_mcu_1_1_hdr.bin
 # WIFI_RAM_CODE_MT7922_1.bin
@@ -273,7 +274,7 @@ sudo aireplay-ng --test wlan0mon
 | 大量掃描期間網路卡斷線 | USB 3.0 模式切換 bug（morrownr/USB-WiFi #676）| 在網路卡與 Mac 之間使用 USB 2.0 集線器 |
 | `airmon-ng` 看不到網路卡 | 虛擬機器設定中的 USB 控制器錯誤 | 將虛擬機器 USB 設定為 USB 3.0（xHCI），而非 USB 2.0 |
 | 驅動程式無法在虛擬機器中編譯 | 缺少核心標頭檔 | `sudo apt install linux-headers-$(uname -r)` |
-| 網路卡已識別但無監控模式 | RTL8832BU 晶片組（AWUS036AX/AXER）| 此晶片組的監控模式支援有限，請改用 AWUS036ACH |
+| 網路卡已識別但無監控模式 | RTL8832BU 晶片組（AWUS036AX/AXER）| 客體核心低於 6.17 且使用社群版 DKMS 驅動時，監控模式可能受限；請改用核心 ≥6.17（內建 rtw89_8852bu）或 AWUS036ACH |
 
 ### 5.4 替代方案：以 Raspberry Pi 作為遠端滲透測試節點
 
@@ -286,10 +287,10 @@ sudo aireplay-ng --test wlan0mon
 - 便攜且不影響主要工作機器
 
 ```bash
-# 從你的 Mac SSH 進入 Pi：
+# 從你的 Mac SSH 進入 Pi:
 ssh kali@192.168.1.100
 
-# 在 Pi 上執行無線稽核：
+# 在 Pi 上執行無線稽核:
 sudo airmon-ng start wlan1
 sudo airodump-ng wlan1mon
 sudo aireplay-ng --test wlan1mon
@@ -362,8 +363,7 @@ Mac Mini M4/M4 Pro 是**首款沒有 USB-A 埠的 Mac Mini。** 更重要的是�
 
 | 網路卡 | 避免原因 |
 |------|-----------|
-| AWUS036AX / AWUS036AXER（RTL8832BU）| 在 Linux 中監控模式支援有限且不穩定，無 macOS 驅動程式 |
-| AWUS036EACS（RTL8821CU）| **完全**不支援監控模式，不適用於安全稽核 |
+| AWUS036AX / AWUS036AXER（RTL8832BU）| 無 macOS 驅動程式；在 Linux 虛擬機中，核心 ≥6.17（內建 rtw89_8852bu）監控模式可用，舊核心的社群版 DKMS 驅動可能受限 |
 | AWUS036ACHM（MT7610U）| 無 macOS 驅動程式（chris1111 不支援 MediaTek），需要 Linux 編譯 |
 
 ---
@@ -424,11 +424,11 @@ Apple Silicon Mac（M1/M2/M3/M4）使用無法載入 x86_64 核心擴充功能�
 |---------|-------------|-------------------|-------------|
 | RTL8812AU | AWUS036ACH, AWUS036ACS | [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | DKMS（推薦）|
 | RTL8812AU | AWUS036ACH | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) | 社群（已淘汰）|
-| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | 主線（核心≥6.14）|
+| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | 主線（核心≥6.13）|
 | MT7612U | AWUS036ACM | Linux 核心內建（`mt76`）| 核心內建（≥4.19）|
 | MT7921AUN | AWUS036AXML, AWUS036AXM | Linux 核心內建（`mt7921u`）| 核心內建（≥5.18）|
 | MT7610U | AWUS036ACHM | [imzyxwvu/mt7610u](https://github.com/imzyxwvu/mt7610u) | 核心外 |
-| RTL8832BU | AWUS036AX, AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | 有限支援 |
+| RTL8832BU | AWUS036AX, AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | 核心 ≥6.17 內建 rtw89_8852bu；舊核心用社群 DKMS（監控可能受限） |
 
 ### macOS 驅動程式（僅 Intel Mac）
 

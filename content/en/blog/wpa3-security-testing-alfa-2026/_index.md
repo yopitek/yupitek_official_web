@@ -3,7 +3,7 @@ title: "WPA3 Security Testing with ALFA Adapters (2026)"
 description: "Comprehensive guide to WPA3 security testing using ALFA Network adapters. Covers SAE handshake analysis, Dragonblood vulnerabilities, transition mode downgrade attacks, PMF enforcement, and WPA3-Enterprise EAP testing."
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "How is WPA3 different from WPA2 in security testing?"
     answer: "WPA3 uses SAE handshake instead of PSK, providing forward secrecy and resistance to offline dictionary attacks. PMF is mandatory, but transition mode introduces a downgrade attack surface."
@@ -68,7 +68,7 @@ WPA3-Enterprise mandates a 192-bit security mode using GCMP-256 and HMAC-SHA-384
 
 WPA3 testing requires an adapter with reliable monitor mode, injection support, and — for 6 GHz WPA3 networks — tri-band capability:
 
-- **AWUS036AXML** — Required for Wi-Fi 6E (6 GHz) WPA3 networks. Mediatek MT7921AUN chipset. Full monitor mode and injection support on Kali Linux with kernel 5.18+. The only ALFA adapter that covers 6 GHz channels where WPA3-only deployments are increasingly common.
+- **AWUS036AXML** — Required for Wi-Fi 6E (6 GHz) WPA3 networks. Mediatek MT7921AUN chipset. Monitor mode, AP and WPA3 work on Kali Linux with kernel 5.18+; packet injection has community reports on kernels before 6.16, but failed in our test on stock kernel 6.17 (a mac80211 chanctx regression, not a chipset limitation), so use the AWUS036ACH when you need injection. The only ALFA adapter that covers 6 GHz channels where WPA3-only deployments are increasingly common.
 - **AWUS036ACH** — Suitable for 2.4/5 GHz WPA3 testing. RTL8812AU chipset. Maximum compatibility with the aircrack-ng toolchain and widest driver support across Kali Linux versions.
 
 ### Enable Monitor Mode

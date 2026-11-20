@@ -1,12 +1,13 @@
 ---
-title: "ALFA AWUS036ACHM — AC433 Dual-Band Compact USB Wireless Adapter"
-description: "ALFA AWUS036ACHM, MediaTek MT7610U, AC433 dual-band, USB 2.0, single-antenna compact design, supports Monitor Mode, ideal for portable use."
+title: "ALFA AWUS036ACHM — AC600 Dual-Band Compact USB Wireless Adapter"
+description: "ALFA AWUS036ACHM, MediaTek MT7610U, AC600 dual-band, USB 2.0, single-antenna compact design, supports Monitor Mode, ideal for portable use."
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 5", "AC433", "USB 2.0", "Dual-Band", "Compact"]
+tags: ["Wi-Fi 5", "AC600", "USB 2.0", "Dual-Band", "Compact"]
 faq:
   - question: "Do I need to install a driver for the AWUS036ACHM on Linux?"
     answer: "Usually not. ALFA's Linux support page says the device is plug and play on Kali, Ubuntu and Raspberry Pi OS, and lists support in the mainline Linux kernel from version 4.19. On Debian you additionally add the non-free APT source and install the firmware package."

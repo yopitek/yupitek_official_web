@@ -3,7 +3,7 @@ title: "Supere el cuello de botella de ancho de banda en IA de borde: instale un
 description: "Instale el adaptador ALFA AWUS036AXML Wi-Fi 6E en Jetson Orin Nano para mover el streaming RTSP 4K al espectro de 6GHz, con pruebas A/B de iperf3 y GStreamer."
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,8 +11,8 @@ tags: ["jetson-orin-nano", "wifi-6e", "awus036axml", "6ghz", "rtsp", "edge-ai", 
 featureimage: "/images/blog/jetson-orin-nano-wifi-6e-6ghz-high-bandwidth-streaming.webp"
 ---
 
-> **Plataforma objetivo**: NVIDIA Jetson Orin Nano Developer Kit, JetPack 6.x (base Ubuntu 22.04 LTS, Linux Kernel 5.15 / 6.1)
-> **Hardware guía**: ALFA AWUS036AXML (chipset MediaTek MT7921AU, adaptador USB tribanda Wi-Fi 6E)
+> **Plataforma objetivo**: NVIDIA Jetson Orin Nano Developer Kit, JetPack 6.x (base Ubuntu 22.04 LTS, Linux Kernel 5.15)
+> **Hardware guía**: ALFA AWUS036AXML (chipset MediaTek MT7921AUN, adaptador USB tribanda Wi-Fi 6E)
 > **Alcance de este artículo**: esta solución es una evaluación bench-test para una plataforma de desarrollo académica/de ingeniería de código abierto tipo DIY; no es soporte oficial de un producto comercial ni representa certificación oficial de ningún fabricante de plataformas cerradas.
 
 ## Introducción: ¿de dónde viene el «techo de ancho de banda» en los dispositivos de borde?
@@ -88,7 +88,7 @@ Anote el RSSI, el bitrate, la latencia de ping y la tasa de pérdida de paquetes
 
 ### 2.1 Compruebe primero la versión del núcleo de su JetPack
 
-La ventaja principal del AWUS036AXML es que **el controlador `mt7921u` del chipset MediaTek MT7921AU está integrado de forma nativa en el núcleo principal de Linux** (incluido desde Kernel 5.18), **sin necesidad de compilar controladores desde GitHub**. Pero el «soporte nativo» tiene un requisito; compruebe primero la versión de su núcleo:
+El AWUS036AXML usa el chip MediaTek MT7921AUN (el AXM usa el MT7921AU), y su controlador `mt7921u` solo entró en el núcleo principal de Linux a partir del Kernel 5.18. JetPack 6.x trae por defecto el Kernel 5.15, que no incluye el `mt7921u` principal, así que **no asuma que instalar JetPack basta para el plug and play**. Compruebe primero la versión del núcleo y el controlador:
 
 ```bash
 uname -r
@@ -99,8 +99,9 @@ Tabla de referencia:
 | JetPack | Sistema operativo base | Linux Kernel | Soporte para AWUS036AXML |
 |---|---|---|---|
 | JetPack 5.1.x | Ubuntu 20.04 (verifíquelo usted mismo) | 5.10 | Debe verificar el controlador; recomendamos actualizar directamente a JetPack 6.x |
-| JetPack 6.0 / 6.1 | Ubuntu 22.04 LTS | 5.15 | Depende de la versión del núcleo; ejecute primero `modinfo mt7921u` |
-| JetPack 6.2+ (recomendado) | Ubuntu 22.04 LTS | 6.1 | `mt7921u` integrado de forma nativa, plug and play |
+| JetPack 6.0 / 6.1 / 6.2 / 6.2.2 (L4T 36.2–36.5) | Ubuntu 22.04 LTS | 5.15 LTS (p. ej. `5.15.116-release-tegra`) | Anterior a su incorporación al núcleo principal (5.18); solo funciona si el núcleo L4T de NVIDIA hace un backport del controlador, ejecute primero `modinfo mt7921u` |
+
+> **Esta tarjeta no se ha probado en Jetson.** La única plataforma de pruebas de Yopitek es el ASUS GX10 (Ubuntu 24.04, kernel 6.17): el 6 GHz del AXML funciona, el modo monitor es débil y la inyección de paquetes falla. Todas las versiones de JetPack 6.x usan el Kernel 5.15, por lo que actualizar a JetPack 6.2 no incorpora el controlador. Ejecute `modinfo mt7921u`: si hay salida, el núcleo L4T ya incluye el controlador; si no, necesita un controlador con backport / DKMS o un núcleo upstream 5.18 o superior (NVIDIA indica que JetPack 6 admite un núcleo upstream 5.14 o superior, pero no es la configuración por defecto).
 
 Verifique que el controlador y el firmware estén listos:
 
@@ -251,7 +252,7 @@ sudo tegrastats
 | Linux Kernel | `uname -r` | \_\_\_\_\_ |
 | ¿`mt7921u` integrado? | `modinfo mt7921u` | Con salida / sin salida |
 
-> Si `uname -r` es inferior a 5.18 y `modinfo mt7921u` no produce salida: actualice primero JetPack (se recomienda 6.2+, Kernel 6.1) y luego hablemos del adaptador. **No compile a la fuerza controladores no principales en un núcleo antiguo** — eso solo lo convertirá en el protagonista de otro artículo de solución de problemas.
+> Si `uname -r` es inferior a 5.18 y `modinfo mt7921u` no produce salida (el caso por defecto en JetPack 6.x): el núcleo L4T no incluye este controlador. Las opciones son un controlador con backport / DKMS acorde a su núcleo, o cambiar a un núcleo 5.18 o superior; ambas son configuraciones que usted mismo mantiene, así que haga una copia de seguridad y prevea cómo revertir. Actualizar solo la versión de JetPack no cambia el Kernel 5.15.
 
 ### Paso 2: confirme su entorno inalámbrico
 
@@ -267,8 +268,8 @@ sudo tegrastats
 
 | Plataforma | Estado de soporte |
 |---|---|
-| Ubuntu 22.04 / 24.04 | ✅ `mt7921u` nativo (Kernel 5.18+; aplica a JetPack 6.2+) |
-| Kali Linux | ✅ Soporte nativo (Monitor Mode / Packet Injection) |
+| Ubuntu 22.04 / 24.04 | ✅ `mt7921u` es del núcleo principal desde el Kernel 5.18; JetPack 6.x usa 5.15 por defecto, compruebe primero con `modinfo mt7921u` o use un controlador con backport / DKMS |
+| Kali Linux | ✅ Soporte nativo (Monitor Mode); ⚠️ Packet Injection: reportes de la comunidad antes del kernel 6.16, falló en la prueba con stock 6.17 |
 | Windows 11 | ✅ (la banda de 6GHz requiere Windows 11 o superior) |
 | Windows 10 | ✅ (pero sin banda de 6GHz; solo 2.4/5GHz) |
 | macOS (Intel / Apple Silicon) | ❌ **No compatible** (no hay controlador MT7921AU para macOS; no lo compre para esto) |
@@ -304,7 +305,7 @@ Esta solución es una **evaluación bench-test para una plataforma de desarrollo
 
 ## Conclusión y recomendaciones de hardware
 
-Cuando el vídeo 4K multicanal entra en una plataforma de IA de borde, el punto de estrangulamiento no suele estar en la capacidad de cómputo, sino en la **capacidad de carga inalámbrica y la limpieza de los canales**. 2.4G/5G ya están inundados de dispositivos; **el 6GHz de Wi-Fi 6E ofrece un canal nuevo sin interferencias** — combinado con un adaptador de controlador nativo y sin compilación, el Jetson Orin Nano puede asumir de forma estable 2–4 canales de 4K, empujando el problema del «techo de ancho de banda» hacia adelante de una sola vez.
+Cuando el vídeo 4K multicanal entra en una plataforma de IA de borde, el punto de estrangulamiento no suele estar en la capacidad de cómputo, sino en la **capacidad de carga inalámbrica y la limpieza de los canales**. 2.4G/5G ya están inundados de dispositivos; **el 6GHz de Wi-Fi 6E ofrece un canal nuevo sin interferencias** — combinado con un adaptador con controlador disponible (el núcleo predeterminado de Jetson es 5.15: compruébelo antes con `modinfo mt7921u`, véase 2.1; esta tarjeta no se ha probado en Jetson), el Jetson Orin Nano puede asumir de forma estable 2–4 canales de 4K, empujando el problema del «techo de ancho de banda» hacia adelante de una sola vez.
 
 **Hardware recomendado**: ALFA AWUS036AXML (MediaTek MT7921AU, soporte nativo sin compilación en Linux Kernel 5.18+, Wi-Fi 6E tribanda, doble antena RP-SMA 5dBi de alta ganancia, bajo consumo de 2.7W). El AWUS036AXMR, basado en la misma arquitectura de chipset, es el modelo integrado sin antenas, adecuado para nodos de borde en racks con espacio limitado.
 

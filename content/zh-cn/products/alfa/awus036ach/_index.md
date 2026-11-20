@@ -9,7 +9,7 @@ brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB-C", "双天线", "Monitor Mode", "Kali Linux", "安全研究"]
 faq:
   - question: "AWUS036ACH 在 Linux 上是否需要安装驱动程序？"
-    answer: "大多数情况下需要。Realtek RTL8812AU 芯片组通常需要进行一次性的手动 DKMS 驱动安装，DKMS 会在内核更新后重新构建驱动。在 6.14 及更高版本的内核中，已提供内置驱动。"
+    answer: "大多数情况下需要。Realtek RTL8812AU 芯片组通常需要进行一次性的手动 DKMS 驱动安装，DKMS 会在内核更新后重新构建驱动。在 6.13 及更高版本的内核中，已提供内置驱动。"
   - question: "AWUS036ACH 是否支持监控模式和数据包注入？"
     answer: "支持。在 Kali Linux 上，它通过 aircrack-ng 驱动支持完整的监控模式和数据包注入。请仅在获得授权的安全测试中使用这些功能。"
   - question: "AWUS036ACH 是否支持 Windows 和 macOS？"
@@ -57,7 +57,7 @@ AWUS036ACH 是 ALFA Network 安全研究社区公认的黄金标准无线网卡�
 |---------|------|------|
 | Windows 10/11 | ✅ 支持 | 从 ALFA 官网下载驱动；支持 WPA3 |
 | macOS 10.15 Catalina | ⚠️ 有限支持 | 需手动安装；不支持 macOS 11+ 及 Apple Silicon |
-| Ubuntu | ✅ 支持 | 需 DKMS 手动安装；内核 ≥ 6.14（例如 Ubuntu 24.04.3 或更新版本的 HWE 内核）已内置 |
+| Ubuntu | ✅ 支持 | 需 DKMS 手动安装；内核 ≥ 6.13（例如 Ubuntu 24.04.3 或更新版本的 HWE 内核）已内置 |
 | Kali Linux | ✅ 优秀 | 自 2017.1 起支持；完整 Monitor Mode + Packet Injection |
 | NetHunter（Android） | ✅ 支持 | OTG USB 连接 |
 

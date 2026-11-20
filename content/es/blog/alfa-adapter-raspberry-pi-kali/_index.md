@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Qué Raspberry Pi es la más adecuada para pruebas de penetración?"
     answer: "La Raspberry Pi 5 (4 GB u 8 GB) es la mejor opción. La Pi 4 (4 GB+) también funciona; la Pi 3B+ no tiene suficiente velocidad para la captura de paquetes en tiempo real."
@@ -165,7 +165,7 @@ sudo modprobe mt7921u
 ip link show
 ```
 
-Si `lsusb` muestra un dispositivo MediaTek e `ip link show` lista una nueva interfaz inalámbrica, el adaptador está listo. El soporte del modo monitor en el MT7921AUN ha mejorado significativamente desde el kernel 5.18, pero puede ser menos fiable que los adaptadores basados en RTL8812AU para ciertos tests de inyección de paquetes. Para máxima compatibilidad con flujos de trabajo de pentesting más antiguos, el AWUS036ACH sigue siendo la opción más sólida.
+Si `lsusb` muestra un dispositivo MediaTek e `ip link show` lista una nueva interfaz inalámbrica, el adaptador está listo. El soporte del modo monitor en el MT7921AUN ha mejorado significativamente desde el kernel 5.18, pero puede ser menos fiable que los adaptadores basados en RTL8812AU para ciertos tests de inyección de paquetes. Para máxima compatibilidad con flujos de trabajo de pentesting más antiguos, el AWUS036ACH sigue siendo la opción más sólida. Tenga en cuenta que la inyección depende del kernel: hay informes de la comunidad de inyección funcional en kernels anteriores a 6.16, pero en el kernel stock 6.16 y posteriores (probado en 6.17) el AXML no supera la prueba de inyección de paquetes (`aireplay-ng --test`: Found 0 APs / No Answer), por lo que no es posible el deauth ni la captura de handshakes. La causa es una regresión de mac80211 chanctx, no una limitación del chip; los controladores comunitarios parcheados pueden restaurar la inyección, pero el firmware sigue bloqueando la velocidad (1/6 Mbps, sin inyección HT/VHT). El modo monitor, el AP y WPA3 no se ven afectados. Si necesita inyección, elija en su lugar el AWUS036ACH o el AWUS036EACS.
 
 ---
 
@@ -297,7 +297,7 @@ Para la guía completa de instalación del controlador RTL8812AU en Kali Linux y
 ## Referencias
 
 1. [Descarga oficial de Kali Linux ARM](https://www.kali.org/get-kali/#kali-arm)
-2. [aircrack-ng rtl8812au 驅動專案](https://github.com/aircrack-ng/rtl8812au)
+2. [Proyecto del controlador rtl8812au de aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
 3. [Sitio oficial de Raspberry Pi](https://www.raspberrypi.com/)
 4. [Documentación del controlador mt76 del núcleo Linux](https://wireless.wiki.kernel.org/en/users/drivers/mt76)
 5. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)

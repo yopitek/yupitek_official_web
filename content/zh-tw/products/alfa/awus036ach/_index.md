@@ -9,7 +9,7 @@ brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB-C", "雙天線", "Monitor Mode", "Kali Linux", "資安研究"]
 faq:
   - question: "AWUS036ACH 在 Linux 上是否需要安裝驅動程式？"
-    answer: "大多數情況下需要。Realtek RTL8812AU 晶片組通常需要一次性手動安裝 DKMS 驅動程式，且 DKMS 會在核心更新後重新編譯它。在 6.14 及之後的核心版本中，已提供內建核心驅動程式。"
+    answer: "大多數情況下需要。Realtek RTL8812AU 晶片組通常需要一次性手動安裝 DKMS 驅動程式，且 DKMS 會在核心更新後重新編譯它。在 6.13 及之後的核心版本中，已提供內建核心驅動程式。"
   - question: "AWUS036ACH 是否支援監聽模式與封包注入？"
     answer: "是。在 Kali Linux 上，它透過 aircrack-ng 驅動程式支援完整的監聽模式與封包注入。請僅將這些功能用於經授權的安全測試。"
   - question: "AWUS036ACH 是否可在 Windows 和 macOS 上運作？"
@@ -59,7 +59,7 @@ AWUS036ACH 是 ALFA Network 資安研究社群公認的黃金標準無線網路�
 |---------|------|------|
 | Windows 10/11 | ✅ 支援 | 請至 ALFA 官網下載驅動；WPA3 支援（2019 年 10 月驅動後） |
 | macOS 10.15 Catalina | ⚠️ 有限支援 | 需手動安裝；不支援 macOS 11+ 及 Apple Silicon |
-| Ubuntu | ✅ 支援 | 需透過 DKMS 手動安裝 RTL8812AU 驅動；核心 ≥ 6.14（例如 Ubuntu 24.04.3 或更新版本的 HWE 核心）起內建 |
+| Ubuntu | ✅ 支援 | 需透過 DKMS 手動安裝 RTL8812AU 驅動；核心 ≥ 6.13（例如 Ubuntu 24.04.3 或更新版本的 HWE 核心）起內建 |
 | Kali Linux | ✅ 優異 | 自 Kali 2017.1 起支援；完整 Monitor Mode + Packet Injection；建議使用 aircrack-ng 驅動 |
 | NetHunter（Android） | ✅ 支援 | OTG USB 連接；廣泛確認可用 |
 

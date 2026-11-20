@@ -14,17 +14,17 @@ tags:
   - "Linux-WiFi"
 categories:
   - "ハードウェアガイド"
-description: "Jetson Nano対応ALFAネットワークカード多，但Linux kernelのバージョンが古い制限。Realtekモデルは直接編譯可能、MediaTekはバックポート或いは自編。Wi-Fi 6Eは不可。渗透テストはAWUS036ACH、通常はAWUS036ACH或いはAWUS036ACM。"
+description: "Jetson Nanoは多くのALFAネットワークアダプターを使用できますが、JetPack 4.xのLinux kernelが古い点が主な制約です。Realtekモデルはout-of-treeドライバーを直接コンパイル可能、MediaTekはbackportまたは自前でのコンパイルが必要、Wi-Fi 6Eモデルは使用不可です。ペネトレーションテストにはAWUS036ACH、一般用途にはAWUS036ACHまたはAWUS036ACMを推奨します。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. 問題要約
 
 顧客の質問：「ALFAシリーズのUSBワイヤレスネットワークアダプターがNVIDIA Jetson Nano開発板上で使用可能か？」
 
-簡潔な結論：Jetson Nanoは多くのALFAネットワークアダプターを使用可能ですが、主要な制約はJetPack 4.xのLinuxカーネルのバージョンが古いことです（評価基準：ALFAの現役9モデルのUSBネットワークアダプターのうち、3モデルが成熟して使用可能、2モデルが高度なコンパイルが必要、2モデルが未検証、2モデルが使用不可能）。Realtekチップセットモデル（AWUS036ACH / ACS / EACS）はout-of-treeドライバーを直接コンパイルすることができ、Jetson Nano上での実用的な選択肢です；MediaTek MT7612U / MT7610Uはbackportまたは独自のmt76ドライバーのコンパイルが必要です；Wi-Fi 6EのMT7921AUNモデル（AWUS036AXML / AXM）はkernel 5.19+が必要で、実際にはJetson Nano上で使用不可能です。渗透テストシーンではAWUS036ACH（RTL8812AU）が最適で、一般的なオンラインシーンではAWUS036ACH（安定）またはAWUS036ACM（コンパイルが必要）が最適です。
+簡潔な結論：Jetson Nanoは多くのALFAネットワークアダプターを使用可能ですが、主要な制約はJetPack 4.xのLinuxカーネルのバージョンが古いことです（評価基準：ALFAの現役9モデルのUSBネットワークアダプターのうち、3モデルが成熟して使用可能、2モデルが高度なコンパイルが必要、2モデルが未検証、2モデルが使用不可能）。Realtekチップセットモデル（AWUS036ACH / ACS / EACS）は、カーネル4.9のような古い環境ではout-of-treeドライバーを直接コンパイルすることができ（EACSのrtw88_8821cuはkernel 6.2からmainline内蔵）、Jetson Nano上での実用的な選択肢です；MediaTek MT7612U / MT7610Uはbackportまたは独自のmt76ドライバーのコンパイルが必要です；Wi-Fi 6EのMT7921AUNモデル（AWUS036AXML / AXM）はkernel 5.18+が必要で、実際にはJetson Nano上で使用不可能です。ペネトレーションテストのシーンではAWUS036ACH（RTL8812AU）が最適で、一般的なオンラインシーンではAWUS036ACH（安定）またはAWUS036ACM（コンパイルが必要）が最適です。
 
 ## 2. 目標ハードウェアのスペック構造の分析
 
@@ -62,10 +62,10 @@ Jetson Nanoのカーネル4.9は相性判定の核心要素です：
 |---|---|---|
 | mt76x2u（MT7612U） | 4.19 | ❌ バックポートまたは独自のコンパイルが必要 |
 | mt76x0u（MT7610U） | 4.19 | ❌ バックポートまたは独自のコンパイルが必要 |
-| mt7921u（MT7921AUN） | 5.19 | ❌ 実用的には使用不可能（大きなギャップ） |
-| rtl8812au（RTL8812AU） | まだメインラインに投入されていない | ✅ out-of-treeドライバーをコンパイル可能 |
-| rtl8821cu（RTL8811CU） | まだメインラインに投入されていない | ✅ out-of-treeドライバーをコンパイル可能 |
-| rtw89（RTL8832BU） | 5.16（PCIe）/ USBが順次統合 | ❌ 自由にコンパイルが必要、相性が未知 |
+| mt7921u（MT7921AUN） | 5.18 | ❌ 実用的には使用不可能（大きなギャップ）。GX10（kernel 6.17）ではmonitorは動作するがインジェクションは失敗（主因はkernel 6.16以降のmac80211 chanctxリグレッションで、ファームウェアによるレート固定もあり、チップ自体の限界ではない） |
+| rtl8812au（RTL8812AU） | 6.13（rtw88_8812au） | ✅ kernel 4.9には内蔵ドライバーがなく、out-of-treeドライバーのコンパイルが必要。GX10（kernel 6.17）では内蔵ドライバーで両バンドともインジェクション100%を実測 |
+| rtw88_8821cu（RTL8821CU） | 6.2 | ✅ カーネル4.9（6.2より前）ではout-of-treeドライバー（8821cu）をコンパイル可能 |
+| rtw89（RTL8832BU） | 6.17（rtw89_8852bu） | ❌ kernel 4.9には内蔵されておらず、独自コンパイルが必要で互換性は不明。GX10（kernel 6.17）ではmonitorが動作し、2.4Gインジェクションは AX 96%、AXER 73% |
 
 ### 2.4 USB電源制約
 

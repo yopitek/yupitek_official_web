@@ -22,8 +22,6 @@ faq:
     answer: "Espere a que el módulo se reinicie 6 veces seguidas hasta entrar en modo boot-and-hold; después, vuelva a conectarlo por USB y use la herramienta de flasheo para escribir el firmware correcto y recuperarlo."
 ---
 
-# Guía de actualización de firmware y cambio de bloqueo de marca de Sierra Wireless: el proceso correcto para evitar que el módulo quede inutilizable (Brick)
-
 **Resumen en una frase: el firmware de los módulos Sierra se puede actualizar mediante «actualización inalámbrica del operador (FOTA)» o «flasheo manual por USB». En cuanto al bloqueo de marca que tanto preocupa a muchos (como la diferencia entre la versión especial de Dell o Lenovo y la versión genérica), basta con usar el paquete de firmware correcto para cambiarlo. Mientras compruebe la versión con AT+GMR antes de flashear y no corte la corriente a mitad del proceso, incluso si algo falla, el módulo cuenta con el modo de rescate integrado SED que lo salvará.**
 
 Muchos usuarios compran módulos Sierra Wireless en el mercado de segunda mano y descubren que no funcionan al instalarlos en su portátil o router, y la causa suele ser el «bloqueo de marca (bloqueo OEM)». En este artículo combinamos el «conocimiento técnico documentado en las especificaciones oficiales» con la «experiencia práctica de la comunidad» para enseñarle a flashear el firmware con seguridad.

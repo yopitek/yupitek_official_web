@@ -22,8 +22,6 @@ faq:
     answer: "是的，DW5811e 是 Dell 貼牌版的 EM7455，核心為同一顆 Qualcomm MDM9230。"
 ---
 
-# Sierra EM7455 完整評測：為什麼它是 Maker 與實驗室做專題最愛的 Sierra 網路卡
-
 {{< alert >}}
 Yopitek 提供 Sierra Wireless / Semtech 相關產品資訊、通路供應與技術內容；非官方授權經銷商，本資料僅供技術參考。
 {{</alert >}}
@@ -59,7 +57,7 @@ Yopitek 提供 Sierra Wireless / Semtech 相關產品資訊、通路供應與技
 | **Dell DW5811e VID:PID** | `413c:81b6`（品牌版本，請以實機 `lsusb` 結果為準） |
 | **Linux 驅動** | `qcserial`、`qmi_wwan`、`cdc_mbim`（主流發行版基本上都內建了） |
 | **通用韌體** | 請以官方 source.sierrawireless.com 最新版本為準 |
-| **運營商認證** | 依地區時有變動（例如 AT&T、Verizon、Vodafone 等），請洽詢確認最新清單 |
+| **電信業者認證** | 依地區時有變動（例如 AT&T、Verizon、Vodafone 等），請洽詢確認最新清單 |
 
 ---
 
@@ -130,7 +128,7 @@ EM7455 在常見的 Linux 系統上支援度非常好，下面分享社群常用
 
 ```bash
 lsusb | grep -i sierra
-# 應該會看到類似這個輸出：Bus 001 Device 002: ID 1199:9079 Sierra Wireless, Inc. EM7455
+# 應該會看到類似這個輸出: Bus 001 Device 002: ID 1199:9079 Sierra Wireless, Inc. EM7455
 ```
 
 ### 步驟 2：把該裝的工具裝一裝
@@ -149,16 +147,16 @@ sudo qmicli -d /dev/cdc-wdm0 --dms-set-operating-mode=offline
 sudo qmicli -d /dev/cdc-wdm0 --dms-set-operating-mode=reset
 # 檢查一下模式切換成功沒
 sudo qmicli -d /dev/cdc-wdm0 --dms-swi-get-usb-composition
-# 應該會看到：USB composition 6: DM, NMEA, AT, QMI
+# 應該會看到: USB composition 6: DM, NMEA, AT, QMI
 ```
 
-> 如果有些特定的運營商要求走 MBIM 模式，你可以去查 `AT!USBCOMP` 這個指令然後改用 `mbimcli` 來連線。
+> 如果有些特定的電信業者要求走 MBIM 模式，你可以去查 `AT!USBCOMP` 這個指令然後改用 `mbimcli` 來連線。
 
 ### 步驟 4：解鎖 FCC Auth
 
 ```bash
 sudo qmicli -d /dev/cdc-wdm0 --dms-set-fcc-authentication
-# 如果你是用 ModemManager 想要全自動的話：
+# 如果你是用 ModemManager 想要全自動的話:
 sudo ln -sft /etc/ModemManager/fcc-unlock.d /usr/share/ModemManager/fcc-unlock.available.d/*
 ```
 
@@ -226,7 +224,7 @@ config interface 'wwan'
 
 ```bash
 lsusb | grep 413c
-# 應該會看到類似：Bus 001 Device 003: ID 413c:81b6 Dell Computer Corp. DW5811e
+# 應該會看到類似: Bus 001 Device 003: ID 413c:81b6 Dell Computer Corp. DW5811e
 ```
 
 好消息是，Dell 大部分的筆電（像 Latitude, Precision 等等）據社群討論，通常沒有鎖討厭的 BIOS 白名單，所以常常可以直接插上去用。

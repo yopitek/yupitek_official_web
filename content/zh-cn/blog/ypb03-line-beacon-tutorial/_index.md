@@ -122,7 +122,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# LINE Developers 注册的 HWID（这里改为您申请到的 HWID）
+# LINE Developers 注册的 HWID (这里改为您申请到的 HWID)
 TARGET_HWID = "0123456789"
 
 @app.route("/callback", methods=["POST"])
@@ -144,18 +144,18 @@ def callback():
             hwid = beacon_data.get("hwid")
             beacon_type = beacon_data.get("type") # enter (进入), stay (逗留), banner (点击横幅)
             
-            print(f"收到 Beacon 事件！使用者 ID: {user_id}")
+            print(f"收到 Beacon 事件! 使用者 ID: {user_id}")
             print(f"设备 HWID: {hwid} | 触发类型: {beacon_type}")
             
             # 判断是否为我们的 YPB03 设备
             if hwid == TARGET_HWID:
                 if beacon_type == "enter":
-                    print("--> 使用者进入了 YPB03 范围！触发迎宾机制。")
-                    # 在这里，您可以呼叫 LINE Messaging API 送出欢迎折价券给 user_id
+                    print("--> 使用者进入了 YPB03 范围! 触发迎宾机制.")
+                    # 在这里, 您可以呼叫 LINE Messaging API 送出欢迎折价券给 user_id
                 elif beacon_type == "stay":
                     print("--> 使用者持续在范围内...")
                 elif beacon_type == "banner":
-                    print("--> 使用者点击了聊天室上方的 LINE Beacon 横幅！")
+                    print("--> 使用者点击了聊天室上方的 LINE Beacon 横幅!")
                     
     return jsonify({"status": "ok"}), 200
 
@@ -186,9 +186,9 @@ LINE 平台需要将 Webhook 送到一个公开的 HTTPS 网址。在开发阶�
 4. 手持手机，慢慢走进 YPB03 的广播发射范围内（此时可以手动将发射功率调小以方便在室内测试）。
 5. 查看 Python 控制台，你将会看到即时输出的 Log 讯息：
    ```text
-   收到 Beacon 事件！使用者 ID: U1234567890abcdef...
+   收到 Beacon 事件! 使用者 ID: U1234567890abcdef...
    设备 HWID: 0123456789 | 触发类型: enter
-   --> 使用者进入了 YPB03 范围！触发迎宾机制。
+   --> 使用者进入了 YPB03 范围! 触发迎宾机制.
    ```
 
 ---

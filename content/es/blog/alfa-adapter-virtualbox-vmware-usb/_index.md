@@ -328,6 +328,6 @@ Para sesiones de captura superiores a 30 minutos, considera usar un hub USB con 
 
 1. [Página de descarga oficial de VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 2. [Página del producto VMware Workstation](https://www.vmware.com/products/workstation-pro.html)
-3. [aircrack-ng rtl8812au 驅動專案](https://github.com/aircrack-ng/rtl8812au)
+3. [Proyecto del controlador rtl8812au de aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
 4. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)
 5. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)

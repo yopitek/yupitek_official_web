@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["modo-monitor", "Kali-Linux", "airmon-ng", "iw", "adaptador-WiFi", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿En qué se diferencia el modo monitor del modo gestionado?"
     answer: "El modo monitor permite a la tarjeta capturar todas las tramas 802.11 en el aire, sin la restricción del modo gestionado que solo recibe paquetes con su propia MAC. Es la base de las pruebas de penetración inalámbrica."
@@ -17,10 +17,10 @@ faq:
   - question: "¿Qué hacer si la interfaz vuelve automáticamente al modo gestionado?"
     answer: "Lo causa wpa_supplicant o NetworkManager reiniciándose en segundo plano. Ejecuta airmon-ng check kill para detener estos procesos y resolver el problema."
   - question: "¿Qué tarjetas ALFA admiten completamente el modo monitor en Kali Linux?"
-    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN) y AWUS036ACM (MT7612U) lo admiten completamente; el ACM es plug-and-play."
+    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN) y AWUS036ACM (MT7612U) lo admiten completamente; el ACM es plug-and-play. Nota: la inyección de paquetes del AWUS036AXML falla en el kernel stock 6.17 (regresión de mac80211 chanctx; hay reportes de la comunidad para kernels anteriores a 6.16). Para inyección usa ACH / ACM / AX."
   - question: "¿Cómo resolver el error Fixed channel wlan0mon: -1 en airodump-ng?"
     answer: "Indica que airodump-ng no puede cambiar de canal. Ejecuta iwconfig wlan0mon channel 1 para especificar el canal y termina los procesos wpa_supplicant residuales."
----El modo monitor elimina la restricción de la tarjeta de solo recibir sus propios paquetes; es la base de las pruebas de penetración inalámbrica. Usando airmon-ng o iw con una tarjeta ALFA puedes activarlo de forma estable en Kali Linux.
+---
 
 {{< tldr >}}
 El modo monitor elimina la restricción de la tarjeta de solo recibir sus propios paquetes; es la base de las pruebas de penetración inalámbrica. Usando airmon-ng o iw con una tarjeta ALFA puedes activarlo de forma estable en Kali Linux.
@@ -203,7 +203,7 @@ Los adaptadores [ALFA Network](/es/products/alfa/) son el estándar de la indust
 | Modelo | Chipset | Banda | Modo Monitor | Inyección | Notas |
 |---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ | ✅ | El más popular para pentesting |
-| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E, requiere kernel 5.18+ |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ⚠️ Reportado en kernels anteriores a 6.16; falla en 6.17 | Wi-Fi 6E, requiere kernel 5.18+ |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ | ✅ | Excelente soporte de controlador Linux |
 
 Todos los modelos listados arriba tienen soporte de controlador verificado en Kali Linux 2024.x y 2025.x. Para chipsets como RTL8812AU, puede que necesites instalar el controlador desde el repositorio GitHub de Aircrack-ng si tu versión del kernel es muy reciente.

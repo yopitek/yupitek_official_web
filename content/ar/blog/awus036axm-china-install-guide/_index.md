@@ -1,22 +1,22 @@
 ---
 title: "دليل تثبيت برنامج تشغيل ALFA AWUS036AXM للصين: Kali Linux، Ubuntu، Debian و Raspberry Pi"
-description: "دليل خطوة بخطوة لتثبيت برامج تشغيل ALFA AWUS036AXM في الصين باستخدام المرايا المحلية. برنامج تشغيل MT7921AUN WiFi 6E المدمج في النواة، دعم كامل لوضع المراقبة و VIF. يغطي Kali Linux و Ubuntu 22/24 و Debian و Raspberry Pi. لا يتطلب GitHub."
+description: "دليل خطوة بخطوة لتثبيت برامج تشغيل ALFA AWUS036AXM في الصين باستخدام المرايا المحلية. برنامج تشغيل MT7921AUN WiFi 6 المدمج في النواة، دعم لوضع المراقبة و VIF (هذا المحول لا يدعم حقن الحزم). يغطي Kali Linux و Ubuntu 22/24 و Debian و Raspberry Pi. لا يتطلب GitHub."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axm-china-install-guide"
-tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6e", "vif"]
+tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6", "vif"]
 categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 6
 related_product: "/ar/products/alfa/awus036axm/"
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
-  - question: "ما الشريحة التي يستخدمها AWUS036AXM؟ هل يدعم WiFi 6E؟"
-    answer: "يستخدم شريحة MediaTek MT7921AUN ويدعم WiFi 6E ثلاثي النطاق (2.4G/5G/6G Hz)."
+  - question: "ما الشريحة التي يستخدمها AWUS036AXM؟ هل يدعم WiFi 6؟"
+    answer: "يستخدم شريحة MediaTek MT7921AUN ويدعم WiFi 6 (ثنائي النطاق 2.4G/5G Hz). اختبرنا 2.4/5GHz؛ لم يتم التحقق من 6GHz."
   - question: "هل يحتاج AWUS036AXM إلى تثبيت تعريف يدوي؟"
     answer: "لا، تعريف mt7921u مدمج في النواة منذ 5.18، يلزم فقط تثبيت حزمة البرنامج الثابت."
   - question: "هل يدعم AWUS036AXM الواجهات الافتراضية VIF؟"
@@ -26,10 +26,10 @@ faq:
   - question: "ما هو USB ID لـ AWUS036AXM؟"
     answer: "USB ID لـ MediaTek MT7921AUN هو 0e8d:7961، يمكن التأكد بـ lsusb."
 ---
-يعتبر AWUS036AXM محول WiFi 6E ثلاثي النطاق من ALFA مع موصل USB-A موفر للمساحة على شكل حرف L. تستخدم شريحة MT7921AUN الخاصة به برنامج تشغيل `mt7921u` المدمج في نواة Linux منذ الإصدار 5.18. يحافظ الموصل على شكل حرف L على منافذ USB المجاورة خالية في أجهزة الكمبيوتر المحمولة. يغطي هذا الدليل الإعداد الكامل — البرامج الثابتة، التحقق من برنامج التشغيل، وضع المراقبة، حقن الحزم، و VIF — دون لمس GitHub.
+يعتبر AWUS036AXM محول WiFi 6 من ALFA مع موصل USB-A موفر للمساحة على شكل حرف L. تستخدم شريحة MT7921AUN الخاصة به برنامج تشغيل `mt7921u` المدمج في نواة Linux منذ الإصدار 5.18. يحافظ الموصل على شكل حرف L على منافذ USB المجاورة خالية في أجهزة الكمبيوتر المحمولة. يغطي هذا الدليل الإعداد الكامل — البرامج الثابتة، التحقق من برنامج التشغيل، وضع المراقبة، و VIF — دون لمس GitHub. ملاحظة: حقن الحزم لا يعمل على هذا المحول (انظر أدناه).
 
 {{< tldr >}}
-يستخدم AWUS036AXM شريحة MT7921AUN ويدعم WiFi 6E، تعريفه مدمج في النواة. بعد تثبيت حزمة البرنامج الثابت يمكن استخدام وضع المراقبة وحقن الحزم و VIF.
+يستخدم AWUS036AXM شريحة MT7921AUN ويدعم WiFi 6 (2.4/5GHz). برنامج التشغيل `mt7921u` مدمج في النواة، دون الحاجة إلى تجميع. بعد تثبيت حزمة البرنامج الثابت، يعمل وضع المراقبة و AP/WPA3 و VIF (تم التحقق)؛ لكن حقن الحزم يفشل على النواة الأصلية 6.17، لذا فإن AWUS036AXM غير مناسب للحقن / اختبار الاختراق (للحقن، استخدم AWUS036ACM / ACS / AX بدلاً منه).
 {{< /tldr >}}
 
 تأكد من توفر المتطلبات التالية لديك:
@@ -72,7 +72,7 @@ Bus 001 Device 003: ID 0e8d:7961 MediaTek Inc.
 هل قمت بالتثبيت بالفعل؟ انتقل إلى:
 
 - [تمكين وضع المراقبة](#enable-monitor-mode)
-- [اختبار حقن الحزم](#test-packet-injection)
+- [حول حقن الحزم](#test-packet-injection)
 - [الواجهة الافتراضية (VIF)](#virtual-interface-vif)
 - [تمرير USB للمحاكاة الافتراضية](#virtual-machine-usb-passthrough)
 
@@ -163,21 +163,11 @@ iwconfig
 
 ---
 
-### الخطوة 5: اختبار حقن الحزم {#test-packet-injection}
+### الخطوة 5: حول حقن الحزم {#test-packet-injection}
 
-```bash
-sudo aireplay-ng --test wlan1
-```
+⚠️ **AWUS036AXM لا يدعم حقن الحزم.** على النواة الأصلية 6.17، يفشل الأمر `sudo aireplay-ng --test wlan1` — والسبب الرئيسي هو تراجع (regression) في mac80211 chanctx منذ النواة 6.16 وليس قيداً في الشريحة نفسها. تتيح برامج التشغيل المصححة من المجتمع عمل الحقن، لكن البرنامج الثابت يظل يقفل المعدل (1/6 Mbps) ولا يمكنه حقن إطارات HT/VHT.
 
-نتيجة ناجحة:
-
-```
-Trying broadcast probe requests...
-Injection is working!
-Found 1 AP
-```
-
-إذا فشل، قم بإعادة التشغيل وحاول مرة أخرى.
+لذا فإن AWUS036AXM مناسب للاتصال العادي ونقاط الوصول AP والالتقاط في وضع المراقبة، لكنه **غير مناسب لحقن الحزم أو اختبار الاختراق**. إذا كنت بحاجة إلى الحقن، فاستخدم AWUS036ACM / ACHM / ACS / ACH / AX / EACS بدلاً منه. استخدمه فقط على الشبكات التي تملكها أو المصرح لك باستخدامها.
 
 ---
 
@@ -312,13 +302,9 @@ sudo ip link set wlan1 up
 iwconfig
 ```
 
-### الخطوة 4: اختبار حقن الحزم
+### الخطوة 4: حول حقن الحزم
 
-```bash
-sudo aireplay-ng --test wlan1
-```
-
-`Injection is working!` يؤكد أن المحول يعمل بالكامل.
+AWUS036AXM لا يدعم حقن الحزم (انظر [حول حقن الحزم](#test-packet-injection)). يعمل وضع المراقبة و VIF، لكن `aireplay-ng --test` يفشل مع برنامج تشغيل mt7921u. للحقن، استخدم AWUS036ACM / ACS / AX بدلاً منه.
 
 ---
 
@@ -386,11 +372,9 @@ sudo ip link set wlan1 up
 iwconfig
 ```
 
-### الخطوة 6: اختبار حقن الحزم
+### الخطوة 6: حول حقن الحزم
 
-```bash
-sudo aireplay-ng --test wlan1
-```
+AWUS036AXM لا يدعم حقن الحزم (انظر [حول حقن الحزم](#test-packet-injection)). يعمل وضع المراقبة، لكن `aireplay-ng --test` يفشل مع برنامج تشغيل mt7921u. للحقن، استخدم AWUS036ACM / ACS / AX بدلاً منه.
 
 ---
 
@@ -460,7 +444,7 @@ iwconfig
 | Ubuntu 22.04 لا يقوم بتحميل برنامج التشغيل | نواة 5.15 قديمة جدًا | تثبيت HWE: `sudo apt install linux-generic-hwe-22.04` |
 | تظهر الواجهة ولكن لا تتصل | فقدان ملفات البرامج الثابتة | قم بتشغيل `sudo apt install firmware-misc-nonfree` ثم أعد التشغيل |
 | فشل التبديل لوضع المراقبة | الواجهة لا تزال تعمل (UP) | قم بتشغيل `sudo ip link set wlan1 down` قبل أمر `iw dev` |
-| اختبار الحقن يقول "No Answer" | نقطة الوصول بعيدة جدًا أو واجهة خاطئة | اقترب أكثر. تأكد من `Mode:Monitor` باستخدام `iwconfig`. |
+| فشل اختبار الحقن | AXM لا ينجح فيه الحقن على النواة الأصلية 6.17 (تراجع mac80211 chanctx منذ 6.16، وليس قيد الشريحة؛ والبرنامج الثابت يقفل المعدل حتى مع برامج التشغيل المصححة) | للحقن، استخدم AWUS036ACM / ACS / AX بدلاً منه |
 | فشل إنشاء واجهة VIF | لم يتم تحميل برنامج التشغيل بالكامل | افصله، ثم: `sudo rmmod mt7921u && sudo modprobe mt7921u` |
 
 ## مرجع مرايا الصين

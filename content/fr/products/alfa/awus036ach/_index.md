@@ -9,7 +9,7 @@ brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB-C", "Dual Antenna", "Monitor Mode", "Kali Linux", "Security Research"]
 faq:
   - question: "Le AWUS036ACH nécessite-t-il une installation de pilote sur Linux ?"
-    answer: "Dans la plupart des cas, oui. Le chipset Realtek RTL8812AU nécessite normalement une installation manuelle unique du pilote DKMS, et DKMS le reconstruit après les mises à jour du noyau. Sur les noyaux 6.14 et ultérieurs, un pilote intégré au noyau est disponible."
+    answer: "Dans la plupart des cas, oui. Le chipset Realtek RTL8812AU nécessite normalement une installation manuelle unique du pilote DKMS, et DKMS le reconstruit après les mises à jour du noyau. Sur les noyaux 6.13 et ultérieurs, un pilote intégré au noyau est disponible."
   - question: "Le AWUS036ACH prend-il en charge le mode moniteur et l'injection de paquets ?"
     answer: "Oui. Sur Kali Linux, il prend en charge le mode moniteur complet et l'injection de paquets avec le pilote aircrack-ng. Utilisez ces fonctionnalités uniquement pour des tests de sécurité autorisés."
   - question: "Le AWUS036ACH fonctionne-t-il sur Windows et macOS ?"
@@ -58,7 +58,7 @@ L'AWUS036ACH est l'adaptateur de recherche en sécurité le plus emblématique d
 |------|---------|------|
 | Windows 10/11 | ✅ Pris en charge | Télécharger le pilote depuis le site Alfa ; WPA3 pris en charge |
 | macOS 10.15 Catalina | ⚠️ Limité | Installation manuelle ; macOS 11+ et Apple Silicon NON pris en charge |
-| Ubuntu | ✅ Pris en charge | Installation manuelle RTL8812AU DKMS ; intégré au noyau ≥ 6.14 |
+| Ubuntu | ✅ Pris en charge | Installation manuelle RTL8812AU DKMS ; intégré au noyau ≥ 6.13 |
 | Kali Linux | ✅ Excellent | Depuis Kali 2017.1 ; mode moniteur complet + injection de paquets ; utiliser le pilote aircrack-ng |
 | NetHunter (Android) | ✅ Pris en charge | USB OTG ; fonctionnement largement confirmé |
 

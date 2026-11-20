@@ -1,22 +1,22 @@
 ---
 title: "ALFA AWUS036AXM 中國安裝全攻略：Kali Linux / Ubuntu / Debian / 樹莓派"
-description: "專為國內使用者準備的 ALFA AWUS036AXM 安裝教程。使用國內映像站，涵蓋 MT7921AUN WiFi 6E 驅動配置，支援監聽模式和 VIF。適用於 Kali Linux, Ubuntu, Debian 以及樹莓派。無需訪問 GitHub。"
+description: "專為國內使用者準備的 ALFA AWUS036AXM 安裝教程。使用國內映像站，涵蓋 MT7921AUN WiFi 6 驅動配置，支援監聽模式與 VIF（注意：此卡不支援封包注入）。適用於 Kali Linux, Ubuntu, Debian 以及樹莓派。無需訪問 GitHub。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axm-china-install-guide"
-tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "驅動", "中國", "監聽模式", "wifi6e", "vif"]
+tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "驅動", "中國", "監聽模式", "wifi6", "vif"]
 categories: ["驅動安裝指南"]
 series: ["alfa-china-install-guide"]
 related_product: "/zh-tw/products/alfa/awus036axm/"
 series_order: 6
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
-  - question: "AWUS036AXM 用什麼晶片？支援 WiFi 6E 嗎？"
-    answer: "採用 MediaTek MT7921AUN 晶片，支援 WiFi 6E 三頻段（2.4G/5G/6G Hz）。"
+  - question: "AWUS036AXM 用什麼晶片？支援 WiFi 6 嗎？"
+    answer: "採用 MediaTek MT7921AUN 晶片，支援 WiFi 6（雙頻 2.4G/5G Hz）。我們實測 2.4/5GHz；未實測 6GHz。"
   - question: "AWUS036AXM 的驅動需要手動安裝嗎？"
     answer: "不需要，mt7921u 驅動自 Linux 核心 5.18 起已內建，僅需安裝韌體套件。"
   - question: "AWUS036AXM 支援 VIF 虛擬介面嗎？"
@@ -27,15 +27,15 @@ faq:
     answer: "MediaTek MT7921AUN 的 USB ID 為 0e8d:7961，用 lsusb 可確認。"
 ---
 
-ALFA AWUS036AXM 搭載 MT7921AUN 晶片支援 WiFi 6E，驅動自核心 5.18 內建，僅需安裝韌體套件即可支援監聽模式與 VIF。
+ALFA AWUS036AXM 搭載 MT7921AUN 晶片支援 WiFi 6（2.4/5GHz），驅動自核心 5.18 內建，僅需安裝韌體套件即可支援監聽模式與 VIF（但此卡不支援封包注入）。
 
 {{< tldr >}}
-AWUS036AXM 採用 MT7921AUN 晶片支援 WiFi 6E，驅動核心內建，安裝韌體套件後即可使用監聽模式、封包注入與 VIF 功能。
+AWUS036AXM 採用 MT7921AUN 晶片，支援 WiFi 6（2.4/5GHz）。mt7921u 驅動核心內建、免編譯，安裝韌體套件後監聽模式、AP/WPA3 與 VIF 實測可用；但封包注入在 stock kernel 6.17 實測失敗，因此 AXM 不適合注入／滲透測試用途（需要注入請改用 AWUS036ACM / ACS / AX 等）。
 {{< /tldr >}}
 
-想體驗 WiFi 6E 的飆速快感？AWUS036AXM 是個非常硬核的選擇，而且它那節省空間的 L 型介面設計真的很貼心，完全不會擋到筆電相鄰的 USB 埠。
+想體驗 WiFi 6 的高速連線？AWUS036AXM 是個不錯的選擇，而且它那節省空間的 L 型介面設計真的很貼心，完全不會擋到筆電相鄰的 USB 埠。
 
-它的 MT7921AUN 晶片其實已經內建在 5.18 以上版本的 Linux 核心裡了，但國內的夥伴在實際使用時，往往會卡在「韌體下載」這一步。這份指南將帶你避開所有網路坑，全程使用國內映像站，手把手教你搞定監聽模式、封包注入以及超強大的 VIF 功能。
+它的 MT7921AUN 晶片其實已經內建在 5.18 以上版本的 Linux 核心裡了，但國內的夥伴在實際使用時，往往會卡在「韌體下載」這一步。這份指南將帶你避開所有網路坑，全程使用國內映像站，手把手教你搞定監聽模式、AP 熱點以及超強大的 VIF 功能（注意：封包注入在此卡實測失敗，詳見下文說明）。
 
 ## 開始前的準備
 
@@ -68,7 +68,7 @@ Bus 001 Device 003: ID 0e8d:7961 MediaTek Inc.
 
 如果是熟手已經裝好驅動了，可以直接跳轉到：
 - [開啟監聽模式](#enable-monitor-mode)
-- [測試封包注入](#test-packet-injection)
+- [關於封包注入](#test-packet-injection)
 - [虛擬介面 (VIF) 進階玩法](#virtual-interface-vif)
 - [虛擬機 USB 直通避坑指南](#virtual-machine-usb-passthrough)
 
@@ -102,7 +102,7 @@ sudo apt update
 
 ### 2. 安裝韌體 (Firmware)
 
-這步非常關鍵，沒有這些韌體檔，驅動雖然加載了，網路卡還是動不了的。
+這步非常關鍵，沒有這些韌體檔，驅動雖然載入了，網路卡還是動不了的。
 
 ```bash
 sudo apt install -y linux-firmware firmware-misc-nonfree
@@ -141,6 +141,14 @@ sudo ip link set wlan1 up
 
 ---
 
+### 5. 關於封包注入 {#test-packet-injection}
+
+⚠️ **AWUS036AXM 不支援封包注入。** 在 stock kernel 6.17 上實測，`sudo aireplay-ng --test wlan1` 會失敗——主因是 kernel 6.16 以後 mac80211 chanctx 回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps），無法注入 HT/VHT 訊框。
+
+因此 AXM 適合純連線、AP 熱點與監聽抓包，但**不適合封包注入或滲透測試**。如果你需要注入，請改用 AWUS036ACM / ACHM / ACS / ACH / AX / EACS。請僅在你自有或已獲授權的網路上操作。
+
+---
+
 ## Ubuntu 22.04 / 24.04
 
 ### 如果你是 Ubuntu 24.04 (Noble) — 躺平模式
@@ -149,7 +157,7 @@ sudo ip link set wlan1 up
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
-# 將 URIs 換成阿里雲：http://mirrors.aliyun.com/ubuntu/
+# 將 URIs 換成阿里雲: http://mirrors.aliyun.com/ubuntu/
 
 sudo apt update
 sudo apt install -y linux-firmware
@@ -182,7 +190,7 @@ sudo reboot
 
 ```bash
 sudo nano /etc/apt/sources.list
-# 貼上這行：deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+# 貼上這行: deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
 
 sudo apt update
 sudo apt install -y firmware-misc-nonfree linux-firmware
@@ -193,7 +201,7 @@ sudo reboot
 
 ---
 
-## 樹莓派 (Raspberry Pi) 4B / 5
+## 樹莓派 (Raspberry Pi) 4B / 5 {#raspberry-pi-4b--5}
 
 > **特別提醒：** AXM 在高負載下功耗不小，樹莓派使用者請務必配合 **外接供電 USB Hub** 使用。
 
@@ -203,7 +211,7 @@ sudo reboot
 ```bash
 # 換源並安裝韌體
 sudo nano /etc/apt/sources.list
-# 換成中科大：deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
+# 換成中科大: deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install -y linux-firmware firmware-misc-nonfree
@@ -235,7 +243,7 @@ AXM 的 MT7921AUN 晶片對 VIF 支援得極致完美。你可以一邊連著 Wi
 # 建立一個新的虛擬接口 mon0
 sudo iw dev wlan0 interface add mon0 type monitor
 sudo ip link set mon0 up
-# 現在你就可以用 mon0 抓包了，而 wlan0 還能繼續正常上網
+# 現在你就可以用 mon0 抓包了, 而 wlan0 還能繼續正常上網
 sudo airodump-ng mon0
 ```
 
@@ -256,8 +264,8 @@ sudo ip link set mon0 up
 |------|----------|----------|
 | `lsusb` 刷不出網路卡 | 沒插好或供電不足 | 換個埠試試，樹莓派務必加有源 Hub |
 | `lsmod` 看不到 mt7921u | 韌體沒裝或核心太老 | 跑一遍韌體安裝命令，Ubuntu 22.04 記得升核心 |
-| 封包注入測試顯示 "No Answer" | AP 太遠或介面選錯 | 湊近點，確認用的是正確的介面名稱 |
-| 無法建立 VIF 介面 | 驅動沒加載好 | 試試重啟，或者手動 `modprobe mt7921u` |
+| 封包注入測試失敗 | stock kernel 6.16 以上 mac80211 chanctx 回歸（非晶片限制；patched 驅動可注入，但韌體鎖速率 1/6 Mbps） | 需要注入請改用 AWUS036ACM / ACS / AX |
+| 無法建立 VIF 介面 | 驅動沒載入好 | 試試重啟，或者手動 `modprobe mt7921u` |
 
 ## 國內映像站速查表
 

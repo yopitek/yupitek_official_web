@@ -21,8 +21,6 @@ faq:
     answer: "Dois pontos principais: refrigeração e alimentação. A temperatura interna do módulo normalmente não pode passar de 90 a 115 °C, e caixas de metal externas esquentam com facilidade, então é preciso garantir boa condução de calor. Além disso, o consumo instantâneo de um módulo 5G pode chegar a 2,7 A, e o conversor de energia precisa aguentar essa corrente de pico."
 ---
 
-# Backhaul móvel para videomonitoramento e mídia digital: como escolher de Cat 6 a 5G
-
 **Resumo em uma frase: não se deixe deslumbrar pelo 5G; primeiro pergunte se o seu equipamento «envia» dados sem parar ou os «baixa». As câmeras de vigilância transmitem a imagem continuamente para a nuvem, então você deve olhar para a velocidade de upload (Uplink); os painéis digitais baixam vídeos novos para reproduzir, então você deve olhar para a velocidade de download (Downlink). Se você só precisa transmitir algumas câmeras 1080p, a placa Cat 6 mais barata já resolve!**
 
 Muitos proprietários, ao abrir o projeto de rede de «câmeras de vigilância em cruzamentos» ou «painéis publicitários de redes de lojas», já começam a conversa dizendo: «Me coloca o módulo 5G mais rápido!»
@@ -30,7 +28,7 @@ E gastam uma fortuna para descobrir depois que, na real, nem precisavam disso.
 
 Escolher placa de rede não é escolher carro de corrida; não é quanto mais rápida melhor, e sim «remédio certo para cada doença». Neste artigo usamos os três módulos M.2 mais comuns da Sierra Wireless (EM7455, EM7565 e EM9191) e, com os números das folhas de especificações oficiais, ensinamos você a escolher o mais econômico.
 
-> Fonte dos dados técnicos: folhas de especificações oficiais da Sierra Wireless. Artigo organizado pela Yopitek (榆閤科技).
+> Fonte dos dados técnicos: folhas de especificações oficiais da Sierra Wireless. Artigo organizado pela Yopitek.
 
 ---
 
@@ -109,7 +107,7 @@ Comprar placa de rede é como alugar caminhão: conforme a carga que você vai l
 
 ## Informações de compra (Call To Action)
 
-Está planejando uma solução de rede para retorno de vídeo ou para mídia digital? A Yopitek (榆閤科技) oferece módulos Sierra Wireless completos e consultoria técnica profissional para calcular a combinação mais econômica para você!
+Está planejando uma solução de rede para retorno de vídeo ou para mídia digital? A Yopitek oferece módulos Sierra Wireless completos e consultoria técnica profissional para calcular a combinação mais econômica para você!
 Escreva para nós: **sales@yupitek.com**
 Veja os produtos: [Seção de produtos Sierra Wireless](/pt/products/sierra/)
 

@@ -23,8 +23,6 @@ faq:
 ---
 Beginnen Sie mit der Definition des Umfangs:
 
-# Enterprise-Wireless-Security-Assessment: Ein Komplettframework
-
 {{< tldr >}}
 Diese Rahmenstruktur basiert auf dem ALFA Wireless-Adapter und beschreibt detailliert die sechsstufige Methodik für die Bewertung der drahtlosen Unternehmenssicherheit, einschließlich der Abgrenzung des Geltungsbereichs, der Erkennung bösartiger Access Points, der WPA2/WPA3-Audits, der PMF-Tests, der Client-Isolierung und der 802.1X-Bewertung, ergänzt durch Berichtsvorlagen und Definitionen der Schweregrade.
 {{< /tldr >}}

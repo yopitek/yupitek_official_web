@@ -124,7 +124,7 @@
   <rect x="390" y="295" width="250" height="64" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
   <text x="405" y="313" fill="#fbbf24" font-size="8" font-weight="600">⭐ LIGHT</text>
   <text x="515" y="313" fill="white" font-size="11" font-weight="600" text-anchor="middle">AWUS036ACHM</text>
-  <text x="515" y="329" fill="#94a3b8" font-size="9" text-anchor="middle">MT7610U · 2.4/5 GHz · AC433</text>
+  <text x="515" y="329" fill="#94a3b8" font-size="9" text-anchor="middle">MT7610U · 2.4/5 GHz · AC600</text>
   <text x="515" y="343" fill="#64748b" font-size="8" text-anchor="middle">mt76 in-kernel · USB 2.0 · Single High-Gain</text>
   <text x="515" y="355" fill="#fbbf24" font-size="8" text-anchor="middle">⚠️ ARM64: known interface-drop bug (morrownr #379)</text>
 
@@ -133,8 +133,8 @@
   <rect x="390" y="375" width="250" height="64" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
   <text x="515" y="393" fill="white" font-size="11" font-weight="600" text-anchor="middle">AWUS036ACH</text>
   <text x="515" y="409" fill="#94a3b8" font-size="9" text-anchor="middle">RTL8812AU · 2.4/5 GHz · AC1200</text>
-  <text x="515" y="423" fill="#64748b" font-size="8" text-anchor="middle">rtw88 in-kernel (Kernel 6.14+) · or DKMS</text>
-  <text x="515" y="435" fill="#fbbf24" font-size="8" text-anchor="middle">⚠️ ARM64: use kernel 6.14+ for stability</text>
+  <text x="515" y="423" fill="#64748b" font-size="8" text-anchor="middle">rtw88 in-kernel (Kernel 6.13+) · or DKMS</text>
+  <text x="515" y="435" fill="#fbbf24" font-size="8" text-anchor="middle">⚠️ ARM64: use kernel 6.13+ (in-kernel rtw88)</text>
 
   <!-- Not Recommended -->
   <rect x="390" y="460" width="250" height="56" rx="6" fill="#0f172a"/>

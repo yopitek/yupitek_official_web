@@ -1,12 +1,13 @@
 ---
-title: "ALFA AWUS036ACHM — AC433 デュアルバンド コンパクト USB ワイヤレスアダプター"
-description: "ALFA AWUS036ACHM、MediaTek MT7610U、AC433 デュアルバンド、USB 2.0。シングルアンテナのコンパクト設計でモニターモードをサポートし、携帯用途に最適です。"
+title: "ALFA AWUS036ACHM — AC600 デュアルバンド コンパクト USB ワイヤレスアダプター"
+description: "ALFA AWUS036ACHM、MediaTek MT7610U、AC600 デュアルバンド、USB 2.0。シングルアンテナのコンパクト設計でモニターモードをサポートし、携帯用途に最適です。"
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 5", "AC433", "USB 2.0", "デュアルバンド", "コンパクト"]
+tags: ["Wi-Fi 5", "AC600", "USB 2.0", "デュアルバンド", "コンパクト"]
 faq:
   - question: "Linux で AWUS036ACHM のドライバをインストールする必要がありますか？"
     answer: "通常は不要です。ALFA の Linux サポートページによると、このデバイスは Kali、Ubuntu、Raspberry Pi OS でプラグアンドプレイに対応しており、mainline Linux kernel バージョン 4.19 以降でサポートされていると記載されています。Debian では、さらに non-free APT ソースを追加し、firmware パッケージをインストールする必要があります。"

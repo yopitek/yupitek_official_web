@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["HAK5", "WiFi-Pineapple", "AWUS036ACM", "MT7612U", "monitor-mode", "packet-injection", "PineAP", "OpenWrt", "5GHz"]
 featureimage: "/images/blog/hak5-pineapple-mark7-alfa-awus036acm.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "WiFi Pineapple Mark VIIに外付けアダプターは必要ですか？"
     answer: "必要です。MK7内蔵無線は2.4 GHzのみをサポートし、2026年のほとんどのネットワークは5 GHzに移行済みで、外付けAWUS036ACMで5 GHzモニタリングとインジェクション機能を追加できます。"
@@ -19,7 +19,7 @@ faq:
   - question: "MK7でMonitor Modeをどう有効にしますか？"
     answer: "SSHでログイン後、airmon-ng start wlan3コマンドを実行するとインターフェースがwlan3monにリネームされ、iwconfigでモードを確認します。"
   - question: "MK7と互換性のないALFAアダプターは？"
-    answer: "AWUS036AXとAWUS036AXERはRTL8832BUチップを使用し、AWUS036EACSはRTL8811CUを使用し、ドライバーがモニターモードやインジェクションをサポートしないため互換性がありません。"
+    answer: "AWUS036AXとAWUS036AXERはRTL8832BUチップを使用し、rtw89_8852bu ドライバーは kernel 6.17 から内蔵されており、GX10（kernel 6.17）で monitor mode とインジェクションを実測しましたが、Mark7 では未検証です。AWUS036EACS（RTL8821CU）の rtw88_8821cu ドライバーは kernel 6.2 から mainline に入っており、GX10（kernel 6.17）で monitor mode とインジェクションを実測しましたが、Mark7 のファームウェアが使う kernel／ドライバーにこれが含まれるかは当サイトでは Mark7 上で未実測のため、検証済みの互換リストには含めていません。"
 ---
 
 HAK5 WiFi Pineapple Mark VII は、ポータブルワイヤレスセキュリティ監査のゴールドスタンダードです。しかし初期状態では重大な制限があります：内蔵無線は **2.4 GHz** のみに対応しています。2026 年現在、ほとんどの企業および家庭用ネットワークは 5 GHz に移行しており、より優れたパフォーマンスと混雑の少なさを実現しています。

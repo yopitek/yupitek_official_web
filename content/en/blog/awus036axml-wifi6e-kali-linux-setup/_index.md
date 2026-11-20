@@ -11,19 +11,17 @@ tags:
   - Kali Linux
 hero_image: /static/img/AWUS036AXML/hero.webp
 hero_alt: "How to install AWUS036AXML on Kali Linux? Wi-Fi 6E Monitoring Mode and Packet Injection Tutorial | Yopitek"
-seo_description: "ALFA AWUS036AXML (MT7921AUN Chipset) installation guide for Kali Linux: Built-in mt7921u driver, kernel version requirements, monitoring mode, packet injection testing, and common troubleshooting."
+seo_description: "ALFA AWUS036AXML (MT7921AUN Chipset) installation guide for Kali Linux: Built-in mt7921u driver, kernel version requirements, monitoring mode, packet injection status (failed on stock kernel 6.17 in our tests), and common troubleshooting."
 date: 2026-08-10
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 categories:
   - Technical
-lastmod: 2026-08-10
+lastmod: 2026-11-20
 ---
 
-# ALFA AWUS036AXML Installation Guide: Monitoring Mode and Packet Injection on Kali Linux
-
-> TL;DR: The ALFA AWUS036AXML features the MediaTek MT7921AUN chipset. On Kali Linux (kernel 5.18+), it works out-of-the-box with the **built-in `mt7921u` driver**, requiring no manual compilation. For stable active monitor mode and packet injection, a kernel 6.12+ and a powered USB Hub are recommended. After plugging in, `lsusb` should show `0e8d:7961`, and you can switch to monitor mode using `airmon-ng` or `iw`.
+> TL;DR: The ALFA AWUS036AXML features the MediaTek MT7921AUN chipset. On Kali Linux (kernel 5.18+), it works out-of-the-box with the **built-in `mt7921u` driver**, requiring no manual compilation. For stable active monitor mode, a kernel 6.12+ and a powered USB Hub are recommended. Packet injection has community reports on kernels before 6.16, but failed in our tests on stock kernel 6.17 (mac80211 chanctx regression, not a chip limitation); use the ACH, EACS, ACS or AX if you need injection. After plugging in, `lsusb` should show `0e8d:7961`, and you can switch to monitor mode using `airmon-ng` or `iw`.
 
 ## Why Are Wi-Fi 6E Adapters Gaining Attention in Penetration Testing?
 

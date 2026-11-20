@@ -22,11 +22,11 @@ faq:
 ---
 
 
-Wenn du an der Uni mit deinem Professor ein 5G-Projekt machst oder gerade in der Firma für die Auswahl des 5G-Moduls zuständig bist, wirst du beim Stöbern im Internet sicher oft diesen Satz lesen: „Der EM9190 ist die günstige Sub-6-Version, der EM9191 ist das Flaggschiff mit mmWave (Millimeterwellen)."
+Wenn du an der Uni mit deinem Professor ein 5G-Projekt machst oder gerade in der Firma für die Auswahl des 5G-Moduls zuständig bist, wirst du beim Stöbern im Internet sicher oft diesen Satz lesen: „Der EM9190 ist die günstige Sub-6-Version, der EM9191 ist das Flaggschiff mit mmWave (Millimeterwellen).“
 
 **Falsch! Das ist komplett verdreht!**
 
-Dieser Artikel stützt sich nicht auf Online-Weitererzählungen: Unsere einzige Grundlage ist die offizielle Spezifikation von Sierra Wireless, „EM919X/EM7690 Product Technical Specification" (Doc 41113174, Rev 8, Mai 2023). Wir prüfen die Unterschiede der beiden Module Punkt für Punkt. Besonders schauen wir auf die Bänder n78 und 28 GHz, die taiwanische Leser am meisten interessieren, damit du beim Kauf von 5G-Geräten nichts Falsches kaufst.
+Dieser Artikel stützt sich nicht auf Online-Weitererzählungen: Unsere einzige Grundlage ist die offizielle Spezifikation von Sierra Wireless, „EM919X/EM7690 Product Technical Specification“ (Doc 41113174, Rev 8, Mai 2023). Wir prüfen die Unterschiede der beiden Module Punkt für Punkt. Besonders schauen wir auf die Bänder n78 und 28 GHz, die taiwanische Leser am meisten interessieren, damit du beim Kauf von 5G-Geräten nichts Falsches kaufst.
 
 > Produktlinks: [EM9190 — Yopitek-Produktseite](/de/products/sierra/em9190/) | [EM9191 — Yopitek-Produktseite](/de/products/sierra/em9191/) | Offizielle Spezifikation: [EM919X/EM7690 Product Technical Specification](https://yupitek.com/docs/sierra/EM919x.pdf)
 
@@ -40,13 +40,13 @@ Für mmWave musst du nach dem Kauf des EM9190 noch zusätzlich Antennenmodule Qu
 
 | Deine Frage | Die richtige Antwort laut offizieller Spezifikation |
 |---|---|
-| **Was ist der Unterschied zwischen den beiden Karten?** | Nur mmWave (FR2). In der Spezifikation des EM9190 steht „LTE+FR2 NSA EN-DC Supported"; beim EM9191 steht „Not supported". Alles andere, Sub-6-Bänder, LTE usw., ist komplett identisch. |
+| **Was ist der Unterschied zwischen den beiden Karten?** | Nur mmWave (FR2). In der Spezifikation des EM9190 steht „LTE+FR2 NSA EN-DC Supported“; beim EM9191 steht „Not supported“. Alles andere, Sub-6-Bänder, LTE usw., ist komplett identisch. |
 | **Hat der EM9190 mmWave?** | Ja. Aber das bedeutet nicht, dass du mmWave einfach mit dem Kauf der Karte bekommst: Du musst extern Qualcomm-mmWave-Antennenmodule anschließen (maximal 4 Stück), unterstützt werden n257/n258/n260/n261, und es läuft nur im NSA-Modus (nicht autonomes Netz). |
-| **Hat der EM9191 mmWave?** | Nein. In der offiziellen Tabelle 1-1 steht klar „Not supported", und alle mmWave-bezogenen Signalpins auf der Platine sind NC (nicht verbunden). |
+| **Hat der EM9191 mmWave?** | Nein. In der offiziellen Tabelle 1-1 steht klar „Not supported“, und alle mmWave-bezogenen Signalpins auf der Platine sind NC (nicht verbunden). |
 | **Welches Modul kaufst du für ein 5G-Projekt in Taiwan?** | Taiwanisches 5G läuft meist auf 3,5 GHz (n78), das beide Module unterstützen; 28 GHz (entspricht n257) ist in Taiwan seltener. Nur wenn du genau dazu experimentierst, brauchst du den EM9190 plus mmWave-Antennen. |
 | **Welches Modul passt zu wem?** | **EM9190**: US-/JP-Markt, Labortests für Millimeterwellen, Outdoor-CPE mit extrem großer Bandbreite.<br>**EM9191**: Projekte in Taiwan oder Asien mit Sub-6, wenn das Modul wenig Strom verbrauchen soll und das Budget begrenzt ist. |
 
-> **Noch einmal deutlich**: Glaub bitte nicht mehr der Online-Aussage, dass „der EM9191 das mmWave-Flaggschiff ist". In der offiziellen Spezifikation steht schwarz auf weiß, dass **nur der EM9190 mmWave-Fähigkeit hat**. Ein Fehlkauf wäre peinlich.
+> **Noch einmal deutlich**: Glaub bitte nicht mehr der Online-Aussage, dass „der EM9191 das mmWave-Flaggschiff ist“. In der offiziellen Spezifikation steht schwarz auf weiß, dass **nur der EM9190 mmWave-Fähigkeit hat**. Ein Fehlkauf wäre peinlich.
 
 ---
 
@@ -90,7 +90,7 @@ Alle Zahlen unten stammen aus der offiziellen Spezifikation. Wenn du Ingenieur b
 
 Viele Studierende und Maker denken, man kauft den EM9190 und kann sofort Millimeterwellen testen. Das ist ein großer Irrtum.
 
-In der Spezifikation steht es klar: „**Der EM9190 unterstützt 5G mmWave nur in Kombination mit optionalen Qualcomm-mmWave-Antennenmodulen.**" Außerdem wird nur der NSA-Modus (nicht autonomes Netz) unterstützt, du brauchst also zwingend ein 4G-LTE-Signal als Anker (Anchor).
+In der Spezifikation steht es klar: „**Der EM9190 unterstützt 5G mmWave nur in Kombination mit optionalen Qualcomm-mmWave-Antennenmodulen.**“ Außerdem wird nur der NSA-Modus (nicht autonomes Netz) unterstützt, du brauchst also zwingend ein 4G-LTE-Signal als Anker (Anchor).
 
 ### Wie konfigurierst du die Millimeterwellen-Antennen?
 

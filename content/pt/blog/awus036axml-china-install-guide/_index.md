@@ -13,7 +13,7 @@ related_product: "/pt/products/alfa/awus036axml/"
 series_order: 7
 featureimage: "/images/blog/awus036axml-china-install-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Qual chipset o AWUS036AXML usa? E o mesmo do AWUS036AXM?"
@@ -28,10 +28,10 @@ faq:
     answer: "O USB ID do MediaTek MT7921AUN e 0e8d:7961, verificável com lsusb."
 ---
 
-O AWUS036AXML é o carro-chefe WiFi 6E da ALFA — um adaptador USB-C tri-band que cobre as bandas de 2,4 GHz, 5 GHz e a banda de 6 GHz não congestionada. Seu chip MT7921AUN usa o driver `mt7921u`, integrado no kernel Linux desde a versão 5.18. No Ubuntu 24.04 e Kali 2025, ele é plug-and-play assim que o pacote de firmware é instalado de um espelho doméstico. Este guia cobre a configuração completa — firmware, verificação do driver, modo monitor, injeção de pacotes e VIF — sem tocar no GitHub.
+O AWUS036AXML é o carro-chefe WiFi 6E da ALFA — um adaptador USB-C tri-band que cobre as bandas de 2,4 GHz, 5 GHz e a banda de 6 GHz não congestionada. Seu chip MT7921AUN usa o driver `mt7921u`, integrado no kernel Linux desde a versão 5.18. No Ubuntu 24.04 e Kali 2025, ele é plug-and-play assim que o pacote de firmware é instalado de um espelho doméstico. Este guia cobre a configuração completa — firmware, verificação do driver, modo monitor, VIF e uma nota sobre a injeção de pacotes (falha no kernel stock 6.17) — sem tocar no GitHub.
 
 {{< tldr >}}
-O AWUS036AXML usa o chipset MT7921AUN. E um adaptador WiFi 6E tri-band USB-C flagship com driver integrado ao kernel. Apos instalar o firmware, voce pode usar modo monitor, injecao de pacotes e VIF.
+O AWUS036AXML usa o chipset MT7921AUN. E um adaptador WiFi 6E tri-band USB-C flagship com driver integrado ao kernel. Apos instalar o firmware, voce pode usar modo monitor, AP/WPA3 e VIF; a injecao de pacotes falhou no kernel stock 6.17 (veja abaixo).
 {{< /tldr >}}
 
 Certifique-se de ter estes itens prontos:
@@ -67,7 +67,6 @@ Pule para a seção correta para o seu SO:
 - [Kali Linux](#kali-linux)
 - [Ubuntu 22.04 / 24.04](#ubuntu-2204--2404)
 - [Debian](#debian)
-- [Raspberry Pi 4B / 5](#raspberry-pi-4b--5)
 
 ---
 
@@ -141,6 +140,8 @@ Procure por `Mode:Monitor` na interface.
 ---
 
 ### Passo 5: Testar Injeção de Pacotes {#test-packet-injection}
+
+⚠️ **Pré-requisito de versão:** há relatos da comunidade de que a injeção funciona em kernels anteriores ao 6.16. No kernel stock 6.17 (ASUS GX10, Ubuntu 24.04 ARM64) nosso teste falhou — `aireplay-ng --test` mostra `Found 0 APs` / `No Answer` —, portanto deauth e captura de handshake não são possíveis. A causa é uma regressão do mac80211 chanctx desde o kernel 6.16, não uma limitação do chip; drivers corrigidos pela comunidade permitem a injeção, mas o firmware continua travando a taxa (1/6 Mbps, sem injeção HT/VHT). Se você precisa de injeção, use o AWUS036ACH / EACS / ACS / AX (ou ACM / ACHM). Modo monitor, AP, WPA3 e VIF funcionam normalmente.
 
 ```bash
 sudo aireplay-ng --test wlan1

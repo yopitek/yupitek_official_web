@@ -237,6 +237,6 @@ Asegúrate de ejecutar comandos como root en el chroot de NetHunter. Ejecuta `su
 ## Referencias
 
 1. [Documentación oficial de Kali NetHunter](https://www.kali.org/docs/nethunter/)
-2. [aircrack-ng rtl8812au 驅動專案](https://github.com/aircrack-ng/rtl8812au)
+2. [Proyecto del controlador rtl8812au de aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
 3. [Sitio oficial de ALFA Network](https://www.alfa.com.tw/)
 4. [Documentación para desarrolladores de Android USB OTG](https://developer.android.com/guide/topics/connectivity/usb)

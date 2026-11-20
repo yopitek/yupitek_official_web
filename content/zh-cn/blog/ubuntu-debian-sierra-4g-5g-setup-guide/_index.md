@@ -95,10 +95,10 @@ systemctl status ModemManager
 如果你用的是桌面版的 Ubuntu 或 Mint，用系统自带的网络管理工具最方便。
 
 ```bash
-# 新增一个连接（把 "internet" 换成你运营商的 APN）
+# 新增一个连接 (把 "internet" 换成你运营商的 APN)
 nmcli connection add type gsm ifname cdc-wdm0 con-name "mobile" apn "internet"
 
-# 启动它！
+# 启动它!
 nmcli connection up mobile
 ```
 就这么简单！你可以用 `ip addr show` 看看 `wwan0` 有没有拿到 IP。

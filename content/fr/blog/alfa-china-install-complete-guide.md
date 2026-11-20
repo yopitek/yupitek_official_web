@@ -10,7 +10,7 @@ series_order: 9
 description: "Le guide ultime pour installer tous les adaptateurs WiFi USB Alfa sous Linux en Chine. Couvre Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi. Miroirs domestiques pour les paquets système, dépôts GitHub vérifiés pour les sources des pilotes."
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Faut-il un VPN pour installer un adaptateur WiFi Alfa en Chine ?"
     answer: "Pas nécessairement. Les paquets système viennent de miroirs nationaux (USTC, Aliyun, Tsinghua) ; les sources des pilotes hors noyau sont clonées depuis les dépôts GitHub vérifiés de morrownr. Si GitHub est lent, utilisez un proxy ou un miroir de confiance."
@@ -19,7 +19,7 @@ faq:
   - question: "Quels adaptateurs Alfa prennent en charge le Wi-Fi 6 ?"
     answer: "Les AWUS036AX et AWUS036AXER utilisent la puce RTL8832BU pour le Wi-Fi 6, avec un fonctionnement plug-and-play sur Ubuntu 24.04."
   - question: "Quels adaptateurs Alfa prennent en charge le Wi-Fi 6E ?"
-    answer: "Les AWUS036AXM et AWUS036AXML utilisent la puce MT7921AUN pour le Wi-Fi 6E tri-bande."
+    answer: "Les AWUS036AXM et AWUS036AXML utilisent la puce MT7921AUN (Wi-Fi 6E). Le 6 GHz de l'AXML a été testé en local ; l'AXM prend en charge le Wi-Fi 6E selon ses spécifications, mais son 6 GHz n'a pas été testé."
   - question: "Que faut-il savoir pour utiliser un adaptateur Alfa sur Raspberry Pi ?"
     answer: "Utilisez impérativement un hub USB alimenté et installez la version Kali ARM64 pour un meilleur support des pilotes."
 ---

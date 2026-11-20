@@ -200,7 +200,7 @@ wlan0mon  IEEE 802.11  Mode:Monitor  Frequency:2.457 GHz  Tx-Power=20 dBm
 5 GHz 帯のみを対象としたい場合は、チャンネルを指定します。
 
 ```bash
-# 5 GHz 帯のチャンネル 36（5180 MHz）に設定
+# 5 GHz 帯のチャンネル 36 (5180 MHz) に設定
 sudo airmon-ng start wlan0 36
 ```
 

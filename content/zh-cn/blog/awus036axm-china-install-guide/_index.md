@@ -1,22 +1,22 @@
 ---
 title: "ALFA AWUS036AXM 中国安装指南：Kali Linux, Ubuntu, Debian 和 树莓派"
-description: "专为国内用户准备的 ALFA AWUS036AXM 安装教程。使用国内镜像源，涵盖 MT7921AUN WiFi 6E 驱动配置，支持监听模式和 VIF。适用于 Kali Linux, Ubuntu, Debian 以及树莓派。无需访问 GitHub。"
+description: "专为国内用户准备的 ALFA AWUS036AXM 安装教程。使用国内镜像源，涵盖 MT7921AUN WiFi 6 驱动配置，支持监听模式与 VIF（注意：此卡不支持数据包注入）。适用于 Kali Linux, Ubuntu, Debian 以及树莓派。无需访问 GitHub。"
 date: 2026-04-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axm-china-install-guide"
-tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "驱动", "中国", "监听模式", "wifi6e", "vif"]
+tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "驱动", "中国", "监听模式", "wifi6", "vif"]
 categories: ["驱动指南"]
 series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036axm/"
 series_order: 6
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 faq:
-  - question: "AWUS036AXM 用什么芯片？支持 WiFi 6E 吗？"
-    answer: "采用 MediaTek MT7921AUN 芯片，支持 WiFi 6E 三频段（2.4G/5G/6G Hz）。"
+  - question: "AWUS036AXM 用什么芯片？支持 WiFi 6 吗？"
+    answer: "采用 MediaTek MT7921AUN 芯片，支持 WiFi 6（双频 2.4G/5G Hz）。我们实测 2.4/5GHz；未实测 6GHz。"
   - question: "AWUS036AXM 的驱动需要手动安装吗？"
     answer: "不需要，mt7921u 驱动自 Linux 核心 5.18 起已内置，仅需安装固件软件包。"
   - question: "AWUS036AXM 支持 VIF 虚拟接口吗？"
@@ -30,14 +30,14 @@ faq:
 
 
 
-想要体验 WiFi 6E 的极速？AWUS036AXM 是个非常硬核的选择，而且它那个节省空间的 L 型接口设计真的很贴心，不会挡住笔记本相邻的 USB 口。
+想要体验 WiFi 6 的高速连线？AWUS036AXM 是个不错的选择，而且它那个节省空间的 L 型接口设计真的很贴心，不会挡住笔记本相邻的 USB 口。
 
 {{< tldr >}}
-AWUS036AXM 采用 MT7921AUN 芯片支持 WiFi 6E，驱动核心内置，安装固件软件包后即可使用监听模式、数据包注入与 VIF 功能。
+AWUS036AXM 采用 MT7921AUN 芯片，支持 WiFi 6（2.4/5GHz）。mt7921u 驱动核心内置、免编译，安装固件软件包后监听模式、AP/WPA3 与 VIF 实测可用；但数据包注入在 stock kernel 6.17 实测失败，因此 AXM 不适合注入/渗透测试用途（需要注入请改用 AWUS036ACM / ACS / AX 等）。
 {{< /tldr >}}
 
 
-它的 MT7921AUN 芯片其实已经内置在 5.18 以上版本的 Linux 内核里了，但国内的小伙伴在实际使用中往往会卡在“固件下载”这一步。本指南将带你避开所有网络坑，全程使用国内镜像源，手把手教你搞定监听模式、数据包注入和好用的 VIF 功能。
+它的 MT7921AUN 芯片其实已经内置在 5.18 以上版本的 Linux 内核里了，但国内的小伙伴在实际使用中往往会卡在“固件下载”这一步。本指南将带你避开所有网络坑，全程使用国内镜像源，手把手教你搞定监听模式、AP 热点和好用的 VIF 功能（注意：数据包注入在此卡实测失败，详见下文说明）。
 
 ## 动手前的准备
 
@@ -70,7 +70,7 @@ Bus 001 Device 003: ID 0e8d:7961 MediaTek Inc.
 
 如果是老手，可以直接跳转到：
 - [开启监听模式](#enable-monitor-mode)
-- [测试数据包注入](#test-packet-injection)
+- [关于数据包注入](#test-packet-injection)
 - [虚拟接口 (VIF) 高级玩法](#virtual-interface-vif)
 - [虚拟机 USB 透传避坑指南](#virtual-machine-usb-passthrough)
 
@@ -143,13 +143,11 @@ sudo ip link set wlan1 up
 
 ---
 
-### 5. 测试数据包注入 {#test-packet-injection}
+### 5. 关于数据包注入 {#test-packet-injection}
 
-```bash
-sudo aireplay-ng --test wlan1
-```
+⚠️ **AWUS036AXM 不支持数据包注入。** 在 stock kernel 6.17 上实测，`sudo aireplay-ng --test wlan1` 会失败——主因是 kernel 6.16 以后 mac80211 chanctx 回归（并非芯片先天限制）；社区 patched 驱动可让注入运作，但固件仍锁定速率（1/6 Mbps），无法注入 HT/VHT 帧。
 
-如果看到 `Injection is working!`，恭喜你，你的 AXM 已经完全解锁了。
+因此 AXM 适合纯连线、AP 热点与监听抓包，但**不适合数据包注入或渗透测试**。如果你需要注入，请改用 AWUS036ACM / ACHM / ACS / ACH / AX / EACS。请仅在你自有或已获授权的网络上操作。
 
 ---
 
@@ -161,7 +159,7 @@ Ubuntu 24.04 内核已经原生支持。换个阿里云源，装个固件就完�
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
-# 换成阿里云：URIs: http://mirrors.aliyun.com/ubuntu/
+# 换成阿里云: URIs: http://mirrors.aliyun.com/ubuntu/
 
 sudo apt update
 sudo apt install -y linux-firmware
@@ -194,7 +192,7 @@ sudo reboot
 
 ```bash
 sudo nano /etc/apt/sources.list
-# 换成清华：deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+# 换成清华: deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
 
 sudo apt update
 sudo apt install -y firmware-misc-nonfree linux-firmware
@@ -205,7 +203,7 @@ sudo reboot
 
 ---
 
-## 树莓派 (Raspberry Pi) 4B / 5
+## 树莓派 (Raspberry Pi) 4B / 5 {#raspberry-pi-4b--5}
 
 > **特别提醒：** AXM 在高负载下功耗不小，树莓派用户请务必配合 **有源 USB Hub** 使用。
 
@@ -215,7 +213,7 @@ sudo reboot
 ```bash
 # 换源并装固件
 sudo nano /etc/apt/sources.list
-# 换成中科大：deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
+# 换成中科大: deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install -y linux-firmware firmware-misc-nonfree
@@ -247,7 +245,7 @@ AXM 的 MT7921AUN 芯片对 VIF 支持得极其完美。你可以一边连着 Wi
 # 创建一个新的虚拟接口 mon0
 sudo iw dev wlan0 interface add mon0 type monitor
 sudo ip link set mon0 up
-# 现在你就可以用 mon0 抓包了，而 wlan0 还能继续上网
+# 现在你就可以用 mon0 抓包了, 而 wlan0 还能继续上网
 sudo airodump-ng mon0
 ```
 
@@ -268,7 +266,7 @@ sudo ip link set mon0 up
 |---------|-------------|-----|
 | `lsusb` 刷不出网卡 | 没插紧或供电不足 | 换个口，树莓派务必加有源 Hub |
 | `lsmod` 看不到 mt7921u | 固件没装或内核太老 | 跑一遍固件安装命令，Ubuntu 22.04 记得升 HWE 内核 |
-| 注入测试是 "No Answer" | AP 太远或接口选错 | 凑近点，确认用的是正确的接口名 |
+| 数据包注入测试失败 | stock kernel 6.17 上 AXM 注入失败（kernel 6.16 以后 mac80211 chanctx 回归；patched 驱动可注入但固件锁速率 1/6 Mbps） | 需要注入请改用 AWUS036ACM / ACS / AX |
 | 无法创建 VIF 接口 | 驱动没加载好 | 试试重启，或者手动 `modprobe mt7921u` |
 
 ## 国内常用资源汇总

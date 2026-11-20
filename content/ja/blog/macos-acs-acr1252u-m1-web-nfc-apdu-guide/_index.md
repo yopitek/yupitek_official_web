@@ -63,10 +63,10 @@ Apple Silicon（M1／M2／M3／M4）の時代、macOS はサードパーティ�
 リーダーがシステムに認識されているか確認する方法（macOS）：
 
 ```bash
-# スマートカードリーダーを表示（ACR1252U / ACS が表示されればシステムが認識済み）
+# スマートカードリーダーを表示 (ACR1252U / ACS が表示されればシステムが認識済み)
 system_profiler SPCardReaderDataType
 
-# pcsc-tools（brew パッケージ）をインストールすると pcsc_scan でリアルタイム監視可能
+# pcsc-tools (brew パッケージ) をインストールすると pcsc_scan でリアルタイム監視可能
 brew install pcsc-tools
 pcsc_scan
 ```
@@ -144,32 +144,32 @@ Web NFC が採用する NDEF 形式で最もよく使われるのは **NFC Forum
     };
 
     if (!('NDEFReader' in window)) {
-      out('此瀏覽器不支援 Web NFC（NDEFReader）。\n請改用 Android Chrome 或 ChromeOS Chrome。');
+      out('此瀏覽器不支援 Web NFC (NDEFReader). \n請改用 Android Chrome 或 ChromeOS Chrome.');
     }
 
-    // 讀取：scan() 需使用者手勢觸發
+    // 讀取: scan() 需使用者手勢觸發
     document.getElementById('btnScan').addEventListener('click', async () => {
       try {
         const reader = new NDEFReader();
         await reader.scan();
-        out('已開始掃描，請將標籤靠近手機 NFC 感應區…');
+        out('已開始掃描, 請將標籤靠近手機 NFC 感應區…');
 
         reader.onreading = (event) => {
           out('--- 讀取到標籤 ---');
-          out('序列號（Serial Number）：' + event.serialNumber);
+          out('序列號 (Serial Number):' + event.serialNumber);
           for (const record of event.message.records) {
-            out('recordType：' + record.recordType);
+            out('recordType:' + record.recordType);
             if (record.recordType === 'text' || record.recordType === 'url') {
-              out('內容：' + record.data);
+              out('內容:' + record.data);
             } else {
-              out('內容（二進位 ByteArray）：' + new Uint8Array(record.data));
+              out('內容 (二進位 ByteArray):' + new Uint8Array(record.data));
             }
           }
         };
 
-        reader.onreadingerror = () => out('讀取錯誤：請確認標籤是否支援 NDEF。');
+        reader.onreadingerror = () => out('讀取錯誤: 請確認標籤是否支援 NDEF.');
       } catch (err) {
-        out('scan() 失敗：' + err.name + ' / ' + err.message);
+        out('scan() 失敗:' + err.name + ' / ' + err.message);
       }
     });
   </script>
@@ -184,15 +184,15 @@ Web NFC が採用する NDEF 形式で最もよく使われるのは **NFC Forum
 上記のボタンイベントを次のように変更します。
 
 ```javascript
-// 書き込み：write() もユーザー操作が必要。タグが通信範囲内にあること
+// 書き込み: write() もユーザー操作が必要. タグが通信範囲内にあること
 document.getElementById('btnWrite').addEventListener('click', async () => {
   try {
     const writer = new NDEFReader();
 
-    // 方法 1：テキストを直接書き込む（自動的に text レコードに）
+    // 方法 1: テキストを直接書き込む (自動的に text レコードに)
     // await writer.write('Yopitek Web NFC 測試');
 
-    // 方法 2：URL レコードを書き込む（名刺・誘導に最適）
+    // 方法 2: URL レコードを書き込む (名刺 · 誘導に最適)
     await writer.write({
       records: [
         { type: 'url', data: 'https://www.yupitek.com' },
@@ -200,9 +200,9 @@ document.getElementById('btnWrite').addEventListener('click', async () => {
       ],
     });
 
-    out('寫入成功！');
+    out('寫入成功!');
   } catch (err) {
-    out('寫入失敗：' + err.name + ' / ' + err.message);
+    out('寫入失敗:' + err.name + ' / ' + err.message);
   }
 });
 ```
@@ -249,15 +249,15 @@ CLA  INS  P1  P2  Lc   Data(0~N bytes)   Le
 macOS には PC/SC サポートが内蔵されているため、Python 用の `pyscard` をインストールするだけで APDU を送信できます。
 
 ```bash
-# pcsc-tools をインストール（pcsc_scan を含む。リーダー確認に便利）
+# pcsc-tools をインストール (pcsc_scan を含む. リーダー確認に便利)
 brew install pcsc-tools
 
-# pyscard をインストール（macOS のシステム PC/SC framework を使用）
+# pyscard をインストール (macOS のシステム PC/SC framework を使用)
 pip install pyscard
 
 # pyscard がリーダーを列挙できるか確認
 python3 -c "from smartcard.System import readers; print(readers())"
-# 想定される出力例：['ACS ACR1252U ... 00 00']
+# 想定される出力例: ['ACS ACR1252U ... 00 00']
 ```
 
 ### 3.3 最初の APDU：Echo とファームウェアバージョン
@@ -272,7 +272,7 @@ reader = readers()[0]
 conn = reader.createConnection()
 conn.connect()
 
-# 1) Echo：ASCII "12345678" を返す
+# 1) Echo: ASCII "12345678" を返す
 sw, data = conn.transmit([0xFF, 0x00, 0x00, 0x00, 0x00])
 print('Echo SW :', toHexString(sw))
 print('Echo 回傳:', ''.join(chr(b) for b in data))
@@ -289,11 +289,11 @@ print('Firmware:', toHexString(data))
 非接触カードを「バイトの郵便システム」と考えてください。コマンドを送ると、データが返ってきます。本物の APDU（ISO 14443-4）をサポートする **MIFARE DESFire** テストカードを例に、「Get Version」コマンド（`90 60 00 00 00`）を送信します。
 
 ```python
-# DESFire GetVersion：応答の先頭バイト 0x04 は DESFire シリーズ（EV1/EV2/EV3）を示す
+# DESFire GetVersion: 応答の先頭バイト 0x04 は DESFire シリーズ (EV1/EV2/EV3) を示す
 sw, data = conn.transmit([0x90, 0x60, 0x00, 0x00, 0x00])
 print('SW  :', toHexString(sw))
 print('Data:', toHexString(data))
-# 例：04 01 01 00 04 12 08 01
+# 例: 04 01 01 00 04 12 08 01
 #     └DESFire┘└バージョン文字列┘     └ファームウェア/ハードウェア/製造ロット…┘
 ```
 
@@ -320,9 +320,9 @@ FF  00  40  00  04  00  00  <LED>  <BUZZER>
 | BUZZER | 0x04 | 約 1 秒ビープ（時間単位は公式ドキュメント基準）|
 
 ```python
-# 緑点灯 + 短いビープ（例示バイト。お使いのファームウェアの公式 API ドキュメントを確認）
+# 緑点灯 + 短いビープ (例示バイト. お使いのファームウェアの公式 API ドキュメントを確認)
 sw, data = conn.transmit([0xFF, 0x00, 0x40, 0x00, 0x04, 0x00, 0x00, 0x02, 0x04])
-print('LED/Buzzer 回應:', toHexString(sw))   # 想定 90 00（成功）
+print('LED/Buzzer 回應:', toHexString(sw))   # 想定 90 00 (成功)
 
 # 消灯
 sw, data = conn.transmit([0xFF, 0x00, 0x40, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00])

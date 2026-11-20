@@ -22,8 +22,6 @@ faq:
     answer: "In nine out of ten cases it is the SIM card or the APN. Open a terminal and run AT+CPIN? to check the SIM status, then run AT!GSTATUS? to confirm the module has registered with a cell tower. Finally, verify that your APN settings match your carrier's requirements."
 ---
 
-# The Complete Sierra Wireless Module Troubleshooting FAQ: A Four Layer Debugging Map From Device Not Detected to No Internet
-
 **The short version: your modem will not connect? Check whether the computer can see it first (USB enumeration), then whether a data channel exists (QMI/MBIM interface), then whether the SIM and APN are correct, and only at the end look at antennas and thermals. Nine out of ten people get stuck at step three, so do not start flashing firmware blindly and hope for the best.**
 
 Anyone who works with Sierra Wireless 4G/5G modules, whether the EM7455, the EM7565 or the latest EM919x, knows the two worst moments: plugging it in and getting nothing, or plugging it in and getting no internet.

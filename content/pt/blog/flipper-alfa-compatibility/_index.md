@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero & Flipper One com Adaptadores WiFi ALFA: Guia Completo de Compatibilidade"
-description: "O Flipper Zero pode usar adaptadores WiFi USB ALFA para injeção de pacotes? Não — aqui está o porquê. O Flipper One suporta o AWUS036AXML da ALFA com monitor mode completo e injection. Guia completo com análise de chipset, compatibilidade de drivers e instruções de configuração."
+description: "O Flipper Zero pode usar adaptadores WiFi USB ALFA para injeção de pacotes? Não — aqui está o porquê. O Flipper One suporta o AWUS036AXML da ALFA em monitor mode (a injection depende da versão do kernel). Guia completo com análise de chipset, compatibilidade de drivers e instruções de configuração."
 date: 2026-06-10
 draft: false
 showBreadcrumbs: true
@@ -10,11 +10,11 @@ tags: ["flipper-zero", "flipper-one", "alfa-network", "wifi-adapter", "monitor-m
 categories: ["Technical"]
 featureimage: "/images/blog/flipper-alfa-compatibility.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "O Flipper Zero pode conectar adaptadores USB wireless ALFA?"
-    answer: "Não. O microcontrolador STM32WB55 do Flipper Zero suporta apenas modo USB device, não podendo atuar como USB host para驱动 adaptadores externos."
+    answer: "Não. O microcontrolador STM32WB55 do Flipper Zero suporta apenas modo USB device, não podendo atuar como USB host para controlar adaptadores externos."
   - question: "Quais modelos de adaptador ALFA o Flipper One suporta?"
     answer: "O fundador do Flipper One testou especificamente o AWUS036AXML como primeira escolha é o AWUS036ACM como melhor custo-beneficio. Os drivers de ambos já estão integrados ao kernel mainline do Linux."
   - question: "Por que o AWUS036AXML é o adaptador preferido do Flipper One?"
@@ -25,7 +25,7 @@ faq:
     answer: "Não. O WiFi Dev Board suporta apenas funcionalidades basicas de 2.4 GHz, sem USB host, com alcance e confiabilidade de injeção muito inferiores a adaptadores ALFA dedicados."
 ---
 {{< tldr >}}
-O STM32WB55 do Flipper Zero suporta apenas modo USB device, nao podendo驱动 nenhum adaptador ALFA. O Flipper One, equipado com RK3576 e Debian Linux completo, suporta o AWUS036AXML para monitor e injecao tri-band.
+O STM32WB55 do Flipper Zero suporta apenas modo USB device, não podendo controlar nenhum adaptador ALFA. O Flipper One, equipado com RK3576 e Debian Linux completo, suporta o AWUS036AXML para monitor tri-band (a injeção depende da versão do kernel).
 {{< /tldr >}}
 
 
@@ -175,7 +175,7 @@ O Flipper One também introduz os **Flipper OS Profiles** — um sistema baseado
 | **DKMS Necessário** | ❌ Não |
 | **Antena** | Dual RP-SMA (substituível) + Bluetooth 5.2 |
 
-> **Por que é a melhor:** Este é o adaptador que o criador do Flipper One testou especificamente. O driver `mt7921u` está no kernel mainline com zero vendor patches necessários. Suporta todas as três bandas WiFi (2.4/5/6 GHz), tornando-o futuro-proof para avaliações de segurança Wi-Fi 6E. Monitor mode e packet injection são estáveis e bem testados.
+> **Por que é a melhor:** Este é o adaptador que o criador do Flipper One testou especificamente. O driver `mt7921u` está no kernel mainline com zero vendor patches necessários. Suporta todas as três bandas WiFi (2.4/5/6 GHz), tornando-o futuro-proof para avaliações de segurança Wi-Fi 6E. O monitor mode é estável e bem testado. A packet injection funciona segundo relatos da comunidade em kernels anteriores ao 6.16, mas falhou no nosso teste com o kernel stock 6.17 (aireplay-ng --test: Found 0 APs / No Answer) por causa de uma regressão do mac80211 chanctx desde o kernel 6.16, não por limitação do chip; drivers com patch permitem a injection, mas o firmware continua travando a taxa (1/6 Mbps). Se precisar de injection, use o AWUS036ACM ou o ACH.
 
 ### ⭐⭐⭐⭐⭐ Melhor Custo-Benefício: AWUS036ACM (Wi-Fi 5 AC1200)
 
@@ -190,13 +190,13 @@ O Flipper One também introduz os **Flipper OS Profiles** — um sistema baseado
 
 > **Por que é o melhor custo-benefício:** O chipset MT7612U é consagrado pela comunidade pentesting. O driver `mt76` está no kernel há anos e é excepcionalmente estável. Monitor mode e injection funcionam perfeitamente no kernel 6.5 e acima. A um preço inferior ao AXML, oferece a melhor relação preço-capacidade para testes em 2.4/5 GHz.
 
-### ⭐⭐⭐⭐ Escolha Leve: AWUS036ACHM (Wi-Fi 5 AC433)
+### ⭐⭐⭐⭐ Escolha Leve: AWUS036ACHM (Wi-Fi 5 AC600)
 
 | Especificação | Detalhe |
 |------|--------|
 | **Chipset** | MediaTek MT7610U |
 | **Bands** | 2.4 / 5 GHz (Wi-Fi 5) |
-| **Velocidade Máxima** | AC433 (teórico) |
+| **Velocidade Máxima** | AC600 (teórico) |
 | **Driver** | `mt76` — in-kernel desde Linux 4.19 |
 | **DKMS Necessário** | ❌ Não |
 | **Antena** | Single high-gain RP-SMA (substituível) |
@@ -216,16 +216,27 @@ O Flipper One também introduz os **Flipper OS Profiles** — um sistema baseado
 
 > **Por que é uma alternativa:** O chipset RTL8812AU tem uma longa história no pentesting. Espera-se que seja compatível no kernel planejado do Flipper One sem módulos DKMS adicionais. Para sistemas mais antigos, o driver DKMS do aircrack-ng permanece disponível. As antenas high-gain de 6 dBi proporcionam excelente alcance, embora os adaptadores baseados em MediaTek sejam geralmente preferidos por seu suporte a in-kernel driver mais maduro.
 
-### ⚠️ Não Recomendado para Pentesting
+### ⭐⭐⭐ Alternativa Compacta: AWUS036EACS (Wi-Fi 5 AC1200, RTL8821CU)
 
-Os seguintes modelos da ALFA usam chipsets Realtek com drivers Linux imaturos ou instáveis para monitor mode e packet injection. **Evite estes para trabalho de wireless security no Flipper One:**
+| Especificação | Detalhe |
+|------|--------|
+| **Chipset** | Realtek RTL8821CU |
+| **Bands** | 2.4 / 5 GHz (Wi-Fi 5) |
+| **Driver** | `rtw88_8821cu` — in-kernel desde Linux 6.2 |
+| **DKMS Necessário** | ❌ Não em kernels ≥6.2 / ⚠️ Kernels anteriores ao 6.2 precisam de um driver da comunidade |
+| **Antena** | Single RP-SMA |
+
+> **Por que é uma alternativa:** No nosso teste no ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17), o EACS funcionou em monitor mode e em packet injection nas bandas de 2.4 e 5 GHz, com 100% de sucesso na injection. **Nota:** o Flipper One em si ainda não foi testado com este adaptador; a recomendação se baseia no teste em outra plataforma com kernel recente.
+
+### ⚠️ Use com Cautela
+
+Os seguintes modelos da ALFA não foram testados no próprio Flipper One. Na nossa plataforma de testes ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17), o monitor mode funciona em todos, mas os drivers integrados necessários só existem em kernels mais recentes e os resultados de injection variam conforme o chipset. **Verifique a versão do kernel do seu Flipper One antes de usá-los para wireless security:**
 
 | Modelo | Chipset | Problema |
 |-------|---------|-------|
-| AWUS036AX | RTL8832BU | Chip Wi-Fi 6, driver support ainda em desenvolvimento em 2026 |
-| AWUS036AXER | RTL8832BU | Mesmos problemas de chipset do AWUS036AX |
-| AWUS036ACS | RTL8811AU | Monitor mode limitado, injection instável |
-| AWUS036EACS | RTL8811CU | Monitor mode limitado, injection instável |
+| AWUS036AX | RTL8832BU | O driver rtw89_8852bu está no mainline desde o kernel 6.17; teste GX10: monitor funciona, injection 2,4 GHz 96%, 5 GHz utilizável; kernels antigos precisam de driver da comunidade |
+| AWUS036AXER | RTL8832BU | Mesmo RTL8832BU; teste GX10: monitor funciona, injection 2,4 GHz 73%, 5 GHz utilizável |
+| AWUS036ACS | RTL8811AU | O driver rtw88_8821au está no mainline desde o kernel 6.13; teste GX10: monitor funciona, injection 2,4 GHz 100%, 5 GHz 96% |
 
 ---
 
@@ -299,6 +310,7 @@ sudo ip link set wlan0 up
 # Testar capacidade de injection
 sudo aireplay-ng --test wlan0mon
 # Procure por: "Injection is working!"
+# Nota: AXML/AXM falham no kernel 6.16+ (testado no 6.17): Found 0 APs / No Answer. Use ACM/ACH para injection.
 
 # Executar uma scan básica
 sudo airodump-ng wlan0mon

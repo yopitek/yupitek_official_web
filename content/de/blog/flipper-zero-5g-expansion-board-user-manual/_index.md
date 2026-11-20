@@ -14,8 +14,6 @@ featureimage: "/images/blog/flipper-zero-5g-expansion-board-user-manual/img_01_a
 hideFeatureImage: true
 ---
 
-# Flipper Zero 5G Expansion Board Installations- und Benutzerhandbuch (v2.0)
-
 > **Zielgruppe**: Einsteiger, die dieses Modul zum ersten Mal verwenden.  
 > **Konzept**: Wir bieten dir für alle fehleranfälligen oder technisch komplexen Schritte hochauflösende Zeichnungen. So musst du nicht raten und installierst alles Schritt für Schritt völlig unkompliziert.
 

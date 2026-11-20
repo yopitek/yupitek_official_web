@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "AWUS036AXMLがアクティブモニターモードでクラッシュするのはなぜですか？"
     answer: "MT7921AUNはファームウェアベースMACアーキテクチャを採用し、現在のLinux mt7921uドライバーとファームウェアの組み合わせがアクティブインジェクションに必要なコマンドパスを完全に実装していないため、aireplay-ng実行後にインターフェースが消滅します。"
@@ -46,6 +46,8 @@ AWUS036AXMLのmt7921uドライバーはアクティブパケットインジェ�
 
 **MT7921AUN チップセット**はファームウェアベースの MAC アーキテクチャを採用しています。Linux カーネルの `mt7921u` ドライバーは、モニターモードでのフレームインジェクションを含む一部の低レベル操作を処理するために、チップセットの組み込みファームウェアに依存しています。現在のファームウェアとドライバーの組み合わせは、Linux のモニターモードにおけるアクティブインジェクションに必要なコマンドパスを完全には実装していません。
 
+補足：stock kernel 6.17 でインジェクションが失敗する主因は、kernel 6.16 以降の mac80211 chanctx のリグレッションであり、チップ自体の制限ではありません。コミュニティの patched ドライバーを使えばインジェクションは動作しますが、ファームウェアがレートを 1/6 Mbps に固定するため、HT/VHT フレームは注入できません。
+
 一方、**パッシブモニタリング**（空中にある既存のフレームを受信するだけ）はファームウェアに何も送信させる必要がなく、クラッシュをトリガーしません。問題は送信パス操作に限定されます：デオーセンティケーションフレーム、プローブリクエスト、アソシエーションフラッドなどのアクティブ操作です。
 
 {{< alert "triangle-exclamation" >}}
@@ -65,16 +67,16 @@ lsusb | grep -i mediatek
 # ドライバーがロードされているか確認
 lsmod | grep mt7921u
 
-# カーネルバージョンを確認（5.18 以上が必要）
+# カーネルバージョンを確認 (5.18 以上が必要)
 uname -r
 
 # モニターモードを開始
 sudo airmon-ng start wlan0
 
-# パッシブキャプチャをテスト（正常動作するはず）
+# パッシブキャプチャをテスト (正常動作するはず)
 sudo airodump-ng wlan0mon
 
-# アクティブインジェクションをテスト（クラッシュする可能性あり）
+# アクティブインジェクションをテスト (クラッシュする可能性あり)
 sudo aireplay-ng --test wlan0mon
 ```
 
@@ -154,7 +156,7 @@ sudo reboot
 ```bash
 sudo apt install hcxdumptool hcxtools
 
-# パッシブキャプチャ — デオーセンティケーション不要、ファームウェアクラッシュなし
+# パッシブキャプチャ — デオーセンティケーション不要, ファームウェアクラッシュなし
 sudo hcxdumptool -i wlan0mon -o capture.pcapng --enable_status=1
 
 # hashcat 形式に変換

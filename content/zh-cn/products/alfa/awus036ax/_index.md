@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "USB 3.0", "802.11ax", "双频", "OFDMA", "MU-MIMO"]
 
 AWUS036AX 采用 Realtek RTL8832BU 芯片，支持 Wi-Fi 6（802.11ax）双频（2.4 GHz + 5 GHz），最高传输速率 1200 Mbps，支持 MU-MIMO 2×2 与 OFDMA 技术。配备 2 支 RP-SMA 可拆卸双频天线。
 
-> ⚠️ **重要提示：** 此型号为 **Wi-Fi 6**，并非 Wi-Fi 6E，**不含 6 GHz 频段**。如需 6 GHz 频段，请选择 AWUS036AXML 或 AWUS036AXM。社区版 rtl8852bu 驱动**不支持 Monitor mode**，不建议用于 Linux 安全研究。
+> ⚠️ **重要提示：** 此型号为 **Wi-Fi 6**，并非 Wi-Fi 6E，**不含 6 GHz 频段**。如需 6 GHz 频段，请选择 AWUS036AXML 或 AWUS036AXM。在 GX10（Ubuntu 24.04、内核 6.17）搭配 mainline rtw89_8852bu 驱动的实测中，Monitor mode 与数据包注入均通过（2.4 GHz 注入成功率 96%，5 GHz 可用）。
 
 > **注意：** 所有 ALFA 无线网卡对 macOS 支持有限。macOS 11 Big Sur 及以上版本和 Apple Silicon（M1/M2/M3）均**不支持**。最高支持 Intel Mac 上的 macOS 10.15 Catalina。
 
@@ -47,8 +47,8 @@ AWUS036AX 采用 Realtek RTL8832BU 芯片，支持 Wi-Fi 6（802.11ax）双频�
 |---------|------|------|
 | Windows 10/11 | ✅ 支持 | 从 Alfa 官网下载驱动 |
 | macOS | ❌ 不支持 | 不支持 macOS 11+ 及 Apple Silicon |
-| Ubuntu | ⚠️ 需安装驱动 | 未内置于内核；通过 DKMS 构建社区 rtl8852bu 驱动 |
-| Kali Linux | ⚠️ 有限 | 仅支持 Managed mode（DKMS 驱动）；不支持 Monitor mode |
+| Ubuntu | ✅ 内核 6.17 及以上 | 使用 mainline rtw89_8852bu 驱动（Linux 6.17 起内置）；旧版内核需通过 DKMS 构建社区版 rtl8852bu 驱动 |
+| Kali Linux | ✅ 支持 | 在 GX10（Ubuntu 24.04、内核 6.17）以 mainline 驱动实测 Monitor mode 与数据包注入均通过；旧版内核需使用 DKMS 驱动。Kali 实机未实测 |
 | NetHunter | ⚠️ 有限 | 依内核版本 |
 ## 硬件支持
 
@@ -60,8 +60,8 @@ AWUS036AX 采用 Realtek RTL8832BU 芯片，支持 Wi-Fi 6（802.11ax）双频�
 
 | 功能 | 状态 |
 |------|------|
-| Monitor Mode | ❌ 不支持（社区驱动）|
-| Packet Injection | ❌ 不支持 |
+| Monitor Mode | ✅ 支持（mainline rtw89_8852bu，内核 6.17 及以上；GX10 实测接收强） |
+| Packet Injection | ✅ 支持（GX10 实测：2.4 GHz 96%，5 GHz 可用） |
 | Soft AP 模式 | ✅ 支持 |
 | 蓝牙 | ❌ 无 |
 

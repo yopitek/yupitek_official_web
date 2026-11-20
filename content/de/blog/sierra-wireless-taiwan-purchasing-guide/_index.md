@@ -20,23 +20,21 @@ faq:
     answer: "Der Anbieter prüft die genaue SKU (damit die Bänder stimmen), liefert die aktuelle Firmware-Version und bietet Garantie-Umtausch sowie technischen Support. Für die langfristige Stabilität von Firmenprojekten ist das entscheidend."
 ---
 
-# Sierra Wireless in Taiwan kaufen: Der komplette Einkaufsführer für echte Ware, Anbietervergleich und den Angebotsprozess
-
-Viele Hersteller setzen bei Industrieroutern, Laptop-Upgrades oder IoT-Projekten auf 4G/5G Module von Sierra Wireless. Aber wenn man im Netz sucht, fällt auf: Derselbe Modultyp kann im Preis bis zu doppelt so viel kosten! Warum? Weil auf dem Markt „originale Neuware", „ausgemusterte Ausbaukarten" und „zusammengebaute Karten mit neu aufgebrachtem Label" durcheinanderliegen.
+Viele Hersteller setzen bei Industrieroutern, Laptop-Upgrades oder IoT-Projekten auf 4G/5G Module von Sierra Wireless. Aber wenn man im Netz sucht, fällt auf: Derselbe Modultyp kann im Preis bis zu doppelt so viel kosten! Warum? Weil auf dem Markt „originale Neuware“, „ausgemusterte Ausbaukarten“ und „zusammengebaute Karten mit neu aufgebrachtem Label“ durcheinanderliegen.
 
 Dieser Artikel hat die Erkennungsmerkmale aus den offiziellen Spezifikationen zusammengestellt und zeigt dir, wie du auf einen Blick siehst, ob dein Modul echt ist, und worauf du bei der Anbietersuche achten solltest.
 
 {{< tldr >}}
-Beim Kauf von Sierra Wireless Mobilfunkmodulen ist die größte Angst, „gebrauchte Ausbaukarten", „Karten mit abgeschliffenem Label" oder „Engineering-Samples" zu erwischen. Dieser Taiwan-Einkaufsführer lehrt dich drei Selbstschutz-Tricks: 1) Echtes erkennen am Label der Abschirmabdeckung (IMEI-Barcode und FSN prüfen), an der FCC ID und an der antistatischen Originalverpackung; 2) den Unterschied zwischen Produktanbieter und Graumarkt-Händlern auf Auktionsseiten verstehen; 3) eine direkt kopierbare „Standard-Angebotsliste", mit der du Modell, Bänder, Menge und Garantie auf einmal abfragst und einen präzisen Preis bekommst.
+Beim Kauf von Sierra Wireless Mobilfunkmodulen ist die größte Angst, „gebrauchte Ausbaukarten“, „Karten mit abgeschliffenem Label“ oder „Engineering-Samples“ zu erwischen. Dieser Taiwan-Einkaufsführer lehrt dich drei Selbstschutz-Tricks: 1) Echtes erkennen am Label der Abschirmabdeckung (IMEI-Barcode und FSN prüfen), an der FCC ID und an der antistatischen Originalverpackung; 2) den Unterschied zwischen Produktanbieter und Graumarkt-Händlern auf Auktionsseiten verstehen; 3) eine direkt kopierbare „Standard-Angebotsliste“, mit der du Modell, Bänder, Menge und Garantie auf einmal abfragst und einen präzisen Preis bekommst.
 {{< /tldr >}}
 
-**Kurz zusammengefasst: Beim Kauf eines Sierra Moduls geht es nicht darum, wer am billigsten ist, sondern wer dich rettet, wenn etwas schiefgeht. Lern zuerst, den IMEI-Barcode und die FCC ID am Modul zu lesen, um gebrauchte Zusammenbau-Ware zu vermeiden. Such dir dann einen Anbieter, der SKU-Bänder kennt, die Firmware-Version bestätigen kann und Garantie gibt. Nimm die „Standard-Angebotsliste" aus diesem Artikel, und du gibst garantiert kein Geld sinnlos aus.**
+**Kurz zusammengefasst: Beim Kauf eines Sierra Moduls geht es nicht darum, wer am billigsten ist, sondern wer dich rettet, wenn etwas schiefgeht. Lern zuerst, den IMEI-Barcode und die FCC ID am Modul zu lesen, um gebrauchte Zusammenbau-Ware zu vermeiden. Such dir dann einen Anbieter, der SKU-Bänder kennt, die Firmware-Version bestätigen kann und Garantie gibt. Nimm die „Standard-Angebotsliste“ aus diesem Artikel, und du gibst garantiert kein Geld sinnlos aus.**
 
 > Quellen für Spezifikationen und Merkmale: offizielle Sierra Wireless Spezifikationen. Artikel zusammengestellt von Yopitek (Yughe Technology).
 
 ---
 
-## Erste Hürde: Woran erkennst du „echte Ware"?
+## Erste Hürde: Woran erkennst du „echte Ware“?
 
 Laut den offiziellen Spezifikationen hat Originalware immer diese Merkmale. Fehlt eines, sei vorsichtig.
 
@@ -53,7 +51,7 @@ Jedes Modul, das durch ein Labor gegangen ist, hat eine passende FCC ID. Die gä
 - **EM919x-Serie**: `N7NEM91`
 Wenn bei deiner Karte Modell und FCC ID nicht zusammenpassen oder die FCC ID mutwillig abgeschliffen wurde, schick sie sofort zurück.
 
-### 3. Die „Ausstrahlung" der Werksware: Tray und Sicherheitsband
+### 3. Die „Ausstrahlung“ der Werksware: Tray und Sicherheitsband
 Wenn du neue Ware in größerer Menge beim Anbieter kaufst, ist die Standardverpackung: **ein antistatisches Tray mit 100 Stück**. Auf dem Tray liegt antistatisches Klebeband, und nach dem Einpacken in den Karton kommt das originale **Sicherheitsband (Security tape)** des Werks. Wenn stattdessen lose Ware in Luftpolsterfolie kommt, ist das mit hoher Wahrscheinlichkeit gebrauchte Ausbauware.
 
 ---
@@ -65,11 +63,11 @@ Wenn du neue Ware in größerer Menge beim Anbieter kaufst, ist die Standardverp
 | **Professioneller Produktanbieter** (z. B. Yopitek) | Originale Neuware, SKU prüfbar | ✅ Prüft Bänder und Firmware-Version, hat Garantie-Ansprechpartner | Firmenprojekte, industrielle Serien, langfristige Bevorratung | Der Angebotsprozess braucht etwas Zeit |
 | **Auktionsseiten / Einzelanbieter** | Gebrauchte Ausbauware, Zusammenbau-Karten | ❌ Keine Rückgabe nach Verkauf, bei Problemen selbst zusehen | Private Maker, die Geld sparen wollen | Laptop-gesperrte Version, zu alte Firmware, keine Verbindung |
 
-> **Die häufigste Tragödie**: Viele Chefs kaufen ausgesonderte Auktionsware, um den Stückpreis zu drücken, und stellen dann fest: Es ist die „Nordamerika-Band-Version (falsche SKU)", die in Taiwan gar kein Signal bekommt, oder eine von einem Laptop-Hersteller gesperrte Version. Am Ende debuggt der Ingenieur eine Woche lang, und das gesparte Geld geht in Überstunden auf.
+> **Die häufigste Tragödie**: Viele Chefs kaufen ausgesonderte Auktionsware, um den Stückpreis zu drücken, und stellen dann fest: Es ist die „Nordamerika-Band-Version (falsche SKU)“, die in Taiwan gar kein Signal bekommt, oder eine von einem Laptop-Hersteller gesperrte Version. Am Ende debuggt der Ingenieur eine Woche lang, und das gesparte Geld geht in Überstunden auf.
 
 ---
 
-## Dritte Hürde: Die „Standard-Angebotsliste" als Volltreffer
+## Dritte Hürde: Die „Standard-Angebotsliste“ als Volltreffer
 
 Für ein Angebot des Anbieters kopiere einfach den Text unten und fülle ihn aus. Je vollständiger die Parameter, desto präziser das Angebot.
 

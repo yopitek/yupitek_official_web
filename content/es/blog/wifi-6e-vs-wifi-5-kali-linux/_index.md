@@ -8,19 +8,19 @@ showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "pruebas-penetración"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Qué diferencia hay entre Wi-Fi 6E y Wi-Fi 5 en pruebas de penetración?"
     answer: "Wi-Fi 6E añade la banda de 6 GHz y 1.2 GHz de espectro, adecuado para auditar despliegues empresariales modernos. Wi-Fi 5 tiene controladores más maduros y mayor estabilidad en 2.4/5 GHz."
   - question: "¿AWUS036ACH o AWUS036AXML?"
     answer: "Para pruebas de penetración diarias, el AWUS036ACH: controlador maduro y abundantes recursos comunitarios. Para auditar entornos Wi-Fi 6E de 6 GHz, el AWUS036AXML. Si es posible, ten ambos."
   - question: "¿Es estable el modo monitor del AWUS036AXML en Kali Linux?"
-    answer: "Requiere kernel 6.1 o superior y el paquete linux-firmware más reciente. La inyección de paquetes funciona pero se recomienda validar antes de pruebas formales; combinaciones específicas de kernel y firmware pueden ser inestables."
+    answer: "Requiere kernel 6.1 o superior y el paquete linux-firmware más reciente. Hay reportes de la comunidad de inyección de paquetes antes del kernel 6.16, pero falló en nuestra prueba con el kernel stock 6.17 (regresión de mac80211 chanctx, no una limitación del chipset). Si necesita inyección, use el AWUS036ACH."
   - question: "¿Se necesita una tarjeta de 6 GHz para pruebas de penetración en 2026?"
     answer: "La mayoría de los casos de prueba siguen siendo en 2.4/5 GHz. Pero si el entorno objetivo ya tiene puntos de acceso Wi-Fi 6E, una tarjeta de 6 GHz pasa a ser necesaria estratégicamente."
   - question: "¿Cómo se instala el controlador RTL8812AU del AWUS036ACH?"
     answer: "Clona el repositorio rtl8812au desde el GitHub de aircrack-ng y ejecuta make dkms_install. DKMS asegura que el controlador se reconstruya automáticamente tras actualizar el kernel."
----El AWUS036ACH tiene controladores maduros y la máxima estabilidad; es la primera opción para pruebas de penetración diarias. El AWUS036AXML admite la banda de 6 GHz y es adecuado para auditar entornos Wi-Fi 6E, aunque sus controladores siguen perfeccionándose.
+---
 
 {{< tldr >}}
 El AWUS036ACH tiene controladores maduros y la máxima estabilidad; es la primera opción para pruebas de penetración diarias. El AWUS036AXML admite la banda de 6 GHz y es adecuado para auditar entornos Wi-Fi 6E, aunque sus controladores siguen perfeccionándose.
@@ -109,7 +109,7 @@ lsmod | grep mt7921u
 sudo modprobe mt7921u
 ```
 
-Sin embargo, el **soporte de modo monitor** para MT7921AUN es más reciente y depende de la versión del kernel y el firmware. A principios de 2026, el modo monitor funciona en kernel 6.1+ con el paquete `linux-firmware` más reciente instalado. El soporte de inyección de paquetes es funcional pero ha tenido inconsistencias ocasionales en ciertas combinaciones de kernel/firmware — siempre prueba antes de un compromiso en vivo.
+Sin embargo, el **soporte de modo monitor** para MT7921AUN es más reciente y depende de la versión del kernel y el firmware. A principios de 2026, el modo monitor funciona en kernel 6.1+ con el paquete `linux-firmware` más reciente instalado. Hay reportes de la comunidad de inyección de paquetes en kernels anteriores a 6.16, pero falló en nuestra prueba con el kernel stock 6.17 (`aireplay-ng --test` mostró Found 0 APs / No Answer, por lo que no fue posible hacer deauth ni capturar handshakes). La causa principal es una regresión de mac80211 chanctx desde el kernel 6.16, no una limitación del chipset; un controlador parcheado de la comunidad puede hacerla funcionar, pero el firmware sigue bloqueando la tasa (1/6 Mbps, sin inyección HT/VHT). El modo monitor, AP, WPA3 y VIF funcionan con normalidad; si necesita inyección, use el AWUS036ACH.
 
 ```bash
 sudo apt update && sudo apt install linux-firmware

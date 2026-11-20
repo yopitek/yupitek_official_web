@@ -10,7 +10,7 @@ series_order: 9
 description: "O guia definitivo para instalar todos os adaptadores USB WiFi Alfa no Linux na China. Cobre Kali Linux, Ubuntu 22/24, Debian e Raspberry Pi. Espelhos domésticos para os pacotes do sistema e repositórios GitHub verificados para o código dos drivers."
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Preciso de VPN para instalar adaptadores WiFi Alfa na China?"
@@ -20,7 +20,7 @@ faq:
   - question: "Qual adaptador Alfa suporta WiFi 6?"
     answer: "AWUS036AX e AWUS036AXER usam o chip RTL8832BU com suporte a WiFi 6. No Ubuntu 24.04 são plug-and-play sem driver."
   - question: "Qual adaptador Alfa suporta WiFi 6E?"
-    answer: "AWUS036AXM e AWUS036AXML usam o chip MT7921AUN com suporte a WiFi 6E tri-band."
+    answer: "AWUS036AXM e AWUS036AXML usam o chip MT7921AUN (WiFi 6E). O 6 GHz do AXML foi testado e funciona localmente; o AXM suporta Wi-Fi 6E segundo a especificação, mas o 6 GHz não foi testado."
   - question: "O que observar ao usar adaptadores Alfa no Raspberry Pi?"
     answer: "Use obrigatoriamente um hub USB com alimentação própria e instale a versão Kali ARM64 para obter o melhor suporte de driver."
 ---
@@ -141,7 +141,7 @@ Todos os recursos neste guia utilizam estes espelhos acessíveis na China:
 | **清华大学镜像 (Tsinghua)** | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | **阿里云镜像 (Aliyun)** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recomendado) |
 | **中科大镜像 (USTC)** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recomendado) |
-| **华为云镜像** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Imagens Kali ARM (backup) |
+| **华为云镜像 (Huawei Cloud)** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Imagens Kali ARM (backup) |
 | **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | Código-fonte dos drivers |
 
 ---
@@ -419,7 +419,7 @@ Acesse: https://www.kali.org/get-kali/#kali-arm
 
 Escolha **Raspberry Pi 4 (64-bit)** ou **Raspberry Pi 5 (64-bit)**. NÃO use 32-bit — a versão 64-bit é obrigatória.
 
-> **Espelho chinês:** Se kali.org estiver lento, use 华为云: https://repo.huaweicloud.com/kali-images/
+> **Espelho chinês:** Se kali.org estiver lento, use 华为云 (Huawei Cloud): https://repo.huaweicloud.com/kali-images/
 
 ### Passo 2: Gravar no MicroSD
 
@@ -572,7 +572,7 @@ VIF (Virtual Interface Functionality) permite executar múltiplas interfaces em 
 |---------|-------------|-------------|
 | **MT7612U (AWUS036ACM)** | ✅ Suporte nativo completo | Melhor escolha para fluxos VIF |
 | **RTL8812AU (AWUS036ACH)** | ⚠️ Limitado | Não suporta gerenciado + monitor simultaneamente |
-| **RTL8832BU (Série AX)** | ⚠️ Limitado | Consulte a documentação do modelo específico |
+| **RTL8832BU (Série AX)** | ✅ STA+AP funciona | Testado com o rtw89_8852bu embutido no kernel (6.17+); o driver DKMS da comunidade em kernels antigos não suporta VIF |
 
 ### Criando uma Interface Virtual (MT7612U)
 

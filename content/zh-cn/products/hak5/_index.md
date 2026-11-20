@@ -1,6 +1,6 @@
 ---
 title: "HAK5 安全研究工具"
-description: "榆阖科技提供 HAK5 安全研究工具：WiFi Pineapple、Bash Bunny、USB Rubber Ducky、Shark Jack、O.MG Cable 等，授权渗透测试首选品牌。"
+description: "榆閤科技提供 HAK5 安全研究工具：WiFi Pineapple、Bash Bunny、USB Rubber Ducky、Shark Jack、O.MG Cable 等，授权渗透测试首选品牌。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

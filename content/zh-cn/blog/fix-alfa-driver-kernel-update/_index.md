@@ -3,7 +3,7 @@ title: "ALFA 驱动程序在内核更新后失效？完整修复指南"
 description: "Linux 内核更新后 ALFA USB WiFi 网卡无法使用？完整修复指南：涵盖 Kali Linux 与 Ubuntu 上的 RTL8812AU、RTL8811AU 及 MT7921AUN 驱动程序修复方式。"
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -58,10 +58,10 @@ MT7921AUN 芯片组自内核 **5.18** 版本起已纳入主线内核。这意味
 在动手修改任何设置前，先执行以下两条命令了解当前状况：
 
 ```bash
-# 目前运行的内核版本是什么？
+# 目前运行的内核版本是什么?
 uname -r
 
-# 哪些 DKMS 模块已构建（以及针对哪些内核）？
+# 哪些 DKMS 模块已构建 (以及针对哪些内核)?
 sudo dkms status
 ```
 
@@ -108,7 +108,7 @@ sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 
 ## 修复：RTL8812AU 驱动程序（AWUS036ACH、ACS、EACS）
 
-RTL8812AU 是 ALFA 芯片组中用于渗透测试最广泛的型号，原因在于其双频支持与可靠的监听模式。它需要内核外驱动，因此也是最常被内核更新破坏的芯片组。
+RTL8812AU 是 ALFA 芯片组中用于渗透测试最广泛的型号，原因在于其双频支持与可靠的监听模式。它需要内核外驱动，因此也是最常被内核更新破坏的芯片组。（版本前提：EACS 在内核 ≥ 6.2 使用内置的 rtw88_8821cu 驱动，不需要 DKMS；仅更旧的内核才需要 morrownr/8821cu 等社区驱动。）
 
 ### 4.1 — 安装内核头文件
 
@@ -150,7 +150,7 @@ sudo dkms remove rtl8812au/5.6.4.2 --all 2>/dev/null
 git clone https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au
 
-# 一步完成：向 DKMS 注册源码、编译并安装
+# 一步完成: 向 DKMS 注册源码, 编译并安装
 sudo make dkms_install
 ```
 
@@ -308,7 +308,7 @@ cat /etc/dkms/framework.conf | grep autoinstall
 当多次重建尝试均失败，且 `dkms status` 显示来自多次部分安装的混乱输出时，从头开始比调试更快：
 
 ```bash
-# 若已安装 Kali 软件包，请先移除
+# 若已安装 Kali 软件包, 请先移除
 sudo apt purge realtek-rtl88xxau-dkms
 
 # 移除所有 rtl8812au 的 DKMS 条目
@@ -316,7 +316,7 @@ for ver in $(sudo dkms status | grep rtl8812au | awk -F'[,/]' '{print $2}' | tr 
     sudo dkms remove rtl8812au/$ver --all
 done
 
-# 移除残留的源码目录（若存在）
+# 移除残留的源码目录 (若存在)
 sudo rm -rf /usr/src/rtl8812au*
 
 # 清除任何过期的模块缓存

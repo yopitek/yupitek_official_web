@@ -1,13 +1,14 @@
 ---
-title: "ALFA AWUS036ACHM — محول USB لاسلكي ثنائي النطاق AC433 خفيف الوزن"
-description: "ALFA AWUS036ACHM، مجموعة شرائح MediaTek MT7610U، ثنائي النطاق AC433، USB 2.0، تصميم هوائي أحادي خفيف الوزن، يدعم وضع المراقبة (Monitor Mode)، مثالي للاستخدام المتنقل."
+title: "ALFA AWUS036ACHM — محول USB لاسلكي ثنائي النطاق AC600 خفيف الوزن"
+description: "ALFA AWUS036ACHM، مجموعة شرائح MediaTek MT7610U، ثنائي النطاق AC600، USB 2.0، تصميم هوائي أحادي خفيف الوزن، يدعم وضع المراقبة (Monitor Mode)، مثالي للاستخدام المتنقل."
 date: 2026-03-12
+lastmod: 2026-11-20
 showBreadcrumbs: true
 showTableOfContents: true
 dir: rtl
 languageDirection: rtl
 brands: ["alfa"]
-tags: ["Wi-Fi 5", "AC433", "USB 2.0", "ثنائي النطاق", "خفيف الوزن"]
+tags: ["Wi-Fi 5", "AC600", "USB 2.0", "ثنائي النطاق", "خفيف الوزن"]
 faq:
   - question: "هل أحتاج إلى تثبيت برنامج تشغيل لجهاز AWUS036ACHM على نظام Linux؟"
     answer: "عادةً لا. تشير صفحة دعم ALFA لنظام Linux إلى أن الجهاز يعمل بتوصيل وتشغيل (plug and play) على أنظمة Kali و Ubuntu و Raspberry Pi OS، وتذكر الدعم في نواة Linux الرئيسية بدءًا من الإصدار 4.19. على نظام Debian، تحتاج بالإضافة إلى ذلك إلى إضافة مصدر APT غير الحر وتثبيت حزمة البرنامج الثابت (firmware)."

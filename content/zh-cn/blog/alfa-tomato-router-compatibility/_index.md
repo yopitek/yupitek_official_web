@@ -16,7 +16,7 @@ categories:
 description: "目前 ALFA 全系列现役机型在 Tomato（含 FreshTomato / AdvancedTomato 等衍生版本）上均无驱动支持，完全不建议使用。Tomato 是三大第三方路由器韧体中对 USB WiFi 支持最弱的平台，其开发重心完全放在 Broadcom 晶片路由器的内建 WiFi 上。若需要在路由器上使用 USB WiFi 网卡，应改用 OpenWrt。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. 问题摘要
@@ -72,10 +72,10 @@ Tomato 的核心（kernel）预设仅编入 Broadcom 路由器内建 WiFi 的闭
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ❌ 无 |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ❌ 无 |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ❌ 无 |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ❌ 无 |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ❌ 无 |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ❌ 无 |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ❌ 无 |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ❌ 无 |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ❌ 无 |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | ❌ 无 |
 
 ## 4. 适用机型与晶片组
 
@@ -92,7 +92,7 @@ Tomato 的核心（kernel）预设仅编入 Broadcom 路由器内建 WiFi 的闭
 
 所有现役 ALFA 机型（见第 3 节表格）在 Tomato 上均不可用，原因：
 
-- Realtek 晶片（RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU）：Tomato 无任何对应驱动，也无法透过套件管理安装
+- Realtek 晶片（RTL8812AU / RTL8811AU / RTL8821CU / RTL8832BU）：Tomato 无任何对应驱动，也无法透过套件管理安装
 - MediaTek 晶片（MT7612U / MT7610U / MT7921AUN）：Tomato 未编入 mt76 / mt7921 驱动，且 FreshTomato 开发团队无计划加入
 - 即使 lsusb 能看到装置（若 Tomato 有启用 USB 核心），也仅是 USB 汇流排层级的辨识，无法建立网路介面
 
@@ -125,7 +125,7 @@ Tomato 的核心（kernel）预设仅编入 Broadcom 路由器内建 WiFi 的闭
 | AWUS036ACHM | MT7610U | ⚠️ | ❌ | ❌ | ❌ | ❌ | 不支持 |
 | AWUS036ACM | MT7612U | ⚠️ | ❌ | ❌ | ❌ | ❌ | 不支持 |
 | AWUS036ACS | RTL8811AU | ⚠️ | ❌ | ❌ | ❌ | ❌ | 不支持 |
-| AWUS036EACS | RTL8811CU | ⚠️ | ❌ | ❌ | ❌ | ❌ | 不支持 |
+| AWUS036EACS | RTL8821CU | ⚠️ | ❌ | ❌ | ❌ | ❌ | 不支持 |
 
 判定依据：Tomato（含 FreshTomato）官方核心与套件库均未包含任何现代 USB WiFi 晶片驱动。Tomato 的设计目标从未包含 USB WiFi 扩充功能。
 
@@ -150,9 +150,9 @@ Tomato 的核心（kernel）预设仅编入 Broadcom 路由器内建 WiFi 的闭
 **步骤 4：透过 SSH / Telnet 登入路由器检查 USB 侦测**
 
 ```bash
-# 检查是否有 lsusb（Tomato 预设可能没有）
+# 检查是否有 lsusb (Tomato 预设可能没有)
 which lsusb
-# 若无 lsusb，检查 /proc/bus/usb 或 dmesg
+# 若无 lsusb, 检查 /proc/bus/usb 或 dmesg
 cat /proc/bus/usb/devices
 # 或
 dmesg | grep -i usb
@@ -162,21 +162,21 @@ dmesg | grep -i usb
 
 ```bash
 ifconfig -a
-# 若仅有 vlan0 / br0 / eth0 / eth1（路由器内建介面），无 wlan0 / wlan1，代表 USB WiFi 未被驱动
+# 若仅有 vlan0 / br0 / eth0 / eth1 (路由器内建介面), 无 wlan0 / wlan1, 代表 USB WiFi 未被驱动
 ```
 
 **步骤 6：检查可用的 kernel module**
 
 ```bash
 lsmod
-# 预期仅有 wl（Broadcom 内建 WiFi 驱动）、et（乙太网路驱动）等
+# 预期仅有 wl (Broadcom 内建 WiFi 驱动), et (乙太网路驱动) 等
 # 不会有 mt76 / rtl8812 / cfg80211 / mac80211 等 USB WiFi 驱动
 ```
 
 **步骤 7：检查是否可安装额外套件**
 
 ```bash
-# Tomato 使用 ipkg，但套件库内容极少
+# Tomato 使用 ipkg, 但套件库内容极少
 ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
 # 预期结果为空
 ```
@@ -188,7 +188,7 @@ ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
 若你的路由器型号同时支持 OpenWrt，建议将韧体从 Tomato 改刷为 OpenWrt。OpenWrt 有完整的 USB WiFi 驱动套件库，可支持多数 ALFA 机型。
 
 - 确认你的路由器是否在 OpenWrt 支持装置列表中
-- 若支持，参考 [ALFA 无线网卡是否支持 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) 的安装步骤
+- 若支持，参考 [ALFA 无线网卡是否支持 OpenWrt](/zh-cn/blog/alfa-openwrt-router-compatibility/) 的安装步骤
 
 #### 方案二：使用路由器内建 WiFi
 
@@ -231,8 +231,8 @@ Tomato 对 Broadcom 路由器的内建 WiFi 支持完善，若你的需求是一
 | FreshTomato 官方网站 | FreshTomato 最新版本与支持装置列表 | https://freshtomato.org/ | ✅ 已查核 | 2026-09-03 |
 | OpenWrt 官方文档 | USB WiFi 驱动与无线设定（对比参考） | https://openwrt.org/docs/start | ✅ 已查核 | 2026-09-03 |
 | OpenWrt 官方论坛 | USB WiFi 驱动讨论（对比参考） | https://forum.openwrt.org/ | ✅ 已查核 | 2026-09-03 |
-| ALFA Network 产品总览（Yopitek） | ALFA 现役产品规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
+| ALFA Network 产品总览（Yopitek） | ALFA 现役产品规格 | /zh-cn/products/alfa/ | ✅ 已查核 | 2026-09-03 |
 
-相关文章：[ALFA 无线网卡是否支持 DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[ALFA 无线网卡是否支持 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[ALFA 无线网卡是否支持 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无线网卡是否支持 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
+相关文章：[ALFA 无线网卡是否支持 DD-WRT](/zh-cn/blog/alfa-ddwrt-router-compatibility/)｜[ALFA 无线网卡是否支持 OpenWrt](/zh-cn/blog/alfa-openwrt-router-compatibility/)｜[ALFA 无线网卡是否支持 NVIDIA DGX Spark](/zh-cn/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无线网卡是否支持 NVIDIA Jetson Nano](/zh-cn/blog/alfa-nvidia-jetson-nano-compatibility/)
 
 免责声明：本文相容性判定以 Tomato / FreshTomato 官方核心与套件库为准。极少数进阶使用者可能透过自行交叉编译在特定旧型晶片上实现基本功能，但这不属于官方支持范围，也不建议一般使用者尝试。对于需要在路由器上使用 USB WiFi 的场景，OpenWrt 是唯一实际可行的第三方韧体选择。

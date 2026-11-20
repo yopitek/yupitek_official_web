@@ -13,7 +13,7 @@ tags: ["Wi-Fi 6", "USB 3.0", "802.11ax", "デュアルバンド", "OFDMA", "MU-M
 
 AWUS036AX は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）デュアルバンド（2.4 GHz + 5 GHz）対応、最大 1200 Mbps の合計スループット、MU-MIMO 2×2 と OFDMA 技術をサポートします。RP-SMA コネクタで着脱できるデュアルバンドアンテナを 2 本備えています。
 
-> ⚠️ **重要：** このモデルは **Wi-Fi 6** であり、Wi-Fi 6E ではありません — **6 GHz 帯なし**。6 GHz が必要な場合は AWUS036AXML または AWUS036AXM をご検討ください。コミュニティ版 rtl8852bu ドライバは **Monitor mode に対応していません**。Linux セキュリティ研究には推奨しません。
+> ⚠️ **重要：** このモデルは **Wi-Fi 6** であり、Wi-Fi 6E ではありません — **6 GHz 帯なし**。6 GHz が必要な場合は AWUS036AXML または AWUS036AXM をご検討ください。GX10（Ubuntu 24.04、カーネル 6.17）で mainline の rtw89_8852bu ドライバーを使用したテストでは、Monitor mode とパケットインジェクションの両方が通過しました（インジェクション成功率は 2.4 GHz で 96%、5 GHz で動作確認）。
 
 > **macOSについて：** すべての ALFA アダプターは macOS サポートが限定的です。macOS 11 Big Sur 以降および Apple Silicon（M1/M2/M3）は**非対応**です。Intel Mac での最大サポートは macOS 10.15 Catalina です。
 
@@ -47,8 +47,8 @@ AWUS036AX は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）デ
 |----|------|------|
 | Windows 10/11 | ✅ 対応 | Alfa ウェブサイトからドライバをダウンロード |
 | macOS | ❌ 非対応 | macOS 11+ および Apple Silicon 非対応 |
-| Ubuntu | ⚠️ ドライバ必要 | カーネルに内蔵されていません；DKMS 経由でコミュニティ版 rtl8852bu ドライバをビルドしてください |
-| Kali Linux | ⚠️ 限定 | Managed mode のみ（DKMS ドライバ）；Monitor mode はサポートされていません |
+| Ubuntu | ✅ カーネル 6.17 以降 | mainline の rtw89_8852bu ドライバー（Linux 6.17 から搭載）。古いカーネルでは DKMS 経由でコミュニティ版 rtl8852bu ドライバをビルド |
+| Kali Linux | ✅ 対応 | GX10（Ubuntu 24.04、カーネル 6.17）で mainline ドライバーにより Monitor mode とパケットインジェクションを確認；古いカーネルでは DKMS ドライバが必要。実機の Kali は未検証 |
 | NetHunter | ⚠️ 限定 | カーネル依存 |
 ## 対応ハードウェア
 
@@ -61,8 +61,8 @@ AWUS036AX は Realtek RTL8832BU チップを搭載し、Wi-Fi 6（802.11ax）デ
 
 | 機能 | 状態 |
 |------|------|
-| Monitor Mode | ❌ 非対応（コミュニティドライバ）|
-| Packet Injection | ❌ 非対応 |
+| Monitor Mode | ✅ あり（mainline rtw89_8852bu、カーネル 6.17 以降；GX10 テストで受信性能は良好） |
+| Packet Injection | ✅ あり（GX10 テスト：2.4 GHz 96%、5 GHz 動作確認） |
 | Soft AP モード | ✅ あり |
 | Bluetooth | ❌ なし |
 

@@ -22,8 +22,6 @@ faq:
     answer: "Du kannst die komplette Sierra-Wireless-Mobilfunkmodul-Reihe über Yopitek beziehen. Schau auf den Yopitek-Produktseiten nach Modellen und Preisen oder schreib direkt an sales@yupitek.com."
 ---
 
-# Sierra-Wireless-Kaufberatung für Mobilfunkmodule: Von LTE Cat 4 bis 5G mmWave
-
 {{< alert >}}
 Yopitek bietet Produktinformationen, Bezugskanäle und technische Inhalte zu Sierra Wireless / Semtech; kein offiziell autorisierter Distributor, nur zur technischen Referenz.
 {{</alert >}}
@@ -63,7 +61,7 @@ Genau hier stolpert fast jeder Anfänger! Falsch gekauft, nicht eingesteckt beko
 
 **Das haben sie gemeinsam:** Beide brauchen eine externe SIM-Kartenhalterung und Antennen. Die Antennenanschlüsse sind üblicherweise U.FL, Standardkonfiguration ist 2×2 MIMO (eine Hauptantenne plus eine Diversity-Antenne) plus eine zusätzliche GNSS-Antenne für die Positionsbestimmung.
 
-**Die häufigste Frage:** Worin unterscheiden sich EM7455 und MC7455 wirklich? Antwort: „Derselbe Chip, nur das Gehäuse." Beide Karten verwenden den Qualcomm MDM9230 mit identischen Spezifikationen. Die Wahl hängt also wirklich nur davon ab, wie dein Board aussieht.
+**Die häufigste Frage:** Worin unterscheiden sich EM7455 und MC7455 wirklich? Antwort: „Derselbe Chip, nur das Gehäuse.“ Beide Karten verwenden den Qualcomm MDM9230 mit identischen Spezifikationen. Die Wahl hängt also wirklich nur davon ab, wie dein Board aussieht.
 
 ## Unsere Empfehlung nach Projekt oder Anwendungsszenario
 

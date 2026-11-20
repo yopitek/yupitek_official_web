@@ -28,7 +28,7 @@ L'AWUS036AXM est équipé du chipset MediaTek MT7921AUN avec support Wi-Fi 6E tr
 - Connecteur USB-A coudé en L (USB 3.2 Gen 1, 5 Gbps)
 - 2× antennes détachables RP-SMA femelle (5 dBi)
 - WPA3/WPA2/WPA/WEP/WPS
-- Mode Moniteur + Injection de Paquets Kali Linux
+- Mode moniteur Kali Linux
 
 ## Spécifications Techniques
 
@@ -51,7 +51,7 @@ L'AWUS036AXM est équipé du chipset MediaTek MT7921AUN avec support Wi-Fi 6E tr
 | Windows 11 | ✅ Pris en charge | Tri-bande complet incluant 6 GHz |
 | macOS | ❌ Non pris en charge | Aucun support macOS 11+ ou Apple Silicon |
 | Ubuntu | ✅ Pris en charge | mt7921u intégré au noyau, noyau ≥ 5.18 |
-| Kali Linux | ✅ Pris en charge | Mode moniteur + injection de paquets ; des fichiers firmware peuvent être nécessaires |
+| Kali Linux | ⚠️ Partiel | Le mode moniteur fonctionne ; l'injection de paquets n'a pas réussi nos tests internes sur GX10 / noyau stock 6.17 (cause : régression mac80211 chanctx à partir du noyau 6.16, pas une limite de la puce). Non testé sur un vrai Kali ; des fichiers firmware peuvent être nécessaires |
 | NetHunter | ⚠️ Partiel | OTG ; dépendant du noyau |
 
 ## Compatibilité Matérielle
@@ -67,7 +67,7 @@ L'AWUS036AXM est équipé du chipset MediaTek MT7921AUN avec support Wi-Fi 6E tr
 | Fonctionnalité | Statut |
 |---------|--------|
 | Mode Moniteur | ✅ Oui |
-| Injection de Paquets | ✅ Oui |
+| Injection de Paquets | ❌ Échec (test interne, GX10, noyau stock 6.17) |
 | Mode AP Logiciel | ✅ Oui |
 | Bluetooth | ✅ BT 5.2 (antenne BT intégrée) |
 | VIF | ✅ Oui |

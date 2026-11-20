@@ -2,6 +2,7 @@
 title: "ALFA Network 無線LANアダプター"
 description: "YopitekはALFA Network高出力USB Wi-Fi無線LANアダプターを取り扱っています。世界のセキュリティリサーチコミュニティで高く評価されています。"
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
@@ -37,16 +38,16 @@ ALFA Networkは台湾の著名な無線ネットワーク機器・USB Wi-Fiア�
     AC1200 デュアルバンド、Realtek RTL8812AU、USB 3.0、デュアル5 dBi外部アンテナ、高出力。
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/ja/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 デュアルバンド、MediaTek MT7610U チップセット、USB 2.0、シングルアンテナのコンパクト設計 — ポータブルなペネトレーションテストに最適。
+    AC600 デュアルバンド、MediaTek MT7610U チップセット、USB 2.0、シングルアンテナのコンパクト設計 — ポータブルなペネトレーションテストに最適。
   {{< /card >}}
   {{< card title="AWUS036ACM" href="/ja/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 デュアルバンド、MediaTek MT7612U、USB 3.0、300+867 Mbps、5 dBiデュアルアンテナ。
   {{< /card >}}
   {{< card title="AWUS036ACS" href="/ja/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
-    AC433 デュアルバンド、Realtek RTL8811AU、USB 2.0、超薄型55mmミニボディ。
+    AC600 デュアルバンド、Realtek RTL8811AU、USB 2.0、超薄型55mmミニボディ。
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/ja/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
-    AC600 デュアルバンド、Realtek RTL8811CU、USB 2.0、超コンパクトスリムデザイン。
+    AC600 デュアルバンド、Realtek RTL8821CU、USB 2.0、超コンパクトスリムデザイン。
   {{< /card >}}
 {{< /card-group >}}
 

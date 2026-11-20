@@ -21,8 +21,6 @@ faq:
     answer: "Dos puntos clave: refrigeración y alimentación. La temperatura interna del módulo normalmente no debe superar los 90 a 115 °C, y las cajas de metal exteriores se calientan con facilidad, así que debe asegurar una buena conducción del calor. Además, el consumo instantáneo de un módulo 5G puede llegar a 2,7 A, por lo que el convertidor de alimentación debe aguantar esa corriente de pico."
 ---
 
-# Retorno móvil para videovigilancia y cartelería digital: cómo elegir entre Cat 6 y 5G
-
 **Resumen en una frase: no se deje deslumbrar por el 5G; primero pregúntese si su equipo «sube» datos sin parar o los «baja». Las cámaras de vigilancia envían la imagen continuamente a la nube, así que debe mirar la velocidad de subida (Uplink); los carteles digitales descargan vídeos nuevos para reproducirlos, así que debe mirar la velocidad de descarga (Downlink). Si solo necesita transmitir unas pocas cámaras 1080p, la tarjeta Cat 6 más barata le sobra.**
 
 Muchos propietarios, al licitar el proyecto de red para «cámaras de vigilancia en cruces» o «carteles publicitarios de cadenas de tiendas», abren la conversación diciendo: «¡Póngame el módulo 5G más rápido!»
@@ -30,7 +28,7 @@ Y gastan una fortuna para luego descubrir que en realidad no lo necesitaban.
 
 Elegir una tarjeta de red no es elegir un coche de carreras; no se trata de que cuanto más rápida, mejor, sino de «recetar el remedio adecuado a cada caso». En este artículo tomamos los tres módulos M.2 más habituales de Sierra Wireless (EM7455, EM7565 y EM9191) y, con los números de las hojas de especificaciones oficiales, le enseñamos a elegir el más rentable.
 
-> Fuente de los datos técnicos: hojas de especificaciones oficiales de Sierra Wireless. Artículo recopilado por Yopitek (榆閤科技).
+> Fuente de los datos técnicos: hojas de especificaciones oficiales de Sierra Wireless. Artículo recopilado por Yopitek.
 
 ---
 
@@ -109,7 +107,7 @@ Comprar una tarjeta de red es como alquilar un camión: según la carga que vaya
 
 ## Información de compra (Llamada a la acción)
 
-¿Está planificando una solución de red para retorno de vídeo o para cartelería digital? Yopitek (榆閤科技) ofrece módulos Sierra Wireless completos y asesoramiento técnico profesional para calcularle la combinación más rentable.
+¿Está planificando una solución de red para retorno de vídeo o para cartelería digital? Yopitek ofrece módulos Sierra Wireless completos y asesoramiento técnico profesional para calcularle la combinación más rentable.
 Escríbanos: **sales@yupitek.com**
 Vea los productos: [Sección de productos Sierra Wireless](/es/products/sierra/)
 

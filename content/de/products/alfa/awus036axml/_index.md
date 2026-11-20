@@ -62,7 +62,7 @@ Der AWUS036AXML verfügt über den MediaTek MT7921AUN Chipsatz mit Wi-Fi-6E-Tri-
 | Windows 11 | ✅ Unterstützt | Volles Tri-Band einschließlich 6 GHz |
 | macOS | ❌ Nicht unterstützt | Keine Unterstützung für macOS 11+ oder Apple Silicon |
 | Ubuntu | ✅ Unterstützt | In-Kernel-mt7921u-Treiber, Kernel ≥ 5.18 (Ubuntu 22.10+) |
-| Kali Linux | ✅ Unterstützt | Monitor-Modus ab Kernel 5.18; aktiver Monitor-Modus ab 6.12; Paketinjektion unterstützt |
+| Kali Linux | ⚠️ Eingeschränkt | Monitor-Modus ab Kernel 5.18; aktiver Monitor-Modus ab 6.12. Paketinjektion bestand unseren internen Test auf GX10 / Stock-Kernel 6.17 nicht (mac80211-chanctx-Regression ab Kernel 6.16, keine Chip-Einschränkung). Auf echtem Kali nicht getestet |
 | NetHunter (Android) | ⚠️ Eingeschränkt | OTG; kernelabhängig |
 
 ## Hardware-Kompatibilität
@@ -78,7 +78,7 @@ Der AWUS036AXML verfügt über den MediaTek MT7921AUN Chipsatz mit Wi-Fi-6E-Tri-
 | Funktion | Status |
 |---------|--------|
 | Monitor-Modus | ✅ Ja (Kernel ≥ 5.18; aktiver Modus ≥ 6.12) |
-| Paketinjektion | ✅ Ja |
+| Paketinjektion | ❌ Nicht bestanden (interner Test, GX10, Stock-Kernel 6.17) |
 | Soft-AP-Modus | ✅ Ja |
 | Bluetooth | ✅ BT 5.2 |
 | VIF | ✅ Ja |

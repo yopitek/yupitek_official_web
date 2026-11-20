@@ -22,8 +22,6 @@ faq:
     answer: "Four key points: 1. It measures 52mm, not 42mm. 2. All four antenna connections must be populated. 3. The supply must handle a 2.7A peak current. 4. Cooling matters; the internal temperature must stay below 115°C."
 ---
 
-# How Industrial Routers Handle 4G/5G Failover: A Practical EM9191 Private 5G Deployment Guide
-
 **In one sentence: adding a 5G module to your industrial router for failover is like buying insurance. The Sierra Wireless EM9191 supports both ultra-fast 4G (LTE Cat 20) and private 5G networks (5G SA). Run 4G failover today, and when your site builds out a private 5G network later, you keep the same hardware and switch over seamlessly.**
 
 In a factory, every minute of network downtime burns money. Machine data stops flowing, remote monitoring goes dark, and the loss quickly outweighs the cost of a backup link. That is why failover matters so much. Rather than pulling a second physical fiber from another carrier, dropping in a SIM card and routing over the mobile network is the smartest play.

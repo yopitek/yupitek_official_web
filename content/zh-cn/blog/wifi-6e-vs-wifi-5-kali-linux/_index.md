@@ -3,7 +3,7 @@ title: "WiFi 6E vs WiFi 5：渗透测试该选哪款 ALFA 网卡？"
 description: "对比 ALFA AWUS036AXML（Wi-Fi 6E）与 AWUS036ACH（Wi-Fi 5）在 Kali Linux 渗透测试中的差异，涵盖 6 GHz 支持、驱动成熟度、监听模式与实际使用场景。"
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -15,7 +15,7 @@ faq:
   - question: "AWUS036ACH 与 AWUS036AXML 该选哪一款？"
     answer: "日常渗透测试选 AWUS036ACH，驱动成熟且社群资源丰富。需稽核 6 GHz Wi-Fi 6E 环境则选 AWUS036AXML。条件允许建议两款皆备。"
   - question: "AWUS036AXML 的监听模式在 Kali Linux 上稳定吗？"
-    answer: "需核心 6.1 以上并安装最新 linux-firmware 软件包。数据包注入可用但建议正式委外测试前先行验证，特定核心与固件组合可能不稳定。"
+    answer: "需核心 6.1 以上并安装最新 linux-firmware 软件包。kernel 6.16 以前有社群回报数据包注入可用，但 stock kernel 6.17 实测未通过（mac80211 chanctx 回归，并非芯片先天限制），需要注入请改用 AWUS036ACH。"
   - question: "2026 年渗透测试需要 6 GHz 网卡吗？"
     answer: "大多数测试案例仍以 2.4/5 GHz 为主。但若目标环境已部署 Wi-Fi 6E 访问点，6 GHz 网卡即为策略必备。"
   - question: "AWUS036ACH 的 RTL8812AU 驱动如何安装？"
@@ -107,11 +107,11 @@ MT7921AUN 的驱动（`mt7921u`）从 **Linux 内核 5.18 版本起已合并入�
 # 验证内核模块是否已加载
 lsmod | grep mt7921u
 
-# 如未加载：
+# 如未加载:
 sudo modprobe mt7921u
 ```
 
-然而，MT7921AUN 的**监听模式支持**较为新近，依赖于具体的内核版本和固件版本。截至 2026 年初，监听模式在内核 6.1+ 并安装最新 `linux-firmware` 包的情况下可正常使用。数据包注入功能虽然可用，但在某些内核/固件组合下曾出现偶发性不稳定——正式作业前务必先行测试。
+然而，MT7921AUN 的**监听模式支持**较为新近，依赖于具体的内核版本和固件版本。截至 2026 年初，监听模式在内核 6.1+ 并安装最新 `linux-firmware` 包的情况下可正常使用。数据包注入在 kernel 6.16 以前有社群回报可用，但 stock kernel 6.17 实测未通过（aireplay-ng --test 显示 Found 0 APs / No Answer，无法 deauth 或捕获 handshake）。主因是 kernel 6.16 以后 mac80211 chanctx 回归，并非芯片先天限制；社群 patched 驱动可让注入运作，但固件仍锁速率（1/6 Mbps，不可注入 HT/VHT）。监听、AP、WPA3 与 VIF 则可正常使用；需要注入请改用 AWUS036ACH。
 
 ```bash
 sudo apt update && sudo apt install linux-firmware
@@ -129,7 +129,7 @@ sudo airmon-ng start wlan0
 | **工作频段** | 2.4 GHz + 5 GHz | 2.4 GHz + 5 GHz + 6 GHz |
 | **最高吞吐量** | AC1200 | AX1800 |
 | **监听模式稳定性** | ★★★★★（极为稳定） | ★★★★☆（需内核 6.1+） |
-| **数据包注入** | ★★★★★（高度可靠） | ★★★★☆（可用，需测试） |
+| **数据包注入** | ★★★★★（高度可靠） | ⚠️ kernel 6.16 以前有社群回报；6.17 实测失败 |
 | **驱动安装** | 手动 DKMS（约 10 分钟） | 内核内置（内核 5.18+） |
 | **6 GHz 支持** | ✗ | ✓ |
 | **天线数量** | 2× RP-SMA | 1× RP-SMA |

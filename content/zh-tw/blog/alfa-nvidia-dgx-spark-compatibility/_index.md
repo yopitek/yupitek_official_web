@@ -14,17 +14,19 @@ tags:
   - "ARM64"
 categories:
   - "邊緣 AI / GPU 伺服器"
-description: "DGX Spark 執行 NVIDIA DGX OS（基於 Ubuntu，kernel 6.x），對 ALFA 網路卡的相容性與一般現代 Linux 桌面系統相同。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）使用 in-kernel 驅動，開箱即用；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需..."
+description: "ALFA 9 款 USB 網路卡在 NVIDIA DGX Spark（GB10）的相容性：ASUS GX10 實測 kernel 6.17 全部使用內建驅動、插上即用免 DKMS；EACS／ACH／ACS 注入最穩，AXM／AXML 注入失敗。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
+
+> 📌 本文已依 2026-11 GX10 實測更新：在 ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）上，ALFA 現役 9 款網路卡全部使用 kernel 內建驅動，插上即可用，不需 DKMS。完整數據見 [ALFA 9 款網路卡 ARM64 實測總表](/zh-tw/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)。僅在 GX10 實測，其他 GB10 機型未逐台測試。
 
 ## 1. 問題摘要
 
 客戶詢問：「ALFA 系列 USB 無線網路卡能否在 NVIDIA DGX Spark（GB10 Grace Blackwell）個人 AI 超級電腦上使用？」
 
-簡短結論：DGX Spark 執行 NVIDIA DGX OS（基於 Ubuntu，kernel 6.x），對 ALFA 網路卡的相容性與一般現代 Linux 桌面系統相同。MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）使用 in-kernel 驅動，開箱即用；Realtek 晶片機型（AWUS036ACH / ACS / EACS / AX / AXER）需編譯 out-of-tree 驅動（ARM64 / aarch64 架構）。注意：DGX Spark 的 USB 埠均為 USB Type-C，ALFA 網路卡為 USB Type-A，需使用 USB-C to USB-A 轉接器或傳輸線。
+簡短結論：DGX Spark 執行 NVIDIA DGX OS（基於 Ubuntu，kernel 6.x）。我們在同為 GB10 平台的 ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）實測 ALFA 現役 9 款 USB 網路卡，全部使用 kernel 內建驅動，插上即可用，不需編譯或 DKMS。DGX Spark 使用同一款 GB10 與 NVIDIA kernel 系列，預期行為相同，但僅在 GX10 實測，DGX Spark 未逐台測試。功能差異：MediaTek MT7921 機型（AWUS036AXM / AXML）在 stock kernel 6.17 上封包注入失敗，monitor、AP、WPA3 可用；其餘 7 款的 monitor 與注入皆實測可用。各卡驅動進入主線的最低 kernel 版本不同（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17），低於該版本的舊 kernel 才需要社群 DKMS 驅動。注意：DGX Spark 的 USB 埠均為 USB Type-C，ALFA 網路卡為 USB Type-A，需使用 USB-C to USB-A 轉接器或傳輸線。
 
 判定母體：ALFA 現役 9 款 USB 網路卡（AWUS036ACM / ACHM / ACS / EACS / ACH / AX / AXER / AXML / AXM）。
 
@@ -66,8 +68,8 @@ lastmod: 2026-09-03
 
 DGX Spark 的軟體環境對 ALFA 網路卡相容性有兩個關鍵影響：
 
-- Kernel 6.x（現代）：所有進入 mainline 的 WiFi 驅動均可直接使用，包括 mt76（MT7612U / MT7610U）和 mt7921u（MT7921AUN）。這與 Jetson Nano 的 kernel 4.9 形成鮮明對比。
-- ARM64（aarch64）架構：Realtek out-of-tree 驅動（8812au / 8821cu / rtl8852bu）需在 ARM64 上編譯。這些驅動的上游（morrownr）已支援 ARM64 編譯，但需確認 Makefile 中的 CONFIG_PLATFORM_ARM64 = y。
+- Kernel 6.x（現代）：kernel 6.17（GX10 實測版本）已內建本文 9 款網路卡的驅動，包括 mt76（MT7612U / MT7610U，4.19+）、mt7921u（MT7921AUN，5.18+）、rtw88（RTL8821CU 6.2+；RTL8812AU / RTL8811AU 6.13+）與 rtw89（RTL8832BU，6.17+）。這與 Jetson Nano 的 kernel 4.9 形成鮮明對比。
+- ARM64（aarch64）架構：使用 kernel 內建驅動時不需要在 ARM64 上編譯任何東西；只有 kernel 低於該卡最低版本的舊系統，Realtek 機型才需要編譯社群 DKMS 驅動（如 morrownr 系列，需確認 Makefile 中 CONFIG_PLATFORM_ARM64 = y）。
 
 ### 2.4 USB Type-C 轉接需求
 
@@ -91,17 +93,19 @@ DGX Spark 的 4 個 USB 埠均為 Type-C，而 ALFA 全系列網路卡（除 AXM
 
 截至 2026 年 9 月，ALFA Network 現役 USB 無線網路卡產品線如下（判定母體：9 款）：
 
-| 機型 | Wi-Fi 等級 | 晶片組 | 介面 | Linux 驅動狀態 |
+| 機型 | Wi-Fi 等級 | 晶片組 | 介面 | Linux 內建驅動（最低 kernel 版本） |
 |---|---|---|---|---|
-| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ in-kernel（mt7921u，kernel 5.19+） |
-| AWUS036AXM | Wi-Fi 6E | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ in-kernel（mt7921u） |
-| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ rtw89（kernel 5.16+，USB 支援陸續合入）或 out-of-tree |
-| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ 同上 |
-| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ⚠️ out-of-tree（morrownr/8812au，需 ARM64 編譯） |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ✅ in-kernel（mt76x0u） |
-| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ in-kernel（mt76x2u）⭐ 首選 |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ⚠️ out-of-tree（8812au 涵蓋） |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ⚠️ out-of-tree（morrownr/8821cu） |
+| AWUS036AXML | Wi-Fi 6E（6GHz 實測可用） | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ 內建（mt7921u，5.18+） |
+| AWUS036AXM | Wi-Fi 6E（廠商標示，6GHz 未實測） | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ 內建（mt7921u，5.18+） |
+| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ 內建（rtw89_8852bu，6.17+） |
+| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ 內建（rtw89_8852bu，6.17+） |
+| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ✅ 內建（rtw88_8812au，6.13+） |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ✅ 內建（mt76x0u，4.19+） |
+| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ 內建（mt76x2u，4.19+） |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ✅ 內建（rtw88_8821au，6.13+） |
+| AWUS036EACS | Wi-Fi 5 (AC600) + 藍牙 | Realtek RTL8821CU | USB 2.0 | ✅ 內建（rtw88_8821cu，6.2+） |
+
+註：GX10 實測的 kernel 6.17 已內建全部 9 款驅動；各卡最低 kernel 版本不同（見上表括號）。kernel 低於該卡最低版本的舊系統，才需要安裝社群維護的 DKMS 驅動。
 
 ## 4. 適用機型與晶片組
 
@@ -109,22 +113,21 @@ DGX Spark 的 4 個 USB 埠均為 Type-C，而 ALFA 全系列網路卡（除 AXM
 
 | 推薦等級 | 機型（晶片組） | 說明 |
 |---|---|---|
-| ⭐ 強烈推薦 | AWUS036ACM（MT7612U） | in-kernel 驅動，開箱即用，AC1200 雙頻，支援 AP / Monitor / Injection |
-| ✅ 推薦 | AWUS036ACHM（MT7610U） | in-kernel 驅動，低功耗，AC433 雙頻 |
-| ✅ 推薦（Wi-Fi 6E） | AWUS036AXML / AXM（MT7921AUN） | in-kernel 驅動，Wi-Fi 6E，AXML 為 USB-C 可直插 |
-| ⚠️ 可用但需編譯 | AWUS036ACH（RTL8812AU） | 需編譯 morrownr/8812au（ARM64），完成後功能完整（含 Monitor / Injection） |
-| ⚠️ 可用但需編譯 | AWUS036ACS（RTL8811AU） | 由 8812au 驅動涵蓋 |
-| ⚠️ 可用但需編譯 | AWUS036EACS（RTL8811CU） | 需編譯 morrownr/8821cu（ARM64） |
-| ⚠️ 可用但需注意 | AWUS036AX / AXER（RTL8832BU） | kernel 6.x 的 rtw89 可能已支援 USB；若無需編譯 out-of-tree |
+| ⭐ 滲透測試首選 | AWUS036EACS（RTL8821CU）/ AWUS036ACH（RTL8812AU）/ AWUS036ACS（RTL8811AU） | 內建驅動免安裝；注入實測 EACS、ACH 兩頻 100%，ACS 2.4GHz 100%、5GHz 96%；可端到端擷取 WPA handshake |
+| ✅ 推薦 | AWUS036ACM（MT7612U） | 內建驅動免安裝；monitor、注入（2.4GHz 63–83%、5GHz 76%）、AP、WPA3 皆可用 |
+| ✅ 推薦 | AWUS036ACHM（MT7610U） | 內建驅動免安裝；2.4GHz 注入 96–100%，5GHz 注入僅廣播可用；WPA3 AP 需設定 sae_pwe=0 |
+| ✅ 推薦（Wi-Fi 6） | AWUS036AX / AXER（RTL8832BU） | 內建驅動免安裝；monitor 收訊強，注入可用（2.4GHz：AX 96%、AXER 73%），AP 支援 80MHz |
+| ⚠️ 僅適合連線／AP | AWUS036AXML / AXM（MT7921AUN） | 內建驅動免安裝；monitor、AP、WPA3 可用，但 stock kernel 6.17 上注入失敗，不適合滲透測試；AXML 為 USB-C 可直插 |
 
 ### 4.2 使用場景建議
 
 | 使用場景 | 建議機型 | 說明 |
 |---|---|---|
-| 一般無線上網（最簡單） | AWUS036ACM / ACHM | in-kernel 驅動，免編譯，開箱即用 |
-| 無線滲透測試 / 監聽 / 注入 | AWUS036ACH 或 AWUS036ACM | 兩者均支援 Monitor + Injection；ACH 需編譯，ACM 開箱即用 |
-| Wi-Fi 6E / 6GHz 頻段 | AWUS036AXML / AXM | MT7921AUN in-kernel 驅動，kernel 6.x 完整支援 |
-| 已有 AWUS036ACH 想繼續用 | AWUS036ACH | 編譯 ARM64 驅動即可，功能完整 |
+| 一般無線上網（最簡單） | 9 款皆可（例如 AWUS036ACM / ACHM） | 全部為 kernel 內建驅動，插上即可用 |
+| 無線滲透測試 / 監聽 / 注入 | AWUS036EACS / ACH / ACS | 注入實測 96–100%，可端到端擷取 WPA handshake；勿選 AXM / AXML（注入失敗） |
+| Wi-Fi 6 + AP 熱點 | AWUS036AX / AXER | 2x2、80MHz AP 實測可用 |
+| 6GHz 頻段 | AWUS036AXML | 實測可在 6GHz 建立 WPA3 AP；AXM 同晶片但 6GHz 未實測 |
+| 已有 AWUS036ACH 想繼續用 | AWUS036ACH | kernel 6.13 以上內建 rtw88_8812au，插上即可用，兩頻注入實測 100% |
 | 不需要外接 WiFi（使用內建） | — | DGX Spark 已內建 Wi-Fi 7，一般上網不需外接 ALFA |
 
 注意：DGX Spark 已內建 Wi-Fi 7 + Bluetooth 5.4，一般上網場景不需要外接 ALFA 網路卡。外接 ALFA 的主要需求是：滲透測試（監聽/注入）、特殊晶片組需求、或內建 WiFi 不夠用的場景。
@@ -144,27 +147,26 @@ DGX Spark 的 4 個 USB 埠均為 Type-C，而 ALFA 全系列網路卡（除 AXM
 | 項目 | 需求 |
 |---|---|
 | DGX OS 版本 | 任意現役版本（kernel 6.x） |
-| 編譯工具（Realtek 晶片需要） | build-essential、git、bc、dkms |
+| Kernel 版本 | kernel 6.17（GX10 實測 6.17.0-1014-nvidia）已內建全部 9 款網路卡的驅動，不需編譯工具；各卡最低版本不同（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17），低於該版本才需安裝社群 DKMS 驅動 |
 | 無線管理工具 | iw、wpa_supplicant、network-manager（DGX OS 預設安裝） |
-| 網路 | 編譯驅動期間需有線網路（10GbE）或內建 Wi-Fi 7 聯網 |
 
 ## 6. 相容性判定
 
 ### ALFA 現役機型 × NVIDIA DGX Spark（GB10）相容性矩陣
 
-| 機型 | 晶片組 | 驅動方式 | USB 偵測 | STA 上網 | AP 模式 | Monitor | 安裝難度 | 綜合評價 |
-|---|---|---|---|---|---|---|---|---|
-| AWUS036ACM | MT7612U | in-kernel（mt76x2u） | ✅ | ✅ | ✅ | ✅ | 免安裝 | ⭐ 最佳 |
-| AWUS036ACHM | MT7610U | in-kernel（mt76x0u） | ✅ | ✅ | ✅ | ⚠️ 有限 | 免安裝 | ✅ 良好 |
-| AWUS036AXML | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ 有限 | 免安裝 | ✅ 良好 |
-| AWUS036AXM | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ 有限 | 免安裝 | ✅ 良好 |
-| AWUS036ACH | RTL8812AU | out-of-tree（8812au） | ✅ | ✅ | ✅ | ✅ | 中（編譯） | ⚠️ 可用 |
-| AWUS036ACS | RTL8811AU | out-of-tree（8812au） | ✅ | ✅ | ⚠️ | ❌ | 中（編譯） | ⚠️ 可用 |
-| AWUS036EACS | RTL8811CU | out-of-tree（8821cu） | ✅ | ⚠️ | ❌ | ❌ | 中（編譯） | ⚠️ 可用 |
-| AWUS036AX | RTL8832BU | rtw89 / out-of-tree | ✅ | ⚠️ | ⚠️ | ❌ | 中-高 | ⚠️ 可用 |
-| AWUS036AXER | RTL8832BU | 同上 | ✅ | ⚠️ | ⚠️ | ❌ | 中-高 | ⚠️ 可用 |
+| 機型 | 晶片組 | 驅動（kernel 內建） | USB 偵測 | STA 上網 | AP 模式 | Monitor | 封包注入 | 安裝難度 | 綜合評價 |
+|---|---|---|---|---|---|---|---|---|---|
+| AWUS036EACS | RTL8821CU | rtw88_8821cu | ✅ | ✅ | ✅ | ✅ | ✅ 兩頻 100% | 免安裝 | ⭐ 最佳 |
+| AWUS036ACH | RTL8812AU | rtw88_8812au | ✅ | ✅ | ✅ | ✅ | ✅ 兩頻 100% | 免安裝 | ⭐ 最佳 |
+| AWUS036ACS | RTL8811AU | rtw88_8821au | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 100%／5G 96% | 免安裝 | ⭐ 最佳 |
+| AWUS036ACM | MT7612U | mt76x2u | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 63–83%／5G 76% | 免安裝 | ✅ 良好 |
+| AWUS036ACHM | MT7610U | mt76x0u | ✅ | ✅ | ✅ | ✅ | ⚠️ 2.4G 96–100%／5G 僅廣播 | 免安裝 | ✅ 良好 |
+| AWUS036AX | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ 收訊強 | ✅ 2.4G 96%／5G 可用 | 免安裝 | ✅ 良好 |
+| AWUS036AXER | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ 收訊強 | ✅ 2.4G 73%／5G 可用 | 免安裝 | ✅ 良好 |
+| AWUS036AXML | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ 收訊弱 | ❌ 失敗 | 免安裝 | ⚠️ 僅連線／AP |
+| AWUS036AXM | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ 收訊弱 | ❌ 失敗 | 免安裝 | ⚠️ 僅連線／AP |
 
-判定依據：DGX OS kernel 6.x 的 mainline 驅動可用性 + morrownr 驅動的 ARM64 支援。MediaTek 晶片因驅動已進入 mainline，在 kernel 6.x 上開箱即用。Realtek 晶片需編譯 out-of-tree 驅動，但 ARM64 編譯已被上游支援。
+判定依據：2026-11-16～11-18 於 ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）實機測試，測試對象為自有 Wi-Fi 與自有手機。DGX Spark 使用同一款 GB10 與 NVIDIA kernel 系列，預期行為相同，但僅在 GX10 實測，DGX Spark 未逐台測試。完整數據見 [ALFA 9 款網路卡 ARM64 實測總表](/zh-tw/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)。
 
 ## 7. 超詳細 Step by Step 設定步驟
 
@@ -180,17 +182,14 @@ ssh username@<dgx-spark-ip>
 
 ```bash
 uname -m
-# 預期：aarch64
+# 預期: aarch64
 uname -r
-# 預期：6.x.x（DGX OS kernel）
+# 預期: 6.x.x (DGX OS kernel)
 ```
 
-**步驟 3：（Realtek 晶片需要）安裝編譯工具**
+**步驟 3：確認 kernel 版本是否為 6.17 以上**
 
-```bash
-sudo apt update
-sudo apt install -y build-essential git bc dkms
-```
+kernel 6.17 以上已內建全部 9 款網路卡的驅動，不需要安裝編譯工具。各卡最低版本不同（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）；低於該版本時，Realtek 機型才需要社群 DKMS 驅動（見 7.3 最後一段）。
 
 ### 7.2 路徑 A：MediaTek 晶片機型（AWUS036ACM / ACHM / AXML / AXM）— 開箱即用
 
@@ -202,7 +201,7 @@ sudo apt install -y build-essential git bc dkms
 
 ```bash
 lsusb
-# 預期輸出範例（AWUS036ACM / MT7612U）：
+# 預期輸出範例 (AWUS036ACM / MT7612U):
 # Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/b/g/n/ac Wireless Adapter
 ```
 
@@ -210,10 +209,10 @@ lsusb
 
 ```bash
 ip link show
-# 預期出現 wlan0 或 wlp... 介面（in-kernel 驅動自動載入）
+# 預期出現 wlx 開頭的介面 (依 MAC 命名, in-kernel 驅動自動載入)
 ```
 
-**步驟 4：掃描 WiFi 網路**
+**步驟 4：掃描 WiFi 網路**（以下以 wlan0 示意，請換成 `ip link show` 查到的介面名稱）
 
 ```bash
 sudo iw dev wlan0 scan | grep -E "SSID|signal"
@@ -236,70 +235,49 @@ sudo ip link set wlan0 up
 sudo iw dev wlan0 info
 ```
 
-### 7.3 路徑 B：Realtek 晶片機型（AWUS036ACH / ACS / EACS）— 需編譯
+### 7.3 路徑 B：Realtek Wi-Fi 5 機型（AWUS036ACH / ACS / EACS）— kernel 6.13+ 免安裝（EACS 6.2+）
 
-以 AWUS036ACH（RTL8812AU）為例：
-
-**步驟 1：下載驅動原始碼**
+**步驟 1：插入網路卡並確認驅動已自動載入**
 
 ```bash
-git clone https://github.com/morrownr/8812au-20210820.git
-cd 8812au-20210820
-```
-
-**步驟 2：確認 ARM64 編譯選項**
-
-編輯 Makefile，確認 `CONFIG_PLATFORM_ARM64 = y`（多數新版本自動偵測 aarch64）。
-
-**步驟 3：編譯與安裝**
-
-```bash
-make
-sudo make install
-sudo modprobe 8812au
-```
-
-**步驟 4：插入 ALFA 網路卡（透過 USB-C to USB-A 轉接器），確認介面**
-
-```bash
+uname -r          # ACH/ACS 需 6.13 以上, EACS 需 6.2 以上
+lsusb
+lsmod | grep rtw88
 ip link show
-# 預期出現 wlan0
 ```
 
-**步驟 5：連線方式同 7.2 步驟 5（使用 nmcli）**
+各機型自動載入的模組：ACH → `rtw88_8812au`、ACS → `rtw88_8821au`、EACS → `rtw88_8821cu`（EACS 另含藍牙，實測可用）。
 
-**步驟 6：（可選）監聽模式與注入**
+**步驟 2：連線方式同 7.2 步驟 5（使用 nmcli）**
+
+**步驟 3：（可選）監聽模式與注入**
+
+⚠️ 僅在自有或已取得授權的網路進行監聽與注入測試。
 
 ```bash
 sudo apt install -y aircrack-ng
-sudo ip link set wlan0 down
-sudo iw dev wlan0 set type monitor
-sudo ip link set wlan0 up
-sudo aireplay-ng --test wlan0
+IF=wlx00c0cafe0000   # 換成 ip link 查到的介面名稱
+sudo ip link set $IF down
+sudo iw dev $IF set type monitor
+sudo ip link set $IF up
+sudo aireplay-ng --test $IF
 ```
 
-### 7.4 路徑 C：Wi-Fi 6 機型（AWUS036AX / AXER，RTL8832BU）
+- 不要執行 `airmon-ng check kill`：它會關閉 NetworkManager，讓主機對外斷線。
+- AWUS036AXM / AXML 在 stock kernel 6.17 上 `aireplay-ng --test` 會失敗（Found 0 APs），無法 deauth 或擷取 handshake。
+- hcxdumptool 8.x 在 9 款卡上都出現 `failed to arm`（EACS 在 2.4 GHz 除外；驅動不支援 active monitor），請改用 airodump-ng + aireplay-ng。
 
-**步驟 1：先檢查 kernel 是否已有 rtw89 USB 支援**
+**舊 kernel（ACH／ACS 低於 6.13、EACS 低於 6.2）才需要的步驟**：安裝 `build-essential git bc dkms` 後，編譯社群驅動，例如 RTL8812AU 使用 morrownr/8812au-20210820（確認 Makefile 中 `CONFIG_PLATFORM_ARM64 = y`）。版本足夠時請直接使用內建驅動。
+
+### 7.4 路徑 C：Wi-Fi 6 機型（AWUS036AX / AXER，RTL8832BU）— kernel 6.17+ 免安裝
 
 ```bash
-# 插入網路卡後檢查
-lsusb
-dmesg | grep -i "rtw89\|rtl8852\|8832"
+lsusb                      # 預期出現 0bda:b832
+lsmod | grep rtw89_8852bu
 ip link show
-# 若自動出現 wlan0，代表 kernel 6.x 的 rtw89 已支援，可直接使用
 ```
 
-**步驟 2：若 kernel 未自動支援，編譯 out-of-tree 驅動**
-
-```bash
-git clone https://github.com/morrownr/rtl8852bu-20250826.git
-cd rtl8852bu-20250826
-# 確認 CONFIG_PLATFORM_ARM64 = y
-make
-sudo make install
-sudo modprobe rtl8852bu
-```
+GX10 實測：kernel 內建 `rtw89_8852bu` 自動載入，monitor 收訊強，注入可用（2.4GHz：AX 96%、AXER 73%），AP 支援 80MHz。rtw89_8852bu 自 kernel 6.17 才進入主線，kernel 6.16 以下的系統需要社群 DKMS 驅動（morrownr/rtl8852bu-20250826）。
 
 ## 8. 常見錯誤與排解
 
@@ -307,28 +285,32 @@ sudo modprobe rtl8852bu
 |---|---|---|
 | lsusb 看不到 ALFA 網路卡 | USB-C 轉接器不良 / 接觸不良 | 更換 USB-C to USB-A 轉接器；確認轉接器支援資料傳輸（非僅充電）；嘗試不同 USB-C 埠 |
 | MediaTek 晶片插入後無 wlan 介面 | kernel module 未自動載入 / firmware 缺失 | 手動載入：`sudo modprobe mt76x2u`；檢查 `dmesg \| grep mt76`；安裝 firmware：`sudo apt install linux-firmware` |
-| Realtek 驅動 make 回報錯誤 aarch64-linux-gnu-gcc: not found | 交叉編譯設定錯誤 | 確認在 DGX Spark 上原生編譯（非交叉編譯）；Makefile 中不應設定 CROSS_COMPILE |
-| modprobe 8812au 報 Operation not permitted | Secure Boot / 模組簽章 | DGX Spark 預設不啟用 Secure Boot；若有啟用，需簽章模組或關閉 Secure Boot |
+| Realtek 卡插上後沒有 wlan 介面 | kernel 低於該卡最低版本（EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17），未內建對應驅動 | 以 `uname -r` 確認版本；升級 kernel，或在舊 kernel 安裝社群 DKMS 驅動 |
+| 舊 kernel 安裝 DKMS 驅動後 modprobe 報 Operation not permitted | Secure Boot / 模組簽章 | 需簽章模組或關閉 Secure Boot（使用內建驅動不會遇到）|
+| 反覆切換 monitor／AP 後掃不到任何訊號 | RX 停滯（RX stall） | 拔插網路卡讓 USB 重新列舉 |
+| EACS／AXML 重插後沒有 wlx 介面 | 藍牙＋Wi-Fi 複合裝置 probe 卡住 | 換一個 USB 埠重插 |
 | WiFi 連線不穩 / 速度慢 | USB-C 轉接器僅支援 USB 2.0 | 更換支援 USB 3.2 Gen 2×2 的轉接器；確認轉接器標示「Data」而非「Charge Only」 |
 | 內建 Wi-Fi 7 與外接 ALFA 衝突 | 兩個無線介面路由衝突 | 停用內建 WiFi：`sudo nmcli radio wifi off` 或在 BIOS/UEFI 中停用；或設定路由優先順序 |
-| 6GHz（Wi-Fi 6E）無法使用 | Regulatory Domain 限制 | 設定法規區域：`sudo iw reg set US`（美國開放 6GHz）；確認 AWUS036AXML/AXM 的 firmware 支援 6GHz |
+| 6GHz（Wi-Fi 6E）無法使用 | Regulatory Domain 限制 | 設定法規區域：`sudo iw reg set US`（美國開放 6GHz）；AXML 已實測可在 6GHz 運作，AXM 未實測 |
 | AP 模式啟動失敗 | NetworkManager 與 hostapd 衝突 | 參考 Yopitek ALFA Soft AP 指南；停用 NetworkManager 管理該介面後手動設定 hostapd |
 | 喚醒後網路卡消失 | USB 自動暫停 | 停用 USB 自動暫停：`echo 'options usbcore autosuspend=-1' \| sudo tee /etc/modprobe.d/usb.conf` |
 
 ## 9. 已知限制
 
 - USB Type-C 轉接需求：除 AXML 外，所有 ALFA 網路卡需 USB-C to USB-A 轉接器，轉接器品質會影響效能與穩定性
-- Realtek 晶片需手動編譯：RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU 未進入 mainline，需在 ARM64 上編譯 out-of-tree 驅動
+- MT7921 機型注入失敗：AWUS036AXM / AXML 在 stock kernel 6.17 上封包注入失敗，無法 deauth 或擷取 handshake；monitor、AP、WPA3 可用。主因是 kernel 6.16 以後的 mac80211 chanctx 回歸，社群修補版驅動仍有速率限制
+- 實測範圍：僅在 ASUS GX10（kernel 6.17.0-1014-nvidia）實測；DGX Spark 未逐台測試，預期行為相同
+- hcxdumptool 不可用：除 EACS 在 2.4 GHz 外，其餘卡皆出現 `failed to arm`，請改用 airodump-ng + aireplay-ng
 - 內建 Wi-Fi 7 可能與外接衝突：DGX Spark 已內建 Wi-Fi 7，同時使用內建與外接 WiFi 時可能出現路由或資源衝突
 - AP 模式需手動設定：DGX OS 預設為開發環境，AP 熱點模式需手動安裝設定 hostapd / dnsmasq
 - 6GHz 法規限制：Wi-Fi 6E 的 6GHz 頻段可用性取決於法規區域設定，台灣地區 6GHz 開放狀況需確認最新法規
-- 驅動更新依賴上游：Realtek out-of-tree 驅動由社群（morrownr）維護，DGX OS kernel 更新後可能需要重新編譯
-- 滲透測試功能差異：MediaTek mt76 系列的注入功能在 kernel 6.x 上已改善，但 Realtek 8812au 仍是滲透測試社群的傳統首選
-- 藍牙功能：AWUS036AXM 的藍牙 5.2 功能在 DGX OS 上未經廣泛驗證（DGX Spark 已內建 BT 5.4）
-- ⚠️ **RTL8832BU（AWUS036AX/AXER）驅動維護者已公開建議避免使用**：驅動維護者 morrownr 官方聲明指出 rtl8852/32au 系列「是很糟糕的驅動，懷疑晶片本身有問題」，建議 Linux 使用者現階段避開（來源見第 10 節）。本文第 4、6 節對這兩款機型的「⚠️ 可用但需注意」評級應理解為業界共識偏向不建議，而非單純的安裝難度問題
-- 本文所引用的 RTL8812AU「out-of-tree」判定為 2026 年初資訊；實際上該晶片的 mac80211 標準相容 in-kernel 驅動已於 **kernel 6.13 併入主線、6.14 起品質成熟**（morrownr 官方公告），DGX OS 若採用 6.14+ 核心，AWUS036ACH 有機會不需編譯即可使用，建議客服在回覆前先請客戶回報 `uname -r` 確認
+- 舊 kernel：kernel 低於該卡最低版本（EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）的系統，Realtek 機型才需社群 DKMS 驅動（morrownr），且每次 kernel 更新後需重新編譯
+- 滲透測試功能差異：GX10 實測注入成功率以 Realtek rtw88 機型最高（EACS、ACH 兩頻 100%）；MediaTek mt76 機型（ACM / ACHM）可用；MT7921（AXM / AXML）失敗
+- 藍牙功能：AWUS036AXML 與 AWUS036EACS 的藍牙在 GX10 上實測可用；AWUS036AXM 的藍牙未單獨驗證（DGX Spark 已內建 BT 5.4）
+- RTL8832BU（AWUS036AX / AXER）：驅動維護者 morrownr 曾公開建議避開 rtl8852/32au 系列的 out-of-tree 驅動（來源見第 10 節）。本次 GX10 實測使用的是 kernel 內建 `rtw89_8852bu`，monitor、注入、AP、WPA3 皆可用；此結論僅適用於 kernel 6.17 以上的內建驅動
+- RTL8812AU（AWUS036ACH）：mac80211 標準的 in-kernel 驅動 `rtw88_8812au` 已於 kernel 6.13 併入主線、6.14 起品質成熟（morrownr 公告）。GX10 實測 kernel 6.17 插上即用、兩頻注入 100%。客服回覆前可先請客戶回報 `uname -r` 確認是否為 6.13 以上
 
-反駁條件：若 DGX OS 更新後 kernel 版本或 USB 控制器驅動變動導致行為不同，或 morrownr 驅動停止維護 ARM64 分支，本文第 6 節相容性矩陣需重新檢視；若 rtw89 USB 支援在 kernel 6.x 正式完整落地，AWUS036AX / AXER 的判定可由「可用但需注意」升級。
+反駁條件：若 DGX OS 更新後 kernel 版本或 USB 控制器驅動變動導致行為不同，或在 DGX Spark 實機上測得與 GX10 不同的結果，本文第 6 節相容性矩陣需重新檢視；若日後 kernel 修正 mt7921u 的注入問題，AWUS036AXM / AXML 的評價可由「僅連線／AP」升級。
 
 ## 10. 參考來源 URL
 
@@ -337,14 +319,15 @@ sudo modprobe rtl8852bu
 | NVIDIA DGX Spark 官方頁面 | DGX Spark 規格與平台資訊 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 已查核 | 2026-09-03 |
 | NVIDIA DGX 文件 | DGX OS 系統架構與 kernel 版本 | https://docs.nvidia.com/dgx/dgx-spark | ✅ 已查核 | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux 驅動（ARM64 支援） | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
-| morrownr/8821cu GitHub | RTL8811CU Linux 驅動 | https://github.com/morrownr/8821cu-20210916 | ✅ 已查核 | 2026-09-03 |
+| morrownr/8821cu GitHub | RTL8821CU Linux 驅動（舊 kernel 用） | https://github.com/morrownr/8821cu-20210916 | ✅ 已查核 | 2026-09-03 |
 | morrownr/rtl8852bu GitHub | RTL8832BU Linux 驅動 | https://github.com/morrownr/rtl8852bu-20250826 | ✅ 已查核 | 2026-09-03 |
 | Linux kernel mt76 驅動文件 | MediaTek mt76 / mt7921 mainline 驅動說明（含各晶片支援起始 kernel 版本） | https://wireless.wiki.kernel.org/en/users/drivers/mediatek | ✅ 已查核 | 2026-09-03 |
 | ALFA Soft AP WiFi Hotspot Linux Guide（Yopitek） | ALFA 在 Linux 上的 AP 模式設定指南 | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ 已查核 | 2026-09-03 |
+| ALFA 9 款網路卡 ARM64 實測總表（Yopitek） | ASUS GX10 + Ubuntu 24.04 ARM64 實機測試 | https://yupitek.com/zh-tw/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/ | ✅ 實測 | 2026-11-18 |
 | ALFA Network 產品總覽（Yopitek） | ALFA 現役產品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | 驅動維護者官方聲明：建議避開 rtl8852/32au（RTL8832BU）晶片 | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ 已查核 | 2026-09-03 |
 | morrownr/8812au-20210820 GitHub | RTL8812AU 驅動狀態最新公告（kernel 6.13 併入主線、6.14 品質成熟） | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
 
 相關文章：[ALFA 無線網路卡是否支援 MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)｜[ALFA 無線網路卡是否支援 ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA 無線網路卡是否支援 ALTOS BrainSphere GB10 F1](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[ALFA 無線網路卡是否支援 GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA 無線網路卡是否支援 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
 
-免責聲明：本文相容性判定以 NVIDIA DGX OS（kernel 6.x, aarch64）為基準。MediaTek 晶片驅動為 Linux mainline，穩定性高；Realtek 晶片驅動為社群維護（morrownr），實際穩定性可能隨版本變化。DGX Spark 已內建 Wi-Fi 7，外接 ALFA 網路卡主要用於滲透測試或特殊晶片組需求。USB-C 轉接器的品質會直接影響使用體驗，建議選擇有品牌、標示 USB 3.2 Gen 2×2 的轉接器。
+免責聲明：本文相容性判定以 2026-11 在 ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）的實機測試為基準。DGX Spark 與 GX10 使用同一款 GB10 與 NVIDIA kernel 系列，預期行為相同，但未逐台測試。GX10 實測的 kernel 6.17 已內建 ALFA 9 款網路卡的驅動（各卡最低版本不同），kernel 低於該卡最低版本時才需社群 DKMS 驅動（morrownr）。DGX Spark 已內建 Wi-Fi 7，外接 ALFA 網路卡主要用於滲透測試或特殊晶片組需求。USB-C 轉接器的品質會直接影響使用體驗，建議選擇有品牌、標示 USB 3.2 Gen 2×2 的轉接器。監聽與注入僅限在自有或已取得授權的網路進行。

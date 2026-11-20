@@ -73,7 +73,7 @@ Linux WiFi 驱动是一个**内核模块**——一个在启动时或按需加�
 |---|---|---|---|
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u（内核内置） |
-| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.17) |
 | [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u（内核 5.18+） |
 
 ### 用 lsusb 确认网卡型号
@@ -128,10 +128,10 @@ sudo apt install -y \
 
 ```bash
 uname -r
-# 示例：6.6.9-amd64
+# 示例: 6.6.9-amd64
 
 ls /lib/modules/$(uname -r)/build
-# 该目录应存在；若不存在，说明头文件未安装
+# 该目录应存在; 若不存在, 说明头文件未安装
 ```
 
 ---
@@ -184,24 +184,24 @@ lsmod | grep 8812au
 如果你希望手动控制整个过程：
 
 ```bash
-# 克隆驱动（使用任意一个分支）
+# 克隆驱动 (使用任意一个分支)
 git clone https://github.com/aircrack-ng/rtl8812au
 
 # 从 Makefile 获取版本号
 grep "^MODULE_VERSION" rtl8812au/Makefile
-# 记录版本号，例如 v5.6.4.2 → 使用 5.6.4.2
+# 记录版本号, 例如 v5.6.4.2 → 使用 5.6.4.2
 
 # 将源码复制到 DKMS 目录
 sudo cp -r rtl8812au /usr/src/rtl8812au-5.6.4.2
 
-# 注册、编译、安装
+# 注册, 编译, 安装
 sudo dkms add -m rtl8812au -v 5.6.4.2
 sudo dkms build -m rtl8812au -v 5.6.4.2
 sudo dkms install -m rtl8812au -v 5.6.4.2
 
 # 验证
 dkms status
-# 预期：rtl8812au/5.6.4.2, 6.x.x-kali-amd64: installed
+# 预期: rtl8812au/5.6.4.2, 6.x.x-kali-amd64: installed
 ```
 
 ### 成功安装后的预期输出
@@ -401,7 +401,7 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | MT7612U | 内置（`mt76x2u`） | 内置（`mt76x2u`） |
-| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
+| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.17) | OOK (<6.17) |
 | [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | MT7921AUN | 内置（`mt7921u`，内核 5.18+） | 内置（`mt7921u`，内核 6.8） |
 
 ---

@@ -160,20 +160,20 @@ sudo airmon-ng start wlan1
 # アダプターがシステムに認識されているか確認
 lsusb | grep -i realtek
 
-# アダプター接続後に自動読み込みされない場合、ドライバーを手動で読み込む
+# アダプター接続後に自動読み込みされない場合, ドライバーを手動で読み込む
 sudo modprobe 88XXau
 
-# モニターモードを妨害するプロセスを終了（NetworkManager、wpa_supplicantなど）
+# モニターモードを妨害するプロセスを終了 (NetworkManager, wpa_supplicantなど)
 sudo airmon-ng check kill
 
 # ALFAアダプターインターフェースでモニターモードを開始
 sudo airmon-ng start wlan1
 
-# 表示可能なすべてのネットワークをスキャン（Ctrl+Cで停止）
+# 表示可能なすべてのネットワークをスキャン (Ctrl+Cで停止)
 sudo airodump-ng wlan1mon
 
 # 特定のネットワークのトラフィックをキャプチャ
-# -c：チャンネル、--bssid：ターゲットAP MACアドレス、-w：出力ファイルプレフィックス
+# -c: チャンネル, --bssid: ターゲットAP MACアドレス, -w: 出力ファイルプレフィックス
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan1mon
 ```
 

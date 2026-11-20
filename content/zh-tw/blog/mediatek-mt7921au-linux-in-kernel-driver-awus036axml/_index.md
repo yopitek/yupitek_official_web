@@ -1,9 +1,9 @@
 ---
 title: "別再折騰驅動編譯！為什麼 MediaTek MT7921AU 是現代 Linux 與 Kali 開發者的首選？"
-description: "MediaTek MT7921AU 驅動原生內建於 Linux 核心（mt7921u），免 DKMS 編譯；RTL8812AU 則需每次核心升級重編。了解 AWUS036AXML 在 Kali Linux 上隨插即用與監聽模式的優勢。"
+description: "MediaTek MT7921AUN 驅動原生內建於 Linux 核心（mt7921u），免 DKMS 編譯；RTL8812AU 則需每次核心升級重編。了解 AWUS036AXML 在 Kali Linux 上隨插即用與監聽模式的優勢。"
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,7 +11,7 @@ tags: ["mt7921au", "kali-linux", "linux", "awus036axml", "monitor-mode", "dkms",
 featureimage: /images/blog/mediatek-mt7921au-linux-in-kernel-driver-awus036axml.webp
 ---
 
-> **對應產品**：ALFA AWUS036AXML（MediaTek MT7921AU / MT7921AUN）｜對照組：ALFA AWUS036ACH（Realtek RTL8812AU）
+> **對應產品**：ALFA AWUS036AXML（MediaTek MT7921AUN / MT7921AUN）｜對照組：ALFA AWUS036ACH（Realtek RTL8812AU）
 > **適用讀者**：Kali Linux 滲透測試、Linux 嵌入式開發、Raspberry Pi / 單板電腦使用者
 > **文章目標**：在採購前先搞清楚「核心原生命中」與「DKMS 驅動編譯」的差別，少花時間在安裝和排障上。
 
@@ -28,7 +28,7 @@ featureimage: /images/blog/mediatek-mt7921au-linux-in-kernel-driver-awus036axml.
 
 問題不在產品本身，而在驅動程式的存在形式。Realtek 的 Linux 驅動大多沒有被收錄進 Linux 核心（mainline）。想用，就得靠外部原始碼「外掛」到系統裡。核心每升級一次，這份外掛就要重編一次，否則就會跟新的核心版本對不上而失效。
 
-而今天的主角——採用 MediaTek MT7921AU 的 ALFA AWUS036AXML——走的是完全不同的路：它的驅動**原生就活在 Linux 核心裡面**。
+而今天的主角——採用 MediaTek MT7921AUN 的 ALFA AWUS036AXML——走的是完全不同的路：它的驅動**原生就活在 Linux 核心裡面**。
 
 ---
 
@@ -96,11 +96,11 @@ sudo reboot
 | Windows 10 / 11 | — | 原廠驅動 |
 | macOS（Intel / Apple Silicon） | 不支援 | **無驅動，請勿採購** |
 
-> **⚠️ 採購前最重要的支援性提醒**：AWUS036AXML **不支援 macOS**。無論 Intel 或 Apple Silicon，目前皆無 MT7921AU 的 macOS 驅動可用。若你的主力環境是 macOS，這類 Wi-Fi 6 / 6E 外接網路卡對你而言就是壞的——請直接排除，別買了才發現。
+> **⚠️ 採購前最重要的支援性提醒**：AWUS036AXML **不支援 macOS**。無論 Intel 或 Apple Silicon，目前皆無 MT7921AUN 的 macOS 驅動可用。若你的主力環境是 macOS，這類 Wi-Fi 6 / 6E 外接網路卡對你而言就是壞的——請直接排除，別買了才發現。
 
 ### 2.3 為什麼「原生支援」對 Kali 開發者特別重要
 
-在 Kali Linux 上，核心升級非常頻繁（Rolling 發行版）。RTL8812AU 使用者每次滾動更新都心驚膽跳。`mt7921u` 則跟著核心一起被維護、一起被測試——**核心再新，驅動都跟得上**。ALFA 這款產品定位就是為安全測試而生，監聽模式（Monitor Mode）與封包注入（Packet Injection）是開箱即用的標準功能。
+在 Kali Linux 上，核心升級非常頻繁（Rolling 發行版）。RTL8812AU 使用者每次滾動更新都心驚膽跳。`mt7921u` 則跟著核心一起被維護、一起被測試——**核心再新，驅動都跟得上**。ALFA 這款產品定位就是為安全測試而生，監聽模式（Monitor Mode）開箱即用；封包注入（Packet Injection）則視核心版本而定（見 3.2 節）。
 
 ---
 
@@ -147,7 +147,7 @@ iw dev wlan1 info     # 確認 type 顯示為 monitor
 sudo aireplay-ng --test wlan1
 ```
 
-看到 `Injection is working!`（或等效輸出）即代表注入功能正常。此功能在原生 `mt7921u` 驅動上即為內建能力，無需額外 Hacks。
+在 kernel 6.16 以前的社群回報中，原生 `mt7921u` 驅動看到 `Injection is working!`（或等效輸出）即代表注入功能正常。但在 stock kernel 6.16 以上（本站於 ASUS GX10、Ubuntu 24.04 ARM64、kernel 6.17 實測），注入測試未通過：`aireplay-ng --test` 顯示 Found 0 APs / No Answer，因此無法 deauth 或擷取 handshake。原因是 kernel 6.16 起 mac80211 chanctx 的回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps，無法注入 HT/VHT）。需要注入請改用 AWUS036ACH、EACS 或 ACS。
 
 ### 3.3 融合模式（VIF / Fusion）：同時管理＋監聽
 
@@ -170,7 +170,7 @@ sudo ip link set mon0 up
 
 ### 4.1 兩款網路卡快速對照
 
-| 評估項目 | AWUS036AXML（MT7921AU） | AWUS036ACH（RTL8812AU） |
+| 評估項目 | AWUS036AXML（MT7921AUN） | AWUS036ACH（RTL8812AU） |
 |---|---|---|
 | 無線規格 | Wi-Fi 6E 三頻（2.4/5/6 GHz） | AC1200 雙頻（2.4/5 GHz） |
 | USB 介面 | USB-C（USB 3.2 Gen 1） | USB 3.0 Type-A |
@@ -178,7 +178,7 @@ sudo ip link set mon0 up
 | 安裝難度 | 補韌體即可 | 需工具鏈＋編譯＋（Secure Boot 下）簽署 |
 | 核心升級影響 | 不受影響 | 每次升級需重新編譯 |
 | 監聽模式 | 原生支援 | 支援 |
-| 封包注入 | 原生支援 | 支援 |
+| 封包注入 | ⚠️ kernel 6.16 以前有社群回報；6.17 實測失敗 | 支援 |
 | macOS | 不支援 | 不支援 |
 | 適用對象 | 現代 Linux / Kali / 嵌入式 | 舊系統或需要 2.4/5GHz 場景 |
 
@@ -190,7 +190,7 @@ sudo ip link set mon0 up
 - [ ] 我**只要插上就能用**，不想碰 `dkms`、`github clone`、編譯工具鏈。
 - [ ] 我需要 `mt76` 體系的原生支援，且核心升級不影響網路卡。
 - [ ] 我需要 **6 GHz 頻段**（Wi-Fi 6E 路由器環境）。
-- [ ] 主要用途：監聽、封包注入、Soft AP、融合模式（VIF）。
+- [ ] 主要用途：監聽、Soft AP、融合模式（VIF）（封包注入在 kernel 6.16 以上無法使用，見 3.2 節）。
 - [ ] 我會搭配隨附的 USB-C / USB-A 2-in-1 傳輸線接到筆電或單板電腦。
 
 反之，若你沒有 6 GHz 需求、系統屬於舊版 5.18 以下核心、且你熟悉 DKMS 維護流程，AWUS036ACH 仍是有其定位的選擇。但請務必做好心理準備：每次核心更新，驅動都要重編一次。
@@ -199,7 +199,7 @@ sudo ip link set mon0 up
 
 ## 五、結語
 
-對現代 Linux 與 Kali 開發者來說，時間就是最大的成本。**MediaTek MT7921AU（AWUS036AXML）把「驅動維護」這個無止境的負擔從你身上拿掉了**。驅動長在核心裡，韌體一包搞定，監聽與注入開箱即用——核心怎麼滾動更新都不用怕。
+對現代 Linux 與 Kali 開發者來說，時間就是最大的成本。**MediaTek MT7921AUN（AWUS036AXML）把「驅動維護」這個無止境的負擔從你身上拿掉了**。驅動長在核心裡，韌體一包搞定，監聽開箱即用（封包注入在 stock kernel 6.16 以上實測失敗，需要注入請改用 ACH、EACS 或 ACS）——核心怎麼滾動更新都不用怕。
 
 採購前只要先確認兩件事：**系統核心 ≥ 5.18**、且 **不是 macOS**。其他交給原生驅動就好。
 

@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "pentest", "Kali-Linux"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Qual a diferenca entre Wi-Fi 6E e Wi-Fi 5 em testes de penetração?"
@@ -16,7 +16,7 @@ faq:
   - question: "Qual escolher: AWUS036ACH ou AWUS036AXML?"
     answer: "Para pentest diario, escolha o AWUS036ACH, com driver maduro e ricos recursos da comunidade. Para auditorar ambientes Wi-Fi 6E de 6 GHz, escolha o AWUS036AXML. Se possivel, tenha ambos."
   - question: "O modo monitor do AWUS036AXML é estável no Kali Linux?"
-    answer: "Requer kernel 6.1 ou superior e o pacote linux-firmware mais recente. A injeção de pacotes funciona, mas recomenda-se validar antes de testes formais. Combinações especificas de kernel e firmware podem ser instáveis."
+    answer: "Requer kernel 6.1 ou superior e o pacote linux-firmware mais recente. Há relatos da comunidade de injeção de pacotes antes do kernel 6.16, mas ela falhou no nosso teste com o kernel stock 6.17 (regressão do mac80211 chanctx, não uma limitação do chipset). Se você precisa de injeção, use o AWUS036ACH."
   - question: "Preciso de adaptador 6 GHz para pentest em 2026?"
     answer: "A maioria dos casos de teste ainda foca em 2.4/5 GHz. No entanto, se o ambiente alvo já implantou access points Wi-Fi 6E, um adaptador 6 GHz se torna estrategicamente necessário."
   - question: "Como instalar o driver RTL8812AU do AWUS036ACH?"
@@ -110,7 +110,7 @@ lsmod | grep mt7921u
 sudo modprobe mt7921u
 ```
 
-No entanto, o **suporte a modo monitor** para MT7921AUN é mais recente e depende da versão do kernel e do firmware. No início de 2026, o modo monitor funciona no kernel 6.1+ com o pacote `linux-firmware` mais recente instalado. O suporte à injeção de pacotes é funcional, mas apresentou inconsistências ocasionais em certas combinações de kernel/firmware — sempre teste antes de um engajamento real.
+No entanto, o **suporte a modo monitor** para MT7921AUN é mais recente e depende da versão do kernel e do firmware. No início de 2026, o modo monitor funciona no kernel 6.1+ com o pacote `linux-firmware` mais recente instalado. Há relatos da comunidade de injeção de pacotes em kernels anteriores ao 6.16, mas ela falhou no nosso teste com o kernel stock 6.17 (`aireplay-ng --test` mostrou Found 0 APs / No Answer, então não foi possível fazer deauth nem capturar handshakes). A causa principal é uma regressão do mac80211 chanctx desde o kernel 6.16, não uma limitação do chipset; um driver com patch da comunidade pode fazê-la funcionar, mas o firmware continua travando a taxa (1/6 Mbps, sem injeção HT/VHT). Modo monitor, AP, WPA3 e VIF funcionam normalmente; se você precisa de injeção, use o AWUS036ACH.
 
 ```bash
 sudo apt update && sudo apt install linux-firmware
@@ -128,7 +128,7 @@ sudo airmon-ng start wlan0
 | **Bandas de Frequência** | 2,4 GHz + 5 GHz | 2,4 GHz + 5 GHz + 6 GHz |
 | **Throughput Máximo** | AC1200 | AX1800 |
 | **Estabilidade do Modo Monitor** | ★★★★★ (sólido como pedra) | ★★★★☆ (requer kernel 6.1+) |
-| **Injeção de Pacotes** | ★★★★★ (altamente confiável) | ★★★★☆ (funcional, teste antes) |
+| **Injeção de Pacotes** | ★★★★★ (altamente confiável) | ⚠️ relatos da comunidade antes do kernel 6.16; falhou no 6.17 |
 | **Instalação do Driver** | DKMS manual (10 min) | Nativo no kernel (5.18+) |
 | **Suporte a 6 GHz** | ✗ | ✓ |
 | **Antenas** | 2× RP-SMA | 1× RP-SMA |

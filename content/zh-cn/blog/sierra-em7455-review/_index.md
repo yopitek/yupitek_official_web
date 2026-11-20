@@ -1,6 +1,6 @@
 ---
 title: "Sierra EM7455 完整评测：为什么它是 Maker 与实验室做课题最爱的 Sierra 网卡"
-description: "EM7455 完整评测：规格、与 EM7430 的差异、OpenWrt/Linux 配置、Dell/Lenovo 兼容性。本文由 Yopitek（榆合科技）整理提供技术资料。"
+description: "EM7455 完整评测：规格、与 EM7430 的差异、OpenWrt/Linux 配置、Dell/Lenovo 兼容性。本文由 Yopitek（榆閤科技）整理提供技术资料。"
 date: 2026-07-31
 draft: false
 showBreadcrumbs: true
@@ -22,15 +22,13 @@ faq:
     answer: "是的，DW5811e 是 Dell 贴牌版的 EM7455，核心为同一颗 Qualcomm MDM9230。"
 ---
 
-# Sierra EM7455 完整评测：为什么它是 Maker 与实验室做课题最爱的 Sierra 网卡
-
 {{< alert >}}
 Yopitek 提供 Sierra Wireless / Semtech 相关产品信息、渠道供应与技术内容；非官方授权经销商，本资料仅供技术参考。
 {{</alert >}}
 
 如果你在玩树莓派加 OpenWrt，或者想帮实验室的设备升级 4G 网络，那你一定听过 Sierra EM7455 这张神卡！它是 Sierra Wireless 推出的一款 LTE-A Cat 6 M.2 蜂窝模块，搭载 Qualcomm MDM9230 芯片，最高支持 300 Mbps 的下载和 50 Mbps 的上传速度，还内置了 GNSS 定位功能，工作温度甚至能扛住 -40°C 到 +85°C 的极端环境。
 
-这篇文章由榆合科技（Yopitek）整理，带大家看懂这张 M.2 B-Key 封装的 4G LTE-Advanced Cat 6 模块为什么这么火，以及怎么在 Linux 系统下把驱动和配置搞定。
+这篇文章由榆閤科技（Yopitek）整理，带大家看懂这张 M.2 B-Key 封装的 4G LTE-Advanced Cat 6 模块为什么这么火，以及怎么在 Linux 系统下把驱动和配置搞定。
 
 > 产品链接：[EM7455 — Yopitek 产品页](/zh-cn/products/sierra/em7455/) | 官方规格书：[AirPrime EM7455 Product Technical Specification](https://yupitek.com/docs/sierra/mc7455_spec.pdf)
 
@@ -130,7 +128,7 @@ EM7455 在常见的 Linux 系统上支持度非常好，下面分享社区常用
 
 ```bash
 lsusb | grep -i sierra
-# 应该会看到类似这个输出：Bus 001 Device 002: ID 1199:9079 Sierra Wireless, Inc. EM7455
+# 应该会看到类似这个输出: Bus 001 Device 002: ID 1199:9079 Sierra Wireless, Inc. EM7455
 ```
 
 ### 步骤 2：把该装的工具装一装
@@ -149,7 +147,7 @@ sudo qmicli -d /dev/cdc-wdm0 --dms-set-operating-mode=offline
 sudo qmicli -d /dev/cdc-wdm0 --dms-set-operating-mode=reset
 # 检查一下模式切换成功没
 sudo qmicli -d /dev/cdc-wdm0 --dms-swi-get-usb-composition
-# 应该会看到：USB composition 6: DM, NMEA, AT, QMI
+# 应该会看到: USB composition 6: DM, NMEA, AT, QMI
 ```
 
 > 如果有些特定的运营商要求走 MBIM 模式，你可以去查 `AT!USBCOMP` 这个指令然后改用 `mbimcli` 来连接。
@@ -158,7 +156,7 @@ sudo qmicli -d /dev/cdc-wdm0 --dms-swi-get-usb-composition
 
 ```bash
 sudo qmicli -d /dev/cdc-wdm0 --dms-set-fcc-authentication
-# 如果你是用 ModemManager 想要全自动的话：
+# 如果你是用 ModemManager 想要全自动的话:
 sudo ln -sft /etc/ModemManager/fcc-unlock.d /usr/share/ModemManager/fcc-unlock.available.d/*
 ```
 
@@ -226,7 +224,7 @@ config interface 'wwan'
 
 ```bash
 lsusb | grep 413c
-# 应该会看到类似：Bus 001 Device 003: ID 413c:81b6 Dell Computer Corp. DW5811e
+# 应该会看到类似: Bus 001 Device 003: ID 413c:81b6 Dell Computer Corp. DW5811e
 ```
 
 好消息是，Dell 大部分笔记本（像 Latitude, Precision 等等）据社区讨论，通常没有锁讨厌的 BIOS 白名单，所以常常可以直接插上去用。
@@ -277,7 +275,7 @@ AT!RESET
 
 ## 实验室想采购？找我们就对了
 
-这篇文章是由榆合科技（Yopitek）的工程团队整理出来的。不管是做大学课题、实验室项目，还是企业需要大量采购 EM7455 或其他 Sierra 模块，都可以来找我们讨论！
+这篇文章是由榆閤科技（Yopitek）的工程团队整理出来的。不管是做大学课题、实验室项目，还是企业需要大量采购 EM7455 或其他 Sierra 模块，都可以来找我们讨论！
 
 - **逛逛这张卡**：[https://yupitek.com/zh-cn/products/sierra/em7455/](/zh-cn/products/sierra/em7455/)
 - **看所有 Sierra 型号**：[https://yupitek.com/zh-cn/products/sierra/](/zh-cn/products/sierra/)

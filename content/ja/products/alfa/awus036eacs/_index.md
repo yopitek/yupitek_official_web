@@ -1,7 +1,8 @@
 ---
 title: "ALFA AWUS036EACS — AC600 + Bluetooth 4.2 Nano USB アダプター"
-description: "ALFA AWUS036EACS、Realtek RTL8821CU、AC600 デュアルバンド、USB 2.0 Nano フォームファクター、Bluetooth 4.2 搭載。Windows ホームユーザー向け設計。Linux やセキュリティ研究には非推奨。"
+description: "ALFA AWUS036EACS、Realtek RTL8821CU、AC600 デュアルバンド、USB 2.0 Nano フォームファクター、Bluetooth 4.2 搭載。カーネル 6.2 以降は mainline の rtw88_8821cu ドライバーを搭載し、GX10 で両バンドの Monitor mode とインジェクションを確認済み。"
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,9 +12,9 @@ tags: ["Wi-Fi 5", "AC600", "USB 2.0", "Nano", "Bluetooth 4.2", "ホーム", "Win
 
 ## 製品概要
 
-AWUS036EACS は、家庭およびオフィスユーザー向けに設計された Alfa の超小型 WiFi + Bluetooth 複合 USB アダプターです。Realtek RTL8821CU チップセットを搭載し、AC600 デュアルバンド WiFi と Bluetooth 4.2 を Nano フォームファクターに統合。Windows では内蔵ドライバーによりプラグアンドプレイで動作します。Soft AP モードによりインターネット共有も可能です。このアダプターはシンプルさとコンパクト性を重視しており、Linux パワーユーザー、Kali Linux、セキュリティ研究には**推奨しません**。
+AWUS036EACS は、家庭およびオフィスユーザー向けに設計された Alfa の超小型 WiFi + Bluetooth 複合 USB アダプターです。Realtek RTL8821CU チップセットを搭載し、AC600 デュアルバンド WiFi と Bluetooth 4.2 を Nano フォームファクターに統合。Windows では内蔵ドライバーによりプラグアンドプレイで動作します。Soft AP モードによりインターネット共有も可能です。Linux ではカーネル 6.2 以降、mainline の rtw88_8821cu ドライバーが組み込まれています。GX10（Ubuntu 24.04、カーネル 6.17）でのテストでは、Monitor mode とパケットインジェクションが 2.4 GHz・5 GHz の両方で 100% に達し、エンドツーエンドの WPA ハンドシェイク取得に成功、Bluetooth と Wi-Fi も同時に使用できました。
 
-> ⚠️ **注意：** AWUS036EACS は Windows ホームユーザー向けです。RTL8821CU は Linux コミュニティドライバーのサポートが不十分です。Linux・Kali Linux・Raspberry Pi での使用は**推奨しません**。RP-SMA ポートなし、アンテナ交換不可。
+> ⚠️ **注意：** AWUS036EACS は Windows ホームユーザー向けですが、mainline の rtw88_8821cu ドライバー（カーネル 6.2 以降）で Linux でも動作します。RP-SMA ポートなし、アンテナ交換不可。
 
 ## 主な特長
 
@@ -51,15 +52,15 @@ AWUS036EACS は、家庭およびオフィスユーザー向けに設計され�
 |----|---------|------|
 | Windows XP–10 | ✅ 対応 | 内蔵ドライバー、プラグアンドプレイ。Windows 11 の互換性は Alfa ドライバーページを確認。 |
 | macOS | ⚠️ 限定的 | 対応バージョン範囲は未確認。Apple Silicon 非対応。 |
-| Ubuntu / Linux | ⚠️ サポート不十分 | RTL8821CU はコミュニティドライバーサポートが弱い。非推奨。 |
-| Kali Linux | ❌ 非推奨 | モニターモードおよびパケットインジェクションは確実に動作しない。 |
+| Ubuntu / Linux | ✅ カーネル 6.2 以降 | mainline の rtw88_8821cu ドライバーが組み込み済みでインストール不要（GX10、Ubuntu 24.04、カーネル 6.17 で実測）。 |
+| Kali Linux | ✅ 対応 | GX10（Ubuntu 24.04、カーネル 6.17）で Monitor mode とパケットインジェクションが両バンドで 100%、エンドツーエンドの WPA ハンドシェイク取得に成功。実機の Kali は未検証。 |
 | NetHunter (Android) | ❌ 非推奨 | RTL8821CU の NetHunter 対応は未確認。 |
 
 ## 対応ハードウェア
 
 | ハードウェア | 対応状況 | 備考 |
 |------------|---------|------|
-| Raspberry Pi | ❌ 非推奨 | Pi OS での RTL8821CU ドライバー問題あり。 |
+| Raspberry Pi | ⚠️ 未検証 | 未検証；カーネル 6.2 以降は mainline の rtw88_8821cu ドライバーを搭載。 |
 | デスクトップ / ノートPC | ✅ 対応 | Windows のみ推奨。 |
 | 組み込み / IoT（Windows） | ⚠️ Windows のみ | コンパクト設計が Windows 組み込みシステムに適合。 |
 
@@ -67,11 +68,11 @@ AWUS036EACS は、家庭およびオフィスユーザー向けに設計され�
 
 | 機能 | 対応状況 |
 |------|---------|
-| モニターモード | ❌ 確実な動作なし |
-| パケットインジェクション | ❌ 確実な動作なし |
+| モニターモード | ✅ 対応（GX10 テスト：両バンドで 100%） |
+| パケットインジェクション | ✅ 対応（GX10 テスト：両バンドで 100%） |
 | Soft AP モード | ✅ 対応 |
-| Bluetooth | ✅ BT 4.2 |
-| VIF | ❌ 非対応 |
+| Bluetooth | ✅ BT 4.2（Wi-Fi と同時使用可） |
+| VIF | 🟡 部分対応（パッシブ monitor + 同一チャンネルの managed。独立した 2 つの VIF は非対応） |
 
 ## 同梱物
 

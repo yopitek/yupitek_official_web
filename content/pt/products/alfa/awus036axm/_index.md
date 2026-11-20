@@ -28,7 +28,7 @@ O AWUS036AXM apresenta o chipset MediaTek MT7921AUN com suporte Wi-Fi 6E triband
 - Conector USB-A em L (USB 3.2 Gen 1, 5 Gbps)
 - 2× antenas RP-SMA female removíveis (5 dBi)
 - WPA3/WPA2/WPA/WEP/WPS
-- Monitor Mode + Packet Injection no Kali Linux
+- Monitor Mode no Kali Linux
 
 ## Especificações Técnicas
 
@@ -51,7 +51,7 @@ O AWUS036AXM apresenta o chipset MediaTek MT7921AUN com suporte Wi-Fi 6E triband
 | Windows 11 | ✅ Suportado | Tribanda completo incluindo 6 GHz |
 | macOS | ❌ Não suportado | Sem suporte para macOS 11+ ou Apple Silicon |
 | Ubuntu | ✅ Suportado | mt7921u integrado no kernel ≥ 5.18 |
-| Kali Linux | ✅ Suportado | Monitor mode + injeção de pacotes; arquivos de firmware podem ser necessários |
+| Kali Linux | ⚠️ Parcial | O monitor mode funciona; a injeção de pacotes não passou no nosso teste interno no GX10 / kernel stock 6.17 (causa: regressão do mac80211 chanctx a partir do kernel 6.16, não é limitação do chip). Não testado em um Kali real; arquivos de firmware podem ser necessários |
 | NetHunter | ⚠️ Parcial | OTG; dependente do kernel |
 
 ## Hardware Compatível
@@ -67,7 +67,7 @@ O AWUS036AXM apresenta o chipset MediaTek MT7921AUN com suporte Wi-Fi 6E triband
 | Função | Status |
 |--------|--------|
 | Monitor Mode | ✅ Sim |
-| Packet Injection | ✅ Sim |
+| Packet Injection | ❌ Não passou (teste interno, GX10, kernel stock 6.17) |
 | Soft AP Mode | ✅ Sim |
 | Bluetooth | ✅ BT 5.2 (antena BT integrada) |
 | VIF | ✅ Sim |

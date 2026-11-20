@@ -20,14 +20,12 @@ faq:
     answer: "In neun von zehn Fällen liegt es an der SIM-Karte oder dem APN. Öffne das Terminal, gib AT+CPIN? ein, um den SIM-Status zu prüfen, und bestätige mit AT!GSTATUS?, ob eine Verbindung zur Basisstation besteht. Prüfe zuletzt, ob deine APN-Parameter den Anforderungen deines Anbieters entsprechen."
 ---
 
-# Sierra Wireless Modul FAQ: Die Fehlerbehebungskarte vom nicht erkannten Gerät bis zum fehlenden Netzwerkzugang
+Wenn du mit Sierra Wireless 4G/5G Modulen arbeitest (egal ob EM7455, EM7565 oder das aktuelle EM919x), ist das Schlimmste, wenn das Modul beim Einstecken einfach „nicht reagiert“ oder „nicht ins Netz kommt“.
 
-Wenn du mit Sierra Wireless 4G/5G Modulen arbeitest (egal ob EM7455, EM7565 oder das aktuelle EM919x), ist das Schlimmste, wenn das Modul beim Einstecken einfach „nicht reagiert" oder „nicht ins Netz kommt".
-
-Die Tutorials im Netz sind verstreut: Mal heißt es Firmware flashen, mal Einstellungen ändern. Dieser Artikel gibt dir eine „Fehlerbehebungskarte mit vier Schichten" an die Hand. Geh Schritt für Schritt durch, und du findest die Problemstelle sicher.
+Die Tutorials im Netz sind verstreut: Mal heißt es Firmware flashen, mal Einstellungen ändern. Dieser Artikel gibt dir eine „Fehlerbehebungskarte mit vier Schichten“ an die Hand. Geh Schritt für Schritt durch, und du findest die Problemstelle sicher.
 
 {{< tldr >}}
-Dein Sierra Wireless Modul (EM7455, EM7565, EM919x, MC7455) macht Probleme? Viele wollen bei „keine Verbindung" sofort die Firmware flashen. Dabei ist Fehlerbehebung wie Zwiebelschälen, mit fester Reihenfolge: erst die USB-Enumeration prüfen (Gerät nicht erkannt?), dann die QMI/MBIM-Schnittstelle (Treiber oder Composition falsch?), dann SIM und APN (nicht registriert?), und zuletzt Antennen und Kühlung. Dieser Artikel fasst die „Fehlerbehebungskarte in vier Schichten" zusammen und liefert eine AT-Befehl-Übersicht (z. B. AT+GMR, AT!PCTEMP), damit Ingenieure und Maker in fünf Minuten den Kern des Problems finden!
+Dein Sierra Wireless Modul (EM7455, EM7565, EM919x, MC7455) macht Probleme? Viele wollen bei „keine Verbindung“ sofort die Firmware flashen. Dabei ist Fehlerbehebung wie Zwiebelschälen, mit fester Reihenfolge: erst die USB-Enumeration prüfen (Gerät nicht erkannt?), dann die QMI/MBIM-Schnittstelle (Treiber oder Composition falsch?), dann SIM und APN (nicht registriert?), und zuletzt Antennen und Kühlung. Dieser Artikel fasst die „Fehlerbehebungskarte in vier Schichten“ zusammen und liefert eine AT-Befehl-Übersicht (z. B. AT+GMR, AT!PCTEMP), damit Ingenieure und Maker in fünf Minuten den Kern des Problems finden!
 {{< /tldr >}}
 
 **Kurz zusammengefasst: Deine Karte kommt nicht ins Netz? Prüfe zuerst, ob der Computer sie überhaupt sieht (USB-Enumeration), dann, ob ein Datenkanal existiert (QMI/MBIM-Schnittstelle), danach, ob SIM-Karte und APN passen (Registrierung), und erst zuletzt Antennen und Kühlung. Neun von zehn Fällen scheitern im dritten Schritt. Fang bloß nicht an, blindlings die Firmware neu zu flashen!**
@@ -58,7 +56,7 @@ Hier hast du nicht einmal die Chance, AT-Befehle zu senden. Wenn `lsusb` kein Ge
 2. **Schlechter Kontakt**: Der Haltesteg ist nicht fest eingerastet, oder die Adapterplatine ist defekt.
 3. **Über den Flugmodus-Pin abgeschaltet**: Der M.2-Steckplatz hat einen `W_DISABLE#`-Pin. Zieht das Mainboard ihn auf Low, fährt das Modul gar nicht erst hoch.
 
-> 💡 **Wissenswert**: Wenn das Modul durch instabile Stromversorgung sechsmal hintereinander abstürzt, wechselt es in den **SED-Schutzmodus (Smart Error Detection)** (im Volksmund „gebrickt"). Dann hilft nur: USB neu einstecken und die Firmware mit dem offiziellen Werkzeug neu flashen.
+> 💡 **Wissenswert**: Wenn das Modul durch instabile Stromversorgung sechsmal hintereinander abstürzt, wechselt es in den **SED-Schutzmodus (Smart Error Detection)** (im Volksmund „gebrickt“). Dann hilft nur: USB neu einstecken und die Firmware mit dem offiziellen Werkzeug neu flashen.
 
 ---
 
@@ -68,7 +66,7 @@ Hier hast du nicht einmal die Chance, AT-Befehle zu senden. Wenn `lsusb` kein Ge
 
 **Wer ist schuld?**
 1. **Linux-Treiber nicht installiert**: Stelle sicher, dass `qmi_wwan` (für QMI) oder `cdc_mbim` (für MBIM) geladen sind.
-2. **Falsche USB-Composition (Schnittstellenkombination)**: Das Modul hat eine Einstellung namens USB Composition. Manchmal steht sie auf „nur Diagnose", sodass nur ein paar COM-Ports übrig bleiben und der Internetkanal versteckt wird. Prüfe das mit `AT!USBCOMP?` und wechsle zurück in einen Modus mit QMI oder MBIM.
+2. **Falsche USB-Composition (Schnittstellenkombination)**: Das Modul hat eine Einstellung namens USB Composition. Manchmal steht sie auf „nur Diagnose“, sodass nur ein paar COM-Ports übrig bleiben und der Internetkanal versteckt wird. Prüfe das mit `AT!USBCOMP?` und wechsle zurück in einen Modus mit QMI oder MBIM.
 
 ---
 

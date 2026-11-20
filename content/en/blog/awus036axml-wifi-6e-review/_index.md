@@ -3,7 +3,7 @@ title: "ALFA AWUS036AXML WiFi 6E Review: Real-World Pentesting Performance in 20
 description: "In-depth review of the ALFA AWUS036AXML WiFi 6E USB adapter: specs, Kali Linux driver setup, monitor mode performance, 6 GHz band scanning, and comparison with AWUS036ACH."
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "What frequency bands does the AWUS036AXML support?"
     answer: "It supports tri-band 2.4 GHz, 5 GHz, and 6 GHz, complying with IEEE 802.11ax Wi-Fi 6E. It is one of the few USB wireless adapters that lets security researchers operate in the 6 GHz band."
@@ -12,7 +12,7 @@ faq:
   - question: "What is the main difference between AWUS036AXML and AWUS036ACH?"
     answer: "AWUS036AXML uses MT7921AUN supporting 6 GHz and Wi-Fi 6E. AWUS036ACH uses RTL8812AU supporting only dual-band Wi-Fi 5, but its driver is more mature with broader compatibility."
   - question: "Does AWUS036AXML support packet injection?"
-    answer: "Yes. Tested injection success rates stay above 90%, but active monitor mode has known driver limitations. Passive monitor mode is recommended."
+    answer: "Not reliably. Community reports show injection working on kernels before 6.16, but in our tests on stock kernel 6.17 the injection test failed (aireplay-ng --test: Found 0 APs / No Answer). The cause is a mac80211 chanctx regression, not the chip; use the ACH, EACS, ACS or AX if you need injection. Monitor, AP and WPA3 work, and passive monitor mode is recommended."
   - question: "Who should buy the AWUS036AXML?"
     answer: "Security researchers evaluating enterprises with deployed Wi-Fi 6E, security training labs, and researchers working on 6 GHz protocol analysis will find it most suitable."
 draft: false
@@ -26,11 +26,11 @@ The **ALFA AWUS036AXML** is ALFA Network's entry into the Wi-Fi 6E era of wirele
 ## Product Overview
 
 {{< tldr >}}
-AWUS036AXML is a Wi-Fi 6E USB adapter supporting tri-band 2.4/5/6 GHz, monitor mode, and packet injection. This article covers specs, Kali Linux driver setup, 6 GHz scanning tests, and a detailed comparison with AWUS036ACH.
+AWUS036AXML is a Wi-Fi 6E USB adapter supporting tri-band 2.4/5/6 GHz and monitor mode (packet injection: community reports before kernel 6.16, failed in our tests on stock kernel 6.17). This article covers specs, Kali Linux driver setup, 6 GHz scanning tests, and a detailed comparison with AWUS036ACH.
 {{< /tldr >}}
 
 
-The ALFA AWUS036AXML with MediaTek MT7921AUN chipset is one of the few USB WiFi adapters that lets security researchers operate in the 6 GHz band. It supports monitor mode and packet injection, requiring Linux kernel 5.18 or above.
+The ALFA AWUS036AXML with MediaTek MT7921AUN chipset is one of the few USB WiFi adapters that lets security researchers operate in the 6 GHz band. It supports monitor mode, AP mode and WPA3 and requires Linux kernel 5.18 or above; packet injection has community reports on kernels before 6.16 but failed in our tests on stock kernel 6.17 (details below).
 
 
 
@@ -60,7 +60,7 @@ The adapter connects via USB-A and is powered entirely from the USB bus — no e
 | Operating Temperature | 0°C to 50°C |
 | OS Support | Linux (kernel 5.18+), Windows 10/11 |
 | Monitor Mode | ✅ Supported |
-| Packet Injection | ✅ Supported |
+| Packet Injection | ⚠️ Community reports before kernel 6.16; failed in our tests on 6.17 |
 
 ---
 
@@ -213,7 +213,7 @@ wlan0mon  IEEE 802.11  Mode:Monitor  Frequency:2.457 GHz  Tx-Power=20 dBm
 sudo aireplay-ng --test wlan0mon
 ```
 
-In testing, the AWUS036AXML achieves consistent injection success rates above 90% when positioned within reasonable range of target access points. The MT7921AUN driver's injection implementation is solid on kernel 6.x — noticeably more stable than the early 5.18/5.19 releases where occasional frame drops were observed during sustained injection.
+Community reports show injection working with this adapter on kernels before 6.16. In our tests on stock kernel 6.17, however, `aireplay-ng --test` failed (Found 0 APs / No Answer), so deauth and handshake capture are not possible. The cause is a mac80211 chanctx regression since kernel 6.16, not a chip limitation; community patched drivers restore injection, but the firmware still locks the rate (1/6 Mbps, no HT/VHT injection). If you need injection, use the ACH, EACS, ACS or AX.
 
 ---
 
@@ -285,7 +285,7 @@ During broad-area reconnaissance with airodump-ng channel hopping enabled, the A
 | Pros | Cons |
 |---|---|
 | Only USB adapter with reliable 6 GHz support for Kali Linux | Requires kernel 5.18+ (older Kali installs need update) |
-| Full monitor mode and packet injection support | MT7921AUN driver is newer; edge cases may exist |
+| Full monitor mode, AP and WPA3 support | MT7921AUN driver is newer; edge cases may exist; injection failed on stock kernel 6.17 |
 | MT76 driver is upstream in Linux kernel | Included antenna limited to 2 dBi |
 | Stable on current Kali 2024.x / 2025.x kernels | 6 GHz range limited compared to 5 GHz without higher-gain antenna |
 | USB-A 3.0 — broadly compatible with test laptops | Single antenna, no MIMO for capture diversity |
@@ -301,7 +301,7 @@ During broad-area reconnaissance with airodump-ng channel hopping enabled, the A
 | Wi-Fi Standard | 802.11ax (Wi-Fi 6E) | 802.11ac (Wi-Fi 5) |
 | Bands | 2.4 / 5 / 6 GHz | 2.4 / 5 GHz |
 | Monitor Mode | ✅ | ✅ |
-| Packet Injection | ✅ | ✅ |
+| Packet Injection | ⚠️ Failed on kernel 6.17 | ✅ |
 | Kernel Driver | mt7921u (in-kernel, 5.18+) | rtl8812au (out-of-tree, very stable) |
 | Driver Maturity | Newer, actively developed | Mature, battle-tested since ~2017 |
 | 6 GHz Support | ✅ | ❌ |
@@ -320,7 +320,7 @@ Many professional pentesters carry both: the AWUS036ACH for reliable dual-band w
 
 **Labs and training facilities.** If you are teaching wireless security and want students to be familiar with the current state of Wi-Fi technology, including 6 GHz band operation, the AWUS036AXML is the appropriate training tool.
 
-**Researchers working on Wi-Fi 6E protocol analysis.** The combination of monitor mode, packet injection, and 6 GHz access makes the AWUS036AXML the only practical USB option for studying WPA3-SAE behavior on 6 GHz networks, 6 GHz BSS coloring, and multi-link operation (MLO) frame analysis.
+**Researchers working on Wi-Fi 6E protocol analysis.** The combination of monitor mode and 6 GHz access (injection is not available on stock kernel 6.17) makes the AWUS036AXML the only practical USB option for studying WPA3-SAE behavior on 6 GHz networks, 6 GHz BSS coloring, and multi-link operation (MLO) frame analysis.
 
 **Future-proofing.** If you are purchasing a wireless adapter for security research in 2026 and want it to remain relevant as Wi-Fi 6E adoption continues to accelerate, the AWUS036AXML is the forward-looking choice.
 

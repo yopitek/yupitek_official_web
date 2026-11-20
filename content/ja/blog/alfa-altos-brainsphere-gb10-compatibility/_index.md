@@ -1,5 +1,5 @@
 ---
-title: "ALFA 无線ネットワークカードがALTOS BrainSphere GB10 F1をサポートするかどうか"
+title: "ALFA無線LANアダプターはALTOS BrainSphere GB10 F1に対応しているか"
 date: 2026-09-03
 draft: false
 slug: "alfa-altos-brainsphere-gb10-compatibility"
@@ -13,33 +13,35 @@ tags:
   - "DGX-OS"
 categories:
   - "ハードウェアガイド"
-description: "ALTOS GB10 & NVIDIA DGX Spark 同プラットフォーム、ソフト環境、ALFA USB网卡完全互換。MediaTekモデルは即インストール、RealtekモデルはARM64でドライバ編集必要。注意：BrainSphere GB10 F1はUSB-Cポート3+PD入力ポート、AXML以外はUSB-C to USB-Aアダプター使用。"
+description: "ALFA USB無線LAN 9機種のALTOS BrainSphere GB10 F1対応状況。GX10のkernel 6.17実測で全機種が内蔵ドライバーで動作しDKMS不要、AXM／AXMLは注入に失敗しました。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
-## 1. 問題要約
+> 📌 本記事は2026年11月のGX10実機テストに基づいて更新しました：ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）では、ALFA現行9機種のアダプターがすべてkernel内蔵ドライバーで動作し、挿すだけで使用でき、DKMSは不要です。詳細データは[ALFA 9機種 ARM64 実機テスト総まとめ](/ja/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)をご覧ください。テストはGX10のみで実施しており、他のGB10機種は個別にテストしていません。
 
-お客様の質問：「ALFA 系列USBワイヤレスネットワークアダプターがALTOS BrainSphere GB10 F1（NVIDIA GB10 Grace Blackwell）AIワークステーションで使用可能ですか？」
+## 1. 質問の要約
 
-簡要結論：ALTOS BrainSphere GB10 F1 と NVIDIA DGX Spark は同じ GB10 ハードウェアプラットフォームと DGX OS ソフトウェア環境を共有しており、ALFA ネットワークアダプターの互換性は完全に一致しています（判定基準：ALFA 現行の 9 款 USB ネットワークアダプター）。MediaTek クリスタルチップモデル（AWUS036ACM / ACHM / AXML / AXM、4 款）は in-kernel ドライバを使用し、即時使用可能です；Realtek クリスタルチップモデル（AWUS036ACH / ACS / EACS / AX / AXER、5 款）は ARM64 上で out-of-tree ドライバをコンパイルする必要があります。注意：BrainSphere GB10 F1 の USB ポートは 3 個の Type-C データポート + 1 個の Type-C PD 入力ポートで構成されており、ALFA ネットワークアダプター（AXML を除く）は USB-C to USB-A コンバータを使用する必要があります。
+お客様からの質問：「ALFAシリーズのUSB無線LANアダプターは、ALTOS BrainSphere GB10 F1（NVIDIA GB10 Grace Blackwell）AIワークステーションで使用できますか？」
 
-## 2. 分析目標ハードウェア規格構造
+簡潔な結論：ALTOS BrainSphere GB10 F1とNVIDIA DGX Sparkは、同じGB10チップとNVIDIA kernel系列を使用しています。当社はASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）でALFA現行9機種のUSB無線LANアダプター（AWUS036ACM / ACHM / ACH / ACS / EACS / AX / AXER / AXM / AXML）を実機テストし、全機種がkernel内蔵ドライバーで動作し、挿すだけで使用でき、コンパイルやDKMSは不要であることを確認しました。同じ動作が見込まれますが、テストはGX10のみで、ALTOS BrainSphere GB10 F1は個別にテストしていません。機能差：MediaTek MT7921機種（AWUS036AXM / AXML）はstock kernel 6.17上でパケットインジェクション（packet injection）に失敗し、monitor、AP、WPA3は使用可能です。残り7機種はmonitorとインジェクションの両方が実機で動作しました。各アダプターのドライバーがメインラインに入った最低kernelバージョンは異なり（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）、コミュニティのDKMSドライバーが必要なのはそれより古いkernelのみです。注意：BrainSphere GB10 F1のUSBポートはType-Cデータポート3基 + Type-C PD入力ポート1基のため、ALFAアダプター（AXMLを除く）にはUSB-C to USB-A変換アダプターが必要です。
 
-### 2.1 ALTOS BrainSphere GB10 F1 ハードウェア規格
+## 2. 分析対象ハードウェアの仕様構成
 
-| 項目 | 規格 |
+### 2.1 ALTOS BrainSphere GB10 F1 ハードウェア仕様
+
+| 項目 | 仕様 |
 |---|---|
-| 製品名稱 | ALTOS BrainSphere GB10 F1（Acer / Altos Computing） |
-| 核心チップ | NVIDIA GB10 Grace Blackwell Superchip（DGX Spark プラットフォーム） |
-| CPU | 20-core Arm（10× Cortex-X925 + 10× Cortex-A725），ARMv9.2-A |
-| GPU | NVIDIA Blackwell アーキテクチャ，6144 CUDA 核心，第5世代 Tensor Core，第4世代 RT Core |
-| AI 性能 | 最高 1 PetaFLOP（FP4, Sparse）/ 1000 TOPS，最大 2000億パラメータモデルをサポート |
-| システムメモリ | 128GB LPDDR5x 一元メモリ（256-bit、273 GB/s） |
-| 儲蔵 | 4TB NVMe M.2 SSD（自暗号化） |
-| USB | 3× USB 3.2 Gen 2×2 Type-C（20Gbps、DP Alt Mode）+ 1× USB 3.2 Gen 2×2 Type-C（PD インプット、180W EPR PD3.1） |
-| モニタ出力 | 1× HDMI 2.1a |
+| 製品名 | ALTOS BrainSphere GB10 F1（Acer / Altos Computing） |
+| コアチップ | NVIDIA GB10 Grace Blackwell Superchip（DGX Spark プラットフォーム） |
+| CPU | 20-core Arm（10× Cortex-X925 + 10× Cortex-A725）、ARMv9.2-A |
+| GPU | NVIDIA Blackwell アーキテクチャ、6144 CUDA コア、第5世代 Tensor Core、第4世代 RT Core |
+| AI 性能 | 最大 1 PetaFLOP（FP4, Sparse）/ 1000 TOPS、最大 2000 億パラメータのモデルに対応 |
+| システムメモリ | 128GB LPDDR5x 統合メモリ（256-bit、273 GB/s） |
+| ストレージ | 4TB NVMe M.2 SSD（自己暗号化） |
+| USB | 3× USB 3.2 Gen 2×2 Type-C（20Gbps、DP Alt Mode）+ 1× USB 3.2 Gen 2×2 Type-C（PD 入力、180W EPR PD3.1） |
+| 映像出力 | 1× HDMI 2.1a |
 | 有線ネットワーク | 1× 10GbE RJ45 + NVIDIA ConnectX-7 NIC（200G × 2 QSFP） |
 | 無線ネットワーク | Wi-Fi 7 + Bluetooth 5.4 with LE |
 | オペレーティングシステム | NVIDIA DGX OS（Ubuntu Linux ベース、kernel 6.x） |
@@ -47,197 +49,207 @@ lastmod: 2026-09-03
 | サイズ | 150 × 150 × 50 mm（1.13L） |
 | 重量 | < 1.5 kg |
 | 最大消費電力 | 170W |
-| 付属ソフトウェア | Altos aiGeni（一鍵 AI 開発プラットフォーム、TensorFlow / PyTorch / Jupyter / Ollama サポート） |
+| 付属ソフトウェア | Altos aiGeni（ワンクリック AI 開発プラットフォーム、TensorFlow / PyTorch / Jupyter / Ollama に対応） |
 
-> 規格確認：以上のサイズ / 重量 / 消費電力 / USB 設定は、Altosの公式 Product Sheet PDF（第10節参照）と一致しています。
+> 仕様の確認：上記のサイズ / 重量 / 消費電力 / USB 構成は、Altos 公式 Product Sheet PDF（第10節参照）と一致しています。
 
 ### 2.2 ソフトウェア環境：NVIDIA DGX OS + Altos aiGeni
 
 | 項目 | 内容 |
 |---|---|
-| 基本OS | Ubuntu Linux（NVIDIA カスタマイズ、DGX OS） |
+| ベース OS | Ubuntu Linux（NVIDIA カスタマイズ、DGX OS） |
 | Kernel | Linux 6.x |
 | アーキテクチャ | aarch64（ARM64） |
-| AI プラットフォーム | Altos aiGeni（一鍵環境設定、自動バックアップ、リアルタイム監視、インテリジェントツール） |
-| 預装フレームワーク | TensorFlow、PyTorch、Jupyter、Ollama |
+| AI プラットフォーム | Altos aiGeni（ワンクリック環境構築、自動バックアップ、リアルタイム監視、インテリジェントツール） |
+| プリインストールのフレームワーク | TensorFlow、PyTorch、Jupyter、Ollama |
 | パッケージ管理 | apt |
 
 ### 2.3 DGX Sparkとの違い
 
-| 差異項 | BrainSphere GB10 F1 | NVIDIA DGX Spark |
+| 相違点 | BrainSphere GB10 F1 | NVIDIA DGX Spark |
 |---|---|---|
 | 付属ソフトウェア | Altos aiGeni AI 開発プラットフォーム | NVIDIA リファレンスソフトウェアスタック |
-| 機構設計 | Altos / Acer カスタマイズボックス | NVIDIA リファレンスボックス |
-| 目標市場 | 企業 AI / 研究機関 / 教育 | デスクトップ AI 開発 |
-| 最大消費電力 | 170W | 約 240W（電源変換込み） |
+| 筐体設計 | Altos / Acer カスタム筐体 | NVIDIA リファレンス筐体 |
+| 対象市場 | 企業 AI / 研究機関 / 教育 | デスクトップ AI 開発 |
+| 最大消費電力 | 170W | 約 240W（電源変換を含む） |
 
-ALFAの互換性への影響：影響なし。Altos aiGeniはアプリケーションレベルのソフトウェアであり、kernelドライバフレームワークに影響を与えません。USBコントローラ、kernelバージョン、ドライバアーキテクチャはDGX Sparkと完全に同じです。
+ALFAの互換性への影響：影響はないと見込まれます（テストはGX10のみで、他のGB10機種は個別にテストしていません）。Altos aiGeniはアプリケーション層のソフトウェアであり、kernelのドライバーフレームワークには影響しません。USBコントローラー、kernelバージョン、ドライバーアーキテクチャはDGX Sparkと完全に同じです。
 
-### 2.4 USB Type-C コンバータの必要性
+### 2.4 USB Type-C 変換の必要性
 
-BrainSphere GB10 F1の4つのUSBポートはすべてType-C（3つのデータ + 1つのPDインプット）で、ALFAシリーズのすべてのネットワークカード（AXMLがUSB-C以外の場合）はUSB Type-Aで、コンバータを使用する必要があります。
+BrainSphere GB10 F1の4つのUSBポートはすべてType-C（データ 3 基 + PD 入力 1 基）です。ALFAの全シリーズのアダプター（USB-CのAXMLを除く）はUSB Type-Aのため、変換アダプターが必要です。
 
-## 3. 現在のALFAネットワークカード規格およびチップセットの分析
+## 3. 現行ALFAアダプターの仕様とチップセットの分析
 
-2026年9月現在、ALFA Networkの現役USB無線ネットワークカード製品ラインは以下の通りです：
+2026年9月時点で、ALFA Networkの現行USB無線LANアダプターのラインナップは以下のとおりです：
 
-| 機型 | Wi-Fi レベル | チップセット | インターフェース | Linux 驅動状態 |
+| 機種 | Wi-Fi 規格 | チップセット | インターフェース | Linux 内蔵ドライバー（最低 kernel バージョン） |
 |---|---|---|---|---|
-| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ in-kernel（mt7921u） |
-| AWUS036AXM | Wi-Fi 6E | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ in-kernel（mt7921u） |
-| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ rtw89 / out-of-tree |
-| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ 同上 |
-| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ⚠️ out-of-tree（8812au） |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ✅ in-kernel（mt76x0u） |
-| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ in-kernel（mt76x2u）⭐ 首選 |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ⚠️ out-of-tree（8812au 涵蓋） |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ⚠️ out-of-tree（8821cu） |
+| AWUS036AXML | Wi-Fi 6E（6GHz 実機で動作確認） | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ 内蔵（mt7921u、5.18+） |
+| AWUS036AXM | Wi-Fi 6E（メーカー公称、6GHz 未テスト） | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ 内蔵（mt7921u、5.18+） |
+| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ 内蔵（rtw89_8852bu、6.17+） |
+| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ 内蔵（rtw89_8852bu、6.17+） |
+| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ✅ 内蔵（rtw88_8812au、6.13+） |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ✅ 内蔵（mt76x0u、4.19+） |
+| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ 内蔵（mt76x2u、4.19+） |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ✅ 内蔵（rtw88_8821au、6.13+） |
+| AWUS036EACS | Wi-Fi 5 (AC600) + Bluetooth | Realtek RTL8821CU | USB 2.0 | ✅ 内蔵（rtw88_8821cu、6.2+） |
 
-## 4. 推薦機型とチップセット
+注：GX10 で実測した kernel 6.17 には 9 機種すべてのドライバーが内蔵されています。最低 kernel バージョンは機種ごとに異なります（上表の括弧内）。コミュニティ保守の DKMS ドライバーのインストールが必要なのは、kernel がその機種の最低バージョンより古いシステムのみです。
 
-### 4.1 推薦レベル分類
+## 4. 対応機種とチップセット
 
-| 推薦レベル | 機型（チップセット） | 説明 |
+### 4.1 推奨レベル
+
+| 推奨レベル | 機種（チップセット） | 説明 |
 |---|---|---|
-| ⭐ 強烈推薦 | AWUS036ACM（MT7612U） | カーネル内蔵ドライバ、開箱即使用可能、AC1200 双頻、AP / Monitor / Injection サポート |
-| ✅ 推薦 | AWUS036ACHM（MT7610U） | カーネル内蔵ドライバ、低消費電力、AC433 双頻 |
-| ✅ 推薦（Wi-Fi 6E） | AWUS036AXML / AXM（MT7921AUN） | カーネル内蔵ドライバ、Wi-Fi 6E、AXML は USB-C で直接挿入可能 |
-| ⚠️ 使用可能但し、翻訳が必要 | AWUS036ACH（RTL8812AU） | morrownr/8812au（ARM64）を翻訳する必要があり、翻訳が完了すると機能が完全に |
-| ⚠️ 使用可能但し、翻訳が必要 | AWUS036ACS / EACS |対応する out-of-tree ドライバを翻訳する必要があります |
-| ⚠️ 使用可能但し、注意が必要 | AWUS036AX / AXER（RTL8832BU） | カーネル 6.xの rtw89が既にサポートしている可能性があります；翻訳は必要ありません |
+| ⭐ ペネトレーションテストに最適 | AWUS036EACS（RTL8821CU）/ AWUS036ACH（RTL8812AU）/ AWUS036ACS（RTL8811AU） | 内蔵ドライバーでインストール不要。インジェクション実測値は EACS、ACH が両バンド 100%、ACS が 2.4GHz 100%・5GHz 96%。WPA handshake をエンドツーエンドで取得可能 |
+| ✅ 推奨 | AWUS036ACM（MT7612U） | 内蔵ドライバーでインストール不要。monitor、インジェクション（2.4GHz 63–83%、5GHz 76%）、AP、WPA3 すべて使用可能 |
+| ✅ 推奨 | AWUS036ACHM（MT7610U） | 内蔵ドライバーでインストール不要。2.4GHz インジェクション 96–100%、5GHz インジェクションはブロードキャストのみ可能。WPA3 AP には sae_pwe=0 の設定が必要 |
+| ✅ 推奨（Wi-Fi 6） | AWUS036AX / AXER（RTL8832BU） | 内蔵ドライバーでインストール不要。monitor の受信感度が高く、インジェクション可能（2.4GHz：AX 96%、AXER 73%）、AP は 80MHz に対応 |
+| ⚠️ 接続／AP 用途のみ | AWUS036AXML / AXM（MT7921AUN） | 内蔵ドライバーでインストール不要。monitor、AP、WPA3 は使用可能だが、stock kernel 6.17 ではインジェクションに失敗するため、ペネトレーションテストには不向き。AXML は USB-C で直挿し可能 |
 
-### 4.2 使用シーン推薦
+### 4.2 用途別のおすすめ
 
-| 使用シーン | 推薦機型 | 説明 |
+| 用途 | おすすめ機種 | 説明 |
 |---|---|---|
-| 企業AI実験室無線ネットワーク | AWUS036ACM / ACHM | カーネル内蔵ドライバ、安定性、メンテナンス不要、企業環境に適しています |
-| 無線パイロットテスト / 安全研究 | AWUS036ACH または AWUS036ACM | 両者とも Monitor + Injection サポート |
-| Wi-Fi 6E / 6GHz 頻段 | AWUS036AXML / AXM | MT7921AUN カーネル内蔵ドライバ |
-| 外接WiFi不要 | — | BrainSphere は内蔵 Wi-Fi 7を搭載しており、一般的なネットワークには外接WiFiは不要です |
+| 企業 AI ラボの無線インターネット接続 | 9 機種すべて可（例：AWUS036ACM / ACHM） | すべて kernel 内蔵ドライバーで、挿すだけで使用可能 |
+| 無線ペネトレーションテスト / セキュリティ研究 | AWUS036EACS / ACH / ACS | インジェクション実測 96–100%、WPA handshake をエンドツーエンドで取得可能。AXM / AXML は選ばないこと（インジェクション失敗） |
+| Wi-Fi 6 + AP ホットスポット | AWUS036AX / AXER | 2x2、80MHz AP が実機で動作 |
+| 6GHz 帯 | AWUS036AXML | 6GHz で WPA3 AP を構築できることを実機で確認。AXM は同じチップだが 6GHz は未テスト |
+| 外付け WiFi が不要な場合 | — | BrainSphere は Wi-Fi 7 を内蔵しており、一般的なインターネット接続には外付け不要 |
 
-## 5. 環境要求
+## 5. 環境要件
 
-### 5.1 硬体要求
+### 5.1 ハードウェア要件
 
-| 項目 | 需求 |
+| 項目 | 要件 |
 |---|---|
-| USB 転接器 | USB-C to USB-A 転接アダプターまたは伝送線（AXMLを除く）、USB 3.2 Gen 2×2をサポートする推奨 |
-| 供給電力 | ALTOS 原厂のUSB-C電源供給アダプター（180W EPR PD3.1） |
+| USB 変換アダプター | USB-C to USB-A 変換アダプターまたはケーブル（AXML を除く）、USB 3.2 Gen 2×2 対応を推奨 |
+| 電源 | ALTOS 純正 USB-C 電源アダプター（180W EPR PD3.1） |
 
-### 5.2 軟体要求
+### 5.2 ソフトウェア要件
 
-| 項目 | 需求 |
+| 項目 | 要件 |
 |---|---|
-| DGX OS バージョン | 任意の現役バージョン（kernel 6.x） |
-| 編訳ツール（Realtek チップセットが必要） | build-essential、git、bc、dkms |
-| 無線管理ツール | iw、network-manager（DGX OS でデフォルトでインストール） |
-| aiGeni 注意事項 | aiGeniのコンテナ環境を使用する場合、USBデバイスが正しくコンテナにマウントされていることを確認してください（通常、ホストOSレベルで設定することをお勧めします） |
+| DGX OS バージョン | 現行の任意のバージョン（kernel 6.x） |
+| Kernel バージョン | kernel 6.17（実測 6.17.0-1014-nvidia）には 9 機種すべてのドライバーが内蔵されており、コンパイルツールは不要。最低バージョンは機種ごとに異なり（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）、それより古い場合のみコミュニティの DKMS ドライバーのインストールが必要 |
+| 無線管理ツール | iw、network-manager（DGX OS にデフォルトでインストール済み） |
+| aiGeni の注意事項 | aiGeni のコンテナ環境を使用する場合は、USB デバイスがコンテナに正しくマウントされていることを確認してください（一般的なインターネット接続は host OS レベルでの設定を推奨） |
 
-## 6. 兼容性判定
+## 6. 互換性の判定
 
-### ALFA 現役機型 × ALTOS BrainSphere GB10 F1 兼容性マトリックス
+### ALFA 現行機種 × ALTOS BrainSphere GB10 F1 互換性マトリックス
 
-| 機型 | クリスタルセット | 驅動方式 | USB 偵測 | STA 上網 | AP モード | モニターモード | 安装難度 | 総合評価 |
-|---|---|---|---|---|---|---|---|---|
-| AWUS036ACM | MT7612U | in-kernel（mt76x2u） | ✅ | ✅ | ✅ | ✅ | 免安装 | ⭐ 最適 |
-| AWUS036ACHM | MT7610U | in-kernel（mt76x0u） | ✅ | ✅ | ✅ | ⚠️ 限定的 | 免安装 | ✅ 良好 |
-| AWUS036AXML | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ 限定的 | 免安装 | ✅ 良好 |
-| AWUS036AXM | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ 限定的 | 免安装 | ✅ 良好 |
-| AWUS036ACH | RTL8812AU | out-of-tree（8812au） | ✅ | ✅ | ✅ | ✅ | 中（翻訳） | ⚠️ 利用可能 |
-| AWUS036ACS | RTL8811AU | out-of-tree（8812au） | ✅ | ✅ | ⚠️ | ❌ | 中（翻訳） | ⚠️ 利用可能 |
-| AWUS036EACS | RTL8811CU | out-of-tree（8821cu） | ✅ | ⚠️ | ❌ | ❌ | 中（翻訳） | ⚠️ 利用可能 |
-| AWUS036AX | RTL8832BU | rtw89 / out-of-tree | ✅ | ⚠️ | ⚠️ | ❌ | 中-高 | ⚠️ 利用可能 |
-| AWUS036AXER | RTL8832BU | 同上 | ✅ | ⚠️ | ⚠️ | ❌ | 中-高 | ⚠️ 利用可能 |
+| 機種 | チップセット | ドライバー（kernel 内蔵） | USB 検出 | STA 接続 | AP モード | Monitor | パケットインジェクション | 導入難易度 | 総合評価 |
+|---|---|---|---|---|---|---|---|---|---|
+| AWUS036EACS | RTL8821CU | rtw88_8821cu | ✅ | ✅ | ✅ | ✅ | ✅ 両バンド 100% | インストール不要 | ⭐ 最適 |
+| AWUS036ACH | RTL8812AU | rtw88_8812au | ✅ | ✅ | ✅ | ✅ | ✅ 両バンド 100% | インストール不要 | ⭐ 最適 |
+| AWUS036ACS | RTL8811AU | rtw88_8821au | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 100%／5G 96% | インストール不要 | ⭐ 最適 |
+| AWUS036ACM | MT7612U | mt76x2u | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 63–83%／5G 76% | インストール不要 | ✅ 良好 |
+| AWUS036ACHM | MT7610U | mt76x0u | ✅ | ✅ | ✅ | ✅ | ⚠️ 2.4G 96–100%／5G ブロードキャストのみ | インストール不要 | ✅ 良好 |
+| AWUS036AX | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ 受信強 | ✅ 2.4G 96%／5G 可 | インストール不要 | ✅ 良好 |
+| AWUS036AXER | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ 受信強 | ✅ 2.4G 73%／5G 可 | インストール不要 | ✅ 良好 |
+| AWUS036AXML | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ 受信弱 | ❌ 失敗 | インストール不要 | ⚠️ 接続／AP のみ |
+| AWUS036AXM | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ 受信弱 | ❌ 失敗 | インストール不要 | ⚠️ 接続／AP のみ |
 
-判定基準：ALTOS BrainSphere GB10 F1 と DGX Spark は同じ GB10 ハードウェアプラットフォームと DGX OS（kernel 6.x, aarch64）を共有しており、兼容性判定は DGX Spark と完全に一致しています。Altos aiGeni はアプリケーションレベルのソフトウェアであり、ドライバの兼容性に影響を与えません。
+判定根拠：2026年11月16日～18日に ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）で実機テストを実施し、テスト対象は自社所有の Wi-Fi と自社所有のスマートフォンです。ALTOS BrainSphere GB10 F1 は同じ GB10 と NVIDIA kernel 系列を使用しているため同じ動作が見込まれますが、テストは GX10 のみで、ALTOS BrainSphere GB10 F1 は個別にテストしていません。詳細データは[ALFA 9機種 ARM64 実機テスト総まとめ](/ja/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)をご覧ください。
 
 ## 7. 超詳細 Step by Step 設定手順
 
-ALTOS BrainSphere GB10 F1 のインストール手順は NVIDIA DGX Spark と完全に同じです。以下は簡易版で、詳細な手順は [ALFA 无線网卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/) 第 7 節を参照してください。
+ALTOS BrainSphere GB10 F1 のセットアップ手順は NVIDIA DGX Spark と同じと見込まれます（手順は GX10 で実機確認）。以下は簡易版です。詳細な手順は[ALFA無線LANアダプターはNVIDIA DGX Sparkに対応しているか](/ja/blog/alfa-nvidia-dgx-spark-compatibility/)の第7節を参照してください。
 
-### 7.1 MediaTek クリスタルチップモデル（開箱即用）
+### 7.1 MediaTek チップセット機種（AWUS036ACM / ACHM / AXM / AXML）
 
-- USB-C to USB-A コンバータ（AXML は直接挿入可能）を使用して、ALFA ネットワークカードを BrainSphereのUSB-C データポートに挿入します
-- 偵測確認：`lsusb`
-- インターフェース確認：`ip link show`（自動的に wlan0 が表示されるべきです）
-- WiFi 連線：`nmcli dev wifi connect "SSID" password "パスワード"`
+- USB-C to USB-A 変換アダプター（AXML は直挿し可能）を使い、ALFA アダプターを BrainSphere の USB-C データポートに挿します
+- 検出の確認：`lsusb`
+- インターフェースの確認：`ip link show`（wlx で始まるインターフェースが自動的に表示されるはずです）
+- WiFi 接続：`nmcli dev wifi connect "SSID" password "パスワード"`
 
-### 7.2 Realtek クリスタルチップモデル（翻訳必要）
+### 7.2 Realtek チップセット機種（AWUS036ACH / ACS / EACS / AX / AXER）
 
-AWUS036ACH（RTL8812AU）を使用する例：
+kernel 6.17（GX10 の実測バージョン）にはすべての Realtek 機種のドライバーが内蔵されているため、手順は MediaTek 機種と同じで、コンパイルは不要です（最低バージョン：EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）：
 
 ```bash
-# 1. 編訳ツールのインストール
-sudo apt update && sudo apt install -y build-essential git bc dkms
+# 1. kernel バージョンを確認 (6.17 以上なら全 Realtek 機種のドライバーを内蔵. GX10 の実測は 6.17.0-1014-nvidia)
+uname -r
 
-# 2. 驅動のダウンロードと編訳
-git clone https://github.com/morrownr/8812au-20210820.git
-cd 8812au-20210820
-# Makefile で CONFIG_PLATFORM_ARM64 = y が確認されることを確認します
-make
-sudo make install
-sudo modprobe 8812au
-
-# 3. ネットワークカードを挿入後、インターフェースを確認
+# 2. アダプターを挿した後, ドライバーが自動ロードされたことを確認
+lsusb
+lsmod | grep -E "rtw88|rtw89"
 ip link show
 
-# 4. WiFi 連線
+# 3. WiFi 接続
 nmcli dev wifi connect "SSID" password "パスワード"
 ```
 
-### 7.3 監視モード（潜入テスト）
+各機種で自動ロードされるモジュール：ACH → `rtw88_8812au`、ACS → `rtw88_8821au`、EACS → `rtw88_8821cu`、AX / AXER → `rtw89_8852bu`。`uname -r` がその機種の最低バージョンより古い（古いシステムの）場合に限り、コミュニティ保守の DKMS ドライバー（例：RTL8812AU 用の morrownr/8812au-20210820）のインストールが必要です。
+
+### 7.3 モニターモード（ペネトレーションテスト）
+
+⚠️ 監視とインジェクションのテストは、自分が所有する、または許可を得たネットワークでのみ行ってください。
 
 ```bash
 sudo apt install -y aircrack-ng
-sudo ip link set wlan0 down
-sudo iw dev wlan0 set type monitor
-sudo ip link set wlan0 up
-sudo aireplay-ng --test wlan0
+IF=wlx00c0cafe0000   # ip link で確認したインターフェース名に置き換える
+sudo ip link set $IF down
+sudo iw dev $IF set type monitor
+sudo ip link set $IF up
+sudo aireplay-ng --test $IF
 ```
 
-### 7.4 aiGeni コンテナ内で WiFi を使用する（高度）
+- `airmon-ng check kill` は実行しないでください：NetworkManager が停止し、ホストの外部接続が切断されます。
+- AWUS036AXM / AXML は stock kernel 6.17 上で `aireplay-ng --test` が失敗し（Found 0 APs）、deauth や handshake の取得はできません。
+- hcxdumptool 8.x は 2.4 GHz の EACS を除く全機種で `failed to arm`（ドライバーが active monitor 非対応）となるため、airodump-ng + aireplay-ng を使用してください。
 
-Altos aiGeniのDockerコンテナ内でALFAネットワークカードを使用する場合：
+### 7.4 aiGeni コンテナ内で WiFi を使用する（上級）
 
-1. まず host OS（DGX OS）で驅動のインストールとWiFiの連線を完了します
-2. コンテナを起動する際に `--network=host` を指定するか、対応するネットワークインターフェースをマウントします
-3. 一般的なオンラインアクセスは host OS 層で完了し、コンテナは `--network=bridge` を通じてネットワークを共有することをお勧めします
+Altos aiGeni の Docker コンテナ内で ALFA アダプターを使用する場合：
 
-## 8. 常見なエラーとその解決策
+1. まず host OS（DGX OS）でドライバーが自動ロードされていることを確認し、WiFi 接続を完了します
+2. コンテナ起動時に `--network=host` を指定するか、対応するネットワークインターフェースをマウントします
+3. 一般的なインターネット接続は host OS レベルで行い、コンテナは `--network=bridge` でネットワークを共有することを推奨します
 
-| 症狀 | 可能な原因 | 解決方法 |
+## 8. よくあるエラーと対処法
+
+| 症状 | 考えられる原因 | 対処法 |
 |---|---|---|
-| lsusb で ALFA ネットワークカードが見られない | USB-C アダプターが不良 / 充電規格のみ | サポートするデータ伝送の USB 3.2 Gen 2×2 アダプターを交換；異なる USB-C ポートを試す |
-| MediaTek クリスタルチップが wlan インターフェースを持っていない | モジュールが自動的にロードされていない / ファームウェアが欠けている | `sudo modprobe mt76x2u`；`sudo apt install linux-firmware`；`dmesg | grep mt76` を確認 |
-| Realtek ドライバがコンパイルに失敗 | クロスコンパイルの設定が間違っている | BrainSphere 上でネイティブコンパイルを確認；Makefile には CROSS_COMPILE を設定しないべきではありません |
-| WiFiの速度が遅い | アダプターがUSB 2.0のみをサポート | USB 3.2 Gen 2×2 アダプターを交換 |
-| 内蔵のWi-Fi 7と外接が衝突 | ルーターが衝突 | `sudo nmcli radio wifi off` を実行して内蔵 WiFi を無効にし、外接を使用 |
-| aiGeni コンテナ内で WiFiが見られない | コンテナのネットワークモードの問題 | `--network=host` を使用；ホスト OS でネットワークを接続した後にコンテナがネットワークを共有するように設定 |
-| 6GHzが使用できない | 法規制領域の制限 | `sudo iw reg set US`；最新の規制を確認 |
+| lsusb で ALFA アダプターが表示されない | USB-C 変換アダプターの不良 / 充電専用規格 | データ転送対応の USB 3.2 Gen 2×2 変換アダプターに交換。別の USB-C ポートを試す |
+| MediaTek チップで wlan インターフェースが出ない | モジュールが自動ロードされない / ファームウェアの欠落 | `sudo modprobe mt76x2u`；`sudo apt install linux-firmware`；`dmesg \| grep mt76` を確認 |
+| Realtek アダプターを挿しても wlan インターフェースが出ない | kernel がその機種の最低バージョン（EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）より古く、対応ドライバーが内蔵されていない | `uname -r` でバージョンを確認。kernel をアップグレードするか、古い kernel ではコミュニティの DKMS ドライバーをインストール |
+| monitor／AP を繰り返し切り替えた後、何も受信できない | RX 停止（RX stall） | アダプターを抜き差しして USB を再列挙させる |
+| EACS／AXML を挿し直した後に wlx インターフェースが出ない | Bluetooth＋Wi-Fi 複合デバイスの probe が停止 | 別の USB ポートに挿し直す |
+| WiFi の速度が遅い | 変換アダプターが USB 2.0 のみ対応 | USB 3.2 Gen 2×2 変換アダプターに交換 |
+| 内蔵 Wi-Fi 7 と外付けが競合する | ルーティングの競合 | `sudo nmcli radio wifi off` で内蔵 WiFi を無効にしてから外付けを使用 |
+| aiGeni コンテナ内で WiFi が見えない | コンテナのネットワークモードの問題 | `--network=host` を使用。または host OS で接続した後、コンテナにネットワークを共有させる |
+| 6GHz が使えない | Regulatory Domain の制限 | `sudo iw reg set US`；最新の法規を確認 |
 
-## 9. 既知制約
+## 9. 既知の制限
 
-- USB Type-C 転換ニーズ：AXML以外、すべてのALFAネットワークカードはUSB-C to USB-A アダプターが必要です
-- Realtek クリスタルチップの手動翻訳が必要：RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BUはmainlineに未統合
-- 内蔵Wi-Fi 7が外部接続と衝突する可能性：BrainSphereは内蔵Wi-Fi 7 + BT 5.4を搭載
-- AP モードの手動設定が必要：DGX OSはデフォルトで開発環境として設定されています
-- 6GHz 法規制限：Wi-Fi 6Eの利用可能性は法規区域によって異なります
-- ドライバの更新は上位の依存関係に依存：Realtekのout-of-treeドライバはコミュニティで保守されています。kernelの更新後は再コンパイルが必要です
-- aiGeni コンテナ隔離：aiGeni コンテナ内でWiFiを使用する場合、ネットワークネームスペースとデバイスのハングマウントに注意が必要です。host OSレベルでWiFiを管理することをお勧めします
-- Altos ソフトウェアの差異が互換性に影響しない：aiGeniはアプリケーションレベルのプラットフォームであり、kernelのUSB WiFiドライバの互換性に影響しません
+- USB Type-C 変換が必要：AXML 以外のすべての ALFA アダプターに USB-C to USB-A 変換アダプターが必要です
+- MT7921 機種のインジェクション失敗：AWUS036AXM / AXML は stock kernel 6.17 上でパケットインジェクションに失敗し、deauth や handshake の取得ができません。monitor、AP、WPA3 は使用可能です。主な原因は kernel 6.16 以降の mac80211 chanctx のリグレッションで、コミュニティのパッチ版ドライバーにもまだレート制限があります
+- テスト範囲：ASUS GX10（kernel 6.17.0-1014-nvidia）でのみ実機テストしており、ALTOS BrainSphere GB10 F1 は個別にテストしていません（同じ動作が見込まれます）
+- hcxdumptool は使用不可：2.4 GHz の EACS を除く全機種で `failed to arm` となるため、airodump-ng + aireplay-ng を使用してください
+- 内蔵 Wi-Fi 7 と外付けが競合する可能性：BrainSphere は Wi-Fi 7 + BT 5.4 を内蔵しています
+- AP モードは手動設定が必要：DGX OS はデフォルトで開発環境として構成されています
+- 6GHz の法規制限：Wi-Fi 6E の利用可否は規制地域によって異なります
+- 古い kernel：Realtek 機種でコミュニティの DKMS ドライバーが必要なのは kernel がその機種の最低バージョン（EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）より古いシステムのみで、その場合は kernel 更新のたびに再コンパイルが必要です
+- aiGeni コンテナの分離：aiGeni コンテナ内で WiFi を使用する場合は、ネットワーク名前空間とデバイスのマウントに注意が必要です。WiFi は host OS レベルで管理することを推奨します
+- Altos のソフトウェアの違いは互換性に影響しない：aiGeni はアプリケーション層のプラットフォームであり、kernel の USB WiFi ドライバーの互換性には影響しません
 
-反論条件：上記の判定はDGX OS（Ubuntuベース、kernel 6.x）を前提としています。Altosが将来Ubuntuベース以外の自社OSに移行したり、DGX OSのkernelの主要バージョンが変更された場合、in-kernel / out-of-treeの判定は再確認が必要です。
+反証条件：上記の判定は DGX OS（Ubuntu ベース、kernel 6.x）を前提としています。Altos が将来 Ubuntu ベース以外の独自 OS に移行した場合や、DGX OS の kernel メジャーバージョンが変わった場合は、内蔵ドライバーの判定を改めて実機で検証する必要があります。
 
-## 10. 参考来源 URL
+## 10. 参考情報 URL
 
-| 来源 | 説明 | URL | 検核状態 | 検核日期 |
+| 情報源 | 説明 | URL | 確認状態 | 確認日 |
 |---|---|---|---|---|
-| ALTOS BrainSphere GB10 F1 公式 Product Sheet (PDF) | ハードウェア仕様（170W / 50mm / USB 配置） | https://www.altoscomputing.com/filepic/pdf/Altos_BrainSphere_GB10_F1_Product_Sheet_TW.pdf | ✅ 已検核 | 2026-09-03 |
-| Altos Computing 公式ウェブサイト | BrainSphere GB10 F1 產品情報 | https://www.altoscomputing.com/en-Us | ✅ 已検核 | 2026-09-03 |
-| NVIDIA DGX Spark 公式ページ | GB10 平台情報 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 已検核 | 2026-09-03 |
-| morrownr/8812au GitHub | RTL8812AU Linux 驅動 | https://github.com/morrownr/8812au-20210820 | ✅ 已検核 | 2026-09-03 |
-| ALFA Network 產品総覧（Yopitek） | ALFA 現役製品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已検核 | 2026-09-03 |
+| ALTOS BrainSphere GB10 F1 公式 Product Sheet (PDF) | ハードウェア仕様（170W / 50mm / USB 構成） | https://www.altoscomputing.com/filepic/pdf/Altos_BrainSphere_GB10_F1_Product_Sheet_TW.pdf | ✅ 確認済み | 2026-09-03 |
+| Altos Computing 公式ウェブサイト | BrainSphere GB10 F1 製品情報 | https://www.altoscomputing.com/en-Us | ✅ 確認済み | 2026-09-03 |
+| NVIDIA DGX Spark 公式ページ | GB10 プラットフォーム情報 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 確認済み | 2026-09-03 |
+| morrownr/8812au GitHub | RTL8812AU Linux ドライバー | https://github.com/morrownr/8812au-20210820 | ✅ 確認済み | 2026-09-03 |
+| ALFA Network 製品一覧（Yopitek） | ALFA 現行製品仕様 | /ja/products/alfa/ | ✅ 確認済み | 2026-09-03 |
+| ALFA 9機種 ARM64 実機テスト総まとめ（Yopitek） | ASUS GX10 + Ubuntu 24.04 ARM64 実機テスト | https://yupitek.com/ja/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/ | ✅ 実機テスト | 2026-11-18 |
 
-関連記事：[ALFA 无線网卡是否支援 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无線网卡是否支援 ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA 无線网卡是否支援 GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA 无線网卡是否支援 MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
+関連記事：[ALFA無線LANアダプターはNVIDIA DGX Sparkに対応しているか](/ja/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA無線LANアダプターはASUS Ascent GX10に対応しているか](/ja/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA無線LANアダプターはGIGABYTE AI TOP ATOMに対応しているか](/ja/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA無線LANアダプターはMSI EdgeXpertに対応しているか](/ja/blog/alfa-msi-edgexpert-compatibility/)
 
-免責声明：本文の相容性判定は、ALTOS BrainSphere GB10 F1 にプリインストールされている NVIDIA DGX OS（kernel 6.x, aarch64）を基準としています。BrainSphere と DGX Spark は同じハードウェアプラットフォームを共有しており、相容性は完全に一致しています。Altos aiGeni はアプリケーションレベルのソフトウェアであり、ドライバの相容性に影響を与えません。MediaTek クリスタルドライバは Linux mainline であり、安定性が高いです；Realtek クリスタルドライバはコミュニティの保守が行われています。BrainSphere には Wi-Fi 7 が内蔵されており、ALFA は主に渗透テストや特殊なクリスタルセットの需要に外接されます。
+免責事項：本記事の互換性判定は、2026年11月に ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）で行った実機テストを基準としています。ALTOS BrainSphere GB10 F1 は GX10 と同じ GB10 と NVIDIA kernel 系列を使用しているため同じ動作が見込まれますが、個別にはテストしていません。Altos aiGeni はアプリケーション層のソフトウェアであり、ドライバーの互換性には影響しません。GX10 で実測した kernel 6.17 には ALFA 9 機種のドライバーがすべて内蔵されており（最低バージョンは機種ごとに異なる）、コミュニティの DKMS ドライバーが必要なのは kernel がその機種の最低バージョンより古い場合のみです。BrainSphere は Wi-Fi 7 を内蔵しており、外付けの ALFA は主にペネトレーションテストや特定チップセットが必要な用途に使われます。監視とインジェクションは、自分が所有する、または許可を得たネットワークでのみ行ってください。

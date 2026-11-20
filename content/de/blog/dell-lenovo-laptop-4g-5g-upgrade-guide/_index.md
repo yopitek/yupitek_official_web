@@ -22,8 +22,6 @@ faq:
     answer: "Das Modul hat 3 HF-Anschlüsse: Main, GNSS und Aux. Verbinde für mobile Daten mindestens Main, für volle Geschwindigkeit zusätzlich Aux, und GNSS nur, wenn du GPS-Ortung brauchst."
 ---
 
-# Der komplette Leitfaden für 4G/5G in deinem Dell- oder Lenovo-Laptop: Kompatible Modelle & Einbau
-
 **Die Kurzfassung: Bevor du deinen Laptop mit einer 4G-Karte aufrüstest, prüfe, ob die Antennen und der Slot wirklich da sind, und dann, ob das BIOS den Einbau erlaubt. Was die Karte angeht: Für Taiwan oder den asiatisch-pazifischen Raum sind sowohl die EM7455 als auch die EM7430 eine gute Wahl. Beide basieren auf demselben MDM9230-Chipsatz und sind beide Cat-6-Karten, die Geschwindigkeit ist also identisch; der einzige echte Unterschied sind die abgedeckten Bänder.**
 
 Viele Leute mit einem Dell Latitude oder einem Lenovo ThinkPad wollen eine 4G-Karte in den freien WWAN-Slot stecken, um auf Geschäftsreisen nicht mehr nach Wi-Fi zu suchen. Aber so einfach ist es nicht. Du musst sicherstellen, dass das Mainboard den richtigen Slot hat, die Antennen tatsächlich verdrahtet sind und der Laptop-Hersteller das BIOS nicht mit einer Whitelist gesperrt hat.

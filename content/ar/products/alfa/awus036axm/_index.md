@@ -29,7 +29,7 @@ dir: rtl
 - موصل USB-A على شكل L (USB 3.2 Gen 1، 5 Gbps)
 - هوائيان 2× RP-SMA female قابلان للفصل (5 dBi)
 - WPA3/WPA2/WPA/WEP/WPS
-- دعم Kali Linux Monitor Mode + Packet Injection
+- Monitor Mode في Kali Linux
 
 ## المواصفات التقنية
 
@@ -52,7 +52,7 @@ dir: rtl
 | Windows 11 | ✅ مدعوم | ثلاثي النطاق الكامل بما في ذلك 6 GHz |
 | macOS | ❌ غير مدعوم | لا دعم لـ macOS 11+ أو Apple Silicon |
 | Ubuntu | ✅ مدعوم | mt7921u مدمج في النواة ≥ 5.18 |
-| Kali Linux | ✅ مدعوم | Monitor mode + packet injection؛ قد تحتاج ملفات فيرموير |
+| Kali Linux | ⚠️ جزئي | يعمل Monitor mode؛ لم ينجح packet injection في اختبارنا الداخلي على GX10 / نواة stock 6.17 (السبب: تراجع في mac80211 chanctx منذ النواة 6.16، وليس قيدًا في الشريحة). لم يُختبر على Kali فعلي؛ قد تحتاج ملفات فيرموير |
 | NetHunter | ⚠️ جزئي | OTG؛ يعتمد على النواة |
 
 ## الأجهزة المدعومة
@@ -68,7 +68,7 @@ dir: rtl
 | الميزة | الحالة |
 |--------|--------|
 | Monitor Mode | ✅ نعم |
-| Packet Injection | ✅ نعم |
+| Packet Injection | ❌ لم ينجح (اختبار داخلي، GX10، نواة stock 6.17) |
 | Soft AP Mode | ✅ نعم |
 | Bluetooth | ✅ BT 5.2 (هوائي BT مدمج) |
 | VIF | ✅ نعم |

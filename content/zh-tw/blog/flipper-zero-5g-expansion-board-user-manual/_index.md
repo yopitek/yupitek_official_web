@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero 5G Expansion Board 圖解安裝與使用手冊 (v2.0)"
-description: "本指南為 Flipper Zero 5G 擴充模組安裝與操作指引 v2.0，配有完整高清 isometric 工程設計圖，帶領新手無痛安裝天線、插槽及 GPIO 設定。"
+description: "本指南為 Flipper Zero 5G 擴充模組安裝與操作指引 v2.0，配有完整高畫質 isometric 工程設計圖，帶領新手無痛安裝天線、插槽及 GPIO 設定。"
 date: 2026-10-18
 draft: false
 showBreadcrumbs: true
@@ -14,10 +14,8 @@ featureimage: "/images/blog/flipper-zero-5g-expansion-board-user-manual/img_01_a
 hideFeatureImage: true
 ---
 
-# Flipper Zero 5G Expansion Board 圖解安裝與使用手冊 (v2.0)
-
 > **目標讀者**：完全沒有接觸過本模組的新手客戶。  
-> **編寫原則**：針對所有「容易出錯」或「術語難懂」的步驟提供高清設計圖解，告別文字猜測，實現一步一圖的無痛安裝。
+> **編寫原則**：針對所有「容易出錯」或「術語難懂」的步驟提供高畫質設計圖解，告別文字猜測，實現一步一圖的無痛安裝。
 
 ---
 

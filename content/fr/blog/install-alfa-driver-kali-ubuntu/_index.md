@@ -34,8 +34,6 @@ L'installation du pilote ALFA dépend du chipset : MT7612U et MT7921AUN intégr�
 | RTL8832BU | aircrack-ng/rtl8832bu | ✓ | ~10 min |
 
 
-# Installer le pilote WiFi USB ALFA sur Kali Linux & Ubuntu 24.04 (2026)
-
 Ce guide couvre l'installation de tous les principaux pilotes WiFi USB ALFA pour Kali Linux et Ubuntu 24.04.
 
 ---
@@ -70,7 +68,7 @@ dkms status
 
 ## Installation : MT7612U (Plug-and-Play)
 
-Le pilote MT7612U (`mt76`) est inclus dans le noyau Linux主线. Aucun pilote supplémentaire requis :
+Le pilote MT7612U (`mt76`) est inclus dans le noyau Linux mainline. Aucun pilote supplémentaire requis :
 
 ```bash
 # Brancher l'adaptateur et vérifier
@@ -87,7 +85,7 @@ iwconfig
 
 ## Installation : MT7921AUN (Noyau 5.18+)
 
-Le pilote MT7921AUN (`mt7921u`) est inclus dans le noyau主线 à partir de la version 5.18 :
+Le pilote MT7921AUN (`mt7921u`) est inclus dans le noyau mainline à partir de la version 5.18 :
 
 ```bash
 # Vérifier le module noyau

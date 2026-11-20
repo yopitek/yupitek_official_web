@@ -3,7 +3,7 @@ title: "ALFA AWUS036AXML WiFi 6E 深度评测：2026 实际渗透测试性能"
 description: "深度评测 ALFA AWUS036AXML WiFi 6E USB 网卡：规格、Kali Linux 驱动安装、监听模式性能、6 GHz 频段扫描，以及与 AWUS036ACH 的详细对比。"
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -17,7 +17,7 @@ faq:
   - question: "AWUS036AXML 与 AWUS036ACH 的主要差异是什么？"
     answer: "AWUS036AXML 采用 MT7921AUN 支持 6 GHz 与 Wi-Fi 6E，AWUS036ACH 采用 RTL8812AU 仅支持双频 Wi-Fi 5，但后者驱动程序更成熟、兼容性更广。"
   - question: "AWUS036AXML 支持数据包注入吗？"
-    answer: "支持数据包注入，实测成功率稳定维持在 90% 以上，但主动监听模式有已知驱动程序限制，建议仅使用被动监听模式。"
+    answer: "不稳定。内核 6.16 以前有社区反馈可注入，但本站在 stock 内核 6.17 实测注入测试未通过（aireplay-ng --test 显示 Found 0 APs / No Answer），原因是 mac80211 chanctx 回归而非芯片先天限制；需要注入请改用 ACH、EACS、ACS 或 AX。监听模式、AP、WPA3 可用，建议使用被动监听模式。"
   - question: "谁适合购买 AWUS036AXML？"
     answer: "针对已部署 Wi-Fi 6E 的企业环境进行评估的安全研究人员、安全训练实验室，以及从事 6 GHz 协议分析的研究人员最为适合。"
 ---
@@ -26,11 +26,11 @@ faq:
 ## 产品概述
 
 {{< tldr >}}
-AWUS036AXML 是 Wi-Fi 6E USB 网卡，支持三频 2.4/5/6 GHz、监听模式与数据包注入。本文涵盖规格、Kali Linux 驱动安装、6 GHz 扫描实测，以及与 AWUS036ACH 的详细比较。
+AWUS036AXML 是 Wi-Fi 6E USB 网卡，支持三频 2.4/5/6 GHz、监听模式（数据包注入：内核 6.16 以前有社区反馈，stock 内核 6.17 实测失败）。本文涵盖规格、Kali Linux 驱动安装、6 GHz 扫描实测，以及与 AWUS036ACH 的详细比较。
 {{< /tldr >}}
 
 
-ALFA AWUS036AXML 搭载 MediaTek MT7921AUN 芯片组，是少数能让安全研究人员在 6 GHz 频段进行操作的 USB 无线网卡，支持监听模式与数据包注入，需 Linux 核心 5.18 以上。
+ALFA AWUS036AXML 搭载 MediaTek MT7921AUN 芯片组，是少数能让安全研究人员在 6 GHz 频段进行操作的 USB 无线网卡，支持监听模式、AP 模式与 WPA3，需 Linux 核心 5.18 以上；数据包注入在内核 6.16 以前有社区反馈，但本站在 stock 内核 6.17 实测未通过（详见下文）。
 
 
 
@@ -57,7 +57,7 @@ ALFA AWUS036AXML 搭载 MediaTek MT7921AUN 芯片组，是少数能让安全研�
 | 工作温度 | 0°C 至 50°C |
 | 操作系统支持 | Linux（内核 5.18+）、Windows 10/11 |
 | 监听模式 | ✅ 支持 |
-| 数据包注入 | ✅ 支持 |
+| 数据包注入 | ⚠️ 内核 6.16 以前有社区反馈；6.17 实测失败 |
 
 ---
 
@@ -211,7 +211,7 @@ wlan0mon  IEEE 802.11  Mode:Monitor  Frequency:2.457 GHz  Tx-Power=20 dBm
 sudo aireplay-ng --test wlan0mon
 ```
 
-在实测中，AWUS036AXML 在合理距离内对目标接入点的注入成功率稳定保持在 90% 以上。MT7921AUN 驱动程序在内核 6.x 上的注入实现相当可靠——与早期 5.18/5.19 版本相比有明显提升，后者在持续注入过程中偶有帧丢失现象。
+在内核 6.16 以前的社区反馈中，此网卡可以注入数据包。但本站在 stock 内核 6.17 实测 `aireplay-ng --test` 未通过（Found 0 APs / No Answer），因此无法 deauth 或抓取 handshake。原因是内核 6.16 以后 mac80211 chanctx 回归，并非芯片先天限制；社区 patched 驱动可让注入运行，但固件仍锁定速率（1/6 Mbps，无法注入 HT/VHT）。需要注入请改用 ACH、EACS、ACS 或 AX。
 
 ---
 
@@ -284,7 +284,7 @@ sudo iw dev wlan0mon scan | grep -E "BSS|SSID|freq|signal"
 | 优点 | 缺点 |
 |---|---|
 | 目前对 Kali Linux 提供可靠 6 GHz 支持的唯一 USB 无线网卡 | 需要内核 5.18+（旧版 Kali 需先升级） |
-| 完整支持监听模式与数据包注入 | MT7921AUN 驱动程序较新，边缘情况仍可能存在 |
+| 完整支持监听模式、AP 与 WPA3 | MT7921AUN 驱动程序较新，边缘情况仍可能存在；stock 内核 6.17 实测注入未通过 |
 | MT76 驱动程序已合入 Linux 主线内核 | 随附天线增益仅 2 dBi |
 | 在当前 Kali 2024.x / 2025.x 内核上运行稳定 | 无高增益天线时 6 GHz 覆盖范围逊于 5 GHz |
 | USB-A 3.0 接口，与测试笔记本广泛兼容 | 单天线设计，无法利用 MIMO 提升捕获多样性 |
@@ -300,7 +300,7 @@ sudo iw dev wlan0mon scan | grep -E "BSS|SSID|freq|signal"
 | Wi-Fi 标准 | 802.11ax（Wi-Fi 6E） | 802.11ac（Wi-Fi 5） |
 | 频段 | 2.4 / 5 / 6 GHz | 2.4 / 5 GHz |
 | 监听模式 | ✅ | ✅ |
-| 数据包注入 | ✅ | ✅ |
+| 数据包注入 | ⚠️ 内核 6.17 实测失败 | ✅ |
 | 内核驱动程序 | mt7921u（主线内核，5.18+） | rtl8812au（树外驱动，极为稳定） |
 | 驱动成熟度 | 较新，活跃开发中 | 成熟，自约 2017 年起久经考验 |
 | 6 GHz 支持 | ✅ | ❌ |
@@ -322,7 +322,7 @@ sudo iw dev wlan0mon scan | grep -E "BSS|SSID|freq|signal"
 
 **实验室与培训机构。** 如果你正在教授无线安全课程，希望学员熟悉当前 Wi-Fi 技术的最新状态，包括 6 GHz 频段的实际操作，AWUS036AXML 是不可或缺的教学工具。
 
-**专注 Wi-Fi 6E 协议分析的研究人员。** 监听模式、数据包注入与 6 GHz 访问能力三者兼备，使 AWUS036AXML 成为研究 WPA3-SAE 在 6 GHz 网络上的行为、6 GHz BSS 着色机制，以及多链路操作（MLO）帧分析的唯一实用 USB 选择。
+**专注 Wi-Fi 6E 协议分析的研究人员。** 监听模式与 6 GHz 访问能力兼备（stock 内核 6.17 上无法注入），使 AWUS036AXML 成为研究 WPA3-SAE 在 6 GHz 网络上的行为、6 GHz BSS 着色机制，以及多链路操作（MLO）帧分析的唯一实用 USB 选择。
 
 **着眼未来的投资。** 如果你在 2026 年采购无线网卡用于安全研究，并希望它在 Wi-Fi 6E 加速普及的浪潮中保持长期价值，AWUS036AXML 是最具前瞻性的选择。
 

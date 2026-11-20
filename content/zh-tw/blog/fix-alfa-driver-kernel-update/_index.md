@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "核心更新後 ALFA 網路卡為何會失效？"
     answer: "RTL8812AU 使用核心外驅動，每次核心版本變更後已編譯模組不再相容。DKMS 可自動重建，但缺少核心標頭或過時設定會導致失敗。"
@@ -56,10 +56,10 @@ MT7921AUN 晶片組自核心 **5.18** 版本起已納入主線核心。這意味
 在動手修改任何設定前，先執行以下兩條指令了解當前狀況：
 
 ```bash
-# 目前執行的核心版本為何？
+# 目前執行的核心版本為何?
 uname -r
 
-# 哪些 DKMS 模組已建置（以及針對哪些核心）？
+# 哪些 DKMS 模組已建置 (以及針對哪些核心)?
 sudo dkms status
 ```
 
@@ -106,7 +106,7 @@ sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 
 ## 修復：RTL8812AU 驅動程式（AWUS036ACH、ACS、EACS）
 
-RTL8812AU 是 ALFA 晶片組中用於滲透測試最廣泛的型號，原因在於其雙頻支援與可靠的監聽模式。它需要核心外驅動，因此也是最常被核心更新破壞的晶片組。
+RTL8812AU 是 ALFA 晶片組中用於滲透測試最廣泛的型號，原因在於其雙頻支援與可靠的監聽模式。它需要核心外驅動，因此也是最常被核心更新破壞的晶片組。**版本前提：** EACS（RTL8821CU）在 kernel 6.2 以上為內建驅動 rtw88_8821cu，不需要 DKMS，舊 kernel 才需要社群驅動。
 
 ### 4.1 — 安裝核心標頭
 
@@ -148,7 +148,7 @@ sudo dkms remove rtl8812au/5.6.4.2 --all 2>/dev/null
 git clone https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au
 
-# 一步完成：向 DKMS 註冊原始碼、編譯並安裝
+# 一步完成: 向 DKMS 註冊原始碼, 編譯並安裝
 sudo make dkms_install
 ```
 
@@ -306,7 +306,7 @@ cat /etc/dkms/framework.conf | grep autoinstall
 當多次重建嘗試均失敗，且 `dkms status` 顯示來自多次部分安裝的混亂輸出時，從頭開始比除錯更快：
 
 ```bash
-# 若已安裝 Kali 套件，請先移除
+# 若已安裝 Kali 套件, 請先移除
 sudo apt purge realtek-rtl88xxau-dkms
 
 # 移除所有 rtl8812au 的 DKMS 條目
@@ -314,7 +314,7 @@ for ver in $(sudo dkms status | grep rtl8812au | awk -F'[,/]' '{print $2}' | tr 
     sudo dkms remove rtl8812au/$ver --all
 done
 
-# 移除殘留的原始碼目錄（若存在）
+# 移除殘留的原始碼目錄 (若存在)
 sudo rm -rf /usr/src/rtl8812au*
 
 # 清除任何過期的模組快取

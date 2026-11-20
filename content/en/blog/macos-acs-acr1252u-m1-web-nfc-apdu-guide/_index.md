@@ -126,16 +126,16 @@ Open an **HTTPS (or localhost)** page in Android Chrome / ChromeOS Chrome and ho
 
 ```html
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Web NFC 讀寫示範</title>
+  <title>Web NFC Read/Write Demo</title>
 </head>
 <body>
-  <h1>Web NFC 讀寫示範</h1>
-  <button id="btnScan">開始掃描</button>
-  <button id="btnWrite">寫入標籤</button>
+  <h1>Web NFC Read/Write Demo</h1>
+  <button id="btnScan">Start Scan</button>
+  <button id="btnWrite">Write Tag</button>
   <pre id="output"></pre>
 
   <script>
@@ -144,32 +144,32 @@ Open an **HTTPS (or localhost)** page in Android Chrome / ChromeOS Chrome and ho
     };
 
     if (!('NDEFReader' in window)) {
-      out('此瀏覽器不支援 Web NFC（NDEFReader）。\n請改用 Android Chrome 或 ChromeOS Chrome。');
+      out('This browser does not support Web NFC (NDEFReader).\nPlease use Android Chrome or ChromeOS Chrome instead.');
     }
 
-    // 讀取：scan() 需使用者手勢觸發
+    // Read: scan() must be triggered by a user gesture
     document.getElementById('btnScan').addEventListener('click', async () => {
       try {
         const reader = new NDEFReader();
         await reader.scan();
-        out('已開始掃描，請將標籤靠近手機 NFC 感應區…');
+        out('Scanning started. Hold the tag near the phone\'s NFC antenna area...');
 
         reader.onreading = (event) => {
-          out('--- 讀取到標籤 ---');
-          out('序列號（Serial Number）：' + event.serialNumber);
+          out('--- Tag read ---');
+          out('Serial Number: ' + event.serialNumber);
           for (const record of event.message.records) {
-            out('recordType：' + record.recordType);
+            out('recordType: ' + record.recordType);
             if (record.recordType === 'text' || record.recordType === 'url') {
-              out('內容：' + record.data);
+              out('Content: ' + record.data);
             } else {
-              out('內容（二進位 ByteArray）：' + new Uint8Array(record.data));
+              out('Content (binary ByteArray): ' + new Uint8Array(record.data));
             }
           }
         };
 
-        reader.onreadingerror = () => out('讀取錯誤：請確認標籤是否支援 NDEF。');
+        reader.onreadingerror = () => out('Read error: check whether the tag supports NDEF.');
       } catch (err) {
-        out('scan() 失敗：' + err.name + ' / ' + err.message);
+        out('scan() failed: ' + err.name + ' / ' + err.message);
       }
     });
   </script>
@@ -190,19 +190,19 @@ document.getElementById('btnWrite').addEventListener('click', async () => {
     const writer = new NDEFReader();
 
     // Option 1: write plain text (auto-wrapped as a text record)
-    // await writer.write('Yopitek Web NFC 測試');
+    // await writer.write('Yopitek Web NFC test');
 
     // Option 2: write a URL record (good for business cards, traffic)
     await writer.write({
       records: [
         { type: 'url', data: 'https://www.yupitek.com' },
-        { type: 'text', data: 'ALFA / ACS 產品技術部落格' },
+        { type: 'text', data: 'ALFA / ACS product tech blog' },
       ],
     });
 
-    out('寫入成功！');
+    out('Write succeeded!');
   } catch (err) {
-    out('寫入失敗：' + err.name + ' / ' + err.message);
+    out('Write failed: ' + err.name + ' / ' + err.message);
   }
 });
 ```
@@ -275,7 +275,7 @@ conn.connect()
 # 1) Echo: returns ASCII "12345678"
 sw, data = conn.transmit([0xFF, 0x00, 0x00, 0x00, 0x00])
 print('Echo SW :', toHexString(sw))
-print('Echo 回傳:', ''.join(chr(b) for b in data))
+print('Echo data:', ''.join(chr(b) for b in data))
 
 # 2) Firmware version
 sw, data = conn.transmit([0xFF, 0x00, 0x48, 0x00, 0x00])
@@ -322,7 +322,7 @@ FF  00  40  00  04  00  00  <LED>  <BUZZER>
 ```python
 # Green on + short beep (example bytes; check the official API doc for your firmware)
 sw, data = conn.transmit([0xFF, 0x00, 0x40, 0x00, 0x04, 0x00, 0x00, 0x02, 0x04])
-print('LED/Buzzer 回應:', toHexString(sw))   # expect 90 00 (success)
+print('LED/Buzzer response:', toHexString(sw))   # expect 90 00 (success)
 
 # Turn off
 sw, data = conn.transmit([0xFF, 0x00, 0x40, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00])

@@ -471,7 +471,7 @@ https://www.kali.org/get-kali/#kali-arm
 
 Wähle **Raspberry Pi 4 (64-bit)** oder **Raspberry Pi 5 (64-bit)** passend zu deinem Board. Lade nicht das 32-Bit-Image herunter — der Treiber-Build erfordert einen 64-Bit-Kernel.
 
-> **China-Mirror:** Wenn kali.org langsam lädt, versuche stattdessen 华为云:
+> **China-Mirror:** Wenn kali.org langsam lädt, versuche stattdessen 华为云 (Huawei Cloud):
 > https://repo.huaweicloud.com/kali-images/
 > Navigiere zum neuesten Release-Ordner und lade das gleiche ARM64-Image von dort herunter.
 
@@ -622,10 +622,10 @@ Alle in dieser Anleitung verwendeten Ressourcen:
 |-----------|-----|-----------|
 | Alfa offizielle Treiber | [files.alfa.com.tw](https://files.alfa.com.tw) | Treiberpakete, Firmware |
 | Alfa-Dokumentation | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | Produkthandbücher |
-| 清华大学镜像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (empfohlen) |
-| 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (empfohlen) |
-| 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM-Images (Backup) |
+| 清华大学镜像 (Mirror der Tsinghua-Universität) | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里云镜像 (Aliyun-Mirror) | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (empfohlen) |
+| 中科大镜像 (USTC-Mirror) | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (empfohlen) |
+| 华为云镜像 (Huawei-Cloud-Mirror) | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM-Images (Backup) |
 | RTL8812AU-Treiber (GitHub) | [github.com/morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | Manuelles Kompilieren als Fallback |
 
 ---

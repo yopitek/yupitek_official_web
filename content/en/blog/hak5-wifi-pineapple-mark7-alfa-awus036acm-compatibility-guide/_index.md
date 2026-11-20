@@ -3,7 +3,7 @@ title: "HAK5 WiFi Pineapple Mark VII + ALFA AWUS036ACM: Complete 5GHz Setup Guid
 description: "Full compatibility guide for HAK5 WiFi Pineapple MK7 with ALFA AWUS036ACM (MT7612U) — plug-and-play 5GHz monitor mode, packet injection, and PineAP extension. Step-by-step setup with verified commands. No driver compilation required."
 date: 2026-06-10
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Does WiFi Pineapple Mark VII need an external adapter?"
     answer: "Yes. MK7 built-in radio only supports 2.4 GHz. Most networks have moved to 5 GHz in 2026. An external AWUS036ACM adds 5 GHz monitoring and injection capability."
@@ -14,7 +14,7 @@ faq:
   - question: "How do I enable Monitor Mode on MK7?"
     answer: "SSH in and run airmon-ng start wlan3. The interface renames to wlan3mon. Verify with iwconfig."
   - question: "Which ALFA adapters are incompatible with MK7?"
-    answer: "AWUS036AX and AWUS036AXER use RTL8832BU. AWUS036EACS uses RTL8811CU. Their drivers do not support monitor mode or injection, so all are incompatible."
+    answer: "AWUS036AX and AWUS036AXER use RTL8832BU: the rtw89_8852bu driver has been built into the kernel since 6.17, and monitor mode and injection worked on our GX10 test platform (kernel 6.17), but they have not been tested on a Mark7. AWUS036EACS uses RTL8821CU: the rtw88_8821cu driver has been in the mainline kernel since 6.2, and monitor mode and injection worked on our GX10 test platform (kernel 6.17). Whether the Mark7 firmware kernel and driver include it has not been tested on a Mark7, so it is not on the verified compatibility list."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true

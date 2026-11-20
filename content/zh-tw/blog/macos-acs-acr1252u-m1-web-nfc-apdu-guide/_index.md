@@ -63,10 +63,10 @@ Apple Silicon（M1／M2／M3／M4）時代，macOS 對第三方驅動的限制�
 驗證讀卡機有沒有被系統認到（在 macOS 上）：
 
 ```bash
-# 查看智慧卡讀卡機（出現 ACR1252U / ACS 即代表系統已列舉）
+# 查看智慧卡讀卡機 (出現 ACR1252U / ACS 即代表系統已列舉)
 system_profiler SPCardReaderDataType
 
-# 安裝 pcsc-tools（brew 套件）後可用 pcsc_scan 即時監看
+# 安裝 pcsc-tools (brew 套件) 後可用 pcsc_scan 即時監看
 brew install pcsc-tools
 pcsc_scan
 ```
@@ -144,32 +144,32 @@ Web NFC 採用的 NDEF 格式，最常搭配的是 **NFC Forum Type 2** 標籤�
     };
 
     if (!('NDEFReader' in window)) {
-      out('此瀏覽器不支援 Web NFC（NDEFReader）。\n請改用 Android Chrome 或 ChromeOS Chrome。');
+      out('此瀏覽器不支援 Web NFC (NDEFReader). \n請改用 Android Chrome 或 ChromeOS Chrome.');
     }
 
-    // 讀取：scan() 需使用者手勢觸發
+    // 讀取: scan() 需使用者手勢觸發
     document.getElementById('btnScan').addEventListener('click', async () => {
       try {
         const reader = new NDEFReader();
         await reader.scan();
-        out('已開始掃描，請將標籤靠近手機 NFC 感應區…');
+        out('已開始掃描, 請將標籤靠近手機 NFC 感應區…');
 
         reader.onreading = (event) => {
           out('--- 讀取到標籤 ---');
-          out('序列號（Serial Number）：' + event.serialNumber);
+          out('序列號 (Serial Number):' + event.serialNumber);
           for (const record of event.message.records) {
-            out('recordType：' + record.recordType);
+            out('recordType:' + record.recordType);
             if (record.recordType === 'text' || record.recordType === 'url') {
-              out('內容：' + record.data);
+              out('內容:' + record.data);
             } else {
-              out('內容（二進位 ByteArray）：' + new Uint8Array(record.data));
+              out('內容 (二進位 ByteArray):' + new Uint8Array(record.data));
             }
           }
         };
 
-        reader.onreadingerror = () => out('讀取錯誤：請確認標籤是否支援 NDEF。');
+        reader.onreadingerror = () => out('讀取錯誤: 請確認標籤是否支援 NDEF.');
       } catch (err) {
-        out('scan() 失敗：' + err.name + ' / ' + err.message);
+        out('scan() 失敗:' + err.name + ' / ' + err.message);
       }
     });
   </script>
@@ -184,15 +184,15 @@ Web NFC 採用的 NDEF 格式，最常搭配的是 **NFC Forum Type 2** 標籤�
 把上面的按鈕事件改為：
 
 ```javascript
-// 寫入：write() 同樣需使用者手勢，且標籤需在感應範圍內
+// 寫入: write() 同樣需使用者手勢, 且標籤需在感應範圍內
 document.getElementById('btnWrite').addEventListener('click', async () => {
   try {
     const writer = new NDEFReader();
 
-    // 方式一：直接寫一段文字（自動包成 text 記錄）
+    // 方式一: 直接寫一段文字 (自動包成 text 記錄)
     // await writer.write('Yopitek Web NFC 測試');
 
-    // 方式二：寫入一筆網址記錄（適合名片、導流）
+    // 方式二: 寫入一筆網址記錄 (適合名片, 導流)
     await writer.write({
       records: [
         { type: 'url', data: 'https://www.yupitek.com' },
@@ -200,9 +200,9 @@ document.getElementById('btnWrite').addEventListener('click', async () => {
       ],
     });
 
-    out('寫入成功！');
+    out('寫入成功!');
   } catch (err) {
-    out('寫入失敗：' + err.name + ' / ' + err.message);
+    out('寫入失敗:' + err.name + ' / ' + err.message);
   }
 });
 ```
@@ -249,15 +249,15 @@ CLA  INS  P1  P2  Lc   Data(0~N bytes)   Le
 macOS 已內建 PC/SC 支援，因此只要再安裝 Python 用的 `pyscard` 即可直接送 APDU：
 
 ```bash
-# 安裝 pcsc-tools（內含 pcsc_scan，方便確認讀卡機）
+# 安裝 pcsc-tools (內含 pcsc_scan, 方便確認讀卡機)
 brew install pcsc-tools
 
-# 安裝 pyscard（透過 macOS 系統的 PC/SC framework）
+# 安裝 pyscard (透過 macOS 系統的 PC/SC framework)
 pip install pyscard
 
 # 確認 pyscard 能列出讀卡機
 python3 -c "from smartcard.System import readers; print(readers())"
-# 預期輸出類似：['ACS ACR1252U ... 00 00']
+# 預期輸出類似: ['ACS ACR1252U ... 00 00']
 ```
 
 ### 3.3 第一個 APDU：Echo 與韌體版本
@@ -272,7 +272,7 @@ reader = readers()[0]
 conn = reader.createConnection()
 conn.connect()
 
-# 1) Echo：回傳 ASCII "12345678"
+# 1) Echo: 回傳 ASCII "12345678"
 sw, data = conn.transmit([0xFF, 0x00, 0x00, 0x00, 0x00])
 print('Echo SW :', toHexString(sw))
 print('Echo 回傳:', ''.join(chr(b) for b in data))
@@ -289,11 +289,11 @@ print('Firmware:', toHexString(data))
 把感應式卡片想像成一個「位元組郵政系統」：你要寄出指令，它回你資料。以支援真實 APDU（ISO 14443-4）的 **MIFARE DESFire** 測試卡為例，發送「Get Version」指令（`90 60 00 00 00`）：
 
 ```python
-# DESFire GetVersion：回傳第 1 個位元組 0x04 代表 DESFire 系列（EV1/EV2/EV3）
+# DESFire GetVersion: 回傳第 1 個位元組 0x04 代表 DESFire 系列 (EV1/EV2/EV3)
 sw, data = conn.transmit([0x90, 0x60, 0x00, 0x00, 0x00])
 print('SW  :', toHexString(sw))
 print('Data:', toHexString(data))
-# 例如：04 01 01 00 04 12 08 01
+# 例如: 04 01 01 00 04 12 08 01
 #       └DESFire┘└版本串﹀     └韌體/硬體/生產批號…﹀
 ```
 
@@ -320,9 +320,9 @@ FF  00  40  00  04  00  00  <LED>  <BUZZER>
 | BUZZER | 0x04 | 蜂鳴約 1 秒（時間單位以官方文件為準）|
 
 ```python
-# 綠燈亮 + 短嗶（範例位元組；請對照你手上韌體版本的官方 API 文件）
+# 綠燈亮 + 短嗶 (範例位元組; 請對照你手上韌體版本的官方 API 文件)
 sw, data = conn.transmit([0xFF, 0x00, 0x40, 0x00, 0x04, 0x00, 0x00, 0x02, 0x04])
-print('LED/Buzzer 回應:', toHexString(sw))   # 預期 90 00（成功）
+print('LED/Buzzer 回應:', toHexString(sw))   # 預期 90 00 (成功)
 
 # 熄滅
 sw, data = conn.transmit([0xFF, 0x00, 0x40, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00])

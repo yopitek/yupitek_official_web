@@ -128,5 +128,5 @@ Após concluir as configurações, reinicie o Flipper. Em `Apps → GPIO`, você
 ---
 
 **Página oficial do produto (OpenSourceSDRLab)**: https://opensourcesdrlab.com/products/opensourcesdrlab-new-5g-multi-in-one-module-flipperzero-module-with-screen-flipperzero5g-expansion-board?VariantsId=10754
-**Link da Página do Produto**: https://yupitek.com/pt-br/products/sdrlab/flipper-5g/
-**Manual Completo de Uso**: https://doczhtw.yupitek.com/sdrlab/expansion/5g-board/
+**Link da Página do Produto**: /pt/products/sdrlab/flipper-5g/
+**Manual Completo de Uso**: https://doc.yupitek.com/sdrlab/expansion/5g-board/

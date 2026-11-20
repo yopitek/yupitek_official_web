@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA RTX 5080 系列显卡"
-description: "榆阖科技代理 NVIDIA RTX 5080 系列显卡：ASUS、GIGABYTE、MSI 各品牌型号，适用 AI 运算、图像渲染及投影工作站。"
+description: "榆閤科技代理 NVIDIA RTX 5080 系列显卡：ASUS、GIGABYTE、MSI 各品牌型号，适用 AI 运算、图像渲染及投影工作站。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -9,7 +9,7 @@ showChildPages: false
 featureimage: "/images/products/graphiccard/banner-graphiccard.png"
 ---
 
-榆阖科技提供 NVIDIA RTX 5080 系列显卡采购服务，支持 AI 图像生成、3D 渲染、投影工作站及专业可视化应用。
+榆閤科技提供 NVIDIA RTX 5080 系列显卡采购服务，支持 AI 图像生成、3D 渲染、投影工作站及专业可视化应用。
 
 ## ASUS RTX 5080 系列
 

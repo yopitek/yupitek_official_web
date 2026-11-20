@@ -134,7 +134,7 @@ Suche nach einem WLAN-Interface — typischerweise `wlan0` oder `wlan1`. Wenn da
 
 ### Schritt 2 (Alternative): Extra-Kernelmodule installieren
 
-Wenn `modprobe mt76x2u` einen Fehler „Module not found" liefert, fehlen dem Kernel-Build möglicherweise die MT76-Module. Installiere sie vom China-Spiegel.
+Wenn `modprobe mt76x2u` einen Fehler „Module not found“ liefert, fehlen dem Kernel-Build möglicherweise die MT76-Module. Installiere sie vom China-Spiegel.
 
 ```bash
 sudo apt install -y linux-modules-extra-$(uname -r)
@@ -265,7 +265,7 @@ Versuche zunächst, das Modul direkt zu laden.
 sudo modprobe mt76x2u
 ```
 
-Wenn der Fehler „Module not found" erscheint, installiere das Extra-Module-Paket.
+Wenn der Fehler „Module not found“ erscheint, installiere das Extra-Module-Paket.
 
 ```bash
 sudo apt install -y linux-modules-extra-$(uname -r)
@@ -401,7 +401,7 @@ https://www.kali.org/get-kali/#kali-arm
 
 Wähle **Raspberry Pi 4 (64-bit)** oder **Raspberry Pi 5 (64-bit)**. Verwende nicht das 32-Bit-Image — 64-Bit ist erforderlich.
 
-> **China-Spiegel:** Wenn kali.org langsam ist, verwende 华为云:
+> **China-Spiegel:** Wenn kali.org langsam ist, verwende 华为云 (Huawei Cloud):
 > https://repo.huaweicloud.com/kali-images/
 > Navigiere zum neuesten Release-Ordner und lade dort das ARM64-Image herunter.
 
@@ -494,7 +494,7 @@ sudo aireplay-ng --test wlan1mon
 
 ---
 
-## Virtuelle Maschine USB-Durchleitung
+## Virtuelle Maschine USB-Durchleitung {#virtual-machine-usb-passthrough}
 
 ### VirtualBox
 
@@ -515,7 +515,7 @@ Führe `lsusb` in der VM aus, um `0e8d:7612` zu bestätigen, dann folge den Kali
 
 ---
 
-## Virtuelles Interface (VIF)
+## Virtuelles Interface (VIF) {#virtual-interface-vif}
 
 Hier übertrifft der AWUS036ACM den ACH. Der MT7612U-Chip hat vollständige kernel-native VIF-Unterstützung. Du kannst ein Monitor-Interface und ein Managed- oder AP-Interface gleichzeitig auf demselben Adapter betreiben — ohne Patches, ohne Hacks.
 
@@ -568,11 +568,11 @@ Führe `iwconfig` aus, um zu bestätigen, dass alle drei Interfaces (`wlan0`, `a
 | Problem | Wahrscheinliche Ursache | Lösung |
 |---------|------------------------|--------|
 | `lsusb` zeigt 0e8d:7612 nicht an | Adapter nicht mit Strom versorgt oder schlechtes Kabel | Anderen USB-Port ausprobieren. Hub mit Stromversorgung am Raspberry Pi verwenden. |
-| `modprobe mt76x2u` sagt „Module not found" | Kernel fehlen Extra-Module | `sudo apt install linux-modules-extra-$(uname -r)` ausführen |
+| `modprobe mt76x2u` sagt „Module not found“ | Kernel fehlen Extra-Module | `sudo apt install linux-modules-extra-$(uname -r)` ausführen |
 | Interface erscheint, kann sich aber nicht verbinden | Firmware-Datei fehlt | `sudo apt install firmware-misc-nonfree` ausführen (Debian) |
 | `airmon-ng start wlan0` schlägt fehl | NetworkManager läuft noch | Zuerst `sudo airmon-ng check kill` ausführen |
 | Monitor-Modus startet, aber kein Datenverkehr erfasst | Falscher Kanal oder falscher Interface-Name | Kanal setzen: `iwconfig wlan0mon channel 6` |
-| Einspeisungstest zeigt „No Answer" | AP zu weit oder falsches Interface | Näher an den AP herangehen. `wlan0mon` verwenden, nicht `wlan0`. |
+| Einspeisungstest zeigt „No Answer“ | AP zu weit oder falsches Interface | Näher an den AP herangehen. `wlan0mon` verwenden, nicht `wlan0`. |
 | VIF-Interface-Erstellung schlägt fehl | Treiber nicht vollständig geladen | Adapter abziehen, Modul neu laden: `sudo rmmod mt76x2u && sudo modprobe mt76x2u` |
 
 ## China-Spiegel Referenz
@@ -583,10 +583,10 @@ Alle in dieser Anleitung verwendeten Ressourcen — kein GitHub erforderlich:
 |-----------|-----|-----------|
 | Alfa offizielle Treiber | [files.alfa.com.tw](https://files.alfa.com.tw) | Treiberpakete, Firmware |
 | Alfa Dokumentation | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | Produkthandbücher |
-| 清华大学 Spiegel | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里云 Spiegel | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (empfohlen) |
-| 中科大 Spiegel | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (empfohlen) |
-| 华为云 Spiegel | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM-Images (Backup) |
+| 清华大学 Spiegel (Tsinghua-Universität) | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里云 Spiegel (Aliyun) | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (empfohlen) |
+| 中科大 Spiegel (USTC) | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (empfohlen) |
+| 华为云 Spiegel (Huawei Cloud) | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM-Images (Backup) |
 | MT76-Treiber (Mainline-Kernel) | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | Im Kernel enthalten, kein Kompilieren nötig |
 
 ---

@@ -24,8 +24,6 @@ faq:
 ---
 1. [Что такое IBSS и 802.11s Mesh — и зачем они нужны?](#1-what-are-ibss-and-80211s-mesh) 2. [Технические характеристики ALFA AWUS036ACM](#2-alfa-awus036acm-hardware-specifications) 3. [Драйвер MT7612U на Raspberry Pi](#3-the-mt7612u-driver-on-raspberry-pi) 4. [Режим 1: Беспроводная сеть IBSS Ad Hoc](#4-mode-1-ibss-ad-hoc-networking) 5. [Режим 2: Меш-сеть 802.11s Mesh Point](#5-mode-2-80211s-mesh-point-networking) 6. [Практические сценарии применения](#6-real-world-use-cases) 7. [Почему AWUS036ACM — единственный выбор ALFA для этих задач](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this) 8. [Часто задаваемые вопросы и устранение неполадок](#8-faq-and-troubleshooting) 9. [Где купить](#9-where-to-buy)
 
-# ALFA AWUS036ACM: Включение IBSS Ad Hoc и 802.11s Mesh-сетей на Raspberry Pi с MT7612U
-
 {{< tldr >}}
 AWUS036ACM с чипсетом MT7612U, драйвер mt76x2u построен на Linux mac80211, полностью поддерживает режимы IBSS Ad Hoc и 802.11s Mesh Point. В статье подробно разобраны принципы работы, пошаговая настройка и практические сценарии применения.
 {{< /tldr >}}
@@ -42,7 +40,7 @@ AWUS036ACM с чипсетом MT7612U, драйвер mt76x2u построен 
 
 ---
 
-## 1. Что такое IBSS и 802.11s Mesh?
+## 1. Что такое IBSS и 802.11s Mesh? {#1-what-are-ibss-and-80211s-mesh}
 
 ### IBSS — Independent Basic Service Set (режим Ad Hoc)
 
@@ -96,7 +94,7 @@ MT7612U — один из немногих чипсетов, где ответ �
 
 ---
 
-## 2. Технические характеристики ALFA AWUS036ACM
+## 2. Технические характеристики ALFA AWUS036ACM {#2-alfa-awus036acm-hardware-specifications}
 
 AWUS036ACM — адаптер ALFA Network AC1200 с двойным диапазоном и интерфейсом USB 3.0, созданный для опытных пользователей Linux и разработчиков встроенных систем.
 
@@ -175,7 +173,7 @@ WPA2 / WPA / WEP / WPA-PSK / 802.1X / 64–128-разрядный WEP
 
 ---
 
-## 3. Драйвер MT7612U на Raspberry Pi
+## 3. Драйвер MT7612U на Raspberry Pi {#3-the-mt7612u-driver-on-raspberry-pi}
 
 ### Драйвер: mt76x2u (часть семейства mt76)
 
@@ -268,7 +266,7 @@ MediaTek MT7612U    ← физический чип (2×2 MIMO, USB 3.0)
 
 ---
 
-## 4. Режим 1: Беспроводная сеть IBSS Ad Hoc
+## 4. Режим 1: Беспроводная сеть IBSS Ad Hoc {#4-mode-1-ibss-ad-hoc-networking}
 
 ### Как работает IBSS
 
@@ -457,7 +455,7 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 ---
 
-## 5. Режим 2: Меш-сеть 802.11s Mesh Point
+## 5. Режим 2: Меш-сеть 802.11s Mesh Point {#5-mode-2-80211s-mesh-point-networking}
 
 ### Как работает 802.11s
 
@@ -620,7 +618,7 @@ sudo batctl o    # Таблица источников (все известны�
 sudo batctl tg   # Таблица трансляции (соответствие MAC → IP)
 ```
 
-### Автозапуск меш-сети 802.11s после перезагрузки
+### Автозапуск меш-сети 802.11s после перезагрузки {#making-80211s-mesh-persistent}
 
 Создайте файл `/etc/systemd/system/mesh-point.service`:
 
@@ -655,7 +653,7 @@ sudo systemctl start mesh-point.service
 
 ---
 
-## 6. Практические сценарии применения
+## 6. Практические сценарии применения {#6-real-world-use-cases}
 
 ### Сценарий 1 — Автономная сенсорная сеть (умное земледелие / экологический мониторинг)
 
@@ -724,7 +722,7 @@ sudo tcpdump -i mon0 -w capture.pcap
 
 ---
 
-## 7. Почему AWUS036ACM — единственный выбор ALFA для этих задач
+## 7. Почему AWUS036ACM — единственный выбор ALFA для этих задач {#7-why-the-awus036acm-is-the-only-alfa-choice-for-this}
 
 ### Решающий фактор: совместимость с mac80211
 
@@ -735,7 +733,7 @@ sudo tcpdump -i mon0 -w capture.pcap
 | Модель | Чипсет | Драйвер | IBSS | 802.11s Mesh | Примечания |
 |---|---|---|---|---|---|
 | **AWUS036ACM** | MT7612U | mt76x2u (в ядре ≥ 4.19) | ✅ | ✅ | **Единственный выбор** |
-| AWUS036ACH | RTL8812AU | rtw88 (в ядре ≥ 6.14) | ✅ (только ядро ≥ 6.14) | ❌ | Новый встроенный драйвер; нет Mesh Point |
+| AWUS036ACH | RTL8812AU | rtw88 (в ядре ≥ 6.13) | ✅ (только ядро ≥ 6.13) | ❌ | Новый встроенный драйвер; нет Mesh Point |
 | AWUS036ACS | RTL8811AU | rtl8812au-dkms (OOK) | ❌ | ❌ | Внеядерный драйвер; нет IBSS/Mesh |
 | AWUS036AX | RTL8832BU | rtw88 (в ядре) | ❌ | ❌ | Нет поддержки Raspberry Pi |
 | AWUS036AXER | RTL8832BU | rtw88 (в ядре) | ❌ | ❌ | Нет поддержки Raspberry Pi |
@@ -758,7 +756,7 @@ AWUS036ACHM (MT7610U) — предыдущий адаптер ALFA с подде
 
 ---
 
-## 8. Часто задаваемые вопросы и устранение неполадок
+## 8. Часто задаваемые вопросы и устранение неполадок {#8-faq-and-troubleshooting}
 
 **В: На моём Pi отображается только `wlan0`. Где `wlan1`?**
 
@@ -832,7 +830,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ---
 
-## 9. Где купить
+## 9. Где купить {#9-where-to-buy}
 
 ALFA AWUS036ACM доступен на [yupitek.com](https://yupitek.com) — официальном дилере ALFA Network. Покупка через авторизованного дилера гарантирует получение оригинального оборудования со стандартной гарантией Alfa Network Inc.
 

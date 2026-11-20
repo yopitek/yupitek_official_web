@@ -3,7 +3,7 @@ title: "Sua VM Kali Linux não detecta o adaptador USB externo? Guia de diagnós
 description: "Manual de diagnóstico padronizado de USB Pass-through: Extension Pack do VirtualBox, controlador USB 3.0 (xHCI), grupo vboxusers, arbitragem USB do VMware, fluxo de diagnóstico lsusb→iwconfig→dmesg e FAQ."
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -17,7 +17,7 @@ faq:
   - question: "Depois de configurar um filtro USB, o host não consegue mais usar o adaptador. Isso é normal?"
     answer: "Sim, é o esperado. Depois que o dispositivo é passado para o Guest, o controle pertence ao Guest e o host não pode usá-lo ao mesmo tempo. Quando precisar do adaptador de volta no host, libere-o (release) pelo ícone USB na janela da VM."
   - question: "O lsusb dentro do Guest mostra o adaptador, mas não há interface wlan. Qual driver devo instalar?"
-    answer: "Depende do chipset: o AWUS036AXML (MediaTek MT7921AU) usa o driver mt7921u integrado ao kernel — plug-and-play no Kernel 5.18+; primeiro confirme que o apt install linux-firmware está atualizado. O AWUS036ACH (Realtek RTL8812AU) usa um driver fora da árvore (out-of-tree) — instale o aircrack-ng/rtl8812au mantido pela comunidade e compile com DKMS (e trate da assinatura MOK para o Secure Boot; não desative o Secure Boot)."
+    answer: "Depende do chipset: o AWUS036AXML (MediaTek MT7921AUN) usa o driver mt7921u integrado ao kernel — plug-and-play no Kernel 5.18+; primeiro confirme que o apt install linux-firmware está atualizado. O AWUS036ACH (Realtek RTL8812AU) usa um driver fora da árvore (out-of-tree) — instale o aircrack-ng/rtl8812au mantido pela comunidade e compile com DKMS (e trate da assinatura MOK para o Secure Boot; não desative o Secure Boot)."
   - question: "Por que o Guest não inicia depois que selecionei o controlador USB 3.0?"
     answer: "Alguns kernels antigos de Guest têm suporte fraco a xHCI. Se o seu Kali for uma versão antiga, tente: desligar → voltar para USB 2.0 (EHCI) Controller → iniciar → atualizar o kernel → voltar para USB 3.0. Mantenha o Kali o mais atualizado possível para obter o suporte xHCI mais completo."
   - question: "O adaptador é rápido em uma máquina física, mas fica lento dentro da VM. Isso é normal?"
@@ -25,7 +25,7 @@ faq:
 ---
 
 > **Plataformas compatíveis**: hosts Windows / Linux / macOS com Oracle VirtualBox / VMware Workstation (Guest = Kali Linux / Debian / Ubuntu)
-> **Hardware de referência**: ALFA AWUS036ACH (Realtek RTL8812AU) / ALFA AWUS036AXML (MediaTek MT7921AU)
+> **Hardware de referência**: ALFA AWUS036ACH (Realtek RTL8812AU) / ALFA AWUS036AXML (MediaTek MT7921AUN)
 > **Escopo deste artigo**: manual de diagnóstico padronizado de «USB Pass-through». As limitações do USB Pass-through em hosts macOS são explicadas no capítulo 5.
 
 ---
@@ -175,7 +175,7 @@ Resultado esperado (conforme o modelo):
 ```
 # AWUS036ACH (Realtek RTL8812AU)
 Bus ... ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac 2T2R DB WLAN Adapter
-# ou AWUS036AXML (MediaTek MT7921AU)
+# ou AWUS036AXML (MediaTek MT7921AUN)
 Bus ... ID 0e8d:7961 MediaTek Inc. Wireless_Device
 ```
 
@@ -280,7 +280,7 @@ Executar uma máquina virtual a partir de um host macOS com USB Pass-through é 
 |------------|-------------------|-------------|
 | Host Windows + VirtualBox / VMware + Guest Kali | ✅ Suportado | Todos os procedimentos deste capítulo se aplicam |
 | Host Linux + VirtualBox / VMware + Guest Kali | ✅ Suportado | Lembre-se do grupo vboxusers (VB) e do serviço vmware-usbarbitrator (VMware) |
-| **macOS (Apple Silicon)** + VirtualBox | ⚠️ **USB Pass-through limitado** | Recomenda-se mudar para o VMware Fusion ou usar um host Linux／Windows |
+| **macOS (Apple Silicon)** + VirtualBox | ⚠️ **USB Pass-through limitado** | Recomenda-se mudar para o VMware Fusion ou usar um host Linux/Windows |
 | macOS (Intel) + VirtualBox | ✅ Suportado | Exige aprovação de extensões de kernel + Extension Pack coincidente com a versão |
 | **Guest é macOS** | ❌ Não recomendado | Este artigo pressupõe Guests Linux como Kali / Debian / Ubuntu |
 
@@ -304,7 +304,7 @@ Executar uma máquina virtual a partir de um host macOS com USB Pass-through é 
 
 | Item | Ação | Campo de registro |
 |------|------|-------------------|
-| Software de virtualização e versão | VirtualBox: `vboxmanage --version` ／ VMware: Help → About | \_\_\_\_\_ |
+| Software de virtualização e versão | VirtualBox: `vboxmanage --version` / VMware: Help → About | \_\_\_\_\_ |
 | A versão do Extension Pack coincide? | VirtualBox: `VBoxManage list extpacks` | Versão \_\_\_\_\_ |
 | Permissões / serviços do host | Host Linux: `id` para ver vboxusers; VMware: `systemctl status vmware-usbarbitrator` | \_\_\_\_\_ |
 | Configuração do controlador USB | VirtualBox: USB 3.0 (xHCI) Controller marcado? | Sim / Não |
@@ -326,7 +326,7 @@ Executar uma máquina virtual a partir de um host macOS com USB Pass-through é 
 
 ### Pacote de informações para o Intake de suporte
 
-Antes de ligar para o suporte técnico／enviar o ticket, anexe as informações abaixo de uma vez para o suporte entrar direto no assunto:
+Antes de ligar para o suporte técnico/enviar o ticket, anexe as informações abaixo de uma vez para o suporte entrar direto no assunto:
 
 > **SO do host + arquitetura, software de virtualização e versão, se o Extension Pack está instalado e sua versão, saída do `lsusb` do host, saída do `lsusb` do Guest, saída do `ip link` / `iwconfig` do Guest, mensagens de `dmesg` relevantes, modelo do adaptador e método de conexão (USB-C / USB-A, direto ou via Hub)**
 
@@ -345,7 +345,7 @@ Sim, é o esperado. Depois que o dispositivo é passado para o Guest, o controle
 
 **P4: O `lsusb` dentro do Guest mostra o adaptador, mas não há interface wlan. Qual driver devo instalar?**
 Depende do chipset:
-- **AWUS036AXML (MediaTek MT7921AU)**: usa o driver `mt7921u` integrado ao kernel — plug-and-play no Kernel 5.18+; primeiro confirme que o `apt install linux-firmware` está atualizado.
+- **AWUS036AXML (MediaTek MT7921AUN)**: usa o driver `mt7921u` integrado ao kernel — plug-and-play no Kernel 5.18+; primeiro confirme que o `apt install linux-firmware` está atualizado.
 - **AWUS036ACH (Realtek RTL8812AU)**: usa um driver fora da árvore (out-of-tree) — instale o `aircrack-ng/rtl8812au` mantido pela comunidade e compile com DKMS (e trate da assinatura MOK para o Secure Boot; não desative o Secure Boot).
 
 **P5: Por que o Guest não inicia depois que selecionei o controlador USB 3.0?**
@@ -365,7 +365,7 @@ Mais de 90% dos casos de «a VM não detecta o adaptador externo» se devem a um
 3. **Configure o controlador USB em USB 3.0 (xHCI)** e use um filtro USB para o adaptador montar automaticamente.
 4. **Localize a camada dentro do Guest com `lsusb → iwconfig / ip link → dmesg`**; se faltar driver, instale — pare de adivinhar que o adaptador está com defeito.
 
-**Hardware recomendado**: o ALFA AWUS036AXML (MediaTek MT7921AU) tem no Kali com kernel mais novo um **driver integrado ao kernel, plug-and-play**, e é o que dá menos trabalho após o Pass-through na VM. O ALFA AWUS036ACH (Realtek RTL8812AU) também é útil, mas lembre-se de compilar o driver da comunidade com DKMS dentro do Guest e tratar da assinatura do Secure Boot (consulte o artigo de diagnóstico DKMS do RTL8812AU deste site). Para ambos, recomenda-se usar no host uma porta／Hub USB com alimentação independente, para eliminar de uma vez a variável de «perda do dispositivo».
+**Hardware recomendado**: o ALFA AWUS036AXML (MediaTek MT7921AUN) tem no Kali com kernel mais novo um **driver integrado ao kernel, plug-and-play**, e é o que dá menos trabalho após o Pass-through na VM. O ALFA AWUS036ACH (Realtek RTL8812AU) também é útil, mas lembre-se de compilar o driver da comunidade com DKMS dentro do Guest e tratar da assinatura do Secure Boot (consulte o artigo de diagnóstico DKMS do RTL8812AU deste site). Para ambos, recomenda-se usar no host uma porta/Hub USB com alimentação independente, para eliminar de uma vez a variável de «perda do dispositivo». Note, porém, que a injeção depende do kernel: há relatos da comunidade de injeção funcional em kernels anteriores ao 6.16, mas no kernel stock 6.16 e posteriores (testado no 6.17) o AXML falha no teste de injeção de pacotes (`aireplay-ng --test`: Found 0 APs / No Answer), impossibilitando deauth e captura de handshake. A causa é uma regressão do mac80211 chanctx, não uma limitação do chip; drivers comunitários com patch podem restaurar a injeção, mas o firmware ainda trava a taxa (1/6 Mbps, sem injeção HT/VHT). Modo monitor, AP e WPA3 não são afetados. Se precisar de injeção, escolha o AWUS036ACH ou o AWUS036EACS.
 
 **Próximo passo**: guarde uma cópia da planilha do capítulo 6 na área de trabalho da sua máquina virtual Kali; toda vez que «não detectar o adaptador», execute-a inteira primeiro e depois decida se abre um ticket de suporte técnico — siga a tabela; os dados curam tudo.
 

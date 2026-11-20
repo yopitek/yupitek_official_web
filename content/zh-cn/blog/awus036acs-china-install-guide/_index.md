@@ -16,26 +16,28 @@ series_order: 3
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 faq:
   - question: "AWUS036ACS 用什么芯片？跟 AWUS036ACH 一样吗？"
-    answer: "采用 Realtek RTL8811AU 芯片。它不与 RTL8812AU 共用驱动，需要使用社区版 8821au 驱动（morrownr/8821au-20210708），模块名为 `8821au`。"
+    answer: "采用 Realtek RTL8811AU 芯片。驱动看内核版本：Linux 内核 6.13 以上（例如 Ubuntu 24.04 HWE / kernel 6.17）已内置 rtw88_8821au 驱动，插上即认、免 DKMS；只有在旧内核（低于 6.13）上，才需要使用社区版 8821au 驱动（morrownr/8821au-20210708，模块名 `8821au`）。它不与 RTL8812AU 共用驱动。先用 uname -r 确认内核版本。"
   - question: "AWUS036ACS 支持监听模式吗？"
-    answer: "支持，RTL8811AU 完美支持监听模式与数据包注入，是安全研究的经济实惠选择。"
+    answer: "支持。RTL8811AU 完美支持监听模式与数据包注入，是安全研究的经济实惠选择（我们在 kernel 6.17 内置 rtw88_8821au 驱动下实测注入 2.4GHz 100%、5GHz 96%，并端到端捕获 WPA .22000）。仅限自有或已授权的网络。"
   - question: "在中国安装 AWUS036ACS 需要翻墙吗？"
     answer: "不一定。从已验证的 GitHub 仓库（morrownr/8821au-20210708）下载驱动源码；如果 GitHub 速度较慢，请使用你信任的代理或镜像。编译工具仍可用国内镜像安装。"
   - question: "AWUS036ACS 的 USB ID 是多少？"
     answer: "Realtek RTL8811AU 的 USB ID 为 0bda:0811，用 lsusb 可确认。"
   - question: "Kali Linux 安装 AWUS036ACS 驱动的指令是什么？"
-    answer: "先安装编译工具，克隆 8821au 驱动（GitHub 上的 morrownr/8821au-20210708），再执行 `sudo sh install-driver.sh`。apt 软件包 realtek-rtl88xxau-dkms 是 RTL8812AU 的驱动，不适用于此网卡。"
+    answer: "先用 uname -r 确认内核版本。内核 6.13+ 已内置 rtw88_8821au，插上即用、无需安装驱动；只有旧内核才需先装编译工具，克隆 8821au 驱动（GitHub 上的 morrownr/8821au-20210708），再执行 `sudo sh install-driver.sh`。apt 软件包 realtek-rtl88xxau-dkms 是 RTL8812AU 的驱动，不适用于此网卡。"
 ---
 
 
 
-刚收到这款精巧的 AWUS036ACS，迫不及待插上电脑却发现 Linux 没反应？别急，这很正常。虽然它内置的 RTL8811AU 芯片是安全研究的神器，完美支持监听模式和数据包注入，但驱动并不在系统内核里，得咱们亲自动手装一下。
+刚收到这款精巧的 AWUS036ACS？好消息：它内置的 RTL8811AU 芯片是安全研究的神器，完美支持监听模式和数据包注入。在 **Linux 内核 6.13 以上**（例如 Ubuntu 24.04 HWE / kernel 6.17）上，内核已内置 rtw88_8821au 驱动，插上即认、免 DKMS；只有在**旧内核**（低于 6.13）上，才需要从 GitHub 下载社区版 8821au 驱动自己编译。本指南两种情形都讲。
 
 {{< tldr >}}
-AWUS036ACS 采用 RTL8811AU 芯片。所有发行版都从 GitHub 仓库 morrownr/8821au-20210708 下载源码，并用 install-driver.sh 编译 8821au DKMS 驱动，支持监听模式与数据包注入。
+AWUS036ACS 采用 RTL8811AU 芯片。内核 6.13+（含 Ubuntu 24.04 HWE / kernel 6.17）已内置 rtw88_8821au 驱动，免 DKMS、插上即用，监听与注入实测可用（2.4GHz 100%、5GHz 96%、端到端 WPA .22000）；只有旧内核才需从 GitHub 仓库 morrownr/8821au-20210708 用 install-driver.sh 编译社区版 8821au DKMS 驱动。
 {{< /tldr >}}
 
 国内的小伙伴访问 GitHub 可能不太顺畅，本指南的驱动源码取自已验证的 GitHub 仓库；如果速度不佳，请使用你信任的代理或镜像。咱们现在就开始一步步把它“驯服”。
+
+> **先确认内核版本：** 请先执行 `uname -r`。内核 6.13+（如 Ubuntu 24.04 HWE / kernel 6.17）已内置 rtw88_8821au，插上即用、免 DKMS，监听与注入实测可用（2.4GHz 100%、5GHz 96%、端到端 WPA .22000）；下面的编译安装步骤仅在旧内核（低于 6.13）上才需要。仅限自有或已授权的网络。
 
 ## 动手前的准备
 
@@ -273,7 +275,7 @@ sudo reboot
 
 ---
 
-## 树莓派 (Raspberry Pi) 4B / 5
+## 树莓派 (Raspberry Pi) 4B / 5 {#raspberry-pi-4b--5}
 
 ### 1. 镜像选择
 
@@ -285,7 +287,7 @@ sudo reboot
 ```bash
 # 换源
 sudo nano /etc/apt/sources.list
-# 换成中科大：deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
+# 换成中科大: deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 
 sudo apt update && sudo apt full-upgrade -y
 sudo reboot

@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["وضع-المراقبة", "Kali-Linux", "airmon-ng", "iw", "محول-WiFi", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ما الفرق بين وضع المراقبة والوضع المُدار؟"
     answer: "وضع المراقبة يجعل المحول يلتقط جميع إطارات 802.11 في الهواء، متجاوزاً قيد الوضع المُدار الذي يستقبل فقط الحزم المطابقة لعنوان MAC الخاص به. هو أساس اختبار الاختراق اللاسلكي."
@@ -17,7 +17,7 @@ faq:
   - question: "ماذا أفعل إذا عادت الواجهة تلقائياً للوضع المُدار بعد تفعيل المراقبة؟"
     answer: "wpa_supplicant أو NetworkManager يعيد تشغيلها في الخلفية. نفّذ airmon-ng check kill لإنهاء هذه العمليات."
   - question: "ما محولات ALFA التي تدعم وضع المراقبة بالكامل على Kali Linux؟"
-    answer: "AWUS036ACH (RTL8812AU) و AWUS036AXML (MT7921AUN) و AWUS036ACM (MT7612U) جميعها تدعمه بالكامل. ACM يعمل فور التوصيل."
+    answer: "AWUS036ACH (RTL8812AU) و AWUS036AXML (MT7921AUN) و AWUS036ACM (MT7612U) جميعها تدعمه بالكامل. ACM يعمل فور التوصيل. ملاحظة: يفشل حقن الحزم في AWUS036AXML على النواة الأصلية 6.17 (تراجع في mac80211 chanctx؛ توجد تقارير من المجتمع للنواة قبل 6.16). للحقن استخدم ACH / ACM / AX."
   - question: "كيف أحل خطأ Fixed channel wlan0mon: -1 في airodump-ng؟"
     answer: "يعني أن airodump-ng لا يستطيع تبديل القناة. نفّذ iwconfig wlan0mon channel 1 لتحديد القناة، وأنهِ wpa_supplicant المتبقي."
 ---
@@ -202,7 +202,7 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan0mon
 | الموديل | الشريحة المعالجة | النطاق | وضع المراقبة | الحقن | ملاحظات |
 |---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ | ✅ | الأشهر لاختبار الاختراق |
-| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E، يتطلب نواة 5.18+ |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ⚠️ تقارير المجتمع قبل النواة 6.16؛ فشل الاختبار على 6.17 | Wi-Fi 6E، يتطلب نواة 5.18+ |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ | ✅ | دعم ممتاز لبرنامج تشغيل Linux |
 
 جميع الموديلات المذكورة أعلاه تحظى بدعم مُتحقق منه لبرامج التشغيل في Kali Linux 2024.x و2025.x. بالنسبة للشرائح كـ RTL8812AU، قد تحتاج تثبيت برنامج التشغيل من مستودع Aircrack-ng على GitHub إذا كانت نسخة نواتك حديثة جداً.

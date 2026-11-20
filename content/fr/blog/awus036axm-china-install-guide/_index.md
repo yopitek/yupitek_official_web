@@ -1,22 +1,22 @@
 ---
 title: "Guide d'installation du pilote ALFA AWUS036AXM pour la Chine : Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "Guide étape par étape pour installer les pilotes ALFA AWUS036AXM en Chine en utilisant des miroirs domestiques. Pilote MT7921AUN WiFi 6E dans le noyau, support complet du mode moniteur et VIF. Couvre Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi. Aucun GitHub requis."
+description: "Guide étape par étape pour installer les pilotes ALFA AWUS036AXM en Chine en utilisant des miroirs domestiques. Pilote MT7921AUN WiFi 6 dans le noyau, support du mode moniteur et VIF (l'injection de paquets n'est pas prise en charge par cet adaptateur). Couvre Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi. Aucun GitHub requis."
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axm-china-install-guide"
-tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6e", "vif"]
+tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6", "vif"]
 categories: ["Guides de Pilotes"]
 series: ["alfa-china-install-guide"]
 series_order: 6
 related_product: "/fr/products/alfa/awus036axm/"
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
-  - question: "Quel chipset utilise l'AWUS036AXM ? Supporte-t-il le WiFi 6E ?"
-    answer: "Il utilise le chipset MediaTek MT7921AUN et supporte le WiFi 6E tri-bande (2,4/5/6 GHz)."
+  - question: "Quel chipset utilise l'AWUS036AXM ? Supporte-t-il le WiFi 6 ?"
+    answer: "Il utilise le chipset MediaTek MT7921AUN et supporte le WiFi 6 (double bande 2,4/5 GHz). Nous avons testé 2,4/5 GHz ; le 6 GHz n'a pas été vérifié."
   - question: "Le pilote de l'AWUS036AXM nécessite-t-il une installation manuelle ?"
     answer: "Non, le pilote mt7921u est intégré au noyau Linux depuis 5.18. Seul le paquet de firmware est à installer."
   - question: "L'AWUS036AXM supporte-t-il les interfaces virtuelles VIF ?"
@@ -28,10 +28,10 @@ faq:
 ---
 
 {{< tldr >}}
-L'AWUS036AXM utilise le chipset MT7921AUN supportant le WiFi 6E. Le pilote est intégré au noyau. Après installation du firmware, le mode moniteur, l'injection de paquets et le VIF sont disponibles.
+L'AWUS036AXM utilise le chipset MT7921AUN supportant le WiFi 6 (2,4/5 GHz). Le pilote `mt7921u` est intégré au noyau, sans compilation. Après installation du firmware, le mode moniteur, l'AP/WPA3 et le VIF fonctionnent (vérifié) ; en revanche, l'injection de paquets échoue sous le noyau stock 6.17, donc l'AWUS036AXM ne convient pas à l'injection / aux tests d'intrusion (pour l'injection, utilisez plutôt l'AWUS036ACM / ACS / AX).
 {{< /tldr >}}
 
-L'AWUS036AXM est l'adaptateur WiFi 6E tri-bande d'ALFA avec un connecteur USB-A en forme de L peu encombrant. Sa puce MT7921AUN utilise le pilote `mt7921u`, intégré au noyau Linux depuis la version 5.18. Le connecteur en forme de L permet de garder les ports USB adjacents libres sur les ordinateurs portables. Ce guide couvre la configuration complète — micrologiciel, vérification du pilote, mode moniteur, injection de paquets et VIF — sans toucher à GitHub.
+L'AWUS036AXM est l'adaptateur WiFi 6 d'ALFA avec un connecteur USB-A en forme de L peu encombrant. Sa puce MT7921AUN utilise le pilote `mt7921u`, intégré au noyau Linux depuis la version 5.18. Le connecteur en forme de L permet de garder les ports USB adjacents libres sur les ordinateurs portables. Ce guide couvre la configuration complète — micrologiciel, vérification du pilote, mode moniteur et VIF — sans toucher à GitHub. Remarque : l'injection de paquets ne fonctionne pas sur cet adaptateur (voir ci-dessous).
 
 ## Avant de commencer
 
@@ -62,7 +62,6 @@ Passez à la section correspondant à votre OS :
 - [Kali Linux](#kali-linux)
 - [Ubuntu 22.04 / 24.04](#ubuntu-2204--2404)
 - [Debian](#debian)
-- [Raspberry Pi 4B / 5](#raspberry-pi-4b--5)
 
 ---
 
@@ -135,13 +134,11 @@ Recherchez `Mode:Monitor` sur l'interface.
 
 ---
 
-### Étape 5 : Tester l'injection de paquets {#test-packet-injection}
+### Étape 5 : À propos de l'injection de paquets {#test-packet-injection}
 
-```bash
-sudo aireplay-ng --test wlan1
-```
+⚠️ **L'AWUS036AXM ne prend pas en charge l'injection de paquets.** Sous le noyau stock 6.17, `sudo aireplay-ng --test wlan1` échoue — la cause principale est une régression mac80211 chanctx depuis le noyau 6.16 (et non une limite propre à la puce). Les pilotes corrigés par la communauté permettent de faire fonctionner l'injection, mais le firmware verrouille toujours le débit (1/6 Mbps) et ne peut pas injecter de trames HT/VHT.
 
-Un résultat réussi affichera : `Injection is working!`.
+L'AWUS036AXM convient donc pour la simple connexion, les points d'accès AP et la capture en mode moniteur, mais **pas pour l'injection de paquets ni les tests d'intrusion**. Si vous avez besoin de l'injection, utilisez plutôt l'AWUS036ACM / ACHM / ACS / ACH / AX / EACS. À utiliser uniquement sur des réseaux que vous possédez ou êtes autorisé à tester.
 
 ---
 

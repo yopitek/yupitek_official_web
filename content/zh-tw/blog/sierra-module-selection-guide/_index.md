@@ -22,8 +22,6 @@ faq:
     answer: "台灣可透過榆閤科技（Yopitek）採購 Sierra Wireless 全系列蜂窩模組。請至 Yopitek 官網產品頁查詢型號與報價，或直接 email: sales@yupitek.com"
 ---
 
-# Sierra Wireless 十款蜂窩模組完整選購指南：LTE Cat 4 到 5G mmWave 怎麼選
-
 {{< alert >}}
 Yopitek 提供 Sierra Wireless / Semtech 相關產品資訊、通路供應與技術內容；非官方授權經銷商，本資料僅供技術參考。
 {{</alert >}}

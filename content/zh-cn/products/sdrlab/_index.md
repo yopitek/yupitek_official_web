@@ -1,6 +1,6 @@
 ---
 title: "SDRLAB 软件定义无线电模块"
-description: "榆阖科技提供 SDRLAB SDR 软件定义无线电模块与 Flipper Zero 扩展板，适用无线通信研究、业余无线电及 RF 信号分析。"
+description: "榆閤科技提供 SDRLAB SDR 软件定义无线电模块与 Flipper Zero 扩展板，适用无线通信研究、业余无线电及 RF 信号分析。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

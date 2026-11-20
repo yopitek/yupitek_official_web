@@ -22,8 +22,6 @@ faq:
     answer: "Nove em cada dez vezes o problema está no SIM ou no APN. Abra o terminal e execute AT+CPIN? para confirmar o estado do cartão SIM, depois use AT!GSTATUS? para confirmar o registro na estação base. Por fim, verifique se os parâmetros de APN inseridos atendem aos requisitos da operadora."
 ---
 
-# Guia completo de perguntas frequentes sobre módulos Sierra Wireless: mapa de diagnóstico desde o dispositivo não detectado até a falta de conexão à internet
-
 Você trabalha com módulos 4G/5G da Sierra Wireless (seja o EM7455, o EM7565 ou o mais recente EM919x)? O pior que pode acontecer é instalá-lo e ele «não reagir» ou «não conectar à internet». Os tutoriais na internet são bem dispersos: às vezes dizem para fazer flash do firmware, às vezes para mudar uma configuração. Este artigo apresenta um «mapa de diagnóstico em quatro camadas». Siga os passos um a um e você certamente encontrará o ponto do problema.
 
 {{< tldr >}}

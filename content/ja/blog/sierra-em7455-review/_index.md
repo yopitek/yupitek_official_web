@@ -22,8 +22,6 @@ faq:
     answer: "はい。DW5811e は Dell のリブランド版 EM7455 で、コアは同じ Qualcomm MDM9230 チップセットです。"
 ---
 
-# Sierra EM7455 完全レビュー：Maker と研究室で人気の Sierra カードの理由
-
 {{< alert >}}
 Yopitek は Sierra Wireless / Semtech の製品情報、供給チャネルおよび技術コンテンツを提供しています。公式の正規代理店ではなく、本資料は技術参考のみを目的としています。
 {{</alert >}}
@@ -130,7 +128,7 @@ EM7455 は一般的な Linux システムでのサポートが非常に良好で
 
 ```bash
 lsusb | grep -i sierra
-# 以下のような出力が表示されます：Bus 001 Device 002: ID 1199:9079 Sierra Wireless, Inc. EM7455
+# 以下のような出力が表示されます: Bus 001 Device 002: ID 1199:9079 Sierra Wireless, Inc. EM7455
 ```
 
 ### ステップ 2：必要なツールをインストール
@@ -149,7 +147,7 @@ sudo qmicli -d /dev/cdc-wdm0 --dms-set-operating-mode=offline
 sudo qmicli -d /dev/cdc-wdm0 --dms-set-operating-mode=reset
 # モード切り替えが成功したか確認
 sudo qmicli -d /dev/cdc-wdm0 --dms-swi-get-usb-composition
-# 出力：USB composition 6: DM, NMEA, AT, QMI
+# 出力: USB composition 6: DM, NMEA, AT, QMI
 ```
 
 > 一部の通信事業者で MBIM モードが要求される場合は、`AT!USBCOMP` コマンドを調べて `mbimcli` で接続してください。
@@ -158,7 +156,7 @@ sudo qmicli -d /dev/cdc-wdm0 --dms-swi-get-usb-composition
 
 ```bash
 sudo qmicli -d /dev/cdc-wdm0 --dms-set-fcc-authentication
-# ModemManager で完全自動化したい場合：
+# ModemManager で完全自動化したい場合:
 sudo ln -sft /etc/ModemManager/fcc-unlock.d /usr/share/ModemManager/fcc-unlock.available.d/*
 ```
 
@@ -226,7 +224,7 @@ GUI（LuCI Web インターフェース）をお好みの場合は、Network か
 
 ```bash
 lsusb | grep 413c
-# 出力例：Bus 001 Device 003: ID 413c:81b6 Dell Computer Corp. DW5811e
+# 出力例: Bus 001 Device 003: ID 413c:81b6 Dell Computer Corp. DW5811e
 ```
 
 良いニュースとして、Dell のノートPC（Latitude、Precision など）の多くは、コミュニティの報告によると BIOS ホワイトリストによる制限がなく、そのまま挿して使用できることが多いです。

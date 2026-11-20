@@ -3,7 +3,7 @@ title: "DGX Spark Wi-Fi 连不上？只要十分钟，这张 ALFA USB 无线网�
 description: "NVIDIA DGX Spark 内置 Wi-Fi 连接问题有解！免驱动 USB 无线网卡十分钟搞定。ASUS ASCENT GX10、MSI EdgeXpert、HP ZGX Nano、ALTOS BrainSphere GB10 F1、GIGABYTE AI TOP ATOM 全适用。"
 date: 2026-05-20
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -13,17 +13,16 @@ faq:
   - question: "DGX Spark 的 Wi-Fi 为什么连不上？"
     answer: "DGX Spark 内置 MediaTek MT7925 Wi-Fi 7 芯片，但 OOBE 阶段的 wpa_supplicant 过度精简，与特定品牌 AP（特别是 UniFi）不兼容，WPA2-Enterprise 几乎确定无法连接。"
   - question: "ALFA USB 网卡解法适用所有 GB10 AI Server 吗？"
-    answer: "适用。所有搭载 NVIDIA GB10 Grace Blackwell Superchip 的 AI Edge Server（ASUS、MSI、HP、ALTOS、GIGABYTE）均使用同一颗 MT7925 Wi-Fi 芯片，ALFA AWUS036ACM 解法全部通用。"
+    answer: "适用。所有搭载 NVIDIA GB10 Grace Blackwell Superchip 的 AI Edge Server（ASUS、MSI、HP、ALTOS、GIGABYTE）均使用同一颗 MT7925 Wi-Fi 芯片，ALFA AWUS036ACM 解法预期全部通用（仅在 ASUS GX10 实测，其他机型未逐台测试）。"
   - question: "AWUS036ACM 在 DGX Spark 上需要安装驱动吗？"
     answer: "不需要。MT7612U 的 mt76 驱动自 Linux Kernel 4.19 起内置核心主线，DGX OS 的 Kernel 6.17+ 自然完整支持，插入 USB 即自动加载。"
   - question: "ALFA USB 网卡修复 Wi-Fi 问题需要多久？"
-    answer: "十分钟以内。插入 USB 3.0 埠后系统自动加载驱动，通过 nmcli 指令扫描并连接 WiFi 即可完成，不需编译驱动或重开机。"
+    answer: "十分钟以内。通过 USB-C 转 USB-A 转接器接上 GX10 的 USB-C 端口后，系统自动加载驱动，通过 nmcli 指令扫描并连接 WiFi 即可完成，不需编译驱动或重开机。"
   - question: "可以在 DGX Spark 上用其他 ALFA 网卡吗？"
-    answer: "AWUS036ACH（RTL8812AU）需手动编译驱动，在 GB10 的 ARM64 平台上不保证成功。AWUS036ACM 是唯一确认零编译、即插即用的方案。"
+    answer: "可以。我们在 ASUS GX10（GB10、Ubuntu 24.04 ARM64、kernel 6.17）实测 ALFA 现役 9 款网卡，全部使用 kernel 内置驱动，插上即可用，不需 DKMS；AWUS036ACH 使用内置 rtw88_8812au。但 AWUS036AXM / AXML 在 stock kernel 6.17 上数据包注入失败，只适合连接与 AP。其他 GB10 机型未逐台测试。"
 ---
 
-
-
+> 📌 本文已依 2026-11 GX10 实测更新：在 ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）上，ALFA 现役 9 款网卡全部使用 kernel 内置驱动，插上即可用，不需 DKMS。完整数据见 [ALFA 9 款网卡 ARM64 实测总表](/zh-cn/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)。仅在 GX10 实测，其他 GB10 机型未逐台测试。
 
 你期待已久的 **NVIDIA DGX Spark**（代号 Project DIGITS）终于到货了。
 
@@ -115,7 +114,7 @@ DGX Spark 的 Wi-Fi 问题之所以受到大量讨论，纯粹因为它是 NVIDI
 | 重量 | 1.48 kg | 1.2 kg | 1.2 kg | 1.25 kg | < 1.5 kg | 1.2 kg |
 | 独家软件 | — | — | — | HP ZGX Toolkit | Altos aiGeni 平台 | — |
 
-> ⚠️ **关键结论**：无论你买哪一家的 GB10 AI Edge Server，内置 Wi-Fi 都是同一颗 MediaTek MT7925，也都可能遇到同样的连接问题。下面的 ALFA USB 无线网卡解法，**六款全部适用**。
+> ⚠️ **关键结论**：无论你买哪一家的 GB10 AI Edge Server，内置 Wi-Fi 都是同一颗 MediaTek MT7925，也都可能遇到同样的连接问题。下面的 ALFA USB 无线网卡解法，**六款预期全部适用**（仅在 ASUS GX10 实测，其他机型未逐台测试）。
 
 ---
 
@@ -129,9 +128,9 @@ NVIDIA 官方仅测试 DGX OS（基于 Ubuntu 24.04），**所有 GB10 平台皆
 2. ✅ **ARM64 (aarch64) 完整支持**——能在 GB10 上即插即用
 3. ✅ **成熟稳定**——经过社区广泛验证
 
-在市面数十款 USB 无线网卡中，只有极少数能同时满足这三点。
+ALFA 现役 9 款 USB 网卡在 GX10 实测的 kernel 6.17 上都符合这三点（GX10 实测，见文末「其他 ALFA 网卡」）。本文以最适合用作管理网络的 AWUS036ACM 为例。
 
-### 🥇 唯一推荐：ALFA AWUS036ACM
+### 🥇 推荐：ALFA AWUS036ACM
 
 | 项目 | 内容 |
 |------|------|
@@ -144,29 +143,29 @@ NVIDIA 官方仅测试 DGX OS（基于 Ubuntu 24.04），**所有 GB10 平台皆
 | AP 模式 | ✅ 支持 |
 | TAA 认证 | ✅ 符合美国政府采购规范 |
 
-#### 为什么是它？六个「唯一」
+#### 为什么是它？六个理由
 
-**1. 唯一真正的免驱即插即用**
+**1. 免驱即插即用**
 
 mt76 驱动自 Linux Kernel 4.19 起内建于核心主线。DGX Spark 的 Kernel 6.17 自然完整支持。插入 USB 后，系统**自动加载驱动**——你什么都不需要安装。
 
-**2. 唯一 ARM64 完整验证**
+**2. ARM64 实测验证**
 
-MT7612U 已在 Raspberry Pi OS（aarch64）、Ubuntu Server（ARM64）等多个 ARM 平台上经过多年验证。GB10 的 ARM64 架构完全兼容，不需任何 patch。
+MT7612U 已在 Raspberry Pi OS（aarch64）、Ubuntu Server（ARM64）等多个 ARM 平台上经过多年验证。我们也在 GB10 平台的 ASUS GX10（kernel 6.17）实测：插上即自动加载 `mt76x2u`，不需任何 patch。
 
-**3. 唯一零编译、零设置**
+**3. 零编译、零设置**
 
-对比 Realtek RTL8812AU 需要 DKMS 每次 Kernel 更新后重新编译，ACM 完全不需要。你的 DGX OS 更新 Kernel 后——ACM 依然即插即用。
+mt76 驱动已在主线多年，DGX OS 更新 Kernel 后，ACM 依然即插即用。（Realtek 机型在 kernel 6.17 上同样免编译；各卡最低版本不同，低于该版本才需要 DKMS。）
 
-**4. 唯一完整支持监听模式与数据包注入**
+**4. 支持监听模式与数据包注入**
 
-如果你打算在 DGX Spark 上跑 Kali Linux VM 进行安全研究，ACM 是目前唯一支持监听模式（Monitor Mode）、数据包注入（Packet Injection）和虚拟接口（VIF）的免驱方案。
+如果你打算在 DGX Spark 上跑 Kali Linux VM 进行安全研究，ACM 支持监听模式（Monitor Mode）、数据包注入（Packet Injection）和虚拟接口（VIF）。GX10 实测注入成功率为 2.4GHz 63–83%、5GHz 76%；若以注入为主要用途，AWUS036EACS、ACH（双频 100%）表现更好。
 
-**5. 唯一可换天线的中高阶方案**
+**5. 可换天线**
 
 2 支 RP-SMA 可拆卸天线。出厂附 5dBi，你可以视需求更换为 7dBi 或 9dBi 高增益天线——非常适合机房、工厂等 Wi-Fi 信号较弱的边缘部署场景。
 
-**6. 唯一 TAA 认证**
+**6. TAA 认证**
 
 如果你的单位有政府采购规范要求，ALFA AWUS036ACM 是少数具备 **TAA 认证**的外接 USB 无线网卡。
 
@@ -178,7 +177,7 @@ MT7612U 已在 Raspberry Pi OS（aarch64）、Ubuntu Server（ARM64）等多个 
 
 ### 第一步：插入 USB 网卡
 
-将 AWUS036ACM 插入 DGX Spark 的 USB 3.0 Type-A 端口。
+DGX Spark 的 USB 端口都是 USB-C，请通过 USB-C 转 USB-A 转接器（支持数据传输）将 AWUS036ACM 插入。
 
 打开终端机，执行：
 
@@ -188,11 +187,16 @@ dmesg | tail -20
 
 你应该会看到类似这样的输出：
 
+以下为 AWUS036ACM 在 ASUS GX10（kernel 6.17.0-1014-nvidia）上的实测 dmesg 输出（MAC 地址已遮蔽）：
+
 ```
-mt76_usb 3-1:1.0: MAC/BBP MT7612U (rev 2)
-mt76_usb 3-1:1.0: firmware loaded: mt7612u.bin
-ieee80211 phy1: rt2x00_set_rt: Info - RT chipset 7612, rev 0200 detected
-ieee80211 phy1: rt2x00lib_probe_dev: Information - Successfully initialized device
+usb 5-1: new high-speed USB device number 2 using xhci-hcd
+usb 5-1: New USB device found, idVendor=0e8d, idProduct=7612, bcdDevice= 1.00
+mt76x2u 5-1:1.0: ASIC revision: 76120044
+mt76x2u 5-1:1.0: ROM patch build: 20141115060606a
+mt76x2u 5-1:1.0: Firmware Version: 0.0.00
+usbcore: registered new interface driver mt76x2u
+mt76x2u 5-1:1.0 wlxXXXXXXXXXXXX: renamed from wlan0
 ```
 
 **这就是「驱动已自动加载」的信号。** 整个过程你没有安装任何东西。
@@ -211,7 +215,7 @@ nmcli device status
 # 扫描可用网络
 nmcli device wifi list
 
-# 连接到你的 SSID（以 "MyLabWiFi" 为例）
+# 连接到你的 SSID (以 "MyLabWiFi" 为例)
 sudo nmcli device wifi connect "MyLabWiFi" password "your-password"
 
 # 确认连接状态
@@ -276,11 +280,11 @@ AI 模型训练时的网络流量非常可观——下载预训练权重、同�
 
 ### 场景 A：AI 开发者
 ```
-10GbE → 模型推理、数据传输
-ALFA ACM → SSH、Jupyter Notebook、系统更新
+10GbE → 模型推理, 数据传输
+ALFA ACM → SSH, Jupyter Notebook, 系统更新
 ```
 
-### 场景 B：安全研究实验室
+### 场景 B：安全研究实验室（仅限自有或已获授权的网络）
 ```
 GB10 → 跑 LLM fine-tuning
 Kali Linux VM → USB 直通 ALFA ACM → 无线网络渗透测试
@@ -303,6 +307,26 @@ A：同为 MediaTek，但驱动架构完全不同。MT7925 使用 `mt7925e` 驱�
 **Q：这张网卡在 DGX OS 以外还能用吗？**
 
 A：当然。MT7612U 的驱动是 Linux Kernel 主线的一部分，Ubuntu、Debian、Raspberry Pi OS、Kali Linux、Fedora、Arch Linux——只要是 Kernel 4.19+，全部即插即用。
+
+---
+
+## 其他 ALFA 网卡：GX10 实测结果
+
+我们在 ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）实测 ALFA 现役 9 款网卡，全部使用 kernel 内置驱动，插上即可用，不需 DKMS。其他 GB10 机型（DGX Spark、MSI EdgeXpert、GIGABYTE AI TOP ATOM、ALTOS BrainSphere、HP ZGX Nano）使用同一款 GB10 与 NVIDIA kernel 系列，预期行为相同，但未逐台测试。
+
+| 型号 | 芯片 | 内置驱动 | 数据包注入（GX10 实测） | 适合用途 |
+|------|------|----------|----------------------|----------|
+| AWUS036ACM | MediaTek MT7612U | mt76x2u | ✅ 2.4G 63–83%／5G 76% | 管理网络、AP、渗透测试 |
+| AWUS036ACHM | MediaTek MT7610U | mt76x0u | ⚠️ 2.4G 96–100%／5G 仅广播 | 管理网络、AP |
+| AWUS036ACH | Realtek RTL8812AU | rtw88_8812au | ✅ 双频 100% | 渗透测试、远距离接收 |
+| AWUS036ACS | Realtek RTL8811AU | rtw88_8821au | ✅ 2.4G 100%／5G 96% | 渗透测试、随身携带 |
+| AWUS036EACS | Realtek RTL8821CU（含蓝牙） | rtw88_8821cu | ✅ 双频 100% | 渗透测试 |
+| AWUS036AX | Realtek RTL8832BU | rtw89_8852bu | ✅ 2.4G 96% | Wi-Fi 6 连接、AP |
+| AWUS036AXER | Realtek RTL8832BU | rtw89_8852bu | ✅ 2.4G 73% | Wi-Fi 6 连接、AP、监听接收 |
+| AWUS036AXM | MediaTek MT7921AUN | mt7921u | ❌ 失败 | 仅连接、AP |
+| AWUS036AXML | MediaTek MT7921AUN | mt7921u | ❌ 失败 | 仅连接、AP（6GHz 实测可用） |
+
+AWUS036AXM / AXML 在 stock kernel 6.17 上数据包注入失败（monitor、AP、WPA3 可用），不适合渗透测试。各卡驱动进入主线的最低 kernel 版本不同（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17），低于该版本才需要社区 DKMS 驱动。完整数据见 [ALFA 9 款网卡 ARM64 实测总表](/zh-cn/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)。
 
 ---
 
@@ -331,7 +355,7 @@ ALFA AWUS036ACM 的解决方案简单到近乎荒谬：**插入 USB，搞定。*
 
 > 📌 **ALFA AWUS036ACM 现货供应中** → [Yopitek 产品页](/zh-cn/products/alfa/awus036acm/)
 >
-> 榆阖科技 (Yopitek) 为 ALFA Network 台湾授权代理商
+> 榆閤科技 (Yopitek) 为 ALFA Network 台湾授权代理商
 > 产品订购或技术问题欢迎来信洽询：sales@yupitek.com
 
 ---
@@ -342,6 +366,6 @@ ALFA AWUS036ACM 的解决方案简单到近乎荒谬：**插入 USB，搞定。*
 
 1. [NVIDIA DGX Spark 官方文档](https://developer.nvidia.com/dgx-spark)
 2. [NVIDIA Developer Forums](https://forums.developer.nvidia.com/)
-3. [morrownr/USB-WiFi GitHub 专案](https://github.com/morrownr/USB-WiFi)
+3. [morrownr/USB-WiFi GitHub 项目](https://github.com/morrownr/USB-WiFi)
 4. [Linux Kernel Wireless Documentation](https://wireless.wiki.kernel.org/)
 5. [ALFA Network 官方网站](https://www.alfa.com.tw/)

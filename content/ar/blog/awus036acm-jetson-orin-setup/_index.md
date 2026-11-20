@@ -1,5 +1,5 @@
 ---
-title: "بدون ترجمة تعريفات! دليل عملي خالٍ من الإعدادات لبطاقة ALFA AWUS036ACM على منصة Jetson Orin للذكاء الاصطناعي الطرفي"
+title: "بدون تجميع تعريفات! دليل عملي خالٍ من الإعدادات لبطاقة ALFA AWUS036ACM على منصة Jetson Orin للذكاء الاصطناعي الطرفي"
 description: "تحليل متعمق موجه لعملاء AVALUE AIB-NW01 (NVIDIA Jetson Orin NX/Nano) لتحديد أي بطاقة شبكة لاسلكية USB من ALFA Network هي الأنسب لنشر الذكاء الاصطناعي الطرفي، مع إثبات عملي على أن AWUS036ACM تعمل حقًا بمجرد التوصيل."
 date: 2026-05-20
 draft: false
@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "لماذا تفشل محولات USB WiFi غالباً على Jetson Orin؟"
     answer: "يستخدم Jetson نواة Tegra المخصصة من NVIDIA وليست نواة Ubuntu القياسية. التعريفات الخارجية تفشل غالباً في التجميع بسبب عدم توفر ترويسات النواة أو عدم توافق ABI."
@@ -22,7 +22,7 @@ faq:
     answer: "AIB-NW01 يأتي من المصنع بـ Ubuntu 20.04.6 LTS و JetPack 5.0، بنواة NVIDIA Tegra المخصصة 5.10.x-tegra، ومعمارية CPU هي ARM64."
 ---
 {{< tldr >}}
-يستخدم Jetson Orin نواة Tegra المخصصة من NVIDIA، وتفشل تعريفات WiFi الخارجية غالباً. AWUS036ACM بشريحة MT7612U تعريفه مدمج في النواة منذ 4.19 ويعمل فور التوصيل، وهو الحل الوحيد真正 دون تجميع. يدعم وضع المراقبة وحقن الحزم ووضع AP.
+يستخدم Jetson Orin نواة Tegra المخصصة من NVIDIA، وتفشل تعريفات WiFi الخارجية غالباً. AWUS036ACM بشريحة MT7612U تعريفه مدمج في النواة منذ 4.19 ويعمل فور التوصيل، وهو الحل الوحيد الحقيقي الذي يعمل دون تجميع. يدعم وضع المراقبة وحقن الحزم ووضع AP.
 {{< /tldr >}}
 
 > «لدي جهاز AVALUE AIB-NW01 (Jetson Orin NX) وأريد نشره في بيئة لا تتوفر فيها شبكة سلكية. أي بطاقة USB لاسلكية من منتجاتكم يمكنني استخدامها مباشرة؟»
@@ -34,7 +34,7 @@ faq:
 
 هذا استفسار تلقته شركة يوتيك (Yopitek Technology) مؤخرًا من أحد العملاء. يبدو السؤال بسيطًا، لكن من أمضى وقتًا في مجتمع مطوري Jetson يعرف أن — **بطاقات USB اللاسلكية على منصة NVIDIA Jetson أصعب مما تتخيل بكثير.**
 
-انطلقنا من معمارية Jetson الأساسية، مرورًا بحالات حقيقية من منتديات NVIDIA وتقارير فشل ترجمة التعريفات على GitHub، وصولًا إلى بيانات اختبار فعلية على منصة ARM64، لنقدم لكم دليل الاختيار هذا.
+انطلقنا من معمارية Jetson الأساسية، مرورًا بحالات حقيقية من منتديات NVIDIA وتقارير فشل تجميع التعريفات على GitHub، وصولًا إلى بيانات اختبار فعلية على منصة ARM64، لنقدم لكم دليل الاختيار هذا.
 
 ---
 
@@ -47,34 +47,34 @@ faq:
 | البند | المواصفات |
 |------|------|
 | **خيارات SoM** | Jetson Orin NX 16GB / NX 8GB / Orin Nano 8GB / Orin Nano 4GB |
-| **CPU** | ARM Cortex-A78AE v8.2 64-bit（NX 16GB: 8-core @ 2.0 GHz / NX 8GB: 6-core @ 2.0 GHz / Nano: 6-core @ 1.5 GHz） |
-| **GPU** | NVIDIA Ampere 架構（NX: 1024 CUDA Cores + 32 Tensor Cores / Nano 4GB: 512 CUDA Cores + 16 Tensor Cores） |
-| **AI 算力** | 100 / 70 / 40 / 20 TOPS（依 SoM 配置） |
-| **記憶體** | LPDDR5（NX 16GB/8GB: 128-bit 102.4 GB/s / Nano 8GB: 128-bit 68 GB/s / Nano 4GB: 64-bit 34 GB/s） |
-| **儲存** | 128GB M.2 2280 NVMe SSD（內建） |
-| **網路** | 2 × GbE RJ-45（10/100/1000 Mbps） |
-| **USB** | 4 × USB 3.1 Type-A、1 × Micro USB OTG |
-| **顯示** | 1 × HDMI Type-A |
-| **序列埠** | 2 × DB9（RS-232 / RS-485 可跳線切換） |
-| **擴充插槽** | 1 × M.2 M-Key 2242/2280（NVMe SSD）、1 × M.2 E-Key 2230（WiFi/BT 模組）、1 × M.2 B-Key 3042/3052（5G/LTE 模組，限常溫使用） |
-| **SIM** | 1 × Micro SIM 插槽 |
-| **電源** | DC 10~24V（2-pin 端子台） |
-| **尺寸** | 125 × 196 × 66 mm（不含壁掛架） |
-| **重量** | 1.4 kg |
-| **機殼材質** | 鋁擠型 + 鋼板、無風扇散熱設計 |
-| **運作溫度** | -15°C ~ 60°C（依 IEC60068-2，0.5 m/s 風流） |
-| **儲存溫度** | -40°C ~ 80°C |
-| **安規認證** | CE、FCC Class A |
+| **CPU** | ARM Cortex-A78AE v8.2 64-bit (NX 16GB: 8-core @ 2.0 GHz / NX 8GB: 6-core @ 2.0 GHz / Nano: 6-core @ 1.5 GHz) |
+| **GPU** | معمارية NVIDIA Ampere (NX: 1024 CUDA Cores + 32 Tensor Cores / Nano 4GB: 512 CUDA Cores + 16 Tensor Cores) |
+| **قدرة الحوسبة للذكاء الاصطناعي** | 100 / 70 / 40 / 20 TOPS (حسب تهيئة SoM) |
+| **الذاكرة** | LPDDR5 (NX 16GB/8GB: 128-bit 102.4 GB/s / Nano 8GB: 128-bit 68 GB/s / Nano 4GB: 64-bit 34 GB/s) |
+| **التخزين** | 128GB M.2 2280 NVMe SSD (مدمج) |
+| **الشبكة** | 2 × GbE RJ-45 (10/100/1000 Mbps) |
+| **USB** | 4 × USB 3.1 Type-A، 1 × Micro USB OTG |
+| **العرض** | 1 × HDMI Type-A |
+| **المنافذ التسلسلية** | 2 × DB9 (RS-232 / RS-485 قابلة للتبديل عبر وصلة jumper) |
+| **فتحات التوسعة** | 1 × M.2 M-Key 2242/2280 (NVMe SSD)، 1 × M.2 E-Key 2230 (وحدة WiFi/BT)، 1 × M.2 B-Key 3042/3052 (وحدة 5G/LTE، للاستخدام في درجات الحرارة العادية فقط) |
+| **SIM** | 1 × فتحة Micro SIM |
+| **الطاقة** | DC 10~24V (كتلة أطراف 2-pin) |
+| **الأبعاد** | 125 × 196 × 66 mm (بدون حامل التثبيت الجداري) |
+| **الوزن** | 1.4 kg |
+| **مادة الهيكل** | ألومنيوم مبثوق + صفائح فولاذية، تصميم تبريد بدون مروحة |
+| **درجة حرارة التشغيل** | -15°C ~ 60°C (وفق IEC60068-2، تدفق هواء 0.5 m/s) |
+| **درجة حرارة التخزين** | -40°C ~ 80°C |
+| **شهادات السلامة** | CE، FCC Class A |
 
 ### البيئة البرمجية
 
 | البند | المواصفات |
 |------|------|
-| **作業系統** | Ubuntu 20.04.6 LTS (Focal Fossa) |
-| **NVIDIA SDK** | JetPack 5.0（內含 CUDA 11.4、cuDNN 8.4、TensorRT 8.4） |
-| **Linux 核心** | 5.10.x-tegra（NVIDIA 客製化 Tegra 核心，**非標準 Ubuntu 核心**） |
-| **CPU 架構** | ARM64 (aarch64) |
-| **AI SDK 資源** | [github.com/Avalue-Technology](https://github.com/Avalue-Technology/repositories.directory) |
+| **نظام التشغيل** | Ubuntu 20.04.6 LTS (Focal Fossa) |
+| **NVIDIA SDK** | JetPack 5.0 (يتضمن CUDA 11.4، cuDNN 8.4، TensorRT 8.4) |
+| **نواة Linux** | 5.10.x-tegra (نواة Tegra مخصصة من NVIDIA، **ليست نواة Ubuntu القياسية**) |
+| **معمارية CPU** | ARM64 (aarch64) |
+| **موارد AI SDK** | [github.com/Avalue-Technology](https://github.com/Avalue-Technology/repositories.directory) |
 
 > **تنبيه مهم**: تستخدم منصة Jetson نواة مخصصة `linux-tegra` تصونها NVIDIA، وليست نواة Ubuntu القياسية. لهذا أثر عميق على توافق تعريفات الطرف الثالث — انظر «التحديات الثلاثة لبطاقات USB اللاسلكية على Jetson Orin» أدناه.
 
@@ -113,19 +113,19 @@ faq:
 
 - `apt install linux-headers-$(uname -r)` على الأرجح **لن تتمكن من الحصول على headers النواة المطابقة**
 - NVIDIA تطبق patches على النواة قد تكسر ABI الذي تحتاجه تعريفات الطرف الثالث
-- بيئة ترجمة وحدات النواة مختلفة تمامًا عن أجهزة x86 المكتبية
+- بيئة تجميع وحدات النواة مختلفة تمامًا عن أجهزة x86 المكتبية
 
-بطاقات USB «الداعمة لـ Linux» عمومًا **لا تضمن إمكانية ترجمتها بنجاح على Jetson.**
+بطاقات USB «الداعمة لـ Linux» عمومًا **لا تضمن إمكانية تجميعها بنجاح على Jetson.**
 
-### التحدي الثاني: ترجمة تعريفات الطرف الثالث تفشل كثيرًا على Jetson
+### التحدي الثاني: تجميع تعريفات الطرف الثالث يفشل كثيرًا على Jetson
 
-حالة حقيقية من GitHub (أبريل 2025): على JetPack 6.2 (kernel 5.15.148-tegra)، فشل كل من `make` و `dkms` لتعريف RTL8812EU. بعد تحليل المجتمع — تبين أن **patches نواة NVIDIA في JetPack تكسر ABI الخاص بـ cfg80211**، مما يمنع تعريفات WiFi الخارجية من الترجمة الصحيحة.
+حالة حقيقية من GitHub (أبريل 2025): على JetPack 6.2 (kernel 5.15.148-tegra)، فشل كل من `make` و `dkms` لتعريف RTL8812EU. بعد تحليل المجتمع — تبين أن **patches نواة NVIDIA في JetPack تكسر ABI الخاص بـ cfg80211**، مما يمنع تعريفات WiFi الخارجية من التجميع الصحيح.
 
 > المصدر: [GitHub issue #421 — RTL8812EU Driver Compilation Failed on Jetson Orin Nano](https://github.com/svpcom/wfb-ng/issues/421)
 
 ### التحدي الثالث: ترقية JetPack قد تجعل بطاقتك «غير صالحة»
 
-حالة من منتديات NVIDIA (أكتوبر 2024): كانت RTL8188EUS تعمل بشكل طبيعي على JetPack 5.1.x، وبعد الترقية إلى JetPack 6 **لم يعد يتم التعرف عليها تمامًا**. الحل كان إعادة ترجمة التعريف يدويًا من GitHub — لكن ماذا لو غيرت JetPack الجديدة واجهات النواة مرة أخرى؟
+حالة من منتديات NVIDIA (أكتوبر 2024): كانت RTL8188EUS تعمل بشكل طبيعي على JetPack 5.1.x، وبعد الترقية إلى JetPack 6 **لم يعد يتم التعرف عليها تمامًا**. الحل كان إعادة تجميع التعريف يدويًا من GitHub — لكن ماذا لو غيرت JetPack الجديدة واجهات النواة مرة أخرى؟
 
 > المصدر: [Jetson Orin Nano — JetPack 6 لا يدعم RTL8188EUS](https://nvidia-jetson.piveral.com/jetson-orin-nano/jetpack-6-doesnt-support-rtl8188eus/)
 
@@ -141,16 +141,16 @@ faq:
 
 فيما يلي حالة توافق شرائح بطاقات USB اللاسلكية الشائعة من ALFA Network على Jetson Orin:
 
-| الشريحة | ALFA 型號 | 驅動方式 | 最低 Kernel 需求 | Jetson Orin 結論 |
+| الشريحة | طراز ALFA | طريقة التعريف | الحد الأدنى للنواة | الخلاصة على Jetson Orin |
 |------|-----------|----------|-----------------|------------------|
-| **MT7612U** | **AWUS036ACM** | **In-kernel (mt76x2u)** | **4.19+** | ✅ 完美相容，插上即用 |
-| RTL8812AU | AWUS036ACH | Out-of-tree（需編譯） | 需手動編譯 | ⚠️ 可考慮但編譯有風險 |
-| RTL8811AU | AWUS036ACS | Out-of-tree（需編譯） | 需手動編譯 | ⚠️ 同 RTL8812AU 問題 |
-| RTL8812BU | AWUS036AX | Out-of-tree（需編譯） | 需手動編譯 | ⚠️ 需編譯，有已知問題 |
-| MT7921AU | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ K5.10/5.15 不滿足 |
-| RTL8832CU | AWUS036AXER | Out-of-tree（需編譯） | 需手動編譯 | ❌ 不建議，ARM64 支援不明 |
+| **MT7612U** | **AWUS036ACM** | **In-kernel (mt76x2u)** | **4.19+** | ✅ توافق تام، يعمل فور التوصيل |
+| RTL8812AU | AWUS036ACH | Out-of-tree (يحتاج إلى تجميع) | يحتاج إلى تجميع يدوي | ⚠️ يمكن النظر فيه لكن التجميع ينطوي على مخاطر |
+| RTL8811AU | AWUS036ACS | Out-of-tree (يحتاج إلى تجميع) | يحتاج إلى تجميع يدوي | ⚠️ نفس مشاكل RTL8812AU |
+| RTL8832BU | AWUS036AX | Out-of-tree (يحتاج إلى تجميع) | يحتاج إلى تجميع يدوي | ⚠️ يحتاج إلى تجميع، وله مشاكل معروفة |
+| MT7921AU | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ النواة K5.10/5.15 لا تستوفي الشرط |
+| RTL8832BU | AWUS036AXER | Out-of-tree (يحتاج إلى تجميع) | يحتاج إلى تجميع يدوي | ❌ غير موصى به، دعم ARM64 غير واضح |
 
-數據來源：[morrownr/USB-WiFi 晶片支援表](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
+مصدر البيانات: [جدول دعم الشرائح من morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
 
 ---
 
@@ -161,11 +161,11 @@ faq:
 | البند | المحتوى |
 |------|------|
 | الشريحة | MediaTek MT7612U / MT7612UN |
-| مواصفات WiFi | 802.11ac (WiFi 5) 雙頻 AC1200 |
+| مواصفات WiFi | 802.11ac (WiFi 5) ثنائي النطاق AC1200 |
 | الذروة القصوى للإنتاجية | 5 GHz: 867 Mbps / 2.4 GHz: 300 Mbps |
-| الهوائيات | 2 × RP-SMA 可拆式 5 dBi 雙頻天線 |
-| الواجهة | USB 3.0（USB-C 接頭） |
-| قوة الإرسال | 標準功率，適合 USB 埠直插 |
+| الهوائيات | 2 × RP-SMA هوائي ثنائي النطاق 5 dBi قابل للفصل |
+| الواجهة | USB 3.0 (موصل USB-C) |
+| قوة الإرسال | قدرة قياسية، مناسبة للتوصيل المباشر بمنفذ USB |
 
 **صفحة المنتج**: https://yupitek.com/ar/products/alfa/awus036acm/
 
@@ -173,9 +173,9 @@ faq:
 
 شريحة MT7612U التي تستخدمها AWUS036ACM يأتي تعريفها `mt76x2u` مدمجًا في خط النواة الرئيسي منذ **Linux Kernel 4.19 (أكتوبر 2018)**. إصدار نواة AIB-NW01 هو 5.10.x، وبالتالي:
 
-**وصّلها وستعمل. دون ترجمة، دون إعدادات.**
+**وصّلها وستعمل. دون تجميع، دون إعدادات.**
 
-هذا بالغ الأهمية على منصة Jetson — فأنت تتجنب تمامًا التحديات الثلاثة المذكورة سابقًا (النواة المخصصة، فشل الترجمة، انتهاء الصلاحية بعد الترقية).
+هذا بالغ الأهمية على منصة Jetson — فأنت تتجنب تمامًا التحديات الثلاثة المذكورة سابقًا (النواة المخصصة، فشل التجميع، انتهاء الصلاحية بعد الترقية).
 
 ### سبب التوصية الثاني: إثبات عملي على منصة ARM64
 
@@ -219,23 +219,23 @@ mt76x2u 1-1:1.0 wlx00c0ca9821a5: renamed from wlan0
 بمجرد التوصيل، يتعرف عليها النظام فورًا كواجهة `wlan0` (أو `wlx...`). لا يحتاج المستخدم سوى ثلاثة أوامر:
 
 ```bash
-# 掃描可用網路
+# فحص الشبكات المتاحة
 sudo nmcli device wifi list
 
-# 連線
-sudo nmcli device wifi connect "你的SSID" password "你的密碼"
+# الاتصال
+sudo nmcli device wifi connect "Your_SSID" password "Your_Password"
 ```
 
-لا ترجمة، لا إعادة تشغيل، ولا حاجة لتثبيت أي حزم.
+لا تجميع، لا إعادة تشغيل، ولا حاجة لتثبيت أي حزم.
 
 ### الفائدة الثانية: تجاوز كل قيود وحدة M.2 WiFi
 
-| M.2 WiFi 模組 | USB 無線網卡 (AWUS036ACM) |
+| وحدة M.2 WiFi | بطاقة USB لاسلكية (AWUS036ACM) |
 |---------------|--------------------------|
-| 需拆機安裝 | 外接即可，免拆機 |
-| 天線固定在機殼內 | 天線可放置於最佳訊號位置 |
-| 更換困難 | 熱插拔，秒換 |
-| 僅限該台主機使用 | 可跨設備共用 |
+| تتطلب فك الجهاز للتركيب | توصيل خارجي دون فك الجهاز |
+| الهوائي مثبت داخل الهيكل | يمكن وضع الهوائي في أفضل موقع للإشارة |
+| الاستبدال صعب | توصيل ساخن، استبدال في ثوانٍ |
+| مقتصرة على ذلك الجهاز فقط | يمكن مشاركتها بين الأجهزة |
 
 ### الفائدة الثالثة: مناسبة لمختلف سيناريوهات النشر الصناعي
 
@@ -251,7 +251,7 @@ sudo nmcli device wifi connect "你的SSID" password "你的密碼"
 فوائد استخدام تعريف in-kernel عملية جدًا:
 
 - بعد ترقية JetPack تبقى البطاقة تعمل (NVIDIA نفسها تصون التعريفات المدمجة في النواة)
-- لا حاجة للتعامل مع DKMS أو ترجمة التعريفات بنفسك
+- لا حاجة للتعامل مع DKMS أو تجميع التعريفات بنفسك
 - تحديثات النواة الأمنية لن تتعطل
 - توفير تكاليف الصيانة والدعم اللاحقة
 
@@ -276,22 +276,22 @@ sudo nmcli device wifi connect "你的SSID" password "你的密碼"
 
 ```bash
 lsusb | grep MediaTek
-# 預期輸出：ID 0e8d:7612 MediaTek Inc. MT7612U
+# المخرجات المتوقعة: ID 0e8d:7612 MediaTek Inc. MT7612U
 
 dmesg | grep mt76
-# 預期輸出：mt76x2u 1-1:1.0 wlx...: renamed from wlan0
+# المخرجات المتوقعة: mt76x2u 1-1:1.0 wlx...: renamed from wlan0
 ```
 
 ### الخطوة 3: اتصل بـ WiFi
 
 ```bash
-# 掃描可用網路
+# فحص الشبكات المتاحة
 sudo nmcli device wifi list
 
-# 連線
+# الاتصال
 sudo nmcli device wifi connect "Your_SSID" password "Your_Password"
 
-# 確認連線狀態
+# التحقق من حالة الاتصال
 ip addr show wlx...
 ```
 
@@ -311,7 +311,7 @@ ip addr show wlx...
 
 ### سيناريوهات استخدام الموديلات الأخرى
 
-AWUS036ACH (RTL8812AU) و AWUS036AX (RTL8812BU) ليست غير قابلة للاستخدام تمامًا، لكنها تحتاج إلى ترجمة يدوية للتعريفات على Jetson. إن كانت لديك خبرة في بيئات الترجمة وترغب في صيانة التعريفات، فهذه الموديلات تستحق النظر أيضًا.
+AWUS036ACH (RTL8812AU) و AWUS036AX (RTL8832BU) ليست غير قابلة للاستخدام تمامًا، لكنها تحتاج إلى تجميع يدوي للتعريفات على Jetson. إن كانت لديك خبرة في بيئات التجميع وترغب في صيانة التعريفات، فهذه الموديلات تستحق النظر أيضًا.
 
 ---
 
@@ -323,7 +323,7 @@ AWUS036ACH (RTL8812AU) و AWUS036AX (RTL8812BU) ليست غير قابلة لل�
 
 الجواب هو **ALFA AWUS036ACM**.
 
-ليس لأنها الأسرع أو الأرخص — بل لأنها على منصة Jetson الفريدة هذه، **الحل الوحيد الذي يعمل حقًا بمجرد التوصيل**. على منصة تفشل فيها حتى ترجمة التعريفات كثيرًا، التعريف المدمج في النواة هو الملك.
+ليس لأنها الأسرع أو الأرخص — بل لأنها على منصة Jetson الفريدة هذه، **الحل الوحيد الذي يعمل حقًا بمجرد التوصيل**. على منصة يفشل فيها حتى تجميع التعريفات كثيرًا، التعريف المدمج في النواة هو الملك.
 
 ### تحرك الآن
 
@@ -333,14 +333,14 @@ AWUS036ACH (RTL8812AU) و AWUS036AX (RTL8812BU) ليست غير قابلة لل�
 ### قراءات إضافية
 
 - [AWUS036ACH vs AWUS036ACM: مقارنة كاملة بين طريقتي تعريف RTL8812AU و MT7612U](https://yupitek.com/en/blog/awus036ach-vs-awus036acm/)
-- [ALFA Network Linux 相容性總表](https://docs.alfa.com.tw/Support/Compat/)
-- [NVIDIA 官方驗證 WiFi 模組清單（AGX Orin）](https://forums.developer.nvidia.com/t/wi-fi-6-6e-7-modules-that-have-been-validated-with-agx-orin-devkits/313431)
+- [جدول توافق ALFA Network الشامل مع Linux](https://docs.alfa.com.tw/Support/Compat/)
+- [قائمة وحدات WiFi المعتمدة رسميًا من NVIDIA (AGX Orin)](https://forums.developer.nvidia.com/t/wi-fi-6-6e-7-modules-that-have-been-validated-with-agx-orin-devkits/313431)
 
 ---
 
 > **الوسوم**: #JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yopitek
 >
-> **الكاتب**: 榆閤科技 (Yopitek Ltd) — ALFA Network 台灣授權代理商
+> **الكاتب**: Yopitek Ltd — الوكيل المعتمد لـ ALFA Network في تايوان
 >
 > **إخلاء مسؤولية**: المعلومات البحثية في هذا المقال محدّثة حتى مايو 2026. منصة Jetson ونواة Linux في تحديث مستمر، نوصي بالتحقق من أحدث إصدار JetPack وحالة دعم التعريفات المدمجة في النواة قبل النشر.
 

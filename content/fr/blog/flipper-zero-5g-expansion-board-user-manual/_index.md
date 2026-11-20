@@ -14,8 +14,6 @@ featureimage: "/images/blog/flipper-zero-5g-expansion-board-user-manual/img_01_a
 hideFeatureImage: true
 ---
 
-# Manuel d'utilisation et d'installation illustré de la carte d'extension Flipper Zero 5G (v2.0)
-
 > **Public cible** : les nouveaux clients qui découvrent ce module pour la première fois.  
 > **Principe de rédaction** : des schémas détaillés pour chaque étape sensible ou technique. Oublie les suppositions et profite d'une installation simple, étape par étape.
 
@@ -25,7 +23,7 @@ hideFeatureImage: true
 
 Bienvenue dans l'univers du module d'extension Flipper Zero 5G ! Avant de commencer, vérifie que ton pack contient bien les accessoires suivants.
 
-![開箱全家福與配件圖](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_01_all_components.jpg)
+![Contenu du coffret et accessoires](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_01_all_components.jpg)
 *Figure 1 : liste complète des accessoires fournis*
 
 ### ⚠️ Précisions sur les accessoires
@@ -46,7 +44,7 @@ Avant de brancher les antennes ou de connecter la console, prends une minute pou
 
 ### Description de la face avant
 
-![模組正面標註圖](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_02_front_interface.jpg)
+![Face avant du module annotée](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_02_front_interface.jpg)
 *Figure 2 : légendes des composants de la face avant*
 
 *   **Écran (LCD Screen)** : affiche l'état actuel de la connexion, l'adresse IP et le mode de fonctionnement.
@@ -57,7 +55,7 @@ Avant de brancher les antennes ou de connecter la console, prends une minute pou
 
 ### Description des ports d'antennes latéraux
 
-![側面天線埠標註圖](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_03_antenna_ports.jpg)
+![Ports d'antenne latéraux annotés](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_03_antenna_ports.jpg)
 *Figure 3 : positions et marquages des ports d'antennes*
 
 *   **433M A** : port pour l'antenne-bâton 433MHz.
@@ -77,7 +75,7 @@ Le module 5G a besoin d'une carte mémoire pour stocker ses paramètres.
 
 1.  **Sens d'insertion** : insère la carte avec les broches dorées orientées vers le bas dans l'emplacement MicroSD, puis appuie doucement jusqu'au clic de verrouillage.
 
-![MicroSD 卡插槽特寫](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_07_sd_card_slot.jpg)
+![Gros plan sur le lecteur de carte MicroSD](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_07_sd_card_slot.jpg)
 *Figure 4 : gros plan sur le sens correct d'insertion de la carte MicroSD*
 
 ---
@@ -86,7 +84,7 @@ Le module 5G a besoin d'une carte mémoire pour stocker ses paramètres.
 
 Visse les trois antennes fournies sur leurs connecteurs SMA correspondants. Attention à ne pas forcer, sers simplement jusqu'à ce que l'antenne soit bien fixée.
 
-![天線安裝接線圖](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_08_three_antenna_connection.jpg)
+![Schéma de raccordement des antennes](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_08_three_antenna_connection.jpg)
 *Figure 5 : schéma de connexion et d'orientation des trois types d'antennes*
 
 | Type d'antenne | Port d'antenne correspondant | Instructions d'installation |
@@ -98,7 +96,7 @@ Visse les trois antennes fournies sur leurs connecteurs SMA correspondants. Atte
 #### ⚠️ Avertissement sur le sens de pose de l'antenne GPS
 L'antenne GPS a une orientation précise. Lors de l'installation, **la face en céramique (généralement la face opposée à l'autocollant double face, ou la face sans texte) doit être orientée vers le haut (vers le ciel)**, sinon la géolocalisation ne fonctionnera pas !
 
-![GPS 天線朝向對比圖](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_09_gps_antenna_orientation.jpg)
+![Comparaison de l'orientation de l'antenne GPS](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_09_gps_antenna_orientation.jpg)
 *Figure 6 : comparaison entre le bon positionnement (vers le ciel) et le mauvais positionnement (vers le sol) de l'antenne GPS*
 
 ---
@@ -110,13 +108,13 @@ Insère le module 5G sur les broches GPIO situées sur le dessus de ton Flipper 
 1.  **Éteins d'abord ton Flipper Zero** pour éviter d'endommager le matériel lors de la connexion.
 2.  Aligne les broches GPIO du Flipper Zero avec les fentes sous le module.
 
-![GPIO 對接 alignment 圖](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_10_gpio_alignment.jpg)
+![Alignement du connecteur GPIO](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_10_gpio_alignment.jpg)
 *Figure 7 : positionnement et alignement des broches GPIO*
 
 3.  Applique une pression uniforme avec les deux mains pour **enfoncer délicatement le module au maximum**.
 4.  **Vérifie l'alignement** : une fois l'installation terminée, regarde le module de profil. Il doit être **parfaitement ajusté contre la console, sans aucun espace visible**.
 
-![GPIO 插入貼合度確認](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_19_gpio_insertion_flat.jpg)
+![Vérification de l'insertion du connecteur GPIO](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_19_gpio_insertion_flat.jpg)
 *Figure 8 : connexion correcte avec insertion complète sans aucun espace*
 
 ---
@@ -128,7 +126,7 @@ Une fois connecté, allume ton Flipper Zero puis passe à la configuration des b
 Prenons l'exemple du micrologiciel **Momentum** pour effectuer les réglages suivants :
 
 1.  **Activer l'alimentation de l'écran** : pousse l'interrupteur à bascule situé à l'avant gauche du module sur la position **UP**.
-    ![螢幕撥動開關 UP 特寫](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_16_toggle_switch_up.jpg)
+    ![Gros plan sur l'interrupteur en position UP](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_16_toggle_switch_up.jpg)
     *Figure 9 : interrupteur de l'écran basculé sur UP pour activer l'affichage*
 
 2.  **Configuration des broches GPS** :
@@ -146,7 +144,7 @@ Prenons l'exemple du micrologiciel **Momentum** pour effectuer les réglages sui
 
 Ce module intègre une batterie rechargeable.
 
-![USB-C 介面對比與警告](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_17_usb_ports_comparison.jpg)
+![Comparaison des ports USB-C et avertissement](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_17_usb_ports_comparison.jpg)
 *Figure 10 : comparaison entre le port de charge supérieur (CHARGE ONLY) et le port de flash latéral (FLASH ONLY)*
 
 *   **Port USB-C supérieur** : **dédié uniquement à la charge** (indiqué par « CHARGE ONLY »). Utilise obligatoirement ce port pour recharger la batterie !
@@ -155,7 +153,7 @@ Ce module intègre une batterie rechargeable.
 #### État des indicateurs LED de batterie :
 La face avant du module comporte 4 indicateurs LED qui indiquent le niveau de charge restant.
 
-![電量指示燈圖解](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_18_battery_led_indicators.jpg)
+![Voyants du niveau de batterie](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_18_battery_led_indicators.jpg)
 *Figure 11 : niveau de charge correspondant aux 4 LED*
 
 ---
@@ -178,5 +176,5 @@ Lors de la sortie d'une nouvelle version du micrologiciel, tu devras flasher le 
 1.  Prépare un câble USB-C connecté à ton ordinateur.
 2.  **Étape cruciale** : tout en branchant le câble sur le **port USB-C latéral (FLASH ONLY)** du module, **maintiens enfoncé le bouton de flash situé à l'arrière ou sur le côté droit du module** afin de basculer la puce en mode Boot.
 
-![韌體燒錄按鍵與插入順序](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_20_boot_flash_sequence.jpg)
+![Bouton et ordre de branchement pour le flashage du firmware](/images/blog/flipper-zero-5g-expansion-board-user-manual/img_20_boot_flash_sequence.jpg)
 *Figure 12 : schéma de la procédure (maintien du bouton de flash tout en insérant le câble USB)*

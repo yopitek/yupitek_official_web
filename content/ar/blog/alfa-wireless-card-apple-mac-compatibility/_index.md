@@ -4,6 +4,7 @@ description: "دليل توافق شامل لاستخدام محولات ALFA Ne
 keywords: "بطاقة ALFA اللاسلكية Mac، توافق ALFA macOS، محول ALFA Apple Silicon، محول USB WiFi M1 M2 M3 M4، ALFA Network MacBook، وضع المراقبة Mac، AWUS036ACH Mac، AWUS036ACM Mac، ALFA Network Mac Mini، اختبار الاختراق Apple Silicon"
 author: "فريق الدعم الفني Yopitek"
 date: "2026-06-20"
+lastmod: 2026-11-20
 category: "دليل تقني"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
@@ -35,9 +36,9 @@ tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", 
 | **AWUS036AXM** | MediaTek MT7921AUN | ❌ | ❌ | ✅ | ✅ |
 | **AWUS036ACHM** | MediaTek MT7610U | ❌ | ❌ | ✅ | ✅ |
 | **AWUS036ACS** | Realtek RTL8811AU | ❌ | ⚠️ عميل فقط (≤10.14) | ✅ | ✅ |
-| **AWUS036AX** | Realtek RTL8832BU | ❌ | ❌ | ⚠️ محدود | ⚠️ محدود |
-| **AWUS036AXER** | Realtek RTL8832BU | ❌ | ❌ | ⚠️ محدود | ⚠️ محدود |
-| **AWUS036EACS** | Realtek RTL8821CU | ❌ | ⚠️ عميل فقط | ❌ لا يوجد وضع مراقبة | ⚠️ غير موصى به |
+| **AWUS036AX** | Realtek RTL8832BU | ❌ | ❌ | ✅ النواة ≥6.17 | ⚠️ يتطلب نواة ≥6.17 (لم يُختبر على Pi) |
+| **AWUS036AXER** | Realtek RTL8832BU | ❌ | ❌ | ✅ النواة ≥6.17 | ⚠️ يتطلب نواة ≥6.17 (لم يُختبر على Pi) |
+| **AWUS036EACS** | Realtek RTL8821CU | ❌ | ⚠️ عميل فقط | ✅ المراقبة والحقن (يلزم Linux guest بنواة ≥ 6.2) | ⚠️ يلزم نواة ≥ 6.2؛ لم يُختبر على Raspberry Pi |
 
 **المفتاح:** ✅ = يعمل بشكل موثق | ⚠️ = محدود / يتطلب شروطاً | ❌ = غير مدعوم
 
@@ -206,7 +207,7 @@ Kext com.realtek.driver.RtWlanU v1830.32.b27
 
 **لبطاقة AWUS036ACH (RTL8812AU):**
 
-إذا كانت نواة Kali لديك **≥6.14**، فإن برنامج التشغيل الرئيسي `rtw88` مُضمَّن بالفعل — لا حاجة للتثبيت. للنوى الأقدم:
+إذا كانت نواة Kali لديك **≥6.13**، فإن برنامج التشغيل الرئيسي `rtw88` مُضمَّن بالفعل — لا حاجة للتثبيت. للنوى الأقدم:
 
 ```bash
 sudo apt update
@@ -273,7 +274,7 @@ sudo aireplay-ng --test wlan0mon
 | انقطاع الاتصال أثناء الفحص المكثف | خطأ تبديل وضع USB 3.0 (morrownr/USB-WiFi #676) | استخدم محور USB 2.0 بين البطاقة والـ Mac |
 | `airmon-ng` لا يرى البطاقة | متحكم USB خاطئ في إعدادات الـ VM | اضبط USB الـ VM على USB 3.0 (xHCI) بدلاً من USB 2.0 |
 | برنامج التشغيل لا يُصرَّف في الـ VM | رؤوس النواة مفقودة | `sudo apt install linux-headers-$(uname -r)` |
-| البطاقة معروفة لكن لا يوجد وضع مراقبة | شريحة RTL8832BU (AWUS036AX/AXER) | هذه الشريحة ذات دعم محدود لوضع المراقبة؛ استخدم AWUS036ACH بدلاً منها |
+| البطاقة معروفة لكن لا يوجد وضع مراقبة | شريحة RTL8832BU (AWUS036AX/AXER) | نواة النظام الضيف أقدم من 6.17 مع برنامج DKMS المجتمعي (قد يكون وضع المراقبة محدوداً)؛ استخدم نواة ≥6.17 (rtw89_8852bu المدمج) أو AWUS036ACH |
 
 ### 5.4 البديل: Raspberry Pi كعقدة اختبار اختراق مخصصة
 
@@ -362,8 +363,7 @@ Mac Mini M4/M4 Pro هو **أول Mac Mini بلا منافذ USB-A**. الأهم 
 
 | البطاقة | سبب التجنب |
 |------|-----------| 
-| AWUS036AX / AWUS036AXER (RTL8832BU) | دعم محدود وغير مستقر لوضع المراقبة في Linux؛ لا يوجد برنامج تشغيل macOS |
-| AWUS036EACS (RTL8821CU) | **لا تدعم** وضع المراقبة مطلقاً — غير مناسبة لتدقيق الأمن |
+| AWUS036AX / AWUS036AXER (RTL8832BU) | لا يوجد برنامج تشغيل macOS؛ في آلة Linux الافتراضية يعمل وضع المراقبة مع نواة ≥6.17 (rtw89_8852bu المدمج) وقد يكون محدوداً مع برنامج DKMS المجتمعي على النوى الأقدم |
 | AWUS036ACHM (MT7610U) | لا يوجد برنامج تشغيل macOS (chris1111 لا يدعم MediaTek)؛ يتطلب التصريف على Linux |
 
 ---
@@ -424,11 +424,11 @@ Mac Mini M4/M4 Pro هو **أول Mac Mini بلا منافذ USB-A**. الأهم 
 |---------|-------------|-------------------|-------------|
 | RTL8812AU | AWUS036ACH، AWUS036ACS | [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | DKMS (موصى به) |
 | RTL8812AU | AWUS036ACH | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) | مجتمعي (قديم) |
-| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | رئيسي (نواة ≥6.14) |
+| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | رئيسي (نواة ≥6.13) |
 | MT7612U | AWUS036ACM | Linux في النواة (`mt76`) | في النواة (≥4.19) |
 | MT7921AUN | AWUS036AXML، AWUS036AXM | Linux في النواة (`mt7921u`) | في النواة (≥5.18) |
 | MT7610U | AWUS036ACHM | [imzyxwvu/mt7610u](https://github.com/imzyxwvu/mt7610u) | خارج النواة |
-| RTL8832BU | AWUS036AX، AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | دعم محدود |
+| RTL8832BU | AWUS036AX، AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | rtw89_8852bu مدمج (≥6.17)؛ DKMS مجتمعي على النوى الأقدم (وضع المراقبة قد يكون محدوداً) |
 
 ### برنامج تشغيل macOS (Mac Intel فقط)
 

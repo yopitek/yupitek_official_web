@@ -71,9 +71,9 @@ sudo apt update && sudo apt upgrade -y
 
 ## 動手前先檢查：你真的需要社群驅動嗎？
 
-### 1. 核心 6.14+ 先試內建支援
+### 1. 核心 6.13+ 先試內建支援
 
-自 **Linux 6.14** 起，`rtl8812au` 系列已有以 `mac80211` 為基礎的核心內建驅動加入主線（`lwfinger/rtw88` 生態系）。若您的核心是 6.14 或更新版本，**優先試試內建驅動**：
+自 **Linux 6.13** 起，`rtl8812au` 系列已有以 `mac80211` 為基礎的核心內建驅動加入主線（`lwfinger/rtw88` 生態系）。若您的核心是 6.13 或更新版本，**優先試試內建驅動**：
 
 ```bash
 # 先確認核心版本
@@ -99,7 +99,7 @@ ip link
 
 ```bash
 lsusb
-# 預期看到：
+# 預期看到:
 # Bus ... Device ...: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU ...
 # 或
 # Bus ... Device ...: ID 0bda:8813 Realtek Semiconductor Corp. RTL8814AU ...
@@ -128,7 +128,7 @@ sudo make dkms_remove
 
 ```bash
 sudo dkms status
-# 例如輸出：
+# 例如輸出:
 # 8812au/5.6.4.2, 6.1.0-kali9-amd64, x86_64: installed
 
 # 移除該版本的所有核心建置
@@ -143,7 +143,7 @@ sudo dkms remove 8812au/5.6.4.2 --all
 # 找出殘留的模組檔
 find /lib/modules -name "*88XXau*" 2>/dev/null
 
-# 手動刪除（請依實際路徑）
+# 手動刪除 (請依實際路徑)
 sudo rm -f /lib/modules/$(uname -r)/kernel/drivers/net/wireless/rtl8812au/88XXau.ko
 sudo depmod -a
 sudo modprobe -r 88XXau 2>/dev/null
@@ -196,7 +196,7 @@ sudo make dkms_install
 
 ```bash
 lsusb                              # 仍須看到 0bda:8812 或 0bda:8813
-sudo modprobe 88XXau               # 手動載入（若未自動載入）
+sudo modprobe 88XXau               # 手動載入 (若未自動載入)
 lsmod | grep 88XXau                # 應列出 88XXau
 ip link                            # 應出現 wlan0 / wlan1 等無線介面
 sudo dkms status                   # 應顯示 installed
@@ -214,7 +214,7 @@ sudo dkms status                   # 應顯示 installed
 # 1. 關閉會干擾監聽的網路服務
 sudo airmon-ng check kill
 
-# 2. 把介面（以 wlan1 為例）切換到監聽模式
+# 2. 把介面 (以 wlan1 為例) 切換到監聽模式
 sudo ip link set wlan1 down
 sudo iw dev wlan1 set type monitor
 sudo ip link set wlan1 up
@@ -225,7 +225,7 @@ iwconfig
 
 # 4. 封包注入測試
 sudo aireplay-ng --test wlan1
-# 預期看到：Injection is working!
+# 預期看到: Injection is working!
 ```
 
 > **合法性提醒**：Monitor Mode 與封包注入僅限用於**您擁有或已獲明確授權**的網路環境（自家實驗室、教學課程、企業委託的滲透測試）。請遵守當地法規，並只對授權目標操作。
@@ -245,16 +245,16 @@ sudo aireplay-ng --test wlan1
 ### MOK 運作原理（白話版）
 
 ```
-您編譯出的模組（88XXau.ko）
-        │  以「機器本金鑰」簽署（private key / mok.key）
+您編譯出的模組 (88XXau.ko)
+        │  以"機器本金鑰"簽署 (private key / mok.key)
         ▼
 核心載入前檢查簽章
-        │  用「MOK 公鑰」（mok.pub）驗證
+        │  用"MOK 公鑰"(mok.pub) 驗證
         ▼
-核心信任此金鑰？（已在 UEFI MOK 清單中？）
+核心信任此金鑰? (已在 UEFI MOK 清單中?)
    │是                     │否
    ▼                       ▼
-載入成功 ✅         拒絕載入：Required key not available ❌
+載入成功 ✅         拒絕載入: Required key not available ❌
 ```
 
 ### 1. 檢查 DKMS 的簽署金鑰是否已自動產生
@@ -263,8 +263,8 @@ sudo aireplay-ng --test wlan1
 
 ```bash
 ls -l /var/lib/dkms/mok.key /var/lib/dkms/mok.pub
-# mok.key  = 私鑰（本機簽署用，切勿外流）
-# mok.pub  = 公鑰（匯入 UEFI 用）
+# mok.key  = 私鑰 (本機簽署用, 切勿外流)
+# mok.pub  = 公鑰 (匯入 UEFI 用)
 ```
 
 > 若這兩個檔案不存在，代表您的 DKMS 版本較舊或 Secure Boot 偵測未正確觸發。先執行一次 `sudo dkms autoinstall` 讓它產生；若仍無，再回來確認 Secure Boot 狀態。
@@ -301,7 +301,7 @@ sudo mokutil --list-new
 # 檢查 MOK 公鑰是否已被核心信任
 sudo mokutil --test-key /var/lib/dkms/mok.pub
 
-# 查看核心憑證鏈（應能看到 MOK 相關項目）
+# 查看核心憑證鏈 (應能看到 MOK 相關項目)
 sudo dmesg | grep -i cert
 
 # 現在重新載入模組
@@ -333,7 +333,7 @@ lsmod | grep 88XXau
 | 3 | 是否有編譯環境 | 可執行 `gcc`、`make`、`dkms` | `apt install build-essential dkms` |
 | 4 | Secure Boot 狀態 | 已知是否開啟 | `mokutil --sb-state` 查詢 |
 | 5 | USB 供電 | 直插主機板 USB 3.0 或**有供電的 USB Hub** | 高功率網路卡需穩定供電（ACH 最高 0.7A@5V） |
-| 6 | 需要監聽／注入？ | 是→社群驅動 DKMS；否→可考慮核心 ≥6.14 內建 | 見第二章 |
+| 6 | 需要監聽／注入？ | 是→社群驅動 DKMS；否→可考慮核心 ≥6.13 內建 | 見第二章 |
 
 ### 平台紅線（Support Boundary）
 
@@ -373,7 +373,7 @@ lsmod | grep 88XXau
 
 Kali Linux 核心更新後網路卡「罷工」是 out-of-tree 驅動最典型的宿命，**不是硬體故障，也不是系統中毒**。只要掌握三件事就能根治：
 
-1. **認清根源**——RTL8812AU/RTL8814AU 需要為每個核心版本重新編譯，內建驅動（核心 ≥6.14）或原生核心支援型號（如 MediaTek MT7921AU）可省去大部分編譯麻煩。
+1. **認清根源**——RTL8812AU/RTL8814AU 需要為每個核心版本重新編譯，內建驅動（核心 ≥6.13）或原生核心支援型號（如 MediaTek MT7921AU）可省去大部分編譯麻煩。
 2. **用 DKMS 一勞永逸**——`sudo make dkms_install` 之後，未來核心升級會自動重建模組，不再需要每次手動處理。
 3. **Secure Boot 不是障礙**——透過 MOK 金鑰簽署（`mokutil --import /var/lib/dkms/mok.pub` ＋ UEFI 註冊）即可安全載入自訂模組，全程不需關閉任何安全防護。
 

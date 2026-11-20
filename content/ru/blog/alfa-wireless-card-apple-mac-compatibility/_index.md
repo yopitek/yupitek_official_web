@@ -4,6 +4,7 @@ description: "Полное руководство по совместимост�
 keywords: "ALFA беспроводная карта Mac, совместимость ALFA macOS, ALFA адаптер Apple Silicon, USB WiFi адаптер M1 M2 M3 M4, ALFA Network MacBook, режим монитора Mac, AWUS036ACH Mac, AWUS036ACM Mac, ALFA Network Mac Mini, тестирование на проникновение Apple Silicon"
 author: "Группа технической поддержки Yopitek"
 date: "2026-06-20"
+lastmod: 2026-11-20
 category: "Техническое руководство"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
@@ -35,9 +36,9 @@ tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", 
 | **AWUS036AXM** | MediaTek MT7921AUN | ❌ | ❌ | ✅ | ✅ |
 | **AWUS036ACHM** | MediaTek MT7610U | ❌ | ❌ | ✅ | ✅ |
 | **AWUS036ACS** | Realtek RTL8811AU | ❌ | ⚠️ Только клиент (≤10.14) | ✅ | ✅ |
-| **AWUS036AX** | Realtek RTL8832BU | ❌ | ❌ | ⚠️ Ограниченно | ⚠️ Ограниченно |
-| **AWUS036AXER** | Realtek RTL8832BU | ❌ | ❌ | ⚠️ Ограниченно | ⚠️ Ограниченно |
-| **AWUS036EACS** | Realtek RTL8821CU | ❌ | ⚠️ Только клиент | ❌ Нет режима монитора | ⚠️ Не рекомендуется |
+| **AWUS036AX** | Realtek RTL8832BU | ❌ | ❌ | ✅ Ядро ≥6.17 | ⚠️ Нужно ядро ≥6.17 (на Pi не проверялось) |
+| **AWUS036AXER** | Realtek RTL8832BU | ❌ | ❌ | ✅ Ядро ≥6.17 | ⚠️ Нужно ядро ≥6.17 (на Pi не проверялось) |
+| **AWUS036EACS** | Realtek RTL8821CU | ❌ | ⚠️ Только клиент | ✅ Монитор и инъекция (гостевое ядро Linux ≥6.2) | ⚠️ Требуется ядро ≥6.2, на Raspberry Pi не проверено |
 
 **Обозначения:** ✅ = Подтверждена работа | ⚠️ = Ограниченно / требует условий | ❌ = Не поддерживается
 
@@ -206,7 +207,7 @@ Rokland (американский дистрибьютор ALFA) [настоят
 
 **Для AWUS036ACH (RTL8812AU):**
 
-Если ваше ядро Kali **≥6.14**, mainline-драйвер `rtw88` уже включён — установка не требуется. Для более старых ядер:
+Если ваше ядро Kali **≥6.13**, mainline-драйвер `rtw88` уже включён — установка не требуется. Для более старых ядер:
 
 ```bash
 sudo apt update
@@ -273,7 +274,7 @@ sudo aireplay-ng --test wlan0mon
 | Карта отключается при интенсивном сканировании | Ошибка переключения режима USB 3.0 (morrownr/USB-WiFi #676) | Использовать USB 2.0-концентратор между картой и Mac |
 | `airmon-ng` не видит карту | Неверный USB-контроллер в настройках ВМ | Установить USB ВМ на USB 3.0 (xHCI), а не USB 2.0 |
 | Драйвер не компилируется в ВМ | Отсутствующие заголовки ядра | `sudo apt install linux-headers-$(uname -r)` |
-| Карта распознана, но нет режима монитора | Чипсет RTL8832BU (AWUS036AX/AXER) | Этот чипсет имеет ограниченную поддержку режима монитора; используйте AWUS036ACH |
+| Карта распознана, но нет режима монитора | Чипсет RTL8832BU (AWUS036AX/AXER) | Гостевое ядро старше 6.17 с DKMS-драйвером от сообщества (режим монитора может быть ограничен); используйте ядро ≥6.17 (встроенный rtw89_8852bu) или AWUS036ACH |
 
 ### 5.4 Альтернатива: Raspberry Pi как выделенный пентест-узел
 
@@ -362,8 +363,8 @@ Mac Mini M4/M4 Pro — **первый Mac Mini без USB-A-портов**. Чт
 
 | Карта | Почему избегать |
 |------|-----------| 
-| AWUS036AX / AWUS036AXER (RTL8832BU) | Ограниченная и нестабильная поддержка режима монитора в Linux; нет драйвера для macOS |
-| AWUS036EACS (RTL8821CU) | Не поддерживает **никакой** режим монитора — неприемлем для аудита безопасности |
+| AWUS036AX / AWUS036AXER (RTL8832BU) | Нет драйвера для macOS; в виртуальной машине Linux режим монитора работает на ядре ≥6.17 (встроенный rtw89_8852bu), а с DKMS-драйвером от сообщества на старых ядрах может быть ограничен |
+| AWUS036EACS (RTL8821CU) | В macOS нет нативного драйвера режима монитора; в Linux VM (ядро ≥6.2) монитор и инъекция работают, поэтому это не карта, которой следует избегать, если вы работаете через ВМ |
 | AWUS036ACHM (MT7610U) | Нет драйвера для macOS (chris1111 не поддерживает MediaTek); требует компиляции Linux |
 
 ---
@@ -424,11 +425,11 @@ Mac Apple Silicon (M1/M2/M3/M4) используют ядро ARM64, котор�
 |---------|-------------|-------------------|-------------|
 | RTL8812AU | AWUS036ACH, AWUS036ACS | [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | DKMS (рекомендуется) |
 | RTL8812AU | AWUS036ACH | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) | Сообщество (устарело) |
-| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | Mainline (ядро ≥6.14) |
+| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | Mainline (ядро ≥6.13) |
 | MT7612U | AWUS036ACM | Linux в ядре (`mt76`) | В ядре (≥4.19) |
 | MT7921AUN | AWUS036AXML, AWUS036AXM | Linux в ядре (`mt7921u`) | В ядре (≥5.18) |
 | MT7610U | AWUS036ACHM | [imzyxwvu/mt7610u](https://github.com/imzyxwvu/mt7610u) | Вне ядра |
-| RTL8832BU | AWUS036AX, AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | Ограниченная поддержка |
+| RTL8832BU | AWUS036AX, AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | Встроенный rtw89_8852bu (≥6.17); DKMS от сообщества на старых ядрах (режим монитора может быть ограничен) |
 
 ### Драйвер macOS (только Intel Mac)
 

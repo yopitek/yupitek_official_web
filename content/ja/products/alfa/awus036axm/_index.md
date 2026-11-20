@@ -28,7 +28,7 @@ AWUS036AXM は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン�
 - USB-A L エルボーコネクタ（USB 3.2 Gen 1、5 Gbps）
 - 2× RP-SMA female 着脱可能アンテナ（5 dBi）
 - WPA3/WPA2/WPA/WEP/WPS
-- Kali Linux Monitor Mode + Packet Injection 対応
+- Kali Linux Monitor Mode
 
 ## 技術仕様
 
@@ -51,7 +51,7 @@ AWUS036AXM は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン�
 | Windows 11 | ✅ 対応 | 6 GHz を含む完全トリバンド |
 | macOS | ❌ 非対応 | macOS 11+ および Apple Silicon 非対応 |
 | Ubuntu | ✅ 対応 | カーネル内蔵 mt7921u、カーネル ≥ 5.18 |
-| Kali Linux | ✅ 対応 | Monitor mode + パケットインジェクション；ファームウェアファイルが必要な場合あり |
+| Kali Linux | ⚠️ 部分対応 | Monitor mode は動作します。パケットインジェクションは GX10（stock カーネル 6.17）での自社テストでは通過しませんでした（原因はカーネル 6.16 以降の mac80211 chanctx のリグレッションで、チップ自体の制限ではありません）。実機の Kali は未検証；ファームウェアファイルが必要な場合あり |
 | NetHunter | ⚠️ 部分対応 | OTG；カーネル依存 |
 
 ## 対応ハードウェア
@@ -67,7 +67,7 @@ AWUS036AXM は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン�
 | 機能 | 状態 |
 |------|------|
 | Monitor Mode | ✅ あり |
-| Packet Injection | ✅ あり |
+| Packet Injection | ❌ 通過せず（自社テスト、GX10、stock カーネル 6.17） |
 | Soft AP モード | ✅ あり |
 | Bluetooth | ✅ BT 5.2（内蔵 BT アンテナ）|
 | VIF | ✅ あり |

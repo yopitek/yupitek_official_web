@@ -3,7 +3,7 @@ title: "Виртуальная машина Kali Linux не видит внеш�
 description: "Стандартизированное руководство по диагностике USB Pass-through: Extension Pack для VirtualBox, контроллер USB 3.0 (xHCI), группа vboxusers, служба арбитража USB в VMware, диагностический поток lsusb→iwconfig→dmesg и раздел FAQ."
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -17,7 +17,7 @@ faq:
   - question: "После настройки USB-фильтра хост больше не может использовать адаптер. Это нормально?"
     answer: "Да, это ожидаемо. После передачи устройства в Guest управление принадлежит Guest, и хост не может использовать его одновременно. Когда адаптер снова нужен на хосте, верните его (release) через значок USB в окне VM."
   - question: "lsusb внутри Guest показывает адаптер, но интерфейса wlan нет. Какой драйвер установить?"
-    answer: "Зависит от чипсета: AWUS036AXML (MediaTek MT7921AU) использует встроенный в ядро драйвер mt7921u — работает по принципу plug-and-play на Kernel 5.18+; сначала убедитесь, что apt install linux-firmware обновлён. AWUS036ACH (Realtek RTL8812AU) использует внешний (out-of-tree) драйвер — установите поддерживаемый сообществом aircrack-ng/rtl8812au и скомпилируйте его через DKMS (и позаботьтесь о подписи MOK для Secure Boot; не отключайте Secure Boot)."
+    answer: "Зависит от чипсета: AWUS036AXML (MediaTek MT7921AUN) использует встроенный в ядро драйвер mt7921u — работает по принципу plug-and-play на Kernel 5.18+; сначала убедитесь, что apt install linux-firmware обновлён. AWUS036ACH (Realtek RTL8812AU) использует внешний (out-of-tree) драйвер — установите поддерживаемый сообществом aircrack-ng/rtl8812au и скомпилируйте его через DKMS (и позаботьтесь о подписи MOK для Secure Boot; не отключайте Secure Boot)."
   - question: "Почему Guest не загружается после выбора контроллера USB 3.0?"
     answer: "Некоторые старые ядра Guest плохо поддерживают xHCI. Если ваш Kali старой версии, попробуйте: выключить → вернуть USB 2.0 (EHCI) Controller → загрузиться → обновить ядро → вернуть USB 3.0. Держите Kali как можно более свежим — поддержка xHCI будет наиболее полной."
   - question: "Адаптер быстрый на физической машине, но медленный внутри VM. Это нормально?"
@@ -25,7 +25,7 @@ faq:
 ---
 
 > **Поддерживаемые платформы**: хосты Windows / Linux / macOS + Oracle VirtualBox / VMware Workstation (Guest = Kali Linux / Debian / Ubuntu)
-> **Целевое оборудование**: ALFA AWUS036ACH (Realtek RTL8812AU) / ALFA AWUS036AXML (MediaTek MT7921AU)
+> **Целевое оборудование**: ALFA AWUS036ACH (Realtek RTL8812AU) / ALFA AWUS036AXML (MediaTek MT7921AUN)
 > **Назначение статьи**: стандартизированное руководство по диагностике «USB Pass-through». Ограничения USB Pass-through на хостах macOS описаны в главе 5.
 
 ---
@@ -175,7 +175,7 @@ lsusb
 ```
 # AWUS036ACH (Realtek RTL8812AU)
 Bus ... ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac 2T2R DB WLAN Adapter
-# или AWUS036AXML (MediaTek MT7921AU)
+# или AWUS036AXML (MediaTek MT7921AUN)
 Bus ... ID 0e8d:7961 MediaTek Inc. Wireless_Device
 ```
 
@@ -280,7 +280,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 |-----------|------------------|-----------|
 | Хост Windows + VirtualBox / VMware + Guest Kali | ✅ Поддерживается | Все процедуры этой главы применимы |
 | Хост Linux + VirtualBox / VMware + Guest Kali | ✅ Поддерживается | Помните про группу vboxusers (VB) и службу vmware-usbarbitrator (VMware) |
-| **macOS (Apple Silicon)** + VirtualBox | ⚠️ **USB Pass-through ограничен** | Рекомендуется перейти на VMware Fusion или использовать хост Linux／Windows |
+| **macOS (Apple Silicon)** + VirtualBox | ⚠️ **USB Pass-through ограничен** | Рекомендуется перейти на VMware Fusion или использовать хост Linux/Windows |
 | macOS (Intel) + VirtualBox | ✅ Поддерживается | Требуется одобрение расширений ядра + Extension Pack, совпадающий по версии |
 | **Guest — macOS** | ❌ Не рекомендуется | Статья предполагает Linux Guest: Kali / Debian / Ubuntu |
 
@@ -304,7 +304,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 
 | Пункт проверки | Действие | Поле записи |
 |----------------|----------|-------------|
-| ПО виртуализации и версия | VirtualBox: `vboxmanage --version` ／ VMware: Help → About | \_\_\_\_\_ |
+| ПО виртуализации и версия | VirtualBox: `vboxmanage --version` / VMware: Help → About | \_\_\_\_\_ |
 | Версия Extension Pack совпадает? | VirtualBox: `VBoxManage list extpacks` | Версия \_\_\_\_\_ |
 | Права / службы хоста | Linux-хост: `id` — есть ли vboxusers; VMware: `systemctl status vmware-usbarbitrator` | \_\_\_\_\_ |
 | Настройка контроллера USB | VirtualBox: отмечен ли USB 3.0 (xHCI) Controller? | Да / Нет |
@@ -326,7 +326,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 
 ### Пакет информации для Intake техподдержки
 
-Перед звонком в техподдержку／отправкой заявки приложите следующую информацию одним пакетом, чтобы поддержка сразу перешла к делу:
+Перед звонком в техподдержку/отправкой заявки приложите следующую информацию одним пакетом, чтобы поддержка сразу перешла к делу:
 
 > **ОС хоста + архитектура, ПО виртуализации и версия, установлен ли Extension Pack и его версия, вывод `lsusb` на хосте, вывод `lsusb` внутри Guest, вывод `ip link` / `iwconfig` внутри Guest, соответствующие сообщения `dmesg`, модель адаптера и способ подключения (USB-C / USB-A, напрямую или через Hub)**
 
@@ -345,7 +345,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 
 **В4: `lsusb` внутри Guest показывает адаптер, но интерфейса wlan нет. Какой драйвер установить?**
 Зависит от чипсета:
-- **AWUS036AXML (MediaTek MT7921AU)**: использует встроенный в ядро драйвер `mt7921u` — работает по принципу plug-and-play на Kernel 5.18+; сначала убедитесь, что `apt install linux-firmware` обновлён.
+- **AWUS036AXML (MediaTek MT7921AUN)**: использует встроенный в ядро драйвер `mt7921u` — работает по принципу plug-and-play на Kernel 5.18+; сначала убедитесь, что `apt install linux-firmware` обновлён.
 - **AWUS036ACH (Realtek RTL8812AU)**: использует внешний (out-of-tree) драйвер — установите поддерживаемый сообществом `aircrack-ng/rtl8812au` и скомпилируйте его через DKMS (и позаботьтесь о подписи MOK для Secure Boot; не отключайте Secure Boot).
 
 **В5: Почему Guest не загружается после выбора контроллера USB 3.0?**
@@ -365,7 +365,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 3. **Установите контроллер USB на USB 3.0 (xHCI)** и используйте USB-фильтр для автоматического подключения адаптера.
 4. **Локализуйте уровень внутри Guest через `lsusb → iwconfig / ip link → dmesg`**; если драйвера не хватает — установите его, и перестаньте гадать, что адаптер сломан.
 
-**Рекомендуемое оборудование**: ALFA AWUS036AXML (MediaTek MT7921AU) на Kali с более новым ядром имеет **встроенный в ядро драйвер, работает по принципу plug-and-play** — меньше всего хлопот после Pass-through в VM. ALFA AWUS036ACH (Realtek RTL8812AU) тоже пригоден, но не забудьте скомпилировать драйвер сообщества через DKMS внутри Guest и решить вопрос подписи Secure Boot (см. статью по диагностике DKMS для RTL8812AU на этом сайте). Для обоих рекомендуется использовать на хосте USB-порт／Hub с независимым питанием, чтобы разом исключить переменную «отвала устройства».
+**Рекомендуемое оборудование**: ALFA AWUS036AXML (MediaTek MT7921AUN) на Kali с более новым ядром имеет **встроенный в ядро драйвер, работает по принципу plug-and-play** — меньше всего хлопот после Pass-through в VM. ALFA AWUS036ACH (Realtek RTL8812AU) тоже пригоден, но не забудьте скомпилировать драйвер сообщества через DKMS внутри Guest и решить вопрос подписи Secure Boot (см. статью по диагностике DKMS для RTL8812AU на этом сайте). Для обоих рекомендуется использовать на хосте USB-порт/Hub с независимым питанием, чтобы разом исключить переменную «отвала устройства». Однако инъекция зависит от ядра: сообщения сообщества о работающей инъекции относятся к ядрам до 6.16, а на штатном ядре 6.16 и новее (проверено на 6.17) AXML не проходит тест инъекции пакетов (`aireplay-ng --test`: Found 0 APs / No Answer), поэтому deauth и захват handshake невозможны. Причина — регрессия mac80211 chanctx, а не ограничение чипа; патченые драйверы сообщества могут вернуть инъекцию, но прошивка по-прежнему фиксирует скорость (1/6 Мбит/с, без инъекции HT/VHT). Режим мониторинга, AP и WPA3 не затронуты. Если нужна инъекция, выберите AWUS036ACH или AWUS036EACS.
 
 **Следующий шаг**: сохраните копию листа диагностики из главы 6 на рабочем столе вашей виртуальной машины Kali; при каждом случае «адаптер не виден» сначала прогоняйте его целиком, а затем решайте, открывать ли заявку в техподдержку — следуйте таблице, данные лечат всё.
 

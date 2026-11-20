@@ -23,8 +23,6 @@ faq:
 ---
 1. [Alfa Network AWUS036ACM Offizielle Dokumentation](https://docs.alfa.com.tw/Product/AWUS036ACM/) 2. [Linux Wireless Wiki — Schnittstellentypen (VIF)](https://wireless.wiki.kernel.org/en/users/documentation/iw/vif) 3. [MediaTek mt76 Linux Treiber](https://wireless.wiki.kernel.org/en/users/drivers/mediatek) 4. [IEEE 802.11s Mesh NetzwerkStandard](https://standards.ieee.org/ieee/802.11s/4469/) 5. [morrownr USB-WiFi Liste der In-Kernel-Treiber](https://github.com/morrownr/USB-WiFi)
 
-# ALFA AWUS036ACM: IBSS Ad Hoc und 802.11s Mesh-Netzwerk auf Raspberry Pi mit MT7612U aktivieren
-
 {{< tldr >}}
 Der AWUS036ACM verwendet den MT7612U-Chipsatz, dessen mt76x2u-Treiber auf Linux mac80211 aufbaut und den IBSS Ad Hoc- sowie den 802.11s Mesh Point-Modus vollständig unterstützt. Dieser Artikel erläutert detailliert die Funktionsweise beider Modi, die schrittweise Konfiguration und die praktischen Anwendungsszenarien.
 {{< /tldr >}}

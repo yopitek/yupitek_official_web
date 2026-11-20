@@ -3,7 +3,7 @@ title: "Verwendung von ALFA WiFi-Adaptern auf macOS: USB-Passthrough mit VMware 
 description: "So verwenden Sie ALFA USB-WiFi-Adapter auf macOS. Behandelt native macOS-Unterstützung, VMware Fusion USB-Passthrough und Parallels Desktop für Kali Linux Monitor-Modus und Packet-Injection."
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -202,7 +202,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**Empfehlung für M-Chip-Macs:** Wenn Sie einen ALFA-Adapter speziell für die Verwendung auf einem Apple-Silicon-Mac mit Kali in einer VM kaufen, ist der **AWUS036AXML (MT7921AUN)** die bessere Wahl. Sein integrierter Treiber macht den DKMS-Kompilierungsschritt überflüssig und funktioniert zuverlässig auf ARM64-Kali-Builds. Der AWUS036ACH ist funktional, erfordert aber den RTL8812AU-Out-of-Tree-Treiber, was eine Wartungsabhängigkeit von der Verfügbarkeit der Kernel-Header mit sich bringt.
+**Empfehlung für M-Chip-Macs:** Wenn Sie einen ALFA-Adapter speziell für die Verwendung auf einem Apple-Silicon-Mac mit Kali in einer VM kaufen, ist der **AWUS036AXML (MT7921AUN)** die bessere Wahl. Sein integrierter Treiber macht den DKMS-Kompilierungsschritt überflüssig und funktioniert zuverlässig auf ARM64-Kali-Builds. Der AWUS036ACH ist funktional, erfordert aber den RTL8812AU-Out-of-Tree-Treiber, was eine Wartungsabhängigkeit von der Verfügbarkeit der Kernel-Header mit sich bringt. Beachten Sie jedoch, dass Injection vom Kernel abhängt: Für Kernel vor 6.16 gibt es Community-Berichte, dass Injection funktioniert, aber auf dem Stock-Kernel 6.16 und neuer (getestet mit 6.17) besteht der AXML den Packet-Injection-Test (`aireplay-ng --test`: Found 0 APs / No Answer) nicht, sodass Deauth und Handshake-Capture nicht möglich sind. Ursache ist eine mac80211-chanctx-Regression, keine Einschränkung des Chips; gepatchte Community-Treiber können Injection wiederherstellen, die Firmware sperrt jedoch weiterhin die Rate (1/6 Mbps, keine HT/VHT-Injection). Monitor Mode, AP und WPA3 sind nicht betroffen. Wenn Sie Injection benötigen, wählen Sie stattdessen den AWUS036ACH oder AWUS036EACS.
 
 ---
 

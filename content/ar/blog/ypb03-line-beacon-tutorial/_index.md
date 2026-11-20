@@ -122,45 +122,45 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# LINE Developers 註冊的 HWID（這裡改為您申請到的 HWID）
+# HWID المسجَّل في LINE Developers (استبدله هنا بـ HWID الذي حصلت عليه)
 TARGET_HWID = "0123456789"
 
 @app.route("/callback", methods=["POST"])
 def callback():
-    # 取得 LINE 平台傳過來的 JSON 資料
+    # الحصول على بيانات JSON المرسلة من منصة LINE
     body = request.get_json()
     
     if not body or "events" not in body:
         return jsonify({"status": "error", "message": "No events found"}), 400
 
-    # 巡檢所有的事件
+    # المرور على جميع الأحداث
     for event in body["events"]:
-        # 篩選事件類型為 beacon 的事件
+        # تصفية الأحداث من نوع beacon
         if event.get("type") == "beacon":
             user_id = event["source"].get("userId")
             reply_token = event.get("replyToken")
             
             beacon_data = event.get("beacon", {})
             hwid = beacon_data.get("hwid")
-            beacon_type = beacon_data.get("type") # enter (進入), stay (逗留), banner (點擊橫幅)
+            beacon_type = beacon_data.get("type") # enter (دخول)، stay (بقاء)، banner (النقر على الشريط)
             
-            print(f"收到 Beacon 事件！使用者 ID: {user_id}")
-            print(f"設備 HWID: {hwid} | 觸發類型: {beacon_type}")
+            print(f"تم استلام حدث Beacon! معرّف المستخدم: {user_id}")
+            print(f"HWID الجهاز: {hwid} | نوع التشغيل: {beacon_type}")
             
-            # 判斷是否為我們的 YPB03 設備
+            # التحقق مما إذا كان هذا جهاز YPB03 الخاص بنا
             if hwid == TARGET_HWID:
                 if beacon_type == "enter":
-                    print("--> 使用者進入了 YPB03 範圍！觸發迎賓機制。")
-                    # 在這裡，您可以呼叫 LINE Messaging API 送出歡迎折價券給 user_id
+                    print("--> دخل المستخدم نطاق YPB03! تفعيل آلية الترحيب.")
+                    # هنا يمكنك استدعاء LINE Messaging API لإرسال قسيمة خصم ترحيبية إلى user_id
                 elif beacon_type == "stay":
-                    print("--> 使用者持續在範圍內...")
+                    print("--> المستخدم لا يزال ضمن النطاق...")
                 elif beacon_type == "banner":
-                    print("--> 使用者點擊了聊天室上方的 LINE Beacon 橫幅！")
+                    print("--> نقر المستخدم على شريط LINE Beacon أعلى غرفة الدردشة!")
                     
     return jsonify({"status": "ok"}), 200
 
 if __name__ == "__main__":
-    # 本地測試執行在 5000 端口
+    # يعمل الاختبار المحلي على المنفذ 5000
     app.run(port=5000)
 ```
 
@@ -186,9 +186,9 @@ if __name__ == "__main__":
 4. احمل هاتفك واقترب ببطء من نطاق بث YPB03 (يمكن في هذه المرحلة خفض قدرة البث يدويًا لتسهيل الاختبار داخل الأماكن المغلقة).
 5. راجِع لوحة Python الطرفية، وسترى رسائل السجل اللحظية التالية:
    ```text
-   收到 Beacon 事件！使用者 ID: U1234567890abcdef...
-   設備 HWID: 0123456789 | 觸發類型: enter
-   --> 使用者進入了 YPB03 範圍！觸發迎賓機制。
+   تم استلام حدث Beacon! معرّف المستخدم: U1234567890abcdef...
+   HWID الجهاز: 0123456789 | نوع التشغيل: enter
+   --> دخل المستخدم نطاق YPB03! تفعيل آلية الترحيب.
    ```
 
 ---

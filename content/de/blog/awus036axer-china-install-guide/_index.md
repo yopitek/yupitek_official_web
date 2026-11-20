@@ -3,7 +3,7 @@ title: "ALFA AWUS036AXER Treiber-Installationsanleitung für China: Kali Linux, 
 description: "Schritt-für-Schritt-Anleitung zur Installation von ALFA AWUS036AXER Treibern in China unter Verwendung lokaler Mirrors. RTL8832BU-Treiber, WiFi 6 Nano-Adapter. Deckt Kali Linux, Ubuntu 22/24 (DKMS), Debian und Raspberry Pi ab."
 date: 2026-04-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -18,22 +18,22 @@ faq:
   - question: "Welchen Chipsatz verwendet der AWUS036AXER? Ist er derselbe wie beim AWUS036AX?"
     answer: "Er verwendet ebenfalls den Realtek RTL8832BU-Chipsatz, unterstützt WiFi 6, ist jedoch kleiner und tragbarer."
   - question: "Braucht der AWUS036AXER unter Ubuntu 24.04 einen Treiber?"
-    answer: "Ja. Der RTL8832BU ist nicht im Kernel von Ubuntu 24.04 enthalten. Bauen Sie den Community-Treiber rtl8852bu (morrownr/rtl8852bu-20250826) einmalig über DKMS; er wird bei Kernel-Updates automatisch neu gebaut."
+    answer: "Das hängt von Ihrem Kernel ab. Linux-Kernel 6.17 und neuer (zum Beispiel Ubuntu 24.04 HWE / Kernel 6.17) liefert den In-Kernel-Treiber rtw89_8852bu mit — Plug-and-Play, kein DKMS. Nur auf Kerneln älter als 6.17 bauen Sie den Community-Treiber rtl8852bu (morrownr/rtl8852bu-20250826) einmalig über DKMS. Prüfen Sie zuerst mit uname -r."
   - question: "Ist der AWUS036AXER für drahtlose Sicherheitsforschung geeignet?"
-    answer: "Nein. Der Community-Treiber rtl8852bu unterstützt weder Monitor-Modus noch Paket-Injektion. Verwenden Sie stattdessen einen Adapter mit In-Kernel-MediaTek-Treiber wie den AWUS036ACM."
+    answer: "Ja. Mit dem In-Kernel-Treiber rtw89_8852bu auf Kernel 6.17+ funktionieren Monitor-Modus und Paket-Injektion in unseren Tests beide (Ubuntu 24.04 / Kernel 6.17: Injektion 73 % auf 2,4 GHz sowie ein durchgängiger WPA .22000 Capture). Hinweis: Auf älteren Kerneln mit dem Community-DKMS-Treiber kann die Monitor-Unterstützung eingeschränkt sein. Nur in Netzwerken, die Ihnen gehören oder für die Sie eine Testerlaubnis haben."
   - question: "Was ist die USB-ID des AWUS036AXER?"
     answer: "Die Hersteller-ID (Vendor-ID) des Realtek RTL8832BU ist 0bda. Die Produkt-ID lautet je nach Gerät 8832 oder 885a; bestätigen Sie sie mit lsusb."
   - question: "Brauche ich ein VPN, um den AWUS036AXER in China zu installieren?"
     answer: "Nicht unbedingt. Klonen Sie den Treiber aus dem geprüften GitHub-Repository (morrownr/rtl8852bu-20250826); falls GitHub langsam ist, nutzen Sie einen vertrauenswürdigen Proxy oder Mirror. Die Build-Tools lassen sich weiterhin über inländische Mirrors installieren."
 ---
 
-Der AWUS036AXER ist ALFAs WiFi 6 Nano-Adapter — ein kompakter Dongle, der so konzipiert ist, dass er permanent an einem Laptop angeschlossen bleiben kann. Der RTL8832BU-Chip des AWUS036AXER hat keinen In-Kernel-Linux-Treiber, daher bauen Sie auf jeder Distribution (auch Ubuntu 24.04) den Community-Treiber rtl8852bu einmalig über DKMS. Der Treiber-Quellcode wird aus dem geprüften GitHub-Repository geklont; falls GitHub langsam ist, nutzen Sie einen vertrauenswürdigen Proxy oder Mirror. Der Monitor-Modus wird von diesem Treiber nicht unterstützt.
+Der AWUS036AXER ist ALFAs WiFi 6 Nano-Adapter — ein kompakter Dongle, der so konzipiert ist, dass er permanent an einem Laptop angeschlossen bleiben kann. Sein RTL8832BU-Chip wird vom **In-Kernel-Treiber rtw89_8852bu auf Linux-Kernel 6.17 und neuer** unterstützt (zum Beispiel Ubuntu 24.04 HWE / Kernel 6.17) — Plug-and-Play, kein Kompilieren. Nur auf **älteren Kerneln** (unter 6.17) bauen Sie den Community-Treiber rtl8852bu einmalig über DKMS. Diese Anleitung deckt beide Fälle ab. Der Treiber-Quellcode wird aus dem geprüften GitHub-Repository geklont; falls GitHub langsam ist, nutzen Sie einen vertrauenswürdigen Proxy oder Mirror.
 
 {{< tldr >}}
-Der AWUS036AXER verwendet den RTL8832BU-Chipsatz mit WiFi 6. Der Treiber ist nicht im Kernel enthalten: Jede Distribution (auch Ubuntu 24.04) braucht rtl8852bu per DKMS. Der Monitor-Modus wird nicht unterstützt.
+Der AWUS036AXER verwendet den RTL8832BU-Chipsatz mit WiFi 6. Kernel 6.17+ (inkl. Ubuntu 24.04 / Kernel 6.17) hat den In-Kernel-Treiber rtw89_8852bu — kein DKMS, mit Monitor-Modus und Injektion, die in Tests funktionieren. Ältere Kernel brauchen den Community-Treiber rtl8852bu über DKMS.
 {{< /tldr >}}
 
-> **Hinweis zur Sicherheitsforschung:** Der Community-Treiber rtl8852bu unterstützt weder Monitor-Modus noch Paket-Injektion. Verwenden Sie für Sicherheitsforschung einen Adapter mit In-Kernel-MediaTek-Treiber, z. B. den [AWUS036ACM](/de/blog/awus036acm-china-install-guide/).
+> **Hinweis zur Sicherheitsforschung:** Mit dem **In-Kernel-Treiber rtw89_8852bu auf Kernel 6.17+** funktionieren der Monitor-Modus und die Paket-Injektion des AWUS036AXER in Tests (Ubuntu 24.04 / Kernel 6.17: 2,4-GHz-Injektion 73 %, durchgängiger WPA .22000). Nur auf älteren Kerneln mit dem Community-DKMS-Treiber ist die Monitor-Unterstützung eingeschränkt. Prüfen Sie zuerst `uname -r`. Nur in Netzwerken, die Ihnen gehören oder für die Sie eine Testerlaubnis haben.
 
 > **Hinweis zur Reichweite:** Der AWUS036AXER verfügt über eine integrierte, nicht abnehmbare Antenne. Für die Sicherheitsforschung bieten Adapter mit externen RP-SMA-Antennen (AWUS036ACH, AWUS036ACM) eine deutlich bessere Reichweite.
 
@@ -109,19 +109,31 @@ iwconfig
 
 ### Schritt 5: Monitor-Modus aktivieren {#enable-monitor-mode}
 
-> **Nicht unterstützt:** Der Community-Treiber rtl8852bu für den RTL8832BU unterstützt keinen Monitor-Modus, daher gibt es hier keine Befehle. Für den Monitor-Modus verwenden Sie einen Adapter mit In-Kernel-MediaTek-Treiber, z. B. den [AWUS036ACM](/de/blog/awus036acm-china-install-guide/).
+> **Funktioniert auf Kernel 6.17+:** Mit dem In-Kernel-Treiber rtw89_8852bu funktioniert der Monitor-Modus:
+> ```bash
+> sudo nmcli dev set wlxXXXX managed no
+> sudo ip link set wlxXXXX down
+> sudo iw dev wlxXXXX set type monitor
+> sudo ip link set wlxXXXX up
+> ```
+> Auf älteren Kerneln mit dem Community-DKMS-Treiber kann die Monitor-Unterstützung eingeschränkt sein — dort können Sie zu einem Adapter mit In-Kernel-MediaTek-Treiber wechseln, z. B. dem [AWUS036ACM](/de/blog/awus036acm-china-install-guide/).
 
 ### Schritt 6: Paket-Injektion testen {#test-packet-injection}
 
-> **Nicht unterstützt:** Paket-Injektion setzt den Monitor-Modus voraus, den dieser Treiber nicht bietet. Verwenden Sie für Injektionstests den [AWUS036ACM](/de/blog/awus036acm-china-install-guide/).
+> **Funktioniert auf Kernel 6.17+:** Nach dem Wechsel in den Monitor-Modus testen Sie die Injektion mit aireplay-ng (73 % auf 2,4 GHz in Tests):
+> ```bash
+> sudo iw dev wlxXXXX set channel 6
+> sudo aireplay-ng --test wlxXXXX
+> ```
+> Nur in Netzwerken, die Ihnen gehören oder für die Sie eine Testerlaubnis haben. Auf älteren Kerneln, bei denen dem Community-DKMS-Treiber der Monitor-Modus fehlt, ist auch die Injektion nicht verfügbar.
 
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — DKMS erforderlich
+### Ubuntu 24.04 (Noble)
 
-Ubuntu 24.04 (Kernel 6.8) enthält keinen Treiber für den RTL8832BU. Wechseln Sie zu einem inländischen Mirror und bauen Sie den Treiber wie bei Ubuntu 22.04 unten.
+Auf Ubuntu 24.04 enthält nur ein **HWE-Kernel 6.17 oder neuer** (z. B. der HWE-Kernel von 24.04.4) den In-Kernel-Treiber rtw89_8852bu — einfach einstecken, kein Bauen nötig. Auf dem **GA-Kernel 6.8** oder dem **HWE-Kernel 6.14** (beide ohne diesen Treiber) wechseln Sie zu einem inländischen Mirror und bauen den Community-Treiber wie bei Ubuntu 22.04 unten, oder aktualisieren Sie auf einen HWE-Kernel 6.17 oder neuer, um den In-Kernel-Treiber zu erhalten.
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -144,7 +156,7 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-Führen Sie nach dem Neustart `sudo modprobe 8852bu` und `iwconfig` aus. Wenn das Modul geladen wird und eine Schnittstelle erscheint, sind Sie fertig (nur Managed-Modus; der Monitor-Modus wird nicht unterstützt).
+Führen Sie nach dem Neustart `sudo modprobe 8852bu` und `iwconfig` aus. Wenn das Modul geladen wird und eine Schnittstelle erscheint, sind Sie fertig. Dies ist der Pfad über den Community-DKMS-Treiber für ältere Kernel (unter 6.17), bei dem die Monitor-Unterstützung eingeschränkt sein kann. Auf Kernel 6.17+ nutzt das System den In-Kernel-Treiber rtw89_8852bu, mit dem Monitor-Modus und Injektion funktionieren.
 
 ---
 
@@ -192,7 +204,7 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-Der Monitor-Modus wird von diesem Treiber nicht unterstützt (siehe Kali, Schritt 5).
+Dieser Weg über den Community-DKMS-Treiber gilt für ältere Kernel (unter 6.17), bei denen die Monitor-Unterstützung eingeschränkt sein kann. Auf Kernel 6.17+ nutzt das System den In-Kernel-Treiber rtw89_8852bu, mit dem Monitor-Modus und Injektion funktionieren (siehe Kali, Schritt 5).
 
 ---
 
@@ -242,7 +254,7 @@ sudo reboot
 | `install-driver.sh` schlägt fehl | Fehlende Header | `sudo apt install linux-headers-$(uname -r)` |
 | GitHub-Klon schlägt fehl oder ist langsam | Netzwerkproblem | Vertrauenswürdigen Proxy oder Mirror verwenden |
 | `modprobe 8852bu` schlägt fehl | Treiber nicht gebaut oder nicht geladen | `sudo ./install-driver.sh` erneut ausführen, `sudo dkms status` prüfen, dann neu starten |
-| Monitor-Modus / Injektion funktioniert nicht | Vom Treiber rtl8852bu nicht unterstützt | AWUS036ACM für Pentest-Arbeiten verwenden |
+| Monitor-Modus / Injektion funktioniert nicht | Kernel älter als 6.17 mit dem Community-DKMS-Treiber rtl8852bu (Monitor-Unterstützung kann eingeschränkt sein) | Mit `uname -r` prüfen; Kernel 6.17+ (In-Kernel rtw89_8852bu) verwenden oder auf älteren Kerneln den AWUS036ACM |
 
 > **Hinweis zu VIF:** Der RTL8832BU Out-of-Kernel-Treiber unterstützt keine virtuellen Schnittstellen (VIF).
 
@@ -252,10 +264,10 @@ sudo reboot
 |-----------|-----|----------------|
 | Offizielle Alfa-Treiber | [files.alfa.com.tw](https://files.alfa.com.tw) | Treiberpakete |
 | rtl8852bu (GitHub) | [github.com/morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | RTL8832BU Treiber |
-| 清华大学镜像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
-| 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
-| 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
+| 清华大学镜像 (Mirror der Tsinghua-Universität) | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里云镜像 (Aliyun-Mirror) | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu |
+| 中科大镜像 (USTC-Mirror) | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali |
+| 华为云镜像 (Huawei-Cloud-Mirror) | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM |
 
 ---
 

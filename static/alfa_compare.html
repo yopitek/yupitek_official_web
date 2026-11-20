@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ALFA USB WiFi Adapter — Full Spec Comparison | Yopitek</title>
-  <meta name="description" content="Complete specification comparison table for all 8 ALFA Network USB WiFi adapters: AXML, AXM, AX, AXER, ACH, ACM, ACS, EACS." />
+  <meta name="description" content="Complete specification comparison table for all 9 ALFA Network USB WiFi adapters: AXML, AXM, AX, AXER, ACH, ACM, ACHM, ACS, EACS — with GX10 / Ubuntu ARM64 test results." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -244,7 +244,7 @@
 <header class="page-header">
   <div class="brand">ALFA Network × Yopitek</div>
   <h1>USB WiFi Adapter <span>Comparison</span></h1>
-  <p class="subtitle">完整規格比較表 — All 8 Models at a Glance</p>
+  <p class="subtitle">完整規格比較表 — All 9 Models at a Glance</p>
   <a class="back-link" href="/zh-tw/products/alfa/" >
     ← 返回 ALFA 產品頁
   </a>
@@ -271,6 +271,7 @@
           <th>MIMO</th>
           <th>Monitor Mode</th>
           <th>Packet Inject</th>
+          <th>Handshake (GX10 test)</th>
           <th>Linux Driver</th>
           <th>Driver Type</th>
           <th>AP Mode</th>
@@ -291,6 +292,7 @@
           <td>2×2 MIMO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="none">❌ Fails on stock 6.17</span></td>
+          <td><span class="none">❌ No (injection fails)</span></td>
           <td>In-kernel ≥5.18</td>
           <td>In-Kernel (Plug & Play)</td>
           <td><span class="ok">✅ Native</span></td>
@@ -301,7 +303,7 @@
         <tr>
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036axm/" target="_blank">AWUS036AXM</a></td>
           <td><span class="badge badge-6e">WiFi 6E</span></td>
-          <td>MT7921AUN</td>
+          <td>MT7921AU</td>
           <td>2.4 + 5 + 6 GHz (6 GHz untested)</td>
           <td>3000 Mbps</td>
           <td>USB-A 3.2 L</td>
@@ -309,6 +311,7 @@
           <td>2×2 MIMO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="none">❌ Fails on stock 6.17</span></td>
+          <td><span class="none">❌ No (injection fails)</span></td>
           <td>In-kernel ≥5.18</td>
           <td>In-Kernel (Plug & Play)</td>
           <td><span class="ok">✅ Native</span></td>
@@ -327,6 +330,7 @@
           <td>2×2 MIMO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅ End-to-end (.22000)</span></td>
           <td>In-kernel ≥6.17</td>
           <td>In-Kernel (Plug &amp; Play)</td>
           <td><span class="ok">✅ Native</span></td>
@@ -345,6 +349,7 @@
           <td>2×2 MIMO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅ End-to-end (.22000)</span></td>
           <td>In-kernel ≥6.17</td>
           <td>In-Kernel (Plug &amp; Play)</td>
           <td><span class="ok">✅ Native</span></td>
@@ -363,6 +368,7 @@
           <td>2×2 MIMO</td>
           <td><span class="ok">✅✅ Best</span></td>
           <td><span class="ok">✅✅ Best</span></td>
+          <td><span class="ok">✅ End-to-end (.22000)</span></td>
           <td>In-kernel ≥6.13</td>
           <td>In-Kernel (Plug &amp; Play)</td>
           <td><span class="ok">✅ Native</span></td>
@@ -381,12 +387,32 @@
           <td>2×2 MIMO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅ End-to-end (.22000)</span></td>
           <td>In-kernel ≥4.19</td>
           <td>In-Kernel (Plug & Play)</td>
           <td><span class="ok">✅ Native</span></td>
           <td>3.0W</td>
           <td>—</td>
           <td>Linux plug &amp; play</td>
+        </tr>
+        <tr>
+          <td><a class="model-link" href="/zh-tw/products/alfa/awus036achm/" target="_blank">AWUS036ACHM</a></td>
+          <td><span class="badge badge-5">WiFi 5</span></td>
+          <td>MT7610U</td>
+          <td>2.4 + 5 GHz</td>
+          <td>433 Mbps</td>
+          <td>USB 2.0</td>
+          <td>1× RP-SMA 5dBi</td>
+          <td>1×1 SISO</td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅ 2.4 GHz</span> / ⚠️ 5 GHz broadcast only</td>
+          <td><span class="ok">✅ End-to-end (.22000)</span></td>
+          <td>In-kernel ≥4.19</td>
+          <td>In-Kernel (Plug &amp; Play)</td>
+          <td><span class="ok">✅ Native</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td>Compact AC600, Linux plug &amp; play</td>
         </tr>
         <tr>
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036acs/" target="_blank">AWUS036ACS</a></td>
@@ -399,9 +425,10 @@
           <td>1×1 SISO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅ End-to-end (.22000)</span></td>
           <td>In-kernel ≥6.13</td>
           <td>In-Kernel (Plug &amp; Play)</td>
-          <td><span class="ok">✅ Native</span></td>
+          <td><span class="ok">✅ Native</span> (5 GHz tested as 802.11a 20 MHz; VHT80 not tested)</td>
           <td>2.5W</td>
           <td>—</td>
           <td>Budget security testing</td>
@@ -417,9 +444,10 @@
           <td>1×1 SISO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="ok">✅✅ Best</span></td>
+          <td><span class="ok">✅ End-to-end (.22000)</span></td>
           <td>In-kernel ≥6.2</td>
           <td>In-Kernel (Plug &amp; Play)</td>
-          <td><span class="ok">✅ Native</span></td>
+          <td><span class="ok">✅ Native</span> (5 GHz tested as 802.11a 20 MHz; VHT80 not tested)</td>
           <td>2.5W</td>
           <td>BT 4.2</td>
           <td>Windows home WiFi + BT</td>

@@ -48,7 +48,7 @@ featureimage: "/images/products/hak5/packet-squirrel.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/packet-squirrel-mark-ii/packet-squirrel-mark-ii-by-hak5) |
+| 📖 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/packet-squirrel-mark-ii/packet-squirrel-mark-ii-by-hak5) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/squirrel/mk2) |
 
 {{< alert >}}

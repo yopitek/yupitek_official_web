@@ -46,7 +46,7 @@ featureimage: "/images/products/hak5/shark-jack.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/shark-jack/master) |
+| 📖 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/shark-jack/master) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/shark) |
 
 {{< alert >}}

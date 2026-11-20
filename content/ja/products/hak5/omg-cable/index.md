@@ -48,7 +48,7 @@ featureimage: "/images/products/hak5/omg-cable.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://o.mg.lol/setup/OMGCable/) |
+| 📖 公式ドキュメント | [オンラインで見る](https://o.mg.lol/setup/OMGCable/) |
 | ⬇️ ファームウェア & ツール | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}

@@ -47,7 +47,7 @@ featureimage: "/images/products/hak5/bash-bunny.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/bash-bunny) |
+| 📖 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/bash-bunny) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/bunny) |
 
 {{< alert >}}

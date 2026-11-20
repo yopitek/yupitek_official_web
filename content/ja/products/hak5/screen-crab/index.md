@@ -47,7 +47,7 @@ featureimage: "/images/products/hak5/screen-crab.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/screen-crab/master) |
+| 📖 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/screen-crab/master) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/crab) |
 
 {{< alert >}}

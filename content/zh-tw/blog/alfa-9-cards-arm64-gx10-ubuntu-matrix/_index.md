@@ -6,6 +6,7 @@ lastmod: 2026-11-20
 showBreadcrumbs: true
 showTableOfContents: true
 featureimage: "/images/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix.webp"
+bannerimage: "/images/blog/banner/alfa-9-cards-arm64-gx10-ubuntu-matrix.webp"
 author: "benny-lai"
 tags:
   - alfa-network

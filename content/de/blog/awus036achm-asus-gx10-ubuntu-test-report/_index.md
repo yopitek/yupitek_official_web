@@ -6,6 +6,7 @@ lastmod: 2026-11-20
 showBreadcrumbs: true
 showTableOfContents: true
 featureimage: "/images/blog/awus036achm-asus-gx10-ubuntu-test-report.webp"
+bannerimage: "/images/blog/banner/awus036achm-asus-gx10-ubuntu-test-report.webp"
 author: "benny-lai"
 tags:
   - awus036achm

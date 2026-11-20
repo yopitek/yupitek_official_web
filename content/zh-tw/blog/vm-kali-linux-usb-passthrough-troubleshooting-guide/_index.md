@@ -24,19 +24,19 @@ faq:
     answer: "是的，虛擬機內的網路卡效能大致等同「透過 USB 模擬層的轉送」，會比真機直插多一些損耗（overhead）；正確的 USB 3.0 (xHCI) 控制器與更新版 Hypervisor 能把損耗壓到最低。若效能嚴重低落，優先確認控制器不是停在 USB 1.1。"
 ---
 
-> **適用平台**：Windows / Linux / macOS 主機 + Oracle VirtualBox / VMware Workstation 虛擬機（Guest = Kali Linux / Debian / Ubuntu）
-> **引導硬體**：ALFA AWUS036ACH（Realtek RTL8812AU）/ ALFA AWUS036AXML（MediaTek MT7921AUN）
-> **本篇定位**：標準化「USB 穿透（USB Pass-through）」排障診斷手冊。macOS 主機的 USB 穿透限制說明見第五章。
+> <strong>適用平台</strong>：Windows / Linux / macOS 主機 + Oracle VirtualBox / VMware Workstation 虛擬機（Guest = Kali Linux / Debian / Ubuntu）
+> <strong>引導硬體</strong>：ALFA AWUS036ACH（Realtek RTL8812AU）/ ALFA AWUS036AXML（MediaTek MT7921AUN）
+> <strong>本篇定位</strong>：標準化「USB 穿透（USB Pass-through）」排障診斷手冊。macOS 主機的 USB 穿透限制說明見第五章。
 
 ---
 
 {{< tldr >}}
 
-很多 Kali 使用者把網路卡插在主機上，卻在虛擬機裡看不到無線介面。**這種情況多半出在三個非常常見的原因**，網路卡本身壞掉的機率很低：
+很多 Kali 使用者把網路卡插在主機上，卻在虛擬機裡看不到無線介面。<strong>這種情況多半出在三個非常常見的原因</strong>，網路卡本身壞掉的機率很低：
 
-1. **VirtualBox 沒裝擴充套件（Extension Pack）**：沒有它，Guest 連 USB 2.0/3.0 控制器都用不了（USB 1.1 的傳輸速率上限僅 12 Mbps，根本不夠網路卡用）。
-2. **USB 穿透設定沒做**：主機預設「獨占」所有 USB 裝置，Guest 要嘛手動掛載、要嘛設定「USB 過濾器（VM USB Filter）」來自動接管網路卡。
-3. **Guest 內部的驅動程式沒載入**：USB 層穿過去了（`lsusb` 看得到），但 Linux 沒有相對應的驅動程式，所以 `ip link` 沒出現 `wlan` 介面。
+1. <strong>VirtualBox 沒裝擴充套件（Extension Pack）</strong>：沒有它，Guest 連 USB 2.0/3.0 控制器都用不了（USB 1.1 的傳輸速率上限僅 12 Mbps，根本不夠網路卡用）。
+2. <strong>USB 穿透設定沒做</strong>：主機預設「獨占」所有 USB 裝置，Guest 要嘛手動掛載、要嘛設定「USB 過濾器（VM USB Filter）」來自動接管網路卡。
+3. <strong>Guest 內部的驅動程式沒載入</strong>：USB 層穿過去了（`lsusb` 看得到），但 Linux 沒有相對應的驅動程式，所以 `ip link` 沒出現 `wlan` 介面。
 
 排障順序：先主機端硬體、再 Guest 端穿透、最後查驅動層——完整診斷口訣見 1.3。
 
@@ -48,9 +48,9 @@ faq:
 
 ### 1.1 你的 USB 網路卡「同時」只屬於一個作業系統
 
-USB 的運作是**單一主控（single host）**架構：一個 USB 裝置在同一個時間點，只能被一個「USB 主控制器（Host Controller）」控制。當網路卡插在主機上，裝置會先被**主機作業系統（Host OS）**列舉（enumerate）並接管。主機的驅動程式認識它、控制它。
+USB 的運作是<strong>單一主控（single host）</strong>架構：一個 USB 裝置在同一個時間點，只能被一個「USB 主控制器（Host Controller）」控制。當網路卡插在主機上，裝置會先被<strong>主機作業系統（Host OS）</strong>列舉（enumerate）並接管。主機的驅動程式認識它、控制它。
 
-虛擬機（Guest VM）不是插在 USB 匯流排上的實體裝置，它只是跑在主機裡、由管理程式（Hypervisor）扮演出的「假硬體」。所以 Guest 想要使用 USB 網路卡，**必須由主機把裝置主動「移交」給 Guest**——這個機制就叫 **USB 穿透（USB Pass-through / USB Redirection）**。
+虛擬機（Guest VM）不是插在 USB 匯流排上的實體裝置，它只是跑在主機裡、由管理程式（Hypervisor）扮演出的「假硬體」。所以 Guest 想要使用 USB 網路卡，<strong>必須由主機把裝置主動「移交」給 Guest</strong>——這個機制就叫 <strong>USB 穿透（USB Pass-through / USB Redirection）</strong>。
 
 ### 1.2 USB 穿透到底穿透了什麼？
 
@@ -69,17 +69,17 @@ USB 的運作是**單一主控（single host）**架構：一個 USB 裝置在�
 Kali 的 USB 驅動程式 → 無線網路卡驅動 → wlan 介面
 ```
 
-穿透成功後，這個裝置在**主機端的控制權會轉給 Guest**，行為上像被「拔走」，主機上無法再使用它。轉而在 Guest 內變成一個全新的 USB 裝置。**這是正常現象，不是 bug。** 主機的一個 USB 裝置不能同時給兩邊用。
+穿透成功後，這個裝置在<strong>主機端的控制權會轉給 Guest</strong>，行為上像被「拔走」，主機上無法再使用它。轉而在 Guest 內變成一個全新的 USB 裝置。<strong>這是正常現象，不是 bug。</strong> 主機的一個 USB 裝置不能同時給兩邊用。
 
 ### 1.3 「抓不到」其實有三個層次
 
 | 層次 | 檢查工具 | 症狀 | 代表意義 |
 |------|---------|------|---------|
-| **USB 穿透層** | Guest 內 `lsusb` | `lsusb` 完全看不到網路卡的 VID:PID | 穿透失敗（Extension Pack / 控制器 / 過濾器問題） |
-| **驅動程式層** | Guest 內 `dmesg` | `lsusb` 看得到，但 `dmesg` 有錯誤（如缺韌體、`Required key not available`） | Guest 內部缺驅動程式或模組載入失敗 |
-| **無線介面層** | Guest 內 `iwconfig` / `ip link` | `lsusb` 與 `dmesg` 都正常，卻沒有 `wlan` 介面 | 驅動程式載入了但介面未註冊，或模式／設定問題 |
+| <strong>USB 穿透層</strong> | Guest 內 `lsusb` | `lsusb` 完全看不到網路卡的 VID:PID | 穿透失敗（Extension Pack / 控制器 / 過濾器問題） |
+| <strong>驅動程式層</strong> | Guest 內 `dmesg` | `lsusb` 看得到，但 `dmesg` 有錯誤（如缺韌體、`Required key not available`） | Guest 內部缺驅動程式或模組載入失敗 |
+| <strong>無線介面層</strong> | Guest 內 `iwconfig` / `ip link` | `lsusb` 與 `dmesg` 都正常，卻沒有 `wlan` 介面 | 驅動程式載入了但介面未註冊，或模式／設定問題 |
 
-> **判斷口訣**：先看 `lsusb` 判斷「裝置有沒有穿透進 Guest」，再看 `ip link` 判斷「驅動程式有沒有認識它」。**別一開始就懷疑網路卡壞了。**
+> <strong>判斷口訣</strong>：先看 `lsusb` 判斷「裝置有沒有穿透進 Guest」，再看 `ip link` 判斷「驅動程式有沒有認識它」。<strong>別一開始就懷疑網路卡壞了。</strong>
 
 ---
 
@@ -87,13 +87,13 @@ Kali 的 USB 驅動程式 → 無線網路卡驅動 → wlan 介面
 
 ### 2.1 擴充套件（Extension Pack）是非裝不可的
 
-VirtualBox 基礎套件**只內建 USB 1.1（OHCI）控制器**的模擬，而 USB 1.1 的傳輸速率完全不夠網路卡使用。**USB 2.0（EHCI）與 USB 3.0（xHCI）控制器都要靠 Oracle 官方「擴充套件（Extension Pack）」**才有。
+VirtualBox 基礎套件<strong>只內建 USB 1.1（OHCI）控制器</strong>的模擬，而 USB 1.1 的傳輸速率完全不夠網路卡使用。<strong>USB 2.0（EHCI）與 USB 3.0（xHCI）控制器都要靠 Oracle 官方「擴充套件（Extension Pack）」</strong>才有。
 
 沒有裝 Extension Pack 的症狀很典型：Guest 設定裡選不到 USB 2.0 / USB 3.0 控制器，或一掛載網路卡就回報「裝置連線到虛擬機失敗（error code E_FAIL / VERR_PDM_NO_USB_PORTS）」。
 
 ### 2.2 版本必須「完全不差」地對上
 
-Extension Pack 的版本**必須與 VirtualBox 主程式版本完全一致**（例如 VirtualBox 7.0.20 就要配 7.0.20 的 Extension Pack），差一個小版本都可能安裝失敗或載入失敗。
+Extension Pack 的版本<strong>必須與 VirtualBox 主程式版本完全一致</strong>（例如 VirtualBox 7.0.20 就要配 7.0.20 的 Extension Pack），差一個小版本都可能安裝失敗或載入失敗。
 
 ```bash
 # 查看目前 VirtualBox 版本
@@ -116,7 +116,7 @@ VBoxManage list extpacks
 
 ### 2.3 Linux 主機：把自己加入 vboxusers 群組
 
-在 Linux 主機上，VirtualBox 要存取 USB 裝置，**需要使用者屬於 `vboxusers` 群組**。很多人安裝了擴充套件卻還是失敗，就是卡在權限。
+在 Linux 主機上，VirtualBox 要存取 USB 裝置，<strong>需要使用者屬於 `vboxusers` 群組</strong>。很多人安裝了擴充套件卻還是失敗，就是卡在權限。
 
 ```bash
 # 加入群組 (以你的使用者名稱取代 <user>)
@@ -128,15 +128,15 @@ id $USER
 
 ### 2.4 設定 USB 3.0（xHCI）控制器
 
-1. 選取你的 Kali 虛擬機 → **設定（Settings）→ 連接埠（Ports）→ USB**。
-2. 勾選「Enable USB Controller」，並選擇 **USB 3.0 (xHCI) Controller**。
-   - AWUS036AXML 是 USB 3.2 Gen 1（USB-C）規格，**務必選 USB 3.0 (xHCI)**，選 USB 2.0 會限制傳輸速率。
+1. 選取你的 Kali 虛擬機 → <strong>設定（Settings）→ 連接埠（Ports）→ USB</strong>。
+2. 勾選「Enable USB Controller」，並選擇 <strong>USB 3.0 (xHCI) Controller</strong>。
+   - AWUS036AXML 是 USB 3.2 Gen 1（USB-C）規格，<strong>務必選 USB 3.0 (xHCI)</strong>，選 USB 2.0 會限制傳輸速率。
    - AWUS036ACH 為 USB Type-A 介面，在 USB 2.0 與 USB 3.0 控制器下皆可使用；若要較佳傳輸速率，一樣選 USB 3.0 (xHCI)。
-3. 修改控制器後**關機再開機**（不是在 Guest 內執行 reboot）才能套用變更。
+3. 修改控制器後<strong>關機再開機</strong>（不是在 Guest 內執行 reboot）才能套用變更。
 
 ### 2.5 手動掛載與 VMware 對照
 
-開啟 Kali 虛擬機後，注意視窗**右下角的 USB 圖示**（一支 USB 插頭）：
+開啟 Kali 虛擬機後，注意視窗<strong>右下角的 USB 圖示</strong>（一支 USB 插頭）：
 
 1. 點 USB 圖示 → 會列出目前插在主機上的 USB 裝置。
 2. 你的網路卡應該顯示類似 `Realtek 802.11ac NIC`（ACH），或 `ALFA AWUS036AXML` / MediaTek（AXML）。
@@ -144,18 +144,18 @@ id $USER
 
 如果清單是空的，代表穿透層出了問題——回去 2.2 / 2.3 / 2.4 檢查（含 USB 控制器未啟用），或直接跑第六章排障工作表。
 
-**VMware 對照**：VMware Workstation / Fusion **不需要**額外擴充套件就有 USB 穿透功能，但有兩個常見檢查點：
+<strong>VMware 對照</strong>：VMware Workstation / Fusion <strong>不需要</strong>額外擴充套件就有 USB 穿透功能，但有兩個常見檢查點：
 
-1. **主機端服務**：Linux 主機上請確認 `vmware-usbarbitrator`（USB 仲裁服務）有在跑：
+1. <strong>主機端服務</strong>：Linux 主機上請確認 `vmware-usbarbitrator`（USB 仲裁服務）有在跑：
    ```bash
    sudo systemctl status vmware-usbarbitrator
    # 如果沒在跑, 啟動並設為開機自動執行
    sudo systemctl enable --now vmware-usbarbitrator
    ```
-2. **虛擬機設定**：虛擬機設定 → USB Controller → 勾選 **USB 3.1（或 USB 3.0）**。
-3. **手動連線**：VMware 視窗選單 → **可移除裝置（Removable Devices）→ 你的網路卡 → 連線（Connect）**。
+2. <strong>虛擬機設定</strong>：虛擬機設定 → USB Controller → 勾選 <strong>USB 3.1（或 USB 3.0）</strong>。
+3. <strong>手動連線</strong>：VMware 視窗選單 → <strong>可移除裝置（Removable Devices）→ 你的網路卡 → 連線（Connect）</strong>。
 
-> **對照重點**：VirtualBox 卡在「沒裝擴充套件」；VMware 卡在「仲裁服務沒跑」或「控制器 USB 3.0 沒開」。先確認你用的是哪家，再對號入座。
+> <strong>對照重點</strong>：VirtualBox 卡在「沒裝擴充套件」；VMware 卡在「仲裁服務沒跑」或「控制器 USB 3.0 沒開」。先確認你用的是哪家，再對號入座。
 
 ---
 
@@ -165,7 +165,7 @@ id $USER
 
 ### 第 0 步：主機端先確認硬體正常（別把問題賴給網路卡）
 
-在**主機作業系統**開終端機執行：
+在<strong>主機作業系統</strong>開終端機執行：
 
 ```bash
 lsusb
@@ -181,18 +181,18 @@ Bus ... ID 0e8d:7961 MediaTek Inc. Wireless_Device
 ```
 
 - 主機看得到 → 硬體與線材正常，問題在穿透或 Guest 驅動。
-- 主機也看不到 → **先檢查主機端**（換 USB 連接埠、換線、另一台主機交叉測試），再考慮開技術支援單。
+- 主機也看不到 → <strong>先檢查主機端</strong>（換 USB 連接埠、換線、另一台主機交叉測試），再考慮開技術支援單。
 
 ### 第 1 步：Guest 端 lsusb——穿透成功沒有？
 
-在 **Kali 虛擬機內**執行：
+在 <strong>Kali 虛擬機內</strong>執行：
 
 ```bash
 lsusb
 ```
 
-- 看得到同樣的 VID:PID → **穿透成功**，跳到第 2 步。
-- 看不到 → **穿透失敗**，回去檢查第二章（Extension Pack / 控制器 / vboxusers 群組），或確認網路卡是否被主機的其他軟體占用。
+- 看得到同樣的 VID:PID → <strong>穿透成功</strong>，跳到第 2 步。
+- 看不到 → <strong>穿透失敗</strong>，回去檢查第二章（Extension Pack / 控制器 / vboxusers 群組），或確認網路卡是否被主機的其他軟體占用。
 
 ### 第 2 步：iwconfig / ip link——無線介面出現沒有？
 
@@ -203,8 +203,8 @@ iw dev
 ip link
 ```
 
-- 出現 `wlan0` / `wlx...` 介面 → **全部打通**，可以開始使用了。
-- 沒有無線介面但 `lsusb` 看得到 → 問題在 **Guest 的驅動程式層**，看第 3 步。
+- 出現 `wlan0` / `wlx...` 介面 → <strong>全部打通</strong>，可以開始使用了。
+- 沒有無線介面但 `lsusb` 看得到 → 問題在 <strong>Guest 的驅動程式層</strong>，看第 3 步。
 
 ### 第 3 步：dmesg——驅動層為什麼失敗？
 
@@ -224,7 +224,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 | `Required key not available` | Secure Boot 開啟，模組未簽署 | 透過 MOK 金鑰簽署（請勿關閉 Secure Boot） |
 | `disagrees about version of symbol` | 驅動版本與核心不符 | 重新以 DKMS 編譯安裝 |
 
-> **重點理解**：`lsusb` 看得到只能證明「USB 穿透了吧」，**不代表驅動程式已載入**。常見的「穿透成功但沒有 wlan」就是卡在 Guest 內部沒有對應的驅動程式。
+> <strong>重點理解</strong>：`lsusb` 看得到只能證明「USB 穿透了吧」，<strong>不代表驅動程式已載入</strong>。常見的「穿透成功但沒有 wlan」就是卡在 Guest 內部沒有對應的驅動程式。
 
 ---
 
@@ -232,18 +232,18 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 
 ### 4.1 為什麼要設 USB 過濾器（USB Filter）？
 
-手動掛載（第二章 2.5）的問題是：**每次重開 Kali 虛擬機都要再點一次**。設定「USB 過濾器」後，只要網路卡一插上（或虛擬機一開機），VirtualBox 就會**自動把符合條件的裝置轉進 Guest**。
+手動掛載（第二章 2.5）的問題是：<strong>每次重開 Kali 虛擬機都要再點一次</strong>。設定「USB 過濾器」後，只要網路卡一插上（或虛擬機一開機），VirtualBox 就會<strong>自動把符合條件的裝置轉進 Guest</strong>。
 
 設定方法（VirtualBox）：
 
-1. 虛擬機設定 → USB → 點右邊 **「＋」新增過濾器 → 選擇你的網路卡裝置**。
+1. 虛擬機設定 → USB → 點右邊 <strong>「＋」新增過濾器 → 選擇你的網路卡裝置</strong>。
 2. VirtualBox 會自動填入一筆過濾規則（含供應商 ID / 產品 ID / 序號等欄位）：
-   - **名稱（Name）**：例如 `ALFA AWUS036AXML` 或 `AWUS036ACH`
-   - **供應商 ID（Vendor ID）**：AWUS036ACH 為 `0bda`、AWUS036AXML 為 `0e8d`
-   - **產品 ID（Product ID）**：AWUS036ACH 為 `8812`、AWUS036AXML 為 `7961`
+   - <strong>名稱（Name）</strong>：例如 `ALFA AWUS036AXML` 或 `AWUS036ACH`
+   - <strong>供應商 ID（Vendor ID）</strong>：AWUS036ACH 為 `0bda`、AWUS036AXML 為 `0e8d`
+   - <strong>產品 ID（Product ID）</strong>：AWUS036ACH 為 `8812`、AWUS036AXML 為 `7961`
 3. 若有多支同型號網路卡，把「序號（Serial Number）」欄位也補上，避免過濾到另一支。
 
-> 小技巧：過濾器上按滑鼠右鍵 → **編輯過濾器**，可只保留 Vendor ID 與 Product ID（寬鬆匹配）或補上序號（精準匹配）。
+> 小技巧：過濾器上按滑鼠右鍵 → <strong>編輯過濾器</strong>，可只保留 Vendor ID 與 Product ID（寬鬆匹配）或補上序號（精準匹配）。
 
 ### 4.2 頻繁斷線：多半是供電或控制器問題
 
@@ -251,14 +251,14 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 
 | 現象 | 原因 | 對策 |
 |------|------|------|
-| 穿透後供電不足、一直掉卡 | 虛擬 USB 控制器模擬的供電能力較保守，或主機連接埠供電不足 | 主機端改用**主機板背板 USB 連接埠**或有獨立供電的 USB Hub |
-| 網路卡一下有一下沒有 | 主機的 **USB 省電（autosuspend）** 把裝置睡掉了 | 在主機設定中關閉「該裝置」的 USB 自動休眠（請勿關閉系統整體安全防護） |
+| 穿透後供電不足、一直掉卡 | 虛擬 USB 控制器模擬的供電能力較保守，或主機連接埠供電不足 | 主機端改用<strong>主機板背板 USB 連接埠</strong>或有獨立供電的 USB Hub |
+| 網路卡一下有一下沒有 | 主機的 <strong>USB 省電（autosuspend）</strong> 把裝置睡掉了 | 在主機設定中關閉「該裝置」的 USB 自動休眠（請勿關閉系統整體安全防護） |
 | 掛載即失敗、error code 一串 | 控制器選錯（USB 1.1/2.0 撐不起 USB 3 裝置） | 改選「USB 3.0 (xHCI) Controller」並關機重開 |
 | 主機待命（sleep）後醒來網路卡失效 | 主機睡眠時 Hypervisor 的 USB 重新導向斷裂 | 使用前避免主機待命；或喚醒後重新掛載一次 |
 
 ### 4.3 安全提醒
 
-要降低掉卡，可關閉**單一 USB 裝置**的自動休眠，但這僅限「該裝置」層級。請**不要**為了省麻煩而關閉系統層級的安全性防護（防火牆、Secure Boot），那會付出不成比例的代價。
+要降低掉卡，可關閉<strong>單一 USB 裝置</strong>的自動休眠，但這僅限「該裝置」層級。請<strong>不要</strong>為了省麻煩而關閉系統層級的安全性防護（防火牆、Secure Boot），那會付出不成比例的代價。
 
 ---
 
@@ -266,14 +266,14 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 
 ### 5.1 macOS 主機的 USB 穿透有先天限制
 
-從 macOS 主機跑虛擬機做 USB 穿透，是**最容易卡關的組合**，請先確認你的情況：
+從 macOS 主機跑虛擬機做 USB 穿透，是<strong>最容易卡關的組合</strong>，請先確認你的情況：
 
 | macOS 主機 | VirtualBox | VMware Fusion |
 |-----------|-----------|---------------|
-| **Apple Silicon（M1/M2/M3/M4）** | ⚠️ **USB 穿透支援受限／不完整**，官方公告的已知限制之一；即使網路卡驅動正常，穿透層也可能直接用不了 | ⚠️ 支援較完整，但仍建議先「主機直插」確認網路卡在 macOS 端正常 |
-| **Intel（Intel Mac）** | ✅ 可用，但需先通過**核心延伸功能（Kernel Extension）認可**流程（系統設定 → 安全性與隱私權 → 允許 Oracle 相關核心延伸功能），並安裝與版本完全相符的 Extension Pack | ✅ 可用 |
+| <strong>Apple Silicon（M1/M2/M3/M4）</strong> | ⚠️ <strong>USB 穿透支援受限／不完整</strong>，官方公告的已知限制之一；即使網路卡驅動正常，穿透層也可能直接用不了 | ⚠️ 支援較完整，但仍建議先「主機直插」確認網路卡在 macOS 端正常 |
+| <strong>Intel（Intel Mac）</strong> | ✅ 可用，但需先通過<strong>核心延伸功能（Kernel Extension）認可</strong>流程（系統設定 → 安全性與隱私權 → 允許 Oracle 相關核心延伸功能），並安裝與版本完全相符的 Extension Pack | ✅ 可用 |
 
-**建議**：若你的主機是 macOS，優先以「主機直插 → `system_profiler SPUSBDataType` → 確認網路卡在主機端正常」作為所有排障的第一關。**macOS 端不支援的型號請勿貼進虛擬機排障清單**，那會浪費大量時間。
+<strong>建議</strong>：若你的主機是 macOS，優先以「主機直插 → `system_profiler SPUSBDataType` → 確認網路卡在主機端正常」作為所有排障的第一關。<strong>macOS 端不支援的型號請勿貼進虛擬機排障清單</strong>，那會浪費大量時間。
 
 ### 5.2 平台紅線（Support Boundary）
 
@@ -281,17 +281,17 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 |------|---------|------|
 | Windows 主機 + VirtualBox / VMware + Kali Guest | ✅ 支援 | 本章所有流程皆適用 |
 | Linux 主機 + VirtualBox / VMware + Kali Guest | ✅ 支援 | 記得 vboxusers 群組（VB）與 vmware-usbarbitrator 服務（VMware） |
-| **macOS（Apple Silicon）** + VirtualBox | ⚠️ **USB 穿透受限** | 建議改用 VMware Fusion，或使用 Linux／Windows 主機 |
+| <strong>macOS（Apple Silicon）</strong> + VirtualBox | ⚠️ <strong>USB 穿透受限</strong> | 建議改用 VMware Fusion，或使用 Linux／Windows 主機 |
 | macOS（Intel）+ VirtualBox | ✅ 支援 | 需完成核心延伸功能認可 + 版本相符的 Extension Pack |
-| **Guest 為 macOS** | ❌ 不建議 | 本文以 Kali / Debian / Ubuntu 等 Linux Guest 為前提 |
+| <strong>Guest 為 macOS</strong> | ❌ 不建議 | 本文以 Kali / Debian / Ubuntu 等 Linux Guest 為前提 |
 
-> **支援邊界**：排障時請務必先確認「主機端網路卡是否正常」，再談虛擬機設定的問題。若主機端本身抓不到網路卡，任何虛擬機設定都救不回來——那時的下一步是主機端的驅動程式問題（可參考本站其他驅動排障文章）。
+> <strong>支援邊界</strong>：排障時請務必先確認「主機端網路卡是否正常」，再談虛擬機設定的問題。若主機端本身抓不到網路卡，任何虛擬機設定都救不回來——那時的下一步是主機端的驅動程式問題（可參考本站其他驅動排障文章）。
 
 ---
 
 ## 6. 標準排障工作表：報修前先跑一遍（客服 Intake）
 
-> 遇到「虛擬機抓不到網路卡」，依序完成下表，並把結果記下來。**完整跑過這份工作表，再決定要不要開技術支援單**——很多時候自己就解掉了，也大幅縮短客服來回時間。
+> 遇到「虛擬機抓不到網路卡」，依序完成下表，並把結果記下來。<strong>完整跑過這份工作表，再決定要不要開技術支援單</strong>——很多時候自己就解掉了，也大幅縮短客服來回時間。
 
 ### Step 1：主機端硬體檢查
 
@@ -321,54 +321,54 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 
 ### Step 4：判斷與紀錄
 
-- `lsusb`（Guest）看不到 → **穿透層**問題 → 複習第二章與 Step 2。
-- `lsusb` 看得到、`ip link` 沒有 wlan → **驅動層**問題 → 複習第三章第 3 步。
-- 都正常但不穩定 → **供電／省電／控制器**問題 → 第四章。
+- `lsusb`（Guest）看不到 → <strong>穿透層</strong>問題 → 複習第二章與 Step 2。
+- `lsusb` 看得到、`ip link` 沒有 wlan → <strong>驅動層</strong>問題 → 複習第三章第 3 步。
+- 都正常但不穩定 → <strong>供電／省電／控制器</strong>問題 → 第四章。
 
 ### 客服 Intake 資訊封包
 
 打通技術支援電話／送出工單前，一次附上下列資訊，就能讓客服直接切入正題：
 
-> **主機 OS + 架構、虛擬化軟體與版本、是否安裝擴充套件及版本、主機端 `lsusb` 輸出、Guest 端 `lsusb` 輸出、Guest 端 `ip link` / `iwconfig` 輸出、`dmesg` 相關訊息、網路卡型號與連接方式（USB-C / USB-A、直插或 Hub）**
+> <strong>主機 OS + 架構、虛擬化軟體與版本、是否安裝擴充套件及版本、主機端 `lsusb` 輸出、Guest 端 `lsusb` 輸出、Guest 端 `ip link` / `iwconfig` 輸出、`dmesg` 相關訊息、網路卡型號與連接方式（USB-C / USB-A、直插或 Hub）</strong>
 
 ---
 
 ## 7. 常見問題（FAQ）
 
-**Q1：我換了 USB 連接埠結果 `lsusb` 就消失了，是網路卡壞了嗎？**
+<strong>Q1：我換了 USB 連接埠結果 `lsusb` 就消失了，是網路卡壞了嗎？</strong>
 不一定。先確認你插的是不是「僅充電」連接埠，或主機為了省電把裝置休眠了。換回主機板背板的一般 USB 連接埠，或重新插拔一次，多半就恢復。
 
-**Q2：VM 視窗右下角 USB 圖示是空的，怎麼辦？**
+<strong>Q2：VM 視窗右下角 USB 圖示是空的，怎麼辦？</strong>
 依序檢查：① 擴充套件版本是否與 VirtualBox 完全相符；② Linux 主機是否在 `vboxusers` 群組（需重新登入）；③ 主機端 `lsusb` 還看不看得到網路卡；④ 是否有其他軟體（例如主機端驅動工具）佔用了裝置。
 
-**Q3：設定 USB 過濾器後，主機自己反而不能用網路卡了？**
+<strong>Q3：設定 USB 過濾器後，主機自己反而不能用網路卡了？</strong>
 這是正常的。穿透給 Guest 後，裝置控制權在 Guest 身上，主機端無法同時使用。要用回主機做其他事情時，先在 VM 視窗的 USB 圖示把它「退還（release）」回主機。
 
-**Q4：Guest 內 `lsusb` 看得到，但沒 wlan 介面，該裝什麼驅動？**
+<strong>Q4：Guest 內 `lsusb` 看得到，但沒 wlan 介面，該裝什麼驅動？</strong>
 看晶片：
-- **AWUS036AXML（MediaTek MT7921AUN）**：核心內建 `mt7921u` 驅動，Kernel 5.18+ 隨插即用；先確認 `apt install linux-firmware` 已更新。
-- **AWUS036ACH（Realtek RTL8812AU）**：屬於核心外掛（out-of-tree）驅動，需安裝社群維護的 `aircrack-ng/rtl8812au` 並用 DKMS 編譯（並留意 Secure Boot 的 MOK 簽署，請勿關閉 Secure Boot）。
+- <strong>AWUS036AXML（MediaTek MT7921AUN）</strong>：核心內建 `mt7921u` 驅動，Kernel 5.18+ 隨插即用；先確認 `apt install linux-firmware` 已更新。
+- <strong>AWUS036ACH（Realtek RTL8812AU）</strong>：屬於核心外掛（out-of-tree）驅動，需安裝社群維護的 `aircrack-ng/rtl8812au` 並用 DKMS 編譯（並留意 Secure Boot 的 MOK 簽署，請勿關閉 Secure Boot）。
 
-**Q5：為什麼選了 USB 3.0 控制器 Guest 反而進不了系統？**
+<strong>Q5：為什麼選了 USB 3.0 控制器 Guest 反而進不了系統？</strong>
 少數舊版 Guest 核心對 xHCI 的支援較差。若 Kali 是較舊版本，可先試「關機 → 改回 USB 2.0 (EHCI) Controller → 開機 → 升級核心 → 再改回 USB 3.0」。盡量讓 Kali 保持最新版本，xHCI 支援較完整。
 
-**Q6：網路卡在真機上很快，進虛擬機就變慢，是正常的嗎？**
+<strong>Q6：網路卡在真機上很快，進虛擬機就變慢，是正常的嗎？</strong>
 是的，虛擬機內的網路卡效能大致等同「透過 USB 模擬層的轉送」，會比真機直插多一些損耗（overhead）；正確的 USB 3.0 (xHCI) 控制器與更新版 Hypervisor 能把損耗壓到最低。若效能嚴重低落，優先確認控制器不是停在 USB 1.1。
 
 ---
 
 ## 8. 結論與硬體建議
 
-「虛擬機抓不到外接網路卡」九成以上是**穿透設定**或**Guest 驅動**沒做好，硬體故障反而少見。把本文的動作照順序跑完：
+「虛擬機抓不到外接網路卡」九成以上是<strong>穿透設定</strong>或<strong>Guest 驅動</strong>沒做好，硬體故障反而少見。把本文的動作照順序跑完：
 
-1. **主機端 `lsusb` 先確認硬體沒問題。**
-2. **VirtualBox 一定裝版本相符的 Extension Pack**、Linux 主機記得加入 `vboxusers` 群組；VMware 確認 `vmware-usbarbitrator` 服務在跑。
-3. **USB 控制器設為 USB 3.0 (xHCI)**，並用 USB 過濾器讓網路卡自動掛載。
-4. **Guest 內依 `lsusb → iwconfig / ip link → dmesg` 定位層次**，缺驅動補驅動，別再猜網路卡壞了。
+1. <strong>主機端 `lsusb` 先確認硬體沒問題。</strong>
+2. <strong>VirtualBox 一定裝版本相符的 Extension Pack</strong>、Linux 主機記得加入 `vboxusers` 群組；VMware 確認 `vmware-usbarbitrator` 服務在跑。
+3. <strong>USB 控制器設為 USB 3.0 (xHCI)</strong>，並用 USB 過濾器讓網路卡自動掛載。
+4. <strong>Guest 內依 `lsusb → iwconfig / ip link → dmesg` 定位層次</strong>，缺驅動補驅動，別再猜網路卡壞了。
 
-**推薦硬體**：ALFA AWUS036AXML（MediaTek MT7921AUN）在較新核心的 Kali 上**核心內建驅動、隨插即用**，虛擬機穿透後最省心。ALFA AWUS036ACH（Realtek RTL8812AU）同樣堪用，但要記得在 Guest 內以 DKMS 編譯社群驅動並處理 Secure Boot 簽署（可參考本站關於 RTL8812AU DKMS 排障的文章）。兩者皆建議在主機端使用有獨立供電的 USB 連接埠／Hub，把「掉卡」的變數一次排除。但注入需視核心版本而定：kernel 6.16 以前的社群回報中注入可用；在 stock kernel 6.16 以上（實測 6.17）上，AXML 的封包注入測試未通過（`aireplay-ng --test` 顯示 Found 0 APs / No Answer），因此無法 deauth 或擷取 handshake。原因是 mac80211 chanctx 回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps，無法注入 HT/VHT）。monitor、AP、WPA3 不受影響。需要注入請改用 AWUS036ACH 或 AWUS036EACS。
+<strong>推薦硬體</strong>：ALFA AWUS036AXML（MediaTek MT7921AUN）在較新核心的 Kali 上<strong>核心內建驅動、隨插即用</strong>，虛擬機穿透後最省心。ALFA AWUS036ACH（Realtek RTL8812AU）同樣堪用，但要記得在 Guest 內以 DKMS 編譯社群驅動並處理 Secure Boot 簽署（可參考本站關於 RTL8812AU DKMS 排障的文章）。兩者皆建議在主機端使用有獨立供電的 USB 連接埠／Hub，把「掉卡」的變數一次排除。但注入需視核心版本而定：kernel 6.16 以前的社群回報中注入可用；在 stock kernel 6.16 以上（實測 6.17）上，AXML 的封包注入測試未通過（`aireplay-ng --test` 顯示 Found 0 APs / No Answer），因此無法 deauth 或擷取 handshake。原因是 mac80211 chanctx 回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps，無法注入 HT/VHT）。monitor、AP、WPA3 不受影響。需要注入請改用 AWUS036ACH 或 AWUS036EACS。
 
-**下一步**：把第六章的排障工作表存一份在你的 Kali 虛擬機桌面；每次「抓不到網路卡」就先整份跑完，再決定要不要開技術支援單——照表操課，資料治百病。
+<strong>下一步</strong>：把第六章的排障工作表存一份在你的 Kali 虛擬機桌面；每次「抓不到網路卡」就先整份跑完，再決定要不要開技術支援單——照表操課，資料治百病。
 
 ---
 
@@ -385,4 +385,4 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 | ALFA AWUS036AXML 官方產品頁 | https://www.alfa.com.tw/ |
 | Yopitek 技術支援 | https://yupitek.com/ |
 
-> **合法使用聲明**：在虛擬機內啟用監聽模式、封包注入等資安操作，僅限於您擁有或已獲得明確授權之網路環境。使用者須自行遵守所在地法律規範，並確保所有測試皆有合法授權依據。
+> <strong>合法使用聲明</strong>：在虛擬機內啟用監聽模式、封包注入等資安操作，僅限於您擁有或已獲得明確授權之網路環境。使用者須自行遵守所在地法律規範，並確保所有測試皆有合法授權依據。

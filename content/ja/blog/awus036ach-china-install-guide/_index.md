@@ -40,7 +40,7 @@ AWUS036ACHはRTL8812AUチップを採用し、KaliではaptでDKMSドライバ�
 
 以下を用意してください：
 
-1. **ALFA AWUS036ACH** アダプター
+1. <strong>ALFA AWUS036ACH</strong> アダプター
 2. USBケーブル（付属品で問題ありません）
 3. セルフパワーUSBハブ — ラズベリーパイ使用時は必須
 4. 国内ミラーに接続できるインターネット環境
@@ -96,13 +96,13 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-保存は **Ctrl+O**、Enterキー、そして Ctrl+X で終了します。パッケージインデックスを更新します。
+保存は <strong>Ctrl+O</strong>、Enterキー、そして Ctrl+X で終了します。パッケージインデックスを更新します。
 
 ```bash
 sudo apt update
 ```
 
-> **バックアップミラー：** 中科大（USTC）が遅い場合は、清華大学（Tsinghua）を使ってください：
+> <strong>バックアップミラー：</strong> 中科大（USTC）が遅い場合は、清華大学（Tsinghua）を使ってください：
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
@@ -141,7 +141,7 @@ GitHubからドライバーのソースコードをダウンロードします�
 git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
-> **注意：** メンテナンスされている上流ドライバーは [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) です。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。[files.alfa.com.tw](https://files.alfa.com.tw) からソースアーカイブを直接ダウンロードすることもできます。
+> <strong>注意：</strong> メンテナンスされている上流ドライバーは [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) です。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。[files.alfa.com.tw](https://files.alfa.com.tw) からソースアーカイブを直接ダウンロードすることもできます。
 
 クローンしたディレクトリに移動して、コンパイルとインストールを実行します。
 
@@ -207,7 +207,7 @@ Found 1 AP
 
 ## Ubuntu 22.04 / 24.04
 
-Ubuntuはバージョンによってパッケージファイル形式が異なる2つのブランチがあります。以下の手順は両方に対応しています。ミラーには**阿里云（Aliyun）**を使います。高速で信頼性が高く、Alibabaが管理しています。
+Ubuntuはバージョンによってパッケージファイル形式が異なる2つのブランチがあります。以下の手順は両方に対応しています。ミラーには<strong>阿里云（Aliyun）</strong>を使います。高速で信頼性が高く、Alibabaが管理しています。
 
 ### ステップ1：中国ミラーに切り替える
 
@@ -287,7 +287,7 @@ git clone https://github.com/morrownr/8812au-20210820.git
 cd 8812au-20210820
 ```
 
-> **注意：** GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。
+> <strong>注意：</strong> GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。
 
 ---
 
@@ -341,7 +341,7 @@ sudo airmon-ng check kill
 sudo airmon-ng start wlan0
 ```
 
-> **注意：** インターフェース名が `wlan0` ではなく `wlan1` の場合があります。`iwconfig` を実行してワイヤレスインターフェースの一覧を確認し、上のコマンドで正しい名前に置き換えてください。
+> <strong>注意：</strong> インターフェース名が `wlan0` ではなく `wlan1` の場合があります。`iwconfig` を実行してワイヤレスインターフェースの一覧を確認し、上のコマンドで正しい名前に置き換えてください。
 
 ---
 
@@ -407,7 +407,7 @@ git clone https://github.com/morrownr/8812au-20210820.git
 cd 8812au-20210820
 ```
 
-> **注意：** GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。
+> <strong>注意：</strong> GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。
 
 ### ステップ4：コンパイルとインストール
 
@@ -422,7 +422,7 @@ sudo modprobe 8812au
 
 ### ステップ5：モニターモードを有効にする
 
-モードを切り替える前に**干渉するプロセスを終了**します：
+モードを切り替える前に<strong>干渉するプロセスを終了</strong>します：
 
 ```bash
 sudo airmon-ng check kill
@@ -460,7 +460,7 @@ sudo aireplay-ng --test wlan0mon
 
 ## ラズベリーパイ 4B / 5
 
-> AWUS036ACHは約500mWの電力を消費します。ラズベリーパイのUSBポートに直接接続すると、負荷時にPiが制限をかけたり再起動したりすることがあります。**必ずセルフパワーUSBハブを使用してください。**
+> AWUS036ACHは約500mWの電力を消費します。ラズベリーパイのUSBポートに直接接続すると、負荷時にPiが制限をかけたり再起動したりすることがあります。<strong>必ずセルフパワーUSBハブを使用してください。</strong>
 
 ---
 
@@ -469,9 +469,9 @@ sudo aireplay-ng --test wlan0mon
 公式のKali ARMダウンロードページにアクセスします：
 https://www.kali.org/get-kali/#kali-arm
 
-お使いのボードに合わせて **Raspberry Pi 4 (64-bit)** または **Raspberry Pi 5 (64-bit)** を選択してください。32ビットイメージはダウンロードしないでください。ドライバーのビルドには64ビットカーネルが必要です。
+お使いのボードに合わせて <strong>Raspberry Pi 4 (64-bit)</strong> または <strong>Raspberry Pi 5 (64-bit)</strong> を選択してください。32ビットイメージはダウンロードしないでください。ドライバーのビルドには64ビットカーネルが必要です。
 
-> **中国ミラー：** kali.orgの読み込みが遅い場合は、华为云を代わりに使ってください：
+> <strong>中国ミラー：</strong> kali.orgの読み込みが遅い場合は、华为云を代わりに使ってください：
 > https://repo.huaweicloud.com/kali-images/
 > 最新リリースフォルダを参照して、同じARM64イメージをダウンロードしてください。
 
@@ -493,7 +493,7 @@ sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=pro
 sync
 ```
 
-カードを抜く前に `sync` が完了するまで待ってください。SDカードからPiを起動します。起動後のデフォルト認証情報：**kali / kali**。
+カードを抜く前に `sync` が完了するまで待ってください。SDカードからPiを起動します。起動後のデフォルト認証情報：<strong>kali / kali</strong>。
 
 ---
 
@@ -511,7 +511,7 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-保存：**Ctrl+O**、Enter、Ctrl+X。ミラーを適用してシステムをアップグレードします。
+保存：<strong>Ctrl+O</strong>、Enter、Ctrl+X。ミラーを適用してシステムをアップグレードします。
 
 ```bash
 sudo apt update && sudo apt full-upgrade -y
@@ -577,10 +577,10 @@ macOSまたはWindowsのVM上でKali Linuxを実行していますか？USBア�
 
 ### VirtualBox
 
-1. VMの電源をオフにして、**設定 → USB** に移動します。
-2. **USB 3.0 (xHCI) コントローラー** を有効にします。
-3. **+** アイコンをクリックしてUSBフィルターを追加します。
-4. **Realtek 802.11ac NIC [...]**（ID: 0bda:8812）を選択します。
+1. VMの電源をオフにして、<strong>設定 → USB</strong> に移動します。
+2. <strong>USB 3.0 (xHCI) コントローラー</strong> を有効にします。
+3. <strong>+</strong> アイコンをクリックしてUSBフィルターを追加します。
+4. <strong>Realtek 802.11ac NIC [...]</strong>（ID: 0bda:8812）を選択します。
 5. VMを起動すると、アダプターがKali内に表示されます。
 
 VM内で `lsusb` を実行して `0bda:8812` が表示されることを確認し、上記のKali Linuxの手順に従ってください。
@@ -588,8 +588,8 @@ VM内で `lsusb` を実行して `0bda:8812` が表示されることを確認�
 ### VMware Fusion（macOS）/ VMware Workstation（Windows）
 
 1. VMを起動します。
-2. メニューから：**仮想マシン → USB & Bluetooth** を選択します。
-3. **Realtek 802.11ac NIC** を見つけて **接続** をクリックします。
+2. メニューから：<strong>仮想マシン → USB & Bluetooth</strong> を選択します。
+3. <strong>Realtek 802.11ac NIC</strong> を見つけて <strong>接続</strong> をクリックします。
 4. アダプターがホストから切断され、VM内に表示されます。
 
 VM内で `lsusb` を実行して確認し、上記のKali Linuxの手順に従ってください。
@@ -637,7 +637,7 @@ AWUS036ACHに搭載されたRTL8812AUチップは、Linux上でのVIFサポー�
 
 ## 中国向けAlfaアダプターガイド
 
-このガイドは **Alfa中国インストールガイド** シリーズの一部です。各記事は1つのアダプターモデルをカバーしています：
+このガイドは <strong>Alfa中国インストールガイド</strong> シリーズの一部です。各記事は1つのアダプターモデルをカバーしています：
 
 - AWUS036ACH ← 現在のページ
 - [AWUS036ACM 中国インストールガイド](/ja/blog/awus036acm-china-install-guide/) — MT7612U、最良のVIFサポート

@@ -27,9 +27,9 @@ related_product: "/ko/products/alfa/awus036acs/"
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 ---
 
-AWUS036ACS는 ALFA의 소형 듀얼밴드 보안 연구용 어댑터입니다. RTL8811AU 칩은 Kali Linux에서 완전한 모니터 모드와 패킷 인젝션을 지원합니다. **Linux 커널 6.13+**(예: Ubuntu 24.04 HWE / 커널 6.17)에서는 커널에 이미 내장 rtw88_8821au 드라이버가 포함되어 있어 DKMS 없이 플러그 앤 플레이로 동작합니다. **구형 커널**(6.13 미만)에서만 커뮤니티 8821au 드라이버를 소스에서 컴파일해야 합니다. 중국에서는 GitHub가 느릴 수 있으므로, 그 경우 이 가이드는 국내 미러에서 빌드 도구를 설치하고 검증된 GitHub 저장소에서 드라이버를 클론합니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하십시오.
+AWUS036ACS는 ALFA의 소형 듀얼밴드 보안 연구용 어댑터입니다. RTL8811AU 칩은 Kali Linux에서 완전한 모니터 모드와 패킷 인젝션을 지원합니다. <strong>Linux 커널 6.13+</strong>(예: Ubuntu 24.04 HWE / 커널 6.17)에서는 커널에 이미 내장 rtw88_8821au 드라이버가 포함되어 있어 DKMS 없이 플러그 앤 플레이로 동작합니다. <strong>구형 커널</strong>(6.13 미만)에서만 커뮤니티 8821au 드라이버를 소스에서 컴파일해야 합니다. 중국에서는 GitHub가 느릴 수 있으므로, 그 경우 이 가이드는 국내 미러에서 빌드 도구를 설치하고 검증된 GitHub 저장소에서 드라이버를 클론합니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하십시오.
 
-> **먼저 커널을 확인하십시오:** `uname -r`을 실행합니다. 커널 6.13+(예: Ubuntu 24.04 HWE / 커널 6.17)에는 내장 rtw88_8821au 드라이버가 포함되어 있습니다. DKMS 없이 플러그 앤 플레이이며, 모니터 모드와 인젝션이 정상 동작하는 것으로 테스트되었습니다(2.4GHz 100%, 5GHz 96%, 엔드투엔드 WPA .22000). 아래의 컴파일·설치 단계는 구형 커널(6.13 미만)에서만 필요합니다. 본인이 소유했거나 테스트 권한을 부여받은 네트워크에서만 사용하십시오.
+> <strong>먼저 커널을 확인하십시오:</strong> `uname -r`을 실행합니다. 커널 6.13+(예: Ubuntu 24.04 HWE / 커널 6.17)에는 내장 rtw88_8821au 드라이버가 포함되어 있습니다. DKMS 없이 플러그 앤 플레이이며, 모니터 모드와 인젝션이 정상 동작하는 것으로 테스트되었습니다(2.4GHz 100%, 5GHz 96%, 엔드투엔드 WPA .22000). 아래의 컴파일·설치 단계는 구형 커널(6.13 미만)에서만 필요합니다. 본인이 소유했거나 테스트 권한을 부여받은 네트워크에서만 사용하십시오.
 
 {{< tldr >}}
 AWUS036ACS는 RTL8811AU 칩셋을 사용합니다. 커널 6.13+(Ubuntu 24.04 HWE / 커널 6.17 포함)에는 내장 rtw88_8821au 드라이버가 포함되어 있습니다. DKMS 없이 플러그 앤 플레이이며, 모니터 모드와 인젝션이 정상 동작하는 것으로 테스트되었습니다(2.4GHz 100%, 5GHz 96%, 엔드투엔드 WPA .22000). 구형 커널에서만 GitHub 저장소 morrownr/8821au-20210708의 install-driver.sh로 커뮤니티 8821au DKMS 드라이버를 빌드합니다.
@@ -44,7 +44,7 @@ AWUS036ACS는 RTL8811AU 칩셋을 사용합니다. 커널 6.13+(Ubuntu 24.04 HWE
 
 다음 항목을 준비했는지 확인하십시오.
 
-1. **ALFA AWUS036ACS** 어댑터
+1. <strong>ALFA AWUS036ACS</strong> 어댑터
 2. USB 케이블 (USB-A 2.0, 박스 동봉품으로 충분합니다)
 3. 국내 미러에 접속할 수 있는 활성 인터넷 연결
 
@@ -91,13 +91,13 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-**Ctrl+O**, Enter로 저장한 뒤 Ctrl+X로 나가십시오. 갱신합니다.
+<strong>Ctrl+O</strong>, Enter로 저장한 뒤 Ctrl+X로 나가십시오. 갱신합니다.
 
 ```bash
 sudo apt update
 ```
 
-> **백업 미러:** `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
+> <strong>백업 미러:</strong> `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
 
@@ -116,7 +116,7 @@ git clone https://github.com/morrownr/8821au-20210708.git
 cd 8821au-20210708
 ```
 
-> **참고:** 유지보수되는 업스트림 드라이버는 [morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708)입니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하십시오. [files.alfa.com.tw](https://files.alfa.com.tw)에서 아카이브를 내려받을 수도 있습니다.
+> <strong>참고:</strong> 유지보수되는 업스트림 드라이버는 [morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708)입니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하십시오. [files.alfa.com.tw](https://files.alfa.com.tw)에서 아카이브를 내려받을 수도 있습니다.
 
 ---
 
@@ -310,7 +310,7 @@ sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=pro
 sync
 ```
 
-기본 자격 증명: **kali / kali**.
+기본 자격 증명: <strong>kali / kali</strong>.
 
 ### 2단계: 중국 미러로 전환
 
@@ -363,13 +363,13 @@ sudo aireplay-ng --test wlan1mon
 
 ### VirtualBox
 
-1. VM 전원을 끈 뒤 **설정 → USB** → **USB 2.0 컨트롤러**를 활성화합니다.
-2. **+**를 클릭 → **Realtek** (ID: 0bda:0811)을 선택합니다.
+1. VM 전원을 끈 뒤 <strong>설정 → USB</strong> → <strong>USB 2.0 컨트롤러</strong>를 활성화합니다.
+2. <strong>+</strong>를 클릭 → <strong>Realtek</strong> (ID: 0bda:0811)을 선택합니다.
 3. VM을 시작합니다. `lsusb`를 실행해 `0bda:0811`을 확인한 뒤 위의 Kali 단계를 따르십시오.
 
 ### VMware Fusion / Workstation
 
-1. **Virtual Machine → USB & Bluetooth** → **Realtek 8811AU**를 찾아 **Connect**를 클릭합니다.
+1. <strong>Virtual Machine → USB & Bluetooth</strong> → <strong>Realtek 8811AU</strong>를 찾아 <strong>Connect</strong>를 클릭합니다.
 2. `lsusb`를 실행해 확인한 뒤 위의 Kali 단계를 따르십시오.
 
 ---
@@ -387,7 +387,7 @@ sudo aireplay-ng --test wlan1mon
 | 모니터 모드에서 트래픽 없음 | 잘못된 채널 | 채널 설정: `iwconfig wlan1mon channel 6` |
 | 인젝션 "No Answer" | AP가 너무 멀리 있음 | 더 가까이 이동. `wlan1`이 아닌 `wlan1mon`을 사용 |
 
-> **VIF 관련 참고:** RTL8811AU 드라이버는 가상 인터페이스(VIF)를 지원하지 않습니다. 이 어댑터에서는 모니터 + 매니지드 모드 동시 사용이 불가능합니다.
+> <strong>VIF 관련 참고:</strong> RTL8811AU 드라이버는 가상 인터페이스(VIF)를 지원하지 않습니다. 이 어댑터에서는 모니터 + 매니지드 모드 동시 사용이 불가능합니다.
 
 ## 중국 미러 참조
 

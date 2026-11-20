@@ -30,7 +30,7 @@ AWUS036ACH 搭載 RTL8812AU 晶片，透過 aircrack-ng 驅動搭配 DKMS 安裝
 
 ## 前言
 
-ALFA AWUS036ACH 搭載 Realtek **RTL8812AU** 晶片組，長期以來是 Kali Linux 無線滲透測試社群中評價最高、使用最廣泛的 USB 無線網路卡之一。它同時支援 2.4 GHz 與 5 GHz 雙頻、具備完整的監聽模式（Monitor Mode）與封包注入（Packet Injection）能力，加上 aircrack-ng 官方維護的開源驅動，幾乎成為所有 Wi-Fi 安全教學的標配器材。
+ALFA AWUS036ACH 搭載 Realtek <strong>RTL8812AU</strong> 晶片組，長期以來是 Kali Linux 無線滲透測試社群中評價最高、使用最廣泛的 USB 無線網路卡之一。它同時支援 2.4 GHz 與 5 GHz 雙頻、具備完整的監聽模式（Monitor Mode）與封包注入（Packet Injection）能力，加上 aircrack-ng 官方維護的開源驅動，幾乎成為所有 Wi-Fi 安全教學的標配器材。
 
 本教學將從零開始，帶你完成 AWUS036ACH 在 Kali Linux 上的完整安裝與設定流程，包含驅動安裝、監聽模式啟用、封包注入測試，以及常見問題的排解方法。
 
@@ -49,7 +49,7 @@ ALFA AWUS036ACH 搭載 Realtek **RTL8812AU** 晶片組，長期以來是 Kali Li
 | 網路連線 | 安裝驅動期間需要網際網路連線 |
 | 權限 | 需要 sudo 管理員權限 |
 
-> **重要提示**：本教學中的所有無線測試指令，僅限用於你擁有合法授權的網路環境。未經授權對他人網路進行測試是違法行為。
+> <strong>重要提示</strong>：本教學中的所有無線測試指令，僅限用於你擁有合法授權的網路環境。未經授權對他人網路進行測試是違法行為。
 
 ---
 
@@ -257,9 +257,9 @@ sudo aireplay-ng --test -c 36 wlan0mon
 
 ### 問題 1：找不到無線介面
 
-**症狀**：`iwconfig` 或 `ip link show` 沒有顯示新的無線介面。
+<strong>症狀</strong>：`iwconfig` 或 `ip link show` 沒有顯示新的無線介面。
 
-**排解步驟**：
+<strong>排解步驟</strong>：
 ```bash
 # 確認 USB 裝置已被識別
 lsusb | grep -i realtek
@@ -280,9 +280,9 @@ dmesg | tail -30
 
 ### 問題 2：驅動未載入或載入失敗
 
-**症狀**：`modprobe 88XXau` 回報錯誤，或 `dmesg` 顯示驅動錯誤。
+<strong>症狀</strong>：`modprobe 88XXau` 回報錯誤，或 `dmesg` 顯示驅動錯誤。
 
-**排解步驟**：
+<strong>排解步驟</strong>：
 ```bash
 # 確認核心標頭已安裝
 sudo apt install -y linux-headers-$(uname -r)
@@ -301,9 +301,9 @@ sudo modprobe 88XXau
 
 ### 問題 3：NetworkManager 干擾監聽模式
 
-**症狀**：啟用監聽模式後，介面自動切回 Managed 模式，或 `airmon-ng` 提示有行程干擾。
+<strong>症狀</strong>：啟用監聽模式後，介面自動切回 Managed 模式，或 `airmon-ng` 提示有行程干擾。
 
-**排解步驟**：
+<strong>排解步驟</strong>：
 ```bash
 # 查看干擾行程
 sudo airmon-ng check
@@ -325,9 +325,9 @@ sudo systemctl start NetworkManager
 
 ### 問題 4：封包注入測試成功率低
 
-**症狀**：`aireplay-ng --test` 顯示成功率低於 50%。
+<strong>症狀</strong>：`aireplay-ng --test` 顯示成功率低於 50%。
 
-**排解步驟**：
+<strong>排解步驟</strong>：
 1. 調整天線方向與位置，靠近目標 AP
 2. 確認網路卡的 TX Power 設定（`iwconfig wlan0mon txpower 30`）
 3. 嘗試更換 USB 埠，確保供電充足（建議使用 USB 3.0）
@@ -351,7 +351,7 @@ sudo systemctl start NetworkManager
 
 ## 產品資訊
 
-ALFA AWUS036ACH 由台灣授權代理商**榆閤科技（Yopitek）**在台灣獨家代理銷售，提供原廠保固與中文技術支援。
+ALFA AWUS036ACH 由台灣授權代理商<strong>榆閤科技（Yopitek）</strong>在台灣獨家代理銷售，提供原廠保固與中文技術支援。
 
 👉 [查看 AWUS036ACH 產品頁面](/zh-tw/products/alfa/awus036ach/)
 

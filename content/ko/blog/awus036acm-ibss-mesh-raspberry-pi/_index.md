@@ -23,7 +23,7 @@ featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
 ---
 1. [IBSS와 802.11s 메시란 무엇이며, 왜 중요한가?](#1-what-are-ibss-and-80211s-mesh) 2. [ALFA AWUS036ACM 하드웨어 사양](#2-alfa-awus036acm-hardware-specifications) 3. [Raspberry Pi에서의 MT7612U 드라이버](#3-the-mt7612u-driver-on-raspberry-pi) 4. [모드 1: IBSS 애드혹 네트워킹](#4-mode-1-ibss-ad-hoc-networking) 5. [모드 2: 802.11s Mesh Point 네트워킹](#5-mode-2-80211s-mesh-point-networking) 6. [실제 활용 사례](#6-real-world-use-cases) 7. [이 용도에서 AWUS036ACM이 유일한 ALFA 선택지인 이유](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this) 8. [FAQ 및 문제 해결](#8-faq-and-troubleshooting) 9. [구매처](#9-where-to-buy)
 
-**라우터 없이** Raspberry Pi 노드 간에 WiFi 네트워크를 구축하려 하거나, 중간 홉을 통해 트래픽을 자동으로 라우팅하는 자가 치유형 무선 메시를 만들려 해 본 적이 있다면, 대부분의 USB WiFi 어댑터가 이를 수행하지 못한다는 사실을 금방 알게 됩니다. 커널 드라이버가 필요한 모드를 아예 노출하지 않기 때문입니다.
+<strong>라우터 없이</strong> Raspberry Pi 노드 간에 WiFi 네트워크를 구축하려 하거나, 중간 홉을 통해 트래픽을 자동으로 라우팅하는 자가 치유형 무선 메시를 만들려 해 본 적이 있다면, 대부분의 USB WiFi 어댑터가 이를 수행하지 못한다는 사실을 금방 알게 됩니다. 커널 드라이버가 필요한 모드를 아예 노출하지 않기 때문입니다.
 
 {{< tldr >}}
 AWUS036ACM은 MT7612U 칩셋을 사용합니다. 그 mt76x2u 드라이버는 Linux mac80211을 기반으로 구축되어 IBSS 애드혹 및 802.11s Mesh Point 모드를 완전히 지원합니다. 이 글에서는 두 모드의 동작 원리, 단계별 설정, 그리고 실제 응용 사례를 다룹니다.
@@ -35,7 +35,7 @@ MediaTek MT7612U 칩셋을 탑재한 ALFA AWUS036ACM은 현재 판매 중인 ALF
 
 
 
-**MediaTek MT7612U** 칩셋으로 구동되는 **ALFA AWUS036ACM**은 예외입니다. 커널 내장 `mt76` 드라이버가 완전한 Linux mac80211 인터페이스를 구현하므로, Raspberry Pi에서 **IBSS(애드혹)** 모드와 **802.11s Mesh Point** 모드를 모두 네이티브로 지원합니다. 드라이버 컴파일이 필요 없는 즉시 사용 가능한 방식입니다.
+<strong>MediaTek MT7612U</strong> 칩셋으로 구동되는 <strong>ALFA AWUS036ACM</strong>은 예외입니다. 커널 내장 `mt76` 드라이버가 완전한 Linux mac80211 인터페이스를 구현하므로, Raspberry Pi에서 <strong>IBSS(애드혹)</strong> 모드와 <strong>802.11s Mesh Point</strong> 모드를 모두 네이티브로 지원합니다. 드라이버 컴파일이 필요 없는 즉시 사용 가능한 방식입니다.
 
 이 가이드는 두 모드가 정확히 어떻게 동작하는지 설명하고, 단계별 설정 방법을 제공하며, 어떤 상황에서 어느 모드를 선택해야 하는지 안내합니다.
 
@@ -49,11 +49,11 @@ MediaTek MT7612U 칩셋을 탑재한 ALFA AWUS036ACM은 현재 판매 중인 ALF
 
 ### IBSS — Independent Basic Service Set (애드혹 모드)
 
-노트북을 가정용 WiFi 라우터에 연결할 때, 어댑터는 **매니지드(스테이션)** 모드로 동작합니다. 즉 하나의 중앙 액세스 포인트와 통신합니다. IBSS는 그 반대입니다. **중앙 인프라가 없는 피어 투 피어 무선 네트워킹**을 규정한 IEEE 802.11 사양입니다.
+노트북을 가정용 WiFi 라우터에 연결할 때, 어댑터는 <strong>매니지드(스테이션)</strong> 모드로 동작합니다. 즉 하나의 중앙 액세스 포인트와 통신합니다. IBSS는 그 반대입니다. <strong>중앙 인프라가 없는 피어 투 피어 무선 네트워킹</strong>을 규정한 IEEE 802.11 사양입니다.
 
 IBSS 모드에서는:
 
-- 장치들이 AP나 라우터 없이 서로 **직접** 통신합니다
+- 장치들이 AP나 라우터 없이 서로 <strong>직접</strong> 통신합니다
 - 동일한 SSID와 채널을 사용하는 두 장치는 데이터를 교환할 수 있습니다
 - 네트워크가 독립적으로 구성됩니다 — 인터넷 연결이 필요 없습니다
 - IP는 정적으로(또는 직접 실행하는 간단한 DHCP 데몬을 통해) 할당됩니다
@@ -61,19 +61,19 @@ IBSS 모드에서는:
 
 소수의 Pi 노드 사이에 즉석 사설 무선 LAN을 만드는 것으로 생각하면 됩니다. 2노드 파이프라인, 3노드 센서 클러스터, 또는 현장에 배치하는 휴대용 통신 키트 등이 그 예입니다.
 
-**알아두어야 할 IBSS의 한계:**
+<strong>알아두어야 할 IBSS의 한계:</strong>
 - 모든 노드는 서로 직접 무선 통신 범위 내에 있어야 합니다 — 자동 멀티홉 포워딩이 없습니다
 - 표준 WPA2 암호화는 IBSS 모드에서 사용할 수 없습니다(WEP는 기술적으로 가능하지만 권장하지 않습니다. 대부분의 배포에서는 애플리케이션 계층 보안을 대신 사용합니다)
 - 실질적으로 성능이 저하되기 전까지 3~5개 노드 규모로 확장됩니다
 
 ### 802.11s Mesh Point — 확장 가능한 대안
 
-802.11s는 **진정한 무선 메시 네트워킹**을 정의하는 별도의 IEEE 개정안입니다. IBSS와 달리 802.11s 메시는:
+802.11s는 <strong>진정한 무선 메시 네트워킹</strong>을 정의하는 별도의 IEEE 개정안입니다. IBSS와 달리 802.11s 메시는:
 
 - 인접 노드를 자동으로 탐색하고 라우팅 테이블을 구축합니다
 - 직접 범위를 벗어난 노드에 도달하기 위해 중간 홉을 통해 트래픽을 포워딩합니다
 - 노드가 사라지면 자가 치유합니다 — 다른 경로가 자동으로 사용됩니다
-- 기본적으로 경로 선택에 **하이브리드 무선 메시 프로토콜(HWMP)**을 사용합니다
+- 기본적으로 경로 선택에 <strong>하이브리드 무선 메시 프로토콜(HWMP)</strong>을 사용합니다
 
 ```
 예시: 4노드 메시
@@ -91,11 +91,11 @@ Pi B가 장애를 일으키면, 메시는 대체 경로를 찾으려 시도합�
 
 ### 동작하는 어댑터를 찾기 어려운 이유
 
-위의 두 모드는 WiFi 드라이버가 Linux의 **mac80211** 소프트웨어 MAC 계층 — 커널의 공식 802.11 스택 — 위에 구축되어 있어야 합니다. mac80211을 준수하는 드라이버만이 IBSS와 Mesh Point를 사용 가능한 인터페이스 유형으로 노출합니다.
+위의 두 모드는 WiFi 드라이버가 Linux의 <strong>mac80211</strong> 소프트웨어 MAC 계층 — 커널의 공식 802.11 스택 — 위에 구축되어 있어야 합니다. mac80211을 준수하는 드라이버만이 IBSS와 Mesh Point를 사용 가능한 인터페이스 유형으로 노출합니다.
 
-널리 쓰이는 많은 USB WiFi 어댑터는 자체의 단순화된 무선 스택을 구현하면서 IBSS와 메시 지원을 의도적으로 생략하는 **커널 외부 드라이버**를 사용합니다. 심지어 최신 칩셋용 일부 커널 내장 드라이버조차 이러한 모드를 노출하지 않습니다.
+널리 쓰이는 많은 USB WiFi 어댑터는 자체의 단순화된 무선 스택을 구현하면서 IBSS와 메시 지원을 의도적으로 생략하는 <strong>커널 외부 드라이버</strong>를 사용합니다. 심지어 최신 칩셋용 일부 커널 내장 드라이버조차 이러한 모드를 노출하지 않습니다.
 
-MT7612U는 두 모드 모두에 대해 명확하고 분명하게 **예**라고 답할 수 있는 몇 안 되는 칩셋 중 하나입니다.
+MT7612U는 두 모드 모두에 대해 명확하고 분명하게 <strong>예</strong>라고 답할 수 있는 몇 안 되는 칩셋 중 하나입니다.
 
 ---
 
@@ -109,21 +109,21 @@ AWUS036ACM은 Linux 파워 유저와 임베디드 개발자를 위해 설계된 
 
 | 항목 | 값 |
 |---|---|
-| **칩셋** | MediaTek MT7612U |
-| **WiFi 표준** | IEEE 802.11 a/b/g/n/ac (WiFi 5) |
-| **주파수 대역** | 2.4 GHz (2.412–2.472 GHz) + 5 GHz (5.15–5.825 GHz) |
-| **채널 대역폭** | 20 / 40 / 80 MHz |
-| **최대 속도 (5 GHz)** | 867 Mbps (802.11ac) |
-| **최대 속도 (2.4 GHz)** | 300 Mbps (802.11n) |
-| **결합 속도** | AC1200 (867 + 300 Mbps) |
-| **USB 인터페이스** | USB 3.0 Type-A (USB 2.0 하위 호환) |
-| **안테나** | 2× RP-SMA 암 커넥터, 2× 5 dBi 듀얼 밴드 다이폴 (탈착식) |
-| **USB VID/PID** | 0e8d:7612 |
-| **LED 표시등** | 전원 + WLAN 활동 |
-| **동봉 액세서리** | USB 3.0 연장 케이블, 드라이버 CD (Windows) |
-| **크기** | 62 × 85.3 × 24 mm |
-| **무게** | 60 g |
-| **원산지** | 대만 (Alfa Network Inc.) |
+| <strong>칩셋</strong> | MediaTek MT7612U |
+| <strong>WiFi 표준</strong> | IEEE 802.11 a/b/g/n/ac (WiFi 5) |
+| <strong>주파수 대역</strong> | 2.4 GHz (2.412–2.472 GHz) + 5 GHz (5.15–5.825 GHz) |
+| <strong>채널 대역폭</strong> | 20 / 40 / 80 MHz |
+| <strong>최대 속도 (5 GHz)</strong> | 867 Mbps (802.11ac) |
+| <strong>최대 속도 (2.4 GHz)</strong> | 300 Mbps (802.11n) |
+| <strong>결합 속도</strong> | AC1200 (867 + 300 Mbps) |
+| <strong>USB 인터페이스</strong> | USB 3.0 Type-A (USB 2.0 하위 호환) |
+| <strong>안테나</strong> | 2× RP-SMA 암 커넥터, 2× 5 dBi 듀얼 밴드 다이폴 (탈착식) |
+| <strong>USB VID/PID</strong> | 0e8d:7612 |
+| <strong>LED 표시등</strong> | 전원 + WLAN 활동 |
+| <strong>동봉 액세서리</strong> | USB 3.0 연장 케이블, 드라이버 CD (Windows) |
+| <strong>크기</strong> | 62 × 85.3 × 24 mm |
+| <strong>무게</strong> | 60 g |
+| <strong>원산지</strong> | 대만 (Alfa Network Inc.) |
 
 ### 송신 출력
 
@@ -151,14 +151,14 @@ AWUS036ACM은 Linux 파워 유저와 임베디드 개발자를 위해 설계된 
 
 | 모드 | 지원 여부 | 설명 |
 |---|---|---|
-| **IBSS** | ✅ 예 | 애드혹 피어 투 피어, AP 불필요 |
-| **매니지드 (스테이션)** | ✅ 예 | 표준 클라이언트 모드 |
-| **AP** | ✅ 예 | 소프트웨어 액세스 포인트 (hostapd) |
-| **AP/VLAN** | ✅ 예 | AP 상의 가상 LAN |
-| **모니터** | ✅ 예 | 수동 캡처 + 패킷 인젝션 |
-| **Mesh Point** | ✅ 예 | 802.11s 멀티홉 메시 네트워킹 |
-| **P2P-client** | ✅ 예 | Wi-Fi Direct 클라이언트 |
-| **P2P-GO** | ✅ 예 | Wi-Fi Direct 그룹 오너 |
+| <strong>IBSS</strong> | ✅ 예 | 애드혹 피어 투 피어, AP 불필요 |
+| <strong>매니지드 (스테이션)</strong> | ✅ 예 | 표준 클라이언트 모드 |
+| <strong>AP</strong> | ✅ 예 | 소프트웨어 액세스 포인트 (hostapd) |
+| <strong>AP/VLAN</strong> | ✅ 예 | AP 상의 가상 LAN |
+| <strong>모니터</strong> | ✅ 예 | 수동 캡처 + 패킷 인젝션 |
+| <strong>Mesh Point</strong> | ✅ 예 | 802.11s 멀티홉 메시 네트워킹 |
+| <strong>P2P-client</strong> | ✅ 예 | Wi-Fi Direct 클라이언트 |
+| <strong>P2P-GO</strong> | ✅ 예 | Wi-Fi Direct 그룹 오너 |
 
 ### 무선 보안
 WPA2 / WPA / WEP / WPA-PSK / 802.1X / 64–128비트 WEP
@@ -182,12 +182,12 @@ WPA2 / WPA / WEP / WPA-PSK / 802.1X / 64–128비트 WEP
 
 ### 드라이버: mt76x2u (mt76 제품군의 일부)
 
-MediaTek MT7612U는 `mt76x2u` 드라이버로 처리되며, 이는 MediaTek가 유지 관리하고 Linux 커널 메인라인에 통합된 더 넓은 **mt76** 드라이버 프로젝트의 일부입니다.
+MediaTek MT7612U는 `mt76x2u` 드라이버로 처리되며, 이는 MediaTek가 유지 관리하고 Linux 커널 메인라인에 통합된 더 넓은 <strong>mt76</strong> 드라이버 프로젝트의 일부입니다.
 
-**핵심 수치:**
-- 커널 내장 시점: **Linux 커널 4.19** (2018년 10월 출시)
-- Raspberry Pi OS는 커널 **5.15+**(Pi 4/5)와 **5.10+**(Pi 3B+)를 탑재합니다 — 둘 다 4.19보다 훨씬 높습니다
-- **최신 Raspberry Pi OS에서는 설치 과정이 필요 없습니다**
+<strong>핵심 수치:</strong>
+- 커널 내장 시점: <strong>Linux 커널 4.19</strong> (2018년 10월 출시)
+- Raspberry Pi OS는 커널 <strong>5.15+</strong>(Pi 4/5)와 <strong>5.10+</strong>(Pi 3B+)를 탑재합니다 — 둘 다 4.19보다 훨씬 높습니다
+- <strong>최신 Raspberry Pi OS에서는 설치 과정이 필요 없습니다</strong>
 
 ### 드라이버 로드 여부 확인 방법
 
@@ -265,7 +265,7 @@ mt76x2u             ← MT7612U USB 하드웨어 드라이버
 MediaTek MT7612U    ← 물리 칩 (2×2 MIMO, USB 3.0)
 ```
 
-**mac80211**은 완전한 802.11 상태 머신을 구현한 Linux 커널의 구현체로, 비콘 관리, 프레임 구성, 전력 절약, IBSS 피어 탐색, 메시 경로 라우팅을 처리합니다. mac80211 위에 구축된 드라이버는 이러한 모든 기능을 자동으로 상속합니다.
+<strong>mac80211</strong>은 완전한 802.11 상태 머신을 구현한 Linux 커널의 구현체로, 비콘 관리, 프레임 구성, 전력 절약, IBSS 피어 탐색, 메시 경로 라우팅을 처리합니다. mac80211 위에 구축된 드라이버는 이러한 모든 기능을 자동으로 상속합니다.
 
 mac80211을 우회하는 드라이버(예: Realtek의 커널 외부 드라이버)는 자신이 노출하기로 선택한 모드만 구현하며, IBSS와 Mesh Point는 거의 항상 생략됩니다.
 
@@ -277,9 +277,9 @@ mac80211을 우회하는 드라이버(예: Realtek의 커널 외부 드라이버
 
 IBSS 모드에서는 각 어댑터가 자신의 802.11 프레임을 관리합니다. 두 어댑터가 동일한 SSID와 채널로 설정되면:
 
-1. 첫 번째 장치가 무작위 **BSSID**(IBSS 셀 ID)를 생성합니다
+1. 첫 번째 장치가 무작위 <strong>BSSID</strong>(IBSS 셀 ID)를 생성합니다
 2. 선택한 채널에서 비콘을 브로드캐스트합니다
-3. 두 번째 장치가 스캔하여 비콘을 발견하고 셀에 **참여**합니다
+3. 두 번째 장치가 스캔하여 비콘을 발견하고 셀에 <strong>참여</strong>합니다
 4. 이제 두 장치는 중간에 AP 없이 데이터 프레임을 직접 교환할 수 있습니다
 
 OS 관점에서 IBSS 인터페이스는 일반 이더넷 인터페이스처럼 동작합니다 — IP를 할당하고 TCP/IP를 평소처럼 사용합니다.
@@ -299,7 +299,7 @@ OS 관점에서 IBSS 인터페이스는 일반 이더넷 인터페이스처럼 �
 
 이 예시는 두 대의 Raspberry Pi 사이에 직접 5 GHz 링크를 생성합니다. 배포 환경에 맞게 IP와 SSID를 조정하십시오.
 
-**두 노드 모두 — 올바른 인터페이스 식별:**
+<strong>두 노드 모두 — 올바른 인터페이스 식별:</strong>
 
 ```bash
 iw dev
@@ -311,44 +311,44 @@ AWUS036ACM은 일반적으로 `wlan1`로 나타납니다(Pi의 내장 WiFi가 `w
 
 #### 노드 1 (Pi #1 — IP: 192.168.88.1)
 
-**1단계 — NetworkManager / wpa_supplicant의 간섭 중지:**
+<strong>1단계 — NetworkManager / wpa_supplicant의 간섭 중지:</strong>
 
 ```bash
 sudo systemctl stop NetworkManager 2>/dev/null || true
 sudo pkill wpa_supplicant 2>/dev/null || true
 ```
 
-**2단계 — 인터페이스 비활성화:**
+<strong>2단계 — 인터페이스 비활성화:</strong>
 
 ```bash
 sudo ip link set wlan1 down
 ```
 
-**3단계 — 인터페이스를 IBSS 모드로 설정:**
+<strong>3단계 — 인터페이스를 IBSS 모드로 설정:</strong>
 
 ```bash
 sudo iw dev wlan1 set type ibss
 ```
 
-**4단계 — 인터페이스 다시 활성화:**
+<strong>4단계 — 인터페이스 다시 활성화:</strong>
 
 ```bash
 sudo ip link set wlan1 up
 ```
 
-**5단계 — 5 GHz 채널 36에서 IBSS 셀 참여(또는 생성):**
+<strong>5단계 — 5 GHz 채널 36에서 IBSS 셀 참여(또는 생성):</strong>
 
 ```bash
 sudo iw dev wlan1 ibss join RaspberryMesh 5180
 ```
 
-> **주파수 참조:**
+> <strong>주파수 참조:</strong>
 > - 5180 MHz = 5 GHz 채널 36 (일반적인 실내 채널, 우수한 처리량)
 > - 5200 MHz = 5 GHz 채널 40
 > - 2412 MHz = 2.4 GHz 채널 1 (더 넓은 범위, 낮은 속도)
 > - 2437 MHz = 2.4 GHz 채널 6
 
-**6단계 — 정적 IP 주소 할당:**
+<strong>6단계 — 정적 IP 주소 할당:</strong>
 
 ```bash
 sudo ip addr add 192.168.88.1/24 dev wlan1
@@ -448,7 +448,7 @@ sudo systemctl enable ibss-mesh.service
 sudo systemctl start ibss-mesh.service
 ```
 
-> **참고:** 각 노드마다 서비스 파일의 IP 주소를 변경하십시오(`.1`, `.2`, `.3` 등).
+> <strong>참고:</strong> 각 노드마다 서비스 파일의 IP 주소를 변경하십시오(`.1`, `.2`, `.3` 등).
 
 ### 세 번째 노드 추가
 
@@ -464,11 +464,11 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 ### 802.11s의 동작 원리
 
-802.11s 개정안은 **메시 조정 계층**을 802.11 MAC에 직접 추가합니다. 모든 노드가 중앙 AP와 통신하는 대신, 각 노드는:
+802.11s 개정안은 <strong>메시 조정 계층</strong>을 802.11 MAC에 직접 추가합니다. 모든 노드가 중앙 AP와 통신하는 대신, 각 노드는:
 
-1. 선택한 채널과 `mesh_id`에서 **Mesh Beacon** 프레임을 브로드캐스트하여 인접 메시 노드를 탐색합니다
-2. **HWMP(하이브리드 무선 메시 프로토콜)**를 실행하여 각 목적지까지의 최적 경로를 계산합니다
-3. 출발지 및 목적지 MAC 주소와 메시 시퀀스 번호를 포함하는 **Mesh Header**로 데이터 프레임을 캡슐화합니다
+1. 선택한 채널과 `mesh_id`에서 <strong>Mesh Beacon</strong> 프레임을 브로드캐스트하여 인접 메시 노드를 탐색합니다
+2. <strong>HWMP(하이브리드 무선 메시 프로토콜)</strong>를 실행하여 각 목적지까지의 최적 경로를 계산합니다
+3. 출발지 및 목적지 MAC 주소와 메시 시퀀스 번호를 포함하는 <strong>Mesh Header</strong>로 데이터 프레임을 캡슐화합니다
 4. 목적지가 직접 범위를 벗어난 경우 중간 홉을 통해 프레임을 자동으로 포워딩합니다
 
 Linux 커널은 이를 `iw`의 `mp`(mesh point) 인터페이스 유형을 통해 노출하며, 커널 자체의 802.11s 구현이 모든 피어링 및 경로 관리를 처리합니다.
@@ -493,7 +493,7 @@ Linux 커널은 이를 `iw`의 `mp`(mesh point) 인터페이스 유형을 통해
 
 #### 모든 노드에서 — 메시 인터페이스 생성
 
-**1단계 — 물리 장치(phy) 이름 식별:**
+<strong>1단계 — 물리 장치(phy) 이름 식별:</strong>
 
 ```bash
 iw dev
@@ -506,7 +506,7 @@ phy#1
         ...
 ```
 
-**2단계 — `mesh0`이라는 새 Mesh Point 인터페이스 추가:**
+<strong>2단계 — `mesh0`이라는 새 Mesh Point 인터페이스 추가:</strong>
 
 ```bash
 sudo iw phy phy1 interface add mesh0 type mp mesh_id RaspberryMesh
@@ -514,19 +514,19 @@ sudo iw phy phy1 interface add mesh0 type mp mesh_id RaspberryMesh
 
 > 이 명령은 `wlan1`과 동일한 물리 라디오 상에 새 가상 인터페이스 `mesh0`을 생성합니다. 원래의 `wlan1`은 인터넷 접속을 위해 동시에 매니지드 모드로 유지될 수 있습니다 — 이것이 바로 VIF(가상 인터페이스)의 작동 예입니다.
 
-**3단계 — 동작 채널 설정 (5 GHz 채널 36):**
+<strong>3단계 — 동작 채널 설정 (5 GHz 채널 36):</strong>
 
 ```bash
 sudo iw dev mesh0 set channel 36
 ```
 
-**4단계 — 메시 인터페이스 활성화:**
+<strong>4단계 — 메시 인터페이스 활성화:</strong>
 
 ```bash
 sudo ip link set mesh0 up
 ```
 
-**5단계 — 노드별로 고유한 IP 주소 할당:**
+<strong>5단계 — 노드별로 고유한 IP 주소 할당:</strong>
 
 ```bash
 # 노드 1:
@@ -543,7 +543,7 @@ sudo ip addr add 10.88.0.3/24 dev mesh0
 
 #### 메시 형성 확인
 
-**피어가 탐색되었는지 확인:**
+<strong>피어가 탐색되었는지 확인:</strong>
 
 ```bash
 iw dev mesh0 station dump
@@ -564,7 +564,7 @@ Station xx:xx:xx:xx:xx:03 (on mesh0)
     mesh plink:     ESTAB
 ```
 
-**메시 라우팅 경로 확인:**
+<strong>메시 라우팅 경로 확인:</strong>
 
 ```bash
 iw dev mesh0 mpath dump
@@ -578,7 +578,7 @@ xx:xx:xx:xx:xx:03 xx:xx:xx:xx:xx:02 mesh0   18      2316    0       0       100 
 
 > 노드 3의 다음 홉이 노드 2입니다 — 즉 노드 1이 노드 2를 거쳐 노드 3에 자동으로 도달한다는 의미입니다.
 
-**메시를 통해 핑 전송:**
+<strong>메시를 통해 핑 전송:</strong>
 
 ```bash
 # 노드 1에서:
@@ -587,21 +587,21 @@ ping -c 4 10.88.0.3
 
 ### 고급: 2계층 메시 라우팅을 위한 batman-adv 추가
 
-프로덕션 배포에서는 커널 내장 HWMP를 **batman-adv**로 교체하면 더 고급 라우팅, 이동성 환경에서의 향상된 성능, 그리고 상위 계층 네트워킹 도구와의 호환성을 얻을 수 있습니다.
+프로덕션 배포에서는 커널 내장 HWMP를 <strong>batman-adv</strong>로 교체하면 더 고급 라우팅, 이동성 환경에서의 향상된 성능, 그리고 상위 계층 네트워킹 도구와의 호환성을 얻을 수 있습니다.
 
-**batman-adv 설치:**
+<strong>batman-adv 설치:</strong>
 
 ```bash
 sudo apt install batctl
 ```
 
-**모듈 로드:**
+<strong>모듈 로드:</strong>
 
 ```bash
 sudo modprobe batman-adv
 ```
 
-**메시 인터페이스를 batman-adv 슬레이브로 구성:**
+<strong>메시 인터페이스를 batman-adv 슬레이브로 구성:</strong>
 
 ```bash
 # 먼저 IP 없이 mesh0를 활성화
@@ -615,7 +615,7 @@ sudo ip link set bat0 up
 sudo ip addr add 10.88.0.1/24 dev bat0
 ```
 
-**batman 라우팅 테이블 확인:**
+<strong>batman 라우팅 테이블 확인:</strong>
 
 ```bash
 sudo batctl n    # 이웃 노드
@@ -662,13 +662,13 @@ sudo systemctl start mesh-point.service
 
 ### 활용 사례 1 — 오프 그리드 센서 네트워크 (스마트 농업 / 환경 모니터링)
 
-**시나리오:** 토양 수분, 온도, 습도 센서를 각각 갖춘 세 대의 Raspberry Pi를 들판 전역에 배치합니다. 셀룰러나 WiFi 인프라를 사용할 수 없습니다.
+<strong>시나리오:</strong> 토양 수분, 온도, 습도 센서를 각각 갖춘 세 대의 Raspberry Pi를 들판 전역에 배치합니다. 셀룰러나 WiFi 인프라를 사용할 수 없습니다.
 
-**구성:** 최대 범위를 위해 2.4 GHz 채널 1(2412 MHz)에서 IBSS를 사용합니다. 각 노드는 센서 데이터를 수집하여 30초마다 중앙 로거 노드(노드 1)로 전송합니다.
+<strong>구성:</strong> 최대 범위를 위해 2.4 GHz 채널 1(2412 MHz)에서 IBSS를 사용합니다. 각 노드는 센서 데이터를 수집하여 30초마다 중앙 로거 노드(노드 1)로 전송합니다.
 
-**AWUS036ACM을 선택하는 이유:** 5 dBi 안테나와 2.4 GHz에서의 23 dBm TX 출력은 평균 이상의 범위를 제공하여, 들판의 이랑 간 거리를 커버하는 데 유용합니다. 선택적인 RP-SMA 안테나 업그레이드(예: 지향성 야기 안테나)를 통해 범위를 훨씬 더 확장할 수 있습니다.
+<strong>AWUS036ACM을 선택하는 이유:</strong> 5 dBi 안테나와 2.4 GHz에서의 23 dBm TX 출력은 평균 이상의 범위를 제공하여, 들판의 이랑 간 거리를 커버하는 데 유용합니다. 선택적인 RP-SMA 안테나 업그레이드(예: 지향성 야기 안테나)를 통해 범위를 훨씬 더 확장할 수 있습니다.
 
-**샘플 데이터 파이프라인:**
+<strong>샘플 데이터 파이프라인:</strong>
 ```
 [센서 Pi A] ──IBSS──> [에지 Pi B (로거)]
 [센서 Pi C] ──IBSS──> [에지 Pi B (로거)]
@@ -678,13 +678,13 @@ sudo systemctl start mesh-point.service
 
 ### 활용 사례 2 — 드론 / 로봇 클러스터 통신
 
-**시나리오:** 두세 대의 Raspberry Pi 기반 드론 또는 지상 로봇이 지상국을 거치지 않고 텔레메트리 데이터를 공유하고 동작을 조율해야 합니다.
+<strong>시나리오:</strong> 두세 대의 Raspberry Pi 기반 드론 또는 지상 로봇이 지상국을 거치지 않고 텔레메트리 데이터를 공유하고 동작을 조율해야 합니다.
 
-**구성:** 낮은 지연 시간과 높은 처리량을 위해 5 GHz 채널 36(5180 MHz)에서 IBSS를 사용합니다. 각 유닛은 1080p H.264 영상을 약 5 Mbps로, 텔레메트리를 100 Kbps 미만으로 스트리밍합니다.
+<strong>구성:</strong> 낮은 지연 시간과 높은 처리량을 위해 5 GHz 채널 36(5180 MHz)에서 IBSS를 사용합니다. 각 유닛은 1080p H.264 영상을 약 5 Mbps로, 텔레메트리를 100 Kbps 미만으로 스트리밍합니다.
 
-**5 GHz를 선택하는 이유:** AC1200 속도(5 GHz에서 867 Mbps)에서 AWUS036ACM은 여러 개의 동시 영상 스트림을 처리하기에 충분한 여유 대역폭을 갖습니다. 또한 5 GHz 대역은 도심에서 흔한 혼잡한 2.4 GHz 간섭을 피합니다.
+<strong>5 GHz를 선택하는 이유:</strong> AC1200 속도(5 GHz에서 867 Mbps)에서 AWUS036ACM은 여러 개의 동시 영상 스트림을 처리하기에 충분한 여유 대역폭을 갖습니다. 또한 5 GHz 대역은 도심에서 흔한 혼잡한 2.4 GHz 간섭을 피합니다.
 
-**토폴로지:**
+<strong>토폴로지:</strong>
 ```
 [드론 1 / 192.168.88.1] ──5GHz IBSS──> [드론 2 / 192.168.88.2]
 ```
@@ -693,29 +693,29 @@ sudo systemctl start mesh-point.service
 
 ### 활용 사례 3 — 재난 대응 / 비상 통신 키트
 
-**시나리오:** 신속 배치 팀이 인프라가 없는 장소에 도착합니다. 각 팀원은 Raspberry Pi Zero 2W + AWUS036ACM + 배터리 팩을 휴대합니다. 60초 이내에 텍스트 통신, 파일 공유, 협업을 위한 다중 노드 메시가 가동됩니다.
+<strong>시나리오:</strong> 신속 배치 팀이 인프라가 없는 장소에 도착합니다. 각 팀원은 Raspberry Pi Zero 2W + AWUS036ACM + 배터리 팩을 휴대합니다. 60초 이내에 텍스트 통신, 파일 공유, 협업을 위한 다중 노드 메시가 가동됩니다.
 
-**구성:** 건물과 장애물을 가로지르는 최대 범위를 위해 2.4 GHz에서 802.11s 메시를 사용합니다. batman-adv가 라우팅을 처리하므로 팀이 수동으로 IP를 관리할 필요가 없습니다.
+<strong>구성:</strong> 건물과 장애물을 가로지르는 최대 범위를 위해 2.4 GHz에서 802.11s 메시를 사용합니다. batman-adv가 라우팅을 처리하므로 팀이 수동으로 IP를 관리할 필요가 없습니다.
 
-**802.11s / batman-adv를 선택하는 이유:** 팀원이 이동하면 메시 토폴로지가 변합니다. batman-adv는 경로를 자동으로 갱신합니다. 단일 장애점이 없습니다.
+<strong>802.11s / batman-adv를 선택하는 이유:</strong> 팀원이 이동하면 메시 토폴로지가 변합니다. batman-adv는 경로를 자동으로 갱신합니다. 단일 장애점이 없습니다.
 
 ---
 
 ### 활용 사례 4 — Raspberry Pi 컴퓨팅 클러스터 백본
 
-**시나리오:** 한 개발자가 4~6대의 Raspberry Pi 4로 Beowulf 방식의 컴퓨팅 클러스터를 운영합니다. 메인 이더넷 네트워크와 분리된 전용 저지연 인터커넥트를 원합니다.
+<strong>시나리오:</strong> 한 개발자가 4~6대의 Raspberry Pi 4로 Beowulf 방식의 컴퓨팅 클러스터를 운영합니다. 메인 이더넷 네트워크와 분리된 전용 저지연 인터커넥트를 원합니다.
 
-**구성:** mesh_id `ClusterBackbone`을 사용하여 5 GHz에서 802.11s 메시를 운영합니다. 각 노드는 프로세스 간 메시징(MPI, Redis pub/sub, ZeroMQ)을 위해 메시 상에서 통신합니다.
+<strong>구성:</strong> mesh_id `ClusterBackbone`을 사용하여 5 GHz에서 802.11s 메시를 운영합니다. 각 노드는 프로세스 간 메시징(MPI, Redis pub/sub, ZeroMQ)을 위해 메시 상에서 통신합니다.
 
-**전용 메시를 선택하는 이유:** 클러스터 트래픽을 메인 네트워크와 분리하면 공유 이더넷 스위치의 포화를 방지하고, 메인 네트워크를 사용할 수 없을 때에도 클러스터 네트워킹이 가능합니다.
+<strong>전용 메시를 선택하는 이유:</strong> 클러스터 트래픽을 메인 네트워크와 분리하면 공유 이더넷 스위치의 포화를 방지하고, 메인 네트워크를 사용할 수 없을 때에도 클러스터 네트워킹이 가능합니다.
 
 ---
 
 ### 활용 사례 5 — 보안 연구 실험실 / 격리된 테스트 환경
 
-**시나리오:** 침투 테스터나 보안 연구자가 애드혹 특화 취약점을 테스트하거나 탐지 도구를 검증하기 위해 사설 802.11 IBSS 네트워크를 시뮬레이션하려 합니다.
+<strong>시나리오:</strong> 침투 테스터나 보안 연구자가 애드혹 특화 취약점을 테스트하거나 탐지 도구를 검증하기 위해 사설 802.11 IBSS 네트워크를 시뮬레이션하려 합니다.
 
-**구성:** 프로덕션 WiFi와 격리된 깨끗한 채널에서 IBSS를 사용하며, VIF를 통해 AWUS036ACM의 모니터 모드를 동시에 활용합니다. 하나의 인터페이스는 IBSS(네트워크에 참여), 다른 하나는 모니터(Wireshark 분석을 위해 모든 프레임 캡처)로 둡니다.
+<strong>구성:</strong> 프로덕션 WiFi와 격리된 깨끗한 채널에서 IBSS를 사용하며, VIF를 통해 AWUS036ACM의 모니터 모드를 동시에 활용합니다. 하나의 인터페이스는 IBSS(네트워크에 참여), 다른 하나는 모니터(Wireshark 분석을 위해 모든 프레임 캡처)로 둡니다.
 
 ```bash
 # IBSS와 함께 모니터 인터페이스 생성
@@ -731,45 +731,45 @@ sudo tcpdump -i mon0 -w capture.pcap
 
 ### 결정적 요인: mac80211 준수
 
-USB WiFi 어댑터가 Linux에서 IBSS와 802.11s 메시를 지원하는지는 전적으로 드라이버 아키텍처에 달려 있습니다. **mac80211 기반의 커널 내장 드라이버**만이 이러한 모드를 노출합니다. 자체 WiFi 스택을 구현하는 드라이버(대부분의 커널 외부 Realtek 드라이버)는 IBSS나 메시 기능을 아예 포함하지 않습니다.
+USB WiFi 어댑터가 Linux에서 IBSS와 802.11s 메시를 지원하는지는 전적으로 드라이버 아키텍처에 달려 있습니다. <strong>mac80211 기반의 커널 내장 드라이버</strong>만이 이러한 모드를 노출합니다. 자체 WiFi 스택을 구현하는 드라이버(대부분의 커널 외부 Realtek 드라이버)는 IBSS나 메시 기능을 아예 포함하지 않습니다.
 
 ### 현재 판매 중인 다른 모든 ALFA 어댑터의 위치
 
 | 모델 | 칩셋 | 드라이버 | IBSS | 802.11s 메시 | 비고 |
 |---|---|---|---|---|---|
-| **AWUS036ACM** | MT7612U | mt76x2u (커널 내장 ≥ 4.19) | ✅ | ✅ | **유일한 선택지** |
+| <strong>AWUS036ACM</strong> | MT7612U | mt76x2u (커널 내장 ≥ 4.19) | ✅ | ✅ | <strong>유일한 선택지</strong> |
 | AWUS036ACH | RTL8812AU | rtw88 (커널 내장 ≥ 6.13) | ✅ (커널 ≥ 6.13만 해당) | ❌ | 신규 커널 내장 드라이버, Mesh Point 없음 |
 | AWUS036ACS | RTL8811AU | rtl8812au-dkms (OOK) | ❌ | ❌ | 커널 외부 드라이버, IBSS/메시 없음 |
 | AWUS036AX | RTL8832BU | rtw88 (커널 내장) | ❌ | ❌ | Raspberry Pi 미지원 |
 | AWUS036AXER | RTL8832BU | rtw88 (커널 내장) | ❌ | ❌ | Raspberry Pi 미지원 |
 | AWUS036AXM | MT7921AUN | mt7921u (커널 내장 ≥ 5.18) | ❌ | ❌ | mt7921u는 IBSS를 노출하지 않음 |
 | AWUS036AXML | MT7921AUN | mt7921u (커널 내장 ≥ 5.18) | ❌ | ❌ | mt7921u는 IBSS를 노출하지 않음 |
-| ~~AWUS036ACHM~~ | ~~MT7610U~~ | ~~mt76x0u~~ | ~~✅~~ | ~~✅~~ | **단종(End of Life)** |
+| ~~AWUS036ACHM~~ | ~~MT7610U~~ | ~~mt76x0u~~ | ~~✅~~ | ~~✅~~ | <strong>단종(End of Life)</strong> |
 
 ### 이것이 의미하는 바
 
 AWUS036ACHM(MT7610U)은 이러한 모드를 지원했던 이전 ALFA 어댑터였으나 현재 단종되었습니다. Raspberry Pi에서 깔끔하고 플러그 앤 플레이로 IBSS와 802.11s 메시를 제공하는, 현재 생산 중인 다른 ALFA USB 어댑터는 없습니다.
 
-**AWUS036ACM은 단지 최선의 선택이 아니라 — 이 용도에서 ALFA의 현행 라인업 중 유일한 선택입니다.**
+<strong>AWUS036ACM은 단지 최선의 선택이 아니라 — 이 용도에서 ALFA의 현행 라인업 중 유일한 선택입니다.</strong>
 
 또한 AWUS036ACM은 다음을 제공합니다.
-- **AC1200 듀얼 밴드** — 2.4 GHz(범위) 또는 5 GHz(처리량) 어느 쪽에서든 IBSS/메시 지원
-- **USB 3.0** — Pi 4/5의 USB 3.0 포트에서 전체 대역폭 활용
-- **2× 탈착식 RP-SMA 안테나** — 고이득 지향성 안테나로 업그레이드하여 동봉된 5 dBi 다이폴보다 메시 범위를 훨씬 멀리 확장
-- **VIF 지원** — 하나의 어댑터에서 메시 백본과 AP 모드를 동시에 운용
-- **Raspberry Pi 3B+, 4, 5에서 동작** — 모든 Pi 세대에서 일관됨
+- <strong>AC1200 듀얼 밴드</strong> — 2.4 GHz(범위) 또는 5 GHz(처리량) 어느 쪽에서든 IBSS/메시 지원
+- <strong>USB 3.0</strong> — Pi 4/5의 USB 3.0 포트에서 전체 대역폭 활용
+- <strong>2× 탈착식 RP-SMA 안테나</strong> — 고이득 지향성 안테나로 업그레이드하여 동봉된 5 dBi 다이폴보다 메시 범위를 훨씬 멀리 확장
+- <strong>VIF 지원</strong> — 하나의 어댑터에서 메시 백본과 AP 모드를 동시에 운용
+- <strong>Raspberry Pi 3B+, 4, 5에서 동작</strong> — 모든 Pi 세대에서 일관됨
 
 ---
 
 ## 8. FAQ 및 문제 해결 {#8-faq-and-troubleshooting}
 
-**Q: Pi에 `wlan0`만 표시됩니다. `wlan1`은 어디에 있습니까?**
+<strong>Q: Pi에 `wlan0`만 표시됩니다. `wlan1`은 어디에 있습니까?</strong>
 
 AWUS036ACM 인터페이스는 어댑터를 연결한 뒤에 나타납니다. 연결한 후 `iw dev`를 실행하십시오. 10초 이내에 나타나지 않으면 `dmesg | grep -i mt76`에서 오류 메시지를 확인하십시오. Raspberry Pi OS Lite에서는 패키지가 아직 없는 경우 `sudo apt install iw`가 필요할 수 있습니다.
 
 ---
 
-**Q: `iw dev wlan1 set type ibss`가 "Device or resource busy"를 반환합니다**
+<strong>Q: `iw dev wlan1 set type ibss`가 "Device or resource busy"를 반환합니다</strong>
 
 NetworkManager나 `wpa_supplicant`가 인터페이스를 점유하고 있습니다. 이들을 중지하십시오.
 ```bash
@@ -780,35 +780,35 @@ sudo pkill wpa_supplicant 2>/dev/null || true
 
 ---
 
-**Q: `iw phy phy1 interface add mesh0 type mp`가 "Operation not supported"를 반환합니다**
+<strong>Q: `iw phy phy1 interface add mesh0 type mp`가 "Operation not supported"를 반환합니다</strong>
 
 어댑터의 phy 이름이 `phy1`이 아닐 수 있습니다. `iw dev`를 실행하여 AWUS036ACM이 어느 phy에 있는지 확인하고 올바른 phy 이름으로 대체하십시오.
 
 ---
 
-**Q: IBSS를 설정했는데 노드 간 핑이 실패합니다**
+<strong>Q: IBSS를 설정했는데 노드 간 핑이 실패합니다</strong>
 
 다음을 확인하십시오.
-1. 두 노드가 **정확히 동일한 주파수**에 있는지(예: 한쪽은 `5180`, 다른 쪽은 `5200`이 아니라 둘 다 `5180`)
-2. 두 노드가 동일한 서브넷 내에서 **서로 다른 IP 주소**를 갖는지
+1. 두 노드가 <strong>정확히 동일한 주파수</strong>에 있는지(예: 한쪽은 `5180`, 다른 쪽은 `5200`이 아니라 둘 다 `5180`)
+2. 두 노드가 동일한 서브넷 내에서 <strong>서로 다른 IP 주소</strong>를 갖는지
 3. ICMP를 차단하는 방화벽이 없는지 — `sudo iptables -L`로 확인
 4. `iw dev wlan1 link`를 실행하여 두 노드의 IBSS 셀 ID(BSSID)가 일치하는지 확인
 
 ---
 
-**Q: 재부팅 후 mesh0 인터페이스가 사라집니다**
+<strong>Q: 재부팅 후 mesh0 인터페이스가 사라집니다</strong>
 
 `iw`로 생성한 가상 인터페이스는 재부팅 후 유지되지 않습니다. [섹션 5](#making-80211s-mesh-persistent)에 나온 systemd 서비스를 사용하여 자동으로 다시 생성하십시오.
 
 ---
 
-**Q: IBSS에서 WPA2 암호화를 사용할 수 있습니까?**
+<strong>Q: IBSS에서 WPA2 암호화를 사용할 수 있습니까?</strong>
 
 표준 WPA2-Personal(PSK)은 Linux 커널의 IBSS 모드에서 지원되지 않습니다. 보안 IBSS가 필요하다면 애플리케이션 계층 암호화(WireGuard, OpenVPN, 또는 SSH 터널)를 사용할 수 있습니다. 802.11s 메시는 `wpa_supplicant`를 통해 SAE(WPA3 방식 인증)를 지원합니다.
 
 ---
 
-**Q: AWUS036ACM을 IBSS와 매니지드 모드로 동시에 사용할 수 있습니까?**
+<strong>Q: AWUS036ACM을 IBSS와 매니지드 모드로 동시에 사용할 수 있습니까?</strong>
 
 예 — 이것이 바로 VIF(가상 인터페이스)의 용도입니다. 인터넷 접속을 위해 `wlan1`을 가정용 라우터에 연결한 매니지드 모드로 유지하면서, Pi 간 네트워크를 위해 IBSS 또는 메시 모드의 두 번째 가상 인터페이스를 추가할 수 있습니다.
 
@@ -823,13 +823,13 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ---
 
-**Q: 달성할 수 있는 최대 범위는 얼마입니까?**
+<strong>Q: 달성할 수 있는 최대 범위는 얼마입니까?</strong>
 
 동봉된 5 dBi 안테나로는 개방된 실외에서 5 GHz에서 20~50 m, 2.4 GHz에서 50~100 m를 기대할 수 있습니다. 안테나를 고이득 RP-SMA 지향성 안테나(별매)로 교체하면, 가시선 조건에서 범위를 수백 미터까지 확장할 수 있습니다. AWUS036ACM의 RP-SMA 커넥터는 표준 규격이며 다양한 서드파티 안테나와 호환됩니다.
 
 ---
 
-**Q: Raspberry Pi Zero 2W에서 동작합니까?**
+<strong>Q: Raspberry Pi Zero 2W에서 동작합니까?</strong>
 
 예 — Raspberry Pi Zero 2W에는 풀사이즈 USB-A 포트(OTG 어댑터 경유)가 있으며, 4.19보다 훨씬 높은 커널의 Raspberry Pi OS를 실행합니다. AWUS036ACM은 그곳에서 동작하지만, Zero 2W의 USB 포트는 USB 2.0만 지원하므로 실질 대역폭이 약 300~400 Mbps로 제한된다는 점에 유의하십시오. IBSS/메시 제어 트래픽과 센서 데이터에는 이 정도로도 충분합니다.
 
@@ -839,7 +839,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ALFA AWUS036ACM은 공식 ALFA Network 리셀러인 [yupitek.com](https://yupitek.com)에서 구매할 수 있습니다. 공인 리셀러를 통해 구매하면 Alfa Network Inc.의 표준 보증이 적용되는 정품 하드웨어를 받을 수 있습니다.
 
-**제품 페이지:** [Yopitek의 ALFA AWUS036ACM](https://yupitek.com)
+<strong>제품 페이지:</strong> [Yopitek의 ALFA AWUS036ACM](https://yupitek.com)
 
 제품 상자 구성:
 - 1× AWUS036ACM 어댑터

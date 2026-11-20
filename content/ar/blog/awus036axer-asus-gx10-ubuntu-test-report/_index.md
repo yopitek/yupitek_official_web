@@ -130,7 +130,7 @@ sudo aireplay-ng --test $IF
 
 ### 3-4. WPA3-SAE والتقاط handshake
 
-لـ WPA3-SAE، يُضبط على جانب AP `wpa_key_mgmt=SAE` و`ieee80211w=2` و`sae_pwe=0`، واتصل iPhone 15 Pro فعليًا. و**`sae_pwe` هو موضع فخّ توافق في هذه الدفعة من بطاقات ALFA**: فبعض الأجهزة لا تتصل عند `sae_pwe=2` (Hash-to-Element)، وضبطه على `sae_pwe=0` يتوافق مع طرازات iPhone الأقدم.
+لـ WPA3-SAE، يُضبط على جانب AP `wpa_key_mgmt=SAE` و`ieee80211w=2` و`sae_pwe=0`، واتصل iPhone 15 Pro فعليًا. **و`sae_pwe` هو موضع فخّ توافق في هذه الدفعة من بطاقات ALFA**: فبعض الأجهزة لا تتصل عند `sae_pwe=2` (Hash-to-Element)، وضبطه على `sae_pwe=0` يتوافق مع طرازات iPhone الأقدم.
 
 أما قدرة handshake فأُنجزت كتحقق من طرف إلى طرف على **شبكة المكتب الخاصة (YUPITEK) + جهاز اختبار مملوك**: التُقِط 4-way كامل (M1/M2/M3/M4)، ثم حُوِّل عبر `hcxpcapngtool` إلى `.22000` القابل لقراءة hashcat. ونشير هنا إلى ظاهرة مشتركة على منصة GX10: **`hcxdumptool` يُخفق بـ `failed to arm` على كل بطاقات USB على هذه المنصة باستثناء AWUS036EACS على 2.4 GHz** (تعارض تعداد بطاقة GX10 المدمجة ثلاثية النطاق، إضافةً إلى غياب active monitor في التعريف)، لذا يسلك تدفق handshake حزمة aircrack-ng (airodump-ng + aireplay-ng). وقدرة حقن AXER كافية على هذا الطريق.
 

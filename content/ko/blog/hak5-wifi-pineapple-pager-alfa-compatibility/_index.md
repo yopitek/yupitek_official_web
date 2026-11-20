@@ -23,7 +23,7 @@ featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
 ---
 어떤 고출력 USB 어댑터든 HAK5 Pager에 꽂기 전에, 두 가지 큰 장벽을 이해해야 합니다. CPU 아키텍처와 USB 전력 한계입니다.
 
-무선 보안 감사에는 높은 정밀도, 다재다능함, 그리고 올바른 하드웨어가 필요합니다. **HAK5 WiFi Pineapple Pager**는 강력한 **PineAP v8** 엔진을 구동하는 초소형 포켓형 감사 도구로서 침투 테스터들의 주목을 받았습니다.
+무선 보안 감사에는 높은 정밀도, 다재다능함, 그리고 올바른 하드웨어가 필요합니다. <strong>HAK5 WiFi Pineapple Pager</strong>는 강력한 <strong>PineAP v8</strong> 엔진을 구동하는 초소형 포켓형 감사 도구로서 침투 테스터들의 주목을 받았습니다.
 
 {{< tldr >}}
 Pager는 DKMS를 지원하지 않는 MIPS 아키텍처를 사용합니다. AWUS036ACM은 MT7612U 드라이버가 OpenWrt 6.6 커널에 내장되어 있어 플러그 앤 플레이입니다. AWUS036ACH는 크로스 컴파일이 필요하고 wiphy 버그가 있습니다. USB 2.0는 500mA만 제공하므로 외부 허브가 필요합니다.
@@ -38,9 +38,9 @@ HAK5 WiFi Pineapple Pager는 외장 ALFA 어댑터를 연결할 수 있습니다
 
 
 
-하지만 감사 범위를 극대화하거나, 듀얼밴드(2.4 GHz & 5 GHz) 작업을 수행하거나, Pineapple 내장 무선 칩을 방해하지 않고 다중 채널 수동 모니터링을 실행하기 위해, 보안 전문가들은 종종 이렇게 묻습니다. **외장 ALFA Network 무선 어댑터를 HAK5 Pager에 연결할 수 있을까?**
+하지만 감사 범위를 극대화하거나, 듀얼밴드(2.4 GHz & 5 GHz) 작업을 수행하거나, Pineapple 내장 무선 칩을 방해하지 않고 다중 채널 수동 모니터링을 실행하기 위해, 보안 전문가들은 종종 이렇게 묻습니다. <strong>외장 ALFA Network 무선 어댑터를 HAK5 Pager에 연결할 수 있을까?</strong>
 
-짧은 답은 **가능하다 — 다만 중대한 하드웨어 및 소프트웨어 주의 사항이 따른다**입니다.
+짧은 답은 <strong>가능하다 — 다만 중대한 하드웨어 및 소프트웨어 주의 사항이 따른다</strong>입니다.
 
 이 종합 가이드에서는 기술적 제약(CPU 아키텍처, USB 전력 한계 등)을 해부하고, ALFA 현행 제품군의 호환성을 평가하며, 단계별 CLI 설치 및 문제 해결 방법을 제공합니다.
 
@@ -49,18 +49,18 @@ HAK5 WiFi Pineapple Pager는 외장 ALFA 어댑터를 연결할 수 있습니다
 ## 1. 기술적 제약: 반드시 알아야 할 사항
 
 ### 1.1 CPU 아키텍처: MIPS 제약
-x86_64에서 구동되는 표준 Kali Linux 머신이나 ARM에서 구동되는 Raspberry Pi와 달리, HAK5 Pager는 **MediaTek MT7628AN SoC**(OpenWrt에서 `mipsel_24kc`로 컴파일되는 **MIPS32r2, Little-Endian** 코어) 기반입니다.
+x86_64에서 구동되는 표준 Kali Linux 머신이나 ARM에서 구동되는 Raspberry Pi와 달리, HAK5 Pager는 <strong>MediaTek MT7628AN SoC</strong>(OpenWrt에서 `mipsel_24kc`로 컴파일되는 <strong>MIPS32r2, Little-Endian</strong> 코어) 기반입니다.
 
 > [!IMPORTANT]
-> Pager OS는 **OpenWrt(버전 24.10.1, 커널 6.6.86)** 기반이므로 **DKMS**(Dynamic Kernel Module Support)를 **지원하지 않습니다**. Pager에는 GCC와 Make 도구가 없기 때문에 커널 외부 드라이버 소스 코드를 Pager에서 직접 컴파일할 수 없습니다. 비네이티브 드라이버는 반드시 OpenWrt SDK를 사용해 외부 x86_64 Linux 머신에서 크로스 컴파일해야 합니다.
+> Pager OS는 <strong>OpenWrt(버전 24.10.1, 커널 6.6.86)</strong> 기반이므로 <strong>DKMS</strong>(Dynamic Kernel Module Support)를 <strong>지원하지 않습니다</strong>. Pager에는 GCC와 Make 도구가 없기 때문에 커널 외부 드라이버 소스 코드를 Pager에서 직접 컴파일할 수 없습니다. 비네이티브 드라이버는 반드시 OpenWrt SDK를 사용해 외부 x86_64 Linux 머신에서 크로스 컴파일해야 합니다.
 
 ### 1.2 USB 2.0 전력 예산: 전압 제약
-HAK5 Pager는 단일 USB 2.0 호스트 포트를 갖추고 있습니다. 공식 USB 2.0 사양에 따르면 표준 포트는 **5V에서 최대 500 mA(2.5W)** 전류를 공급할 수 있습니다.
+HAK5 Pager는 단일 USB 2.0 호스트 포트를 갖추고 있습니다. 공식 USB 2.0 사양에 따르면 표준 포트는 <strong>5V에서 최대 500 mA(2.5W)</strong> 전류를 공급할 수 있습니다.
 
-ALFA AWUS036ACH(RTL8812AU)나 AWUS036AXML(MT7921AUN) 같은 고출력 무선 어댑터는 고부하 송신 조건(패킷 인젝션이나 고트래픽 스캔 등)에서 최대 **720 mA(3.6W)**의 전력을 요구합니다.
+ALFA AWUS036ACH(RTL8812AU)나 AWUS036AXML(MT7921AUN) 같은 고출력 무선 어댑터는 고부하 송신 조건(패킷 인젝션이나 고트래픽 스캔 등)에서 최대 <strong>720 mA(3.6W)</strong>의 전력을 요구합니다.
 
 > [!WARNING]
-> 고출력 ALFA 어댑터를 Pager의 USB 포트에 직접 꽂으면 전압 강하가 발생합니다. 이는 **디바이스 재설정, 커널 패닉, 어댑터 드롭아웃**으로 이어집니다. 고출력 어댑터를 안정적으로 사용하려면 반드시 **외부 전원 USB 허브(5V/2A)**를 통해 ALFA 카드를 연결해야 합니다.
+> 고출력 ALFA 어댑터를 Pager의 USB 포트에 직접 꽂으면 전압 강하가 발생합니다. 이는 <strong>디바이스 재설정, 커널 패닉, 어댑터 드롭아웃</strong>으로 이어집니다. 고출력 어댑터를 안정적으로 사용하려면 반드시 <strong>외부 전원 USB 허브(5V/2A)</strong>를 통해 ALFA 카드를 연결해야 합니다.
 
 ---
 
@@ -70,12 +70,12 @@ ALFA AWUS036ACH(RTL8812AU)나 AWUS036AXML(MT7921AUN) 같은 고출력 무선 어
 
 | ALFA 모델 | 칩셋 | 대역 지원 | USB 소비 전력 | Linux 커널 6.6 상태 | 설치 방법 | 모니터 & 인젝션 | 종합 평가 & 권장 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **AWUS036ACM** | MediaTek **MT7612U** | 2.4 GHz / 5 GHz | 약 600 mA (허브 필요) | **커널 내장 (네이티브)** | `opkg`로 설치 | ✅ 예 / ✅ 예 | 🏆 **최고 표준 / 최선의 선택** |
-| **AWUS036ACH** | Realtek **RTL8812AU** | 2.4 GHz / 5 GHz | 약 720 mA (허브 필요) | 커널 외부 | SDK로 크로스 컴파일 | ✅ 예 / ✅ 예 | ⭐⭐ **고급 사용자 전용** (MIPS wiphy 버그) |
-| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4 / 5 / 6 GHz (Wi-Fi 6E) | 약 720 mA (허브 필요) | **커널 내장 (네이티브)** | `opkg` + 수동 펌웨어로 설치 | ✅ 예 / ⚠️ kernel 6.16 이전은 커뮤니티 보고 있음, kernel 6.17 실측 실패 | ⭐⭐⭐ **잠재력 우수**, 그러나 고전력 |
-| **AWUS036ACHM** | MediaTek **MT7610U** | 2.4 GHz / 5 GHz | 약 400 mA (버스 전원) | 커널 내장 (부분적) | `opkg`로 설치 | ✅ 예 / ✅ 예 | ⭐⭐⭐ **괜찮은 가성비 옵션** |
-| **AWUS036ACS** | Realtek **RTL8811AU** | 2.4 GHz / 5 GHz | 약 500 mA (경계선) | 커널 외부 | SDK로 크로스 컴파일 | ✅ 예 / ✅ 예 | ⭐⭐ **중급** (컴파일 필요) |
-| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | 약 500 mA | 메인라인 rtw88_8821cu(커널 ≥6.2), Pager 펌웨어 포함 여부 미확인 | 미확인 | GX10 커널 6.17 실측 모니터/인젝션 가능, Pager 미실측 | ⚠️ **Pager 미검증** |
+| <strong>AWUS036ACM</strong> | MediaTek <strong>MT7612U</strong> | 2.4 GHz / 5 GHz | 약 600 mA (허브 필요) | <strong>커널 내장 (네이티브)</strong> | `opkg`로 설치 | ✅ 예 / ✅ 예 | 🏆 <strong>최고 표준 / 최선의 선택</strong> |
+| <strong>AWUS036ACH</strong> | Realtek <strong>RTL8812AU</strong> | 2.4 GHz / 5 GHz | 약 720 mA (허브 필요) | 커널 외부 | SDK로 크로스 컴파일 | ✅ 예 / ✅ 예 | ⭐⭐ <strong>고급 사용자 전용</strong> (MIPS wiphy 버그) |
+| <strong>AWUS036AXML</strong> | MediaTek <strong>MT7921AUN</strong> | 2.4 / 5 / 6 GHz (Wi-Fi 6E) | 약 720 mA (허브 필요) | <strong>커널 내장 (네이티브)</strong> | `opkg` + 수동 펌웨어로 설치 | ✅ 예 / ⚠️ kernel 6.16 이전은 커뮤니티 보고 있음, kernel 6.17 실측 실패 | ⭐⭐⭐ <strong>잠재력 우수</strong>, 그러나 고전력 |
+| <strong>AWUS036ACHM</strong> | MediaTek <strong>MT7610U</strong> | 2.4 GHz / 5 GHz | 약 400 mA (버스 전원) | 커널 내장 (부분적) | `opkg`로 설치 | ✅ 예 / ✅ 예 | ⭐⭐⭐ <strong>괜찮은 가성비 옵션</strong> |
+| <strong>AWUS036ACS</strong> | Realtek <strong>RTL8811AU</strong> | 2.4 GHz / 5 GHz | 약 500 mA (경계선) | 커널 외부 | SDK로 크로스 컴파일 | ✅ 예 / ✅ 예 | ⭐⭐ <strong>중급</strong> (컴파일 필요) |
+| <strong>AWUS036EACS</strong> | Realtek <strong>RTL8821CU</strong> | 2.4 GHz / 5 GHz | 약 500 mA | 메인라인 rtw88_8821cu(커널 ≥6.2), Pager 펌웨어 포함 여부 미확인 | 미확인 | GX10 커널 6.17 실측 모니터/인젝션 가능, Pager 미실측 | ⚠️ <strong>Pager 미검증</strong> |
 
 ---
 
@@ -85,7 +85,7 @@ ALFA AWUS036ACH(RTL8812AU)나 AWUS036AXML(MT7921AUN) 같은 고출력 무선 어
 
 ### 3.1 시나리오 A: AWUS036ACM (MT7612U) — 플러그 앤 플레이 (권장)
 
-**AWUS036ACM**은 HAK5 Pager에 단연 최고의 선택입니다. MediaTek `mt76` 드라이버 묶음이 Linux 커널 6.6에 네이티브로 통합되어 있어 드라이버를 컴파일할 필요가 없습니다.
+<strong>AWUS036ACM</strong>은 HAK5 Pager에 단연 최고의 선택입니다. MediaTek `mt76` 드라이버 묶음이 Linux 커널 6.6에 네이티브로 통합되어 있어 드라이버를 컴파일할 필요가 없습니다.
 
 #### 1단계: 하드웨어 연결
 1. HAK5 Pager의 USB 포트에 외부 전원 USB 허브를 연결합니다.
@@ -148,7 +148,7 @@ iw dev wlan2 info
 
 ### 3.2 시나리오 B: AWUS036ACH (RTL8812AU) — 고급 SDK 빌드
 
-**AWUS036ACH**는 뛰어난 통신 거리와 감도 덕분에 Kali Linux의 최고 표준이지만, OpenWrt 커널 6.6에서 네이티브로 지원되지 않습니다. 반드시 크로스 컴파일해야 합니다.
+<strong>AWUS036ACH</strong>는 뛰어난 통신 거리와 감도 덕분에 Kali Linux의 최고 표준이지만, OpenWrt 커널 6.6에서 네이티브로 지원되지 않습니다. 반드시 크로스 컴파일해야 합니다.
 
 #### 사전 요구 사항
 - Ubuntu 22.04 또는 Debian 12(x86_64)를 구동하는 개발 호스트.
@@ -188,7 +188,7 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 ```
 
 > [!CAUTION]
-> MIPS 타겟에서는 `rtl8812au` 커널 외부 드라이버가 `wiphy_register` 오류를 일으켜 물리 디바이스를 커널에 등록하지 못하는 것으로 알려져 있습니다. 이 문제를 만나면 컴파일 전에 `rtl8812au` 소스 파일에 직접 패치를 적용해야 합니다. 이 문제를 피하려면 MediaTek 기반 **AWUS036ACM** 사용을 강력히 권장합니다.
+> MIPS 타겟에서는 `rtl8812au` 커널 외부 드라이버가 `wiphy_register` 오류를 일으켜 물리 디바이스를 커널에 등록하지 못하는 것으로 알려져 있습니다. 이 문제를 만나면 컴파일 전에 `rtl8812au` 소스 파일에 직접 패치를 적용해야 합니다. 이 문제를 피하려면 MediaTek 기반 <strong>AWUS036ACM</strong> 사용을 강력히 권장합니다.
 
 ---
 
@@ -196,9 +196,9 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 
 호환되는 ALFA Network 카드를 HAK5 Pager에 연결하면 여러 운용상 이점이 열립니다.
 
-1. **5 GHz 감사 커버리지**: Pager의 주 내장 칩이 싱글밴드(2.4 GHz 전용)이거나 듀얼밴드(구성에 따라 다름)인 반면, 외장 듀얼밴드 카드를 추가하면 현대적인 5 GHz 스펙트럼에서 WPA/WPA2 핸드셰이크를 캡처하고 프로브 요청을 모니터링할 수 있습니다.
-2. **전용 공격 무선 칩**: 내장 무선 칩은 대상 연결(Rogue AP / Evil Twin)이나 연결 관리에 전담시키고, ALFA 어댑터(`wlan2`)는 지속적인 디인증 인젝션에만 전담 배정할 수 있습니다.
-3. **PineAP 통합**: Web UI의 PineAP 설정 페이지에서 외장 어댑터를 대상 인터페이스로 선택하거나 CLI로 구성하여 클라이언트 트래핑 속도를 최대 10배까지 높일 수 있습니다.
+1. <strong>5 GHz 감사 커버리지</strong>: Pager의 주 내장 칩이 싱글밴드(2.4 GHz 전용)이거나 듀얼밴드(구성에 따라 다름)인 반면, 외장 듀얼밴드 카드를 추가하면 현대적인 5 GHz 스펙트럼에서 WPA/WPA2 핸드셰이크를 캡처하고 프로브 요청을 모니터링할 수 있습니다.
+2. <strong>전용 공격 무선 칩</strong>: 내장 무선 칩은 대상 연결(Rogue AP / Evil Twin)이나 연결 관리에 전담시키고, ALFA 어댑터(`wlan2`)는 지속적인 디인증 인젝션에만 전담 배정할 수 있습니다.
+3. <strong>PineAP 통합</strong>: Web UI의 PineAP 설정 페이지에서 외장 어댑터를 대상 인터페이스로 선택하거나 CLI로 구성하여 클라이언트 트래핑 속도를 최대 10배까지 높일 수 있습니다.
 
 ---
 
@@ -208,10 +208,10 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 
 ALFA Network 카드를 HAK5 WiFi Pineapple Pager에 통합하면 매우 유능하고 눈에 띄지 않는 전술 감사 스테이션이 완성됩니다. 다만 하드웨어 고려 사항이 무엇보다 중요합니다.
 
-- **즉각적이고 신뢰할 수 있는 배치를 위해**: 커널 6.6에서의 네이티브 MediaTek 드라이버 안정성과 간단한 설정 덕분에 [ALFA AWUS036ACM](https://yupitek.com/ko/products/alfa/awus036acm)을 선택하십시오.
-- **전력 요구 사항을 위해**: 고출력 무선 카드에 전력을 공급하려면 항상 고품질 **외부 전원 USB 허브**를 사용하십시오.
+- <strong>즉각적이고 신뢰할 수 있는 배치를 위해</strong>: 커널 6.6에서의 네이티브 MediaTek 드라이버 안정성과 간단한 설정 덕분에 [ALFA AWUS036ACM](https://yupitek.com/ko/products/alfa/awus036acm)을 선택하십시오.
+- <strong>전력 요구 사항을 위해</strong>: 고출력 무선 카드에 전력을 공급하려면 항상 고품질 <strong>외부 전원 USB 허브</strong>를 사용하십시오.
 
-더 많은 기술 문의, 하드웨어 구매, 커스텀 OpenWrt SDK 컴파일 요청은 **Yopitek 지원팀**에 문의하십시오.
+더 많은 기술 문의, 하드웨어 구매, 커스텀 OpenWrt SDK 컴파일 요청은 <strong>Yopitek 지원팀</strong>에 문의하십시오.
 
 - 🌐 공식 웹사이트: [www.yupitek.com](https://www.yupitek.com)
 - 📧 지원 이메일: [sales@yupitek.com](mailto:sales@yupitek.com)

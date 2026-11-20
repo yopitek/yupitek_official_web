@@ -28,7 +28,7 @@ MT7610U/MT7612U 核心原生驱动即插即用，RTL8812AU 需 DKMS 编译。Net
 {{< /tldr >}}
 
 
-我们聚焦于一个大多数 NetHunter 指南都跳过的问题：**哪款网卡是真正的即插即用，哪款会在最不合适的时刻把你拖进驱动编译的无底洞？** 答案取决于芯片组、手机的内核版本，以及驱动是内置于内核树中还是存在于外部 DKMS 仓库。如果选错了，你的网卡只能躺在包里，而你只能在现场盯着 `modprobe` 报错。选对了，插入即用，立刻开始扫描。
+我们聚焦于一个大多数 NetHunter 指南都跳过的问题：<strong>哪款网卡是真正的即插即用，哪款会在最不合适的时刻把你拖进驱动编译的无底洞？</strong> 答案取决于芯片组、手机的内核版本，以及驱动是内置于内核树中还是存在于外部 DKMS 仓库。如果选错了，你的网卡只能躺在包里，而你只能在现场盯着 `modprobe` 报错。选对了，插入即用，立刻开始扫描。
 
 ---
 
@@ -59,15 +59,15 @@ NetHunter 支持超过 117 个设备模块，但大多数是旧型号。经过�
 
 | 型号 | 代号 | CPU | 内核版本 | 预构建镜像数 | 台湾供货情况 |
 |---|---|---|---|---|---|
-| **OnePlus 11 5G** | salami | Snapdragon 8 Gen 2 (ARM64) | 2 | 2 | ✅ 通过进口渠道可获取，2023 年发布 |
-| **Nothing Phone (1)** | spacewar | Snapdragon 778G+ (ARM64) | 3 | 1 | ✅ 台湾正式发布，社区活跃 |
-| **Samsung Galaxy S20 FE 5G** | r8q | Snapdragon 865 (ARM64) | 5 | 1 | ✅ 台湾有售——**必须是 Snapdragon 版本** |
+| <strong>OnePlus 11 5G</strong> | salami | Snapdragon 8 Gen 2 (ARM64) | 2 | 2 | ✅ 通过进口渠道可获取，2023 年发布 |
+| <strong>Nothing Phone (1)</strong> | spacewar | Snapdragon 778G+ (ARM64) | 3 | 1 | ✅ 台湾正式发布，社区活跃 |
+| <strong>Samsung Galaxy S20 FE 5G</strong> | r8q | Snapdragon 865 (ARM64) | 5 | 1 | ✅ 台湾有售——<strong>必须是 Snapdragon 版本</strong> |
 
 {{< alert "triangle-exclamation" >}}
-**Samsung Exynos 警告：**大部分通过台湾电信运营商销售的 Samsung 设备使用 Exynos 芯片组。NetHunter 内核仅支持 Snapdragon 版本（`r8q`）。购买 Samsung 设备用于 NetHunter 前，务必确认 CPU 型号——如果商品信息写的是"Exynos"，则无法使用。请购买 Snapdragon 水货版本，或选择 OnePlus 11。
+<strong>Samsung Exynos 警告：</strong>大部分通过台湾电信运营商销售的 Samsung 设备使用 Exynos 芯片组。NetHunter 内核仅支持 Snapdragon 版本（`r8q`）。购买 Samsung 设备用于 NetHunter 前，务必确认 CPU 型号——如果商品信息写的是"Exynos"，则无法使用。请购买 Snapdragon 水货版本，或选择 OnePlus 11。
 {{< /alert >}}
 
-**NetHunter Rootless** 可以在任何 Android 设备上运行，无需 root，但无法支持外部 USB 无线网卡的 Monitor Mode。如果你需要数据包捕获和注入功能，必须使用完整版 NetHunter 及自定义内核。
+<strong>NetHunter Rootless</strong> 可以在任何 Android 设备上运行，无需 root，但无法支持外部 USB 无线网卡的 Monitor Mode。如果你需要数据包捕获和注入功能，必须使用完整版 NetHunter 及自定义内核。
 
 ### 2.2 平台技术规格
 
@@ -100,7 +100,7 @@ NetHunter 支持超过 117 个设备模块，但大多数是旧型号。经过�
 
 | 参数 | 规格 |
 |---|---|
-| 芯片组 | **MediaTek MT7610U** |
+| 芯片组 | <strong>MediaTek MT7610U</strong> |
 | USB VID/PID | `0x0e8d:0x7610` |
 | 频段 | 2.4 GHz + 5 GHz (AC600) |
 | 最大传输速率 | 150 Mbps (2.4 GHz) / 433 Mbps (5 GHz) |
@@ -108,7 +108,7 @@ NetHunter 支持超过 117 个设备模块，但大多数是旧型号。经过�
 | Monitor Mode | ✅ 完整支持 |
 | Packet Injection | ✅ 完整支持 |
 | 天线 | 1× 可拆卸高增益天线 (RP-SMA) |
-| 驱动 | **内置内核** — 无需安装 |
+| 驱动 | <strong>内置内核</strong> — 无需安装 |
 | 内核模块 | `mt76x0u` |
 | 内核要求 | Linux 4.19+ |
 | 产品页面 | [/zh-cn/products/alfa/awus036achm/](/zh-cn/products/alfa/awus036achm/) |
@@ -119,7 +119,7 @@ MT7610U 芯片组被 Kali 和 NetHunter 社区广泛推荐，因为其 `mt76x0u`
 
 | 参数 | 规格 |
 |---|---|
-| 芯片组 | **MediaTek MT7612U** |
+| 芯片组 | <strong>MediaTek MT7612U</strong> |
 | USB VID/PID | `0x0e8d:0x7612` |
 | 频段 | 2.4 GHz + 5 GHz (AC1200) |
 | 最大传输速率 | 300 Mbps (2.4 GHz) / 867 Mbps (5 GHz) |
@@ -127,7 +127,7 @@ MT7610U 芯片组被 Kali 和 NetHunter 社区广泛推荐，因为其 `mt76x0u`
 | Monitor Mode | ✅ 完整支持 |
 | Packet Injection | ✅ 经 Kali 2024.3 / 2025.1 确认稳定 |
 | 天线 | 2× 双天线 (RP-SMA)，MIMO 2T2R |
-| 驱动 | **内置内核** — 无需安装 |
+| 驱动 | <strong>内置内核</strong> — 无需安装 |
 | 内核模块 | `mt76x2u` |
 | 内核要求 | Linux 4.19+ |
 | 产品页面 | [/zh-cn/products/alfa/awus036acm/](/zh-cn/products/alfa/awus036acm/) |
@@ -138,7 +138,7 @@ ACM 增加了 AC1200 双频及 MIMO 2T2R，搭配 USB 3.0 吞吐量。`mt76x2u` 
 
 | 参数 | 规格 |
 |---|---|
-| 芯片组 | **Realtek RTL8812AU** |
+| 芯片组 | <strong>Realtek RTL8812AU</strong> |
 | USB VID/PID | `0x0bda:0x8812` |
 | 频段 | 2.4 GHz + 5 GHz (AC1200) |
 | 最大传输速率 | 300 Mbps (2.4 GHz) / 867 Mbps (5 GHz) |
@@ -203,7 +203,7 @@ ACS 是最便携的选择。300mW 的功耗对手机电池最为友好，超薄�
 | 社区文档 | 中等 | 广泛（ACH 教程最多） |
 | 现场故障风险 | 低 | 中等（编译依赖） |
 
-**结论：**如果你希望将现场驱动问题的风险降到最低，选择 MT7610U 或 MT7612U 网卡。驱动已在内核中——无需编译，不会因更新而失效，现场也无需排查。
+<strong>结论：</strong>如果你希望将现场驱动问题的风险降到最低，选择 MT7610U 或 MT7612U 网卡。驱动已在内核中——无需编译，不会因更新而失效，现场也无需排查。
 
 ### 4.2 NetHunter 内核模块支持矩阵
 
@@ -218,19 +218,19 @@ ACS 是最便携的选择。300mW 的功耗对手机电池最为友好，超薄�
 
 ### 4.3 已知问题
 
-**问题 1：MT7612U 在旧内核上不显示接口**
+<strong>问题 1：MT7612U 在旧内核上不显示接口</strong>
 
 症状：`lsusb` 显示 `0e8d:7612`，但 `ip link` 中无 `wlan1`。  
 根本原因：自定义内核编译时未包含 `mt76x2u` 模块。此问题影响部分基于 4.14 的 NetHunter 内核（OnePlus 7T 时代）。  
 解决方法：使用包含该模块的内核版本，或改用支持更广泛的 AWUS036ACHM (MT7610U)。
 
-**问题 2：USB 供电不足导致网卡断连**
+<strong>问题 2：USB 供电不足导致网卡断连</strong>
 
 症状：网卡在扫描过程中突然消失，`dmesg` 显示 USB reset 错误。  
 根本原因：手机 USB 端口无法持续提供网卡所需的电流，USB 3.0 网卡尤甚（ACH 功耗约 500mW）。  
 解决方法：使用带独立供电的 OTG Hub，从电源适配器为网卡提供 5V 供电，同时向手机传输数据。
 
-**问题 3：chroot 启动前插入网卡**
+<strong>问题 3：chroot 启动前插入网卡</strong>
 
 症状：Android 弹出 USB 权限对话框，但 Kali 工具无法访问网卡。  
 根本原因：NetHunter chroot 环境必须先运行，USB 设备才能暴露给 chroot。  
@@ -260,10 +260,10 @@ cat /kali/etc/os-release
 
 顺序很重要：
 
-1. 启动 **NetHunter App** → 打开 **Kali Services** → 点击 **Start** 启动 chroot
-2. 将 **带供电的 OTG Hub** 连接到手机的 USB 端口
-3. 将 **ALFA 网卡** 插入 OTG Hub
-4. 弹出 Android USB 权限对话框时，点击 **确定** 并勾选 **始终允许**
+1. 启动 <strong>NetHunter App</strong> → 打开 <strong>Kali Services</strong> → 点击 <strong>Start</strong> 启动 chroot
+2. 将 <strong>带供电的 OTG Hub</strong> 连接到手机的 USB 端口
+3. 将 <strong>ALFA 网卡</strong> 插入 OTG Hub
+4. 弹出 Android USB 权限对话框时，点击 <strong>确定</strong> 并勾选 <strong>始终允许</strong>
 
 {{< alert "circle-info" >}}
 持续运行强烈建议使用带供电的 OTG Hub。AWUS036ACH 功耗约 500mW——直接从手机电池供电会显著加速电量消耗，并可能导致 USB 不稳定。使用从电源适配器取电并向手机传输数据的 Hub 可以同时解决这两个问题。
@@ -285,7 +285,7 @@ lsusb
 
 ### 5.4 加载驱动
 
-**MT7610U (AWUS036ACHM) — 大多数内核自动加载：**
+<strong>MT7610U (AWUS036ACHM) — 大多数内核自动加载：</strong>
 
 ```bash
 # 验证自动加载
@@ -295,7 +295,7 @@ lsmod | grep mt76
 sudo modprobe mt76x0u
 ```
 
-**MT7612U (AWUS036ACM) — 内核 4.19+ 自动加载：**
+<strong>MT7612U (AWUS036ACM) — 内核 4.19+ 自动加载：</strong>
 
 ```bash
 # 验证
@@ -305,7 +305,7 @@ lsmod | grep mt76
 sudo modprobe mt76x2u
 ```
 
-**RTL8812AU (AWUS036ACH) — 大多数 NetHunter 内核预编译：**
+<strong>RTL8812AU (AWUS036ACH) — 大多数 NetHunter 内核预编译：</strong>
 
 ```bash
 # 加载预编译模块
@@ -444,13 +444,13 @@ ACH 拥有 NetHunter 生态中最多的教程、最庞大的社区故障排查�
 
 ## 附录：快速故障排除
 
-**网卡未出现在 `lsusb` 中：**
+<strong>网卡未出现在 `lsusb` 中：</strong>
 1. 确认开发人员选项中已启用 OTG
 2. 更换 OTG 线——线材品质是最常见的故障点
 3. 使用带供电的 OTG Hub
 4. 确认 NetHunter chroot 已启动
 
-**设备在 `lsusb` 中可见但无 `wlan1` 接口：**
+<strong>设备在 `lsusb` 中可见但无 `wlan1` 接口：</strong>
 
 ```bash
 # 检查内核日志中的驱动错误
@@ -466,7 +466,7 @@ sudo modprobe mt76x2u   # MT7612U
 sudo modprobe 88XXau    # RTL8812AU
 ```
 
-**Monitor Mode 已启动但扫描不到任何网络：**
+<strong>Monitor Mode 已启动但扫描不到任何网络：</strong>
 
 ```bash
 # 先终止干扰进程
@@ -479,7 +479,7 @@ sudo airodump-ng --band abg wlan1mon
 sudo iw dev wlan1mon info
 ```
 
-**使用过程中网卡断连（USB reset）：**
+<strong>使用过程中网卡断连（USB reset）：</strong>
 
 ```bash
 # 临时方法——降低发射功率
@@ -502,7 +502,7 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ---
 
-*本文档由 **Yopitek Ltd**（ALFA Network 台湾授权经销商）编写。*  
+*本文档由 <strong>Yopitek Ltd</strong>（ALFA Network 台湾授权经销商）编写。*  
 *数据截止日期：2026-06-09。Linux 内核及 NetHunter 版本持续更新，请以官方最新资料为准。*
 
 ## 参考文献

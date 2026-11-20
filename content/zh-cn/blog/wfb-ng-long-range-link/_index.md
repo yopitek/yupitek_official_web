@@ -23,46 +23,46 @@ faq:
 > 难度：★★★☆☆（需基本 Linux 与飞控概念）
 
 {{< tldr >}}
-wfb-ng 是一套开源软件，能把 **ALFA AWUS036ACH** 这类支持 monitor mode 的 WiFi 网卡「变成」无人机专用的长距离无线电，让操作者自行架设低延迟、可加密的影像与 MAVLink 遥测传输链路。
+wfb-ng 是一套开源软件，能把 <strong>ALFA AWUS036ACH</strong> 这类支持 monitor mode 的 WiFi 网卡「变成」无人机专用的长距离无线电，让操作者自行架设低延迟、可加密的影像与 MAVLink 遥测传输链路。
 {{< /tldr >}}
 
 ---
 
 ## 一、为什么用 ALFA 卡自制数位图传？
 
-如果你玩过传统类比 FPV（5.8GHz 类比图传），一定对那根「雪花天线」不陌生：信号一被遮挡就满屏噪声，飞远了就开始掉画面，而且**任何人都拿一台接收机就能偷看你画面**——既不加密、也没有遥测回传。
+如果你玩过传统类比 FPV（5.8GHz 类比图传），一定对那根「雪花天线」不陌生：信号一被遮挡就满屏噪声，飞远了就开始掉画面，而且<strong>任何人都拿一台接收机就能偷看你画面</strong>——既不加密、也没有遥测回传。
 
-我们团队最近一年帮不少农喷、巡检、甚至资安教育训练的客户架设链路，发现一个很务实的需求：**能不能用一张常见的 ALFA USB 网卡，搭开源软件，自己做出一套「数位化、可加密、同时传影像＋遥测」的长距离链路？**
+我们团队最近一年帮不少农喷、巡检、甚至资安教育训练的客户架设链路，发现一个很务实的需求：<strong>能不能用一张常见的 ALFA USB 网卡，搭开源软件，自己做出一套「数位化、可加密、同时传影像＋遥测」的长距离链路？</strong>
 
 答案是可以，而且比你想的简单。
 
-对比传统类比图传，用 ALFA 网卡跑开源 **wfb-ng** 做数位图传有几个压倒性优势：
+对比传统类比图传，用 ALFA 网卡跑开源 <strong>wfb-ng</strong> 做数位图传有几个压倒性优势：
 
-- **低延迟**：raw WiFi 注入模式绕过一般 802.11 的 ACK 与连线握手，端到端延迟可以压到数十毫秒等级，FPV 手感接近类比。
-- **数位加密**：影像与遥测封包走 libsodium 加密，别人拿接收机也解不开你的画面与飞控数据。
-- **一条链路多工**：同一张网卡、同一个频点，可以**同时**传：
+- <strong>低延迟</strong>：raw WiFi 注入模式绕过一般 802.11 的 ACK 与连线握手，端到端延迟可以压到数十毫秒等级，FPV 手感接近类比。
+- <strong>数位加密</strong>：影像与遥测封包走 libsodium 加密，别人拿接收机也解不开你的画面与飞控数据。
+- <strong>一条链路多工</strong>：同一张网卡、同一个频点，可以<strong>同时</strong>传：
   - 即时影像（RTP / RTSP）
   - MAVLink 遥测（双向，飞控 ↔ 地面站）
   - 一条 TCP/IP 隧道（可拿来跑 VPN、SSH、文件传输）
-- **TX 分集（发射分集）**：多张网卡可做发射端分集，抗遮蔽、提升稳健性。
-- **开源可客制**：主角 ALFA AWUS036ACH 搭配开源 wfb-ng，整套自制链路的成本远低于市售数位图传（DJI O3 / Walksnail 等），且**全部开源、可客制**。
+- <strong>TX 分集（发射分集）</strong>：多张网卡可做发射端分集，抗遮蔽、提升稳健性。
+- <strong>开源可客制</strong>：主角 ALFA AWUS036ACH 搭配开源 wfb-ng，整套自制链路的成本远低于市售数位图传（DJI O3 / Walksnail 等），且<strong>全部开源、可客制</strong>。
 
 {{< alert "circle-info" >}}
-小语：这篇文章不是要「取代」大疆原厂图传，而是给想要**自己掌握链路、做二类备援、或做客制化载荷**的同好一条务实的开源路径。
+小语：这篇文章不是要「取代」大疆原厂图传，而是给想要<strong>自己掌握链路、做二类备援、或做客制化载荷</strong>的同好一条务实的开源路径。
 {{< /alert >}}
 
 ---
 
 ## 二、这是什么：wfb-ng 简介
 
-**wfb-ng**（Wireless Fibre / WiFi Broadcast – next generation）是一套开源数位 FPV 与遥测专案，核心想法很聪明：
+<strong>wfb-ng</strong>（Wireless Fibre / WiFi Broadcast – next generation）是一套开源数位 FPV 与遥测专案，核心想法很聪明：
 
 > 它不把 WiFi 当「网络」用，而是把 WiFi 当「无线电」用。
 
-一般 802.11 为了当区域网络，会做连线（association）、ACK 确认、重传——这些机制在长距离、移动、低信号的场景下反而拖慢速度、吃掉距离。wfb-ng 则改用 **raw WiFi 注入（raw WiFi injection）**：
+一般 802.11 为了当区域网络，会做连线（association）、ACK 确认、重传——这些机制在长距离、移动、低信号的场景下反而拖慢速度、吃掉距离。wfb-ng 则改用 <strong>raw WiFi 注入（raw WiFi injection）</strong>：
 
-- 网卡进入 **monitor mode（监控模式）**，不跟任何人「连线」。
-- 直接注入底层 WiFi 封包，**不需要 ACK、不重传**（改用 FEC 前向纠错来抗丢包）。
+- 网卡进入 <strong>monitor mode（监控模式）</strong>，不跟任何人「连线」。
+- 直接注入底层 WiFi 封包，<strong>不需要 ACK、不重传</strong>（改用 FEC 前向纠错来抗丢包）。
 - 绕过一般 802.11 的距离与延迟限制，把传输距离与稳定性拉到硬件极限。
 
 简单说，它把一张常见的 USB 网卡，变成一对「数位无线电」，上面可以跑 RTP 影像、MAVLink 遥测、甚至一条 IP 隧道。
@@ -74,35 +74,35 @@ wfb-ng 是一套开源软件，能把 **ALFA AWUS036ACH** 这类支持 monitor m
 
 ## 三、主角介绍：ALFA AWUS036ACH
 
-这套链路的「无线电」就是它——**ALFA AWUS036ACH**。
+这套链路的「无线电」就是它——<strong>ALFA AWUS036ACH</strong>。
 
-它用的是 **Realtek RTL8812AU** 芯片，支持 **802.11ac（WiFi 5）**、**2.4GHz / 5GHz 双频**、USB 3.0 Type-C 接口、可拆式天线（RP-SMA）。更重要的是：**wfb-ng 的官方实测硬件，就是在两端都用 AWUS036ACH、跑 5GHz 模式**。换句话说，这张卡是被专案作者验证过、驱动支持最稳定的型号。
+它用的是 <strong>Realtek RTL8812AU</strong> 芯片，支持 <strong>802.11ac（WiFi 5）</strong>、<strong>2.4GHz / 5GHz 双频</strong>、USB 3.0 Type-C 接口、可拆式天线（RP-SMA）。更重要的是：<strong>wfb-ng 的官方实测硬件，就是在两端都用 AWUS036ACH、跑 5GHz 模式</strong>。换句话说，这张卡是被专案作者验证过、驱动支持最稳定的型号。
 
 为什么选它？三个关键理由：
 
-1. **功率够**：ALFA 一贯的高功率设计，搭配外接高增益天线，长距离表现远胜一般笔电内置网卡。
-2. **监控模式 ＋ 注入支持**：RTL8812AU 在打过 patch 的驱动（见下文）下，稳定支持 monitor mode 与 raw 封包注入，这是 wfb-ng 运作的先决条件。
-3. **通用耐用**：USB 接口，机载端、地面站端通用，不用为不同机器买不同网卡；单张网卡损坏时也只需更换该卡，维护容易。
+1. <strong>功率够</strong>：ALFA 一贯的高功率设计，搭配外接高增益天线，长距离表现远胜一般笔电内置网卡。
+2. <strong>监控模式 ＋ 注入支持</strong>：RTL8812AU 在打过 patch 的驱动（见下文）下，稳定支持 monitor mode 与 raw 封包注入，这是 wfb-ng 运作的先决条件。
+3. <strong>通用耐用</strong>：USB 接口，机载端、地面站端通用，不用为不同机器买不同网卡；单张网卡损坏时也只需更换该卡，维护容易。
 
 {{< alert "triangle-exclamation" >}}
-**注意**：wfb-ng 需要**打过 patch 的专用驱动**（如 `rtl88xxau_wfb`），一般 Linux 内置驱动无法进入 wfb-ng 需要的注入模式。安装方式见下文「软件清单」与「Step-by-step 设定」。
+<strong>注意</strong>：wfb-ng 需要<strong>打过 patch 的专用驱动</strong>（如 `rtl88xxau_wfb`），一般 Linux 内置驱动无法进入 wfb-ng 需要的注入模式。安装方式见下文「软件清单」与「Step-by-step 设定」。
 {{< /alert >}}
 
 ---
 
 ## 四、硬件清单（Hardware List）
 
-整个链路分成**机载端（Drone）**与**地面站（Ground Station）**两组。下面分开列出。
+整个链路分成<strong>机载端（Drone）</strong>与<strong>地面站（Ground Station）</strong>两组。下面分开列出。
 
 ### 机载端（Drone）
 
 | 项目 | 建议型号 / 说明 |
 |---|---|
-| 机载电脑 | Raspberry Pi 3B / 3B+ / Zero 2 W / 4（任选；若要跑 1080p 建议用 **Pi 4 或 Zero 2 W**） |
+| 机载电脑 | Raspberry Pi 3B / 3B+ / Zero 2 W / 4（任选；若要跑 1080p 建议用 <strong>Pi 4 或 Zero 2 W</strong>） |
 | 摄影机 | Raspberry Pi Camera（CSI 接口）或 Logitech C920（USB 接口） |
-| WiFi 模块 | **ALFA AWUS036ACH**（或任何 RTL8812AU 芯片网卡） |
-| 供电 | **5V BEC**（给网卡独立供电，见下文「踩坑提醒」） |
-| 滤波电容 | **470µF 低 ESR 电容**（并联在网卡 +5V 与 GND 间） |
+| WiFi 模块 | <strong>ALFA AWUS036ACH</strong>（或任何 RTL8812AU 芯片网卡） |
+| 供电 | <strong>5V BEC</strong>（给网卡独立供电，见下文「踩坑提醒」） |
+| 滤波电容 | <strong>470µF 低 ESR 电容</strong>（并联在网卡 +5V 与 GND 间） |
 | 飞控 | Pixhawk 等（走 MAVLink 协议，经 UART 接机载电脑） |
 
 ### 地面站（Ground Station）
@@ -110,10 +110,10 @@ wfb-ng 是一套开源软件，能把 **ALFA AWUS036ACH** 这类支持 monitor m
 | 项目 | 建议型号 / 说明 |
 |---|---|
 | 电脑 | Linux 电脑（Ubuntu / Debian x86-64），或另一台 Raspberry Pi |
-| WiFi 模块 | **ALFA AWUS036ACH** |
-| 监控软件 | 执行 **QGroundControl** 的机器（可与地面站电脑同一台） |
+| WiFi 模块 | <strong>ALFA AWUS036ACH</strong> |
+| 监控软件 | 执行 <strong>QGroundControl</strong> 的机器（可与地面站电脑同一台） |
 
-> 注：如果**只做接收端（RX）**，任何支持 monitor mode 的网卡都行，例如刷了 OpenWRT 的路由器也能拿来当地面接收。但官方实测与本文设定仍以 AWUS036ACH 为准。
+> 注：如果<strong>只做接收端（RX）</strong>，任何支持 monitor mode 的网卡都行，例如刷了 OpenWRT 的路由器也能拿来当地面接收。但官方实测与本文设定仍以 AWUS036ACH 为准。
 
 ---
 
@@ -121,13 +121,13 @@ wfb-ng 是一套开源软件，能把 **ALFA AWUS036ACH** 这类支持 monitor m
 
 ### 操作系统
 
-- **Raspberry Pi OS** / **Debian** / **Ubuntu**（Linux kernel ≥ 4.x）
+- <strong>Raspberry Pi OS</strong> / <strong>Debian</strong> / <strong>Ubuntu</strong>（Linux kernel ≥ 4.x）
 
 ### 核心专案
 
-- **wfb-ng**（svpcom/wfb-ng）：数位图传 / 遥测主程序
-- **修补版驱动**：
-  - RTL8812AU → `svpcom/rtl8812au`（branch **v5.2.20**，用 dkms 安装）
+- <strong>wfb-ng</strong>（svpcom/wfb-ng）：数位图传 / 遥测主程序
+- <strong>修补版驱动</strong>：
+  - RTL8812AU → `svpcom/rtl8812au`（branch <strong>v5.2.20</strong>，用 dkms 安装）
   - RTL8812EU → `svpcom/rtl8812eu`
   - 驱动加载后网卡名称会显示为 `rtl88xxau_wfb`（或 `rtl8812eu`）
 
@@ -145,12 +145,12 @@ sudo apt install -y \
 
 ### 加密
 
-- **libsodium**：用 `wfb_keygen` 产生 `drone.key`（机载端）与 `gs.key`（地面站端）
+- <strong>libsodium</strong>：用 `wfb_keygen` 产生 `drone.key`（机载端）与 `gs.key`（地面站端）
 
 ### 地面站播放
 
-- **QGroundControl**：地面站监控飞控状态与遥测
-- **GStreamer / RTSP**：接收并播放机载端串流的影像
+- <strong>QGroundControl</strong>：地面站监控飞控状态与遥测
+- <strong>GStreamer / RTSP</strong>：接收并播放机载端串流的影像
 
 ---
 
@@ -170,28 +170,28 @@ sudo apt install -y \
 
 | 规格 | 内容 |
 |---|---|
-| 芯片 | Realtek **RTL8812AU** |
-| 无线标准 | 802.11a / b / g / n / **ac（WiFi 5）** |
-| 频段 | **2.4GHz ＋ 5GHz** 双频 |
-| 接口 | USB 3.0 **Type-C** |
-| 天线 | 2 × 可拆式 **RP-SMA**（2T2R MIMO） |
+| 芯片 | Realtek <strong>RTL8812AU</strong> |
+| 无线标准 | 802.11a / b / g / n / <strong>ac（WiFi 5）</strong> |
+| 频段 | <strong>2.4GHz ＋ 5GHz</strong> 双频 |
+| 接口 | USB 3.0 <strong>Type-C</strong> |
+| 天线 | 2 × 可拆式 <strong>RP-SMA</strong>（2T2R MIMO） |
 | 监控模式 | 支持 monitor mode ＋ 封包注入（需 wfb-ng patch 驱动） |
 | wfb-ng 驱动 | `rtl88xxau_wfb`（svpcom/rtl8812au, v5.2.20） |
-| 定位 | wfb-ng **官方实测卡**（两端 5GHz 模式） |
+| 定位 | wfb-ng <strong>官方实测卡</strong>（两端 5GHz 模式） |
 
 ---
 
 ## 七、Step-by-step 设定（核心章节）
 
-下面分四段。最推荐的路径是 **A（Raspberry Pi 快速起步）**，几乎是烧录即用的体验；**B** 则适合想在 x86 Linux 桌面手动安装地面站的人；**C / D** 是密钥配对与设定档重点，两条路都会用到。
+下面分四段。最推荐的路径是 <strong>A（Raspberry Pi 快速起步）</strong>，几乎是烧录即用的体验；<strong>B</strong> 则适合想在 x86 Linux 桌面手动安装地面站的人；<strong>C / D</strong> 是密钥配对与设定档重点，两条路都会用到。
 
 ### A. Raspberry Pi 快速起步（最推荐）
 
 wfb-ng 官方提供预先打包好的 Raspberry Pi 映像档，机载端与地面站端各烧一张，开机就能用。
 
-**1. 下载并烧录映像档**
+<strong>1. 下载并烧录映像档</strong>
 
-到 wfb-ng 的 GitHub **Releases** 页面，下载最新的 `*.img.gz`，解压后烧录到**两张** SD 卡（机载、地面站各一张）。
+到 wfb-ng 的 GitHub <strong>Releases</strong> 页面，下载最新的 `*.img.gz`，解压后烧录到<strong>两张</strong> SD 卡（机载、地面站各一张）。
 
 ```bash
 # 解压映像档 (范例, 档名依实际 Release 为准)
@@ -199,7 +199,7 @@ gunzip wfb-ng-*.img.gz
 # 用 Raspberry Pi Imager 或 dd / balenaEtcher 烧录到 SD 卡
 ```
 
-**2. 插入网卡、开机、SSH 登录**
+<strong>2. 插入网卡、开机、SSH 登录</strong>
 
 两张卡都插上 ALFA AWUS036ACH，上电开机，透过 SSH 登录（预设 IP 与帐密如下）：
 
@@ -208,9 +208,9 @@ ssh pi@192.168.0.111
 # 密码: raspberry
 ```
 
-**3. 启用地面站（Ground Station）服务**
+<strong>3. 启用地面站（Ground Station）服务</strong>
 
-在**地面站那张 Pi** 上执行：
+在<strong>地面站那张 Pi</strong> 上执行：
 
 ```bash
 sudo systemctl enable wifibroadcast@gs
@@ -220,9 +220,9 @@ sudo systemctl enable osd
 sudo reboot
 ```
 
-**4. 启用机载端（Drone）服务**
+<strong>4. 启用机载端（Drone）服务</strong>
 
-在**机载那张 Pi** 上执行：
+在<strong>机载那张 Pi</strong> 上执行：
 
 ```bash
 sudo systemctl enable wifibroadcast@drone
@@ -230,7 +230,7 @@ sudo systemctl enable fpv-camera
 sudo reboot
 ```
 
-**5. 在地面站监控链路状态**
+<strong>5. 在地面站监控链路状态</strong>
 
 ```bash
 wfb-cli gs
@@ -244,7 +244,7 @@ wfb-cli gs
 
 如果你是用 x86-64 的 Linux 桌机 / 笔电当地面站，可以手动安装。
 
-**1. 安装 dkms 与修补版驱动**
+<strong>1. 安装 dkms 与修补版驱动</strong>
 
 ```bash
 git clone -b v5.2.20 https://github.com/svpcom/rtl8812au.git
@@ -252,7 +252,7 @@ cd rtl8812au
 sudo ./dkms-install.sh
 ```
 
-**2. 确认网卡已被 wfb-ng 驱动接管**
+<strong>2. 确认网卡已被 wfb-ng 驱动接管</strong>
 
 ```bash
 # 应看到 wlan0, 且 MTU 为 2312
@@ -266,14 +266,14 @@ ethtool -i wlan0
 如果 `ethtool -i wlan0` 显示的是一般 `rtl8812au` 而非 `rtl88xxau_wfb`，代表 patch 驱动没装好，wfb-ng 会无法进入注入模式。请回头检查 dkms 安装有无报错。
 {{< /alert >}}
 
-**3. 执行官方自动安装脚本**
+<strong>3. 执行官方自动安装脚本</strong>
 
 ```bash
 curl -o install_gs.sh https://raw.githubusercontent.com/svpcom/wfb-ng/refs/heads/master/scripts/install_gs.sh
 sudo bash ./install_gs.sh
 ```
 
-**4. 监控链路**
+<strong>4. 监控链路</strong>
 
 ```bash
 wfb-cli gs
@@ -283,7 +283,7 @@ wfb-cli gs
 
 ### C. 密钥与配对
 
-wfb-ng 的影像与遥测是加密的，机载端与地面站端必须用**对应的密钥**才能通讯。
+wfb-ng 的影像与遥测是加密的，机载端与地面站端必须用<strong>对应的密钥</strong>才能通讯。
 
 ```bash
 # 产生密钥 (在机载端产生, 再分发)
@@ -294,7 +294,7 @@ wfb_keygen
 # 两端必须对应, 否则无法解密, 链路显示"已连线但无数据"
 ```
 
-> 如果你是用 **B 段的自动安装脚本（install_gs.sh）**，脚本会自动产生并配置密钥，省去手动配对步骤。手动安装则请务必确认 `drone.key` 与 `gs.key` 是同一组。
+> 如果你是用 <strong>B 段的自动安装脚本（install_gs.sh）</strong>，脚本会自动产生并配置密钥，省去手动配对步骤。手动安装则请务必确认 `drone.key` 与 `gs.key` 是同一组。
 
 ---
 
@@ -326,14 +326,14 @@ peer = 'listen://0.0.0.0:5602'
 link_domain = "my_wfb_link_01"
 ```
 
-**三个最容易出错的点：**
+<strong>三个最容易出错的点：</strong>
 
-1. **`wifi_channel` 两端要一致**：本文用 165（5825 MHz, 5.8GHz），机载与地面站都要设同一个。
-2. **`link_domain` 两端要一致**：这是链路的「识别码」，不一样就连不上。
-3. **飞控 UART 鲍率要设 1500000**：`peer = 'serial:ttyS0:1500000'` 要求飞控那端的 UART 也设成 1500000 baud，否则 MAVLink 收不到。
+1. <strong>`wifi_channel` 两端要一致</strong>：本文用 165（5825 MHz, 5.8GHz），机载与地面站都要设同一个。
+2. <strong>`link_domain` 两端要一致</strong>：这是链路的「识别码」，不一样就连不上。
+3. <strong>飞控 UART 鲍率要设 1500000</strong>：`peer = 'serial:ttyS0:1500000'` 要求飞控那端的 UART 也设成 1500000 baud，否则 MAVLink 收不到。
 
 {{< alert "triangle-exclamation" >}}
-**注意**：`wifi_region = 'BO'` 是为了解锁发射功率上限，但**这不代表你在当地可以合法这样用**。请务必参考下方「法规提醒」。
+<strong>注意</strong>：`wifi_region = 'BO'` 是为了解锁发射功率上限，但<strong>这不代表你在当地可以合法这样用</strong>。请务必参考下方「法规提醒」。
 {{< /alert >}}
 
 ---
@@ -344,22 +344,22 @@ link_domain = "my_wfb_link_01"
 
 ### ⚠️ 坑 1：网卡供电不足会 reset 端口、疯狂掉包
 
-AWUS036ACH 在**发射（TX）时瞬间耗电很大**。如果直接插在 Raspberry Pi 的一般 USB2 埠，Pi 的 USB 供电不足以撑住瞬间电流，结果是：**网卡端口被 reset、链路断线、封包损坏、画面卡死**。
+AWUS036ACH 在<strong>发射（TX）时瞬间耗电很大</strong>。如果直接插在 Raspberry Pi 的一般 USB2 埠，Pi 的 USB 供电不足以撑住瞬间电流，结果是：<strong>网卡端口被 reset、链路断线、封包损坏、画面卡死</strong>。
 
 解法（机载端一定要做）：
 
-- 网卡**直接从 5V BEC 供电**（不要从 Pi 的 USB 取电），BEC 输出接网卡。
-- 在网卡的 **+5V 与 GND 之间并联一颗 470µF 低 ESR 电容**做滤波，吸收 TX 瞬间的电流尖峰。
-- 地面站端如果是**笔电的 USB3 埠、用原厂 USB3 线**，一般可以直接供电，不必额外 BEC。
+- 网卡<strong>直接从 5V BEC 供电</strong>（不要从 Pi 的 USB 取电），BEC 输出接网卡。
+- 在网卡的 <strong>+5V 与 GND 之间并联一颗 470µF 低 ESR 电容</strong>做滤波，吸收 TX 瞬间的电流尖峰。
+- 地面站端如果是<strong>笔电的 USB3 埠、用原厂 USB3 线</strong>，一般可以直接供电，不必额外 BEC。
 
 > 这一步是「稳不稳」的关键。我们看过太多人卡在掉包，最后都是供电没处理好。
 
 ### 坑 2：加密错误 / 连不上
 
-如果 `wfb-cli gs` 显示已连线但**没有影像也没有遥测**，多半是以下两种：
+如果 `wfb-cli gs` 显示已连线但<strong>没有影像也没有遥测</strong>，多半是以下两种：
 
-- **密钥不对应**：检查机载的 `drone.key` 与地面的 `gs.key` 是否为同一组。
-- **频道或 link_domain 不一致**：两端的 `wifi_channel` 与 `link_domain` 必须完全相同。
+- <strong>密钥不对应</strong>：检查机载的 `drone.key` 与地面的 `gs.key` 是否为同一组。
+- <strong>频道或 link_domain 不一致</strong>：两端的 `wifi_channel` 与 `link_domain` 必须完全相同。
 
 排错指令：
 
@@ -372,9 +372,9 @@ journalctl -xu wifibroadcast@gs
 
 这套链路会主动发射无线电波，属于无线电设备使用行为。
 
-- **使用前请确认你所在地区允许此种 WiFi 用途的发射功率与频段。**
+- <strong>使用前请确认你所在地区允许此种 WiFi 用途的发射功率与频段。</strong>
 - 台湾、中国、欧美对 5.8GHz ISM 频段的发射功率、可用频点、以及「非连线式发射」各有规范。
-- 本文 `wifi_region = 'BO'` 是为了解锁硬件功率上限，但**不代表在当地合法**。请依你所在国家／地区的无线电管理法规调整频道与功率，必要时降低发射功率或改合法频点。
+- 本文 `wifi_region = 'BO'` 是为了解锁硬件功率上限，但<strong>不代表在当地合法</strong>。请依你所在国家／地区的无线电管理法规调整频道与功率，必要时降低发射功率或改合法频点。
 - 仅用于合法场域（如自有农地、闭场测试、教育训练），勿干扰他人通讯。
 
 ---
@@ -383,14 +383,14 @@ journalctl -xu wifibroadcast@gs
 
 回头看，我们用一张 ALFA AWUS036ACH，加上开源的 wfb-ng，就做出了一套：
 
-- **成本优势**：整套自制链路的材料费远低于市售数位图传方案；
-- **开源**：所有程序代码、驱动、设定都公开可查；
-- **可客制**：频道、功率、密钥、MAVLink 对外方式全部自己掌控；
-- **长距离**：数位图传 ＋ 遥测一条龙，5GHz 下实测距离远超类比、且抗遮蔽、可加密。
+- <strong>成本优势</strong>：整套自制链路的材料费远低于市售数位图传方案；
+- <strong>开源</strong>：所有程序代码、驱动、设定都公开可查；
+- <strong>可客制</strong>：频道、功率、密钥、MAVLink 对外方式全部自己掌控；
+- <strong>长距离</strong>：数位图传 ＋ 遥测一条龙，5GHz 下实测距离远超类比、且抗遮蔽、可加密。
 
 对农喷、巡检、资安教育训练，或是纯粹想搞懂「数位图传背后原理」的同好来说，这是一条非常值得动手走的路。
 
-我们团队会持续在部落格分享 ALFA 网卡在无人机链路上的实作笔记。如果你在架设过程遇到问题，欢迎留言交流——**动手做，才是最快的学习方式**。
+我们团队会持续在部落格分享 ALFA 网卡在无人机链路上的实作笔记。如果你在架设过程遇到问题，欢迎留言交流——<strong>动手做，才是最快的学习方式</strong>。
 
 ---
 
@@ -404,18 +404,18 @@ journalctl -xu wifibroadcast@gs
 
 | 名词 | 白话解释 |
 |---|---|
-| **FPV**（First Person View） | 「第一人称视角」，就是坐在无人机的「驾驶座」上看它飞，画面即时从机上镜头传回你眼前的屏幕或眼镜。 |
-| **数位图传 vs 类比图传** | 类比图传像老式电视信号，信号差就满屏噪声、可被任何人截收；数位图传把画面转成数位封包传输，可加密、抗噪声能力较好，但硬件与设定较复杂。 |
-| **monitor mode（监听模式）** | 一般 WiFi 网卡只能「连上」路由器收发数据。monitor mode 让网卡改成「什么都不连、直接听 / 发空气中的无线电信号」，是本文技术的地基。 |
-| **packet injection（封包注入）** | 在 monitor mode 下，直接把自定义的无线电封包「射」到空气中，不透过一般 WiFi 连线流程。wfb-ng 就是利用这个机制传影像与遥测。 |
-| **wfb-ng** | 一套开源软件，把 WiFi 网卡「借尸还魂」变成无人机专用的无线电，而不是当一般网络用。本文的核心软件。 |
-| **FEC（前向纠错，Forward Error Correction）** | 传输时故意多送一些「备份信息」，就算部分封包在空中遗失，接收端也能用备份信息补回原始画面，不必要求重传（重传在长距离、高速移动场景会拖慢速度）。 |
-| **MAVLink** | 无人机飞控（如 Pixhawk）与地面站沟通的「共同语言」协议，用来传飞行状态、下达飞行指令等遥测数据。 |
-| **RTP / RTSP** | 网络上传输即时影像常用的协议，你的手机 IP CAM、监视器很多也是用这一类协议串流画面。 |
-| **libsodium 加密** | 本文用来加密影像与遥测数据的开源加密函数库，确保只有配对好密钥的机载端与地面站能解密画面内容。 |
-| **TX 分集（发射分集）** | 用多张网卡同时发射同一份数据，其中一张信号被遮蔽时，另一张还能补上，类似「双重保险」。 |
-| **BEC（Battery Eliminator Circuit）** | 一种稳压供电模块，把无人机电池的电压降到网卡需要的 5V，且能承受网卡瞬间大电流需求，避免供电不稳导致断线。 |
-| **RTL8812AU** | ALFA AWUS036ACH 网卡内部使用的 Realtek 芯片型号，决定了这张卡支不支持 monitor mode 与封包注入。 |
+| <strong>FPV</strong>（First Person View） | 「第一人称视角」，就是坐在无人机的「驾驶座」上看它飞，画面即时从机上镜头传回你眼前的屏幕或眼镜。 |
+| <strong>数位图传 vs 类比图传</strong> | 类比图传像老式电视信号，信号差就满屏噪声、可被任何人截收；数位图传把画面转成数位封包传输，可加密、抗噪声能力较好，但硬件与设定较复杂。 |
+| <strong>monitor mode（监听模式）</strong> | 一般 WiFi 网卡只能「连上」路由器收发数据。monitor mode 让网卡改成「什么都不连、直接听 / 发空气中的无线电信号」，是本文技术的地基。 |
+| <strong>packet injection（封包注入）</strong> | 在 monitor mode 下，直接把自定义的无线电封包「射」到空气中，不透过一般 WiFi 连线流程。wfb-ng 就是利用这个机制传影像与遥测。 |
+| <strong>wfb-ng</strong> | 一套开源软件，把 WiFi 网卡「借尸还魂」变成无人机专用的无线电，而不是当一般网络用。本文的核心软件。 |
+| <strong>FEC（前向纠错，Forward Error Correction）</strong> | 传输时故意多送一些「备份信息」，就算部分封包在空中遗失，接收端也能用备份信息补回原始画面，不必要求重传（重传在长距离、高速移动场景会拖慢速度）。 |
+| <strong>MAVLink</strong> | 无人机飞控（如 Pixhawk）与地面站沟通的「共同语言」协议，用来传飞行状态、下达飞行指令等遥测数据。 |
+| <strong>RTP / RTSP</strong> | 网络上传输即时影像常用的协议，你的手机 IP CAM、监视器很多也是用这一类协议串流画面。 |
+| <strong>libsodium 加密</strong> | 本文用来加密影像与遥测数据的开源加密函数库，确保只有配对好密钥的机载端与地面站能解密画面内容。 |
+| <strong>TX 分集（发射分集）</strong> | 用多张网卡同时发射同一份数据，其中一张信号被遮蔽时，另一张还能补上，类似「双重保险」。 |
+| <strong>BEC（Battery Eliminator Circuit）</strong> | 一种稳压供电模块，把无人机电池的电压降到网卡需要的 5V，且能承受网卡瞬间大电流需求，避免供电不稳导致断线。 |
+| <strong>RTL8812AU</strong> | ALFA AWUS036ACH 网卡内部使用的 Realtek 芯片型号，决定了这张卡支不支持 monitor mode 与封包注入。 |
 
 > 一句话总结：wfb-ng 把 ALFA 网卡「伪装」成无人机专属的无线电台，让画面与飞控数据能用开源、可加密的方式长距离传输——这是你（操作者）主动架设的一条「自家专属频道」。
 
@@ -423,11 +423,11 @@ journalctl -xu wifibroadcast@gs
 
 ## 参考资源
 
-- **wfb-ng 专案（svpcom/wfb-ng）**：https://github.com/svpcom/wfb-ng.git
-- **ALFA AWUS036ACH 产品页**：https://yupitek.com/zh-cn/products/alfa/awus036ach/
-- **修补版驱动（RTL8812AU）**：https://github.com/svpcom/rtl8812au
-- **修补版驱动（RTL8812EU）**：https://github.com/svpcom/rtl8812eu
-- **PX4 WFB-ng 教学文件**：https://docs.px4.io/main/en/tutorials/video_streaming_wfb_ng.html
+- <strong>wfb-ng 专案（svpcom/wfb-ng）</strong>：https://github.com/svpcom/wfb-ng.git
+- <strong>ALFA AWUS036ACH 产品页</strong>：https://yupitek.com/zh-cn/products/alfa/awus036ach/
+- <strong>修补版驱动（RTL8812AU）</strong>：https://github.com/svpcom/rtl8812au
+- <strong>修补版驱动（RTL8812EU）</strong>：https://github.com/svpcom/rtl8812eu
+- <strong>PX4 WFB-ng 教学文件</strong>：https://docs.px4.io/main/en/tutorials/video_streaming_wfb_ng.html
 
 ---
 

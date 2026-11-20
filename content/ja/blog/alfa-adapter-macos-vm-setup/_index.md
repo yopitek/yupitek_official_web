@@ -22,15 +22,15 @@ faq:
     answer: "推奨しません。VirtualBoxのApple Siliconサポートはまだ実験段階で、USBパススルーに既知の問題があるため、VMware FusionまたはParallelsをお使いください。"
 ---
 
-macOSは洗練された生産性重視のOSですが、無線セキュリティリサーチ向けには設計されていません。ペネトレーションテスターのツールキットを定義する2つの機能——**モニターモード**と**パケットインジェクション**——はmacOSのWi-Fiスタックには存在しません。AppleのWi-Fiドライバーは、きれいで機能的なネットワークインターフェースを提供するだけです。
+macOSは洗練された生産性重視のOSですが、無線セキュリティリサーチ向けには設計されていません。ペネトレーションテスターのツールキットを定義する2つの機能——<strong>モニターモード</strong>と<strong>パケットインジェクション</strong>——はmacOSのWi-Fiスタックには存在しません。AppleのWi-Fiドライバーは、きれいで機能的なネットワークインターフェースを提供するだけです。
 
 
 {{< tldr >}}
 macOSはALFAアダプターのモニターモードとパケットインジェクションをサポートしていません。解決策はVMware FusionまたはParallelsでKali Linux VMを実行し、USBパススルーでアダプターをVMに渡すことです。Apple SiliconではARM64版Kaliイメージが必要です。
 {{< /tldr >}}
-ALFAアダプターはLinuxではドライバーサポートが充実していますが、macOSでは状況が異なります。ALFAアダプターがmacOSに認識されても、ネイティブネットワークスタックではモニターモードへの切り替えや生のパケット送信はできません。唯一の確実な解決策は、**仮想マシンでKali Linuxを実行し**、macOSを完全にバイパスしてUSBアダプターをゲストOSに直接パススルーすることです。
+ALFAアダプターはLinuxではドライバーサポートが充実していますが、macOSでは状況が異なります。ALFAアダプターがmacOSに認識されても、ネイティブネットワークスタックではモニターモードへの切り替えや生のパケット送信はできません。唯一の確実な解決策は、<strong>仮想マシンでKali Linuxを実行し</strong>、macOSを完全にバイパスしてUSBアダプターをゲストOSに直接パススルーすることです。
 
-このガイドでは、macOSの2大ハイパーバイザー——VMware FusionとParallels Desktop——での正しいセットアップ方法を解説します。特に**Apple Silicon（M1/M2/M3）**に重点を置き、ARMアーキテクチャがアダプターとISOの選択に与える影響を詳しく説明します。
+このガイドでは、macOSの2大ハイパーバイザー——VMware FusionとParallels Desktop——での正しいセットアップ方法を解説します。特に<strong>Apple Silicon（M1/M2/M3）</strong>に重点を置き、ARMアーキテクチャがアダプターとISOの選択に与える影響を詳しく説明します。
 
 ---
 
@@ -38,11 +38,11 @@ ALFAアダプターはLinuxではドライバーサポートが充実してい�
 
 VM設定に入る前に、macOSがALFAアダプターで何ができて何ができないかを理解しておくことが重要です。
 
-**AWUS036AXML（MT7921AUNチップセット）：** macOSはこのアダプターを汎用USBネットワークデバイスとして認識します。macOS 13 Ventura以降に搭載された**MT7921AUN**ドライバーが自動的にアダプターを検出します。**システム環境設定 → ネットワーク**（Ventura以降は**システム設定 → ネットワーク**）に新しいインターフェースとして表示され、通常のアダプターと同様にWi-Fiに接続できます。
+<strong>AWUS036AXML（MT7921AUNチップセット）：</strong> macOSはこのアダプターを汎用USBネットワークデバイスとして認識します。macOS 13 Ventura以降に搭載された<strong>MT7921AUN</strong>ドライバーが自動的にアダプターを検出します。<strong>システム環境設定 → ネットワーク</strong>（Ventura以降は<strong>システム設定 → ネットワーク</strong>）に新しいインターフェースとして表示され、通常のアダプターと同様にWi-Fiに接続できます。
 
-**AWUS036ACH（RTL8812AU）とAWUS036ACM（MT7612U）— macOSでサードパーティドライバーが必要なアダプター：** macOSではサードパーティドライバーが必要です。コミュニティや商用のドライバーパッケージはありますが、互換性は不安定です。macOSのマイナーアップデート後にドライバーの再インストールが必要になることが多く、macOS 11以降はカーネル拡張の署名要件が厳しくなっています。
+<strong>AWUS036ACH（RTL8812AU）とAWUS036ACM（MT7612U）— macOSでサードパーティドライバーが必要なアダプター：</strong> macOSではサードパーティドライバーが必要です。コミュニティや商用のドライバーパッケージはありますが、互換性は不安定です。macOSのマイナーアップデート後にドライバーの再インストールが必要になることが多く、macOS 11以降はカーネル拡張の署名要件が厳しくなっています。
 
-**根本的な制限——モニターモード不可：** どのアダプターを使っても、どのドライバーをインストールしても、macOSはrawモニターモードインターフェースを提供しません。CoreWLANフレームワークと基盤となる`IO80211Family.kext`アーキテクチャは、サードパーティアダプターのモニターモードをサポートしていません。セキュリティテストにはUSBパススルー付きのKali Linux VMが必要です。
+<strong>根本的な制限——モニターモード不可：</strong> どのアダプターを使っても、どのドライバーをインストールしても、macOSはrawモニターモードインターフェースを提供しません。CoreWLANフレームワークと基盤となる`IO80211Family.kext`アーキテクチャは、サードパーティアダプターのモニターモードをサポートしていません。セキュリティテストにはUSBパススルー付きのKali Linux VMが必要です。
 
 {{< alert "circle-info" >}}
 デバッグ目的のパッシブなWi-Fiトラフィックキャプチャのみが目的であれば、macOSではOptionキーを押しながらメニューバーのWi-Fiアイコンをクリックして診断モードに入ることができます。ただし、これは正式なモニターモードワークフローの代替にはなりません。
@@ -54,11 +54,11 @@ VM設定に入る前に、macOSがALFAアダプターで何ができて何がで
 
 MacのアーキテクチャによってKali Linuxのイメージと使用可能なハイパーバイザーが決まります。
 
-**Intel Mac（x86_64）：**
-VMware Fusion、Parallels Desktop、VirtualBoxの3つのハイパーバイザーすべてがIntel Macでネイティブ動作します。kali.orgの公式ダウンロードページから標準の**Kali Linux x86_64 ISO**を使用できます。
+<strong>Intel Mac（x86_64）：</strong>
+VMware Fusion、Parallels Desktop、VirtualBoxの3つのハイパーバイザーすべてがIntel Macでネイティブ動作します。kali.orgの公式ダウンロードページから標準の<strong>Kali Linux x86_64 ISO</strong>を使用できます。
 
-**Apple Silicon（M1/M2/M3）：**
-Apple SiliconはARM64アーキテクチャです。標準のx86_64 Kali ISOはApple Siliconハードウェアでは起動できません——x86エミュレーション層がないためです（RosettaはmacOSユーザースペースアプリにのみ適用され、OS全体の仮想化には適用されません）。[kali.org/get-kali](https://www.kali.org/get-kali/)のApple Silicon / ARMセクションから**Kali Linux ARM64**イメージを使用する必要があります。
+<strong>Apple Silicon（M1/M2/M3）：</strong>
+Apple SiliconはARM64アーキテクチャです。標準のx86_64 Kali ISOはApple Siliconハードウェアでは起動できません——x86エミュレーション層がないためです（RosettaはmacOSユーザースペースアプリにのみ適用され、OS全体の仮想化には適用されません）。[kali.org/get-kali](https://www.kali.org/get-kali/)のApple Silicon / ARMセクションから<strong>Kali Linux ARM64</strong>イメージを使用する必要があります。
 
 | ハイパーバイザー | Intel Mac | Apple Silicon |
 |---|---|---|
@@ -70,7 +70,7 @@ Apple SiliconはARM64アーキテクチャです。標準のx86_64 Kali ISOはAp
 Apple SiliconへのVirtualBoxサポートはまだ実験的とされています。USBパススルーはMチップMacで既知の問題があります。Apple Siliconハードウェアでのセキュリティテストには、VMware FusionまたはParallels Desktopを使用してください。
 {{< /alert >}}
 
-**USBパススルーはアーキテクチャに依存しない：** ALFAアダプター自体はUSBデバイスです。ホストCPUがx86_64かARM64かに関わらず、USBパススルーの動作は同じです。アダプターはUSBバス経由でゲストVMに引き渡され、Kali内のドライバーが処理します。
+<strong>USBパススルーはアーキテクチャに依存しない：</strong> ALFAアダプター自体はUSBデバイスです。ホストCPUがx86_64かARM64かに関わらず、USBパススルーの動作は同じです。アダプターはUSBバス経由でゲストVMに引き渡され、Kali内のドライバーが処理します。
 
 ---
 
@@ -80,25 +80,25 @@ VMware FusionはFusion 13から個人利用が無料になり、コストゼロ�
 
 ### ステップ1 — VMware Fusion 13+のインストール
 
-[vmware.com/products/fusion.html](https://www.vmware.com/products/fusion.html)からVMware Fusionをダウンロードします。インストール時に**システム環境設定 → セキュリティとプライバシー → 一般**でVMwareシステム拡張を許可する必要があります。この拡張の承認はUSBパススルーに必須です。承認後、macOSが再起動を求める場合は完了してから続けてください。
+[vmware.com/products/fusion.html](https://www.vmware.com/products/fusion.html)からVMware Fusionをダウンロードします。インストール時に<strong>システム環境設定 → セキュリティとプライバシー → 一般</strong>でVMwareシステム拡張を許可する必要があります。この拡張の承認はUSBパススルーに必須です。承認後、macOSが再起動を求める場合は完了してから続けてください。
 
 ### ステップ2 — Kali Linux VMの作成
 
-- **Apple Silicon Mac：** kali.orgからKali Linux ARM64インストールISOまたは事前構築されたVMware ARMイメージをダウンロードし、VMware FusionでそのARM64 ISOを選択して新しいVMを作成します。
-- **Intel Mac：** 標準のKali Linux x86_64インストールISOをダウンロードし、新しいVMを作成します。
+- <strong>Apple Silicon Mac：</strong> kali.orgからKali Linux ARM64インストールISOまたは事前構築されたVMware ARMイメージをダウンロードし、VMware FusionでそのARM64 ISOを選択して新しいVMを作成します。
+- <strong>Intel Mac：</strong> 標準のKali Linux x86_64インストールISOをダウンロードし、新しいVMを作成します。
 
-最低**4 GB RAM**と**40 GBディスク**を割り当ててください。Kaliのインストール時にフルデフォルトパッケージセットを選択して、無線ツール（aircrack-ng、airmon-ng、airodump-ng）を事前インストールします。
+最低<strong>4 GB RAM</strong>と<strong>40 GBディスク</strong>を割り当ててください。Kaliのインストール時にフルデフォルトパッケージセットを選択して、無線ツール（aircrack-ng、airmon-ng、airodump-ng）を事前インストールします。
 
 ### ステップ3 — ALFAアダプターをUSBパススルーで接続
 
 KaliのVMが実行中で、ALFAアダプターをMacのUSBポートに接続した状態で：
 
-1. VMware Fusionがポップアップを表示します：**「USBデバイスが仮想マシンへの接続を要求しています。」**
-2. **[VM名]に接続**をクリックして、アダプターをKali VMに直接引き渡します。
+1. VMware Fusionがポップアップを表示します：<strong>「USBデバイスが仮想マシンへの接続を要求しています。」</strong>
+2. <strong>[VM名]に接続</strong>をクリックして、アダプターをKali VMに直接引き渡します。
 3. この時点でmacOSはアダプターを見失います——VMが排他的に所有します。
 
 {{< alert "circle-info" >}}
-ポップアップが表示されない場合（VMの起動前にアダプターが既に接続されていた場合など）、VMware Fusionのメニューバーから**仮想マシン → USBとBluetooth → [ALFAアダプター名] → 接続（Macから切断）**で手動でUSBデバイスをVMに割り当てます。
+ポップアップが表示されない場合（VMの起動前にアダプターが既に接続されていた場合など）、VMware Fusionのメニューバーから<strong>仮想マシン → USBとBluetooth → [ALFAアダプター名] → 接続（Macから切断）</strong>で手動でUSBデバイスをVMに割り当てます。
 {{< /alert >}}
 
 ### ステップ4 — Kali内での確認
@@ -131,7 +131,7 @@ Parallels Desktopはパフォーマンスを優先するApple Silicon Macの推�
 
 ### ステップ1 — Parallels Desktop 19+
 
-[parallels.com](https://www.parallels.com)からParallels Desktopをインストールします。VMware Fusionと同様に、**セキュリティとプライバシー**でParallelsシステム拡張を許可して再起動します。
+[parallels.com](https://www.parallels.com)からParallels Desktopをインストールします。VMware Fusionと同様に、<strong>セキュリティとプライバシー</strong>でParallelsシステム拡張を許可して再起動します。
 
 ### ステップ2 — Kali Linux ARM64 VMの作成
 
@@ -145,9 +145,9 @@ Parallels Desktop 19+はApple Silicon上の新しいVMアシスタントからKa
 
 KaliのVMが実行中でALFAアダプターが接続された状態で：
 
-1. macOSのメニューバーで**デバイス → USBとBluetooth**に移動します。
-2. リストからALFAアダプターを見つけます（**Realtek 802.11ac NIC**、**MediaTek Wi-Fi**などと表示される場合があります）。
-3. クリックして**Linuxに接続**（またはVMの名前）を選択します。
+1. macOSのメニューバーで<strong>デバイス → USBとBluetooth</strong>に移動します。
+2. リストからALFAアダプターを見つけます（<strong>Realtek 802.11ac NIC</strong>、<strong>MediaTek Wi-Fi</strong>などと表示される場合があります）。
+3. クリックして<strong>Linuxに接続</strong>（またはVMの名前）を選択します。
 
 ### ステップ4 — lsusbで確認
 
@@ -166,7 +166,7 @@ Apple SiliconでのParallelsは、I/O集約型のVMワークロードでVMware F
 
 ## Apple Silicon上のKali：ARM64ドライバーの注意事項
 
-**RTL8812AU（ARM64）：**
+<strong>RTL8812AU（ARM64）：</strong>
 [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)のRTL8812AUドライバーはARM64でも正しくコンパイルできます。DKMSビルドプロセスはx86_64と同じです：
 
 ```bash
@@ -176,15 +176,15 @@ cd rtl8812au
 sudo make dkms_install
 ```
 
-**MT7921AUN（ARM64）：**
-`mt7921u`ドライバーは**Linux 5.18からカーネルに内蔵**されており、Kali ARM64 2024.x以降に含まれています。AWUS036AXMLはKali ARM64で手動コンパイル不要で、USBパススルー後に自動的に認識されます。
+<strong>MT7921AUN（ARM64）：</strong>
+`mt7921u`ドライバーは<strong>Linux 5.18からカーネルに内蔵</strong>されており、Kali ARM64 2024.x以降に含まれています。AWUS036AXMLはKali ARM64で手動コンパイル不要で、USBパススルー後に自動的に認識されます。
 
 ```bash
 dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**Mチップ Mac向け推奨：** Apple Silicon Mac上のVMで使用するためにALFAアダプターを購入するなら、**AWUS036AXML（MT7921AUN）** がより良い選択です。カーネル内蔵ドライバーによりDKMSコンパイル手順が不要で、ARM64 Kaliで確実に動作します。ただしインジェクションはカーネルバージョンに依存します。kernel 6.16 以前ではインジェクションが動作するというコミュニティ報告がありますが、stock kernel 6.16 以降（6.17 で実測）では AXML のパケットインジェクションテストは失敗し（`aireplay-ng --test` は Found 0 APs / No Answer）、deauth やハンドシェイク取得はできません。原因は mac80211 chanctx のリグレッションでチップ固有の制限ではなく、コミュニティの patched ドライバーでインジェクションは動作しますが、ファームウェアがレートを固定しており（1/6 Mbps、HT/VHT のインジェクション不可）。モニターモード、AP、WPA3 には影響しません。インジェクションが必要な場合は AWUS036ACH または AWUS036EACS をお選びください。
+<strong>Mチップ Mac向け推奨：</strong> Apple Silicon Mac上のVMで使用するためにALFAアダプターを購入するなら、<strong>AWUS036AXML（MT7921AUN）</strong> がより良い選択です。カーネル内蔵ドライバーによりDKMSコンパイル手順が不要で、ARM64 Kaliで確実に動作します。ただしインジェクションはカーネルバージョンに依存します。kernel 6.16 以前ではインジェクションが動作するというコミュニティ報告がありますが、stock kernel 6.16 以降（6.17 で実測）では AXML のパケットインジェクションテストは失敗し（`aireplay-ng --test` は Found 0 APs / No Answer）、deauth やハンドシェイク取得はできません。原因は mac80211 chanctx のリグレッションでチップ固有の制限ではなく、コミュニティの patched ドライバーでインジェクションは動作しますが、ファームウェアがレートを固定しており（1/6 Mbps、HT/VHT のインジェクション不可）。モニターモード、AP、WPA3 には影響しません。インジェクションが必要な場合は AWUS036ACH または AWUS036EACS をお選びください。
 
 ---
 
@@ -212,7 +212,7 @@ ip link show wlan1mon
 sudo airodump-ng wlan1mon
 ```
 
-**パススルー後に`wlan1`が表示されない場合：**
+<strong>パススルー後に`wlan1`が表示されない場合：</strong>
 ALFAアダプターをMacから抜き、5秒待ってから再接続し、ハイパーバイザーのUSBデバイスメニューでVMに再割り当てして、Kali内で`lsusb`を再実行してデバイスが表示されることを確認します。
 
 {{< alert "triangle-exclamation" >}}
@@ -223,11 +223,11 @@ VM内のデフォルト`wlan0`インターフェースに対して`airmon-ng sta
 
 ## パフォーマンスと制限事項
 
-**USBパススルーのレイテンシ：** ハイパーバイザー層を経由してUSBデバイスをパススルーすると、ベアメタルLinuxと比較して約1〜2 msの処理レイテンシが追加されます。802.11セキュリティテストの目的では、このレイテンシは操作上重要ではありません。
+<strong>USBパススルーのレイテンシ：</strong> ハイパーバイザー層を経由してUSBデバイスをパススルーすると、ベアメタルLinuxと比較して約1〜2 msの処理レイテンシが追加されます。802.11セキュリティテストの目的では、このレイテンシは操作上重要ではありません。
 
-**排他的所有権：** macOSはALFAアダプターをKali VMと同時に共有できません。アダプターがVMにパススルーされると、macOSからは完全に見えなくなります。
+<strong>排他的所有権：</strong> macOSはALFAアダプターをKali VMと同時に共有できません。アダプターがVMにパススルーされると、macOSからは完全に見えなくなります。
 
-**消費電力：** USBのWi-FiアダプターをVM内で動作させながらMac自体のWi-Fiも動作させると、電力消費がかなり大きくなります。**長時間のテストセッションでは充電器を使用してください**。
+<strong>消費電力：</strong> USBのWi-FiアダプターをVM内で動作させながらMac自体のWi-Fiも動作させると、電力消費がかなり大きくなります。<strong>長時間のテストセッションでは充電器を使用してください</strong>。
 
 ---
 
@@ -235,7 +235,7 @@ VM内のデフォルト`wlan0`インターフェースに対して`airmon-ng sta
 
 | 症状 | 考えられる原因 | 解決策 |
 |---|---|---|
-| ALFAアダプターがハイパーバイザーのUSBメニューに表示されない | macOSシステム拡張が未承認 | **システム環境設定 → セキュリティとプライバシー → 一般** → VMware/Parallels拡張を許可して再起動 |
+| ALFAアダプターがハイパーバイザーのUSBメニューに表示されない | macOSシステム拡張が未承認 | <strong>システム環境設定 → セキュリティとプライバシー → 一般</strong> → VMware/Parallels拡張を許可して再起動 |
 | Kali VM内の`lsusb`にALFAアダプターが表示されない | USBパススルーが完了していない | VM → USBとBluetoothメニューで手動接続；アダプターを再接続 |
 | パススルー後に`wlan1`インターフェースがない | ドライバーが未ロード（RTL8812AU） | DKMSでRTL8812AUドライバーをインストール；[ドライバーインストールガイド](/ja/blog/install-alfa-driver-kali-ubuntu/)を参照 |
 | `airmon-ng start wlan1`が「Operation not permitted」で失敗 | NetworkManagerがインターフェースを保持 | まず`sudo airmon-ng check kill`を実行してから再試行 |

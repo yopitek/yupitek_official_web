@@ -132,20 +132,20 @@ opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 
 ### 7.1 준비 단계: USB 코어 지원 활성화
 
-**1단계: SSH로 OpenWrt 라우터 접속**
+<strong>1단계: SSH로 OpenWrt 라우터 접속</strong>
 
 ```bash
 ssh root@192.168.1.1
 ```
 
-**2단계: 패키지 저장소 업데이트 및 USB 코어 지원 설치**
+<strong>2단계: 패키지 저장소 업데이트 및 USB 코어 지원 설치</strong>
 
 ```bash
 opkg update
 opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 ```
 
-**3단계: ALFA 네트워크 카드 삽입 및 USB 감지 확인**
+<strong>3단계: ALFA 네트워크 카드 삽입 및 USB 감지 확인</strong>
 
 ```bash
 lsusb
@@ -157,7 +157,7 @@ lsusb
 
 AWUS036ACM(MT7612U)을 예로 들면:
 
-**1단계: 드라이버 패키지 설치**
+<strong>1단계: 드라이버 패키지 설치</strong>
 
 ```bash
 # AWUS036ACM (MT7612U)
@@ -170,26 +170,26 @@ opkg install kmod-mt76-usb kmod-mt76x2u
 # opkg install kmod-mt7921u
 ```
 
-**2단계: 무선 관리 도구 설치**
+<strong>2단계: 무선 관리 도구 설치</strong>
 
 ```bash
 opkg install iw iwinfo wireless-tools hostapd-common wpa-supplicant
 ```
 
-**3단계: 네트워크 인터페이스 생성 확인**
+<strong>3단계: 네트워크 인터페이스 생성 확인</strong>
 
 ```bash
 iw dev
 # wlan0 또는 wlan1 인터페이스가 보여야 함
 ```
 
-**4단계: 주변 WiFi 스캔 (기능 검증)**
+<strong>4단계: 주변 WiFi 스캔 (기능 검증)</strong>
 
 ```bash
 iw dev wlan0 scan | grep -E "SSID|signal"
 ```
 
-**5단계: STA 클라이언트 모드로 설정 (기존 AP에 연결)**
+<strong>5단계: STA 클라이언트 모드로 설정 (기존 AP에 연결)</strong>
 
 /etc/config/wireless 편집:
 
@@ -209,13 +209,13 @@ config wifi-iface 'wifinet2'
        option key 'Your WiFi Password'
 ```
 
-**6단계: 무선 서비스 재시작**
+<strong>6단계: 무선 서비스 재시작</strong>
 
 ```bash
 /etc/init.d/network restart
 ```
 
-**7단계: AP 핫스팟 모드로 설정 (네트워크 공유)**
+<strong>7단계: AP 핫스팟 모드로 설정 (네트워크 공유)</strong>
 
 /etc/config/wireless를 편집하여 mode를 ap로 변경:
 
@@ -229,7 +229,7 @@ config wifi-iface 'wifinet2'
    option key 'Your Hotspot Password'
 ```
 
-**8단계: Monitor 모드 활성화 (침투 테스트용)**
+<strong>8단계: Monitor 모드 활성화 (침투 테스트용)</strong>
 
 ```bash
 opkg install aircrack-ng
@@ -246,7 +246,7 @@ iw dev wlan0 info
 
 AWUS036ACH(RTL8812AU)를 예로 들면:
 
-**1단계: 커뮤니티 드라이버 설치**
+<strong>1단계: 커뮤니티 드라이버 설치</strong>
 
 ```bash
 opkg update
@@ -256,13 +256,13 @@ opkg install kmod-rtl8812au-ct
 # opkg install kmod-rtl8821cu
 ```
 
-**2단계: 무선 관리 도구 설치**
+<strong>2단계: 무선 관리 도구 설치</strong>
 
 ```bash
 opkg install iw iwinfo wireless-tools hostapd-common wpa-supplicant
 ```
 
-**3단계: 인터페이스 확인**
+<strong>3단계: 인터페이스 확인</strong>
 
 ```bash
 iw dev
@@ -271,7 +271,7 @@ iw dev
 
 설정 방법은 7.2의 5-7단계(STA / AP 모드 설정)와 동일합니다.
 
-**4단계: Monitor 모드**
+<strong>4단계: Monitor 모드</strong>
 
 ```bash
 # rtl8812au-ct 드라이버는 monitor 모드를 지원함
@@ -281,7 +281,7 @@ ip link set wlan0 up
 # 패킷 인젝션 기능은 제한적이므로, 침투 테스트에는 mt76 칩셋 사용을 권장
 ```
 
-**5단계: 커널 크래시가 발생하는 경우 (24.10 버전의 알려진 문제)**
+<strong>5단계: 커널 크래시가 발생하는 경우 (24.10 버전의 알려진 문제)</strong>
 
 ```bash
 # 23.05 안정 버전으로 롤백하거나, 커스텀 컴파일 드라이버 사용
@@ -293,18 +293,18 @@ logread | grep -i "panic\|crash\|rtl8812"
 
 ⚠️ 이 경로는 OpenWrt를 커스텀 컴파일해야 하므로 일반 사용자에게 적합하지 않습니다.
 
-**1단계: OpenWrt 버전에 rtw89 USB 지원이 포함되어 있는지 확인**
+<strong>1단계: OpenWrt 버전에 rtw89 USB 지원이 포함되어 있는지 확인</strong>
 
 ```bash
 opkg list | grep rtw89
 # 결과가 없으면 해당 버전에는 포함되어 있지 않음
 ```
 
-**2단계: 필요 시 OpenWrt 이미지 파일을 직접 컴파일**
+<strong>2단계: 필요 시 OpenWrt 이미지 파일을 직접 컴파일</strong>
 
 kmod-rtw89와 해당 펌웨어를 추가합니다.
 
-**대안 제안**: OpenWrt 라우터에서 Wi-Fi 6 USB 네트워크 카드를 사용해야 한다면, 현재로서는 AWUS036AXML(MT7921AUN)을 대안으로 사용하는 것을 권장합니다.
+<strong>대안 제안</strong>: OpenWrt 라우터에서 Wi-Fi 6 USB 네트워크 카드를 사용해야 한다면, 현재로서는 AWUS036AXML(MT7921AUN)을 대안으로 사용하는 것을 권장합니다.
 
 ## 8. 일반적인 오류 및 문제 해결
 
@@ -329,8 +329,8 @@ kmod-rtw89와 해당 펌웨어를 추가합니다.
 - 라우터 하드웨어 자원: 저사양 라우터(16MB Flash / 128MB RAM)에서는 드라이버 설치 시 공간 부족으로 다른 기능에 영향을 줄 수 있습니다.
 - USB 3.0 간섭: USB 3.0 장치는 2.4GHz WiFi를 간섭할 수 있으므로, USB 2.0 포트나 차폐가 잘 된 USB Hub 사용을 권장합니다.
 - 다중 네트워크 카드 동시 사용: 라우터 내장 WiFi + USB WiFi를 동시에 사용할 때 채널 충돌이나 자원 경합이 발생할 수 있습니다.
-- ⚠️ **RTL8832BU(AWUS036AX/AXER)의 드라이버 유지보수자가 사용 회피를 공개적으로 권고함**: 4.1절에서 "❌ 권장하지 않음"으로 표시한 것은 단지 `rtw89` USB가 아직 개발 중이기 때문만이 아니라, 드라이버 유지보수자 morrownr가 이 칩 계열에 대해 "매우 나쁜 드라이버이며, 칩 자체에도 의문이 있다"고 공개적으로 밝히며 Linux 사용자에게 당분간 사용을 피할 것을 권고했기 때문입니다(출처는 10장 참조).
-- **커널 버전 임계값 용어에 대한 명확화 필요**: 4.1절의 "MT7921AUN은 OpenWrt 23.05+ 및 커널 5.15+ 필요"라는 표현은 오해를 유발하기 쉽습니다——`mt7921u` 드라이버 자체는 데스크톱 Linux에서 실제로 **커널 5.19+**를 필요로 하지만(드라이버 유지보수자의 원문 참조), OpenWrt 공식 패키지는 backport 메커니즘을 통해 이를 조기에 포함하는 경우가 많아, OpenWrt 23.05(기본 커널이 5.15로 표기되어 있음에도)에서 `kmod-mt7921u` 설치에 성공했다는 사용자 보고가 존재합니다. **커널 버전을 추론하지 말고, 고객 버전의 실제 `opkg list` 조회 결과를 근거로 판단하시기 바랍니다**.
+- ⚠️ <strong>RTL8832BU(AWUS036AX/AXER)의 드라이버 유지보수자가 사용 회피를 공개적으로 권고함</strong>: 4.1절에서 "❌ 권장하지 않음"으로 표시한 것은 단지 `rtw89` USB가 아직 개발 중이기 때문만이 아니라, 드라이버 유지보수자 morrownr가 이 칩 계열에 대해 "매우 나쁜 드라이버이며, 칩 자체에도 의문이 있다"고 공개적으로 밝히며 Linux 사용자에게 당분간 사용을 피할 것을 권고했기 때문입니다(출처는 10장 참조).
+- <strong>커널 버전 임계값 용어에 대한 명확화 필요</strong>: 4.1절의 "MT7921AUN은 OpenWrt 23.05+ 및 커널 5.15+ 필요"라는 표현은 오해를 유발하기 쉽습니다——`mt7921u` 드라이버 자체는 데스크톱 Linux에서 실제로 <strong>커널 5.19+</strong>를 필요로 하지만(드라이버 유지보수자의 원문 참조), OpenWrt 공식 패키지는 backport 메커니즘을 통해 이를 조기에 포함하는 경우가 많아, OpenWrt 23.05(기본 커널이 5.15로 표기되어 있음에도)에서 `kmod-mt7921u` 설치에 성공했다는 사용자 보고가 존재합니다. <strong>커널 버전을 추론하지 말고, 고객 버전의 실제 `opkg list` 조회 결과를 근거로 판단하시기 바랍니다</strong>.
 
 반박 조건: OpenWrt의 후속 패키지 업데이트가 24.10 `rtl8812au-ct`의 커널 크래시 문제를 수정한다면, 4.1절과 6장의 AWUS036ACH 권장 사항을 "23.05 유지"에서 상향 조정할 수 있습니다. `rtw89` USB에 대한 공식 지원이 OpenWrt 공식 패키지 저장소에 정식 포함된다면, AWUS036AX / AXER의 "권장하지 않음" 판정을 재검토해야 합니다. 공식에서 MT7921의 6GHz에 대한 완전한 지원 성명을 발표한다면, AXML / AXM의 제한 사항을 갱신해야 합니다.
 

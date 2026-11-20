@@ -8,15 +8,15 @@ lastmod: 2026-11-20
 category: "Technical Guide"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
-Apple Mac（M3 Max搭載のMacBook Pro、M2 Ultra搭載のMac Studio、IntelベースのMac Miniなど）をお使いで、Wi-Fi監査、モニターモード、パケットインジェクションのためにALFA Networkワイヤレスアダプタを使いたい場合、たどり着くべき究極の質問は一つです。**「どのALFAカードが、どのMacで動作するのか？」**
+Apple Mac（M3 Max搭載のMacBook Pro、M2 Ultra搭載のMac Studio、IntelベースのMac Miniなど）をお使いで、Wi-Fi監査、モニターモード、パケットインジェクションのためにALFA Networkワイヤレスアダプタを使いたい場合、たどり着くべき究極の質問は一つです。<strong>「どのALFAカードが、どのMacで動作するのか？」</strong>
 
 短い答えはこれです：
 
-> **Apple Silicon Mac（M1/M2/M3/M4）：ALFAワイヤレスカードはmacOS上でネイティブ動作しません。**これはアーキテクチャの制限によるものです。RealtekのmacOS用カーネル拡張はx86_64専用バイナリであり、ARM64カーネルではロードできません。解決策はなく、どのベンダーもこの変更計画を持っていません。
+> <strong>Apple Silicon Mac（M1/M2/M3/M4）：ALFAワイヤレスカードはmacOS上でネイティブ動作しません。</strong>これはアーキテクチャの制限によるものです。RealtekのmacOS用カーネル拡張はx86_64専用バイナリであり、ARM64カーネルではロードできません。解決策はなく、どのベンダーもこの変更計画を持っていません。
 >
-> **Intel Mac：限定的サポート、クライアント接続のみ。**macOS 10.11～10.15では部分的な公式ドライバーがありますが、**モニターモードとパケットインジェクションはmacOSではサポートされていません**（ドライバーがこれらの機能を実装していないためです）。
+> <strong>Intel Mac：限定的サポート、クライアント接続のみ。</strong>macOS 10.11～10.15では部分的な公式ドライバーがありますが、<strong>モニターモードとパケットインジェクションはmacOSではサポートされていません</strong>（ドライバーがこれらの機能を実装していないためです）。
 >
-> **動作する解決策：** Apple Silicon MacでUSBパススルー付きのLinux VM（UTM/Parallels/VMware）でKali Linuxを実行します。モニターモードとパケットインジェクションはLinux VM内で完璧に動作します。
+> <strong>動作する解決策：</strong> Apple Silicon MacでUSBパススルー付きのLinux VM（UTM/Parallels/VMware）でKali Linuxを実行します。モニターモードとパケットインジェクションはLinux VM内で完璧に動作します。
 
 このガイドでは、完全な互換性マトリックスを提供し、Apple SiliconがALFAカードをネイティブサポートできない6つの技術的理由を解説し、実際に動作するVMセットアップの手順を説明します。
 
@@ -30,34 +30,34 @@ Apple Mac（M3 Max搭載のMacBook Pro、M2 Ultra搭載のMac Studio、Intelベ�
 
 | ALFA Model | Chipset | Apple Silicon (macOS Native) | Intel Mac (macOS Native) | VM + USB Passthrough (Kali ARM) | Raspberry Pi + Kali |
 |:---|:---|:---:|:---:|:---:|:---:|
-| **AWUS036ACH** | Realtek RTL8812AU |❌ |⚠️ Client only (≤10.15) |✅ Best monitor/injection |✅ |
-| **AWUS036ACM** | MediaTek MT7612U |❌ |⚠️ Client only (≤10.12) |✅ Plug & Play |✅ Plug & Play |
-| **AWUS036AXML** | MediaTek MT7921AUN |❌ |❌ |✅ Wi-Fi 6E |✅ |
-| **AWUS036AXM** | MediaTek MT7921AUN |❌ |❌ |✅ |✅ |
-| **AWUS036ACHM** | MediaTek MT7610U |❌ |❌ |✅ |✅ |
-| **AWUS036ACS** | Realtek RTL8811AU |❌ |⚠️ Client only (≤10.14) |✅ |✅ |
-| **AWUS036AX** | Realtek RTL8832BU |❌ |❌ |✅ カーネル ≥6.17 |⚠️ カーネル ≥6.17 が必要（Pi 未検証） |
-| **AWUS036AXER** | Realtek RTL8832BU |❌ |❌ |✅ カーネル ≥6.17 |⚠️ カーネル ≥6.17 が必要（Pi 未検証） |
-| **AWUS036EACS** | Realtek RTL8821CU |❌ |⚠️ Client only |✅ Monitor/injection (Linux guest kernel ≥6.2) |⚠️ Needs kernel ≥6.2, not tested on Pi |
+| <strong>AWUS036ACH</strong> | Realtek RTL8812AU |❌ |⚠️ Client only (≤10.15) |✅ Best monitor/injection |✅ |
+| <strong>AWUS036ACM</strong> | MediaTek MT7612U |❌ |⚠️ Client only (≤10.12) |✅ Plug & Play |✅ Plug & Play |
+| <strong>AWUS036AXML</strong> | MediaTek MT7921AUN |❌ |❌ |✅ Wi-Fi 6E |✅ |
+| <strong>AWUS036AXM</strong> | MediaTek MT7921AUN |❌ |❌ |✅ |✅ |
+| <strong>AWUS036ACHM</strong> | MediaTek MT7610U |❌ |❌ |✅ |✅ |
+| <strong>AWUS036ACS</strong> | Realtek RTL8811AU |❌ |⚠️ Client only (≤10.14) |✅ |✅ |
+| <strong>AWUS036AX</strong> | Realtek RTL8832BU |❌ |❌ |✅ カーネル ≥6.17 |⚠️ カーネル ≥6.17 が必要（Pi 未検証） |
+| <strong>AWUS036AXER</strong> | Realtek RTL8832BU |❌ |❌ |✅ カーネル ≥6.17 |⚠️ カーネル ≥6.17 が必要（Pi 未検証） |
+| <strong>AWUS036EACS</strong> | Realtek RTL8821CU |❌ |⚠️ Client only |✅ Monitor/injection (Linux guest kernel ≥6.2) |⚠️ Needs kernel ≥6.2, not tested on Pi |
 
-**凡例：**✅ = 動作確認済み |⚠️ = 限定的 / 条件あり |❌ = 非対応
+<strong>凡例：</strong>✅ = 動作確認済み |⚠️ = 限定的 / 条件あり |❌ = 非対応
 
 ### 1.2 Mac CPU別のクイック判定
 
 | Mac CPU | macOSでALFAカードを使えるか？ |モニターモード可能か？ |推奨ソリューション |
 |:---|:---|:---|:---|
-| **Apple Silicon M1/M2/M3/M4** |❌ No（アーキテクチャの制限） |❌ Not on macOS |✅ USBパススルー付きLinux VM |
-| **Intel (macOS 10.11–10.15)** |⚠️ Limited（クライアントのみ、モニターモードなし） |❌ Not supported |✅ USBパススルー付きLinux VM |
-| **Intel (macOS 11+)** |⚠️ 第三者kextのみ（chris1111） |❌ Not supported |✅ USBパススルー付きLinux VM |
+| <strong>Apple Silicon M1/M2/M3/M4</strong> |❌ No（アーキテクチャの制限） |❌ Not on macOS |✅ USBパススルー付きLinux VM |
+| <strong>Intel (macOS 10.11–10.15)</strong> |⚠️ Limited（クライアントのみ、モニターモードなし） |❌ Not supported |✅ USBパススルー付きLinux VM |
+| <strong>Intel (macOS 11+)</strong> |⚠️ 第三者kextのみ（chris1111） |❌ Not supported |✅ USBパススルー付きLinux VM |
 
 > [!IMPORTANT]
-> **結論：**どのMacをお使いでも、**モニターモードとパケットインジェクションにはLinuxが必要です。**VM + USBパススルーのアプローチは、2012年のIntel MacBook Proから2025年のM4 Mac Studioに至るまで、すべてのMacで動作するユニバーサルソリューションです。
+> <strong>結論：</strong>どのMacをお使いでも、<strong>モニターモードとパケットインジェクションにはLinuxが必要です。</strong>VM + USBパススルーのアプローチは、2012年のIntel MacBook Proから2025年のM4 Mac Studioに至るまで、すべてのMacで動作するユニバーサルソリューションです。
 
 ---
 
 ## 2. Apple Siliconが失敗する理由：6層のアーキテクチャウォール
 
-将来のmacOSアップデートでこれが解決されるかもしれないと考えているなら、それは期待外れになります。この非互換性は、修正を待つバグではありません。**6つの意図的なAppleの設計判断**が累積した結果であり、それらが組み合わさってサードパーティのUSB Wi-FiアダプタをApple Silicon上でアーキテクチャ的に不可能にしています。
+将来のmacOSアップデートでこれが解決されるかもしれないと考えているなら、それは期待外れになります。この非互換性は、修正を待つバグではありません。<strong>6つの意図的なAppleの設計判断</strong>が累積した結果であり、それらが組み合わさってサードパーティのUSB Wi-FiアダプタをApple Silicon上でアーキテクチャ的に不可能にしています。
 
 ### Layer 1: IO80211ControllerはPrivate API
 
@@ -74,23 +74,23 @@ IOService
 
 ### Layer 2: NetworkingDriverKitはEthernetのみをサポート
 
-Appleのカーネル拡張のモダンな置き換えが**DriverKit**です。カーネルの安定性を脅かさないユーザー空間ドライバーです。ネットワークファミリーである`NetworkingDriverKit`は、[Appleの公式ドキュメント](https://developer.apple.com/documentation/networkingdriverkit)で明確に述べています：
+Appleのカーネル拡張のモダンな置き換えが<strong>DriverKit</strong>です。カーネルの安定性を脅かさないユーザー空間ドライバーです。ネットワークファミリーである`NetworkingDriverKit`は、[Appleの公式ドキュメント](https://developer.apple.com/documentation/networkingdriverkit)で明確に述べています：
 
-> "Use NetworkingDriverKit to develop drivers for USB Ethernet adapters. Note that **Ethernet is the only networking interface currently supported by NetworkingDriverKit.**"
+> "Use NetworkingDriverKit to develop drivers for USB Ethernet adapters. Note that <strong>Ethernet is the only networking interface currently supported by NetworkingDriverKit.</strong>"
 
-`IOUserNetworkWiFi`クラスは存在しません。Wi-Fi用のDriverKitフレームワークは存在しません。RealtekやMediaTekがDriverKitドライバーを書くためのエンジニアリング投資をしたとしても、**それを接続するAppleのフレームワークが存在しない**のです。
+`IOUserNetworkWiFi`クラスは存在しません。Wi-Fi用のDriverKitフレームワークは存在しません。RealtekやMediaTekがDriverKitドライバーを書くためのエンジニアリング投資をしたとしても、<strong>それを接続するAppleのフレームワークが存在しない</strong>のです。
 
 ### Layer 3: USB + Networking Kextの組み合わせはBig Sur以降非サポート
 
 Appleの[Deprecated Kernel Extensions](https://developer.apple.com/support/kernel-extensions/)ページには次のように記載されています：
 
-> "The combination of using IONetworkingFamily KPIs as well as any USB KPI (IOUSBHostFamily or IOUSBFamily) is **unsupported in macOS Big Sur**."
+> "The combination of using IONetworkingFamily KPIs as well as any USB KPI (IOUSBHostFamily or IOUSBFamily) is <strong>unsupported in macOS Big Sur</strong>."
 
 これは、すべてのUSB Wi-Fiカーネル拡張が要求するKPIの組み合わせそのものです。唯一の回避策はSIPを完全に無効化するかMDMプロファイルを使用することですが、どちらもコンシューマー製品には適していません。
 
 ### Layer 4: RealtekのKextはx86_64専用
 
-RealtekのmacOSドライバーは`RtWlanU.kext`として提供され、**x86_64**専用にコンパイルされています。Apple Silicon Macは**ARM64**カーネルで動作します。カーネル拡張はカーネル空間で実行されるため、**Rosetta 2はカーネル拡張を翻訳できません。**
+RealtekのmacOSドライバーは`RtWlanU.kext`として提供され、<strong>x86_64</strong>専用にコンパイルされています。Apple Silicon Macは<strong>ARM64</strong>カーネルで動作します。カーネル拡張はカーネル空間で実行されるため、<strong>Rosetta 2はカーネル拡張を翻訳できません。</strong>
 
 [chris1111 discussion #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128)のユーザーは、M1 MacBook Air（Ventura 13.1）とALFA RTL8814AUでの正確な失敗を記録しています：
 
@@ -104,7 +104,7 @@ Kext com.realtek.driver.RtWlanU v1830.32.b27
 
 事実上のRealtek macOS Wi-Fiドライバーのコミュニティ配布である[chris1111/Wireless-USB-Big-Sur-Adapter](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter)のメンテナーは、READMEで明確に述べています：
 
-> **"It seems that it does not work on Mac M1, M2, M3, M4 Apple chip, working only for Mac Intel."**
+> <strong>"It seems that it does not work on Mac M1, M2, M3, M4 Apple chip, working only for Mac Intel."</strong>
 
 そして、M1サポートを追加できるかというユーザーへの回答では：
 
@@ -117,17 +117,17 @@ Realtekはarm64 kext、DriverKitドライバー、またはApple Siliconサポ�
 仮にarm64 kextが存在したとしても、Apple Siliconでロードするには以下の手順が必要です：
 
 1. Macをシャットダウン
-2. 起動オプションが表示されるまで**電源ボタンを押し続ける**
+2. 起動オプションが表示されるまで<strong>電源ボタンを押し続ける</strong>
 3. One True Recovery（1TR）モードに入る
-4. **Reduced Security**ポリシーにダウングレード
+4. <strong>Reduced Security</strong>ポリシーにダウングレード
 5. "Allow management of kernel extensions from identified developers"を有効化
 6. 再起動し、kextをインストールし、システム設定で承認
-7. **再度再起動**してAuxiliary Kernel Collection（AuxKC）を再ビルド
+7. <strong>再度再起動</strong>してAuxiliary Kernel Collection（AuxKC）を再ビルド
 
 Appleの[Securely extending the kernel](https://support.apple.com/guide/security/securely-extending-the-kernel-sec8e454101b/web)ガイドによると、このフローは意図的に困難になっています。「1TRとパスワード要件の組み合わせにより、macOS内から開始するソフトウェアのみ攻撃者がkextをインジェクトすることが困難になります。」
 
 > [!IMPORTANT]
-> **結論：**どのALFAカードも、またどのメーカーのサードパーティUSB Wi-Fiアダプタも、Apple Silicon macOS上でネイティブ動作しません。AppleがWi-Fi DriverKitフレームワークを公開しない限り（していない）、そしてベンダーがそれ用のドライバーを書かない限り（誰も書いていない）、この状況は変わりません。
+> <strong>結論：</strong>どのALFAカードも、またどのメーカーのサードパーティUSB Wi-Fiアダプタも、Apple Silicon macOS上でネイティブ動作しません。AppleがWi-Fi DriverKitフレームワークを公開しない限り（していない）、そしてベンダーがそれ用のドライバーを書かない限り（誰も書いていない）、この状況は変わりません。
 
 ---
 
@@ -141,34 +141,34 @@ Appleの[Securely extending the kernel](https://support.apple.com/guide/security
 |------------|---------|---------------------|------------------------------|
 | AWUS036ACH | RTL8812AU | 10.15 Catalina | 11 Big Sur - 26 Tahoe (Intelのみ) |
 | AWUS036ACS | RTL8811AU | 10.14 Mojave | 11 Big Sur - 26 Tahoe (Intelのみ) |
-| AWUS036ACM | MT7612U | **10.12 Sierra** |❌ 非対応 (MediaTek) |
+| AWUS036ACM | MT7612U | <strong>10.12 Sierra</strong> |❌ 非対応 (MediaTek) |
 | AWUS036ACHM | MT7610U |❌ 非対応 |❌ 非対応 (MediaTek) |
 | AWUS036AX/AXER | RTL8832BU |❌ 非対応 |❌ 非対応 |
 | AWUS036AXML/AXM | MT7921AUN |❌ 非対応 |❌ 非対応 |
 
 ### 4.2モニターモードのパラドックス
 
-セキュリティプロフェッショナルにとっての重要な問題はこれです。**ドライバーがIntel Macに正常にインストールされたとしても、モニターモードとパケットインジェクションは動作しません。**
+セキュリティプロフェッショナルにとっての重要な問題はこれです。<strong>ドライバーがIntel Macに正常にインストールされたとしても、モニターモードとパケットインジェクションは動作しません。</strong>
 
 ALFAのmacOSドライバーはクライアント接続のみを実装しており、モニターモードAPIを実装していません。これは[Super discussion](https://super.com/questions/1597114/alfa-wifi-network-card-monitor-mode-on-mac-os)で確認されています。AWUS036EACドライバーを正常にインストールしたがモニターモードに入れないユーザーがいます：
 
 > *"What makes you think ALFA put monitor mode support into their macOS driver? Monitor mode APIs are different on different OSes. I would assume they just didn't bother to implement it for macOS."*
 
-これによりパラドックスが生まれます。**モニターモードとパケットインジェクションのためにALFAカードを購入するのですが、macOSドライバーはどちらの機能もサポートしていません。**macOSの内蔵Wi-Fiカードは`airport`ユーティリティを通じてモニターモードをサポートしていますが、ALFAのドライバーは自社のハードウェアではそれを実装していません。
+これによりパラドックスが生まれます。<strong>モニターモードとパケットインジェクションのためにALFAカードを購入するのですが、macOSドライバーはどちらの機能もサポートしていません。</strong>macOSの内蔵Wi-Fiカードは`airport`ユーティリティを通じてモニターモードをサポートしていますが、ALFAのドライバーは自社のハードウェアではそれを実装していません。
 
 > [!WARNING]
->もしあなたの目標がワイヤレスセキュリティ監査（モニターモード、パケットインジェクション、ハンドシェイクキャプチャ、デアサウチ攻撃）であるなら、**macOSでは不可能です——どのMacでも、IntelかApple Siliconか、どのALFAカードを使っても。**Linuxが必要です。
+>もしあなたの目標がワイヤレスセキュリティ監査（モニターモード、パケットインジェクション、ハンドシェイクキャプチャ、デアサウチ攻撃）であるなら、<strong>macOSでは不可能です——どのMacでも、IntelかApple Siliconか、どのALFAカードを使っても。</strong>Linuxが必要です。
 
 ### 4.3 chris1111ドライバー：Intel Mac最後の手段
 
 macOS 11 Big Sur以降を実行しているIntel Macの場合、唯一のオプションは[chris1111/Wireless-USB-Big-Sur-Adapter](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter)プロジェクトです。これはRealtekのkextをコミュニティが維持する配布版です。
 
-**要件：**
+<strong>要件：</strong>
 - Intel Macのみ（Apple Silicon不可）
 - System Integrity Protection（SIP）を無効化する必要がある
 - kextはRealtek/ALFA/Appleによって署名されていない
 
-**対応カード：** AWUS036ACH（RTL8812AU）とAWUS036ACS（RTL8811AU）のみ。
+<strong>対応カード：</strong> AWUS036ACH（RTL8812AU）とAWUS036ACS（RTL8811AU）のみ。
 
 Rokland（ALFAの米国代理店）は[強く警告しています](https://store.rokland.com/blogs/news/apple-mac-os-11-big-sur-compatibility-update-for-alfa-awus036ach-other-products)：*"We strongly advise AGAINST using this driver if your Mac is your primary computer and mission critical."*
 
@@ -177,9 +177,9 @@ Rokland（ALFAの米国代理店）は[強く警告しています](https://stor
 
 ## 4. 動作する解決策：VM + USBパススルー
 
-macOSはALFAカードをネイティブで実行できない（できたとしてもモニターモードは動作しない）ため、Macベースのセキュリティチームの実用的な解決策は、**Linuxを仮想マシンで実行**し、ALFAカードをUSB経由でパススルーすることです。
+macOSはALFAカードをネイティブで実行できない（できたとしてもモニターモードは動作しない）ため、Macベースのセキュリティチームの実用的な解決策は、<strong>Linuxを仮想マシンで実行</strong>し、ALFAカードをUSB経由でパススルーすることです。
 
-このアプローチは**すべてのApple Silicon Mac**（M1/M2/M3/M4）とすべてのIntel Macで動作します。モニターモードとパケットインジェクションは、ネイティブLinuxマシンと同じように機能します。
+このアプローチは<strong>すべてのApple Silicon Mac</strong>（M1/M2/M3/M4）とすべてのIntel Macで動作します。モニターモードとパケットインジェクションは、ネイティブLinuxマシンと同じように機能します。
 
 ### 5.1 必要なもの
 
@@ -196,19 +196,19 @@ macOSはALFAカードをネイティブで実行できない（できたとし�
 #### Step 1: Kali Linux ARM VMを作成
 
 Kali Linux ARM64インストーラーをダウンロードし、UTMで新しいVMを作成します：
-- **アーキテクチャ：** ARM64（aarch64）
-- **RAM：** 最小2 GB（推奨4 GB）
-- **CPU：** 2コア以上
-- **USBコントローラ：** USB 3.0（xHCI）— **これが重要**
+- <strong>アーキテクチャ：</strong> ARM64（aarch64）
+- <strong>RAM：</strong> 最小2 GB（推奨4 GB）
+- <strong>CPU：</strong> 2コア以上
+- <strong>USBコントローラ：</strong> USB 3.0（xHCI）— <strong>これが重要</strong>
 
 > [!IMPORTANT]
-> VMのUSBコントローラを**USB 3.0（xHCI）**として構成する必要があります。USB 2.0コントローラは、特にパケットインジェクション中に、高出力ALFAカードで断続的な切断を引き起こします。
+> VMのUSBコントローラを<strong>USB 3.0（xHCI）</strong>として構成する必要があります。USB 2.0コントローラは、特にパケットインジェクション中に、高出力ALFAカードで断続的な切断を引き起こします。
 
 #### Step 2: VM内でALFAドライバーをインストール
 
-**AWUS036ACH（RTL8812AU）の場合：**
+<strong>AWUS036ACH（RTL8812AU）の場合：</strong>
 
-Kaliカーネルが**6.13以上**の場合、`rtw88`メインラインドライバーが既に含まれているため、インストールは不要です。それより古いカーネルの場合：
+Kaliカーネルが<strong>6.13以上</strong>の場合、`rtw88`メインラインドライバーが既に含まれているため、インストールは不要です。それより古いカーネルの場合：
 
 ```bash
 sudo apt update
@@ -218,7 +218,7 @@ cd 8812au-20210820
 sudo ./install-driver.sh
 ```
 
-**AWUS036ACM（MT7612U）— インストール不要：**
+<strong>AWUS036ACM（MT7612U）— インストール不要：</strong>
 
 MediaTek MT7612UドライバーはLinuxカーネル4.19以来組み込まれています。接続するだけで動作します：
 
@@ -230,7 +230,7 @@ iw dev
 # wlan0 should appear automatically
 ```
 
-**AWUS036AXML / AWUS036AXM（MT7921AUN）の場合：**
+<strong>AWUS036AXML / AWUS036AXM（MT7921AUN）の場合：</strong>
 
 Linux 5.18以来カーネル内ですが、ファームウェアファイルが必要です：
 
@@ -279,9 +279,9 @@ sudo aireplay-ng --test wlan0mon
 
 ### 5.4 代替案：Raspberry Piをリモートペンテストノードとして
 
-専用ハードウェアソリューションを好むチームの場合、Kali Linuxを実行した**Raspberry Pi 4または5**は優れたポータブルワイヤレス監査ノードになります。MacはSSHターミナルとしてのみ使用します。
+専用ハードウェアソリューションを好むチームの場合、Kali Linuxを実行した<strong>Raspberry Pi 4または5</strong>は優れたポータブルワイヤレス監査ノードになります。MacはSSHターミナルとしてのみ使用します。
 
-**利点：**
+<strong>利点：</strong>
 - macOSドライバーの問題を完全に回避
 - AWUS036ACMはPiでプラグ＆プレイ（カーネル内ドライバー、インストール不要）
 - 費用：Pi 5 + ALFAカード<$200 USD
@@ -321,21 +321,21 @@ ALFAカードはUSB 2.0またはUSB 3.0デバイスで、通常USB-Aコネクタ
 | Mac Mini Intel (2018) |✅ 2× | 900 mA | 4× TB3 | 15 W / 7.5 W |✅ Direct |
 | Mac Mini M1 (2020) |✅ 2× | 900 mA | 2× TB/USB 4 | 15 W / 7.5 W |✅ Direct |
 | Mac Mini M2/M2 Pro (2023) |✅ 2× | 900 mA | 2–4× TB4 | 15 W per port |✅ Direct |
-| **Mac Mini M4/M4 Pro (2024)** | **❌ 非対応** | **N/A** | Front: 2× USB-C / Rear: 3× TB4 or TB5 | **Front: 500 mA / Rear: 900 mA+** | **❌ Rear TB ports only** |
+| <strong>Mac Mini M4/M4 Pro (2024)</strong> | <strong>❌ 非対応</strong> | <strong>N/A</strong> | Front: 2× USB-C / Rear: 3× TB4 or TB5 | <strong>Front: 500 mA / Rear: 900 mA+</strong> | <strong>❌ Rear TB ports only</strong> |
 | Mac Studio (all generations) |✅ 2× (rear) | 900 mA | 4× TB4 or TB5 (rear) | 15 W per port |✅ Direct |
 
 ### 6.2 重要警告：Mac Mini M4（2024）
 
-Mac Mini M4/M4 Proは**USB-Aポートを一つも持たない初のMac Mini**です。さらに重要なのは、2つのフロントUSB-Cポートが約**500 mA**しか提供しないことです。これは900 mAを必要とするUSB 3.0 ALFAカードには不十分です。
+Mac Mini M4/M4 Proは<strong>USB-Aポートを一つも持たない初のMac Mini</strong>です。さらに重要なのは、2つのフロントUSB-Cポートが約<strong>500 mA</strong>しか提供しないことです。これは900 mAを必要とするUSB 3.0 ALFAカードには不十分です。
 
 > [!WARNING]
-> Mac Mini M4では、**ALFAカードを必ずリアのThunderbolt 4/5ポートに接続してください。**フロントUSB-Cポート（500 mA）は高出力ALFAカードで電力不安定と接続切断を引き起こします。
+> Mac Mini M4では、<strong>ALFAカードを必ずリアのThunderbolt 4/5ポートに接続してください。</strong>フロントUSB-Cポート（500 mA）は高出力ALFAカードで電力不安定と接続切断を引き起こします。
 
 ### 6.3 Thunderbolt電力割り当てルール
 
-- **Thunderbolt 3（Intel Mac、2016–2020）：** 最初の2ポートで15 W（3 A）、追加ポートで7.5 W（1.5 A）— 先着順。ALFAカードを最初に接続してフル15 Wを確保してください。
-- **Thunderbolt 4（Apple Silicon、2021+）：** 15 W（3 A）/ポート—割り当て制限なし。
-- **USB-Aポート（USB-AポートがあるすべてのMac）：** 常に900 mA（USB 3.0仕様）— どのALFAカードでも十分です。
+- <strong>Thunderbolt 3（Intel Mac、2016–2020）：</strong> 最初の2ポートで15 W（3 A）、追加ポートで7.5 W（1.5 A）— 先着順。ALFAカードを最初に接続してフル15 Wを確保してください。
+- <strong>Thunderbolt 4（Apple Silicon、2021+）：</strong> 15 W（3 A）/ポート—割り当て制限なし。
+- <strong>USB-Aポート（USB-AポートがあるすべてのMac）：</strong> 常に900 mA（USB 3.0仕様）— どのALFAカードでも十分です。
 
 ---
 
@@ -345,11 +345,11 @@ Mac Mini M4/M4 Proは**USB-Aポートを一つも持たない初のMac Mini**で
 
 | 使用ケース | 推奨カード | 理由 | 設定方法 |
 |----------|-----------------|-----|--------------|
-| **最高のモニターモード＆インジェクション** | [AWUS036ACH](https://yupitek.com/en/products/alfa/awus036ach/) | RTL8812AU—Kali Linuxのゴールドスタンダード、最も成熟したドライバー | VM + USBパススルー |
-| **最高のプラグ＆プレイ体験** | [AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm/) | MT7612U—Linux 4.19以来カーネル内、ドライバーインストール不要 | VM + USBパススルー |
-| **WiFi 6E / 6 GHzテスト** | [AWUS036AXML](https://yupitek.com/en/products/alfa/awus036axml/) | MT7921AUN—Linux 5.18以来カーネル内、トリバンド + BT 5.2 | VM + USBパススルー |
-| **予算 / 初心者** | [AWUS036ACS](https://yupitek.com/en/products/alfa/awus036acs/) | RTL8811AU—手頃な価格、モニターモード＆インジェクション対応 | VM + USBパススルー |
-| **ポータブル専用ノード** | [AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm/) | Raspberry Piでインストール不要、低消費電力（600 mA） | Raspberry Pi + Kali |
+| <strong>最高のモニターモード＆インジェクション</strong> | [AWUS036ACH](https://yupitek.com/en/products/alfa/awus036ach/) | RTL8812AU—Kali Linuxのゴールドスタンダード、最も成熟したドライバー | VM + USBパススルー |
+| <strong>最高のプラグ＆プレイ体験</strong> | [AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm/) | MT7612U—Linux 4.19以来カーネル内、ドライバーインストール不要 | VM + USBパススルー |
+| <strong>WiFi 6E / 6 GHzテスト</strong> | [AWUS036AXML](https://yupitek.com/en/products/alfa/awus036axml/) | MT7921AUN—Linux 5.18以来カーネル内、トリバンド + BT 5.2 | VM + USBパススルー |
+| <strong>予算 / 初心者</strong> | [AWUS036ACS](https://yupitek.com/en/products/alfa/awus036acs/) | RTL8811AU—手頃な価格、モニターモード＆インジェクション対応 | VM + USBパススルー |
+| <strong>ポータブル専用ノード</strong> | [AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm/) | Raspberry Piでインストール不要、低消費電力（600 mA） | Raspberry Pi + Kali |
 
 ### 7.2 Intel Macユーザー向け（クライアント接続のみ）
 
@@ -359,7 +359,7 @@ Mac Mini M4/M4 Proは**USB-Aポートを一つも持たない初のMac Mini**で
 | 11 Big Sur以降 | [AWUS036ACH](https://yupitek.com/en/products/alfa/awus036ach/) | [chris1111ドライバー](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter)（SIP無効化） |クライアントのみ—モニターモードなし |
 
 > [!IMPORTANT]
-> **どの**Mac（IntelまたはApple Silicon）でのワイヤレスセキュリティ監査でも、Linuxが必要です—VM上またはRaspberry Pi上。macOSドライバーはモニターモードやパケットインジェクションをサポートしていません。
+> <strong>どの</strong>Mac（IntelまたはApple Silicon）でのワイヤレスセキュリティ監査でも、Linuxが必要です—VM上またはRaspberry Pi上。macOSドライバーはモニターモードやパケットインジェクションをサポートしていません。
 
 ### 7.3 Macユーザーが避けるべきカード
 
@@ -378,15 +378,15 @@ Mac Mini M4/M4 Proは**USB-Aポートを一つも持たない初のMac Mini**で
 
 ### ALFA AWUS036ACHはM1/M2/M3/M4 Macで動作しますか？
 
-**いいえ。** AWUS036ACH（RTL8812AU）は、どのApple Silicon Macでもネイティブでは動作しません。RealtekのmacOSドライバーはx86_64専用にコンパイルされており、ARM64カーネルではロードできません。ただし、USBパススルー付きのLinux VM（UTM/Parallels）内では完璧に動作し、完全なモニターモードとパケットインジェクションサポートがあります。
+<strong>いいえ。</strong> AWUS036ACH（RTL8812AU）は、どのApple Silicon Macでもネイティブでは動作しません。RealtekのmacOSドライバーはx86_64専用にコンパイルされており、ARM64カーネルではロードできません。ただし、USBパススルー付きのLinux VM（UTM/Parallels）内では完璧に動作し、完全なモニターモードとパケットインジェクションサポートがあります。
 
 ### macOSでALFAワイヤレスカードをモニターモードで使用できますか？
 
-**いいえ。** ALFAのmacOSドライバーはモニターモードやパケットインジェクションを実装していません。基本的なWi-Fiクライアント接続のみをサポートします。これはIntelおよびApple Silicon MacのすべてのmacOSバージョンに適用されます。モニターモードにはLinux（VM上またはRaspberry Piなどの別デバイス上）を使用する必要があります。
+<strong>いいえ。</strong> ALFAのmacOSドライバーはモニターモードやパケットインジェクションを実装していません。基本的なWi-Fiクライアント接続のみをサポートします。これはIntelおよびApple Silicon MacのすべてのmacOSバージョンに適用されます。モニターモードにはLinux（VM上またはRaspberry Piなどの別デバイス上）を使用する必要があります。
 
 ### Macユーザーに最適なALFAワイヤレスカードはどれですか？
 
-ワイヤレスセキュリティ監査を行うMacユーザーには、**AWUS036ACH**（RTL8812AU）がベストです。モニターモードとパケットインジェクションにおいてKali Linuxのゴールドスタンダードです。Linux VMでのインストール不要プラグ＆プレイには、ドライバーがLinuxカーネル4.19以来組み込まれている**AWUS036ACM**（MT7612U）を推奨します。
+ワイヤレスセキュリティ監査を行うMacユーザーには、<strong>AWUS036ACH</strong>（RTL8812AU）がベストです。モニターモードとパケットインジェクションにおいてKali Linuxのゴールドスタンダードです。Linux VMでのインストール不要プラグ＆プレイには、ドライバーがLinuxカーネル4.19以来組み込まれている<strong>AWUS036ACM</strong>（MT7612U）を推奨します。
 
 ### MacBook Pro M3でALFAカードが動作しないのはなぜですか？
 
@@ -394,11 +394,11 @@ Apple Silicon Mac（M1/M2/M3/M4）はARM64カーネルを使用しており、x8
 
 ### Apple Silicon macOSで動作するUSB Wi-Fiアダプタはありますか？
 
-**いいえ。** 2026年現在、どのメーカー（ALFA、TP-Link、Netgear、ASUSなど）のサードパーティUSB Wi-Fiアダプタも、Apple Silicon macOS上でネイティブには動作しません。これはドライバーの入手可能性の問題ではなく、アーキテクチャの制限です。Appleの公式推奨は、イーサネット付きトラベルルーターを使用することです。
+<strong>いいえ。</strong> 2026年現在、どのメーカー（ALFA、TP-Link、Netgear、ASUSなど）のサードパーティUSB Wi-Fiアダプタも、Apple Silicon macOS上でネイティブには動作しません。これはドライバーの入手可能性の問題ではなく、アーキテクチャの制限です。Appleの公式推奨は、イーサネット付きトラベルルーターを使用することです。
 
 ### Macの内蔵Wi-Fiをモニターモードで使用できますか？
 
-**はい、ただし制限があります。** macOSの内蔵Wi-Fiは`airport`ユーティリティ（`sudo airport en0 sniff 11`）を通じて基本的なモニターモードをサポートしています。ただし、一度に1チャンネルしかキャプチャできず、パケットインジェクションをサポートせず、内蔵アンテナの到達距離は限定的です。プロフェッショナルなワイヤレス監査には、Linux VM内の外部ALFAカードが必要です。
+<strong>はい、ただし制限があります。</strong> macOSの内蔵Wi-Fiは`airport`ユーティリティ（`sudo airport en0 sniff 11`）を通じて基本的なモニターモードをサポートしています。ただし、一度に1チャンネルしかキャプチャできず、パケットインジェクションをサポートせず、内蔵アンテナの到達距離は限定的です。プロフェッショナルなワイヤレス監査には、Linux VM内の外部ALFAカードが必要です。
 
 ### MacでALFAカードを動作させる最も簡単な方法は？
 

@@ -22,7 +22,7 @@ tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkm
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 ---
 
-`sudo apt upgrade`를 실행하고 재부팅하면 ALFA 어댑터가 사라졌습니다. 인터페이스도, 표시등도, 아무것도 없습니다. 이것은 Linux에서 ALFA Network USB WiFi 어댑터와 관련해 가장 흔한 지원 문의이며 — 커널 업데이트가 거의 항상 원인입니다. 이 가이드는 가장 큰 영향을 받는 두 칩셋 계열, 즉 **RTL8812AU**(AWUS036ACH와 AWUS036ACS에 탑재)와 **MT7921AUN**(AWUS036AXM과 AXML에 탑재)에 대한 체계적인 진단 및 복구 과정을 안내합니다. 각 섹션을 순서대로 따르면 15분 이내에 어댑터가 다시 온라인 상태가 됩니다.
+`sudo apt upgrade`를 실행하고 재부팅하면 ALFA 어댑터가 사라졌습니다. 인터페이스도, 표시등도, 아무것도 없습니다. 이것은 Linux에서 ALFA Network USB WiFi 어댑터와 관련해 가장 흔한 지원 문의이며 — 커널 업데이트가 거의 항상 원인입니다. 이 가이드는 가장 큰 영향을 받는 두 칩셋 계열, 즉 <strong>RTL8812AU</strong>(AWUS036ACH와 AWUS036ACS에 탑재)와 <strong>MT7921AUN</strong>(AWUS036AXM과 AXML에 탑재)에 대한 체계적인 진단 및 복구 과정을 안내합니다. 각 섹션을 순서대로 따르면 15분 이내에 어댑터가 다시 온라인 상태가 됩니다.
 
 {{< tldr >}}
 커널 업데이트가 ALFA 드라이버를 손상시키는 주된 이유는 헤더와 모듈이 동기화되지 않기 때문입니다. RTL8812AU는 dkms autoinstall로 재빌드합니다. MT7921AUN은 firmware-misc-nonfree가 필요합니다. 장기적인 해결책은 apt full-upgrade를 사용하는 것입니다.
@@ -35,22 +35,22 @@ featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 
 ## 커널 업데이트가 드라이버를 손상시키는 이유
 
-Linux WiFi 드라이버에는 두 가지 유형이 있습니다: 커널 소스 트리와 함께 제공되는 **커널 내장(in-kernel)** 드라이버와, 그 외부에 존재하는 **아웃오브트리(out-of-tree)** 드라이버입니다. 어떤 유형을 사용하는지 이해하면 업데이트가 왜 문제를 일으키는지 정확히 알 수 있습니다.
+Linux WiFi 드라이버에는 두 가지 유형이 있습니다: 커널 소스 트리와 함께 제공되는 <strong>커널 내장(in-kernel)</strong> 드라이버와, 그 외부에 존재하는 <strong>아웃오브트리(out-of-tree)</strong> 드라이버입니다. 어떤 유형을 사용하는지 이해하면 업데이트가 왜 문제를 일으키는지 정확히 알 수 있습니다.
 
 ### 아웃오브트리 드라이버와 DKMS
 
-RTL8812AU 칩셋은 커뮤니티가 유지 관리하는 아웃오브트리 드라이버(가장 흔하게는 `aircrack-ng/rtl8812au` 포크)를 사용합니다. 공식 커널 소스의 일부가 아니기 때문에, **현재 실행 중인 특정 커널의 헤더에 맞춰 컴파일되어야** 합니다. 커널 버전이 바뀔 때마다 — `6.6.15` → `6.6.20` 같은 마이너 패치 릴리스조차도 — 컴파일된 모듈은 더 이상 호환되지 않으며 커널이 로드를 거부합니다.
+RTL8812AU 칩셋은 커뮤니티가 유지 관리하는 아웃오브트리 드라이버(가장 흔하게는 `aircrack-ng/rtl8812au` 포크)를 사용합니다. 공식 커널 소스의 일부가 아니기 때문에, <strong>현재 실행 중인 특정 커널의 헤더에 맞춰 컴파일되어야</strong> 합니다. 커널 버전이 바뀔 때마다 — `6.6.15` → `6.6.20` 같은 마이너 패치 릴리스조차도 — 컴파일된 모듈은 더 이상 호환되지 않으며 커널이 로드를 거부합니다.
 
-**DKMS(Dynamic Kernel Module Support)**가 표준 해결책입니다. DKMS는 새 커널 패키지가 설치될 때마다 모듈을 자동으로 재컴파일하는 시스템 수준 훅에 드라이버 소스 코드를 등록합니다. DKMS가 올바르게 설정되면 커널 업데이트가 투명하게 처리됩니다: 새 커널로 재부팅하면 어댑터가 이미 작동합니다.
+<strong>DKMS(Dynamic Kernel Module Support)</strong>가 표준 해결책입니다. DKMS는 새 커널 패키지가 설치될 때마다 모듈을 자동으로 재컴파일하는 시스템 수준 훅에 드라이버 소스 코드를 등록합니다. DKMS가 올바르게 설정되면 커널 업데이트가 투명하게 처리됩니다: 새 커널로 재부팅하면 어댑터가 이미 작동합니다.
 
 DKMS는 두 가지 이유로 조용히 실패할 수 있습니다:
 
-1. **커널 헤더 누락** — 컴파일러는 새 커널이 설치되는 시점에 `linux-headers-$(uname -r)`이 설치되어 있어야 합니다. 헤더가 커널보다 늦게 도착하면 DKMS는 빌드 시점을 놓칩니다.
-2. **오래된 `dkms.conf`** — 설치된 드라이버 버전의 설정 파일이 오래되어 소스 트리와 더 이상 일치하지 않으면, 빌드가 알 수 없는 오류로 실패합니다.
+1. <strong>커널 헤더 누락</strong> — 컴파일러는 새 커널이 설치되는 시점에 `linux-headers-$(uname -r)`이 설치되어 있어야 합니다. 헤더가 커널보다 늦게 도착하면 DKMS는 빌드 시점을 놓칩니다.
+2. <strong>오래된 `dkms.conf`</strong> — 설치된 드라이버 버전의 설정 파일이 오래되어 소스 트리와 더 이상 일치하지 않으면, 빌드가 알 수 없는 오류로 실패합니다.
 
 ### 커널 내장 드라이버 (MT7921AUN)
 
-MT7921AUN 칩셋은 버전 **5.18**부터 메인라인 커널에 포함되어 있습니다. 즉, 컴파일 단계가 필요 없습니다 — 커널이 이미 하드웨어와 통신하는 방법을 알고 있습니다. 하지만 드라이버는 여전히 별도 패키지가 제공하는 **펌웨어 블롭**(`mt7921u.bin`)에 의존합니다. 그 패키지가 없거나 커널 업데이트가 예상 펌웨어 API를 변경하면, 어댑터는 로드된 것처럼 보이지만 어떤 네트워크에도 연결되지 않을 수 있습니다.
+MT7921AUN 칩셋은 버전 <strong>5.18</strong>부터 메인라인 커널에 포함되어 있습니다. 즉, 컴파일 단계가 필요 없습니다 — 커널이 이미 하드웨어와 통신하는 방법을 알고 있습니다. 하지만 드라이버는 여전히 별도 패키지가 제공하는 <strong>펌웨어 블롭</strong>(`mt7921u.bin`)에 의존합니다. 그 패키지가 없거나 커널 업데이트가 예상 펌웨어 API를 변경하면, 어댑터는 로드된 것처럼 보이지만 어떤 네트워크에도 연결되지 않을 수 있습니다.
 
 ### 빠른 진단 명령
 
@@ -89,7 +89,7 @@ sudo dkms status
 sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 ```
 
-**결과 해석:**
+<strong>결과 해석:</strong>
 
 | 출력 | 의미 |
 |---|---|
@@ -109,7 +109,7 @@ sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 
 RTL8812AU는 듀얼 밴드 지원과 안정적인 모니터 모드 덕분에 침투 테스트에 가장 널리 사용되는 ALFA 칩셋입니다. 아웃오브트리 드라이버가 필요하므로 커널 업데이트로 가장 자주 손상되는 칩셋이기도 합니다.
 
-> **EACS(RTL8821CU) 참고:** 커널 6.2 이상에서는 `rtw88_8821cu`가 내장 드라이버이므로 DKMS가 필요하지 않습니다(GX10 커널 6.17에서 모니터/인젝션 실측). 커널 6.2 이전의 구형 커널에서만 morrownr/8821cu 같은 커뮤니티 드라이버를 DKMS로 설치해야 합니다.
+> <strong>EACS(RTL8821CU) 참고:</strong> 커널 6.2 이상에서는 `rtw88_8821cu`가 내장 드라이버이므로 DKMS가 필요하지 않습니다(GX10 커널 6.17에서 모니터/인젝션 실측). 커널 6.2 이전의 구형 커널에서만 morrownr/8821cu 같은 커뮤니티 드라이버를 DKMS로 설치해야 합니다.
 
 ### 4.1 — 커널 헤더 설치
 
@@ -190,7 +190,7 @@ sudo apt update && sudo apt install realtek-rtl88xxau-dkms
 
 ## 해결: MT7921AUN 드라이버 (AWUS036AXM, AXML)
 
-MT7921AUN(Wi-Fi 6E) 칩셋은 완전히 다른 경로를 따릅니다. Linux 5.18부터 **커널 내장 드라이버**이기 때문에 DKMS도, 컴파일도, GitHub 클론도 필요 없습니다. 커널 업데이트가 이를 손상시켜서는 안 되지만 — 펌웨어 패키징 문제가 때때로 손상시킵니다.
+MT7921AUN(Wi-Fi 6E) 칩셋은 완전히 다른 경로를 따릅니다. Linux 5.18부터 <strong>커널 내장 드라이버</strong>이기 때문에 DKMS도, 컴파일도, GitHub 클론도 필요 없습니다. 커널 업데이트가 이를 손상시켜서는 안 되지만 — 펌웨어 패키징 문제가 때때로 손상시킵니다.
 
 ### 5.1 — 펌웨어 패키지 설치
 
@@ -218,7 +218,7 @@ ip link show | grep -E "wlan|wlp"
 
 ### 5.3 — 커널 버전 확인
 
-MT7921AUN 드라이버는 커널 **5.18 이상**이 필요합니다. 이 커널 버전 이전에 출하된 최소 Kali 또는 Ubuntu 이미지를 설치했다면, 모듈이 애초에 존재하지 않습니다:
+MT7921AUN 드라이버는 커널 <strong>5.18 이상</strong>이 필요합니다. 이 커널 버전 이전에 출하된 최소 Kali 또는 Ubuntu 이미지를 설치했다면, 모듈이 애초에 존재하지 않습니다:
 
 ```bash
 uname -r
@@ -255,7 +255,7 @@ sudo dmesg | grep mt7921 | tail -10
 
 예방이 복구보다 간단합니다. 다음 관행은 커널 업데이트가 어댑터를 다시 손상시키는 것을 막아 줍니다.
 
-**Kali rolling에서는 항상 `full-upgrade`를 사용하세요:**
+<strong>Kali rolling에서는 항상 `full-upgrade`를 사용하세요:</strong>
 
 ```bash
 sudo apt update && sudo apt full-upgrade
@@ -263,7 +263,7 @@ sudo apt update && sudo apt full-upgrade
 
 `full-upgrade` 명령은 새 커널 패키지가 설치될 때 일치하는 `linux-headers` 패키지가 *같은 트랜잭션*에서 설치되도록 보장합니다. DKMS 훅은 패키지 설치 중에 실행됩니다 — 헤더가 커널 이후의 나중 `apt` 실행에서 도착하면 DKMS는 빌드를 놓칩니다.
 
-**DKMS 메타패키지 설치:**
+<strong>DKMS 메타패키지 설치:</strong>
 
 ```bash
 sudo apt install dkms linux-headers-generic
@@ -271,7 +271,7 @@ sudo apt install dkms linux-headers-generic
 
 이는 DKMS 패키지의 의존성으로 `linux-headers-generic`을 가져오므로, 헤더가 항상 커널과 함께 최신 상태를 유지합니다.
 
-**Ubuntu HWE 커널 스택:**
+<strong>Ubuntu HWE 커널 스택:</strong>
 
 Ubuntu LTS에서 Hardware Enablement 커널 스택은 GA 커널보다 더 자주 업데이트되고 더 나은 하드웨어 지원을 받습니다. 한 번 설치하면 업데이트가 자동으로 처리됩니다:
 
@@ -279,7 +279,7 @@ Ubuntu LTS에서 Hardware Enablement 커널 스택은 GA 커널보다 더 자주
 sudo apt install linux-generic-hwe-24.04
 ```
 
-**DKMS autoinstall이 활성화되어 있는지 확인:**
+<strong>DKMS autoinstall이 활성화되어 있는지 확인:</strong>
 
 ```bash
 cat /etc/dkms/framework.conf | grep autoinstall
@@ -341,7 +341,7 @@ DKMS 항목을 제거하는 루프는 버전을 찾지 못하면 조용히 실�
 
 작업 중 예기치 않은 상황을 피하려면 모든 시스템 업데이트 전에 이 체크리스트를 사용하세요:
 
-**`apt upgrade` 전:**
+<strong>`apt upgrade` 전:</strong>
 
 ```bash
 # 어떤 커널 패키지가 대기 중인지 정확히 확인
@@ -350,7 +350,7 @@ apt list --upgradable 2>/dev/null | grep linux-image
 
 새 커널이 들어올 예정이라면, 운영 작업 전에 테스트 재부팅을 계획하세요.
 
-**모든 업그레이드와 재부팅 후:**
+<strong>모든 업그레이드와 재부팅 후:</strong>
 
 ```bash
 # 어댑터가 복귀했는지 확인
@@ -360,10 +360,10 @@ ip link show | grep -E "wlan|wlp"
 sudo airmon-ng check
 ```
 
-**대비책을 마련하세요:**
+<strong>대비책을 마련하세요:</strong>
 - Kali Live 이미지가 담긴 USB 드라이브(또는 정상 작동하는 드라이버가 설치된 두 번째 어댑터)를 준비해 두세요. 예정된 작업 중 연결 문제는 비용이 큽니다 — 물리적 대비책은 준비하는 데 몇 분이면 되고 위기를 넘길 수 있습니다.
 
-**Kali에서 중요한 드라이버 패키지 고정:**
+<strong>Kali에서 중요한 드라이버 패키지 고정:</strong>
 
 ```bash
 # 업그레이드 중 특정 드라이버 패키지가 자동 제거되는 것을 방지
@@ -386,7 +386,7 @@ sudo apt-mark unhold realtek-rtl88xxau-dkms && sudo apt upgrade realtek-rtl88xxa
 
 ---
 
-**관련 가이드:**
+<strong>관련 가이드:</strong>
 - [Kali Linux와 Ubuntu에 ALFA USB WiFi 드라이버 설치하기](/ko/blog/install-alfa-driver-kali-ubuntu/) — 드라이버를 처음 설치한다면 여기서 시작하세요
 - [AWUS036ACH Kali Linux 설정 가이드](/ko/blog/awus036ach-kali-linux-setup/) — 모니터 모드 및 패킷 인젝션 검증을 포함한 전체 설정 안내
 

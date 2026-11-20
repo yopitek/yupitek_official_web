@@ -1,6 +1,6 @@
-/* ── Google Fonts: Huninn (headings) + Noto Sans TC/SC/JP/KR + Inter (body reading) ── */
-/* Browsers only download a family when an element on the page actually uses it. */
-@import url('https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
+/* ── Fonts: Huninn (zh-TW headings) + Noto Sans TC/SC/JP/KR/Arabic + Inter (body reading) ── */
+/* Loaded per language by a <link> in partials/extend-head-uncached.html — an @import here would sit
+   in the middle of the bundled CSS, where browsers ignore it. */
 
 /* Headings keep Huninn for brand character */
 html[lang="zh-TW"] h1, html[lang="zh-TW"] h2, html[lang="zh-TW"] h3,
@@ -37,6 +37,12 @@ html[lang="zh-TW"] body {
 html[lang="zh-CN"] .prose { font-family: 'Inter', 'Noto Sans SC', 'Microsoft YaHei UI', 'PingFang SC', sans-serif; }
 html[lang="ja"] .prose    { font-family: 'Inter', 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif; }
 html[lang="ko"] .prose    { font-family: 'Inter', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; }
+
+/* CJK fonts have no italic face, so the browser slants the glyphs; keep quotes upright */
+html[lang="zh-TW"] .prose blockquote, html[lang="zh-CN"] .prose blockquote,
+html[lang="ja"] .prose blockquote, html[lang="ko"] .prose blockquote {
+  font-style: normal;
+}
 
 /* Chinese paragraphs: generous line height + subtle letter spacing */
 html[lang="zh-TW"] .prose p,

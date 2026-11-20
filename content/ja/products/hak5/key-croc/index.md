@@ -47,7 +47,7 @@ featureimage: "/images/products/hak5/key-croc.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/key-croc) |
+| 📖 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/key-croc) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/croc) |
 
 {{< alert >}}

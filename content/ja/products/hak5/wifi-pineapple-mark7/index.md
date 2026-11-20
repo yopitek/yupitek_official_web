@@ -47,7 +47,7 @@ featureimage: "/images/products/hak5/wifi-pineapple.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/wifi-pineapple/master) |
+| 📖 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/wifi-pineapple/master) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/pineapple/mk7) |
 
 {{< alert >}}

@@ -50,7 +50,7 @@ featureimage: "/images/products/hak5/wifi-pineapple-enterprise.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/wifi-pineapple-enterprise/wifi-pineapple-enterprise/) |
+| 📖 公式ドキュメント | [オンラインで見る](https://docs.hak5.org/wifi-pineapple-enterprise/wifi-pineapple-enterprise/) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/pineapple/ent1) |
 
 {{< alert >}}

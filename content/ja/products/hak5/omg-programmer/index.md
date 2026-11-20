@@ -40,7 +40,7 @@ featureimage: "/images/products/hak5/omg-programmer.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://o-mg.github.io/WebFlasher/) |
+| 📖 公式ドキュメント | [オンラインで見る](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}
 製品のお見積もりをご希望ですか？[お問い合わせ](/ja/contact/)ください。

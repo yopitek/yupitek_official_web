@@ -59,6 +59,7 @@ Sitemap: https://yupitek.com/zh-tw/sitemap.xml
 Sitemap: https://yupitek.com/zh-cn/sitemap.xml
 Sitemap: https://yupitek.com/en/sitemap.xml
 Sitemap: https://yupitek.com/ja/sitemap.xml
+Sitemap: https://yupitek.com/ko/sitemap.xml
 Sitemap: https://yupitek.com/ar/sitemap.xml
 Sitemap: https://yupitek.com/es/sitemap.xml
 Sitemap: https://yupitek.com/pt/sitemap.xml

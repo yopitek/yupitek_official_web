@@ -43,7 +43,7 @@ featureimage: "/images/products/hak5/usb-rubber-ducky.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/hak5-usb-rubber-ducky/master) |
+| 📖 公式ドキュメント | [オンラインで見る](https://documentation.hak5.org/hak5-usb-rubber-ducky/master) |
 | ⬇️ ファームウェア & ツール | [Hak5 ダウンロード](https://downloads.hak5.org/ducky) |
 
 {{< alert >}}

@@ -43,7 +43,7 @@ featureimage: "/images/products/hak5/omg-plug.png"
 
 | リソース | リンク |
 |----------|--------|
-| �� 公式ドキュメント | [オンラインで見る](https://o.mg.lol/setup/OMGPlug/) |
+| 📖 公式ドキュメント | [オンラインで見る](https://o.mg.lol/setup/OMGPlug/) |
 | ⬇️ ファームウェア & ツール | [O.MG WebFlasher](https://o-mg.github.io/WebFlasher/) |
 
 {{< alert >}}

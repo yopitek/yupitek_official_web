@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["WPA3", "SAE", "dragonblood", "transition-mode", "PMF", "kali-linux", "ALFA-network", "penetration-testing"]
 featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "WPA3とWPA2はセキュリティテストでどう違いますか？"
     answer: "WPA3はSAEハンドシェイクを採用しPSKに代え、前方秘匿性を持ちオフライン辞書攻撃が不可能です。PMFが必須要件ですが、移行モードはダウングレード攻撃面を導入します。"
@@ -64,7 +64,7 @@ WPA3-Enterpriseは、証明書ベースの相互認証を伴うGCMP-256とHMAC-S
 
 WPA3テストには、信頼性の高いモニターモード、インジェクションサポート、および6 GHz WPA3ネットワーク向けのトライバンド機能を持つアダプターが必要です：
 
-- **AWUS036AXML** — Wi-Fi 6E（6 GHz）WPA3ネットワークに必須。Mediatek MT7921AUNチップセット。カーネル5.18以降のKali Linuxでの完全なモニターモードとインジェクションサポート。WPA3のみの展開がますます一般的になっている6 GHzチャンネルをカバーする唯一のALFAアダプター。
+- **AWUS036AXML** — Wi-Fi 6E（6 GHz）WPA3ネットワークに必須。Mediatek MT7921AUNチップセット。カーネル5.18以降のKali Linuxでモニターモード・AP・WPA3が利用可能。パケットインジェクションはkernel 6.16以前ではコミュニティ報告がありますが、stock kernel 6.17の実測では失敗しました（主因はmac80211 chanctxのリグレッションで、チップ自体の制限ではありません）。インジェクションが必要な場合はAWUS036ACHをお選びください。WPA3のみの展開がますます一般的になっている6 GHzチャンネルをカバーする唯一のALFAアダプター。
 - **AWUS036ACH** — 2.4/5 GHz WPA3テストに適切。RTL8812AUチップセット。aircrack-ngツールチェーンとの最大互換性と、Kali Linuxバージョン全体での最も広いドライバーサポート。
 
 ### モニターモードの有効化

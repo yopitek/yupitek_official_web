@@ -1,6 +1,6 @@
 ---
 title: "DGX SparkのWi-Fiが繋がらない？ALFA USB無線アダプターで10分解決"
-description: "NVIDIA DGX Sparkの内蔵Wi-Fi問題を解決。ドライバ不要のUSB無線アダプターで10分で設定完了。ASUS ASCENT GX10、MSI EdgeXpert、HP ZGX Nano、ALTOS BrainSphere GB10 F1、GIGABYTE AI TOP ATOMにも対応。"
+description: "NVIDIA DGX Sparkの内蔵Wi-Fi問題を、ドライバー不要のALFA USB無線アダプターで10分で解決する方法を解説します。ASUS GX10で実機検証済みで、他のGB10機種でも同様に使える見込みです。"
 date: 2026-05-20
 draft: false
 showBreadcrumbs: true
@@ -8,21 +8,23 @@ showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "DGX SparkのWi-Fiがつながらないのはなぜですか？"
     answer: "DGX Spark内蔵のMediaTek MT7925 Wi-Fi 7チップはOOBE段階のwpa_supplicantが過度に簡素化されており、特定ブランドのAP（特にUniFi）と非互換で、WPA2-Enterpriseはほぼ確実に接続できません。"
   - question: "ALFA USBアダプターの解決策はすべてのGB10 AI Serverに適用されますか？"
-    answer: "適用されます。NVIDIA GB10 Grace Blackwell Superchipを搭載するすべてのAI Edge Server（ASUS、MSI、HP、ALTOS、GIGABYTE）は同じMT7925 Wi-Fiチップを使用し、ALFA AWUS036ACMの解決策がすべて共通です。"
+    answer: "適用されます。NVIDIA GB10 Grace Blackwell Superchipを搭載するすべてのAI Edge Server（ASUS、MSI、HP、ALTOS、GIGABYTE）は同じMT7925 Wi-Fiチップを使用しているため、ALFA AWUS036ACMの解決策はすべてに共通すると見込まれます（実機テストはASUS GX10のみで、他の機種は個別にテストしていません）。"
   - question: "AWUS036ACMはDGX Sparkでドライバーインストールが必要ですか？"
     answer: "不要です。MT7612Uのmt76ドライバーはLinux Kernel 4.19以降カーネルメインラインに内蔵され、DGX OSのKernel 6.17+が自然に完全サポートし、USB挿入で自動的に読み込まれます。"
   - question: "ALFA USBアダプターでWi-Fi問題を修復するのにどのくらいかかりますか？"
-    answer: "10分以内です。USB 3.0ポートに挿入後システムが自動的にドライバーを読み込み、nmcliコマンドでスキャンしてWiFiに接続するだけで完了し、ドライバーコンパイルや再起動は不要です。"
+    answer: "10分以内です。USB-C→USB-A変換アダプターを介してGX10のUSB-Cポートに接続後、システムが自動的にドライバーを読み込み、nmcliコマンドでスキャンしてWiFiに接続するだけで完了し、ドライバーコンパイルや再起動は不要です。"
   - question: "DGX Sparkで他のALFAアダプターを使えますか？"
-    answer: "AWUS036ACH（RTL8812AU）はドライバーの手動コンパイルが必要で、GB10のARM64プラットフォームでは成功を保証できません。AWUS036ACMは唯一コンパイル不要、プラグアンドプレイが確認されたソリューションです。"
+    answer: "使えます。ASUS GX10（GB10、Ubuntu 24.04 ARM64、kernel 6.17）でALFA現行9機種を実機テストしたところ、すべてkernel内蔵ドライバーで動作し、挿すだけで使用でき、DKMSは不要でした。AWUS036ACHは内蔵のrtw88_8812auを使用します。ただしAWUS036AXM / AXMLはstock kernel 6.17上でパケットインジェクションに失敗するため、接続とAP用途にのみ適しています。他のGB10機種は個別にテストしていません。"
 ---
 
 待ちに待った **NVIDIA DGX Spark**（コードネーム Project DIGITS）がついに届いた。
+
+> 📌 本記事は2026年11月のGX10実機テストに基づいて更新しました：ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）では、ALFA現行9機種のアダプターがすべてkernel内蔵ドライバーで動作し、挿すだけで使用でき、DKMSは不要です。詳細データは[ALFA 9機種 ARM64 実機テスト総まとめ](/ja/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)をご覧ください。テストはGX10のみで実施しており、他のGB10機種は個別にテストしていません。
 
 
 {{< tldr >}}
@@ -111,7 +113,7 @@ DGX Sparkが注目を集めているのは、単にNVIDIA自社ブランドで�
 | 重量 | 1.48 kg | 1.2 kg | 1.2 kg | 1.25 kg | < 1.5 kg | 1.2 kg |
 | 付属ソフトウェア | — | — | — | HP ZGX Toolkit | Altos aiGeniプラットフォーム | — |
 
-> ⚠️ **結論**：どのGB10 AI Edge Serverを購入しても、内蔵Wi-Fiは同じMediaTek MT7925チップであり、すべてが同じ接続問題に遭遇する可能性がある。以下のALFA USBアダプターによる解決策は、**6機種すべてで有効**だ。
+> ⚠️ **結論**：どのGB10 AI Edge Serverを購入しても、内蔵Wi-Fiは同じMediaTek MT7925チップであり、すべてが同じ接続問題に遭遇する可能性がある。以下のALFA USBアダプターによる解決策は、**6機種すべてで有効と見込まれる**（実機テストはASUS GX10のみで、他の機種は個別にテストしていない）。
 
 ---
 
@@ -125,9 +127,9 @@ NVIDIAが公式テストしているのはDGX OS（Ubuntu 24.04ベース）の�
 2. ✅ **ARM64 (aarch64) 完全サポート**——GB10でプラグアンドプレイ
 3. ✅ **実績のある安定性**——コミュニティで広く検証済み
 
-市販の数十種類のUSB無線アダプターの中で、この3つをすべて満たすものはごくわずかだ。
+ALFA現行9機種のUSBアダプターは、GX10で実測したkernel 6.17上ですべてこの3条件を満たす（GX10で実機テスト済み。記事末尾の「その他のALFAアダプター」を参照）。本記事では、管理用ネットワークに最も適したAWUS036ACMを例に説明する。
 
-### 🥇 唯一の推奨：ALFA AWUS036ACM
+### 🥇 推奨：ALFA AWUS036ACM
 
 | 項目 | 詳細 |
 |------|------|
@@ -142,27 +144,27 @@ NVIDIAが公式テストしているのはDGX OS（Ubuntu 24.04ベース）の�
 
 #### なぜこれなのか？6つの理由
 
-**1. 唯一の真のドライバ不要・プラグアンドプレイ**
+**1. ドライバ不要・プラグアンドプレイ**
 
 mt76ドライバはLinux Kernel 4.19以降メインラインに組み込まれている。DGX SparkのKernel 6.17はこれをネイティブにサポート。USBに挿せば、システムが**自動的にドライバをロード**する——インストールは一切不要。
 
-**2. 唯一のARM64検証済み**
+**2. ARM64で実機検証済み**
 
-MT7612Uは、Raspberry Pi OS（aarch64）、Ubuntu Server（ARM64）など、複数のARMプラットフォームで何年も実戦テストされてきた。GB10のARM64アーキテクチャは完全互換で、パッチは一切不要。
+MT7612Uは、Raspberry Pi OS（aarch64）、Ubuntu Server（ARM64）など、複数のARMプラットフォームで何年も実戦テストされてきた。GB10プラットフォームのASUS GX10（kernel 6.17）でも実機テストを行い、挿すだけで `mt76x2u` が自動ロードされ、パッチは一切不要だった。
 
-**3. 唯一のゼロコンパイル・ゼロ設定**
+**3. ゼロコンパイル・ゼロ設定**
 
-Realtek RTL8812AUがKernel更新のたびにDKMSと再コンパイルを必要とするのに対し、ACMにはそれが必要ない。DGX OSのKernelを更新しても——ACMはそのまますぐ使える。
+mt76ドライバは長年メインラインに含まれているため、DGX OSのKernelを更新しても、ACMはそのまますぐ使える。（Realtek機種もkernel 6.17上ではコンパイル不要。最低バージョンは機種ごとに異なり、それより古い場合にのみDKMSが必要。）
 
-**4. 唯一のドライバ不要・完全モニターモード＋パケットインジェクション対応**
+**4. モニターモードとパケットインジェクションに対応**
 
-DGX Spark上でKali Linux VMを動かしてセキュリティリサーチを行う場合、ACMは現在、モニターモード、パケットインジェクション、仮想インターフェース（VIF）に対応する唯一のドライバ不要アダプターだ。
+DGX Spark上でKali Linux VMを動かしてセキュリティリサーチを行う場合、ACMはモニターモード、パケットインジェクション、仮想インターフェース（VIF）に対応している。GX10での実測インジェクション成功率は2.4GHz 63–83%、5GHz 76%。インジェクションが主な用途なら、AWUS036EACS、ACH（両バンド100%）のほうが性能は上だ。
 
-**5. 唯一のアンテナ交換可能な中高級機**
+**5. アンテナ交換が可能**
 
 2本のRP-SMA着脱式アンテナ。標準で5dBiが付属し、7dBiや9dBiの高利得アンテナに交換可能——サーバールームや工場などWi-Fi電波の弱いエッジ展開に最適。
 
-**6. 唯一のTAA準拠**
+**6. TAA準拠**
 
 組織が政府調達要件を持つ場合、ALFA AWUS036ACMは**TAA準拠**を取得した数少ない外付けUSB無線アダプターの一つ。
 
@@ -174,7 +176,7 @@ DGX SparkでALFA AWUS036ACMを使用する完全な手順：
 
 ### ステップ1：USBアダプターを接続
 
-AWUS036ACMをDGX SparkのUSB 3.0 Type-Aポートに挿入する。
+DGX SparkのUSBポートはすべてUSB-Cなので、USB-C to USB-A変換アダプター（データ転送対応）を介してAWUS036ACMを挿入する。
 
 ターミナルを開き、以下を実行：
 
@@ -184,11 +186,16 @@ dmesg | tail -20
 
 以下のような出力が表示されるはず：
 
+以下は AWUS036ACM を ASUS GX10（kernel 6.17.0-1014-nvidia）で実測した dmesg 出力です（MAC アドレスはマスク済み）：
+
 ```
-mt76_usb 3-1:1.0: MAC/BBP MT7612U (rev 2)
-mt76_usb 3-1:1.0: firmware loaded: mt7612u.bin
-ieee80211 phy1: rt2x00_set_rt: Info - RT chipset 7612, rev 0200 detected
-ieee80211 phy1: rt2x00lib_probe_dev: Information - Successfully initialized device
+usb 5-1: new high-speed USB device number 2 using xhci-hcd
+usb 5-1: New USB device found, idVendor=0e8d, idProduct=7612, bcdDevice= 1.00
+mt76x2u 5-1:1.0: ASIC revision: 76120044
+mt76x2u 5-1:1.0: ROM patch build: 20141115060606a
+mt76x2u 5-1:1.0: Firmware Version: 0.0.00
+usbcore: registered new interface driver mt76x2u
+mt76x2u 5-1:1.0 wlxXXXXXXXXXXXX: renamed from wlan0
 ```
 
 **これがドライバが自動ロードされた合図だ。** 一切のインストールは行っていない。
@@ -207,7 +214,7 @@ nmcli device status
 # 利用可能なネットワークをスキャン
 nmcli device wifi list
 
-# SSIDに接続（"MyLabWiFi"を実際のものに置き換え）
+# SSIDに接続 ("MyLabWiFi"を実際のものに置き換え)
 sudo nmcli device wifi connect "MyLabWiFi" password "your-password"
 
 # 接続状態を確認
@@ -272,11 +279,11 @@ AIモデルのトレーニングは膨大なネットワークトラフィック
 
 ### シナリオA：AI開発者
 ```
-10GbE → モデル推論、データ転送
-ALFA ACM → SSH、Jupyter Notebook、システム更新
+10GbE → モデル推論, データ転送
+ALFA ACM → SSH, Jupyter Notebook, システム更新
 ```
 
-### シナリオB：セキュリティリサーチラボ
+### シナリオB：セキュリティリサーチラボ（自分が所有する、または許可を得たネットワークに限る）
 ```
 GB10 → LLMファインチューニング実行
 Kali Linux VM → USBパススルー ALFA ACM → 無線侵入テスト
@@ -299,6 +306,26 @@ A：同じメーカーだが、ドライバアーキテクチャはまったく�
 **Q：このアダプターはDGX OS以外でも使えるか？**
 
 A：もちろん。MT7612UドライバはLinux Kernelメインラインの一部であり、Ubuntu、Debian、Raspberry Pi OS、Kali Linux、Fedora、Arch Linux——Kernel 4.19以上ならすべてプラグアンドプレイ対応。
+
+---
+
+## その他のALFAアダプター：GX10での実機テスト結果
+
+ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）でALFA現行9機種のアダプターを実機テストしたところ、すべてkernel内蔵ドライバーで動作し、挿すだけで使用でき、DKMSは不要だった。他のGB10機種（DGX Spark、MSI EdgeXpert、GIGABYTE AI TOP ATOM、ALTOS BrainSphere、HP ZGX Nano）は同じGB10とNVIDIA kernel系列を使用しているため同じ動作が見込まれるが、個別にはテストしていない。
+
+| 機種 | チップ | 内蔵ドライバー | パケットインジェクション（GX10実測） | 適した用途 |
+|------|------|----------|----------------------|----------|
+| AWUS036ACM | MediaTek MT7612U | mt76x2u | ✅ 2.4G 63–83%／5G 76% | 管理用ネットワーク、AP、ペネトレーションテスト |
+| AWUS036ACHM | MediaTek MT7610U | mt76x0u | ⚠️ 2.4G 96–100%／5G ブロードキャストのみ | 管理用ネットワーク、AP |
+| AWUS036ACH | Realtek RTL8812AU | rtw88_8812au | ✅ 両バンド 100% | ペネトレーションテスト、長距離受信 |
+| AWUS036ACS | Realtek RTL8811AU | rtw88_8821au | ✅ 2.4G 100%／5G 96% | ペネトレーションテスト、持ち運び |
+| AWUS036EACS | Realtek RTL8821CU（Bluetooth搭載） | rtw88_8821cu | ✅ 両バンド 100% | ペネトレーションテスト |
+| AWUS036AX | Realtek RTL8832BU | rtw89_8852bu | ✅ 2.4G 96% | Wi-Fi 6接続、AP |
+| AWUS036AXER | Realtek RTL8832BU | rtw89_8852bu | ✅ 2.4G 73% | Wi-Fi 6接続、AP、監視時の受信 |
+| AWUS036AXM | MediaTek MT7921AUN | mt7921u | ❌ 失敗 | 接続、APのみ |
+| AWUS036AXML | MediaTek MT7921AUN | mt7921u | ❌ 失敗 | 接続、APのみ（6GHzは実機で動作確認） |
+
+AWUS036AXM / AXMLはstock kernel 6.17上でパケットインジェクションに失敗する（monitor、AP、WPA3は使用可能）ため、ペネトレーションテストには適さない。各機種のドライバーがメインラインに入った最低kernelバージョンは異なり（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）、それより古い場合にのみコミュニティのDKMSドライバーが必要だ。詳細データは[ALFA 9機種 ARM64 実機テスト総まとめ](/ja/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)を参照。
 
 ---
 

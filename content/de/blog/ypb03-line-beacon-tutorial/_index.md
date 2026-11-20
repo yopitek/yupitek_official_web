@@ -36,18 +36,18 @@ Dass LINE Beacon als OMO (Online-Merge-Offline)-Marketinginstrument überzeugt, 
 ### Gängige Marketingmethoden
 * **Präzise Echtzeit-Begrüßung**: Sobald ein Kunde den Bereich betritt (löst ein `enter`-Ereignis aus), wird sofort eine persönliche Begrüßung oder ein sofort einlösbarer Rabattgutschein gepusht — präziser Fang von Passanten am Eingang.
 * **Interaktives Sammelpunkte- und Check-in-Spiel**: Mehrere Beacon werden in verschiedenen Zonen oder an Ständen eines Einkaufszentrums verteilt. Erreicht der Kunde einen bestimmten Punkt, schaltet er eine Stufe frei oder sammelt Punkte, die er nach Erreichen des Ziels direkt in LINE gegen LINE Points oder physische Geschenke einlösen kann — das steigert den Entdecker-Spaß.
-* **Offline-Daten-Retargeting**: Zeiterfassung und Frequenz der Beacon-Kontakte ermöglichen es Marken, über die LINE-Anzeigenplattform (LAP) diese Gruppe der „tatsächlich vor Ort Gewesenen" für Retargeting anzusprechen.
+* **Offline-Daten-Retargeting**: Zeiterfassung und Frequenz der Beacon-Kontakte ermöglichen es Marken, über die LINE-Anzeigenplattform (LAP) diese Gruppe der „tatsächlich vor Ort Gewesenen“ für Retargeting anzusprechen.
 
 ### Taiwanesische Praxisbeispiele
 
 In Taiwan hat LINE Beacon bereits in vielen großen öffentlichen Einrichtungen und bei bekannten Marken beeindruckende Erfolge gezeigt:
 
 1. **Taipei U-Bahn-Pendler-Überraschung**:
-   Die Taipei U-Bahn hat an mehreren Verkehrsknotenpunkten (z. B. Taipei Hauptbahnhof, Ximen, Zhongxiao Fuxing) LINE Beacon ausgerollt. Pendler erhalten während der Fahrt — sofern Bluetooth und LINE aktiv sind — Veranstaltungshinweise. Über Check-in-Missionen wie die „U-Bahn-Überraschungszüge" lassen sich bestimmte Puzzleteile sammeln und gegen kostenlose LINE Points einlösen. So wurden die täglichen Millionen-Pendlerströme nahtlos in interaktive digitale Marketing-Assets verwandelt.
+   Die Taipei U-Bahn hat an mehreren Verkehrsknotenpunkten (z. B. Taipei Hauptbahnhof, Ximen, Zhongxiao Fuxing) LINE Beacon ausgerollt. Pendler erhalten während der Fahrt — sofern Bluetooth und LINE aktiv sind — Veranstaltungshinweise. Über Check-in-Missionen wie die „U-Bahn-Überraschungszüge“ lassen sich bestimmte Puzzleteile sammeln und gegen kostenlose LINE Points einlösen. So wurden die täglichen Millionen-Pendlerströme nahtlos in interaktive digitale Marketing-Assets verwandelt.
 2. **Taiwan Laternenfest in Taipei (intelligente Ausstellungsführung)**:
-   Beim „2023 Taiwan Laternenfest in Taipei" setzten die Veranstalter **350 LINE Beacon** ein, die vier große Ausstellungsbereiche flächendeckend abdeckten. Näherten sich Besucher bestimmten Laternenkunstwerken, pushpte LINE automatisch Sprachführungen, gastronomische Empfehlungen (gekoppelt mit LINE-Spots) oder Taxigutscheine (gekoppelt mit LINE TAXI). Statt vor Ort Papierprospekte abzuholen, wurde das Handy zum persönlichen Cloud-Führer.
+   Beim „2023 Taiwan Laternenfest in Taipei“ setzten die Veranstalter **350 LINE Beacon** ein, die vier große Ausstellungsbereiche flächendeckend abdeckten. Näherten sich Besucher bestimmten Laternenkunstwerken, pushpte LINE automatisch Sprachführungen, gastronomische Empfehlungen (gekoppelt mit LINE-Spots) oder Taxigutscheine (gekoppelt mit LINE TAXI). Statt vor Ort Papierprospekte abzuholen, wurde das Handy zum persönlichen Cloud-Führer.
 3. **SOGO Kaufhaus Jubiläumsaktion — Passanten-Abfang**:
-   SOGO nutzte die Nähe zur U-Bahn-Station und platzierte LINE Beacon an den U-Bahn-Ausgängen und rund um das Kaufhaus. Während der Jubiläumsaktion poppte bei Annäherung potenzieller Kunden proaktiv ein Aktionshinweis auf. In nur 4 Tagen entstanden 5 Millionen Impressionen und über 1 Million effektive Kontakte — die „Passanten" außerhalb wurden erfolgreich abgefangen und ins Geschäft gelenkt.
+   SOGO nutzte die Nähe zur U-Bahn-Station und platzierte LINE Beacon an den U-Bahn-Ausgängen und rund um das Kaufhaus. Während der Jubiläumsaktion poppte bei Annäherung potenzieller Kunden proaktiv ein Aktionshinweis auf. In nur 4 Tagen entstanden 5 Millionen Impressionen und über 1 Million effektive Kontakte — die „Passanten“ außerhalb wurden erfolgreich abgefangen und ins Geschäft gelenkt.
 4. **FamilyMart Let's Café-Kampagne**:
    FamilyMart setzte über das dichte taiwanische Filialnetz Beacon ein. Begleitend zu einer Themenkampagne startete ein Online-Spiel, das Kunden in der Filiale über LINE Beacon auslöste, um einen Rabattgutschein für Let's Café-Eiskaffee zu erhalten. Mitgliedsaktivität und Filialbesuchsbereitschaft stiegen spürbar.
 5. **Shiseido Beauty-Counter-Zuströmung**:
@@ -57,7 +57,7 @@ In Taiwan hat LINE Beacon bereits in vielen großen öffentlichen Einrichtungen 
 
 ## Schritt 1: LINE Official Account registrieren und die Hardware ID (HWID) erhalten
 
-Damit LINE unser YPB03 erkennt, musst du zuerst in der LINE-Entwicklerkonsole eine exklusive „Geräte-Ausweisnummer" beantragen — die Hardware ID (HWID).
+Damit LINE unser YPB03 erkennt, musst du zuerst in der LINE-Entwicklerkonsole eine exklusive „Geräte-Ausweisnummer“ beantragen — die Hardware ID (HWID).
 
 1. **LINE Developers Plattform öffnen**:
    Melde dich in der [LINE Developers Console](https://developers.line.biz/) mit deinem LINE-Konto an.
@@ -66,17 +66,17 @@ Damit LINE unser YPB03 erkennt, musst du zuerst in der LINE-Entwicklerkonsole ei
    - Lege unter diesem Provider einen Channel vom Typ **Messaging API** an (das erzeugt einen LINE Official Account, kurz LINE Bot).
 3. **LINE Official Account Manager öffnen**:
    - Melde dich im [LINE Official Account Manager](https://manager.line.me/) an.
-   - Wähle deinen neuen Official Account, klicke oben rechts auf „Einstellungen".
-   - Finde im linken Menü „Messaging API" und bestätige, dass die API aktiviert ist.
+   - Wähle deinen neuen Official Account, klicke oben rechts auf „Einstellungen“.
+   - Finde im linken Menü „Messaging API“ und bestätige, dass die API aktiviert ist.
 4. **LINE Beacon-Gerät beantragen**:
-   - Klicke auf derselben Messaging-API-Einstellungsseite auf **„LINE Beacon associated device registration"**.
+   - Klicke auf derselben Messaging-API-Einstellungsseite auf **„LINE Beacon associated device registration“**.
    - Folge den Anweisungen; LINE erzeugt zufällig eine **5-Byte (10 Hexadezimalzeichen)** lange **Hardware ID (HWID)** (Beispiel: `0123456789`). Notiere dir diese HWID — wir brauchen sie gleich zum Konfigurieren der Bluetooth-Parameter.
 
 ---
 
 ## Schritt 2: YPB03 mit der BeaconSET+ App konfigurieren
 
-Mit deiner Ausweisnummer (HWID) in der Hand musst du diese Nummer ins YPB03-Beacon „schreiben" und es so einrichten, dass es im von LINE vorgegebenen Format rundfunkt.
+Mit deiner Ausweisnummer (HWID) in der Hand musst du diese Nummer ins YPB03-Beacon „schreiben“ und es so einrichten, dass es im von LINE vorgegebenen Format rundfunkt.
 
 ### 1. Einrichtungswerkzeug installieren
 Lade auf dem Handy die offizielle Einrichtungssoftware von Minew herunter:
@@ -86,7 +86,7 @@ Lade auf dem Handy die offizielle Einrichtungssoftware von Minew herunter:
 ### 2. Mit dem YPB03 verbinden
 1. Aktiviere Bluetooth am Handy und öffne die **BeaconSET+** App.
 2. Suche in der Geräteliste nach einem Gerät namens `YPB03` oder der zugehörigen MAC-Adresse.
-3. Tippe auf „Verbinden"; die App fordert ein Passwort. Das Werkspasswort lautet `minew123` (ändere es nach dem Verbinden aus Sicherheitsgründen).
+3. Tippe auf „Verbinden“; die App fordert ein Passwort. Das Werkspasswort lautet `minew123` (ändere es nach dem Verbinden aus Sicherheitsgründen).
 
 ### 3. LINE Simple Beacon Broadcast-Slot konfigurieren
 YPB03 unterstützt simultanes Multi-Channel-Broadcasting. Wir widmen einen SLOT dem LINE-Format:
@@ -122,45 +122,45 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# LINE Developers 註冊的 HWID（這裡改為您申請到的 HWID）
+# Bei LINE Developers registrierte HWID (durch die dir zugeteilte HWID ersetzen)
 TARGET_HWID = "0123456789"
 
 @app.route("/callback", methods=["POST"])
 def callback():
-    # 取得 LINE 平台傳過來的 JSON 資料
+    # Die von der LINE-Plattform gesendeten JSON-Daten abrufen
     body = request.get_json()
     
     if not body or "events" not in body:
         return jsonify({"status": "error", "message": "No events found"}), 400
 
-    # 巡檢所有的事件
+    # Alle Events durchlaufen
     for event in body["events"]:
-        # 篩選事件類型為 beacon 的事件
+        # Nur Events vom Typ beacon herausfiltern
         if event.get("type") == "beacon":
             user_id = event["source"].get("userId")
             reply_token = event.get("replyToken")
             
             beacon_data = event.get("beacon", {})
             hwid = beacon_data.get("hwid")
-            beacon_type = beacon_data.get("type") # enter (進入), stay (逗留), banner (點擊橫幅)
+            beacon_type = beacon_data.get("type") # enter (betreten), stay (verweilen), banner (Banner angetippt)
             
-            print(f"收到 Beacon 事件！使用者 ID: {user_id}")
-            print(f"設備 HWID: {hwid} | 觸發類型: {beacon_type}")
+            print(f"Beacon-Event empfangen! Benutzer-ID: {user_id}")
+            print(f"Geräte-HWID: {hwid} | Auslösetyp: {beacon_type}")
             
-            # 判斷是否為我們的 YPB03 設備
+            # Prüfen, ob es sich um unser YPB03-Gerät handelt
             if hwid == TARGET_HWID:
                 if beacon_type == "enter":
-                    print("--> 使用者進入了 YPB03 範圍！觸發迎賓機制。")
-                    # 在這裡，您可以呼叫 LINE Messaging API 送出歡迎折價券給 user_id
+                    print("--> Benutzer hat den YPB03-Bereich betreten! Begrüßung wird ausgelöst.")
+                    # Hier kannst du die LINE Messaging API aufrufen, um user_id einen Willkommensgutschein zu senden
                 elif beacon_type == "stay":
-                    print("--> 使用者持續在範圍內...")
+                    print("--> Benutzer befindet sich weiterhin im Bereich...")
                 elif beacon_type == "banner":
-                    print("--> 使用者點擊了聊天室上方的 LINE Beacon 橫幅！")
+                    print("--> Benutzer hat das LINE-Beacon-Banner oben im Chat angetippt!")
                     
     return jsonify({"status": "ok"}), 200
 
 if __name__ == "__main__":
-    # 本地測試執行在 5000 端口
+    # Lokal auf Port 5000 zum Testen ausführen
     app.run(port=5000)
 ```
 
@@ -186,9 +186,9 @@ Die LINE-Plattform verlangt, dass der Webhook an eine öffentliche HTTPS-URL gel
 4. Nimm das Handy zur Hand und gehe langsam in den Broadcast-Bereich des YPB03 (für den Innentest kannst du die Sendeleistung manuell reduzieren).
 5. Beobachte die Python-Konsole — du siehst die Echtzeit-Log-Ausgabe:
    ```text
-   收到 Beacon 事件！使用者 ID: U1234567890abcdef...
-   設備 HWID: 0123456789 | 觸發類型: enter
-   --> 使用者進入了 YPB03 範圍！觸發迎賓機制。
+   Beacon-Event empfangen! Benutzer-ID: U1234567890abcdef...
+   Geräte-HWID: 0123456789 | Auslösetyp: enter
+   --> Benutzer hat den YPB03-Bereich betreten! Begrüßung wird ausgelöst.
    ```
 
 ---
@@ -219,7 +219,7 @@ Die LINE-Plattform verlangt, dass der Webhook an eine öffentliche HTTPS-URL gel
 
 #### F: Was ist der Unterschied zwischen dem `stay`- und dem `enter`-Ereignis bei LINE Beacon?
 **A**:
-- **`enter`**-Ereignis: Wird genau einmal ausgelöst, wenn der Nutzer „erstmals" in den Bluetooth-Signalbereich des Beacon eintritt — ideal für Willkommensnachrichten oder Tagesrabattgutscheine.
+- **`enter`**-Ereignis: Wird genau einmal ausgelöst, wenn der Nutzer „erstmals“ in den Bluetooth-Signalbereich des Beacon eintritt — ideal für Willkommensnachrichten oder Tagesrabattgutscheine.
 - **`stay`**-Ereignis: Während der Nutzer im Signalbereich verweilt, sendet die LINE-Plattform etwa alle 10 Sekunden ein `stay`-Ereignis. Damit lässt sich die Aufenthaltsdauer in der Zone berechnen — bei hoher Nebenläufigkeit ist jedoch die Serverbelastung zu beachten.
 
 ---

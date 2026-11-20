@@ -23,8 +23,6 @@ categories:
 lastmod: 2026-08-10
 ---
 
-# Flipper Zero Einsteiger-Tutorial: Auspacken, Einrichten, Firmware-Update und fünf praktische Funktionen
-
 > TL;DR: Flipper Zero ist ein tragbares Hardware-Entdeckungstool mit eingebauter 125-kHz-RFID-, Sub-GHz-, NFC-, Infrarot- und BLE-Unterstützung. Es kann über USB-C mit einem Computer verbunden werden, um eine Tastatur zu simulieren (BadUSB). Nach dem Kauf installieren Sie zuerst eine microSD-Karte, aktualisieren die Firmware über qFlipper oder die mobile App und beginnen Sie mit dem Auslesen von RFID-Karten und der Infrarot-Fernbedienung. Alle Funktionen sollten Sie nur an Geräten verwenden, die Ihnen gehören oder für die Sie eine Genehmigung haben.
 
 ## Was ist Flipper Zero? Für wen ist es geeignet?

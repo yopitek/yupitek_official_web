@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["封包注入", "aireplay-ng", "Kali-Linux", "WiFi網路卡", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "什麼是 WiFi 封包注入？"
     answer: "封包注入是網路卡將任意 802.11 訊框直接傳送至無線媒介的能力，讓 aireplay-ng 等工具能建構並發送管理訊框、控制訊框與資料訊框。"
@@ -17,7 +17,7 @@ faq:
   - question: "如何測試網路卡是否支援封包注入？"
     answer: "先啟用監聽模式，再執行 aireplay-ng --test wlan0mon。若輸出 Injection is working! 即確認支援，成功率 80% 以上為可靠。"
   - question: "哪些 ALFA 網路卡支援封包注入？"
-    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）三款均完整支援，搭配正確驅動即可在 Kali Linux 上運作。"
+    answer: "AWUS036ACH（RTL8812AU）與 AWUS036ACM（MT7612U）搭配正確驅動即可在 Kali Linux 上完整支援。AWUS036AXML（MT7921AUN）在 kernel 6.16 以前有社群回報可注入，但本站在 stock kernel 6.17 實測注入測試未通過（monitor、AP、WPA3 仍可用）；需要注入請改用 ACH、EACS、ACS 或 AX。"
   - question: "封包注入測試成功率低於 50% 該如何改善？"
     answer: "靠近目標 AP、將監聽介面鎖定至相同頻道、確認 TX Power 設定，並檢查驅動程式是否為 aircrack-ng 版本而非發行版內建版本。"
 ---
@@ -25,7 +25,7 @@ faq:
 封包注入讓無線網路卡傳送任意 802.11 訊框，是取消認證攻擊與握手封包擷取的核心能力。需具備支援的晶片組與驅動程式才能運作。
 
 {{< tldr >}}
-封包注入是網路卡傳送任意 802.11 訊框的能力，受限於驅動程式而非硬體。RTL8812AU、MT7612U、MT7921AUN 晶片組的 ALFA 網路卡搭配 aircrack-ng 驅動即可完整支援。
+封包注入是網路卡傳送任意 802.11 訊框的能力，受限於驅動程式而非硬體。RTL8812AU、MT7612U 晶片組的 ALFA 網路卡搭配 aircrack-ng 驅動即可完整支援；MT7921AUN（AWUS036AXML）在較新的 kernel 上則是例外（詳見下方晶片組說明）。
 {{< /tldr >}}
 
 ## 什麼是封包注入？
@@ -70,7 +70,7 @@ faq:
 
 ### Mediatek MT7921AUN（Wi-Fi 6E）
 
-本清單中最新的晶片組，搭載於 AWUS036AXML。支援 2.4/5/6 GHz 三頻及 802.11ax。`mt7921u` 驅動程式需要 kernel 5.18 或更新版本。監聽模式與封包注入支援均已獲確認，但由於驅動程式較新，在舊版發行版上可能存在邊緣案例問題。
+本清單中最新的晶片組，搭載於 AWUS036AXML。支援 2.4/5/6 GHz 三頻及 802.11ax。`mt7921u` 驅動程式需要 kernel 5.18 或更新版本。監聽模式、AP 模式與 WPA3 皆可用。在 kernel 6.16 以前的社群回報中封包注入可運作，但本站在 stock kernel 6.17 實測 `aireplay-ng --test` 未通過（Found 0 APs / No Answer），因此無法 deauth 或擷取 handshake。原因是 kernel 6.16 以後 mac80211 chanctx 回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps，無法注入 HT/VHT）。需要注入請改用 ACH、EACS、ACS 或 AX。
 
 ---
 
@@ -91,7 +91,7 @@ sudo airmon-ng start wlan0
 
 ```bash
 iwconfig
-# 確認出現：Mode:Monitor
+# 確認出現: Mode:Monitor
 ```
 
 ### 執行注入測試
@@ -149,7 +149,7 @@ sudo aireplay-ng --test wlan0mon
 | 型號 | 晶片組 | 頻段 | 封包注入支援 |
 |---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ 完整支援 |
-| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ 完整支援（需 kernel 5.18+） |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ⚠️ kernel 6.16 以前有社群回報；6.17 實測失敗 |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ 完整支援 |
 
 ---
@@ -201,10 +201,10 @@ dmesg | tail -30
 這是專業滲透測試中最常見的封包注入應用。在目標基地台的頻道上以 airodump-ng 開始擷取，接著以 aireplay-ng 傳送取消認證訊框，強制用戶端重新連線：
 
 ```bash
-# 終端機 1：擷取封包
+# 終端機 1: 擷取封包
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w handshake wlan0mon
 
-# 終端機 2：取消認證（對特定用戶端傳送 5 個取消認證訊框）
+# 終端機 2: 取消認證 (對特定用戶端傳送 5 個取消認證訊框)
 sudo aireplay-ng --deauth 5 -a AA:BB:CC:DD:EE:FF -c 11:22:33:44:55:66 wlan0mon
 ```
 

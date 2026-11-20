@@ -1,5 +1,5 @@
 ---
-title: "\"Unterstützt das ALFA Wireless Netzwerkadapter das NVIDIA DGX Spark (GB10)?\""
+title: "Ist der ALFA WLAN-Adapter mit dem NVIDIA DGX Spark (GB10) kompatibel?"
 date: 2026-09-03
 draft: false
 slug: "alfa-nvidia-dgx-spark-compatibility"
@@ -14,25 +14,27 @@ tags:
   - "ARM64"
 categories:
   - "Hardware-Leitfaden"
-description: "DGX Spark支持ALFA网卡，MediaTek芯片型无需驱动，Realtek需编译驱动，USB-C to USB-A适配器需用。"
+description: "ALFA-WLAN-Adapter am NVIDIA DGX Spark (GB10): Im GX10-Test laufen alle 9 Karten mit Kernel-Treibern ohne DKMS, nur AXM/AXML scheitern bei der Injection."
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
+
+> 📌 Dieser Artikel wurde anhand der GX10-Praxistests vom November 2026 aktualisiert: Auf dem ASUS GX10 (Ubuntu 24.04 ARM64, Kernel 6.17.0-1014-nvidia) laufen alle 9 aktuellen ALFA-Adapter mit den im Kernel integrierten Treibern – einstecken und loslegen, kein DKMS nötig. Alle Daten finden Sie in der [Testmatrix der 9 ALFA-Adapter unter ARM64](/de/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/). Getestet wurde nur auf dem GX10; andere GB10-Modelle wurden nicht einzeln getestet.
 
 ## 1. Problemübersicht
 
-Kunde fragt: „Kann das ALFA-Serie USB-WLAN-Adapter auf dem NVIDIA DGX Spark (GB10 Grace Blackwell) Personal AI Supercomputer verwendet werden?“
+Kundenfrage: „Können die USB-WLAN-Adapter der ALFA-Serie am persönlichen KI-Supercomputer NVIDIA DGX Spark (GB10 Grace Blackwell) verwendet werden?“
 
-Kurze Zusammenfassung: Der DGX Spark läuft unter NVIDIA DGX OS (basierend auf Ubuntu, Kernel 6.x), die Kompatibilität des ALFA-Adapters ist mit der eines modernen Linux-Desktop-Systems identisch. MediaTek-Chipmodelle (AWUS036ACM / ACHM / AXML / AXM) verwenden in-kernel-Treiber und sind sofort einsatzbereit; Realtek-Chipmodelle (AWUS036ACH / ACS / EACS / AX / AXER) erfordern die Übersetzung eines out-of-tree-Treibers (ARM64 / aarch64-Architektur). Bitte beachten: Alle USB-Ports des DGX Spark sind USB Type-C, während die ALFA-Adapter USB Type-A haben. Es ist ein USB-C to USB-A Adapter oder ein USB-Kabel erforderlich.
+Kurzfazit: Der DGX Spark läuft unter NVIDIA DGX OS (basierend auf Ubuntu, Kernel 6.x). Auf dem ASUS GX10, der ebenfalls auf der GB10-Plattform basiert (Ubuntu 24.04 ARM64, Kernel 6.17.0-1014-nvidia), haben wir alle 9 aktuellen ALFA-USB-WLAN-Adapter getestet: Alle verwenden die im Kernel integrierten Treiber, funktionieren direkt nach dem Einstecken und benötigen weder Kompilierung noch DKMS. Der DGX Spark nutzt denselben GB10-Chip und dieselbe NVIDIA-Kernel-Reihe; wir erwarten dasselbe Verhalten, getestet wurde jedoch nur auf dem GX10, der DGX Spark selbst wurde nicht getestet. Funktionsunterschiede: Die MediaTek-MT7921-Modelle (AWUS036AXM / AXML) scheitern auf dem Stock-Kernel 6.17 bei der Paketinjektion; Monitor-Modus, AP und WPA3 funktionieren. Bei den übrigen 7 Modellen wurden Monitor-Modus und Injection erfolgreich getestet. Die Kernel-Version, ab der die Treiber im Mainline-Kernel enthalten sind, unterscheidet sich je Adapter (ACM/ACHM 4.19, AXM/AXML 5.18, EACS 6.2, ACH/ACS 6.13, AX/AXER 6.17); nur ältere Kernel unterhalb dieser Version benötigen die DKMS-Treiber der Community. Hinweis: Alle USB-Ports des DGX Spark sind USB Type-C, die ALFA-Adapter haben USB Type-A; ein USB-C-auf-USB-A-Adapter oder ein entsprechendes Kabel ist erforderlich.
 
-Beurteilung der Hauptkriterien: ALFA hat derzeit 9 aktive USB-WLAN-Adapter (AWUS036ACM / ACHM / ACS / EACS / ACH / AX / AXER / AXML / AXM).
+Bewertungsgrundlage: die 9 aktuellen USB-WLAN-Adapter von ALFA (AWUS036ACM / ACHM / ACS / EACS / ACH / AX / AXER / AXML / AXM).
 
 ## 2. Analyse der Zielhardware-Spezifikation
 
 ### 2.1 NVIDIA DGX Spark Hardware-Spezifikation
 
-| Projekt | Spezifikation |
+| Punkt | Spezifikation |
 |---|---|
 | Produktname | NVIDIA DGX Spark |
 | Kernprozessor | NVIDIA GB10 Grace Blackwell Superchip |
@@ -53,179 +55,174 @@ Beurteilung der Hauptkriterien: ALFA hat derzeit 9 aktive USB-WLAN-Adapter (AWUS
 
 ### 2.2 Softwareumgebung: NVIDIA DGX OS
 
-| Projekt | Beschreibung |
+| Punkt | Beschreibung |
 |---|---|
-| Basis | Ubuntu Linux (NVIDIA angepasst) |
-| Kernel | Linux 6.x (genaue Version variiert mit DGX OS-Update) |
+| Basis | Ubuntu Linux (von NVIDIA angepasst) |
+| Kernel | Linux 6.x (genaue Version abhängig vom DGX-OS-Update) |
 | Architektur | aarch64 (ARM64) |
-| Vorinstallierte Software | NVIDIA AI Software-Paket (CUDA, cuDNN, TensorRT, PyTorch, Jupyter u.v.m.) |
+| Vorinstallierte Software | NVIDIA-KI-Softwarepaket (CUDA, cuDNN, TensorRT, PyTorch, Jupyter u. v. m.) |
 | Paketverwaltung | apt (Debian/Ubuntu) |
-| Treiberrahmen | Standard Linux Kernel Driver-Architektur (cfg80211 / mac80211) |
+| Treiber-Framework | Standard-Treiberarchitektur des Linux-Kernels (cfg80211 / mac80211) |
 
-### 2.3 Schlüsselmerkmale: Moderne Kernel + ARM64
+### 2.3 Schlüsselmerkmale: Moderner Kernel + ARM64
 
-Die Softwareumgebung von DGX Spark hat zwei Schlüsselwirkungen auf die Kompatibilität mit ALFA Netzwerken:
+Die Softwareumgebung des DGX Spark hat zwei wesentliche Auswirkungen auf die Kompatibilität mit ALFA-Adaptern:
 
-- Kernel 6.x (modern): Alle in den Mainline aufgenommenen WiFi-Treiber können direkt verwendet werden, einschließlich mt76 (MT7612U / MT7610U) und mt7921u (MT7921AUN). Dies bildet einen scharfen Kontrast zum Kernel 4.9 auf dem Jetson Nano.
-- ARM64 (aarch64) Architektur: Realtek out-of-tree Treiber (8812au / 8821cu / rtl8852bu) müssen auf ARM64 kompiliert werden. Der Upstream (morrownr) dieser Treiber unterstützt ARM64-Kompilierung, aber es muss geprüft werden, dass CONFIG_PLATFORM_ARM64 = y im Makefile eingestellt ist.
+- Kernel 6.x (modern): Kernel 6.17 (die im GX10-Test verwendete Version) enthält die Treiber aller 9 Adapter dieses Artikels, darunter mt76 (MT7612U / MT7610U, 4.19+), mt7921u (MT7921AUN, 5.18+), rtw88 (RTL8821CU 6.2+; RTL8812AU / RTL8811AU 6.13+) und rtw89 (RTL8832BU, 6.17+). Dies steht in deutlichem Kontrast zum Kernel 4.9 des Jetson Nano.
+- ARM64-Architektur (aarch64): Mit den im Kernel integrierten Treibern muss auf ARM64 nichts kompiliert werden; nur auf älteren Systemen mit einem Kernel unter der Mindestversion des jeweiligen Adapters müssen für die Realtek-Modelle DKMS-Treiber der Community kompiliert werden (z. B. die morrownr-Reihe; dabei muss im Makefile CONFIG_PLATFORM_ARM64 = y gesetzt sein).
 
-### 2.4 Bedarf an USB Type-C Adaptern
+### 2.4 Bedarf an USB-Type-C-Adaptern
 
-Die 4 USB-Ports von DGX Spark sind alle Type-C, während die gesamte ALFA-Serie Netzwerke (außer AXML als USB-C) USB Type-A-Schnittstellen haben:
+Die 4 USB-Ports des DGX Spark sind alle Type-C, während alle ALFA-Adapter (außer dem AXML mit USB-C) eine USB-Type-A-Schnittstelle haben:
 
-| Modell | Schnittstellen-Spezifikation | Braucht Adapter |
+| Modell | Schnittstelle | Adapter nötig |
 |---|---|---|
-| AWUS036AXML | USB-C / USB 3.2 | ❌ Kein Adapter erforderlich (kann direkt eingesteckt werden) |
-| AWUS036AXM | USB Type-A / USB 3.2 | ✅ Braucht USB-C to USB-A |
-| AWUS036AX | USB Type-A / USB 3.2 | ✅ Braucht |
-| AWUS036AXER | USB Type-A / USB 3.2 | ✅ Braucht |
-| AWUS036ACH | USB Type-A / USB 3.0 | ✅ Braucht |
-| AWUS036ACHM | USB Type-A / USB 2.0 | ✅ Braucht |
-| AWUS036ACM | USB Type-A / USB 3.0 | ✅ Braucht |
-| AWUS036ACS | USB Type-A / USB 2.0 | ✅ Braucht |
-| AWUS036EACS | USB Type-A / USB 2.0 | ✅ Braucht |
+| AWUS036AXML | USB-C / USB 3.2 | ❌ Kein Adapter nötig (direkt steckbar) |
+| AWUS036AXM | USB Type-A / USB 3.2 | ✅ USB-C auf USB-A nötig |
+| AWUS036AX | USB Type-A / USB 3.2 | ✅ Nötig |
+| AWUS036AXER | USB Type-A / USB 3.2 | ✅ Nötig |
+| AWUS036ACH | USB Type-A / USB 3.0 | ✅ Nötig |
+| AWUS036ACHM | USB Type-A / USB 2.0 | ✅ Nötig |
+| AWUS036ACM | USB Type-A / USB 3.0 | ✅ Nötig |
+| AWUS036ACS | USB Type-A / USB 2.0 | ✅ Nötig |
+| AWUS036EACS | USB Type-A / USB 2.0 | ✅ Nötig |
 
-Empfehlung: Verwenden Sie einen USB-C to USB-A Adapter oder Übertragungsleitung, die USB 3.2 Gen 2×2 (20Gbps) unterstützt, um sicherzustellen, dass die USB 3.x Modelle wie AWUS036ACH / ACM / AX vollwertig funktionieren können.
+Empfehlung: Verwenden Sie einen USB-C-auf-USB-A-Adapter oder ein Kabel mit USB 3.2 Gen 2×2 (20Gbps), damit USB-3.x-Modelle wie AWUS036ACH / ACM / AX mit voller Geschwindigkeit arbeiten.
 
-## 3. Analyse der aktuellen ALFA Netzwerkkarte-Spezifikationen und Chipsets
+## 3. Analyse der aktuellen ALFA-Adapter: Spezifikationen und Chipsätze
 
-Bis September 2026 umfasst die aktive USB-WLAN-Produktlinie von ALFA Network wie folgt (Bewertungsgrundlage: 9 Modelle):
+Stand September 2026 umfasst die aktuelle Produktlinie der USB-WLAN-Adapter von ALFA Network folgende Modelle (Bewertungsgrundlage: 9 Modelle):
 
-| Modell | Wi-Fi-Stufe | Chipset | Schnittstelle | Linux-Treiberstatus |
+| Modell | Wi-Fi-Standard | Chipsatz | Schnittstelle | Integrierter Linux-Treiber (Mindest-Kernel) |
 |---|---|---|---|---|
-| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ in-kernel (mt7921u, Kernel 5.19+) |
-| AWUS036AXM | Wi-Fi 6E | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ in-kernel (mt7921u) |
-| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ rtw89 (Kernel 5.16+, USB-Unterstützung wird schrittweise integriert) oder out-of-tree |
-| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ Wie oben |
-| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ⚠️ out-of-tree (morrownr/8812au, benötigt ARM64-Übersetzung) |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ✅ in-kernel (mt76x0u) |
-| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ in-kernel (mt76x2u)⭐ Empfohlen |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ⚠️ out-of-tree (8812au abgedeckt) |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ⚠️ out-of-tree (morrownr/8821cu) |
+| AWUS036AXML | Wi-Fi 6E (6 GHz im Test nutzbar) | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ Integriert (mt7921u, 5.18+) |
+| AWUS036AXM | Wi-Fi 6E (Herstellerangabe, 6 GHz nicht getestet) | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ Integriert (mt7921u, 5.18+) |
+| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ Integriert (rtw89_8852bu, 6.17+) |
+| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ Integriert (rtw89_8852bu, 6.17+) |
+| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ✅ Integriert (rtw88_8812au, 6.13+) |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ✅ Integriert (mt76x0u, 4.19+) |
+| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ Integriert (mt76x2u, 4.19+) |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ✅ Integriert (rtw88_8821au, 6.13+) |
+| AWUS036EACS | Wi-Fi 5 (AC600) + Bluetooth | Realtek RTL8821CU | USB 2.0 | ✅ Integriert (rtw88_8821cu, 6.2+) |
 
-## 4. Verwendbare Modelle und Chipsets
+Hinweis: Der im GX10-Test verwendete Kernel 6.17 enthält bereits die Treiber aller 9 Adapter; die Mindest-Kernel-Version unterscheidet sich je Adapter (siehe Klammern in der Tabelle). Nur auf älteren Systemen mit einem Kernel unterhalb dieser Mindestversion ist ein von der Community gepflegter DKMS-Treiber nötig.
 
-### 4.1 Empfohlene Kategorien
+## 4. Geeignete Modelle und Chipsätze
 
-| Empfohlene Kategorie | Modell (Chipset) | Beschreibung |
+### 4.1 Empfehlungsstufen
+
+| Empfehlungsstufe | Modell (Chipsatz) | Beschreibung |
 |---|---|---|
-| ⭐ Stark empfohlen | AWUS036ACM (MT7612U) | In-kernel-Treiber, sofort einsatzbereit, AC1200 Dualband, unterstützt AP / Monitor / Injection |
-| ✅ Empfohlen | AWUS036ACHM (MT7610U) | In-kernel-Treiber, niedriger Energieverbrauch, AC433 Dualband |
-| ✅ Empfohlen (Wi-Fi 6E) | AWUS036AXML / AXM (MT7921AUN) | In-kernel-Treiber, Wi-Fi 6E, AXML ist USB-C direkt steckbar |
-| ⚠️ Verwendbar, aber Anpassung erforderlich | AWUS036ACH (RTL8812AU) | Erfordert Anpassung von morrownr/8812au (ARM64), nach Abschluss sind alle Funktionen vollständig (einschließlich Monitor / Injection) |
-| ⚠️ Verwendbar, aber Anpassung erforderlich | AWUS036ACS (RTL8811AU) | Wird von 8812au-Treiber abgedeckt |
-| ⚠️ Verwendbar, aber Anpassung erforderlich | AWUS036EACS (RTL8811CU) | Erfordert Anpassung von morrownr/8821cu (ARM64) |
-| ⚠️ Verwendbar, aber zu beachten | AWUS036AX / AXER (RTL8832BU) | Kernel 6.x möglicherweise bereits rtw89 unterstützt; ohne Anpassung out-of-tree |
+| ⭐ Erste Wahl für Penetrationstests | AWUS036EACS (RTL8821CU) / AWUS036ACH (RTL8812AU) / AWUS036ACS (RTL8811AU) | Integrierter Treiber, keine Installation; Injection im Test: EACS und ACH auf beiden Bändern 100 %, ACS 2,4 GHz 100 %, 5 GHz 96 %; WPA-Handshake End-to-End erfassbar |
+| ✅ Empfohlen | AWUS036ACM (MT7612U) | Integrierter Treiber, keine Installation; Monitor, Injection (2,4 GHz 63–83 %, 5 GHz 76 %), AP und WPA3 nutzbar |
+| ✅ Empfohlen | AWUS036ACHM (MT7610U) | Integrierter Treiber, keine Installation; 2,4-GHz-Injection 96–100 %, 5-GHz-Injection nur Broadcast; WPA3-AP erfordert sae_pwe=0 |
+| ✅ Empfohlen (Wi-Fi 6) | AWUS036AX / AXER (RTL8832BU) | Integrierter Treiber, keine Installation; starker Monitor-Empfang, Injection nutzbar (2,4 GHz: AX 96 %, AXER 73 %), AP mit 80 MHz |
+| ⚠️ Nur für Verbindung/AP | AWUS036AXML / AXM (MT7921AUN) | Integrierter Treiber, keine Installation; Monitor, AP und WPA3 nutzbar, aber Injection scheitert auf dem Stock-Kernel 6.17, daher nicht für Penetrationstests geeignet; AXML ist USB-C und direkt steckbar |
 
-### 4.2 Empfohlene Anwendungsszenarien
+### 4.2 Empfehlungen nach Anwendungsszenario
 
 | Anwendungsszenario | Empfohlenes Modell | Beschreibung |
 |---|---|---|
-| Allgemeines WLAN-Internet (am einfachsten) | AWUS036ACM / ACHM | In-kernel-Treiber, ohne Anpassung, sofort einsatzbereit |
-| WLAN-Penetrationstests / Monitoring / Injection | AWUS036ACH oder AWUS036ACM | Beide unterstützen Monitor + Injection; ACH erfordert Anpassung, ACM sofort einsatzbereit |
-| Wi-Fi 6E / 6GHz-Band | AWUS036AXML / AXM | MT7921AUN in-kernel-Treiber, kernel 6.x vollständig unterstützt |
-| AWUS036ACH bereits vorhanden und weiter verwenden möchten | AWUS036ACH | Anpassung des ARM64-Treibers erforderlich, alle Funktionen vollständig |
-| Kein externes WiFi erforderlich (verwenden Sie internes WiFi) | — | DGX Spark ist bereits mit Wi-Fi 7 + Bluetooth 5.4 ausgestattet, für allgemeine Internet-Szenarien ist kein externes ALFA-Netzwerk erforderlich |
-| Hauptanwendung ist Penetrationstest (Monitoring/Injection), spezifische Chipset-Anforderungen oder internes WiFi nicht ausreichend | — | DGX Spark ist bereits mit Wi-Fi 7 + Bluetooth 5.4 ausgestattet, für allgemeine Internet-Szenarien ist kein externes ALFA-Netzwerk erforderlich |
+| Allgemeiner WLAN-Internetzugang (am einfachsten) | Alle 9 Modelle (z. B. AWUS036ACM / ACHM) | Alle mit integriertem Kernel-Treiber, einstecken und loslegen |
+| WLAN-Penetrationstests / Monitoring / Injection | AWUS036EACS / ACH / ACS | Injection im Test 96–100 %, WPA-Handshake End-to-End erfassbar; AXM / AXML nicht wählen (Injection scheitert) |
+| Wi-Fi 6 + AP-Hotspot | AWUS036AX / AXER | 2x2, AP mit 80 MHz im Test nutzbar |
+| 6-GHz-Band | AWUS036AXML | Im Test WPA3-AP auf 6 GHz möglich; AXM hat denselben Chip, 6 GHz aber nicht getestet |
+| Vorhandenen AWUS036ACH weiter nutzen | AWUS036ACH | Ab Kernel 6.13 ist rtw88_8812au integriert, einstecken und loslegen, Injection auf beiden Bändern im Test 100 % |
+| Kein externes WLAN nötig (internes WLAN nutzen) | — | Der DGX Spark hat integriertes Wi-Fi 7; für normalen Internetzugang ist kein externer ALFA-Adapter nötig |
 
-Hinweis: DGX Spark ist bereits mit Wi-Fi 7 + Bluetooth 5.4 ausgestattet, für allgemeine Internet-Szenarien ist kein externes ALFA-Netzwerk erforderlich. Der Hauptbedarf für die Verwendung von externen ALFA-Netzwerken ist: Penetrationstests (Monitoring/Injection), spezifische Chipset-Anforderungen oder Szenarien, bei denen das interne WiFi nicht ausreichend ist.
+Hinweis: Der DGX Spark hat bereits Wi-Fi 7 + Bluetooth 5.4 integriert; für normalen Internetzugang ist kein externer ALFA-Adapter nötig. Externe ALFA-Adapter werden vor allem für Penetrationstests (Monitoring/Injection), spezielle Chipsatz-Anforderungen oder Szenarien benötigt, in denen das interne WLAN nicht ausreicht.
 
 ## 5. Umgebungsanforderungen
 
 ### 5.1 Hardwareanforderungen
 
-| Projekt | Anforderung |
+| Punkt | Anforderung |
 |---|---|
-| USB-Adapter | USB-C to USB-A-Adapter oder -Kabel (außer AXML) |
-| Stromversorgung | DGX Spark Originalhersteller 240W USB-C Stromversorgungsadapter (USB-Port liefert ausreichend Strom) |
-| Kühlung | Originalkühlung genügt (USB WiFi erhöht das Systemlast nicht erheblich) |
+| USB-Adapter | USB-C-auf-USB-A-Adapter oder -Kabel (außer AXML) |
+| Stromversorgung | Original-240W-USB-C-Netzteil des DGX Spark (USB-Ports liefern ausreichend Strom) |
+| Kühlung | Originalkühlung genügt (USB-WLAN erhöht die Systemlast nicht nennenswert) |
 
 ### 5.2 Softwareanforderungen
 
-| Projekt | Anforderung |
+| Punkt | Anforderung |
 |---|---|
-| DGX OS Version | Jegliche aktive Version (Kernel 6.x) |
-| Übersetzungstools (für Realtek-Chips erforderlich) | build-essential, git, bc, dkms |
-| Drahtlosverwaltungstools | iw, wpa_supplicant, network-manager (vorgängig auf DGX OS installiert) |
-| Netzwerk | Während der Übersetzung des Treibers ist ein kabelgebundenes Netzwerk (10GbE) oder eine integrierte Wi-Fi 7-Verbindung erforderlich |
+| DGX-OS-Version | Jede aktuelle Version (Kernel 6.x) |
+| Kernel-Version | Kernel 6.17 (GX10 getestet mit 6.17.0-1014-nvidia) enthält die Treiber aller 9 Adapter, keine Build-Tools nötig; die Mindestversion unterscheidet sich je Adapter (ACM/ACHM 4.19, AXM/AXML 5.18, EACS 6.2, ACH/ACS 6.13, AX/AXER 6.17), nur darunter ist ein DKMS-Treiber der Community nötig |
+| WLAN-Verwaltungstools | iw, wpa_supplicant, network-manager (in DGX OS vorinstalliert) |
 
 ## 6. Kompatibilitätsbewertung
 
-### ALFA laufende Modelle × NVIDIA DGX Spark（GB10）Kompatibilitätsmatrix
+### Aktuelle ALFA-Modelle × NVIDIA DGX Spark (GB10): Kompatibilitätsmatrix
 
-| Modell | Chipset | Treibermethode | USB-Erkennung | STA-Internet | AP-Modus | Monitor | Installationskomplexität | Gesamtbewertung |
-|---|---|---|---|---|---|---|---|---|
-| AWUS036ACM | MT7612U | in-kernel（mt76x2u） | ✅ | ✅ | ✅ | ✅ | Ohne Installation | ⭐ Bestes |
-| AWUS036ACHM | MT7610U | in-kernel（mt76x0u） | ✅ | ✅ | ✅ | ⚠️ begrenzt | Ohne Installation | ✅ Gut |
-| AWUS036AXML | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ begrenzt | Ohne Installation | ✅ Gut |
-| AWUS036AXM | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ begrenzt | Ohne Installation | ✅ Gut |
-| AWUS036ACH | RTL8812AU | out-of-tree（8812au） | ✅ | ✅ | ✅ | ✅ | Mittel (Übersetzung) | ⚠️ Verwendbar |
-| AWUS036ACS | RTL8811AU | out-of-tree（8812au） | ✅ | ✅ | ⚠️ | ❌ | Mittel (Übersetzung) | ⚠️ Verwendbar |
-| AWUS036EACS | RTL8811CU | out-of-tree（8821cu） | ✅ | ⚠️ | ❌ | ❌ | Mittel (Übersetzung) | ⚠️ Verwendbar |
-| AWUS036AX | RTL8832BU | rtw89 / out-of-tree | ✅ | ⚠️ | ⚠️ | ❌ | Mittel-Hoch | ⚠️ Verwendbar |
-| AWUS036AXER | RTL8832BU | Gleiches wie oben | ✅ | ⚠️ | ⚠️ | ❌ | Mittel-Hoch | ⚠️ Verwendbar |
+| Modell | Chipsatz | Treiber (im Kernel integriert) | USB-Erkennung | STA-Internet | AP-Modus | Monitor | Packet Injection | Installationsaufwand | Gesamtbewertung |
+|---|---|---|---|---|---|---|---|---|---|
+| AWUS036EACS | RTL8821CU | rtw88_8821cu | ✅ | ✅ | ✅ | ✅ | ✅ beide Bänder 100 % | Keine Installation | ⭐ Beste |
+| AWUS036ACH | RTL8812AU | rtw88_8812au | ✅ | ✅ | ✅ | ✅ | ✅ beide Bänder 100 % | Keine Installation | ⭐ Beste |
+| AWUS036ACS | RTL8811AU | rtw88_8821au | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 100 % / 5G 96 % | Keine Installation | ⭐ Beste |
+| AWUS036ACM | MT7612U | mt76x2u | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 63–83 % / 5G 76 % | Keine Installation | ✅ Gut |
+| AWUS036ACHM | MT7610U | mt76x0u | ✅ | ✅ | ✅ | ✅ | ⚠️ 2.4G 96–100 % / 5G nur Broadcast | Keine Installation | ✅ Gut |
+| AWUS036AX | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ starker Empfang | ✅ 2.4G 96 % / 5G nutzbar | Keine Installation | ✅ Gut |
+| AWUS036AXER | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ starker Empfang | ✅ 2.4G 73 % / 5G nutzbar | Keine Installation | ✅ Gut |
+| AWUS036AXML | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ schwacher Empfang | ❌ Fehlgeschlagen | Keine Installation | ⚠️ Nur Verbindung/AP |
+| AWUS036AXM | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ schwacher Empfang | ❌ Fehlgeschlagen | Keine Installation | ⚠️ Nur Verbindung/AP |
 
-Bewertungsgrundlage: Verwendbarkeit der Mainline-Treiber im DGX OS Kernel 6.x + Unterstützung für ARM64 im morrownr-Treiber. MediaTek-Chips, da die Treiber bereits in den Mainline integriert sind, funktionieren sofort mit Kernel 6.x. Realtek-Chips erfordern die Übersetzung der out-of-tree-Treiber, aber die ARM64-Übersetzung wird von den Upstream-Unterstützern bereitgestellt.
+Bewertungsgrundlage: Praxistests vom 16. bis 18.11.2026 auf dem ASUS GX10 (Ubuntu 24.04 ARM64, Kernel 6.17.0-1014-nvidia), getestet mit eigenem WLAN und eigenem Smartphone. Der DGX Spark nutzt denselben GB10-Chip und dieselbe NVIDIA-Kernel-Reihe; wir erwarten dasselbe Verhalten, getestet wurde jedoch nur auf dem GX10, der DGX Spark selbst wurde nicht getestet. Alle Daten finden Sie in der [Testmatrix der 9 ALFA-Adapter unter ARM64](/de/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/).
 
-## 7. Detailliertes Step-by-Step Setup
+## 7. Detaillierte Schritt-für-Schritt-Installation
 
-### 7.1 Vorarbeiten
+### 7.1 Vorbereitung
 
-**Schritt 1: Booten und Anmelden bei DGX Spark** (durch SSH oder direkte Verbindung über Tastatur und Monitor)
+**Schritt 1: DGX Spark starten und anmelden** (per SSH oder direkt mit Tastatur und Monitor)
 
 ```bash
 ssh username@<dgx-spark-ip>
 ```
 
-**Schritt 2: Überprüfen der Systemarchitektur und Kernel-Version**
+**Schritt 2: Systemarchitektur und Kernel-Version prüfen**
 
 ```bash
 uname -m
-# Erwartung: aarch64
+# Erwartet: aarch64
 uname -r
-# Erwartung: 6.x.x (DGX OS Kernel)
+# Erwartet: 6.x.x (DGX-OS-Kernel)
 ```
 
-**Schritt 3: (Nur für Realtek-Chips) Installation der Übersetzungstools**
+**Schritt 3: Prüfen, ob der Kernel Version 6.17 oder neuer ist**
 
-```bash
-sudo apt update
-sudo apt install -y build-essential git bc dkms
-```
+Ab Kernel 6.17 sind die Treiber aller 9 Adapter integriert; Build-Tools müssen nicht installiert werden. Die Mindestversion unterscheidet sich je Adapter (ACM/ACHM 4.19, AXM/AXML 5.18, EACS 6.2, ACH/ACS 6.13, AX/AXER 6.17); nur darunter benötigen die Realtek-Modelle DKMS-Treiber der Community (siehe letzter Absatz von 7.3).
 
-### 7.2 Pfad A: MediaTek-Chipsätze (AWUS036ACM / ACHM / AXML / AXM) — Aus der Box nutzbar
+### 7.2 Pfad A: MediaTek-Modelle (AWUS036ACM / ACHM / AXML / AXM) — sofort einsatzbereit
 
-**Schritt 1: Netzwerkkarte einstecken**
+**Schritt 1: Adapter einstecken**
 
-Verwenden Sie einen USB-C to USB-A Adapter (AXML kann direkt in den USB-C-Anschluss eingesteckt werden) und stecken Sie die ALFA-Netzwerkkarte in den USB-Anschluss des DGX Spark.
+Stecken Sie den ALFA-Adapter über einen USB-C-auf-USB-A-Adapter (AXML direkt in den USB-C-Port) in einen USB-Port des DGX Spark.
 
-**Schritt 2: Überprüfen, ob die Netzwerkkarte erkannt wurde**
+**Schritt 2: Prüfen, ob der Adapter erkannt wurde**
 
 ```bash
 lsusb
-# Erwarteter Ausgabebeispiel (AWUS036ACM / MT7612U):
+# Beispiel für die erwartete Ausgabe (AWUS036ACM / MT7612U):
 # Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/b/g/n/ac Wireless Adapter
 ```
 
-**Schritt 3: Überprüfen, ob das Netzwerkinterface automatisch erstellt wurde**
+**Schritt 3: Prüfen, ob die Netzwerkschnittstelle automatisch angelegt wurde**
 
 ```bash
 ip link show
-# Erwarteter Ausgabe (in-kernel-Treiber automatisch geladen):
-# wlan0 oder wlp...
+# Erwartet: eine Schnittstelle, die mit wlx beginnt (nach MAC-Adresse benannt, in-kernel-Treiber wird automatisch geladen)
 ```
 
-**Schritt 4: WiFi-Netzwerke scannen**
+**Schritt 4: WLAN-Netze scannen** (im Folgenden steht wlan0 als Beispiel; ersetzen Sie es durch den mit `ip link show` ermittelten Schnittstellennamen)
 
 ```bash
 sudo iw dev wlan0 scan | grep -E "SSID|signal"
 ```
 
-**Schritt 5: Verbindung zum WiFi herstellen (verwenden Sie NetworkManager)**
+**Schritt 5: Mit dem WLAN verbinden (über NetworkManager)**
 
 ```bash
 nmcli dev wifi list
-nmcli dev wifi connect "Ihr WiFi-Name" password "Ihr WiFi-Passwort"
+nmcli dev wifi connect "Ihr WLAN-Name" password "Ihr WLAN-Passwort"
 ```
 
 **Schritt 6: (Optional) Monitor-Modus aktivieren**
@@ -238,115 +235,99 @@ sudo ip link set wlan0 up
 sudo iw dev wlan0 info
 ```
 
-### 7.3 Pfad B: Realtek-Chipsätze (AWUS036ACH / ACS / EACS) — Erfordert Kompilierung
+### 7.3 Pfad B: Realtek-Wi-Fi-5-Modelle (AWUS036ACH / ACS / EACS) — ab Kernel 6.13 ohne Installation (EACS ab 6.2)
 
-Beispiel mit AWUS036ACH (RTL8812AU):
-
-**Schritt 1: Herunterladen der Treiber-Quellcodes**
+**Schritt 1: Adapter einstecken und prüfen, ob der Treiber automatisch geladen wurde**
 
 ```bash
-git clone https://github.com/morrownr/8812au-20210820.git
-cd 8812au-20210820
-```
-
-**Schritt 2: Überprüfen der ARM64-Kompilierungsoptionen**
-
-Bearbeiten Sie Makefile, um sicherzustellen, dass `CONFIG_PLATFORM_ARM64 = y` (meistens wird aarch64 automatisch erkannt).
-
-**Schritt 3: Kompilieren und Installieren**
-
-```bash
-make
-sudo make install
-sudo modprobe 8812au
-```
-
-**Schritt 4: ALFA-Netzwerkkarte einstecken (durch USB-C to USB-A Adapter), Überprüfen des Interfaces**
-
-```bash
+uname -r          # ACH/ACS benötigen 6.13 oder neuer, EACS 6.2 oder neuer
+lsusb
+lsmod | grep rtw88
 ip link show
-# Erwarteter Ausgabe: wlan0
 ```
 
-**Schritt 5: Verbindung herstellen, wie in Schritt 7.2 Schritt 5 (verwenden Sie nmcli)**
+Automatisch geladene Module je Modell: ACH → `rtw88_8812au`, ACS → `rtw88_8821au`, EACS → `rtw88_8821cu` (der EACS hat zusätzlich Bluetooth, im Test nutzbar).
 
-**Schritt 6: (Optional) Monitor-Modus und Injection**
+**Schritt 2: Verbindung wie in 7.2, Schritt 5 (mit nmcli)**
+
+**Schritt 3: (Optional) Monitor-Modus und Injection**
+
+⚠️ Monitoring- und Injection-Tests nur in eigenen oder ausdrücklich autorisierten Netzwerken durchführen.
 
 ```bash
 sudo apt install -y aircrack-ng
-sudo ip link set wlan0 down
-sudo iw dev wlan0 set type monitor
-sudo ip link set wlan0 up
-sudo aireplay-ng --test wlan0
+IF=wlx00c0cafe0000   # durch den mit ip link ermittelten Schnittstellennamen ersetzen
+sudo ip link set $IF down
+sudo iw dev $IF set type monitor
+sudo ip link set $IF up
+sudo aireplay-ng --test $IF
 ```
 
-### 7.4 Pfad C: Wi-Fi 6-Modelle (AWUS036AX / AXER, RTL8832BU)
+- Führen Sie `airmon-ng check kill` nicht aus: Es beendet den NetworkManager und trennt den Host vom Netzwerk.
+- AWUS036AXM / AXML: `aireplay-ng --test` schlägt auf dem Stock-Kernel 6.17 fehl (Found 0 APs); Deauth und Handshake-Erfassung sind nicht möglich.
+- hcxdumptool 8.x meldet auf allen 9 Adaptern außer dem EACS auf 2,4 GHz `failed to arm` (der Treiber unterstützt keinen Active Monitor); verwenden Sie stattdessen airodump-ng + aireplay-ng.
 
-**Schritt 1: Überprüfen, ob der Kernel bereits rtw89 USB-Unterstützung hat**
+**Nur für ältere Kernel (ACH/ACS unter 6.13, EACS unter 6.2) nötige Schritte**: Nach der Installation von `build-essential git bc dkms` den Community-Treiber kompilieren, z. B. morrownr/8812au-20210820 für den RTL8812AU (im Makefile muss `CONFIG_PLATFORM_ARM64 = y` gesetzt sein). Ist die Kernel-Version ausreichend, verwenden Sie bitte direkt den integrierten Treiber.
+
+### 7.4 Pfad C: Wi-Fi-6-Modelle (AWUS036AX / AXER, RTL8832BU) — ab Kernel 6.17 ohne Installation
 
 ```bash
-# Nach dem Einstecken der Netzwerkkarte überprüfen
-lsusb
-dmesg | grep -i "rtw89\|rtl8852\|8832"
+lsusb                      # erwartet: 0bda:b832
+lsmod | grep rtw89_8852bu
 ip link show
-# Wenn wlan0 automatisch erscheint, bedeutet das, dass der rtw89 im Kernel 6.x unterstützt wird und direkt verwendet werden kann
 ```
 
-**Schritt 2: Wenn der Kernel nicht automatisch unterstützt, kompilieren Sie den out-of-tree-Treiber**
-
-```bash
-git clone https://github.com/morrownr/rtl8852bu-20250826.git
-cd rtl8852bu-20250826
-# Überprüfen, dass CONFIG_PLATFORM_ARM64 = y
-make
-sudo make install
-sudo modprobe rtl8852bu
-```
+GX10-Praxistest: Der integrierte Kernel-Treiber `rtw89_8852bu` wird automatisch geladen, der Monitor-Empfang ist stark, Injection ist nutzbar (2,4 GHz: AX 96 %, AXER 73 %), AP unterstützt 80 MHz. rtw89_8852bu ist erst seit Kernel 6.17 im Mainline-Kernel enthalten; Systeme mit Kernel 6.16 oder älter benötigen den DKMS-Treiber der Community (morrownr/rtl8852bu-20250826).
 
 ## 8. Häufige Fehler und ihre Behebung
 
-| Symptom | Mögliche Ursache | Behebungsmethode |
+| Symptom | Mögliche Ursache | Fehlerbehebung |
 |---|---|---|
-| lsusb zeigt keine ALFA Netzwerkkarte an | Defekter USB-C Adapter / schlechter Kontakt | Ersetzen Sie den USB-C to USB-A Adapter; stellen Sie sicher, dass der Adapter Datenübertragung unterstützt (nicht nur Laden); probieren Sie verschiedene USB-C Ports aus |
-| Nach dem Einlegen des MediaTek-Chips ist keine wlan-Schnittstelle vorhanden | Kernel-Modul wurde nicht automatisch geladen / Firmware fehlt | Manuelle Ladevorgang: `sudo modprobe mt76x2u`; Überprüfen Sie `dmesg | grep mt76`; Firmware installieren: `sudo apt install linux-firmware` |
-| Realtek-Treiber gibt Fehler bei make aus aarch64-linux-gnu-gcc: not found | Fehler in der Cross-Compile-Einstellung | Stellen Sie sicher, dass Sie auf dem DGX Spark nativ kompilieren (nicht cross-kompilieren); Makefile sollte CROSS_COMPILE nicht setzen |
-| modprobe 8812au gibt Fehler Operation not permitted aus | Secure Boot / Modul-Signatur | DGX Spark deaktiviert Secure Boot standardmäßig; wenn Secure Boot aktiviert ist, müssen Sie das Modul signieren oder Secure Boot deaktivieren |
-| WiFi-Verbindung instabil / langsam | USB-C Adapter unterstützt nur USB 2.0 | Ersetzen Sie den Adapter, der USB 3.2 Gen 2×2 unterstützt; stellen Sie sicher, dass der Adapter mit "Data" und nicht nur mit "Charge Only" gekennzeichnet ist |
-| Internes Wi-Fi und externer ALFA stoßen aufeinander | Konflikt zwischen zwei drahtlosen Schnittstellen | Deaktivieren Sie das interne WiFi: `sudo nmcli radio wifi off` oder deaktivieren Sie es im BIOS/UEFI; oder stellen Sie die Reihenfolge der Routen ein |
-| 6GHz (Wi-Fi 6E) kann nicht verwendet werden | Regulatory Domain-Beschränkung | Regulatorischen Bereich einstellen: `sudo iw reg set US` (6GHz in den USA freigegeben); überprüfen Sie, ob das Firmware des AWUS036AXML/AXM den 6GHz unterstützt |
-| AP-Modus kann nicht gestartet werden | Konflikt zwischen NetworkManager und hostapd | Beziehen Sie sich auf das Yopitek ALFA Soft AP Handbuch; deaktivieren Sie NetworkManager, um die Schnittstelle zu verwalten, und stellen Sie hostapd manuell ein |
-| Netzwerkkarte verschwindet nach dem Aufwachen | USB-Autostopp | Deaktivieren Sie den USB-Autostopp: `echo 'options usbcore autosuspend=-1' | sudo tee /etc/modprobe.d/usb.conf` |
+| lsusb zeigt keinen ALFA-Adapter an | Defekter USB-C-Adapter / Wackelkontakt | USB-C-auf-USB-A-Adapter austauschen; sicherstellen, dass der Adapter Datenübertragung unterstützt (nicht nur Laden); anderen USB-C-Port ausprobieren |
+| Nach dem Einstecken eines MediaTek-Adapters keine wlan-Schnittstelle | Kernel-Modul nicht automatisch geladen / Firmware fehlt | Manuell laden: `sudo modprobe mt76x2u`; `dmesg | grep mt76` prüfen; Firmware installieren: `sudo apt install linux-firmware` |
+| Realtek-Adapter ohne wlan-Schnittstelle nach dem Einstecken | Kernel unter der Mindestversion des Adapters (EACS 6.2, ACH/ACS 6.13, AX/AXER 6.17), passender Treiber nicht integriert | Version mit `uname -r` prüfen; Kernel aktualisieren oder auf dem alten Kernel den DKMS-Treiber der Community installieren |
+| Nach Installation eines DKMS-Treibers auf altem Kernel meldet modprobe Operation not permitted | Secure Boot / Modulsignatur | Modul signieren oder Secure Boot deaktivieren (tritt mit den integrierten Treibern nicht auf) |
+| Nach wiederholtem Wechsel zwischen Monitor/AP werden keine Signale mehr gefunden | RX-Stillstand (RX stall) | Adapter ab- und wieder anstecken, damit USB neu enumeriert |
+| EACS/AXML ohne wlx-Schnittstelle nach erneutem Einstecken | Probe des Bluetooth-+-WLAN-Kombigeräts hängt | An einem anderen USB-Port erneut einstecken |
+| WLAN-Verbindung instabil / langsam | USB-C-Adapter unterstützt nur USB 2.0 | Durch einen Adapter mit USB 3.2 Gen 2×2 ersetzen; sicherstellen, dass der Adapter mit „Data“ und nicht nur mit „Charge Only“ gekennzeichnet ist |
+| Konflikt zwischen internem Wi-Fi 7 und externem ALFA-Adapter | Routing-Konflikt zwischen zwei WLAN-Schnittstellen | Internes WLAN deaktivieren: `sudo nmcli radio wifi off` oder im BIOS/UEFI abschalten; alternativ Routing-Prioritäten festlegen |
+| 6 GHz (Wi-Fi 6E) nicht nutzbar | Einschränkung der Regulierungsdomäne | Regulierungsdomäne setzen: `sudo iw reg set US` (6 GHz in den USA freigegeben); AXML im Test auf 6 GHz funktionsfähig, AXM nicht getestet |
+| AP-Modus startet nicht | Konflikt zwischen NetworkManager und hostapd | Siehe Yopitek-Anleitung zu ALFA Soft AP; die Schnittstelle aus der Verwaltung durch NetworkManager nehmen und hostapd manuell einrichten |
+| Adapter verschwindet nach dem Aufwachen | USB-Autosuspend | USB-Autosuspend deaktivieren: `echo 'options usbcore autosuspend=-1' | sudo tee /etc/modprobe.d/usb.conf` |
 
 ## 9. Bekannte Einschränkungen
 
-- USB Type-C Adapterbedarf: Alle ALFA Netzwerkkarten außer der AXML benötigen einen USB-C to USB-A Adapter, die Qualität des Adapters beeinflusst die Leistung und Stabilität.
-- Manuelle Übersetzung der Realtek-Chips: RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU sind nicht in den Mainline aufgenommen, müssen auf ARM64 out-of-tree Treiber kompiliert werden.
-- Mögliche Konflikte mit internem Wi-Fi 7: DGX Spark ist mit Wi-Fi 7 ausgestattet, bei der Verwendung von internem und externem WiFi gleichzeitig können Routing- oder Ressourcenkonflikte auftreten.
-- Manuelle Einstellung des AP-Modus: DGX OS ist standardmäßig als Entwicklungs-Umgebung konfiguriert, der AP Hotspot-Modus muss manuell mit hostapd / dnsmasq installiert und eingerichtet werden.
-- 6GHz-Regelung: Die Verfügbarkeit des 6GHz-Bandes von Wi-Fi 6E hängt von den regionalen Regelungseinstellungen ab, die 6GHz-Öffnungsbedingungen in Taiwan müssen überprüft werden.
-- Abhängigkeit von Treiberupdates: Der out-of-tree Treiber von Realtek wird von der Community (morrownr) gepflegt, nach Kernel-Updates von DGX OS kann eine Neukompilierung erforderlich sein.
-- Unterschiede in der Durchdringungstestfunktion: Die Injektionsfunktion der MediaTek mt76-Serie wurde im Kernel 6.x verbessert, aber RTL8812au bleibt die traditionelle Wahl der Durchdringungstest-Community.
-- Bluetooth-Funktion: Die Bluetooth 5.2-Funktion von AWUS036AXM wurde auf DGX OS nicht weit verbreitet validiert (DGX Spark ist mit BT 5.4 ausgestattet).
-- ⚠️ **RTL8832BU (AWUS036AX/AXER) Treiberpfleger hat eine Empfehlung gegen die Verwendung veröffentlicht**: Der Treiberpfleger morrownr hat in einer offiziellen Erklärung festgestellt, dass die rtl8852/32au-Serie "sehr schlechte Treiber sind und es wird vermutet, dass es Probleme mit dem Chip selbst gibt", empfiehlt Linux-Nutzern, derzeit wegzukommen (Quelle siehe Kapitel 10). Die in Kapitel 4 und 6 enthaltenen "⚠️ Verwendbar aber mit Vorsicht" Bewertungen sollten als Branchenconsens verstanden werden, dass eine Empfehlung gegen die Verwendung gegeben wird, und nicht nur ein Problem mit der Installation.
-- In diesem Dokument zitierte RTL8812AU "out-of-tree" wurde als Anfang 2026 Information bewertet; tatsächlich wurde der mac80211-kompatible in-kernel Treiber für diesen Chip bereits in **kernel 6.13 in den Mainline aufgenommen und ab 6.14 qualitativ ausgereift** (offizielle Ankündigung von morrownr), wenn DGX OS 6.14+ Kerne verwendet, besteht für AWUS036ACH die Möglichkeit, ohne Kompilierung verwendet zu werden, empfehle ich, dass der Kundendienst vor der Antwort den Kunden auffordert, `uname -r` zu berichten, um zu bestätigen.
+- Bedarf an USB-Type-C-Adaptern: Alle ALFA-Adapter außer dem AXML benötigen einen USB-C-auf-USB-A-Adapter; dessen Qualität beeinflusst Leistung und Stabilität
+- Injection scheitert bei MT7921-Modellen: AWUS036AXM / AXML scheitern auf dem Stock-Kernel 6.17 bei der Paketinjektion, Deauth und Handshake-Erfassung sind nicht möglich; Monitor, AP und WPA3 funktionieren. Hauptursache ist eine mac80211-chanctx-Regression ab Kernel 6.16; gepatchte Community-Treiber sind weiterhin ratenbegrenzt
+- Testumfang: Getestet nur auf dem ASUS GX10 (Kernel 6.17.0-1014-nvidia); der DGX Spark wurde nicht getestet, dasselbe Verhalten wird erwartet
+- hcxdumptool nicht nutzbar: Alle Adapter außer dem EACS auf 2,4 GHz melden `failed to arm`; verwenden Sie stattdessen airodump-ng + aireplay-ng
+- Mögliche Konflikte mit dem integrierten Wi-Fi 7: Der DGX Spark hat integriertes Wi-Fi 7; bei gleichzeitiger Nutzung von internem und externem WLAN können Routing- oder Ressourcenkonflikte auftreten
+- AP-Modus muss manuell eingerichtet werden: DGX OS ist standardmäßig als Entwicklungsumgebung konfiguriert; der AP-Hotspot-Modus erfordert die manuelle Installation und Einrichtung von hostapd / dnsmasq
+- 6-GHz-Regulierung: Die Verfügbarkeit des 6-GHz-Bands von Wi-Fi 6E hängt von der eingestellten Regulierungsdomäne ab; für Taiwan sind die aktuellen Vorschriften zur 6-GHz-Freigabe zu prüfen
+- Ältere Kernel: Nur Systeme mit einem Kernel unter der Mindestversion des Adapters (EACS 6.2, ACH/ACS 6.13, AX/AXER 6.17) benötigen für die Realtek-Modelle DKMS-Treiber der Community (morrownr), die nach jedem Kernel-Update neu kompiliert werden müssen
+- Unterschiede bei Penetrationstests: Im GX10-Test erreichten die Realtek-rtw88-Modelle die höchste Injection-Erfolgsquote (EACS und ACH auf beiden Bändern 100 %); die MediaTek-mt76-Modelle (ACM / ACHM) sind nutzbar; MT7921 (AXM / AXML) scheitert
+- Bluetooth: Bluetooth von AWUS036AXML und AWUS036EACS wurde auf dem GX10 erfolgreich getestet; das Bluetooth des AWUS036AXM wurde nicht separat geprüft (der DGX Spark hat bereits BT 5.4 integriert)
+- RTL8832BU (AWUS036AX / AXER): Treiber-Maintainer morrownr hat öffentlich empfohlen, die Out-of-Tree-Treiber der rtl8852/32au-Reihe zu meiden (Quelle siehe Kapitel 10). Beim GX10-Test kam jedoch der im Kernel integrierte Treiber `rtw89_8852bu` zum Einsatz; Monitor, Injection, AP und WPA3 funktionieren. Diese Aussage gilt nur für den integrierten Treiber ab Kernel 6.17
+- RTL8812AU (AWUS036ACH): Der mac80211-konforme in-kernel-Treiber `rtw88_8812au` wurde in Kernel 6.13 in den Mainline-Kernel aufgenommen und ist ab 6.14 ausgereift (Ankündigung von morrownr). Im GX10-Test mit Kernel 6.17 funktionierte er direkt nach dem Einstecken, Injection auf beiden Bändern 100 %. Der Kundendienst kann Kunden vor der Antwort bitten, `uname -r` mitzuteilen, um zu prüfen, ob Version 6.13 oder neuer vorliegt
 
-Widerspruchsbedingungen: Falls nach DGX OS-Updates die Kernel-Version oder die USB-Controller-Treiber geändert werden und der morrownr-Treiber die ARM64-Branchenpflege einstellt, muss das Kompatibilitätsmatrix in Kapitel 6 neu überprüft werden; falls die rtw89 USB-Unterstützung im Kernel 6.x offiziell vollständig implementiert wird, kann die Bewertung von AWUS036AX / AXER von "verwendbar aber mit Vorsicht" aufgestuft werden.
+Widerlegungsbedingungen: Ändert sich nach einem DGX-OS-Update die Kernel-Version oder der USB-Controller-Treiber, sodass sich das Verhalten ändert, oder ergeben Tests auf einem echten DGX Spark andere Ergebnisse als auf dem GX10, muss die Kompatibilitätsmatrix in Kapitel 6 neu geprüft werden. Behebt ein künftiger Kernel das Injection-Problem von mt7921u, kann die Bewertung von AWUS036AXM / AXML von „Nur Verbindung/AP“ heraufgestuft werden.
 
-## 10. Referenzquellen URL
+## 10. Referenzquellen (URL)
 
-| Quelle | Beschreibung | URL | Überprüfungsstatus | Überprüfungsdatum |
+| Quelle | Beschreibung | URL | Prüfstatus | Prüfdatum |
 |---|---|---|---|---|
-| NVIDIA DGX Spark Offizielle Seite | DGX Spark Spezifikationen und Plattforminformationen | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Geprüft | 2026-09-03 |
-| NVIDIA DGX Dokumentation | DGX OS Systemarchitektur und Kernel-Version | https://docs.nvidia.com/dgx/dgx-spark | ✅ Geprüft | 2026-09-03 |
-| morrownr/8812au GitHub | RTL8812AU Linux Treiber (ARM64 Unterstützung) | https://github.com/morrownr/8812au-20210820 | ✅ Geprüft | 2026-09-03 |
-| morrownr/8821cu GitHub | RTL8811CU Linux Treiber | https://github.com/morrownr/8821cu-20210916 | ✅ Geprüft | 2026-09-03 |
-| morrownr/rtl8852bu GitHub | RTL8832BU Linux Treiber | https://github.com/morrownr/rtl8852bu-20250826 | ✅ Geprüft | 2026-09-03 |
-| Linux kernel mt76 Treiberdokumentation | MediaTek mt76 / mt7921 Mainline Treiberbeschreibung (mit Unterstützung für verschiedene Chips und Kernel-Versionen) | https://wireless.wiki.kernel.org/en/users/drivers/mediatek | ✅ Geprüft | 2026-09-03 |
-| ALFA Soft AP WiFi Hotspot Linux Guide (Yopitek) | ALFA AP-Modus-Einrichtung unter Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Geprüft | 2026-09-03 |
-| ALFA Network Produktübersicht (Yopitek) | ALFA aktuelle Produkt规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ Geprüft | 2026-09-03 |
-| morrownr/USB-WiFi Issue #314 | Offizielle Erklärung des Treiberpflegers: Empfehlung, RTL8852/32au (RTL8832BU) Chip zu vermeiden | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Geprüft | 2026-09-03 |
-| morrownr/8812au-20210820 GitHub | RTL8812AU Treiberstatus neueste Ankündigung (Kernel 6.13 in Mainline aufgenommen, 6.14 Qualitätsreif) | https://github.com/morrownr/8812au-20210820 | ✅ Geprüft | 2026-09-03 |
+| NVIDIA DGX Spark offizielle Seite | Spezifikationen und Plattforminformationen zum DGX Spark | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Geprüft | 2026-09-03 |
+| NVIDIA DGX Dokumentation | Systemarchitektur und Kernel-Version von DGX OS | https://docs.nvidia.com/dgx/dgx-spark | ✅ Geprüft | 2026-09-03 |
+| morrownr/8812au GitHub | RTL8812AU-Linux-Treiber (ARM64-Unterstützung) | https://github.com/morrownr/8812au-20210820 | ✅ Geprüft | 2026-09-03 |
+| morrownr/8821cu GitHub | RTL8821CU-Linux-Treiber (für ältere Kernel) | https://github.com/morrownr/8821cu-20210916 | ✅ Geprüft | 2026-09-03 |
+| morrownr/rtl8852bu GitHub | RTL8832BU-Linux-Treiber | https://github.com/morrownr/rtl8852bu-20250826 | ✅ Geprüft | 2026-09-03 |
+| Linux-Kernel-Dokumentation zum mt76-Treiber | Beschreibung der MediaTek-mt76-/mt7921-Mainline-Treiber (inkl. Kernel-Version, ab der die einzelnen Chips unterstützt werden) | https://wireless.wiki.kernel.org/en/users/drivers/mediatek | ✅ Geprüft | 2026-09-03 |
+| ALFA Soft AP WiFi Hotspot Linux Guide (Yopitek) | Anleitung zum ALFA-AP-Modus unter Linux | /de/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Geprüft | 2026-09-03 |
+| ALFA Network Produktübersicht (Yopitek) | Spezifikationen der aktuellen ALFA-Produkte | /de/products/alfa/ | ✅ Geprüft | 2026-09-03 |
+| Testmatrix der 9 ALFA-Adapter unter ARM64 (Yopitek) | Praxistest auf ASUS GX10 + Ubuntu 24.04 ARM64 | https://yupitek.com/de/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/ | ✅ Praxistest | 2026-11-18 |
+| morrownr/USB-WiFi Issue #314 | Offizielle Stellungnahme des Treiber-Maintainers: Empfehlung, Chips der Reihe rtl8852/32au (RTL8832BU) zu meiden | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Geprüft | 2026-09-03 |
+| morrownr/8812au-20210820 GitHub | Aktueller Status des RTL8812AU-Treibers (in Kernel 6.13 in den Mainline-Kernel aufgenommen, ab 6.14 ausgereift) | https://github.com/morrownr/8812au-20210820 | ✅ Geprüft | 2026-09-03 |
 
-Verwandte Artikel: [Ist das ALFA Wireless Netzwerkadapter kompatibel mit MSI EdgeXpert](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)｜[Ist das ALFA Wireless Netzwerkadapter kompatibel mit ASUS Ascent GX10](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[Ist das ALFA Wireless Netzwerkadapter kompatibel mit ALTOS BrainSphere GB10 F1](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[Ist das ALFA Wireless Netzwerkadapter kompatibel mit GIGABYTE AI TOP ATOM](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[Ist das ALFA Wireless Netzwerkadapter kompatibel mit NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
+Verwandte Artikel: [Ist der ALFA WLAN-Adapter mit dem MSI EdgeXpert kompatibel?](/de/blog/alfa-msi-edgexpert-compatibility/) | [Ist der ALFA WLAN-Adapter mit dem ASUS Ascent GX10 (GB10) kompatibel?](/de/blog/alfa-asus-ascent-gx10-compatibility/) | [Ist der ALFA WLAN-Adapter mit dem ALTOS BrainSphere GB10 F1 kompatibel?](/de/blog/alfa-altos-brainsphere-gb10-compatibility/) | [Ist der ALFA WLAN-Adapter mit dem GIGABYTE AI TOP ATOM kompatibel?](/de/blog/alfa-gigabyte-ai-top-atom-compatibility/) | [Ist der ALFA WLAN-Adapter mit dem NVIDIA Jetson Nano kompatibel?](/de/blog/alfa-nvidia-jetson-nano-compatibility/)
 
-Haftungsausschluss: Die Kompatibilitätsbestimmungen basieren auf NVIDIA DGX OS (Kernel 6.x, aarch64). MediaTek Chips Treiber sind für Linux Mainline, stabil; Realtek Chips Treiber werden von der Community gepflegt (morrownr), die tatsächliche Stabilität kann mit der Version variieren. DGX Spark ist mit Wi-Fi 7 integriert, externe ALFA Netzwerkkarten werden hauptsächlich für Penetrationstests oder spezielle Chip-Gruppen verwendet. Die Qualität des USB-C Adapter kann den Benutzererlebnis direkt beeinflussen, daher wird empfohlen, Adapter mit Marke und Markierung USB 3.2 Gen 2×2 zu wählen.
+Haftungsausschluss: Die Kompatibilitätsbewertung in diesem Artikel basiert auf Praxistests vom November 2026 auf dem ASUS GX10 (Ubuntu 24.04 ARM64, Kernel 6.17.0-1014-nvidia). Der DGX Spark nutzt denselben GB10-Chip und dieselbe NVIDIA-Kernel-Reihe wie der GX10; wir erwarten dasselbe Verhalten, er wurde jedoch nicht einzeln getestet. Der im GX10-Test verwendete Kernel 6.17 enthält die Treiber aller 9 ALFA-Adapter (die Mindestversion unterscheidet sich je Adapter); nur bei einem Kernel unterhalb dieser Mindestversion sind die DKMS-Treiber der Community nötig (morrownr). Der DGX Spark hat bereits integriertes Wi-Fi 7; externe ALFA-Adapter dienen vor allem Penetrationstests oder speziellen Chipsatz-Anforderungen. Die Qualität des USB-C-Adapters wirkt sich direkt auf die Nutzung aus; wir empfehlen Markenadapter mit der Kennzeichnung USB 3.2 Gen 2×2. Monitoring und Injection nur in eigenen oder ausdrücklich autorisierten Netzwerken.

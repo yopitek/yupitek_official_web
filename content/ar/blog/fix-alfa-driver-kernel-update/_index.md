@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "لماذا تتعطل محولات ALFA بعد تحديث النواة؟"
     answer: "يستخدم RTL8812AU تعريفاً خارج النواة، والوحدة المُجمَّعة سابقاً تصبح غير متوافقة مع كل تغيير في إصدار النواة. يمكن لـ DKMS إعادة البناء تلقائياً، لكن غياب ترويسات النواة أو الإعدادات القديمة يسبب الفشل."
@@ -105,6 +105,8 @@ sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 ## الإصلاح: برنامج تشغيل RTL8812AU (AWUS036ACH وACS وEACS)
 
 RTL8812AU هو شريحة ALFA الأكثر استخدامًا في اختبار الاختراق بسبب دعم النطاق المزدوج وضع المراقبة الموثوق. يتطلب برنامج تشغيل خارج الشجرة وبالتالي هو الشريحة الأكثر تضررًا من تحديثات النواة.
+
+> **ملاحظة حول EACS:** يحتاج EACS (RTL8821CU) إلى DKMS على النوى الأقدم من 6.2 فقط (برنامج تشغيل المجتمع مثل morrownr/8821cu). على النواة ≥ 6.2 يعمل ببرنامج التشغيل المدمج `rtw88_8821cu` دون DKMS.
 
 ### 4.1 — تثبيت ترويسات النواة
 

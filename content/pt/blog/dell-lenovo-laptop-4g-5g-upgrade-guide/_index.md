@@ -22,8 +22,6 @@ faq:
     answer: "O módulo tem 3 conectores RF (Main, GNSS e Aux). Para navegar, basta conectar pelo menos o Main; para velocidade máxima, é preciso conectar o Aux; e só será necessário conectar a antena GNSS se você quiser usar o GPS."
 ---
 
-# Guia completo para atualizar notebooks Dell / Lenovo com placas 4G/5G: lista de modelos compatíveis + guia de instalação
-
 **Resumo em uma frase: para atualizar seu notebook com uma placa 4G, verifique primeiro se há antenas e slot, e depois confirme se o BIOS permite a instalação. Quanto à escolha da placa: no Brasil ou na Ásia, você pode escolher o EM7455 ou o EM7430; ambos são fabricados com o mesmo chipset MDM9230, são placas Cat 6 com a mesma velocidade, e a única diferença são as bandas suportadas.**
 
 Muitos amigos que possuem um Dell Latitude ou um Lenovo ThinkPad querem instalar uma placa 4G no slot WWAN reservado do notebook para não precisar procurar Wi-Fi durante as viagens. Mas isso não é tão simples! É preciso confirmar a especificação do slot da placa-mãe, verificar se as antenas estão preparadas e checar se o fabricante bloqueou uma «lista branca».

@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["監聽模式", "Kali-Linux", "airmon-ng", "iw", "WiFi網路卡", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "監聽模式與受管理模式有何不同？"
     answer: "監聽模式讓網路卡擷取空中所有 802.11 訊框，不受管理模式只接收目標 MAC 符合自身封包的限制，是無線滲透測試的基礎。"
@@ -17,7 +17,7 @@ faq:
   - question: "啟用監聽模式後介面自動切回受管理模式怎麼辦？"
     answer: "wpa_supplicant 或 NetworkManager 在背景重新啟動所致。執行 airmon-ng check kill 終止這些行程即可解決。"
   - question: "哪些 ALFA 網路卡在 Kali Linux 上完整支援監聽模式？"
-    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）三款均完整支援，其中 ACM 為即插即用。"
+    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）三款均完整支援，其中 ACM 為即插即用。注意：AWUS036AXML 的封包注入在 stock kernel 6.17 上實測失敗（mac80211 chanctx 回歸；核心 6.16 以前有社群回報可用）。需要注入請改用 ACH / ACM / AX。"
   - question: "airodump-ng 顯示 Fixed channel wlan0mon: -1 錯誤如何解決？"
     answer: "表示 airodump-ng 無法切換頻道。執行 iwconfig wlan0mon channel 1 指定頻道，並終止殘留的 wpa_supplicant 程式。"
 ---
@@ -202,7 +202,7 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan0mon
 | 型號 | 晶片組 | 頻段 | 監聽模式 | 封包注入 | 備註 |
 |---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ | ✅ | 滲透測試最熱門首選 |
-| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E，需核心 5.18 以上 |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ⚠️ 核心 6.16 以前有社群回報；6.17 實測失敗 | Wi-Fi 6E，需核心 5.18 以上 |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ | ✅ | Linux 驅動程式支援優異 |
 
 上表所有型號均已在 Kali Linux 2024.x 與 2025.x 上驗證驅動程式相容性。針對 RTL8812AU 等晶片組，若您的核心版本較新，可能需要從 Aircrack-ng GitHub 儲存庫安裝對應驅動程式。

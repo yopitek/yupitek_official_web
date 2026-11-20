@@ -62,7 +62,7 @@ AWUS036AXML 搭载 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz 
 | Windows 11 | ✅ 支持 | 完整三频，含 6 GHz |
 | macOS | ❌ 不支持 | 不支持 macOS 11+ 及 Apple Silicon |
 | Ubuntu | ✅ 支持 | 内核内置 mt7921u，内核 ≥ 5.18（Ubuntu 22.10+）|
-| Kali Linux | ✅ 支持 | Monitor mode ≥ 内核 5.18；主动 monitor mode ≥ 6.12；支持 packet injection |
+| Kali Linux | ⚠️ 部分支持 | Monitor mode ≥ 内核 5.18；主动 monitor mode ≥ 6.12。Packet injection 在 GX10（stock 内核 6.17）自家实测未通过（内核 6.16 以后 mac80211 chanctx 回归所致，并非芯片先天限制）。Kali 实机未实测 |
 | NetHunter（Android）| ⚠️ 部分支持 | OTG；依内核版本 |
 
 ## 硬件支持
@@ -78,7 +78,7 @@ AWUS036AXML 搭载 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz 
 | 功能 | 状态 |
 |------|------|
 | Monitor Mode | ✅ 支持（内核 ≥ 5.18；主动模式 ≥ 6.12）|
-| Packet Injection | ✅ 支持 |
+| Packet Injection | ❌ 未通过（自家测试，GX10、stock 内核 6.17） |
 | Soft AP 模式 | ✅ 支持 |
 | 蓝牙 | ✅ BT 5.2 |
 | VIF | ✅ 支持 |

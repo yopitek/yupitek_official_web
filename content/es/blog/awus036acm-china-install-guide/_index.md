@@ -401,7 +401,7 @@ https://www.kali.org/get-kali/#kali-arm
 
 Elige **Raspberry Pi 4 (64-bit)** o **Raspberry Pi 5 (64-bit)**. No uses la imagen de 32 bits — se requiere 64 bits.
 
-> **Espejo de China:** Si kali.org está lento, usa 华为云:
+> **Espejo de China:** Si kali.org está lento, usa 华为云 (Huawei Cloud):
 > https://repo.huaweicloud.com/kali-images/
 > Navega hasta la carpeta de la última versión y descarga la imagen ARM64 desde allí.
 
@@ -494,7 +494,7 @@ sudo aireplay-ng --test wlan1mon
 
 ---
 
-## Passthrough USB en máquina virtual
+## Passthrough USB en máquina virtual {#virtual-machine-usb-passthrough}
 
 ### VirtualBox
 
@@ -515,7 +515,7 @@ Ejecuta `lsusb` en la VM para confirmar `0e8d:7612`, luego sigue los pasos de Ka
 
 ---
 
-## Interfaz virtual (VIF)
+## Interfaz virtual (VIF) {#virtual-interface-vif}
 
 Aquí es donde el AWUS036ACM supera al ACH. El chip MT7612U tiene soporte VIF completo nativo del kernel. Puedes ejecutar una interfaz monitor y una interfaz administrada o AP en el mismo adaptador simultáneamente — sin parches, sin trucos.
 
@@ -583,10 +583,10 @@ Todos los recursos usados en esta guía — no se requiere GitHub:
 |---------|-----|--------------|
 | Controladores oficiales Alfa | [files.alfa.com.tw](https://files.alfa.com.tw) | Paquetes de controladores, firmware |
 | Documentación Alfa | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | Manuales de producto |
-| Espejo 清华大学 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| Espejo 阿里云 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recomendado) |
-| Espejo 中科大 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recomendado) |
-| Espejo 华为云 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Imágenes Kali ARM (respaldo) |
+| Espejo 清华大学 (Universidad Tsinghua) | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| Espejo 阿里云 (Aliyun) | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recomendado) |
+| Espejo 中科大 (USTC) | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recomendado) |
+| Espejo 华为云 (Huawei Cloud) | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Imágenes Kali ARM (respaldo) |
 | Controlador MT76 (kernel mainline) | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | Incluido en el kernel, sin compilar |
 
 {{< faq >}}

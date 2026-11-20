@@ -11,19 +11,17 @@ tags:
   - Kali Linux
 hero_image: /static/img/AWUS036AXML/hero.webp
 hero_alt: "AWUS036AXML 在 Kali Linux 上怎么装？Wi-Fi 6E 监听模式与包注入教程｜Yopitek"
-seo_description: "ALFA AWUS036AXML（MT7921AUN 芯片）在 Kali Linux 上的安装教程：内置 mt7921u 驱动、kernel 版本条件、监听模式、包注入实测与常见排错。"
+seo_description: "ALFA AWUS036AXML（MT7921AUN 芯片）在 Kali Linux 上的安装教程：内置 mt7921u 驱动、kernel 版本条件、监听模式、包注入现状（stock 内核 6.17 实测未通过）与常见排错。"
 date: "2026-08-10"
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 categories:
   - Technical
-lastmod: "2026-08-10"
+lastmod: "2026-11-20"
 ---
 
-# ALFA AWUS036AXML 安装教程：Wi-Fi 6E 网卡在 Kali Linux 上的监听模式与包注入实测
-
-> TL;DR：ALFA AWUS036AXML 搭载 MediaTek MT7921AUN 芯片，在 Kali Linux（kernel 5.18+）使用**内置 `mt7921u` 驱动即可运行**，不需要另外编译驱动；若要做稳定的 active monitor mode / 包注入，建议 kernel 6.12+ 与带电源的 USB Hub。插入后 `lsusb` 应看到 `0e8d:7961`，接着用 `airmon-ng` 或 `iw` 切换监听模式即可。
+> TL;DR：ALFA AWUS036AXML 搭载 MediaTek MT7921AUN 芯片，在 Kali Linux（kernel 5.18+）使用**内置 `mt7921u` 驱动即可运行**，不需要另外编译驱动；若要做稳定的 active monitor mode，建议 kernel 6.12+ 与带电源的 USB Hub；包注入在内核 6.16 以前有社区反馈，但本站在 stock 内核 6.17 实测未通过（mac80211 chanctx 回归，非芯片先天限制），需要注入请改用 ACH、EACS、ACS 或 AX。插入后 `lsusb` 应看到 `0e8d:7961`，接着用 `airmon-ng` 或 `iw` 切换监听模式即可。
 
 ## 为什么 Wi-Fi 6E 网卡开始被渗透测试关注？
 
@@ -42,7 +40,7 @@ AWUS036AXML 是 ALFA Network 推出的 Wi-Fi 6E USB 网卡，支持 2.4 / 5 / 6 
 | active monitor mode | 建议 kernel ≥ 6.12 | 通用 | 通用 |
 | USB ID（lsusb） | `0e8d:7961` | `0bda:8812` | `0e8d:7612` |
 | 功耗 | 约 2.7 W（建议带电源 Hub） | 较低 | 较低 |
-| 包注入 | 支持（建议实测） | 支持 | 支持 |
+| 包注入 | ⚠️ 内核 6.16 以前有社区反馈；6.17 实测失败 | 支持 | 支持 |
 
 > 版本条件说明：`mt7921u` 自 kernel 5.18 起进入主线，6 GHz 频段支持随内核逐步补齐；**active monitor mode（主动式监听）建议 kernel 6.12+**。Kali 2026 默认内核已是 6.14 等级，直接符合条件。
 
@@ -96,7 +94,7 @@ iwconfig
 # 终止可能干扰的服务
 sudo airmon-ng check kill
 
-# 启用监听模式（wlan1 换成你的接口名称）
+# 启用监听模式 (wlan1 换成你的接口名称)
 sudo airmon-ng start wlan1
 ```
 
@@ -153,6 +151,8 @@ Injection is working!
 
 成功率 80% 以上代表运行可靠；若低于 50%，检查天线方向、USB 供电，或改用 USB 3.0 直连接口。
 
+> 注意：本站在 stock 内核 6.17 实测，AWUS036AXML 的此项测试未通过（Found 0 APs / No Answer），因此无法 deauth 或抓取 handshake。原因是内核 6.16 以后 mac80211 chanctx 回归，并非芯片先天限制；社区 patched 驱动可让注入运行，但固件仍锁定速率（1/6 Mbps，无法注入 HT/VHT）。需要注入请改用 ACH、EACS、ACS 或 AX。
+
 ## 树莓派补充：便携式 Wi-Fi 审计平台
 
 AWUS036AXML 也支持 Raspberry Pi 3B+ / 4 / 5（官方产品页列出），适合组成便携审计工具组。重点提醒：
@@ -197,6 +197,6 @@ AXML 是 Wi-Fi 6E（多了 6 GHz）且驱动内核内置；ACH 是双频（2.4/5
 
 ## 总结
 
-AWUS036AXML 的安装流程比你想象的简单：**内核 5.18+ → 插入即用（`mt7921u`）→ 确认 `0e8d:7961` → airmon-ng 切监听 → aireplay-ng 验证注入**。它与 AWUS036ACH 的差异核心在于 6 GHz 频段与免编译驱动——如果你的审计范围已进入 Wi-Fi 6E 世代，这张卡是补齐频段覆盖的选择。记得所有测试只在合法授权环境进行。
+AWUS036AXML 的安装流程比你想象的简单：**内核 5.18+ → 插入即用（`mt7921u`）→ 确认 `0e8d:7961` → airmon-ng 切监听 → aireplay-ng 验证注入（stock 内核 6.17 上未通过，见步骤 5）**。它与 AWUS036ACH 的差异核心在于 6 GHz 频段与免编译驱动——如果你的审计范围已进入 Wi-Fi 6E 世代，这张卡是补齐频段覆盖的选择。记得所有测试只在合法授权环境进行。
 
-ALFA Network 系列网卡由 Yopitek（榆合科技）在台湾提供销售与技术支持；需要 AWUS036AXML 或搭配的供电 Hub、天线，欢迎来信 [sales@yupitek.com](mailto:sales@yupitek.com)。
+ALFA Network 系列网卡由 Yopitek（榆閤科技）在台湾提供销售与技术支持；需要 AWUS036AXML 或搭配的供电 Hub、天线，欢迎来信 [sales@yupitek.com](mailto:sales@yupitek.com)。

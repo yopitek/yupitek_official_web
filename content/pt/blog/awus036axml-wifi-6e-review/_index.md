@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["AWUS036AXML", "wifi-6e", "review", "Kali-Linux", "MT7921AUN", "6GHz"]
 featureimage: "/images/blog/awus036axml-wifi-6e-review.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Quais bandas o AWUS036AXML suporta?"
@@ -18,7 +18,7 @@ faq:
   - question: "Qual a principal diferenca entre AWUS036AXML e AWUS036ACH?"
     answer: "O AWUS036AXML usa MT7921AUN com suporte a 6 GHz e Wi-Fi 6E. O AWUS036ACH usa RTL8812AU com suporte apenas dual-band Wi-Fi 5, mas o driver deste último é mais maduro e com maior compatibilidade."
   - question: "O AWUS036AXML suporta injeção de pacotes?"
-    answer: "Suporta injeção de pacotes com taxa de sucesso estável acima de 90%. No entanto, o modo monitor ativo tem uma limitação conhecida do driver. Recomenda-se usar apenas o modo monitor passivo."
+    answer: "Não de forma confiável. Há relatos da comunidade de injeção funcional em kernels anteriores ao 6.16, mas em nossos testes com o kernel stock 6.17 o teste de injeção falhou (aireplay-ng --test: Found 0 APs / No Answer). A causa é uma regressão do mac80211 chanctx, não o chip; se precisar de injeção, use ACH, EACS, ACS ou AX. Monitor, AP e WPA3 funcionam; recomenda-se o modo monitor passivo."
   - question: "Quem deve comprar o AWUS036AXML?"
     answer: "Pesquisadores de segurança que avaliam ambientes corporativos com Wi-Fi 6E implantado, laboratorios de treinamento de segurança e pesquisadores envolvidos em análise de protocolos de 6 GHz."
 ---
@@ -56,7 +56,7 @@ O adaptador conecta via USB-A e é alimentado inteiramente pelo barramento USB �
 | Temperatura de Operação | 0°C a 50°C |
 | Suporte de SO | Linux (kernel 5.18+), Windows 10/11 |
 | Modo Monitor | ✅ Suportado |
-| Injeção de Pacotes | ✅ Suportado |
+| Injeção de Pacotes | ⚠️ Relatos da comunidade antes do kernel 6.16; falhou em nossos testes com 6.17 |
 
 ---
 
@@ -210,7 +210,7 @@ wlan0mon  IEEE 802.11  Mode:Monitor  Frequency:2.457 GHz  Tx-Power=20 dBm
 sudo aireplay-ng --test wlan0mon
 ```
 
-Nos testes, o AWUS036AXML alcança taxas consistentes de sucesso de injeção acima de 90% quando posicionado dentro de alcance razoável de access points alvo. A implementação de injeção do driver MT7921AUN é sólida no kernel 6.x — visivelmente mais estável do que nas primeiras versões 5.18/5.19, onde quedas ocasionais de frames foram observadas durante injeção sustentada.
+Em relatos da comunidade com kernels anteriores ao 6.16, a injeção funcionava com este adaptador. Porém, em nossos testes com o kernel stock 6.17 o `aireplay-ng --test` falhou (Found 0 APs / No Answer), portanto não é possível fazer deauth nem capturar handshakes. A causa é uma regressão do mac80211 chanctx a partir do kernel 6.16, e não uma limitação do chip; drivers corrigidos (patched) da comunidade restauram a injeção, mas o firmware ainda trava a taxa (1/6 Mbps, sem injeção HT/VHT). Se precisar de injeção, use ACH, EACS, ACS ou AX.
 
 ---
 
@@ -283,7 +283,7 @@ Durante reconhecimento de área ampla com channel hopping habilitado no airodump
 | Prós | Contras |
 |---|---|
 | Único adaptador USB com suporte confiável a 6 GHz para Kali Linux | Requer kernel 5.18+ (instalações mais antigas do Kali precisam de atualização) |
-| Suporte completo a modo monitor e injeção de pacotes | Driver MT7921AUN é mais novo; casos extremos podem existir |
+| Suporte completo a modo monitor, AP e WPA3 | Driver MT7921AUN é mais novo; casos extremos podem existir; a injeção falhou no kernel stock 6.17 |
 | Driver MT76 está no upstream do kernel Linux | Antena incluída limitada a 2 dBi |
 | Estável nos kernels atuais Kali 2024.x / 2025.x | Alcance em 6 GHz limitado comparado ao 5 GHz sem antena de maior ganho |
 | USB-A 3.0 — amplamente compatível com laptops de teste | Antena única, sem MIMO para diversidade de captura |
@@ -299,7 +299,7 @@ Durante reconhecimento de área ampla com channel hopping habilitado no airodump
 | Padrão Wi-Fi | 802.11ax (Wi-Fi 6E) | 802.11ac (Wi-Fi 5) |
 | Bandas | 2,4 / 5 / 6 GHz | 2,4 / 5 GHz |
 | Modo Monitor | ✅ | ✅ |
-| Injeção de Pacotes | ✅ | ✅ |
+| Injeção de Pacotes | ⚠️ Falhou no kernel 6.17 | ✅ |
 | Driver do Kernel | mt7921u (no kernel, 5.18+) | rtl8812au (out-of-tree, muito estável) |
 | Maturidade do Driver | Mais novo, em desenvolvimento ativo | Maduro, testado em campo desde ~2017 |
 | Suporte a 6 GHz | ✅ | ❌ |
@@ -318,7 +318,7 @@ Muitos pentesters profissionais carregam ambos: o AWUS036ACH para trabalho dual-
 
 **Laboratórios e instalações de treinamento.** Se você está ensinando segurança wireless e quer que os alunos se familiarizem com o estado atual da tecnologia Wi-Fi, incluindo a operação na banda de 6 GHz, o AWUS036AXML é a ferramenta de treinamento apropriada.
 
-**Pesquisadores trabalhando em análise de protocolo Wi-Fi 6E.** A combinação de modo monitor, injeção de pacotes e acesso a 6 GHz torna o AWUS036AXML a única opção USB prática para estudar o comportamento WPA3-SAE em redes de 6 GHz, BSS coloring de 6 GHz e análise de frames MLO (multi-link operation).
+**Pesquisadores trabalhando em análise de protocolo Wi-Fi 6E.** A combinação de modo monitor e acesso a 6 GHz (sem injeção no kernel stock 6.17) torna o AWUS036AXML a única opção USB prática para estudar o comportamento WPA3-SAE em redes de 6 GHz, BSS coloring de 6 GHz e análise de frames MLO (multi-link operation).
 
 **À prova do futuro.** Se você está comprando um adaptador wireless para pesquisa de segurança em 2026 e quer que ele permaneça relevante conforme a adoção do Wi-Fi 6E continua a acelerar, o AWUS036AXML é a escolha voltada para o futuro.
 

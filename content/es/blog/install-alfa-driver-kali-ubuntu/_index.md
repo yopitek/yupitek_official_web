@@ -69,7 +69,7 @@ El controlador que necesitas depende completamente de tu chipset, no del nombre 
 |---|---|---|---|
 | [AWUS036ACH](/es/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/es/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (en el kernel) |
-| [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.17) |
 | [AWUS036AXML](/es/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (kernel 5.18+) |
 
 ### Identifica Tu Adaptador con lsusb
@@ -399,7 +399,7 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/es/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/es/products/alfa/awus036acm/) | MT7612U | Integrado (`mt76x2u`) | Integrado (`mt76x2u`) |
-| [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
+| [AWUS036AX](/es/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.17) | OOK (<6.17) |
 | [AWUS036AXML](/es/products/alfa/awus036axml/) | MT7921AUN | Integrado (`mt7921u`, kernel 5.18+) | Integrado (`mt7921u`, kernel 6.8) |
 
 ---
@@ -428,7 +428,7 @@ La belleza de los adaptadores ALFA Network es que los cuatro chipsets principale
 ## Referencias
 
 1. [Controlador rtl8812au oficial de aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
-2. [morrownr USB-WiFi 知識庫](https://github.com/morrownr/USB-WiFi)
+2. [Base de conocimiento USB-WiFi de morrownr](https://github.com/morrownr/USB-WiFi)
 3. [Documentación oficial de Kali Linux](https://www.kali.org/docs/)
 4. [Documentación oficial del núcleo HWE de Ubuntu](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
 5. [Controlador mt76 de Linux Wireless](https://wireless.wiki.kernel.org/en/users/Drivers/mt76)

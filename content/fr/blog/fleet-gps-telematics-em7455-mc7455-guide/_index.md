@@ -22,8 +22,6 @@ faq:
     answer: "Attention à la réglementation ! La FCC américaine interdit strictement l'utilisation d'une antenne montée à l'extérieur du véhicule sur la bande 30. Pense à éviter ce piège lors de la conception de ton boîtier."
 ---
 
-# Suivi GPS de flotte et télématique : le GNSS intégré des modules EM7455/MC7455
-
 **En une phrase : pour un système de gestion de flotte, la solution la plus maligne, c'est « une puce, deux usages ». Les modules Sierra Wireless EM7455 et MC7455 calculent la position exacte du camion avec le GNSS intégré, et remontent l'info en temps réel au siège via le réseau 4G. Pas besoin d'acheter un module GPS séparé : tu gagnes de la place, de l'argent et de la stabilité.**
 
 « Système de télématique de flotte », ça sonne haut de gamme, mais le principe est simple : collecter la position, la vitesse et l'état moteur des véhicules, puis renvoyer le tout au serveur via le réseau.

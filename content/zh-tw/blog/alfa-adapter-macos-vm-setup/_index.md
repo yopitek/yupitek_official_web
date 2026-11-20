@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ALFA 網路卡能在 macOS 原生使用監聽模式嗎？"
     answer: "不能。macOS 的 CoreWLAN 與 IO80211Family 架構不支援第三方網路卡的監聽模式或封包注入，必須透過 VM 執行 Kali Linux 並使用 USB 直通。"
@@ -196,7 +196,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**M 晶片 Mac 推薦：** 如果你是專門為在 Apple Silicon Mac 上的 VM 中使用而購買 ALFA 網路卡，**AWUS036AXML（MT7921AUN）** 是更好的選擇。其內建核心驅動程式完全省去 DKMS 編譯步驟，並在 ARM64 Kali 上可靠運作。
+**M 晶片 Mac 推薦：** 如果你是專門為在 Apple Silicon Mac 上的 VM 中使用而購買 ALFA 網路卡，**AWUS036AXML（MT7921AUN）** 是更好的選擇。其內建核心驅動程式完全省去 DKMS 編譯步驟，並在 ARM64 Kali 上可靠運作。但注入需視核心版本而定：kernel 6.16 以前的社群回報中注入可用；在 stock kernel 6.16 以上（實測 6.17）上，AXML 的封包注入測試未通過（`aireplay-ng --test` 顯示 Found 0 APs / No Answer），因此無法 deauth 或擷取 handshake。原因是 mac80211 chanctx 回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps，無法注入 HT/VHT）。monitor、AP、WPA3 不受影響。需要注入請改用 AWUS036ACH 或 AWUS036EACS。
 
 ---
 

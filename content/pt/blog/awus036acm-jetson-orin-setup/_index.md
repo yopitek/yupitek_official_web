@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Por que adaptadores USB WiFi frequentemente não funcionam no Jetson Orin?"
@@ -49,32 +49,32 @@ O AVALUE AIB-NW01 é um **sistema embarcado sem ventoinha** projetado para aplic
 | Item | Especificação |
 |------|------|
 | **Opções de SoM** | Jetson Orin NX 16GB / NX 8GB / Orin Nano 8GB / Orin Nano 4GB |
-| **CPU** | ARM Cortex-A78AE v8.2 64-bit（NX 16GB: 8-core @ 2.0 GHz / NX 8GB: 6-core @ 2.0 GHz / Nano: 6-core @ 1.5 GHz） |
-| **GPU** | Arquitetura NVIDIA Ampere（NX: 1024 CUDA Cores + 32 Tensor Cores / Nano 4GB: 512 CUDA Cores + 16 Tensor Cores） |
-| **Poder de IA** | 100 / 70 / 40 / 20 TOPS（conforme configuração do SoM） |
-| **Memória** | LPDDR5（NX 16GB/8GB: 128-bit 102.4 GB/s / Nano 8GB: 128-bit 68 GB/s / Nano 4GB: 64-bit 34 GB/s） |
-| **Armazenamento** | 128GB M.2 2280 NVMe SSD（integrado） |
-| **Rede** | 2 × GbE RJ-45（10/100/1000 Mbps） |
-| **USB** | 4 × USB 3.1 Type-A、1 × Micro USB OTG |
+| **CPU** | ARM Cortex-A78AE v8.2 64-bit (NX 16GB: 8-core @ 2.0 GHz / NX 8GB: 6-core @ 2.0 GHz / Nano: 6-core @ 1.5 GHz) |
+| **GPU** | Arquitetura NVIDIA Ampere (NX: 1024 CUDA Cores + 32 Tensor Cores / Nano 4GB: 512 CUDA Cores + 16 Tensor Cores) |
+| **Poder de IA** | 100 / 70 / 40 / 20 TOPS (conforme configuração do SoM) |
+| **Memória** | LPDDR5 (NX 16GB/8GB: 128-bit 102.4 GB/s / Nano 8GB: 128-bit 68 GB/s / Nano 4GB: 64-bit 34 GB/s) |
+| **Armazenamento** | 128GB M.2 2280 NVMe SSD (integrado) |
+| **Rede** | 2 × GbE RJ-45 (10/100/1000 Mbps) |
+| **USB** | 4 × USB 3.1 Type-A, 1 × Micro USB OTG |
 | **Vídeo** | 1 × HDMI Type-A |
-| **Portas Seriais** | 2 × DB9（RS-232 / RS-485 comutável por jumper） |
-| **Slots de Expansão** | 1 × M.2 M-Key 2242/2280（NVMe SSD）、1 × M.2 E-Key 2230（módulo WiFi/BT）、1 × M.2 B-Key 3042/3052（módulo 5G/LTE, apenas para temperatura ambiente） |
+| **Portas Seriais** | 2 × DB9 (RS-232 / RS-485 comutável por jumper) |
+| **Slots de Expansão** | 1 × M.2 M-Key 2242/2280 (NVMe SSD), 1 × M.2 E-Key 2230 (módulo WiFi/BT), 1 × M.2 B-Key 3042/3052 (módulo 5G/LTE, apenas para temperatura ambiente) |
 | **SIM** | 1 × slot Micro SIM |
-| **Alimentação** | DC 10~24V（borne de 2 pinos） |
-| **Dimensões** | 125 × 196 × 66 mm（sem suporte de parede） |
+| **Alimentação** | DC 10~24V (borne de 2 pinos) |
+| **Dimensões** | 125 × 196 × 66 mm (sem suporte de parede) |
 | **Peso** | 1.4 kg |
 | **Material do Gabinete** | Alumínio extrudado + aço, design de dissipação sem ventoinha |
-| **Temp. de Operação** | -15°C ~ 60°C（conforme IEC60068-2, fluxo de ar 0.5 m/s） |
+| **Temp. de Operação** | -15°C ~ 60°C (conforme IEC60068-2, fluxo de ar 0.5 m/s) |
 | **Temp. de Armazenamento** | -40°C ~ 80°C |
-| **Certificações** | CE、FCC Class A |
+| **Certificações** | CE, FCC Class A |
 
 ### Ambiente de software
 
 | Item | Especificação |
 |------|------|
 | **Sistema Operacional** | Ubuntu 20.04.6 LTS (Focal Fossa) |
-| **NVIDIA SDK** | JetPack 5.0（inclui CUDA 11.4、cuDNN 8.4、TensorRT 8.4） |
-| **Kernel Linux** | 5.10.x-tegra（kernel Tegra customizado pela NVIDIA, **NÃO é o kernel padrão do Ubuntu**） |
+| **NVIDIA SDK** | JetPack 5.0 (inclui CUDA 11.4, cuDNN 8.4, TensorRT 8.4) |
+| **Kernel Linux** | 5.10.x-tegra (kernel Tegra customizado pela NVIDIA, **NÃO é o kernel padrão do Ubuntu**) |
 | **Arquitetura da CPU** | ARM64 (aarch64) |
 | **Recursos AI SDK** | [github.com/Avalue-Technology](https://github.com/Avalue-Technology/repositories.directory) |
 
@@ -146,11 +146,11 @@ Abaixo está um resumo da compatibilidade dos chipsets comuns dos adaptadores US
 | Chipset | Modelo ALFA | Tipo de Driver | Kernel Mínimo | Conclusão Jetson Orin |
 |------|-----------|----------|-----------------|------------------|
 | **MT7612U** | **AWUS036ACM** | **In-kernel (mt76x2u)** | **4.19+** | ✅ Totalmente compatível, plug-and-play |
-| RTL8812AU | AWUS036ACH | Out-of-tree（requer compilação） | Compilação manual necessária | ⚠️ Viável, mas compilação tem riscos |
-| RTL8811AU | AWUS036ACS | Out-of-tree（requer compilação） | Compilação manual necessária | ⚠️ Mesmos problemas do RTL8812AU |
-| RTL8812BU | AWUS036AX | Out-of-tree（requer compilação） | Compilação manual necessária | ⚠️ Requer compilação, problemas conhecidos |
+| RTL8812AU | AWUS036ACH | Out-of-tree (requer compilação) | Compilação manual necessária | ⚠️ Viável, mas compilação tem riscos |
+| RTL8811AU | AWUS036ACS | Out-of-tree (requer compilação) | Compilação manual necessária | ⚠️ Mesmos problemas do RTL8812AU |
+| RTL8832BU | AWUS036AX | Out-of-tree (requer compilação) | Compilação manual necessária | ⚠️ Requer compilação, problemas conhecidos |
 | MT7921AU | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ Kernel 5.10/5.15 não atende |
-| RTL8832CU | AWUS036AXER | Out-of-tree（requer compilação） | Compilação manual necessária | ❌ Não recomendado, suporte ARM64 incerto |
+| RTL8832BU | AWUS036AXER | Out-of-tree (requer compilação) | Compilação manual necessária | ❌ Não recomendado, suporte ARM64 incerto |
 
 Fonte dos dados: [morrownr/USB-WiFi chipset support table](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
 
@@ -166,7 +166,7 @@ Fonte dos dados: [morrownr/USB-WiFi chipset support table](https://github.com/mo
 | Padrão WiFi | 802.11ac (WiFi 5) dual-band AC1200 |
 | Throughput máximo | 5 GHz: 867 Mbps / 2.4 GHz: 300 Mbps |
 | Antenas | 2 × RP-SMA removíveis 5 dBi dual-band |
-| Interface | USB 3.0（conector USB-C） |
+| Interface | USB 3.0 (conector USB-C) |
 | Potência de transmissão | Potência padrão, adequada para porta USB |
 
 **Página do produto**: https://yupitek.com/pt/products/alfa/awus036acm/
@@ -201,7 +201,7 @@ Este adaptador não serve apenas para navegar na internet — também suporta re
 
 - Modo Monitor (Monitor mode) — para diagnóstico e análise de rede
 - Injeção de pacotes (Packet injection) — para testes de penetração e pesquisa
-- Modo AP — pode transformar o AIB-NW01 em um hotspot WiFi（5 GHz pode exigir o parâmetro `disable_usb_sg`）
+- Modo AP — pode transformar o AIB-NW01 em um hotspot WiFi (5 GHz pode exigir o parâmetro `disable_usb_sg`)
 - VIF (Virtual Interface) — permite executar simultaneamente interfaces monitor + managed no mesmo adaptador
 
 ### Razão #4 para recomendar: Flexibilidade de antena incomparável
@@ -218,7 +218,7 @@ O design com 2 antenas externas RP-SMA significa que você pode:
 
 ### Benefício um: Conectividade imediata, implantação sem atrasos
 
-Após conectar, o sistema reconhece imediatamente a interface como `wlan0`（ou `wlx...`）. O usuário precisa de apenas três comandos:
+Após conectar, o sistema reconhece imediatamente a interface como `wlan0` (ou `wlx...`). O usuário precisa de apenas três comandos:
 
 ```bash
 # Escanear redes disponíveis
@@ -305,15 +305,15 @@ Pronto. Seu Jetson Orin está conectado à rede.
 
 ### O AWUS036ACM é WiFi 5 (AC1200)
 
-Não é a opção mais rápida do mercado. O AWUS036AXM（WiFi 6E, MT7921AU）é teoricamente mais rápido, mas **não funciona** no kernel 5.10 do AIB-NW01（requer Kernel 5.18+）. Para as necessidades de largura de banda da maioria das aplicações de Edge AI（transferência de dados, atualização de modelos, SSH remoto）, o AC1200 é mais que suficiente.
+Não é a opção mais rápida do mercado. O AWUS036AXM (WiFi 6E, MT7921AU) é teoricamente mais rápido, mas **não funciona** no kernel 5.10 do AIB-NW01 (requer Kernel 5.18+). Para as necessidades de largura de banda da maioria das aplicações de Edge AI (transferência de dados, atualização de modelos, SSH remoto), o AC1200 é mais que suficiente.
 
 ### Evidência experimental ARM64
 
-A validação do GitHub issue #574 foi realizada em um **Odroid M1**（ARM64 + Kernel 5.10）, não diretamente no AIB-NW01. Ambos utilizam a mesma arquitetura de kernel e pilha de drivers, portanto acreditamos fortemente que os resultados sejam consistentes, mas ainda recomendamos que os usuários façam a verificação no hardware real.
+A validação do GitHub issue #574 foi realizada em um **Odroid M1** (ARM64 + Kernel 5.10), não diretamente no AIB-NW01. Ambos utilizam a mesma arquitetura de kernel e pilha de drivers, portanto acreditamos fortemente que os resultados sejam consistentes, mas ainda recomendamos que os usuários façam a verificação no hardware real.
 
 ### Cenários aplicáveis para outros modelos
 
-O AWUS036ACH（RTL8812AU）e o AWUS036AX（RTL8812BU）não são inutilizáveis — apenas exigem compilação manual do driver no Jetson. Se você tem experiência com ambiente de compilação e está disposto a manter o driver, esses modelos também merecem consideração.
+O AWUS036ACH (RTL8812AU) e o AWUS036AX (RTL8832BU) não são inutilizáveis — apenas exigem compilação manual do driver no Jetson. Se você tem experiência com ambiente de compilação e está disposto a manter o driver, esses modelos também merecem consideração.
 
 ---
 
@@ -341,11 +341,11 @@ Não por ser o mais rápido ou o mais barato — mas porque é a **única soluç
 {{< faq >}}
 
 
-> **Tags**：#JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yopitek
+> **Tags**: #JetsonOrin #EdgeAI #ALFANetwork #USBWiFi #AWUS036ACM #Yopitek
 >
-> **Autor**：Yopitek Ltd — Distribuidor Autorizado ALFA Network em Taiwan
+> **Autor**: Yopitek Ltd — Distribuidor Autorizado ALFA Network em Taiwan
 >
-> **Aviso Legal**：Os dados desta pesquisa são de maio de 2026. A plataforma Jetson e o Linux Kernel estão em constante evolução. Recomenda-se verificar a versão mais recente do JetPack e o suporte de drivers integrados ao kernel antes da implantação.
+> **Aviso Legal**: Os dados desta pesquisa são de maio de 2026. A plataforma Jetson e o Linux Kernel estão em constante evolução. Recomenda-se verificar a versão mais recente do JetPack e o suporte de drivers integrados ao kernel antes da implantação.
 
 ## Referências
 

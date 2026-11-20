@@ -22,8 +22,6 @@ faq:
     answer: "O fornecedor pode verificar o SKU exato (para garantir que as bandas estejam corretas), oferecer a versão de firmware mais recente e contar com uma janela de garantia e troca e suporte técnico. Isso é essencial para a estabilidade de longo prazo dos projetos empresariais."
 ---
 
-# Guia completo de compra de Sierra Wireless em Taiwan: identificação de produtos originais, comparação de fornecedores e processo de cotação
-
 Muitos fabricantes escolhem os módulos 4G/5G da Sierra Wireless para seus roteadores industriais, upgrades de laptops ou projetos de IoT. Mas, se você pesquisar na internet, verá que o mesmo módulo pode ter uma diferença de preço de até o dobro. Por quê? Porque o mercado mistura «produtos novos de fábrica», «unidades usadas desmontadas» e «produtos remontados cujo rótulo foi lixado e reimpresso».
 
 Este artigo reúne as características de identificação das folhas de especificações oficiais para que você aprenda a distinguir rapidamente se o módulo em suas mãos é um produto original, e mostra o que observar ao procurar um fornecedor.

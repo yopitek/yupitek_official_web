@@ -3,7 +3,7 @@ title: "Zero-Compile Setup: ALFA AWUS036ACM on Jetson Orin Edge AI Systems"
 description: "A deep dive into which ALFA Network USB WiFi adapter works best for AVALUE AIB-NW01 (NVIDIA Jetson Orin NX/Nano) edge AI deployments — with real-world proof that the AWUS036ACM delivers true plug-and-play."
 date: 2026-05-20
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Why do USB WiFi adapters often fail on Jetson Orin?"
     answer: "Jetson uses the NVIDIA customized Tegra kernel, not a standard Ubuntu kernel. Third-party drivers often fail to compile due to unavailable kernel headers or ABI incompatibility."
@@ -152,9 +152,9 @@ Here's how common ALFA Network USB WiFi chipsets stack up against Jetson Orin:
 | **MT7612U** | **AWUS036ACM** | **In-kernel (mt76x2u)** | **4.19+** | ✅ Fully compatible, plug-and-play |
 | RTL8812AU | AWUS036ACH | Out-of-tree (compile required) | Manual compile | ⚠️ Viable but compiling carries risk |
 | RTL8811AU | AWUS036ACS | Out-of-tree (compile required) | Manual compile | ⚠️ Same RTL8812AU issues apply |
-| RTL8812BU | AWUS036AX | Out-of-tree (compile required) | Manual compile | ⚠️ Requires compilation, known issues |
+| RTL8832BU | AWUS036AX | Out-of-tree (compile required) | Manual compile | ⚠️ Requires compilation, known issues |
 | MT7921AU | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ K5.10/5.15 does not meet minimum |
-| RTL8832CU | AWUS036AXER | Out-of-tree (compile required) | Manual compile | ❌ Not recommended, ARM64 support unclear |
+| RTL8832BU | AWUS036AXER | Out-of-tree (compile required) | Manual compile | ❌ Not recommended, ARM64 support unclear |
 
 Source: [morrownr/USB-WiFi Chipset Support Table](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
 
@@ -317,7 +317,7 @@ The GitHub issue #574 verification was performed on an **Odroid M1** (ARM64 + Ke
 
 ### Other Models Have Their Place
 
-The AWUS036ACH (RTL8812AU) and AWUS036AX (RTL8812BU) are not unusable — they just require manual driver compilation on Jetson. If you have a build environment set up and are willing to maintain the driver yourself, these models are worth considering.
+The AWUS036ACH (RTL8812AU) and AWUS036AX (RTL8832BU) are not unusable — they just require manual driver compilation on Jetson. If you have a build environment set up and are willing to maintain the driver yourself, these models are worth considering.
 
 ---
 

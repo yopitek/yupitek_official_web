@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Qual Raspberry Pi é mais adequado para testes de penetração?"
@@ -167,7 +167,7 @@ sudo modprobe mt7921u
 ip link show
 ```
 
-Se `lsusb` mostrar um dispositivo MediaTek e `ip link show` listar uma nova interface sem fio, o adaptador está pronto. O suporte ao modo monitor no MT7921AUN melhorou significativamente desde o kernel 5.18, mas pode ser menos confiável que adaptadores baseados em RTL8812AU para certos testes de injeção de pacotes. Para compatibilidade máxima com fluxos de trabalho de pentesting mais antigos, o AWUS036ACH continua sendo a opção mais sólida.
+Se `lsusb` mostrar um dispositivo MediaTek e `ip link show` listar uma nova interface sem fio, o adaptador está pronto. O suporte ao modo monitor no MT7921AUN melhorou significativamente desde o kernel 5.18, mas pode ser menos confiável que adaptadores baseados em RTL8812AU para certos testes de injeção de pacotes. Para compatibilidade máxima com fluxos de trabalho de pentesting mais antigos, o AWUS036ACH continua sendo a opção mais sólida. Note, porém, que a injeção depende do kernel: há relatos da comunidade de injeção funcional em kernels anteriores ao 6.16, mas no kernel stock 6.16 e posteriores (testado no 6.17) o AXML falha no teste de injeção de pacotes (`aireplay-ng --test`: Found 0 APs / No Answer), impossibilitando deauth e captura de handshake. A causa é uma regressão do mac80211 chanctx, não uma limitação do chip; drivers comunitários com patch podem restaurar a injeção, mas o firmware ainda trava a taxa (1/6 Mbps, sem injeção HT/VHT). Modo monitor, AP e WPA3 não são afetados. Se precisar de injeção, escolha o AWUS036ACH ou o AWUS036EACS.
 
 ---
 

@@ -63,10 +63,10 @@ Apple Silicon（M1／M2／M3／M4）时代，macOS 对第三方驱动的限制�
 验证读卡机有没有被系统认到（在 macOS 上）：
 
 ```bash
-# 查看智能卡读卡机（出现 ACR1252U / ACS 即代表系统已列举）
+# 查看智能卡读卡机 (出现 ACR1252U / ACS 即代表系统已列举)
 system_profiler SPCardReaderDataType
 
-# 安装 pcsc-tools（brew 套件）后可用 pcsc_scan 即时监看
+# 安装 pcsc-tools (brew 套件) 后可用 pcsc_scan 即时监看
 brew install pcsc-tools
 pcsc_scan
 ```
@@ -144,32 +144,32 @@ Web NFC 采用的 NDEF 格式，最常搭配的是 **NFC Forum Type 2** 标签�
     };
 
     if (!('NDEFReader' in window)) {
-      out('此浏览器不支持 Web NFC（NDEFReader）。\n请改用 Android Chrome 或 ChromeOS Chrome。');
+      out('此浏览器不支持 Web NFC (NDEFReader). \n请改用 Android Chrome 或 ChromeOS Chrome.');
     }
 
-    // 读取：scan() 需使用者手势触发
+    // 读取: scan() 需使用者手势触发
     document.getElementById('btnScan').addEventListener('click', async () => {
       try {
         const reader = new NDEFReader();
         await reader.scan();
-        out('已开始扫描，请将标签靠近手机 NFC 感应区…');
+        out('已开始扫描, 请将标签靠近手机 NFC 感应区…');
 
         reader.onreading = (event) => {
           out('--- 读取到标签 ---');
-          out('序列号（Serial Number）：' + event.serialNumber);
+          out('序列号 (Serial Number):' + event.serialNumber);
           for (const record of event.message.records) {
-            out('recordType：' + record.recordType);
+            out('recordType:' + record.recordType);
             if (record.recordType === 'text' || record.recordType === 'url') {
-              out('内容：' + record.data);
+              out('内容:' + record.data);
             } else {
-              out('内容（二进制 ByteArray）：' + new Uint8Array(record.data));
+              out('内容 (二进制 ByteArray):' + new Uint8Array(record.data));
             }
           }
         };
 
-        reader.onreadingerror = () => out('读取错误：请确认标签是否支持 NDEF。');
+        reader.onreadingerror = () => out('读取错误: 请确认标签是否支持 NDEF.');
       } catch (err) {
-        out('scan() 失败：' + err.name + ' / ' + err.message);
+        out('scan() 失败:' + err.name + ' / ' + err.message);
       }
     });
   </script>
@@ -184,15 +184,15 @@ Web NFC 采用的 NDEF 格式，最常搭配的是 **NFC Forum Type 2** 标签�
 把上面的按钮事件改为：
 
 ```javascript
-// 写入：write() 同样需使用者手势，且标签需在感应范围内
+// 写入: write() 同样需使用者手势, 且标签需在感应范围内
 document.getElementById('btnWrite').addEventListener('click', async () => {
   try {
     const writer = new NDEFReader();
 
-    // 方式一：直接写一段文字（自动包成 text 记录）
+    // 方式一: 直接写一段文字 (自动包成 text 记录)
     // await writer.write('Yopitek Web NFC 测试');
 
-    // 方式二：写入一笔网址记录（适合名片、导流）
+    // 方式二: 写入一笔网址记录 (适合名片, 导流)
     await writer.write({
       records: [
         { type: 'url', data: 'https://www.yupitek.com' },
@@ -200,9 +200,9 @@ document.getElementById('btnWrite').addEventListener('click', async () => {
       ],
     });
 
-    out('写入成功！');
+    out('写入成功!');
   } catch (err) {
-    out('写入失败：' + err.name + ' / ' + err.message);
+    out('写入失败:' + err.name + ' / ' + err.message);
   }
 });
 ```
@@ -219,7 +219,7 @@ document.getElementById('btnWrite').addEventListener('click', async () => {
 | 标签写入一半失败 | 标签已被锁定（Lock Bits）或超出容量 | 检查容量（137／496 bytes）与锁定字节；锁死的标签无法恢复 |
 | 离开分页／屏幕关闭后收不到事件 | Web NFC 只在分页**前景且取得焦点**时运作 | 保持分页开启；背景扫描不是 Web NFC 的设计用途 |
 
-> **安全提醒（不做的事）**：Web NFC 只能读写「该标签允许你读写」的内容。若一张卡片已实作密码验证、ISO 14443-4 安全通道或加密（例如门禁系统后端验证），**浏览器端无法、也不应该绕过其安全机制**。本文所有教学仅限於你拥有或已获授权的空白标签与测试卡片。
+> **安全提醒（不做的事）**：Web NFC 只能读写「该标签允许你读写」的内容。若一张卡片已实作密码验证、ISO 14443-4 安全通道或加密（例如门禁系统后端验证），**浏览器端无法、也不应该绕过其安全机制**。本文所有教学仅限于你拥有或已获授权的空白标签与测试卡片。
 
 ---
 
@@ -249,15 +249,15 @@ CLA  INS  P1  P2  Lc   Data(0~N bytes)   Le
 macOS 已内置 PC/SC 支持，因此只要再安装 Python 用的 `pyscard` 即可直接送 APDU：
 
 ```bash
-# 安装 pcsc-tools（内含 pcsc_scan，方便确认读卡机）
+# 安装 pcsc-tools (内含 pcsc_scan, 方便确认读卡机)
 brew install pcsc-tools
 
-# 安装 pyscard（透过 macOS 系统的 PC/SC framework）
+# 安装 pyscard (透过 macOS 系统的 PC/SC framework)
 pip install pyscard
 
 # 确认 pyscard 能列出读卡机
 python3 -c "from smartcard.System import readers; print(readers())"
-# 预期输出类似：['ACS ACR1252U ... 00 00']
+# 预期输出类似: ['ACS ACR1252U ... 00 00']
 ```
 
 ### 3.3 第一个 APDU：Echo 与固件版本
@@ -272,7 +272,7 @@ reader = readers()[0]
 conn = reader.createConnection()
 conn.connect()
 
-# 1) Echo：回传 ASCII "12345678"
+# 1) Echo: 回传 ASCII "12345678"
 sw, data = conn.transmit([0xFF, 0x00, 0x00, 0x00, 0x00])
 print('Echo SW :', toHexString(sw))
 print('Echo 回传:', ''.join(chr(b) for b in data))
@@ -289,11 +289,11 @@ print('Firmware:', toHexString(data))
 把感应式卡片想像成一个「字节邮政系统」：你要寄出指令，它回你资料。以支持真实 APDU（ISO 14443-4）的 **MIFARE DESFire** 测试卡为例，发送「Get Version」指令（`90 60 00 00 00`）：
 
 ```python
-# DESFire GetVersion：回传第 1 个字节 0x04 代表 DESFire 系列（EV1/EV2/EV3）
+# DESFire GetVersion: 回传第 1 个字节 0x04 代表 DESFire 系列 (EV1/EV2/EV3)
 sw, data = conn.transmit([0x90, 0x60, 0x00, 0x00, 0x00])
 print('SW  :', toHexString(sw))
 print('Data:', toHexString(data))
-# 例如：04 01 01 00 04 12 08 01
+# 例如: 04 01 01 00 04 12 08 01
 #       └DESFire┘└版本串﹀     └固件/硬件/生产批号…﹀
 ```
 
@@ -320,9 +320,9 @@ FF  00  40  00  04  00  00  <LED>  <BUZZER>
 | BUZZER | 0x04 | 蜂鸣约 1 秒（时间单位以官方文件为准）|
 
 ```python
-# 绿灯亮 + 短哔（范例字节；请对照你手上固件版本的官方 API 文件）
+# 绿灯亮 + 短哔 (范例字节; 请对照你手上固件版本的官方 API 文件)
 sw, data = conn.transmit([0xFF, 0x00, 0x40, 0x00, 0x04, 0x00, 0x00, 0x02, 0x04])
-print('LED/Buzzer 响应:', toHexString(sw))   # 预期 90 00（成功）
+print('LED/Buzzer 响应:', toHexString(sw))   # 预期 90 00 (成功)
 
 # 熄灭
 sw, data = conn.transmit([0xFF, 0x00, 0x40, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00])

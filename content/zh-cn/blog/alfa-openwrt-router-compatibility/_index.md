@@ -13,10 +13,10 @@ tags:
   - "Soft-AP"
 categories:
   - "路由器韧体"
-description: "OpenWrt 是三大第三方路由器韧体（DD-WRT / OpenWrt / Tomato）中对 ALFA USB WiFi 网卡支持最好的平台。MediaTek 晶片机型（AWUS036ACM / ACHM / AXML / AXM）透过官方 kmod-mt76 系列套件可直接支持；Realtek 晶片机型（AWUS036ACH / ACS / EACS / AX / AXER）需使用社群..."
+description: "OpenWrt 是三大第三方路由器韧体（DD-WRT / OpenWrt / Tomato）中对 ALFA USB WiFi 网卡支持最好的平台。MediaTek 晶片机型（AWUS036ACM / ACHM / AXML / AXM）透过官方 kmod-mt76 系列套件可直接支持；Realtek 晶片机型（AWUS036ACH / ACS / EACS / AX / AXER）需使用社群维护的 out-of-tree 驱动套件，可用性因 OpenWrt 版本而异。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. 问题摘要
@@ -43,7 +43,7 @@ OpenWrt 官方套件库包含以下 USB WiFi 驱动：
 | kmod-mt76-usb + kmod-mt76x0u | 官方 in-kernel | MediaTek MT7610U（AWUS036ACHM） | 活跃 |
 | kmod-mt7921u | 官方 in-kernel | MediaTek MT7921AUN（AWUS036AXML / AXM） | 23.05+ 版本可用 |
 | kmod-rtl8812au-ct | 社群 out-of-tree | Realtek RTL8812AU / RTL8811AU（AWUS036ACH / ACS） | 社群维护，24.10 有 kernel crash 回报 |
-| kmod-rtl8821cu | 社群 out-of-tree | Realtek RTL8811CU（AWUS036EACS） | 社群维护 |
+| kmod-rtl8821cu | 社群 out-of-tree | Realtek RTL8821CU（AWUS036EACS） | 社群维护 |
 | kmod-rtw89 / kmod-rtl8852bu | 开发中 | Realtek RTL8832BU（AWUS036AX / AXER） | rtw89 USB 支持逐步合入，需较新 kernel |
 
 ### 2.3 先决条件：USB 核心支持
@@ -68,10 +68,10 @@ opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | kmod-rtw89（开发中）/ 自编 rtl8852bu |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | 同上 |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | kmod-rtl8812au-ct（社群） |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | kmod-mt76x0u（官方） |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | kmod-mt76x0u（官方） |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | kmod-mt76x2u（官方）⭐ 首选 |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | kmod-rtl8812au-ct（涵盖） |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | kmod-rtl8821cu（社群） |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | kmod-rtl8812au-ct（涵盖） |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | kmod-rtl8821cu（社群） |
 
 ## 4. 适用机型与晶片组
 
@@ -84,7 +84,7 @@ opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 | ✅ 推荐（新版本） | AWUS036AXML / AXM（MT7921AUN） | Wi-Fi 6E，官方驱动，需 OpenWrt 23.05+ 且 kernel 5.15+ |
 | ⚠️ 可用但需注意 | AWUS036ACH（RTL8812AU） | 社群驱动，24.10 版本有 kernel crash 回报，建议用 23.05 |
 | ⚠️ 可用但需注意 | AWUS036ACS（RTL8811AU） | 同上，由 8812au 驱动涵盖 |
-| ⚠️ 可用但需注意 | AWUS036EACS（RTL8811CU） | 社群驱动，稳定性中等 |
+| ⚠️ 可用但需注意 | AWUS036EACS（RTL8821CU） | 社群驱动，稳定性中等 |
 | ❌ 不建议 | AWUS036AX / AXER（RTL8832BU） | Wi-Fi 6，rtw89 USB 支持尚在开发，多数 OpenWrt 版本无法直接使用 |
 
 ### 4.2 路由器硬体需求
@@ -122,7 +122,7 @@ opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 | AWUS036AXM | MT7921AUN | kmod-mt7921u | ✅ | ✅ | ✅ | ⚠️ 有限 | 23.05+ | ✅ 良好 |
 | AWUS036ACH | RTL8812AU | kmod-rtl8812au-ct | ✅ | ✅ | ✅ | ⚠️ 有限 | 22.03+（24.10 有 crash） | ⚠️ 可用 |
 | AWUS036ACS | RTL8811AU | kmod-rtl8812au-ct | ✅ | ✅ | ⚠️ | ❌ | 22.03+ | ⚠️ 可用 |
-| AWUS036EACS | RTL8811CU | kmod-rtl8821cu | ✅ | ⚠️ | ❌ | ❌ | 23.05+ | ⚠️ 可用 |
+| AWUS036EACS | RTL8821CU | kmod-rtl8821cu | ✅ | ⚠️ | ❌ | ❌ | 23.05+ | ⚠️ 可用 |
 | AWUS036AX | RTL8832BU | rtw89（开发中） | ⚠️ | ❌ | ❌ | ❌ | 需自订编译 | ❌ 不建议 |
 | AWUS036AXER | RTL8832BU | rtw89（开发中） | ⚠️ | ❌ | ❌ | ❌ | 需自订编译 | ❌ 不建议 |
 
@@ -149,7 +149,7 @@ opkg install kmod-usb-core kmod-usb2 kmod-usb3 usbutils
 
 ```bash
 lsusb
-# 预期输出范例（AWUS036ACM / MT7612U）：
+# 预期输出范例 (AWUS036ACM / MT7612U):
 # Bus 002 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/b/g/n/ac Wireless Adapter
 ```
 
@@ -166,7 +166,7 @@ opkg install kmod-mt76-usb kmod-mt76x2u
 # AWUS036ACHM (MT7610U) — 改用
 # opkg install kmod-mt76-usb kmod-mt76x0u
 
-# AWUS036AXML / AXM (MT7921AUN) — 改用（需 23.05+）
+# AWUS036AXML / AXM (MT7921AUN) — 改用 (需 23.05+)
 # opkg install kmod-mt7921u
 ```
 
@@ -252,7 +252,7 @@ iw dev wlan0 info
 opkg update
 opkg install kmod-rtl8812au-ct
 
-# AWUS036EACS (RTL8811CU) — 改用
+# AWUS036EACS (RTL8821CU) — 改用
 # opkg install kmod-rtl8821cu
 ```
 
@@ -266,7 +266,7 @@ opkg install iw iwinfo wireless-tools hostapd-common wpa-supplicant
 
 ```bash
 iw dev
-# 注意：rtl8812au-ct 驱动的介面名可能是 wlan0 或 wlan1
+# 注意: rtl8812au-ct 驱动的介面名可能是 wlan0 或 wlan1
 ```
 
 设定方式同 7.2 步骤 5-7（STA / AP 模式设定）。
@@ -278,13 +278,13 @@ iw dev
 ip link set wlan0 down
 iw dev wlan0 set type monitor
 ip link set wlan0 up
-# 封包注入功能有限，建议用 mt76 晶片做渗透测试
+# 封包注入功能有限, 建议用 mt76 晶片做渗透测试
 ```
 
 **步骤 5：若遇到 kernel crash（24.10 版本已知问题）**
 
 ```bash
-# 降回 23.05 稳定版，或使用自订编译的驱动
+# 降回 23.05 稳定版, 或使用自订编译的驱动
 # 检查 crash 日志
 logread | grep -i "panic\|crash\|rtl8812"
 ```
@@ -297,7 +297,7 @@ logread | grep -i "panic\|crash\|rtl8812"
 
 ```bash
 opkg list | grep rtw89
-# 若无结果，代表该版本未包含
+# 若无结果, 代表该版本未包含
 ```
 
 **步骤 2：若需使用，需自行编译 OpenWrt 映像档**
@@ -341,11 +341,11 @@ opkg list | grep rtw89
 | OpenWrt 官方文档 | OpenWrt 官方文件入口（无线设定 / 套件管理） | https://openwrt.org/docs/start | ✅ 已查核 | 2026-09-03 |
 | OpenWrt 官方论坛 | USB WiFi 驱动讨论入口 | https://forum.openwrt.org/ | ✅ 已查核 | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux 驱动上游 | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
-| ALFA Network 产品总览（Yopitek） | ALFA 现役产品规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
+| ALFA Network 产品总览（Yopitek） | ALFA 现役产品规格 | /zh-cn/products/alfa/ | ✅ 已查核 | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | 驱动维护者官方声明：建议避开 rtl8852/32au（RTL8832BU）晶片 | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ 已查核 | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko 需 kernel 5.19+ 才会出现于核心（驱动维护者原话） | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ 已查核 | 2026-09-03 |
 | OpenWrt 官方论坛 — Best USB WiFi dongle for Raspberry Pi 4B | 使用者回报 OpenWrt 23.05.0 成功安装 kmod-mt7921u | https://forum.openwrt.org/t/best-usb-wifi-dongle-for-raspberry-pi-4b/160103 | ✅ 已查核 | 2026-09-03 |
 
-相关文章：[ALFA 无线网卡是否支持 DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[ALFA 无线网卡是否支持 Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)｜[ALFA 无线网卡是否支持 NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无线网卡是否支持 NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
+相关文章：[ALFA 无线网卡是否支持 DD-WRT](/zh-cn/blog/alfa-ddwrt-router-compatibility/)｜[ALFA 无线网卡是否支持 Tomato](/zh-cn/blog/alfa-tomato-router-compatibility/)｜[ALFA 无线网卡是否支持 NVIDIA DGX Spark](/zh-cn/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无线网卡是否支持 NVIDIA Jetson Nano](/zh-cn/blog/alfa-nvidia-jetson-nano-compatibility/)
 
 免责声明：本文相容性判定以 OpenWrt 23.05.x / 24.10.x 官方套件库为准。不同路由器架构（ath79 / ramips / mvebu / x86 等）的套件可用性可能不同。Realtek 晶片驱动为社群维护，实际稳定性可能随版本变化。建议以 MediaTek 晶片机型（AWUS036ACM 为首选）作为 OpenWrt USB WiFi 的优先选择。

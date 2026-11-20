@@ -23,8 +23,6 @@ featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
 ---
 1. [What Are IBSS and 802.11s Mesh — and Why Do They Matter?](#1-what-are-ibss-and-80211s-mesh) 2. [ALFA AWUS036ACM Hardware Specifications](#2-alfa-awus036acm-hardware-specifications) 3. [The MT7612U Driver on Raspberry Pi](#3-the-mt7612u-driver-on-raspberry-pi) 4. [Mode 1: IBSS Ad Hoc Networking](#4-mode-1-ibss-ad-hoc-networking) 5. [Mode 2: 802.11s Mesh Point Networking](#5-mode-2-80211s-mesh-point-networking) 6. [Real-World Use Cases](#6-real-world-use-cases) 7. [Why the AWUS036ACM Is the Only ALFA Choice for This](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this) 8. [FAQ and Troubleshooting](#8-faq-and-troubleshooting) 9. [Where to Buy](#9-where-to-buy)
 
-# ALFA AWUS036ACM: Enabling IBSS Ad Hoc and 802.11s Mesh Networking on Raspberry Pi with MT7612U
-
 If you have ever tried to build a WiFi network between Raspberry Pi nodes **without a router** — or create a self-healing wireless mesh that routes traffic automatically through intermediate hops — you quickly discover that most USB WiFi adapters cannot do it. The kernel driver simply does not expose the necessary modes.
 
 {{< tldr >}}
@@ -743,7 +741,7 @@ Whether a USB WiFi adapter supports IBSS and 802.11s mesh on Linux depends entir
 | Model | Chipset | Driver | IBSS | 802.11s Mesh | Notes |
 |---|---|---|---|---|---|
 | **AWUS036ACM** | MT7612U | mt76x2u (in-kernel ≥ 4.19) | ✅ | ✅ | **The only choice** |
-| AWUS036ACH | RTL8812AU | rtw88 (in-kernel ≥ 6.14) | ✅ (kernel ≥ 6.14 only) | ❌ | New in-kernel driver; no mesh point |
+| AWUS036ACH | RTL8812AU | rtw88 (in-kernel ≥ 6.13) | ✅ (kernel ≥ 6.13 only) | ❌ | New in-kernel driver; no mesh point |
 | AWUS036ACS | RTL8811AU | rtl8812au-dkms (OOK) | ❌ | ❌ | Out-of-kernel driver; no IBSS/mesh |
 | AWUS036AX | RTL8832BU | rtw88 (in-kernel) | ❌ | ❌ | No Raspberry Pi support |
 | AWUS036AXER | RTL8832BU | rtw88 (in-kernel) | ❌ | ❌ | No Raspberry Pi support |

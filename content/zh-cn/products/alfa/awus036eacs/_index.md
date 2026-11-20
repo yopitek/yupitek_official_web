@@ -1,7 +1,8 @@
 ---
 title: "ALFA AWUS036EACS — AC600 + Bluetooth 4.2 迷你 USB 无线网卡"
-description: "ALFA AWUS036EACS，Realtek RTL8821CU，AC600 双频，USB 2.0 Nano 超轻薄，Bluetooth 4.2，适合 Windows 家用环境，不建议用于 Linux 或安全研究。"
+description: "ALFA AWUS036EACS，Realtek RTL8821CU，AC600 双频，USB 2.0 Nano 超轻薄，Bluetooth 4.2。内核 6.2 起内置 mainline rtw88_8821cu 驱动，GX10 实测 Monitor mode 与数据包注入两个频段均通过。"
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,9 +12,9 @@ tags: ["Wi-Fi 5", "AC600", "USB 2.0", "Nano", "蓝牙 4.2", "家用", "Windows"]
 
 ## 产品概述
 
-AWUS036EACS 是 Alfa Network 专为家用与办公室设计的超小型 WiFi + Bluetooth 复合型 USB 无线网卡。采用 Realtek RTL8821CU 芯片，集成 AC600 双频 WiFi 与 Bluetooth 4.2，Nano 机身设计插入 USB 口后几乎不占空间。Windows 系统内置驱动支持，即插即用。支持 Soft AP 模式，可作为 WiFi 热点共享网络。
+AWUS036EACS 是 Alfa Network 专为家用与办公室设计的超小型 WiFi + Bluetooth 复合型 USB 无线网卡。采用 Realtek RTL8821CU 芯片，集成 AC600 双频 WiFi 与 Bluetooth 4.2，Nano 机身设计插入 USB 口后几乎不占空间。Windows 系统内置驱动支持，即插即用。支持 Soft AP 模式，可作为 WiFi 热点共享网络。在 Linux 上，内核 6.2 起已内置 mainline rtw88_8821cu 驱动。在 GX10（Ubuntu 24.04、内核 6.17）实测中，Monitor mode 与数据包注入在 2.4 GHz 和 5 GHz 均为 100%，端到端 WPA handshake 抓取成功，蓝牙与 Wi-Fi 可同时使用。
 
-> ⚠️ **注意：** AWUS036EACS 为 Windows 家用机型。RTL8821CU 芯片在 Linux 社区驱动支持不佳，**不建议用于 Linux、Kali Linux 或 Raspberry Pi 环境**。无 RP-SMA 接口，天线无法升级。
+> ⚠️ **注意：** AWUS036EACS 原为 Windows 家用机型，在 Linux 上也可使用 mainline rtw88_8821cu 驱动（内核 6.2 及以上）。无 RP-SMA 接口，天线无法升级。
 
 ## 产品特色
 
@@ -51,15 +52,15 @@ AWUS036EACS 是 Alfa Network 专为家用与办公室设计的超小型 WiFi + B
 |---------|---------|------|
 | Windows XP–10 | ✅ 支持 | 内置驱动，即插即用。Windows 11 兼容性请参阅 Alfa 驱动页面。 |
 | macOS | ⚠️ 有限支持 | 确切版本待确认，不支持 Apple Silicon。 |
-| Ubuntu / Linux | ⚠️ 支持不佳 | RTL8821CU 社区驱动支持不足，不建议使用。 |
-| Kali Linux | ❌ 不建议 | Monitor Mode 及数据包注入无法可靠运作。 |
+| Ubuntu / Linux | ✅ 内核 6.2 及以上 | 内核内置 mainline rtw88_8821cu 驱动，无需另外安装（GX10、Ubuntu 24.04、内核 6.17 实测）。 |
+| Kali Linux | ✅ 支持 | 在 GX10（Ubuntu 24.04、内核 6.17）实测 Monitor mode 与数据包注入两个频段均为 100%，端到端 WPA handshake 抓取成功。Kali 实机未实测。 |
 | NetHunter（Android） | ❌ 不建议 | RTL8821CU 未确认与 NetHunter 兼容。 |
 
 ## 硬件支持
 
 | 硬件 | 支持状态 | 备注 |
 |------|---------|------|
-| Raspberry Pi | ❌ 不建议 | RTL8821CU 在 Pi OS 上驱动问题未解决。 |
+| Raspberry Pi | ⚠️ 未实测 | 未实测；内核 6.2 及以上已内置 mainline rtw88_8821cu 驱动。 |
 | 台式机／笔记本电脑 | ✅ 支持 | 仅建议 Windows 系统使用。 |
 | 嵌入式 / IoT（Windows） | ⚠️ 仅限 Windows | 迷你设计适合 Windows 嵌入式系统。 |
 
@@ -67,11 +68,11 @@ AWUS036EACS 是 Alfa Network 专为家用与办公室设计的超小型 WiFi + B
 
 | 功能 | 支持状态 |
 |------|---------|
-| Monitor Mode | ❌ 不可靠，不支持 |
-| 数据包注入 | ❌ 不可靠，不支持 |
+| Monitor Mode | ✅ 支持（GX10 实测：两个频段均为 100%） |
+| 数据包注入 | ✅ 支持（GX10 实测：两个频段均为 100%） |
 | Soft AP 模式 | ✅ 支持 |
-| 蓝牙 | ✅ BT 4.2 |
-| VIF | ❌ 不支持 |
+| 蓝牙 | ✅ BT 4.2（可与 Wi-Fi 同时使用） |
+| VIF | 🟡 部分支持（被动 monitor 与 managed 同频道并存；不支持独立双 VIF） |
 
 ## 包装内容
 

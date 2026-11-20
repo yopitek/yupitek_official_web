@@ -3,7 +3,7 @@ title: "2026 年 Kali Linux 最佳 WiFi 网卡完全指南"
 description: "2026 年 Kali Linux 最佳 USB WiFi 网卡全面比较，涵盖监听模式、数据包注入、芯片组与 ALFA Network 推荐机型。"
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -15,7 +15,7 @@ faq:
   - question: "RTL8812AU 和 MT7612U 哪个驱动更稳定？"
     answer: "MT7612U 的 mt76x2u 驱动自 Linux 核心 4.19 起内置于 mainline，免编译即插即用；RTL8812AU 需通过 DKMS 外部安装，内核更新后可能需重新编译。"
   - question: "WiFi 6E 网卡对 Kali Linux 有必要吗？"
-    answer: "当前非必要。MT7921AUN 驱动自核心 5.18 起逐步整合，6 GHz 数据包注入尚未完全稳定，建议有进阶需求的用户再选购 AWUS036AXML。"
+    answer: "当前非必要。MT7921AUN 驱动自核心 5.18 起逐步整合，但 AWUS036AXML 在 stock kernel 6.17 的数据包注入测试未通过（kernel 6.16 以前有社群回报可用），需要注入请改用 AWUS036ACH；建议仅有 6 GHz 监听需求的进阶用户再选购。"
   - question: "如何在 Kali Linux 设定 Monitor Mode？"
     answer: "先执行 sudo airmon-ng check kill 终止干扰进程，再执行 sudo airmon-ng start wlan1 启用监听模式，确认 iwconfig 显示 Mode:Monitor 即可。"
   - question: "Kali Linux 新手推荐哪款 ALFA 网卡？"
@@ -96,7 +96,7 @@ faq:
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | 2× RP-SMA | 全能首选 |
 | [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 2× RP-SMA | 前瞻之选 |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | 经济便携 |
-| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limited | 2× RP-SMA | Windows Wi-Fi 6 |
+| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ✅（kernel 6.17+） | 2× RP-SMA | Windows Wi-Fi 6 |
 
 ---
 
@@ -155,7 +155,7 @@ MT7612U 最大的优势在于内核主线支持。在 Kali Linux 2024.x 和 Ubun
 # 检查模块是否已加载
 lsmod | grep mt76x2u
 
-# 如未加载，手动加载
+# 如未加载, 手动加载
 sudo modprobe mt76x2u
 ```
 
@@ -199,7 +199,7 @@ Wi-Fi 6E 网络工作在新开放的 6 GHz 频谱，干扰更少、吞吐量更�
 
 **当前局限性**
 
-MT7921AUN 驱动的 6 GHz 监听模式仍在完善中。对于 2.4/5 GHz 上的常规 WPA2 测试，驱动运行稳定。若需要针对 6 GHz 进行深入测试，建议在实际作业前先检查 `mt76` 驱动仓库中的最新状态。
+MT7921AUN 驱动的 6 GHz 监听模式仍在完善中。对于 2.4/5 GHz 上的常规 WPA2 测试，驱动运行稳定。数据包注入则另当别论：kernel 6.16 以前有社群回报可用，但 stock kernel 6.17 实测注入未通过（AWUS036AXM 表现相同）；主因是 kernel 6.16 以后 mac80211 chanctx 回归，并非芯片先天限制，社群 patched 驱动可让注入运作，但固件仍锁速率（1/6 Mbps，不可注入 HT/VHT）。需要注入请改用 AWUS036ACH 或 AWUS036ACM。若需要针对 6 GHz 进行深入测试，建议在实际作业前先检查 `mt76` 驱动仓库中的最新状态。
 
 **谁应该选择 AWUS036AXML？**
 
@@ -215,7 +215,7 @@ MT7921AUN 驱动的 6 GHz 监听模式仍在完善中。对于 2.4/5 GHz 上的�
 
 ```bash
 lsusb
-# 找到你的网卡，例如：
+# 找到你的网卡, 例如:
 # Bus 001 Device 003: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac
 ```
 
@@ -246,7 +246,7 @@ sudo airmon-ng start wlan0
 
 ```bash
 iwconfig wlan0mon
-# Mode 应显示：Monitor
+# Mode 应显示: Monitor
 ```
 
 ### 5. 测试数据包注入

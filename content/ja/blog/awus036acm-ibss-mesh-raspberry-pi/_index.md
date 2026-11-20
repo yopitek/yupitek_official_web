@@ -23,8 +23,6 @@ faq:
 ---
 1. [IBSS と 802.11s メッシュとは何か、そしてなぜ重要なのか？](#1-what-are-ibss-and-80211s-mesh) 2. [ALFA AWUS036ACM ハードウェア仕様](#2-alfa-awus036acm-hardware-specifications) 3. [Raspberry Pi 上の MT7612U ドライバー](#3-the-mt7612u-driver-on-raspberry-pi) 4. [モード 1：IBSS アドホックネットワーク](#4-mode-1-ibss-ad-hoc-networking) 5. [モード 2：802.11s メッシュポイントネットワーク](#5-mode-2-80211s-mesh-point-networking) 6. [実際の使用例](#6-real-world-use-cases) 7. [AWUS036ACM がこの用途で唯一の ALFA の選択肢である理由](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this) 8. [よくある質問とトラブルシューティング](#8-faq-and-troubleshooting) 9. [購入先](#9-where-to-buy)
 
-# ALFA AWUS036ACM：Raspberry Pi で IBSS アドホックと 802.11s メッシュネットワークを構築する（MT7612U）
-
 
 {{< tldr >}}
 AWUS036ACMはMT7612Uチップセットを採用し、そのmt76x2uドライバーはLinux mac80211上に構築されIBSS Ad Hocと802.11s Mesh Pointモードを完全サポートします。本記事では両モードの動作原理、ステップバイステップ設定、実際の応用シーンを詳解します。
@@ -41,7 +39,7 @@ AWUS036ACMはMT7612Uチップセットを採用し、そのmt76x2uドライバ�
 
 ---
 
-## 1. IBSS と 802.11s メッシュとは何か？
+## 1. IBSS と 802.11s メッシュとは何か？ {#1-what-are-ibss-and-80211s-mesh}
 
 ### IBSS — Independent Basic Service Set（アドホックモード）
 
@@ -72,15 +70,15 @@ IBSS モードでは：
 - デフォルトでパス選択に **Hybrid Wireless Mesh Protocol（HWMP）** を使用します
 
 ```
-例：4 ノードメッシュ
+例: 4 ノードメッシュ
 
   [Pi A] ──── [Pi B] ──── [Pi C]
                 │
               [Pi D]
 
-Pi A は Pi B を経由して Pi C に自動的に到達できます。
-Pi A は Pi B を経由して Pi D に自動的に到達できます。
-Pi B が故障した場合、メッシュは代替ルートを探します。
+Pi A は Pi B を経由して Pi C に自動的に到達できます.
+Pi A は Pi B を経由して Pi D に自動的に到達できます.
+Pi B が故障した場合, メッシュは代替ルートを探します.
 ```
 
 ノードが 3〜4 台以上ある場合、ノードが広いエリアに分散している場合、あるいは手動管理なしにネットワークを冗長化したい場合には 802.11s が適切な選択肢です。
@@ -95,7 +93,7 @@ MT7612U は、両方について明確で疑いようのない **YES** が得ら
 
 ---
 
-## 2. ALFA AWUS036ACM ハードウェア仕様
+## 2. ALFA AWUS036ACM ハードウェア仕様 {#2-alfa-awus036acm-hardware-specifications}
 
 AWUS036ACM は ALFA Network の AC1200 デュアルバンド USB 3.0 アダプターで、Linux パワーユーザーと組み込み開発者向けに設計されています。
 
@@ -174,7 +172,7 @@ WPA2 / WPA / WEP / WPA-PSK / 802.1X / 64〜128 ビット WEP
 
 ---
 
-## 3. Raspberry Pi 上の MT7612U ドライバー
+## 3. Raspberry Pi 上の MT7612U ドライバー {#3-the-mt7612u-driver-on-raspberry-pi}
 
 ### ドライバー：mt76x2u（mt76 ファミリーの一部）
 
@@ -267,7 +265,7 @@ mac80211 をバイパスするドライバー（たとえば Realtek のアウ�
 
 ---
 
-## 4. モード 1：IBSS アドホックネットワーク
+## 4. モード 1：IBSS アドホックネットワーク {#4-mode-1-ibss-ad-hoc-networking}
 
 ### IBSS の動作原理
 
@@ -402,10 +400,10 @@ PING 192.168.88.2 (192.168.88.2) 56(84) bytes of data.
 
 iperf3 でスループットをテストします：
 ```bash
-# ノード 2（サーバー）で：
+# ノード 2 (サーバー) で:
 iperf3 -s
 
-# ノード 1（クライアント）で：
+# ノード 1 (クライアント) で:
 iperf3 -c 192.168.88.2 -t 10
 ```
 
@@ -456,7 +454,7 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 ---
 
-## 5. モード 2：802.11s メッシュポイントネットワーク
+## 5. モード 2：802.11s メッシュポイントネットワーク {#5-mode-2-80211s-mesh-point-networking}
 
 ### 802.11s の動作原理
 
@@ -525,13 +523,13 @@ sudo ip link set mesh0 up
 **ステップ 5 — 各ノードに固有の IP アドレスを割り当てます：**
 
 ```bash
-# ノード 1：
+# ノード 1:
 sudo ip addr add 10.88.0.1/24 dev mesh0
 
-# ノード 2：
+# ノード 2:
 sudo ip addr add 10.88.0.2/24 dev mesh0
 
-# ノード 3：
+# ノード 3:
 sudo ip addr add 10.88.0.3/24 dev mesh0
 ```
 
@@ -577,7 +575,7 @@ xx:xx:xx:xx:xx:03 xx:xx:xx:xx:xx:02 mesh0   18      2316    0       0       100 
 **メッシュ越しに ping を実行します：**
 
 ```bash
-# ノード 1 から：
+# ノード 1 から:
 ping -c 4 10.88.0.3
 ```
 
@@ -607,7 +605,7 @@ sudo batctl if add mesh0
 # batman インターフェースをアップします
 sudo ip link set bat0 up
 
-# IP を batman インターフェースに割り当てます（mesh0 ではありません）
+# IP を batman インターフェースに割り当てます (mesh0 ではありません)
 sudo ip addr add 10.88.0.1/24 dev bat0
 ```
 
@@ -615,11 +613,11 @@ sudo ip addr add 10.88.0.1/24 dev bat0
 
 ```bash
 sudo batctl n    # 近隣ノード
-sudo batctl o    # オリジネーターテーブル（すべての既知ノード）
-sudo batctl tg   # トランスレーションテーブル（MAC → IP マッピング）
+sudo batctl o    # オリジネーターテーブル (すべての既知ノード)
+sudo batctl tg   # トランスレーションテーブル (MAC → IP マッピング)
 ```
 
-### 802.11s メッシュを永続化する
+### 802.11s メッシュを永続化する {#making-80211s-mesh-persistent}
 
 `/etc/systemd/system/mesh-point.service` を作成します：
 
@@ -654,7 +652,7 @@ sudo systemctl start mesh-point.service
 
 ---
 
-## 6. 実際の使用例
+## 6. 実際の使用例 {#6-real-world-use-cases}
 
 ### 使用例 1 — オフグリッドセンサーネットワーク（スマート農業 / 環境モニタリング）
 
@@ -717,13 +715,13 @@ sudo systemctl start mesh-point.service
 # IBSS と並行してモニターインターフェースを作成する
 sudo iw phy phy1 interface add mon0 type monitor
 sudo ip link set mon0 up
-# キャプチャ：
+# キャプチャ:
 sudo tcpdump -i mon0 -w capture.pcap
 ```
 
 ---
 
-## 7. AWUS036ACM がこの用途で唯一の ALFA の選択肢である理由
+## 7. AWUS036ACM がこの用途で唯一の ALFA の選択肢である理由 {#7-why-the-awus036acm-is-the-only-alfa-choice-for-this}
 
 ### 決定的な要因：mac80211 準拠
 
@@ -734,7 +732,7 @@ USB WiFi アダプターが Linux で IBSS と 802.11s メッシュをサポー�
 | モデル | チップセット | ドライバー | IBSS | 802.11s メッシュ | 備考 |
 |---|---|---|---|---|---|
 | **AWUS036ACM** | MT7612U | mt76x2u（インカーネル ≥ 4.19） | ✅ | ✅ | **唯一の選択肢** |
-| AWUS036ACH | RTL8812AU | rtw88（インカーネル ≥ 6.14） | ✅（カーネル ≥ 6.14 のみ） | ❌ | 新しいインカーネルドライバー、メッシュポイントなし |
+| AWUS036ACH | RTL8812AU | rtw88（インカーネル ≥ 6.13） | ✅（カーネル ≥ 6.13 のみ） | ❌ | 新しいインカーネルドライバー、メッシュポイントなし |
 | AWUS036ACS | RTL8811AU | rtl8812au-dkms（OOK） | ❌ | ❌ | アウトオブカーネルドライバー、IBSS/メッシュなし |
 | AWUS036AX | RTL8832BU | rtw88（インカーネル） | ❌ | ❌ | Raspberry Pi サポートなし |
 | AWUS036AXER | RTL8832BU | rtw88（インカーネル） | ❌ | ❌ | Raspberry Pi サポートなし |
@@ -757,7 +755,7 @@ AWUS036ACHM（MT7610U）はこれらのモードをサポートしていた以�
 
 ---
 
-## 8. よくある質問とトラブルシューティング
+## 8. よくある質問とトラブルシューティング {#8-faq-and-troubleshooting}
 
 **Q: Pi に `wlan0` しか表示されません。`wlan1` はどこにありますか？**
 
@@ -809,7 +807,7 @@ sudo pkill wpa_supplicant 2>/dev/null || true
 はい — これが VIF（仮想インターフェース）の目的です。`wlan1` をマネージドモードのままホームルーターのインターネットアクセスに使いながら、Pi 間ネットワーク用の IBSS またはメッシュモードで 2 番目の仮想インターフェースを追加できます：
 
 ```bash
-# wlan1 はマネージドのまま（インターネット用）
+# wlan1 はマネージドのまま (インターネット用)
 # IBSS 用に 2 番目のインターフェースを追加
 sudo iw phy phy1 interface add adhoc0 type ibss
 sudo ip link set adhoc0 up
@@ -831,7 +829,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ---
 
-## 9. 購入先
+## 9. 購入先 {#9-where-to-buy}
 
 ALFA AWUS036ACM は、ALFA Network の公式リセラーである [yupitek.com](https://yupitek.com) から購入できます。正規リセラーからの購入により、Alfa Network Inc. の標準保証付きの正規品を確実に入手できます。
 

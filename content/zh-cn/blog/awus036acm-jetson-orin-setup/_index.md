@@ -3,7 +3,7 @@ title: "不用编译驱动！ALFA AWUS036ACM 在 Jetson Orin 边缘 AI 主机上
 description: "针对 AVALUE AIB-NW01（NVIDIA Jetson Orin NX/Nano）客户，深度分析哪款 ALFA Network USB 无线网卡最适合边缘 AI 部署，并实证说明 AWUS036ACM 如何做到真正的即插即用。"
 date: 2026-05-20
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -35,7 +35,7 @@ ALFA AWUS036ACM 是 Jetson Orin 上唯一真正免编译、即插即用的 USB W
 
 
 
-这是榆合科技近期收到的客户询问。问题听起来简单，但如果你在 Jetson 开发者社区待过一阵子就会知道——**USB 无线网卡在 NVIDIA Jetson 平台上，比想象中难搞很多。**
+这是榆閤科技近期收到的客户询问。问题听起来简单，但如果你在 Jetson 开发者社区待过一阵子就会知道——**USB 无线网卡在 NVIDIA Jetson 平台上，比想象中难搞很多。**
 
 我们从 Jetson 核心架构、NVIDIA 论坛的真实案例、GitHub 上的驱动编译失败回报，一路追到 ARM64 平台的实测数据，整理了这份选购指南。
 
@@ -149,9 +149,9 @@ NVIDIA 论坛案例（2024 年 10 月）：RTL8188EUS 在 JetPack 5.1.x 上运�
 | **MT7612U** | **AWUS036ACM** | **In-kernel (mt76x2u)** | **4.19+** | ✅ 完美兼容，即插即用 |
 | RTL8812AU | AWUS036ACH | Out-of-tree（需编译） | 需手动编译 | ⚠️ 可考虑但编译有风险 |
 | RTL8811AU | AWUS036ACS | Out-of-tree（需编译） | 需手动编译 | ⚠️ 同 RTL8812AU 问题 |
-| RTL8812BU | AWUS036AX | Out-of-tree（需编译） | 需手动编译 | ⚠️ 需编译，有已知问题 |
+| RTL8832BU | AWUS036AX | Out-of-tree（需编译） | 需手动编译 | ⚠️ 需编译，有已知问题 |
 | MT7921AU | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ K5.10/5.15 不满足 |
-| RTL8832CU | AWUS036AXER | Out-of-tree（需编译） | 需手动编译 | ❌ 不建议，ARM64 支持不明 |
+| RTL8832BU | AWUS036AXER | Out-of-tree（需编译） | 需手动编译 | ❌ 不建议，ARM64 支持不明 |
 
 数据来源：[morrownr/USB-WiFi 芯片支持表](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
 
@@ -279,10 +279,10 @@ sudo nmcli device wifi connect "你的SSID" password "你的密码"
 
 ```bash
 lsusb | grep MediaTek
-# 预期输出：ID 0e8d:7612 MediaTek Inc. MT7612U
+# 预期输出: ID 0e8d:7612 MediaTek Inc. MT7612U
 
 dmesg | grep mt76
-# 预期输出：mt76x2u 1-1:1.0 wlx...: renamed from wlan0
+# 预期输出: mt76x2u 1-1:1.0 wlx...: renamed from wlan0
 ```
 
 ### Step 3：连接 WiFi
@@ -314,7 +314,7 @@ GitHub issue #574 的验证是在 **Odroid M1**（ARM64 + Kernel 5.10）上完�
 
 ### 其他型号的适用场景
 
-AWUS036ACH（RTL8812AU）和 AWUS036AX（RTL8812BU）并非不能使用，只是需要在 Jetson 上手动编译驱动。如果你有编译环境的经验且愿意维护驱动，这些型号也值得考虑。
+AWUS036ACH（RTL8812AU）和 AWUS036AX（RTL8832BU）并非不能使用，只是需要在 Jetson 上手动编译驱动。如果你有编译环境的经验且愿意维护驱动，这些型号也值得考虑。
 
 ---
 
@@ -332,7 +332,7 @@ AWUS036ACH（RTL8812AU）和 AWUS036AX（RTL8812BU）并非不能使用，只是
 ### 立即行动
 
 - 查看产品详情：https://yupitek.com/zh-cn/products/alfa/awus036acm/
-- 技术支持：榆合科技提供台湾本地技术支持，欢迎联系我们
+- 技术支持：榆閤科技提供台湾本地技术支持，欢迎联系我们
 
 ### 延伸阅读
 

@@ -2,6 +2,7 @@
 title: "Adaptateurs Sans Fil ALFA Network"
 description: "Yopitek distribue les adaptateurs USB Wi-Fi haute puissance ALFA Network, tres apprecies dans la communaute de recherche en securite."
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
@@ -37,16 +38,16 @@ ALFA Network est un fabricant taiwanais bien connu d'equipements reseau sans fil
     AC1200 double bande, chipset Realtek RTL8812AU, USB 3.0, double antenne, haute performance.
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/fr/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 double bande, chipset MediaTek MT7610U, USB 2.0, conception compacte avec antenne unique — idéal pour le pentesting portable.
+    AC600 double bande, chipset MediaTek MT7610U, USB 2.0, conception compacte avec antenne unique — idéal pour le pentesting portable.
   {{< /card >}}
   {{< card title="AWUS036ACM" href="/fr/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 double bande, chipset MediaTek MT7612U, USB 3.0, 300+867 Mbps, modele classique.
   {{< /card >}}
   {{< card title="AWUS036ACS" href="/fr/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
-    AC433 double bande, chipset Realtek RTL8811AU, USB 2.0, design ultra-compact.
+    AC600 double bande, chipset Realtek RTL8811AU, USB 2.0, design ultra-compact.
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/fr/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
-    AC600 double bande, chipset Realtek RTL8811CU, USB 2.0, design fin.
+    AC600 double bande, chipset Realtek RTL8821CU, USB 2.0, design fin.
   {{< /card >}}
 {{< /card-group >}}
 

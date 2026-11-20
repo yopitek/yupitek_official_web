@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["HAK5", "WiFi Pineapple Pager", "ALFA Network", "AWUS036ACM", "AWUS036ACH", "compatibility", "wireless-security"]
 featureimage: "/images/blog/hak5-wifi-pineapple-pager-alfa-compatibility.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "HAK5 WiFi Pineapple Pager 可以外接 ALFA 網路卡嗎？"
     answer: "可以，但需注意 MIPS 架構限制與 USB 2.0 供電。AWUS036ACM 為首選，核心內建驅動最穩定。"
@@ -27,8 +27,6 @@ HAK5 WiFi Pineapple Pager 可外接 ALFA 網路卡，首選 AWUS036ACM 核心內
 {{< tldr >}}
 Pager 採 MIPS 架構不支援 DKMS，AWUS036ACM 因 MT7612U 驅動內建於 OpenWrt 6.6 核心而隨插即用；AWUS036ACH 需交叉編譯且有 wiphy bug，USB 2.0 供電僅 500mA 需外接 Hub。
 {{< /tldr >}}
-
-# HAK5 WiFi Pineapple Pager × ALFA Network：外接 USB 無線網路卡相容性評估與設定指南
 
 無線網路安全稽核需要高度精準、多功能性以及合適的硬體支援。**HAK5 WiFi Pineapple Pager** 作為搭載強大 **PineAP v8** 引擎的超便攜、口袋型稽核工具，吸引了大量滲透測試人員的關注。
 
@@ -68,10 +66,10 @@ HAK5 Pager 僅配備單個 USB 2.0 Host 介面。根據標準 USB 2.0 規範，�
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **AWUS036ACM** | MediaTek **MT7612U** | 2.4 GHz / 5 GHz | ~600 mA (需 Hub) | **核心內建 (Native)** | 使用 `opkg` 直接安裝 | ✅ 支援 / ✅ 支援 | 🏆 **首選推薦（最穩定）** |
 | **AWUS036ACH** | Realtek **RTL8812AU** | 2.4 GHz / 5 GHz | ~720 mA (需供電 Hub) | 核心未內建 (Out-of-Kernel) | 需使用 SDK 交叉編譯 | ✅ 支援 / ✅ 支援 | ⭐⭐ **進階使用者**（MIPS 平台有 wiphy bug） |
-| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4/5/6 GHz (WiFi 6E) | ~720 mA (需供電 Hub) | **核心內建 (Native)** | 使用 `opkg` + 手動置入韌體 | ✅ 支援 / ✅ 支援 | ⭐⭐⭐ **潛力大**，但供電要求嚴格 |
+| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4/5/6 GHz (WiFi 6E) | ~720 mA (需供電 Hub) | **核心內建 (Native)** | 使用 `opkg` + 手動置入韌體 | ✅ 支援 / ⚠️ kernel 6.16 以前有社群回報；kernel 6.17 實測失敗 | ⭐⭐⭐ **潛力大**，但供電要求嚴格 |
 | **AWUS036ACHM** | MediaTek **MT7610U** | 2.4 GHz / 5 GHz | ~400 mA (Pager 可直接供電) | 部分內建 | 使用 `opkg` 安裝 | ✅ 支援 / ✅ 支援 | ⭐⭐⭐ **預算折衷方案** |
 | **AWUS036ACS** | Realtek **RTL8811AU** | 2.4 GHz / 5 GHz | ~500 mA (邊緣) | 核心未內建 | 需使用 SDK 交叉編譯 | ✅ 支援 / ✅ 支援 | ⭐⭐ **普通**（需要手動編譯驅動） |
-| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | ~500 mA | 核心未內建 | 不建議 | ❌ **不支援監聽** | ❌ **無法使用** |
+| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | ~500 mA | 主線 6.2+ 已含 rtw88_8821cu；Pager 韌體是否編入未實測 | 未實測 | GX10 kernel 6.17 實測 monitor／注入可用，Pager 上未實測 | ⚠️ **未於 Pager 驗證** |
 
 ---
 
@@ -95,7 +93,7 @@ HAK5 Pager 僅配備單個 USB 2.0 Host 介面。根據標準 USB 2.0 規範，�
 執行 `lsusb` 確認系統已成功識別 MediaTek 晶片組：
 ```bash
 lsusb
-# 應顯示以下資訊：
+# 應顯示以下資訊:
 # Bus 001 Device 002: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/b/g/n/ac Wireless Adapter
 ```
 
@@ -125,7 +123,7 @@ reboot
 重啟完成後，SSH 登入並檢查無線網路卡介面：
 ```bash
 iw dev
-# 應看到新增的 wlan 介面（如 wlan2）
+# 應看到新增的 wlan 介面 (如 wlan2)
 ```
 
 啟用 Monitor Mode：
@@ -137,7 +135,7 @@ ip link set wlan2 up
 驗證介面狀態：
 ```bash
 iw dev wlan2 info
-# 應看到："type monitor"
+# 應看到: "type monitor"
 ```
 
 ---
@@ -169,7 +167,7 @@ git clone https://github.com/aircrack-ng/rtl8812au.git package/kernel/rtl8812au
 進入設定選單並選取無線網路卡驅動：
 ```bash
 make menuconfig
-# 進入：Kernel modules -> Wireless Drivers -> 勾選 kmod-rtl8812au
+# 進入: Kernel modules -> Wireless Drivers -> 勾選 kmod-rtl8812au
 ```
 開始編譯：
 ```bash

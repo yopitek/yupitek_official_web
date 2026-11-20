@@ -130,6 +130,6 @@ Redémarre le Flipper après la configuration. Tu devrais voir les applications 
 
 ---
 
-**Lien vers la page produit** : https://yupitek.com/zh-tw/products/sdrlab/flipper-5g/
-**Manuel d'utilisation complet** : https://doczhtw.yupitek.com/sdrlab/expansion/5g-board/
+**Lien vers la page produit** : https://yupitek.com/fr/products/sdrlab/flipper-5g/
+**Manuel d'utilisation complet** : https://doc.yupitek.com/sdrlab/expansion/5g-board/
 **Page boutique du fabricant (OpenSourceSDRLab)** : https://opensourcesdrlab.com/products/opensourcesdrlab-new-5g-multi-in-one-module-flipperzero-module-with-screen-flipperzero5g-expansion-board?VariantsId=10754

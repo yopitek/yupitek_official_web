@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Pourquoi l'AWUS036AXML plante-t-il en mode moniteur actif ?"
     answer: "Le MT7921AUN utilise une architecture MAC basée firmware. La combinaison actuelle du pilote mt7921u et du firmware n'implémente pas complètement les chemins de commandes nécessaires à l'injection active. L'interface disparaît après aireplay-ng."
@@ -29,8 +29,6 @@ Le pilote mt7921u de l'AWUS036AXML provoque un plantage du firmware lors de l'in
 Lorsque vous utilisez l'AWUS036AXML en mode moniteur actif (surveillance et envoi de trames simultanément), des plantages aléatoires peuvent survenir, attribuables à un support firmware insuffisant pour la surveillance active sur le MT7921AUN.
 
 
-# Correction de firmware du mode moniteur AWUS036AXML : Résoudre les plantages en mode actif
-
 L'AWUS036AXML avec la puce MT7921AUN offre des performances Wi-Fi 6E de premier ordre sous Kali Linux, mais présente quelques problèmes liés au firmware en mode moniteur actif. Ce guide vous montre comment les résoudre.
 
 ---
@@ -38,6 +36,8 @@ L'AWUS036AXML avec la puce MT7921AUN offre des performances Wi-Fi 6E de premier 
 ## Le problème : Plantages liés au firmware en mode actif
 
 Lorsque vous utilisez l'AWUS036AXML en mode moniteur actif (surveillance et envoi de trames simultanément), des plantages aléatoires peuvent survenir, attribuables à un support firmware insuffisant pour la surveillance active sur le MT7921AUN.
+
+Note : cela ne doit pas être confondu avec l'échec du test d'injection sur le noyau stock 6.17, dont la cause principale est une régression mac80211 chanctx depuis le noyau 6.16 et non une limite de la puce. Des pilotes communautaires patchés permettent l'injection, mais le firmware verrouille toujours le débit (1/6 Mbps, pas d'injection HT/VHT).
 
 **Symptômes :**
 - Le mode moniteur démarre avec succès, mais plante après quelques minutes

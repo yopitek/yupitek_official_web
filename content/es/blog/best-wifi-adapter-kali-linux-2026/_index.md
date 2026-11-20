@@ -8,14 +8,14 @@ showTableOfContents: true
 tags: ["Kali-Linux", "adaptador-WiFi", "modo-monitor", "inyección-paquetes", "ALFA-Network"]
 featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Por qué Kali Linux necesita una tarjeta inalámbrica externa?"
     answer: "Las tarjetas integradas de los portátiles no admiten el modo monitor ni la inyección de paquetes, por lo que no pueden ejecutar herramientas de pruebas de penetración como airodump-ng. Debes usar una tarjeta USB externa que admita ambas funciones."
   - question: "¿Qué controlador es más estable, RTL8812AU o MT7612U?"
     answer: "El controlador mt76x2u de MT7612U está integrado en el kernel principal desde Linux 4.19, es plug-and-play sin compilar. RTL8812AU requiere instalación externa vía DKMS y puede necesitar recompilación tras actualizar el kernel."
   - question: "¿Es necesaria una tarjeta WiFi 6E para Kali Linux?"
-    answer: "Actualmente no es imprescindible. El controlador de MT7921AUN se integra gradualmente desde el kernel 5.18, pero la inyección de paquetes en 6 GHz aún no es completamente estable. Se recomienda para usuarios con necesidades avanzadas."
+    answer: "Actualmente no es imprescindible. El controlador de MT7921AUN se integra gradualmente desde el kernel 5.18, pero la inyección de paquetes falló con el AWUS036AXML en las pruebas con el kernel stock 6.17 (hay reportes de la comunidad de que funcionaba antes del kernel 6.16). Para inyección use el AWUS036ACH; el AWUS036AXML se recomienda solo a usuarios avanzados que necesiten sobre todo monitorización en 6 GHz."
   - question: "¿Cómo configurar el modo monitor en Kali Linux?"
     answer: "Primero ejecuta sudo airmon-ng check kill para detener los procesos que interfieren, luego sudo airmon-ng start wlan1 para activar el modo monitor. Confirma con iwconfig que muestra Mode:Monitor."
   - question: "¿Qué tarjeta ALFA se recomienda para principiantes de Kali Linux?"
@@ -91,7 +91,7 @@ Las antenas externas desmontables (conectores RP-SMA) te dan flexibilidad. Puede
 | [AWUS036ACH](/es/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | 2× RP-SMA | El mejor en general |
 | [AWUS036AXML](/es/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 2× RP-SMA | A prueba de futuro |
 | [AWUS036ACM](/es/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | Compacto y económico |
-| [AWUS036AX](/es/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limitado | 2× RP-SMA | Wi-Fi 6 Windows |
+| [AWUS036AX](/es/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ✅ (kernel 6.17+) | 2× RP-SMA | Wi-Fi 6 Windows |
 
 ---
 
@@ -194,7 +194,7 @@ Las redes Wi-Fi 6E operan en el espectro de 6 GHz recién habilitado, ofreciendo
 
 **Limitaciones Actuales**
 
-El modo monitor en la banda de 6 GHz a través del controlador MT7921AUN todavía está madurando. Para pruebas de redes WPA2 estándar en 2.4/5 GHz, el controlador funciona bien. Para trabajo de vanguardia en 6 GHz, verifica el estado actual del controlador en el repositorio `mt76` antes de tu compromiso de auditoría.
+El modo monitor en la banda de 6 GHz a través del controlador MT7921AUN todavía está madurando. Para pruebas de redes WPA2 estándar en 2.4/5 GHz, el controlador funciona bien. La inyección de paquetes es otro asunto: hay reportes de la comunidad de que funcionaba en kernels anteriores a 6.16, pero con el kernel stock 6.17 nuestra prueba de inyección falló (el AWUS036AXM se comporta igual). La causa es una regresión de mac80211 chanctx desde el kernel 6.16, no una limitación del chipset; un controlador parcheado puede hacerla funcionar, pero el firmware sigue bloqueando la tasa (1/6 Mbps, sin inyección HT/VHT). Si necesita inyección, use el AWUS036ACH o el AWUS036ACM. Para trabajo de vanguardia en 6 GHz, verifica el estado actual del controlador en el repositorio `mt76` antes de tu compromiso de auditoría.
 
 **¿Quién Debería Elegir el AWUS036AXML?**
 
@@ -275,8 +275,8 @@ Para principiantes, comienza con el AWUS036ACH. Su soporte maduro de controlador
 
 ## Referencias
 
-1. aircrack-ng — RTL8812AU 驅動官方 GitHub 倉庫：[https://github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
-2. Kali Linux 官方文件：[https://www.kali.org/docs/](https://www.kali.org/docs/)
-3. ALFA Network 官方網站：[https://www.alfa.com.tw](https://www.alfa.com.tw)
-4. Linux Kernel — MT76 驅動程式文件：[https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
-5. Linux Kernel 官方網站：[https://www.kernel.org](https://www.kernel.org)
+1. aircrack-ng — Repositorio oficial en GitHub del controlador RTL8812AU: [https://github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. Documentación oficial de Kali Linux: [https://www.kali.org/docs/](https://www.kali.org/docs/)
+3. Sitio web oficial de ALFA Network: [https://www.alfa.com.tw](https://www.alfa.com.tw)
+4. Linux Kernel — Documentación del controlador MT76: [https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
+5. Sitio web oficial del kernel Linux: [https://www.kernel.org](https://www.kernel.org)

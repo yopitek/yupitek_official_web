@@ -3,7 +3,7 @@ title: "AWUS036AXML Monitor-Modus Firmware-Fix: Aktive Abstürze beheben"
 description: "So beheben Sie Monitor-Modus-Firmware-Abstürze des AWUS036AXML unter Kali Linux. Deckt MT7921AUN-Firmware-Update, Kernel-Version-Anforderungen, Active-vs-Passive-Modus-Arbeitsumgehung und hcxdumptool-Alternative ab."
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,7 +11,7 @@ tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "tr
 featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
 faq:
   - question: "Warum stürzt AWUS036AXML im aktiven Monitor Mode ab?"
-    answer: "MT7921AUN verwendet eine firmwarebasierte MAC-Architektur. Die aktuelle Kombination aus Linux mt7921u-Treiber und Firmware implementiert die für aktive Injection erforderlichen Befehlswege nicht vollständig, sodass die Schnittstelle nach der Ausführung von aireplay-ng verschwindet."
+    answer: "MT7921AUN verwendet eine firmwarebasierte MAC-Architektur. Die aktuelle Kombination aus Linux mt7921u-Treiber und Firmware implementiert die für aktive Injection erforderlichen Befehlswege nicht vollständig, sodass die Schnittstelle nach der Ausführung von aireplay-ng verschwindet. Dass die Injection auf dem Stock-Kernel 6.17 fehlschlägt, liegt hauptsächlich an einer mac80211-chanctx-Regression ab Kernel 6.16 und ist keine Einschränkung des Chips; gepatchte Community-Treiber ermöglichen Injection wieder, die Firmware sperrt die Rate jedoch weiterhin auf 1/6 Mbps (keine HT/VHT-Frames)."
   - question: "Wie lässt sich der Absturz im aktiven Modus bei MT7921AUN beheben?"
     answer: "Das Aktualisieren des Pakets firmware-misc-nonfree auf die neueste Version, das Upgrade auf Kernel 6.6 oder höher sowie das Vermeiden von Deauth-Floods mit hoher Paketrate können das Problem verbessern, aber möglicherweise nicht vollständig beseitigen."
   - question: "Wie erfasst hcxdumptool PMKID ohne Packet Injection?"
@@ -22,8 +22,6 @@ faq:
     answer: "Der Kernel 6.1 LTS oder höher enthält mehrere Stabilitäts-Patches für mt7921u, während der Kernel 6.6 und höher zusätzliche Verbesserungen des MediaTek USB-Treiber-Stacks aufweist."
 ---
 Wenn Sie den AWUS036AXML im aktiven Monitor-Modus verwenden (gleichzeitiges Überwachen und Senden von Frames), können zufällige Abstürze auftreten, die auf unzureichende Firmware-Unterstützung für aktive Überwachung beim MT7921AUN zurückzuführen sind.
-
-# AWUS036AXML Monitor-Modus Firmware-Fix: Aktive Abstürze beheben
 
 {{< tldr >}}
 Der mt7921u-Treiber für AWUS036AXML führt bei aktiver Packet Injection zu einem Firmware-Absturz. Dieser Artikel erläutert die Ursache, Diagnose-Schritte sowie Korrekturmaßnahmen wie Firmware-Updates, Kernel-Updates und den Wechsel zu hcxdumptool für passive Erfassung.
@@ -43,6 +41,8 @@ Der AWUS036AXML mit MT7921AUN-Chipsatz bietet erstklassige Wi-Fi-6E-Leistung unt
 - Paketinjektion funktioniert, aber mit erhöhter Latenz
 
 **Lösung:** Aktualisieren Sie die MT7921AUN-Firmware auf die neueste Version.
+
+> **Hinweis zur Injection:** Wenn `aireplay-ng --test` auf dem Stock-Kernel 6.17 fehlschlägt (Found 0 APs / No Answer), ist die Hauptursache eine mac80211-chanctx-Regression ab Kernel 6.16, keine Einschränkung des Chips. Gepatchte Community-Treiber ermöglichen Injection wieder, doch die Firmware sperrt die Rate weiterhin auf 1/6 Mbps, sodass keine HT/VHT-Frames injiziert werden können.
 
 ---
 
@@ -102,7 +102,7 @@ sudo hcxdumptool -i wlan0mon -o capture.pcapng --enable_status=1
 
 ## Referenzen
 
-1. [Linux firmware Repository（kernel.org）](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git)
+1. [Linux firmware Repository (kernel.org)](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git)
 2. [Linux Kernel mt76 Treiber](https://wireless.wiki.kernel.org/en/users/drivers/mediatek)
 3. [aircrack-ng Werkzeugsatz](https://www.aircrack-ng.org/)
 4. [hcxdumptool GitHub-Projekt](https://github.com/ZerBea/hcxdumptool)

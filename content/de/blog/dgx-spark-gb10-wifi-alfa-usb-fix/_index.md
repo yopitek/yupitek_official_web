@@ -1,9 +1,9 @@
 ---
 title: "DGX Spark WLAN-Probleme? In 10 Minuten gelöst mit dem ALFA USB-Adapter"
-description: "WLAN-Probleme beim NVIDIA DGX Spark behoben. Treiberfreier USB-Adapter funktioniert in 10 Minuten. Auch kompatibel mit ASUS ASCENT GX10, MSI EdgeXpert, HP ZGX Nano, ALTOS BrainSphere GB10 F1 und GIGABYTE AI TOP ATOM."
+description: "WLAN-Probleme am NVIDIA DGX Spark in zehn Minuten lösen: Ein ALFA-USB-Adapter ohne Treiberinstallation hilft auch bei ASUS GX10 und anderen GB10-Servern."
 date: 2026-05-20
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -13,14 +13,16 @@ faq:
   - question: "Warum kann sich der DGX Spark nicht mit Wi-Fi verbinden?"
     answer: "Der DGX Spark verwendet den integrierten MediaTek MT7925 Wi-Fi 7-Chip, doch der wpa_supplicant im OOBE-Phase ist zu stark reduziert und mit bestimmten AP-Herstellern (insbesondere UniFi) inkompatibel. Eine Verbindung mit WPA2-Enterprise ist nahezu ausgeschlossen."
   - question: "Gilt die Lösung mit der ALFA USB-Netzwerkkarte für alle GB10 AI Server?"
-    answer: "Ja. Alle AI Edge Server, die den NVIDIA GB10 Grace Blackwell Superchip verwenden (ASUS, MSI, HP, ALTOS, GIGABYTE), nutzen denselben MT7925 Wi-Fi-Chip. Die Lösung mit der ALFA AWUS036ACM ist daher für alle Modelle kompatibel."
+    answer: "Ja. Alle AI Edge Server, die den NVIDIA GB10 Grace Blackwell Superchip verwenden (ASUS, MSI, HP, ALTOS, GIGABYTE), nutzen denselben MT7925 Wi-Fi-Chip. Die Lösung mit der ALFA AWUS036ACM sollte daher bei allen Modellen funktionieren (getestet nur auf dem ASUS GX10, andere Modelle wurden nicht einzeln getestet)."
   - question: "Muss der Treiber für die AWUS036ACM auf dem DGX Spark installiert werden?"
     answer: "Nein. Der mt76-Treiber für den MT7612U ist seit Linux Kernel 4.19 im Hauptzweig des Kernel-Quellbaums enthalten. Der Kernel 6.17+ von DGX OS unterstützt dies nativ vollständig, und der Treiber wird beim Einstecken in den USB-Anschluss automatisch geladen."
   - question: "Wie lange dauert die Behebung der Wi-Fi-Probleme mit der ALFA USB-Netzwerkkarte?"
-    answer: "Weniger als zehn Minuten. Nach dem Einstecken in den USB 3.0-Port lädt das System den Treiber automatisch. Die Verbindung zum WiFi kann anschließend durch Scannen und Herstellen der Verbindung über den nmcli-Befehl abgeschlossen werden. Es ist weder das Kompilieren eines Treibers noch ein Neustart erforderlich."
+    answer: "Weniger als zehn Minuten. Nach dem Anschließen über einen USB-C-auf-USB-A-Adapter an den USB-C-Port des GX10 lädt das System den Treiber automatisch. Die Verbindung zum WiFi kann anschließend durch Scannen und Herstellen der Verbindung über den nmcli-Befehl abgeschlossen werden. Es ist weder das Kompilieren eines Treibers noch ein Neustart erforderlich."
   - question: "Können Sie auf dem DGX Spark auch andere ALFA-Netzwerkkarten verwenden?"
-    answer: "Für den AWUS036ACH (RTL8812AU) muss der Treiber manuell kompiliert werden, und auf der ARM64-Plattform von GB10 ist der Erfolg nicht garantiert. Der AWUS036ACM ist die einzige Lösung, die als vollständig plug-and-play und ohne Kompilierung bestätigt wurde."
+    answer: "Ja. Wir haben auf dem ASUS GX10 (GB10, Ubuntu 24.04 ARM64, Kernel 6.17) alle 9 aktuellen ALFA-Adapter getestet: Alle verwenden die im Kernel integrierten Treiber, funktionieren direkt nach dem Einstecken und benötigen kein DKMS; der AWUS036ACH nutzt den integrierten Treiber rtw88_8812au. AWUS036AXM / AXML scheitern auf dem Stock-Kernel 6.17 jedoch bei der Paketinjektion und eignen sich nur für Verbindung und AP. Andere GB10-Modelle wurden nicht einzeln getestet."
 ---
+
+> 📌 Dieser Artikel wurde anhand der GX10-Praxistests vom November 2026 aktualisiert: Auf dem ASUS GX10 (Ubuntu 24.04 ARM64, Kernel 6.17.0-1014-nvidia) laufen alle 9 aktuellen ALFA-Adapter mit den im Kernel integrierten Treibern – einstecken und loslegen, kein DKMS nötig. Alle Daten finden Sie in der [Testmatrix der 9 ALFA-Adapter unter ARM64](/de/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/). Getestet wurde nur auf dem GX10; andere GB10-Modelle wurden nicht einzeln getestet.
 
 Ihr lang erwarteter **NVIDIA DGX Spark** (Codename Project DIGITS) ist endlich angekommen.
 
@@ -111,7 +113,7 @@ Hier sind die Unterschiede zwischen den Marken:
 | Gewicht | 1,48 kg | 1,2 kg | 1,2 kg | 1,25 kg | < 1,5 kg | 1,2 kg |
 | Mitgelieferte Software | — | — | — | HP ZGX Toolkit | Altos aiGeni Plattform | — |
 
-> ⚠️ **Fazit**: Egal welchen GB10 AI Edge Server Sie gekauft haben, das eingebaute WLAN ist derselbe MediaTek MT7925-Chip, und alle können auf dieselben Verbindungsprobleme stoßen. Die unten beschriebene ALFA USB-Adapter-Lösung **funktioniert mit allen sechs Modellen**.
+> ⚠️ **Fazit**: Egal welchen GB10 AI Edge Server Sie gekauft haben, das eingebaute WLAN ist derselbe MediaTek MT7925-Chip, und alle können auf dieselben Verbindungsprobleme stoßen. Die unten beschriebene ALFA USB-Adapter-Lösung **sollte mit allen sechs Modellen funktionieren** (getestet nur auf dem ASUS GX10, andere Modelle wurden nicht einzeln getestet).
 
 ---
 
@@ -125,9 +127,9 @@ Das bedeutet, Ihr USB-WLAN-Adapter muss drei Anforderungen erfüllen:
 2. ✅ **Volle ARM64 (aarch64) Unterstützung** — Plug-and-Play auf GB10
 3. ✅ **Bewährte Stabilität** — von der Community umfassend validiert
 
-Von Dutzenden USB-WLAN-Adaptern auf dem Markt erfüllen nur sehr wenige alle drei.
+Alle 9 aktuellen ALFA-USB-Adapter erfüllen auf dem im GX10-Test verwendeten Kernel 6.17 diese drei Punkte (GX10-Praxistest, siehe „Weitere ALFA-Adapter“ am Ende des Artikels). Dieser Artikel nimmt den AWUS036ACM als Beispiel, da er sich am besten als Verwaltungsnetzwerk eignet.
 
-### 🥇 Die einzige Empfehlung: ALFA AWUS036ACM
+### 🥇 Empfehlung: ALFA AWUS036ACM
 
 | Element | Detail |
 |------|------|
@@ -142,27 +144,27 @@ Von Dutzenden USB-WLAN-Adaptern auf dem Markt erfüllen nur sehr wenige alle dre
 
 #### Warum dieser? Sechs Gründe
 
-**1. Die einzige wirklich treiberfreie Plug-and-Play-Lösung**
+**1. Plug-and-Play ohne Treiberinstallation**
 
 Der mt76-Treiber ist seit Version 4.19 Teil des mainline Linux Kernels. Der Kernel 6.17 des DGX Spark unterstützt ihn nativ. In einen USB-Port einstecken, und das System **lädt den Treiber automatisch** — Sie installieren nichts.
 
-**2. Die einzige ARM64-validierte Option**
+**2. Auf ARM64 in der Praxis getestet**
 
-Der MT7612U wurde jahrelang auf ARM-Plattformen getestet — Raspberry Pi OS (aarch64), Ubuntu Server (ARM64) und mehr. Die ARM64-Architektur des GB10 ist vollständig kompatibel, ohne dass Patches erforderlich sind.
+Der MT7612U wurde jahrelang auf ARM-Plattformen getestet — Raspberry Pi OS (aarch64), Ubuntu Server (ARM64) und mehr. Wir haben ihn außerdem auf dem ASUS GX10 mit GB10-Plattform (Kernel 6.17) getestet: Nach dem Einstecken wird `mt76x2u` automatisch geladen, Patches sind nicht nötig.
 
-**3. Die einzige Null-Kompilierung, Null-Konfiguration Lösung**
+**3. Keine Kompilierung, keine Konfiguration**
 
-Im Gegensatz zum Realtek RTL8812AU, der DKMS und Neukompilierung nach jedem Kernel-Update erfordert, benötigt der ACM nichts davon. Aktualisieren Sie Ihren DGX OS Kernel — der ACM funktioniert sofort weiter.
+Der mt76-Treiber ist seit Jahren im Mainline-Kernel; auch nach einem Kernel-Update von DGX OS funktioniert der ACM weiterhin per Plug-and-Play. (Die Realtek-Modelle benötigen auf Kernel 6.17 ebenfalls keine Kompilierung; die Mindestversion unterscheidet sich je Adapter, nur darunter ist DKMS nötig.)
 
-**4. Die einzige treiberfreie Lösung mit vollem Monitor-Modus + Paketinjektion**
+**4. Unterstützt Monitor-Modus und Paketinjektion**
 
-Wenn Sie Kali Linux VMs auf Ihrem DGX Spark für Sicherheitsforschung betreiben möchten, ist der ACM derzeit der einzige treiberfreie Adapter, der Monitor-Modus, Paketinjektion und virtuelle Schnittstellen (VIF) unterstützt.
+Wenn Sie Kali Linux VMs auf Ihrem DGX Spark für Sicherheitsforschung betreiben möchten, unterstützt der ACM Monitor-Modus, Paketinjektion und virtuelle Schnittstellen (VIF). Im GX10-Test lag die Injection-Erfolgsquote bei 2,4 GHz 63–83 % und 5 GHz 76 %; wenn Injection der Hauptzweck ist, schneiden AWUS036EACS und ACH (beide Bänder 100 %) besser ab.
 
-**5. Die einzige Mittel- bis High-End-Option mit austauschbaren Antennen**
+**5. Austauschbare Antennen**
 
 Zwei abnehmbare RP-SMA-Antennen. Wird mit 5 dBi geliefert, und Sie können bei Bedarf auf 7 dBi oder 9 dBi High-Gain-Antennen aufrüsten — perfekt für Edge-Bereitstellungen in Serverräumen oder Fabriken mit schwachen WLAN-Signalen.
 
-**6. Die einzige TAA-konforme Option**
+**6. TAA-Konformität**
 
 Wenn Ihre Organisation behördliche Beschaffungsanforderungen hat, ist der ALFA AWUS036ACM einer der wenigen externen USB-WLAN-Adapter mit **TAA-Konformität**.
 
@@ -174,7 +176,7 @@ Hier ist der komplette Workflow für die Verwendung des ALFA AWUS036ACM auf Ihre
 
 ### Schritt 1: USB-Adapter einstecken
 
-Stecken Sie den AWUS036ACM in einen beliebigen USB 3.0 Type-A Port Ihres DGX Spark.
+Die USB-Ports des DGX Spark sind alle USB-C; stecken Sie den AWUS036ACM daher über einen USB-C-auf-USB-A-Adapter (mit Datenübertragung) ein.
 
 Öffnen Sie ein Terminal und führen Sie aus:
 
@@ -184,11 +186,16 @@ dmesg | tail -20
 
 Sie sollten eine ähnliche Ausgabe sehen:
 
+Die folgende dmesg-Ausgabe stammt aus einem Test der AWUS036ACM auf einem ASUS GX10 (Kernel 6.17.0-1014-nvidia); die MAC-Adresse ist maskiert:
+
 ```
-mt76_usb 3-1:1.0: MAC/BBP MT7612U (rev 2)
-mt76_usb 3-1:1.0: firmware loaded: mt7612u.bin
-ieee80211 phy1: rt2x00_set_rt: Info - RT chipset 7612, rev 0200 detected
-ieee80211 phy1: rt2x00lib_probe_dev: Information - Successfully initialized device
+usb 5-1: new high-speed USB device number 2 using xhci-hcd
+usb 5-1: New USB device found, idVendor=0e8d, idProduct=7612, bcdDevice= 1.00
+mt76x2u 5-1:1.0: ASIC revision: 76120044
+mt76x2u 5-1:1.0: ROM patch build: 20141115060606a
+mt76x2u 5-1:1.0: Firmware Version: 0.0.00
+usbcore: registered new interface driver mt76x2u
+mt76x2u 5-1:1.0 wlxXXXXXXXXXXXX: renamed from wlan0
 ```
 
 **Das ist das Signal, dass der Treiber automatisch geladen wurde.** Sie haben nichts installiert.
@@ -276,7 +283,7 @@ Mit der Aufteilung **bleibt Ihre Verwaltungsverbindung unabhängig von der Model
 ALFA ACM → SSH, Jupyter Notebook, Systemupdates
 ```
 
-### Szenario B: Sicherheitsforschungslabor
+### Szenario B: Sicherheitsforschungslabor (nur in eigenen oder ausdrücklich autorisierten Netzwerken)
 ```
 GB10 → LLM-Feinabstimmung ausführen
 Kali Linux VM → USB-Durchleitung ALFA ACM → Drahtlose Penetrationstests
@@ -299,6 +306,26 @@ A: Gleicher Hersteller, völlig unterschiedliche Treiberarchitektur. Der MT7925 
 **F: Funktioniert dieser Adapter auch außerhalb von DGX OS?**
 
 A: Absolut. Der MT7612U-Treiber ist Teil des mainline Linux Kernels — Ubuntu, Debian, Raspberry Pi OS, Kali Linux, Fedora, Arch Linux — alles mit Kernel 4.19 oder neuer. Plug-and-Play auf allen.
+
+---
+
+## Weitere ALFA-Adapter: Ergebnisse des GX10-Praxistests
+
+Wir haben auf dem ASUS GX10 (Ubuntu 24.04 ARM64, Kernel 6.17.0-1014-nvidia) alle 9 aktuellen ALFA-Adapter getestet: Alle verwenden die im Kernel integrierten Treiber, funktionieren direkt nach dem Einstecken und benötigen kein DKMS. Andere GB10-Modelle (DGX Spark, MSI EdgeXpert, GIGABYTE AI TOP ATOM, ALTOS BrainSphere, HP ZGX Nano) nutzen denselben GB10-Chip und dieselbe NVIDIA-Kernel-Reihe; wir erwarten dasselbe Verhalten, sie wurden jedoch nicht einzeln getestet.
+
+| Modell | Chip | Integrierter Treiber | Packet Injection (GX10-Test) | Geeignet für |
+|------|------|----------|----------------------|----------|
+| AWUS036ACM | MediaTek MT7612U | mt76x2u | ✅ 2.4G 63–83 % / 5G 76 % | Verwaltungsnetzwerk, AP, Penetrationstests |
+| AWUS036ACHM | MediaTek MT7610U | mt76x0u | ⚠️ 2.4G 96–100 % / 5G nur Broadcast | Verwaltungsnetzwerk, AP |
+| AWUS036ACH | Realtek RTL8812AU | rtw88_8812au | ✅ beide Bänder 100 % | Penetrationstests, Empfang über große Entfernungen |
+| AWUS036ACS | Realtek RTL8811AU | rtw88_8821au | ✅ 2.4G 100 % / 5G 96 % | Penetrationstests, mobiler Einsatz |
+| AWUS036EACS | Realtek RTL8821CU (mit Bluetooth) | rtw88_8821cu | ✅ beide Bänder 100 % | Penetrationstests |
+| AWUS036AX | Realtek RTL8832BU | rtw89_8852bu | ✅ 2.4G 96 % | Wi-Fi-6-Verbindung, AP |
+| AWUS036AXER | Realtek RTL8832BU | rtw89_8852bu | ✅ 2.4G 73 % | Wi-Fi-6-Verbindung, AP, Monitor-Empfang |
+| AWUS036AXM | MediaTek MT7921AUN | mt7921u | ❌ Fehlgeschlagen | Nur Verbindung, AP |
+| AWUS036AXML | MediaTek MT7921AUN | mt7921u | ❌ Fehlgeschlagen | Nur Verbindung, AP (6 GHz im Test nutzbar) |
+
+AWUS036AXM / AXML scheitern auf dem Stock-Kernel 6.17 bei der Paketinjektion (Monitor, AP und WPA3 funktionieren) und eignen sich nicht für Penetrationstests. Die Kernel-Version, ab der die Treiber im Mainline-Kernel enthalten sind, unterscheidet sich je Adapter (ACM/ACHM 4.19, AXM/AXML 5.18, EACS 6.2, ACH/ACS 6.13, AX/AXER 6.17); nur darunter sind DKMS-Treiber der Community nötig. Alle Daten finden Sie in der [Testmatrix der 9 ALFA-Adapter unter ARM64](/de/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/).
 
 ---
 

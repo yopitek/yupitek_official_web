@@ -3,7 +3,7 @@ title: "エッジ AI の帯域幅ボトルネックを突破：NVIDIA Jetson Ori
 description: "NVIDIA Jetson Orin Nano に ALFA AWUS036AXML Wi-Fi 6E アダプターを導入し、RTSP 4K 映像をクリーンな 6GHz 帯へ移行する方法を解説します。iperf3 と GStreamer の実測データも紹介します。"
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,8 +11,8 @@ tags: ["jetson-orin-nano", "wifi-6e", "awus036axml", "6ghz", "rtsp", "edge-ai", 
 featureimage: "/images/blog/jetson-orin-nano-wifi-6e-6ghz-high-bandwidth-streaming.webp"
 ---
 
-> **対応プラットフォーム**：NVIDIA Jetson Orin Nano Developer Kit、JetPack 6.x（Ubuntu 22.04 LTS ベース、Linux Kernel 5.15 / 6.1）
-> **ガイド対象ハードウェア**：ALFA AWUS036AXML（MediaTek MT7921AU チップセット、Wi-Fi 6E トライバンド USB アダプター）
+> **対応プラットフォーム**：NVIDIA Jetson Orin Nano Developer Kit、JetPack 6.x（Ubuntu 22.04 LTS ベース、Linux Kernel 5.15）
+> **ガイド対象ハードウェア**：ALFA AWUS036AXML（MediaTek MT7921AUN チップセット、Wi-Fi 6E トライバンド USB アダプター）
 > **本記事の位置づけ**：本ソリューションは DIY オープンソースの学術・エンジニアリング開発プラットフォーム向け bench-test 評価であり、商用製品の公式サポートではなく、クローズドプラットフォーム各社の公式認証を意味するものでもありません。
 
 ## はじめに：エッジデバイスの「帯域幅の天井」はどこから来るのか？
@@ -73,9 +73,9 @@ grep PRETTY /etc/os-release
 
 # 2) 現在のワイヤレスインターフェースと信号
 iw dev                      # ワイヤレスインターフェースを一覧表示
-iw dev wlan0 link           # 現在の AP、チャンネル、RSSI、bitrate を確認
+iw dev wlan0 link           # 現在の AP, チャンネル, RSSI, bitrate を確認
 
-# 3) AP 側のチャンネル利用率（AP 上で実行するか、AP の WebUI で確認）
+# 3) AP 側のチャンネル利用率 (AP 上で実行するか, AP の WebUI で確認)
 #    接続断の検知基準
 ping -c 60 -i 1 <AP_ゲートウェイ_IP>
 ```
@@ -88,7 +88,7 @@ ping -c 60 -i 1 <AP_ゲートウェイ_IP>
 
 ### 2.1 まず JetPack のカーネルバージョンを確認する
 
-AWUS036AXML の最大の強みは、**MediaTek MT7921AU の `mt7921u` ドライバが Linux メインラインカーネルにネイティブ統合されている**ことです（Kernel 5.18 から収録）。**GitHub でドライバをコンパイルする必要はありません**。ただし「ネイティブサポート」には条件があります。まずカーネルバージョンを確認しましょう。
+AWUS036AXML のチップは MediaTek MT7921AUN（AXM は MT7921AU）で、その `mt7921u` ドライバが Linux メインラインカーネルに収録されたのは Kernel 5.18 からです。しかし JetPack 6.x の既定カーネルは 5.15 で、メインラインの `mt7921u` は含まれていないため、**「JetPack を入れれば挿すだけで使える」と想定してはいけません**。まずカーネルバージョンとドライバを確認しましょう。
 
 ```bash
 uname -r
@@ -99,8 +99,9 @@ uname -r
 | JetPack | ベース OS | Linux Kernel | AWUS036AXML への対応 |
 |---|---|---|---|
 | JetPack 5.1.x | Ubuntu 20.04（要自己確認） | 5.10 | ドライバの確認が必要。JetPack 6.x へのアップグレードを推奨 |
-| JetPack 6.0 / 6.1 | Ubuntu 22.04 LTS | 5.15 | カーネルバージョンによる。まず `modinfo mt7921u` を実行 |
-| JetPack 6.2+（推奨） | Ubuntu 22.04 LTS | 6.1 | `mt7921u` がネイティブ内蔵、挿すだけで使用可能 |
+| JetPack 6.0 / 6.1 / 6.2 / 6.2.2（L4T 36.2–36.5） | Ubuntu 22.04 LTS | 5.15 LTS（例：`5.15.116-release-tegra`） | メインライン収録版（5.18）より古い。使えるかどうかは NVIDIA の L4T カーネルでの backport 次第。まず `modinfo mt7921u` を実行 |
+
+> **このアダプターは Jetson 上では実機検証していません。** Yupitek の検証プラットフォームは ASUS GX10（Ubuntu 24.04、kernel 6.17）のみで、AXML の 6 GHz は利用可能、monitor は弱め、パケットインジェクションは失敗でした。JetPack 6.x は全バージョンが Kernel 5.15 であり、JetPack 6.2 に上げてもドライバが内蔵されるわけではありません。`modinfo mt7921u` を実行してください。出力があれば L4T カーネルにドライバが含まれています。出力がなければ、backport／DKMS ドライバを使うか、5.18 以上のアップストリームカーネルへ自分で入れ替える必要があります（NVIDIA は JetPack 6 で 5.14 以上のアップストリームカーネルへの入れ替えが可能と説明していますが、既定の構成ではありません）。
 
 ドライバとファームウェアの準備ができているか確認します。
 
@@ -118,7 +119,7 @@ sudo reboot
 Jetson Orin Nano Developer Kit には USB 3.2 Type-A ポート（青色）が 2 つと USB 2.0 ポートが 2 つあります。AWUS036AXML は **USB-C 3.2 Gen1** 接続インターフェースを採用し、2-in-1（USB-C から USB-A）の電源兼データケーブルが同梱されています。
 
 ```bash
-# 接続後、USB 層でデバイスが認識されているか確認（MediaTek MT7921AU の VID:PID は 0e8d:7961）
+# 接続後, USB 層でデバイスが認識されているか確認 (MediaTek MT7921AU の VID:PID は 0e8d:7961)
 lsusb | grep -i mediatek
 ```
 
@@ -141,14 +142,14 @@ nmcli device wifi connect "あなたのSSID" password "あなたのパスワー�
 **帯域の固定（重要なステップ）**：2.4GHz の `nmcli band` 値は `bg`、5GHz は `a` です。**Wi-Fi 6E の 6GHz は `a`（拡張）を使用します**。最も確実な方法は、**AP 側**に「**6GHz 専用**」の SSID を作成し、Band Steering を無効にすることです。クライアント側では物理チャンネルの内容でどの帯域に接続したかを確認します。
 
 ```bash
-# 現在の接続チャンネルを確認（6GHz の周波数は 5925–7125 MHz の間）
+# 現在の接続チャンネルを確認 (6GHz の周波数は 5925–7125 MHz の間)
 iw dev wlan0 link
 
-# すっきり確認する方法：周波数がどの帯域に該当するかを見る
+# すっきり確認する方法: 周波数がどの帯域に該当するかを見る
 iw dev wlan0 link | grep -i freq
 #   2.4GHz → 2400-2500 MHz
 #   5GHz   → 4900-5900 MHz
-#   6GHz   → 5925-7125 MHz（Wi-Fi 6E 専用）
+#   6GHz   → 5925-7125 MHz (Wi-Fi 6E 専用)
 ```
 
 クライアントが混雑した 2.4/5GHz にローミングしないようにしたい場合は、接続設定で指定します。
@@ -182,11 +183,11 @@ nmcli con up "接続名"
 Jetson に iperf3 をインストールし、受信ホストとペアリングします。
 
 ```bash
-# 受信側（例：別のコンピューターまたはサーバー）
+# 受信側 (例: 別のコンピューターまたはサーバー)
 iperf3 -s
 
-# Jetson 側（client、60 秒の双方向測定）
-iperf3 -c <受信側IP> -t 60 -R     # -R は reverse（Jetson のアップロード）を測定
+# Jetson 側 (client, 60 秒の双方向測定)
+iperf3 -c <受信側IP> -t 60 -R     # -R は reverse (Jetson のアップロード) を測定
 ```
 
 **2.4GHz SSID、5GHz SSID、6GHz SSID** のそれぞれで 1 回ずつ実行し、`sender Mbps` と `receiver Mbps` を記録します。先にリンク品質を確認してもよいでしょう。
@@ -209,7 +210,7 @@ ping -c 60 -i 1 <受信側IP> | tail -2
 スループットと遅延は間接的な指標にすぎません。**本当に検証すべきは「4K を何ストリーム同時にデコードしてもフレーム落ちしないか」**です。JetPack には GStreamer 1.0 の NVIDIA ハードウェアデコーダープラグイン（`nvv4l2decoder`）が内蔵されています。
 
 ```bash
-# perf エレメントで実際のデコードフレームレートを集計（1 秒ごとにサンプリング）
+# perf エレメントで実際のデコードフレームレートを集計 (1 秒ごとにサンプリング)
 gst-launch-1.0 \
   rtspsrc location="rtsp://カメラIP/stream" ! \
   rtph264depay ! h264parse ! nvv4l2decoder ! nvvidconv ! \
@@ -251,7 +252,7 @@ sudo tegrastats
 | Linux Kernel | `uname -r` | \_\_\_\_\_ |
 | `mt7921u` が内蔵されているか | `modinfo mt7921u` | 出力あり / 出力なし |
 
-> `uname -r` が 5.18 未満で、`modinfo mt7921u` に出力がない場合：まず JetPack を更新（推奨 6.2+、Kernel 6.1）してからアダプターを検討してください。**古いカーネルに非メインラインのドライバを無理やりコンパイルしないでください**。それは別のトラブルシューティング記事の主役になるだけです。
+> `uname -r` が 5.18 未満で、`modinfo mt7921u` に出力がない場合（JetPack 6.x の既定はこの状態です）：L4T カーネルにこのドライバは含まれていません。対処は、カーネルに合った backport／DKMS ドライバを使うか、5.18 以上のカーネルへ入れ替えることです。いずれも自己管理の構成になるため、バックアップを取り、戻せる経路を確保してください。JetPack のバージョンを上げるだけでは Kernel 5.15 は変わりません。
 
 ### Step 2：ワイヤレス環境を確認する
 
@@ -267,8 +268,8 @@ sudo tegrastats
 
 | プラットフォーム | サポート状況 |
 |---|---|
-| Ubuntu 22.04 / 24.04 | ✅ ネイティブ `mt7921u`（Kernel 5.18+；JetPack 6.2+ で適用） |
-| Kali Linux | ✅ ネイティブサポート（Monitor Mode / Packet Injection） |
+| Ubuntu 22.04 / 24.04 | ✅ `mt7921u` は Kernel 5.18 からメインライン収録。JetPack 6.x の既定は 5.15 のため、まず `modinfo mt7921u` で確認するか、backport／DKMS が必要 |
+| Kali Linux | ✅ ネイティブサポート（Monitor Mode）；⚠️ Packet Injection：kernel 6.16以前はコミュニティ報告あり、stock 6.17では実測失敗 |
 | Windows 11 | ✅（6GHz 帯は Windows 11 以降が必要） |
 | Windows 10 | ✅（ただし 6GHz 帯は非対応、2.4/5GHz のみ） |
 | macOS（Intel / Apple Silicon） | ❌ **非対応**（MT7921AU に macOS ドライバなし、購入しないでください） |
@@ -304,7 +305,7 @@ sudo tegrastats
 
 ## まとめとハードウェアの推奨
 
-複数ストリームの 4K 映像をエッジ AI プラットフォームに取り込む際、ボトルネックは計算能力ではなく、**ワイヤレスの収容力とチャンネルのクリーンさ**にあることが多いです。2.4G/5G はすでにデバイスの海に埋もれており、**Wi-Fi 6E の 6GHz は新しい無干渉チャンネルを提供します**——ネイティブドライバでコンパイル不要のアダプターと組み合わせれば、Jetson Orin Nano は 2–4 ストリームの 4K を安定して受け止め、「帯域幅の天井」の問題を一気に先送りできます。
+複数ストリームの 4K 映像をエッジ AI プラットフォームに取り込む際、ボトルネックは計算能力ではなく、**ワイヤレスの収容力とチャンネルのクリーンさ**にあることが多いです。2.4G/5G はすでにデバイスの海に埋もれており、**Wi-Fi 6E の 6GHz は新しい無干渉チャンネルを提供します**——ドライバが利用可能なアダプター（Jetson の既定カーネルは 5.15 のため、事前に `modinfo mt7921u` で確認してください。2.1 節参照。本カードは Jetson では実機検証していません）と組み合わせれば、Jetson Orin Nano は 2–4 ストリームの 4K を安定して受け止め、「帯域幅の天井」の問題を一気に先送りできます。
 
 **推奨ハードウェア**：ALFA AWUS036AXML（MediaTek MT7921AU、Linux Kernel 5.18+ でネイティブ・コンパイル不要、Wi-Fi 6E トライバンド、デュアル RP-SMA 5dBi 高利得アンテナ、2.7W 低消費電力）。同じチップセットアーキテクチャの AWUS036AXMR はアンテナなしの組み込み型モデルで、スペースが限られたラックマウント型エッジノードに適しています。
 

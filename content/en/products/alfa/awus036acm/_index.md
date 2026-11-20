@@ -64,7 +64,7 @@ The AWUS036ACM is the top recommendation for Linux users who want zero-hassle se
 |----|--------|-------|
 | Windows XP–11 | ✅ Supported | Driver from Alfa website. Windows 10/11 recommended. |
 | macOS 10.7–10.12 | ⚠️ Limited | Official support ends at macOS 10.12 Sierra. macOS 11+ and Apple Silicon NOT supported. |
-| Ubuntu 19.04+ | ✅ Plug & Play | In-kernel mt76 driver (kernel ≥ 4.19). Zero driver installation on Ubuntu 20.04 LTS and later. |
+| Ubuntu 19.04+ | ✅ Plug & Play | In-kernel mt76x2u driver (kernel ≥ 4.19). Zero driver installation on Ubuntu 20.04 LTS and later. |
 | Kali Linux 2019.3+ | ✅ Plug & Play | In-kernel driver. Monitor mode confirmed. VIF (Virtual Interface) supported. AP mode on 5 GHz may require `disable_usb_sg` module parameter. |
 | NetHunter (Android) | ✅ Supported | OTG USB; in-kernel driver means broader Android compatibility than RTL adapters. |
 
@@ -99,7 +99,7 @@ The AWUS036ACM is the top recommendation for Linux users who want zero-hassle se
 |----------|------|
 | Official Product Page | https://www.alfa.com.tw/products/awus036acm_1 |
 | Official Documentation | https://docs.alfa.com.tw/Product/AWUS036ACM/ |
-| Linux Driver Info (in-kernel) | mt76 driver — included in Linux kernel ≥ 4.19, no installation needed |
+| Linux Driver Info (in-kernel) | mt76x2u driver — included in Linux kernel ≥ 4.19, no installation needed |
 
 ## Datasheet Download
 

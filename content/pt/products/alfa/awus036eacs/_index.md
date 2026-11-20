@@ -1,7 +1,8 @@
 ---
 title: "ALFA AWUS036EACS — Adaptador USB Nano AC600 + Bluetooth 4.2"
-description: "ALFA AWUS036EACS, chipset Realtek RTL8821CU, AC600 dual-band, USB 2.0 Nano, Bluetooth 4.2, projetado para usuários domésticos do Windows. Não recomendado para Linux ou pesquisa de segurança."
+description: "ALFA AWUS036EACS, chipset Realtek RTL8821CU, AC600 dual-band, USB 2.0 Nano, Bluetooth 4.2. Driver mainline rtw88_8821cu desde o kernel 6.2; no GX10, monitor mode e injeção passaram nas duas bandas."
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,9 +12,9 @@ tags: ["Wi-Fi 5", "AC600", "USB 2.0", "Nano", "Bluetooth 4.2", "Windows", "Domé
 
 ## Visão Geral do Produto
 
-O AWUS036EACS é o adaptador combinado de WiFi + Bluetooth ultracompacto da Alfa, projetado para usuários domésticos e de escritório que desejam ambas as conectividades em um único dongle USB discreto. Construído em torno do chipset Realtek RTL8821CU, integra WiFi dual-band AC600 e Bluetooth 4.2 em um fator de forma nano com suporte de driver integrado no Windows. Seu modo Soft AP permite compartilhar a conexão com a internet. Este adaptador prioriza simplicidade e compacidade — NÃO é recomendado para usuários avançados de Linux, Kali Linux ou pesquisa de segurança.
+O AWUS036EACS é o adaptador combinado de WiFi + Bluetooth ultracompacto da Alfa, projetado para usuários domésticos e de escritório que desejam ambas as conectividades em um único dongle USB discreto. Construído em torno do chipset Realtek RTL8821CU, integra WiFi dual-band AC600 e Bluetooth 4.2 em um fator de forma nano com suporte de driver integrado no Windows. Seu modo Soft AP permite compartilhar a conexão com a internet. No Linux, o driver mainline rtw88_8821cu está incluído desde o kernel 6.2. Nos testes no GX10 (Ubuntu 24.04, kernel 6.17), o monitor mode e a injeção de pacotes atingiram 100% em 2.4 GHz e 5 GHz, a captura de um handshake WPA de ponta a ponta foi bem-sucedida, e Bluetooth e Wi-Fi funcionaram ao mesmo tempo.
 
-> ⚠️ **Aviso:** AWUS036EACS é projetado para uso doméstico no Windows. RTL8821CU tem suporte limitado na comunidade Linux. NÃO recomendado para Linux, Kali Linux ou Raspberry Pi. Sem porta RP-SMA — antena não atualizável.
+> ⚠️ **Aviso:** AWUS036EACS é projetado para uso doméstico no Windows, mas também funciona no Linux com o driver mainline rtw88_8821cu (kernel 6.2 ou superior). Sem porta RP-SMA — antena não atualizável.
 
 ## Características Principais
 
@@ -51,15 +52,15 @@ O AWUS036EACS é o adaptador combinado de WiFi + Bluetooth ultracompacto da Alfa
 |--------------------|--------|-------|
 | Windows XP–10 | ✅ Suportado | Driver integrado; plug and play. Consulte a página de drivers da Alfa para Windows 11. |
 | macOS | ⚠️ Limitado | Faixa de versão exata a confirmar. Sem suporte para Apple Silicon. |
-| Ubuntu / Linux | ⚠️ Fraco | RTL8821CU tem fraco suporte de drivers na comunidade. Não recomendado. |
-| Kali Linux | ❌ Não recomendado | Modo monitor e injeção de pacotes não funcionam de forma confiável. |
+| Ubuntu / Linux | ✅ Kernel 6.2 ou superior | Driver mainline rtw88_8821cu, sem instalação (testado no GX10, Ubuntu 24.04, kernel 6.17). |
+| Kali Linux | ✅ Suportado | Monitor mode e injeção de pacotes verificados no GX10 (Ubuntu 24.04, kernel 6.17): 100% nas duas bandas, captura de handshake WPA de ponta a ponta bem-sucedida. Não testado em um Kali real. |
 | NetHunter (Android) | ❌ Não recomendado | RTL8821CU não confirmado funcionando com NetHunter. |
 
 ## Hardware Compatível
 
 | Hardware | Status | Notas |
 |----------|--------|-------|
-| Raspberry Pi | ❌ Não recomendado | Problemas com driver RTL8821CU no Pi OS. |
+| Raspberry Pi | ⚠️ Não testado | Não testado por nós; o kernel 6.2 ou superior inclui o driver mainline rtw88_8821cu. |
 | Desktop / Notebook | ✅ Suportado | Apenas Windows recomendado. |
 | Embarcado / IoT (Windows) | ⚠️ Somente Windows | Design compacto se adapta a sistemas Windows embarcados. |
 
@@ -67,11 +68,11 @@ O AWUS036EACS é o adaptador combinado de WiFi + Bluetooth ultracompacto da Alfa
 
 | Funcionalidade | Status |
 |----------------|--------|
-| Modo Monitor | ❌ Não suportado de forma confiável |
-| Injeção de Pacotes | ❌ Não suportado de forma confiável |
+| Modo Monitor | ✅ Sim (teste GX10: 100% nas duas bandas) |
+| Injeção de Pacotes | ✅ Sim (teste GX10: 100% nas duas bandas) |
 | Modo Soft AP | ✅ Sim |
-| Bluetooth | ✅ BT 4.2 |
-| VIF | ❌ Não |
+| Bluetooth | ✅ BT 4.2 (utilizável ao mesmo tempo que o Wi-Fi) |
+| VIF | 🟡 Parcial (monitor passivo + managed no mesmo canal; sem VIF dupla independente) |
 
 ## Conteúdo da Embalagem
 

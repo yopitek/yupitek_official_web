@@ -8,7 +8,7 @@ slug: "awus036eacs-china-install-guide"
 tags: ["alfa", "awus036eacs", "windows", "驅動", "中國", "bluetooth", "rtl8821cu"]
 categories: ["驅動指南"]
 series: ["alfa-china-install-guide"]
-description: "手把手教你在中國境內安裝 ALFA AWUS036EACS。這款納米網路卡在 Windows 下表現極佳，但在 Linux 下有一定局限性，請務必閱讀本指南再開始。"
+description: "手把手教你在中國境內安裝 ALFA AWUS036EACS。這款納米網路卡在 Windows 下表現極佳；在 Linux 核心 6.2+ 下已由內建的 rtw88_8821cu 驅動支援，免編譯、插上即用，監聽與注入實測可用。"
 related_product: "/zh-tw/products/alfa/awus036eacs/"
 series_order: 8
 featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
@@ -18,30 +18,32 @@ faq:
   - question: "AWUS036EACS 用什麼晶片？支援藍牙嗎？"
     answer: "採用 Realtek RTL8821CU 晶片，支援 WiFi 5 與藍牙 4.2。"
   - question: "AWUS036EACS 適合在 Linux 上使用嗎？"
-    answer: "不推薦，RTL8821CU 沒有良好維護的 Linux 驅動，監聽模式非常不穩定。"
+    answer: "適合。Linux 核心 6.2 以上（例如 Ubuntu 24.04 HWE / kernel 6.17）已內建 rtw88_8821cu 驅動，免編譯、插上即用；實測 Monitor mode 與封包注入兩頻（2.4G / 5G）100%，並可端到端擷取 WPA .22000，藍牙亦實測可用。"
   - question: "AWUS036EACS 在 Windows 上怎麼安裝驅動？"
     answer: "從 Alfa 官網 files.alfa.com.tw 下載 Windows 驅動包，以管理員身份安裝後重啟即可。"
   - question: "AWUS036EACS 的藍牙怎麼開啟？"
     answer: "安裝驅動後通常自動啟用，在 Windows 設定中開啟藍牙開關即可連接設備。"
   - question: "如果需要 Linux 上的無線安全研究網路卡，該選哪款？"
-    answer: "建議改用 AWUS036ACM 或 AWUS036ACS，這兩款在 Linux 上完整支援監聽模式。"
+    answer: "AWUS036EACS 本身在核心 6.2+ 下即可用於監聽與封包注入，還內建藍牙。若想要更多選擇，AWUS036ACM 或 AWUS036ACS 同樣在 Linux 上完整支援監聽模式。僅限自有或已授權的網路。"
 ---
 
-ALFA AWUS036EACS 是搭載 RTL8821CU 晶片的迷你 WiFi 5 加藍牙 4.2 網路卡，在 Windows 上安裝簡單，但 Linux 支援不佳不推薦用於安全研究。
+ALFA AWUS036EACS 是搭載 RTL8821CU 晶片的迷你 WiFi 5 加藍牙 4.2 網路卡，在 Windows 上安裝簡單；在 Linux 核心 6.2+ 下也由內建的 rtw88_8821cu 驅動支援，免編譯、插上即用。
 
 {{< tldr >}}
-AWUS036EACS 採用 RTL8821CU 晶片，WiFi 5 加藍牙 4.2 迷你網路卡，Windows 安裝簡單，但 Linux 驅動不穩定，不建議用於監聽模式。
+AWUS036EACS 採用 RTL8821CU 晶片，WiFi 5 加藍牙 4.2 迷你網路卡，Windows 安裝簡單；Linux 核心 6.2+ 已內建 rtw88_8821cu 驅動，免編譯，Monitor 與封包注入實測可用，藍牙也實測可用。
 {{< /tldr >}}
 
-AWUS036EACS 是 ALFA 家族中最迷你的成員之一，它不僅有 WiFi 5，還內建了藍牙 4.2。它非常適合那些想給老筆電升級，但又不想要個大天線在外面晃的人。不過，買之前你要搞清楚一件事：它在 Windows 上很好用，但在 Linux（特別是 Kali）上並不推薦。
+AWUS036EACS 是 ALFA 家族中最迷你的成員之一，它不僅有 WiFi 5，還內建了藍牙 4.2。它非常適合那些想給老筆電升級，但又不想要個大天線在外面晃的人。它不只在 Windows 上很好用，在 Linux 核心 6.2+ 上也由內建的 rtw88_8821cu 驅動支援，插上即用。
 
-## Linux 使用者請注意！
+## Linux 使用者看這裡：核心 6.2+ 即插即用
 
-> **AWUS036EACS 在 Kali Linux、Ubuntu 或樹莓派上工作並不穩定。** 它的晶片組 RTL8821CU 沒有被良好維護的 Linux 驅動，開啟監聽模式（monitor mode）非常困難且容易回報錯誤。
+> **AWUS036EACS 在 Linux 核心 6.2+ 上即插即用。** 核心 6.2 以上（例如 Ubuntu 24.04 HWE / kernel 6.17）已內建 rtw88_8821cu 驅動，免編譯；實測 Monitor mode 與封包注入兩頻（2.4G / 5G）100%，並可端到端擷取 WPA .22000；藍牙（BT）也實測可用（BR/EDR + BLE 均可掃到裝置，並與 WiFi 共存）。僅限自有或已授權的網路。
 >
-> 如果你需要做無線安全研究，建議換成這兩款：
-> - **[AWUS036ACM 中國安裝指南](/zh-tw/blog/awus036acm-china-install-guide/)** — 真正免驅，完美支援監聽模式
-> - **[AWUS036ACS 中國安裝指南](/zh-tw/blog/awus036acs-china-install-guide/)** — 性價比最高的監聽網路卡
+> **操作提醒：** 這是 BT+WiFi 複合卡，反覆切換模式後 WiFi 接收可能卡住（`ip link set up` 回 `Operation already in progress`、`iw ... set channel` 回 `-16 busy`）。每個測試階段開始前，把網路卡拔下換一個 USB 孔重插即可恢復。
+>
+> 同系列其他 Linux 網路卡：
+> - **[AWUS036ACM 中國安裝指南](/zh-tw/blog/awus036acm-china-install-guide/)** — MT7612U 核心內建，支援 VIF
+> - **[AWUS036ACS 中國安裝指南](/zh-tw/blog/awus036acs-china-install-guide/)** — RTL8811AU，監聽模式
 
 ---
 
@@ -55,7 +57,7 @@ AWUS036EACS 是 ALFA 家族中最迷你的成員之一，它不僅有 WiFi 5，�
 
 [https://files.alfa.com.tw](https://files.alfa.com.tw)
 
-進去後找 **AWUS036EACS** 文件夾，下載最新的 Windows 驅動包（一般是 `.zip` 或 `.exe`）。
+進去後找 **AWUS036EACS** 資料夾，下載最新的 Windows 驅動包（一般是 `.zip` 或 `.exe`）。
 
 ### 第二步：安裝
 

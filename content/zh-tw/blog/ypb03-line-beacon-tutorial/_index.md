@@ -122,7 +122,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# LINE Developers 註冊的 HWID（這裡改為您申請到的 HWID）
+# LINE Developers 註冊的 HWID (這裡改為您申請到的 HWID)
 TARGET_HWID = "0123456789"
 
 @app.route("/callback", methods=["POST"])
@@ -144,23 +144,23 @@ def callback():
             hwid = beacon_data.get("hwid")
             beacon_type = beacon_data.get("type") # enter (進入), stay (逗留), banner (點擊橫幅)
             
-            print(f"收到 Beacon 事件！使用者 ID: {user_id}")
+            print(f"收到 Beacon 事件! 使用者 ID: {user_id}")
             print(f"設備 HWID: {hwid} | 觸發類型: {beacon_type}")
             
             # 判斷是否為我們的 YPB03 設備
             if hwid == TARGET_HWID:
                 if beacon_type == "enter":
-                    print("--> 使用者進入了 YPB03 範圍！觸發迎賓機制。")
-                    # 在這裡，您可以呼叫 LINE Messaging API 送出歡迎折價券給 user_id
+                    print("--> 使用者進入了 YPB03 範圍! 觸發迎賓機制.")
+                    # 在這裡, 您可以呼叫 LINE Messaging API 送出歡迎折價券給 user_id
                 elif beacon_type == "stay":
                     print("--> 使用者持續在範圍內...")
                 elif beacon_type == "banner":
-                    print("--> 使用者點擊了聊天室上方的 LINE Beacon 橫幅！")
+                    print("--> 使用者點擊了聊天室上方的 LINE Beacon 橫幅!")
                     
     return jsonify({"status": "ok"}), 200
 
 if __name__ == "__main__":
-    # 本地測試執行在 5000 端口
+    # 本地測試執行在 5000 連接埠
     app.run(port=5000)
 ```
 
@@ -170,7 +170,7 @@ LINE 平台需要將 Webhook 送到一個公開的 HTTPS 網址。在開發階�
    ```bash
    python app.py
    ```
-2. 下載並執行 ngrok，將本地 5000 端口映射到外網：
+2. 下載並執行 ngrok，將本地 5000 連接埠映射到外網：
    ```bash
    ngrok http 5000
    ```
@@ -186,9 +186,9 @@ LINE 平台需要將 Webhook 送到一個公開的 HTTPS 網址。在開發階�
 4. 手持手機，慢慢走進 YPB03 的廣播發射範圍內（此時可以手動將發射功率調小以方便在室內測試）。
 5. 查看 Python 控制台，你將會看到即時輸出的 Log 訊息：
    ```text
-   收到 Beacon 事件！使用者 ID: U1234567890abcdef...
+   收到 Beacon 事件! 使用者 ID: U1234567890abcdef...
    設備 HWID: 0123456789 | 觸發類型: enter
-   --> 使用者進入了 YPB03 範圍！觸發迎賓機制。
+   --> 使用者進入了 YPB03 範圍! 觸發迎賓機制.
    ```
 
 ---

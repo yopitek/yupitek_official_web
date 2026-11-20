@@ -12,7 +12,7 @@ faq:
   - question: "wfb-ng 跟一般 WiFi 有什麼不同？"
     answer: "一般 WiFi 需要連線（association）與 ACK 確認，在長距離下效率差、延遲高。wfb-ng 改用 raw 封包注入，繞過 802.11 連線機制，直接用 FEC 前向糾錯抗丟包，端到端延遲可壓到數十毫秒等級。"
   - question: "為什麼機載端 ALFA 網路卡需要獨立供電？"
-    answer: "AWUS036ACH 在發射（TX）時瞬間耗電很大，直接插 Raspberry Pi 的 USB 2.0 埠會因供電不足導致網路卡端口被 reset、鏈路斷線、封包損壞。建議用 5V BEC 獨立供電，並在 +5V 與 GND 間併聯 470µF 低 ESR 電容濾波。"
+    answer: "AWUS036ACH 在發射（TX）時瞬間耗電很大，直接插 Raspberry Pi 的 USB 2.0 埠會因供電不足導致網路卡連接埠被 reset、鏈路斷線、封包損壞。建議用 5V BEC 獨立供電，並在 +5V 與 GND 間併聯 470µF 低 ESR 電容濾波。"
   - question: "連線後沒有影像也沒有遙測怎麼辦？"
     answer: "最常見的原因是金鑰不對應——檢查機載端的 drone.key 與地面站的 gs.key 是否為同一組。其次確認兩端的 wifi_channel 與 link_domain 設定完全一致。可用 journalctl -xu wifibroadcast@gs 查看即時日誌排錯。"
   - question: "wfb-ng 一定要用 ALFA AWUS036ACH 嗎？"
@@ -207,7 +207,7 @@ wfb-ng 官方提供預先打包好的 Raspberry Pi 映像檔，機載端與地�
 到 wfb-ng 的 GitHub **Releases** 頁面，下載最新的 `*.img.gz`，解壓後燒錄到**兩張** SD 卡（機載、地面站各一張）。
 
 ```bash
-# 解壓映像檔（範例，檔名依實際 Release 為準）
+# 解壓映像檔 (範例, 檔名依實際 Release 為準)
 gunzip wfb-ng-*.img.gz
 # 用 Raspberry Pi Imager 或 dd / balenaEtcher 燒錄到 SD 卡
 ```
@@ -218,7 +218,7 @@ gunzip wfb-ng-*.img.gz
 
 ```bash
 ssh pi@192.168.0.111
-# 密碼：raspberry
+# 密碼: raspberry
 ```
 
 **3. 啟用地面站（Ground Station）服務**
@@ -268,10 +268,10 @@ sudo ./dkms-install.sh
 **2. 確認網路卡已被 wfb-ng 驅動接管**
 
 ```bash
-# 應看到 wlan0，且 MTU 為 2312
+# 應看到 wlan0, 且 MTU 為 2312
 ifconfig
 
-# 驅動名稱應顯示 rtl88xxau_wfb（RTL8812AU）或 rtl8812eu（RTL8812EU）
+# 驅動名稱應顯示 rtl88xxau_wfb (RTL8812AU) 或 rtl8812eu (RTL8812EU)
 ethtool -i wlan0
 ```
 
@@ -299,12 +299,12 @@ wfb-cli gs
 wfb-ng 的影像與遙測是加密的，機載端與地面站端必須用**對應的金鑰**才能通訊。
 
 ```bash
-# 產生金鑰（在機載端產生，再分發）
+# 產生金鑰 (在機載端產生, 再分發)
 wfb_keygen
 
 # drone.key 放到機載端
 # gs.key    放到地面站端
-# 兩端必須對應，否則無法解密、鏈路顯示「已連線但無資料」
+# 兩端必須對應, 否則無法解密, 鏈路顯示"已連線但無資料"
 ```
 
 > 如果你是用 **B 段的自動安裝腳本（install_gs.sh）**，腳本會自動產生並配置金鑰，省去手動配對步驟。手動安裝則請務必確認 `drone.key` 與 `gs.key` 是同一組。
@@ -317,25 +317,25 @@ wfb_keygen
 
 ```ini
 [common]
-# 頻道 165 = 5825 MHz（5.8GHz 頻段）
+# 頻道 165 = 5825 MHz (5.8GHz 頻段)
 wifi_channel = 165
 
-# 國碼設為 'BO'（玻利維亞）可解鎖最大發射功率
+# 國碼設為 'BO'(玻利維亞) 可解鎖最大發射功率
 wifi_region = 'BO'
 
 [drone]
-# 機載端與地面站的 link_domain 必須「完全一致」
+# 機載端與地面站的 link_domain 必須"完全一致"
 link_domain = "my_wfb_link_01"
 
 [drone_mavlink]
-# 從飛控 UART 接收 MAVLink（需飛控端 UART 設為 1500000 baud）
+# 從飛控 UART 接收 MAVLink (需飛控端 UART 設為 1500000 baud)
 peer = 'serial:ttyS0:1500000'
 
 [drone_video]
 peer = 'listen://0.0.0.0:5602'
 
 [gs]
-# 同上，兩端一致
+# 同上, 兩端一致
 link_domain = "my_wfb_link_01"
 ```
 
@@ -355,9 +355,9 @@ link_domain = "my_wfb_link_01"
 
 這一節是我們實作時真正踩過的坑，請務必看。
 
-### ⚠️ 坑 1：網路卡供電不足會 reset 端口、瘋狂掉包
+### ⚠️ 坑 1：網路卡供電不足會 reset 連接埠、瘋狂掉包
 
-AWUS036ACH 在**發射（TX）時瞬間耗電很大**。如果直接插在 Raspberry Pi 的一般 USB2 埠，Pi 的 USB 供電不足以撐住瞬間電流，結果是：**網路卡端口被 reset、鏈路斷線、封包損壞、畫面卡死**。
+AWUS036ACH 在**發射（TX）時瞬間耗電很大**。如果直接插在 Raspberry Pi 的一般 USB2 埠，Pi 的 USB 供電不足以撐住瞬間電流，結果是：**網路卡連接埠被 reset、鏈路斷線、封包損壞、畫面卡死**。
 
 解法（機載端一定要做）：
 
@@ -377,7 +377,7 @@ AWUS036ACH 在**發射（TX）時瞬間耗電很大**。如果直接插在 Raspb
 排錯指令：
 
 ```bash
-# 看地面站服務的即時日誌，找加密 / 連線相關錯誤
+# 看地面站服務的即時日誌, 找加密 / 連線相關錯誤
 journalctl -xu wifibroadcast@gs
 ```
 

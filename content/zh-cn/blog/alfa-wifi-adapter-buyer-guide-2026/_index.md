@@ -3,7 +3,7 @@ title: "ALFA WiFi 网卡购买指南 2026：哪款型号最适合你？"
 description: "2026年完整ALFA Network USB WiFi网卡购买指南。比较AWUS036ACH、ACM、ACS、AX、AXER、AXM、AXML、EACS的驱动支持、监控模式、操作系统兼容性与价格。"
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -13,7 +13,7 @@ faq:
   - question: "ALFA 网卡选购标准是什么？"
     answer: "选购标准包含芯片组驱动成熟度、操作系统兼容性、Monitor Mode 支持与发射功率，RTL8812AU 驱动最成熟稳定。"
   - question: "哪些 ALFA 网卡支持 Monitor Mode？"
-    answer: "ACH、ACM、ACS、AX、AXER、AXM、AXML 均完整支持监听模式与数据包注入，EACS（RTL8821CU）不支持。"
+    answer: "ACH、ACM、ACS、AX、AXER 支持监听模式与数据包注入；AXM、AXML（MT7921AU）支持监听、AP 与 WPA3，但数据包注入在 stock 内核 6.17 实测失败（内核 6.16 以后 mac80211 chanctx 回归所致，并非芯片先天限制；社区反馈可注入的情况为内核 6.16 以前或 patched 驱动，且固件锁速率 1/6 Mbps）。需要注入请改用 ACH、ACM、ACS、AX 或 EACS。EACS（RTL8821CU）在内核 6.2 以上使用内置的 rtw88_8821cu 驱动，GX10（内核 6.17）实测 monitor 与注入皆可用。"
   - question: "WiFi 6E/6 网卡有必要吗？"
     answer: "若审计范围含 6 GHz 频段则有必要。AXML 支持三频 AX3000，需 Linux 核心 ≥ 5.18 与 firmware-misc-nonfree。"
   - question: "RTL8812AU 和 MT7612U 驱动安装差异？"
@@ -51,7 +51,7 @@ AWUS036ACH 是 2026 年红队首选：500 mW 双天线 AC1200，RTL8812AU 驱动
 
 ### (b) 你需要监控模式与数据包注入吗？
 
-如果答案是肯定的——任何渗透测试或无线审计工作都应如此——请立即将[AWUS036EACS](/zh-cn/products/alfa/awus036eacs/)从你的清单中划掉。其RTL8821CU芯片在Linux下不可靠地支持监控模式或注入功能。本指南中的其他所有型号均支持。
+如果答案是肯定的——任何渗透测试或无线审计工作都应如此——无需将[AWUS036EACS](/zh-cn/products/alfa/awus036eacs/)从清单中划掉。其RTL8821CU芯片在内核 6.2 以上由内置的 rtw88_8821cu 驱动支持，GX10（内核 6.17）实测监控模式与注入（2.4G 与 5G）皆可用，因此可用于渗透测试。本指南中的其他所有型号也均支持。例外：AXM 与 AXML（MT7921AU）支持监听模式，但数据包注入在内核 6.16 以上（实测 6.17）失败，详见下方 AXML 说明。
 
 ### (c) 虚拟机还是裸机？
 
@@ -74,9 +74,9 @@ Wi-Fi 5世代（ACH、ACM、ACS）价格较低、驱动更稳定，如果预算�
 | [AWUS036ACS](/zh-cn/products/alfa/awus036acs/) | Wi-Fi 5 | RTL8811AU | AC600 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | 轻量旅行装备 |
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | 红队作战 |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | 平价双频 |
-| [AWUS036EACS](/zh-cn/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | 普通使用（不支持注入）|
-| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6审计 |
-| [AWUS036AXER](/zh-cn/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | 延伸范围Wi-Fi 6 |
+| [AWUS036EACS](/zh-cn/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ✅ | rtw88_8821cu（内核 ≥ 6.2） | ✅ | ✅ | 1× RP-SMA | 一般使用、注入／渗透测试与蓝牙复合 |
+| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.17) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6审计 |
+| [AWUS036AXER](/zh-cn/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.17) | ✅ | ❌ | Integrated nano | 延伸范围Wi-Fi 6 |
 | [AWUS036AXM](/zh-cn/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Wi-Fi 6E入门 |
 | [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | 旗舰6E |
 
@@ -85,7 +85,7 @@ Wi-Fi 5世代（ACH、ACM、ACS）价格较低、驱动更稳定，如果预算�
 **图例：** ✅ 支持 · ⚠️ 有限/部分支持 · ❌ 不支持
 
 {{< alert "circle-info" >}}
-**macOS注意事项：** 所有ALFA网卡在macOS Ventura与Sonoma上都面临驱动挑战。最常见的社区方案是在VM中使用Kali Linux搭配USB直通。AWUS036EACS是例外——可能通过原生macOS Realtek驱动运行，但不支持监控模式。
+**macOS注意事项：** 所有ALFA网卡在macOS Ventura与Sonoma上都面临驱动挑战。最常见的社区方案是在VM中使用Kali Linux搭配USB直通。AWUS036EACS是例外——可能通过原生macOS Realtek驱动运行，但macOS原生驱动不支持监控模式（在Linux下实测可用监控模式）。
 {{< /alert >}}
 
 ---
@@ -133,12 +133,12 @@ RTL8811AU驱动在Kali上使用相同的`rtl8812au-dkms`包，安装流程完全
 
 **与ACH/ACM的权衡：** 较低发射功率（远距离范围较小）、单天线（无MIMO）、AC600对AC1200最高吞吐量。对于大多数抓包与注入工作流程，这些差异无关紧要。对于远距离操作，则有所影响。
 
-### AWUS036EACS — 普通使用，不适用于渗透测试
+### AWUS036EACS — 一般使用，也可用于监控与注入（内核 ≥ 6.2）
 
-[AWUS036EACS](/zh-cn/products/alfa/awus036eacs/)采用Realtek RTL8821CU芯片组。RTL8821CU的Linux驱动支持有限——不支持监控模式与数据包注入。此网卡专为Windows客户端连接设计，并包含蓝牙4.2，不适用于安全测试任务。
+[AWUS036EACS](/zh-cn/products/alfa/awus036eacs/)采用Realtek RTL8821CU芯片组。RTL8821CU 自内核 6.2 起由内置的 rtw88_8821cu 驱动支持：在 GX10（Ubuntu 24.04 ARM64、内核 6.17）上，监控模式（2.4G／5G）可用、2.4G 与 5G 注入皆为 100%、端到端 WPA handshake 抓取成功（.22000），并且蓝牙与 Wi-Fi 可同时使用。此网卡原本为Windows客户端连接设计，并包含蓝牙4.2；在内核 6.2 之前的旧版本才需要 morrownr/8821cu 等社区驱动。
 
 {{< alert "triangle-exclamation" >}}
-**请勿将AWUS036EACS用于渗透测试、红队作战或任何需要监控模式或数据包注入的任务。** 它适合一般无线连接、DJI无人机控制器距离延伸（常见配对用途），以及标准客户端网卡行为可接受的Windows优先部署环境。
+**内核 ≥ 6.2 时，AWUS036EACS 可用于监控模式与数据包注入。** 它同样适合一般无线连接、DJI无人机控制器距离延伸（常见配对用途），以及需要蓝牙与 Wi-Fi 同时使用的场景；低于内核 6.2 的系统则需自行安装社区驱动。
 {{< /alert >}}
 
 ---
@@ -147,7 +147,7 @@ RTL8811AU驱动在Kali上使用相同的`rtl8812au-dkms`包，安装流程完全
 
 Wi-Fi 6（802.11ax）在密集环境性能、目标丰富的MU-MIMO场景与用于网络识别的BSS着色方面带来了显著改进。AWUS036AX与AWUS036AXER是ALFA的Wi-Fi 6网卡，主要针对Windows连接设计。
 
-两款Wi-Fi 6 ALFA网卡均使用Realtek RTL8832BU芯片组。在Linux上，RTL8832BU驱动在内核6.14以下为核外驱动（OOK），这意味着**监控模式与数据包注入支持有限**。如果你的主要使用场景是在Linux上进行渗透测试，请选择AWUS036ACH或AWUS036AXML。
+两款Wi-Fi 6 ALFA网卡均使用Realtek RTL8832BU芯片组。在Linux上，RTL8832BU自内核6.17起由内核内置的rtw89_8852bu驱动支持；在ASUS GX10（Ubuntu 24.04 / kernel 6.17）实测中，监控模式在2.4与5 GHz均可用，数据包注入也可用（2.4 GHz：AX 96%、AXER 73%，5 GHz可用）。内核6.17以下需使用核外（OOK）的社区DKMS驱动，该驱动下的监控模式可能受限。（注意：AXML 在内核 6.16 以上无法注入，详见下方 AXML 说明。）
 
 ### AWUS036AX — Wi-Fi 6 Windows网卡
 
@@ -155,18 +155,18 @@ Wi-Fi 6（802.11ax）在密集环境性能、目标丰富的MU-MIMO场景与用�
 
 **驱动状态：**
 - Windows：通过ALFA提供的驱动完整支持
-- Linux内核 ≥ 6.14：内核内置RTL8832BU驱动
-- Linux内核 < 6.14：需要核外驱动
-- 监控模式：⚠️ 有限
-- 数据包注入：⚠️ 有限
+- Linux内核 ≥ 6.17：内核内置RTL8832BU驱动
+- Linux内核 < 6.17：需要核外驱动
+- 监控模式：✅ 内核6.17及以上可用（旧内核的社区DKMS驱动可能受限）
+- 数据包注入：✅ 内核6.17及以上可用（实测2.4 GHz：AX 96%、AXER 73%）
 
 {{< alert "triangle-exclamation" >}}
-**Linux渗透测试注意事项：** AWUS036AX使用RTL8832BU芯片组，在Linux内核6.14以下的监控模式与数据包注入支持有限。如需Kali Linux安全工作，请改用[AWUS036ACH](/zh-cn/products/alfa/awus036ach/)（RTL8812AU）或[AWUS036AXML](/zh-cn/products/alfa/awus036axml/)（MT7921AUN）。
+**Linux渗透测试注意事项：** AWUS036AX使用RTL8832BU芯片组，在Linux内核6.17及以上（内核内置rtw89_8852bu，Ubuntu 24.04 / kernel 6.17实测）的监控模式与数据包注入均可用；仅在旧内核改用社区DKMS驱动时，监控模式可能受限，请先用`uname -r`确认内核版本。（注意：AXML 在内核 6.16 以上无法注入，详见下方 AXML 说明。）
 {{< /alert >}}
 
 ### AWUS036AXER — 轻巧旅行Wi-Fi 6网卡
 
-[AWUS036AXER](/zh-cn/products/alfa/awus036axer/)采用与AWUS036AX相同的RTL8832BU芯片组，但采用超紧凑纳米外形（10.5g）。驱动情况完全相同——同样的RTL8832BU、同样的Linux限制、同样的Windows兼容性。
+[AWUS036AXER](/zh-cn/products/alfa/awus036axer/)采用与AWUS036AX相同的RTL8832BU芯片组，但采用超紧凑纳米外形（10.5g）。驱动情况完全相同——同样的RTL8832BU、同样的Linux支持情况与实测结果、同样的Windows兼容性。
 
 当携带便利性是决定性因素时，请选择AXER而非AX：商务出行、最小化部署，或偏好紧凑加密狗而非全尺寸网卡的情况。
 
@@ -180,7 +180,7 @@ Wi-Fi 6E将802.11ax扩展至6 GHz频段，提供对新5.925–7.125 GHz频谱的
 
 ### AWUS036AXM — Wi-Fi 6E入门款
 
-[AWUS036AXM](/zh-cn/products/alfa/awus036axm/)使用MT7921AUN芯片组，完整支持三频包含6 GHz。出厂配备两个RP-SMA接口，支持2T2R双天线操作。
+[AWUS036AXM](/zh-cn/products/alfa/awus036axm/)使用MT7921AUN芯片组，依规格支持三频包含6 GHz（本站尚未实测AXM的6 GHz；AXML的6 GHz已实测可用）。出厂配备两个RP-SMA接口，支持2T2R双天线操作。
 
 对于主要在2.4和5 GHz环境工作，但希望在不支付旗舰价格的情况下具备6 GHz能力以应对新兴网络评估的操作人员，AXM是合乎逻辑的入门点。
 
@@ -199,7 +199,7 @@ Wi-Fi 6E将802.11ax扩展至6 GHz频段，提供对新5.925–7.125 GHz频谱的
 - USB-C 3.2——比USB-A更快的主机总线带宽
 
 {{< alert "triangle-exclamation" >}}
-**AWUS036AXML固件注意事项：** 在内核6.1以下，部分用户在AXML的监控模式与管理模式之间重复切换时会遇到固件崩溃。如果你的工作流程需要频繁切换模式，请使用内核 ≥ 6.1并安装最新的`firmware-misc-nonfree`包。
+**AWUS036AXML固件注意事项：** 在内核6.1以下，部分用户在AXML的监控模式与管理模式之间重复切换时会遇到固件崩溃。如果你的工作流程需要频繁切换模式，请使用内核 ≥ 6.1并安装最新的`firmware-misc-nonfree`包。**注入说明：** AXM／AXML 的数据包注入社区反馈仅适用于内核 6.16 以前。在 stock 内核 6.16 以上（实测 6.17，ASUS GX10、Ubuntu 24.04 ARM64），监听、AP、WPA3、VIF 可用，但注入测试失败（aireplay-ng --test 显示 Found 0 APs / No Answer），因此无法 deauth 或抓取 handshake。原因是 mac80211 chanctx 回归，并非芯片先天限制；patched 驱动可让注入运作，但固件仍锁速率（1/6 Mbps，不可注入 HT/VHT）。需要注入请改用 ACH、ACM、ACS、AX 或 EACS。
 {{< /alert >}}
 
 ---
@@ -213,7 +213,7 @@ Wi-Fi 6E将802.11ax扩展至6 GHz频段，提供对新5.925–7.125 GHz频谱的
 | [AWUS036ACS](/zh-cn/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | 手动编译 | ✅ rtl8812au-dkms | ✅ ALFA驱动 |
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | 手动编译 | ✅ rtl8812au-dkms | ✅ ALFA驱动 |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | MT7612U | `mt76x2u` (in-kernel) | 内核 ≥ 4.19 | ✅ mt76x2u (≥4.19) | ✅ ALFA驱动 |
-| [AWUS036EACS](/zh-cn/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` | 内核内置 | ⚠️ 有限 | ✅ 内置 |
+| [AWUS036EACS](/zh-cn/products/alfa/awus036eacs/) | RTL8821CU | `rtw88_8821cu`（内核 ≥ 6.2） | 内核内置 | ✅ 实测可用（内核 6.17） | ✅ 内置 |
 | [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | RTL8832BU | `firmware-misc-nonfree` | 内核 ≥ 5.18 | ⚠️ 需要固件 | ✅ ALFA驱动 |
 | [AWUS036AXER](/zh-cn/products/alfa/awus036axer/) | RTL8832BU | `firmware-misc-nonfree` | 内核 ≥ 5.18 | ⚠️ 需要固件 | ✅ ALFA驱动 |
 | [AWUS036AXM](/zh-cn/products/alfa/awus036axm/) | MT7921AUN | `firmware-misc-nonfree` | 内核 ≥ 5.18 | ⚠️ 需要固件 | ✅ ALFA驱动 |
@@ -278,7 +278,7 @@ sudo modprobe 88XXau
 **快速配置（MT7921AUN家族）：**
 ```bash
 sudo apt update && sudo apt install -y firmware-misc-nonfree
-# 重新启动或重新加载模块：
+# 重新启动或重新加载模块:
 sudo modprobe mt7921u
 ```
 
@@ -316,10 +316,10 @@ cd rtl8812au && sudo make dkms_install
 在运行Kali NetHunter的Raspberry Pi 4和Pi 5上：
 
 ```bash
-# 用于RTL8812AU网卡：
+# 用于RTL8812AU网卡:
 sudo apt update && sudo apt install -y dkms-rtl8812au
 
-# 用于MT7921AUN网卡（建议使用配备近期内核的Pi 5）：
+# 用于MT7921AUN网卡 (建议使用配备近期内核的Pi 5):
 sudo apt update && sudo apt install -y firmware-misc-nonfree
 ```
 

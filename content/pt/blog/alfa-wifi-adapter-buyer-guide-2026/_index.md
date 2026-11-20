@@ -8,13 +8,13 @@ showTableOfContents: true
 tags: ["alfa-network", "wifi-adapter", "buyer-guide", "kali-linux", "penetration-testing", "monitor-mode"]
 featureimage: "/images/blog/alfa-wifi-adapter-buyer-guide-2026.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Quais são os criterios para escolher adaptadores ALFA?"
     answer: "Os criterios incluem maturidade do driver do chipset, compatibilidade com o sistema operacional, suporte a Monitor Mode e potência de transmissão. O driver RTL8812AU é o mais maduro e estável."
   - question: "Quais adaptadores ALFA suportam Monitor Mode?"
-    answer: "ACH, ACM, ACS, AX, AXER, AXM e AXML suportam completamente modo monitor e injeção de pacotes. O EACS (RTL8821CU) não suporta."
+    answer: "ACH, ACM, ACS, AX e AXER suportam monitor mode e packet injection. AXM e AXML (MT7921AU) suportam monitor mode, AP e WPA3, mas a packet injection falhou no kernel stock 6.17 (regressão do mac80211 chanctx desde o kernel 6.16, não uma limitação do chip; os relatos da comunidade sobre injection valem para kernels anteriores ao 6.16 ou drivers com patch, e o firmware trava a taxa em 1/6 Mbps). Para injection use ACH, ACM, ACS, AX ou EACS. O EACS (RTL8821CU) usa o driver rtw88_8821cu, embutido no kernel desde o 6.2: no GX10 (kernel 6.17) monitor mode nas duas bandas e injection nas duas bandas funcionaram com 100% de sucesso."
   - question: "Adaptadores WiFi 6E/6 são necessários?"
     answer: "São necessários se o escopo da auditoria inclui a banda de 6 GHz. O AXML suporta tri-band AX3000, requer kernel Linux >= 5.18 e firmware-misc-nonfree."
   - question: "Qual a diferenca na instalação entre RTL8812AU e MT7612U?"
@@ -48,7 +48,7 @@ Suporte a drivers é tudo. Usuários de Kali Linux e Ubuntu em kernels recentes 
 
 ### (b) Você precisa de modo monitor e injeção de pacotes?
 
-Se a resposta for sim — e para qualquer trabalho de teste de penetração ou auditoria wireless deve ser — elimine o [AWUS036EACS](/pt/products/alfa/awus036eacs/) da sua lista imediatamente. Seu chipset RTL8821CU não suporta modo monitor ou injeção de forma confiável no Linux. Todos os outros modelos deste guia suportam.
+Se a resposta for sim — e para qualquer trabalho de teste de penetração ou auditoria wireless deve ser — o [AWUS036EACS](/pt/products/alfa/awus036eacs/) também atende: no kernel 6.2 ou superior, o driver embutido rtw88_8821cu do chipset RTL8821CU oferece modo monitor nas duas bandas e injeção nas duas bandas com 100% de sucesso, e a captura de handshake WPA funciona de ponta a ponta (testado no GX10 com kernel 6.17). Exceção: AXM e AXML (MT7921AU) suportam monitor mode, mas a packet injection falhou a partir do kernel 6.16 (testado no 6.17); veja a nota sobre o AXML abaixo.
 
 ### (c) VM ou bare metal?
 
@@ -71,9 +71,9 @@ A geração Wi-Fi 5 (ACH, ACM, ACS) é mais barata, tem drivers mais estáveis e
 | [AWUS036ACS](/pt/products/alfa/awus036acs/) | Wi-Fi 5 | RTL8811AU | AC600 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 1× RP-SMA | Kit de viagem leve |
 | [AWUS036ACH](/pt/products/alfa/awus036ach/) | Wi-Fi 5 | RTL8812AU | AC1200 | ✅ | rtl8812au-dkms | ✅ | ⚠️ | 2× RP-SMA | Operações de red team |
 | [AWUS036ACM](/pt/products/alfa/awus036acm/) | Wi-Fi 5 | MT7612U | AC1200 | ✅ | mt76x2u (≥4.19) | ✅ | ⚠️ | 2× RP-SMA | Dual-band econômico |
-| [AWUS036EACS](/pt/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ⚠️ | rtl88xxcu | ✅ | ✅ | 1× RP-SMA | Uso geral (sem injeção) |
-| [AWUS036AX](/pt/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | 2× RP-SMA | Auditoria Wi-Fi 6 |
-| [AWUS036AXER](/pt/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.14) | ✅ | ❌ | Integrated nano | Wi-Fi 6 alcance estendido |
+| [AWUS036EACS](/pt/products/alfa/awus036eacs/) | Wi-Fi 5 | RTL8821CU | AC1200 | ✅ | rtw88_8821cu (kernel ≥6.2) | ✅ | ✅ | 1× RP-SMA | Uso geral, injeção/pentest e Bluetooth combinado |
+| [AWUS036AX](/pt/products/alfa/awus036ax/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.17) | ✅ | ❌ | 2× RP-SMA | Auditoria Wi-Fi 6 |
+| [AWUS036AXER](/pt/products/alfa/awus036axer/) | Wi-Fi 6 | RTL8832BU | AX1800 | ✅ | OOK (<6.17) | ✅ | ❌ | Integrated nano | Wi-Fi 6 alcance estendido |
 | [AWUS036AXM](/pt/products/alfa/awus036axm/) | Wi-Fi 6E | MT7921AUN | AX1800 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Entrada no Wi-Fi 6E |
 | [AWUS036AXML](/pt/products/alfa/awus036axml/) | Wi-Fi 6E | MT7921AUN | AX3000 | ✅ | mt7921u (≥5.18) | ✅ | ❌ | 2× RP-SMA | Topo de linha 6E |
 
@@ -82,7 +82,7 @@ A geração Wi-Fi 5 (ACH, ACM, ACS) é mais barata, tem drivers mais estáveis e
 **Legenda:** ✅ Suportado · ⚠️ Limitado/parcial · ❌ Não suportado
 
 {{< alert "circle-info" >}}
-**Nota sobre macOS:** Todos os adaptadores ALFA enfrentam desafios de driver no macOS Ventura e Sonoma. A opção mais comum mantida pela comunidade é rodar o Kali Linux em uma VM com passthrough USB. O AWUS036EACS é a exceção — pode funcionar via o driver nativo de Realtek para macOS, mas sem modo monitor.
+**Nota sobre macOS:** Todos os adaptadores ALFA enfrentam desafios de driver no macOS Ventura e Sonoma. A opção mais comum mantida pela comunidade é rodar o Kali Linux em uma VM com passthrough USB. O AWUS036EACS é a exceção — pode funcionar via o driver nativo de Realtek para macOS, mas esse driver do macOS não oferece modo monitor (no Linux, com kernel ≥6.2, o monitor mode funciona nos testes).
 {{< /alert >}}
 
 ---
@@ -128,15 +128,15 @@ O driver RTL8811AU compartilha o mesmo pacote `rtl8812au-dkms` no Kali, portanto
 
 **Comparação com ACH/ACM:** Menor potência de transmissão (menos alcance à distância), antena única (sem MIMO), throughput máximo AC600 vs. AC1200. Para a maioria dos fluxos de trabalho de captura e injeção, essas diferenças são irrelevantes. Para operações de longo alcance, importam.
 
-### AWUS036EACS — Uso Geral, Não para Pentesting
+### AWUS036EACS — Uso Geral, Injeção e Bluetooth Combinado (kernel ≥6.2)
 
-O [AWUS036EACS](/pt/products/alfa/awus036eacs/) é alimentado por um chipset Realtek RTL8821CU e usa o driver de kernel `rtl88xxcu`. Esse chipset foi projetado para conectividade de cliente, não para manipulação de pacotes. O suporte a modo monitor sob `rtl88xxcu` é não confiável, e a injeção de pacotes não é suportada na configuração padrão do driver.
+O [AWUS036EACS](/pt/products/alfa/awus036eacs/) é alimentado por um chipset Realtek RTL8821CU e usa o driver de kernel `rtw88_8821cu`, embutido no kernel Linux desde a versão 6.2. No GX10 (Ubuntu 24.04 ARM64, kernel 6.17) o modo monitor funcionou em 2,4 GHz e 5 GHz, a injeção de pacotes teve 100% de sucesso nas duas bandas, a captura de handshake WPA de ponta a ponta (.22000) foi bem-sucedida e Bluetooth e Wi-Fi puderam ser usados ao mesmo tempo. Em kernels anteriores ao 6.2 é preciso um driver da comunidade.
 
 {{< alert "triangle-exclamation" >}}
-**Não use o AWUS036EACS para testes de penetração, operações de red team ou qualquer tarefa que exija modo monitor ou injeção de pacotes.** Ele é adequado para conectividade wireless geral, extensão de alcance de controles de drones DJI (onde é comumente usado), e implantações com foco em Windows onde o comportamento de adaptador cliente padrão é aceitável.
+**Requisito: kernel Linux 6.2 ou superior.** Com ele, o AWUS036EACS serve para testes de penetração e injeção de pacotes (1x RP-SMA, uma antena), além de conectividade wireless geral, extensão de alcance de controles de drones DJI (onde é comumente usado) e implantações com foco em Windows. Em kernels mais antigos, o monitor mode e a injeção dependem de drivers da comunidade.
 {{< /alert >}}
 
-Ele se justifica nesta lista pela compatibilidade com macOS — a situação do driver RTL8821CU no macOS é melhor do que para outros chipsets da linha — e para implantações de conectividade para consumidores e empresas onde o adaptador é usado puramente como cliente.
+Ele também se justifica pela compatibilidade com macOS — a situação do driver RTL8821CU no macOS é melhor do que para outros chipsets da linha, ainda que sem modo monitor nativo — e por implantações de conectividade para consumidores e empresas onde o adaptador é usado como cliente.
 
 ---
 
@@ -144,27 +144,27 @@ Ele se justifica nesta lista pela compatibilidade com macOS — a situação do 
 
 O Wi-Fi 6 (802.11ax) trouxe melhorias significativas em desempenho em ambientes densos, cenários MU-MIMO com múltiplos alvos e BSS Coloring para identificação de redes. Para auditores wireless, os adaptadores Wi-Fi 6 são cada vez mais relevantes à medida que as implantações corporativas migraram agressivamente para infraestrutura 802.11ax.
 
-Ambos os adaptadores ALFA Wi-Fi 6 (AX, AXER) usam o chipset Realtek RTL8832BU. No Linux, o driver RTL8832BU está fora do kernel (OOK) em versões anteriores à 6.14 — modo monitor e injeção de pacotes são limitados. Estes adaptadores são projetados principalmente para conectividade em Windows.
+Ambos os adaptadores ALFA Wi-Fi 6 (AX, AXER) usam o chipset Realtek RTL8832BU. No Linux, o RTL8832BU é suportado pelo driver integrado `rtw89_8852bu` a partir do kernel 6.17; em nossos testes em um ASUS GX10 (Ubuntu 24.04 / kernel 6.17), o modo monitor funciona em 2,4 e 5 GHz e a injeção de pacotes também (2,4 GHz: AX 96%, AXER 73%; 5 GHz utilizável). Em kernels anteriores à 6.17 é necessário o driver DKMS da comunidade fora do kernel (OOK), com o qual o modo monitor pode ser limitado. Estes adaptadores são projetados principalmente para conectividade em Windows.
 
 ### AWUS036AX — A Escolha Limpa para Wi-Fi 6
 
-O [AWUS036AX](/pt/products/alfa/awus036ax/) é o adaptador Wi-Fi 6 AX1800 da ALFA: duas antenas removíveis com conectores RP-SMA, chipset RTL8832BU e operação nas bandas de 2,4 e 5 GHz. Suporte completo no Windows; no Linux o driver é OOK em kernels < 6.14.
+O [AWUS036AX](/pt/products/alfa/awus036ax/) é o adaptador Wi-Fi 6 AX1800 da ALFA: duas antenas removíveis com conectores RP-SMA, chipset RTL8832BU e operação nas bandas de 2,4 e 5 GHz. Suporte completo no Windows; no Linux o driver é OOK em kernels < 6.17.
 
 **Status do driver:**
-- Kernel ≥ 6.14: driver RTL8832BU integrado ao kernel, sem pacotes adicionais necessários
-- Kernel < 6.14: OOK (Out-of-Kernel) — necessário compilar e instalar o driver RTL8832BU manualmente
-- Modo monitor: ⚠️ Limitado
-- Injeção de pacotes: ⚠️ Limitada
+- Kernel ≥ 6.17: driver RTL8832BU integrado ao kernel, sem pacotes adicionais necessários
+- Kernel < 6.17: OOK (Out-of-Kernel) — necessário compilar e instalar o driver RTL8832BU manualmente
+- Modo monitor: ✅ Funciona a partir do kernel 6.17 (pode ser limitado com o driver DKMS da comunidade em kernels antigos)
+- Injeção de pacotes: ✅ Funciona a partir do kernel 6.17 (testado em 2,4 GHz: AX 96%, AXER 73%)
 
-**Nota prática sobre modo monitor:** O RTL8832BU tem suporte a modo monitor limitado no Linux. O driver está fora do kernel (OOK) em versões anteriores à 6.14 — modo monitor e injeção de pacotes não funcionam de forma confiável. Para auditorias Wi-Fi 6 no Linux, verifique as capacidades no seu kernel específico antes de um engajamento real.
+**Nota prática sobre modo monitor:** Com o kernel 6.17 ou superior (driver integrado `rtw89_8852bu`, testado em Ubuntu 24.04 / kernel 6.17), o RTL8832BU oferece modo monitor e injeção de pacotes. Somente em kernels anteriores, com o driver DKMS da comunidade (OOK), o modo monitor pode ser limitado; verifique seu kernel com `uname -r` antes de um engajamento real.
 
 {{< alert "circle-info" >}}
-**Verificação de kernel:** Execute `uname -r` para confirmar a versão do seu kernel antes de comprar. No Kali 2024.x com kernel ≥ 6.14, o driver RTL8832BU estará integrado. Em kernels < 6.14, é necessário compilar o driver OOK do RTL8832BU.
+**Verificação de kernel:** Execute `uname -r` para confirmar a versão do seu kernel antes de comprar. Com kernel ≥ 6.17, o driver RTL8832BU estará integrado. Em kernels < 6.17, é necessário compilar o driver OOK do RTL8832BU.
 {{< /alert >}}
 
 ### AWUS036AXER — Variante de Alcance Estendido
 
-O [AWUS036AXER](/pt/products/alfa/awus036axer/) compartilha o chipset do AWUS036AX, mas usa antena nano integrada (o AX tem duas antenas removíveis), e adiciona amplificação RF aprimorada para alcance operacional estendido. A situação do driver é idêntica — mesmo RTL8832BU, mesmo caminho de suporte de kernel, mesmo comportamento de modo monitor e injeção limitados.
+O [AWUS036AXER](/pt/products/alfa/awus036axer/) compartilha o chipset do AWUS036AX, mas usa antena nano integrada (o AX tem duas antenas removíveis), e adiciona amplificação RF aprimorada para alcance operacional estendido. A situação do driver é idêntica — mesmo RTL8832BU, mesmo caminho de suporte de kernel, mesmo comportamento de modo monitor e injeção (funcionam com kernel ≥ 6.17).
 
 Escolha o AXER em vez do AX quando o alcance operacional for o fator decisivo: levantamentos de grandes campi, avaliações ao ar livre ou cenários em que o AP está à distância. O acréscimo no preço é moderado e justificável se o alcance importa para a sua implantação.
 
@@ -178,7 +178,7 @@ Ambos os adaptadores ALFA Wi-Fi 6E exigem kernel ≥ 5.18 para suporte à banda 
 
 ### AWUS036AXM — Ponto de Entrada no Wi-Fi 6E
 
-O [AWUS036AXM](/pt/products/alfa/awus036axm/) usa o chipset MT7921AUN com suporte à banda de 6 GHz habilitado. Vem com dois conectores RP-SMA para operação 2T2R.
+O [AWUS036AXM](/pt/products/alfa/awus036axm/) usa o chipset MT7921AUN com suporte à banda de 6 GHz segundo a especificação (o 6 GHz do AXM não foi testado por nós; o do AXML sim). Vem com dois conectores RP-SMA para operação 2T2R.
 
 Para operadores que trabalham principalmente em ambientes de 2,4 e 5 GHz, mas querem capacidade de 6 GHz para avaliações de redes emergentes sem pagar preços de topo de linha, o AXM é o ponto de entrada lógico.
 
@@ -203,7 +203,7 @@ O [AWUS036AXML](/pt/products/alfa/awus036axml/) é o adaptador de ponta atual da
 - A banda de 6 GHz em modo monitor requer que seu domínio regulatório permita varredura passiva em canais de 6 GHz
 
 {{< alert "triangle-exclamation" >}}
-**Nota de firmware do AWUS036AXML:** Em kernels abaixo de 6.1, alguns usuários experimentam travamentos de firmware ao alternar o AXML repetidamente entre modo monitor e modo gerenciado. Se o seu fluxo de trabalho exige troca frequente de modo, execute o kernel ≥ 6.1 e instale o pacote `firmware-misc-nonfree` mais recente.
+**Nota de firmware do AWUS036AXML:** Em kernels abaixo de 6.1, alguns usuários experimentam travamentos de firmware ao alternar o AXML repetidamente entre modo monitor e modo gerenciado. Se o seu fluxo de trabalho exige troca frequente de modo, execute o kernel ≥ 6.1 e instale o pacote `firmware-misc-nonfree` mais recente. **Nota sobre injection:** os relatos da comunidade sobre packet injection no AXM/AXML valem para kernels anteriores ao 6.16. No kernel stock 6.16 ou superior (testado no 6.17, ASUS GX10, Ubuntu 24.04 ARM64), monitor mode, AP, WPA3 e VIF funcionam, mas o teste de injection falha (aireplay-ng --test: Found 0 APs / No Answer), portanto não é possível fazer deauth nem capturar handshake. A causa é uma regressão do mac80211 chanctx, não o chip em si; drivers com patch restabelecem a injection, mas o firmware continua travando a taxa (1/6 Mbps, sem injection HT/VHT). Se precisar de injection, use ACH, ACM, ACS ou AX.
 {{< /alert >}}
 
 ---
@@ -217,7 +217,7 @@ O [AWUS036AXML](/pt/products/alfa/awus036axml/) é o adaptador de ponta atual da
 | [AWUS036ACS](/pt/products/alfa/awus036acs/) | RTL8811AU | `dkms-rtl8812au` | Compilação manual | ✅ rtl8812au-dkms | ✅ Driver ALFA |
 | [AWUS036ACH](/pt/products/alfa/awus036ach/) | RTL8812AU | `dkms-rtl8812au` | Compilação manual | ✅ rtl8812au-dkms | ✅ Driver ALFA |
 | [AWUS036ACM](/pt/products/alfa/awus036acm/) | MT7612U | `mt76x2u (in-kernel)` | Integrado no kernel | ✅ mt76x2u (≥4.19) | ✅ Driver ALFA |
-| [AWUS036EACS](/pt/products/alfa/awus036eacs/) | RTL8821CU | `rtl88xxcu` | Embutido no kernel | ⚠️ Limitado | ✅ Embutido |
+| [AWUS036EACS](/pt/products/alfa/awus036eacs/) | RTL8821CU | `rtw88_8821cu` | Embutido no kernel (≥6.2) | ⚠️ Requer kernel ≥6.2, não testado no Pi | ✅ Embutido |
 | [AWUS036AX](/pt/products/alfa/awus036ax/) | RTL8832BU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ firmware req. | ✅ Driver ALFA |
 | [AWUS036AXER](/pt/products/alfa/awus036axer/) | RTL8832BU | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ firmware req. | ✅ Driver ALFA |
 | [AWUS036AXM](/pt/products/alfa/awus036axm/) | MT7921AUN | `firmware-misc-nonfree` | Kernel ≥ 5.18 | ⚠️ firmware req. | ✅ Driver ALFA |
@@ -317,7 +317,7 @@ Para uso com ferramentas como Acrylic Wi-Fi, inSSIDer ou a versão Windows do Wi
 
 Não há adaptador ALFA oficialmente suportado para macOS Sonoma em 2026. Projetos de kext da comunidade existem para RTL8812AU, mas não são assinados e exigem desabilitar o System Integrity Protection (SIP). A recomendação prática é rodar o Kali Linux em uma VM (Parallels, VMware Fusion ou UTM) com passthrough USB para o adaptador ALFA.
 
-O AWUS036EACS com RTL8821CU tem o suporte macOS mais funcional através do kext de Realtek para macOS, mas apenas para conectividade de cliente padrão — não para modo monitor.
+O AWUS036EACS com RTL8821CU tem o suporte macOS mais funcional através do kext de Realtek para macOS, mas apenas para conectividade de cliente padrão — o driver do macOS não oferece modo monitor (no Linux, kernel ≥6.2, o monitor mode funciona).
 
 ### Raspberry Pi / Kali NetHunter
 

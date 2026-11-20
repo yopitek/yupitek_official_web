@@ -18,7 +18,7 @@ faq:
     answer: "Se recomienda el AWUS036ACM para principiantes: el controlador nativo MT7612U del núcleo es plug-and-play sin compilar. Si necesitas la máxima potencia de señal y abundantes recursos de tutorial y no temes el proceso DKMS, elige el AWUS036ACH."
   - question: "¿Cuál se recomienda para entornos de máquina virtual?"
     answer: "Se recomienda el AWUS036ACM en VM: tras el tránsito USB, el controlador nativo del núcleo lo reconoce inmediatamente sin necesidad de instalar herramientas de compilación en la VM. El ACH requiere instalar el controlador dentro de la VM."
----El AWUS036ACH es ideal para tareas profesionales: controlador RTL8812AU con doble antena de 30 dBm, el más potente en monitor e inyección. El AWUS036ACM prioriza portabilidad: controlador nativo MT7612U del núcleo sin compilar, precio aprox. $30-40.
+---
 
 {{< tldr >}}
 El AWUS036ACH es ideal para tareas profesionales: controlador RTL8812AU con doble antena de 30 dBm, el más potente en monitor e inyección. El AWUS036ACM prioriza portabilidad: controlador nativo MT7612U del núcleo sin compilar, precio aprox. $30-40.
@@ -245,7 +245,7 @@ Si solo puedes tener un adaptador, el **AWUS036ACH** es la elección más sólid
 
 ## Referencias
 
-1. aircrack-ng 社群維護 RTL8812AU 驅動程式儲存庫 — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
-2. Linux 核心主線 MT76 驅動程式（`mt76x2u`，自核心 4.19 起整合）— [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
-3. ALFA Network 官方網站與產品規格 — [alfa.com.tw](https://www.alfa.com.tw)
-4. Yopitek — ALFA Network 台灣授權經銷商 — [yupitek.com](https://www.yupitek.com)
+1. Repositorio del controlador RTL8812AU mantenido por la comunidad aircrack-ng — [github.com/aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au)
+2. Controlador MT76 en la rama principal del kernel Linux (`mt76x2u`, integrado desde el kernel 4.19) — [kernel.org — drivers/net/wireless/mediatek/mt76](https://github.com/torvalds/linux/tree/master/drivers/net/wireless/mediatek/mt76)
+3. Sitio web oficial y especificaciones de producto de ALFA Network — [alfa.com.tw](https://www.alfa.com.tw)
+4. Yopitek — Distribuidor autorizado de ALFA Network en Taiwán — [yupitek.com](https://www.yupitek.com)

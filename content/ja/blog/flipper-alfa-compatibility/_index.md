@@ -1,18 +1,18 @@
 ---
 title: 'Flipper Zero × ALFA WiFi アダプター：完全互換性ガイド'
-description: 'Flipper Zero で ALFA USB WiFi アダプターのパケットインジェクションが可能か？結論から言うと、できません — その理由を解説します。Flipper One は AWUS036AXML とともにフルモニタモードとインジェクションをサポート。チップセット解析、ドライバ互換性、セットアップ手順付き完全ガイド。'
+description: 'Flipper Zero で ALFA USB WiFi アダプターのパケットインジェクションが可能か？結論から言うと、できません — その理由を解説します。Flipper One は AWUS036AXML でのモニタモードをサポート（インジェクションはカーネルのバージョンに依存）。チップセット解析、ドライバ互換性、セットアップ手順付き完全ガイド。'
 tags: ['flipper-zero', 'flipper-one', 'alfa-network', 'wifi-adapter', 'monitor-mode', 'packet-injection', 'kali-linux', 'pentesting', 'AWUS036AXML', 'wireless-security']
 slug: 'flipper-alfa-compatibility'
 categories: ['Technical']
 featureimage: '/images/blog/flipper-alfa-compatibility.webp'
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Flipper ZeroはALFA USB無線アダプターに接続できますか？"
     answer: "できません。Flipper ZeroのSTM32WB55マイクロコントローラーはUSB deviceモードのみをサポートし、ハードウェア的にUSB hostとして外付けアダプターを駆動できません。"
   - question: "Flipper OneはどのALFAアダプターモデルをサポートしていますか？"
-    answer: "Flipper One創業者はAWUS036AXMLを首选として特別にテストし、AWUS036ACMをベストコスパとしています。両者のドライバーはいずれもmainline Linuxカーネルに内蔵されています。"
-  - question: "AWUS036AXMLがFlipper One首选アダプターなのはなぜですか？"
+    answer: "Flipper One創業者はAWUS036AXMLを第一候補として特別にテストし、AWUS036ACMをベストコスパとしています。両者のドライバーはいずれもmainline Linuxカーネルに内蔵されています。"
+  - question: "AWUS036AXMLがFlipper Oneの第一候補アダプターなのはなぜですか？"
     answer: "AWUS036AXMLはMT7921AUNチップを採用し、mt7921uドライバーはLinux 5.18以降カーネルに内蔵され、完全な2.4/5/6 GHzトリバンドとモニターモードをサポートします。"
   - question: "Flipper Oneはいつ正式発売されますか？"
     answer: "Flipper Oneは現在開発者プレビュー段階で、正式発売時期と価格はクラウドファンディングで発表されます。詳細はflipper.netをフォローしてください。"
@@ -26,7 +26,7 @@ faq:
 
 
 {{< tldr >}}
-Flipper ZeroのSTM32WB55はUSB deviceモードのみをサポートし、いかなるALFAアダプターも駆動できません。Flipper OneはRK3576と完全なDebian Linuxを搭載し、AWUS036AXMLでトリバンドモニタリングとインジェクションをサポートします。
+Flipper ZeroのSTM32WB55はUSB deviceモードのみをサポートし、いかなるALFAアダプターも駆動できません。Flipper OneはRK3576と完全なDebian Linuxを搭載し、AWUS036AXMLでトリバンドモニタリングをサポートします（インジェクションはカーネルのバージョンに依存）。
 {{< /tldr >}}
 
 Flipper Zero を所有している、または購入を検討している方で、ALFA Network の伝説的な USB WiFi アダプターを無線セキュリティテスティングに使ったことがあるなら、こんなことを思ったことはないでしょうか。
@@ -177,7 +177,7 @@ Flipper One では **Flipper OS Profiles** も導入されました — スナ�
 | **DKMS 必要** | ❌ なし |
 | **アンテナ** | デュアル RP-SMA（交換可能）+ Bluetooth 5.2 |
 
-> **なぜ最高の選択か：** Flipper One の創設者が特別にテストしたアダプターです。`mt7921u` ドライバーはメインラインカーネルにあり、ベンダーパッチ不要です。3 つの WiFi 帯域（2.4/5/6 GHz）すべてをサポートするため、Wi-Fi 6E セキュリティ評価で将来に対応可能です。モニタモードとパケットインジェクションは安定して動作し、十分にテストされています。
+> **なぜ最高の選択か：** Flipper One の創設者が特別にテストしたアダプターです。`mt7921u` ドライバーはメインラインカーネルにあり、ベンダーパッチ不要です。3 つの WiFi 帯域（2.4/5/6 GHz）すべてをサポートするため、Wi-Fi 6E セキュリティ評価で将来に対応可能です。モニタモードは安定して動作し、十分にテストされています。パケットインジェクションはカーネル 6.16 より前では動作するとのコミュニティ報告がありますが、stock カーネル 6.17 での実測では失敗しました（aireplay-ng --test で Found 0 APs / No Answer）。原因はカーネル 6.16 以降の mac80211 chanctx のリグレッションであり、チップ自体の制限ではありません。patched ドライバーでは動作しますが、ファームウェアがレートを固定します（1/6 Mbps）。インジェクションが必要な場合は AWUS036ACM または ACH を使ってください。
 
 ### ⭐⭐⭐⭐⭐ ベストバリュー：AWUS036ACM（Wi-Fi 5 AC1200）
 
@@ -192,13 +192,13 @@ Flipper One では **Flipper OS Profiles** も導入されました — スナ�
 
 > **なぜベストバリューか：** MT7612U チップセットはペンテスタコミュニティでテスト済みです。`mt76` ドライバーはカーネルに何年も存在し、特に安定しています。モニタモードとインジェクションはカーネル 6.5 以上で完璧に動作します。ACM より低価格で、2.4/5 GHz テスティングにおいて最高の価格対性能比を提供します。
 
-### ⭐⭐⭐⭐ 軽量ピック：AWUS036ACHM（Wi-Fi 5 AC433）
+### ⭐⭐⭐⭐ 軽量ピック：AWUS036ACHM（Wi-Fi 5 AC600）
 
 | 仕様 | 詳細 |
 |------|------|
 | **チップセット** | MediaTek MT7610U |
 | **帯域** | 2.4 / 5 GHz（Wi-Fi 5） |
-| **最大速度** | AC433（理論値） |
+| **最大速度** | AC600（理論値） |
 | **ドライバー** | `mt76` — Linux 4.19 からインカーネル |
 | **DKMS 必要** | ❌ なし |
 | **アンテナ** | シングル高出力 RP-SMA（交換可能） |
@@ -218,16 +218,26 @@ Flipper One では **Flipper OS Profiles** も導入されました — スナ�
 
 > **なぜオプションか：** RTL8812AU チップセットにはペンテスタでの長い歴史があります。Flipper One の予定カーネルで DKMS モジュール追加なしでサポートされる予定。古いシステムでは aircrack-ng DKMS ドライバーが利用可能。高出力 6 dBi アンテナは優れた範囲を提供しますが、MediaTek 搭載アダプターの方がより成熟したインカーネルドライバーサポートを提供するため、一般的に推奨されます。
 
-### ⚠️ ペンテスティングに非推奨
+### オプション：AWUS036EACS（Wi-Fi 5 AC600 + Bluetooth、RTL8821CU）
 
-以下の ALFA モデルは Realtek チップセットを使用し、モニタモードとパケットインジェクションに未成熟または不安定な Linux ドライバーを備えています。**Flipper One の無線セキュリティ作業には避けてください：**
+| 仕様 | 詳細 |
+|------|------|
+| **チップセット** | Realtek RTL8821CU |
+| **ドライバー** | `rtw88_8821cu` — kernel 6.2 から mainline に内蔵 |
+| **DKMS 必要** | ❌ kernel 6.2 以降では不要 / ⚠️ 6.2 より前の古い kernel ではコミュニティドライバー（morrownr/8821cu など）が必要 |
+| **実測（ASUS GX10、kernel 6.17）** | monitor mode は 2.4 GHz／5 GHz の両方で動作、インジェクションは両バンドで 100%、WPA handshake のエンドツーエンド取得に成功、Bluetooth と Wi-Fi の同時使用も可 |
+
+> **注記：** 上記は ASUS GX10 での実測であり、Flipper One 本体ではまだ実測していません。kernel 6.2 以降を搭載する環境であれば、追加のドライバーなしで利用できる見込みです。
+
+### ⚠️ 使用前の注意
+
+以下の ALFA モデルは Flipper One 本体では未検証です。ASUS GX10 テスト環境（Ubuntu 24.04 ARM64、kernel 6.17）ではいずれもモニタモードが動作しましたが、必要なドライバーは新しい kernel にのみ内蔵されており、インジェクションの結果はチップセットにより異なります。**無線セキュリティ作業に使う前に Flipper One の kernel バージョンを確認してください：**
 
 | モデル | チップセット | 問題点 |
 |--------|-------------|--------|
-| AWUS036AX | RTL8832BU | Wi-Fi 6 チップセット、2026 年現在でもドライバーサポートが進展中 |
-| AWUS036AXER | RTL8832BU | AWUS036AX と同じチップセットの問題 |
-| AWUS036ACS | RTL8811AU | モニタモードが制限され、インジェクションが不安定 |
-| AWUS036EACS | RTL8811CU | モニタモードが制限され、インジェクションが不安定 |
+| AWUS036AX | RTL8832BU | rtw89_8852bu ドライバーは kernel 6.17 から mainline に入っています。GX10 実測：モニタ可、インジェクション 2.4 GHz 96%、5 GHz 利用可。古い kernel ではコミュニティドライバーが必要 |
+| AWUS036AXER | RTL8832BU | 同じ RTL8832BU。GX10 実測：モニタ可、インジェクション 2.4 GHz 73%、5 GHz 利用可 |
+| AWUS036ACS | RTL8811AU | rtw88_8821au ドライバーは kernel 6.13 から mainline に入っています。GX10 実測：モニタ可、インジェクション 2.4 GHz 100%、5 GHz 96% |
 
 ---
 
@@ -240,12 +250,12 @@ Flipper One では **Flipper OS Profiles** も導入されました — スナ�
 ```bash
 # USB デバイスの列挙を確認
 lsusb
-# 期待される出力（例）：
+# 期待される出力 (例):
 # Bus 001 Device 003: ID 0e8d:7961 MediaTek Inc. Wireless_Device
 
 # 無線インターフェースをリスト
 iw dev
-# 期待される出力：wlan0（内蔵 WiFi が wlan0 を占有する場合は wlan1）
+# 期待される出力: wlan0 (内蔵 WiFi が wlan0 を占有する場合は wlan1)
 
 # 代替チェック
 ip link show
@@ -254,16 +264,16 @@ ip link show
 ### ステップ 2：ドライバーがロードされているか確認
 
 ```bash
-# AWUS036AXML / AWUS036AXM（MT7921AUN）の場合：
+# AWUS036AXML / AWUS036AXM (MT7921AUN) の場合:
 lsmod | grep mt7921u
 
-# AWUS036ACM / AWUS036ACHM（MT7612U / MT7610U）の場合：
+# AWUS036ACM / AWUS036ACHM (MT7612U / MT7610U) の場合:
 lsmod | grep mt76
 
-# AWUS036ACH（RTL8812AU）の場合：
+# AWUS036ACH (RTL8812AU) の場合:
 lsmod | grep rtw88
 
-# カーネルバージョンを確認（MT7921AUN の最適なサポートには 6.12+）：
+# カーネルバージョンを確認 (MT7921AUN の最適なサポートには 6.12+):
 uname -r
 ```
 
@@ -272,10 +282,10 @@ uname -r
 ### ステップ 3：モニタモードを有効化
 
 ```bash
-# 競合プロセスを殺す（NetworkManager、wpa_supplicant など）
-# 注意：これにより Flipper One の内蔵 WiFi も切断されます。
-# 通常のネットワーク接続を disruption しないよう、
-# ペンテスティングには専用 Flipper OS Profile を使用してください。
+# 競合プロセスを殺す (NetworkManager, wpa_supplicant など)
+# 注意: これにより Flipper One の内蔵 WiFi も切断されます.
+# 通常のネットワーク接続を disruption しないよう,
+# ペンテスティングには専用 Flipper OS Profile を使用してください.
 sudo airmon-ng check kill
 
 # アダプターでモニタモードを開始
@@ -301,13 +311,14 @@ sudo ip link set wlan0 up
 # インジェクション能力をテスト
 sudo aireplay-ng --test wlan0mon
 # "Injection is working!" を確認
+# 注: AXML/AXM はカーネル 6.16 以降 (実測 6.17) で失敗します (Found 0 APs / No Answer). インジェクションには ACM / ACH を使用
 
 # 基本的なスキャンを実行
 sudo airodump-ng wlan0mon
 
-# 全対応帯域をスキャン（AWUS036AXML のみ）
+# 全対応帯域をスキャン (AWUS036AXML のみ)
 sudo airodump-ng --band abg wlan0mon     # 2.4 GHz + 5 GHz
-sudo airodump-ng --band 6 wlan0mon       # 6 GHz（aircrack-ng 1.7+）
+sudo airodump-ng --band 6 wlan0mon       # 6 GHz (aircrack-ng 1.7+)
 
 # 特定のチャネルを対象に
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF wlan0mon
@@ -316,20 +327,20 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF wlan0mon
 ### ステップ 5：WPA2 ハンドシェイクをキャプチャ
 
 ```bash
-# ターミナル 1：対象チャネルでキャプチャ開始
+# ターミナル 1: 対象チャネルでキャプチャ開始
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan0mon
 
-# ターミナル 2：再接続を強制するために認証解除を送信
+# ターミナル 2: 再接続を強制するために認証解除を送信
 sudo aireplay-ng -0 5 -a AA:BB:CC:DD:EE:FF wlan0mon
 
-# ターミナル 1 でハンドシェイクキャプチャを確認：
+# ターミナル 1 でハンドシェイクキャプチャを確認:
 # "WPA handshake: AA:BB:CC:DD:EE:FF" が表示される
 ```
 
 ### ステップ 6：通常操作に戻る
 
 ```bash
-# モニタモードを停止し、マネージドモードを復元
+# モニタモードを停止し, マネージドモードを復元
 sudo airmon-ng stop wlan0mon
 
 # ネットワークサービス再起動

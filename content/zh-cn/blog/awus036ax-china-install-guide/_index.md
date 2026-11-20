@@ -3,7 +3,7 @@ title: "ALFA AWUS036AX 中国安装指南：Kali Linux, Ubuntu, Debian 和 树�
 description: "手把手教你在中国境内使用国内镜像源安装 ALFA AWUS036AX 驱动。包含 RTL8832BU 驱动安装、WiFi 6 AX1800 性能说明。支持 Kali Linux, Ubuntu 22/24 (DKMS), Debian 和 树莓派。"
 date: 2026-04-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -18,9 +18,9 @@ faq:
   - question: "AWUS036AX 用什么芯片？支持 WiFi 6 吗？"
     answer: "采用 Realtek RTL8832BU 芯片，支持 WiFi 6 (802.11ax) 高速网络。"
   - question: "AWUS036AX 在 Ubuntu 24.04 上需要安装驱动吗？"
-    answer: "需要。RTL8832BU 不在 Ubuntu 24.04 内核中，请通过 DKMS 编译一次社区版 rtl8852bu 驱动（morrownr/rtl8852bu-20250826），之后内核更新时会自动重新编译。"
+    answer: "看内核版本。Linux 内核 6.17 以上（例如 Ubuntu 24.04 HWE / kernel 6.17）已内置 rtw89_8852bu 驱动，插上即认、免 DKMS；只有内核低于 6.17 时，才需要通过 DKMS 编译一次社区版 rtl8852bu 驱动（morrownr/rtl8852bu-20250826）。先用 uname -r 确认内核版本。"
   - question: "AWUS036AX 适合做无线安全研究吗？"
-    answer: "不适合。社区版 rtl8852bu 驱动不支持 Monitor mode 和封包注入，建议改用内核内置 MediaTek 驱动的 AWUS036ACM。"
+    answer: "适合。在内核 6.17+ 的内置 rtw89_8852bu 驱动下，实测 Monitor mode 与封包注入都可用（我们在 Ubuntu 24.04 / kernel 6.17 实测注入 2.4GHz 96%，并端到端捕获 WPA .22000）。注意：若在旧内核改用社区版 DKMS 驱动，Monitor 支持可能受限。仅限自有或已授权的网络。"
   - question: "在中国安装 AWUS036AX 需要翻墙吗？"
     answer: "不一定。从已验证的 GitHub 仓库（morrownr/rtl8852bu-20250826）下载驱动源码；如果 GitHub 速度较慢，请使用你信任的代理或镜像。编译工具仍可用国内镜像安装。"
   - question: "AWUS036AX 的 USB ID 是多少？"
@@ -30,16 +30,16 @@ faq:
 
 
 
-想要在 Linux 上体验 WiFi 6 的极速？AWUS036AX 是个不错的选择。AWUS036AX 的 RTL8832BU 芯片没有 Linux 内核内置驱动，因此在所有发行版（包括 Ubuntu 24.04）上都需要通过 DKMS 编译一次社区版 rtl8852bu 驱动。驱动源码从已验证的 GitHub 仓库下载；如果 GitHub 速度较慢，请使用你信任的代理或镜像。该驱动不支持 Monitor mode。
+想要在 Linux 上体验 WiFi 6 的极速？AWUS036AX 是个不错的选择。它的 RTL8832BU 芯片在 **Linux 内核 6.17 以上**（例如 Ubuntu 24.04 HWE / kernel 6.17）已由内置的 rtw89_8852bu 驱动支持，插上即认、免编译；只有在**旧内核**（低于 6.17）上，才需要通过 DKMS 编译一次社区版 rtl8852bu 驱动。本指南涵盖这两种情形——驱动源码从已验证的 GitHub 仓库下载；如果 GitHub 速度较慢，请使用你信任的代理或镜像。
 
 {{< tldr >}}
-AWUS036AX 采用 RTL8832BU 芯片，支持 WiFi 6。驱动不在内核中：所有发行版（包括 Ubuntu 24.04）都需要通过 DKMS 编译 rtl8852bu。不支持 Monitor mode。
+AWUS036AX 采用 RTL8832BU 芯片，支持 WiFi 6。内核 6.17+（含 Ubuntu 24.04 / kernel 6.17）已内置 rtw89_8852bu 驱动，免 DKMS、Monitor 与注入实测可用；旧内核才需 DKMS 编译社区版 rtl8852bu。
 {{< /tldr >}}
 
 
 国内访问 GitHub 可能比较慢，本指南的驱动源码取自已验证的 GitHub 仓库；如果速度不佳，请使用你信任的代理或镜像。咱们现在就开始一步步把它跑起来！
 
-> **安全研究提示：** 社区版 rtl8852bu 驱动不支持 Monitor mode 和封包注入。做安全研究请改用内核内置 MediaTek 驱动的网卡，例如 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)。
+> **安全研究提示：** 在**内核 6.17+ 的内置 rtw89_8852bu 驱动**下，AWUS036AX 的 Monitor mode 与封包注入实测可用（Ubuntu 24.04 / kernel 6.17 实测注入 2.4GHz 96%、端到端 WPA .22000）。仅在旧内核改用社区版 DKMS 驱动时，Monitor 支持才可能受限。请先用 `uname -r` 确认内核版本。仅限自有或已授权的网络。
 
 ## 动手前的准备
 
@@ -69,7 +69,7 @@ Bus 001 Device 003: ID 0bda:885a Realtek Semiconductor Corp.
 - [树莓派 4B / 5](#raspberry-pi-4b--5)
 
 如果是老手，可以直接跳转到：
-- [开启监听模式（不支持）](#enable-monitor-mode)
+- [开启监听模式](#enable-monitor-mode)
 - [虚拟机 USB 透传避坑指南](#virtual-machine-usb-passthrough)
 
 ---
@@ -135,11 +135,23 @@ iwconfig
 
 ### 5. 开启监听模式 {#enable-monitor-mode}
 
-> **不支持：** RTL8832BU 的社区版 rtl8852bu 驱动不支持 Monitor mode，这里没有可执行的命令。如需 Monitor mode，请改用内核内置 MediaTek 驱动的网卡，例如 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)。
+> **内核 6.17+ 可用：** 在内置的 rtw89_8852bu 驱动下，Monitor mode 实测可用：
+> ```bash
+> sudo nmcli dev set wlxXXXX managed no
+> sudo ip link set wlxXXXX down
+> sudo iw dev wlxXXXX set type monitor
+> sudo ip link set wlxXXXX up
+> ```
+> 若你在**旧内核**上改用社区版 DKMS 驱动，该版本 Monitor 支持可能受限——此时可改用内核内置 MediaTek 驱动的网卡（例如 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)）。
 
 ### 6. 测试封包注入 {#test-packet-injection}
 
-> **不支持：** 封包注入依赖 Monitor mode，而此驱动不提供 Monitor mode。请使用 [AWUS036ACM](/zh-cn/blog/awus036acm-china-install-guide/)（内核内置 MediaTek 驱动）进行注入测试。
+> **内核 6.17+ 可用：** 进入 Monitor mode 后，用 aireplay-ng 测试注入（实测 2.4GHz 96%）：
+> ```bash
+> sudo iw dev wlxXXXX set channel 6
+> sudo aireplay-ng --test wlxXXXX
+> ```
+> 仅限自有或已授权的网络。旧内核的社区版 DKMS 驱动若不提供 Monitor，注入亦不可用。
 
 ---
 
@@ -147,7 +159,7 @@ iwconfig
 
 ### Ubuntu 24.04 (Noble) — 需要 DKMS
 
-Ubuntu 24.04（内核 6.8）并未内置 RTL8832BU 的驱动。先换成国内镜像源，再按下方 Ubuntu 22.04 的方式编译驱动。
+Ubuntu 24.04 的 GA 内核 6.8 与 HWE 内核 6.14 都未内置该芯片的驱动，需内核 6.17 以上（例如 24.04.4 的 HWE）。先换成国内镜像源，再按下方 Ubuntu 22.04 的方式编译驱动。
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -161,7 +173,7 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-重启后执行 `sudo modprobe 8852bu` 和 `iwconfig`。如果模块成功加载并出现网卡接口，就完成了（仅支持 Managed 模式，不支持 Monitor mode）。
+重启后执行 `sudo modprobe 8852bu` 和 `iwconfig`。如果模块成功加载并出现网卡接口，就完成了（此为旧内核的社区版 DKMS 驱动路径，Monitor 支持可能受限；内核 6.17+ 请用内置 rtw89_8852bu，Monitor 与注入实测可用）。
 
 ---
 
@@ -204,7 +216,7 @@ sudo reboot
 
 ---
 
-## 树莓派 (Raspberry Pi) 4B / 5
+## 树莓派 (Raspberry Pi) 4B / 5 {#raspberry-pi-4b--5}
 
 建议直接用 Kali ARM64，操作和上面的 Kali 章节差不多：
 
@@ -240,7 +252,7 @@ sudo reboot
 | `install-driver.sh` 报错 | 缺少内核头文件 | 跑 `sudo apt install linux-headers-$(uname -r)` |
 | 克隆 GitHub 失败或很慢 | 网络问题 | 使用你信任的代理或镜像 |
 | `modprobe 8852bu` 失败 | 驱动未编译或未加载 | 重新执行 `sudo ./install-driver.sh`，用 `sudo dkms status` 检查后重启 |
-| Monitor mode／封包注入无法使用 | rtl8852bu 驱动不支持 | 做渗透测试请改用 AWUS036ACM |
+| Monitor mode／封包注入无法使用 | 内核低于 6.17 且使用社区版 rtl8852bu DKMS 驱动（Monitor 支持可能受限） | 先用 `uname -r` 确认；请使用内核 6.17+（内置 rtw89_8852bu），旧内核可改用 AWUS036ACM |
 
 > **关于 VIF：** RTL8832BU 的内核外驱动不支持虚拟接口（VIF）。
 

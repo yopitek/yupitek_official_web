@@ -3,7 +3,7 @@ title: "ALFA WLAN-Adapter mit Kali NetHunter: Vollständiger Technischer Leitfad
 description: "Technische Referenz für ALFA USB WLAN-Adapter mit Kali NetHunter. Smartphone-Kompatibilität für den taiwanesischen Markt, In-Kernel vs DKMS Treiberanalyse, OTG-Einrichtung und verifizierte Testergebnisse."
 date: 2026-06-09
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -60,7 +60,7 @@ NetHunter unterstützt über 117 Gerätemodule, aber die meisten sind ältere Mo
 | **Samsung Galaxy S20 FE 5G** | r8q | Snapdragon 865 (ARM64) | 5 | 1 | ✅ In Taiwan verkauft — **Snapdragon-Variante erforderlich** |
 
 {{< alert "triangle-exclamation" >}}
-**Samsung Exynos-Warnung:** Die meisten Samsung-Geräte, die über taiwanesische Mobilfunkanbieter verkauft werden, verwenden Exynos-Chipsätze. NetHunter-Kernel unterstützen nur die Snapdragon-Variante (`r8q`). Überprüfe vor dem Kauf eines Samsung-Geräts für NetHunter das CPU-Modell — wenn in der Beschreibung „Exynos" steht, wird es nicht funktionieren. Importiere ein Snapdragon-Gerät oder wähle stattdessen das OnePlus 11.
+**Samsung Exynos-Warnung:** Die meisten Samsung-Geräte, die über taiwanesische Mobilfunkanbieter verkauft werden, verwenden Exynos-Chipsätze. NetHunter-Kernel unterstützen nur die Snapdragon-Variante (`r8q`). Überprüfe vor dem Kauf eines Samsung-Geräts für NetHunter das CPU-Modell — wenn in der Beschreibung „Exynos“ steht, wird es nicht funktionieren. Importiere ein Snapdragon-Gerät oder wähle stattdessen das OnePlus 11.
 {{< /alert >}}
 
 **NetHunter Rootless** läuft auf jedem Android-Gerät ohne Root, kann aber keine externen USB-WLAN-Adapter für den Monitor Mode unterstützen. Wenn du Packet Capture und Injection benötigst, brauchst du die NetHunter Full Edition mit einem Custom Kernel.
@@ -98,7 +98,7 @@ Mit dem OnePlus 11 5G als Referenzplattform:
 |---|---|
 | Chipsatz | **MediaTek MT7610U** |
 | USB VID/PID | `0x0e8d:0x7610` |
-| Bänder | 2,4 GHz + 5 GHz (AC433) |
+| Bänder | 2,4 GHz + 5 GHz (AC600) |
 | Max. Datenrate | 150 Mbps (2,4 GHz) / 433 Mbps (5 GHz) |
 | USB | USB 2.0 |
 | Monitor Mode | ✅ Vollständige Unterstützung |
@@ -155,7 +155,7 @@ Der ACH ist seit Jahren der De-facto-Standard für Kali- und NetHunter-Setups. D
 |---|---|
 | Chipsatz | Realtek RTL8811AU |
 | USB VID/PID | `0x0bda:0x0811` |
-| Bänder | 2,4 GHz + 5 GHz (AC433) |
+| Bänder | 2,4 GHz + 5 GHz (AC600) |
 | USB | USB 2.0 |
 | Monitor Mode | ✅ Unterstützt (gleiche Treiberfamilie wie RTL8812AU) |
 | Packet Injection | ✅ Unterstützt |
@@ -164,13 +164,13 @@ Der ACH ist seit Jahren der De-facto-Standard für Kali- und NetHunter-Setups. D
 | Treiber | Extern (gemeinsames aircrack-ng-Repo mit RTL8812AU) |
 | Produktseite | [/de/products/alfa/awus036acs/](/de/products/alfa/awus036acs/) |
 
-Der ACS ist die portabelste Option. Mit 300mW Leistungsaufnahme belastet er den Telefonakku am wenigsten, und sein schlankes Gehäuse verschwindet in der Hosentasche. Der Kompromiss: Single-Stream-AC433-Leistung und die externe DKMS-Treiberabhängigkeit, die mit der RTL8812AU-Familie geteilt wird.
+Der ACS ist die portabelste Option. Mit 300mW Leistungsaufnahme belastet er den Telefonakku am wenigsten, und sein schlankes Gehäuse verschwindet in der Hosentasche. Der Kompromiss: Single-Stream-AC600-Leistung und die externe DKMS-Treiberabhängigkeit, die mit der RTL8812AU-Familie geteilt wird.
 
 ### 3.5 Für NetHunter nicht empfohlene Adapter
 
 | Adapter | Chipsatz | Grund |
 |---|---|---|
-| AWUS036AX / AWUS036AXER | RTL8832BU | Erfordert Kernel 6.14+; Monitor-Mode-Stabilität auf Android-Kernels unbestätigt |
+| AWUS036AX / AWUS036AXER | RTL8832BU | Erfordert Kernel 6.17+; Monitor-Mode-Stabilität auf Android-Kernels unbestätigt |
 | AWUS036AXML / AWUS036AXM | MT7921AUN | WiFi-6E-/6-GHz-Unterstützung in aktuellen NetHunter-Kernel-Builds instabil; als primärer Pentest-Adapter nicht geeignet |
 
 ### 3.6 Treiberquellcode-Repositories

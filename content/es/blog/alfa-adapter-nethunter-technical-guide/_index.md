@@ -8,7 +8,7 @@ showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Qué requisitos de teléfono tiene el uso de tarjetas inalámbricas ALFA con Kali NetHunter?"
     answer: "Necesitas un teléfono Android con soporte OTG, root y el kernel de Kali NetHunter flasheado. Los modelos verificados como compatibles incluyen la serie Google Pixel y los modelos insignia antiguos de OnePlus. La compatibilidad específica depende de la versión del kernel y la ubicación del controlador del chip de la tarjeta."
@@ -98,7 +98,7 @@ Usando el OnePlus 11 5G como plataforma de referencia:
 |---|---|
 | Chipset | **MediaTek MT7610U** |
 | USB VID/PID | `0x0e8d:0x7610` |
-| Bandas | 2.4 GHz + 5 GHz (AC433) |
+| Bandas | 2.4 GHz + 5 GHz (AC600) |
 | Velocidad Máxima de Datos | 150 Mbps (2.4 GHz) / 433 Mbps (5 GHz) |
 | USB | USB 2.0 |
 | Monitor Mode | ✅ Soporte completo |
@@ -155,7 +155,7 @@ El ACH ha sido el estándar de facto para configuraciones de Kali y NetHunter du
 |---|---|
 | Chipset | Realtek RTL8811AU |
 | USB VID/PID | `0x0bda:0x0811` |
-| Bandas | 2.4 GHz + 5 GHz (AC433) |
+| Bandas | 2.4 GHz + 5 GHz (AC600) |
 | USB | USB 2.0 |
 | Monitor Mode | ✅ Compatible (misma familia de controladores que RTL8812AU) |
 | Packet Injection | ✅ Compatible |
@@ -164,13 +164,13 @@ El ACH ha sido el estándar de facto para configuraciones de Kali y NetHunter du
 | Controlador | Externo (repositorio aircrack-ng compartido con RTL8812AU) |
 | Página de Producto | [/es/products/alfa/awus036acs/](/es/products/alfa/awus036acs/) |
 
-El ACS es la opción más portátil. Con un consumo de 300mW es el menos exigente para las baterías de los teléfonos, y su factor de forma delgado desaparece en un bolsillo. El compromiso es el rendimiento AC433 de flujo único y la dependencia del controlador DKMS externo compartida con la familia RTL8812AU.
+El ACS es la opción más portátil. Con un consumo de 300mW es el menos exigente para las baterías de los teléfonos, y su factor de forma delgado desaparece en un bolsillo. El compromiso es el rendimiento AC600 de flujo único y la dependencia del controlador DKMS externo compartida con la familia RTL8812AU.
 
 ### 3.5 Adaptadores No Recomendados para NetHunter
 
 | Adaptador | Chipset | Motivo |
 |---|---|---|
-| AWUS036AX / AWUS036AXER | RTL8832BU | Requiere kernel 6.14+; estabilidad de monitor mode no verificada en kernels Android |
+| AWUS036AX / AWUS036AXER | RTL8832BU | Requiere kernel 6.17+; estabilidad de monitor mode no verificada en kernels Android |
 | AWUS036AXML / AWUS036AXM | MT7921AUN | El soporte WiFi 6E / 6 GHz es inestable en las compilaciones actuales del kernel de NetHunter; no apto como adaptador principal de pentest |
 
 ### 3.6 Repositorios de Código Fuente de los Controladores
@@ -502,8 +502,8 @@ sudo iw dev wlan1 set txpower fixed 1000  # 10 dBm
 
 ## Referencias
 
-1. [Documentación oficial de Kali NetHunter](https://www.kali.org/docs/nethunter/) — NetHunter 安裝與核心刷入指南
-2. [Linux Kernel mt76 驅動原始碼](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) — MT7610U/MT7612U 主線驅動
-3. [aircrack-ng RTL8812AU 驅動](https://github.com/aircrack-ng/rtl8812au) — DKMS 外部驅動儲存庫
-4. [Sitio oficial de ALFA Network](https://alfa.com.tw/) — 產品規格與驅動下載
-5. [Documentación oficial de Android USB OTG](https://developer.android.com/guide/topics/connectivity/usb) — OTG API 與硬體需求
+1. [Documentación oficial de Kali NetHunter](https://www.kali.org/docs/nethunter/) — Guía de instalación de NetHunter y flasheo del kernel
+2. [Código fuente del controlador mt76 del kernel Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) — Controlador mainline para MT7610U/MT7612U
+3. [Controlador RTL8812AU de aircrack-ng](https://github.com/aircrack-ng/rtl8812au) — Repositorio del controlador externo (DKMS)
+4. [Sitio oficial de ALFA Network](https://alfa.com.tw/) — Especificaciones de producto y descarga de controladores
+5. [Documentación oficial de Android USB OTG](https://developer.android.com/guide/topics/connectivity/usb) — API de OTG y requisitos de hardware

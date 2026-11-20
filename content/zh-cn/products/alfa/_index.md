@@ -1,7 +1,8 @@
 ---
 title: "ALFA Network 无线网卡"
-description: "榆阖科技代理 ALFA Network 高功率 USB Wi-Fi 无线网卡，在全球安全研究社区享有高度评价。"
+description: "榆閤科技代理 ALFA Network 高功率 USB Wi-Fi 无线网卡，在全球安全研究社区享有高度评价。"
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
@@ -37,16 +38,16 @@ ALFA Network 是台湾知名无线网络设备、无线网卡制造商，专精�
     AC1200 双频，Realtek RTL8812AU，USB 3.0，双 5 dBi 外置天线，高功率稳定输出。
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/zh-cn/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 双频，MediaTek MT7610U 芯片，USB 2.0，单天线轻巧设计 — 适合随身携带与渗透测试。
+    AC600 双频，MediaTek MT7610U 芯片，USB 2.0，单天线轻巧设计 — 适合随身携带与渗透测试。
   {{< /card >}}
   {{< card title="AWUS036ACM" href="/zh-cn/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 双频，MediaTek MT7612U，USB 3.0，300+867 Mbps，5 dBi 双天线，经典款。
   {{< /card >}}
   {{< card title="AWUS036ACS" href="/zh-cn/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
-    AC433 双频，Realtek RTL8811AU，USB 2.0，超轻薄设计，55mm 迷你机身。
+    AC600 双频，Realtek RTL8811AU，USB 2.0，超轻薄设计，55mm 迷你机身。
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/zh-cn/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
-    AC600 双频，Realtek RTL8811CU，USB 2.0，超轻薄小巧机身设计。
+    AC600 双频，Realtek RTL8821CU，USB 2.0，超轻薄小巧机身设计。
   {{< /card >}}
 {{< /card-group >}}
 

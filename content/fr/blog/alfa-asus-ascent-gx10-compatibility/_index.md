@@ -1,5 +1,5 @@
 ---
-title: "Carte réseau sans fil ALFA : prise en charge du modèle ASUS Ascent GX10 (GB10) ?"
+title: "Les cartes Wi-Fi ALFA sont-elles compatibles avec l'ASUS Ascent GX10 (GB10) ?"
 date: 2026-09-03
 draft: false
 slug: "alfa-asus-ascent-gx10-compatibility"
@@ -14,17 +14,19 @@ tags:
   - "ARM64"
 categories:
   - "Guide Matériel"
-description: "ASUS GX10 & NVIDIA DGX Spark : compatibilité ALFA, MediaTek et Realtek, USB-C, adaptateur nécessaire pour AXML"
+description: "9 cartes USB ALFA testées sur l'ASUS Ascent GX10 (GB10) en kernel 6.17 : pilotes intégrés sans DKMS, injection fiable sur EACS/ACH/ACS, en échec sur AXM/AXML."
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
+
+> 📌 Article mis à jour d'après nos tests sur GX10 de novembre 2026 : sur l'ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17.0-1014-nvidia), les 9 cartes réseau ALFA actuelles utilisent toutes les pilotes intégrés au kernel et fonctionnent dès le branchement, sans DKMS. Données complètes : [Tableau des tests ARM64 des 9 cartes réseau ALFA](/fr/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/). Tests effectués uniquement sur le GX10 ; les autres machines GB10 n'ont pas été testées une par une.
 
 ## 1. Résumé du problème
 
-Client demande : « L'ALFA série USB carte sans fil peut-elle être utilisée sur l'ordinateur portable ASUS Ascent GX10 (NVIDIA GB10 Grace Blackwell) supercomputer AI ? »
+Question d'un client : « Les cartes réseau sans fil USB de la gamme ALFA peuvent-elles être utilisées sur le supercalculateur IA ASUS Ascent GX10 (NVIDIA GB10 Grace Blackwell) ? »
 
-Conclusion rapide : L'ASUS Ascent GX10 et le NVIDIA DGX Spark partagent la même plateforme matérielle GB10 et l'environnement logiciel DGX OS, la compatibilité avec la carte ALFA est parfaitement identique (jugement de base : 9 cartes USB ALFA en service). Les modèles de puces MediaTek (AWUS036ACM / ACHM / AXML / AXM, 4 modèles) utilisent des pilotes in-kernel, prêts à l'emploi à l'ouverture de la boîte ; les modèles de puces Realtek (AWUS036ACH / ACS / EACS / AX / AXER, 5 modèles) nécessitent la compilation de pilotes out-of-tree sur ARM64. Attention : tous les ports USB du GX10 sont de type USB Type-C (3 ports de données + 1 port d'entrée PD), les cartes ALFA (à l'exception de l'AXML) nécessitent un adaptateur USB-C to USB-A.
+Conclusion rapide : l'ASUS Ascent GX10 et le NVIDIA DGX Spark utilisent la même puce GB10 et la même famille de kernels NVIDIA. Nous avons testé sur l'ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17.0-1014-nvidia) les 9 cartes réseau USB ALFA actuelles (AWUS036ACM / ACHM / ACH / ACS / EACS / AX / AXER / AXM / AXML) : toutes utilisent les pilotes intégrés au kernel et fonctionnent dès le branchement, sans compilation ni DKMS. La machine traitée dans cet article est précisément la machine de test. Différences fonctionnelles : les modèles MediaTek MT7921 (AWUS036AXM / AXML) échouent à l'injection de paquets (packet injection) sur le kernel 6.17 d'origine, tandis que les modes monitor, AP et WPA3 fonctionnent ; pour les 7 autres modèles, le mode monitor et l'injection ont été validés en test. La version minimale du kernel à partir de laquelle chaque pilote est intégré à la branche principale diffère selon la carte (ACM / ACHM 4.19, AXM / AXML 5.18, EACS 6.2, ACH / ACS 6.13, AX / AXER 6.17) ; seuls les kernels antérieurs à cette version nécessitent les pilotes DKMS de la communauté. Attention : tous les ports USB du GX10 sont de type USB Type-C (3 ports de données + 1 port d'entrée PD) ; les cartes ALFA (à l'exception de l'AXML) nécessitent un adaptateur USB-C vers USB-A.
 
 ## 2. Analyse des spécifications matérielles cibles
 
@@ -50,7 +52,7 @@ Conclusion rapide : L'ASUS Ascent GX10 et le NVIDIA DGX Spark partagent la même
 | Refroidissement | Système de refroidissement exclusif ASUS (ventilateur silencieux + dissipateurs thermiques) |
 | Autres | Port de verrouillage Kensington |
 
-> ⚠️ Note de correction des spécifications : Le dimensions initiale était écrite comme « 150 × 150 × 50 mm » et sans poids. Après vérification des spécifications techniques officielles d'ASUS, il est **150 × 150 × 51 mm / 1.48 kg**. Les dimensions ont été corrigées. La version HDMI est également corrigée à 2.1 (l'original était écrite 2.1b). Voir la section 10 pour les sources de référence.
+> ⚠️ Note de correction des spécifications : les dimensions étaient initialement indiquées comme « 150 × 150 × 50 mm », sans poids. Après vérification des spécifications techniques officielles d'ASUS, elles sont de **150 × 150 × 51 mm / 1.48 kg**. Les dimensions ont été corrigées. La version HDMI a également été corrigée en 2.1 (l'original indiquait 2.1b). Voir la section 10 pour les sources de référence.
 
 ### 2.2 Environnement logiciel : NVIDIA DGX OS
 
@@ -71,32 +73,34 @@ Conclusion rapide : L'ASUS Ascent GX10 et le NVIDIA DGX Spark partagent la même
 | Module sans fil | MediaTek AW-EM637 (Wi-Fi 7) | Module Wi-Fi 7 de niveau équivalent |
 | Accessoires | Accessoires d'usine ASUS | Accessoires d'usine NVIDIA |
 | Garantie | Garantie ASUS | Garantie NVIDIA |
-| Influence sur la compatibilité ALFA | Aucune influence. Les contrôleurs USB, les versions du kernel et les frameworks de pilotes sont identiques à ceux du DGX Spark. |
+| Influence sur la compatibilité ALFA | Aucune influence attendue (tests effectués uniquement sur le GX10 ; les autres machines GB10 n'ont pas été testées une par une). Les contrôleurs USB, les versions du kernel et les frameworks de pilotes sont identiques à ceux du DGX Spark. |
 
 ### 2.4 Besoins en adaptateurs USB Type-C
 
-Les 4 ports USB de l'GX10 sont de type Type-C :
+Les 4 ports USB du GX10 sont de type Type-C :
 
-- 3 ports de données (soutiennent DP Alt Mode, peuvent être utilisés pour connecter des écrans)
+- 3 ports de données (prennent en charge le DP Alt Mode, peuvent être utilisés pour connecter des écrans)
 - 1 port d'entrée PD (utilisé pour l'alimentation)
 
-Tous les cartes réseau de la gamme ALFA (sauf l'AXML qui est USB-C) sont de type USB Type-A, nécessitant un adaptateur.
+Toutes les cartes réseau de la gamme ALFA (sauf l'AXML qui est en USB-C) sont de type USB Type-A et nécessitent un adaptateur.
 
 ## 3. Analyse des spécifications et des puces des cartes réseau ALFA
 
-Au 9 septembre 2026, la gamme de produits de cartes réseau USB sans fil actuels d'ALFA Network est la suivante :
+Au 9 septembre 2026, la gamme de cartes réseau USB sans fil actuelles d'ALFA Network est la suivante :
 
-| Modèle | Niveau Wi-Fi | Puce | Interface | État du pilote Linux |
+| Modèle | Niveau Wi-Fi | Puce | Interface | Pilote Linux intégré (version minimale du kernel) |
 |---|---|---|---|---|
-| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ in-kernel (mt7921u) |
-| AWUS036AXM | Wi-Fi 6E | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ in-kernel (mt7921u) |
-| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ rtw89 / out-of-tree |
-| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ Comme ci-dessus |
-| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ⚠️ out-of-tree (8812au) |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ✅ in-kernel (mt76x0u) |
-| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ in-kernel (mt76x2u)⭐ Recommandé |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ⚠️ out-of-tree (8812au couvert) |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ⚠️ out-of-tree (8821cu) |
+| AWUS036AXML | Wi-Fi 6E (6GHz validé en test) | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ Intégré (mt7921u, 5.18+) |
+| AWUS036AXM | Wi-Fi 6E (selon le fabricant, 6GHz non testé) | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ Intégré (mt7921u, 5.18+) |
+| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ Intégré (rtw89_8852bu, 6.17+) |
+| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ Intégré (rtw89_8852bu, 6.17+) |
+| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ✅ Intégré (rtw88_8812au, 6.13+) |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ✅ Intégré (mt76x0u, 4.19+) |
+| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ Intégré (mt76x2u, 4.19+) |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ✅ Intégré (rtw88_8821au, 6.13+) |
+| AWUS036EACS | Wi-Fi 5 (AC600) + Bluetooth | Realtek RTL8821CU | USB 2.0 | ✅ Intégré (rtw88_8821cu, 6.2+) |
+
+Remarque : le kernel 6.17 testé sur le GX10 intègre les pilotes des 9 modèles ; la version minimale du kernel diffère selon la carte (voir entre parenthèses dans le tableau). Seuls les anciens systèmes dont le kernel est antérieur à la version minimale de la carte nécessitent l'installation des pilotes DKMS maintenus par la communauté.
 
 ## 4. Modèles et SoC applicables
 
@@ -104,123 +108,130 @@ Au 9 septembre 2026, la gamme de produits de cartes réseau USB sans fil actuels
 
 | Catégorie recommandée | Modèle (SoC) | Description |
 |---|---|---|
-| ⭐ Fortement recommandé | AWUS036ACM (MT7612U) | Pilote in-kernel, prêt à l'emploi, AC1200 double bande, supporte AP / Monitor / Injection |
-| ✅ Recommandé | AWUS036ACHM (MT7610U) | Pilote in-kernel, faible consommation d'énergie, AC433 double bande |
-| ✅ Recommandé (Wi-Fi 6E) | AWUS036AXML / AXM (MT7921AUN) | Pilote in-kernel, Wi-Fi 6E, AXML est directement insérable en USB-C |
-| ⚠️ Disponible mais nécessite la compilation | AWUS036ACH (RTL8812AU) | Nécessite la compilation de morrownr/8812au (ARM64), fonctionnalités complètes après compilation |
-| ⚠️ Disponible mais nécessite la compilation | AWUS036ACS / EACS | Nécessite la compilation du pilote out-of-tree correspondant |
-| ⚠️ Disponible mais à utiliser avec précaution | AWUS036AX / AXER (RTL8832BU) | Le rtw89 du kernel 6.x pourrait déjà le prendre en charge ; pas besoin de compiler |
+| ⭐ Premier choix pour les tests d'intrusion | AWUS036EACS (RTL8821CU) / AWUS036ACH (RTL8812AU) / AWUS036ACS (RTL8811AU) | Pilote intégré, aucune installation ; injection testée à 100 % sur les deux bandes pour EACS et ACH, ACS à 100 % en 2.4GHz et 96 % en 5GHz ; capture de handshake WPA de bout en bout possible |
+| ✅ Recommandé | AWUS036ACM (MT7612U) | Pilote intégré, aucune installation ; monitor, injection (2.4GHz 63–83 %, 5GHz 76 %), AP et WPA3 fonctionnent |
+| ✅ Recommandé | AWUS036ACHM (MT7610U) | Pilote intégré, aucune installation ; injection 2.4GHz 96–100 %, en 5GHz seule l'injection en broadcast fonctionne ; un AP WPA3 nécessite sae_pwe=0 |
+| ✅ Recommandé (Wi-Fi 6) | AWUS036AX / AXER (RTL8832BU) | Pilote intégré, aucune installation ; bonne réception en monitor, injection fonctionnelle (2.4GHz : AX 96 %, AXER 73 %), AP en 80MHz |
+| ⚠️ Connexion / AP uniquement | AWUS036AXML / AXM (MT7921AUN) | Pilote intégré, aucune installation ; monitor, AP et WPA3 fonctionnent, mais l'injection échoue sur le kernel 6.17 d'origine, donc inadapté aux tests d'intrusion ; l'AXML se branche directement en USB-C |
 
 ### 4.2 Suggestions de scénarios d'utilisation
 
 | Scénario d'utilisation | Modèle recommandé | Description |
 |---|---|---|
-| Internet sans fil général (le plus simple) | AWUS036ACM / ACHM | Pilote in-kernel, sans compilation |
-| Tests de pénétration / Surveillance / Injection sans fil | AWUS036ACH ou AWUS036ACM | Les deux supportent Monitor + Injection |
-| Wi-Fi 6E / 6GHz | AWUS036AXML / AXM | Pilote in-kernel MT7921AUN |
-| Pas besoin d'WiFi externe | — | GX10 est intégré avec Wi-Fi 7, le surf sur Internet ne nécessite pas d'extension externe |
+| Internet sans fil général (le plus simple) | Les 9 modèles conviennent (par exemple AWUS036ACM / ACHM) | Tous utilisent des pilotes intégrés au kernel et fonctionnent dès le branchement |
+| Tests d'intrusion / Écoute / Injection sans fil | AWUS036EACS / ACH / ACS | Injection testée à 96–100 %, capture de handshake WPA de bout en bout ; évitez AXM / AXML (injection en échec) |
+| Wi-Fi 6 + point d'accès AP | AWUS036AX / AXER | AP 2x2 en 80MHz validé en test |
+| Bande 6GHz | AWUS036AXML | Création d'un AP WPA3 en 6GHz validée en test ; l'AXM a la même puce mais le 6GHz n'a pas été testé |
+| Pas besoin de WiFi externe | — | Le GX10 intègre le Wi-Fi 7, la navigation Internet ne nécessite pas de carte externe |
 
-## 5. Besoins Environnementaux
+## 5. Besoins environnementaux
 
-### 5.1 Besoins En Matériel
+### 5.1 Besoins en matériel
 
 | Élément | Besoin |
 |---|---|
-| Adaptateur USB | Adaptateur USB-C vers USB-A ou câble de transmission (sauf pour AXML), recommandé pour prendre en charge USB 3.2 Gen 2×2 |
+| Adaptateur USB | Adaptateur ou câble USB-C vers USB-A (sauf pour l'AXML), de préférence compatible USB 3.2 Gen 2×2 |
 | Alimentation | Alimentation USB-C d'origine ASUS GX10 (180W EPR PD3.1) |
 
-### 5.2 Besoins En Logiciel
+### 5.2 Besoins en logiciel
 
 | Élément | Besoin |
 |---|---|
-| Version DGX OS | Version en service (kernel 6.x) |
-| Outils de compilation (nécessaire pour le chip Realtek) | build-essential, git, bc, dkms |
-| Outils de gestion sans fil | iw, network-manager (installé par défaut sur DGX OS) |
+| Version DGX OS | Version actuelle (kernel 6.x) |
+| Version du kernel | Le kernel 6.17 (testé sur 6.17.0-1014-nvidia) intègre les pilotes des 9 cartes réseau, aucun outil de compilation n'est nécessaire ; la version minimale diffère selon la carte (ACM / ACHM 4.19, AXM / AXML 5.18, EACS 6.2, ACH / ACS 6.13, AX / AXER 6.17), et seuls les kernels antérieurs à cette version nécessitent les pilotes DKMS de la communauté |
+| Outils de gestion sans fil | iw, network-manager (installés par défaut sur DGX OS) |
 
 ## 6. Détermination de la compatibilité
 
-### Matrice de compatibilité entre les modèles en service ALFA et ASUS Ascent GX10 (GB10)
+### Matrice de compatibilité entre les modèles ALFA actuels et l'ASUS Ascent GX10 (GB10)
 
-| Modèle | Processeur | Mode de pilotage | Détection USB | STA Internet | Mode AP | Moniteur | Difficulté d'installation | Évaluation globale |
-|---|---|---|---|---|---|---|---|---|
-| AWUS036ACM | MT7612U | in-kernel (mt76x2u) | ✅ | ✅ | ✅ | ✅ | Sans installation | ⭐ Meilleure |
-| AWUS036ACHM | MT7610U | in-kernel (mt76x0u) | ✅ | ✅ | ✅ | ⚠️ Limitée | Sans installation | ✅ Bonne |
-| AWUS036AXML | MT7921AUN | in-kernel (mt7921u) | ✅ | ✅ | ✅ | ⚠️ Limitée | Sans installation | ✅ Bonne |
-| AWUS036AXM | MT7921AUN | in-kernel (mt7921u) | ✅ | ✅ | ✅ | ⚠️ Limitée | Sans installation | ✅ Bonne |
-| AWUS036ACH | RTL8812AU | out-of-tree (8812au) | ✅ | ✅ | ✅ | ✅ | Moyenne (traduction) | ⚠️ Disponible |
-| AWUS036ACS | RTL8811AU | out-of-tree (8812au) | ✅ | ✅ | ⚠️ | ❌ | Moyenne (traduction) | ⚠️ Disponible |
-| AWUS036EACS | RTL8811CU | out-of-tree (8821cu) | ✅ | ⚠️ | ❌ | ❌ | Moyenne (traduction) | ⚠️ Disponible |
-| AWUS036AX | RTL8832BU | rtw89 / out-of-tree | ✅ | ⚠️ | ⚠️ | ❌ | Moyenne-Haute | ⚠️ Disponible |
-| AWUS036AXER | RTL8832BU | Comme ci-dessus | ✅ | ⚠️ | ⚠️ | ❌ | Moyenne-Haute | ⚠️ Disponible |
+| Modèle | Puce | Pilote (intégré au kernel) | Détection USB | STA Internet | Mode AP | Monitor | Injection de paquets | Difficulté d'installation | Évaluation globale |
+|---|---|---|---|---|---|---|---|---|---|
+| AWUS036EACS | RTL8821CU | rtw88_8821cu | ✅ | ✅ | ✅ | ✅ | ✅ 100 % sur les deux bandes | Sans installation | ⭐ Meilleure |
+| AWUS036ACH | RTL8812AU | rtw88_8812au | ✅ | ✅ | ✅ | ✅ | ✅ 100 % sur les deux bandes | Sans installation | ⭐ Meilleure |
+| AWUS036ACS | RTL8811AU | rtw88_8821au | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 100 % / 5G 96 % | Sans installation | ⭐ Meilleure |
+| AWUS036ACM | MT7612U | mt76x2u | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 63–83 % / 5G 76 % | Sans installation | ✅ Bonne |
+| AWUS036ACHM | MT7610U | mt76x0u | ✅ | ✅ | ✅ | ✅ | ⚠️ 2.4G 96–100 % / 5G broadcast uniquement | Sans installation | ✅ Bonne |
+| AWUS036AX | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ Bonne réception | ✅ 2.4G 96 % / 5G fonctionnel | Sans installation | ✅ Bonne |
+| AWUS036AXER | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ Bonne réception | ✅ 2.4G 73 % / 5G fonctionnel | Sans installation | ✅ Bonne |
+| AWUS036AXML | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ Réception faible | ❌ Échec | Sans installation | ⚠️ Connexion / AP uniquement |
+| AWUS036AXM | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ Réception faible | ❌ Échec | Sans installation | ⚠️ Connexion / AP uniquement |
 
-Critère de détermination : L'ASUS GX10 et le DGX Spark partagent la même plateforme matérielle GB10 et le même DGX OS (kernel 6.x, aarch64), la détermination de la compatibilité est identique à celle du DGX Spark.
+Critère de détermination : tests sur machine réelle du 16 au 18 novembre 2026 sur l'ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17.0-1014-nvidia), avec notre propre réseau Wi-Fi et nos propres téléphones comme cibles. La machine traitée dans cet article est précisément la machine de test. Données complètes : [Tableau des tests ARM64 des 9 cartes réseau ALFA](/fr/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/).
 
-## 7. Détails ultra détaillés : Étapes de configuration étape par étape
+## 7. Guide ultra détaillé : configuration étape par étape
 
-Les étapes d'installation de l'ASUS GX10 sont identiques à celles de l'installation de NVIDIA DGX Spark. Voici une version raccourcie ; pour les étapes complètes, consultez le chapitre 7 de l'article [ALFA : Carte réseau sans fil, est-elle compatible avec NVIDIA DGX Spark ?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/).
+Les étapes d'installation de l'ASUS GX10 sont identiques à celles du NVIDIA DGX Spark. Voici une version abrégée ; pour les étapes complètes, consultez la section 7 de l'article [Les cartes réseau sans fil ALFA sont-elles compatibles avec le NVIDIA DGX Spark ?](/fr/blog/alfa-nvidia-dgx-spark-compatibility/).
 
-### 7.1 Modèles de puces MediaTek (prêt à l'emploi)
+### 7.1 Modèles à puce MediaTek (AWUS036ACM / ACHM / AXM / AXML)
 
-- Utilisez un adaptateur USB-C to USB-A (AXML peut être directement inséré), insérez la carte réseau ALFA dans le port USB-C du GX10
+- Utilisez un adaptateur USB-C vers USB-A (l'AXML se branche directement) et insérez la carte réseau ALFA dans un port USB-C de données du GX10
 - Confirmez la détection : `lsusb`
-- Confirmez l'interface : `ip link show` (wlan0 devrait apparaître automatiquement)
+- Confirmez l'interface : `ip link show` (une interface commençant par wlx devrait apparaître automatiquement)
 - Connectez-vous au WiFi : `nmcli dev wifi connect "SSID" password "mot de passe"`
 
-### 7.2 Modèles de puces Realtek (nécessite compilation)
+### 7.2 Modèles à puce Realtek (AWUS036ACH / ACS / EACS / AX / AXER)
 
-Prenez AWUS036ACH (RTL8812AU) comme exemple :
+Le kernel 6.17 (version testée sur le GX10) intègre les pilotes de tous les modèles Realtek ; les étapes sont identiques à celles des modèles MediaTek, sans compilation (versions minimales : EACS 6.2, ACH / ACS 6.13, AX / AXER 6.17) :
 
 ```bash
-# 1. Installez les outils de compilation
-sudo apt update && sudo apt install -y build-essential git bc dkms
+# 1. Vérifiez la version du kernel (à partir de 6.17, les pilotes de tous les modèles Realtek sont intégrés ; testé sur GX10 en 6.17.0-1014-nvidia)
+uname -r
 
-# 2. Téléchargez et compilez le pilote
-git clone https://github.com/morrownr/8812au-20210820.git
-cd 8812au-20210820
-# Vérifiez que CONFIG_PLATFORM_ARM64 = y dans Makefile
-make
-sudo make install
-sudo modprobe 8812au
-
-# 3. Confirmez l'interface après insertion de la carte réseau
+# 2. Après avoir branché la carte réseau, vérifiez que le pilote est chargé automatiquement
+lsusb
+lsmod | grep -E "rtw88|rtw89"
 ip link show
 
-# 4. Connectez-vous au WiFi
+# 3. Connectez-vous au WiFi
 nmcli dev wifi connect "SSID" password "mot de passe"
 ```
 
+Modules chargés automatiquement pour chaque modèle : ACH → `rtw88_8812au`, ACS → `rtw88_8821au`, EACS → `rtw88_8821cu`, AX / AXER → `rtw89_8852bu`. Ce n'est que si `uname -r` est inférieur à la version minimale de la carte (anciens systèmes) qu'il faut installer les pilotes DKMS maintenus par la communauté (par exemple morrownr/8812au-20210820 pour le RTL8812AU).
+
 ### 7.3 Mode écoute (test d'intrusion)
+
+⚠️ N'effectuez des tests d'écoute et d'injection que sur vos propres réseaux ou sur des réseaux pour lesquels vous disposez d'une autorisation.
 
 ```bash
 sudo apt install -y aircrack-ng
-sudo ip link set wlan0 down
-sudo iw dev wlan0 set type monitor
-sudo ip link set wlan0 up
-sudo aireplay-ng --test wlan0
+IF=wlx00c0cafe0000   # remplacez par le nom d'interface trouvé avec ip link
+sudo ip link set $IF down
+sudo iw dev $IF set type monitor
+sudo ip link set $IF up
+sudo aireplay-ng --test $IF
 ```
 
-## 8. Erreurs Courantes et Solutions
+- N'exécutez pas `airmon-ng check kill` : cette commande arrête NetworkManager et coupe la connexion réseau de la machine.
+- Sur le kernel 6.17 d'origine, `aireplay-ng --test` échoue avec les AWUS036AXM / AXML (Found 0 APs) : impossible d'effectuer une deauth ou de capturer un handshake.
+- hcxdumptool 8.x affiche `failed to arm` avec les 9 cartes sauf l'EACS en 2,4 GHz (le pilote ne prend pas en charge l'active monitor) ; utilisez plutôt airodump-ng + aireplay-ng.
 
-| Symptômes | Causes Probables | Solutions |
+## 8. Erreurs courantes et solutions
+
+| Symptômes | Causes probables | Solutions |
 |---|---|---|
-| `lsusb` ne voit pas la carte réseau ALFA | Adaptateur USB-C défectueux / Seulement en charge | Changer un adaptateur USB 3.2 Gen 2×2 compatible avec la transmission de données ; essayer un autre port USB-C |
-| Interface wlan du processeur MediaTek introuvable | Module non chargé automatiquement / Firmware manquant | `sudo modprobe mt76x2u` ; `sudo apt install linux-firmware` ; vérifier `dmesg | grep mt76` |
-| Échec de la compilation du pilote Realtek | Configuration de la compilation croisée incorrecte | Confirmer la compilation native sur le GX10 ; le Makefile ne devrait pas définir CROSS_COMPILE |
-| Vitesse WiFi lente | Adaptateur ne supporte que USB 2.0 | Changer un adaptateur USB 3.2 Gen 2×2 |
-| Conflit entre le Wi-Fi intégré et externe | Conflit de routeur | `sudo nmcli radio wifi off` désactiver le WiFi intégré avant d'utiliser le Wi-Fi externe |
+| `lsusb` ne voit pas la carte réseau ALFA | Adaptateur USB-C défectueux / charge uniquement | Utiliser un adaptateur USB 3.2 Gen 2×2 compatible avec la transmission de données ; essayer un autre port USB-C |
+| Interface wlan introuvable pour la puce MediaTek | Module non chargé automatiquement / firmware manquant | `sudo modprobe mt76x2u` ; `sudo apt install linux-firmware` ; vérifier `dmesg \| grep mt76` |
+| Aucune interface wlan après avoir branché une carte Realtek | Kernel antérieur à la version minimale de la carte (EACS 6.2, ACH / ACS 6.13, AX / AXER 6.17), sans pilote correspondant intégré | Vérifier la version avec `uname -r` ; mettre à jour le kernel, ou installer les pilotes DKMS de la communauté sur l'ancien kernel |
+| Plus aucun signal détecté après plusieurs bascules monitor / AP | Blocage de la réception (RX stall) | Débrancher et rebrancher la carte pour forcer une nouvelle énumération USB |
+| Pas d'interface wlx après avoir rebranché l'EACS / l'AXML | Blocage du probe du périphérique composite Bluetooth + Wi-Fi | Rebrancher sur un autre port USB |
+| Vitesse WiFi lente | Adaptateur limité à l'USB 2.0 | Utiliser un adaptateur USB 3.2 Gen 2×2 |
+| Conflit entre le Wi-Fi intégré et externe | Conflit de routage | `sudo nmcli radio wifi off` pour désactiver le WiFi intégré avant d'utiliser le Wi-Fi externe |
 | Impossible d'utiliser la bande 6GHz | Limitation du domaine réglementaire | `sudo iw reg set US` ; vérifier les dernières réglementations |
 
-## 9. Conditions connues
+## 9. Limitations connues
 
-- Nécessité de convertisseur USB Type-C : tous les cartes réseaux ALFA, à l'exception de l'AXML, nécessitent un adaptateur USB-C to USB-A.
-- Traduction manuelle nécessaire pour les puces Realtek : RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU ne sont pas intégrés dans le mainline.
-- Possibilité de conflit avec Wi-Fi intégré 7 : le GX10 est intégré avec Wi-Fi 7 (MediaTek AW-EM637).
+- Adaptateur USB Type-C nécessaire : toutes les cartes réseau ALFA, à l'exception de l'AXML, nécessitent un adaptateur USB-C vers USB-A.
+- Échec de l'injection sur les modèles MT7921 : sur le kernel 6.17 d'origine, les AWUS036AXM / AXML échouent à l'injection de paquets et ne peuvent ni effectuer de deauth ni capturer de handshake ; les modes monitor, AP et WPA3 fonctionnent. La cause principale est une régression du chanctx de mac80211 apparue après le kernel 6.16 ; les pilotes corrigés par la communauté restent limités en débit.
+- Périmètre des tests : tests effectués uniquement sur l'ASUS GX10 (kernel 6.17.0-1014-nvidia) ; les autres machines GB10 n'ont pas été testées une par une.
+- hcxdumptool inutilisable : toutes les cartes sauf l'EACS en 2,4 GHz affichent `failed to arm` ; utilisez plutôt airodump-ng + aireplay-ng.
+- Possibilité de conflit avec le Wi-Fi 7 intégré : le GX10 intègre le Wi-Fi 7 (MediaTek AW-EM637).
 - Configuration manuelle du mode AP : DGX OS est par défaut un environnement de développement.
 - Limitations réglementaires 6GHz : la disponibilité du Wi-Fi 6E dépend de la zone réglementaire.
-- Mise à jour des pilotes dépendante des上游 : les pilotes out-of-tree Realtek sont maintenus par la communauté, et doivent être recompilés après une mise à jour du kernel.
-- Différences matérielles ASUS n'affectent pas la compatibilité : les différences de refroidissement et de conception mécanique n'affectent pas la compatibilité des pilotes USB WiFi.
+- Anciens kernels : sur les systèmes dont le kernel est antérieur à la version minimale de la carte (EACS 6.2, ACH / ACS 6.13, AX / AXER 6.17), seuls les modèles Realtek nécessitent les pilotes DKMS de la communauté, qui doivent être recompilés après chaque mise à jour du kernel.
+- Les différences matérielles ASUS n'affectent pas la compatibilité : les différences de refroidissement et de conception mécanique n'affectent pas la compatibilité des pilotes USB WiFi.
 
-Conditions de réfutation : les jugements ci-dessus sont basés sur DGX OS (basé sur Ubuntu, kernel 6.x). Si ASUS sort des versions de système d'exploitation non DGX OS (comme des versions Android ou personnalisées), les jugements devront être réévalués.
+Conditions de réfutation : les conclusions ci-dessus reposent sur DGX OS (basé sur Ubuntu, kernel 6.x). Si ASUS publie des versions de système d'exploitation autres que DGX OS (comme des versions Android ou personnalisées), les conclusions devront être réévaluées.
 
 ## 10. Sources de référence URL
 
@@ -230,9 +241,10 @@ Conditions de réfutation : les jugements ci-dessus sont basés sur DGX OS (bas�
 | ASUS Ascent GX10 Boutique officielle (Royaume-Uni) | Page produit GX10 (150 × 150 × 51mm) | https://uk.store.asus.com/asus-ascent-gx105004-33389.html | ✅ Vérifié | 2026-09-03 |
 | Page officielle NVIDIA DGX Spark | Informations sur la plateforme GB10 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ Vérifié | 2026-09-03 |
 | morrownr/8812au GitHub | Pilote Linux RTL8812AU | https://github.com/morrownr/8812au-20210820 | ✅ Vérifié | 2026-09-03 |
-| Guide Linux ALFA Soft AP WiFi Hotspot (Yopitek) | Guide pour le mode AP Linux de ALFA | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Vérifié | 2026-09-03 |
-| Vue d'ensemble des produits ALFA Network (Yopitek) | Spécifications des produits actuels ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Vérifié | 2026-09-03 |
+| Guide Linux ALFA Soft AP WiFi Hotspot (Yopitek) | Guide pour le mode AP Linux de ALFA | /fr/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Vérifié | 2026-09-03 |
+| Vue d'ensemble des produits ALFA Network (Yopitek) | Spécifications des produits actuels ALFA | /fr/products/alfa/ | ✅ Vérifié | 2026-09-03 |
+| Tableau des tests ARM64 des 9 cartes réseau ALFA (Yopitek) | Tests sur machine réelle ASUS GX10 + Ubuntu 24.04 ARM64 | https://yupitek.com/fr/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/ | ✅ Testé | 2026-11-18 |
 
-Articles associés : [Est-ce que la carte sans fil ALFA est compatible avec NVIDIA DGX Spark ?](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Est-ce que la carte sans fil ALFA est compatible avec ALTOS BrainSphere GB10 F1 ?](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[Est-ce que la carte sans fil ALFA est compatible avec GIGABYTE AI TOP ATOM ?](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[Est-ce que la carte sans fil ALFA est compatible avec MSI EdgeXpert ?](https://yupitek.com/zh-tw/blog/alfa-msi-edgexpert-compatibility/)
+Articles associés : [Les cartes réseau sans fil ALFA sont-elles compatibles avec le NVIDIA DGX Spark ?](/fr/blog/alfa-nvidia-dgx-spark-compatibility/) | [Les cartes réseau sans fil ALFA sont-elles compatibles avec l'ALTOS BrainSphere GB10 F1 ?](/fr/blog/alfa-altos-brainsphere-gb10-compatibility/) | [Les cartes réseau sans fil ALFA sont-elles compatibles avec le GIGABYTE AI TOP ATOM ?](/fr/blog/alfa-gigabyte-ai-top-atom-compatibility/) | [Les cartes réseau sans fil ALFA sont-elles compatibles avec le MSI EdgeXpert ?](/fr/blog/alfa-msi-edgexpert-compatibility/)
 
-Déclaration de non-responsabilité : La détermination de la compatibilité de cet article est basée sur l'OS NVIDIA DGX préinstallé sur ASUS Ascent GX10 (kernel 6.x, aarch64). Le GX10 et le DGX Spark partagent la même plateforme matérielle, la compatibilité est complètement identique. Les pilotes de puces MediaTek sont pour Linux mainline, avec une haute stabilité ; les pilotes de puces Realtek sont maintenus par la communauté. Le GX10 est intégré avec Wi-Fi 7, l'ALFA est principalement utilisée pour des tests de pénétration ou des besoins de puces spéciales.
+Déclaration de non-responsabilité : les conclusions de compatibilité de cet article reposent sur les tests sur machine réelle effectués en novembre 2026 sur l'ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17.0-1014-nvidia). Le kernel 6.17 testé sur le GX10 intègre les pilotes des 9 cartes réseau ALFA (la version minimale diffère selon la carte) ; seuls les kernels antérieurs à la version minimale de la carte nécessitent les pilotes DKMS de la communauté. Le GX10 intègre le Wi-Fi 7 ; une carte ALFA externe sert principalement aux tests d'intrusion ou aux besoins de puces spécifiques. L'écoute et l'injection ne doivent être effectuées que sur vos propres réseaux ou sur des réseaux pour lesquels vous disposez d'une autorisation.

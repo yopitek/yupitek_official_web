@@ -1,5 +1,5 @@
 ---
-title: "Como escolher o driver Linux para a placa de rede USB ALFA: MediaTek sem tradução vs Realtek que requer tradução"
+title: "Como escolher o driver Linux para a placa de rede USB ALFA: MediaTek sem compilação vs Realtek que requer compilação"
 date: 2026-09-03
 draft: false
 slug: "alfa-usb-wifi-linux-driver-guide"
@@ -15,19 +15,19 @@ tags:
   - "rtl8812au"
 categories:
   - "Guia de Hardware"
-description: "\"Manual de suporte técnico para Yopitek ALFA USB adaptadores, versão 2026-09-03\""
+description: "Dos 6 adaptadores USB ALFA analisados, os 3 MediaTek usam drivers integrados ao kernel e os 3 Realtek exigem compilar drivers out-of-tree em kernels antigos (a partir do kernel 6.2 o EACS é nativo; no kernel 6.17 todos funcionam sem instalação). Verifique o chip antes de comprar."
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 > **Documento de Suporte Técnico · 3 de setembro de 2026 - Versão Inicial (conforme as regras de escrita do blog-writing-rules.md v1.0)**
 > Matriz de Avaliação: A matriz deste documento técnico inclui 6 modelos de cartas de rede USB ALFA atuais (3 modelos MediaTek, 3 modelos Realtek).
-> Artigos Relacionados: [Carta de Rede Wireless ALFA suporta NVIDIA DGX Spark?](https://yupitek.com/pt-br/blog/alfa-nvidia-dgx-spark-compatibilidade/)｜[Carta de Rede Wireless ALFA suporta OpenWrt?](https://yupitek.com/pt-br/blog/alfa-openwrt-router-compatibilidade/)｜[Carta de Rede Wireless ALFA suporta NVIDIA Jetson Nano?](https://yupitek.com/pt-br/blog/alfa-nvidia-jetson-nano-compatibilidade/)｜[Carta de Rede Wireless ALFA suporta Tomato?](https://yupitek.com/pt-br/blog/alfa-tomato-router-compatibilidade/)｜[Carta de Rede Wireless ALFA suporta DD-WRT?](https://yupitek.com/pt-br/blog/alfa-ddwrt-router-compatibilidade/)
+> Artigos Relacionados: [Carta de Rede Wireless ALFA suporta NVIDIA DGX Spark?](/pt/blog/alfa-nvidia-dgx-spark-compatibility/) | [Carta de Rede Wireless ALFA suporta OpenWrt?](/pt/blog/alfa-openwrt-router-compatibility/) | [Carta de Rede Wireless ALFA suporta NVIDIA Jetson Nano?](/pt/blog/alfa-nvidia-jetson-nano-compatibility/) | [Carta de Rede Wireless ALFA suporta Tomato?](/pt/blog/alfa-tomato-router-compatibility/) | [Carta de Rede Wireless ALFA suporta DD-WRT?](/pt/blog/alfa-ddwrt-router-compatibility/)
 
 ## Conclusão em uma frase
 
-**Entre os 6 modelos analisados, 3 utilizam chips MediaTek (MT7610U / MT7612U / MT7921AUN), que já possuem drivers integrados no kernel moderno, permitindo uso imediato após a instalação; os outros 3, com chips Realtek (RTL8812AU / RTL8811CU / RTL8832BU), exigem a compilação manual de drivers out-of-tree.** Se preferir facilidade, analise o chip antes de fazer o pedido.
+**Entre os 6 modelos analisados, 3 utilizam chips MediaTek (MT7610U / MT7612U / MT7921AUN), que já possuem drivers integrados no kernel moderno, permitindo uso imediato após a instalação; os outros 3, com chips Realtek (RTL8812AU / RTL8821CU / RTL8832BU), exigem a compilação manual de drivers out-of-tree em kernels antigos. Os drivers Realtek entraram no kernel mainline por etapas: rtw88_8821cu (EACS) desde o 6.2, ACH/ACS desde o 6.13 e AX/AXER desde o 6.17; no GX10 com kernel 6.17 todos funcionam sem instalação.** Se preferir facilidade, analise o chip antes de fazer o pedido.
 
 ---
 
@@ -46,22 +46,22 @@ A diferença não está na sorte, nem no sistema operacional Linux, mas sim na *
 
 O driver do chip USB MediaTek é coberto pelo subsistema **mt76** do kernel:
 
-| Modelo | Chipset | Módulo de driver do kernel | Condições de tradução |
+| Modelo | Chipset | Módulo de driver do kernel | Condições de compilação |
 |---|---|---|---|
 | AWUS036ACHM | MT7610U | mt76x0u | Integrado no kernel, sem restrições de versão |
 | AWUS036ACM | MT7612U | mt76x2u | Integrado no kernel, sem restrições de versão |
-| AWUS036AXML / AXM | MT7921AUN | mt7921u | **Requer kernel 5.19+** |
+| AWUS036AXML / AXM | MT7921AUN | mt7921u | **Requer kernel 5.18+** |
 
-⚠️ Única armadilha: **O limite de kernel para o MT7921AUN é 5.19+. Plataformas antigas (como Jetson Nano com JetPack 4.x, kernel 4.9) não podem ser backported e não são compatíveis diretamente — essa é a conclusão verificada em nossos documentos técnicos para o Jetson Nano (veja [Compatibilidade do cartão Wi-Fi ALFA com NVIDIA Jetson Nano](https://yupitek.com/pt-br/blog/alfa-nvidia-jetson-nano-compatibility/) §7.4).**
+⚠️ Única armadilha: **O limite de kernel para o MT7921AUN é 5.18+. Plataformas antigas (como Jetson Nano com JetPack 4.x, kernel 4.9) não podem ser backported e não são compatíveis diretamente — essa é a conclusão verificada em nossos documentos técnicos para o Jetson Nano (veja [Compatibilidade do cartão Wi-Fi ALFA com NVIDIA Jetson Nano](/pt/blog/alfa-nvidia-jetson-nano-compatibility/) §7.4).**
 
-### Realtek: out-of-tree, tradução manual
+### Realtek: out-of-tree, compilação manual
 
-O chip USB Realtek não possui driver mainline disponível e depende de repositórios de driver mantidos pela comunidade. Atualmente, o mantenedor mais ativo é **morrownr**, e esta análise cobre 3 chips correspondendo a 3 repositórios:
+Em kernels antigos, o chip USB Realtek não possui driver mainline disponível e depende de repositórios de driver mantidos pela comunidade (o rtw88_8821cu do EACS é nativo desde o kernel 6.2, ACH/ACS desde o 6.13 e AX/AXER desde o 6.17; os repositórios abaixo são necessários apenas em kernels anteriores a essas versões). Atualmente, o mantenedor mais ativo é **morrownr**, e esta análise cobre 3 chips correspondendo a 3 repositórios:
 
 | Modelo | Chipset | Repositório de driver (mantido por morrownr) | Verificação em 03/09/2026 |
 |---|---|---|---|
 | AWUS036ACH | RTL8812AU | [8812au-20210820](https://github.com/morrownr/8812au-20210820) | ✅ Verificado |
-| AWUS036EACS | RTL8811CU | [8821cu-20210916](https://github.com/morrownr/8821cu-20210916) | ✅ Verificado |
+| AWUS036EACS | RTL8821CU | [8821cu-20210916](https://github.com/morrownr/8821cu-20210916) (só para kernel anterior ao 6.2) | ✅ Verificado |
 | AWUS036AX / AXER | RTL8832BU | [rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826) | ✅ Verificado |
 
 ### Aplicação em três ambientes típicos
@@ -72,7 +72,7 @@ O chip USB Realtek não possui driver mainline disponível e depende de reposit�
 | Jetson Nano (JetPack 4.x) | 4.9 | 7610U/7612U disponíveis; MT7921AUN **não disponível** | 8812au pode ser compilado (suporte ARM64); os outros não foram verificados |
 | Roteador OpenWrt | Versão dependente | Todos disponíveis (MT7921AUN precisa de 23.05+) | Precisa de kmod correspondente ou compilação, nível de dificuldade alto |
 
-（Matriz de verificação completa para cada ambiente está disponível em [Compatibilidade do cartão Wi-Fi ALFA com NVIDIA DGX Spark](https://yupitek.com/pt-br/blog/alfa-nvidia-dgx-spark-compatibility/)、[Compatibilidade do cartão Wi-Fi ALFA com NVIDIA Jetson Nano](https://yupitek.com/pt-br/blog/alfa-nvidia-jetson-nano-compatibility/)、[Compatibilidade do cartão Wi-Fi ALFA com Roteador OpenWrt](https://yupitek.com/pt-br/blog/alfa-openwrt-router-compatibility/).）
+(Matriz de verificação completa para cada ambiente está disponível em [Compatibilidade do cartão Wi-Fi ALFA com NVIDIA DGX Spark](/pt/blog/alfa-nvidia-dgx-spark-compatibility/), [Compatibilidade do cartão Wi-Fi ALFA com NVIDIA Jetson Nano](/pt/blog/alfa-nvidia-jetson-nano-compatibility/), [Compatibilidade do cartão Wi-Fi ALFA com Roteador OpenWrt](/pt/blog/alfa-openwrt-router-compatibility/).)
 
 ## Terceiro Acto: Ferramentário - Processo de Determição em Três Minutos e Passos de Instalação
 
@@ -91,7 +91,7 @@ uname -r
 
 Lógica de Determição (Mãe: Tabela 6 Modelos):
 
-1. `lsusb` mostra **MediaTek / MT76xx** → no grupo do kernel, kernel ≥ 5.19 (modelos MT7921AUN) ou qualquer kernel recente, plug and play.
+1. `lsusb` mostra **MediaTek / MT76xx** → no grupo do kernel, kernel ≥ 5.18 (modelos MT7921AUN) ou qualquer kernel recente, plug and play.
 2. `lsusb` mostra **Realtek RTL88xx** → no grupo out-of-tree, siga os passos de instalação a seguir.
 3. `lsusb` **não mostra** novos dispositivos → troque o porta USB / fio para excluir problemas de hardware, e verifique se o modelo é RTL8832BU de Wi-Fi 6 (alguns lotes precisam de `usb_modeswitch`, esse passo é problema de alguns modelos específicos, não incluído na análise atual, não será expandido).
 
@@ -118,31 +118,31 @@ ip link   # Deve aparecer uma nova interface wlan
 ### Sugestões de Compra (Conclusão)
 
 - **Sem Compilação**: Escolha o grupo MediaTek (AWUS036ACHM / ACM / AXML), todos os kernels recentes são plug and play.
-- **Wi-Fi 6 e Sem Compilação**: Escolha AWUS036AXML (MT7921AUN), mas confirme se o kernel ≥ 5.19.
+- **Wi-Fi 6 e Sem Compilação**: Escolha AWUS036AXML (MT7921AUN), mas confirme se o kernel ≥ 5.18.
 - **Necessidade Especial e Não Realtek**: Reserve 20-40 minutos para compilar o driver, e confirme se a plataforma alvo tem headers do kernel.
 
 ## Condições Conhecidas e Contras
 
 A conclusão deste artigo não se aplica nas seguintes condições, favor adotar alternativas:
 
-1. **kernel 5.19 ou anterior + MT7921AUN**: O mt7921u não pode ser backportado (depende de infraestrutura de kernel moderno), a conclusão é revertida para "não disponível". Este é o excepcional mais importante deste artigo.
-2. **Não x86/ARM64 Linux** (como alguns roteadores MIPS): O repositório morrownr não garante a compilação, deve-se priorizar o kmod do OpenWrt (veja [Suporte do ALFA Wireless Network Card para OpenWrt](https://yupitek.com/pt-br/blog/alfa-openwrt-router-compatibility/)).
+1. **kernel 5.17 ou anterior + MT7921AUN**: O mt7921u não pode ser backportado (depende de infraestrutura de kernel moderno), a conclusão é revertida para "não disponível". Este é o excepcional mais importante deste artigo.
+2. **Não x86/ARM64 Linux** (como alguns roteadores MIPS): O repositório morrownr não garante a compilação, deve-se priorizar o kmod do OpenWrt (veja [Suporte do ALFA Wireless Network Card para OpenWrt](/pt/blog/alfa-openwrt-router-compatibility/)).
 3. **Versão de evolução do repositório de drivers**: O repositório morrownr é nomeado por data (como rtl8852bu-20250826), pode haver futuras versões ou remoções; verifique a situação atual do repositório antes da instalação.
 4. **Capacidade de modo monitor / AP**: A capacidade varia dependendo da versão do kernel do mesmo chip (por exemplo, o rtl8812au-ct no OpenWrt 22.03+ teve relatos de crashes no 24.10), a matriz de capacidade detalhada deve ser consultada em artigos específicos para cada ambiente.
-5. **RTL8832BU (AWUS036AX/AXER) não está incluído nas 6 modelos listados neste artigo, mas frequentemente é questionado pelo serviço ao cliente**: O mantenedor do driver, morrownr, já declarou publicamente que a série de chips "é muito ruim, suspeitando de problemas no próprio chip", recomenda-se que os usuários Linux evitem usá-la neste momento, não apenas devido à dificuldade de compilação, e ao responder aos clientes deve-se esclarecer这一点 de maneira honesta.
+5. **O RTL8832BU (AWUS036AX/AXER) não está entre os 6 modelos deste levantamento, mas o suporte ao cliente costuma receber perguntas sobre ele**: o driver rtw89_8852bu está no mainline desde o kernel 6.17; no GX10 (kernel 6.17) o monitor funcionou, injeção em 2,4 GHz: AX 96 %, AXER 73 %. Somente kernels antigos precisam do driver da comunidade morrownr/rtl8852bu. Ao responder ao cliente, confirme primeiro a versão do kernel.
 
 ## Fontes de Referência
 
 | Fonte | Descrição | URL | Status de Verificação | Data de Verificação |
 |---|---|---|---|---|
 | morrownr/8812au GitHub | Driver RTL8812AU para Linux | https://github.com/morrownr/8812au-20210820 | ✅ Verificado | 03/09/2026 |
-| morrownr/8821cu GitHub | Driver RTL8811CU para Linux | https://github.com/morrownr/8821cu-20210916 | ✅ Verificado | 03/09/2026 |
+| morrownr/8821cu GitHub | Driver RTL8821CU para Linux (necessário só em kernel anterior ao 6.2; nativo a partir do 6.2) | https://github.com/morrownr/8821cu-20210916 | ✅ Verificado | 03/09/2026 |
 | morrownr/rtl8852bu GitHub | Driver RTL8832BU para Linux | https://github.com/morrownr/rtl8852bu-20250826 | ✅ Verificado | 03/09/2026 |
-| Yopitek ALFA Product Overview | Modelos atuais e especificações | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verificado | 03/09/2026 |
-| Yopitek Blog: Guia Soft AP | Documentação de verificação do modo AP | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Verificado | 03/09/2026 |
+| Yopitek ALFA Product Overview | Modelos atuais e especificações | /pt/products/alfa/ | ✅ Verificado | 03/09/2026 |
+| Yopitek Blog: Guia Soft AP | Documentação de verificação do modo AP | /pt/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Verificado | 03/09/2026 |
 | Documentos Técnicos do Site 9 | Matrizes de decisão e bases de verificação ambiental | Link Relativo (veja "Artigos Relacionados" no início do texto) | ✅ Verificado | 03/09/2026 |
 
-> Página oficial do wiki kernel mt76: https://wireless.wiki.kernel.org/en/users/drivers/mediatek （Verificado, lista as versões de kernel inicial suportadas por cada chip, pode ser usado como base para verificação rápida）
+> Página oficial do wiki kernel mt76: https://wireless.wiki.kernel.org/en/users/drivers/mediatek (Verificado, lista as versões de kernel inicial suportadas por cada chip, pode ser usado como base para verificação rápida)
 
 ## Declaração de Isenção de Responsabilidade
 

@@ -2,6 +2,7 @@
 title: "Беспроводные адаптеры ALFA Network"
 description: "Yopitek поставляет высокомощные USB Wi-Fi адаптеры ALFA Network, высоко ценимые в мировом сообществе исследователей безопасности."
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: false
@@ -37,16 +38,16 @@ ALFA Network — известный тайваньский производит�
     AC1200 двухдиапазонный, Realtek RTL8812AU, USB 3.0, две внешние антенны 5 dBi, высокая мощность.
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/ru/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 двухдиапазонный, чипсет MediaTek MT7610U, USB 2.0, компактный дизайн с одной антенной — идеально для портативного пентестинга.
+    AC600 двухдиапазонный, чипсет MediaTek MT7610U, USB 2.0, компактный дизайн с одной антенной — идеально для портативного пентестинга.
   {{< /card >}}
   {{< card title="AWUS036ACM" href="/ru/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 двухдиапазонный, MediaTek MT7612U, USB 3.0, 300+867 Мбит/с, двойная антенна 5 dBi.
   {{< /card >}}
   {{< card title="AWUS036ACS" href="/ru/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
-    AC433 двухдиапазонный, Realtek RTL8811AU, USB 2.0, ультратонкий мини-корпус 55мм.
+    AC600 двухдиапазонный, Realtek RTL8811AU, USB 2.0, ультратонкий мини-корпус 55мм.
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/ru/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
-    AC600 двухдиапазонный, Realtek RTL8811CU, USB 2.0, компактный ультратонкий дизайн.
+    AC600 двухдиапазонный, Realtek RTL8821CU, USB 2.0, компактный ультратонкий дизайн.
   {{< /card >}}
 {{< /card-group >}}
 

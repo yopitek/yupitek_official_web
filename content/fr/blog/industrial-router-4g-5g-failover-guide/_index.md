@@ -22,8 +22,6 @@ faq:
     answer: "Quatre points : 1. La longueur est de 52 mm, pas 42 mm. 2. Il faut brancher les 4 antennes. 3. L'alimentation doit encaisser un pic de 2,7 A. 4. La dissipation thermique est essentielle, la température interne ne doit pas dépasser 115 °C."
 ---
 
-# Comment faire un failover 4G/5G sur un routeur industriel : le cas du module EM9191 en 5G privée
-
 **En une phrase : ajouter un module 5G à ton routeur industriel pour le secours, c'est comme prendre une assurance. Le module Sierra Wireless EM9191 gère à la fois la 4G ultra-rapide (LTE Cat 20) et les réseaux 5G privés (5G SA). Tu peux donc démarrer dès maintenant en backup 4G, et quand ton site se dotera d'un réseau 5G privé, pas besoin de changer de matériel. Transition en douceur !**
 
 Dans une usine, chaque minute de coupure réseau coûte de l'argent. Les données des machines ne remontent plus, le monitoring à distance devient noir, et la perte dépasse largement le coût d'une ligne de secours. Voilà pourquoi la redondance (Failover) est si importante. Plutôt que de tirer une deuxième fibre physique chez un autre opérateur, la solution la plus maligne, c'est une carte SIM et le réseau mobile.

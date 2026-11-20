@@ -3,14 +3,14 @@ title: "Complete Guide: Best WiFi Adapters for Kali Linux in 2026"
 description: "Comprehensive comparison of the best USB WiFi adapters for Kali Linux in 2026, covering monitor mode, packet injection, chipsets, and our top picks from ALFA Network."
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Why does Kali Linux need an external wireless adapter?"
     answer: "Laptop built-in WiFi cards do not support monitor mode or packet injection, preventing tools like airodump-ng from running. An external USB adapter with these features is required."
   - question: "Which driver is more stable, RTL8812AU or MT7612U?"
     answer: "MT7612U mt76x2u driver has been in the mainline kernel since 4.19, requiring no compilation. RTL8812AU needs DKMS external installation and may need recompilation after kernel updates."
   - question: "Is a WiFi 6E adapter necessary for Kali Linux?"
-    answer: "Not yet. MT7921AUN driver integration started at kernel 5.18, and 6 GHz packet injection is not fully stable. AWUS036AXML is recommended for advanced users only."
+    answer: "Not yet. MT7921AUN driver integration started at kernel 5.18, but packet injection failed on the AWUS036AXML in testing on stock kernel 6.17 (community reports say it worked before kernel 6.16). For injection use the AWUS036ACH; the AWUS036AXML is recommended only for advanced users who mainly need 6 GHz monitoring."
   - question: "How do I set up Monitor Mode on Kali Linux?"
     answer: "Run sudo airmon-ng check kill to stop interfering processes, then sudo airmon-ng start wlan1 to enable monitor mode. Confirm with iwconfig showing Mode:Monitor."
   - question: "Which ALFA adapter is recommended for Kali Linux beginners?"
@@ -82,7 +82,7 @@ The wireless chipset — not the adapter brand or model number — determines Li
 
 **MT7921AUN** — MediaTek's AX3000 Wi-Fi 6E chipset (USB variant). In-kernel support since 5.18 via `mt7921u`. Powers the AWUS036AXML and AWUS036AXM. Important for future-proofing as 6 GHz networks become more prevalent.
 
-> **Note on AWUS036AX / AWUS036AXER:** These Wi-Fi 6 adapters use the Realtek RTL8832BU chipset, which has limited monitor mode support on Linux kernels below 6.14. They are not recommended for penetration testing — use the AWUS036ACH or AWUS036AXML instead.
+> **Note on AWUS036AX / AWUS036AXER:** These Wi-Fi 6 adapters use the Realtek RTL8832BU chipset. On kernel 6.17 and later, the in-kernel `rtw89_8852bu` driver gives strong monitor mode on both 2.4 GHz and 5 GHz, and packet injection works (tested on Ubuntu 24.04 / kernel 6.17: 2.4 GHz injection 96% on the AX, 73% on the AXER, 5 GHz usable). Monitor mode is limited only on older kernels that rely on the community DKMS driver, so check `uname -r` first.
 
 ### Dual-Band vs. Tri-Band
 
@@ -101,7 +101,7 @@ External, detachable antennas (RP-SMA connectors) give you flexibility. You can 
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅✅ Best | 2× RP-SMA | Best all-around |
 | [AWUS036AXML](/en/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 2× RP-SMA | Future-proof 6E |
 | [AWUS036ACM](/en/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | Linux plug & play |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limited | 2× RP-SMA | Windows WiFi 6 |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ✅ (kernel 6.17+) | 2× RP-SMA | Windows WiFi 6 |
 
 ---
 
@@ -204,7 +204,7 @@ Wi-Fi 6E networks operate in the newly opened 6 GHz spectrum, offering significa
 
 **Current Limitations**
 
-Monitor mode on the 6 GHz band via the MT7921AUN driver is still maturing. For bread-and-butter WPA2 network testing on 2.4/5 GHz, the driver works well. For cutting-edge 6 GHz work, check current driver status in the `mt76` driver repository before your engagement.
+Monitor mode on the 6 GHz band via the MT7921AUN driver is still maturing. For bread-and-butter WPA2 network testing on 2.4/5 GHz, the driver works well. Packet injection is a separate matter: community reports say it worked on kernels before 6.16, but on stock kernel 6.17 our injection test failed (the AWUS036AXM behaves the same). The cause is a mac80211 chanctx regression since kernel 6.16, not a chipset limitation; a patched driver can make injection work, but the firmware still locks the rate (1/6 Mbps, no HT/VHT injection). If you need injection, use the AWUS036ACH or AWUS036ACM. For cutting-edge 6 GHz work, check current driver status in the `mt76` driver repository before your engagement.
 
 **Who Should Choose the AWUS036AXML?**
 

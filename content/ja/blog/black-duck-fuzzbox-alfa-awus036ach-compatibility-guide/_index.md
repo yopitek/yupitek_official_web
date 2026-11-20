@@ -8,13 +8,13 @@ showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
 featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Black Duck FuzzBoxはどのような用途のツールですか？"
     answer: "Black Duck FuzzBoxは専用の無線プロトコルファジングテスト環境で、異常な802.11フレームを注入して組み込み無線デバイスと基地局のプロトコルスタックの堅牢性を検証します。"
-  - question: "Wi-Fi 6/6EアダプターがFuzzBoxで動作しないのはなぜですか？"
-    answer: "FuzzBoxのインジェクションエンジンはRealtek rtl88xxauドライバー向けに最適化されており、MediaTekやより新しいRealtek Wi-Fi 6チップセットはこのブランチを使用しないためウィザードに無視されます。"
-  - question: "ALFA AWUS036ACHがFuzzBox首选アダプターなのはなぜですか？"
+  - question: "Wi-Fi 6/6EアダプターはFuzzBoxで使用できますか？"
+    answer: "FuzzBoxのインジェクションエンジンはRealtek rtl88xxauドライバーのみに最適化されており、他のチップセットはこのブランチを使用しないためウィザードに無視され、FuzzBox上では未検証です。GX10（Ubuntu 24.04、kernel 6.17）での実測では、AWUS036AXとAXER（RTL8832BU）はインジェクションが可能で、AWUS036AXMとAXML（MT7921AU）はkernel 6.16以降のmac80211 chanctxリグレッションによりインジェクションに失敗します。これはチップ自体の制約ではありません。"
+  - question: "ALFA AWUS036ACHがFuzzBoxの第一候補アダプターなのはなぜですか？"
     answer: "AWUS036ACHはRTL8812AUチップセットを採用し、コミュニティ最適化のインジェクションドライバーを持ち、OSネットワークスタックをバイパスしてゼロロスの生フレーム送信を実現できます。"
   - question: "FuzzBox OSはどのLinuxバージョンがベースですか？"
     answer: "FuzzBox OSはDebian 12 Bookwormをベースとし、LTSカーネル6.1.xを実行し、rtl88xxauインジェクションドライバーとairmon-ngなどのネットワークツールをプリロードしています。"
@@ -26,11 +26,11 @@ WLANプロトコルのファジング（多くの場合、ワイヤレスネガ�
 
 
 {{< tldr >}}
-ALFA AWUS036ACHはBlack Duck FuzzBoxプロトコルファジングテストの唯一首选で、RTL8812AUドライバーが生パケットインジェクションとモニターモードをサポートし、Wi-Fi 6/6Eアダプターはドライバー非互換で動作しません。
+ALFA AWUS036ACHはBlack Duck FuzzBoxプロトコルファジングテストの唯一の推奨アダプターで、RTL8812AUドライバーが生パケットインジェクションとモニターモードをサポートし。Wi-Fi 6/6EアダプターはFuzzBox上では未検証で、AXMとAXMLはkernel 6.17でインジェクションに失敗します（chanctxリグレッションによるもので、チップ自体の制約ではありません）。
 {{< /tldr >}}
 これを解決するために、セキュリティチームは、専用のソフトウェアおよびハードウェア実行環境である**Black Duck FuzzBox**（旧Synopsys Defensics FuzzBox）を使用します。テストを実行するには、FuzzBox OSに、安定したモニターモードと信頼性の高いrawパケットインジェクション（パケット注入）が可能な、互換性のある高性能USBワイヤレスアダプターを組み合わせる必要があります。
 
-本互換性ガイドでは、Yopitekが取り扱うALFA Networkの現行製品ラインナップを分析し、新しいWi-Fi 6/6EアダプターがFuzzBoxで動作しない理由を説明するとともに、業界標準の選択肢である**ALFA AWUS036ACH** (RTL8812AU)のステップバイステップのセットアップ手順を提供します。
+本互換性ガイドでは、Yopitekが取り扱うALFA Networkの現行製品ラインナップを分析し、新しいWi-Fi 6/6EアダプターのFuzzBoxにおける検証状況を説明するとともに、業界標準の選択肢である**ALFA AWUS036ACH** (RTL8812AU)のステップバイステップのセットアップ手順を提供します。
 
 ---
 
@@ -82,12 +82,12 @@ ALFA Networkは、異なるチップセットを使用したアダプターを�
 |------------|---------|-------------|-----------|------------------------------|
 | **AWUS036ACH** | **Realtek RTL8812AU** | **USB 3.0** | **Wi-Fi 5** | **✅ 100% 互換 (最優先の選択肢)** |
 | **AWUS036ACS** | **Realtek RTL8811AU** | **USB 2.0** | **Wi-Fi 5** | **✅ 互換 (バックアップ / コンパクト)** |
-| **AWUS036AXML** | MediaTek MT7921AUN | USB-C 3.2 | Wi-Fi 6E | ❌ 非対応 (インジェクションドライバーなし) |
-| **AWUS036AXM** | MediaTek MT7921AUN | USB 3.2 | Wi-Fi 6E | ❌ 非対応 (インジェクションドライバーなし) |
-| **AWUS036AX** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ❌ 非対応 (インジェクションドライバーなし) |
-| **AWUS036AXER** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ❌ 非対応 (インジェクションドライバーなし) |
-| **AWUS036ACM** | MediaTek MT7612U | USB 3.0 | Wi-Fi 5 | ❌ 非対応 (インジェクションドライバーなし) |
-| **AWUS036EACS** | Realtek RTL8811CU | USB 2.0 | Wi-Fi 5 | ❌ 非対応 (ドライバー非互換) |
+| **AWUS036AXML** | MediaTek MT7921AUN | USB-C 3.2 | Wi-Fi 6E | ❌ kernel 6.17でインジェクション失敗（mac80211 chanctxリグレッション＋ファームウェアのレート固定）、FuzzBox上では未検証 |
+| **AWUS036AXM** | MediaTek MT7921AUN | USB 3.2 | Wi-Fi 6E | ❌ kernel 6.17でインジェクション失敗（mac80211 chanctxリグレッション＋ファームウェアのレート固定）、FuzzBox上では未検証 |
+| **AWUS036AX** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ⚠️ GX10（kernel 6.17）で実測インジェクション可、FuzzBox上では未検証 |
+| **AWUS036AXER** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ⚠️ GX10（kernel 6.17）で実測インジェクション可、FuzzBox上では未検証 |
+| **AWUS036ACM** | MediaTek MT7612U | USB 3.0 | Wi-Fi 5 | ⚠️ GX10（kernel 6.17）で実測インジェクション可、FuzzBox上では未検証 |
+| **AWUS036EACS** | Realtek RTL8821CU | USB 2.0 | Wi-Fi 5 | FuzzBox の検証リストには未掲載（Linux kernel 6.2 以降で monitor／injection を実測） |
 
 ### 3.2 最優先の選択肢：ALFA AWUS036ACH
 **ALFA AWUS036ACH**は、プロフェッショナルなプロトコルテストにおける業界標準の選択肢です。
@@ -114,10 +114,10 @@ FuzzBox OSには、あらかじめ安定したインジェクションドライ�
 
 FuzzBoxのパケット送信の核心は、独自の `80211socket` インジェクターデーモンにあります。
 
-### 新しいWi-Fi 6/6Eチップセットが動作しない理由
+### 新しいWi-Fi 6/6EチップセットがFuzzBoxでサポートされない理由
 多くのテスターは、より新しく高速なアダプター（MT7921AUNチップセットを搭載したWi-Fi 6E対応のAWUS036AXMLなど）を購入すればパフォーマンスが向上すると考えがちです。しかし、FuzzBoxはインターネットのスループット向上ではなく、プロトコルの脆弱性テストを目的として設計されています。
 
-`80211socket` インジェクターは、MAC副層（サブレイヤー）レベルでワイヤレスドライバーと直接対話します。これを実現するには、ドライバーが特殊なrawインジェクション拡張機能をサポートしている必要があります。現在、FuzzBox OSのインジェクションエンジンは、十分に成熟した**Realtek `rtl88xxau`** ドライバーツリー（特にRTL8812AUおよびRTL8814AU）に最適化されています。MediaTek製チップセット（MT7921AUN、MT7612U）や、より新しいRealtek製Wi-Fi 6チップセット（RTL8832BU）は、このインジェクションドライバーツリーを使用しないため、FuzzBoxデーモンによって無視されます。
+`80211socket` インジェクターは、MAC副層（サブレイヤー）レベルでワイヤレスドライバーと直接対話します。これを実現するには、ドライバーが特殊なrawインジェクション拡張機能をサポートしている必要があります。現在、FuzzBox OSのインジェクションエンジンは、十分に成熟した**Realtek `rtl88xxau`** ドライバーツリー（特にRTL8812AUおよびRTL8814AU）に最適化されています。MediaTek製チップセット（MT7921AUN、MT7612U）や、より新しいRealtek製Wi-Fi 6チップセット（RTL8832BU）は、このインジェクションドライバーツリーを使用しないため、FuzzBoxデーモンによって無視され、FuzzBox上では未検証です。これはプラットフォーム側の制約であり、これらのチップがインジェクションできないわけではありません。GX10（Ubuntu 24.04 ARM64、kernel 6.17）での実測では、ACM（mt76x2u）、AXおよびAXER（rtw89_8852bu）はインジェクション可能です。AXMとAXML（mt7921u）は、kernel 6.16以降のmac80211 chanctxリグレッションにより標準kernel 6.17でインジェクションに失敗し、さらにファームウェアがレートを固定（1/6 Mbps）しますが、いずれもチップ自体の制約ではありません。
 
 ### カーネル 6.1.x における安定性
 RTL8812AUドライバーは、Linux 6.1.xカーネル向けにバックポートされ、広範囲にわたるパッチが適用されています。これにより、安定したチャネルロックをサポートし、大量のパケット負荷がかかる状況下でのバッファオーバーフローを防ぎ、高速な認証解除（De-authentication）ファジング実施中のカーネルパニックを回避します。

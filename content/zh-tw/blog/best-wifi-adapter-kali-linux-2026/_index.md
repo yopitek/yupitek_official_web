@@ -8,14 +8,14 @@ showTableOfContents: true
 tags: ["Kali-Linux", "無線網路卡", "Monitor-Mode", "ALFA-Network", "滲透測試"]
 featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "為什麼 Kali Linux 需要外接無線網路卡？"
     answer: "筆電內建網路卡不支援 Monitor Mode 與封包注入，無法執行 airodump-ng 等滲透測試工具，必須使用支援這兩項功能的外接 USB 網路卡。"
   - question: "RTL8812AU 和 MT7612U 哪個驅動更穩定？"
     answer: "MT7612U 的 mt76x2u 驅動自 Linux 核心 4.19 起內建於 mainline，免編譯即插即用；RTL8812AU 需透過 DKMS 外部安裝，核心更新後可能需重新編譯。"
   - question: "WiFi 6E 網路卡對 Kali Linux 有必要嗎？"
-    answer: "目前非必要。MT7921AUN 驅動自核心 5.18 起逐步整合，6 GHz 封包注入尚未完全穩定，建議有進階需求的使用者再選購 AWUS036AXML。"
+    answer: "目前非必要。MT7921AUN 驅動自核心 5.18 起逐步整合，但 AWUS036AXML 在 stock kernel 6.17 的封包注入測試未通過（kernel 6.16 以前有社群回報可用），需要注入請改用 AWUS036ACH；建議僅有 6 GHz 監聽需求的進階使用者再選購。"
   - question: "如何在 Kali Linux 設定 Monitor Mode？"
     answer: "先執行 sudo airmon-ng check kill 終止干擾行程，再執行 sudo airmon-ng start wlan1 啟用監聽模式，確認 iwconfig 顯示 Mode:Monitor 即可。"
   - question: "Kali Linux 新手推薦哪款 ALFA 網路卡？"
@@ -67,7 +67,7 @@ ALFA Network 是無線網路卡領域最受資安社群信賴的品牌，以下�
 | 型號 | Wi-Fi 標準 | 晶片組 | 監聽模式 | 封包注入 | 天線 | 最高速率 | 適合場景 |
 |------|-----------|--------|----------|----------|------|----------|----------|
 | AWUS036ACH | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | ✅ | 2× RP-SMA | 1200 Mbps | 最佳全能款 |
-| AWUS036AXML | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | ✅ | 2× RP-SMA | 3000 Mbps | 前瞻性選擇 |
+| AWUS036AXML | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | ⚠️ kernel 6.16 以前有社群回報；6.17 實測失敗 | 2× RP-SMA | 3000 Mbps | 前瞻性選擇 |
 | AWUS036ACM | Wi-Fi 5 AC1200 | MT7612U | ✅ | ✅ | 2× RP-SMA | 1200 Mbps | 輕巧平價 |
 
 ---
@@ -92,10 +92,10 @@ AWUS036ACH 搭載 **Realtek RTL8812AU** 晶片組，是目前 Kali Linux 社群�
 隨著 Wi-Fi 6E 路由器逐漸普及，AWUS036AXML 代表了下一個世代的滲透測試工具。核心優勢在於：
 
 - **6 GHz 頻段支援**：Wi-Fi 6E 獨有的 6 GHz 頻段提供更大頻寬與更少干擾，是未來企業與家用網路的主流。
-- **MT7921AUN 晶片**：MediaTek 新一代晶片，Linux 核心 5.18 以上版本逐步完善支援。MT7921AUN 驅動自核心 5.18 起逐步整合進 mainline（[kernel.org](https://www.kernel.org/)），6 GHz 頻段的 Monitor Mode 與封包注入支援持續完善中。
+- **MT7921AUN 晶片**：MediaTek 新一代晶片，Linux 核心 5.18 以上版本逐步完善支援。MT7921AUN 驅動自核心 5.18 起逐步整合進 mainline（[kernel.org](https://www.kernel.org/)），Monitor、AP、WPA3 均可用；但封包注入在 kernel 6.16 以前有社群回報可用，stock kernel 6.17 實測未通過（主因是 kernel 6.16 以後 mac80211 chanctx 回歸，非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖速率，不可注入 HT/VHT）。
 - **AX1800 規格**：理論最高 1800 Mbps，應付未來高速 Wi-Fi 環境綽綽有餘。
 
-**注意**：由於 MT7921AUN 驅動在 Linux 上仍屬相對新的整合，部分功能（如特定頻段的封包注入）可能需要額外調整。建議有一定 Linux 基礎的使用者選購。
+**注意**：由於 MT7921AUN 驅動在 Linux 上仍屬相對新的整合，封包注入在 stock kernel 6.17 實測未通過，需要注入請改用 AWUS036ACH 或 AWUS036ACM。建議有一定 Linux 基礎的使用者選購。
 
 **適合對象**：希望搶先部署 Wi-Fi 6E 測試能力的進階使用者，或已購入 Wi-Fi 6E 路由器的企業資安團隊。
 
@@ -118,24 +118,24 @@ AWUS036ACH 搭載 **Realtek RTL8812AU** 晶片組，是目前 Kali Linux 社群�
 以下為 AWUS036ACH（RTL8812AU 晶片）在 Kali Linux 上的基本驅動安裝流程：
 
 ```bash
-# 步驟 1：更新系統套件
+# 步驟 1: 更新系統套件
 sudo apt update && sudo apt upgrade -y
 
-# 步驟 2：安裝編譯所需工具
+# 步驟 2: 安裝編譯所需工具
 sudo apt install -y git build-essential dkms linux-headers-$(uname -r)
 
-# 步驟 3：從 aircrack-ng 官方倉庫取得驅動
+# 步驟 3: 從 aircrack-ng 官方倉庫取得驅動
 git clone https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au
 
-# 步驟 4：編譯並安裝
+# 步驟 4: 編譯並安裝
 make
 sudo make install
 
-# 步驟 5：載入驅動模組
+# 步驟 5: 載入驅動模組
 sudo modprobe 88XXau
 
-# 步驟 6：確認網路卡偵測
+# 步驟 6: 確認網路卡偵測
 lsusb | grep -i realtek
 iwconfig
 ```

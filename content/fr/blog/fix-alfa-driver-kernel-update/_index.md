@@ -29,8 +29,6 @@ La cause principale des défaillances de pilotes ALFA après mise à jour du noy
 Après une mise à jour du noyau (par exemple via `apt upgrade`), votre adaptateur ALFA n'est peut-être plus reconnu ou le mode moniteur ne fonctionne plus.
 
 
-# Le pilote ALFA est cassé après la mise à jour du noyau ? Voici comment le réparer
-
 Une mise à jour du noyau Linux casse fréquemment les pilotes WiFi USB ALFA, en particulier si vous avez installé le pilote sans DKMS. Ce guide vous explique la cause et la solution.
 
 ---

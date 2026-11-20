@@ -3,7 +3,7 @@ title: "ALFA AWUS036AXML WiFi 6E Review: Praxistest-Leistung 2026"
 description: "Umfassender Test des ALFA AWUS036AXML WiFi 6E USB-Adapters: Spezifikationen, Kali Linux-Treiberinstallation, Monitor-Modus-Leistung, 6-GHz-Band-Scanning und Vergleich mit AWUS036ACH."
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -17,19 +17,17 @@ faq:
   - question: "Was sind die Hauptunterschiede zwischen dem AWUS036AXML und dem AWUS036ACH?"
     answer: "Der AWUS036AXML verwendet den MT7921AUN, um 6 GHz und Wi-Fi 6E zu unterstützen, während der AWUS036ACH den RTL8812AU verwendet und nur Dual-Band Wi-Fi 5 unterstützt. Letzterer hat jedoch einen ausgereifteren Treiber und eine breitere Kompatibilität."
   - question: "Unterstützt der AWUS036AXML Packet Injection?"
-    answer: "Ja, Packet Injection wird unterstützt. Die Erfolgswerte liegen in praktischen Tests stabil über 90 %. Es sind jedoch bekannte Treiberbeschränkungen für den aktiven Monitor Mode vorhanden; es wird empfohlen, nur den passiven Monitor Mode zu verwenden."
+    answer: "Nicht zuverlässig. Vor Kernel 6.16 gab es Community-Berichte über funktionierende Injection, in unseren Tests mit dem Stock-Kernel 6.17 schlug der Injection-Test jedoch fehl (aireplay-ng --test: Found 0 APs / No Answer). Ursache ist eine mac80211-chanctx-Regression, keine Chip-Beschränkung; für Injection bitte ACH, EACS, ACS oder AX verwenden. Monitor, AP und WPA3 funktionieren; empfohlen wird der passive Monitor Mode."
   - question: "Für wen ist der Kauf des AWUS036AXML geeignet?"
     answer: "Ideal für Sicherheitsforscher, die Unternehmensumgebungen mit Wi-Fi 6E-Einsatz bewerten, für Sicherheitstrainingslabore sowie für Forscher, die sich mit der Analyse des 6-GHz-Protokolls befassen."
 ---
-| Feature | Wert | |---|---| | **Standard** | IEEE 802.11a/b/g/n/ac/ax (Wi-Fi 6E) | | **Chipsatz** | MediaTek MT7921AUN | | **Frequenzbänder** | 2,4 GHz + 5 GHz + **6 GHz** | | **Maximale Durchsatz** | AX1800 | | **Monitor-Modus** | Kernel 6.1+ erforderlich | | **Packet Injection** | Funktional, vor Einsatz testen | | **USB** | USB-C (USB 3.2 Gen 1) |
-
-# ALFA AWUS036AXML WiFi 6E Review: Praxistest-Leistung 2026
+| Feature | Wert | |---|---| | **Standard** | IEEE 802.11a/b/g/n/ac/ax (Wi-Fi 6E) | | **Chipsatz** | MediaTek MT7921AUN | | **Frequenzbänder** | 2,4 GHz + 5 GHz + **6 GHz** | | **Maximale Durchsatz** | AX1800 | | **Monitor-Modus** | Kernel 6.1+ erforderlich | | **Packet Injection** | ⚠️ Community-Berichte vor Kernel 6.16; im Test mit Kernel 6.17 fehlgeschlagen (mac80211-chanctx-Regression, Firmware sperrt die Rate) | | **USB** | USB-C (USB 3.2 Gen 1) |
 
 {{< tldr >}}
-Der AWUS036AXML ist eine Wi-Fi 6E USB-Netzwerkkarte, die Tri-Band 2.4/5/6 GHz, Monitor Mode und Packet Injection unterstützt. Dieser Artikel behandelt die Spezifikationen, die Installation der Kali Linux-Treiber, praktische Tests der 6-GHz-Scans sowie einen detaillierten Vergleich mit dem AWUS036ACH.
+Der AWUS036AXML ist eine Wi-Fi 6E USB-Netzwerkkarte, die Tri-Band 2.4/5/6 GHz und Monitor Mode unterstützt (Packet Injection: Community-Berichte vor Kernel 6.16, im Test mit Stock-Kernel 6.17 fehlgeschlagen). Dieser Artikel behandelt die Spezifikationen, die Installation der Kali Linux-Treiber, praktische Tests der 6-GHz-Scans sowie einen detaillierten Vergleich mit dem AWUS036ACH.
 {{< /tldr >}}
 
-Der ALFA AWUS036AXML mit MediaTek MT7921AUN-Chipsatz gehört zu den wenigen USB-WLAN-Adaptern, die Sicherheitsforschern Operationen im 6-GHz-Band ermöglichen, mit Monitor-Modus und Packet Injection, ab Linux-Kernel 5.18.
+Der ALFA AWUS036AXML mit MediaTek MT7921AUN-Chipsatz gehört zu den wenigen USB-WLAN-Adaptern, die Sicherheitsforschern Operationen im 6-GHz-Band ermöglichen, mit Monitor-Modus, AP-Modus und WPA3, ab Linux-Kernel 5.18; Packet Injection ist vor Kernel 6.16 laut Community-Berichten möglich, schlug aber in unseren Tests mit dem Stock-Kernel 6.17 fehl.
 
 Der ALFA AWUS036AXML ist einer der ersten weit verfügbaren USB-Adapter, der das **6-GHz-Band** unterstützt. In diesem Test bewerten wir seine Leistung im realen Penetration-Testing-Einsatz unter Kali Linux.
 
@@ -41,7 +39,7 @@ Der ALFA AWUS036AXML ist einer der ersten weit verfügbaren USB-Adapter, der das
 
 ## Kali Linux-Treiberinstallation
 
-Der MT7921AUN-Treiber (`mt7921u`) wurde **ab Kernel-Version 5.18 in den主线-Linux-Kernel integriert**. Unter Kali 2022.2 und neuer (die Kernel 5.18+ ausliefern) ist keine Treiberkompilierung erforderlich. Stecken Sie den Adapter einfach ein und er wird erkannt.
+Der MT7921AUN-Treiber (`mt7921u`) wurde **ab Kernel-Version 5.18 in den Mainline-Linux-Kernel integriert**. Unter Kali 2022.2 und neuer (die Kernel 5.18+ ausliefern) ist keine Treiberkompilierung erforderlich. Stecken Sie den Adapter einfach ein und er wird erkannt.
 
 ```bash
 # Überprüfen, ob Kernel-Modul geladen ist

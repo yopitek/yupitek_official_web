@@ -1,9 +1,9 @@
 ---
 title: "Deje de recompilar controladores: por qué MT7921AU es la elección para Linux y Kali"
-description: "Compare MediaTek MT7921AU (controlador mt7921u integrado en el kernel) con Realtek RTL8812AU (compilación con DKMS) y descubra por qué el ALFA AWUS036AXML es la opción plug-and-play en Kali Linux."
+description: "Compare MediaTek MT7921AUN (controlador mt7921u integrado en el kernel) con Realtek RTL8812AU (compilación con DKMS) y descubra por qué el ALFA AWUS036AXML es la opción plug-and-play en Kali Linux."
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,7 +11,7 @@ tags: ["mt7921au", "kali-linux", "linux", "awus036axml", "monitor-mode", "dkms",
 featureimage: /images/blog/mediatek-mt7921au-linux-in-kernel-driver-awus036axml.webp
 ---
 
-> **Producto cubierto**: ALFA AWUS036AXML (MediaTek MT7921AU / MT7921AUN) ｜ **Unidad de comparación**: ALFA AWUS036ACH (Realtek RTL8812AU)
+> **Producto cubierto**: ALFA AWUS036AXML (MediaTek MT7921AUN / MT7921AUN) | **Unidad de comparación**: ALFA AWUS036ACH (Realtek RTL8812AU)
 > **Para quién es**: pruebas de penetración con Kali Linux, desarrollo embebido en Linux, usuarios de Raspberry Pi / computadoras de placa única
 > **Objetivo del artículo**: entender la diferencia entre «soporte nativo en el kernel» y «compilación de controladores con DKMS» antes de comprar, y dedicar menos tiempo a la instalación y la resolución de problemas.
 
@@ -28,7 +28,7 @@ Si ha usado un adaptador USB con un chipset de la clase Realtek RTL8812AU (como 
 
 El problema no está en el producto, sino en la forma en que existe el controlador. La mayoría de los controladores Linux de Realtek no están incluidos en el kernel de Linux (mainline). Para usarlos, hay que «acoplar» código fuente externo al sistema. Cada vez que el kernel se actualiza, ese acople debe recompilarse; de lo contrario, deja de coincidir con la nueva versión del kernel y falla.
 
-Y el protagonista de hoy — el ALFA AWUS036AXML con MediaTek MT7921AU — sigue un camino completamente distinto: su controlador **vive de forma nativa dentro del kernel de Linux**.
+Y el protagonista de hoy — el ALFA AWUS036AXML con MediaTek MT7921AUN — sigue un camino completamente distinto: su controlador **vive de forma nativa dentro del kernel de Linux**.
 
 ---
 
@@ -96,11 +96,11 @@ Los requisitos mínimos de kernel por distribución, de un vistazo:
 | Windows 10 / 11 | — | Controlador del fabricante |
 | macOS (Intel / Apple Silicon) | No compatible | **Sin controlador: no lo compre** |
 
-> **⚠️ La advertencia de soporte más importante antes de comprar**: el AWUS036AXML **no es compatible con macOS**. Ni en Intel ni en Apple Silicon existe hoy un controlador de MT7921AU para macOS. Si macOS es su entorno principal, esta clase de adaptadores USB Wi-Fi 6 / 6E no le sirve — descártelo directamente, no lo descubra después de comprarlo.
+> **⚠️ La advertencia de soporte más importante antes de comprar**: el AWUS036AXML **no es compatible con macOS**. Ni en Intel ni en Apple Silicon existe hoy un controlador de MT7921AUN para macOS. Si macOS es su entorno principal, esta clase de adaptadores USB Wi-Fi 6 / 6E no le sirve — descártelo directamente, no lo descubra después de comprarlo.
 
 ### 2.3 Por qué el «soporte nativo» importa especialmente a los desarrolladores de Kali
 
-En Kali Linux, las actualizaciones del kernel son muy frecuentes (es una distribución Rolling). Los usuarios de RTL8812AU contienen la respiración en cada actualización continua. `mt7921u`, en cambio, se mantiene y se prueba junto con el kernel — **por muy nuevo que sea el kernel, el controlador va a la par**. ALFA posicionó este producto para pruebas de seguridad: el modo monitor (Monitor Mode) y la inyección de paquetes (Packet Injection) son funciones estándar listas para usar.
+En Kali Linux, las actualizaciones del kernel son muy frecuentes (es una distribución Rolling). Los usuarios de RTL8812AU contienen la respiración en cada actualización continua. `mt7921u`, en cambio, se mantiene y se prueba junto con el kernel — **por muy nuevo que sea el kernel, el controlador va a la par**. ALFA posicionó este producto para pruebas de seguridad: el modo monitor (Monitor Mode) está listo para usar, mientras que la inyección de paquetes (Packet Injection) depende de la versión del kernel (véase la sección 3.2).
 
 ---
 
@@ -147,7 +147,7 @@ A continuación, pruebe la inyección de paquetes:
 sudo aireplay-ng --test wlan1
 ```
 
-Ver `Injection is working!` (o una salida equivalente) significa que la inyección funciona. En el controlador nativo `mt7921u`, esta capacidad es intrínseca: no requiere Hacks adicionales.
+En los informes de la comunidad con kernels anteriores a 6.16, ver `Injection is working!` (o una salida equivalente) indicaba que la inyección funcionaba en el controlador nativo `mt7921u`. En el kernel stock 6.16 o superior (probado en ASUS GX10, Ubuntu 24.04 ARM64, kernel 6.17), la prueba de inyección falla: `aireplay-ng --test` muestra Found 0 APs / No Answer, por lo que no es posible deauth ni capturar handshakes. La causa es una regresión de mac80211 chanctx desde el kernel 6.16, no una limitación del chip; los controladores patched de la comunidad permiten la inyección, pero el firmware sigue bloqueando la velocidad (1/6 Mbps, sin inyección HT/VHT). Si necesita inyección, use AWUS036ACH, EACS o ACS.
 
 ### 3.3 Modo fusión (VIF / Fusion): gestionar y monitorizar a la vez
 
@@ -170,7 +170,7 @@ Para reducir los costes de soporte tras la compra, haga primero esta evaluación
 
 ### 4.1 Comparación rápida de los dos adaptadores
 
-| Elemento de evaluación | AWUS036AXML (MT7921AU) | AWUS036ACH (RTL8812AU) |
+| Elemento de evaluación | AWUS036AXML (MT7921AUN) | AWUS036ACH (RTL8812AU) |
 |---|---|---|
 | Especificación inalámbrica | Wi-Fi 6E tribanda (2.4/5/6 GHz) | AC1200 doble banda (2.4/5 GHz) |
 | Interfaz USB | USB-C (USB 3.2 Gen 1) | USB 3.0 Type-A |
@@ -178,7 +178,7 @@ Para reducir los costes de soporte tras la compra, haga primero esta evaluación
 | Dificultad de instalación | Basta añadir firmware | Cadena de herramientas + compilación + (con Secure Boot) firma |
 | Impacto de la actualización del kernel | Ninguno | Recompilar tras cada actualización |
 | Modo monitor | Soporte nativo | Compatible |
-| Inyección de paquetes | Soporte nativo | Compatible |
+| Inyección de paquetes | ⚠️ Informes de la comunidad antes del kernel 6.16; falló en la prueba con 6.17 | Compatible |
 | macOS | No compatible | No compatible |
 | Público objetivo | Linux / Kali / embebido modernos | Sistemas antiguos o escenarios de 2.4/5 GHz |
 
@@ -190,7 +190,7 @@ Cuantas más casillas coincidan con la descripción, **más adecuado es elegir d
 - [ ] Quiero que **funcione al conectarlo**, sin tocar `dkms`, `github clone` ni cadenas de herramientas de compilación.
 - [ ] Necesito el soporte nativo de la familia `mt76` y que las actualizaciones del kernel no afecten al adaptador.
 - [ ] Necesito la **banda de 6 GHz** (entorno con router Wi-Fi 6E).
-- [ ] Usos principales: monitorización, inyección de paquetes, Soft AP, modo fusión (VIF).
+- [ ] Usos principales: monitorización, Soft AP, modo fusión (VIF) (la inyección de paquetes no funciona desde el kernel 6.16, véase la sección 3.2).
 - [ ] Usaré el cable 2-in-1 USB-C / USB-A incluido con un portátil o una computadora de placa única.
 
 Por el contrario, si no necesita 6 GHz, su sistema tiene un kernel antiguo inferior a 5.18 y domina el flujo de mantenimiento de DKMS, el AWUS036ACH sigue teniendo su lugar. Pero prepárese: en cada actualización del kernel, el controlador habrá que recompilarlo.
@@ -199,7 +199,7 @@ Por el contrario, si no necesita 6 GHz, su sistema tiene un kernel antiguo infer
 
 ## 5. Conclusión
 
-Para los desarrolladores modernos de Linux y Kali, el tiempo es el mayor coste. **El MediaTek MT7921AU (AWUS036AXML) le quita de encima la carga interminable del «mantenimiento del controlador»**. El controlador vive en el kernel, el firmware llega en un solo paquete, la monitorización y la inyección funcionan desde el primer momento — no hay que temer las actualizaciones continuas del kernel.
+Para los desarrolladores modernos de Linux y Kali, el tiempo es el mayor coste. **El MediaTek MT7921AUN (AWUS036AXML) le quita de encima la carga interminable del «mantenimiento del controlador»**. El controlador vive en el kernel, el firmware llega en un solo paquete, la monitorización funciona desde el primer momento (la inyección de paquetes falla en el kernel stock 6.16 o superior; si la necesita, use ACH, EACS o ACS) — no hay que temer las actualizaciones continuas del kernel.
 
 Antes de comprar, confirme solo dos cosas: **kernel del sistema ≥ 5.18** y **que no sea macOS**. Del resto se encarga el controlador nativo.
 

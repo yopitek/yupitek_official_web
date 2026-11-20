@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["Kali-Linux", "adaptador-WiFi", "modo-monitor", "injeção-pacotes", "ALFA-Network"]
 featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Por que o Kali Linux precisa de um adaptador wireless externo?"
@@ -16,7 +16,7 @@ faq:
   - question: "Qual driver é mais estável: RTL8812AU ou MT7612U?"
     answer: "O driver mt76x2u do MT7612U está integrado ao mainline do kernel Linux desde 4.19, sendo plug-and-play sem compilação. O RTL8812AU requer instalação externa via DKMS e pode precisar de recompilação após atualizações de kernel."
   - question: "Adaptadores WiFi 6E são necessários para o Kali Linux?"
-    answer: "Atualmente não são essenciais. O driver MT7921AUN está sendo integrado gradualmente desde o kernel 5.18, mas a injeção de pacotes de 6 GHz ainda não é totalmente estável. Recomenda-se o AWUS036AXML apenas para usuários com necessidades avancadas."
+    answer: "Atualmente não são essenciais. O driver MT7921AUN está sendo integrado gradualmente desde o kernel 5.18, mas a injeção de pacotes falhou no AWUS036AXML nos testes com o kernel stock 6.17 (há relatos da comunidade de que funcionava antes do kernel 6.16). Para injeção, use o AWUS036ACH; o AWUS036AXML é recomendado apenas para usuários avançados que precisam principalmente de monitoramento em 6 GHz."
   - question: "Como configurar o Monitor Mode no Kali Linux?"
     answer: "Primeiro execute sudo airmon-ng check kill para encerrar processos interferentes, depois sudo airmon-ng start wlan1 para ativar o modo monitor. Confirme com iwconfig mostrando Mode:Monitor."
   - question: "Qual adaptador ALFA  é recomendado para iniciantes no Kali Linux?"
@@ -93,7 +93,7 @@ Antenas externas e removíveis (conectores RP-SMA) oferecem flexibilidade. Você
 | [AWUS036ACH](/pt/products/alfa/awus036ach/) | Wi-Fi 5 AC1200 | RTL8812AU | ✅ | 2× RP-SMA | Melhor geral |
 | [AWUS036AXML](/pt/products/alfa/awus036axml/) | Wi-Fi 6E AX3000 | MT7921AUN | ✅ | 2× RP-SMA | À prova do futuro |
 | [AWUS036ACM](/pt/products/alfa/awus036acm/) | Wi-Fi 5 AC1200 | MT7612U | ✅ | 2× RP-SMA | Compacto e acessível |
-| [AWUS036AX](/pt/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ⚠️ Limitado | 2× RP-SMA | Wi-Fi 6 Windows |
+| [AWUS036AX](/pt/products/alfa/awus036ax/) | Wi-Fi 6 AX1200 | RTL8832BU | ✅ (kernel 6.17+) | 2× RP-SMA | Wi-Fi 6 Windows |
 
 ---
 
@@ -196,7 +196,7 @@ Redes Wi-Fi 6E operam no espectro de 6 GHz recém-aberto, oferecendo muito menos
 
 **Limitações Atuais**
 
-O modo monitor na banda de 6 GHz via driver MT7921AUN ainda está amadurecendo. Para testes de redes WPA2 convencionais em 2,4/5 GHz, o driver funciona bem. Para trabalho de ponta em 6 GHz, verifique o status atual do driver no repositório `mt76` antes do seu engajamento.
+O modo monitor na banda de 6 GHz via driver MT7921AUN ainda está amadurecendo. Para testes de redes WPA2 convencionais em 2,4/5 GHz, o driver funciona bem. A injeção de pacotes é outro assunto: há relatos da comunidade de que funcionava em kernels anteriores ao 6.16, mas no kernel stock 6.17 nosso teste de injeção falhou (o AWUS036AXM se comporta da mesma forma). A causa é uma regressão do mac80211 chanctx desde o kernel 6.16, não uma limitação do chipset; um driver com patch pode fazê-la funcionar, mas o firmware continua travando a taxa (1/6 Mbps, sem injeção HT/VHT). Se você precisa de injeção, use o AWUS036ACH ou o AWUS036ACM. Para trabalho de ponta em 6 GHz, verifique o status atual do driver no repositório `mt76` antes do seu engajamento.
 
 **Para Quem o AWUS036AXML é Ideal?**
 

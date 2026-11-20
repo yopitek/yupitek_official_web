@@ -3,7 +3,7 @@ title: "AWUS036AXML 监控模式固件修复：解决主动模式崩溃问题"
 description: "如何修复 AWUS036AXML 在 Kali Linux 上的监控模式固件崩溃问题。涵盖 MT7921AUN 固件更新、内核版本要求、主动与被动模式的解决方案，以及 hcxdumptool 替代方案。"
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -50,6 +50,8 @@ AWUS036AXML 的 mt7921u 驱动程序在主动数据包注入时会触发固件�
 
 **MT7921AUN 芯片组**采用固件式 MAC 架构。Linux 内核的 `mt7921u` 驱动程序依赖芯片组内嵌固件来处理某些底层操作，包括监控模式下的数据包注入。目前的固件与驱动程序组合未完整实现 Linux 主动注入监控模式所需的指令路径。
 
+补充：在 stock kernel 6.17 上注入测试失败（Found 0 APs / No Answer），主因是 kernel 6.16 以后 mac80211 chanctx 回归，并非芯片先天限制；社区 patched 驱动可让注入运作，但固件仍锁定速率（1/6 Mbps，无法注入 HT/VHT）。
+
 相比之下，**被动监听**（嗅探空中已有的数据包）不需要固件传送任何内容，不会触发崩溃。问题仅限于发送路径操作：取消认证帧、探测请求、关联洪水等主动操作。
 
 {{< alert "triangle-exclamation" >}}
@@ -69,16 +71,16 @@ lsusb | grep -i mediatek
 # 确认驱动程序已加载
 lsmod | grep mt7921u
 
-# 确认内核版本（必须 >= 5.18）
+# 确认内核版本 (必须 >= 5.18)
 uname -r
 
 # 启动监控模式
 sudo airmon-ng start wlan0
 
-# 测试被动捕获（应正常运行）
+# 测试被动捕获 (应正常运行)
 sudo airodump-ng wlan0mon
 
-# 测试主动注入（可能崩溃）
+# 测试主动注入 (可能崩溃)
 sudo aireplay-ng --test wlan0mon
 ```
 
@@ -158,7 +160,7 @@ sudo reboot
 ```bash
 sudo apt install hcxdumptool hcxtools
 
-# 被动捕获——无需取消认证，无固件崩溃风险
+# 被动捕获——无需取消认证, 无固件崩溃风险
 sudo hcxdumptool -i wlan0mon -o capture.pcapng --enable_status=1
 
 # 转换为 hashcat 格式

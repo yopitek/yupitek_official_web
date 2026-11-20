@@ -418,7 +418,7 @@ lsblk
 次に、`/dev/sdX`を実際のカードパスに置き換えてフラッシュします。
 
 ```bash
-# /dev/sdX を実際のSDカードに置き換えてください（lsblkで確認）
+# /dev/sdX を実際のSDカードに置き換えてください (lsblkで確認)
 sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=progress conv=fsync
 sync
 ```
@@ -494,7 +494,7 @@ sudo aireplay-ng --test wlan1mon
 
 ---
 
-## 仮想マシン USBパススルー
+## 仮想マシン USBパススルー {#virtual-machine-usb-passthrough}
 
 ### VirtualBox
 
@@ -515,7 +515,7 @@ VMで`lsusb`を実行して`0e8d:7612`を確認し、上記のKali手順に従�
 
 ---
 
-## 仮想インターフェース（VIF）
+## 仮想インターフェース（VIF） {#virtual-interface-vif}
 
 これがAWUS036ACMがACHより優れている点です。MT7612Uチップはカーネルネイティブの完全VIFサポートを持っています。パッチやハックなしに、同じアダプターでモニターインターフェースとマネージドまたはAPインターフェースを同時に実行できます。
 

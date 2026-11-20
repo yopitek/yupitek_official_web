@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036AXM — Wi-Fi 6E 三频双天线无线网卡"
-description: "ALFA AWUS036AXM，MediaTek MT7921AUN 芯片，Wi-Fi 6E 三频，USB-A L型接头，2× 5 dBi 天线，Bluetooth 5.2，适合 Kali Linux 渗透测试。"
+description: "ALFA AWUS036AXM，MediaTek MT7921AUN 芯片，Wi-Fi 6E 三频，USB-A L型接头，2× 5 dBi 天线，Bluetooth 5.2，支持 Kali Linux Monitor Mode。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true
@@ -28,7 +28,7 @@ AWUS036AXM 采用 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz /
 - USB-A L 型接头（USB 3.2 Gen 1，5 Gbps）
 - 2× RP-SMA female 可拆卸天线（5 dBi）
 - WPA3/WPA2/WPA/WEP/WPS
-- 支持 Kali Linux Monitor Mode + Packet Injection
+- Kali Linux Monitor Mode
 
 ## 技术规格
 
@@ -51,7 +51,7 @@ AWUS036AXM 采用 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz /
 | Windows 11 | ✅ 支持 | 完整三频含 6 GHz |
 | macOS | ❌ 不支持 | 不支持 macOS 11+ 及 Apple Silicon |
 | Ubuntu | ✅ 支持 | 内核内置 mt7921u，内核 ≥ 5.18 |
-| Kali Linux | ✅ 支持 | Monitor mode + packet injection；可能需固件文件 |
+| Kali Linux | ⚠️ 部分支持 | Monitor mode 可用；packet injection 在 GX10（stock 内核 6.17）自家实测未通过（内核 6.16 以后 mac80211 chanctx 回归所致，并非芯片先天限制）。Kali 实机未实测；可能需固件文件 |
 | NetHunter | ⚠️ 部分支持 | OTG；依内核版本 |
 
 ## 硬件支持
@@ -67,7 +67,7 @@ AWUS036AXM 采用 MediaTek MT7921AUN 芯片，支持 Wi-Fi 6E 三频（2.4 GHz /
 | 功能 | 状态 |
 |------|------|
 | Monitor Mode | ✅ 支持 |
-| Packet Injection | ✅ 支持 |
+| Packet Injection | ❌ 未通过（自家测试，GX10、stock 内核 6.17） |
 | Soft AP 模式 | ✅ 支持 |
 | 蓝牙 | ✅ BT 5.2（含内置 BT 天线）|
 | VIF | ✅ 支持 |

@@ -62,7 +62,7 @@ AWUS036AXML は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン
 | Windows 11 | ✅ 対応 | 6 GHz を含む完全トリバンド |
 | macOS | ❌ 非対応 | macOS 11+ および Apple Silicon 非対応 |
 | Ubuntu | ✅ 対応 | カーネル内蔵 mt7921u、カーネル ≥ 5.18（Ubuntu 22.10+）|
-| Kali Linux | ✅ 対応 | Monitor mode ≥ カーネル 5.18；アクティブ monitor mode ≥ 6.12；パケットインジェクション対応 |
+| Kali Linux | ⚠️ 部分対応 | Monitor mode ≥ カーネル 5.18；アクティブ monitor mode ≥ 6.12。パケットインジェクションは GX10（stock カーネル 6.17）での自社テストでは通過しませんでした（カーネル 6.16 以降の mac80211 chanctx のリグレッションが原因で、チップ自体の制限ではありません）。実機の Kali は未検証 |
 | NetHunter（Android）| ⚠️ 部分対応 | OTG；カーネル依存 |
 
 ## 対応ハードウェア
@@ -78,7 +78,7 @@ AWUS036AXML は MediaTek MT7921AUN チップを搭載し、Wi-Fi 6E トリバン
 | 機能 | 状態 |
 |------|------|
 | Monitor Mode | ✅ あり（カーネル ≥ 5.18；アクティブモード ≥ 6.12）|
-| Packet Injection | ✅ あり |
+| Packet Injection | ❌ 通過せず（自社テスト、GX10、stock カーネル 6.17） |
 | Soft AP モード | ✅ あり |
 | Bluetooth | ✅ BT 5.2 |
 | VIF | ✅ あり |

@@ -7,10 +7,10 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Remote-ID", "ALFA-Network", "AWUS036ACH", "ドローン検出", "Counter-UAV", "ASTM-F3411", "EN-4709-002", "opendroneid", "unix_rid_capture", "DJI-OcuSync", "Raspberry-Pi"]
 author: "benny-lai"
-lastmod: 2026-07-27
+lastmod: 2026-11-20
 faq:
   - question: "なぜ AWUS036ACH が推奨されるのですか？新しい Wi-Fi 6/6E アダプターではない理由は？"
-    answer: "Remote ID のキャプチャには安定したモニターモードと raw パケットインジェクションが必要です。現在、コミュニティドライバが最も成熟しているのは Realtek rtl88xxau ブランチ（RTL8812AU / RTL8814AU）です。Wi-Fi 6/6E（MediaTek MT7921AUN、Realtek RTL8832BU）には、主流のペネトレーションテスト／キャプチャツールチェーンに対応するインジェクションドライバがまだありません。AWUS036ACH はコミュニティと本キットの両方で検証済みの選択肢です。"
+    answer: "Remote ID のキャプチャには安定したモニターモードと raw パケットインジェクションが必要です。現在、コミュニティドライバが最も成熟しているのは Realtek rtl88xxau ブランチ（RTL8812AU / RTL8814AU）です。Wi-Fi 6/6E では、MediaTek MT7921AUN（AWUS036AXM／AXML）は標準カーネル 6.17 でインジェクションテストに失敗しますが、Realtek RTL8832BU（AWUS036AX／AXER）はカーネル 6.17 以降の内蔵 rtw89_8852bu でインジェクションが動作します（GX10 実測 2.4 GHz：AX 96%、AXER 73%）。ただし本キットでは未検証です。AWUS036ACH はコミュニティと本キットの両方で検証済みの選択肢です。"
   - question: "nRF52840 は必須ですか？"
     answer: "Wi-Fi Remote ID（NAN / Beacon）のみの場合は不要で、AWUS036ACH だけで十分です。Bluetooth 5 Long Range ブロードキャストも同時にキャプチャする場合は、nRF52840（sniffer ファームウェア書き込み済み）が必要です。完全なカバレッジのためには本モジュールを含めることを推奨します。"
   - question: "このキットで DJI ドローンをデコードできますか？"
@@ -71,7 +71,7 @@ Remote ID 検出キットは **ALFA AWUS036ACH** アダプターのモニター�
 | シングルボードコンピュータ | Raspberry Pi 4（2 GB+ 推奨；3B / 5 も可） | 演算ホスト | **必須** |
 | ストレージ | microSD 16 GB+（Samsung / SanDisk Endurance 推奨） | システムディスク | **必須** |
 | Bluetooth 5 キャプチャ | **nRF52840** USB Dongle（sniffer ファームウェア書き込み済み、Nordic Sniffer 等） | BT5 Long Range Remote ID キャプチャ | 推奨（オプション） |
-| 電源 | 5 V / 3 A USB-C（公式 Pi PSU） | 供电 | **必須** |
+| 電源 | 5 V / 3 A USB-C（公式 Pi PSU） | 給電 | **必須** |
 | ネットワーク | イーサネットケーブル または WiFi 認証情報 | アップロード / 管理 | **必須** |
 | アンテナアップグレード | ALFA **APA-M25** 指向性パネルアンテナ | 受信距離の延伸、環境ノイズの抑制 | オプション |
 
@@ -96,19 +96,19 @@ Remote ID 検出キットは **ALFA AWUS036ACH** アダプターのモニター�
 ## 5. GitHub プロジェクトリンク
 
 ```text
-# コアデコードライブラリ（ASTM F3411 / EN 4709-002 メッセージエンコード/デコード）
+# コアデコードライブラリ (ASTM F3411 / EN 4709-002 メッセージエンコード/デコード)
 https://github.com/opendroneid/opendroneid-core-c
 
-# Linux キャプチャプログラム（本キットのメインプログラム、rtl8812au + nRF52840 + RPi 検証済み）
+# Linux キャプチャプログラム (本キットのメインプログラム, rtl8812au + nRF52840 + RPi 検証済み)
 https://github.com/sxjack/unix_rid_capture
 
-# コミュニティリアルタイムマップネットワーク（ワンクリックインストール、droneaware.io に自動アップロード）
+# コミュニティリアルタイムマップネットワーク (ワンクリックインストール, droneaware.io に自動アップロード)
 https://github.com/fduflyer/DroneAware-Node-Releases
 
-# 無線検出フレームワーク（DJI OcuSync パスは SDR プラグインと併用）
+# 無線検出フレームワーク (DJI OcuSync パスは SDR プラグインと併用)
 https://github.com/kismetwireless/kismet
 
-# RTL8812AU モニター / インジェクションドライバ（AWUS036ACH に必須）
+# RTL8812AU モニター / インジェクションドライバ (AWUS036ACH に必須)
 https://github.com/morrownr/8812au-20210629
 ```
 

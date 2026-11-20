@@ -52,8 +52,8 @@ O AWUS036ACS é o ponto de entrada mais acessível da Alfa na linha de banda dup
 |---|---|---|
 | Windows XP–11 | ✅ Suportado | Driver disponível no site da Alfa |
 | macOS 10.5–10.14 | ⚠️ Limitado | macOS 10.15+ e Apple Silicon NÃO suportados |
-| Ubuntu | ✅ Suportado | Instalação manual do driver DKMS necessária (morrownr/8821au). Sem suporte integrado no kernel. |
-| Kali Linux | ✅ Suportado | Modo monitor + injeção de pacotes suportados. Driver da comunidade do morrownr GitHub. |
+| Ubuntu | ✅ Suportado | Kernel 6.13 ou superior: driver mainline rtw88_8821au, sem instalação. Kernels mais antigos exigem o driver DKMS (morrownr/8821au). |
+| Kali Linux | ✅ Suportado | Modo monitor + injeção de pacotes suportados (GX10, Ubuntu 24.04, kernel 6.17: injeção 100% em 2.4 GHz, 96% em 5 GHz). Com kernel 6.13 ou superior usa-se o driver mainline; em kernels mais antigos, o driver da comunidade do morrownr. Não testado em um Kali real. |
 | NetHunter (Android) | ✅ Suportado | Conexão USB OTG; RTL8811AU tem compatibilidade confirmada com NetHunter |
 
 ## Hardware Compatível

@@ -2,6 +2,7 @@
 title: "محولات ALFA Network اللاسلكية"
 description: "توزع Yopitek محولات ALFA Network عالية الطاقة USB Wi-Fi، وهي مشهورة في مجتمع أبحاث الأمن العالمي."
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 dir: rtl
 showBreadcrumbs: true
@@ -38,16 +39,16 @@ ALFA Network هي شركة تايوانية رائدة في تصنيع معدا�
     AC1200 ثنائي النطاق، Realtek RTL8812AU، USB 3.0، هوائيان خارجيان 5 dBi، طاقة عالية.
   {{< /card >}}
   {{< card title="AWUS036ACHM" href="/ar/products/alfa/awus036achm/" image="/images/products/alfa/awus036achm.png" >}}
-    AC433 ثنائي النطاق، شريحة MediaTek MT7610U، منفذ USB 2.0، تصميم مدمج بهوائي فردي — مثالي لاختبار الاختراق المحمول.
+    AC600 ثنائي النطاق، شريحة MediaTek MT7610U، منفذ USB 2.0، تصميم مدمج بهوائي فردي — مثالي لاختبار الاختراق المحمول.
   {{< /card >}}
   {{< card title="AWUS036ACM" href="/ar/products/alfa/awus036acm/" image="/images/products/alfa/awus036acm.png" >}}
     AC1200 ثنائي النطاق، MediaTek MT7612U، USB 3.0، 300+867 Mbps، هوائي مزدوج 5 dBi.
   {{< /card >}}
   {{< card title="AWUS036ACS" href="/ar/products/alfa/awus036acs/" image="/images/products/alfa/awus036acs.png" >}}
-    AC433 ثنائي النطاق، Realtek RTL8811AU، USB 2.0، تصميم نحيف للغاية، 55mm.
+    AC600 ثنائي النطاق، Realtek RTL8811AU، USB 2.0، تصميم نحيف للغاية، 55mm.
   {{< /card >}}
   {{< card title="AWUS036EACS" href="/ar/products/alfa/awus036eacs/" image="/images/products/alfa/awus036eacs.png" >}}
-    AC600 ثنائي النطاق، Realtek RTL8811CU، USB 2.0، تصميم مدمج خفيف الوزن.
+    AC600 ثنائي النطاق، Realtek RTL8821CU، USB 2.0، تصميم مدمج خفيف الوزن.
   {{< /card >}}
 {{< /card-group >}}
 

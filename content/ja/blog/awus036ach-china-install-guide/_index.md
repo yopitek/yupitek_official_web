@@ -488,7 +488,7 @@ lsblk
 リストからカードを見つけます。`sdb` または `mmcblk0` のような形式で表示されます。次に `/dev/sdX` を実際のパスに置き換えてイメージを書き込みます。
 
 ```bash
-# /dev/sdX を実際のSDカードに置き換えてください（lsblkで確認）
+# /dev/sdX を実際のSDカードに置き換えてください (lsblkで確認)
 sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=progress conv=fsync
 sync
 ```
@@ -622,10 +622,10 @@ AWUS036ACHに搭載されたRTL8812AUチップは、Linux上でのVIFサポー�
 |---------|-----|------|
 | Alfa公式ドライバー | [files.alfa.com.tw](https://files.alfa.com.tw) | ドライバーパッケージ、ファームウェア |
 | Alfaドキュメント | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 製品マニュアル |
-| 清华大学镜像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推奨） |
-| 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推奨） |
-| 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARMイメージ（バックアップ） |
+| 清华大学ミラー | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里云ミラー | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推奨） |
+| 中科大ミラー | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推奨） |
+| 华为云ミラー | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARMイメージ（バックアップ） |
 | RTL8812AUドライバー（GitHub） | [github.com/morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | 手動コンパイルの代替 |
 
 

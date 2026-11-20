@@ -3,7 +3,7 @@ title: "Black Duck FuzzBox WLAN 适配器兼容性指南：寻找合适的 ALFA 
 description: "针对 Black Duck FuzzBox OS 选择最佳 ALFA Network USB WiFi 适配器的全面硬件评估与兼容性指南。了解如何配置和部署 ALFA AWUS036ACH (RTL8812AU) 以进行无线协议模糊测试。"
 date: 2026-06-04
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -12,8 +12,8 @@ featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-gui
 faq:
   - question: "Black Duck FuzzBox 是什么用途的工具？"
     answer: "Black Duck FuzzBox 是专用的无线协议模糊测试环境，通过注入异常 802.11 讯框验证嵌入式无线设备与基地台的协议堆叠强健性。"
-  - question: "为什么 Wi-Fi 6/6E 网卡无法在 FuzzBox 下运行？"
-    answer: "FuzzBox 注入引擎已针对 Realtek rtl88xxau 驱动最佳化，MediaTek 与较新 Realtek Wi-Fi 6 芯片组不使用此分支，会被精灵忽略。"
+  - question: "Wi-Fi 6/6E 网卡可以在 FuzzBox 下使用吗？"
+    answer: "FuzzBox 注入引擎只针对 Realtek rtl88xxau 驱动优化，其他芯片组不使用此分支，会被守护进程忽略，因此 FuzzBox 上未验证。在 GX10（Ubuntu 24.04、kernel 6.17）实测中，AWUS036AX 与 AXER（RTL8832BU）注入可用；AWUS036AXM 与 AXML（MT7921AU）因 kernel 6.16 以后的 mac80211 chanctx 回归而注入失败，并非芯片本身的限制。"
   - question: "ALFA AWUS036ACH 为什么是 FuzzBox 首选网卡？"
     answer: "AWUS036ACH 采用 RTL8812AU 芯片组，拥有社群优化的注入驱动，可绕过操作系统网络堆叠实现零丢包原始讯框传输。"
   - question: "FuzzBox OS 基于哪个 Linux 版本？"
@@ -28,13 +28,13 @@ faq:
 WLAN 协议模糊测试（通常被称为无线负面测试）是验证嵌入式无线设备、智能家居家电和企业级接入点（AP）安全性和鲁棒性最关键的步骤之一。然而，尝试通过无线电波发送畸形的 802.11 管理、控制或数据帧，需要对介质访问控制（MAC）层进行底层控制，而标准的操作系统和商用 WiFi 驱动程序根本不允许这样做。
 
 {{< tldr >}}
-ALFA AWUS036ACH 是 Black Duck FuzzBox 协议模糊测试的唯一首选，RTL8812AU 驱动支持原始数据包注入与监听模式，Wi-Fi 6/6E 网卡因驱动不兼容无法运行。
+ALFA AWUS036ACH 是 Black Duck FuzzBox 协议模糊测试的唯一首选，RTL8812AU 驱动支持原始数据包注入与监听模式；Wi-Fi 6/6E 网卡在 FuzzBox 上未验证，AXM 与 AXML 在 kernel 6.17 注入失败（chanctx 回归，并非芯片本身的限制）。
 {{< /tldr >}}
 
 
 为了解决这个问题，安全团队使用 **Black Duck FuzzBox**（前身为 Synopsys Defensics FuzzBox），这是一种专门的软件和硬件执行环境。为了进行测试，FuzzBox OS 必须与兼容的高性能 USB 无线适配器配对，该适配器需具备稳定的监听模式（monitor mode）和可靠的原始数据包注入（raw packet injection）能力。 
 
-在本兼容性指南中，我们将分析 Yopitek 当前的 ALFA Network 产品目录，解释为什么较新的 Wi-Fi 6/6E 适配器在 FuzzBox 下无法使用，并为行业标准选择 —— **ALFA AWUS036ACH** (RTL8812AU) 提供逐步设置指南。
+在本兼容性指南中，我们将分析 Yopitek 当前的 ALFA Network 产品目录，说明较新的 Wi-Fi 6/6E 适配器在 FuzzBox 上的验证状况，并为行业标准选择 —— **ALFA AWUS036ACH** (RTL8812AU) 提供逐步设置指南。
 
 ---
 
@@ -86,12 +86,12 @@ ALFA Network 使用不同的芯片组制造适配器。只有特定的芯片组�
 |------------|---------|-------------|-----------|------------------------------|
 | **AWUS036ACH** | **Realtek RTL8812AU** | **USB 3.0** | **Wi-Fi 5** | **✅ 100% 兼容（首选）** |
 | **AWUS036ACS** | **Realtek RTL8811AU** | **USB 2.0** | **Wi-Fi 5** | **✅ 兼容（备选 / 便携）** |
-| **AWUS036AXML** | MediaTek MT7921AUN | USB-C 3.2 | Wi-Fi 6E | ❌ 不支持（无注入驱动程序） |
-| **AWUS036AXM** | MediaTek MT7921AUN | USB 3.2 | Wi-Fi 6E | ❌ 不支持（无注入驱动程序） |
-| **AWUS036AX** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ❌ 不支持（无注入驱动程序） |
-| **AWUS036AXER** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ❌ 不支持（无注入驱动程序） |
-| **AWUS036ACM** | MediaTek MT7612U | USB 3.0 | Wi-Fi 5 | ❌ 不支持（无注入驱动程序） |
-| **AWUS036EACS** | Realtek RTL8811CU | USB 2.0 | Wi-Fi 5 | ❌ 不支持（驱动程序不兼容） |
+| **AWUS036AXML** | MediaTek MT7921AUN | USB-C 3.2 | Wi-Fi 6E | ❌ kernel 6.17 注入失败（mac80211 chanctx 回归 + 固件锁速率）；FuzzBox 上未验证 |
+| **AWUS036AXM** | MediaTek MT7921AUN | USB 3.2 | Wi-Fi 6E | ❌ kernel 6.17 注入失败（mac80211 chanctx 回归 + 固件锁速率）；FuzzBox 上未验证 |
+| **AWUS036AX** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ⚠️ GX10 实测注入可用（kernel 6.17）；FuzzBox 上未验证 |
+| **AWUS036AXER** | Realtek RTL8832BU | USB 3.2 | Wi-Fi 6 | ⚠️ GX10 实测注入可用（kernel 6.17）；FuzzBox 上未验证 |
+| **AWUS036ACM** | MediaTek MT7612U | USB 3.0 | Wi-Fi 5 | ⚠️ GX10 实测注入可用（kernel 6.17）；FuzzBox 上未验证 |
+| **AWUS036EACS** | Realtek RTL8821CU | USB 2.0 | Wi-Fi 5 | 未列入 FuzzBox 验证清单；Linux 内核 6.2+ 实测 monitor 与注入可用 |
 
 ### 3.2 首选：ALFA AWUS036ACH
 **ALFA AWUS036ACH** 是专业协议测试的行业标准选择。
@@ -118,10 +118,10 @@ FuzzBox OS 预装了稳定的注入驱动程序。如果您需要在本地 Linux
 
 FuzzBox 数据包传输的核心在于其专有的 `80211socket` 注入器守护进程。 
 
-### 为什么较新的 Wi-Fi 6/6E 芯片组无法工作
+### 为什么较新的 Wi-Fi 6/6E 芯片组未获 FuzzBox 支持
 许多测试人员认为，购买更新、速度更快且采用 MT7921AUN 芯片组的适配器（如 Wi-Fi 6E AWUS036AXML）会提高性能。然而，FuzzBox 是专门为协议漏洞测试而设计的，而不是为了提高互联网吞吐量。 
 
-`80211socket` 注入器在 MAC 子层直接与无线驱动程序进行交互。为此，驱动程序必须支持特殊的原始注入扩展。目前，FuzzBox OS 的注入引擎针对成熟的 **Realtek `rtl88xxau`** 驱动程序树（特别是 RTL8812AU/RTL8814AU）进行了优化。MediaTek 芯片组（MT7921AUN、MT7612U）和较新的 Realtek Wi-Fi 6 芯片组（RTL8832BU）不使用此注入驱动程序树，因此会被 FuzzBox 守护进程忽略。
+`80211socket` 注入器在 MAC 子层直接与无线驱动程序进行交互。为此，驱动程序必须支持特殊的原始注入扩展。目前，FuzzBox OS 的注入引擎针对成熟的 **Realtek `rtl88xxau`** 驱动程序树（特别是 RTL8812AU/RTL8814AU）进行了优化。MediaTek 芯片组（MT7921AUN、MT7612U）和较新的 Realtek Wi-Fi 6 芯片组（RTL8832BU）不使用此注入驱动程序树，因此会被 FuzzBox 守护进程忽略，在 FuzzBox 上未验证。这是平台层面的限制，并非这些芯片无法注入：在 GX10（Ubuntu 24.04 ARM64、kernel 6.17）实测中，ACM（mt76x2u）、AX 与 AXER（rtw89_8852bu）注入可用；AXM 与 AXML（mt7921u）则因 kernel 6.16 以后的 mac80211 chanctx 回归，在原生 kernel 6.17 上注入失败，另有固件锁定速率（1/6 Mbps），同样不是芯片本身的限制。
 
 ### 内核 6.1.x 下的稳定性
 RTL8812AU 驱动程序已被移植并针对 Linux 6.1.x 内核进行了广泛的补丁修复。它支持稳定的信道锁定，可在海量数据包压力下防止缓冲区溢出，并防止在高速取消认证（de-authentication）模糊测试期间发生内核崩溃（kernel panic）。

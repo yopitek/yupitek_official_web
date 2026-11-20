@@ -21,15 +21,13 @@ faq:
     answer: "Quatro pontos essenciais: 1. O comprimento é de 52 mm, não de 42 mm. 2. As 4 antenas devem ser conectadas por completo. 3. A fonte deve suportar uma corrente instantânea de 2.7 A. 4. A refrigeração deve manter a temperatura interna abaixo de 115 °C."
 ---
 
-# Como fazer failover de rede 4G/5G em um roteador industrial: exemplo prático de rede 5G privada com EM9191
-
 **Resumo em uma frase: adicionar um módulo 5G ao seu roteador industrial como backup é como contratar um seguro. O módulo EM9191 da Sierra Wireless suporta ao mesmo tempo 4G de altíssima velocidade (LTE Cat 20) e redes 5G privadas (5G SA). Assim, você pode operar o backup 4G hoje e, quando sua planta construir a rede 5G privada no futuro, continuará funcionando com o mesmo módulo, sem trocar nenhum hardware.**
 
 Em uma fábrica, cada minuto de queda de rede custa dinheiro. Os dados das máquinas não chegam ao servidor, o monitoramento remoto fica às escuras, e esse prejuízo supera em muito o custo de uma linha de backup. Por isso a redundância de rede (failover) é tão importante. Em vez de contratar uma segunda fibra física de outra operadora, a opção mais inteligente é inserir um chip SIM e usar a rede móvel.
 
 Neste artigo tomamos como base a folha de especificações oficial (EM919X Product Technical Specification) para explicar por que o módulo **EM9191** é a escolha perfeita hoje para o backup e amanhã para a rede privada.
 
-> Fonte dos dados técnicos: folha de especificações oficial da Sierra Wireless. Artigo elaborado pela Yopitek (榆閤科技).
+> Fonte dos dados técnicos: folha de especificações oficial da Sierra Wireless. Artigo elaborado pela Yopitek.
 
 ---
 
@@ -92,7 +90,7 @@ Graças ao seu forte suporte de LTE Cat 20 e 5G SA, ele cobre perfeitamente o «
 
 ## Informações de compra (Call To Action)
 
-Quer integrar o EM9191 ao seu roteador industrial? A Yopitek (榆閤科技) oferece soluções de hardware completas e suporte técnico de primeira linha para resolver os problemas mais difíceis de refrigeração e antenas.
+Quer integrar o EM9191 ao seu roteador industrial? A Yopitek oferece soluções de hardware completas e suporte técnico de primeira linha para resolver os problemas mais difíceis de refrigeração e antenas.
 Escreva para nós: **sales@yupitek.com**
 Veja os produtos: [Produtos da série Sierra Wireless](/pt/products/sierra/)
 

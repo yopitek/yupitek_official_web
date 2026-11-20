@@ -44,6 +44,8 @@ Die Sammlung umfasst 19 Skills, die in drei Typen unterteilt sind:
 - **Typ B — HTML-Ausgabe:** Erzeugung gestalteter Web-Dokumente
 - **Typ C — Text / Utility:** Übersetzung, Formatierung, Social Publishing, Komprimierung
 
+Die Trigger-Schlüsselwörter in der letzten Spalte sind im Original belassen und enthalten teils chinesische Begriffe, da die Skills auch auf chinesische Eingaben reagieren (z. B. 为文章配图 = „Artikel bebildern“, 翻译 = „übersetzen“).
+
 | # | Skill | Typ | Zweck | Schlüsselwörter (Trigger) |
 |---|-------|------|---------|-----------------|
 | 01 | `baoyu-article-illustrator` | Bild | Erzeugt automatisch Illustrationen für jeden Abschnitt eines Artikels | 为文章配图 · illustrate article · add images |
@@ -231,6 +233,8 @@ Erzeugt vertikale Kartenserien (Seitenverhältnis 3:4), die für Xiaohongshu (XH
 **Wann zu verwenden:** Instagram-Posts, XHS-Produktkarten, produktfokussierte Social-Media-Inhalte.
 
 ### Stil-Varianten
+
+Die Beispiel-Prompts unten sind im chinesischen Original belassen, so wie sie an den Skill übergeben wurden. Variante 1 bedeutet sinngemäß: „Xiaohongshu-Produktempfehlungskarte im schlichten Notion-Stil, stellt die WLAN-Karte Alfa AWUS036ACM vor, weißer Hintergrund, klares Layout, hervorgehoben: MT7612U-Chip / AC1200 Dualband / Linux ohne Treiberinstallation“.
 
 **Variante 1 — Notion · Standard**
 

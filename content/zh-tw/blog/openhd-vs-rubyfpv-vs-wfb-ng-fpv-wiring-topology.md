@@ -12,7 +12,7 @@ categories:
 description: "解析開源數位圖傳監聽模式 Raw 封包廣播原理，對比 OpenHD、RubyFPV 與 WFB-ng 架構，揭密 AWUS036ACH 瞬間抽載與獨立 BEC 供電拓撲。"
 featureimage: "/images/blog/03_fpv_wiring_topology.jpg"
 author: "benny-lai"
-lastmod: 2026-08-18
+lastmod: 2026-11-20
 faq:
   - question: "為什麼不能直接用樹莓派 USB 埠供電給 AWUS036ACH？"
     answer: "高功率發射時瞬間電流抽載可能突破 1.5A–2A，會拉低樹莓派 5V 軌道電壓導致重開機或圖傳中斷，必須使用獨立 BEC (5V/3A) 供電。"
@@ -192,15 +192,15 @@ Raspberry Pi 官方建議 **Pi 3B+ / 4 需要 2.5A–3A（5V）電源供應器**
     │
     ├──▶ 飛控 ──▶ 電變/馬達
     │
-    └──▶ 獨立 5V BEC / UBEC（≥3A，預留電流餘裕）
+    └──▶ 獨立 5V BEC / UBEC (≥3A, 預留電流餘裕)
                 │
-                ├──▶ 5V → AWUS036ACH 網路卡（電源接頭，例如隨附的 USB 線改由 BEC 供電）
+                ├──▶ 5V → AWUS036ACH 網路卡 (電源接頭, 例如隨附的 USB 線改由 BEC 供電)
                 │
-                └──▶ 5V → 機載電腦（Pi）主電源輸入（5V/GPIO 電源腳）
+                └──▶ 5V → 機載電腦 (Pi) 主電源輸入 (5V/GPIO 電源腳)
 
-資料面（不承載電力）：
-  Pi（機載電腦） USB3 ── USB 線 ──▶ AWUS036ACH   （只走資料）
-  Pi（機載電腦） UART ── 遙測線 ──▶ 飛控 (MAVLink / TX/RX)
+資料面 (不承載電力):
+  Pi (機載電腦) USB3 ── USB 線 ──▶ AWUS036ACH   (只走資料)
+  Pi (機載電腦) UART ── 遙測線 ──▶ 飛控 (MAVLink / TX/RX)
 ```
 
 重點守則：
@@ -227,12 +227,12 @@ Raspberry Pi 官方建議 **Pi 3B+ / 4 需要 2.5A–3A（5V）電源供應器**
 ```bash
 # 1) 確認網路卡介面與驅動狀態
 lsusb                          # 應看到 0bda:8812 Realtek 裝置
-iwconfig                       # wlanX 應顯示為 Monitor 模式（圖傳設定下）
+iwconfig                       # wlanX 應顯示為 Monitor 模式 (圖傳設定下)
 
 # 2) 觀察 USB 大量傳輸期間是否出現斷線日誌
 dmesg -w | grep -iE "usb|disconnect|over-current"
 
-# 3) 停用 RTL8812AU 的 USB 省電（官方建議，降低掉線機率）
+# 3) 停用 RTL8812AU 的 USB 省電 (官方建議, 降低掉線機率)
 sudo tee /etc/modprobe.d/8812au.conf <<'EOF'
 options 8812au rtw_power_mgnt=0 rtw_enusbss=0
 EOF
@@ -292,6 +292,6 @@ sudo reboot
 
 開源數位圖傳的「天花板」不只在協定：**底層選對了（Monitor Mode 廣播 + FEC），介面選對了（OpenHD / RubyFPV / WFB-ng 三選一），硬體選對了（RTL8812AU 雙天線）、供電做對了（獨立 BEC）**——整套系統才能真正穩定飛行。
 
-**推薦硬體**：ALFA AWUS036ACH（Realtek RTL8812AU，AC1200 雙頻、2×2 MIMO、高功率放大器、雙 RP-SMA 5dBi 可拆天線、USB 3.0）。它是開源圖傳社群驗證最充分、文件最齊的 USB 網路卡之一；若要輕裝 / 免編譯驅動，同門的 AWUS036AXML（MT7921AU）與 AWUS036ACHM（RTL8812AU 的 USB-C 版本）也是值得瀏覽的選項——**請記得，無論哪張，高功率網路卡「獨立 BEC 供電」這一步都不能省**。
+**推薦硬體**：ALFA AWUS036ACH（Realtek RTL8812AU，AC1200 雙頻、2×2 MIMO、高功率放大器、雙 RP-SMA 5dBi 可拆天線、USB 3.0）。它是開源圖傳社群驗證最充分、文件最齊的 USB 網路卡之一；若要輕裝 / 免編譯驅動，同門的 AWUS036AXML（MT7921AUN）與 AWUS036ACHM（RTL8812AU 的 USB-C 版本）也是值得瀏覽的選項（但圖傳仰賴封包注入，而 AXML 的注入在 stock kernel 6.17 實測失敗，建議以 ACH 為主）——**請記得，無論哪張，高功率網路卡「獨立 BEC 供電」這一步都不能省**。
 
 > 延伸閱讀：驅動安裝與核心更新排障的部分，我們在另一篇〈Kali Linux 核心更新後網路卡罷工？RTL8812AU 驅動 DKMS 編譯失敗與 Secure Boot 排障〉中有完整拆解。

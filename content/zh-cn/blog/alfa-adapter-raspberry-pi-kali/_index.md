@@ -3,7 +3,7 @@ title: "在 Raspberry Pi 搭配 Kali Linux 使用 ALFA WiFi 网卡：完整安�
 description: "在运行 Kali Linux ARM64 的 Raspberry Pi 上安装 ALFA USB WiFi 网卡。涵盖 AWUS036ACH RTL8812AU 驱动编译、监听模式，以及便携式渗透测试平台搭建。"
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -67,7 +67,7 @@ Kali Linux 在 [https://www.kali.org/get-kali/#kali-arm](https://www.kali.org/ge
 可使用 Raspberry Pi Imager 图形工具或命令行的 `dd` 进行烧录：
 
 ```bash
-# 将 /dev/sdX 替换为你的实际 SD 卡设备（用 lsblk 确认）
+# 将 /dev/sdX 替换为你的实际 SD 卡设备 (用 lsblk 确认)
 sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=progress conv=fsync
 sync
 ```
@@ -169,7 +169,7 @@ sudo modprobe mt7921u
 ip link show
 ```
 
-若 `lsusb` 显示 MediaTek 设备，且 `ip link show` 列出新的无线接口，网卡即已就绪。MT7921AUN 的监听模式支持自内核 5.18 起已大幅改善，但在某些封包注入测试中可能不如 RTL8812AU 稳定。若需最大程度兼容旧有渗透测试工作流程，AWUS036ACH 仍是更稳健的选择。
+若 `lsusb` 显示 MediaTek 设备，且 `ip link show` 列出新的无线接口，网卡即已就绪。MT7921AUN 的监听模式支持自内核 5.18 起已大幅改善，但在某些封包注入测试中可能不如 RTL8812AU 稳定。若需最大程度兼容旧有渗透测试工作流程，AWUS036ACH 仍是更稳健的选择。但注入需视内核版本而定：kernel 6.16 以前的社区反馈中注入可用；在 stock kernel 6.16 以上（实测 6.17）上，AXML 的封包注入测试未通过（`aireplay-ng --test` 显示 Found 0 APs / No Answer），因此无法 deauth 或抓取 handshake。原因是 mac80211 chanctx 回归，并非芯片先天限制；社区 patched 驱动可让注入运作，但固件仍锁定速率（1/6 Mbps，无法注入 HT/VHT）。monitor、AP、WPA3 不受影响。需要注入请改用 AWUS036ACH 或 AWUS036EACS。
 
 ---
 
@@ -178,7 +178,7 @@ ip link show
 Raspberry Pi 有内置 WiFi 接口（`wlan0`）。保持它连接至你的网络以维持 SSH 访问。专用 ALFA 网卡（`wlan1`）只用于监听模式和封包捕获。在无头 Pi 上绝不要将 `wlan0` 切换至监听模式——这会中断你的 SSH 连接。
 
 ```bash
-# 终止干扰监听模式的进程（NetworkManager、wpa_supplicant）
+# 终止干扰监听模式的进程 (NetworkManager, wpa_supplicant)
 sudo airmon-ng check kill
 
 # 在 ALFA 网卡接口上启用监听模式

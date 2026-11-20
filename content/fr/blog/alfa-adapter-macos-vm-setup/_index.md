@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Les adaptateurs ALFA peuvent-ils utiliser le mode moniteur nativement sur macOS ?"
     answer: "Non. L'architecture CoreWLAN et IO80211Family de macOS ne prend pas en charge le mode moniteur ou l'injection de paquets pour les cartes réseau tierces. Vous devez exécuter Kali Linux dans une VM avec USB passthrough."
@@ -202,7 +202,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**Recommandation pour les Mac à puce M :** Si vous achetez un adaptateur ALFA spécifiquement pour l'utiliser sur un Mac Apple Silicon avec Kali dans une VM, l'**AWUS036AXML (MT7921AUN)** est le meilleur choix. Son pilote intégré élimine l'étape de compilation DKMS et fonctionne de manière fiable sur les versions Kali ARM64. L'AWUS036ACH est fonctionnel mais nécessite le pilote out-of-tree RTL8812AU, ce qui ajoute une dépendance de maintenance à la disponibilité des en-têtes du noyau.
+**Recommandation pour les Mac à puce M :** Si vous achetez un adaptateur ALFA spécifiquement pour l'utiliser sur un Mac Apple Silicon avec Kali dans une VM, l'**AWUS036AXML (MT7921AUN)** est le meilleur choix. Son pilote intégré élimine l'étape de compilation DKMS et fonctionne de manière fiable sur les versions Kali ARM64. L'AWUS036ACH est fonctionnel mais nécessite le pilote out-of-tree RTL8812AU, ce qui ajoute une dépendance de maintenance à la disponibilité des en-têtes du noyau. Notez toutefois que l'injection dépend du noyau : des retours de la communauté font état d'une injection fonctionnelle avant le noyau 6.16, mais sur le noyau stock 6.16 et ultérieur (testé sur 6.17), l'AXML échoue au test d'injection de paquets (`aireplay-ng --test` : Found 0 APs / No Answer), ce qui empêche le deauth et la capture de handshake. La cause est une régression mac80211 chanctx, et non une limitation de la puce ; des pilotes communautaires patchés peuvent rétablir l'injection, mais le firmware verrouille toujours le débit (1/6 Mbps, pas d'injection HT/VHT). Le mode moniteur, l'AP et le WPA3 ne sont pas affectés. Si vous avez besoin de l'injection, choisissez plutôt l'AWUS036ACH ou l'AWUS036EACS.
 
 ---
 

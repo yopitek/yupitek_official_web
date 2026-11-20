@@ -3,7 +3,7 @@ title: "ALFA 无线网卡搭配 Kali NetHunter 完整技术指南 2026"
 description: "ALFA USB 无线网卡搭配 Kali NetHunter 移动渗透测试完整技术参考。涵盖台湾上市手机兼容性、MT7610U/MT7612U 免驱动 vs RTL8812AU DKMS 驱动分析、OTG 设置指南及实测验证结果。"
 date: 2026-06-09
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -102,7 +102,7 @@ NetHunter 支持超过 117 个设备模块，但大多数是旧型号。经过�
 |---|---|
 | 芯片组 | **MediaTek MT7610U** |
 | USB VID/PID | `0x0e8d:0x7610` |
-| 频段 | 2.4 GHz + 5 GHz (AC433) |
+| 频段 | 2.4 GHz + 5 GHz (AC600) |
 | 最大传输速率 | 150 Mbps (2.4 GHz) / 433 Mbps (5 GHz) |
 | USB | USB 2.0 |
 | Monitor Mode | ✅ 完整支持 |
@@ -159,7 +159,7 @@ ACH 多年来一直是 Kali 和 NetHunter 配置的事实标准。大多数 NetH
 |---|---|
 | 芯片组 | Realtek RTL8811AU |
 | USB VID/PID | `0x0bda:0x0811` |
-| 频段 | 2.4 GHz + 5 GHz (AC433) |
+| 频段 | 2.4 GHz + 5 GHz (AC600) |
 | USB | USB 2.0 |
 | Monitor Mode | ✅ 支持（与 RTL8812AU 同驱动系列） |
 | Packet Injection | ✅ 支持 |
@@ -168,13 +168,13 @@ ACH 多年来一直是 Kali 和 NetHunter 配置的事实标准。大多数 NetH
 | 驱动 | 外部驱动（与 RTL8812AU 共享 aircrack-ng 仓库） |
 | 产品页面 | [/zh-cn/products/alfa/awus036acs/](/zh-cn/products/alfa/awus036acs/) |
 
-ACS 是最便携的选择。300mW 的功耗对手机电池最为友好，超薄的外形可以轻松放入口袋。不足之处在于单流 AC433 性能以及与 RTL8812AU 系列共享的外部 DKMS 驱动依赖。
+ACS 是最便携的选择。300mW 的功耗对手机电池最为友好，超薄的外形可以轻松放入口袋。不足之处在于单流 AC600 性能以及与 RTL8812AU 系列共享的外部 DKMS 驱动依赖。
 
 ### 3.5 不推荐用于 NetHunter 的网卡
 
 | 网卡 | 芯片组 | 原因 |
 |---|---|---|
-| AWUS036AX / AWUS036AXER | RTL8832BU | 需内核 6.14+；Monitor Mode 在 Android 内核上稳定性未经验证 |
+| AWUS036AX / AWUS036AXER | RTL8832BU | 需内核 6.17+；Monitor Mode 在 Android 内核上稳定性未经验证 |
 | AWUS036AXML / AWUS036AXM | MT7921AUN | WiFi 6E / 6 GHz 在当前 NetHunter 内核版本中支持不稳定；不适合作为主要渗透测试网卡 |
 
 ### 3.6 驱动源码仓库
@@ -253,7 +253,7 @@ cat /kali/etc/os-release
 # 应显示 Kali Linux with NetHunter
 
 # 确认 USB OTG 已启用
-# 设置 → 开发人员选项 → OTG（具体位置因 Android 版本而异）
+# 设置 → 开发人员选项 → OTG (具体位置因 Android 版本而异)
 ```
 
 ### 5.2 硬件连接顺序
@@ -275,7 +275,7 @@ cat /kali/etc/os-release
 # 列出 USB 设备——确认网卡已显示
 lsusb
 
-# 各型号预期输出：
+# 各型号预期输出:
 # AWUS036ACHM: Bus 001 Device 002: ID 0e8d:7610 MediaTek Inc.
 # AWUS036ACM:  Bus 001 Device 002: ID 0e8d:7612 MediaTek Inc. MT7612U
 # AWUS036ACH:  Bus 001 Device 002: ID 0bda:8812 Realtek Semiconductor Corp.
@@ -291,7 +291,7 @@ lsusb
 # 验证自动加载
 lsmod | grep mt76
 
-# 如需手动加载（不常见）
+# 如需手动加载 (不常见)
 sudo modprobe mt76x0u
 ```
 
@@ -325,7 +325,7 @@ ip link show | grep wlan
 iw dev
 
 # 外部网卡通常显示为 wlan1
-# （wlan0 通常是手机内置 WiFi）
+# (wlan0 通常是手机内置 WiFi)
 ```
 
 ### 5.6 启用 Monitor Mode
@@ -339,12 +339,12 @@ sudo airmon-ng start wlan1
 
 # 验证 Monitor Mode 已启用
 iwconfig wlan1mon
-# 预期输出：Mode:Monitor
+# 预期输出: Mode:Monitor
 
-# 扫描附近网络（仅限授权测试）
+# 扫描附近网络 (仅限授权测试)
 sudo airodump-ng wlan1mon
 
-# 扫描所有频段（2.4 GHz + 5 GHz）
+# 扫描所有频段 (2.4 GHz + 5 GHz)
 sudo airodump-ng --band abg wlan1mon
 ```
 
@@ -396,7 +396,7 @@ Bus 001 Device 002: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b
 ### 7.3 Monitor Mode 验证
 
 ```bash
-# 预期 iwconfig 输出（成功时）
+# 预期 iwconfig 输出 (成功时)
 wlan1mon  IEEE 802.11  Mode:Monitor  Frequency:2.437 GHz  Tx-Power=20 dBm
           Retry short limit:7   RTS thr:off   Fragment thr:off
           Power Management:off

@@ -52,8 +52,8 @@ El AWUS036ACS es el punto de entrada más asequible de Alfa en la gama de doble 
 |---|---|---|
 | Windows XP–11 | ✅ Compatible | Controlador disponible en el sitio web de Alfa |
 | macOS 10.5–10.14 | ⚠️ Limitado | macOS 10.15+ y Apple Silicon NO compatibles |
-| Ubuntu | ✅ Compatible | Requiere instalación manual del controlador DKMS (morrownr/8821au). Sin soporte integrado en el kernel. |
-| Kali Linux | ✅ Compatible | Modo monitor + inyección de paquetes compatible. Controlador de la comunidad morrownr GitHub. |
+| Ubuntu | ✅ Compatible | Kernel 6.13 o superior: controlador mainline rtw88_8821au, sin instalación. Los kernels anteriores requieren el controlador DKMS (morrownr/8821au). |
+| Kali Linux | ✅ Compatible | Modo monitor + inyección de paquetes compatibles (GX10, Ubuntu 24.04, kernel 6.17: inyección 100 % en 2.4 GHz, 96 % en 5 GHz). Con kernel 6.13 o superior se usa el controlador mainline; con kernels anteriores, el controlador de la comunidad morrownr. No probado en un Kali real. |
 | NetHunter (Android) | ✅ Compatible | Conexión USB OTG; RTL8811AU tiene compatibilidad confirmada con NetHunter |
 
 ## Hardware Compatible

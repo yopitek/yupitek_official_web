@@ -64,7 +64,7 @@ AWUS036ACM は、Linux ユーザーが設定なしで即座に使えるアダプ
 |----|------|------|
 | Windows XP–11 | ✅ 対応 | Alfa ウェブサイトからドライバーを入手。Windows 10/11 推奨。|
 | macOS 10.7–10.12 | ⚠️ 限定対応 | 公式サポートは macOS 10.12 Sierra まで。macOS 11+ および Apple Silicon は非対応。|
-| Ubuntu 19.04+ | ✅ プラグ＆プレイ | カーネル内蔵 mt76 ドライバー（カーネル ≥ 4.19）。Ubuntu 20.04 LTS 以降はドライバーインストール不要。|
+| Ubuntu 19.04+ | ✅ プラグ＆プレイ | カーネル内蔵 mt76x2u ドライバー（カーネル ≥ 4.19）。Ubuntu 20.04 LTS 以降はドライバーインストール不要。|
 | Kali Linux 2019.3+ | ✅ プラグ＆プレイ | カーネル内蔵ドライバー。モニターモード確認済み。VIF 対応。5 GHz AP モードは `disable_usb_sg` モジュールパラメーターが必要な場合あり。|
 | NetHunter（Android）| ✅ 対応 | OTG USB；カーネル内蔵ドライバーにより RTL アダプターより広い Android 互換性。|
 
@@ -99,7 +99,7 @@ AWUS036ACM は、Linux ユーザーが設定なしで即座に使えるアダプ
 |---------|--------|
 | 公式製品ページ | https://www.alfa.com.tw/products/awus036acm_1 |
 | 公式ドキュメント | https://docs.alfa.com.tw/Product/AWUS036ACM/ |
-| Linux ドライバー情報（カーネル内蔵）| mt76 ドライバー — Linux カーネル ≥ 4.19 に内蔵、インストール不要 |
+| Linux ドライバー情報（カーネル内蔵）| mt76x2u ドライバー — Linux カーネル ≥ 4.19 に内蔵、インストール不要 |
 
 ## 製品仕様書ダウンロード
 

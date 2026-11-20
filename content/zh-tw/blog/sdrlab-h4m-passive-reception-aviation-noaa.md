@@ -99,7 +99,7 @@ RTL-SDR 這類接收器非常靈敏，靈敏到連**不想要的東西**也一�
 2. **釋出 USB 裝置**：RTL-SDR 會被 Linux 內建 TV 調諧器驅動（`dvb_usb_rtl28xxu`）搶佔，需先卸載再交給 `librtlsdr`：
    ```bash
    sudo rmmod dvb_usb_rtl28xxu
-   # 一勞永逸：將 blacklist 寫入 /etc/modprobe.d/blacklist-rtl.conf
+   # 一勞永逸: 將 blacklist 寫入 /etc/modprobe.d/blacklist-rtl.conf
    # blacklist dvb_usb_rtl28xxu
    ```
 3. **啟動 GQRX**，第一次執行會跳出接收器設定視窗：

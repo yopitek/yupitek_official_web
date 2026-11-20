@@ -3,7 +3,7 @@ title: "AWUS036AXML Monitor Mode Firmware Fix: Resolve Active Mode Crashes"
 description: "How to fix AWUS036AXML monitor mode firmware crashes on Kali Linux. Covers MT7921AUN firmware update, kernel version requirements, active vs passive mode workaround, and hcxdumptool alternative."
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Why does AWUS036AXML crash in active monitor mode?"
     answer: "MT7921AUN uses a firmware-based MAC architecture. The current Linux mt7921u driver and firmware combination does not fully implement the command path needed for active injection. Running aireplay-ng causes the interface to disappear."
@@ -55,6 +55,8 @@ In contrast, **passive monitoring** (sniffing frames already in the air) does no
 {{< alert "triangle-exclamation" >}}
 **Known firmware crash bug.** This is a confirmed issue in the Linux `mt7921u` driver as of early 2026. It affects AWUS036AXML and other MT7921AUN-based USB adapters. It may be resolved in future kernel or firmware updates — check the [driver install guide](/en/blog/install-alfa-driver-kali-ubuntu/) for the latest status.
 {{< /alert >}}
+
+Note: on stock kernel 6.16 and later (tested on 6.17) the main cause of failed injection is a mac80211 chanctx regression, not a chip limitation. Community patched drivers can make injection work, but the firmware still locks the rate (1/6 Mbps, no HT/VHT injection).
 
 ---
 

@@ -29,8 +29,6 @@ Ce framework basé sur les cartes sans fil ALFA détaille la méthodologie d'év
 Commencez par définir la portée :
 
 
-# Évaluation de la sécurité sans fil d'entreprise : Un cadre complet
-
 Ce guide offre aux équipes de sécurité informatique une approche structurée pour évaluer la sécurité des réseaux sans fil dans les environnements d'entreprise.
 
 ---

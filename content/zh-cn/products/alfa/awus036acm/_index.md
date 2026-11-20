@@ -64,7 +64,7 @@ AWUS036ACM 是 Linux 用户零配置即插即用的首选网卡。其 MediaTek M
 |---------|------|------|
 | Windows XP–11 | ✅ 支持 | 驱动程序请至 Alfa 官网下载，推荐 Windows 10/11 |
 | macOS 10.7–10.12 | ⚠️ 有限支持 | 官方支持至 macOS 10.12 Sierra，macOS 11+ 及 Apple Silicon 不支持 |
-| Ubuntu 19.04+ | ✅ 即插即用 | 内核内置 mt76 驱动（内核 ≥ 4.19），Ubuntu 20.04 LTS 以上零配置安装 |
+| Ubuntu 19.04+ | ✅ 即插即用 | 内核内置 mt76x2u 驱动（内核 ≥ 4.19），Ubuntu 20.04 LTS 以上零配置安装 |
 | Kali Linux 2019.3+ | ✅ 即插即用 | 内核内置驱动，已确认 Monitor Mode，支持 VIF，5 GHz AP 模式可能需要 `disable_usb_sg` 模块参数 |
 | NetHunter（Android）| ✅ 支持 | OTG USB；内核内置驱动使其兼容性优于 RTL 系列 |
 
@@ -99,7 +99,7 @@ AWUS036ACM 是 Linux 用户零配置即插即用的首选网卡。其 MediaTek M
 |------|------|
 | 官方产品页面 | https://www.alfa.com.tw/products/awus036acm_1 |
 | 官方文档 | https://docs.alfa.com.tw/Product/AWUS036ACM/ |
-| Linux 驱动（内核内置）| mt76 驱动 — Linux 内核 ≥ 4.19 已内置，无需安装 |
+| Linux 驱动（内核内置）| mt76x2u 驱动 — Linux 内核 ≥ 4.19 已内置，无需安装 |
 
 ## 产品规格书下载
 

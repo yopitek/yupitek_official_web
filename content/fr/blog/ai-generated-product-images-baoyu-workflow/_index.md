@@ -44,6 +44,8 @@ La collection comprend 19 skills, organisés en trois types :
 - **Type B — Sortie HTML :** Générer des documents web stylisés
 - **Type C — Texte / Utilitaire :** Traduction, formatage, publication sociale, compression
 
+Les mots-clés de déclenchement de la dernière colonne sont laissés dans leur forme originale et comprennent parfois des termes chinois, car les skills réagissent aussi aux requêtes en chinois (par exemple 为文章配图 = « illustrer un article », 翻译 = « traduire »).
+
 | # | Skill | Type | Objectif | Mots-clés de déclenchement |
 |---|-------|------|---------|-----------------|
 | 01 | `baoyu-article-illustrator` | Image | Génère automatiquement des illustrations pour chaque section d'un article | 为文章配图 · illustrate article · add images |
@@ -231,6 +233,8 @@ Génère des séries de cartes verticales (format 3:4) optimisées pour Xiaohong
 **Quand l'utiliser :** Posts Instagram, cartes produit XHS, contenu réseaux sociaux axé sur le produit.
 
 ### Variantes de style
+
+Les prompts d'exemple ci-dessous sont laissés en chinois, tels qu'ils ont été transmis au skill. La variante 1 signifie en substance : « carte de recommandation produit Xiaohongshu au style Notion épuré, présentant la carte Wi-Fi Alfa AWUS036ACM, fond blanc, mise en page sobre, points mis en avant : puce MT7612U / AC1200 double bande / Linux sans installation de pilote ».
 
 **Variante 1 — Notion · Par défaut**
 

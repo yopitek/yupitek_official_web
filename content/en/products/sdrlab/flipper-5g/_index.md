@@ -142,8 +142,8 @@ After completing the settings, restart the Flipper. You will see the correspondi
 
 ---
 
-**Product Page Link**: https://yupitek.com/zh-tw/products/sdrlab/flipper-5g/
-**Full User Manual**: https://doczhtw.yupitek.com/sdrlab/expansion/5g-board/
+**Product Page Link**: https://yupitek.com/en/products/sdrlab/flipper-5g/
+**Full User Manual**: https://doc.yupitek.com/sdrlab/expansion/5g-board/
 **Manufacturer store page (OpenSourceSDRLab)**: https://opensourcesdrlab.com/products/opensourcesdrlab-new-5g-multi-in-one-module-flipperzero-module-with-screen-flipperzero5g-expansion-board?VariantsId=10754
 
 {{< faq >}}

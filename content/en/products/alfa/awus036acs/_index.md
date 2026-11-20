@@ -52,8 +52,8 @@ The AWUS036ACS is Alfa's most affordable entry point into the dual-band 802.11ac
 |---|---|---|
 | Windows XP–11 | ✅ Supported | Driver available from Alfa website |
 | macOS 10.5–10.14 | ⚠️ Limited | macOS 10.15+ and Apple Silicon NOT supported |
-| Ubuntu | ✅ Supported | Manual DKMS driver install required (morrownr/8821au). No in-kernel support. |
-| Kali Linux | ✅ Supported | Monitor mode + packet injection supported. Community driver from morrownr GitHub. |
+| Ubuntu | ✅ Supported | Kernel 6.13+: mainline rtw88_8821au driver, no installation needed. Older kernels need the DKMS driver (morrownr/8821au). |
+| Kali Linux | ✅ Supported | Monitor mode + packet injection supported (GX10, Ubuntu 24.04, kernel 6.17: injection 100% on 2.4 GHz, 96% on 5 GHz). Kernel 6.13+ uses the mainline driver; older kernels use the morrownr community driver. Not tested on a real Kali install. |
 | NetHunter (Android) | ✅ Supported | OTG USB connection; RTL8811AU has confirmed NetHunter compatibility |
 
 ## Hardware Support

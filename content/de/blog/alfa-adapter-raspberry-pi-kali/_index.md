@@ -3,7 +3,7 @@ title: "ALFA WLAN-Adapter am Raspberry Pi mit Kali Linux: Einrichtungsanleitung"
 description: "Installieren Sie ALFA USB WLAN-Adapter auf einem Raspberry Pi mit Kali Linux ARM64. Enthält Kompilierung des RTL8812AU-Treibers für AWUS036ACH, Monitor Mode und portable Pentesting-Setups."
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -165,7 +165,7 @@ sudo modprobe mt7921u
 ip link show
 ```
 
-Wenn `lsusb` ein MediaTek-Gerät anzeigt und `ip link show` ein neues WLAN-Interface auflistet, ist der Adapter bereit. Die Unterstützung für den Monitor Mode beim MT7921AUN hat sich seit Kernel 5.18 deutlich verbessert, kann aber bei bestimmten Packet-Injection-Tests weniger zuverlässig sein als RTL8812AU-basierte Adapter. Für maximale Kompatibilität mit älteren Pentesting-Workflows bleibt der AWUS036ACH die bessere Wahl.
+Wenn `lsusb` ein MediaTek-Gerät anzeigt und `ip link show` ein neues WLAN-Interface auflistet, ist der Adapter bereit. Die Unterstützung für den Monitor Mode beim MT7921AUN hat sich seit Kernel 5.18 deutlich verbessert, kann aber bei bestimmten Packet-Injection-Tests weniger zuverlässig sein als RTL8812AU-basierte Adapter. Für maximale Kompatibilität mit älteren Pentesting-Workflows bleibt der AWUS036ACH die bessere Wahl. Beachten Sie jedoch, dass Injection vom Kernel abhängt: Für Kernel vor 6.16 gibt es Community-Berichte, dass Injection funktioniert, aber auf dem Stock-Kernel 6.16 und neuer (getestet mit 6.17) besteht der AXML den Packet-Injection-Test (`aireplay-ng --test`: Found 0 APs / No Answer) nicht, sodass Deauth und Handshake-Capture nicht möglich sind. Ursache ist eine mac80211-chanctx-Regression, keine Einschränkung des Chips; gepatchte Community-Treiber können Injection wiederherstellen, die Firmware sperrt jedoch weiterhin die Rate (1/6 Mbps, keine HT/VHT-Injection). Monitor Mode, AP und WPA3 sind nicht betroffen. Wenn Sie Injection benötigen, wählen Sie stattdessen den AWUS036ACH oder AWUS036EACS.
 
 ---
 

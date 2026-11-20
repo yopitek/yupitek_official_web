@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Por qué la tarjeta ALFA falla tras actualizar el kernel?"
     answer: "RTL8812AU usa un controlador fuera del núcleo; cada cambio de versión del kernel hace que el módulo compilado deje de ser compatible. DKMS puede reconstruirlo automáticamente, pero la falta de headers del kernel o configuraciones obsoletas causan fallos."
@@ -104,7 +104,7 @@ Si `ip link` muestra la interfaz pero desaparece cuando intentas usarla, salta d
 
 ## Corrección: Controlador RTL8812AU (AWUS036ACH, ACS, EACS)
 
-El RTL8812AU es el chipset ALFA más ampliamente usado para pruebas de penetración por su soporte de doble banda y modo monitor confiable. Requiere un controlador fuera del árbol y por tanto es el chipset más frecuentemente roto por las actualizaciones del kernel.
+El RTL8812AU es el chipset ALFA más ampliamente usado para pruebas de penetración por su soporte de doble banda y modo monitor confiable. Requiere un controlador fuera del árbol y por tanto es el chipset más frecuentemente roto por las actualizaciones del kernel. Nota: el EACS (RTL8821CU) usa el controlador `rtw88_8821cu`, integrado en el kernel desde la versión 6.2; con kernel ≥6.2 no necesita DKMS, y solo los kernels anteriores requieren un controlador de la comunidad.
 
 ### 4.1 — Instalar las cabeceras del kernel
 
@@ -390,5 +390,5 @@ Los fallos de controladores ALFA tras actualizaciones del kernel siguen un patr�
 1. [Controlador rtl8812au oficial de aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
 2. [Documentación oficial de DKMS](https://github.com/dell/dkms)
 3. [Documentación de gestión de paquetes de Kali Linux](https://www.kali.org/docs/general-use/package-management/)
-4. [Linux Kernel 官方文件](https://www.kernel.org/doc/html/latest/)
+4. [Documentación oficial del kernel Linux](https://www.kernel.org/doc/html/latest/)
 5. [Controlador MediaTek MT7921](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt7921)

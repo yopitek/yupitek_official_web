@@ -123,7 +123,7 @@ MediaTek MT7612U 驅動程式（`mt76x2u`）在 **4.19 版（2018 年 10 月）*
 # 確認模組已載入
 lsmod | grep mt76x2u
 
-# 如有需要，手動載入
+# 如有需要, 手動載入
 sudo modprobe mt76x2u
 ```
 
@@ -160,7 +160,7 @@ iwconfig wlan0mon
 sudo ip link set wlan0 down
 sudo iw dev wlan0 set type monitor
 sudo ip link set wlan0 up
-# 或透過 airmon-ng：
+# 或透過 airmon-ng:
 sudo airmon-ng start wlan0
 ```
 
@@ -198,7 +198,7 @@ sudo aireplay-ng -0 3 -a [BSSID] wlan0mon
 | Kali Live USB | 需在當次工作階段中安裝驅動程式 | 開箱即用 |
 | VirtualBox／VMware 直通 | 在虛擬機內安裝驅動程式後可用 | 在虛擬機內立即可用 |
 
-ACM 的零安裝體驗，在 Live 開機環境、客戶提供的設備，或時間緊迫的 CTF 競賽設置等場景中，是真實且顯著的優勢。
+ACM 的零安裝體驗，在 Live 開機環境、客戶提供的設備，或時間緊迫的 CTF 競賽配置等場景中，是真實且顯著的優勢。
 
 ---
 
@@ -238,7 +238,7 @@ ACM 的零安裝體驗，在 Live 開機環境、客戶提供的設備，或時�
 **選擇 [AWUS036ACM](/zh-tw/products/alfa/awus036acm/)，適合：**
 - 零驅動程式編譯的即插即用簡便體驗
 - 輕便、低調的行動任務
-- 預算有限的設置或作為備用網路卡
+- 預算有限的配置或作為備用網路卡
 - Kali Live USB 工作流程
 - 偏好核心原生穩定性而非社群驅動程式的場景
 

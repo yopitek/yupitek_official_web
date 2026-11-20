@@ -1,5 +1,5 @@
 ---
-title: "\"ALFA Wireless Card Compatibility with NVIDIA Jetson Nano\""
+title: "ALFA Wireless Card Compatibility with NVIDIA Jetson Nano"
 date: 2026-09-03
 draft: false
 slug: "alfa-nvidia-jetson-nano-compatibility"
@@ -17,14 +17,14 @@ categories:
 description: "Jetson Nano supports many ALFA network cards, with Realtek models being practical, but Wi-Fi 6E models are not compatible due to kernel limitations."
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. Problem Summary
 
 Customer Inquiry: "Can the ALFA series USB wireless network cards be used on the NVIDIA Jetson Nano development board?"
 
-Short Conclusion: The Jetson Nano can use most ALFA network cards, but the key limitation lies in the older Linux kernel version 4.9 of JetPack 4.x (determined by the mother: among ALFA's current 9 USB network cards, 3 are mature and available, 2 require advanced compilation, 2 are unverified, and 2 are not available). Realtek chip models (AWUS036ACH / ACS / EACS) can be directly compiled with out-of-tree drivers, making them a practical choice for the Jetson Nano; MediaTek MT7612U / MT7610U require backporting or self-compilation of the mt76 driver; the Wi-Fi 6E model MT7921AUN (AWUS036AXML / AXM) is actually not available on the Jetson Nano due to the need for kernel 5.19+. For penetration testing scenarios, AWUS036ACH (RTL8812AU) is the first choice; for general internet browsing, the first choice is AWUS036ACH (stable) or AWUS036ACM (requires mt76 compilation).
+Short Conclusion: The Jetson Nano can use most ALFA network cards, but the key limitation lies in the older Linux kernel version 4.9 of JetPack 4.x (determined by the mother: among ALFA's current 9 USB network cards, 3 are mature and available, 2 require advanced compilation, 2 are unverified, and 2 are not available). Realtek chip models (AWUS036ACH / ACS / EACS) can be directly compiled with out-of-tree drivers, making them a practical choice for the Jetson Nano; MediaTek MT7612U / MT7610U require backporting or self-compilation of the mt76 driver; the Wi-Fi 6E model MT7921AUN (AWUS036AXML / AXM) is actually not available on the Jetson Nano due to the need for kernel 5.18+. For penetration testing scenarios, AWUS036ACH (RTL8812AU) is the first choice; for general internet browsing, the first choice is AWUS036ACH (stable) or AWUS036ACM (requires mt76 compilation).
 
 ## 2. Analysis of Target Hardware Specification Architecture
 
@@ -62,10 +62,10 @@ The kernel 4.9 on the Jetson Nano is the core variable for compatibility determi
 |---|---|---|
 | mt76x2u (MT7612U) | 4.19 | ❌ Requires backport / self-compilation |
 | mt76x0u (MT7610U) | 4.19 | ❌ Requires backport / self-compilation |
-| mt7921u (MT7921AUN) | 5.19 | ❌ Unusable (gap too large) |
-| rtl8812au (RTL8812AU) | Never entered mainline | ✅ Can compile out-of-tree driver |
-| rtl8821cu (RTL8811CU) | Never entered mainline | ✅ Can compile out-of-tree driver |
-| rtw89 (RTL8832BU) | 5.16 (PCIe) / USB gradually integrated | ❌ Requires self-compilation, compatibility unknown |
+| mt7921u (MT7921AUN) | 5.18 | ❌ Unusable (gap too large); on the GX10 (kernel 6.17) monitor works but injection fails (mainly the mac80211 chanctx regression since kernel 6.16, plus firmware rate locking; not a chip limitation) |
+| rtl8812au (RTL8812AU) | 6.13 (rtw88_8812au) | ✅ Kernel 4.9 has no built-in driver, compile the out-of-tree driver; on the GX10 (kernel 6.17) the in-kernel driver tested at 100% injection on both bands |
+| rtl8821cu (RTL8821CU) | Not in mainline before kernel 6.2 (in-kernel `rtw88_8821cu` since 6.2); absent from kernel 4.9 | ✅ Can compile out-of-tree driver (kernel 4.9 scenario, not tested on Jetson here) |
+| rtw89 (RTL8832BU) | 6.17 (rtw89_8852bu) | ❌ Not in kernel 4.9, requires self-compilation, compatibility unknown; on the GX10 (kernel 6.17) monitor mode works, 2.4G injection: AX 96%, AXER 73% |
 
 ### 2.4 USB Power Supply Limitations
 
@@ -82,6 +82,6 @@ As of September 2026, ALFA Network's current USB wireless network card product l
 
 | Model | Wi-Fi Level | Chipset | Interface | Jetson Nano Compatibility |
 |---|---|---|---|---|
-| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ❌ Requires kernel 5.19+, not available |
+| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ❌ Requires kernel 5.18+, not available |
 | AWUS036AXM | Wi-Fi 6E | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ❌ Same as above |
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ Requires self-compilation of rtl8852bu

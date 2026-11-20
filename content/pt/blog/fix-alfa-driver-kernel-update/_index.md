@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Por que o adaptador ALFA para de funcionar após atualização de kernel?"
@@ -106,7 +106,7 @@ Se `ip link` mostra a interface mas ela desaparece quando você tenta usá-la, v
 
 ## Correção: Driver RTL8812AU (AWUS036ACH, ACS, EACS)
 
-O RTL8812AU é o chipset ALFA mais amplamente usado para testes de penetração por causa de seu suporte dual-band e modo monitor confiável. Requer um driver fora da árvore e, portanto, é o chipset mais frequentemente quebrado por atualizações do kernel.
+O RTL8812AU é o chipset ALFA mais amplamente usado para testes de penetração por causa de seu suporte dual-band e modo monitor confiável. Requer um driver fora da árvore e, portanto, é o chipset mais frequentemente quebrado por atualizações do kernel. **Nota sobre o EACS:** o AWUS036EACS (RTL8821CU) usa o driver rtw88_8821cu, que é nativo no kernel 6.2 ou superior e não precisa de DKMS; um driver da comunidade só é necessário em kernels anteriores ao 6.2.
 
 ### 4.1 — Instalar os headers do kernel
 

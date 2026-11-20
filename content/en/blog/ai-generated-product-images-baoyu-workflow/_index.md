@@ -48,6 +48,8 @@ There are 19 skills in the collection, organized into three types:
 - **Type B — HTML Output:** Generate styled web documents
 - **Type C — Text / Utility:** Translation, formatting, social publishing, compression
 
+The Trigger Keywords column keeps the original Simplified Chinese phrases because the skills respond to them as typed; English equivalents are listed alongside.
+
 | # | Skill | Type | Purpose | Trigger Keywords |
 |---|-------|------|---------|-----------------|
 | 01 | `baoyu-article-illustrator` | Image | Auto-generates illustrations for each section of an article | 为文章配图 · illustrate article · add images |
@@ -235,6 +237,8 @@ Generates vertical card series (3:4 aspect ratio) optimized for Xiaohongshu (XHS
 **When to use:** Instagram posts, XHS product cards, product-focused social media content.
 
 ### Style Variants
+
+The XHS prompts below are kept in their original Simplified Chinese because they are the exact prompts used to generate the cards shown. Each prompt describes the card style (Notion, bold, pastel), the AWUS036ACM topic, the layout, and the key labels to display.
 
 **Variant 1 — Notion · Default**
 

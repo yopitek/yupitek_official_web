@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi"]
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ALFA USBアダプターはLinuxでWiFiホットスポットとして使えますか？"
     answer: "チップセットによります。AWUS036ACM（MT7612U）は完全サポートでプラグアンドプレイ、AWUS036ACH（RTL8812AU）は条件付きサポート、AWUS036AXMLは部分サポートでチューニングが必要です。"
@@ -23,11 +23,9 @@ faq:
 ---
 > 「ALFAのUSB無線LANアダプタは、Kali Linux / Ubuntu / Raspberry PiでWiFiホットスポット（Soft AP）として使えますか？」
 
-# ALFAネットワーク Soft AP完全ガイド2026：Kali Linux、Ubuntu、Debian、Raspberry Pi 4/5でWiFiホットスポットを構築
-
 
 {{< tldr >}}
-ALFAアダプターのSoft AP互換性はチップドライバーに依存します。AWUS036ACMが全プラットフォーム安定の首选、AWUS036ACHは使用可能ですがWPA3非対応、AWUS036AXMLはBluetooth無効化とファームウェア更新が必要、RTL8832BUは使用非推奨です。
+ALFAアダプターのSoft AP互換性はチップドライバーに依存します。AWUS036ACMが全プラットフォームで安定した第一候補、AWUS036ACHは使用可能ですがWPA3非対応、AWUS036AXMLはBluetooth無効化とファームウェア更新が必要、RTL8832BU（AX / AXER）は kernel 6.17 以降の内蔵ドライバーで利用できます。
 {{< /tldr >}}
 
 
@@ -94,11 +92,11 @@ Yopitekが現在販売しているALFA製品ライン、チップセット、お
 | モデル | チップセット | ドライバタイプ | WiFi規格 | Soft AP評価 |
 |--------|------------|--------------|---------|-----------|
 | **AWUS036ACM** | MediaTek MT7612U | インカーネル（kernel 4.19+） | WiFi 5 AC1200 デュアルバンド | ✅ 完全サポート |
-| AWUS036ACH | Realtek RTL8812AU | アウトオブカーネル（6.14+からインカーネル） | WiFi 5 AC1200 デュアルバンド | ⚠️ 条件付き |
+| AWUS036ACH | Realtek RTL8812AU | アウトオブカーネル（6.13+からインカーネル） | WiFi 5 AC1200 デュアルバンド | ⚠️ 条件付き |
 | AWUS036AXML | MediaTek MT7921AUN | インカーネル（5.18+、APモード 5.19+） | WiFi 6E AX3000 トライバンド | ⚠️ 部分サポート |
 | AWUS036AXM | MediaTek MT7921AUN | インカーネル（同上） | WiFi 6E AX3000 トライバンド | ⚠️ 部分サポート |
-| AWUS036AX | Realtek RTL8832BU | アウトオブカーネル（kernel 6.12+推奨） | WiFi 6 AX1800 デュアルバンド | ❌ 非推奨 |
-| AWUS036AXER | Realtek RTL8832BU | アウトオブカーネル（同上） | WiFi 6 AX1800 デュアルバンド | ❌ 非推奨 |
+| AWUS036AX | Realtek RTL8832BU | カーネル内蔵 rtw89_8852bu（kernel 6.17+）、それ以前はコミュニティ版 DKMS ドライバー | WiFi 6 AX1800 デュアルバンド | ✅ 利用可（kernel 6.17+） |
+| AWUS036AXER | Realtek RTL8832BU | カーネル内蔵 rtw89_8852bu（kernel 6.17+、AX と同じ） | WiFi 6 AX1800 デュアルバンド | ✅ 利用可（kernel 6.17+） |
 
 > **注記**：AWUS036ACHM（MT7610U）は製造終了となり、Yopitek製品ページには掲載されていません。本記事では現行販売製品のみを対象とします。
 
@@ -126,8 +124,8 @@ MT7612Uは、ALFAの現行製品の中で最も安定したSoft APチップセ�
 interface=wlan1
 driver=nl80211
 ssid=YourNetworkName
-hw_mode=a                     # 5GHz；2.4GHzの場合はgに変更
-channel=36                    # UNII-1、非DFS、最も安全な選択
+hw_mode=a                     # 5GHz; 2.4GHzの場合はgに変更
+channel=36                    # UNII-1, 非DFS, 最も安全な選択
 ieee80211n=1
 ieee80211ac=1
 wmm_enabled=1
@@ -139,7 +137,7 @@ vht_capab=[RXLDPC][TX-STBC-2BY1][SHORT-GI-80][RX-ANTENNA-PATTERN][TX-ANTENNA-PAT
 vht_oper_chwidth=1
 vht_oper_centr_freq_seg0_idx=42    # channel 36に対応する中心周波数インデックス
 
-# セキュリティ：WPA2 + WPA3混合モード
+# セキュリティ: WPA2 + WPA3混合モード
 auth_algs=1
 wpa=2
 wpa_key_mgmt=WPA-PSK SAE       # WPA2 + WPA3デュアルサポート
@@ -175,18 +173,18 @@ RTL8812AUはALFAの最も象徴的なペネトレーションテスト用チッ�
 
 1. **WPA3非対応**：RTL8812AUドライバはWPA3対応と表示されますが、複数のユーザーが実際には機能しないことを確認しています。**WPA2-PSKのみ。**
 2. **VIF非対応**：同一カードでAP + Monitorモードを同時実行できません。APとモニタリングの両方が必要な場合は、2枚のアダプタが必要です。
-3. **Kali Linux 2025.x ドライバ問題**：最新Kaliのaircrack-ng/rtl8812auドライバに互換性問題があります — 特定の古いコミット（`63cf0b4`）にロールバックする必要があります。kernel 6.14+のインカーネルrtw88ドライバで改善が期待されます。
+3. **Kali Linux 2025.x ドライバ問題**：最新Kaliのaircrack-ng/rtl8812auドライバに互換性問題があります — 特定の古いコミット（`63cf0b4`）にロールバックする必要があります。kernel 6.13+のインカーネルrtw88ドライバで改善が期待されます。
 4. **高消費電力**：最大約800mA — Raspberry Piで複数のUSB機器を同時接続するとシステム不安定の原因に。電源付きUSBハブの使用を推奨。
 
 ### hostapd設定（RTL8812AU）
 
 ```ini
 # /etc/hostapd/hostapd.conf — AWUS036ACH (RTL8812AU)
-# 注意：MT7612Uとはcapabilitiesが完全に異なります！
+# 注意: MT7612Uとはcapabilitiesが完全に異なります!
 ht_capab=[HT40+][HT40-][GF][SHORT-GI-20][SHORT-GI-40][TX-STBC][RX-STBC1]
 vht_capab=[RXLDPC][SHORT-GI-80][TX-STBC-2BY1][RX-STBC-1][MAX-A-MPDU-LEN-EXP3][RX-ANTENNA-PATTERN][TX-ANTENNA-PATTERN]
 
-# セキュリティ：WPA2のみ、WPA3は追加しないでください
+# セキュリティ: WPA2のみ, WPA3は追加しないでください
 wpa=2
 wpa_key_mgmt=WPA-PSK
 wpa_pairwise=CCMP
@@ -222,7 +220,7 @@ sudo modprobe 88XXau
 
 ### Soft APステータス：⚠️ 部分サポート — 既知のファームウェア/ドライバ問題あり
 
-AWUS036AXMLとAWUS036AXMはWiFi 6Eトライバンドフラッグシップで、2.4GHz、5GHz、新しい6GHz帯をカバーします。インカーネルドライバ`mt7921u`はkernel 5.18から組み込まれ、APモードサポートは5.19で正式追加されました。しかし、MT7921AUNチップはBluetooth 5.2も統合しており、これが2024–2025年のコミュニティ最大の頭痛の種となっています。
+AWUS036AXMLとAWUS036AXMはWiFi 6Eトライバンドフラッグシップで、仕様上2.4GHz、5GHz、新しい6GHz帯をカバーします（6GHzはAXMLのみ実測済み、AXMは未実測）。インカーネルドライバ`mt7921u`はkernel 5.18から組み込まれ、APモードサポートは5.19で正式追加されました。しかし、MT7921AUNチップはBluetooth 5.2も統合しており、これが2024–2025年のコミュニティ最大の頭痛の種となっています。
 
 ### APモードのカーネルバージョンマイルストーン
 
@@ -251,9 +249,9 @@ sudo reboot
 ```bash
 # 現在のファームウェアバージョンを確認
 dmesg | grep "WM Firmware"
-# 表示されるべき：Build Time: 20241106151045 またはそれ以降
+# 表示されるべき: Build Time: 20241106151045 またはそれ以降
 
-# 古い場合、kernel.orgからダウンロード
+# 古い場合, kernel.orgからダウンロード
 sudo cp WIFI_MT7961_patch_mcu_1a_2_hdr.bin /lib/firmware/mediatek/
 sudo cp WIFI_RAM_CODE_MT7961_1a.bin /lib/firmware/mediatek/
 sudo reboot
@@ -282,20 +280,29 @@ WiFi 6Eの6GHz帯が必要で、時折設定調整することを厭わない場
 
 ---
 
-## 6. AWUS036AX / AWUS036AXER（RTL8832BU）— Soft APには非推奨 {#ax}
+## 6. AWUS036AX / AWUS036AXER（RTL8832BU）— kernel 6.17 以降なら Soft AP に利用可能 {#ax}
 
-### Soft APステータス：❌ 非推奨
+### Soft APステータス：✅ kernel 6.17 以降で利用可能（古い kernel ではコミュニティ版 DKMS ドライバーが必要）
 
-WiFi 6対応ですが、RTL8832BUチップは「マルチステート」デバイスです — デフォルトでUSB大容量ストレージとして列挙され、Linuxで無線アダプタとして機能するにはUSB mode switchが必要です。
+ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17）で内蔵の `rtw89_8852bu` ドライバーを使って実測したところ、AWUS036AX と AWUS036AXER（同一チップ・同一ドライバー）は同じ挙動を示し、2.4 GHz と 5 GHz のどちらでも Soft AP が動作しました。
 
-**主な問題点：**
+**実測結果（kernel 6.17）：**
 
-1. **マルチステートデバイス**：展開の複雑さが増す — 接続してもすぐにネットワークアダプタとして認識されない
-2. **モニターモード制限**：kernel 6.14未満では不完全なサポート
-3. **Soft APコミュニティ事例が極めて少ない**：MT7612UやRTL8812AUと比較して、RTL8832BUのSoft AP実例はほぼ存在しない
-4. **コミュニティドキュメントが明確に非推奨**：morrownr/USB-WiFiはこのチップセットを「ペネトレーションテストに非推奨」とマーク
+1. **APモード**：2.4 GHz（802.11n）と 5 GHz（VHT 80 MHz）の両方で動作
+2. **VIF（STA + AP）**：動作 — 同一チャンネルでクライアント接続と AP インターフェースを並行稼働
+3. **WPA3-SAE AP**：2.4 GHz で動作（iPhone 15 Pro が接続、MFP 有効。5 GHz は未実測）
+4. **Monitor／インジェクション**：2.4 GHz・5 GHz ともに monitor の受信が強力。2.4 GHz のインジェクションは AX 96%、AXER 73%、5 GHz も利用可。エンドツーエンドの WPA ハンドシェイク取得に成功
+5. **非対応**：IBSS、Mesh、Active monitor
 
-> Yopitekの公式ドキュメントは明確に述べています：「AWUS036AX / AWUS036AXERのRTL8832BUチップセットはkernel 6.14未満で制限付きモニターモードサポートのみであり、ペネトレーションテストには推奨されません。AWUS036ACHまたはAWUS036AXMLを使用してください。」
+**注意事項：**
+
+- **kernel バージョンが前提**：rtw89_8852bu は kernel 6.17 から内蔵されています。古い kernel ではコミュニティ版 DKMS ドライバー（rtl8852bu）が必要で、その場合 monitor が制限されることがあり、VIF も非対応です。
+- **USB モード**：一部の個体は CD-ROM モード（`0bda:1a2b`）で列挙され、`usb_modeswitch -v 0bda -p 1a2b -K` が必要な場合があります。今回のテスト機は最初から無線アダプターとして列挙されました。
+- **コミュニティ事例**：MT7612U や RTL8812AU と比べると、このチップの Soft AP 事例はまだ少なめです。
+
+> Yopitek の実測結果（ASUS GX10、kernel 6.17）：内蔵ドライバーでは AWUS036AX / AWUS036AXER の monitor 受信は強力でパケットインジェクションも動作するため、ペネトレーションテストにも利用できます。monitor が制限されるのは、古い kernel でコミュニティ版 DKMS ドライバーを使う場合に限られます。
+>
+> 補足：stock kernel 6.16以降（6.17で実測）では、AWUS036AXMLのmonitor、AP、WPA3、VIFは利用できますが、パケットインジェクションのテストは失敗しました（aireplay-ng --test で Found 0 APs / No Answer）。原因はチップ自体ではなくmac80211のchanctxリグレッションです。インジェクションが必要な場合はAWUS036ACH、EACS、ACS、AXをご利用ください。
 
 ---
 
@@ -336,9 +343,9 @@ WiFi 6対応ですが、RTL8832BUチップは「マルチステート」デバ�
 
 | プラットフォーム | Soft AP | 備考 |
 |---------------|---------|------|
-| Kali Linux | ❌ | マルチステート、USB mode switch必要、コミュニティ事例極少 |
-| Ubuntu / Debian | ❌ | 同上 |
-| Raspberry Pi 4 / 5 | ❌ | 同上 |
+| Kali Linux | ✅ | kernel 6.17+ では内蔵 rtw89_8852bu。古い kernel はコミュニティ版 DKMS ドライバーが必要 |
+| Ubuntu / Debian | ✅ | Ubuntu 24.04 は HWE kernel 6.17+ が必要（GA 6.8／HWE 6.14 はコミュニティ版 DKMS ドライバーが必要）。Debian は kernel 6.17+ が必要 |
+| Raspberry Pi 4 / 5 | ⚠️ | Pi では未検証。kernel 6.17 未満ではコミュニティ版 DKMS ドライバーが必要 |
 
 ---
 
@@ -351,11 +358,11 @@ WiFi 6対応ですが、RTL8832BUチップは「マルチステート」デバ�
 ```bash
 # アダプタが検出されたことを確認
 lsusb | grep MediaTek
-# 期待される出力：Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U
+# 期待される出力: Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U
 
 # ドライバがロードされたことを確認
 dmesg | grep mt76
-# 期待される出力：mt76x2u 1-1.4:1.0 wlx00c0ca9821a5: renamed from wlan0
+# 期待される出力: mt76x2u 1-1.4:1.0 wlx00c0ca9821a5: renamed from wlan0
 
 # APモードサポートを確認
 iw list | grep -A 10 "Supported interface modes"
@@ -378,13 +385,13 @@ interface=wlan0
 driver=nl80211
 ssid=Yupitek_AP
 hw_mode=a                       # a=5GHz, g=2.4GHz
-channel=36                      # UNII-1、非DFS、最も安全
+channel=36                      # UNII-1, 非DFS, 最も安全
 ieee80211n=1
 ieee80211ac=1
 wmm_enabled=1
 country_code=TW
 
-# HT/VHT設定（MT7612U専用）
+# HT/VHT設定 (MT7612U専用)
 ht_capab=[LDPC][HT40+][HT40-][GF][SHORT-GI-20][SHORT-GI-40][TX-STBC][RX-STBC1]
 vht_capab=[RXLDPC][TX-STBC-2BY1][SHORT-GI-80][RX-ANTENNA-PATTERN][TX-ANTENNA-PATTERN]
 vht_oper_chwidth=1
@@ -422,7 +429,7 @@ sudo ip addr add 192.168.10.1/24 dev wlan0
 # IPフォワーディングを有効化
 sudo sysctl net.ipv4.ip_forward=1
 
-# NATを設定（eth0がアップストリームインターフェースと仮定）
+# NATを設定 (eth0がアップストリームインターフェースと仮定)
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
 sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
@@ -473,7 +480,7 @@ sudo systemctl enable dnsmasq
 ```bash
 # 1. IPフォワーディングが有効か確認
 cat /proc/sys/net/ipv4/ip_forward
-# 出力されるべき：1
+# 出力されるべき: 1
 
 # 2. NATルールが存在するか確認
 sudo iptables -t nat -L POSTROUTING -v
@@ -541,7 +548,7 @@ VIF（Virtual Interface）を使用すると、単一の物理アダプタで複
 # 既存のwlan1に加えて追加のAP仮想インターフェースを作成
 sudo iw phy phy1 interface add ap0 type __ap
 sudo ip link set ap0 up
-# これでwlan1はアップストリームに接続し、ap0はhostapdを実行
+# これでwlan1はアップストリームに接続し, ap0はhostapdを実行
 ```
 
 MediaTekインカーネルドライバ（mt76x2u、mt7921u）のみがVIFを完全にサポートしています。Realtekアウトオブカーネルドライバには基本的にこの機能がありません — AP + Monitorを同時に実行する必要がある場合は、2枚のアダプタが必要です。
@@ -555,7 +562,7 @@ MediaTekインカーネルドライバ（mt76x2u、mt7921u）のみがVIFを完�
 | MT7612U | AWUS036ACM | ✅ | ✅ SAEネイティブサポート |
 | MT7921AUN | AWUS036AXML / AXM | ✅ | ✅ SAEネイティブサポート |
 | RTL8812AU | AWUS036ACH | ✅ | ❌ サポート表示あるが機能せず |
-| RTL8832BU | AWUS036AX / AXER | ✅ | ⚠️ 未確認 |
+| RTL8832BU | AWUS036AX / AXER | ✅ | ✅ kernel 6.17 で実測済み（`sae_pwe=0`、MFP 有効） |
 
 ---
 
@@ -623,7 +630,7 @@ DFS（Dynamic Frequency Selection）チャンネル（ch100–ch140）にはカ�
 | 🥇 **最推奨** | **AWUS036ACM** | 全員、特に初めてSoft APを構築する方 | 全プラットフォーム安定、手間ゼロ |
 | 🥈 使用可能 | AWUS036ACH | すでにこのモデルをお持ちの方 | ドライバ必要、WPA3なし |
 | 🥉 上級者向け | AWUS036AXML | WiFi 6Eが必要で設定調整を厭わない方 | 6GHzの利点、手動修正必要 |
-| ❌ スキップ | AWUS036AX / AXER | N/A | Soft APのコミュニティ検証なし |
+| ✅ kernel 6.17+ で利用可 | AWUS036AX / AXER | Wi-Fi 6 AP。monitor／インジェクションも利用可 | 内蔵ドライバー。2.4 / 5 GHz AP と VIF を実測、WPA3 は 2.4 GHz で実測 |
 
 ### 🎯 判断ガイド
 
@@ -647,7 +654,7 @@ Soft AP構築の核心は、WiFi速度でもアンテナの本数でもありま
 
 調査した全ALFA製品の中で、**AWUS036ACM（MT7612U）**は「インカーネルドライバ、WPA3ネイティブサポート、VIF仮想インターフェース、低消費電力、クロスプラットフォーム安定性」を同時に満たす唯一のアダプタです。Soft APにおけるゴールドスタンダードです。
 
-AWUS036ACH（RTL8812AU）は制限を受け入れれば使用可能です。AWUS036AXML/AXM（MT7921AUN）は大きな可能性を秘めていますが、ドライバの成熟度はまだ発展途上です。AWUS036AX/AXER（RTL8832BU）は、この用途には推奨しません。
+AWUS036ACH（RTL8812AU）は制限を受け入れれば使用可能です。AWUS036AXML/AXM（MT7921AUN）は大きな可能性を秘めていますが、ドライバの成熟度はまだ発展途上です。AWUS036AX/AXER（RTL8832BU）は kernel 6.17 以降の内蔵ドライバーで問題なく使えます（AP、VIF、WPA3 を実測）。古い kernel ではコミュニティ版 DKMS ドライバーが必要です。
 
 **Raspberry PiやKali Linuxで初めてSoft APを設定するなら — ACMを選んでください。後悔はしません。**
 

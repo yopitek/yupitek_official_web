@@ -7,7 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 featureimage: /images/blog/alfa-nethunter-technical-guide-hero.png
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 tags: ["nethunter", "kali-linux", "alfa-network", "wireless-security", "android", "usb-otg", "monitor-mode", "packet-injection", "mt7610u", "mt7612u", "rtl8812au"]
 
 faq:
@@ -100,7 +100,7 @@ Usando o OnePlus 11 5G como plataforma de referência:
 |---|---|
 | Chipset | **MediaTek MT7610U** |
 | USB VID/PID | `0x0e8d:0x7610` |
-| Bandas | 2.4 GHz + 5 GHz (AC433) |
+| Bandas | 2.4 GHz + 5 GHz (AC600) |
 | Taxa Máxima | 150 Mbps (2.4 GHz) / 433 Mbps (5 GHz) |
 | USB | USB 2.0 |
 | Modo Monitor | ✅ Suporte completo |
@@ -157,7 +157,7 @@ O ACH tem sido o padrão de facto para configurações Kali e NetHunter por anos
 |---|---|
 | Chipset | Realtek RTL8811AU |
 | USB VID/PID | `0x0bda:0x0811` |
-| Bandas | 2.4 GHz + 5 GHz (AC433) |
+| Bandas | 2.4 GHz + 5 GHz (AC600) |
 | USB | USB 2.0 |
 | Modo Monitor | ✅ Suportado (mesma família de driver do RTL8812AU) |
 | Injeção de Pacotes | ✅ Suportado |
@@ -166,13 +166,13 @@ O ACH tem sido o padrão de facto para configurações Kali e NetHunter por anos
 | Driver | Externo (repositório aircrack-ng compartilhado com RTL8812AU) |
 | Página do Produto | [/pt/products/alfa/awus036acs/](/pt/products/alfa/awus036acs/) |
 
-O ACS é a opção mais portátil. Com consumo de 300mW, é o que menos exige da bateria do telefone, e seu formato fino desaparece no bolso. A desvantagem é o desempenho single-stream AC433 e a dependência do driver DKMS externo compartilhado com a família RTL8812AU.
+O ACS é a opção mais portátil. Com consumo de 300mW, é o que menos exige da bateria do telefone, e seu formato fino desaparece no bolso. A desvantagem é o desempenho single-stream AC600 e a dependência do driver DKMS externo compartilhado com a família RTL8812AU.
 
 ### 3.5 Adaptadores Não Recomendados para NetHunter
 
 | Adaptador | Chipset | Motivo |
 |---|---|---|
-| AWUS036AX / AWUS036AXER | RTL8832BU | Requer kernel 6.14+; estabilidade do modo monitor não verificada em kernels Android |
+| AWUS036AX / AWUS036AXER | RTL8832BU | Requer kernel 6.17+; estabilidade do modo monitor não verificada em kernels Android |
 | AWUS036AXML / AWUS036AXM | MT7921AUN | Suporte a WiFi 6E / 6 GHz instável nas versões atuais do kernel NetHunter; inadequado como adaptador principal de pentest |
 
 ### 3.6 Repositórios de Código Fonte dos Drivers

@@ -3,7 +3,7 @@ title: "What is Packet Injection? Testing Your WiFi Adapter Compatibility with K
 description: "Understand WiFi packet injection, why it requires specific adapters, how to test your ALFA Network adapter with aireplay-ng, and which chipsets support injection on Kali Linux."
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "What is WiFi packet injection?"
     answer: "Packet injection is the ability of an adapter to transmit arbitrary 802.11 frames directly to the wireless medium, letting tools like aireplay-ng construct and send management, control, and data frames."
@@ -12,7 +12,7 @@ faq:
   - question: "How do I test if my adapter supports packet injection?"
     answer: "Enable monitor mode first, then run aireplay-ng --test wlan0mon. If the output says Injection is working!, injection is confirmed. Above 80% success rate is reliable."
   - question: "Which ALFA adapters support packet injection?"
-    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN), and AWUS036ACM (MT7612U) all fully support it with the correct drivers on Kali Linux."
+    answer: "AWUS036ACH (RTL8812AU) and AWUS036ACM (MT7612U) fully support it with the correct drivers on Kali Linux. AWUS036AXML (MT7921AUN) had community reports of working injection on kernels before 6.16, but in our tests on stock kernel 6.17 the injection test failed (monitor, AP and WPA3 still work); use ACH, EACS, ACS or AX when you need injection."
   - question: "How do I improve packet injection success rate below 50%?"
     answer: "Move closer to the target AP, lock the monitor interface to the same channel, check TX Power settings, and verify the driver is the aircrack-ng version, not the distro default."
 draft: false
@@ -30,7 +30,7 @@ Packet injection — formally known as **802.11 frame injection** — is the abi
 ## What Is Packet Injection?
 
 {{< tldr >}}
-Packet injection is the ability to transmit arbitrary 802.11 frames, limited by the driver rather than hardware. ALFA adapters with RTL8812AU, MT7612U, or MT7921AUN chipsets fully support it with aircrack-ng drivers.
+Packet injection is the ability to transmit arbitrary 802.11 frames, limited by the driver rather than hardware. ALFA adapters with RTL8812AU or MT7612U chipsets fully support it with aircrack-ng drivers; MT7921AUN (AWUS036AXML) is the exception on newer kernels (see the chipset notes below).
 {{< /tldr >}}
 
 
@@ -80,7 +80,7 @@ Dual-band 802.11ac chipset with a well-maintained in-kernel driver (`mt76`). Mon
 
 ### Mediatek MT7921AUN (Wi-Fi 6E)
 
-The newest chipset on this list, used in the AWUS036AXML. Supports 2.4/5/6 GHz tri-band with 802.11ax. The `mt7921u` driver requires kernel 5.18 or later. Monitor mode and injection support are confirmed but the driver is newer and may have edge-case issues on older distributions.
+The newest chipset on this list, used in the AWUS036AXML. Supports 2.4/5/6 GHz tri-band with 802.11ax. The `mt7921u` driver requires kernel 5.18 or later. Monitor mode, AP mode and WPA3 work. Community reports show injection working on kernels before 6.16, but in our tests on stock kernel 6.17 `aireplay-ng --test` failed (Found 0 APs / No Answer), so deauth and handshake capture are not possible. The cause is a mac80211 chanctx regression introduced in kernel 6.16, not a chip limitation; community patched drivers restore injection, but the firmware still locks the rate (1/6 Mbps, no HT/VHT injection). If you need injection, use the ACH, EACS, ACS or AX instead.
 
 ---
 
@@ -159,7 +159,7 @@ All major [ALFA Network](/en/products/alfa/) adapter models support packet injec
 | Model | Chipset | Band | Injection Support |
 |---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ Full |
-| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ Full (kernel 5.18+) |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ⚠️ Community reports before kernel 6.16; failed in our tests on 6.17 |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ Full |
 
 ---

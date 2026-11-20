@@ -22,8 +22,6 @@ faq:
     answer: "Regulatory compliance matters. The US FCC strictly prohibits mobile devices from using antennas mounted outside the vehicle on Band 30. Keep this in mind when designing your product enclosure."
 ---
 
-# Building Fleet GPS Tracking and Telematics Systems: EM7455/MC7455 Built-in GNSS Explained
-
 **In one sentence: for a fleet management system, the smartest approach is to get two jobs out of a single chip. The Sierra Wireless EM7455 and MC7455 use their built-in GNSS to calculate precise truck coordinates on one side, while reporting back to your office in real time over 4G on the other. No separate GPS module needed, saving space, money, and headaches.**
 
 A "fleet telematics system" sounds sophisticated, but the principle is simple: collect the vehicle's position, speed, and engine status, then send it all back to a server over the network.

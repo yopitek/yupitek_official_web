@@ -29,8 +29,6 @@ Le mode moniteur lève la restriction où la carte ne reçoit que ses propres pa
 En mode géré (le mode standard), votre adaptateur communique uniquement avec les points d'accès auxquels il est connecté. En **mode moniteur**, l'adaptateur écoute sur tous les canaux et capture **tous** les trames 802.11 de votre environnement — y compris les poignées, les frames de désauthentification, les requêtes de sonde et plus encore.
 
 
-# Activer le mode moniteur sur Kali Linux 2026 : Guide complet
-
 Le mode moniteur est l'une des fonctionnalités les plus importantes pour le test de pénétration sous Linux. Il permet à votre adaptateur WiFi de capturer tout le trafic sans fil de votre environnement — pas seulement celui qui vous est destiné.
 
 ---

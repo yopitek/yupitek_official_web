@@ -35,8 +35,6 @@ Les tests de sécurité WPA3 couvrent l'analyse du handshake SAE, les attaques d
 | **Protection de rétrogradation** | Faible | Forte |
 
 
-# Tests de sécurité WPA3 avec les adaptateurs ALFA (2026)
-
 WPA3 offre des améliorations significatives de la sécurité par rapport à WPA2. Ce guide vous montre comment tester efficacement les réseaux WPA3 avec les adaptateurs ALFA.
 
 ---

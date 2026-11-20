@@ -1,6 +1,6 @@
 ---
 title: "ALFA AWUS036EACS Setup Guide for China: Windows Installation & Linux Compatibility"
-description: "Setup guide for ALFA AWUS036EACS in China. RTL8821CU WiFi 5 + Bluetooth 4.2 nano adapter. Windows driver available at files.alfa.com.tw. Linux and Kali Linux are not supported — see recommended alternatives."
+description: "Setup guide for ALFA AWUS036EACS in China. RTL8821CU WiFi 5 + Bluetooth 4.2 nano adapter. Windows driver available at files.alfa.com.tw. On Linux kernel 6.2+ the in-kernel rtw88_8821cu driver works out of the box — monitor mode and injection tested working."
 date: 2026-04-24
 author: "benny-lai"
 lastmod: 2026-07-02
@@ -8,13 +8,13 @@ faq:
   - question: "What chipset does AWUS036EACS use? Does it support Bluetooth?"
     answer: "It uses the Realtek RTL8821CU chipset, supporting WiFi 5 and Bluetooth 4.2."
   - question: "Is AWUS036EACS recommended for Linux?"
-    answer: "Not recommended. RTL8821CU lacks a well-maintained Linux driver, and monitor mode is very unstable."
+    answer: "Yes. On Linux kernel 6.2+ (e.g. Ubuntu 24.04 HWE / kernel 6.17) the in-kernel rtw88_8821cu driver works out of the box with no compilation. We measured monitor mode and packet injection at 100% on both bands (2.4 GHz / 5 GHz) with end-to-end WPA .22000 capture, and Bluetooth tested working too."
   - question: "How do I install AWUS036EACS drivers on Windows?"
     answer: "Download the Windows driver package from files.alfa.com.tw, install as administrator, and reboot."
   - question: "How do I enable Bluetooth on AWUS036EACS?"
     answer: "After installing the driver, Bluetooth usually activates automatically. Turn on the Bluetooth switch in Windows settings to connect devices."
   - question: "If I need a Linux wireless security research adapter, which should I choose?"
-    answer: "Choose AWUS036ACM or AWUS036ACS instead. Both fully support monitor mode on Linux."
+    answer: "The AWUS036EACS itself works for monitor mode and packet injection on kernel 6.2+, with Bluetooth as a bonus. If you want more options, the AWUS036ACM and AWUS036ACS also fully support monitor mode on Linux. Use only on networks you own or are authorized to test."
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -27,15 +27,17 @@ related_product: "/en/products/alfa/awus036eacs/"
 featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
 ---
 
-The AWUS036EACS is ALFA's nano WiFi 5 + Bluetooth 4.2 combo adapter. It is designed for Windows users who need a compact wireless upgrade. Its RTL8821CU chipset has no reliable open-source Linux driver — monitor mode and packet injection are not supported. This guide covers Windows installation from Chinese sources and explains the Linux limitations clearly.
+The AWUS036EACS is ALFA's nano WiFi 5 + Bluetooth 4.2 combo adapter. It is a compact wireless upgrade for Windows users, and on Linux kernel 6.2+ the in-kernel rtw88_8821cu driver supports it out of the box — no compilation needed. This guide covers Windows installation from Chinese sources and the Linux experience.
 
 {{< tldr >}}
-AWUS036EACS uses the RTL8821CU chipset. A WiFi 5 plus Bluetooth 4.2 mini adapter that is easy to install on Windows but has unstable Linux drivers. Not recommended for monitor mode.
+AWUS036EACS uses the RTL8821CU chipset. A WiFi 5 plus Bluetooth 4.2 mini adapter that is easy to install on Windows; on Linux kernel 6.2+ the in-kernel rtw88_8821cu driver is bundled, so monitor mode and packet injection work out of the box, and Bluetooth is tested working too.
 {{< /tldr >}}
 
-> **The AWUS036EACS does not work reliably on Kali Linux, Ubuntu, Debian, or Raspberry Pi.** The RTL8821CU chipset has no maintained open-source driver. Monitor mode, packet injection, and VIF are not available.
+> **The AWUS036EACS works out of the box on Linux kernel 6.2+.** Kernels 6.2 and newer (e.g. Ubuntu 24.04 HWE / kernel 6.17) bundle the in-kernel rtw88_8821cu driver, so no compilation is needed. We measured monitor mode and packet injection at 100% on both bands (2.4 GHz / 5 GHz), captured a WPA handshake end-to-end (.22000), and Bluetooth (BT) is tested working too (BR/EDR + BLE both scan devices, and coexist with WiFi). Use only on networks you own or are authorized to test.
 >
-> If you need a Linux-compatible adapter for security research, use one of these instead:
+> **Operational tip:** This is a BT+WiFi combo card. After repeatedly switching modes, WiFi RX may stall (`ip link set up` returns `Operation already in progress`, and `iw ... set channel` returns `-16 busy`). Before each test stage, unplug the adapter and replug it into a different USB port to recover.
+>
+> Other Linux adapters in the same series:
 > - **[AWUS036ACM](/en/blog/awus036acm-china-install-guide/)** — MT7612U in-kernel driver, full monitor mode + VIF
 > - **[AWUS036ACS](/en/blog/awus036acs-china-install-guide/)** — RTL8811AU, budget-friendly monitor mode
 
@@ -46,9 +48,11 @@ AWUS036EACS uses the RTL8821CU chipset. A WiFi 5 plus Bluetooth 4.2 mini adapter
 
 ## Linux Users: Please Read First
 
-> **The AWUS036EACS does not work reliably on Kali Linux, Ubuntu, Debian, or Raspberry Pi.** The RTL8821CU chipset has no maintained open-source driver. Monitor mode, packet injection, and VIF are not available.
+> **The AWUS036EACS works out of the box on Linux kernel 6.2+.** Kernels 6.2 and newer (e.g. Ubuntu 24.04 HWE / kernel 6.17) bundle the in-kernel rtw88_8821cu driver, so no compilation is needed. We measured monitor mode and packet injection at 100% on both bands (2.4 GHz / 5 GHz), captured a WPA handshake end-to-end (.22000), and Bluetooth (BT) is tested working too (BR/EDR + BLE both scan devices, and coexist with WiFi). Use only on networks you own or are authorized to test.
 >
-> If you need a Linux-compatible adapter for security research, use one of these instead:
+> **Operational tip:** This is a BT+WiFi combo card. After repeatedly switching modes, WiFi RX may stall (`ip link set up` returns `Operation already in progress`, and `iw ... set channel` returns `-16 busy`). Before each test stage, unplug the adapter and replug it into a different USB port to recover.
+>
+> Other Linux adapters in the same series:
 > - **[AWUS036ACM](/en/blog/awus036acm-china-install-guide/)** — MT7612U in-kernel driver, full monitor mode + VIF
 > - **[AWUS036ACS](/en/blog/awus036acs-china-install-guide/)** — RTL8811AU, budget-friendly monitor mode
 
@@ -106,23 +110,30 @@ The AWUS036EACS includes Bluetooth 4.2. After the driver is installed:
 
 ## Linux Compatibility Details
 
+On **kernel 6.2+** the RTL8821CU is driven by the in-kernel `rtw88_8821cu` module, so there is nothing to compile — plug it in and it is recognized. Confirm your kernel first with `uname -r`.
+
 ### Kali Linux
 
-The RTL8821CU has no maintained DKMS driver for modern Kali kernels. Community-maintained drivers exist but are unstable — users report adapter failure and system instability after kernel updates. Monitor mode and packet injection are not reliably available.
+With a 6.2+ kernel the bundled `rtw88_8821cu` driver loads automatically. We tested monitor mode and packet injection at 100% on both bands (2.4 GHz / 5 GHz) and captured a WPA handshake end-to-end (.22000). Use only on networks you own or are authorized to test.
 
-**Recommendation:** Use the [AWUS036ACM](/en/blog/awus036acm-china-install-guide/) or [AWUS036ACH](/en/blog/awus036ach-china-install-guide/) for Kali Linux security work.
+```bash
+sudo nmcli dev set wlxXXXX managed no
+sudo ip link set wlxXXXX down
+sudo iw dev wlxXXXX set type monitor
+sudo ip link set wlxXXXX up
+```
 
 ### Ubuntu 22.04 / 24.04
 
-Ubuntu lacks stable in-kernel or DKMS support for the RTL8821CU. Monitor mode, packet injection, and VIF are not supported.
+Ubuntu 24.04 ships the in-kernel `rtw88_8821cu` driver (mainline since kernel 6.2) on both the GA kernel 6.8 and the HWE kernel (e.g. kernel 6.17) — monitor mode, packet injection, and client connections work out of the box. On an older kernel (below 6.2, e.g. the Ubuntu 22.04 GA kernel), update to the HWE kernel to get the in-kernel driver.
 
-### Debian
+### Debian / Raspberry Pi
 
-Same situation as Ubuntu. No reliable open-source driver. Not recommended.
+Same story: once the kernel is 6.2 or newer (including ARM64 builds), the in-kernel `rtw88_8821cu` driver handles the adapter with no compilation.
 
-### Raspberry Pi
+### Operational tip (BT+WiFi combo card)
 
-The RTL8821CU is highly discouraged on Raspberry Pi. Driver compilation consistently fails on ARM architectures. Choose the [AWUS036ACM](/en/blog/awus036acm-china-install-guide/) for Pi projects instead.
+Because the EACS carries both Bluetooth and WiFi on one chip, repeatedly switching modes can leave WiFi RX stalled — `ip link set up` returns `Operation already in progress` and `iw ... set channel` returns `-16 busy`. Before each test stage, unplug the adapter and replug it into a different USB port to clear the state. Bluetooth (BR/EDR + BLE) is tested working and coexists with WiFi.
 
 ---
 

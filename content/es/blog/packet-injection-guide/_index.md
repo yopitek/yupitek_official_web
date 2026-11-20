@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["inyección-paquetes", "aireplay-ng", "Kali-Linux", "adaptador-WiFi", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Qué es la inyección de paquetes WiFi?"
     answer: "La inyección de paquetes es la capacidad de la tarjeta de transmitir tramas 802.11 arbitrarias directamente al medio inalámbrico, permitiendo que herramientas como aireplay-ng construyan y envíen tramas de gestión, control y datos."
@@ -17,13 +17,13 @@ faq:
   - question: "¿Cómo probar si la tarjeta admite inyección de paquetes?"
     answer: "Primero activa el modo monitor, luego ejecuta aireplay-ng --test wlan0mon. Si la salida muestra Injection is working!, está confirmado. Una tasa de éxito del 80% o superior es fiable."
   - question: "¿Qué tarjetas ALFA admiten inyección de paquetes?"
-    answer: "AWUS036ACH (RTL8812AU), AWUS036AXML (MT7921AUN) y AWUS036ACM (MT7612U) la admiten completamente. Con el controlador correcto funcionan en Kali Linux."
+    answer: "AWUS036ACH (RTL8812AU) y AWUS036ACM (MT7612U) la admiten completamente con el controlador correcto en Kali Linux. AWUS036AXML (MT7921AUN) tiene reportes de la comunidad de inyección funcional en kernels anteriores a 6.16, pero en nuestras pruebas con el kernel stock 6.17 la prueba de inyección falló (monitor, AP y WPA3 siguen funcionando); si necesitas inyección, usa ACH, EACS, ACS o AX."
   - question: "¿Cómo mejorar una tasa de éxito de inyección inferior al 50%?"
     answer: "Acércate al AP objetivo, bloquea la interfaz de monitor al mismo canal, verifica la configuración de TX Power y comprueba que el controlador sea la versión de aircrack-ng y no la integrada en la distribución."
----La inyección de paquetes es la capacidad de la tarjeta de transmitir tramas 802.11 arbitrarias, limitada por el controlador y no por el hardware. Las tarjetas ALFA con chipsets RTL8812AU, MT7612U y MT7921AUN, con el controlador de aircrack-ng, ofrecen soporte completo.
+---
 
 {{< tldr >}}
-La inyección de paquetes es la capacidad de la tarjeta de transmitir tramas 802.11 arbitrarias, limitada por el controlador y no por el hardware. Las tarjetas ALFA con chipsets RTL8812AU, MT7612U y MT7921AUN, con el controlador de aircrack-ng, ofrecen soporte completo.
+La inyección de paquetes es la capacidad de la tarjeta de transmitir tramas 802.11 arbitrarias, limitada por el controlador y no por el hardware. Las tarjetas ALFA con chipsets RTL8812AU y MT7612U, con el controlador de aircrack-ng, ofrecen soporte completo; MT7921AUN (AWUS036AXML) es una excepción en kernels recientes (ver las notas del chipset más abajo).
 {{< /tldr >}}
 
 
@@ -69,7 +69,7 @@ Chipset 802.11ac de doble banda con un controlador bien mantenido integrado en e
 
 ### Mediatek MT7921AUN (Wi-Fi 6E)
 
-El chipset más nuevo de esta lista, usado en el AWUS036AXML. Soporta tribanda 2.4/5/6 GHz con 802.11ax. El controlador `mt7921u` requiere kernel 5.18 o posterior. El soporte de modo monitor e inyección está confirmado, pero el controlador es más nuevo y puede tener problemas de casos extremos en distribuciones más antiguas.
+El chipset más nuevo de esta lista, usado en el AWUS036AXML. Soporta tribanda 2.4/5/6 GHz con 802.11ax. El controlador `mt7921u` requiere kernel 5.18 o posterior. El modo monitor, el modo AP y WPA3 funcionan. En reportes de la comunidad con kernels anteriores a 6.16 la inyección funcionaba, pero en nuestras pruebas con el kernel stock 6.17 `aireplay-ng --test` falló (Found 0 APs / No Answer), por lo que no es posible hacer deauth ni capturar handshakes. La causa es una regresión de mac80211 chanctx desde el kernel 6.16, no una limitación del chip; los controladores parcheados de la comunidad restauran la inyección, pero el firmware sigue bloqueando la tasa (1/6 Mbps, sin inyección HT/VHT). Si necesitas inyección, usa ACH, EACS, ACS o AX.
 
 ---
 
@@ -148,7 +148,7 @@ Todos los modelos principales de adaptadores [ALFA Network](/es/products/alfa/) 
 | Modelo | Chipset | Banda | Soporte de Inyección |
 |---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ Completo |
-| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ Completo (kernel 5.18+) |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ⚠️ Reportes de la comunidad antes del kernel 6.16; falló en nuestras pruebas con 6.17 |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ Completo |
 
 ---

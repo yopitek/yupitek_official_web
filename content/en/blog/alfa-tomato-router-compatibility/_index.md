@@ -1,5 +1,5 @@
 ---
-title: "\"Does ALFA Wireless Card Support Tomato?\""
+title: "Does ALFA Wireless Card Support Tomato?"
 date: 2026-09-03
 draft: false
 slug: "alfa-tomato-router-compatibility"
@@ -16,7 +16,7 @@ categories:
 description: "ALFA router models lack USB WiFi support on Tomato firmware, not recommended; use OpenWrt for USB WiFi compatibility."
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. Problem Summary
@@ -72,10 +72,10 @@ As of September 2026, ALFA Network's current USB wireless network card product l
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ❌ None |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ❌ None |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ❌ None |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ❌ None |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ❌ None |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ❌ None |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ❌ None |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ❌ None |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ❌ None |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | ❌ None |
 
 ## 4. Compatible Models and Chipsets
 
@@ -92,7 +92,7 @@ As of September 2026, ALFA Network's current USB wireless network card product l
 
 All current ALFA models (see Table 3) are not available in Tomato for the following reasons:
 
-- Realtek Chip (RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU): Tomato has no corresponding drivers, and they cannot be installed through package management
+- Realtek Chip (RTL8812AU / RTL8811AU / RTL8821CU / RTL8832BU): Tomato has no corresponding drivers, and they cannot be installed through package management
 - MediaTek Chip (MT7612U / MT7610U / MT7921AUN): Tomato does not include mt76 / mt7921 drivers, and the FreshTomato development team has no plans to add them
 - Even if the device is visible in lsusb (if Tomato has the USB core enabled), it is only recognized at the USB bus level and cannot establish a network interface
 
@@ -125,7 +125,7 @@ Conclusion: For 99.9% of users, using the ALFA USB WiFi adapter on Tomato is not
 | AWUS036ACHM | MT7610U | ⚠️ | ❌ | ❌ | ❌ | ❌ | Not Supported |
 | AWUS036ACM | MT7612U | ⚠️ | ❌ | ❌ | ❌ | ❌ | Not Supported |
 | AWUS036ACS | RTL8811AU | ⚠️ | ❌ | ❌ | ❌ | ❌ | Not Supported |
-| AWUS036EACS | RTL8811CU | ⚠️ | ❌ | ❌ | ❌ | ❌ | Not Supported |
+| AWUS036EACS | RTL8821CU | ⚠️ | ❌ | ❌ | ❌ | ❌ | Not Supported |
 
 Determination Criteria: The official Tomato (including FreshTomato) kernel and package repository do not include any drivers for modern USB WiFi chipsets. The design goal of Tomato has never included USB WiFi expansion functionality.
 
@@ -188,7 +188,7 @@ ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
 If your router model is also supported by OpenWrt, it is recommended to flash the firmware from Tomato to OpenWrt. OpenWrt has a complete USB WiFi driver package library that supports most ALFA models.
 
 - Confirm if your router is on the OpenWrt Supported Devices list
-- If supported, refer to the installation steps in [Is ALFA Wireless Card Supported by OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)
+- If supported, refer to the installation steps in [Is ALFA Wireless Card Supported by OpenWrt](/en/blog/alfa-openwrt-router-compatibility/)
 
 #### Solution 2: Use the Router's Built-in WiFi
 
@@ -206,7 +206,7 @@ If you need specific features of USB WiFi (such as high-power output, monitor mo
 
 | Symptom | Possible Cause | Resolution |
 |---|---|---|
-| Tomato management interface does not have the "USB Wireless Device Support" option | The Tomato version does not have USB WiFi support translated | This is normal, not a bug; most Tomato versions do not have this feature |
+| Tomato management interface does not have the "USB Wireless Device Support" option | The Tomato version was not compiled with USB WiFi support | This is normal, not a bug; most Tomato versions do not have this feature |
 | After inserting the ALFA network card, dmesg shows USB detection but no network interface | Missing driver | Unresolvable, Tomato has no corresponding driver |
 | Want to manually install ipkg packages but cannot find WiFi drivers | Tomato package repository does not have USB WiFi drivers | This is normal; it is recommended to use OpenWrt instead |
 | Old ALFA (RT3070) can be detected on Tomato but cannot connect | Driver incomplete / firmware missing | Even with old chips, there is no guarantee of usability; it is recommended to use OpenWrt |
@@ -231,8 +231,8 @@ If you need specific features of USB WiFi (such as high-power output, monitor mo
 | FreshTomato Official Website | FreshTomato Latest Version and Supported Devices List | https://freshtomato.org/ | ✅ Verified | 2026-09-03 |
 | OpenWrt Official Documentation | USB WiFi Drivers and Wireless Configuration (Comparison Reference) | https://openwrt.org/docs/start | ✅ Verified | 2026-09-03 |
 | OpenWrt Official Forum | USB WiFi Driver Discussions (Comparison Reference) | https://forum.openwrt.org/ | ✅ Verified | 2026-09-03 |
-| ALFA Network Product Overview (Yopitek) | ALFA Current Product Specifications | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verified | 2026-09-03 |
+| ALFA Network Product Overview (Yopitek) | ALFA Current Product Specifications | /en/products/alfa/ | ✅ Verified | 2026-09-03 |
 
-Related Articles: [Is ALFA Wireless Network Card Compatible with DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/) | [Is ALFA Wireless Network Card Compatible with OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) | [Is ALFA Wireless Network Card Compatible with NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/) | [Is ALFA Wireless Network Card Compatible with NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
+Related Articles: [Is ALFA Wireless Network Card Compatible with DD-WRT](/en/blog/alfa-ddwrt-router-compatibility/) | [Is ALFA Wireless Network Card Compatible with OpenWrt](/en/blog/alfa-openwrt-router-compatibility/) | [Is ALFA Wireless Network Card Compatible with NVIDIA DGX Spark](/en/blog/alfa-nvidia-dgx-spark-compatibility/) | [Is ALFA Wireless Network Card Compatible with NVIDIA Jetson Nano](/en/blog/alfa-nvidia-jetson-nano-compatibility/)
 
 Disclaimer: The compatibility determination in this article is based on the official Tomato / FreshTomato core and package repository. A very small number of advanced users may be able to implement basic functions on specific old chips through self-cross compiling, but this does not fall within the official support scope and is not recommended for general users to attempt. For scenarios where USB WiFi needs to be used on a router, OpenWrt is the only practical third-party firmware option available.

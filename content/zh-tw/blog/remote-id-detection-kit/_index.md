@@ -7,10 +7,10 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Remote-ID", "ALFA-Network", "AWUS036ACH", "無人機偵測", "Counter-UAV", "ASTM-F3411", "EN-4709-002", "opendroneid", "unix_rid_capture", "DJI-OcuSync", "Raspberry-Pi"]
 author: "benny-lai"
-lastmod: 2026-07-27
+lastmod: 2026-11-20
 faq:
   - question: "為什麼 AWUS036ACH 是首選，而不是更新的 Wi-Fi 6/6E 網路卡？"
-    answer: "Remote ID 擷取需要穩定的監聽模式與原始封包注入，目前社群驅動最成熟的是 Realtek rtl88xxau 分支（RTL8812AU / RTL8814AU）。Wi-Fi 6/6E（MediaTek MT7921AUN、Realtek RTL8832BU）在主流滲透／監聽工具鏈中尚無對應注入驅動，會被忽略。AWUS036ACH 是經社群與本套件雙重驗證的選擇。"
+    answer: "Remote ID 擷取需要穩定的監聽模式與原始封包注入，目前社群驅動最成熟的是 Realtek rtl88xxau 分支（RTL8812AU / RTL8814AU）。Wi-Fi 6/6E 方面，MediaTek MT7921AUN（AWUS036AXM／AXML）在 stock kernel 6.17 上注入測試未通過；Realtek RTL8832BU（AWUS036AX／AXER）在核心 6.17 以上以內建 rtw89_8852bu 可注入（GX10 實測 2.4 GHz：AX 96%、AXER 73%），但尚未與本套件驗證。AWUS036ACH 是經社群與本套件雙重驗證的選擇。"
   - question: "nRF52840 是必要的嗎？"
     answer: "若只需 Wi-Fi Remote ID（NAN / Beacon），不需要；AWUS036ACH 即可。若要同時擷取 Bluetooth 5 Long Range 廣播，則需要 nRF52840（燒錄 sniffer 韌體）。建議套件含此模組以達完整覆蓋。"
   - question: "這套件能解碼 DJI 無人機嗎？"
@@ -108,19 +108,19 @@ Remote ID 偵測套件用 **ALFA AWUS036ACH** 網路卡的監聽模式，被動�
 ## 5. GitHub 專案連結
 
 ```text
-# 核心解碼庫（ASTM F3411 / EN 4709-002 訊息編解碼）
+# 核心解碼庫 (ASTM F3411 / EN 4709-002 訊息編解碼)
 https://github.com/opendroneid/opendroneid-core-c
 
-# Linux 擷取程式（本套件主程式，已驗證 rtl8812au + nRF52840 + RPi）
+# Linux 擷取程式 (本套件主程式, 已驗證 rtl8812au + nRF52840 + RPi)
 https://github.com/sxjack/unix_rid_capture
 
-# 社群即時地圖網路（一鍵安裝，自動上傳 droneaware.io）
+# 社群即時地圖網路 (一鍵安裝, 自動上傳 droneaware.io)
 https://github.com/fduflyer/DroneAware-Node-Releases
 
-# 無線偵測框架（DJI OcuSync 路徑需搭配 SDR 外掛）
+# 無線偵測框架 (DJI OcuSync 路徑需搭配 SDR 外掛)
 https://github.com/kismetwireless/kismet
 
-# RTL8812AU 監聽 / 注入驅動（AWUS036ACH 必裝）
+# RTL8812AU 監聽 / 注入驅動 (AWUS036ACH 必裝)
 https://github.com/morrownr/8812au-20210629
 ```
 

@@ -1,22 +1,22 @@
 ---
 title: "ALFA AWUS036AXM ドライバインストールガイド（中国版）：Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXMのドライバをインストールする手順をステップバイステップで解説します。MT7921AUN WiFi 6E インカーネルドライバ、モニターモード、VIFをサポート。Kali Linux、Ubuntu 22/24、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
+description: "中国国内のミラーサイトを利用して、ALFA AWUS036AXMのドライバをインストールする手順をステップバイステップで解説します。MT7921AUN WiFi 6 インカーネルドライバ、モニターモード、VIFをサポート（このアダプターはパケットインジェクション非対応）。Kali Linux、Ubuntu 22/24、Debian、Raspberry Piをカバーしています。GitHubへのアクセスは不要です。"
 date: 2026-04-24
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axm-china-install-guide"
-tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6e", "vif"]
+tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6", "vif"]
 categories: ["Driver Guides"]
 series: ["alfa-china-install-guide"]
 series_order: 6
 related_product: "/ja/products/alfa/awus036axm/"
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
-  - question: "AWUS036AXMはどのチップを使っていますか？WiFi 6Eをサポートしていますか？"
-    answer: "MediaTek MT7921AUNチップを採用し、WiFi 6Eトリバンド（2.4G/5G/6G Hz）をサポートしています。"
+  - question: "AWUS036AXMはどのチップを使っていますか？WiFi 6をサポートしていますか？"
+    answer: "MediaTek MT7921AUNチップを採用し、WiFi 6（デュアルバンド 2.4G/5G Hz）をサポートしています。実測は 2.4/5GHz で、6GHz は未検証です。"
   - question: "AWUS036AXMのドライバーは手動インストールが必要ですか？"
     answer: "不要です。mt7921uドライバーはLinuxカーネル5.18以降に内蔵されており、ファームウェアパッケージをインストールするだけです。"
   - question: "AWUS036AXMはVIF仮想インターフェースをサポートしていますか？"
@@ -27,11 +27,11 @@ faq:
     answer: "MediaTek MT7921AUNのUSB IDは0e8d:7961で、lsusbで確認できます。"
 ---
 
-AWUS036AXMは、スペースを節約するL型USB-Aコネクタを備えた、ALFAのWiFi 6Eトライバンド・アダプターです。搭載されているMT7921AUNチップは、Linuxカーネルバージョン5.18以降で `mt7921u` ドライバが標準組み込みされています。L型のコネクタにより、ノートパソコンの隣接するUSBポートを塞ぐことなく使用できます。このガイドでは、GitHubに触れることなく、ファームウェアの設定、ドライバの確認、モニターモード、パケットインジェクション、VIFの設定までを完全にカバーします。
+AWUS036AXMは、スペースを節約するL型USB-Aコネクタを備えた、ALFAのWiFi 6アダプターです。搭載されているMT7921AUNチップは、Linuxカーネルバージョン5.18以降で `mt7921u` ドライバが標準組み込みされています。L型のコネクタにより、ノートパソコンの隣接するUSBポートを塞ぐことなく使用できます。このガイドでは、GitHubに触れることなく、ファームウェアの設定、ドライバの確認、モニターモード、VIFの設定までを完全にカバーします。なお、このアダプターではパケットインジェクションは動作しません（後述）。
 
 
 {{< tldr >}}
-AWUS036AXMはMT7921AUNチップを採用しWiFi 6Eをサポート、ドライバーはカーネル内蔵でファームウェアパッケージインストール後にモニターモード、パケットインジェクション、VIF機能が利用できます。
+AWUS036AXMはMT7921AUNチップを採用しWiFi 6（2.4/5GHz）をサポート。`mt7921u` ドライバーはカーネル内蔵で、コンパイル不要です。ファームウェアパッケージのインストール後、モニターモード、AP/WPA3、VIF は実測で利用可能ですが、パケットインジェクションは stock kernel 6.17 で失敗するため、AWUS036AXM はインジェクション／ペネトレーションテスト用途には適しません（インジェクションには AWUS036ACM / ACS / AX などをご利用ください）。
 {{< /tldr >}}
 
 1. **ALFA AWUS036AXM** アダプター本体
@@ -70,7 +70,7 @@ Bus 001 Device 003: ID 0e8d:7961 MediaTek Inc.
 インストールが済んでいる方は、こちらから：
 
 - [モニターモードを有効にする](#enable-monitor-mode)
-- [パケットインジェクションのテスト](#test-packet-injection)
+- [パケットインジェクションについて](#test-packet-injection)
 - [仮想インターフェース (VIF)](#virtual-interface-vif)
 - [VMでのUSBパススルー](#virtual-machine-usb-passthrough)
 
@@ -159,21 +159,11 @@ iwconfig
 
 ---
 
-### ステップ 5: パケットインジェクションのテスト {#test-packet-injection}
+### ステップ 5: パケットインジェクションについて {#test-packet-injection}
 
-```bash
-sudo aireplay-ng --test wlan1
-```
+⚠️ **AWUS036AXM はパケットインジェクションに対応していません。** stock kernel 6.17 では `sudo aireplay-ng --test wlan1` が失敗します——これは主に kernel 6.16 以降の mac80211 chanctx のリグレッションが原因で、チップ自体の制限ではありません。コミュニティの patched ドライバーを使えばインジェクションは動作しますが、ファームウェアがレートを 1/6 Mbps に固定するため、HT/VHT フレームは注入できません。
 
-成功した場合の出力例：
-
-```
-Trying broadcast probe requests...
-Injection is working!
-Found 1 AP
-```
-
-失敗した場合は、再起動してもう一度試してください。
+そのため AWUS036AXM は、通常の接続・AP ホットスポット・モニターモードでのキャプチャには適していますが、**パケットインジェクションやペネトレーションテストには適しません**。インジェクションが必要な場合は AWUS036ACM / ACHM / ACS / ACH / AX / EACS をご利用ください。自分が所有する、または許可されたネットワークでのみ実施してください。
 
 ---
 
@@ -302,13 +292,9 @@ sudo ip link set wlan1 up
 iwconfig
 ```
 
-### ステップ 4: パケットインジェクションのテスト
+### ステップ 4: パケットインジェクションについて
 
-```bash
-sudo aireplay-ng --test wlan1
-```
-
-`Injection is working!` と表示されれば、アダプターは完全に動作しています。
+AWUS036AXM はパケットインジェクションに対応していません（[パケットインジェクションについて](#test-packet-injection) を参照）。モニターモードと VIF は動作しますが、mt7921u ドライバでは `aireplay-ng --test` が失敗します。インジェクションには AWUS036ACM / ACS / AX をご利用ください。
 
 ---
 
@@ -376,11 +362,9 @@ sudo ip link set wlan1 up
 iwconfig
 ```
 
-### ステップ 6: パケットインジェクションのテスト
+### ステップ 6: パケットインジェクションについて
 
-```bash
-sudo aireplay-ng --test wlan1
-```
+AWUS036AXM はパケットインジェクションに対応していません（[パケットインジェクションについて](#test-packet-injection) を参照）。モニターモードは動作しますが、mt7921u ドライバでは `aireplay-ng --test` が失敗します。インジェクションには AWUS036ACM / ACS / AX をご利用ください。
 
 ---
 
@@ -450,7 +434,7 @@ iwconfig
 | Ubuntu 22.04 でドライバが読み込まれない | カーネル 5.15 は古すぎます | HWE をインストール: `sudo apt install linux-generic-hwe-22.04` |
 | インターフェースは見えるが関連付けられない | ファームウェアの blob が不足している | `sudo apt install firmware-misc-nonfree` を実行して再起動 |
 | モニターモードへの切り替えが失敗する | インターフェースがまだ UP 状態 | `iw dev` コマンドの前に `sudo ip link set wlan1 down` を実行 |
-| インジェクションテストが "No Answer" | AP が遠すぎるかインターフェース間違い | もっと近づいてください。`iwconfig` で `Mode:Monitor` を確認 |
+| インジェクションテストが失敗する | stock kernel 6.17 では AXM のインジェクションが失敗（主因は kernel 6.16 以降の mac80211 chanctx のリグレッションでチップ自体の制限ではない。patched ドライバーでは動作するがファームウェアがレートを 1/6 Mbps に固定） | インジェクションには AWUS036ACM / ACS / AX をご利用ください |
 | VIF インターフェース作成が失敗する | ドライバが完全にロードされていない | 一度抜き、次を実行: `sudo rmmod mt7921u && sudo modprobe mt7921u` |
 
 ## 中国国内ミラーリファレンス

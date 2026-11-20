@@ -14,8 +14,6 @@ hero_alt: "Guía de inicio para Flipper Zero: Desempaquetado, actualización de 
 seo_description: "¿Qué es Flipper Zero? Desde el desempaquetado, la configuración de microSD, la actualización de firmware con qFlipper, hasta la prueba práctica de las cinco funciones principales: RFID, Sub-GHz, NFC, IR y BadUSB. Una guía completa para iniciarse en Flipper Zero."
 ---
 
-# Guía de inicio para Flipper Zero: Desempaquetado, configuración, actualización de firmware y cinco funciones prácticas
-
 > TL;DR: Flipper Zero es una herramienta de exploración de hardware de mano que incluye RFID de 125 kHz, Sub-GHz, NFC, infrarrojos y BLE. Se conecta a un ordenador mediante USB-C para simular un teclado (BadUSB). Tras adquirirlo, instale primero la tarjeta microSD, actualice el firmware mediante qFlipper o la aplicación móvil y comience a utilizarlo leyendo tarjetas RFID y controlando dispositivos por infrarrojos. Utilice todas las funciones únicamente en **dispositivos de su propiedad o para los cuales tenga autorización**.
 
 ## ¿Qué es Flipper Zero? ¿Para quién es?
@@ -96,7 +94,7 @@ El transceptor CC1101 integrado puede capturar señales emitidas por mandos a di
 El módulo NFC es compatible con estándares comunes de 13.56 MHz y puede leer el UID y los bloques de datos de tarjetas de contacto como las tarjetas de transporte (por ejemplo, EasyCard). La capacidad de simularlas completamente depende del mecanismo de cifrado de la tarjeta:
 
 1. Menú principal → `NFC` → `Leer`.
-2. Coloque la tarjeta en la zona de感应 (inducción) de la parte trasera del dispositivo para leer la información.
+2. Coloque la tarjeta en la zona de inducción de la parte trasera del dispositivo para leer la información.
 3. Según el tipo de tarjeta, puede seleccionar `Simular` o `Escribir`.
 
 ### 4. IR: Aprendizaje y reemisión de controles remotos por infrarrojos

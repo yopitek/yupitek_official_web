@@ -3,7 +3,7 @@ title: "USB Passthrough Troubleshooting for Kali Linux VMs"
 description: "Fix USB passthrough for ALFA AWUS036ACH/AWUS036AXML in VirtualBox and VMware: Extension Pack, xHCI, vboxusers, and the lsusb→iwconfig→dmesg flow."
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -17,7 +17,7 @@ faq:
   - question: "After setting up a USB filter, the host can no longer use the adapter. Is that normal?"
     answer: "Yes, that is expected. Once the device is passed through to the Guest, control belongs to the Guest and the host cannot use it at the same time. When you need the adapter back on the host, release it from the USB icon in the VM window."
   - question: "lsusb inside the Guest shows the adapter, but there is no wlan interface. Which driver should I install?"
-    answer: "It depends on the chipset: AWUS036AXML (MediaTek MT7921AU) uses the in-kernel mt7921u driver — plug-and-play on Kernel 5.18+; first make sure apt install linux-firmware is up to date. AWUS036ACH (Realtek RTL8812AU) uses an out-of-tree driver — install the community-maintained aircrack-ng/rtl8812au and compile it with DKMS (and handle MOK signing for Secure Boot; do not disable Secure Boot)."
+    answer: "It depends on the chipset: AWUS036AXML (MediaTek MT7921AUN) uses the in-kernel mt7921u driver — plug-and-play on Kernel 5.18+; first make sure apt install linux-firmware is up to date. AWUS036ACH (Realtek RTL8812AU) uses an out-of-tree driver — install the community-maintained aircrack-ng/rtl8812au and compile it with DKMS (and handle MOK signing for Secure Boot; do not disable Secure Boot)."
   - question: "Why does the Guest fail to boot after I selected the USB 3.0 controller?"
     answer: "A few older Guest kernels have poor xHCI support. If your Kali is an older release, try: shut down → switch back to USB 2.0 (EHCI) Controller → boot → upgrade the kernel → switch back to USB 3.0. Keep Kali as current as possible for the most complete xHCI support."
   - question: "The adapter is fast on a physical machine but slow inside the VM. Is that normal?"
@@ -25,7 +25,7 @@ faq:
 ---
 
 > **Supported hosts**: Windows / Linux / macOS hosts running Oracle VirtualBox / VMware Workstation (Guest = Kali Linux / Debian / Ubuntu)
-> **Featured hardware**: ALFA AWUS036ACH (Realtek RTL8812AU) / ALFA AWUS036AXML (MediaTek MT7921AU)
+> **Featured hardware**: ALFA AWUS036ACH (Realtek RTL8812AU) / ALFA AWUS036AXML (MediaTek MT7921AUN)
 > **Scope**: A standardized USB Pass-through troubleshooting manual. macOS host USB passthrough limitations are covered in Chapter 5.
 
 ---
@@ -175,7 +175,7 @@ Expected output (depending on the model):
 ```
 # AWUS036ACH (Realtek RTL8812AU)
 Bus ... ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac 2T2R DB WLAN Adapter
-# or AWUS036AXML (MediaTek MT7921AU)
+# or AWUS036AXML (MediaTek MT7921AUN)
 Bus ... ID 0e8d:7961 MediaTek Inc. Wireless_Device
 ```
 
@@ -345,7 +345,7 @@ Yes, that is expected. Once the device is passed through to the Guest, control b
 
 **Q4: `lsusb` inside the Guest shows the adapter, but there is no wlan interface. Which driver should I install?**
 It depends on the chipset:
-- **AWUS036AXML (MediaTek MT7921AU)**: uses the in-kernel `mt7921u` driver — plug-and-play on Kernel 5.18+; first make sure `apt install linux-firmware` is up to date.
+- **AWUS036AXML (MediaTek MT7921AUN)**: uses the in-kernel `mt7921u` driver — plug-and-play on Kernel 5.18+; first make sure `apt install linux-firmware` is up to date.
 - **AWUS036ACH (Realtek RTL8812AU)**: uses an out-of-tree driver — install the community-maintained `aircrack-ng/rtl8812au` and compile it with DKMS (and handle MOK signing for Secure Boot; do not disable Secure Boot).
 
 **Q5: Why does the Guest fail to boot after I selected the USB 3.0 controller?**
@@ -365,7 +365,7 @@ More than 90% of "VM can't see the adapter" cases come down to **passthrough set
 3. **Set the USB controller to USB 3.0 (xHCI)**, and use a USB filter so the adapter attaches automatically.
 4. **Inside the Guest, locate the layer with `lsusb → iwconfig / ip link → dmesg`**; install the missing driver — stop guessing the adapter is dead.
 
-**Recommended hardware**: the ALFA AWUS036AXML (MediaTek MT7921AU) has an **in-kernel driver, plug-and-play** on newer Kali kernels — the least hassle after VM passthrough. The ALFA AWUS036ACH (Realtek RTL8812AU) is equally capable, but remember to compile the community driver with DKMS inside the Guest and handle Secure Boot signing (see this site's RTL8812AU DKMS troubleshooting article). For both, use a USB port / Hub with its own power supply on the host side to eliminate the "dropping" variable in one go.
+**Recommended hardware**: the ALFA AWUS036AXML (MediaTek MT7921AUN) has an **in-kernel driver, plug-and-play** on newer Kali kernels — the least hassle after VM passthrough. The ALFA AWUS036ACH (Realtek RTL8812AU) is equally capable, but remember to compile the community driver with DKMS inside the Guest and handle Secure Boot signing (see this site's RTL8812AU DKMS troubleshooting article). For both, use a USB port / Hub with its own power supply on the host side to eliminate the "dropping" variable in one go. Note that injection depends on the kernel: community reports of working injection exist for kernels before 6.16, but on stock kernel 6.16 and later (tested on 6.17) the AXML fails the packet-injection test (`aireplay-ng --test`: Found 0 APs / No Answer), so deauth and handshake capture are not possible. The cause is a mac80211 chanctx regression, not a chip limitation; patched community drivers can restore injection, but the firmware still locks the rate (1/6 Mbps, no HT/VHT injection). Monitor mode, AP and WPA3 are unaffected. If you need injection, choose the AWUS036ACH or AWUS036EACS instead.
 
 **Next step**: save a copy of the Chapter 6 worksheet on your Kali VM desktop; every time the adapter "disappears", run the whole thing first, then decide whether to open a support ticket — follow the sheet, data cures all.
 

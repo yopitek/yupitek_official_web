@@ -3,7 +3,7 @@ title: "HAK5 WiFi Pineapple Mark VII + ALFA AWUS036ACM：5GHz 完整设置指南
 description: "HAK5 WiFi Pineapple MK7 搭配 ALFA AWUS036ACM (MT7612U) 完整兼容性指南 — 即插即用 5GHz 监听模式、数据包注入与 PineAP 扩展。逐步设置教程，附验证命令。无需编译驱动程序。"
 date: 2026-06-10
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -19,7 +19,7 @@ faq:
   - question: "如何在 MK7 上启用 Monitor Mode？"
     answer: "通过 SSH 登录后执行 airmon-ng start wlan3 指令，接口会重新命名为 wlan3mon，再以 iwconfig 验证模式。"
   - question: "哪些 ALFA 网卡不兼容 MK7？"
-    answer: "AWUS036AX、AWUS036AXER 使用 RTL8832BU 芯片，AWUS036EACS 使用 RTL8811CU，驱动不支持监听模式或注入，均不兼容。"
+    answer: "AWUS036AX、AWUS036AXER 使用 RTL8832BU 芯片，rtw89_8852bu 驱动自内核 6.17 起内置，在 GX10（内核 6.17）实测 monitor 与注入可用，但 Mark7 上未实测。AWUS036EACS（RTL8821CU）的 rtw88_8821cu 驱动自内核 6.2 起进入主线，在 GX10（内核 6.17）实测 monitor 与注入可用；但 Mark7 固件所用的内核／驱动是否内置、本站未于 Mark7 实测，故未列入已验证兼容清单。"
 ---
 
 

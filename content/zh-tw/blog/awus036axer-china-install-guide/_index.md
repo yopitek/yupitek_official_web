@@ -13,31 +13,31 @@ related_product: "/zh-tw/products/alfa/awus036axer/"
 series_order: 5
 featureimage: "/images/blog/awus036axer-china-install-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "AWUS036AXER 用什麼晶片？跟 AWUS036AX 一樣嗎？"
     answer: "同樣採用 Realtek RTL8832BU 晶片，支援 WiFi 6，但體積更小更便攜。"
   - question: "AWUS036AXER 在 Ubuntu 24.04 上需要安裝驅動嗎？"
-    answer: "需要。RTL8832BU 不在 Ubuntu 24.04 核心中，請透過 DKMS 編譯一次社群版 rtl8852bu 驅動（morrownr/rtl8852bu-20250826），之後核心更新時會自動重新編譯。"
+    answer: "看核心版本。Linux 核心 6.17 以上（例如 Ubuntu 24.04 HWE / kernel 6.17）已內建 rtw89_8852bu 驅動，插上即用、免 DKMS；只有核心低於 6.17 時，才需要透過 DKMS 編譯一次社群版 rtl8852bu 驅動（morrownr/rtl8852bu-20250826）。請先用 uname -r 確認核心版本。"
   - question: "AWUS036AXER 適合做無線安全研究嗎？"
-    answer: "不適合。社群版 rtl8852bu 驅動不支援 Monitor mode 與封包注入，建議改用核心內建 MediaTek 驅動的 AWUS036ACM。"
+    answer: "適合。在核心 6.17+ 的內建 rtw89_8852bu 驅動下，Monitor mode 與封包注入實測皆可用（我們在 Ubuntu 24.04 / kernel 6.17 實測 2.4GHz 注入 73%，並端到端擷取 WPA .22000）。注意：若在舊核心改用社群版 DKMS 驅動，Monitor 支援可能受限。僅限自有或已授權的網路。"
   - question: "AWUS036AXER 的 USB ID 是多少？"
     answer: "Realtek RTL8832BU 的廠商 ID 為 0bda，產品 ID 依機種為 8832 或 885a，請用 lsusb 確認你手上的裝置。"
   - question: "在中國安裝 AWUS036AXER 需要翻牆嗎？"
     answer: "不一定。從已驗證的 GitHub 儲存庫（morrownr/rtl8852bu-20250826）下載驅動原始碼；若 GitHub 速度較慢，請使用你信任的代理或映像站。編譯工具仍可用國內映像站安裝。"
 ---
 
-AWUS036AXER 的 RTL8832BU 晶片沒有 Linux 核心內建驅動，因此在所有發行版（包括 Ubuntu 24.04）上都需要透過 DKMS 編譯一次社群版 rtl8852bu 驅動。驅動原始碼從已驗證的 GitHub 儲存庫下載；若 GitHub 速度較慢，請使用你信任的代理或映像站。此驅動不支援 Monitor mode。
+AWUS036AXER 的 RTL8832BU 晶片在 **Linux 核心 6.17 以上**（例如 Ubuntu 24.04 HWE / kernel 6.17）已由內建的 rtw89_8852bu 驅動支援，插上即用、免編譯；只有在**舊核心**（低於 6.17）上，才需要透過 DKMS 編譯一次社群版 rtl8852bu 驅動。本指南兩種情形都涵蓋。驅動原始碼從已驗證的 GitHub 儲存庫下載；若 GitHub 速度較慢，請使用你信任的代理或映像站。
 
 {{< tldr >}}
-AWUS036AXER 採用 RTL8832BU 晶片，支援 WiFi 6。驅動不在核心中：所有發行版（包括 Ubuntu 24.04）都需要透過 DKMS 編譯 rtl8852bu。不支援 Monitor mode。
+AWUS036AXER 採用 RTL8832BU 晶片，支援 WiFi 6。核心 6.17+（含 Ubuntu 24.04 / kernel 6.17）已內建 rtw89_8852bu 驅動，免 DKMS，Monitor 與封包注入實測可用；舊核心才需透過 DKMS 編譯社群版 rtl8852bu。
 {{< /tldr >}}
 
-剛拿到這台輕巧迷你、方便攜帶的 AWUS036AXER，插上去結果 Linux 一點反應都沒有？別擔心，這再正常不過了。
+剛拿到這台輕巧迷你、方便攜帶的 AWUS036AXER，不確定 Linux 上要怎麼裝驅動？先確認核心版本。
 
 考慮到大家在國內存取 GitHub 可能比較慢，這份指南的驅動原始碼取自已驗證的 GitHub 儲存庫；若速度不佳，請使用你信任的代理或映像站。咱們現在就開始吧！
 
-> **資安研究提示：** 社群版 rtl8852bu 驅動不支援 Monitor mode 與封包注入。做資安研究請改用核心內建 MediaTek 驅動的網路卡，例如 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)。
+> **資安研究提示：** 在**核心 6.17+ 的內建 rtw89_8852bu 驅動**下，AWUS036AXER 的 Monitor mode 與封包注入實測可用（Ubuntu 24.04 / kernel 6.17 實測 2.4GHz 注入 73%、端到端 WPA .22000）。僅在舊核心改用社群版 DKMS 驅動時，Monitor 支援才可能受限。請先用 `uname -r` 確認核心版本。僅限自有或已授權的網路。
 
 ## 開始前的準備
 
@@ -128,19 +128,31 @@ sudo reboot
 
 ### 5. 開啟監聽模式 {#enable-monitor-mode}
 
-> **不支援：** RTL8832BU 的社群版 rtl8852bu 驅動不支援 Monitor mode，這裡沒有可執行的指令。如需 Monitor mode，請改用核心內建 MediaTek 驅動的網路卡，例如 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)。
+> **核心 6.17+ 可用：** 在內建的 rtw89_8852bu 驅動下，Monitor mode 實測可用：
+> ```bash
+> sudo nmcli dev set wlxXXXX managed no
+> sudo ip link set wlxXXXX down
+> sudo iw dev wlxXXXX set type monitor
+> sudo ip link set wlxXXXX up
+> ```
+> 若你在**舊核心**上改用社群版 DKMS 驅動，該版本 Monitor 支援可能受限——此時可改用核心內建 MediaTek 驅動的網路卡（例如 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)）。
 
 ### 6. 測試封包注入 {#test-packet-injection}
 
-> **不支援：** 封包注入依賴 Monitor mode，而此驅動不提供 Monitor mode。請使用 [AWUS036ACM](/zh-tw/blog/awus036acm-china-install-guide/)（核心內建 MediaTek 驅動）進行注入測試。
+> **核心 6.17+ 可用：** 進入 Monitor mode 後，用 aireplay-ng 測試注入（實測 2.4GHz 73%）：
+> ```bash
+> sudo iw dev wlxXXXX set channel 6
+> sudo aireplay-ng --test wlxXXXX
+> ```
+> 僅限自有或已授權的網路。舊核心的社群版 DKMS 驅動若不提供 Monitor，注入亦不可用。
 
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — 需要 DKMS
+### Ubuntu 24.04 (Noble)
 
-Ubuntu 24.04（核心 6.8）並未內建 RTL8832BU 的驅動。先換成國內映像站，再依下方 Ubuntu 22.04 的方式編譯驅動。
+在 Ubuntu 24.04 上，只有 **核心 6.17 以上的 HWE**（例如 24.04.4 的 HWE）才內建 rtw89_8852bu 驅動——插上即用、免編譯。若是 **GA 核心 6.8** 或 **HWE 核心 6.14**（兩者都未內建此驅動），請切換到國內映像站並依下方 Ubuntu 22.04 的方式編譯社群版驅動，或升級到 6.17 以上的 HWE 核心以取得內建驅動。
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -154,7 +166,7 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-重新開機後執行 `sudo modprobe 8852bu` 與 `iwconfig`。如果模組成功載入並出現網路卡介面，就完成了（僅支援 Managed 模式，不支援 Monitor mode）。
+重新開機後執行 `sudo modprobe 8852bu` 與 `iwconfig`。如果模組成功載入並出現網路卡介面，就完成了（此為舊核心的社群版 DKMS 驅動路徑，Monitor 支援可能受限；核心 6.17+ 請改用內建 rtw89_8852bu，Monitor 與注入實測可用）。
 
 ---
 
@@ -197,11 +209,11 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-此驅動不支援 Monitor mode（見 Kali 第 5 步）。
+此為舊核心（6.17 以下）的社群版 DKMS 驅動路徑，Monitor 支援可能受限（見 Kali 第 5 步）；核心 6.17+ 請改用內建 rtw89_8852bu，Monitor 與注入實測可用。
 
 ---
 
-## 樹莓派 (Raspberry Pi) 4B / 5
+## 樹莓派 (Raspberry Pi) 4B / 5 {#raspberry-pi-4b--5} {#raspberry-pi-4b--5}
 
 先切換到國內映像站：
 
@@ -247,7 +259,7 @@ sudo reboot
 | `install-driver.sh` 回報錯誤 | 缺少核心標頭檔 | 跑一下 `sudo apt install linux-headers-$(uname -r)` |
 | GitHub 下載失敗或很慢 | 網路問題 | 使用你信任的代理或映像站 |
 | `modprobe 8852bu` 失敗 | 驅動尚未編譯或未載入 | 重新執行 `sudo ./install-driver.sh`，用 `sudo dkms status` 檢查後重新開機 |
-| Monitor mode／封包注入無法使用 | rtl8852bu 驅動不支援 | 做滲透測試請改用 AWUS036ACM |
+| Monitor mode／封包注入無法使用 | 核心低於 6.17 且使用社群版 rtl8852bu DKMS 驅動（Monitor 支援可能受限） | 先以 `uname -r` 確認；請使用核心 6.17+（內建 rtw89_8852bu），舊核心可改用 AWUS036ACM |
 
 > **關於 VIF：** RTL8832BU 的核心外驅動不支援虛擬介面（VIF）。
 

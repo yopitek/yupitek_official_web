@@ -2,7 +2,7 @@
 title: "ALFA AWUS036AXML 中国安装指南：Kali Linux, Ubuntu, Debian 和 树莓派"
 date: 2026-04-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -33,7 +33,7 @@ faq:
 AWUS036AXML 是 ALFA 的 WiFi 6E 旗舰型号。它最厉害的地方在于支持 6GHz 频段，而且采用了 MediaTek MT7921AUN 芯片，驱动已经内置在 Linux 内核（5.18+）里了。这意味着在现代系统中，你基本不需要手动编译驱动，只需要装好固件包就行。本指南会带你快速搞定这一切。
 
 {{< tldr >}}
-AWUS036AXML 采用 MT7921AUN 芯片，WiFi 6E 三频 USB-C 旗舰网卡，驱动核心内置，安装固件后即可使用监控模式、数据包注入与 VIF。
+AWUS036AXML 采用 MT7921AUN 芯片，WiFi 6E 三频 USB-C 旗舰网卡，驱动核心内置，安装固件后即可使用监控模式、AP/WPA3 与 VIF；数据包注入在 stock kernel 6.17 上实测失败（内核 6.16 以前有社区反馈可用；需要注入请改用 ACH / EACS / ACS / AX）。
 {{< /tldr >}}
 
 1. **ALFA AWUS036AXML** 网卡和 USB-C 数据线

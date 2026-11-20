@@ -16,7 +16,7 @@ categories:
 description: "目前 ALFA 全系列現役機型在 Tomato（含 FreshTomato / AdvancedTomato 等衍生版本）上均無驅動支援，完全不建議使用。Tomato 是三大第三方路由器韌體中對 USB WiFi 支援最弱的平台，其開發重心完全放在 Broadcom 晶片路由器的內建 WiFi 上。若需要在路由器上使用 USB WiFi 網路卡，應改用 OpenWrt。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. 問題摘要
@@ -72,10 +72,10 @@ Tomato 的核心（kernel）預設僅編入 Broadcom 路由器內建 WiFi 的閉
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ❌ 無 |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ❌ 無 |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ❌ 無 |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ❌ 無 |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ❌ 無 |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ❌ 無 |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ❌ 無 |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ❌ 無 |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ❌ 無 |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | ❌ 無 |
 
 ## 4. 適用機型與晶片組
 
@@ -92,7 +92,7 @@ Tomato 的核心（kernel）預設僅編入 Broadcom 路由器內建 WiFi 的閉
 
 所有現役 ALFA 機型（見第 3 節表格）在 Tomato 上均不可用，原因：
 
-- Realtek 晶片（RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU）：Tomato 無任何對應驅動，也無法透過套件管理安裝
+- Realtek 晶片（RTL8812AU / RTL8811AU / RTL8821CU / RTL8832BU）：Tomato 無任何對應驅動，也無法透過套件管理安裝
 - MediaTek 晶片（MT7612U / MT7610U / MT7921AUN）：Tomato 未編入 mt76 / mt7921 驅動，且 FreshTomato 開發團隊無計劃加入
 - 即使 lsusb 能看到裝置（若 Tomato 有啟用 USB 核心），也僅是 USB 匯流排層級的辨識，無法建立網路介面
 
@@ -125,7 +125,7 @@ Tomato 的核心（kernel）預設僅編入 Broadcom 路由器內建 WiFi 的閉
 | AWUS036ACHM | MT7610U | ⚠️ | ❌ | ❌ | ❌ | ❌ | 不支援 |
 | AWUS036ACM | MT7612U | ⚠️ | ❌ | ❌ | ❌ | ❌ | 不支援 |
 | AWUS036ACS | RTL8811AU | ⚠️ | ❌ | ❌ | ❌ | ❌ | 不支援 |
-| AWUS036EACS | RTL8811CU | ⚠️ | ❌ | ❌ | ❌ | ❌ | 不支援 |
+| AWUS036EACS | RTL8821CU | ⚠️ | ❌ | ❌ | ❌ | ❌ | 不支援 |
 
 判定依據：Tomato（含 FreshTomato）官方核心與套件庫均未包含任何現代 USB WiFi 晶片驅動。Tomato 的設計目標從未包含 USB WiFi 擴充功能。
 
@@ -150,9 +150,9 @@ Tomato 的核心（kernel）預設僅編入 Broadcom 路由器內建 WiFi 的閉
 **步驟 4：透過 SSH / Telnet 登入路由器檢查 USB 偵測**
 
 ```bash
-# 檢查是否有 lsusb（Tomato 預設可能沒有）
+# 檢查是否有 lsusb (Tomato 預設可能沒有)
 which lsusb
-# 若無 lsusb，檢查 /proc/bus/usb 或 dmesg
+# 若無 lsusb, 檢查 /proc/bus/usb 或 dmesg
 cat /proc/bus/usb/devices
 # 或
 dmesg | grep -i usb
@@ -162,21 +162,21 @@ dmesg | grep -i usb
 
 ```bash
 ifconfig -a
-# 若僅有 vlan0 / br0 / eth0 / eth1（路由器內建介面），無 wlan0 / wlan1，代表 USB WiFi 未被驅動
+# 若僅有 vlan0 / br0 / eth0 / eth1 (路由器內建介面), 無 wlan0 / wlan1, 代表 USB WiFi 未被驅動
 ```
 
 **步驟 6：檢查可用的 kernel module**
 
 ```bash
 lsmod
-# 預期僅有 wl（Broadcom 內建 WiFi 驅動）、et（乙太網路驅動）等
+# 預期僅有 wl (Broadcom 內建 WiFi 驅動), et (乙太網路驅動) 等
 # 不會有 mt76 / rtl8812 / cfg80211 / mac80211 等 USB WiFi 驅動
 ```
 
 **步驟 7：檢查是否可安裝額外套件**
 
 ```bash
-# Tomato 使用 ipkg，但套件庫內容極少
+# Tomato 使用 ipkg, 但套件庫內容極少
 ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
 # 預期結果為空
 ```

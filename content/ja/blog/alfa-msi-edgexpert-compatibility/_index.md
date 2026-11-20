@@ -1,5 +1,5 @@
 ---
-title: "ALFA 无線ネットワークカードがMSI EdgeXpert（GB10）をサポートしているかどうか"
+title: "ALFA無線LANアダプターはMSI EdgeXpert（GB10）に対応しているか"
 date: 2026-09-03
 draft: false
 slug: "alfa-msi-edgexpert-compatibility"
@@ -14,161 +14,165 @@ tags:
   - "ARM64"
 categories:
   - "ハードウェアガイド"
-description: "MSI EdgeXpert & NVIDIA DGX Spark、ALFA网卡完全互換。MediaTekモデルは即インストール可能。RealtekモデルはARM64でドライバ編集必要。USB Type-Cポート全て対応。"
+description: "ALFA USB無線LAN 9機種のMSI EdgeXpert（GB10）対応状況。GX10のkernel 6.17実測で全機種が内蔵ドライバーで動作しDKMS不要、注入はEACS／ACH／ACSが安定、AXM／AXMLは失敗しました。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
-## 1. 問題要約
+> 📌 本記事は2026年11月のGX10実機テストに基づいて更新しました：ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）では、ALFA現行9機種のアダプターがすべてkernel内蔵ドライバーで動作し、挿すだけで使用でき、DKMSは不要です。詳細データは[ALFA 9機種 ARM64 実機テスト総まとめ](/ja/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)をご覧ください。テストはGX10のみで実施しており、他のGB10機種は個別にテストしていません。
 
-お客様の質問：「ALFAシリーズUSBワイヤレスネットワークアダプターが、MSI EdgeXpert（NVIDIA GB10 Grace Blackwell）AIスーパーコンピュータで使用可能ですか？」
+## 1. 質問の要約
 
-簡要結論：MSI EdgeXpertとNVIDIA DGX Sparkは、同じGB10ハードウェアプラットフォームとDGX OSソフトウェア環境を共有しており、ALFAネットワークアダプターの互換性は完全に一致しています。MediaTekチップセット機型（AWUS036ACM / ACHM / AXML / AXM）は、カーネル内のドライバを使用し、開箱即用です；Realtekチップセット機型（AWUS036ACH / ACS / EACS / AX / AXER）は、ARM64上でout-of-treeドライバをコンパイルする必要があります。注意：EdgeXpertの4つのUSBポートはすべてUSB Type-C（20Gbps）であり、ALFAネットワークアダプター（AXMLを除く）はUSB-C to USB-Aコンバータを使用する必要があります。
+お客様からの質問：「ALFAシリーズのUSB無線LANアダプターは、MSI EdgeXpert（NVIDIA GB10 Grace Blackwell）AIスーパーコンピューターで使用できますか？」
 
-判定対象：ALFA現行の9モデルのUSBネットワークアダプター（AWUS036ACM / ACHM / ACS / EACS / ACH / AX / AXER / AXML / AXM）。
+簡潔な結論：MSI EdgeXpertとNVIDIA DGX Sparkは、同じGB10チップとNVIDIA kernel系列を使用しています。当社はASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）でALFA現行9機種のUSB無線LANアダプター（AWUS036ACM / ACHM / ACH / ACS / EACS / AX / AXER / AXM / AXML）を実機テストし、全機種がkernel内蔵ドライバーで動作し、挿すだけで使用でき、コンパイルやDKMSは不要であることを確認しました。同じ動作が見込まれますが、テストはGX10のみで、MSI EdgeXpertは個別にテストしていません。機能差：MediaTek MT7921機種（AWUS036AXM / AXML）はstock kernel 6.17上でパケットインジェクション（packet injection）に失敗し、monitor、AP、WPA3は使用可能です。残り7機種はmonitorとインジェクションの両方が実機で動作しました。各アダプターのドライバーがメインラインに入った最低kernelバージョンは異なり（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）、コミュニティのDKMSドライバーが必要なのはそれより古いkernelのみです。注意：EdgeXpertの4つのUSBポートはすべてUSB Type-C（20Gbps）のため、ALFAアダプター（AXMLを除く）にはUSB-C to USB-A変換アダプターが必要です。
 
-## 2. 分析目標ハードウェア規格構造
+判定対象：ALFA現行9機種のUSB無線LANアダプター（AWUS036ACM / ACHM / ACS / EACS / ACH / AX / AXER / AXML / AXM）。
 
-### 2.1 MSI EdgeXpert ハードウェア規格
+## 2. 分析対象ハードウェアの仕様構成
 
-| 項目 | 規格 |
+### 2.1 MSI EdgeXpert ハードウェア仕様
+
+| 項目 | 仕様 |
 |---|---|
-| 製品名称 | MSI EdgeXpert（型番：EdgeXpert-MS-C931 / 59STW など） |
-| 核心チップ | NVIDIA GB10 Grace Blackwell Superchip（DGX Spark プラットフォーム） |
+| 製品名 | MSI EdgeXpert（型番：EdgeXpert-MS-C931 / 59STW など） |
+| コアチップ | NVIDIA GB10 Grace Blackwell Superchip（DGX Spark プラットフォーム） |
 | CPU | 20-core Arm（10× Cortex-X925 + 10× Cortex-A725）、ARMv9.2-A |
 | GPU | NVIDIA Blackwell アーキテクチャ、6144 CUDA コア、第5世代 Tensor Core、第4世代 RT Core |
-| AI 性能 | 最高 1 PetaFLOP（FP4、Sparse）/ 1000 TOPS |
-| システムメモリ | 128GB LPDDR5x 一体型メモリ（256-bit、273 GB/s） |
-| 儲蔵 | 1TB または 4TB NVMe M.2 SSD（自暗号化、PCIe Gen5） |
-| USB | 4× USB 3.2 Gen 2×2 Type-C（最高 20Gbps） |
-| 顯示出力 | 1× HDMI 2.1a（4× DP1.4a を USB-C Alt Mode で経由可能） |
+| AI 性能 | 最大 1 PetaFLOP（FP4、Sparse）/ 1000 TOPS |
+| システムメモリ | 128GB LPDDR5x 統合メモリ（256-bit、273 GB/s） |
+| ストレージ | 1TB または 4TB NVMe M.2 SSD（自己暗号化、PCIe Gen5） |
+| USB | 4× USB 3.2 Gen 2×2 Type-C（最大 20Gbps） |
+| 映像出力 | 1× HDMI 2.1a（USB-C Alt Mode 経由で 4× DP1.4a に対応） |
 | 有線ネットワーク | 1× 10GbE RJ45 + NVIDIA ConnectX-7 SmartNIC（QSFP 200GbE、システム間接続） |
 | 無線ネットワーク | Wi-Fi 7 + Bluetooth 5.4 |
-| オペレーティングシステム | NVIDIA DGX OS（Ubuntu Linux に基づく、kernel 6.x） |
+| オペレーティングシステム | NVIDIA DGX OS（Ubuntu Linux ベース、kernel 6.x） |
 | アーキテクチャ | aarch64（ARM64） |
-| 尺寸 | 151 × 151 × 52 mm（約 5.95" × 5.95" × 2.05"） |
+| サイズ | 151 × 151 × 52 mm（約 5.95" × 5.95" × 2.05"） |
 | 重量 | 約 1.2 kg（2.65 lbs） |
-| 電源 | 240W USB-C 電源供給器 |
-| 版本 | 消費版 / 工業版（EdgeXpert-MS-C931、広温 / 工業級アプリケーション） |
+| 電源 | 240W USB-C 電源アダプター |
+| エディション | コンシューマー版 / 産業用版（EdgeXpert-MS-C931、広温度範囲 / 産業用途） |
 
 ### 2.2 ソフトウェア環境：NVIDIA DGX OS
 
-MSI EdgeXpertは、NVIDIA DGX OSを出荷時プレインストールしており、DGX Spark / ASUS GX10と完全に同じです：
+MSI EdgeXpertには出荷時にNVIDIA DGX OSがプリインストールされており、DGX Spark / ASUS GX10と完全に同じです：
 
 | 項目 | 説明 |
 |---|---|
-| 基礎 | Ubuntu Linux（NVIDIA カスタマイズ） |
+| ベース | Ubuntu Linux（NVIDIA カスタマイズ） |
 | Kernel | Linux 6.x |
 | アーキテクチャ | aarch64（ARM64） |
-| プレインストールソフトウェア | NVIDIA AI ソフトウェアスタック（CUDA、cuDNN、TensorRT、PyTorch、Jupyter など） |
+| プリインストールソフトウェア | NVIDIA AI ソフトウェアスタック（CUDA、cuDNN、TensorRT、PyTorch、Jupyter など） |
 | パッケージ管理 | apt |
 
-### 2.3 DGX Sparkとの差異
+### 2.3 DGX Sparkとの違い
 
-MSI EdgeXpertはDGX SparkプラットフォームのOEMバージョンであり、ハードウェアとソフトウェアは完全に同じです：
+MSI EdgeXpertはDGX SparkプラットフォームのOEM版であり、コアとなるハードウェアとソフトウェアは完全に同じです：
 
 | 項目 | MSI EdgeXpert | NVIDIA DGX Spark |
 |---|---|---|
-| 機構設計 | MSI カスタマイズボディ、工業版オプション | NVIDIA 参考ボディ |
-| 儲蔵オプション | 1TB / 4TB | 最高 4TB |
-| 目標市場 | エッジ AI / 工業 AI / デスクトップ開発 | デスクトップ AI 開発 |
-| アクセサリ | MSI オリジナルアクセサリ | NVIDIA オリジナルアクセサリ |
+| 筐体設計 | MSI カスタム筐体、産業用版オプションあり | NVIDIA リファレンス筐体 |
+| ストレージオプション | 1TB / 4TB | 最大 4TB |
+| 対象市場 | エッジ AI / 産業用 AI / デスクトップ開発 | デスクトップ AI 開発 |
+| 付属品 | MSI 純正付属品 | NVIDIA 純正付属品 |
 
-ALFAの互換性への影響：影響なし。USB コントローラ、kernel バージョン、ドライバーフレームワークはDGX Sparkと完全に同じです。
+ALFAの互換性への影響：影響はないと見込まれます（テストはGX10のみで、他のGB10機種は個別にテストしていません）。USB コントローラー、kernel バージョン、ドライバーフレームワークは DGX Spark と完全に同じです。
 
-### 2.4 USB Type-C 転換の必要性
+### 2.4 USB Type-C 変換の必要性
 
-EdgeXpertの4つのUSBポートはすべてType-Cであり、ALFAシリーズのネットワークカード（AXMLがUSB-C以外の場合）はすべてUSB Type-Aであり、コンバータを使用する必要があります。USB 3.2 Gen 2×2（20Gbps）をサポートするコンバータを選択することをお勧めします。
+EdgeXpertの4つのUSBポートはすべてType-Cです。ALFAの全シリーズのアダプター（USB-CのAXMLを除く）はUSB Type-Aのため、変換アダプターが必要です。USB 3.2 Gen 2×2（20Gbps）対応の変換アダプターを選ぶことをおすすめします。
 
-## 3. 現在のALFAネットワークカード規格およびチップセットの分析
+## 3. 現行ALFAアダプターの仕様とチップセットの分析
 
-2026年9月現在、ALFA Networkの現役USB無線ネットワークカード製品ラインは以下の通りです（判定基準：9モデル）：
+2026年9月時点で、ALFA Networkの現行USB無線LANアダプターのラインナップは以下のとおりです（判定対象：9機種）：
 
-| 機型 | Wi-Fi レベル | チップセット | インターフェース | Linux 驅動状態 |
+| 機種 | Wi-Fi 規格 | チップセット | インターフェース | Linux 内蔵ドライバー（最低 kernel バージョン） |
 |---|---|---|---|---|
-| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ in-kernel（mt7921u） |
-| AWUS036AXM | Wi-Fi 6E | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ in-kernel（mt7921u） |
-| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ rtw89 / out-of-tree |
-| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ 同上 |
-| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ⚠️ out-of-tree（8812au） |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ✅ in-kernel（mt76x0u） |
-| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ in-kernel（mt76x2u）⭐ 首選 |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ⚠️ out-of-tree（8812au 拡張） |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ⚠️ out-of-tree（8821cu） |
+| AWUS036AXML | Wi-Fi 6E（6GHz 実機で動作確認） | MediaTek MT7921AUN | USB-C / USB 3.2 | ✅ 内蔵（mt7921u、5.18+） |
+| AWUS036AXM | Wi-Fi 6E（メーカー公称、6GHz 未テスト） | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ✅ 内蔵（mt7921u、5.18+） |
+| AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ 内蔵（rtw89_8852bu、6.17+） |
+| AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ✅ 内蔵（rtw89_8852bu、6.17+） |
+| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ✅ 内蔵（rtw88_8812au、6.13+） |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ✅ 内蔵（mt76x0u、4.19+） |
+| AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ✅ 内蔵（mt76x2u、4.19+） |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ✅ 内蔵（rtw88_8821au、6.13+） |
+| AWUS036EACS | Wi-Fi 5 (AC600) + Bluetooth | Realtek RTL8821CU | USB 2.0 | ✅ 内蔵（rtw88_8821cu、6.2+） |
 
-## 4. 推薦機型とチップセット
+注：GX10 で実測した kernel 6.17 には 9 機種すべてのドライバーが内蔵されています。最低 kernel バージョンは機種ごとに異なります（上表の括弧内）。コミュニティ保守の DKMS ドライバーのインストールが必要なのは、kernel がその機種の最低バージョンより古いシステムのみです。
 
-### 4.1 推薦レベル分類
+## 4. 対応機種とチップセット
 
-| 推薦レベル | 機型（チップセット） | 説明 |
+### 4.1 推奨レベル
+
+| 推奨レベル | 機種（チップセット） | 説明 |
 |---|---|---|
-| ⭐ 強烈推薦 | AWUS036ACM（MT7612U） | カーネル内蔵ドライバ、開箱即使用可能、AC1200 双頻、AP / Monitor / Injection サポート |
-| ✅ 推薦 | AWUS036ACHM（MT7610U） | カーネル内蔵ドライバ、低消費電力、AC433 双頻 |
-| ✅ 推薦（Wi-Fi 6E） | AWUS036AXML / AXM（MT7921AUN） | カーネル内蔵ドライバ、Wi-Fi 6E、AXML は USB-C で直接挿入可能 |
-| ⚠️ 使用可能但編訳必要 | AWUS036ACH（RTL8812AU） | morrownr/8812au（ARM64）を編訳必要、編訳完了後機能完全 |
-| ⚠️ 使用可能但編訳必要 | AWUS036ACS / EACS | オートリスト内のドライバを編訳必要 |
-| ⚠️ 使用可能但注意 | AWUS036AX / AXER（RTL8832BU） | カーネル 6.x の rtw89 が既にサポートしている可能性あり；編訳不要 |
+| ⭐ ペネトレーションテストに最適 | AWUS036EACS（RTL8821CU）/ AWUS036ACH（RTL8812AU）/ AWUS036ACS（RTL8811AU） | 内蔵ドライバーでインストール不要。インジェクション実測値は EACS、ACH が両バンド 100%、ACS が 2.4GHz 100%・5GHz 96%。WPA handshake をエンドツーエンドで取得可能 |
+| ✅ 推奨 | AWUS036ACM（MT7612U） | 内蔵ドライバーでインストール不要。monitor、インジェクション（2.4GHz 63–83%、5GHz 76%）、AP、WPA3 すべて使用可能 |
+| ✅ 推奨 | AWUS036ACHM（MT7610U） | 内蔵ドライバーでインストール不要。2.4GHz インジェクション 96–100%、5GHz インジェクションはブロードキャストのみ可能。WPA3 AP には sae_pwe=0 の設定が必要 |
+| ✅ 推奨（Wi-Fi 6） | AWUS036AX / AXER（RTL8832BU） | 内蔵ドライバーでインストール不要。monitor の受信感度が高く、インジェクション可能（2.4GHz：AX 96%、AXER 73%）、AP は 80MHz に対応 |
+| ⚠️ 接続／AP 用途のみ | AWUS036AXML / AXM（MT7921AUN） | 内蔵ドライバーでインストール不要。monitor、AP、WPA3 は使用可能だが、stock kernel 6.17 ではインジェクションに失敗するため、ペネトレーションテストには不向き。AXML は USB-C で直挿し可能 |
 
-### 4.2 使用シーン推薦
+### 4.2 用途別のおすすめ
 
-| 使用シーン | 推薦機型 | 説明 |
+| 用途 | おすすめ機種 | 説明 |
 |---|---|---|
-| エッジ AI ガード無線インターネット | AWUS036ACM / ACHM | カーネル内蔵ドライバ、安定、メンテナンス不要 |
-| 工業環境無線渗透テスト | AWUS036ACH または AWUS036ACM | 両者とも Monitor + Injection サポート |
-| Wi-Fi 6E / 6GHz 頻段 | AWUS036AXML / AXM | MT7921AUN カーネル内蔵ドライバ |
-| 外接 WiFi 不要 | — | EdgeXpert は内蔵 Wi-Fi 7、一般的なインターネット使用には外接不要 |
+| エッジ AI ゲートウェイの無線インターネット接続 | 9 機種すべて可（例：AWUS036ACM / ACHM） | すべて kernel 内蔵ドライバーで、挿すだけで使用可能 |
+| 産業環境での無線ペネトレーションテスト | AWUS036EACS / ACH / ACS | インジェクション実測 96–100%、WPA handshake をエンドツーエンドで取得可能。AXM / AXML は選ばないこと（インジェクション失敗） |
+| Wi-Fi 6 + AP ホットスポット | AWUS036AX / AXER | 2x2、80MHz AP が実機で動作 |
+| 6GHz 帯 | AWUS036AXML | 6GHz で WPA3 AP を構築できることを実機で確認。AXM は同じチップだが 6GHz は未テスト |
+| 外付け WiFi が不要な場合 | — | EdgeXpert は Wi-Fi 7 を内蔵しており、一般的なインターネット接続には外付け不要 |
 
-## 5. 環境要求
+## 5. 環境要件
 
-### 5.1 �硬体要求
+### 5.1 ハードウェア要件
 
-| 項目 | 需求 |
+| 項目 | 要件 |
 |---|---|
-| USB 転接器 | USB-C to USB-A 転接アダプターまたは伝送線（AXMLを除く）、USB 3.2 Gen 2×2をサポートする推奨 |
-| 供給 | MSI EdgeXpert 原厂 240W USB-C 電源供給アダプター |
+| USB 変換アダプター | USB-C to USB-A 変換アダプターまたはケーブル（AXML を除く）、USB 3.2 Gen 2×2 対応を推奨 |
+| 電源 | MSI EdgeXpert 純正 240W USB-C 電源アダプター |
 
-### 5.2 軟体要求
+### 5.2 ソフトウェア要件
 
-| 項目 | 需求 |
+| 項目 | 要件 |
 |---|---|
-| DGX OS 版本 | 任意の現役バージョン（kernel 6.x） |
-| 編訳ツール（Realtek チップセットが必要） | build-essential、git、bc、dkms |
-| 無線管理ツール | iw、network-manager（DGX OS でデフォルトでインストール） |
+| DGX OS バージョン | 現行の任意のバージョン（kernel 6.x） |
+| Kernel バージョン | kernel 6.17（実測 6.17.0-1014-nvidia）には 9 機種すべてのドライバーが内蔵されており、コンパイルツールは不要。最低バージョンは機種ごとに異なり（ACM／ACHM 4.19、AXM／AXML 5.18、EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）、それより古い場合のみコミュニティの DKMS ドライバーのインストールが必要 |
+| 無線管理ツール | iw、network-manager（DGX OS にデフォルトでインストール済み） |
 
-## 6. 兼容性判定
+## 6. 互換性の判定
 
-### ALFA 現役機型 × MSI EdgeXpert（GB10）兼容性マトリックス
+### ALFA 現行機種 × MSI EdgeXpert（GB10）互換性マトリックス
 
-| 機型 | クリスタルセット | 驅動方式 | USB 偵測 | STA 上網 | AP モード | モニターモード | 安装難度 | 総合評価 |
-|---|---|---|---|---|---|---|---|---|
-| AWUS036ACM | MT7612U | in-kernel（mt76x2u） | ✅ | ✅ | ✅ | ✅ | 免安装 | ⭐ 最佳 |
-| AWUS036ACHM | MT7610U | in-kernel（mt76x0u） | ✅ | ✅ | ✅ | ⚠️ 有限 | 免安装 | ✅ 良好 |
-| AWUS036AXML | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ 有限 | 免安装 | ✅ 良好 |
-| AWUS036AXM | MT7921AUN | in-kernel（mt7921u） | ✅ | ✅ | ✅ | ⚠️ 有限 | 免安装 | ✅ 良好 |
-| AWUS036ACH | RTL8812AU | out-of-tree（8812au） | ✅ | ✅ | ✅ | ✅ | 中（翻訳） | ⚠️ 利用可能 |
-| AWUS036ACS | RTL8811AU | out-of-tree（8812au） | ✅ | ✅ | ⚠️ | ❌ | 中（翻訳） | ⚠️ 利用可能 |
-| AWUS036EACS | RTL8811CU | out-of-tree（8821cu） | ✅ | ⚠️ | ❌ | ❌ | 中（翻訳） | ⚠️ 利用可能 |
-| AWUS036AX | RTL8832BU | rtw89 / out-of-tree | ✅ | ⚠️ | ⚠️ | ❌ | 中-高 | ⚠️ 利用可能 |
-| AWUS036AXER | RTL8832BU | 同上 | ✅ | ⚠️ | ⚠️ | ❌ | 中-高 | ⚠️ 利用可能 |
+| 機種 | チップセット | ドライバー（kernel 内蔵） | USB 検出 | STA 接続 | AP モード | Monitor | パケットインジェクション | 導入難易度 | 総合評価 |
+|---|---|---|---|---|---|---|---|---|---|
+| AWUS036EACS | RTL8821CU | rtw88_8821cu | ✅ | ✅ | ✅ | ✅ | ✅ 両バンド 100% | インストール不要 | ⭐ 最適 |
+| AWUS036ACH | RTL8812AU | rtw88_8812au | ✅ | ✅ | ✅ | ✅ | ✅ 両バンド 100% | インストール不要 | ⭐ 最適 |
+| AWUS036ACS | RTL8811AU | rtw88_8821au | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 100%／5G 96% | インストール不要 | ⭐ 最適 |
+| AWUS036ACM | MT7612U | mt76x2u | ✅ | ✅ | ✅ | ✅ | ✅ 2.4G 63–83%／5G 76% | インストール不要 | ✅ 良好 |
+| AWUS036ACHM | MT7610U | mt76x0u | ✅ | ✅ | ✅ | ✅ | ⚠️ 2.4G 96–100%／5G ブロードキャストのみ | インストール不要 | ✅ 良好 |
+| AWUS036AX | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ 受信強 | ✅ 2.4G 96%／5G 可 | インストール不要 | ✅ 良好 |
+| AWUS036AXER | RTL8832BU | rtw89_8852bu | ✅ | ✅ | ✅ | ✅ 受信強 | ✅ 2.4G 73%／5G 可 | インストール不要 | ✅ 良好 |
+| AWUS036AXML | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ 受信弱 | ❌ 失敗 | インストール不要 | ⚠️ 接続／AP のみ |
+| AWUS036AXM | MT7921AUN | mt7921u | ✅ | ✅ | ✅ | ⚠️ 受信弱 | ❌ 失敗 | インストール不要 | ⚠️ 接続／AP のみ |
 
-判定基準：MSI EdgeXpert と DGX Spark は同じ GB10 ハードウェアプラットフォームと DGX OS（kernel 6.x, aarch64）を共有しており、兼容性判定は DGX Spark と完全に一致しています。
+判定根拠：2026年11月16日～18日に ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）で実機テストを実施し、テスト対象は自社所有の Wi-Fi と自社所有のスマートフォンです。MSI EdgeXpert は同じ GB10 と NVIDIA kernel 系列を使用しているため同じ動作が見込まれますが、テストは GX10 のみで、MSI EdgeXpert は個別にテストしていません。詳細データは[ALFA 9機種 ARM64 実機テスト総まとめ](/ja/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/)をご覧ください。
 
 ## 7. 超詳細 Step by Step 設定手順
 
-MSI EdgeXpertのインストール手順はNVIDIA DGX Sparkと完全に同じです。以下は簡易版で、詳細な手順は[ALFA無線网卡がNVIDIA DGX Sparkをサポートするか](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)の第7節を参照してください。
+MSI EdgeXpert のセットアップ手順は NVIDIA DGX Spark と同じと見込まれます（手順は GX10 で実機確認）。以下は簡易版です。詳細な手順は[ALFA無線LANアダプターはNVIDIA DGX Sparkに対応しているか](/ja/blog/alfa-nvidia-dgx-spark-compatibility/)の第7節を参照してください。
 
-### 7.1 MediaTekチップセット機型（開箱即用）
+### 7.1 MediaTek チップセット機種（AWUS036ACM / ACHM / AXM / AXML）
 
-**手順 1：网卡を插入**
+**手順 1：アダプターを挿す**
 
-USB-C to USB-A コンバータ（AXMLが直接挿入可能）を使用して、ALFA网卡をEdgeXpertのUSB-Cポートに挿入してください。
+USB-C to USB-A 変換アダプター（AXML は直挿し可能）を使い、ALFA アダプターを EdgeXpert の USB-C ポートに挿します。
 
-**手順 2：USB検出を確認**
+**手順 2：USB 検出を確認**
 
 ```bash
 lsusb
-# 期待される出力例（AWUS036ACM / MT7612U）：
+# 出力例 (AWUS036ACM / MT7612U):
 # Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc. MT7612U 802.11a/b/g/n/ac Wireless Adapter
 ```
 
@@ -176,92 +180,90 @@ lsusb
 
 ```bash
 ip link show
-# wlan0（カーネル内のドライバが自動的にロードされる）が自動的に表示されるべきです
+# wlx で始まるインターフェースが自動的に表示されるはずです (in-kernel ドライバーが自動ロード)
 ```
 
-**手順 4：WiFiに接続**
+**手順 4：WiFi に接続**
 
 ```bash
 nmcli dev wifi connect "SSID" password "パスワード"
 ```
 
-### 7.2 Realtekチップセット機型（翻訳が必要）
+### 7.2 Realtek チップセット機種（AWUS036ACH / ACS / EACS / AX / AXER）
 
-AWUS036ACH（RTL8812AU）を例にします。
-
-**手順 1：翻訳ツールをインストール**
+kernel 6.17（GX10 の実測バージョン）にはすべての Realtek 機種のドライバーが内蔵されているため、手順は MediaTek 機種と同じで、コンパイルは不要です（最低バージョン：EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）：
 
 ```bash
-sudo apt update && sudo apt install -y build-essential git bc dkms
-```
+# 1. kernel バージョンを確認 (6.17 以上なら全 Realtek 機種のドライバーを内蔵. GX10 の実測は 6.17.0-1014-nvidia)
+uname -r
 
-**手順 2：ドライバをダウンロードおよび翻訳**
-
-```bash
-git clone https://github.com/morrownr/8812au-20210820.git
-cd 8812au-20210820
-# MakefileでCONFIG_PLATFORM_ARM64 = yを確認してください
-make
-sudo make install
-sudo modprobe 8812au
-```
-
-**手順 3：网卡を插入後、インターフェースを確認**
-
-```bash
+# 2. アダプターを挿した後, ドライバーが自動ロードされたことを確認
+lsusb
+lsmod | grep -E "rtw88|rtw89"
 ip link show
-```
 
-**手順 4：WiFiに接続**
-
-```bash
+# 3. WiFi 接続
 nmcli dev wifi connect "SSID" password "パスワード"
 ```
 
-### 7.3 監視モード（渗透テスト）
+各機種で自動ロードされるモジュール：ACH → `rtw88_8812au`、ACS → `rtw88_8821au`、EACS → `rtw88_8821cu`、AX / AXER → `rtw89_8852bu`。`uname -r` がその機種の最低バージョンより古い（古いシステムの）場合に限り、コミュニティ保守の DKMS ドライバー（例：RTL8812AU 用の morrownr/8812au-20210820）のインストールが必要です。
+
+### 7.3 モニターモード（ペネトレーションテスト）
+
+⚠️ 監視とインジェクションのテストは、自分が所有する、または許可を得たネットワークでのみ行ってください。
 
 ```bash
 sudo apt install -y aircrack-ng
-sudo ip link set wlan0 down
-sudo iw dev wlan0 set type monitor
-sudo ip link set wlan0 up
-sudo aireplay-ng --test wlan0
+IF=wlx00c0cafe0000   # ip link で確認したインターフェース名に置き換える
+sudo ip link set $IF down
+sudo iw dev $IF set type monitor
+sudo ip link set $IF up
+sudo aireplay-ng --test $IF
 ```
 
-## 8. 常見なエラーとその解決策
+- `airmon-ng check kill` は実行しないでください：NetworkManager が停止し、ホストの外部接続が切断されます。
+- AWUS036AXM / AXML は stock kernel 6.17 上で `aireplay-ng --test` が失敗し（Found 0 APs）、deauth や handshake の取得はできません。
+- hcxdumptool 8.x は 2.4 GHz の EACS を除く全機種で `failed to arm`（ドライバーが active monitor 非対応）となるため、airodump-ng + aireplay-ng を使用してください。
 
-| 症狀 | 可能な原因 | 解決方法 |
+## 8. よくあるエラーと対処法
+
+| 症状 | 考えられる原因 | 対処法 |
 |---|---|---|
-| lsusb で ALFA ネットワークカードが見られない | USB-C アダプターが不良 / 充電規格のみ | サポートするデータ伝送の USB 3.2 Gen 2×2 アダプターを交換；異なる USB-C ポートを試す |
-| MediaTek クリスタルチップが wlan インターフェースを持っていない | モジュールが自動的にロードされていない / ファームウェアが欠けている | `sudo modprobe mt76x2u`；`sudo apt install linux-firmware`；`dmesg | grep mt76` を確認 |
-| Realtek ドライバがコンパイルに失敗 | クロスコンパイルの設定が間違っている | EdgeXpert 上でネイティブコンパイルを確認；Makefile には CROSS_COMPILE が設定されていないべきです |
-| WiFi の速度が遅い | アダプターが USB 2.0 しかサポートしていない | USB 3.2 Gen 2×2 アダプターを交換 |
-| 内蔵 Wi-Fi 7 と外付けの衝突 | ルーター衝突 | 内蔵 WiFi を `sudo nmcli radio wifi off` で停用し、外付けを使用する |
-| 工業環境での高温下での不安定性 | クーラリング / 工業版の違い | 工業版の EdgeXpert（MS-C931）を使用することを確認；環境温度が規格範囲内であることを確保 |
+| lsusb で ALFA アダプターが表示されない | USB-C 変換アダプターの不良 / 充電専用規格 | データ転送対応の USB 3.2 Gen 2×2 変換アダプターに交換。別の USB-C ポートを試す |
+| MediaTek チップで wlan インターフェースが出ない | モジュールが自動ロードされない / ファームウェアの欠落 | `sudo modprobe mt76x2u`；`sudo apt install linux-firmware`；`dmesg \| grep mt76` を確認 |
+| Realtek アダプターを挿しても wlan インターフェースが出ない | kernel がその機種の最低バージョン（EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）より古く、対応ドライバーが内蔵されていない | `uname -r` でバージョンを確認。kernel をアップグレードするか、古い kernel ではコミュニティの DKMS ドライバーをインストール |
+| monitor／AP を繰り返し切り替えた後、何も受信できない | RX 停止（RX stall） | アダプターを抜き差しして USB を再列挙させる |
+| EACS／AXML を挿し直した後に wlx インターフェースが出ない | Bluetooth＋Wi-Fi 複合デバイスの probe が停止 | 別の USB ポートに挿し直す |
+| WiFi の速度が遅い | 変換アダプターが USB 2.0 のみ対応 | USB 3.2 Gen 2×2 変換アダプターに交換 |
+| 内蔵 Wi-Fi 7 と外付けが競合する | ルーティングの競合 | `sudo nmcli radio wifi off` で内蔵 WiFi を無効にしてから外付けを使用 |
+| 産業環境の高温下で不安定になる | 冷却 / 産業用版の違い | 産業用版 EdgeXpert（MS-C931）を使用していることを確認。周囲温度が仕様範囲内であることを確認 |
 
-## 9. 知られている制限
+## 9. 既知の制限
 
-- USB Type-C 転換の必要性：AXML以外のすべてのALFAネットワークカードはUSB-C to USB-A アダプターが必要です
-- Realtek クリスタルチップの手動翻訳：RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BUはmainlineに未統合
-- 内蔵Wi-Fi 7の可能性と外接機器との衝突：EdgeXpertは内蔵Wi-Fi 7 + BT 5.4を搭載
-- APモードの手動設定：DGX OSはデフォルトで開発環境として設定されています
-- 6GHzの規制：Wi-Fi 6Eの利用可能性は規制地域によって異なります
-- 驅動更新の依存関係：Realtekのout-of-treeドライバはコミュニティで保守されており、カーネルの更新後は再コンパイルが必要です
-- 工業版の差異が互換性に影響を与えない：MSIの工業版（MS-C931）のハードウェア仕様は消費版と同じであり、USB WiFiの互換性も一貫しています
+- USB Type-C 変換が必要：AXML 以外のすべての ALFA アダプターに USB-C to USB-A 変換アダプターが必要です
+- MT7921 機種のインジェクション失敗：AWUS036AXM / AXML は stock kernel 6.17 上でパケットインジェクションに失敗し、deauth や handshake の取得ができません。monitor、AP、WPA3 は使用可能です。主な原因は kernel 6.16 以降の mac80211 chanctx のリグレッションで、コミュニティのパッチ版ドライバーにもまだレート制限があります
+- テスト範囲：ASUS GX10（kernel 6.17.0-1014-nvidia）でのみ実機テストしており、MSI EdgeXpert は個別にテストしていません（同じ動作が見込まれます）
+- hcxdumptool は使用不可：2.4 GHz の EACS を除く全機種で `failed to arm` となるため、airodump-ng + aireplay-ng を使用してください
+- 内蔵 Wi-Fi 7 と外付けが競合する可能性：EdgeXpert は Wi-Fi 7 + BT 5.4 を内蔵しています
+- AP モードは手動設定が必要：DGX OS はデフォルトで開発環境として構成されています
+- 6GHz の法規制限：Wi-Fi 6E の利用可否は規制地域によって異なります
+- 古い kernel：Realtek 機種でコミュニティの DKMS ドライバーが必要なのは kernel がその機種の最低バージョン（EACS 6.2、ACH／ACS 6.13、AX／AXER 6.17）より古いシステムのみで、その場合は kernel 更新のたびに再コンパイルが必要です
+- 産業用版の違いは互換性に影響しない：MSI 産業用版（MS-C931）のハードウェア仕様はコンシューマー版と同じで、USB WiFi の互換性も同じです
 
-反論条件：MSIの公式スペックページが変更された場合（USBポートの仕様調整、カーネルバージョンが6.x未満）、または実際のテストでmt76x2u / mt7921uがDGX OS上で自動的にロードできない場合、本文の第6節の互換性マトリックスを再確認する必要があります；morrownrドライバがARM64ブランチの保守を停止した場合、Realtekモデルの判定を再検討する必要があります。
+反証条件：MSI の公式仕様ページが変更された場合（USB ポート仕様の変更、kernel バージョンが 6.x 未満など）、または実機テストで mt76x2u / mt7921u が DGX OS 上で自動ロードされないことが判明した場合は、本記事第6節の互換性マトリックスを見直す必要があります。NVIDIA kernel の更新後に内蔵ドライバーの動作が変わった場合も、改めて実機で検証する必要があります。
 
-## 10. 参考来源 URL
+## 10. 参考情報 URL
 
-| 来源 | 説明 | URL | 検核状態 | 検核日期 |
+| 情報源 | 説明 | URL | 確認状態 | 確認日 |
 |---|---|---|---|---|
-| MSI EdgeXpert 公式商城（US） | EdgeXpert 消費版規格 | https://us-store.msi.com/MSI-EdgeXpert-Blackwell-AI-Supercomputer | ✅ 已検核 | 2026-09-03 |
-| MSI EdgeXpert 商城（TW） | EdgeXpert 消費版規格（23STW） | https://tw-store.msi.com/products/edgexpert-23stw-bgb104tg4 | ✅ 已検核 | 2026-09-03 |
-| MSI 工業電腦公式公告 | EdgeXpert 產品発布情報 | https://ipc.msi.com/en/news/146241 | ✅ 已検核 | 2026-09-03 |
-| NVIDIA DGX Spark 公式ページ | GB10 平台情報 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 已検核 | 2026-09-03 |
-| morrownr/8812au GitHub | RTL8812AU Linux ドライバ | https://github.com/morrownr/8812au-20210820 | ✅ 已検核 | 2026-09-03 |
-| ALFA Network 產品総覧（Yopitek） | ALFA 現役製品規格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已検核 | 2026-09-03 |
+| MSI EdgeXpert 公式ストア（US） | EdgeXpert コンシューマー版の仕様 | https://us-store.msi.com/MSI-EdgeXpert-Blackwell-AI-Supercomputer | ✅ 確認済み | 2026-09-03 |
+| MSI EdgeXpert ストア（TW） | EdgeXpert コンシューマー版の仕様（23STW） | https://tw-store.msi.com/products/edgexpert-23stw-bgb104tg4 | ✅ 確認済み | 2026-09-03 |
+| MSI 産業用 PC 公式発表 | EdgeXpert 製品発表情報 | https://ipc.msi.com/en/news/146241 | ✅ 確認済み | 2026-09-03 |
+| NVIDIA DGX Spark 公式ページ | GB10 プラットフォーム情報 | https://www.nvidia.com/en-us/products/workstations/dgx-spark/ | ✅ 確認済み | 2026-09-03 |
+| morrownr/8812au GitHub | RTL8812AU Linux ドライバー | https://github.com/morrownr/8812au-20210820 | ✅ 確認済み | 2026-09-03 |
+| ALFA Network 製品一覧（Yopitek） | ALFA 現行製品仕様 | /ja/products/alfa/ | ✅ 確認済み | 2026-09-03 |
+| ALFA 9機種 ARM64 実機テスト総まとめ（Yopitek） | ASUS GX10 + Ubuntu 24.04 ARM64 実機テスト | https://yupitek.com/ja/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/ | ✅ 実機テスト | 2026-11-18 |
 
-関連記事：[ALFA 无線网卡は NVIDIA DGX Spark に対応していますか](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA 无線网卡は ASUS Ascent GX10 に対応していますか](https://yupitek.com/zh-tw/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA 无線网卡は ALTOS BrainSphere GB10 F1 に対応していますか](https://yupitek.com/zh-tw/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[ALFA 无線网卡は GIGABYTE AI TOP ATOM に対応していますか](https://yupitek.com/zh-tw/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA 无線网卡は NVIDIA Jetson Nano に対応していますか](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
+関連記事：[ALFA無線LANアダプターはNVIDIA DGX Sparkに対応しているか](/ja/blog/alfa-nvidia-dgx-spark-compatibility/)｜[ALFA無線LANアダプターはASUS Ascent GX10に対応しているか](/ja/blog/alfa-asus-ascent-gx10-compatibility/)｜[ALFA無線LANアダプターはALTOS BrainSphere GB10 F1に対応しているか](/ja/blog/alfa-altos-brainsphere-gb10-compatibility/)｜[ALFA無線LANアダプターはGIGABYTE AI TOP ATOMに対応しているか](/ja/blog/alfa-gigabyte-ai-top-atom-compatibility/)｜[ALFA無線LANアダプターはNVIDIA Jetson Nanoに対応しているか](/ja/blog/alfa-nvidia-jetson-nano-compatibility/)
 
-免責声明：本文の相容性判定は、MSI EdgeXpert 預装の NVIDIA DGX OS（kernel 6.x, aarch64）を基準としています。EdgeXpert と DGX Spark は同じハードウェアプラットフォームを共有しており、相容性は完全に一致しています。MediaTek クリスタルセットドライバは Linux mainlineであり、安定性が高いです；Realtek クリスタルセットドライバはコミュニティの維持です。EdgeXpert は Wi-Fi 7 を内蔵しており、ALFA を外接する主な理由は滲透試験や特殊なクリスタルセットの需要です。
+免責事項：本記事の互換性判定は、2026年11月に ASUS GX10（Ubuntu 24.04 ARM64、kernel 6.17.0-1014-nvidia）で行った実機テストを基準としています。MSI EdgeXpert は GX10 と同じ GB10 と NVIDIA kernel 系列を使用しているため同じ動作が見込まれますが、個別にはテストしていません。GX10 で実測した kernel 6.17 には ALFA 9 機種のドライバーがすべて内蔵されており（最低バージョンは機種ごとに異なる）、コミュニティの DKMS ドライバーが必要なのは kernel がその機種の最低バージョンより古い場合のみです。EdgeXpert は Wi-Fi 7 を内蔵しており、外付けの ALFA は主にペネトレーションテストや特定チップセットが必要な用途に使われます。監視とインジェクションは、自分が所有する、または許可を得たネットワークでのみ行ってください。

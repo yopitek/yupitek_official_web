@@ -22,8 +22,6 @@ faq:
     answer: "Two things: heat and power. Internal module temperature must usually stay under 90°C~115°C, and outdoor metal boxes overheat easily, so you need proper heat conduction. Also, a 5G module can draw up to 2.7 A instantaneously, so the power converter must handle the surge."
 ---
 
-# Cellular Backhaul for Video Surveillance and Digital Signage: Cat 6 to 5G, What Should You Pick?
-
 **The short version: do not get excited just because it says 5G. First ask whether your device is "upload heavy" or "download heavy". A surveillance camera keeps pushing video to the cloud, so watch the uplink speed. A digital signage screen keeps pulling new clips down to play, so watch the downlink speed. If you only need to send a few 1080p streams, the cheapest Cat 6 card is already enough!**
 
 Many project owners ask for a 5G module the moment they start planning the network for a street surveillance camera or a chain store advertising screen.

@@ -188,12 +188,12 @@ sudo make dkms_install
 ```bash
 # 从 Makefile 获取驱动版本
 grep MODULE_VERSION Makefile | head -1
-# 示例输出：v5.6.4.2
+# 示例输出: v5.6.4.2
 
 # 将源码复制到 DKMS 目录
 sudo cp -r ../rtl8812au /usr/src/rtl8812au-5.6.4.2
 
-# 注册、编译、安装
+# 注册, 编译, 安装
 sudo dkms add -m rtl8812au -v 5.6.4.2
 sudo dkms build -m rtl8812au -v 5.6.4.2
 sudo dkms install -m rtl8812au -v 5.6.4.2
@@ -203,7 +203,7 @@ sudo dkms install -m rtl8812au -v 5.6.4.2
 
 ```bash
 dkms status
-# 预期：rtl8812au/5.6.4.2, 6.x.x-kali-amd64: installed
+# 预期: rtl8812au/5.6.4.2, 6.x.x-kali-amd64: installed
 ```
 
 ---
@@ -341,7 +341,7 @@ sudo aireplay-ng --test wlan0mon
 测试 5 GHz 数据包注入，指定对应信道：
 
 ```bash
-# 切换到 5 GHz 信道（例如信道 36）
+# 切换到 5 GHz 信道 (例如信道 36)
 sudo iwconfig wlan0mon channel 36
 # 或
 sudo iw dev wlan0mon set channel 36
@@ -368,7 +368,7 @@ dmesg | grep -i rtl
 # 尝试手动加载模块
 sudo modprobe 88XXau
 
-# 若 modprobe 失败，检查缺失的依赖
+# 若 modprobe 失败, 检查缺失的依赖
 modinfo 88XXau
 
 # 重新编译驱动
@@ -408,7 +408,7 @@ sudo aireplay-ng --test wlan0mon
 
 ```bash
 whoami
-# 应输出：root
+# 应输出: root
 ```
 
 ---
@@ -423,10 +423,10 @@ whoami
 # 检查 DKMS 状态
 dkms status
 
-# 若 rtl8812au 显示为 "built" 但未为新内核 "installed"：
+# 若 rtl8812au 显示为 "built" 但未为新内核 "installed":
 sudo dkms install rtl8812au/5.6.4.2 -k $(uname -r)
 
-# 若上述方法失败，删除并重新安装：
+# 若上述方法失败, 删除并重新安装:
 sudo dkms remove rtl8812au/5.6.4.2 --all
 cd /path/to/rtl8812au
 sudo make dkms_install
@@ -450,7 +450,7 @@ sudo iwconfig wlan0mon channel 1
 # 检查监管域
 iw reg get
 
-# 设置宽松监管域（请谨慎使用，遵守当地法规）
+# 设置宽松监管域 (请谨慎使用, 遵守当地法规)
 sudo iw reg set BO
 ```
 
@@ -466,7 +466,7 @@ sudo iw reg set BO
 # 关闭接口电源管理
 sudo iwconfig wlan0mon power off
 
-# 提高发射功率（使用前请确认当地法规是否允许）
+# 提高发射功率 (使用前请确认当地法规是否允许)
 sudo iw dev wlan0mon set txpower fixed 3000  # 30 dBm
 ```
 

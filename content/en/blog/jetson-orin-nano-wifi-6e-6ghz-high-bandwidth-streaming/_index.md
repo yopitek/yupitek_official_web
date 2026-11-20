@@ -3,7 +3,7 @@ title: "Break Edge AI Bandwidth Bottlenecks with 6GHz Wi-Fi 6E"
 description: "Install the ALFA AWUS036AXML Wi-Fi 6E adapter on Jetson Orin Nano to move multi-stream RTSP 4K video to the 6GHz band, with iperf3 and GStreamer A/B test results."
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,8 +11,8 @@ tags: ["jetson-orin-nano", "wifi-6e", "awus036axml", "6ghz", "rtsp", "edge-ai", 
 featureimage: "/images/blog/jetson-orin-nano-wifi-6e-6ghz-high-bandwidth-streaming.webp"
 ---
 
-> **Target platform**: NVIDIA Jetson Orin Nano Developer Kit, JetPack 6.x (Ubuntu 22.04 LTS base, Linux Kernel 5.15 / 6.1)
-> **Guide hardware**: ALFA AWUS036AXML (MediaTek MT7921AU chipset, Wi-Fi 6E tri-band USB adapter)
+> **Target platform**: NVIDIA Jetson Orin Nano Developer Kit, JetPack 6.x (Ubuntu 22.04 LTS base, Linux Kernel 5.15)
+> **Guide hardware**: ALFA AWUS036AXML (MediaTek MT7921AUN chipset, Wi-Fi 6E tri-band USB adapter)
 > **Scope**: This is a bench-test evaluation for a DIY open-source academic / engineering development platform — not official support for a commercial product, and not an endorsement by any closed-platform vendor.
 
 ## Foreword: Where Does the Edge Device's "Bandwidth Ceiling" Come From?
@@ -88,7 +88,7 @@ Write down the RSSI, bitrate, ping latency, and packet loss of the "old card / o
 
 ### 2.1 Check Your JetPack Kernel Version First
 
-The core advantage of the AWUS036AXML is that **MediaTek MT7921AU's `mt7921u` driver is natively integrated into the mainline Linux kernel** (merged since Kernel 5.18) — **no GitHub driver compilation needed**. But "native support" has a threshold; check your kernel version first:
+The AWUS036AXML uses the MediaTek MT7921AUN chip (the AXM uses MT7921AU), and its `mt7921u` driver only entered the mainline Linux kernel in Kernel 5.18. JetPack 6.x ships Kernel 5.15 by default, which does not include the mainline `mt7921u`, so **do not assume "install JetPack and it just works"**. Check your kernel version and driver first:
 
 ```bash
 uname -r
@@ -99,8 +99,9 @@ Reference table:
 | JetPack | Base OS | Linux Kernel | AWUS036AXML support |
 |---|---|---|---|
 | JetPack 5.1.x | Ubuntu 20.04 (verify yourself) | 5.10 | Driver must be verified; we recommend upgrading straight to JetPack 6.x |
-| JetPack 6.0 / 6.1 | Ubuntu 22.04 LTS | 5.15 | Depends on kernel version; run `modinfo mt7921u` first |
-| JetPack 6.2+ (recommended) | Ubuntu 22.04 LTS | 6.1 | `mt7921u` built in natively, plug and play |
+| JetPack 6.0 / 6.1 / 6.2 / 6.2.2 (L4T 36.2–36.5) | Ubuntu 22.04 LTS | 5.15 LTS (e.g. `5.15.116-release-tegra`) | Older than the mainline merge (5.18); works only if NVIDIA's L4T kernel backports the driver, so run `modinfo mt7921u` first |
+
+> **This adapter has not been tested on Jetson.** Yupitek's only test platform is the ASUS GX10 (Ubuntu 24.04, kernel 6.17): the AXML's 6 GHz works, monitor mode is weak, and packet injection fails. Every JetPack 6.x release uses Kernel 5.15, so upgrading to JetPack 6.2 does not make the driver built in. Run `modinfo mt7921u`: if it prints output, the L4T kernel already ships the driver; if not, you need a backported / DKMS driver or to swap in an upstream kernel 5.18 or newer (NVIDIA says JetPack 6 can run an upstream kernel 5.14 or newer, but that is not the default setup).
 
 Verify the driver and firmware are ready:
 
@@ -251,7 +252,7 @@ sudo tegrastats
 | Linux Kernel | `uname -r` | \_\_\_\_\_ |
 | `mt7921u` built in? | `modinfo mt7921u` | output / no output |
 
-> If `uname -r` is below 5.18 and `modinfo mt7921u` produces no output: update JetPack first (6.2+ recommended, Kernel 6.1) before discussing the adapter. **Don't force-compile non-mainline drivers on an old kernel** — that just becomes the subject of another troubleshooting article.
+> If `uname -r` is below 5.18 and `modinfo mt7921u` produces no output (the default situation on JetPack 6.x): the L4T kernel does not ship this driver. Your options are a backported / DKMS driver matching your kernel, or swapping in a kernel 5.18 or newer; both are self-maintained setups, so back up first and keep a rollback path. Upgrading the JetPack version alone does not change Kernel 5.15.
 
 ### Step 2: Confirm Your Wireless Environment
 
@@ -267,8 +268,8 @@ sudo tegrastats
 
 | Platform | Support status |
 |---|---|
-| Ubuntu 22.04 / 24.04 | ✅ Native `mt7921u` (Kernel 5.18+; JetPack 6.2+ applies) |
-| Kali Linux | ✅ Native support (Monitor Mode / Packet Injection) |
+| Ubuntu 22.04 / 24.04 | ✅ `mt7921u` is mainline from Kernel 5.18; JetPack 6.x defaults to 5.15, so confirm with `modinfo mt7921u` first or use a backported / DKMS driver |
+| Kali Linux | ✅ Native support (Monitor Mode); ⚠️ Packet Injection: community reports before kernel 6.16, failed in testing on stock 6.17 |
 | Windows 11 | ✅ (6GHz band requires Windows 11 or newer) |
 | Windows 10 | ✅ (but no 6GHz band — 2.4/5GHz only) |
 | macOS (Intel / Apple Silicon) | ❌ **Not supported** (no macOS driver for MT7921AU — don't buy for this) |
@@ -304,7 +305,7 @@ This solution is a **bench-test evaluation for a DIY open-source academic / engi
 
 ## Conclusion and Hardware Recommendations
 
-When multi-stream 4K video enters an edge AI platform, the bottleneck is usually not compute — it's **wireless payload capacity and channel cleanliness**. 2.4G/5G are already flooded with devices; **Wi-Fi 6E's 6GHz offers a brand-new interference-free channel** — pair it with a native-driver, compile-free adapter and the Jetson Orin Nano can stably carry 2–4 streams of 4K, pushing the "bandwidth ceiling" problem back in one stroke.
+When multi-stream 4K video enters an edge AI platform, the bottleneck is usually not compute — it's **wireless payload capacity and channel cleanliness**. 2.4G/5G are already flooded with devices; **Wi-Fi 6E's 6GHz offers a brand-new interference-free channel** — pair it with an adapter whose driver is available (Jetson's default kernel is 5.15, so confirm with `modinfo mt7921u` first, see 2.1; this card has not been tested on Jetson) and the Jetson Orin Nano can stably carry 2–4 streams of 4K, pushing the "bandwidth ceiling" problem back in one stroke.
 
 **Recommended hardware**: ALFA AWUS036AXML (MediaTek MT7921AU, native compile-free support on Linux Kernel 5.18+, Wi-Fi 6E tri-band, dual RP-SMA 5dBi high-gain antennas, 2.7W low power). The AWUS036AXMR, built on the same chipset architecture, is the antenna-less embedded variant — a good fit for space-constrained rack-mounted edge nodes.
 

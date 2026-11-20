@@ -55,7 +55,7 @@ Das ist der Kernpunkt dieser überarbeiteten Ausgabe. Die Antennendesigns der DJ
 **② Interner Mikrokoaxialstecker (Gehäuseöffnung für Umbau nötig)**
 Die neueren Modelle mit Display – **RC2, RC Pro, Smart Controller** – zeigen außen zwar weiterhin zwei Antennen, aber diese sind **fest verbaut und nur im Winkel verstellbar**, nicht abschraubbar. Öffnest du das Gehäuse, siehst du: Im Inneren kommen **IPEX-, IPEX4-** oder ähnliche Mikrokoaxialstecker zum Einsatz, die direkt auf der Hauptplatine verlötet sind. Das Gehäuse hat keine Gewindeöffnung vorgesehen, die der Nutzer aufschrauben könnte.
 
-> **Hintergrundwissen:** In Community-Diskussionen gibt es eine interessante These: Der RP-SMA-Standard wurde unter anderem als Reaktion auf die US-amerikanische FCC-Beschränkung „nicht abnehmbare Antennen" entwickelt. Mit anderen Worten: DJI hat bei den Controllern mit Display bewusst auf interne Mikrokoaxialstecker statt externer RP-SMA-Buchsen gesetzt – vermutlich nicht nur wegen Wasserschutz oder Optik, sondern **weil das Design Nutzer davon abhalten soll, die Antennen selbst zu tauschen**. Das erklärt auch, warum die Antennen neuerer Modelle immer „nicht abnehmbarer" werden.
+> **Hintergrundwissen:** In Community-Diskussionen gibt es eine interessante These: Der RP-SMA-Standard wurde unter anderem als Reaktion auf die US-amerikanische FCC-Beschränkung „nicht abnehmbare Antennen“ entwickelt. Mit anderen Worten: DJI hat bei den Controllern mit Display bewusst auf interne Mikrokoaxialstecker statt externer RP-SMA-Buchsen gesetzt – vermutlich nicht nur wegen Wasserschutz oder Optik, sondern **weil das Design Nutzer davon abhalten soll, die Antennen selbst zu tauschen**. Das erklärt auch, warum die Antennen neuerer Modelle immer „nicht abnehmbarer“ werden.
 
 **So erkennst du den Typ:** Schau auf die Antennenwurzel oben am Controller – gibt es einen deutlich sichtbaren Sechskant- oder Rändel-Gewindering aus Metall und lässt sich die Antenne von Hand losschrauben, handelt es sich um externes RP-SMA. Lässt sich die Antenne nur seitlich kippen und ist das Gehäuse durchgehend nahtlos, ist sie intern verbaut – ein Umbau erfordert dann das Öffnen des Gehäuses.
 
@@ -250,7 +250,7 @@ Der Austausch der externen Antennen kann den **CE-, FCC- oder lokalen Typgenehmi
 
 ## Installationsschritte
 
-Je nach Modell unterscheidet sich die Installation stark. Prüfe zuerst in der „Kompatibilitätsreferenztabelle für Controller" oben, zu welcher Kategorie dein Modell gehört, und folge dann dem passenden Abschnitt.
+Je nach Modell unterscheidet sich die Installation stark. Prüfe zuerst in der „Kompatibilitätsreferenztabelle für Controller“ oben, zu welcher Kategorie dein Modell gehört, und folge dann dem passenden Abschnitt.
 
 ### A. RC-N1 (externes RP-SMA, ohne Gehäuseöffnung)
 
@@ -350,5 +350,5 @@ Unabhängig von deinem Modell gilt: Das Ziel eines Antennen-Upgrades ist mehr **
 4. [ALFA Network Offizielle Website — Antennen-Zubehörspezifikationen](https://www.alfa.com.tw/)
 5. [Taiwanische National Communications Commission (NCC) — Telekommunikationsverwaltungsgesetz](https://www.ncc.gov.tw/)
 6. [IEEE-802.11-Standarddokumente — WLAN-Spezifikationen](https://standards.ieee.org/ieee/802.11/)
-7. mavicpilots.com-Community-Threads: „RC2 / RC external antenna mod", „RC 2 and RC Pro controller external antennae", „Connecting external antennas to the RC Plus" (2024)
-8. Alientech — „How to modify antenna of the DJI smart controller" Umbau-Tutorial (2019)
+7. mavicpilots.com-Community-Threads: „RC2 / RC external antenna mod“, „RC 2 and RC Pro controller external antennae“, „Connecting external antennas to the RC Plus“ (2024)
+8. Alientech — „How to modify antenna of the DJI smart controller“ Umbau-Tutorial (2019)

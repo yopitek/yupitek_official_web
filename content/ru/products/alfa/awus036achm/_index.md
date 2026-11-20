@@ -1,12 +1,13 @@
 ---
-title: "ALFA AWUS036ACHM — компактный двухдиапазонный USB адаптер AC433"
-description: "ALFA AWUS036ACHM, MediaTek MT7610U, AC433 двухдиапазонный, USB 2.0, компактный с одной антенной, поддержка Monitor Mode, для мобильного использования."
+title: "ALFA AWUS036ACHM — компактный двухдиапазонный USB адаптер AC600"
+description: "ALFA AWUS036ACHM, MediaTek MT7610U, AC600 двухдиапазонный, USB 2.0, компактный с одной антенной, поддержка Monitor Mode, для мобильного использования."
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 brands: ["alfa"]
-tags: ["Wi-Fi 5", "AC433", "USB 2.0", "двухдиапазонный", "компактный"]
+tags: ["Wi-Fi 5", "AC600", "USB 2.0", "двухдиапазонный", "компактный"]
 faq:
   - question: "Нужно ли устанавливать драйвер для AWUS036ACHM в Linux?"
     answer: "Обычно нет. На странице поддержки ALFA для Linux указано, что устройство работает по принципу «plug and play» в Kali, Ubuntu и Raspberry Pi OS, а также поддерживается в основном ядре Linux начиная с версии 4.19. В Debian дополнительно необходимо добавить источник APT non-free и установить пакет прошивки."

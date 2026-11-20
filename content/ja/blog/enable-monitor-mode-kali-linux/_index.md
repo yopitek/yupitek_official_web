@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["モニターモード", "Kali-Linux", "airmon-ng", "iw", "WiFiアダプター", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "モニターモードと管理モードの違いは？"
     answer: "モニターモードはアダプターが空中のすべての802.11フレームをキャプチャできるようにし、管理モードのように自身のMACに合致するパケットのみを受信する制限を受けません。無線ペネトレーションテストの基礎です。"
@@ -17,7 +17,7 @@ faq:
   - question: "モニターモード有効化後にインターフェースが自動的に管理モードに戻るのはなぜですか？"
     answer: "wpa_supplicantまたはNetworkManagerがバックグラウンドで再起動したのが原因です。airmon-ng check killを実行してこれらのプロセスを終了すれば解決します。"
   - question: "Kali Linuxで完全にモニターモードをサポートするALFAアダプターは？"
-    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）の3機種が完全サポートし、その中でACMはプラグアンドプレイです。"
+    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）の3機種が完全サポートし、その中でACMはプラグアンドプレイです。注意：AWUS036AXML のパケットインジェクションは stock kernel 6.17 では実測で失敗します（mac80211 chanctx のリグレッション。カーネル 6.16 以前ではコミュニティ報告あり）。インジェクションが必要な場合は ACH / ACM / AX をご利用ください。"
   - question: "airodump-ngでFixed channel wlan0mon: -1エラーが出た場合の解決方法は？"
     answer: "airodump-ngがチャネルを切り替えられないことを示しています。iwconfig wlan0mon channel 1でチャネルを指定し、残留するwpa_supplicantプロセスを終了してください。"
 ---
@@ -199,7 +199,7 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan0mon
 | モデル | チップセット | バンド | モニターモード | インジェクション | 備考 |
 |---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ | ✅ | ペネトレーションテストで最も人気 |
-| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E、カーネル 5.18+ が必要 |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ⚠️ カーネル 6.16 以前はコミュニティ報告あり；6.17 では実測で失敗 | Wi-Fi 6E、カーネル 5.18+ が必要 |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ | ✅ | 優れた Linux ドライバーサポート |
 
 上記のすべてのモデルは Kali Linux 2024.x および 2025.x でのドライバーサポートが確認されています。RTL8812AU などのチップセットでは、カーネルバージョンが非常に新しい場合、Aircrack-ng の GitHub リポジトリからドライバーをインストールする必要があるかもしれません。

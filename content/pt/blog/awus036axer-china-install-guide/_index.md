@@ -13,28 +13,28 @@ series_order: 5
 related_product: "/pt/products/alfa/awus036axer/"
 featureimage: "/images/blog/awus036axer-china-install-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Qual chipset o AWUS036AXER usa? É o mesmo do AWUS036AX?"
     answer: "Usa o mesmo chipset Realtek RTL8832BU, suportando WiFi 6, mas em um formato menor e mais portátil."
   - question: "O AWUS036AXER precisa de instalação de driver no Ubuntu 24.04?"
-    answer: "Sim. O RTL8832BU não está no kernel do Ubuntu 24.04. Compile uma vez o driver comunitário rtl8852bu (morrownr/rtl8852bu-20250826) via DKMS; depois ele é recompilado automaticamente a cada atualização do kernel."
+    answer: "Depende do seu kernel. O kernel Linux 6.17 e mais recente (por exemplo, Ubuntu 24.04 HWE / kernel 6.17) já traz o driver rtw89_8852bu embutido no kernel — plug-and-play, sem DKMS. Somente em kernels anteriores ao 6.17 você compila uma vez o driver comunitário rtl8852bu (morrownr/rtl8852bu-20250826) via DKMS. Verifique antes com uname -r."
   - question: "O AWUS036AXER é adequado para pesquisa de segurança sem fio?"
-    answer: "Não. O driver comunitário rtl8852bu não suporta modo monitor nem injeção de pacotes. Use, em vez dele, um adaptador com driver MediaTek no kernel, como o AWUS036ACM."
+    answer: "Sim. Com o driver rtw89_8852bu embutido no kernel 6.17+, o modo monitor e a injeção de pacotes funcionam nos nossos testes (Ubuntu 24.04 / kernel 6.17: injeção de 73% em 2,4 GHz e captura WPA .22000 ponta a ponta). Observação: em kernels mais antigos que usam o driver comunitário via DKMS, o suporte ao modo monitor pode ser limitado. Apenas em redes que você possui ou está autorizado a testar."
   - question: "Qual é o USB ID do AWUS036AXER?"
     answer: "O ID do fabricante do Realtek RTL8832BU é 0bda. O ID do produto é 8832 ou 885a, dependendo da unidade; confirme com lsusb."
   - question: "Preciso de VPN para instalar o AWUS036AXER na China?"
     answer: "Não necessariamente. Clone o driver do repositório GitHub verificado (morrownr/rtl8852bu-20250826); se o GitHub estiver lento, use um proxy ou mirror de confiança. As ferramentas de compilação ainda podem ser instaladas por espelhos nacionais."
 ---
 
-O AWUS036AXER é o adaptador WiFi 6 nano da ALFA — um dongle compacto projetado para ficar permanentemente conectado a um laptop. O chip RTL8832BU do AWUS036AXER não tem driver no kernel do Linux, então em qualquer distribuição (inclusive o Ubuntu 24.04) é preciso compilar uma vez o driver comunitário rtl8852bu via DKMS. O código-fonte do driver é clonado do repositório GitHub verificado; se o GitHub estiver lento, use um proxy ou mirror de confiança. Este driver não suporta o modo monitor.
+O AWUS036AXER é o adaptador WiFi 6 nano da ALFA — um dongle compacto projetado para ficar permanentemente conectado a um laptop. O chip RTL8832BU é suportado pelo **driver rtw89_8852bu embutido no kernel Linux 6.17 e mais recente** (por exemplo, Ubuntu 24.04 HWE / kernel 6.17) — plug-and-play, sem compilação. Somente em **kernels mais antigos** (anteriores ao 6.17) é preciso compilar uma vez o driver comunitário rtl8852bu via DKMS. Este guia cobre ambos os casos. O código-fonte do driver é clonado do repositório GitHub verificado; se o GitHub estiver lento, use um proxy ou mirror de confiança.
 
-> **Nota sobre pesquisa de segurança:** O driver comunitário rtl8852bu não suporta modo monitor nem injeção de pacotes. Para pesquisa de segurança, use um adaptador com driver MediaTek no kernel, como o [AWUS036ACM](/pt/blog/awus036acm-china-install-guide/).
+> **Nota sobre pesquisa de segurança:** Com o **driver rtw89_8852bu embutido no kernel 6.17+**, o modo monitor e a injeção de pacotes do AWUS036AXER funcionam nos testes (Ubuntu 24.04 / kernel 6.17: injeção de 73% em 2,4 GHz, WPA .22000 ponta a ponta). Somente em kernels mais antigos que usam o driver comunitário via DKMS o suporte ao modo monitor é limitado. Verifique antes com `uname -r`. Apenas em redes que você possui ou está autorizado a testar.
 
 > **Nota de alcance:** O AWUS036AXER possui uma antena integrada não removível. Para pesquisa de segurança, adaptadores com antenas RP-SMA externas (AWUS036ACH, AWUS036ACM) fornecem um alcance significativamente melhor.
 
 {{< tldr >}}
-O AWUS036AXER usa o chipset RTL8832BU com WiFi 6. O driver não está no kernel: todas as distribuições (inclusive o Ubuntu 24.04) precisam compilar o rtl8852bu via DKMS. O modo monitor não é suportado.
+O AWUS036AXER usa o chipset RTL8832BU com WiFi 6. O kernel 6.17+ (inclusive Ubuntu 24.04 / kernel 6.17) tem o driver rtw89_8852bu embutido no kernel — sem DKMS, com modo monitor e injeção funcionando nos testes. Kernels mais antigos precisam do driver comunitário rtl8852bu via DKMS.
 {{< /tldr >}}
 
 ## Antes de Começar
@@ -109,19 +109,31 @@ iwconfig
 
 ### Passo 5: Ativar Modo Monitor {#enable-monitor-mode}
 
-> **Não suportado:** O driver comunitário rtl8852bu do RTL8832BU não suporta o modo monitor, portanto não há comandos a executar aqui. Se precisar do modo monitor, use um adaptador com driver MediaTek no kernel, como o [AWUS036ACM](/pt/blog/awus036acm-china-install-guide/).
+> **Funciona no kernel 6.17+:** Com o driver rtw89_8852bu embutido no kernel, o modo monitor funciona:
+> ```bash
+> sudo nmcli dev set wlxXXXX managed no
+> sudo ip link set wlxXXXX down
+> sudo iw dev wlxXXXX set type monitor
+> sudo ip link set wlxXXXX up
+> ```
+> Em kernels mais antigos que usam o driver comunitário via DKMS, o suporte ao modo monitor pode ser limitado — nesse caso, você pode mudar para um adaptador MediaTek embutido no kernel, como o [AWUS036ACM](/pt/blog/awus036acm-china-install-guide/).
 
 ### Passo 6: Testar Injeção de Pacotes {#test-packet-injection}
 
-> **Não suportado:** A injeção de pacotes depende do modo monitor, que este driver não oferece. Use o [AWUS036ACM](/pt/blog/awus036acm-china-install-guide/) para testes de injeção.
+> **Funciona no kernel 6.17+:** Após entrar no modo monitor, teste a injeção com o aireplay-ng (73% em 2,4 GHz nos testes):
+> ```bash
+> sudo iw dev wlxXXXX set channel 6
+> sudo aireplay-ng --test wlxXXXX
+> ```
+> Apenas em redes que você possui ou está autorizado a testar. Em kernels mais antigos, onde o driver comunitário via DKMS não oferece o modo monitor, a injeção também não fica disponível.
 
 ---
 
 ## Ubuntu 22.04 / 24.04
 
-### Ubuntu 24.04 (Noble) — DKMS necessário
+### Ubuntu 24.04 (Noble)
 
-O Ubuntu 24.04 (kernel 6.8) não inclui driver para o RTL8832BU. Mude para um mirror doméstico e compile o driver como no Ubuntu 22.04 abaixo.
+No Ubuntu 24.04, somente um **kernel HWE 6.17 ou mais recente** (por exemplo, o HWE do 24.04.4) traz o driver rtw89_8852bu embutido no kernel — basta conectar, sem compilação. No **kernel GA 6.8** ou no **kernel HWE 6.14** (nenhum dos dois inclui esse driver), mude para um mirror doméstico e compile o driver comunitário como no Ubuntu 22.04 abaixo, ou atualize para um kernel HWE 6.17 ou mais recente para obter o driver embutido.
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -144,7 +156,7 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-Após reiniciar, execute `sudo modprobe 8852bu` e `iwconfig`. Se o módulo carregar e uma interface aparecer, está pronto (somente modo gerenciado; o modo monitor não é suportado).
+Após reiniciar, execute `sudo modprobe 8852bu` e `iwconfig`. Isso se aplica ao caminho do driver comunitário via DKMS em kernels mais antigos (somente modo gerenciado; o suporte ao modo monitor pode ser limitado). Em kernels 6.17+, o driver rtw89_8852bu embutido no kernel é usado, com modo monitor e injeção funcionando.
 
 ---
 
@@ -192,7 +204,7 @@ sudo ./install-driver.sh
 sudo reboot
 ```
 
-O modo monitor não é suportado por este driver (veja o passo 5 do Kali).
+Em kernels anteriores ao 6.17, o modo monitor pode ser limitado no driver comunitário via DKMS (veja o passo 5 do Kali). Em kernels 6.17+, o driver rtw89_8852bu embutido no kernel é usado, com modo monitor e injeção funcionando.
 
 ---
 
@@ -242,7 +254,7 @@ sudo reboot
 | `install-driver.sh` falha | Headers ausentes | `sudo apt install linux-headers-$(uname -r)` |
 | Clone do GitHub falha ou é lento | Problema de rede | Use um proxy ou mirror de confiança |
 | `modprobe 8852bu` falha | Driver não compilado ou não carregado | Execute `sudo ./install-driver.sh` novamente, verifique `sudo dkms status` e reinicie |
-| Modo monitor / injeção não funciona | Não suportado pelo driver rtl8852bu | Use o AWUS036ACM para trabalhos de pentest |
+| Modo monitor / injeção não funciona | Kernel anterior ao 6.17 com o driver comunitário DKMS rtl8852bu (o modo monitor pode ser limitado) | Verifique com `uname -r`; use kernel 6.17+ (rtw89_8852bu embutido) ou o AWUS036ACM em kernels antigos |
 
 > **Nota sobre VIF:** O driver fora do kernel do RTL8832BU não suporta Interfaces Virtuais (VIF).
 

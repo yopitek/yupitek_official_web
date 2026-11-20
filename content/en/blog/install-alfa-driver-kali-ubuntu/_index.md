@@ -73,7 +73,7 @@ The driver you need depends entirely on your chipset, not the adapter's marketin
 |---|---|---|---|
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (in-kernel) |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.17) |
 | [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (kernel 5.18+) |
 
 ### Identify Your Adapter with lsusb
@@ -414,7 +414,7 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/en/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` (DKMS) | Manual DKMS + ARM headers |
 | [AWUS036ACM](/en/products/alfa/awus036acm/) | MT7612U | Built-in (`mt76x2u`) ✅ | Built-in — plug-and-play ✅ |
-| [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | N/A |
+| [AWUS036AX](/en/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.17) | N/A |
 | [AWUS036AXML](/en/products/alfa/awus036axml/) | MT7921AUN | Built-in (`mt7921u`, kernel 5.18+) | `linux-firmware` pkg |
 
 ---

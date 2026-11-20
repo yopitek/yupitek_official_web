@@ -21,7 +21,7 @@ faq:
 ![ROS 2 Humble Robot Wireless Optimization Blueprint](/images/blog/02_ros2_robot_rf_coverage.jpg)
 
 > **適用平台**：Ubuntu 22.04 / 24.04 上的 ROS 2 Humble 開源機器人開發平台（AMR、人形、四足等）
-> **引導硬體**：ALFA AWUS036AXML（MediaTek MT7921AU 晶片，原生核心支援）
+> **引導硬體**：ALFA AWUS036AXML（MediaTek MT7921AUN 晶片，原生核心支援）
 > **本篇定位**：本方案為開源學術平台 bench-test 評估，非商用成品之官方支援。
 
 ---
@@ -100,7 +100,7 @@ AWUS036AXML 的設計剛好打中這個痛點：
 在改硬體前後，各做一次 30 秒的量測，留下數字證據：
 
 ```bash
-# 在機器人上（ROS 2 端）觀察無線訊號品質
+# 在機器人上 (ROS 2 端) 觀察無線訊號品質
 iw dev wlan0 link                 # 看 RSSI
 watch -n1 "iw dev wlan0 link | grep -E 'signal|tx bitrate'"
 
@@ -174,10 +174,10 @@ export CYCLONEDDS_URI=file:///home/<user>/ros2_ws/cyclonedds.xml
 # 查看目前連線名稱
 nmcli c
 
-# 建立/調整連線，鎖定 5GHz 頻段（band a = 5GHz）
+# 建立/調整連線, 鎖定 5GHz 頻段 (band a = 5GHz)
 nmcli con mod <連線名稱> 802-11-wireless.band a
 
-# 也可以鎖定特定通道與停用隨機 MAC（讓 AP 端辨識穩定）
+# 也可以鎖定特定通道與停用隨機 MAC (讓 AP 端辨識穩定)
 nmcli con mod <連線名稱> 802-11-wireless.channel 36
 
 # 重新啟動連線套用設定
@@ -191,7 +191,7 @@ nmcli con up <連線名稱>
 在 ROS 2 中，**影像與雷射點雲建議使用 `BEST_EFFORT`**（寧可掉一幀，不要整條管道卡住），**導航制限與狀態機則用 `RELIABLE`**。在訊號弱的 Wi-Fi 上，全 RELIABLE 會造成重傳風暴。
 
 ```bash
-# 範例：訂閱點雲時指定 BEST_EFFORT QoS
+# 範例: 訂閱點雲時指定 BEST_EFFORT QoS
 ros2 run your_pkg your_node --ros-args \
   -p sensor_qos:=best_effort
 ```
@@ -200,7 +200,7 @@ ros2 run your_pkg your_node --ros-args \
 
 ### 3.4 檢查驅動與韌體：原生支援不等於不用更新
 
-AWUS036AXML 使用 MediaTek **MT7921AU** 晶片，在 Ubuntu 22.04（Kernel 5.15+）/ 24.04 與 Kali 2025 皆為**核心內建 `mt7921u` 驅動，隨插即用、不需編譯**。但韌體（firmware）仍要確保新：
+AWUS036AXML 使用 MediaTek **MT7921AUN** 晶片，在 Ubuntu 22.04（Kernel 5.15+）/ 24.04 與 Kali 2025 皆為**核心內建 `mt7921u` 驅動，隨插即用、不需編譯**。但韌體（firmware）仍要確保新：
 
 ```bash
 sudo apt update
@@ -284,6 +284,6 @@ ros2 topic hz /chatter
 
 金屬與碳纖維外殼造成的法拉第籠效應，是移動機器人無線化的第一道牆；**把天線移出籠子**（外接高增益天線）是投入產出比最高的一招。搭配 ROS 2 的 DDS 設定與頻段鎖定，讓節點同步恢復「即時且可靠」。
 
-**推薦硬體**：ALFA AWUS036AXML（MediaTek MT7921AU，Linux 原生免編譯核心支援、雙 RP-SMA 外接天線、Wi-Fi 6E 三頻，Kali / Ubuntu 隨插即用）。如果你偏好較舊但同樣成熟的 Realtek 方案，也可參考 AWUS036ACH（RTL8812AU，5GHz 雙天線），但需留意核心更新後的 DKMS 驅動編譯事項（我們會在另一篇文章詳細拆解）。
+**推薦硬體**：ALFA AWUS036AXML（MediaTek MT7921AUN，Linux 原生免編譯核心支援、雙 RP-SMA 外接天線、Wi-Fi 6E 三頻，Kali / Ubuntu 隨插即用）。如果你偏好較舊但同樣成熟的 Realtek 方案，也可參考 AWUS036ACH（RTL8812AU，5GHz 雙天線），但需留意核心更新後的 DKMS 驅動編譯事項（我們會在另一篇文章詳細拆解）。
 
 **下一步**：把這份排障工作表印出來，跟你的夾具、量測工具一起送進場域——資料治百病。

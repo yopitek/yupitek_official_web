@@ -22,9 +22,9 @@ faq:
 ---
 
 
-Wenn du an deinem Lab-Projekt arbeitest oder gerade ein Projekt für ein Firmen-Privat-LTE- oder CBRS-Netz übernommen hast, wirst du in jeder Diskussionsliste auf das M.2-Modul EM7565 stoßen. Aber Achtung: „Häufig erwähnt" heißt nicht „gekauft, eingesteckt, und schon läuft CBRS".
+Wenn du an deinem Lab-Projekt arbeitest oder gerade ein Projekt für ein Firmen-Privat-LTE- oder CBRS-Netz übernommen hast, wirst du in jeder Diskussionsliste auf das M.2-Modul EM7565 stoßen. Aber Achtung: „Häufig erwähnt“ heißt nicht „gekauft, eingesteckt, und schon läuft CBRS“.
 
-In diesem Artikel verzichten wir auf Marketing-Floskeln. Unsere einzige Grundlage ist das offizielle Datenblatt von Sierra Wireless, „AirPrime EM7565 Product Technical Specification" (Doc 41110788, Rev 8, Oktober 2018). Wir prüfen Punkt für Punkt Chip, Geschwindigkeiten, Bänder, Antennen, Temperaturen und Zertifizierung und sagen dir ehrlich, was der Vorbehalt „in Erwartung der regulatorischen Freigabe" im Datenblatt bedeutet. So unterstützen wir Studierende und Ingenieure aus Systemintegration und Netzwerkarchitektur bei der Kaufentscheidung.
+In diesem Artikel verzichten wir auf Marketing-Floskeln. Unsere einzige Grundlage ist das offizielle Datenblatt von Sierra Wireless, „AirPrime EM7565 Product Technical Specification“ (Doc 41110788, Rev 8, Oktober 2018). Wir prüfen Punkt für Punkt Chip, Geschwindigkeiten, Bänder, Antennen, Temperaturen und Zertifizierung und sagen dir ehrlich, was der Vorbehalt „in Erwartung der regulatorischen Freigabe“ im Datenblatt bedeutet. So unterstützen wir Studierende und Ingenieure aus Systemintegration und Netzwerkarchitektur bei der Kaufentscheidung.
 
 > Produktlink: [EM7565 — Yopitek-Produktseite](/de/products/sierra/em7565/) | Offizielles Datenblatt: [AirPrime EM7565 Product Technical Specification](https://yupitek.com/docs/sierra/EM7565_spec.pdf)
 
@@ -38,9 +38,9 @@ Direkte Antworten auf die drei wichtigsten Fragen:
 
 | Frage | Direkte Antwort |
 |---|---|
-| **Kann ich mit dem EM7565 ein CBRS-Privatnetz aufbauen?** | Im Datenblatt ist LTE Band 48 (das 3,5-GHz-Band für CBRS) tatsächlich gelistet, aber zum Zeitpunkt der Veröffentlichung von Rev 8 war es als „disabled, in Erwartung der regulatorischen Freigabe" markiert. Für den kommerziellen Einsatz gelten immer die aktuelle Gesetzeslage und das neueste offizielle Datenblatt. Frag uns vor der Bestellung und prüfe die aktuellen Dokumente! |
+| **Kann ich mit dem EM7565 ein CBRS-Privatnetz aufbauen?** | Im Datenblatt ist LTE Band 48 (das 3,5-GHz-Band für CBRS) tatsächlich gelistet, aber zum Zeitpunkt der Veröffentlichung von Rev 8 war es als „disabled, in Erwartung der regulatorischen Freigabe“ markiert. Für den kommerziellen Einsatz gelten immer die aktuelle Gesetzeslage und das neueste offizielle Datenblatt. Frag uns vor der Bestellung und prüfe die aktuellen Dokumente! |
 | **Wie schnell ist der Upload?** | Bis zu 150 Mbit/s (Cat 13); der Download erreicht bis zu 600 Mbit/s (Cat 12). |
-| **Für wen ist er am besten geeignet?** | Für Industrierouter im Firmeneinsatz und Systemintegratoren, die beim Edge Computing „große Datenmengen in die Cloud übertragen" müssen (wegen der hohen Upload-Geschwindigkeit). Wenn du ein Maker bist und mit Raspberry Pi bastelst, geht das auch mit einem M.2-auf-USB-Adapter. |
+| **Für wen ist er am besten geeignet?** | Für Industrierouter im Firmeneinsatz und Systemintegratoren, die beim Edge Computing „große Datenmengen in die Cloud übertragen“ müssen (wegen der hohen Upload-Geschwindigkeit). Wenn du ein Maker bist und mit Raspberry Pi bastelst, geht das auch mit einem M.2-auf-USB-Adapter. |
 | **Hat er eingebaute Antennen?** | Nein! Auf der Karte gibt es nur 3 kleine RF-Anschlüsse (Main, GNSS, Auxiliary). Antennen musst du selbst kaufen und die Leitungslayouts selbst entwerfen. |
 
 ---
@@ -80,19 +80,19 @@ Ingenieure lieben Zahlen. Alle Werte unten stammen aus dem offiziellen Datenblat
 
 **Kurz gesagt: Hardware-seitig ist Unterstützung da, aber Firmware und Regulierung hängen vom aktuellen Stand ab.**
 
-Im Datenblatt ist Band 48 (3550–3700 MHz) für CBRS tatsächlich enthalten, aber (und dieses „aber" ist wichtig) zum Zeitpunkt der Veröffentlichung von Rev 8 waren B42/B43/B48 eindeutig markiert als „disabled as of publication date, support pending regulatory approval" (zum Veröffentlichungsdatum deaktiviert, Unterstützung in Erwartung der regulatorischen Freigabe).
+Im Datenblatt ist Band 48 (3550–3700 MHz) für CBRS tatsächlich enthalten, aber (und dieses „aber“ ist wichtig) zum Zeitpunkt der Veröffentlichung von Rev 8 waren B42/B43/B48 eindeutig markiert als „disabled as of publication date, support pending regulatory approval“ (zum Veröffentlichungsdatum deaktiviert, Unterstützung in Erwartung der regulatorischen Freigabe).
 
-Wir können also nicht pauschal garantieren, dass man das Modul „kauft und direkt ein CBRS-Netz aufbaut". Wenn du ein CBRS-Privatnetz planst, musst du drei Dinge prüfen: ob B48 in der aktuellen Firmware freigeschaltet ist, ob das Gerät der aktuellen FCC-Part-96-Zertifizierung entspricht und ob das komplette System OTA besteht. Bei Bedarf fragst du am besten zuerst bei uns nach dem aktuellen Stand.
+Wir können also nicht pauschal garantieren, dass man das Modul „kauft und direkt ein CBRS-Netz aufbaut“. Wenn du ein CBRS-Privatnetz planst, musst du drei Dinge prüfen: ob B48 in der aktuellen Firmware freigeschaltet ist, ob das Gerät der aktuellen FCC-Part-96-Zertifizierung entspricht und ob das komplette System OTA besteht. Bei Bedarf fragst du am besten zuerst bei uns nach dem aktuellen Stand.
 
 ---
 
 ## Cat 12 Download + Cat 13 Upload: Was bedeutet das für dein Projekt?
 
-**Das Highlight ist eigentlich nicht der Download, sondern die „extrem starke Upload-Fähigkeit"!**
+**Das Highlight ist eigentlich nicht der Download, sondern die „extrem starke Upload-Fähigkeit“!**
 
-Normalerweise laden wir am Handy viel herunter (Videos schauen, Feed scrollen). Aber in industriellen Anwendungen oder IoT-Projekten müssen Geräte oft „Daten in die Cloud hochladen". Der EM7565 liefert im Upload Cat 13 (bis 150 Mbit/s, 2×CA, 64QAM) und im Download Cat 12 (bis 600 Mbit/s, 3×CA, 256QAM).
+Normalerweise laden wir am Handy viel herunter (Videos schauen, Feed scrollen). Aber in industriellen Anwendungen oder IoT-Projekten müssen Geräte oft „Daten in die Cloud hochladen“. Der EM7565 liefert im Upload Cat 13 (bis 150 Mbit/s, 2×CA, 64QAM) und im Download Cat 12 (bis 600 Mbit/s, 3×CA, 256QAM).
 
-Das ist ideal für Szenarien mit **höherem Upload- als Download-Bedarf**: „die Überwachungskamera in der Fabrik soll das Bild in Echtzeit an die Leitstelle übertragen", „die Sensordaten des autonomen Fahrzeugs sollen massenhaft in die Cloud hochgeladen werden". Wenn dein Projekt nur braucht, dass das Gerät ins Internet geht und Daten abruft, reicht ein günstigeres Cat-6-Modul (zum Beispiel EM7455) völlig aus.
+Das ist ideal für Szenarien mit **höherem Upload- als Download-Bedarf**: „die Überwachungskamera in der Fabrik soll das Bild in Echtzeit an die Leitstelle übertragen“, „die Sensordaten des autonomen Fahrzeugs sollen massenhaft in die Cloud hochgeladen werden“. Wenn dein Projekt nur braucht, dass das Gerät ins Internet geht und Daten abruft, reicht ein günstigeres Cat-6-Modul (zum Beispiel EM7455) völlig aus.
 
 ---
 
@@ -120,7 +120,7 @@ Für LTE brauchst du mindestens die beiden Antennen Main und Auxiliary als 2×2 
 
 ## GNSS: Internet und Ortung in einem Chip
 
-Wenn dein Projekt mit „Fahrzeugen" oder „Logistik" zu tun hat, bietet dieses Modul direkt die Verfolgung von fünf Konstellationen (GPS, GLONASS, Galileo, BeiDou, QZSS) mit bis zu 30 gleichzeitig verfolgten Kanälen. Der Kaltstart dauert etwa 32 Sekunden und liefert dir direkt Standard-NMEA-0183-Daten. So sparst du dir den Kauf eines separaten GPS-Moduls und den Platz auf der Platine.
+Wenn dein Projekt mit „Fahrzeugen“ oder „Logistik“ zu tun hat, bietet dieses Modul direkt die Verfolgung von fünf Konstellationen (GPS, GLONASS, Galileo, BeiDou, QZSS) mit bis zu 30 gleichzeitig verfolgten Kanälen. Der Kaltstart dauert etwa 32 Sekunden und liefert dir direkt Standard-NMEA-0183-Daten. So sparst du dir den Kauf eines separaten GPS-Moduls und den Platz auf der Platine.
 
 ---
 
@@ -140,13 +140,13 @@ Der EM7565 wird mit 3.135V bis 4.4V versorgt (typisch 3.3V). Achtung: Bei Vollla
 - **Maximalstrom**: 1,5A
 - **Kurzzeitiger Einschaltstrom**: 2,2A bis 2,5A
 
-Wenn du also deine eigene Platine designst und einen DC-DC-Abwärtswandler oder ein LDO auswählst, plane die Reserve nach „2,5A Einschaltstrom" ein. Verlass dich nicht auf „nur 2,8mA im Standby" und nimm dann einen Strom-IC, der die Last nicht schafft.
+Wenn du also deine eigene Platine designst und einen DC-DC-Abwärtswandler oder ein LDO auswählst, plane die Reserve nach „2,5A Einschaltstrom“ ein. Verlass dich nicht auf „nur 2,8mA im Standby“ und nimm dann einen Strom-IC, der die Last nicht schafft.
 
 ---
 
 ## Regulierung und Zertifizierung
 
-Im Datenblatt heißt es, die Konstruktion entspreche den Standards FCC (USA), NCC (Taiwan), RED (EU) usw. und sei mit GCF und PTCRB zertifiziert. Für Unternehmen, die Produkte auf den Markt bringen, spart das viel Zertifizierungsaufwand. Aber denk daran: Zertifiziert ist nur das „Modul". Dein fertiges „Gerät" muss trotzdem die FCC- oder NCC-Prüfung bestehen, sonst ist es nicht legal.
+Im Datenblatt heißt es, die Konstruktion entspreche den Standards FCC (USA), NCC (Taiwan), RED (EU) usw. und sei mit GCF und PTCRB zertifiziert. Für Unternehmen, die Produkte auf den Markt bringen, spart das viel Zertifizierungsaufwand. Aber denk daran: Zertifiziert ist nur das „Modul“. Dein fertiges „Gerät“ muss trotzdem die FCC- oder NCC-Prüfung bestehen, sonst ist es nicht legal.
 
 ---
 

@@ -36,8 +36,6 @@ faq:
 9. [أين تشتري](#9-where-to-buy)
 
 
-# ALFA AWUS036ACM: تفعيل شبكات IBSS Ad Hoc و 802.11s Mesh على Raspberry Pi مع MT7612U
-
 إذا حاولت يومًا بناء شبكة WiFi بين عقد Raspberry Pi **دون الحاجة إلى راوتر** — أو إنشاء شبكة شبكية لاسلكية ذاتية الإصلاح تُوجِّه حركة البيانات تلقائيًا عبر نقاط وسيطة — فستكتشف سريعًا أن معظم محوّلات USB WiFi لا تدعم ذلك. ببساطة، برنامج التشغيل الخاص بالنواة لا يكشف عن الأوضاع اللازمة.
 
 **ALFA AWUS036ACM**، المُدار بشريحة **MediaTek MT7612U**، هو الاستثناء. يُنفِّذ برنامج التشغيل `mt76` المدمج في النواة واجهة Linux mac80211 الكاملة، مما يعني دعمًا أصليًا لوضعَي **IBSS (Ad Hoc)** و**802.11s Mesh Point** على Raspberry Pi — جاهزًا للاستخدام فور التوصيل، دون الحاجة إلى تصريف أي برنامج تشغيل.
@@ -60,7 +58,7 @@ faq:
 
 ---
 
-## 1. ما هي IBSS و 802.11s Mesh؟
+## 1. ما هي IBSS و 802.11s Mesh؟ {#1-what-are-ibss-and-80211s-mesh}
 
 ### IBSS — المجموعة الخدمية الأساسية المستقلة (وضع Ad Hoc)
 
@@ -114,7 +112,7 @@ MT7612U هو أحد مجموعات الشرائح القليلة التي تكو
 
 ---
 
-## 2. المواصفات التقنية لـ ALFA AWUS036ACM
+## 2. المواصفات التقنية لـ ALFA AWUS036ACM {#2-alfa-awus036acm-hardware-specifications}
 
 AWUS036ACM هو محوّل USB 3.0 ثنائي النطاق AC1200 من ALFA Network، مصمّم لمستخدمي Linux المتقدمين ومطوّري البرمجيات المدمجة.
 
@@ -193,7 +191,7 @@ WPA2 / WPA / WEP / WPA-PSK / 802.1X / 64–128-bit WEP
 
 ---
 
-## 3. برنامج التشغيل MT7612U على Raspberry Pi
+## 3. برنامج التشغيل MT7612U على Raspberry Pi {#3-the-mt7612u-driver-on-raspberry-pi}
 
 ### برنامج التشغيل: mt76x2u (جزء من عائلة mt76)
 
@@ -286,7 +284,7 @@ MediaTek MT7612U    ← Physical chip (2×2 MIMO, USB 3.0)
 
 ---
 
-## 4. الوضع الأول: شبكات IBSS Ad Hoc
+## 4. الوضع الأول: شبكات IBSS Ad Hoc {#4-mode-1-ibss-ad-hoc-networking}
 
 ### كيفية عمل IBSS
 
@@ -475,7 +473,7 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 ---
 
-## 5. الوضع الثاني: شبكات 802.11s Mesh Point
+## 5. الوضع الثاني: شبكات 802.11s Mesh Point {#5-mode-2-80211s-mesh-point-networking}
 
 ### كيفية عمل 802.11s
 
@@ -638,7 +636,7 @@ sudo batctl o    # Originator table (all known nodes)
 sudo batctl tg   # Translation table (MAC → IP mapping)
 ```
 
-### جعل شبكة 802.11s Mesh دائمة
+### جعل شبكة 802.11s Mesh دائمة {#making-80211s-mesh-persistent}
 
 أنشئ `/etc/systemd/system/mesh-point.service`:
 
@@ -673,7 +671,7 @@ sudo systemctl start mesh-point.service
 
 ---
 
-## 6. حالات استخدام من الواقع العملي
+## 6. حالات استخدام من الواقع العملي {#6-real-world-use-cases}
 
 ### حالة الاستخدام 1 — شبكة استشعار بعيدة عن الشبكة (زراعة ذكية / رصد بيئي)
 
@@ -742,7 +740,7 @@ sudo tcpdump -i mon0 -w capture.pcap
 
 ---
 
-## 7. لماذا AWUS036ACM هو الخيار الوحيد من ALFA لهذا الغرض
+## 7. لماذا AWUS036ACM هو الخيار الوحيد من ALFA لهذا الغرض {#7-why-the-awus036acm-is-the-only-alfa-choice-for-this}
 
 ### العامل الحاسم: التوافق مع mac80211
 
@@ -753,7 +751,7 @@ sudo tcpdump -i mon0 -w capture.pcap
 | الطراز | مجموعة الشرائح | برنامج التشغيل | IBSS | 802.11s Mesh | ملاحظات |
 |---|---|---|---|---|---|
 | **AWUS036ACM** | MT7612U | mt76x2u (in-kernel ≥ 4.19) | ✅ | ✅ | **الخيار الوحيد** |
-| AWUS036ACH | RTL8812AU | rtw88 (in-kernel ≥ 6.14) | ✅ (kernel ≥ 6.14 فقط) | ❌ | برنامج تشغيل جديد في النواة؛ لا دعم لـ mesh point |
+| AWUS036ACH | RTL8812AU | rtw88 (in-kernel ≥ 6.13) | ✅ (kernel ≥ 6.13 فقط) | ❌ | برنامج تشغيل جديد في النواة؛ لا دعم لـ mesh point |
 | AWUS036ACS | RTL8811AU | rtl8812au-dkms (OOK) | ❌ | ❌ | برنامج تشغيل خارج النواة؛ لا IBSS/mesh |
 | AWUS036AX | RTL8832BU | rtw88 (in-kernel) | ❌ | ❌ | لا دعم لـ Raspberry Pi |
 | AWUS036AXER | RTL8832BU | rtw88 (in-kernel) | ❌ | ❌ | لا دعم لـ Raspberry Pi |
@@ -776,7 +774,7 @@ sudo tcpdump -i mon0 -w capture.pcap
 
 ---
 
-## 8. الأسئلة الشائعة واستكشاف الأخطاء
+## 8. الأسئلة الشائعة واستكشاف الأخطاء {#8-faq-and-troubleshooting}
 
 **س: يُظهر Pi الخاص بي `wlan0` فقط. أين `wlan1`؟**
 
@@ -850,7 +848,7 @@ sudo ip addr add 192.168.88.1/24 dev adhoc0
 
 ---
 
-## 9. أين تشتري
+## 9. أين تشتري {#9-where-to-buy}
 
 يتوفر ALFA AWUS036ACM من [yupitek.com](https://yupitek.com) — الموزّع الرسمي المعتمد لـ ALFA Network. الشراء عبر موزّع معتمد يضمن الحصول على أجهزة أصلية مع الضمان القياسي من Alfa Network Inc.
 

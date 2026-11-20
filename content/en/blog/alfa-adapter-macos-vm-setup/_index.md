@@ -3,7 +3,7 @@ title: "Using ALFA WiFi Adapters on macOS: USB Passthrough with VMware Fusion & 
 description: "How to use ALFA USB WiFi adapters on macOS. Covers native macOS support, VMware Fusion USB passthrough, and Parallels Desktop for Kali Linux monitor mode and packet injection."
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Can ALFA adapters use monitor mode natively on macOS?"
     answer: "No. macOS CoreWLAN and IO80211Family frameworks do not support monitor mode or packet injection for third-party adapters. You must run a Kali Linux VM with USB passthrough."
@@ -206,7 +206,7 @@ dmesg | grep mt7921
 # [ 4.123456] mt7921u 1-1:1.0: HW/SW Version: 0x8a108a10, Build Time: ...
 ```
 
-**Recommendation for M-chip Macs:** If you are purchasing an ALFA adapter specifically for use on an Apple Silicon Mac with Kali in a VM, the **AWUS036AXML (MT7921AUN)** is the better choice. Its in-kernel driver eliminates the DKMS compilation step entirely and works reliably on ARM64 Kali builds. The AWUS036ACH is functional but requires the RTL8812AU out-of-tree driver, adding a maintenance dependency on kernel header availability.
+**Recommendation for M-chip Macs:** If you are purchasing an ALFA adapter specifically for use on an Apple Silicon Mac with Kali in a VM, the **AWUS036AXML (MT7921AUN)** is the better choice. Its in-kernel driver eliminates the DKMS compilation step entirely and works reliably on ARM64 Kali builds. The AWUS036ACH is functional but requires the RTL8812AU out-of-tree driver, adding a maintenance dependency on kernel header availability. Note that injection depends on the kernel: community reports of working injection exist for kernels before 6.16, but on stock kernel 6.16 and later (tested on 6.17) the AXML fails the packet-injection test (`aireplay-ng --test`: Found 0 APs / No Answer), so deauth and handshake capture are not possible. The cause is a mac80211 chanctx regression, not a chip limitation; patched community drivers can restore injection, but the firmware still locks the rate (1/6 Mbps, no HT/VHT injection). Monitor mode, AP and WPA3 are unaffected. If you need injection, choose the AWUS036ACH or AWUS036EACS instead.
 
 ---
 

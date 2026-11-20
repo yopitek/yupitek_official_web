@@ -3,7 +3,7 @@ title: "جهاز Kali Linux الافتراضي لا يرى محول USB الخا
 description: "دليل تشخيص موحّد لتمرير USB (USB Pass-through): حزمة التوسعة Extension Pack في VirtualBox، ووحدة التحكم USB 3.0 (xHCI)، ومجموعة vboxusers، وخدمة التحكّم في USB في VMware، وسير التشخيص lsusb→iwconfig→dmesg، وقسم الأسئلة الشائعة."
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -17,7 +17,7 @@ faq:
   - question: "بعد إعداد مرشح USB، لم يعد المضيف قادراً على استخدام المحول. هل هذا طبيعي؟"
     answer: "نعم، هذا طبيعي. بعد تمرير الجهاز إلى Guest، تنتقل السيطرة عليه إلى Guest ولا يمكن للمضيف استخدامه في الوقت نفسه. عندما تحتاج المحول على المضيف مرة أخرى، قم بإرجاعه (release) من أيقونة USB في نافذة VM."
   - question: "lsusb داخل Guest يعرض المحول، لكن لا توجد واجهة wlan. أي مشغّل (Driver) يجب تثبيته؟"
-    answer: "يعتمد على الشريحة: AWUS036AXML (MediaTek MT7921AU) يستخدم مشغّل mt7921u المدمج في النواة — يعمل فور التوصيل على Kernel 5.18+؛ تأكد أولاً من تحديث apt install linux-firmware. أما AWUS036ACH (Realtek RTL8812AU) فيستخدم مشغّلاً خارج النواة (out-of-tree) — ثبّت aircrack-ng/rtl8812au الذي تحافظ عليه المجتمع وترجمه باستخدام DKMS (وانتبه لتوقيع MOK الخاص بـ Secure Boot؛ لا تعطّل Secure Boot)."
+    answer: "يعتمد على الشريحة: AWUS036AXML (MediaTek MT7921AUN) يستخدم مشغّل mt7921u المدمج في النواة — يعمل فور التوصيل على Kernel 5.18+؛ تأكد أولاً من تحديث apt install linux-firmware. أما AWUS036ACH (Realtek RTL8812AU) فيستخدم مشغّلاً خارج النواة (out-of-tree) — ثبّت aircrack-ng/rtl8812au الذي تحافظ عليه المجتمع وجمّعه باستخدام DKMS (وانتبه لتوقيع MOK الخاص بـ Secure Boot؛ لا تعطّل Secure Boot)."
   - question: "لماذا يفشل Guest في الإقلاع بعد اختيار وحدة تحكم USB 3.0؟"
     answer: "بعض نوى Guest القديمة ضعيفة الدعم لـ xHCI. إذا كان Kali إصداراً قديماً، جرّب: إيقاف التشغيل ← العودة إلى USB 2.0 (EHCI) Controller ← الإقلاع ← ترقية النواة ← العودة إلى USB 3.0. حافظ على تحديث Kali قدر الإمكان للحصول على دعم xHCI الأكثر اكتمالاً."
   - question: "المحول سريع على جهاز حقيقي لكنه بطيء داخل VM. هل هذا طبيعي؟"
@@ -25,7 +25,7 @@ faq:
 ---
 
 > **المنصات المدعومة**: مضيف Windows / Linux / macOS + Oracle VirtualBox / VMware Workstation (Guest = Kali Linux / Debian / Ubuntu)
-> **الأجهزة المستهدفة**: ALFA AWUS036ACH (Realtek RTL8812AU) / ALFA AWUS036AXML (MediaTek MT7921AU)
+> **الأجهزة المستهدفة**: ALFA AWUS036ACH (Realtek RTL8812AU) / ALFA AWUS036AXML (MediaTek MT7921AUN)
 > **نطاق المقال**: دليل تشخيص موحّد لاستكشاف أخطاء «تمرير USB (USB Pass-through)». تُشرح قيود تمرير USB على مضيف macOS في الفصل الخامس.
 
 ---
@@ -175,7 +175,7 @@ lsusb
 ```
 # AWUS036ACH (Realtek RTL8812AU)
 Bus ... ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac 2T2R DB WLAN Adapter
-# أو AWUS036AXML (MediaTek MT7921AU)
+# أو AWUS036AXML (MediaTek MT7921AUN)
 Bus ... ID 0e8d:7961 MediaTek Inc. Wireless_Device
 ```
 
@@ -221,7 +221,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 | `usb 3-1: new high-speed USB device ...` دون ما يليها | اكتمل تعداد الجهاز لكن لا يوجد مشغّل متاح | ثبّت المشغّل المطابق داخل Guest (انظر FAQ Q4) |
 | `Direct firmware load failed` / `firmware_loading` | نقص ملف البرنامج الثابت (firmware) | نفّذ `apt install firmware-realtek` ثم أعد تحميل الوحدة |
 | `Required key not available` | Secure Boot مفعّل والوحدة غير موقّعة | وقّع عبر مفتاح MOK (لا تعطّل Secure Boot) |
-| `disagrees about version of symbol` | إصدار المشغّل لا يطابق النواة | أعد الترجمة والتثبيت باستخدام DKMS |
+| `disagrees about version of symbol` | إصدار المشغّل لا يطابق النواة | أعد التجميع والتثبيت باستخدام DKMS |
 
 > **فهم أساسي**: ظهور الجهاز في `lsusb` يثبت فقط أن «تمرير USB تم»، **ولا يعني أن المشغّل حُمّل**. الحالة الشائعة «نجح التمرير لكن لا توجد wlan» سببها تحديداً عدم وجود مشغّل مطابق داخل Guest.
 
@@ -280,7 +280,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 |--------|-----------|-------|
 | مضيف Windows + VirtualBox / VMware + Guest Kali | ✅ مدعوم | جميع إجراءات هذا الفصل تنطبق |
 | مضيف Linux + VirtualBox / VMware + Guest Kali | ✅ مدعوم | تذكر مجموعة vboxusers (VB) وخدمة vmware-usbarbitrator (VMware) |
-| **macOS (Apple Silicon)** + VirtualBox | ⚠️ **تمرير USB محدود** | يُنصح بالتحول إلى VMware Fusion، أو استخدام مضيف Linux／Windows |
+| **macOS (Apple Silicon)** + VirtualBox | ⚠️ **تمرير USB محدود** | يُنصح بالتحول إلى VMware Fusion، أو استخدام مضيف Linux/Windows |
 | macOS (Intel) + VirtualBox | ✅ مدعوم | يتطلب الموافقة على امتدادات النواة + Extension Pack مطابق للإصدار |
 | **Guest هو macOS** | ❌ غير موصى به | هذا المقال يفترض Guest من Linux مثل Kali / Debian / Ubuntu |
 
@@ -304,7 +304,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 
 | بند الفحص | الإجراء | حقل التسجيل |
 |----------|--------|------------|
-| برنامج المحاكاة والإصدار | VirtualBox: `vboxmanage --version` ／ VMware: Help ← About | \_\_\_\_\_ |
+| برنامج المحاكاة والإصدار | VirtualBox: `vboxmanage --version` / VMware: Help ← About | \_\_\_\_\_ |
 | هل إصدار حزمة التوسعة مطابق؟ | VirtualBox: `VBoxManage list extpacks` | الإصدار \_\_\_\_\_ |
 | صلاحيات / خدمات المضيف | مضيف Linux: `id` لمعرفة vboxusers؛ VMware: `systemctl status vmware-usbarbitrator` | \_\_\_\_\_ |
 | إعداد وحدة تحكم USB | VirtualBox: هل USB 3.0 (xHCI) Controller مفعّل؟ | نعم / لا |
@@ -326,7 +326,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 
 ### حزمة معلومات Intake لخدمة العملاء
 
-قبل الاتصال بالدعم الفني／إرسال تذكرة العمل، أرفق المعلومات التالية دفعة واحدة ليدخل الدعم مباشرة في صلب الموضوع:
+قبل الاتصال بالدعم الفني/إرسال تذكرة العمل، أرفق المعلومات التالية دفعة واحدة ليدخل الدعم مباشرة في صلب الموضوع:
 
 > **نظام تشغيل المضيف + البنية، برنامج المحاكاة والإصدار، هل حزمة التوسعة مثبتة وما إصدارها، مخرجات `lsusb` على المضيف، مخرجات `lsusb` داخل Guest، مخرجات `ip link` / `iwconfig` داخل Guest، رسائل `dmesg` ذات الصلة، طراز المحول وطريقة التوصيل (USB-C / USB-A، توصيل مباشر أو عبر Hub)**
 
@@ -345,8 +345,8 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 
 **س4: `lsusb` داخل Guest يعرض المحول، لكن لا توجد واجهة wlan. أي مشغّل يجب تثبيته؟**
 يعتمد على الشريحة:
-- **AWUS036AXML (MediaTek MT7921AU)**: يستخدم مشغّل `mt7921u` المدمج في النواة، ويعمل فور التوصيل على Kernel 5.18+؛ تأكد أولاً من تحديث `apt install linux-firmware`.
-- **AWUS036ACH (Realtek RTL8812AU)**: يستخدم مشغّلاً خارج النواة (out-of-tree)، ثبّت `aircrack-ng/rtl8812au` الذي تحافظ عليه المجتمع وترجمه باستخدام DKMS (وانتبه لتوقيع MOK الخاص بـ Secure Boot؛ لا تعطّل Secure Boot).
+- **AWUS036AXML (MediaTek MT7921AUN)**: يستخدم مشغّل `mt7921u` المدمج في النواة، ويعمل فور التوصيل على Kernel 5.18+؛ تأكد أولاً من تحديث `apt install linux-firmware`.
+- **AWUS036ACH (Realtek RTL8812AU)**: يستخدم مشغّلاً خارج النواة (out-of-tree)، ثبّت `aircrack-ng/rtl8812au` الذي تحافظ عليه المجتمع وجمّعه باستخدام DKMS (وانتبه لتوقيع MOK الخاص بـ Secure Boot؛ لا تعطّل Secure Boot).
 
 **س5: لماذا يفشل Guest في الإقلاع بعد اختيار وحدة تحكم USB 3.0؟**
 بعض نوى Guest القديمة ضعيفة الدعم لـ xHCI. إذا كان Kali إصداراً قديماً، جرّب: إيقاف التشغيل ← العودة إلى USB 2.0 (EHCI) Controller ← الإقلاع ← ترقية النواة ← العودة إلى USB 3.0. حافظ على تحديث Kali قدر الإمكان للحصول على دعم xHCI الأكثر اكتمالاً.
@@ -365,7 +365,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 3. **اضبط وحدة تحكم USB على USB 3.0 (xHCI)**، واستخدم مرشح USB لتركيب المحول تلقائياً.
 4. **حدد الطبقة داخل Guest عبر `lsusb ← iwconfig / ip link ← dmesg`**، وعوّض المشغّل الناقص، وتوقف عن تخمين أن المحول تالف.
 
-**العتاد الموصى به**: ALFA AWUS036AXML (MediaTek MT7921AU) يتمتع على Kali بنواة أحدث بـ**مشغّل مدمج في النواة ويعمل فور التوصيل**، وهو الأقل عناءً بعد التمرير في الجهاز الافتراضي. ALFA AWUS036ACH (Realtek RTL8812AU) صالح للاستخدام أيضاً، لكن تذكر ترجمة مشغّل المجتمع باستخدام DKMS داخل Guest ومعالجة توقيع Secure Boot (يمكنك الرجوع إلى مقال استكشاف أخطاء RTL8812AU DKMS في هذا الموقع). يُنصح لكليهما باستخدام منفذ／Hub USB بمنفذ طاقة مستقل على المضيف، لاستبعاد متغير «فقدان الجهاز» دفعة واحدة.
+**العتاد الموصى به**: ALFA AWUS036AXML (MediaTek MT7921AUN) يتمتع على Kali بنواة أحدث بـ**مشغّل مدمج في النواة ويعمل فور التوصيل**، وهو الأقل عناءً بعد التمرير في الجهاز الافتراضي. ALFA AWUS036ACH (Realtek RTL8812AU) صالح للاستخدام أيضاً، لكن تذكر تجميع مشغّل المجتمع باستخدام DKMS داخل Guest ومعالجة توقيع Secure Boot (يمكنك الرجوع إلى مقال استكشاف أخطاء RTL8812AU DKMS في هذا الموقع). يُنصح لكليهما باستخدام منفذ/Hub USB بمنفذ طاقة مستقل على المضيف، لاستبعاد متغير «فقدان الجهاز» دفعة واحدة. لكن الحقن يعتمد على إصدار النواة: توجد تقارير مجتمعية عن عمل الحقن مع نوى أقدم من 6.16، أما على النواة الافتراضية 6.16 وما بعدها (جرى الاختبار على 6.17) فيفشل AXML في اختبار حقن الحزم (`aireplay-ng --test`: Found 0 APs / No Answer)، ولذلك يتعذر deauth والتقاط handshake. السبب تراجع (regression) في mac80211 chanctx وليس قيدًا في الشريحة؛ يمكن لمشغّلات المجتمع المعدّلة (patched) إعادة الحقن، لكن البرنامج الثابت يظل يثبّت المعدل (1/6 Mbps، بلا حقن HT/VHT). وضع المراقبة وAP وWPA3 لا تتأثر. إذا كنت بحاجة إلى الحقن فاختر AWUS036ACH أو AWUS036EACS بدلاً منه.
 
 **الخطوة التالية**: احفظ نسخة من ورقة عمل الفصل السادس على سطح مكتب جهاز Kali الافتراضي؛ في كل مرة «لا يرى الجهاز المحول»، نفّذها كاملة أولاً، ثم قرر ما إذا كنت ستفتح تذكرة دعم فني — اتبع الجدول، فالبيانات تعالج كل شيء.
 

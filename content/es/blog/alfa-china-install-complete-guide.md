@@ -10,7 +10,7 @@ series_order: 9
 description: "La guía definitiva para instalar todos los adaptadores WiFi USB Alfa en Linux desde China. Cubre Kali Linux, Ubuntu 22/24, Debian y Raspberry Pi. Mirrors nacionales para los paquetes del sistema y repositorios de GitHub verificados para el código de los controladores."
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Hace falta usar VPN para instalar tarjetas WiFi Alfa en China?"
     answer: "No necesariamente. Los paquetes del sistema vienen de espejos nacionales (USTC, Aliyun, Tsinghua); el código de los controladores que no están en el kernel se clona desde los repositorios de GitHub verificados de morrownr. Si GitHub va lento, usa un proxy o espejo de confianza."
@@ -19,7 +19,7 @@ faq:
   - question: "¿Qué tarjetas Alfa admiten WiFi 6?"
     answer: "El AWUS036AX y AWUS036AXER usan el chip RTL8832BU y admiten WiFi 6; Ubuntu 24.04 funciona sin controlador, plug-and-play."
   - question: "¿Qué tarjetas Alfa admiten WiFi 6E?"
-    answer: "El AWUS036AXM y AWUS036AXML usan el chip MT7921AUN y admiten WiFi 6E en triple banda."
+    answer: "El AWUS036AXM y AWUS036AXML usan el chip MT7921AUN. En el AWUS036AXML la banda de 6 GHz se verificó en pruebas locales; el AWUS036AXM admite WiFi 6E según sus especificaciones, pero su banda de 6 GHz no se ha probado."
   - question: "¿Qué hay que tener en cuenta al usar tarjetas Alfa en Raspberry Pi?"
     answer: "Debes usar un concentrador USB con alimentación para proveer energía y flashear la versión Kali ARM64 para obtener el mejor soporte de controladores."
 ---
@@ -142,7 +142,7 @@ Todos los recursos de esta guía usan los siguientes mirrors accesibles desde Ch
 | **清华大学镜像 (Tsinghua)** | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | **阿里云镜像 (Aliyun)** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recomendado) |
 | **中科大镜像 (USTC)** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recomendado) |
-| **华为云镜像** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Imágenes Kali ARM (alternativa) |
+| **华为云镜像 (Huawei Cloud)** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Imágenes Kali ARM (alternativa) |
 | **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | Código fuente de drivers |
 
 ---
@@ -420,7 +420,7 @@ Ve a: https://www.kali.org/get-kali/#kali-arm
 
 Elige **Raspberry Pi 4 (64-bit)** o **Raspberry Pi 5 (64-bit)**. NO uses 32-bit — se requiere 64-bit.
 
-> **Mirror de China:** Si kali.org es lento, usa 华为云: https://repo.huaweicloud.com/kali-images/
+> **Mirror de China:** Si kali.org es lento, usa 华为云 (Huawei Cloud): https://repo.huaweicloud.com/kali-images/
 
 ### Paso 2: Grabar en MicroSD
 
@@ -573,7 +573,7 @@ VIF (Virtual Interface Functionality) te permite ejecutar múltiples interfaces 
 |---------|-------------|-------|
 | **MT7612U (AWUS036ACM)** | ✅ Soporte nativo completo | Mejor opción para flujos de trabajo VIF |
 | **RTL8812AU (AWUS036ACH)** | ⚠️ Limitado | No puede ejecutar modo administrado + monitor simultáneamente |
-| **RTL8832BU (serie AX)** | ⚠️ Limitado | Consulta la documentación del modelo específico |
+| **RTL8832BU (serie AX)** | ✅ STA+AP funciona | Probado con rtw89_8852bu integrado en el kernel (6.17+); el controlador DKMS de la comunidad en kernels antiguos no admite VIF |
 
 ### Crear una interfaz virtual (MT7612U)
 

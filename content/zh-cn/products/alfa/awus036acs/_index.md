@@ -52,8 +52,8 @@ AWUS036ACS 是 Alfa 双频 802.11ac 产品线中最经济实惠的入门款，�
 |---|---|---|
 | Windows XP–11 | ✅ 支持 | 驱动程序请至 Alfa 官网下载 |
 | macOS 10.5–10.14 | ⚠️ 有限支持 | macOS 10.15+ 及 Apple Silicon 不支持 |
-| Ubuntu | ✅ 支持 | 需手动安装 DKMS 驱动（morrownr/8821au），无内核内置支持 |
-| Kali Linux | ✅ 支持 | 支持 Monitor Mode + Packet Injection，使用 morrownr GitHub 社区驱动 |
+| Ubuntu | ✅ 支持 | 内核 6.13 及以上使用 mainline 的 rtw88_8821au 驱动，无需另外安装；旧版内核才需手动安装 DKMS 驱动（morrownr/8821au）。 |
+| Kali Linux | ✅ 支持 | 支持 Monitor Mode + Packet Injection（GX10、Ubuntu 24.04、内核 6.17 实测：2.4 GHz 注入 100%、5 GHz 96%）。内核 6.13 及以上使用 mainline 驱动，旧版内核使用 morrownr 社区驱动。Kali 实机未实测。 |
 | NetHunter（Android） | ✅ 支持 | OTG USB 连接；RTL8811AU 已确认兼容 NetHunter |
 
 ## 硬件支持

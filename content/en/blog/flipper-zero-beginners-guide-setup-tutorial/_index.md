@@ -14,8 +14,6 @@ hero_alt: "Flipper Zero Beginner’s Guide: Unboxing, Firmware Updates, and 5 Ke
 seo_description: "What is Flipper Zero? From unboxing, microSD setup, and qFlipper firmware updates to hands-on tests of RFID, Sub-GHz, NFC, IR, and BadUSB, this guide helps you get started with Flipper Zero."
 ---
 
-# Flipper Zero Beginner’s Guide: Unboxing, Setup, Firmware Updates, and 5 Key Features
-
 > TL;DR: Flipper Zero is a pocket-sized hardware exploration tool featuring 125 kHz RFID, Sub-GHz, NFC, Infrared, and BLE. It connects via USB-C to emulate a keyboard (BadUSB). After unboxing, install a microSD card, update the firmware using qFlipper or the mobile app, and start exploring with RFID reading and IR remote control. Always use these features only on **devices you own or have explicit authorization to test**.
 
 ## What is Flipper Zero? Who Is It For?

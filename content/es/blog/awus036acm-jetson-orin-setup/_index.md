@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Por qué las tarjetas WiFi USB suelen fallar en Jetson Orin?"
     answer: "Jetson usa un kernel Tegra personalizado de NVIDIA, no un kernel Ubuntu estándar. Los controladores de terceros suelen fallar al compilar porque los headers del kernel no están disponibles o la ABI es incompatible."
@@ -20,7 +20,7 @@ faq:
     answer: "Es posible. Los controladores de terceros pueden fallar tras actualizar JetPack debido a cambios en la API del kernel y necesitan recompilación. Los controladores integrados (como mt76x2u) no se ven afectados."
   - question: "¿Qué versión de kernel de Linux usa el AIB-NW01?"
     answer: "El AIB-NW01 viene de fábrica con Ubuntu 20.04.6 LTS y JetPack 5.0, usando el kernel Tegra personalizado de NVIDIA 5.10.x-tegra, con arquitectura de CPU ARM64."
----Jetson Orin usa un kernel Tegra personalizado de NVIDIA; los controladores WiFi de terceros suelen fallar al compilar. El ALFA AWUS036ACM con chip MT7612U tiene el controlador integrado desde el kernel 4.19; es plug-and-play, la única solución verdaderamente sin compilación. Admite modo monitor, inyección de paquetes y modo AP.
+---
 
 {{< tldr >}}
 Jetson Orin usa un kernel Tegra personalizado de NVIDIA; los controladores WiFi de terceros suelen fallar al compilar. El ALFA AWUS036ACM con chip MT7612U tiene el controlador integrado desde el kernel 4.19; es plug-and-play, la única solución verdaderamente sin compilación. Admite modo monitor, inyección de paquetes y modo AP.
@@ -147,9 +147,9 @@ A continuación, un resumen de la compatibilidad de los chipsets de adaptadores 
 | **MT7612U** | **AWUS036ACM** | **In-kernel (mt76x2u)** | **4.19+** | ✅ Compatibilidad perfecta, plug-and-play |
 | RTL8812AU | AWUS036ACH | Out-of-tree (requiere compilación) | Compilación manual necesaria | ⚠️ Considerable pero con riesgo de compilación |
 | RTL8811AU | AWUS036ACS | Out-of-tree (requiere compilación) | Compilación manual necesaria | ⚠️ Mismos problemas que RTL8812AU |
-| RTL8812BU | AWUS036AX | Out-of-tree (requiere compilación) | Compilación manual necesaria | ⚠️ Requiere compilación, problemas conocidos |
+| RTL8832BU | AWUS036AX | Out-of-tree (requiere compilación) | Compilación manual necesaria | ⚠️ Requiere compilación, problemas conocidos |
 | MT7921AU | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ K5.10/5.15 no cumple el requisito |
-| RTL8832CU | AWUS036AXER | Out-of-tree (requiere compilación) | Compilación manual necesaria | ❌ No recomendado, soporte ARM64 incierto |
+| RTL8832BU | AWUS036AXER | Out-of-tree (requiere compilación) | Compilación manual necesaria | ❌ No recomendado, soporte ARM64 incierto |
 
 Fuente de datos: [Tabla de soporte de chipsets USB WiFi de morrownr](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
 
@@ -312,7 +312,7 @@ La verificación del GitHub issue #574 se realizó en un **Odroid M1** (ARM64 + 
 
 ### Escenarios aplicables para otros modelos
 
-El AWUS036ACH (RTL8812AU) y el AWUS036AX (RTL8812BU) no es que no funcionen, simplemente requieren compilar el driver manualmente en Jetson. Si tienes experiencia con entornos de compilación y estás dispuesto a mantener el driver, estos modelos también merecen consideración.
+El AWUS036ACH (RTL8812AU) y el AWUS036AX (RTL8832BU) no es que no funcionen, simplemente requieren compilar el driver manualmente en Jetson. Si tienes experiencia con entornos de compilación y estás dispuesto a mantener el driver, estos modelos también merecen consideración.
 
 ---
 

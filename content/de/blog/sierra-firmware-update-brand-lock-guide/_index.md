@@ -22,8 +22,6 @@ faq:
     answer: "Lass das Modul so lange neu starten, bis es in den Boot-and-Hold-Modus wechselt (nach 6 Neustarts in Folge), verbinde es wieder über USB und schreibe mit einem Flash-Tool das richtige Firmware-Image."
 ---
 
-# Sierra Wireless Firmware-Update & Brand-Lock-Wechsel: So flasht du sicher, ohne das Modul zu zerstören
-
 **Die Kurzfassung: Du kannst die Firmware deines Sierra-Moduls entweder Over-the-Air aktualisieren (FOTA, der Carrier schiebt das Update) oder selbst per USB flashen. Der Brand-Lock, vor dem sich alle fürchten (der Unterschied zwischen Dell- oder Lenovo-Editionen und der generischen Version), ist in Wirklichkeit nur ein Tausch des Firmware-Images. Prüfe vor dem Flashen die Version mit `AT+GMR`, unterbrich niemals die Stromversorgung mitten im Flash, und falls es doch schiefgeht, hat das Modul einen eingebauten SED-Wiederherstellungsmodus, der es zurückholen kann.**
 
 Viele Leute kaufen Sierra-Wireless-Module auf dem Gebrauchtmarkt, stecken sie in ihren Laptop oder Router und stellen fest, dass die Karte nicht funktioniert. Der Übeltäter ist meist der OEM-Brand-Lock. Dieser Leitfaden kombiniert die harten Fakten aus der offiziellen Spezifikation mit dem, was die Community auf die harte Tour gelernt hat, damit du dein Modul sicher flashen kannst.

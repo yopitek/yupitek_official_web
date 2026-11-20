@@ -13,7 +13,7 @@ series_order: 7
 related_product: "/zh-tw/products/alfa/awus036axml/"
 featureimage: "/images/blog/awus036axml-china-install-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "AWUS036AXML 用什麼晶片？跟 AWUS036AXM 一樣嗎？"
     answer: "同樣採用 MediaTek MT7921AUN 晶片，但 AWUS036AXML 是 USB-C 介面的旗艦版。"
@@ -30,10 +30,10 @@ faq:
 ALFA AWUS036AXML 是 WiFi 6E 三頻 USB-C 旗艦網路卡，搭載 MT7921AUN 晶片，驅動自核心 5.18 內建，僅需安裝韌體套件即可使用。
 
 {{< tldr >}}
-AWUS036AXML 採用 MT7921AUN 晶片，WiFi 6E 三頻 USB-C 旗艦網路卡，驅動核心內建，安裝韌體後即可使用監控模式、封包注入與 VIF。
+AWUS036AXML 採用 MT7921AUN 晶片，WiFi 6E 三頻 USB-C 旗艦網路卡，驅動核心內建，安裝韌體後即可使用監控模式、AP/WPA3 與 VIF；封包注入在 stock kernel 6.17 實測失敗（詳見下文）。
 {{< /tldr >}}
 
-AWUS036AXML 是 ALFA 的 WiFi 6E 旗艦機種——一款三頻 USB-C 無線網路卡，涵蓋 2.4 GHz、5 GHz 及較少壅塞的 6 GHz 頻段。其 MT7921AUN 晶片使用 `mt7921u` 驅動程式，自 Linux 核心 5.18 版起已內建支援。在 Ubuntu 24.04 與 Kali 2025 上，只需從國內映像站安裝韌體套件即可即插即用。本指南涵蓋完整設定步驟——韌體、驅動程式驗證、監控模式、封包注入與 VIF——無需訪問 GitHub。
+AWUS036AXML 是 ALFA 的 WiFi 6E 旗艦機種——一款三頻 USB-C 無線網路卡，涵蓋 2.4 GHz、5 GHz 及較少壅塞的 6 GHz 頻段。其 MT7921AUN 晶片使用 `mt7921u` 驅動程式，自 Linux 核心 5.18 版起已內建支援。在 Ubuntu 24.04 與 Kali 2025 上，只需從國內映像站安裝韌體套件即可即插即用。本指南涵蓋完整設定步驟——韌體、驅動程式驗證、監控模式與 VIF（並說明封包注入的核心版本限制）——無需訪問 GitHub。
 
 ## 開始前的準備
 
@@ -163,6 +163,8 @@ iwconfig
 ---
 
 ### 步驟 5：測試封包注入 {#test-packet-injection}
+
+⚠️ **版本前提：**核心 6.16 以前有社群回報注入可用；但在 stock kernel 6.17（ASUS GX10、Ubuntu 24.04 ARM64）上實測失敗——`aireplay-ng --test` 顯示 `Found 0 APs` / `No Answer`，因此無法進行 deauth 與 handshake 擷取。原因是核心 6.16 以後 mac80211 chanctx 回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps，無法注入 HT/VHT）。需要注入請改用 AWUS036ACH / EACS / ACS / AX（亦可選 ACM / ACHM）。監控模式、AP、WPA3 與 VIF 皆正常。
 
 ```bash
 sudo aireplay-ng --test wlan1
@@ -313,6 +315,8 @@ iwconfig
 
 ### 步驟 4：測試封包注入
 
+⚠️ 在 stock kernel 6.17 上此測試會失敗（見上方版本前提）；需要注入請改用 AWUS036ACH / EACS / ACS / AX。
+
 ```bash
 sudo aireplay-ng --test wlan1
 ```
@@ -387,6 +391,8 @@ iwconfig
 
 ### 步驟 6：測試封包注入
 
+⚠️ 在 stock kernel 6.17 上此測試會失敗（見上方版本前提）；需要注入請改用 AWUS036ACH / EACS / ACS / AX。
+
 ```bash
 sudo aireplay-ng --test wlan1
 ```
@@ -459,7 +465,7 @@ iwconfig
 | Ubuntu 22.04 無法載入驅動程式 | 核心 5.15 版本過舊 | 安裝 HWE：`sudo apt install linux-generic-hwe-22.04` |
 | 介面出現但無法連線 | 韌體檔案缺失 | 執行 `sudo apt install firmware-misc-nonfree` 後重新開機 |
 | 切換監控模式失敗 | 介面仍處於啟用狀態 | 在執行 `iw dev` 指令前先執行 `sudo ip link set wlan1 down` |
-| 注入測試顯示「No Answer」 | AP 距離過遠或介面錯誤 | 移近距離。以 `iwconfig` 確認 `Mode:Monitor`。 |
+| 注入測試顯示「No Answer」 | AP 距離過遠或介面錯誤；或核心 6.16 以上（mac80211 chanctx 回歸） | 移近距離。以 `iwconfig` 確認 `Mode:Monitor`。 核心 6.16 以上若需注入，請改用 ACH / EACS / ACS / AX。 |
 | VIF 介面建立失敗 | 驅動程式未完全載入 | 拔除後執行：`sudo rmmod mt7921u && sudo modprobe mt7921u` |
 
 ## 中國映像站參考
@@ -470,7 +476,7 @@ iwconfig
 | Alfa 文件 | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 產品手冊 |
 | 清華大學映像站 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
 | 阿里雲映像站 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推薦） |
-| 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦） |
+| 中科大映像站 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推薦） |
 | 華為雲映像站 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 映像檔（備用） |
 
 {{< faq >}}

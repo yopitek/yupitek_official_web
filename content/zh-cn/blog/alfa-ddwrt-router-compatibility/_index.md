@@ -13,17 +13,17 @@ tags:
   - "Compatibility"
 categories:
   - "路由器韧体"
-description: "目前 ALFA 全系列现役机型（AWUS036ACH / ACM / ACHM / ACS / EACS / AX / AXER / AXML / AXM，共 9 款）在 DD-WRT 上均无官方驱动支持，不建议使用。（判定母体：ALFA 现役 9 款 USB 网卡）DD-WRT 的 USB WiFi 支持仅限极少数旧型 Atheros / Ralink 晶片，且需特定编译版本。若需要在路由..."
+description: "目前 ALFA 全系列现役机型（AWUS036ACH / ACM / ACHM / ACS / EACS / AX / AXER / AXML / AXM，共 9 款）在 DD-WRT 上均无官方驱动支持，不建议使用。（判定母体：ALFA 现役 9 款 USB 网卡）DD-WRT 的 USB WiFi 支持仅限极少数旧型 Atheros / Ralink 晶片，且需特定编译版本。若需要在路由器上使用 USB WiFi 网卡，建议改用 OpenWrt。"
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. 问题摘要
 
 客户询问：「ALFA 系列 USB 无线网卡能否在刷了 DD-WRT 韧体的路由器上使用？」
 
-简短结论：目前 ALFA 全系列现役机型（AWUS036ACH / ACM / ACHM / ACS / EACS / AX / AXER / AXML / AXM，共 9 款）在 DD-WRT 上均无官方驱动支持，不建议使用。（判定母体：ALFA 现役 9 款 USB 网卡）DD-WRT 的 USB WiFi 支持仅限极少数旧型 Atheros / Ralink 晶片，且需特定编译版本。若需要在路由器上使用 USB WiFi 网卡，建议改用 OpenWrt（见 [ALFA 无线网卡是否支持 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)）。
+简短结论：目前 ALFA 全系列现役机型（AWUS036ACH / ACM / ACHM / ACS / EACS / AX / AXER / AXML / AXM，共 9 款）在 DD-WRT 上均无官方驱动支持，不建议使用。（判定母体：ALFA 现役 9 款 USB 网卡）DD-WRT 的 USB WiFi 支持仅限极少数旧型 Atheros / Ralink 晶片，且需特定编译版本。若需要在路由器上使用 USB WiFi 网卡，建议改用 OpenWrt（见 [ALFA 无线网卡是否支持 OpenWrt](/zh-cn/blog/alfa-openwrt-router-compatibility/)）。
 
 ## 2. 分析目标软体规格与需求
 
@@ -62,10 +62,10 @@ DD-WRT 透过 ipkg 套件管理系统安装额外驱动，但官方套件库中 
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | Out-of-tree（rtl8852bu / rtw89） |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | Out-of-tree（rtl8852bu / rtw89） |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | Out-of-tree（8812au，morrownr 维护） |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | Linux in-kernel（mt76x0u） |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | Linux in-kernel（mt76x0u） |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | Linux in-kernel（mt76x2u） |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | Out-of-tree（8812au 涵盖） |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | Out-of-tree（8821cu，morrownr 维护） |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | Out-of-tree（8812au 涵盖） |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | Out-of-tree（8821cu，morrownr 维护） |
 
 ## 4. 适用机型与晶片组
 
@@ -81,7 +81,7 @@ DD-WRT 透过 ipkg 套件管理系统安装额外驱动，但官方套件库中 
 
 所有现役 ALFA 机型（见第 3 节表格）均不被 DD-WRT 官方支持，原因：
 
-- Realtek 晶片（RTL8812AU / RTL8811AU / RTL8811CU / RTL8832BU）：DD-WRT 无对应 out-of-tree 驱动套件
+- Realtek 晶片（RTL8812AU / RTL8811AU / RTL8821CU / RTL8832BU）：DD-WRT 无对应 out-of-tree 驱动套件
 - MediaTek 晶片（MT7612U / MT7610U / MT7921AUN）：DD-WRT 未编入 mt76 / mt7921 驱动
 - 即使路由器有 USB 埠，硬体层面可以辨识装置（lsusb 可看到 VID/PID），但无驱动无法建立网路介面
 
@@ -111,7 +111,7 @@ DD-WRT 透过 ipkg 套件管理系统安装额外驱动，但官方套件库中 
 | AWUS036ACHM | MT7610U | ✅ | ❌ | ❌ | ❌ | ❌ | 不支持 |
 | AWUS036ACM | MT7612U | ✅ | ❌ | ❌ | ❌ | ❌ | 不支持 |
 | AWUS036ACS | RTL8811AU | ✅ | ❌ | ❌ | ❌ | ❌ | 不支持 |
-| AWUS036EACS | RTL8811CU | ✅ | ❌ | ❌ | ❌ | ❌ | 不支持 |
+| AWUS036EACS | RTL8821CU | ✅ | ❌ | ❌ | ❌ | ❌ | 不支持 |
 
 判定依据：DD-WRT 官方套件库与核心预设编译均未包含上述晶片的 USB WiFi 驱动。lsusb 能看到装置仅代表 USB 汇流排层级的辨识，不代表网路功能可用。
 
@@ -139,16 +139,16 @@ DD-WRT 透过 ipkg 套件管理系统安装额外驱动，但官方套件库中 
 ```bash
 # 检查 USB 装置是否被侦测
 lsusb
-# 预期输出应包含 ALFA 网卡的 VID/PID，例如：
+# 预期输出应包含 ALFA 网卡的 VID/PID, 例如:
 # Bus 001 Device 003: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac WLAN Adapter
 
 # 检查网路介面是否被建立
 ip link show
-# 若没有 wlan0 / wlan1 等新介面，代表驱动未载入
+# 若没有 wlan0 / wlan1 等新介面, 代表驱动未载入
 
 # 检查核心日志
 dmesg | tail -30
-# 若出现 "no driver" 或仅有 USB 列举讯息，确认驱动缺失
+# 若出现 "no driver" 或仅有 USB 列举讯息, 确认驱动缺失
 ```
 
 **步骤 5：检查可用的 WiFi 驱动模组**
@@ -156,7 +156,7 @@ dmesg | tail -30
 ```bash
 # 列出已载入的无线驱动
 lsmod | grep -E "ath|rt2|rtl|mt76|mac80211|cfg80211"
-# 若仅有路由器内建 WiFi 的驱动（如 wl / b43 / ath9k），代表无 USB WiFi 驱动
+# 若仅有路由器内建 WiFi 的驱动 (如 wl / b43 / ath9k), 代表无 USB WiFi 驱动
 ```
 
 **步骤 6：尝试安装社群驱动（若有）**
@@ -164,12 +164,12 @@ lsmod | grep -E "ath|rt2|rtl|mt76|mac80211|cfg80211"
 ```bash
 ipkg update
 ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
-# 若搜寻结果为空，确认该 DD-WRT 版本无可用驱动
+# 若搜寻结果为空, 确认该 DD-WRT 版本无可用驱动
 ```
 
 ### 路径 B：建议替代方案 — 改用 OpenWrt
 
-若客户需要在路由器上使用 ALFA USB WiFi 网卡，强烈建议将路由器韧体从 DD-WRT 改刷为 OpenWrt。OpenWrt 有活跃的 USB WiFi 驱动套件库，支持 MT7612U / MT7610U / RTL8812AU 等晶片。详细步骤请参考 [ALFA 无线网卡是否支持 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)。
+若客户需要在路由器上使用 ALFA USB WiFi 网卡，强烈建议将路由器韧体从 DD-WRT 改刷为 OpenWrt。OpenWrt 有活跃的 USB WiFi 驱动套件库，支持 MT7612U / MT7610U / RTL8812AU 等晶片。详细步骤请参考 [ALFA 无线网卡是否支持 OpenWrt](/zh-cn/blog/alfa-openwrt-router-compatibility/)。
 
 ## 8. 常见错误与排解
 
@@ -189,7 +189,7 @@ ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
 - AP 模式不稳定：即使旧型 Ralink 晶片可运作，USB WiFi 的 AP 模式在 DD-WRT 上常见断线与效能问题
 - 版本碎片化：不同路由器型号的 DD-WRT 编译版本差异大，无法保证某个版本的驱动在另一个版本也可用
 - 不再活跃维护：DD-WRT 开发节奏放缓，新增 USB WiFi 驱动的可能性低
-- 补充：即使抛开 DD-WRT 本身的限制，AWUS036AX / AXER（RTL8832BU）这两款机型的驱动维护者 morrownr 本身也公开建议 Linux 使用者避开此晶片系列（详见 [ALFA 无线网卡是否支持 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/) 第 9 节），并非仅是 DD-WRT 平台的问题
+- 补充：即使抛开 DD-WRT 本身的限制，AWUS036AX / AXER（RTL8832BU）这两款机型的驱动维护者 morrownr 本身也公开建议 Linux 使用者避开此晶片系列（详见 [ALFA 无线网卡是否支持 OpenWrt](/zh-cn/blog/alfa-openwrt-router-compatibility/) 第 9 节），并非仅是 DD-WRT 平台的问题
 
 反驳条件：若客户使用的是 BrainSlayer / Kong 等含额外驱动的社群编译版本，实际支持状况可能不同；本判定以官方发布版本为准。
 
@@ -201,8 +201,8 @@ ipkg list | grep -i "wifi\|wireless\|8812\|mt76"
 | DD-WRT 官方 Wiki — Installation | 安装说明（含 USB 支持） | https://wiki.dd-wrt.com/wiki/Installation | ✅ 经主页连结确认存在 | 2026-09-03 |
 | OpenWrt 官方文件 | USB WiFi 对比参考 | https://openwrt.org/docs/start | ✅ 已查核 | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux 驱动（DD-WRT 未整合） | https://github.com/morrownr/8812au-20210820 | ✅ 已查核 | 2026-09-03 |
-| ALFA Network 产品总览（Yopitek） | ALFA 现役产品规格 | https://yupitek.com/zh-tw/products/alfa/ | ✅ 已查核 | 2026-09-03 |
+| ALFA Network 产品总览（Yopitek） | ALFA 现役产品规格 | /zh-cn/products/alfa/ | ✅ 已查核 | 2026-09-03 |
 
-相关文章：[ALFA 无线网卡是否支持 OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)｜[ALFA 无线网卡是否支持 Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)
+相关文章：[ALFA 无线网卡是否支持 OpenWrt](/zh-cn/blog/alfa-openwrt-router-compatibility/)｜[ALFA 无线网卡是否支持 Tomato](/zh-cn/blog/alfa-tomato-router-compatibility/)
 
 免责声明：本文相容性判定以晶片组驱动状态与 DD-WRT 官方套件库为准。DD-WRT 社群存在大量自订编译版本，若客户使用非官方版本，实际结果可能不同。建议客户以 OpenWrt 作为路由器 USB WiFi 的优先选择。

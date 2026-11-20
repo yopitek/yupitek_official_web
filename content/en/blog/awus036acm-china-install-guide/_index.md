@@ -405,7 +405,7 @@ https://www.kali.org/get-kali/#kali-arm
 
 Pick **Raspberry Pi 4 (64-bit)** or **Raspberry Pi 5 (64-bit)**. Do not use the 32-bit image — 64-bit is required.
 
-> **China mirror:** If kali.org is slow, use 华为云:
+> **China mirror:** If kali.org is slow, use 华为云 (Huawei Cloud):
 > https://repo.huaweicloud.com/kali-images/
 > Browse to the latest release folder and download the ARM64 image from there.
 
@@ -589,10 +589,10 @@ All resources used in this guide — no GitHub required:
 |----------|-----|---------|
 | Alfa official drivers | [files.alfa.com.tw](https://files.alfa.com.tw) | Driver packages, firmware |
 | Alfa documentation | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | Product manuals |
-| 清华大学镜像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommended) |
-| 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommended) |
-| 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM images (backup) |
+| 清华大学镜像 (Tsinghua University mirror) | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里云镜像 (Aliyun mirror) | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommended) |
+| 中科大镜像 (USTC mirror) | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommended) |
+| 华为云镜像 (Huawei Cloud mirror) | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM images (backup) |
 | MT76 driver (mainline kernel) | [kernel.org: drivers/net/wireless/mediatek/mt76](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/mediatek/mt76) | In-kernel, no compile needed |
 
 ## More Alfa Adapter Guides for China

@@ -220,7 +220,7 @@ RC-N1 使用 **RP-SMA Female** 插座，ALFA 配件天线使用 **RP-SMA Male** 
 | RC-N1 + ARS-NT5B7（两根均更换） | 2 – 4 km | 工业全向，类似辐射模式 |
 | RC2/Smart Controller 拆壳改装＋外接高增益天线 | 依社群同类架构实测，约较原厂提升 30–50%（例：3km→4km 等级） | 需拆壳、开孔，效果因改装质量与环境差异较大，数据仅供参考 |
 
-**法规距离提醒：** 延伸天线距离并不授予在任何国家合法边界之外飞行的权限。在台湾、欧盟、美国、日本、澳大利亚等多數司法管辖区，休闲和商业无人机操作均要求飞行过程中始终保持**目视视线（VLOS）**。上述技术距离数据可能远超你的合法操作范围。天线升级最有价值的是提升合法视距范围内的链路**可靠性和信号余裕**，而非突破视距限制。
+**法规距离提醒：** 延伸天线距离并不授予在任何国家合法边界之外飞行的权限。在台湾、欧盟、美国、日本、澳大利亚等多数司法管辖区，休闲和商业无人机操作均要求飞行过程中始终保持**目视视线（VLOS）**。上述技术距离数据可能远超你的合法操作范围。天线升级最有价值的是提升合法视距范围内的链路**可靠性和信号余裕**，而非突破视距限制。
 
 ---
 
@@ -351,6 +351,6 @@ RC-N1 使用 **RP-SMA Female** 插座，ALFA 配件天线使用 **RP-SMA Male** 
 3. [FCC Part 15 — 未授权射频设备规范](https://www.fcc.gov/engineering-technology-laboratory-division/general/radio-spectrum-and-rulemaking)
 4. [ALFA Network 官方网站 — 天线配件规格](https://www.alfa.com.tw/)
 5. [台湾国家通讯传播委员会 NCC — 电信管理法](https://www.ncc.gov.tw/)
-6. [IEEE 802.11 标准文件 — 无线区域網路规范](https://standards.ieee.org/ieee/802.11/)
+6. [IEEE 802.11 标准文件 — 无线局域网规范](https://standards.ieee.org/ieee/802.11/)
 7. mavicpilots.com 社群讨论串：「RC2 / RC external antenna mod」、「RC 2 and RC Pro controller external antennae」、「Connecting external antennas to the RC Plus」（2024）
 8. Alientech — 「How to modify antenna of the DJI smart controller」改装教学（2019）

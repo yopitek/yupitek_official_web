@@ -58,12 +58,10 @@ Bus 001 Device 003: ID 0bda:8812 Realtek Semiconductor Corp.
 
 只要看到 `0bda:8812`，就說明網路卡被識別到了。接下來根據你的系統看下面的步驟。
 
-## 選擇你的操作系統
+## 選擇你的作業系統
 
 - [Kali Linux](#kali-linux)
 - [Ubuntu 22.04 / 24.04](#ubuntu-2204--2404)
-- [Debian](#debian)
-- [樹莓派 4B / 5](#raspberry-pi-4b--5)
 
 已經安裝好了？直接跳到：
 
@@ -111,7 +109,7 @@ sudo apt install -y realtek-rtl88xxau-dkms
 
 DKMS 的好處是，以後你更新核心時，驅動會自動重新編譯，不用你再動手。
 
-裝完後確認驅動加載成功：
+裝完後確認驅動載入成功：
 
 ```bash
 lsmod | grep 8812au

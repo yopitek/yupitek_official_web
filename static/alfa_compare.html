@@ -290,7 +290,7 @@
           <td>2× RP-SMA 5dBi</td>
           <td>2×2 MIMO</td>
           <td><span class="ok">✅ Yes</span></td>
-          <td><span class="ok">✅ Yes</span></td>
+          <td><span class="none">❌ Fails on stock 6.17</span></td>
           <td>In-kernel ≥5.18</td>
           <td>In-Kernel (Plug & Play)</td>
           <td><span class="ok">✅ Native</span></td>
@@ -302,13 +302,13 @@
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036axm/" target="_blank">AWUS036AXM</a></td>
           <td><span class="badge badge-6e">WiFi 6E</span></td>
           <td>MT7921AUN</td>
-          <td>2.4 + 5 + 6 GHz</td>
+          <td>2.4 + 5 + 6 GHz (6 GHz untested)</td>
           <td>3000 Mbps</td>
           <td>USB-A 3.2 L</td>
           <td>2× RP-SMA 5dBi</td>
           <td>2×2 MIMO</td>
           <td><span class="ok">✅ Yes</span></td>
-          <td><span class="ok">✅ Yes</span></td>
+          <td><span class="none">❌ Fails on stock 6.17</span></td>
           <td>In-kernel ≥5.18</td>
           <td>In-Kernel (Plug & Play)</td>
           <td><span class="ok">✅ Native</span></td>
@@ -325,14 +325,14 @@
           <td>USB-A 3.0</td>
           <td>Integrated</td>
           <td>2×2 MIMO</td>
-          <td><span class="warn">⚠️ Limited</span></td>
-          <td><span class="warn">⚠️ Limited</span></td>
-          <td>OOK (&lt;6.14)</td>
-          <td>Out-of-Kernel</td>
-          <td><span class="warn">⚠️ Limited</span></td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td>In-kernel ≥6.17</td>
+          <td>In-Kernel (Plug &amp; Play)</td>
+          <td><span class="ok">✅ Native</span></td>
           <td>3.6W</td>
           <td>—</td>
-          <td>Windows WiFi 6</td>
+          <td>WiFi 6 + AP hotspot</td>
         </tr>
         <tr>
           <td><a class="model-link" href="/zh-tw/products/alfa/awus036axer/" target="_blank">AWUS036AXER</a></td>
@@ -343,11 +343,11 @@
           <td>USB-A 3.2</td>
           <td>Integrated nano</td>
           <td>2×2 MIMO</td>
-          <td><span class="warn">⚠️ Limited</span></td>
-          <td><span class="warn">⚠️ Limited</span></td>
-          <td>OOK (&lt;6.14)</td>
-          <td>Out-of-Kernel</td>
-          <td><span class="warn">⚠️ Limited</span></td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td>In-kernel ≥6.17</td>
+          <td>In-Kernel (Plug &amp; Play)</td>
+          <td><span class="ok">✅ Native</span></td>
           <td>3.0W</td>
           <td>—</td>
           <td>Compact travel adapter</td>
@@ -363,9 +363,9 @@
           <td>2×2 MIMO</td>
           <td><span class="ok">✅✅ Best</span></td>
           <td><span class="ok">✅✅ Best</span></td>
-          <td>OOK (IK ≥6.14)</td>
-          <td>Out-of-Kernel</td>
-          <td><span class="none">❌ Problematic</span></td>
+          <td>In-kernel ≥6.13</td>
+          <td>In-Kernel (Plug &amp; Play)</td>
+          <td><span class="ok">✅ Native</span></td>
           <td>3.6W</td>
           <td>—</td>
           <td>Kali Linux gold standard</td>
@@ -399,9 +399,9 @@
           <td>1×1 SISO</td>
           <td><span class="ok">✅ Yes</span></td>
           <td><span class="ok">✅ Yes</span></td>
-          <td>Out-of-kernel</td>
-          <td>Out-of-Kernel</td>
-          <td><span class="none">❌ Limited</span></td>
+          <td>In-kernel ≥6.13</td>
+          <td>In-Kernel (Plug &amp; Play)</td>
+          <td><span class="ok">✅ Native</span></td>
           <td>2.5W</td>
           <td>—</td>
           <td>Budget security testing</td>
@@ -415,11 +415,11 @@
           <td>USB 2.0 nano</td>
           <td>Integrated 2dBi</td>
           <td>1×1 SISO</td>
-          <td><span class="none">❌ No</span></td>
-          <td><span class="none">❌ No</span></td>
-          <td>⚠️ Poor support</td>
-          <td>Out-of-Kernel</td>
-          <td><span class="none">❌ Limited</span></td>
+          <td><span class="ok">✅ Yes</span></td>
+          <td><span class="ok">✅✅ Best</span></td>
+          <td>In-kernel ≥6.2</td>
+          <td>In-Kernel (Plug &amp; Play)</td>
+          <td><span class="ok">✅ Native</span></td>
           <td>2.5W</td>
           <td>BT 4.2</td>
           <td>Windows home WiFi + BT</td>
@@ -435,12 +435,12 @@
     <div class="guide-card">
       <h3>🔴 Kali Linux / Pentesting</h3>
       <div class="rec">Best: AWUS036ACH</div>
-      <div class="why">RTL8812AU — most mature monitor mode &amp; packet injection on Kali. Requires manual driver compile (community gold standard). <strong>Tip:</strong> Pin to stable commit <code>63cf0b4</code> on aircrack-ng repo for maximum injection stability.</div>
+      <div class="why">RTL8812AU — most mature monitor mode &amp; packet injection on Kali; 100% injection on both bands on GX10 (kernel 6.17). In-kernel rtw88_8812au since 6.13. <strong>Tip:</strong> On older kernels, use the aircrack-ng DKMS driver pinned to stable commit <code>63cf0b4</code>.</div>
     </div>
     <div class="guide-card">
       <h3>🔵 WiFi 6E (Tri-Band) Power User</h3>
       <div class="rec">Best: AWUS036AXML or AWUS036AXM</div>
-      <div class="why">MT7921AUN — in-kernel Linux driver since 5.18, full 6 GHz band, Bluetooth 5.2. <strong>Form factors:</strong> AXML has a detachable USB-C connector and a single-antenna body with dual outputs; AXM has a built-in L-shaped USB-A format.</div>
+      <div class="why">MT7921AUN — in-kernel Linux driver since 5.18, 6 GHz band (verified on AXML; AXM untested), Bluetooth 5.2. Note: packet injection fails on stock kernel 6.17 (mac80211 regression since 6.16), so not for pentesting. <strong>Form factors:</strong> AXML has a detachable USB-C connector and a single-antenna body with dual outputs; AXM has a built-in L-shaped USB-A format.</div>
     </div>
     <div class="guide-card">
       <h3>🌐 Soft-AP / Hotspot Emulation</h3>
@@ -536,9 +536,10 @@
   <!-- ── Note ── -->
   <p style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-muted); line-height: 1.7;">
     <strong style="color: var(--text);">Note:</strong> Spec data sourced from ALFA Network official datasheets and community testing.
-    "OOK" = Out-of-Kernel driver (requires manual install). "IK" = In-Kernel (built into Linux kernel).
+    Driver column shows the kernel version in which the in-kernel driver was merged (older kernels may need DKMS).
     Monitor mode / packet injection capability depends on driver version and Linux kernel version.
     Always verify compatibility with your specific OS version before purchase.
+    Tested on ASUS GX10 / Ubuntu 24.04 ARM64 / kernel 6.17 (2026-11): <a href="/en/blog/alfa-9-cards-arm64-gx10-ubuntu-matrix/">9-card test matrix</a>.
   </p>
 
 </main>

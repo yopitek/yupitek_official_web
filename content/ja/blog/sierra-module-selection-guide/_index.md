@@ -22,8 +22,6 @@ faq:
     answer: "Yopitek（榆閤科技）にて Sierra Wireless 全シリーズのセルラーモジュールをご購入いただけます。Yopitek 公式サイトの製品ページで型番と価格をご確認いただくか、sales@yupitek.com まで直接お問い合わせください。"
 ---
 
-# Sierra Wireless セルラーモジュール選定ガイド：LTE Cat 4 から 5G mmWave まで
-
 {{< alert >}}
 Yopitek は Sierra Wireless / Semtech の製品情報、供給チャネルおよび技術コンテンツを提供しています。公式の正規代理店ではなく、本資料は技術参考のみを目的としています。
 {{</alert >}}

@@ -3,7 +3,7 @@ title: "突破邊緣 AI 頻寬瓶頸：NVIDIA Jetson Orin Nano 安裝高功率�
 description: "在 NVIDIA Jetson Orin Nano（JetPack/Ubuntu 22.04）上安裝 AWUS036AXML Wi-Fi 6E 網路卡，切換乾淨的 6GHz 頻段，以實測資料證明多路 RTSP 4K 串流的頻寬優勢。"
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,8 +11,8 @@ tags: ["jetson-orin-nano", "wifi-6e", "awus036axml", "6ghz", "rtsp", "edge-ai", 
 featureimage: /images/blog/jetson-orin-nano-wifi-6e-6ghz-high-bandwidth-streaming.webp
 ---
 
-> **適用平台**：NVIDIA Jetson Orin Nano Developer Kit，JetPack 6.x（Ubuntu 22.04 LTS 基底，Linux Kernel 5.15 / 6.1）
-> **引導硬體**：ALFA AWUS036AXML（MediaTek MT7921AU 晶片，Wi-Fi 6E 三頻 USB 網路卡）
+> **適用平台**：NVIDIA Jetson Orin Nano Developer Kit，JetPack 6.x（Ubuntu 22.04 LTS 基底，Linux Kernel 5.15）
+> **引導硬體**：ALFA AWUS036AXML（MediaTek MT7921AUN 晶片，Wi-Fi 6E 三頻 USB 網路卡）
 > **本篇定位**：本方案為 DIY 開源學術 / 工程開發平台之 bench-test 評估，非商用成品之官方支援，亦不代表任何閉源平台原廠之官方認證。
 
 ---
@@ -75,9 +75,9 @@ grep PRETTY /etc/os-release
 
 # 2) 目前無線介面與訊號
 iw dev                      # 列出無線介面
-iw dev wlan0 link           # 看目前 AP、頻道、RSSI、bitrate
+iw dev wlan0 link           # 看目前 AP, 頻道, RSSI, bitrate
 
-# 3) AP 端通道利用率（在 AP 上執行，或查 AP WebUI）
+# 3) AP 端通道利用率 (在 AP 上執行, 或查 AP WebUI)
 #    通斷偵測基準
 ping -c 60 -i 1 <AP_閘道_IP>
 ```
@@ -90,7 +90,7 @@ ping -c 60 -i 1 <AP_閘道_IP>
 
 ### 2.1 先確認你的 JetPack 核心版本
 
-AWUS036AXML 的核心優勢，是 **MediaTek MT7921AU 的 `mt7921u` 驅動已原生整合進 Linux 主線核心**（自 Kernel 5.18 起收錄），**不需要去 GitHub 編譯驅動**。不過「原生支援」有門檻，先確認你的核心版本：
+AWUS036AXML 的晶片是 MediaTek MT7921AUN（AXM 為 MT7921AU），其 `mt7921u` 驅動自 Kernel 5.18 起才進入 Linux 主線核心。但 JetPack 6.x 預設使用的是 Kernel 5.15，並不含主線的 `mt7921u`，所以**不能假設「裝好 JetPack 就隨插即用」**。請先確認核心版本與驅動：
 
 ```bash
 uname -r
@@ -101,8 +101,9 @@ uname -r
 | JetPack | 基底作業系統 | Linux Kernel | 對 AWUS036AXML |
 |---|---|---|---|
 | JetPack 5.1.x | Ubuntu 20.04（需自行確認） | 5.10 | 需自行確認驅動；建議直接升上 JetPack 6.x |
-| JetPack 6.0 / 6.1 | Ubuntu 22.04 LTS | 5.15 | 視核心版本而定，先跑 `modinfo mt7921u` |
-| JetPack 6.2+（建議） | Ubuntu 22.04 LTS | 6.1 | `mt7921u` 原生內建，隨插即用 |
+| JetPack 6.0 / 6.1 / 6.2 / 6.2.2（L4T 36.2–36.5） | Ubuntu 22.04 LTS | 5.15 LTS（例如 `5.15.116-release-tegra`） | 早於主線收錄版本（5.18）；能否使用取決於 NVIDIA 的 L4T kernel 有無 backport，先跑 `modinfo mt7921u` |
+
+> **這張卡沒有在 Jetson 上實測。** Yupitek 的測試平台只有 ASUS GX10（Ubuntu 24.04、kernel 6.17）：AXML 的 6 GHz 可用、monitor 偏弱、封包注入失敗。JetPack 6.x 全系列都是 Kernel 5.15，升級到 JetPack 6.2 並不會讓驅動變成內建。請執行 `modinfo mt7921u`：有輸出，代表 L4T kernel 已帶有這個驅動；沒有輸出，就需要 backport／DKMS 驅動，或自行換裝 5.18 以上的上游 kernel（NVIDIA 說明 JetPack 6 可換裝 5.14 以上的上游 kernel，但這不是預設組合）。
 
 驗證驅動與韌體是否就緒：
 
@@ -120,7 +121,7 @@ sudo reboot
 Jetson Orin Nano Developer Kit 提供 2 個 USB 3.2 Type-A（藍色連接埠）與 2 個 USB 2.0 連接埠。AWUS036AXML 用 **USB-C 3.2 Gen1** 連接介面，隨附一條 2-in-1（USB-C 對 USB-A）的電源與資料線：
 
 ```bash
-# 接上後確認裝置被 USB 層辨識（MediaTek MT7921AU 的 VID:PID 為 0e8d:7961）
+# 接上後確認裝置被 USB 層辨識 (MediaTek MT7921AU 的 VID:PID 為 0e8d:7961)
 lsusb | grep -i mediatek
 ```
 
@@ -143,14 +144,14 @@ nmcli device wifi connect "你的SSID" password "你的密碼"
 **鎖定頻段（關鍵步驟）**：2.4GHz 的 `nmcli band` 值是 `bg`，5GHz 是 `a`；**Wi-Fi 6E 的 6GHz 使用 `a`（延伸）**，最穩當的做法是在**基地台端**建立一條「**僅 6GHz**」的專屬 SSID 並關閉 Band Steering，client 以實體頻道內容確認連到哪個頻段：
 
 ```bash
-# 確認目前連線頻道（6GHz 的頻率介於 5925–7125 MHz 之間）
+# 確認目前連線頻道 (6GHz 的頻率介於 5925–7125 MHz 之間)
 iw dev wlan0 link
 
-# 俐落的確認方式：直接看頻率落在哪個頻段
+# 俐落的確認方式: 直接看頻率落在哪個頻段
 iw dev wlan0 link | grep -i freq
 #   2.4GHz → 2400-2500 MHz
 #   5GHz   → 4900-5900 MHz
-#   6GHz   → 5925-7125 MHz（Wi-Fi 6E 專屬）
+#   6GHz   → 5925-7125 MHz (Wi-Fi 6E 專屬)
 ```
 
 若不想讓 client 自己漫遊到擁擠的 2.4/5GHz，可在連線設定中指定：
@@ -184,11 +185,11 @@ nmcli con up "連線名稱"
 在 Jetson 上安裝 iperf3，對接一顆接收主機：
 
 ```bash
-# 接收端（例如另一台電腦或伺服器）
+# 接收端 (例如另一台電腦或伺服器)
 iperf3 -s
 
-# Jetson 端（client，跑 60 秒 bi-directional）
-iperf3 -c <接收端IP> -t 60 -R     # -R 測 reverse（Jetson 上傳）
+# Jetson 端 (client, 跑 60 秒 bi-directional)
+iperf3 -c <接收端IP> -t 60 -R     # -R 測 reverse (Jetson 上傳)
 ```
 
 分別在 **2.4GHz SSID、5GHz SSID、6GHz SSID** 各跑一次，記錄：`sender Mbps`、`receiver Mbps`。也可以先觀察連線品質：
@@ -211,7 +212,7 @@ ping -c 60 -i 1 <接收端IP> | tail -2
 吞吐與延遲只是間接指標，**真正要驗證的是「同時解幾路 4K 還能不掉幀」**。JetPack 內建 GStreamer 1.0 的 NVIDIA 硬體解碼外掛（`nvv4l2decoder`）：
 
 ```bash
-# 用 perf 元素統計實際解碼幀率（per 1 秒取樣）
+# 用 perf 元素統計實際解碼幀率 (per 1 秒取樣)
 gst-launch-1.0 \
   rtspsrc location="rtsp://鏡頭IP/stream" ! \
   rtph264depay ! h264parse ! nvv4l2decoder ! nvvidconv ! \
@@ -253,7 +254,7 @@ sudo tegrastats
 | Linux Kernel | `uname -r` | \_\_\_\_\_ |
 | `mt7921u` 是否內建 | `modinfo mt7921u` | 有輸出 / 無輸出 |
 
-> 若 `uname -r` 低於 5.18 且 `modinfo mt7921u` 無輸出：請先更新 JetPack（建議 6.2+，Kernel 6.1）再討論網路卡。**不要在舊核心上硬編非主線驅動**，那只會變成另一篇排障文的主角。
+> 若 `uname -r` 低於 5.18 且 `modinfo mt7921u` 無輸出（JetPack 6.x 預設就是這種情況）：代表 L4T kernel 沒有帶這個驅動。可行的做法是使用與你的 kernel 相符的 backport／DKMS 驅動，或換裝 5.18 以上的 kernel；兩者都屬於自行維護的組合，請先備份並預留回復路徑。單純升級 JetPack 版本不會改變 Kernel 5.15。
 
 ### Step 2：確認你的無線環境
 
@@ -269,8 +270,8 @@ sudo tegrastats
 
 | 平台 | 支援狀態 |
 |---|---|
-| Ubuntu 22.04 / 24.04 | ✅ 原生 `mt7921u`（Kernel 5.18+；JetPack 6.2+ 適用） |
-| Kali Linux | ✅ 原生支援（Monitor Mode / Packet Injection） |
+| Ubuntu 22.04 / 24.04 | ✅ `mt7921u` 自 Kernel 5.18 起為主線驅動；JetPack 6.x 預設為 5.15，需先以 `modinfo mt7921u` 確認，或自行 backport／DKMS |
+| Kali Linux | ✅ 原生支援（Monitor Mode）；⚠️ Packet Injection：kernel 6.16 以前有社群回報，stock 6.17 實測失敗 |
 | Windows 11 | ✅（6GHz 頻段需 Windows 11 或更新版本） |
 | Windows 10 | ✅（但 6GHz 頻段不支援，僅 2.4/5GHz） |
 | macOS（Intel / Apple Silicon） | ❌ **不支援**（MT7921AU 無 macOS 驅動，勿購買） |
@@ -306,7 +307,7 @@ sudo tegrastats
 
 ## 結語與硬體建議
 
-多路 4K 影音進邊緣 AI 平台，卡點往往不在計算力，而在**無線承載量與通道乾淨度**。2.4G/5G 早已被裝置海淹沒，**Wi-Fi 6E 的 6GHz 提供了全新的無干擾通道**——搭配一顆原生驅動、免編譯的網路卡，Jetson Orin Nano 就能穩定接下 2–4 路 4K 串流，把「頻寬天花板」的問題一口氣往後推。
+多路 4K 影音進邊緣 AI 平台，卡點往往不在計算力，而在**無線承載量與通道乾淨度**。2.4G/5G 早已被裝置海淹沒，**Wi-Fi 6E 的 6GHz 提供了全新的無干擾通道**——搭配一顆驅動已就緒的網路卡（Jetson 預設為 Kernel 5.15，須先以 `modinfo mt7921u` 確認，見 2.1 節；本卡未在 Jetson 實測），Jetson Orin Nano 就能穩定接下 2–4 路 4K 串流，把「頻寬天花板」的問題一口氣往後推。
 
 **推薦硬體**：ALFA AWUS036AXML（MediaTek MT7921AU，Linux 核心 5.18+ 原生免編譯、Wi-Fi 6E 三頻、雙 RP-SMA 5dBi 高增益天線、2.7W 低功耗）。同樣晶片架構的 AWUS036AXMR 是無天線的內嵌式機種，適合空間受限的機櫃型邊緣節點。
 

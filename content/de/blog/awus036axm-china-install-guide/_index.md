@@ -1,22 +1,22 @@
 ---
 title: "ALFA AWUS036AXM Treiber-Installationsanleitung für China: Kali Linux, Ubuntu, Debian & Raspberry Pi"
-description: "Schritt-für-Schritt-Anleitung zur Installation von ALFA AWUS036AXM-Treibern in China unter Verwendung lokaler Mirrors. MT7921AUN WiFi 6E In-Kernel-Treiber, volle Monitor-Modus- und VIF-Unterstützung. Deckt Kali Linux, Ubuntu 22/24, Debian und Raspberry Pi ab. Kein GitHub erforderlich."
+description: "Schritt-für-Schritt-Anleitung zur Installation von ALFA AWUS036AXM-Treibern in China unter Verwendung lokaler Mirrors. MT7921AUN WiFi 6 In-Kernel-Treiber, Monitor-Modus- und VIF-Unterstützung (Paket-Injektion wird von diesem Adapter nicht unterstützt). Deckt Kali Linux, Ubuntu 22/24, Debian und Raspberry Pi ab. Kein GitHub erforderlich."
 date: 2026-04-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
 slug: "awus036axm-china-install-guide"
-tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6e", "vif"]
+tags: ["alfa", "awus036axm", "kali-linux", "ubuntu", "driver", "china", "monitor-mode", "wifi6", "vif"]
 categories: ["Treiber-Anleitungen"]
 series: ["alfa-china-install-guide"]
 related_product: "/de/products/alfa/awus036axm/"
 series_order: 6
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
 faq:
-  - question: "Welchen Chip verwendet der AWUS036AXM? Unterstützt er WiFi 6E?"
-    answer: "Er verwendet den MediaTek MT7921AUN-Chip und unterstützt WiFi 6E im Drei-Band-Betrieb (2.4G/5G/6G Hz)."
+  - question: "Welchen Chip verwendet der AWUS036AXM? Unterstützt er WiFi 6?"
+    answer: "Er verwendet den MediaTek MT7921AUN-Chip und unterstützt WiFi 6 (Dualband 2.4G/5G Hz). Getestet wurde 2.4/5 GHz; 6 GHz wurde nicht verifiziert."
   - question: "Muss der Treiber für den AWUS036AXM manuell installiert werden?"
     answer: "Nein, der mt7921u-Treiber ist seit Linux Kernel 5.18 im Kernel integriert; es ist lediglich die Installation des Firmware-Pakets erforderlich."
   - question: "Unterstützt der AWUS036AXM VIF-Virtualinterfaces?"
@@ -27,10 +27,10 @@ faq:
     answer: "Die USB-ID von MediaTek MT7921AUN ist 0e8d:7961, was mit lsusb bestätigt werden kann."
 ---
 
-Der AWUS036AXM ist der WiFi 6E Triband-Adapter von ALFA mit einem platzsparenden L-förmigen USB-A-Anschluss. Sein MT7921AUN-Chip verwendet den `mt7921u`-Treiber, der seit Version 5.18 in den Linux-Kernel integriert ist. Der L-förmige Stecker hält benachbarte USB-Anschlüsse an Laptops frei. Diese Anleitung deckt die vollständige Einrichtung ab — Firmware, Treiber-Verifizierung, Monitor-Modus, Paket-Injektion und VIF — ohne GitHub zu berühren.
+Der AWUS036AXM ist der WiFi 6 Adapter von ALFA mit einem platzsparenden L-förmigen USB-A-Anschluss. Sein MT7921AUN-Chip verwendet den `mt7921u`-Treiber, der seit Version 5.18 in den Linux-Kernel integriert ist. Der L-förmige Stecker hält benachbarte USB-Anschlüsse an Laptops frei. Diese Anleitung deckt die vollständige Einrichtung ab — Firmware, Treiber-Verifizierung, Monitor-Modus und VIF — ohne GitHub zu berühren. Hinweis: Packet Injection funktioniert mit diesem Adapter nicht (siehe unten).
 
 {{< tldr >}}
-Der AWUS036AXM verwendet den MT7921AUN-Chip und unterstützt WiFi 6E. Der Treiber ist im Kernel integriert, und nach der Installation des Firmware-Pakets können Sie den Monitor Mode, Packet Injection und VIF-Funktionen nutzen.
+Der AWUS036AXM verwendet den MT7921AUN-Chip und unterstützt WiFi 6 (2.4/5 GHz). Der `mt7921u`-Treiber ist im Kernel integriert, keine Kompilierung nötig. Nach der Installation des Firmware-Pakets funktionieren Monitor Mode, AP/WPA3 und VIF nachweislich — Packet Injection schlägt jedoch unter Stock-Kernel 6.17 fehl, daher ist der AWUS036AXM nicht für Injection / Penetration-Tests geeignet (für Injection bitte AWUS036ACM / ACS / AX verwenden).
 {{< /tldr >}}
 
 Stellen Sie sicher, dass Sie Folgendes bereit haben:
@@ -65,7 +65,6 @@ Springen Sie zum richtigen Abschnitt für Ihr Betriebssystem:
 - [Kali Linux](#kali-linux)
 - [Ubuntu 22.04 / 24.04](#ubuntu-2204--2404)
 - [Debian](#debian)
-- [Raspberry Pi 4B / 5](#raspberry-pi-4b--5)
 
 ---
 
@@ -138,13 +137,11 @@ Suchen Sie nach `Mode:Monitor` auf der Schnittstelle.
 
 ---
 
-### Schritt 5: Paket-Injektion testen {#test-packet-injection}
+### Schritt 5: Hinweis zur Paket-Injektion {#test-packet-injection}
 
-```bash
-sudo aireplay-ng --test wlan1
-```
+⚠️ **Der AWUS036AXM unterstützt keine Paket-Injektion.** Unter Stock-Kernel 6.17 schlägt `sudo aireplay-ng --test wlan1` fehl — Hauptursache ist eine mac80211-chanctx-Regression ab Kernel 6.16 (keine chipseitige Einschränkung). Von der Community gepatchte Treiber können die Injection wieder zum Laufen bringen, doch die Firmware sperrt die Datenrate weiterhin auf 1/6 Mbps, sodass keine HT/VHT-Frames injiziert werden können.
 
-Ein erfolgreiches Ergebnis zeigt: `Injection is working!`.
+Der AWUS036AXM eignet sich daher für normale Verbindungen, AP-Hotspots und Monitor-Mode-Mitschnitte, aber **nicht für Paket-Injektion oder Penetration-Tests**. Wenn Sie Injection benötigen, verwenden Sie stattdessen den AWUS036ACM / ACHM / ACS / ACH / AX / EACS. Nur in eigenen oder autorisierten Netzwerken testen.
 
 ---
 

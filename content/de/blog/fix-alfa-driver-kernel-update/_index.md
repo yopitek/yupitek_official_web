@@ -23,8 +23,6 @@ faq:
 ---
 Nach einem Kernel-Update (z.B. über `apt upgrade`) ist Ihr ALFA-Adapter möglicherweise nicht mehr erkennbar oder der Monitor-Modus funktioniert nicht mehr.
 
-# ALFA-Treiber nach Kernel-Update defekt? So beheben Sie es
-
 {{< tldr >}}
 Das Hauptproblem, das die ALFA-Treiber durch Kernel-Updates beschädigt, ist die Asynchronität zwischen Header-Dateien und Modulen. RTL8812AU wird über dkms autoinstall neu erstellt, für MT7921AUN muss firmware-misc-nonfree installiert werden, und zur langfristigen Behebung wird apt full-upgrade verwendet.
 {{< /tldr >}}
@@ -89,7 +87,7 @@ dkms status
 
 ## Prävention: Automatische Neukompilierung
 
-Mit DKMS wird der Treiber automatisch bei jedem Kernel-Update neu kompiliert. Sie müssen sich keine Sorgen mehr关于 kaputte Treiber nach Updates machen.
+Mit DKMS wird der Treiber automatisch bei jedem Kernel-Update neu kompiliert. Sie müssen sich keine Sorgen mehr um kaputte Treiber nach Updates machen.
 
 ## Referenzen
 

@@ -1,9 +1,9 @@
 ---
 title: "Pare de recompilar drivers: por que o MT7921AU é a escolha para Linux e Kali"
-description: "Compare o MediaTek MT7921AU (driver mt7921u integrado ao kernel) com o Realtek RTL8812AU (compilação via DKMS) e veja por que o ALFA AWUS036AXML é plug-and-play no Kali Linux."
+description: "Compare o MediaTek MT7921AUN (driver mt7921u integrado ao kernel) com o Realtek RTL8812AU (compilação via DKMS) e veja por que o ALFA AWUS036AXML é plug-and-play no Kali Linux."
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,7 +11,7 @@ tags: ["mt7921au", "kali-linux", "linux", "awus036axml", "monitor-mode", "dkms",
 featureimage: /images/blog/mediatek-mt7921au-linux-in-kernel-driver-awus036axml.webp
 ---
 
-> **Produto abordado**: ALFA AWUS036AXML (MediaTek MT7921AU / MT7921AUN) ｜ **Unidade de comparação**: ALFA AWUS036ACH (Realtek RTL8812AU)
+> **Produto abordado**: ALFA AWUS036AXML (MediaTek MT7921AUN / MT7921AUN) | **Unidade de comparação**: ALFA AWUS036ACH (Realtek RTL8812AU)
 > **Para quem é**: testes de penetração com Kali Linux, desenvolvimento embarcado em Linux, usuários de Raspberry Pi / computadores de placa única
 > **Objetivo do artigo**: entender a diferença entre «suporte nativo no kernel» e «compilação de driver com DKMS» antes de comprar, gastando menos tempo com instalação e solução de problemas.
 
@@ -28,7 +28,7 @@ Se você já usou um adaptador USB com chipset da classe Realtek RTL8812AU (como
 
 O problema não está no produto, e sim na forma como o driver existe. A maioria dos drivers Linux da Realtek não está incluída no kernel do Linux (mainline). Para usá-los, é preciso «acoplar» código-fonte externo ao sistema. A cada atualização do kernel, esse acoplamento precisa ser recompilado; caso contrário, ele deixa de corresponder à nova versão e falha.
 
-E o protagonista de hoje — o ALFA AWUS036AXML com MediaTek MT7921AU — segue um caminho completamente diferente: o driver dele **vive nativamente dentro do kernel do Linux**.
+E o protagonista de hoje — o ALFA AWUS036AXML com MediaTek MT7921AUN — segue um caminho completamente diferente: o driver dele **vive nativamente dentro do kernel do Linux**.
 
 ---
 
@@ -96,11 +96,11 @@ Requisitos mínimos de kernel por distribuição, num relance:
 | Windows 10 / 11 | — | Driver do fabricante |
 | macOS (Intel / Apple Silicon) | Não suportado | **Sem driver: não compre** |
 
-> **⚠️ O aviso de suporte mais importante antes de comprar**: o AWUS036AXML **não suporta macOS**. Nem Intel nem Apple Silicon têm hoje um driver de MT7921AU para macOS. Se o macOS é seu ambiente principal, essa classe de adaptadores USB Wi-Fi 6 / 6E é inútil para você — descarte-a já, não descubra depois de comprar.
+> **⚠️ O aviso de suporte mais importante antes de comprar**: o AWUS036AXML **não suporta macOS**. Nem Intel nem Apple Silicon têm hoje um driver de MT7921AUN para macOS. Se o macOS é seu ambiente principal, essa classe de adaptadores USB Wi-Fi 6 / 6E é inútil para você — descarte-a já, não descubra depois de comprar.
 
 ### 2.3 Por que o «suporte nativo» importa especialmente para desenvolvedores Kali
 
-No Kali Linux, as atualizações de kernel são muito frequentes (é uma distribuição Rolling). Usuários de RTL8812AU seguram a respiração a cada atualização contínua. O `mt7921u`, por outro lado, é mantido e testado junto com o kernel — **por mais novo que o kernel fique, o driver acompanha**. A ALFA posicionou este produto para testes de segurança: o modo monitor (Monitor Mode) e a injeção de pacotes (Packet Injection) são recursos padrão prontos para uso.
+No Kali Linux, as atualizações de kernel são muito frequentes (é uma distribuição Rolling). Usuários de RTL8812AU seguram a respiração a cada atualização contínua. O `mt7921u`, por outro lado, é mantido e testado junto com o kernel — **por mais novo que o kernel fique, o driver acompanha**. A ALFA posicionou este produto para testes de segurança: o modo monitor (Monitor Mode) está pronto para uso, enquanto a injeção de pacotes (Packet Injection) depende da versão do kernel (veja a seção 3.2).
 
 ---
 
@@ -147,7 +147,7 @@ Em seguida, teste a injeção de pacotes:
 sudo aireplay-ng --test wlan1
 ```
 
-Ver `Injection is working!` (ou saída equivalente) significa que a injeção funciona. No driver nativo `mt7921u`, esse recurso é intrínseco — sem Hacks adicionais.
+Nos relatos da comunidade com kernels anteriores ao 6.16, ver `Injection is working!` (ou saída equivalente) indicava que a injeção funcionava no driver nativo `mt7921u`. No kernel stock 6.16 ou superior (testado em ASUS GX10, Ubuntu 24.04 ARM64, kernel 6.17), o teste de injeção falha: `aireplay-ng --test` mostra Found 0 APs / No Answer, portanto não é possível fazer deauth nem capturar handshakes. A causa é uma regressão do mac80211 chanctx a partir do kernel 6.16, não uma limitação do chip; drivers patched da comunidade fazem a injeção funcionar, mas o firmware continua travando a taxa (1/6 Mbps, sem injeção HT/VHT). Se precisar de injeção, use AWUS036ACH, EACS ou ACS.
 
 ### 3.3 Modo fusão (VIF / Fusion): gerenciar e monitorar ao mesmo tempo
 
@@ -170,7 +170,7 @@ Para reduzir os custos de suporte após a compra, faça primeiro esta avaliaçã
 
 ### 4.1 Comparação rápida dos dois adaptadores
 
-| Item de avaliação | AWUS036AXML (MT7921AU) | AWUS036ACH (RTL8812AU) |
+| Item de avaliação | AWUS036AXML (MT7921AUN) | AWUS036ACH (RTL8812AU) |
 |---|---|---|
 | Especificação sem fio | Wi-Fi 6E tribanda (2.4/5/6 GHz) | AC1200 banda dupla (2.4/5 GHz) |
 | Interface USB | USB-C (USB 3.2 Gen 1) | USB 3.0 Type-A |
@@ -178,7 +178,7 @@ Para reduzir os custos de suporte após a compra, faça primeiro esta avaliaçã
 | Dificuldade de instalação | Basta adicionar firmware | Toolchain + compilação + (com Secure Boot) assinatura |
 | Impacto da atualização do kernel | Nenhum | Recompilar a cada atualização |
 | Modo monitor | Suporte nativo | Suportado |
-| Injeção de pacotes | Suporte nativo | Suportado |
+| Injeção de pacotes | ⚠️ Relatos da comunidade antes do kernel 6.16; falhou no teste com 6.17 | Suportado |
 | macOS | Não suportado | Não suportado |
 | Público-alvo | Linux / Kali / embarcado modernos | Sistemas antigos ou cenários de 2.4/5 GHz |
 
@@ -190,7 +190,7 @@ Quanto mais caixas você marcar, **mais adequado é escolher diretamente o AWUS0
 - [ ] Quero que **funcione ao plugar**, sem tocar em `dkms`, `github clone` ou toolchain de compilação.
 - [ ] Preciso do suporte nativo da família `mt76` e que atualizações de kernel não afetem o adaptador.
 - [ ] Preciso da **faixa de 6 GHz** (ambiente com roteador Wi-Fi 6E).
-- [ ] Usos principais: monitoramento, injeção de pacotes, Soft AP, modo fusão (VIF).
+- [ ] Usos principais: monitoramento, Soft AP, modo fusão (VIF) (a injeção de pacotes não funciona a partir do kernel 6.16, veja a seção 3.2).
 - [ ] Vou usar o cabo 2-in-1 USB-C / USB-A incluído com um notebook ou computador de placa única.
 
 Por outro lado, se você não precisa de 6 GHz, seu sistema roda um kernel antigo abaixo de 5.18 e você domina o fluxo de manutenção do DKMS, o AWUS036ACH ainda tem seu lugar. Mas prepare-se: a cada atualização do kernel, o driver precisa ser recompilado.
@@ -199,7 +199,7 @@ Por outro lado, se você não precisa de 6 GHz, seu sistema roda um kernel antig
 
 ## 5. Conclusão
 
-Para desenvolvedores modernos de Linux e Kali, tempo é o maior custo. **O MediaTek MT7921AU (AWUS036AXML) tira de você o fardo interminável da «manutenção do driver»**. O driver vive no kernel, o firmware vem em um pacote só, monitoramento e injeção funcionam de cara — atualizações contínuas do kernel não são motivo de medo.
+Para desenvolvedores modernos de Linux e Kali, tempo é o maior custo. **O MediaTek MT7921AUN (AWUS036AXML) tira de você o fardo interminável da «manutenção do driver»**. O driver vive no kernel, o firmware vem em um pacote só, o monitoramento funciona de cara (a injeção de pacotes falha no kernel stock 6.16 ou superior; se precisar de injeção, use ACH, EACS ou ACS) — atualizações contínuas do kernel não são motivo de medo.
 
 Antes de comprar, confirme apenas duas coisas: **kernel do sistema ≥ 5.18** e **não ser macOS**. O resto fica com o driver nativo.
 

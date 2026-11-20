@@ -1,6 +1,6 @@
 ---
 title: "Ubiquiti UniFi 企业无线网络设备"
-description: "榆阖科技代理 Ubiquiti UniFi Wi-Fi 7 企业无线网络设备：U7 Pro 系列、Cloud Gateway、Wave 毫米波、交换机等完整 UniFi 生态系。"
+description: "榆閤科技代理 Ubiquiti UniFi Wi-Fi 7 企业无线网络设备：U7 Pro 系列、Cloud Gateway、Wave 毫米波、交换机等完整 UniFi 生态系。"
 date: 2026-03-12
 draft: false
 showBreadcrumbs: true

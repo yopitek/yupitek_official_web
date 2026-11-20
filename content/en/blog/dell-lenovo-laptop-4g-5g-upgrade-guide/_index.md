@@ -22,8 +22,6 @@ faq:
     answer: "The module has 3 RF connectors: Main, GNSS, and Aux. Connect at least Main for cellular data, add Aux for full speed, and connect GNSS only if you need GPS positioning."
 ---
 
-# The Complete Guide to Adding 4G/5G to Your Dell or Lenovo Laptop: Compatible Models & Installation
-
 **The short version: before you upgrade your laptop with a 4G card, check that the antennas and the slot are actually there, then check whether the BIOS will let you install it. As for which card: for use in Taiwan or the Asia-Pacific region, the EM7455 and EM7430 are both fine. They are built on the same MDM9230 chipset and are both Cat 6 cards, so the speed is identical; the only real difference is which bands they cover.**
 
 Plenty of people carrying a Dell Latitude or a Lenovo ThinkPad want to drop a 4G card into the spare WWAN slot so they stop hunting for Wi-Fi on business trips. But it is not as simple as it sounds. You need to confirm the motherboard has the right slot, the antennas are actually wired up, and the laptop maker has not locked the BIOS with a whitelist.

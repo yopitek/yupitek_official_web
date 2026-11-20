@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "カーネル更新後にALFAアダプターが使えなくなるのはなぜですか？"
     answer: "RTL8812AUはカーネル外ドライバーを使用し、カーネルバージョン変更後にコンパイル済みモジュールが互換性を失います。DKMSが自動リビルドできますが、カーネルheadersの欠如や古い設定で失敗することがあります。"
@@ -54,10 +54,10 @@ MT7921Uチップセットはカーネル **5.18** 以降、メインラインカ
 何かを変更する前に、現在の状況を把握するためにこの2つのコマンドを実行してください：
 
 ```bash
-# 現在実行中のカーネルは何か？
+# 現在実行中のカーネルは何か?
 uname -r
 
-# どのDKMSモジュールがビルドされているか（どのカーネル向けか）？
+# どのDKMSモジュールがビルドされているか (どのカーネル向けか)?
 sudo dkms status
 ```
 
@@ -106,6 +106,8 @@ sudo dmesg | grep -E "ALFA|rtl8812|mt7921" | tail -20
 
 RTL8812AUは、デュアルバンドサポートと信頼性の高いモニターモードにより、ペネトレーションテストで最も広く使われているALFAチップセットです。ツリー外ドライバーが必要なため、カーネルの更新で最も頻繁に壊れるチップセットでもあります。
 
+> **EACS（RTL8821CU）に関する注記：** AWUS036EACS は kernel 6.2 以降では内蔵の `rtw88_8821cu` ドライバーで動作するため DKMS は不要です（GX10・kernel 6.17 で monitor／injection を実測）。kernel 6.2 より前の古い環境でのみ、morrownr/8821cu などのコミュニティドライバーが必要です。
+
 ### 4.1 — カーネルヘッダーをインストール
 
 ドライバーに触れる前に、まず*現在の*カーネルのヘッダーがインストールされていることを確認します：
@@ -146,7 +148,7 @@ sudo dkms remove rtl8812au/5.6.4.2 --all 2>/dev/null
 git clone https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au
 
-# DKMSにソースを登録し、コンパイルして一括インストール
+# DKMSにソースを登録し, コンパイルして一括インストール
 sudo make dkms_install
 ```
 

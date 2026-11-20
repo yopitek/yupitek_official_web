@@ -21,15 +21,13 @@ faq:
     answer: "Preste atenção ao aspecto regulatório. A FCC dos Estados Unidos estabelece claramente que, na banda 30, é proibido usar antenas instaladas fora do veículo para dispositivos móveis; ao projetar a carcaça, você deve evitar essa zona de perigo."
 ---
 
-# Como construir um sistema de rastreamento GPS de frotas e Telematics: análise do GNSS integrado em EM7455/MC7455
-
 **Resumo em uma frase: a forma mais inteligente de construir um sistema de gestão de frotas é «usar um único chip para fazer o trabalho de dois». O EM7455 e o MC7455 da Sierra Wireless calculam, por um lado, as coordenadas precisas do caminhão por meio do GNSS integrado e, por outro, as enviam em tempo real via 4G para o servidor da sua empresa. Sem comprar um módulo GPS adicional: economia de espaço, economia de dinheiro e total estabilidade.**
 
 O «sistema telematics de frotas» parece sofisticado, mas seu princípio é na verdade simples: coletar a posição do veículo, sua velocidade e o estado do motor, e enviá-los pela rede ao servidor.
 
 Os engenheiros de hardware passavam mal no passado: precisavam colocar um chip GPS e um módulo 4G juntos em uma placa pequena, e resolver as interferências de alimentação e antenas entre ambos. Hoje, basta escolher o módulo celular adequado para que tudo fique muito mais simples. Neste artigo usamos a folha de especificações oficial do EM7455 e do MC7455 para descobrir juntos o seu «superpoder oculto»: o posicionamento por satélite GNSS.
 
-> Fonte dos dados técnicos: folha de especificações oficial da Sierra Wireless (EM7455, MC7455). Artigo elaborado pela Yopitek (榆閤科技).
+> Fonte dos dados técnicos: folha de especificações oficial da Sierra Wireless (EM7455, MC7455). Artigo elaborado pela Yopitek.
 
 ---
 
@@ -85,7 +83,7 @@ Escolha o EM7455 ou o MC7455, conecte-os à placa, encaixe uma antena ativa GPS 
 
 ## Informações de compra (Call To Action)
 
-Você está desenvolvendo um terminal veicular e precisa comprar o EM7455 ou o MC7455? Tem dúvidas sobre a configuração de antenas ou a integração na placa principal? A Yopitek (榆閤科技) oferece soluções de hardware completas e suporte técnico de primeira linha.
+Você está desenvolvendo um terminal veicular e precisa comprar o EM7455 ou o MC7455? Tem dúvidas sobre a configuração de antenas ou a integração na placa principal? A Yopitek oferece soluções de hardware completas e suporte técnico de primeira linha.
 Escreva para nós: **sales@yupitek.com**
 Veja os produtos: [Série de módulos Sierra Wireless](/pt/products/sierra/)
 

@@ -22,8 +22,6 @@ faq:
     answer: "Laisse le module redémarrer jusqu'au mode boot-and-hold (après 6 redémarrages d'affilée), reconnecte-le en USB et utilise un outil de flash pour écrire la bonne image firmware."
 ---
 
-# Guide Sierra Wireless : mise à jour du firmware et changement de verrouillage de marque, flasher sans briquer le module
-
 **La version courte : tu peux mettre à jour le firmware d'un module Sierra par voie hertzienne (FOTA, poussé par l'opérateur) ou en le flashant toi-même en USB. Le verrouillage de marque qui inquiète tout le monde (la différence entre les éditions Dell ou Lenovo et la version générique) n'est en fait qu'un simple échange d'image firmware. Vérifie la version avec `AT+GMR` avant de flasher, ne coupe jamais le courant en plein flash, et si ça échoue quand même, le module embarque un mode de récupération SED qui peut le ramener à la vie.**
 
 Beaucoup de gens achètent des modules Sierra Wireless sur le marché de l'occasion, les glissent dans leur portable ou leur routeur, et découvrent que la carte ne fonctionne pas. Le coupable, c'est le plus souvent le verrouillage OEM. Ce guide combine les faits solides de la spécification officielle avec ce que la communauté a appris à ses dépens, pour que tu puisses flasher ton module en toute sécurité.

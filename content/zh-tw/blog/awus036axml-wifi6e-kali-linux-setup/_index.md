@@ -2,7 +2,7 @@
 title: "ALFA AWUS036AXML 安裝教學：Wi-Fi 6E 網路卡在 Kali Linux 上的監聽模式與封包注入實測"
 locale: "zh-TW"
 hreflang_group: "awus036axml-wifi6e-kali-linux-setup"
-description: "ALFA AWUS036AXML（MT7921AUN 晶片）在 Kali Linux 上的安裝教學：內建 mt7921u 驅動、kernel 版本條件、監聽模式、封包注入實測與常見排錯。"
+description: "ALFA AWUS036AXML（MT7921AUN 晶片）在 Kali Linux 上的安裝教學：內建 mt7921u 驅動、kernel 版本條件、監聽模式、封包注入現況（stock kernel 6.17 實測未通過）與常見排錯。"
 date: 2026-08-10
 draft: false
 showBreadcrumbs: true
@@ -11,13 +11,11 @@ slug: "awus036axml-wifi6e-kali-linux-setup"
 tags: ["Fi 6E 網路卡在 Kali Linux 上的監聽模式與封包注入實測", "TW", "wifi6e-kali-linux-setup", "wifi6e-kali-linux-setup", "08-10", "AWUS036AXML", "Kali Linux", "Fi 6E 監聽模式與封包注入教學｜Yopitek"]
 categories: ["Technical"]
 author: "Yopitek"
-lastmod: 2026-08-10
+lastmod: 2026-11-20
 ---
 
 
-# ALFA AWUS036AXML 安裝教學：Wi-Fi 6E 網路卡在 Kali Linux 上的監聽模式與封包注入實測
-
-> TL;DR：ALFA AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，在 Kali Linux（kernel 5.18+）使用**內建 `mt7921u` 驅動即可運作**，不需要另外編譯驅動；若要做穩定的 active monitor mode / 封包注入，建議 kernel 6.12+ 與附電源的 USB Hub。插入後 `lsusb` 應看到 `0e8d:7961`，接著用 `airmon-ng` 或 `iw` 切換監聽模式即可。
+> TL;DR：ALFA AWUS036AXML 搭載 MediaTek MT7921AUN 晶片，在 Kali Linux（kernel 5.18+）使用**內建 `mt7921u` 驅動即可運作**，不需要另外編譯驅動；若要做穩定的 active monitor mode，建議 kernel 6.12+ 與附電源的 USB Hub；封包注入在 kernel 6.16 以前有社群回報，但本站在 stock kernel 6.17 實測未通過（mac80211 chanctx 回歸，非晶片先天限制），需要注入請改用 ACH、EACS、ACS 或 AX。插入後 `lsusb` 應看到 `0e8d:7961`，接著用 `airmon-ng` 或 `iw` 切換監聽模式即可。
 
 ## 為什麼 Wi-Fi 6E 網路卡開始被滲透測試關注？
 
@@ -36,7 +34,7 @@ AWUS036AXML 是 ALFA Network 推出的 Wi-Fi 6E USB 網路卡，支援 2.4 / 5 /
 | active monitor mode | 建議 kernel ≥ 6.12 | 通用 | 通用 |
 | USB ID（lsusb） | `0e8d:7961` | `0bda:8812` | `0e8d:7612` |
 | 功耗 | 約 2.7 W（建議附電源 Hub） | 較低 | 較低 |
-| 封包注入 | 支援（建議實測） | 支援 | 支援 |
+| 封包注入 | ⚠️ kernel 6.16 以前有社群回報；6.17 實測失敗 | 支援 | 支援 |
 
 > 版本條件說明：`mt7921u` 自 kernel 5.18 起進入主線，6 GHz 頻段支援隨核心逐步補齊；**active monitor mode（主動式監聽）建議 kernel 6.12+**。Kali 2026 預設核心已是 6.14 等級，直接符合條件。
 
@@ -61,7 +59,7 @@ lsusb
 Bus 001 Device 003: ID 0e8d:7961 MediaTek Inc. Wireless_Device
 ```
 
-`0e8d:7961` 就是 MT7921AUN 的 USB ID。若看不到，先检查供電（換 USB 埠或加供電 Hub）再試。
+`0e8d:7961` 就是 MT7921AUN 的 USB ID。若看不到，先檢查供電（換 USB 埠或加供電 Hub）再試。
 
 確認驅動有載入：
 
@@ -90,7 +88,7 @@ iwconfig
 # 終止可能干擾的服務
 sudo airmon-ng check kill
 
-# 啟用監聽模式（wlan1 換成你的介面名稱）
+# 啟用監聽模式 (wlan1 換成你的介面名稱)
 sudo airmon-ng start wlan1
 ```
 
@@ -147,6 +145,8 @@ Injection is working!
 
 成功率 80% 以上代表運作可靠；若低於 50%，檢查天線方向、USB 供電，或改用 USB 3.0 直連埠。
 
+> 注意：本站在 stock kernel 6.17 實測，AWUS036AXML 的此項測試未通過（Found 0 APs / No Answer），因此無法 deauth 或擷取 handshake。原因是 kernel 6.16 以後 mac80211 chanctx 回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps，無法注入 HT/VHT）。需要注入請改用 ACH、EACS、ACS 或 AX。
+
 ## 樹莓派補充：可攜式 Wi-Fi 稽核平台
 
 AWUS036AXML 也支援 Raspberry Pi 3B+ / 4 / 5（官方產品頁列出），適合組成可攜稽核工具組。重點提醒：
@@ -191,6 +191,6 @@ AXML 是 Wi-Fi 6E（多了 6 GHz）且驅動核心內建；ACH 是雙頻（2.4/5
 
 ## 總結
 
-AWUS036AXML 的安裝流程比你想像的簡單：**核心 5.18+ → 插入即用（`mt7921u`）→ 確認 `0e8d:7961` → airmon-ng 切監聽 → aireplay-ng 驗證注入**。它與 AWUS036ACH 的差異核心在於 6 GHz 頻段與免編譯驅動——如果你的稽核範圍已進入 Wi-Fi 6E 世代，這張卡是補齊頻段覆蓋的選擇。記得所有測試只在合法授權環境進行。
+AWUS036AXML 的安裝流程比你想像的簡單：**核心 5.18+ → 插入即用（`mt7921u`）→ 確認 `0e8d:7961` → airmon-ng 切監聽 → aireplay-ng 驗證注入（stock kernel 6.17 上未通過，見步驟 5）**。它與 AWUS036ACH 的差異核心在於 6 GHz 頻段與免編譯驅動——如果你的稽核範圍已進入 Wi-Fi 6E 世代，這張卡是補齊頻段覆蓋的選擇。記得所有測試只在合法授權環境進行。
 
 ALFA Network 系列網路卡由 Yopitek（榆閤科技）在台灣提供銷售與技術支援；需要 AWUS036AXML 或搭配的供電 Hub、天線，歡迎來信 [sales@yupitek.com](mailto:sales@yupitek.com)。

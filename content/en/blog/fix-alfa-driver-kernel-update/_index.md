@@ -3,7 +3,7 @@ title: "ALFA Driver Broke After Kernel Update? Here's How to Fix It"
 description: "ALFA USB WiFi adapter not working after Linux kernel update? Complete fix guide for RTL8812AU, RTL8811AU, and MT7921AUN drivers on Kali Linux and Ubuntu after kernel upgrades."
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Why do ALFA adapters fail after a kernel update?"
     answer: "RTL8812AU uses an out-of-tree driver. Compiled modules become incompatible after each kernel version change. DKMS can auto-rebuild, but missing headers or outdated settings cause failures."
@@ -107,6 +107,8 @@ If `ip link` shows the interface but it disappears when you try to use it, skip 
 ---
 
 ## Fix: RTL8812AU Driver (AWUS036ACH, ACS, EACS)
+
+> **Version note:** The AWUS036EACS (RTL8821CU) uses the in-kernel `rtw88_8821cu` driver on kernel 6.2 and newer, so no DKMS is needed there; only older kernels need a community driver such as morrownr/8821cu.
 
 The RTL8812AU is the most widely used ALFA chipset for penetration testing because of its dual-band support and reliable monitor mode. It requires an out-of-tree driver and is therefore the chipset most frequently broken by kernel updates.
 

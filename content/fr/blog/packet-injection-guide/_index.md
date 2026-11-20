@@ -8,10 +8,10 @@ showTableOfContents: true
 tags: ["packet-injection", "aireplay-ng", "kali-linux", "wifi-adapter", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Qu'est-ce que l'injection de paquets ?"
-    answer: "L'injection de paquets est la capacité d'une carte réseau à transmettre des trames 802.11 arbitraires. Limitée par le pilote, pas par le matériel. Les cartes ALFA avec chipsets RTL8812AU, MT7612U et MT7921AUN supportent l'injection via les pilotes aircrack-ng."
+    answer: "L'injection de paquets est la capacité d'une carte réseau à transmettre des trames 802.11 arbitraires. Limitée par le pilote, pas par le matériel. Les cartes ALFA avec chipsets RTL8812AU et MT7612U supportent l'injection via les pilotes aircrack-ng ; le MT7921AUN (AWUS036AXML) est une exception sur les noyaux récents (voir le tableau des puces ci-dessous)."
   - question: "Comment tester si l'injection de paquets fonctionne ?"
     answer: "Exécutez sudo aireplay-ng --test wlan0mon. Une sortie 'Injection is working!' confirme le fonctionnement. Un taux de réussite supérieur à 80% indique une fiabilité correcte."
   - question: "Quelle carte ALFA est la meilleure pour l'injection de paquets ?"
@@ -23,13 +23,11 @@ faq:
 ---
 
 {{< tldr >}}
-L'injection de paquets est la capacité d'une carte à transmettre des trames 802.11 arbitraires, limitée par le pilote. Les cartes ALFA avec chipsets RTL8812AU, MT7612U et MT7921AUN supportent l'injection via les pilotes aircrack-ng.
+L'injection de paquets est la capacité d'une carte à transmettre des trames 802.11 arbitraires, limitée par le pilote. Les cartes ALFA avec chipsets RTL8812AU et MT7612U supportent l'injection via les pilotes aircrack-ng ; le MT7921AUN (AWUS036AXML) est une exception sur les noyaux récents (voir le tableau des puces ci-dessous).
 {{< /tldr >}}
 
 L'injection de paquets est la capacité d'un adaptateur WiFi à **envoyer n'importe quelles trames** — pas seulement celles qui lui sont destinées. Cela permet des attaques telles que :
 
-
-# Qu'est-ce que l'injection de paquets ? Tester la compatibilité de votre adaptateur WiFi avec Kali Linux
 
 L'injection de paquets est l'une des capacités les plus importantes pour les adaptateurs de test de pénétration. Elle vous permet d'envoyer n'importe quelles trames 802.11 dans le réseau sans fil — y compris les frames de désauthentification, la manipulation des poignées et plus encore.
 
@@ -71,7 +69,7 @@ sudo aireplay-ng --test wlan0mon
 |---|---|---|
 | RTL8812AU | ✓ | ★★★★★ |
 | RTL8811AU | ✓ | ★★★★★ |
-| MT7921AUN | ✓ | ★★★★☆ |
+| MT7921AUN | ⚠️ Retours de la communauté avant le noyau 6.16 ; échec lors de nos tests sur le noyau 6.17 (régression mac80211 chanctx, firmware limité en débit) | ★★☆☆☆ |
 | MT7612U | ✓ | ★★★★☆ |
 | RTL8832BU | ✓ | ★★★★☆ |
 

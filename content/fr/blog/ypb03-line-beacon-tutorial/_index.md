@@ -122,45 +122,45 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# LINE Developers 註冊的 HWID（這裡改為您申請到的 HWID）
+# HWID enregistré dans LINE Developers (remplace-le par le HWID qui t'a été attribué)
 TARGET_HWID = "0123456789"
 
 @app.route("/callback", methods=["POST"])
 def callback():
-    # 取得 LINE 平台傳過來的 JSON 資料
+    # Récupérer les données JSON envoyées par la plateforme LINE
     body = request.get_json()
     
     if not body or "events" not in body:
         return jsonify({"status": "error", "message": "No events found"}), 400
 
-    # 巡檢所有的事件
+    # Parcourir tous les événements
     for event in body["events"]:
-        # 篩選事件類型為 beacon 的事件
+        # Ne garder que les événements de type beacon
         if event.get("type") == "beacon":
             user_id = event["source"].get("userId")
             reply_token = event.get("replyToken")
             
             beacon_data = event.get("beacon", {})
             hwid = beacon_data.get("hwid")
-            beacon_type = beacon_data.get("type") # enter (進入), stay (逗留), banner (點擊橫幅)
+            beacon_type = beacon_data.get("type") # enter (entrée), stay (présence), banner (bannière touchée)
             
-            print(f"收到 Beacon 事件！使用者 ID: {user_id}")
-            print(f"設備 HWID: {hwid} | 觸發類型: {beacon_type}")
+            print(f"Événement Beacon reçu ! ID utilisateur : {user_id}")
+            print(f"HWID de l'appareil : {hwid} | Type de déclenchement : {beacon_type}")
             
-            # 判斷是否為我們的 YPB03 設備
+            # Vérifier qu'il s'agit bien de notre appareil YPB03
             if hwid == TARGET_HWID:
                 if beacon_type == "enter":
-                    print("--> 使用者進入了 YPB03 範圍！觸發迎賓機制。")
-                    # 在這裡，您可以呼叫 LINE Messaging API 送出歡迎折價券給 user_id
+                    print("--> L'utilisateur est entré dans la zone du YPB03 ! Déclenchement de l'accueil.")
+                    # Ici, tu peux appeler la LINE Messaging API pour envoyer un coupon de bienvenue à user_id
                 elif beacon_type == "stay":
-                    print("--> 使用者持續在範圍內...")
+                    print("--> L'utilisateur est toujours dans la zone...")
                 elif beacon_type == "banner":
-                    print("--> 使用者點擊了聊天室上方的 LINE Beacon 橫幅！")
+                    print("--> L'utilisateur a touché la bannière LINE Beacon en haut du chat !")
                     
     return jsonify({"status": "ok"}), 200
 
 if __name__ == "__main__":
-    # 本地測試執行在 5000 端口
+    # Exécution locale sur le port 5000 pour les tests
     app.run(port=5000)
 ```
 
@@ -186,9 +186,9 @@ La plateforme LINE doit envoyer le Webhook vers une URL HTTPS publique. En phase
 4. Prends ton téléphone et avance lentement dans la zone de diffusion du YPB03 (tu peux réduire manuellement la puissance d'émission pour faciliter le test en intérieur).
 5. Observe la console Python : tu verras s'afficher en temps réel les logs :
    ```text
-   收到 Beacon 事件！使用者 ID: U1234567890abcdef...
-   設備 HWID: 0123456789 | 觸發類型: enter
-   --> 使用者進入了 YPB03 範圍！觸發迎賓機制。
+   Événement Beacon reçu ! ID utilisateur : U1234567890abcdef...
+   HWID de l'appareil : 0123456789 | Type de déclenchement : enter
+   --> L'utilisateur est entré dans la zone du YPB03 ! Déclenchement de l'accueil.
    ```
 
 ---

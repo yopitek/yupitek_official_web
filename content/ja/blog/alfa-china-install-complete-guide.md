@@ -10,7 +10,7 @@ series_order: 9
 description: "AlfaUSB Wi-FiアダプターをLinuxにインストールするための決定版ガイド。Kali Linux・Ubuntu 22/24・Debian・Raspberry Piに対応。システムパッケージは国内ミラー、ドライバーのソースは検証済みのGitHubリポジトリから取得。"
 featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "中国でAlfa WiFiアダプターをインストールするのにVPNは必要ですか？"
     answer: "必ずしも必要ではありません。システムパッケージは国内ミラー（USTC、Alibaba Cloud、清華など）から入れ、カーネル外ドライバーのソースは morrownr の検証済み GitHub リポジトリからクローンします。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。"
@@ -19,7 +19,7 @@ faq:
   - question: "WiFi 6をサポートするAlfaアダプターは？"
     answer: "AWUS036AXとAWUS036AXERはRTL8832BUチップを採用しWiFi 6をサポート、Ubuntu 24.04ではドライバー不要でプラグアンドプレイです。"
   - question: "WiFi 6EをサポートするAlfaアダプターは？"
-    answer: "AWUS036AXMとAWUS036AXMLはMT7921AUNチップを採用し、WiFi 6Eトリバンドをサポートします。"
+    answer: "AWUS036AXMとAWUS036AXMLはMT7921AUNチップを採用しています。AWUS036AXMLは6 GHzでの動作を本機で実測しました（自前の6 GHz WPA3-SAE AP ch37にiPhone 15 Proが接続）。AWUS036AXMは仕様上Wi-Fi 6Eをサポートしますが、6 GHzは未実測です。"
   - question: "Raspberry PiでAlfaアダプターを使う際の注意点は？"
     answer: "必ず電源付きUSB Hubで給電し、最適なドライバーサポートを得るためKali ARM64バージョンをフラッシュしてください。"
 ---
@@ -133,10 +133,10 @@ ID が表示されていれば、アダプターは検出されています。�
 |----------|-----|---------|
 | **Alfa 公式ダウンロード** | [files.alfa.com.tw](https://files.alfa.com.tw) | ドライバーパッケージ、ファームウェア |
 | **Alfa ドキュメント** | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 製品マニュアル（英語） |
-| **清华大学镜像（Tsinghua）** | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| **阿里云镜像（Aliyun）** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推奨） |
-| **中科大镜像（USTC）** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推奨） |
-| **华为云镜像** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM イメージ（バックアップ） |
+| **清华大学ミラー（Tsinghua）** | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| **阿里云ミラー（Aliyun）** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推奨） |
+| **中科大ミラー（USTC）** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推奨） |
+| **华为云ミラー** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM イメージ（バックアップ） |
 | **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | ドライバーのソースコード |
 
 ---
@@ -567,7 +567,7 @@ VIF（仮想インターフェース機能）を使うと、1つのアダプタ�
 |---------|-------------|-------|
 | **MT7612U（AWUS036ACM）** | ✅ フルネイティブサポート | VIF ワークフローに最適 |
 | **RTL8812AU（AWUS036ACH）** | ⚠️ 限定的 | マネージド＋モニターの同時使用は不可 |
-| **RTL8832BU（AX シリーズ）** | ⚠️ 限定的 | 各モデルのドキュメントを確認 |
+| **RTL8832BU（AX シリーズ）** | ✅ STA+AP 利用可 | カーネル内蔵の rtw89_8852bu（kernel 6.17 以降）で動作を実測確認。古いカーネルのコミュニティ版 DKMS ドライバーは VIF 非対応 |
 
 ### 仮想インターフェースの作成（MT7612U）
 

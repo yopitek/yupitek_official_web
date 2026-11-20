@@ -22,15 +22,13 @@ faq:
     answer: "模块上有 3 个 RF 接头（Main、GNSS、Aux）。上网至少要接 Main，跑全速要接 Aux；要用 GPS 定位才需要接 GNSS 天线。"
 ---
 
-# Dell / Lenovo 笔记本升级 4G/5G 上网卡完整指南：兼容型号清单 + 安装教程
-
 **一句话总结：想给笔记本升级 4G 上网卡，先看有没有留天线和插槽，再查 BIOS 让不让你装。至于网卡怎么选？在台湾或亚洲用，EM7455 或 EM7430 都可以，它们都是同一颗 MDM9230 芯片做出来的 Cat 6 网卡，速度一样快，差别只在支持的频段不同。**
 
 身边很多用 Dell Latitude 或 Lenovo ThinkPad 的朋友，为了出差不用一直找 Wi-Fi，会把笔记本里预留的 WWAN 空插槽装上 4G 网卡。但这件事真的没那么简单！你必须确认主板插槽规格、天线有没有拉好，还要看笔记本原厂有没有偷偷锁「白名单」。
 
 这篇文章我们用 Sierra Wireless 官方的规格书，把最常拿来改装的 EM7455 和 EM7430 比较一次，顺便教你如何安装。
 
-> 规格资料来源：Sierra Wireless 官方规格书（EM7455、EM7430）。本文由榆合科技（Yopitek）整理。
+> 规格资料来源：Sierra Wireless 官方规格书（EM7455、EM7430）。本文由榆閤科技（Yopitek）整理。
 
 ---
 
@@ -101,6 +99,6 @@ faq:
 
 ## 采购信息（Call To Action）
 
-想要采购 Sierra Wireless 系列网卡？或者不确定自己的工业电脑能不能装？Yopitek（榆合科技）提供完整的硬件方案与技术支援。
+想要采购 Sierra Wireless 系列网卡？或者不确定自己的工业电脑能不能装？Yopitek（榆閤科技）提供完整的硬件方案与技术支援。
 欢迎来信：**sales@yupitek.com**
 看看产品：[Sierra Wireless 系列](https://yupitek.com/zh-cn/products/sierra/)

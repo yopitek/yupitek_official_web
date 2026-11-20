@@ -4,6 +4,7 @@ description: "Apple Mac（MacBook、MacBook Pro、MacBook Air、Mac Mini、Mac S
 keywords: "ALFA wireless card Mac, ALFA macOS compatibility, ALFA adapter Apple Silicon, USB WiFi adapter M1 M2 M3 M4, ALFA Network MacBook, monitor mode Mac, AWUS036ACH Mac, AWUS036ACM Mac, ALFA Network Mac Mini, penetration testing Apple Silicon"
 author: "Yopitek Technical Support Team"
 date: "2026-06-20"
+lastmod: 2026-11-20
 category: "Technical Guide"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
@@ -35,9 +36,9 @@ Apple Mac（M3 Max搭載のMacBook Pro、M2 Ultra搭載のMac Studio、Intelベ�
 | **AWUS036AXM** | MediaTek MT7921AUN |❌ |❌ |✅ |✅ |
 | **AWUS036ACHM** | MediaTek MT7610U |❌ |❌ |✅ |✅ |
 | **AWUS036ACS** | Realtek RTL8811AU |❌ |⚠️ Client only (≤10.14) |✅ |✅ |
-| **AWUS036AX** | Realtek RTL8832BU |❌ |❌ |⚠️ Limited |⚠️ Limited |
-| **AWUS036AXER** | Realtek RTL8832BU |❌ |❌ |⚠️ Limited |⚠️ Limited |
-| **AWUS036EACS** | Realtek RTL8821CU |❌ |⚠️ Client only |❌ No monitor mode |⚠️ Not recommended |
+| **AWUS036AX** | Realtek RTL8832BU |❌ |❌ |✅ カーネル ≥6.17 |⚠️ カーネル ≥6.17 が必要（Pi 未検証） |
+| **AWUS036AXER** | Realtek RTL8832BU |❌ |❌ |✅ カーネル ≥6.17 |⚠️ カーネル ≥6.17 が必要（Pi 未検証） |
+| **AWUS036EACS** | Realtek RTL8821CU |❌ |⚠️ Client only |✅ Monitor/injection (Linux guest kernel ≥6.2) |⚠️ Needs kernel ≥6.2, not tested on Pi |
 
 **凡例：**✅ = 動作確認済み |⚠️ = 限定的 / 条件あり |❌ = 非対応
 
@@ -66,7 +67,7 @@ AppleはネイティブWi-Fiドライバーのカーネルプログラミング�
 IOService
   └─ IONetworkController
        └─ IOEthernetController       ← public KPI
-            └─ IO80211Controller     ← PRIVATE（Apple内部のみ）
+            └─ IO80211Controller     ← PRIVATE (Apple内部のみ)
 ```
 
 サードパーティベンダーは歴史的に`IOEthernetController`を直接サブクラス化していました。そのため、macOS上のUSB Wi-FiアダプタはメニューバーのWi-Fiアイコン、AirDrop、Sidecar、Find Myに統合されるのではなく、「Ethernet」インターフェースとして表示されます。
@@ -207,7 +208,7 @@ Kali Linux ARM64インストーラーをダウンロードし、UTMで新しいV
 
 **AWUS036ACH（RTL8812AU）の場合：**
 
-Kaliカーネルが**6.14以上**の場合、`rtw88`メインラインドライバーが既に含まれているため、インストールは不要です。それより古いカーネルの場合：
+Kaliカーネルが**6.13以上**の場合、`rtw88`メインラインドライバーが既に含まれているため、インストールは不要です。それより古いカーネルの場合：
 
 ```bash
 sudo apt update
@@ -274,7 +275,7 @@ sudo aireplay-ng --test wlan0mon
 | 重いスキャン中にカードが切断 | USB 3.0モード切替バグ（morrownr/USB-WiFi #676） |カードとMacの間にUSB 2.0ハブを使用 |
 | `airmon-ng`がカードを検出しない | VM設定のUSBコントローラが間違っている | VMのUSBをUSB 2.0ではなくUSB 3.0（xHCI）に設定 |
 | VMでドライバーがコンパイルできない |カーネルヘッダーが不足 | `sudo apt install linux-headers-$(uname -r)` |
-|カードは認識されるがモニターモードなし | RTL8832BUチップセット（AWUS036AX/AXER） |このチップセットはモニターモードサポートが限定的です。代わりにAWUS036ACHを使用 |
+|カードは認識されるがモニターモードなし | RTL8832BUチップセット（AWUS036AX/AXER） |ゲストカーネルが 6.17 未満でコミュニティ版 DKMS ドライバーを使うと、モニターモードが制限されることがあります。カーネル 6.17 以降（内蔵 rtw89_8852bu）または AWUS036ACH を使用 |
 
 ### 5.4 代替案：Raspberry Piをリモートペンテストノードとして
 
@@ -364,8 +365,8 @@ Mac Mini M4/M4 Proは**USB-Aポートを一つも持たない初のMac Mini**で
 
 |カード | 避ける理由 |
 |------|-----------|
-| AWUS036AX / AWUS036AXER（RTL8832BU） | Linuxでのモニターモードサポートが限定的で不安定；macOSドライバーなし |
-| AWUS036EACS（RTL8821CU） | **モニターモードを全くサポートしていません**—セキュリティ監査には不適合 |
+| AWUS036AX / AWUS036AXER（RTL8832BU） | macOSドライバーなし；Linux VM ではカーネル 6.17 以降（内蔵 rtw89_8852bu）でモニターモードが動作し、古いカーネルのコミュニティ版 DKMS ドライバーでは制限されることがあります |
+| AWUS036EACS（RTL8821CU） | macOSにはネイティブのモニタードライバーがありません；ただしLinux VM（kernel ≥6.2）内ではモニター／インジェクションとも実測で可能であり、避けるべきカードではありません |
 | AWUS036ACHM（MT7610U） | macOSドライバーなし（chris1111はMediaTekをサポートしていません）；Linuxコンパイルが必要 |
 
 ---
@@ -426,11 +427,11 @@ USB-AポートがあるMac（Mac Mini、Mac Studio、旧型MacBook Pro/Air）で
 |---------|-------------|-------------------|-------------|
 | RTL8812AU | AWUS036ACH, AWUS036ACS | [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820) | DKMS (recommended) |
 | RTL8812AU | AWUS036ACH | [aircrack-ng/rtl8812au](https://github.com/aircrack-ng/rtl8812au) | Community (deprecated) |
-| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | Mainline (kernel >=6.14) |
+| RTL8812AU | AWUS036ACH | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) | Mainline (kernel >=6.13) |
 | MT7612U | AWUS036ACM | Linux in-kernel (`mt76`) | In-kernel (>=4.19) |
 | MT7921AUN | AWUS036AXML, AWUS036AXM | Linux in-kernel (`mt7921u`) | In-kernel (>=5.18) |
 | MT7610U | AWUS036ACHM | [imzyxwvu/mt7610u](https://github.com/imzyxwvu/mt7610u) | Out-of-kernel |
-| RTL8832BU | AWUS036AX, AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | Limited support |
+| RTL8832BU | AWUS036AX, AWUS036AXER | [morrownr/USB-WiFi](https://github.com/morrownr/USB-WiFi) | カーネル 6.17 以降は内蔵 rtw89_8852bu；古いカーネルはコミュニティ版 DKMS（モニターは制限される場合あり） |
 
 ### macOSドライバー（Intel Macのみ）
 

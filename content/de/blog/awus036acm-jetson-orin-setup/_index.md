@@ -3,7 +3,7 @@ title: "Keine Treiberkompilierung! Praxisleitfaden für ALFA AWUS036ACM auf Jets
 description: "Für Kunden des AVALUE AIB-NW01 (NVIDIA Jetson Orin NX/Nano): Eine fundierte Analyse, welcher ALFA Network USB-WLAN-Adapter sich am besten für Edge-AI-Deployments eignet, mit praktischem Nachweis, dass der AWUS036ACM echtes Plug-and-Play bietet."
 date: 2026-05-20
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -20,7 +20,7 @@ faq:
     answer: "Dies ist möglich. Drittanbieter-Treiber können nach einem JetPack-Upgrade aufgrund von Änderungen in der Kernel-API nicht mehr funktionieren und müssen neu kompiliert werden. Im Kernel integrierte Treiber (wie mt76x2u) sind davon nicht betroffen."
   - question: "Welche Linux-Kernel-Version verwendet der AIB-NW01?"
     answer: "AIB-NW01 wird ab Werk mit Ubuntu 20.04.6 LTS und JetPack 5.0 ausgeliefert, verwendet den NVIDIA-kundenspezifischen Tegra-Kernel 5.10.x-tegra und die CPU-Architektur ARM64."
----Der Jetson Orin verwendet einen von NVIDIA angepassten Tegra-Core. Die Kompilierung von Drittanbieter-WiFi-Treibern schlägt häufig fehl. Der ALFA AWUS036ACM verwendet den MT7612U-Chip, dessen Treiber ab Kernel 4.19 im Kernel-Quellbaum enthalten ist. Er ist sofort nach dem Einstecken einsatzbereit und stellt die einzige wirklich kompilierfreie Lösung dar. Er unterstützt Monitor Mode, Packet Injection und AP Mode.
+---
 
 {{< tldr >}}
 Der Jetson Orin verwendet einen von NVIDIA angepassten Tegra-Core. Die Kompilierung von Drittanbieter-WiFi-Treibern schlägt häufig fehl. Der ALFA AWUS036ACM verwendet den MT7612U-Chip, dessen Treiber ab Kernel 4.19 im Kernel-Quellbaum enthalten ist. Er ist sofort nach dem Einstecken einsatzbereit und stellt die einzige wirklich kompilierfreie Lösung dar. Er unterstützt Monitor Mode, Packet Injection und AP Mode.
@@ -147,9 +147,9 @@ Nachfolgend die Kompatibilität gängiger ALFA Network USB-WLAN-Chipsätze auf J
 | **MT7612U** | **AWUS036ACM** | **In-Kernel (mt76x2u)** | **4.19+** | ✅ Perfekt kompatibel, Plug-and-Play |
 | RTL8812AU | AWUS036ACH | Out-of-Tree (Kompilierung nötig) | Manuelle Kompilierung | ⚠️ Möglich, aber Kompilierung riskant |
 | RTL8811AU | AWUS036ACS | Out-of-Tree (Kompilierung nötig) | Manuelle Kompilierung | ⚠️ Gleiche Probleme wie RTL8812AU |
-| RTL8812BU | AWUS036AX | Out-of-Tree (Kompilierung nötig) | Manuelle Kompilierung | ⚠️ Kompilierung nötig, bekannte Probleme |
+| RTL8832BU | AWUS036AX | Out-of-Tree (Kompilierung nötig) | Manuelle Kompilierung | ⚠️ Kompilierung nötig, bekannte Probleme |
 | MT7921AU | AWUS036AXM | In-Kernel (mt7921u) | **5.18+** | ❌ Kernel 5.10/5.15 erfüllen dies nicht |
-| RTL8832CU | AWUS036AXER | Out-of-Tree (Kompilierung nötig) | Manuelle Kompilierung | ❌ Nicht empfohlen, ARM64-Unterstützung unklar |
+| RTL8832BU | AWUS036AXER | Out-of-Tree (Kompilierung nötig) | Manuelle Kompilierung | ❌ Nicht empfohlen, ARM64-Unterstützung unklar |
 
 Datenquelle: [morrownr/USB-WiFi Chipsatz-Unterstützungstabelle](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
 
@@ -312,7 +312,7 @@ Die Verifikation in GitHub issue #574 wurde auf einem **Odroid M1** (ARM64 + Ker
 
 ### Einsatzszenarien für andere Modelle
 
-Der AWUS036ACH (RTL8812AU) und der AWUS036AX (RTL8812BU) sind nicht grundsätzlich unbrauchbar – sie erfordern lediglich eine manuelle Treiberkompilierung auf Jetson. Wenn Sie Erfahrung mit Build-Umgebungen haben und bereit sind, den Treiber selbst zu pflegen, sind auch diese Modelle eine Überlegung wert.
+Der AWUS036ACH (RTL8812AU) und der AWUS036AX (RTL8832BU) sind nicht grundsätzlich unbrauchbar – sie erfordern lediglich eine manuelle Treiberkompilierung auf Jetson. Wenn Sie Erfahrung mit Build-Umgebungen haben und bereit sind, den Treiber selbst zu pflegen, sind auch diese Modelle eine Überlegung wert.
 
 ---
 

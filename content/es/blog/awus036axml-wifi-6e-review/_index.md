@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["AWUS036AXML", "wifi-6e", "reseña", "Kali-Linux", "MT7921AUN", "6GHz"]
 featureimage: "/images/blog/awus036axml-wifi-6e-review.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Qué bandas de frecuencia admite el AWUS036AXML?"
     answer: "Admite triple banda 2.4 GHz, 5 GHz y 6 GHz, conforme al estándar IEEE 802.11ax Wi-Fi 6E. Es una de las pocas tarjetas USB que permite a los investigadores de seguridad operar en la banda de 6 GHz."
@@ -17,19 +17,19 @@ faq:
   - question: "¿Cuál es la principal diferencia entre AWUS036AXML y AWUS036ACH?"
     answer: "El AWUS036AXML usa MT7921AUN y admite 6 GHz y Wi-Fi 6E; el AWUS036ACH usa RTL8812AU y solo admite Wi-Fi 5 de doble banda, pero su controlador es más maduro y compatible."
   - question: "¿El AWUS036AXML admite inyección de paquetes?"
-    answer: "Admite inyección de paquetes con una tasa de éxito estable por encima del 90%, pero el modo monitor activo tiene limitaciones conocidas del controlador; se recomienda usar solo el modo de escucha pasiva."
+    answer: "No de forma fiable. Hay reportes de la comunidad de inyección funcional en kernels anteriores a 6.16, pero en nuestras pruebas con el kernel stock 6.17 la prueba de inyección falló (aireplay-ng --test: Found 0 APs / No Answer). La causa es una regresión de mac80211 chanctx, no el chip; si necesitas inyección, usa ACH, EACS, ACS o AX. Monitor, AP y WPA3 funcionan; se recomienda el modo monitor pasivo."
   - question: "¿Para quién es adecuado comprar el AWUS036AXML?"
     answer: "Es más adecuado para investigadores de seguridad que evalúan entornos empresariales con Wi-Fi 6E desplegado, laboratorios de formación en seguridad e investigadores de análisis de protocolos en 6 GHz."
----El AWUS036AXML es una tarjeta USB Wi-Fi 6E que admite triple banda 2.4/5/6 GHz, modo monitor e inyección de paquetes. Este artículo cubre especificaciones, instalación del controlador en Kali Linux, pruebas de escaneo de 6 GHz y una comparación detallada con el AWUS036ACH.
+---
 
 {{< tldr >}}
-El AWUS036AXML es una tarjeta USB Wi-Fi 6E que admite triple banda 2.4/5/6 GHz, modo monitor e inyección de paquetes. Este artículo cubre especificaciones, instalación del controlador en Kali Linux, pruebas de escaneo de 6 GHz y una comparación detallada con el AWUS036ACH.
+El AWUS036AXML es una tarjeta USB Wi-Fi 6E que admite triple banda 2.4/5/6 GHz, modo monitor (inyección de paquetes: reportes de la comunidad antes del kernel 6.16, falló en nuestras pruebas con el kernel stock 6.17). Este artículo cubre especificaciones, instalación del controlador en Kali Linux, pruebas de escaneo de 6 GHz y una comparación detallada con el AWUS036ACH.
 {{< /tldr >}}
 
 
 ## Descripción General del Producto
 
-El ALFA AWUS036AXML con chipset MediaTek MT7921AUN es uno de los pocos adaptadores USB que permite a los investigadores de seguridad operar en la banda de 6 GHz, con soporte para modo monitor e inyección de paquetes. Requiere Linux kernel 5.18 o superior.
+El ALFA AWUS036AXML con chipset MediaTek MT7921AUN es uno de los pocos adaptadores USB que permite a los investigadores de seguridad operar en la banda de 6 GHz, con soporte para modo monitor, modo AP y WPA3. Requiere Linux kernel 5.18 o superior; la inyección de paquetes tiene reportes de la comunidad en kernels anteriores a 6.16, pero falló en nuestras pruebas con el kernel stock 6.17 (detalles abajo).
 
 El **ALFA AWUS036AXML** es la entrada de ALFA Network en la era Wi-Fi 6E de la investigación de seguridad inalámbrica. Está construido alrededor del chipset **Mediatek MT7921AUN** y es, a partir de 2026, uno de los muy pocos adaptadores inalámbricos USB que permite a los investigadores de seguridad operar en la **banda de 6 GHz** — la asignación de espectro no licenciado más reciente que utilizan las redes Wi-Fi 6E.
 
@@ -55,7 +55,7 @@ El adaptador se conecta vía USB-A y se alimenta completamente desde el bus USB 
 | Temperatura de Operación | 0°C a 50°C |
 | Soporte OS | Linux (kernel 5.18+), Windows 10/11 |
 | Modo Monitor | ✅ Soportado |
-| Inyección de Paquetes | ✅ Soportada |
+| Inyección de Paquetes | ⚠️ Reportes de la comunidad antes del kernel 6.16; falló en nuestras pruebas con 6.17 |
 
 ---
 
@@ -208,7 +208,7 @@ wlan0mon  IEEE 802.11  Mode:Monitor  Frequency:2.457 GHz  Tx-Power=20 dBm
 sudo aireplay-ng --test wlan0mon
 ```
 
-En las pruebas, el AWUS036AXML logra tasas consistentes de éxito de inyección superiores al 90% cuando se posiciona dentro de un alcance razonable de los puntos de acceso objetivo. La implementación de inyección del controlador MT7921AUN es sólida en kernel 6.x — notablemente más estable que las versiones tempranas 5.18/5.19 donde se observaron caídas ocasionales de tramas durante inyección sostenida.
+En reportes de la comunidad con kernels anteriores a 6.16, la inyección funcionaba con esta tarjeta. Sin embargo, en nuestras pruebas con el kernel stock 6.17 `aireplay-ng --test` falló (Found 0 APs / No Answer), por lo que no es posible hacer deauth ni capturar handshakes. La causa es una regresión de mac80211 chanctx desde el kernel 6.16, no una limitación del chip; los controladores parcheados de la comunidad restauran la inyección, pero el firmware sigue bloqueando la tasa (1/6 Mbps, sin inyección HT/VHT). Si necesitas inyección, usa ACH, EACS, ACS o AX.
 
 ---
 
@@ -280,7 +280,7 @@ Durante el reconocimiento de área amplia con salto de canal de airodump-ng habi
 | Pros | Contras |
 |---|---|
 | Único adaptador USB con soporte confiable de 6 GHz para Kali Linux | Requiere kernel 5.18+ (instalaciones antiguas de Kali necesitan actualización) |
-| Soporte completo de modo monitor e inyección de paquetes | El controlador MT7921AUN es más nuevo; pueden existir casos extremos |
+| Soporte completo de modo monitor, AP y WPA3 | El controlador MT7921AUN es más nuevo; pueden existir casos extremos; la inyección falló en el kernel stock 6.17 |
 | El controlador MT76 está integrado en el kernel de Linux | Antena incluida limitada a 2 dBi |
 | Estable en kernels actuales de Kali 2024.x / 2025.x | Alcance de 6 GHz limitado comparado con 5 GHz sin antena de mayor ganancia |
 | USB-A 3.0 — ampliamente compatible con laptops de prueba | Antena única, sin MIMO para diversidad de captura |
@@ -296,7 +296,7 @@ Durante el reconocimiento de área amplia con salto de canal de airodump-ng habi
 | Estándar Wi-Fi | 802.11ax (Wi-Fi 6E) | 802.11ac (Wi-Fi 5) |
 | Bandas | 2.4 / 5 / 6 GHz | 2.4 / 5 GHz |
 | Modo Monitor | ✅ | ✅ |
-| Inyección de Paquetes | ✅ | ✅ |
+| Inyección de Paquetes | ⚠️ Falló en el kernel 6.17 | ✅ |
 | Controlador del Kernel | mt7921u (integrado, 5.18+) | rtl8812au (fuera del árbol, muy estable) |
 | Madurez del Controlador | Más nuevo, en desarrollo activo | Maduro, probado en batalla desde ~2017 |
 | Soporte de 6 GHz | ✅ | ❌ |
@@ -317,7 +317,7 @@ Muchos pentesters profesionales llevan ambos: el AWUS036ACH para trabajo confiab
 
 **Laboratorios y centros de capacitación.** Si enseñas seguridad inalámbrica y quieres que los estudiantes estén familiarizados con el estado actual de la tecnología WiFi, incluyendo la operación en la banda de 6 GHz, el AWUS036AXML es la herramienta de capacitación apropiada.
 
-**Investigadores trabajando en análisis de protocolos Wi-Fi 6E.** La combinación de modo monitor, inyección de paquetes y acceso a 6 GHz hace que el AWUS036AXML sea la única opción USB práctica para estudiar el comportamiento WPA3-SAE en redes de 6 GHz, el coloreado BSS de 6 GHz y el análisis de tramas de operación multi-enlace (MLO).
+**Investigadores trabajando en análisis de protocolos Wi-Fi 6E.** La combinación de modo monitor y acceso a 6 GHz (sin inyección en el kernel stock 6.17) hace que el AWUS036AXML sea la única opción USB práctica para estudiar el comportamiento WPA3-SAE en redes de 6 GHz, el coloreado BSS de 6 GHz y el análisis de tramas de operación multi-enlace (MLO).
 
 **A prueba de futuro.** Si vas a comprar un adaptador inalámbrico para investigación de seguridad en 2026 y quieres que siga siendo relevante a medida que la adopción de Wi-Fi 6E continúa acelerándose, el AWUS036AXML es la elección orientada al futuro.
 

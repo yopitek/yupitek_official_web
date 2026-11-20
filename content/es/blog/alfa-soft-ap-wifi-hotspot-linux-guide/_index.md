@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi"]
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "¿Las tarjetas USB ALFA pueden funcionar como punto de acceso WiFi en Linux?"
     answer: "Depende del chipset. El AWUS036ACM (MT7612U) lo admite completamente y es plug-and-play; el AWUS036ACH (RTL8812AU) lo admite con condiciones; el AWUS036AXML lo admite parcialmente y requiere ajustes."
@@ -24,43 +24,41 @@ faq:
 
 
 {{< tldr >}}
-La compatibilidad de Soft AP de las tarjetas ALFA depende del controlador del chip. El AWUS036ACM es la opción estable para todas las plataformas; el AWUS036ACH funciona pero sin WPA3; el AWUS036AXML requiere desactivar Bluetooth y actualizar el firmware; RTL8832BU no se recomienda.
+La compatibilidad de Soft AP de las tarjetas ALFA depende del controlador del chip. El AWUS036ACM es la opción estable para todas las plataformas; el AWUS036ACH funciona pero sin WPA3; el AWUS036AXML requiere desactivar Bluetooth y actualizar el firmware; el RTL8832BU (AX / AXER) funciona con el controlador integrado en el kernel 6.17 o superior.
 {{< /tldr >}}
 
 > "¿Puedo usar adaptadores USB WiFi ALFA como hotspot WiFi (Soft AP) en Kali Linux / Ubuntu / Raspberry Pi?"
 
 
 
-# Guía Completa de Soft AP ALFA Network 2026: Crear Hotspots WiFi en Kali Linux, Ubuntu, Debian y Raspberry Pi 4/5
-
 ## Introducción
 
 > "¿Puedo usar adaptadores USB WiFi ALFA como hotspot WiFi (Soft AP) en Kali Linux / Ubuntu / Raspberry Pi?"
 
-Esta es una de las preguntas más frecuentes que recibimos en Yopitek. The question sounds simple, but the answer varies dramatically depending on the model and chipset — **no todos los adaptadores USB WiFi pueden funcionar en modo Soft AP.**
+Esta es una de las preguntas más frecuentes que recibimos en Yopitek. La pregunta parece sencilla, pero la respuesta varía enormemente según el modelo y el chipset — **no todos los adaptadores USB WiFi pueden funcionar en modo Soft AP.**
 
-Este artículo recopila más de 500 discusiones comunitarias de GitHub (morrownr/USB-WiFi), foros técnicos de Reddit, documentación oficial de Raspberry Pi y comentarios de usuarios reales para ofrecer un informe honesto y completo on which ALFA adapters work, which don't, and the complete step-by-step setup process.
+Este artículo recopila más de 500 discusiones comunitarias de GitHub (morrownr/USB-WiFi), foros técnicos de Reddit, documentación oficial de Raspberry Pi y comentarios de usuarios reales para ofrecer un informe honesto y completo sobre qué adaptadores ALFA funcionan, cuáles no, y el proceso completo de configuración paso a paso.
 
 ---
 
 ## 1. ¿Qué es Soft AP? Cómo funciona en Linux {#what-is-softap}
 
-**Soft AP (Software Access Point)** es la capacidad de convertir un adaptador USB WiFi ordinario en una estación base inalámbrica (Access Point) usando software — principalmente **hostapd**. This lets other devices (phones, laptops, IoT equipment) connect to the network without buying a dedicated router or AP hardware.
+**Soft AP (Software Access Point)** es la capacidad de convertir un adaptador USB WiFi ordinario en una estación base inalámbrica (Access Point) usando software — principalmente **hostapd**. Esto permite que otros dispositivos (teléfonos, portátiles, equipos IoT) se conecten a la red sin comprar un router o un AP dedicado.
 
 Esta capacidad es invaluable en varios escenarios:
 
-- **Router de viaje / hogar**: On the road or camping, plug an ALFA adapter into your laptop or Raspberry Pi and instantly create a portable WiFi hotspot
-- **Laboratorio de pruebas de penetración**: Build an isolated Rogue AP for security research
-- **Relé IoT**: Create a repeater in signal dead zones so IoT sensors can transmit data back
-- **Despliegue de IA en el borde**: Industrial environments without wired networking — turn the device into a hotspot for other equipment to connect
-- **Comunicaciones de emergencia**: Rapidly stand up a temporary network when connectivity is lost
+- **Router de viaje / hogar**: de viaje o de acampada, conecte un adaptador ALFA a su portátil o Raspberry Pi y cree al instante un hotspot WiFi portátil
+- **Laboratorio de pruebas de penetración**: monte un Rogue AP aislado para investigación de seguridad
+- **Relé IoT**: cree un repetidor en zonas sin cobertura para que los sensores IoT puedan transmitir sus datos
+- **Despliegue de IA en el borde**: en entornos industriales sin red cableada, convierta el dispositivo en un hotspot al que se conecten otros equipos
+- **Comunicaciones de emergencia**: levante rápidamente una red temporal cuando se pierda la conectividad
 
 ### Los cuatro componentes principales del Soft AP en Linux
 
-| Component | Function |
+| Componente | Función |
 |-----------|----------|
 | **hostapd** | El demonio central que crea el Access Point — gestiona SSID, autenticación, cifrado |
-| **nl80211** | The standard Linux wireless subsystem interface — the driver must support this framework to work with hostapd |
+| **nl80211** | La interfaz estándar del subsistema inalámbrico de Linux — el controlador debe admitir este framework para funcionar con hostapd |
 | **dnsmasq** | Servidor DHCP que asigna automáticamente direcciones IP a los clientes conectados |
 | **iptables / nftables** | Traducción de Direcciones de Red (NAT) — permite a los clientes conectados compartir la red ascendente |
 
@@ -74,13 +72,13 @@ Verifique el soporte del modo AP con:
 iw list | grep -A 10 "Supported interface modes"
 ```
 
-Si la salida incluye `* AP`, el controlador del adaptador admite Soft AP. If not, that adapter is unusable for this purpose.
+Si la salida incluye `* AP`, el controlador del adaptador admite Soft AP. Si no, ese adaptador no sirve para este propósito.
 
 ### 💡 Controladores In-kernel vs Out-of-kernel
 
 Este es el concepto **más importante** al elegir un adaptador Soft AP:
 
-| Type | Description | Impact on Soft AP |
+| Tipo | Descripción | Impacto en Soft AP |
 |------|-------------|-------------------|
 | **Controlador In-kernel** | Integrado en el árbol fuente oficial de Linux; se carga automáticamente al arrancar — sin instalación manual | ✅ Estable a largo plazo; sobrevive a las actualizaciones del kernel |
 | **Controlador Out-of-kernel** | Debe descargarse de GitHub y compilarse manualmente; puede necesitar recompilación después de cada actualización del kernel | ⚠️ Puede romperse tras cualquier actualización del kernel |
@@ -91,18 +89,18 @@ Este es el concepto **más importante** al elegir un adaptador Soft AP:
 
 ## 2. Línea de productos ALFA y resumen de chipsets {#product-lineup}
 
-Esta es la línea actual de productos ALFA vendidos por Yopitek, with chipsets and preliminary Soft AP assessments:
+Esta es la línea actual de productos ALFA vendidos por Yopitek, con sus chipsets y una evaluación preliminar de Soft AP:
 
 | Modelo | Chipset | Tipo de controlador | Estándar WiFi | Calificación Soft AP |
 |-------|---------|-------------|---------------|----------------|
 | **AWUS036ACM** | MediaTek MT7612U | In-kernel (kernel 4.19+) | WiFi 5 AC1200 Doble banda | ✅ Soporte completo |
-| AWUS036ACH | Realtek RTL8812AU | Out-of-kernel (in-kernel desde 6.14+) | WiFi 5 AC1200 Doble banda | ⚠️ Condicional |
+| AWUS036ACH | Realtek RTL8812AU | Out-of-kernel (in-kernel desde 6.13+) | WiFi 5 AC1200 Doble banda | ⚠️ Condicional |
 | AWUS036AXML | MediaTek MT7921AUN | In-kernel (5.18+, modo AP 5.19+) | WiFi 6E AX3000 Triple banda | ⚠️ Parcial |
-| AWUS036AXM | MediaTek MT7921AUN | In-kernel (same as above) | WiFi 6E AX3000 Tri-band | ⚠️ Partial |
-| AWUS036AX | Realtek RTL8832BU | Out-of-kernel (kernel 6.12+ recomendado) | WiFi 6 AX1800 Doble banda | ❌ No recomendado |
-| AWUS036AXER | Realtek RTL8832BU | Out-of-kernel (same as above) | WiFi 6 AX1800 Dual-band | ❌ Not Recommended |
+| AWUS036AXM | MediaTek MT7921AUN | In-kernel (igual que el anterior) | WiFi 6E AX3000 Triple banda | ⚠️ Parcial |
+| AWUS036AX | Realtek RTL8832BU | Integrado rtw89_8852bu (kernel 6.17+); kernels anteriores: controlador DKMS de la comunidad | WiFi 6 AX1800 Doble banda | ✅ Funciona (kernel 6.17+) |
+| AWUS036AXER | Realtek RTL8832BU | Integrado rtw89_8852bu (kernel 6.17+; igual que AX) | WiFi 6 AX1800 Doble banda | ✅ Funciona (kernel 6.17+) |
 
-> **Note**: AWUS036ACHM (MT7610U) has been discontinued and is no longer listed on the Yopitek product page. This article covers currently available products only.
+> **Nota**: el AWUS036ACHM (MT7610U) se ha descontinuado y ya no figura en la página de productos de Yopitek. Este artículo solo cubre los productos disponibles actualmente.
 
 ---
 
@@ -110,18 +108,18 @@ Esta es la línea actual de productos ALFA vendidos por Yopitek, with chipsets a
 
 ### Estado Soft AP: ✅ Soporte completo
 
-El MT7612U es el chipset Soft AP más estable de la línea actual de ALFA. Its driver `mt76x2u` has been part of the official Linux kernel since 2018 (kernel 4.19), meaning it works out of the box on any reasonably current system — **sin `git clone`, sin `dkms`, sin recompilar después de actualizaciones del kernel.**
+El MT7612U es el chipset Soft AP más estable de la línea actual de ALFA. Su controlador `mt76x2u` forma parte del kernel oficial de Linux desde 2018 (kernel 4.19), lo que significa que funciona de inmediato en cualquier sistema razonablemente actual — **sin `git clone`, sin `dkms`, sin recompilar después de actualizaciones del kernel.**
 
 ### Ventajas clave
 
-- **Soporte dual WPA2 + WPA3**: MediaTek's in-kernel driver natively supports WPA3 SAE — an advantage Realtek drivers cannot match
-- **Soporte de Interfaz Virtual VIF**: Run AP + Managed + Monitor modes simultaneously on a single adapter — no need to buy a second card. Share your network while monitoring the wireless spectrum at the same time
-- **Consumo ultra bajo**: Maximum ~400mA draw, perfect for Raspberry Pi (Pi 4 USB subsystem provides only 1200mA total)
-- **Multiplataforma**: Extensively verified on Kali Linux 2022.x–2025.x, Ubuntu 22.04/24.04, Debian 11/12, and Raspberry Pi OS (Pi 3B+, 4, 5)
+- **Soporte dual WPA2 + WPA3**: el controlador in-kernel de MediaTek admite WPA3 SAE de forma nativa — una ventaja que los controladores de Realtek no pueden igualar
+- **Soporte de Interfaz Virtual VIF**: ejecute los modos AP + Managed + Monitor simultáneamente en un solo adaptador — sin necesidad de comprar una segunda tarjeta. Comparta su red mientras monitoriza el espectro inalámbrico al mismo tiempo
+- **Consumo ultra bajo**: máximo de ~400mA, perfecto para Raspberry Pi (el subsistema USB del Pi 4 solo proporciona 1200mA en total)
+- **Multiplataforma**: ampliamente verificado en Kali Linux 2022.x–2025.x, Ubuntu 22.04/24.04, Debian 11/12 y Raspberry Pi OS (Pi 3B+, 4, 5)
 
 ### Configuración correcta de hostapd (MT7612U)
 
-The following capability flags have been verified through years of community testing (morrownr/USB-WiFi). **They must exactly match MT7612U's actual hardware capabilities:**
+Los siguientes flags de capacidad se han verificado durante años de pruebas comunitarias (morrownr/USB-WiFi). **Deben coincidir exactamente con las capacidades reales de hardware del MT7612U:**
 
 ```ini
 # /etc/hostapd/hostapd.conf — AWUS036ACM (MT7612U)
@@ -152,18 +150,21 @@ wpa_passphrase=YourPassword
 
 ### ⚠️ Error más común
 
-If `ht_capab` includes capability flags that MT7612U doesn't actually support (especially when forcing certain HT40 configurations over USB 2.0), hostapd will crash silently with very unhelpful error messages. **Only use the verified flag combination above — do not copy settings from other chipsets like RTL8812AU.** (Source: [GitHub morrownr/USB-WiFi issue #2](https://github.com/morrownr/USB-WiFi/issues/2))
+Si `ht_capab` incluye flags de capacidad que el MT7612U no admite realmente (sobre todo al forzar ciertas configuraciones HT40 sobre USB 2.0), hostapd fallará silenciosamente con mensajes de error muy poco útiles. **Use solo la combinación de flags verificada arriba — no copie configuraciones de otros chipsets como el RTL8812AU.** (Fuente: [GitHub morrownr/USB-WiFi issue #2](https://github.com/morrownr/USB-WiFi/issues/2))
 
 ### Reseñas de la comunidad
 
 > "Alfa AWUS036ACM works very well with the Raspberry Pi hardware. I have tested the Alfa AWUS036ACM with many different computer systems and Linux distros. In my opinion, it is an outstanding USB WiFi adapter."
-> — **morrownr**, maintainer of the most authoritative Linux USB WiFi community knowledge base on GitHub
+> *(Traducción: «Alfa AWUS036ACM funciona muy bien con el hardware de Raspberry Pi. He probado el Alfa AWUS036ACM con muchos sistemas informáticos y distribuciones Linux diferentes. En mi opinión, es un adaptador USB WiFi excepcional.»)*
+> — **morrownr**, mantenedor de la base de conocimiento comunitaria más autorizada sobre Linux USB WiFi en GitHub
 
 > "This adapter can do monitor mode and packet injection perfectly. Very stable on Linux using native kernels, no need for compiling external drivers."
-> — eBay user review
+> *(Traducción: «Este adaptador hace modo monitor e inyección de paquetes a la perfección. Muy estable en Linux con kernels nativos, sin necesidad de compilar controladores externos.»)*
+> — reseña de un usuario de eBay
 
 > "The ACM is a little bit more versatile and easier to set up for AP mode."
-> — GitHub issue #2 discussion thread
+> *(Traducción: «El ACM es un poco más versátil y más fácil de configurar en modo AP.»)*
+> — hilo de discusión del GitHub issue #2
 
 ---
 
@@ -171,14 +172,14 @@ If `ht_capab` includes capability flags that MT7612U doesn't actually support (e
 
 ### Estado Soft AP: ⚠️ Soporte condicional
 
-The RTL8812AU is ALFA's most iconic penetration testing chipset and a long-time favorite of the Kali Linux community. Its Soft AP functionality does work — basic hotspot creation is fine — but Realtek's out-of-kernel driver architecture imposes several persistent limitations:
+El RTL8812AU es el chipset de pruebas de penetración más emblemático de ALFA y un favorito de larga data de la comunidad Kali Linux. Su función Soft AP sí funciona — crear un hotspot básico no presenta problemas —, pero la arquitectura de controlador out-of-kernel de Realtek impone varias limitaciones persistentes:
 
 ### Limitaciones conocidas
 
-1. **Sin soporte WPA3**: Although the RTL8812AU driver claims to support WPA3, multiple users have confirmed it doesn't actually work. **WPA2-PSK only.**
-2. **Sin soporte VIF**: Cannot run AP + Monitor mode on the same card simultaneously. If you need AP plus monitoring, you must use two separate adapters.
-3. **Problemas del controlador en Kali Linux 2025.x**: The latest aircrack-ng/rtl8812au driver on the newest Kali has compatibility problems — you need to roll back to a specific old commit (`63cf0b4`). The situation may improve with kernel 6.14+'s in-kernel rtw88 driver.
-4. **Alto consumo de energía**: Maximum ~800mA — on Raspberry Pi with multiple USB devices connected, this can cause system instability. Use a powered USB hub.
+1. **Sin soporte WPA3**: aunque el controlador del RTL8812AU afirma admitir WPA3, varios usuarios han confirmado que en realidad no funciona. **Solo WPA2-PSK.**
+2. **Sin soporte VIF**: no puede ejecutar los modos AP + Monitor simultáneamente en la misma tarjeta. Si necesita AP y monitorización, deberá usar dos adaptadores distintos.
+3. **Problemas del controlador en Kali Linux 2025.x**: el controlador aircrack-ng/rtl8812au más reciente presenta problemas de compatibilidad en el Kali más nuevo — es necesario volver a un commit antiguo concreto (`63cf0b4`). La situación podría mejorar con el controlador in-kernel rtw88 del kernel 6.13+.
+4. **Alto consumo de energía**: máximo de ~800mA — en Raspberry Pi con varios dispositivos USB conectados, esto puede causar inestabilidad del sistema. Use un hub USB con alimentación propia.
 
 ### Configuración de hostapd (RTL8812AU)
 
@@ -209,14 +210,16 @@ sudo modprobe 88XXau
 ### Reseñas de la comunidad
 
 > "I can put an RTL8812AU (AWUS036AC) instead and use 'sudo service hostapd restart && sudo service dnsmasq restart' and worked just fine."
-> — GitHub issue #2 user
+> *(Traducción: «Puedo poner un RTL8812AU (AWUS036AC) en su lugar y usar 'sudo service hostapd restart && sudo service dnsmasq restart', y funcionó perfectamente.»)*
+> — usuario del GitHub issue #2
 
 > "RTL8812AU-based adapters—AP mode works, but you lose WPA3 and VIF support compared to MediaTek."
-> — morrownr technical notes
+> *(Traducción: «Adaptadores basados en RTL8812AU: el modo AP funciona, pero se pierde el soporte de WPA3 y VIF en comparación con MediaTek.»)*
+> — notas técnicas de morrownr
 
 ### Veredicto para ACH
 
-If you already own an AWUS036ACH, it can serve as a Soft AP (basic hotspot function works). But if you haven't purchased yet and your primary goal is Soft AP, **elija el ACM en su lugar.**
+Si ya tiene un AWUS036ACH, puede servir como Soft AP (la función básica de hotspot funciona). Pero si aún no lo ha comprado y su objetivo principal es Soft AP, **elija el ACM en su lugar.**
 
 ---
 
@@ -224,14 +227,14 @@ If you already own an AWUS036ACH, it can serve as a Soft AP (basic hotspot funct
 
 ### Estado Soft AP: ⚠️ Soporte parcial — Problemas conocidos de firmware/controlador
 
-The AWUS036AXML and AWUS036AXM are ALFA's WiFi 6E tri-band flagships, covering 2.4 GHz, 5 GHz, and the new 6 GHz band. Their in-kernel driver `mt7921u` has been in the kernel since version 5.18, with AP mode support officially added in 5.19. However, the MT7921AUN chip also integrates Bluetooth 5.2 — which became the #1 community headache in 2024–2025.
+El AWUS036AXML y el AWUS036AXM son los buques insignia tribanda WiFi 6E de ALFA, que cubren 2.4 GHz, 5 GHz y la nueva banda de 6 GHz (los 6 GHz se probaron localmente en el AXML; el AXM admite 6E según su especificación, pero los 6 GHz no se probaron). Su controlador in-kernel `mt7921u` está en el kernel desde la versión 5.18, y el soporte del modo AP se añadió oficialmente en la 5.19. Sin embargo, el chip MT7921AUN también integra Bluetooth 5.2 — lo que se convirtió en el principal quebradero de cabeza de la comunidad en 2024–2025.
 
-### AP Mode Kernel Version Milestones
+### Hitos de versión del kernel para el modo AP
 
-| Mode | Minimum Kernel |
+| Modo | Kernel mínimo |
 |------|---------------|
-| Managed (normal WiFi) | 5.18+ |
-| **AP Mode (Soft AP)** | **5.19+** |
+| Managed (WiFi normal) | 5.18+ |
+| **Modo AP (Soft AP)** | **5.19+** |
 | AP/VLAN | 5.19+ |
 | P2P-GO (Wi-Fi Direct AP) | 6.4+ |
 
@@ -239,7 +242,7 @@ The AWUS036AXML and AWUS036AXM are ALFA's WiFi 6E tri-band flagships, covering 2
 
 #### Problema 1: Interferencia Bluetooth causando fallos WiFi
 
-On kernels 6.6+, changes to the BT subsystem cause sporadic WiFi crashes with mt7921u. Reproducibility varies by system environment. **The most effective workaround is to disable the btusb driver:**
+En kernels 6.6+, los cambios en el subsistema BT provocan fallos esporádicos de WiFi con mt7921u. La reproducibilidad varía según el entorno del sistema. **La solución alternativa más eficaz es desactivar el controlador btusb:**
 
 ```bash
 echo "install btusb /bin/false" | sudo tee -a /etc/modprobe.d/local-dontload.conf
@@ -248,7 +251,7 @@ sudo reboot
 
 #### Problema 2: Firmware desactualizado
 
-If the system's MediaTek firmware is too old, the adapter may not be recognized correctly. Install firmware from November 2024 or later:
+Si el firmware de MediaTek del sistema es demasiado antiguo, es posible que el adaptador no se reconozca correctamente. Instale un firmware de noviembre de 2024 o posterior:
 
 ```bash
 # Check current firmware version
@@ -261,43 +264,53 @@ sudo cp WIFI_RAM_CODE_MT7961_1a.bin /lib/firmware/mediatek/
 sudo reboot
 ```
 
-#### Issue 3: hostapd Version Requirements
+#### Problema 3: requisitos de versión de hostapd
 
-Some users report needing to compile hostapd from git for full WiFi 6 AP mode support. System package manager versions may be incomplete.
+Algunos usuarios indican que necesitan compilar hostapd desde git para tener soporte completo del modo AP de WiFi 6. Las versiones del gestor de paquetes del sistema pueden estar incompletas.
 
-#### Issue 4: Tx Power Display Anomaly in AP Mode
+#### Problema 4: anomalía en la visualización de la potencia de transmisión (Tx Power) en modo AP
 
-`iw` shows only 3 dBm with no adjustment possible, but the chip actually has an internal amplifier — this is a kernel driver display issue, not a hardware limitation.
+`iw` muestra solo 3 dBm sin posibilidad de ajuste, pero el chip en realidad tiene un amplificador interno — es un problema de visualización del controlador del kernel, no una limitación del hardware.
 
-#### Issue 5: Monitor Mode Issues on Certain Kernel Versions
+#### Problema 5: problemas del modo monitor en ciertas versiones del kernel
 
-As of December 2025, kernel 6.18 and some earlier mt7921u driver versions have monitor mode problems.
+A diciembre de 2025, el kernel 6.18 y algunas versiones anteriores del controlador mt7921u presentan problemas con el modo monitor.
 
-### Community Review
+### Reseña de la comunidad
 
 > "I have Alfa AXML running as AP on a RPi3B ArchLinux ARM aarch64 host. It's the most stable mt7921 in my collection. I am running hostapd compiled from git though."
+> *(Traducción: «Tengo un Alfa AXML funcionando como AP en un host RPi3B con ArchLinux ARM aarch64. Es el mt7921 más estable de mi colección. Eso sí, uso hostapd compilado desde git.»)*
 > — **fhteagle**, [GitHub issue #476](https://github.com/morrownr/USB-WiFi/issues/476)
 
 ### Veredicto para AXML/AXM
 
-Choose these if you need WiFi 6E's 6 GHz band and are willing to occasionally tweak settings. **For production environments requiring rock-solid Soft AP stability, choose ACM instead.**
+Elija estos modelos si necesita la banda de 6 GHz de WiFi 6E y está dispuesto a ajustar la configuración de vez en cuando. **Para entornos de producción que requieren una estabilidad de Soft AP a toda prueba, elija el ACM en su lugar.**
 
 ---
 
-## 6. AWUS036AX / AWUS036AXER (RTL8832BU) — No recomendado para Soft AP {#ax}
+## 6. AWUS036AX / AWUS036AXER (RTL8832BU) — Funciona para Soft AP con kernel 6.17 o superior {#ax}
 
-### Estado Soft AP: ❌ No recomendado
+### Estado Soft AP: ✅ Funciona con kernel 6.17 o superior (los kernels anteriores necesitan el controlador DKMS de la comunidad)
 
-Despite being WiFi 6 adapters, the RTL8832BU chip is a "multi-state" device — it enumerates as USB mass storage by default, requiring a USB mode switch on Linux before it functions as a wireless adapter.
+En nuestras pruebas en un ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17) con el controlador integrado `rtw89_8852bu`, el AWUS036AX y el AWUS036AXER (mismo chip, mismo controlador) se comportan igual, y el Soft AP funciona tanto en 2.4 GHz como en 5 GHz.
 
-**Problemas clave:**
+**Resultados de las pruebas (kernel 6.17):**
 
-1. **Multi-state Device**: Adds deployment complexity — does not appear as a network adapter on plug-in
-2. **Monitor Mode Limitations**: Incomplete support below kernel 6.14
-3. **Minimal Soft AP Community Cases**: Almost no real-world RTL8832BU Soft AP cases exist, compared to abundant MT7612U and RTL8812AU examples
-4. **Community Documentation Explicitly Discourages It**: morrownr/USB-WiFi marks this chipset as "not recommended for penetration testing"
+1. **Modo AP**: funcionan tanto 2.4 GHz (802.11n) como 5 GHz (VHT 80 MHz)
+2. **VIF (STA + AP)**: funciona — una conexión de cliente y una interfaz AP se ejecutan en paralelo en el mismo canal
+3. **AP WPA3-SAE**: funciona en 2.4 GHz (iPhone 15 Pro conectado, MFP activado; 5 GHz no probado)
+4. **Monitor / inyección**: recepción monitor fuerte en 2.4 y 5 GHz; inyección en 2.4 GHz AX 96% / AXER 73%, 5 GHz utilizable; se logró una captura de handshake WPA de extremo a extremo
+5. **No compatible**: IBSS, Mesh, active monitor
 
-> Yopitek's official documentation clearly states: "AWUS036AX / AWUS036AXER with RTL8832BU chipset has limited monitor mode support below kernel 6.14 and is not recommended for penetration testing. Use AWUS036ACH or AWUS036AXML instead."
+**Advertencias:**
+
+- **La versión del kernel es un requisito**: `rtw89_8852bu` está en el kernel desde la 6.17. Los kernels anteriores necesitan el controlador DKMS de la comunidad (rtl8852bu), con el que el modo monitor puede estar limitado y VIF no es compatible.
+- **Modo USB**: algunas unidades pueden enumerarse en modo CD-ROM (`0bda:1a2b`) y requerir `usb_modeswitch -v 0bda -p 1a2b -K`; nuestra unidad de prueba se enumeró directamente como adaptador WLAN.
+- **Casos comunitarios**: hay menos reportes de Soft AP para este chipset que para MT7612U y RTL8812AU.
+
+> Resultado de las pruebas de Yopitek (ASUS GX10, kernel 6.17): con el controlador integrado, el AWUS036AX / AWUS036AXER tienen una recepción monitor fuerte e inyección de paquetes funcional, por lo que también sirven para pruebas de penetración. El soporte limitado de monitor solo se aplica a kernels anteriores con el controlador DKMS de la comunidad.
+>
+> Actualización: con el kernel stock 6.16 o posterior (probado en 6.17), el AWUS036AXML funciona en modo monitor, AP, WPA3 y VIF, pero la prueba de inyección de paquetes falló (aireplay-ng --test: Found 0 APs / No Answer). La causa es una regresión de mac80211 chanctx, no el propio chip. Si necesita inyección, use AWUS036ACH, EACS, ACS o AX.
 
 ---
 
@@ -305,48 +318,48 @@ Despite being WiFi 6 adapters, the RTL8832BU chip is a "multi-state" device — 
 
 ### AWUS036ACM (MT7612U)
 
-| Platform | Soft AP | Notes |
+| Plataforma | Soft AP | Notas |
 |----------|---------|-------|
-| Kali Linux 2022.x – 2025.x | ✅ | In-kernel, plug-and-play, kernel 5.x / 6.x |
-| Ubuntu 22.04 / 24.04 | ✅ | In-kernel, zero config, use LTS |
-| Debian 11 / 12 | ✅ | In-kernel, stable |
-| Raspberry Pi 4 (RPi OS) | ✅ | Lowest power (400mA), long-term morrownr verification. Pi 4 USB 3.0 port preferred |
-| Raspberry Pi 5 (RPi OS) | ✅ | Same driver as Pi 4, stable |
+| Kali Linux 2022.x – 2025.x | ✅ | Controlador in-kernel, plug-and-play, kernel 5.x / 6.x |
+| Ubuntu 22.04 / 24.04 | ✅ | In-kernel, sin configuración, use LTS |
+| Debian 11 / 12 | ✅ | In-kernel, estable |
+| Raspberry Pi 4 (RPi OS) | ✅ | Menor consumo (400mA), verificación a largo plazo de morrownr. Preferible el puerto USB 3.0 del Pi 4 |
+| Raspberry Pi 5 (RPi OS) | ✅ | Mismo controlador que el Pi 4, estable |
 
 ### AWUS036ACH (RTL8812AU)
 
-| Platform | Soft AP | Notes |
+| Plataforma | Soft AP | Notas |
 |----------|---------|-------|
-| Kali Linux 2022.x – 2025.x | ⚠️ | Needs external driver; 2025.x requires commit `63cf0b4`. Kernel 6.14+ rtw88 may improve |
-| Ubuntu 22.04 / 24.04 | ⚠️ | May need manual rtw88 or aircrack-ng driver installation |
-| Debian 11 / 12 | ⚠️ | Same as above |
-| Raspberry Pi 4 | ⚠️ | Works but high power (800mA); use powered USB hub |
-| Raspberry Pi 5 | ⚠️ | Same; Pi 5 USB controller differences may affect behavior |
+| Kali Linux 2022.x – 2025.x | ⚠️ | Requiere controlador externo; 2025.x necesita el commit `63cf0b4`. El rtw88 del kernel 6.13+ puede mejorarlo |
+| Ubuntu 22.04 / 24.04 | ⚠️ | Puede requerir instalar manualmente el controlador rtw88 o aircrack-ng |
+| Debian 11 / 12 | ⚠️ | Igual que el anterior |
+| Raspberry Pi 4 | ⚠️ | Funciona, pero con alto consumo (800mA); use un hub USB con alimentación propia |
+| Raspberry Pi 5 | ⚠️ | Igual; las diferencias del controlador USB del Pi 5 pueden afectar al comportamiento |
 
 ### AWUS036AXML / AWUS036AXM (MT7921AUN)
 
-| Platform | Soft AP | Notes |
+| Plataforma | Soft AP | Notas |
 |----------|---------|-------|
-| Kali Linux 2022.x (kernel 5.18+) | ✅ | Disable btusb, update firmware |
-| Kali Linux 2024.x / 2025.x | ⚠️ | Kernel 6.11+ BT/WiFi conflict, unstable |
-| Ubuntu 24.04 (kernel 6.8+) | ⚠️ | Issues reported late 2024 |
-| Ubuntu 25.04 / CachyOS (kernel 6.14+) | ✅ | Plug-and-play, significant new-kernel improvement |
-| Debian 12 | ⚠️ | Depends on kernel version |
-| Raspberry Pi 4 / 5 | ⚠️ | Success cases exist but verify firmware + disable BT |
+| Kali Linux 2022.x (kernel 5.18+) | ✅ | Desactive btusb y actualice el firmware |
+| Kali Linux 2024.x / 2025.x | ⚠️ | Conflicto BT/WiFi en kernel 6.11+, inestable |
+| Ubuntu 24.04 (kernel 6.8+) | ⚠️ | Problemas reportados a finales de 2024 |
+| Ubuntu 25.04 / CachyOS (kernel 6.14+) | ✅ | Plug-and-play, mejora notable con el kernel nuevo |
+| Debian 12 | ⚠️ | Depende de la versión del kernel |
+| Raspberry Pi 4 / 5 | ⚠️ | Hay casos de éxito, pero verifique el firmware y desactive BT |
 
 ### AWUS036AX / AWUS036AXER (RTL8832BU)
 
-| Platform | Soft AP | Notes |
+| Plataforma | Soft AP | Notas |
 |----------|---------|-------|
-| Kali Linux | ❌ | Multi-state, USB mode switch needed, minimal community cases |
-| Ubuntu / Debian | ❌ | Same |
-| Raspberry Pi 4 / 5 | ❌ | Same |
+| Kali Linux | ✅ | rtw89_8852bu integrado desde el kernel 6.17; los kernels anteriores necesitan el controlador DKMS de la comunidad |
+| Ubuntu / Debian | ✅ | Ubuntu 24.04 necesita el kernel HWE 6.17+ (GA 6.8 / HWE 6.14 necesitan el controlador DKMS de la comunidad); Debian necesita kernel 6.17+ |
+| Raspberry Pi 4 / 5 | ⚠️ | No probado en Pi; los kernels anteriores a 6.17 necesitan el controlador DKMS de la comunidad |
 
 ---
 
 ## 8. Guía completa de configuración de Soft AP (AWUS036ACM) {#setup-guide}
 
-The following is a complete, step-by-step guide for setting up a 5GHz Soft AP with AWUS036ACM on Raspberry Pi 4.
+A continuación se presenta una guía completa paso a paso para configurar un Soft AP de 5GHz con el AWUS036ACM en Raspberry Pi 4.
 
 ### Paso 1: Verificar la detección del adaptador y el controlador
 
@@ -373,7 +386,7 @@ sudo apt install -y hostapd dnsmasq iptables
 
 ### Paso 3: Configurar hostapd
 
-Create `/etc/hostapd/hostapd.conf`:
+Cree `/etc/hostapd/hostapd.conf`:
 
 ```ini
 interface=wlan0
@@ -406,7 +419,7 @@ ignore_broadcast_ssid=0
 
 ### Paso 4: Configurar dnsmasq (DHCP)
 
-Create `/etc/dnsmasq.conf`:
+Cree `/etc/dnsmasq.conf`:
 
 ```ini
 interface=wlan0
@@ -458,19 +471,19 @@ Una vez completado, busque WiFi en su teléfono o portátil — debería ver el 
 
 ### P1: hostapd falla inmediatamente al iniciar
 
-**Symptom**: `sudo systemctl status hostapd` shows `exited` or `failed`
+**Síntoma**: `sudo systemctl status hostapd` muestra `exited` o `failed`
 
-**Likely Cause**: `hostapd.conf` contains capability flags the chipset doesn't support
+**Causa probable**: `hostapd.conf` contiene flags de capacidad que el chipset no admite
 
-**Solution**: Remove excess flags. For MT7612U (ACM), the safest approach is to use the verified configuration from Section 3. **Do not copy ht_capab from other chipsets.**
+**Solución**: elimine los flags sobrantes. Para el MT7612U (ACM), lo más seguro es usar la configuración verificada de la Sección 3. **No copie ht_capab de otros chipsets.**
 
 ---
 
 ### P2: Los clientes se conectan pero no pueden acceder a Internet
 
-**Symptom**: WiFi connected, IP obtained, but `ping 8.8.8.8` gets no response
+**Síntoma**: WiFi conectado, IP obtenida, pero `ping 8.8.8.8` no obtiene respuesta
 
-**Checklist**:
+**Lista de comprobación**:
 
 ```bash
 # 1. Check IP forwarding enabled
@@ -489,32 +502,32 @@ ping -I eth0 8.8.8.8
 
 ### P3: AP de 5GHz no visible o inestable
 
-**Possible Causes**:
+**Causas posibles**:
 
-1. **Using DFS channels (100–144)**: MT7612U / MT7610U lack DFS support — use UNII-1 channels (36–48)
-2. **Insufficient transmit power**: Ensure antennas are properly tightened on RP-SMA connectors
-3. **USB power insufficient** (Raspberry Pi): Use official 5A power supply or powered USB hub
+1. **Uso de canales DFS (100–144)**: MT7612U / MT7610U no admiten DFS — use canales UNII-1 (36–48)
+2. **Potencia de transmisión insuficiente**: asegúrese de que las antenas estén bien apretadas en los conectores RP-SMA
+3. **Alimentación USB insuficiente** (Raspberry Pi): use la fuente de alimentación oficial de 5A o un hub USB con alimentación propia
 
 ---
 
 ### P4: hostapd se reinicia constantemente en Raspberry Pi
 
-**Symptom**: `dmesg` shows frequent USB reset messages
+**Síntoma**: `dmesg` muestra mensajes frecuentes de reinicio de USB
 
-**Likely Cause**: USB port power insufficient (especially with AWUS036ACH high-power chipset, max 800mA)
+**Causa probable**: alimentación insuficiente del puerto USB (sobre todo con el chipset de alto consumo del AWUS036ACH, máx. 800mA)
 
-**Solution**:
-- Use official Pi 5A power supply
-- Use a powered USB hub
-- Plug adapter into USB 3.0 port (Pi 4 only)
+**Solución**:
+- Use la fuente de alimentación oficial de 5A para Pi
+- Use un hub USB con alimentación propia
+- Conecte el adaptador a un puerto USB 3.0 (solo Pi 4)
 
 ---
 
 ### P5: El WiFi de AWUS036AXML/AXM se cae repentinamente o no inicia
 
-**Likely Cause**: Bluetooth subsystem interfering with WiFi (MT7921AUN has built-in BT 5.2)
+**Causa probable**: el subsistema Bluetooth interfiere con el WiFi (el MT7921AUN integra BT 5.2)
 
-**Solution**: Permanently disable Bluetooth driver
+**Solución**: desactive permanentemente el controlador Bluetooth
 
 ```bash
 echo "install btusb /bin/false" | sudo tee -a /etc/modprobe.d/local-dontload.conf
@@ -527,17 +540,17 @@ sudo reboot
 
 ### VIF (Interfaz Virtual): Una tarjeta, múltiples roles
 
-VIF (Virtual Interface) allows a single physical adapter to operate with multiple logical interfaces simultaneously. For example: one interface connects to the upstream router (managed mode) while another serves as an AP (master mode) for other devices.
+VIF (Virtual Interface) permite que un único adaptador físico funcione con varias interfaces lógicas a la vez. Por ejemplo: una interfaz se conecta al router ascendente (modo managed) mientras otra actúa como AP (modo master) para otros dispositivos.
 
-Three common scenarios:
+Tres escenarios habituales:
 
-| Scenario | VIF Required? | Best Adapter |
+| Escenario | ¿Requiere VIF? | Mejor adaptador |
 |----------|--------------|--------------|
-| Basic NAT routing (eth0 upstream + wlan AP) | ❌ No | Any AP-capable adapter |
-| Wireless bridging (WiFi receive + WiFi AP simultaneously) | ✅ Yes | ACM (MT7612U) |
-| Monitor + AP simultaneously (security research / Rogue AP) | ✅ Yes | ACM (MT7612U) |
+| Enrutamiento NAT básico (eth0 ascendente + wlan AP) | ❌ No | Cualquier adaptador compatible con AP |
+| Puente inalámbrico (recepción WiFi + WiFi AP simultáneamente) | ✅ Sí | ACM (MT7612U) |
+| Monitor + AP simultáneamente (investigación de seguridad / Rogue AP) | ✅ Sí | ACM (MT7612U) |
 
-**VIF Practical Example (MT7612U):**
+**Ejemplo práctico de VIF (MT7612U):**
 
 ```bash
 # Create an additional AP virtual interface alongside existing wlan1
@@ -546,68 +559,68 @@ sudo ip link set ap0 up
 # Now wlan1 can connect upstream while ap0 runs hostapd
 ```
 
-Only MediaTek in-kernel drivers (mt76x2u, mt7921u) fully support VIF. Realtek out-of-kernel drivers essentially lack this capability — if you need AP + Monitor simultaneously, you must use two separate adapters.
+Solo los controladores in-kernel de MediaTek (mt76x2u, mt7921u) admiten VIF por completo. Los controladores out-of-kernel de Realtek carecen básicamente de esta capacidad — si necesita AP + Monitor simultáneamente, deberá usar dos adaptadores distintos.
 
 ---
 
 ### Comparación de soporte WPA3
 
-| Chipset | Corresponding Model | WPA2 | WPA3 |
+| Chipset | Modelo correspondiente | WPA2 | WPA3 |
 |---------|-------------------|------|------|
-| MT7612U | AWUS036ACM | ✅ | ✅ Native SAE support |
-| MT7921AUN | AWUS036AXML / AXM | ✅ | ✅ Native SAE support |
-| RTL8812AU | AWUS036ACH | ✅ | ❌ Claims support but doesn't work |
-| RTL8832BU | AWUS036AX / AXER | ✅ | ⚠️ Unconfirmed |
+| MT7612U | AWUS036ACM | ✅ | ✅ Soporte nativo de SAE |
+| MT7921AUN | AWUS036AXML / AXM | ✅ | ✅ Soporte nativo de SAE |
+| RTL8812AU | AWUS036ACH | ✅ | ❌ Afirma soportarlo, pero no funciona |
+| RTL8832BU | AWUS036AX / AXER | ✅ | ✅ Probado en el kernel 6.17 (`sae_pwe=0`, MFP activado) |
 
 ---
 
 ### Selección de canales Soft AP 5GHz: Evitar DFS
 
-DFS (Dynamic Frequency Selection) channels (ch100–ch140) require kernel-level radar detection. MT7612U and similar chipsets lack DFS support. For 5GHz AP mode, choose:
+Los canales DFS (Dynamic Frequency Selection) (ch100–ch140) requieren detección de radar a nivel de kernel. El MT7612U y chipsets similares no admiten DFS. Para el modo AP en 5GHz, elija:
 
-| Band | Recommended Channels | Reason |
+| Banda | Canales recomendados | Motivo |
 |------|---------------------|--------|
-| **UNII-1** | **36, 40, 44, 48** | All chipsets supported; safest choice |
-| UNII-2 (DFS) | 52–144 | Most unsupported; not recommended |
-| UNII-3 | 149–165 | Partial support (region-dependent) |
+| **UNII-1** | **36, 40, 44, 48** | Compatibles con todos los chipsets; la opción más segura |
+| UNII-2 (DFS) | 52–144 | Mayormente no compatibles; no recomendado |
+| UNII-3 | 149–165 | Soporte parcial (según la región) |
 
 ---
 
 ## 11. Casos reales de la comunidad {#real-cases}
 
-### Caso 1: RPi4B + AWUS036ACM = Long-Term Stable Home 5GHz AP
+### Caso 1: RPi4B + AWUS036ACM = AP doméstico de 5GHz estable a largo plazo
 
-**Source**: morrownr/7612u GitHub knowledge base
-**Scenario**: morrownr long-term uses RPi4B + AWUS036ACM as a home 5GHz AP, paired with Pi's built-in 2.4GHz for dual-band service
-**Result**: Long-term stable operation, no restarts needed, rated "outstanding"
-**Configuration**: hostapd + dnsmasq + iptables NAT
+**Fuente**: base de conocimiento morrownr/7612u en GitHub
+**Escenario**: morrownr usa desde hace tiempo un RPi4B + AWUS036ACM como AP doméstico de 5GHz, combinado con el 2.4GHz integrado del Pi para ofrecer servicio de doble banda
+**Resultado**: funcionamiento estable a largo plazo, sin necesidad de reinicios, calificado como "excepcional"
+**Configuración**: hostapd + dnsmasq + iptables NAT
 
-### Caso 2: RPi3B+ + ACM — Initial Crash, Fixed
+### Caso 2: RPi3B+ + ACM — fallo inicial, solucionado
 
-**Source**: [GitHub morrownr/USB-WiFi issue #2](https://github.com/morrownr/USB-WiFi/issues/2)
-**Problem**: hostapd crashed when run over USB 2.0 on RPi3B+
-**Root Cause**: `ht_capab` contained HT40 flags unsupported under USB 2.0 bandwidth limits
-**Solution**: Removed excess flags; successfully launched on Kali Linux
+**Fuente**: [GitHub morrownr/USB-WiFi issue #2](https://github.com/morrownr/USB-WiFi/issues/2)
+**Problema**: hostapd fallaba al ejecutarse sobre USB 2.0 en RPi3B+
+**Causa raíz**: `ht_capab` contenía flags HT40 no admitidos dentro de los límites de ancho de banda de USB 2.0
+**Solución**: se eliminaron los flags sobrantes; se inició correctamente en Kali Linux
 
-### Caso 3: Pi PwnBox + AWUS036ACH = Red Team Rogue AP
+### Caso 3: Pi PwnBox + AWUS036ACH = Rogue AP de Red Team
 
-**Source**: GitHub koutto/pi-pwnbox-rogueap
-**Scenario**: RPi3B+ Rogue AP platform: one RTL8812AU (AWUS036ACH) for AP, another RT3070 (AWUS036NEH) for packet injection attacks
-**Key Finding**: Because RTL8812AU lacks VIF, two separate adapters were required (unlike ACM which handles both on a single card)
+**Fuente**: GitHub koutto/pi-pwnbox-rogueap
+**Escenario**: plataforma Rogue AP en RPi3B+: un RTL8812AU (AWUS036ACH) para el AP y otro RT3070 (AWUS036NEH) para ataques de inyección de paquetes
+**Hallazgo clave**: como el RTL8812AU carece de VIF, se necesitaron dos adaptadores distintos (a diferencia del ACM, que gestiona ambas funciones con una sola tarjeta)
 
-### Caso 4: AWUS036AXML Stable AP on RPi3B ArchLinux ARM
+### Caso 4: AP estable con AWUS036AXML en RPi3B con ArchLinux ARM
 
-**Source**: [GitHub issue #476](https://github.com/morrownr/USB-WiFi/issues/476)
-**Scenario**: User successfully ran AWUS036AXML in AP mode on RPi3B ArchLinux aarch64
-**Quote**: "It's the most stable mt7921 in my collection."
-**Key Requirements**: hostapd compiled from git + btusb disabled
+**Fuente**: [GitHub issue #476](https://github.com/morrownr/USB-WiFi/issues/476)
+**Escenario**: un usuario ejecutó con éxito el AWUS036AXML en modo AP en un RPi3B con ArchLinux aarch64
+**Cita**: "Es el mt7921 más estable de mi colección."
+**Requisitos clave**: hostapd compilado desde git + btusb desactivado
 
-### Caso 5: AWUS036ACHM (MT7610U, Discontinued) Full-Speed AP on Pi4
+### Caso 5: AP a velocidad completa con AWUS036ACHM (MT7610U, descontinuado) en Pi4
 
-**Source**: [GitHub Discussion #31](https://github.com/morrownr/USB-WiFi/discussions/31)
-**Problem**: Initial config only achieved 65 Mbps link speed, far below AC 5GHz full speed
-**Solution**: Added correct `vht_oper_chwidth=1` and `vht_oper_centr_freq_seg0_idx`; achieved 433 Mbps link rate
-**Relevance for ACM**: The same VHT parameter configuration is critical for MT7612U (ACM) as well
+**Fuente**: [GitHub Discussion #31](https://github.com/morrownr/USB-WiFi/discussions/31)
+**Problema**: la configuración inicial solo alcanzaba 65 Mbps de velocidad de enlace, muy por debajo de la velocidad completa de AC en 5GHz
+**Solución**: se añadieron los valores correctos de `vht_oper_chwidth=1` y `vht_oper_centr_freq_seg0_idx`; se alcanzó una velocidad de enlace de 433 Mbps
+**Relevancia para el ACM**: la misma configuración de parámetros VHT es igualmente crucial para el MT7612U (ACM)
 
 ---
 
@@ -617,26 +630,26 @@ DFS (Dynamic Frequency Selection) channels (ch100–ch140) require kernel-level 
 
 ### Matriz de decisión rápida
 
-| Rating | Model | Best For | One-Liner |
+| Calificación | Modelo | Ideal para | En una frase |
 |--------|-------|----------|-----------|
 | 🥇 **Mejor opción** | **AWUS036ACM** | Todos, especialmente principiantes en Soft AP | Estable en todas las plataformas, sin complicaciones |
 | 🥈 Utilizable | AWUS036ACH | Usuarios que ya poseen este modelo | Necesita controlador, sin WPA3 |
 | 🥉 Avanzado | AWUS036AXML | Usuarios que necesitan WiFi 6E dispuestos a ajustar | Ventaja 6GHz, correcciones manuales necesarias |
-| ❌ Evitar | AWUS036AX / AXER | N/A | Soft AP no validado por la comunidad |
+| ✅ Funciona con kernel 6.17+ | AWUS036AX / AXER | AP Wi-Fi 6; monitor e inyección también utilizables | Controlador integrado; AP 2.4 / 5 GHz y VIF probados, WPA3 probado en 2.4 GHz |
 
 ### 🎯 Guía de decisión
 
 - **¿Necesita un Soft AP estable en Kali / Ubuntu / Debian / Raspberry Pi 4 o 5?**
   → Elija el **AWUS036ACM**, sin discusión.
 
-- **Already own an AWUS036ACH and want to try Soft AP?**
-  → It works, but only WPA2, and you'll need to install the driver. If you accept those limits, go ahead.
+- **¿Ya tiene un AWUS036ACH y quiere probar Soft AP?**
+  → Funciona, pero solo con WPA2, y tendrá que instalar el controlador. Si acepta esas limitaciones, adelante.
 
-- **Need WiFi 6E (6 GHz band) and willing to configure things?**
-  → AWUS036AXML — remember to disable the BT driver and verify kernel ≥ 6.6 LTS.
+- **¿Necesita WiFi 6E (banda de 6 GHz) y está dispuesto a configurar?**
+  → AWUS036AXML — recuerde desactivar el controlador BT y verificar que el kernel sea ≥ 6.6 LTS.
 
-- **Primary purpose is Soft AP, not penetration testing?**
-  → AWUS036ACM is the only choice with extensive community verification across all platforms.
+- **¿El objetivo principal es Soft AP y no las pruebas de penetración?**
+  → El AWUS036ACM es la única opción con amplia verificación comunitaria en todas las plataformas.
 
 ---
 
@@ -644,9 +657,9 @@ DFS (Dynamic Frequency Selection) channels (ch100–ch140) require kernel-level 
 
 El factor central para construir un Soft AP no es la velocidad WiFi ni el número de antenas — **es el soporte del modo AP del controlador del chipset.**
 
-Among all ALFA products we investigated, **AWUS036ACM (MT7612U)** es el único adaptador que satisface simultáneamente: controlador in-kernel, WPA3 nativo, interfaces virtuales VIF, bajo consumo y estabilidad multiplataforma. It is the gold standard for Soft AP.
+Entre todos los productos ALFA que investigamos, el **AWUS036ACM (MT7612U)** es el único adaptador que satisface simultáneamente: controlador in-kernel, WPA3 nativo, interfaces virtuales VIF, bajo consumo y estabilidad multiplataforma. Es el estándar de referencia para Soft AP.
 
-AWUS036ACH (RTL8812AU) works if you accept the limitations. AWUS036AXML/AXM (MT7921AUN) has great potential but the driver maturity is still a work in progress. AWUS036AX/AXER (RTL8832BU) — not recommended for this use case.
+El AWUS036ACH (RTL8812AU) funciona si acepta sus limitaciones. El AWUS036AXML/AXM (MT7921AUN) tiene un gran potencial, pero la madurez del controlador todavía está en desarrollo. El AWUS036AX/AXER (RTL8832BU) funciona bien con kernel 6.17 o superior gracias al controlador integrado (AP, VIF y WPA3 probados); los kernels anteriores necesitan el controlador DKMS de la comunidad.
 
 **Si es la primera vez que configura un Soft AP en Raspberry Pi o Kali Linux — elija ACM. No se arrepentirá.**
 
@@ -661,35 +674,35 @@ AWUS036ACH (RTL8812AU) works if you accept the limitations. AWUS036AXML/AXM (MT7
 
 ### Lecturas adicionales
 
-- [AWUS036ACH vs AWUS036ACM: Full Chipset Driver Comparison](/es/blog/awus036ach-vs-awus036acm/)
-- [AWUS036ACM IBSS & Mesh on Raspberry Pi](/es/blog/)
-- [morrownr/USB-WiFi — The Authoritative Linux USB WiFi Knowledge Base](https://github.com/morrownr/USB-WiFi) (4,100+ stars)
-- [morrownr/7612u — MT7612U Reference (incl. RPi4B Bridged AP Tutorial)](https://github.com/morrownr/7612u)
-- [DeepWiki — morrownr/USB-WiFi Auto-Curated Knowledge Base](https://deepwiki.com/morrownr/USB-WiFi)
+- [AWUS036ACH vs AWUS036ACM: comparación completa de controladores de chipset](/es/blog/awus036ach-vs-awus036acm/)
+- [AWUS036ACM: IBSS y Mesh en Raspberry Pi](/es/blog/)
+- [morrownr/USB-WiFi — La base de conocimiento de referencia sobre Linux USB WiFi](https://github.com/morrownr/USB-WiFi) (más de 4,100 estrellas)
+- [morrownr/7612u — Referencia del MT7612U (incluye tutorial de Bridged AP en RPi4B)](https://github.com/morrownr/7612u)
+- [DeepWiki — Base de conocimiento de morrownr/USB-WiFi con curación automática](https://deepwiki.com/morrownr/USB-WiFi)
 
 ---
 
-### 📚 Data Sources
+### 📚 Fuentes de datos
 
-This article aggregates information from:
-- **morrownr/USB-WiFi** GitHub knowledge base (4,100+ stars) with complete iw_list records
-- **morrownr/7612u** — MT7612U Bridged AP on RPi4B tutorial
-- **GitHub issue tracker** — issue #2 (ACM AP config), #476 (AXML AP testing), Discussion #31 (ACHM full-speed AP)
-- **koutto/pi-pwnbox-rogueap** — Alfa adapter RogueAP implementation case
-- **Rokland** authorized retailer Linux support pages
-- **Lab401** technical reviews and 2025 pentesting best-pick reports
-- **Raspberry Pi Official Forum** — Pi 4/5 USB WiFi compatibility discussions
-- **Yopitek existing blog** — ACM China Install Guide, AXML WiFi 6E Review, Kali Linux 2026 best adapters
+Este artículo recopila información de:
+- Base de conocimiento **morrownr/USB-WiFi** en GitHub (más de 4,100 estrellas) con registros completos de iw_list
+- **morrownr/7612u** — tutorial de Bridged AP con MT7612U en RPi4B
+- **Issue tracker de GitHub** — issue #2 (configuración AP del ACM), #476 (pruebas AP del AXML), Discussion #31 (AP a velocidad completa del ACHM)
+- **koutto/pi-pwnbox-rogueap** — caso de implementación de RogueAP con adaptador Alfa
+- Páginas de soporte Linux del distribuidor autorizado **Rokland**
+- Análisis técnicos de **Lab401** e informes de las mejores opciones de pentesting de 2025
+- **Foro oficial de Raspberry Pi** — discusiones sobre compatibilidad de USB WiFi con Pi 4/5
+- **Blog de Yopitek** — guía de instalación del ACM en China, reseña del AXML WiFi 6E, mejores adaptadores para Kali Linux 2026
 
 ---
 
-> **Tags**: #ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #Yopitek
+> **Etiquetas**: #ALFANetwork #SoftAP #WiFiHotspot #hostapd #KaliLinux #Ubuntu #Debian #RaspberryPi #AWUS036ACM #AWUS036ACH #AWUS036AXML #MT7612U #RTL8812AU #MT7921AUN #Yopitek
 >
 > **Autor**: Yopitek Ltd — Distribuidor Autorizado ALFA Network Taiwan
 >
-> **Aviso legal**: Datos de investigación actualizados a mayo de 2026. Linux kernels and distributions continue to evolve; driver support may change with new versions. Verify target platform kernel version and driver compatibility before deployment.
+> **Aviso legal**: Datos de investigación actualizados a mayo de 2026. Los kernels de Linux y las distribuciones siguen evolucionando; el soporte de controladores puede cambiar con nuevas versiones. Verifique la versión del kernel y la compatibilidad del controlador en la plataforma de destino antes del despliegue.
 >
-> **Technical Support**: For Soft AP setup issues, contact Yopitek Taiwan technical support. Product inquiries: [yupitek.com](https://yupitek.com/es/).
+> **Soporte técnico**: para problemas de configuración de Soft AP, contacte con el soporte técnico de Yopitek Taiwán. Consultas sobre productos: [yupitek.com](https://yupitek.com/es/).
 
 ## Referencias
 

@@ -16,21 +16,23 @@ author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "¿Qué chip usa el AWUS036ACS? ¿Es igual que el AWUS036ACH?"
-    answer: "Usa el chip Realtek RTL8811AU. No comparte el controlador del RTL8812AU: necesita el controlador comunitario 8821au (morrownr/8821au-20210708), módulo `8821au`."
+    answer: "Usa el chip Realtek RTL8811AU. El soporte del controlador depende de tu kernel: el kernel de Linux 6.13+ (p. ej. Ubuntu 24.04 HWE / kernel 6.17) ya incluye el controlador rtw88_8821au, así que funciona al conectarlo, sin DKMS. Solo en kernels antiguos (inferiores a 6.13) necesitas el controlador comunitario 8821au (morrownr/8821au-20210708, módulo `8821au`). No comparte el controlador del RTL8812AU. Comprueba tu kernel con uname -r."
   - question: "¿El AWUS036ACS admite el modo monitor?"
-    answer: "Sí, RTL8811AU admite perfectamente el modo monitor y la inyección de paquetes; es una opción económica para investigación de seguridad."
+    answer: "Sí, RTL8811AU admite perfectamente el modo monitor y la inyección de paquetes; es una opción económica para investigación de seguridad (probamos la inyección al 100% en 2,4 GHz y al 96% en 5 GHz con el controlador integrado rtw88_8821au en el kernel 6.17, con una captura WPA .22000 de extremo a extremo). Solo en redes propias o para las que tengas autorización."
   - question: "¿Hace falta VPN para instalar el AWUS036ACS en China?"
     answer: "No necesariamente. Clona el controlador desde el repositorio de GitHub verificado (morrownr/8821au-20210708); si GitHub va lento, usa un proxy o espejo de confianza. Las herramientas de compilación se pueden seguir instalando con espejos nacionales."
   - question: "¿Cuál es el USB ID del AWUS036ACS?"
     answer: "El USB ID de Realtek RTL8811AU es 0bda:0811, puedes confirmarlo con lsusb."
   - question: "¿Cuál es el comando para instalar el controlador del AWUS036ACS en Kali Linux?"
-    answer: "Instala las herramientas de compilación, clona el controlador 8821au (morrownr/8821au-20210708 en GitHub) y ejecuta `sudo sh install-driver.sh`. El paquete apt realtek-rtl88xxau-dkms es el controlador del RTL8812AU y no sirve para este adaptador."
+    answer: "Primero comprueba tu kernel con uname -r. El kernel 6.13+ ya incluye el controlador rtw88_8821au, así que funciona al conectarlo sin instalar nada. Solo en kernels antiguos instala las herramientas de compilación, clona el controlador 8821au (morrownr/8821au-20210708 en GitHub) y ejecuta `sudo sh install-driver.sh`. El paquete apt realtek-rtl88xxau-dkms es el controlador del RTL8812AU y no sirve para este adaptador."
 ---
 
-El AWUS036ACS es el adaptador de investigación de seguridad de doble banda compacto de ALFA. Su chip RTL8811AU admite el modo monitor completo y la inyección de paquetes en Kali Linux, pero debido a que el controlador está fuera del kernel, debes compilarlo desde el código fuente. En China GitHub puede ir lento, por lo que esta guía instala las herramientas de compilación con espejos nacionales y clona el controlador desde el repositorio de GitHub verificado; si GitHub va lento, usa un proxy o espejo de confianza.
+El AWUS036ACS es el adaptador de investigación de seguridad de doble banda compacto de ALFA. Su chip RTL8811AU admite el modo monitor completo y la inyección de paquetes en Kali Linux. En el **kernel de Linux 6.13+** (p. ej. Ubuntu 24.04 HWE / kernel 6.17) el kernel ya incluye el controlador rtw88_8821au, así que funciona al conectarlo, sin DKMS. Solo en **kernels antiguos** (inferiores a 6.13) tienes que compilar el controlador comunitario 8821au desde el código fuente. En China GitHub puede ir lento, por lo que para ese caso esta guía instala las herramientas de compilación con espejos nacionales y clona el controlador desde el repositorio de GitHub verificado; si GitHub va lento, usa un proxy o espejo de confianza.
+
+> **Comprueba tu kernel primero:** Ejecuta `uname -r`. El kernel 6.13+ (p. ej. Ubuntu 24.04 HWE / kernel 6.17) incluye el controlador rtw88_8821au: sin DKMS, funciona al conectarlo, con modo monitor e inyección probados (2,4 GHz 100%, 5 GHz 96%, WPA .22000 de extremo a extremo). Los pasos de compilación e instalación de abajo solo son necesarios en kernels antiguos (inferiores a 6.13). Solo en redes propias o para las que tengas autorización.
 
 {{< tldr >}}
-El AWUS036ACS usa el chip RTL8811AU. En cualquier distribución se compila el controlador DKMS 8821au con install-driver.sh desde el repositorio de GitHub morrownr/8821au-20210708. Admite modo monitor e inyección de paquetes.
+El AWUS036ACS usa el chip RTL8811AU. El kernel 6.13+ (incluido Ubuntu 24.04 HWE / kernel 6.17) ya incluye el controlador rtw88_8821au: sin DKMS, funciona al conectarlo, con modo monitor e inyección probados (2,4 GHz 100%, 5 GHz 96%, WPA .22000 de extremo a extremo). Solo en kernels antiguos se compila el controlador comunitario DKMS 8821au con install-driver.sh desde el repositorio de GitHub morrownr/8821au-20210708.
 {{< /tldr >}}
 
 Asegúrate de tener esto listo:
@@ -69,7 +71,7 @@ Si ves `0bda:0811`, el adaptador ha sido detectado. Pasa a la sección de tu sis
 
 - [Habilitar el modo monitor](#habilitar-el-modo-monitor)
 - [Probar la inyección de paquetes](#probar-la-inyeccion-de-paquetes)
-- [Passthrough USB de máquina virtual](#passthrough-usb-de-maquina-virtual)
+- [Passthrough USB de máquina virtual](#virtual-machine-usb-passthrough)
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Flipper Zero & Flipper One avec adaptateurs WiFi ALFA : Guide complet de compatibilité"
-description: "Un Flipper Zero peut-il utiliser des adaptateurs WiFi USB ALFA pour l'injection de paquets ? Non — voici pourquoi. Flipper One supporte l'ALFA AWUS036AXML en mode monitor complet avec injection. Guide complet avec analyse des chipsets, compatibilité des pilotes et instructions d'installation."
+description: "Un Flipper Zero peut-il utiliser des adaptateurs WiFi USB ALFA pour l'injection de paquets ? Non — voici pourquoi. Flipper One supporte l'ALFA AWUS036AXML en mode monitor (l'injection dépend de la version du noyau). Guide complet avec analyse des chipsets, compatibilité des pilotes et instructions d'installation."
 date: 2026-06-10
 draft: false
 showBreadcrumbs: true
@@ -10,7 +10,7 @@ tags: ["flipper-zero", "flipper-one", "alfa-network", "wifi-adapter", "monitor-m
 categories: ["Technical"]
 featureimage: "/images/blog/flipper-alfa-compatibility.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "Le Flipper Zero peut-il utiliser des cartes ALFA ?"
     answer: "Non. Le Flipper Zero utilise un STM32WB55 ne supportant que le mode USB device, incapable de piloter une carte ALFA. Le Flipper One avec son RK3576 et Debian Linux complet supporte les cartes ALFA."
@@ -174,7 +174,7 @@ Tous les adaptateurs ALFA ne fonctionnent pas également bien pour les tests de 
 | **DKMS Required** | ❌ Non |
 | **Antenna** | Dual RP-SMA (remplaçable) + Bluetooth 5.2 |
 
-> **Pourquoi c'est le meilleur :** C'est l'adaptateur que le créateur de Flipper One a testé en priorité. Le pilote `mt7921u` est dans le noyau mainline sans aucun patch vendor requis. Il supporte les trois bandes WiFi (2.4/5/6 GHz), ce qui le rend ready for the future pour les assessments de sécurité Wi-Fi 6E. Le mode monitor et l'injection de paquets sont stables et bien testés.
+> **Pourquoi c'est le meilleur :** C'est l'adaptateur que le créateur de Flipper One a testé en priorité. Le pilote `mt7921u` est dans le noyau mainline sans aucun patch vendor requis. Il supporte les trois bandes WiFi (2.4/5/6 GHz), ce qui le rend ready for the future pour les assessments de sécurité Wi-Fi 6E. Le mode monitor est stable et bien testé. L'injection de paquets fonctionnerait sur les noyaux antérieurs à 6.16 d'après la communauté, mais elle a échoué lors de notre test sur le noyau stock 6.17 (aireplay-ng --test : Found 0 APs / No Answer) à cause d'une régression mac80211 chanctx depuis le noyau 6.16, et non d'une limite de la puce ; les pilotes patchés permettent l'injection, mais le firmware verrouille toujours le débit (1/6 Mbps). Si vous avez besoin d'injection, utilisez plutôt l'AWUS036ACM ou l'ACH.
 
 ### ⭐⭐⭐⭐⭐ Best Value : AWUS036ACM (Wi-Fi 5 AC1200)
 
@@ -189,13 +189,13 @@ Tous les adaptateurs ALFA ne fonctionnent pas également bien pour les tests de 
 
 > **Pourquoi c'est le meilleur rapport qualité/prix :** Le chipset MT7612U est éprouvé dans la communauté pentest. Le pilote `mt76` est dans le noyau depuis des années et est exceptionnellement stable. Le mode monitor et l'injection fonctionnent parfaitement à partir du noyau 6.5 et plus. À un prix inférieur à celui de l'AXML, il offre le meilleur ratio prix/capacité pour les tests 2.4/5 GHz.
 
-### ⭐⭐⭐⭐ Lightweight Pick : AWUS036ACHM (Wi-Fi 5 AC433)
+### ⭐⭐⭐⭐ Lightweight Pick : AWUS036ACHM (Wi-Fi 5 AC600)
 
 | Spéc | Détail |
 |------|--------|
 | **Chipset** | MediaTek MT7610U |
 | **Bands** | 2.4 / 5 GHz (Wi-Fi 5) |
-| **Max Speed** | AC433 (theoretical) |
+| **Max Speed** | AC600 (theoretical) |
 | **Driver** | `mt76` — in-kernel depuis Linux 4.19 |
 | **DKMS Required** | ❌ Non |
 | **Antenna** | Single high-gain RP-SMA (remplaçable) |
@@ -215,16 +215,19 @@ Tous les adaptateurs ALFA ne fonctionnent pas également bien pour les tests de 
 
 > **Pourquoi c'est une alternative :** Le chipset RTL8812AU a une longue histoire dans le pentesting. Il devrait être supporté sur le noyau prévu de Flipper One sans modules DKMS supplémentaires. Pour les systèmes plus anciens, le pilote DKMS aircrack-ng reste disponible. Les antennes high-gain 6 dBi offrent une excellente portée, bien que les adaptateurs basés sur MediaTek soient généralement préférés pour leur support de pilotes in-kernel plus mature.
 
-### ⚠️ Non Recommandé pour le Pentesting
+### ⭐⭐⭐ Alternative : AWUS036EACS (Wi-Fi 5 AC1200, RTL8821CU)
 
-Les modèles ALFA suivants utilisent des chipsets Realtek avec des pilotes Linux immatures ou instables pour le mode monitor et l'injection de paquets. **À éviter pour les travaux de sécurité sans fil sur Flipper One :**
+Le pilote `rtw88_8821cu` est intégré à la branche principale du noyau Linux depuis la version 6.2. Sur ASUS GX10 (Ubuntu 24.04 ARM64, noyau 6.17), nous avons mesuré le mode monitor et l'injection de paquets sur 2,4 et 5 GHz. Le Flipper One lui-même n'a pas encore été testé ; seuls les noyaux antérieurs à 6.2 nécessitent un pilote communautaire (par exemple morrownr/8821cu).
+
+### ⚠️ À utiliser avec précaution
+
+Les modèles ALFA suivants n'ont pas été testés sur le Flipper One lui-même. Sur notre plateforme de test ASUS GX10 (Ubuntu 24.04 ARM64, kernel 6.17), le mode monitor fonctionne sur tous, mais les pilotes intégrés requis n'existent que dans les kernels récents, et les résultats d'injection varient selon le chipset. **Vérifiez la version du kernel de votre Flipper One avant de les utiliser pour la sécurité sans fil :**
 
 | Modèle | Chipset | Problème |
 |--------|---------|----------|
-| AWUS036AX | RTL8832BU | Chipset Wi-Fi 6, le support driver est encore en développement en 2026 |
-| AWUS036AXER | RTL8832BU | Mêmes problèmes de chipset que AWUS036AX |
-| AWUS036ACS | RTL8811AU | Mode monitor limité, injection instable |
-| AWUS036EACS | RTL8811CU | Mode monitor limité, injection instable |
+| AWUS036AX | RTL8832BU | Le pilote rtw89_8852bu est dans le mainline depuis le kernel 6.17 ; test GX10 : monitor OK, injection 2,4 GHz 96 %, 5 GHz utilisable ; les kernels plus anciens nécessitent un pilote communautaire |
+| AWUS036AXER | RTL8832BU | Même RTL8832BU ; test GX10 : monitor OK, injection 2,4 GHz 73 %, 5 GHz utilisable |
+| AWUS036ACS | RTL8811AU | Le pilote rtw88_8821au est dans le mainline depuis le kernel 6.13 ; test GX10 : monitor OK, injection 2,4 GHz 100 %, 5 GHz 96 % |
 
 ---
 
@@ -297,6 +300,7 @@ sudo ip link set wlan0 up
 # Test injection capability
 sudo aireplay-ng --test wlan0mon
 # Look for: "Injection is working!"
+# Note : AXML/AXM échouent sur noyau 6.16+ (testé en 6.17) : Found 0 APs / No Answer. Utiliser ACM/ACH pour l'injection.
 
 # Perform a basic scan
 sudo airodump-ng wlan0mon

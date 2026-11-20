@@ -22,8 +22,6 @@ faq:
     answer: "Vier Punkte: 1. Die Länge beträgt 52 mm, nicht 42 mm. 2. Alle 4 Antennen müssen angeschlossen werden. 3. Das Netzteil muss Spitzenströme von 2,7 A verkraften. 4. Die Kühlung muss stimmen, die Innentemperatur darf 115 °C nicht übersteigen."
 ---
 
-# 4G/5G-Failover im Industrie-Router: EM9191 und der Weg ins private 5G
-
 **Kurz gesagt: Ein 5G-Modul im Industrie-Router als Backup ist wie eine Versicherung. Das Sierra-Wireless-Modul EM9191 unterstützt sowohl superschnelles 4G (LTE Cat 20) als auch private 5G-Netze (5G SA). Du kannst also heute ganz normal 4G-Backup fahren, und wenn dein Werk später ein privates 5G-Netz bekommt, musst du nicht mal die Hardware tauschen. Nahtloser Übergang!**
 
 Im Werk verbrennt jede Minute Netzausfall bares Geld. Maschinendaten kommen nicht an, das Remote-Monitoring zeigt schwarz, und der Schaden ist schnell teurer als eine zweite Backup-Leitung. Genau deshalb ist Redundanz (Failover) so wichtig. Statt eine zweite physische Glasfaser eines anderen Anbieters zu ziehen, ist eine SIM-Karte mit Mobilfunk die klügere Lösung.

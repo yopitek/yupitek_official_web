@@ -1,5 +1,5 @@
 ---
-title: "\"ALFA Wireless Card Compatibility with OpenWrt\""
+title: "ALFA Wireless Card Compatibility with OpenWrt"
 date: 2026-09-03
 draft: false
 slug: "alfa-openwrt-router-compatibility"
@@ -16,7 +16,7 @@ categories:
 description: "OpenWrt offers top ALFA USB WiFi card support, with direct official support for MediaTek models and community-maintained drivers for Realtek, with AWUS036ACM (MT7612U) as the recommended choice."
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. Problem Summary
@@ -43,7 +43,7 @@ The OpenWrt official package repository includes the following USB WiFi drivers:
 | kmod-mt76-usb + kmod-mt76x0u | Official in-kernel | MediaTek MT7610U (AWUS036ACHM) | Active |
 | kmod-mt7921u | Official in-kernel | MediaTek MT7921AUN (AWUS036AXML / AXM) | Available in 23.05+ versions |
 | kmod-rtl8812au-ct | Community out-of-tree | Realtek RTL8812AU / RTL8811AU (AWUS036ACH / ACS) | Community maintained, kernel crash reports in 24.10 |
-| kmod-rtl8821cu | Community out-of-tree | Realtek RTL8811CU (AWUS036EACS) | Community maintained |
+| kmod-rtl8821cu | Community out-of-tree | Realtek RTL8821CU (AWUS036EACS) | Community maintained |
 | kmod-rtw89 / kmod-rtl8852bu | Under development | Realtek RTL8832BU (AWUS036AX / AXER) | rtw89 USB support is gradually integrated, requires a newer kernel |
 
 ### 2.3 Prerequisites: USB Core Support
@@ -68,10 +68,10 @@ As of September 2026, ALFA Network's current USB wireless network card product l
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | kmod-rtw89 (in development) / Self-compiled rtl8852bu |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | As above |
 | AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | kmod-rtl8812au-ct (community) |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | kmod-mt76x0u (official) |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | kmod-mt76x0u (official) |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | kmod-mt76x2u (official)⭐ Recommended |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | kmod-rtl8812au-ct (inclusive) |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | kmod-rtl8821cu (community) |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | kmod-rtl8812au-ct (inclusive) |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | kmod-rtl8821cu (community) |
 
 ## 4. Applicable Models and Chipsets
 
@@ -84,7 +84,7 @@ As of September 2026, ALFA Network's current USB wireless network card product l
 | ✅ Recommended (New Version) | AWUS036AXML / AXM (MT7921AUN) | Wi-Fi 6E, official drivers, requires OpenWrt 23.05+ and kernel 5.15+ |
 | ⚠️ Available but with Caution | AWUS036ACH (RTL8812AU) | Community drivers, kernel crash reports in version 24.10, recommended to use 23.05 |
 | ⚠️ Available but with Caution | AWUS036ACS (RTL8811AU) | As above, covered by 8812au drivers |
-| ⚠️ Available but with Caution | AWUS036EACS (RTL8811CU) | Community drivers, stability moderate |
+| ⚠️ Available but with Caution | AWUS036EACS (RTL8821CU) | Community drivers, stability moderate |
 | ❌ Not Recommended | AWUS036AX / AXER (RTL8832BU) | Wi-Fi 6, rtw89 USB support still in development, most OpenWrt versions cannot be used directly |
 
 ### 4.2 Router Hardware Requirements
@@ -120,11 +120,11 @@ As of September 2026, ALFA Network's current USB wireless network card product l
 | AWUS036ACHM | MT7610U | kmod-mt76x0u | ✅ | ✅ | ✅ | ⚠️ Limited | 21.02+ | ✅ Good |
 | AWUS036AXML | MT7921AUN | kmod-mt7921u | ✅ | ✅ | ✅ | ⚠️ Limited | 23.05+ | ✅ Good |
 | AWUS036AXM | MT7921AUN | kmod-mt7921u | ✅ | ✅ | ✅ | ⚠️ Limited | 23.05+ | ✅ Good |
-| AWUS036ACH | RTL8812AU | kmod-rtl8812au-ct | ✅ | ✅ | ✅ | ⚠️ Limited | 22.03+（24.10 has crash） | ⚠️ Available |
+| AWUS036ACH | RTL8812AU | kmod-rtl8812au-ct | ✅ | ✅ | ✅ | ⚠️ Limited | 22.03+ (24.10 has crash) | ⚠️ Available |
 | AWUS036ACS | RTL8811AU | kmod-rtl8812au-ct | ✅ | ✅ | ⚠️ | ❌ | 22.03+ | ⚠️ Available |
-| AWUS036EACS | RTL8811CU | kmod-rtl8821cu | ✅ | ⚠️ | ❌ | ❌ | 23.05+ | ⚠️ Available |
-| AWUS036AX | RTL8832BU | rtw89（under development） | ⚠️ | ❌ | ❌ | ❌ | Requires custom compilation | ❌ Not Recommended |
-| AWUS036AXER | RTL8832BU | rtw89（under development） | ⚠️ | ❌ | ❌ | ❌ | Requires custom compilation | ❌ Not Recommended |
+| AWUS036EACS | RTL8821CU | kmod-rtl8821cu | ✅ | ⚠️ | ❌ | ❌ | 23.05+ | ⚠️ Available |
+| AWUS036AX | RTL8832BU | rtw89 (under development) | ⚠️ | ❌ | ❌ | ❌ | Requires custom compilation | ❌ Not Recommended |
+| AWUS036AXER | RTL8832BU | rtw89 (under development) | ⚠️ | ❌ | ❌ | ❌ | Requires custom compilation | ❌ Not Recommended |
 
 Determination Criteria: Availability of kmod packages in the OpenWrt official package repository (23.05 / 24.10) + user reports from the OpenWrt forum. The Realtek chip drivers are maintained by the community, and their stability and functionality are not as complete as MediaTek mt76 series.
 
@@ -252,7 +252,7 @@ Using AWUS036ACH (RTL8812AU) as an example:
 opkg update
 opkg install kmod-rtl8812au-ct
 
-# AWUS036EACS (RTL8811CU) — Use instead
+# AWUS036EACS (RTL8821CU) — Use instead
 # opkg install kmod-rtl8821cu
 ```
 
@@ -341,11 +341,11 @@ Counter-arguments: If the OpenWrt subsequent package update fixes the kernel cra
 | OpenWrt Official Documentation | OpenWrt official document entry (Wireless Settings / Package Management) | https://openwrt.org/docs/start | ✅ Verified | 2026-09-03 |
 | OpenWrt Official Forum | USB WiFi Driver Discussion Entry | https://forum.openwrt.org/ | ✅ Verified | 2026-09-03 |
 | morrownr/8812au GitHub | RTL8812AU Linux Driver Upstream | https://github.com/morrownr/8812au-20210820 | ✅ Verified | 2026-09-03 |
-| ALFA Network Product Overview (Yopitek) | ALFA current product specifications | https://yupitek.com/zh-tw/products/alfa/ | ✅ Verified | 2026-09-03 |
+| ALFA Network Product Overview (Yopitek) | ALFA current product specifications | /en/products/alfa/ | ✅ Verified | 2026-09-03 |
 | morrownr/USB-WiFi Issue #314 | Driver Maintainer's Official Statement: Suggest to avoid rtl8852/32au (RTL8832BU) chip | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Verified | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko appears in the kernel only with kernel 5.19+ (Driver Maintainer's Original Words) | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ Verified | 2026-09-03 |
 | OpenWrt Official Forum — Best USB WiFi Dongle for Raspberry Pi 4B | User Reports Successful Installation of kmod-mt7921u with OpenWrt 23.05.0 | https://forum.openwrt.org/t/best-usb-wifi-dongle-for-raspberry-pi-4b/160103 | ✅ Verified | 2026-09-03 |
 
-Related Articles: [Is ALFA Wireless Network Card Compatible with DD-WRT](https://yupitek.com/zh-tw/blog/alfa-ddwrt-router-compatibility/)｜[Is ALFA Wireless Network Card Compatible with Tomato](https://yupitek.com/zh-tw/blog/alfa-tomato-router-compatibility/)｜[Is ALFA Wireless Network Card Compatible with NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)｜[Is ALFA Wireless Network Card Compatible with NVIDIA Jetson Nano](https://yupitek.com/zh-tw/blog/alfa-nvidia-jetson-nano-compatibility/)
+Related Articles: [Is ALFA Wireless Network Card Compatible with DD-WRT](/en/blog/alfa-ddwrt-router-compatibility/) | [Is ALFA Wireless Network Card Compatible with Tomato](/en/blog/alfa-tomato-router-compatibility/) | [Is ALFA Wireless Network Card Compatible with NVIDIA DGX Spark](/en/blog/alfa-nvidia-dgx-spark-compatibility/) | [Is ALFA Wireless Network Card Compatible with NVIDIA Jetson Nano](/en/blog/alfa-nvidia-jetson-nano-compatibility/)
 
 Disclaimer: The compatibility determination in this article is based on the official package repository of OpenWrt 23.05.x / 24.10.x. The availability of packages may vary depending on different router architectures (ath79 / ramips / mvebu / x86, etc.). Realtek chip drivers are maintained by the community, and actual stability may vary with version changes. It is recommended to prioritize MediaTek chip models (AWUS036ACM as the first choice) for OpenWrt USB WiFi.

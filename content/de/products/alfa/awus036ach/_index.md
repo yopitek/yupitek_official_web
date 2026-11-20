@@ -9,7 +9,7 @@ brands: ["alfa"]
 tags: ["Wi-Fi 5", "AC1200", "USB-C", "Dual Antenna", "Monitor Mode", "Kali Linux", "Security Research"]
 faq:
   - question: "Benötigt der AWUS036ACH eine Treiberinstallation unter Linux?"
-    answer: "In den meisten Fällen ja. Der Realtek RTL8812AU-Chipsatz benötigt normalerweise eine einmalige manuelle DKMS-Treiberinstallation, und DKMS baut ihn nach Kernel-Updates neu. Auf Kerneln 6.14 und neuer ist ein im Kernel integrierter Treiber verfügbar."
+    answer: "In den meisten Fällen ja. Der Realtek RTL8812AU-Chipsatz benötigt normalerweise eine einmalige manuelle DKMS-Treiberinstallation, und DKMS baut ihn nach Kernel-Updates neu. Auf Kerneln 6.13 und neuer ist ein im Kernel integrierter Treiber verfügbar."
   - question: "Unterstützt der AWUS036ACH den Monitor-Modus und Packet Injection?"
     answer: "Ja. Unter Kali Linux unterstützt er den vollständigen Monitor-Modus und Packet Injection mit dem aircrack-ng-Treiber. Verwenden Sie diese Funktionen nur für autorisierte Sicherheitstests."
   - question: "Funktioniert der AWUS036ACH unter Windows und macOS?"
@@ -58,7 +58,7 @@ Der AWUS036ACH ist Alfa Networks ikonischster Sicherheitsforschungs-Adapter — 
 |------|---------|------|
 | Windows 10/11 | ✅ Unterstützt | Treiber von der Alfa-Website herunterladen; WPA3 unterstützt |
 | macOS 10.15 Catalina | ⚠️ Eingeschränkt | Manuelle Installation; macOS 11+ und Apple Silicon NICHT unterstützt |
-| Ubuntu | ✅ Unterstützt | Manuelle RTL8812AU-DKMS-Installation; im Kernel ab Version ≥ 6.14 |
+| Ubuntu | ✅ Unterstützt | Manuelle RTL8812AU-DKMS-Installation; im Kernel ab Version ≥ 6.13 |
 | Kali Linux | ✅ Ausgezeichnet | Seit Kali 2017.1; voller Monitor-Modus + Paketinjektion; aircrack-ng-Treiber verwenden |
 | NetHunter (Android) | ✅ Unterstützt | OTG-USB; weit verbreitet und bestätigt funktionsfähig |
 

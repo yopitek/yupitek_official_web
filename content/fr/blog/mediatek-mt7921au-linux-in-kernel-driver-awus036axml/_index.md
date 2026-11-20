@@ -1,9 +1,9 @@
 ---
 title: "Fini la compilation de pilotes : pourquoi le MT7921AU est le choix pour Linux et Kali"
-description: "Compare le MediaTek MT7921AU (pilote mt7921u intégré au noyau) au Realtek RTL8812AU (compilation DKMS) et découvre pourquoi l'ALFA AWUS036AXML est plug-and-play sous Kali Linux."
+description: "Compare le MediaTek MT7921AUN (pilote mt7921u intégré au noyau) au Realtek RTL8812AU (compilation DKMS) et découvre pourquoi l'ALFA AWUS036AXML est plug-and-play sous Kali Linux."
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,7 +11,7 @@ tags: ["mt7921au", "kali-linux", "linux", "awus036axml", "monitor-mode", "dkms",
 featureimage: /images/blog/mediatek-mt7921au-linux-in-kernel-driver-awus036axml.webp
 ---
 
-> **Produit concerné** : ALFA AWUS036AXML (MediaTek MT7921AU / MT7921AUN) ｜ **Produit de comparaison** : ALFA AWUS036ACH (Realtek RTL8812AU)
+> **Produit concerné** : ALFA AWUS036AXML (MediaTek MT7921AUN / MT7921AUN) | **Produit de comparaison** : ALFA AWUS036ACH (Realtek RTL8812AU)
 > **Pour qui** : tests d'intrusion avec Kali Linux, développement embarqué sous Linux, utilisateurs de Raspberry Pi / cartes mono-puce
 > **Objectif de l'article** : comprendre la différence entre « support natif dans le noyau » et « compilation de pilote via DKMS » avant d'acheter, et passer moins de temps à installer et à dépanner.
 
@@ -28,7 +28,7 @@ Si tu as déjà utilisé un adaptateur USB à base de chipset de la classe Realt
 
 Le problème ne vient pas du produit, mais de la forme sous laquelle existe le pilote. La plupart des pilotes Linux de Realtek ne sont pas intégrés au noyau Linux (mainline). Pour les utiliser, il faut « greffer » du code source externe sur le système. À chaque mise à jour du noyau, cette greffe doit être recompilée ; sinon, elle ne correspond plus à la nouvelle version du noyau et tombe en panne.
 
-Et le héros du jour — l'ALFA AWUS036AXML équipé du MediaTek MT7921AU — suit un chemin complètement différent : son pilote **vit nativement dans le noyau Linux**.
+Et le héros du jour — l'ALFA AWUS036AXML équipé du MediaTek MT7921AUN — suit un chemin complètement différent : son pilote **vit nativement dans le noyau Linux**.
 
 ---
 
@@ -96,11 +96,11 @@ Les exigences minimales de noyau par distribution, en un coup d'œil :
 | Windows 10 / 11 | — | Pilote du fabricant |
 | macOS (Intel / Apple Silicon) | Non pris en charge | **Aucun pilote : ne l'achète pas** |
 
-> **⚠️ L'avertissement de support le plus important avant l'achat** : l'AWUS036AXML **ne prend pas en charge macOS**. Ni sur Intel ni sur Apple Silicon, il n'existe aujourd'hui de pilote MT7921AU pour macOS. Si macOS est ton environnement principal, cette classe d'adaptateurs USB Wi-Fi 6 / 6E est inutile pour toi — élimine-la directement, plutôt que de le découvrir après l'achat.
+> **⚠️ L'avertissement de support le plus important avant l'achat** : l'AWUS036AXML **ne prend pas en charge macOS**. Ni sur Intel ni sur Apple Silicon, il n'existe aujourd'hui de pilote MT7921AUN pour macOS. Si macOS est ton environnement principal, cette classe d'adaptateurs USB Wi-Fi 6 / 6E est inutile pour toi — élimine-la directement, plutôt que de le découvrir après l'achat.
 
 ### 2.3 Pourquoi le « support natif » compte particulièrement pour les développeurs Kali
 
-Sous Kali Linux, les mises à jour du noyau sont très fréquentes (c'est une distribution Rolling). Les utilisateurs de RTL8812AU retiennent leur souffle à chaque mise à jour continue. `mt7921u`, lui, est maintenu et testé avec le noyau — **aussi récent que soit le noyau, le pilote suit**. ALFA a positionné ce produit pour les tests de sécurité : le mode monitor (Monitor Mode) et l'injection de paquets (Packet Injection) sont des fonctions standard prêtes à l'emploi.
+Sous Kali Linux, les mises à jour du noyau sont très fréquentes (c'est une distribution Rolling). Les utilisateurs de RTL8812AU retiennent leur souffle à chaque mise à jour continue. `mt7921u`, lui, est maintenu et testé avec le noyau — **aussi récent que soit le noyau, le pilote suit**. ALFA a positionné ce produit pour les tests de sécurité : le mode monitor (Monitor Mode) est prêt à l'emploi, tandis que l'injection de paquets (Packet Injection) dépend de la version du noyau (voir la section 3.2).
 
 ---
 
@@ -147,7 +147,7 @@ Ensuite, teste l'injection de paquets :
 sudo aireplay-ng --test wlan1
 ```
 
-Voir `Injection is working!` (ou une sortie équivalente) signifie que l'injection fonctionne. Sur le pilote natif `mt7921u`, cette capacité est intégrée : aucun Hacks supplémentaire requis.
+Dans les retours de la communauté avec un noyau antérieur à 6.16, voir `Injection is working!` (ou une sortie équivalente) signifiait que l'injection fonctionnait sur le pilote natif `mt7921u`. Sur un noyau stock 6.16 ou supérieur (testé sur ASUS GX10, Ubuntu 24.04 ARM64, noyau 6.17), le test d'injection échoue : `aireplay-ng --test` affiche Found 0 APs / No Answer, donc ni deauth ni capture de handshake. La cause est une régression de mac80211 chanctx depuis le noyau 6.16, et non une limite de la puce ; les pilotes patched de la communauté rétablissent l'injection, mais le firmware verrouille toujours le débit (1/6 Mbps, pas d'injection HT/VHT). Pour l'injection, utilisez l'AWUS036ACH, l'EACS ou l'ACS.
 
 ### 3.3 Mode fusion (VIF / Fusion) : gérer et surveiller en même temps
 
@@ -170,7 +170,7 @@ Pour réduire les coûts de support après l'achat, fais d'abord cette évaluati
 
 ### 4.1 Comparaison rapide des deux adaptateurs
 
-| Élément d'évaluation | AWUS036AXML (MT7921AU) | AWUS036ACH (RTL8812AU) |
+| Élément d'évaluation | AWUS036AXML (MT7921AUN) | AWUS036ACH (RTL8812AU) |
 |---|---|---|
 | Spécification sans fil | Wi-Fi 6E tribande (2.4/5/6 GHz) | AC1200 double bande (2.4/5 GHz) |
 | Interface USB | USB-C (USB 3.2 Gen 1) | USB 3.0 Type-A |
@@ -178,7 +178,7 @@ Pour réduire les coûts de support après l'achat, fais d'abord cette évaluati
 | Difficulté d'installation | Il suffit d'ajouter le firmware | Chaîne d'outils + compilation + (avec Secure Boot) signature |
 | Impact des mises à jour du noyau | Aucun | Recompilation après chaque mise à jour |
 | Mode monitor | Support natif | Pris en charge |
-| Injection de paquets | Support natif | Pris en charge |
+| Injection de paquets | ⚠️ Retours communautaires avant le noyau 6.16 ; échec en test sur 6.17 | Pris en charge |
 | macOS | Non pris en charge | Non pris en charge |
 | Public visé | Linux / Kali / embarqué modernes | Systèmes anciens ou scénarios 2.4/5 GHz |
 
@@ -190,7 +190,7 @@ Plus tu coches de cases correspondant à la description, **plus l'AWUS036AXML es
 - [ ] Je veux que ça **marche dès le branchement**, sans toucher à `dkms`, `github clone` ni chaîne d'outils de compilation.
 - [ ] J'ai besoin du support natif de la famille `mt76`, et les mises à jour du noyau ne doivent pas affecter l'adaptateur.
 - [ ] J'ai besoin de la **bande 6 GHz** (environnement avec routeur Wi-Fi 6E).
-- [ ] Usages principaux : surveillance, injection de paquets, Soft AP, mode fusion (VIF).
+- [ ] Usages principaux : surveillance, Soft AP, mode fusion (VIF) (l'injection de paquets ne fonctionne pas à partir du noyau 6.16, voir la section 3.2).
 - [ ] J'utiliserai le câble 2-in-1 USB-C / USB-A fourni avec un ordinateur portable ou une carte mono-puce.
 
 À l'inverse, si tu n'as pas besoin du 6 GHz, que ton système tourne sur un ancien noyau sous 5.18 et que tu maîtrises la maintenance DKMS, l'AWUS036ACH garde sa place. Mais prépare-toi mentalement : à chaque mise à jour du noyau, le pilote devra être recompilé.
@@ -199,7 +199,7 @@ Plus tu coches de cases correspondant à la description, **plus l'AWUS036AXML es
 
 ## 5. Conclusion
 
-Pour les développeurs Linux et Kali modernes, le temps est le plus grand coût. **Le MediaTek MT7921AU (AWUS036AXML) retire de tes épaules le fardeau sans fin de la « maintenance du pilote »**. Le pilote vit dans le noyau, le firmware arrive en un seul paquet, la surveillance et l'injection fonctionnent dès le départ — les mises à jour continues du noyau ne font plus peur.
+Pour les développeurs Linux et Kali modernes, le temps est le plus grand coût. **Le MediaTek MT7921AUN (AWUS036AXML) retire de tes épaules le fardeau sans fin de la « maintenance du pilote »**. Le pilote vit dans le noyau, le firmware arrive en un seul paquet, la surveillance fonctionne dès le départ (l'injection de paquets échoue sur un noyau stock 6.16 ou supérieur ; pour l'injection, utilisez ACH, EACS ou ACS) — les mises à jour continues du noyau ne font plus peur.
 
 Avant d'acheter, vérifie juste deux choses : **noyau du système ≥ 5.18** et **pas de macOS**. Le pilote natif s'occupe du reste.
 

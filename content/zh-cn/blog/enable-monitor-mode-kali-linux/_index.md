@@ -3,7 +3,7 @@ title: "Kali Linux 2026 启用监听模式完整教程：WiFi 网卡配置指南
 description: "手把手教你在 Kali Linux 2024/2025 使用 airmon-ng 或 iw 命令启用监听模式，涵盖兼容 ALFA 网卡、故障排除，以及用 airodump-ng 验证。"
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -17,7 +17,7 @@ faq:
   - question: "启用监听模式后接口自动切回受管理模式怎么办？"
     answer: "wpa_supplicant 或 NetworkManager 在背景重新启动所致。执行 airmon-ng check kill 终止这些进程即可解决。"
   - question: "哪些 ALFA 网卡在 Kali Linux 上完整支持监听模式？"
-    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）三款均完整支持，其中 ACM 为即插即用。"
+    answer: "AWUS036ACH（RTL8812AU）、AWUS036AXML（MT7921AUN）、AWUS036ACM（MT7612U）三款均完整支持，其中 ACM 为即插即用。注意：AWUS036AXML 的数据包注入在 stock kernel 6.17 上实测失败（mac80211 chanctx 回归；内核 6.16 以前有社区反馈可用）。需要注入请改用 ACH / ACM / AX。"
   - question: "airodump-ng 显示 Fixed channel wlan0mon: -1 错误如何解决？"
     answer: "表示 airodump-ng 无法切换信道。执行 iwconfig wlan0mon channel 1 指定信道，并终止残留的 wpa_supplicant 程序。"
 ---
@@ -205,7 +205,7 @@ sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w capture wlan0mon
 | 型号 | 芯片组 | 频段 | 监听模式 | 数据包注入 | 备注 |
 |---|---|---|---|---|---|
 | AWUS036ACH | RTL8812AU | 2.4 / 5 GHz | ✅ | ✅ | 渗透测试最热门型号 |
-| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ✅ | Wi-Fi 6E，需要内核 5.18+ |
+| AWUS036AXML | MT7921AUN | 2.4 / 5 / 6 GHz | ✅ | ⚠️ 内核 6.16 以前有社区反馈；6.17 实测失败 | Wi-Fi 6E，需要内核 5.18+ |
 | AWUS036ACM | MT7612U | 2.4 / 5 GHz | ✅ | ✅ | Linux 驱动程序支持极佳 |
 
 上表所有型号均已在 Kali Linux 2024.x 和 2025.x 上验证驱动程序兼容性。对于 RTL8812AU 等芯片组，若你的内核版本较新，可能需要从 Aircrack-ng GitHub 仓库手动安装驱动程序。

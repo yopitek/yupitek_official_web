@@ -2,7 +2,7 @@
 title: "Tutoriel d'installation ALFA AWUS036AXML : test pratique du Monitor Mode et de la Packet Injection Wi-Fi 6E sur Kali Linux"
 locale: "fr"
 hreflang_group: "awus036axml-wifi6e-kali-linux-setup"
-description: "Tutoriel d'installation de l'ALFA AWUS036AXML (puce MT7921AUN) sur Kali Linux : pilote mt7921u intégré, prérequis de version de kernel, Monitor Mode, Packet Injection et dépannage."
+description: "Tutoriel d'installation de l'ALFA AWUS036AXML (puce MT7921AUN) sur Kali Linux : pilote mt7921u intégré, prérequis de version de kernel, Monitor Mode, état de la Packet Injection (échec lors de nos tests sur le kernel stock 6.17) et dépannage."
 date: 2026-08-10
 draft: false
 showBreadcrumbs: true
@@ -11,13 +11,11 @@ slug: "awus036axml-wifi6e-kali-linux-setup"
 tags: ["Test de Monitor Mode et de Packet Injection Wi-Fi 6E sur Kali Linux", "FR", "wifi6e-kali-linux-setup", "AWUS036AXML", "Kali Linux", "Tutoriel Monitor Mode et Packet Injection Wi-Fi 6E | Yopitek"]
 categories: ["Technical"]
 author: "Yopitek"
-lastmod: 2026-08-10
+lastmod: 2026-11-20
 ---
 
 
-# Tutoriel d'installation ALFA AWUS036AXML : test pratique du Monitor Mode et de la Packet Injection Wi-Fi 6E sur Kali Linux
-
-> En bref : l'ALFA AWUS036AXML embarque une puce MediaTek MT7921AUN. Sous Kali Linux (kernel 5.18+), elle **fonctionne directement avec le pilote intégré `mt7921u`**, tu n'as pas besoin de compiler un autre pilote. Si tu veux un active monitor mode stable ou faire de la Packet Injection, nous te conseillons d'utiliser un kernel 6.12+ ainsi qu'un hub USB alimenté. Après branchement, la commande `lsusb` doit afficher `0e8d:7961`. Il te suffit ensuite d'utiliser `airmon-ng` ou `iw` pour passer en Monitor Mode.
+> En bref : l'ALFA AWUS036AXML embarque une puce MediaTek MT7921AUN. Sous Kali Linux (kernel 5.18+), elle **fonctionne directement avec le pilote intégré `mt7921u`**, tu n'as pas besoin de compiler un autre pilote. Si tu veux un active monitor mode stable, nous te conseillons d'utiliser un kernel 6.12+ ainsi qu'un hub USB alimenté. La Packet Injection fait l'objet de retours de la communauté avant le kernel 6.16, mais a échoué lors de nos tests sur le kernel stock 6.17 (régression mac80211 chanctx, pas une limite de la puce) ; pour l'injection, utilise l'ACH, l'EACS, l'ACS ou l'AX. Après branchement, la commande `lsusb` doit afficher `0e8d:7961`. Il te suffit ensuite d'utiliser `airmon-ng` ou `iw` pour passer en Monitor Mode.
 
 ## Pourquoi s'intéresser aux cartes Wi-Fi 6E pour le pentest ?
 
@@ -36,7 +34,7 @@ L'AWUS036AXML est une carte USB Wi-Fi 6E conçue par ALFA Network. Elle gère tr
 | Active monitor mode | Conseillé avec kernel ≥ 6.12 | Standard | Standard |
 | ID USB (lsusb) | `0e8d:7961` | `0bda:8812` | `0e8d:7612` |
 | Consommation | Environ 2,7 W (hub alimenté conseillé) | Plus faible | Plus faible |
-| Packet Injection | Supportée (test recommandé) | Supportée | Supportée |
+| Packet Injection | ⚠️ Retours de la communauté avant le kernel 6.16 ; échec lors de nos tests sur le kernel 6.17 | Supportée | Supportée |
 
 > Note sur le kernel : le pilote `mt7921u` fait partie de la branche principale depuis le kernel 5.18, et le support de la bande 6 GHz s'est amélioré au fil des versions. Nous conseillons un kernel 6.12+ pour un active monitor mode stable. La version de Kali Linux 2026 utilise par défaut un kernel 6.14 ou supérieur, ce qui remplit parfaitement cette condition.
 
@@ -147,6 +145,8 @@ Injection is working!
 
 Un taux de réussite supérieur à 80 % indique que le matériel est fiable. Si le taux tombe sous les 50 %, ajuste l'orientation des antennes, vérifie l'alimentation USB ou privilégie un branchement direct sur un port USB 3.0.
 
+> Remarque : lors de nos tests sur le kernel stock 6.17, l'AWUS036AXML ne réussit pas ce test (Found 0 APs / No Answer), ce qui empêche le deauth et la capture de handshake. La cause est une régression mac80211 chanctx depuis le kernel 6.16, pas une limite de la puce ; les pilotes patchés de la communauté rétablissent l'injection, mais le firmware verrouille toujours le débit (1/6 Mbps, pas d'injection HT/VHT). Pour l'injection, utilise l'ACH, l'EACS, l'ACS ou l'AX.
+
 ## Cas particulier du Raspberry Pi : créer une plateforme d'audit portable
 
 L'AWUS036AXML est officiellement compatible avec les Raspberry Pi 3B+, 4 et 5, ce qui en fait un excellent choix pour monter un kit d'audit réseau portable. Voici quelques points importants à garder en tête :
@@ -191,6 +191,6 @@ L'AXML supporte le Wi-Fi 6E (avec la bande 6 GHz en plus) et intègre son pilote
 
 ## Conclusion
 
-L'installation de l'AWUS036AXML est bien plus simple qu'il n'y paraît : **un kernel 5.18+, un branchement direct utilisant le pilote intégré `mt7921u`, la vérification de l'ID `0e8d:7961`, le passage en Monitor Mode via airmon-ng, puis la validation de l'injection avec aireplay-ng**. La grande différence avec l'AWUS036ACH tient à la bande 6 GHz et à l'absence de compilation pour le pilote. Si ton périmètre d'audit englobe désormais le Wi-Fi 6E, cette carte représente une solution idéale pour compléter ta couverture de fréquences. N'oublie pas de mener tes tests uniquement sur des réseaux autorisés.
+L'installation de l'AWUS036AXML est bien plus simple qu'il n'y paraît : **un kernel 5.18+, un branchement direct utilisant le pilote intégré `mt7921u`, la vérification de l'ID `0e8d:7961`, le passage en Monitor Mode via airmon-ng, puis la validation de l'injection avec aireplay-ng (échec sur le kernel stock 6.17, voir l'étape 5)**. La grande différence avec l'AWUS036ACH tient à la bande 6 GHz et à l'absence de compilation pour le pilote. Si ton périmètre d'audit englobe désormais le Wi-Fi 6E, cette carte représente une solution idéale pour compléter ta couverture de fréquences. N'oublie pas de mener tes tests uniquement sur des réseaux autorisés.
 
 La gamme de cartes ALFA Network bénéficie du support technique et commercial de Yopitek. Si tu as besoin d'une AWUS036AXML, d'un hub USB alimenté ou d'antennes adaptées, n'hésite pas à nous contacter à l'adresse [sales@yupitek.com](mailto:sales@yupitek.com).

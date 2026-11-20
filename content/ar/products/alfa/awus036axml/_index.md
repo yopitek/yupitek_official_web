@@ -63,7 +63,7 @@ faq:
 | Windows 11 | ✅ مدعوم | ثلاثي النطاق الكامل بما في ذلك 6 GHz |
 | macOS | ❌ غير مدعوم | لا دعم لـ macOS 11+ أو Apple Silicon |
 | Ubuntu | ✅ مدعوم | درايفر mt7921u المدمج في النواة ≥ 5.18 (Ubuntu 22.10+) |
-| Kali Linux | ✅ مدعوم | Monitor mode ≥ نواة 5.18؛ Monitor mode النشط ≥ 6.12؛ packet injection مدعوم |
+| Kali Linux | ⚠️ جزئي | Monitor mode ≥ نواة 5.18؛ Monitor mode النشط ≥ 6.12. لم ينجح packet injection في اختبارنا الداخلي على GX10 / نواة stock 6.17 (تراجع في mac80211 chanctx منذ النواة 6.16، وليس قيدًا في الشريحة). لم يُختبر على Kali فعلي |
 | NetHunter (Android) | ⚠️ جزئي | OTG؛ يعتمد على النواة |
 
 ## الأجهزة المدعومة
@@ -79,7 +79,7 @@ faq:
 | الميزة | الحالة |
 |--------|--------|
 | Monitor Mode | ✅ نعم (نواة ≥ 5.18؛ الوضع النشط ≥ 6.12) |
-| Packet Injection | ✅ نعم |
+| Packet Injection | ❌ لم ينجح (اختبار داخلي، GX10، نواة stock 6.17) |
 | Soft AP Mode | ✅ نعم |
 | Bluetooth | ✅ BT 5.2 |
 | VIF | ✅ نعم |

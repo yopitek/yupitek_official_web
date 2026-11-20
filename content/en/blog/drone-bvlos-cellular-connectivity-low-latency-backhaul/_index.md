@@ -22,8 +22,6 @@ faq:
     answer: "For factory inspection, you usually only need to stream ordinary video back. The 4G EM7565 (Cat 12, 150 Mbps uplink) meets the requirement at a lower cost."
 ---
 
-# BVLOS Cellular Connectivity for Drones and Inspection Robots: How to Build Low Latency Backhaul
-
 **The short version: to fly a drone beyond your line of sight, you need a 4G/5G module that handles video streaming, remote control and positioning all at once. If your drone runs on a 5G private network and needs top video throughput plus ultra accurate L1+L5 dual frequency positioning, pick the EM9191. If it is just an inspection robot crawling slowly around a factory, the cheap and reliable 4G module EM7565 is more than enough.**
 
 When a drone or robot leaves your line of sight (this is called BVLOS, Beyond Visual Line of Sight), the traditional remote controller in your hands stops working. At that point the machine can only rely on its onboard 4G/5G modem to reach a cell tower, send high resolution video back, and receive your joystick commands.

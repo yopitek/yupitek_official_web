@@ -14,17 +14,17 @@ tags:
   - "Linux-WiFi"
 categories:
   - "Guide Matériel"
-description: "Jetson Nano compatible with most ALFA network cards, limited by older JetPack 4.x kernel. Realtek models (AWUS036ACH) practical, MediaTek MT7612U/MT7610U need backport, Wi-Fi 6E MT7921AUN not avail..."
+description: "Le Jetson Nano est compatible avec la plupart des cartes réseau ALFA, dans les limites du noyau plus ancien de JetPack 4.x : les modèles Realtek (AWUS036ACH) sont pratiques, les MediaTek MT7612U/MT7610U nécessitent un backport et le MT7921AUN (Wi-Fi 6E) n'est pas disponible."
 featureimage: ""
 author: "benny-lai"
-lastmod: 2026-09-03
+lastmod: 2026-11-20
 ---
 
 ## 1. Résumé du problème
 
 Le client demande : « Peut-on utiliser la carte réseau USB ALFA série sur le développement board NVIDIA Jetson Nano ? »
 
-Conclusion rapide : Le Jetson Nano peut utiliser la plupart des cartes réseau ALFA, mais la limitation principale réside dans le fait que le kernel Linux 4.9 de JetPack 4.x est assez ancien (évaluation : 9 modèles de cartes réseau USB ALFA en service, dont 3 sont utilisables, 2 nécessitent une compilation avancée, 2 ne sont pas vérifiés et 2 ne sont pas utilisables). Les modèles de puces Realtek (AWUS036ACH / ACS / EACS) peuvent être directement compilés avec des pilotes out-of-tree, ce qui en fait une option pratique pour le Jetson Nano ; les modèles MediaTek MT7612U / MT7610U nécessitent un backport ou une compilation personnalisée du pilote mt76 ; le modèle MT7921AUN de Wi-Fi 6E (AWUS036AXML / AXM) n'est pas utilisable sur le Jetson Nano en raison de la nécessité d'un kernel 5.19+. Pour des scénarios de tests d'intrusion, le AWUS036ACH (RTL8812AU) est le choix privilégié ; pour des scénarios de navigation générale, le AWUS036ACH (stabilisé) ou le AWUS036ACM (nécessitant une compilation mt76) sont les options préférées.
+Conclusion rapide : Le Jetson Nano peut utiliser la plupart des cartes réseau ALFA, mais la limitation principale réside dans le fait que le kernel Linux 4.9 de JetPack 4.x est assez ancien (évaluation : 9 modèles de cartes réseau USB ALFA en service, dont 3 sont utilisables, 2 nécessitent une compilation avancée, 2 ne sont pas vérifiés et 2 ne sont pas utilisables). Les modèles de puces Realtek (AWUS036ACH / ACS / EACS) peuvent être directement compilés avec des pilotes out-of-tree sur le kernel 4.9 (l'EACS est intégré au kernel depuis 6.2, la compilation ne concerne que les kernels plus anciens), ce qui en fait une option pratique pour le Jetson Nano ; les modèles MediaTek MT7612U / MT7610U nécessitent un backport ou une compilation personnalisée du pilote mt76 ; le modèle MT7921AUN de Wi-Fi 6E (AWUS036AXML / AXM) n'est pas utilisable sur le Jetson Nano en raison de la nécessité d'un kernel 5.18+. Pour des scénarios de tests d'intrusion, le AWUS036ACH (RTL8812AU) est le choix privilégié ; pour des scénarios de navigation générale, le AWUS036ACH (stabilisé) ou le AWUS036ACM (nécessitant une compilation mt76) sont les options préférées.
 
 ## 2. Analyse des spécifications matérielles cibles
 
@@ -62,10 +62,10 @@ Le kernel 4.9 de Jetson Nano est un facteur clé pour la compatibilité :
 |---|---|---|
 | mt76x2u (MT7612U) | 4.19 | ❌ Besoin de backport / compilation personnelle |
 | mt76x0u (MT7610U) | 4.19 | ❌ Besoin de backport / compilation personnelle |
-| mt7921u (MT7921AUN) | 5.19 | ❌ Inutilisable (écart trop grand) |
-| rtl8812au (RTL8812AU) | Jamais entré dans le mainline | ✅ Compilable en out-of-tree driver |
-| rtl8821cu (RTL8811CU) | Jamais entré dans le mainline | ✅ Compilable en out-of-tree driver |
-| rtw89 (RTL8832BU) | 5.16 (PCIe) / USB intégré progressivement | ❌ Besoin de compilation personnelle, compatibilité inconnue |
+| mt7921u (MT7921AUN) | 5.18 | ❌ Inutilisable (écart trop grand) ; sur le GX10 (noyau 6.17), le mode monitor fonctionne mais l'injection échoue (cause principale : régression chanctx de mac80211 depuis le noyau 6.16, plus un verrouillage du débit par le firmware ; ce n'est pas une limite de la puce) |
+| rtl8812au (RTL8812AU) | 6.13 (rtw88_8812au) | ✅ Pas de pilote intégré dans le noyau 4.9, il faut compiler le pilote out-of-tree ; sur le GX10 (noyau 6.17), le pilote intégré a donné 100 % d'injection sur les deux bandes |
+| rtl8821cu (RTL8821CU) | 6.2 (rtw88_8821cu) ; absent du kernel 4.9, d'où le pilote communautaire | ✅ Compilable en out-of-tree driver (nécessaire seulement avec un kernel antérieur à 6.2) |
+| rtw89 (RTL8832BU) | 6.17 (rtw89_8852bu) | ❌ Non intégré dans le noyau 4.9, compilation manuelle requise, compatibilité inconnue ; sur le GX10 (noyau 6.17), le mode monitor fonctionne, injection 2,4 GHz : AX 96 %, AXER 73 % |
 
 ### 2.4 Limitations d'alimentation USB
 
@@ -82,15 +82,15 @@ Au 9 septembre 2026, la gamme de produits de cartes réseau USB sans fil actuels
 
 | Modèle | Niveau Wi-Fi | Puce | Interface |Compatibilité avec Jetson Nano |
 |---|---|---|---|---|
-| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ❌ Besoin de kernel 5.19+, inutilisable |
+| AWUS036AXML | Wi-Fi 6E | MediaTek MT7921AUN | USB-C / USB 3.2 | ❌ Besoin de kernel 5.18+, inutilisable |
 | AWUS036AXM | Wi-Fi 6E | MediaTek MT7921AUN | USB 3.2 + BT 5.2 | ❌ Idem |
 | AWUS036AX | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ Besoin de rtl8852bu personnalisé, non vérifié |
 | AWUS036AXER | Wi-Fi 6 | Realtek RTL8832BU | USB 3.2 | ⚠️ Idem |
-| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ✅ Traduction morrownr/8812au, mature |
-| AWUS036ACHM | Wi-Fi 5 (AC433) | MediaTek MT7610U | USB 2.0 | ⚠️ Besoin de backport mt76x0u |
+| AWUS036ACH | Wi-Fi 5 (AC1200) | Realtek RTL8812AU | USB 3.0 | ✅ Compilation morrownr/8812au, mature |
+| AWUS036ACHM | Wi-Fi 5 (AC600) | MediaTek MT7610U | USB 2.0 | ⚠️ Besoin de backport mt76x0u |
 | AWUS036ACM | Wi-Fi 5 (AC1200) | MediaTek MT7612U | USB 3.0 | ⚠️ Besoin de backport mt76x2u |
-| AWUS036ACS | Wi-Fi 5 (AC433) | Realtek RTL8811AU | USB 2.0 | ✅ Couvert par le pilote 8812au |
-| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8811CU | USB 2.0 | ✅ Traduction morrownr/8821cu |
+| AWUS036ACS | Wi-Fi 5 (AC600) | Realtek RTL8811AU | USB 2.0 | ✅ Couvert par le pilote 8812au |
+| AWUS036EACS | Wi-Fi 5 (AC600) | Realtek RTL8821CU | USB 2.0 | ✅ Compilation morrownr/8821cu |
 
 ## 4. Modèles et SoC applicables
 
@@ -100,12 +100,12 @@ Au 9 septembre 2026, la gamme de produits de cartes réseau USB sans fil actuels
 |---|---|---|
 | ⭐ Fortement recommandé (tests de pénétration) | AWUS036ACH (RTL8812AU) | Pilotes matures, supporte Monitor Mode + Packet Injection, carte réseau ALFA la plus utilisée sur Jetson Nano |
 | ✅ Recommandé (accès Internet) | AWUS036ACH (RTL8812AU) | AC1200, installation de pilotes simple, stable |
-| ✅ Recommandé (faible consommation d'énergie) | AWUS036EACS (RTL8811CU) | AC600 double bande, faible consommation d'énergie USB 2.0, adapté pour un accès Internet simple |
-| ✅ Recommandé (entrée) | AWUS036ACS (RTL8811AU) | AC433 double bande, couvert par les pilotes 8812au |
-| ⚠️ Disponible mais nécessite une traduction manuelle | AWUS036ACM (MT7612U) | Nécessite le backport du pilote mt76 au kernel 4.9, seuil technique élevé |
-| ⚠️ Disponible mais nécessite une traduction manuelle | AWUS036ACHM (MT7610U) | Comme ci-dessus, seulement 433Mbps |
+| ✅ Recommandé (faible consommation d'énergie) | AWUS036EACS (RTL8821CU) | AC600 double bande, faible consommation d'énergie USB 2.0, adapté pour un accès Internet simple |
+| ✅ Recommandé (entrée) | AWUS036ACS (RTL8811AU) | AC600 double bande, couvert par les pilotes 8812au |
+| ⚠️ Disponible mais nécessite une compilation manuelle | AWUS036ACM (MT7612U) | Nécessite le backport du pilote mt76 au kernel 4.9, seuil technique élevé |
+| ⚠️ Disponible mais nécessite une compilation manuelle | AWUS036ACHM (MT7610U) | Comme ci-dessus, seulement 433Mbps |
 | ⚠️ Non vérifié / Déconseillé | AWUS036AX / AXER (RTL8832BU) | Wi-Fi 6, nécessite la compilation de rtl8852bu, compatibilité kernel 4.9 non vérifiée |
-| ❌ Inutilisable | AWUS036AXML / AXM (MT7921AUN) | Wi-Fi 6E, nécessite le kernel 5.19+, Jetson Nano ne peut pas être mis à jour |
+| ❌ Inutilisable | AWUS036AXML / AXM (MT7921AUN) | Wi-Fi 6E, nécessite le kernel 5.18+, Jetson Nano ne peut pas être mis à jour |
 
 ### 4.2 Recommandations d'utilisation
 
@@ -144,17 +144,17 @@ Au 9 septembre 2026, la gamme de produits de cartes réseau USB sans fil actuels
 
 | Modèle | Processeur | Mode de pilotage | Détecteur USB | STA Internet | Mode AP | Moniteur | Difficulté d'installation | Évaluation globale |
 |---|---|---|---|---|---|---|---|---|
-| AWUS036ACH | RTL8812AU | Traduction 8812au | ✅ | ✅ | ✅ | ✅ | Moyen | ⭐ Meilleur |
+| AWUS036ACH | RTL8812AU | Compilation 8812au | ✅ | ✅ | ✅ | ✅ | Moyen | ⭐ Meilleur |
 | AWUS036ACS | RTL8811AU | Couverture 8812au | ✅ | ✅ | ⚠️ | ❌ | Moyen | ✅ Bon |
-| AWUS036EACS | RTL8811CU | Traduction 8821cu | ✅ | ⚠️ | ❌ | ❌ | Moyen | ✅ Bon |
+| AWUS036EACS | RTL8821CU | Compilation 8821cu | ✅ | ⚠️ | ❌ | ❌ | Moyen | ✅ Bon |
 | AWUS036ACM | MT7612U | Backport mt76x2u | ✅ | ✅ | ✅ | ✅ | Élevé | ⚠️ Disponible |
 | AWUS036ACHM | MT7610U | Backport mt76x0u | ✅ | ✅ | ⚠️ | ⚠️ | Élevé | ⚠️ Disponible |
-| AWUS036AX | RTL8832BU | Traduction rtl8852bu | ⚠️ | ❌ | ❌ | ❌ | Élevé | ❌ Non recommandé |
+| AWUS036AX | RTL8832BU | Compilation rtl8852bu | ⚠️ | ❌ | ❌ | ❌ | Élevé | ❌ Non recommandé |
 | AWUS036AXER | RTL8832BU | Comme ci-dessus | ⚠️ | ❌ | ❌ | ❌ | Élevé | ❌ Non recommandé |
-| AWUS036AXML | MT7921AUN | Nécessite kernel 5.19+ | ❌ | ❌ | ❌ | ❌ | — | ❌ Inutilisable |
+| AWUS036AXML | MT7921AUN | Nécessite kernel 5.18+ | ❌ | ❌ | ❌ | ❌ | — | ❌ Inutilisable |
 | AWUS036AXM | MT7921AUN | Comme ci-dessus | ❌ | ❌ | ❌ | ❌ | — | ❌ Inutilisable |
 
-Critère de détermination : Disponibilité des pilotes pour le kernel 4.9 du Jetson Nano JetPack 4.x + retours d'expérience de la communauté (forum Jetson Nano, GitHub morrownr pilotes issue). MT7921AUN est jugé inutilisable car Jetson Nano ne peut pas être mis à jour au kernel 5.19+.
+Critère de détermination : Disponibilité des pilotes pour le kernel 4.9 du Jetson Nano JetPack 4.x + retours d'expérience de la communauté (forum Jetson Nano, GitHub morrownr pilotes issue). MT7921AUN est jugé inutilisable car Jetson Nano ne peut pas être mis à jour au kernel 5.18+.
 
 ## 7. Détails ultra détaillés des étapes de configuration
 
@@ -250,7 +250,7 @@ nmcli dev wifi connect "nom de votre WiFi" password "mot de passe de votre WiFi"
 # Installation de hostapd et dnsmasq
 sudo apt install -y hostapd dnsmasq
 # Référez-vous à la guide ALFA Soft AP pour la configuration
-# https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/
+# /fr/blog/alfa-soft-ap-wifi-hotspot-linux-guide/
 ```
 
 **Étape 9 : Activation du mode écoute (pour les tests d'intrusion)**
@@ -322,8 +322,8 @@ ip link show
 
 ### 7.4 Chemin C : Modèles Wi-Fi 6 / 6E (AWUS036AX / AXER / AXML / AXM)
 
-- AWUS036AXML / AXM (MT7921AUN) : Non disponible. Le kernel 4.9 du Jetson Nano ne peut pas être mis à jour à 5.19+, et le pilote mt7921u ne peut pas être backporté (gap trop grand, dépendances de bases du kernel moderne).
-- AWUS036AX / AXER (RTL8832BU) : Non recommandé. Théoriquement, il est possible d'essayer de compiler le pilote morrownr/rtl8852bu, mais la compatibilité avec le kernel 4.9 n'a pas été vérifiée par la communauté, et les fonctionnalités Wi-Fi 6 peuvent ne pas fonctionner correctement. Si vous avez besoin de Wi-Fi 6, il est recommandé d'utiliser le Jetson Orin Nano (JetPack 5.x, kernel 5.10+) ou un ordinateur x86.
+- AWUS036AXML / AXM (MT7921AUN) : Non disponible. Le kernel 4.9 du Jetson Nano ne peut pas être mis à jour à 5.18+, et le pilote mt7921u ne peut pas être backporté (gap trop grand, dépendances de bases du kernel moderne).
+- AWUS036AX / AXER (RTL8832BU) : Non recommandé sur Jetson Nano. Le noyau 4.9 n'a pas de pilote intégré, il faudrait compiler morrownr/rtl8852bu soi-même, sans validation par la communauté. rtw89_8852bu est dans le mainline depuis le noyau 6.17 ; sur le GX10 (noyau 6.17), le mode monitor fonctionne, injection 2,4 GHz : AX 96 %, AXER 73 %. Pour le Wi-Fi 6, privilégiez une plateforme avec noyau 6.17 ou supérieur.
 
 ## 8. Erreurs Courantes et Solutions
 
@@ -342,9 +342,9 @@ ip link show
 ## 9. Limites connues
 
 - Version du kernel bloquée à 4.9 : le Jetson Nano ne supporte pas JetPack 5.x, il n'est pas possible de mettre à jour le kernel, ce qui est la source de tous les problèmes de compatibilité
-- MT7921AUN (Wi-Fi 6E) complètement inutilisable : nécessite un kernel 5.19+, impossible de backport sur 4.9
+- MT7921AUN (Wi-Fi 6E) complètement inutilisable : nécessite un kernel 5.18+, impossible de backport sur 4.9
 - Chips MediaTek mt76 nécessitent un backport manuel : les utilisateurs d'AWUS036ACM / ACHM doivent compiler eux-mêmes le module du kernel, le seuil technique est élevé
-- ⚠️ **Le pilote Wi-Fi 6 (RTL8832BU) est déconseillé par le responsable du pilote** : le responsable du pilote morrownr a clairement indiqué dans son公告 que les séries rtl8852/32au sont "très mauvais pilotes, soupçonnant que le chip en lui-même a des problèmes", et recommande aux utilisateurs Linux d'éviter ce chip pour le moment (voir la section 10 pour la source). Cela est plus grave que simplement "la compatibilité avec le kernel 4.9 n'a pas été vérifiée", et la détermination de AWUS036AX / AXER dans ce document et d'autres documents pertinents doit être comprise comme "déconseillé" plutôt que "essayable mais plus compliqué"
+- ℹ️ **Wi-Fi 6 (RTL8832BU)** : rtw89_8852bu est dans le mainline depuis le noyau 6.17 ; seuls les anciens noyaux (comme le 4.9 du Jetson Nano) nécessitent le pilote communautaire morrownr/rtl8852bu, non validé sur noyau 4.9. Sur le GX10 (noyau 6.17), le mode monitor fonctionne, injection 2,4 GHz : AX 96 %, AXER 73 %.
 - Limites de alimentation USB : 4 ports USB partagent environ 1.5A (alimentation DC), les cartes réseau à haute puissance doivent utiliser un Hub avec alimentation
 - Performances en mode AP : la performance du CPU du Jetson Nano est limitée, la capacité de transmission du USB WiFi en mode AP peut être inférieure aux attentes
 - Différences de fonctionnalités de surveillance/injection : RTL8812AU supporte le mieux ; les fonctionnalités d'injection des chips MediaTek après le backport du kernel 4.9 peuvent être instables
@@ -361,12 +361,12 @@ Conditions de réfutation : les jugements ci-dessus sont basés sur JetPack 4.6.
 | Page officielle NVIDIA Jetson Nano | Spécifications matérielles du Jetson Nano | https://developer.nvidia.com/embedded/jetson-nano | ✅ Vérifié | 2026-09-03 |
 | Page officielle NVIDIA JetPack SDK | Informations sur les versions JetPack et les kernels | https://developer.nvidia.com/embedded/jetpack | ✅ Vérifié | 2026-09-03 |
 | morrownr/8812au GitHub | Pilotes Linux pour RTL8812AU (compatibles avec Jetson Nano) | https://github.com/morrownr/8812au-20210820 | ✅ Vérifié | 2026-09-03 |
-| morrownr/8821cu GitHub | Pilotes Linux pour RTL8811CU | https://github.com/morrownr/8821cu-20210916 | ✅ Vérifié | 2026-09-03 |
-| ALFA Soft AP WiFi Hotspot Linux Guide（Yopitek） | Guide de configuration en mode AP pour ALFA sous Linux | https://yupitek.com/zh-tw/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Vérifié | 2026-09-03 |
-| ALFA Network Produit Overview（Yopitek） | Spécifications des produits actuels d'ALFA | https://yupitek.com/zh-tw/products/alfa/ | ✅ Vérifié | 2026-09-03 |
-| morrownr/USB-WiFi Issue #314 | Déclaration officielle du mainteneur de pilotes : il est recommandé d'éviter les puces rtl8852/32au（RTL8832BU） | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Vérifié | 2026-09-03 |
+| morrownr/8821cu GitHub | Pilotes Linux pour RTL8821CU | https://github.com/morrownr/8821cu-20210916 | ✅ Vérifié | 2026-09-03 |
+| ALFA Soft AP WiFi Hotspot Linux Guide (Yopitek) | Guide de configuration en mode AP pour ALFA sous Linux | /fr/blog/alfa-soft-ap-wifi-hotspot-linux-guide/ | ✅ Vérifié | 2026-09-03 |
+| ALFA Network Produit Overview (Yopitek) | Spécifications des produits actuels d'ALFA | /fr/products/alfa/ | ✅ Vérifié | 2026-09-03 |
+| morrownr/USB-WiFi Issue #314 | Ancien avis du mainteneur du pilote sur le pilote communautaire rtl8852/32au (RTL8832BU) ; un pilote intégré rtw89_8852bu existe depuis le noyau 6.17 | https://github.com/morrownr/USB-WiFi/issues/314 | ✅ Vérifié | 2026-09-03 |
 | morrownr/USB-WiFi Discussion #292 | mt7921u.ko nécessite un kernel 5.19+ pour apparaître dans le noyau (dépôt original du mainteneur) | https://github.com/morrownr/USB-WiFi/discussions/292 | ✅ Vérifié | 2026-09-03 |
 
-Articles associés : [Est-ce que la carte sans fil ALFA est compatible avec NVIDIA DGX Spark](https://yupitek.com/zh-tw/blog/alfa-nvidia-dgx-spark-compatibility/)（Comparaison avec la plate-forme GB10, environnement kernel 6.x）｜[Est-ce que la carte sans fil ALFA est compatible avec OpenWrt](https://yupitek.com/zh-tw/blog/alfa-openwrt-router-compatibility/)
+Articles associés : [Est-ce que la carte sans fil ALFA est compatible avec NVIDIA DGX Spark](/fr/blog/alfa-nvidia-dgx-spark-compatibility/) (Comparaison avec la plate-forme GB10, environnement kernel 6.x) | [Est-ce que la carte sans fil ALFA est compatible avec OpenWrt](/fr/blog/alfa-openwrt-router-compatibility/)
 
 Déclaration de non-responsabilité : La détermination de la compatibilité de cet article est basée sur Jetson Nano JetPack 4.6.x (kernel 4.9). Les pilotes pour les puces Realtek sont maintenus par la communauté (morrownr), et la stabilité réelle peut varier selon la version. L'opération de backport pour les puces MediaTek mt76 nécessite de l'expérience en compilation du kernel, et il n'est pas garanti à 100% de réussir. Si vous avez besoin de prise en charge Wi-Fi 6/6E ou de kernel moderne, il est recommandé de passer à la série Jetson Orin (JetPack 5.x+) ou d'utiliser un ordinateur x86.

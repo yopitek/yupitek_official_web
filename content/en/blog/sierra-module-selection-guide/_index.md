@@ -22,8 +22,6 @@ faq:
     answer: "You can source the full Sierra Wireless cellular module lineup through Yopitek. Browse the Yopitek product pages for models and pricing, or email sales@yupitek.com directly."
 ---
 
-# Sierra Wireless Cellular Module Buyer's Guide: From LTE Cat 4 to 5G mmWave
-
 {{< alert >}}
 Yopitek provides Sierra Wireless / Semtech product information and technical content; not an official authorized distributor, for technical reference only.
 {{</alert >}}

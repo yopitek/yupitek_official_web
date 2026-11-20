@@ -1,9 +1,9 @@
 ---
 title: "Flipper Zero & Flipper One mit ALFA WiFi Adatern: Kompatibilitätsübersicht"
-description: "Kann Flipper Zero ALFA USB WiFi Adapter für Packet Injection nutzen? Nein — hier ist warum. Flipper One unterstützt den ALFA AWUS036AXML mit vollem Monitor Mode und Injection. Komplette Übersicht mit Chipset-Analyse, Treiber-Kompatibilität und Einrichtungsanleitung."
+description: "Kann Flipper Zero ALFA USB WiFi Adapter für Packet Injection nutzen? Nein — hier ist warum. Flipper One unterstützt den ALFA AWUS036AXML im Monitor Mode (Injection hängt von der Kernel-Version ab). Komplette Übersicht mit Chipset-Analyse, Treiber-Kompatibilität und Einrichtungsanleitung."
 date: 2026-06-10
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -29,7 +29,7 @@ faq:
 {{< /alert >}}
 
 {{< tldr >}}
-Der STM32WB55 des Flipper Zero unterstützt nur den USB-Device-Modus und kann keine ALFA-Netzwerkkarten ansteuern; der Flipper One ist mit einem RK3576 und einem vollständigen Debian Linux ausgestattet und unterstützt AWUS036AXML für dreifrequenziges Monitoring und Packet Injection.
+Der STM32WB55 des Flipper Zero unterstützt nur den USB-Device-Modus und kann keine ALFA-Netzwerkkarten ansteuern; der Flipper One ist mit einem RK3576 und einem vollständigen Debian Linux ausgestattet und unterstützt AWUS036AXML für dreifrequenziges Monitoring (Injection hängt von der Kernel-Version ab).
 {{< /tldr >}}
 
 Wenn du einen Flipper Zero besitzt oder dich entscheidest, einen zu kaufen, und du von ALFA Network's legendären USB WiFi Adatern für Wireless Security Testing gehört hast, hast du dich wahrscheinlich gefragt: **"Kann ich meinen ALFA Adapter an meinen Flipper Zero stecken und anfangen, WPA2 Handshakes mitzulachen?"**
@@ -177,7 +177,7 @@ Nicht alle ALFA Adapter funktionieren gleich gut für Wireless Security Testing.
 | **DKMS Required** | ❌ Nein |
 | **Antenna** | Dual RP-SMA (austauschbar) + Bluetooth 5.2 |
 
-> **Warum es die Beste ist:** Dies ist der Adapter, den Flipper One's Ersteller explizit getestet hat. Der `mt7921u` Treiber ist im Mainline Kernel mit null Vendor Patches. Er unterstützt alle drei WiFi Bänder (2.4/5/6 GHz) und ist damit für Wi-Fi 6E Security Assessments zukunftssicher. Monitor Mode und Packet Injection sind stabil und gut getestet.
+> **Warum es die Beste ist:** Dies ist der Adapter, den Flipper One's Ersteller explizit getestet hat. Der `mt7921u` Treiber ist im Mainline Kernel mit null Vendor Patches. Er unterstützt alle drei WiFi Bänder (2.4/5/6 GHz) und ist damit für Wi-Fi 6E Security Assessments zukunftssicher. Monitor Mode ist stabil und gut getestet. Packet Injection funktioniert laut Community-Berichten auf Kerneln vor 6.16, schlug in unserem Test mit dem Stock-Kernel 6.17 jedoch fehl (aireplay-ng --test: Found 0 APs / No Answer), wegen einer mac80211-chanctx-Regression seit Kernel 6.16 und nicht wegen einer Chip-Einschränkung; gepatchte Treiber ermöglichen Injection, die Firmware sperrt aber weiterhin die Rate (1/6 Mbps). Für Injection verwende stattdessen den AWUS036ACM oder ACH.
 
 ### ⭐⭐⭐⭐⭐ Beste Value: AWUS036ACM (Wi-Fi 5 AC1200)
 
@@ -192,13 +192,13 @@ Nicht alle ALFA Adapter funktionieren gleich gut für Wireless Security Testing.
 
 > **Warum es das beste Preis-Leistungs-Verhältnis hat:** Das MT7612U Chipset ist in der Pentesting Community erprobt. Der `mt76` Treiber ist seit Jahren im Kernel und außergewöhnlich stabil. Monitor Mode und Injection funktionieren einwandfrei ab Kernel 6.5 und darüber. Zum günstigeren Preis als der AXML bietet er das beste Preis-Kapazitäts-Verhältnis für 2.4/5 GHz Testing.
 
-### ⭐⭐⭐⭐ Lightweight Wahl: AWUS036ACHM (Wi-Fi 5 AC433)
+### ⭐⭐⭐⭐ Lightweight Wahl: AWUS036ACHM (Wi-Fi 5 AC600)
 
 | Spec | Detail |
 |------|--------|
 | **Chipset** | MediaTek MT7610U |
 | **Bands** | 2.4 / 5 GHz (Wi-Fi 5) |
-| **Max Speed** | AC433 (theoretisch) |
+| **Max Speed** | AC600 (theoretisch) |
 | **Driver** | `mt76` — in-kernel seit Linux 4.19 |
 | **DKMS Required** | ❌ Nein |
 | **Antenna** | Single High-Gain RP-SMA (austauschbar) |
@@ -218,16 +218,26 @@ Nicht alle ALFA Adapter funktionieren gleich gut für Wireless Security Testing.
 
 > **Warum es eine Alternative ist:** Das RTL8812AU Chipset hat eine lange Geschichte im Pentesting. Es wird auf Flipper One's geplantem Kernel ohne zusätzliche DKMS Module unterstützt. Für ältere Systeme bleibt der aircrack-ng DKMS Treiber verfügbar. Die High-Gain 6 dBi Antennen bieten exzellente Reichweite, wobei die MediaTek-basierten Adapter aufgrund ihres reiferen In-Kernel Treiber Supports generell bevorzugt werden.
 
-### ⚠️ Nicht für Pentesting Empfohlen
+### ⭐⭐ Alternative: AWUS036EACS (Wi-Fi 5 AC1200, RTL8821CU)
 
-Die folgenden ALFA Modelle nutzen Realtek Chipsets mit unreifen oder instabilen Linux Treibern für Monitor Mode und Packet Injection. **Vermeide diese für Flipper One Wireless Security Arbeit:**
+| Spec | Detail |
+|------|--------|
+| **Chipset** | Realtek RTL8821CU |
+| **Bands** | 2.4 / 5 GHz (Wi-Fi 5) |
+| **Driver** | `rtw88_8821cu` — seit Kernel 6.2 im Mainline-Kernel |
+| **DKMS Required** | ❌ Nicht nötig ab Kernel 6.2 / ⚠️ Ältere Kernel brauchen einen Community-Treiber (z. B. morrownr/8821cu) |
+
+> **Hinweis zum Teststand:** Auf dem ASUS GX10 (Kernel 6.17) wurden Monitor Mode und Packet Injection auf 2.4 GHz und 5 GHz erfolgreich getestet. Auf dem Flipper One selbst wurde der Adapter noch nicht getestet.
+
+### ⚠️ Mit Vorsicht verwenden
+
+Die folgenden ALFA Modelle wurden nicht auf dem Flipper One selbst getestet. Auf unserer ASUS GX10 Testplattform (Ubuntu 24.04 ARM64, Kernel 6.17) funktioniert Monitor Mode bei allen, aber die nötigen In-Kernel-Treiber gibt es nur in neueren Kerneln, und die Injection-Ergebnisse hängen vom Chipsatz ab. **Prüfe die Kernel-Version deines Flipper One, bevor du sie für Wireless Security Arbeit einsetzt:**
 
 | Model | Chipset | Problem |
 |-------|---------|-------|
-| AWUS036AX | RTL8832BU | Wi-Fi 6 Chip, Treiber Support noch im Entwicklungsstadium 2026 |
-| AWUS036AXER | RTL8832BU | Dieselben Chipset Probleme wie AWUS036AX |
-| AWUS036ACS | RTL8811AU | Monitor Mode begrenzt, Injection instabil |
-| AWUS036EACS | RTL8811CU | Monitor Mode begrenzt, Injection instabil |
+| AWUS036AX | RTL8832BU | Der Treiber rtw89_8852bu ist seit Kernel 6.17 im Mainline; GX10 Test: Monitor funktioniert, Injection 2,4 GHz 96 %, 5 GHz nutzbar; ältere Kernel brauchen einen Community-Treiber |
+| AWUS036AXER | RTL8832BU | Derselbe RTL8832BU; GX10 Test: Monitor funktioniert, Injection 2,4 GHz 73 %, 5 GHz nutzbar |
+| AWUS036ACS | RTL8811AU | Der Treiber rtw88_8821au ist seit Kernel 6.13 im Mainline; GX10 Test: Monitor funktioniert, Injection 2,4 GHz 100 %, 5 GHz 96 % |
 
 ---
 
@@ -300,6 +310,7 @@ sudo ip link set wlan0 up
 # Injection Fähigkeit testen
 sudo aireplay-ng --test wlan0mon
 # Suche nach: "Injection is working!"
+# Hinweis: AXML/AXM schlagen ab Kernel 6.16 fehl (getestet mit 6.17): Found 0 APs / No Answer. Für Injection ACM/ACH verwenden.
 
 # Basic Scan durchführen
 sudo airodump-ng wlan0mon

@@ -16,26 +16,28 @@ author: "benny-lai"
 lastmod: 2026-07-02
 faq:
   - question: "AWUS036ACS 用什麼晶片？跟 AWUS036ACH 一樣嗎？"
-    answer: "採用 Realtek RTL8811AU 晶片。它不與 RTL8812AU 共用驅動，需要使用社群版 8821au 驅動（morrownr/8821au-20210708），模組名稱為 `8821au`。"
+    answer: "採用 Realtek RTL8811AU 晶片。驅動看核心版本：Linux 核心 6.13 以上（例如 Ubuntu 24.04 HWE / kernel 6.17）已內建 rtw88_8821au 驅動，插上即認、免 DKMS；只有在舊核心（低於 6.13）上，才需要使用社群版 8821au 驅動（morrownr/8821au-20210708，模組名稱 `8821au`）。它不與 RTL8812AU 共用驅動。先用 uname -r 確認核心版本。"
   - question: "AWUS036ACS 支援監聽模式嗎？"
-    answer: "支援，RTL8811AU 完美支援監聽模式與封包注入，是安全研究的經濟實惠選擇。"
+    answer: "支援。RTL8811AU 完美支援監聽模式與封包注入，是安全研究的經濟實惠選擇（我們在 kernel 6.17 內建 rtw88_8821au 驅動下實測注入 2.4GHz 100%、5GHz 96%，並端到端擷取 WPA .22000）。僅限自有或已授權的網路。"
   - question: "在中國安裝 AWUS036ACS 需要翻牆嗎？"
     answer: "不一定。從已驗證的 GitHub 儲存庫（morrownr/8821au-20210708）下載驅動原始碼；若 GitHub 速度較慢，請使用你信任的代理或映像站。編譯工具仍可用國內映像站安裝。"
   - question: "AWUS036ACS 的 USB ID 是多少？"
     answer: "Realtek RTL8811AU 的 USB ID 為 0bda:0811，用 lsusb 可確認。"
   - question: "Kali Linux 安裝 AWUS036ACS 驅動的指令是什麼？"
-    answer: "先安裝編譯工具，複製 8821au 驅動（GitHub 上的 morrownr/8821au-20210708），再執行 `sudo sh install-driver.sh`。apt 套件 realtek-rtl88xxau-dkms 是 RTL8812AU 的驅動，不適用於此網路卡。"
+    answer: "先用 uname -r 確認核心版本。核心 6.13+ 已內建 rtw88_8821au，插上即用、無需安裝驅動；只有舊核心才需先裝編譯工具，複製 8821au 驅動（GitHub 上的 morrownr/8821au-20210708），再執行 `sudo sh install-driver.sh`。apt 套件 realtek-rtl88xxau-dkms 是 RTL8812AU 的驅動，不適用於此網路卡。"
 ---
 
-ALFA AWUS036ACS 搭載 RTL8811AU 晶片，在中國以國內映像站安裝編譯工具，並從 GitHub 儲存庫下載驅動原始碼，即可支援監聽模式與封包注入。
+ALFA AWUS036ACS 搭載 RTL8811AU 晶片，完美支援監聽模式與封包注入。在 Linux 核心 6.13 以上（例如 Ubuntu 24.04 HWE / kernel 6.17）上，核心已內建 rtw88_8821au 驅動，插上即用、免 DKMS；只有在舊核心上，才需在中國以國內映像站安裝編譯工具，並從 GitHub 儲存庫下載驅動原始碼編譯。
 
 {{< tldr >}}
-AWUS036ACS 採用 RTL8811AU 晶片。所有發行版都從 GitHub 儲存庫 morrownr/8821au-20210708 下載原始碼，並用 install-driver.sh 編譯 8821au DKMS 驅動，支援監聽模式與封包注入。
+AWUS036ACS 採用 RTL8811AU 晶片。核心 6.13+（含 Ubuntu 24.04 HWE / kernel 6.17）已內建 rtw88_8821au 驅動，免 DKMS、插上即用，監聽與注入實測可用（2.4GHz 100%、5GHz 96%、端到端 WPA .22000）；只有舊核心才需從 GitHub 儲存庫 morrownr/8821au-20210708 用 install-driver.sh 編譯社群版 8821au DKMS 驅動。
 {{< /tldr >}}
 
-剛拿到這台輕巧的 AWUS036ACS，興沖沖插上去結果 Linux 一點反應都沒有？別擔心，這再正常不過了。雖然它內建的 RTL8811AU 晶片是安全研究的神器，完美支援監聽模式與封包注入，但驅動程式並不在系統核心裡，得靠咱們動手裝一下。
+剛拿到這台輕巧的 AWUS036ACS？好消息：它內建的 RTL8811AU 晶片是安全研究的神器，完美支援監聽模式與封包注入。在 **Linux 核心 6.13 以上**（例如 Ubuntu 24.04 HWE / kernel 6.17）上，核心已內建 rtw88_8821au 驅動，插上即認、免 DKMS；只有在**舊核心**（低於 6.13）上，才需要從 GitHub 下載社群版 8821au 驅動自己編譯。
 
 考慮到大家在國內存取 GitHub 可能會卡卡的，這份指南的驅動原始碼取自已驗證的 GitHub 儲存庫；若速度不佳，請使用你信任的代理或映像站，跟著我一步步把它「馴服」吧！
+
+> **先確認核心版本：** 請先執行 `uname -r`。核心 6.13+（如 Ubuntu 24.04 HWE / kernel 6.17）已內建 rtw88_8821au，插上即用、免 DKMS，監聽與注入實測可用（2.4GHz 100%、5GHz 96%、端到端 WPA .22000）；下面的編譯安裝步驟僅在舊核心（低於 6.13）上才需要。僅限自有或已授權的網路。
 
 ## 開始前的準備
 
@@ -68,7 +70,6 @@ Bus 001 Device 003: ID 0bda:0811 Realtek Semiconductor Corp.
 如果你是熟手已經裝好驅動了，可以直接跳轉到：
 
 - [開啟監聽模式](#enable-monitor-mode)
-- [測試封包注入](#test-packet-injection)
 - [虛擬機 USB 直通避坑指南](#virtual-machine-usb-passthrough)
 
 ---
@@ -99,7 +100,7 @@ sudo apt update
 
 ### 2. 安裝驅動程式
 
-RTL8811AU 沒有核心內建驅動，需要從 GitHub 下載社群版 8821au 驅動來編譯安裝：
+若你的核心低於 6.13（舊核心沒有內建 rtw88_8821au），需要從 GitHub 下載社群版 8821au 驅動來編譯安裝；核心 6.13+ 可跳過本節，插上即用：
 
 ```bash
 sudo apt install -y build-essential dkms bc iw git linux-headers-$(uname -r)
@@ -188,11 +189,11 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main 
 
 ---
 
-## 樹莓派 (Raspberry Pi) 4B / 5
+## 樹莓派 (Raspberry Pi) 4B / 5 {#raspberry-pi-4b--5}
 
 建議直接刷 Kali ARM64 版本，省去很多麻煩。
 
-apt 套件庫沒有適用 RTL8811AU 的驅動，請參考上面的「Ubuntu」章節，從 GitHub 原始碼編譯 8821au 驅動。
+核心 6.13+ 的樹莓派系統已內建 rtw88_8821au，插上即用；若為舊核心，apt 套件庫沒有適用 RTL8811AU 的驅動，請參考上面的「Ubuntu」章節，從 GitHub 原始碼編譯 8821au 驅動。
 
 ---
 

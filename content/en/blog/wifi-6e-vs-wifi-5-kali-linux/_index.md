@@ -3,14 +3,14 @@ title: "WiFi 6E vs WiFi 5: Which ALFA Adapter Should You Choose for Penetration 
 description: "Compare ALFA AWUS036AXML (Wi-Fi 6E) vs AWUS036ACH (Wi-Fi 5) for Kali Linux penetration testing. Covers 6 GHz support, driver maturity, monitor mode, and real-world use cases."
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "What is the difference between Wi-Fi 6E and Wi-Fi 5 for penetration testing?"
     answer: "Wi-Fi 6E adds the 6 GHz band and 1.2 GHz of spectrum, suited for auditing modern enterprise deployments. Wi-Fi 5 has more mature drivers with higher stability on 2.4/5 GHz."
   - question: "Should I choose AWUS036ACH or AWUS036AXML?"
     answer: "For daily penetration testing, choose AWUS036ACH with mature drivers and rich community resources. For auditing 6 GHz Wi-Fi 6E environments, choose AWUS036AXML. Having both is ideal if budget allows."
   - question: "Is AWUS036AXML monitor mode stable on Kali Linux?"
-    answer: "It needs kernel 6.1 or higher with the latest linux-firmware package. Packet injection works but should be validated before formal engagements. Specific kernel and firmware combinations may be unstable."
+    answer: "It needs kernel 6.1 or higher with the latest linux-firmware package. Community reports say packet injection worked on kernels before 6.16, but it failed in our test on stock kernel 6.17 (a mac80211 chanctx regression, not a chipset limitation). If you need injection, use the AWUS036ACH."
   - question: "Do I need a 6 GHz adapter for penetration testing in 2026?"
     answer: "Most testing cases still focus on 2.4/5 GHz. But if the target environment has deployed Wi-Fi 6E access points, a 6 GHz adapter becomes strategically necessary."
   - question: "How do I install the RTL8812AU driver for AWUS036ACH?"
@@ -137,7 +137,7 @@ lsmod | grep mt7921u
 sudo modprobe mt7921u
 ```
 
-However, **monitor mode support** for MT7921AUN is more recent and depends on kernel version and firmware. As of early 2026, monitor mode works on kernel 6.1+ with the latest `linux-firmware` package installed. Packet injection support is functional but has seen occasional inconsistencies on certain kernel/firmware combinations — always test before a live engagement.
+However, **monitor mode support** for MT7921AUN is more recent and depends on kernel version and firmware. As of early 2026, monitor mode works on kernel 6.1+ with the latest `linux-firmware` package installed. Packet injection worked in community reports on kernels before 6.16, but it failed in our test on stock kernel 6.17 (`aireplay-ng --test` showed Found 0 APs / No Answer, so deauth and handshake capture were not possible). The main cause is a mac80211 chanctx regression since kernel 6.16, not a chipset limitation; a patched community driver can make injection work, but the firmware still locks the rate (1/6 Mbps, no HT/VHT injection). Monitor mode, AP, WPA3 and VIF work normally; if you need injection, use the AWUS036ACH.
 
 ```bash
 sudo apt update && sudo apt install linux-firmware
@@ -155,7 +155,7 @@ sudo airmon-ng start wlan0
 | **Frequency Bands** | 2.4 GHz + 5 GHz | 2.4 GHz + 5 GHz + 6 GHz |
 | **Max Throughput** | AC1200 | AX1800 |
 | **Monitor Mode Stability** | ★★★★★ (rock-solid) | ★★★★☆ (kernel 6.1+ required) |
-| **Packet Injection** | ★★★★★ (highly reliable) | ★★★★☆ (functional, test first) |
+| **Packet Injection** | ★★★★★ (highly reliable) | ⚠️ Community reports before kernel 6.16; failed on 6.17 |
 | **Driver Installation** | Manual DKMS (10 min) | Kernel built-in (kernel 5.18+) |
 | **6 GHz Support** | ✗ | ✓ |
 | **Antennas** | 2× RP-SMA | 1× RP-SMA |

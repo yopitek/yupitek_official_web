@@ -16,21 +16,23 @@ series_order: 3
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
 faq:
   - question: "Welchen Chipsatz verwendet der AWUS036ACS? Ist er derselbe wie beim AWUS036ACH?"
-    answer: "Er verwendet den Realtek RTL8811AU-Chipsatz. Er teilt sich nicht den Treiber des RTL8812AU, sondern braucht den Community-Treiber 8821au (morrownr/8821au-20210708), Modulname `8821au`."
+    answer: "Er verwendet den Realtek RTL8811AU-Chipsatz. Die Treiberunterstützung hängt vom Kernel ab: Linux-Kernel 6.13+ (z. B. Ubuntu 24.04 HWE / kernel 6.17) bringt den Treiber rtw88_8821au bereits mit, er funktioniert also ohne DKMS direkt nach dem Einstecken. Nur auf älteren Kerneln (unter 6.13) brauchen Sie den Community-Treiber 8821au (morrownr/8821au-20210708, Modulname `8821au`). Er teilt sich nicht den Treiber des RTL8812AU. Prüfen Sie Ihren Kernel mit uname -r."
   - question: "Unterstützt der AWUS036ACS den Monitor Mode?"
-    answer: "Ja, der RTL8811AU unterstützt den Monitor Mode und Packet Injection einwandfrei und ist eine kostengünstige Wahl für Sicherheitsforschung."
+    answer: "Ja, der RTL8811AU unterstützt den Monitor Mode und Packet Injection einwandfrei und ist eine kostengünstige Wahl für Sicherheitsforschung (wir haben die Injektion mit dem integrierten rtw88_8821au-Treiber auf kernel 6.17 mit 2,4 GHz 100 % und 5 GHz 96 % gemessen, inklusive einer End-to-End-WPA-.22000-Erfassung). Nur in Netzwerken, die Ihnen gehören oder für die Sie eine Genehmigung haben."
   - question: "Muss man in China eine VPN-Verbindung (Great Firewall umgehen) nutzen, um den AWUS036ACS zu installieren?"
     answer: "Nicht unbedingt. Klonen Sie den Treiber aus dem geprüften GitHub-Repository (morrownr/8821au-20210708); falls GitHub langsam ist, nutzen Sie einen vertrauenswürdigen Proxy oder Mirror. Die Build-Tools lassen sich weiterhin über inländische Mirrors installieren."
   - question: "Was ist die USB-ID des AWUS036ACS?"
     answer: "Die USB-ID des Realtek RTL8811AU lautet 0bda:0811, was mit lsusb bestätigt werden kann."
   - question: "Welcher Befehl wird unter Kali Linux zur Installation des Treibers für den AWUS036ACS verwendet?"
-    answer: "Installieren Sie die Build-Tools, klonen Sie den 8821au-Treiber (morrownr/8821au-20210708 von GitHub) und führen Sie `sudo sh install-driver.sh` aus. Das apt-Paket realtek-rtl88xxau-dkms ist der RTL8812AU-Treiber und für diesen Adapter nicht geeignet."
+    answer: "Prüfen Sie zuerst Ihren Kernel mit uname -r. Kernel 6.13+ bringt den Treiber rtw88_8821au bereits mit, er funktioniert direkt nach dem Einstecken ohne Installation. Nur auf älteren Kerneln installieren Sie die Build-Tools, klonen den 8821au-Treiber (morrownr/8821au-20210708 von GitHub) und führen `sudo sh install-driver.sh` aus. Das apt-Paket realtek-rtl88xxau-dkms ist der RTL8812AU-Treiber und für diesen Adapter nicht geeignet."
 ---
 
-Der AWUS036ACS ist ALFAs kompakter Dual-Band-Adapter für Sicherheitsforschung. Sein RTL8811AU-Chip unterstützt den vollen Monitor-Modus und Paket-Injektion unter Kali Linux – aber da der Treiber nicht im Kernel enthalten ist, müssen Sie ihn aus dem Quellcode kompilieren. In China kann GitHub langsam sein, daher installiert diese Anleitung die Build-Tools über inländische Mirrors und klont den Treiber aus dem geprüften GitHub-Repository; falls GitHub langsam ist, nutzen Sie einen vertrauenswürdigen Proxy oder Mirror.
+Der AWUS036ACS ist ALFAs kompakter Dual-Band-Adapter für Sicherheitsforschung. Sein RTL8811AU-Chip unterstützt den vollen Monitor-Modus und Paket-Injektion unter Kali Linux. Unter **Linux-Kernel 6.13+** (z. B. Ubuntu 24.04 HWE / kernel 6.17) bringt der Kernel den Treiber rtw88_8821au bereits mit, er funktioniert also ohne DKMS direkt nach dem Einstecken. Nur auf **älteren Kerneln** (unter 6.13) müssen Sie den Community-Treiber 8821au aus dem Quellcode kompilieren. In China kann GitHub langsam sein, daher installiert diese Anleitung für diesen Fall die Build-Tools über inländische Mirrors und klont den Treiber aus dem geprüften GitHub-Repository; falls GitHub langsam ist, nutzen Sie einen vertrauenswürdigen Proxy oder Mirror.
+
+> **Prüfen Sie zuerst Ihren Kernel:** Führen Sie `uname -r` aus. Kernel 6.13+ (z. B. Ubuntu 24.04 HWE / kernel 6.17) bringt den Treiber rtw88_8821au mit – ohne DKMS, direkt nach dem Einstecken, mit gemessen funktionierendem Monitor-Modus und Injektion (2,4 GHz 100 %, 5 GHz 96 %, End-to-End-WPA-.22000). Die folgenden Kompilier- und Installationsschritte sind nur auf älteren Kerneln (unter 6.13) nötig. Nur in Netzwerken, die Ihnen gehören oder für die Sie eine Genehmigung haben.
 
 {{< tldr >}}
-Der AWUS036ACS verwendet den RTL8811AU-Chipsatz. Auf jeder Distribution wird der DKMS-Treiber 8821au mit install-driver.sh aus dem GitHub-Repository morrownr/8821au-20210708 gebaut. Er unterstützt Monitor-Modus und Paket-Injektion.
+Der AWUS036ACS verwendet den RTL8811AU-Chipsatz. Kernel 6.13+ (einschließlich Ubuntu 24.04 HWE / kernel 6.17) bringt den Treiber rtw88_8821au bereits mit – ohne DKMS, direkt nach dem Einstecken, mit gemessen funktionierendem Monitor-Modus und Injektion (2,4 GHz 100 %, 5 GHz 96 %, End-to-End-WPA-.22000). Nur auf älteren Kerneln bauen Sie den Community-DKMS-Treiber 8821au mit install-driver.sh aus dem GitHub-Repository morrownr/8821au-20210708.
 {{< /tldr >}}
 
 Stellen Sie sicher, dass Sie Folgendes bereit haben:

@@ -59,7 +59,7 @@ EM-Serien-Module unterstützen auch USB 2.0/3.0, daher ist ein M.2-zu-USB-Gehäu
 
 Der MC7455 nutzt die ältere mPCIe-Schnittstelle, daher brauchst du eine mPCIe-zu-USB- oder mPCIe-zu-M.2-Adapterplatine.
 
-> ⚠️ **Stromversorgung ist die größte Falle**: Das Modul zieht 3,135 bis 4,4 V (typischerweise 3,3 V). Ein „Modul nicht erkannt"-Fehler bedeutet meist, dass die USB-Stromversorgung des Raspberry Pi nicht genug Leistung liefert. Der Einschaltstrom kann auf 2,5 A ansteigen, also plane ausreichend Reserven bei deiner Stromquelle ein.
+> ⚠️ **Stromversorgung ist die größte Falle**: Das Modul zieht 3,135 bis 4,4 V (typischerweise 3,3 V). Ein „Modul nicht erkannt“-Fehler bedeutet meist, dass die USB-Stromversorgung des Raspberry Pi nicht genug Leistung liefert. Der Einschaltstrom kann auf 2,5 A ansteigen, also plane ausreichend Reserven bei deiner Stromquelle ein.
 
 ## QMI und MBIM verstehen
 

@@ -52,8 +52,8 @@ AWUS036ACS は、Monitor Mode とパケットインジェクションをサポ�
 |---|---|---|
 | Windows XP–11 | ✅ 対応 | Alfa 公式サイトからドライバーをダウンロード |
 | macOS 10.5–10.14 | ⚠️ 限定対応 | macOS 10.15+ および Apple Silicon は非対応 |
-| Ubuntu | ✅ 対応 | DKMS ドライバーの手動インストールが必要（morrownr/8821au）。カーネル組み込みサポートなし。 |
-| Kali Linux | ✅ 対応 | Monitor Mode + パケットインジェクション対応。morrownr GitHub のコミュニティドライバーを使用。 |
+| Ubuntu | ✅ 対応 | カーネル 6.13 以降は mainline の rtw88_8821au ドライバーを使用でき、インストール不要。それより古いカーネルでは DKMS ドライバー（morrownr/8821au）のインストールが必要。 |
+| Kali Linux | ✅ 対応 | Monitor Mode + パケットインジェクション対応（GX10、Ubuntu 24.04、カーネル 6.17 で実測：2.4 GHz インジェクション 100%、5 GHz 96%）。カーネル 6.13 以降は mainline ドライバー、古いカーネルでは morrownr のコミュニティドライバーを使用。実機の Kali は未検証。 |
 | NetHunter（Android） | ✅ 対応 | OTG USB 接続；RTL8811AU は NetHunter 互換性確認済み |
 
 ## 対応ハードウェア

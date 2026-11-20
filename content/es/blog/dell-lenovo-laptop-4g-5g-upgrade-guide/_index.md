@@ -22,8 +22,6 @@ faq:
     answer: "El módulo tiene 3 conectores RF (Main, GNSS y Aux). Para navegar basta con conectar al menos Main; para velocidad máxima debe conectar Aux; y solo necesitará la antena GNSS si desea usar el posicionamiento GPS."
 ---
 
-# Guía completa para actualizar portátiles Dell / Lenovo con tarjetas 4G/5G: lista de modelos compatibles + guía de instalación
-
 **Resumen en una frase: para actualizar su portátil con una tarjeta 4G, compruebe primero si tiene antenas y ranura, y luego confirme si el BIOS permite la instalación. En cuanto a la elección: en Taiwán o Asia, puede elegir el EM7455 o el EM7430; ambos están fabricados con el mismo chipset MDM9230, son tarjetas Cat 6 con la misma velocidad, y la única diferencia son las bandas admitidas.**
 
 Muchos amigos que tienen un Dell Latitude o un Lenovo ThinkPad quieren instalar una tarjeta 4G en la ranura WWAN reservada del portátil para no tener que buscar Wi-Fi en los viajes. ¡Pero esto no es tan sencillo! Debe confirmar la especificación de la ranura de la placa, comprobar que las antenas estén preparadas y ver si el fabricante ha bloqueado una «lista blanca».

@@ -3,7 +3,7 @@ title: "虚拟机 Kali Linux 抓不到外接网卡？VirtualBox/VMware USB 穿�
 description: "标准化 USB 穿透排障手册：VirtualBox Extension Pack、USB 3.0 (xHCI) 控制器、vboxusers 群组、VMware USB 仲裁服务、lsusb→iwconfig→dmesg 诊断流程与 FAQ。"
 date: 2026-08-31
 author: benny-lai
-lastmod: 2026-08-31
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -17,7 +17,7 @@ faq:
   - question: "设定 USB 过滤器后，主机自己反而不能用网卡了？"
     answer: "这是正常的。穿透给 Guest 后，装置控制权在 Guest 身上，主机端无法同时使用。要用回主机做其他事情时，先在 VM 视窗的 USB 图示把它「退还（release）」回主机。"
   - question: "Guest 内 lsusb 看得到，但没 wlan 介面，该装什么驱动？"
-    answer: "看晶片：AWUS036AXML（MediaTek MT7921AU）核心内建 mt7921u 驱动，Kernel 5.18+ 随插即用；先确认 apt install linux-firmware 已更新。AWUS036ACH（Realtek RTL8812AU）属于核心外挂（out-of-tree）驱动，需安装社群维护的 aircrack-ng/rtl8812au 并用 DKMS 编译（并留意 Secure Boot 的 MOK 签署，请勿关闭 Secure Boot）。"
+    answer: "看晶片：AWUS036AXML（MediaTek MT7921AUN）核心内建 mt7921u 驱动，Kernel 5.18+ 随插即用；先确认 apt install linux-firmware 已更新。AWUS036ACH（Realtek RTL8812AU）属于核心外挂（out-of-tree）驱动，需安装社群维护的 aircrack-ng/rtl8812au 并用 DKMS 编译（并留意 Secure Boot 的 MOK 签署，请勿关闭 Secure Boot）。"
   - question: "为什么选了 USB 3.0 控制器 Guest 反而进不了系统？"
     answer: "少数旧版 Guest 核心对 xHCI 的支援较差。若 Kali 是较旧版本，可先试「关机 → 改回 USB 2.0 (EHCI) Controller → 开机 → 升级核心 → 再改回 USB 3.0」。尽量让 Kali 保持最新版本，xHCI 支援较完整。"
   - question: "网卡在真机上很快，进虚拟机就变慢，是正常的吗？"
@@ -25,7 +25,7 @@ faq:
 ---
 
 > **适用平台**：Windows / Linux / macOS 主机 + Oracle VirtualBox / VMware Workstation 虚拟机（Guest = Kali Linux / Debian / Ubuntu）
-> **引导硬件**：ALFA AWUS036ACH（Realtek RTL8812AU）/ ALFA AWUS036AXML（MediaTek MT7921AU）
+> **引导硬件**：ALFA AWUS036ACH（Realtek RTL8812AU）/ ALFA AWUS036AXML（MediaTek MT7921AUN）
 > **本篇定位**：标准化「USB 穿透（USB Pass-through）」排障诊断手册。macOS 主机的 USB 穿透限制说明见第五章。
 
 ---
@@ -57,14 +57,14 @@ USB 的运作是**单一主控（single host）**架构：一个 USB 装置在�
 以 VirtualBox 为例，穿透流程是这样的：
 
 ```
-实体 USB 网卡（AWUS036ACH / AWUS036AXML）
+实体 USB 网卡 (AWUS036ACH / AWUS036AXML)
        │  插在主机的 USB 实体连接埠
        ▼
-主机作业系统（Host OS）的 USB 主控制器
-       │  Hypervisor（VirtualBox）拦截并重新导向
+主机作业系统 (Host OS) 的 USB 主控制器
+       │  Hypervisor (VirtualBox) 拦截并重新导向
        ▼
-虚拟的 USB 主控制器（模拟的 EHCI / xHCI）
-       │  Guest（Kali）看起来「就像插在自己身上」
+虚拟的 USB 主控制器 (模拟的 EHCI / xHCI)
+       │  Guest (Kali) 看起来"就像插在自己身上"
        ▼
 Kali 的 USB 驱动程式 → 无线网卡驱动 → wlan 介面
 ```
@@ -76,7 +76,7 @@ Kali 的 USB 驱动程式 → 无线网卡驱动 → wlan 介面
 | 层次 | 检查工具 | 症状 | 代表意义 |
 |------|---------|------|---------|
 | **USB 穿透层** | Guest 内 `lsusb` | `lsusb` 完全看不到网卡的 VID:PID | 穿透失败（Extension Pack / 控制器 / 过滤器问题） |
-| **驱动程式层** | Guest 内 `dmesg` | `lsusb` 看得到，但 `dmesg` 有错误（如缺韌体、`Required key not available`） | Guest 内部缺驱动程式或模组载入失败 |
+| **驱动程式层** | Guest 内 `dmesg` | `lsusb` 看得到，但 `dmesg` 有错误（如缺固件、`Required key not available`） | Guest 内部缺驱动程式或模组载入失败 |
 | **无线介面层** | Guest 内 `iwconfig` / `ip link` | `lsusb` 与 `dmesg` 都正常，却没有 `wlan` 介面 | 驱动程式载入了但介面未注册，或模式／设定问题 |
 
 > **判断口诀**：先看 `lsusb` 判断「装置有没有穿透进 Guest」，再看 `ip link` 判断「驱动程式有没有认识它」。**别一开始就怀疑网卡坏了。**
@@ -87,7 +87,7 @@ Kali 的 USB 驱动程式 → 无线网卡驱动 → wlan 介面
 
 ### 2.1 扩充套件（Extension Pack）是非装不可的
 
-VirtualBox 基础套件**只内建 USB 1.1（OHCI）控制器**的模拟，而 USB 1.1 的传输速率完全不夠网卡使用。**USB 2.0（EHCI）与 USB 3.0（xHCI）控制器都要靠 Oracle 官方「扩充套件（Extension Pack）」**才有。
+VirtualBox 基础套件**只内建 USB 1.1（OHCI）控制器**的模拟，而 USB 1.1 的传输速率完全不够网卡使用。**USB 2.0（EHCI）与 USB 3.0（xHCI）控制器都要靠 Oracle 官方「扩充套件（Extension Pack）」**才有。
 
 没有装 Extension Pack 的症状很典型：Guest 设定里选不到 USB 2.0 / USB 3.0 控制器，或一挂载网卡就回报「装置连线到虚拟机失败（error code E_FAIL / VERR_PDM_NO_USB_PORTS）」。
 
@@ -104,8 +104,8 @@ vboxmanage --version
 `Oracle_VM_VirtualBox_Extension_Pack-<版本>.vbox-extpack`，然后：
 
 ```bash
-# 方式一：GUI 安装（VirtualBox 主程式 → 档案 → 工具 → Extension Pack Manager → 安装）
-# 方式二：指令安装
+# 方式一: GUI 安装 (VirtualBox 主程式 → 档案 → 工具 → Extension Pack Manager → 安装)
+# 方式二: 指令安装
 sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-*.vbox-extpack
 
 # 确认已安装
@@ -119,10 +119,10 @@ VBoxManage list extpacks
 在 Linux 主机上，VirtualBox 要存取 USB 装置，**需要使用者属于 `vboxusers` 群组**。很多人安装了扩充套件却还是失败，就是卡在权限。
 
 ```bash
-# 加入群组（以你的使用者名称取代 <user>）
+# 加入群组 (以你的使用者名称取代 <user>)
 sudo usermod -aG vboxusers $USER
 
-# 登出再登入（或重新开机）让群组生效；确认群组已生效
+# 登出再登入 (或重新开机) 让群组生效; 确认群组已生效
 id $USER
 ```
 
@@ -149,7 +149,7 @@ id $USER
 1. **主机端服务**：Linux 主机上请确认 `vmware-usbarbitrator`（USB 仲裁服务）有在跑：
    ```bash
    sudo systemctl status vmware-usbarbitrator
-   # 如果没在跑，启动并设为开机自动执行
+   # 如果没在跑, 启动并设为开机自动执行
    sudo systemctl enable --now vmware-usbarbitrator
    ```
 2. **虚拟机设定**：虚拟机设定 → USB Controller → 勾选 **USB 3.1（或 USB 3.0）**。
@@ -174,9 +174,9 @@ lsusb
 预期看到（依型号）：
 
 ```
-# AWUS036ACH（Realtek RTL8812AU）
+# AWUS036ACH (Realtek RTL8812AU)
 Bus ... ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac 2T2R DB WLAN Adapter
-# 或 AWUS036AXML（MediaTek MT7921AU）
+# 或 AWUS036AXML (MediaTek MT7921AUN)
 Bus ... ID 0e8d:7961 MediaTek Inc. Wireless_Device
 ```
 
@@ -198,7 +198,7 @@ lsusb
 
 ```bash
 iwconfig
-# 或（较新版本）
+# 或 (较新版本)
 iw dev
 ip link
 ```
@@ -220,7 +220,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 | `dmesg` 讯息 | 原因 | 处理方式 |
 |-------------|------|---------|
 | `usb 3-1: new high-speed USB device ...` 之后没有后续 | 装置列举完成，但没有可用的驱动程式 | Guest 内安装对应驱动程式（见 FAQ Q4） |
-| `Direct firmware load failed` / `firmware_loading` | 缺少韌体（firmware）档案 | `apt install firmware-realtek` 后重新载入模组 |
+| `Direct firmware load failed` / `firmware_loading` | 缺少固件（firmware）档案 | `apt install firmware-realtek` 后重新载入模组 |
 | `Required key not available` | Secure Boot 开启，模组未签署 | 透过 MOK 金钥签署（请勿关闭 Secure Boot） |
 | `disagrees about version of symbol` | 驱动版本与核心不符 | 重新以 DKMS 编译安装 |
 
@@ -346,7 +346,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 
 **Q4：Guest 内 `lsusb` 看得到，但没 wlan 介面，该装什么驱动？**
 看晶片：
-- **AWUS036AXML（MediaTek MT7921AU）**：核心内建 `mt7921u` 驱动，Kernel 5.18+ 随插即用；先确认 `apt install linux-firmware` 已更新。
+- **AWUS036AXML（MediaTek MT7921AUN）**：核心内建 `mt7921u` 驱动，Kernel 5.18+ 随插即用；先确认 `apt install linux-firmware` 已更新。
 - **AWUS036ACH（Realtek RTL8812AU）**：属于核心外挂（out-of-tree）驱动，需安装社群维护的 `aircrack-ng/rtl8812au` 并用 DKMS 编译（并留意 Secure Boot 的 MOK 签署，请勿关闭 Secure Boot）。
 
 **Q5：为什么选了 USB 3.0 控制器 Guest 反而进不了系统？**
@@ -366,7 +366,7 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 3. **USB 控制器设为 USB 3.0 (xHCI)**，并用 USB 过滤器让网卡自动挂载。
 4. **Guest 内依 `lsusb → iwconfig / ip link → dmesg` 定位层次**，缺驱动补驱动，别再猜网卡坏了。
 
-**推荐硬体**：ALFA AWUS036AXML（MediaTek MT7921AU）在较新核心的 Kali 上**核心内建驱动、随插即用**，虚拟机穿透后最省心。ALFA AWUS036ACH（Realtek RTL8812AU）同样堪用，但要记得在 Guest 内以 DKMS 编译社群驱动并处理 Secure Boot 签署（可参考本站关于 RTL8812AU DKMS 排障的文章）。两者皆建议在主机端使用有独立供电的 USB 连接埠／Hub，把「掉卡」的变数一次排除。
+**推荐硬体**：ALFA AWUS036AXML（MediaTek MT7921AUN）在较新核心的 Kali 上**核心内建驱动、随插即用**，虚拟机穿透后最省心。ALFA AWUS036ACH（Realtek RTL8812AU）同样堪用，但要记得在 Guest 内以 DKMS 编译社群驱动并处理 Secure Boot 签署（可参考本站关于 RTL8812AU DKMS 排障的文章）。两者皆建议在主机端使用有独立供电的 USB 连接埠／Hub，把「掉卡」的变数一次排除。但注入需视内核版本而定：kernel 6.16 以前的社区反馈中注入可用；在 stock kernel 6.16 以上（实测 6.17）上，AXML 的封包注入测试未通过（`aireplay-ng --test` 显示 Found 0 APs / No Answer），因此无法 deauth 或抓取 handshake。原因是 mac80211 chanctx 回归，并非芯片先天限制；社区 patched 驱动可让注入运作，但固件仍锁定速率（1/6 Mbps，无法注入 HT/VHT）。monitor、AP、WPA3 不受影响。需要注入请改用 AWUS036ACH 或 AWUS036EACS。
 
 **下一步**：把第六章的排障工作表存一份在你的 Kali 虚拟机桌面；每次「抓不到网卡」就先整份跑完，再决定要不要开技术支援单——照表操课，资料治百病。
 
@@ -385,4 +385,4 @@ sudo dmesg | grep -iE "usb|wlan|8812|mt7921|rtl" | tail -30
 | ALFA AWUS036AXML 官方产品页 | https://www.alfa.com.tw/ |
 | Yopitek 技术支援 | https://yupitek.com/ |
 
-> **合法使用声明**：在虚拟机内启用监听模式、封包注入等资安操作，仅限於您拥有或已获得明确授权之网路环境。使用者须自行遵守所在地法律规范，并确保所有测试皆有合法授权依据。
+> **合法使用声明**：在虚拟机内启用监听模式、封包注入等资安操作，仅限于您拥有或已获得明确授权之网路环境。使用者须自行遵守所在地法律规范，并确保所有测试皆有合法授权依据。

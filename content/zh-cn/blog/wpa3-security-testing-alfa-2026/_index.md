@@ -3,7 +3,7 @@ title: "使用 ALFA 无线网卡进行 WPA3 安全测试（2026）"
 description: "使用 ALFA Network 无线网卡进行 WPA3 安全测试的完整指南。涵盖 SAE 握手分析、Dragonblood 漏洞、过渡模式降级攻击、PMF 强制执行以及 WPA3-Enterprise EAP 测试。"
 date: 2026-03-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -68,7 +68,7 @@ WPA3-Enterprise 要求采用 192 位安全模式，使用 GCMP-256 和 HMAC-SHA-
 
 WPA3 测试需要一块具备可靠监控模式、注入支持的网卡，针对 6 GHz WPA3 网络还需三频能力：
 
-- **AWUS036AXML** — Wi-Fi 6E（6 GHz）WPA3 网络的必备之选。搭载 Mediatek MT7921AUN 芯片组。在 Kali Linux（内核 5.18+）上完整支持监控模式和注入。该 ALFA 网卡是唯一覆盖 6 GHz 频段的型号，而该频段上的纯 WPA3 部署日益普遍。
+- **AWUS036AXML** — Wi-Fi 6E（6 GHz）WPA3 网络的必备之选。搭载 Mediatek MT7921AUN 芯片组。在 Kali Linux（内核 5.18+）上监控模式、AP 与 WPA3 可用；数据包注入在 kernel 6.16 以前有社群回报可用，但 stock kernel 6.17 实测未通过（主因是 mac80211 chanctx 回归，并非芯片先天限制），需要注入请改用 AWUS036ACH。该 ALFA 网卡是唯一覆盖 6 GHz 频段的型号，而该频段上的纯 WPA3 部署日益普遍。
 - **AWUS036ACH** — 适用于 2.4/5 GHz WPA3 测试。RTL8812AU 芯片组。与 aircrack-ng 工具链兼容性最佳，在各 Kali Linux 版本中驱动支持最广泛。
 
 ### 启用监控模式
@@ -111,8 +111,8 @@ sudo airodump-ng wlan0mon --band abg | grep -i "SAE\|WPA3"
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w sae_capture wlan0mon
 
 # 在 Wireshark 中分析捕获文件
-# 过滤器：wlan.bssid == aa:bb:cc:dd:ee:ff && wlan.fc.type_subtype == 0x000b
-# （0x000b = 认证帧）
+# 过滤器: wlan.bssid == aa:bb:cc:dd:ee:ff && wlan.fc.type_subtype == 0x000b
+# (0x000b = 认证帧)
 wireshark -r sae_capture-01.cap
 ```
 
@@ -148,13 +148,13 @@ WPA3 过渡模式是当前企业环境中影响最大的 WPA3 漏洞。当 AP �
 ### 测试流程
 
 ```bash
-# 第一步：确认目标处于过渡模式（airodump-ng 中显示 WPA2+WPA3）
+# 第一步: 确认目标处于过渡模式 (airodump-ng 中显示 WPA2+WPA3)
 sudo airodump-ng wlan0mon --band abg | grep "TARGET_SSID"
 
-# 第二步：捕获合法 AP 的 Beacon 帧，记录其信道和配置
+# 第二步: 捕获合法 AP 的 Beacon 帧, 记录其信道和配置
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w transition_recon wlan0mon
 
-# 第三步：使用 hostapd 在同一信道上创建仅支持 WPA2 的流氓 AP
+# 第三步: 使用 hostapd 在同一信道上创建仅支持 WPA2 的流氓 AP
 cat > /tmp/rogue_wpa2.conf << 'EOF'
 interface=wlan1
 driver=nl80211
@@ -169,7 +169,7 @@ EOF
 
 sudo hostapd /tmp/rogue_wpa2.conf &
 
-# 第四步：监控流氓 AP 上的客户端关联
+# 第四步: 监控流氓 AP 上的客户端关联
 sudo airodump-ng -c 6 --bssid ROGUE_BSSID -w downgrade_capture wlan0mon
 ```
 
@@ -211,9 +211,9 @@ sudo apt install hcxtools
 # 使用 hcxdumptool 观察 SAE commit/confirm 帧交换速率限制
 sudo hcxdumptool -i wlan0mon -o dragonblood_test.pcapng --enable_status=3
 
-# 在 Wireshark 中过滤认证帧并观察：
+# 在 Wireshark 中过滤认证帧并观察:
 # wlan.fc.type_subtype == 0x000b
-# 在 commit 帧中查找防堵塞令牌（ACT）响应
+# 在 commit 帧中查找防堵塞令牌 (ACT) 响应
 wireshark -r dragonblood_test.pcapng
 ```
 
@@ -248,11 +248,11 @@ AP 固件版本是补丁状态的重要指标。将发现的 AP 固件版本与�
 # 尝试对通过 WPA3-SAE 关联的测试客户端进行去认证
 sudo aireplay-ng --deauth 10 -a AA:BB:CC:DD:EE:FF -c CC:DD:EE:FF:00:11 wlan0mon
 
-# 正确配置的 WPA3 网络预期结果：
-# - 测试客户端不断开连接（受 PMF 保护的管理帧被丢弃）
+# 正确配置的 WPA3 网络预期结果:
+# - 测试客户端不断开连接 (受 PMF 保护的管理帧被丢弃)
 # - airodump-ng 未显示捕获到握手
 
-# 失败条件（发现项）：
+# 失败条件 (发现项):
 # - 测试客户端断开连接并重新关联
 # - airodump-ng 捕获到新握手
 ```

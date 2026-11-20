@@ -2,7 +2,7 @@
 title: "Vollständige Anleitung: Installation aller Alfa USB-WiFi-Adapter unter Linux in China - Kali, Ubuntu, Raspberry Pi"
 date: 2026-04-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 slug: "alfa-china-install-complete-guide"
 tags: ["alfa", "kali-linux", "ubuntu", "raspberry-pi", "driver", "china", "monitor-mode", "packet-injection", "wireless"]
@@ -19,7 +19,7 @@ faq:
   - question: "Welche Alfa-Netzwerkkarte unterstützt WiFi 6?"
     answer: "Die AWUS036AX und AWUS036AXER verwenden den RTL8832BU-Chipsatz, der WiFi 6 unterstützt, und sind unter Ubuntu 24.04 treiberlos sofort einsatzbereit."
   - question: "Welche Alfa-Netzwerkkarte unterstützt WiFi 6E?"
-    answer: "Die AWUS036AXM und AWUS036AXML verwenden den MT7921AUN-Chipsatz, der WiFi 6E im Tri-Band-Betrieb unterstützt."
+    answer: "Die AWUS036AXML verwendet den MT7921AUN-Chipsatz mit WiFi 6E im Tri-Band-Betrieb; ihr 6-GHz-Betrieb wurde lokal erfolgreich getestet. Der AWUS036AXM unterstützt laut Spezifikation ebenfalls WiFi 6E, doch 6 GHz wurde beim AXM nicht getestet."
   - question: "Was ist bei der Verwendung von Alfa-Netzwerkkarten auf dem Raspberry Pi zu beachten?"
     answer: "Stellen Sie sicher, dass Sie ein aktives USB-Hub zur Stromversorgung verwenden und installieren Sie die Kali ARM64-Version, um optimale Treiberunterstützung zu erhalten."
 ---

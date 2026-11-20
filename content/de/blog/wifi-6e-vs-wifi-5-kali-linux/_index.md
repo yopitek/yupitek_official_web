@@ -3,7 +3,7 @@ title: "WiFi 6E vs WiFi 5: Welchen ALFA-Adapter sollten Sie für Penetration Tes
 description: "Vergleicht ALFA AWUS036AXML (Wi-Fi 6E) mit AWUS036ACH (Wi-Fi 5) für Kali Linux Penetration Testing. Deckt 6-GHz-Unterstützung, Treiberreife, Monitor-Modus und reale Einsatzszenarien ab."
 date: 2026-03-23
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -15,15 +15,13 @@ faq:
   - question: "Welches Modell sollte ich wählen: AWUS036ACH oder AWUS036AXML?"
     answer: "Wählen Sie für alltägliche Penetrationstests den AWUS036ACH, da der Treiber ausgereift ist und die Community-Ressourcen umfangreich sind. Wenn Sie 6-GHz-Wi-Fi-6E-Umgebungen überprüfen müssen, wählen Sie den AWUS036AXML. Wenn die Bedingungen es erlauben, wird empfohlen, beide Modelle vorzuhalten."
   - question: "Ist der Monitor Mode des AWUS036AXML unter Kali Linux stabil?"
-    answer: "Es wird ein Kernel 6.1 oder höher sowie die Installation des neuesten linux-firmware-Pakets benötigt. Packet Injection ist verfügbar, wird jedoch vor einer offiziellen externen Überprüfung empfohlen, da bestimmte Kernel- und Firmware-Kombinationen instabil sein können."
+    answer: "Es wird ein Kernel 6.1 oder höher sowie die Installation des neuesten linux-firmware-Pakets benötigt. Für Packet Injection gibt es Community-Berichte vor Kernel 6.16, im Test mit dem Stock-Kernel 6.17 schlug sie jedoch fehl (mac80211-chanctx-Regression, keine Chip-Einschränkung). Wer Injection braucht, wählt den AWUS036ACH."
   - question: "Sind 6-GHz-Netzwerkkarten für Penetrationstests im Jahr 2026 erforderlich?"
     answer: "Die meisten Testfälle konzentrieren sich weiterhin auf 2,4/5 GHz. Wenn die Zielumgebung jedoch bereits Wi-Fi 6E-Zugangspunkte bereitgestellt hat, wird eine 6-GHz-Netzwerkkarte zu einer strategischen Notwendigkeit."
   - question: "Wie installiert man den Treiber für RTL8812AU des AWUS036ACH?"
     answer: "Kopieren Sie das rtl8812au-Repository von aircrack-ng GitHub und führen Sie make dkms_install aus, um es zu installieren. DKMS stellt sicher, dass der Treiber nach einem Kernel-Update automatisch neu erstellt wird."
 ---
 Beantworten Sie diese Fragen in Reihenfolge, um sofort Ihre Antwort zu finden:
-
-# WiFi 6E vs WiFi 5: Welchen ALFA-Adapter sollten Sie für Penetration Testing wählen?
 
 {{< tldr >}}
 Der Treiber für AWUS036ACH ist ausgereift und bietet die höchste Stabilität, was ihn zur ersten Wahl für alltägliche Penetrationstests macht. Der AWUS036AXML unterstützt das 6-GHz-Band und eignet sich zur Überprüfung von Wi-Fi 6E-Umgebungen, wobei der Treiber jedoch noch kontinuierlich verbessert wird.

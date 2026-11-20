@@ -1,7 +1,8 @@
 ---
 title: "ALFA AWUS036EACS — Adaptateur USB Nano AC600 + Bluetooth 4.2"
-description: "ALFA AWUS036EACS, Realtek RTL8821CU, AC600 double bande, format Nano USB 2.0, Bluetooth 4.2, conçu pour les utilisateurs Windows à domicile. Non recommandé pour Linux ou la recherche en sécurité."
+description: "ALFA AWUS036EACS, Realtek RTL8821CU, AC600 double bande, format Nano USB 2.0, Bluetooth 4.2. Pilote mainline rtw88_8821cu depuis le noyau 6.2 ; sur GX10, mode moniteur et injection validés sur les deux bandes."
 date: 2026-03-12
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -11,9 +12,9 @@ tags: ["Wi-Fi 5", "AC600", "USB 2.0", "Nano", "Bluetooth 4.2", "Windows", "Home"
 
 ## Présentation du Produit
 
-L'AWUS036EACS est l'adaptateur combo WiFi + Bluetooth ultra-compact d'Alfa, conçu pour les utilisateurs à domicile et en bureau souhaitant une connectivité sans fil et Bluetooth dans une seule clé USB discrète. Construit autour du chipset Realtek RTL8821CU, il intègre le WiFi AC600 double bande et le Bluetooth 4.2 dans un format nano avec support de pilote intégré sous Windows. Son mode AP logiciel permet de partager votre connexion internet. Cet adaptateur privilégie la simplicité et la compacité aux performances — il n'est PAS recommandé pour les utilisateurs Linux avancés, Kali Linux, ou la recherche en sécurité.
+L'AWUS036EACS est l'adaptateur combo WiFi + Bluetooth ultra-compact d'Alfa, conçu pour les utilisateurs à domicile et en bureau souhaitant une connectivité sans fil et Bluetooth dans une seule clé USB discrète. Construit autour du chipset Realtek RTL8821CU, il intègre le WiFi AC600 double bande et le Bluetooth 4.2 dans un format nano avec support de pilote intégré sous Windows. Son mode AP logiciel permet de partager votre connexion internet. Sous Linux, le pilote mainline rtw88_8821cu est inclus depuis le noyau 6.2. Lors des tests sur GX10 (Ubuntu 24.04, noyau 6.17), le mode moniteur et l'injection de paquets ont atteint 100 % en 2,4 GHz comme en 5 GHz, une capture de handshake WPA de bout en bout a réussi, et le Bluetooth et le Wi-Fi ont fonctionné simultanément.
 
-> ⚠️ **Remarque :** L'AWUS036EACS est conçu pour une utilisation domestique sous Windows. Le RTL8821CU dispose d'un faible support communautaire de pilote Linux. NON recommandé pour Linux, Kali Linux, ou Raspberry Pi. Pas de port RP-SMA — l'antenne n'est pas améliorable.
+> ⚠️ **Remarque :** L'AWUS036EACS est conçu pour une utilisation domestique sous Windows, mais il fonctionne aussi sous Linux avec le pilote mainline rtw88_8821cu (noyau 6.2+). Pas de port RP-SMA — l'antenne n'est pas améliorable.
 
 ## Caractéristiques du Produit
 
@@ -51,15 +52,15 @@ L'AWUS036EACS est l'adaptateur combo WiFi + Bluetooth ultra-compact d'Alfa, con�
 |----|--------|-------|
 | Windows XP–10 | ✅ Pris en charge | Pilote intégré ; plug and play. Consulter la page pilote Alfa pour la compatibilité Windows 11. |
 | macOS | ⚠️ Limité | Plage de versions exacte à confirmer. Aucun support Apple Silicon. |
-| Ubuntu / Linux | ⚠️ Médiocre | Le RTL8821CU dispose d'un faible support communautaire de pilote. Non recommandé. |
-| Kali Linux | ❌ Non recommandé | Mode moniteur et injection de paquets non fiablement pris en charge. |
+| Ubuntu / Linux | ✅ Noyau 6.2+ | Pilote mainline rtw88_8821cu, aucune installation requise (testé sur GX10, Ubuntu 24.04, noyau 6.17). |
+| Kali Linux | ✅ Pris en charge | Mode moniteur et injection de paquets vérifiés sur GX10 (Ubuntu 24.04, noyau 6.17) : 100 % sur les deux bandes, capture de handshake WPA de bout en bout réussie. Non testé sur un vrai Kali. |
 | NetHunter (Android) | ❌ Non recommandé | RTL8821CU non confirmé fonctionnel avec NetHunter. |
 
 ## Compatibilité Matérielle
 
 | Matériel | Statut | Notes |
 |----------|--------|-------|
-| Raspberry Pi | ❌ Non recommandé | Problèmes de pilote RTL8821CU sur Pi OS. |
+| Raspberry Pi | ⚠️ Non testé | Non testé par nos soins ; le noyau 6.2+ inclut le pilote mainline rtw88_8821cu. |
 | PC Bureau / Laptop | ✅ Pris en charge | Windows uniquement recommandé. |
 | Embarqué / IoT (Windows) | ⚠️ Windows uniquement | Le design compact convient aux systèmes Windows embarqués. |
 
@@ -67,11 +68,11 @@ L'AWUS036EACS est l'adaptateur combo WiFi + Bluetooth ultra-compact d'Alfa, con�
 
 | Fonctionnalité | Statut |
 |---------|--------|
-| Mode Moniteur | ❌ Non fiablement pris en charge |
-| Injection de Paquets | ❌ Non fiablement pris en charge |
+| Mode Moniteur | ✅ Oui (test GX10 : 100 % sur les deux bandes) |
+| Injection de Paquets | ✅ Oui (test GX10 : 100 % sur les deux bandes) |
 | Mode AP Logiciel | ✅ Oui |
-| Bluetooth | ✅ BT 4.2 |
-| VIF | ❌ Non |
+| Bluetooth | ✅ BT 4.2 (utilisable en même temps que le Wi-Fi) |
+| VIF | 🟡 Partielle (monitor passif + managed sur le même canal ; pas de double VIF indépendante) |
 
 ## Contenu de la Boîte
 

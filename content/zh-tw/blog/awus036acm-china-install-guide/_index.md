@@ -399,7 +399,7 @@ lsblk
 找到你的卡（例如 `sdb` 或 `mmcblk0`），然後寫入：
 
 ```bash
-# 把 /dev/sdX 換成你實際的 SD 卡路徑（用 lsblk 確認）
+# 把 /dev/sdX 換成你實際的 SD 卡路徑 (用 lsblk 確認)
 sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=progress conv=fsync
 sync
 ```

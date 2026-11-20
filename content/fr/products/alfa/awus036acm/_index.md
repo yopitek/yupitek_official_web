@@ -64,7 +64,7 @@ L'AWUS036ACM est le premier choix pour les utilisateurs Linux souhaitant une con
 |----|--------|-------|
 | Windows XP–11 | ✅ Pris en charge | Pilote disponible sur le site Alfa. Windows 10/11 recommandé. |
 | macOS 10.7–10.12 | ⚠️ Limité | Le support officiel s'arrête à macOS 10.12 Sierra. macOS 11+ et Apple Silicon NON pris en charge. |
-| Ubuntu 19.04+ | ✅ Plug & Play | Pilote mt76 intégré au noyau (noyau ≥ 4.19). Zéro installation sur Ubuntu 20.04 LTS et versions ultérieures. |
+| Ubuntu 19.04+ | ✅ Plug & Play | Pilote mt76x2u intégré au noyau (noyau ≥ 4.19). Zéro installation sur Ubuntu 20.04 LTS et versions ultérieures. |
 | Kali Linux 2019.3+ | ✅ Plug & Play | Pilote intégré au noyau. Mode moniteur confirmé. VIF (Interface Virtuelle) pris en charge. Le mode AP sur 5 GHz peut nécessiter le paramètre de module `disable_usb_sg`. |
 | NetHunter (Android) | ✅ Pris en charge | USB OTG ; le pilote intégré au noyau offre une compatibilité Android plus large que les adaptateurs RTL. |
 
@@ -99,7 +99,7 @@ L'AWUS036ACM est le premier choix pour les utilisateurs Linux souhaitant une con
 |----------|------|
 | Page Produit Officielle | https://www.alfa.com.tw/products/awus036acm_1 |
 | Documentation Officielle | https://docs.alfa.com.tw/Product/AWUS036ACM/ |
-| Info Pilote Linux (intégré au noyau) | Pilote mt76 — inclus dans le noyau Linux ≥ 4.19, aucune installation nécessaire |
+| Info Pilote Linux (intégré au noyau) | Pilote mt76x2u — inclus dans le noyau Linux ≥ 4.19, aucune installation nécessaire |
 
 ## Téléchargement Fiche Technique
 

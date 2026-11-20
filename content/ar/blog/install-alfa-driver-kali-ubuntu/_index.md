@@ -69,7 +69,7 @@ faq:
 |---|---|---|---|
 | [AWUS036ACH](/ar/products/alfa/awus036ach/) | RTL8812AU | 0bda:8812 | aircrack-ng/rtl8812au |
 | [AWUS036ACM](/ar/products/alfa/awus036acm/) | MT7612U | 0e8d:7612 | mt76x2u (في النواة) |
-| [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.14) |
+| [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | 0e8d:885a | OOK driver (<6.17) |
 | [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AUN | 0e8d:7961 | mt7921u (نواة 5.18+) |
 
 ### التعرف على محولك بـ lsusb
@@ -397,7 +397,7 @@ dkms status
 |---|---|---|---|
 | [AWUS036ACH](/ar/products/alfa/awus036ach/) | RTL8812AU | `aircrack-ng/rtl8812au` | `morrownr/8812au-20210708` |
 | [AWUS036ACM](/ar/products/alfa/awus036acm/) | MT7612U | مدمج (`mt76x2u`) | مدمج (`mt76x2u`) |
-| [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.14) | OOK (<6.14) |
+| [AWUS036AX](/ar/products/alfa/awus036ax/) | RTL8832BU | OOK (<6.17) | OOK (<6.17) |
 | [AWUS036AXML](/ar/products/alfa/awus036axml/) | MT7921AUN | مدمج (`mt7921u`، نواة 5.18+) | مدمج (`mt7921u`، نواة 6.8) |
 
 ---

@@ -8,12 +8,12 @@ showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "penetration-testing", "kali-linux"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "L'AWUS036ACH ou l'AWUS036AXML, lequel choisir pour le pentesting quotidien ?"
     answer: "L'AWUS036ACH pour le pentesting quotidien : pilote RTL8812AU mature, stabilité maximale. L'AWUS036AXML pour auditer les environnements Wi-Fi 6E sur 6 GHz, mais le pilote est encore en développement."
   - question: "L'AWUS036AXML supporte-t-il l'injection de paquets ?"
-    answer: "Oui, avec un taux de réussite supérieur à 90%, mais le mode moniteur actif a des limitations connues du pilote mt7921u. Utilisez de préférence le mode moniteur passif."
+    answer: "Pas sur le noyau stock 6.17. Des retours de la communauté indiquent qu'elle fonctionnait avant le noyau 6.16, mais elle a échoué lors de nos tests sur le noyau stock 6.17 (régression mac80211 chanctx, pas une limite de la puce). Pour l'injection, utilisez l'AWUS036ACH ; le mode moniteur passif reste recommandé avec l'AWUS036AXML."
   - question: "Quelle version de noyau Linux est nécessaire pour l'AWUS036AXML ?"
     answer: "Le pilote mt7921u est intégré depuis Linux 5.18. Pour une stabilité optimale, utilisez le noyau 6.6 ou plus récent avec firmware-misc-nonfree à jour."
   - question: "L'AWUS036ACH supporte-t-il le 6 GHz ?"
@@ -28,8 +28,6 @@ L'AWUS036ACH offre un pilote mature et la stabilité maximale pour le pentesting
 
 Répondez à ces questions dans l'ordre pour trouver votre réponse immédiatement :
 
-
-# WiFi 6E vs WiFi 5 : Quel adaptateur ALFA choisir pour le test de pénétration ?
 
 Voici la vraie question : pour votre environnement de test spécifique en 2026, l'ajout de la capacité 6 GHz justifie-t-il la complexité supplémentaire ? Cet article vous fournit un cadre de décision, pas une fiche technique.
 

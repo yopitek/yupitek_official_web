@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "ペネトレーションテストに最も適したRaspberry Piはどれですか？"
     answer: "Raspberry Pi 5（4GBまたは8GB）が最適です。Pi 4（4GB以上）でも正常に動作します。Pi 3B+はリアルタイムパケットキャプチャには速度が不足しています。"
@@ -63,7 +63,7 @@ Kali Linux は [https://www.kali.org/get-kali/#kali-arm](https://www.kali.org/ge
 Raspberry Pi Imager GUI ツールまたはコマンドラインの `dd` で書き込めます：
 
 ```bash
-# /dev/sdX を実際の SD カードデバイスに置き換える（lsblk で確認）
+# /dev/sdX を実際の SD カードデバイスに置き換える (lsblk で確認)
 sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=progress conv=fsync
 sync
 ```
@@ -165,7 +165,7 @@ sudo modprobe mt7921u
 ip link show
 ```
 
-`lsusb` に MediaTek デバイスが表示され、`ip link show` に新しいワイヤレスインターフェースが一覧表示されれば、アダプターは使用準備完了です。MT7921AUN のモニターモードサポートはカーネル 5.18 以降大幅に改善されましたが、一部のパケットインジェクションテストでは RTL8812AU ベースのアダプターほど安定しない場合があります。旧来のペネトレーションテストワークフローとの最大互換性には、AWUS036ACH が依然として優れた選択肢です。
+`lsusb` に MediaTek デバイスが表示され、`ip link show` に新しいワイヤレスインターフェースが一覧表示されれば、アダプターは使用準備完了です。MT7921AUN のモニターモードサポートはカーネル 5.18 以降大幅に改善されましたが、一部のパケットインジェクションテストでは RTL8812AU ベースのアダプターほど安定しない場合があります。旧来のペネトレーションテストワークフローとの最大互換性には、AWUS036ACH が依然として優れた選択肢です。ただしインジェクションはカーネルバージョンに依存します。kernel 6.16 以前ではインジェクションが動作するというコミュニティ報告がありますが、stock kernel 6.16 以降（6.17 で実測）では AXML のパケットインジェクションテストは失敗し（`aireplay-ng --test` は Found 0 APs / No Answer）、deauth やハンドシェイク取得はできません。原因は mac80211 chanctx のリグレッションでチップ固有の制限ではなく、コミュニティの patched ドライバーでインジェクションは動作しますが、ファームウェアがレートを固定しており（1/6 Mbps、HT/VHT のインジェクション不可）。モニターモード、AP、WPA3 には影響しません。インジェクションが必要な場合は AWUS036ACH または AWUS036EACS をお選びください。
 
 ---
 
@@ -174,7 +174,7 @@ ip link show
 Raspberry Pi には内蔵 WiFi インターフェース（`wlan0`）があります。SSH アクセスを維持するためにネットワークに接続したままにしてください。ALFA アダプター（`wlan1`）はモニターモードとパケットキャプチャ専用にします。ヘッドレス Pi では `wlan0` を絶対にモニターモードにしないでください——SSH 接続が切断されます。
 
 ```bash
-# モニターモードと競合するプロセスを停止（NetworkManager、wpa_supplicant）
+# モニターモードと競合するプロセスを停止 (NetworkManager, wpa_supplicant)
 sudo airmon-ng check kill
 
 # ALFA アダプターインターフェースでモニターモードを有効化

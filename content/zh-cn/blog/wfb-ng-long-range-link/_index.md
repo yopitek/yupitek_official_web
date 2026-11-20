@@ -18,7 +18,7 @@ faq:
   - question: "wfb-ng 一定要用 ALFA AWUS036ACH 吗？"
     answer: "任何 RTL8812AU 芯片网卡理论上都可用，但 AWUS036ACH 是 wfb-ng 专案官方实测的硬件，驱动支持最稳定。尤其在高功率、长距离场景下，ALFA 的功率设计与可拆式天线优势明显。"
 ---
-> 作者：榆合科技 Yopitek（ALFA Network 台湾授权代理商）技术团队
+> 作者：榆閤科技 Yopitek（ALFA Network 台湾授权代理商）技术团队
 > 适用对象：无人机同好、Maker、资安研究员、农喷／巡检机开发者
 > 难度：★★★☆☆（需基本 Linux 与飞控概念）
 
@@ -194,7 +194,7 @@ wfb-ng 官方提供预先打包好的 Raspberry Pi 映像档，机载端与地�
 到 wfb-ng 的 GitHub **Releases** 页面，下载最新的 `*.img.gz`，解压后烧录到**两张** SD 卡（机载、地面站各一张）。
 
 ```bash
-# 解压映像档（范例，档名依实际 Release 为准）
+# 解压映像档 (范例, 档名依实际 Release 为准)
 gunzip wfb-ng-*.img.gz
 # 用 Raspberry Pi Imager 或 dd / balenaEtcher 烧录到 SD 卡
 ```
@@ -205,7 +205,7 @@ gunzip wfb-ng-*.img.gz
 
 ```bash
 ssh pi@192.168.0.111
-# 密码：raspberry
+# 密码: raspberry
 ```
 
 **3. 启用地面站（Ground Station）服务**
@@ -255,10 +255,10 @@ sudo ./dkms-install.sh
 **2. 确认网卡已被 wfb-ng 驱动接管**
 
 ```bash
-# 应看到 wlan0，且 MTU 为 2312
+# 应看到 wlan0, 且 MTU 为 2312
 ifconfig
 
-# 驱动名称应显示 rtl88xxau_wfb（RTL8812AU）或 rtl8812eu（RTL8812EU）
+# 驱动名称应显示 rtl88xxau_wfb (RTL8812AU) 或 rtl8812eu (RTL8812EU)
 ethtool -i wlan0
 ```
 
@@ -286,15 +286,15 @@ wfb-cli gs
 wfb-ng 的影像与遥测是加密的，机载端与地面站端必须用**对应的密钥**才能通讯。
 
 ```bash
-# 产生密钥（在机载端产生，再分发）
+# 产生密钥 (在机载端产生, 再分发)
 wfb_keygen
 
 # drone.key 放到机载端
 # gs.key    放到地面站端
-# 两端必须对应，否则无法解密、链路显示「已连线但无数据」
+# 两端必须对应, 否则无法解密, 链路显示"已连线但无数据"
 ```
 
-> 如果你是用 **B 段的自動安装脚本（install_gs.sh）**，脚本会自动产生并配置密钥，省去手动配对步骤。手动安装则请务必确认 `drone.key` 与 `gs.key` 是同一组。
+> 如果你是用 **B 段的自动安装脚本（install_gs.sh）**，脚本会自动产生并配置密钥，省去手动配对步骤。手动安装则请务必确认 `drone.key` 与 `gs.key` 是同一组。
 
 ---
 
@@ -304,25 +304,25 @@ wfb_keygen
 
 ```ini
 [common]
-# 频道 165 = 5825 MHz（5.8GHz 频段）
+# 频道 165 = 5825 MHz (5.8GHz 频段)
 wifi_channel = 165
 
-# 国码设为 'BO'（玻利维亚）可解锁最大发射功率
+# 国码设为 'BO'(玻利维亚) 可解锁最大发射功率
 wifi_region = 'BO'
 
 [drone]
-# 机载端与地面站的 link_domain 必须「完全一致」
+# 机载端与地面站的 link_domain 必须"完全一致"
 link_domain = "my_wfb_link_01"
 
 [drone_mavlink]
-# 从飞控 UART 接收 MAVLink（需飞控端 UART 设为 1500000 baud）
+# 从飞控 UART 接收 MAVLink (需飞控端 UART 设为 1500000 baud)
 peer = 'serial:ttyS0:1500000'
 
 [drone_video]
 peer = 'listen://0.0.0.0:5602'
 
 [gs]
-# 同上，两端一致
+# 同上, 两端一致
 link_domain = "my_wfb_link_01"
 ```
 
@@ -364,7 +364,7 @@ AWUS036ACH 在**发射（TX）时瞬间耗电很大**。如果直接插在 Raspb
 排错指令：
 
 ```bash
-# 看地面站服务的即时日志，找加密 / 连线相关错误
+# 看地面站服务的即时日志, 找加密 / 连线相关错误
 journalctl -xu wifibroadcast@gs
 ```
 
@@ -431,4 +431,4 @@ journalctl -xu wifibroadcast@gs
 
 ---
 
-*本文由榆合科技 Yopitek（ALFA Network 台湾授权代理商）技术团队撰写，基于 wfb-ng 官方文件与实作经验整理。实作前请务必确认所在地区无线电法规，并依规范调整发射功率与频段。*
+*本文由榆閤科技 Yopitek（ALFA Network 台湾授权代理商）技术团队撰写，基于 wfb-ng 官方文件与实作经验整理。实作前请务必确认所在地区无线电法规，并依规范调整发射功率与频段。*

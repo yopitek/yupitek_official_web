@@ -3,7 +3,7 @@ title: "HAK5 WiFi Pineapple Mark VII + ALFA AWUS036ACM: Komplette 5GHz Setup-Anl
 description: "Vollständiger Kompatibilitätsleitfaden für HAK5 WiFi Pineapple MK7 mit ALFA AWUS036ACM (MT7612U) — Plug-and-Play 5GHz Monitor Mode, Packet Injection und PineAP-Erweiterung. Schritt-für-Schritt-Anleitung mit verifizierten Befehlen. Keine Treiber-Kompilierung erforderlich."
 date: 2026-06-10
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 draft: false
 showBreadcrumbs: true
 showTableOfContents: true
@@ -19,7 +19,7 @@ faq:
   - question: "Wie aktiviere ich den Monitor Mode auf dem MK7?"
     answer: "Melden Sie sich per SSH an und führen Sie den Befehl airmon-ng start wlan3 aus. Die Schnittstelle wird dann in wlan3mon umbenannt. Überprüfen Sie den Modus anschließend mit iwconfig."
   - question: "Welche ALFA-Netzwerkkarten sind nicht mit dem MK7 kompatibel?"
-    answer: "AWUS036AX und AWUS036AXER verwenden den RTL8832BU-Chip, AWUS036EACS verwendet den RTL8811CU-Chip; die Treiber unterstützen weder Monitor Mode noch Packet Injection und sind daher nicht kompatibel."
+    answer: "AWUS036AX und AWUS036AXER verwenden den RTL8832BU-Chip; der Treiber rtw89_8852bu ist seit Kernel 6.17 integriert, und auf dem GX10 (Kernel 6.17) funktionieren Monitor Mode und Injection, auf dem Mark7 wurden sie jedoch nicht getestet. Der AWUS036EACS (RTL8821CU) nutzt den Treiber rtw88_8821cu, der seit Kernel 6.2 im Mainline-Kernel enthalten ist; auf dem GX10 (Kernel 6.17) funktionieren Monitor Mode und Injection. Ob die Kernel- und Treiberbasis der MK7-Firmware dieses Modul enthält, wurde auf dem MK7 jedoch nicht getestet, daher steht er nicht auf der Liste verifizierter kompatibler Adapter."
 ---
 
 Der HAK5 WiFi Pineapple Mark VII ist der Goldstandard für portable Wireless-Security-Audits. Allerdings hat er eine entscheidende Einschränkung: Das eingebaute Funkmodul arbeitet ausschließlich auf **2,4 GHz**. Im Jahr 2026 sind die meisten Unternehmens- und Heimnetzwerke auf 5 GHz umgestiegen.

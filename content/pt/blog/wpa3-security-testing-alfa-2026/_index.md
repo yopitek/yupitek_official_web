@@ -8,7 +8,7 @@ showTableOfContents: true
 tags: ["WPA3", "SAE", "dragonblood", "transition-mode", "PMF", "kali-linux", "ALFA-network", "penetration-testing"]
 featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 
 faq:
   - question: "Qual a diferenca entre WPA3 e WPA2 em testes de segurança?"
@@ -65,7 +65,7 @@ O WPA3-Enterprise exige um modo de segurança de 192 bits usando GCMP-256 e HMAC
 
 Os testes WPA3 exigem um adaptador com modo monitor confiável, suporte a injeção e — para redes WPA3 em 6 GHz — capacidade tribanda:
 
-- **AWUS036AXML** — Necessário para redes WPA3 Wi-Fi 6E (6 GHz). Chipset Mediatek MT7921AUN. Suporte completo a modo monitor e injeção no Kali Linux com kernel 5.18+.
+- **AWUS036AXML** — Necessário para redes WPA3 Wi-Fi 6E (6 GHz). Chipset Mediatek MT7921AUN. Modo monitor, AP e WPA3 funcionam no Kali Linux com kernel 5.18+; a injeção de pacotes tem relatos da comunidade em kernels anteriores ao 6.16, mas falhou no nosso teste com o kernel stock 6.17 (regressão do mac80211 chanctx, não uma limitação do chipset); use o AWUS036ACH se precisar de injeção.
 - **AWUS036ACH** — Adequado para testes WPA3 em 2,4/5 GHz. Chipset RTL8812AU. Máxima compatibilidade com o conjunto de ferramentas aircrack-ng e maior suporte a drivers nas versões do Kali Linux.
 
 ### Ativar o Modo Monitor

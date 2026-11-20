@@ -129,7 +129,7 @@ WiFi Marauder と GPS アプリケーションを含むカスタムファーム�
 
 ---
 
-**製品ページリンク**：https://yupitek.com/zh-tw/products/sdrlab/flipper-5g/
-**完全な取扱説明書**：https://doczhtw.yupitek.com/sdrlab/expansion/5g-board/
+**製品ページリンク**：https://yupitek.com/ja/products/sdrlab/flipper-5g/
+**完全な取扱説明書**：https://doc.yupitek.com/sdrlab/expansion/5g-board/
 
 **メーカー販売ページ（OpenSourceSDRLab）**：https://opensourcesdrlab.com/products/opensourcesdrlab-new-5g-multi-in-one-module-flipperzero-module-with-screen-flipperzero5g-expansion-board?VariantsId=10754

@@ -60,7 +60,7 @@ Yopitek is the authorized Taiwan distributor for ALFA Network and also supplies 
 
 ---
 
-## IT Application｜Professional Visual Solutions
+## IT Application | Professional Visual Solutions
 
 Yopitek provides end-to-end projection solution services — from needs assessment and system planning to technical design and on-site integration — delivering breathtaking visual experiences across all venue types.
 

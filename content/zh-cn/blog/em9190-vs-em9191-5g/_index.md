@@ -165,7 +165,7 @@ faq:
 
 ## 需要采购或讨论？来找我们吧
 
-看完这篇如果还有硬件集成的问题，或者你们实验室/公司需要采购这两款 5G 模块，欢迎联系榆合科技（Yopitek）的工程团队，我们也有提供对应的天线和转接板。
+看完这篇如果还有硬件集成的问题，或者你们实验室/公司需要采购这两款 5G 模块，欢迎联系榆閤科技（Yopitek）的工程团队，我们也有提供对应的天线和转接板。
 
 - **EM9190（含 mmWave 的真旗舰）产品页**：[https://yupitek.com/zh-cn/products/sierra/em9190/](/zh-cn/products/sierra/em9190/)
 - **EM9191（实用的 Sub-6 款）产品页**：[https://yupitek.com/zh-cn/products/sierra/em9191/](/zh-cn/products/sierra/em9191/)

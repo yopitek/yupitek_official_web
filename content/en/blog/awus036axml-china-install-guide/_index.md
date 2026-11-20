@@ -3,7 +3,7 @@ title: "ALFA AWUS036AXML Driver Install Guide for China: Kali Linux, Ubuntu, Deb
 description: "Step-by-step guide to install ALFA AWUS036AXML drivers in China using domestic mirrors. MT7921AUN WiFi 6E in-kernel driver, full monitor mode and VIF support. Covers Kali Linux, Ubuntu 22/24, Debian, and Raspberry Pi. No GitHub required."
 date: 2026-04-24
 author: "benny-lai"
-lastmod: 2026-07-02
+lastmod: 2026-11-20
 faq:
   - question: "What chipset does AWUS036AXML use? Is it the same as AWUS036AXM?"
     answer: "Same MediaTek MT7921AUN chipset, but AWUS036AXML is the flagship USB-C version."
@@ -27,10 +27,10 @@ related_product: "/en/products/alfa/awus036axml/"
 featureimage: "/images/blog/awus036axml-china-install-guide.webp"
 ---
 
-The AWUS036AXML is ALFA's WiFi 6E flagship — a tri-band USB-C adapter covering 2.4 GHz, 5 GHz, and the uncongested 6 GHz band. Its MT7921AUN chip uses the `mt7921u` driver, built into the Linux kernel since version 5.18. On Ubuntu 24.04 and Kali 2025 it is plug-and-play once the firmware package is installed from a domestic mirror. This guide covers the full setup — firmware, driver verification, monitor mode, packet injection, and VIF — without touching GitHub.
+The AWUS036AXML is ALFA's WiFi 6E flagship — a tri-band USB-C adapter covering 2.4 GHz, 5 GHz, and the uncongested 6 GHz band. Its MT7921AUN chip uses the `mt7921u` driver, built into the Linux kernel since version 5.18. On Ubuntu 24.04 and Kali 2025 it is plug-and-play once the firmware package is installed from a domestic mirror. This guide covers the full setup — firmware, driver verification, monitor mode, VIF, and a note on packet injection (it fails on stock kernel 6.17) — without touching GitHub.
 
 {{< tldr >}}
-AWUS036AXML uses the MT7921AUN chipset. A WiFi 6E tri-band USB-C flagship adapter with an in-kernel driver. After installing firmware, monitor mode, packet injection, and VIF are ready.
+AWUS036AXML uses the MT7921AUN chipset. A WiFi 6E tri-band USB-C flagship adapter with an in-kernel driver. After installing firmware, monitor mode, AP/WPA3, and VIF are ready; packet injection failed on stock kernel 6.17 (see below).
 {{< /tldr >}}
 
 Make sure you have these ready:
@@ -168,6 +168,8 @@ Look for `Mode:Monitor` on the interface.
 ---
 
 ### Step 5: Test Packet Injection {#test-packet-injection}
+
+⚠️ **Version note:** Community reports say injection works on kernels before 6.16. On stock kernel 6.17 (ASUS GX10, Ubuntu 24.04 ARM64) our test failed — `aireplay-ng --test` shows `Found 0 APs` / `No Answer` — so deauth and handshake capture are not possible. The cause is a mac80211 chanctx regression since kernel 6.16, not a chip limitation; community patched drivers can make injection work, but the firmware still locks the rate (1/6 Mbps, no HT/VHT injection). If you need injection, use the AWUS036ACH / EACS / ACS / AX (or ACM / ACHM) instead. Monitor mode, AP, WPA3 and VIF work normally.
 
 ```bash
 sudo aireplay-ng --test wlan1
@@ -318,6 +320,8 @@ iwconfig
 
 ### Step 4: Test Packet Injection
 
+⚠️ On stock kernel 6.17 this test fails (see the version note above); for injection use the AWUS036ACH / EACS / ACS / AX.
+
 ```bash
 sudo aireplay-ng --test wlan1
 ```
@@ -391,6 +395,8 @@ iwconfig
 ```
 
 ### Step 6: Test Packet Injection
+
+⚠️ On stock kernel 6.17 this test fails (see the version note above); for injection use the AWUS036ACH / EACS / ACS / AX.
 
 ```bash
 sudo aireplay-ng --test wlan1
@@ -466,7 +472,7 @@ iwconfig
 | Ubuntu 22.04 doesn't load driver | Kernel 5.15 too old | Install HWE: `sudo apt install linux-generic-hwe-22.04` |
 | Interface appears but won't associate | Firmware blobs missing | Run `sudo apt install firmware-misc-nonfree` then reboot |
 | Monitor mode switch fails | Interface still up | Run `sudo ip link set wlan1 down` before the `iw dev` command |
-| Injection test says "No Answer" | AP too far or wrong interface | Move closer. Verify `Mode:Monitor` with `iwconfig`. |
+| Injection test says "No Answer" | AP too far or wrong interface (or kernel 6.16+: mac80211 chanctx regression) | Move closer. Verify `Mode:Monitor` with `iwconfig`. On 6.16+ use ACH / EACS / ACS / AX for injection. |
 | VIF interface creation fails | Driver not fully loaded | Unplug, then: `sudo rmmod mt7921u && sudo modprobe mt7921u` |
 
 ## China Mirror Reference
@@ -475,10 +481,10 @@ iwconfig
 |----------|-----|---------|
 | Alfa official drivers | [files.alfa.com.tw](https://files.alfa.com.tw) | Driver packages, firmware |
 | Alfa documentation | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | Product manuals |
-| 清华大学镜像 | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| 阿里云镜像 | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommended) |
-| 中科大镜像 | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommended) |
-| 华为云镜像 | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM images (backup) |
+| 清华大学镜像 (Tsinghua University mirror) | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| 阿里云镜像 (Aliyun mirror) | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu (recommended) |
+| 中科大镜像 (USTC mirror) | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali (recommended) |
+| 华为云镜像 (Huawei Cloud mirror) | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM images (backup) |
 
 ## More Alfa Adapter Guides for China
 

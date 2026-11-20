@@ -5,7 +5,7 @@ import json,re,sys
 from pathlib import Path
 D=Path(sys.argv[1]); BR=("acr","flipperzero","hak5","sdrlab")
 def blocks(h):
-    for s in re.findall(r'<script type="application/ld\+json">(.*?)</script>',h,re.S):
+    for s in re.findall(r'<script type="?application/ld\+json"?>(.*?)</script>',h,re.S):  # hugo --minify drops quotes
         yield json.loads(s)
 def flat(o):
     if isinstance(o,list):

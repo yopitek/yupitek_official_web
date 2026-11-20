@@ -27,13 +27,13 @@ faq:
   - question: "Kann der AWUS036ACS einen WPA-Handshake erfassen und in hashcat .22000 umwandeln?"
     answer: "Ja. Auf dem eigenen AP und dem eigenen iPhone 7 Plus End-to-End getestet: gerichtetes deauth löst eine Neuverbindung aus, der vollständige 4-Way (M1–M4) wird erfasst und dann mit hcxpcapngtool --all in .22000 exportiert. Nur in eigenen oder autorisierten Netzwerken."
   - question: "Kann der AWUS036ACS als AP-Hotspot dienen? Unterstützt er WPA3?"
-    answer: "Ja. hostapd öffnet 2,4G- und 5G-Hotspots (die Kanalbreite auf 5G wurde nicht bestätigt), das iPhone 7 Plus verbindet sich und schließt den 4-Way ab; auch das WPA3-SAE auf 5G (SAE-only, ieee80211w=2, sae_pwe=0) verbindet sich erfolgreich (WPA3 auf 2,4G wurde nicht getestet)."
+    answer: "Ja. hostapd öffnet 2,4G- und 5G-Hotspots (5G wurde als 802.11a mit 20 MHz getestet; VHT80 wurde nicht getestet), das iPhone 7 Plus verbindet sich und schließt den 4-Way ab; auch das WPA3-SAE auf 5G (SAE-only, ieee80211w=2, sae_pwe=0) verbindet sich erfolgreich (WPA3 auf 2,4G wurde nicht getestet)."
   - question: "Welche Modi unterstützt der AWUS036ACS nicht? Funktioniert hcxdumptool?"
     answer: "Nicht unterstützt werden active monitor, IBSS, Mesh (802.11s) und Wi-Fi Direct (P2P). hcxdumptool 8.x meldet failed to arm interface, verwenden Sie stattdessen airodump-ng + aireplay-ng. Für Mesh / IBSS wählen Sie AWUS036ACM / ACHM."
 draft: false
 ---
 
-**Kernaussagen (TL;DR)**: Laut Praxistest von Yopitek (ALFA-Network-Distributor Taiwan) läuft der AWUS036ACS auf dem ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) ohne Treiberinstallation, mit Dual-Band-Monitor und AP (5G-AP nutzbar, Kanalbreite nicht bestätigt); Injektion 2,4G 100 %, 5G 96 %, End-to-End-.22000 bestanden, kein Mesh / IBSS.
+**Kernaussagen (TL;DR)**: Laut Praxistest von Yopitek (ALFA-Network-Distributor Taiwan) läuft der AWUS036ACS auf dem ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) ohne Treiberinstallation, mit Dual-Band-Monitor und AP (5G-AP nutzbar: 802.11a, 20 MHz getestet; VHT80 nicht getestet); Injektion 2,4G 100 %, 5G 96 %, End-to-End-.22000 bestanden, kein Mesh / IBSS.
 
 > Dieser Artikel ist Yopiteks Protokoll eines praktischen Kompatibilitäts- und Fähigkeitstests des ALFA AWUS036ACS auf einer aktuellen Linux-Plattform, gedacht zur Unterstützung der Produktauswahl.
 > Testplattform: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. Alle Werte sind Auszüge aus Yopiteks Praxistests auf **eigener Hardware, im eigenen Büro-WLAN** (SSID `YUPITEK`, 2,4G ch5 / 5G ch36) gegen **eigene Testgeräte** (Apple iPhone 7 Plus); MAC-Adressen sind teilweise verdeckt.
@@ -103,7 +103,7 @@ Zuerst die zentrale Fähigkeits-Gesamttabelle, danach Punkt für Punkt. Alle Pun
 |---|---|---|
 | Monitor (Mithören/Empfang) | ✅ stark | ✅ stark |
 | Injection (Paket-Injektion) | ✅ **100 %** (30/30) | ✅ **96 %** (29/30, reg vorher entsperren) |
-| AP-Hotspot (hostapd) | ✅ iPhone verbunden + Handshake abgeschlossen | ✅ **stabil** (Kanalbreite nicht bestätigt) |
+| AP-Hotspot (hostapd) | ✅ iPhone verbunden + Handshake abgeschlossen | ✅ **stabil** (802.11a, 20 MHz getestet; VHT80 nicht getestet) |
 | AP WPA3-SAE | Nicht getestet | ✅ iPhone verbunden (SAE-only + PMF) |
 
 ### 3-1. Monitor (Monitor-Modus, 2,4 GHz + 5 GHz) ✅
@@ -138,7 +138,7 @@ Dass eine Einzelantennen-Karte auf 2,4 GHz 100 % und auf 5 GHz 96 % erreicht, is
 
 Mit `hostapd` wird die Karte zur Basisstation; bei allen drei Konfigurationen verbindet sich das iPhone 7 Plus erfolgreich und schließt den 4-Way-Handshake ab (`EAPOL-4WAY-HS-COMPLETED`):
 
-- **5 GHz (Kanalbreite nicht bestätigt)**: die stabilste Konfiguration, iPhone verbunden, Handshake abgeschlossen, `AP-DISABLED` sauberer Abschluss.
+- **5 GHz (802.11a, 20 MHz getestet; VHT80 nicht getestet)**: die stabilste Konfiguration, iPhone verbunden, Handshake abgeschlossen, `AP-DISABLED` sauberer Abschluss.
 - **2,4 GHz (WPA2-PSK)**: iPhone verbunden, Handshake abgeschlossen, nach dem Trennen sauber geschlossen. Hier wird ehrlich ein Umstand notiert: In einer vorherigen Runde trat bei derselben Konfiguration nach dem Trennen der STA einmal `key not allowed / Failed to set beacon parameters` auf und brach ab; beim Nachtest ließ es sich nicht reproduzieren, bewertet als gelegentliches beacon re-key von rtw88_8821au, kein fester Defekt. Bei Szenarien mit langer Dauer und häufiger Neuverbindung sollte man dennoch aufmerksam bleiben oder gleich einen 5-GHz-AP verwenden.
 - **WPA3-SAE (5 GHz, PMF erzwungen; 2,4 GHz nicht getestet)**: Entscheidende Einstellungen sind `wpa_key_mgmt=SAE` (reines WPA3, kein WPA2-Fallback), `ieee80211w=2` (erzwungener Management Frame Protection), `sae_pwe=0` (kompatibel zu älteren Endgeräten). Das iPhone 7 Plus (iOS 15) verbindet sich per SAE erfolgreich. Da der AP nur SAE öffnet und keinen WPA2-Rückweg hat, bedeutet eine gelungene Assoziation, dass der SAE-Authentifizierungs-Handshake zustande kommt. RTL8811AU + rtw88_8821au ist auf der AP-Seite WPA3-SAE-tauglich.
 
@@ -212,7 +212,7 @@ Ja. Sowohl 2,4 GHz als auch 5 GHz können in den Monitor-Modus; die `aireplay-ng
 Ja. Auf dem eigenen AP und dem eigenen iPhone 7 Plus End-to-End getestet: gerichtetes deauth löst eine Neuverbindung aus, der vollständige 4-Way (M1–M4) wird erfasst und dann mit `hcxpcapngtool --all` in .22000 exportiert. Nur in eigenen oder autorisierten Netzwerken.
 
 **F: Kann der AWUS036ACS als AP-Hotspot dienen? Unterstützt er WPA3?**
-Ja. `hostapd` öffnet 2,4G- und 5G-Hotspots (die Kanalbreite auf 5G wurde nicht bestätigt), das iPhone 7 Plus verbindet sich und schließt den 4-Way ab; auch das WPA3-SAE auf 5G (SAE-only, ieee80211w=2, sae_pwe=0) verbindet sich erfolgreich (WPA3 auf 2,4G wurde nicht getestet).
+Ja. `hostapd` öffnet 2,4G- und 5G-Hotspots (5G wurde als 802.11a mit 20 MHz getestet; VHT80 wurde nicht getestet), das iPhone 7 Plus verbindet sich und schließt den 4-Way ab; auch das WPA3-SAE auf 5G (SAE-only, ieee80211w=2, sae_pwe=0) verbindet sich erfolgreich (WPA3 auf 2,4G wurde nicht getestet).
 
 **F: Welche Modi unterstützt der AWUS036ACS nicht? Funktioniert hcxdumptool?**
 Nicht unterstützt werden active monitor, IBSS, Mesh (802.11s) und Wi-Fi Direct (P2P). hcxdumptool 8.x meldet failed to arm interface, verwenden Sie stattdessen airodump-ng + aireplay-ng. Für Mesh / IBSS wählen Sie AWUS036ACM / ACHM.

@@ -103,7 +103,7 @@ Wi-Fi 인터페이스는 로드된 뒤 `wlan0`이 아니라 `wlx` + MAC으로 �
 |---|---|---|---|
 | 모니터 | ✅ 강함 | ✅ 강함 | 대부분 채널에서 300 frames 가득 수신; 커뮤니티 #453 "ch1 멈춤" 재현 안 됨 |
 | 인젝션 | ✅ 100%(30/30) | ✅ 100%(30/30) | Power 2.4G -38.27 / 5G -76.10; 본 배치 ac 카드 중 인젝션 최강 |
-| AP 핫스팟 | ✅ 깔끔한 마무리 | ✅ VHT 80MHz | `hostapd`로 구축, iPhone 7 Plus 접속 후 4-way 완료 |
+| AP 핫스팟 | ✅ 깔끔한 마무리 | ✅ 802.11a, 20 MHz(VHT80 미측정) | `hostapd`로 구축, iPhone 7 Plus 접속 후 4-way 완료 |
 | WPA3-SAE(AP 측) | ✅ iPhone 접속 | 미실측 | SAE-only + PMF 강제(`ieee80211w=2`, `sae_pwe=0`) |
 | WPA 핸드셰이크 캡처 | — | ✅ 엔드투엔드 | M1–M4 완전, deauth 79 ACKs 수신, `.22000` 변환 |
 
@@ -111,7 +111,7 @@ Wi-Fi 인터페이스는 로드된 뒤 `wlan0`이 아니라 `wlx` + MAC으로 �
 
 인젝션(패킷 인젝션)의 성능이 가장 돋보입니다. `aireplay-ng --test`로 측정하면 2.4GHz와 5GHz 모두 30/30, 100%로, 본 배치 ac 카드 중 인젝션이 가장 강한 카드입니다(같은 1x1인 AWUS036ACS는 5G에서 96%에 불과). 여기에는 대만 현지 특유의 세부 사항이 있습니다. 5GHz의 TX는 regulatory domain이 TW로 설정되면 잠기므로, 측정 전에 먼저 `iw reg set US`로 잠금을 해제하고 측정 후 `iw reg set TW`로 되돌립니다.
 
-AP 핫스팟 쪽은 `hostapd`로 각각 2.4GHz(WPA2), 5GHz(VHT 80MHz), WPA3-SAE 세 가지를 구축했고, iPhone 7 Plus가 모두 접속해 4-way 핸드셰이크를 완료했으며, 접속 종료도 깔끔하게 마무리되었습니다(`AP-DISABLED` / `TERMINATING`). 일부 카드에서 나타나는 beacon re-key 문제가 발생하지 않아, 2.4G에서는 이 점이 자매 카드 ACS보다 안정적입니다. WPA3은 SAE-only에 PMF 강제(`ieee80211w=2`, `sae_pwe=0`)를 조합했고, iPhone 15 Pro로 성공적으로 접속해 RTL8821CU가 AP 측에서 WPA3-SAE를 사용할 수 있음을 확인했습니다.
+AP 핫스팟 쪽은 `hostapd`로 각각 2.4GHz(WPA2), 5GHz(802.11a, 20 MHz, VHT80 미측정), WPA3-SAE 세 가지를 구축했고, iPhone 7 Plus가 모두 접속해 4-way 핸드셰이크를 완료했으며, 접속 종료도 깔끔하게 마무리되었습니다(`AP-DISABLED` / `TERMINATING`). 일부 카드에서 나타나는 beacon re-key 문제가 발생하지 않아, 2.4G에서는 이 점이 자매 카드 ACS보다 안정적입니다. WPA3은 SAE-only에 PMF 강제(`ieee80211w=2`, `sae_pwe=0`)를 조합했고, iPhone 15 Pro로 성공적으로 접속해 RTL8821CU가 AP 측에서 WPA3-SAE를 사용할 수 있음을 확인했습니다.
 
 Kali 도구 체인(플랫폼 계층)도 이 카드에서 모두 구동됩니다. `airmon-ng`는 EACS(`rtw88_8821cu`)를 감지하지만 마찬가지로 `check kill`을 쓰지 마세요. `kismet`은 이 카드를 data source로 하여 성공적으로 시작했고, 실측상 약 733 KB의 `.kismet` log를 생성했습니다. `bettercap` 2.32의 `wifi.recon on`은 정상 작동합니다(txpower 경고는 무시 가능). `wifite`(git 3.0.0)는 자사 YUPITEK(ch5, PWR 84)을 포함해 10대 이상의 AP를 스캔했는데, 이 버전에는 `--band` 플래그가 없어 `-c 1,6,11,36,149,157`로 채널을 지정해야 합니다. `Wireshark` / `tshark` 4.x는 monitor ch6에서 실제로 325 frames를 캡처해 분석했으며, `macchanger`의 랜덤 MAC 위장도 사용할 수 있습니다. 도구 계층 이 부분은 본 배치의 다른 카드와 일치하며, 차이는 주로 앞의 인젝션과 모니터 하드웨어 성능에 있습니다.
 

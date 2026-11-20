@@ -5,11 +5,12 @@ import re, sys
 from pathlib import Path
 
 BRANDS = ("acr", "flipperzero", "hak5", "sdrlab")
-HREF = re.compile(r'<a[^>]+href="([^"#?]+)"')
+# Quoted or unquoted (hugo --minify drops quotes); links with #fragment or ?query are skipped.
+HREF = re.compile(r'<a[^>]+href=(?:"([^"#?]+)"|([^\s"\'>#?]+)(?=[\s>]))')
 
 
 def links(html, lang, kind):
-    hs = {re.sub(r"^https://yupitek\.com", "", h) for h in HREF.findall(html)}
+    hs = {re.sub(r"^https://yupitek\.com", "", q or u) for q, u in HREF.findall(html)}
     return {h for h in hs if re.match(rf"^/{lang}/{kind}/[^/]+/(?:[^/]+/)?$", h)
             and not re.search(r"/(tags|categories|page)/", h)}
 

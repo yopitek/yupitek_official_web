@@ -27,13 +27,13 @@ faq:
   - question: "هل يمكن لبطاقة AWUS036ACS التقاط WPA handshake وتحويله إلى hashcat .22000؟"
     answer: "نعم تستطيع. اختُبرت من طرف إلى طرف على AP مملوك وiPhone 7 Plus مملوك: deauth موجَّه يحفّز إعادة الاتصال، فيُلتقط 4-way كامل (M1–M4)، ثم يُحوَّل عبر hcxpcapngtool --all إلى .22000. فقط على الشبكات التي تملكها أو مصرّح لك باختبارها."
   - question: "هل يمكن تشغيل AWUS036ACS كنقطة وصول AP؟ وهل تدعم WPA3؟"
-    answer: "نعم. يُشغّل hostapd نقطة وصول على 2.4G و5G (لم يُؤكَّد عرض نطاق 5G)، ويتصل بها iPhone 7 Plus ويُكمل 4-way؛ كما نجح الاتصال بوضع WPA3-SAE على 5G (SAE-only، ieee80211w=2، sae_pwe=0) (لم يُختبر WPA3 على 2.4G)."
+    answer: "نعم. يُشغّل hostapd نقطة وصول على 2.4G و5G (اختُبر 5G بوضع 802.11a وبعرض 20 MHz؛ ولم يُختبر VHT80)، ويتصل بها iPhone 7 Plus ويُكمل 4-way؛ كما نجح الاتصال بوضع WPA3-SAE على 5G (SAE-only، ieee80211w=2، sae_pwe=0) (لم يُختبر WPA3 على 2.4G)."
   - question: "ما الأوضاع التي لا تدعمها AWUS036ACS؟ وهل يعمل hcxdumptool؟"
     answer: "لا تدعم active monitor وIBSS وmesh (802.11s) وWi-Fi Direct (P2P). أما hcxdumptool 8.x فيُخفق بـ failed to arm interface، فاستخدم بدلًا منه airodump-ng + aireplay-ng. وإذا احتجت mesh / IBSS فاختر AWUS036ACM / ACHM."
 draft: false
 ---
 
-**الملخص السريع (TL;DR)**: وفق اختبارات Yopitek (الموزّع المعتمد لـ ALFA Network في تايوان)، تعمل AWUS036ACS على ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) بلا تثبيت تعريف، مع monitor وAP على النطاقين (AP على 5G صالح، وعرض النطاق غير مؤكَّد)؛ الحقن 100% على 2.4G و96% على 5G، واجتازت .22000 من طرف إلى طرف، ولا تدعم mesh / IBSS.
+**الملخص السريع (TL;DR)**: وفق اختبارات Yopitek (الموزّع المعتمد لـ ALFA Network في تايوان)، تعمل AWUS036ACS على ASUS GX10 / Ubuntu 24.04 ARM64 (kernel 6.17) بلا تثبيت تعريف، مع monitor وAP على النطاقين (AP على 5G صالح: اختُبر بوضع 802.11a وبعرض 20 MHz، ولم يُختبر VHT80)؛ الحقن 100% على 2.4G و96% على 5G، واجتازت .22000 من طرف إلى طرف، ولا تدعم mesh / IBSS.
 
 > هذه المقالة سجل اختبار عملي من Yopitek لتوافق وقدرات بطاقة ALFA AWUS036ACS على منصة Linux الحديثة، للاستعانة به في التقييم واختيار المنتج.
 > منصة الاختبار: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. جميع البيانات مقتطفات من اختبارات أجرتها Yopitek على **أجهزتها الخاصة وشبكة مكتبها الخاصة** (SSID `YUPITEK`، 2.4G ch5 / 5G ch36) على **هاتف اختبار مملوك** (Apple iPhone 7 Plus)، مع إخفاء جزئي لعناوين MAC.
@@ -103,7 +103,7 @@ iw phy $(cat /sys/class/net/$IF/phy80211/name) info | sed -n '/Supported interfa
 |---|---|---|
 | Monitor (الاستقبال والمراقبة) | ✅ قوي | ✅ قوي |
 | Injection (حقن الحزم) | ✅ **100%** (30/30) | ✅ **96%** (29/30، يلزم رفع قيد reg أولًا) |
-| نقطة وصول AP (hostapd) | ✅ اتصل iPhone + أكمل handshake | ✅ **مستقر** (عرض النطاق غير مؤكَّد) |
+| نقطة وصول AP (hostapd) | ✅ اتصل iPhone + أكمل handshake | ✅ **مستقر** (اختُبر بوضع 802.11a وبعرض 20 MHz؛ ولم يُختبر VHT80) |
 | AP WPA3-SAE | لم يُختبر | ✅ اتصل iPhone (SAE-only + PMF) |
 
 ### 3-1. Monitor (وضع المراقبة، 2.4 GHz + 5 GHz) ✅
@@ -138,7 +138,7 @@ sudo aireplay-ng --test --ignore-negative-one -a <YUPITEK-BSSID> $IF
 
 باستخدام `hostapd` تحوّلت البطاقة إلى محطة أساس، ونجحت الإعدادات الثلاثة جميعها في جعل iPhone 7 Plus يتصل ويُكمل 4-way handshake (`EAPOL-4WAY-HS-COMPLETED`):
 
-- **5 GHz (عرض النطاق غير مؤكَّد)**: الإعداد الأكثر استقرارًا، اتصل iPhone، واكتمل handshake، وأُنهيت الجلسة بنظافة عبر `AP-DISABLED`.
+- **5 GHz (اختُبر بوضع 802.11a وبعرض 20 MHz؛ ولم يُختبر VHT80)**: الإعداد الأكثر استقرارًا، اتصل iPhone، واكتمل handshake، وأُنهيت الجلسة بنظافة عبر `AP-DISABLED`.
 - **2.4 GHz (WPA2-PSK)**: اتصل iPhone، واكتمل handshake، وأُغلقت بنظافة بعد قطع الاتصال. ونسجّل هنا بأمانة حالة وقعت: في جولة سابقة بالإعداد نفسه، ظهر بعد قطع اتصال الـ STA خطأ `key not allowed / Failed to set beacon parameters` وتوقّفت، لكن إعادة الاختبار لم تُعِد إنتاج المشكلة، فحُكم عليها بأنها beacon re-key عرَضي من rtw88_8821au، لا عيب ثابت. مع ذلك يُنصح بالانتباه في سيناريوهات إعادة الاتصال المتكرر الطويل، أو ببساطة الانتقال إلى AP على 5 GHz.
 - **WPA3-SAE (5 GHz، PMF إجباري؛ 2.4 GHz لم يُختبر)**: الإعدادات المفتاحية هي `wpa_key_mgmt=SAE` (WPA3 صِرف، دون التراجع إلى WPA2)، و`ieee80211w=2` (فرض Management Frame Protection)، و`sae_pwe=0` (توافق مع الأطراف القديمة). اتصل iPhone 7 Plus (iOS 15) عبر SAE بنجاح. ولأن AP يفتح SAE فقط دون منفذ تراجع إلى WPA2، فإن إتمام الارتباط يعني انعقاد مصافحة مصادقة SAE. إذًا WPA3-SAE على جانب AP لبطاقة RTL8811AU + rtw88_8821au صالح للاستخدام.
 
@@ -212,7 +212,7 @@ sudo aireplay-ng --test --ignore-negative-one -a <YUPITEK-BSSID> $IF
 نعم. اختُبرت من طرف إلى طرف على AP مملوك وiPhone 7 Plus مملوك: deauth موجَّه يحفّز إعادة الاتصال، فيُلتقط 4-way كامل (M1–M4)، ثم يُحوَّل عبر `hcxpcapngtool --all` إلى .22000. فقط على الشبكات التي تملكها أو مصرّح لك باختبارها.
 
 **س: هل يمكن تشغيل AWUS036ACS كنقطة وصول AP؟ وهل تدعم WPA3؟**
-نعم. يُشغّل `hostapd` نقطة وصول على 2.4G و5G (لم يُؤكَّد عرض نطاق 5G)، ويتصل بها iPhone 7 Plus ويُكمل 4-way؛ كما نجح الاتصال بوضع WPA3-SAE على 5G (SAE-only، ieee80211w=2، sae_pwe=0) (لم يُختبر WPA3 على 2.4G).
+نعم. يُشغّل `hostapd` نقطة وصول على 2.4G و5G (اختُبر 5G بوضع 802.11a وبعرض 20 MHz؛ ولم يُختبر VHT80)، ويتصل بها iPhone 7 Plus ويُكمل 4-way؛ كما نجح الاتصال بوضع WPA3-SAE على 5G (SAE-only، ieee80211w=2، sae_pwe=0) (لم يُختبر WPA3 على 2.4G).
 
 **س: ما الأوضاع التي لا تدعمها AWUS036ACS؟ وهل يعمل hcxdumptool؟**
 لا تدعم active monitor وIBSS وmesh (802.11s) وWi-Fi Direct (P2P). أما hcxdumptool 8.x فيُخفق بـ failed to arm interface، فاستخدم بدلًا منه airodump-ng + aireplay-ng. وإذا احتجت mesh / IBSS فاختر AWUS036ACM / ACHM.

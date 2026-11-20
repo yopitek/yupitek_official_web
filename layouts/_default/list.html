@@ -6,7 +6,13 @@
   {{/* Hero — per-page featureimage support for list pages */}}
   {{/* hideFeatureImage: true hides the on-page hero while keeping featureimage for og:image / JSON-LD SEO */}}
   {{/* Direct <img> render bypasses resources.Get, which only works for assets/ not static/ */}}
-  {{ if and .Params.featureimage (not .Params.hideFeatureImage) }}
+  {{/* bannerimage: a 975:280 image made for this box; it scales with the width so phones see the whole banner (featureimage stays the og:image) */}}
+  {{ if and .Params.bannerimage (not .Params.hideFeatureImage) }}
+    <div class="overflow-hidden rounded-xl mb-6">
+      <img src="{{ .Params.bannerimage }}" alt="{{ .Title }}" loading="eager" decoding="async"
+           style="width: 100%; height: auto; aspect-ratio: 975 / 280; object-fit: cover; display: block;">
+    </div>
+  {{ else if and .Params.featureimage (not .Params.hideFeatureImage) }}
     <div class="overflow-hidden rounded-xl mb-6" style="max-height: 280px;">
       <img src="{{ .Params.featureimage }}" alt="{{ .Title }}" loading="eager" decoding="async"
            style="width: 100%; height: 280px; object-fit: cover; display: block;">

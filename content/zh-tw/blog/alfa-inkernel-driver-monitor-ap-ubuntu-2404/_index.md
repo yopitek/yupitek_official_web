@@ -6,6 +6,7 @@ lastmod: 2026-11-20
 showBreadcrumbs: true
 showTableOfContents: true
 featureimage: "/images/blog/alfa-inkernel-driver-monitor-ap-ubuntu-2404.webp"
+bannerimage: "/images/blog/banner/alfa-inkernel-driver-monitor-ap-ubuntu-2404.webp"
 author: "benny-lai"
 tags:
   - alfa-network

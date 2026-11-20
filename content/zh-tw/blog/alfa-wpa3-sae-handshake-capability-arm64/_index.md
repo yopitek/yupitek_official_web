@@ -6,6 +6,7 @@ lastmod: 2026-11-20
 showBreadcrumbs: true
 showTableOfContents: true
 featureimage: "/images/blog/alfa-wpa3-sae-handshake-capability-arm64.webp"
+bannerimage: "/images/blog/banner/alfa-wpa3-sae-handshake-capability-arm64.webp"
 author: "benny-lai"
 tags:
   - wpa3-sae

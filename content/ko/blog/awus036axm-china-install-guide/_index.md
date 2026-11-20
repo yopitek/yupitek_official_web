@@ -42,7 +42,7 @@ AWUS036AXM은 MT7921AUN 칩셋을 사용하며 WiFi 6(2.4/5 GHz)를 지원합니
 
 다음 항목을 준비하세요:
 
-1. **ALFA AWUS036AXM** 어댑터
+1. <strong>ALFA AWUS036AXM</strong> 어댑터
 2. 전원 공급형 USB 허브 — Raspberry Pi를 사용하는 경우 필수
 3. 국내 미러에 접속할 수 있는 인터넷 연결
 
@@ -98,13 +98,13 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-저장: **Ctrl+O**를 누르고 Enter를 누른 다음, Ctrl+X로 종료합니다. 패키지 인덱스를 새로 고칩니다.
+저장: <strong>Ctrl+O</strong>를 누르고 Enter를 누른 다음, Ctrl+X로 종료합니다. 패키지 인덱스를 새로 고칩니다.
 
 ```bash
 sudo apt update
 ```
 
-> **백업 미러:** USTC(중국과기대) 미러가 느리면 Tsinghua(칭화대) 미러를 대신 사용하세요:
+> <strong>백업 미러:</strong> USTC(중국과기대) 미러가 느리면 Tsinghua(칭화대) 미러를 대신 사용하세요:
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
@@ -167,9 +167,9 @@ iwconfig
 
 ### 5단계: 패킷 인젝션에 관하여 {#test-packet-injection}
 
-⚠️ **AWUS036AXM은 패킷 인젝션을 지원하지 않습니다.** 스톡 커널 6.17에서 `sudo aireplay-ng --test wlan1`은 실패합니다 — 주된 원인은 커널 6.16 이후의 mac80211 chanctx 회귀이며 칩 자체의 한계가 아닙니다. 커뮤니티 patched 드라이버로는 인젝션이 동작하지만, 펌웨어가 전송 속도를 1/6 Mbps로 고정하여 HT/VHT 프레임은 인젝션할 수 없습니다.
+⚠️ <strong>AWUS036AXM은 패킷 인젝션을 지원하지 않습니다.</strong> 스톡 커널 6.17에서 `sudo aireplay-ng --test wlan1`은 실패합니다 — 주된 원인은 커널 6.16 이후의 mac80211 chanctx 회귀이며 칩 자체의 한계가 아닙니다. 커뮤니티 patched 드라이버로는 인젝션이 동작하지만, 펌웨어가 전송 속도를 1/6 Mbps로 고정하여 HT/VHT 프레임은 인젝션할 수 없습니다.
 
-따라서 AWUS036AXM은 일반 연결, AP 핫스팟, 모니터 모드 캡처에는 적합하지만 **패킷 인젝션이나 침투 테스트에는 적합하지 않습니다**. 인젝션이 필요하면 AWUS036ACM / ACHM / ACS / ACH / AX / EACS를 사용하세요. 소유하고 있거나 사용 권한이 있는 네트워크에서만 테스트하세요.
+따라서 AWUS036AXM은 일반 연결, AP 핫스팟, 모니터 모드 캡처에는 적합하지만 <strong>패킷 인젝션이나 침투 테스트에는 적합하지 않습니다</strong>. 인젝션이 필요하면 AWUS036ACM / ACHM / ACS / ACH / AX / EACS를 사용하세요. 소유하고 있거나 사용 권한이 있는 네트워크에서만 테스트하세요.
 
 ---
 
@@ -318,9 +318,9 @@ AWUS036AXM은 패킷 인젝션을 지원하지 않습니다([패킷 인젝션에
 
 공식 페이지: https://www.kali.org/get-kali/#kali-arm
 
-**Raspberry Pi 4 (64-bit)** 또는 **Raspberry Pi 5 (64-bit)**를 선택하세요 — 64비트가 필수입니다.
+<strong>Raspberry Pi 4 (64-bit)</strong> 또는 <strong>Raspberry Pi 5 (64-bit)</strong>를 선택하세요 — 64비트가 필수입니다.
 
-> **중국 미러:** https://repo.huaweicloud.com/kali-images/ — 최신 릴리스 폴더로 이동하여 ARM64 이미지를 다운로드하세요.
+> <strong>중국 미러:</strong> https://repo.huaweicloud.com/kali-images/ — 최신 릴리스 폴더로 이동하여 ARM64 이미지를 다운로드하세요.
 
 ### 2단계: MicroSD에 플래싱
 
@@ -331,7 +331,7 @@ sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=pro
 sync
 ```
 
-기본 자격 증명: **kali / kali**.
+기본 자격 증명: <strong>kali / kali</strong>.
 
 ### 3단계: 중국 미러로 전환 및 펌웨어 설치
 
@@ -384,10 +384,10 @@ AWUS036AXM은 패킷 인젝션을 지원하지 않습니다([패킷 인젝션에
 
 ### VirtualBox
 
-1. VM을 종료합니다. **설정 → USB**로 이동합니다.
-2. **USB 3.0 (xHCI) 컨트롤러**를 활성화합니다.
-3. **+**를 클릭하여 USB 필터를 추가합니다.
-4. 선택: **MediaTek Inc.** (ID: 0e8d:7961).
+1. VM을 종료합니다. <strong>설정 → USB</strong>로 이동합니다.
+2. <strong>USB 3.0 (xHCI) 컨트롤러</strong>를 활성화합니다.
+3. <strong>+</strong>를 클릭하여 USB 필터를 추가합니다.
+4. 선택: <strong>MediaTek Inc.</strong> (ID: 0e8d:7961).
 5. VM을 시작합니다 — 어댑터가 Kali 내부에 나타납니다.
 
 VM에서 `lsusb`를 실행하여 `0e8d:7961`을 확인한 다음, 위의 Kali 단계를 따르세요.
@@ -395,8 +395,8 @@ VM에서 `lsusb`를 실행하여 `0e8d:7961`을 확인한 다음, 위의 Kali �
 ### VMware Fusion (macOS) / VMware Workstation (Windows)
 
 1. VM을 시작합니다.
-2. 메뉴: **Virtual Machine → USB & Bluetooth**.
-3. **MediaTek MT7921AUN**을 찾아 **Connect**를 클릭합니다.
+2. 메뉴: <strong>Virtual Machine → USB & Bluetooth</strong>.
+3. <strong>MediaTek MT7921AUN</strong>을 찾아 <strong>Connect</strong>를 클릭합니다.
 4. VM에서 `lsusb`를 실행하여 확인한 다음, 위의 Kali 단계를 따르세요.
 
 ---
@@ -433,7 +433,7 @@ sudo ip link set mon0 up
 iwconfig
 ```
 
-> **hostapd에 대한 참고:** 완전한 AP 운영을 위해서는 `hostapd` 구성이 필요합니다. 위 단계는 어댑터가 인터페이스를 생성할 수 있음을 확인하는 것이며, 실제 AP 구성은 별도의 주제입니다.
+> <strong>hostapd에 대한 참고:</strong> 완전한 AP 운영을 위해서는 `hostapd` 구성이 필요합니다. 위 단계는 어댑터가 인터페이스를 생성할 수 있음을 확인하는 것이며, 실제 AP 구성은 별도의 주제입니다.
 
 ---
 
@@ -464,7 +464,7 @@ iwconfig
 
 ## 중국용 Alfa 어댑터 가이드 더 보기
 
-이 글은 **Alfa 중국 설치 가이드** 시리즈의 일부입니다:
+이 글은 <strong>Alfa 중국 설치 가이드</strong> 시리즈의 일부입니다:
 
 - [AWUS036ACH 중국 설치 가이드](/ko/blog/awus036ach-china-install-guide/) — RTL8812AU, 고출력
 - [AWUS036ACM 중국 설치 가이드](/ko/blog/awus036acm-china-install-guide/) — MT7612U, 완전한 VIF

@@ -42,7 +42,7 @@ MT7612U 칩셋을 탑재한 AWUS036ACM은 컴파일이 필요 없는 커널 내�
 
 다음 항목이 준비되어 있는지 확인하십시오.
 
-1. **ALFA AWUS036ACM** 어댑터
+1. <strong>ALFA AWUS036ACM</strong> 어댑터
 2. USB 케이블(제품 상자에 동봉된 케이블로 충분합니다)
 3. 전원 공급형 USB 허브 — Raspberry Pi를 사용하는 경우 필수입니다
 4. 국내(중국) 미러에 접속하기 위한 인터넷 연결
@@ -99,13 +99,13 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-저장하려면 **Ctrl+O**를 누른 뒤 Enter를, 종료하려면 Ctrl+X를 누릅니다. 그리고 패키지 인덱스를 갱신합니다.
+저장하려면 <strong>Ctrl+O</strong>를 누른 뒤 Enter를, 종료하려면 Ctrl+X를 누릅니다. 그리고 패키지 인덱스를 갱신합니다.
 
 ```bash
 sudo apt update
 ```
 
-> **백업 미러:** 중국과학기술대학(USTC) 미러가 느리다면 칭화대학(Tsinghua) 미러를 대신 사용하십시오.
+> <strong>백업 미러:</strong> 중국과학기술대학(USTC) 미러가 느리다면 칭화대학(Tsinghua) 미러를 대신 사용하십시오.
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
@@ -156,7 +156,7 @@ sudo apt full-upgrade -y
 sudo reboot
 ```
 
-> **참고:** `mt76x2u`는 메인라인 Linux 커널의 일부이므로 소스 빌드가 필요 없습니다. 드라이버 아카이브는 [files.alfa.com.tw](https://files.alfa.com.tw)에서 직접 내려받을 수도 있습니다.
+> <strong>참고:</strong> `mt76x2u`는 메인라인 Linux 커널의 일부이므로 소스 빌드가 필요 없습니다. 드라이버 아카이브는 [files.alfa.com.tw](https://files.alfa.com.tw)에서 직접 내려받을 수도 있습니다.
 
 ---
 
@@ -303,7 +303,7 @@ sudo airmon-ng check kill
 sudo airmon-ng start wlan0
 ```
 
-> **참고:** 다른 무선 카드가 있는 경우 인터페이스가 `wlan1`일 수 있습니다. 먼저 `iwconfig`를 실행하여 확인하십시오.
+> <strong>참고:</strong> 다른 무선 카드가 있는 경우 인터페이스가 `wlan1`일 수 있습니다. 먼저 `iwconfig`를 실행하여 확인하십시오.
 
 ---
 
@@ -401,9 +401,9 @@ sudo aireplay-ng --test wlan0mon
 공식 Kali ARM 다운로드 페이지로 이동하십시오.
 https://www.kali.org/get-kali/#kali-arm
 
-**Raspberry Pi 4 (64-bit)** 또는 **Raspberry Pi 5 (64-bit)**를 선택하십시오. 32비트 이미지는 사용하지 마십시오. 반드시 64비트가 필요합니다.
+<strong>Raspberry Pi 4 (64-bit)</strong> 또는 <strong>Raspberry Pi 5 (64-bit)</strong>를 선택하십시오. 32비트 이미지는 사용하지 마십시오. 반드시 64비트가 필요합니다.
 
-> **중국 미러:** kali.org가 느리다면 화웨이 클라우드(Huawei Cloud)를 사용하십시오.
+> <strong>중국 미러:</strong> kali.org가 느리다면 화웨이 클라우드(Huawei Cloud)를 사용하십시오.
 > https://repo.huaweicloud.com/kali-images/
 > 최신 릴리스 폴더로 이동하여 그곳에서 ARM64 이미지를 내려받으십시오.
 
@@ -425,7 +425,7 @@ sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=pro
 sync
 ```
 
-`sync`가 완료될 때까지 기다린 뒤 부팅합니다. 기본 자격 증명: **kali / kali**.
+`sync`가 완료될 때까지 기다린 뒤 부팅합니다. 기본 자격 증명: <strong>kali / kali</strong>.
 
 ---
 
@@ -500,10 +500,10 @@ sudo aireplay-ng --test wlan1mon
 
 ### VirtualBox
 
-1. VM을 종료합니다. **Settings → USB**로 이동합니다.
-2. **USB 3.0 (xHCI) Controller**를 활성화합니다.
-3. **+**를 클릭하여 USB 필터를 추가합니다.
-4. **MediaTek Inc. MT7612U** (ID: 0e8d:7612)를 선택합니다.
+1. VM을 종료합니다. <strong>Settings → USB</strong>로 이동합니다.
+2. <strong>USB 3.0 (xHCI) Controller</strong>를 활성화합니다.
+3. <strong>+</strong>를 클릭하여 USB 필터를 추가합니다.
+4. <strong>MediaTek Inc. MT7612U</strong> (ID: 0e8d:7612)를 선택합니다.
 5. VM을 시작하면 어댑터가 Kali 내부에 나타납니다.
 
 VM에서 `lsusb`를 실행하여 `0e8d:7612`를 확인한 뒤, 위의 Kali 단계를 따르십시오.
@@ -511,8 +511,8 @@ VM에서 `lsusb`를 실행하여 `0e8d:7612`를 확인한 뒤, 위의 Kali 단�
 ### VMware Fusion (macOS) / VMware Workstation (Windows)
 
 1. VM을 시작합니다.
-2. 메뉴: **Virtual Machine → USB & Bluetooth**.
-3. **MediaTek MT7612U**를 찾아 **Connect**를 클릭합니다.
+2. 메뉴: <strong>Virtual Machine → USB & Bluetooth</strong>.
+3. <strong>MediaTek MT7612U</strong>를 찾아 <strong>Connect</strong>를 클릭합니다.
 4. VM에서 `lsusb`를 실행하여 확인한 뒤, 위의 Kali 단계를 따르십시오.
 
 ---
@@ -561,7 +561,7 @@ sudo ip link set mon0 up
 
 `iwconfig`를 실행하여 세 인터페이스(`wlan0`, `ap0`, `mon0`)가 모두 활성화되었는지 확인하십시오.
 
-> **hostapd에 대한 참고:** 완전한 AP 운용에는 `hostapd` 구성이 필요합니다. 이는 이 가이드의 범위를 벗어납니다. 위 단계는 어댑터가 인터페이스를 생성할 수 있음을 확인하는 것이며, 실제 AP 구성은 별도의 주제입니다.
+> <strong>hostapd에 대한 참고:</strong> 완전한 AP 운용에는 `hostapd` 구성이 필요합니다. 이는 이 가이드의 범위를 벗어납니다. 위 단계는 어댑터가 인터페이스를 생성할 수 있음을 확인하는 것이며, 실제 AP 구성은 별도의 주제입니다.
 
 ---
 
@@ -595,7 +595,7 @@ sudo ip link set mon0 up
 
 ## 중국 환경을 위한 추가 Alfa 어댑터 가이드
 
-이 글은 **Alfa 중국 설치 가이드** 시리즈의 일부입니다. 각 글은 하나의 어댑터 모델을 다룹니다.
+이 글은 <strong>Alfa 중국 설치 가이드</strong> 시리즈의 일부입니다. 각 글은 하나의 어댑터 모델을 다룹니다.
 
 - [AWUS036ACH 중국 설치 가이드](/ko/blog/awus036ach-china-install-guide/) — RTL8812AU, 고출력
 - AWUS036ACM ← 현재 보고 있는 글

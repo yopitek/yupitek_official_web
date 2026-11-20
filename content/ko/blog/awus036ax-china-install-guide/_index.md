@@ -27,7 +27,7 @@ related_product: "/ko/products/alfa/awus036ax/"
 featureimage: "/images/blog/awus036ax-china-install-guide.webp"
 ---
 
-AWUS036AX는 ALFA의 WiFi 6 AX1800 듀얼밴드 어댑터입니다. RTL8832BU 칩은 **Linux 커널 6.17 이상의 인커널 rtw89_8852bu 드라이버**(예: Ubuntu 24.04 HWE / 커널 6.17)에서 지원되어 컴파일 없이 플러그 앤 플레이로 동작합니다. **구형 커널**(6.17 미만)에서만 커뮤니티 rtl8852bu 드라이버를 DKMS로 한 번 빌드하면 됩니다. 이 가이드는 두 경우를 모두 다룹니다. 드라이버 소스는 검증된 GitHub 저장소에서 클론합니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하십시오.
+AWUS036AX는 ALFA의 WiFi 6 AX1800 듀얼밴드 어댑터입니다. RTL8832BU 칩은 <strong>Linux 커널 6.17 이상의 인커널 rtw89_8852bu 드라이버</strong>(예: Ubuntu 24.04 HWE / 커널 6.17)에서 지원되어 컴파일 없이 플러그 앤 플레이로 동작합니다. <strong>구형 커널</strong>(6.17 미만)에서만 커뮤니티 rtl8852bu 드라이버를 DKMS로 한 번 빌드하면 됩니다. 이 가이드는 두 경우를 모두 다룹니다. 드라이버 소스는 검증된 GitHub 저장소에서 클론합니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하십시오.
 
 {{< tldr >}}
 AWUS036AX는 WiFi 6을 지원하는 RTL8832BU 칩셋을 사용합니다. 커널 6.17+(Ubuntu 24.04 / 커널 6.17 포함)에는 인커널 rtw89_8852bu 드라이버가 포함되어 있습니다. DKMS가 필요 없으며, 모니터 모드와 인젝션이 테스트에서 동작합니다. 구형 커널에서는 DKMS를 통한 커뮤니티 rtl8852bu 드라이버가 필요합니다.
@@ -36,11 +36,11 @@ AWUS036AX는 WiFi 6을 지원하는 RTL8832BU 칩셋을 사용합니다. 커널 
 
 
 
-> **보안 연구 참고:** **커널 6.17+의 인커널 rtw89_8852bu 드라이버**에서는 AWUS036AX의 모니터 모드와 패킷 인젝션이 테스트에서 동작합니다(Ubuntu 24.04 / 커널 6.17: 2.4GHz 인젝션 96%, 엔드투엔드 WPA .22000). 커뮤니티 DKMS 드라이버를 사용하는 구형 커널에서만 모니터 지원이 제한됩니다. 먼저 `uname -r`을 확인하십시오. 본인이 소유했거나 테스트 권한을 부여받은 네트워크에서만 사용하십시오.
+> <strong>보안 연구 참고:</strong> <strong>커널 6.17+의 인커널 rtw89_8852bu 드라이버</strong>에서는 AWUS036AX의 모니터 모드와 패킷 인젝션이 테스트에서 동작합니다(Ubuntu 24.04 / 커널 6.17: 2.4GHz 인젝션 96%, 엔드투엔드 WPA .22000). 커뮤니티 DKMS 드라이버를 사용하는 구형 커널에서만 모니터 지원이 제한됩니다. 먼저 `uname -r`을 확인하십시오. 본인이 소유했거나 테스트 권한을 부여받은 네트워크에서만 사용하십시오.
 
 ## 시작하기 전에
 
-1. **ALFA AWUS036AX** 어댑터
+1. <strong>ALFA AWUS036AX</strong> 어댑터
 2. USB-A 케이블
 3. 활성 인터넷 연결
 
@@ -92,7 +92,7 @@ git clone https://github.com/morrownr/rtl8852bu-20250826.git
 cd rtl8852bu-20250826
 ```
 
-> **참고:** 유지보수되는 업스트림 드라이버는 [morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)입니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하십시오. [files.alfa.com.tw](https://files.alfa.com.tw)에서 아카이브를 내려받을 수도 있습니다.
+> <strong>참고:</strong> 유지보수되는 업스트림 드라이버는 [morrownr/rtl8852bu-20250826](https://github.com/morrownr/rtl8852bu-20250826)입니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하십시오. [files.alfa.com.tw](https://files.alfa.com.tw)에서 아카이브를 내려받을 수도 있습니다.
 
 ### 4단계: 컴파일 및 설치
 
@@ -110,7 +110,7 @@ iwconfig
 
 ### 5단계: 모니터 모드 활성화 {#enable-monitor-mode}
 
-> **커널 6.17+에서 동작:** 인커널 rtw89_8852bu 드라이버에서는 모니터 모드가 동작합니다.
+> <strong>커널 6.17+에서 동작:</strong> 인커널 rtw89_8852bu 드라이버에서는 모니터 모드가 동작합니다.
 > ```bash
 > sudo nmcli dev set wlxXXXX managed no
 > sudo ip link set wlxXXXX down
@@ -121,7 +121,7 @@ iwconfig
 
 ### 6단계: 패킷 인젝션 테스트 {#test-packet-injection}
 
-> **커널 6.17+에서 동작:** 모니터 모드로 진입한 뒤 aireplay-ng로 인젝션을 테스트합니다(테스트에서 2.4GHz 96%).
+> <strong>커널 6.17+에서 동작:</strong> 모니터 모드로 진입한 뒤 aireplay-ng로 인젝션을 테스트합니다(테스트에서 2.4GHz 96%).
 > ```bash
 > sudo iw dev wlxXXXX set channel 6
 > sudo aireplay-ng --test wlxXXXX
@@ -134,7 +134,7 @@ iwconfig
 
 ### Ubuntu 24.04 (Noble)
 
-Ubuntu 24.04에서는 **커널 6.17 이상의 HWE**(예: 24.04.4의 HWE)에만 인커널 rtw89_8852bu 드라이버가 포함되어 있어, 꽂기만 하면 되고 빌드가 필요 없습니다. **GA 커널 6.8**이나 **HWE 커널 6.14**(둘 다 이 드라이버 미포함)에서는 아래 Ubuntu 22.04와 마찬가지로 국내 미러로 전환하여 커뮤니티 드라이버를 빌드하거나, 6.17 이상의 HWE 커널로 업그레이드하여 인커널 드라이버를 사용하십시오.
+Ubuntu 24.04에서는 <strong>커널 6.17 이상의 HWE</strong>(예: 24.04.4의 HWE)에만 인커널 rtw89_8852bu 드라이버가 포함되어 있어, 꽂기만 하면 되고 빌드가 필요 없습니다. <strong>GA 커널 6.8</strong>이나 <strong>HWE 커널 6.14</strong>(둘 다 이 드라이버 미포함)에서는 아래 Ubuntu 22.04와 마찬가지로 국내 미러로 전환하여 커뮤니티 드라이버를 빌드하거나, 6.17 이상의 HWE 커널로 업그레이드하여 인커널 드라이버를 사용하십시오.
 
 ```bash
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
@@ -236,13 +236,13 @@ sudo reboot
 
 ### VirtualBox
 
-1. **설정 → USB** → **USB 3.0 (xHCI)**를 활성화합니다.
-2. 필터 추가: **Realtek** (벤더 ID: 0bda, 제품 ID: 8832 또는 885a).
+1. <strong>설정 → USB</strong> → <strong>USB 3.0 (xHCI)</strong>를 활성화합니다.
+2. 필터 추가: <strong>Realtek</strong> (벤더 ID: 0bda, 제품 ID: 8832 또는 885a).
 3. VM을 시작 → `lsusb`로 확인 → Kali 단계를 따르십시오.
 
 ### VMware
 
-1. **Virtual Machine → USB & Bluetooth** → **Realtek RTL8832BU**를 찾아 **Connect**를 클릭합니다.
+1. <strong>Virtual Machine → USB & Bluetooth</strong> → <strong>Realtek RTL8832BU</strong>를 찾아 <strong>Connect</strong>를 클릭합니다.
 2. `lsusb`로 확인 → Kali 단계를 따르십시오.
 
 ---
@@ -259,7 +259,7 @@ sudo reboot
 | `modprobe 8852bu` 실패 | 드라이버가 빌드되지 않았거나 로드되지 않음 | `sudo ./install-driver.sh` 재실행, `sudo dkms status` 확인 후 재부팅 |
 | 모니터 모드 / 인젝션이 동작하지 않음 | 커널이 6.17 미만이며 커뮤니티 rtl8852bu DKMS 드라이버 사용(모니터 지원이 제한될 수 있음) | `uname -r`로 확인 후 커널 6.17+(내장 rtw89_8852bu) 사용, 구형 커널에서는 AWUS036ACM 사용 |
 
-> **VIF 관련 참고:** RTL8832BU 아웃오브커널 드라이버는 가상 인터페이스(VIF)를 지원하지 않습니다.
+> <strong>VIF 관련 참고:</strong> RTL8832BU 아웃오브커널 드라이버는 가상 인터페이스(VIF)를 지원하지 않습니다.
 
 ## 중국 미러 참조
 

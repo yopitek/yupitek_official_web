@@ -30,7 +30,7 @@ ALFA 網路卡在 Windows 10/11 上可即插即用連線 WiFi，但 NDIS 驅動�
 
 ALFA Network USB WiFi 網路卡在資安研究與網路工程領域廣為人知，但大多數教學文章都以 Linux 為主。對 Windows 使用者來說，好消息是：所有主要 ALFA 網路卡均可在 Windows 10 與 Windows 11 上使用製造商提供的驅動程式正常運作，無需自行編譯原始碼。
 
-與 Linux 最關鍵的差異在於監聽模式（Monitor Mode）。在 Linux 上，`aircrack-ng` 和 `airodump-ng` 等工具可透過原始 802.11 封包擷取與封包注入（Packet Injection）操作硬體。在 Windows 上，驅動程式模型（NDIS）並未開放相同的硬體功能。**Windows 原生並不支援完整的監聽模式與封包注入。** Windows 的優勢在於即插即用的連線能力，以及使用 Acrylic WiFi Analyzer 等精緻工具進行 WiFi 掃描。
+與 Linux 最關鍵的差異在於監聽模式（Monitor Mode）。在 Linux 上，`aircrack-ng` 和 `airodump-ng` 等工具可透過原始 802.11 封包擷取與封包注入（Packet Injection）操作硬體。在 Windows 上，驅動程式模型（NDIS）並未開放相同的硬體功能。<strong>Windows 原生並不支援完整的監聽模式與封包注入。</strong> Windows 的優勢在於即插即用的連線能力，以及使用 Acrylic WiFi Analyzer 等精緻工具進行 WiFi 掃描。
 
 本指南將說明驅動程式安裝、WiFi 掃描，並客觀評估 Windows 搭配 ALFA 網路卡的使用限制與能力。
 
@@ -68,8 +68,8 @@ ALFA Network USB WiFi 網路卡在資安研究與網路工程領域廣為人知�
 
 1. 將 ALFA 網路卡插入 USB 3.0 連接埠。
 2. 等待 30–60 秒。Windows 10 會顯示通知：*「裝置驅動程式軟體已成功安裝」*；Windows 11 則會靜默完成安裝。
-3. 開啟**裝置管理員**（`Win + X` → 裝置管理員）。
-4. 展開**網路介面卡**。應可看到網路卡列表（例如 *「Realtek 8812AU Wireless LAN 802.11ac USB NIC」* 或 *「MediaTek Wi-Fi 6 MT7921AUN Wireless LAN Card」*）。
+3. 開啟<strong>裝置管理員</strong>（`Win + X` → 裝置管理員）。
+4. 展開<strong>網路介面卡</strong>。應可看到網路卡列表（例如 *「Realtek 8812AU Wireless LAN 802.11ac USB NIC」* 或 *「MediaTek Wi-Fi 6 MT7921AUN Wireless LAN Card」*）。
 5. 若網路卡旁出現黃色警告圖示，請繼續使用方法 B。
 
 {{< alert "circle-info" >}}
@@ -83,13 +83,13 @@ Windows Update 需要有效的網路連線才能下載驅動程式。若您正�
 3. 以系統管理員身分執行 `.exe` 安裝程式，並接受 UAC 提示。
 4. 按照安裝精靈進行。出現提示時，保留預設安裝路徑即可。
 5. 安裝完成後重新開機。
-6. 開啟**裝置管理員** → **網路介面卡**，確認網路卡顯示時無警告圖示。
+6. 開啟<strong>裝置管理員</strong> → <strong>網路介面卡</strong>，確認網路卡顯示時無警告圖示。
 
 驗證驅動程式版本：
 
-1. 在裝置管理員中對網路卡按右鍵 → **內容**。
-2. 點選**驅動程式**索引標籤。
-3. 記下**驅動程式版本**與**驅動程式日期**以備日後參考。
+1. 在裝置管理員中對網路卡按右鍵 → <strong>內容</strong>。
+2. 點選<strong>驅動程式</strong>索引標籤。
+3. 記下<strong>驅動程式版本</strong>與<strong>驅動程式日期</strong>以備日後參考。
 
 ### 方法 B：手動安裝驅動程式 — MT7921AUN（AWUS036AXM / AWUS036AXML）
 
@@ -107,10 +107,10 @@ MediaTek MT7921AUN 驅動程式已內建於 Windows 11 驅動程式存放區（�
 
 | 錯誤代碼 | 說明 | 初步解決方式 |
 |---|---|---|
-| **Code 43** | 驅動程式回報失敗 | 解除安裝驅動程式 → 重新開機 → 重新安裝 |
-| **Code 10** | 裝置無法啟動 | 嘗試不同的 USB 連接埠；停用 USB 選擇性暫停 |
-| **Code 28** | 未安裝驅動程式 | 執行 Windows Update 或手動安裝驅動程式 |
-| **Code 45** | 裝置未連接 | 重新插接網路卡；若使用延長線請嘗試更換 USB 線 |
+| <strong>Code 43</strong> | 驅動程式回報失敗 | 解除安裝驅動程式 → 重新開機 → 重新安裝 |
+| <strong>Code 10</strong> | 裝置無法啟動 | 嘗試不同的 USB 連接埠；停用 USB 選擇性暫停 |
+| <strong>Code 28</strong> | 未安裝驅動程式 | 執行 Windows Update 或手動安裝驅動程式 |
+| <strong>Code 45</strong> | 裝置未連接 | 重新插接網路卡；若使用延長線請嘗試更換 USB 線 |
 
 ---
 
@@ -149,7 +149,7 @@ Acrylic WiFi Analyzer 是 Windows 上最接近 `airodump-ng` 被動掃描功能�
 - 傳送至您的網路卡的封包（單播至您的 MAC 位址）
 - 所連接網路的廣播與多播封包
 
-除非其他裝置恰好位於相同的廣播網域且 Wireshark 在交換式網路上以混雜模式運作，否則您**無法**擷取其他裝置之間的流量。完整的 802.11 封包擷取（管理訊框、來自外部 AP 的信標訊框）功能受到限制。
+除非其他裝置恰好位於相同的廣播網域且 Wireshark 在交換式網路上以混雜模式運作，否則您<strong>無法</strong>擷取其他裝置之間的流量。完整的 802.11 封包擷取（管理訊框、來自外部 AP 的信標訊框）功能受到限制。
 
 ---
 
@@ -157,22 +157,22 @@ Acrylic WiFi Analyzer 是 Windows 上最接近 `airodump-ng` 被動掃描功能�
 
 這部分需要明確說明期望。
 
-**Windows 的監聽模式與 Linux 的監聽模式有根本性的差異。**
+<strong>Windows 的監聽模式與 Linux 的監聽模式有根本性的差異。</strong>
 
 在 Linux 上，`aircrack-ng/rtl8812au` 等驅動程式可開放真正的監聽模式介面（`wlan0mon`），無需連線即可接收無線電環境中的所有 802.11 訊框——管理訊框、來自其他網路的資料訊框、探測請求與信標訊框。網路卡同時支援封包注入：在硬體層級傳送原始 802.11 訊框。
 
 在 Windows 上，NDIS 驅動程式模型未開放這些功能。Windows 環境下監聽的兩種實際方案為：
 
-**方案 A：Acrylic WiFi Pro + 相容驅動程式**
+<strong>方案 A：Acrylic WiFi Pro + 相容驅動程式</strong>
 
-Acrylic WiFi Pro 使用自訂 NDIS 驅動程式擴充模組來啟用*被動 802.11 掃描*。這讓您可以接收非連線存取點的信標訊框與探測回應——足以用於 RF 勘測、頻道分析與 AP 列舉。**不支援**封包注入或完整握手封包擷取。
+Acrylic WiFi Pro 使用自訂 NDIS 驅動程式擴充模組來啟用*被動 802.11 掃描*。這讓您可以接收非連線存取點的信標訊框與探測回應——足以用於 RF 勘測、頻道分析與 AP 列舉。<strong>不支援</strong>封包注入或完整握手封包擷取。
 
-**方案 B：Kali Linux Live USB**
+<strong>方案 B：Kali Linux Live USB</strong>
 
 對於需要完整監聽模式與封包注入的工作流程——WPA 握手封包擷取、去驗證測試、信標洪水攻擊——正確的平台是 Kali Linux。您有兩種選擇：
 
-- 在同一台機器上啟動 **Kali Linux Live USB**（裸機，完整硬體存取）
-- 執行 **Kali Linux 虛擬機器**（VMware 或 VirtualBox），透過 USB 直通將 ALFA 網路卡直接交給虛擬機器的 USB 堆疊
+- 在同一台機器上啟動 <strong>Kali Linux Live USB</strong>（裸機，完整硬體存取）
+- 執行 <strong>Kali Linux 虛擬機器</strong>（VMware 或 VirtualBox），透過 USB 直通將 ALFA 網路卡直接交給虛擬機器的 USB 堆疊
 
 詳細的虛擬機器設定說明，請參閱 [VirtualBox／VMware USB 直通指南](/zh-tw/blog/alfa-adapter-virtualbox-vmware-usb/)。
 
@@ -187,31 +187,31 @@ Acrylic WiFi Pro 使用自訂 NDIS 驅動程式擴充模組來啟用*被動 802.
 ### 網路卡完全無法識別
 
 1. 嘗試不同的 USB 連接埠，優先選用 USB 3.0（藍色連接埠）。部分 USB 集線器對雙頻網路卡供電不足。
-2. 開啟裝置管理員，在**其他裝置**下尋找帶有黃色問號的項目。這表示 Windows 偵測到硬體但缺少驅動程式。
-3. 按右鍵 → **更新驅動程式** → **瀏覽電腦上的驅動程式**，並指向手動下載的驅動程式資料夾。
+2. 開啟裝置管理員，在<strong>其他裝置</strong>下尋找帶有黃色問號的項目。這表示 Windows 偵測到硬體但缺少驅動程式。
+3. 按右鍵 → <strong>更新驅動程式</strong> → <strong>瀏覽電腦上的驅動程式</strong>，並指向手動下載的驅動程式資料夾。
 4. 若裝置管理員中（包含「其他裝置」）完全沒有顯示，請嘗試更換 USB 線（若使用延長線），或在另一台電腦上測試網路卡以排除硬體故障。
 
 ### 裝置管理員中可見網路卡但找不到任何網路
 
 1. 暫時停用 Windows Defender 防火牆，確認是否影響網路卡初始化。測試後請重新啟用。
-2. 在裝置管理員中，對網路卡按右鍵 → **內容** → **進階**索引標籤。尋找**無線模式**或**頻段**設定。若設為僅 5 GHz，在純 2.4 GHz 環境中將看不到任何網路。
-3. 確認網路卡未被停用：按右鍵 → **啟用裝置**。
+2. 在裝置管理員中，對網路卡按右鍵 → <strong>內容</strong> → <strong>進階</strong>索引標籤。尋找<strong>無線模式</strong>或<strong>頻段</strong>設定。若設為僅 5 GHz，在純 2.4 GHz 環境中將看不到任何網路。
+3. 確認網路卡未被停用：按右鍵 → <strong>啟用裝置</strong>。
 4. 在提升權限的命令提示字元中執行 `netsh wlan show interfaces`，確認網路卡的運作狀態。
 
 ### Windows 11 速度緩慢或頻繁斷線
 
-Windows 11 的**連線待命**（Modern Standby）功能可能因積極暫停 USB 裝置而干擾 USB WiFi 網路卡。
+Windows 11 的<strong>連線待命</strong>（Modern Standby）功能可能因積極暫停 USB 裝置而干擾 USB WiFi 網路卡。
 
 停用 USB 選擇性暫停：
 
-1. 開啟**控制台** → **電源選項** → **變更計劃設定** → **變更進階電源設定**。
-2. 展開 **USB 設定** → **USB 選擇性暫停設定**。
-3. 將**使用電池**與**已插上電源**均設為**已停用**。
-4. 按一下**套用** → **確定**，然後重新開機。
+1. 開啟<strong>控制台</strong> → <strong>電源選項</strong> → <strong>變更計劃設定</strong> → <strong>變更進階電源設定</strong>。
+2. 展開 <strong>USB 設定</strong> → <strong>USB 選擇性暫停設定</strong>。
+3. 將<strong>使用電池</strong>與<strong>已插上電源</strong>均設為<strong>已停用</strong>。
+4. 按一下<strong>套用</strong> → <strong>確定</strong>，然後重新開機。
 
 ### Code 43：驅動程式回報失敗
 
-1. 開啟裝置管理員，對網路卡按右鍵 → **解除安裝裝置**。若出現*「刪除此裝置的驅動程式軟體」*選項，請勾選。
+1. 開啟裝置管理員，對網路卡按右鍵 → <strong>解除安裝裝置</strong>。若出現*「刪除此裝置的驅動程式軟體」*選項，請勾選。
 2. 拔除網路卡。
 3. 重新開機。
 4. 重新插入網路卡。
@@ -223,13 +223,13 @@ Windows 11 的**連線待命**（Modern Standby）功能可能因積極暫停 US
 
 ## ALFA 網路卡 + Wireshark 設定
 
-Windows 上的 Wireshark 需要 **Npcap** 作為封包擷取函式庫。WinPcap（舊版替代方案）已過時，無法在現代 Windows 版本上可靠運作。
+Windows 上的 Wireshark 需要 <strong>Npcap</strong> 作為封包擷取函式庫。WinPcap（舊版替代方案）已過時，無法在現代 Windows 版本上可靠運作。
 
 ### 步驟一：安裝 Npcap
 
 1. 從 [https://npcap.com/](https://npcap.com/) 下載 Npcap（個人與教育用途免費）。
 2. 以系統管理員身分執行安裝程式。
-3. 安裝過程中，若計劃在 Wireshark 旁邊使用任何舊版工具，請勾選**「Install Npcap in WinPcap API-compatible mode」**。
+3. 安裝過程中，若計劃在 Wireshark 旁邊使用任何舊版工具，請勾選<strong>「Install Npcap in WinPcap API-compatible mode」</strong>。
 4. 重新開機。
 
 ### 步驟二：設定 Wireshark
@@ -262,13 +262,13 @@ wlan.fc.type_subtype == 0x0004
 
 | 功能 | Windows 10/11 | Kali Linux |
 |---|---|---|
-| **即插即用** | ✅ 自動安裝驅動程式 | ⚠️ 因晶片組而異 |
-| **WiFi 掃描** | ✅ Acrylic WiFi / netsh | ✅ airodump-ng / iwlist |
-| **監聽模式** | ⚠️ 僅被動（Acrylic Pro）| ✅ 完整監聽模式 |
-| **封包注入** | ❌ 不支援 | ✅ 完整注入 |
-| **Wireshark 擷取** | ⚠️ 受限（無 802.11 標頭）| ✅ 完整 802.11 擷取 |
-| **WPA 握手封包擷取** | ❌ 不可靠 | ✅ aircrack-ng / hcxdumptool |
-| **最佳使用場景** | 日常連線、WiFi 勘測、頻道分析 | 資安測試、CTF 挑戰、滲透測試 |
+| <strong>即插即用</strong> | ✅ 自動安裝驅動程式 | ⚠️ 因晶片組而異 |
+| <strong>WiFi 掃描</strong> | ✅ Acrylic WiFi / netsh | ✅ airodump-ng / iwlist |
+| <strong>監聽模式</strong> | ⚠️ 僅被動（Acrylic Pro）| ✅ 完整監聽模式 |
+| <strong>封包注入</strong> | ❌ 不支援 | ✅ 完整注入 |
+| <strong>Wireshark 擷取</strong> | ⚠️ 受限（無 802.11 標頭）| ✅ 完整 802.11 擷取 |
+| <strong>WPA 握手封包擷取</strong> | ❌ 不可靠 | ✅ aircrack-ng / hcxdumptool |
+| <strong>最佳使用場景</strong> | 日常連線、WiFi 勘測、頻道分析 | 資安測試、CTF 挑戰、滲透測試 |
 
 結論：若您的目標是網路連線、WiFi 分析與頻道規劃，Windows 是搭配 ALFA 網路卡的絕佳平台。一旦您的工作流程需要原始 802.11 訊框注入或 WPA 握手封包擷取，請切換至 Kali Linux——無論是裸機安裝或透過 USB 直通的虛擬機器。
 

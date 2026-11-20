@@ -23,7 +23,7 @@ featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
 ---
 
 {{< alert "triangle-exclamation" >}}
-**법적 고지:** 모든 무선 보안 테스트는 명시적인 서면 허가를 받은 네트워크와 기기에서만 수행해야 합니다. SAE 캡처, 디인증, Rogue AP 배치를 포함한 WPA3 테스트 기법은 다른 무선 평가 활동과 동일한 법적 요건의 적용을 받습니다. 허가된 테스트만 수행하십시오.
+<strong>법적 고지:</strong> 모든 무선 보안 테스트는 명시적인 서면 허가를 받은 네트워크와 기기에서만 수행해야 합니다. SAE 캡처, 디인증, Rogue AP 배치를 포함한 WPA3 테스트 기법은 다른 무선 평가 활동과 동일한 법적 요건의 적용을 받습니다. 허가된 테스트만 수행하십시오.
 {{< /alert >}}
 
 WPA3는 개인 및 기업 무선 보안 모두에서 WPA2에 비해 상당한 개선을 나타냅니다. SAE(Simultaneous Authentication of Equals)는 사전 공유 키(PSK) 핸드셰이크를 오프라인 사전 공격에 저항하는 비밀번호 인증 키 교환으로 대체합니다. 보호 관리 프레임(PMF)이 필수입니다. 순방향 비밀성이 기본 내장되어 있습니다.
@@ -44,7 +44,7 @@ WPA3 보안 테스트는 SAE 핸드셰이크 분석, 전환 모드 다운그레�
 
 ### SAE: Simultaneous Authentication of Equals
 
-SAE는 WPA2-PSK의 4-way 핸드셰이크를 Dragonfly 키 교환 프로토콜 기반의 영지식 증명 교환으로 대체합니다. 보안 테스트에서 중요한 핵심 속성은 **순방향 비밀성**입니다. Wi-Fi 비밀번호가 나중에 유출되더라도 이전에 캡처한 트래픽은 복호화할 수 없습니다. 이로써 SAE 전용 네트워크에 대한 오프라인 패스프레이즈 크래킹의 주된 가치가 사라집니다.
+SAE는 WPA2-PSK의 4-way 핸드셰이크를 Dragonfly 키 교환 프로토콜 기반의 영지식 증명 교환으로 대체합니다. 보안 테스트에서 중요한 핵심 속성은 <strong>순방향 비밀성</strong>입니다. Wi-Fi 비밀번호가 나중에 유출되더라도 이전에 캡처한 트래픽은 복호화할 수 없습니다. 이로써 SAE 전용 네트워크에 대한 오프라인 패스프레이즈 크래킹의 주된 가치가 사라집니다.
 
 SAE는 또한 WPA2에 영향을 주던 PMKID 공격 취약성을 제거합니다. 수동적 공격자가 SAE 연결에서 추출할 수 있는, 오프라인으로 크랙 가능한 동등 산출물이 존재하지 않습니다.
 
@@ -54,7 +54,7 @@ SAE는 또한 WPA2에 영향을 주던 PMKID 공격 취약성을 제거합니다
 
 ### WPA3 전환 모드
 
-현실에서 가장 흔한 구축 시나리오는 **WPA3 전환 모드(Transition Mode)**입니다. AP가 WPA3를 지원하지 않는 기기와의 하위 호환성을 유지하기 위해 WPA3-SAE와 WPA2-PSK 인증을 동시에 수용합니다. 이 모드는 현재 기업 환경에서 주된 공격 표면입니다 — WPA3를 광고하는 네트워크에 WPA2 PSK 핸드셰이크 노출을 다시 들여오기 때문입니다.
+현실에서 가장 흔한 구축 시나리오는 <strong>WPA3 전환 모드(Transition Mode)</strong>입니다. AP가 WPA3를 지원하지 않는 기기와의 하위 호환성을 유지하기 위해 WPA3-SAE와 WPA2-PSK 인증을 동시에 수용합니다. 이 모드는 현재 기업 환경에서 주된 공격 표면입니다 — WPA3를 광고하는 네트워크에 WPA2 PSK 핸드셰이크 노출을 다시 들여오기 때문입니다.
 
 ### WPA3-Enterprise
 
@@ -68,8 +68,8 @@ WPA3-Enterprise는 GCMP-256과 HMAC-SHA-384를 사용하는 192비트 보안 모
 
 WPA3 테스트에는 신뢰할 수 있는 모니터 모드, 인젝션 지원, 그리고 — 6 GHz WPA3 네트워크의 경우 — 트라이밴드 기능을 갖춘 어댑터가 필요합니다.
 
-- **AWUS036AXML** — Wi-Fi 6E(6 GHz) WPA3 네트워크에 필수. MediaTek MT7921AUN 칩셋. 커널 5.18+의 Kali Linux에서 모니터 모드, AP, WPA3 사용 가능. 패킷 인젝션은 커널 6.16 이전에서는 커뮤니티 보고가 있으나 stock kernel 6.17 실측에서는 실패했습니다(mac80211 chanctx 회귀가 주원인이며 칩 자체의 한계는 아닙니다). 인젝션이 필요하면 AWUS036ACH를 사용하세요. WPA3 전용 구축이 점점 흔해지는 6 GHz 채널을 커버하는 유일한 ALFA 어댑터.
-- **AWUS036ACH** — 2.4/5 GHz WPA3 테스트에 적합. RTL8812AU 칩셋. aircrack-ng 툴체인과의 최대 호환성, 그리고 Kali Linux 버전 전반에 걸친 가장 폭넓은 드라이버 지원.
+- <strong>AWUS036AXML</strong> — Wi-Fi 6E(6 GHz) WPA3 네트워크에 필수. MediaTek MT7921AUN 칩셋. 커널 5.18+의 Kali Linux에서 모니터 모드, AP, WPA3 사용 가능. 패킷 인젝션은 커널 6.16 이전에서는 커뮤니티 보고가 있으나 stock kernel 6.17 실측에서는 실패했습니다(mac80211 chanctx 회귀가 주원인이며 칩 자체의 한계는 아닙니다). 인젝션이 필요하면 AWUS036ACH를 사용하세요. WPA3 전용 구축이 점점 흔해지는 6 GHz 채널을 커버하는 유일한 ALFA 어댑터.
+- <strong>AWUS036ACH</strong> — 2.4/5 GHz WPA3 테스트에 적합. RTL8812AU 칩셋. aircrack-ng 툴체인과의 최대 호환성, 그리고 Kali Linux 버전 전반에 걸친 가장 폭넓은 드라이버 지원.
 
 ### 모니터 모드 활성화
 
@@ -104,7 +104,7 @@ airodump-ng 출력에서 WPA3-SAE 네트워크는 AUTH 열에 `WPA3 SAE`로 나�
 
 ### 수동 캡처의 한계
 
-WPA2와 달리 **SAE 핸드셰이크는 오프라인 사전 공격에 사용할 수 없습니다.** SAE commit 및 confirm 프레임을 캡처하는 것은 어떤 모니터 모드 어댑터로도 간단하지만, 캡처한 자료는 크랙 가능한 해시를 산출하지 않습니다. SAE 프레임을 캡처하는 목적은 프로토콜 수준 분석입니다 — 올바른 SAE 변형이 사용되는지 검증하고, PMF가 협상되는지 확인하며, 평가 보고서에 증거를 제공하기 위함입니다.
+WPA2와 달리 <strong>SAE 핸드셰이크는 오프라인 사전 공격에 사용할 수 없습니다.</strong> SAE commit 및 confirm 프레임을 캡처하는 것은 어떤 모니터 모드 어댑터로도 간단하지만, 캡처한 자료는 크랙 가능한 해시를 산출하지 않습니다. SAE 프레임을 캡처하는 목적은 프로토콜 수준 분석입니다 — 올바른 SAE 변형이 사용되는지 검증하고, PMF가 협상되는지 확인하며, 평가 보고서에 증거를 제공하기 위함입니다.
 
 ```bash
 # 대상 AP 채널에서 캡처
@@ -117,8 +117,8 @@ wireshark -r sae_capture-01.cap
 ```
 
 인증 프레임에서 SAE commit 및 confirm 교환을 검증합니다. 비컨 프레임의 RSN 정보 요소(Information Element)는 다음을 보여야 합니다.
-- **AKM Suite**: WPA3-Personal의 경우 00-0F-AC:8 (SAE)
-- **PMF**: Required (RSN Capabilities에 MFPR 비트 설정됨)
+- <strong>AKM Suite</strong>: WPA3-Personal의 경우 00-0F-AC:8 (SAE)
+- <strong>PMF</strong>: Required (RSN Capabilities에 MFPR 비트 설정됨)
 
 ### SAE 네트워크에서의 PMKID 테스트
 
@@ -174,9 +174,9 @@ sudo hostapd /tmp/rogue_wpa2.conf &
 sudo airodump-ng -c 6 --bssid ROGUE_BSSID -w downgrade_capture wlan0mon
 ```
 
-**중대한 발견 사항:** 이전에 SAE를 통해 연결했던 클라이언트가 WPA2 전용 Rogue AP에 연결된다면(캡처 파일의 4-way 핸드셰이크로 입증됨), 클라이언트 OS가 WPA3-SAE 요구를 강제하지 않는 것입니다. 이는 다운그레이드 공격이 성공했음을 의미합니다.
+<strong>중대한 발견 사항:</strong> 이전에 SAE를 통해 연결했던 클라이언트가 WPA2 전용 Rogue AP에 연결된다면(캡처 파일의 4-way 핸드셰이크로 입증됨), 클라이언트 OS가 WPA3-SAE 요구를 강제하지 않는 것입니다. 이는 다운그레이드 공격이 성공했음을 의미합니다.
 
-**통과 조건:** 클라이언트가 WPA2 전용 AP를 무시하거나 경고를 표시하며, WPA2 핸드셰이크를 완료하지 않습니다.
+<strong>통과 조건:</strong> 클라이언트가 WPA2 전용 AP를 무시하거나 경고를 표시하며, WPA2 핸드셰이크를 완료하지 않습니다.
 
 ### hcxpcapngtool 출력의 다운그레이드 지표
 
@@ -195,9 +195,9 @@ cat downgrade_hash.hc22000
 
 Dragonblood 연구(Vanhoef & Ronen, 2019)는 SAE 핸드셰이크 구현의 여러 취약점을 식별했습니다.
 
-- **CVE-2019-9494 / CVE-2019-9496**: SAE commit 프레임에 대한 사이드 채널 공격(캐시 기반 및 타이밍 기반)으로, 패치되지 않은 구현에 대한 오프라인 사전 공격을 허용함
-- **CVE-2019-9499**: SAE confirmation 우회로 WPA3-Personal에서 WPA2-PSK로의 다운그레이드를 초래함
-- **SAE commit 플러딩을 통한 DoS**: 다수의 SAE commit 프레임을 전송해 AP 상태 테이블을 고갈시킴
+- <strong>CVE-2019-9494 / CVE-2019-9496</strong>: SAE commit 프레임에 대한 사이드 채널 공격(캐시 기반 및 타이밍 기반)으로, 패치되지 않은 구현에 대한 오프라인 사전 공격을 허용함
+- <strong>CVE-2019-9499</strong>: SAE confirmation 우회로 WPA3-Personal에서 WPA2-PSK로의 다운그레이드를 초래함
+- <strong>SAE commit 플러딩을 통한 DoS</strong>: 다수의 SAE commit 프레임을 전송해 AP 상태 테이블을 고갈시킴
 
 대부분의 현대 AP 펌웨어는 원래의 Dragonblood 취약점을 패치했습니다. 그러나 오래되었거나 패치되지 않은 AP 펌웨어 환경에서는 여전히 테스트가 유효합니다.
 
@@ -294,7 +294,7 @@ sudo airodump-ng wlan0mon --band abg | grep -E "OWE|\<length: 0\>"
 # WPA3를 지원하는 클라이언트는 OWE를 선호해야 하고, 레거시 클라이언트는 개방으로 폴백함
 ```
 
-**발견 사항:** WPA3 지원 클라이언트가 OWE SSID 대신 개방 전환 SSID에 연결하면, 클라이언트 OS가 OWE 전환 모드를 올바르게 처리하지 못하는 것입니다. 해당 클라이언트의 모든 트래픽은 암호화되지 않습니다.
+<strong>발견 사항:</strong> WPA3 지원 클라이언트가 OWE SSID 대신 개방 전환 SSID에 연결하면, 클라이언트 OS가 OWE 전환 모드를 올바르게 처리하지 못하는 것입니다. 해당 클라이언트의 모든 트래픽은 암호화되지 않습니다.
 
 ---
 
@@ -312,8 +312,8 @@ sudo tshark -i wlan0mon -f "wlan type mgt subtype beacon and wlan.bssid == aa:bb
 ```
 
 WPA3-Enterprise 192비트의 예상 값:
-- **Pairwise Cipher Suite**: GCMP-256 (00-0F-AC:9)
-- **AKM Suite**: EAP-SHA384 (00-0F-AC:12) 또는 FT-EAP-SHA384 (00-0F-AC:13)
+- <strong>Pairwise Cipher Suite</strong>: GCMP-256 (00-0F-AC:9)
+- <strong>AKM Suite</strong>: EAP-SHA384 (00-0F-AC:12) 또는 FT-EAP-SHA384 (00-0F-AC:13)
 
 WPA3-Enterprise 네트워크에 CCMP-128이 존재하는 것은 Medium 발견 사항입니다; AP가 192비트 보안 요구를 강제하지 않는 것입니다.
 

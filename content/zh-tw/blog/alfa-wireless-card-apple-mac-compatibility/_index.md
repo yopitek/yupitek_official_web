@@ -8,15 +8,15 @@ lastmod: 2026-11-20
 category: "技術指南"
 tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", "macOS Compatibility"]
 ---
-如果你正在使用 Apple Mac（無論搭載 M3 Max 的 MacBook Pro、搭載 M2 Ultra 的 Mac Studio，或是基於 Intel 的 Mac Mini），並且想要使用 ALFA Network 無線網路卡進行 Wi-Fi 稽核、監控模式或封包注入，你需要一個明確的答案：**哪張 ALFA 網路卡能在哪台 Mac 上運作？**
+如果你正在使用 Apple Mac（無論搭載 M3 Max 的 MacBook Pro、搭載 M2 Ultra 的 Mac Studio，或是基於 Intel 的 Mac Mini），並且想要使用 ALFA Network 無線網路卡進行 Wi-Fi 稽核、監控模式或封包注入，你需要一個明確的答案：<strong>哪張 ALFA 網路卡能在哪台 Mac 上運作？</strong>
 
 以下是簡短的答案：
 
-> **Apple Silicon Mac（M1/M2/M3/M4）：沒有任何 ALFA 無線網路卡能在 macOS 上原生運作。** 這是架構上的限制。Realtek 的 macOS 核心擴充功能僅為 x86_64 二進位檔，無法在 ARM64 核心上載入。沒有修復方案，也沒有任何廠商計畫變更此狀況。
+> <strong>Apple Silicon Mac（M1/M2/M3/M4）：沒有任何 ALFA 無線網路卡能在 macOS 上原生運作。</strong> 這是架構上的限制。Realtek 的 macOS 核心擴充功能僅為 x86_64 二進位檔，無法在 ARM64 核心上載入。沒有修復方案，也沒有任何廠商計畫變更此狀況。
 >
-> **Intel Mac：有限支援，僅限客戶端連線。** macOS 10.11–10.15 有部分官方驅動程式，但 **macOS 不支援監控模式與封包注入**，驅動程式根本沒有實作這些功能。
+> <strong>Intel Mac：有限支援，僅限客戶端連線。</strong> macOS 10.11–10.15 有部分官方驅動程式，但 <strong>macOS 不支援監控模式與封包注入</strong>，驅動程式根本沒有實作這些功能。
 >
-> **可行的解決方案：** 在 Apple Silicon Mac 上以 USB 直通方式執行 Kali Linux ARM 虛擬機器。監控模式與封包注入在 Linux 虛擬機器中運作完美。
+> <strong>可行的解決方案：</strong> 在 Apple Silicon Mac 上以 USB 直通方式執行 Kali Linux ARM 虛擬機器。監控模式與封包注入在 Linux 虛擬機器中運作完美。
 
 本指南提供完整的相容性矩陣，說明 Apple Silicon 無法原生支援 ALFA 網路卡的六項技術原因，並帶你完成實際可行的虛擬機器設定。
 
@@ -30,34 +30,34 @@ tags: ["Wireless Security", "ALFA Network", "Apple Mac", "Penetration Testing", 
 
 | ALFA 型號 | 晶片組 | Apple Silicon（macOS 原生） | Intel Mac（macOS 原生）| 虛擬機器 + USB 直通（Kali ARM）| Raspberry Pi + Kali |
 |:---|:---|:---:|:---:|:---:|:---:|
-| **AWUS036ACH** | Realtek RTL8812AU |❌ |⚠️ 僅客戶端（≤10.15）|✅ 最佳監控/注入|✅ |
-| **AWUS036ACM** | MediaTek MT7612U |❌ |⚠️ 僅客戶端（≤10.12）|✅ 即插即用|✅ 即插即用|
-| **AWUS036AXML** | MediaTek MT7921AUN |❌ |❌ |✅ Wi-Fi 6E|✅ |
-| **AWUS036AXM** | MediaTek MT7921AUN |❌ |❌ |✅ |✅ |
-| **AWUS036ACHM** | MediaTek MT7610U |❌ |❌ |✅ |✅ |
-| **AWUS036ACS** | Realtek RTL8811AU |❌ |⚠️ 僅客戶端（≤10.14）|✅ |✅ |
-| **AWUS036AX** | Realtek RTL8832BU |❌ |❌ |✅ 核心 ≥6.17|⚠️ 需核心 ≥6.17（Pi 上未測試）|
-| **AWUS036AXER** | Realtek RTL8832BU |❌ |❌ |✅ 核心 ≥6.17|⚠️ 需核心 ≥6.17（Pi 上未測試）|
-| **AWUS036EACS** | Realtek RTL8821CU |❌ |⚠️ 僅客戶端|✅ 實測可監控／注入（Linux guest 需 kernel ≥6.2）|⚠️ 需 kernel ≥6.2，未於 Pi 實測|
+| <strong>AWUS036ACH</strong> | Realtek RTL8812AU |❌ |⚠️ 僅客戶端（≤10.15）|✅ 最佳監控/注入|✅ |
+| <strong>AWUS036ACM</strong> | MediaTek MT7612U |❌ |⚠️ 僅客戶端（≤10.12）|✅ 即插即用|✅ 即插即用|
+| <strong>AWUS036AXML</strong> | MediaTek MT7921AUN |❌ |❌ |✅ Wi-Fi 6E|✅ |
+| <strong>AWUS036AXM</strong> | MediaTek MT7921AUN |❌ |❌ |✅ |✅ |
+| <strong>AWUS036ACHM</strong> | MediaTek MT7610U |❌ |❌ |✅ |✅ |
+| <strong>AWUS036ACS</strong> | Realtek RTL8811AU |❌ |⚠️ 僅客戶端（≤10.14）|✅ |✅ |
+| <strong>AWUS036AX</strong> | Realtek RTL8832BU |❌ |❌ |✅ 核心 ≥6.17|⚠️ 需核心 ≥6.17（Pi 上未測試）|
+| <strong>AWUS036AXER</strong> | Realtek RTL8832BU |❌ |❌ |✅ 核心 ≥6.17|⚠️ 需核心 ≥6.17（Pi 上未測試）|
+| <strong>AWUS036EACS</strong> | Realtek RTL8821CU |❌ |⚠️ 僅客戶端|✅ 實測可監控／注入（Linux guest 需 kernel ≥6.2）|⚠️ 需 kernel ≥6.2，未於 Pi 實測|
 
-**圖例：**✅ = 已驗證可用 |⚠️ = 有限制 / 需符合條件 |❌ = 不支援
+<strong>圖例：</strong>✅ = 已驗證可用 |⚠️ = 有限制 / 需符合條件 |❌ = 不支援
 
 ### 1.2 依 Mac 處理器快速結論
 
 | Mac 處理器 | 能在 macOS 上使用 ALFA 網路卡嗎？| 能執行監控模式嗎？| 建議方案 |
 |:---|:---|:---|:---|
-| **Apple Silicon M1/M2/M3/M4** |❌ 否，架構限制|❌ 無法在 macOS 上執行|✅ 以 USB 直通執行 Linux 虛擬機器|
-| **Intel（macOS 10.11–10.15）** |⚠️ 有限，僅客戶端，無監控模式|❌ 不支援|✅ 以 USB 直通執行 Linux 虛擬機器|
-| **Intel（macOS 11+）** |⚠️ 僅第三方 kext（chris1111）|❌ 不支援|✅ 以 USB 直通執行 Linux 虛擬機器|
+| <strong>Apple Silicon M1/M2/M3/M4</strong> |❌ 否，架構限制|❌ 無法在 macOS 上執行|✅ 以 USB 直通執行 Linux 虛擬機器|
+| <strong>Intel（macOS 10.11–10.15）</strong> |⚠️ 有限，僅客戶端，無監控模式|❌ 不支援|✅ 以 USB 直通執行 Linux 虛擬機器|
+| <strong>Intel（macOS 11+）</strong> |⚠️ 僅第三方 kext（chris1111）|❌ 不支援|✅ 以 USB 直通執行 Linux 虛擬機器|
 
 > [!IMPORTANT]
-> **結論：** 無論你擁有哪款 Mac，**監控模式與封包注入都需要 Linux。** 虛擬機器 + USB 直通是通用方案，適用於從 2012 年 Intel MacBook Pro 到 2025 年 M4 Mac Studio 的所有 Mac。
+> <strong>結論：</strong> 無論你擁有哪款 Mac，<strong>監控模式與封包注入都需要 Linux。</strong> 虛擬機器 + USB 直通是通用方案，適用於從 2012 年 Intel MacBook Pro 到 2025 年 M4 Mac Studio 的所有 Mac。
 
 ---
 
 ## 2. 為何 Apple Silicon 失敗：六層架構牆
 
-如果你想知道未來的 macOS 更新是否可能解決這個問題，答案是不會。這個不相容性不是等待修復的 bug，而是**六項 Apple 刻意設計決策**的累積結果，這些決策共同使得第三方 USB Wi-Fi 網路卡在 Apple Silicon 上成為架構上的不可能。
+如果你想知道未來的 macOS 更新是否可能解決這個問題，答案是不會。這個不相容性不是等待修復的 bug，而是<strong>六項 Apple 刻意設計決策</strong>的累積結果，這些決策共同使得第三方 USB Wi-Fi 網路卡在 Apple Silicon 上成為架構上的不可能。
 
 ### 第一層：IO80211Controller 是私有 API
 
@@ -74,23 +74,23 @@ IOService
 
 ### 第二層：NetworkingDriverKit 僅支援乙太網路
 
-Apple 取代核心擴充功能的現代方案是 **DriverKit**，即不會威脅核心穩定性的使用者空間驅動程式。網路系列 `NetworkingDriverKit` 在 [Apple 官方文件](https://developer.apple.com/documentation/networkingdriverkit)中明確指出：
+Apple 取代核心擴充功能的現代方案是 <strong>DriverKit</strong>，即不會威脅核心穩定性的使用者空間驅動程式。網路系列 `NetworkingDriverKit` 在 [Apple 官方文件](https://developer.apple.com/documentation/networkingdriverkit)中明確指出：
 
->「使用 NetworkingDriverKit 開發 USB 乙太網路卡的驅動程式。請注意，**乙太網路是 NetworkingDriverKit 目前唯一支援的網路介面。**」
+>「使用 NetworkingDriverKit 開發 USB 乙太網路卡的驅動程式。請注意，<strong>乙太網路是 NetworkingDriverKit 目前唯一支援的網路介面。</strong>」
 
-不存在 `IOUserNetworkWiFi` 類別。沒有 Wi-Fi 的 DriverKit 框架。即使 Realtek 或 MediaTek 投入工程資源撰寫 DriverKit 驅動程式，**也沒有 Apple 框架可以插入它。**
+不存在 `IOUserNetworkWiFi` 類別。沒有 Wi-Fi 的 DriverKit 框架。即使 Realtek 或 MediaTek 投入工程資源撰寫 DriverKit 驅動程式，<strong>也沒有 Apple 框架可以插入它。</strong>
 
 ### 第三層：USB + 網路 kext 組合自 Big Sur 起不再支援
 
 Apple 的 [已淘汰核心擴充功能](https://developer.apple.com/support/kernel-extensions/)頁面指出：
 
->「同時使用 IONetworkingFamily KPI 與任何 USB KPI（IOUSBHostFamily 或 IOUSBFamily）在 **macOS Big Sur 中不支援。**」
+>「同時使用 IONetworkingFamily KPI 與任何 USB KPI（IOUSBHostFamily 或 IOUSBFamily）在 <strong>macOS Big Sur 中不支援。</strong>」
 
 這正是每個 USB Wi-Fi 核心擴充功能所需的 KPI 組合。唯一的逃生門是完全停用 SIP 或使用 MDM 設定檔，這兩者都不適合消費性產品。
 
 ### 第四層：Realtek 的 kext 僅支援 x86_64
 
-Realtek 的 macOS 驅動程式以 `RtWlanU.kext` 發行，僅針對 **x86_64** 編譯。Apple Silicon Mac 執行的是 **ARM64** 核心。核心擴充功能在核心空間執行，**Rosetta 2 無法翻譯核心擴充功能。**
+Realtek 的 macOS 驅動程式以 `RtWlanU.kext` 發行，僅針對 <strong>x86_64</strong> 編譯。Apple Silicon Mac 執行的是 <strong>ARM64</strong> 核心。核心擴充功能在核心空間執行，<strong>Rosetta 2 無法翻譯核心擴充功能。</strong>
 
 [chris1111 討論區 #128](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/discussions/128) 上的一位使用者記錄了 M1 MacBook Air 搭配 Ventura 13.1 與 ALFA RTL8814AU 的確切失敗訊息：
 
@@ -104,7 +104,7 @@ Kext com.realtek.driver.RtWlanU v1830.32.b27
 
 [chris1111/Wireless-USB-Big-Sur-Adapter](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter)（Realtek macOS Wi-Fi 驅動程式的實際社群發行版）的維護者在 README 中明確表示：
 
->**「這在 Mac M1、M2、M3、M4 Apple 晶片上似乎無法運作，僅適用於 Mac Intel。」**
+><strong>「這在 Mac M1、M2、M3、M4 Apple 晶片上似乎無法運作，僅適用於 Mac Intel。」</strong>
 
 並在使用者詢問是否可新增 M1 支援時回應：
 
@@ -117,17 +117,17 @@ Realtek 從未發行 arm64 kext、DriverKit 驅動程式，或任何針對 Apple
 即使存在 arm64 kext，在 Apple Silicon 上載入它也需要：
 
 1. 關閉 Mac
-2. **按住並持續按住**電源按鈕直到出現啟動選項
+2. <strong>按住並持續按住</strong>電源按鈕直到出現啟動選項
 3. 進入唯一真正的復原模式（1TR）
-4. 降級為**降低安全性**原則
+4. 降級為<strong>降低安全性</strong>原則
 5. 啟用「允許使用者管理來自已識別開發者的核心擴充功能」
 6. 重新啟動、安裝 kext、在系統設定中核准
-7. **再次重新啟動**以重建輔助核心集合（AuxKC）
+7. <strong>再次重新啟動</strong>以重建輔助核心集合（AuxKC）
 
 根據 Apple 的 [安全地延伸核心](https://support.apple.com/guide/security/securely-extending-the-kernel-sec8e454101b/web)指南，此流程是刻意設計為困難的：「1TR 與密碼要求的組合使得僅從 macOS 內部啟動的軟體攻擊者難以注入 kext。」
 
 > [!IMPORTANT]
-> **結論：** 沒有任何 ALFA 網路卡，也沒有任何第三方 USB Wi-Fi 網路卡，能在 Apple Silicon macOS 上原生運作。除非 Apple 發布 Wi-Fi DriverKit 框架（他們沒有）且廠商為其撰寫驅動程式（目前沒有），否則此狀況不會改變。
+> <strong>結論：</strong> 沒有任何 ALFA 網路卡，也沒有任何第三方 USB Wi-Fi 網路卡，能在 Apple Silicon macOS 上原生運作。除非 Apple 發布 Wi-Fi DriverKit 框架（他們沒有）且廠商為其撰寫驅動程式（目前沒有），否則此狀況不會改變。
 
 ---
 
@@ -141,34 +141,34 @@ Realtek 從未發行 arm64 kext、DriverKit 驅動程式，或任何針對 Apple
 |------------|---------|---------------------|------------------------------|
 | AWUS036ACH | RTL8812AU | 10.15 Catalina | 11 Big Sur 至 26 Tahoe（僅 Intel）|
 | AWUS036ACS | RTL8811AU | 10.14 Mojave | 11 Big Sur 至 26 Tahoe（僅 Intel）|
-| AWUS036ACM | MT7612U | **10.12 Sierra** |❌ 不支援（MediaTek）|
+| AWUS036ACM | MT7612U | <strong>10.12 Sierra</strong> |❌ 不支援（MediaTek）|
 | AWUS036ACHM | MT7610U |❌ 無 |❌ 不支援（MediaTek）|
 | AWUS036AX/AXER | RTL8832BU |❌ 無 |❌ 無 |
 | AWUS036AXML/AXM | MT7921AUN |❌ 無 |❌ 無 |
 
 ### 4.2 監控模式的悖論
 
-安全專業人士面臨的關鍵問題是：**即使驅動程式成功安裝在 Intel Mac 上，監控模式與封包注入仍然無法運作。**
+安全專業人士面臨的關鍵問題是：<strong>即使驅動程式成功安裝在 Intel Mac 上，監控模式與封包注入仍然無法運作。</strong>
 
 ALFA 的 macOS 驅動程式僅實作客戶端連線功能，並未實作監控模式 API。這在 [Super 討論](https://super.com/questions/1597114/alfa-wifi-network-card-monitor-mode-on-mac-os)中獲得確認，一位使用者成功安裝了 AWUS036EAC 驅動程式，但無法進入監控模式：
 
 >「你怎麼認為 ALFA 將監控模式支援放入他們的 macOS 驅動程式？不同作業系統的監控模式 API 不同。我假設他們只是沒有費心為 macOS 實作它。」
 
-這形成了一個悖論：**你購買 ALFA 網路卡專門為了監控模式與封包注入，但 macOS 驅動程式不支援這兩項功能。** macOS 內建的 Wi-Fi 網路卡實際上支援監控模式（透過 `airport` 公用程式），但 ALFA 的驅動程式沒有為他們的硬體實作此功能。
+這形成了一個悖論：<strong>你購買 ALFA 網路卡專門為了監控模式與封包注入，但 macOS 驅動程式不支援這兩項功能。</strong> macOS 內建的 Wi-Fi 網路卡實際上支援監控模式（透過 `airport` 公用程式），但 ALFA 的驅動程式沒有為他們的硬體實作此功能。
 
 > [!WARNING]
-> 如果你的目標是無線安全稽核（監控模式、封包注入、握手封包擷取、解除驗證攻擊），**macOS 無法做到，無論哪種 Mac、Intel 或 Apple Silicon、搭配任何 ALFA 網路卡。** 你需要 Linux。
+> 如果你的目標是無線安全稽核（監控模式、封包注入、握手封包擷取、解除驗證攻擊），<strong>macOS 無法做到，無論哪種 Mac、Intel 或 Apple Silicon、搭配任何 ALFA 網路卡。</strong> 你需要 Linux。
 
 ### 4.3 chris1111 驅動程式：Intel Mac 的最後手段
 
 對於執行 macOS 11 Big Sur 或更新版本的 Intel Mac，唯一的選擇是 [chris1111/Wireless-USB-Big-Sur-Adapter](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter) 專案，這是一個由社群維護的 Realtek kext 發行版。
 
-**需求：**
+<strong>需求：</strong>
 - 僅限 Intel Mac（不支援 Apple Silicon）
 - 必須停用系統完整性保護（SIP）
 - 此 kext 未經 Realtek/ALFA/Apple 簽署
 
-**支援的網路卡：** 僅 AWUS036ACH（RTL8812AU）與 AWUS036ACS（RTL8811AU）。
+<strong>支援的網路卡：</strong> 僅 AWUS036ACH（RTL8812AU）與 AWUS036ACS（RTL8811AU）。
 
 Rokland（ALFA 的美國經銷商）[強烈警告](https://store.rokland.com/blogs/news/apple-mac-os-11-big-sur-compatibility-update-for-alfa-awus036ach-other-products)：「我們強烈建議不要在你的 Mac 是主要電腦且執行關鍵任務時使用此驅動程式。」
 
@@ -176,9 +176,9 @@ Rokland（ALFA 的美國經銷商）[強烈警告](https://store.rokland.com/blo
 
 ## 4. 可行的解決方案：虛擬機器 + USB 直通
 
-由於 macOS 無法原生執行 ALFA 網路卡（即使能，監控模式也無法運作），Mac 安全團隊的實際解決方案是在**虛擬機器中執行 Linux**，並透過 USB 將 ALFA 網路卡直通。
+由於 macOS 無法原生執行 ALFA 網路卡（即使能，監控模式也無法運作），Mac 安全團隊的實際解決方案是在<strong>虛擬機器中執行 Linux</strong>，並透過 USB 將 ALFA 網路卡直通。
 
-此方案適用於**所有 Apple Silicon Mac**（M1/M2/M3/M4）與所有 Intel Mac。監控模式與封包注入的功能與原生 Linux 機器完全相同。
+此方案適用於<strong>所有 Apple Silicon Mac</strong>（M1/M2/M3/M4）與所有 Intel Mac。監控模式與封包注入的功能與原生 Linux 機器完全相同。
 
 ### 5.1 你需要什麼
 
@@ -195,19 +195,19 @@ Rokland（ALFA 的美國經銷商）[強烈警告](https://store.rokland.com/blo
 #### 步驟 1：建立 Kali Linux ARM 虛擬機器
 
 下載 Kali Linux ARM64 安裝程式，並在 UTM 中建立新的虛擬機器：
-- **架構：** ARM64（aarch64）
-- **記憶體：** 最少 2 GB（建議 4 GB）
-- **CPU：** 2 核以上
-- **USB 控制器：** USB 3.0（xHCI），**這很關鍵**
+- <strong>架構：</strong> ARM64（aarch64）
+- <strong>記憶體：</strong> 最少 2 GB（建議 4 GB）
+- <strong>CPU：</strong> 2 核以上
+- <strong>USB 控制器：</strong> USB 3.0（xHCI），<strong>這很關鍵</strong>
 
 > [!IMPORTANT]
-> 你必須將虛擬機器的 USB 控制器設定為 **USB 3.0（xHCI）**，而非 USB 2.0。USB 2.0 控制器會導致高功率 ALFA 網路卡間歇性斷線，特別是在封包注入期間。
+> 你必須將虛擬機器的 USB 控制器設定為 <strong>USB 3.0（xHCI）</strong>，而非 USB 2.0。USB 2.0 控制器會導致高功率 ALFA 網路卡間歇性斷線，特別是在封包注入期間。
 
 #### 步驟 2：在虛擬機器中安裝 ALFA 驅動程式
 
-**AWUS036ACH（RTL8812AU）：**
+<strong>AWUS036ACH（RTL8812AU）：</strong>
 
-如果你的 Kali 核心版本**≥6.13**，`rtw88` 主線驅動程式已內建，無需安裝。對於較舊的核心：
+如果你的 Kali 核心版本<strong>≥6.13</strong>，`rtw88` 主線驅動程式已內建，無需安裝。對於較舊的核心：
 
 ```bash
 sudo apt update
@@ -217,7 +217,7 @@ cd 8812au-20210820
 sudo ./install-driver.sh
 ```
 
-**AWUS036ACM（MT7612U），零安裝：**
+<strong>AWUS036ACM（MT7612U），零安裝：</strong>
 
 MediaTek MT7612U 驅動程式自 Linux 4.19 版本起已內建於核心。插入即可使用：
 
@@ -229,7 +229,7 @@ iw dev
 # wlan0 應該會自動出現
 ```
 
-**AWUS036AXML / AWUS036AXM（MT7921AUN）：**
+<strong>AWUS036AXML / AWUS036AXM（MT7921AUN）：</strong>
 
 自 Linux 5.18 起已內建於核心，但需要韌體檔案：
 
@@ -278,9 +278,9 @@ sudo aireplay-ng --test wlan0mon
 
 ### 5.4 替代方案：以 Raspberry Pi 作為遠端滲透測試節點
 
-對於偏好專用硬體方案的團隊，執行 Kali Linux 的 **Raspberry Pi 4 或 5** 是優秀的行動無線稽核節點。Mac 僅用作 SSH 終端機。
+對於偏好專用硬體方案的團隊，執行 Kali Linux 的 <strong>Raspberry Pi 4 或 5</strong> 是優秀的行動無線稽核節點。Mac 僅用作 SSH 終端機。
 
-**優勢：**
+<strong>優勢：</strong>
 - 完全避開 macOS 驅動程式問題
 - AWUS036ACM 在 Pi 上即插即用（核心內驅動程式，零安裝）
 - 成本：Pi 5 + ALFA 網路卡低於 200 美元
@@ -319,21 +319,21 @@ ALFA 網路卡是 USB 2.0 或 USB 3.0 裝置，通常配備 USB-A 接頭，耗�
 | Mac Mini Intel（2018）|✅ 2× | 900 mA | 4× TB3 | 15 W / 7.5 W |✅ 直接插入 |
 | Mac Mini M1（2020）|✅ 2× | 900 mA | 2× TB/USB 4 | 15 W / 7.5 W |✅ 直接插入 |
 | Mac Mini M2/M2 Pro（2023）|✅ 2× | 900 mA | 2–4× TB4 | 每埠 15 W |✅ 直接插入 |
-| **Mac Mini M4/M4 Pro（2024）**|**❌ 無** | **N/A** | 前方：2× USB-C / 後方：3× TB4 或 TB5 | **前方：500 mA / 後方：900 mA 以上** | **❌ 僅後方 TB 埠** |
+| <strong>Mac Mini M4/M4 Pro（2024）</strong>|<strong>❌ 無</strong> | <strong>N/A</strong> | 前方：2× USB-C / 後方：3× TB4 或 TB5 | <strong>前方：500 mA / 後方：900 mA 以上</strong> | <strong>❌ 僅後方 TB 埠</strong> |
 | Mac Studio（所有世代）|✅ 2×（後方）| 900 mA | 4× TB4 或 TB5（後方）| 每埠 15 W |✅ 直接插入 |
 
 ### 6.2 關鍵警告：Mac Mini M4（2024）
 
-Mac Mini M4/M4 Pro 是**首款沒有 USB-A 埠的 Mac Mini。** 更重要的是，兩個前方 USB-C 埠僅提供**約 500 mA**，不足以供應需要 900 mA 的 USB 3.0 ALFA 網路卡。
+Mac Mini M4/M4 Pro 是<strong>首款沒有 USB-A 埠的 Mac Mini。</strong> 更重要的是，兩個前方 USB-C 埠僅提供<strong>約 500 mA</strong>，不足以供應需要 900 mA 的 USB 3.0 ALFA 網路卡。
 
 > [!WARNING]
-> 在 Mac Mini M4 上，**請務必將 ALFA 網路卡插入後方 Thunderbolt 4/5 埠**，使用 USB-C 轉 USB-A 轉接器。前方 USB-C 埠（500 mA）會導致高功率 ALFA 網路卡的電力不穩定與連線斷線。
+> 在 Mac Mini M4 上，<strong>請務必將 ALFA 網路卡插入後方 Thunderbolt 4/5 埠</strong>，使用 USB-C 轉 USB-A 轉接器。前方 USB-C 埠（500 mA）會導致高功率 ALFA 網路卡的電力不穩定與連線斷線。
 
 ### 6.3 Thunderbolt 電力分配規則
 
-- **Thunderbolt 3（Intel Mac，2016–2020）：** 前兩個埠 15 W（3 A），額外埠 7.5 W（1.5 A），先到先得。優先插入你的 ALFA 網路卡以取得完整 15 W。
-- **Thunderbolt 4（Apple Silicon，2021+）：** 每埠 15 W（3 A），無分配限制。
-- **USB-A 埠（所有有該埠的 Mac）：** 一律 900 mA（USB 3.0 規格），足以供應任何 ALFA 網路卡。
+- <strong>Thunderbolt 3（Intel Mac，2016–2020）：</strong> 前兩個埠 15 W（3 A），額外埠 7.5 W（1.5 A），先到先得。優先插入你的 ALFA 網路卡以取得完整 15 W。
+- <strong>Thunderbolt 4（Apple Silicon，2021+）：</strong> 每埠 15 W（3 A），無分配限制。
+- <strong>USB-A 埠（所有有該埠的 Mac）：</strong> 一律 900 mA（USB 3.0 規格），足以供應任何 ALFA 網路卡。
 
 ---
 
@@ -343,11 +343,11 @@ Mac Mini M4/M4 Pro 是**首款沒有 USB-A 埠的 Mac Mini。** 更重要的是�
 
 | 使用情境 | 推薦網路卡 | 原因 | 設定方式 |
 |----------|-----------------|-----|--------------|
-| **最佳監控模式與注入** | [AWUS036ACH](https://yupitek.com/en/products/alfa/awus036ach/) | RTL8812AU，Kali Linux 黃金標準，驅動程式最成熟 | 虛擬機器 + USB 直通 |
-| **最佳即插即用體驗** | [AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm/) | MT7612U，自 Linux 4.19 起已內建於核心，零驅動程式安裝 | 虛擬機器 + USB 直通 |
-| **Wi-Fi 6E / 6 GHz 測試** | [AWUS036AXML](https://yupitek.com/en/products/alfa/awus036axml/) | MT7921AUN，自 Linux 5.18 起已內建於核心，三頻 + BT 5.2 | 虛擬機器 + USB 直通 |
-| **預算 / 初學者** | [AWUS036ACS](https://yupitek.com/en/products/alfa/awus036acs/) | RTL8811AU，價格實惠，支援監控模式與注入 | 虛擬機器 + USB 直通 |
-| **行動專用節點** | [AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm/) | 在 Raspberry Pi 上零安裝，低耗電（600 mA）| Raspberry Pi + Kali |
+| <strong>最佳監控模式與注入</strong> | [AWUS036ACH](https://yupitek.com/en/products/alfa/awus036ach/) | RTL8812AU，Kali Linux 黃金標準，驅動程式最成熟 | 虛擬機器 + USB 直通 |
+| <strong>最佳即插即用體驗</strong> | [AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm/) | MT7612U，自 Linux 4.19 起已內建於核心，零驅動程式安裝 | 虛擬機器 + USB 直通 |
+| <strong>Wi-Fi 6E / 6 GHz 測試</strong> | [AWUS036AXML](https://yupitek.com/en/products/alfa/awus036axml/) | MT7921AUN，自 Linux 5.18 起已內建於核心，三頻 + BT 5.2 | 虛擬機器 + USB 直通 |
+| <strong>預算 / 初學者</strong> | [AWUS036ACS](https://yupitek.com/en/products/alfa/awus036acs/) | RTL8811AU，價格實惠，支援監控模式與注入 | 虛擬機器 + USB 直通 |
+| <strong>行動專用節點</strong> | [AWUS036ACM](https://yupitek.com/en/products/alfa/awus036acm/) | 在 Raspberry Pi 上零安裝，低耗電（600 mA）| Raspberry Pi + Kali |
 
 ### 7.2 針對 Intel Mac 使用者（僅客戶端連線）
 
@@ -357,7 +357,7 @@ Mac Mini M4/M4 Pro 是**首款沒有 USB-A 埠的 Mac Mini。** 更重要的是�
 | 11 Big Sur 或更新 | [AWUS036ACH](https://yupitek.com/en/products/alfa/awus036ach/) | [chris1111 驅動程式](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter)（停用 SIP）| 僅客戶端，無監控模式 |
 
 > [!IMPORTANT]
-> 要在**任何** Mac（Intel 或 Apple Silicon）上執行無線安全稽核，你仍然需要 Linux，無論是在虛擬機器或 Raspberry Pi 上。macOS 驅動程式不支援監控模式或封包注入，沒有例外。
+> 要在<strong>任何</strong> Mac（Intel 或 Apple Silicon）上執行無線安全稽核，你仍然需要 Linux，無論是在虛擬機器或 Raspberry Pi 上。macOS 驅動程式不支援監控模式或封包注入，沒有例外。
 
 ### 7.3 Mac 使用者應避免的網路卡
 
@@ -375,15 +375,15 @@ Mac Mini M4/M4 Pro 是**首款沒有 USB-A 埠的 Mac Mini。** 更重要的是�
 
 ### ALFA AWUS036ACH 能在 M1/M2/M3/M4 Mac 上運作嗎？
 
-**不能。** AWUS036ACH（RTL8812AU）無法在任何 Apple Silicon Mac 上原生運作。Realtek 的 macOS 驅動程式僅針對 x86_64 編譯，無法在 ARM64 核心上載入。不過，它在 Linux 虛擬機器（UTM/Parallels）中搭配 USB 直通運作完美，包含完整的監控模式與封包注入支援。
+<strong>不能。</strong> AWUS036ACH（RTL8812AU）無法在任何 Apple Silicon Mac 上原生運作。Realtek 的 macOS 驅動程式僅針對 x86_64 編譯，無法在 ARM64 核心上載入。不過，它在 Linux 虛擬機器（UTM/Parallels）中搭配 USB 直通運作完美，包含完整的監控模式與封包注入支援。
 
 ### 我能在 macOS 上使用 ALFA 無線網路卡執行監控模式嗎？
 
-**不能。** ALFA 的 macOS 驅動程式不實作監控模式或封包注入，僅支援基本 Wi-Fi 客戶端連線。這適用於所有 macOS 版本，無論 Intel 或 Apple Silicon Mac。如需監控模式，你必須使用 Linux（無論是在虛擬機器或獨立裝置如 Raspberry Pi 上）。
+<strong>不能。</strong> ALFA 的 macOS 驅動程式不實作監控模式或封包注入，僅支援基本 Wi-Fi 客戶端連線。這適用於所有 macOS 版本，無論 Intel 或 Apple Silicon Mac。如需監控模式，你必須使用 Linux（無論是在虛擬機器或獨立裝置如 Raspberry Pi 上）。
 
 ### 哪張 ALFA 無線網路卡最適合 Mac 使用者？
 
-對於執行無線安全稽核的 Mac 使用者，**AWUS036ACH**（RTL8812AU）是最佳選擇，它是監控模式與封包注入的 Kali Linux 黃金標準。如需零安裝的即插即用體驗，建議選擇 **AWUS036ACM**（MT7612U），因為其驅動程式自 Linux 4.19 起已內建於核心。
+對於執行無線安全稽核的 Mac 使用者，<strong>AWUS036ACH</strong>（RTL8812AU）是最佳選擇，它是監控模式與封包注入的 Kali Linux 黃金標準。如需零安裝的即插即用體驗，建議選擇 <strong>AWUS036ACM</strong>（MT7612U），因為其驅動程式自 Linux 4.19 起已內建於核心。
 
 ### 為什麼我的 ALFA 網路卡無法在我的 MacBook Pro M3 上運作？
 
@@ -391,11 +391,11 @@ Apple Silicon Mac（M1/M2/M3/M4）使用無法載入 x86_64 核心擴充功能�
 
 ### 有任何 USB Wi-Fi 網路卡能在 Apple Silicon macOS 上運作嗎？
 
-**沒有。** 截至 2026 年，沒有任何第三方 USB Wi-Fi 網路卡（無論 ALFA、TP-Link、Netgear、ASUS 等品牌）能在 Apple Silicon macOS 上原生運作。這是架構限制，而非驅動程式可用性問題。Apple 的官方建議是使用搭配乙太網路的旅行路由器。
+<strong>沒有。</strong> 截至 2026 年，沒有任何第三方 USB Wi-Fi 網路卡（無論 ALFA、TP-Link、Netgear、ASUS 等品牌）能在 Apple Silicon macOS 上原生運作。這是架構限制，而非驅動程式可用性問題。Apple 的官方建議是使用搭配乙太網路的旅行路由器。
 
 ### 我能使用 Mac 內建的 Wi-Fi 執行監控模式嗎？
 
-**可以，但有限制。** macOS 內建的 Wi-Fi 支援透過 `airport` 公用程式（`sudo airport en0 sniff 11`）執行基本監控模式。然而，它一次只能偵測一個頻道，不支援封包注入，且內建天線的範圍有限。對於專業的無線稽核，需要搭配 Linux 虛擬機器使用外部 ALFA 網路卡。
+<strong>可以，但有限制。</strong> macOS 內建的 Wi-Fi 支援透過 `airport` 公用程式（`sudo airport en0 sniff 11`）執行基本監控模式。然而，它一次只能偵測一個頻道，不支援封包注入，且內建天線的範圍有限。對於專業的無線稽核，需要搭配 Linux 虛擬機器使用外部 ALFA 網路卡。
 
 ### 讓 ALFA 網路卡在 Mac 上運作的最簡單方法是什麼？
 

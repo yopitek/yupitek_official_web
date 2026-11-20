@@ -39,7 +39,7 @@ AWUS036AXML 是 ALFA 的 WiFi 6E 旗艦機種——一款三頻 USB-C 無線網�
 
 請確認以下項目已就緒：
 
-1. **ALFA AWUS036AXML** 網路卡及 USB-C 連接線
+1. <strong>ALFA AWUS036AXML</strong> 網路卡及 USB-C 連接線
 2. 附電源USB集線器——若在 Raspberry Pi 上使用則為必要
 3. 可連線至國內映像站的網路連線
 
@@ -95,13 +95,13 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-儲存：按 **Ctrl+O**，再按 Enter，然後按 Ctrl+X 退出。更新套件索引。
+儲存：按 <strong>Ctrl+O</strong>，再按 Enter，然後按 Ctrl+X 退出。更新套件索引。
 
 ```bash
 sudo apt update
 ```
 
-> **備用映像站：** 若 中科大 (USTC) 速度較慢，請改用 清華 (Tsinghua)：
+> <strong>備用映像站：</strong> 若 中科大 (USTC) 速度較慢，請改用 清華 (Tsinghua)：
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
@@ -164,7 +164,7 @@ iwconfig
 
 ### 步驟 5：測試封包注入 {#test-packet-injection}
 
-⚠️ **版本前提：**核心 6.16 以前有社群回報注入可用；但在 stock kernel 6.17（ASUS GX10、Ubuntu 24.04 ARM64）上實測失敗——`aireplay-ng --test` 顯示 `Found 0 APs` / `No Answer`，因此無法進行 deauth 與 handshake 擷取。原因是核心 6.16 以後 mac80211 chanctx 回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps，無法注入 HT/VHT）。需要注入請改用 AWUS036ACH / EACS / ACS / AX（亦可選 ACM / ACHM）。監控模式、AP、WPA3 與 VIF 皆正常。
+⚠️ <strong>版本前提：</strong>核心 6.16 以前有社群回報注入可用；但在 stock kernel 6.17（ASUS GX10、Ubuntu 24.04 ARM64）上實測失敗——`aireplay-ng --test` 顯示 `Found 0 APs` / `No Answer`，因此無法進行 deauth 與 handshake 擷取。原因是核心 6.16 以後 mac80211 chanctx 回歸，並非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖定速率（1/6 Mbps，無法注入 HT/VHT）。需要注入請改用 AWUS036ACH / EACS / ACS / AX（亦可選 ACM / ACHM）。監控模式、AP、WPA3 與 VIF 皆正常。
 
 ```bash
 sudo aireplay-ng --test wlan1
@@ -333,9 +333,9 @@ sudo aireplay-ng --test wlan1
 
 官方頁面：https://www.kali.org/get-kali/#kali-arm
 
-選擇 **Raspberry Pi 4 (64-bit)** 或 **Raspberry Pi 5 (64-bit)**——必須選擇 64 位元版本。
+選擇 <strong>Raspberry Pi 4 (64-bit)</strong> 或 <strong>Raspberry Pi 5 (64-bit)</strong>——必須選擇 64 位元版本。
 
-> **中國映像站：** https://repo.huaweicloud.com/kali-images/ — 瀏覽至最新發布資料夾並下載 ARM64 映像檔。
+> <strong>中國映像站：</strong> https://repo.huaweicloud.com/kali-images/ — 瀏覽至最新發布資料夾並下載 ARM64 映像檔。
 
 ### 步驟 2：燒錄至 MicroSD
 
@@ -346,7 +346,7 @@ sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=pro
 sync
 ```
 
-預設帳號密碼：**kali / kali**。
+預設帳號密碼：<strong>kali / kali</strong>。
 
 ### 步驟 3：切換至中國映像站並安裝韌體
 
@@ -403,10 +403,10 @@ sudo aireplay-ng --test wlan1
 
 ### VirtualBox
 
-1. 關閉虛擬機器。前往 **設定 → USB**。
-2. 啟用 **USB 3.0 (xHCI) 控制器**。
-3. 點擊 **+** 新增 USB 篩選器。
-4. 選擇：**MediaTek Inc.**（ID：0e8d:7961）。
+1. 關閉虛擬機器。前往 <strong>設定 → USB</strong>。
+2. 啟用 <strong>USB 3.0 (xHCI) 控制器</strong>。
+3. 點擊 <strong>+</strong> 新增 USB 篩選器。
+4. 選擇：<strong>MediaTek Inc.</strong>（ID：0e8d:7961）。
 5. 啟動虛擬機器——網路卡將出現在 Kali 內部。
 
 在虛擬機器中執行 `lsusb` 確認 `0e8d:7961`，然後依照上方 Kali 步驟進行。
@@ -414,8 +414,8 @@ sudo aireplay-ng --test wlan1
 ### VMware Fusion (macOS) / VMware Workstation (Windows)
 
 1. 啟動虛擬機器。
-2. 選單：**虛擬機器 → USB 與藍牙**。
-3. 找到 **MediaTek MT7921AUN** 並點擊**連線**。
+2. 選單：<strong>虛擬機器 → USB 與藍牙</strong>。
+3. 找到 <strong>MediaTek MT7921AUN</strong> 並點擊<strong>連線</strong>。
 4. 在虛擬機器中執行 `lsusb` 確認，然後依照上方 Kali 步驟進行。
 
 ---
@@ -452,7 +452,7 @@ sudo ip link set mon0 up
 iwconfig
 ```
 
-> **關於 hostapd 的注意事項：** 完整的 AP 操作需要設定 `hostapd`。上述步驟僅確認網路卡可以建立該介面——實際的 AP 設定屬於另一個主題。
+> <strong>關於 hostapd 的注意事項：</strong> 完整的 AP 操作需要設定 `hostapd`。上述步驟僅確認網路卡可以建立該介面——實際的 AP 設定屬於另一個主題。
 
 ---
 
@@ -483,7 +483,7 @@ iwconfig
 
 ## 更多中國適用的 Alfa 網路卡安裝指南
 
-本文是 **Alfa China Install Guide** 系列的一部分：
+本文是 <strong>Alfa China Install Guide</strong> 系列的一部分：
 
 - [AWUS036ACH 中國安裝指南](/zh-tw/blog/awus036ach-china-install-guide/) — RTL8812AU，高功率
 - [AWUS036ACM 中國安裝指南](/zh-tw/blog/awus036acm-china-install-guide/) — MT7612U，完整 VIF

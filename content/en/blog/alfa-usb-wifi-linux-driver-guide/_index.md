@@ -21,13 +21,13 @@ author: "benny-lai"
 lastmod: 2026-11-20
 ---
 
-> **Technical Support Document · Initial Version 2026-09-03 (written according to blog-writing-rules.md v1.0 specifications)**
+> <strong>Technical Support Document · Initial Version 2026-09-03 (written according to blog-writing-rules.md v1.0 specifications)</strong>
 > Subject Matter: This technical document matrix includes 6 models of Yopitek current ALFA USB network cards (3 models from MediaTek, 3 models from Realtek).
 > Related Articles: [Does the ALFA Wireless Network Card Support NVIDIA DGX Spark](/en/blog/alfa-nvidia-dgx-spark-compatibility/) | [Does the ALFA Wireless Network Card Support OpenWrt](/en/blog/alfa-openwrt-router-compatibility/) | [Does the ALFA Wireless Network Card Support NVIDIA Jetson Nano](/en/blog/alfa-nvidia-jetson-nano-compatibility/) | [Does the ALFA Wireless Network Card Support Tomato](/en/blog/alfa-tomato-router-compatibility/) | [Does the ALFA Wireless Network Card Support DD-WRT](/en/blog/alfa-ddwrt-router-compatibility/)
 
 ## One-Liner Conclusion
 
-**Among the 6 listed models, 3 with MediaTek chips (MT7610U / MT7612U / MT7921AUN) have built-in drivers in the modern kernel, plug and play; while 3 with Realtek chips (RTL8812AU / RTL8821CU / RTL8832BU) need a manual out-of-tree driver build on older kernels. Newer kernels include in-kernel Realtek drivers: EACS (rtw88_8821cu) since kernel 6.2, ACH/ACS since 6.13, AX/AXER since 6.17, so on the GX10 (kernel 6.17) all of them work without installing anything. Only older kernels need community drivers such as morrownr/8821cu.** If convenience is a priority, check the chip and your kernel version before placing an order.
+<strong>Among the 6 listed models, 3 with MediaTek chips (MT7610U / MT7612U / MT7921AUN) have built-in drivers in the modern kernel, plug and play; while 3 with Realtek chips (RTL8812AU / RTL8821CU / RTL8832BU) need a manual out-of-tree driver build on older kernels. Newer kernels include in-kernel Realtek drivers: EACS (rtw88_8821cu) since kernel 6.2, ACH/ACS since 6.13, AX/AXER since 6.17, so on the GX10 (kernel 6.17) all of them work without installing anything. Only older kernels need community drivers such as morrownr/8821cu.</strong> If convenience is a priority, check the chip and your kernel version before placing an order.
 
 ---
 
@@ -35,28 +35,28 @@ lastmod: 2026-11-20
 
 Two Real Scenarios:
 
-- Customer A plugs in the **AWUS036ACM** to an Ubuntu desktop, runs `lsusb`, and NetworkManager automatically recognizes wlan0 - without any software installed.
-- Customer B plugs in the **AWUS036ACH** to the same machine, and the network card doesn't respond. They have to go to GitHub to pull the source code, install build tools, compile, and then reboot.
+- Customer A plugs in the <strong>AWUS036ACM</strong> to an Ubuntu desktop, runs `lsusb`, and NetworkManager automatically recognizes wlan0 - without any software installed.
+- Customer B plugs in the <strong>AWUS036ACH</strong> to the same machine, and the network card doesn't respond. They have to go to GitHub to pull the source code, install build tools, compile, and then reboot.
 
-The difference isn't luck or the Linux distribution; it's about which camp the **chipset** belongs to: MediaTek's USB WiFi chipset drivers (mt76 series) have long been integrated into the Linux kernel mainline; Realtek's USB WiFi chipset drivers were long distributed out-of-tree (outside the kernel) and, on older kernels, still require manual installation from a community-maintained driver repository; Realtek in-kernel drivers have appeared gradually since kernel 6.2 (EACS), 6.13 (ACH/ACS) and 6.17 (AX/AXER).
+The difference isn't luck or the Linux distribution; it's about which camp the <strong>chipset</strong> belongs to: MediaTek's USB WiFi chipset drivers (mt76 series) have long been integrated into the Linux kernel mainline; Realtek's USB WiFi chipset drivers were long distributed out-of-tree (outside the kernel) and, on older kernels, still require manual installation from a community-maintained driver repository; Realtek in-kernel drivers have appeared gradually since kernel 6.2 (EACS), 6.13 (ACH/ACS) and 6.17 (AX/AXER).
 
 ## Act II: Mechanisms — What's the Difference Between in-kernel and out-of-tree?
 
 ### MediaTek: mt76 Mainline Driver, Plug and Play
 
-The MediaTek USB chip drivers are covered by the kernel's **mt76** subsystem:
+The MediaTek USB chip drivers are covered by the kernel's <strong>mt76</strong> subsystem:
 
 | Model | Chipset | Kernel Driver Module | No-Compile Conditions |
 |---|---|---|---|
 | AWUS036ACHM | MT7610U | mt76x0u | Kernel built-in, no version threshold concerns |
 | AWUS036ACM | MT7612U | mt76x2u | Kernel built-in, no version threshold concerns |
-| AWUS036AXML / AXM | MT7921AUN | mt7921u | ** Requires kernel 5.18+** |
+| AWUS036AXML / AXM | MT7921AUN | mt7921u | <strong>Requires kernel 5.18+</strong> |
 
-⚠️ The only pitfall: **The kernel threshold for MT7921AUN is 5.18+. Old platforms (such as Jetson Nano's JetPack 4.x, kernel 4.9) cannot backport and are not usable directly — this is a conclusion we have verified in our Jetson Nano technical documentation (see [Does ALFA Wireless Card Support NVIDIA Jetson Nano](/en/blog/alfa-nvidia-jetson-nano-compatibility/) §7.4)).
+⚠️ The only pitfall: <strong>The kernel threshold for MT7921AUN is 5.18+</strong>. Old platforms (such as Jetson Nano's JetPack 4.x, kernel 4.9) cannot backport and are not usable directly — this is a conclusion we have verified in our Jetson Nano technical documentation (see [Does ALFA Wireless Card Support NVIDIA Jetson Nano](/en/blog/alfa-nvidia-jetson-nano-compatibility/) §7.4)).
 
 ### Realtek: out-of-tree on older kernels
 
-On older kernels, Realtek USB chips do not have a usable mainline driver and rely on community-maintained driver repos (on kernel 6.2+ the EACS rtw88_8821cu driver is built in, and the GX10's kernel 6.17 needs no manual install for any of them). The most active maintainer is **morrownr**, and this inventory covers 3 chips corresponding to 3 repos:
+On older kernels, Realtek USB chips do not have a usable mainline driver and rely on community-maintained driver repos (on kernel 6.2+ the EACS rtw88_8821cu driver is built in, and the GX10's kernel 6.17 needs no manual install for any of them). The most active maintainer is <strong>morrownr</strong>, and this inventory covers 3 chips corresponding to 3 repos:
 
 | Model | Chipset | Driver Repo (maintained by morrownr) | As of 2026-09-03 Verification |
 |---|---|---|---|
@@ -69,7 +69,7 @@ On older kernels, Realtek USB chips do not have a usable mainline driver and rel
 | Environment | Kernel | MediaTek Camp (3 Models) | Realtek Camp (3 Models) |
 |---|---|---|---|
 | GB10 / DGX Spark-like Platforms | 6.x + aarch64 | All available (mt76 built-in) | All require compilation (ARM64 possible) |
-| Jetson Nano (JetPack 4.x) | 4.9 | 7610U/7612U available; MT7921AUN **not available** | 8812au can be compiled (ARM64 supported); others unverified |
+| Jetson Nano (JetPack 4.x) | 4.9 | 7610U/7612U available; MT7921AUN <strong>not available</strong> | 8812au can be compiled (ARM64 supported); others unverified |
 | OpenWrt Router | Depending on Version | All available (MT7921AUN requires 23.05+) | Requires corresponding kmod or compilation, high difficulty |
 
 (Complete judgment matrices for each environment can be found in [Does ALFA Wireless Card Support NVIDIA DGX Spark](/en/blog/alfa-nvidia-dgx-spark-compatibility/), [Does ALFA Wireless Card Support NVIDIA Jetson Nano](/en/blog/alfa-nvidia-jetson-nano-compatibility/), [Does ALFA Wireless Card Support OpenWrt](/en/blog/alfa-openwrt-router-compatibility/).)
@@ -91,9 +91,9 @@ uname -r
 
 Decision Logic (Parent: Table 6 Models Above):
 
-1. `lsusb` shows **MediaTek / MT76xx** → in-kernel camp, kernel ≥ 5.18 (MT7921AUN models) or any recent kernel, plug and play.
-2. `lsusb` shows **Realtek RTL88xx** → out-of-tree camp, follow the installation steps below.
-3. `lsusb` **completely** does not show any new devices → first change USB port/cable to rule out hardware issues, then confirm if the model is a Wi-Fi 6 RTL8832BU (some batches require `usb_modeswitch`, this step is an individual model issue and is not within the scope of this overview, will not be expanded upon).
+1. `lsusb` shows <strong>MediaTek / MT76xx</strong> → in-kernel camp, kernel ≥ 5.18 (MT7921AUN models) or any recent kernel, plug and play.
+2. `lsusb` shows <strong>Realtek RTL88xx</strong> → out-of-tree camp, follow the installation steps below.
+3. `lsusb` <strong>completely</strong> does not show any new devices → first change USB port/cable to rule out hardware issues, then confirm if the model is a Wi-Fi 6 RTL8832BU (some batches require `usb_modeswitch`, this step is an individual model issue and is not within the scope of this overview, will not be expanded upon).
 
 ### Universal Installation for Realtek Camp (Exampled with AWUS036ACH)
 
@@ -113,23 +113,23 @@ lsmod | grep 88XXau
 ip link   # Should show a new wlan interface
 ```
 
-> **Table 1 Conclusion: Decision Before Installation - First look at the chip set, 90 seconds to decide if you are "plug and play" or "compile from repo", no need to hit a wall first.**
+> <strong>Table 1 Conclusion: Decision Before Installation - First look at the chip set, 90 seconds to decide if you are "plug and play" or "compile from repo", no need to hit a wall first.</strong>
 
 ### Purchase Recommendations (Conclusion)
 
-- **No Compilation Needed**: Choose MediaTek camp (AWUS036ACHM / ACM / AXML), recent kernels all plug and play.
-- **Need Wi-Fi 6 and No Compilation**: Choose AWUS036AXML (MT7921AUN), but first confirm kernel ≥ 5.18.
-- **Have Special Requirements and Realtek is a Must** (such as specific monitor mode toolchains): Reserve 20-40 minutes for driver compilation and confirm that the target platform has kernel headers.
+- <strong>No Compilation Needed</strong>: Choose MediaTek camp (AWUS036ACHM / ACM / AXML), recent kernels all plug and play.
+- <strong>Need Wi-Fi 6 and No Compilation</strong>: Choose AWUS036AXML (MT7921AUN), but first confirm kernel ≥ 5.18.
+- <strong>Have Special Requirements and Realtek is a Must</strong> (such as specific monitor mode toolchains): Reserve 20-40 minutes for driver compilation and confirm that the target platform has kernel headers.
 
 ## Known Limitations and Counterconditions
 
 The conclusions of this article are not valid under the following conditions, please adopt alternative solutions:
 
-1. **Kernel 5.17 and Below + MT7921AUN**: The mt7921u driver cannot be backported (depends on modern kernel infrastructure), and the conclusion is reversed to "not available". This is the most important exception in this article.
-2. **Non-x86/ARM64 Linux** (such as some MIPS routers): The morrownr repository is not guaranteed to be compilable, and the kmod from OpenWrt should be prioritized (see [Does ALFA Wireless Card Support OpenWrt](/en/blog/alfa-openwrt-router-compatibility/)).
-3. **Driver Repository Version Evolution**: The morrownr repository is named by date (e.g., rtl8852bu-20250826), and future versions may be updated or removed; please ensure the repository status before installation.
-4. **Monitor Mode / AP Mode Capabilities**: Different kernel versions of the same chip have different capabilities (for example, the rtl8812au-ct in OpenWrt 22.03+ has crash reports in 24.10), and the detailed capability matrix should be referred to in specialized articles for each environment.
-5. **RTL8832BU (AWUS036AX/AXER) is not among the 6 models in this inventory, but support is often asked about it**: the rtw89_8852bu driver has been in mainline since kernel 6.17; on the GX10 (kernel 6.17) monitor mode worked, with 2.4G injection at AX 96% and AXER 73%. The community driver morrownr/rtl8852bu is only needed on older kernels. When replying to customers, confirm the kernel version first.
+1. <strong>Kernel 5.17 and Below + MT7921AUN</strong>: The mt7921u driver cannot be backported (depends on modern kernel infrastructure), and the conclusion is reversed to "not available". This is the most important exception in this article.
+2. <strong>Non-x86/ARM64 Linux</strong> (such as some MIPS routers): The morrownr repository is not guaranteed to be compilable, and the kmod from OpenWrt should be prioritized (see [Does ALFA Wireless Card Support OpenWrt](/en/blog/alfa-openwrt-router-compatibility/)).
+3. <strong>Driver Repository Version Evolution</strong>: The morrownr repository is named by date (e.g., rtl8852bu-20250826), and future versions may be updated or removed; please ensure the repository status before installation.
+4. <strong>Monitor Mode / AP Mode Capabilities</strong>: Different kernel versions of the same chip have different capabilities (for example, the rtl8812au-ct in OpenWrt 22.03+ has crash reports in 24.10), and the detailed capability matrix should be referred to in specialized articles for each environment.
+5. <strong>RTL8832BU (AWUS036AX/AXER) is not among the 6 models in this inventory, but support is often asked about it</strong>: the rtw89_8852bu driver has been in mainline since kernel 6.17; on the GX10 (kernel 6.17) monitor mode worked, with 2.4G injection at AX 96% and AXER 73%. The community driver morrownr/rtl8852bu is only needed on older kernels. When replying to customers, confirm the kernel version first.
 
 ## Reference Sources
 

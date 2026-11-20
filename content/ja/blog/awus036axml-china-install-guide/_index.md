@@ -34,13 +34,13 @@ AWUS036AXMLは、ALFAのWiFi 6Eフラッグシップモデルです。2.4 GHz、
 AWUS036AXMLはMT7921AUNチップを採用したWiFi 6EトリバンドUSB-Cフラッグシップアダプターで、ドライバーはカーネル内蔵、ファームウェアインストール後にモニターモード、AP/WPA3、VIFが利用できます（パケットインジェクションは stock kernel 6.17 での実測で失敗）。
 {{< /tldr >}}
 
-1. **ALFA AWUS036AXML** アダプター本体と USB-C ケーブル
+1. <strong>ALFA AWUS036AXML</strong> アダプター本体と USB-C ケーブル
 2. 電源付きUSBハブ（Raspberry Piを使用する場合は必須です）
 3. 国内ミラーサイトにアクセスできるインターネット環境
 
 ## 準備するもの
 
-1. **ALFA AWUS036AXML** アダプター本体と USB-C ケーブル
+1. <strong>ALFA AWUS036AXML</strong> アダプター本体と USB-C ケーブル
 2. 電源付きUSBハブ（Raspberry Piを使用する場合は必須です）
 3. 国内ミラーサイトにアクセスできるインターネット環境
 
@@ -92,13 +92,13 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-**Ctrl+O**、Enter、**Ctrl+X** で保存して終了します。リポジトリを更新します：
+<strong>Ctrl+O</strong>、Enter、<strong>Ctrl+X</strong> で保存して終了します。リポジトリを更新します：
 
 ```bash
 sudo apt update
 ```
 
-> **バックアップ用ミラー:** 中科大 (USTC) が遅い場合は、清華大学 (Tsinghua) を使用してください：
+> <strong>バックアップ用ミラー:</strong> 中科大 (USTC) が遅い場合は、清華大学 (Tsinghua) を使用してください：
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
@@ -161,7 +161,7 @@ iwconfig
 
 ### ステップ 5: パケットインジェクションのテスト {#test-packet-injection}
 
-⚠️ **バージョンに関する前提：**カーネル 6.16 以前ではインジェクションが動作するとのコミュニティ報告があります。しかし stock kernel 6.17（ASUS GX10、Ubuntu 24.04 ARM64）での実測では失敗しました。`aireplay-ng --test` は `Found 0 APs` / `No Answer` を表示し、deauth やハンドシェイクの取得はできません。原因はカーネル 6.16 以降の mac80211 chanctx のリグレッションであり、チップ自体の制限ではありません。コミュニティの patched ドライバーでインジェクションは動作しますが、ファームウェアがレートを固定しています（1/6 Mbps、HT/VHT のインジェクション不可）。インジェクションが必要な場合は AWUS036ACH / EACS / ACS / AX（ACM / ACHM も可）をご利用ください。モニターモード、AP、WPA3、VIF は正常に動作します。
+⚠️ <strong>バージョンに関する前提：</strong>カーネル 6.16 以前ではインジェクションが動作するとのコミュニティ報告があります。しかし stock kernel 6.17（ASUS GX10、Ubuntu 24.04 ARM64）での実測では失敗しました。`aireplay-ng --test` は `Found 0 APs` / `No Answer` を表示し、deauth やハンドシェイクの取得はできません。原因はカーネル 6.16 以降の mac80211 chanctx のリグレッションであり、チップ自体の制限ではありません。コミュニティの patched ドライバーでインジェクションは動作しますが、ファームウェアがレートを固定しています（1/6 Mbps、HT/VHT のインジェクション不可）。インジェクションが必要な場合は AWUS036ACH / EACS / ACS / AX（ACM / ACHM も可）をご利用ください。モニターモード、AP、WPA3、VIF は正常に動作します。
 
 ```bash
 sudo aireplay-ng --test wlan1
@@ -324,9 +324,9 @@ sudo aireplay-ng --test wlan1
 
 公式サイト: https://www.kali.org/get-kali/#kali-arm
 
-**Raspberry Pi 4 (64-bit)** または **Raspberry Pi 5 (64-bit)** を選択（64-bit 必須）。
+<strong>Raspberry Pi 4 (64-bit)</strong> または <strong>Raspberry Pi 5 (64-bit)</strong> を選択（64-bit 必須）。
 
-> **中国国内ミラー:** https://repo.huaweicloud.com/kali-images/ — 最新リリースのフォルダから ARM64 イメージをダウンロードしてください。
+> <strong>中国国内ミラー:</strong> https://repo.huaweicloud.com/kali-images/ — 最新リリースのフォルダから ARM64 イメージをダウンロードしてください。
 
 ### ステップ 2: MicroSD への書き込み
 
@@ -337,7 +337,7 @@ sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=pro
 sync
 ```
 
-デフォルトのログイン情報: **kali / kali**
+デフォルトのログイン情報: <strong>kali / kali</strong>
 
 ### ステップ 3: 中国国内のミラーに切り替えてファームウェアをインストール
 
@@ -394,10 +394,10 @@ sudo aireplay-ng --test wlan1
 
 ### VirtualBox
 
-1. VMを終了し、**設定 → USB** を開きます。
-2. **USB 3.0 (xHCI) コントローラー** を有効にします。
-3. **+** をクリックして USB フィルターを追加します。
-4. **MediaTek Inc.** (ID: 0e8d:7961) を選択します。
+1. VMを終了し、<strong>設定 → USB</strong> を開きます。
+2. <strong>USB 3.0 (xHCI) コントローラー</strong> を有効にします。
+3. <strong>+</strong> をクリックして USB フィルターを追加します。
+4. <strong>MediaTek Inc.</strong> (ID: 0e8d:7961) を選択します。
 5. VMを起動すると、Kali の中でアダプターが認識されます。
 
 VM内で `lsusb` を実行して `0e8d:7961` を確認し、上記の Kali の手順に従ってください。
@@ -405,8 +405,8 @@ VM内で `lsusb` を実行して `0e8d:7961` を確認し、上記の Kali の�
 ### VMware Fusion (macOS) / VMware Workstation (Windows)
 
 1. VMを起動します。
-2. メニュー: **仮想マシン → USB と Bluetooth**。
-3. **MediaTek MT7921AUN** を探し、**接続** をクリックします。
+2. メニュー: <strong>仮想マシン → USB と Bluetooth</strong>。
+3. <strong>MediaTek MT7921AUN</strong> を探し、<strong>接続</strong> をクリックします。
 4. VM内で `lsusb` を確認し、上記の Kali の手順に従ってください。
 
 ---
@@ -443,7 +443,7 @@ sudo ip link set mon0 up
 iwconfig
 ```
 
-> **hostapd に関する注意:** 完全な AP 動作には `hostapd` の設定が必要です。上記の手順はアダプターがインターフェースを作成できることを確認するためのもので、実際の AP 設定は別のトピックとなります。
+> <strong>hostapd に関する注意:</strong> 完全な AP 動作には `hostapd` の設定が必要です。上記の手順はアダプターがインターフェースを作成できることを確認するためのもので、実際の AP 設定は別のトピックとなります。
 
 ---
 
@@ -479,7 +479,7 @@ iwconfig
 
 ## 中国向け Alfa アダプターガイド（その他）
 
-このページは **Alfa China Install Guide** シリーズの一部です：
+このページは <strong>Alfa China Install Guide</strong> シリーズの一部です：
 
 - [AWUS036ACH 中国インストールガイド](/ja/blog/awus036ach-china-install-guide/) — RTL8812AU、高出力
 - [AWUS036ACM 中国インストールガイド](/ja/blog/awus036acm-china-install-guide/) — MT7612U、VIF完全対応

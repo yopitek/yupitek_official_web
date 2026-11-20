@@ -22,33 +22,33 @@ Yopitek Ltd（榆閤科技有限公司）は、プロジェクション・シス
 
 私たちは以下の組織・機関との実績を持っています。
 
-- **台北市政府** — 市内各種イベント・展示における映像演出
-- **中華民国憲兵隊** — セキュリティ・防衛関連施設向けシステム統合
-- **宜蘭水資源館** — 博物館展示向けインタラクティブ投影システム
-- **板橋放送局** — 放送施設向け映像表示システム
-- **明志科技大学** — 教育機関向けプロジェクション環境構築
-- **栄成紙業** — 企業向けビジュアルコミュニケーションシステム
-- **太陽城集団（Taroko Group）** — 大型商業施設向けプロジェクション・マッピング
+- <strong>台北市政府</strong> — 市内各種イベント・展示における映像演出
+- <strong>中華民国憲兵隊</strong> — セキュリティ・防衛関連施設向けシステム統合
+- <strong>宜蘭水資源館</strong> — 博物館展示向けインタラクティブ投影システム
+- <strong>板橋放送局</strong> — 放送施設向け映像表示システム
+- <strong>明志科技大学</strong> — 教育機関向けプロジェクション環境構築
+- <strong>栄成紙業</strong> — 企業向けビジュアルコミュニケーションシステム
+- <strong>太陽城集団（Taroko Group）</strong> — 大型商業施設向けプロジェクション・マッピング
 
 ---
 
 ## 専門分野
 
-**IT_Application（ITアプリケーション部門）**では、以下のサービスを提供しています。
+<strong>IT_Application（ITアプリケーション部門）</strong>では、以下のサービスを提供しています。
 
 - 建築プロジェクション・マッピング
 - 360°没入型プロジェクション空間の設計・構築
 - マルチプロジェクター・エッジブレンディングシステム
 - インタラクティブ・タッチプロジェクション・プラットフォーム
 
-**IT_Distribution（IT流通部門）**では、台湾国内の企業・学術機関・セキュリティ研究者向けに、ALFA Network、HAK5、Flipper Zero、Ubiquiti UniFi、NVIDIA、SDRLABなどのブランド製品を流通・販売しています。
+<strong>IT_Distribution（IT流通部門）</strong>では、台湾国内の企業・学術機関・セキュリティ研究者向けに、ALFA Network、HAK5、Flipper Zero、Ubiquiti UniFi、NVIDIA、SDRLABなどのブランド製品を流通・販売しています。
 
 ---
 
 ## お問い合わせ先
 
-- **担当者:** Eason Lai
-- **メール:** [eason@yupitek.com](mailto:eason@yupitek.com)
-- **電話:** +886-2-87325338
-- **携帯電話:** 0926-881156
-- **住所:** No.34, Lane 72, Fuyang St., Taipei, Taiwan
+- <strong>担当者:</strong> Eason Lai
+- <strong>メール:</strong> [eason@yupitek.com](mailto:eason@yupitek.com)
+- <strong>電話:</strong> +886-2-87325338
+- <strong>携帯電話:</strong> 0926-881156
+- <strong>住所:</strong> No.34, Lane 72, Fuyang St., Taipei, Taiwan

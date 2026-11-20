@@ -42,7 +42,7 @@ AWUS036ACH는 RTL8812AU 칩셋을 사용합니다. Kali에서는 apt로 DKMS 드
 
 다음 항목을 미리 준비하십시오.
 
-1. **ALFA AWUS036ACH** 어댑터
+1. <strong>ALFA AWUS036ACH</strong> 어댑터
 2. USB 케이블(제품 상자에 동봉된 케이블을 사용해도 무방합니다)
 3. 전원 공급형 USB 허브 — Raspberry Pi를 사용하는 경우 필수입니다
 4. 국내 미러에 접속할 수 있는 정상적인 인터넷 연결
@@ -98,13 +98,13 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-파일을 저장합니다. **Ctrl+O**를 누른 후 Enter, 이어서 Ctrl+X를 눌러 종료합니다. 패키지 인덱스를 새로 고칩니다.
+파일을 저장합니다. <strong>Ctrl+O</strong>를 누른 후 Enter, 이어서 Ctrl+X를 눌러 종료합니다. 패키지 인덱스를 새로 고칩니다.
 
 ```bash
 sudo apt update
 ```
 
-> **백업 미러:** 사용 중인 연결에서 中科大(USTC)가 느린 경우 清华(Tsinghua)를 대신 사용하십시오.
+> <strong>백업 미러:</strong> 사용 중인 연결에서 中科大(USTC)가 느린 경우 清华(Tsinghua)를 대신 사용하십시오.
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
@@ -143,7 +143,7 @@ GitHub에서 드라이버 소스를 다운로드합니다.
 git clone https://github.com/morrownr/8812au-20210820.git
 ```
 
-> **참고:** 유지보수되는 업스트림 드라이버는 [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820)입니다. GitHub 접속이 느린 경우 신뢰할 수 있는 프록시 또는 미러를 사용하십시오. [files.alfa.com.tw](https://files.alfa.com.tw)에서 소스 아카이브를 직접 다운로드할 수도 있습니다.
+> <strong>참고:</strong> 유지보수되는 업스트림 드라이버는 [morrownr/8812au-20210820](https://github.com/morrownr/8812au-20210820)입니다. GitHub 접속이 느린 경우 신뢰할 수 있는 프록시 또는 미러를 사용하십시오. [files.alfa.com.tw](https://files.alfa.com.tw)에서 소스 아카이브를 직접 다운로드할 수도 있습니다.
 
 복제한 디렉터리로 이동한 다음 컴파일 및 설치를 진행합니다.
 
@@ -209,7 +209,7 @@ Found 1 AP
 
 ## Ubuntu 22.04 / 24.04
 
-Ubuntu는 패키지 파일 형식이 서로 다른 두 가지 버전으로 나뉩니다. 아래 단계는 두 경우를 모두 다룹니다. 미러로는 **阿里云(Aliyun)**을 사용하십시오. 빠르고 안정적이며 Alibaba가 유지보수합니다.
+Ubuntu는 패키지 파일 형식이 서로 다른 두 가지 버전으로 나뉩니다. 아래 단계는 두 경우를 모두 다룹니다. 미러로는 <strong>阿里云(Aliyun)</strong>을 사용하십시오. 빠르고 안정적이며 Alibaba가 유지보수합니다.
 
 ### 1단계: 중국 미러로 전환
 
@@ -289,7 +289,7 @@ git clone https://github.com/morrownr/8812au-20210820.git
 cd 8812au-20210820
 ```
 
-> **참고:** GitHub 접속이 느린 경우 신뢰할 수 있는 프록시 또는 미러를 사용하십시오.
+> <strong>참고:</strong> GitHub 접속이 느린 경우 신뢰할 수 있는 프록시 또는 미러를 사용하십시오.
 
 ---
 
@@ -343,7 +343,7 @@ sudo airmon-ng check kill
 sudo airmon-ng start wlan0
 ```
 
-> **참고:** 인터페이스 이름이 `wlan0`이 아니라 `wlan1`일 수 있습니다. 먼저 `iwconfig`를 실행하여 나열된 모든 무선 인터페이스를 확인한 다음, 위 명령에서 올바른 이름으로 바꾸십시오.
+> <strong>참고:</strong> 인터페이스 이름이 `wlan0`이 아니라 `wlan1`일 수 있습니다. 먼저 `iwconfig`를 실행하여 나열된 모든 무선 인터페이스를 확인한 다음, 위 명령에서 올바른 이름으로 바꾸십시오.
 
 ---
 
@@ -409,7 +409,7 @@ git clone https://github.com/morrownr/8812au-20210820.git
 cd 8812au-20210820
 ```
 
-> **참고:** GitHub 접속이 느린 경우 신뢰할 수 있는 프록시 또는 미러를 사용하십시오.
+> <strong>참고:</strong> GitHub 접속이 느린 경우 신뢰할 수 있는 프록시 또는 미러를 사용하십시오.
 
 ### 4단계: 컴파일 및 설치
 
@@ -424,7 +424,7 @@ sudo modprobe 8812au
 
 ### 5단계: 모니터 모드 활성화
 
-모드를 전환하기 전에 **방해 프로세스를 종료**하십시오.
+모드를 전환하기 전에 <strong>방해 프로세스를 종료</strong>하십시오.
 
 ```bash
 sudo airmon-ng check kill
@@ -462,7 +462,7 @@ sudo aireplay-ng --test wlan0mon
 
 ## Raspberry Pi 4B / 5
 
-> AWUS036ACH는 약 500mW를 소비합니다. 이를 Raspberry Pi의 USB 포트에 직접 연결하면 부하 상태에서 Pi가 성능을 제한하거나 재시작할 수 있습니다. **항상 전원 공급형 USB 허브를 사용하십시오.**
+> AWUS036ACH는 약 500mW를 소비합니다. 이를 Raspberry Pi의 USB 포트에 직접 연결하면 부하 상태에서 Pi가 성능을 제한하거나 재시작할 수 있습니다. <strong>항상 전원 공급형 USB 허브를 사용하십시오.</strong>
 
 ---
 
@@ -471,9 +471,9 @@ sudo aireplay-ng --test wlan0mon
 공식 Kali ARM 다운로드 페이지로 이동합니다.
 https://www.kali.org/get-kali/#kali-arm
 
-사용 중인 보드에 맞게 **Raspberry Pi 4 (64-bit)** 또는 **Raspberry Pi 5 (64-bit)**를 선택하십시오. 32비트 이미지는 다운로드하지 마십시오. 드라이버 빌드에는 64비트 커널이 필요합니다.
+사용 중인 보드에 맞게 <strong>Raspberry Pi 4 (64-bit)</strong> 또는 <strong>Raspberry Pi 5 (64-bit)</strong>를 선택하십시오. 32비트 이미지는 다운로드하지 마십시오. 드라이버 빌드에는 64비트 커널이 필요합니다.
 
-> **중국 미러:** kali.org의 로딩이 느린 경우 华为云(Huawei Cloud)을 사용해 보십시오.
+> <strong>중국 미러:</strong> kali.org의 로딩이 느린 경우 华为云(Huawei Cloud)을 사용해 보십시오.
 > https://repo.huaweicloud.com/kali-images/
 > 최신 릴리스 폴더로 이동하여 같은 ARM64 이미지를 다운로드하십시오.
 
@@ -495,7 +495,7 @@ sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=pro
 sync
 ```
 
-카드를 빼기 전에 `sync`가 완료될 때까지 기다리십시오. 카드로 Pi를 부팅합니다. 부팅 후 기본 자격 증명은 **kali / kali**입니다.
+카드를 빼기 전에 `sync`가 완료될 때까지 기다리십시오. 카드로 Pi를 부팅합니다. 부팅 후 기본 자격 증명은 <strong>kali / kali</strong>입니다.
 
 ---
 
@@ -513,7 +513,7 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-저장합니다. **Ctrl+O**를 누른 후 Enter, 이어서 Ctrl+X를 누릅니다. 이제 미러를 적용하고 시스템을 업그레이드합니다.
+저장합니다. <strong>Ctrl+O</strong>를 누른 후 Enter, 이어서 Ctrl+X를 누릅니다. 이제 미러를 적용하고 시스템을 업그레이드합니다.
 
 ```bash
 sudo apt update && sudo apt full-upgrade -y
@@ -579,10 +579,10 @@ macOS 또는 Windows에서 VM 안에 Kali Linux를 실행하고 있습니까? US
 
 ### VirtualBox
 
-1. VM의 전원을 끈 상태에서 **Settings → USB**로 이동합니다.
-2. **USB 3.0 (xHCI) Controller**를 활성화합니다.
-3. **+** 아이콘을 클릭하여 USB 필터를 추가합니다.
-4. **Realtek 802.11ac NIC [...]**(ID: 0bda:8812)를 선택합니다.
+1. VM의 전원을 끈 상태에서 <strong>Settings → USB</strong>로 이동합니다.
+2. <strong>USB 3.0 (xHCI) Controller</strong>를 활성화합니다.
+3. <strong>+</strong> 아이콘을 클릭하여 USB 필터를 추가합니다.
+4. <strong>Realtek 802.11ac NIC [...]</strong>(ID: 0bda:8812)를 선택합니다.
 5. VM을 시작합니다. 어댑터가 Kali 내부에 나타납니다.
 
 VM 내부에서 `lsusb`를 실행하여 `0bda:8812`가 나타나는지 확인한 다음, 위의 Kali Linux 단계를 따르십시오.
@@ -590,8 +590,8 @@ VM 내부에서 `lsusb`를 실행하여 `0bda:8812`가 나타나는지 확인한
 ### VMware Fusion (macOS) / VMware Workstation (Windows)
 
 1. VM을 시작합니다.
-2. 메뉴에서 **Virtual Machine → USB & Bluetooth**로 이동합니다.
-3. **Realtek 802.11ac NIC**를 찾아 **Connect**를 클릭합니다.
+2. 메뉴에서 <strong>Virtual Machine → USB & Bluetooth</strong>로 이동합니다.
+3. <strong>Realtek 802.11ac NIC</strong>를 찾아 <strong>Connect</strong>를 클릭합니다.
 4. 어댑터가 호스트에서 분리되고 VM 내부에 나타납니다.
 
 VM 내부에서 `lsusb`를 실행하여 확인한 다음, 위의 Kali Linux 단계를 따르십시오.
@@ -634,7 +634,7 @@ VIF가 필요한 작업, 예를 들어 가짜 AP를 운영하면서 동시에 �
 
 ## 중국 환경용 추가 Alfa 어댑터 가이드
 
-본 문서는 **Alfa China Install Guide** 시리즈의 일부입니다. 각 문서는 하나의 어댑터 모델을 다룹니다.
+본 문서는 <strong>Alfa China Install Guide</strong> 시리즈의 일부입니다. 각 문서는 하나의 어댑터 모델을 다룹니다.
 
 - AWUS036ACH ← 현재 보고 계신 문서
 - [AWUS036ACM China Install Guide](/ko/blog/awus036acm-china-install-guide/) — MT7612U, 최고의 VIF 지원

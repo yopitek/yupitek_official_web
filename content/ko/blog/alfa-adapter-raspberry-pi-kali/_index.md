@@ -59,7 +59,7 @@ AWUS036ACH는 고전류 USB 장치입니다. 전원 공급형 USB 허브 없이 
 
 ### ARM 이미지 다운로드
 
-Kali Linux는 Raspberry Pi용 퍼스트파티 ARM64 이미지를 [https://www.kali.org/get-kali/#kali-arm](https://www.kali.org/get-kali/#kali-arm)에서 관리합니다. **Raspberry Pi 4 (64-bit)** 또는 **Raspberry Pi 5 (64-bit)**로 표시된 이미지를 다운로드합니다. 32비트 이미지를 사용하지 마십시오. 본 가이드의 드라이버 빌드 단계에는 ARM64 커널이 필요합니다.
+Kali Linux는 Raspberry Pi용 퍼스트파티 ARM64 이미지를 [https://www.kali.org/get-kali/#kali-arm](https://www.kali.org/get-kali/#kali-arm)에서 관리합니다. <strong>Raspberry Pi 4 (64-bit)</strong> 또는 <strong>Raspberry Pi 5 (64-bit)</strong>로 표시된 이미지를 다운로드합니다. 32비트 이미지를 사용하지 마십시오. 본 가이드의 드라이버 빌드 단계에는 ARM64 커널이 필요합니다.
 
 ### MicroSD에 플래싱
 
@@ -71,14 +71,14 @@ sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=pro
 sync
 ```
 
-Raspberry Pi Imager에서는 **Use custom** 선택 → Kali `.img.xz` 파일 선택 → SD 카드 선택 → 쓰기를 진행합니다.
+Raspberry Pi Imager에서는 <strong>Use custom</strong> 선택 → Kali `.img.xz` 파일 선택 → SD 카드 선택 → 쓰기를 진행합니다.
 
 ### 첫 부팅 및 초기 설정
 
 SD 카드를 삽입하고 모니터와 키보드를 연결(또는 시리얼 콘솔로 헤드리스 접근을 먼저 설정)한 후 전원을 켭니다. 기본 자격 증명은 다음과 같습니다:
 
-- **사용자명:** `kali`
-- **비밀번호:** `kali`
+- <strong>사용자명:</strong> `kali`
+- <strong>비밀번호:</strong> `kali`
 
 로그인 후 `kali-tweaks`를 실행하고 프롬프트에 따라 기본 구성을 강화합니다. 그런 다음 드라이버를 건드리기 전에 시스템을 완전히 업데이트합니다:
 
@@ -211,15 +211,15 @@ sudo systemctl start NetworkManager
 
 하드웨어를 작동시키는 것은 작업의 절반에 불과합니다. 다음의 실용적인 선택이 안정적인 현장 키트와 답답한 케이블 더미의 차이를 만듭니다.
 
-**네트워크 아키텍처:** 관리 연결을 유지하기 위해 `wlan0`(Pi의 내장 WiFi)을 사용합니다. 동일한 LAN이나 핫스팟에 있는 노트북에서 Pi로 SSH 접속합니다. `wlan1`(ALFA 어댑터)은 전적으로 침투 테스트 활동에 할당합니다. 절대 두 역할을 혼용하지 마십시오.
+<strong>네트워크 아키텍처:</strong> 관리 연결을 유지하기 위해 `wlan0`(Pi의 내장 WiFi)을 사용합니다. 동일한 LAN이나 핫스팟에 있는 노트북에서 Pi로 SSH 접속합니다. `wlan1`(ALFA 어댑터)은 전적으로 침투 테스트 활동에 할당합니다. 절대 두 역할을 혼용하지 마십시오.
 
-**헤드리스 운영:** 현장에서 키보드, 마우스, 모니터를 연결하지 마십시오. 첫 부팅 시 SSH를 구성하고 노트북의 터미널 에뮬레이터를 통해 모든 것에 접근합니다. `tmux` 세션은 재연결 시에도 유지되며, 이는 네트워크 상태가 불안정할 때 매우 유용합니다.
+<strong>헤드리스 운영:</strong> 현장에서 키보드, 마우스, 모니터를 연결하지 마십시오. 첫 부팅 시 SSH를 구성하고 노트북의 터미널 에뮬레이터를 통해 모든 것에 접근합니다. `tmux` 세션은 재연결 시에도 유지되며, 이는 네트워크 상태가 불안정할 때 매우 유용합니다.
 
-**전원:** 최소 3 A 등급의 공식 Raspberry Pi USB-C 전원 공급 장치를 사용합니다. AWUS036ACH의 경우 2.5 A 이상 등급의 전원 공급형 USB 허브를 추가합니다. 고품질 USB-C 보조 배터리(65 W 이상)는 부하에 따라 4~6시간 동안 Pi, 허브, 어댑터를 동시에 구동할 수 있습니다.
+<strong>전원:</strong> 최소 3 A 등급의 공식 Raspberry Pi USB-C 전원 공급 장치를 사용합니다. AWUS036ACH의 경우 2.5 A 이상 등급의 전원 공급형 USB 허브를 추가합니다. 고품질 USB-C 보조 배터리(65 W 이상)는 부하에 따라 4~6시간 동안 Pi, 허브, 어댑터를 동시에 구동할 수 있습니다.
 
-**저장 장치:** Kismet 로그와 캡처 파일은 MicroSD 카드가 아닌 USB SSD에 기록합니다. MicroSD 카드는 쓰기 주기가 제한적이며 지속적인 로깅 워크로드에서 빠르게 성능이 저하됩니다. 전원 공급형 허브에 연결된 USB 3.0 SSD가 더 빠르고 내구성이 좋습니다.
+<strong>저장 장치:</strong> Kismet 로그와 캡처 파일은 MicroSD 카드가 아닌 USB SSD에 기록합니다. MicroSD 카드는 쓰기 주기가 제한적이며 지속적인 로깅 워크로드에서 빠르게 성능이 저하됩니다. 전원 공급형 허브에 연결된 USB 3.0 SSD가 더 빠르고 내구성이 좋습니다.
 
-**인클로저:** 전원 공급형 허브를 수용할 수 있는 개방형 USB 포트나 절개부가 있는 Pi 케이스를 선택합니다. 수동 방열 핀이 있는 알루미늄 케이스는 지속적인 캡처 중 발열 관리에 도움이 됩니다.
+<strong>인클로저:</strong> 전원 공급형 허브를 수용할 수 있는 개방형 USB 포트나 절개부가 있는 Pi 케이스를 선택합니다. 수동 방열 핀이 있는 알루미늄 케이스는 지속적인 캡처 중 발열 관리에 도움이 됩니다.
 
 ---
 
@@ -254,14 +254,14 @@ Kismet은 기본적으로 모든 것을 `~/.kismet/`의 `.kismet` 데이터베�
 
 ALFA 어댑터와 GPS 동글을 사용하여 Kismet을 실행하는 Raspberry Pi는 완전한 독립형 워드라이빙 키트입니다. 전용 워드라이빙 장비보다 작고 저렴합니다.
 
-**필수 구성 요소:**
+<strong>필수 구성 요소:</strong>
 - Raspberry Pi 4 또는 Pi 5
 - ALFA AWUS036ACH
 - USB GPS 동글(u-blox 칩셋이 Kismet과 잘 작동)
 - 전원 공급형 USB 허브
 - USB-C 보조 배터리(65 W 이상, 패스스루 충전 지원)
 
-**설정 단계:**
+<strong>설정 단계:</strong>
 
 1. Kismet과 GPS 패키지 설치:
 

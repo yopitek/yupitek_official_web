@@ -22,7 +22,7 @@ faq:
     answer: "AWUS036ACH（RTL8812AU），社群教學資源最豐富，aircrack-ng 官方維護驅動，幾乎所有 Kali 教學皆以此型號為範例，新手上手風險最低。"
 ---
 
-2026 年 Kali Linux 最佳無線網路卡首選 **ALFA AWUS036ACH**（RTL8812AU 晶片），aircrack-ng 官方維護驅動，社群支援最完整，新手老手皆宜。需要 Wi-Fi 6E 前瞻性則選 AWUS036AXML，預算有限選 AWUS036ACM。
+2026 年 Kali Linux 最佳無線網路卡首選 <strong>ALFA AWUS036ACH</strong>（RTL8812AU 晶片），aircrack-ng 官方維護驅動，社群支援最完整，新手老手皆宜。需要 Wi-Fi 6E 前瞻性則選 AWUS036AXML，預算有限選 AWUS036ACM。
 
 {{< tldr >}}
 首選 AWUS036ACH（RTL8812AU），aircrack-ng 官方驅動、社群教學最豐富；前瞻 AWUS036AXML（MT7921AUN）支援 Wi-Fi 6E；平價 AWUS036ACM（MT7612U）核心內建驅動免編譯。
@@ -30,9 +30,9 @@ faq:
 
 ## 為什麼 Kali Linux 需要外接無線網路卡？
 
-很多剛接觸 Kali Linux 的使用者會發現，即便筆電內建了 Wi-Fi 晶片，許多工具（如 `airmon-ng`、`airodump-ng`、`Wireshark`）仍無法正常運作，甚至完全無法偵測到附近的無線網路。這背後的原因，在於**監聽模式（Monitor Mode）與封包注入（Packet Injection）**這兩項滲透測試必備功能，絕大多數的筆電內建網路卡根本不支援。
+很多剛接觸 Kali Linux 的使用者會發現，即便筆電內建了 Wi-Fi 晶片，許多工具（如 `airmon-ng`、`airodump-ng`、`Wireshark`）仍無法正常運作，甚至完全無法偵測到附近的無線網路。這背後的原因，在於<strong>監聽模式（Monitor Mode）與封包注入（Packet Injection）</strong>這兩項滲透測試必備功能，絕大多數的筆電內建網路卡根本不支援。
 
-內建 Wi-Fi 晶片（例如 Intel AX201、Realtek RTL8852AE）的設計目標是日常連網，驅動程式針對省電與穩定性最佳化，不支援被動監聽所有無線封包，也無法主動發送偽造封包。對於資安研究與滲透測試來說，這意味著你必須準備一張**專門設計、社群驗證過的外接 USB 無線網路卡**，才能在 Kali Linux 上發揮最大效用。
+內建 Wi-Fi 晶片（例如 Intel AX201、Realtek RTL8852AE）的設計目標是日常連網，驅動程式針對省電與穩定性最佳化，不支援被動監聽所有無線封包，也無法主動發送偽造封包。對於資安研究與滲透測試來說，這意味著你必須準備一張<strong>專門設計、社群驗證過的外接 USB 無線網路卡</strong>，才能在 Kali Linux 上發揮最大效用。
 
 本文將完整介紹 2026 年最值得推薦的 USB 無線網路卡選擇，以 ALFA Network 全系列為主軸，提供詳細規格比較、使用情境建議，以及台灣購買管道。
 
@@ -54,9 +54,9 @@ faq:
 
 晶片組決定了驅動程式是否穩定、社群支援是否充足。目前在 Kali Linux 上驗證最完整的三款晶片組為：
 
-- **RTL8812AU**：Realtek 出品，Wi-Fi 5 雙頻，Kali Linux 社群支援最成熟，aircrack-ng 官方倉庫有專屬驅動。
-- **MT7612U**：MediaTek 出品，Linux 主線核心已內建驅動（`mt76` 模組），免額外安裝，穩定性高。
-- **MT7921AUN**：MediaTek 新世代，支援 Wi-Fi 6E（6 GHz 頻段），Linux 6.x 核心逐步完善支援，代表未來趨勢。
+- <strong>RTL8812AU</strong>：Realtek 出品，Wi-Fi 5 雙頻，Kali Linux 社群支援最成熟，aircrack-ng 官方倉庫有專屬驅動。
+- <strong>MT7612U</strong>：MediaTek 出品，Linux 主線核心已內建驅動（`mt76` 模組），免額外安裝，穩定性高。
+- <strong>MT7921AUN</strong>：MediaTek 新世代，支援 Wi-Fi 6E（6 GHz 頻段），Linux 6.x 核心逐步完善支援，代表未來趨勢。
 
 ---
 
@@ -76,14 +76,14 @@ ALFA Network 是無線網路卡領域最受資安社群信賴的品牌，以下�
 
 ### 🏆 首選推薦：ALFA AWUS036ACH（RTL8812AU）
 
-AWUS036ACH 搭載 **Realtek RTL8812AU** 晶片組，是目前 Kali Linux 社群公認最成熟、最穩定的選擇。主要優勢包括：
+AWUS036ACH 搭載 <strong>Realtek RTL8812AU</strong> 晶片組，是目前 Kali Linux 社群公認最成熟、最穩定的選擇。主要優勢包括：
 
-- **社群驗證最完整**：aircrack-ng 官方 GitHub 維護專屬驅動（`aircrack-ng/rtl8812au`），更新頻繁。RTL8812AU 驅動由 [aircrack-ng](https://github.com/aircrack-ng/rtl8812au) 社群維護，GitHub 倉庫獲超過 6,000 星標，相容於超過 50 種無線攻擊工具。
-- **雙頻支援**：同時支援 2.4 GHz 與 5 GHz，覆蓋絕大多數現代 Wi-Fi 環境。
-- **雙天線設計**：2× RP-SMA 可拆式天線，可視需求更換高增益天線，增加訊號覆蓋範圍。
-- **USB 3.0 介面**：提供穩定的高速資料傳輸，適合長時間封包擷取。
+- <strong>社群驗證最完整</strong>：aircrack-ng 官方 GitHub 維護專屬驅動（`aircrack-ng/rtl8812au`），更新頻繁。RTL8812AU 驅動由 [aircrack-ng](https://github.com/aircrack-ng/rtl8812au) 社群維護，GitHub 倉庫獲超過 6,000 星標，相容於超過 50 種無線攻擊工具。
+- <strong>雙頻支援</strong>：同時支援 2.4 GHz 與 5 GHz，覆蓋絕大多數現代 Wi-Fi 環境。
+- <strong>雙天線設計</strong>：2× RP-SMA 可拆式天線，可視需求更換高增益天線，增加訊號覆蓋範圍。
+- <strong>USB 3.0 介面</strong>：提供穩定的高速資料傳輸，適合長時間封包擷取。
 
-**適合對象**：無論是剛入門還是有經驗的滲透測試人員，AWUS036ACH 都是最無風險的選擇，幾乎在所有 Kali Linux 教學中都以此型號為示範。
+<strong>適合對象</strong>：無論是剛入門還是有經驗的滲透測試人員，AWUS036ACH 都是最無風險的選擇，幾乎在所有 Kali Linux 教學中都以此型號為示範。
 
 ---
 
@@ -91,13 +91,13 @@ AWUS036ACH 搭載 **Realtek RTL8812AU** 晶片組，是目前 Kali Linux 社群�
 
 隨著 Wi-Fi 6E 路由器逐漸普及，AWUS036AXML 代表了下一個世代的滲透測試工具。核心優勢在於：
 
-- **6 GHz 頻段支援**：Wi-Fi 6E 獨有的 6 GHz 頻段提供更大頻寬與更少干擾，是未來企業與家用網路的主流。
-- **MT7921AUN 晶片**：MediaTek 新一代晶片，Linux 核心 5.18 以上版本逐步完善支援。MT7921AUN 驅動自核心 5.18 起逐步整合進 mainline（[kernel.org](https://www.kernel.org/)），Monitor、AP、WPA3 均可用；但封包注入在 kernel 6.16 以前有社群回報可用，stock kernel 6.17 實測未通過（主因是 kernel 6.16 以後 mac80211 chanctx 回歸，非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖速率，不可注入 HT/VHT）。
-- **AX1800 規格**：理論最高 1800 Mbps，應付未來高速 Wi-Fi 環境綽綽有餘。
+- <strong>6 GHz 頻段支援</strong>：Wi-Fi 6E 獨有的 6 GHz 頻段提供更大頻寬與更少干擾，是未來企業與家用網路的主流。
+- <strong>MT7921AUN 晶片</strong>：MediaTek 新一代晶片，Linux 核心 5.18 以上版本逐步完善支援。MT7921AUN 驅動自核心 5.18 起逐步整合進 mainline（[kernel.org](https://www.kernel.org/)），Monitor、AP、WPA3 均可用；但封包注入在 kernel 6.16 以前有社群回報可用，stock kernel 6.17 實測未通過（主因是 kernel 6.16 以後 mac80211 chanctx 回歸，非晶片先天限制；社群 patched 驅動可讓注入運作，但韌體仍鎖速率，不可注入 HT/VHT）。
+- <strong>AX1800 規格</strong>：理論最高 1800 Mbps，應付未來高速 Wi-Fi 環境綽綽有餘。
 
-**注意**：由於 MT7921AUN 驅動在 Linux 上仍屬相對新的整合，封包注入在 stock kernel 6.17 實測未通過，需要注入請改用 AWUS036ACH 或 AWUS036ACM。建議有一定 Linux 基礎的使用者選購。
+<strong>注意</strong>：由於 MT7921AUN 驅動在 Linux 上仍屬相對新的整合，封包注入在 stock kernel 6.17 實測未通過，需要注入請改用 AWUS036ACH 或 AWUS036ACM。建議有一定 Linux 基礎的使用者選購。
 
-**適合對象**：希望搶先部署 Wi-Fi 6E 測試能力的進階使用者，或已購入 Wi-Fi 6E 路由器的企業資安團隊。
+<strong>適合對象</strong>：希望搶先部署 Wi-Fi 6E 測試能力的進階使用者，或已購入 Wi-Fi 6E 路由器的企業資安團隊。
 
 ---
 
@@ -105,11 +105,11 @@ AWUS036ACH 搭載 **Realtek RTL8812AU** 晶片組，是目前 Kali Linux 社群�
 
 對於預算有限，或只需要基本 Wi-Fi 5 雙頻測試能力的使用者，AWUS036ACM 是極具性價比的選擇：
 
-- **MT7612U 晶片**：已整合至 Linux 主線核心（`mt76` 驅動模組），大多數 Kali Linux 版本免額外安裝驅動。MT7612U 的 `mt76x2u` 驅動自核心 4.19 起整合進 Linux mainline（[kernel.org](https://www.kernel.org/)），隨插即用無需編譯。
-- **即插即用**：連接後通常自動識別，降低新手入門門檻。
-- **輕巧設計**：單天線設計，攜帶方便，適合外出作業。
+- <strong>MT7612U 晶片</strong>：已整合至 Linux 主線核心（`mt76` 驅動模組），大多數 Kali Linux 版本免額外安裝驅動。MT7612U 的 `mt76x2u` 驅動自核心 4.19 起整合進 Linux mainline（[kernel.org](https://www.kernel.org/)），隨插即用無需編譯。
+- <strong>即插即用</strong>：連接後通常自動識別，降低新手入門門檻。
+- <strong>輕巧設計</strong>：單天線設計，攜帶方便，適合外出作業。
 
-**適合對象**：入門學習者、預算有限的使用者，或需要輕便攜帶的場合。
+<strong>適合對象</strong>：入門學習者、預算有限的使用者，或需要輕便攜帶的場合。
 
 ---
 
@@ -146,7 +146,7 @@ iwconfig
 
 ## 台灣購買管道：榆閤科技（Yopitek）
 
-在台灣，購買 ALFA Network 產品請認明**榆閤科技（Yopitek）**，為 ALFA Network 台灣授權代理商，保障您購買到的是正版公司貨，享有完整保固服務與中文技術支援。
+在台灣，購買 ALFA Network 產品請認明<strong>榆閤科技（Yopitek）</strong>，為 ALFA Network 台灣授權代理商，保障您購買到的是正版公司貨，享有完整保固服務與中文技術支援。
 
 透過 ALFA Network 授權代理商購買的優勢：
 - ✅ 正品保證，附原廠保固
@@ -165,9 +165,9 @@ iwconfig
 
 2026 年 Kali Linux 最佳無線網路卡推薦：
 
-1. **首選**：AWUS036ACH — 社群支援最完整，新手老手皆宜
-2. **前瞻**：AWUS036AXML — Wi-Fi 6E 準備，面向未來
-3. **平價**：AWUS036ACM — 預算有限的最佳選擇
+1. <strong>首選</strong>：AWUS036ACH — 社群支援最完整，新手老手皆宜
+2. <strong>前瞻</strong>：AWUS036AXML — Wi-Fi 6E 準備，面向未來
+3. <strong>平價</strong>：AWUS036ACM — 預算有限的最佳選擇
 
 選對工具，是滲透測試成功的第一步。搭配 Kali Linux 強大的工具套件，ALFA Network 無線網路卡將讓你的資安研究如虎添翼。
 

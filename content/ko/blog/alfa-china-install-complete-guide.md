@@ -45,7 +45,7 @@ featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 - 무선 테스트를 위해 모니터 모드와 패킷 인젝션을 활성화해야 하는 경우
 - 사용 중인 Alfa 모델에 어떤 드라이버가 필요한지 확실하지 않은 경우
 
-본 가이드는 **이 모든 문제**를 해결합니다. 시스템 패키지에는 **중국에서 접속 가능한 미러**를, 드라이버 소스에는 검증된 GitHub 저장소를 사용하여 **모든 주요 Linux 배포판**에 **모든 Alfa USB WiFi 어댑터**를 설치하는 과정을 안내합니다. 번거로움 없이 진행할 수 있습니다.
+본 가이드는 <strong>이 모든 문제</strong>를 해결합니다. 시스템 패키지에는 <strong>중국에서 접속 가능한 미러</strong>를, 드라이버 소스에는 검증된 GitHub 저장소를 사용하여 <strong>모든 주요 Linux 배포판</strong>에 <strong>모든 Alfa USB WiFi 어댑터</strong>를 설치하는 과정을 안내합니다. 번거로움 없이 진행할 수 있습니다.
 
 ---
 
@@ -53,7 +53,7 @@ featureimage: "/images/blog/alfa-china-install-complete-guide.webp"
 
 Alfa USB WiFi 어댑터는 침투 테스터, 네트워크 엔지니어, 무선 기술 애호가들 사이에서 인기가 높습니다. 대부분의 일반 소비자용 WiFi 어댑터에는 없는 모니터 모드와 패킷 인젝션을 지원하기 때문입니다.
 
-하지만 문제가 있습니다. **대부분의 드라이버 설치 가이드는 GitHub에 빠르게 접속할 수 있다고 가정합니다**. 중국에서는 GitHub가 느리거나 불안정할 수 있습니다. 본 가이드는 시스템 패키지를 중국 내 미러에서 설치하고 드라이버 소스는 검증된 GitHub 저장소에서 클론합니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하시기 바랍니다.
+하지만 문제가 있습니다. <strong>대부분의 드라이버 설치 가이드는 GitHub에 빠르게 접속할 수 있다고 가정합니다</strong>. 중국에서는 GitHub가 느리거나 불안정할 수 있습니다. 본 가이드는 시스템 패키지를 중국 내 미러에서 설치하고 드라이버 소스는 검증된 GitHub 저장소에서 클론합니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하시기 바랍니다.
 
 ---
 
@@ -75,7 +75,7 @@ Alfa USB WiFi 어댑터는 침투 테스터, 네트워크 엔지니어, 무선 �
 | 모델 | 칩셋 | 드라이버 | 적합한 용도 |
 |-------|---------|--------|----------|
 | AWUS036ACH | Realtek RTL8812AU | `88XXau` | 고출력, 뛰어난 도달 거리 |
-| AWUS036ACM | MediaTek MT7612U | `mt76x2u` | **최고의 VIF 지원**, 플러그 앤 플레이 |
+| AWUS036ACM | MediaTek MT7612U | `mt76x2u` | <strong>최고의 VIF 지원</strong>, 플러그 앤 플레이 |
 | AWUS036ACS | Realtek RTL8811AU | `8811au` | 합리적인 가격 |
 
 ### 보유한 어댑터는 무엇입니까?
@@ -92,11 +92,11 @@ Alfa USB WiFi 어댑터는 침투 테스터, 네트워크 엔지니어, 무선 �
 
 시작하기 전에 다음이 준비되어 있는지 확인하시기 바랍니다:
 
-1. **Alfa USB WiFi 어댑터** — 용도에 맞는 모델
-2. **USB 케이블** — 제품에 동봉된 케이블로 충분합니다
-3. **전원 공급형 USB 허브** — Raspberry Pi를 사용하는 경우 필수
-4. **인터넷 연결** — 중국 내 미러에 접속하기 위해 필요
-5. **Sudo 권한** — 드라이버 설치에 관리자 권한이 필요합니다
+1. <strong>Alfa USB WiFi 어댑터</strong> — 용도에 맞는 모델
+2. <strong>USB 케이블</strong> — 제품에 동봉된 케이블로 충분합니다
+3. <strong>전원 공급형 USB 허브</strong> — Raspberry Pi를 사용하는 경우 필수
+4. <strong>인터넷 연결</strong> — 중국 내 미러에 접속하기 위해 필요
+5. <strong>Sudo 권한</strong> — 드라이버 설치에 관리자 권한이 필요합니다
 
 먼저 어댑터를 연결하여 시스템이 인식하는지 확인합니다:
 
@@ -106,7 +106,7 @@ lsusb
 
 출력에서 어댑터의 벤더 ID를 찾습니다:
 
-- **Alfa 어댑터**는 `0e8d`(MediaTek) 또는 `0bda`(Realtek)로 표시됩니다
+- <strong>Alfa 어댑터</strong>는 `0e8d`(MediaTek) 또는 `0bda`(Realtek)로 표시됩니다
 - 예: `Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc.`
 - 예: `Bus 001 Device 003: ID 0bda:8812 Realtek Semiconductor Corp.`
 
@@ -140,13 +140,13 @@ ID가 보이면 어댑터가 인식된 것입니다. 아래의 드라이버 설�
 
 | 리소스 | URL | 용도 |
 |----------|-----|---------|
-| **Alfa 공식 다운로드** | [files.alfa.com.tw](https://files.alfa.com.tw) | 드라이버 패키지, 펌웨어 |
-| **Alfa 문서** | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 제품 매뉴얼(영문) |
-| **칭화대학교 미러(Tsinghua)** | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| **알리클라우드 미러(Aliyun)** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu(권장) |
-| **중국과학기술대학교 미러(USTC)** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali(권장) |
-| **화웨이 클라우드 미러(Huawei Cloud)** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 이미지(백업) |
-| **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | 드라이버 소스 코드 |
+| <strong>Alfa 공식 다운로드</strong> | [files.alfa.com.tw](https://files.alfa.com.tw) | 드라이버 패키지, 펌웨어 |
+| <strong>Alfa 문서</strong> | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 제품 매뉴얼(영문) |
+| <strong>칭화대학교 미러(Tsinghua)</strong> | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| <strong>알리클라우드 미러(Aliyun)</strong> | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu(권장) |
+| <strong>중국과학기술대학교 미러(USTC)</strong> | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali(권장) |
+| <strong>화웨이 클라우드 미러(Huawei Cloud)</strong> | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM 이미지(백업) |
+| <strong>GitHub (morrownr)</strong> | [github.com/morrownr](https://github.com/morrownr) | 드라이버 소스 코드 |
 
 ---
 
@@ -168,13 +168,13 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-저장: **Ctrl+O**, Enter, 그다음 **Ctrl+X**. 새로 고침:
+저장: <strong>Ctrl+O</strong>, Enter, 그다음 <strong>Ctrl+X</strong>. 새로 고침:
 
 ```bash
 sudo apt update
 ```
 
-> **백업 미러:** USTC(중국과학기술대학교) 미러가 느리다면 Tsinghua(칭화대학교) 미러를 사용하시기 바랍니다:
+> <strong>백업 미러:</strong> USTC(중국과학기술대학교) 미러가 느리다면 Tsinghua(칭화대학교) 미러를 사용하시기 바랍니다:
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ### 2단계: 칩셋별 드라이버 설치
@@ -261,7 +261,7 @@ Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 ```
 
-**Ctrl+O**로 저장하고 **Ctrl+X**로 종료합니다.
+<strong>Ctrl+O</strong>로 저장하고 <strong>Ctrl+X</strong>로 종료합니다.
 
 #### Ubuntu 22.04 (Jammy)
 
@@ -415,15 +415,15 @@ iwconfig
 
 ## Raspberry Pi OS 설치
 
-> **중요:** AWUS036ACH는 약 500mW, AWUS036ACM은 약 400mW를 소비합니다. 부하 시 Pi가 스로틀링되거나 다운되지 않도록 **항상 전원 공급형 USB 허브를 사용**하시기 바랍니다.
+> <strong>중요:</strong> AWUS036ACH는 약 500mW, AWUS036ACM은 약 400mW를 소비합니다. 부하 시 Pi가 스로틀링되거나 다운되지 않도록 <strong>항상 전원 공급형 USB 허브를 사용</strong>하시기 바랍니다.
 
 ### 1단계: Kali Linux ARM64 이미지 다운로드
 
 다음으로 이동합니다: https://www.kali.org/get-kali/#kali-arm
 
-**Raspberry Pi 4 (64-bit)** 또는 **Raspberry Pi 5 (64-bit)**를 선택합니다. 32비트는 사용하지 마십시오. 64비트가 필요합니다.
+<strong>Raspberry Pi 4 (64-bit)</strong> 또는 <strong>Raspberry Pi 5 (64-bit)</strong>를 선택합니다. 32비트는 사용하지 마십시오. 64비트가 필요합니다.
 
-> **중국 미러:** kali.org가 느리다면 화웨이 클라우드(Huawei Cloud) 미러를 사용하시기 바랍니다: https://repo.huaweicloud.com/kali-images/
+> <strong>중국 미러:</strong> kali.org가 느리다면 화웨이 클라우드(Huawei Cloud) 미러를 사용하시기 바랍니다: https://repo.huaweicloud.com/kali-images/
 
 ### 2단계: MicroSD에 플래싱
 
@@ -440,7 +440,7 @@ sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=pro
 sync
 ```
 
-`sync`가 완료될 때까지 기다립니다. Pi를 부팅합니다. 기본 자격 증명: **kali / kali**.
+`sync`가 완료될 때까지 기다립니다. Pi를 부팅합니다. 기본 자격 증명: <strong>kali / kali</strong>.
 
 ### 3단계: 중국 미러로 전환
 
@@ -547,7 +547,7 @@ iwconfig
 sudo aireplay-ng --test wlan0mon
 ```
 
-**성공 시 출력:**
+<strong>성공 시 출력:</strong>
 
 ```
 Trying broadcast probe requests...
@@ -555,7 +555,7 @@ Injection is working!
 Found 1 AP
 ```
 
-**실패하는 경우:**
+<strong>실패하는 경우:</strong>
 - 재부팅 후 다시 시도
 - 다른 프로세스가 인터페이스를 점유하고 있지 않은지 확인(`iwconfig`)
 - 테스트를 위해 WiFi AP에 더 가까이 이동
@@ -567,16 +567,16 @@ Found 1 AP
 
 VIF(Virtual Interface Functionality)를 사용하면 하나의 어댑터에서 여러 인터페이스를 동시에 실행할 수 있습니다. 예를 들어:
 
-- **관리 모드**(`wlan0`) + **모니터 모드**(`mon0`)를 동시에 사용
+- <strong>관리 모드</strong>(`wlan0`) + <strong>모니터 모드</strong>(`mon0`)를 동시에 사용
 - 네트워크 연결을 유지하면서 트래픽을 캡처
 
 ### VIF를 지원하는 어댑터는?
 
 | 칩셋 | VIF 지원 | 비고 |
 |---------|-------------|-------|
-| **MT7612U (AWUS036ACM)** | ✅ 완전한 네이티브 지원 | VIF 워크플로에 최선의 선택 |
-| **RTL8812AU (AWUS036ACH)** | ⚠️ 제한적 | 관리 모드 + 모니터 모드 동시 실행 불가 |
-| **RTL8832BU (AX 시리즈)** | ✅ STA+AP 가능 | 커널 내장 rtw89_8852bu(kernel 6.17 이상)에서 실측 동작 확인. 구형 커널의 커뮤니티 DKMS 드라이버는 VIF 미지원 |
+| <strong>MT7612U (AWUS036ACM)</strong> | ✅ 완전한 네이티브 지원 | VIF 워크플로에 최선의 선택 |
+| <strong>RTL8812AU (AWUS036ACH)</strong> | ⚠️ 제한적 | 관리 모드 + 모니터 모드 동시 실행 불가 |
+| <strong>RTL8832BU (AX 시리즈)</strong> | ✅ STA+AP 가능 | 커널 내장 rtw89_8852bu(kernel 6.17 이상)에서 실측 동작 확인. 구형 커널의 커뮤니티 DKMS 드라이버는 VIF 미지원 |
 
 ### 가상 인터페이스 생성 (MT7612U)
 
@@ -600,7 +600,7 @@ iwconfig
 
 ### 사용 사례
 
-**연결을 유지하면서 트래픽 캡처:**
+<strong>연결을 유지하면서 트래픽 캡처:</strong>
 
 ```bash
 sudo airodump-ng mon0
@@ -608,7 +608,7 @@ sudo airodump-ng mon0
 
 `mon0`이 모든 것을 캡처하는 동안 `wlan0`은 정상 작동을 계속합니다.
 
-**가짜 AP + 모니터:**
+<strong>가짜 AP + 모니터:</strong>
 
 ```bash
 sudo iw dev wlan0 interface add ap0 type __ap
@@ -626,9 +626,9 @@ VM 안에서 Linux를 실행 중이라면 USB 어댑터를 게스트로 패스�
 ### VirtualBox
 
 1. VM 전원을 끕니다
-2. **Settings → USB**로 이동합니다
-3. **USB 3.0 (xHCI) Controller**를 활성화합니다
-4. **+**를 클릭하여 USB 필터를 추가합니다
+2. <strong>Settings → USB</strong>로 이동합니다
+3. <strong>USB 3.0 (xHCI) Controller</strong>를 활성화합니다
+4. <strong>+</strong>를 클릭하여 USB 필터를 추가합니다
 5. Alfa 어댑터를 선택합니다(ID: `0bda:8812` 또는 `0e8d:7612`)
 6. VM을 시작합니다
 
@@ -637,8 +637,8 @@ VM 내부에서 `lsusb`를 실행하여 확인한 후 위의 Kali Linux 단계�
 ### VMware Fusion (macOS) / VMware Workstation (Windows)
 
 1. VM을 시작합니다
-2. 메뉴: **Virtual Machine → USB & Bluetooth**
-3. Alfa 어댑터를 찾아 **Connect**를 클릭합니다
+2. 메뉴: <strong>Virtual Machine → USB & Bluetooth</strong>
+3. Alfa 어댑터를 찾아 <strong>Connect</strong>를 클릭합니다
 4. 어댑터가 VM 내부에 나타납니다
 
 `lsusb`를 실행하여 확인한 후 드라이버 설치 단계를 따릅니다.
@@ -677,7 +677,7 @@ VM 내부에서 `lsusb`를 실행하여 확인한 후 위의 Kali Linux 단계�
 
 ## 마무리
 
-본 가이드는 **중국에서 접속 가능한 리소스만** 사용하여 **모든 주요 Linux 배포판**에서 **모든 Alfa USB WiFi 어댑터**를 다룹니다. 이제 다음을 할 수 있습니다:
+본 가이드는 <strong>중국에서 접속 가능한 리소스만</strong> 사용하여 <strong>모든 주요 Linux 배포판</strong>에서 <strong>모든 Alfa USB WiFi 어댑터</strong>를 다룹니다. 이제 다음을 할 수 있습니다:
 
 ✅ 모든 Alfa 어댑터의 드라이버 설치  
 ✅ Kali, Ubuntu, Debian, Raspberry Pi에서 모니터 모드 활성화  
@@ -685,13 +685,13 @@ VM 내부에서 `lsusb`를 실행하여 확인한 후 위의 Kali Linux 단계�
 ✅ 지원 모델에서 가상 인터페이스(VIF) 사용  
 ✅ VM으로 어댑터 패스스루  
 
-**질문이나 문제가 있으십니까?** 시리즈의 모델별 가이드를 확인하시거나 [yupitek.com](https://yupitek.com/ko/contact/)으로 문의하시기 바랍니다.
+<strong>질문이나 문제가 있으십니까?</strong> 시리즈의 모델별 가이드를 확인하시거나 [yupitek.com](https://yupitek.com/ko/contact/)으로 문의하시기 바랍니다.
 
 ---
 
 ## 관련 가이드
 
-본 문서는 **Alfa 중국 설치 가이드** 시리즈의 일부입니다:
+본 문서는 <strong>Alfa 중국 설치 가이드</strong> 시리즈의 일부입니다:
 
 - [AWUS036ACH 중국 설치 가이드](/ko/blog/awus036ach-china-install-guide/) — RTL8812AU, 고출력
 - [AWUS036ACM 중국 설치 가이드](/ko/blog/awus036acm-china-install-guide/) — MT7612U, 최고의 VIF 지원

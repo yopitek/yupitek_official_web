@@ -34,7 +34,7 @@ RTL8812AU 칩셋을 탑재한 AWUS036ACH는 aircrack-ng 드라이버와 DKMS로 
 ---
 
 {{< alert "circle-info" >}}
-Kali를 **VirtualBox 또는 VMware**에서 실행하고 계십니까? 먼저 [USB 패스스루](#usb-passthrough-in-virtualbox-and-vmware) 섹션으로 이동하십시오. 가장 흔한 설정 실패 지점입니다. 호스트 OS로 **macOS** 또는 **Windows**를 사용하는 경우 [macOS에서의 ALFA](/ko/blog/alfa-adapter-macos-vm-setup/) 또는 [Windows에서의 ALFA](/ko/blog/alfa-adapter-windows-10-11-setup/) 가이드를 참조하십시오.
+Kali를 <strong>VirtualBox 또는 VMware</strong>에서 실행하고 계십니까? 먼저 [USB 패스스루](#usb-passthrough-in-virtualbox-and-vmware) 섹션으로 이동하십시오. 가장 흔한 설정 실패 지점입니다. 호스트 OS로 <strong>macOS</strong> 또는 <strong>Windows</strong>를 사용하는 경우 [macOS에서의 ALFA](/ko/blog/alfa-adapter-macos-vm-setup/) 또는 [Windows에서의 ALFA](/ko/blog/alfa-adapter-windows-10-11-setup/) 가이드를 참조하십시오.
 {{< /alert >}}
 
 ---
@@ -43,19 +43,19 @@ Kali를 **VirtualBox 또는 VMware**에서 실행하고 계십니까? 먼저 [US
 
 명령어를 다루기에 앞서, 이 어댑터를 특별하게 만드는 요소가 정확히 무엇인지 이해해 둘 가치가 있습니다.
 
-**RTL8812AU 칩셋**
+<strong>RTL8812AU 칩셋</strong>
 
 Realtek의 RTL8812AU는 듀얼 밴드(2.4 + 5 GHz) 802.11ac 칩셋으로, 보안 도구가 요구하는 프레임 수준의 작업을 견고하게 지원합니다. GitHub의 `aircrack-ng/rtl8812au`에서 유지보수되는 오픈소스 드라이버는 Aircrack-ng 팀과 폭넓은 Linux 보안 커뮤니티가 수년에 걸쳐 협력한 직접적인 결과물입니다. 이 드라이버는 활발하게 유지보수되고, 새로운 커널 버전에 대해 정기적으로 테스트되며, 모니터 모드와 패킷 인젝션을 부가 기능이 아니라 명시적으로 지원하도록 설계되어 있습니다.
 
-**2017년부터 이어진 커뮤니티 지원**
+<strong>2017년부터 이어진 커뮤니티 지원</strong>
 
 AWUS036ACH에서 문제가 발생하면 답을 찾을 수 있습니다. 이 어댑터는 수천 건의 포럼 게시물, YouTube 튜토리얼, Hack The Box 공략, Offensive Security 교육 자료, GitHub 이슈에 등장합니다. 다른 어떤 어댑터도 따라올 수 없는 수준의 문제 해결 지식 기반을 갖추고 있습니다.
 
-**AC1200 듀얼 밴드 성능**
+<strong>AC1200 듀얼 밴드 성능</strong>
 
 이 어댑터는 2.4 GHz에서 최대 300 Mbps, 5 GHz에서 최대 867 Mbps를 제공하며, 2×2 MIMO를 지원하는 두 개의 분리형 RP-SMA 안테나를 갖추고 있습니다. 필요할 때 실질적인 고속 처리 성능을 발휘하는 동시에 완전한 침투 테스트 기능도 제공합니다.
 
-**USB 3.0**
+<strong>USB 3.0</strong>
 
 USB 3.0 인터페이스는 대용량 캡처를 수행하거나 여러 도구를 동시에 실행할 때 어댑터가 병목 지점이 되는 것을 방지합니다.
 
@@ -67,11 +67,11 @@ USB 3.0 인터페이스는 대용량 캡처를 수행하거나 여러 도구를 
 
 시작하기 전에 다음 사항을 확인하십시오.
 
-- **Kali Linux 2024.x 이상** (본 가이드는 Kali 2024.1부터 2025.1까지에서 테스트되었습니다)
-- **USB 3.0 포트** — 어댑터는 USB 2.0에서도 동작하지만 처리량이 제한됩니다. 최상의 결과를 위해 USB 3.0을 사용하십시오.
-- 드라이버 다운로드를 위한 **인터넷 연결**
-- **root 또는 sudo 권한**
-- **빌드 도구 설치** — 2단계에서 다룹니다
+- <strong>Kali Linux 2024.x 이상</strong> (본 가이드는 Kali 2024.1부터 2025.1까지에서 테스트되었습니다)
+- <strong>USB 3.0 포트</strong> — 어댑터는 USB 2.0에서도 동작하지만 처리량이 제한됩니다. 최상의 결과를 위해 USB 3.0을 사용하십시오.
+- 드라이버 다운로드를 위한 <strong>인터넷 연결</strong>
+- <strong>root 또는 sudo 권한</strong>
+- <strong>빌드 도구 설치</strong> — 2단계에서 다룹니다
 
 Kali를 가상 머신(VMware, VirtualBox, UTM)에서 실행하는 경우, USB 장치를 VM으로 패스스루해야 합니다. VMware에서는 VM → Removable Devices → 어댑터 연결을 선택합니다. VirtualBox에서는 Settings → USB에서 Realtek 장치에 대한 USB 필터를 추가합니다.
 
@@ -81,12 +81,12 @@ Kali를 가상 머신(VMware, VirtualBox, UTM)에서 실행하는 경우, USB �
 
 ### VirtualBox
 
-VirtualBox에서 USB 3.0을 지원하려면 **Extension Pack**이 필요합니다. 이것이 없으면 USB 2.0만 패스스루할 수 있으며, 이 경우 AWUS036ACH에서 아무 메시지 없는 실패가 발생하거나 처리량이 저하됩니다.
+VirtualBox에서 USB 3.0을 지원하려면 <strong>Extension Pack</strong>이 필요합니다. 이것이 없으면 USB 2.0만 패스스루할 수 있으며, 이 경우 AWUS036ACH에서 아무 메시지 없는 실패가 발생하거나 처리량이 저하됩니다.
 
 1. [virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)에서 Extension Pack을 다운로드합니다. 사용 중인 VirtualBox 버전과 정확히 일치해야 합니다.
-2. 설치: **File → Tools → Extension Pack Manager → Install**
-3. Kali VM 설정에서: **USB → Enable USB Controller → USB 3.0 (xHCI)**
-4. 어댑터를 연결한 상태에서 USB Device Filter를 추가합니다: **Settings → USB → "+" 아이콘 클릭**
+2. 설치: <strong>File → Tools → Extension Pack Manager → Install</strong>
+3. Kali VM 설정에서: <strong>USB → Enable USB Controller → USB 3.0 (xHCI)</strong>
+4. 어댑터를 연결한 상태에서 USB Device Filter를 추가합니다: <strong>Settings → USB → "+" 아이콘 클릭</strong>
 
 ```bash
 # VM 내부에서 어댑터가 보이는지 확인
@@ -96,7 +96,7 @@ lsusb | grep -E "0bda|Realtek"
 
 ### VMware Workstation / Player
 
-VMware는 기본적으로 VirtualBox보다 USB 패스스루를 더 잘 처리하지만, 호스트에서 **VMware USB Arbitrator** 서비스가 실행 중이어야 합니다.
+VMware는 기본적으로 VirtualBox보다 USB 패스스루를 더 잘 처리하지만, 호스트에서 <strong>VMware USB Arbitrator</strong> 서비스가 실행 중이어야 합니다.
 
 ```bash
 # Windows 호스트 — 서비스 실행 여부 확인
@@ -106,7 +106,7 @@ sc query VMwareUSBArbitrator
 sc start VMwareUSBArbitrator
 ```
 
-VM에서: **VM 메뉴 → Removable Devices → ALFA AWUS036ACH → Connect**
+VM에서: <strong>VM 메뉴 → Removable Devices → ALFA AWUS036ACH → Connect</strong>
 
 ```bash
 # Kali 내부에서 성공 여부 확인
@@ -131,8 +131,8 @@ Bus 001 Device 004: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b
 ```
 
 중요한 식별자는 다음과 같습니다.
-- **Vendor ID:** `0bda` (Realtek)
-- **Product ID:** `8812` (RTL8812AU)
+- <strong>Vendor ID:</strong> `0bda` (Realtek)
+- <strong>Product ID:</strong> `8812` (RTL8812AU)
 
 장치가 전혀 나타나지 않으면 다른 USB 포트나 케이블을 사용해 보십시오. 다른 Product ID로 나타난다면 다른 하드웨어 리비전일 수 있습니다.
 
@@ -155,7 +155,7 @@ usbcore: registered new interface driver rtl88XXau
 
 ## 2단계: RTL8812AU 드라이버 설치
 
-설치 방법은 두 가지입니다. **방법 A(aircrack-ng 드라이버)**는 Kali Linux에 권장됩니다. **방법 B(DKMS)**는 커널 업데이트 전반에 걸쳐 드라이버를 자동으로 유지하고자 할 때 권장됩니다.
+설치 방법은 두 가지입니다. <strong>방법 A(aircrack-ng 드라이버)</strong>는 Kali Linux에 권장됩니다. <strong>방법 B(DKMS)</strong>는 커널 업데이트 전반에 걸쳐 드라이버를 자동으로 유지하고자 할 때 권장됩니다.
 
 ### 빌드 종속성 설치
 
@@ -400,9 +400,9 @@ sudo aireplay-ng --test wlan0mon
 
 ### "Interface not found" / 드라이버 설치 후 wlan 인터페이스가 없음
 
-**원인:** 드라이버 모듈이 정상적으로 로드되지 않았습니다.
+<strong>원인:</strong> 드라이버 모듈이 정상적으로 로드되지 않았습니다.
 
-**해결 방법:**
+<strong>해결 방법:</strong>
 
 ```bash
 # 모듈 로드 오류 확인
@@ -437,9 +437,9 @@ sudo apt install linux-headers-$(uname -r)
 
 ### 모니터 모드 활성화 시 "Operation not permitted"
 
-**원인:** root로 실행하고 있지 않거나 권한(capability)이 누락되었습니다.
+<strong>원인:</strong> root로 실행하고 있지 않거나 권한(capability)이 누락되었습니다.
 
-**해결 방법:**
+<strong>해결 방법:</strong>
 
 airmon-ng 및 aireplay-ng는 항상 `sudo`와 함께 사용하십시오.
 
@@ -459,9 +459,9 @@ whoami
 
 ### "No module named rtl8812au" / 커널 업데이트 후 DKMS 실패
 
-**원인:** DKMS가 새 커널용으로 드라이버를 재컴파일하지 않았습니다.
+<strong>원인:</strong> DKMS가 새 커널용으로 드라이버를 재컴파일하지 않았습니다.
 
-**해결 방법:**
+<strong>해결 방법:</strong>
 
 ```bash
 # DKMS 상태 확인
@@ -480,9 +480,9 @@ sudo make dkms_install
 
 ### 모니터 모드는 시작되지만 트래픽이 캡처되지 않음
 
-**원인:** 잘못된 채널, 간섭, 또는 규제 도메인 문제입니다.
+<strong>원인:</strong> 잘못된 채널, 간섭, 또는 규제 도메인 문제입니다.
 
-**해결 방법:**
+<strong>해결 방법:</strong>
 
 ```bash
 # 현재 채널 확인
@@ -502,9 +502,9 @@ sudo iw reg set BO
 
 ### 낮은 인젝션 성공률 (50% 미만)
 
-**원인:** AP와의 거리, 간섭, 또는 전원 관리 문제입니다.
+<strong>원인:</strong> AP와의 거리, 간섭, 또는 전원 관리 문제입니다.
 
-**해결 방법:**
+<strong>해결 방법:</strong>
 
 ```bash
 # 인터페이스의 전원 관리 비활성화

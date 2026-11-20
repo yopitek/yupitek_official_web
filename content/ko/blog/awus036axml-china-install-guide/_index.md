@@ -42,7 +42,7 @@ AWUS036AXML은 MT7921AUN 칩셋을 사용합니다. 커널 내장 드라이버�
 
 다음 항목을 준비하세요:
 
-1. **ALFA AWUS036AXML** 어댑터와 USB-C 케이블
+1. <strong>ALFA AWUS036AXML</strong> 어댑터와 USB-C 케이블
 2. 전원 공급형 USB 허브 — Raspberry Pi를 사용하는 경우 필수
 3. 국내 미러에 접속할 수 있는 인터넷 연결
 
@@ -98,13 +98,13 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-저장: **Ctrl+O**를 누르고 Enter를 누른 다음, Ctrl+X로 종료합니다. 패키지 인덱스를 새로 고칩니다.
+저장: <strong>Ctrl+O</strong>를 누르고 Enter를 누른 다음, Ctrl+X로 종료합니다. 패키지 인덱스를 새로 고칩니다.
 
 ```bash
 sudo apt update
 ```
 
-> **백업 미러:** USTC(중국과기대) 미러가 느리면 Tsinghua(칭화대) 미러를 대신 사용하세요:
+> <strong>백업 미러:</strong> USTC(중국과기대) 미러가 느리면 Tsinghua(칭화대) 미러를 대신 사용하세요:
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ---
@@ -167,7 +167,7 @@ iwconfig
 
 ### 5단계: 패킷 인젝션 테스트 {#test-packet-injection}
 
-⚠️ **버전 전제:** 커널 6.16 이전에서는 인젝션이 동작한다는 커뮤니티 보고가 있습니다. 그러나 stock kernel 6.17(ASUS GX10, Ubuntu 24.04 ARM64)에서 실측한 결과 실패했습니다. `aireplay-ng --test`가 `Found 0 APs` / `No Answer`를 표시하므로 deauth 및 handshake 캡처는 불가능합니다. 원인은 커널 6.16 이후의 mac80211 chanctx 회귀이며 칩 자체의 한계가 아닙니다. 커뮤니티 patched 드라이버로 인젝션을 동작시킬 수 있지만 펌웨어가 속도를 고정합니다(1/6 Mbps, HT/VHT 인젝션 불가). 인젝션이 필요하면 AWUS036ACH / EACS / ACS / AX(ACM / ACHM도 가능)를 사용하세요. 모니터 모드, AP, WPA3, VIF는 정상 동작합니다.
+⚠️ <strong>버전 전제:</strong> 커널 6.16 이전에서는 인젝션이 동작한다는 커뮤니티 보고가 있습니다. 그러나 stock kernel 6.17(ASUS GX10, Ubuntu 24.04 ARM64)에서 실측한 결과 실패했습니다. `aireplay-ng --test`가 `Found 0 APs` / `No Answer`를 표시하므로 deauth 및 handshake 캡처는 불가능합니다. 원인은 커널 6.16 이후의 mac80211 chanctx 회귀이며 칩 자체의 한계가 아닙니다. 커뮤니티 patched 드라이버로 인젝션을 동작시킬 수 있지만 펌웨어가 속도를 고정합니다(1/6 Mbps, HT/VHT 인젝션 불가). 인젝션이 필요하면 AWUS036ACH / EACS / ACS / AX(ACM / ACHM도 가능)를 사용하세요. 모니터 모드, AP, WPA3, VIF는 정상 동작합니다.
 
 ```bash
 sudo aireplay-ng --test wlan1
@@ -336,9 +336,9 @@ sudo aireplay-ng --test wlan1
 
 공식 페이지: https://www.kali.org/get-kali/#kali-arm
 
-**Raspberry Pi 4 (64-bit)** 또는 **Raspberry Pi 5 (64-bit)**를 선택하세요 — 64비트가 필수입니다.
+<strong>Raspberry Pi 4 (64-bit)</strong> 또는 <strong>Raspberry Pi 5 (64-bit)</strong>를 선택하세요 — 64비트가 필수입니다.
 
-> **중국 미러:** https://repo.huaweicloud.com/kali-images/ — 최신 릴리스 폴더로 이동하여 ARM64 이미지를 다운로드하세요.
+> <strong>중국 미러:</strong> https://repo.huaweicloud.com/kali-images/ — 최신 릴리스 폴더로 이동하여 ARM64 이미지를 다운로드하세요.
 
 ### 2단계: MicroSD에 플래싱
 
@@ -349,7 +349,7 @@ sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=pro
 sync
 ```
 
-기본 자격 증명: **kali / kali**.
+기본 자격 증명: <strong>kali / kali</strong>.
 
 ### 3단계: 중국 미러로 전환 및 펌웨어 설치
 
@@ -406,10 +406,10 @@ sudo aireplay-ng --test wlan1
 
 ### VirtualBox
 
-1. VM을 종료합니다. **설정 → USB**로 이동합니다.
-2. **USB 3.0 (xHCI) 컨트롤러**를 활성화합니다.
-3. **+**를 클릭하여 USB 필터를 추가합니다.
-4. 선택: **MediaTek Inc.** (ID: 0e8d:7961).
+1. VM을 종료합니다. <strong>설정 → USB</strong>로 이동합니다.
+2. <strong>USB 3.0 (xHCI) 컨트롤러</strong>를 활성화합니다.
+3. <strong>+</strong>를 클릭하여 USB 필터를 추가합니다.
+4. 선택: <strong>MediaTek Inc.</strong> (ID: 0e8d:7961).
 5. VM을 시작합니다 — 어댑터가 Kali 내부에 나타납니다.
 
 VM에서 `lsusb`를 실행하여 `0e8d:7961`을 확인한 다음, 위의 Kali 단계를 따르세요.
@@ -417,8 +417,8 @@ VM에서 `lsusb`를 실행하여 `0e8d:7961`을 확인한 다음, 위의 Kali �
 ### VMware Fusion (macOS) / VMware Workstation (Windows)
 
 1. VM을 시작합니다.
-2. 메뉴: **Virtual Machine → USB & Bluetooth**.
-3. **MediaTek MT7921AUN**을 찾아 **Connect**를 클릭합니다.
+2. 메뉴: <strong>Virtual Machine → USB & Bluetooth</strong>.
+3. <strong>MediaTek MT7921AUN</strong>을 찾아 <strong>Connect</strong>를 클릭합니다.
 4. VM에서 `lsusb`를 실행하여 확인한 다음, 위의 Kali 단계를 따르세요.
 
 ---
@@ -455,7 +455,7 @@ sudo ip link set mon0 up
 iwconfig
 ```
 
-> **hostapd에 대한 참고:** 완전한 AP 운영을 위해서는 `hostapd` 구성이 필요합니다. 위 단계는 어댑터가 인터페이스를 생성할 수 있음을 확인하는 것이며, 실제 AP 구성은 별도의 주제입니다.
+> <strong>hostapd에 대한 참고:</strong> 완전한 AP 운영을 위해서는 `hostapd` 구성이 필요합니다. 위 단계는 어댑터가 인터페이스를 생성할 수 있음을 확인하는 것이며, 실제 AP 구성은 별도의 주제입니다.
 
 ---
 
@@ -486,7 +486,7 @@ iwconfig
 
 ## 중국용 Alfa 어댑터 가이드 더 보기
 
-이 글은 **Alfa 중국 설치 가이드** 시리즈의 일부입니다:
+이 글은 <strong>Alfa 중국 설치 가이드</strong> 시리즈의 일부입니다:
 
 - [AWUS036ACH 중국 설치 가이드](/ko/blog/awus036ach-china-install-guide/) — RTL8812AU, 고출력
 - [AWUS036ACM 중국 설치 가이드](/ko/blog/awus036acm-china-install-guide/) — MT7612U, 완전한 VIF

@@ -36,7 +36,7 @@ faq:
 - 無線テスト用にモニターモードとパケットインジェクションを有効にしたい
 - 自分の Alfa モデルに必要なドライバーがわからない
 
-このガイドは、**これらすべての問題**を解決します。**すべての Alfa USB Wi-Fiアダプター**を**主要な Linux ディストリビューション**にインストールする手順を、システムパッケージは**中国国内からアクセスできるミラー**、ドライバーのソースは検証済みの GitHub リポジトリから取得して解説します。ストレスなし。
+このガイドは、<strong>これらすべての問題</strong>を解決します。<strong>すべての Alfa USB Wi-Fiアダプター</strong>を<strong>主要な Linux ディストリビューション</strong>にインストールする手順を、システムパッケージは<strong>中国国内からアクセスできるミラー</strong>、ドライバーのソースは検証済みの GitHub リポジトリから取得して解説します。ストレスなし。
 
 ---
 
@@ -44,7 +44,7 @@ faq:
 
 Alfa USB Wi-Fiアダプターは、ペネトレーションテスター・ネットワークエンジニア・ワイヤレス愛好家の間で広く使われています。モニターモードとパケットインジェクションをサポートしており、これは一般的な Wi-Fi アダプターにはない機能です。
 
-しかし問題があります：**ドライバーインストールの解説記事の多くは、GitHub に素早くアクセスできることを前提としています**。中国からは GitHub が遅い、または不安定なことがあります。このガイドでは、システムパッケージを国内ミラーから入れ、ドライバーのソースは検証済みの GitHub リポジトリからクローンします。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。
+しかし問題があります：<strong>ドライバーインストールの解説記事の多くは、GitHub に素早くアクセスできることを前提としています</strong>。中国からは GitHub が遅い、または不安定なことがあります。このガイドでは、システムパッケージを国内ミラーから入れ、ドライバーのソースは検証済みの GitHub リポジトリからクローンします。GitHub が遅い場合は、信頼できるプロキシまたはミラーを使ってください。
 
 ---
 
@@ -66,7 +66,7 @@ Alfa USB Wi-Fiアダプターは、ペネトレーションテスター・ネッ
 | モデル | チップセット | ドライバー | 主な用途 |
 |-------|---------|--------|----------|
 | AWUS036ACH | Realtek RTL8812AU | `88XXau` | 高出力、優れた通信距離 |
-| AWUS036ACM | MediaTek MT7612U | `mt76x2u` | **VIF サポート最良**、プラグアンドプレイ |
+| AWUS036ACM | MediaTek MT7612U | `mt76x2u` | <strong>VIF サポート最良</strong>、プラグアンドプレイ |
 | AWUS036ACS | Realtek RTL8811AU | `8811au` | コストパフォーマンス重視 |
 
 ### お使いのアダプターを確認する
@@ -83,11 +83,11 @@ Alfa USB Wi-Fiアダプターは、ペネトレーションテスター・ネッ
 
 以下のものを用意してから始めてください：
 
-1. **Alfa USB Wi-Fiアダプター** — 用途に合ったモデル
-2. **USB ケーブル** — 付属品で問題ありません
-3. **電源付き USB ハブ** — Raspberry Pi を使用する場合は必須
-4. **有効なインターネット接続** — 中国国内のミラーにアクセスするために必要
-5. **sudo 権限** — ドライバーのインストールには管理者権限が必要
+1. <strong>Alfa USB Wi-Fiアダプター</strong> — 用途に合ったモデル
+2. <strong>USB ケーブル</strong> — 付属品で問題ありません
+3. <strong>電源付き USB ハブ</strong> — Raspberry Pi を使用する場合は必須
+4. <strong>有効なインターネット接続</strong> — 中国国内のミラーにアクセスするために必要
+5. <strong>sudo 権限</strong> — ドライバーのインストールには管理者権限が必要
 
 まずアダプターを接続し、システムが認識しているか確認します：
 
@@ -97,7 +97,7 @@ lsusb
 
 出力にアダプターのベンダー ID が表示されているか確認します：
 
-- **Alfa アダプター**は `0e8d`（MediaTek）または `0bda`（Realtek）として表示されます
+- <strong>Alfa アダプター</strong>は `0e8d`（MediaTek）または `0bda`（Realtek）として表示されます
 - 例：`Bus 001 Device 003: ID 0e8d:7612 MediaTek Inc.`
 - 例：`Bus 001 Device 003: ID 0bda:8812 Realtek Semiconductor Corp.`
 
@@ -131,13 +131,13 @@ ID が表示されていれば、アダプターは検出されています。�
 
 | リソース | URL | 用途 |
 |----------|-----|---------|
-| **Alfa 公式ダウンロード** | [files.alfa.com.tw](https://files.alfa.com.tw) | ドライバーパッケージ、ファームウェア |
-| **Alfa ドキュメント** | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 製品マニュアル（英語） |
-| **清华大学ミラー（Tsinghua）** | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
-| **阿里云ミラー（Aliyun）** | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推奨） |
-| **中科大ミラー（USTC）** | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推奨） |
-| **华为云ミラー** | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM イメージ（バックアップ） |
-| **GitHub (morrownr)** | [github.com/morrownr](https://github.com/morrownr) | ドライバーのソースコード |
+| <strong>Alfa 公式ダウンロード</strong> | [files.alfa.com.tw](https://files.alfa.com.tw) | ドライバーパッケージ、ファームウェア |
+| <strong>Alfa ドキュメント</strong> | [wiki.alfa.com.tw](https://wiki.alfa.com.tw) | 製品マニュアル（英語） |
+| <strong>清华大学ミラー（Tsinghua）</strong> | [mirrors.tuna.tsinghua.edu.cn](https://mirrors.tuna.tsinghua.edu.cn) | Kali / Debian / Ubuntu |
+| <strong>阿里云ミラー（Aliyun）</strong> | [mirrors.aliyun.com](https://mirrors.aliyun.com) | Ubuntu（推奨） |
+| <strong>中科大ミラー（USTC）</strong> | [mirrors.ustc.edu.cn](https://mirrors.ustc.edu.cn) | Kali（推奨） |
+| <strong>华为云ミラー</strong> | [repo.huaweicloud.com](https://repo.huaweicloud.com) | Kali ARM イメージ（バックアップ） |
+| <strong>GitHub (morrownr)</strong> | [github.com/morrownr](https://github.com/morrownr) | ドライバーのソースコード |
 
 ---
 
@@ -159,13 +159,13 @@ sudo nano /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
 ```
 
-保存：**Ctrl+O**、Enter、**Ctrl+X**。更新します：
+保存：<strong>Ctrl+O</strong>、Enter、<strong>Ctrl+X</strong>。更新します：
 
 ```bash
 sudo apt update
 ```
 
-> **バックアップミラー：** 中科大（USTC）が遅い場合は清华（Tsinghua）を使用：
+> <strong>バックアップミラー：</strong> 中科大（USTC）が遅い場合は清华（Tsinghua）を使用：
 > `deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware`
 
 ### ステップ 2：チップセットに合わせてドライバーをインストールする
@@ -252,7 +252,7 @@ Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 ```
 
-**Ctrl+O** で保存、**Ctrl+X** で終了します。
+<strong>Ctrl+O</strong> で保存、<strong>Ctrl+X</strong> で終了します。
 
 #### Ubuntu 22.04（Jammy）
 
@@ -406,15 +406,15 @@ iwconfig
 
 ## Raspberry Pi OS のインストール
 
-> **重要：** AWUS036ACH は約500mW、AWUS036ACM は約400mW を消費します。高負荷時に Pi がスロットリングやクラッシュを起こさないよう、**必ず電源付き USB ハブを使用してください**。
+> <strong>重要：</strong> AWUS036ACH は約500mW、AWUS036ACM は約400mW を消費します。高負荷時に Pi がスロットリングやクラッシュを起こさないよう、<strong>必ず電源付き USB ハブを使用してください</strong>。
 
 ### ステップ 1：Kali Linux ARM64 イメージをダウンロードする
 
 こちらへアクセス：https://www.kali.org/get-kali/#kali-arm
 
-**Raspberry Pi 4（64ビット）**または**Raspberry Pi 5（64ビット）**を選択してください。32ビット版は使用しないでください — 64ビットが必要です。
+<strong>Raspberry Pi 4（64ビット）</strong>または<strong>Raspberry Pi 5（64ビット）</strong>を選択してください。32ビット版は使用しないでください — 64ビットが必要です。
 
-> **中国ミラー：** kali.org が遅い場合は华为云を使用：https://repo.huaweicloud.com/kali-images/
+> <strong>中国ミラー：</strong> kali.org が遅い場合は华为云を使用：https://repo.huaweicloud.com/kali-images/
 
 ### ステップ 2：MicroSD カードに書き込む
 
@@ -431,7 +431,7 @@ sudo dd if=kali-linux-2025.1-raspberry-pi-arm64.img of=/dev/sdX bs=4M status=pro
 sync
 ```
 
-`sync` が完了するまで待ちます。Pi を起動します。デフォルトの認証情報：**kali / kali**。
+`sync` が完了するまで待ちます。Pi を起動します。デフォルトの認証情報：<strong>kali / kali</strong>。
 
 ### ステップ 3：中国ミラーに切り替える
 
@@ -538,7 +538,7 @@ iwconfig
 sudo aireplay-ng --test wlan0mon
 ```
 
-**成功した場合の出力例：**
+<strong>成功した場合の出力例：</strong>
 
 ```
 Trying broadcast probe requests...
@@ -546,7 +546,7 @@ Injection is working!
 Found 1 AP
 ```
 
-**失敗した場合：**
+<strong>失敗した場合：</strong>
 - 再起動してから再試行する
 - 他のプロセスがインターフェースを保持していないか確認する（`iwconfig`）
 - テストのため Wi-Fi AP に近づく
@@ -558,16 +558,16 @@ Found 1 AP
 
 VIF（仮想インターフェース機能）を使うと、1つのアダプターで複数のインターフェースを同時に実行できます。例えば：
 
-- **マネージドモード**（`wlan0`）と**モニターモード**（`mon0`）を同時に使用
+- <strong>マネージドモード</strong>（`wlan0`）と<strong>モニターモード</strong>（`mon0`）を同時に使用
 - ネットワークに接続したまま、トラフィックをキャプチャする
 
 ### VIF をサポートするアダプター
 
 | チップセット | VIF サポート | 備考 |
 |---------|-------------|-------|
-| **MT7612U（AWUS036ACM）** | ✅ フルネイティブサポート | VIF ワークフローに最適 |
-| **RTL8812AU（AWUS036ACH）** | ⚠️ 限定的 | マネージド＋モニターの同時使用は不可 |
-| **RTL8832BU（AX シリーズ）** | ✅ STA+AP 利用可 | カーネル内蔵の rtw89_8852bu（kernel 6.17 以降）で動作を実測確認。古いカーネルのコミュニティ版 DKMS ドライバーは VIF 非対応 |
+| <strong>MT7612U（AWUS036ACM）</strong> | ✅ フルネイティブサポート | VIF ワークフローに最適 |
+| <strong>RTL8812AU（AWUS036ACH）</strong> | ⚠️ 限定的 | マネージド＋モニターの同時使用は不可 |
+| <strong>RTL8832BU（AX シリーズ）</strong> | ✅ STA+AP 利用可 | カーネル内蔵の rtw89_8852bu（kernel 6.17 以降）で動作を実測確認。古いカーネルのコミュニティ版 DKMS ドライバーは VIF 非対応 |
 
 ### 仮想インターフェースの作成（MT7612U）
 
@@ -591,7 +591,7 @@ iwconfig
 
 ### ユースケース
 
-**接続を維持しながらトラフィックをキャプチャ：**
+<strong>接続を維持しながらトラフィックをキャプチャ：</strong>
 
 ```bash
 sudo airodump-ng mon0
@@ -599,7 +599,7 @@ sudo airodump-ng mon0
 
 `wlan0` は通常動作を継続しながら、`mon0` がすべてをキャプチャします。
 
-**フェイク AP ＋ モニター：**
+<strong>フェイク AP ＋ モニター：</strong>
 
 ```bash
 sudo iw dev wlan0 interface add ap0 type __ap
@@ -617,9 +617,9 @@ VM 内で Linux を動かしている場合、USB アダプターをゲストに
 ### VirtualBox
 
 1. VM の電源を切る
-2. **設定 → USB** を開く
-3. **USB 3.0（xHCI）コントローラー**を有効にする
-4. **+** をクリックして USB フィルターを追加する
+2. <strong>設定 → USB</strong> を開く
+3. <strong>USB 3.0（xHCI）コントローラー</strong>を有効にする
+4. <strong>+</strong> をクリックして USB フィルターを追加する
 5. Alfa アダプターを選択する（ID：`0bda:8812` または `0e8d:7612`）
 6. VM を起動する
 
@@ -628,8 +628,8 @@ VM 内で `lsusb` を実行して確認し、上記の Kali Linux の手順に�
 ### VMware Fusion（macOS）/ VMware Workstation（Windows）
 
 1. VM を起動する
-2. メニュー：**仮想マシン → USB と Bluetooth**
-3. Alfa アダプターを見つけて **接続** をクリックする
+2. メニュー：<strong>仮想マシン → USB と Bluetooth</strong>
+3. Alfa アダプターを見つけて <strong>接続</strong> をクリックする
 4. アダプターが VM 内に表示される
 
 `lsusb` で確認してから、ドライバーインストールの手順に進んでください。
@@ -666,7 +666,7 @@ VM 内で `lsusb` を実行して確認し、上記の Kali Linux の手順に�
 
 ## まとめ
 
-このガイドでは、**すべての Alfa USB Wi-Fi アダプター**を**主要な Linux ディストリビューション**に、**中国国内からアクセスできるリソースのみ**を使ってインストールする方法を解説しました。これで以下のことができるようになります：
+このガイドでは、<strong>すべての Alfa USB Wi-Fi アダプター</strong>を<strong>主要な Linux ディストリビューション</strong>に、<strong>中国国内からアクセスできるリソースのみ</strong>を使ってインストールする方法を解説しました。これで以下のことができるようになります：
 
 ✅ 任意の Alfa アダプターのドライバーをインストール  
 ✅ Kali・Ubuntu・Debian・Raspberry Pi でモニターモードを有効化  
@@ -674,7 +674,7 @@ VM 内で `lsusb` を実行して確認し、上記の Kali Linux の手順に�
 ✅ 対応モデルで仮想インターフェース（VIF）を使用  
 ✅ VM にアダプターをパススルー  
 
-**ご質問や問題がありますか？** シリーズの各モデル別ガイドをご確認いただくか、[yupitek.com](https://yupitek.com/ja/contact/) よりお問い合わせください。
+<strong>ご質問や問題がありますか？</strong> シリーズの各モデル別ガイドをご確認いただくか、[yupitek.com](https://yupitek.com/ja/contact/) よりお問い合わせください。
 
 ---
 
@@ -685,7 +685,7 @@ VM 内で `lsusb` を実行して確認し、上記の Kali Linux の手順に�
 
 ## 関連ガイド
 
-この記事は **Alfa China インストールガイド**シリーズの一部です：
+この記事は <strong>Alfa China インストールガイド</strong>シリーズの一部です：
 
 - [AWUS036ACH 中国インストールガイド](/ja/blog/awus036ach-china-install-guide/) — RTL8812AU、高出力
 - [AWUS036ACM 中国インストールガイド](/ja/blog/awus036acm-china-install-guide/) — MT7612U、VIF サポート最良

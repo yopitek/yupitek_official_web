@@ -28,11 +28,11 @@ HAK5 WiFi Pineapple Pager 可外接 ALFA 網路卡，首選 AWUS036ACM 核心內
 Pager 採 MIPS 架構不支援 DKMS，AWUS036ACM 因 MT7612U 驅動內建於 OpenWrt 6.6 核心而隨插即用；AWUS036ACH 需交叉編譯且有 wiphy bug，USB 2.0 供電僅 500mA 需外接 Hub。
 {{< /tldr >}}
 
-無線網路安全稽核需要高度精準、多功能性以及合適的硬體支援。**HAK5 WiFi Pineapple Pager** 作為搭載強大 **PineAP v8** 引擎的超便攜、口袋型稽核工具，吸引了大量滲透測試人員的關注。
+無線網路安全稽核需要高度精準、多功能性以及合適的硬體支援。<strong>HAK5 WiFi Pineapple Pager</strong> 作為搭載強大 <strong>PineAP v8</strong> 引擎的超便攜、口袋型稽核工具，吸引了大量滲透測試人員的關注。
 
-然而，為了擴大稽核範圍、執行雙頻（2.4 GHz 與 5 GHz）同步操作，或在不干擾 Pineapple 內部無線電的情況下進行多頻道被動監聽，資安專家經常會問：**我可以在 HAK5 Pager 上外接 ALFA Network 無線網路卡嗎？**
+然而，為了擴大稽核範圍、執行雙頻（2.4 GHz 與 5 GHz）同步操作，或在不干擾 Pineapple 內部無線電的情況下進行多頻道被動監聽，資安專家經常會問：<strong>我可以在 HAK5 Pager 上外接 ALFA Network 無線網路卡嗎？</strong>
 
-簡短的答案是：**可以，但需要注意關鍵的硬體和軟體限制。**
+簡短的答案是：<strong>可以，但需要注意關鍵的硬體和軟體限制。</strong>
 
 在這份詳盡的指南中，我們將剖析技術限制（例如 CPU 架構和 USB 供電限制），評估 ALFA 現售產品線的相容性，並提供逐步的 CLI 安裝與疑難排解指南。
 
@@ -43,18 +43,18 @@ Pager 採 MIPS 架構不支援 DKMS，AWUS036ACM 因 MT7612U 驅動內建於 Ope
 在將任何高功率 USB 無線網路卡插入 HAK5 Pager 之前，您必須了解以下兩大主要障礙：CPU 架構與 USB 供電限制。
 
 ### 1.1 CPU 架構：MIPS 架構限制
-與採用 x86_64 的標準 Kali Linux 主機或採用 ARM 的 Raspberry Pi 不同，HAK5 Pager 搭載的是 **MediaTek MT7628AN SoC**（一個 **MIPS32r2, Little-Endian** 核心，在 OpenWrt 中編譯為 `mipsel_24kc` 平台）。
+與採用 x86_64 的標準 Kali Linux 主機或採用 ARM 的 Raspberry Pi 不同，HAK5 Pager 搭載的是 <strong>MediaTek MT7628AN SoC</strong>（一個 <strong>MIPS32r2, Little-Endian</strong> 核心，在 OpenWrt 中編譯為 `mipsel_24kc` 平台）。
 
 > [!IMPORTANT]
-> 由於 Pager OS 基於 **OpenWrt（版本 24.10.1，核心 6.6.86）**，因此它**不支援 DKMS**（動態核心模組支援）。您無法直接在 Pager 上編譯核心驅動程式原始碼，因為系統不含 GCC 與 Make 工具。任何非內建的驅動程式都必須在外部 x86_64 Linux 主機上，使用 OpenWrt SDK 進行交叉編譯。
+> 由於 Pager OS 基於 <strong>OpenWrt（版本 24.10.1，核心 6.6.86）</strong>，因此它<strong>不支援 DKMS</strong>（動態核心模組支援）。您無法直接在 Pager 上編譯核心驅動程式原始碼，因為系統不含 GCC 與 Make 工具。任何非內建的驅動程式都必須在外部 x86_64 Linux 主機上，使用 OpenWrt SDK 進行交叉編譯。
 
 ### 1.2 USB 2.0 供電：電壓穩定性限制
-HAK5 Pager 僅配備單個 USB 2.0 Host 介面。根據標準 USB 2.0 規範，其最大電流輸出為 **500 mA @ 5V（2.5W）**。
+HAK5 Pager 僅配備單個 USB 2.0 Host 介面。根據標準 USB 2.0 規範，其最大電流輸出為 <strong>500 mA @ 5V（2.5W）</strong>。
 
-像 ALFA AWUS036ACH（RTL8812AU）或 AWUS036AXML（MT7921AUN）這類高功率無線網路卡，在執行主動注入（Packet Injection）或密集封包掃描時，其峰值耗電量高達 **720 mA（3.6W）**。
+像 ALFA AWUS036ACH（RTL8812AU）或 AWUS036AXML（MT7921AUN）這類高功率無線網路卡，在執行主動注入（Packet Injection）或密集封包掃描時，其峰值耗電量高達 <strong>720 mA（3.6W）</strong>。
 
 > [!WARNING]
-> 若將高功率 ALFA 網路卡直接插入 Pager 的 USB 介面，會導致電壓不穩，從而引發**裝置重啟、核心崩潰（Kernel Panic）或網路卡斷線**。若要穩定運作高功率網路卡，您**必須**透過一個**帶外部供電的 USB Hub（5V/2A 以上）**連接網路卡。
+> 若將高功率 ALFA 網路卡直接插入 Pager 的 USB 介面，會導致電壓不穩，從而引發<strong>裝置重啟、核心崩潰（Kernel Panic）或網路卡斷線</strong>。若要穩定運作高功率網路卡，您<strong>必須</strong>透過一個<strong>帶外部供電的 USB Hub（5V/2A 以上）</strong>連接網路卡。
 
 ---
 
@@ -64,12 +64,12 @@ HAK5 Pager 僅配備單個 USB 2.0 Host 介面。根據標準 USB 2.0 規範，�
 
 | ALFA 型號 | 晶片組 | 支援頻段 | USB 耗電量 | 核心 6.6 支援狀態 | 安裝方式 | Monitor 與 Injection 支援 | 評估結論與採購建議 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **AWUS036ACM** | MediaTek **MT7612U** | 2.4 GHz / 5 GHz | ~600 mA (需 Hub) | **核心內建 (Native)** | 使用 `opkg` 直接安裝 | ✅ 支援 / ✅ 支援 | 🏆 **首選推薦（最穩定）** |
-| **AWUS036ACH** | Realtek **RTL8812AU** | 2.4 GHz / 5 GHz | ~720 mA (需供電 Hub) | 核心未內建 (Out-of-Kernel) | 需使用 SDK 交叉編譯 | ✅ 支援 / ✅ 支援 | ⭐⭐ **進階使用者**（MIPS 平台有 wiphy bug） |
-| **AWUS036AXML** | MediaTek **MT7921AUN** | 2.4/5/6 GHz (WiFi 6E) | ~720 mA (需供電 Hub) | **核心內建 (Native)** | 使用 `opkg` + 手動置入韌體 | ✅ 支援 / ⚠️ kernel 6.16 以前有社群回報；kernel 6.17 實測失敗 | ⭐⭐⭐ **潛力大**，但供電要求嚴格 |
-| **AWUS036ACHM** | MediaTek **MT7610U** | 2.4 GHz / 5 GHz | ~400 mA (Pager 可直接供電) | 部分內建 | 使用 `opkg` 安裝 | ✅ 支援 / ✅ 支援 | ⭐⭐⭐ **預算折衷方案** |
-| **AWUS036ACS** | Realtek **RTL8811AU** | 2.4 GHz / 5 GHz | ~500 mA (邊緣) | 核心未內建 | 需使用 SDK 交叉編譯 | ✅ 支援 / ✅ 支援 | ⭐⭐ **普通**（需要手動編譯驅動） |
-| **AWUS036EACS** | Realtek **RTL8821CU** | 2.4 GHz / 5 GHz | ~500 mA | 主線 6.2+ 已含 rtw88_8821cu；Pager 韌體是否編入未實測 | 未實測 | GX10 kernel 6.17 實測 monitor／注入可用，Pager 上未實測 | ⚠️ **未於 Pager 驗證** |
+| <strong>AWUS036ACM</strong> | MediaTek <strong>MT7612U</strong> | 2.4 GHz / 5 GHz | ~600 mA (需 Hub) | <strong>核心內建 (Native)</strong> | 使用 `opkg` 直接安裝 | ✅ 支援 / ✅ 支援 | 🏆 <strong>首選推薦（最穩定）</strong> |
+| <strong>AWUS036ACH</strong> | Realtek <strong>RTL8812AU</strong> | 2.4 GHz / 5 GHz | ~720 mA (需供電 Hub) | 核心未內建 (Out-of-Kernel) | 需使用 SDK 交叉編譯 | ✅ 支援 / ✅ 支援 | ⭐⭐ <strong>進階使用者</strong>（MIPS 平台有 wiphy bug） |
+| <strong>AWUS036AXML</strong> | MediaTek <strong>MT7921AUN</strong> | 2.4/5/6 GHz (WiFi 6E) | ~720 mA (需供電 Hub) | <strong>核心內建 (Native)</strong> | 使用 `opkg` + 手動置入韌體 | ✅ 支援 / ⚠️ kernel 6.16 以前有社群回報；kernel 6.17 實測失敗 | ⭐⭐⭐ <strong>潛力大</strong>，但供電要求嚴格 |
+| <strong>AWUS036ACHM</strong> | MediaTek <strong>MT7610U</strong> | 2.4 GHz / 5 GHz | ~400 mA (Pager 可直接供電) | 部分內建 | 使用 `opkg` 安裝 | ✅ 支援 / ✅ 支援 | ⭐⭐⭐ <strong>預算折衷方案</strong> |
+| <strong>AWUS036ACS</strong> | Realtek <strong>RTL8811AU</strong> | 2.4 GHz / 5 GHz | ~500 mA (邊緣) | 核心未內建 | 需使用 SDK 交叉編譯 | ✅ 支援 / ✅ 支援 | ⭐⭐ <strong>普通</strong>（需要手動編譯驅動） |
+| <strong>AWUS036EACS</strong> | Realtek <strong>RTL8821CU</strong> | 2.4 GHz / 5 GHz | ~500 mA | 主線 6.2+ 已含 rtw88_8821cu；Pager 韌體是否編入未實測 | 未實測 | GX10 kernel 6.17 實測 monitor／注入可用，Pager 上未實測 | ⚠️ <strong>未於 Pager 驗證</strong> |
 
 ---
 
@@ -79,7 +79,7 @@ HAK5 Pager 僅配備單個 USB 2.0 Host 介面。根據標準 USB 2.0 規範，�
 
 ### 3.1 方案 A：AWUS036ACM (MT7612U) — 免驅動直接支援（最推薦）
 
-**AWUS036ACM** 是 HAK5 Pager 的最佳搭配。其搭載的 MediaTek `mt76` 主線驅動已完整整合於 Linux 6.6 核心中，完全無需繁瑣的核心編譯。
+<strong>AWUS036ACM</strong> 是 HAK5 Pager 的最佳搭配。其搭載的 MediaTek `mt76` 主線驅動已完整整合於 Linux 6.6 核心中，完全無需繁瑣的核心編譯。
 
 #### 步驟 1：連接硬體
 1. 將外接供電 USB Hub 連接至 HAK5 Pager 的 USB 介面。
@@ -142,7 +142,7 @@ iw dev wlan2 info
 
 ### 3.2 方案 B：AWUS036ACH (RTL8812AU) — 進階交叉編譯
 
-**AWUS036ACH** 在 Kali Linux 下極具威力和靈敏度，但在 OpenWrt 主線核心 6.6 中未包含其驅動程式，必須手動進行交叉編譯。
+<strong>AWUS036ACH</strong> 在 Kali Linux 下極具威力和靈敏度，但在 OpenWrt 主線核心 6.6 中未包含其驅動程式，必須手動進行交叉編譯。
 
 #### 前置條件
 - 一台執行 Ubuntu 22.04 或 Debian 12 的開發主機 (x86_64)。
@@ -182,7 +182,7 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 ```
 
 > [!CAUTION]
-> 在 MIPS 架構平台上，`rtl8812au` 外接驅動程式存在知名的 `wiphy_register` 核心錯誤，會導致硬體介面無法在系統中載入。若遇到此情況，必須在編譯前套用社群提供的 MIPS 修正 patch。因此我們仍極度建議優先採用 **AWUS036ACM**。
+> 在 MIPS 架構平台上，`rtl8812au` 外接驅動程式存在知名的 `wiphy_register` 核心錯誤，會導致硬體介面無法在系統中載入。若遇到此情況，必須在編譯前套用社群提供的 MIPS 修正 patch。因此我們仍極度建議優先採用 <strong>AWUS036ACM</strong>。
 
 ---
 
@@ -190,9 +190,9 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 
 在 HAK5 Pager 上外接相容的 ALFA 網路卡可直接解鎖多項高階資安測試功能：
 
-1. **5 GHz 頻段稽核擴展**：Pager 內建的無線晶片能力有限，新增外接雙頻網路卡能保證您的監聽及攻擊範圍擴充至 5 GHz 頻段，捕獲現代企業級 AP 的 WPA/WPA2 握手包。
-2. **專用攻擊發射電台**：您可以將 Pager 內建的無線電專用於 client 欺騙（Evil Twin / KARMA 攻擊），而將外接的 ALFA 網路卡 (`wlan2`) 專門配置為連續的 Deauth 斷線訊號注入源。
-3. **PineAP 深度整合**：可在 Pager Web 管理介面或命令列中，將外接網路卡設定為 PineAP 的主要偵測或射頻發射介面，將 client 誘捕與回應速度提升 100 倍以上。
+1. <strong>5 GHz 頻段稽核擴展</strong>：Pager 內建的無線晶片能力有限，新增外接雙頻網路卡能保證您的監聽及攻擊範圍擴充至 5 GHz 頻段，捕獲現代企業級 AP 的 WPA/WPA2 握手包。
+2. <strong>專用攻擊發射電台</strong>：您可以將 Pager 內建的無線電專用於 client 欺騙（Evil Twin / KARMA 攻擊），而將外接的 ALFA 網路卡 (`wlan2`) 專門配置為連續的 Deauth 斷線訊號注入源。
+3. <strong>PineAP 深度整合</strong>：可在 Pager Web 管理介面或命令列中，將外接網路卡設定為 PineAP 的主要偵測或射頻發射介面，將 client 誘捕與回應速度提升 100 倍以上。
 
 ---
 
@@ -206,10 +206,10 @@ ssh root@172.16.42.1 "opkg install /tmp/kmod-rtl8812au*.ipk"
 
 將 ALFA Network 無線網路卡整合到 HAK5 WiFi Pineapple Pager 中，可構建一個低調且性能強大的行動滲透測試基站。然而，硬體配置細節至關重要：
 
-- **快速部署、免維護首選**：請購買 [ALFA AWUS036ACM](https://yupitek.com/zh-tw/products/alfa/awus036acm)。其原生 MediaTek 驅動在 OpenWrt 6.6 核心上極為穩定且開箱即用。
-- **供電保證**：務必隨身攜帶優質的 **外接供電 USB Hub**，以確保高功率網路卡的射頻輸出功率穩定，防止斷線。
+- <strong>快速部署、免維護首選</strong>：請購買 [ALFA AWUS036ACM](https://yupitek.com/zh-tw/products/alfa/awus036acm)。其原生 MediaTek 驅動在 OpenWrt 6.6 核心上極為穩定且開箱即用。
+- <strong>供電保證</strong>：務必隨身攜帶優質的 <strong>外接供電 USB Hub</strong>，以確保高功率網路卡的射頻輸出功率穩定，防止斷線。
 
-如有進一步技術諮詢、大宗硬體採購或客製化 OpenWrt SDK 編譯需求，歡迎隨時聯絡 **Yopitek 技術支援團隊**：
+如有進一步技術諮詢、大宗硬體採購或客製化 OpenWrt SDK 編譯需求，歡迎隨時聯絡 <strong>Yopitek 技術支援團隊</strong>：
 
 - 🌐 官方網站：[www.yupitek.com](https://www.yupitek.com)
 - 📧 聯絡信箱：[sales@yupitek.com](mailto:sales@yupitek.com)

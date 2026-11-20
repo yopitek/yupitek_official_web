@@ -15,9 +15,12 @@ def hero(md: Path):
     if re.search(r"^hideFeatureImage:\s*true", fm, re.M):
         return None
     for key in ("bannerimage", "featureimage"):
-        m = re.search(rf'^{key}:\s*"?([^"\n]+?)"?\s*$', fm, re.M)
-        if m and m.group(1).strip():
-            return m.group(1).strip()
+        # Values appear double-quoted, single-quoted or bare; strip whichever quote is used
+        m = re.search(rf"^{key}:\s*(\"[^\"\n]*\"|'[^'\n]*'|[^\n]*?)\s*$", fm, re.M)
+        if m:
+            value = m.group(1).strip().strip("\"'").strip()
+            if value:
+                return value
     return None
 
 

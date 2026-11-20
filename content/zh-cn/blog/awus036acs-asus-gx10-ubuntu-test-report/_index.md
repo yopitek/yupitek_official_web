@@ -27,13 +27,13 @@ faq:
   - question: "AWUS036ACS 能截取 WPA handshake 并转成 hashcat .22000 吗？"
     answer: "能。在自有 AP 与自有 iPhone 7 Plus 上端到端实测：定向 deauth 触发重连，截取完整 4-way（M1–M4），再用 hcxpcapngtool --all 转出 .22000。仅限自己拥有或已授权的网络。"
   - question: "AWUS036ACS 可以当 AP 热点吗？支持 WPA3 吗？"
-    answer: "可以。hostapd 开 2.4G 与 5G 热点（5G 频宽未确认），iPhone 7 Plus 连入并完成 4-way；5G 的 WPA3-SAE（SAE-only、ieee80211w=2、sae_pwe=0）也连入成功（2.4G 的 WPA3 未实测）。"
+    answer: "可以。hostapd 开 2.4G 与 5G 热点（5G 以 802.11a、20 MHz 实测；VHT80 未测），iPhone 7 Plus 连入并完成 4-way；5G 的 WPA3-SAE（SAE-only、ieee80211w=2、sae_pwe=0）也连入成功（2.4G 的 WPA3 未实测）。"
   - question: "AWUS036ACS 不支持哪些模式？hcxdumptool 能用吗？"
     answer: "不支持 active monitor、IBSS、mesh（802.11s）、Wi-Fi Direct（P2P）。hcxdumptool 8.x 会 failed to arm interface，请改用 airodump-ng + aireplay-ng。要 mesh / IBSS 请选 AWUS036ACM / ACHM。"
 draft: false
 ---
 
-**重点摘要（TL;DR）**：Yopitek（ALFA Network 台湾经销）实测，AWUS036ACS 在 ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）免装驱动，双频 monitor 与 AP（5G AP 可用，频宽未确认）可用；注入 2.4G 100%、5G 96%，端到端 .22000 通过，不支持 mesh / IBSS。
+**重点摘要（TL;DR）**：Yopitek（ALFA Network 台湾经销）实测，AWUS036ACS 在 ASUS GX10 / Ubuntu 24.04 ARM64（kernel 6.17）免装驱动，双频 monitor 与 AP（5G AP 可用：802.11a、20 MHz 实测；VHT80 未测）可用；注入 2.4G 100%、5G 96%，端到端 .22000 通过，不支持 mesh / IBSS。
 
 > 本文是 Yopitek 针对 ALFA AWUS036ACS 在新版 Linux 平台上的产品兼容性与能力实测纪录，供评估选型用。
 > 测试平台：ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`。所有数据均为 Yopitek 于**自有设备、自有办公室 Wi-Fi**（SSID `YUPITEK`，2.4G ch5 / 5G ch36）对**自有测试手机**（Apple iPhone 7 Plus）的实测节录，MAC 地址部分屏蔽。
@@ -103,7 +103,7 @@ iw phy $(cat /sys/class/net/$IF/phy80211/name) info | sed -n '/Supported interfa
 |---|---|---|
 | Monitor（监听接收） | ✅ 强 | ✅ 强 |
 | Injection（数据包注入） | ✅ **100%**（30/30） | ✅ **96%**（29/30，需先解锁 reg） |
-| AP 热点（hostapd） | ✅ iPhone 连入 + 完成 handshake | ✅ **稳定**（频宽未确认） |
+| AP 热点（hostapd） | ✅ iPhone 连入 + 完成 handshake | ✅ **稳定**（802.11a、20 MHz 实测；VHT80 未测） |
 | AP WPA3-SAE | 未实测 | ✅ iPhone 连入（SAE-only + PMF） |
 
 ### 3-1. Monitor（监听模式，2.4 GHz + 5 GHz）✅
@@ -138,7 +138,7 @@ sudo aireplay-ng --test --ignore-negative-one -a <YUPITEK-BSSID> $IF
 
 用 `hostapd` 把卡变成基地台，三种设置都让 iPhone 7 Plus 成功连入并完成 4-way handshake（`EAPOL-4WAY-HS-COMPLETED`）：
 
-- **5 GHz（频宽未确认）**：最稳定的一组，iPhone 连入、handshake 完成、`AP-DISABLED` 干净收尾。
+- **5 GHz（802.11a、20 MHz 实测；VHT80 未测）**：最稳定的一组，iPhone 连入、handshake 完成、`AP-DISABLED` 干净收尾。
 - **2.4 GHz（WPA2-PSK）**：iPhone 连入、handshake 完成，断线后干净关闭。这里诚实记一个状况：前一轮同样设置，曾在 STA 断线后出现 `key not allowed / Failed to set beacon parameters` 而中止，重测却无法重现，判定是 rtw88_8821au 偶发的 beacon re-key，不是固定瑕疵。长时间、高频率重连的场景还是建议留意，或干脆改用 5 GHz AP。
 - **WPA3-SAE（5 GHz，PMF 强制；2.4 GHz 未实测）**：关键设置为 `wpa_key_mgmt=SAE`（纯 WPA3、无 WPA2 fallback）、`ieee80211w=2`（强制 Management Frame Protection）、`sae_pwe=0`（兼容旧端点）。iPhone 7 Plus（iOS 15）以 SAE 成功连入。AP 只开 SAE、没有 WPA2 退路，能完成关联就代表 SAE 认证握手成立。RTL8811AU + rtw88_8821au 在 AP 端的 WPA3-SAE 可用。
 
@@ -212,7 +212,7 @@ sudo aireplay-ng --test --ignore-negative-one -a <YUPITEK-BSSID> $IF
 能。在自有 AP 与自有 iPhone 7 Plus 上端到端实测：定向 deauth 触发重连，截取完整 4-way（M1–M4），再用 `hcxpcapngtool --all` 转出 .22000。仅限自己拥有或已授权的网络。
 
 **Q：AWUS036ACS 可以当 AP 热点吗？支持 WPA3 吗？**
-可以。`hostapd` 开 2.4G 与 5G 热点（5G 频宽未确认），iPhone 7 Plus 连入并完成 4-way；5G 的 WPA3-SAE（SAE-only、ieee80211w=2、sae_pwe=0）也连入成功（2.4G 的 WPA3 未实测）。
+可以。`hostapd` 开 2.4G 与 5G 热点（5G 以 802.11a、20 MHz 实测；VHT80 未测），iPhone 7 Plus 连入并完成 4-way；5G 的 WPA3-SAE（SAE-only、ieee80211w=2、sae_pwe=0）也连入成功（2.4G 的 WPA3 未实测）。
 
 **Q：AWUS036ACS 不支持哪些模式？hcxdumptool 能用吗？**
 不支持 active monitor、IBSS、mesh（802.11s）、Wi-Fi Direct（P2P）。hcxdumptool 8.x 会 failed to arm interface，请改用 airodump-ng + aireplay-ng。要 mesh / IBSS 请选 AWUS036ACM / ACHM。

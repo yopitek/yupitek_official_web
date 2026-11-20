@@ -103,7 +103,7 @@ A tabela abaixo resume as capacidades centrais medidas do AWUS036EACS, cada linh
 |---|---|---|---|
 | Monitor | ✅ forte | ✅ forte | A maioria dos canais atinge 300 frames; o "travamento de ch1" da #453 da comunidade não se reproduziu |
 | Injection | ✅ 100% (30/30) | ✅ 100% (30/30) | Power 2.4G -38.27 / 5G -76.10; a injeção mais forte entre as placas ac deste lote |
-| Hotspot AP | ✅ encerramento limpo | ✅ VHT 80MHz | `hostapd` sobe o AP, iPhone 7 Plus conecta e completa o 4-way |
+| Hotspot AP | ✅ encerramento limpo | ✅ 802.11a, 20 MHz (VHT80 não testado) | `hostapd` sobe o AP, iPhone 7 Plus conecta e completa o 4-way |
 | WPA3-SAE (lado AP) | ✅ iPhone conecta | Não testado | SAE-only + PMF forçado (`ieee80211w=2`, `sae_pwe=0`) |
 | Captura de handshake WPA | — | ✅ ponta a ponta | M1–M4 completo, deauth recebe 79 ACKs, exporta `.22000` |
 
@@ -111,7 +111,7 @@ O Monitor (modo monitor) é estável tanto em 2.4 quanto em 5GHz. Capturando can
 
 A Injection (injeção de pacotes) é o desempenho mais brilhante. Medido com `aireplay-ng --test`, tanto 2.4GHz quanto 5GHz deram 30/30, 100% — a injeção mais forte entre as placas ac deste lote (o AWUS036ACS, também 1x1, atinge apenas 96% em 5G). Há aqui um detalhe local de Taiwan: o TX de 5GHz é bloqueado quando o regulatory domain está em TW; antes de medir, faça `iw reg set US` para desbloquear e, ao terminar, `iw reg set TW` para restaurar.
 
-No hotspot AP, subimos com `hostapd` três configurações — 2.4GHz (WPA2), 5GHz (VHT 80MHz) e WPA3-SAE — e o iPhone 7 Plus conectou e completou o 4-way handshake em todas, com encerramento limpo (`AP-DISABLED` / `TERMINATING`). Não ocorreu o problema de beacon re-key que algumas placas apresentam, e nesse ponto o 2.4G é mais estável que o da placa irmã ACS. O WPA3 usou SAE-only com PMF forçado (`ieee80211w=2`, `sae_pwe=0`), conectando com sucesso o iPhone 15 Pro, confirmando que o WPA3-SAE do RTL8821CU é utilizável no lado AP.
+No hotspot AP, subimos com `hostapd` três configurações — 2.4GHz (WPA2), 5GHz (802.11a, 20 MHz; VHT80 não testado) e WPA3-SAE — e o iPhone 7 Plus conectou e completou o 4-way handshake em todas, com encerramento limpo (`AP-DISABLED` / `TERMINATING`). Não ocorreu o problema de beacon re-key que algumas placas apresentam, e nesse ponto o 2.4G é mais estável que o da placa irmã ACS. O WPA3 usou SAE-only com PMF forçado (`ieee80211w=2`, `sae_pwe=0`), conectando com sucesso o iPhone 15 Pro, confirmando que o WPA3-SAE do RTL8821CU é utilizável no lado AP.
 
 A toolchain do Kali (camada de plataforma) também roda nesta placa: o `airmon-ng` detecta o EACS (`rtw88_8821cu`), mas, igualmente, não use `check kill`; o `kismet` sobe com sucesso usando a placa como data source, gerando em teste um log `.kismet` de cerca de 733 KB; o `wifi.recon on` do `bettercap` 2.32 funciona normalmente (o aviso de txpower pode ser ignorado); o `wifite` (git 3.0.0) encontrou mais de 10 APs, incluindo o próprio YUPITEK (ch5, PWR 84) — esta versão não tem a flag `--band`, então use `-c 1,6,11,36,149,157` para especificar os canais; o `Wireshark` / `tshark` 4.x capturou e analisou 325 frames em monitor ch6; e o disfarce de MAC aleatório do `macchanger` também funciona. Essa camada de ferramentas é igual à das outras placas deste lote; a diferença está sobretudo na capacidade de hardware de injection e monitor já discutida.
 

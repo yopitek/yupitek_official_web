@@ -103,7 +103,7 @@ Wi-Fi インターフェースはロード後、`wlan0` ではなく `wlx` + MAC
 |---|---|---|---|
 | Monitor | ✅ 強い | ✅ 強い | ほとんどのチャンネルで 300 frames を取り切り。コミュニティの #453「ch1 で固まる」は再現せず |
 | Injection | ✅ 100%（30/30） | ✅ 100%（30/30） | Power は 2.4G -38.27 / 5G -76.10。このシリーズの ac カードで最強のインジェクション |
-| AP | ✅ きれいに終了 | ✅ VHT 80MHz | `hostapd` で構築し、iPhone 7 Plus が接続して 4-way を完了 |
+| AP | ✅ きれいに終了 | ✅ 802.11a・20 MHz（VHT80 は未測定） | `hostapd` で構築し、iPhone 7 Plus が接続して 4-way を完了 |
 | WPA3-SAE（AP 側） | ✅ iPhone が接続 | 未実測 | SAE-only + PMF 必須（`ieee80211w=2`、`sae_pwe=0`） |
 | WPA handshake 取得 | — | ✅ エンドツーエンド | M1–M4 が完全、deauth は 79 ACKs、`.22000` に変換 |
 
@@ -111,7 +111,7 @@ Monitor（モニタモード）は 2.4GHz も 5GHz も安定しています。6 
 
 Injection（パケットインジェクション）の結果は最も目覚ましいものでした。`aireplay-ng --test` で測定すると、2.4GHz も 5GHz も 30/30、100% で、このシリーズの ac カードのなかで最強のインジェクションです（同じ 1x1 の AWUS036ACS は 5G で 96% にとどまります）。台湾ならではの細かい点もあります。regulatory domain が TW のままだと 5GHz の TX はロックされるため、測定前に `iw reg set US` で解除し、測定後に `iw reg set TW` で元に戻してください。
 
-AP については、`hostapd` で 2.4GHz（WPA2）、5GHz（VHT 80MHz）、WPA3-SAE の 3 種類をそれぞれ構築し、いずれも iPhone 7 Plus が接続して 4-way handshake を完了しました。停止時もきれいに終了しています（`AP-DISABLED` / `TERMINATING`）。一部のカードで見られる beacon re-key の問題は出ておらず、2.4G の点では姉妹カードの ACS より安定しています。WPA3 は SAE-only に PMF 必須（`ieee80211w=2`、`sae_pwe=0`）を組み合わせ、iPhone 15 Pro が接続に成功しました。RTL8821CU の AP 側で WPA3-SAE が利用できることを確認しています。
+AP については、`hostapd` で 2.4GHz（WPA2）、5GHz（802.11a・20 MHz、VHT80 は未測定）、WPA3-SAE の 3 種類をそれぞれ構築し、いずれも iPhone 7 Plus が接続して 4-way handshake を完了しました。停止時もきれいに終了しています（`AP-DISABLED` / `TERMINATING`）。一部のカードで見られる beacon re-key の問題は出ておらず、2.4G の点では姉妹カードの ACS より安定しています。WPA3 は SAE-only に PMF 必須（`ieee80211w=2`、`sae_pwe=0`）を組み合わせ、iPhone 15 Pro が接続に成功しました。RTL8821CU の AP 側で WPA3-SAE が利用できることを確認しています。
 
 Kali のツールチェーン（プラットフォーム層）も、このカードですべて動作しました。`airmon-ng` は EACS（`rtw88_8821cu`）を検出できますが、やはり `check kill` は使わないでください。`kismet` は本カードをデータソースにして起動に成功し、約 733 KB の `.kismet` ログが出力されました。`bettercap` 2.32 の `wifi.recon on` は正常に動作します（txpower の警告は無視して構いません）。`wifite`（git 3.0.0）は自社の YUPITEK（ch5、PWR 84）を含む 10 台以上の AP を検出しました。この版には `--band` フラグがないため、`-c 1,6,11,36,149,157` でチャンネルを指定する必要があります。`Wireshark` / `tshark` 4.x は monitor の ch6 で実際にキャプチャし、325 frames を解析できました。`macchanger` によるランダム MAC への偽装も使えます。ツール層についてはこのシリーズの他のカードと同じで、差が出るのは前述の injection と monitor のハードウェア性能です。
 

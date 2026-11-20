@@ -27,13 +27,13 @@ faq:
   - question: "AWUS036ACS로 WPA 핸드셰이크를 캡처해 hashcat .22000으로 변환할 수 있나요?"
     answer: "가능합니다. 본인 소유 AP와 본인 소유 iPhone 7 Plus에서 엔드투엔드로 실측: 지향성 deauth로 재접속을 유도하고 완전한 4-way(M1–M4)를 캡처한 뒤 hcxpcapngtool --all로 .22000을 변환합니다. 본인 소유 또는 허가된 네트워크에서만 가능합니다."
   - question: "AWUS036ACS를 AP 핫스팟으로 쓸 수 있나요? WPA3을 지원하나요?"
-    answer: "가능합니다. hostapd로 2.4G와 5G 핫스팟(5G 채널 폭은 확인하지 못함)을 열어 iPhone 7 Plus가 접속해 4-way를 완료했으며, 5G의 WPA3-SAE(SAE-only, ieee80211w=2, sae_pwe=0)도 접속에 성공했습니다(2.4G의 WPA3는 실측하지 않음)."
+    answer: "가능합니다. hostapd로 2.4G와 5G 핫스팟(5G는 802.11a, 20 MHz로 실측했고 VHT80은 측정하지 않음)을 열어 iPhone 7 Plus가 접속해 4-way를 완료했으며, 5G의 WPA3-SAE(SAE-only, ieee80211w=2, sae_pwe=0)도 접속에 성공했습니다(2.4G의 WPA3는 실측하지 않음)."
   - question: "AWUS036ACS가 지원하지 않는 모드는 무엇인가요? hcxdumptool은 사용할 수 있나요?"
     answer: "액티브 모니터, IBSS, 메시(802.11s), Wi-Fi Direct(P2P)를 지원하지 않습니다. hcxdumptool 8.x는 failed to arm interface가 발생하므로 airodump-ng + aireplay-ng를 사용하세요. 메시/IBSS가 필요하면 AWUS036ACM/ACHM을 선택하세요."
 draft: false
 ---
 
-**핵심 요약(TL;DR)**: Yopitek(ALFA Network 대만 총판) 실측 결과, AWUS036ACS는 ASUS GX10 / Ubuntu 24.04 ARM64(kernel 6.17)에서 드라이버 설치 불필요이며 듀얼 밴드 monitor와 AP(5G AP 사용 가능, 채널 폭은 확인하지 못함)가 가능하고, 인젝션은 2.4G 100%, 5G 96%, 엔드투엔드 .22000 통과, 메시/IBSS는 미지원입니다.
+**핵심 요약(TL;DR)**: Yopitek(ALFA Network 대만 총판) 실측 결과, AWUS036ACS는 ASUS GX10 / Ubuntu 24.04 ARM64(kernel 6.17)에서 드라이버 설치 불필요이며 듀얼 밴드 monitor와 AP(5G AP 사용 가능: 802.11a, 20 MHz 실측, VHT80 미측정)가 가능하고, 인젝션은 2.4G 100%, 5G 96%, 엔드투엔드 .22000 통과, 메시/IBSS는 미지원입니다.
 
 > 본문은 Yopitek이 ALFA AWUS036ACS를 최신 Linux 플랫폼에서 테스트한 제품 호환성 및 성능 실측 기록으로, 제품 선정 평가에 활용하기 위한 것입니다.
 > 테스트 플랫폼: ASUS GX10 / Ubuntu 24.04 LTS / ARM64 / kernel `6.17.0-1014-nvidia`. 모든 데이터는 Yopitek이 **본인 소유 장비, 본인 소유 사무실 Wi-Fi**(SSID `YUPITEK`, 2.4G ch5 / 5G ch36)에서 **본인 소유 테스트 휴대폰**(Apple iPhone 7 Plus)을 대상으로 실측한 발췌이며, MAC 주소는 일부 가렸습니다.
@@ -103,7 +103,7 @@ iw phy $(cat /sys/class/net/$IF/phy80211/name) info | sed -n '/Supported interfa
 |---|---|---|
 | 모니터(수신 리스닝) | ✅ 강함 | ✅ 강함 |
 | 인젝션(패킷 인젝션) | ✅ **100%**(30/30) | ✅ **96%**(29/30, 먼저 reg 잠금 해제 필요) |
-| AP 핫스팟(hostapd) | ✅ iPhone 접속 + 핸드셰이크 완료 | ✅ **안정적**(채널 폭 확인하지 못함) |
+| AP 핫스팟(hostapd) | ✅ iPhone 접속 + 핸드셰이크 완료 | ✅ **안정적**(802.11a, 20 MHz 실측, VHT80 미측정) |
 | AP WPA3-SAE | 미실측 | ✅ iPhone 접속(SAE-only + PMF) |
 
 ### 3-1. 모니터(모니터 모드, 2.4 GHz + 5 GHz) ✅
@@ -138,7 +138,7 @@ sudo aireplay-ng --test --ignore-negative-one -a <YUPITEK-BSSID> $IF
 
 `hostapd`로 카드를 기지국으로 만들었고, 세 가지 설정 모두에서 iPhone 7 Plus가 성공적으로 접속해 4-way 핸드셰이크(`EAPOL-4WAY-HS-COMPLETED`)를 완료했습니다.
 
-- **5 GHz(채널 폭 확인하지 못함)**: 가장 안정적인 구성으로, iPhone 접속, 핸드셰이크 완료, `AP-DISABLED`로 깔끔하게 마무리되었습니다.
+- **5 GHz(802.11a, 20 MHz 실측, VHT80 미측정)**: 가장 안정적인 구성으로, iPhone 접속, 핸드셰이크 완료, `AP-DISABLED`로 깔끔하게 마무리되었습니다.
 - **2.4 GHz(WPA2-PSK)**: iPhone 접속, 핸드셰이크 완료, 접속 종료 후 깔끔하게 닫혔습니다. 여기서 한 가지 상황을 정직하게 기록합니다. 이전 라운드의 동일한 설정에서 STA 접속 종료 후 `key not allowed / Failed to set beacon parameters`로 중단된 적이 있었으나, 재테스트에서는 재현되지 않아 rtw88_8821au의 간헐적 beacon re-key로 판단되며 고정적 결함은 아닙니다. 장시간, 고빈도 재접속 시나리오에서는 여전히 유의하거나 아예 5 GHz AP로 바꾸는 것을 권장합니다.
 - **WPA3-SAE(5 GHz, PMF 강제, 2.4 GHz 미실측)**: 핵심 설정은 `wpa_key_mgmt=SAE`(순수 WPA3, WPA2 fallback 없음), `ieee80211w=2`(Management Frame Protection 강제), `sae_pwe=0`(구형 엔드포인트 호환)입니다. iPhone 7 Plus(iOS 15)가 SAE로 성공적으로 접속했습니다. AP는 SAE만 열고 WPA2 퇴로가 없으므로, 연결(association)을 완료할 수 있다는 것은 SAE 인증 핸드셰이크가 성립했음을 의미합니다. RTL8811AU + rtw88_8821au는 AP 측에서 WPA3-SAE를 사용할 수 있습니다.
 
@@ -212,7 +212,7 @@ sudo aireplay-ng --test --ignore-negative-one -a <YUPITEK-BSSID> $IF
 가능합니다. 본인 소유 AP와 본인 소유 iPhone 7 Plus에서 엔드투엔드로 실측: 지향성 deauth로 재접속을 유도하고 완전한 4-way(M1–M4)를 캡처한 뒤 `hcxpcapngtool --all`로 .22000을 변환합니다. 본인 소유 또는 허가된 네트워크에서만 가능합니다.
 
 **Q: AWUS036ACS를 AP 핫스팟으로 쓸 수 있나요? WPA3을 지원하나요?**
-가능합니다. `hostapd`로 2.4G와 5G 핫스팟(5G 채널 폭은 확인하지 못함)을 열어 iPhone 7 Plus가 접속해 4-way를 완료했으며, 5G의 WPA3-SAE(SAE-only, ieee80211w=2, sae_pwe=0)도 접속에 성공했습니다(2.4G의 WPA3는 실측하지 않음).
+가능합니다. `hostapd`로 2.4G와 5G 핫스팟(5G는 802.11a, 20 MHz로 실측했고 VHT80은 측정하지 않음)을 열어 iPhone 7 Plus가 접속해 4-way를 완료했으며, 5G의 WPA3-SAE(SAE-only, ieee80211w=2, sae_pwe=0)도 접속에 성공했습니다(2.4G의 WPA3는 실측하지 않음).
 
 **Q: AWUS036ACS가 지원하지 않는 모드는 무엇인가요? hcxdumptool은 사용할 수 있나요?**
 액티브 모니터, IBSS, 메시(802.11s), Wi-Fi Direct(P2P)를 지원하지 않습니다. hcxdumptool 8.x는 failed to arm interface가 발생하므로 airodump-ng + aireplay-ng를 사용하세요. 메시 / IBSS가 필요하면 AWUS036ACM / ACHM을 선택하세요.

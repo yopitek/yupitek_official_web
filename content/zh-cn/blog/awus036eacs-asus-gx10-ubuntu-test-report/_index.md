@@ -103,7 +103,7 @@ Wi-Fi 接口加载后会以 `wlx` + MAC 命名（例如 `wlx00c0cab3a52e`），�
 |---|---|---|---|
 | Monitor | ✅ 强 | ✅ 强 | 多数频道满额 300 frames；社区 #453「ch1 卡死」未重现 |
 | Injection | ✅ 100%（30/30） | ✅ 100%（30/30） | Power 2.4G -38.27 / 5G -76.10；本批 ac 卡注入最强 |
-| AP 热点 | ✅ 干净收尾 | ✅ VHT 80MHz | `hostapd` 建站，iPhone 7 Plus 连入并完成 4-way |
+| AP 热点 | ✅ 干净收尾 | ✅ 802.11a、20 MHz（VHT80 未测） | `hostapd` 建站，iPhone 7 Plus 连入并完成 4-way |
 | WPA3-SAE（AP 端） | ✅ iPhone 连入 | 未实测 | SAE-only + 强制 PMF（`ieee80211w=2`、`sae_pwe=0`） |
 | WPA handshake 截取 | — | ✅ 端到端 | M1–M4 完整，deauth 收 79 ACKs，转出 `.22000` |
 
@@ -111,7 +111,7 @@ Monitor（监听模式）在 2.4 与 5GHz 都稳。六个频道逐一截取，�
 
 Injection（数据包注入）的表现最亮眼。以 `aireplay-ng --test` 量测，2.4GHz 与 5GHz 都是 30/30、100%，是本批 ac 卡里注入最强的一张（同为 1x1 的 AWUS036ACS 在 5G 只有 96%）。这里有个台湾在地的细节：5GHz 的 TX 在 regulatory domain 设为 TW 时会被锁，量测前先 `iw reg set US` 解锁，测完再 `iw reg set TW` 还原。
 
-AP 热点这边，以 `hostapd` 分别架 2.4GHz（WPA2）、5GHz（VHT 80MHz）、WPA3-SAE 三种，iPhone 7 Plus 都能连入并完成 4-way handshake，关站也收尾干净（`AP-DISABLED` / `TERMINATING`）。没有出现某些卡会有的 beacon re-key 问题，2.4G 这点比姊妹卡 ACS 更稳。WPA3 采 SAE-only 搭配强制 PMF（`ieee80211w=2`、`sae_pwe=0`），以 iPhone 15 Pro 成功连入，确认 RTL8821CU 在 AP 端的 WPA3-SAE 可用。
+AP 热点这边，以 `hostapd` 分别架 2.4GHz（WPA2）、5GHz（802.11a、20 MHz；VHT80 未测）、WPA3-SAE 三种，iPhone 7 Plus 都能连入并完成 4-way handshake，关站也收尾干净（`AP-DISABLED` / `TERMINATING`）。没有出现某些卡会有的 beacon re-key 问题，2.4G 这点比姊妹卡 ACS 更稳。WPA3 采 SAE-only 搭配强制 PMF（`ieee80211w=2`、`sae_pwe=0`），以 iPhone 15 Pro 成功连入，确认 RTL8821CU 在 AP 端的 WPA3-SAE 可用。
 
 Kali 工具链（平台层）在这张卡上也都带得起来：`airmon-ng` 侦测得到 EACS（`rtw88_8821cu`），但一样不要用 `check kill`；`kismet` 以本卡当 data source 启动成功，实测产出约 733 KB 的 `.kismet` log；`bettercap` 2.32 的 `wifi.recon on` 正常运作（txpower 警告可忽略）；`wifite`（git 3.0.0）扫到 10 台以上 AP、含自家 YUPITEK（ch5、PWR 84），这一版没有 `--band` 旗标，要改用 `-c 1,6,11,36,149,157` 指定频道；`Wireshark` / `tshark` 4.x 在 monitor ch6 实截取并解析 325 frames；`macchanger` 的随机 MAC 伪装也能用。工具层这一段跟本批其他卡一致，差异主要落在前面的 injection 与 monitor 硬件能力。
 

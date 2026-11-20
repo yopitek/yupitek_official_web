@@ -103,7 +103,7 @@ The table below is the summary of the AWUS036EACS's core capability tests, each 
 |---|---|---|---|
 | Monitor | ✅ Strong | ✅ Strong | Most channels at a full 300 frames; community #453 "ch1 stuck" not reproduced |
 | Injection | ✅ 100% (30/30) | ✅ 100% (30/30) | Power 2.4G -38.27 / 5G -76.10; strongest injection among the ac cards in this batch |
-| AP hotspot | ✅ clean shutdown | ✅ VHT 80 MHz | `hostapd` brings up the station, iPhone 7 Plus associates and completes the 4-way |
+| AP hotspot | ✅ clean shutdown | ✅ 802.11a, 20 MHz (VHT80 not tested) | `hostapd` brings up the station, iPhone 7 Plus associates and completes the 4-way |
 | WPA3-SAE (AP side) | ✅ iPhone associates | Not tested | SAE-only + enforced PMF (`ieee80211w=2`, `sae_pwe=0`) |
 | WPA handshake capture | — | ✅ end-to-end | M1–M4 complete, deauth received 79 ACKs, exported `.22000` |
 
@@ -111,7 +111,7 @@ Monitor (monitor mode) is steady on both 2.4 and 5 GHz. Capturing on each of six
 
 Injection (packet injection) is the standout. Measured with `aireplay-ng --test`, both 2.4 GHz and 5 GHz are 30/30, 100% — the strongest injection among the ac cards in this batch (the AWUS036ACS, also 1x1, is only 96% on 5G). There is a Taiwan-local detail here: 5 GHz TX is locked when the regulatory domain is set to TW, so run `iw reg set US` to unlock before measuring and `iw reg set TW` to restore afterward.
 
-On the AP hotspot side, using `hostapd` to set up 2.4 GHz (WPA2), 5 GHz (VHT 80 MHz), and WPA3-SAE separately, the iPhone 7 Plus could associate and complete the 4-way handshake in all cases, with clean shutdowns (`AP-DISABLED` / `TERMINATING`). There was none of the beacon re-key issue some cards exhibit, so on 2.4G this is steadier than its sister card the ACS. WPA3 uses SAE-only with enforced PMF (`ieee80211w=2`, `sae_pwe=0`), and the iPhone 15 Pro associated successfully, confirming that RTL8821CU's WPA3-SAE on the AP side is usable.
+On the AP hotspot side, using `hostapd` to set up 2.4 GHz (WPA2), 5 GHz (802.11a, 20 MHz; VHT80 not tested), and WPA3-SAE separately, the iPhone 7 Plus could associate and complete the 4-way handshake in all cases, with clean shutdowns (`AP-DISABLED` / `TERMINATING`). There was none of the beacon re-key issue some cards exhibit, so on 2.4G this is steadier than its sister card the ACS. WPA3 uses SAE-only with enforced PMF (`ieee80211w=2`, `sae_pwe=0`), and the iPhone 15 Pro associated successfully, confirming that RTL8821CU's WPA3-SAE on the AP side is usable.
 
 The Kali toolchain (platform layer) also comes up fine on this card: `airmon-ng` detects the EACS (`rtw88_8821cu`), but again don't use `check kill`; `kismet` started successfully with this card as a data source and produced a `.kismet` log of about 733 KB; `bettercap` 2.32's `wifi.recon on` works normally (the txpower warning can be ignored); `wifite` (git 3.0.0) scanned 10+ APs including our own YUPITEK (ch5, PWR 84) — this version has no `--band` flag, so use `-c 1,6,11,36,149,157` to specify channels; `Wireshark` / `tshark` 4.x captured and parsed 325 frames in monitor ch6; and `macchanger`'s random MAC spoofing also works. This tool-layer section is consistent with the other cards in this batch; the differences lie mainly in the injection and monitor hardware capabilities above.
 

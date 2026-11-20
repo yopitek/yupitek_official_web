@@ -100,8 +100,8 @@ Esta é a tabela principal do artigo e também a primeira que se deve olhar ao e
 | 1 | AWUS036ACM | ✅ | ✅ | ✅ 63–83% | ✅ 76% | ✅ | ✅ 80MHz | ✅ 2.4G |
 | 2 | AWUS036ACHM | ✅ | ✅ | ✅ 96–100% | ⚠️ só broadcast | ✅ | ✅ | ✅* 2.4G |
 | 3 | AWUS036ACH | ✅ | ✅ | ✅ **100%** | ✅ **100%** | ✅ | ✅ | ✅ 2.4G |
-| 4 | AWUS036ACS | ✅ | ✅ | ✅ **100%** | ✅ 96% | ✅ | ✅ (largura não confirmada) | ✅ 5G |
-| 5 | AWUS036EACS | ✅ | ✅ | ✅ **100%** | ✅ **100%** | ✅ | ✅ 80MHz | ✅ 2.4G |
+| 4 | AWUS036ACS | ✅ | ✅ | ✅ **100%** | ✅ 96% | ✅ | ✅ (802.11a, 20 MHz; VHT80 não testado) | ✅ 5G |
+| 5 | AWUS036EACS | ✅ | ✅ | ✅ **100%** | ✅ **100%** | ✅ | ✅ (802.11a, 20 MHz; VHT80 não testado) | ✅ 2.4G |
 | 6 | AWUS036AX | ✅ forte | ✅ forte | ✅ 96% | ✅ | ✅ | ✅ 80MHz | ✅ 2.4G |
 | 7 | AWUS036AXER | ✅ forte | ✅ forte | ✅ 73% | ✅ | ✅ | ✅ 80MHz | ✅ 2.4G |
 | 8 | AWUS036AXM | ✅ fraco | ✅ fraco | ❌ **falha** | ❌ **falha** | ✅ | ✅ 80MHz | ✅ 2.4G |

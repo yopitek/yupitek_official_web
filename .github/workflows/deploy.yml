@@ -39,3 +39,41 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
+      # Only /{locale}/blog/ is cached at the edge (Cache Rule "blog", Edge TTL 2h); other HTML is DYNAMIC.
+      # Token needs only Zone > Cache Purge > Purge on yupitek.com.
+      - name: Purge Cloudflare cache for blog paths
+        env:
+          CF_PURGE_TOKEN: ${{ secrets.CLOUDFLARE_PURGE_TOKEN }}
+          CF_ZONE_ID: afd4b3d4520d0b8d33506916f9603170 # yupitek.com
+        run: |
+          set -euo pipefail
+          if [ -z "${CF_PURGE_TOKEN}" ]; then
+            echo "::error::Secret CLOUDFLARE_PURGE_TOKEN is not set; blog pages may serve stale cache for up to 2h"
+            exit 1
+          fi
+          prefixes=$(printf '"yupitek.com/%s/blog/",' zh-tw zh-cn en ja ko de fr es pt ru ar)
+          res=$(curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${CF_PURGE_TOKEN}" -H "Content-Type: application/json" \
+            --data "{\"prefixes\":[${prefixes%,}]}")
+          echo "$res" | jq -c '{success, errors}'
+          [ "$(echo "$res" | jq -r .success)" = "true" ]
+
+      # The purge API reports success even when nothing is cleared (e.g. wrong zone), so check the edge.
+      - name: Verify blog cache was purged
+        run: |
+          set -euo pipefail
+          sleep 30
+          fail=0
+          for l in zh-tw en ko; do
+            url="https://yupitek.com/${l}/blog/"
+            hdr=$(curl -sI "$url")
+            status=$(echo "$hdr" | awk 'tolower($1)=="cf-cache-status:"{print $2}' | tr -d '\r')
+            age=$(echo "$hdr" | awk 'tolower($1)=="age:"{print $2}' | tr -d '\r')
+            echo "$url cf-cache-status=${status:-none} age=${age:-0}"
+            if [ "${age:-0}" -gt 120 ]; then fail=1; fi
+          done
+          if [ "$fail" -ne 0 ]; then
+            echo "::error::Blog pages still serve cache older than the deploy; purge did not take effect"
+            exit 1
+          fi
+

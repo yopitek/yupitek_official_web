@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Antenne", "APA-M25", "ARS-NT5B7", "RP-SMA", "WLAN-Adapter", "ALFA-Network", "Signal-Boost"]
 featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Können Sie die Antennen der ALFA-Netzwerkkarten selbst austauschen?"
     answer: "Ja. ALFA-Netzwerkkarten mit RP-SMA-Anschluss wie AWUS036ACH, AWUS036ACM und AWUS036AXML können werkzeuglos ausgetauscht werden, indem Sie die Antenne gegen den Uhrzeigersinn abschrauben und im Uhrzeigersinn wieder einschrauben."

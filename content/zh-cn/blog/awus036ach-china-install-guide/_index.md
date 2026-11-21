@@ -14,6 +14,7 @@ description: "手把手教你在中国境内使用国内镜像源安装 ALFA AWU
 related_product: "/zh-cn/products/alfa/awus036ach/"
 series_order: 1
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036ACH 用什么芯片？需要额外安装驱动吗？"
     answer: "AWUS036ACH 采用 Realtek RTL8812AU 芯片，驱动不在 Linux 核心内置，需要手动安装。"

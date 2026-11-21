@@ -18,6 +18,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "AWUS036ACM", "comparison", "kali-linux", "RTL8812AU", "MT7612U"]
 featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 Kali Linux 침투 테스트에 가장 인기 있는 두 ALFA Network USB 어댑터는 순수 성능과 휴대성 사이의 스펙트럼에서 서로 다른 지점에 위치합니다. <strong>AWUS036ACH</strong>는 검증된 드라이버 이력을 갖춘 고출력 듀얼 안테나 주력 제품입니다. <strong>AWUS036ACM</strong>은 일부 출력을 단순성과 사용 편의성과 맞바꾼 소형의 커널 네이티브 대안입니다. 이 가이드는 실제 침투 테스트 작업에 중요한 모든 측면을 분석합니다.
 

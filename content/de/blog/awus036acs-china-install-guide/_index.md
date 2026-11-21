@@ -14,6 +14,7 @@ series: ["alfa-china-install-guide"]
 related_product: "/de/products/alfa/awus036acs/"
 series_order: 3
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Welchen Chipsatz verwendet der AWUS036ACS? Ist er derselbe wie beim AWUS036ACH?"
     answer: "Er verwendet den Realtek RTL8811AU-Chipsatz. Die Treiberunterstützung hängt vom Kernel ab: Linux-Kernel 6.13+ (z. B. Ubuntu 24.04 HWE / kernel 6.17) bringt den Treiber rtw88_8821au bereits mit, er funktioniert also ohne DKMS direkt nach dem Einstecken. Nur auf älteren Kerneln (unter 6.13) brauchen Sie den Community-Treiber 8821au (morrownr/8821au-20210708, Modulname `8821au`). Er teilt sich nicht den Treiber des RTL8812AU. Prüfen Sie Ihren Kernel mit uname -r."

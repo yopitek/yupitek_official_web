@@ -14,6 +14,7 @@ series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036axer/"
 series_order: 5
 featureimage: "/images/blog/awus036axer-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036AXER 用什么芯片？跟 AWUS036AX 一样吗？"
     answer: "同样采用 Realtek RTL8832BU 芯片，支持 WiFi 6，但体积更小更便携。"

@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "Ad Hoc", "802.11s", "Mesh-сеть", "Linux", "Беспроводная сеть"]
 featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 
 faq:
   - question: "Почему AWUS036ACM — единственный выбор ALFA с поддержкой IBSS/Mesh?"

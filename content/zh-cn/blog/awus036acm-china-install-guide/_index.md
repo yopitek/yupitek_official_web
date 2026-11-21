@@ -14,6 +14,7 @@ description: "手把手教你在中国境内安装 ALFA AWUS036ACM。这是 Linu
 related_product: "/zh-cn/products/alfa/awus036acm/"
 series_order: 2
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036ACM 用什么芯片？需要安装驱动吗？"
     answer: "采用 MediaTek MT7612U 芯片，驱动 mt76x2u 自 Linux 核心 4.19 起已内置，大多数情况插上即用。"

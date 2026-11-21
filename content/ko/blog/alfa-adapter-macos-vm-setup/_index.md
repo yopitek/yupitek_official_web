@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 macOS는 완성도 높은 프로덕션급 운영체제입니다. 그러나 무선 보안 연구를 위해 설계된 플랫폼은 아닙니다. 모든 진지한 침투 테스터의 도구에서 핵심이 되는 두 가지 기능, 즉 <strong>모니터 모드</strong>와 <strong>패킷 인젝션</strong>은 macOS Wi-Fi 스택에서 완전히 빠져 있습니다. Apple의 Wi-Fi 드라이버는 깔끔하고 기능적인 네트워킹 인터페이스를 제공할 뿐, 그 이상은 제공하지 않습니다.

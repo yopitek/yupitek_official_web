@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["антенна", "APA-M25", "ARS-NT5B7", "RP-SMA", "WiFi-адаптер", "ALFA-Network"]
 featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 
 faq:
   - question: "Можно ли самостоятельно заменить антенну на адаптере ALFA?"

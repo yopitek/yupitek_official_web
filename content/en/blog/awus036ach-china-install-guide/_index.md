@@ -25,6 +25,7 @@ series_order: 1
 description: "Step-by-step guide to install ALFA AWUS036ACH drivers in China using domestic mirrors. Covers Kali Linux, Ubuntu 22/24, Debian, and Raspberry Pi. Build tools from domestic mirrors; driver source from the verified GitHub repository."
 related_product: "/en/products/alfa/awus036ach/"
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 You just got the AWUS036ACH and your Linux machine doesn't recognize it. That's normal — this chip needs the RTL8812AU driver, and it's not plug-and-play. This guide walks you through the full install in about 30 minutes, using domestic mirrors for system packages and the verified GitHub repository for the driver source. If GitHub is slow, use a proxy or mirror you trust.

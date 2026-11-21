@@ -12,6 +12,7 @@ series_order: 1
 description: "Guia passo a passo para instalar o driver ALFA AWUS036ACH na China usando espelhos domésticos. Compatível com Kali Linux, Ubuntu 22/24, Debian e Raspberry Pi. Ferramentas de compilação por espelhos nacionais e código do driver do repositório GitHub verificado."
 related_product: "/pt/products/alfa/awus036ach/"
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 author: "benny-lai"
 lastmod: 2026-07-02
 

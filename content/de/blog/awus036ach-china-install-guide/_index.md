@@ -14,6 +14,7 @@ series_order: 1
 description: "Schritt-für-Schritt-Anleitung zur Installation des ALFA AWUS036ACH-Treibers in China mit inländischen Mirrors. Für Kali Linux, Ubuntu 22/24, Debian und Raspberry Pi. Build-Tools über inländische Mirrors, Treiber-Quellcode aus dem geprüften GitHub-Repository."
 related_product: "/de/products/alfa/awus036ach/"
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Welchen Chipsatz verwendet der AWUS036ACH? Ist eine zusätzliche Treiberinstallation erforderlich?"
     answer: "Der AWUS036ACH verwendet den Realtek RTL8812AU-Chipsatz. Der Treiber ist nicht im Linux-Kernel integriert und muss manuell installiert werden."

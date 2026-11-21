@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "driver-install", "acrylic-wifi"]
 featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 ALFA Network USB WiFi 어댑터는 보안 연구 및 네트워킹 분야에서 잘 알려져 있지만, 대부분의 튜토리얼은 Linux에만 초점을 맞춥니다. Windows 사용자에게 좋은 소식이 있습니다. 모든 주요 ALFA 어댑터는 제조사 제공 드라이버로 Windows 10 및 Windows 11에서 작동하며, 소스 컴파일이 필요 없습니다.

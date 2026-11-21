@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
 featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 무선 네거티브 테스트라고도 불리는 WLAN 프로토콜 퍼징은 임베디드 무선 기기, 스마트홈 가전, 기업용 액세스 포인트의 보안성과 견고성을 검증하는 가장 중요한 단계 중 하나입니다. 그러나 변조된 802.11 관리, 제어, 데이터 프레임을 무선으로(over-the-air) 전송하려면 미디어 액세스 제어(MAC) 계층에 대한 저수준 제어가 필요한데, 표준 운영체제와 상용 WiFi 드라이버는 이를 허용하지 않습니다.

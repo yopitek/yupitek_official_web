@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-adapter", "driver-install", "acrylic-wifi"]
 featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Unterstützt Windows den Monitor Mode für ALFA-Netzwerkkarten?"
     answer: "Windows unterstützt keinen vollständigen Monitor Mode nativ. Das NDIS-Treibermodell ermöglicht keine Rohdaten-Erfassung von 802.11-Paketen; lediglich Acrylic WiFi Pro kann passive Scans durchführen. Für den vollständigen Monitor Mode ist Kali Linux erforderlich."

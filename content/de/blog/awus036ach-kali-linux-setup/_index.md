@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "kali-linux", "monitor-mode", "packet-injection", "RTL8812AU", "airmon-ng"]
 featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Muss der AWUS036ACH unter Kali Linux zusätzlich getrieben werden?"
     answer: "Ja. Der RTL8812AU ist kein Mainline-Kernel-Treiber und muss aus dem aircrack-ng GitHub-Repository installiert werden. Es wird empfohlen, DKMS zu verwenden, um sicherzustellen, dass der Treiber auch nach Kernel-Updates weiterhin funktioniert."

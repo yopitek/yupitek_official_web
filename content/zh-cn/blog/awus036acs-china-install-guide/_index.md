@@ -14,6 +14,7 @@ series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036acs/"
 series_order: 3
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036ACS 用什么芯片？跟 AWUS036ACH 一样吗？"
     answer: "采用 Realtek RTL8811AU 芯片。驱动看内核版本：Linux 内核 6.13 以上（例如 Ubuntu 24.04 HWE / kernel 6.17）已内置 rtw88_8821au 驱动，插上即认、免 DKMS；只有在旧内核（低于 6.13）上，才需要使用社区版 8821au 驱动（morrownr/8821au-20210708，模块名 `8821au`）。它不与 RTL8812AU 共用驱动。先用 uname -r 确认内核版本。"

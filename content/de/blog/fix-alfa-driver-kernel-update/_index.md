@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Warum fallen ALFA-Netzwerkkarten nach einem Kernel-Update aus?"
     answer: "RTL8812AU verwendet einen Kernel-External-Treiber; nach jeder Änderung der Kernel-Version sind die zuvor kompilierten Module nicht mehr kompatibel. DKMS kann die Neukompilierung automatisch durchführen, jedoch führt das Fehlen von Kernel-Headern oder veralteten Konfigurationen zu Fehlern."

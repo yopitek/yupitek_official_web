@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["установка-драйвера", "Kali-Linux", "Ubuntu", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 
 faq:
   - question: "Нужно ли устанавливать драйвер для USB WiFi-адаптера ALFA в Linux?"

@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-network", "wlan-adapter", "kaufberatung", "kali-linux", "penetration-testing", "monitor-modus"]
 featureimage: "/images/blog/alfa-wifi-adapter-buyer-guide-2026.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Was sind die Auswahlkriterien für ALFA-Netzwerkkarten?"
     answer: "Die Auswahlkriterien umfassen die Ausgereiftheit der Chipset-Treiber, die Betriebssystemkompatibilität, die Unterstützung von Monitor Mode und die Sendeleistung; der RTL8812AU-Treiber ist am ausgereiftesten und stabilsten."

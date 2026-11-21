@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["monitor-mode", "kali-linux", "airmon-ng", "iw", "wifi-adapter", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Was ist der Unterschied zwischen Monitor-Modus und Managed-Modus?"
     answer: "Der Monitor-Modus ermöglicht es der Netzwerkkarte, alle 802.11-Frames im Funkverkehr zu erfassen, ohne durch den Managed-Modus eingeschränkt zu sein, der nur Pakete empfängt, deren Ziel-MAC-Adresse mit der eigenen übereinstimmt. Dies ist die Grundlage für drahtlose Penetrationstests."

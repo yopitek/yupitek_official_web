@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "Ad Hoc", "802.11s", "Mesh Networking", "Linux", "Wireless"]
 featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 1. [What Are IBSS and 802.11s Mesh — and Why Do They Matter?](#1-what-are-ibss-and-80211s-mesh) 2. [ALFA AWUS036ACM Hardware Specifications](#2-alfa-awus036acm-hardware-specifications) 3. [The MT7612U Driver on Raspberry Pi](#3-the-mt7612u-driver-on-raspberry-pi) 4. [Mode 1: IBSS Ad Hoc Networking](#4-mode-1-ibss-ad-hoc-networking) 5. [Mode 2: 802.11s Mesh Point Networking](#5-mode-2-80211s-mesh-point-networking) 6. [Real-World Use Cases](#6-real-world-use-cases) 7. [Why the AWUS036ACM Is the Only ALFA Choice for This](#7-why-the-awus036acm-is-the-only-alfa-choice-for-this) 8. [FAQ and Troubleshooting](#8-faq-and-troubleshooting) 9. [Where to Buy](#9-where-to-buy)
 

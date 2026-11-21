@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["monitor-mode", "kali-linux", "airmon-ng", "iw", "wifi-adapter", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 Monitor mode is a special operating mode for wireless network interface cards (NICs) that allows the adapter to capture **all** 802.11 frames in the air — not just those addressed to your device. In normal "managed" mode, your adapter only receives packets destined for its MAC address and discards everything else. Monitor mode lifts that filter entirely.
 

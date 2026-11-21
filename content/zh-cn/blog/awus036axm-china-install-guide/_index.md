@@ -14,6 +14,7 @@ series: ["alfa-china-install-guide"]
 related_product: "/zh-cn/products/alfa/awus036axm/"
 series_order: 6
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036AXM 用什么芯片？支持 WiFi 6 吗？"
     answer: "采用 MediaTek MT7921AUN 芯片，支持 WiFi 6（双频 2.4G/5G Hz）。我们实测 2.4/5GHz；未实测 6GHz。"

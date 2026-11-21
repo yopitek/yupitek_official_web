@@ -12,6 +12,7 @@ series_order: 2
 description: "Guide pas à pas pour installer les pilotes ALFA AWUS036ACM en Chine en utilisant des miroirs nationaux. Pilote MT7612U intégré au noyau, prise en charge complète du VIF. Couvre Kali Linux, Ubuntu 22/24, Debian et Raspberry Pi. GitHub non requis."
 related_product: "/fr/products/alfa/awus036acm/"
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:

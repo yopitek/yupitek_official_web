@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 Kali Linux를 실행하는 노트북은 표준 침투 테스트 워크스테이션입니다. 하지만 유일한 선택지는 결코 아닙니다. Raspberry Pi 4 또는 Pi 5를 ALFA USB WiFi 어댑터와 결합하면, 재킷 주머니에 들어가고 USB-C 보조 배터리로 구동되며 대상 환경에 몇 시간 동안 방치해둘 수 있는 컴팩트하고 팬이 없는 수동 냉각 플랫폼이 됩니다. Kali Linux ARM64 이미지는 Offensive Security에서 직접 제공되며 에뮬레이션 없이 Pi 4와 Pi 5에서 네이티브로 실행되어 Aircrack-ng, Kismet, Wireshark, Bettercap 등 표준 Kali 메타패키지 전체 도구를 제공합니다.

@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "内核更新后 ALFA 网卡为何会失效？"
     answer: "RTL8812AU 使用核心外驱动，每次内核版本变更后已编译模块不再兼容。DKMS 可自动重建，但缺少内核头文件或过时设定会导致失败。"

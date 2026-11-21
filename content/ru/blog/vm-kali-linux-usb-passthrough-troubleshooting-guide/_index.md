@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "wireless-adapter", "virtual-machine"]
 featureimage: /images/blog/vm-kali-linux-usb-passthrough-troubleshooting-guide.webp
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Я переставил адаптер на другой USB-порт, и теперь lsusb его не показывает. Адаптер сломан?"
     answer: "Не обязательно. Сначала проверьте, не подключили ли вы его к порту «только для зарядки» и не усыпил ли хост устройство для экономии энергии. Верните его на обычный USB-порт на задней панели материнской платы или один раз отключите и подключите заново — в большинстве случаев это восстанавливает работу."

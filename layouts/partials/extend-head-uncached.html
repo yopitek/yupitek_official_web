@@ -1,10 +1,13 @@
-{{/* Web fonts: Inter for Latin text plus the script font each language needs (see custom.css font stacks) */}}
+{{/* Web fonts: Inter for Latin text plus the script font each language needs (see custom.css font stacks).
+     CJK faces are only requested at weight 400: each extra weight adds its own set of ~100 unicode-range
+     subsets (the Google Fonts CSS alone was 492 KB with 400;500;700, 251 KB with 400). Measured on a
+     zh-TW article, only 9 elements used weight 500 and 6 used 700, so those synthesize instead. */}}
 {{ $fonts := dict
-  "zh-tw" "family=Huninn&family=Noto+Sans+TC:wght@400;500;700&"
-  "zh-cn" "family=Noto+Sans+SC:wght@400;500;700&"
-  "ja" "family=Noto+Sans+JP:wght@400;500;700&"
-  "ko" "family=Noto+Sans+KR:wght@400;500;700&"
-  "ar" "family=Noto+Sans+Arabic:wght@400;500;700&"
+  "zh-tw" "family=Huninn&family=Noto+Sans+TC:wght@400&"
+  "zh-cn" "family=Noto+Sans+SC:wght@400&"
+  "ja" "family=Noto+Sans+JP:wght@400&"
+  "ko" "family=Noto+Sans+KR:wght@400&"
+  "ar" "family=Noto+Sans+Arabic:wght@400&"
 }}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

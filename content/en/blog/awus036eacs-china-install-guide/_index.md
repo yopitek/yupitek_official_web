@@ -25,6 +25,7 @@ series: ["alfa-china-install-guide"]
 series_order: 8
 related_product: "/en/products/alfa/awus036eacs/"
 featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 The AWUS036EACS is ALFA's nano WiFi 5 + Bluetooth 4.2 combo adapter. It is a compact wireless upgrade for Windows users, and on Linux kernel 6.2+ the in-kernel rtw88_8821cu driver supports it out of the box — no compilation needed. This guide covers Windows installation from Chinese sources and the Linux experience.

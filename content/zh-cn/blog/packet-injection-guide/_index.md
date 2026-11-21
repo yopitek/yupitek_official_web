@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["数据包注入", "aireplay-ng", "Kali-Linux", "WiFi网卡", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "什么是 WiFi 数据包注入？"
     answer: "数据包注入是网卡将任意 802.11 讯框直接传送至无线媒介的能力，让 aireplay-ng 等工具能建构并发送管理讯框、控制讯框与数据讯框。"

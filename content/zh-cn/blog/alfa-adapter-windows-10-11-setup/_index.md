@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["windows-10", "windows-11", "alfa-network", "wifi-网卡", "驱动安装", "acrylic-wifi"]
 featureimage: "/images/blog/alfa-adapter-windows-10-11-setup.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Windows 支持 ALFA 网卡的监听模式吗？"
     answer: "Windows 原生不支持完整监听模式。NDIS 驱动模型未开放原始 802.11 数据包捕获，仅 Acrylic WiFi Pro 可做被动扫描，完整监听模式需使用 Kali Linux。"

@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["kali-linux", "wifi-adapter", "monitor-mode", "packet-injection", "ALFA-Network"]
 featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 If you're serious about wireless security testing, penetration testing, or just learning ethical hacking with Kali Linux, one of the first things you'll discover is that your laptop's built-in WiFi card almost certainly won't do the job. Here's what you need to know about choosing the right USB WiFi adapter in 2026 — and how to get it working on your specific platform.

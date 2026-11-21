@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 > "유선 네트워크가 없는 환경에 배치해야 하는 AVALUE AIB-NW01(Jetson Orin NX)이 있습니다. 귀사의 USB WiFi 어댑터 중 별도 설정 없이 바로 동작하는 제품은 무엇입니까?"
 

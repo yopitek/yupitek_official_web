@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "渗透测试", "Kali-Linux"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Wi-Fi 6E 与 Wi-Fi 5 在渗透测试上有何差异？"
     answer: "Wi-Fi 6E 新增 6 GHz 频段与 1.2 GHz 频谱，适合稽核现代企业部署。Wi-Fi 5 驱动成熟，在 2.4/5 GHz 上稳定性更高。"

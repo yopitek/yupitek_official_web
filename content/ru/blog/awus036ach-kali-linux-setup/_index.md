@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "Kali-Linux", "режим-монитора", "инъекция-пакетов", "RTL8812AU"]
 featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 
 faq:
   - question: "Нужно ли устанавливать драйвер AWUS036ACH в Kali Linux?"

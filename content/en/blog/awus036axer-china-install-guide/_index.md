@@ -25,6 +25,7 @@ series: ["alfa-china-install-guide"]
 series_order: 5
 related_product: "/en/products/alfa/awus036axer/"
 featureimage: "/images/blog/awus036axer-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 The AWUS036AXER is ALFA's WiFi 6 nano adapter — a compact dongle designed to stay plugged into a laptop permanently. Its RTL8832BU chip is supported by the **in-kernel rtw89_8852bu driver on Linux kernel 6.17 and newer** (for example Ubuntu 24.04 HWE / kernel 6.17) — plug-and-play, no compile. Only on **older kernels** (below 6.17) do you build the community rtl8852bu driver once with DKMS. This guide covers both. The driver source is cloned from the verified GitHub repository; if GitHub is slow, use a proxy or mirror you trust.

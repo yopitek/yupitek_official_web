@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "wireless-adapter", "virtual-machine"]
 featureimage: /images/blog/vm-kali-linux-usb-passthrough-troubleshooting-guide.webp
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "어댑터를 다른 USB 포트로 옮겼더니 lsusb에 아무것도 나타나지 않습니다. 어댑터가 고장 난 것입니까?"
     answer: "반드시 그렇지는 않습니다. 먼저 충전 전용 포트에 꽂았는지, 또는 호스트가 절전을 위해 장치를 대기 상태로 만들었는지 확인하십시오. 메인보드 뒷면 I/O 패널의 표준 USB 포트로 다시 옮기거나 한 번 뽑았다가 다시 꽂으면 대개 복구됩니다."

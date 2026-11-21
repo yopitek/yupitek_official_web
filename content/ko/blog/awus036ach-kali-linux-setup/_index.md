@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "kali-linux", "monitor-mode", "packet-injection", "RTL8812AU", "airmon-ng"]
 featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 Kali에서 AWUS036ACH를 설정할 때 대부분의 사용자는 세 가지 벽에 부딪힙니다. 드라이버가 컴파일되지 않거나, VM이 USB 장치를 패스스루하지 못하거나, 모니터 모드가 아무 메시지 없이 실패하는 경우입니다. 본 가이드는 이 세 가지를 모두 다루며, 처음부터 끝까지 완전히 동작하는 설정 과정도 함께 안내합니다.

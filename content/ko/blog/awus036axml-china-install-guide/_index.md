@@ -25,6 +25,7 @@ series: ["alfa-china-install-guide"]
 series_order: 7
 related_product: "/ko/products/alfa/awus036axml/"
 featureimage: "/images/blog/awus036axml-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 AWUS036AXML은 ALFA의 WiFi 6E 플래그십으로, 2.4 GHz, 5 GHz, 그리고 혼잡하지 않은 6 GHz 대역을 아우르는 트라이 밴드 USB-C 어댑터입니다. MT7921AUN 칩은 `mt7921u` 드라이버를 사용하며, 이 드라이버는 Linux 커널 5.18부터 내장되어 있습니다. Ubuntu 24.04와 Kali 2025에서는 국내 미러에서 펌웨어 패키지를 설치하기만 하면 플러그 앤 플레이로 작동합니다. 이 가이드는 GitHub를 전혀 사용하지 않고 펌웨어, 드라이버 검증, 모니터 모드, VIF까지 전체 설정과 패킷 인젝션 관련 주의사항(stock kernel 6.17에서 실패)을 다룹니다.

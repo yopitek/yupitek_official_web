@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
 featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Kali NetHunter 使用 ALFA 网卡需要 Root 吗？"
     answer: "需要。完整 NetHunter 版本需已 Root 的 Android 装置与自定义核心，才能加载 RTL8812AU 模块并启用 USB OTG 网卡支持。"

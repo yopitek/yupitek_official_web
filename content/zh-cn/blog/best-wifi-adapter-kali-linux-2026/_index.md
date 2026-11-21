@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Kali-Linux", "WiFi网卡", "监听模式", "数据包注入", "ALFA-Network"]
 featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "为什么 Kali Linux 需要外接无线网卡？"
     answer: "笔电内置网卡不支持 Monitor Mode 与数据包注入，无法执行 airodump-ng 等渗透测试工具，必须使用支持这两项功能的外接 USB 网卡。"

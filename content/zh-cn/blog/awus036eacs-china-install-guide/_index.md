@@ -14,6 +14,7 @@ description: "手把手教你在中国境内安装 ALFA AWUS036EACS。这款纳�
 related_product: "/zh-cn/products/alfa/awus036eacs/"
 series_order: 8
 featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036EACS 用什么芯片？支持蓝牙吗？"
     answer: "采用 Realtek RTL8821CU 芯片，支持 WiFi 5 与蓝牙 4.2。"

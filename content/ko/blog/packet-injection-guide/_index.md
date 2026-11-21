@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["packet-injection", "aireplay-ng", "kali-linux", "wifi-adapter", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 패킷 인젝션 — 정식 명칭으로는 **802.11 프레임 인젝션** — 은 무선 어댑터가 자체 네트워크 스택에서 생성되지 않은 프레임을 포함하여 임의의 802.11 프레임을 무선 매체로 전송할 수 있는 능력입니다. 정상적인 동작에서는 무선 드라이버가 OS가 정당하게 생성한 프레임, 즉 연결 요청이나 연결된 네트워크용 데이터 프레임 등만 구성하고 전송합니다. 패킷 인젝션은 이러한 제약을 우회하여, `aireplay-ng`와 같은 도구가 관리, 제어, 데이터 등 모든 프레임 유형을 임의의 내용, 출발지 주소, 목적지 주소로 구성하고 전송할 수 있게 합니다.
 

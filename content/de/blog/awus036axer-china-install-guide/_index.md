@@ -14,6 +14,7 @@ series: ["alfa-china-install-guide"]
 series_order: 5
 related_product: "/de/products/alfa/awus036axer/"
 featureimage: "/images/blog/awus036axer-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Welchen Chipsatz verwendet der AWUS036AXER? Ist er derselbe wie beim AWUS036AX?"
     answer: "Er verwendet ebenfalls den Realtek RTL8832BU-Chipsatz, unterstützt WiFi 6, ist jedoch kleiner und tragbarer."

@@ -25,6 +25,7 @@ series: ["alfa-china-install-guide"]
 series_order: 3
 related_product: "/en/products/alfa/awus036acs/"
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 The AWUS036ACS is ALFA's compact dual-band security research adapter. Its RTL8811AU chip supports full monitor mode and packet injection on Kali Linux. On **Linux kernel 6.13+** (e.g. Ubuntu 24.04 HWE / kernel 6.17) the kernel already ships the built-in rtw88_8821au driver, so it works plug-and-play with no DKMS. Only on **older kernels** (below 6.13) do you need to compile the community 8821au driver from source. In China GitHub can be slow, so for that case this guide installs build tools from domestic mirrors and clones the driver from the verified GitHub repository; if GitHub is slow, use a proxy or mirror you trust.

@@ -10,6 +10,7 @@ showTableOfContents: true
 tags: ["ALFA-Network", "Soft-AP", "WiFi-Hotspot", "hostapd", "Kali-Linux", "Ubuntu", "Debian", "Raspberry-Pi", "AWUS036ACM", "AWUS036ACH", "AWUS036AXML", "MT7612U", "RTL8812AU", "MT7921AUN", "Linux-WiFi", "USB-无线网卡", "树莓派-WiFi-热点"]
 
 featureimage: "/images/blog/alfa-soft-ap-wifi-hotspot-linux-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "ALFA USB 网卡可以在 Linux 上当 WiFi 热点用吗？"
     answer: "视芯片组而定。AWUS036ACM（MT7612U）完整支持且即插即用，AWUS036ACH（RTL8812AU）有条件支持，AWUS036AXML 部分支持需调校。"

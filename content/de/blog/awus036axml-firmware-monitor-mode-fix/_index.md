@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Warum stürzt AWUS036AXML im aktiven Monitor Mode ab?"
     answer: "MT7921AUN verwendet eine firmwarebasierte MAC-Architektur. Die aktuelle Kombination aus Linux mt7921u-Treiber und Firmware implementiert die für aktive Injection erforderlichen Befehlswege nicht vollständig, sodass die Schnittstelle nach der Ausführung von aireplay-ng verschwindet. Dass die Injection auf dem Stock-Kernel 6.17 fehlschlägt, liegt hauptsächlich an einer mac80211-chanctx-Regression ab Kernel 6.16 und ist keine Einschränkung des Chips; gepatchte Community-Treiber ermöglichen Injection wieder, die Firmware sperrt die Rate jedoch weiterhin auf 1/6 Mbps (keine HT/VHT-Frames)."

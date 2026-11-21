@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["driver-install", "kali-linux", "ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
 featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Müssen ALFA USB WiFi-Netzwerkkarten unter Linux mit Treibern ausgestattet werden?"
     answer: "Dies hängt vom Chipsatz ab. MT7612U und MT7921AUN sind bereits im Kernel integriert und können durch Ausführen von modprobe aktiviert werden. Für RTL8812AU muss ein externer Treiber aus dem aircrack-ng GitHub-Repository installiert werden."

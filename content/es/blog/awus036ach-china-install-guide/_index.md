@@ -12,6 +12,7 @@ series_order: 1
 description: "Guía paso a paso para instalar el controlador ALFA AWUS036ACH en China usando espejos domésticos. Compatible con Kali Linux, Ubuntu 22/24, Debian y Raspberry Pi. Herramientas de compilación desde espejos nacionales y código del controlador desde el repositorio de GitHub verificado."
 related_product: "/es/products/alfa/awus036ach/"
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:

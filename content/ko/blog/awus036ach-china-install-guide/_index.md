@@ -25,6 +25,7 @@ series_order: 1
 description: "중국 내 국내 미러를 활용하여 ALFA AWUS036ACH 드라이버를 설치하는 단계별 가이드입니다. Kali Linux, Ubuntu 22/24, Debian, Raspberry Pi를 모두 다룹니다. 빌드 도구는 국내 미러에서, 드라이버 소스는 검증된 GitHub 저장소에서 받습니다."
 related_product: "/ko/products/alfa/awus036ach/"
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 AWUS036ACH를 막 구입했는데 Linux 장비가 이를 인식하지 못하는 상황일 것입니다. 이는 정상적인 현상입니다. 이 칩은 RTL8812AU 드라이버를 필요로 하며 플러그 앤 플레이로 동작하지 않습니다. 본 가이드는 시스템 패키지는 국내 미러를, 드라이버 소스는 검증된 GitHub 저장소를 사용하여 약 30분 안에 전체 설치 과정을 안내합니다. GitHub 접속이 느린 경우 신뢰할 수 있는 프록시 또는 미러를 사용하십시오.

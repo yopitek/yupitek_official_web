@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["acr1252u-m1", "web-nfc", "apdu", "macos", "nfc", "pcsc", "ccid", "smart-card"]
 featureimage: "/images/blog/macos-acs-acr1252u-m1-web-nfc-apdu-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 > **Produit mis en avant** : ACS ACR1252U-M1 (USB NFC Reader III, lecteur de cartes certifié NFC Forum)

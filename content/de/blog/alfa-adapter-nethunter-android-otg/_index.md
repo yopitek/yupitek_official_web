@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["nethunter", "android", "usb-otg", "kali-linux", "AWUS036ACH", "RTL8812AU", "mobile-pentest"]
 featureimage: "/images/blog/alfa-adapter-nethunter-android-otg.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Erfordert die Verwendung von ALFA-Netzwerkadaptern mit Kali NetHunter Root-Zugriff?"
     answer: "Ja. Für die vollständige NetHunter-Version sind ein gerootetes Android-Gerät und ein benutzerdefinierter Kernel erforderlich, um das RTL8812AU-Modul zu laden und die Unterstützung für USB-OTG-Netzwerkadapter zu aktivieren."

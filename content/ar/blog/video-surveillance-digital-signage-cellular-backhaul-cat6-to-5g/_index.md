@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "cellular-module", "video-surveillance", "digital-signage", "lte", "5g", "cat-6", "cat-12", "m2", "backhaul"]
 featureimage: "/images/products/sierra/sierra_banner.png"
+hideFeatureImage: true  # 僅部分語系有此圖，為 11 語系一致而不顯示；featureimage 保留供社群分享預覽
 author: "benny-lai"
 lastmod: 2026-07-31
 related_product: "/ar/products/sierra/"

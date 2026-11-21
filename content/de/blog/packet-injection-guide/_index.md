@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["packet-injection", "aireplay-ng", "kali-linux", "wifi-adapter", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Was ist WiFi Packet Injection?"
     answer: "Packet Injection ist die Fähigkeit einer Netzwerkkarte, beliebige 802.11-Frames direkt auf das drahtlose Medium zu senden, sodass Tools wie aireplay-ng Management-, Control- und Data-Frames erstellen und senden können."

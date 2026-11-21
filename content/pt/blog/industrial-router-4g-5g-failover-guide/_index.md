@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "em9191", "5g", "lte", "failover", "private-network", "m2", "wwan", "sub-6"]
 featureimage: "/images/products/sierra/EM9191_hero.jpg"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 author: "benny-lai"
 lastmod: 2026-07-31
 related_product: "/pt/products/sierra/em9191/"

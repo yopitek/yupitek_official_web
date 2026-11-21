@@ -12,6 +12,7 @@ description: "手把手教你在中國境內安裝 ALFA AWUS036EACS。這款納�
 related_product: "/zh-tw/products/alfa/awus036eacs/"
 series_order: 8
 featureimage: "/images/blog/awus036eacs-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:

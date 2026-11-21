@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA-Network", "Jetson-Orin", "Edge-AI", "USB-WiFi", "AWUS036ACM", "AVALUE", "AIB-NW01"]
 featureimage: "/images/blog/awus036acm-jetson-orin-setup.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "为什么 USB WiFi 网卡在 Jetson Orin 上经常无法使用？"
     answer: "Jetson 使用 NVIDIA 客制化 Tegra 核心，非标准 Ubuntu 核心。第三方驱动常因核心 headers 无法取得或 ABI 不兼容而编译失败。"

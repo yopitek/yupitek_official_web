@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Validate JSON-LD (Product/FAQPage/BreadcrumbList/CollectionPage+ItemList) of built brand pages. Usage: products_jsonld_check.py <build_dir>
-Exit 1 on errors. Warnings (Product without offers/review/aggregateRating) are listed but do not fail."""
+Exit 1 on errors, including a Product without offers/review/aggregateRating — Search Console reports
+that as a critical issue ("必須指定 offers、review 或 aggregateRating") and drops the page from
+product rich results."""
 import json,re,sys
 from pathlib import Path
 D=Path(sys.argv[1]); BR=("acr","flipperzero","hak5","sdrlab")
@@ -28,7 +30,8 @@ for lang in ("en","zh-tw"):
             else:
                 for f in ("name","image","description"):
                     if not P.get(f): errs.append((k,f"Product missing {f}"))
-                if not (P.get("offers") or P.get("review") or P.get("aggregateRating")): warns.append((k,"Product has no offers/review/aggregateRating (not eligible for product rich result)"))
+                # Google Search Console treats this as a critical error: the page is dropped from product rich results
+                if not (P.get("offers") or P.get("review") or P.get("aggregateRating")): errs.append((k,"Product has no offers/review/aggregateRating"))
             F=t.get("FAQPage")
             if F:
                 for q in F.get("mainEntity",[]):

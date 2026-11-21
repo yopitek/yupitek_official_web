@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "wireless-adapter", "virtual-machine"]
 featureimage: /images/blog/vm-kali-linux-usb-passthrough-troubleshooting-guide.webp
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "我換了 USB 連接埠結果 `lsusb` 就消失了，是網路卡壞了嗎？"
     answer: "不一定。先確認你插的是不是「僅充電」連接埠，或主機為了省電把裝置休眠了。換回主機板背板的一般 USB 連接埠，或重新插拔一次，多半就恢復。"

@@ -14,6 +14,7 @@ series: ["alfa-china-install-guide"]
 related_product: "/de/products/alfa/awus036axm/"
 series_order: 6
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Welchen Chip verwendet der AWUS036AXM? Unterstützt er WiFi 6?"
     answer: "Er verwendet den MediaTek MT7921AUN-Chip und unterstützt WiFi 6 (Dualband 2.4G/5G Hz). Getestet wurde 2.4/5 GHz; 6 GHz wurde nicht verifiziert."

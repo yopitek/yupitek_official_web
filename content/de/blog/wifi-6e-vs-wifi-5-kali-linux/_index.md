@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "penetration-testing", "kali-linux"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Welche Unterschiede bestehen zwischen Wi-Fi 6E und Wi-Fi 5 im Hinblick auf Penetrationstests?"
     answer: "Wi-Fi 6E fügt das 6-GHz-Band und 1,2 GHz Spektrum hinzu, was sich für die Überprüfung moderner Unternehmensbereitstellungen eignet. Der Treiber für Wi-Fi 5 ist ausgereift und bietet auf 2,4/5 GHz eine höhere Stabilität."

@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["WPA3", "SAE", "dragonblood", "transition-mode", "PMF", "kali-linux", "ALFA-network", "penetration-testing"]
 featureimage: "/images/blog/wpa3-security-testing-alfa-2026.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "WPA3 与 WPA2 在安全测试上有何不同？"
     answer: "WPA3 采用 SAE 握手取代 PSK，具备前向保密且无法离线字典攻击。PMF 为强制要求，但转换模式引入了降级攻击面。"

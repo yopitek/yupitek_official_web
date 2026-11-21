@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["驱动安装", "Kali-Linux", "Ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
 featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "ALFA USB WiFi 网卡在 Linux 上需要安装驱动吗？"
     answer: "视芯片组而定。MT7612U 与 MT7921AUN 已内置核心，执行 modprobe 即可。RTL8812AU 需从 aircrack-ng GitHub 安装外部驱动。"

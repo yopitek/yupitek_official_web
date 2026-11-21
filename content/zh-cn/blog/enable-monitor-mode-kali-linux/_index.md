@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["监听模式", "Kali-Linux", "airmon-ng", "iw", "WiFi网卡", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "监听模式与受管理模式有何不同？"
     answer: "监听模式让网卡捕获空中所有 802.11 讯框，不受管理模式只接收目标 MAC 符合自身数据包的限制，是无线渗透测试的基础。"

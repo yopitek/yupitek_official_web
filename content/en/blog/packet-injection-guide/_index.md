@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["packet-injection", "aireplay-ng", "kali-linux", "wifi-adapter", "RTL8812AU", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 Packet injection — formally known as **802.11 frame injection** — is the ability of a wireless adapter to transmit arbitrary 802.11 frames onto a wireless medium, including frames that do not originate from the adapter's own network stack. In normal operation, a wireless driver constructs and transmits only the frames that the OS has legitimately generated: association requests, data frames for connected networks, and so on. Packet injection bypasses these restrictions, allowing a tool like `aireplay-ng` to craft and send any frame type — management, control, or data — with arbitrary content, source addresses, and destination addresses.
 

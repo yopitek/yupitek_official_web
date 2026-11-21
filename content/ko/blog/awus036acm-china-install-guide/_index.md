@@ -25,6 +25,7 @@ series_order: 2
 description: "국내(중국) 미러를 사용해 중국 환경에서 ALFA AWUS036ACM 드라이버를 설치하는 단계별 가이드입니다. MT7612U 커널 내장 드라이버, 완전한 VIF 지원. Kali Linux, Ubuntu 22/24, Debian, Raspberry Pi를 모두 다룹니다. GitHub가 필요 없습니다."
 related_product: "/ko/products/alfa/awus036acm/"
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 AWUS036ACM은 Linux에서 설정하기 가장 쉬운 Alfa 어댑터 중 하나입니다. MT7612U 칩은 `mt76x2u` 드라이버를 사용하며, 이 드라이버는 Linux 커널 4.19 버전부터 커널에 내장되어 있습니다. 대부분의 최신 시스템에서 어댑터는 명령어 두세 개만으로 동작합니다. 이 가이드는 국내(중국) 미러만을 사용하여 드라이버 확인, 모니터 모드, 패킷 인젝션, VIF까지 전체 설정 과정을 다룹니다. GitHub가 필요 없습니다.

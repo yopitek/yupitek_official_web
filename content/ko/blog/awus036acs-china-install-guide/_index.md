@@ -25,6 +25,7 @@ series: ["alfa-china-install-guide"]
 series_order: 3
 related_product: "/ko/products/alfa/awus036acs/"
 featureimage: "/images/blog/awus036acs-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 AWUS036ACS는 ALFA의 소형 듀얼밴드 보안 연구용 어댑터입니다. RTL8811AU 칩은 Kali Linux에서 완전한 모니터 모드와 패킷 인젝션을 지원합니다. <strong>Linux 커널 6.13+</strong>(예: Ubuntu 24.04 HWE / 커널 6.17)에서는 커널에 이미 내장 rtw88_8821au 드라이버가 포함되어 있어 DKMS 없이 플러그 앤 플레이로 동작합니다. <strong>구형 커널</strong>(6.13 미만)에서만 커뮤니티 8821au 드라이버를 소스에서 컴파일해야 합니다. 중국에서는 GitHub가 느릴 수 있으므로, 그 경우 이 가이드는 국내 미러에서 빌드 도구를 설치하고 검증된 GitHub 저장소에서 드라이버를 클론합니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하십시오.

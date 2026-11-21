@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["kali-linux", "wifi-adapter", "monitor-mode", "packet-injection", "ALFA-Network"]
 featureimage: "/images/blog/best-wifi-adapter-kali-linux-2026.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 무선 보안 테스트, 침투 테스트, 또는 Kali Linux를 활용한 윤리적 해킹 학습을 본격적으로 시작하려 한다면 가장 먼저 깨닫게 되는 사실이 있습니다. 노트북 내장 WiFi 카드로는 거의 확실히 원하는 작업을 할 수 없다는 점입니다. 본 가이드에서는 2026년 기준으로 적합한 USB WiFi 어댑터를 선택하는 방법과, 사용 중인 플랫폼에서 이를 정상 동작시키는 방법을 정리합니다.

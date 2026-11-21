@@ -12,6 +12,7 @@ series_order: 2
 description: "Guía paso a paso para instalar los controladores ALFA AWUS036ACM en China usando espejos nacionales. Controlador MT7612U integrado en el kernel, soporte VIF completo. Cubre Kali Linux, Ubuntu 22/24, Debian y Raspberry Pi. No se requiere GitHub."
 related_product: "/es/products/alfa/awus036acm/"
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:

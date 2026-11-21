@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Welcher Raspberry Pi eignet sich am besten für Penetrationstests?"
     answer: "Der Raspberry Pi 5 (4 GB oder 8 GB) ist die beste Wahl. Der Pi 4 (4 GB+) funktioniert ebenfalls einwandfrei; der Pi 3B+ ist jedoch zu langsam für die Echtzeit-Paket-Erfassung."

@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "AWUS036ACM", "对比", "Kali-Linux", "RTL8812AU", "MT7612U"]
 featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036ACH 和 AWUS036ACM 驱动安装有什么差异？"
     answer: "AWUS036ACH 采 RTL8812AU 芯片，需通过 DKMS 编译安装 aircrack-ng 社群驱动，内核更新后可能需重新编译；AWUS036ACM 的 MT7612U 驱动自核心 4.19 起整合进主线，即插即用无需编译。"

@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["mt7921au", "kali-linux", "linux", "awus036axml", "monitor-mode", "dkms", "driver", "mediatek"]
 featureimage: /images/blog/mediatek-mt7921au-linux-in-kernel-driver-awus036axml.webp
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 > **Behandeltes Produkt**: ALFA AWUS036AXML (MediaTek MT7921AUN / MT7921AUN) | **Vergleichsgerät**: ALFA AWUS036ACH (Realtek RTL8812AU)

@@ -12,6 +12,7 @@ series_order: 2
 description: "Guia passo a passo para instalar o driver ALFA AWUS036ACM na China usando espelhos domésticos. Driver MT7612U nativo do kernel, suporte VIF completo. Kali Linux, Ubuntu 22/24, Debian e Raspberry Pi. Sem GitHub."
 related_product: "/pt/products/alfa/awus036acm/"
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 author: "benny-lai"
 lastmod: 2026-07-02
 

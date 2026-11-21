@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036ACH", "Kali-Linux", "监听模式", "数据包注入", "RTL8812AU", "airmon-ng"]
 featureimage: "/images/blog/awus036ach-kali-linux-setup.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036ACH 在 Kali Linux 上需要额外安装驱动吗？"
     answer: "需要。RTL8812AU 并非主线内核驱动，需从 aircrack-ng GitHub 仓库安装，建议使用 DKMS 确保内核更新后仍可运行。"

@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["DJI", "drone", "antenna-upgrade", "RP-SMA", "IPEX4", "range-extension", "ALFA-APA-M25", "ALFA-APA-M25-6E", "ALFA-ARS-25-57A", "ALFA-ARS-NT5B7"]
 featureimage: "/images/blog/dji-drone-controller-antenna-upgrade.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "更换天线会使 DJI 保固失效吗？"
     answer: "RC-N1 这类配备外露 RP-SMA 接头的机型，外部天线属用户可自行维护的零件，更换本身不太可能影响机身保固，但请保留原厂天线以便送修时重新安装。RC2、RC Pro、Smart Controller 这类需拆壳才能改装的机型，一旦拆壳即立即失去保固。"

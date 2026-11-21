@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "VirtualBox 使用 ALFA 网卡需要安装 Extension Pack 吗？"
     answer: "需要。VirtualBox 必须安装 Extension Pack 才能支持 USB 2.0 与 USB 3.0 直通，否则只能使用 USB 1.1，不足以驱动现代 ALFA 网卡。"

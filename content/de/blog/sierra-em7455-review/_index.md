@@ -7,6 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["sierra-wireless", "em7455", "lte-a", "cat-6", "openwrt", "linux", "m2", "gnss", "wwan"]
 featureimage: "/images/products/sierra/EM7455_hero.jpg"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 author: "benny-lai"
 lastmod: 2026-07-31
 faq:

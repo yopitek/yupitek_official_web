@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["天线", "APA-M25", "ARS-NT5B7", "RP-SMA", "WiFi网卡", "ALFA-Network", "信号增强"]
 featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "ALFA 网卡的天线可以自行更换吗？"
     answer: "可以。配置 RP-SMA 接头的 ALFA 网卡如 AWUS036ACH、AWUS036ACM、AWUS036AXML 均可更换天线，无需工具，逆时针旋下再顺时针旋入即可。"

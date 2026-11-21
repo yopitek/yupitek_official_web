@@ -14,6 +14,7 @@ description: "手把手教你在中国境内安装 ALFA WiFi 6E 旗舰网卡 AWU
 related_product: "/zh-cn/products/alfa/awus036axml/"
 series_order: 7
 featureimage: "/images/blog/awus036axml-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036AXML 用什么芯片？跟 AWUS036AXM 一样吗？"
     answer: "同样采用 MediaTek MT7921AUN 芯片，但 AWUS036AXML 是 USB-C 接口的旗舰版。"

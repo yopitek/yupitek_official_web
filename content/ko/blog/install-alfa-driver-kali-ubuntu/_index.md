@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["driver-install", "kali-linux", "ubuntu", "RTL8812AU", "MT7612U", "MT7921AUN", "ALFA-Network"]
 featureimage: "/images/blog/install-alfa-driver-kali-ubuntu.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 Linux에서 USB WiFi 어댑터를 작동시키는 것은 결국 한 가지, 바로 드라이버로 귀결됩니다. 제조사가 드라이버를 실행형 설치 프로그램으로 묶어 제공하는 Windows와 달리, Linux는 커널 모듈을 사용합니다 — 운영체제가 하드웨어와 통신하기 위해 로드하는 컴파일된 코드입니다. 이 모델을 이해하면 문제 해결이 명쾌해지고 드라이버 설치가 예측 가능해집니다.

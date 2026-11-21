@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "wifi-6e", "review", "kali-linux", "MT7921AUN", "6GHz"]
 featureimage: "/images/blog/awus036axml-wifi-6e-review.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 **ALFA AWUS036AXML**은 무선 보안 연구 분야에서 Wi-Fi 6E 시대를 겨냥한 ALFA Network의 제품입니다. **Mediatek MT7921AUN** 칩셋을 기반으로 하며, 2026년 현재 보안 연구자가 **6 GHz 대역**에서 동작할 수 있게 해주는 매우 드문 USB 무선 어댑터 중 하나입니다. 6 GHz 대역은 Wi-Fi 6E 네트워크가 사용하는 가장 최신의 비면허 주파수 할당 대역입니다.
 

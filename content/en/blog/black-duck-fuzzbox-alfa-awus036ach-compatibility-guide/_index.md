@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
 featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 WLAN protocol fuzzing—often referred to as wireless negative testing—is one of the most critical steps in validating the security and robustness of embedded wireless devices, smart home appliances, and enterprise access points. However, attempting to transmit malformed 802.11 management, control, or data frames over-the-air requires low-level control of the media access control (MAC) layer that standard operating systems and commercial WiFi drivers simply do not allow.

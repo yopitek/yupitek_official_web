@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["baoyu-skills", "AI-image-generation", "行銷", "ALFA-Network", "GitHub-Copilot"]
 featureimage: "/images/blog/baoyu-skills/cover-image-4.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "baoyu-skills 是什麼？"
     answer: "baoyu-skills 是 GitHub Copilot CLI 的開源外掛集合，提供 19 項技能涵蓋圖片生成、HTML 輸出、翻譯與社群發布，全部可從終端機直接呼叫。"

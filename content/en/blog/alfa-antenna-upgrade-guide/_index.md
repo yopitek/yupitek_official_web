@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["antenna", "APA-M25", "ARS-NT5B7", "RP-SMA", "wifi-adapter", "ALFA-Network", "signal-boost"]
 featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 Every ALFA Network USB Wi-Fi adapter that features a detachable antenna ships with a serviceable **omnidirectional stick antenna** — typically 5 dBi. These default antennas are adequate for general use, but they leave significant performance on the table in scenarios where range, directionality, or specific frequency focus matters.
 

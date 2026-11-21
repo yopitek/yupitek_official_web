@@ -25,6 +25,7 @@ series: ["alfa-china-install-guide"]
 series_order: 4
 related_product: "/ko/products/alfa/awus036ax/"
 featureimage: "/images/blog/awus036ax-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 AWUS036AX는 ALFA의 WiFi 6 AX1800 듀얼밴드 어댑터입니다. RTL8832BU 칩은 <strong>Linux 커널 6.17 이상의 인커널 rtw89_8852bu 드라이버</strong>(예: Ubuntu 24.04 HWE / 커널 6.17)에서 지원되어 컴파일 없이 플러그 앤 플레이로 동작합니다. <strong>구형 커널</strong>(6.17 미만)에서만 커뮤니티 rtl8852bu 드라이버를 DKMS로 한 번 빌드하면 됩니다. 이 가이드는 두 경우를 모두 다룹니다. 드라이버 소스는 검증된 GitHub 저장소에서 클론합니다. GitHub가 느리다면 신뢰할 수 있는 프록시나 미러를 사용하십시오.

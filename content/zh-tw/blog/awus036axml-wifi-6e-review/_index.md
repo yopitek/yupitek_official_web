@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "wifi-6e", "評測", "Kali-Linux", "MT7921AUN", "6GHz"]
 featureimage: "/images/blog/awus036axml-wifi-6e-review.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036AXML 支援哪些頻段？"
     answer: "支援三頻 2.4 GHz、5 GHz 與 6 GHz，符合 IEEE 802.11ax Wi-Fi 6E 標準，是少數能讓資安研究人員在 6 GHz 頻段操作的 USB 無線網路卡。"

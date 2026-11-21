@@ -7,6 +7,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["حقن-الحزم", "aireplay-ng", "Kali-Linux", "محول-WiFi", "ALFA-Network"]
 featureimage: "/images/blog/packet-injection-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 author: "benny-lai"
 lastmod: 2026-11-20
 faq:

@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["enterprise", "wireless-security", "penetration-testing", "rogue-AP", "WPA2", "WPA3", "PMF", "ALFA-network"]
 featureimage: "/images/blog/enterprise-wireless-security-assessment.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "企业无线安全评估包括哪些阶段？"
     answer: "完整评估涵盖六个依序阶段：被动侦查、恶意 AP 检测、WPA2/WPA3 握手分析、PMF 验证、客户端隔离测试，以及 EAP/RADIUS 评估。"

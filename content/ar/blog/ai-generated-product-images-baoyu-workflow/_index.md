@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["baoyu-skills", "توليد-الصور-بالذكاء-الاصطناعي", "تسويق", "ALFA-Network", "GitHub-Copilot"]
 featureimage: "/images/blog/baoyu-skills/cover-image-4.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "ما هي baoyu-skills؟"
     answer: "baoyu-skills هي مجموعة إضافات مفتوحة المصدر لواجهة سطر أوامر GitHub Copilot، توفر 19 مهارة تغطي توليد الصور، وإخراج HTML، والترجمة، والنشر الاجتماعي، جميعها قابلة للاستدعاء مباشرةً من الطرفية."

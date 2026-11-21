@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["Black-Duck-FuzzBox", "FuzzBox", "ALFA-Network", "AWUS036ACH", "monitor-mode", "packet-injection", "protocol-fuzzing"]
 featureimage: "/images/blog/black-duck-fuzzbox-alfa-awus036ach-compatibility-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Wofür wird das Black Duck FuzzBox-Tool eingesetzt?"
     answer: "Black Duck FuzzBox ist eine spezialisierte Umgebung für Wireless-Protokoll-Fuzzing, die durch das Injizieren anomaler 802.11-Frames die Robustheit der Protokoll-Stacks eingebetteter Wireless-Geräte und Access Points überprüft."

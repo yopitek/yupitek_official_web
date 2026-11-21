@@ -71,9 +71,11 @@ test.describe('4 ALFA New Blog Articles 10-Locale Quality & Image Audit', () => 
 
       expect(brokenImages, `Broken images on ${route}: ${JSON.stringify(brokenImages)}`).toEqual([]);
 
-      // Check at least 1 image is present
-      const imgCount = await page.locator('img').count();
-      expect(imgCount).toBeGreaterThanOrEqual(1);
+      // Articles whose cover was cropped badly in the 975x280 hero box set hideFeatureImage,
+      // so they render no <img> on purpose. featureimage is kept, so the social preview must
+      // still be there — that is what we actually guarantee for every article.
+      const ogImage = await page.locator('meta[property="og:image"]').getAttribute('content');
+      expect(ogImage, `No og:image on ${route}`).toBeTruthy();
 
       // Check hreflang alternates exist
       const hreflangCount = await page.locator('link[rel="alternate"][hreflang]').count();

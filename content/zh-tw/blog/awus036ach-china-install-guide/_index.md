@@ -12,6 +12,7 @@ description: "手把手教你在中國境內使用國內映像站安裝 ALFA AWU
 related_product: "/zh-tw/products/alfa/awus036ach/"
 series_order: 1
 featureimage: "/images/blog/awus036ach-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 author: "benny-lai"
 lastmod: 2026-07-02
 faq:

@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["monitor-mode", "kali-linux", "airmon-ng", "iw", "wifi-adapter", "ALFA-Network"]
 featureimage: "/images/blog/enable-monitor-mode-kali-linux.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 모니터 모드는 무선 네트워크 인터페이스 카드(NIC)의 특수 동작 모드로, 자신의 장치로 향하는 프레임뿐 아니라 공중의 **모든** 802.11 프레임을 캡처할 수 있게 해 줍니다. 일반적인 "관리(managed)" 모드에서는 어댑터가 자신의 MAC 주소로 향하는 패킷만 수신하고 나머지는 모두 폐기합니다. 모니터 모드는 이 필터를 완전히 해제합니다.
 

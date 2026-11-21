@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["antenna", "APA-M25", "ARS-NT5B7", "RP-SMA", "wifi-adapter", "ALFA-Network", "signal-boost"]
 featureimage: "/images/blog/alfa-antenna-upgrade-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 분리형 안테나를 갖춘 모든 ALFA Network USB Wi-Fi 어댑터에는 실용적인 **무지향성 스틱 안테나**(일반적으로 5 dBi)가 기본 제공됩니다. 이러한 기본 안테나는 일반적인 용도에는 충분하지만, 도달 거리, 지향성, 특정 주파수 집중이 중요한 시나리오에서는 상당한 성능 여유를 남겨 둡니다.
 

@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["AWUS036AXML", "MT7921AUN", "monitor-mode", "firmware", "kali-linux", "troubleshooting", "wifi-6e"]
 featureimage: "/images/blog/awus036axml-firmware-monitor-mode-fix.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036AXML 为什么会在主动监控模式下当机？"
     answer: "MT7921AUN 采用固件式 MAC 架构，当前 Linux mt7921u 驱动程序与固件组合未完整实作主动注入所需的指令路径，执行 aireplay-ng 后接口会消失。"

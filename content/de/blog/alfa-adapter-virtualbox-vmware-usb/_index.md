@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Erfordert die Verwendung von ALFA-Netzwerkkarten in VirtualBox die Installation des Extension Packs?"
     answer: "Ja. VirtualBox erfordert die Installation des Extension Packs, um USB-2.0- und USB-3.0-Passthrough zu unterstützen, andernfalls kann nur USB 1.1 verwendet werden, was für die Ansteuerung moderner ALFA-Netzwerkkarten nicht ausreicht."

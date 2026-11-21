@@ -14,6 +14,7 @@ series_order: 2
 description: "Schritt-für-Schritt-Anleitung zur Installation von ALFA AWUS036ACM-Treibern in China mit inländischen Spiegeln. MT7612U In-Kernel-Treiber, vollständige VIF-Unterstützung. Für Kali Linux, Ubuntu 22/24, Debian und Raspberry Pi. GitHub nicht erforderlich."
 related_product: "/de/products/alfa/awus036acm/"
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Welchen Chipsatz verwendet der AWUS036ACM? Muss ein Treiber installiert werden?"
     answer: "Er verwendet den MediaTek MT7612U-Chipsatz. Der Treiber mt76x2u ist seit Linux Kernel 4.19 im Kernel integriert, sodass er in den meisten Fällen Plug-and-Play funktioniert."

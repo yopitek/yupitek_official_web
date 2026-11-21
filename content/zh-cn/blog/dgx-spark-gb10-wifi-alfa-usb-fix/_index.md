@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["dgx-spark", "gb10", "ai-server", "wifi", "alfa-network", "tutorial", "asus-ascent-gx10", "msi-edgexpert", "hp-zgx-nano", "altos-brainsphere", "gigabyte-ai-top-atom"]
 featureimage: "/images/blog/dgx-spark-gb10-wifi-alfa-usb-fix.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "DGX Spark 的 Wi-Fi 为什么连不上？"
     answer: "DGX Spark 内置 MediaTek MT7925 Wi-Fi 7 芯片，但 OOBE 阶段的 wpa_supplicant 过度精简，与特定品牌 AP（特别是 UniFi）不兼容，WPA2-Enterprise 几乎确定无法连接。"

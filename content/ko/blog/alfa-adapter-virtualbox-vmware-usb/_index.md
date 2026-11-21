@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "alfa-network", "AWUS036ACH", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-virtualbox-vmware-usb.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 가상 머신 내부에서 ALFA WiFi 어댑터를 실행하는 것은 단순히 연결하고 게스트 OS가 인식하기를 바라는 것만큼 간단하지 않습니다. 공유 폴더나 브리지 네트워킹과 달리, 모니터 모드와 원시 패킷 인젝션에는 <strong>완전한 USB 제어</strong>가 필요합니다. VM은 호스트의 네트워크 스택을 통해 장치를 공유하는 것이 아니라 USB 장치를 독점적으로 소유해야 합니다. 이를 USB 패스스루라고 하며, 이를 올바르게 구성하는 것은 VM에서 작업하는 침투 테스터와 CTF 참가자에게 가장 흔한 설정 실패 지점입니다.

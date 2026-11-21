@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["alfa-driver", "kernel-update", "rtl8812au", "kali-linux", "ubuntu", "dkms", "troubleshooting"]
 featureimage: "/images/blog/fix-alfa-driver-kernel-update.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 `sudo apt upgrade`를 실행하고 재부팅하면 ALFA 어댑터가 사라졌습니다. 인터페이스도, 표시등도, 아무것도 없습니다. 이것은 Linux에서 ALFA Network USB WiFi 어댑터와 관련해 가장 흔한 지원 문의이며 — 커널 업데이트가 거의 항상 원인입니다. 이 가이드는 가장 큰 영향을 받는 두 칩셋 계열, 즉 <strong>RTL8812AU</strong>(AWUS036ACH와 AWUS036ACS에 탑재)와 <strong>MT7921AUN</strong>(AWUS036AXM과 AXML에 탑재)에 대한 체계적인 진단 및 복구 과정을 안내합니다. 각 섹션을 순서대로 따르면 15분 이내에 어댑터가 다시 온라인 상태가 됩니다.

@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["DJI", "drone", "antenna-upgrade", "RP-SMA", "IPEX4", "range-extension", "ALFA-APA-M25", "ALFA-APA-M25-6E", "ALFA-ARS-25-57A", "ALFA-ARS-NT5B7"]
 featureimage: "/images/blog/dji-drone-controller-antenna-upgrade.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Erlöscht die DJI-Garantie, wenn ich die Antennen tausche?"
     answer: "Bei Modellen mit externem RP-SMA-Anschluss wie dem RC-N1 gelten die externen Antennen als vom Nutzer wartbare Teile – der Tausch selbst beeinträchtigt die Garantie kaum. Bei RC2, RC Pro und Smart Controller erlischt die Garantie dagegen sofort, sobald du das Gehäuse für den Umbau öffnest. Heb die Originalantennen auf, um sie bei einem Reparaturservice wieder anzubauen."

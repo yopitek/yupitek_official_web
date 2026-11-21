@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["wifi-6e", "wifi-5", "AWUS036AXML", "AWUS036ACH", "penetration-testing", "kali-linux"]
 featureimage: "/images/blog/wifi-6e-vs-wifi-5-kali-linux.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 진짜 질문은 이것입니다. 2026년 현재 귀하의 테스트 환경에서 6 GHz 기능을 추가하는 것이 그만한 복잡성을 감수할 가치가 있을까요? 이 글은 사양표가 아니라 의사결정 프레임워크를 제공합니다.

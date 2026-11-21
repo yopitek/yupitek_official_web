@@ -25,6 +25,7 @@ series: ["alfa-china-install-guide"]
 series_order: 6
 related_product: "/ko/products/alfa/awus036axm/"
 featureimage: "/images/blog/awus036axm-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 AWUS036AXM은 공간을 절약하는 L자형 USB-A 커넥터를 갖춘 ALFA의 WiFi 6 어댑터입니다. MT7921AUN 칩은 `mt7921u` 드라이버를 사용하며, 이 드라이버는 Linux 커널 5.18부터 내장되어 있습니다. L자형 커넥터는 노트북에서 인접한 USB 포트를 가리지 않습니다. 이 가이드는 GitHub를 전혀 사용하지 않고 펌웨어, 드라이버 검증, 모니터 모드, VIF까지 전체 설정을 다룹니다. 참고: 이 어댑터에서는 패킷 인젝션이 작동하지 않습니다(아래 참조).

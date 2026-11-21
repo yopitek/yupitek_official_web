@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["macos", "vmware-fusion", "parallels", "kali-linux", "usb-passthrough", "alfa-network", "AWUS036AXML"]
 featureimage: "/images/blog/alfa-adapter-macos-vm-setup.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "ALFA 网卡能在 macOS 原生使用监听模式吗？"
     answer: "不能。macOS 的 CoreWLAN 与 IO80211Family 架构不支持第三方网卡的监听模式或数据包注入，必须通过 VM 执行 Kali Linux 并使用 USB 直通。"

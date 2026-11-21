@@ -14,6 +14,7 @@ series: ["alfa-china-install-guide"]
 related_product: "/de/products/alfa/awus036axml/"
 series_order: 7
 featureimage: "/images/blog/awus036axml-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Welchen Chip verwendet der AWUS036AXML? Ist er derselbe wie beim AWUS036AXM?"
     answer: "Er verwendet ebenfalls den MediaTek MT7921AUN-Chip, aber der AWUS036AXML ist die Flaggschiff-Version mit USB-C-Schnittstelle."

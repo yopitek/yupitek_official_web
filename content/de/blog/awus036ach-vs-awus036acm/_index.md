@@ -12,6 +12,7 @@ series: ["alfa-china-install-guide"]
 series_order: 10
 slug: "awus036ach-vs-awus036acm"
 featureimage: "/images/blog/awus036ach-vs-awus036acm.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Gibt es Unterschiede bei der Treiberinstallation zwischen dem AWUS036ACH und dem AWUS036ACM?"
     answer: "Der AWUS036ACH verwendet den RTL8812AU-Chip und erfordert die Installation des aircrack-ng-Community-Treibers über DKMS, was nach Kernel-Updates möglicherweise eine Neukompilierung erfordert; der Treiber für den MT7612U des AWUS036ACM ist seit Kernel 4.19 im Mainline integriert, sodass Plug-and-Play ohne Kompilierung möglich ist."

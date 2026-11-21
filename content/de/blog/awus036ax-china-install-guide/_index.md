@@ -14,6 +14,7 @@ series: ["alfa-china-install-guide"]
 series_order: 4
 related_product: "/de/products/alfa/awus036ax/"
 featureimage: "/images/blog/awus036ax-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "Welchen Chipsatz verwendet der AWUS036AX? Unterstützt er WiFi 6?"
     answer: "Er verwendet den Realtek RTL8832BU-Chipsatz und unterstützt das Hochgeschwindigkeitsnetzwerk WiFi 6 (802.11ax)."

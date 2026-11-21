@@ -20,6 +20,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["baoyu-skills", "AI-image-generation", "marketing", "ALFA-Network", "GitHub-Copilot"]
 featureimage: "/images/blog/baoyu-skills/cover-image-4.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 ---
 
 Yopitek은 WiFi 어댑터, 보안 연구 도구, SDR 모듈 등 기술 하드웨어 제품을 유통하고 있으며, 8개 언어에 걸쳐 일관되고 품질 높은 마케팅 비주얼을 제작하는 일은 늘 과제였습니다. 이 글에서는 GitHub Copilot CLI용 **baoyu-skills** 플러그인 모음을 사용하여 다양한 형식과 스타일의 제품 이미지를 생성하는 방법을 기록합니다.

@@ -96,6 +96,12 @@
         {{- $product := dict "@context" "https://schema.org" "@type" "Product" "name" .Title "url" .Permalink "brand" (dict "@type" "Brand" "name" (index $brandNames $brandKey)) "inLanguage" .Site.Language.Locale -}}
         {{- with .Description }}{{ $product = merge $product (dict "description" .) }}{{ end -}}
         {{- with .Params.featureimage }}{{ $product = merge $product (dict "image" (. | absURL)) }}{{ end -}}
+        {{/* offers is required: without offers / review / aggregateRating Search Console reports a
+             critical error and drops the page from product rich results. No price is published —
+             these are quote-based B2B products — so the Offer carries availability and seller only,
+             matching the ALFA / Ubiquiti schema in extend-head-uncached.html. */}}
+        {{- $product = merge $product (dict "sku" (path.Base .File.Dir | upper)) -}}
+        {{- $product = merge $product (dict "offers" (dict "@type" "Offer" "availability" "https://schema.org/InStock" "url" .Permalink "seller" $seller)) -}}
         ,{{ $product | jsonify | safeJS }}
       {{- else if and (eq $depth 2) (isset $brandNames $brandKey) -}}
         {{- $items := slice -}}

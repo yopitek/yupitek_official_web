@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["raspberry-pi", "kali-linux", "alfa-network", "AWUS036ACH", "RTL8812AU", "portable-pentest", "monitor-mode"]
 featureimage: "/images/blog/alfa-adapter-raspberry-pi-kali.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "哪一款 Raspberry Pi 最适合渗透测试？"
     answer: "Raspberry Pi 5（4 GB 或 8 GB）是最佳选择。Pi 4（4 GB+）也能正常运行；Pi 3B+ 速度不足以应付即时数据包捕获。"

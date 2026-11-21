@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["ALFA", "AWUS036ACM", "MT7612U", "Raspberry Pi", "IBSS", "Ad Hoc", "802.11s", "Mesh 网络", "Linux", "无线网络"]
 featureimage: "/images/blog/awus036acm-ibss-mesh-raspberry-pi.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "AWUS036ACM 为什么是 ALFA 中唯一支持 IBSS/Mesh 的选择？"
     answer: "其 mt76x2u 驱动程序建构于 Linux mac80211 之上，完整开放 IBSS 与 Mesh Point 接口类型；其他 ALFA 型号多采核心外驱动程序，不包含这些模式。"

@@ -9,6 +9,7 @@ showBreadcrumbs: true
 showTableOfContents: true
 tags: ["virtualbox", "vmware", "usb-passthrough", "kali-linux", "wireless-adapter", "virtual-machine"]
 featureimage: /images/blog/vm-kali-linux-usb-passthrough-troubleshooting-guide.webp
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 faq:
   - question: "غيّرت منفذ USB وأصبح lsusb لا يعرض المحول. هل المحول تالف؟"
     answer: "ليس بالضرورة. تحقق أولاً مما إذا كنت توصّل المحول بمنفذ «للشحن فقط»، أو ما إذا كان المضيف قد أوقف الجهاز لتوفير الطاقة. أعد توصيله بمنفذ USB عادي في اللوحة الخلفية، أو افصله وأعد توصيله مرة واحدة، وغالباً ما يعود للعمل."

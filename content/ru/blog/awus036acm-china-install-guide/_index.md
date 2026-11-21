@@ -14,6 +14,7 @@ series: ["alfa-china-install-guide"]
 series_order: 2
 related_product: "/ru/products/alfa/awus036acm/"
 featureimage: "/images/blog/awus036acm-china-install-guide.webp"
+hideFeatureImage: true  # 1024x1024／16:9 原圖在 975x280 框內會裁掉過半，暫不顯示頁面封面；featureimage 保留供社群分享預覽
 
 faq:
   - question: "Какой чип используется в AWUS036ACM? Нужно ли устанавливать драйвер?"

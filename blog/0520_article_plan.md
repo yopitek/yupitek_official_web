@@ -130,7 +130,7 @@ AVALUE 規格頁標示 "Jetpack 5.0" 可能有兩種情況：
 |------|--------|----------|------------|------|
 | **MT7612U** | **AWUS036ACM** | **In-kernel (mt76x2u)** ✅ | **ARM64 K5.10 確認可用** | **低** |
 | RTL8812AU | AWUS036ACH | Out-of-tree 🔴 | NVIDIA 不列入驗證，編譯有已知問題 | 高 |
-| MT7921AU | AWUS036AXM | In-kernel (mt7921u) ⚠️ | 需要 Kernel 5.18+，Orin K5.10/5.15 不滿足 | 高 |
+| MT7921AUN | AWUS036AXM | In-kernel (mt7921u) ⚠️ | 需要 Kernel 5.18+，Orin K5.10/5.15 不滿足 | 高 |
 | RTL8188EUS | 各品牌 | Out-of-tree 🔴 | JetPack 升級可能失效 | 中高 |
 | RTL8832CU | AWUS036AXER | Out-of-tree 🔴 | 無實測資料 | 高 |
 
@@ -189,7 +189,7 @@ GitHub issue #574 證實在 ARM64 + Kernel 5.10 環境下，AWUS036ACM 可被正
 | **AWUS036ACM** 🏆 | MT7612U | In-kernel (4.19+) | ✅ **最推薦** | 真正的 plug-and-play |
 | AWUS036ACH | RTL8812AU | Out-of-tree | ⚠️ 可考慮 | 需手動編譯，編譯過程在 Jetson 上不穩定 |
 | AWUS036ACS | RTL8811AU | Out-of-tree | ⚠️ 可考慮 | 同 RTL8812AU 問題 |
-| AWUS036AXM | MT7921AU | In-kernel (5.18+) | ❌ 不建議 | Kernel 5.10/5.15 太舊，無法使用 |
+| AWUS036AXM | MT7921AUN | In-kernel (5.18+) | ❌ 不建議 | Kernel 5.10/5.15 太舊，無法使用 |
 | AWUS036AXER | RTL8832CU | Out-of-tree | ❌ 不建議 | 驅動不成熟，ARM64 支援未知 |
 | AWUS036AX | RTL8812BU | Out-of-tree | ⚠️ 可考慮 | 需要編譯，但有預編譯選項 |
 
@@ -298,7 +298,7 @@ AWUS036ACM 在這些場景中提供即插即用的連線能力。
 |------|---------------|----------|------------|-------------------|
 | MT7612U | AWUS036ACM | In-kernel (mt76x2u) | 4.19+ | ✅ 完美相容 |
 | RTL8812AU | AWUS036ACH | Out-of-tree | 需編譯 | ⚠️ 相容但需手動編譯 |
-| MT7921AU | AWUS036AXM | In-kernel (mt7921u) | 5.18+ | ❌ Kernel 太舊 |
+| MT7921AUN | AWUS036AXM | In-kernel (mt7921u) | 5.18+ | ❌ Kernel 太舊 |
 | RTL8832CU | AWUS036AXER | Out-of-tree | 需編譯 | ❌ 不建議 |
 | RTL8812BU | AWUS036AX | Out-of-tree | 需編譯 | ⚠️ 需編譯，有風險 |
 | RTL8811AU | AWUS036ACS | Out-of-tree | 需編譯 | ⚠️ 需編譯，有風險 |

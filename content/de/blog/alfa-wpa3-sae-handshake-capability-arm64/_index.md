@@ -81,7 +81,7 @@ Am Beispiel des solidesten EACS dieser Charge sieht ein erfolgreiches End-to-End
 | 5 | **AWUS036EACS** | RTL8821CU / Wi-Fi 5 · 1x1 | **100%** | **100%** | **End-to-End `.22000` belegt (79 ACKs)** |
 | 6 | **AWUS036AX** | RTL8832BU / Wi-Fi 6 · 2x2 | 96% | nutzbar | **End-to-End `.22000` belegt** |
 | 7 | **AWUS036AXER** | RTL8832BU / Wi-Fi 6 · 2x2 | 73% | nutzbar | **End-to-End `.22000` belegt** |
-| 8 | AWUS036AXM | MT7921AU / Wi-Fi 6 · 2x2 | fehlgeschlagen | fehlgeschlagen | nicht unterstützt: Injektion fehlgeschlagen, keine Erfassung möglich |
+| 8 | AWUS036AXM | MT7921AUN / Wi-Fi 6 · 2x2 | fehlgeschlagen | fehlgeschlagen | nicht unterstützt: Injektion fehlgeschlagen, keine Erfassung möglich |
 | 9 | AWUS036AXML | MT7921AUN / Wi-Fi 6 · 2x2 | fehlgeschlagen | fehlgeschlagen | nicht unterstützt: Injektion fehlgeschlagen, keine Erfassung möglich |
 
 **Zwei Ränge, auf einen Blick verständlich:**

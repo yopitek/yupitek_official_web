@@ -81,7 +81,7 @@ Taking this batch's most solid card, the EACS, as an example, one successful end
 | 5 | **AWUS036EACS** | RTL8821CU / Wi-Fi 5 · 1x1 | **100%** | **100%** | **End-to-end `.22000` proven (79 ACKs)** |
 | 6 | **AWUS036AX** | RTL8832BU / Wi-Fi 6 · 2x2 | 96% | usable | **End-to-end `.22000` proven** |
 | 7 | **AWUS036AXER** | RTL8832BU / Wi-Fi 6 · 2x2 | 73% | usable | **End-to-end `.22000` proven** |
-| 8 | AWUS036AXM | MT7921AU / Wi-Fi 6 · 2x2 | fail | fail | Unsupported: injection fails, cannot capture |
+| 8 | AWUS036AXM | MT7921AUN / Wi-Fi 6 · 2x2 | fail | fail | Unsupported: injection fails, cannot capture |
 | 9 | AWUS036AXML | MT7921AUN / Wi-Fi 6 · 2x2 | fail | fail | Unsupported: injection fails, cannot capture |
 
 **Two tiers, at a glance:**

@@ -308,6 +308,6 @@ Esta solución es una **evaluación bench-test para una plataforma de desarrollo
 
 Cuando el vídeo 4K multicanal entra en una plataforma de IA de borde, el punto de estrangulamiento no suele estar en la capacidad de cómputo, sino en la **capacidad de carga inalámbrica y la limpieza de los canales**. 2.4G/5G ya están inundados de dispositivos; **el 6GHz de Wi-Fi 6E ofrece un canal nuevo sin interferencias** — combinado con un adaptador con controlador disponible (el núcleo predeterminado de Jetson es 5.15: compruébelo antes con `modinfo mt7921u`, véase 2.1; esta tarjeta no se ha probado en Jetson), el Jetson Orin Nano puede asumir de forma estable 2–4 canales de 4K, empujando el problema del «techo de ancho de banda» hacia adelante de una sola vez.
 
-**Hardware recomendado**: ALFA AWUS036AXML (MediaTek MT7921AU, soporte nativo sin compilación en Linux Kernel 5.18+, Wi-Fi 6E tribanda, doble antena RP-SMA 5dBi de alta ganancia, bajo consumo de 2.7W). El AWUS036AXMR, basado en la misma arquitectura de chipset, es el modelo integrado sin antenas, adecuado para nodos de borde en racks con espacio limitado.
+**Hardware recomendado**: ALFA AWUS036AXML (MediaTek MT7921AUN, soporte nativo sin compilación en Linux Kernel 5.18+, Wi-Fi 6E tribanda, doble antena RP-SMA 5dBi de alta ganancia, bajo consumo de 2.7W).
 
 **Siguiente paso**: ejecute primero las mediciones de «valores de referencia» del capítulo 1 y luego marque la lista del capítulo 4 — lleve los datos de medición al campo y deje que los datos decidan su estrategia de banda.

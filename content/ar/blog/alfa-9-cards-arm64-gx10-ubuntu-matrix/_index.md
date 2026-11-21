@@ -79,7 +79,7 @@ Yopitek هي الموزّع المعتمد لـ ALFA Network في تايوان. 
 | 5 | **AWUS036EACS** | Realtek RTL8821CU | `0bda:c820` | `rtw88_8821cu` | 24.11.0 | Wi-Fi 5 / 1x1 | مركّبة BT + WiFi |
 | 6 | **AWUS036AX** | Realtek RTL8832BU | — | `rtw89_8852bu` | rtw8852b | Wi-Fi 6 / 2x2 | — |
 | 7 | **AWUS036AXER** | Realtek RTL8832BU | — | `rtw89_8852bu` | rtw8852b | Wi-Fi 6 / 2x2 | الشريحة نفسها، هوائي مدمج (Nano) |
-| 8 | **AWUS036AXM** | MediaTek MT7921AU | — | `mt7921u` | — | Wi-Fi 6 / 2x2 | — |
+| 8 | **AWUS036AXM** | MediaTek MT7921AUN | — | `mt7921u` | — | Wi-Fi 6 / 2x2 | — |
 | 9 | **AWUS036AXML** | MediaTek MT7921AUN | — | `mt7921u` | — | Wi-Fi 6 / 2x2 | + BT |
 
 بعض النقاط المهمة:

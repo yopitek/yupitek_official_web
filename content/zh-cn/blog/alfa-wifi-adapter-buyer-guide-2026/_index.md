@@ -14,7 +14,7 @@ faq:
   - question: "ALFA 网卡选购标准是什么？"
     answer: "选购标准包含芯片组驱动成熟度、操作系统兼容性、Monitor Mode 支持与发射功率，RTL8812AU 驱动最成熟稳定。"
   - question: "哪些 ALFA 网卡支持 Monitor Mode？"
-    answer: "ACH、ACM、ACS、AX、AXER 支持监听模式与数据包注入；AXM、AXML（MT7921AU）支持监听、AP 与 WPA3，但数据包注入在 stock 内核 6.17 实测失败（内核 6.16 以后 mac80211 chanctx 回归所致，并非芯片先天限制；社区反馈可注入的情况为内核 6.16 以前或 patched 驱动，且固件锁速率 1/6 Mbps）。需要注入请改用 ACH、ACM、ACS、AX 或 EACS。EACS（RTL8821CU）在内核 6.2 以上使用内置的 rtw88_8821cu 驱动，GX10（内核 6.17）实测 monitor 与注入皆可用。"
+    answer: "ACH、ACM、ACS、AX、AXER 支持监听模式与数据包注入；AXM、AXML（MT7921AUN）支持监听、AP 与 WPA3，但数据包注入在 stock 内核 6.17 实测失败（内核 6.16 以后 mac80211 chanctx 回归所致，并非芯片先天限制；社区反馈可注入的情况为内核 6.16 以前或 patched 驱动，且固件锁速率 1/6 Mbps）。需要注入请改用 ACH、ACM、ACS、AX 或 EACS。EACS（RTL8821CU）在内核 6.2 以上使用内置的 rtw88_8821cu 驱动，GX10（内核 6.17）实测 monitor 与注入皆可用。"
   - question: "WiFi 6E/6 网卡有必要吗？"
     answer: "若审计范围含 6 GHz 频段则有必要。AXML 支持三频 AX3000，需 Linux 核心 ≥ 5.18 与 firmware-misc-nonfree。"
   - question: "RTL8812AU 和 MT7612U 驱动安装差异？"
@@ -52,7 +52,7 @@ AWUS036ACH 是 2026 年红队首选：500 mW 双天线 AC1200，RTL8812AU 驱动
 
 ### (b) 你需要监控模式与数据包注入吗？
 
-如果答案是肯定的——任何渗透测试或无线审计工作都应如此——无需将[AWUS036EACS](/zh-cn/products/alfa/awus036eacs/)从清单中划掉。其RTL8821CU芯片在内核 6.2 以上由内置的 rtw88_8821cu 驱动支持，GX10（内核 6.17）实测监控模式与注入（2.4G 与 5G）皆可用，因此可用于渗透测试。本指南中的其他所有型号也均支持。例外：AXM 与 AXML（MT7921AU）支持监听模式，但数据包注入在内核 6.16 以上（实测 6.17）失败，详见下方 AXML 说明。
+如果答案是肯定的——任何渗透测试或无线审计工作都应如此——无需将[AWUS036EACS](/zh-cn/products/alfa/awus036eacs/)从清单中划掉。其RTL8821CU芯片在内核 6.2 以上由内置的 rtw88_8821cu 驱动支持，GX10（内核 6.17）实测监控模式与注入（2.4G 与 5G）皆可用，因此可用于渗透测试。本指南中的其他所有型号也均支持。例外：AXM 与 AXML（MT7921AUN）支持监听模式，但数据包注入在内核 6.16 以上（实测 6.17）失败，详见下方 AXML 说明。
 
 ### (c) 虚拟机还是裸机？
 

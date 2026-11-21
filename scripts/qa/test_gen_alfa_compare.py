@@ -78,7 +78,7 @@ def test_fact_columns_identical_to_english(loc):
     """事實欄（型號、晶片、頻段、速率、USB、天線、MIMO、功耗、藍牙）各語系必須一字不差。
 
     只有標籤與描述可以因語系而異；規格數據不行。先前 11 語系各自為政才會出現
-    AXM 晶片寫成 MT7921AUN 這類錯誤。
+    AXM 晶片與官方規格不符這類錯誤。
     """
     FACT_COLS = {0: "型號", 2: "晶片", 3: "頻段", 4: "速率", 5: "USB", 6: "天線",
                  7: "MIMO", 14: "功耗", 15: "藍牙"}
@@ -111,9 +111,9 @@ def test_fact_columns_identical_to_english(loc):
 
 @pytest.mark.parametrize("loc", LOCALES)
 def test_chipsets_present(loc):
-    """9 款的晶片都要出現，且 AXM 是 MT7921AU、AXML 是 MT7921AUN。"""
+    """9 款的晶片都要出現。AXM 與 AXML 同為 MT7921AUN（ALFA 官方規格，2026-11-22 查證）。"""
     chips = [r[2] for r in _spec_rows(loc)]
-    assert sorted(chips) == sorted(["MT7921AUN", "MT7921AU", "RTL8832BU", "RTL8832BU",
+    assert sorted(chips) == sorted(["MT7921AUN", "MT7921AUN", "RTL8832BU", "RTL8832BU",
                                     "RTL8812AU", "MT7612U", "MT7610U", "RTL8811AU", "RTL8821CU"])
 
 

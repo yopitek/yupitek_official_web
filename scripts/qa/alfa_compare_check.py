@@ -7,10 +7,12 @@ import re
 import sys
 import urllib.request
 
+# Chipsets per ALFA's official spec sheets (checked 2026-11-22). The AXM and AXML carry the same
+# MT7921AUN and enumerate as 0e8d:7961, so the suffix cannot be told apart by testing.
 CHIPS = {
     "AWUS036ACM": "MT7612U", "AWUS036ACHM": "MT7610U", "AWUS036ACH": "RTL8812AU",
     "AWUS036ACS": "RTL8811AU", "AWUS036EACS": "RTL8821CU", "AWUS036AX": "RTL8832BU",
-    "AWUS036AXER": "RTL8832BU", "AWUS036AXM": "MT7921AU", "AWUS036AXML": "MT7921AUN",
+    "AWUS036AXER": "RTL8832BU", "AWUS036AXM": "MT7921AUN", "AWUS036AXML": "MT7921AUN",
 }
 NO_HANDSHAKE = {"AWUS036AXM", "AWUS036AXML"}
 AP_20MHZ = {"AWUS036ACS", "AWUS036EACS"}

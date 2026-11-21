@@ -14,7 +14,7 @@ faq:
   - question: "Black Duck FuzzBoxはどのような用途のツールですか？"
     answer: "Black Duck FuzzBoxは専用の無線プロトコルファジングテスト環境で、異常な802.11フレームを注入して組み込み無線デバイスと基地局のプロトコルスタックの堅牢性を検証します。"
   - question: "Wi-Fi 6/6EアダプターはFuzzBoxで使用できますか？"
-    answer: "FuzzBoxのインジェクションエンジンはRealtek rtl88xxauドライバーのみに最適化されており、他のチップセットはこのブランチを使用しないためウィザードに無視され、FuzzBox上では未検証です。GX10（Ubuntu 24.04、kernel 6.17）での実測では、AWUS036AXとAXER（RTL8832BU）はインジェクションが可能で、AWUS036AXMとAXML（MT7921AU）はkernel 6.16以降のmac80211 chanctxリグレッションによりインジェクションに失敗します。これはチップ自体の制約ではありません。"
+    answer: "FuzzBoxのインジェクションエンジンはRealtek rtl88xxauドライバーのみに最適化されており、他のチップセットはこのブランチを使用しないためウィザードに無視され、FuzzBox上では未検証です。GX10（Ubuntu 24.04、kernel 6.17）での実測では、AWUS036AXとAXER（RTL8832BU）はインジェクションが可能で、AWUS036AXMとAXML（MT7921AUN）はkernel 6.16以降のmac80211 chanctxリグレッションによりインジェクションに失敗します。これはチップ自体の制約ではありません。"
   - question: "ALFA AWUS036ACHがFuzzBoxの第一候補アダプターなのはなぜですか？"
     answer: "AWUS036ACHはRTL8812AUチップセットを採用し、コミュニティ最適化のインジェクションドライバーを持ち、OSネットワークスタックをバイパスしてゼロロスの生フレーム送信を実現できます。"
   - question: "FuzzBox OSはどのLinuxバージョンがベースですか？"

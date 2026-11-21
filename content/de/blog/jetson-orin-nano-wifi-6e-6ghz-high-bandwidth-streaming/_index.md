@@ -308,6 +308,6 @@ Diese Lösung ist eine **Bench-Test-Bewertung für eine DIY-Open-Source-Plattfor
 
 Wenn Multi-Stream-4K-Video in eine Edge-KI-Plattform gelangt, liegt der Engpass oft nicht an der Rechenleistung, sondern an der **drahtlosen Nutzlastkapazität und der Sauberkeit der Kanäle**. 2.4G/5G sind längst von Geräten überschwemmt; **das 6GHz von Wi-Fi 6E bietet einen brandneuen, störungsfreien Kanal** – kombiniert mit einer Karte mit verfügbarem Treiber (Jetsons Standard-Kernel ist 5.15, daher zuerst mit `modinfo mt7921u` prüfen, siehe 2.1; die Karte wurde nicht auf Jetson getestet) kann der Jetson Orin Nano stabil 2–4 4K-Streams aufnehmen und das Problem der „Bandbreitendecke“ mit einem Schlag nach hinten verschieben.
 
-**Empfohlene Hardware**: ALFA AWUS036AXML (MediaTek MT7921AU, native Unterstützung ohne Kompilierung ab Linux Kernel 5.18+, Wi-Fi 6E-Triband, zwei RP-SMA-5dBi-Hochgewinnantennen, 2.7W geringer Verbrauch). Der AWUS036AXMR auf derselben Chipsatz-Architektur ist das antennenlose Embedded-Modell – geeignet für platzbeschränkte Rack-Edge-Knoten.
+**Empfohlene Hardware**: ALFA AWUS036AXML (MediaTek MT7921AUN, native Unterstützung ohne Kompilierung ab Linux Kernel 5.18+, Wi-Fi 6E-Triband, zwei RP-SMA-5dBi-Hochgewinnantennen, 2.7W geringer Verbrauch).
 
 **Nächster Schritt**: Führe zuerst die „Basiswert-Messungen“ aus Kapitel 1 durch, dann hake die Liste aus Kapitel 4 ab – bringe die Messdaten ins Feld und lass die Daten über deine Band-Strategie entscheiden.

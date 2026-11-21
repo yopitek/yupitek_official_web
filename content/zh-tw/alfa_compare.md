@@ -16,8 +16,8 @@ showTableOfContents: true
 | 型號 | Wi-Fi 世代 | 晶片 | 頻段 | 最高速率 | USB 介面 | 天線 | MIMO | Monitor 模式 | 封包注入 | 端到端 handshake（GX10 實測） | Linux 驅動 | 驅動類型 | AP 模式 | 最大功耗 | 藍牙 | 適合用途 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | [AWUS036AXML](/zh-tw/products/alfa/awus036axml/) | WiFi 6E | MT7921AUN | 2.4 + 5 + 6 GHz | 3000 Mbps | USB-C 3.2 | 2× RP-SMA 5dBi | 2×2 MIMO | ✅ 支援 | ❌ 原生 6.17 失敗 | ❌ 否（注入失敗） | 核心內建 ≥5.18 | 核心內建（免安裝） | ✅ Native | 3.6W | BT 5.2 | Wi-Fi 6E＋Linux＋USB-C |
-| [AWUS036AXM](/zh-tw/products/alfa/awus036axm/) | WiFi 6E | MT7921AU | 2.4 + 5 + 6 GHz（6 GHz 未測） | 3000 Mbps | USB-A 3.2 L | 2× RP-SMA 5dBi | 2×2 MIMO | ✅ 支援 | ❌ 原生 6.17 失敗 | ❌ 否（注入失敗） | 核心內建 ≥5.18 | 核心內建（免安裝） | ✅ Native | 3.6W | BT 5.2 | Wi-Fi 6E＋雙天線 |
-| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | WiFi 6 | RTL8832BU | 2.4 + 5 GHz | 1200 Mbps | USB-A 3.0 | 內建 | 2×2 MIMO | ✅ 支援 | ✅ 支援 | ✅ 端到端（.22000） | 核心內建 ≥6.17 | 核心內建（免安裝） | ✅ Native | 3.6W | — | Wi-Fi 6＋AP 熱點 |
+| [AWUS036AXM](/zh-tw/products/alfa/awus036axm/) | WiFi 6E | MT7921AUN | 2.4 + 5 + 6 GHz（6 GHz 未測） | 3000 Mbps | USB-A 3.2 L | 2× RP-SMA 5dBi | 2×2 MIMO | ✅ 支援 | ❌ 原生 6.17 失敗 | ❌ 否（注入失敗） | 核心內建 ≥5.18 | 核心內建（免安裝） | ✅ Native | 3.6W | BT 5.2 | Wi-Fi 6E＋雙天線 |
+| [AWUS036AX](/zh-tw/products/alfa/awus036ax/) | WiFi 6 | RTL8832BU | 2.4 + 5 GHz | 1200 Mbps | USB-A 3.2 Gen 1 | 2× RP-SMA 5dBi | 2×2 MIMO | ✅ 支援 | ✅ 支援 | ✅ 端到端（.22000） | 核心內建 ≥6.17 | 核心內建（免安裝） | ✅ Native | 3.6W | — | Wi-Fi 6＋AP 熱點 |
 | [AWUS036AXER](/zh-tw/products/alfa/awus036axer/) | WiFi 6 | RTL8832BU | 2.4 + 5 GHz | 1800 Mbps | USB-A 3.2 | 內建（nano） | 2×2 MIMO | ✅ 支援 | ✅ 支援 | ✅ 端到端（.22000） | 核心內建 ≥6.17 | 核心內建（免安裝） | ✅ Native | 3.0W | — | 輕巧隨身型 |
 | [AWUS036ACH](/zh-tw/products/alfa/awus036ach/) | WiFi 5 | RTL8812AU | 2.4 + 5 GHz | 867 Mbps | USB-C 3.0 | 2× RP-SMA 5dBi | 2×2 MIMO | ✅✅ 最佳 | ✅✅ 最佳 | ✅ 端到端（.22000） | 核心內建 ≥6.13 | 核心內建（免安裝） | ✅ Native | 3.6W | — | Kali Linux 首選 |
 | [AWUS036ACM](/zh-tw/products/alfa/awus036acm/) | WiFi 5 | MT7612U | 2.4 + 5 GHz | 867 Mbps | USB-A 3.0 | 2× RP-SMA 5dBi | 2×2 MIMO | ✅ 支援 | ✅ 支援 | ✅ 端到端（.22000） | 核心內建 ≥4.19 | 核心內建（免安裝） | ✅ Native | 3.0W | — | Linux 免驅動 |

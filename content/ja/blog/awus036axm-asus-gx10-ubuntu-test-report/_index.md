@@ -1,5 +1,5 @@
 ---
-title: "AWUS036AXM 単体実測：MediaTek MT7921AU（Wi-Fi 6 2x2）の ASUS GX10 + Ubuntu 24.04（ARM64）における Monitor・AP・WPA3 の対応状況と Injection の制限"
+title: "AWUS036AXM 単体実測：MediaTek MT7921AUN（Wi-Fi 6 2x2）の ASUS GX10 + Ubuntu 24.04（ARM64）における Monitor・AP・WPA3 の対応状況と Injection の制限"
 slug: awus036axm-asus-gx10-ubuntu-test-report
 date: 2026-11-18
 lastmod: 2026-11-20

@@ -79,7 +79,7 @@ Voyons d'abord les détails matériels des 9 cartes et le pilote réellement mon
 | 5 | **AWUS036EACS** | Realtek RTL8821CU | `0bda:c820` | `rtw88_8821cu` | 24.11.0 | Wi-Fi 5 / 1x1 | Composite BT + WiFi |
 | 6 | **AWUS036AX** | Realtek RTL8832BU | — | `rtw89_8852bu` | rtw8852b | Wi-Fi 6 / 2x2 | — |
 | 7 | **AWUS036AXER** | Realtek RTL8832BU | — | `rtw89_8852bu` | rtw8852b | Wi-Fi 6 / 2x2 | Même puce, antenne intégrée (Nano) |
-| 8 | **AWUS036AXM** | MediaTek MT7921AU | — | `mt7921u` | — | Wi-Fi 6 / 2x2 | — |
+| 8 | **AWUS036AXM** | MediaTek MT7921AUN | — | `mt7921u` | — | Wi-Fi 6 / 2x2 | — |
 | 9 | **AWUS036AXML** | MediaTek MT7921AUN | — | `mt7921u` | — | Wi-Fi 6 / 2x2 | + BT |
 
 Quelques points clés :

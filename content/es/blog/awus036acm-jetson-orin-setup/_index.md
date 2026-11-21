@@ -149,7 +149,7 @@ A continuación, un resumen de la compatibilidad de los chipsets de adaptadores 
 | RTL8812AU | AWUS036ACH | Out-of-tree (requiere compilación) | Compilación manual necesaria | ⚠️ Considerable pero con riesgo de compilación |
 | RTL8811AU | AWUS036ACS | Out-of-tree (requiere compilación) | Compilación manual necesaria | ⚠️ Mismos problemas que RTL8812AU |
 | RTL8832BU | AWUS036AX | Out-of-tree (requiere compilación) | Compilación manual necesaria | ⚠️ Requiere compilación, problemas conocidos |
-| MT7921AU | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ K5.10/5.15 no cumple el requisito |
+| MT7921AUN | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ K5.10/5.15 no cumple el requisito |
 | RTL8832BU | AWUS036AXER | Out-of-tree (requiere compilación) | Compilación manual necesaria | ❌ No recomendado, soporte ARM64 incierto |
 
 Fuente de datos: [Tabla de soporte de chipsets USB WiFi de morrownr](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
@@ -305,7 +305,7 @@ Hecho. Tu Jetson Orin ya está conectado a la red.
 
 ### El AWUS036ACM es WiFi 5 (AC1200)
 
-No es la opción más rápida del mercado. El AWUS036AXM (WiFi 6E, MT7921AU) es teóricamente más rápido, pero en el kernel 5.10 del AIB-NW01 **no funciona** (requiere Kernel 5.18+). Para las necesidades de ancho de banda de la mayoría de aplicaciones de Edge AI (transferencia de datos, actualización de modelos, SSH remoto), AC1200 es más que suficiente.
+No es la opción más rápida del mercado. El AWUS036AXM (WiFi 6E, MT7921AUN) es teóricamente más rápido, pero en el kernel 5.10 del AIB-NW01 **no funciona** (requiere Kernel 5.18+). Para las necesidades de ancho de banda de la mayoría de aplicaciones de Edge AI (transferencia de datos, actualización de modelos, SSH remoto), AC1200 es más que suficiente.
 
 ### Evidencia experimental en ARM64
 

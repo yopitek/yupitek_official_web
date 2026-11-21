@@ -308,6 +308,6 @@ sudo tegrastats
 
 다중 스트림 4K 영상이 엣지 AI 플랫폼에 유입되면 병목은 대개 연산이 아니라 <strong>무선 페이로드 용량과 채널의 청결도</strong>입니다. 2.4G/5G는 이미 장치로 가득 차 있으며, <strong>Wi-Fi 6E의 6GHz는 간섭 없는 새로운 채널을 제공합니다</strong>. 드라이버를 사용할 수 있는 어댑터와 함께 사용하면(Jetson의 기본 커널은 5.15이므로 먼저 `modinfo mt7921u`로 확인하십시오. 2.1 참조, 이 카드는 Jetson에서 테스트되지 않았습니다) Jetson Orin Nano는 4K 2~4 스트림을 안정적으로 처리할 수 있으며, "대역폭 한계" 문제를 단번에 해소합니다.
 
-<strong>권장 하드웨어</strong>: ALFA AWUS036AXML (MediaTek MT7921AU, Linux Kernel 5.18 이상에서 컴파일 불필요한 네이티브 지원, Wi-Fi 6E 트라이밴드, RP-SMA 5dBi 고이득 안테나 2개, 2.7W 저전력). 동일한 칩셋 아키텍처를 기반으로 한 AWUS036AXMR은 안테나가 없는 임베디드 변형 모델이며, 공간이 제한된 랙 마운트형 엣지 노드에 적합합니다.
+<strong>권장 하드웨어</strong>: ALFA AWUS036AXML (MediaTek MT7921AUN, Linux Kernel 5.18 이상에서 컴파일 불필요한 네이티브 지원, Wi-Fi 6E 트라이밴드, RP-SMA 5dBi 고이득 안테나 2개, 2.7W 저전력).
 
 <strong>다음 단계</strong>: 먼저 1장의 기준 측정을 실행한 다음 4장의 체크리스트를 확인하십시오. 측정 데이터를 현장에 가져가 데이터가 대역 전략을 결정하도록 하십시오.

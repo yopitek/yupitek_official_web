@@ -14,7 +14,7 @@ faq:
   - question: "ALFAアダプターの選択基準は何ですか？"
     answer: "選択基準にはチップセットドライバーの成熟度、OS互換性、Monitor Modeサポート、送信出力が含まれ、RTL8812AUドライバーが最も成熟して安定しています。"
   - question: "どのALFAアダプターがMonitor Modeをサポートしていますか？"
-    answer: "ACH、ACM、ACS、AX、AXER はモニターモードとパケットインジェクションをサポートします。AXM と AXML（MT7921AU）はモニターモード、AP、WPA3 をサポートしますが、パケットインジェクションは stock カーネル 6.17 での実測で失敗しました（カーネル 6.16 以降の mac80211 chanctx のリグレッションが原因で、チップ自体の制限ではありません。インジェクション可能とのコミュニティ報告はカーネル 6.16 より前、または patched ドライバーの場合で、ファームウェアはレートを 1/6 Mbps に固定します）。インジェクションが必要な場合は ACH、ACM、ACS、AX または EACS を使ってください。EACS（RTL8821CU）は kernel 6.2 以降で内蔵の rtw88_8821cu ドライバーにより、monitor mode と両バンドでのインジェクションが GX10（kernel 6.17）で実測可能でした。"
+    answer: "ACH、ACM、ACS、AX、AXER はモニターモードとパケットインジェクションをサポートします。AXM と AXML（MT7921AUN）はモニターモード、AP、WPA3 をサポートしますが、パケットインジェクションは stock カーネル 6.17 での実測で失敗しました（カーネル 6.16 以降の mac80211 chanctx のリグレッションが原因で、チップ自体の制限ではありません。インジェクション可能とのコミュニティ報告はカーネル 6.16 より前、または patched ドライバーの場合で、ファームウェアはレートを 1/6 Mbps に固定します）。インジェクションが必要な場合は ACH、ACM、ACS、AX または EACS を使ってください。EACS（RTL8821CU）は kernel 6.2 以降で内蔵の rtw88_8821cu ドライバーにより、monitor mode と両バンドでのインジェクションが GX10（kernel 6.17）で実測可能でした。"
   - question: "WiFi 6E/6アダプターは必要ですか？"
     answer: "監査範囲に6 GHz帯域が含まれる場合は必要です。AXMLはトライバンドAX3000をサポートし、Linuxカーネル5.18以上とfirmware-misc-nonfreeが必要です。"
   - question: "RTL8812AUとMT7612Uドライバーのインストールの違いは？"
@@ -47,7 +47,7 @@ AWUS036ACHは2026年のレッドチーム向け第一候補：500 mWデュアル
 
 ### (b) monitor mode と packet injection は必要ですか？
 
-答えが「はい」なら — そしてペネトレーションテストや無線監査作業であれば必ずそうなります — [AWUS036EACS](/ja/products/alfa/awus036eacs/) も候補に入れられます。その RTL8821CU チップセットは、kernel 6.2 以降に内蔵された rtw88_8821cu ドライバーで、monitor mode（2.4 GHz／5 GHz）、両バンド 100% のインジェクション、エンドツーエンドの WPA handshake 取得が GX10（kernel 6.17）で実測できました。このガイドの他の全モデルもサポートしています。例外：AXM と AXML（MT7921AU）は monitor mode をサポートしますが、packet injection はカーネル 6.16 以降（実測 6.17）で失敗しました。下記の AXML の注記を参照してください。
+答えが「はい」なら — そしてペネトレーションテストや無線監査作業であれば必ずそうなります — [AWUS036EACS](/ja/products/alfa/awus036eacs/) も候補に入れられます。その RTL8821CU チップセットは、kernel 6.2 以降に内蔵された rtw88_8821cu ドライバーで、monitor mode（2.4 GHz／5 GHz）、両バンド 100% のインジェクション、エンドツーエンドの WPA handshake 取得が GX10（kernel 6.17）で実測できました。このガイドの他の全モデルもサポートしています。例外：AXM と AXML（MT7921AUN）は monitor mode をサポートしますが、packet injection はカーネル 6.16 以降（実測 6.17）で失敗しました。下記の AXML の注記を参照してください。
 
 ### (c) VM それともベアメタルですか？
 

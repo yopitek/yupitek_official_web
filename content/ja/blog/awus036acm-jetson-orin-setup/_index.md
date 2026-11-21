@@ -145,7 +145,7 @@ NVIDIA フォーラムの事例（2024 年 10 月）：RTL8188EUS が JetPack 5.
 | RTL8812AU | AWUS036ACH | Out-of-tree（コンパイル要） | 手動コンパイル要 | ⚠️ 検討可能だがコンパイルリスクあり |
 | RTL8811AU | AWUS036ACS | Out-of-tree（コンパイル要） | 手動コンパイル要 | ⚠️ RTL8812AU と同様の問題 |
 | RTL8832BU | AWUS036AX | Out-of-tree（コンパイル要） | 手動コンパイル要 | ⚠️ コンパイル要、既知の問題あり |
-| MT7921AU | AWUS036AXM | In-kernel (mt7921u) | <strong>5.18+</strong> | ❌ K5.10/5.15 では要件未達 |
+| MT7921AUN | AWUS036AXM | In-kernel (mt7921u) | <strong>5.18+</strong> | ❌ K5.10/5.15 では要件未達 |
 | RTL8832BU | AWUS036AXER | Out-of-tree（コンパイル要） | 手動コンパイル要 | ❌ 非推奨、ARM64 サポート不明 |
 
 データ出典：[morrownr/USB-WiFi チップセットサポート表](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
@@ -301,7 +301,7 @@ ip addr show wlx...
 
 ### AWUS036ACM は WiFi 5（AC1200）である
 
-市場最速の選択肢ではない。AWUS036AXM（WiFi 6E、MT7921AU）は理論上より高速だが、AIB-NW01 の Kernel 5.10 では<strong>使用不可</strong>（Kernel 5.18+ が必要）。ほとんどのエッジ AI アプリケーションの帯域要件（データ転送、モデル更新、リモート SSH）に対しては、AC1200 で十分以上である。
+市場最速の選択肢ではない。AWUS036AXM（WiFi 6E、MT7921AUN）は理論上より高速だが、AIB-NW01 の Kernel 5.10 では<strong>使用不可</strong>（Kernel 5.18+ が必要）。ほとんどのエッジ AI アプリケーションの帯域要件（データ転送、モデル更新、リモート SSH）に対しては、AC1200 で十分以上である。
 
 ### ARM64 での実験的エビデンス
 

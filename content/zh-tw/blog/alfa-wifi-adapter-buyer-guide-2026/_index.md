@@ -14,7 +14,7 @@ faq:
   - question: "ALFA 網路卡選購標準是什麼？"
     answer: "選購標準包含晶片組驅動成熟度、作業系統相容性、Monitor Mode 支援與發射功率，RTL8812AU 驅動最成熟穩定。"
   - question: "哪些 ALFA 網路卡支援 Monitor Mode？"
-    answer: "ACH、ACM、ACS、AX、AXER 支援監聽模式與封包注入；AXM、AXML（MT7921AU）支援監聽、AP 與 WPA3，但封包注入在 stock kernel 6.17 實測失敗（kernel 6.16 以後 mac80211 chanctx 回歸所致，並非晶片先天限制；社群回報可注入者為 kernel 6.16 以前或 patched 驅動，且韌體鎖速率 1/6 Mbps）。需要注入可改用 ACH、ACM、ACS、AX 或 EACS。EACS（RTL8821CU）自 kernel 6.2 起內建 rtw88_8821cu，在 GX10（kernel 6.17）實測 monitor 與注入皆可用。"
+    answer: "ACH、ACM、ACS、AX、AXER 支援監聽模式與封包注入；AXM、AXML（MT7921AUN）支援監聽、AP 與 WPA3，但封包注入在 stock kernel 6.17 實測失敗（kernel 6.16 以後 mac80211 chanctx 回歸所致，並非晶片先天限制；社群回報可注入者為 kernel 6.16 以前或 patched 驅動，且韌體鎖速率 1/6 Mbps）。需要注入可改用 ACH、ACM、ACS、AX 或 EACS。EACS（RTL8821CU）自 kernel 6.2 起內建 rtw88_8821cu，在 GX10（kernel 6.17）實測 monitor 與注入皆可用。"
   - question: "WiFi 6E/6 網路卡有必要嗎？"
     answer: "若審計範圍含 6 GHz 頻段則有必要。AXML 支援三頻 AX3000，需 Linux 核心 ≥ 5.18 與 firmware-misc-nonfree。"
   - question: "RTL8812AU 和 MT7612U 驅動安裝差異？"
@@ -49,7 +49,7 @@ AWUS036ACH 是 2026 年紅隊首選：500 mW 雙天線 AC1200，RTL8812AU 驅動
 
 ### (b) 你需要監聽模式與封包注入嗎？
 
-若答案為是——任何滲透測試或無線審計工作都應如此——請確認你的 Linux kernel 版本。[AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) 的 RTL8821CU 在 kernel 6.2 以上已內建 rtw88_8821cu 驅動，於 GX10（kernel 6.17）實測 monitor 兩頻可用、注入兩頻 100%、WPA handshake 擷取端到端可行，可用於注入。本指南中的其他所有機型也都支援。例外：AXM 與 AXML（MT7921AU）支援監聽模式，但封包注入在 kernel 6.16 以上（實測 6.17）失敗，詳見下方 AXML 說明。
+若答案為是——任何滲透測試或無線審計工作都應如此——請確認你的 Linux kernel 版本。[AWUS036EACS](/zh-tw/products/alfa/awus036eacs/) 的 RTL8821CU 在 kernel 6.2 以上已內建 rtw88_8821cu 驅動，於 GX10（kernel 6.17）實測 monitor 兩頻可用、注入兩頻 100%、WPA handshake 擷取端到端可行，可用於注入。本指南中的其他所有機型也都支援。例外：AXM 與 AXML（MT7921AUN）支援監聽模式，但封包注入在 kernel 6.16 以上（實測 6.17）失敗，詳見下方 AXML 說明。
 
 ### (c) 虛擬機還是裸機？
 

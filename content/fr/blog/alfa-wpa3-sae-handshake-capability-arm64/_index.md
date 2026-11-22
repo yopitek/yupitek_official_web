@@ -81,7 +81,7 @@ Avec l'EACS, la plus solide du lot, un bout en bout réussi ressemble à ceci : 
 | 5 | **AWUS036EACS** | RTL8821CU / Wi-Fi 5 · 1x1 | **100%** | **100%** | **bout en bout `.22000` prouvé (79 ACKs)** |
 | 6 | **AWUS036AX** | RTL8832BU / Wi-Fi 6 · 2x2 | 96% | disponible | **bout en bout `.22000` prouvé** |
 | 7 | **AWUS036AXER** | RTL8832BU / Wi-Fi 6 · 2x2 | 73% | disponible | **bout en bout `.22000` prouvé** |
-| 8 | AWUS036AXM | MT7921AU / Wi-Fi 6 · 2x2 | échec | échec | non pris en charge : injection en échec, capture impossible |
+| 8 | AWUS036AXM | MT7921AUN / Wi-Fi 6 · 2x2 | échec | échec | non pris en charge : injection en échec, capture impossible |
 | 9 | AWUS036AXML | MT7921AUN / Wi-Fi 6 · 2x2 | échec | échec | non pris en charge : injection en échec, capture impossible |
 
 **Deux niveaux, visibles d'un coup d'œil :**

@@ -16,8 +16,8 @@ showTableOfContents: true
 | 型号 | Wi-Fi 世代 | 芯片 | 频段 | 最高速率 | USB 接口 | 天线 | MIMO | Monitor 模式 | 数据包注入 | 端到端 handshake（GX10 实测） | Linux 驱动 | 驱动类型 | AP 模式 | 最大功耗 | 蓝牙 | 适用场景 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | [AWUS036AXML](/zh-cn/products/alfa/awus036axml/) | WiFi 6E | MT7921AUN | 2.4 + 5 + 6 GHz | 3000 Mbps | USB-C 3.2 | 2× RP-SMA 5dBi | 2×2 MIMO | ✅ 支持 | ❌ 原生 6.17 内核下失败 | ❌ 否（注入失败） | 内核内置 ≥5.18 | 内核内置（免安装） | ✅ 原生支持 | 3.6W | BT 5.2 | Wi-Fi 6E＋Linux＋USB-C |
-| [AWUS036AXM](/zh-cn/products/alfa/awus036axm/) | WiFi 6E | MT7921AU | 2.4 + 5 + 6 GHz（6 GHz 未测试） | 3000 Mbps | USB-A 3.2 L | 2× RP-SMA 5dBi | 2×2 MIMO | ✅ 支持 | ❌ 原生 6.17 内核下失败 | ❌ 否（注入失败） | 内核内置 ≥5.18 | 内核内置（免安装） | ✅ 原生支持 | 3.6W | BT 5.2 | Wi-Fi 6E＋双天线 |
-| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | WiFi 6 | RTL8832BU | 2.4 + 5 GHz | 1200 Mbps | USB-A 3.0 | 内置 | 2×2 MIMO | ✅ 支持 | ✅ 支持 | ✅ 端到端（.22000） | 内核内置 ≥6.17 | 内核内置（免安装） | ✅ 原生支持 | 3.6W | — | Wi-Fi 6＋AP 热点 |
+| [AWUS036AXM](/zh-cn/products/alfa/awus036axm/) | WiFi 6E | MT7921AUN | 2.4 + 5 + 6 GHz（6 GHz 未测试） | 3000 Mbps | USB-A 3.2 L | 2× RP-SMA 5dBi | 2×2 MIMO | ✅ 支持 | ❌ 原生 6.17 内核下失败 | ❌ 否（注入失败） | 内核内置 ≥5.18 | 内核内置（免安装） | ✅ 原生支持 | 3.6W | BT 5.2 | Wi-Fi 6E＋双天线 |
+| [AWUS036AX](/zh-cn/products/alfa/awus036ax/) | WiFi 6 | RTL8832BU | 2.4 + 5 GHz | 1200 Mbps | USB-A 3.2 Gen 1 | 2× RP-SMA 5dBi | 2×2 MIMO | ✅ 支持 | ✅ 支持 | ✅ 端到端（.22000） | 内核内置 ≥6.17 | 内核内置（免安装） | ✅ 原生支持 | 3.6W | — | Wi-Fi 6＋AP 热点 |
 | [AWUS036AXER](/zh-cn/products/alfa/awus036axer/) | WiFi 6 | RTL8832BU | 2.4 + 5 GHz | 1800 Mbps | USB-A 3.2 | 内置（nano） | 2×2 MIMO | ✅ 支持 | ✅ 支持 | ✅ 端到端（.22000） | 内核内置 ≥6.17 | 内核内置（免安装） | ✅ 原生支持 | 3.0W | — | 小巧便携型 |
 | [AWUS036ACH](/zh-cn/products/alfa/awus036ach/) | WiFi 5 | RTL8812AU | 2.4 + 5 GHz | 867 Mbps | USB-C 3.0 | 2× RP-SMA 5dBi | 2×2 MIMO | ✅✅ 最佳 | ✅✅ 最佳 | ✅ 端到端（.22000） | 内核内置 ≥6.13 | 内核内置（免安装） | ✅ 原生支持 | 3.6W | — | Kali Linux 首选 |
 | [AWUS036ACM](/zh-cn/products/alfa/awus036acm/) | WiFi 5 | MT7612U | 2.4 + 5 GHz | 867 Mbps | USB-A 3.0 | 2× RP-SMA 5dBi | 2×2 MIMO | ✅ 支持 | ✅ 支持 | ✅ 端到端（.22000） | 内核内置 ≥4.19 | 内核内置（免安装） | ✅ 原生支持 | 3.0W | — | Linux 免驱动 |

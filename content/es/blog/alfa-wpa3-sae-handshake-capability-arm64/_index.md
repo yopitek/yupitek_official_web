@@ -81,7 +81,7 @@ Tomando como ejemplo el EACS, el más sólido de este lote, un extremo a extremo
 | 5 | **AWUS036EACS** | RTL8821CU / Wi-Fi 5 · 1x1 | **100%** | **100%** | **`.22000` de extremo a extremo demostrado (79 ACKs)** |
 | 6 | **AWUS036AX** | RTL8832BU / Wi-Fi 6 · 2x2 | 96% | usable | **`.22000` de extremo a extremo demostrado** |
 | 7 | **AWUS036AXER** | RTL8832BU / Wi-Fi 6 · 2x2 | 73% | usable | **`.22000` de extremo a extremo demostrado** |
-| 8 | AWUS036AXM | MT7921AU / Wi-Fi 6 · 2x2 | falla | falla | No compatible: la inyección falla, no puede capturar |
+| 8 | AWUS036AXM | MT7921AUN / Wi-Fi 6 · 2x2 | falla | falla | No compatible: la inyección falla, no puede capturar |
 | 9 | AWUS036AXML | MT7921AUN / Wi-Fi 6 · 2x2 | falla | falla | No compatible: la inyección falla, no puede capturar |
 
 **Dos grupos, de un vistazo:**

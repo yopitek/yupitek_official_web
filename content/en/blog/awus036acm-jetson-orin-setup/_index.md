@@ -154,7 +154,7 @@ Here's how common ALFA Network USB WiFi chipsets stack up against Jetson Orin:
 | RTL8812AU | AWUS036ACH | Out-of-tree (compile required) | Manual compile | ⚠️ Viable but compiling carries risk |
 | RTL8811AU | AWUS036ACS | Out-of-tree (compile required) | Manual compile | ⚠️ Same RTL8812AU issues apply |
 | RTL8832BU | AWUS036AX | Out-of-tree (compile required) | Manual compile | ⚠️ Requires compilation, known issues |
-| MT7921AU | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ K5.10/5.15 does not meet minimum |
+| MT7921AUN | AWUS036AXM | In-kernel (mt7921u) | **5.18+** | ❌ K5.10/5.15 does not meet minimum |
 | RTL8832BU | AWUS036AXER | Out-of-tree (compile required) | Manual compile | ❌ Not recommended, ARM64 support unclear |
 
 Source: [morrownr/USB-WiFi Chipset Support Table](https://github.com/morrownr/USB-WiFi/blob/main/home/USB_WiFi_Chipsets.md)
@@ -310,7 +310,7 @@ Done. Your Jetson Orin is online.
 
 ### The AWUS036ACM Is WiFi 5 (AC1200)
 
-It's not the fastest adapter on the market. The AWUS036AXM (WiFi 6E, MT7921AU) is theoretically faster, but it **won't work** on the AIB-NW01's Kernel 5.10 (requires Kernel 5.18+). For the bandwidth needs of most edge AI applications — data telemetry, model updates, remote SSH — AC1200 is more than sufficient.
+It's not the fastest adapter on the market. The AWUS036AXM (WiFi 6E, MT7921AUN) is theoretically faster, but it **won't work** on the AIB-NW01's Kernel 5.10 (requires Kernel 5.18+). For the bandwidth needs of most edge AI applications — data telemetry, model updates, remote SSH — AC1200 is more than sufficient.
 
 ### ARM64 Validation Context
 

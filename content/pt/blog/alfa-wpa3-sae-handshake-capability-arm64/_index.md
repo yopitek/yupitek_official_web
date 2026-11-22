@@ -81,7 +81,7 @@ Tomando como exemplo o EACS, o mais sólido deste lote, um ponta a ponta bem-suc
 | 5 | **AWUS036EACS** | RTL8821CU / Wi-Fi 5 / 1x1 | **100%** | **100%** | **ponta a ponta `.22000` comprovado (79 ACKs)** |
 | 6 | **AWUS036AX** | RTL8832BU / Wi-Fi 6 / 2x2 | 96% | utilizável | **ponta a ponta `.22000` comprovado** |
 | 7 | **AWUS036AXER** | RTL8832BU / Wi-Fi 6 / 2x2 | 73% | utilizável | **ponta a ponta `.22000` comprovado** |
-| 8 | AWUS036AXM | MT7921AU / Wi-Fi 6 / 2x2 | falha | falha | não suportado: a injeção falha, não captura |
+| 8 | AWUS036AXM | MT7921AUN / Wi-Fi 6 / 2x2 | falha | falha | não suportado: a injeção falha, não captura |
 | 9 | AWUS036AXML | MT7921AUN / Wi-Fi 6 / 2x2 | falha | falha | não suportado: a injeção falha, não captura |
 
 **Dois grupos, de relance:**

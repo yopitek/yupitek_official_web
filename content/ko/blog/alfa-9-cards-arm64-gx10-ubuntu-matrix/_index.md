@@ -79,7 +79,7 @@ Yopitek는 ALFA Network의 대만 총판(유통사)입니다. 고객이 USB 무�
 | 5 | **AWUS036EACS** | Realtek RTL8821CU | `0bda:c820` | `rtw88_8821cu` | 24.11.0 | Wi-Fi 5 / 1x1 | BT + WiFi 복합 |
 | 6 | **AWUS036AX** | Realtek RTL8832BU | — | `rtw89_8852bu` | rtw8852b | Wi-Fi 6 / 2x2 | — |
 | 7 | **AWUS036AXER** | Realtek RTL8832BU | — | `rtw89_8852bu` | rtw8852b | Wi-Fi 6 / 2x2 | 동일 칩, 내장 안테나(Nano) |
-| 8 | **AWUS036AXM** | MediaTek MT7921AU | — | `mt7921u` | — | Wi-Fi 6 / 2x2 | — |
+| 8 | **AWUS036AXM** | MediaTek MT7921AUN | — | `mt7921u` | — | Wi-Fi 6 / 2x2 | — |
 | 9 | **AWUS036AXML** | MediaTek MT7921AUN | — | `mt7921u` | — | Wi-Fi 6 / 2x2 | + BT |
 
 몇 가지 핵심:

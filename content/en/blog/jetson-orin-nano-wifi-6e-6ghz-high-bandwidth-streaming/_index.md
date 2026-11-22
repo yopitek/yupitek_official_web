@@ -308,6 +308,6 @@ This solution is a **bench-test evaluation for a DIY open-source academic / engi
 
 When multi-stream 4K video enters an edge AI platform, the bottleneck is usually not compute — it's **wireless payload capacity and channel cleanliness**. 2.4G/5G are already flooded with devices; **Wi-Fi 6E's 6GHz offers a brand-new interference-free channel** — pair it with an adapter whose driver is available (Jetson's default kernel is 5.15, so confirm with `modinfo mt7921u` first, see 2.1; this card has not been tested on Jetson) and the Jetson Orin Nano can stably carry 2–4 streams of 4K, pushing the "bandwidth ceiling" problem back in one stroke.
 
-**Recommended hardware**: ALFA AWUS036AXML (MediaTek MT7921AU, native compile-free support on Linux Kernel 5.18+, Wi-Fi 6E tri-band, dual RP-SMA 5dBi high-gain antennas, 2.7W low power). The AWUS036AXMR, built on the same chipset architecture, is the antenna-less embedded variant — a good fit for space-constrained rack-mounted edge nodes.
+**Recommended hardware**: ALFA AWUS036AXML (MediaTek MT7921AUN, native compile-free support on Linux Kernel 5.18+, Wi-Fi 6E tri-band, dual RP-SMA 5dBi high-gain antennas, 2.7W low power).
 
 **Next steps**: run the Chapter 1 baseline measurements first, then tick through the Chapter 4 checklist — bring measurement data into the field and let the data decide your band strategy.

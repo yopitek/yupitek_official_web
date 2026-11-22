@@ -310,6 +310,6 @@ sudo tegrastats
 
 多路 4K 影音進邊緣 AI 平台，卡點往往不在計算力，而在**無線承載量與通道乾淨度**。2.4G/5G 早已被裝置海淹沒，**Wi-Fi 6E 的 6GHz 提供了全新的無干擾通道**——搭配一顆驅動已就緒的網路卡（Jetson 預設為 Kernel 5.15，須先以 `modinfo mt7921u` 確認，見 2.1 節；本卡未在 Jetson 實測），Jetson Orin Nano 就能穩定接下 2–4 路 4K 串流，把「頻寬天花板」的問題一口氣往後推。
 
-**推薦硬體**：ALFA AWUS036AXML（MediaTek MT7921AU，Linux 核心 5.18+ 原生免編譯、Wi-Fi 6E 三頻、雙 RP-SMA 5dBi 高增益天線、2.7W 低功耗）。同樣晶片架構的 AWUS036AXMR 是無天線的內嵌式機種，適合空間受限的機櫃型邊緣節點。
+**推薦硬體**：ALFA AWUS036AXML（MediaTek MT7921AUN，Linux 核心 5.18+ 原生免編譯、Wi-Fi 6E 三頻、雙 RP-SMA 5dBi 高增益天線、2.7W 低功耗）。
 
 **下一步**：先跑一遍第 1 章的「基準值量測」，再依照第 4 章的工作表打勾——把測量資料帶進場域，讓資料決定你的頻段策略。

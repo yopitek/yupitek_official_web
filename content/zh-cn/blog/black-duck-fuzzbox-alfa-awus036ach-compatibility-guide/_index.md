@@ -14,7 +14,7 @@ faq:
   - question: "Black Duck FuzzBox 是什么用途的工具？"
     answer: "Black Duck FuzzBox 是专用的无线协议模糊测试环境，通过注入异常 802.11 讯框验证嵌入式无线设备与基地台的协议堆叠强健性。"
   - question: "Wi-Fi 6/6E 网卡可以在 FuzzBox 下使用吗？"
-    answer: "FuzzBox 注入引擎只针对 Realtek rtl88xxau 驱动优化，其他芯片组不使用此分支，会被守护进程忽略，因此 FuzzBox 上未验证。在 GX10（Ubuntu 24.04、kernel 6.17）实测中，AWUS036AX 与 AXER（RTL8832BU）注入可用；AWUS036AXM 与 AXML（MT7921AU）因 kernel 6.16 以后的 mac80211 chanctx 回归而注入失败，并非芯片本身的限制。"
+    answer: "FuzzBox 注入引擎只针对 Realtek rtl88xxau 驱动优化，其他芯片组不使用此分支，会被守护进程忽略，因此 FuzzBox 上未验证。在 GX10（Ubuntu 24.04、kernel 6.17）实测中，AWUS036AX 与 AXER（RTL8832BU）注入可用；AWUS036AXM 与 AXML（MT7921AUN）因 kernel 6.16 以后的 mac80211 chanctx 回归而注入失败，并非芯片本身的限制。"
   - question: "ALFA AWUS036ACH 为什么是 FuzzBox 首选网卡？"
     answer: "AWUS036ACH 采用 RTL8812AU 芯片组，拥有社群优化的注入驱动，可绕过操作系统网络堆叠实现零丢包原始讯框传输。"
   - question: "FuzzBox OS 基于哪个 Linux 版本？"
